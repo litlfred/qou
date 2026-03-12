@@ -8,11 +8,11 @@ quantum torsion, and related topics.
 | File | Description |
 |------|-------------|
 | `main.tex` | Top-level document — includes all chapters |
-| `chapters/chapter1.tex` | Chapter 1: Quantum Observable Universe |
-| `chapters/chapter2.tex` | Chapter 2: Lifting of Quantum Torsion |
-| `chapters/chapter3.tex` | Chapter 3: Interpretations |
-| `chapters/chapter4.tex` | Chapter 4: Experimental Evidence |
-| `chapters/chapter5.tex` | Chapter 5: Speculations |
+| `chapters/quantum-observable-universe.tex` | Chapter 1: Quantum Observable Universe |
+| `chapters/lifting-of-quantum-torsion.tex` | Chapter 2: Lifting of Quantum Torsion |
+| `chapters/interpretations.tex` | Chapter 3: Interpretations |
+| `chapters/experimental-evidence.tex` | Chapter 4: Experimental Evidence |
+| `chapters/speculations.tex` | Chapter 5: Speculations |
 | `references.bib` | BibTeX bibliography |
 
 ## Building

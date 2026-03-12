@@ -241,7 +241,7 @@ their own line, indented to match the surrounding content.
 | Path                       | Purpose                                      |
 |----------------------------|----------------------------------------------|
 | `main.tex`                 | Preamble, metadata, document structure only  |
-| `chapters/chapter<N>.tex`  | One file per chapter; no preamble content    |
+| `chapters/<title-slug>.tex`| One file per chapter, named after chapter title; no preamble content |
 | `references.bib`           | BibTeX database; one entry per source        |
 
 - Do **not** place `\usepackage`, `\newtheorem`, or `\geometry` calls inside
