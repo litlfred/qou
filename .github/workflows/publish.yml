@@ -237,8 +237,8 @@ jobs:
           **Source (repo)**
           | Resource | Link |
           |----------|------|
-          | Branch   | [${GITHUB_REF_NAME}](${branch_url}) |
-          | Commit   | [\`${GITHUB_SHA::7}\`](${commit_url}) |
+          | Branch   | [${{ github.ref_name }}](${branch_url}) |
+          | Commit   | [\`$(echo "${{ github.sha }}" | cut -c1-7)\`](${commit_url}) |
           EOF
           )"
             echo "Commented on PR #${pr}."
