@@ -13,8 +13,22 @@
 \usepackage{graphicx}
 \usepackage{cite}
 \usepackage{ccicons}          % CC icon glyphs
+\usepackage{titlesec}         % Compact heading styles
 
 \geometry{margin=1in}
+
+% ── Compact chapter/section formatting (no page breaks, normal-size fonts) ────
+\titleformat{\chapter}[hang]{\normalsize\bfseries}{%
+  \thechapter.}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0.8ex plus 0.2ex}
+
+\titleformat{\section}[hang]{\normalsize\bfseries}{%
+  \thesection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.0ex plus 0.3ex minus 0.2ex}{0.5ex plus 0.1ex}
+
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{%
+  \thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{0.8ex plus 0.3ex minus 0.1ex}{0.4ex plus 0.1ex}
 
 % ── Theorem environments ───────────────────────────────────────────────────────
 \newtheorem{theorem}{Theorem}[chapter]
@@ -58,11 +72,9 @@
   and any changes made are indicated.
 \end{center}
 \vspace*{\fill}
-\newpage
 
 % ── Table of contents ─────────────────────────────────────────────────────────
 \tableofcontents
-\newpage
 
 % ── Abstract ──────────────────────────────────────────────────────────────────
 \begin{abstract}
