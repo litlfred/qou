@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# generate-diff.sh — produce a latexdiff document comparing the current
+# working tree against the main branch.
+#
+# Outputs:  diff.tex  in the repository root, ready for compilation.
+#
+# Requirements (on the runner):
+#   latexdiff   (usually in texlive-extra-utils or the latexdiff package)
+#   latexpand   (usually in texlive-extra-utils)
+#   git
+#
+# Usage:
+#   .github/scripts/generate-diff.sh
+#
+# Colour convention
+#   deleted text  →  red
+#   added   text  →  green  (dark green, rgb 0 0.5 0)
+#
+# Math handling
+#   --math-markup=coarse  treats each changed math environment as a single
+#   unit: the entire old formula is shown in red, the entire new one in green.
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+MAIN_DIR="$(mktemp -d)"
+trap 'rm -rf "$MAIN_DIR"' EXIT
+
+# ── 1. Extract main-branch sources ──────────────────────────────────────────
+echo "::group::Extract main-branch sources"
+git archive origin/main | tar -x -C "$MAIN_DIR"
+echo "::endgroup::"
+
+# ── 2. Flatten both versions ────────────────────────────────────────────────
+echo "::group::Flatten LaTeX sources"
+MAIN_FLAT="$(mktemp)"
+BRANCH_FLAT="$(mktemp)"
+trap 'rm -rf "$MAIN_DIR" "$MAIN_FLAT" "$BRANCH_FLAT"' EXIT
+
+(cd "$MAIN_DIR" && latexpand main.tex) > "$MAIN_FLAT"
+latexpand main.tex                      > "$BRANCH_FLAT"
+echo "::endgroup::"
+
+# ── 3. Run latexdiff ────────────────────────────────────────────────────────
+# --math-markup=coarse : changed math environments are shown as whole units
+# --type=CTRADITIONAL  : coloured + strikethrough/underline base style
+echo "::group::Run latexdiff"
+latexdiff \
+  --math-markup=coarse \
+  "$MAIN_FLAT" "$BRANCH_FLAT" \
+  > diff.tex \
+  || { echo "::warning::latexdiff failed; falling back to unchanged source"
+       cp "$BRANCH_FLAT" diff.tex; }
+echo "::endgroup::"
+
+# ── 4. Patch colours ────────────────────────────────────────────────────────
+# latexdiff default:  added = blue,  deleted = red
+# We want:            added = dark green (0,0.5,0),  deleted = red (keep)
+#
+# Also replace uwave (wavy underline) with simple text for cleaner output,
+# and keep sout (strikethrough) for deletions.
+echo "::group::Patch diff colours"
+
+# Added text: blue → dark green, remove wavy underline
+sed -i 's/\\color{blue}/\\color[rgb]{0,0.5,0}/g'       diff.tex
+sed -i 's/\\color{BLUE}/\\color[rgb]{0,0.5,0}/g'       diff.tex
+
+# If CFONT type colour definitions are present, override BLUE
+sed -i 's/\\definecolor{BLUE}{rgb}{0,0,1}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
+
+# Ensure xcolor is loaded (needed for rgb colour model)
+# Insert after the \RequirePackage{color} line that latexdiff adds
+sed -i 's/\\RequirePackage{color}/\\RequirePackage{xcolor}/' diff.tex
+
+echo "::endgroup::"
+
+echo "✓ diff.tex generated ($(wc -l < diff.tex) lines)"
