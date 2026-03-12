@@ -33,7 +33,8 @@ on:
         type: string
 
 permissions:
-  contents: write         # required to push to the gh-pages branch
+  contents:       write   # required to push to the gh-pages branch
+  pull-requests:  write   # required to comment on PRs with preview URLs
 
 jobs:
   build-and-publish:
@@ -156,3 +157,48 @@ jobs:
           keep_files:     true
           commit_message: >
             docs: publish from ${{ github.ref_name }}@${{ github.sha }}
+
+      # ── 5. Comment on PR with preview URL ─────────────────────────────────
+      - name: Comment preview link on PR
+        if: github.ref_name != 'main'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Derive the GitHub Pages base URL from the repository metadata
+          pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          pdf_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe.pdf"
+          html_url="${pages_url}/drafts/${{ github.ref_name }}/"
+
+          # Find open PRs whose head branch matches the current ref
+          pr_numbers=$(gh pr list \
+            --repo "${{ github.repository }}" \
+            --head "${{ github.ref_name }}" \
+            --state open \
+            --json number \
+            --jq '.[].number')
+
+          for pr in $pr_numbers; do
+            # Avoid duplicate comments: skip if we already posted a link
+            # for this exact commit
+            if gh pr view "$pr" \
+                 --repo "${{ github.repository }}" \
+                 --json comments \
+                 --jq '.comments[].body' \
+              | grep -qF "${{ github.sha }}"; then
+              echo "PR #${pr} already has a preview comment for this commit – skipping."
+              continue
+            fi
+
+            gh pr comment "$pr" \
+              --repo "${{ github.repository }}" \
+              --body "$(cat <<EOF
+          📖 **Preview build ready** for commit ${{ github.sha }}
+
+          | Artefact | Link |
+          |----------|------|
+          | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
+          | HTML     | [Landing page](${html_url}) |
+          EOF
+          )"
+            echo "Commented on PR #${pr}."
+          done
