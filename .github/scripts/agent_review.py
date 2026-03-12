@@ -22,10 +22,10 @@ Skills:
 
 Configuration:
   Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Claude reviewer (also preferred for specialized reviewers)
-    GEMINI_API_KEY     - enables Gemini reviewer (also used as fallback for specialized reviewers)
-    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default,
-                         also used as fallback for specialized reviewers)
+    ANTHROPIC_API_KEY  - enables Claude reviewer; preferred for specialized reviewers
+    GEMINI_API_KEY     - enables Gemini reviewer; fallback for specialized reviewers
+    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default);
+                         fallback for specialized reviewers
 
   Specialized reviewers (Accuracy, LaTeX Validator, Readability Editor) will
   run using the best available API in preference order: Anthropic > Gemini > Copilot.
