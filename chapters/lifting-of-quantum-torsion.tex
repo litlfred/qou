@@ -1,2 +1,118 @@
 \chapter{Lifting of Quantum Torsion}
 \label{chap:torsion}
+
+% ── Jet Prolongation ─────────────────────────────────────────────────────────
+
+\begin{proposition}[Jet Prolongation]
+\label{prop:jet-prolongation}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe
+(Definition~\ref{def:c-quantum-observable-universe}) with connection $A$ and
+metric $g$ on $E$.  Write $\widetilde{M} = E$ for the total space of $E$,
+viewed as a manifold, and define $E'$ as the bundle of orthonormal frames of
+the first jet bundle $J^1 E$.  Then $A$ and $g$ uniquely determine a
+connection $A'$ on $E'$ such that $(\widetilde{M}, G, E')$ is a $\mathbb{C}$
+quantum observable universe.
+\end{proposition}
+
+\begin{proof}
+% TODO: proof
+\end{proof}
+
+% ── Recursive Brane Tower ────────────────────────────────────────────────────
+
+\begin{definition}[Recursive Brane Tower]
+\label{def:recursive-brane-tower}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe
+(Definition~\ref{def:c-quantum-observable-universe}).  Set $M_0 = M$ and
+$E_1 = E$.  \emph{Inductively}, define $E_{n+1}$ as the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) of $E_n$.
+
+The \emph{brane relation} is the following recursive structure:
+\begin{enumerate}
+  \item Each total space $E_n$ is treated as the base manifold $M_{n+1}$ for
+        the next level; $E_n$ is the \emph{brane} of $E_{n+1}$.
+  \item At each level, $A_n \in \mathcal{A}(E_{n-1})$ is the $n$-th level
+        instanton connection satisfying the Hermitian Yang--Mills equations on
+        $E_n$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[First two levels]
+\label{ex:brane-tower-levels}
+Starting from a $\mathbb{C}$ quantum observable universe $(M, G, E_1)$, the
+first jet prolongation yields $E_2$ with base manifold $M_1 = E_1$.  The
+connection $A_1$ on $E_1$ satisfies the Hermitian Yang--Mills equations, and
+$A_2$ on $E_2$ is uniquely determined by
+Proposition~\ref{prop:jet-prolongation}.
+\end{example}
+
+% ── Quantum Characteristic Classes ───────────────────────────────────────────
+
+\begin{definition}[Quantum Characteristic Classes]
+\label{def:quantum-characteristic-classes}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  The \emph{quantum
+characteristic classes} are the cohomology classes
+\[
+  \kappa_n \;\in\; H^*\!\bigl(E_{n+1},\, \mathbb{Z}\bigr)
+\]
+that label the monodromy fixed points of the holonomy representation as one
+transitions from $E_n$ to $E_{n+1}$.
+\end{definition}
+
+% ── Betti numbers ────────────────────────────────────────────────────────────
+
+\begin{remark}[Betti numbers of the brane tower]
+\label{rem:betti-numbers-brane}
+Let $b_k(E_n) = \dim H^k(E_n, \mathbb{R})$ denote the $k$-th Betti number of
+$E_n$.  Since $E_{n+1}$ is the bundle of orthonormal frames of $J^1 E_n$, the
+Betti numbers of $E_{n+1}$ are determined by those of $E_n$ via the Leray--Serre
+spectral sequence applied to the fibration
+$E_{n+1} \to E_n$.  In particular, the quantum characteristic classes
+(Definition~\ref{def:quantum-characteristic-classes}) obstruct the collapse of
+this spectral sequence and control the growth of $b_k(E_{n+1})$ in terms of
+$b_k(E_n)$.
+\end{remark}
+
+% ── Direct Limit Algebra ─────────────────────────────────────────────────────
+
+\begin{definition}[$\mathbb{C}$ Quantum Observable Universe as Direct Limit]
+\label{def:direct-limit-algebra}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}) with substrate parameters $q_n$
+(Definition~\ref{def:substrate-parameter}) at each level.  The
+\emph{$\mathbb{C}$ quantum observable universe} is the direct limit algebra
+\[
+  \mathcal{A}_\infty
+  \;=\;
+  \varinjlim\,
+  \Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).
+\]
+\end{definition}
+
+% ── Jet Shell ────────────────────────────────────────────────────────────────
+
+\begin{remark}[Jet Shell of the universe]
+\label{rem:jet-shell}
+In the limit $n \to \infty$, the infinite jet bundle
+$J^\infty E = \varprojlim\, J^k E$ becomes the \emph{jet shell} of the
+universe.  All finite-level brane data are encoded in this pro-finite
+structure, and the algebra $\mathcal{A}_\infty$
+(Definition~\ref{def:direct-limit-algebra}) acts naturally on sections of the
+jet shell.
+\end{remark}
+
+% ── Vacuum State ─────────────────────────────────────────────────────────────
+
+\begin{remark}[The Vacuum State]
+\label{rem:vacuum-state}
+The \emph{physical vacuum} is a state
+$\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ on the direct limit algebra
+(Definition~\ref{def:direct-limit-algebra}) that is invariant under the global
+$\mathrm{SU}(2)$ action and the recursive $q$-deformations:
+\[
+  \omega(g \cdot a) = \omega(a)
+  \quad\text{for all } g \in \mathrm{SU}(2),\;
+  a \in \mathcal{A}_\infty.
+\]
+\end{remark}
