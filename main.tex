@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{report}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{ccicons}          % CC icon glyphs
+
+\geometry{margin=1in}
+
+% ── Theorem environments ───────────────────────────────────────────────────────
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% ── Metadata ──────────────────────────────────────────────────────────────────
+\title{Quantum Observable Universe}
+\author{Frederick Carl Leitner\\World Health Organization}
+\date{\today}
+
+\hypersetup{
+  pdftitle  = {Quantum Observable Universe},
+  pdfauthor = {Frederick Carl Leitner},
+  colorlinks = true,
+  linkcolor  = blue,
+  citecolor  = blue,
+  urlcolor   = blue,
+}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+\maketitle
+
+% ── License notice ────────────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+  \ccby\\[0.5em]
+  This work is licensed under a
+  \href{https://creativecommons.org/licenses/by/4.0/}{%
+    Creative Commons Attribution 4.0 International License}.\\[0.3em]
+  You are free to share and adapt this material for any purpose,\\
+  provided appropriate credit is given, a link to the license is provided,\\
+  and any changes made are indicated.
+\end{center}
+\vspace*{\fill}
+\newpage
+
+% ── Table of contents ─────────────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ── Abstract ──────────────────────────────────────────────────────────────────
+\begin{abstract}
+This paper presents a mathematical framework for the Quantum Observable
+Universe (QOU).  We introduce the notion of quantum torsion in this setting,
+study its lifting to higher categorical structures, and examine the resulting
+interpretational and experimental consequences.  Speculative extensions are
+discussed in the final chapter.
+\end{abstract}
+
+% ── Chapters ──────────────────────────────────────────────────────────────────
+\input{chapters/quantum-observable-universe}
+\input{chapters/lifting-of-quantum-torsion}
+\input{chapters/interpretations}
+\input{chapters/experimental-evidence}
+\input{chapters/speculations}
+
+% ── Bibliography ──────────────────────────────────────────────────────────────
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
