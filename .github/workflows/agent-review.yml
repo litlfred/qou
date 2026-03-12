@@ -1,0 +1,54 @@
+name: Agent Review
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Get commit diff
+        id: diff
+        run: |
+          DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' || git diff --root HEAD -- . ':(exclude).github')
+          echo "diff<<DIFF_EOF" >> "$GITHUB_OUTPUT"
+          echo "$DIFF" | head -c 50000
+          echo "DIFF_EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Get commit info
+        id: commit
+        run: |
+          echo "message=$(git log -1 --pretty=%s)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "author=$(git log -1 --pretty=%an)" >> "$GITHUB_OUTPUT"
+
+      - name: Run agent review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_DIFF: ${{ steps.diff.outputs.diff }}
+          COMMIT_MESSAGE: ${{ steps.commit.outputs.message }}
+          COMMIT_SHA: ${{ steps.commit.outputs.sha }}
+          COMMIT_AUTHOR: ${{ steps.commit.outputs.author }}
+          REPO_NAME: ${{ github.repository }}
+        run: python .github/scripts/agent_review.py
+
