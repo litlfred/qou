@@ -22,7 +22,7 @@ Skills:
 
 Configuration:
   Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Claude, Accuracy, LaTeX, and Readability reviewers
+    ANTHROPIC_API_KEY  - enables Accuracy, LaTeX, Readability, and Claude reviewers
     GEMINI_API_KEY     - enables Gemini reviewer
     GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default)
 """
