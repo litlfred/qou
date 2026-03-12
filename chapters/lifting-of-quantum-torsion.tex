@@ -112,27 +112,50 @@ The adjoint bundle $\mathrm{ad}\, E_n$ has fibre $\mathfrak{su}(2)$.  Via the
 weight-space decomposition of $\mathrm{SU}(2)$, the harmonic basis of
 $\mathcal{H}^1(E_n,\, \mathrm{ad}\, E_n)$ splits into two families.
 
-\emph{Longitudinal modes (the $\mathrm{U}(1)$ backbone).}
-These forms take values in the Cartan subalgebra of $\mathfrak{su}(2)$ and
-have the geometric form $\omega^0 \otimes H$, where $H$ is the diagonal
-generator.  They represent steady-state laminar flows aligned with the
-$\mathrm{U}(1)$ subgroup.  If the bundle splits at a monodromy fixed point,
-these are the only modes that survive; they correspond to the magnetic flux of
-the stable vortices.
+\emph{Longitudinal modes.}
+These forms constitute the $\mathrm{U}(1)$ backbone of the decomposition.
+They take values in the Cartan subalgebra of $\mathfrak{su}(2)$ and have the
+geometric form $\omega^0 \otimes H$, where $H$ is the diagonal generator.
+They represent steady-state laminar flows aligned with the $\mathrm{U}(1)$
+subgroup.  If the bundle splits at a monodromy fixed point, these are the only
+modes that survive; they correspond to the magnetic flux of the stable
+vortices.
 
-\emph{Ladder modes (raising and lowering vortices).}
-These forms take values in the off-diagonal generators $E_\pm$ of
-$\mathfrak{su}(2)$ and have the geometric form $\omega^\pm \otimes E_\pm$.
-They describe the entangling flows that twist the $\mathbb{CP}^1$ fibre as
-one moves along the brane.  These modes are responsible for the
-non-commutativity in the $\mathrm{SU}_q(2)$ algebra
-(Definition~\ref{def:direct-limit-algebra}).
+\emph{Ladder modes.}
+These are the raising and lowering vortices of the decomposition.  They take
+values in the off-diagonal generators $E_\pm$ of $\mathfrak{su}(2)$ and have
+the geometric form $\omega^\pm \otimes E_\pm$.  They describe the entangling
+flows that twist the $\mathbb{CP}^1$ fibre as one moves along the brane.
+These modes are responsible for the non-commutativity in the
+$\mathrm{SU}_q(2)$ algebra (Definition~\ref{def:direct-limit-algebra}).
 
 In the $1$-jet bundle $J^1 E_n$
 (Remark~\ref{rem:j1e-local-states}), each basis element $\alpha$ is a pair
 consisting of a \emph{value} (the direction of the $\mathrm{SU}(2)$ flow in
 the fibre) and a \emph{momentum} (the gradient of that flow relative to the
 complex structure of the brane).
+\end{remark}
+
+% ── Algebraic filter ─────────────────────────────────────────────────────────
+
+\begin{remark}[The algebraic filter]
+\label{rem:algebraic-filter}
+Let $\alpha$ be a harmonic $1$-form in the basis of
+Remark~\ref{rem:q-harmonic-basis-brane}.  Its \emph{signature} is determined
+by its commutator with the curvature $F_A$
+(Definition~\ref{def:substrate-parameter}).
+
+\emph{Fermionic type (matter).}
+$[F_A,\, \alpha] \neq 0$.  These forms are entangled with the curvature: they
+see the $\mathrm{SO}(3)$ holonomy and the $-6$ index fixed points.  Their
+geodesics are trapped or spiralling around the three fundamental vortex
+filaments.
+
+\emph{Bosonic type (radiation).}
+$[F_A,\, \alpha] = 0$.  These forms commute with the curvature.  They are the
+longitudinal modes (Remark~\ref{rem:weight-space-decomposition}) that flow
+through the bulk without being deflected by the monodromy fixed points.  Their
+geodesics are straight relative to the gauge-fluid flow.
 \end{remark}
 
 % ── Distributional connection ────────────────────────────────────────────────
