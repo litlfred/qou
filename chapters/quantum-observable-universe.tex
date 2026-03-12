@@ -170,6 +170,19 @@ parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 deforming the structure group $G = \mathrm{SU}(2)$ at the parameter $q$.
 \end{definition}
 
+\begin{definition}[Quantum Planck Constant]
+\label{def:quantum-planck-constant}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
+\emph{quantum Planck constant} is the function
+$\hbar_q \colon M \to \mathbb{R}$ defined by
+\[
+  \hbar_q(p) \;=\; 1 - q(p), \qquad p \in M.
+\]
+As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
+vanish; as $q(p) \to 0$ (deep-quantum regime), $\hbar_q(p) \to 1$.
+\end{definition}
+
 \begin{remark}[$J^1E$ as the space of local states]
 \label{rem:j1e-local-states}
 The jet bundle $J^1 E$ serves as the space of local states of the
@@ -354,12 +367,12 @@ of parallel transport along the connection $A$.
 For a section $\psi \in \Gamma(E)$, the Schr\"odinger dynamics are found in
 the kernel of the $q$-deformed covariant derivative on $J^1 E$:
 \[
-  i\,\hbar_{\mathrm{eff}}(p)\, D_A \psi \;=\; \hat{H}_q\, \psi,
+  i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\, \psi,
 \]
 where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
 \begin{itemize}
-  \item $\hbar_{\mathrm{eff}}(p) = 1 - q(p)$: the Planck constant is a local
-        field;
+  \item $\hbar_q(p) = 1 - q(p)$: the quantum Planck constant
+        (Definition~\ref{def:quantum-planck-constant}) is a local field;
   \item $D_A = d + A$: the connection $A$ (the instanton) acts as the
         potential.
 \end{itemize}
