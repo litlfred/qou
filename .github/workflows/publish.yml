@@ -1,0 +1,142 @@
+# Build the LaTeX paper (PDF + Markdown + HTML) and publish to gh-pages.
+#
+# Triggers
+# ─────────
+#   push            – every commit to every branch
+#   workflow_dispatch – manual run; optionally override the publish target branch
+#
+# Published artefacts (deployed to the target branch, default: gh-pages)
+# ────────────────────────────────────────────────────────────────────────
+#   quantum-observable-universe.pdf   compiled PDF
+#   quantum-observable-universe.md    Pandoc GitHub-Flavoured Markdown
+#   index.html                        HTML landing page (MathJax equations)
+#   style.css                         stylesheet for the landing page
+
+name: Build & Publish
+
+on:
+  push:                   # every commit on every branch
+  workflow_dispatch:
+    inputs:
+      publish_branch:
+        description: >
+          Branch to push the built artefacts to.
+          Leave blank to use the default (gh-pages).
+        required: false
+        default: 'gh-pages'
+        type: string
+
+permissions:
+  contents: write         # required to push to the gh-pages branch
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 0. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # ── 1. Compile LaTeX → PDF ─────────────────────────────────────────────
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
+      - name: Install pandoc and latexpand
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-extra-utils
+
+      - name: Flatten \input includes into a single file
+        run: latexpand main.tex > main-flat.tex
+
+      - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
+        run: |
+          pandoc main-flat.tex \
+            --from=latex \
+            --to=gfm+tex_math_dollars \
+            --standalone \
+            --wrap=none \
+            --output=quantum-observable-universe.md \
+            || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
+                 pandoc main-flat.tex \
+                   --from=latex \
+                   --to=gfm \
+                   --standalone \
+                   --wrap=none \
+                   --output=quantum-observable-universe.md \
+                   || echo "::warning::pandoc Markdown conversion failed; a stub will be used"; }
+
+          # Safety net: if pandoc produced nothing, create a minimal stub
+          if [ ! -s quantum-observable-universe.md ]; then
+            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](quantum-observable-universe.pdf).\n' \
+              > quantum-observable-universe.md
+          fi
+
+      # ── 3. Assemble gh-pages site ──────────────────────────────────────────
+      - name: Assemble site artefacts
+        run: |
+          mkdir -p _site
+
+          cp main.pdf                         _site/quantum-observable-universe.pdf
+          cp quantum-observable-universe.md   _site/quantum-observable-universe.md
+
+          # Stylesheet
+          cat > _site/style.css << 'CSS'
+          body    { max-width: 860px; margin: 2rem auto; font-family: Georgia, serif;
+                    line-height: 1.65; padding: 0 1.2rem; color: #222; }
+          h1,h2,h3,h4 { font-family: "Helvetica Neue", Helvetica, sans-serif; }
+          a       { color: #0055cc; }
+          pre     { background: #f6f8fa; padding: .8em 1em; overflow-x: auto;
+                    border-radius: 4px; }
+          code    { font-size: 90%; }
+          .downloads { margin: 1.5rem 0; }
+          .downloads a { margin-right: 1rem; font-weight: bold; }
+          CSS
+
+          # HTML landing page with MathJax-rendered equations
+          pandoc quantum-observable-universe.md \
+            --from=gfm+tex_math_dollars \
+            --to=html5 \
+            --standalone \
+            --mathjax \
+            --css=style.css \
+            --metadata title="Quantum Observable Universe" \
+            --output=_site/index.html \
+            || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
+
+          # Fallback landing page if pandoc HTML conversion failed
+          if [ ! -s _site/index.html ]; then
+            cat > _site/index.html << 'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <title>Quantum Observable Universe</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+            <h1>Quantum Observable Universe</h1>
+            <div class="downloads">
+              <a href="quantum-observable-universe.pdf">Download PDF</a>
+              <a href="quantum-observable-universe.md">View Markdown</a>
+            </div>
+          </body>
+          </html>
+          HTML
+          fi
+
+      # ── 4. Deploy to target branch ─────────────────────────────────────────
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site
+          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
+          commit_message: >
+            docs: publish from ${{ github.ref_name }}@${{ github.sha }}
