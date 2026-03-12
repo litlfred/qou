@@ -7,10 +7,17 @@
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
-#   quantum-observable-universe.pdf   compiled PDF
-#   quantum-observable-universe.md    Pandoc GitHub-Flavoured Markdown
-#   index.html                        HTML landing page (MathJax equations)
-#   style.css                         stylesheet for the landing page
+#   quantum-observable-universe.pdf        compiled PDF
+#   quantum-observable-universe-diff.pdf   latexdiff vs main (feature branches only)
+#   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown
+#   index.html                             HTML landing page (MathJax equations)
+#   style.css                              stylesheet for the landing page
+#
+# Preview builds
+# ──────────────
+#   Pushes to the main branch deploy to the root of gh-pages.
+#   Pushes to any other branch deploy to  drafts/<branch-name>/  so that
+#   every feature branch / PR gets its own preview URL.
 
 name: Build & Publish
 
@@ -26,8 +33,13 @@ on:
         default: 'gh-pages'
         type: string
 
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
-  contents: write         # required to push to the gh-pages branch
+  contents:       write   # required to push to the gh-pages branch
+  pull-requests:  write   # required to comment on PRs with preview URLs
 
 jobs:
   build-and-publish:
@@ -38,6 +50,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
+      - name: Fetch main branch for diff
+        if: github.ref_name != 'main'
+        run: git fetch origin main
+
       # ── 1. Compile LaTeX → PDF ─────────────────────────────────────────────
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
@@ -45,12 +61,13 @@ jobs:
           root_file: main.tex
 
       # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
-      - name: Install pandoc and latexpand
+      - name: Install pandoc, latexpand and latexdiff
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             pandoc \
-            texlive-extra-utils
+            texlive-extra-utils \
+            latexdiff
 
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
@@ -78,6 +95,18 @@ jobs:
               > quantum-observable-universe.md
           fi
 
+      # ── 2b. Generate diff against main (feature branches only) ────────────
+      - name: Generate latexdiff against main
+        if: github.ref_name != 'main'
+        run: bash .github/scripts/generate-diff.sh
+
+      - name: Compile diff PDF
+        if: github.ref_name != 'main'
+        continue-on-error: true
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: diff.tex
+
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
         run: |
@@ -85,6 +114,11 @@ jobs:
 
           cp main.pdf                         _site/quantum-observable-universe.pdf
           cp quantum-observable-universe.md   _site/quantum-observable-universe.md
+
+          # Include diff PDF for feature-branch builds
+          if [ -f diff.pdf ]; then
+            cp diff.pdf _site/quantum-observable-universe-diff.pdf
+          fi
 
           # Stylesheet
           cat > _site/style.css << 'CSS'
@@ -135,11 +169,77 @@ jobs:
       # peaceiris/actions-gh-pages automatically creates the publish_branch
       # (default: gh-pages) if it does not already exist, so no manual
       # branch-creation step is required.
+      #
+      # Feature-branch builds are placed under  drafts/<branch>/  so that
+      # every open PR gets its own preview URL without overwriting the main
+      # site.  keep_files is enabled so that main deployments preserve the
+      # drafts directory and feature-branch deployments preserve each other.
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:    ./_site
           publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
+          destination_dir: ${{ github.ref_name != 'main' && format('drafts/{0}', github.ref_name) || '' }}
+          keep_files:     true
           commit_message: >
             docs: publish from ${{ github.ref_name }}@${{ github.sha }}
+
+      # ── 5. Comment on PR with preview URL ─────────────────────────────────
+      - name: Comment preview link on PR
+        if: github.ref_name != 'main'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Derive the GitHub Pages base URL from the repository metadata
+          pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          pdf_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe.pdf"
+          diff_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe-diff.pdf"
+          html_url="${pages_url}/drafts/${{ github.ref_name }}/"
+
+          # Repository source links (useful when repo is private)
+          repo_url="https://github.com/${{ github.repository }}"
+          branch_url="${repo_url}/tree/${{ github.ref_name }}"
+          commit_url="${repo_url}/commit/${{ github.sha }}"
+
+          # Find open PRs whose head branch matches the current ref
+          pr_numbers=$(gh pr list \
+            --repo "${{ github.repository }}" \
+            --head "${{ github.ref_name }}" \
+            --state open \
+            --json number \
+            --jq '.[].number')
+
+          for pr in $pr_numbers; do
+            # Avoid duplicate comments: skip if we already posted a link
+            # for this exact commit
+            if gh pr view "$pr" \
+                 --repo "${{ github.repository }}" \
+                 --json comments \
+                 --jq '.comments[].body' \
+              | grep -qF "${{ github.sha }}"; then
+              echo "PR #${pr} already has a preview comment for this commit – skipping."
+              continue
+            fi
+
+            gh pr comment "$pr" \
+              --repo "${{ github.repository }}" \
+              --body "$(cat <<EOF
+          📖 **Preview build ready** for commit \`${{ github.sha }}\`
+
+          **Published (gh-pages)**
+          | Artefact | Link |
+          |----------|------|
+          | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
+          | Diff PDF | [quantum-observable-universe-diff.pdf](${diff_url}) |
+          | HTML     | [Landing page](${html_url}) |
+
+          **Source (repo)**
+          | Resource | Link |
+          |----------|------|
+          | Branch   | [${{ github.ref_name }}](${branch_url}) |
+          | Commit   | [\`$(echo "${{ github.sha }}" | cut -c1-7)\`](${commit_url}) |
+          EOF
+          )"
+            echo "Commented on PR #${pr}."
+          done
