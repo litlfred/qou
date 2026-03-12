@@ -1,0 +1,72 @@
+\chapter{Lifting of Quantum Torsion}
+\label{chap:torsion}
+
+% ── Introduction ──────────────────────────────────────────────────────────────
+\section{Introduction}
+\label{sec:torsion-intro}
+
+Torsion is a classical differential-geometric concept measuring the failure of
+a connection to be symmetric.  In this chapter we introduce a quantum analogue,
+\emph{quantum torsion}, and study its \emph{lifting} to higher-categorical and
+operator-algebraic structures within the QOU framework developed in
+Chapter~\ref{chap:qou}.
+
+% ── Quantum Torsion ───────────────────────────────────────────────────────────
+\section{Quantum Torsion}
+\label{sec:quantum-torsion}
+
+\begin{definition}[Quantum Connection]
+  A \emph{quantum connection} on a Hilbert bundle
+  $\mathcal{E} \to \mathcal{M}$ is a $\mathbb{C}$-linear map
+  $\nabla: \Gamma(\mathcal{E}) \to \Gamma(T^*\mathcal{M} \otimes \mathcal{E})$
+  satisfying the Leibniz rule with respect to the $C^\infty(\mathcal{M})$
+  module structure.
+\end{definition}
+
+\begin{definition}[Quantum Torsion Tensor]
+  The \emph{quantum torsion tensor} $\mathcal{T}^\nabla$ associated to a
+  quantum connection $\nabla$ is defined by
+  \begin{equation}
+    \mathcal{T}^\nabla(X, Y)
+    = \nabla_X Y - \nabla_Y X - [X, Y],
+    \quad X, Y \in \Gamma(T\mathcal{M}).
+    \label{eq:torsion}
+  \end{equation}
+\end{definition}
+
+% ── Lifting ───────────────────────────────────────────────────────────────────
+\section{Lifting to Higher Structures}
+\label{sec:lifting}
+
+% TODO: define the lifting functor and prove its existence.
+
+\begin{definition}[Torsion Lifting]
+  Let $\mathcal{C}$ be a monoidal category of quantum field configurations.
+  A \emph{torsion lifting} is a functor
+  $\mathcal{L}: \mathcal{C} \to \mathcal{C}^{(2)}$
+  to the two-categorical extension $\mathcal{C}^{(2)}$ such that the torsion
+  tensor $\mathcal{T}^\nabla$ lifts coherently along $\mathcal{L}$.
+\end{definition}
+
+\begin{theorem}[Existence of Torsion Lifting]
+  \label{thm:lifting-exists}
+  Under suitable curvature conditions on $\nabla$, the torsion lifting
+  $\mathcal{L}$ exists and is unique up to natural isomorphism.
+\end{theorem}
+\begin{proof}
+  % TODO: complete the proof.
+\end{proof}
+
+% ── Algebraic Properties ──────────────────────────────────────────────────────
+\section{Algebraic Properties of the Lifted Torsion}
+\label{sec:torsion-algebra}
+
+% TODO: explore the algebraic consequences of the lifting, including
+%       commutation relations and spectral theory.
+
+% ── Summary ───────────────────────────────────────────────────────────────────
+\section{Summary}
+\label{sec:torsion-summary}
+
+% TODO: summarize the lifting construction and its significance for
+%       interpretations discussed in Chapter~\ref{chap:interpretations}.
