@@ -1,2 +1,83 @@
 \chapter{Lifting of Quantum Torsion}
 \label{chap:torsion}
+
+%% ── Jet Prolongation ────────────────────────────────────────────────────────
+
+\begin{proposition}[Jet Prolongation]
+\label{prop:jet-prolongation}
+Let $(E,\pi,M,A,g)$ be a Quantum Observable Universe.  Define
+$E' \to E$ as the bundle of orthonormal frames of the $1$-jet bundle
+$J^{1}E$.  Then the connection $A$ and the metric $g$ on $E$ uniquely
+determine a connection $A'$ and a metric $g'$ on $E'$ such that
+$(E',\pi',E,A',g')$ is a $\mathbb{C}$-QOU on the manifold~$E$.
+\end{proposition}
+
+\begin{proof}
+% TODO: proof
+\end{proof}
+
+%% ── Recursive Tower and Brane Relation ──────────────────────────────────────
+
+\begin{definition}[Recursive QOU Tower]
+\label{def:recursive-tower}
+Given a $\mathbb{C}$-QOU with total space $E$, set $M_0 = M$ and
+$E_1 = E$.  Inductively define $E_{n+1}$ as the jet prolongation of $E_n$
+(Proposition~\ref{prop:jet-prolongation}).
+
+\medskip\noindent\textbf{Brane Relation.}
+Each total space $E_n$ is treated as the base manifold $M_{n+1}$ for the
+next level: $E_n$ is the \emph{brane} of $E_{n+1}$.  The connection
+$A_n \in \mathcal{A}(E_{n-1})$ is the $n$-th level instanton satisfying
+the Hermitian--Yang--Mills equations on $M_n$.
+\end{definition}
+
+%% ── Quantum Characteristic Classes ──────────────────────────────────────────
+
+\begin{definition}[Quantum Characteristic Classes]
+\label{def:quantum-char-classes}
+For each level $n$, the \emph{quantum characteristic classes} are the
+cohomological invariants that label the monodromy fixed points arising in
+the transition from $E_n$ to $E_{n+1}$.
+\end{definition}
+
+%% ── Betti Numbers ───────────────────────────────────────────────────────────
+
+\begin{remark}[Betti Numbers of the Tower]
+\label{rem:betti-numbers}
+The Betti numbers $b_k(E_{n+1})$ of each successive total space are
+determined by the Betti numbers of $E_n$ together with the topology of the
+fibre of $E_{n+1} \to E_n$.
+\end{remark}
+
+%% ── Direct Limit Algebra ────────────────────────────────────────────────────
+
+\begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
+\label{def:c-qou-direct-limit}
+The \emph{$\mathbb{C}$ Quantum Observable Universe} is the direct limit
+algebra
+\[
+  \mathcal{A}_\infty
+  \;=\;
+  \varinjlim\,
+  \Gamma\!\bigl(J^{1}E_n,\, \mathrm{SU}_{q_n}(2)\bigr),
+\]
+taken over the recursive tower of Definition~\ref{def:recursive-tower}.
+\end{definition}
+
+%% ── Jet Shell ───────────────────────────────────────────────────────────────
+
+\begin{remark}[Jet Shell]
+\label{rem:jet-shell}
+In the limit $n \to \infty$, the infinite jet bundle $J^{\infty}E$ becomes
+the \emph{jet shell} of the universe: a pro-finite-dimensional manifold
+encoding the entirety of the recursive QOU tower.
+\end{remark}
+
+%% ── Vacuum State ────────────────────────────────────────────────────────────
+
+\begin{remark}[The Vacuum State]
+\label{rem:vacuum-state}
+The physical vacuum is a state $\omega$ on $\mathcal{A}_\infty$ that is
+invariant under both the global $\mathrm{SU}(2)$ action and the recursive
+$q$-deformations $q_n \to q_{n+1}$.
+\end{remark}
