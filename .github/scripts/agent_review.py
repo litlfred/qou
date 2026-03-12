@@ -5,18 +5,36 @@ A review coordinator that orchestrates multiple AI reviewers to provide
 feedback on commits to main. Reviews are synthesized into a summary
 GitHub issue identifying common criticisms and actionable feedback.
 
-Reviewers:
-  - Accuracy Reviewer (Claude): Scientific and mathematical rigor checks
-    using methodology from K-Dense-AI/claude-scientific-skills.
-  - Claude Reviewer: General code and content review via Anthropic API.
-  - Gemini Reviewer: General code and content review via Google Gemini API.
-  - GitHub Copilot Reviewer: General code and content review via GitHub Models API.
+Architecture:
+  Every available LLM runs every specialized review type.  A coordinator
+  agent then synthesizes the results across all reviewers and LLMs.
+
+Review types:
+  - Accuracy: Scientific and mathematical rigor checks using methodology
+    from K-Dense-AI/claude-scientific-skills.
+  - LaTeX Validator: Validates LaTeX syntax, environment usage, label
+    conventions, and cross-references.
+  - Readability Editor: Evaluates narrative flow, definition hygiene,
+    spelling, grammar, and prose clarity.
+
+LLMs (each runs every review type when its key is configured):
+  - Claude (Anthropic)
+  - Gemini (Google)
+  - Copilot / OpenAI (GitHub Models)
+
+Skills:
+  Skill definitions for the specialized reviewers are stored in
+  .claude/skills/ and inform the system prompts used here.
 
 Configuration:
-  Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Claude and Accuracy reviewers
-    GEMINI_API_KEY     - enables Gemini reviewer
-    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default)
+  Set the following repository secrets to enable each LLM:
+    ANTHROPIC_API_KEY  - enables Claude
+    GEMINI_API_KEY     - enables Gemini
+    GITHUB_TOKEN       - enables Copilot (provided by default in GitHub Actions)
+
+  Every configured LLM participates in every review type.  The coordinator
+  synthesizes results across all LLMs and review types, identifying common
+  themes and contradictions.
 """
 
 import os
@@ -85,18 +103,86 @@ Provide your review as structured feedback with:
 - **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
-GENERAL_REVIEW_SYSTEM = """You are an expert code and content reviewer. Provide a
-thorough review of the following commit diff. Focus on:
+LATEX_REVIEW_SYSTEM = """You are a LaTeX validation reviewer. Your role is to check
+commits containing LaTeX source for syntactic correctness, structural consistency,
+and adherence to project conventions.
 
-1. **Correctness**: Logic errors, bugs, or incorrect behavior.
-2. **Security**: Potential vulnerabilities, secret exposure, injection risks.
-3. **Performance**: Inefficiencies, unnecessary complexity, scalability concerns.
-4. **Maintainability**: Code clarity, naming, documentation, modularity.
-5. **Best Practices**: Adherence to language/framework conventions and standards.
+## Review Methodology
+
+### 1. Syntax Correctness
+- Every \\begin{env} has a matching \\end{env}.
+- Braces {}, brackets [], and parentheses () are balanced.
+- No undefined control sequences (commands must come from a declared package or
+  the preamble).
+- Math mode delimiters ($...$, \\(...\\), \\[...\\]) are properly paired.
+
+### 2. Environment Usage
+- Theorem-like environments (theorem, lemma, proposition, corollary, definition,
+  example, remark, conjecture) are used only as declared in main.tex and are never
+  redeclared in chapter files.
+- Display math uses `equation` or `align` environments — never $$...$$.
+
+### 3. Label Conventions
+- Every labeled item uses the correct prefix:
+  chap: for chapters, sec:/ssec: for (sub)sections,
+  def:/thm:/lem:/prop:/cor:/ex:/rem:/conj: for theorem-like environments,
+  eq: for equations, fig: for figures, tab: for tables.
+- Every theorem-like environment and every numbered equation carries a \\label{}.
+
+### 4. Cross-References
+- \\ref and \\eqref targets correspond to existing \\label commands.
+- Non-breaking spaces (~) precede \\ref and \\eqref.
+
+### 5. Bibliography
+- Every \\cite{key} key appears in references.bib.
+- BibTeX keys follow the <firstauthorlastname><year> convention.
 
 ## Output Format
 Provide your review as structured feedback with:
-- **Summary**: One-paragraph overall assessment.
+- **Summary**: One-paragraph assessment of LaTeX correctness.
+- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Suggestions**: Numbered list of improvements.
+- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+"""
+
+READABILITY_REVIEW_SYSTEM = """You are a readability editor. Your role is to review
+LaTeX manuscripts for narrative clarity, prose quality, and editorial polish. You
+are less concerned with mathematical correctness and more concerned with how well
+the text communicates ideas to a graduate-level reader.
+
+## Review Methodology
+
+### 1. Narrative Flow
+- Sections and subsections follow a logical progression.
+- Transitions between paragraphs and sections are smooth.
+- The reader is never left wondering why a topic is introduced.
+
+### 2. Definition Hygiene
+- Definitions are concise and self-contained.
+- Each definition introduces exactly one concept.
+- Technical terms are introduced with \\emph{} on first use and are not re-defined.
+- Every non-trivial definition is followed by at least one example.
+
+### 3. Spelling and Grammar
+- Identify misspelled words (including common LaTeX-adjacent typos).
+- Flag grammatical errors: subject-verb agreement, dangling modifiers, comma
+  splices, run-on sentences.
+- Enforce formal academic English: no contractions, no first-person singular,
+  Oxford comma.
+
+### 4. Sentence-Level Clarity
+- Flag overly long or convoluted sentences.
+- Suggest simpler alternatives where meaning is preserved.
+- Sentences must not begin with a mathematical symbol.
+
+### 5. Consistency
+- Notation introduced in one section is used consistently throughout.
+- Acronyms are expanded on first use and used bare thereafter.
+- Displayed equations ending a sentence include a period inside the environment.
+
+## Output Format
+Provide your review as structured feedback with:
+- **Summary**: One-paragraph assessment of readability and prose quality.
 - **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
 - **Suggestions**: Numbered list of improvements.
 - **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
@@ -218,33 +304,52 @@ def call_copilot(system_prompt, user_prompt, model=COPILOT_MODEL):
     return data["choices"][0]["message"]["content"]
 
 
+def call_all_llms(system_prompt, user_prompt):
+    """Call every available LLM and return a dict of {provider_name: response}.
+
+    Used by specialized reviewers so that each review type gets independent
+    perspectives from every configured LLM.
+    """
+    results = {}
+    if ANTHROPIC_API_KEY:
+        try:
+            results["Claude"] = call_anthropic(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Claude call failed: {exc}")
+    if GEMINI_API_KEY:
+        try:
+            results["Gemini"] = call_gemini(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Gemini call failed: {exc}")
+    if GITHUB_TOKEN:
+        try:
+            results["Copilot"] = call_copilot(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Copilot call failed: {exc}")
+    return results
+
+
 # ---------------------------------------------------------------------------
 # Review runners
 # ---------------------------------------------------------------------------
 
 
 def run_accuracy_review(user_prompt):
-    """Run the scientific accuracy review via Claude."""
-    print("🔬 Running accuracy review (Claude) ...")
-    return call_anthropic(ACCURACY_REVIEW_SYSTEM, user_prompt)
+    """Run the scientific accuracy review via all available LLMs."""
+    print("🔬 Running accuracy review ...")
+    return call_all_llms(ACCURACY_REVIEW_SYSTEM, user_prompt)
 
 
-def run_claude_review(user_prompt):
-    """Run the general Claude review."""
-    print("🟣 Running Claude review ...")
-    return call_anthropic(GENERAL_REVIEW_SYSTEM, user_prompt)
+def run_latex_review(user_prompt):
+    """Run the LaTeX validation review via all available LLMs."""
+    print("📐 Running LaTeX validation review ...")
+    return call_all_llms(LATEX_REVIEW_SYSTEM, user_prompt)
 
 
-def run_gemini_review(user_prompt):
-    """Run the general Gemini review."""
-    print("🔵 Running Gemini review ...")
-    return call_gemini(GENERAL_REVIEW_SYSTEM, user_prompt)
-
-
-def run_copilot_review(user_prompt):
-    """Run the GitHub Copilot review."""
-    print("🟢 Running GitHub Copilot review ...")
-    return call_copilot(GENERAL_REVIEW_SYSTEM, user_prompt)
+def run_readability_review(user_prompt):
+    """Run the readability editing review via all available LLMs."""
+    print("📖 Running readability review ...")
+    return call_all_llms(READABILITY_REVIEW_SYSTEM, user_prompt)
 
 
 # ---------------------------------------------------------------------------
@@ -322,35 +427,17 @@ def main():
 
     reviews = {}
 
-    # Accuracy reviewer (requires Anthropic key)
-    if ANTHROPIC_API_KEY:
-        try:
-            reviews["Accuracy Reviewer (Scientific Rigor)"] = run_accuracy_review(
-                user_prompt
-            )
-        except Exception as exc:
-            print(f"⚠️  Accuracy review failed: {exc}")
+    # Each review type runs on ALL available LLMs.
+    review_types = [
+        ("Accuracy (Scientific Rigor)", run_accuracy_review),
+        ("LaTeX Validator", run_latex_review),
+        ("Readability Editor", run_readability_review),
+    ]
 
-    # Claude general reviewer
-    if ANTHROPIC_API_KEY:
-        try:
-            reviews["Claude Reviewer"] = run_claude_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  Claude review failed: {exc}")
-
-    # Gemini reviewer
-    if GEMINI_API_KEY:
-        try:
-            reviews["Gemini Reviewer"] = run_gemini_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  Gemini review failed: {exc}")
-
-    # GitHub Copilot reviewer
-    if GITHUB_TOKEN:
-        try:
-            reviews["GitHub Copilot Reviewer"] = run_copilot_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  GitHub Copilot review failed: {exc}")
+    for label, runner in review_types:
+        results = runner(user_prompt)
+        for provider, content in results.items():
+            reviews[f"{label} ({provider})"] = content
 
     if not reviews:
         print("No API keys configured — no reviews to run.")
