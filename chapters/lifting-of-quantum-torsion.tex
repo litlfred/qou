@@ -91,8 +91,9 @@ connection $A_n$
   \quad\text{and}\quad
   d_{A_n}^*\,\alpha = 0,
 \]
-where the Hodge-star operator is defined by the Levi form $L$
-(Definition~\ref{def:substrate-parameter}).
+where the Hodge-star operator is induced by the Hermitian metric that the
+Levi form $L$ (Definition~\ref{def:substrate-parameter}) defines on the
+horizontal distribution.
 The index $i$ runs over $1 \leq i \leq b_1(E_n)$
 (Remark~\ref{rem:betti-numbers-brane}).
 
@@ -236,10 +237,11 @@ algebra (Definition~\ref{def:direct-limit-algebra}) across the fibres.
 \label{def:mass-identity}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}), connection $A$, Levi
-form $L$, and self-dual curvature $F^+$.  The \emph{inertial mass} $m$ of a
-stable vortex is
+form $L$, and self-dual curvature $F^+$.  Let $\gamma$ be a closed cycle
+encircling the vortex filament.  The \emph{inertial mass} $m$ of a stable
+vortex is
 \[
-  m \;\propto\; \oint \lVert \nabla_A\, q \rVert
+  m \;\propto\; \oint_\gamma \lVert \nabla_A\, q \rVert
                \cdot \lVert L \wedge F^+ \rVert\,.
 \]
 \end{definition}
