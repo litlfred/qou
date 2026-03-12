@@ -63,9 +63,8 @@ echo "::endgroup::"
 # and keep sout (strikethrough) for deletions.
 echo "::group::Patch diff colours"
 
-# Added text: blue → dark green, remove wavy underline
-sed -i 's/\\color{blue}/\\color[rgb]{0,0.5,0}/g'       diff.tex
-sed -i 's/\\color{BLUE}/\\color[rgb]{0,0.5,0}/g'       diff.tex
+# Added text: blue → dark green (case-insensitive to catch both \color{blue} and \color{BLUE})
+sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color[rgb]{0,0.5,0}/g'   diff.tex
 
 # If CFONT type colour definitions are present, override BLUE
 sed -i 's/\\definecolor{BLUE}{rgb}{0,0,1}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
