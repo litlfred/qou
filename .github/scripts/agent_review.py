@@ -5,32 +5,36 @@ A review coordinator that orchestrates multiple AI reviewers to provide
 feedback on commits to main. Reviews are synthesized into a summary
 GitHub issue identifying common criticisms and actionable feedback.
 
-Reviewers:
-  - Accuracy Reviewer (Claude): Scientific and mathematical rigor checks
-    using methodology from K-Dense-AI/claude-scientific-skills.
-  - LaTeX Validator (Claude): Validates LaTeX syntax, environment usage,
-    label conventions, and cross-references.
-  - Readability Editor (Claude): Evaluates narrative flow, definition
-    hygiene, spelling, grammar, and prose clarity.
-  - Claude Reviewer: General code and content review via Anthropic API.
-  - Gemini Reviewer: General code and content review via Google Gemini API.
-  - GitHub Copilot Reviewer: General code and content review via GitHub Models API.
+Architecture:
+  Every available LLM runs every specialized review type.  A coordinator
+  agent then synthesizes the results across all reviewers and LLMs.
+
+Review types:
+  - Accuracy: Scientific and mathematical rigor checks using methodology
+    from K-Dense-AI/claude-scientific-skills.
+  - LaTeX Validator: Validates LaTeX syntax, environment usage, label
+    conventions, and cross-references.
+  - Readability Editor: Evaluates narrative flow, definition hygiene,
+    spelling, grammar, and prose clarity.
+
+LLMs (each runs every review type when its key is configured):
+  - Claude (Anthropic)
+  - Gemini (Google)
+  - Copilot / OpenAI (GitHub Models)
 
 Skills:
   Skill definitions for the specialized reviewers are stored in
   .claude/skills/ and inform the system prompts used here.
 
 Configuration:
-  Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Claude reviewer; preferred for specialized reviewers
-    GEMINI_API_KEY     - enables Gemini reviewer; fallback for specialized reviewers
-    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default);
-                         fallback for specialized reviewers
+  Set the following repository secrets to enable each LLM:
+    ANTHROPIC_API_KEY  - enables Claude
+    GEMINI_API_KEY     - enables Gemini
+    GITHUB_TOKEN       - enables Copilot (provided by default in GitHub Actions)
 
-  Specialized reviewers (Accuracy, LaTeX Validator, Readability Editor) will
-  run using the best available API in preference order: Anthropic > Gemini > Copilot.
-  This means all specialized reviewers will kick off as long as at least one
-  API key is configured.
+  Every configured LLM participates in every review type.  The coordinator
+  synthesizes results across all LLMs and review types, identifying common
+  themes and contradictions.
 """
 
 import os
@@ -90,23 +94,6 @@ scientific peer-review practices.
 - Assess whether methods are described with sufficient detail to reproduce.
 - Check for hard-coded magic numbers without explanation.
 - Verify that algorithms are correctly implemented.
-
-## Output Format
-Provide your review as structured feedback with:
-- **Summary**: One-paragraph overall assessment.
-- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
-- **Suggestions**: Numbered list of improvements.
-- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
-"""
-
-GENERAL_REVIEW_SYSTEM = """You are an expert code and content reviewer. Provide a
-thorough review of the following commit diff. Focus on:
-
-1. **Correctness**: Logic errors, bugs, or incorrect behavior.
-2. **Security**: Potential vulnerabilities, secret exposure, injection risks.
-3. **Performance**: Inefficiencies, unnecessary complexity, scalability concerns.
-4. **Maintainability**: Code clarity, naming, documentation, modularity.
-5. **Best Practices**: Adherence to language/framework conventions and standards.
 
 ## Output Format
 Provide your review as structured feedback with:
@@ -317,19 +304,29 @@ def call_copilot(system_prompt, user_prompt, model=COPILOT_MODEL):
     return data["choices"][0]["message"]["content"]
 
 
-def call_preferred_llm(system_prompt, user_prompt):
-    """Call the best available LLM in preference order: Anthropic > Gemini > Copilot.
+def call_all_llms(system_prompt, user_prompt):
+    """Call every available LLM and return a dict of {provider_name: response}.
 
-    Used by specialized reviewers so they run regardless of which API keys
-    are configured.  Raises RuntimeError if no API key is available.
+    Used by specialized reviewers so that each review type gets independent
+    perspectives from every configured LLM.
     """
+    results = {}
     if ANTHROPIC_API_KEY:
-        return call_anthropic(system_prompt, user_prompt)
+        try:
+            results["Claude"] = call_anthropic(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Claude call failed: {exc}")
     if GEMINI_API_KEY:
-        return call_gemini(system_prompt, user_prompt)
+        try:
+            results["Gemini"] = call_gemini(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Gemini call failed: {exc}")
     if GITHUB_TOKEN:
-        return call_copilot(system_prompt, user_prompt)
-    raise RuntimeError("No API key available for specialized review")
+        try:
+            results["Copilot"] = call_copilot(system_prompt, user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Copilot call failed: {exc}")
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -338,39 +335,21 @@ def call_preferred_llm(system_prompt, user_prompt):
 
 
 def run_accuracy_review(user_prompt):
-    """Run the scientific accuracy review via the best available LLM."""
+    """Run the scientific accuracy review via all available LLMs."""
     print("🔬 Running accuracy review ...")
-    return call_preferred_llm(ACCURACY_REVIEW_SYSTEM, user_prompt)
+    return call_all_llms(ACCURACY_REVIEW_SYSTEM, user_prompt)
 
 
 def run_latex_review(user_prompt):
-    """Run the LaTeX validation review via the best available LLM."""
+    """Run the LaTeX validation review via all available LLMs."""
     print("📐 Running LaTeX validation review ...")
-    return call_preferred_llm(LATEX_REVIEW_SYSTEM, user_prompt)
+    return call_all_llms(LATEX_REVIEW_SYSTEM, user_prompt)
 
 
 def run_readability_review(user_prompt):
-    """Run the readability editing review via the best available LLM."""
+    """Run the readability editing review via all available LLMs."""
     print("📖 Running readability review ...")
-    return call_preferred_llm(READABILITY_REVIEW_SYSTEM, user_prompt)
-
-
-def run_claude_review(user_prompt):
-    """Run the general Claude review."""
-    print("🟣 Running Claude review ...")
-    return call_anthropic(GENERAL_REVIEW_SYSTEM, user_prompt)
-
-
-def run_gemini_review(user_prompt):
-    """Run the general Gemini review."""
-    print("🔵 Running Gemini review ...")
-    return call_gemini(GENERAL_REVIEW_SYSTEM, user_prompt)
-
-
-def run_copilot_review(user_prompt):
-    """Run the GitHub Copilot review."""
-    print("🟢 Running GitHub Copilot review ...")
-    return call_copilot(GENERAL_REVIEW_SYSTEM, user_prompt)
+    return call_all_llms(READABILITY_REVIEW_SYSTEM, user_prompt)
 
 
 # ---------------------------------------------------------------------------
@@ -448,49 +427,17 @@ def main():
 
     reviews = {}
 
-    any_api = ANTHROPIC_API_KEY or GEMINI_API_KEY or GITHUB_TOKEN
+    # Each review type runs on ALL available LLMs.
+    review_types = [
+        ("Accuracy (Scientific Rigor)", run_accuracy_review),
+        ("LaTeX Validator", run_latex_review),
+        ("Readability Editor", run_readability_review),
+    ]
 
-    # Specialized reviewers — run on the best available LLM
-    if any_api:
-        try:
-            reviews["Accuracy Reviewer (Scientific Rigor)"] = run_accuracy_review(
-                user_prompt
-            )
-        except Exception as exc:
-            print(f"⚠️  Accuracy review failed: {exc}")
-
-    if any_api:
-        try:
-            reviews["LaTeX Validator"] = run_latex_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  LaTeX validation review failed: {exc}")
-
-    if any_api:
-        try:
-            reviews["Readability Editor"] = run_readability_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  Readability review failed: {exc}")
-
-    # General reviewers — each gated on its own API key
-    if ANTHROPIC_API_KEY:
-        try:
-            reviews["Claude Reviewer"] = run_claude_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  Claude review failed: {exc}")
-
-    # Gemini reviewer
-    if GEMINI_API_KEY:
-        try:
-            reviews["Gemini Reviewer"] = run_gemini_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  Gemini review failed: {exc}")
-
-    # GitHub Copilot reviewer
-    if GITHUB_TOKEN:
-        try:
-            reviews["GitHub Copilot Reviewer"] = run_copilot_review(user_prompt)
-        except Exception as exc:
-            print(f"⚠️  GitHub Copilot review failed: {exc}")
+    for label, runner in review_types:
+        results = runner(user_prompt)
+        for provider, content in results.items():
+            reviews[f"{label} — {provider}"] = content
 
     if not reviews:
         print("No API keys configured — no reviews to run.")
