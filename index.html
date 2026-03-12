@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Frederick Carl Leitner World Health Organization" />
+  <meta name="author" content="Frederick Carl Leitner[^1]" />
   <meta name="dcterms.date" content="2026-03-12" />
   <title>Quantum Observable Universe</title>
   <style>
@@ -31,8 +31,7 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
-<p class="author"><p>Frederick Carl Leitner<br />
-World Health Organization</p></p>
+<p class="author">Frederick Carl Leitner[^1]</p>
 <p class="date">2026-03-12</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
@@ -69,7 +68,7 @@ manifold;</em></p></li>
 \mathrm{SU}(2)\)</span>;</em></p></li>
 <li><p><em><span class="math inline">\(E \to M\)</span> is a principal
 <span class="math inline">\(G\)</span>-bundle (called the <em>bulk</em>)
-with fibres <span class="math inline">\(\mathbb{C}\)</span> and <span
+with fibres <span class="math inline">\(\mathbb{CP}\)</span> and <span
 class="math inline">\(\mathrm{SO}(3)\)</span> holonomy.</em></p></li>
 </ol>
 </div>
@@ -195,7 +194,7 @@ the Euler characteristic <span class="math inline">\(\chi(E) =
 -6\)</span> constrains the topology of the bulk bundle <span
 class="math inline">\(E\)</span>. The <span
 class="math inline">\(q\)</span>-harmonic forms on this bundle
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
 determine the spectrum of stable excitations. In the regime <span
 class="math inline">\(q(p) \to 1\)</span> (near-classicality), the
 zero-modes of <span class="math inline">\(\Delta_q\)</span> reproduce
@@ -210,10 +209,10 @@ forces a non-trivial distribution of these modes across the CR manifold
 
 <p><strong>Remark 1.10</strong> (Electrons, muons and the Reeb
 decomposition). <em>The Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>)
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>)
 applied to the Descartes universe yields two classes of fermionic
 excitations
-(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.21</a>).
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.22</a>).
 The degree of the vertical component <span
 class="math inline">\(\alpha_V\)</span> distinguishes them: forms with
 <span class="math inline">\(\deg\alpha_V = 1\)</span> correspond to
@@ -237,13 +236,13 @@ direction along the vertical distribution. Left-handed and right-handed
 chiralities correspond to the two orientations of <span
 class="math inline">\(\xi\)</span> relative to the complex structure of
 <span class="math inline">\(M\)</span>. For fermions
-(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.21</a>),
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.22</a>),
 the vertical component <span class="math inline">\(\alpha_V\)</span>
 transforms with a definite sign under reversal of <span
 class="math inline">\(\xi\)</span>, so chirality is encoded in the <span
 class="math inline">\(\pm\)</span>-eigenspaces of the Reeb involution
 <span class="math inline">\(\xi \mapsto -\xi\)</span>. Bosons
-(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.22</a>),
+(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.23</a>),
 being purely horizontal, are chirality-blind — consistent with the
 observed parity invariance of the electromagnetic and strong
 interactions.</em></p>
@@ -281,9 +280,26 @@ the structure group <span class="math inline">\(G =
 class="math inline">\(q\)</span>.</em></p>
 </div>
 
+<div id="def:quantum-planck-constant" class="definition">
+
+<p><strong>Definition 1.14</strong> (Quantum Planck Constant). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).
+The <em>quantum Planck constant</em> is the function <span
+class="math inline">\(\hbar_q \colon M \to \mathbb{R}\)</span> defined
+by <span class="math display">\[\hbar_q(p) \;=\; 1 - q(p), \qquad p \in
+M.\]</span> As <span class="math inline">\(q(p) \to 1\)</span>
+(classicality), <span class="math inline">\(\hbar_q(p) \to 0\)</span>
+and quantum effects vanish; as <span class="math inline">\(q(p) \to
+0\)</span> (deep-quantum regime), <span class="math inline">\(\hbar_q(p)
+\to 1\)</span>.</em></p>
+</div>
+
 <div id="rem:j1e-local-states" class="remark">
 
-<p><strong>Remark 1.14</strong> (<span
+<p><strong>Remark 1.15</strong> (<span
 class="math inline">\(J^1E\)</span> as the space of local states).
 <em>The jet bundle <span class="math inline">\(J^1 E\)</span> serves as
 the space of local states of the <span
@@ -301,7 +317,7 @@ class="math inline">\(\mathrm{SU}_q(2)\)</span>
 
 <div id="def:q-harmonic-form" class="definition">
 
-<p><strong>Definition 1.15</strong> (<span
+<p><strong>Definition 1.16</strong> (<span
 class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
 <span class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
@@ -325,7 +341,7 @@ class="math inline">\(q\)</span>-viscosity.</em></p>
 
 <div id="def:reeb-decomposition" class="definition">
 
-<p><strong>Definition 1.16</strong> (Reeb decomposition). <em>Let <span
+<p><strong>Definition 1.17</strong> (Reeb decomposition). <em>Let <span
 class="math inline">\(M\)</span> be a CR manifold equipped with a
 contact form <span class="math inline">\(\theta\)</span> and let <span
 class="math inline">\(\xi\)</span> denote the associated <em>Reeb vector
@@ -347,14 +363,14 @@ class="math inline">\(\xi\)</span>).</em></p>
 
 <div id="def:q-reeb-vector-field" class="definition">
 
-<p><strong>Definition 1.17</strong> (<span
+<p><strong>Definition 1.18</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
 <span class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
 and Reeb vector field <span class="math inline">\(\xi\)</span>
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>).
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb vector
 field</em> is the vector field <span
 class="math inline">\(\xi_q\)</span> on <span
@@ -373,11 +389,11 @@ field <span class="math inline">\(\xi_1 = \xi\)</span>.</em></p>
 
 <div id="def:q-reeb-flow" class="definition">
 
-<p><strong>Definition 1.18</strong> (<span
+<p><strong>Definition 1.19</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
 class="math inline">\(\xi_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.17</a>).
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.18</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb flow</em>
 is the one-parameter family of diffeomorphisms <span
 class="math inline">\(\phi_t^q \colon M \to M\)</span>, <span
@@ -390,7 +406,7 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 
 <div id="def:q-torsion-leaf" class="definition">
 
-<p><strong>Definition 1.19</strong> (<span
+<p><strong>Definition 1.20</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
 class="math inline">\(H = \ker\theta \subset TM\)</span> be the
 horizontal distribution on the CR manifold <span
@@ -399,7 +415,7 @@ class="math inline">\(q\)</span>-torsion leaf</em> is a maximal integral
 submanifold <span class="math inline">\(L \hookrightarrow M\)</span> of
 <span class="math inline">\(H\)</span> that is invariant under the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.18</a>):
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.19</a>):
 <span class="math display">\[T_p L \;\subset\; H_p
 \quad\text{for all } p \in L,
 \qquad\text{and}\qquad
@@ -409,7 +425,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 
 <div id="rem:q-torsion-leaf-minimum" class="remark">
 
-<p><strong>Remark 1.20</strong> (<span
+<p><strong>Remark 1.21</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
 <em>Let <span class="math inline">\(A_q\)</span> denote the <span
 class="math inline">\(q\)</span>-deformed connection on <span
@@ -418,7 +434,7 @@ class="math inline">\(q\)</span>-curvature <span
 class="math display">\[\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\,
 A_q]_q.\]</span> A <span class="math inline">\(q\)</span>-torsion leaf
 <span class="math inline">\(L\)</span>
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>)
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.20</a>)
 is a local minimum of <span
 class="math inline">\(\lVert\Omega_q\rVert\)</span> restricted to the
 horizontal distribution: the invariance of <span
@@ -435,11 +451,11 @@ equilibrium.</em></p>
 
 <div id="def:fermion" class="definition">
 
-<p><strong>Definition 1.21</strong> (Fermion). <em>A <em>fermion</em> is
+<p><strong>Definition 1.22</strong> (Fermion). <em>A <em>fermion</em> is
 a <span class="math inline">\(q\)</span>-harmonic form
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
 that has a non-trivial vertical component in the Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>):
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>):
 <span class="math display">\[\Delta_q\,\alpha = 0
 \qquad\text{and}\qquad
 \iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
@@ -447,11 +463,11 @@ that has a non-trivial vertical component in the Reeb decomposition
 
 <div id="def:boson" class="definition">
 
-<p><strong>Definition 1.22</strong> (Boson). <em>A <em>boson</em> is a
+<p><strong>Definition 1.23</strong> (Boson). <em>A <em>boson</em> is a
 <span class="math inline">\(q\)</span>-harmonic form
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
 that is purely horizontal in the Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>):
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>):
 <span class="math display">\[\Delta_q\,\alpha = 0
 \qquad\text{and}\qquad
 \alpha = \alpha_H
@@ -461,7 +477,7 @@ that is purely horizontal in the Reeb decomposition
 
 <div id="rem:reeb-physical" class="remark">
 
-<p><strong>Remark 1.23</strong> (Physical interpretation of the Reeb
+<p><strong>Remark 1.24</strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
 class="math inline">\(\xi\)</span> singles out the direction of internal
 spin on the CR manifold. Forms that “see” this direction (fermions)
@@ -474,7 +490,7 @@ spin–statistics distinction in this framework.</em></p>
 
 <div id="rem:q-harmonic-physical" class="remark">
 
-<p><strong>Remark 1.24</strong> (Physical interpretation of <span
+<p><strong>Remark 1.25</strong> (Physical interpretation of <span
 class="math inline">\(q\)</span>-harmonicity). <em>The <span
 class="math inline">\(q\)</span>-Laplacian <span
 class="math inline">\(\Delta_q\)</span> encodes the <span
@@ -492,7 +508,7 @@ class="math inline">\(q\)</span>-dependent.</em></p>
 
 <div id="rem:gr-substrate-geometry" class="remark">
 
-<p><strong>Remark 1.25</strong> (General Relativity as the “Substrate
+<p><strong>Remark 1.26</strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
 Levi form <span class="math inline">\(L\)</span> and its coupling to the
 gauge curvature <span class="math inline">\(F_A\)</span>. Gravity is
@@ -516,9 +532,9 @@ instantons.</em></p>
 
 <div id="rem:schrodinger-jet-coaction" class="remark">
 
-<p><strong>Remark 1.26</strong> (The Schrödinger Equation as “Jet
+<p><strong>Remark 1.27</strong> (The Schrödinger Equation as “Jet
 Co-action”). <em>The Schrödinger equation describes the evolution of a
-state in the fibre <span class="math inline">\(\mathbb{C}\)</span>. In
+state in the fibre <span class="math inline">\(\mathbb{CP}\)</span>. In
 the jet-bundle framework this is expressed as the condition of parallel
 transport along the connection <span
 class="math inline">\(A\)</span>.</em></p>
@@ -526,14 +542,15 @@ class="math inline">\(A\)</span>.</em></p>
 \Gamma(E)\)</span>, the Schrödinger dynamics are found in the kernel of
 the <span class="math inline">\(q\)</span>-deformed covariant derivative
 on <span class="math inline">\(J^1 E\)</span>: <span
-class="math display">\[i\,\hbar_{\mathrm{eff}}(p)\, D_A \psi \;=\;
-\hat{H}_q\, \psi,\]</span> where <span
-class="math inline">\(\hat{H}_q\)</span> is the <span
-class="math inline">\(q\)</span>-deformed Hamiltonian operator
+class="math display">\[i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\,
+\psi,\]</span> where <span class="math inline">\(\hat{H}_q\)</span> is
+the <span class="math inline">\(q\)</span>-deformed Hamiltonian operator
 and:</em></p>
 <ul>
-<li><p><em><span class="math inline">\(\hbar_{\mathrm{eff}}(p) = 1 -
-q(p)\)</span>: the Planck constant is a local field;</em></p></li>
+<li><p><em><span class="math inline">\(\hbar_q(p) = 1 - q(p)\)</span>:
+the quantum Planck constant
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>)
+is a local field;</em></p></li>
 <li><p><em><span class="math inline">\(D_A = d + A\)</span>: the
 connection <span class="math inline">\(A\)</span> (the instanton) acts
 as the potential.</em></p></li>
@@ -545,7 +562,7 @@ section freezes into a classical trajectory.</em></p>
 
 <div id="rem:main-commutative-diagram" class="remark">
 
-<p><strong>Remark 1.27</strong> (Main Commutative Diagram). <em>The
+<p><strong>Remark 1.28</strong> (Main Commutative Diagram). <em>The
 relationship between these two seemingly disparate equations is captured
 by the main commutative diagram of the <span
 class="math inline">\(\mathbb{C}\)</span>-quantum universe, where <span
