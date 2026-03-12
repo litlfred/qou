@@ -8,13 +8,21 @@ GitHub issue identifying common criticisms and actionable feedback.
 Reviewers:
   - Accuracy Reviewer (Claude): Scientific and mathematical rigor checks
     using methodology from K-Dense-AI/claude-scientific-skills.
+  - LaTeX Validator (Claude): Validates LaTeX syntax, environment usage,
+    label conventions, and cross-references.
+  - Readability Editor (Claude): Evaluates narrative flow, definition
+    hygiene, spelling, grammar, and prose clarity.
   - Claude Reviewer: General code and content review via Anthropic API.
   - Gemini Reviewer: General code and content review via Google Gemini API.
   - GitHub Copilot Reviewer: General code and content review via GitHub Models API.
 
+Skills:
+  Skill definitions for the specialized reviewers are stored in
+  .claude/skills/ and inform the system prompts used here.
+
 Configuration:
   Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Claude and Accuracy reviewers
+    ANTHROPIC_API_KEY  - enables Claude, Accuracy, LaTeX, and Readability reviewers
     GEMINI_API_KEY     - enables Gemini reviewer
     GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default)
 """
@@ -97,6 +105,91 @@ thorough review of the following commit diff. Focus on:
 ## Output Format
 Provide your review as structured feedback with:
 - **Summary**: One-paragraph overall assessment.
+- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Suggestions**: Numbered list of improvements.
+- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+"""
+
+LATEX_REVIEW_SYSTEM = """You are a LaTeX validation reviewer. Your role is to check
+commits containing LaTeX source for syntactic correctness, structural consistency,
+and adherence to project conventions.
+
+## Review Methodology
+
+### 1. Syntax Correctness
+- Every \\begin{env} has a matching \\end{env}.
+- Braces {}, brackets [], and parentheses () are balanced.
+- No undefined control sequences (commands must come from a declared package or
+  the preamble).
+- Math mode delimiters ($...$, \\(...\\), \\[...\\]) are properly paired.
+
+### 2. Environment Usage
+- Theorem-like environments (theorem, lemma, proposition, corollary, definition,
+  example, remark, conjecture) are used only as declared in main.tex and are never
+  redeclared in chapter files.
+- Display math uses `equation` or `align` environments — never $$...$$.
+
+### 3. Label Conventions
+- Every labeled item uses the correct prefix:
+  chap: for chapters, sec:/ssec: for (sub)sections,
+  def:/thm:/lem:/prop:/cor:/ex:/rem:/conj: for theorem-like environments,
+  eq: for equations, fig: for figures, tab: for tables.
+- Every theorem-like environment and every numbered equation carries a \\label{}.
+
+### 4. Cross-References
+- \\ref and \\eqref targets correspond to existing \\label commands.
+- Non-breaking spaces (~) precede \\ref and \\eqref.
+
+### 5. Bibliography
+- Every \\cite{key} key appears in references.bib.
+- BibTeX keys follow the <firstauthorlastname><year> convention.
+
+## Output Format
+Provide your review as structured feedback with:
+- **Summary**: One-paragraph assessment of LaTeX correctness.
+- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Suggestions**: Numbered list of improvements.
+- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+"""
+
+READABILITY_REVIEW_SYSTEM = """You are a readability editor. Your role is to review
+LaTeX manuscripts for narrative clarity, prose quality, and editorial polish. You
+are less concerned with mathematical correctness and more concerned with how well
+the text communicates ideas to a graduate-level reader.
+
+## Review Methodology
+
+### 1. Narrative Flow
+- Sections and subsections follow a logical progression.
+- Transitions between paragraphs and sections are smooth.
+- The reader is never left wondering why a topic is introduced.
+
+### 2. Definition Hygiene
+- Definitions are concise and self-contained.
+- Each definition introduces exactly one concept.
+- Technical terms are introduced with \\emph{} on first use and are not re-defined.
+- Every non-trivial definition is followed by at least one example.
+
+### 3. Spelling and Grammar
+- Identify misspelled words (including common LaTeX-adjacent typos).
+- Flag grammatical errors: subject-verb agreement, dangling modifiers, comma
+  splices, run-on sentences.
+- Enforce formal academic English: no contractions, no first-person singular,
+  Oxford comma.
+
+### 4. Sentence-Level Clarity
+- Flag overly long or convoluted sentences.
+- Suggest simpler alternatives where meaning is preserved.
+- Sentences must not begin with a mathematical symbol.
+
+### 5. Consistency
+- Notation introduced in one section is used consistently throughout.
+- Acronyms are expanded on first use and used bare thereafter.
+- Displayed equations ending a sentence include a period inside the environment.
+
+## Output Format
+Provide your review as structured feedback with:
+- **Summary**: One-paragraph assessment of readability and prose quality.
 - **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
 - **Suggestions**: Numbered list of improvements.
 - **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
@@ -229,6 +322,18 @@ def run_accuracy_review(user_prompt):
     return call_anthropic(ACCURACY_REVIEW_SYSTEM, user_prompt)
 
 
+def run_latex_review(user_prompt):
+    """Run the LaTeX validation review via Claude."""
+    print("📐 Running LaTeX validation review (Claude) ...")
+    return call_anthropic(LATEX_REVIEW_SYSTEM, user_prompt)
+
+
+def run_readability_review(user_prompt):
+    """Run the readability editing review via Claude."""
+    print("📖 Running readability review (Claude) ...")
+    return call_anthropic(READABILITY_REVIEW_SYSTEM, user_prompt)
+
+
 def run_claude_review(user_prompt):
     """Run the general Claude review."""
     print("🟣 Running Claude review ...")
@@ -330,6 +435,20 @@ def main():
             )
         except Exception as exc:
             print(f"⚠️  Accuracy review failed: {exc}")
+
+    # LaTeX validator (requires Anthropic key)
+    if ANTHROPIC_API_KEY:
+        try:
+            reviews["LaTeX Validator"] = run_latex_review(user_prompt)
+        except Exception as exc:
+            print(f"⚠️  LaTeX validation review failed: {exc}")
+
+    # Readability editor (requires Anthropic key)
+    if ANTHROPIC_API_KEY:
+        try:
+            reviews["Readability Editor"] = run_readability_review(user_prompt)
+        except Exception as exc:
+            print(f"⚠️  Readability review failed: {exc}")
 
     # Claude general reviewer
     if ANTHROPIC_API_KEY:
