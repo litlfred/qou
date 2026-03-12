@@ -140,6 +140,87 @@ quantum field algebra $\mathrm{SU}_q(2)$
 (Definition~\ref{def:quantum-gauge-group}).
 \end{remark}
 
+% ── Particles, Reeb decomposition, Fermions and Bosons ──────────────────────
+
+\begin{definition}[$q$-Harmonic form (Particle)]
+\label{def:q-harmonic-form}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$ denote the
+$q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
+a $q$-harmonic form, i.e.\ a differential form $\alpha$ satisfying
+\[
+  \Delta_q \alpha
+  \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
+  \;=\; 0,
+\]
+where $\delta_q$ is the formal adjoint of $d_q$.  The condition
+$\Delta_q\alpha = 0$ ensures that the form sits in a ground state of the
+$q$-viscosity.
+\end{definition}
+
+\begin{definition}[Reeb decomposition]
+\label{def:reeb-decomposition}
+Let $M$ be a CR manifold equipped with a contact form $\theta$ and let $\xi$
+denote the associated \emph{Reeb vector field}, characterised by
+$\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential form
+$\alpha$ on $M$ decomposes as
+\[
+  \alpha \;=\; \alpha_H + \alpha_V,
+  \qquad\text{where}\qquad
+  \iota_\xi\,\alpha_V \neq 0,
+\]
+with $\alpha_H$ the \emph{horizontal component} (annihilated by $\iota_\xi$)
+and $\alpha_V$ the \emph{vertical component} (having a non-trivial contraction
+with~$\xi$).
+\end{definition}
+
+\begin{definition}[Fermion]
+\label{def:fermion}
+A \emph{fermion} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that has a non-trivial vertical
+component in the Reeb decomposition
+(Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \iota_\xi\,\alpha_V \neq 0.
+\]
+\end{definition}
+
+\begin{definition}[Boson]
+\label{def:boson}
+A \emph{boson} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
+Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \alpha = \alpha_H
+  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0).
+\]
+\end{definition}
+
+\begin{remark}[Physical interpretation of the Reeb decomposition]
+\label{rem:reeb-physical}
+The Reeb vector field $\xi$ singles out the direction of internal spin on the
+CR manifold.  Forms that ``see'' this direction (fermions) carry half-integer
+spin; forms confined to the horizontal distribution (bosons) do not couple to
+the Reeb flow and carry integer spin.  The decomposition
+$\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the
+spin--statistics distinction in this framework.
+\end{remark}
+
+\begin{remark}[Physical interpretation of $q$-harmonicity]
+\label{rem:q-harmonic-physical}
+The $q$-Laplacian $\Delta_q$ encodes the $q$-deformed viscosity of the
+CR geometry.  A $q$-harmonic form is a zero-mode of this operator and thus
+represents a stable excitation --- a particle --- of the quantum observable
+universe.  The deformation parameter $q$ interpolates between the classical
+regime ($q \to 1$, where $\Delta_q$ reduces to the Hodge Laplacian) and the
+deep-quantum regime ($q \to 0$), so the notion of ``particle'' is itself
+$q$-dependent.
+\end{remark}
+
 % ── Remarks: physical interpretation ─────────────────────────────────────────
 
 \begin{remark}[General Relativity as the ``Substrate Geometry'']
