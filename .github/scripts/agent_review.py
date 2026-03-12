@@ -22,9 +22,15 @@ Skills:
 
 Configuration:
   Set the following repository secrets to enable each reviewer:
-    ANTHROPIC_API_KEY  - enables Accuracy, LaTeX, Readability, and Claude reviewers
-    GEMINI_API_KEY     - enables Gemini reviewer
-    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default)
+    ANTHROPIC_API_KEY  - enables Claude reviewer (also preferred for specialized reviewers)
+    GEMINI_API_KEY     - enables Gemini reviewer (also used as fallback for specialized reviewers)
+    GITHUB_TOKEN       - enables GitHub Copilot reviewer (provided by default,
+                         also used as fallback for specialized reviewers)
+
+  Specialized reviewers (Accuracy, LaTeX Validator, Readability Editor) will
+  run using the best available API in preference order: Anthropic > Gemini > Copilot.
+  This means all specialized reviewers will kick off as long as at least one
+  API key is configured.
 """
 
 import os
@@ -311,27 +317,42 @@ def call_copilot(system_prompt, user_prompt, model=COPILOT_MODEL):
     return data["choices"][0]["message"]["content"]
 
 
+def call_preferred_llm(system_prompt, user_prompt):
+    """Call the best available LLM in preference order: Anthropic > Gemini > Copilot.
+
+    Used by specialized reviewers so they run regardless of which API keys
+    are configured.  Raises RuntimeError if no API key is available.
+    """
+    if ANTHROPIC_API_KEY:
+        return call_anthropic(system_prompt, user_prompt)
+    if GEMINI_API_KEY:
+        return call_gemini(system_prompt, user_prompt)
+    if GITHUB_TOKEN:
+        return call_copilot(system_prompt, user_prompt)
+    raise RuntimeError("No API key available for specialized review")
+
+
 # ---------------------------------------------------------------------------
 # Review runners
 # ---------------------------------------------------------------------------
 
 
 def run_accuracy_review(user_prompt):
-    """Run the scientific accuracy review via Claude."""
-    print("🔬 Running accuracy review (Claude) ...")
-    return call_anthropic(ACCURACY_REVIEW_SYSTEM, user_prompt)
+    """Run the scientific accuracy review via the best available LLM."""
+    print("🔬 Running accuracy review ...")
+    return call_preferred_llm(ACCURACY_REVIEW_SYSTEM, user_prompt)
 
 
 def run_latex_review(user_prompt):
-    """Run the LaTeX validation review via Claude."""
-    print("📐 Running LaTeX validation review (Claude) ...")
-    return call_anthropic(LATEX_REVIEW_SYSTEM, user_prompt)
+    """Run the LaTeX validation review via the best available LLM."""
+    print("📐 Running LaTeX validation review ...")
+    return call_preferred_llm(LATEX_REVIEW_SYSTEM, user_prompt)
 
 
 def run_readability_review(user_prompt):
-    """Run the readability editing review via Claude."""
-    print("📖 Running readability review (Claude) ...")
-    return call_anthropic(READABILITY_REVIEW_SYSTEM, user_prompt)
+    """Run the readability editing review via the best available LLM."""
+    print("📖 Running readability review ...")
+    return call_preferred_llm(READABILITY_REVIEW_SYSTEM, user_prompt)
 
 
 def run_claude_review(user_prompt):
@@ -427,8 +448,10 @@ def main():
 
     reviews = {}
 
-    # Accuracy reviewer (requires Anthropic key)
-    if ANTHROPIC_API_KEY:
+    any_api = ANTHROPIC_API_KEY or GEMINI_API_KEY or GITHUB_TOKEN
+
+    # Specialized reviewers — run on the best available LLM
+    if any_api:
         try:
             reviews["Accuracy Reviewer (Scientific Rigor)"] = run_accuracy_review(
                 user_prompt
@@ -436,21 +459,19 @@ def main():
         except Exception as exc:
             print(f"⚠️  Accuracy review failed: {exc}")
 
-    # LaTeX validator (requires Anthropic key)
-    if ANTHROPIC_API_KEY:
+    if any_api:
         try:
             reviews["LaTeX Validator"] = run_latex_review(user_prompt)
         except Exception as exc:
             print(f"⚠️  LaTeX validation review failed: {exc}")
 
-    # Readability editor (requires Anthropic key)
-    if ANTHROPIC_API_KEY:
+    if any_api:
         try:
             reviews["Readability Editor"] = run_readability_review(user_prompt)
         except Exception as exc:
             print(f"⚠️  Readability review failed: {exc}")
 
-    # Claude general reviewer
+    # General reviewers — each gated on its own API key
     if ANTHROPIC_API_KEY:
         try:
             reviews["Claude Reviewer"] = run_claude_review(user_prompt)
