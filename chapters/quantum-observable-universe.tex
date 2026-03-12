@@ -105,6 +105,47 @@ $\mathbb{C}$ quantum observable universe the \emph{Descartes universe}.
 \end{center}
 \end{example}
 
+\begin{remark}[Descartes universe and the CMB]
+\label{rem:descartes-cmb}
+In the Descartes universe (Example~\ref{ex:descartes}), the Euler
+characteristic $\chi(E) = -6$ constrains the topology of the bulk bundle $E$.
+The $q$-harmonic forms on this bundle
+(Definition~\ref{def:q-harmonic-form}) determine the spectrum of stable
+excitations.  In the regime $q(p) \to 1$ (near-classicality), the zero-modes
+of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic
+Microwave Background: the Hodge numbers of $E$ govern the multiplicity of
+angular modes, and the negative Euler characteristic forces a non-trivial
+distribution of these modes across the CR manifold $M = \mathbb{C}^2$.
+\end{remark}
+
+\begin{remark}[Electrons, muons and the Reeb decomposition]
+\label{rem:descartes-leptons}
+The Reeb decomposition (Definition~\ref{def:reeb-decomposition}) applied to
+the Descartes universe yields two classes of fermionic excitations
+(Definition~\ref{def:fermion}).  The degree of the vertical component
+$\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to
+electrons, while forms with $\deg\alpha_V = 2$ correspond to muons.  More
+generally, each additional unit of vertical degree is identified with a
+successive lepton generation.  The constraint $\chi(E) = -6$ bounds the
+number of such generations, since the Hodge decomposition of $E$ admits only
+finitely many independent vertical harmonic forms.
+\end{remark}
+
+\begin{remark}[Chirality as Reeb orientation]
+\label{rem:descartes-chirality}
+The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural
+orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a
+preferred direction along the vertical distribution.  Left-handed and
+right-handed chiralities correspond to the two orientations of $\xi$ relative
+to the complex structure of $M$.  For fermions
+(Definition~\ref{def:fermion}), the vertical component $\alpha_V$ transforms
+with a definite sign under reversal of $\xi$, so chirality is encoded in the
+$\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$.  Bosons
+(Definition~\ref{def:boson}), being purely horizontal, are chirality-blind ---
+consistent with the observed parity invariance of the electromagnetic and
+strong interactions.
+\end{remark}
+
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
 \begin{definition}[Substrate parameter]
@@ -196,7 +237,8 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
   \Delta_q\,\alpha = 0
   \qquad\text{and}\qquad
   \alpha = \alpha_H
-  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0).
+  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
+        \text{ by Definition~\ref{def:reeb-decomposition}}).
 \]
 \end{definition}
 
