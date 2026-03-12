@@ -23,15 +23,17 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests==2.32.3
 
       - name: Get commit diff
         id: diff
         run: |
           DIFF=$(git diff HEAD~1 HEAD -- . ':(exclude).github' || git diff --root HEAD -- . ':(exclude).github')
-          echo "diff<<DIFF_EOF" >> "$GITHUB_OUTPUT"
-          echo "$DIFF" | head -c 50000
-          echo "DIFF_EOF" >> "$GITHUB_OUTPUT"
+          {
+            echo "diff<<DIFF_EOF"
+            echo "$DIFF" | head -c 50000
+            echo "DIFF_EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Get commit info
         id: commit

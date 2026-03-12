@@ -39,6 +39,7 @@ REPO_NAME = os.environ.get("REPO_NAME", "")
 CLAUDE_MODEL = "claude-sonnet-4-20250514"
 GEMINI_MODEL = "gemini-2.5-pro"
 COPILOT_MODEL = "gpt-4o"
+API_TIMEOUT = 120
 
 # ---------------------------------------------------------------------------
 # Scientific accuracy review prompt (sourced from K-Dense-AI/claude-scientific-skills)
@@ -164,9 +165,10 @@ def call_anthropic(system_prompt, user_prompt, model=CLAUDE_MODEL):
             "system": system_prompt,
             "messages": [{"role": "user", "content": user_prompt}],
         },
-        timeout=120,
+        timeout=API_TIMEOUT,
     )
-    resp.raise_for_status()
+    if not resp.ok:
+        raise RuntimeError(f"Anthropic API request failed ({resp.status_code}): {resp.text[:200]}")
     data = resp.json()
     return data["content"][0]["text"]
 
@@ -184,9 +186,10 @@ def call_gemini(system_prompt, user_prompt, model=GEMINI_MODEL):
             "system_instruction": {"parts": [{"text": system_prompt}]},
             "contents": [{"parts": [{"text": user_prompt}]}],
         },
-        timeout=120,
+        timeout=API_TIMEOUT,
     )
-    resp.raise_for_status()
+    if not resp.ok:
+        raise RuntimeError(f"Gemini API request failed ({resp.status_code}): {resp.text[:200]}")
     data = resp.json()
     return data["candidates"][0]["content"]["parts"][0]["text"]
 
@@ -207,9 +210,10 @@ def call_copilot(system_prompt, user_prompt, model=COPILOT_MODEL):
             ],
             "max_tokens": 4096,
         },
-        timeout=120,
+        timeout=API_TIMEOUT,
     )
-    resp.raise_for_status()
+    if not resp.ok:
+        raise RuntimeError(f"GitHub Models API request failed ({resp.status_code}): {resp.text[:200]}")
     data = resp.json()
     return data["choices"][0]["message"]["content"]
 
@@ -272,7 +276,8 @@ def run_coordinator(reviews, user_prompt):
     if GITHUB_TOKEN:
         return call_copilot(COORDINATOR_SYSTEM, coordinator_prompt)
 
-    return reviews_text  # fallback: raw concatenation
+    # No LLM available — return raw concatenation (unstructured fallback).
+    return reviews_text
 
 
 # ---------------------------------------------------------------------------
@@ -283,36 +288,19 @@ def run_coordinator(reviews, user_prompt):
 def create_issue(title, body):
     """Create a GitHub issue with the review summary."""
     url = f"https://api.github.com/repos/{REPO_NAME}/issues"
-    resp = requests.post(
-        url,
-        headers={
-            "Authorization": f"Bearer {GITHUB_TOKEN}",
-            "Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        },
-        json={
-            "title": title,
-            "body": body,
-            "labels": ["agent-review"],
-        },
-        timeout=30,
-    )
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    payload = {"title": title, "body": body, "labels": ["agent-review"]}
+    resp = requests.post(url, headers=headers, json=payload, timeout=30)
     if resp.status_code == 422:
         # Label might not exist yet — retry without labels
-        resp = requests.post(
-            url,
-            headers={
-                "Authorization": f"Bearer {GITHUB_TOKEN}",
-                "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2022-11-28",
-            },
-            json={
-                "title": title,
-                "body": body,
-            },
-            timeout=30,
-        )
-    resp.raise_for_status()
+        payload.pop("labels", None)
+        resp = requests.post(url, headers=headers, json=payload, timeout=30)
+    if not resp.ok:
+        raise RuntimeError(f"GitHub issue creation failed ({resp.status_code}): {resp.text[:200]}")
     issue_url = resp.json().get("html_url", "")
     print(f"✅ Created issue: {issue_url}")
     return issue_url
