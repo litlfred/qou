@@ -1,2 +1,399 @@
 \chapter{Quantum Observable Universe}
 \label{chap:qou}
+
+% ── Definitions ──────────────────────────────────────────────────────────────
+
+\begin{definition}[$\mathbb{C}$ Quantum Universe]
+\label{def:c-quantum-universe}
+A \emph{$\mathbb{C}$ quantum universe} is a triple $(M, G, E)$ where:
+\begin{enumerate}
+  \item $M$ is a CR manifold;
+  \item $G = \mathrm{SU}(2)$;
+  \item $E \to M$ is a principal $G$-bundle (called the \emph{bulk}) with
+        fibres $\mathbb{CP}$ and $\mathrm{SO}(3)$ holonomy.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
+\label{def:c-quantum-observable-universe}
+A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
+universe $(M, G, E)$ (Definition~\ref{def:c-quantum-universe}) that satisfies
+the following compactly supported cohomology conditions:
+\[
+  H^0_c(M, \mathrm{Ad}(E)) = 0
+  \qquad\text{and}\qquad
+  H^0_c(M, E) = 0.
+\]
+\end{definition}
+
+% ── Remark ───────────────────────────────────────────────────────────────────
+
+\begin{remark}[Jet-bundle formulation]
+\label{rem:jet-bundle}
+The conditions in Definition~\ref{def:c-quantum-observable-universe} admit a
+natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
+$H^0_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
+$E$ exists, while $H^0_c(M, \mathrm{Ad}(E)) = 0$ eliminates compactly
+supported infinitesimal gauge symmetries.  Together, these conditions mean that
+the space of sections of $J^1 E$ with compact support injects into the space of
+connections, preventing any local degeneracy of the gauge field.
+\end{remark}
+
+% ── Lemma and Proposition ────────────────────────────────────────────────────
+
+\begin{lemma}[Uniqueness of the connection]
+\label{lem:unique-connection}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
+vanishing conditions
+\[
+  H^0_c(M, \mathrm{Ad}(E)) = 0
+  \qquad\text{and}\qquad
+  H^0_c(M, E) = 0
+\]
+imply that the connection $A$ on $E$ is unique up to gauge equivalence.
+\end{lemma}
+
+\begin{proof}
+% TODO: proof
+\end{proof}
+
+\begin{proposition}[Self-duality of the curvature]
+\label{prop:self-dual-curvature}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
+$A$.  Then the curvature $F_A$ is self-dual, i.e.\
+\[
+  F_A = {*}\, F_A.
+\]
+\end{proposition}
+
+\begin{proof}
+% TODO: proof
+\end{proof}
+
+% ── Examples ─────────────────────────────────────────────────────────────────
+
+\begin{example}[Calabi--Yau manifolds]
+\label{ex:calabi-yau}
+Let $M$ be a Calabi--Yau manifold.  The Ricci-flat K\"ahler metric on $M$
+endows it with a natural CR structure, and the trivial
+$\mathrm{SU}(2)$-bundle $E = M \times \mathrm{SU}(2)$ yields a $\mathbb{C}$
+quantum observable universe when the compactly supported cohomology conditions
+of Definition~\ref{def:c-quantum-observable-universe} are satisfied.
+\end{example}
+
+\begin{example}[ALE spaces]
+\label{ex:ale}
+Let $M$ be an asymptotically locally Euclidean (ALE) space.  ALE spaces arise
+as minimal resolutions of quotient singularities
+$\mathbb{C}^2 / \Gamma$ for finite subgroups
+$\Gamma \subset \mathrm{SU}(2)$.  Equipped with a hyper-K\"ahler metric and
+the corresponding principal $\mathrm{SU}(2)$-bundle, $M$ provides a
+$\mathbb{C}$ quantum observable universe satisfying self-dual curvature
+(Proposition~\ref{prop:self-dual-curvature}).
+\end{example}
+
+\begin{example}[Descartes universe]
+\label{ex:descartes}
+Let $M = \mathbb{C}^2$ and assume $\chi(E) = -6$.  We call the resulting
+$\mathbb{C}$ quantum observable universe the \emph{Descartes universe}.
+
+\medskip
+\begin{center}
+\itshape
+``Je pense, donc je suis.''\\
+--- Ren\'e Descartes
+\end{center}
+\end{example}
+
+\begin{remark}[Descartes universe and the CMB]
+\label{rem:descartes-cmb}
+In the Descartes universe (Example~\ref{ex:descartes}), the Euler
+characteristic $\chi(E) = -6$ constrains the topology of the bulk bundle $E$.
+The $q$-harmonic forms on this bundle
+(Definition~\ref{def:q-harmonic-form}) determine the spectrum of stable
+excitations.  In the regime $q(p) \to 1$ (near-classicality), the zero-modes
+of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic
+Microwave Background: the Hodge numbers of $E$ govern the multiplicity of
+angular modes, and the negative Euler characteristic forces a non-trivial
+distribution of these modes across the CR manifold $M = \mathbb{C}^2$.
+\end{remark}
+
+\begin{remark}[Electrons, muons and the Reeb decomposition]
+\label{rem:descartes-leptons}
+The Reeb decomposition (Definition~\ref{def:reeb-decomposition}) applied to
+the Descartes universe yields two classes of fermionic excitations
+(Definition~\ref{def:fermion}).  The degree of the vertical component
+$\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to
+electrons, while forms with $\deg\alpha_V = 2$ correspond to muons.  More
+generally, each additional unit of vertical degree is identified with a
+successive lepton generation.  The constraint $\chi(E) = -6$ bounds the
+number of such generations, since the Hodge decomposition of $E$ admits only
+finitely many independent vertical harmonic forms.
+\end{remark}
+
+\begin{remark}[Chirality as Reeb orientation]
+\label{rem:descartes-chirality}
+The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural
+orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a
+preferred direction along the vertical distribution.  Left-handed and
+right-handed chiralities correspond to the two orientations of $\xi$ relative
+to the complex structure of $M$.  For fermions
+(Definition~\ref{def:fermion}), the vertical component $\alpha_V$ transforms
+with a definite sign under reversal of $\xi$, so chirality is encoded in the
+$\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$.  Bosons
+(Definition~\ref{def:boson}), being purely horizontal, are chirality-blind ---
+consistent with the observed parity invariance of the electromagnetic and
+strong interactions.
+\end{remark}
+
+% ── Substrate parameter and quantum gauge group ─────────────────────────────
+
+\begin{definition}[Substrate parameter]
+\label{def:substrate-parameter}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
+$A$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
+its self-dual part.  Let
+$L \in \Gamma(T^*M \otimes \overline{T^*M})$ be the \emph{Levi form}, a
+Hermitian form on the tangent bundle of $M$.  The \emph{substrate parameter}
+is the function $q \colon M \to \mathbb{R}$ defined by
+\[
+  q(p) \;=\; \exp\!\bigl(-\lVert L \wedge F_A^+ \rVert(p)\bigr),
+  \qquad p \in M.
+\]
+\end{definition}
+
+\begin{definition}[Quantum Gauge Group]
+\label{def:quantum-gauge-group}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
+\emph{quantum gauge group} is the quantum group $\mathrm{SU}_q(2)$ obtained by
+deforming the structure group $G = \mathrm{SU}(2)$ at the parameter $q$.
+\end{definition}
+
+\begin{definition}[Quantum Planck Constant]
+\label{def:quantum-planck-constant}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
+\emph{quantum Planck constant} is the function
+$\hbar_q \colon M \to \mathbb{R}$ defined by
+\[
+  \hbar_q(p) \;=\; 1 - q(p), \qquad p \in M.
+\]
+As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
+vanish; as $q(p) \to 0$ (deep-quantum regime), $\hbar_q(p) \to 1$.
+\end{definition}
+
+\begin{remark}[$J^1E$ as the space of local states]
+\label{rem:j1e-local-states}
+The jet bundle $J^1 E$ serves as the space of local states of the
+$\mathbb{C}$~quantum observable universe.  The classical gauge dynamics,
+encoded by the \emph{instanton connection} $A$
+(Lemma~\ref{lem:unique-connection}), are weighted by the substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}) to define the
+quantum field algebra $\mathrm{SU}_q(2)$
+(Definition~\ref{def:quantum-gauge-group}).
+\end{remark}
+
+% ── Particles, Reeb decomposition, Fermions and Bosons ──────────────────────
+
+\begin{definition}[$q$-Harmonic form (Particle)]
+\label{def:q-harmonic-form}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$ denote the
+$q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
+a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
+$q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
+\[
+  \Delta_q \alpha
+  \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
+  \;=\; 0,
+\]
+where $\delta_q$ is the formal adjoint of $d_q$.  The condition
+$\Delta_q\alpha = 0$ ensures that the form sits in a ground state of the
+$q$-viscosity.
+\end{definition}
+
+\begin{definition}[Reeb decomposition]
+\label{def:reeb-decomposition}
+Let $M$ be a CR manifold equipped with a contact form $\theta$ and let $\xi$
+denote the associated \emph{Reeb vector field}, characterised by
+$\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential form
+$\alpha$ on $M$ decomposes as
+\[
+  \alpha \;=\; \alpha_H + \alpha_V,
+  \qquad\text{where}\qquad
+  \iota_\xi\,\alpha_V \neq 0,
+\]
+with $\alpha_H$ the \emph{horizontal component} (annihilated by $\iota_\xi$)
+and $\alpha_V$ the \emph{vertical component} (having a non-trivial contraction
+with~$\xi$).
+\end{definition}
+
+\begin{definition}[$q$-Deformed Reeb vector field]
+\label{def:q-reeb-vector-field}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}) and Reeb vector
+field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
+\emph{$q$-deformed Reeb vector field} is the vector field $\xi_q$ on $M$
+defined by its action on smooth functions $f \in C^\infty(M)$:
+\[
+  \xi_q(f) \;=\; q\,\xi(f) + (1 - q)\,[\xi, X_f]_q,
+\]
+where $X_f$ is the horizontal lift of $\mathrm{grad}\,f$ to $H$ and
+$[\,\cdot\,,\cdot\,]_q$ denotes the $q$-deformed Lie bracket on
+$\mathfrak{X}(M)$.  When $q = 1$, one recovers the classical Reeb field
+$\xi_1 = \xi$.
+\end{definition}
+
+\begin{definition}[$q$-Deformed Reeb flow]
+\label{def:q-reeb-flow}
+Let $\xi_q$ be the $q$-deformed Reeb vector field
+(Definition~\ref{def:q-reeb-vector-field}).  The \emph{$q$-deformed Reeb flow}
+is the one-parameter family of diffeomorphisms
+$\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$:
+\[
+  \frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
+  \qquad \phi_0^q = \mathrm{id}_M.
+\]
+\end{definition}
+
+\begin{definition}[$q$-Torsion leaf]
+\label{def:q-torsion-leaf}
+Let $H = \ker\theta \subset TM$ be the horizontal distribution on the
+CR manifold $M$.  A \emph{$q$-torsion leaf} is a maximal integral
+submanifold $L \hookrightarrow M$ of $H$ that is invariant under the
+$q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
+\[
+  T_p L \;\subset\; H_p
+  \quad\text{for all } p \in L,
+  \qquad\text{and}\qquad
+  \phi_t^q(L) = L
+  \quad\text{for all } t \in \mathbb{R}.
+\]
+\end{definition}
+
+\begin{remark}[$q$-Torsion leaves as energy minima]
+\label{rem:q-torsion-leaf-minimum}
+Let $A_q$ denote the $q$-deformed connection on $E$ and define the
+$q$-curvature
+\[
+  \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q.
+\]
+A $q$-torsion leaf $L$ (Definition~\ref{def:q-torsion-leaf}) is a local
+minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution:
+the invariance of $L$ under $\phi_t^q$ forces the first variation of
+$\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a $q$-curvature well.
+Physically, a $q$-torsion leaf represents a region of the CR manifold where
+the gauge curvature is minimised and the $q$-deformed dynamics are in
+equilibrium.
+\end{remark}
+
+\begin{definition}[Fermion]
+\label{def:fermion}
+A \emph{fermion} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that has a non-trivial vertical
+component in the Reeb decomposition
+(Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \iota_\xi\,\alpha_V \neq 0.
+\]
+\end{definition}
+
+\begin{definition}[Boson]
+\label{def:boson}
+A \emph{boson} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
+Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \alpha = \alpha_H
+  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
+        \text{ by Definition~\ref{def:reeb-decomposition}}).
+\]
+\end{definition}
+
+\begin{remark}[Physical interpretation of the Reeb decomposition]
+\label{rem:reeb-physical}
+The Reeb vector field $\xi$ singles out the direction of internal spin on the
+CR manifold.  Forms that ``see'' this direction (fermions) carry half-integer
+spin; forms confined to the horizontal distribution (bosons) do not couple to
+the Reeb flow and carry integer spin.  The decomposition
+$\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the
+spin--statistics distinction in this framework.
+\end{remark}
+
+\begin{remark}[Physical interpretation of $q$-harmonicity]
+\label{rem:q-harmonic-physical}
+The $q$-Laplacian $\Delta_q$ encodes the $q$-deformed viscosity of the
+CR geometry.  A $q$-harmonic form is a zero-mode of this operator and thus
+represents a stable excitation --- a particle --- of the quantum observable
+universe.  The deformation parameter $q$ interpolates between the classical
+regime ($q \to 1$, where $\Delta_q$ reduces to the Hodge Laplacian) and the
+deep-quantum regime ($q \to 0$), so the notion of ``particle'' is itself
+$q$-dependent.
+\end{remark}
+
+% ── Remarks: physical interpretation ─────────────────────────────────────────
+
+\begin{remark}[General Relativity as the ``Substrate Geometry'']
+\label{rem:gr-substrate-geometry}
+In this model the metric is effectively replaced by the Levi form $L$ and its
+coupling to the gauge curvature $F_A$.  Gravity is expressed through the
+Variational Bicomplex as the back-reaction of the gauge fields on the CR
+manifold $M$.
+
+The Einstein--Hilbert action is recovered by examining the variation of the
+action $S_q$ with respect to the Levi form $L$:
+\[
+  \frac{\delta S_q}{\delta L}
+  \;\implies\;
+  G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},
+\]
+where $T_{\mu\nu}^{(q)}$ is a \emph{quantum-weighted} stress-energy tensor.
+Because $q(p) = \exp\!\bigl(-\lVert L \wedge F^+\rVert\bigr)$, the geometry
+of the brane $M$ is forced to curve to accommodate the tension of the
+$\mathrm{SU}(2)$ instantons.
+\end{remark}
+
+\begin{remark}[The Schr\"odinger Equation as ``Jet Co-action'']
+\label{rem:schrodinger-jet-coaction}
+The Schr\"odinger equation describes the evolution of a state in the fibre
+$\mathbb{CP}$.  In the jet-bundle framework this is expressed as the condition
+of parallel transport along the connection $A$.
+
+For a section $\psi \in \Gamma(E)$, the Schr\"odinger dynamics are found in
+the kernel of the $q$-deformed covariant derivative on $J^1 E$:
+\[
+  i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\, \psi,
+\]
+where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
+\begin{itemize}
+  \item $\hbar_q(p) = 1 - q(p)$: the quantum Planck constant
+        (Definition~\ref{def:quantum-planck-constant}) is a local field;
+  \item $D_A = d + A$: the connection $A$ (the instanton) acts as the
+        potential.
+\end{itemize}
+As $q(p) \to 1$ (classicality), the uncertainty vanishes and the wave-like
+nature of the section freezes into a classical trajectory.
+\end{remark}
+
+\begin{remark}[Main Commutative Diagram]
+\label{rem:main-commutative-diagram}
+The relationship between these two seemingly disparate equations is captured by
+the main commutative diagram of the $\mathbb{C}$-quantum universe, where
+$\mathbf{E}$ denotes the Euler--Lagrange operator.  The link is the substrate
+parameter $q(p)$:
+\[
+\begin{CD}
+J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
+  \text{General Relativity (Geometry)} \\
+@V{\text{Jet Co-action}}VV
+  @VV{\text{Coupling via } q(p)}V \\
+\Gamma(E) @>{\text{Parallel Transport}}>>
+  \text{Schr\"odinger Eq.\ (Quantum States)}
+\end{CD}
+\]
+\end{remark}
