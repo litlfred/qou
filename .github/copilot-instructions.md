@@ -5,6 +5,20 @@ Follow them precisely when generating, completing, or refactoring content.
 
 ---
 
+## 0  Response Discipline
+
+This is a formal mathematics paper.  Copilot **must**:
+
+- **Only make the change explicitly requested.**  Do not add sections,
+  subsections, content, environments, or prose unless specifically asked.
+- **Keep all changes minimal and concise.**  Surgical edits only.
+- **Do not hallucinate.**  Never introduce definitions, theorems, examples,
+  citations, or any mathematical content that was not explicitly requested.
+- **Do not create new `\section` or `\subsection` headings** unless the
+  user's request explicitly asks for them.
+
+---
+
 ## 1  Guiding Philosophy
 
 Model every chapter on the style of a rigorous graduate mathematics textbook —
