@@ -437,7 +437,7 @@ def main():
     for label, runner in review_types:
         results = runner(user_prompt)
         for provider, content in results.items():
-            reviews[f"{label} — {provider}"] = content
+            reviews[f"{label} ({provider})"] = content
 
     if not reviews:
         print("No API keys configured — no reviews to run.")
