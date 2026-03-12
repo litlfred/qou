@@ -36,9 +36,9 @@ COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 COMMIT_AUTHOR = os.environ.get("COMMIT_AUTHOR", "")
 REPO_NAME = os.environ.get("REPO_NAME", "")
 
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = "claude-opus-4-20250514"
 GEMINI_MODEL = "gemini-2.5-pro"
-COPILOT_MODEL = "gpt-4o"
+COPILOT_MODEL = "o3"
 API_TIMEOUT = 120
 
 # ---------------------------------------------------------------------------
