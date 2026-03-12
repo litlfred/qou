@@ -2,7 +2,9 @@
 abstract: |
   This paper presents a mathematical framework for the Quantum Observable Universe (QOU). We introduce the notion of quantum torsion in this setting, study its lifting to higher categorical structures, and examine the resulting interpretational and experimental consequences. Speculative extensions are discussed in the final chapter.
 author:
-- litlfred
+- |
+  Frederick Carl Leitner  
+  World Health Organization
 bibliography:
 - references.bib
 date: 2026-03-12
