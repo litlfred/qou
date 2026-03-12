@@ -4,9 +4,12 @@ __pycache__/
 *.log
 *.out
 *.toc
-*.synctex.gz
-*.fls
-*.fdb_latexmk
 *.bbl
 *.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 *.pdf
+diff.tex
+main-flat.tex
+_site/
