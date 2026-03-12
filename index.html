@@ -580,6 +580,309 @@ J^1E @&gt;{\text{Variational Derivative } \mathbf{E}}&gt;&gt;
 </div>
 
 <h1 id="lifting-of-quantum-torsion">Lifting of Quantum Torsion</h1>
+<div id="prop:jet-prolongation" class="proposition">
+
+<p><strong>Proposition 2.1</strong> (Jet Prolongation). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+(Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>)
+with connection <span class="math inline">\(A\)</span> and metric <span
+class="math inline">\(g\)</span> on <span
+class="math inline">\(E\)</span>. Write <span
+class="math inline">\(\widetilde{M} = E\)</span> for the total space of
+<span class="math inline">\(E\)</span>, viewed as a manifold, and define
+<span class="math inline">\(E&#39;\)</span> as the bundle of orthonormal
+frames of the first jet bundle <span class="math inline">\(J^1
+E\)</span>. Then <span class="math inline">\(A\)</span> and <span
+class="math inline">\(g\)</span> uniquely determine a connection <span
+class="math inline">\(A&#39;\)</span> on <span
+class="math inline">\(E&#39;\)</span> such that <span
+class="math inline">\((\widetilde{M}, G, E&#39;)\)</span> is a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> ◻</p>
+</div>
+
+<div id="def:recursive-brane-tower" class="definition">
+
+<p><strong>Definition 2.2</strong> (Recursive Brane Tower). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+(Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>).
+Set <span class="math inline">\(M_0 = M\)</span> and <span
+class="math inline">\(E_1 = E\)</span>. <em>Inductively</em>, define
+<span class="math inline">\(E_{n+1}\)</span> as the jet prolongation
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>)
+of <span class="math inline">\(E_n\)</span>.</em></p>
+<p><em>The <em>brane relation</em> is the following recursive
+structure:</em></p>
+<ol type="1">
+<li><p><em>Each total space <span class="math inline">\(E_n\)</span> is
+treated as the base manifold <span
+class="math inline">\(M_{n+1}\)</span> for the next level; <span
+class="math inline">\(E_n\)</span> is the <em>brane</em> of <span
+class="math inline">\(E_{n+1}\)</span>.</em></p></li>
+<li><p><em>At each level, <span class="math inline">\(A_n \in
+\mathcal{A}(E_{n-1})\)</span> is the <span
+class="math inline">\(n\)</span>-th level instanton connection
+satisfying the Hermitian Yang–Mills equations on <span
+class="math inline">\(E_n\)</span>.</em></p></li>
+</ol>
+</div>
+
+<div id="ex:brane-tower-levels" class="example">
+
+<p><strong>Example 2.3</strong> (First two levels). <em>Starting from a
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe <span class="math inline">\((M, G, E_1)\)</span>, the first jet
+prolongation yields <span class="math inline">\(E_2\)</span> with base
+manifold <span class="math inline">\(M_1 = E_1\)</span>. The connection
+<span class="math inline">\(A_1\)</span> on <span
+class="math inline">\(E_1\)</span> satisfies the Hermitian Yang–Mills
+equations, and <span class="math inline">\(A_2\)</span> on <span
+class="math inline">\(E_2\)</span> is uniquely determined by
+Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>.</em></p>
+</div>
+
+<div id="def:quantum-characteristic-classes" class="definition">
+
+<p><strong>Definition 2.4</strong> (Quantum Characteristic Classes).
+<em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
+recursive brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+The <em>quantum characteristic classes</em> are the cohomology classes
+<span class="math display">\[\kappa_n \;\in\; H^*\!\bigl(E_{n+1},\,
+\mathbb{Z}\bigr)\]</span> that label the monodromy fixed points of the
+holonomy representation as one transitions from <span
+class="math inline">\(E_n\)</span> to <span
+class="math inline">\(E_{n+1}\)</span>.</em></p>
+</div>
+
+<div id="rem:betti-numbers-brane" class="remark">
+
+<p><strong>Remark 2.5</strong> (Betti numbers of the brane tower).
+<em>Let <span class="math inline">\(b_k(E_n) = \dim H^k(E_n,
+\mathbb{R})\)</span> denote the <span
+class="math inline">\(k\)</span>-th Betti number of <span
+class="math inline">\(E_n\)</span>. Since <span
+class="math inline">\(E_{n+1}\)</span> is the bundle of orthonormal
+frames of <span class="math inline">\(J^1 E_n\)</span>, the Betti
+numbers of <span class="math inline">\(E_{n+1}\)</span> are determined
+by those of <span class="math inline">\(E_n\)</span> via the Leray–Serre
+spectral sequence applied to the fibration <span
+class="math inline">\(E_{n+1} \to E_n\)</span>. In particular, the
+quantum characteristic classes
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.4</a>)
+obstruct the collapse of this spectral sequence and control the growth
+of <span class="math inline">\(b_k(E_{n+1})\)</span> in terms of <span
+class="math inline">\(b_k(E_n)\)</span>.</em></p>
+</div>
+
+<div id="rem:q-harmonic-basis-brane" class="remark">
+
+<p><strong>Remark 2.6</strong> (<span
+class="math inline">\(q\)</span>-Harmonic basis of the brane tower).
+<em>For each level <span class="math inline">\(n\)</span>, the <span
+class="math inline">\(q\)</span>-harmonic <span
+class="math inline">\(1\)</span>-forms <span
+class="math inline">\(\alpha_{n,i}\)</span> belong to the space <span
+class="math inline">\(\mathcal{H}^1(E_n,\, \mathrm{ad}\, E_n)\)</span>
+of harmonic <span class="math inline">\(1\)</span>-forms on <span
+class="math inline">\(E_n\)</span> with values in the adjoint bundle
+<span class="math inline">\(\mathrm{ad}\, E_n\)</span>. These are
+characterised by the self-duality condition relative to the instanton
+connection <span class="math inline">\(A_n\)</span>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>):
+<span class="math display">\[\alpha_{n,i} \in \mathcal{H}^1
+\iff
+d_{A_n}\,\alpha = 0
+\quad\text{and}\quad
+d_{A_n}^*\,\alpha = 0,\]</span> where the Hodge-star operator is induced
+by the Hermitian metric that the Levi form <span
+class="math inline">\(L\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+defines on the horizontal distribution. The index <span
+class="math inline">\(i\)</span> runs over <span class="math inline">\(1
+\leq i \leq b_1(E_n)\)</span>
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>).</em></p>
+<p><em>At the base level <span class="math inline">\(n = 0\)</span>,
+with Euler characteristic <span class="math inline">\(\chi(M) =
+3\)</span>, there are three primary basis vectors <span
+class="math inline">\(\{\,\phi_1,\, \phi_2,\, \phi_3\,\}\)</span>. At
+level <span class="math inline">\(n = 1\)</span> the basis lifts: the
+new basis includes the original modes together with their <span
+class="math inline">\(J^1\)</span> prolongations
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>),
+which are the first-order resolutions of the base flows.</em></p>
+</div>
+
+<div id="rem:weight-space-decomposition" class="remark">
+
+<p><strong>Remark 2.7</strong> (Weight-space decomposition of the
+harmonic basis). <em>The adjoint bundle <span
+class="math inline">\(\mathrm{ad}\, E_n\)</span> has fibre <span
+class="math inline">\(\mathfrak{su}(2)\)</span>. Via the weight-space
+decomposition of <span class="math inline">\(\mathrm{SU}(2)\)</span>,
+the harmonic basis of <span class="math inline">\(\mathcal{H}^1(E_n,\,
+\mathrm{ad}\, E_n)\)</span> splits into two families.</em></p>
+<p><em><em>Longitudinal modes.</em> These forms constitute the <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone of the
+decomposition. They take values in the Cartan subalgebra of <span
+class="math inline">\(\mathfrak{su}(2)\)</span> and have the geometric
+form <span class="math inline">\(\omega^0 \otimes H\)</span>, where
+<span class="math inline">\(H\)</span> is the diagonal generator. They
+represent steady-state laminar flows aligned with the <span
+class="math inline">\(\mathrm{U}(1)\)</span> subgroup. If the bundle
+splits at a monodromy fixed point, these are the only modes that
+survive; they correspond to the magnetic flux of the stable
+vortices.</em></p>
+<p><em><em>Ladder modes.</em> These are the raising and lowering
+vortices of the decomposition. They take values in the off-diagonal
+generators <span class="math inline">\(E_\pm\)</span> of <span
+class="math inline">\(\mathfrak{su}(2)\)</span> and have the geometric
+form <span class="math inline">\(\omega^\pm \otimes E_\pm\)</span>. They
+describe the entangling flows that twist the <span
+class="math inline">\(\mathbb{CP}^1\)</span> fibre as one moves along
+the brane. These modes are responsible for the non-commutativity in the
+<span class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>).</em></p>
+<p><em>In the <span class="math inline">\(1\)</span>-jet bundle <span
+class="math inline">\(J^1 E_n\)</span>
+(Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">1.15</a>),
+each basis element <span class="math inline">\(\alpha\)</span> is a pair
+consisting of a <em>value</em> (the direction of the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> flow in the fibre) and a
+<em>momentum</em> (the gradient of that flow relative to the complex
+structure of the brane).</em></p>
+</div>
+
+<div id="rem:algebraic-filter" class="remark">
+
+<p><strong>Remark 2.8</strong> (The algebraic filter). <em>Let <span
+class="math inline">\(\alpha\)</span> be a harmonic <span
+class="math inline">\(1\)</span>-form in the basis of
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+Its <em>signature</em> is determined by its commutator with the
+curvature <span class="math inline">\(F_A\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).</em></p>
+<p><em><em>Fermionic type (matter).</em> <span
+class="math inline">\([F_A,\, \alpha] \neq 0\)</span>. These forms are
+entangled with the curvature: they see the <span
+class="math inline">\(\mathrm{SO}(3)\)</span> holonomy and the <span
+class="math inline">\(-6\)</span> index fixed points. Their geodesics
+are trapped or spiralling around the three fundamental vortex
+filaments.</em></p>
+<p><em><em>Bosonic type (radiation).</em> <span
+class="math inline">\([F_A,\, \alpha] = 0\)</span>. These forms commute
+with the curvature. They are the longitudinal modes
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
+that flow through the bulk without being deflected by the monodromy
+fixed points. Their geodesics are straight relative to the gauge-fluid
+flow.</em></p>
+</div>
+
+<div id="rem:distributional-connection" class="remark">
+
+<p><strong>Remark 2.9</strong> (Distributional connection at the limit).
+<em>At the limit <span class="math inline">\(n \to \infty\)</span> one
+no longer looks at a single connection <span
+class="math inline">\(A\)</span>, but at a <em>distributional
+connection</em> represented by the series <span
+class="math display">\[A_\infty
+\;=\;
+\sum_{n=0}^{\infty}\;\sum_{i=1}^{b_1(E_n)}
+c_{n,i}\,\alpha_{n,i}\,,\]</span> where <span
+class="math inline">\(c_{n,i} \in \mathbb{C}\)</span> and <span
+class="math inline">\(\{\alpha_{n,i}\}\)</span> is the <span
+class="math inline">\(q\)</span>-harmonic basis of
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+This turns the gauge field into a harmonic expansion across the infinite
+jet space <span class="math inline">\(J^\infty E\)</span>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+</div>
+
+<div id="def:direct-limit-algebra" class="definition">
+
+<p><strong>Definition 2.10</strong> (<span
+class="math inline">\(\mathbb{C}\)</span> Quantum Observable Universe as
+Direct Limit). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
+1}\)</span> be the recursive brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
+with substrate parameters <span class="math inline">\(q_n\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+at each level. The <em><span class="math inline">\(\mathbb{C}\)</span>
+quantum observable universe</em> is the direct limit algebra <span
+class="math display">\[\mathcal{A}_\infty
+\;=\;
+\varinjlim\,
+\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).\]</span></em></p>
+</div>
+
+<div id="rem:jet-shell" class="remark">
+
+<p><strong>Remark 2.11</strong> (Jet Shell of the universe). <em>In the
+limit <span class="math inline">\(n \to \infty\)</span>, the infinite
+jet bundle <span class="math inline">\(J^\infty E = \varprojlim\, J^k
+E\)</span> becomes the <em>jet shell</em> of the universe. All
+finite-level brane data are encoded in this pro-finite structure, and
+the algebra <span class="math inline">\(\mathcal{A}_\infty\)</span>
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+acts naturally on sections of the jet shell.</em></p>
+</div>
+
+<div id="rem:vacuum-state" class="remark">
+
+<p><strong>Remark 2.12</strong> (The Vacuum State). <em>The <em>physical
+vacuum</em> is a state <span class="math inline">\(\omega \colon
+\mathcal{A}_\infty \to \mathbb{C}\)</span> on the direct limit algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+that is invariant under the global <span
+class="math inline">\(\mathrm{SU}(2)\)</span> action and the recursive
+<span class="math inline">\(q\)</span>-deformations: <span
+class="math display">\[\omega(g \cdot a) = \omega(a)
+\quad\text{for all } g \in \mathrm{SU}(2),\;
+a \in \mathcal{A}_\infty.\]</span></em></p>
+</div>
+
+<div id="rem:mass-geometric-drag" class="remark">
+
+<p><strong>Remark 2.13</strong> (Mass as geometric drag). <em>In this
+recursive <span class="math inline">\(\mathrm{SU}(2)\)</span> tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>),
+mass is not an intrinsic property of a point-particle but rather a
+measure of the <em>geometric drag</em> (or “viscosity”) encountered by a
+stable vortex as it propagates through the <span
+class="math inline">\(1\)</span>-jet bundle <span
+class="math inline">\(J^1 E_n\)</span>. When <span
+class="math inline">\(q \neq 1\)</span> the field is non-commutative:
+moving the vortex requires a continuous rearrangement of the <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+across the fibres.</em></p>
+</div>
+
+<div id="def:mass-identity" class="definition">
+
+<p><strong>Definition 2.14</strong> (Mass Identity). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>),
+connection <span class="math inline">\(A\)</span>, Levi form <span
+class="math inline">\(L\)</span>, and self-dual curvature <span
+class="math inline">\(F^+\)</span>. Let <span
+class="math inline">\(\gamma\)</span> be a closed cycle encircling the
+vortex filament. The <em>inertial mass</em> <span
+class="math inline">\(m\)</span> of a stable vortex is <span
+class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
+\rVert
+\cdot \lVert L \wedge F^+ \rVert\,.\]</span></em></p>
+</div>
+
 <h1 id="interpretations">Interpretations</h1>
 <h1 id="experimental-evidence">Experimental Evidence</h1>
 <h1 id="speculations">Speculations</h1>
