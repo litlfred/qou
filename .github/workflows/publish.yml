@@ -11,6 +11,12 @@
 #   quantum-observable-universe.md    Pandoc GitHub-Flavoured Markdown
 #   index.html                        HTML landing page (MathJax equations)
 #   style.css                         stylesheet for the landing page
+#
+# Preview builds
+# ──────────────
+#   Pushes to the main branch deploy to the root of gh-pages.
+#   Pushes to any other branch deploy to  drafts/<branch-name>/  so that
+#   every feature branch / PR gets its own preview URL.
 
 name: Build & Publish
 
@@ -135,11 +141,18 @@ jobs:
       # peaceiris/actions-gh-pages automatically creates the publish_branch
       # (default: gh-pages) if it does not already exist, so no manual
       # branch-creation step is required.
+      #
+      # Feature-branch builds are placed under  drafts/<branch>/  so that
+      # every open PR gets its own preview URL without overwriting the main
+      # site.  keep_files is enabled so that main deployments preserve the
+      # drafts directory and feature-branch deployments preserve each other.
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:    ./_site
           publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
+          destination_dir: ${{ github.ref_name != 'main' && format('drafts/{0}', github.ref_name) || '' }}
+          keep_files:     true
           commit_message: >
             docs: publish from ${{ github.ref_name }}@${{ github.sha }}
