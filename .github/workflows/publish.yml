@@ -33,6 +33,10 @@ on:
         default: 'gh-pages'
         type: string
 
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
@@ -193,6 +197,11 @@ jobs:
           diff_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe-diff.pdf"
           html_url="${pages_url}/drafts/${{ github.ref_name }}/"
 
+          # Repository source links (useful when repo is private)
+          repo_url="https://github.com/${{ github.repository }}"
+          branch_url="${repo_url}/tree/${{ github.ref_name }}"
+          commit_url="${repo_url}/commit/${{ github.sha }}"
+
           # Find open PRs whose head branch matches the current ref
           pr_numbers=$(gh pr list \
             --repo "${{ github.repository }}" \
@@ -216,13 +225,20 @@ jobs:
             gh pr comment "$pr" \
               --repo "${{ github.repository }}" \
               --body "$(cat <<EOF
-          📖 **Preview build ready** for commit ${{ github.sha }}
+          📖 **Preview build ready** for commit \`${{ github.sha }}\`
 
+          **Published (gh-pages)**
           | Artefact | Link |
           |----------|------|
           | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
           | Diff PDF | [quantum-observable-universe-diff.pdf](${diff_url}) |
           | HTML     | [Landing page](${html_url}) |
+
+          **Source (repo)**
+          | Resource | Link |
+          |----------|------|
+          | Branch   | [${GITHUB_REF_NAME}](${branch_url}) |
+          | Commit   | [\`${GITHUB_SHA::7}\`](${commit_url}) |
           EOF
           )"
             echo "Commented on PR #${pr}."
