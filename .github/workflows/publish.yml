@@ -8,7 +8,7 @@
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
 #   quantum-observable-universe.pdf        compiled PDF
-#   quantum-observable-universe-diff.pdf   latexdiff vs main (feature branches only)
+#   quantum-observable-universe-diff.pdf   latexdiff vs merge-base with main (feature branches only)
 #   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown
 #   index.html                             HTML landing page (MathJax equations)
 #   style.css                              stylesheet for the landing page
@@ -49,6 +49,8 @@ jobs:
       # ── 0. Checkout ────────────────────────────────────────────────────────
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # full history needed for merge-base diff
 
       - name: Fetch main branch for diff
         if: github.ref_name != 'main'
@@ -201,6 +203,8 @@ jobs:
           repo_url="https://github.com/${{ github.repository }}"
           branch_url="${repo_url}/tree/${{ github.ref_name }}"
           commit_url="${repo_url}/commit/${{ github.sha }}"
+          publish_branch="${{ inputs.publish_branch || 'gh-pages' }}"
+          source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ github.ref_name }}"
 
           # Find open PRs whose head branch matches the current ref
           pr_numbers=$(gh pr list \
@@ -239,6 +243,7 @@ jobs:
           |----------|------|
           | Branch   | [${{ github.ref_name }}](${branch_url}) |
           | Commit   | [\`$(echo "${{ github.sha }}" | cut -c1-7)\`](${commit_url}) |
+          | Source PDFs | [drafts/${{ github.ref_name }}](${source_pdf_url}) |
           EOF
           )"
             echo "Commented on PR #${pr}."

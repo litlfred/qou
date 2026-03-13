@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # generate-diff.sh — produce a latexdiff document comparing the current
-# working tree against the main branch.
+# working tree against the merge-base (fork point) with the main branch.
+#
+# Uses `git merge-base` so that the diff only shows changes introduced
+# on the feature branch, not unrelated changes merged into main since
+# the branch was created.
 #
 # Outputs:  diff.tex  in the repository root, ready for compilation.
 #
@@ -28,9 +32,11 @@ cd "$REPO_ROOT"
 MAIN_DIR="$(mktemp -d)"
 trap 'rm -rf "$MAIN_DIR"' EXIT
 
-# ── 1. Extract main-branch sources ──────────────────────────────────────────
-echo "::group::Extract main-branch sources"
-git archive origin/main | tar -x -C "$MAIN_DIR"
+# ── 1. Extract sources at the fork point (merge-base) ───────────────────────
+echo "::group::Extract merge-base sources"
+MERGE_BASE="$(git merge-base origin/main HEAD)"
+echo "Merge-base commit: ${MERGE_BASE}"
+git archive "$MERGE_BASE" | tar -x -C "$MAIN_DIR"
 echo "::endgroup::"
 
 # ── 2. Flatten both versions ────────────────────────────────────────────────
