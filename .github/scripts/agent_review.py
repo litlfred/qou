@@ -38,6 +38,7 @@ Configuration:
 """
 
 import os
+import re
 import requests
 
 # ---------------------------------------------------------------------------
@@ -53,11 +54,17 @@ COMMIT_MESSAGE = os.environ.get("COMMIT_MESSAGE", "")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 COMMIT_AUTHOR = os.environ.get("COMMIT_AUTHOR", "")
 REPO_NAME = os.environ.get("REPO_NAME", "")
+SKILLS_CONTENT = os.environ.get("SKILLS_CONTENT", "")
+PDF_URL = os.environ.get("PDF_URL", "")
 
 CLAUDE_MODEL = "claude-opus-4-20250514"
 GEMINI_MODEL = "gemini-2.5-pro"
 COPILOT_MODEL = "o3"
 API_TIMEOUT = 120
+
+# Required sections that every review must contain.
+REQUIRED_SECTIONS = ["Summary", "Issues Found", "Suggestions", "Verdict"]
+VALID_VERDICTS = {"APPROVE", "REQUEST_CHANGES", "NEEDS_DISCUSSION"}
 
 # ---------------------------------------------------------------------------
 # Scientific accuracy review prompt (sourced from K-Dense-AI/claude-scientific-skills)
@@ -96,11 +103,13 @@ scientific peer-review practices.
 - Verify that algorithms are correctly implemented.
 
 ## Output Format
-Provide your review as structured feedback with:
+You MUST structure your response using exactly these four markdown sections.
+Do not add, rename, or omit any section.
+
 - **Summary**: One-paragraph overall assessment.
-- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Issues Found**: Numbered list of specific problems. Tag each with (critical), (major), or (minor).
 - **Suggestions**: Numbered list of improvements.
-- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+- **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
 LATEX_REVIEW_SYSTEM = """You are a LaTeX validation reviewer. Your role is to check
@@ -138,11 +147,13 @@ and adherence to project conventions.
 - BibTeX keys follow the <firstauthorlastname><year> convention.
 
 ## Output Format
-Provide your review as structured feedback with:
+You MUST structure your response using exactly these four markdown sections.
+Do not add, rename, or omit any section.
+
 - **Summary**: One-paragraph assessment of LaTeX correctness.
-- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Issues Found**: Numbered list of specific problems. Tag each with (critical), (major), or (minor).
 - **Suggestions**: Numbered list of improvements.
-- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+- **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
 READABILITY_REVIEW_SYSTEM = """You are a readability editor. Your role is to review
@@ -181,11 +192,13 @@ the text communicates ideas to a graduate-level reader.
 - Displayed equations ending a sentence include a period inside the environment.
 
 ## Output Format
-Provide your review as structured feedback with:
+You MUST structure your response using exactly these four markdown sections.
+Do not add, rename, or omit any section.
+
 - **Summary**: One-paragraph assessment of readability and prose quality.
-- **Issues Found**: Numbered list of specific problems (severity: critical/major/minor).
+- **Issues Found**: Numbered list of specific problems. Tag each with (critical), (major), or (minor).
 - **Suggestions**: Numbered list of improvements.
-- **Verdict**: APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+- **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
 COORDINATOR_SYSTEM = """You are the Review Coordinator. You are given feedback from
@@ -226,14 +239,30 @@ Use the following markdown structure:
 
 
 def build_review_prompt(diff, commit_message, commit_sha, commit_author):
-    """Build the user prompt containing commit context and diff."""
-    return (
+    """Build the user prompt containing commit context, diff, and resources."""
+    prompt = (
         f"## Commit Details\n"
         f"- **Author**: {commit_author}\n"
         f"- **SHA**: {commit_sha}\n"
         f"- **Message**: {commit_message}\n\n"
-        f"## Diff\n```diff\n{diff}\n```"
     )
+
+    if PDF_URL:
+        prompt += (
+            f"## Most Recent PDF\n"
+            f"The latest published version of the paper is available at:\n"
+            f"{PDF_URL}\n\n"
+        )
+
+    if SKILLS_CONTENT:
+        prompt += (
+            f"## Reviewer Skill Guides\n"
+            f"Use the following skill definitions as guidance for your review.\n\n"
+            f"{SKILLS_CONTENT}\n\n"
+        )
+
+    prompt += f"## Diff\n```diff\n{diff}\n```"
+    return prompt
 
 
 def call_anthropic(system_prompt, user_prompt, model=CLAUDE_MODEL):
@@ -327,6 +356,30 @@ def call_all_llms(system_prompt, user_prompt):
         except Exception as exc:
             print(f"⚠️  Copilot call failed: {exc}")
     return results
+
+
+def validate_review_format(content, reviewer_name):
+    """Check that *content* includes every REQUIRED_SECTIONS heading.
+
+    Returns the original content if valid.  If sections are missing,
+    appends placeholder sections so that downstream consumers can always
+    rely on a consistent structure.
+    """
+    missing = [
+        s for s in REQUIRED_SECTIONS
+        if not re.search(rf"\*\*{re.escape(s)}\*\*", content)
+    ]
+    if not missing:
+        return content
+
+    print(f"⚠️  {reviewer_name}: missing sections {missing} — appending placeholders.")
+    patched = content
+    for section in missing:
+        if section == "Verdict":
+            patched += f"\n- **{section}**: NEEDS_DISCUSSION\n"
+        else:
+            patched += f"\n- **{section}**: _No response provided._\n"
+    return patched
 
 
 # ---------------------------------------------------------------------------
@@ -437,7 +490,8 @@ def main():
     for label, runner in review_types:
         results = runner(user_prompt)
         for provider, content in results.items():
-            reviews[f"{label} ({provider})"] = content
+            reviewer_key = f"{label} ({provider})"
+            reviews[reviewer_key] = validate_review_format(content, reviewer_key)
 
     if not reviews:
         print("No API keys configured — no reviews to run.")
