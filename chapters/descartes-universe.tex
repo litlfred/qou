@@ -1,0 +1,203 @@
+\chapter{The Descartes Universe}
+\label{chap:descartes}
+
+% ── The Descartes condition ──────────────────────────────────────────────────
+
+\begin{definition}[Descartes condition]
+\label{def:descartes-condition}
+A $\mathbb{C}$ quantum observable universe $(M, G, E)$
+(Definition~\ref{def:c-quantum-observable-universe}) satisfies the
+\emph{Descartes condition} if the Euler characteristic of the bulk bundle
+is
+\[
+  \chi(E) \;=\; -6.
+\]
+A $\mathbb{C}$ quantum observable universe satisfying the Descartes condition
+is called a \emph{Descartes universe}.
+
+\medskip
+\begin{center}
+\itshape
+``Je pense, donc je suis.''\\
+--- Ren\'e Descartes
+\end{center}
+\end{definition}
+
+% ── Implications on the three examples ───────────────────────────────────────
+
+\begin{remark}[The Descartes condition on Calabi--Yau manifolds]
+\label{rem:descartes-calabi-yau}
+Let $(M, G, E)$ be a Calabi--Yau quantum observable universe
+(Example~\ref{ex:calabi-yau}).  The Descartes condition $\chi(E) = -6$
+constrains the Hodge numbers of the Calabi--Yau manifold $M$: the
+alternating sum of Betti numbers of the bulk bundle $E$ must equal $-6$.
+In particular, only Calabi--Yau manifolds whose topology admits a principal
+$\mathrm{SU}(2)$-bundle with this Euler characteristic can realise the
+Descartes universe.
+\end{remark}
+
+\begin{remark}[The Descartes condition on ALE spaces]
+\label{rem:descartes-ale}
+For an ALE quantum observable universe (Example~\ref{ex:ale}), the Descartes
+condition $\chi(E) = -6$ selects specific finite subgroups
+$\Gamma \subset \mathrm{SU}(2)$ in the quotient singularity
+$\mathbb{C}^2 / \Gamma$.  The Euler characteristic of the resolved space
+and its principal bundle are tied to the order and representation theory of
+$\Gamma$, so the Descartes condition imposes arithmetic constraints on the
+McKay quiver of~$\Gamma$.
+\end{remark}
+
+\begin{remark}[The Descartes condition on affine space]
+\label{rem:descartes-affine}
+For the affine quantum observable universe $M = \mathbb{C}^n$
+(Example~\ref{ex:affine}), the Descartes condition $\chi(E) = -6$ forces the
+principal $\mathrm{SU}(2)$-bundle $E$ to carry non-trivial topology despite
+the contractibility of the base.  In the two-dimensional case $M = \mathbb{C}^2$,
+the $q$-harmonic forms on this bundle
+(Definition~\ref{def:q-harmonic-form}) determine the spectrum of stable
+excitations.  In the regime $q(p) \to 1$ (near-classicality), the zero-modes
+of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic
+Microwave Background: the Hodge numbers of $E$ govern the multiplicity of
+angular modes, and the negative Euler characteristic forces a non-trivial
+distribution of these modes across the CR manifold $M$.
+\end{remark}
+
+% ── Descent to one complex dimension ─────────────────────────────────────────
+
+\begin{remark}[Descent to one complex dimension]
+\label{rem:descent-one-dim}
+By the descent theorem (Proposition~\ref{prop:jet-prolongation}), a
+two-complex-dimensional Descartes universe $(M, G, E)$ with $M = \mathbb{C}^2$
+descends to a one-complex-dimensional variety $M_0$.  The stability of the
+Euler characteristic under descent and lifting
+(Proposition~\ref{prop:euler-char-stability}) ensures that the descended
+universe retains $\chi(E) = -6$.  We may therefore study the Descartes
+universe entirely in the setting of one-complex-dimensional varieties.
+\end{remark}
+
+% ── Genus and Euler characteristic ───────────────────────────────────────────
+
+\begin{proposition}[Genus of the maximal descent]
+\label{prop:genus-maximal-descent}
+Let $(M, G, E)$ be a Descartes universe that descends to a compact
+one-complex-dimensional variety $M_0$.  Then $M_0$ is a Riemann surface of
+genus $g = 4$.
+\end{proposition}
+
+\begin{proof}
+For a compact Riemann surface of genus $g$, the Euler characteristic is
+$\chi = 2 - 2g$.  The Descartes condition requires $\chi(E) = -6$.  On
+the maximal descent $M_0$, the stability of the Euler characteristic
+(Proposition~\ref{prop:euler-char-stability}) gives $\chi(M_0) = -6$,
+whence $2 - 2g = -6$ and $g = 4$.
+\end{proof}
+
+% ── Leptons and chirality ────────────────────────────────────────────────────
+
+\begin{remark}[Electrons, muons and the Reeb decomposition]
+\label{rem:descartes-leptons}
+The Reeb decomposition (Definition~\ref{def:reeb-decomposition}) applied to
+a Descartes universe yields two classes of fermionic excitations
+(Definition~\ref{def:fermion}).  The degree of the vertical component
+$\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to
+electrons, while forms with $\deg\alpha_V = 2$ correspond to muons.  More
+generally, each additional unit of vertical degree is identified with a
+successive lepton generation.  The constraint $\chi(E) = -6$ bounds the
+number of such generations, since the Hodge decomposition of $E$ admits only
+finitely many independent vertical harmonic forms.
+\end{remark}
+
+\begin{remark}[Chirality as Reeb orientation]
+\label{rem:descartes-chirality}
+The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural
+orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a
+preferred direction along the vertical distribution.  Left-handed and
+right-handed chiralities correspond to the two orientations of $\xi$ relative
+to the complex structure of $M$.  For fermions
+(Definition~\ref{def:fermion}), the vertical component $\alpha_V$ transforms
+with a definite sign under reversal of $\xi$, so chirality is encoded in the
+$\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$.  Bosons
+(Definition~\ref{def:boson}), being purely horizontal, are chirality-blind ---
+consistent with the observed parity invariance of the electromagnetic and
+strong interactions.
+\end{remark}
+
+% ── Light cone and affine charts ─────────────────────────────────────────────
+
+\begin{remark}[Light cone of an affine chart]
+\label{rem:light-cone-affine}
+Consider an open subset $U \subset M_0$ representing a portion of the
+descended universe from the big bang to heat death.  An \emph{affine chart}
+on $U$ is a local coordinate patch in which the metric on the base manifold
+$M_0$ defines a causal structure.  The \emph{light cone} of the affine chart
+is the boundary of the causal future in $U$: it is determined by the metric
+on $M_0$ and has the property that no singularity of the ambient space is
+visible from within the chart.  In this way, the affine chart provides a
+non-singular window onto a portion of the Descartes universe.
+\end{remark}
+
+% ── Trefoil subgroups and Bring's curve ──────────────────────────────────────
+
+\begin{remark}[Chirality and trefoil subgroups]
+\label{rem:chirality-trefoil}
+The chirality of the observable universe --- manifest in the three colour
+charges of quantum chromodynamics --- is encoded in the symmetry group of the
+descended surface $M_0$.  Proposition~\ref{prop:genus-maximal-descent}
+identifies $M_0$ as a genus-$4$ Riemann surface.  We require a genus-$4$
+surface whose automorphism group contains three subgroups isomorphic to $S_3$
+--- quotients of the trefoil knot group
+$\pi_1(S^3 \setminus K) \cong \langle x, y \mid x^2 = y^3 \rangle$ ---
+corresponding to the three colour charges (red, green, blue).  These $S_3$
+subgroups generate a subgroup of the monodromy group, and the remaining
+generators of the full automorphism group act by conjugation, permuting the
+three $S_3$ subgroups among themselves.
+\end{remark}
+
+\begin{remark}[Bring's curve]
+\label{rem:brings-curve}
+Bring's curve is the unique Riemann surface of genus $4$ with the maximal
+automorphism group $S_5$ (order~$120$) for its genus.  It is defined by
+the intersection of three symmetric hypersurfaces in $\mathbb{P}^4$:
+\[
+  \sum_{i=1}^{5} z_i = 0,
+  \qquad
+  \sum_{i=1}^{5} z_i^2 = 0,
+  \qquad
+  \sum_{i=1}^{5} z_i^3 = 0.
+\]
+The symmetric group $S_5$ acts by permuting the five homogeneous coordinates,
+and this action realises the monodromy structure described in
+Remark~\ref{rem:chirality-trefoil}: the group $S_5$ contains three copies of
+$S_3$ (quotients of the trefoil knot group) corresponding to the three
+colour charges, and elements outside these subgroups act by conjugation,
+permuting the three copies among themselves.
+\end{remark}
+
+% ── The Descartes theorem ────────────────────────────────────────────────────
+
+\begin{theorem}[Descartes theorem]
+\label{thm:descartes}
+Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum
+observable universes satisfying the Descartes condition $\chi(E) = -6$,
+with morphisms given by QOU maps that preserve the Euler characteristic.
+Then Bring's curve $\Sigma_4$ (Remark~\ref{rem:brings-curve}) is a terminal
+object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, E)$ in
+$\mathcal{C}_{-6}$, there exists a unique morphism
+$(M, G, E) \to (\Sigma_4, G, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.
+\end{theorem}
+
+\begin{proof}
+% TODO: proof
+\end{proof}
+
+\begin{remark}[Universality for a given Euler characteristic]
+\label{rem:universality-general}
+The Descartes theorem (Theorem~\ref{thm:descartes}) is expected to be a
+special case of a more general result: for any admissible Euler
+characteristic $\chi$, the category $\mathcal{C}_{\chi}$ of $\mathbb{C}$
+quantum observable universes with $\chi(E) = \chi$ should admit a terminal
+object determined by the unique maximally symmetric Riemann surface of the
+corresponding genus.  The Descartes case $\chi = -6$ (genus~$4$) is
+distinguished by Bring's curve, but analogous universal objects are expected
+at other values of~$\chi$.
+\end{remark}
