@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Frederick Carl Leitner[^1]" />
-  <meta name="dcterms.date" content="2026-03-12" />
+  <meta name="dcterms.date" content="2026-03-13" />
   <title>Quantum Observable Universe</title>
   <style>
     code{white-space: pre-wrap;}
@@ -32,7 +32,7 @@
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
 <p class="author">Frederick Carl Leitner[^1]</p>
-<p class="date">2026-03-12</p>
+<p class="date">2026-03-13</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>This paper presents a mathematical framework for the Quantum
@@ -881,6 +881,109 @@ class="math inline">\(m\)</span> of a stable vortex is <span
 class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
 \rVert
 \cdot \lVert L \wedge F^+ \rVert\,.\]</span></em></p>
+</div>
+
+<h3 id="descent">Descent</h3>
+<div id="def:descent-dim-1" class="definition">
+
+<p><strong>Definition 2.15</strong> (Descent to Dimension <span
+class="math inline">\(1\)</span>). <em>Let <span
+class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
+tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+The <em>descent</em> is the reverse traversal of the tower: starting
+from level <span class="math inline">\(n\)</span> one passes to level
+<span class="math inline">\(n-1\)</span> by restricting the connection
+<span class="math inline">\(A_n\)</span> and the bundle <span
+class="math inline">\(E_n\)</span> to the base manifold <span
+class="math inline">\(M_{n-1}\)</span>. The descent terminates when the
+base manifold <span class="math inline">\(M_k\)</span> reaches <span
+class="math inline">\(\dim M_k = 1\)</span>, at which point <span
+class="math inline">\(M_k\)</span> is diffeomorphic to <span
+class="math inline">\(S^1\)</span> or <span
+class="math inline">\(\mathbb{R}\)</span>.</em></p>
+</div>
+
+<div id="rem:descent-reduction" class="remark">
+
+<p><strong>Remark 2.16</strong> (Reduction at dimension <span
+class="math inline">\(1\)</span>). <em>When <span
+class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe collapse as follows.</em></p>
+<ol type="1">
+<li><p><em><em>Connection.</em> The <span
+class="math inline">\(\mathrm{SU}(2)\)</span> connection <span
+class="math inline">\(A_k\)</span> restricts to a single dimension; its
+holonomy reduces to a <span class="math inline">\(\mathrm{U}(1)\)</span>
+phase around <span class="math inline">\(S^1\)</span>.</em></p></li>
+<li><p><em><em>Bundle.</em> The principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span> bundle <span
+class="math inline">\(E\)</span> descends to a bundle over the <span
+class="math inline">\(1\)</span>-dimensional base whose fibre dynamics
+are locked into a single periodic flow.</em></p></li>
+<li><p><em><em>Reeb direction.</em> The inverse of the Reeb vector field
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.18</a>)
+becomes the only direction of motion; the horizontal distribution is
+trivial and no bosonic modes
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>)
+survive.</em></p></li>
+</ol>
+</div>
+
+<div id="rem:descent-physical" class="remark">
+
+<p><strong>Remark 2.17</strong> (Physical implications of a <span
+class="math inline">\(1\)</span>-dimensional base). <em>At
+dimension <span class="math inline">\(1\)</span> the physical content
+simplifies drastically.</em></p>
+<ol type="1">
+<li><p><em><em>Primordial vortex.</em> The vortex filaments of the mass
+identity
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.14</a>)
+are no longer embedded in a larger space; the entire manifold
+<em>is</em> the filament.</em></p></li>
+<li><p><em><em>Mass as pure drag.</em> The mass identity reduces to an
+integral over the whole of <span class="math inline">\(M_k\)</span>:
+<span class="math display">\[m \;\propto\; \oint_{M_k} \lVert \nabla_A\,
+q \rVert
+\cdot \lVert L \wedge F^+ \rVert\,,\]</span> so that mass represents the
+fundamental geometric resistance of the <span
+class="math inline">\(1\)</span>-dimensional flow against the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> rotation.</em></p></li>
+<li><p><em><em>Lepton generations.</em> Since the number of lepton
+generations is bounded by the Euler characteristic and vertical degree
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>),
+a <span class="math inline">\(1\)</span>-dimensional base supports only
+the most fundamental fermionic state; there is no room for higher-degree
+vertical harmonic forms.</em></p></li>
+</ol>
+</div>
+
+<div id="rem:descent-fixed-point" class="remark">
+
+<p><strong>Remark 2.18</strong> (Fixed-point mechanism: ascent and
+descent). <em>Each step down the brane tower removes a space-like
+dimension through the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
+associated fixed-point set.</em></p>
+<ol type="1">
+<li><p><em><em>Ascent (generation).</em> Moving from <span
+class="math inline">\(M_k\)</span> (<span class="math inline">\(\dim =
+1\)</span>) to <span class="math inline">\(M_{k+1}\)</span> (<span
+class="math inline">\(\dim = 3\)</span>) lifts the connection <span
+class="math inline">\(A\)</span> to higher categorical structures via
+the jet prolongation
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>).</em></p></li>
+<li><p><em><em>Descent (filtering).</em> Moving back down acts as an
+algebraic filter
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>).
+The ladder modes
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
+are stripped away until only the longitudinal modes—the <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone—remain at the
+<span class="math inline">\(1\)</span>-dimensional limit.</em></p></li>
+</ol>
 </div>
 
 <h1 id="path-integrals-and-braiding">Path Integrals and Braiding</h1>
