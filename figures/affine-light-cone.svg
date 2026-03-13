@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 820 500"
+     width="820" height="500"
+     font-family="'STIX Two Math', 'Latin Modern Math', 'Computer Modern', 'Times New Roman', serif">
+
+  <defs>
+    <!-- Diagonal-line hatching for the light-cone interior -->
+    <pattern id="red-hatch" patternUnits="userSpaceOnUse"
+             width="10" height="10" patternTransform="rotate(-30)">
+      <line x1="0" y1="0" x2="0" y2="10"
+            stroke="#cc2222" stroke-width="1.2" stroke-opacity="0.50"/>
+    </pattern>
+
+    <!-- Clip path: cone interior bounded by the two edge curves and the right ellipse -->
+    <clipPath id="cone-clip">
+      <path d="M 100 280
+               C 180 260, 340 140, 590 130
+               A 48 155 0 0 1 590 430
+               C 340 420, 180 300, 100 280
+               Z"/>
+    </clipPath>
+
+    <!-- Arrowhead marker for annotation lines -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="6"
+            refX="8" refY="3" orient="auto" fill="black">
+      <polygon points="0 0, 8 3, 0 6"/>
+    </marker>
+
+    <!-- Downward arrow marker -->
+    <marker id="arrow-down" markerWidth="8" markerHeight="6"
+            refX="4" refY="6" orient="auto" fill="black">
+      <polygon points="0 0, 8 0, 4 6"/>
+    </marker>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!-- Light-cone interior (red hatching clipped to cone shape)     -->
+  <!-- ============================================================ -->
+  <rect x="0" y="0" width="820" height="500"
+        fill="url(#red-hatch)" clip-path="url(#cone-clip)"/>
+
+  <!-- ============================================================ -->
+  <!-- Cone outline                                                 -->
+  <!-- ============================================================ -->
+  <!-- Upper boundary -->
+  <path d="M 100 280 C 180 260, 340 140, 590 130"
+        fill="none" stroke="black" stroke-width="2"/>
+  <!-- Lower boundary -->
+  <path d="M 100 280 C 180 300, 340 420, 590 430"
+        fill="none" stroke="black" stroke-width="2"/>
+  <!-- Right elliptical cross-section (red, dashed) -->
+  <ellipse cx="590" cy="280" rx="48" ry="155"
+           fill="none" stroke="#cc2222" stroke-width="2.2"
+           stroke-dasharray="10,6"/>
+
+  <!-- Big-bang vertex (open circle) -->
+  <circle cx="100" cy="280" r="6" fill="white" stroke="black" stroke-width="2"/>
+
+  <!-- ============================================================ -->
+  <!-- Observer ("you are here")                                    -->
+  <!-- ============================================================ -->
+  <circle cx="400" cy="290" r="5" fill="black"/>
+  <!-- Label and connecting line -->
+  <line x1="340" y1="218" x2="393" y2="283"
+        stroke="black" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="265" y="212" font-size="18" font-style="italic">you are here</text>
+
+  <!-- ============================================================ -->
+  <!-- Big Bang label (upper left)                                  -->
+  <!-- ============================================================ -->
+  <text x="30" y="52" font-size="20" font-style="italic">big bang</text>
+  <!-- Downward arrow -->
+  <line x1="62" y1="62" x2="62" y2="100"
+        stroke="black" stroke-width="2.5" marker-end="url(#arrow-down)"/>
+
+  <!-- Annotations: q_p → 0, ℏ_q → 1, ‖L ∧ F⁺‖ → ∞ -->
+  <text x="30" y="135" font-size="16" font-style="italic">
+    q<tspan font-size="12" dy="4">p</tspan><tspan dy="-4"> → 0</tspan>
+  </text>
+  <text x="30" y="163" font-size="16" font-style="italic">
+    ℏ<tspan font-size="12" dy="4">q</tspan><tspan dy="-4"> → 1</tspan>
+  </text>
+  <text x="30" y="191" font-size="16" font-style="italic">
+    ‖L ∧ F<tspan font-size="12" dy="-6">+</tspan><tspan dy="6">‖ → ∞</tspan>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- Heat Death label (upper right)                               -->
+  <!-- ============================================================ -->
+  <text x="540" y="36" font-size="20" font-style="italic">heat death</text>
+  <!-- Downward arrow -->
+  <line x1="590" y1="46" x2="590" y2="100"
+        stroke="black" stroke-width="2.5" marker-end="url(#arrow-down)"/>
+
+  <!-- Annotations: q_p → 1, ℏ_q → 0, ‖L ∧ F⁺‖ → 0 -->
+  <text x="640" y="80" font-size="16" font-style="italic">
+    q<tspan font-size="12" dy="4">p</tspan><tspan dy="-4"> → 1</tspan>
+  </text>
+  <text x="640" y="108" font-size="16" font-style="italic">
+    ℏ<tspan font-size="12" dy="4">q</tspan><tspan dy="-4"> → 0</tspan>
+  </text>
+  <text x="640" y="136" font-size="16" font-style="italic">
+    ‖L ∧ F<tspan font-size="12" dy="-6">+</tspan><tspan dy="6">‖ → 0</tspan>
+  </text>
+
+  <!-- ============================================================ -->
+  <!-- Legend (lower right)                                         -->
+  <!-- ============================================================ -->
+  <!-- Light cone legend -->
+  <rect x="650" y="395" width="22" height="16"
+        fill="url(#red-hatch)" stroke="#cc2222" stroke-width="1.5"/>
+  <text x="680" y="409" font-size="14">light cone</text>
+
+  <!-- Affine chart legend -->
+  <line x1="650" y1="432" x2="672" y2="432"
+        stroke="black" stroke-width="2"/>
+  <text x="680" y="436" font-size="14">affine chart</text>
+
+</svg>
