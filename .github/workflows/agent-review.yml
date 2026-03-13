@@ -55,6 +55,9 @@ jobs:
       - name: Collect skill files
         id: skills
         run: |
+          # Cap skills payload to stay well within the GitHub Actions output limit.
+          MAX_SKILLS_CHARS=20000
+
           SKILLS=""
           for f in .claude/skills/*.md; do
             [ -f "$f" ] || continue
@@ -65,7 +68,7 @@ jobs:
           done
           {
             echo "content<<SKILLS_EOF"
-            echo "$SKILLS" | head -c 20000
+            echo "$SKILLS" | head -c "$MAX_SKILLS_CHARS"
             echo "SKILLS_EOF"
           } >> "$GITHUB_OUTPUT"
 
