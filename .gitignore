@@ -10,6 +10,7 @@ __pycache__/
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
+!figures/*.pdf
 diff.tex
 main-flat.tex
 _site/
