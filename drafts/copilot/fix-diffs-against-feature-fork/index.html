@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Frederick Carl Leitner[^1]" />
+  <meta name="dcterms.date" content="2026-03-13" />
+  <title>Quantum Observable Universe</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="/usr/share/javascript/mathjax/MathJax.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Quantum Observable Universe</h1>
+<p class="author">Frederick Carl Leitner[^1]</p>
+<p class="date">2026-03-13</p>
+<div class="abstract">
+<div class="abstract-title">Abstract</div>
+<p>This paper presents a mathematical framework for the Quantum
+Observable Universe (QOU). We introduce the notion of quantum torsion in
+this setting, study its lifting to higher categorical structures, and
+examine the resulting interpretational and experimental consequences.
+Speculative extensions are discussed in the final chapter.</p>
+</div>
+</header>
+<div class="center">
+
+<p>This work is licensed under a <a
+href="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+Attribution 4.0 International License</a>.<br />
+You are free to share and adapt this material for any purpose,<br />
+provided appropriate credit is given, a link to the license is
+provided,<br />
+and any changes made are indicated.</p>
+</div>
+
+<h1 id="quantum-observable-universe">Quantum Observable Universe</h1>
+<div id="def:c-quantum-universe" class="definition">
+
+<p><strong>Definition 1.1</strong> (<span
+class="math inline">\(\mathbb{C}\)</span> Quantum Universe). <em>A
+<em><span class="math inline">\(\mathbb{C}\)</span> quantum
+universe</em> is a triple <span class="math inline">\((M, G, E)\)</span>
+where:</em></p>
+<ol type="1">
+<li><p><em><span class="math inline">\(M\)</span> is a CR
+manifold;</em></p></li>
+<li><p><em><span class="math inline">\(G =
+\mathrm{SU}(2)\)</span>;</em></p></li>
+<li><p><em><span class="math inline">\(E \to M\)</span> is a principal
+<span class="math inline">\(G\)</span>-bundle (called the <em>bulk</em>)
+with fibres <span class="math inline">\(\mathbb{CP}\)</span> and <span
+class="math inline">\(\mathrm{SO}(3)\)</span> holonomy.</em></p></li>
+</ol>
+</div>
+
+<div id="def:c-quantum-observable-universe" class="definition">
+
+<p><strong>Definition 1.2</strong> (<span
+class="math inline">\(\mathbb{C}\)</span> Quantum Observable Universe).
+<em>A <em><span class="math inline">\(\mathbb{C}\)</span> quantum
+observable universe</em> is a <span
+class="math inline">\(\mathbb{C}\)</span> quantum universe <span
+class="math inline">\((M, G, E)\)</span>
+(Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>)
+that satisfies the following compactly supported cohomology conditions:
+<span class="math display">\[H^0_c(M, \mathrm{Ad}(E)) = 0
+\qquad\text{and}\qquad
+H^0_c(M, E) = 0.\]</span></em></p>
+</div>
+
+<div id="rem:jet-bundle" class="remark">
+
+<p><strong>Remark 1.3</strong> (Jet-bundle formulation). <em>The
+conditions in
+Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>
+admit a natural reformulation in terms of the first jet bundle <span
+class="math inline">\(J^1 E\)</span>. The vanishing <span
+class="math inline">\(H^0_c(M, E) = 0\)</span> ensures that no
+non-trivial compactly supported section of <span
+class="math inline">\(E\)</span> exists, while <span
+class="math inline">\(H^0_c(M, \mathrm{Ad}(E)) = 0\)</span> eliminates
+compactly supported infinitesimal gauge symmetries. Together, these
+conditions mean that the space of sections of <span
+class="math inline">\(J^1 E\)</span> with compact support injects into
+the space of connections, preventing any local degeneracy of the gauge
+field.</em></p>
+</div>
+
+<div id="lem:unique-connection" class="lemma">
+
+<p><strong>Lemma 1.4</strong> (Uniqueness of the connection). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe.
+Then the vanishing conditions <span class="math display">\[H^0_c(M,
+\mathrm{Ad}(E)) = 0
+\qquad\text{and}\qquad
+H^0_c(M, E) = 0\]</span> imply that the connection <span
+class="math inline">\(A\)</span> on <span
+class="math inline">\(E\)</span> is unique up to gauge
+equivalence.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> ◻</p>
+</div>
+
+<div id="prop:self-dual-curvature" class="proposition">
+
+<p><strong>Proposition 1.5</strong> (Self-duality of the curvature).
+<em>Let <span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with connection <span class="math inline">\(A\)</span>. Then the
+curvature <span class="math inline">\(F_A\)</span> is self-dual,
+i.e. <span class="math display">\[F_A = {*}\, F_A.\]</span></em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> ◻</p>
+</div>
+
+<div id="ex:calabi-yau" class="example">
+
+<p><strong>Example 1.6</strong> (Calabi–Yau manifolds). <em>Let <span
+class="math inline">\(M\)</span> be a Calabi–Yau manifold. The
+Ricci-flat Kähler metric on <span class="math inline">\(M\)</span>
+endows it with a natural CR structure, and the trivial <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
+class="math inline">\(E = M \times \mathrm{SU}(2)\)</span> yields a
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe when the compactly supported cohomology conditions of
+Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>
+are satisfied.</em></p>
+</div>
+
+<div id="ex:ale" class="example">
+
+<p><strong>Example 1.7</strong> (ALE spaces). <em>Let <span
+class="math inline">\(M\)</span> be an asymptotically locally Euclidean
+(ALE) space. ALE spaces arise as minimal resolutions of quotient
+singularities <span class="math inline">\(\mathbb{C}^2 / \Gamma\)</span>
+for finite subgroups <span class="math inline">\(\Gamma \subset
+\mathrm{SU}(2)\)</span>. Equipped with a hyper-Kähler metric and the
+corresponding principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle, <span
+class="math inline">\(M\)</span> provides a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+satisfying self-dual curvature
+(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>).</em></p>
+</div>
+
+<div id="ex:descartes" class="example">
+
+<p><strong>Example 1.8</strong> (Descartes universe). <em>Let <span
+class="math inline">\(M = \mathbb{C}^2\)</span> and assume <span
+class="math inline">\(\chi(E) = -6\)</span>. We call the resulting <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+the <em>Descartes universe</em>.</em></p>
+<div class="center">
+
+<p><strong>“Je pense, donc je suis.”<br />
+— René Descartes</strong></p>
+</div>
+
+</div>
+
+<div id="rem:descartes-cmb" class="remark">
+
+<p><strong>Remark 1.9</strong> (Descartes universe and the CMB). <em>In
+the Descartes universe
+(Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">1.8</a>),
+the Euler characteristic <span class="math inline">\(\chi(E) =
+-6\)</span> constrains the topology of the bulk bundle <span
+class="math inline">\(E\)</span>. The <span
+class="math inline">\(q\)</span>-harmonic forms on this bundle
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
+determine the spectrum of stable excitations. In the regime <span
+class="math inline">\(q(p) \to 1\)</span> (near-classicality), the
+zero-modes of <span class="math inline">\(\Delta_q\)</span> reproduce
+the thermal fluctuation spectrum of the Cosmic Microwave Background: the
+Hodge numbers of <span class="math inline">\(E\)</span> govern the
+multiplicity of angular modes, and the negative Euler characteristic
+forces a non-trivial distribution of these modes across the CR manifold
+<span class="math inline">\(M = \mathbb{C}^2\)</span>.</em></p>
+</div>
+
+<div id="rem:descartes-leptons" class="remark">
+
+<p><strong>Remark 1.10</strong> (Electrons, muons and the Reeb
+decomposition). <em>The Reeb decomposition
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>)
+applied to the Descartes universe yields two classes of fermionic
+excitations
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.22</a>).
+The degree of the vertical component <span
+class="math inline">\(\alpha_V\)</span> distinguishes them: forms with
+<span class="math inline">\(\deg\alpha_V = 1\)</span> correspond to
+electrons, while forms with <span class="math inline">\(\deg\alpha_V =
+2\)</span> correspond to muons. More generally, each additional unit of
+vertical degree is identified with a successive lepton generation. The
+constraint <span class="math inline">\(\chi(E) = -6\)</span> bounds the
+number of such generations, since the Hodge decomposition of <span
+class="math inline">\(E\)</span> admits only finitely many independent
+vertical harmonic forms.</em></p>
+</div>
+
+<div id="rem:descartes-chirality" class="remark">
+
+<p><strong>Remark 1.11</strong> (Chirality as Reeb orientation). <em>The
+Reeb vector field <span class="math inline">\(\xi\)</span> on the CR
+manifold <span class="math inline">\(M\)</span> carries a natural
+orientation: the sign of the contact form <span
+class="math inline">\(\theta(\xi) = 1\)</span> singles out a preferred
+direction along the vertical distribution. Left-handed and right-handed
+chiralities correspond to the two orientations of <span
+class="math inline">\(\xi\)</span> relative to the complex structure of
+<span class="math inline">\(M\)</span>. For fermions
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.22</a>),
+the vertical component <span class="math inline">\(\alpha_V\)</span>
+transforms with a definite sign under reversal of <span
+class="math inline">\(\xi\)</span>, so chirality is encoded in the <span
+class="math inline">\(\pm\)</span>-eigenspaces of the Reeb involution
+<span class="math inline">\(\xi \mapsto -\xi\)</span>. Bosons
+(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.23</a>),
+being purely horizontal, are chirality-blind — consistent with the
+observed parity invariance of the electromagnetic and strong
+interactions.</em></p>
+</div>
+
+<div id="def:substrate-parameter" class="definition">
+
+<p><strong>Definition 1.12</strong> (Substrate parameter). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with connection <span class="math inline">\(A\)</span>. Write <span
+class="math inline">\(F_A = dA + A \wedge A\)</span> for the curvature
+and let <span class="math inline">\(F_A^+\)</span> denote its self-dual
+part. Let <span class="math inline">\(L \in \Gamma(T^*M \otimes
+\overline{T^*M})\)</span> be the <em>Levi form</em>, a Hermitian form on
+the tangent bundle of <span class="math inline">\(M\)</span>. The
+<em>substrate parameter</em> is the function <span
+class="math inline">\(q \colon M \to \mathbb{R}\)</span> defined by
+<span class="math display">\[q(p) \;=\; \exp\!\bigl(-\lVert L \wedge
+F_A^+ \rVert(p)\bigr),
+\qquad p \in M.\]</span></em></p>
+</div>
+
+<div id="def:quantum-gauge-group" class="definition">
+
+<p><strong>Definition 1.13</strong> (Quantum Gauge Group). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).
+The <em>quantum gauge group</em> is the quantum group <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span> obtained by deforming
+the structure group <span class="math inline">\(G =
+\mathrm{SU}(2)\)</span> at the parameter <span
+class="math inline">\(q\)</span>.</em></p>
+</div>
+
+<div id="def:quantum-planck-constant" class="definition">
+
+<p><strong>Definition 1.14</strong> (Quantum Planck Constant). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).
+The <em>quantum Planck constant</em> is the function <span
+class="math inline">\(\hbar_q \colon M \to \mathbb{R}\)</span> defined
+by <span class="math display">\[\hbar_q(p) \;=\; 1 - q(p), \qquad p \in
+M.\]</span> As <span class="math inline">\(q(p) \to 1\)</span>
+(classicality), <span class="math inline">\(\hbar_q(p) \to 0\)</span>
+and quantum effects vanish; as <span class="math inline">\(q(p) \to
+0\)</span> (deep-quantum regime), <span class="math inline">\(\hbar_q(p)
+\to 1\)</span>.</em></p>
+</div>
+
+<div id="rem:j1e-local-states" class="remark">
+
+<p><strong>Remark 1.15</strong> (<span
+class="math inline">\(J^1E\)</span> as the space of local states).
+<em>The jet bundle <span class="math inline">\(J^1 E\)</span> serves as
+the space of local states of the <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe.
+The classical gauge dynamics, encoded by the <em>instanton
+connection</em> <span class="math inline">\(A\)</span>
+(Lemma <a href="#lem:unique-connection" data-reference-type="ref" data-reference="lem:unique-connection">1.4</a>),
+are weighted by the substrate parameter <span
+class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+to define the quantum field algebra <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span>
+(Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.13</a>).</em></p>
+</div>
+
+<div id="def:q-harmonic-form" class="definition">
+
+<p><strong>Definition 1.16</strong> (<span
+class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).
+Let <span class="math inline">\(d_q\)</span> denote the <span
+class="math inline">\(q\)</span>-deformed exterior derivative on the CR
+manifold <span class="math inline">\(M\)</span>. A <em>particle</em> is
+a section <span class="math inline">\(\alpha \in \Gamma(M,\, \Lambda^k
+T^*M \otimes J^1 E)\)</span> that is <span
+class="math inline">\(q\)</span>-harmonic, i.e. lies in the kernel of
+the <span class="math inline">\(q\)</span>-Laplacian: <span
+class="math display">\[\Delta_q \alpha
+\;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
+\;=\; 0,\]</span> where <span class="math inline">\(\delta_q\)</span> is
+the formal adjoint of <span class="math inline">\(d_q\)</span>. The
+condition <span class="math inline">\(\Delta_q\alpha = 0\)</span>
+ensures that the form sits in a ground state of the <span
+class="math inline">\(q\)</span>-viscosity.</em></p>
+</div>
+
+<div id="def:reeb-decomposition" class="definition">
+
+<p><strong>Definition 1.17</strong> (Reeb decomposition). <em>Let <span
+class="math inline">\(M\)</span> be a CR manifold equipped with a
+contact form <span class="math inline">\(\theta\)</span> and let <span
+class="math inline">\(\xi\)</span> denote the associated <em>Reeb vector
+field</em>, characterised by <span
+class="math inline">\(\iota_\xi\,d\theta = 0\)</span> and <span
+class="math inline">\(\theta(\xi) = 1\)</span>. Every differential form
+<span class="math inline">\(\alpha\)</span> on <span
+class="math inline">\(M\)</span> decomposes as <span
+class="math display">\[\alpha \;=\; \alpha_H + \alpha_V,
+\qquad\text{where}\qquad
+\iota_\xi\,\alpha_V \neq 0,\]</span> with <span
+class="math inline">\(\alpha_H\)</span> the <em>horizontal
+component</em> (annihilated by <span
+class="math inline">\(\iota_\xi\)</span>) and <span
+class="math inline">\(\alpha_V\)</span> the <em>vertical component</em>
+(having a non-trivial contraction with <span
+class="math inline">\(\xi\)</span>).</em></p>
+</div>
+
+<div id="def:q-reeb-vector-field" class="definition">
+
+<p><strong>Definition 1.18</strong> (<span
+class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+and Reeb vector field <span class="math inline">\(\xi\)</span>
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>).
+The <em><span class="math inline">\(q\)</span>-deformed Reeb vector
+field</em> is the vector field <span
+class="math inline">\(\xi_q\)</span> on <span
+class="math inline">\(M\)</span> defined by its action on smooth
+functions <span class="math inline">\(f \in C^\infty(M)\)</span>: <span
+class="math display">\[\xi_q(f) \;=\; q\,\xi(f) + (1 - q)\,[\xi,
+X_f]_q,\]</span> where <span class="math inline">\(X_f\)</span> is the
+horizontal lift of <span class="math inline">\(\mathrm{grad}\,f\)</span>
+to <span class="math inline">\(H\)</span> and <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> denotes the <span
+class="math inline">\(q\)</span>-deformed Lie bracket on <span
+class="math inline">\(\mathfrak{X}(M)\)</span>. When <span
+class="math inline">\(q = 1\)</span>, one recovers the classical Reeb
+field <span class="math inline">\(\xi_1 = \xi\)</span>.</em></p>
+</div>
+
+<div id="def:q-reeb-flow" class="definition">
+
+<p><strong>Definition 1.19</strong> (<span
+class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
+class="math inline">\(\xi_q\)</span> be the <span
+class="math inline">\(q\)</span>-deformed Reeb vector field
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.18</a>).
+The <em><span class="math inline">\(q\)</span>-deformed Reeb flow</em>
+is the one-parameter family of diffeomorphisms <span
+class="math inline">\(\phi_t^q \colon M \to M\)</span>, <span
+class="math inline">\(t \in \mathbb{R}\)</span>, generated by <span
+class="math inline">\(\xi_q\)</span>: <span
+class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
+\phi_t^q,
+\qquad \phi_0^q = \mathrm{id}_M.\]</span></em></p>
+</div>
+
+<div id="def:q-torsion-leaf" class="definition">
+
+<p><strong>Definition 1.20</strong> (<span
+class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
+class="math inline">\(H = \ker\theta \subset TM\)</span> be the
+horizontal distribution on the CR manifold <span
+class="math inline">\(M\)</span>. A <em><span
+class="math inline">\(q\)</span>-torsion leaf</em> is a maximal integral
+submanifold <span class="math inline">\(L \hookrightarrow M\)</span> of
+<span class="math inline">\(H\)</span> that is invariant under the <span
+class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.19</a>):
+<span class="math display">\[T_p L \;\subset\; H_p
+\quad\text{for all } p \in L,
+\qquad\text{and}\qquad
+\phi_t^q(L) = L
+\quad\text{for all } t \in \mathbb{R}.\]</span></em></p>
+</div>
+
+<div id="rem:q-torsion-leaf-minimum" class="remark">
+
+<p><strong>Remark 1.21</strong> (<span
+class="math inline">\(q\)</span>-Torsion leaves as energy minima).
+<em>Let <span class="math inline">\(A_q\)</span> denote the <span
+class="math inline">\(q\)</span>-deformed connection on <span
+class="math inline">\(E\)</span> and define the <span
+class="math inline">\(q\)</span>-curvature <span
+class="math display">\[\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\,
+A_q]_q.\]</span> A <span class="math inline">\(q\)</span>-torsion leaf
+<span class="math inline">\(L\)</span>
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.20</a>)
+is a local minimum of <span
+class="math inline">\(\lVert\Omega_q\rVert\)</span> restricted to the
+horizontal distribution: the invariance of <span
+class="math inline">\(L\)</span> under <span
+class="math inline">\(\phi_t^q\)</span> forces the first variation of
+<span class="math inline">\(\lVert\Omega_q|_L\rVert\)</span> to vanish,
+so <span class="math inline">\(L\)</span> sits in a <span
+class="math inline">\(q\)</span>-curvature well. Physically, a <span
+class="math inline">\(q\)</span>-torsion leaf represents a region of the
+CR manifold where the gauge curvature is minimised and the <span
+class="math inline">\(q\)</span>-deformed dynamics are in
+equilibrium.</em></p>
+</div>
+
+<div id="def:fermion" class="definition">
+
+<p><strong>Definition 1.22</strong> (Fermion). <em>A <em>fermion</em> is
+a <span class="math inline">\(q\)</span>-harmonic form
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
+that has a non-trivial vertical component in the Reeb decomposition
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>):
+<span class="math display">\[\Delta_q\,\alpha = 0
+\qquad\text{and}\qquad
+\iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
+</div>
+
+<div id="def:boson" class="definition">
+
+<p><strong>Definition 1.23</strong> (Boson). <em>A <em>boson</em> is a
+<span class="math inline">\(q\)</span>-harmonic form
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
+that is purely horizontal in the Reeb decomposition
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>):
+<span class="math display">\[\Delta_q\,\alpha = 0
+\qquad\text{and}\qquad
+\alpha = \alpha_H
+\quad(\text{equivalently, } \iota_\xi\,\alpha = 0
+\text{ by Definition~\ref{def:reeb-decomposition}}).\]</span></em></p>
+</div>
+
+<div id="rem:reeb-physical" class="remark">
+
+<p><strong>Remark 1.24</strong> (Physical interpretation of the Reeb
+decomposition). <em>The Reeb vector field <span
+class="math inline">\(\xi\)</span> singles out the direction of internal
+spin on the CR manifold. Forms that “see” this direction (fermions)
+carry half-integer spin; forms confined to the horizontal distribution
+(bosons) do not couple to the Reeb flow and carry integer spin. The
+decomposition <span class="math inline">\(\alpha = \alpha_H +
+\alpha_V\)</span> is therefore the geometric origin of the
+spin–statistics distinction in this framework.</em></p>
+</div>
+
+<div id="rem:q-harmonic-physical" class="remark">
+
+<p><strong>Remark 1.25</strong> (Physical interpretation of <span
+class="math inline">\(q\)</span>-harmonicity). <em>The <span
+class="math inline">\(q\)</span>-Laplacian <span
+class="math inline">\(\Delta_q\)</span> encodes the <span
+class="math inline">\(q\)</span>-deformed viscosity of the CR geometry.
+A <span class="math inline">\(q\)</span>-harmonic form is a zero-mode of
+this operator and thus represents a stable excitation — a particle — of
+the quantum observable universe. The deformation parameter <span
+class="math inline">\(q\)</span> interpolates between the classical
+regime (<span class="math inline">\(q \to 1\)</span>, where <span
+class="math inline">\(\Delta_q\)</span> reduces to the Hodge Laplacian)
+and the deep-quantum regime (<span class="math inline">\(q \to
+0\)</span>), so the notion of “particle” is itself <span
+class="math inline">\(q\)</span>-dependent.</em></p>
+</div>
+
+<div id="rem:gr-substrate-geometry" class="remark">
+
+<p><strong>Remark 1.26</strong> (General Relativity as the “Substrate
+Geometry”). <em>In this model the metric is effectively replaced by the
+Levi form <span class="math inline">\(L\)</span> and its coupling to the
+gauge curvature <span class="math inline">\(F_A\)</span>. Gravity is
+expressed through the Variational Bicomplex as the back-reaction of the
+gauge fields on the CR manifold <span
+class="math inline">\(M\)</span>.</em></p>
+<p><em>The Einstein–Hilbert action is recovered by examining the
+variation of the action <span class="math inline">\(S_q\)</span> with
+respect to the Levi form <span class="math inline">\(L\)</span>: <span
+class="math display">\[\frac{\delta S_q}{\delta L}
+\;\implies\;
+G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},\]</span> where <span
+class="math inline">\(T_{\mu\nu}^{(q)}\)</span> is a
+<em>quantum-weighted</em> stress-energy tensor. Because <span
+class="math inline">\(q(p) = \exp\!\bigl(-\lVert L \wedge
+F^+\rVert\bigr)\)</span>, the geometry of the brane <span
+class="math inline">\(M\)</span> is forced to curve to accommodate the
+tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
+instantons.</em></p>
+</div>
+
+<div id="rem:schrodinger-jet-coaction" class="remark">
+
+<p><strong>Remark 1.27</strong> (The Schrödinger Equation as “Jet
+Co-action”). <em>The Schrödinger equation describes the evolution of a
+state in the fibre <span class="math inline">\(\mathbb{CP}\)</span>. In
+the jet-bundle framework this is expressed as the condition of parallel
+transport along the connection <span
+class="math inline">\(A\)</span>.</em></p>
+<p><em>For a section <span class="math inline">\(\psi \in
+\Gamma(E)\)</span>, the Schrödinger dynamics are found in the kernel of
+the <span class="math inline">\(q\)</span>-deformed covariant derivative
+on <span class="math inline">\(J^1 E\)</span>: <span
+class="math display">\[i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\,
+\psi,\]</span> where <span class="math inline">\(\hat{H}_q\)</span> is
+the <span class="math inline">\(q\)</span>-deformed Hamiltonian operator
+and:</em></p>
+<ul>
+<li><p><em><span class="math inline">\(\hbar_q(p) = 1 - q(p)\)</span>:
+the quantum Planck constant
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>)
+is a local field;</em></p></li>
+<li><p><em><span class="math inline">\(D_A = d + A\)</span>: the
+connection <span class="math inline">\(A\)</span> (the instanton) acts
+as the potential.</em></p></li>
+</ul>
+<p><em>As <span class="math inline">\(q(p) \to 1\)</span>
+(classicality), the uncertainty vanishes and the wave-like nature of the
+section freezes into a classical trajectory.</em></p>
+</div>
+
+<div id="rem:main-commutative-diagram" class="remark">
+
+<p><strong>Remark 1.28</strong> (Main Commutative Diagram). <em>The
+relationship between these two seemingly disparate equations is captured
+by the main commutative diagram of the <span
+class="math inline">\(\mathbb{C}\)</span>-quantum universe, where <span
+class="math inline">\(\mathbf{E}\)</span> denotes the Euler–Lagrange
+operator. The link is the substrate parameter <span
+class="math inline">\(q(p)\)</span>: <span
+class="math display">\[\begin{CD}
+J^1E @&gt;{\text{Variational Derivative } \mathbf{E}}&gt;&gt;
+\text{General Relativity (Geometry)} \\
+@V{\text{Jet Co-action}}VV
+@VV{\text{Coupling via } q(p)}V \\
+\Gamma(E) @&gt;{\text{Parallel Transport}}&gt;&gt;
+\text{Schr\&quot;odinger Eq.\ (Quantum States)}
+\end{CD}\]</span></em></p>
+</div>
+
+<h1 id="lifting-of-quantum-torsion">Lifting of Quantum Torsion</h1>
+<div id="prop:jet-prolongation" class="proposition">
+
+<p><strong>Proposition 2.1</strong> (Jet Prolongation). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+(Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>)
+with connection <span class="math inline">\(A\)</span> and metric <span
+class="math inline">\(g\)</span> on <span
+class="math inline">\(E\)</span>. Write <span
+class="math inline">\(\widetilde{M} = E\)</span> for the total space of
+<span class="math inline">\(E\)</span>, viewed as a manifold, and define
+<span class="math inline">\(E&#39;\)</span> as the bundle of orthonormal
+frames of the first jet bundle <span class="math inline">\(J^1
+E\)</span>. Then <span class="math inline">\(A\)</span> and <span
+class="math inline">\(g\)</span> uniquely determine a connection <span
+class="math inline">\(A&#39;\)</span> on <span
+class="math inline">\(E&#39;\)</span> such that <span
+class="math inline">\((\widetilde{M}, G, E&#39;)\)</span> is a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> ◻</p>
+</div>
+
+<div id="def:recursive-brane-tower" class="definition">
+
+<p><strong>Definition 2.2</strong> (Recursive Brane Tower). <em>Let
+<span class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+(Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>).
+Set <span class="math inline">\(M_0 = M\)</span> and <span
+class="math inline">\(E_1 = E\)</span>. <em>Inductively</em>, define
+<span class="math inline">\(E_{n+1}\)</span> as the jet prolongation
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>)
+of <span class="math inline">\(E_n\)</span>.</em></p>
+<p><em>The <em>brane relation</em> is the following recursive
+structure:</em></p>
+<ol type="1">
+<li><p><em>Each total space <span class="math inline">\(E_n\)</span> is
+treated as the base manifold <span
+class="math inline">\(M_{n+1}\)</span> for the next level; <span
+class="math inline">\(E_n\)</span> is the <em>brane</em> of <span
+class="math inline">\(E_{n+1}\)</span>.</em></p></li>
+<li><p><em>At each level, <span class="math inline">\(A_n \in
+\mathcal{A}(E_{n-1})\)</span> is the <span
+class="math inline">\(n\)</span>-th level instanton connection
+satisfying the Hermitian Yang–Mills equations on <span
+class="math inline">\(E_n\)</span>.</em></p></li>
+</ol>
+</div>
+
+<div id="ex:brane-tower-levels" class="example">
+
+<p><strong>Example 2.3</strong> (First two levels). <em>Starting from a
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe <span class="math inline">\((M, G, E_1)\)</span>, the first jet
+prolongation yields <span class="math inline">\(E_2\)</span> with base
+manifold <span class="math inline">\(M_1 = E_1\)</span>. The connection
+<span class="math inline">\(A_1\)</span> on <span
+class="math inline">\(E_1\)</span> satisfies the Hermitian Yang–Mills
+equations, and <span class="math inline">\(A_2\)</span> on <span
+class="math inline">\(E_2\)</span> is uniquely determined by
+Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>.</em></p>
+</div>
+
+<div id="def:quantum-characteristic-classes" class="definition">
+
+<p><strong>Definition 2.4</strong> (Quantum Characteristic Classes).
+<em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
+recursive brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+The <em>quantum characteristic classes</em> are the cohomology classes
+<span class="math display">\[\kappa_n \;\in\; H^*\!\bigl(E_{n+1},\,
+\mathbb{Z}\bigr)\]</span> that label the monodromy fixed points of the
+holonomy representation as one transitions from <span
+class="math inline">\(E_n\)</span> to <span
+class="math inline">\(E_{n+1}\)</span>.</em></p>
+</div>
+
+<div id="rem:betti-numbers-brane" class="remark">
+
+<p><strong>Remark 2.5</strong> (Betti numbers of the brane tower).
+<em>Let <span class="math inline">\(b_k(E_n) = \dim H^k(E_n,
+\mathbb{R})\)</span> denote the <span
+class="math inline">\(k\)</span>-th Betti number of <span
+class="math inline">\(E_n\)</span>. Since <span
+class="math inline">\(E_{n+1}\)</span> is the bundle of orthonormal
+frames of <span class="math inline">\(J^1 E_n\)</span>, the Betti
+numbers of <span class="math inline">\(E_{n+1}\)</span> are determined
+by those of <span class="math inline">\(E_n\)</span> via the Leray–Serre
+spectral sequence applied to the fibration <span
+class="math inline">\(E_{n+1} \to E_n\)</span>. In particular, the
+quantum characteristic classes
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.4</a>)
+obstruct the collapse of this spectral sequence and control the growth
+of <span class="math inline">\(b_k(E_{n+1})\)</span> in terms of <span
+class="math inline">\(b_k(E_n)\)</span>.</em></p>
+</div>
+
+<div id="rem:q-harmonic-basis-brane" class="remark">
+
+<p><strong>Remark 2.6</strong> (<span
+class="math inline">\(q\)</span>-Harmonic basis of the brane tower).
+<em>For each level <span class="math inline">\(n\)</span>, the <span
+class="math inline">\(q\)</span>-harmonic <span
+class="math inline">\(1\)</span>-forms <span
+class="math inline">\(\alpha_{n,i}\)</span> belong to the space <span
+class="math inline">\(\mathcal{H}^1(E_n,\, \mathrm{ad}\, E_n)\)</span>
+of harmonic <span class="math inline">\(1\)</span>-forms on <span
+class="math inline">\(E_n\)</span> with values in the adjoint bundle
+<span class="math inline">\(\mathrm{ad}\, E_n\)</span>. These are
+characterised by the self-duality condition relative to the instanton
+connection <span class="math inline">\(A_n\)</span>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>):
+<span class="math display">\[\alpha_{n,i} \in \mathcal{H}^1
+\iff
+d_{A_n}\,\alpha = 0
+\quad\text{and}\quad
+d_{A_n}^*\,\alpha = 0,\]</span> where the Hodge-star operator is induced
+by the Hermitian metric that the Levi form <span
+class="math inline">\(L\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+defines on the horizontal distribution. The index <span
+class="math inline">\(i\)</span> runs over <span class="math inline">\(1
+\leq i \leq b_1(E_n)\)</span>
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>).</em></p>
+<p><em>At the base level <span class="math inline">\(n = 0\)</span>,
+with Euler characteristic <span class="math inline">\(\chi(M) =
+3\)</span>, there are three primary basis vectors <span
+class="math inline">\(\{\,\phi_1,\, \phi_2,\, \phi_3\,\}\)</span>. At
+level <span class="math inline">\(n = 1\)</span> the basis lifts: the
+new basis includes the original modes together with their <span
+class="math inline">\(J^1\)</span> prolongations
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>),
+which are the first-order resolutions of the base flows.</em></p>
+</div>
+
+<div id="rem:weight-space-decomposition" class="remark">
+
+<p><strong>Remark 2.7</strong> (Weight-space decomposition of the
+harmonic basis). <em>The adjoint bundle <span
+class="math inline">\(\mathrm{ad}\, E_n\)</span> has fibre <span
+class="math inline">\(\mathfrak{su}(2)\)</span>. Via the weight-space
+decomposition of <span class="math inline">\(\mathrm{SU}(2)\)</span>,
+the harmonic basis of <span class="math inline">\(\mathcal{H}^1(E_n,\,
+\mathrm{ad}\, E_n)\)</span> splits into two families.</em></p>
+<p><em><em>Longitudinal modes.</em> These forms constitute the <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone of the
+decomposition. They take values in the Cartan subalgebra of <span
+class="math inline">\(\mathfrak{su}(2)\)</span> and have the geometric
+form <span class="math inline">\(\omega^0 \otimes H\)</span>, where
+<span class="math inline">\(H\)</span> is the diagonal generator. They
+represent steady-state laminar flows aligned with the <span
+class="math inline">\(\mathrm{U}(1)\)</span> subgroup. If the bundle
+splits at a monodromy fixed point, these are the only modes that
+survive; they correspond to the magnetic flux of the stable
+vortices.</em></p>
+<p><em><em>Ladder modes.</em> These are the raising and lowering
+vortices of the decomposition. They take values in the off-diagonal
+generators <span class="math inline">\(E_\pm\)</span> of <span
+class="math inline">\(\mathfrak{su}(2)\)</span> and have the geometric
+form <span class="math inline">\(\omega^\pm \otimes E_\pm\)</span>. They
+describe the entangling flows that twist the <span
+class="math inline">\(\mathbb{CP}^1\)</span> fibre as one moves along
+the brane. These modes are responsible for the non-commutativity in the
+<span class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>).</em></p>
+<p><em>In the <span class="math inline">\(1\)</span>-jet bundle <span
+class="math inline">\(J^1 E_n\)</span>
+(Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">1.15</a>),
+each basis element <span class="math inline">\(\alpha\)</span> is a pair
+consisting of a <em>value</em> (the direction of the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> flow in the fibre) and a
+<em>momentum</em> (the gradient of that flow relative to the complex
+structure of the brane).</em></p>
+</div>
+
+<div id="rem:algebraic-filter" class="remark">
+
+<p><strong>Remark 2.8</strong> (The algebraic filter). <em>Let <span
+class="math inline">\(\alpha\)</span> be a harmonic <span
+class="math inline">\(1\)</span>-form in the basis of
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+Its <em>signature</em> is determined by its commutator with the
+curvature <span class="math inline">\(F_A\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>).</em></p>
+<p><em><em>Fermionic type (matter).</em> <span
+class="math inline">\([F_A,\, \alpha] \neq 0\)</span>. These forms are
+entangled with the curvature: they see the <span
+class="math inline">\(\mathrm{SO}(3)\)</span> holonomy and the <span
+class="math inline">\(-6\)</span> index fixed points. Their geodesics
+are trapped or spiralling around the three fundamental vortex
+filaments.</em></p>
+<p><em><em>Bosonic type (radiation).</em> <span
+class="math inline">\([F_A,\, \alpha] = 0\)</span>. These forms commute
+with the curvature. They are the longitudinal modes
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
+that flow through the bulk without being deflected by the monodromy
+fixed points. Their geodesics are straight relative to the gauge-fluid
+flow.</em></p>
+</div>
+
+<div id="rem:distributional-connection" class="remark">
+
+<p><strong>Remark 2.9</strong> (Distributional connection at the limit).
+<em>At the limit <span class="math inline">\(n \to \infty\)</span> one
+no longer looks at a single connection <span
+class="math inline">\(A\)</span>, but at a <em>distributional
+connection</em> represented by the series <span
+class="math display">\[A_\infty
+\;=\;
+\sum_{n=0}^{\infty}\;\sum_{i=1}^{b_1(E_n)}
+c_{n,i}\,\alpha_{n,i}\,,\]</span> where <span
+class="math inline">\(c_{n,i} \in \mathbb{C}\)</span> and <span
+class="math inline">\(\{\alpha_{n,i}\}\)</span> is the <span
+class="math inline">\(q\)</span>-harmonic basis of
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+This turns the gauge field into a harmonic expansion across the infinite
+jet space <span class="math inline">\(J^\infty E\)</span>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+</div>
+
+<div id="def:direct-limit-algebra" class="definition">
+
+<p><strong>Definition 2.10</strong> (<span
+class="math inline">\(\mathbb{C}\)</span> Quantum Observable Universe as
+Direct Limit). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
+1}\)</span> be the recursive brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
+with substrate parameters <span class="math inline">\(q_n\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>)
+at each level. The <em><span class="math inline">\(\mathbb{C}\)</span>
+quantum observable universe</em> is the direct limit algebra <span
+class="math display">\[\mathcal{A}_\infty
+\;=\;
+\varinjlim\,
+\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).\]</span></em></p>
+</div>
+
+<div id="rem:jet-shell" class="remark">
+
+<p><strong>Remark 2.11</strong> (Jet Shell of the universe). <em>In the
+limit <span class="math inline">\(n \to \infty\)</span>, the infinite
+jet bundle <span class="math inline">\(J^\infty E = \varprojlim\, J^k
+E\)</span> becomes the <em>jet shell</em> of the universe. All
+finite-level brane data are encoded in this pro-finite structure, and
+the algebra <span class="math inline">\(\mathcal{A}_\infty\)</span>
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+acts naturally on sections of the jet shell.</em></p>
+</div>
+
+<div id="rem:vacuum-state" class="remark">
+
+<p><strong>Remark 2.12</strong> (The Vacuum State). <em>The <em>physical
+vacuum</em> is a state <span class="math inline">\(\omega \colon
+\mathcal{A}_\infty \to \mathbb{C}\)</span> on the direct limit algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+that is invariant under the global <span
+class="math inline">\(\mathrm{SU}(2)\)</span> action and the recursive
+<span class="math inline">\(q\)</span>-deformations: <span
+class="math display">\[\omega(g \cdot a) = \omega(a)
+\quad\text{for all } g \in \mathrm{SU}(2),\;
+a \in \mathcal{A}_\infty.\]</span></em></p>
+</div>
+
+<div id="rem:mass-geometric-drag" class="remark">
+
+<p><strong>Remark 2.13</strong> (Mass as geometric drag). <em>In this
+recursive <span class="math inline">\(\mathrm{SU}(2)\)</span> tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>),
+mass is not an intrinsic property of a point-particle but rather a
+measure of the <em>geometric drag</em> (or “viscosity”) encountered by a
+stable vortex as it propagates through the <span
+class="math inline">\(1\)</span>-jet bundle <span
+class="math inline">\(J^1 E_n\)</span>. When <span
+class="math inline">\(q \neq 1\)</span> the field is non-commutative:
+moving the vortex requires a continuous rearrangement of the <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+across the fibres.</em></p>
+</div>
+
+<div id="def:mass-identity" class="definition">
+
+<p><strong>Definition 2.14</strong> (Mass Identity). <em>Let <span
+class="math inline">\((M, G, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with substrate parameter <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>),
+connection <span class="math inline">\(A\)</span>, Levi form <span
+class="math inline">\(L\)</span>, and self-dual curvature <span
+class="math inline">\(F^+\)</span>. Let <span
+class="math inline">\(\gamma\)</span> be a closed cycle encircling the
+vortex filament. The <em>inertial mass</em> <span
+class="math inline">\(m\)</span> of a stable vortex is <span
+class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
+\rVert
+\cdot \lVert L \wedge F^+ \rVert\,.\]</span></em></p>
+</div>
+
+<h3 id="descent">Descent</h3>
+<div id="def:descent-dim-1" class="definition">
+
+<p><strong>Definition 2.15</strong> (Descent to Dimension <span
+class="math inline">\(1\)</span>). <em>Let <span
+class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
+tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+The <em>descent</em> is the reverse traversal of the tower: starting
+from level <span class="math inline">\(n\)</span> one passes to level
+<span class="math inline">\(n-1\)</span> by restricting the connection
+<span class="math inline">\(A_n\)</span> and the bundle <span
+class="math inline">\(E_n\)</span> to the base manifold <span
+class="math inline">\(M_{n-1}\)</span>. The descent terminates when the
+base manifold <span class="math inline">\(M_k\)</span> reaches <span
+class="math inline">\(\dim M_k = 1\)</span>, at which point <span
+class="math inline">\(M_k\)</span> is diffeomorphic to <span
+class="math inline">\(S^1\)</span> or <span
+class="math inline">\(\mathbb{R}\)</span>.</em></p>
+</div>
+
+<div id="rem:descent-reduction" class="remark">
+
+<p><strong>Remark 2.16</strong> (Reduction at dimension <span
+class="math inline">\(1\)</span>). <em>When <span
+class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe collapse as follows.</em></p>
+<ol type="1">
+<li><p><em><em>Connection.</em> The <span
+class="math inline">\(\mathrm{SU}(2)\)</span> connection <span
+class="math inline">\(A_k\)</span> restricts to a single dimension; its
+holonomy reduces to a <span class="math inline">\(\mathrm{U}(1)\)</span>
+phase around <span class="math inline">\(S^1\)</span>.</em></p></li>
+<li><p><em><em>Bundle.</em> The principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span> bundle <span
+class="math inline">\(E\)</span> descends to a bundle over the <span
+class="math inline">\(1\)</span>-dimensional base whose fibre dynamics
+are locked into a single periodic flow.</em></p></li>
+<li><p><em><em>Reeb direction.</em> The inverse of the Reeb vector field
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.18</a>)
+becomes the only direction of motion; the horizontal distribution is
+trivial and no bosonic modes
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>)
+survive.</em></p></li>
+</ol>
+</div>
+
+<div id="rem:descent-physical" class="remark">
+
+<p><strong>Remark 2.17</strong> (Physical implications of a <span
+class="math inline">\(1\)</span>-dimensional base). <em>At
+dimension <span class="math inline">\(1\)</span> the physical content
+simplifies drastically.</em></p>
+<ol type="1">
+<li><p><em><em>Primordial vortex.</em> The vortex filaments of the mass
+identity
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.14</a>)
+are no longer embedded in a larger space; the entire manifold
+<em>is</em> the filament.</em></p></li>
+<li><p><em><em>Mass as pure drag.</em> The mass identity reduces to an
+integral over the whole of <span class="math inline">\(M_k\)</span>:
+<span class="math display">\[m \;\propto\; \oint_{M_k} \lVert \nabla_A\,
+q \rVert
+\cdot \lVert L \wedge F^+ \rVert\,,\]</span> so that mass represents the
+fundamental geometric resistance of the <span
+class="math inline">\(1\)</span>-dimensional flow against the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> rotation.</em></p></li>
+<li><p><em><em>Lepton generations.</em> Since the number of lepton
+generations is bounded by the Euler characteristic and vertical degree
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>),
+a <span class="math inline">\(1\)</span>-dimensional base supports only
+the most fundamental fermionic state; there is no room for higher-degree
+vertical harmonic forms.</em></p></li>
+</ol>
+</div>
+
+<div id="rem:descent-fixed-point" class="remark">
+
+<p><strong>Remark 2.18</strong> (Fixed-point mechanism: ascent and
+descent). <em>Each step down the brane tower removes a space-like
+dimension through the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
+associated fixed-point set.</em></p>
+<ol type="1">
+<li><p><em><em>Ascent (generation).</em> Moving from <span
+class="math inline">\(M_k\)</span> (<span class="math inline">\(\dim =
+1\)</span>) to <span class="math inline">\(M_{k+1}\)</span> (<span
+class="math inline">\(\dim = 3\)</span>) lifts the connection <span
+class="math inline">\(A\)</span> to higher categorical structures via
+the jet prolongation
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>).</em></p></li>
+<li><p><em><em>Descent (filtering).</em> Moving back down acts as an
+algebraic filter
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>).
+The ladder modes
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
+are stripped away until only the longitudinal modes—the <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone—remain at the
+<span class="math inline">\(1\)</span>-dimensional limit.</em></p></li>
+</ol>
+</div>
+
+<h1 id="path-integrals-and-braiding">Path Integrals and Braiding</h1>
+<p>In the QOU framework, traditional path integrals are replaced by
+finite sums over the discrete fibre structure. Since the base space
+<span class="math inline">\(B\)</span> and each fibre are finite, the
+continuum measure <span class="math inline">\(\mathcal{D}\phi\)</span>
+collapses to a combinatorial sum, eliminating the need for
+renormalisation of divergent integrals.</p>
+<p>The braid group acts naturally on the fibre degrees of freedom. What
+we observe as particle interactions corresponds to the action of braid
+operators exchanging strands in the fibre bundle. The algebraic content
+of these interactions is therefore encoded in braid-group
+representations rather than in Feynman vertices.</p>
+<p>The exchange operations carry a <span
+class="math inline">\(q\)</span>-deformation parameter inherited from
+the quantum group structure of the fibres. Concretely, the <span
+class="math inline">\(R\)</span>-matrix of <span
+class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span> furnishes
+a <span class="math inline">\(q\)</span>-deformed braid operator whose
+eigenvalues govern the phase acquired under particle exchange.</p>
+<p>Under this correspondence, specific knot types map to particle
+identities. The trefoil knot, being the simplest non-trivial torus knot,
+is identified with the quark; the muon arises as a lift of the trefoil
+to a higher fibre level. The unknot, carrying trivial braiding,
+corresponds to the neutrino.</p>
+<h1 id="interpretations">Interpretations</h1>
+<h1 id="experimental-evidence">Experimental Evidence</h1>
+<h1 id="speculations">Speculations</h1>
+</body>
+</html>
