@@ -355,11 +355,17 @@ J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
 
 </div>
 
-<div id="rem:vacuum-state" class="remark">
+<div id="prop:vacuum-state" class="proposition">
 
-**Remark 2.12** (The Vacuum State). *The *physical vacuum* is a state $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ on the direct limit algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>) that is invariant under the global $\mathrm{SU}(2)$ action and the recursive $q$-deformations: $$\omega(g \cdot a) = \omega(a)
+**Proposition 2.12** (Existence and Uniqueness of the Vacuum State). *Let $\mathcal{A}_\infty$ be the direct limit algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>) equipped with the global $\mathrm{SU}(2)$ action and the recursive $q$-deformations. Then there exists a unique state $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ that is $\mathrm{SU}(2)$-invariant: $$\omega(g \cdot a) = \omega(a)
   \quad\text{for all } g \in \mathrm{SU}(2),\;
   a \in \mathcal{A}_\infty.$$*
+
+</div>
+
+<div class="proof">
+
+*Proof.* ◻
 
 </div>
 
