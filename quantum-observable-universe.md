@@ -439,6 +439,254 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 # Experimental Evidence
 
+The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-reference="chap:qou">1</a>) makes predictions that differ from the standard $\Lambda$CDM cosmology and the Standard Model of particle physics. This chapter catalogues observable signatures, organised by scale, and maps each to existing data sets, planned observations, and potential new experiments.
+
+## Large-Scale Observations
+
+### CMB Anisotropy and $q$-Torsion Imprint
+
+<div id="rem:cmb-q-torsion" class="remark">
+
+**Remark 5.1** (CMB non-uniformity from $q$-torsion). *In the Descartes universe (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">1.8</a>), the negative Euler characteristic $\chi(E) = -6$ forces a non-trivial distribution of angular modes across the CR manifold (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">1.9</a>). The $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.20</a>; here “leaves” is the geometric plural of *leaf*) imprint a characteristic pattern on the CMB that deviates from the statistically isotropic Gaussian field predicted by $\Lambda$CDM. Specifically, the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.19</a>) introduces *torsion* into the temperature and polarisation multipoles, producing preferred spiral directions in the $B$-mode spectrum.*
+
+</div>
+
+##### Existing data sets.
+
+- *Planck* 2018 full-sky temperature and polarisation maps (PR3/PR4).
+
+- *WMAP* nine-year data release.
+
+- ACT (Atacama Cosmology Telescope) and SPT (South Pole Telescope) high-$\ell$ power spectra.
+
+##### Planned observations.
+
+- *LiteBIRD* (JAXA, launch $\sim$<!-- -->2032): full-sky $B$-mode polarisation survey sensitive to large-angular-scale torsion signatures.
+
+- *CMB-S4*: ground-based next-generation CMB survey with improved sensitivity to polarisation anomalies.
+
+- *Simons Observatory*: intermediate-scale polarimetry bridging current and CMB-S4 sensitivities.
+
+##### Potential new experiments.
+
+- A dedicated search for spiral (chiral) patterns in existing CMB $B$-mode data, testing for the preferred handedness predicted by the Reeb orientation (Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">1.11</a>).
+
+- Cross-correlation of CMB anomalies (e.g. the Cold Spot, hemispherical asymmetry) with the angular structure of $q$-torsion leaves.
+
+### Gravitational Signatures and Emergent Geometry
+
+<div id="rem:gravity-emergent" class="remark">
+
+**Remark 5.2** (Gravity as emergent substrate geometry). *In the QOU framework, general relativity emerges as the substrate geometry of the CR manifold (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.26</a>). The quantum-weighted stress-energy tensor $T_{\mu\nu}^{(q)}$ introduces $q$-dependent corrections to the Einstein field equations. This is consistent with recent work treating gravity as arising from an information-theoretic context .*
+
+</div>
+
+##### Existing data sets.
+
+- LIGO/Virgo/KAGRA gravitational wave catalogues (GWTC-1 through GWTC-3).
+
+- Pulsar Timing Array data sets (NANOGrav 15-year, EPTA, PPTA, IPTA).
+
+- Solar System ephemeris tests of general relativity (Cassini, MESSENGER).
+
+##### Planned observations.
+
+- *LISA* (ESA, launch $\sim$<!-- -->2035): space-based gravitational wave detector sensitive to low-frequency waveform corrections from the $q$-deformed field equations.
+
+- *Einstein Telescope*: next-generation ground-based detector with sensitivity to post-merger ringdown deviations.
+
+##### Potential new experiments.
+
+- Precision tests of the equivalence principle at quantum scales, probing whether the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>) introduces composition-dependent deviations.
+
+- Tabletop gravity experiments at sub-millimetre scales to search for $q$-dependent modifications to the Newtonian potential.
+
+### Large-Scale Structure and Topological Defects
+
+<div id="rem:topological-defects" class="remark">
+
+**Remark 5.3** (Topological signatures in large-scale structure). *The $\mathrm{SO}(3)$ holonomy of the bulk bundle (Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>) and the monodromy fixed points of the quantum characteristic classes (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.4</a>) may leave topological imprints on the large-scale distribution of matter — for instance, preferred filamentary alignments or voids correlated with the brane tower structure (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).*
+
+</div>
+
+##### Existing data sets.
+
+- SDSS (Sloan Digital Sky Survey) galaxy catalogues and BAO measurements.
+
+- DES (Dark Energy Survey) weak-lensing maps.
+
+- *eROSITA* X-ray sky survey cluster catalogues.
+
+##### Planned observations.
+
+- *Euclid* (ESA): wide-field survey of galaxy shapes and redshifts for weak-lensing tomography.
+
+- *Vera C. Rubin Observatory* (LSST): deep optical survey enabling statistical tests of filament chirality.
+
+- *Roman Space Telescope* (NASA): high-redshift galaxy survey.
+
+##### Potential new experiments.
+
+- Statistical analysis of cosmic-web filament handedness as a probe of global $q$-torsion.
+
+- Void-shape analysis to detect signatures of monodromy fixed points in the brane tower.
+
+## Small-Scale Observations
+
+### Mass Equation Predictions
+
+<div id="rem:mass-ratio-predictions" class="remark">
+
+**Remark 5.4** (Theoretical mass ratios from the mass identity). *The mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.14</a>) expresses inertial mass as a line integral of $\lVert\nabla_A q\rVert \cdot \lVert L \wedge F^+\rVert$ around a vortex filament. For the Descartes universe with $\chi(E) = -6$, the topological data of the bundle constrain the allowed vortex configurations and hence the mass spectrum. The electron–muon mass ratio, for instance, is governed by the ratio of vertical degrees in the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">1.10</a>). Evaluating the mass identity at successive levels of the brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>) may yield theoretical predictions for lepton and hadron mass ratios.*
+
+</div>
+
+##### Existing data sets.
+
+- CODATA recommended values of fundamental constants (electron, muon, tau masses; fine-structure constant).
+
+- Particle Data Group (PDG) Review of Particle Physics.
+
+- Precision atomic spectroscopy measurements (hydrogen, muonium, positronium).
+
+##### Planned observations.
+
+- Muon $g-2$ experiment at Fermilab (E989): precision measurement of the anomalous magnetic moment.
+
+- COMET and Mu2e experiments: searches for charged lepton flavour violation that would constrain inter-generation mixing in the Reeb decomposition.
+
+##### Potential new experiments.
+
+- High-precision comparisons of the electron–muon and muon–tau mass ratios against values computed from the mass identity with specific $q$ and $\chi(E)$.
+
+- Lattice calculations of QOU vortex masses to compare with QCD lattice results.
+
+### Quantum Hall Effect of Photons
+
+<div id="rem:photonic-hall" class="remark">
+
+**Remark 5.5** (Photonic quantum Hall effect and $q$-deformed braiding). *Recent experiments have demonstrated a quantized Hall drift in photonic Chern insulators . In the QOU framework, bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.23</a>), and the Hall conductance arises from the Chern number of the bulk bundle restricted to the horizontal distribution. The $q$-deformation modifies the quantisation condition, predicting fractional corrections of order $1 - q$ to the Hall conductance.*
+
+</div>
+
+##### Existing data sets.
+
+- Frequency-encoded photonic Chern insulator measurements of Chénier et al. .
+
+- Many-body interference data in kagome lattices .
+
+- Chiral phonon experiments in rare-earth halides .
+
+##### Planned observations.
+
+- Extension of photonic Chern insulator experiments to tunable $q$-regimes via lattice-geometry variation.
+
+- Fractional quantum Hall experiments in synthetic photonic systems with controllable topology.
+
+##### Potential new experiments.
+
+- Measurement of Hall conductance in photonic lattices at varying effective $q$ parameters, seeking the $1 - q$ correction predicted by the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>).
+
+- Cold-atom realisations of $\mathrm{SU}(2)$ gauge fields in optical lattices, testing the $q$-deformed braiding statistics of Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">3</a>.
+
+### Lepton Anomalies and Reeb-Decomposition Tests
+
+<div id="rem:lepton-discrepancies" class="remark">
+
+**Remark 5.6** (Electron–muon discrepancies). *The QOU framework predicts that lepton generations are distinguished by the vertical degree of the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">1.10</a>). Discrepancies between electron and muon interactions — such as the anomalous magnetic moment tensions and lepton flavour universality violations observed at the $B$-factories — may reflect the distinct Reeb-vertical structure of each generation rather than new heavy-particle loops.*
+
+</div>
+
+##### Existing data sets.
+
+- Muon $g-2$ results from BNL E821 and Fermilab E989.
+
+- LHCb $R_K$ and $R_{K^*}$ measurements of lepton flavour universality.
+
+- Belle II early data on $B$-meson decays.
+
+##### Planned observations.
+
+- Full Belle II data set ($\sim$<!-- -->50 ab$^{-1}$ integrated luminosity): precision tests of lepton universality in $\tau$ decays.
+
+- HL-LHC (High-Luminosity LHC): extended reach for rare lepton flavour violating processes.
+
+##### Potential new experiments.
+
+- Precision measurements of the proton charge radius via muonic vs. electronic hydrogen to probe generation-dependent coupling to the substrate parameter.
+
+- Electron–muon scattering experiments (e.g. MUonE at CERN) to directly test the $q$-dependent corrections to the electromagnetic vertex.
+
+### Informational and Entropic Gravity Tests
+
+<div id="rem:entropic-gravity" class="remark">
+
+**Remark 5.7** (Entropic forces and the substrate parameter). *The substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>) encodes the coupling between the Levi form and the gauge curvature. In the near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.26</a>). Recent work on the quantum mechanics of entropic forces  provides a complementary perspective: the entropic interpretation may correspond to the thermodynamic limit of the $q$-deformed partition function on the brane tower.*
+
+</div>
+
+##### Existing data sets.
+
+- Cavendish-type torsion balance experiments (e.g. Eöt-Wash group).
+
+- Casimir force measurements at micrometre scales.
+
+- Neutron interferometry (gravity resonance spectroscopy).
+
+##### Planned observations.
+
+- MICROSCOPE follow-up missions: improved equivalence principle tests in space.
+
+- Atom interferometry experiments (MAGIS, AION, ZAIGA) probing gravitational decoherence.
+
+##### Potential new experiments.
+
+- Entanglement-assisted gravity experiments testing whether gravitational interactions preserve quantum coherence as predicted by the $q$-deformed field equations.
+
+- High-precision measurements of Casimir forces in geometries designed to isolate contributions from $q$-deformed vacuum fluctuations.
+
+### Crystal Lattice Resonance and Substrate Telescopes
+
+<div id="rem:crystal-resonance" class="remark">
+
+**Remark 5.8** (Quantum resonance in crystal lattices). *A periodic crystal lattice provides a macroscopic, coherent probe of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.12</a>). The discrete translational symmetry of the lattice selects a set of reciprocal vectors that couple to the horizontal distribution of the CR manifold $M$. Where the lattice spacing is commensurate with the characteristic scale of a $q$-torsion leaf (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.20</a>), a resonance condition is satisfied: the $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>) on the brane constructively interfere with the phonon modes of the crystal, amplifying vacuum fluctuations at specific frequencies. The resonance frequency $\nu_{\mathrm{res}}$ is predicted to depend on the local value of $q$ and the lattice geometry.*
+
+</div>
+
+<div id="rem:substrate-telescope" class="remark">
+
+**Remark 5.9** (Substrate Telescopes). *The directional dependence of $q$-torsion suggests a new class of detector: the *Substrate Telescope*. A large, high-purity single crystal is slowly rotated while the variation of vacuum noise power or phonon resonance efficiency is recorded as a function of orientation. Because the $q$-torsion leaves carry a preferred direction inherited from the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.19</a>), the noise spectrum should exhibit a modulation correlated with the crystal’s orientation relative to the bulk bundle. This is conceptually analogous to a Weber-bar gravitational wave detector, but targets the anisotropy of the substrate parameter rather than metric strain.*
+
+</div>
+
+##### Existing data sets.
+
+- Many-body interference measurements in kagome crystals , which probe coherent lattice-scale quantum effects.
+
+- Chiral phonon spectroscopy in rare-earth halide crystals , demonstrating orientation-dependent effective magnetic fields from lattice vibrations.
+
+- High-$Q$ quartz bulk acoustic wave (BAW) oscillator noise measurements, which record excess phase noise beyond thermal limits.
+
+- Precision Casimir-effect experiments using crystalline surfaces (e.g. silicon and gold single crystals).
+
+- Resonant-mass gravitational wave detector data (e.g. AURIGA, NAUTILUS bar detectors), which recorded orientation-dependent noise floors in cryogenic crystalline bars.
+
+##### Planned observations.
+
+- Next-generation phononic crystal experiments with tunable lattice constants, enabling a systematic scan of the resonance condition across different effective $q$ regimes.
+
+- Extension of kagome and pyrochlore quantum-interference experiments to larger single crystals with controlled rotational staging.
+
+- Cryogenic SQUID-based noise spectroscopy on rotating high-purity sapphire or silicon crystals.
+
+##### Potential new experiments.
+
+- A dedicated Substrate Telescope prototype: a cryogenically cooled, slowly rotating single crystal (e.g. ultra-pure silicon or quartz) instrumented with SQUID magnetometers and phonon sensors, searching for orientation-dependent modulation of the vacuum noise floor.
+
+- Comparative resonance measurements across crystals with different lattice symmetries (cubic, hexagonal, trigonal) to map the dependence of $\nu_{\mathrm{res}}$ on lattice geometry and thereby constrain the local value of $q$.
+
+- Re-analysis of archival resonant-bar detector data (AURIGA, NAUTILUS, EXPLORER) for residual orientation-dependent signals consistent with $q$-torsion anisotropy rather than gravitational wave backgrounds.
+
 # Speculations
 
 [^1]: World Health Organization
