@@ -381,7 +381,7 @@ def _link_terms_in_html(body_html: str, term_map: list[tuple[re.Pattern, str, st
                 if open_angle > close_angle:
                     return m.group(0)
                 # Skip if inside an <a> tag
-                open_a = before.count("<a ") + before.count("<a>")
+                open_a = len(re.findall(r'<a[\s>]', before))
                 close_a = before.count("</a>")
                 if open_a > close_a:
                     return m.group(0)

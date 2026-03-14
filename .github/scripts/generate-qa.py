@@ -32,8 +32,8 @@ _WARN_PATTERNS = [
     re.compile(r"^(Package \S+ Warning:.+)$", re.MULTILINE),
     # Underfull / Overfull
     re.compile(r"^((?:Underfull|Overfull) \\[hv]box .+)$", re.MULTILINE),
-    # Undefined references
-    re.compile(r"^(.+undefined.+)$", re.MULTILINE | re.IGNORECASE),
+    # Undefined references / citations
+    re.compile(r"^(.*(?:Reference|Citation) .+ undefined.*)$", re.MULTILINE),
     # BibTeX warnings
     re.compile(r"^(Warning--.+)$", re.MULTILINE),
     # Missing citations

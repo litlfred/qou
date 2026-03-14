@@ -67,12 +67,12 @@ jobs:
         run: |
           # Extract warnings from the LaTeX log (if it exists)
           if [ -f main.log ]; then
-            grep -iE '(warning|overfull|underfull|undefined|missing)' main.log \
+            grep -iE '^(LaTeX Warning:|Package .* Warning:|Overfull |Underfull |.*Citation .* undefined|.*Reference .* undefined)' main.log \
               > build-warnings.log 2>/dev/null || true
           fi
           # Also capture BibTeX warnings
           if [ -f main.blg ]; then
-            grep -iE '(warning|error)' main.blg >> build-warnings.log 2>/dev/null || true
+            grep -iE '^(Warning--|.*error)' main.blg >> build-warnings.log 2>/dev/null || true
           fi
           echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
 
