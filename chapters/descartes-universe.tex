@@ -370,3 +370,94 @@ $\zeta_{\mathfrak{p}}^{-k}\in\mathbb{Z}_{\zeta_{\mathfrak{p}}}$.  This
 arithmetic compatibility between the cyclic symmetry and the cyclotomic ring
 underlies the descent of the $C_5$ action to finite characteristic.
 \end{remark}
+
+\begin{definition}[Quaternionic resolvent mapping]
+\label{def:quaternionic-resolvent}
+Let $r=\lvert w_1\rvert^2$ be the radial coordinate of the Briggs--Klein
+chart (Definition~\ref{def:briggs-klein-chart}) and let
+$\mathbf{i},\mathbf{j},\mathbf{k}$ denote the standard basis of
+$\operatorname{Im}\mathbb{H}$.  The \emph{quaternionic resolvent mapping}
+embeds the spectral coordinates $w_k$
+(Remark~\ref{rem:lagrange-resolvents}) into $\mathbb{H}$ as follows:
+\begin{align}
+  w_0 &\;\longmapsto\; \frac{w_0-\mathbf{i}\,w_0}{\sqrt{r}}
+    &&\text{(singularity),}
+    \label{eq:quat-w0}\\[4pt]
+  w_1 &\;\longmapsto\; \mathbf{i}\,(w_1+i)\,\sqrt{r}
+    &&\text{(space-like axis),}
+    \label{eq:quat-w1}\\[4pt]
+  w_2 &\;\longmapsto\; \mathbf{j}\,(w_2+i)\,\sqrt{r}
+    &&\text{(time-like),}
+    \label{eq:quat-w2}\\[4pt]
+  w_3 &\;\longmapsto\; \mathbf{k}\,(w_3+i)\,\sqrt{r}
+    &&\text{(time-like),}
+    \label{eq:quat-w3}\\[4pt]
+  w_4 &\;\longmapsto\; -\mathbf{i}\,(w_4+i)\,\sqrt{r}
+    &&\text{(conjugate, $w_4=\bar{w}_1$).}
+    \label{eq:quat-w4}
+\end{align}
+Since $w_0=0$ on Bring's surface~\eqref{eq:resolvent-linear}, the zeroth
+component vanishes identically; its formal $1/\!\sqrt{r}$ singularity
+reflects the concentration of energy at $r=0$.
+\end{definition}
+
+\begin{remark}[The $\mathrm{Sp}(1)$ action and the radial map]
+\label{rem:sp1-action}
+To realise the rotation of the resolvent coordinates as a function of $r$,
+embed the radial parameter into the spin group $\mathrm{Sp}(1)$.  Define
+the unit quaternion
+\begin{equation}\label{eq:sp1-quaternion}
+  \mathbf{q}(r)
+  \;=\;
+  \cos\theta(r)+\mathbf{u}\,\sin\theta(r),
+  \qquad
+  \theta(r)=\tfrac{\pi}{2}\,e^{-r},
+\end{equation}
+where $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit pure
+imaginary quaternion.  The action on the pure-imaginary quaternion
+$\mathbf{w}=w_1\,\mathbf{i}+w_2\,\mathbf{j}+w_3\,\mathbf{k}$ is the
+conjugation
+\begin{equation}\label{eq:sp1-conjugation}
+  \mathbf{w}'=\mathbf{q}(r)\,\mathbf{w}\,\mathbf{q}(r)^{*}.
+\end{equation}
+\begin{itemize}
+\item At $r=0$ (deep quantum): $\theta=\pi/2$, giving maximum twist
+  between space-like and time-like resolvents.
+\item As $r\to\infty$ (classical limit): $\theta\to 0$, the rotation
+  vanishes and the coordinates freeze into the classical affine chart.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[Primordial vortex and the deep-quantum limit]
+\label{rem:primordial-vortex}
+As $r\to 0$ the resolvent coordinates converge toward the
+\emph{primordial vortex}:
+\begin{itemize}
+\item The quantum Planck constant
+  $\hbar_q\to 1$ (Definition~\ref{def:quantum-planck-constant}).
+\item The $q$-torsion leaves collapse to the zero-dimensional stratum
+  $M_0=\{\pm 1\}$.
+\item The $w_0$ component~\eqref{eq:quat-w0}, although identically zero on
+  Bring's surface, formally blows up in the jet prolongation, representing
+  the concentration of energy at a singular spatial point.
+\end{itemize}
+Space-like energy is trapped because the time-like rotation becomes infinite
+in frequency but zero in displacement, effectively turning the
+$\mathrm{SU}(2)$ holonomy into a localised topological charge.
+\end{remark}
+
+\begin{remark}[Levi-form preservation under $\mathrm{Sp}(1)$]
+\label{rem:levi-form-preservation}
+The Levi form $L$ (Definition~\ref{def:substrate-parameter}) must be
+preserved under the $\mathrm{Sp}(1)$
+conjugation~\eqref{eq:sp1-conjugation}.  Since quaternionic conjugation is
+an isometry,
+\[
+  \lVert\mathbf{w}'\rVert^2
+  =\lVert\mathbf{w}\rVert^2
+  =w_1\bar{w}_1+w_2\bar{w}_2+w_3\bar{w}_3,
+\]
+the Hermitian quadric constraint~\eqref{eq:resolvent-quadric} is preserved
+during the rotation.  This invariance is precisely the condition for the
+self-duality of the curvature, $F_A=*F_A$.
+\end{remark}
