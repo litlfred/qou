@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-13
+date: 2026-03-14
 title: Quantum Observable Universe
 ---
 
@@ -482,8 +482,8 @@ J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
 </div>
 
 <figure id="fig:affine-light-cone">
-<embed src="figures/affine-light-cone.pdf" style="width:85.0%" />
-<figcaption>Light cone of an affine chart. The vertex at the big bang (<span class="math inline"><em>q</em><sub><em>p</em></sub> → 0</span>, <span class="math inline">ℏ<sub><em>q</em></sub> → 1</span>) opens towards the heat death (<span class="math inline"><em>q</em><sub><em>p</em></sub> → 1</span>, <span class="math inline">ℏ<sub><em>q</em></sub> → 0</span>). The red-hatched region is the causal future visible within the chart (Remark <a href="#rem:light-cone-affine" data-reference-type="ref" data-reference="rem:light-cone-affine">3.9</a>). </figcaption>
+
+<figcaption>Light cone on an affine chart, depicted as a surface of revolution with exponential profile. The vertex at the big bang (<span class="math inline"><em>q</em><sub><em>p</em></sub> → 0</span>, <span class="math inline">ℏ<sub><em>q</em></sub> → 1</span>, <span class="math inline">∥<em>L</em> ∧ <em>F</em><sup>+</sup>∥ → ∞</span>) opens into an expanding wedge that appears as a narrow strip at the observer. The wedge grows faster than linearly and wraps around the back of the surface towards the heat death (<span class="math inline"><em>q</em><sub><em>p</em></sub> → 1</span>, <span class="math inline">ℏ<sub><em>q</em></sub> → 0</span>, <span class="math inline">∥<em>L</em> ∧ <em>F</em><sup>+</sup>∥ → 0</span>), where it nearly closes to the full circle; see Remark <a href="#rem:light-cone-affine" data-reference-type="ref" data-reference="rem:light-cone-affine">3.9</a>. </figcaption>
 </figure>
 
 <div id="rem:chirality-trefoil" class="remark">
