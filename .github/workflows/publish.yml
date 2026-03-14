@@ -10,8 +10,8 @@
 #   quantum-observable-universe.pdf        compiled PDF
 #   quantum-observable-universe-diff.pdf   latexdiff vs merge-base with main (feature branches only)
 #   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown
-#   index.html                             HTML landing page (MathJax equations)
-#   style.css                              stylesheet for the landing page
+#   index.html                             HTML page with dark/light mode, TOC, definition links
+#   qa.html                                QA report from build warnings (feature branches only)
 #
 # Preview builds
 # ──────────────
@@ -62,6 +62,20 @@ jobs:
         with:
           root_file: main.tex
 
+      - name: Capture LaTeX build warnings
+        if: always()
+        run: |
+          # Extract warnings from the LaTeX log (if it exists)
+          if [ -f main.log ]; then
+            grep -iE '(warning|overfull|underfull|undefined|missing)' main.log \
+              > build-warnings.log 2>/dev/null || true
+          fi
+          # Also capture BibTeX warnings
+          if [ -f main.blg ]; then
+            grep -iE '(warning|error)' main.blg >> build-warnings.log 2>/dev/null || true
+          fi
+          echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
+
       # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
       - name: Install pandoc, latexpand and latexdiff
         run: |
@@ -111,6 +125,8 @@ jobs:
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p _site
 
@@ -122,39 +138,24 @@ jobs:
             cp diff.pdf _site/quantum-observable-universe-diff.pdf
           fi
 
-          # Stylesheet
-          cat > _site/style.css << 'CSS'
-          body    { max-width: 860px; margin: 2rem auto; font-family: Georgia, serif;
-                    line-height: 1.65; padding: 0 1.2rem; color: #222; }
-          h1,h2,h3,h4 { font-family: "Helvetica Neue", Helvetica, sans-serif; }
-          a       { color: #0055cc; }
-          pre     { background: #f6f8fa; padding: .8em 1em; overflow-x: auto;
-                    border-radius: 4px; }
-          code    { font-size: 90%; }
-          .downloads { margin: 1.5rem 0; }
-          .downloads a { margin-right: 1rem; font-weight: bold; }
-          CSS
-
-          # HTML landing page with MathJax-rendered equations
+          # ── Generate base HTML with Pandoc ──────────────────────────────────
           pandoc quantum-observable-universe.md \
             --from=gfm+tex_math_dollars \
             --to=html5 \
             --standalone \
             --mathjax \
-            --css=style.css \
             --metadata title="Quantum Observable Universe" \
-            --output=_site/index.html \
+            --output=_site/index-raw.html \
             || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
 
           # Fallback landing page if pandoc HTML conversion failed
-          if [ ! -s _site/index.html ]; then
-            cat > _site/index.html << 'HTML'
+          if [ ! -s _site/index-raw.html ]; then
+            cat > _site/index-raw.html << 'HTML'
           <!DOCTYPE html>
           <html lang="en">
           <head>
             <meta charset="utf-8">
             <title>Quantum Observable Universe</title>
-            <link rel="stylesheet" href="style.css">
           </head>
           <body>
             <h1>Quantum Observable Universe</h1>
@@ -165,6 +166,35 @@ jobs:
           </body>
           </html>
           HTML
+          fi
+
+          # ── Enhance HTML with dark mode, TOC, definition links ──────────────
+          ENHANCE_ARGS=(
+            _site/index-raw.html
+            main-flat.tex
+            _site/index.html
+          )
+          if [ "${{ github.ref_name }}" != "main" ]; then
+            ENHANCE_ARGS+=(
+              --branch "${{ github.ref_name }}"
+              --repo   "${{ github.repository }}"
+              --sha    "${{ github.sha }}"
+              --src-dir "."
+            )
+          fi
+          python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
+
+          # Clean up intermediate file
+          rm -f _site/index-raw.html
+
+          # ── QA report (feature branches only) ───────────────────────────────
+          if [ "${{ github.ref_name }}" != "main" ] && [ -f build-warnings.log ]; then
+            python3 .github/scripts/generate-qa.py \
+              build-warnings.log \
+              _site/qa.html \
+              --branch "${{ github.ref_name }}" \
+              --repo   "${{ github.repository }}" \
+              --sha    "${{ github.sha }}"
           fi
 
       # ── 4. Deploy to target branch ─────────────────────────────────────────
@@ -198,6 +228,7 @@ jobs:
           pdf_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe.pdf"
           diff_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe-diff.pdf"
           html_url="${pages_url}/drafts/${{ github.ref_name }}/"
+          qa_url="${pages_url}/drafts/${{ github.ref_name }}/qa.html"
 
           # Repository source links (useful when repo is private)
           repo_url="https://github.com/${{ github.repository }}"
@@ -237,6 +268,7 @@ jobs:
           | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
           | Diff PDF | [quantum-observable-universe-diff.pdf](${diff_url}) |
           | HTML     | [Landing page](${html_url}) |
+          | QA Report| [qa.html](${qa_url}) |
 
           **Source (repo)**
           | Resource | Link |
