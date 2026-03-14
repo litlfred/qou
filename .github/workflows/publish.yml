@@ -2,8 +2,9 @@
 #
 # Triggers
 # ─────────
-#   push            – every commit to every branch
-#   workflow_dispatch – manual run; optionally override the publish target branch
+#   push (main only)      – direct commits to the main branch
+#   pull_request_target   – every PR (runs without approval, even for Copilot)
+#   workflow_dispatch     – manual run; optionally override the publish target branch
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
@@ -16,13 +17,15 @@
 # Preview builds
 # ──────────────
 #   Pushes to the main branch deploy to the root of gh-pages.
-#   Pushes to any other branch deploy to  drafts/<branch-name>/  so that
-#   every feature branch / PR gets its own preview URL.
+#   PRs deploy to  drafts/<branch-name>/  so that every feature branch
+#   gets its own preview URL.
 
 name: Build & Publish
 
 on:
-  push:                   # every commit on every branch
+  push:
+    branches: [main]        # direct commits to main only
+  pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
       publish_branch:
@@ -34,7 +37,7 @@ on:
         type: string
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: build-${{ github.event.pull_request.head.ref || github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -45,15 +48,23 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
+    # Normalise context across push / pull_request_target / workflow_dispatch.
+    # pull_request_target sets github.ref to the *base* branch, so we use the
+    # PR head ref/sha instead for those runs.
+    env:
+      HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
       - name: Checkout source
         uses: actions/checkout@v4
         with:
           fetch-depth: 0          # full history needed for merge-base diff
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - name: Fetch main branch for diff
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         run: git fetch origin main
 
       # ── 1. Compile LaTeX → PDF ─────────────────────────────────────────────
@@ -99,11 +110,11 @@ jobs:
 
       # ── 2b. Generate diff against main (feature branches only) ────────────
       - name: Generate latexdiff against main
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         run: bash .github/scripts/generate-diff.sh
 
       - name: Compile diff PDF
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         continue-on-error: true
         uses: xu-cheng/latex-action@v3
         with:
@@ -182,34 +193,34 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:    ./_site
           publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ${{ github.ref_name != 'main' && format('drafts/{0}', github.ref_name) || '' }}
+          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
           keep_files:     true
           commit_message: >
-            docs: publish from ${{ github.ref_name }}@${{ github.sha }}
+            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
       - name: Comment preview link on PR
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Derive the GitHub Pages base URL from the repository metadata
           pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          pdf_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe.pdf"
-          diff_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe-diff.pdf"
-          html_url="${pages_url}/drafts/${{ github.ref_name }}/"
+          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/quantum-observable-universe.pdf"
+          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/quantum-observable-universe-diff.pdf"
+          html_url="${pages_url}/drafts/${{ env.HEAD_REF }}/"
 
           # Repository source links (useful when repo is private)
           repo_url="https://github.com/${{ github.repository }}"
-          branch_url="${repo_url}/tree/${{ github.ref_name }}"
-          commit_url="${repo_url}/commit/${{ github.sha }}"
+          branch_url="${repo_url}/tree/${{ env.HEAD_REF }}"
+          commit_url="${repo_url}/commit/${{ env.HEAD_SHA }}"
           publish_branch="${{ inputs.publish_branch || 'gh-pages' }}"
-          source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ github.ref_name }}"
+          source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ env.HEAD_REF }}"
 
           # Find open PRs whose head branch matches the current ref
           pr_numbers=$(gh pr list \
             --repo "${{ github.repository }}" \
-            --head "${{ github.ref_name }}" \
+            --head "${{ env.HEAD_REF }}" \
             --state open \
             --json number \
             --jq '.[].number')
@@ -221,7 +232,7 @@ jobs:
                  --repo "${{ github.repository }}" \
                  --json comments \
                  --jq '.comments[].body' \
-              | grep -qF "${{ github.sha }}"; then
+              | grep -qF "${{ env.HEAD_SHA }}"; then
               echo "PR #${pr} already has a preview comment for this commit – skipping."
               continue
             fi
@@ -229,7 +240,7 @@ jobs:
             gh pr comment "$pr" \
               --repo "${{ github.repository }}" \
               --body "$(cat <<EOF
-          📖 **Preview build ready** for commit \`${{ github.sha }}\`
+          📖 **Preview build ready** for commit \`${{ env.HEAD_SHA }}\`
 
           **Published (gh-pages)**
           | Artefact | Link |
@@ -241,9 +252,9 @@ jobs:
           **Source (repo)**
           | Resource | Link |
           |----------|------|
-          | Branch   | [${{ github.ref_name }}](${branch_url}) |
-          | Commit   | [\`$(echo "${{ github.sha }}" | cut -c1-7)\`](${commit_url}) |
-          | Source PDFs | [drafts/${{ github.ref_name }}](${source_pdf_url}) |
+          | Branch   | [${{ env.HEAD_REF }}](${branch_url}) |
+          | Commit   | [\`$(echo "${{ env.HEAD_SHA }}" | cut -c1-7)\`](${commit_url}) |
+          | Source PDFs | [drafts/${{ env.HEAD_REF }}](${source_pdf_url}) |
           EOF
           )"
             echo "Commented on PR #${pr}."
