@@ -201,3 +201,128 @@ corresponding genus.  The Descartes case $\chi = -6$ (genus~$4$) is
 distinguished by Bring's curve, but analogous universal objects are expected
 at other values of~$\chi$.
 \end{remark}
+
+% ── Bring's surface ──────────────────────────────────────────────────────────
+
+\section{Bring's Surface}
+\label{sec:brings-surface}
+
+\begin{definition}[Bring's surface]
+\label{def:brings-surface}
+Let $(x_1,\dots,x_5)\in\mathbb{R}^5$.  \emph{Bring's surface} is the
+maximally symmetric CR manifold of genus~$4$ and Euler characteristic
+$\chi=-6$, defined as the locus in $\mathbb{P}^4$ satisfying
+\[
+  \sum_{i=1}^{5}x_i=0,
+  \qquad
+  \sum_{i=1}^{5}x_i^2=0,
+  \qquad
+  \sum_{i=1}^{5}x_i^3=0.
+\]
+The symmetric group $S_5$ acts on Bring's surface by permuting the
+coordinates $(x_1,\dots,x_5)$; this is the maximal automorphism group
+(order~$120$) for a surface of genus~$4$
+(Remark~\ref{rem:brings-curve}).
+\end{definition}
+
+\begin{remark}[Lagrange resolvents and cyclic symmetry]
+\label{rem:lagrange-resolvents}
+To expose the manifest cyclic symmetry of Bring's surface, we pass to the
+basis of Lagrange resolvents via a discrete Fourier transform.  Let
+$\zeta=e^{2\pi i/5}$ and define the resolvent coordinates
+\[
+  w_k \;=\; \frac{1}{\sqrt{5}}\sum_{j=0}^{4}\zeta^{kj}\,x_j,
+  \qquad k\in\{1,2,3,4\}.
+\]
+The constraint $\sum x_j=0$ forces $w_0=0$.  Under the cyclic permutation
+$\sigma\colon x_j\mapsto x_{j+1}$ the resolvents transform as
+$\sigma(w_k)=\zeta^{-k}w_k$, so $\sigma$ is diagonalised in this basis.
+The conjugation relations $w_4=\bar{w}_1$ and $w_3=\bar{w}_2$ reduce the
+independent coordinates to $w_1$ and~$w_2$.
+
+In the resolvent basis the quadric and cubic constraints become,
+respectively,
+\begin{align}
+  w_1\,w_4+w_2\,w_3 &= 0,
+    \label{eq:resolvent-quadric}\\
+  w_1^2\,w_3+w_4^2\,w_2+w_2^2\,w_1+w_3^2\,w_4 &= 0.
+    \label{eq:resolvent-cubic}
+\end{align}
+Applying the conjugation relations, the surface is represented as the locus
+in $\mathbb{C}^2$ satisfying
+\begin{equation}\label{eq:brings-locus}
+  \begin{cases}
+    N(w_1)+\operatorname{Re}(w_2\,\bar{w}_3)=0,\\[4pt]
+    \mathcal{F}_3(w_1,w_2,\bar{w}_1,\bar{w}_2)=0,
+  \end{cases}
+\end{equation}
+where $N(w)=\lvert w\rvert^2$ is the algebraic norm in $\mathbb{Z}[i]$ and
+$\mathcal{F}_3$ denotes the cubic relation obtained
+from~\eqref{eq:resolvent-cubic}.  The $C_5$ symmetry is now manifest as the
+phase rotation $w_k\mapsto\zeta^k\,w_k$.
+\end{remark}
+
+\begin{definition}[Briggs--Klein affine chart]
+\label{def:briggs-klein-chart}
+Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent
+coordinate on Bring's surface
+(Definition~\ref{def:brings-surface}).  The
+\emph{Briggs--Klein affine chart} is the coordinate system $(w_1,w_2)$
+restricted to the open set $0<r<\infty$, equipped with the Hermitian metric
+inherited from the Fubini--Study metric on $\mathbb{P}^4$.  In this chart
+the $C_5$ action is the phase rotation $w_k\mapsto\zeta^k\,w_k$, and the
+radial coordinate $r$ is $C_5$-invariant.
+\end{definition}
+
+\begin{remark}[Radial projection of Bring's surface]
+\label{rem:radial-projection}
+Projecting Bring's surface onto the radial coordinate $r\in(0,1)$ in a
+Briggs--Klein affine chart (Definition~\ref{def:briggs-klein-chart}) yields a
+fibration over the base manifold $M$ with trivial bundle $E=E_0$.  At each
+$r$, the coordinate $w_1$ is restricted to a circle of radius $\sqrt{r}$ in
+the complex plane $\mathbb{C}_{w_1}$.  This circle is the orbit of the $C_5$
+symmetry: the rotation $w_1\mapsto\zeta\,w_1$ moves the point along this
+circle without changing~$r$.
+
+\medskip
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=2.5]
+  % Shaded envelope region (trivial bundle E_0)
+  \fill[blue!6]
+    plot[domain=0.02:1,samples=50] (\x,{sqrt(\x)})
+    -- plot[domain=1:0.02,samples=50] (\x,{-sqrt(\x)}) -- cycle;
+  % Upper envelope: sqrt(r)
+  \draw[thick,domain=0.005:1.08,samples=80]
+    plot (\x,{sqrt(\x)}) node[right]{$\sqrt{r}$};
+  % Lower envelope: -sqrt(r)
+  \draw[thick,domain=0.005:1.08,samples=80]
+    plot (\x,{-sqrt(\x)});
+  % Axes
+  \draw[->] (-0.08,0) -- (1.22,0) node[right]{$r$};
+  \draw[->] (0,-1.18) -- (0,1.18) node[above]{$\mathbb{C}_{w_1}$};
+  % Tick at r = 1
+  \draw (1,0.04) -- (1,-0.04) node[below]{\small$1$};
+  % Representative fibre at r = 0.5
+  \draw[dashed,gray] (0.5,{-sqrt(0.5)}) -- (0.5,{sqrt(0.5)});
+  % C_5 orbit arc at r = 0.5
+  \draw[thick,->] ({0.5+sqrt(0.5)*cos(55)},{sqrt(0.5)*sin(55)})
+    arc[start angle=55, end angle=125, radius={sqrt(0.5)}];
+  \node at (0.5,{sqrt(0.5)+0.13}) {\small$\zeta$};
+  % Labels
+  \node at (0.78,0.22) {$E=E_0$};
+  \node[below] at (0.5,-0.08) {\small$M$};
+\end{tikzpicture}
+\end{center}
+\end{remark}
+
+\begin{remark}[Four-colourability of Bring's surface]
+\label{rem:four-colourability}
+By the Heawood bound, an orientable surface of genus~$g$ has chromatic number
+at most $\lfloor(7+\sqrt{1+48g})/2\rfloor$.  For genus~$4$ this bound
+equals~$10$.  Bring's surface, however, admits a proper colouring with only
+four colours --- considerably fewer than the maximum permitted by its genus.
+This low chromatic number reflects the high degree of symmetry: the $S_5$
+automorphism group constrains the combinatorics of any cell decomposition,
+forcing a more efficient colouring than a generic genus-$4$ surface would
+require.
+\end{remark}
