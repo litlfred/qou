@@ -114,11 +114,14 @@ $A$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
 its self-dual part.  Let
 $L \in \Gamma(T^*M \otimes \overline{T^*M})$ be the \emph{Levi form}, a
 Hermitian form on the tangent bundle of $M$.  The \emph{substrate parameter}
-is the function $q \colon M \to \mathbb{R}$ defined by
+is the smooth field $q \colon M \to (0,1]$ defined by
 \[
-  q(p) \;=\; \exp\!\bigl(-\lVert L \wedge F_A^+ \rVert(p)\bigr),
+  q(p) \;=\; \exp\!\bigl(\lVert L \wedge F_A^+ \rVert(p)\bigr)^{-1},
   \qquad p \in M.
 \]
+The substrate parameter is not a fixed constant but a field on $M$: its value
+varies from point to point according to the local coupling between the Levi
+form and the self-dual curvature.
 \end{definition}
 
 \begin{definition}[Quantum Gauge Group]
@@ -133,14 +136,57 @@ deforming the structure group $G = \mathrm{SU}(2)$ at the parameter $q$.
 \label{def:quantum-planck-constant}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
-\emph{quantum Planck constant} is the function
-$\hbar_q \colon M \to \mathbb{R}$ defined by
+\emph{quantum Planck constant} is the smooth field
+$\hbar_q \colon M \to [0,1)$ defined by
 \[
   \hbar_q(p) \;=\; 1 - q(p), \qquad p \in M.
 \]
+Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$.
 As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
 vanish; as $q(p) \to 0$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 \end{definition}
+
+\begin{remark}[Heisenberg uncertainty as commutator]
+\label{rem:heisenberg-commutator}
+In the $\mathbb{C}$ quantum observable universe the Heisenberg uncertainty
+principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
+$\hat{P}$ denote position and momentum observables on the fibre
+$\mathbb{CP}$.  Then
+\[
+  [\hat{X},\, \hat{P}]_q \;=\; i\,\hbar_q(p),
+\]
+where $\hbar_q(p) = 1 - q(p)$
+(Definition~\ref{def:quantum-planck-constant}).  The commutator encodes the
+local uncertainty: when $q(p) \to 1$ (classicality),
+$[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to 0$
+(deep-quantum regime), $[\hat{X}, \hat{P}]_q \to i$ and maximal uncertainty
+prevails.
+\end{remark}
+
+\begin{remark}[Cosmological limits of $q$]
+\label{rem:cosmological-limits}
+The substrate field $q$ (Definition~\ref{def:substrate-parameter}) interpolates
+between two extreme cosmological regimes:
+\begin{enumerate}
+  \item \emph{Heat death} ($q \to 1$).  When
+        $\lVert L \wedge F_A^+\rVert \to 0$ the curvature--torsion coupling
+        vanishes and $q(p) \to 1$ everywhere.  In this limit $\hbar_q \to 0$,
+        the commutator $[\hat{X}, \hat{P}]_q \to 0$, and no uncertainty
+        remains: all quantum dynamics freeze into a classical, torsion-free
+        equilibrium.
+  \item \emph{Big bang} ($q \to 0$).  When
+        $\lVert L \wedge F_A^+\rVert \to \infty$ the substrate is maximally
+        wound and $q(p) \to 0$.  In this limit $\hbar_q \to 1$, the
+        commutator $[\hat{X}, \hat{P}]_q \to i$, and uncertainty is maximal:
+        the universe is in a purely quantum state with all torsion wound up
+        and no classical information from fermionic matter.
+\end{enumerate}
+Both limits are in a precise sense \emph{illusory}: the $q$-torsion of
+Definition~\ref{def:q-torsion-leaf} twists faster than any divergence can grow
+in the integral, so the finiteness of the brane tower
+(Definition~\ref{def:recursive-brane-tower}) tames the infinities that would
+otherwise appear at either extreme.
+\end{remark}
 
 \begin{remark}[$J^1E$ as the space of local states]
 \label{rem:j1e-local-states}
@@ -312,7 +358,7 @@ action $S_q$ with respect to the Levi form $L$:
   G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},
 \]
 where $T_{\mu\nu}^{(q)}$ is a \emph{quantum-weighted} stress-energy tensor.
-Because $q(p) = \exp\!\bigl(-\lVert L \wedge F^+\rVert\bigr)$, the geometry
+Because $q(p) = \exp\!\bigl(\lVert L \wedge F^+\rVert\bigr)^{-1}$, the geometry
 of the brane $M$ is forced to curve to accommodate the tension of the
 $\mathrm{SU}(2)$ instantons.
 \end{remark}
@@ -335,8 +381,10 @@ where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
   \item $D_A = d + A$: the connection $A$ (the instanton) acts as the
         potential.
 \end{itemize}
-As $q(p) \to 1$ (classicality), the uncertainty vanishes and the wave-like
-nature of the section freezes into a classical trajectory.
+As $q(p) \to 1$ (classicality), the commutator
+$[\hat{X}, \hat{P}]_q \to 0$ (Remark~\ref{rem:heisenberg-commutator}), the
+uncertainty vanishes, and the wave-like nature of the section freezes into a
+classical trajectory.
 \end{remark}
 
 \begin{remark}[Main Commutative Diagram]
