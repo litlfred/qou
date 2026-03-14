@@ -63,6 +63,13 @@ jobs:
           fetch-depth: 0          # full history needed for merge-base diff
           ref: ${{ env.HEAD_SHA }}
 
+      # Security: pull_request_target checks out the PR head, which could
+      # contain modified CI scripts.  Restore .github/scripts/ from the
+      # base branch so only trusted code runs with elevated permissions.
+      - name: Restore base-branch CI scripts
+        if: github.event_name == 'pull_request_target'
+        run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
+
       - name: Fetch main branch for diff
         if: env.HEAD_REF != 'main'
         run: git fetch origin main
