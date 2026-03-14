@@ -202,9 +202,9 @@ part. Let <span class="math inline">\(L \in \Gamma(T^*M \otimes
 \overline{T^*M})\)</span> be the <em>Levi form</em>, a Hermitian form on
 the tangent bundle of <span class="math inline">\(M\)</span>. The
 <em>substrate parameter</em> is the smooth field <span
-class="math inline">\(q \colon M \to (0,1]\)</span> defined by <span
-class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L \wedge F_A^+
-\rVert(p)\bigr)^{-1},
+class="math inline">\(q \colon M \to [1,\infty)\)</span> defined by
+<span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L \wedge
+F_A^+ \rVert(p)\bigr),
 \qquad p \in M.\]</span> The substrate parameter is not a fixed constant
 but a field on <span class="math inline">\(M\)</span>: its value varies
 from point to point according to the local coupling between the Levi
@@ -234,14 +234,15 @@ with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
 The <em>quantum Planck constant</em> is the smooth field <span
 class="math inline">\(\hbar_q \colon M \to [0,1)\)</span> defined by
-<span class="math display">\[\hbar_q(p) \;=\; 1 - q(p), \qquad p \in
-M.\]</span> Like <span class="math inline">\(q\)</span> itself, <span
-class="math inline">\(\hbar_q\)</span> is not a universal constant but a
-field on <span class="math inline">\(M\)</span>. As <span
+<span class="math display">\[\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p
+\in M.\]</span> Like <span class="math inline">\(q\)</span> itself,
+<span class="math inline">\(\hbar_q\)</span> is not a universal constant
+but a field on <span class="math inline">\(M\)</span>. As <span
 class="math inline">\(q(p) \to 1\)</span> (classicality), <span
 class="math inline">\(\hbar_q(p) \to 0\)</span> and quantum effects
-vanish; as <span class="math inline">\(q(p) \to 0\)</span> (deep-quantum
-regime), <span class="math inline">\(\hbar_q(p) \to 1\)</span>.</em></p>
+vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
+(deep-quantum regime), <span class="math inline">\(\hbar_q(p) \to
+1\)</span>.</em></p>
 </div>
 
 <div id="rem:heisenberg-commutator" class="remark">
@@ -256,14 +257,15 @@ observables on the fibre <span
 class="math inline">\(\mathbb{CP}\)</span>. Then <span
 class="math display">\[[\hat{X},\, \hat{P}]_q \;=\;
 i\,\hbar_q(p),\]</span> where <span class="math inline">\(\hbar_q(p) = 1
-- q(p)\)</span>
+- q(p)^{-1}\)</span>
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).
 The commutator encodes the local uncertainty: when <span
 class="math inline">\(q(p) \to 1\)</span> (classicality), <span
 class="math inline">\([\hat{X}, \hat{P}]_q \to 0\)</span> and
 observables commute; when <span class="math inline">\(q(p) \to
-0\)</span> (deep-quantum regime), <span class="math inline">\([\hat{X},
-\hat{P}]_q \to i\)</span> and maximal uncertainty prevails.</em></p>
+\infty\)</span> (deep-quantum regime), <span
+class="math inline">\([\hat{X}, \hat{P}]_q \to i\)</span> and maximal
+uncertainty prevails.</em></p>
 </div>
 
 <div id="rem:cosmological-limits" class="remark">
@@ -283,10 +285,10 @@ limit <span class="math inline">\(\hbar_q \to 0\)</span>, the commutator
 uncertainty remains: all quantum dynamics freeze into a classical,
 torsion-free equilibrium.</em></p></li>
 <li><p><em><em>Big bang</em> (<span class="math inline">\(q \to
-0\)</span>). When <span class="math inline">\(\lVert L \wedge
+\infty\)</span>). When <span class="math inline">\(\lVert L \wedge
 F_A^+\rVert \to \infty\)</span> the substrate is maximally wound and
-<span class="math inline">\(q(p) \to 0\)</span>. In this limit <span
-class="math inline">\(\hbar_q \to 1\)</span>, the commutator <span
+<span class="math inline">\(q(p) \to \infty\)</span>. In this limit
+<span class="math inline">\(\hbar_q \to 1\)</span>, the commutator <span
 class="math inline">\([\hat{X}, \hat{P}]_q \to i\)</span>, and
 uncertainty is maximal: the universe is in a purely quantum state with
 all torsion wound up and no classical information from fermionic
@@ -381,10 +383,11 @@ field</em> is the vector field <span
 class="math inline">\(\xi_q\)</span> on <span
 class="math inline">\(M\)</span> defined by its action on smooth
 functions <span class="math inline">\(f \in C^\infty(M)\)</span>: <span
-class="math display">\[\xi_q(f) \;=\; q\,\xi(f) + (1 - q)\,[\xi,
-X_f]_q,\]</span> where <span class="math inline">\(X_f\)</span> is the
-horizontal lift of <span class="math inline">\(\mathrm{grad}\,f\)</span>
-to <span class="math inline">\(H\)</span> and <span
+class="math display">\[\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 -
+q^{-1})\,[\xi, X_f]_q,\]</span> where <span
+class="math inline">\(X_f\)</span> is the horizontal lift of <span
+class="math inline">\(\mathrm{grad}\,f\)</span> to <span
+class="math inline">\(H\)</span> and <span
 class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> denotes the <span
 class="math inline">\(q\)</span>-deformed Lie bracket on <span
 class="math inline">\(\mathfrak{X}(M)\)</span>. When <span
@@ -507,7 +510,7 @@ class="math inline">\(q\)</span> interpolates between the classical
 regime (<span class="math inline">\(q \to 1\)</span>, where <span
 class="math inline">\(\Delta_q\)</span> reduces to the Hodge Laplacian)
 and the deep-quantum regime (<span class="math inline">\(q \to
-0\)</span>), so the notion of “particle” is itself <span
+\infty\)</span>), so the notion of “particle” is itself <span
 class="math inline">\(q\)</span>-dependent.</em></p>
 </div>
 
@@ -529,7 +532,7 @@ G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},\]</span> where <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> is a
 <em>quantum-weighted</em> stress-energy tensor. Because <span
 class="math inline">\(q(p) = \exp\!\bigl(\lVert L \wedge
-F^+\rVert\bigr)^{-1}\)</span>, the geometry of the brane <span
+F^+\rVert\bigr)\)</span>, the geometry of the brane <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 instantons.</em></p>
@@ -552,8 +555,8 @@ class="math display">\[i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\,
 the <span class="math inline">\(q\)</span>-deformed Hamiltonian operator
 and:</em></p>
 <ul>
-<li><p><em><span class="math inline">\(\hbar_q(p) = 1 - q(p)\)</span>:
-the quantum Planck constant
+<li><p><em><span class="math inline">\(\hbar_q(p) = 1 -
+q(p)^{-1}\)</span>: the quantum Planck constant
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>)
 is a local field;</em></p></li>
 <li><p><em><span class="math inline">\(D_A = d + A\)</span>: the
@@ -1525,7 +1528,8 @@ and the Hall conductance arises from the Chern number of the bulk bundle
 restricted to the horizontal distribution. The <span
 class="math inline">\(q\)</span>-deformation modifies the quantisation
 condition, predicting fractional corrections of order <span
-class="math inline">\(1 - q\)</span> to the Hall conductance.</em></p>
+class="math inline">\(1 - q^{-1}\)</span> to the Hall
+conductance.</em></p>
 </div>
 
 <h5 id="existing-data-sets-4">Existing data sets.</h5>
@@ -1547,8 +1551,8 @@ with controllable topology.</p></li>
 <ul>
 <li><p>Measurement of Hall conductance in photonic lattices at varying
 effective <span class="math inline">\(q\)</span> parameters, seeking the
-<span class="math inline">\(1 - q\)</span> correction predicted by the
-quantum Planck constant
+<span class="math inline">\(1 - q^{-1}\)</span> correction predicted by
+the quantum Planck constant
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).</p></li>
 <li><p>Cold-atom realisations of <span
 class="math inline">\(\mathrm{SU}(2)\)</span> gauge fields in optical
