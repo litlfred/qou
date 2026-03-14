@@ -37,7 +37,7 @@ on:
         type: string
 
 concurrency:
-  group: build-${{ github.event.pull_request.head.ref || github.ref }}
+  group: build-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 
 permissions:
@@ -61,7 +61,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0          # full history needed for merge-base diff
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          ref: ${{ env.HEAD_SHA }}
 
       - name: Fetch main branch for diff
         if: env.HEAD_REF != 'main'
