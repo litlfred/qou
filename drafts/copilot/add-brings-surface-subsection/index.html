@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Frederick Carl Leitner[^1]" />
-  <meta name="dcterms.date" content="2026-03-14" />
+  <meta name="dcterms.date" content="2026-03-15" />
   <title>Quantum Observable Universe</title>
   <style>
     code{white-space: pre-wrap;}
@@ -32,7 +32,7 @@
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
 <p class="author">Frederick Carl Leitner[^1]</p>
-<p class="date">2026-03-14</p>
+<p class="date">2026-03-15</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>This paper presents a mathematical framework for the Quantum
@@ -1231,18 +1231,17 @@ class="math inline">\(\chi\)</span>.</em></p>
 <div id="def:brings-surface" class="definition">
 
 <p><strong>Definition 3.14</strong> (Bring’s surface). <em>Let <span
-class="math inline">\((x_1,\dots,x_5)\in\mathbb{R}^5\)</span>.
+class="math inline">\(x_j\)</span>, <span
+class="math inline">\(j\in\{0,\dots,4\}\)</span>, be homogeneous
+coordinates on <span class="math inline">\(\mathbb{P}^4\)</span>.
 <em>Bring’s surface</em> is the maximally symmetric CR manifold of
 genus <span class="math inline">\(4\)</span> and Euler characteristic
-<span class="math inline">\(\chi=-6\)</span>, defined as the locus in
-<span class="math inline">\(\mathbb{P}^4\)</span> satisfying <span
-class="math display">\[\sum_{i=1}^{5}x_i=0,
-\qquad
-\sum_{i=1}^{5}x_i^2=0,
-\qquad
-\sum_{i=1}^{5}x_i^3=0.\]</span> The symmetric group <span
+<span class="math inline">\(\chi=-6\)</span>, defined by the vanishing
+of the first three power sums: <span
+class="math display">\[\sum_{j=0}^{4}x_j^{\,k}=0,
+\qquad k=1,2,3.\]</span> The symmetric group <span
 class="math inline">\(S_5\)</span> acts on Bring’s surface by permuting
-the coordinates <span class="math inline">\((x_1,\dots,x_5)\)</span>;
+the coordinates <span class="math inline">\((x_0,\dots,x_4)\)</span>;
 this is the maximal automorphism group (order <span
 class="math inline">\(120\)</span>) for a surface of genus <span
 class="math inline">\(4\)</span>
@@ -1251,45 +1250,30 @@ class="math inline">\(4\)</span>
 
 <div id="rem:lagrange-resolvents" class="remark">
 
-<p><strong>Remark 3.15</strong> (Lagrange resolvents and cyclic
-symmetry). <em>To expose the manifest cyclic symmetry of Bring’s
-surface, we pass to the basis of Lagrange resolvents via a discrete
-Fourier transform. Let <span class="math inline">\(\zeta=e^{2\pi
-i/5}\)</span> and define the resolvent coordinates <span
-class="math display">\[w_k \;=\;
+<p><strong>Remark 3.15</strong> (Lagrange resolvents and spectral form).
+<em>Let <span class="math inline">\(\zeta=e^{2\pi i/5}\)</span>. Apply
+the discrete Fourier transform to the coordinates <span
+class="math inline">\(x_j\)</span> of Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.14</a>):
+<span class="math display">\[w_k \;=\;
 \frac{1}{\sqrt{5}}\sum_{j=0}^{4}\zeta^{kj}\,x_j,
-\qquad k\in\{1,2,3,4\}.\]</span> The constraint <span
-class="math inline">\(\sum x_j=0\)</span> forces <span
-class="math inline">\(w_0=0\)</span>. Under the cyclic permutation <span
-class="math inline">\(\sigma\colon x_j\mapsto x_{j+1}\)</span> the
-resolvents transform as <span
-class="math inline">\(\sigma(w_k)=\zeta^{-k}w_k\)</span>, so <span
-class="math inline">\(\sigma\)</span> is diagonalised in this basis. The
-conjugation relations <span class="math inline">\(w_4=\bar{w}_1\)</span>
-and <span class="math inline">\(w_3=\bar{w}_2\)</span> reduce the
-independent coordinates to <span class="math inline">\(w_1\)</span>
-and <span class="math inline">\(w_2\)</span>.</em></p>
-<p><em>In the resolvent basis the quadric and cubic constraints become,
-respectively, <span class="math display">\[\begin{aligned}
-w_1\,w_4+w_2\,w_3 &amp;= 0,
-\label{eq:resolvent-quadric}\\
-w_1^2\,w_3+w_4^2\,w_2+w_2^2\,w_1+w_3^2\,w_4 &amp;= 0.
+\qquad k\in\{0,1,2,3,4\}.\]</span> Under this change of basis the three
+defining power-sum equations become the following <em>spectral
+forms</em>: <span class="math display">\[\begin{aligned}
+w_0 &amp;= 0
+&amp;&amp;\text{(linear projection),}
+\label{eq:resolvent-linear}\\[4pt]
+w_1\,w_4+w_2\,w_3 &amp;= 0
+&amp;&amp;\text{(Hermitian quadric),}
+\label{eq:resolvent-quadric}\\[4pt]
+w_1^2\,w_3+w_4^2\,w_2+w_2^2\,w_1+w_3^2\,w_4 &amp;= 0
+&amp;&amp;\text{(symmetric cubic).}
 \label{eq:resolvent-cubic}
-\end{aligned}\]</span> Applying the conjugation relations, the surface
-is represented as the locus in <span
-class="math inline">\(\mathbb{C}^2\)</span> satisfying <span
-class="math display">\[\label{eq:brings-locus}
-\begin{cases}
-N(w_1)+\operatorname{Re}(w_2\,\bar{w}_3)=0
-\quad(\bar{w}_3=w_2),\\[4pt]
-\mathcal{F}_3(w_1,w_2,\bar{w}_1,\bar{w}_2)=0,
-\end{cases}\]</span> where <span class="math inline">\(N(w)=\lvert
-w\rvert^2\)</span> is the squared modulus and <span
-class="math inline">\(\mathcal{F}_3\)</span> denotes the cubic relation
-obtained
-from <a href="#eq:resolvent-cubic" data-reference-type="eqref" data-reference="eq:resolvent-cubic">[eq:resolvent-cubic]</a>.
-The <span class="math inline">\(C_5\)</span> symmetry is now manifest as
-the phase rotation <span
+\end{aligned}\]</span> The cyclic permutation <span
+class="math inline">\(\sigma\colon x_j\mapsto x_{j+1}\)</span> acts by
+<span class="math inline">\(\sigma(w_k)=\zeta^{-k}w_k\)</span>, so the
+<span class="math inline">\(C_5\)</span> symmetry is manifest as a phase
+rotation <span
 class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>.</em></p>
 </div>
 
@@ -1410,6 +1394,187 @@ This arithmetic compatibility between the cyclic symmetry and the
 cyclotomic ring underlies the descent of the <span
 class="math inline">\(C_5\)</span> action to finite
 characteristic.</em></p>
+</div>
+
+<div id="def:quaternionic-spectral-resolvents" class="definition">
+
+<p><strong>Definition 3.21</strong> (Quaternionic spectral resolvents).
+<em>Let <span class="math inline">\(\mathcal{S}\)</span> denote the
+Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.14</a>),
+let <span class="math inline">\(q=\exp\!\bigl(-\lVert L\wedge
+F_A^+\rVert\bigr)\)</span> be the substrate parameter
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>),
+and set <span class="math inline">\(r=\lVert L\wedge
+F_A^+\rVert\)</span> so that <span
+class="math inline">\(q=e^{-r}\)</span>. Write <span
+class="math inline">\(\mathbf{i},\mathbf{j},\mathbf{k}\)</span> for the
+standard basis of <span
+class="math inline">\(\operatorname{Im}\mathbb{H}\)</span>. Using the
+Lusztig <span class="math inline">\(q\)</span>-exponential and <span
+class="math inline">\(q\)</span>-logarithm, <span
+class="math display">\[\label{eq:q-exp}
+\exp_q(x)\;=\;\sum_{n=0}^{\infty}\frac{x^n}{[n]_q!},
+\qquad
+\ln_q(1+x)\;=\;\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{[n]_q},\]</span>
+we define the <em>quaternionic spectral resolvents</em> <span
+class="math inline">\(\omega_k\colon\mathcal{S}\to J^\infty E\)</span>
+by <span class="math display">\[\begin{aligned}
+\omega_0 &amp;\;=\;
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}z_j\Bigr)\,
+\ln_q(1+r)
+&amp;&amp;\text{(uncertainty),}
+\label{eq:omega-0}\\[4pt]
+\omega_1 &amp;\;=\;
+\frac{\mathbf{i}}{\ln_q(1+r)}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{j}\,z_j+i\Bigr)
+&amp;&amp;\text{(space-like),}
+\label{eq:omega-1}\\[4pt]
+\omega_2 &amp;\;=\;
+\mathbf{j}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{2j}\,z_j+i\Bigr)\,
+\bigl(\exp_q(r)-1\bigr)
+&amp;&amp;\text{(time-like),}
+\label{eq:omega-2}\\[4pt]
+\omega_3 &amp;\;=\;
+\mathbf{k}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{3j}\,z_j+i\Bigr)\,
+\bigl(\exp_q(r)-1\bigr)
+&amp;&amp;\text{(time-like).}
+\label{eq:omega-3}
+\end{aligned}\]</span> By the first power
+sum <a href="#eq:resolvent-linear" data-reference-type="eqref" data-reference="eq:resolvent-linear">[eq:resolvent-linear]</a>,
+<span class="math inline">\(\omega_0=0\)</span> in the balanced state;
+the remaining coordinates embed <span
+class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
+<span class="math inline">\(J^\infty E\)</span>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+</div>
+
+<div id="rem:omega-constraints" class="remark">
+
+<p><strong>Remark 3.22</strong> (Algebraic constraints in the <span
+class="math inline">\(\omega_k\)</span> basis). <em>In the spectral
+resolvent basis
+(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.21</a>)
+the Bring’s surface equations take the following form:</em></p>
+<ul>
+<li><p><em><em>Barycentric:</em> <span
+class="math inline">\(\omega_0=0\)</span>.</em></p></li>
+<li><p><em><em>Quadric (<span class="math inline">\(\mathbb{H}\)</span>
+condition):</em> <span
+class="math inline">\(\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_3=0\)</span>.
+This preserves the self-duality <span
+class="math inline">\(F_A=*F_A\)</span> and enforces a Minkowski-like
+balance between the space-like and time-like modes.</em></p></li>
+<li><p><em><em>Cubic (phase locking):</em> a quintic resonance condition
+that locks the expansion of <span class="math inline">\(\ln_q\)</span>
+to <span class="math inline">\(\exp_q\)</span>, preserving the <span
+class="math inline">\(C_5\)</span> symmetry and the Descartes condition
+<span class="math inline">\(\chi=-6\)</span>.</em></p></li>
+</ul>
+</div>
+
+<div id="rem:spectral-dynamics" class="remark">
+
+<p><strong>Remark 3.23</strong> (Spectral dynamics and the <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> action). <em>The growth
+profiles in
+Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.21</a>
+separate the space-like and time-like sectors of the Bring’s
+surface:</em></p>
+<ul>
+<li><p><em><em><span class="math inline">\(\omega_1\)</span>
+(space-like):</em> the factor <span
+class="math inline">\(1/\ln_q(1+r)\)</span> diverges as <span
+class="math inline">\(r\to 0\)</span>, so <span
+class="math inline">\(\omega_1\)</span> achieves infinite density at the
+base stratum <span class="math inline">\(M_0\)</span>, characterising
+the primordial vortex. This mode anchors the <span
+class="math inline">\(U(1)\)</span> longitudinal backbone of the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> bundle.</em></p></li>
+<li><p><em><em><span class="math inline">\(\omega_2,\omega_3\)</span>
+(time-like):</em> the factor <span
+class="math inline">\(\exp_q(r)-1\)</span> vanishes at <span
+class="math inline">\(r=0\)</span> and grows rapidly for small <span
+class="math inline">\(r\)</span>, driven by the <span
+class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.16</a>).
+These ladder modes expand at the big bang before tapering as the
+geometric viscosity
+(Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">1.22</a>)
+takes hold.</em></p></li>
+</ul>
+<p><em>To realise the rotation as a function of <span
+class="math inline">\(r\)</span>, embed the radial parameter into <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> via the unit quaternion
+<span class="math display">\[\label{eq:sp1-quaternion}
+\mathbf{q}(r)
+\;=\;
+\cos\theta(r)+\mathbf{u}\,\sin\theta(r),
+\qquad
+\theta(r)=\tfrac{\pi}{2}\,e^{-r},\]</span> where <span
+class="math inline">\(\mathbf{u}\in\operatorname{Im}\mathbb{H}\)</span>
+is a fixed unit imaginary quaternion. The conjugation <span
+class="math inline">\(\boldsymbol{\omega}&#39;=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}\)</span>
+gives maximum twist (<span class="math inline">\(\theta=\pi/2\)</span>)
+in the deep-quantum regime <span class="math inline">\(r\to 0\)</span>
+and classical freeze (<span class="math inline">\(\theta\to 0\)</span>)
+as <span class="math inline">\(r\to\infty\)</span>.</em></p>
+</div>
+
+<div id="rem:primordial-vortex" class="remark">
+
+<p><strong>Remark 3.24</strong> (Primordial vortex and the deep-quantum
+limit). <em>As <span class="math inline">\(r\to 0\)</span> the spectral
+resolvents converge toward the <em>primordial vortex</em>:</em></p>
+<ul>
+<li><p><em>The quantum Planck constant <span
+class="math inline">\(\hbar_q\to 1\)</span>
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).</em></p></li>
+<li><p><em>The <span class="math inline">\(q\)</span>-torsion leaves
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.17</a>)
+collapse to the zero-dimensional stratum <span
+class="math inline">\(M_0=\{\pm 1\}\)</span>.</em></p></li>
+<li><p><em>The <span class="math inline">\(\omega_0\)</span> coordinate,
+although identically zero in the balanced state, formally blows up in
+the jet prolongation, representing the concentration of energy at a
+singular spatial point.</em></p></li>
+</ul>
+<p><em>Space-like energy is trapped because the time-like rotation
+becomes infinite in frequency but zero in displacement, effectively
+turning the <span class="math inline">\(\mathrm{SU}(2)\)</span> holonomy
+into a localised topological charge.</em></p>
+</div>
+
+<div id="rem:geometric-drag" class="remark">
+
+<p><strong>Remark 3.25</strong> (Geometric drag and the mass residue).
+<em>The Levi form <span class="math inline">\(L\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
+must be preserved under the <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> conjugation. Since <span
+class="math display">\[\lVert\boldsymbol{\omega}&#39;\rVert^2
+=\lVert\boldsymbol{\omega}\rVert^2
+=\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_2+\omega_3\bar{\omega}_3,\]</span>
+the quadric
+constraint <a href="#eq:resolvent-quadric" data-reference-type="eqref" data-reference="eq:resolvent-quadric">[eq:resolvent-quadric]</a>
+remains satisfied and the self-duality <span
+class="math inline">\(F_A=*F_A\)</span> is preserved. The mass of a
+stable vortex is recovered as the residue of the interaction between the
+growth profiles: <span class="math display">\[\label{eq:mass-residue}
+m \;\propto\;
+\oint_{\gamma}
+\lVert\nabla_A q\rVert\cdot
+\lVert\Omega_1\wedge\Omega_{2,3}\rVert,\]</span> where <span
+class="math inline">\(\Omega_k\)</span> denotes the curvature form
+restricted to the <span class="math inline">\(\omega_k\)</span> sector.
+When <span class="math inline">\(q=1\)</span> (trivial bundle), the
+<span class="math inline">\(\omega_k\)</span> commute and <span
+class="math inline">\(m=0\)</span>; when <span
+class="math inline">\(q\to 0\)</span> (maximal twist), energy is trapped
+in the <span class="math inline">\(\omega_1\)</span> spatial
+filament.</em></p>
 </div>
 
 <h1 id="path-integrals-and-braiding">Path Integrals and Braiding</h1>
