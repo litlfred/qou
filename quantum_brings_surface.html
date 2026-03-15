@@ -585,8 +585,11 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
   const pos  = new Float32Array(NV * 3);
   const col  = new Float32Array(NV * 3);
   const tc   = TUBE_COL[tubeIndex];
-  const q_e  = qEff(q);              // q for series computations
   const phi0 = TAU * tubeIndex / 3;  // base phase offset (120° per tube)
+
+  // Reference Q at endpoint for normalization (keeps torsion_s bounded to gamma_scale turns)
+  const r_max   = N_max * LP;
+  const Q_end_r = Math.max(1e-4, 2 * (expQ(r_max, Math.exp(-r_max), QN) - 1));
 
   for (let i = 0; i <= AX; i++) {
     const s_N = N_min + (N_max - N_min) * (i / AX);  // Planck multiples
@@ -596,16 +599,17 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
     const q_sub_l = Math.exp(-s);
     const Q_local = Math.max(1e-4, 2 * (expQ(s, q_sub_l, QN) - 1));
 
-    // Torsion angle accumulates proportionally to Q(s) — the physics-derived pitch
-    const torsion_s = TAU * s_N * Q_local * gamma_scale;
+    // Torsion: gamma_scale full turns at the endpoint; Q(s)/Q_end modulates rate along tube
+    const Q_norm    = Q_local / Q_end_r;
+    const torsion_s = TAU * gamma_scale * (s_N / Math.max(N_max, 1)) * Q_norm;
 
     // Centre of this ring (along outward normal from brane surface)
     const cx = P.x + N.x * s;
     const cy = P.y + N.y * s;
     const cz = P.z + N.z * s;
 
-    // q-modulated cone radius: Ξ_q = 1 + 0.3·q·cosq(torsion_s)
-    const xi_q   = 1.0 + 0.30 * q * cosQ(torsion_s, q_e, QN);
+    // q-modulated cone radius: Ξ_q = 1 + 0.3·q·cos(torsion_s)  [Math.cos: always bounded]
+    const xi_q   = 1.0 + 0.30 * q * Math.cos(torsion_s);
     const ring_r = Math.max(0.0005, s * sigma * xi_q);
 
     // Spiral torsion phase: ψᵢ(s) = 2πi/3 + q · torsion_s
@@ -668,8 +672,11 @@ function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex) {
   const s       = s_N * LP;
   const q_sub_l = Math.exp(-s);
   const Q_local = Math.max(1e-4, 2 * (expQ(s, q_sub_l, QN) - 1));
-  const torsion = TAU * s_N * Q_local * gamma_scale;
-  const xi_q    = 1.0 + 0.30 * q * cosQ(torsion, qEff(q), QN);
+  const r_max   = s_N * LP;  // cap is at a fixed s_N
+  const Q_end_r = Math.max(1e-4, 2 * (expQ(r_max, Math.exp(-r_max), QN) - 1));
+  const Q_norm  = Q_local / Q_end_r;
+  const torsion = TAU * gamma_scale * (s_N / Math.max(s_N, 1)) * Q_norm;
+  const xi_q    = 1.0 + 0.30 * q * Math.cos(torsion);
   const ring_r  = Math.max(0.0005, s * sigma * xi_q);
   const psi     = TAU * tubeIndex / 3 + q * torsion;
   const cx = P.x + N.x * s, cy = P.y + N.y * s, cz = P.z + N.z * s;
@@ -743,10 +750,12 @@ function buildTubeGeoCP1(tubeIndex, P, N, T1, T2, q, N_min, N_max, gamma_scale) 
 
   const psi_base = TAU * tubeIndex / 3;  // 120° sector start
   const psi_span = TAU / 3;              // 120° sector width
-  // Q-derived twist: use Q at the midpoint of the tube segment
+  // Q-derived twist: gamma_scale turns total, Q(mid)/Q(end) modulates rate
   const r_mid   = (N_min + N_max) / 2 * LP;
+  const r_end_c = N_max * LP;
   const Q_mid   = Math.max(1e-4, 2 * (expQ(r_mid, Math.exp(-r_mid), QN) - 1));
-  const tot_twist = q * TAU * (N_max - N_min) * Q_mid * gamma_scale;
+  const Q_end_c = Math.max(1e-4, 2 * (expQ(r_end_c, Math.exp(-r_end_c), QN) - 1));
+  const tot_twist = q * TAU * gamma_scale * (Q_mid / Q_end_c);
 
   for (let i = 0; i <= AX; i++) {
     const t       = i / AX;                // 0 = south pole, 1 = north pole
@@ -862,30 +871,6 @@ function buildTubes() {
         scene.add(cmesh);
         activeTubes.push(cmesh);
       }
-      // Composite cap at N_max: a second slightly-larger disc coloured by EC composite
-      {
-        const state   = getChiralState();
-        const compCol = state.composite
-          ? new THREE.Color(1.0, 0.93, 0.20)   // gold = composite point on EC
-          : TUBE_COL[ti];
-        const cgeo2 = buildCapGeo(selPt, N_vec, T1, T2, N_max, sigma * 1.22, q, gamma_scale, ti);
-        // Override colours to composite colour
-        const colArr = cgeo2.attributes.color.array;
-        for (let k = 0; k < colArr.length; k += 3) {
-          colArr[k]   = compCol.r;
-          colArr[k+1] = compCol.g;
-          colArr[k+2] = compCol.b;
-        }
-        cgeo2.attributes.color.needsUpdate = true;
-        const cmat2 = new THREE.MeshPhongMaterial({
-          vertexColors: true, side: THREE.DoubleSide,
-          shininess: 80, emissive: compCol.clone().multiplyScalar(0.25),
-          transparent: true, opacity: 0.85,
-        });
-        const cmesh2 = new THREE.Mesh(cgeo2, cmat2);
-        scene.add(cmesh2);
-        activeTubes.push(cmesh2);
-      }
     }
   }
 }
@@ -973,11 +958,11 @@ function updateStats() {
   // Q-derived effective pitch at N_max
   const Q_end      = Math.max(1e-4, 2 * ev_end);
   const pitch_eff  = (gamma_scale / Q_end).toFixed(1);  // ℓ_P per turn
-  const torsion_end = TAU * N_max * Q_end * gamma_scale;
+  const torsion_end = TAU * gamma_scale;  // normalized: gamma_scale turns at endpoint
   const spiral_deg  = ((q * torsion_end) * 180 / Math.PI % 360).toFixed(1);
 
   // Cone max radius (visual)
-  const xi_q_end   = 1.0 + 0.30 * q * cosQ(torsion_end, q_e, QN);
+  const xi_q_end   = 1.0 + 0.30 * q * Math.cos(torsion_end);
   const r_cone_max = (N_max * LP * sigma * xi_q_end).toFixed(4);
 
   const cp1Mode = document.getElementById('cb_cp1').checked;
@@ -1230,7 +1215,9 @@ window.addEventListener('resize', () => {
 let lightMode = false;
 function applyTheme() {
   document.body.classList.toggle('light', lightMode);
-  renderer.setClearColor(lightMode ? 0xf0f4ff : 0x020710);
+  const bgHex = lightMode ? 0xf0f4ff : 0x020710;
+  renderer.setClearColor(bgHex);
+  scene.fog.color.setHex(bgHex);
   document.getElementById('btn_theme').textContent = lightMode ? '☾ Dark' : '☀ Light';
 }
 document.getElementById('btn_theme').addEventListener('click', () => {
@@ -1302,8 +1289,8 @@ function autoSigma() {
   const q_e         = qEff(q);
   const r_end       = N_max * LP;
   const Q_end       = Math.max(1e-4, 2 * (expQ(r_end, Math.exp(-r_end), QN) - 1));
-  const torsion_end = TAU * N_max * Q_end * gamma_scale;
-  const xi_q_max    = 1.0 + 0.30 * q * (1 + Math.abs(cosQ(torsion_end, q_e, QN)));
+  const torsion_end = TAU * gamma_scale;  // normalized: gamma_scale turns at endpoint
+  const xi_q_max    = 1.0 + 0.30 * q * (1 + Math.abs(Math.cos(torsion_end)));
   const target_r  = SPHERE_R * 0.18;
   const sigma_new = target_r / Math.max(1e-6, N_max * LP * xi_q_max);
   const clamped   = Math.max(0.02, Math.min(0.50, sigma_new));
@@ -1389,13 +1376,12 @@ function getChiralState() {
   const r_scale = Math.min(2.8, r_end + 0.6);
   const pts = [];
   for (let ti = 0; ti < 3; ti++) {
-    // Q-derived torsion phase at tube endpoint (same formula as buildTubeGeo)
-    const Q_end = Math.max(1e-4, Q);  // Q already = 2*(expq(r_end)-1) from above
-    const psi   = TAU * ti / 3 + q_tor * TAU * N_max * Q_end * gamma_scale;
-    const x_raw = cosQ(psi, q_e, QN) * r_scale;
+    // Torsion phase at tube endpoint: gamma_scale full turns (matches buildTubeGeo)
+    const psi   = TAU * ti / 3 + q_tor * TAU * gamma_scale;
+    const x_raw = Math.cos(psi) * r_scale;
     const x     = Math.max(-2.8, Math.min(2.8, x_raw));
     const y2    = x * x * x + P * x + Q;
-    const y_sgn = (sinQ(psi, q_e, QN) >= 0) ? 1 : -1;
+    const y_sgn = (Math.sin(psi) >= 0) ? 1 : -1;
     const y     = y_sgn * Math.sqrt(Math.max(0, y2));
     pts.push({ x, y, color: ['#ff4444', '#44ff88', '#4488ff'][ti] });
   }
@@ -1785,7 +1771,13 @@ function updateChiralPanels() {
 // ── Animation loop ────────────────────────────────────────────────────
 let frame = 0;
 applyHide();   // start with info panels hidden
-rebuild();
+try {
+  rebuild();
+} catch (err) {
+  const sb = document.getElementById('stats-body');
+  if (sb) sb.innerHTML = '<span style="color:#ff4444">Init error: ' + err.message + '</span>';
+  console.error('rebuild() failed at startup:', err);
+}
 
 function animate() {
   requestAnimationFrame(animate);
