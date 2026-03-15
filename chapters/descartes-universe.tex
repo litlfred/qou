@@ -479,6 +479,43 @@ cubic~\eqref{eq:chiral-elliptic}; its discriminant is a polynomial
 in~$z$ whose roots give the singular fibres.
 \end{proof}
 
+\begin{remark}[Self-duality of the chiral elliptic curve]
+\label{rem:t-duality-elliptic}
+The cubic~\eqref{eq:chiral-elliptic} is symmetric under the exchange
+$X\leftrightarrow z$: writing
+\[
+  F(X,z)\;=\;X^3+(z+1)\,X^2+(z^2+z+1)\,X+(z^3+z^2+z+1),
+\]
+one verifies $F(X,z)=F(z,X)$ term by term.  This involution
+$\iota\colon(X,z)\mapsto(z,X)$ is a \emph{T-duality}: it identifies
+every chiral fibre~$E_z$ with its dual spacetime wrapping~$E_X$, so
+the internal and external degrees of freedom of the Bring surface are
+algebraically indistinguishable.
+
+\medskip\noindent\textbf{Quotient space.}\;
+Passing to the symmetric coordinates $u=X+z$, $v=Xz$, the curve
+becomes
+\begin{equation}\label{eq:symmetric-quotient}
+  v \;=\; \frac{(u+1)(u^2+1)}{2u+1}\,,
+\end{equation}
+which is rational in~$u$.  Hence the quotient
+$E_z/\langle\iota\rangle\cong\mathbb{CP}^1$: folding the torus along
+its $X=z$ diagonal collapses it to a genus-$0$ Riemann sphere.
+
+\medskip\noindent\textbf{Weierstrass normal form.}\;
+Depressing the cubic via $X=t-\tfrac{z+1}{3}$ eliminates the quadratic
+term:
+\begin{equation}\label{eq:weierstrass-depressed}
+  t^{3}+p(z)\,t+q(z)=0,\qquad
+  p=\frac{2z^2+z+2}{3},\quad
+  q=\frac{5(4z^3+3z^2+3z+4)}{27}.
+\end{equation}
+The discriminant $\Delta(z)=-4p^3-27q^2$ is a polynomial in~$z$
+whose roots determine the singular fibres of the elliptic
+fibration $\mathcal{S}\to\mathbb{CP}^1$.  At those roots the
+$j$-invariant $j(E_z)=-1728\cdot 64p^3/\Delta$ degenerates.
+\end{remark}
+
 \begin{definition}[Briggs--Klein affine chart]
 \label{def:briggs-klein-chart}
 Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent
@@ -618,24 +655,24 @@ we define the \emph{quaternionic spectral resolvents}
 $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 \begin{align}
   \omega_0 &\;=\;
-    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}z_j\Bigr)\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}x_j\Bigr)\,
     \ln_q(1+r)
     &&\text{(uncertainty),}
     \label{eq:omega-0}\\[4pt]
   \omega_1 &\;=\;
     \frac{\mathbf{i}}{\ln_q(1+r)}\,
-    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{j}\,z_j+i\Bigr)
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{j}\,x_j+i\Bigr)
     &&\text{(space-like),}
     \label{eq:omega-1}\\[4pt]
   \omega_2 &\;=\;
     \mathbf{j}\,
-    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{2j}\,z_j+i\Bigr)\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{2j}\,x_j+i\Bigr)\,
     \bigl(\exp_q(r)-1\bigr)
     &&\text{(time-like),}
     \label{eq:omega-2}\\[4pt]
   \omega_3 &\;=\;
     \mathbf{k}\,
-    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{3j}\,z_j+i\Bigr)\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{3j}\,x_j+i\Bigr)\,
     \bigl(\exp_q(r)-1\bigr)
     &&\text{(time-like).}
     \label{eq:omega-3}
