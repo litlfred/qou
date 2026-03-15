@@ -352,6 +352,45 @@ interchanges the fibre and base of the adjoint bundle, exchanging
 spectral eigenvalues with spacetime coordinates.
 \end{remark}
 
+\begin{remark}[Smoothness of the Bring surface and resolution of spacetime defects]
+\label{rem:brings-smoothness}
+The Bring surface $\mathcal{S}$ (Definition~\ref{def:brings-surface}) is a
+\emph{smooth} algebraic variety: the three power-sum constraints are
+transverse in~$\mathbb{P}^4$, so their intersection carries no singular
+points.  The six topological defects identified in
+Remark~\ref{rem:chiral-bundles}---where the discriminant $\Delta(z)$
+vanishes and two chiral sheets $X_i,X_j$ collide---are singularities of
+the \emph{projection} $\pi\colon\mathcal{S}\to\mathbb{CP}^1$, not of the
+surface itself.
+
+\medskip
+\noindent\textbf{Resolution in the $x_j$ coordinates.}\;
+At a branch point $z=z_c$ where, say, $x_2=x_3$, define the local chiral
+coordinate $\delta=x_2-x_3$.  In a neighbourhood of the defect the
+spacetime ratio satisfies
+\[
+  z-z_c\;\sim\;\delta^2,
+\]
+so while the projection map develops a ramification cusp, $\delta$ passes
+smoothly through zero, carrying the geometry from one sheet to the other.
+The exceptional divisor of the blow-up at each branch point is therefore
+already embedded in the chiral coordinates $x_2,x_3,x_4$: no external
+resolution is required.
+
+\medskip
+\noindent\textbf{Resolution in the $w_k$ coordinates.}\;
+The DFT mixes all five $x_j$ into every resolvent $w_k$
+(Remark~\ref{rem:lagrange-resolvents}), so no single $w_k$ vanishes at a
+branch point.  The Briggs--Klein chart
+(Definition~\ref{def:briggs-klein-chart}) remains a smooth coordinate
+system throughout $0<r<\infty$: the radial parameter~$r=\lvert w_1\rvert^2$
+is a regular function on $\mathcal{S}$, and the $C_5$ orbits
+$w_k\mapsto\zeta^k w_k$ foliate the surface without fixed points.  The
+infinite torsion and eigenvalue crossings visible in the base
+$\mathbb{CP}^1$ are artefacts of projecting away the internal degrees of
+freedom that the $w_k$ retain.
+\end{remark}
+
 \begin{definition}[Briggs--Klein affine chart]
 \label{def:briggs-klein-chart}
 Let $r=\lvert w_1\rvert^2$ denote the squared modulus of the first resolvent
