@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Frederick Carl Leitner[^1]" />
-  <meta name="dcterms.date" content="2026-03-14" />
+  <meta name="dcterms.date" content="2026-03-15" />
   <title>Quantum Observable Universe</title>
   <style>
     code{white-space: pre-wrap;}
@@ -32,7 +32,7 @@
 <header id="title-block-header">
 <h1 class="title">Quantum Observable Universe</h1>
 <p class="author">Frederick Carl Leitner[^1]</p>
-<p class="date">2026-03-14</p>
+<p class="date">2026-03-15</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>This paper presents a mathematical framework for the Quantum
@@ -218,11 +218,11 @@ class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
-The <em>quantum gauge group</em> is the quantum group <span
-class="math inline">\(\mathrm{SU}_q(2)\)</span> obtained by deforming
-the structure group <span class="math inline">\(G =
-\mathrm{SU}(2)\)</span> at the parameter <span
-class="math inline">\(q\)</span>.</em></p>
+The <em>quantum gauge group</em> is the field of quantum groups <span
+class="math inline">\(\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}\)</span>
+obtained by deforming the structure group <span class="math inline">\(G
+= \mathrm{SU}(2)\)</span> pointwise at the parameter <span
+class="math inline">\(q(p)\)</span>.</em></p>
 </div>
 
 <div id="def:quantum-planck-constant" class="definition">
@@ -254,14 +254,21 @@ through the <span class="math inline">\(q\)</span>-deformed commutator.
 Let <span class="math inline">\(\hat{X}\)</span> and <span
 class="math inline">\(\hat{P}\)</span> denote position and momentum
 observables on the fibre <span
-class="math inline">\(\mathbb{CP}\)</span>. Then <span
-class="math display">\[[\hat{X},\, \hat{P}]_q \;=\;
+class="math inline">\(\mathbb{CP}\)</span>. We define their <span
+class="math inline">\(q\)</span>-dependent commutator at <span
+class="math inline">\(p \in M\)</span> by <span
+class="math display">\[[\hat{X},\, \hat{P}]_q \;:=\;
 i\,\hbar_q(p),\]</span> where <span class="math inline">\(\hbar_q(p) = 1
 - q(p)^{-1}\)</span>
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).
-The commutator encodes the local uncertainty: when <span
-class="math inline">\(q(p) \to 1\)</span> (classicality), <span
-class="math inline">\([\hat{X}, \hat{P}]_q \to 0\)</span> and
+In this remark the subscript <span class="math inline">\(q\)</span>
+serves only to record the dependence of the commutator on the substrate
+field <span class="math inline">\(q\)</span> and should not be confused
+with any <span class="math inline">\(q\)</span>-deformed Lie bracket
+<span class="math inline">\([\cdot,\cdot]_q\)</span> on vector fields
+that may appear elsewhere. The commutator encodes the local uncertainty:
+when <span class="math inline">\(q(p) \to 1\)</span> (classicality),
+<span class="math inline">\([\hat{X}, \hat{P}]_q \to 0\)</span> and
 observables commute; when <span class="math inline">\(q(p) \to
 \infty\)</span> (deep-quantum regime), <span
 class="math inline">\([\hat{X}, \hat{P}]_q \to i\)</span> and maximal
@@ -531,8 +538,8 @@ class="math display">\[\frac{\delta S_q}{\delta L}
 G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},\]</span> where <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> is a
 <em>quantum-weighted</em> stress-energy tensor. Because <span
-class="math inline">\(q(p) = \exp\!\bigl(\lVert L \wedge
-F^+\rVert\bigr)\)</span>, the geometry of the brane <span
+class="math inline">\(q(p) = \exp\!\bigl(\lVert (L \wedge
+F_A^+)(p)\rVert\bigr)\)</span>, the geometry of the brane <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 instantons.</em></p>
