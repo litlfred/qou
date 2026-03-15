@@ -155,23 +155,6 @@ input[type=range]::-webkit-slider-thumb {
 <div id="subtitle">Chiral Tubes on the Projective Space-Time Brane  ·  §3.1 Leitner 2026</div>
 
 <!-- Top toolbar (theme + hide) -->
-<div id="toolbar" style="position:absolute;top:10px;right:290px;display:flex;gap:6px;align-items:center;">
-  <button id="btn_theme" title="Toggle dark/light mode (T)"
-    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
-           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
-           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
-    ☀ Light</button>
-  <button id="btn_hide" title="Hide/show info panels (H)"
-    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
-           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
-           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
-    ⊞ Hide Info</button>
-  <button id="btn_sigma_auto" title="Auto-scale sigma so cone fits in view (A)"
-    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
-           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
-           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
-    ⟳ Auto σ</button>
-</div>
 
 <!-- CONTROLS -->
 <div class="panel" id="ctrl" style="top:64px; right:14px; width:264px;">
@@ -180,8 +163,11 @@ input[type=range]::-webkit-slider-thumb {
   <div class="sec">── Torsion ─────────────────────────────────</div>
   <div class="row">
     <span class="lbl">q  (torsion)</span>
-    <input type="range" id="q_val" min="0" max="1" step="0.01" value="0.55">
-    <span class="val" id="v_q">0.55</span>
+    <input type="range" id="q_val" min="0" max="40" step="0.05" value="0.55">
+    <input type="number" id="q_num" min="0" step="0.05" value="0.55"
+      style="width:52px;background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:1px 4px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:10px;outline:none;">
   </div>
 
   <div class="row" style="margin-top:5px;">
@@ -243,6 +229,21 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_auto"   checked> Rotate</label>
     <label class="ck"><input type="checkbox" id="cb_click"  checked> Click→p</label>
     <label class="ck"><input type="checkbox" id="cb_cp1"> CP1 fibre</label>
+    <label class="ck"><input type="checkbox" id="cb_axispts"> ±Axis pts</label>
+  </div>
+  <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
+    <button id="btn_theme" title="Toggle dark/light mode (T)"
+      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
+             padding:3px 0;font-family:'Share Tech Mono',monospace;">☀ Light</button>
+    <button id="btn_hide" title="Hide/show info panels (H)"
+      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
+             padding:3px 0;font-family:'Share Tech Mono',monospace;">⊞ Info</button>
+    <button id="btn_sigma_auto" title="Auto-scale sigma (A)"
+      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
+             padding:3px 0;font-family:'Share Tech Mono',monospace;">⟳ Auto σ</button>
   </div>
 </div>
 
@@ -411,8 +412,16 @@ function sinQ(x, q, N) {
   return sum;
 }
 
-// q_eff for q-series: maps slider q (0=classical,1=quantum) to series q
-// slider q=0 → q_eff=0.98 (near-classical), slider q=1 → q_eff=0.08 (deep quantum)
+// Read true q value: q_num is the authoritative source; q_val slider is capped display
+function getQ() {
+  const el = document.getElementById('q_num');
+  if (!el) return parseFloat(document.getElementById('q_val').value) || 0;
+  const v = parseFloat(el.value);
+  return isNaN(v) ? 0 : Math.max(0, v);
+}
+
+// q_eff for q-series: maps torsion q (0=classical,1+=quantum) to series q
+// q=0 → q_eff=0.98 (near-classical), q≥1 → q_eff=0.08 (deep quantum)
 function qEff(q_slider) {
   return Math.max(0.08, 0.98 - 0.90 * q_slider);
 }
@@ -760,7 +769,7 @@ function buildTubes() {
 
   if (!document.getElementById('cb_tubes').checked) return;
 
-  const q       = parseFloat(document.getElementById('q_val').value);
+  const q       = getQ();
   const N_min   = parseInt(document.getElementById('n_min').value);
   const N_max   = parseInt(document.getElementById('n_max').value);
   const sigma   = parseFloat(document.getElementById('sigma').value);
@@ -839,17 +848,69 @@ function buildTubes() {
   }
 }
 
+// ── Axis intersection points: ±x, ±y, ±z on the brane sphere ────────
+const AXIS_POLES = [
+  new THREE.Vector3( SPHERE_R, 0, 0),
+  new THREE.Vector3(-SPHERE_R, 0, 0),
+  new THREE.Vector3(0,  SPHERE_R, 0),
+  new THREE.Vector3(0, -SPHERE_R, 0),
+  new THREE.Vector3(0, 0,  SPHERE_R),
+  new THREE.Vector3(0, 0, -SPHERE_R),
+];
+
+function buildAxisTubes() {
+  // Remove previous axis-pole tubes (tagged with .isAxisTube)
+  for (let i = activeTubes.length - 1; i >= 0; i--) {
+    if (activeTubes[i].userData.isAxisTube) {
+      scene.remove(activeTubes[i]);
+      activeTubes.splice(i, 1);
+    }
+  }
+  if (!document.getElementById('cb_axispts').checked) return;
+  if (!document.getElementById('cb_tubes').checked) return;
+
+  const q       = getQ();
+  const N_min   = parseInt(document.getElementById('n_min').value);
+  const N_max   = parseInt(document.getElementById('n_max').value);
+  const sigma   = parseFloat(document.getElementById('sigma').value);
+  const pitch_N = parseFloat(document.getElementById('pitch').value);
+  const cp1Mode = document.getElementById('cb_cp1').checked;
+  if (N_min >= N_max) return;
+
+  for (const pole of AXIS_POLES) {
+    // Skip if too close to selected point (already rendered there)
+    if (pole.distanceTo(selPt) < 0.05) continue;
+    const N_vec = pole.clone().normalize();
+    const { T1, T2 } = getFrame(N_vec);
+    for (let ti = 0; ti < 3; ti++) {
+      const geo = cp1Mode
+        ? buildTubeGeoCP1(ti, pole, N_vec, T1, T2, q, N_min, N_max, pitch_N)
+        : buildTubeGeo(ti, pole, N_vec, T1, T2, q, N_min, N_max, sigma, pitch_N);
+      const mat = new THREE.MeshPhongMaterial({
+        vertexColors: true, side: THREE.DoubleSide,
+        shininess: 55, transparent: true, opacity: 0.70,
+        specular: new THREE.Color(0.20, 0.22, 0.30),
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.userData.isAxisTube = true;
+      scene.add(mesh);
+      activeTubes.push(mesh);
+    }
+  }
+}
+
 // ── Full rebuild ─────────────────────────────────────────────────────
 function rebuild() {
   updateSelPt();
   buildTubes();
+  buildAxisTubes();
   updateStats();
   updateChiralPanels();
 }
 
 // ── Stats panel ──────────────────────────────────────────────────────
 function updateStats() {
-  const q       = parseFloat(document.getElementById('q_val').value);
+  const q       = getQ();
   const N_min   = parseInt(document.getElementById('n_min').value);
   const N_max   = parseInt(document.getElementById('n_max').value);
   const sigma   = parseFloat(document.getElementById('sigma').value);
@@ -992,7 +1053,9 @@ rebuildIds.forEach(id => {
     const tp   = parseFloat(document.getElementById('theta_p').value);
     const pp   = parseFloat(document.getElementById('phi_p').value);
 
-    document.getElementById('v_q').textContent     = q_v.toFixed(2);
+    // Sync q_num only when the slider itself moved (not if q_num drove the update)
+    if (document.activeElement !== document.getElementById('q_num'))
+      document.getElementById('q_num').value = q_v.toFixed(3);
     document.getElementById('v_nmin').textContent  = nm;
     document.getElementById('v_nmax').textContent  = nx;
     document.getElementById('v_sigma').textContent = sg.toFixed(2);
@@ -1002,6 +1065,14 @@ rebuildIds.forEach(id => {
 
     rebuild();
   });
+});
+
+// q number input ↔ slider sync (allows arbitrary values above slider max)
+document.getElementById('q_num').addEventListener('input', () => {
+  const v = Math.max(0, parseFloat(document.getElementById('q_num').value) || 0);
+  // Clamp slider display to its max (40), but pass actual value to rebuild via q_num
+  document.getElementById('q_val').value = Math.min(40, v);
+  rebuild();
 });
 
 // Visibility toggles (don't need full rebuild)
@@ -1016,8 +1087,9 @@ document.getElementById('cb_axes').addEventListener('change', e => {
 document.getElementById('cb_stars').addEventListener('change', e => {
   starGroup.visible = e.target.checked;
 });
-document.getElementById('cb_tubes').addEventListener('change', () => buildTubes());
-document.getElementById('cb_cp1').addEventListener('change', () => buildTubes());
+document.getElementById('cb_tubes').addEventListener('change', () => { buildTubes(); buildAxisTubes(); });
+document.getElementById('cb_cp1').addEventListener('change', () => { buildTubes(); buildAxisTubes(); });
+document.getElementById('cb_axispts').addEventListener('change', () => buildAxisTubes());
 
 // Root-of-unity snap: sets q_eff = cos(2π/n), solves back for slider value
 document.getElementById('snap_root').addEventListener('click', () => {
@@ -1026,7 +1098,7 @@ document.getElementById('snap_root').addEventListener('click', () => {
   // Invert qEff(q) = max(0.08, 0.98 - 0.90·q):  q = (0.98 - q_eff) / 0.90
   const q_slider = Math.max(0, Math.min(1, (0.98 - q_eff_target) / 0.90));
   document.getElementById('q_val').value = q_slider.toFixed(4);
-  document.getElementById('v_q').textContent = q_slider.toFixed(2);
+  document.getElementById('q_num').value = q_slider.toFixed(3);
   rebuild();
 });
 
@@ -1118,7 +1190,7 @@ document.getElementById('btn_theme').addEventListener('click', () => {
 });
 
 // ── Hide / show info panels ───────────────────────────────────────────
-let infoPanelsHidden = false;
+let infoPanelsHidden = true;  // start hidden
 const INFO_PANEL_IDS = ['info','chiral','weierstrass','formula'];
 function applyHide() {
   const hide = infoPanelsHidden;
@@ -1133,7 +1205,7 @@ document.getElementById('btn_hide').addEventListener('click', () => {
 
 // ── Auto-scale sigma so cone max radius ≈ 18% of SPHERE_R ────────────
 function autoSigma() {
-  const q       = parseFloat(document.getElementById('q_val').value);
+  const q       = getQ();
   const N_max   = parseInt(document.getElementById('n_max').value);
   const pitch_N = parseFloat(document.getElementById('pitch').value);
   const q_e     = qEff(q);
@@ -1200,7 +1272,7 @@ function ecAdd(pt1, pt2, P, Q) {
 
 // ── Compute current Weierstrass parameters & chiral points ───────────
 function getChiralState() {
-  const q_tor   = parseFloat(document.getElementById('q_val').value);
+  const q_tor   = getQ();
   const N_max   = parseInt(document.getElementById('n_max').value);
   const pitch_N = parseFloat(document.getElementById('pitch').value);
 
@@ -1434,6 +1506,7 @@ function updateChiralPanels() {
 
 // ── Animation loop ────────────────────────────────────────────────────
 let frame = 0;
+applyHide();   // start with info panels hidden
 rebuild();
 
 function animate() {
