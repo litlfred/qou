@@ -8,9 +8,11 @@
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
-#   quantum-observable-universe.pdf        compiled PDF
-#   quantum-observable-universe-diff.pdf   latexdiff vs merge-base with main (feature branches only)
-#   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown
+#   quantum-observable-universe.pdf        compiled PDF (main branch)
+#   quantum-observable-universe-<slug>.pdf compiled PDF (feature branches)
+#   quantum-observable-universe-<slug>-diff.pdf  latexdiff vs merge-base (feature branches only)
+#   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown (main)
+#   quantum-observable-universe-<slug>.md  Pandoc GitHub-Flavoured Markdown (feature branches)
 #   index.html                             HTML landing page (MathJax equations)
 #   style.css                              stylesheet for the landing page
 #
@@ -18,7 +20,8 @@
 # ──────────────
 #   Pushes to the main branch deploy to the root of gh-pages.
 #   PRs deploy to  drafts/<branch-name>/  so that every feature branch
-#   gets its own preview URL.
+#   gets its own preview URL.  Output filenames on feature branches include
+#   a sanitised branch slug so downloads are distinguishable.
 
 name: Build & Publish
 
@@ -70,6 +73,21 @@ jobs:
         if: github.event_name == 'pull_request_target'
         run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
 
+      # Compute output filename base.  Feature branches include the
+      # sanitised branch name so downloads are distinguishable.
+      # Main branch keeps the canonical "quantum-observable-universe" name.
+      - name: Compute output filename base
+        id: names
+        run: |
+          if [ "${{ env.HEAD_REF }}" = "main" ]; then
+            base="quantum-observable-universe"
+          else
+            # Sanitise: lowercase, replace non-alphanumeric runs with a single dash, trim dashes
+            slug=$(echo "${{ env.HEAD_REF }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g; s/--*/-/g; s/^-//; s/-$//')
+            base="quantum-observable-universe-${slug}"
+          fi
+          echo "base=${base}" >> "$GITHUB_OUTPUT"
+
       - name: Fetch main branch for diff
         if: env.HEAD_REF != 'main'
         run: git fetch origin main
@@ -93,26 +111,28 @@ jobs:
         run: latexpand main.tex > main-flat.tex
 
       - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           pandoc main-flat.tex \
             --from=latex \
             --to=gfm+tex_math_dollars \
             --standalone \
             --wrap=none \
-            --output=quantum-observable-universe.md \
+            --output="${FNAME_BASE}.md" \
             || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
                  pandoc main-flat.tex \
                    --from=latex \
                    --to=gfm \
                    --standalone \
                    --wrap=none \
-                   --output=quantum-observable-universe.md \
+                   --output="${FNAME_BASE}.md" \
                    || echo "::warning::pandoc Markdown conversion failed; a stub will be used"; }
 
           # Safety net: if pandoc produced nothing, create a minimal stub
-          if [ ! -s quantum-observable-universe.md ]; then
-            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](quantum-observable-universe.pdf).\n' \
-              > quantum-observable-universe.md
+          if [ ! -s "${FNAME_BASE}.md" ]; then
+            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](%s.pdf).\n' \
+              "$FNAME_BASE" > "${FNAME_BASE}.md"
           fi
 
       # ── 2b. Generate diff against main (feature branches only) ────────────
@@ -129,15 +149,17 @@ jobs:
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
 
-          cp main.pdf                         _site/quantum-observable-universe.pdf
-          cp quantum-observable-universe.md   _site/quantum-observable-universe.md
+          cp main.pdf                  "_site/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md"        "_site/${FNAME_BASE}.md"
 
           # Include diff PDF for feature-branch builds
           if [ -f diff.pdf ]; then
-            cp diff.pdf _site/quantum-observable-universe-diff.pdf
+            cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
           fi
 
           # Stylesheet
@@ -154,7 +176,7 @@ jobs:
           CSS
 
           # HTML landing page with MathJax-rendered equations
-          pandoc quantum-observable-universe.md \
+          pandoc "${FNAME_BASE}.md" \
             --from=gfm+tex_math_dollars \
             --to=html5 \
             --standalone \
@@ -166,7 +188,7 @@ jobs:
 
           # Fallback landing page if pandoc HTML conversion failed
           if [ ! -s _site/index.html ]; then
-            cat > _site/index.html << 'HTML'
+            cat > _site/index.html << HTML
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -177,8 +199,8 @@ jobs:
           <body>
             <h1>Quantum Observable Universe</h1>
             <div class="downloads">
-              <a href="quantum-observable-universe.pdf">Download PDF</a>
-              <a href="quantum-observable-universe.md">View Markdown</a>
+              <a href="${FNAME_BASE}.pdf">Download PDF</a>
+              <a href="${FNAME_BASE}.md">View Markdown</a>
             </div>
           </body>
           </html>
@@ -210,11 +232,12 @@ jobs:
         if: env.HEAD_REF != 'main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           # Derive the GitHub Pages base URL from the repository metadata
           pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/quantum-observable-universe.pdf"
-          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/quantum-observable-universe-diff.pdf"
+          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}.pdf"
+          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}-diff.pdf"
           html_url="${pages_url}/drafts/${{ env.HEAD_REF }}/"
 
           # Repository source links (useful when repo is private)
@@ -252,8 +275,8 @@ jobs:
           **Published (gh-pages)**
           | Artefact | Link |
           |----------|------|
-          | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
-          | Diff PDF | [quantum-observable-universe-diff.pdf](${diff_url}) |
+          | PDF      | [${FNAME_BASE}.pdf](${pdf_url}) |
+          | Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |
           | HTML     | [Landing page](${html_url}) |
 
           **Source (repo)**
