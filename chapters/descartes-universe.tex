@@ -422,7 +422,7 @@ loops yields holonomy operators
   H_1=\sigma_1,\qquad H_2=\sigma_2,
 \end{equation}
 where $\sigma_1,\sigma_2$ are the braid
-generators~\eqref{eq:braid-twist}--\eqref{eq:braid-flip}.  In the
+generators~\eqref{eq:braid-twist},~\eqref{eq:braid-flip}.  In the
 $\mathrm{SU}(2)$ embedding of Remark~\ref{rem:braid-group-action} these
 become
 \[
@@ -470,6 +470,14 @@ of~\eqref{eq:chiral-elliptic} vanishes) recovers the holonomy
 generators $H_1,H_2$~\eqref{eq:holonomy-generators} of
 Remark~\ref{rem:holonomy-trefoil}.
 \end{proposition}
+\begin{proof}
+Write $x_0=z\,x_1$ and use $x_0+x_1=C$ to eliminate both spacetime
+variables.  The power-sum conditions $\sum x_j^k=0$ for $k=2,3$ then
+become polynomial in~$z$ and $X=x_2+x_3+x_4$, $X_2=\sum_{i<j}x_ix_j$,
+etc.  Reducing by the Newton identities yields the
+cubic~\eqref{eq:chiral-elliptic}; its discriminant is a polynomial
+in~$z$ whose roots give the singular fibres.
+\end{proof}
 
 \begin{definition}[Briggs--Klein affine chart]
 \label{def:briggs-klein-chart}
