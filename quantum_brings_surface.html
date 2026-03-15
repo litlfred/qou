@@ -222,16 +222,21 @@ input[type=range]::-webkit-slider-thumb {
     <span class="val" id="v_pitch">1.00</span>
   </div>
 
-  <div class="sec">── Selected point  p ∈ M ───────────────────</div>
+  <div class="sec">── Selected point  p ∈ S³ ──────────────────</div>
   <div class="row">
-    <span class="lbl">θ_p  (polar)</span>
-    <input type="range" id="theta_p" min="0" max="360" step="1" value="106">
-    <span class="val" id="v_thetap">106°</span>
+    <span class="lbl">x_p</span>
+    <input type="range" id="x_p" min="-4" max="4" step="0.01" value="-3.30">
+    <span class="val" id="v_xp">-3.30</span>
   </div>
   <div class="row">
-    <span class="lbl">φ_p  (azimuthal)</span>
-    <input type="range" id="phi_p" min="0" max="360" step="1" value="211">
-    <span class="val" id="v_phip">211°</span>
+    <span class="lbl">y_p</span>
+    <input type="range" id="y_p" min="-4" max="4" step="0.01" value="-1.10">
+    <span class="val" id="v_yp">-1.10</span>
+  </div>
+  <div class="row">
+    <span class="lbl">z_p</span>
+    <input type="range" id="z_p" min="-4" max="4" step="0.01" value="-1.98">
+    <span class="val" id="v_zp">-1.98</span>
   </div>
 
   <div id="vis-opts">
@@ -542,13 +547,11 @@ applyCam();
 const selPt = new THREE.Vector3(0, SPHERE_R, 0);
 
 function updateSelPt() {
-  const th = parseFloat(document.getElementById('theta_p').value) * Math.PI / 180;
-  const ph = parseFloat(document.getElementById('phi_p').value)   * Math.PI / 180;
-  selPt.set(
-    SPHERE_R * Math.sin(th) * Math.cos(ph),
-    SPHERE_R * Math.cos(th),
-    SPHERE_R * Math.sin(th) * Math.sin(ph)
-  );
+  const xv = parseFloat(document.getElementById('x_p').value);
+  const yv = parseFloat(document.getElementById('y_p').value);
+  const zv = parseFloat(document.getElementById('z_p').value);
+  const len = Math.sqrt(xv*xv + yv*yv + zv*zv) || 1;
+  selPt.set(xv / len * SPHERE_R, yv / len * SPHERE_R, zv / len * SPHERE_R);
   markerMesh.position.copy(selPt);
 
   // Orient glow ring perpendicular to the normal at selected point
@@ -941,9 +944,7 @@ function updateStats() {
   const N_min   = parseInt(document.getElementById('n_min').value);
   const N_max   = parseInt(document.getElementById('n_max').value);
   const sigma   = parseFloat(document.getElementById('sigma').value);
-  const pitch_N = parseFloat(document.getElementById('pitch').value);
-  const th_p    = parseFloat(document.getElementById('theta_p').value);
-  const ph_p    = parseFloat(document.getElementById('phi_p').value);
+  const gamma_scale = parseFloat(document.getElementById('pitch').value);
 
   const hbar_q  = (1 - q).toFixed(3);
   const q_e     = qEff(q);
@@ -978,9 +979,7 @@ function updateStats() {
     `θ_cam = <span class="h1">${camThDeg.toFixed(1)}°</span>  `+
     `φ_cam = <span class="h1">${camPhDeg.toFixed(1)}°</span><br>`+
     `r_cam = <span class="h2">${orb.r.toFixed(3)}</span> (vis)<br>`+
-    `<b style="color:var(--dim)">── Point  p ∈ M ───────────</b><br>`+
-    `θ_p = <span class="h1">${th_p}°</span>  `+
-    `φ_p = <span class="h1">${ph_p}°</span><br>`+
+    `<b style="color:var(--dim)">── Point  p ∈ S³ ──────────</b><br>`+
     `p = (<span class="h3">${selPt.x.toFixed(3)}</span>, `+
        `<span class="h3">${selPt.y.toFixed(3)}</span>, `+
        `<span class="h3">${selPt.z.toFixed(3)}</span>)<br>`+
@@ -1073,7 +1072,7 @@ function sliderVal(id, decimals) {
   return v;
 }
 
-const rebuildIds = ['q_val','n_min','n_max','sigma','pitch','theta_p','phi_p'];
+const rebuildIds = ['q_val','n_min','n_max','sigma','pitch','x_p','y_p','z_p'];
 rebuildIds.forEach(id => {
   document.getElementById(id).addEventListener('input', () => {
     // Update display values
@@ -1082,18 +1081,20 @@ rebuildIds.forEach(id => {
     const nx   = parseInt(document.getElementById('n_max').value);
     const sg   = parseFloat(document.getElementById('sigma').value);
     const pt   = parseFloat(document.getElementById('pitch').value);
-    const tp   = parseFloat(document.getElementById('theta_p').value);
-    const pp   = parseFloat(document.getElementById('phi_p').value);
+    const xv   = parseFloat(document.getElementById('x_p').value);
+    const yv   = parseFloat(document.getElementById('y_p').value);
+    const zv   = parseFloat(document.getElementById('z_p').value);
 
     // Sync q_num only when the slider itself moved (not if q_num drove the update)
     if (document.activeElement !== document.getElementById('q_num'))
       document.getElementById('q_num').value = q_v.toFixed(3);
-    document.getElementById('v_nmin').textContent  = nm;
-    document.getElementById('v_nmax').textContent  = nx;
+    document.getElementById('v_nmin').textContent = nm;
+    document.getElementById('v_nmax').textContent = nx;
     document.getElementById('v_sigma').textContent = sg.toFixed(2);
     document.getElementById('v_pitch').textContent = pt.toFixed(2);
-    document.getElementById('v_thetap').textContent= tp + '°';
-    document.getElementById('v_phip').textContent  = pp + '°';
+    document.getElementById('v_xp').textContent = xv.toFixed(2);
+    document.getElementById('v_yp').textContent = yv.toFixed(2);
+    document.getElementById('v_zp').textContent = zv.toFixed(2);
 
     rebuild();
   });
@@ -1162,12 +1163,12 @@ window.addEventListener('mouseup', e => {
     const hits = ray.intersectObject(braneMesh);
     if (hits.length) {
       const hp = hits[0].point;
-      const theta_new = Math.acos(Math.max(-1, Math.min(1, hp.y / SPHERE_R))) * 180 / Math.PI;
-      const phi_new   = ((Math.atan2(hp.z, hp.x) * 180 / Math.PI) + 360) % 360;
-      document.getElementById('theta_p').value = Math.round(theta_new);
-      document.getElementById('phi_p').value   = Math.round(phi_new);
-      document.getElementById('v_thetap').textContent = Math.round(theta_new) + '°';
-      document.getElementById('v_phip').textContent   = Math.round(phi_new)   + '°';
+      document.getElementById('x_p').value = hp.x.toFixed(2);
+      document.getElementById('y_p').value = hp.y.toFixed(2);
+      document.getElementById('z_p').value = hp.z.toFixed(2);
+      document.getElementById('v_xp').textContent = hp.x.toFixed(2);
+      document.getElementById('v_yp').textContent = hp.y.toFixed(2);
+      document.getElementById('v_zp').textContent = hp.z.toFixed(2);
       rebuild();
     }
   }
@@ -1178,7 +1179,7 @@ window.addEventListener('mousemove', e => {
   const dx = e.clientX - pMouse.x, dy = e.clientY - pMouse.y;
   if (Math.abs(dx) + Math.abs(dy) > 3) didDrag = true;
   orb.th += dx * .008;
-  orb.ph  = Math.max(.05, Math.min(Math.PI - .05, orb.ph + dy * .008));
+  orb.ph += dy * .008;
   pMouse  = { x: e.clientX, y: e.clientY };
   applyCam();
 });
@@ -1197,7 +1198,7 @@ renderer.domElement.addEventListener('touchmove', e => {
     const dx = e.touches[0].clientX - lastTouch.x;
     const dy = e.touches[0].clientY - lastTouch.y;
     orb.th += dx * .008;
-    orb.ph  = Math.max(.05, Math.min(Math.PI - .05, orb.ph + dy * .008));
+    orb.ph += dy * .008;
     lastTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY };
     applyCam();
   }
