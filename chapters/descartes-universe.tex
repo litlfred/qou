@@ -371,41 +371,89 @@ arithmetic compatibility between the cyclic symmetry and the cyclotomic ring
 underlies the descent of the $C_5$ action to finite characteristic.
 \end{remark}
 
-\begin{definition}[Quaternionic resolvent mapping]
-\label{def:quaternionic-resolvent}
-Let $r=\lvert w_1\rvert^2$ be the radial coordinate of the Briggs--Klein
-chart (Definition~\ref{def:briggs-klein-chart}) and let
-$\mathbf{i},\mathbf{j},\mathbf{k}$ denote the standard basis of
-$\operatorname{Im}\mathbb{H}$.  The \emph{quaternionic resolvent mapping}
-embeds the spectral coordinates $w_k$
-(Remark~\ref{rem:lagrange-resolvents}) into $\mathbb{H}$ as follows:
+\begin{definition}[Quaternionic spectral resolvents]
+\label{def:quaternionic-spectral-resolvents}
+Let $\mathcal{S}$ denote the Bring's surface
+(Definition~\ref{def:brings-surface}), let
+$q=\exp\!\bigl(-\lVert L\wedge F_A^+\rVert\bigr)$ be the substrate
+parameter (Definition~\ref{def:substrate-parameter}), and set
+$r=\lVert L\wedge F_A^+\rVert$ so that $q=e^{-r}$.
+Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
+$\operatorname{Im}\mathbb{H}$.
+Using the Lusztig $q$-exponential and $q$-logarithm,
+\begin{equation}\label{eq:q-exp}
+  \exp_q(x)\;=\;\sum_{n=0}^{\infty}\frac{x^n}{[n]_q!},
+  \qquad
+  \ln_q(1+x)\;=\;\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{[n]_q},
+\end{equation}
+we define the \emph{quaternionic spectral resolvents}
+$\omega_k\colon\mathcal{S}\to J^\infty E$ by
 \begin{align}
-  w_0 &\;\longmapsto\; \frac{(1-\mathbf{i})\,w_0}{\sqrt{r}}
-    &&\text{(singularity),}
-    \label{eq:quat-w0}\\[4pt]
-  w_1 &\;\longmapsto\; \mathbf{i}\,(w_1+i)\,\sqrt{r}
-    &&\text{(space-like axis),}
-    \label{eq:quat-w1}\\[4pt]
-  w_2 &\;\longmapsto\; \mathbf{j}\,(w_2+i)\,\sqrt{r}
+  \omega_0 &\;=\;
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}z_j\Bigr)\,
+    \ln_q(1+r)
+    &&\text{(uncertainty),}
+    \label{eq:omega-0}\\[4pt]
+  \omega_1 &\;=\;
+    \frac{\mathbf{i}}{\ln_q(1+r)}\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{j}\,z_j+i\Bigr)
+    &&\text{(space-like),}
+    \label{eq:omega-1}\\[4pt]
+  \omega_2 &\;=\;
+    \mathbf{j}\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{2j}\,z_j+i\Bigr)\,
+    \bigl(\exp_q(r)-1\bigr)
     &&\text{(time-like),}
-    \label{eq:quat-w2}\\[4pt]
-  w_3 &\;\longmapsto\; \mathbf{k}\,(w_3+i)\,\sqrt{r}
-    &&\text{(time-like),}
-    \label{eq:quat-w3}\\[4pt]
-  w_4 &\;\longmapsto\; -\mathbf{i}\,(w_4+i)\,\sqrt{r}
-    &&\text{(conjugate, $w_4=\bar{w}_1$).}
-    \label{eq:quat-w4}
+    \label{eq:omega-2}\\[4pt]
+  \omega_3 &\;=\;
+    \mathbf{k}\,
+    \Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{3j}\,z_j+i\Bigr)\,
+    \bigl(\exp_q(r)-1\bigr)
+    &&\text{(time-like).}
+    \label{eq:omega-3}
 \end{align}
-Since $w_0=0$ on Bring's surface~\eqref{eq:resolvent-linear}, the zeroth
-component vanishes identically; its formal $1/\!\sqrt{r}$ singularity
-reflects the concentration of energy at $r=0$.
+By the first power sum~\eqref{eq:resolvent-linear}, $\omega_0=0$ in the
+balanced state; the remaining coordinates embed $\mathcal{S}$ into the
+infinite jet shell $J^\infty E$
+(Remark~\ref{rem:jet-shell}).
 \end{definition}
 
-\begin{remark}[The $\mathrm{Sp}(1)$ action and the radial map]
-\label{rem:sp1-action}
-To realise the rotation of the resolvent coordinates as a function of $r$,
-embed the radial parameter into the spin group $\mathrm{Sp}(1)$.  Define
-the unit quaternion
+\begin{remark}[Algebraic constraints in the $\omega_k$ basis]
+\label{rem:omega-constraints}
+In the spectral resolvent basis
+(Definition~\ref{def:quaternionic-spectral-resolvents}) the
+Bring's surface equations take the following form:
+\begin{itemize}
+\item \emph{Barycentric:}\; $\omega_0=0$.
+\item \emph{Quadric ($\mathbb{H}$ condition):}\;
+  $\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_3=0$.
+  This preserves the self-duality $F_A=*F_A$ and enforces a
+  Minkowski-like balance between the space-like and time-like modes.
+\item \emph{Cubic (phase locking):}\; a quintic resonance condition that
+  locks the expansion of $\ln_q$ to $\exp_q$, preserving the $C_5$
+  symmetry and the Descartes condition $\chi=-6$.
+\end{itemize}
+\end{remark}
+
+\begin{remark}[Spectral dynamics and the $\mathrm{Sp}(1)$ action]
+\label{rem:spectral-dynamics}
+The growth profiles in
+Definition~\ref{def:quaternionic-spectral-resolvents} separate the space-like
+and time-like sectors of the Bring's surface:
+\begin{itemize}
+\item \emph{$\omega_1$ (space-like):}\; the factor $1/\ln_q(1+r)$ diverges
+  as $r\to 0$, so $\omega_1$ achieves infinite density at the base stratum
+  $M_0$, characterising the primordial vortex.  This mode anchors the
+  $U(1)$ longitudinal backbone of the $\mathrm{SU}(2)$ bundle.
+\item \emph{$\omega_2,\omega_3$ (time-like):}\; the factor
+  $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$,
+  driven by the $q$-deformed Reeb flow
+  (Definition~\ref{def:q-reeb-flow}).  These ladder modes expand at the big
+  bang before tapering as the geometric viscosity
+  (Remark~\ref{rem:q-harmonic-physical}) takes hold.
+\end{itemize}
+To realise the rotation as a function of $r$, embed the radial parameter
+into $\mathrm{Sp}(1)$ via the unit quaternion
 \begin{equation}\label{eq:sp1-quaternion}
   \mathbf{q}(r)
   \;=\;
@@ -413,24 +461,16 @@ the unit quaternion
   \qquad
   \theta(r)=\tfrac{\pi}{2}\,e^{-r},
 \end{equation}
-where $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit pure
-imaginary quaternion.  The action on the pure-imaginary quaternion
-$\mathbf{w}=w_1\,\mathbf{i}+w_2\,\mathbf{j}+w_3\,\mathbf{k}$ is the
-conjugation
-\begin{equation}\label{eq:sp1-conjugation}
-  \mathbf{w}'=\mathbf{q}(r)\,\mathbf{w}\,\mathbf{q}(r)^{*}.
-\end{equation}
-\begin{itemize}
-\item At $r=0$ (deep quantum): $\theta=\pi/2$, giving maximum twist
-  between space-like and time-like resolvents.
-\item As $r\to\infty$ (classical limit): $\theta\to 0$, the rotation
-  vanishes and the coordinates freeze into the classical affine chart.
-\end{itemize}
+where $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit imaginary
+quaternion.  The conjugation
+$\boldsymbol{\omega}'=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}$
+gives maximum twist ($\theta=\pi/2$) in the deep-quantum regime $r\to 0$
+and classical freeze ($\theta\to 0$) as $r\to\infty$.
 \end{remark}
 
 \begin{remark}[Primordial vortex and the deep-quantum limit]
 \label{rem:primordial-vortex}
-As $r\to 0$ the resolvent coordinates converge toward the
+As $r\to 0$ the spectral resolvents converge toward the
 \emph{primordial vortex}:
 \begin{itemize}
 \item The quantum Planck constant
@@ -438,8 +478,8 @@ As $r\to 0$ the resolvent coordinates converge toward the
 \item The $q$-torsion leaves
   (Definition~\ref{def:q-torsion-leaf}) collapse to the zero-dimensional
   stratum $M_0=\{\pm 1\}$.
-\item The $w_0$ component~\eqref{eq:quat-w0}, although identically zero on
-  Bring's surface, formally blows up in the jet prolongation, representing
+\item The $\omega_0$ coordinate, although identically zero in the
+  balanced state, formally blows up in the jet prolongation, representing
   the concentration of energy at a singular spatial point.
 \end{itemize}
 Space-like energy is trapped because the time-like rotation becomes infinite
@@ -447,18 +487,26 @@ in frequency but zero in displacement, effectively turning the
 $\mathrm{SU}(2)$ holonomy into a localised topological charge.
 \end{remark}
 
-\begin{remark}[Levi-form preservation under $\mathrm{Sp}(1)$]
-\label{rem:levi-form-preservation}
+\begin{remark}[Geometric drag and the mass residue]
+\label{rem:geometric-drag}
 The Levi form $L$ (Definition~\ref{def:substrate-parameter}) must be
-preserved under the $\mathrm{Sp}(1)$
-conjugation~\eqref{eq:sp1-conjugation}.  Since quaternionic conjugation is
-an isometry,
+preserved under the $\mathrm{Sp}(1)$ conjugation.  Since
 \[
-  \lVert\mathbf{w}'\rVert^2
-  =\lVert\mathbf{w}\rVert^2
-  =w_1\bar{w}_1+w_2\bar{w}_2+w_3\bar{w}_3,
+  \lVert\boldsymbol{\omega}'\rVert^2
+  =\lVert\boldsymbol{\omega}\rVert^2
+  =\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_2+\omega_3\bar{\omega}_3,
 \]
-the Hermitian quadric constraint~\eqref{eq:resolvent-quadric} is preserved
-during the rotation.  This invariance is precisely the condition for the
-self-duality of the curvature, $F_A=*F_A$.
+the quadric constraint~\eqref{eq:resolvent-quadric} remains satisfied and
+the self-duality $F_A=*F_A$ is preserved.  The mass of a stable vortex is
+recovered as the residue of the interaction between the growth profiles:
+\begin{equation}\label{eq:mass-residue}
+  m \;\propto\;
+  \oint_{\gamma}
+  \lVert\nabla_A q\rVert\cdot
+  \lVert\Omega_1\wedge\Omega_{2,3}\rVert,
+\end{equation}
+where $\Omega_k$ denotes the curvature form restricted to the $\omega_k$
+sector.  When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$;
+when $q\to 0$ (maximal twist), energy is trapped in the $\omega_1$ spatial
+filament.
 \end{remark}
