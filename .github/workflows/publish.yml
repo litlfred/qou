@@ -2,27 +2,33 @@
 #
 # Triggers
 # ─────────
-#   push            – every commit to every branch
-#   workflow_dispatch – manual run; optionally override the publish target branch
+#   push (main only)      – direct commits to the main branch
+#   pull_request_target   – every PR (runs without approval, even for Copilot)
+#   workflow_dispatch     – manual run; optionally override the publish target branch
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
-#   quantum-observable-universe.pdf        compiled PDF
-#   quantum-observable-universe-diff.pdf   latexdiff vs merge-base with main (feature branches only)
-#   quantum-observable-universe.md         Pandoc GitHub-Flavoured Markdown
-#   index.html                             HTML page with dark/light mode, TOC, definition links
-#   qa.html                                QA report from build warnings (feature branches only)
+#   quantum-observable-universe.pdf              compiled PDF (main branch)
+#   quantum-observable-universe-<slug>.pdf       compiled PDF (feature branches)
+#   quantum-observable-universe-<slug>-diff.pdf  latexdiff vs merge-base (feature branches only)
+#   quantum-observable-universe.md               Pandoc GitHub-Flavoured Markdown (main)
+#   quantum-observable-universe-<slug>.md        Pandoc GFM (feature branches)
+#   index.html                                   HTML page with dark/light mode, TOC, definition links
+#   qa.html                                      QA report from build warnings (feature branches only)
 #
 # Preview builds
 # ──────────────
 #   Pushes to the main branch deploy to the root of gh-pages.
-#   Pushes to any other branch deploy to  drafts/<branch-name>/  so that
-#   every feature branch / PR gets its own preview URL.
+#   PRs deploy to  drafts/<branch-name>/  so that every feature branch
+#   gets its own preview URL.  Output filenames on feature branches include
+#   a sanitised branch slug so downloads are distinguishable.
 
 name: Build & Publish
 
 on:
-  push:                   # every commit on every branch
+  push:
+    branches: [main]        # direct commits to main only
+  pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
       publish_branch:
@@ -34,7 +40,7 @@ on:
         type: string
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: build-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 
 permissions:
@@ -45,15 +51,45 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
+    # Normalise context across push / pull_request_target / workflow_dispatch.
+    # pull_request_target sets github.ref to the *base* branch, so we use the
+    # PR head ref/sha instead for those runs.
+    env:
+      HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
       - name: Checkout source
         uses: actions/checkout@v4
         with:
           fetch-depth: 0          # full history needed for merge-base diff
+          ref: ${{ env.HEAD_SHA }}
+
+      # Security: pull_request_target checks out the PR head, which could
+      # contain modified CI scripts.  Restore .github/scripts/ from the
+      # base branch so only trusted code runs with elevated permissions.
+      - name: Restore base-branch CI scripts
+        if: github.event_name == 'pull_request_target'
+        run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
+
+      # Compute output filename base.  Feature branches include the
+      # sanitised branch name so downloads are distinguishable.
+      # Main branch keeps the canonical "quantum-observable-universe" name.
+      - name: Compute output filename base
+        id: names
+        run: |
+          if [ "${{ env.HEAD_REF }}" = "main" ]; then
+            base="quantum-observable-universe"
+          else
+            # Sanitise: lowercase, replace non-alphanumeric runs with a single dash, trim dashes
+            slug=$(echo "${{ env.HEAD_REF }}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g; s/--*/-/g; s/^-//; s/-$//')
+            base="quantum-observable-universe-${slug}"
+          fi
+          echo "base=${base}" >> "$GITHUB_OUTPUT"
 
       - name: Fetch main branch for diff
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         run: git fetch origin main
 
       # ── 1. Compile LaTeX → PDF ─────────────────────────────────────────────
@@ -89,35 +125,37 @@ jobs:
         run: latexpand main.tex > main-flat.tex
 
       - name: Convert flattened LaTeX to GitHub-Flavoured Markdown
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           pandoc main-flat.tex \
             --from=latex \
             --to=gfm+tex_math_dollars \
             --standalone \
             --wrap=none \
-            --output=quantum-observable-universe.md \
+            --output="${FNAME_BASE}.md" \
             || { echo "::warning::pandoc gfm+tex_math_dollars failed, retrying without math extension"; \
                  pandoc main-flat.tex \
                    --from=latex \
                    --to=gfm \
                    --standalone \
                    --wrap=none \
-                   --output=quantum-observable-universe.md \
+                   --output="${FNAME_BASE}.md" \
                    || echo "::warning::pandoc Markdown conversion failed; a stub will be used"; }
 
           # Safety net: if pandoc produced nothing, create a minimal stub
-          if [ ! -s quantum-observable-universe.md ]; then
-            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](quantum-observable-universe.pdf).\n' \
-              > quantum-observable-universe.md
+          if [ ! -s "${FNAME_BASE}.md" ]; then
+            printf '# Quantum Observable Universe\n\n> Markdown conversion failed — please see the [PDF](%s.pdf).\n' \
+              "$FNAME_BASE" > "${FNAME_BASE}.md"
           fi
 
       # ── 2b. Generate diff against main (feature branches only) ────────────
       - name: Generate latexdiff against main
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         run: bash .github/scripts/generate-diff.sh
 
       - name: Compile diff PDF
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         continue-on-error: true
         uses: xu-cheng/latex-action@v3
         with:
@@ -127,19 +165,20 @@ jobs:
       - name: Assemble site artefacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           mkdir -p _site
 
-          cp main.pdf                         _site/quantum-observable-universe.pdf
-          cp quantum-observable-universe.md   _site/quantum-observable-universe.md
+          cp main.pdf                  "_site/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md"        "_site/${FNAME_BASE}.md"
 
           # Include diff PDF for feature-branch builds
           if [ -f diff.pdf ]; then
-            cp diff.pdf _site/quantum-observable-universe-diff.pdf
+            cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
           fi
 
           # ── Generate base HTML with Pandoc ──────────────────────────────────
-          pandoc quantum-observable-universe.md \
+          pandoc "${FNAME_BASE}.md" \
             --from=gfm+tex_math_dollars \
             --to=html5 \
             --standalone \
@@ -150,7 +189,7 @@ jobs:
 
           # Fallback landing page if pandoc HTML conversion failed
           if [ ! -s _site/index-raw.html ]; then
-            cat > _site/index-raw.html << 'HTML'
+            cat > _site/index-raw.html << HTML
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -160,8 +199,8 @@ jobs:
           <body>
             <h1>Quantum Observable Universe</h1>
             <div class="downloads">
-              <a href="quantum-observable-universe.pdf">Download PDF</a>
-              <a href="quantum-observable-universe.md">View Markdown</a>
+              <a href="${FNAME_BASE}.pdf">Download PDF</a>
+              <a href="${FNAME_BASE}.md">View Markdown</a>
             </div>
           </body>
           </html>
@@ -174,11 +213,11 @@ jobs:
             main-flat.tex
             _site/index.html
           )
-          if [ "${{ github.ref_name }}" != "main" ]; then
+          if [ "${{ env.HEAD_REF }}" != "main" ]; then
             ENHANCE_ARGS+=(
-              --branch "${{ github.ref_name }}"
+              --branch "${{ env.HEAD_REF }}"
               --repo   "${{ github.repository }}"
-              --sha    "${{ github.sha }}"
+              --sha    "${{ env.HEAD_SHA }}"
               --src-dir "."
             )
           fi
@@ -188,13 +227,13 @@ jobs:
           rm -f _site/index-raw.html
 
           # ── QA report (feature branches only) ───────────────────────────────
-          if [ "${{ github.ref_name }}" != "main" ] && [ -f build-warnings.log ]; then
+          if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then
             python3 .github/scripts/generate-qa.py \
               build-warnings.log \
               _site/qa.html \
-              --branch "${{ github.ref_name }}" \
+              --branch "${{ env.HEAD_REF }}" \
               --repo   "${{ github.repository }}" \
-              --sha    "${{ github.sha }}"
+              --sha    "${{ env.HEAD_SHA }}"
           fi
 
       # ── 4. Deploy to target branch ─────────────────────────────────────────
@@ -212,35 +251,36 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:    ./_site
           publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ${{ github.ref_name != 'main' && format('drafts/{0}', github.ref_name) || '' }}
+          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
           keep_files:     true
           commit_message: >
-            docs: publish from ${{ github.ref_name }}@${{ github.sha }}
+            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
       - name: Comment preview link on PR
-        if: github.ref_name != 'main'
+        if: env.HEAD_REF != 'main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FNAME_BASE: ${{ steps.names.outputs.base }}
         run: |
           # Derive the GitHub Pages base URL from the repository metadata
           pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          pdf_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe.pdf"
-          diff_url="${pages_url}/drafts/${{ github.ref_name }}/quantum-observable-universe-diff.pdf"
-          html_url="${pages_url}/drafts/${{ github.ref_name }}/"
-          qa_url="${pages_url}/drafts/${{ github.ref_name }}/qa.html"
+          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}.pdf"
+          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}-diff.pdf"
+          html_url="${pages_url}/drafts/${{ env.HEAD_REF }}/"
+          qa_url="${pages_url}/drafts/${{ env.HEAD_REF }}/qa.html"
 
           # Repository source links (useful when repo is private)
           repo_url="https://github.com/${{ github.repository }}"
-          branch_url="${repo_url}/tree/${{ github.ref_name }}"
-          commit_url="${repo_url}/commit/${{ github.sha }}"
+          branch_url="${repo_url}/tree/${{ env.HEAD_REF }}"
+          commit_url="${repo_url}/commit/${{ env.HEAD_SHA }}"
           publish_branch="${{ inputs.publish_branch || 'gh-pages' }}"
-          source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ github.ref_name }}"
+          source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ env.HEAD_REF }}"
 
           # Find open PRs whose head branch matches the current ref
           pr_numbers=$(gh pr list \
             --repo "${{ github.repository }}" \
-            --head "${{ github.ref_name }}" \
+            --head "${{ env.HEAD_REF }}" \
             --state open \
             --json number \
             --jq '.[].number')
@@ -252,7 +292,7 @@ jobs:
                  --repo "${{ github.repository }}" \
                  --json comments \
                  --jq '.comments[].body' \
-              | grep -qF "${{ github.sha }}"; then
+              | grep -qF "${{ env.HEAD_SHA }}"; then
               echo "PR #${pr} already has a preview comment for this commit – skipping."
               continue
             fi
@@ -260,22 +300,22 @@ jobs:
             gh pr comment "$pr" \
               --repo "${{ github.repository }}" \
               --body "$(cat <<EOF
-          📖 **Preview build ready** for commit \`${{ github.sha }}\`
+          📖 **Preview build ready** for commit \`${{ env.HEAD_SHA }}\`
 
           **Published (gh-pages)**
           | Artefact | Link |
           |----------|------|
-          | PDF      | [quantum-observable-universe.pdf](${pdf_url}) |
-          | Diff PDF | [quantum-observable-universe-diff.pdf](${diff_url}) |
+          | PDF      | [${FNAME_BASE}.pdf](${pdf_url}) |
+          | Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |
           | HTML     | [Landing page](${html_url}) |
           | QA Report| [qa.html](${qa_url}) |
 
           **Source (repo)**
           | Resource | Link |
           |----------|------|
-          | Branch   | [${{ github.ref_name }}](${branch_url}) |
-          | Commit   | [\`$(echo "${{ github.sha }}" | cut -c1-7)\`](${commit_url}) |
-          | Source PDFs | [drafts/${{ github.ref_name }}](${source_pdf_url}) |
+          | Branch   | [${{ env.HEAD_REF }}](${branch_url}) |
+          | Commit   | [\`$(echo "${{ env.HEAD_SHA }}" | cut -c1-7)\`](${commit_url}) |
+          | Source PDFs | [drafts/${{ env.HEAD_REF }}](${source_pdf_url}) |
           EOF
           )"
             echo "Commented on PR #${pr}."
