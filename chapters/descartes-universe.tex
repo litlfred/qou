@@ -255,7 +255,7 @@ $(x_0,\dots,x_4)$; this is the maximal automorphism group
 (Remark~\ref{rem:lagrange-resolvents}), the components $w_1,w_2,w_3,w_4$
 are coupled by the quadric constraint~\eqref{eq:resolvent-quadric}, and the
 residual symmetry acts by permuting the frequency-coupled pairs.  Two
-generators of the $S_3 \cong B_3/Z$ quotient of the braid group
+generators of the $S_3 \cong B_3/Z(B_3)$ quotient of the braid group
 $B_3 = \langle\sigma_1,\sigma_2\mid\sigma_1\sigma_2\sigma_1
 =\sigma_2\sigma_1\sigma_2\rangle$ are:
 \begin{align}
@@ -287,7 +287,7 @@ the projective ratios
 In these coordinates the $S_3$ action becomes explicit: the $2$-cycle
 (reflection) maps $\eta_1\mapsto\eta_1^{-1}$, swapping the pairs
 $(w_1,w_4)\leftrightarrow(w_2,w_3)$; the $3$-cycle (rotation) sends
-$(\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)$, permuting the three
+$(\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)$ for $j\in\{1,2,3\}$, permuting the three
 complex branches of the surface.
 \end{remark}
 
@@ -416,7 +416,7 @@ underlies the descent of the $C_5$ action to finite characteristic.
 \label{def:quaternionic-spectral-resolvents}
 Let $\mathcal{S}$ denote the Bring's surface
 (Definition~\ref{def:brings-surface}).  Let $q\in\mathbb{C}$ with
-$\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
+$0<\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
 $\lvert q\rvert=e^{-r}$.
 Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
 $\operatorname{Im}\mathbb{H}$.
@@ -502,6 +502,7 @@ into $\mathrm{Sp}(1)$ via the unit quaternion
   \theta(r)=\tfrac{\pi}{2}\,e^{-r},
 \end{equation}
 where $\cos_q$ and $\sin_q$ are the $q$-deformed trigonometric functions
+(built from $\exp_q$, equation~\eqref{eq:q-exp})
 \[
   \cos_q(x)=\frac{\exp_q(ix)+\exp_q(-ix)}{2},
   \qquad
