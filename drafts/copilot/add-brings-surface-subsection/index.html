@@ -1239,13 +1239,7 @@ genus <span class="math inline">\(4\)</span> and Euler characteristic
 <span class="math inline">\(\chi=-6\)</span>, defined by the vanishing
 of the first three power sums: <span
 class="math display">\[\sum_{j=0}^{4}x_j^{\,k}=0,
-\qquad k=1,2,3.\]</span> The symmetric group <span
-class="math inline">\(S_5\)</span> acts on Bring’s surface by permuting
-the coordinates <span class="math inline">\((x_0,\dots,x_4)\)</span>;
-this is the maximal automorphism group (order <span
-class="math inline">\(120\)</span>) for a surface of genus <span
-class="math inline">\(4\)</span>
-(Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">3.11</a>).</em></p>
+\qquad k=1,2,3.\]</span></em></p>
 </div>
 
 <div id="rem:lagrange-resolvents" class="remark">
@@ -1277,9 +1271,111 @@ rotation <span
 class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>.</em></p>
 </div>
 
+<div id="rem:braid-group-action" class="remark">
+
+<p><strong>Remark 3.16</strong> (Braid-group action on the resolvents).
+<em>The symmetric group <span class="math inline">\(S_5\)</span> acts on
+Bring’s surface
+(Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">3.11</a>)
+by permuting <span class="math inline">\((x_0,\dots,x_4)\)</span>; this
+is the maximal automorphism group (order <span
+class="math inline">\(120\)</span>) for genus <span
+class="math inline">\(4\)</span>. In the resolvent basis <span
+class="math inline">\(w_k\)</span>
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">3.15</a>),
+the components <span class="math inline">\(w_1,w_2,w_3,w_4\)</span> are
+coupled by the quadric
+constraint <a href="#eq:resolvent-quadric" data-reference-type="eqref" data-reference="eq:resolvent-quadric">[eq:resolvent-quadric]</a>,
+and the residual symmetry acts by permuting the frequency-coupled pairs.
+Two generators of the <span class="math inline">\(S_3 \cong
+B_3/Z(B_3)\)</span> quotient of the braid group <span
+class="math inline">\(B_3 =
+\langle\sigma_1,\sigma_2\mid\sigma_1\sigma_2\sigma_1
+=\sigma_2\sigma_1\sigma_2\rangle\)</span> are: <span
+class="math display">\[\begin{aligned}
+\sigma_1(w_1,w_2,w_3,w_4) &amp;= (w_2,w_1,w_4,w_3)
+&amp;&amp;\text{(twist),}
+\label{eq:braid-twist}\\[4pt]
+\sigma_2(w_1,w_2,w_3,w_4) &amp;= (w_4,w_3,w_2,w_1)
+&amp;&amp;\text{(flip).}
+\label{eq:braid-flip}
+\end{aligned}\]</span> Their composition <span
+class="math inline">\(\sigma_1\sigma_2\)</span> is a <span
+class="math inline">\(3\)</span>-cycle: <span
+class="math display">\[(w_1,w_2,w_3,w_4)
+\xrightarrow{\;\sigma_1\;}
+(w_2,w_1,w_4,w_3)
+\xrightarrow{\;\sigma_2\;}
+(w_3,w_4,w_1,w_2),\]</span> so <span
+class="math inline">\((\sigma_1\sigma_2)^3=\mathrm{id}\)</span>,
+realising the trefoil relation
+(Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">3.10</a>).</em></p>
+<p><em>Since the defining equations <span class="math inline">\(\sum
+x_j^k=0\)</span> are homogeneous, we pass to the projective ratios <span
+class="math display">\[\eta_1 = \frac{w_1}{w_2},
+\qquad
+\eta_2 = \frac{w_3}{w_4}.\]</span> In these coordinates the <span
+class="math inline">\(S_3\)</span> action becomes explicit: the <span
+class="math inline">\(2\)</span>-cycle (reflection) maps <span
+class="math inline">\(\eta_1\mapsto\eta_1^{-1}\)</span>, swapping the
+pairs <span
+class="math inline">\((w_1,w_4)\leftrightarrow(w_2,w_3)\)</span>; the
+<span class="math inline">\(3\)</span>-cycle (rotation) sends <span
+class="math inline">\((\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)\)</span>
+for <span class="math inline">\(j\in\{1,2,3\}\)</span>, permuting the
+three complex branches of the surface.</em></p>
+<p>*Fixing two coordinates (say <span
+class="math inline">\(x_0,x_1\)</span>) as a spacetime base, the
+spectral components <span class="math inline">\(w_k\)</span> become
+excitations in the fiber of the <span
+class="math inline">\(5\)</span>-dimensional Bring surface projected
+onto this base. The stabiliser of <span
+class="math inline">\(\{x_0,x_1\}\)</span> inside <span
+class="math inline">\(S_5\)</span> is a copy of <span
+class="math inline">\(S_3\)</span> that permutes <span
+class="math inline">\((x_2,x_3,x_4)\)</span>; in the resolvent basis
+this translates to $$w_k ;\longmapsto; w_k</p>
+<ul>
+<li>\frac{1}{\sqrt{5}}\sum_{j=2}^{4}
+\bigl(\zeta^{k,\sigma(j)}-\zeta^{kj}\bigr),x_j, \qquad \sigma\in S_3,$$
+so the <span class="math inline">\(w_k\)</span> transform as vector
+fields over the <span class="math inline">\((x_0,x_1)\)</span> plane,
+and the <span class="math inline">\(S_3\)</span> action permutes how
+these fields couple to the base.*</li>
+</ul>
+<p><em>In the full automorphism group <span
+class="math inline">\(S_5\)</span> there are three distinguished
+families of <span class="math inline">\(S_3\)</span> subgroups, each
+preserving a different structure:</em></p>
+<ol type="1">
+<li><p><em><em>Spectral <span class="math inline">\(S_3\)</span>:</em>
+generated by the
+twist <a href="#eq:braid-twist" data-reference-type="eqref" data-reference="eq:braid-twist">[eq:braid-twist]</a>
+and
+flip <a href="#eq:braid-flip" data-reference-type="eqref" data-reference="eq:braid-flip">[eq:braid-flip]</a>,
+acting on the frequency-coupled pairs <span
+class="math inline">\((w_1,w_2,w_3,w_4)\)</span> and preserving the
+spectral energy distribution.</em></p></li>
+<li><p><em><em>Coordinate <span class="math inline">\(S_3\)</span>:</em>
+one for each choice of two fixed coordinates out of five (<span
+class="math inline">\(\binom{5}{2}=10\)</span> such subgroups),
+permuting the remaining three and acting on the <span
+class="math inline">\(w_k\)</span> through the DFT as
+above.</em></p></li>
+<li><p><em><em>Geometric <span class="math inline">\(S_3\)</span>:</em>
+the symmetry of Bring’s curve viewed as a branched cover of <span
+class="math inline">\(\mathbb{P}^1\)</span>, permuting the three
+critical values of the covering map.</em></p></li>
+</ol>
+<p><em>These three families correspond to the three copies of <span
+class="math inline">\(S_3\)</span> inside <span
+class="math inline">\(S_5\)</span> identified in
+Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">3.10</a>.</em></p>
+</div>
+
 <div id="def:briggs-klein-chart" class="definition">
 
-<p><strong>Definition 3.16</strong> (Briggs–Klein affine chart). <em>Let
+<p><strong>Definition 3.17</strong> (Briggs–Klein affine chart). <em>Let
 <span class="math inline">\(r=\lvert w_1\rvert^2\)</span> denote the
 squared modulus of the first resolvent coordinate on Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.14</a>).
@@ -1296,9 +1392,9 @@ class="math inline">\(C_5\)</span>-invariant.</em></p>
 
 <div id="rem:radial-projection" class="remark">
 
-<p><strong>Remark 3.17</strong> (Radial projection of Bring’s surface).
+<p><strong>Remark 3.18</strong> (Radial projection of Bring’s surface).
 <em>Restricting a Briggs–Klein affine chart
-(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">3.16</a>)
+(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">3.17</a>)
 to the interval <span class="math inline">\(r\in(0,1)\)</span> and
 projecting Bring’s surface onto this radial coordinate yields a
 fibration over the base manifold <span class="math inline">\(M\)</span>
@@ -1322,7 +1418,7 @@ reflecting the absence of torsion on the total space.</em></p>
 
 <div id="rem:four-colourability" class="remark">
 
-<p><strong>Remark 3.18</strong> (Four-colourability of Bring’s surface).
+<p><strong>Remark 3.19</strong> (Four-colourability of Bring’s surface).
 <em>By the Heawood bound, an orientable surface of genus <span
 class="math inline">\(g\)</span> has chromatic number at most <span
 class="math inline">\(\lfloor(7+\sqrt{1+48g})/2\rfloor\)</span>. For
@@ -1339,7 +1435,7 @@ require.</em></p>
 
 <div id="rem:four-colour-theorem" class="remark">
 
-<p><strong>Remark 3.19</strong> (The four-colour theorem and Bring’s
+<p><strong>Remark 3.20</strong> (The four-colour theorem and Bring’s
 surface). <em>The classical four-colour theorem asserts that every
 planar graph (equivalently, every graph embeddable in <span
 class="math inline">\(S^2\)</span>) is four-colourable. For higher-genus
@@ -1352,14 +1448,14 @@ class="math inline">\(4\)</span> — is a reflection of the rigidity
 imposed by its <span class="math inline">\(S_5\)</span> symmetry. In the
 language of the Descartes universe, the trivial bundle <span
 class="math inline">\(E=E_0\)</span>
-(Remark <a href="#rem:radial-projection" data-reference-type="ref" data-reference="rem:radial-projection">3.17</a>)
+(Remark <a href="#rem:radial-projection" data-reference-type="ref" data-reference="rem:radial-projection">3.18</a>)
 carries no torsion, and the resulting flatness of the tessellation
 forces the same chromatic economy as the sphere.</em></p>
 </div>
 
 <div id="rem:cyclotomic-reduction" class="remark">
 
-<p><strong>Remark 3.20</strong> (Cyclotomic reduction and <span
+<p><strong>Remark 3.21</strong> (Cyclotomic reduction and <span
 class="math inline">\(C_{\mathfrak{p}}\)</span> preservation). <em>Let
 <span class="math inline">\(\mathfrak{p}\)</span> be a prime (not to be
 confused with a point <span class="math inline">\(p\in M\)</span>).
@@ -1398,16 +1494,14 @@ characteristic.</em></p>
 
 <div id="def:quaternionic-spectral-resolvents" class="definition">
 
-<p><strong>Definition 3.21</strong> (Quaternionic spectral resolvents).
+<p><strong>Definition 3.22</strong> (Quaternionic spectral resolvents).
 <em>Let <span class="math inline">\(\mathcal{S}\)</span> denote the
 Bring’s surface
-(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.14</a>),
-let <span class="math inline">\(q=\exp\!\bigl(-\lVert L\wedge
-F_A^+\rVert\bigr)\)</span> be the substrate parameter
-(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>),
-and set <span class="math inline">\(r=\lVert L\wedge
-F_A^+\rVert\)</span> so that <span
-class="math inline">\(q=e^{-r}\)</span>. Write <span
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.14</a>).
+Let <span class="math inline">\(q\in\mathbb{C}\)</span> with <span
+class="math inline">\(0&lt;\lvert q\rvert\le 1\)</span>, and set <span
+class="math inline">\(r=-\ln\lvert q\rvert\)</span> so that <span
+class="math inline">\(\lvert q\rvert=e^{-r}\)</span>. Write <span
 class="math inline">\(\mathbf{i},\mathbf{j},\mathbf{k}\)</span> for the
 standard basis of <span
 class="math inline">\(\operatorname{Im}\mathbb{H}\)</span>. Using the
@@ -1453,10 +1547,10 @@ class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
 
 <div id="rem:omega-constraints" class="remark">
 
-<p><strong>Remark 3.22</strong> (Algebraic constraints in the <span
+<p><strong>Remark 3.23</strong> (Algebraic constraints in the <span
 class="math inline">\(\omega_k\)</span> basis). <em>In the spectral
 resolvent basis
-(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.21</a>)
+(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.22</a>)
 the Bring’s surface equations take the following form:</em></p>
 <ul>
 <li><p><em><em>Barycentric:</em> <span
@@ -1477,10 +1571,10 @@ class="math inline">\(C_5\)</span> symmetry and the Descartes condition
 
 <div id="rem:spectral-dynamics" class="remark">
 
-<p><strong>Remark 3.23</strong> (Spectral dynamics and the <span
+<p><strong>Remark 3.24</strong> (Spectral dynamics and the <span
 class="math inline">\(\mathrm{Sp}(1)\)</span> action). <em>The growth
 profiles in
-Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.21</a>
+Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.22</a>
 separate the space-like and time-like sectors of the Bring’s
 surface:</em></p>
 <ul>
@@ -1511,9 +1605,17 @@ class="math inline">\(\mathrm{Sp}(1)\)</span> via the unit quaternion
 <span class="math display">\[\label{eq:sp1-quaternion}
 \mathbf{q}(r)
 \;=\;
-\cos\theta(r)+\mathbf{u}\,\sin\theta(r),
+\cos_q\!\theta(r)+\mathbf{u}\,\sin_q\!\theta(r),
 \qquad
 \theta(r)=\tfrac{\pi}{2}\,e^{-r},\]</span> where <span
+class="math inline">\(\cos_q\)</span> and <span
+class="math inline">\(\sin_q\)</span> are the <span
+class="math inline">\(q\)</span>-deformed trigonometric functions (built
+from <span class="math inline">\(\exp_q\)</span>,
+equation <a href="#eq:q-exp" data-reference-type="eqref" data-reference="eq:q-exp">[eq:q-exp]</a>)
+<span class="math display">\[\cos_q(x)=\frac{\exp_q(ix)+\exp_q(-ix)}{2},
+\qquad
+\sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},\]</span> and <span
 class="math inline">\(\mathbf{u}\in\operatorname{Im}\mathbb{H}\)</span>
 is a fixed unit imaginary quaternion. The conjugation <span
 class="math inline">\(\boldsymbol{\omega}&#39;=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}\)</span>
@@ -1525,7 +1627,7 @@ as <span class="math inline">\(r\to\infty\)</span>.</em></p>
 
 <div id="rem:primordial-vortex" class="remark">
 
-<p><strong>Remark 3.24</strong> (Primordial vortex and the deep-quantum
+<p><strong>Remark 3.25</strong> (Primordial vortex and the deep-quantum
 limit). <em>As <span class="math inline">\(r\to 0\)</span> the spectral
 resolvents converge toward the <em>primordial vortex</em>:</em></p>
 <ul>
@@ -1549,7 +1651,7 @@ into a localised topological charge.</em></p>
 
 <div id="rem:geometric-drag" class="remark">
 
-<p><strong>Remark 3.25</strong> (Geometric drag and the mass residue).
+<p><strong>Remark 3.26</strong> (Geometric drag and the mass residue).
 <em>The Levi form <span class="math inline">\(L\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
 must be preserved under the <span
