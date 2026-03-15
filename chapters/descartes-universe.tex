@@ -217,10 +217,6 @@ vanishing of the first three power sums:
   \sum_{j=0}^{4}x_j^{\,k}=0,
   \qquad k=1,2,3.
 \]
-The symmetric group $S_5$ acts on Bring's surface by permuting the
-coordinates $(x_0,\dots,x_4)$; this is the maximal automorphism group
-(order~$120$) for a surface of genus~$4$
-(Remark~\ref{rem:brings-curve}).
 \end{definition}
 
 \begin{remark}[Lagrange resolvents and spectral form]
@@ -248,6 +244,51 @@ following \emph{spectral forms}:
 The cyclic permutation $\sigma\colon x_j\mapsto x_{j+1}$ acts by
 $\sigma(w_k)=\zeta^{-k}w_k$, so the $C_5$ symmetry is manifest as a phase
 rotation $w_k\mapsto\zeta^k\,w_k$.
+\end{remark}
+
+\begin{remark}[Braid-group action on the resolvents]
+\label{rem:braid-group-action}
+The symmetric group $S_5$ acts on Bring's surface
+(Remark~\ref{rem:brings-curve}) by permuting
+$(x_0,\dots,x_4)$; this is the maximal automorphism group
+(order~$120$) for genus~$4$.  In the resolvent basis $w_k$
+(Remark~\ref{rem:lagrange-resolvents}), the components $w_1,w_2,w_3,w_4$
+are coupled by the quadric constraint~\eqref{eq:resolvent-quadric}, and the
+residual symmetry acts by permuting the frequency-coupled pairs.  Two
+generators of the $S_3 \cong B_3/Z$ quotient of the braid group
+$B_3 = \langle\sigma_1,\sigma_2\mid\sigma_1\sigma_2\sigma_1
+=\sigma_2\sigma_1\sigma_2\rangle$ are:
+\begin{align}
+  \sigma_1(w_1,w_2,w_3,w_4) &= (w_2,w_1,w_4,w_3)
+    &&\text{(twist),}
+    \label{eq:braid-twist}\\[4pt]
+  \sigma_2(w_1,w_2,w_3,w_4) &= (w_4,w_3,w_2,w_1)
+    &&\text{(flip).}
+    \label{eq:braid-flip}
+\end{align}
+Their composition $\sigma_1\sigma_2$ is a $3$-cycle:
+\[
+  (w_1,w_2,w_3,w_4)
+  \xrightarrow{\;\sigma_1\;}
+  (w_2,w_1,w_4,w_3)
+  \xrightarrow{\;\sigma_2\;}
+  (w_3,w_4,w_1,w_2),
+\]
+so $(\sigma_1\sigma_2)^3=\mathrm{id}$, realising the trefoil relation
+(Remark~\ref{rem:chirality-trefoil}).
+
+Since the defining equations $\sum x_j^k=0$ are homogeneous, we pass to
+the projective ratios
+\[
+  \eta_1 = \frac{w_1}{w_2},
+  \qquad
+  \eta_2 = \frac{w_3}{w_4}.
+\]
+In these coordinates the $S_3$ action becomes explicit: the $2$-cycle
+(reflection) maps $\eta_1\mapsto\eta_1^{-1}$, swapping the pairs
+$(w_1,w_4)\leftrightarrow(w_2,w_3)$; the $3$-cycle (rotation) sends
+$(\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)$, permuting the three
+complex branches of the surface.
 \end{remark}
 
 \begin{definition}[Briggs--Klein affine chart]
@@ -374,10 +415,9 @@ underlies the descent of the $C_5$ action to finite characteristic.
 \begin{definition}[Quaternionic spectral resolvents]
 \label{def:quaternionic-spectral-resolvents}
 Let $\mathcal{S}$ denote the Bring's surface
-(Definition~\ref{def:brings-surface}), let
-$q=\exp\!\bigl(-\lVert L\wedge F_A^+\rVert\bigr)$ be the substrate
-parameter (Definition~\ref{def:substrate-parameter}), and set
-$r=\lVert L\wedge F_A^+\rVert$ so that $q=e^{-r}$.
+(Definition~\ref{def:brings-surface}).  Let $q\in\mathbb{C}$ with
+$\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
+$\lvert q\rvert=e^{-r}$.
 Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
 $\operatorname{Im}\mathbb{H}$.
 Using the Lusztig $q$-exponential and $q$-logarithm,
@@ -457,11 +497,17 @@ into $\mathrm{Sp}(1)$ via the unit quaternion
 \begin{equation}\label{eq:sp1-quaternion}
   \mathbf{q}(r)
   \;=\;
-  \cos\theta(r)+\mathbf{u}\,\sin\theta(r),
+  \cos_q\!\theta(r)+\mathbf{u}\,\sin_q\!\theta(r),
   \qquad
   \theta(r)=\tfrac{\pi}{2}\,e^{-r},
 \end{equation}
-where $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit imaginary
+where $\cos_q$ and $\sin_q$ are the $q$-deformed trigonometric functions
+\[
+  \cos_q(x)=\frac{\exp_q(ix)+\exp_q(-ix)}{2},
+  \qquad
+  \sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},
+\]
+and $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit imaginary
 quaternion.  The conjugation
 $\boldsymbol{\omega}'=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}$
 gives maximum twist ($\theta=\pi/2$) in the deep-quantum regime $r\to 0$
