@@ -140,6 +140,12 @@ input[type=range]::-webkit-slider-thumb {
 #weierstrass .wf-del { color:var(--accent4); }
 #weierstrass .wf-j   { color:var(--accent5); }
 
+/* ── Affine coordinate chart panel ──────────────────────────────── */
+#affine { bottom:14px; left:718px; width:230px; }
+#affine canvas { display:block; border:1px solid rgba(58,144,255,.10); border-radius:2px; }
+#affine .af-eq  { font-size:9px; line-height:1.8; margin-top:6px; color:#4a5a80; }
+#affine .af-val { color:var(--accent3); }
+
 /* ── Tooltip ────────────────────────────────────────────────────── */
 #tip {
   position:fixed; background:var(--panel); border:1px solid var(--border);
@@ -245,6 +251,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_fmla"> Formula</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_chrl"> Chiral</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_wstr"> Wstrss</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_afin"> Affine z</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -320,6 +327,13 @@ input[type=range]::-webkit-slider-thumb {
       <div class="cgrid2-lbl" style="color:var(--accent4)">⊕ Composite</div>
     </div>
   </div>
+</div>
+
+<!-- AFFINE COORDINATE CHART AT z -->
+<div class="panel" id="affine">
+  <div class="panel-title">Affine Coord Chart at z  ·  E_p[ℝ]<button class="panel-close" onclick="togglePanel('affine')">×</button></div>
+  <canvas id="ac_main" width="210" height="120"></canvas>
+  <div class="af-eq" id="ac-text">—</div>
 </div>
 
 <!-- WEIERSTRASS FORM + EMBEDDING -->
@@ -1226,7 +1240,7 @@ document.getElementById('btn_theme').addEventListener('click', () => {
 // ── Per-panel show/hide ───────────────────────────────────────────────
 const PANEL_CB = {
   stats: 'cb_pnl_stats', info: 'cb_pnl_info', formula: 'cb_pnl_fmla',
-  chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr',
+  chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1244,7 +1258,7 @@ Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
 
 // ── Hide / show all info panels ───────────────────────────────────────
 let infoPanelsHidden = true;  // start hidden
-const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','formula'];
+const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula'];
 function applyHide() {
   const show = !infoPanelsHidden;
   INFO_PANEL_IDS.forEach(id => togglePanel(id, show));
@@ -1456,6 +1470,14 @@ function drawEC(canvas, P, Q, highlightPts, labelPts) {
 }
 
 // ── Draw Weierstrass main canvas (all points + labelled curve) ───────
+// ── Nice tick-step helper ─────────────────────────────────────────────
+function niceStep(rough) {
+  if (rough <= 0 || !isFinite(rough)) return 1;
+  const mag = Math.pow(10, Math.floor(Math.log10(rough)));
+  const f = rough / mag;
+  return f < 1.5 ? mag : f < 3.5 ? 2*mag : f < 7.5 ? 5*mag : 10*mag;
+}
+
 function drawWeierstrass(state) {
   const { P, Q, disc, j_inv, pts, composite } = state;
   const canvas = document.getElementById('wc_main');
@@ -1465,16 +1487,34 @@ function drawWeierstrass(state) {
   ctx.clearRect(0, 0, W, H);
   ctx.fillStyle = '#010409'; ctx.fillRect(0, 0, W, H);
 
-  // Scale: x ∈ [-3.5,3.5], y ∈ [-3,3]
-  const SX = W / 7.0, SY = H / 6.0;
+  // Auto-scale: always show curve critical points + all EC points
+  const _ap = pts.filter(Boolean);
+  if (composite) _ap.push(composite);
+  const _axs = _ap.map(p => Math.abs(p.x));
+  const _ays = _ap.map(p => Math.abs(p.y));
+  // Critical x where d(y²)/dx=0: 3x²+P=0 → x=±√(-P/3) when P<0
+  if (P < 0) {
+    const xc = Math.sqrt(-P / 3);
+    _axs.push(xc);
+    _ays.push(Math.sqrt(Math.max(0, xc**3 + P*xc + Q)));
+  }
+  const xHW = Math.max(3.5, Math.max(..._axs, 0) + 0.8);
+  const yHW = Math.max(3.0, Math.max(..._ays, 0) + 0.8);
+
+  const SX = W / (2 * xHW);
+  const SY = H / (2 * yHW);
   const ox = W / 2, oy = H / 2;
   const tx = x => ox + x * SX;
   const ty = y => oy - y * SY;
 
-  // Grid
-  ctx.strokeStyle = 'rgba(58,144,255,0.06)'; ctx.lineWidth = 0.5;
-  for (const v of [-3,-2,-1,0,1,2,3]) {
+  // Adaptive grid + tick labels
+  const xStep = niceStep(xHW / 3);
+  const yStep = niceStep(yHW / 2);
+  ctx.strokeStyle = 'rgba(58,144,255,0.07)'; ctx.lineWidth = 0.5;
+  for (let v = -Math.ceil(xHW/xStep)*xStep; v <= xHW+1e-9; v += xStep) {
     ctx.beginPath(); ctx.moveTo(tx(v),0); ctx.lineTo(tx(v),H); ctx.stroke();
+  }
+  for (let v = -Math.ceil(yHW/yStep)*yStep; v <= yHW+1e-9; v += yStep) {
     ctx.beginPath(); ctx.moveTo(0,ty(v)); ctx.lineTo(W,ty(v)); ctx.stroke();
   }
 
@@ -1483,9 +1523,16 @@ function drawWeierstrass(state) {
   ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(W, oy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(ox, 0); ctx.lineTo(ox, H); ctx.stroke();
 
+  // Tick labels
+  ctx.fillStyle = 'rgba(58,144,255,0.32)'; ctx.font = '7px "Share Tech Mono"';
+  for (let v = -Math.ceil(xHW/xStep)*xStep; v <= xHW+1e-9; v += xStep) {
+    if (Math.abs(v) < 1e-9) continue;
+    ctx.fillText(v.toFixed(xStep < 1 ? 1 : 0), tx(v)+1, oy-2);
+  }
+
   // Curve (both branches)
   const STEPS = 400;
-  const xMin = -W/2/SX, xMax = W/2/SX;
+  const xMin = -xHW, xMax = xHW;
   for (const sgn of [1,-1]) {
     ctx.strokeStyle = 'rgba(80,140,255,0.55)'; ctx.lineWidth = 1.4;
     ctx.beginPath(); let first = true;
@@ -1565,6 +1612,153 @@ function drawWeierstrass(state) {
     `S₃ ↪ S₅ = Aut(Σ₄)  [Thm 3.22]`;
 }
 
+// ── Affine coordinate chart at z ─────────────────────────────────────
+// Shows the local real slice of the elliptic fibre E_p, auto-scaled to fit
+// all chiral points; axes labelled in Planck lengths (ℓ_P = LP).
+function drawAffine(state) {
+  const { P, Q, pts, composite } = state;
+  const canvas = document.getElementById('ac_main');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = '#010409'; ctx.fillRect(0,0,W,H);
+
+  // Collect all valid points
+  const allPts = pts.filter(Boolean);
+  if (composite) allPts.push(composite);
+  if (!allPts.length) return;
+
+  // Auto-scale bounding box from point positions + curve critical x values
+  const xs   = allPts.map(p => p.x);
+  const absYs = allPts.map(p => Math.abs(p.y));
+  if (P < 0) {
+    const xc = Math.sqrt(-P / 3);
+    xs.push(xc, -xc);
+    absYs.push(Math.sqrt(Math.max(0, xc**3 + P*xc + Q)));
+  }
+  const xLo_pts = Math.min(...xs), xHi_pts = Math.max(...xs);
+  const absYMax  = Math.max(0.2, Math.max(...absYs));
+
+  const xPad = Math.max(LP * 5, (xHi_pts - xLo_pts) * 0.35);
+  const yPad = Math.max(LP * 5, absYMax * 0.35);
+  const xLo = xLo_pts - xPad, xHi = xHi_pts + xPad;
+  const yLo = -(absYMax + yPad), yHi = absYMax + yPad;
+
+  const SX = W / (xHi - xLo);
+  const SY = H / (yHi - yLo);
+  const tx = x => (x - xLo) * SX;
+  const ty = y => H - (y - yLo) * SY;
+
+  // Grid lines at Planck-length multiples
+  const xRangeP = (xHi - xLo) / LP;   // range in Planck units
+  const yRangeP = (yHi - yLo) / LP;
+  const xTickP  = niceStep(xRangeP / 5);  // tick spacing in ℓ_P
+  const yTickP  = niceStep(yRangeP / 4);
+  const xTickV  = xTickP * LP;            // in visual units
+  const yTickV  = yTickP * LP;
+
+  const xTS = Math.ceil(xLo / xTickV) * xTickV;
+  const yTS = Math.ceil(yLo / yTickV) * yTickV;
+
+  ctx.strokeStyle = 'rgba(58,144,255,0.10)'; ctx.lineWidth = 0.5;
+  for (let v = xTS; v <= xHi + 1e-10; v += xTickV) {
+    ctx.beginPath(); ctx.moveTo(tx(v),0); ctx.lineTo(tx(v),H); ctx.stroke();
+  }
+  for (let v = yTS; v <= yHi + 1e-10; v += yTickV) {
+    ctx.beginPath(); ctx.moveTo(0,ty(v)); ctx.lineTo(W,ty(v)); ctx.stroke();
+  }
+
+  // Axes (draw only if in range)
+  ctx.strokeStyle = 'rgba(58,144,255,0.25)'; ctx.lineWidth = 0.8;
+  if (xLo < 0 && xHi > 0) {
+    ctx.beginPath(); ctx.moveTo(tx(0),0); ctx.lineTo(tx(0),H); ctx.stroke();
+  }
+  if (yLo < 0 && yHi > 0) {
+    const y0 = ty(0);
+    ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(W,y0); ctx.stroke();
+  }
+
+  // Tick labels in Planck units
+  const y0screen = yLo < 0 && yHi > 0 ? ty(0) : H - 2;
+  ctx.fillStyle = 'rgba(58,144,255,0.40)'; ctx.font = '7px "Share Tech Mono"';
+  for (let v = xTS; v <= xHi + 1e-10; v += xTickV) {
+    const n_p = Math.round(v / LP);
+    const lbl = String(n_p);
+    const px = tx(v);
+    if (px > 4 && px < W - 4)
+      ctx.fillText(lbl, px + 1, Math.min(H - 1, y0screen + 9));
+  }
+  // y-axis labels (rightmost column)
+  for (let v = yTS; v <= yHi + 1e-10; v += yTickV) {
+    const n_p = Math.round(v / LP);
+    if (n_p === 0) continue;
+    const py = ty(v);
+    if (py > 4 && py < H - 4)
+      ctx.fillText(String(n_p), 2, py - 1);
+  }
+  // Unit tag
+  ctx.fillStyle = 'rgba(58,144,255,0.22)'; ctx.font = '7px "Share Tech Mono"';
+  ctx.fillText('ℓP', W - 14, H - 2);
+
+  // Curve (both branches) over [xLo, xHi]
+  const STEPS = 320;
+  for (const sgn of [1,-1]) {
+    ctx.strokeStyle = 'rgba(80,140,255,0.60)'; ctx.lineWidth = 1.3;
+    ctx.beginPath(); let first = true;
+    for (let k = 0; k <= STEPS; k++) {
+      const xv = xLo + (xHi - xLo) * k / STEPS;
+      const y2 = xv**3 + P*xv + Q;
+      if (y2 < 0) { first = true; continue; }
+      const yv = sgn * Math.sqrt(y2);
+      if (yv < yLo || yv > yHi) { first = true; continue; }
+      const px = tx(xv), py = ty(yv);
+      if (first) { ctx.moveTo(px,py); first=false; } else ctx.lineTo(px,py);
+    }
+    ctx.stroke();
+  }
+
+  // Cross-hair dashed guide lines from axes to each point
+  for (const pt of allPts) {
+    if (!pt) continue;
+    const px = tx(pt.x), py = ty(pt.y);
+    ctx.setLineDash([2,3]);
+    ctx.strokeStyle = pt.color + '55'; ctx.lineWidth = 0.7;
+    // Vertical from x-axis to point
+    const axY = yLo < 0 && yHi > 0 ? ty(0) : H;
+    ctx.beginPath(); ctx.moveTo(px, axY); ctx.lineTo(px, py); ctx.stroke();
+    // Horizontal from y-axis to point
+    const axX = xLo < 0 && xHi > 0 ? tx(0) : 0;
+    ctx.beginPath(); ctx.moveTo(axX, py); ctx.lineTo(px, py); ctx.stroke();
+    ctx.setLineDash([]);
+    // Point dot
+    const r = pt.color === '#ffee44' ? 5 : 3.5;
+    ctx.fillStyle = pt.color;
+    ctx.shadowBlur = 8; ctx.shadowColor = pt.color;
+    ctx.beginPath(); ctx.arc(px, py, r, 0, TAU); ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+
+  // Text: (x, y) in Planck units for each point
+  const fmtP = v => (v / LP).toFixed(1);
+  const CLRS = ['#ff4444','#44ff88','#4488ff'];
+  const LBLS = ['R','G','B'];
+  let html = `<span style="color:var(--dim);font-size:8px">x, y  in ℓ_P  (×${LP.toFixed(3)})</span><br>`;
+  for (let i = 0; i < 3; i++) {
+    const pt = pts[i];
+    if (!pt) continue;
+    html += `<span style="color:${CLRS[i]}">●${LBLS[i]}</span>&thinsp;`+
+            `x=<span class="af-val">${fmtP(pt.x)}</span> `+
+            `y=<span class="af-val">${fmtP(pt.y)}</span><br>`;
+  }
+  if (composite) {
+    html += `<span style="color:#ffee44">●⊕</span>&thinsp;`+
+            `x=<span class="af-val">${fmtP(composite.x)}</span> `+
+            `y=<span class="af-val">${fmtP(composite.y)}</span>`;
+  }
+  document.getElementById('ac-text').innerHTML = html;
+}
+
 // ── Redraw both info panels ──────────────────────────────────────────
 function updateChiralPanels() {
   const state = getChiralState();
@@ -1583,6 +1777,9 @@ function updateChiralPanels() {
 
   // Weierstrass panel
   drawWeierstrass(state);
+
+  // Affine coordinate chart panel
+  drawAffine(state);
 }
 
 // ── Animation loop ────────────────────────────────────────────────────
