@@ -315,6 +315,7 @@ code { font-size: 90%; }
         <a class="toc-ch" href="#chap:qou">Quantum Observable Universe</a>
         <a class="toc-ch" href="#chap:torsion">Lifting of Quantum Torsion</a>
         <a class="toc-ssec" href="#ssec:descent">Descent</a>
+        <a class="toc-ch" href="#chap:brings-surface">Bring&#x27;s Surface</a>
         <a class="toc-ch" href="#chap:descartes">The Descartes Universe</a>
         <a class="toc-ch" href="#chap:path-integrals-braiding">Path Integrals and Braiding</a>
         <a class="toc-ch" href="#chap:interpretations">Interpretations</a>
@@ -811,7 +812,7 @@ decomposition <span class="math inline">\(\alpha = \alpha_H +
 spin–statistics distinction in this framework. Experimental confirmation
 of this picture, including photonic quantum Hall measurements and
 many-body interference in crystal lattices, is discussed in
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>.</em></p>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">7</a>.</em></p>
 </div>
 
 <div id="rem:q-harmonic-physical" class="remark">
@@ -854,7 +855,7 @@ F_A^+)(p)\rVert\bigr)\)</span>, the geometry of the brane <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 instantons. See
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">7</a>
 for experimental signatures of this emergent geometry.</em></p>
 </div>
 
@@ -1349,10 +1350,792 @@ class="math inline">\(\mathrm{U}(1)\)</span> backbone—remain at the
 </ol>
 </div>
 
-<h1 id="the-descartes-universe"><span id="chap:descartes"></span>The Descartes Universe</h1>
+<h1 id="brings-surface">Bring’s Surface</h1>
+<div id="def:brings-surface" class="definition">
+
+<p><strong>Definition 3.1</strong> (Bring’s surface). <em>Let <span
+class="math inline">\(x_j\)</span>, <span
+class="math inline">\(j\in\{0,\dots,4\}\)</span>, be homogeneous
+coordinates on <span class="math inline">\(\mathbb{P}^4\)</span>.
+<em>Bring’s surface</em> is the maximally symmetric CR manifold of
+genus <span class="math inline">\(4\)</span> and Euler characteristic
+<span class="math inline">\(\chi=-6\)</span>, defined by the vanishing
+of the first three power sums: <span
+class="math display">\[\sum_{j=0}^{4}x_j^{\,k}=0,
+\qquad k=1,2,3.\]</span></em></p>
+</div>
+
+<div id="rem:lagrange-resolvents" class="remark">
+
+<p><strong>Remark 3.2</strong> (<a class="defn-link" href="#rem:lagrange-resolvents">Lagrange resolvents and spectral form</a>).
+<em>Let <span class="math inline">\(\zeta=e^{2\pi i/5}\)</span>. Apply
+the discrete Fourier transform to the coordinates <span
+class="math inline">\(x_j\)</span> of Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.1</a>):
+<span class="math display">\[w_k \;=\;
+\frac{1}{\sqrt{5}}\sum_{j=0}^{4}\zeta^{kj}\,x_j,
+\qquad k\in\{0,1,2,3,4\}.\]</span> Under this change of basis the three
+defining power-sum equations become the following <em>spectral
+forms</em>: <span class="math display">\[\begin{aligned}
+w_0 &amp;= 0
+&amp;&amp;\text{(linear projection),}
+\label{eq:resolvent-linear}\\[4pt]
+w_1\,w_4+w_2\,w_3 &amp;= 0
+&amp;&amp;\text{(Hermitian quadric),}
+\label{eq:resolvent-quadric}\\[4pt]
+w_1^2\,w_3+w_4^2\,w_2+w_2^2\,w_1+w_3^2\,w_4 &amp;= 0
+&amp;&amp;\text{(symmetric cubic).}
+\label{eq:resolvent-cubic}
+\end{aligned}\]</span> The cyclic permutation <span
+class="math inline">\(\sigma\colon x_j\mapsto x_{j+1}\)</span> acts by
+<span class="math inline">\(\sigma(w_k)=\zeta^{-k}w_k\)</span>, so the
+<span class="math inline">\(C_5\)</span> symmetry is manifest as a phase
+rotation <span
+class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>.</em></p>
+</div>
+
+<div id="rem:braid-group-action" class="remark">
+
+<p><strong>Remark 3.3</strong> (<a class="defn-link" href="#rem:braid-group-action">Braid-group action on the resolvents</a>).
+<em>The symmetric group <span class="math inline">\(S_5\)</span> acts on
+Bring’s surface
+(Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">4.11</a>)
+by permuting <span class="math inline">\((x_0,\dots,x_4)\)</span>; this
+is the maximal automorphism group (order <span
+class="math inline">\(120\)</span>) for genus <span
+class="math inline">\(4\)</span>. Three distinguished families of <span
+class="math inline">\(S_3\)</span> subgroups govern the interplay
+between the base coordinates <span class="math inline">\(x_j\)</span>
+and the spectral resolvents <span class="math inline">\(w_k\)</span>
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">3.2</a>).
+We describe each in terms of the braid group, the resolvent coordinates,
+and explicit <span class="math inline">\(\mathrm{SU}(2)\)</span>/<span
+class="math inline">\(\mathrm{SO}(3)\)</span> matrices.</em></p>
+<p><em><strong>Braid group and <span
+class="math inline">\(S_3\)</span>.</strong> The braid group on three
+strands, <span class="math display">\[\label{eq:braid-presentation}
+B_3
+=\bigl\langle\sigma_1,\sigma_2
+\;\big|\;\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\bigr\rangle,\]</span>
+is the fundamental group of the complement of the trefoil knot
+(Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">4.10</a>).
+Imposing the involution relations <span
+class="math inline">\(\sigma_i^2=\mathrm{id}\)</span> yields <span
+class="math display">\[\label{eq:s3-presentation}
+S_3
+=\bigl\langle s_1,s_2
+\;\big|\;s_1^2=s_2^2=(s_1
+s_2)^3=\mathrm{id}\bigr\rangle.\]</span></em></p>
+<p><em><strong><span
+class="math inline">\(\boldsymbol{\mathfrak{su}(2)}\)</span>
+framework.</strong> Write <span
+class="math inline">\(\tau_1,\tau_2,\tau_3\)</span> for the Pauli
+matrices and set <span class="math display">\[\label{eq:su2-basis}
+e_a=-\tfrac{i}{2}\,\tau_a,\qquad a=1,2,3,\]</span> so that the Lie
+bracket is <span class="math display">\[\label{eq:su2-commutator}
+[e_a,\,e_b]=\epsilon_{abc}\,e_c.\]</span> Every finite subgroup of <span
+class="math inline">\(\mathrm{SO}(3)\)</span> lifts, via the double
+cover <span
+class="math inline">\(\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)\)</span>,
+to a binary subgroup of <span
+class="math inline">\(\mathrm{SU}(2)\)</span>. For <span
+class="math inline">\(S_3\cong D_3\)</span> the lift is the binary
+dihedral group <span
+class="math inline">\(\mathrm{Dic}_3\subset\mathrm{SU}(2)\)</span> of
+order <span class="math inline">\(12\)</span>, generated by <span
+class="math display">\[\begin{aligned}
+\alpha &amp;= \exp\!\bigl(\tfrac{2\pi}{3}\,e_3\bigr)
+= \begin{pmatrix}e^{i\pi/3}&amp;0\\[2pt]0&amp;e^{-i\pi/3}\end{pmatrix},
+\label{eq:su2-3cycle}\\[4pt]
+\beta &amp;= \exp(\pi\,e_1)
+= \begin{pmatrix}0&amp;i\\[2pt]i&amp;0\end{pmatrix},
+\label{eq:su2-2cycle}
+\end{aligned}\]</span> with <span
+class="math inline">\(\alpha^3=\beta^2=-I\)</span>, dihedral relation
+<span class="math inline">\(\beta\alpha\beta^{-1}=\alpha^{-1}\)</span>,
+and commutator <span
+class="math inline">\([\beta,\alpha]=\alpha^{-2}\)</span>. Under the
+adjoint map to <span class="math inline">\(\mathrm{SO}(3)\)</span> the
+images are <span class="math display">\[\label{eq:so3-generators}
+R_\alpha
+=\begin{pmatrix}
+-\frac{1}{2}&amp;-\frac{\sqrt{3}}{2}&amp;0\\[3pt]
+\frac{\sqrt{3}}{2}&amp;-\frac{1}{2}&amp;0\\[3pt]
+0&amp;0&amp;1
+\end{pmatrix},\qquad
+R_\beta
+=\begin{pmatrix}
+1&amp;0&amp;0\\[2pt]
+0&amp;-1&amp;0\\[2pt]
+0&amp;0&amp;-1
+\end{pmatrix}:\]</span> <span class="math inline">\(R_\alpha\)</span> is
+a rotation by <span class="math inline">\(2\pi/3\)</span> about the
+<span class="math inline">\(e_3\)</span>-axis (3-cycle) and <span
+class="math inline">\(R_\beta\)</span> is a <span
+class="math inline">\(\pi\)</span>-rotation about <span
+class="math inline">\(e_1\)</span> (2-cycle).</em></p>
+<p><em><strong>(i) Spacetime action (<span
+class="math inline">\(\mathbb{CP}^1\)</span> base).</strong> Fix the
+chiral-like coordinates <span class="math inline">\(x_2,x_3,x_4\)</span>
+as internal fiber degrees of freedom. The constraint <span
+class="math inline">\(w_0=0\)</span> <a href="#eq:resolvent-linear" data-reference-type="eqref" data-reference="eq:resolvent-linear">[eq:resolvent-linear]</a>
+forces <span class="math inline">\(x_0+x_1=C\)</span> (constant), so the
+spacetime degrees of freedom collapse projectively to the ratio <span
+class="math inline">\(z=x_0/x_1\in\mathbb{CP}^1\)</span>. The
+transposition <span class="math inline">\(x_0\leftrightarrow
+x_1\)</span> acts as the Möbius involution <span
+class="math inline">\(z\mapsto 1/z\)</span>, which is a <span
+class="math inline">\(\pi\)</span>-rotation on <span
+class="math inline">\(\mathbb{CP}^1\)</span> and embeds into <span
+class="math inline">\(\mathrm{SU}(2)\)</span> as <span
+class="math inline">\(\beta=\exp(\pi\,e_1)\)</span> <a href="#eq:su2-2cycle" data-reference-type="eqref" data-reference="eq:su2-2cycle">[eq:su2-2cycle]</a>.
+In the resolvent basis this acts as <span
+class="math display">\[\label{eq:spacetime-shift}
+w_k\;\longmapsto\;
+w_k+\tfrac{1}{\sqrt{5}}\,(1-\zeta^k)(x_1-x_0),
+\qquad k=1,\dots,4,\]</span> an affine shift that fixes the chiral modes
+and translates the <span class="math inline">\(\mathbb{CP}^1\)</span>
+fibre.</em></p>
+<p><em><strong>(ii) Spectral <span class="math inline">\(S_3\)</span>
+(trefoil action).</strong> The frequency-coupled pairs <span
+class="math inline">\((w_1,w_4)\)</span> and <span
+class="math inline">\((w_2,w_3)\)</span> are permuted by two involutions
+on <span class="math inline">\(\mathbf{w}=(w_1,w_2,w_3,w_4)\)</span>:
+<span class="math display">\[\begin{aligned}
+\sigma_1(\mathbf{w}) &amp;= (w_2,w_1,w_4,w_3)
+&amp;&amp;\text{(twist),}
+\label{eq:braid-twist}\\[4pt]
+\sigma_2(\mathbf{w}) &amp;= (w_4,w_3,w_2,w_1)
+&amp;&amp;\text{(flip).}
+\label{eq:braid-flip}
+\end{aligned}\]</span> As <span class="math inline">\(4\times 4\)</span>
+permutation matrices these are <span
+class="math display">\[\label{eq:perm-matrices}
+\sigma_1=\begin{pmatrix}
+0&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;1\\0&amp;0&amp;1&amp;0
+\end{pmatrix},\quad
+\sigma_2=\begin{pmatrix}
+0&amp;0&amp;0&amp;1\\0&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;0
+\end{pmatrix}.\]</span> On the 4-tuple these involutions generate the
+Klein four-group <span
+class="math inline">\(V_4=\{\mathrm{id},\sigma_1,\sigma_2,\sigma_1\sigma_2\}\)</span>,
+with <span
+class="math inline">\(\sigma_1\sigma_2\colon\mathbf{w}\mapsto(w_3,w_4,w_1,w_2)\)</span>.
+The full <span class="math inline">\(S_3\)</span> structure emerges on
+the projective ratios <span
+class="math display">\[\eta_1=\frac{w_1}{w_2},\qquad\eta_2=\frac{w_3}{w_4}:\]</span>
+<span class="math inline">\(\sigma_1\)</span> inverts both ratios <span
+class="math inline">\((\eta_1\mapsto\eta_1^{-1},\;
+\eta_2\mapsto\eta_2^{-1})\)</span>, while <span
+class="math inline">\(\sigma_2\)</span> exchanges them <span
+class="math inline">\((\eta_1\mapsto\eta_2^{-1},\;\eta_2\mapsto\eta_1^{-1})\)</span>.
+The <span class="math inline">\(2\)</span>-cycle (reflection) swaps the
+pairs <span
+class="math inline">\((w_1,w_4)\leftrightarrow(w_2,w_3)\)</span>; the
+<span class="math inline">\(3\)</span>-cycle (rotation) sends <span
+class="math inline">\((\eta_1,\eta_2)\mapsto(\eta_1,\,\zeta^j\eta_2)\)</span>
+for <span class="math inline">\(j\in\{1,2,3\}\)</span>, permuting the
+three complex branches of the cubic
+constraint <a href="#eq:resolvent-cubic" data-reference-type="eqref" data-reference="eq:resolvent-cubic">[eq:resolvent-cubic]</a>.
+The <span class="math inline">\(\mathrm{SU}(2)\)</span> representation
+assigns the <span class="math inline">\(3\)</span>-cycle to <span
+class="math inline">\(\alpha\)</span> <a href="#eq:su2-3cycle" data-reference-type="eqref" data-reference="eq:su2-3cycle">[eq:su2-3cycle]</a>
+and the reflection to <span
+class="math inline">\(\beta\)</span> <a href="#eq:su2-2cycle" data-reference-type="eqref" data-reference="eq:su2-2cycle">[eq:su2-2cycle]</a>;
+the <span class="math inline">\(\mathrm{SO}(3)\)</span>
+images <a href="#eq:so3-generators" data-reference-type="eqref" data-reference="eq:so3-generators">[eq:so3-generators]</a>
+act as the holonomy on the spectral energy distribution, with <span
+class="math inline">\(R_\alpha\)</span> rotating the time-like resolvent
+pair <span class="math inline">\((\omega_2,\omega_3)\)</span> and <span
+class="math inline">\(R_\beta\)</span> reflecting the space-like
+axis <span class="math inline">\(\omega_1\)</span>.</em></p>
+<p><em><strong>(iii) Coordinate <span
+class="math inline">\(S_3\)</span>.</strong> Fixing any two coordinates
+(say <span class="math inline">\(x_0,x_1\)</span>) as a spacetime base
+and permuting the remaining three <span
+class="math inline">\((x_2,x_3,x_4)\)</span> gives a stabiliser <span
+class="math inline">\(\mathrm{Stab}(\{x_0,x_1\})\cong S_3\subset
+S_5\)</span>; there are <span
+class="math inline">\(\binom{5}{2}=10\)</span> such subgroups. In the
+resolvent basis a permutation <span class="math inline">\(\sigma\in
+S_3\)</span> of <span class="math inline">\((x_2,x_3,x_4)\)</span> acts
+as <span class="math display">\[\label{eq:coord-s3-shift}
+w_k\;\longmapsto\;
+w_k+\tfrac{1}{\sqrt{5}}\sum_{j=2}^{4}
+\bigl(\zeta^{k\,\sigma(j)}-\zeta^{kj}\bigr)\,x_j,\]</span> so the <span
+class="math inline">\(w_k\)</span> transform as vector fields over the
+<span class="math inline">\((x_0,x_1)\)</span> plane and the <span
+class="math inline">\(S_3\)</span> permutes how these fields couple to
+the base. The same <span class="math inline">\(\mathrm{SO}(3)\)</span>
+representation <a href="#eq:so3-generators" data-reference-type="eqref" data-reference="eq:so3-generators">[eq:so3-generators]</a>
+realises this action, now playing the rôle of the holonomy group on the
+internal fibre.</em></p>
+<p><em><strong>Geometric <span
+class="math inline">\(S_3\)</span>.</strong> When Bring’s curve is
+viewed as a branched cover <span
+class="math inline">\(\mathcal{S}\to\mathbb{P}^1\)</span>, a third
+family of <span class="math inline">\(S_3\)</span> subgroups arises: it
+permutes the three critical values of the covering map. These three
+families — spectral, coordinate, and geometric — correspond to the three
+copies of <span class="math inline">\(S_3\)</span> inside <span
+class="math inline">\(S_5\)</span> identified in
+Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">4.10</a>.</em></p>
+</div>
+
+<div id="rem:holonomy-trefoil" class="remark">
+
+<p><strong>Remark 3.4</strong> (<a class="defn-link" href="#rem:holonomy-trefoil">Holonomy generators and the trefoil</a>).
+<em>The branched cover <span
+class="math inline">\(\mathcal{S}\to\mathbb{CP}^1\)</span> has singular
+fibres at the critical values of the covering map. Choose two loops
+<span class="math inline">\(\gamma_1,\gamma_2\)</span> in <span
+class="math inline">\(\mathbb{CP}^1\)</span> encircling distinct branch
+points. Parallel-transporting the chiral modes <span
+class="math inline">\(w_k\)</span> around these loops yields holonomy
+operators <span class="math display">\[\label{eq:holonomy-generators}
+H_1=\sigma_1,\qquad H_2=\sigma_2,\]</span> where <span
+class="math inline">\(\sigma_1,\sigma_2\)</span> are the braid
+generators <a href="#eq:braid-twist" data-reference-type="eqref" data-reference="eq:braid-twist">[eq:braid-twist]</a>, <a href="#eq:braid-flip" data-reference-type="eqref" data-reference="eq:braid-flip">[eq:braid-flip]</a>.
+In the <span class="math inline">\(\mathrm{SU}(2)\)</span> embedding of
+Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">3.3</a>
+these become <span class="math display">\[H_1=\exp(T\theta\,e_1),\qquad
+H_2=\exp(T\theta\,e_2),\]</span> with <span
+class="math inline">\(T\)</span> the geometric torsion scalar and <span
+class="math inline">\(\theta\)</span> a branch angle, so the holonomy
+group is a representation of <span class="math inline">\(B_3\)</span>
+inside <span class="math inline">\(\mathrm{SU}(2)\)</span>.</em></p>
+<p><em>The fundamental group of the trefoil-knot complement admits the
+presentation <span class="math inline">\(\langle x,y\mid
+xyx=yxy\rangle\)</span>, which is exactly <span
+class="math inline">\(B_3\)</span> <a href="#eq:braid-presentation" data-reference-type="eqref" data-reference="eq:braid-presentation">[eq:braid-presentation]</a>.
+The assignment <span class="math inline">\(x\mapsto H_1\)</span>, <span
+class="math inline">\(y\mapsto H_2\)</span> is therefore an isomorphism
+<span class="math inline">\(\pi_1(S^3\setminus
+K_{3,2})\;\xrightarrow{\;\sim\;}\;
+\langle H_1,H_2\rangle\)</span>: the monodromy group of the Bring
+surface <em>is</em> the trefoil-knot group.</em></p>
+<p><em>The composite holonomy <span class="math inline">\(H_1
+H_2\colon\mathbf{w}\mapsto(w_3,w_4,w_1,w_2)\)</span> is the <span
+class="math inline">\(3\)</span>-cycle <span
+class="math inline">\(\alpha\)</span> <a href="#eq:su2-3cycle" data-reference-type="eqref" data-reference="eq:su2-3cycle">[eq:su2-3cycle]</a>
+and satisfies <span class="math inline">\((H_1
+H_2)^3=\mathrm{id}\)</span> on <span
+class="math inline">\(\mathrm{SO}(3)\)</span>
+(cf. Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">4.10</a>).
+The full holonomy group, modulo the centre of <span
+class="math inline">\(B_3\)</span>, descends to the spectral <span
+class="math inline">\(S_3\)</span> (ii) above and acts as a gauge
+transformation <span class="math inline">\(\Psi_L\mapsto
+H_i\,\Psi_L\)</span> on the chiral doublet <span
+class="math inline">\(\Psi_L=(w_1,w_2)^T\)</span> traversing the <span
+class="math inline">\(\mathbb{CP}^1\)</span> base.</em></p>
+</div>
+
+<div id="prop:chiral-elliptic" class="proposition">
+
+<p><strong>Proposition 3.5</strong> (<a class="defn-link" href="#prop:chiral-elliptic">Chiral fibre as an elliptic curve</a>).
+<em>Let <span class="math inline">\(z=x_0/x_1\in\mathbb{CP}^1\)</span>
+be the projective spacetime ratio
+(Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">3.3</a><span class="upright">(i)</span>).
+Substituting the constraint <span
+class="math inline">\(x_0+x_1=C\)</span> and eliminating <span
+class="math inline">\(x_0,x_1\)</span> in favour of <span
+class="math inline">\(z\)</span>, the quadratic and cubic power-sum
+conditions <a href="#eq:resolvent-quadric" data-reference-type="eqref" data-reference="eq:resolvent-quadric">[eq:resolvent-quadric]</a>–<a href="#eq:resolvent-cubic" data-reference-type="eqref" data-reference="eq:resolvent-cubic">[eq:resolvent-cubic]</a>
+on the chiral variable <span
+class="math inline">\(X=(x_2,x_3,x_4)\)</span> reduce at each
+fixed <span class="math inline">\(z\)</span> to the cubic <span
+class="math display">\[\label{eq:chiral-elliptic}
+X^3+(z+1)\,X^2+(z^2+z+1)\,X+(z^3+z^2+z+1)=0.\]</span> For generic <span
+class="math inline">\(z\)</span> this defines an elliptic curve <span
+class="math inline">\(E_z\)</span> in the chiral fibre; its <span
+class="math inline">\(j\)</span>-invariant varies as a rational function
+of <span class="math inline">\(z\)</span>. The monodromy of <span
+class="math inline">\(E_z\)</span> around the singular fibres (where the
+discriminant
+of <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
+vanishes) recovers the holonomy generators <span
+class="math inline">\(H_1,H_2\)</span> <a href="#eq:holonomy-generators" data-reference-type="eqref" data-reference="eq:holonomy-generators">[eq:holonomy-generators]</a>
+of
+Remark <a href="#rem:holonomy-trefoil" data-reference-type="ref" data-reference="rem:holonomy-trefoil">3.4</a>.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> Write <span class="math inline">\(x_0=z\,x_1\)</span>
+and use <span class="math inline">\(x_0+x_1=C\)</span> to eliminate both
+spacetime variables. The power-sum conditions <span
+class="math inline">\(\sum x_j^k=0\)</span> for <span
+class="math inline">\(k=2,3\)</span> then become polynomial in <span
+class="math inline">\(z\)</span> and <span
+class="math inline">\(X=x_2+x_3+x_4\)</span>, <span
+class="math inline">\(X_2=\sum_{i&lt;j}x_ix_j\)</span>, etc. Reducing by
+the Newton identities yields the
+cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>;
+its discriminant is a polynomial in <span
+class="math inline">\(z\)</span> whose roots give the singular
+fibres. ◻</p>
+</div>
+
+<div id="rem:t-duality-elliptic" class="remark">
+
+<p><strong>Remark 3.6</strong> (Self-duality of the chiral elliptic
+curve). <em>The
+cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
+is symmetric under the exchange <span
+class="math inline">\(X\leftrightarrow z\)</span>: writing <span
+class="math display">\[F(X,z)\;=\;X^3+(z+1)\,X^2+(z^2+z+1)\,X+(z^3+z^2+z+1),\]</span>
+one verifies <span class="math inline">\(F(X,z)=F(z,X)\)</span> term by
+term. This involution <span
+class="math inline">\(\iota\colon(X,z)\mapsto(z,X)\)</span> is a
+<em>T-duality</em>: it identifies every chiral fibre <span
+class="math inline">\(E_z\)</span> with its dual spacetime
+wrapping <span class="math inline">\(E_X\)</span>, so the internal and
+external degrees of freedom of the Bring surface are algebraically
+indistinguishable.</em></p>
+<p><em><strong>Quotient space.</strong> Passing to the symmetric
+coordinates <span class="math inline">\(u=X+z\)</span>, <span
+class="math inline">\(v=Xz\)</span>, the curve becomes <span
+class="math display">\[\label{eq:symmetric-quotient}
+v \;=\; \frac{(u+1)(u^2+1)}{2u+1}\,,\]</span> which is rational in <span
+class="math inline">\(u\)</span>. Hence the quotient <span
+class="math inline">\(E_z/\langle\iota\rangle\cong\mathbb{CP}^1\)</span>:
+folding the torus along its <span class="math inline">\(X=z\)</span>
+diagonal collapses it to a genus-<span class="math inline">\(0\)</span>
+Riemann sphere.</em></p>
+<p><em><strong>Weierstrass normal form.</strong> Depressing the cubic
+via <span class="math inline">\(X=t-\tfrac{z+1}{3}\)</span> eliminates
+the quadratic term: <span
+class="math display">\[\label{eq:weierstrass-depressed}
+t^{3}+p(z)\,t+q(z)=0,\qquad
+p=\frac{2z^2+z+2}{3},\quad
+q=\frac{5(4z^3+3z^2+3z+4)}{27}.\]</span> The discriminant <span
+class="math inline">\(\Delta(z)=-4\,p(z)^3-27\,q(z)^2\)</span> is a
+polynomial in <span class="math inline">\(z\)</span> whose roots
+determine the singular fibres of the elliptic fibration <span
+class="math inline">\(\mathcal{S}\to\mathbb{CP}^1\)</span>. At those
+roots the <span class="math inline">\(j\)</span>-invariant <span
+class="math inline">\(j(E_z)=-1728\cdot 64\,p(z)^3/\Delta(z)\)</span>
+degenerates.</em></p>
+</div>
+
+<div id="rem:chiral-bundles" class="remark">
+
+<p><strong>Remark 3.7</strong> (Chiral space as spectral curve and
+spinor bundle). <em>The spacetime–chiral decomposition of Bring’s
+surface maps naturally onto three classical bundle structures over the
+<span class="math inline">\(\mathbb{CP}^1\)</span> base <span
+class="math inline">\(z=x_0/x_1\)</span>.</em></p>
+<p><em><strong>Cotangent bundle.</strong> The three-sheeted
+cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
+realises the chiral variables <span
+class="math inline">\(X=(x_2,x_3,x_4)\)</span> as a <em>spectral
+curve</em> <span class="math inline">\(\Sigma\subset
+T^{*}\mathbb{CP}^1\)</span>: the base coordinate <span
+class="math inline">\(z\)</span> parametrises spacetime position, and
+the three roots <span class="math inline">\(X_1,X_2,X_3\)</span> of
+Proposition <a href="#prop:chiral-elliptic" data-reference-type="ref" data-reference="prop:chiral-elliptic">3.5</a>
+are eigenvalues of a Higgs-like field <span
+class="math inline">\(\Phi\)</span> on the base. The six singular fibres
+(where the discriminant <span class="math inline">\(\Delta(z)\)</span>
+vanishes) are the loci at which eigenvalues coincide and the
+differential <span class="math inline">\(dX\)</span> degenerates in the
+cotangent fibre.</em></p>
+<p><em><strong>Spinor bundle.</strong> The spectral modes <span
+class="math inline">\(w_1,\dots,w_4\)</span>
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">3.2</a>)
+live in a rank-<span class="math inline">\(2\)</span> complex vector
+bundle over <span class="math inline">\(\mathbb{CP}^1\)</span>. The
+chiral doublet <span class="math inline">\(\Psi_L=(w_1,w_2)^T\)</span>
+and its conjugate <span
+class="math inline">\(\Psi_R=(w_4,w_3)^T\)</span> transform under the
+<span class="math inline">\(\mathrm{SU}(2)\)</span> holonomy generators
+<span
+class="math inline">\(H_1,H_2\)</span> <a href="#eq:holonomy-generators" data-reference-type="eqref" data-reference="eq:holonomy-generators">[eq:holonomy-generators]</a>
+of
+Remark <a href="#rem:holonomy-trefoil" data-reference-type="ref" data-reference="rem:holonomy-trefoil">3.4</a>,
+making <span class="math inline">\(\Psi_L\)</span> a section of the
+<em>spinor bundle</em> <span
+class="math inline">\(\mathcal{S}^{+}\to\mathbb{CP}^1\)</span>. The
+<span class="math inline">\(B_3\)</span> monodromy equips this bundle
+with a flat connection whose holonomy is the trefoil-knot
+group.</em></p>
+<p><em><strong>Adjoint bundle.</strong> The <span
+class="math inline">\(\mathrm{SO}(3)\)</span> images <span
+class="math inline">\(R_\alpha,R_\beta\)</span> <a href="#eq:so3-generators" data-reference-type="eqref" data-reference="eq:so3-generators">[eq:so3-generators]</a>
+act on the triple <span
+class="math inline">\((\omega_1,\omega_2,\omega_3)\)</span>, which
+therefore spans a section of the adjoint bundle <span
+class="math inline">\(\mathrm{ad}\,P\to\mathbb{CP}^1\)</span> associated
+to the principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
+class="math inline">\(P\)</span>. The T-duality involution <span
+class="math inline">\(\iota\colon X\leftrightarrow z\)</span>
+(Remark <a href="#rem:t-duality-elliptic" data-reference-type="ref" data-reference="rem:t-duality-elliptic">3.6</a>)
+interchanges the fibre and base of the adjoint bundle, exchanging
+spectral eigenvalues with spacetime coordinates.</em></p>
+</div>
+
+<div id="rem:brings-smoothness" class="remark">
+
+<p><strong>Remark 3.8</strong> (Smoothness of the Bring surface and
+resolution of spacetime defects). <em>The Bring surface <span
+class="math inline">\(\mathcal{S}\)</span>
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.1</a>)
+is a <em>smooth</em> algebraic variety: the three power-sum constraints
+are transverse in <span class="math inline">\(\mathbb{P}^4\)</span>, so
+their intersection carries no singular points. The six topological
+defects identified in
+Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">3.7</a>—where
+the discriminant <span class="math inline">\(\Delta(z)\)</span> vanishes
+and two chiral sheets <span class="math inline">\(X_i,X_j\)</span>
+collide—are singularities of the <em>projection</em> <span
+class="math inline">\(\pi\colon\mathcal{S}\to\mathbb{CP}^1\)</span>, not
+of the surface itself.</em></p>
+<p><em><strong>Resolution in the <span
+class="math inline">\(x_j\)</span> coordinates.</strong> At a branch
+point <span class="math inline">\(z=z_c\)</span> where, say, <span
+class="math inline">\(x_2=x_3\)</span>, define the local chiral
+coordinate <span class="math inline">\(\delta=x_2-x_3\)</span>. In a
+neighbourhood of the defect the spacetime ratio satisfies <span
+class="math display">\[z-z_c\;\sim\;\delta^2,\]</span> so while the
+projection map develops a ramification cusp, <span
+class="math inline">\(\delta\)</span> passes smoothly through zero,
+carrying the geometry from one sheet to the other. The exceptional
+divisor of the blow-up at each branch point is therefore already
+embedded in the chiral coordinates <span
+class="math inline">\(x_2,x_3,x_4\)</span>: no external resolution is
+required.</em></p>
+<p><em><strong>Resolution in the <span
+class="math inline">\(w_k\)</span> coordinates.</strong> The DFT mixes
+all five <span class="math inline">\(x_j\)</span> into every resolvent
+<span class="math inline">\(w_k\)</span>
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">3.2</a>),
+so no single <span class="math inline">\(w_k\)</span> vanishes at a
+branch point. The Briggs–Klein chart
+(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">3.9</a>)
+remains a smooth coordinate system throughout <span
+class="math inline">\(0&lt;r&lt;\infty\)</span>: the radial
+parameter <span class="math inline">\(r=\lvert w_1\rvert^2\)</span> is a
+regular function on <span class="math inline">\(\mathcal{S}\)</span>,
+and the <span class="math inline">\(C_5\)</span> orbits <span
+class="math inline">\(w_k\mapsto\zeta^k w_k\)</span> foliate the surface
+without fixed points. The infinite torsion and eigenvalue crossings
+visible in the base <span class="math inline">\(\mathbb{CP}^1\)</span>
+are artefacts of projecting away the internal degrees of freedom that
+the <span class="math inline">\(w_k\)</span> retain.</em></p>
+</div>
+
+<div id="def:briggs-klein-chart" class="definition">
+
+<p><strong>Definition 3.9</strong> (Briggs–Klein affine chart). <em>Let
+<span class="math inline">\(r=\lvert w_1\rvert^2\)</span> denote the
+squared modulus of the first resolvent coordinate on Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.1</a>).
+The <em>Briggs–Klein affine chart</em> is the coordinate system <span
+class="math inline">\((w_1,w_2)\)</span> restricted to the open set
+<span class="math inline">\(0&lt;r&lt;\infty\)</span>, equipped with the
+Hermitian metric inherited from the Fubini–Study metric on <span
+class="math inline">\(\mathbb{P}^4\)</span>. In this chart the <span
+class="math inline">\(C_5\)</span> action is the phase rotation <span
+class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>, and the radial
+coordinate <span class="math inline">\(r\)</span> is <span
+class="math inline">\(C_5\)</span>-invariant.</em></p>
+</div>
+
+<div id="rem:radial-projection" class="remark">
+
+<p><strong>Remark 3.10</strong> (Radial projection of Bring’s surface).
+<em>Restricting a Briggs–Klein affine chart
+(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">3.9</a>)
+to the interval <span class="math inline">\(r\in(0,1)\)</span> and
+projecting Bring’s surface onto this radial coordinate yields a
+fibration over the base manifold <span class="math inline">\(M\)</span>
+with trivial bundle <span class="math inline">\(E=E_0\)</span>. At each
+<span class="math inline">\(r\)</span>, the coordinate <span
+class="math inline">\(w_1\)</span> is restricted to a circle of radius
+<span class="math inline">\(\sqrt{r}\)</span> in the complex plane <span
+class="math inline">\(\mathbb{C}_{w_1}\)</span>. This circle is the
+orbit of the <span class="math inline">\(C_5\)</span> symmetry: the
+rotation <span class="math inline">\(w_1\mapsto\zeta\,w_1\)</span> moves
+the point along this circle without changing <span
+class="math inline">\(r\)</span>.</em></p>
+<div class="center">
+
+</div>
+
+<p><em>The brown tessellation filling the brane illustrates the trivial
+bundle <span class="math inline">\(E=E_0\)</span>: every cell is flat,
+reflecting the absence of torsion on the total space.</em></p>
+</div>
+
+<div id="rem:four-colourability" class="remark">
+
+<p><strong>Remark 3.11</strong> (Four-colourability of Bring’s surface).
+<em>By the Heawood bound, an orientable surface of genus <span
+class="math inline">\(g\)</span> has chromatic number at most <span
+class="math inline">\(\lfloor(7+\sqrt{1+48g})/2\rfloor\)</span>. For
+genus <span class="math inline">\(4\)</span> this bound equals <span
+class="math inline">\(10\)</span>. Bring’s surface, however, admits a
+proper colouring with only four colours — considerably fewer than the
+maximum permitted by its genus. This low chromatic number reflects the
+high degree of symmetry: the <span class="math inline">\(S_5\)</span>
+automorphism group constrains the combinatorics of any cell
+decomposition, forcing a more efficient colouring than a generic
+genus-<span class="math inline">\(4\)</span> surface would
+require.</em></p>
+</div>
+
+<div id="rem:four-colour-theorem" class="remark">
+
+<p><strong>Remark 3.12</strong> (The four-colour theorem and Bring’s
+surface). <em>The classical four-colour theorem asserts that every
+planar graph (equivalently, every graph embeddable in <span
+class="math inline">\(S^2\)</span>) is four-colourable. For higher-genus
+surfaces the chromatic number can be much larger: the Heawood conjecture
+(proved by Ringel–Youngs for <span class="math inline">\(g\geq
+1\)</span>) shows that the maximum chromatic number grows as <span
+class="math inline">\(O(\sqrt{g})\)</span>. That Bring’s surface attains
+the planar bound of four — despite living at genus <span
+class="math inline">\(4\)</span> — is a reflection of the rigidity
+imposed by its <span class="math inline">\(S_5\)</span> symmetry. In the
+language of <span id="chap:descartes"></span>the Descartes universe, the trivial bundle <span
+class="math inline">\(E=E_0\)</span>
+(Remark <a href="#rem:radial-projection" data-reference-type="ref" data-reference="rem:radial-projection">3.10</a>)
+carries no torsion, and the resulting flatness of the tessellation
+forces the same chromatic economy as the sphere.</em></p>
+</div>
+
+<div id="rem:cyclotomic-reduction" class="remark">
+
+<p><strong>Remark 3.13</strong> (Cyclotomic reduction and <span
+class="math inline">\(C_{\mathfrak{p}}\)</span> preservation). <em>Let
+<span class="math inline">\(\mathfrak{p}\)</span> be a prime (not to be
+confused with a point <span class="math inline">\(p\in M\)</span>).
+Working over the cyclotomic ring <span
+class="math display">\[\label{eq:cyclotomic-ring}
+\mathbb{Z}_{\zeta_{\mathfrak{p}}}
+\;:=\;\mathbb{Z}[i,\,\zeta_{\mathfrak{p}}],\]</span> where <span
+class="math inline">\(\zeta_{\mathfrak{p}}=e^{2\pi
+i/\mathfrak{p}}\)</span> is a primitive <span
+class="math inline">\(\mathfrak{p}\)</span>-th root of unity, consider
+the sublocus <span class="math display">\[S_{\mathfrak{p}}
+\;:=\;
+\Sigma_4\;\cap\;\mathbb{Z}_{\zeta_{\mathfrak{p}}}^{\,5},\]</span> that
+is, the set of points on Bring’s surface whose resolvent coordinates lie
+in <span
+class="math inline">\(\mathbb{Z}_{\zeta_{\mathfrak{p}}}\)</span>. The
+cyclic subgroup <span class="math inline">\(C_{\mathfrak{p}}\subset
+S_5\)</span> generated by the <span
+class="math inline">\(\mathfrak{p}\)</span>-cycle preserves <span
+class="math inline">\(S_{\mathfrak{p}}\)</span>: for any <span
+class="math inline">\(P\in S_{\mathfrak{p}}\)</span>, the image <span
+class="math inline">\(\sigma^k(P)\)</span> remains in <span
+class="math inline">\(\mathbb{Z}_{\zeta_{\mathfrak{p}}}^{\,5}\)</span>
+because <span class="math inline">\(\sigma\)</span> acts by
+multiplication by <span
+class="math inline">\(\zeta_{\mathfrak{p}}^{-k}\)</span> in the
+resolvent basis
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">3.2</a>),
+and <span
+class="math inline">\(\zeta_{\mathfrak{p}}^{-k}\in\mathbb{Z}_{\zeta_{\mathfrak{p}}}\)</span>.
+This arithmetic compatibility between the cyclic symmetry and the
+cyclotomic ring underlies the descent of the <span
+class="math inline">\(C_5\)</span> action to finite
+characteristic.</em></p>
+</div>
+
+<div id="def:quaternionic-spectral-resolvents" class="definition">
+
+<p><strong>Definition 3.14</strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
+<em>Let <span class="math inline">\(\mathcal{S}\)</span> denote the
+Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">3.1</a>).
+Let <span class="math inline">\(q\in\mathbb{C}\)</span> with <span
+class="math inline">\(0&lt;\lvert q\rvert\le 1\)</span>, and set <span
+class="math inline">\(r=-\ln\lvert q\rvert\)</span> so that <span
+class="math inline">\(\lvert q\rvert=e^{-r}\)</span>. Write <span
+class="math inline">\(\mathbf{i},\mathbf{j},\mathbf{k}\)</span> for the
+standard basis of <span
+class="math inline">\(\operatorname{Im}\mathbb{H}\)</span>. Using the
+Lusztig <span class="math inline">\(q\)</span>-exponential and <span
+class="math inline">\(q\)</span>-logarithm, <span
+class="math display">\[\label{eq:q-exp}
+\exp_q(x)\;=\;\sum_{n=0}^{\infty}\frac{x^n}{[n]_q!},
+\qquad
+\ln_q(1+x)\;=\;\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{[n]_q},\]</span>
+we define the <em>quaternionic spectral resolvents</em> <span
+class="math inline">\(\omega_k\colon\mathcal{S}\to J^\infty E\)</span>
+by <span class="math display">\[\begin{aligned}
+\omega_0 &amp;\;=\;
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}x_j\Bigr)\,
+\ln_q(1+r)
+&amp;&amp;\text{(uncertainty),}
+\label{eq:omega-0}\\[4pt]
+\omega_1 &amp;\;=\;
+\frac{\mathbf{i}}{\ln_q(1+r)}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{j}\,x_j+i\Bigr)
+&amp;&amp;\text{(space-like),}
+\label{eq:omega-1}\\[4pt]
+\omega_2 &amp;\;=\;
+\mathbf{j}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{2j}\,x_j+i\Bigr)\,
+\bigl(\exp_q(r)-1\bigr)
+&amp;&amp;\text{(time-like),}
+\label{eq:omega-2}\\[4pt]
+\omega_3 &amp;\;=\;
+\mathbf{k}\,
+\Bigl(\tfrac{1}{\sqrt{5}}\!\sum_{j=0}^{4}\zeta^{3j}\,x_j+i\Bigr)\,
+\bigl(\exp_q(r)-1\bigr)
+&amp;&amp;\text{(time-like).}
+\label{eq:omega-3}
+\end{aligned}\]</span> By the first power
+sum <a href="#eq:resolvent-linear" data-reference-type="eqref" data-reference="eq:resolvent-linear">[eq:resolvent-linear]</a>,
+<span class="math inline">\(\omega_0=0\)</span> in the balanced state;
+the remaining coordinates embed <span
+class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
+<span class="math inline">\(J^\infty E\)</span>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+</div>
+
+<div id="rem:omega-constraints" class="remark">
+
+<p><strong>Remark 3.15</strong> (Algebraic constraints in the <span
+class="math inline">\(\omega_k\)</span> basis). <em>In the spectral
+resolvent basis
+(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.14</a>)
+the Bring’s surface equations take the following form:</em></p>
+<ul>
+<li><p><em><em>Barycentric:</em> <span
+class="math inline">\(\omega_0=0\)</span>.</em></p></li>
+<li><p><em><em>Quadric (<span class="math inline">\(\mathbb{H}\)</span>
+condition):</em> <span
+class="math inline">\(\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_3=0\)</span>.
+This preserves the self-duality <span
+class="math inline">\(F_A=*F_A\)</span> and enforces a Minkowski-like
+balance between the space-like and time-like modes.</em></p></li>
+<li><p><em><em>Cubic (phase locking):</em> a quintic resonance condition
+that locks the expansion of <span class="math inline">\(\ln_q\)</span>
+to <span class="math inline">\(\exp_q\)</span>, preserving the <span
+class="math inline">\(C_5\)</span> symmetry and the <a class="defn-link" href="#def:descartes-condition">Descartes condition</a>
+<span class="math inline">\(\chi=-6\)</span>.</em></p></li>
+</ul>
+</div>
+
+<div id="rem:spectral-dynamics" class="remark">
+
+<p><strong>Remark 3.16</strong> (Spectral dynamics and the <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> action). <em>The growth
+profiles in
+Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">3.14</a>
+separate the space-like and time-like sectors of the Bring’s
+surface:</em></p>
+<ul>
+<li><p><em><em><span class="math inline">\(\omega_1\)</span>
+(space-like):</em> the factor <span
+class="math inline">\(1/\ln_q(1+r)\)</span> diverges as <span
+class="math inline">\(r\to 0\)</span>, so <span
+class="math inline">\(\omega_1\)</span> achieves infinite density at the
+base stratum <span class="math inline">\(M_0\)</span>, characterising
+the primordial vortex. This mode anchors the <span
+class="math inline">\(U(1)\)</span> longitudinal backbone of the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> bundle.</em></p></li>
+<li><p><em><em><span class="math inline">\(\omega_2,\omega_3\)</span>
+(time-like):</em> the factor <span
+class="math inline">\(\exp_q(r)-1\)</span> vanishes at <span
+class="math inline">\(r=0\)</span> and grows rapidly for small <span
+class="math inline">\(r\)</span>, driven by the <span
+class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.18</a>).
+These ladder modes expand at the big bang before tapering as the
+geometric viscosity
+(Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">1.24</a>)
+takes hold.</em></p></li>
+</ul>
+<p><em>To realise the rotation as a function of <span
+class="math inline">\(r\)</span>, embed the radial parameter into <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> via the unit quaternion
+<span class="math display">\[\label{eq:sp1-quaternion}
+\mathbf{q}(r)
+\;=\;
+\cos_q\!\theta(r)+\mathbf{u}\,\sin_q\!\theta(r),
+\qquad
+\theta(r)=\tfrac{\pi}{2}\,e^{-r},\]</span> where <span
+class="math inline">\(\cos_q\)</span> and <span
+class="math inline">\(\sin_q\)</span> are the <span
+class="math inline">\(q\)</span>-deformed trigonometric functions (built
+from <span class="math inline">\(\exp_q\)</span>,
+equation <a href="#eq:q-exp" data-reference-type="eqref" data-reference="eq:q-exp">[eq:q-exp]</a>)
+<span class="math display">\[\cos_q(x)=\frac{\exp_q(ix)+\exp_q(-ix)}{2},
+\qquad
+\sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},\]</span> and <span
+class="math inline">\(\mathbf{u}\in\operatorname{Im}\mathbb{H}\)</span>
+is a fixed unit imaginary quaternion. The conjugation <span
+class="math inline">\(\boldsymbol{\omega}&#39;=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}\)</span>
+gives maximum twist (<span class="math inline">\(\theta=\pi/2\)</span>)
+in the deep-quantum regime <span class="math inline">\(r\to 0\)</span>
+and classical freeze (<span class="math inline">\(\theta\to 0\)</span>)
+as <span class="math inline">\(r\to\infty\)</span>.</em></p>
+</div>
+
+<div id="rem:primordial-vortex" class="remark">
+
+<p><strong>Remark 3.17</strong> (Primordial vortex and the deep-quantum
+limit). <em>As <span class="math inline">\(r\to 0\)</span> the spectral
+resolvents converge toward the <em>primordial vortex</em>:</em></p>
+<ul>
+<li><p><em>The <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a> <span
+class="math inline">\(\hbar_q\to 1\)</span>
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).</em></p></li>
+<li><p><em>The <span class="math inline">\(q\)</span>-torsion leaves
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>)
+collapse to the zero-dimensional stratum <span
+class="math inline">\(M_0=\{\pm 1\}\)</span>.</em></p></li>
+<li><p><em>The <span class="math inline">\(\omega_0\)</span> coordinate,
+although identically zero in the balanced state, formally blows up in
+the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>, representing the concentration of energy at a
+singular spatial point.</em></p></li>
+</ul>
+<p><em>Space-like energy is trapped because the time-like rotation
+becomes infinite in frequency but zero in displacement, effectively
+turning the <span class="math inline">\(\mathrm{SU}(2)\)</span> holonomy
+into a localised topological charge.</em></p>
+</div>
+
+<div id="rem:geometric-drag" class="remark">
+
+<p><strong>Remark 3.18</strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
+<em>The Levi form <span class="math inline">\(L\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
+must be preserved under the <span
+class="math inline">\(\mathrm{Sp}(1)\)</span> conjugation. Since <span
+class="math display">\[\lVert\boldsymbol{\omega}&#39;\rVert^2
+=\lVert\boldsymbol{\omega}\rVert^2
+=\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_2+\omega_3\bar{\omega}_3,\]</span>
+the quadric
+constraint <a href="#eq:resolvent-quadric" data-reference-type="eqref" data-reference="eq:resolvent-quadric">[eq:resolvent-quadric]</a>
+remains satisfied and the self-duality <span
+class="math inline">\(F_A=*F_A\)</span> is preserved. The mass of a
+stable vortex is recovered as the residue of the interaction between the
+growth profiles: <span class="math display">\[\label{eq:mass-residue}
+m \;\propto\;
+\oint_{\gamma}
+\lVert\nabla_A q\rVert\cdot
+\lVert\Omega_1\wedge\Omega_{2,3}\rVert,\]</span> where <span
+class="math inline">\(\Omega_k\)</span> denotes the curvature form
+restricted to the <span class="math inline">\(\omega_k\)</span> sector.
+When <span class="math inline">\(q=1\)</span> (trivial bundle), the
+<span class="math inline">\(\omega_k\)</span> commute and <span
+class="math inline">\(m=0\)</span>; when <span
+class="math inline">\(q\to 0\)</span> (maximal twist), energy is trapped
+in the <span class="math inline">\(\omega_1\)</span> spatial
+filament.</em></p>
+</div>
+
+<h1 id="the-descartes-universe">The Descartes Universe</h1>
 <div id="def:descartes-condition" class="definition">
 
-<p><strong>Definition 3.1</strong> (<a class="defn-link" href="#def:descartes-condition">Descartes condition</a>). <em>A <span
+<p><strong>Definition 4.1</strong> (<a class="defn-link" href="#def:descartes-condition">Descartes condition</a>). <em>A <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 <span class="math inline">\((M, G, E)\)</span>
 (Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>)
@@ -1371,7 +2154,7 @@ observable universe satisfying the Descartes condition is called a
 
 <div id="rem:descartes-calabi-yau" class="remark">
 
-<p><strong>Remark 3.2</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on Calabi–Yau
+<p><strong>Remark 4.2</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on Calabi–Yau
 manifolds). <em>Let <span class="math inline">\((M, G, E)\)</span> be a
 Calabi–Yau quantum observable universe
 (Example <a href="#ex:calabi-yau" data-reference-type="ref" data-reference="ex:calabi-yau">1.6</a>).
@@ -1387,7 +2170,7 @@ characteristic can realise the Descartes universe.</em></p>
 
 <div id="rem:descartes-ale" class="remark">
 
-<p><strong>Remark 3.3</strong> (<a class="defn-link" href="#rem:descartes-ale">The Descartes condition on ALE spaces</a>).
+<p><strong>Remark 4.3</strong> (<a class="defn-link" href="#rem:descartes-ale">The Descartes condition on ALE spaces</a>).
 <em>For an ALE quantum observable universe
 (Example <a href="#ex:ale" data-reference-type="ref" data-reference="ex:ale">1.7</a>),
 the Descartes condition <span class="math inline">\(\chi(E) =
@@ -1403,7 +2186,7 @@ class="math inline">\(\Gamma\)</span>.</em></p>
 
 <div id="rem:descartes-affine" class="remark">
 
-<p><strong>Remark 3.4</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on affine
+<p><strong>Remark 4.4</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on affine
 space). <em>For the affine quantum observable universe <span
 class="math inline">\(M = \mathbb{C}^n\)</span>
 (Example <a href="#ex:affine" data-reference-type="ref" data-reference="ex:affine">1.8</a>),
@@ -1427,7 +2210,7 @@ forces a non-trivial distribution of these modes across the CR manifold
 
 <div id="rem:descent-one-dim" class="remark">
 
-<p><strong>Remark 3.5</strong> (<a class="defn-link" href="#rem:descent-one-dim">Descent to one complex dimension</a>).
+<p><strong>Remark 4.5</strong> (<a class="defn-link" href="#rem:descent-one-dim">Descent to one complex dimension</a>).
 <em>By the descent theorem
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>),
 a two-complex-dimensional Descartes universe <span
@@ -1445,7 +2228,7 @@ varieties.</em></p>
 
 <div id="prop:genus-maximal-descent" class="proposition">
 
-<p><strong>Proposition 3.6</strong> (<a class="defn-link" href="#prop:genus-maximal-descent">Genus of the maximal descent</a>).
+<p><strong>Proposition 4.6</strong> (<a class="defn-link" href="#prop:genus-maximal-descent">Genus of the maximal descent</a>).
 <em>Let <span class="math inline">\((M, G, E)\)</span> be a Descartes
 universe that descends to a compact one-complex-dimensional variety
 <span class="math inline">\(M_0\)</span>. Then <span
@@ -1469,7 +2252,7 @@ class="math inline">\(g = 4\)</span>. ◻</p>
 
 <div id="rem:descartes-leptons" class="remark">
 
-<p><strong>Remark 3.7</strong> (Electrons, muons and the Reeb
+<p><strong>Remark 4.7</strong> (Electrons, muons and the Reeb
 decomposition). <em>The <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>)
 applied to a Descartes universe yields two classes of fermionic
@@ -1488,12 +2271,12 @@ vertical harmonic forms. This generation-dependent structure leads to
 testable predictions, including a <span
 class="math inline">\(q\)</span>-correction to the proton charge radius
 that differs between muonic and electronic hydrogen
-(Section <a href="#ssec:proton-radius" data-reference-type="ref" data-reference="ssec:proton-radius">6.2.4</a>).</em></p>
+(Section <a href="#ssec:proton-radius" data-reference-type="ref" data-reference="ssec:proton-radius">7.2.4</a>).</em></p>
 </div>
 
 <div id="rem:descartes-chirality" class="remark">
 
-<p><strong>Remark 3.8</strong> (<a class="defn-link" href="#rem:descartes-chirality">Chirality as Reeb orientation</a>). <em>The
+<p><strong>Remark 4.8</strong> (<a class="defn-link" href="#rem:descartes-chirality">Chirality as Reeb orientation</a>). <em>The
 Reeb vector field <span class="math inline">\(\xi\)</span> on the CR
 manifold <span class="math inline">\(M\)</span> carries a natural
 orientation: the sign of the contact form <span
@@ -1516,7 +2299,7 @@ interactions.</em></p>
 
 <div id="rem:light-cone-affine" class="remark">
 
-<p><strong>Remark 3.9</strong> (<a class="defn-link" href="#rem:light-cone-affine">Light cone of an affine chart</a>).
+<p><strong>Remark 4.9</strong> (<a class="defn-link" href="#rem:light-cone-affine">Light cone of an affine chart</a>).
 <em>Consider an open subset <span class="math inline">\(U \subset
 M_0\)</span> representing a portion of the descended universe from the
 big bang to heat death. An <em>affine chart</em> on <span
@@ -1533,11 +2316,11 @@ of the Descartes universe.</em></p>
 
 <div id="rem:chirality-trefoil" class="remark">
 
-<p><strong>Remark 3.10</strong> (<a class="defn-link" href="#rem:chirality-trefoil">Chirality and trefoil subgroups</a>).
+<p><strong>Remark 4.10</strong> (<a class="defn-link" href="#rem:chirality-trefoil">Chirality and trefoil subgroups</a>).
 <em>The chirality of the observable universe — manifest in the three
 colour charges of quantum chromodynamics — is encoded in the symmetry
 group of the descended surface <span class="math inline">\(M_0\)</span>.
-Proposition <a href="#prop:genus-maximal-descent" data-reference-type="ref" data-reference="prop:genus-maximal-descent">3.6</a>
+Proposition <a href="#prop:genus-maximal-descent" data-reference-type="ref" data-reference="prop:genus-maximal-descent">4.6</a>
 identifies <span class="math inline">\(M_0\)</span> as a genus-<span
 class="math inline">\(4\)</span> Riemann surface. We require a
 genus-<span class="math inline">\(4\)</span> surface whose automorphism
@@ -1554,7 +2337,7 @@ class="math inline">\(S_3\)</span> subgroups among themselves.</em></p>
 
 <div id="rem:brings-curve" class="remark">
 
-<p><strong>Remark 3.11</strong> (Bring’s curve). <em>Bring’s curve is
+<p><strong>Remark 4.11</strong> (Bring’s curve). <em>Bring’s curve is
 the unique Riemann surface of genus <span
 class="math inline">\(4\)</span> with the maximal automorphism group
 <span class="math inline">\(S_5\)</span> (order <span
@@ -1569,7 +2352,7 @@ class="math display">\[\sum_{i=1}^{5} z_i = 0,
 class="math inline">\(S_5\)</span> acts by permuting the five
 homogeneous coordinates, and this action realises the monodromy
 structure described in
-Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">3.10</a>:
+Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">4.10</a>:
 the group <span class="math inline">\(S_5\)</span> contains three copies
 of <span class="math inline">\(S_3\)</span> (quotients of the trefoil
 knot group) corresponding to the three colour charges, and elements
@@ -1579,14 +2362,14 @@ among themselves.</em></p>
 
 <div id="thm:descartes" class="theorem">
 
-<p><strong>Theorem 3.12</strong> (<a class="defn-link" href="#thm:descartes">Descartes theorem</a>). <em>Let <span
+<p><strong>Theorem 4.12</strong> (<a class="defn-link" href="#thm:descartes">Descartes theorem</a>). <em>Let <span
 class="math inline">\(\mathcal{C}_{-6}\)</span> denote the category of
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universes satisfying the <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> <span
 class="math inline">\(\chi(E) = -6\)</span>, with morphisms given by QOU
 maps that preserve the Euler characteristic. Then Bring’s curve <span
 class="math inline">\(\Sigma_4\)</span>
-(Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">3.11</a>)
+(Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">4.11</a>)
 is a terminal object in <span
 class="math inline">\(\mathcal{C}_{-6}\)</span>: for every Descartes
 universe <span class="math inline">\((M, G, E)\)</span> in <span
@@ -1603,9 +2386,9 @@ class="math inline">\(\mathcal{C}_{-6}\)</span>.</em></p>
 
 <div id="rem:universality-general" class="remark">
 
-<p><strong>Remark 3.13</strong> (Universality for a given Euler
+<p><strong>Remark 4.13</strong> (Universality for a given Euler
 characteristic). <em>The <a class="defn-link" href="#thm:descartes">Descartes theorem</a>
-(Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">3.12</a>)
+(Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">4.12</a>)
 is expected to be a special case of a more general result: for any
 admissible Euler characteristic <span
 class="math inline">\(\chi\)</span>, the category <span
@@ -1646,7 +2429,7 @@ to a higher fibre level. The unknot, carrying trivial braiding,
 corresponds to the neutrino. <span id="chap:experimental"></span>Experimental evidence supporting this <span
 class="math inline">\(q\)</span>-deformed braiding picture is discussed
 in
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>.</p>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">7</a>.</p>
 <h1 id="<span id="chap:interpretations"></span>interpretations">Interpretations</h1>
 <h1 id="experimental-evidence">Experimental Evidence</h1>
 <p>The QOU framework
@@ -1661,7 +2444,7 @@ planned observations, and potential new experiments.</p>
 class="math inline">\(q\)</span>-Torsion Imprint</h3>
 <div id="rem:cmb-q-torsion" class="remark">
 
-<p><strong>Remark 6.1</strong> (CMB non-uniformity from <span
+<p><strong>Remark 7.1</strong> (CMB non-uniformity from <span
 class="math inline">\(q\)</span>-torsion). <em>In the Descartes universe
 (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">[ex:descartes]</a>),
 the negative Euler characteristic <span class="math inline">\(\chi(E) =
@@ -1705,7 +2488,7 @@ bridging current and CMB-S4 sensitivities.</p></li>
 <li><p>A dedicated search for spiral (chiral) patterns in existing CMB
 <span class="math inline">\(B\)</span>-mode data, testing for the
 preferred handedness predicted by the Reeb orientation
-(Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">3.8</a>).</p></li>
+(Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">4.8</a>).</p></li>
 <li><p>Cross-correlation of CMB anomalies (e.g. the Cold Spot,
 hemispherical asymmetry) with the angular structure of <span
 class="math inline">\(q\)</span>-torsion leaves.</p></li>
@@ -1714,7 +2497,7 @@ class="math inline">\(q\)</span>-torsion leaves.</p></li>
 Signatures and Emergent Geometry</h3>
 <div id="rem:gravity-emergent" class="remark">
 
-<p><strong>Remark 6.2</strong> (<a class="defn-link" href="#rem:gravity-emergent">Gravity as emergent substrate geometry</a>).
+<p><strong>Remark 7.2</strong> (<a class="defn-link" href="#rem:gravity-emergent">Gravity as emergent substrate geometry</a>).
 <em>In the QOU framework, general relativity emerges as the substrate
 geometry of the CR manifold
 (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.25</a>).
@@ -1759,7 +2542,7 @@ the Newtonian potential.</p></li>
 Structure and Topological Defects</h3>
 <div id="rem:topological-defects" class="remark">
 
-<p><strong>Remark 6.3</strong> (Topological signatures in large-scale
+<p><strong>Remark 7.3</strong> (Topological signatures in large-scale
 structure). <em>The <span class="math inline">\(\mathrm{SO}(3)\)</span>
 holonomy of the bulk bundle
 (Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>)
@@ -1798,7 +2581,7 @@ points in the brane tower.</p></li>
 <h3 id="mass-equation-predictions"><span id="sec:mass-predictions"></span>Mass Equation Predictions</h3>
 <div id="rem:mass-ratio-predictions" class="remark">
 
-<p><strong>Remark 6.4</strong> (Theoretical mass ratios from the mass
+<p><strong>Remark 7.4</strong> (Theoretical mass ratios from the mass
 identity). <em>The <a class="defn-link" href="#def:mass-identity">mass identity</a>
 (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.15</a>)
 expresses inertial mass as a line integral of <span
@@ -1808,7 +2591,7 @@ with <span class="math inline">\(\chi(E) = -6\)</span>, the topological
 data of the bundle constrain the allowed vortex configurations and hence
 the mass spectrum. The electron–muon mass ratio, for instance, is
 governed by the ratio of vertical degrees in the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
-(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">3.7</a>).
+(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">4.7</a>).
 Evaluating the mass identity at successive levels of the brane tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
 may yield theoretical predictions for lepton and hadron mass
@@ -1845,7 +2628,7 @@ lattice results.</p></li>
 Photons</h3>
 <div id="rem:photonic-hall" class="remark">
 
-<p><strong>Remark 6.5</strong> (Photonic quantum Hall effect and <span
+<p><strong>Remark 7.5</strong> (Photonic quantum Hall effect and <span
 class="math inline">\(q\)</span>-deformed braiding). <em>Recent
 experiments have demonstrated a quantized Hall drift in photonic Chern
 insulators . In the QOU framework, bosons are purely horizontal <span
@@ -1885,16 +2668,16 @@ the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck cons
 class="math inline">\(\mathrm{SU}(2)\)</span> gauge fields in optical
 lattices, testing the <span class="math inline">\(q\)</span>-deformed
 braiding statistics of
-Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">4</a>.</p></li>
+Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">5</a>.</p></li>
 </ul>
 <h3 id="lepton-anomalies-and-reeb-decomposition-tests">Lepton Anomalies
 and Reeb-Decomposition Tests</h3>
 <div id="rem:lepton-discrepancies" class="remark">
 
-<p><strong>Remark 6.6</strong> (Electron–muon discrepancies). <em>The
+<p><strong>Remark 7.6</strong> (Electron–muon discrepancies). <em>The
 QOU framework predicts that lepton generations are distinguished by the
 vertical degree of the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
-(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">3.7</a>).
+(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">4.7</a>).
 Discrepancies between electron and muon interactions — such as the
 anomalous magnetic moment tensions and lepton flavour universality
 violations observed at the <span
@@ -1934,12 +2717,12 @@ id="generation-dependent-couplings-and-the-proton-charge-radius">Generation-Depe
 Couplings and the Proton Charge Radius</h3>
 <div id="rem:proton-radius-puzzle" class="remark">
 
-<p><strong>Remark 6.7</strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
+<p><strong>Remark 7.7</strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
 “Proton Radius Puzzle” — the discrepancy between the proton charge
 radius measured in muonic hydrogen and in electronic hydrogen — remains
 a key area of study. In the QOU framework, lepton generations are
 distinguished by the vertical degree of the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
-(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">3.7</a>);
+(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">4.7</a>);
 each generation couples to the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
@@ -1985,7 +2768,7 @@ test the third-generation coupling to the <a class="defn-link" href="#def:substr
 Entropic Gravity Tests</h3>
 <div id="rem:entropic-gravity" class="remark">
 
-<p><strong>Remark 6.8</strong> (Entropic forces and the substrate
+<p><strong>Remark 7.8</strong> (Entropic forces and the substrate
 parameter). <em>The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
@@ -2028,7 +2811,7 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 Lattice Resonance and Substrate Telescopes</h3>
 <div id="rem:crystal-resonance" class="remark">
 
-<p><strong>Remark 6.9</strong> (<a class="defn-link" href="#rem:crystal-resonance">Quantum resonance in crystal lattices</a>).
+<p><strong>Remark 7.9</strong> (<a class="defn-link" href="#rem:crystal-resonance">Quantum resonance in crystal lattices</a>).
 <em>A periodic crystal lattice provides a macroscopic, coherent probe of
 the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
@@ -2051,7 +2834,7 @@ lattice geometry.</em></p>
 
 <div id="rem:substrate-telescope" class="remark">
 
-<p><strong>Remark 6.10</strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
+<p><strong>Remark 7.10</strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
 suggests a new class of detector: the <em>Substrate Telescope</em>. A
 large, high-purity single crystal is slowly rotated while the variation
