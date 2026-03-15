@@ -221,6 +221,11 @@ input[type=range]::-webkit-slider-thumb {
     <input type="range" id="pitch" min="0.01" max="5.0" step="0.05" value="1.0">
     <span class="val" id="v_pitch">1.00</span>
   </div>
+  <div class="row">
+    <span class="lbl">α  (opacity)</span>
+    <input type="range" id="tube_opacity" min="0.05" max="1.0" step="0.01" value="0.72">
+    <span class="val" id="v_opacity">0.72</span>
+  </div>
 
   <div class="sec">── Selected point  p ∈ S³ ──────────────────</div>
   <div class="row">
@@ -835,6 +840,9 @@ function buildTubes() {
   const N_vec   = selPt.clone().normalize();
   const { T1, T2 } = getFrame(N_vec);
 
+  const tubeOpacity = parseFloat(document.getElementById('tube_opacity').value);
+  const tubeTransparent = tubeOpacity < 0.999;
+
   if (cp1Mode) {
     // ── CP1 fibre view: three bands tiling a touching CP1 sphere ──
     const R_CP1 = Math.max(0.1, (N_max - N_min) * LP * 0.55);
@@ -844,6 +852,7 @@ function buildTubes() {
       const mat = new THREE.MeshPhongMaterial({
         vertexColors: true, side: THREE.DoubleSide,
         shininess: 70, specular: new THREE.Color(0.28, 0.30, 0.38),
+        transparent: tubeTransparent, opacity: tubeOpacity,
       });
       const mesh = new THREE.Mesh(geo, mat);
       scene.add(mesh);
@@ -858,6 +867,7 @@ function buildTubes() {
         side:         THREE.DoubleSide,
         shininess:    70,
         specular:     new THREE.Color(0.28, 0.30, 0.38),
+        transparent: tubeTransparent, opacity: tubeOpacity,
       });
       const mesh = new THREE.Mesh(geo, mat);
       scene.add(mesh);
@@ -905,6 +915,7 @@ function buildAxisTubes() {
   const sigma       = parseFloat(document.getElementById('sigma').value);
   const gamma_scale = parseFloat(document.getElementById('pitch').value);
   const cp1Mode     = document.getElementById('cb_cp1').checked;
+  const axOpacity   = parseFloat(document.getElementById('tube_opacity').value) * 0.70;
   if (N_min >= N_max) return;
 
   for (const pole of AXIS_POLES) {
@@ -918,7 +929,7 @@ function buildAxisTubes() {
         : buildTubeGeo(ti, pole, N_vec, T1, T2, q, N_min, N_max, sigma, gamma_scale);
       const mat = new THREE.MeshPhongMaterial({
         vertexColors: true, side: THREE.DoubleSide,
-        shininess: 55, transparent: true, opacity: 0.70,
+        shininess: 55, transparent: true, opacity: axOpacity,
         specular: new THREE.Color(0.20, 0.22, 0.30),
       });
       const mesh = new THREE.Mesh(geo, mat);
@@ -1304,6 +1315,16 @@ document.getElementById('btn_sigma_auto').addEventListener('click', autoSigma);
 document.getElementById('n_max').addEventListener('input', () => {
   document.getElementById('v_nmax').textContent = document.getElementById('n_max').value;
   autoSigma();
+});
+// Opacity slider: live-update existing tube materials without full rebuild
+document.getElementById('tube_opacity').addEventListener('input', () => {
+  const op = parseFloat(document.getElementById('tube_opacity').value);
+  document.getElementById('v_opacity').textContent = op.toFixed(2);
+  activeTubes.forEach(m => {
+    m.material.transparent = op < 0.999;
+    m.material.opacity = m.userData.isAxisTube ? op * 0.70 : op;
+    m.material.needsUpdate = true;
+  });
 });
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────
