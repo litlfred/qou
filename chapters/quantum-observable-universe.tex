@@ -107,8 +107,8 @@ two-dimensional affine example $M = \mathbb{C}^2$.
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
-\begin{definition}[Substrate parameter]
-\label{def:substrate-parameter}
+\begin{remark}[Substrate parameter]
+\label{rem:substrate-parameter}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
 $A$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
 its self-dual part.  Let
@@ -122,12 +122,12 @@ is the smooth field $q \colon M \to [1,\infty)$ defined by
 The substrate parameter is not a fixed constant but a field on $M$: its value
 varies from point to point according to the local coupling between the Levi
 form and the self-dual curvature.
-\end{definition}
+\end{remark}
 
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
+parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
 \emph{quantum gauge group} is the field of quantum groups
 $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
 group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
@@ -136,7 +136,7 @@ group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
+parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
 \emph{quantum Planck constant} is the smooth field
 $\hbar_q \colon M \to [0,1)$ defined by
 \[
@@ -165,11 +165,39 @@ encodes the local uncertainty: when $q(p) \to 1$ (classicality),
 $[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$
 (deep-quantum regime), $[\hat{X}, \hat{P}]_q \to i$ and maximal uncertainty
 prevails.
+
+\medskip
+\noindent\textbf{Analogy with the Lie bracket.}\;
+The position--momentum commutator $[\hat{X},\hat{P}]_q$ is the
+quantum-mechanical counterpart of the Lie bracket
+$[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$
+(Definition~\ref{def:su2-basis}).  Both commutators measure the
+first-order non-commutativity of their respective algebras
+(Remark~\ref{rem:first-order-taylor}).  In the braid-group setting,
+this non-commutativity appears as the defining relation
+$\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$
+(Definition~\ref{def:braid-group}); on the Bring surface, it is
+realised by the $S_3$ permutation action on the spectral resolvents
+(Remark~\ref{rem:braid-group-action}).
+
+\medskip
+\noindent\textbf{Commutator as Reeb vector.}\;
+The commutator $[\hat{X},\hat{P}]_q$ may be identified with the value
+of the $q$-deformed Reeb vector field~$\xi_q$
+(Definition~\ref{def:q-reeb-vector-field}) evaluated on the contact
+form.  Concretely, the Reeb field is the unique direction along which
+the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$
+encodes precisely the obstruction to commutativity of canonical
+coordinates.  On the exceptional divisor $\mathbb{CP}^1$ produced by
+blowing up a spacetime defect on the Bring surface
+(Remark~\ref{rem:brings-smoothness}), the Reeb vector field generates
+the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and
+its ``strength'' is set by~$\hbar_q(p)$.
 \end{remark}
 
 \begin{remark}[Cosmological limits of $q$]
 \label{rem:cosmological-limits}
-The substrate field $q$ (Definition~\ref{def:substrate-parameter}) interpolates
+The substrate field $q$ (Remark~\ref{rem:substrate-parameter}) interpolates
 between two extreme cosmological regimes:
 \begin{enumerate}
   \item \emph{Heat death} ($q \to 1$).  When
@@ -198,7 +226,7 @@ The jet bundle $J^1 E$ serves as the space of local states of the
 $\mathbb{C}$~quantum observable universe.  The classical gauge dynamics,
 encoded by the \emph{instanton connection} $A$
 (Lemma~\ref{lem:unique-connection}), are weighted by the substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}) to define the
+parameter $q$ (Remark~\ref{rem:substrate-parameter}) to define the
 quantum field algebra $\mathrm{SU}_q(2)$
 (Definition~\ref{def:quantum-gauge-group}).
 \end{remark}
@@ -208,7 +236,7 @@ quantum field algebra $\mathrm{SU}_q(2)$
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$ denote the
+parameter $q$ (Remark~\ref{rem:substrate-parameter}).  Let $d_q$ denote the
 $q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
 a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
 $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
@@ -238,10 +266,37 @@ and $\alpha_V$ the \emph{vertical component} (having a non-trivial contraction
 with~$\xi$).
 \end{definition}
 
+\begin{definition}[Fermion]
+\label{def:fermion}
+A \emph{fermion} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that has a non-trivial vertical
+component in the Reeb decomposition
+(Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \iota_\xi\,\alpha_V \neq 0.
+\]
+\end{definition}
+
+\begin{definition}[Boson]
+\label{def:boson}
+A \emph{boson} is a $q$-harmonic form
+(Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
+Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
+\[
+  \Delta_q\,\alpha = 0
+  \qquad\text{and}\qquad
+  \alpha = \alpha_H
+  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
+        \text{ by Definition~\ref{def:reeb-decomposition}}).
+\]
+\end{definition}
+
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}) and Reeb vector
+parameter $q$ (Remark~\ref{rem:substrate-parameter}) and Reeb vector
 field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
 \emph{$q$-deformed Reeb vector field} is the vector field $\xi_q$ on $M$
 defined by its action on smooth functions $f \in C^\infty(M)$:
@@ -296,33 +351,6 @@ Physically, a $q$-torsion leaf represents a region of the CR manifold where
 the gauge curvature is minimised and the $q$-deformed dynamics are in
 equilibrium.
 \end{remark}
-
-\begin{definition}[Fermion]
-\label{def:fermion}
-A \emph{fermion} is a $q$-harmonic form
-(Definition~\ref{def:q-harmonic-form}) that has a non-trivial vertical
-component in the Reeb decomposition
-(Definition~\ref{def:reeb-decomposition}):
-\[
-  \Delta_q\,\alpha = 0
-  \qquad\text{and}\qquad
-  \iota_\xi\,\alpha_V \neq 0.
-\]
-\end{definition}
-
-\begin{definition}[Boson]
-\label{def:boson}
-A \emph{boson} is a $q$-harmonic form
-(Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
-Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
-\[
-  \Delta_q\,\alpha = 0
-  \qquad\text{and}\qquad
-  \alpha = \alpha_H
-  \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
-        \text{ by Definition~\ref{def:reeb-decomposition}}).
-\]
-\end{definition}
 
 \begin{remark}[Physical interpretation of the Reeb decomposition]
 \label{rem:reeb-physical}
