@@ -272,3 +272,25 @@ their own line, indented to match the surrounding content.
   external result must carry a citation.
 - BibTeX keys follow the pattern `<firstauthorlastname><year>` (all
   lower-case), e.g., `herrlich2006`, `einstein1905`.
+
+---
+
+## 11  Notation Conventions
+
+### 11.1  Prime Numbers vs. Manifold Points
+
+- **Prime numbers** are typeset in Fraktur:  use the macro `\pp` (defined as
+  `\mathfrak{p}` in `main.tex`).
+  Examples:  `$\pp$-adic`, `$\mathbb{Q}_\pp$`, `$\mathbb{F}_\pp$`.
+- **Points on the manifold** use bare italic $p$:  `$p \in M$`.
+- In `\chapter` and `\section` titles that contain `\pp`, wrap the math in
+  `\texorpdfstring{$\pp$}{p}` so that PDF bookmarks remain plain text.
+
+### 11.2  Vectors
+
+- All vector quantities must carry a **half-arrow** accent:  use `\vec{…}`.
+  Examples:  `$\vec{q}$`, `$\vec{v}$`, `$\vec{X}$`.
+- This distinguishes vector-valued quantities from scalar parameters
+  (e.g.\ the substrate parameter $q$ from a vector $\vec{q}$).
+- Do **not** use bold (`\mathbf`) for vectors; reserve bold for operator
+  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator).
