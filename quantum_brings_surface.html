@@ -1072,7 +1072,7 @@ function sliderVal(id, decimals) {
   return v;
 }
 
-const rebuildIds = ['q_val','n_min','n_max','sigma','pitch','x_p','y_p','z_p'];
+const rebuildIds = ['q_val','n_min','sigma','pitch','x_p','y_p','z_p'];
 rebuildIds.forEach(id => {
   document.getElementById(id).addEventListener('input', () => {
     // Update display values
@@ -1300,6 +1300,11 @@ function autoSigma() {
   rebuild();
 }
 document.getElementById('btn_sigma_auto').addEventListener('click', autoSigma);
+// Auto-rescale sigma whenever N_max changes so the tube never blows up
+document.getElementById('n_max').addEventListener('input', () => {
+  document.getElementById('v_nmax').textContent = document.getElementById('n_max').value;
+  autoSigma();
+});
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────
 window.addEventListener('keydown', e => {
