@@ -201,11 +201,14 @@ and let <span class="math inline">\(F_A^+\)</span> denote its self-dual
 part. Let <span class="math inline">\(L \in \Gamma(T^*M \otimes
 \overline{T^*M})\)</span> be the <em>Levi form</em>, a Hermitian form on
 the tangent bundle of <span class="math inline">\(M\)</span>. The
-<em>substrate parameter</em> is the function <span
-class="math inline">\(q \colon M \to \mathbb{R}\)</span> defined by
-<span class="math display">\[q(p) \;=\; \exp\!\bigl(-\lVert L \wedge
+<em>substrate parameter</em> is the smooth field <span
+class="math inline">\(q \colon M \to [1,\infty)\)</span> defined by
+<span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L \wedge
 F_A^+ \rVert(p)\bigr),
-\qquad p \in M.\]</span></em></p>
+\qquad p \in M.\]</span> The substrate parameter is not a fixed constant
+but a field on <span class="math inline">\(M\)</span>: its value varies
+from point to point according to the local coupling between the Levi
+form and the self-dual curvature.</em></p>
 </div>
 
 <div id="def:quantum-gauge-group" class="definition">
@@ -215,11 +218,11 @@ class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
-The <em>quantum gauge group</em> is the quantum group <span
-class="math inline">\(\mathrm{SU}_q(2)\)</span> obtained by deforming
-the structure group <span class="math inline">\(G =
-\mathrm{SU}(2)\)</span> at the parameter <span
-class="math inline">\(q\)</span>.</em></p>
+The <em>quantum gauge group</em> is the field of quantum groups <span
+class="math inline">\(\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}\)</span>
+obtained by deforming the structure group <span class="math inline">\(G
+= \mathrm{SU}(2)\)</span> pointwise at the parameter <span
+class="math inline">\(q(p)\)</span>.</em></p>
 </div>
 
 <div id="def:quantum-planck-constant" class="definition">
@@ -229,19 +232,88 @@ class="math inline">\(q\)</span>.</em></p>
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
-The <em>quantum Planck constant</em> is the function <span
-class="math inline">\(\hbar_q \colon M \to \mathbb{R}\)</span> defined
-by <span class="math display">\[\hbar_q(p) \;=\; 1 - q(p), \qquad p \in
-M.\]</span> As <span class="math inline">\(q(p) \to 1\)</span>
-(classicality), <span class="math inline">\(\hbar_q(p) \to 0\)</span>
-and quantum effects vanish; as <span class="math inline">\(q(p) \to
-0\)</span> (deep-quantum regime), <span class="math inline">\(\hbar_q(p)
-\to 1\)</span>.</em></p>
+The <em>quantum Planck constant</em> is the smooth field <span
+class="math inline">\(\hbar_q \colon M \to [0,1)\)</span> defined by
+<span class="math display">\[\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p
+\in M.\]</span> Like <span class="math inline">\(q\)</span> itself,
+<span class="math inline">\(\hbar_q\)</span> is not a universal constant
+but a field on <span class="math inline">\(M\)</span>. As <span
+class="math inline">\(q(p) \to 1\)</span> (classicality), <span
+class="math inline">\(\hbar_q(p) \to 0\)</span> and quantum effects
+vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
+(deep-quantum regime), <span class="math inline">\(\hbar_q(p) \to
+1\)</span>.</em></p>
+</div>
+
+<div id="rem:heisenberg-commutator" class="remark">
+
+<p><strong>Remark 1.12</strong> (Heisenberg uncertainty as commutator).
+<em>In the <span class="math inline">\(\mathbb{C}\)</span> quantum
+observable universe the Heisenberg uncertainty principle is expressed
+through the <span class="math inline">\(q\)</span>-deformed commutator.
+Let <span class="math inline">\(\hat{X}\)</span> and <span
+class="math inline">\(\hat{P}\)</span> denote position and momentum
+observables on the fibre <span
+class="math inline">\(\mathbb{CP}\)</span>. We define their <span
+class="math inline">\(q\)</span>-dependent commutator at <span
+class="math inline">\(p \in M\)</span> by <span
+class="math display">\[[\hat{X},\, \hat{P}]_q \;:=\;
+i\,\hbar_q(p),\]</span> where <span class="math inline">\(\hbar_q(p) = 1
+- q(p)^{-1}\)</span>
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).
+In this remark the subscript <span class="math inline">\(q\)</span>
+serves only to record the dependence of the commutator on the substrate
+field <span class="math inline">\(q\)</span> and should not be confused
+with any <span class="math inline">\(q\)</span>-deformed Lie bracket
+<span class="math inline">\([\cdot,\cdot]_q\)</span> on vector fields
+that may appear elsewhere. The commutator encodes the local uncertainty:
+when <span class="math inline">\(q(p) \to 1\)</span> (classicality),
+<span class="math inline">\([\hat{X}, \hat{P}]_q \to 0\)</span> and
+observables commute; when <span class="math inline">\(q(p) \to
+\infty\)</span> (deep-quantum regime), <span
+class="math inline">\([\hat{X}, \hat{P}]_q \to i\)</span> and maximal
+uncertainty prevails.</em></p>
+</div>
+
+<div id="rem:cosmological-limits" class="remark">
+
+<p><strong>Remark 1.13</strong> (Cosmological limits of <span
+class="math inline">\(q\)</span>). <em>The substrate field <span
+class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
+interpolates between two extreme cosmological regimes:</em></p>
+<ol type="1">
+<li><p><em><em>Heat death</em> (<span class="math inline">\(q \to
+1\)</span>). When <span class="math inline">\(\lVert L \wedge
+F_A^+\rVert \to 0\)</span> the curvature–torsion coupling vanishes and
+<span class="math inline">\(q(p) \to 1\)</span> everywhere. In this
+limit <span class="math inline">\(\hbar_q \to 0\)</span>, the commutator
+<span class="math inline">\([\hat{X}, \hat{P}]_q \to 0\)</span>, and no
+uncertainty remains: all quantum dynamics freeze into a classical,
+torsion-free equilibrium.</em></p></li>
+<li><p><em><em>Big bang</em> (<span class="math inline">\(q \to
+\infty\)</span>). When <span class="math inline">\(\lVert L \wedge
+F_A^+\rVert \to \infty\)</span> the substrate is maximally wound and
+<span class="math inline">\(q(p) \to \infty\)</span>. In this limit
+<span class="math inline">\(\hbar_q \to 1\)</span>, the commutator <span
+class="math inline">\([\hat{X}, \hat{P}]_q \to i\)</span>, and
+uncertainty is maximal: the universe is in a purely quantum state with
+all torsion wound up and no classical information from fermionic
+matter.</em></p></li>
+</ol>
+<p><em>Both limits are in a precise sense <em>illusory</em>: the <span
+class="math inline">\(q\)</span>-torsion of
+Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>
+twists faster than any divergence can grow in the integral, so the
+finiteness of the brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
+tames the infinities that would otherwise appear at either
+extreme.</em></p>
 </div>
 
 <div id="rem:j1e-local-states" class="remark">
 
-<p><strong>Remark 1.12</strong> (<span
+<p><strong>Remark 1.14</strong> (<span
 class="math inline">\(J^1E\)</span> as the space of local states).
 <em>The jet bundle <span class="math inline">\(J^1 E\)</span> serves as
 the space of local states of the <span
@@ -259,7 +331,7 @@ class="math inline">\(\mathrm{SU}_q(2)\)</span>
 
 <div id="def:q-harmonic-form" class="definition">
 
-<p><strong>Definition 1.13</strong> (<span
+<p><strong>Definition 1.15</strong> (<span
 class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
 <span class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
@@ -283,7 +355,7 @@ class="math inline">\(q\)</span>-viscosity.</em></p>
 
 <div id="def:reeb-decomposition" class="definition">
 
-<p><strong>Definition 1.14</strong> (Reeb decomposition). <em>Let <span
+<p><strong>Definition 1.16</strong> (Reeb decomposition). <em>Let <span
 class="math inline">\(M\)</span> be a CR manifold equipped with a
 contact form <span class="math inline">\(\theta\)</span> and let <span
 class="math inline">\(\xi\)</span> denote the associated <em>Reeb vector
@@ -305,23 +377,24 @@ class="math inline">\(\xi\)</span>).</em></p>
 
 <div id="def:q-reeb-vector-field" class="definition">
 
-<p><strong>Definition 1.15</strong> (<span
+<p><strong>Definition 1.17</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
 <span class="math inline">\((M, G, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
 and Reeb vector field <span class="math inline">\(\xi\)</span>
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.14</a>).
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb vector
 field</em> is the vector field <span
 class="math inline">\(\xi_q\)</span> on <span
 class="math inline">\(M\)</span> defined by its action on smooth
 functions <span class="math inline">\(f \in C^\infty(M)\)</span>: <span
-class="math display">\[\xi_q(f) \;=\; q\,\xi(f) + (1 - q)\,[\xi,
-X_f]_q,\]</span> where <span class="math inline">\(X_f\)</span> is the
-horizontal lift of <span class="math inline">\(\mathrm{grad}\,f\)</span>
-to <span class="math inline">\(H\)</span> and <span
+class="math display">\[\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 -
+q^{-1})\,[\xi, X_f]_q,\]</span> where <span
+class="math inline">\(X_f\)</span> is the horizontal lift of <span
+class="math inline">\(\mathrm{grad}\,f\)</span> to <span
+class="math inline">\(H\)</span> and <span
 class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> denotes the <span
 class="math inline">\(q\)</span>-deformed Lie bracket on <span
 class="math inline">\(\mathfrak{X}(M)\)</span>. When <span
@@ -331,11 +404,11 @@ field <span class="math inline">\(\xi_1 = \xi\)</span>.</em></p>
 
 <div id="def:q-reeb-flow" class="definition">
 
-<p><strong>Definition 1.16</strong> (<span
+<p><strong>Definition 1.18</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
 class="math inline">\(\xi_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.15</a>).
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.17</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb flow</em>
 is the one-parameter family of diffeomorphisms <span
 class="math inline">\(\phi_t^q \colon M \to M\)</span>, <span
@@ -348,7 +421,7 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 
 <div id="def:q-torsion-leaf" class="definition">
 
-<p><strong>Definition 1.17</strong> (<span
+<p><strong>Definition 1.19</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
 class="math inline">\(H = \ker\theta \subset TM\)</span> be the
 horizontal distribution on the CR manifold <span
@@ -357,7 +430,7 @@ class="math inline">\(q\)</span>-torsion leaf</em> is a maximal integral
 submanifold <span class="math inline">\(L \hookrightarrow M\)</span> of
 <span class="math inline">\(H\)</span> that is invariant under the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.16</a>):
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.18</a>):
 <span class="math display">\[T_p L \;\subset\; H_p
 \quad\text{for all } p \in L,
 \qquad\text{and}\qquad
@@ -367,7 +440,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 
 <div id="rem:q-torsion-leaf-minimum" class="remark">
 
-<p><strong>Remark 1.18</strong> (<span
+<p><strong>Remark 1.20</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
 <em>Let <span class="math inline">\(A_q\)</span> denote the <span
 class="math inline">\(q\)</span>-deformed connection on <span
@@ -376,7 +449,7 @@ class="math inline">\(q\)</span>-curvature <span
 class="math display">\[\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\,
 A_q]_q.\]</span> A <span class="math inline">\(q\)</span>-torsion leaf
 <span class="math inline">\(L\)</span>
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.17</a>)
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>)
 is a local minimum of <span
 class="math inline">\(\lVert\Omega_q\rVert\)</span> restricted to the
 horizontal distribution: the invariance of <span
@@ -393,11 +466,11 @@ equilibrium.</em></p>
 
 <div id="def:fermion" class="definition">
 
-<p><strong>Definition 1.19</strong> (Fermion). <em>A <em>fermion</em> is
+<p><strong>Definition 1.21</strong> (Fermion). <em>A <em>fermion</em> is
 a <span class="math inline">\(q\)</span>-harmonic form
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.13</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
 that has a non-trivial vertical component in the Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.14</a>):
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>):
 <span class="math display">\[\Delta_q\,\alpha = 0
 \qquad\text{and}\qquad
 \iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
@@ -405,11 +478,11 @@ that has a non-trivial vertical component in the Reeb decomposition
 
 <div id="def:boson" class="definition">
 
-<p><strong>Definition 1.20</strong> (Boson). <em>A <em>boson</em> is a
+<p><strong>Definition 1.22</strong> (Boson). <em>A <em>boson</em> is a
 <span class="math inline">\(q\)</span>-harmonic form
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.13</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
 that is purely horizontal in the Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.14</a>):
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>):
 <span class="math display">\[\Delta_q\,\alpha = 0
 \qquad\text{and}\qquad
 \alpha = \alpha_H
@@ -419,7 +492,7 @@ that is purely horizontal in the Reeb decomposition
 
 <div id="rem:reeb-physical" class="remark">
 
-<p><strong>Remark 1.21</strong> (Physical interpretation of the Reeb
+<p><strong>Remark 1.23</strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
 class="math inline">\(\xi\)</span> singles out the direction of internal
 spin on the CR manifold. Forms that “see” this direction (fermions)
@@ -427,12 +500,15 @@ carry half-integer spin; forms confined to the horizontal distribution
 (bosons) do not couple to the Reeb flow and carry integer spin. The
 decomposition <span class="math inline">\(\alpha = \alpha_H +
 \alpha_V\)</span> is therefore the geometric origin of the
-spin–statistics distinction in this framework.</em></p>
+spin–statistics distinction in this framework. Experimental confirmation
+of this picture, including photonic quantum Hall measurements and
+many-body interference in crystal lattices, is discussed in
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>.</em></p>
 </div>
 
 <div id="rem:q-harmonic-physical" class="remark">
 
-<p><strong>Remark 1.22</strong> (Physical interpretation of <span
+<p><strong>Remark 1.24</strong> (Physical interpretation of <span
 class="math inline">\(q\)</span>-harmonicity). <em>The <span
 class="math inline">\(q\)</span>-Laplacian <span
 class="math inline">\(\Delta_q\)</span> encodes the <span
@@ -444,13 +520,13 @@ class="math inline">\(q\)</span> interpolates between the classical
 regime (<span class="math inline">\(q \to 1\)</span>, where <span
 class="math inline">\(\Delta_q\)</span> reduces to the Hodge Laplacian)
 and the deep-quantum regime (<span class="math inline">\(q \to
-0\)</span>), so the notion of “particle” is itself <span
+\infty\)</span>), so the notion of “particle” is itself <span
 class="math inline">\(q\)</span>-dependent.</em></p>
 </div>
 
 <div id="rem:gr-substrate-geometry" class="remark">
 
-<p><strong>Remark 1.23</strong> (General Relativity as the “Substrate
+<p><strong>Remark 1.25</strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
 Levi form <span class="math inline">\(L\)</span> and its coupling to the
 gauge curvature <span class="math inline">\(F_A\)</span>. Gravity is
@@ -465,16 +541,18 @@ class="math display">\[\frac{\delta S_q}{\delta L}
 G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},\]</span> where <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> is a
 <em>quantum-weighted</em> stress-energy tensor. Because <span
-class="math inline">\(q(p) = \exp\!\bigl(-\lVert L \wedge
-F^+\rVert\bigr)\)</span>, the geometry of the brane <span
+class="math inline">\(q(p) = \exp\!\bigl(\lVert (L \wedge
+F_A^+)(p)\rVert\bigr)\)</span>, the geometry of the brane <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
-instantons.</em></p>
+instantons. See
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>
+for experimental signatures of this emergent geometry.</em></p>
 </div>
 
 <div id="rem:schrodinger-jet-coaction" class="remark">
 
-<p><strong>Remark 1.24</strong> (The Schrödinger Equation as “Jet
+<p><strong>Remark 1.26</strong> (The Schrödinger Equation as “Jet
 Co-action”). <em>The Schrödinger equation describes the evolution of a
 state in the fibre <span class="math inline">\(\mathbb{CP}\)</span>. In
 the jet-bundle framework this is expressed as the condition of parallel
@@ -489,8 +567,8 @@ class="math display">\[i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\,
 the <span class="math inline">\(q\)</span>-deformed Hamiltonian operator
 and:</em></p>
 <ul>
-<li><p><em><span class="math inline">\(\hbar_q(p) = 1 - q(p)\)</span>:
-the quantum Planck constant
+<li><p><em><span class="math inline">\(\hbar_q(p) = 1 -
+q(p)^{-1}\)</span>: the quantum Planck constant
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>)
 is a local field;</em></p></li>
 <li><p><em><span class="math inline">\(D_A = d + A\)</span>: the
@@ -498,13 +576,16 @@ connection <span class="math inline">\(A\)</span> (the instanton) acts
 as the potential.</em></p></li>
 </ul>
 <p><em>As <span class="math inline">\(q(p) \to 1\)</span>
-(classicality), the uncertainty vanishes and the wave-like nature of the
-section freezes into a classical trajectory.</em></p>
+(classicality), the commutator <span class="math inline">\([\hat{X},
+\hat{P}]_q \to 0\)</span>
+(Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.12</a>),
+the uncertainty vanishes, and the wave-like nature of the section
+freezes into a classical trajectory.</em></p>
 </div>
 
 <div id="rem:main-commutative-diagram" class="remark">
 
-<p><strong>Remark 1.25</strong> (Main Commutative Diagram). <em>The
+<p><strong>Remark 1.27</strong> (Main Commutative Diagram). <em>The
 relationship between these two seemingly disparate equations is captured
 by the main commutative diagram of the <span
 class="math inline">\(\mathbb{C}\)</span>-quantum universe, where <span
@@ -694,7 +775,7 @@ the brane. These modes are responsible for the non-commutativity in the
 (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>).</em></p>
 <p><em>In the <span class="math inline">\(1\)</span>-jet bundle <span
 class="math inline">\(J^1 E_n\)</span>
-(Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">1.12</a>),
+(Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">1.14</a>),
 each basis element <span class="math inline">\(\alpha\)</span> is a pair
 consisting of a <em>value</em> (the direction of the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> flow in the fibre) and a
@@ -897,7 +978,7 @@ class="math inline">\(E\)</span> descends to a bundle over the <span
 class="math inline">\(1\)</span>-dimensional base whose fibre dynamics
 are locked into a single periodic flow.</em></p></li>
 <li><p><em><em>Reeb direction.</em> The inverse of the Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.15</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.17</a>)
 becomes the only direction of motion; the horizontal distribution is
 trivial and no bosonic modes
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>)
@@ -1025,7 +1106,7 @@ class="math inline">\(E\)</span> to carry non-trivial topology despite
 the contractibility of the base. In the two-dimensional case <span
 class="math inline">\(M = \mathbb{C}^2\)</span>, the <span
 class="math inline">\(q\)</span>-harmonic forms on this bundle
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.13</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
 determine the spectrum of stable excitations. In the regime <span
 class="math inline">\(q(p) \to 1\)</span> (near-classicality), the
 zero-modes of <span class="math inline">\(\Delta_q\)</span> reproduce
@@ -1082,10 +1163,10 @@ class="math inline">\(g = 4\)</span>. ◻</p>
 
 <p><strong>Remark 3.7</strong> (Electrons, muons and the Reeb
 decomposition). <em>The Reeb decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.14</a>)
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.16</a>)
 applied to a Descartes universe yields two classes of fermionic
 excitations
-(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>).
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.21</a>).
 The degree of the vertical component <span
 class="math inline">\(\alpha_V\)</span> distinguishes them: forms with
 <span class="math inline">\(\deg\alpha_V = 1\)</span> correspond to
@@ -1095,7 +1176,11 @@ vertical degree is identified with a successive lepton generation. The
 constraint <span class="math inline">\(\chi(E) = -6\)</span> bounds the
 number of such generations, since the Hodge decomposition of <span
 class="math inline">\(E\)</span> admits only finitely many independent
-vertical harmonic forms.</em></p>
+vertical harmonic forms. This generation-dependent structure leads to
+testable predictions, including a <span
+class="math inline">\(q\)</span>-correction to the proton charge radius
+that differs between muonic and electronic hydrogen
+(Section <a href="#ssec:proton-radius" data-reference-type="ref" data-reference="ssec:proton-radius">6.2.4</a>).</em></p>
 </div>
 
 <div id="rem:descartes-chirality" class="remark">
@@ -1109,13 +1194,13 @@ direction along the vertical distribution. Left-handed and right-handed
 chiralities correspond to the two orientations of <span
 class="math inline">\(\xi\)</span> relative to the complex structure of
 <span class="math inline">\(M\)</span>. For fermions
-(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>),
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.21</a>),
 the vertical component <span class="math inline">\(\alpha_V\)</span>
 transforms with a definite sign under reversal of <span
 class="math inline">\(\xi\)</span>, so chirality is encoded in the <span
 class="math inline">\(\pm\)</span>-eigenspaces of the Reeb involution
 <span class="math inline">\(\xi \mapsto -\xi\)</span>. Bosons
-(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.20</a>),
+(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.22</a>),
 being purely horizontal, are chirality-blind — consistent with the
 observed parity invariance of the electromagnetic and strong
 interactions.</em></p>
@@ -1250,7 +1335,10 @@ eigenvalues govern the phase acquired under particle exchange.</p>
 identities. The trefoil knot, being the simplest non-trivial torus knot,
 is identified with the quark; the muon arises as a lift of the trefoil
 to a higher fibre level. The unknot, carrying trivial braiding,
-corresponds to the neutrino.</p>
+corresponds to the neutrino. Experimental evidence supporting this <span
+class="math inline">\(q\)</span>-deformed braiding picture is discussed
+in
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">6</a>.</p>
 <h1 id="interpretations">Interpretations</h1>
 <h1 id="experimental-evidence">Experimental Evidence</h1>
 <p>The QOU framework
@@ -1273,13 +1361,13 @@ the negative Euler characteristic <span class="math inline">\(\chi(E) =
 the CR manifold
 (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">[rem:descartes-cmb]</a>).
 The <span class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.17</a>;
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>;
 here “leaves” is the geometric plural of <em>leaf</em>) imprint a
 characteristic pattern on the CMB that deviates from the statistically
 isotropic Gaussian field predicted by <span
 class="math inline">\(\Lambda\)</span>CDM. Specifically, the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.16</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.18</a>)
 introduces <em>torsion</em> into the temperature and polarisation
 multipoles, producing preferred spiral directions in the <span
 class="math inline">\(B\)</span>-mode spectrum.</em></p>
@@ -1321,7 +1409,7 @@ Signatures and Emergent Geometry</h3>
 <p><strong>Remark 6.2</strong> (Gravity as emergent substrate geometry).
 <em>In the QOU framework, general relativity emerges as the substrate
 geometry of the CR manifold
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.23</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.25</a>).
 The quantum-weighted stress-energy tensor <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> introduces <span
 class="math inline">\(q\)</span>-dependent corrections to the Einstein
@@ -1454,12 +1542,13 @@ class="math inline">\(q\)</span>-deformed braiding). <em>Recent
 experiments have demonstrated a quantized Hall drift in photonic Chern
 insulators . In the QOU framework, bosons are purely horizontal <span
 class="math inline">\(q\)</span>-harmonic forms
-(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.20</a>),
+(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.22</a>),
 and the Hall conductance arises from the Chern number of the bulk bundle
 restricted to the horizontal distribution. The <span
 class="math inline">\(q\)</span>-deformation modifies the quantisation
 condition, predicting fractional corrections of order <span
-class="math inline">\(1 - q\)</span> to the Hall conductance.</em></p>
+class="math inline">\(1 - q^{-1}\)</span> to the Hall
+conductance.</em></p>
 </div>
 
 <h5 id="existing-data-sets-4">Existing data sets.</h5>
@@ -1481,8 +1570,8 @@ with controllable topology.</p></li>
 <ul>
 <li><p>Measurement of Hall conductance in photonic lattices at varying
 effective <span class="math inline">\(q\)</span> parameters, seeking the
-<span class="math inline">\(1 - q\)</span> correction predicted by the
-quantum Planck constant
+<span class="math inline">\(1 - q^{-1}\)</span> correction predicted by
+the quantum Planck constant
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>).</p></li>
 <li><p>Cold-atom realisations of <span
 class="math inline">\(\mathrm{SU}(2)\)</span> gauge fields in optical
@@ -1528,25 +1617,74 @@ flavour violating processes.</p></li>
 </ul>
 <h5 id="potential-new-experiments-5">Potential new experiments.</h5>
 <ul>
-<li><p>Precision measurements of the proton charge radius via muonic
-vs. electronic hydrogen to probe generation-dependent coupling to the
-substrate parameter.</p></li>
-<li><p>Electron–muon scattering experiments (e.g. MUonE at CERN) to
+<li>Electron–muon scattering experiments (e.g. MUonE at CERN) to
 directly test the <span class="math inline">\(q\)</span>-dependent
-corrections to the electromagnetic vertex.</p></li>
+corrections to the electromagnetic vertex.</li>
+</ul>
+<h3
+id="generation-dependent-couplings-and-the-proton-charge-radius">Generation-Dependent
+Couplings and the Proton Charge Radius</h3>
+<div id="rem:proton-radius-puzzle" class="remark">
+
+<p><strong>Remark 6.7</strong> (The Proton Radius Puzzle). <em>The
+“Proton Radius Puzzle” — the discrepancy between the proton charge
+radius measured in muonic hydrogen and in electronic hydrogen — remains
+a key area of study. In the QOU framework, lepton generations are
+distinguished by the vertical degree of the Reeb decomposition
+(Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">3.7</a>);
+each generation couples to the substrate parameter <span
+class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
+through a different vertical harmonic form. If this generation-dependent
+coupling is physical, the effective electromagnetic interaction between
+the proton and the orbiting lepton acquires a <span
+class="math inline">\(q\)</span>-correction that depends on the lepton
+generation. The measured charge radius is therefore expected to differ
+between electronic and muonic hydrogen by an amount of order <span
+class="math inline">\(\hbar_q\)</span>
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.11</a>),
+providing a direct test of generation-dependent substrate
+couplings.</em></p>
+</div>
+
+<h5 id="existing-data-sets-6">Existing data sets.</h5>
+<ul>
+<li><p>Muonic hydrogen Lamb shift measurements (CREMA collaboration,
+PSI).</p></li>
+<li><p>Electronic hydrogen spectroscopy (CODATA recommended
+value).</p></li>
+<li><p>Electron–proton scattering cross-section data (PRad at
+JLab).</p></li>
+</ul>
+<h5 id="planned-observations-6">Planned observations.</h5>
+<ul>
+<li><p>MUSE (MUon proton Scattering Experiment, PSI): simultaneous
+electron–proton and muon–proton scattering under identical
+conditions.</p></li>
+<li><p>High-precision muonic deuterium and muonic helium spectroscopy to
+extend the puzzle to heavier nuclei.</p></li>
+</ul>
+<h5 id="potential-new-experiments-6">Potential new experiments.</h5>
+<ul>
+<li><p>Precision comparison of the proton charge radius extracted from
+muonic vs. electronic hydrogen, interpreted through the
+generation-dependent <span class="math inline">\(q\)</span>-correction
+predicted by the Reeb decomposition.</p></li>
+<li><p>Tau-hydrogen spectroscopy (if feasible at future facilities) to
+test the third-generation coupling to the substrate parameter.</p></li>
 </ul>
 <h3 id="informational-and-entropic-gravity-tests">Informational and
 Entropic Gravity Tests</h3>
 <div id="rem:entropic-gravity" class="remark">
 
-<p><strong>Remark 6.7</strong> (Entropic forces and the substrate
+<p><strong>Remark 6.8</strong> (Entropic forces and the substrate
 parameter). <em>The substrate parameter <span
 class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>)
 encodes the coupling between the Levi form and the gauge curvature. In
 the near-classical regime <span class="math inline">\(q \to 1\)</span>,
 gravity emerges as a geometric back-reaction
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.23</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.25</a>).
 Recent work on the quantum mechanics of entropic forces  provides a
 complementary perspective: the entropic interpretation may correspond to
 the thermodynamic limit of the <span
@@ -1554,21 +1692,21 @@ class="math inline">\(q\)</span>-deformed partition function on the
 brane tower.</em></p>
 </div>
 
-<h5 id="existing-data-sets-6">Existing data sets.</h5>
+<h5 id="existing-data-sets-7">Existing data sets.</h5>
 <ul>
 <li><p>Cavendish-type torsion balance experiments (e.g. Eöt-Wash
 group).</p></li>
 <li><p>Casimir force measurements at micrometre scales.</p></li>
 <li><p>Neutron interferometry (gravity resonance spectroscopy).</p></li>
 </ul>
-<h5 id="planned-observations-6">Planned observations.</h5>
+<h5 id="planned-observations-7">Planned observations.</h5>
 <ul>
 <li><p>MICROSCOPE follow-up missions: improved equivalence principle
 tests in space.</p></li>
 <li><p>Atom interferometry experiments (MAGIS, AION, ZAIGA) probing
 gravitational decoherence.</p></li>
 </ul>
-<h5 id="potential-new-experiments-6">Potential new experiments.</h5>
+<h5 id="potential-new-experiments-7">Potential new experiments.</h5>
 <ul>
 <li><p>Entanglement-assisted gravity experiments testing whether
 gravitational interactions preserve quantum coherence as predicted by
@@ -1582,7 +1720,7 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 Lattice Resonance and Substrate Telescopes</h3>
 <div id="rem:crystal-resonance" class="remark">
 
-<p><strong>Remark 6.8</strong> (Quantum resonance in crystal lattices).
+<p><strong>Remark 6.9</strong> (Quantum resonance in crystal lattices).
 <em>A periodic crystal lattice provides a macroscopic, coherent probe of
 the substrate parameter <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>).
@@ -1591,10 +1729,10 @@ reciprocal vectors that couple to the horizontal distribution of the CR
 manifold <span class="math inline">\(M\)</span>. Where the lattice
 spacing is commensurate with the characteristic scale of a <span
 class="math inline">\(q\)</span>-torsion leaf
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.17</a>),
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.19</a>),
 a resonance condition is satisfied: the <span
 class="math inline">\(q\)</span>-harmonic forms
-(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.13</a>)
+(Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.15</a>)
 on the brane constructively interfere with the phonon modes of the
 crystal, amplifying vacuum fluctuations at specific frequencies. The
 resonance frequency <span
@@ -1605,7 +1743,7 @@ lattice geometry.</em></p>
 
 <div id="rem:substrate-telescope" class="remark">
 
-<p><strong>Remark 6.9</strong> (Substrate Telescopes). <em>The
+<p><strong>Remark 6.10</strong> (Substrate Telescopes). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
 suggests a new class of detector: the <em>Substrate Telescope</em>. A
 large, high-purity single crystal is slowly rotated while the variation
@@ -1614,7 +1752,7 @@ function of orientation. Because the <span
 class="math inline">\(q\)</span>-torsion leaves carry a preferred
 direction inherited from the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.16</a>),
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.18</a>),
 the noise spectrum should exhibit a modulation correlated with the
 crystal’s orientation relative to the bulk bundle. This is conceptually
 analogous to a Weber-bar gravitational wave detector, but targets the
@@ -1622,7 +1760,7 @@ anisotropy of the substrate parameter rather than metric
 strain.</em></p>
 </div>
 
-<h5 id="existing-data-sets-7">Existing data sets.</h5>
+<h5 id="existing-data-sets-8">Existing data sets.</h5>
 <ul>
 <li><p>Many-body interference measurements in kagome crystals , which
 probe coherent lattice-scale quantum effects.</p></li>
@@ -1638,7 +1776,7 @@ noise beyond thermal limits.</p></li>
 NAUTILUS bar detectors), which recorded orientation-dependent noise
 floors in cryogenic crystalline bars.</p></li>
 </ul>
-<h5 id="planned-observations-7">Planned observations.</h5>
+<h5 id="planned-observations-8">Planned observations.</h5>
 <ul>
 <li><p>Next-generation phononic crystal experiments with tunable lattice
 constants, enabling a systematic scan of the resonance condition across
@@ -1650,7 +1788,7 @@ staging.</p></li>
 <li><p>Cryogenic SQUID-based noise spectroscopy on rotating high-purity
 sapphire or silicon crystals.</p></li>
 </ul>
-<h5 id="potential-new-experiments-7">Potential new experiments.</h5>
+<h5 id="potential-new-experiments-8">Potential new experiments.</h5>
 <ul>
 <li><p>A dedicated Substrate Telescope prototype: a cryogenically
 cooled, slowly rotating single crystal (e.g. ultra-pure silicon or
