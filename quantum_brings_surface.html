@@ -22,6 +22,22 @@
   --blu:     #4488ff;
   --brn:     #c8834a;
 }
+body.light {
+  --bg:      #f0f4ff;
+  --panel:   rgba(235,240,255,0.96);
+  --border:  rgba(60,80,180,0.25);
+  --accent:  #1a5fcc;
+  --accent2: #cc3300;
+  --accent3: #006633;
+  --accent4: #885500;
+  --accent5: #770099;
+  --text:    #1a2855;
+  --dim:     #6070a0;
+  --red:     #cc0000;
+  --grn:     #006622;
+  --blu:     #0044cc;
+  --brn:     #7a3a10;
+}
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   background:var(--bg); color:var(--text);
@@ -138,6 +154,25 @@ input[type=range]::-webkit-slider-thumb {
 <div id="title">Quantum Bring's Surface</div>
 <div id="subtitle">Chiral Tubes on the Projective Space-Time Brane  ·  §3.1 Leitner 2026</div>
 
+<!-- Top toolbar (theme + hide) -->
+<div id="toolbar" style="position:absolute;top:10px;right:290px;display:flex;gap:6px;align-items:center;">
+  <button id="btn_theme" title="Toggle dark/light mode (T)"
+    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
+           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
+           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
+    ☀ Light</button>
+  <button id="btn_hide" title="Hide/show info panels (H)"
+    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
+           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
+           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
+    ⊞ Hide Info</button>
+  <button id="btn_sigma_auto" title="Auto-scale sigma so cone fits in view (A)"
+    style="background:rgba(58,144,255,0.12);border:1px solid rgba(58,144,255,0.28);
+           color:var(--accent);font-size:10px;cursor:pointer;border-radius:3px;
+           padding:3px 8px;font-family:'Share Tech Mono',monospace;letter-spacing:.05em;">
+    ⟳ Auto σ</button>
+</div>
+
 <!-- CONTROLS -->
 <div class="panel" id="ctrl" style="top:64px; right:14px; width:264px;">
   <div class="panel-title">Parameters</div>
@@ -148,6 +183,21 @@ input[type=range]::-webkit-slider-thumb {
     <input type="range" id="q_val" min="0" max="1" step="0.01" value="0.55">
     <span class="val" id="v_q">0.55</span>
   </div>
+
+  <div class="row" style="margin-top:5px;">
+    <span class="lbl">ζ_n  (root snap)</span>
+    <input type="number" id="root_n" min="1" max="30" step="1" value="5"
+      style="width:100%;background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:2px 5px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:10px;outline:none;">
+    <button id="snap_root"
+      style="background:rgba(58,144,255,0.14);border:1px solid rgba(58,144,255,0.30);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:2px;
+             padding:2px 5px;white-space:nowrap;font-family:'Share Tech Mono',monospace;">
+      snap</button>
+  </div>
+  <div style="font-size:8px;color:var(--dim);margin:1px 0 6px;text-align:right;
+              letter-spacing:.08em;">q_eff = cos(2π/n) = Re(ζₙ)</div>
 
   <div class="sec">── Tube segment (× ℓ_P) ───────────────────</div>
   <div class="row">
@@ -176,7 +226,7 @@ input[type=range]::-webkit-slider-thumb {
   <div class="sec">── Selected point  p ∈ M ───────────────────</div>
   <div class="row">
     <span class="lbl">θ_p  (polar)</span>
-    <input type="range" id="theta_p" min="1" max="179" step="1" value="55">
+    <input type="range" id="theta_p" min="0" max="360" step="1" value="55">
     <span class="val" id="v_thetap">55°</span>
   </div>
   <div class="row">
@@ -192,6 +242,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_stars"  checked> Stars</label>
     <label class="ck"><input type="checkbox" id="cb_auto"   checked> Rotate</label>
     <label class="ck"><input type="checkbox" id="cb_click"  checked> Click→p</label>
+    <label class="ck"><input type="checkbox" id="cb_cp1"> CP1 fibre</label>
   </div>
 </div>
 
@@ -605,12 +656,107 @@ function buildCapGeo(P, N, T1, T2, s_N, sigma, q, pitch_N, tubeIndex) {
   return geo;
 }
 
+// ── CP1 ghost sphere (wireframe tangent to brane at p) ───────────────
+let cp1GhostMesh = null;
+
+function buildCP1Ghost(P, N, R_CP1) {
+  if (cp1GhostMesh) { scene.remove(cp1GhostMesh); cp1GhostMesh = null; }
+  const geo = new THREE.SphereGeometry(R_CP1, 24, 16);
+  const mat = new THREE.MeshBasicMaterial({
+    color: 0x88ccff, wireframe: true, transparent: true, opacity: 0.20
+  });
+  cp1GhostMesh = new THREE.Mesh(geo, mat);
+  // Center at p + N·R_CP1  (south pole = p = touching point)
+  cp1GhostMesh.position.set(
+    P.x + N.x * R_CP1,
+    P.y + N.y * R_CP1,
+    P.z + N.z * R_CP1
+  );
+  scene.add(cp1GhostMesh);
+}
+
+// ── CP1 fibre tube: one coloured band covering 1/3 of the CP1 sphere ─
+// The CP1 sphere (radius R_CP1) is tangent to the brane at p (south pole).
+// Center O = p + N·R_CP1.  Parameterisation:
+//   v(φ_lat, ψ) = O + R_CP1·( sin(φ_lat)·(cos(ψ)·T1 + sin(ψ)·T2) − cos(φ_lat)·N )
+// φ_lat ∈ [0,π]:  0 = south pole (p),  π = north pole (p + 2R·N)
+// ψ ∈ sector [2πi/3, 2π(i+1)/3]  with torsion twist q·TAU·t·(ΔN/Γ)
+function buildTubeGeoCP1(tubeIndex, P, N, T1, T2, q, N_min, N_max, pitch_N) {
+  const R_CP1  = Math.max(0.1, (N_max - N_min) * LP * 0.55);
+  const Ox = P.x + N.x * R_CP1;
+  const Oy = P.y + N.y * R_CP1;
+  const Oz = P.z + N.z * R_CP1;
+
+  const AX  = TUBE_AX, RG = TUBE_RG, RG1 = RG + 1;
+  const NV  = (AX + 1) * RG1;
+  const pos = new Float32Array(NV * 3);
+  const col = new Float32Array(NV * 3);
+  const tc  = TUBE_COL[tubeIndex];
+
+  const psi_base  = TAU * tubeIndex / 3;   // 120° sector start
+  const psi_span  = TAU / 3;               // 120° sector width
+  const tot_twist = q * TAU * (N_max - N_min) / pitch_N;  // torsion over full latitude
+
+  for (let i = 0; i <= AX; i++) {
+    const t       = i / AX;                // 0 = south pole, 1 = north pole
+    const phi_lat = t * Math.PI;
+    const sinPhi  = Math.sin(phi_lat);
+    const cosPhi  = Math.cos(phi_lat);
+
+    for (let j = 0; j <= RG; j++) {
+      const psi_frac = j / RG;
+      const psi      = psi_base + psi_frac * psi_span + t * tot_twist;
+      const cosPsi   = Math.cos(psi);
+      const sinPsi   = Math.sin(psi);
+
+      const vi = i * RG1 + j;
+      pos[vi*3  ] = Ox + R_CP1 * (sinPhi * (T1.x*cosPsi + T2.x*sinPsi) - cosPhi*N.x);
+      pos[vi*3+1] = Oy + R_CP1 * (sinPhi * (T1.y*cosPsi + T2.y*sinPsi) - cosPhi*N.y);
+      pos[vi*3+2] = Oz + R_CP1 * (sinPhi * (T1.z*cosPsi + T2.z*sinPsi) - cosPhi*N.z);
+      col[vi*3  ] = tc.r;
+      col[vi*3+1] = tc.g;
+      col[vi*3+2] = tc.b;
+    }
+  }
+
+  const idx = [];
+  for (let i = 0; i < AX; i++)
+    for (let j = 0; j < RG; j++) {
+      const a = i*RG1+j, b = (i+1)*RG1+j, c = i*RG1+j+1, d = (i+1)*RG1+j+1;
+      idx.push(a, c, b,  c, d, b);
+    }
+
+  const acc = new Float32Array(NV * 3);
+  for (let k = 0; k < idx.length; k += 3) {
+    const ia=idx[k], ib=idx[k+1], ic=idx[k+2];
+    const ax=pos[ia*3],ay=pos[ia*3+1],az=pos[ia*3+2];
+    const bx=pos[ib*3],by=pos[ib*3+1],bz=pos[ib*3+2];
+    const cx=pos[ic*3],cy=pos[ic*3+1],cz=pos[ic*3+2];
+    const ex=bx-ax,ey=by-ay,ez=bz-az, fx=cx-ax,fy=cy-ay,fz=cz-az;
+    const nx=ey*fz-ez*fy, ny=ez*fx-ex*fz, nz=ex*fy-ey*fx;
+    for (const ii of [ia,ib,ic]) { acc[ii*3]+=nx; acc[ii*3+1]+=ny; acc[ii*3+2]+=nz; }
+  }
+  const nrm = new Float32Array(NV * 3);
+  for (let i = 0; i < NV; i++) {
+    const l = Math.sqrt(acc[i*3]**2+acc[i*3+1]**2+acc[i*3+2]**2)+1e-10;
+    nrm[i*3]=acc[i*3]/l; nrm[i*3+1]=acc[i*3+1]/l; nrm[i*3+2]=acc[i*3+2]/l;
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('normal',   new THREE.BufferAttribute(nrm, 3));
+  geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
+  geo.setIndex(idx);
+  return geo;
+}
+
 // ── Active tube meshes ───────────────────────────────────────────────
 let activeTubes = [];
 
 function buildTubes() {
   for (const m of activeTubes) scene.remove(m);
   activeTubes = [];
+  if (cp1GhostMesh) { scene.remove(cp1GhostMesh); cp1GhostMesh = null; }
 
   if (!document.getElementById('cb_tubes').checked) return;
 
@@ -619,35 +765,76 @@ function buildTubes() {
   const N_max   = parseInt(document.getElementById('n_max').value);
   const sigma   = parseFloat(document.getElementById('sigma').value);
   const pitch_N = parseFloat(document.getElementById('pitch').value);
+  const cp1Mode = document.getElementById('cb_cp1').checked;
 
   if (N_min >= N_max) return;
 
   const N_vec   = selPt.clone().normalize();
   const { T1, T2 } = getFrame(N_vec);
 
-  for (let ti = 0; ti < 3; ti++) {
-    // Main tube body
-    const geo = buildTubeGeo(ti, selPt, N_vec, T1, T2, q, N_min, N_max, sigma, pitch_N);
-    const mat = new THREE.MeshPhongMaterial({
-      vertexColors: true,
-      side:         THREE.DoubleSide,
-      shininess:    70,
-      specular:     new THREE.Color(0.28, 0.30, 0.38),
-    });
-    const mesh = new THREE.Mesh(geo, mat);
-    scene.add(mesh);
-    activeTubes.push(mesh);
-
-    // End caps (opaque discs closing the tube ends)
-    for (const s_end of [N_min > 0 ? N_min : null, N_max]) {
-      if (s_end === null) continue;
-      const cgeo = buildCapGeo(selPt, N_vec, T1, T2, s_end, sigma, q, pitch_N, ti);
-      const cmat = new THREE.MeshPhongMaterial({
-        vertexColors: true, side: THREE.DoubleSide, shininess: 40
+  if (cp1Mode) {
+    // ── CP1 fibre view: three bands tiling a touching CP1 sphere ──
+    const R_CP1 = Math.max(0.1, (N_max - N_min) * LP * 0.55);
+    buildCP1Ghost(selPt, N_vec, R_CP1);
+    for (let ti = 0; ti < 3; ti++) {
+      const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q, N_min, N_max, pitch_N);
+      const mat = new THREE.MeshPhongMaterial({
+        vertexColors: true, side: THREE.DoubleSide,
+        shininess: 70, specular: new THREE.Color(0.28, 0.30, 0.38),
       });
-      const cmesh = new THREE.Mesh(cgeo, cmat);
-      scene.add(cmesh);
-      activeTubes.push(cmesh);
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+      activeTubes.push(mesh);
+    }
+  } else {
+    // ── Cone-tube chiral view (original) ──────────────────────────
+    for (let ti = 0; ti < 3; ti++) {
+      const geo = buildTubeGeo(ti, selPt, N_vec, T1, T2, q, N_min, N_max, sigma, pitch_N);
+      const mat = new THREE.MeshPhongMaterial({
+        vertexColors: true,
+        side:         THREE.DoubleSide,
+        shininess:    70,
+        specular:     new THREE.Color(0.28, 0.30, 0.38),
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+      activeTubes.push(mesh);
+
+      // End caps (opaque discs closing the tube ends)
+      for (const s_end of [N_min > 0 ? N_min : null, N_max]) {
+        if (s_end === null) continue;
+        const cgeo = buildCapGeo(selPt, N_vec, T1, T2, s_end, sigma, q, pitch_N, ti);
+        const cmat = new THREE.MeshPhongMaterial({
+          vertexColors: true, side: THREE.DoubleSide, shininess: 40
+        });
+        const cmesh = new THREE.Mesh(cgeo, cmat);
+        scene.add(cmesh);
+        activeTubes.push(cmesh);
+      }
+      // Composite cap at N_max: a second slightly-larger disc coloured by EC composite
+      {
+        const state   = getChiralState();
+        const compCol = state.composite
+          ? new THREE.Color(1.0, 0.93, 0.20)   // gold = composite point on EC
+          : TUBE_COL[ti];
+        const cgeo2 = buildCapGeo(selPt, N_vec, T1, T2, N_max, sigma * 1.22, q, pitch_N, ti);
+        // Override colours to composite colour
+        const colArr = cgeo2.attributes.color.array;
+        for (let k = 0; k < colArr.length; k += 3) {
+          colArr[k]   = compCol.r;
+          colArr[k+1] = compCol.g;
+          colArr[k+2] = compCol.b;
+        }
+        cgeo2.attributes.color.needsUpdate = true;
+        const cmat2 = new THREE.MeshPhongMaterial({
+          vertexColors: true, side: THREE.DoubleSide,
+          shininess: 80, emissive: compCol.clone().multiplyScalar(0.25),
+          transparent: true, opacity: 0.85,
+        });
+        const cmesh2 = new THREE.Mesh(cgeo2, cmat2);
+        scene.add(cmesh2);
+        activeTubes.push(cmesh2);
+      }
     }
   }
 }
@@ -687,7 +874,15 @@ function updateStats() {
   const xi_q_end   = 1.0 + 0.30 * q * cosQ(phase_end, q_e, QN);
   const r_cone_max = (N_max * LP * sigma * xi_q_end).toFixed(4);
 
+  const cp1Mode = document.getElementById('cb_cp1').checked;
+  const R_CP1   = Math.max(0.1, (N_max - N_min) * LP * 0.55);
+  const modeStr = cp1Mode
+    ? `<span class="h3">CP1 fibre</span>  R_CP1=<span class="h2">${R_CP1.toFixed(3)}</span>`
+    : `<span class="h3">cone-tube</span>`;
+
   document.getElementById('stats-body').innerHTML =
+    `<b style="color:var(--dim)">── Mode ───────────────────</b><br>`+
+    `${modeStr}<br>`+
     `<b style="color:var(--dim)">── Viewpoint ──────────────</b><br>`+
     `θ_cam = <span class="h1">${camThDeg.toFixed(1)}°</span>  `+
     `φ_cam = <span class="h1">${camPhDeg.toFixed(1)}°</span><br>`+
@@ -822,6 +1017,27 @@ document.getElementById('cb_stars').addEventListener('change', e => {
   starGroup.visible = e.target.checked;
 });
 document.getElementById('cb_tubes').addEventListener('change', () => buildTubes());
+document.getElementById('cb_cp1').addEventListener('change', () => buildTubes());
+
+// Root-of-unity snap: sets q_eff = cos(2π/n), solves back for slider value
+document.getElementById('snap_root').addEventListener('click', () => {
+  const n = Math.max(1, parseInt(document.getElementById('root_n').value) || 5);
+  const q_eff_target = Math.cos(TAU / n);
+  // Invert qEff(q) = max(0.08, 0.98 - 0.90·q):  q = (0.98 - q_eff) / 0.90
+  const q_slider = Math.max(0, Math.min(1, (0.98 - q_eff_target) / 0.90));
+  document.getElementById('q_val').value = q_slider.toFixed(4);
+  document.getElementById('v_q').textContent = q_slider.toFixed(2);
+  rebuild();
+});
+
+// Spacebar: toggle auto-rotate
+window.addEventListener('keydown', e => {
+  if (e.key === ' ' || e.code === 'Space') {
+    e.preventDefault();
+    const cb = document.getElementById('cb_auto');
+    cb.checked = !cb.checked;
+  }
+});
 
 // ── Mouse orbit ───────────────────────────────────────────────────────
 let drag = false, didDrag = false;
@@ -888,6 +1104,56 @@ window.addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
+});
+
+// ── Dark / Light mode ─────────────────────────────────────────────────
+let lightMode = false;
+function applyTheme() {
+  document.body.classList.toggle('light', lightMode);
+  renderer.setClearColor(lightMode ? 0xf0f4ff : 0x020710);
+  document.getElementById('btn_theme').textContent = lightMode ? '☾ Dark' : '☀ Light';
+}
+document.getElementById('btn_theme').addEventListener('click', () => {
+  lightMode = !lightMode; applyTheme();
+});
+
+// ── Hide / show info panels ───────────────────────────────────────────
+let infoPanelsHidden = false;
+const INFO_PANEL_IDS = ['info','chiral','weierstrass','formula'];
+function applyHide() {
+  const hide = infoPanelsHidden;
+  INFO_PANEL_IDS.forEach(id => {
+    document.getElementById(id).style.display = hide ? 'none' : '';
+  });
+  document.getElementById('btn_hide').textContent = hide ? '⊟ Show Info' : '⊞ Hide Info';
+}
+document.getElementById('btn_hide').addEventListener('click', () => {
+  infoPanelsHidden = !infoPanelsHidden; applyHide();
+});
+
+// ── Auto-scale sigma so cone max radius ≈ 18% of SPHERE_R ────────────
+function autoSigma() {
+  const q       = parseFloat(document.getElementById('q_val').value);
+  const N_max   = parseInt(document.getElementById('n_max').value);
+  const pitch_N = parseFloat(document.getElementById('pitch').value);
+  const q_e     = qEff(q);
+  const phase_end = TAU * N_max / pitch_N;
+  const xi_q_max  = 1.0 + 0.30 * q * (1 + Math.abs(cosQ(phase_end, q_e, QN)));
+  const target_r  = SPHERE_R * 0.18;
+  const sigma_new = target_r / Math.max(1e-6, N_max * LP * xi_q_max);
+  const clamped   = Math.max(0.02, Math.min(0.50, sigma_new));
+  document.getElementById('sigma').value = clamped.toFixed(4);
+  document.getElementById('v_sigma').textContent = clamped.toFixed(2);
+  rebuild();
+}
+document.getElementById('btn_sigma_auto').addEventListener('click', autoSigma);
+
+// ── Keyboard shortcuts ────────────────────────────────────────────────
+window.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 't' || e.key === 'T') { lightMode = !lightMode; applyTheme(); }
+  if (e.key === 'h' || e.key === 'H') { infoPanelsHidden = !infoPanelsHidden; applyHide(); }
+  if (e.key === 'a' || e.key === 'A') autoSigma();
 });
 
 // ════════════════════════════════════════════════════════════════════
