@@ -63,9 +63,7 @@ echo "::group::Run latexdiff"
 latexdiff \
   --type=CFONT \
   --math-markup=coarse \
-  --type=CFONT \
   --append-safecmd="ref,eqref,cite,label,autoref,nameref,hyperref" \
-
   "$MAIN_FLAT" "$BRANCH_FLAT" \
   > diff.tex \
   || { echo "::warning::latexdiff failed; falling back to unchanged source"
