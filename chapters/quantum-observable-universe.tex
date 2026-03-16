@@ -886,17 +886,14 @@ the geometry of $M$ is forced to curve to accommodate the tension of the
 $\mathrm{SU}(2)$ instantons.
 \end{remark}
 
-\begin{remark}[The Schr\"odinger Equation as ``Jet Co-action'']
+\begin{remark}[$q$-Deformed Schr\"odinger equation]
 \label{rem:schrodinger-jet-coaction}
-The Schr\"odinger equation describes the evolution of a state in the fibre
-$\mathbb{CP}^1$.  In the jet-bundle framework this is expressed as the
-condition of parallel transport along the instanton connection $A$ on $P$.
-
-Let $J \colon H \to H$ denote the complex structure operator on the Levi
-distribution ($J^2 = -\mathrm{Id}$).  In this framework the symbol~$i$ in the
-Schr\"odinger equation is identified with $J$: it acts as a geometric
-twisting operator on horizontal planes rather than as an algebraic imaginary
-unit.
+The $q$-deformed Schr\"odinger equation governs the evolution of states
+in the linearised state bundle.  Throughout this paper the symbol~$i$ in
+the Schr\"odinger equation is identified with the complex structure
+operator $J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$):
+it acts as a geometric twisting operator on horizontal planes rather than
+as an algebraic imaginary unit.
 
 \medskip\noindent\textit{Linearisation convention.}\;
 The fibre $\mathbb{CP}^1$ is a non-linear space, so one cannot write a
@@ -1177,11 +1174,11 @@ revision pass.
 
 \raggedright Def.~1.20\newline\texttt{def:q-ext-deriv}
   & Good
-  & \emph{New.}\;  $q$-deformed exterior derivative defined with explicit
-    formula $d_q = q^{-1}d + (1-q^{-1})\theta \wedge \mathcal{L}_\xi$.
-    Recovers $d$ at $q=1$.  $d_q^2$ computed in
-    Proposition~\ref{prop:dq-squared}: $d_q^2 \neq 0$ in general, but
-    vanishes on Reeb-invariant forms. \\
+  & \emph{Updated.}\;  Pure definition: explicit formula
+    $d_q = q^{-1}d + (1-q^{-1})\theta \wedge \mathcal{L}_\xi$.
+    Classical recovery ($d_q = d$ at $q=1$) extracted to
+    Remark~\ref{rem:classical-recovery}.  $d_q^2$ computed in
+    Proposition~\ref{prop:dq-squared}. \\
 
 \raggedright Prop.~1.21\newline\texttt{prop:dq-squared}
   & Good
@@ -1191,11 +1188,11 @@ revision pass.
 
 \raggedright Def.~1.21\newline\texttt{def:q-lie-bracket}
   & Good
-  & \emph{New.}\;  $q$-deformed Lie bracket defined with explicit
-    formula.  Recovers the standard bracket at $q=1$.  Jacobiator
-    computed in Proposition~\ref{prop:q-jacobiator}: non-zero for all
-    $q \neq 1$; the bracket defines a Leibniz algebra, not a Lie
-    algebra. \\
+  & \emph{Updated.}\;  Pure definition: explicit formula for
+    $[\,\cdot\,,\cdot\,]_q$.  Classical recovery extracted to
+    Remark~\ref{rem:classical-recovery}.  Jacobiator computed in
+    Proposition~\ref{prop:q-jacobiator}: non-zero for all $q \neq 1$;
+    the bracket defines a Leibniz algebra, not a Lie algebra. \\
 
 \raggedright Prop.~1.22\newline\texttt{prop:q-jacobiator}
   & Good
@@ -1205,14 +1202,24 @@ revision pass.
 
 \raggedright Def.~1.22\newline\texttt{def:q-connection}
   & Good
-  & \emph{New.}\;  $q$-deformed connection $A_q$ defined.  Recovers
-    $A$ at $q=1$. \\
+  & \emph{Updated.}\;  Pure definition.  Interpolation explanation and
+    classical recovery extracted to
+    Remark~\ref{rem:classical-recovery}. \\
 
 \raggedright Def.~1.23\newline\texttt{def:q-reeb-\linebreak vector-field}
   & Good
-  & \emph{Fixed.}\;  Now references Definition~\ref{def:q-lie-bracket}
-    for $[\,\cdot\,,\cdot\,]_q$ and specifies the Webster metric for
-    the horizontal lift. \\
+  & \emph{Updated.}\;  Pure definition.  References
+    Definition~\ref{def:q-lie-bracket} for $[\,\cdot\,,\cdot\,]_q$;
+    classical recovery extracted to
+    Remark~\ref{rem:classical-recovery}. \\
+
+\raggedright Rem.\newline\texttt{rem:classical-\linebreak recovery}
+  & Good
+  & \emph{New.}\;  Extracted from Definitions~\ref{def:q-ext-deriv},
+    \ref{def:q-lie-bracket}, \ref{def:q-connection},
+    and~\ref{def:q-reeb-vector-field}: all four $q$-deformed operators
+    recover their classical counterparts at $q = 1$ via the uniform
+    interpolation pattern. \\
 
 \raggedright Def.~1.24\newline\texttt{def:q-reeb-flow}
   & Good
@@ -1257,10 +1264,13 @@ revision pass.
 
 \raggedright Rem.~1.30\newline\texttt{rem:schrodinger-\linebreak jet-coaction}
   & Good
-  & \emph{Fixed.}\;  $\hat{H}_q$ now defined as
-    $-\tfrac{1}{2}\hbar_q\Delta_q + V_q$.  Linearisation convention for the
-    non-linear fibre $\mathbb{CP}^1$ is stated.  $D_A$ now acts on the
-    linearised line bundle $E_{\mathrm{lin}}$. \\
+  & \emph{Updated.}\;  Retitled from ``Jet Co-action'' to
+    ``$q$-Deformed Schr\"odinger equation'': the original title suggested a
+    category-theoretic formulation that was not substantiated.  Content
+    retained: $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$,
+    linearisation convention for $\mathbb{CP}^1$, identification $i = J$.
+    This remark is essential: it provides the bottom row of the
+    main commutative diagram (Proposition~\ref{prop:main-commutative-diagram}). \\
 
 \raggedright Prop.~1.31\newline\texttt{prop:main-\linebreak commutative-\linebreak diagram}
   & Good
@@ -1274,10 +1284,10 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 41~labelled items (27 original $+$ 3 new definitions $+$ 2 new
-propositions $+$ 7 new remarks $+$ 1 new example $+$ 1 promoted
+Of the 42~labelled items (27 original $+$ 3 new definitions $+$ 2 new
+propositions $+$ 8 new remarks $+$ 1 new example $+$ 1 promoted
 proposition, after removal of the former \texttt{ex:spheres} example):
-36~are rated \textbf{Good};
+37~are rated \textbf{Good};
 5~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
 
