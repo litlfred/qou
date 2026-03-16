@@ -81,7 +81,7 @@ def stub_def_recursive_brane_tower : Unit := ()
     Mathlib: `Mathlib.Topology.FiberBundle.Basic` -/
 def stub_def_quantum_characteristic_classes : Unit := ()
 
-/-- `def:direct-limit-algebra` — \mathbb{C} Quantum Observable Universe as Direct Limit (Definition)
+/-- `def:direct-limit-algebra` — C Quantum Observable Universe as Direct Limit (Definition)
     Source: chapters/lifting-of-quantum-torsion.tex:256
     Lean: `QOU.FrobeniusHopf.DirectLimitAlgebra`
     Mathlib: `Mathlib.Algebra.DirectLimit` -/
@@ -121,17 +121,17 @@ def stub_def_braid_group : Unit := ()
     Mathlib: `Equiv.Perm (Fin 3)` -/
 def stub_def_s3_group : Unit := ()
 
-/-- `def:su2-basis` — \mathfrak{su}(2) basis (Definition)
+/-- `def:su2-basis` — su(2) basis (Definition)
     Source: chapters/path-integrals-and-braiding.tex:64
     Lean: `QOU.BraidGroup.SU2Basis`
     Mathlib: `Mathlib.Algebra.Lie.Basic` -/
 def stub_def_su2_basis : Unit := ()
 
-/-- `def:su2-generators` — \mathrm{SU}(2) generators of \mathrm{Dic}_3 (Definition)
+/-- `def:su2-generators` — SU(2) generators of Dic_3 (Definition)
     Source: chapters/path-integrals-and-braiding.tex:93 -/
 def stub_def_su2_generators : Unit := ()
 
-/-- `def:so3-generators` — \mathrm{SO}(3) generators (Definition)
+/-- `def:so3-generators` — SO(3) generators (Definition)
     Source: chapters/path-integrals-and-braiding.tex:112 -/
 def stub_def_so3_generators : Unit := ()
 
@@ -140,7 +140,7 @@ def stub_def_so3_generators : Unit := ()
     Lean: `QOU.BraidGroup.BraidInvolutions` -/
 def stub_def_braid_twist_flip : Unit := ()
 
-/-- `def:quantum-su2` — Quantum group \mathcal{U}_q(\mathfrak{su}(2)) (Definition)
+/-- `def:quantum-su2` — Quantum group U_q(su(2)) (Definition)
     Source: chapters/path-integrals-and-braiding.tex:314
     Lean: `QOU.QuantumGroup.QuantumSU2`
     Mathlib: `Mathlib.RingTheory.HopfAlgebra` -/
@@ -232,7 +232,7 @@ def stub_prop_dq_squared : Unit := ()
     Source: chapters/quantum-observable-universe.tex:1150 -/
 def stub_def_q_lie_bracket : Unit := ()
 
-/-- `prop:q-jacobiator` — Jacobiator of {{[\,\cdot\,,\cdot\, (Proposition)
+/-- `prop:q-jacobiator` — Jacobiator of [,]_q (Proposition)
     Source: chapters/quantum-observable-universe.tex:1163 -/
 def stub_prop_q_jacobiator : Unit := ()
 

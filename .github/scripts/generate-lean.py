@@ -98,15 +98,38 @@ class LabelledItem:
 # ── Parsing ────────────────────────────────────────────────────────────────────
 
 # Matches  \begin{definition}[Display Name]  (with optional whitespace/newlines).
+# The inner group allows `]` to appear inside $…$ math mode.
 _RE_BEGIN = re.compile(
     r"\\begin\{(" + "|".join(TRACKED_ENVS) + r")\}"
-    r"(?:\s*\[([^\]]*)\])?"
+    r"(?:\s*\[((?:[^\]$]|\$[^$]*\$)*)\])?"
 )
 
 # Matches  \label{prefix:slug}
 _RE_LABEL = re.compile(
     r"\\label\{((?:" + "|".join(TRACKED_PREFIXES) + r"):[\w-]+)\}"
 )
+
+# LaTeX commands to strip from display names for readability.
+_RE_LATEX_CMD = re.compile(r"\\(?:mathbb|mathfrak|mathrm|mathcal|mathsf|operatorname|text)\{([^}]*)\}")
+_RE_LATEX_MISC = re.compile(r"\\[a-zA-Z]+")
+
+
+def _clean_display(raw: str) -> str:
+    """Strip LaTeX markup from a display name for use in Lean docstrings."""
+    s = raw.strip()
+    # Replace \mathbb{X} etc. with just X
+    s = _RE_LATEX_CMD.sub(r"\1", s)
+    # Remove $..$ math delimiters
+    s = s.replace("$", "")
+    # Remove remaining backslash commands (e.g. \cdot, \,)
+    s = _RE_LATEX_MISC.sub("", s)
+    # Remove backslash + single non-letter character (e.g. \, \; \!)
+    s = re.sub(r"\\.", "", s)
+    # Remove braces and subscript/superscript markers
+    s = s.replace("{", "").replace("}", "")
+    # Collapse whitespace and stray punctuation artefacts
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
 
 def scan_tex(path: Path, rel_root: Path) -> list[LabelledItem]:
@@ -125,9 +148,7 @@ def scan_tex(path: Path, rel_root: Path) -> list[LabelledItem]:
         m_begin = _RE_BEGIN.search(raw)
         if m_begin:
             pending_env = m_begin.group(1)
-            pending_display = (m_begin.group(2) or "").strip()
-            # Strip LaTeX math wrappers for readability
-            pending_display = pending_display.replace("$", "")
+            pending_display = _clean_display(m_begin.group(2) or "")
 
         # Look for \label{prefix:slug}
         m_label = _RE_LABEL.search(raw)

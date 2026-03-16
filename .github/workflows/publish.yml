@@ -249,7 +249,7 @@ jobs:
           mkdir -p _site/lean
           cp -r lean/*.lean lean/lean-toolchain _site/lean/
           cp -r lean/QOU _site/lean/
-          echo "Lean stubs generated: $(grep -c '^def stub_' lean/QOU/Defs.lean) declarations"
+          echo "Lean stubs generated: $(grep -c '^def stub_' lean/QOU/Defs.lean || echo 0) declarations"
 
       # ── 4. Deploy to target branch ─────────────────────────────────────────
       # peaceiris/actions-gh-pages automatically creates the publish_branch
