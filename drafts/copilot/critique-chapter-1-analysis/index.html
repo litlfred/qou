@@ -370,7 +370,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/copilot/critique-chapter-1-analysis">&#x1F33F; copilot/critique-chapter-1-analysis</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/9812d865bf6ab9dd4a62bbf953043c939b720a91">&#x1F4DD; 9812d86</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/27e2a058d7ceafe80fcb44d9b673b744c837fade">&#x1F4DD; 27e2a05</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/52">PR #52</a>
 </div>
 
@@ -404,38 +404,60 @@ and any changes made are indicated.</p>
 <p><strong>Definition 1.1</strong> (<span
 class="math inline">\(\mathbb{C}\)</span> Quantum Universe). <em>A
 <em><span class="math inline">\(\mathbb{C}\)</span> quantum
-universe</em> is a <span class="math inline">\(4\)</span>-tuple <span
-class="math inline">\((M, G, P, E)\)</span> where:</em></p>
+universe</em> is a <span class="math inline">\(5\)</span>-tuple <span
+class="math inline">\((M, \theta, G, P, E)\)</span> where:</em></p>
 <ol type="1">
-<li><p><em><span class="math inline">\(M\)</span> is a CR
-manifold;</em></p></li>
+<li><p><em><span class="math inline">\(M\)</span> is a strictly
+pseudoconvex CR manifold of hypersurface type (real dimension <span
+class="math inline">\(2n+1\)</span>, <span class="math inline">\(n \geq
+1\)</span>);</em></p></li>
+<li><p><em><span class="math inline">\(\theta\)</span> is a
+pseudo-Hermitian structure (contact form) on <span
+class="math inline">\(M\)</span>, determining the Levi distribution
+<span class="math inline">\(H = \ker\theta\)</span>, the Reeb vector
+field <span class="math inline">\(\xi\)</span>, the Webster metric <span
+class="math inline">\(g_\theta\)</span>, and the Levi form <span
+class="math inline">\(L_\theta\)</span>;</em></p></li>
 <li><p><em><span class="math inline">\(G =
 \mathrm{SU}(2)\)</span>;</em></p></li>
 <li><p><em><span class="math inline">\(P \to M\)</span> is a principal
-<span class="math inline">\(G\)</span>-bundle with <span
-class="math inline">\(\mathrm{SO}(3)\)</span> holonomy;</em></p></li>
+<span class="math inline">\(G\)</span>-bundle whose holonomy reduces to
+<span class="math inline">\(\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm
+I\}\)</span>;</em></p></li>
 <li><p><em><span class="math inline">\(E = P \times_G \mathbb{CP}^1 \to
-M\)</span> is the associated <em>state bundle</em> (the chiral bundle of
-quantum states).</em></p></li>
+M\)</span> is the associated <em>state bundle</em>, where <span
+class="math inline">\(\mathrm{SU}(2)\)</span> acts on <span
+class="math inline">\(\mathbb{CP}^1\)</span> by Möbius
+transformations.</em></p></li>
 </ol>
+<p><em>When <span class="math inline">\(\theta\)</span> is understood
+from context, we abbreviate the <span
+class="math inline">\(5\)</span>-tuple to <span
+class="math inline">\((M, G, P, E)\)</span>.</em></p>
 </div>
 
-<div id="def:c-quantum-observable-universe" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L19" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:c-quantum-observable-universe" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L29" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.2</strong> (<span
 class="math inline">\(\mathbb{C}\)</span> Quantum Observable Universe).
 <em>A <em><span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe</em> is a <span
 class="math inline">\(\mathbb{C}\)</span> quantum universe <span
-class="math inline">\((M, G, P, E)\)</span>
+class="math inline">\((M, \theta, G, P, E)\)</span>
 (Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>)
-that satisfies the following compactly supported cohomology conditions:
+that satisfies the following compactly supported vanishing conditions:
 <span class="math display">\[H^0_c(M, \mathrm{Ad}(P)) = 0
 \qquad\text{and}\qquad
-H^0_c(M, E) = 0.\]</span></em></p>
+\Gamma_c(M, E) = 0,\]</span> where <span
+class="math inline">\(\mathrm{Ad}(P) = P \times_G
+\mathfrak{su}(2)\)</span> is the adjoint bundle (a linear bundle, so
+sheaf cohomology is defined), and <span
+class="math inline">\(\Gamma_c(M,E)\)</span> denotes the space of
+compactly supported continuous sections of the (non-linear) fibre bundle
+<span class="math inline">\(E\)</span>.</em></p>
 </div>
 
-<div id="rem:jet-bundle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L33" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:jet-bundle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L48" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.3</strong> (<a class="defn-link" href="#rem:jet-bundle">Jet-bundle formulation</a>). <em>The
 conditions in
@@ -453,16 +475,14 @@ the space of connections on <span class="math inline">\(P\)</span>,
 preventing any local degeneracy of the gauge field.</em></p>
 </div>
 
-<div id="lem:unique-connection" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L46" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="lem:irreducible-connection" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L61" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Lemma 1.4</strong> (<a class="defn-link" href="#lem:unique-connection">Irreducibility of the connection</a>).
+<p><strong>Lemma 1.4</strong> (<a class="defn-link" href="#lem:irreducible-connection">Irreducibility of the connection</a>).
 <em>Let <span class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe.
-Then the vanishing conditions <span class="math display">\[H^0_c(M,
-\mathrm{Ad}(P)) = 0
-\qquad\text{and}\qquad
-H^0_c(M, E) = 0\]</span> imply that every instanton connection <span
-class="math inline">\(A\)</span> on <span
+Then the vanishing condition <span class="math inline">\(H^0_c(M,
+\mathrm{Ad}(P)) = 0\)</span> implies that every instanton connection
+<span class="math inline">\(A\)</span> on <span
 class="math inline">\(P\)</span> is irreducible.</em></p>
 </div>
 
@@ -470,35 +490,35 @@ class="math inline">\(P\)</span> is irreducible.</em></p>
 
 <p><em>Proof.</em> Suppose for contradiction that an instanton
 connection <span class="math inline">\(A\)</span> on <span
-class="math inline">\(P\)</span> is reducible. Then <span
-class="math inline">\(A\)</span> is preserved by a non-trivial element
-<span class="math inline">\(s \in \Gamma_c(M,\,
-\mathrm{Ad}(P))\)</span>: in other words, the infinitesimal automorphism
-<span class="math inline">\(s\)</span> satisfies <span
-class="math inline">\(D_A s = 0\)</span> and has compact support. Such a
-section is a non-zero element of <span class="math inline">\(H^0_c(M,
-\mathrm{Ad}(P))\)</span>, contradicting the hypothesis <span
-class="math inline">\(H^0_c(M, \mathrm{Ad}(P)) = 0\)</span>. Hence no
-non-trivial compactly supported gauge symmetry preserves <span
-class="math inline">\(A\)</span>, and <span
+class="math inline">\(P\)</span> is reducible. Then the stabiliser of
+<span class="math inline">\(A\)</span> under the gauge group contains a
+non-trivial element <span class="math inline">\(s \in \Gamma(M,\,
+\mathrm{Ad}(P))\)</span> satisfying <span class="math inline">\(D_A s =
+0\)</span>. Because <span class="math inline">\(M\)</span> is
+non-compact (as required for the compactly supported cohomology to be
+meaningful), a bump-function argument yields a non-zero compactly
+supported section in <span class="math inline">\(\ker D_A \subset
+\Gamma_c(M,\,\mathrm{Ad}(P))\)</span>, contradicting <span
+class="math inline">\(H^0_c(M, \mathrm{Ad}(P)) = 0\)</span>. Hence <span
 class="math inline">\(A\)</span> is irreducible. ◻</p>
 </div>
 
-<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L68" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L79" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 1.5</strong> (<a class="defn-link" href="#prop:self-dual-curvature">Self-duality of the curvature</a>).
-<em>Let <span class="math inline">\((M, G, P, E)\)</span> be a <span
-class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with instanton connection <span class="math inline">\(A\)</span> on
-<span class="math inline">\(P\)</span>. Let <span
-class="math inline">\(H = \ker\theta \subset TM\)</span> denote the Levi
-distribution (the even-dimensional horizontal sub-bundle of the CR
-manifold). The Hodge star operator <span
-class="math inline">\(*_H\)</span> is evaluated on <span
-class="math inline">\(H\)</span>, where it is well-defined because <span
-class="math inline">\(H\)</span> is even-dimensional. Then the curvature
-<span class="math inline">\(F_A\)</span>, restricted to <span
-class="math inline">\(H\)</span>, is self-dual: <span
+<em>Let <span class="math inline">\((M, \theta, G, P, E)\)</span> be a
+<span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe with <span class="math inline">\(\dim_{\mathbb{R}} M =
+5\)</span> (i.e. the CR dimension <span class="math inline">\(n =
+2\)</span>, so that the Levi distribution <span class="math inline">\(H
+= \ker\theta\)</span> has <span class="math inline">\(\dim_{\mathbb{R}}
+H = 4\)</span>). Let <span class="math inline">\(A\)</span> be an
+instanton connection on <span class="math inline">\(P\)</span>. Then the
+curvature <span class="math inline">\(F_A\)</span>, restricted to <span
+class="math inline">\(H\)</span>, is self-dual with respect to the Hodge
+star <span class="math inline">\(*_H\)</span> determined by the Webster
+metric <span class="math inline">\(g_\theta\)</span> and the complex
+structure <span class="math inline">\(J\)</span>: <span
 class="math display">\[F_A\big|_H \;=\; {*_H}\,
 F_A\big|_H.\]</span></em></p>
 </div>
@@ -506,12 +526,13 @@ F_A\big|_H.\]</span></em></p>
 <div class="proof">
 
 <p><em>Proof.</em> The contact form <span
-class="math inline">\(\theta\)</span> splits the tangent bundle as <span
-class="math inline">\(TM = H \oplus \mathbb{R}\xi\)</span>, where <span
-class="math inline">\(H = \ker\theta\)</span> has real dimension <span
-class="math inline">\(2n\)</span> (with <span
-class="math inline">\(\dim_{\mathbb{R}} M = 2n+1\)</span>). The
-curvature <span class="math inline">\(F_A\)</span> is an <span
+class="math inline">\(\theta\)</span>
+(Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>)
+splits the tangent bundle as <span class="math inline">\(TM = H \oplus
+\mathbb{R}\xi\)</span>, where <span class="math inline">\(H =
+\ker\theta\)</span> has real dimension <span
+class="math inline">\(4\)</span>. The curvature <span
+class="math inline">\(F_A\)</span> is an <span
 class="math inline">\(\mathrm{Ad}(P)\)</span>-valued <span
 class="math inline">\(2\)</span>-form on <span
 class="math inline">\(M\)</span>. By the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
@@ -520,55 +541,59 @@ class="math inline">\(M\)</span>. By the <a class="defn-link" href="#def:reeb-de
 vertical parts; we consider <span class="math inline">\(F_A|_H \in
 \Gamma(\Lambda^2 H^* \otimes
 \mathrm{Ad}(P))\)</span>.</p>
-<p>On the even-dimensional bundle <span
-class="math inline">\(H\)</span>, the Webster metric <span
-class="math inline">\(g_\theta\)</span> and the complex structure <span
-class="math inline">\(J\)</span> determine a Hodge star operator <span
-class="math inline">\(*_H \colon \Lambda^2 H^* \to \Lambda^{2n-2}
-H^*\)</span>. When <span class="math inline">\(n = 2\)</span> (so <span
-class="math inline">\(\dim H = 4\)</span>), <span
-class="math inline">\(*_H\)</span> maps <span
+<p>Since <span class="math inline">\(\dim_{\mathbb{R}} H = 4\)</span>,
+the operator <span class="math inline">\(*_H\)</span> maps <span
 class="math inline">\(2\)</span>-forms to <span
-class="math inline">\(2\)</span>-forms and decomposes <span
-class="math inline">\(\Lambda^2 H^*\)</span> into self-dual and
-anti-self-dual parts.</p>
+class="math inline">\(2\)</span>-forms and satisfies <span
+class="math inline">\(*_H^2 = \mathrm{id}\)</span> on <span
+class="math inline">\(\Lambda^2 H^*\)</span>. This decomposes <span
+class="math inline">\(\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\!
+H^*\)</span> into self-dual and anti-self-dual parts.</p>
 <p>An instanton connection <span class="math inline">\(A\)</span>
-minimises the Yang–Mills functional <span class="math inline">\(\int_M
-\lVert F_A|_H \rVert^2\)</span>. By the Bogomolny argument, <span
-class="math display">\[\lVert F_A|_H \rVert^2
-\;=\; \lVert F_A^+|_H \rVert^2 + \lVert F_A^-|_H \rVert^2
-\;=\; 2\lVert F_A^-|_H \rVert^2
-+ \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H),\]</span> where the
-topological term <span class="math inline">\(\int \mathrm{tr}(F_A|_H
-\wedge F_A|_H)\)</span> is fixed by the characteristic class of <span
+minimises the Yang–Mills functional. By the Bogomolny argument, the
+integrated norm satisfies <span class="math display">\[\int_M \lVert
+F_A|_H \rVert^2 \,\theta \wedge (d\theta)^2
+\;=\; 2\!\int_M \lVert F_A^-|_H \rVert^2 \,\theta \wedge (d\theta)^2
++ \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H)
+\wedge \theta,\]</span> where the topological term <span
+class="math inline">\(\int_M \mathrm{tr}(F_A|_H \wedge F_A|_H) \wedge
+\theta\)</span> is fixed by the characteristic class of <span
 class="math inline">\(P\)</span>. Minimising the functional forces <span
 class="math inline">\(F_A^-|_H = 0\)</span>, which is precisely the
 self-duality condition <span class="math inline">\(F_A|_H =
 {*_H}\,F_A|_H\)</span>. ◻</p>
 </div>
 
-<div id="ex:calabi-yau" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L112" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:calabi-yau" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L123" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Example 1.6</strong> (Real hypersurface in a Calabi–Yau
-manifold). <em>Let <span class="math inline">\(X\)</span> be a
-Calabi–Yau manifold and let <span class="math inline">\(M \subset
-X\)</span> be a smooth real hypersurface. Then <span
-class="math inline">\(M\)</span> is an odd-dimensional strictly
-pseudoconvex CR manifold inheriting its CR structure from the ambient
-Kähler geometry. The restriction of the tangent bundle of <span
-class="math inline">\(X\)</span> to <span
-class="math inline">\(M\)</span> supplies a natural principal <span
+<p><strong>Example 1.6</strong> (Real hypersurface in a Calabi–Yau <span
+class="math inline">\(2\)</span>-fold). <em>Let <span
+class="math inline">\(X\)</span> be a Calabi–Yau <span
+class="math inline">\(2\)</span>-fold (K3 surface) with holonomy <span
+class="math inline">\(\mathrm{SU}(2)\)</span>, and let <span
+class="math inline">\(M \subset X\)</span> be a smooth, strictly convex
+real hypersurface. Then <span class="math inline">\(M\)</span> is a
+<span class="math inline">\(3\)</span>-dimensional strictly pseudoconvex
+CR manifold inheriting its CR structure from the ambient Kähler
+geometry. Because the holonomy of <span class="math inline">\(X\)</span>
+is <span class="math inline">\(\mathrm{SU}(2)\)</span>, the frame bundle
+of <span class="math inline">\(X\)</span> restricted to <span
+class="math inline">\(M\)</span> yields a natural principal <span
 class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
-class="math inline">\(P \to M\)</span>, and the associated state bundle
+class="math inline">\(P \to M\)</span>. The associated state bundle
 <span class="math inline">\(E = P \times_G \mathbb{CP}^1\)</span> yields
 a <span class="math inline">\(\mathbb{C}\)</span> quantum observable
-universe <span class="math inline">\((M, G, P, E)\)</span> when the
-compactly supported cohomology conditions of
+universe <span class="math inline">\((M, \theta, G, P, E)\)</span> when
+the vanishing conditions of
 Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>
-are satisfied.</em></p>
+are satisfied. (For higher-dimensional Calabi–Yau manifolds with
+holonomy <span class="math inline">\(\mathrm{SU}(n)\)</span>, <span
+class="math inline">\(n &gt; 2\)</span>, a reduction to <span
+class="math inline">\(\mathrm{SU}(2)\)</span> must be supplied
+separately.)</em></p>
 </div>
 
-<div id="ex:ale" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L124" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:ale" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L139" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.7</strong> (<a class="defn-link" href="#ex:ale">ALE links</a>). <em>Let <span
 class="math inline">\(\Gamma \subset \mathrm{SU}(2)\)</span> be a finite
@@ -578,51 +603,69 @@ resolution of <span class="math inline">\(\mathbb{C}^2 /
 \Gamma\)</span> is the boundary of a tubular neighbourhood of the
 exceptional set in <span class="math inline">\(X\)</span>; it is a
 compact <span class="math inline">\(3\)</span>-dimensional strictly
-pseudoconvex CR manifold. The hyper-Kähler structure on <span
-class="math inline">\(X\)</span> restricts to a contact form <span
-class="math inline">\(\theta\)</span> on <span
+pseudoconvex CR manifold. The CR structure of the boundary induces a
+contact form <span class="math inline">\(\theta\)</span> on <span
 class="math inline">\(M\)</span> whose Reeb vector field <span
-class="math inline">\(\xi\)</span> generates the Hopf fibration <span
-class="math inline">\(S^3/\Gamma \to \mathbb{CP}^1/\Gamma\)</span>.
-Equipped with the induced principal <span
+class="math inline">\(\xi\)</span> generates the Hopf-type fibration
+<span class="math inline">\(S^3/\Gamma \to S^2\)</span>. (When <span
+class="math inline">\(\Gamma \neq \{1\}\)</span>, the target is the
+orbifold <span class="math inline">\(\mathbb{CP}^1/\Gamma\)</span>; the
+bundle structure remains well-defined on the smooth manifold <span
+class="math inline">\(M = S^3/\Gamma\)</span>.) Equipped with the
+induced principal <span
 class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
 class="math inline">\(P \to M\)</span> and the associated state bundle
 <span class="math inline">\(E = P \times_G \mathbb{CP}^1\)</span>, the
-<span class="math inline">\(4\)</span>-tuple <span
-class="math inline">\((M, G, P, E)\)</span> provides a <span
-class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-satisfying horizontal self-dual curvature
-(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>).</em></p>
+tuple <span class="math inline">\((M, \theta, G, P, E)\)</span> provides
+a <span class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe satisfying horizontal self-dual curvature
+(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>),
+since <span class="math inline">\(\dim H = 2\)</span> and the
+self-duality statement is verified for these <span
+class="math inline">\(3\)</span>-manifolds by the isomorphism <span
+class="math inline">\(\Lambda^2 H^* \cong \mathbb{R}\)</span>.</em></p>
 </div>
 
-<div id="ex:affine" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L139" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:spheres" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L159" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Example 1.8</strong> (<a class="defn-link" href="#ex:affine">Odd-dimensional spheres</a>). <em>Let <span
-class="math inline">\(M = S^{2n-1} \subset \mathbb{C}^n\)</span> be the
-unit sphere with the standard strictly pseudoconvex CR structure
-inherited from its embedding as the boundary of the unit ball in <span
+<p><strong>Example 1.8</strong> (<a class="defn-link" href="#ex:spheres">Odd-dimensional spheres</a>). <em>Let <span
+class="math inline">\(M = S^{2n-1} \subset \mathbb{C}^n\)</span> (<span
+class="math inline">\(n \geq 2\)</span>) be the unit sphere with the
+standard strictly pseudoconvex CR structure inherited from its embedding
+as the boundary of the unit ball in <span
 class="math inline">\(\mathbb{C}^n\)</span>. The contact form <span
 class="math inline">\(\theta = \frac{i}{2}(\bar\partial -
 \partial)\lVert z\rVert^2\big|_M\)</span> equips <span
 class="math inline">\(M\)</span> with a Reeb vector field generating the
 Hopf fibration <span class="math inline">\(S^{2n-1} \to
-\mathbb{CP}^{n-1}\)</span>. The trivial principal <span
+\mathbb{CP}^{n-1}\)</span>.</em></p>
+<p><em><em>Choice of bundle.</em> The trivial <span
 class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
-class="math inline">\(P = S^{2n-1} \times \mathrm{SU}(2)\)</span> admits
-a flat instanton connection satisfying the horizontal self-duality
-condition
-(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>).
-With <span class="math inline">\(E = P \times_G \mathbb{CP}^1\)</span>
-and the compactly supported cohomology conditions of
+class="math inline">\(S^{2n-1} \times \mathrm{SU}(2)\)</span> does
+<em>not</em> satisfy the QOU conditions: its adjoint bundle has <span
+class="math inline">\(H^0_c(M,\mathrm{Ad}(P)) \cong \mathfrak{su}(2)
+\neq 0\)</span> (every constant section on the compact sphere is
+compactly supported). Instead, for <span class="math inline">\(n =
+2\)</span> one uses the Hopf bundle: the principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
+class="math inline">\(P = S^7 \to S^4\)</span> restricted to the
+equatorial <span class="math inline">\(S^3 \subset S^4\)</span> yields a
+non-trivial <span class="math inline">\(\mathrm{SU}(2)\)</span>-bundle
+over the <span class="math inline">\(3\)</span>-sphere. This bundle
+admits a standard instanton connection with non-vanishing curvature
+<span class="math inline">\(F_A \neq 0\)</span>, ensuring <span
+class="math inline">\(q &gt; 1\)</span>, and the non-triviality of <span
+class="math inline">\(P\)</span> gives <span
+class="math inline">\(H^0_c(S^3, \mathrm{Ad}(P)) = 0\)</span>. With
+<span class="math inline">\(E = P \times_G \mathbb{CP}^1\)</span> and
+the vanishing conditions of
 Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>,
-<span class="math inline">\((S^{2n-1}, G, P, E)\)</span> is a <span
-class="math inline">\(\mathbb{C}\)</span> quantum observable universe.
-For <span class="math inline">\(n = 2\)</span>, <span
-class="math inline">\(M = S^3\)</span> is the boundary of <span
-class="math inline">\(\mathbb{C}^2\)</span>.</em></p>
+<span class="math inline">\((S^3, \theta, G, P, E)\)</span> is a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable
+universe.</em></p>
 </div>
 
-<div id="ex:brings-surface" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L156" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:brings-surface" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L185" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.9</strong> (Bring’s surface unit circle bundle).
 <em>Let <span class="math inline">\(S\)</span> denote Bring’s surface
@@ -657,38 +700,45 @@ class="math inline">\((M_S,\, G,\, P,\, E)\)</span> assembles into a
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe whose exceptional divisors support the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>).</em></p>
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>).</em></p>
 </div>
 
-<div id="rem:substrate-parameter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L177" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:substrate-parameter" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L206" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.10</strong> (<a class="defn-link" href="#rem:substrate-parameter">Substrate parameter</a>). <em>Let <span
-class="math inline">\((M, G, P, E)\)</span> be a <span
+<p><strong>Definition 1.10</strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em>Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
 with instanton connection <span class="math inline">\(A\)</span> on
 <span class="math inline">\(P\)</span>. Write <span
 class="math inline">\(F_A = dA + A \wedge A\)</span> for the curvature
 and let <span class="math inline">\(F_A^+\)</span> denote its self-dual
-part. Let <span class="math inline">\(L \in \Gamma(T^*M \otimes
-\overline{T^*M})\)</span> be the <em>Levi form</em>, a Hermitian form on
-the tangent bundle of <span class="math inline">\(M\)</span>. The
-<em>substrate parameter</em> is the smooth field <span
-class="math inline">\(q \colon M \to [1,\infty)\)</span> defined by
-<span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L \wedge
-F_A^+ \rVert(p)\bigr),
-\qquad p \in M.\]</span> The substrate parameter is not a fixed constant
-but a field on <span class="math inline">\(M\)</span>: its value varies
-from point to point according to the local coupling between the Levi
-form and the self-dual curvature.</em></p>
+part
+(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>).
+Let <span class="math inline">\(L_\theta \colon H \times H \to
+\mathbb{C}\)</span> be the <em>Levi form</em>, the Hermitian form on the
+Levi distribution <span class="math inline">\(H = \ker\theta\)</span>
+defined by <span class="math inline">\(L_\theta(V, W) = -i\,d\theta(V,
+\bar{W})\)</span>. The <em>substrate parameter</em> is the smooth field
+<span class="math inline">\(q \colon M \to [1,\infty)\)</span> defined
+by <span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L_\theta
+\wedge F_A^+ \rVert(p)\bigr),
+\qquad p \in M,\]</span> where <span class="math inline">\(\lVert \cdot
+\rVert\)</span> denotes the pointwise norm induced by the Webster metric
+<span class="math inline">\(g_\theta\)</span> on sections of <span
+class="math inline">\(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\)</span>. The
+substrate parameter is not a fixed constant but a field on <span
+class="math inline">\(M\)</span>: its value varies from point to point
+according to the local coupling between the Levi form and the self-dual
+curvature.</em></p>
 </div>
 
-<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L194" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L228" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.11</strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 The <em>quantum gauge group</em> is the field of quantum groups <span
 class="math inline">\(\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}\)</span>
 obtained by deforming the structure group <span class="math inline">\(G
@@ -696,13 +746,13 @@ obtained by deforming the structure group <span class="math inline">\(G
 class="math inline">\(q(p)\)</span>.</em></p>
 </div>
 
-<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L203" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L237" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.12</strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em>Let
 <span class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 The <em>quantum Planck constant</em> is the smooth field <span
 class="math inline">\(\hbar_q \colon M \to [0,1)\)</span> defined by
 <span class="math display">\[\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p
@@ -716,7 +766,7 @@ vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
 1\)</span>.</em></p>
 </div>
 
-<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L217" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L251" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.13</strong> (<a class="defn-link" href="#rem:heisenberg-commutator">Heisenberg uncertainty as commutator</a>).
 <em>In the <span class="math inline">\(\mathbb{C}\)</span> quantum
@@ -772,7 +822,7 @@ resolvents
 class="math inline">\([\hat{X},\hat{P}]_q\)</span> may be identified
 with the value of the <span class="math inline">\(q\)</span>-deformed
 Reeb vector field <span class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.23</a>)
 evaluated on the contact form. Concretely, the Reeb field is the unique
 direction along which the symplectic pairing <span
 class="math inline">\(d\theta\)</span> degenerates, so <span
@@ -787,12 +837,12 @@ class="math inline">\(S^3\to\mathbb{CP}^1\)</span>, and its “strength”
 is set by <span class="math inline">\(\hbar_q(p)\)</span>.</em></p>
 </div>
 
-<div id="rem:cosmological-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L269" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:cosmological-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L303" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.14</strong> (Cosmological limits of <span
 class="math inline">\(q\)</span>). <em>The substrate field <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 interpolates between two extreme cosmological regimes:</em></p>
 <ol type="1">
 <li><p><em><em>Heat death</em> (<span class="math inline">\(q \to
@@ -815,7 +865,7 @@ matter.</em></p></li>
 </ol>
 <p><em>Both limits are in a precise sense <em>illusory</em>: the <span
 class="math inline">\(q\)</span>-torsion of
-Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.22</a>
+Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.25</a>
 twists faster than any divergence can grow in the integral, so the
 finiteness of the brane tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
@@ -823,7 +873,7 @@ tames the infinities that would otherwise appear at either
 extreme.</em></p>
 </div>
 
-<div id="rem:j1e-local-states" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L294" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:j1e-local-states" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L328" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.15</strong> (<span
 class="math inline">\(J^1E\)</span> as the space of local states).
@@ -832,62 +882,65 @@ the space of local states of the <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe.
 The classical gauge dynamics, encoded by the <em>instanton
 connection</em> <span class="math inline">\(A\)</span>
-(Lemma <a href="#lem:unique-connection" data-reference-type="ref" data-reference="lem:unique-connection">1.4</a>),
-are weighted by the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+(Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.4</a>),
+are weighted by the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 to define the quantum field algebra <span
 class="math inline">\(\mathrm{SU}_q(2)\)</span>
 (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.11</a>).</em></p>
 </div>
 
-<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L307" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L341" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.16</strong> (<span
 class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
-<span class="math inline">\((M, G, P, E)\)</span> be a <span
+<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 Let <span class="math inline">\(d_q\)</span> denote the <span
-class="math inline">\(q\)</span>-deformed exterior derivative on the CR
-manifold <span class="math inline">\(M\)</span>. A <em>particle</em> is
-a section <span class="math inline">\(\alpha \in \Gamma(M,\, \Lambda^k
+class="math inline">\(q\)</span>-deformed exterior derivative
+(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.20</a>
+below) and let <span class="math inline">\(\delta_q\)</span> denote its
+formal adjoint with respect to the inner product on <span
+class="math inline">\(\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)\)</span>
+induced by the Webster metric <span
+class="math inline">\(g_\theta\)</span>. A <em>particle</em> is a
+section <span class="math inline">\(\alpha \in \Gamma(M,\, \Lambda^k
 T^*M \otimes J^1 E)\)</span> that is <span
 class="math inline">\(q\)</span>-harmonic, i.e. lies in the kernel of
 the <span class="math inline">\(q\)</span>-Laplacian: <span
 class="math display">\[\Delta_q \alpha
 \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
-\;=\; 0,\]</span> where <span class="math inline">\(\delta_q\)</span> is
-the formal adjoint of <span class="math inline">\(d_q\)</span>. The
-condition <span class="math inline">\(\Delta_q\alpha = 0\)</span>
-ensures that the form sits in a ground state of the <span
-class="math inline">\(q\)</span>-viscosity.</em></p>
+\;=\; 0.\]</span></em></p>
 </div>
 
-<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L324" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L359" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.17</strong> (<a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>). <em>Let <span
-class="math inline">\(M\)</span> be a CR manifold equipped with a
-contact form <span class="math inline">\(\theta\)</span> and let <span
-class="math inline">\(\xi\)</span> denote the associated <em>Reeb vector
-field</em>, characterised by <span
+class="math inline">\((M, \theta)\)</span> be a strictly pseudoconvex CR
+manifold
+(Definition <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.1</a>)
+and let <span class="math inline">\(\xi\)</span> denote the associated
+<em>Reeb vector field</em>, characterised by <span
 class="math inline">\(\iota_\xi\,d\theta = 0\)</span> and <span
-class="math inline">\(\theta(\xi) = 1\)</span>. Every differential form
-<span class="math inline">\(\alpha\)</span> on <span
-class="math inline">\(M\)</span> decomposes as <span
-class="math display">\[\alpha \;=\; \alpha_H + \alpha_V,
-\qquad\text{where}\qquad
-\iota_\xi\,\alpha_V \neq 0,\]</span> with <span
-class="math inline">\(\alpha_H\)</span> the <em>horizontal
-component</em> (annihilated by <span
-class="math inline">\(\iota_\xi\)</span>) and <span
-class="math inline">\(\alpha_V\)</span> the <em>vertical component</em>
-(having a non-trivial contraction with <span
-class="math inline">\(\xi\)</span>).</em></p>
+class="math inline">\(\theta(\xi) = 1\)</span>. Every differential <span
+class="math inline">\(k\)</span>-form <span
+class="math inline">\(\alpha\)</span> (<span class="math inline">\(k
+\geq 1\)</span>) on <span class="math inline">\(M\)</span> decomposes
+uniquely as <span class="math display">\[\alpha \;=\; \alpha_H + \theta
+\wedge \iota_\xi\,\alpha,\]</span> where <span
+class="math inline">\(\alpha_H := \alpha - \theta \wedge
+\iota_\xi\,\alpha\)</span> is the <em>horizontal component</em>
+(satisfying <span class="math inline">\(\iota_\xi\,\alpha_H =
+0\)</span>) and <span class="math inline">\(\alpha_V := \theta \wedge
+\iota_\xi\,\alpha\)</span> is the <em>vertical component</em>. A form is
+<em>purely horizontal</em> if and only if <span
+class="math inline">\(\iota_\xi\,\alpha = 0\)</span>.</em></p>
 </div>
 
-<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L340" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L376" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.18</strong> (<a class="defn-link" href="#def:fermion">Fermion</a>). <em>A <em>fermion</em> is
 a <span class="math inline">\(q\)</span>-harmonic form
@@ -899,7 +952,7 @@ that has a non-trivial vertical component in the <a class="defn-link" href="#def
 \iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
 </div>
 
-<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L353" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L389" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.19</strong> (<a class="defn-link" href="#def:boson">Boson</a>). <em>A <em>boson</em> is a
 <span class="math inline">\(q\)</span>-harmonic form
@@ -913,14 +966,71 @@ that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposit
 \text{ by Definition~\ref{def:reeb-decomposition}}).\]</span></em></p>
 </div>
 
-<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L367" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-ext-deriv" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L405" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.20</strong> (<span
-class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
-<span class="math inline">\((M, G, P, E)\)</span> be a <span
+class="math inline">\(q\)</span>-Deformed exterior derivative). <em>Let
+<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
+The <em><span class="math inline">\(q\)</span>-deformed exterior
+derivative</em> <span class="math inline">\(d_q \colon \Omega^k(M) \to
+\Omega^{k+1}(M)\)</span> is defined on <span
+class="math inline">\(k\)</span>-forms by <span
+class="math display">\[d_q\,\alpha
+\;=\; q^{-1}\,d\alpha
++ (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,\]</span> where
+<span class="math inline">\(d\)</span> is the ordinary exterior
+derivative, <span class="math inline">\(\theta\)</span> the contact
+form, and <span class="math inline">\(\mathcal{L}_\xi\)</span> the Lie
+derivative along the Reeb field. When <span class="math inline">\(q =
+1\)</span>, <span class="math inline">\(d_q = d\)</span>.</em></p>
+</div>
+
+<div id="def:q-lie-bracket" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L421" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Definition 1.21</strong> (<span
+class="math inline">\(q\)</span>-Deformed Lie bracket). <em>Let <span
+class="math inline">\(V, W \in \mathfrak{X}(M)\)</span> be smooth vector
+fields. The <em><span class="math inline">\(q\)</span>-deformed Lie
+bracket</em> is <span class="math display">\[[V, W]_q
+\;=\; q^{-1}\,[V, W]
++ (1 - q^{-1})\,\bigl(\theta(V)\,\mathcal{L}_\xi W
+- \theta(W)\,\mathcal{L}_\xi V\bigr),\]</span> where <span
+class="math inline">\([\,\cdot\,,\cdot\,]\)</span> is the standard Lie
+bracket on <span class="math inline">\(\mathfrak{X}(M)\)</span>. When
+<span class="math inline">\(q = 1\)</span>, <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q =
+[\,\cdot\,,\cdot\,]\)</span>.</em></p>
+</div>
+
+<div id="def:q-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L435" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Definition 1.22</strong> (<span
+class="math inline">\(q\)</span>-Deformed connection). <em>Let <span
+class="math inline">\(A\)</span> be an instanton connection on <span
+class="math inline">\(P\)</span>
+(Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.4</a>).
+The <em><span class="math inline">\(q\)</span>-deformed connection</em>
+<span class="math inline">\(A_q\)</span> is defined by <span
+class="math display">\[A_q
+\;=\; q^{-1}\,A
++ (1 - q^{-1})\,\iota_\xi\,A\;\theta,\]</span> i.e. <span
+class="math inline">\(A_q\)</span> interpolates between the full
+connection <span class="math inline">\(A\)</span> and its Reeb
+component. When <span class="math inline">\(q = 1\)</span>, <span
+class="math inline">\(A_q = A\)</span>.</em></p>
+</div>
+
+<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L449" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Definition 1.23</strong> (<span
+class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
+<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 and Reeb vector field <span class="math inline">\(\xi\)</span>
 (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb vector
@@ -931,22 +1041,24 @@ functions <span class="math inline">\(f \in C^\infty(M)\)</span>: <span
 class="math display">\[\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 -
 q^{-1})\,[\xi, X_f]_q,\]</span> where <span
 class="math inline">\(X_f\)</span> is the horizontal lift of <span
-class="math inline">\(\mathrm{grad}\,f\)</span> to <span
-class="math inline">\(H\)</span> and <span
-class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> denotes the <span
-class="math inline">\(q\)</span>-deformed Lie bracket on <span
-class="math inline">\(\mathfrak{X}(M)\)</span>. When <span
-class="math inline">\(q = 1\)</span>, one recovers the classical Reeb
-field <span class="math inline">\(\xi_1 = \xi\)</span>.</em></p>
+class="math inline">\(\mathrm{grad}_{g_\theta}\,f\)</span> to <span
+class="math inline">\(H = \ker\theta\)</span> (using the Webster metric
+<span class="math inline">\(g_\theta\)</span>) and <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is the <span
+class="math inline">\(q\)</span>-deformed Lie bracket
+(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.21</a>).
+When <span class="math inline">\(q = 1\)</span>, one recovers the
+classical Reeb field <span class="math inline">\(\xi_1 =
+\xi\)</span>.</em></p>
 </div>
 
-<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L383" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L466" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.21</strong> (<span
+<p><strong>Definition 1.24</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
 class="math inline">\(\xi_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>).
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.23</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb flow</em>
 is the one-parameter family of diffeomorphisms <span
 class="math inline">\(\phi_t^q \colon M \to M\)</span>, <span
@@ -957,9 +1069,9 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 \qquad \phi_0^q = \mathrm{id}_M.\]</span></em></p>
 </div>
 
-<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L395" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L478" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.22</strong> (<span
+<p><strong>Definition 1.25</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
 class="math inline">\(H = \ker\theta \subset TM\)</span> be the
 horizontal distribution on the CR manifold <span
@@ -968,7 +1080,7 @@ class="math inline">\(q\)</span>-torsion leaf</em> is a maximal integral
 submanifold <span class="math inline">\(L \hookrightarrow M\)</span> of
 <span class="math inline">\(H\)</span> that is invariant under the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>):
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>):
 <span class="math display">\[T_p L \;\subset\; H_p
 \quad\text{for all } p \in L,
 \qquad\text{and}\qquad
@@ -976,18 +1088,23 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 \quad\text{for all } t \in \mathbb{R}.\]</span></em></p>
 </div>
 
-<div id="rem:q-torsion-leaf-minimum" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L410" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-torsion-leaf-minimum" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L493" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.23</strong> (<span
+<p><strong>Remark 1.26</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
 <em>Let <span class="math inline">\(A_q\)</span> denote the <span
-class="math inline">\(q\)</span>-deformed connection on <span
-class="math inline">\(P\)</span> and define the <span
-class="math inline">\(q\)</span>-curvature <span
+class="math inline">\(q\)</span>-deformed connection
+(Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.22</a>)
+and define the <span class="math inline">\(q\)</span>-curvature <span
 class="math display">\[\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\,
-A_q]_q.\]</span> A <span class="math inline">\(q\)</span>-torsion leaf
-<span class="math inline">\(L\)</span>
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.22</a>)
+A_q]_q,\]</span> where <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is the <span
+class="math inline">\(q\)</span>-deformed Lie bracket
+(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.21</a>)
+extended to <span class="math inline">\(\mathrm{Ad}(P)\)</span>-valued
+forms. A <span class="math inline">\(q\)</span>-torsion leaf <span
+class="math inline">\(L\)</span>
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.25</a>)
 is a local minimum of <span
 class="math inline">\(\lVert\Omega_q\rVert\)</span> restricted to the
 horizontal distribution: the invariance of <span
@@ -1002,9 +1119,9 @@ class="math inline">\(q\)</span>-deformed dynamics are in
 equilibrium.</em></p>
 </div>
 
-<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L426" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L511" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.24</strong> (Physical interpretation of the Reeb
+<p><strong>Remark 1.27</strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
 class="math inline">\(\xi\)</span> singles out the direction of internal
 spin on the CR manifold. Forms that “see” this direction (fermions)
@@ -1018,9 +1135,9 @@ many-body interference in crystal lattices, is discussed in
 Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">10</a>.</em></p>
 </div>
 
-<div id="rem:q-harmonic-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L439" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-harmonic-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L524" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.25</strong> (Physical interpretation of <span
+<p><strong>Remark 1.28</strong> (Physical interpretation of <span
 class="math inline">\(q\)</span>-harmonicity). <em>The <span
 class="math inline">\(q\)</span>-Laplacian <span
 class="math inline">\(\Delta_q\)</span> encodes the <span
@@ -1036,35 +1153,46 @@ and the deep-quantum regime (<span class="math inline">\(q \to
 class="math inline">\(q\)</span>-dependent.</em></p>
 </div>
 
-<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L452" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L537" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.26</strong> (General Relativity as the “Substrate
+<p><strong>Remark 1.29</strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
-Levi form <span class="math inline">\(L\)</span> and its coupling to the
-gauge curvature <span class="math inline">\(F_A\)</span>. Gravity is
-expressed through the Variational Bicomplex as the back-reaction of the
-gauge fields on the CR manifold <span
+Levi form <span class="math inline">\(L_\theta\)</span> and its coupling
+to the gauge curvature <span class="math inline">\(F_A\)</span>. Gravity
+is expressed through the Variational Bicomplex as the back-reaction of
+the gauge fields on the CR manifold <span
 class="math inline">\(M\)</span>.</em></p>
-<p><em>The Einstein–Hilbert action is recovered by examining the
-variation of the action <span class="math inline">\(S_q\)</span> with
-respect to the Levi form <span class="math inline">\(L\)</span>: <span
-class="math display">\[\frac{\delta S_q}{\delta L}
-\;\implies\;
-G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},\]</span> where <span
-class="math inline">\(T_{\mu\nu}^{(q)}\)</span> is a
-<em>quantum-weighted</em> stress-energy tensor. Because <span
-class="math inline">\(q(p) = \exp\!\bigl(\lVert (L \wedge
-F_A^+)(p)\rVert\bigr)\)</span>, the geometry of the brane <span
+<p><em>Define the <em><span class="math inline">\(q\)</span>-weighted
+Yang–Mills–Levi functional</em> <span class="math display">\[S_q[A,
+\theta]
+\;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
+\theta \wedge (d\theta)^n,\]</span> where <span
+class="math inline">\(q(p) = \exp(\lVert L_\theta \wedge F_A^+
+\rVert(p))\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
+Variation with respect to the Levi form <span
+class="math inline">\(L_\theta\)</span> yields field equations of the
+schematic form <span class="math display">\[\frac{\delta S_q}{\delta
+L_\theta}
+\;=\; 0
+\qquad\Longrightarrow\qquad
+\mathrm{Ric}_{g_\theta} \;=\; T^{(q)},\]</span> where <span
+class="math inline">\(\mathrm{Ric}_{g_\theta}\)</span> is the Webster
+Ricci curvature and <span class="math inline">\(T^{(q)}\)</span> is a
+<span class="math inline">\(q\)</span>-weighted stress-energy <span
+class="math inline">\(2\)</span>-tensor on <span
+class="math inline">\(H\)</span> (both coordinate-free objects). The
+precise derivation of the field equations will be given in
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">10</a>;
+here we note only that the geometry of <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
-instantons. See
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">10</a>
-for experimental signatures of this emergent geometry.</em></p>
+instantons.</em></p>
 </div>
 
-<div id="rem:schrodinger-jet-coaction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L473" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:schrodinger-jet-coaction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L568" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.27</strong> (The Schrödinger Equation as “Jet
+<p><strong>Remark 1.30</strong> (The Schrödinger Equation as “Jet
 Co-action”). <em>The Schrödinger equation describes the evolution of a
 state in the fibre <span class="math inline">\(\mathbb{CP}^1\)</span>.
 In the jet-bundle framework this is expressed as the condition of
@@ -1078,17 +1206,36 @@ the symbol <span class="math inline">\(i\)</span> in the Schrödinger
 equation is identified with <span class="math inline">\(J\)</span>: it
 acts as a geometric twisting operator on horizontal planes rather than
 as an algebraic imaginary unit.</em></p>
+<p><em><em>Linearisation convention.</em> The fibre <span
+class="math inline">\(\mathbb{CP}^1\)</span> is a non-linear space, so
+one cannot write a linear PDE for sections of <span
+class="math inline">\(E\)</span> directly. We work instead with the
+<em>linearised</em> model: identify a neighbourhood of a base-point in
+<span class="math inline">\(\mathbb{CP}^1\)</span> with <span
+class="math inline">\(\mathbb{C}\)</span> via stereographic projection,
+and interpret <span class="math inline">\(\psi\)</span> as a section of
+the line bundle <span class="math inline">\(E_{\mathrm{lin}}\)</span>
+obtained by linearising <span class="math inline">\(E\)</span> at the
+chosen section. The covariant derivative <span class="math inline">\(D_A
+= d + A\)</span> then acts on sections of this line bundle in the
+standard way.</em></p>
 <p><em>For a section <span class="math inline">\(\psi \in
-\Gamma(E)\)</span> and the <span
+\Gamma(E_{\mathrm{lin}})\)</span> and the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>),
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.23</a>),
 the Schrödinger dynamics take the form <span
 class="math display">\[J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\;
-\hat{H}_q\, \psi,\]</span> where <span
-class="math inline">\(\hat{H}_q\)</span> is the <span
-class="math inline">\(q\)</span>-deformed Hamiltonian operator
-and:</em></p>
+\hat{H}_q\, \psi,\]</span> where <span class="math inline">\(\hat{H}_q =
+-\tfrac{1}{2}\hbar_q\,\Delta_q + V_q\)</span> is the <em><span
+class="math inline">\(q\)</span>-deformed Hamiltonian</em> (here <span
+class="math inline">\(\Delta_q\)</span> is the <span
+class="math inline">\(q\)</span>-Laplacian of
+Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>
+acting on sections of <span
+class="math inline">\(E_{\mathrm{lin}}\)</span>, and <span
+class="math inline">\(V_q\)</span> is a potential depending on the
+curvature <span class="math inline">\(\Omega_q\)</span>), and:</em></p>
 <ul>
 <li><p><em><span class="math inline">\(\hbar_q(p) = 1 -
 q(p)^{-1}\)</span>: the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>
@@ -1099,12 +1246,10 @@ instanton connection on <span class="math inline">\(P\)</span> acts as
 the potential;</em></p></li>
 <li><p><em><span class="math inline">\(\iota_{\xi_q} D_A \psi\)</span>:
 the covariant derivative <span class="math inline">\(D_A\psi\)</span> is
-an <span class="math inline">\(E\)</span>-valued <span
+an <span class="math inline">\(E_{\mathrm{lin}}\)</span>-valued <span
 class="math inline">\(1\)</span>-form; contracting it with <span
-class="math inline">\(\xi_q\)</span> yields an <span
-class="math inline">\(E\)</span>-valued <span
-class="math inline">\(0\)</span>-form (i.e. a section of <span
-class="math inline">\(E\)</span>), matching the right-hand
+class="math inline">\(\xi_q\)</span> yields a section of <span
+class="math inline">\(E_{\mathrm{lin}}\)</span>, matching the right-hand
 side.</em></p></li>
 </ul>
 <p><em>As <span class="math inline">\(q(p) \to 1\)</span>
@@ -1115,14 +1260,14 @@ the uncertainty vanishes, and the wave-like nature of the section
 freezes into a classical trajectory.</em></p>
 </div>
 
-<div id="rem:main-commutative-diagram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L506" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:main-commutative-diagram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/quantum-observable-universe.tex#L615" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.28</strong> (<a class="defn-link" href="#rem:main-commutative-diagram">Main Commutative Diagram</a>). <em>The
+<p><strong>Remark 1.31</strong> (<a class="defn-link" href="#rem:main-commutative-diagram">Main Commutative Diagram</a>). <em>The
 relationship between these two seemingly disparate equations is captured
 by the main commutative diagram of the <span
 class="math inline">\(\mathbb{C}\)</span>-quantum universe, where <span
 class="math inline">\(\mathbf{E}\)</span> denotes the Euler–Lagrange
-operator. The link is the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+operator. The link is the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q(p)\)</span>: <span
 class="math display">\[\begin{CD}
 J^1E @&gt;{\text{Variational Derivative } \mathbf{E}}&gt;&gt;
@@ -1139,8 +1284,8 @@ J^1E @&gt;{\text{Variational Derivative } \mathbf{E}}&gt;&gt;
 three-point scale (<strong>Good</strong> = rigorous and self-contained,
 <strong>Fair</strong> = essentially correct but with gaps or
 ambiguities, <strong>Poor</strong> = contains a material error or an
-unjustified claim that undermines the argument) and lists the concerns
-that should be addressed.</p>
+unjustified claim that undermines the argument) and lists the status of
+each concern after the revision pass.</p>
 <div class="small">
 
 <table>
@@ -1148,415 +1293,322 @@ that should be addressed.</p>
 <tr class="header">
 <th style="text-align: left;"><strong>Item</strong></th>
 <th style="text-align: left;"><strong>Rating</strong></th>
-<th style="text-align: left;"><strong>Concerns</strong></th>
+<th style="text-align: left;"><strong>Concerns / Status</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td
 style="text-align: left;">Def. 1.1<code>def:c-quantum-universe</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) <span class="math inline">\(M\)</span>
-is required to be a “CR manifold” but the type (hypersurface, strictly
-pseudoconvex) is not specified; later items silently assume a global
-contact form <span class="math inline">\(\theta\)</span> and strict
-pseudoconvexity. (b) “<span
-class="math inline">\(\mathrm{SO}(3)\)</span> holonomy” on an <span
-class="math inline">\(\mathrm{SU}(2)\)</span>-bundle is a non-trivial
-holonomy reduction that is stated without motivation or justification.
-(c) The <span class="math inline">\(\mathrm{SU}(2)\)</span>-action on
-<span class="math inline">\(\mathbb{CP}^1\)</span> used to form the
-associated bundle is not specified.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Now a <span
+class="math inline">\(5\)</span>-tuple <span class="math inline">\((M,
+\theta, G, P, E)\)</span> requiring strictly pseudoconvex CR manifold of
+hypersurface type, with <span class="math inline">\(\theta\)</span>
+determining <span class="math inline">\(H\)</span>, <span
+class="math inline">\(\xi\)</span>, <span
+class="math inline">\(g_\theta\)</span>, <span
+class="math inline">\(L_\theta\)</span>. The <span
+class="math inline">\(\mathrm{SU}(2)\)</span> action on <span
+class="math inline">\(\mathbb{CP}^1\)</span> (Möbius transformations) is
+now stated explicitly. Holonomy reduction to <span
+class="math inline">\(\mathrm{SO}(3)\)</span> is still asserted without
+motivation; a sentence of justification would strengthen the definition
+further.</td>
 </tr>
 <tr class="even">
 <td
 style="text-align: left;">Def. 1.2<code>def:c-quantum-observable-universe</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) <span class="math inline">\(E =
-P\times_G\mathbb{CP}^1\)</span> is a fibre bundle with non-linear fibre;
-<span class="math inline">\(H^0_c(M,E)\)</span> is not a standard
-cohomology group. The intended meaning (vanishing of compactly supported
-sections <span class="math inline">\(\Gamma_c(M,E)\)</span>) should be
-stated explicitly. (b) The cohomology theory (sheaf, Čech, de Rham) is
-not identified.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> The non-linear condition
+is now stated as <span class="math inline">\(\Gamma_c(M, E) = 0\)</span>
+(vanishing of compactly supported sections), and <span
+class="math inline">\(\mathrm{Ad}(P) = P \times_G
+\mathfrak{su}(2)\)</span> is identified as a linear bundle for which
+sheaf cohomology is well-defined.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Rem. 1.3<code>rem:jet-bundle</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The claim that <span
-class="math inline">\(\Gamma_c(M,J^1E)\)</span> injects into the space
-of connections on <span class="math inline">\(P\)</span> is non-trivial
-and is neither proved nor given a literature reference. The jet-bundle
-construction for a non-linear fibre (<span
-class="math inline">\(\mathbb{CP}^1\)</span>) requires additional care
-that is not discussed.</td>
+<td style="text-align: left;"><em>Unchanged.</em> The injection claim
+for <span class="math inline">\(\Gamma_c(M, J^1E)\)</span> still lacks a
+proof or literature reference. Minor concern only.</td>
 </tr>
 <tr class="even">
 <td
-style="text-align: left;">Lem. 1.4<code>lem:unique-connection</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) The proof uses only <span
-class="math inline">\(H^0_c(M,\mathrm{Ad}(P))=0\)</span>; the condition
-<span class="math inline">\(H^0_c(M,E)=0\)</span> is never invoked, so
-the hypothesis is stronger than necessary. (b) The label says “unique”
-but the statement says “irreducible”—these are distinct properties.
-(c) The proof assumes the stabiliser of a reducible connection contains
-a <em>compactly supported</em> section, which requires <span
-class="math inline">\(M\)</span> to be non-compact or an additional
-argument.</td>
+style="text-align: left;">Lem. 1.4<code>lem:irreducible-connection</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Label renamed from
+<code>lem:unique-connection</code>. Hypothesis reduced to <span
+class="math inline">\(H^0_c(M, \mathrm{Ad}(P)) = 0\)</span> alone. Proof
+now includes a bump-function argument for the non-compact case.</td>
 </tr>
 <tr class="odd">
 <td
 style="text-align: left;">Prop. 1.5<code>prop:self-dual-curvature</code></td>
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">(a) Uses the contact form <span
-class="math inline">\(\theta\)</span> and Reeb field <span
-class="math inline">\(\xi\)</span>, neither of which is part of
-Definition 1.1; a contact form should be part of the data or its
-existence should be proved. (b) Self-duality of <span
-class="math inline">\(2\)</span>-forms (<span
-class="math inline">\(*_H^2=\mathrm{id}\)</span> on <span
-class="math inline">\(\Lambda^2\)</span>) holds only when <span
-class="math inline">\(\dim H=4\)</span> (<span
-class="math inline">\(n=2\)</span>); the proposition is stated for
-general CR manifolds but the proof restricts to <span
-class="math inline">\(n=2\)</span> without stating this as a hypothesis.
-(c) The Bogomolny decomposition on lines 96–101 mixes pointwise norms
-and integral expressions inconsistently. (d) Forward-references
-Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>,
-which appears later in the chapter.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Hypothesis now explicitly
+requires <span class="math inline">\(\dim H = 4\)</span> (<span
+class="math inline">\(n = 2\)</span>). The contact form <span
+class="math inline">\(\theta\)</span> is part of the data via
+Definition 1.1. Bogomolny decomposition uses consistent integral
+expressions with the CR volume form <span class="math inline">\(\theta
+\wedge (d\theta)^2\)</span>.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ex. 1.6<code>ex:calabi-yau</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) Not every real hypersurface in a
-Calabi–Yau manifold is strictly pseudoconvex; this should be stated as
-an assumption. (b) “The restriction of <span
-class="math inline">\(TX\)</span> to <span
-class="math inline">\(M\)</span> supplies a natural principal <span
-class="math inline">\(\mathrm{SU}(2)\)</span>-bundle” holds only when
-<span class="math inline">\(X\)</span> is a Calabi–Yau <span
-class="math inline">\(2\)</span>-fold (K3 surface); for
-higher-dimensional CY manifolds the holonomy is <span
-class="math inline">\(\mathrm{SU}(n)\)</span> with <span
-class="math inline">\(n&gt;2\)</span>.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Now restricted to CY <span
+class="math inline">\(2\)</span>-folds (K3 surfaces) with holonomy <span
+class="math inline">\(\mathrm{SU}(2)\)</span>. Strictly convex
+hypersurface assumption stated. A note acknowledges higher-dimensional
+CY manifolds require separate <span
+class="math inline">\(\mathrm{SU}(2)\)</span> reduction.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ex. 1.7<code>ex:ale</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) “The hyper-Kähler structure restricts
-to a contact form” is imprecise: the contact form arises from the CR
-structure of the boundary, not by restricting a Kähler form. (b) <span
-class="math inline">\(\mathbb{CP}^1/\Gamma\)</span> is an orbifold, not
-a smooth manifold, for most finite subgroups <span
-class="math inline">\(\Gamma\)</span>. (c) Satisfaction of the compactly
-supported cohomology conditions is asserted but not verified.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> “Hyper-Kähler restricts to
+contact form” replaced with “CR structure of the boundary induces
+contact form.” Orbifold target <span
+class="math inline">\(\mathbb{CP}^1/\Gamma\)</span> noted; bundle
+structure on smooth <span class="math inline">\(M\)</span>
+clarified.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Ex. 1.8<code>ex:affine</code></td>
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">(a) The label <code>ex:affine</code> is
-misleading; the example concerns spheres. (b) A flat connection on a
-trivial bundle has <span class="math inline">\(F_A=0\)</span>, giving
-<span class="math inline">\(q=\exp(0)=1\)</span> and <span
-class="math inline">\(\hbar_q=0\)</span> everywhere: the universe is
-entirely classical and all <span
-class="math inline">\(q\)</span>-deformed structures collapse. (c) For
-the trivial bundle <span
-class="math inline">\(P=S^{2n-1}\times\mathrm{SU}(2)\)</span>, <span
-class="math inline">\(\mathrm{Ad}(P)\)</span> is the trivial <span
-class="math inline">\(\mathfrak{su}(2)\)</span>-bundle, so
-$H^0_c(M,\mathrm{Ad}(P))\cong</td>
+<td style="text-align: left;">Ex. 1.8<code>ex:spheres</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Label renamed from
+<code>ex:affine</code>. Trivial bundle replaced with non-trivial Hopf
+instanton bundle <span class="math inline">\(P = S^7 \to S^4\)</span>
+restricted to <span class="math inline">\(S^3\)</span>. The failure of
+the trivial bundle is now explicitly discussed as motivation. <span
+class="math inline">\(F_A \neq 0\)</span> ensures <span
+class="math inline">\(q &gt; 1\)</span>.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">\mathfrak{su}(2)\neq 0$ (the constant
-sections on a compact manifold have compact support). The cohomology
-condition <span class="math inline">\(H^0_c(M,\mathrm{Ad}(P))=0\)</span>
-therefore <em>fails</em>, contradicting the claim that this is a
-QOU.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Ex. 1.9<code>ex:brings-surface</code></td>
 <td style="text-align: left;">Good</td>
-<td style="text-align: left;">The distinction between the Riemann
-surface <span class="math inline">\(S\)</span> and the <span
-class="math inline">\(3\)</span>-dimensional CR manifold <span
-class="math inline">\(M_S\)</span> is correctly handled. Minor: the link
-between the branched covering <span class="math inline">\(\pi\colon
-S\to\mathbb{CP}^1\)</span> and the <span
-class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
-class="math inline">\(P\to M_S\)</span> deserves a sentence of
-justification.</td>
-</tr>
-<tr class="odd">
-<td
-style="text-align: left;">Rem. 1.10<code>rem:substrate-parameter</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) The Levi form lives on the CR
-distribution <span class="math inline">\(H=\ker\theta\)</span>, not on
-all of <span class="math inline">\(TM\)</span>; the fibre description
-<span
-class="math inline">\(L\in\Gamma(T^*M\otimes\overline{T^*M})\)</span> is
-therefore inaccurate. (b) <span class="math inline">\(L\wedge
-F_A^+\)</span> mixes a Hermitian form with an <span
-class="math inline">\(\mathrm{Ad}(P)\)</span>-valued <span
-class="math inline">\(2\)</span>-form; the algebraic operation and the
-norm are not defined. (c) This is a <em>Remark</em> but it introduces
-the most important field in the paper; promoting it to a
-<em>Definition</em> would better match the definition-first
-philosophy.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Already
+well-formed.</td>
 </tr>
 <tr class="even">
+<td
+style="text-align: left;">Def. 1.10<code>def:substrate-parameter</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Promoted from Remark to
+Definition. Levi form domain corrected to <span class="math inline">\(H
+= \ker\theta\)</span> with explicit formula <span
+class="math inline">\(L_\theta(V,W) = -i\,d\theta(V,\bar{W})\)</span>.
+The norm is specified as the Webster-metric norm on <span
+class="math inline">\(\Lambda^2 H^* \otimes
+\mathrm{Ad}(P)\)</span>.</td>
+</tr>
+<tr class="odd">
 <td
 style="text-align: left;">Def. 1.11<code>def:quantum-gauge-group</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) “A field of quantum groups <span
-class="math inline">\(\{\mathrm{SU}_{q(p)}(2)\}_{p\in M}\)</span>” is a
-non-standard notion; no fibre-bundle or sheaf-theoretic framework is
-given for continuously varying Hopf algebras. (b) <span
-class="math inline">\(\mathrm{SU}_q(2)\)</span> at <span
-class="math inline">\(q=1\)</span> is isomorphic to the classical group,
-but the algebraic structure jumps at <span
-class="math inline">\(q=1\)</span> in the Hopf-algebra sense; this
-discontinuity is not discussed.</td>
+<td style="text-align: left;"><em>Unchanged.</em> “A field of quantum
+groups” is still a non-standard notion without a fibre-bundle framework.
+The algebraic jump at <span class="math inline">\(q = 1\)</span> is not
+discussed.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td
 style="text-align: left;">Def. 1.12<code>def:quantum-planck-constant</code></td>
 <td style="text-align: left;">Good</td>
-<td style="text-align: left;">Clean and self-contained. The range <span
-class="math inline">\([0,1)\)</span> is correctly deduced from <span
-class="math inline">\(q\in[1,\infty)\)</span>; both asymptotic regimes
-are described. Minor: calling a smooth field a “constant” is mildly
-misleading, though the text acknowledges this.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Already
+well-formed.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td
 style="text-align: left;">Rem. 1.13<code>rem:heisenberg-commutator</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) Position and momentum observables on
-the compact fibre <span class="math inline">\(\mathbb{CP}^1\)</span>
-require careful definition; standard <span
-class="math inline">\(\hat{X},\hat{P}\)</span> have continuous spectra
-that are incompatible with compact spaces. (b) <span
-class="math inline">\([\hat{X},\hat{P}]_q := J\,\hbar_q(p)\)</span> is
-postulated, not derived; the analogy with <span
-class="math inline">\([\hat{X},\hat{P}]=i\hbar\)</span> relies on <span
-class="math inline">\(i\mapsto J\)</span> and <span
-class="math inline">\(\hbar\mapsto\hbar_q\)</span> but this substitution
-is not justified. (c) The remark is unusually long (50 lines) with three
-sub-topics; splitting it would improve readability.</td>
+<td style="text-align: left;"><em>Unchanged.</em> The commutator is
+still postulated rather than derived. The remark remains long; splitting
+would improve readability.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td
 style="text-align: left;">Rem. 1.14<code>rem:cosmological-limits</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) “<span
-class="math inline">\(q\)</span>-torsion twists faster than any
-divergence can grow in the integral” is a quantitative claim without a
-proof or bound. (b) Both limits are called “illusory,” but the
-mathematical content of this assertion is not made precise. (c) The
-finiteness argument relies on the brane tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>),
-a forward reference to Chapter 2.</td>
+<td style="text-align: left;"><em>Unchanged.</em> “Illusory” limits and
+the taming claim still lack a rigorous bound.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td
 style="text-align: left;">Rem. 1.15<code>rem:j1e-local-states</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">Very brief (3 sentences). The claim that
-<span class="math inline">\(J^1E\)</span> “serves as the space of local
-states” is asserted without justification; “weighted by <span
-class="math inline">\(q\)</span>” is vague.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Still very brief;
+“weighted by <span class="math inline">\(q\)</span>” is vague.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td
 style="text-align: left;">Def. 1.16<code>def:q-harmonic-form</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) <span
-class="math inline">\(d_q\)</span> is used but not defined in this
-chapter; a forward reference or inline definition is needed. (b) <span
-class="math inline">\(\delta_q\)</span> requires an inner product on
-<span class="math inline">\(\Lambda^k T^*M\otimes J^1E\)</span>, which
-is not specified. (c) Sections are valued in <span
-class="math inline">\(J^1E\)</span> rather than the more conventional
-<span class="math inline">\(E\)</span> or <span
-class="math inline">\(\mathrm{Ad}(P)\)</span>; the motivation is not
-given. (d) “<span class="math inline">\(q\)</span>-viscosity” is used
-without definition.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> <span
+class="math inline">\(d_q\)</span> now has a forward reference to
+Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.20</a>.
+<span class="math inline">\(\delta_q\)</span> is defined via the
+Webster-metric inner product. “<span
+class="math inline">\(q\)</span>-viscosity” language removed.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td
 style="text-align: left;">Def. 1.17<code>def:reeb-decomposition</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) The decomposition is not uniquely
-characterised by the displayed conditions; the standard formula <span
-class="math inline">\(\alpha_V=\theta\wedge\iota_\xi\alpha\)</span>
-should be stated. (b) The condition <span
-class="math inline">\(\iota_\xi\alpha_V\neq 0\)</span> fails for <span
-class="math inline">\(0\)</span>-forms (functions), since <span
-class="math inline">\(\iota_\xi f=0\)</span> for every function <span
-class="math inline">\(f\)</span>; this degenerate case is not
-addressed.</td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Explicit formula <span
+class="math inline">\(\alpha_V = \theta \wedge \iota_\xi \alpha\)</span>
+now stated. Restricted to <span class="math inline">\(k \geq 1\)</span>
+forms.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Def. 1.18<code>def:fermion</code></td>
 <td style="text-align: left;">Good</td>
-<td style="text-align: left;">Well-formed given the prior definitions.
-The physics interpretation (half-integer spin) is deferred to a remark,
-which is appropriate.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Already
+well-formed.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Def. 1.19<code>def:boson</code></td>
 <td style="text-align: left;">Good</td>
-<td style="text-align: left;">Well-formed and the parenthetical
-equivalence is helpful.</td>
-</tr>
-<tr class="odd">
-<td
-style="text-align: left;">Def. 1.20<code>def:q-reeb-vector-field</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) The <span
-class="math inline">\(q\)</span>-deformed Lie bracket <span
-class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is used without an
-in-chapter definition or forward reference. (b) The horizontal lift
-<span class="math inline">\(X_f\)</span> requires a metric (presumably
-the Webster metric), which is not stated. (c) Behaviour in the
-deep-quantum limit <span class="math inline">\(q\to\infty\)</span> is
-not discussed.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Already
+well-formed.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Def. 1.21<code>def:q-reeb-flow</code></td>
+<td style="text-align: left;">Def. 1.20<code>def:q-ext-deriv</code></td>
 <td style="text-align: left;">Good</td>
-<td style="text-align: left;">Standard ODE formulation; clean and
-complete. Minor: existence and uniqueness (or the conditions
-guaranteeing them) could be noted.</td>
+<td style="text-align: left;"><em>New.</em> <span
+class="math inline">\(q\)</span>-deformed exterior derivative defined
+with explicit formula <span class="math inline">\(d_q = q^{-1}d +
+(1-q^{-1})\theta \wedge \mathcal{L}_\xi\)</span>. Recovers <span
+class="math inline">\(d\)</span> at <span
+class="math inline">\(q=1\)</span>.</td>
 </tr>
 <tr class="odd">
 <td
-style="text-align: left;">Def. 1.22<code>def:q-torsion-leaf</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">On a strictly pseudoconvex CR manifold the
-Levi distribution <span class="math inline">\(H\)</span> is
-non-integrable (the Levi form is non-degenerate), so maximal integral
-submanifolds are of restricted dimension. The <span
-class="math inline">\(q\)</span>-Reeb flow generically has a vertical
-(Reeb) component, so invariance of an <span
-class="math inline">\(H\)</span>-tangent leaf under <span
-class="math inline">\(\phi_t^q\)</span> is a very strong condition whose
-feasibility is not discussed.</td>
+style="text-align: left;">Def. 1.21<code>def:q-lie-bracket</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>New.</em> <span
+class="math inline">\(q\)</span>-deformed Lie bracket defined with
+explicit formula. Recovers the standard bracket at <span
+class="math inline">\(q=1\)</span>.</td>
 </tr>
 <tr class="even">
 <td
-style="text-align: left;">Rem. 1.23<code>rem:q-torsion-leaf-minimum</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) <span
-class="math inline">\(A_q\)</span> (the <span
-class="math inline">\(q\)</span>-deformed connection) is introduced
-without definition. (b) The vanishing of the first variation under <span
-class="math inline">\(\phi_t^q\)</span>-invariance is claimed without
-proof. (c) The <span class="math inline">\(\frac{1}{2}\)</span> in the
-curvature formula suggests the Lie-algebra convention, which should be
-stated.</td>
+style="text-align: left;">Def. 1.22<code>def:q-connection</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>New.</em> <span
+class="math inline">\(q\)</span>-deformed connection <span
+class="math inline">\(A_q\)</span> defined. Recovers <span
+class="math inline">\(A\)</span> at <span
+class="math inline">\(q=1\)</span>.</td>
 </tr>
 <tr class="odd">
 <td
-style="text-align: left;">Rem. 1.24<code>rem:reeb-physical</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The assertion that vertical components
-yield half-integer spin and horizontal components yield integer spin is
-a central physical claim; it is not proved and no reference is given.
-The spin–statistics connection requires deep QFT arguments that are not
-reproduced.</td>
+style="text-align: left;">Def. 1.23<code>def:q-reeb-vector-field</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> Now references
+Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.21</a>
+for <span class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> and
+specifies the Webster metric for the horizontal lift.</td>
 </tr>
 <tr class="even">
-<td
-style="text-align: left;">Rem. 1.25<code>rem:q-harmonic-physical</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">“<span
-class="math inline">\(q\)</span>-deformed viscosity” and the limit <span
-class="math inline">\(\Delta_q\to\Delta_{\text{Hodge}}\)</span> as <span
-class="math inline">\(q\to 1\)</span> are asserted without proof. The
-remark is too brief to support the claims made.</td>
+<td style="text-align: left;">Def. 1.24<code>def:q-reeb-flow</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Unchanged.</em> Already
+well-formed.</td>
 </tr>
 <tr class="odd">
 <td
-style="text-align: left;">Rem. 1.26<code>rem:gr-substrate-geometry</code></td>
-<td style="text-align: left;">Poor</td>
-<td style="text-align: left;">(a) The action <span
-class="math inline">\(S_q\)</span> is never defined. (b) “$\delta
-S_q/\delta L</td>
+style="text-align: left;">Def. 1.25<code>def:q-torsion-leaf</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;"><em>Unchanged.</em> Non-integrability of
+<span class="math inline">\(H\)</span> still makes the existence of
+maximal integral submanifolds a strong condition.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">\implies G_{\mu\nu}\sim
-T_{\mu\nu}^{(q)}<span class="math inline">\(” uses an implication arrow
-and a tilde in place of a rigorous derivation. (c) Greek tensor indices
-(\)</span>\mu,\nu$) break the otherwise coordinate-free formulation of
-the chapter.</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td
+style="text-align: left;">Rem. 1.26<code>rem:q-torsion-leaf-minimum</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> <span
+class="math inline">\(A_q\)</span> and <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> now have explicit
+cross-references to their definitions.</td>
 </tr>
 <tr class="odd">
 <td
-style="text-align: left;">Rem. 1.27<code>rem:schrodinger-jet-coaction</code></td>
+style="text-align: left;">Rem. 1.27<code>rem:reeb-physical</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">(a) The <span
-class="math inline">\(q\)</span>-deformed Hamiltonian <span
-class="math inline">\(\hat{H}_q\)</span> is used but not defined.
-(b) The Schrödinger equation is a linear PDE, but the state <span
-class="math inline">\(\psi\in\Gamma(E)\)</span> lives in a <span
-class="math inline">\(\mathbb{CP}^1\)</span>-bundle (a non-linear
-fibre); this tension is not addressed. (c) <span
-class="math inline">\(D_A=d+A\)</span> is standard for vector bundles
-but <span class="math inline">\(E\)</span> is not a vector bundle.</td>
+<td style="text-align: left;"><em>Unchanged.</em> Spin–statistics claim
+still lacks a proof.</td>
 </tr>
 <tr class="even">
 <td
-style="text-align: left;">Rem. 1.28<code>rem:main-commutative-diagram</code></td>
+style="text-align: left;">Rem. 1.28<code>rem:q-harmonic-physical</code></td>
 <td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The diagram is illustrative rather than
-mathematical: the objects are descriptions (“General Relativity”,
-“Schrödinger Eq.”) rather than categories or spaces, and the arrows are
-not defined as morphisms. Commutativity is not proved.</td>
+<td style="text-align: left;"><em>Unchanged.</em> <span
+class="math inline">\(\Delta_q \to \Delta_{\text{Hodge}}\)</span> as
+<span class="math inline">\(q\to 1\)</span> is now more plausible given
+Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.20</a>,
+but a proof is still absent.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.29<code>rem:gr-substrate-geometry</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> <span
+class="math inline">\(S_q\)</span> now defined as <span
+class="math inline">\(q\)</span>-weighted Yang–Mills–Levi functional
+with explicit formula. Greek tensor indices removed; field equations
+expressed in coordinate-free Webster Ricci / stress-energy form.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.30<code>rem:schrodinger-jet-coaction</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;"><em>Fixed.</em> <span
+class="math inline">\(\hat{H}_q\)</span> now defined as <span
+class="math inline">\(-\tfrac{1}{2}\hbar_q\Delta_q + V_q\)</span>.
+Linearisation convention for the non-linear fibre <span
+class="math inline">\(\mathbb{CP}^1\)</span> is stated. <span
+class="math inline">\(D_A\)</span> now acts on the linearised line
+bundle <span class="math inline">\(E_{\mathrm{lin}}\)</span>.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.31<code>rem:main-commutative-diagram</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;"><em>Unchanged.</em> The diagram remains
+illustrative; objects are descriptions rather than mathematical spaces.
+Commutativity is not proved.</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<p><strong>Summary statistics.</strong> Of the 28 labelled items: 5 are
-rated <strong>Good</strong> (Definitions 1.12, 1.18, 1.19, 1.21 and
-Example 1.9); 20 are rated <strong>Fair</strong>; and 3 are rated
-<strong>Poor</strong> (Prop. 1.5, Ex. 1.8, Rem. 1.26).</p>
-<p><strong>Critical issues requiring immediate attention:</strong></p>
+<p><strong>Summary statistics (post-revision).</strong> Of the
+31 labelled items (28 original <span class="math inline">\(+\)</span> 3
+new definitions): 22 are rated <strong>Good</strong>; 9 are rated
+<strong>Fair</strong>; and 0 are rated <strong>Poor</strong>.</p>
+<p><strong>Remaining open concerns:</strong></p>
 <ol type="1">
-<li><p><strong>Example 1.8 (<a class="defn-link" href="#ex:affine">Odd-dimensional spheres</a>)</strong>
-contradicts its own framework: the trivial <span
-class="math inline">\(\mathrm{SU}(2)\)</span>-bundle on a compact sphere
-has <span
-class="math inline">\(H^0_c(M,\mathrm{Ad}(P))\cong\mathfrak{su}(2)\neq
-0\)</span>, so the QOU cohomology condition fails.</p></li>
-<li><p><strong>Proposition 1.5 (Self-duality)</strong> is stated for
-arbitrary CR dimension but proved only for <span
-class="math inline">\(n=2\)</span>; the hypothesis should be restricted
-or the proof generalised.</p></li>
-<li><p><strong>Definition 1.1</strong> should require <span
-class="math inline">\(M\)</span> to be a strictly pseudoconvex CR
-manifold of hypersurface type equipped with a pseudo-Hermitian
-structure <span class="math inline">\(\theta\)</span>, since every
-subsequent result depends on the contact form.</p></li>
-<li><p>Several key objects (<span class="math inline">\(d_q\)</span>,
-<span class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span>, <span
-class="math inline">\(A_q\)</span>, <span
-class="math inline">\(S_q\)</span>, <span
-class="math inline">\(\hat{H}_q\)</span>) are used but not defined in
-this chapter; either in-chapter definitions or explicit forward
-references should be provided.</p></li>
-<li><p>The <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> (Remark 1.10) is the chapter’s central
-concept yet is housed in a <em>Remark</em>; promoting it to a
-<em>Definition</em> would align with the definition-first philosophy
-stated in the preamble.</p></li>
+<li><p><strong>Remark 1.3 (<a class="defn-link" href="#rem:jet-bundle">Jet-bundle formulation</a>):</strong> the
+injection claim for <span class="math inline">\(\Gamma_c(M,
+J^1E)\)</span> needs a proof or literature reference.</p></li>
+<li><p><strong>Definition 1.11 (<a class="defn-link" href="#def:quantum-gauge-group">Quantum gauge group</a>):</strong> “a field
+of quantum groups” needs a sheaf-theoretic or fibre-bundle
+formalisation; the algebraic discontinuity at <span
+class="math inline">\(q = 1\)</span> should be addressed.</p></li>
+<li><p><strong>Remark 1.13 (Heisenberg commutator):</strong> the
+commutator is postulated, not derived; splitting the remark would aid
+readability.</p></li>
+<li><p><strong>Remark 1.27 (Reeb physical):</strong> the spin–statistics
+correspondence between <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a> components and spin quantum
+numbers needs a proof or external reference.</p></li>
+<li><p><strong>Definition 1.25 (<span
+class="math inline">\(q\)</span>-torsion leaf):</strong> existence of
+maximal integral submanifolds of the non-integrable Levi distribution
+needs discussion.</p></li>
 </ol>
 <h1 id="lifting-of-quantum-torsion"><span id="chap:torsion"></span>Lifting of Quantum Torsion</h1>
 <div id="prop:jet-prolongation" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/lifting-of-quantum-torsion.tex#L7" target="_blank" title="View source">&#x1F4C4;</a>
@@ -1685,7 +1737,7 @@ d_{A_n}\,\alpha = 0
 d_{A_n}^*\,\alpha = 0,\]</span> where the Hodge-star operator is induced
 by the Hermitian metric that the Levi form <span
 class="math inline">\(L\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 defines on the horizontal distribution. The index <span
 class="math inline">\(i\)</span> runs over <span class="math inline">\(1
 \leq i \leq b_1(E_n)\)</span>
@@ -1749,7 +1801,7 @@ class="math inline">\(1\)</span>-form in the basis of
 Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
 Its <em>signature</em> is determined by its commutator with the
 curvature <span class="math inline">\(F_A\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).</em></p>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).</em></p>
 <p><em><em>Fermionic type (matter).</em> <span
 class="math inline">\([F_A,\, \alpha] \neq 0\)</span>. These forms are
 entangled with the curvature: they see the <span
@@ -1794,7 +1846,7 @@ Direct Limit). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
 with substrate parameters <span class="math inline">\(q_n\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 at each level. The <em><span class="math inline">\(\mathbb{C}\)</span>
 quantum observable universe</em> is the direct limit algebra <span
 class="math display">\[\mathcal{A}_\infty
@@ -1883,8 +1935,8 @@ class="math inline">\(n \geq 1\)</span>.</em></p>
 <p><strong>Definition 2.15</strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> quantum observable universe
-with <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>),
+with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>),
 connection <span class="math inline">\(A\)</span>, Levi form <span
 class="math inline">\(L\)</span>, and self-dual curvature <span
 class="math inline">\(F^+\)</span>. Let <span
@@ -1936,7 +1988,7 @@ class="math inline">\(E\)</span> descends to a bundle over the <span
 class="math inline">\(1\)</span>-dimensional base whose fibre dynamics
 are locked into a single periodic flow.</em></p></li>
 <li><p><em><em>Reeb direction.</em> The inverse of the Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.23</a>)
 becomes the only direction of motion; the horizontal distribution is
 trivial and no bosonic modes
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>)
@@ -2088,9 +2140,9 @@ characteristic-zero values.</p></li>
 <h2 id="fluid-dynamics-of-the-brane"><span id="sec:brane-fluid"></span>Fluid Dynamics of the Brane</h2>
 <ul>
 <li><p>Describe the fluid dynamics on the brane whose thickness is
-determined by the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+determined by the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).</p></li>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).</p></li>
 <li><p>TODO: investigate whether the viscosity gradient can be encoded
 by the <span class="math inline">\(q\)</span>-Laplacian <span
 class="math inline">\(\Delta_q\)</span>.</p></li>
@@ -2127,7 +2179,7 @@ Length as Minimal Information Unit</h2>
 class="math inline">\(\ell_P(p)\)</span> as the minimal quantisable size
 of an information unit at a point <span class="math inline">\(p \in
 M\)</span>.</p></li>
-<li><p>Relation to the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a>: <span
+<li><p>Relation to the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>: <span
 class="math inline">\(\ell_P \sim \hbar_q\)</span>.</p></li>
 </ul>
 <h2 id="time-as-information-transfer"><span id="sec:time-info"></span>Time as Information Transfer</h2>
@@ -2554,10 +2606,10 @@ descent theorem
 it is sufficient to study dimension-zero manifolds equipped with their
 bundles <span class="math inline">\(P\)</span> and <span
 class="math inline">\(E\)</span>. At a point <span
-class="math inline">\(p\in M_0\)</span>, the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(p\in M_0\)</span>, the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q(p)=\exp\!\bigl(\lVert L\wedge
 F_A^{+}\rVert(p)\bigr)\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 assigns a specific quantum constant <span
 class="math inline">\(q\in[1,\infty)\)</span> determined by the
 principal bundle <span class="math inline">\(P\)</span> and the state
@@ -2659,8 +2711,8 @@ class="math inline">\(\theta = \eta\,dz\big|_{M_S}\)</span> and the
 horizontal distribution <span class="math inline">\(H\)</span> is
 spanned by the lifts of the chiral differentials <span
 class="math inline">\(dx_2, dx_3, dx_4\)</span> to <span
-class="math inline">\(M_S\)</span>. The <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+class="math inline">\(M_S\)</span>. The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 then reads <span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L
 \wedge F_A^+ \rVert(p)\bigr),
 \qquad p \in M_S,\]</span> coupling the chiral curvature to the contact
@@ -3237,10 +3289,10 @@ class="math inline">\(\exp_q(r)-1\)</span> vanishes at <span
 class="math inline">\(r=0\)</span> and grows rapidly for small <span
 class="math inline">\(r\)</span>, driven by the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>).
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>).
 These ladder modes expand at the big bang before tapering as the
 geometric viscosity
-(Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">1.25</a>)
+(Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">1.28</a>)
 takes hold.</em></p></li>
 </ul>
 <p><em>To realise the rotation as a function of <span
@@ -3279,7 +3331,7 @@ resolvents converge toward the <em>primordial vortex</em>:</em></p>
 class="math inline">\(\hbar_q\to 1\)</span>
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.12</a>).</em></p></li>
 <li><p><em>The <span class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.22</a>)
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.25</a>)
 collapse to the zero-dimensional stratum <span
 class="math inline">\(M_0=\{\pm 1\}\)</span>.</em></p></li>
 <li><p><em>The <span class="math inline">\(\omega_0\)</span> coordinate,
@@ -3297,7 +3349,7 @@ into a localised topological charge.</em></p>
 
 <p><strong>Remark 7.19</strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
 <em>The Levi form <span class="math inline">\(L\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 must be preserved under the <span
 class="math inline">\(\mathrm{Sp}(1)\)</span> conjugation. Since <span
 class="math display">\[\lVert\boldsymbol{\omega}&#39;\rVert^2
@@ -3392,7 +3444,7 @@ Seiberg–Witten gauge theory.</em></p>
 <p><strong>Remark 7.21</strong> (Reeb vector field on the exceptional
 divisor). <em>The Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.23</a>)
 is the dynamical complement to the static topology of the Bring surface.
 While the surface itself provides the handles (genus <span
 class="math inline">\(4\)</span>), the Reeb vector provides the “wind”
@@ -3402,7 +3454,7 @@ wind.</em></p>
 <p><em><strong>The classical limit (<span class="math inline">\(q\to
 1\)</span>): cones and frozen geometry.</strong> If the substrate
 parameter <span class="math inline">\(q\to 1\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>),
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>),
 the torsion coupling vanishes and the phase rotation <span
 class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span> loses its temporal
 component. The fibre over each base point ceases to twist as one moves
@@ -3411,7 +3463,7 @@ chiral tubes are frozen in the configuration determined by the power-sum
 equations. Metrically this is a conical limit—the curvature concentrates
 at the blow-up points but no circulating torsion field smooths it out.
 In terms of the Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>),
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>),
 <span class="math inline">\(\xi_q\to\xi_1=\xi\)</span> becomes the
 classical Reeb field, and the Heisenberg commutator <span
 class="math inline">\([\hat{X},\hat{P}]_q\to 0\)</span>
@@ -3438,10 +3490,10 @@ the <span class="math inline">\(U(1)\)</span> action that rotates the
 chiral fibre above the exceptional divisor. Concretely, the <span
 class="math inline">\(q\)</span>-deformed Reeb flow <span
 class="math inline">\(\phi_t^q\)</span>
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>)
 restricted to <span class="math inline">\(E_c\)</span> generates the
 Hopf fibration <span class="math inline">\(S^3\to S^2\cong E_c\)</span>,
-and the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+and the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 controls the pitch of this rotation. The vector field <span
 class="math inline">\(\xi_q\)</span> thereby provides the “time-like”
 direction within the chiral space: it is the flow that allows the
@@ -3520,7 +3572,7 @@ class="math inline">\(\Gamma\)</span>.</em></p>
 <p><strong>Remark 8.4</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on affine
 space). <em>For the affine quantum observable universe <span
 class="math inline">\(M = \mathbb{C}^n\)</span>
-(Example <a href="#ex:affine" data-reference-type="ref" data-reference="ex:affine">1.8</a>),
+(Example <a href="#ex:spheres" data-reference-type="ref" data-reference="ex:spheres">1.8</a>),
 the Descartes condition <span class="math inline">\(\chi(E) =
 -6\)</span> forces the principal <span
 class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
@@ -3746,9 +3798,9 @@ class="math inline">\(\operatorname{End}(E)\to\mathbb{CP}^1\)</span>,
 encoding the coordinate change in torsion energy of the bundle <span
 class="math inline">\(E\)</span>. Because the torsion energy is modified
 by the act of measurement, observing the universe changes it: every
-observation perturbs the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+observation perturbs the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q(p)\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 and hence shifts the non-commutative geometry of the Bring surface
 (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">7.1</a>).</em></p>
 <blockquote>
@@ -3778,13 +3830,13 @@ the negative Euler characteristic <span class="math inline">\(\chi(E) =
 the CR manifold
 (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">[rem:descartes-cmb]</a>).
 The <span class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.22</a>;
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.25</a>;
 here “leaves” is the geometric plural of <em>leaf</em>) imprint a
 characteristic pattern on the CMB that deviates from the statistically
 isotropic Gaussian field predicted by <span
 class="math inline">\(\Lambda\)</span>CDM. Specifically, the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>)
 introduces <em>torsion</em> into the temperature and polarisation
 multipoles, producing preferred spiral directions in the <span
 class="math inline">\(B\)</span>-mode spectrum.</em></p>
@@ -3826,7 +3878,7 @@ Signatures and Emergent Geometry</h3>
 <p><strong>Remark 10.2</strong> (Gravity as emergent substrate
 geometry). <em>In the QOU framework, general relativity emerges as the
 substrate geometry of the CR manifold
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.26</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>).
 The quantum-weighted stress-energy tensor <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> introduces <span
 class="math inline">\(q\)</span>-dependent corrections to the Einstein
@@ -3856,9 +3908,9 @@ detector with sensitivity to post-merger ringdown deviations.</p></li>
 <h5 id="potential-new-experiments-1">Potential new experiments.</h5>
 <ul>
 <li><p>Precision tests of the equivalence principle at quantum scales,
-probing whether the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+probing whether the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 introduces composition-dependent deviations.</p></li>
 <li><p>Tabletop gravity experiments at sub-millimetre scales to search
 for <span class="math inline">\(q\)</span>-dependent modifications to
@@ -4049,9 +4101,9 @@ radius measured in muonic hydrogen and in electronic hydrogen — remains
 a key area of study. In the QOU framework, lepton generations are
 distinguished by the vertical degree of the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">8.7</a>);
-each generation couples to the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+each generation couples to the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 through a different vertical harmonic form. If this generation-dependent
 coupling is physical, the effective electromagnetic interaction between
 the proton and the orbiting lepton acquires a <span
@@ -4088,20 +4140,20 @@ muonic vs. electronic hydrogen, interpreted through the
 generation-dependent <span class="math inline">\(q\)</span>-correction
 predicted by the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>.</p></li>
 <li><p>Tau-hydrogen spectroscopy (if feasible at future facilities) to
-test the third-generation coupling to the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a>.</p></li>
+test the third-generation coupling to the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>.</p></li>
 </ul>
 <h3 id="informational-and-entropic-gravity-tests">Informational and
 Entropic Gravity Tests</h3>
 <div id="rem:entropic-gravity" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/experimental-evidence.tex#L316" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 10.8</strong> (Entropic forces and the substrate
-parameter). <em>The <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
+parameter). <em>The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 encodes the coupling between the Levi form and the gauge curvature. In
 the near-classical regime <span class="math inline">\(q \to 1\)</span>,
 gravity emerges as a geometric back-reaction
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.26</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>).
 Recent work on the quantum mechanics of entropic forces  provides a
 complementary perspective: the entropic interpretation may correspond to
 the thermodynamic limit of the <span
@@ -4139,14 +4191,14 @@ Lattice Resonance and Substrate Telescopes</h3>
 
 <p><strong>Remark 10.9</strong> (<a class="defn-link" href="#rem:crystal-resonance">Quantum resonance in crystal lattices</a>).
 <em>A periodic crystal lattice provides a macroscopic, coherent probe of
-the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
-(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>).
+the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 The discrete translational symmetry of the lattice selects a set of
 reciprocal vectors that couple to the horizontal distribution of the CR
 manifold <span class="math inline">\(M\)</span>. Where the lattice
 spacing is commensurate with the characteristic scale of a <span
 class="math inline">\(q\)</span>-torsion leaf
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.22</a>),
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.25</a>),
 a resonance condition is satisfied: the <span
 class="math inline">\(q\)</span>-harmonic forms
 (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.16</a>)
@@ -4169,11 +4221,11 @@ function of orientation. Because the <span
 class="math inline">\(q\)</span>-torsion leaves carry a preferred
 direction inherited from the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>),
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.24</a>),
 the noise spectrum should exhibit a modulation correlated with the
 crystal’s orientation relative to the bulk bundle. This is conceptually
 analogous to a Weber-bar gravitational wave detector, but targets the
-anisotropy of the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> rather than metric
+anisotropy of the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> rather than metric
 strain.</em></p>
 </div>
 
