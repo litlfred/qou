@@ -523,99 +523,20 @@ $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
 group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 \end{definition}
 
-\begin{remark}[Quantum gauge group: formalisations and category-theoretic perspective]
+\begin{remark}[Quantum gauge group: category-theoretic perspective]
 \label{rem:quantum-gauge-group-category}
-The ``field of quantum groups'' $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ in
-Definition~\ref{def:quantum-gauge-group} admits at least three
-formalisations, with different trade-offs:
-
-\begin{enumerate}
-  \item \emph{Fibre bundle of Hopf algebras.}\;
-        Let $\mathcal{O}_q(\mathrm{SU}(2))$ denote the Hopf algebra of
-        regular functions on $\mathrm{SU}_q(2)$.  One forms a locally
-        trivial bundle of Hopf algebras
-        $\mathcal{H} \to M$ whose fibre at~$p$ is
-        $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$.
-        \emph{Pro:} concrete and computable.
-        \emph{Con:} Hopf-algebra structure varies non-trivially with
-        $q(p)$; the coalgebra at $q = 1$ is commutative while for
-        $q \neq 1$ it is not, so the transition maps are not algebra
-        homomorphisms.
-  \item \emph{Bundle of monoidal categories.}\;
-        Replace each Hopf algebra with its representation category
-        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal
-        category.  The field $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ becomes
-        a fibred category over~$M$ whose fibres are fusion categories
-        when $q(p)$ is a root of unity.
-        \emph{Pro:} functorial and compatible with the Tannakian
-        reconstruction program; morphisms between fibres are monoidal
-        functors, which behave well under deformation.
-        \emph{Con:} requires $2$-categorical or $\infty$-categorical
-        machinery; explicit computations are harder.
-  \item \emph{$C^*$-algebraic continuous field.}\;
-        The assignment $p \mapsto C(\mathrm{SU}_{q(p)}(2))$ defines a
-        continuous field of $C^*$-algebras in the sense of
-        Dixmier--Douady.
-        \emph{Pro:} the algebraic discontinuity at $q = 1$ is tamed by
-        the $C^*$-norm topology; the field is continuous in the
-        sense of Rieffel's strict deformation quantisation.
-        \emph{Con:} less algebraic control; functoriality is less
-        transparent than in~(2).
-\end{enumerate}
-For the purposes of this paper we work with approach~(1) at the
-computational level.  However, the later chapters progressively adopt
-the category-theoretic perspective of approach~(2) as the unifying
-language:
-\begin{itemize}
-  \item \emph{Terminal objects (Chapter~\ref{chap:descartes}).}\;
-        The category $\mathcal{C}_{-6}$ of $\mathbb{C}$ quantum observable
-        universes with $\chi(E) = -6$ admits Bring's curve as a terminal
-        object (Theorem~\ref{thm:descartes}).  This categorical
-        universality is most naturally formulated when the gauge group
-        itself is a categorical object, i.e.\ via approach~(2).
-  \item \emph{Categorical reformulation
-        (Chapter~\ref{chap:p-adic}).}\;
-        Section~\ref{sec:categorical-reformulation} rephrases the QOU
-        framework in the language of monoidal categories and functors,
-        relating the fibred category of
-        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ over $M$ to
-        Tannaka--Krein duality and $\pp$-adic universality.
-  \item \emph{Ascent/descent in the brane tower
-        (Chapter~\ref{chap:torsion}).}\;
-        The recursive brane tower $\{E_n\}$ uses jet prolongation to lift
-        connections to higher categorical structures; descent strips
-        these away via a spectral-sequence mechanism.  The formalism
-        of~(2) naturally accommodates these higher-categorical operations.
-  \item \emph{Representation-theoretic braiding
-        (Chapter~\ref{chap:path-integrals-braiding}).}\;
-        Knot holonomy and braid-group representations factor through
-        the adjoint representation in a manner compatible with the
-        category-theoretic setup of
-        Section~\ref{sec:enveloping-algebras}.
-\end{itemize}
-
-\medskip\noindent\textit{Impact assessment: approach~(1) vs approach~(2).}\;
-The choice of approach~(1) (Hopf-algebra bundles) in this chapter has a
-\emph{limited} impact on the rest of the paper, for the following
-reasons.  First, the concrete computations in Chapter~1 ---
-the substrate parameter, $q$-deformed operators, and their algebraic
-properties (Propositions~\ref{prop:dq-squared}
-and~\ref{prop:q-jacobiator}) --- depend only on the pointwise value
-$q(p)$ and the contact geometry of~$M$, not on the global
-algebraic structure of the gauge group bundle.  These results hold
-identically under any of the three formalisations.
-
-Second, the categorical content in later chapters
-(Chapters~\ref{chap:descartes}, \ref{chap:p-adic},
-\ref{chap:torsion}, \ref{chap:path-integrals-braiding}) is formulated
-at the level of the representation category
-$\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, which is reconstructible from
-the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of approach~(1)
-via Tannaka--Krein duality.  The passage from~(1) to~(2) is therefore
-functorial and introduces no new data; it amounts to replacing an
-algebra with its category of modules.  The following diagram captures
-this functoriality fibrewise: for any two points $p, p' \in M$
-connected by a path~$\gamma$,
+The quantum gauge group
+(Definition~\ref{def:quantum-gauge-group}) is realised pointwise by
+the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of regular
+functions on $\mathrm{SU}_{q(p)}(2)$.  The categorical view replaces
+each fibre with its representation category
+$\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal category.
+Tannaka--Krein duality reconstructs $\mathcal{O}_{q(p)}$ from
+$\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ via
+$\mathrm{End}^{\otimes}(\omega)$, where $\omega$ is the forgetful
+fibre functor.  For any two points $p, p' \in M$ connected by a
+path~$\gamma$, the passage between fibres is captured by the
+commutative square
 \begin{equation}\label{eq:tannaka-krein-functoriality}
 \begin{CD}
 \mathcal{O}_{q(p)}(\mathrm{SU}(2))
@@ -628,32 +549,16 @@ connected by a path~$\gamma$,
   \mathrm{Rep}(\mathrm{SU}_{q(p')}(2))
 \end{CD}
 \end{equation}
-The left column is the Hopf-algebra transition map of approach~(1);
-the right column is the induced monoidal functor of approach~(2).
-Tannaka--Krein reconstruction ($\mathrm{End}^{\otimes}(\omega)$, where
-$\omega$ is the forgetful fibre functor) inverts the horizontal arrows,
-making the two approaches equivalent at each fibre.
+Tannaka--Krein reconstruction inverts the horizontal arrows, so the
+Hopf-algebra and representation-category viewpoints are equivalent
+fibrewise.
+\end{remark}
 
-Third, the one genuine tension --- the algebraic discontinuity at
-$q = 1$ --- deserves a closer examination.  In the Hopf algebra
-$\mathcal{O}_q(\mathrm{SU}(2))$, the comultiplication
-$\Delta_q \colon \mathcal{O}_q(\mathrm{SU}(2)) \to
-\mathcal{O}_q(\mathrm{SU}(2)) \otimes \mathcal{O}_q(\mathrm{SU}(2))$
-is cocommutative if and only if $q = 1$; for every $q \neq 1$ the Hopf
-algebra is genuinely non-cocommutative.  In the algebraic category of
-Hopf algebras, $\lim_{q \to 1}\Delta_q$ does not equal $\Delta_1$ in
-any meaningful sense: the fibres
-$\mathcal{O}_{q}(\mathrm{SU}(2))$ and
-$\mathcal{O}_{1}(\mathrm{SU}(2)) = \mathcal{O}(\mathrm{SU}(2))$ are
-not isomorphic as coalgebras for $q \neq 1$, so the bundle
-$\mathcal{H} \to M$ of approach~(1) has a topological discontinuity
-wherever $q(p) = 1$.
-
-\medskip\noindent\textit{Hopf-algebra structure diagrams.}\;
-To make the preceding discussion explicit, write
-$\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
+\begin{remark}[Hopf-algebra structure of the quantum gauge group]
+\label{rem:hopf-structure-diagrams}
+Write $\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
 $\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
-counit, and antipode respectively.  The Hopf-algebra axioms include
+counit, and antipode.  The Hopf-algebra axioms include
 \emph{coassociativity}:
 \begin{equation}\label{eq:coassociativity}
 \begin{CD}
@@ -679,11 +584,14 @@ and the \emph{counit} condition:
 \end{CD}
 \end{equation}
 Both diagrams~\eqref{eq:coassociativity} and~\eqref{eq:counit}
-commute for every $q \geq 1$.  The tension at $q = 1$ is captured
-by the \emph{cocommutativity} square: let
-$\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
+commute for every $q \geq 1$.
+\end{remark}
+
+\begin{remark}[Non-cocommutativity and the $q = 1$ discontinuity]
+\label{rem:q1-discontinuity}
+Let $\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
 \mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
-$(a \otimes b \mapsto b \otimes a)$.  Then
+$(a \otimes b \mapsto b \otimes a)$.  The cocommutativity square
 \begin{equation}\label{eq:non-cocommutativity}
 \begin{CD}
 \mathcal{O}_q @>{\Delta_q}>>
@@ -700,49 +608,18 @@ controlled by the universal $R$-matrix of the quasi-triangular Hopf
 algebra $U_q(\mathfrak{su}(2))$:
 $\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ \Delta_q$,
 where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
-
-The $C^*$-algebraic perspective of approach~(3) resolves this
-discontinuity analytically.  In Rieffel's framework of strict
-deformation quantisation, the assignment
-$q \mapsto C(\mathrm{SU}_q(2))$ forms a continuous field of
-$C^*$-algebras: for every section~$a$ of the field, the norm function
+Analytically, the assignment $q \mapsto C(\mathrm{SU}_q(2))$ forms a
+continuous field of $C^*$-algebras in the sense of Rieffel's strict
+deformation quantisation: the norm function
 $q \mapsto \lVert a_q \rVert$ is continuous on $[1,\infty)$, so
-$\lVert a_q - a_1 \rVert \to 0$ as $q \to 1$.  The algebraic jump in
-the coalgebra structure is invisible to the $C^*$-norm topology ---
-continuity is recovered at the analytic level even though it fails at
-the algebraic level.  The paper invokes this resolution implicitly
-whenever continuity in $q$ is needed (e.g.\ the classical limits
-$q \to 1$ in Remark~\ref{rem:planck-limits}).
+$\lVert a_q - a_1 \rVert \to 0$ as $q \to 1$.  The paper invokes
+this resolution implicitly whenever continuity in $q$ is needed
+(e.g.\ the classical limits $q \to 1$ in
+Remark~\ref{rem:planck-limits}).
+\end{remark}
 
-A full categorical treatment via approach~(2) would provide a
-\emph{structural} resolution complementing the analytic one.  The
-cobordism hypothesis (Baez--Dolan, proved by Lurie) requires that a
-fully extended $n$-dimensional topological field theory assigns to a
-point a \emph{fully dualisable} object in a symmetric monoidal
-$(\infty,n)$-category.  The representation category
-$\mathrm{Rep}(\mathrm{SU}_q(2))$, viewed as a braided fusion category,
-is fully dualisable in the Morita $3$-category of tensor categories;
-it can therefore serve directly as the datum assigned to a point by a
-$3$-dimensional extended TFT (this is the mathematical content
-underlying Chern--Simons theory at level~$k$ when $q$ is a root of
-unity).  In this categorical setting, the passage $q \to 1$ corresponds
-to a degeneration of the fusion category to $\mathrm{Rep}(\mathrm{SU}(2))$
---- a degeneration that is controlled by the deformation theory of
-tensor categories rather than by norm topology.
-
-Similarly, higher gauge theory replaces a gauge group $G$ with a
-categorical group (a $2$-group), assigning to each point of $M$ not
-merely a group element but a coherent system of morphisms in a
-$2$-category.  Approach~(2) --- viewing the quantum gauge group as a
-fibred category of braided monoidal categories over~$M$ --- is
-precisely the input required by higher gauge theory: the fibres are the
-categorical groups, and the fibration encodes the parallel-transport
-$2$-functor.  Adopting~(2) would therefore embed the QOU framework
-directly into both extended TFT and higher gauge theory.  This
-comparison motivates the categorical developments in the chapters cited
-above.
-
-\medskip\noindent\textit{Self-duality as a short exact sequence.}\;
+\begin{remark}[Self-duality as a short exact sequence]
+\label{rem:self-dual-ses}
 In the QOU setting with $\dim_{\mathbb{R}} H = 4$, the Hodge star
 $*_H$ gives the splitting
 $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$ and hence
@@ -1331,12 +1208,11 @@ and~\ref{def:quantum-observable-universe}: the $\mathbb{C}$ realisation
 (Example~\ref{def:c-quantum-observable-universe}) is one instance, and the
 $\pp$-adic and finite-field realisations
 (Examples~\ref{ex:p-adic-realisation} and~\ref{ex:finite-field-realisation})
-are others.  This field-independence
-is the deeper reason why approach~(1) (Hopf-algebra bundles) in
-Remark~\ref{rem:quantum-gauge-group-category} has limited impact on the
-rest of the paper: all later constructions factor through the
-representation category, which is base-field-independent by Tannakian
-reconstruction.
+are others.  This field-independence is the deeper reason why the
+choice of Hopf-algebra realisation in
+Remark~\ref{rem:quantum-gauge-group-category} has no impact on later
+chapters: all constructions factor through the representation category,
+which is base-field-independent by Tannakian reconstruction.
 \end{remark}
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
