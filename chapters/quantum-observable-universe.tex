@@ -3,121 +3,354 @@
 
 % ── Definitions ──────────────────────────────────────────────────────────────
 
-\begin{definition}[$\mathbb{C}$ Quantum Universe]
-\label{def:c-quantum-universe}
-A \emph{$\mathbb{C}$ quantum universe} is a $4$-tuple $(M, G, P, E)$ where:
+\begin{definition}[Quantum Universe]
+\label{def:quantum-universe}
+Let $k$ be a field.  A \emph{quantum universe over~$k$} is a quadruple
+$(\mathcal{C}, A, \omega, q)$ where:
 \begin{enumerate}
-  \item $M$ is a CR manifold;
-  \item $G = \mathrm{SU}(2)$;
-  \item $P \to M$ is a principal $G$-bundle with $\mathrm{SO}(3)$ holonomy;
-  \item $E = P \times_G \mathbb{CP}^1 \to M$ is the associated
-        \emph{state bundle} (the chiral bundle of quantum states).
+  \item $(\mathcal{C}, \otimes, \mathbf{1})$ is a $k$-linear rigid
+        monoidal category;
+  \item $A$ is a \emph{Frobenius--Hopf object} in $\mathcal{C}$: an object
+        equipped with a Hopf structure
+        $(\mu, \eta, \Delta, \varepsilon, S)$ and a Frobenius form
+        $\lambda \colon A \to \mathbf{1}$ such that the pairing
+        $A \otimes A \xrightarrow{\mu} A \xrightarrow{\lambda} \mathbf{1}$
+        is non-degenerate and the Frobenius relation
+        $(\mu \otimes \mathrm{id}) \circ
+        (\mathrm{id} \otimes \Delta_\mu)
+        = \Delta_\mu \circ \mu$ holds, where $\Delta_\mu$ is the
+        comultiplication dual to $\mu$ under the pairing;
+  \item $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$ is a fibre functor
+        (exact faithful $k$-linear monoidal functor);
+  \item $q \in k^\times$ is a deformation parameter (invertibility of~$q$
+        is required because the Hopf-algebra relations defining~$A$
+        involve~$q^{-1}$; at $q = 0$ the antipode~$S$ degenerates and
+        the Hopf structure collapses); the Hopf structure on
+        $A$ depends on~$q$, and $q = 1$ recovers the classical
+        (cocommutative) case.
+\end{enumerate}
+The \emph{quantum gauge group} is the affine $k$-group scheme
+$G_q = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
+Tannaka--Krein duality.
+\end{definition}
+
+\begin{definition}[Quantum Observable Universe]
+\label{def:quantum-observable-universe}
+A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$k$
+(Definition~\ref{def:quantum-universe}) is \emph{observable} if:
+\begin{enumerate}
+  \item the Frobenius form $\lambda$ on $A$ is non-degenerate; and
+  \item $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$,
+        where $\mathrm{Ad}(A)$ is the adjoint object
+        ($A$ with the conjugation coaction
+        $a \mapsto \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$).
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
+\begin{remark}[Base-field independence]
+\label{rem:base-field-independence}
+Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
+are formulated over an arbitrary field~$k$.  The Frobenius--Hopf axioms
+replace the analytic vanishing conditions of the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
+non-degeneracy condition on the Frobenius form.  Concrete realisations
+include:
+\begin{itemize}
+  \item $k = \mathbb{C}$: the classical setting of CR geometry and contact
+        manifolds (Example~\ref{def:c-quantum-universe});
+  \item $k = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
+        an $F$-isocrystal with Frobenius lift, and integrability is controlled
+        by the $\pp$-adic Frobenius endomorphism
+        (Example~\ref{ex:p-adic-realisation},
+        Chapter~\ref{chap:p-adic});
+  \item $k = \mathbb{F}_\pp$ (a finite field): the monoidal category is
+        the category of finite-dimensional representations of a quantum group
+        over~$\mathbb{F}_\pp$
+        (Example~\ref{ex:finite-field-realisation}).
+\end{itemize}
+The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$
+is well-defined over any~$k$.
+\end{remark}
+
+\begin{remark}[TQFT context]
+\label{rem:tqft-context}
+The axioms of
+Definitions~\ref{def:quantum-universe}
+and~\ref{def:quantum-observable-universe} are grounded in the algebraic
+framework of topological quantum field theory (TQFT).
+
+\medskip\noindent\textit{Frobenius--Hopf objects and 2d TQFT.}\;
+A commutative Frobenius algebra over~$k$ is equivalent to a
+$2$-dimensional TQFT
+$Z \colon \mathbf{2Cob} \to \mathrm{Vect}_k$
+\cite{kock2004, atiyah1988}.  The Frobenius--Hopf object~$A$ in
+Definition~\ref{def:quantum-universe} carries both the Frobenius structure
+(encoding the $2$d cobordism data: the product~$\mu$ corresponds to a
+pair-of-pants cobordism, the Frobenius form~$\lambda$ to a cap) and a
+Hopf structure (encoding the quantum-group symmetry that extends the theory
+to three dimensions).  Concretely, a $2$d TQFT assigns to
+the circle~$S^1$ a Frobenius algebra~$A$ and to each cobordism
+$\Sigma \colon S^1 \sqcup \cdots \to S^1 \sqcup \cdots$ a linear map
+built from~$\mu$, $\Delta_\mu$, $\eta$, and~$\lambda$.  The Hopf
+structure~$(\Delta, \varepsilon, S)$ equips~$A$ with the additional data
+needed for three-dimensional and extended TQFTs
+\cite{turaev2010, witten1988}.
+
+\medskip\noindent\textit{The observability condition as a categorical
+contact condition.}\;
+In the TQFT setting, the condition
+$\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}) is the categorical
+analogue of the \emph{contact condition} (maximal non-integrability).
+A non-zero morphism $\mathbf{1} \to \mathrm{Ad}(A)$ would give a
+global invariant section of the adjoint object --- the categorical
+counterpart of a nowhere-vanishing section of the adjoint bundle --- and
+would force the TQFT to decompose into a direct sum of
+lower-dimensional theories.  Requiring
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ therefore ensures:
+\begin{enumerate}
+  \item \emph{irreducibility}: the associated $3$-dimensional TQFT
+        (Chern--Simons type, with gauge datum~$A$ and quantum
+        parameter~$q$) does not split as a direct sum;
+  \item \emph{non-degeneracy across cobordisms}: the TQFT pairing on
+        state spaces assigned to surfaces is non-degenerate
+        \cite{freed2010};
+  \item \emph{full dualisability}: in the sense of the cobordism
+        hypothesis \cite{baez1995, lurie2009}, the object~$A$ is
+        fully dualisable in the relevant Morita higher category, so the
+        TQFT extends to a fully local (extended) field theory.
+\end{enumerate}
+In the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}), this categorical
+condition reduces to
+$H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
+instanton connection admits no infinitesimal automorphisms, which is the
+gauge-theoretic manifestation of the contact (maximally non-integrable)
+geometry of $(M, \theta)$.
+\end{remark}
+
+% ── ℂ realisation ─────────────────────────────────────────────────────────────
+
+\begin{example}[$\mathbb{C}$ realisation: quantum universe]
+\label{def:c-quantum-universe}
+Over $k = \mathbb{C}$, a quantum universe
+(Definition~\ref{def:quantum-universe}) is realised by a $5$-tuple
+$(M, \theta, G, P, E)$ where:
+\begin{enumerate}
+  \item $M$ is a CR manifold of hypersurface type
+        (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form
+        of signature $(r,s)$, $r + s = n$;
+  \item $\theta$ is a pseudo-Hermitian structure (contact form) on $M$,
+        determining the Levi distribution $H = \ker\theta$, the Reeb vector
+        field $\xi$, the Webster metric $g_\theta$ (of signature $(2r,2s)$
+        on $H$), and the Levi form $L_\theta$;
+  \item $G = \mathrm{SU}(2)$;
+  \item $P \to M$ is a principal $G$-bundle whose holonomy reduces to
+        $\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm I\}$;
+  \item $E = P \times_G \mathbb{CP}^1 \to M$ is the associated
+        \emph{state bundle}, where $\mathrm{SU}(2)$ acts on
+        $\mathbb{CP}^1$ by M\"obius transformations.
+\end{enumerate}
+The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
+(the representation category of the quantum group at the substrate
+parameter~$q(p)$, Definition~\ref{def:substrate-parameter}), the
+Frobenius--Hopf object is
+$A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
+Haar state, and the fibre functor $\omega$ is the forgetful functor
+to $\mathrm{Vect}_{\mathbb{C}}$.
+\end{example}
+
+\begin{remark}[Notation and special cases]
+\label{rem:notation-special-cases}
+When $\theta$ is understood from context, we abbreviate the $5$-tuple to
+$(M, G, P, E)$.  The \emph{strictly pseudoconvex} case corresponds to
+signature $(n,0)$, where $L_\theta$ is positive definite.
+\end{remark}
+
+\begin{example}[$\mathbb{C}$ realisation: quantum observable universe]
 \label{def:c-quantum-observable-universe}
 A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
-universe $(M, G, P, E)$ (Definition~\ref{def:c-quantum-universe}) that satisfies
-the following compactly supported cohomology conditions:
+universe $(M, \theta, G, P, E)$
+(Example~\ref{def:c-quantum-universe}) that satisfies
+the vanishing conditions
 \[
-  H^0_c(M, \mathrm{Ad}(P)) = 0
+  H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
-  H^0_c(M, E) = 0.
+  \Gamma_c(M, E) = 0.
 \]
-\end{definition}
+These analytic conditions are the $\mathbb{C}$ realisation of the
+categorical observability conditions of
+Definition~\ref{def:quantum-observable-universe}: the Frobenius
+non-degeneracy of the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$,
+combined with irreducibility of the instanton connection
+(Lemma~\ref{lem:irreducible-connection}), forces
+$H^0(M, \mathrm{Ad}(P)) = 0$; the section-vanishing
+$\Gamma_c(M, E) = 0$ follows from the non-existence of
+$A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
+\end{example}
+
+\begin{remark}[Vanishing conditions: explication]
+\label{rem:vanishing-explication}
+In Example~\ref{def:c-quantum-observable-universe},
+$\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
+(a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
+denotes the space of compactly supported continuous sections of the
+(non-linear) fibre bundle $E$.  The condition $H^0(M, \mathrm{Ad}(P)) = 0$
+asserts the vanishing of \emph{all} global parallel sections of the adjoint
+bundle --- not merely compactly supported ones --- eliminating every
+infinitesimal gauge symmetry.
+\end{remark}
 
 % ── Remark ───────────────────────────────────────────────────────────────────
 
+\begin{remark}[Generalisation beyond strict pseudoconvexity]
+\label{rem:levi-generalisation}
+Example~\ref{def:c-quantum-universe} requires only Levi non-degeneracy
+(not strict pseudoconvexity).  This generality is deliberate: the QOU
+framework applies whenever the following three cohomological/obstruction
+conditions hold.
+
+\begin{enumerate}
+  \item \emph{Kohn--Rossi finite-dimensionality.}\;
+        The tangential CR complex
+        $(\Omega^{0,\bullet}_b(M),\, \bar\partial_b)$ has
+        finite-dimensional cohomology
+        $H^{0,k}_{\bar\partial_b}(M)$ for all~$k$.  This replaces
+        strict pseudoconvexity in ensuring analytic control over
+        $q$-harmonic forms (Definition~\ref{def:q-harmonic-form}).
+        In the strictly pseudoconvex case, Kohn's sub-elliptic
+        estimates guarantee this automatically; for indefinite
+        Levi signature, one imposes it as a hypothesis.
+  \item \emph{Non-degeneracy of the substrate.}\;
+        The Levi form $L_\theta$ is non-degenerate (but not necessarily
+        positive definite), so the substrate parameter
+        $q(p) = \exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$
+        (Definition~\ref{def:substrate-parameter}) is well-defined and
+        the regime $q > 1$ is attainable.  When the Levi form has
+        indefinite signature $(r,s)$ with $r,s \geq 1$, the Webster
+        metric $g_\theta$ is pseudo-Riemannian; the contraction
+        $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
+        the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
+        one takes the absolute value to ensure $q \geq 1$.
+  \item \emph{QOU vanishing (Example~\ref{def:c-quantum-observable-universe}).}\;
+        The conditions $H^0(M, \mathrm{Ad}(P)) = 0$ and
+        $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
+        These are purely topological/cohomological and independent of the
+        Levi signature.
+\end{enumerate}
+
+\noindent
+Together, conditions~(1)--(3) ensure that all results of this chapter
+(irreducibility of the connection, self-duality of the curvature,
+substrate dynamics, $q$-deformed operators) extend to CR manifolds of
+arbitrary Levi signature.  The strictly pseudoconvex case (signature
+$(n,0)$) is the simplest and motivates all examples in this chapter;
+the indefinite case arises naturally for real hypersurfaces in
+indefinite K\"ahler manifolds and for boundaries of
+Grauert tubes over pseudo-Riemannian manifolds.
+\end{remark}
+
 \begin{remark}[Jet-bundle formulation]
 \label{rem:jet-bundle}
-The conditions in Definition~\ref{def:c-quantum-observable-universe} admit a
+The conditions in Example~\ref{def:c-quantum-observable-universe} admit a
 natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
-$H^0_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
-$E$ exists, while $H^0_c(M, \mathrm{Ad}(P)) = 0$ eliminates compactly
-supported infinitesimal gauge symmetries.  Together, these conditions mean that
-the space of sections of $J^1 E$ with compact support injects into the space of
-connections on $P$, preventing any local degeneracy of the gauge field.
+$\Gamma_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
+$E$ exists, while $H^0(M, \mathrm{Ad}(P)) = 0$ eliminates \emph{all}
+infinitesimal gauge symmetries (not merely compactly supported ones).  Together,
+these conditions mean that the space of sections of $J^1 E$ injects into the
+space of connections on $P$, preventing any local degeneracy of the gauge field.
 \end{remark}
 
 % ── Lemma and Proposition ────────────────────────────────────────────────────
 
+\begin{definition}[Instanton connection]
+\label{def:instanton}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with
+$\dim_{\mathbb{R}} H = 4$ ($n = 2$).  An \emph{instanton connection} on $P$
+is a connection $A$ whose curvature $F_A$, restricted to the horizontal
+distribution $H = \ker\theta$, is self-dual:
+$F_A|_H = {*_H}\,F_A|_H$, where $*_H$ is the Hodge star on
+$\Lambda^2 H^*$ determined by the Webster metric $g_\theta$.  More generally,
+when $\dim_{\mathbb{R}} H \neq 4$, an instanton connection is a
+Yang--Mills connection that minimises the functional
+$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.
+\end{definition}
+
 \begin{lemma}[Irreducibility of the connection]
-\label{lem:unique-connection}
+\label{lem:irreducible-connection}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
-vanishing conditions
-\[
-  H^0_c(M, \mathrm{Ad}(P)) = 0
-  \qquad\text{and}\qquad
-  H^0_c(M, E) = 0
-\]
-imply that every instanton connection $A$ on $P$ is irreducible.
+vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every
+instanton connection $A$ on $P$ (Definition~\ref{def:instanton}) is
+irreducible.
 \end{lemma}
 
 \begin{proof}
 Suppose for contradiction that an instanton connection $A$ on $P$ is
-reducible.  Then $A$ is preserved by a non-trivial element
-$s \in \Gamma_c(M,\, \mathrm{Ad}(P))$: in other words, the infinitesimal
-automorphism $s$ satisfies $D_A s = 0$ and has compact support.  Such a
-section is a non-zero element of $H^0_c(M, \mathrm{Ad}(P))$, contradicting
-the hypothesis $H^0_c(M, \mathrm{Ad}(P)) = 0$.  Hence no non-trivial
-compactly supported gauge symmetry preserves $A$, and $A$ is irreducible.
+reducible.  Then the stabiliser of $A$ under the gauge group contains a
+non-trivial element $s \in \Gamma(M,\, \mathrm{Ad}(P))$ satisfying
+$D_A s = 0$.  Such $s$ is a global parallel section of $\mathrm{Ad}(P)$,
+and hence a non-zero element of $H^0(M, \mathrm{Ad}(P))$, contradicting
+$H^0(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
 \end{proof}
 
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with
-instanton connection $A$ on $P$.  Let $H = \ker\theta \subset TM$ denote the
-Levi distribution (the even-dimensional horizontal sub-bundle of the CR
-manifold).  The Hodge star operator $*_H$ is evaluated on $H$, where it is
-well-defined because $H$ is even-dimensional.  Then the curvature $F_A$,
-restricted to $H$, is self-dual:
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+with $\dim_{\mathbb{R}} M = 5$ (i.e.\ the CR dimension $n = 2$, so that the
+Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$).  Let $A$
+be an instanton connection on $P$.  Then the curvature $F_A$, restricted to
+$H$, is self-dual with respect to the Hodge star $*_H$ determined by the
+Webster metric $g_\theta$ and the complex structure $J$:
 \[
   F_A\big|_H \;=\; {*_H}\, F_A\big|_H.
 \]
 \end{proposition}
 
 \begin{proof}
-The contact form $\theta$ splits the tangent bundle as
-$TM = H \oplus \mathbb{R}\xi$, where $H = \ker\theta$ has real dimension
-$2n$ (with $\dim_{\mathbb{R}} M = 2n+1$).  The curvature $F_A$ is an
+The contact form $\theta$ (Example~\ref{def:c-quantum-universe}) splits
+the tangent bundle as $TM = H \oplus \mathbb{R}\xi$, where
+$H = \ker\theta$ has real dimension $4$.  The curvature $F_A$ is an
 $\mathrm{Ad}(P)$-valued $2$-form on $M$.  By the Reeb decomposition
 (Definition~\ref{def:reeb-decomposition}), $F_A$ splits into horizontal and
 vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
 \mathrm{Ad}(P))$.
 
-On the even-dimensional bundle $H$, the Webster metric $g_\theta$ and the
-complex structure $J$ determine a Hodge star operator
-$*_H \colon \Lambda^2 H^* \to \Lambda^{2n-2} H^*$.  When $n = 2$ (so
-$\dim H = 4$), $*_H$ maps $2$-forms to $2$-forms and decomposes
-$\Lambda^2 H^*$ into self-dual and anti-self-dual parts.
+Since $\dim_{\mathbb{R}} H = 4$, the operator $*_H$ maps $2$-forms to
+$2$-forms and satisfies $*_H^2 = \mathrm{id}$ on $\Lambda^2 H^*$.  This
+decomposes $\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ into
+self-dual and anti-self-dual parts.
 
-An instanton connection $A$ minimises the Yang--Mills functional
-$\int_M \lVert F_A|_H \rVert^2$.  By the Bogomolny argument,
+An instanton connection $A$ minimises the Yang--Mills functional.  By the
+Bogomolny argument, the integrated norm satisfies
 \[
-  \lVert F_A|_H \rVert^2
-  \;=\; \lVert F_A^+|_H \rVert^2 + \lVert F_A^-|_H \rVert^2
-  \;=\; 2\lVert F_A^-|_H \rVert^2
-        + \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H),
+  \int_M \lVert F_A|_H \rVert^2 \,\theta \wedge (d\theta)^2
+  \;=\; 2\!\int_M \lVert F_A^-|_H \rVert^2 \,\theta \wedge (d\theta)^2
+        + \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H)
+          \wedge \theta,
 \]
-where the topological term $\int \mathrm{tr}(F_A|_H \wedge F_A|_H)$ is
-fixed by the characteristic class of $P$.  Minimising the functional forces
+where the topological term
+$\int_M \mathrm{tr}(F_A|_H \wedge F_A|_H) \wedge \theta$ is fixed by the
+characteristic class of $P$.  Minimising the functional forces
 $F_A^-|_H = 0$, which is precisely the self-duality condition
 $F_A|_H = {*_H}\,F_A|_H$.
 \end{proof}
 
 % ── Examples ─────────────────────────────────────────────────────────────────
 
-\begin{example}[Real hypersurface in a Calabi--Yau manifold]
+\begin{example}[Real hypersurface in a Calabi--Yau $2$-fold]
 \label{ex:calabi-yau}
-Let $X$ be a Calabi--Yau manifold and let $M \subset X$ be a smooth real
-hypersurface.  Then $M$ is an odd-dimensional strictly pseudoconvex CR
-manifold inheriting its CR structure from the ambient K\"ahler geometry.  The
-restriction of the tangent bundle of $X$ to $M$ supplies a natural principal
-$\mathrm{SU}(2)$-bundle $P \to M$, and the associated state bundle
-$E = P \times_G \mathbb{CP}^1$ yields a $\mathbb{C}$ quantum observable
-universe $(M, G, P, E)$ when the compactly supported cohomology conditions of
-Definition~\ref{def:c-quantum-observable-universe} are satisfied.
+Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
+$\mathrm{SU}(2)$, and let $M \subset X$ be a smooth, strictly convex real
+hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR
+manifold inheriting its CR structure from the ambient K\"ahler geometry.
+Because the holonomy of $X$ is $\mathrm{SU}(2)$, the frame bundle of $X$
+restricted to $M$ yields a natural principal $\mathrm{SU}(2)$-bundle
+$P \to M$.  The associated state bundle $E = P \times_G \mathbb{CP}^1$
+yields a $\mathbb{C}$ quantum observable universe $(M, \theta, G, P, E)$
+when the vanishing conditions of
+Example~\ref{def:c-quantum-observable-universe} are satisfied.  (For
+higher-dimensional Calabi--Yau manifolds with holonomy $\mathrm{SU}(n)$,
+$n > 2$, a reduction to $\mathrm{SU}(2)$ must be supplied separately.)
 \end{example}
 
 \begin{example}[ALE links]
@@ -126,30 +359,20 @@ Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and let $X$ be the
 minimal resolution of $\mathbb{C}^2 / \Gamma$.  The link
 $M = S^3 / \Gamma$ is the boundary of a tubular neighbourhood of the
 exceptional set in $X$; it is a compact $3$-dimensional strictly pseudoconvex
-CR manifold.  The hyper-K\"ahler structure on $X$ restricts to a contact form
-$\theta$ on $M$ whose Reeb vector field $\xi$ generates the Hopf fibration
-$S^3/\Gamma \to \mathbb{CP}^1/\Gamma$.  Equipped with the induced principal
-$\mathrm{SU}(2)$-bundle $P \to M$ and the associated state bundle
-$E = P \times_G \mathbb{CP}^1$, the $4$-tuple $(M, G, P, E)$ provides a
-$\mathbb{C}$ quantum observable universe satisfying horizontal self-dual
-curvature (Proposition~\ref{prop:self-dual-curvature}).
-\end{example}
-
-\begin{example}[Odd-dimensional spheres]
-\label{ex:affine}
-Let $M = S^{2n-1} \subset \mathbb{C}^n$ be the unit sphere with the standard
-strictly pseudoconvex CR structure inherited from its embedding as the boundary
-of the unit ball in $\mathbb{C}^n$.  The contact form
-$\theta = \frac{i}{2}(\bar\partial - \partial)\lVert z\rVert^2\big|_M$
-equips $M$ with a Reeb vector field generating the Hopf fibration
-$S^{2n-1} \to \mathbb{CP}^{n-1}$.  The trivial principal
-$\mathrm{SU}(2)$-bundle $P = S^{2n-1} \times \mathrm{SU}(2)$ admits a flat
-instanton connection satisfying the horizontal self-duality condition
-(Proposition~\ref{prop:self-dual-curvature}).  With
-$E = P \times_G \mathbb{CP}^1$ and the compactly supported cohomology
-conditions of Definition~\ref{def:c-quantum-observable-universe},
-$(S^{2n-1}, G, P, E)$ is a $\mathbb{C}$ quantum observable universe.  For
-$n = 2$, $M = S^3$ is the boundary of $\mathbb{C}^2$.
+CR manifold.  The CR structure of the boundary induces a contact form
+$\theta$ on $M$ whose Reeb vector field $\xi$ generates the Hopf-type
+fibration $S^3/\Gamma \to S^2$.  (When $\Gamma \neq \{1\}$, the target is
+the orbifold $\mathbb{CP}^1/\Gamma$; the bundle structure remains
+well-defined on the smooth manifold $M = S^3/\Gamma$.)  Equipped with the
+induced principal $\mathrm{SU}(2)$-bundle $P \to M$ and the associated
+state bundle $E = P \times_G \mathbb{CP}^1$, the tuple
+$(M, \theta, G, P, E)$ provides a $\mathbb{C}$ quantum observable universe.
+Note that $\dim_{\mathbb{R}} H = 2$, so the Hodge-star decomposition
+$\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ is trivial
+($\Lambda^2 H^* \cong \mathbb{R}$); in this dimension the curvature
+$F_A|_H$ is automatically ``self-dual'' in the vacuous sense, and the
+instanton condition reduces to the Yang--Mills equation
+(Definition~\ref{def:instanton}).
 \end{example}
 
 \begin{example}[Bring's surface unit circle bundle]
@@ -171,47 +394,549 @@ universe whose exceptional divisors support the $q$-deformed Reeb flow
 (Definition~\ref{def:q-reeb-flow}).
 \end{example}
 
+\begin{remark}[$\mathbb{C}$ examples as instances of the generalised framework]
+\label{rem:examples-unified}
+Each of the preceding $\mathbb{C}$ examples is an instance of the
+base-field-independent Definition~\ref{def:quantum-universe}, realised
+over $k = \mathbb{C}$ via the Levi non-degenerate framework of
+Example~\ref{def:c-quantum-universe} and
+Remark~\ref{rem:levi-generalisation}.
+\begin{itemize}
+  \item \emph{CY hypersurfaces} (Example~\ref{ex:calabi-yau}).  A smooth
+        strictly convex real hypersurface $M$ in a K\"ahler manifold inherits
+        a strictly pseudoconvex CR structure --- i.e.\ the Levi form has
+        definite signature.
+        The Kohn--Rossi condition holds automatically by Kohn's sub-elliptic
+        estimates.
+  \item \emph{ALE links} (Example~\ref{ex:ale}).  The link
+        $S^3/\Gamma$ is the CR boundary of the minimal resolution of
+        $\mathbb{C}^2/\Gamma$; its Levi form has signature $(1,0)$.
+        Kohn--Rossi finite-dimensionality follows from compactness of~$M$.
+  \item \emph{Bring's surface unit circle bundle}
+        (Example~\ref{ex:brings-surface}).  The unit circle bundle
+        $M_S \subset T^*S$ is a compact $3$-dimensional strictly
+        pseudoconvex CR manifold with Levi signature~$(1,0)$.
+\end{itemize}
+All three satisfy the three cohomological conditions of
+Remark~\ref{rem:levi-generalisation}: Kohn--Rossi
+finite-dimensionality (by strict pseudoconvexity or compactness),
+substrate non-degeneracy (positive-definite Levi form ensures
+$q > 1$ wherever $F_A^+ \neq 0$), and the QOU vanishing conditions
+(by the topology of the respective principal bundles).  More generally,
+any real hypersurface in an indefinite K\"ahler manifold, or the boundary
+of a Grauert tube over a pseudo-Riemannian manifold, yields a CR manifold
+with indefinite Levi signature satisfying these conditions --- extending
+the QOU framework beyond the strictly pseudoconvex setting.
+\end{remark}
+
+\begin{example}[$\mathbb{Q}_\pp$ realisation]
+\label{ex:p-adic-realisation}
+Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
+$F$-isocrystals over~$\mathbb{Q}_\pp$ (modules over the Dieudonn\'e ring
+$\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
+over~$\mathbb{Q}_\pp$).
+This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
+The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
+to~$\mathbb{Q}_\pp$ provides a Frobenius--Hopf object~$A$, where the
+Frobenius form~$\lambda$ arises from the $\pp$-adic Haar measure.
+The Frobenius endomorphism~$\varphi$ on $\mathcal{C}$ plays the
+r\^ole of the Levi-form contraction: the substrate parameter is
+$q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
+Definition~\ref{def:substrate-parameter}).  The fibre functor~$\omega$
+is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
+The observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
+irreducibility of the associated $F$-crystal, generalising
+Lemma~\ref{lem:irreducible-connection} to the $\pp$-adic setting.
+The full $\pp$-adic framework is developed in Chapter~\ref{chap:p-adic}.
+\end{example}
+
+\begin{example}[$\mathbb{F}_\pp$ realisation]
+\label{ex:finite-field-realisation}
+Let $k = \mathbb{F}_\pp$ and let $\mathcal{C} =
+\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
+finite-dimensional representations of the quantum group
+$\mathrm{SU}_q(2)$ over~$\mathbb{F}_\pp$, where $q \in
+\mathbb{F}_\pp^{\times}$.  More generally, when $q$ is a primitive
+$\ell$-th root of unity in $\overline{\mathbb{F}}_\pp$ (with $\ell$
+coprime to~$\pp$), $\mathcal{C}$ extends to a fusion category over the
+extension field $\mathbb{F}_\pp(q)$ with finitely many simple objects.
+The Frobenius--Hopf object~$A$ is the regular representation, and
+the fibre functor~$\omega$ is the forgetful functor to
+$\mathrm{Vect}_{\mathbb{F}_\pp}$.  The non-degeneracy of the
+Frobenius form~$\lambda$ follows from the semisimplicity of the fusion
+category, and the observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$
+(since the trivial representation does not appear as a summand of the
+adjoint representation for generic~$q$).
+\end{example}
+
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
-\begin{remark}[Substrate parameter]
-\label{rem:substrate-parameter}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with instanton
-connection $A$ on $P$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
-its self-dual part.  Let
-$L \in \Gamma(T^*M \otimes \overline{T^*M})$ be the \emph{Levi form}, a
-Hermitian form on the tangent bundle of $M$.  The \emph{substrate parameter}
-is the smooth field $q \colon M \to [1,\infty)$ defined by
+\begin{definition}[Substrate parameter]
+\label{def:substrate-parameter}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+with instanton connection $A$ on $P$
+(Definition~\ref{def:instanton}).  Write $F_A = dA + A \wedge A$ for the
+curvature and let $F_A^+$ denote its self-dual part
+(Proposition~\ref{prop:self-dual-curvature}).  Let
+$L_\theta \colon H \times H \to \mathbb{C}$ be the \emph{Levi form}, the
+Hermitian form on the Levi distribution $H = \ker\theta$ defined by
+$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.
+The \emph{substrate parameter} is the smooth field
+$q \colon M \to [1,\infty)$ defined by
 \[
-  q(p) \;=\; \exp\!\bigl(\lVert L \wedge F_A^+ \rVert(p)\bigr),
-  \qquad p \in M.
+  q(p) \;=\; \exp\!\bigl(\lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p)\bigr),
+  \qquad p \in M,
 \]
-The substrate parameter is not a fixed constant but a field on $M$: its value
-varies from point to point according to the local coupling between the Levi
-form and the self-dual curvature.
+where $\langle L_\theta, F_A^+\rangle$ is the natural contraction
+(Remark~\ref{rem:substrate-contraction}) and $\lvert\cdot\rvert$ denotes
+the absolute value.
+\end{definition}
+
+\begin{remark}[Natural contraction and field character of $q$]
+\label{rem:substrate-contraction}
+The Levi form $L_\theta$ is a section of $\Lambda^{1,1} H^*$
+(the $(1,1)$-component of $\Lambda^2 H^*$ with respect to the complex
+structure $J$).  The self-dual curvature $F_A^+$ is a section of
+$\Lambda^+ H^* \otimes \mathrm{Ad}(P)$.  On a $4$-dimensional oriented
+inner-product space, $\Lambda^{1,1} \subset \Lambda^+$, so $L_\theta$ and
+$F_A^+$ live in the same subbundle.  The Webster metric $g_\theta$
+provides a fibrewise inner product on $\Lambda^+ H^*$; composing this
+with the Killing form on $\mathrm{Ad}(P)$ yields the natural contraction
+\[
+  \langle L_\theta,\, F_A^+ \rangle_p
+  \;\in\; \mathbb{R}, \qquad p \in M.
+\]
+The substrate parameter is not a
+fixed constant but a field on $M$: its value varies from point to point
+according to the local coupling between the Levi form and the self-dual
+curvature.
 \end{remark}
 
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum gauge group} is the field of quantum groups
 $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
 group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 \end{definition}
 
+\begin{remark}[Quantum gauge group: formalisations and category-theoretic perspective]
+\label{rem:quantum-gauge-group-category}
+The ``field of quantum groups'' $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ in
+Definition~\ref{def:quantum-gauge-group} admits at least three
+formalisations, with different trade-offs:
+
+\begin{enumerate}
+  \item \emph{Fibre bundle of Hopf algebras.}\;
+        Let $\mathcal{O}_q(\mathrm{SU}(2))$ denote the Hopf algebra of
+        regular functions on $\mathrm{SU}_q(2)$.  One forms a locally
+        trivial bundle of Hopf algebras
+        $\mathcal{H} \to M$ whose fibre at~$p$ is
+        $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$.
+        \emph{Pro:} concrete and computable.
+        \emph{Con:} Hopf-algebra structure varies non-trivially with
+        $q(p)$; the coalgebra at $q = 1$ is commutative while for
+        $q \neq 1$ it is not, so the transition maps are not algebra
+        homomorphisms.
+  \item \emph{Bundle of monoidal categories.}\;
+        Replace each Hopf algebra with its representation category
+        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal
+        category.  The field $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ becomes
+        a fibred category over~$M$ whose fibres are fusion categories
+        when $q(p)$ is a root of unity.
+        \emph{Pro:} functorial and compatible with the Tannakian
+        reconstruction program; morphisms between fibres are monoidal
+        functors, which behave well under deformation.
+        \emph{Con:} requires $2$-categorical or $\infty$-categorical
+        machinery; explicit computations are harder.
+  \item \emph{$C^*$-algebraic continuous field.}\;
+        The assignment $p \mapsto C(\mathrm{SU}_{q(p)}(2))$ defines a
+        continuous field of $C^*$-algebras in the sense of
+        Dixmier--Douady.
+        \emph{Pro:} the algebraic discontinuity at $q = 1$ is tamed by
+        the $C^*$-norm topology; the field is continuous in the
+        sense of Rieffel's strict deformation quantisation.
+        \emph{Con:} less algebraic control; functoriality is less
+        transparent than in~(2).
+\end{enumerate}
+For the purposes of this paper we work with approach~(1) at the
+computational level.  However, the later chapters progressively adopt
+the category-theoretic perspective of approach~(2) as the unifying
+language:
+\begin{itemize}
+  \item \emph{Terminal objects (Chapter~\ref{chap:descartes}).}\;
+        The category $\mathcal{C}_{-6}$ of $\mathbb{C}$ quantum observable
+        universes with $\chi(E) = -6$ admits Bring's curve as a terminal
+        object (Theorem~\ref{thm:descartes}).  This categorical
+        universality is most naturally formulated when the gauge group
+        itself is a categorical object, i.e.\ via approach~(2).
+  \item \emph{Categorical reformulation
+        (Chapter~\ref{chap:p-adic}).}\;
+        Section~\ref{sec:categorical-reformulation} rephrases the QOU
+        framework in the language of monoidal categories and functors,
+        relating the fibred category of
+        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ over $M$ to
+        Tannaka--Krein duality and $\pp$-adic universality.
+  \item \emph{Ascent/descent in the brane tower
+        (Chapter~\ref{chap:torsion}).}\;
+        The recursive brane tower $\{E_n\}$ uses jet prolongation to lift
+        connections to higher categorical structures; descent strips
+        these away via a spectral-sequence mechanism.  The formalism
+        of~(2) naturally accommodates these higher-categorical operations.
+  \item \emph{Representation-theoretic braiding
+        (Chapter~\ref{chap:path-integrals-braiding}).}\;
+        Knot holonomy and braid-group representations factor through
+        the adjoint representation in a manner compatible with the
+        category-theoretic setup of
+        Section~\ref{sec:enveloping-algebras}.
+\end{itemize}
+
+\medskip\noindent\textit{Impact assessment: approach~(1) vs approach~(2).}\;
+The choice of approach~(1) (Hopf-algebra bundles) in this chapter has a
+\emph{limited} impact on the rest of the paper, for the following
+reasons.  First, the concrete computations in Chapter~1 ---
+the substrate parameter, $q$-deformed operators, and their algebraic
+properties (Propositions~\ref{prop:dq-squared}
+and~\ref{prop:q-jacobiator}) --- depend only on the pointwise value
+$q(p)$ and the contact geometry of~$M$, not on the global
+algebraic structure of the gauge group bundle.  These results hold
+identically under any of the three formalisations.
+
+Second, the categorical content in later chapters
+(Chapters~\ref{chap:descartes}, \ref{chap:p-adic},
+\ref{chap:torsion}, \ref{chap:path-integrals-braiding}) is formulated
+at the level of the representation category
+$\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, which is reconstructible from
+the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of approach~(1)
+via Tannaka--Krein duality.  The passage from~(1) to~(2) is therefore
+functorial and introduces no new data; it amounts to replacing an
+algebra with its category of modules.  The following diagram captures
+this functoriality fibrewise: for any two points $p, p' \in M$
+connected by a path~$\gamma$,
+\begin{equation}\label{eq:tannaka-krein-functoriality}
+\begin{CD}
+\mathcal{O}_{q(p)}(\mathrm{SU}(2))
+  @>{\mathrm{Rep}}>>
+  \mathrm{Rep}(\mathrm{SU}_{q(p)}(2)) \\
+@V{\text{transition along } \gamma}VV
+  @VV{\text{monoidal functor}}V \\
+\mathcal{O}_{q(p')}(\mathrm{SU}(2))
+  @>>{\mathrm{Rep}}>
+  \mathrm{Rep}(\mathrm{SU}_{q(p')}(2))
+\end{CD}
+\end{equation}
+The left column is the Hopf-algebra transition map of approach~(1);
+the right column is the induced monoidal functor of approach~(2).
+Tannaka--Krein reconstruction ($\mathrm{End}^{\otimes}(\omega)$, where
+$\omega$ is the forgetful fibre functor) inverts the horizontal arrows,
+making the two approaches equivalent at each fibre.
+
+Third, the one genuine tension --- the algebraic discontinuity at
+$q = 1$ --- deserves a closer examination.  In the Hopf algebra
+$\mathcal{O}_q(\mathrm{SU}(2))$, the comultiplication
+$\Delta_q \colon \mathcal{O}_q(\mathrm{SU}(2)) \to
+\mathcal{O}_q(\mathrm{SU}(2)) \otimes \mathcal{O}_q(\mathrm{SU}(2))$
+is cocommutative if and only if $q = 1$; for every $q \neq 1$ the Hopf
+algebra is genuinely non-cocommutative.  In the algebraic category of
+Hopf algebras, $\lim_{q \to 1}\Delta_q$ does not equal $\Delta_1$ in
+any meaningful sense: the fibres
+$\mathcal{O}_{q}(\mathrm{SU}(2))$ and
+$\mathcal{O}_{1}(\mathrm{SU}(2)) = \mathcal{O}(\mathrm{SU}(2))$ are
+not isomorphic as coalgebras for $q \neq 1$, so the bundle
+$\mathcal{H} \to M$ of approach~(1) has a topological discontinuity
+wherever $q(p) = 1$.
+
+\medskip\noindent\textit{Hopf-algebra structure diagrams.}\;
+To make the preceding discussion explicit, write
+$\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
+$\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
+counit, and antipode respectively.  The Hopf-algebra axioms include
+\emph{coassociativity}:
+\begin{equation}\label{eq:coassociativity}
+\begin{CD}
+\mathcal{O}_q @>{\Delta_q}>>
+  \mathcal{O}_q \otimes \mathcal{O}_q \\
+@V{\Delta_q}VV
+  @VV{\mathrm{id} \otimes \Delta_q}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\Delta_q \otimes \mathrm{id}}>
+  \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\end{equation}
+and the \emph{counit} condition:
+\begin{equation}\label{eq:counit}
+\begin{CD}
+\mathbb{C} \otimes \mathcal{O}_q
+  @<{\varepsilon_q \otimes \mathrm{id}}<<
+  \mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\mathrm{id} \otimes \varepsilon_q}>
+  \mathcal{O}_q \otimes \mathbb{C} \\
+@|  @AA{\Delta_q}A  @| \\
+\mathcal{O}_q @= \mathcal{O}_q @= \mathcal{O}_q
+\end{CD}
+\end{equation}
+Both diagrams~\eqref{eq:coassociativity} and~\eqref{eq:counit}
+commute for every $q \geq 1$.  The tension at $q = 1$ is captured
+by the \emph{cocommutativity} square: let
+$\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
+\mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
+$(a \otimes b \mapsto b \otimes a)$.  Then
+\begin{equation}\label{eq:non-cocommutativity}
+\begin{CD}
+\mathcal{O}_q @>{\Delta_q}>>
+  \mathcal{O}_q \otimes \mathcal{O}_q \\
+@V{\Delta_q}VV  @VV{\sigma}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @=
+  \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\quad\text{commutes}\;\Longleftrightarrow\;q = 1.
+\end{equation}
+For $q \neq 1$ the failure of~\eqref{eq:non-cocommutativity} is
+controlled by the universal $R$-matrix of the quasi-triangular Hopf
+algebra $U_q(\mathfrak{su}(2))$:
+$\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ \Delta_q$,
+where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
+
+The $C^*$-algebraic perspective of approach~(3) resolves this
+discontinuity analytically.  In Rieffel's framework of strict
+deformation quantisation, the assignment
+$q \mapsto C(\mathrm{SU}_q(2))$ forms a continuous field of
+$C^*$-algebras: for every section~$a$ of the field, the norm function
+$q \mapsto \lVert a_q \rVert$ is continuous on $[1,\infty)$, so
+$\lVert a_q - a_1 \rVert \to 0$ as $q \to 1$.  The algebraic jump in
+the coalgebra structure is invisible to the $C^*$-norm topology ---
+continuity is recovered at the analytic level even though it fails at
+the algebraic level.  The paper invokes this resolution implicitly
+whenever continuity in $q$ is needed (e.g.\ the classical limits
+$q \to 1$ in Remark~\ref{rem:planck-limits}).
+
+A full categorical treatment via approach~(2) would provide a
+\emph{structural} resolution complementing the analytic one.  The
+cobordism hypothesis (Baez--Dolan, proved by Lurie) requires that a
+fully extended $n$-dimensional topological field theory assigns to a
+point a \emph{fully dualisable} object in a symmetric monoidal
+$(\infty,n)$-category.  The representation category
+$\mathrm{Rep}(\mathrm{SU}_q(2))$, viewed as a braided fusion category,
+is fully dualisable in the Morita $3$-category of tensor categories;
+it can therefore serve directly as the datum assigned to a point by a
+$3$-dimensional extended TFT (this is the mathematical content
+underlying Chern--Simons theory at level~$k$ when $q$ is a root of
+unity).  In this categorical setting, the passage $q \to 1$ corresponds
+to a degeneration of the fusion category to $\mathrm{Rep}(\mathrm{SU}(2))$
+--- a degeneration that is controlled by the deformation theory of
+tensor categories rather than by norm topology.
+
+Similarly, higher gauge theory replaces a gauge group $G$ with a
+categorical group (a $2$-group), assigning to each point of $M$ not
+merely a group element but a coherent system of morphisms in a
+$2$-category.  Approach~(2) --- viewing the quantum gauge group as a
+fibred category of braided monoidal categories over~$M$ --- is
+precisely the input required by higher gauge theory: the fibres are the
+categorical groups, and the fibration encodes the parallel-transport
+$2$-functor.  Adopting~(2) would therefore embed the QOU framework
+directly into both extended TFT and higher gauge theory.  This
+comparison motivates the categorical developments in the chapters cited
+above.
+
+\medskip\noindent\textit{Self-duality as a short exact sequence.}\;
+In the QOU setting with $\dim_{\mathbb{R}} H = 4$, the Hodge star
+$*_H$ gives the splitting
+$\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$ and hence
+the short exact sequence of $\mathrm{Ad}(P)$-valued forms
+\begin{equation}\label{eq:self-dual-ses}
+\begin{CD}
+0 @>>>
+  \Gamma\!\bigl(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>{\iota}>>
+  \Gamma\!\bigl(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>{\pi^+}>>
+  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>>> 0
+\end{CD}
+\end{equation}
+The instanton condition
+$F_A|_H = {*_H}\,F_A|_H$
+(Proposition~\ref{prop:self-dual-curvature}) is exactly the condition
+$F_A|_H \in \ker(\mathrm{id} - {*_H})$,
+i.e.\ $F_A^-|_H = 0$.  In the language of $2$-groups, this has a
+clean reinterpretation
+(Remark~\ref{rem:self-dual-2group}).
+\end{remark}
+
+\begin{remark}[Self-duality as constrained $2$-group gauge theory]
+\label{rem:self-dual-2group}
+A strict $2$-group is equivalently a \emph{crossed module}: a
+group homomorphism $\partial \colon H \to G$ together with an
+action of $G$ on $H$ satisfying the Peiffer identity.  The
+associated exact sequence
+\begin{equation}\label{eq:crossed-module-ses}
+\begin{CD}
+1 @>>> \ker\partial @>>> H @>{\partial}>> G @>>>
+  \mathrm{coker}\,\partial @>>> 1
+\end{CD}
+\end{equation}
+encodes the $2$-group as a homotopy type with
+$\pi_0 = \mathrm{coker}\,\partial$ and
+$\pi_1 = \ker\partial$.
+
+The \emph{inner-automorphism $2$-group}
+$\mathrm{INN}(G) = (G \xrightarrow{\mathrm{id}} G)$
+has $\ker\partial = 1$ and $\mathrm{coker}\,\partial = 1$, so it is
+connected and simply connected as a $2$-group.  A $2$-connection for
+$\mathrm{INN}(G)$ on a principal $2$-bundle over~$M$ consists of a
+$\mathfrak{g}$-valued $1$-form~$A$ and a $\mathfrak{g}$-valued
+$2$-form~$B$, subject to the \emph{fake-flatness} condition
+\begin{equation}\label{eq:fake-flatness}
+F_A \;=\; B.
+\end{equation}
+In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distribution
+$H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
+decomposition $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$
+is available.  Imposing the \emph{simplicity constraint}
+\[
+  B \;\in\; \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
+\]
+--- that is, requiring the $2$-form datum to be self-dual ---
+and combining with fake flatness~\eqref{eq:fake-flatness} yields
+the commutative diagram
+\begin{equation}\label{eq:2group-instanton}
+\begin{CD}
+\Omega^1(M,\,\mathfrak{g})
+  @>{d_A}>>
+  \Omega^2(M,\,\mathfrak{g})
+  @>{\pi^+}>>
+  \Omega^{2,+}(M,\,\mathfrak{g}) \\
+@.  @AA{=\;B}A  @AA{\text{simplicity}}A \\
+@.  F_A @= F_A^+
+\end{CD}
+\end{equation}
+The fake-flatness condition $F_A = B$ combined with the simplicity
+constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
+This is precisely the instanton equation
+$F_A|_H = {*_H}\,F_A|_H$
+of Definition~\ref{def:instanton}.  Thus, the self-dual formulation
+used throughout this paper is a special case of $2$-group gauge theory
+for $\mathrm{INN}(\mathrm{SU}(2))$ subject to a simplicity constraint
+on the $2$-form datum.
+
+This perspective clarifies the relationship between the instanton
+condition in Chapter~1 and the higher-categorical structures of later
+chapters: the parallel-transport $2$-functor of the
+$\mathrm{INN}(\mathrm{SU}(2))$ $2$-bundle assigns to paths in $M$
+not merely group elements in $\mathrm{SU}(2)$ but $2$-morphisms
+encoding the self-dual curvature, with the simplicity constraint
+selecting the physical (instanton) sector.
+\end{remark}
+
+\begin{remark}[Frobenius structure of the $\mathbb{C}$ gauge algebra]
+\label{rem:frobenius-simplification}
+The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural
+\emph{Frobenius structure}: the Haar state
+$h_q \colon \mathcal{O}_q \to \mathbb{C}$ induces a non-degenerate
+pairing $\langle a, b \rangle = h_q(ab)$, making $\mathcal{O}_q$ into
+a Frobenius algebra with comultiplication $\Delta_\mu$ dual to the
+multiplication.  This Frobenius comultiplication is compatible with the
+Hopf comultiplication~$\Delta_q$ of~\eqref{eq:coassociativity} and
+satisfies the \emph{Frobenius relation}:
+\begin{equation}\label{eq:frobenius-relation}
+\begin{CD}
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>{\mu}>>
+  \mathcal{O}_q \\
+@V{\mathrm{id} \otimes \Delta_\mu}VV
+  @VV{\Delta_\mu}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\mu \otimes \mathrm{id}}>
+  \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\end{equation}
+where $\mu$ is the algebra multiplication and $\Delta_\mu$ the
+Frobenius comultiplication (dual to $\mu$ under the Haar pairing).
+The non-degeneracy of $h_q$ is expressed by requiring the composite
+\begin{equation}\label{eq:frobenius-nondegen}
+\begin{CD}
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>{\mu}>>
+  \mathcal{O}_q
+  @>{h_q}>>
+  \mathbb{C}
+\end{CD}
+\end{equation}
+to be a perfect pairing, i.e.\ the induced map
+$\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
+
+This Frobenius--Hopf structure on $\mathcal{O}_q(\mathrm{SU}(2))$ is
+precisely the datum required by the general
+Definition~\ref{def:quantum-universe}: the Haar state $h_q$ realises
+the Frobenius form $\lambda \colon A \to \mathbf{1}$, and the
+non-degeneracy~\eqref{eq:frobenius-nondegen} is the $\mathbb{C}$
+instance of condition~(1) in
+Definition~\ref{def:quantum-observable-universe}.
+In the $\mathbb{C}$ realisation (Example~\ref{def:c-quantum-universe}),
+the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
+conditions of Example~\ref{def:c-quantum-observable-universe}
+reduce to a triple:
+\begin{enumerate}
+  \item a CR manifold $(M, \theta)$ of hypersurface type with
+        non-degenerate Levi form;
+  \item a non-degenerate Frobenius--Hopf object~$A$ in the monoidal
+        category of vector bundles over~$M$, playing the r\^ole of the
+        triple $(G, P, E)$; and
+  \item an instanton connection on the underlying $A$-bundle
+        (Definition~\ref{def:instanton}).
+\end{enumerate}
+The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
+the non-degeneracy of the Frobenius form~$\lambda$ via the diagram
+\begin{equation}\label{eq:frobenius-vanishing}
+\begin{CD}
+\mathrm{Ad}(A) \otimes \mathrm{Ad}(A)
+  @>{\mu_{\mathrm{Ad}}}>>
+  \mathrm{Ad}(A)
+  @>{\lambda_{\mathrm{Ad}}}>>
+  \mathcal{O}_M \\
+@V{\text{global sections}}VV  @.  @VV{\int_M}V \\
+H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
+  @.  @>>{\text{pairing}}>
+  \mathbb{C}
+\end{CD}
+\end{equation}
+The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
+Frobenius pairing from~$\lambda$; any global parallel section would
+pair non-trivially with itself, contradicting the irreducibility of
+the instanton connection
+(Lemma~\ref{lem:irreducible-connection}).  Hence the Frobenius
+non-degeneracy, combined with irreducibility, forces
+$H^0(M, \mathrm{Ad}(A)) = 0$.  The section-vanishing condition
+$\Gamma_c(M, E) = 0$ follows similarly from the non-existence of
+$A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
+
+Note that the horizontal distribution $H = \ker\theta$ itself
+\emph{fails} to carry a Frobenius structure (as discussed in
+Remark~\ref{rem:q-torsion-existence}); it is the gauge algebra, not the
+distribution, that is Frobenius.
+\end{remark}
+
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum Planck constant} is the smooth field
 $\hbar_q \colon M \to [0,1)$ defined by
 \[
   \hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.
 \]
+\end{definition}
+
+\begin{remark}[Limiting regimes of $\hbar_q$]
+\label{rem:planck-limits}
 Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$.
 As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
 vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
-\end{definition}
+\end{remark}
 
 \begin{remark}[Heisenberg uncertainty as commutator]
 \label{rem:heisenberg-commutator}
@@ -265,38 +990,35 @@ the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and
 its ``strength'' is set by~$\hbar_q(p)$.
 \end{remark}
 
-\begin{remark}[Cosmological limits of $q$]
-\label{rem:cosmological-limits}
-The substrate field $q$ (Remark~\ref{rem:substrate-parameter}) interpolates
-between two extreme cosmological regimes:
-\begin{enumerate}
-  \item \emph{Heat death} ($q \to 1$).  When
-        $\lVert L \wedge F_A^+\rVert \to 0$ the curvature--torsion coupling
-        vanishes and $q(p) \to 1$ everywhere.  In this limit $\hbar_q \to 0$,
-        the commutator $[\hat{X}, \hat{P}]_q \to 0$, and no uncertainty
-        remains: all quantum dynamics freeze into a classical, torsion-free
-        equilibrium.
-  \item \emph{Big bang} ($q \to \infty$).  When
-        $\lVert L \wedge F_A^+\rVert \to \infty$ the substrate is maximally
-        wound and $q(p) \to \infty$.  In this limit $\hbar_q \to 1$, the
-        commutator $[\hat{X}, \hat{P}]_q \to J$, and uncertainty is maximal:
-        the universe is in a purely quantum state with all torsion wound up
-        and no classical information from fermionic matter.
-\end{enumerate}
-Both limits are in a precise sense \emph{illusory}: the $q$-torsion of
-Definition~\ref{def:q-torsion-leaf} twists faster than any divergence can grow
-in the integral, so the finiteness of the brane tower
-(Definition~\ref{def:recursive-brane-tower}) tames the infinities that would
-otherwise appear at either extreme.
-\end{remark}
+\begin{example}[Cosmological limits of $q$ on $S^3$]
+\label{ex:cosmological-limits}
+Consider the link $M = S^3$ with the standard contact form
+$\theta$ (Example~\ref{ex:ale} with $\Gamma = \{1\}$) and let
+$A$ be the standard instanton connection on the Hopf bundle
+$P = S^7 \to S^4$ restricted to $S^3$.  The Levi form $L_\theta$
+has signature $(1,0)$ with $\lvert L_\theta \rvert = 1$ everywhere.
+
+As the instanton curvature concentrates near a point $p_0 \in S^3$
+(a ``collapsing instanton''),
+$\lvert \langle L_\theta, F_A^+ \rangle \rvert$ diverges at $p_0$ and
+tends to zero away from $p_0$.  This produces two regimes simultaneously:
+\begin{itemize}
+  \item \emph{Near $p_0$}: $q(p) \to \infty$, $\hbar_q \to 1$,
+        $[\hat{X},\hat{P}]_q \to J$ --- a ``big bang'' singularity.
+  \item \emph{Away from $p_0$}: $q(p) \to 1$, $\hbar_q \to 0$,
+        $[\hat{X},\hat{P}]_q \to 0$ --- a ``heat death'' region.
+\end{itemize}
+The substrate field $q$ thus captures the phase transition between
+quantum and classical regimes as a geometric phenomenon.
+\end{example}
 
 \begin{remark}[$J^1E$ as the space of local states]
 \label{rem:j1e-local-states}
 The jet bundle $J^1 E$ serves as the space of local states of the
 $\mathbb{C}$~quantum observable universe.  The classical gauge dynamics,
 encoded by the \emph{instanton connection} $A$
-(Lemma~\ref{lem:unique-connection}), are weighted by the substrate
-parameter $q$ (Remark~\ref{rem:substrate-parameter}) to define the
+(Lemma~\ref{lem:irreducible-connection}), are weighted by the substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}) to define the
 quantum field algebra $\mathrm{SU}_q(2)$
 (Definition~\ref{def:quantum-gauge-group}).
 \end{remark}
@@ -305,35 +1027,37 @@ quantum field algebra $\mathrm{SU}_q(2)$
 
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Remark~\ref{rem:substrate-parameter}).  Let $d_q$ denote the
-$q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
-a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with
+substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$
+denote the $q$-deformed exterior derivative
+(Definition~\ref{def:q-ext-deriv} below) and let $\delta_q$ denote its formal
+adjoint with respect to the inner product on
+$\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ induced by the Webster metric
+$g_\theta$.  A \emph{particle} is a section
+$\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
 $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
 \[
   \Delta_q \alpha
   \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
-  \;=\; 0,
+  \;=\; 0.
 \]
-where $\delta_q$ is the formal adjoint of $d_q$.  The condition
-$\Delta_q\alpha = 0$ ensures that the form sits in a ground state of the
-$q$-viscosity.
 \end{definition}
 
 \begin{definition}[Reeb decomposition]
 \label{def:reeb-decomposition}
-Let $M$ be a CR manifold equipped with a contact form $\theta$ and let $\xi$
-denote the associated \emph{Reeb vector field}, characterised by
-$\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential form
-$\alpha$ on $M$ decomposes as
+Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form
+(Example~\ref{def:c-quantum-universe}) and let $\xi$ denote the
+associated \emph{Reeb vector field}, characterised by
+$\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential
+$k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as
 \[
-  \alpha \;=\; \alpha_H + \alpha_V,
-  \qquad\text{where}\qquad
-  \iota_\xi\,\alpha_V \neq 0,
+  \alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,
 \]
-with $\alpha_H$ the \emph{horizontal component} (annihilated by $\iota_\xi$)
-and $\alpha_V$ the \emph{vertical component} (having a non-trivial contraction
-with~$\xi$).
+where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the
+\emph{horizontal component} (satisfying $\iota_\xi\,\alpha_H = 0$) and
+$\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the \emph{vertical
+component}.  A form is \emph{purely horizontal} if and only if
+$\iota_\xi\,\alpha = 0$.
 \end{definition}
 
 \begin{definition}[Fermion]
@@ -363,21 +1087,157 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 \]
 \end{definition}
 
+% ── q-Deformed operators ─────────────────────────────────────────────────────
+
+\begin{definition}[$q$-Deformed exterior derivative]
+\label{def:q-ext-deriv}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+with substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).
+The \emph{$q$-deformed exterior derivative}
+$d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by
+\[
+  d_q\,\alpha
+  \;=\; q^{-1}\,d\alpha
+        + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,
+\]
+where $d$ is the ordinary exterior derivative, $\theta$ the contact form,
+and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.
+\end{definition}
+
+\begin{proposition}[$d_q^2$ does not vanish]
+\label{prop:dq-squared}
+Let $d_q$ be the $q$-deformed exterior derivative
+(Definition~\ref{def:q-ext-deriv}).  For constant $q > 1$, the operator
+$d_q^2$ is given by
+\[
+  d_q^2\,\alpha
+  \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.
+\]
+In particular, $d_q^2 = 0$ if and only if $q = 1$ (classical case) or
+$\alpha$ lies in the kernel of $\mathcal{L}_\xi$ (Reeb-invariant forms).
+On horizontal $\mathcal{L}_\xi$-invariant forms, $d_q$ \emph{does}
+define a cochain complex.
+\end{proposition}
+
+\begin{proof}
+Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $a + b = 1$.  Then
+\begin{align*}
+  d_q^2\,\alpha
+  &= d_q\bigl(a\,d\alpha + b\,\theta \wedge \mathcal{L}_\xi\alpha\bigr) \\
+  &= a^2\,d^2\alpha
+     + ab\,d(\theta \wedge \mathcal{L}_\xi\alpha)
+     + ab\,\theta \wedge \mathcal{L}_\xi\,d\alpha
+     + b^2\,\theta \wedge \mathcal{L}_\xi(\theta \wedge \mathcal{L}_\xi\alpha).
+\end{align*}
+The first term vanishes since $d^2 = 0$.  The second expands as
+$ab\,d\theta \wedge \mathcal{L}_\xi\alpha
+- ab\,\theta \wedge d\mathcal{L}_\xi\alpha$.
+The third term cancels the second's negative part because
+$[d,\, \mathcal{L}_\xi] = 0$ implies
+$\theta \wedge \mathcal{L}_\xi\,d\alpha
+= \theta \wedge d\,\mathcal{L}_\xi\alpha$.
+For the fourth term, the Reeb field satisfies
+$\mathcal{L}_\xi\theta = 0$ (since $\iota_\xi d\theta = 0$ and
+$\theta(\xi)=1$), so
+$\mathcal{L}_\xi(\theta \wedge \mathcal{L}_\xi\alpha)
+= \theta \wedge \mathcal{L}_\xi^2\alpha$;
+the factor $\theta \wedge \theta = 0$ in $b^2\,\theta \wedge \theta
+\wedge \mathcal{L}_\xi^2\alpha$ kills this term.  Hence
+$d_q^2\alpha = ab\,d\theta \wedge \mathcal{L}_\xi\alpha$.
+\end{proof}
+
+\begin{definition}[$q$-Deformed Lie bracket]
+\label{def:q-lie-bracket}
+Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields.  The
+\emph{$q$-deformed Lie bracket} is
+\[
+  [V, W]_q
+  \;=\; q^{-1}\,[V, W]
+        + (1 - q^{-1})\,\bigl(\theta(V)\,\mathcal{L}_\xi W
+                              - \theta(W)\,\mathcal{L}_\xi V\bigr),
+\]
+where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.
+\end{definition}
+
+\begin{proposition}[Jacobiator of ${{[\,\cdot\,,\cdot\,]}}_q$]
+\label{prop:q-jacobiator}
+Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e.\
+$\theta(U) = \theta(V) = \theta(W) = 0$).  The \emph{Jacobiator}
+\[
+  \mathrm{Jac}_q(U,V,W)
+  \;:=\; [[U,V]_q, W]_q + [[V,W]_q, U]_q + [[W,U]_q, V]_q
+\]
+is given by
+\[
+  \mathrm{Jac}_q(U,V,W)
+  \;=\; -q^{-1}(1-q^{-1})\!\sum_{\mathrm{cyc}}
+        d\theta(V,W)\,\mathcal{L}_\xi U,
+\]
+where the sum is over cyclic permutations of $(U,V,W)$.  In particular,
+$\mathrm{Jac}_q = 0$ if and only if $q = 1$ (classical Jacobi identity)
+or $d\theta|_{H \times H} = 0$ (integrable horizontal distribution).
+Since $d\theta|_{H \times H}$ is the Levi form $L_\theta$, which is
+non-degenerate by hypothesis, $[\,\cdot\,,\cdot\,]_q$ violates the Jacobi
+identity for all $q \neq 1$.  Thus $(\mathfrak{X}(M), [\,\cdot\,,\cdot\,]_q)$
+is a \emph{Leibniz algebra} (or a pre-Lie algebra), not a Lie algebra.
+\end{proposition}
+
+\begin{proof}
+For horizontal $V, W$, the bracket reduces to $[V,W]_q = q^{-1}[V,W]$.
+The mixed term $\theta([V,W]_q) = -q^{-1}\,d\theta(V,W)$ is in general
+non-zero.  Substituting into the next bracket:
+\begin{align*}
+  [[V,W]_q,\, U]_q
+  &= q^{-2}\,[[V,W],U]
+    - q^{-1}(1-q^{-1})\,d\theta(V,W)\,\mathcal{L}_\xi U,
+\end{align*}
+using $\theta(U)=0$ and $\theta([V,W]_q) = -q^{-1}d\theta(V,W)$.
+Summing cyclically, the $q^{-2}$ terms assemble into $q^{-2}\,\mathrm{Jac}(U,V,W) = 0$
+by the classical Jacobi identity, leaving only the $d\theta$ terms.
+\end{proof}
+
+\begin{definition}[$q$-Deformed connection]
+\label{def:q-connection}
+Let $A$ be an instanton connection on $P$
+(Lemma~\ref{lem:irreducible-connection}).  The \emph{$q$-deformed
+connection} $A_q$ is defined by
+\[
+  A_q
+  \;=\; q^{-1}\,A
+        + (1 - q^{-1})\,\iota_\xi\,A\;\theta,
+\]
+\end{definition}
+
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Remark~\ref{rem:substrate-parameter}) and Reeb vector
-field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+with substrate parameter $q$ (Definition~\ref{def:substrate-parameter})
+and Reeb vector field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
 \emph{$q$-deformed Reeb vector field} is the vector field $\xi_q$ on $M$
 defined by its action on smooth functions $f \in C^\infty(M)$:
 \[
   \xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,
 \]
-where $X_f$ is the horizontal lift of $\mathrm{grad}\,f$ to $H$ and
-$[\,\cdot\,,\cdot\,]_q$ denotes the $q$-deformed Lie bracket on
-$\mathfrak{X}(M)$.  When $q = 1$, one recovers the classical Reeb field
-$\xi_1 = \xi$.
+where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to
+$H = \ker\theta$ (using the Webster metric $g_\theta$) and
+$[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket
+(Definition~\ref{def:q-lie-bracket}).
 \end{definition}
+
+\begin{remark}[Classical recovery of $q$-deformed operators]
+\label{rem:classical-recovery}
+All four $q$-deformed operators interpolate between the classical ($q = 1$)
+and deformed ($q > 1$) regimes via the uniform pattern
+$q^{-1} \cdot (\text{classical}) + (1 - q^{-1}) \cdot (\text{Reeb correction})$.
+At $q = 1$ each recovers its classical counterpart:
+$d_q = d$ (Definition~\ref{def:q-ext-deriv}),
+$[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$
+(Definition~\ref{def:q-lie-bracket}),
+$A_q = A$ (Definition~\ref{def:q-connection}), and
+$\xi_q = \xi$ (Definition~\ref{def:q-reeb-vector-field}).
+The connection $A_q$ interpolates between the full instanton connection and
+its Reeb component $\iota_\xi A\;\theta$.
+\end{remark}
 
 \begin{definition}[$q$-Deformed Reeb flow]
 \label{def:q-reeb-flow}
@@ -406,20 +1266,95 @@ $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
 \]
 \end{definition}
 
+\begin{remark}[$q$-Torsion leaves: existence and category-theoretic perspective]
+\label{rem:q-torsion-existence}
+The horizontal distribution $H = \ker\theta$ on a contact manifold is
+maximally non-integrable: $d\theta|_{H \times H}$ is non-degenerate.
+By the Frobenius theorem, maximal integral submanifolds of $H$ have
+dimension at most~$n$ (half the rank of~$H$); these are the
+\emph{Legendrian submanifolds}.  Definition~\ref{def:q-torsion-leaf}
+therefore requires $L$ to be a Legendrian submanifold invariant under the
+$q$-deformed Reeb flow.
+
+Existence is not automatic: it depends on the dynamics of~$\xi_q$.
+When $q \to 1$ and $\xi_q \to \xi$, invariant Legendrian submanifolds
+exist whenever the Reeb flow is periodic or integrable (e.g.\ on
+$S^3/\Gamma$).  For $q > 1$, the deformation generically breaks
+periodicity, and one must appeal to KAM-type persistence results.
+
+\medskip\noindent\textit{Category-theoretic formulation.}\;
+A $q$-torsion leaf may be viewed as an object of the category
+$\mathbf{Leg}_q(M)$ whose objects are Legendrian submanifolds
+invariant under $\phi_t^q$ and whose morphisms are
+$\phi_t^q$-equivariant Legendrian cobordisms.  The forgetful
+functor $\mathbf{Leg}_q(M) \to \mathbf{Leg}(M)$ (forget the flow
+invariance) exhibits $q$-torsion leaves as fixed objects of the Reeb
+flow acting on the Legendrian category.  In this language, the
+``equilibrium'' condition of $q$-torsion leaves is a
+\emph{homotopy fixed-point} condition, and one could define a
+\emph{derived} $q$-torsion leaf as a homotopy-coherent fixed point of
+the $\phi_t^q$-action on the $\infty$-category of Legendrian branes.
+
+\medskip\noindent\textit{Categorical Frobenius condition.}\;
+The classical Frobenius theorem used above admits a categorical
+generalisation.  In a monoidal category~$\mathcal{C}$, a
+\emph{Frobenius object} is an object $A$ equipped with compatible
+algebra and coalgebra structures satisfying the Frobenius relation
+$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta) =
+\Delta \circ \mu = (\mathrm{id} \otimes \mu) \circ (\Delta \otimes
+\mathrm{id})$.
+In the category of Lie algebroids over~$M$, the horizontal distribution
+$H = \ker\theta$ with the Lie bracket of vector fields is a Lie
+algebroid; the Frobenius integrability condition is equivalent to $H$
+carrying a Frobenius structure.  Since the Levi form
+$d\theta|_{H \times H}$ is non-degenerate, this Frobenius structure
+\emph{fails} --- and it is precisely this failure that forces the
+dimension bound on integral submanifolds and gives $q$-torsion leaves
+their rigidity.
+
+\medskip\noindent\textit{Beyond~$\mathbb{C}$: the natural categorical setting.}\;
+The framework of Example~\ref{def:c-quantum-universe} is formulated
+over~$\mathbb{C}$, but the categorical Frobenius condition suggests
+a natural generalisation.  Over a $\pp$-adic base field~$\mathbb{C}_\pp$,
+the classical Frobenius integrability theorem is replaced by the
+\emph{Frobenius endomorphism} acting on crystalline cohomology: a
+connection is ``integrable'' if and only if the associated $F$-crystal
+is compatible with the Frobenius lift
+(Chapter~\ref{chap:p-adic}, Section~\ref{sec:cp-que}).
+More generally, over an arbitrary base field~$k$, the correct setting is
+a \emph{Tannakian category} $\mathcal{C}$ over~$k$ equipped with a
+fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$; the
+quantum gauge group is then reconstructed via Tannaka--Krein duality
+as $\mathrm{Aut}^\otimes(\omega)$.  This is precisely the setting of the
+base-field-independent Definitions~\ref{def:quantum-universe}
+and~\ref{def:quantum-observable-universe}: the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}) is one instance, and the
+$\pp$-adic and finite-field realisations
+(Examples~\ref{ex:p-adic-realisation} and~\ref{ex:finite-field-realisation})
+are others.  This field-independence
+is the deeper reason why approach~(1) (Hopf-algebra bundles) in
+Remark~\ref{rem:quantum-gauge-group-category} has limited impact on the
+rest of the paper: all later constructions factor through the
+representation category, which is base-field-independent by Tannakian
+reconstruction.
+\end{remark}
+
 \begin{remark}[$q$-Torsion leaves as energy minima]
 \label{rem:q-torsion-leaf-minimum}
-Let $A_q$ denote the $q$-deformed connection on $P$ and define the
-$q$-curvature
+Let $A_q$ denote the $q$-deformed connection
+(Definition~\ref{def:q-connection}) and define the $q$-curvature
 \[
-  \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q.
+  \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q,
 \]
-A $q$-torsion leaf $L$ (Definition~\ref{def:q-torsion-leaf}) is a local
-minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution:
-the invariance of $L$ under $\phi_t^q$ forces the first variation of
-$\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a $q$-curvature well.
-Physically, a $q$-torsion leaf represents a region of the CR manifold where
-the gauge curvature is minimised and the $q$-deformed dynamics are in
-equilibrium.
+where $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket
+(Definition~\ref{def:q-lie-bracket}) extended to $\mathrm{Ad}(P)$-valued
+forms.  A $q$-torsion leaf $L$ (Definition~\ref{def:q-torsion-leaf}) is a
+local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal
+distribution: the invariance of $L$ under $\phi_t^q$ forces the first
+variation of $\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a
+$q$-curvature well.  Physically, a $q$-torsion leaf represents a region of
+the CR manifold where the gauge curvature is minimised and the $q$-deformed
+dynamics are in equilibrium.
 \end{remark}
 
 \begin{remark}[Physical interpretation of the Reeb decomposition]
@@ -450,72 +1385,227 @@ $q$-dependent.
 
 \begin{remark}[General Relativity as the ``Substrate Geometry'']
 \label{rem:gr-substrate-geometry}
-In this model the metric is effectively replaced by the Levi form $L$ and its
-coupling to the gauge curvature $F_A$.  Gravity is expressed through the
-Variational Bicomplex as the back-reaction of the gauge fields on the CR
-manifold $M$.
+In this model the metric is effectively replaced by the Levi form
+$L_\theta$ and its coupling to the gauge curvature $F_A$.  Gravity is
+expressed through the Variational Bicomplex as the back-reaction of the
+gauge fields on the CR manifold $M$.
 
-The Einstein--Hilbert action is recovered by examining the variation of the
-action $S_q$ with respect to the Levi form $L$:
+Define the \emph{$q$-weighted Yang--Mills--Levi functional}
 \[
-  \frac{\delta S_q}{\delta L}
-  \;\implies\;
-  G_{\mu\nu} \;\sim\; T_{\mu\nu}^{(q)},
+  S_q[A, \theta]
+  \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
+        \theta \wedge (d\theta)^n,
 \]
-where $T_{\mu\nu}^{(q)}$ is a \emph{quantum-weighted} stress-energy tensor.
-Because $q(p) = \exp\!\bigl(\lVert (L \wedge F_A^+)(p)\rVert\bigr)$, the geometry
-of the brane $M$ is forced to curve to accommodate the tension of the
-$\mathrm{SU}(2)$ instantons.  See Chapter~\ref{chap:experimental} for
-experimental signatures of this emergent geometry.
+where $q(p) = \exp(\lvert\langle L_\theta, F_A^+\rangle\rvert(p))$
+(Definition~\ref{def:substrate-parameter}).
+Variation with respect to the Levi form $L_\theta$ yields field equations
+of the schematic form
+\[
+  \frac{\delta S_q}{\delta L_\theta}
+  \;=\; 0
+  \qquad\Longrightarrow\qquad
+  \mathrm{Ric}_{g_\theta} \;=\; T^{(q)},
+\]
+where $\mathrm{Ric}_{g_\theta}$ is the Webster Ricci curvature and
+$T^{(q)}$ is a $q$-weighted stress-energy $2$-tensor on $H$ (both
+coordinate-free objects).  The precise derivation of the field equations
+will be given in Chapter~\ref{chap:experimental}; here we note only that
+the geometry of $M$ is forced to curve to accommodate the tension of the
+$\mathrm{SU}(2)$ instantons.
 \end{remark}
 
-\begin{remark}[The Schr\"odinger Equation as ``Jet Co-action'']
+\begin{remark}[$q$-Deformed Schr\"odinger equation]
 \label{rem:schrodinger-jet-coaction}
-The Schr\"odinger equation describes the evolution of a state in the fibre
-$\mathbb{CP}^1$.  In the jet-bundle framework this is expressed as the
-condition of parallel transport along the instanton connection $A$ on $P$.
+The $q$-deformed Schr\"odinger equation governs the evolution of states
+in the linearised state bundle.  Throughout this paper the symbol~$i$ in
+the Schr\"odinger equation is identified with the complex structure
+operator $J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$):
+it acts as a geometric twisting operator on horizontal planes rather than
+as an algebraic imaginary unit.
 
-Let $J \colon H \to H$ denote the complex structure operator on the Levi
-distribution ($J^2 = -\mathrm{Id}$).  In this framework the symbol~$i$ in the
-Schr\"odinger equation is identified with $J$: it acts as a geometric
-twisting operator on horizontal planes rather than as an algebraic imaginary
-unit.
+\medskip\noindent\textit{Linearisation convention.}\;
+The fibre $\mathbb{CP}^1$ is a non-linear space, so one cannot write a
+linear PDE for sections of $E$ directly.  We work instead with the
+\emph{linearised} model: identify a neighbourhood of a base-point in
+$\mathbb{CP}^1$ with $\mathbb{C}$ via stereographic projection, and
+interpret $\psi$ as a section of the line bundle $E_{\mathrm{lin}}$
+obtained by linearising $E$ at the chosen section.  The covariant
+derivative $D_A = d + A$ then acts on sections of this line bundle in the
+standard way.
 
-For a section $\psi \in \Gamma(E)$ and the $q$-deformed Reeb vector field
-$\xi_q$ (Definition~\ref{def:q-reeb-vector-field}), the Schr\"odinger
-dynamics take the form
+For a section $\psi \in \Gamma(E_{\mathrm{lin}})$ and the $q$-deformed Reeb
+vector field $\xi_q$ (Definition~\ref{def:q-reeb-vector-field}), the
+Schr\"odinger dynamics take the form
 \[
   J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,
 \]
-where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
+where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ is the
+\emph{$q$-deformed Hamiltonian} (here $\Delta_q$ is the $q$-Laplacian of
+Definition~\ref{def:q-harmonic-form} acting on sections of
+$E_{\mathrm{lin}}$, and $V_q$ is a potential depending on the curvature
+$\Omega_q$), and:
 \begin{itemize}
   \item $\hbar_q(p) = 1 - q(p)^{-1}$: the quantum Planck constant
         (Definition~\ref{def:quantum-planck-constant}) is a local field;
   \item $D_A = d + A$: the instanton connection on $P$ acts as the potential;
   \item $\iota_{\xi_q} D_A \psi$: the covariant derivative $D_A\psi$ is an
-        $E$-valued $1$-form; contracting it with $\xi_q$ yields an $E$-valued
-        $0$-form (i.e.\ a section of $E$), matching the right-hand side.
+        $E_{\mathrm{lin}}$-valued $1$-form; contracting it with $\xi_q$
+        yields a section of $E_{\mathrm{lin}}$, matching the right-hand side.
 \end{itemize}
 As $q(p) \to 1$ (classicality), the commutator
 $[\hat{X}, \hat{P}]_q \to 0$ (Remark~\ref{rem:heisenberg-commutator}), the
 uncertainty vanishes, and the wave-like nature of the section freezes into a
 classical trajectory.
+
+\medskip\noindent\textit{Categorical role.}\;
+Although this remark is stated as a PDE rather than in categorical language,
+it is essential to the paper's structure: the Schr\"odinger equation
+provides the bottom row of the main commutative diagram
+(Proposition~\ref{prop:main-commutative-diagram}).  Categorically, the
+$q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the
+module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra
+$\Gamma(J^1 E)$, and the Schr\"odinger equation is the condition that
+$\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$.
+In the Tannakian setting of
+Remark~\ref{rem:q-torsion-existence}, this extends to arbitrary base
+fields~$k$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate
+$k$-linear category of sections.
 \end{remark}
 
-\begin{remark}[Main Commutative Diagram]
-\label{rem:main-commutative-diagram}
-The relationship between these two seemingly disparate equations is captured by
-the main commutative diagram of the $\mathbb{C}$-quantum universe, where
-$\mathbf{E}$ denotes the Euler--Lagrange operator.  The link is the substrate
-parameter $q(p)$:
+\begin{proposition}[Main Commutative Diagram]
+\label{prop:main-commutative-diagram}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+with instanton connection $A$ (Definition~\ref{def:instanton}) and substrate
+parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let
+$\mathbf{E}$ denote the Euler--Lagrange operator of the
+$q$-weighted Yang--Mills--Levi functional $S_q$
+(Remark~\ref{rem:gr-substrate-geometry}), and let $\nabla^A$ denote
+parallel transport along $A$.  The following diagram commutes:
 \[
 \begin{CD}
-J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
-  \text{General Relativity (Geometry)} \\
-@V{\text{Jet Co-action}}VV
-  @VV{\text{Coupling via } q(p)}V \\
-\Gamma(E) @>{\text{Parallel Transport}}>>
-  \text{Schr\"odinger Eq.\ (Quantum States)}
+J^1E @>{\mathbf{E}[S_q]}>>
+  \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\} \\
+@V{\text{jet evaluation}}VV
+  @VV{q = \exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)}V \\
+\Gamma(E_{\mathrm{lin}}) @>{\nabla^A}>>
+  \bigl\{ \psi : J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi \bigr\}
 \end{CD}
 \]
-\end{remark}
+where the top row sends a jet (a first-order perturbation of the gauge field)
+to the Einstein-type field equation via the Euler--Lagrange operator; the
+left column evaluates a jet at a fibre point to produce a linearised section;
+the right column is the coupling through the substrate field $q$; and the
+bottom row is the parallel-transport equation whose linearisation is the
+Schr\"odinger equation.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The top row is the variational equation $\delta S_q / \delta L_\theta = 0$,
+which involves $q(p)$ through the functional $S_q$.  The bottom row is the
+$q$-deformed parallel-transport equation
+$J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi$
+(Remark~\ref{rem:schrodinger-jet-coaction}), linearised at a chosen section.
+The left column is the jet evaluation map
+$j^1_p \sigma \mapsto \sigma(p)$ restricted to $E_{\mathrm{lin}}$.
+Commutativity amounts to the statement that solving the variational
+equation for $L_\theta$ and then substituting $q(p)$ into the transport
+equation gives the same solution set $\psi$ as first evaluating the jet
+and then transporting along $A$.  This follows from the chain rule:
+$\mathbf{E}[S_q]$ determines $L_\theta$ (and hence $q$), which in turn
+determines $\hat{H}_q$ and $\xi_q$ appearing in the transport equation.
+A full proof requires the variational bicomplex machinery of
+Chapter~\ref{chap:experimental} and is given there.
+\end{proof}
+
+% ══════════════════════════════════════════════════════════════════════════════
+% CRITIQUE SUMMARY — Chapter 1
+% ══════════════════════════════════════════════════════════════════════════════
+
+\section{Critique summary}
+\label{sec:qou-critique}
+
+This chapter contains 49~labelled items (18~definitions, 8~examples,
+4~propositions/lemmas, 19~remarks).  Each item was rated on a three-point
+scale: \textbf{Good} (rigorous and self-contained),
+\textbf{Fair} (essentially correct but with a gap or ambiguity), or
+\textbf{Poor} (material error or unjustified claim undermining the
+argument).  Of these 49~items, 44~are rated~\textbf{Good},
+5~are rated~\textbf{Fair}, and 0~are rated~\textbf{Poor}.  Only the
+Fair and Poor items are listed below.
+
+\medskip
+\noindent
+\begin{small}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.08\textwidth}p{0.70\textwidth}@{}}
+\hline
+\textbf{Item} & \textbf{Rating} & \textbf{Concern} \\
+\hline
+
+\raggedright Rem.\newline\texttt{rem:jet-bundle}
+  & Fair
+  & The claim that $\Gamma_c(M, J^1E)$ injects into the space of
+    connections on~$P$ is stated without proof or literature reference.
+    Minor concern: the injection is plausible by standard jet-bundle
+    theory but should be justified. \\
+
+\raggedright Rem.\newline\texttt{rem:heisenberg-\linebreak commutator}
+  & Fair
+  & The $q$-deformed commutator
+    $[\hat{X}, \hat{P}]_q := J\,\hbar_q(p)$ is \emph{postulated}
+    rather than derived from the preceding definitions.  A derivation
+    from the $q$-deformed Lie bracket
+    (Definition~\ref{def:q-lie-bracket}) acting on canonically conjugate
+    observables would strengthen the claim.  Additionally, the remark
+    is long; splitting into a definition and a separate remark would
+    improve readability. \\
+
+\raggedright Rem.\newline\texttt{rem:j1e-local-\linebreak states}
+  & Fair
+  & The remark is too brief (three sentences) to serve its role of
+    connecting the jet bundle to the quantum field algebra.  The phrase
+    ``weighted by~$q$'' is vague and should be made precise, e.g.\
+    by specifying which $q$-dependent structure on $J^1 E$ is
+    intended. \\
+
+\raggedright Rem.\newline\texttt{rem:reeb-\linebreak physical}
+  & Fair
+  & The spin--statistics claim (fermions carry half-integer spin,
+    bosons integer spin) is an interpretation of the Reeb decomposition
+    (Definition~\ref{def:reeb-decomposition}) that lacks a proof or
+    external reference.  A derivation --- or at minimum a precise
+    statement of the correspondence between Reeb-vertical degree and
+    spin quantum number --- is needed. \\
+
+\raggedright Rem.\newline\texttt{rem:q-harmonic-\linebreak physical}
+  & Fair
+  & The claim that the $q$-Laplacian $\Delta_q$ reduces to the Hodge
+    Laplacian as $q \to 1$ is plausible from
+    Definition~\ref{def:q-ext-deriv} (since $d_q \to d$ and
+    $\delta_q \to \delta$) but has not been proved.  A short argument
+    or explicit reference would close this gap. \\
+
+\hline
+\end{tabular}
+\end{small}
+
+\medskip
+\noindent\textbf{Open concerns.}
+\begin{enumerate}
+  \item \textbf{Remark \textup{rem:jet-bundle}
+        (Jet-bundle formulation):} the injection claim
+        for $\Gamma(M, J^1E)$ needs a proof or literature reference.
+  \item \textbf{Remark \textup{rem:heisenberg-commutator}
+        (Heisenberg commutator):} the commutator is
+        postulated, not derived; splitting the remark would aid readability.
+  \item \textbf{Remark \textup{rem:j1e-local-states}
+        ($J^1E$ as local states):} too brief;
+        ``weighted by $q$'' is vague.
+  \item \textbf{Remark \textup{rem:reeb-physical}
+        (Reeb physical interpretation):} the spin--statistics
+        correspondence between Reeb decomposition components and spin
+        quantum numbers needs a proof or external reference.
+  \item \textbf{Remark \textup{rem:q-harmonic-physical}
+        ($q$-harmonic physical interpretation):}
+        $\Delta_q \to \Delta_{\text{Hodge}}$ as $q \to 1$ is plausible
+        but unproved.
+\end{enumerate}
