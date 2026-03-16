@@ -429,47 +429,9 @@ with indefinite Levi signature satisfying these conditions --- extending
 the QOU framework beyond the strictly pseudoconvex setting.
 \end{remark}
 
-\begin{example}[$\mathbb{Q}_\pp$ realisation]
-\label{ex:p-adic-realisation}
-Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
-$F$-isocrystals over~$\mathbb{Q}_\pp$ (modules over the Dieudonn\'e ring
-$\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
-over~$\mathbb{Q}_\pp$).
-This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
-The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
-to~$\mathbb{Q}_\pp$ provides a Frobenius--Hopf object~$A$, where the
-Frobenius form~$\lambda$ arises from the $\pp$-adic Haar measure.
-The Frobenius endomorphism~$\varphi$ on $\mathcal{C}$ plays the
-r\^ole of the Levi-form contraction: the substrate parameter is
-$q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
-Definition~\ref{def:substrate-parameter}).  The fibre functor~$\omega$
-is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
-The observability condition
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
-irreducibility of the associated $F$-crystal, generalising
-Lemma~\ref{lem:irreducible-connection} to the $\pp$-adic setting.
-The full $\pp$-adic framework is developed in Chapter~\ref{chap:p-adic}.
-\end{example}
-
-\begin{example}[$\mathbb{F}_\pp$ realisation]
-\label{ex:finite-field-realisation}
-Let $k = \mathbb{F}_\pp$ and let $\mathcal{C} =
-\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
-finite-dimensional representations of the quantum group
-$\mathrm{SU}_q(2)$ over~$\mathbb{F}_\pp$, where $q \in
-\mathbb{F}_\pp^{\times}$.  More generally, when $q$ is a primitive
-$\ell$-th root of unity in $\overline{\mathbb{F}}_\pp$ (with $\ell$
-coprime to~$\pp$), $\mathcal{C}$ extends to a fusion category over the
-extension field $\mathbb{F}_\pp(q)$ with finitely many simple objects.
-The Frobenius--Hopf object~$A$ is the regular representation, and
-the fibre functor~$\omega$ is the forgetful functor to
-$\mathrm{Vect}_{\mathbb{F}_\pp}$.  The non-degeneracy of the
-Frobenius form~$\lambda$ follows from the semisimplicity of the fusion
-category, and the observability condition
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$
-(since the trivial representation does not appear as a summand of the
-adjoint representation for generic~$q$).
-\end{example}
+% Examples for the $\mathbb{Q}_\pp$ and $\mathbb{F}_\pp$ realisations are
+% developed in full in Chapter~\ref{chap:p-adic}
+% (Examples~\ref{ex:p-adic-realisation} and~\ref{ex:finite-field-realisation}).
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
@@ -539,13 +501,13 @@ form is adopted in Definition~\ref{def:substrate-parameter} because it
 is meaningful over every base field~$k$, whereas $\exp(x)$ requires an
 archimedean topology.
 
-Over~$\mathbb{F}_\pp$, the Levi form contraction is replaced by a
-discrete invariant: $q$ is an element of $\mathbb{F}_\pp^{\times}$,
-typically a primitive $\ell$-th root of unity with $\ell$ coprime
-to~$\pp$ (Example~\ref{ex:finite-field-realisation}).
-Over~$\mathbb{Q}_\pp$, the substrate parameter is
+The non-archimedean analogues are developed in
+Chapter~\ref{chap:p-adic}: over~$\mathbb{Q}_\pp$ the Levi-form
+contraction is replaced by the Frobenius endomorphism and
 $q = \pp^{\,-v_\pp(\det\varphi)}$
-(Example~\ref{ex:p-adic-realisation}).
+(Example~\ref{ex:p-adic-realisation}); over~$\mathbb{F}_\pp$, $q$
+is a primitive root of unity
+(Example~\ref{ex:finite-field-realisation}).
 \end{remark}
 
 \begin{remark}[Natural contraction and field character of $q$]
