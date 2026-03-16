@@ -15,6 +15,7 @@
 \usepackage{amscd}             % commutative diagrams
 \usepackage{ccicons}          % CC icon glyphs
 \usepackage{titlesec}         % Compact heading styles
+\usepackage{tikz}             % Inline figures
 
 \geometry{margin=1in}
 
@@ -41,6 +42,10 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{conjecture}[theorem]{Conjecture}
+
+% ── Notation macros ────────────────────────────────────────────────────────────
+\newcommand{\pp}{\mathfrak{p}}    % prime number (Fraktur p); bare p reserved
+                                  % for points on the manifold
 
 % ── Metadata ──────────────────────────────────────────────────────────────────
 \title{Quantum Observable Universe}
@@ -90,8 +95,12 @@ discussed in the final chapter.
 % ── Chapters ──────────────────────────────────────────────────────────────────
 \input{chapters/quantum-observable-universe}
 \input{chapters/lifting-of-quantum-torsion}
-\input{chapters/descartes-universe}
+\input{chapters/p-adic-quantum-groups}
+\input{chapters/gauge-field-fluid-dynamics}
+\input{chapters/information-theory}
 \input{chapters/path-integrals-and-braiding}
+\input{chapters/brings-surface}
+\input{chapters/descartes-universe}
 \input{chapters/interpretations}
 \input{chapters/experimental-evidence}
 \input{chapters/speculations}

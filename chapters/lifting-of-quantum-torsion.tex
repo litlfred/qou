@@ -5,13 +5,13 @@
 
 \begin{proposition}[Jet Prolongation]
 \label{prop:jet-prolongation}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe
-(Definition~\ref{def:c-quantum-observable-universe}) with connection $A$ and
-metric $g$ on $E$.  Write $\widetilde{M} = E$ for the total space of $E$,
-viewed as a manifold, and define $E'$ as the bundle of orthonormal frames of
-the first jet bundle $J^1 E$.  Then $A$ and $g$ uniquely determine a
-connection $A'$ on $E'$ such that $(\widetilde{M}, G, E')$ is a $\mathbb{C}$
-quantum observable universe.
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+(Definition~\ref{def:c-quantum-observable-universe}) with instanton connection
+$A$ on $P$ and metric $g$ on $E$.  Write $\widetilde{M} = E$ for the total
+space of $E$, viewed as a manifold, and define $P'$ as the frame bundle and
+$E'$ as the bundle of orthonormal frames of the first jet bundle $J^1 E$.
+Then $A$ and $g$ uniquely determine a connection $A'$ on $P'$ such that
+$(\widetilde{M}, G, P', E')$ is a $\mathbb{C}$ quantum observable universe.
 \end{proposition}
 
 \begin{proof}
@@ -22,7 +22,7 @@ quantum observable universe.
 
 \begin{definition}[Recursive Brane Tower]
 \label{def:recursive-brane-tower}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
 (Definition~\ref{def:c-quantum-observable-universe}).  Set $M_0 = M$ and
 $E_1 = E$.  \emph{Inductively}, define $E_{n+1}$ as the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) of $E_n$.
@@ -39,7 +39,7 @@ The \emph{brane relation} is the following recursive structure:
 
 \begin{example}[First two levels]
 \label{ex:brane-tower-levels}
-Starting from a $\mathbb{C}$ quantum observable universe $(M, G, E_1)$, the
+Starting from a $\mathbb{C}$ quantum observable universe $(M, G, P, E_1)$, the
 first jet prolongation yields $E_2$ with base manifold $M_1 = E_1$.  The
 connection $A_1$ on $E_1$ satisfies the Hermitian Yang--Mills equations, and
 $A_2$ on $E_2$ is uniquely determined by
@@ -92,7 +92,7 @@ connection $A_n$
   d_{A_n}^*\,\alpha = 0,
 \]
 where the Hodge-star operator is induced by the Hermitian metric that the
-Levi form $L$ (Definition~\ref{def:substrate-parameter}) defines on the
+Levi form $L$ (Remark~\ref{rem:substrate-parameter}) defines on the
 horizontal distribution.
 The index $i$ runs over $1 \leq i \leq b_1(E_n)$
 (Remark~\ref{rem:betti-numbers-brane}).
@@ -144,7 +144,7 @@ complex structure of the brane).
 Let $\alpha$ be a harmonic $1$-form in the basis of
 Remark~\ref{rem:q-harmonic-basis-brane}.  Its \emph{signature} is determined
 by its commutator with the curvature $F_A$
-(Definition~\ref{def:substrate-parameter}).
+(Remark~\ref{rem:substrate-parameter}).
 
 \emph{Fermionic type (matter).}
 $[F_A,\, \alpha] \neq 0$.  These forms are entangled with the curvature: they
@@ -183,7 +183,7 @@ into a harmonic expansion across the infinite jet space $J^\infty E$
 \label{def:direct-limit-algebra}
 Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}) with substrate parameters $q_n$
-(Definition~\ref{def:substrate-parameter}) at each level.  The
+(Remark~\ref{rem:substrate-parameter}) at each level.  The
 \emph{$\mathbb{C}$ quantum observable universe} is the direct limit algebra
 \[
   \mathcal{A}_\infty
@@ -240,7 +240,7 @@ algebra (Definition~\ref{def:direct-limit-algebra}) across the fibres.
 
 \begin{proposition}[Stability of the Euler characteristic]
 \label{prop:euler-char-stability}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe and let
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe and let
 $\{E_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Then the Euler characteristic
 $\chi(E)$ is stable under descent and lifting: for each level $n$,
@@ -257,8 +257,8 @@ $\chi(E_n) = c$ for all $n \geq 1$.
 
 \begin{definition}[Mass Identity]
 \label{def:mass-identity}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}), connection $A$, Levi
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Remark~\ref{rem:substrate-parameter}), connection $A$, Levi
 form $L$, and self-dual curvature $F^+$.  Let $\gamma$ be a closed cycle
 encircling the vortex filament.  The \emph{inertial mass} $m$ of a stable
 vortex is
