@@ -528,12 +528,14 @@ const braneMesh = new THREE.Mesh(braneGeo, braneMat);
 scene.add(braneMesh);
 
 // Subtle equator/meridian wireframe overlay
+let braneWireOverlayMesh = null;
 {
   const wg = new THREE.SphereGeometry(SPHERE_R * 1.002, 24, 12);
   const wm = new THREE.MeshBasicMaterial({
     color: 0xaa6633, wireframe: true, transparent: true, opacity: 0.08
   });
-  scene.add(new THREE.Mesh(wg, wm));
+  braneWireOverlayMesh = new THREE.Mesh(wg, wm);
+  scene.add(braneWireOverlayMesh);
 }
 
 // ── Point marker (selected p on brane) ──────────────────────────────
