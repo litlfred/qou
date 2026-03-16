@@ -369,8 +369,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/copilot/review-chapter-one-again">&#x1F33F; copilot/review-chapter-one-again</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/7239494c676d7128e2d9fde37347c104fff3012e">&#x1F4DD; 7239494</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/pull/50">PR #50</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/04ab5a369dcca315fb523536b00e15339a06a4b8">&#x1F4DD; 04ab5a3</a>
 </div>
 
 <header id="title-block-header">
@@ -467,10 +466,23 @@ class="math inline">\(P\)</span> is irreducible.</em></p>
 
 <div class="proof">
 
-<p><em>Proof.</em> ◻</p>
+<p><em>Proof.</em> Suppose for contradiction that an instanton
+connection <span class="math inline">\(A\)</span> on <span
+class="math inline">\(P\)</span> is reducible. Then <span
+class="math inline">\(A\)</span> is preserved by a non-trivial element
+<span class="math inline">\(s \in \Gamma_c(M,\,
+\mathrm{Ad}(P))\)</span>: in other words, the infinitesimal automorphism
+<span class="math inline">\(s\)</span> satisfies <span
+class="math inline">\(D_A s = 0\)</span> and has compact support. Such a
+section is a non-zero element of <span class="math inline">\(H^0_c(M,
+\mathrm{Ad}(P))\)</span>, contradicting the hypothesis <span
+class="math inline">\(H^0_c(M, \mathrm{Ad}(P)) = 0\)</span>. Hence no
+non-trivial compactly supported gauge symmetry preserves <span
+class="math inline">\(A\)</span>, and <span
+class="math inline">\(A\)</span> is irreducible. ◻</p>
 </div>
 
-<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L62" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L68" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 1.5</strong> (<a class="defn-link" href="#prop:self-dual-curvature">Self-duality of the curvature</a>).
 <em>Let <span class="math inline">\((M, G, P, E)\)</span> be a <span
@@ -491,10 +503,49 @@ F_A\big|_H.\]</span></em></p>
 
 <div class="proof">
 
-<p><em>Proof.</em> ◻</p>
+<p><em>Proof.</em> The contact form <span
+class="math inline">\(\theta\)</span> splits the tangent bundle as <span
+class="math inline">\(TM = H \oplus \mathbb{R}\xi\)</span>, where <span
+class="math inline">\(H = \ker\theta\)</span> has real dimension <span
+class="math inline">\(2n\)</span> (with <span
+class="math inline">\(\dim_{\mathbb{R}} M = 2n+1\)</span>). The
+curvature <span class="math inline">\(F_A\)</span> is an <span
+class="math inline">\(\mathrm{Ad}(P)\)</span>-valued <span
+class="math inline">\(2\)</span>-form on <span
+class="math inline">\(M\)</span>. By the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
+(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>),
+<span class="math inline">\(F_A\)</span> splits into horizontal and
+vertical parts; we consider <span class="math inline">\(F_A|_H \in
+\Gamma(\Lambda^2 H^* \otimes
+\mathrm{Ad}(P))\)</span>.</p>
+<p>On the even-dimensional bundle <span
+class="math inline">\(H\)</span>, the Webster metric <span
+class="math inline">\(g_\theta\)</span> and the complex structure <span
+class="math inline">\(J\)</span> determine a Hodge star operator <span
+class="math inline">\(*_H \colon \Lambda^2 H^* \to \Lambda^{2n-2}
+H^*\)</span>. When <span class="math inline">\(n = 2\)</span> (so <span
+class="math inline">\(\dim H = 4\)</span>), <span
+class="math inline">\(*_H\)</span> maps <span
+class="math inline">\(2\)</span>-forms to <span
+class="math inline">\(2\)</span>-forms and decomposes <span
+class="math inline">\(\Lambda^2 H^*\)</span> into self-dual and
+anti-self-dual parts.</p>
+<p>An instanton connection <span class="math inline">\(A\)</span>
+minimises the Yang–Mills functional <span class="math inline">\(\int_M
+\lVert F_A|_H \rVert^2\)</span>. By the Bogomolny argument, <span
+class="math display">\[\lVert F_A|_H \rVert^2
+\;=\; \lVert F_A^+|_H \rVert^2 + \lVert F_A^-|_H \rVert^2
+\;=\; 2\lVert F_A^-|_H \rVert^2
++ \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H),\]</span> where the
+topological term <span class="math inline">\(\int \mathrm{tr}(F_A|_H
+\wedge F_A|_H)\)</span> is fixed by the characteristic class of <span
+class="math inline">\(P\)</span>. Minimising the functional forces <span
+class="math inline">\(F_A^-|_H = 0\)</span>, which is precisely the
+self-duality condition <span class="math inline">\(F_A|_H =
+{*_H}\,F_A|_H\)</span>. ◻</p>
 </div>
 
-<div id="ex:calabi-yau" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L81" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:calabi-yau" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L112" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.6</strong> (Real hypersurface in a Calabi–Yau
 manifold). <em>Let <span class="math inline">\(X\)</span> be a
@@ -515,7 +566,7 @@ Definition <a href="#def:c-quantum-observable-universe" data-reference-type="re
 are satisfied.</em></p>
 </div>
 
-<div id="ex:ale" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L93" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:ale" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L124" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.7</strong> (<a class="defn-link" href="#ex:ale">ALE links</a>). <em>Let <span
 class="math inline">\(\Gamma \subset \mathrm{SU}(2)\)</span> be a finite
@@ -542,7 +593,7 @@ satisfying horizontal self-dual curvature
 (Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>).</em></p>
 </div>
 
-<div id="ex:affine" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L108" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:affine" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L139" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.8</strong> (<a class="defn-link" href="#ex:affine">Odd-dimensional spheres</a>). <em>Let <span
 class="math inline">\(M = S^{2n-1} \subset \mathbb{C}^n\)</span> be the
@@ -569,7 +620,7 @@ class="math inline">\(M = S^3\)</span> is the boundary of <span
 class="math inline">\(\mathbb{C}^2\)</span>.</em></p>
 </div>
 
-<div id="ex:brings-surface" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L125" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:brings-surface" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L156" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.9</strong> (Bring’s surface unit circle bundle).
 <em>Let <span class="math inline">\(S\)</span> denote Bring’s surface
@@ -607,7 +658,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.21</a>).</em></p>
 </div>
 
-<div id="rem:substrate-parameter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L146" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:substrate-parameter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L177" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.10</strong> (<a class="defn-link" href="#rem:substrate-parameter">Substrate parameter</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
@@ -629,7 +680,7 @@ from point to point according to the local coupling between the Levi
 form and the self-dual curvature.</em></p>
 </div>
 
-<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L163" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L194" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.11</strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
@@ -643,7 +694,7 @@ obtained by deforming the structure group <span class="math inline">\(G
 class="math inline">\(q(p)\)</span>.</em></p>
 </div>
 
-<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L172" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L203" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.12</strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em>Let
 <span class="math inline">\((M, G, P, E)\)</span> be a <span
@@ -663,7 +714,7 @@ vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
 1\)</span>.</em></p>
 </div>
 
-<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L186" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L217" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.13</strong> (<a class="defn-link" href="#rem:heisenberg-commutator">Heisenberg uncertainty as commutator</a>).
 <em>In the <span class="math inline">\(\mathbb{C}\)</span> quantum
@@ -714,7 +765,7 @@ class="math inline">\(\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\)</span>
 on the Bring surface, it is realised by the <span
 class="math inline">\(S_3\)</span> permutation action on the spectral
 resolvents
-(Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">7.4</a>).</em></p>
+(Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">7.5</a>).</em></p>
 <p><em><strong>Commutator as Reeb vector.</strong> The commutator <span
 class="math inline">\([\hat{X},\hat{P}]_q\)</span> may be identified
 with the value of the <span class="math inline">\(q\)</span>-deformed
@@ -727,14 +778,14 @@ class="math inline">\(\theta(\xi_q)\)</span> encodes precisely the
 obstruction to commutativity of canonical coordinates. On the
 exceptional divisor <span class="math inline">\(\mathbb{CP}^1\)</span>
 produced by blowing up a spacetime defect on the Bring surface
-(Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.8</a>),
+(Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.9</a>),
 the Reeb vector field generates the <span
 class="math inline">\(U(1)\)</span> fibration of the Hopf bundle <span
 class="math inline">\(S^3\to\mathbb{CP}^1\)</span>, and its “strength”
 is set by <span class="math inline">\(\hbar_q(p)\)</span>.</em></p>
 </div>
 
-<div id="rem:cosmological-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L238" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:cosmological-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L269" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.14</strong> (Cosmological limits of <span
 class="math inline">\(q\)</span>). <em>The substrate field <span
@@ -770,7 +821,7 @@ tames the infinities that would otherwise appear at either
 extreme.</em></p>
 </div>
 
-<div id="rem:j1e-local-states" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L263" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:j1e-local-states" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L294" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.15</strong> (<span
 class="math inline">\(J^1E\)</span> as the space of local states).
@@ -788,7 +839,7 @@ class="math inline">\(\mathrm{SU}_q(2)\)</span>
 (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.11</a>).</em></p>
 </div>
 
-<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L276" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L307" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.16</strong> (<span
 class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
@@ -812,7 +863,7 @@ ensures that the form sits in a ground state of the <span
 class="math inline">\(q\)</span>-viscosity.</em></p>
 </div>
 
-<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L293" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L324" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.17</strong> (<a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>). <em>Let <span
 class="math inline">\(M\)</span> be a CR manifold equipped with a
@@ -834,7 +885,7 @@ class="math inline">\(\alpha_V\)</span> the <em>vertical component</em>
 class="math inline">\(\xi\)</span>).</em></p>
 </div>
 
-<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L309" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L340" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.18</strong> (<a class="defn-link" href="#def:fermion">Fermion</a>). <em>A <em>fermion</em> is
 a <span class="math inline">\(q\)</span>-harmonic form
@@ -846,7 +897,7 @@ that has a non-trivial vertical component in the <a class="defn-link" href="#def
 \iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
 </div>
 
-<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L322" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L353" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.19</strong> (<a class="defn-link" href="#def:boson">Boson</a>). <em>A <em>boson</em> is a
 <span class="math inline">\(q\)</span>-harmonic form
@@ -860,7 +911,7 @@ that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposit
 \text{ by Definition~\ref{def:reeb-decomposition}}).\]</span></em></p>
 </div>
 
-<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L336" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L367" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.20</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
@@ -887,7 +938,7 @@ class="math inline">\(q = 1\)</span>, one recovers the classical Reeb
 field <span class="math inline">\(\xi_1 = \xi\)</span>.</em></p>
 </div>
 
-<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L352" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L383" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.21</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
@@ -904,7 +955,7 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 \qquad \phi_0^q = \mathrm{id}_M.\]</span></em></p>
 </div>
 
-<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L364" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L395" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.22</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
@@ -923,7 +974,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 \quad\text{for all } t \in \mathbb{R}.\]</span></em></p>
 </div>
 
-<div id="rem:q-torsion-leaf-minimum" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L379" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-torsion-leaf-minimum" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L410" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.23</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
@@ -949,7 +1000,7 @@ class="math inline">\(q\)</span>-deformed dynamics are in
 equilibrium.</em></p>
 </div>
 
-<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L395" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L426" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.24</strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
@@ -965,7 +1016,7 @@ many-body interference in crystal lattices, is discussed in
 Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">10</a>.</em></p>
 </div>
 
-<div id="rem:q-harmonic-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L408" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-harmonic-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L439" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.25</strong> (Physical interpretation of <span
 class="math inline">\(q\)</span>-harmonicity). <em>The <span
@@ -983,7 +1034,7 @@ and the deep-quantum regime (<span class="math inline">\(q \to
 class="math inline">\(q\)</span>-dependent.</em></p>
 </div>
 
-<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L421" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L452" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.26</strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
@@ -1009,7 +1060,7 @@ Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="
 for experimental signatures of this emergent geometry.</em></p>
 </div>
 
-<div id="rem:schrodinger-jet-coaction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L442" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:schrodinger-jet-coaction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L473" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.27</strong> (The Schrödinger Equation as “Jet
 Co-action”). <em>The Schrödinger equation describes the evolution of a
@@ -1062,7 +1113,7 @@ the uncertainty vanishes, and the wave-like nature of the section
 freezes into a classical trajectory.</em></p>
 </div>
 
-<div id="rem:main-commutative-diagram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L475" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:main-commutative-diagram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/quantum-observable-universe.tex#L506" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.28</strong> (<a class="defn-link" href="#rem:main-commutative-diagram">Main Commutative Diagram</a>). <em>The
 relationship between these two seemingly disparate equations is captured
@@ -2075,14 +2126,16 @@ descent tower.</em></p>
 descent theorem
 (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">8.12</a>),
 it is sufficient to study dimension-zero manifolds equipped with their
-bundles <span class="math inline">\(E\)</span>. At a point <span
+bundles <span class="math inline">\(P\)</span> and <span
+class="math inline">\(E\)</span>. At a point <span
 class="math inline">\(p\in M_0\)</span>, the <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> <span
-class="math inline">\(q(p)=\exp\!\bigl(-\lVert L\wedge
+class="math inline">\(q(p)=\exp\!\bigl(\lVert L\wedge
 F_A^{+}\rVert(p)\bigr)\)</span>
 (Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
 assigns a specific quantum constant <span
-class="math inline">\(q\in(0,1]\)</span> determined by the bundle <span
-class="math inline">\(E\)</span>. Here <span
+class="math inline">\(q\in[1,\infty)\)</span> determined by the
+principal bundle <span class="math inline">\(P\)</span> and the state
+bundle <span class="math inline">\(E\)</span>. Here <span
 class="math inline">\(E\)</span> represents the totality of fermionic
 matter packed into spacetime at the Big Bang. The trivial bundle <span
 class="math inline">\(E=E_0\)</span> corresponds to empty space, in
@@ -2107,9 +2160,105 @@ class="math display">\[\sum_{j=0}^{4}x_j^{\,k}=0,
 \qquad k=1,2,3.\]</span></em></p>
 </div>
 
-<div id="rem:lagrange-resolvents" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L35" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:brings-qou-4tuple" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L35" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.3</strong> (<a class="defn-link" href="#rem:lagrange-resolvents">Lagrange resolvents and spectral form</a>).
+<p><strong>Remark 7.3</strong> (QOU <span
+class="math inline">\(4\)</span>-tuple for Bring’s surface). <em>We
+construct the <span class="math inline">\(\mathbb{C}\)</span> quantum
+observable universe
+(Definition <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.2</a>)
+explicitly for Bring’s surface. The five homogeneous coordinates <span
+class="math inline">\(x_j\)</span>, <span
+class="math inline">\(j\in\{0,\dots,4\}\)</span>, split into
+<em>spacetime</em> and <em>chiral</em> degrees of freedom: <span
+class="math display">\[\underbrace{x_0,\, x_1}_{\text{spacetime}}
+\qquad
+\underbrace{x_2,\, x_3,\, x_4}_{\text{chiral}}.\]</span> The projective
+ratio <span class="math inline">\(z = x_0/x_1 \in \mathbb{CP}^1\)</span>
+parametrises the spacetime base.</em></p>
+<p><em><strong>1.CR manifold <span
+class="math inline">\(M_S\)</span>.</strong> Let <span
+class="math inline">\(S\)</span> denote Bring’s surface
+(Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">7.2</a>).
+Because <span class="math inline">\(S\)</span> is a Riemann surface
+(real dimension <span class="math inline">\(2\)</span>), it does not
+itself carry a contact form. The CR manifold is the unit circle bundle
+<span class="math inline">\(M_S = \{(p,\eta) \in T^*S :
+\lvert\eta\rvert_{g_S} = 1\}\)</span>, where <span
+class="math inline">\(g_S\)</span> is the Fubini–Study metric restricted
+to <span class="math inline">\(S\)</span>. The Liouville <span
+class="math inline">\(1\)</span>-form <span
+class="math inline">\(\lambda = \eta\,dz\)</span> on <span
+class="math inline">\(T^*S\)</span> restricts to a contact form <span
+class="math inline">\(\theta = \lambda\big|_{M_S}\)</span>, making <span
+class="math inline">\(M_S\)</span> a <span
+class="math inline">\(3\)</span>-dimensional strictly pseudoconvex CR
+manifold.</em></p>
+<p><em><strong>2.Principal bundle <span
+class="math inline">\(P\)</span>.</strong> The branched covering <span
+class="math inline">\(\pi\colon S \to \mathbb{CP}^1\)</span> (degree
+<span class="math inline">\(4\)</span>, six branch points) lifts to a
+principal <span class="math inline">\(\mathrm{SU}(2)\)</span>-bundle
+<span class="math inline">\(P \to M_S\)</span>. In the spacetime
+coordinate <span class="math inline">\(z\)</span>, the transition
+functions of <span class="math inline">\(P\)</span> are the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> holonomy matrices <span
+class="math inline">\(H_1,H_2\)</span> <a href="#eq:holonomy-generators" data-reference-type="eqref" data-reference="eq:holonomy-generators">[eq:holonomy-generators]</a>
+around the branch cuts; in the chiral coordinates <span
+class="math inline">\((x_2,x_3,x_4)\)</span>, the <span
+class="math inline">\(S_3\)</span> permutation of the three sheets gives
+the <span class="math inline">\(\mathrm{SO}(3)\)</span> holonomy
+representation
+(Definitions <a href="#def:su2-generators" data-reference-type="ref" data-reference="def:su2-generators">6.5</a>–<a href="#def:so3-generators" data-reference-type="ref" data-reference="def:so3-generators">6.6</a>).</em></p>
+<p><em><strong>3.State bundle <span
+class="math inline">\(E\)</span>.</strong> The associated state bundle
+is <span class="math inline">\(E = P \times_G \mathbb{CP}^1\)</span>,
+whose fibre at each point of <span class="math inline">\(M_S\)</span> is
+the chiral <span class="math inline">\(\mathbb{CP}^1\)</span>
+parametrised by the three roots of the elliptic
+cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>.</em></p>
+<p><em><strong>4.Connection, Levi form, and substrate
+parameter.</strong> The instanton connection <span
+class="math inline">\(A\)</span> on <span
+class="math inline">\(P\)</span> is expressed in the resolvent basis
+<span class="math inline">\((w_1,\dots,w_4)\)</span>
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>)
+as the flat <span class="math inline">\(B_3\)</span>-monodromy
+connection whose holonomy around the six branch points is generated by
+the trefoil holonomy matrices. The Levi form on <span
+class="math inline">\(M_S\)</span> is <span class="math display">\[L
+\;=\; d\theta\big|_{H \times H},
+\qquad H = \ker\theta \subset TM_S,\]</span> where <span
+class="math inline">\(\theta = \eta\,dz\big|_{M_S}\)</span> and the
+horizontal distribution <span class="math inline">\(H\)</span> is
+spanned by the lifts of the chiral differentials <span
+class="math inline">\(dx_2, dx_3, dx_4\)</span> to <span
+class="math inline">\(M_S\)</span>. The <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a>
+(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
+then reads <span class="math display">\[q(p) \;=\; \exp\!\bigl(\lVert L
+\wedge F_A^+ \rVert(p)\bigr),
+\qquad p \in M_S,\]</span> coupling the chiral curvature to the contact
+geometry. At the six branch points (where chiral sheets merge), <span
+class="math inline">\(\lVert F_A^+\rVert\)</span> is maximal and <span
+class="math inline">\(q \to \infty\)</span> (deep-quantum regime); away
+from the defects, <span class="math inline">\(q \to 1\)</span>
+(classicality).</em></p>
+<p><em><strong>Summary.</strong> The <span
+class="math inline">\(4\)</span>-tuple <span
+class="math inline">\((M_S,\, G,\, P,\, E)\)</span>, with <span
+class="math inline">\(G = \mathrm{SU}(2)\)</span>, constitutes a <span
+class="math inline">\(\mathbb{C}\)</span> quantum observable universe
+(Example <a href="#ex:brings-surface" data-reference-type="ref" data-reference="ex:brings-surface">1.9</a>),
+and every QOU structure—contact form, Reeb field, Levi form, substrate
+parameter, <span class="math inline">\(q\)</span>-deformed operators—is
+determined by the spacetime coordinate <span class="math inline">\(z =
+x_0/x_1\)</span> and the chiral coordinates <span
+class="math inline">\((x_2, x_3, x_4)\)</span>.</em></p>
+</div>
+
+<div id="rem:lagrange-resolvents" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L111" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 7.4</strong> (<a class="defn-link" href="#rem:lagrange-resolvents">Lagrange resolvents and spectral form</a>).
 <em>Let <span class="math inline">\(\zeta=e^{2\pi i/5}\)</span>. Apply
 the discrete Fourier transform to the coordinates <span
 class="math inline">\(x_j\)</span> of Bring’s surface
@@ -2136,9 +2285,9 @@ rotation <span
 class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>.</em></p>
 </div>
 
-<div id="rem:braid-group-action" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L62" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:braid-group-action" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L138" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.4</strong> (<a class="defn-link" href="#rem:braid-group-action">Braid-group action on the resolvents</a>).
+<p><strong>Remark 7.5</strong> (<a class="defn-link" href="#rem:braid-group-action">Braid-group action on the resolvents</a>).
 <em>The symmetric group <span class="math inline">\(S_5\)</span> acts on
 Bring’s surface
 (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">8.11</a>)
@@ -2149,7 +2298,7 @@ class="math inline">\(4\)</span>. Three distinguished families of <span
 class="math inline">\(S_3\)</span> subgroups govern the interplay
 between the base coordinates <span class="math inline">\(x_j\)</span>
 and the spectral resolvents <span class="math inline">\(w_k\)</span>
-(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.3</a>).
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>).
 We describe each in terms of the braid group
 (Definition <a href="#def:braid-group" data-reference-type="ref" data-reference="def:braid-group">6.1</a>),
 the resolvent coordinates, and the <span
@@ -2245,12 +2394,12 @@ class="math inline">\(S_5\)</span> identified in
 Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">8.10</a>.</em></p>
 </div>
 
-<div id="prop:chiral-elliptic" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L150" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:chiral-elliptic" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L226" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Proposition 7.5</strong> (<a class="defn-link" href="#prop:chiral-elliptic">Chiral fibre as an elliptic curve</a>).
+<p><strong>Proposition 7.6</strong> (<a class="defn-link" href="#prop:chiral-elliptic">Chiral fibre as an elliptic curve</a>).
 <em>Let <span class="math inline">\(z=x_0/x_1\in\mathbb{CP}^1\)</span>
 be the projective spacetime ratio
-(Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">7.4</a><span class="upright">(i)</span>).
+(Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">7.5</a><span class="upright">(i)</span>).
 Substituting the constraint <span
 class="math inline">\(x_0+x_1=C\)</span> and eliminating <span
 class="math inline">\(x_0,x_1\)</span> in favour of <span
@@ -2291,9 +2440,9 @@ class="math inline">\(z\)</span> whose roots give the singular
 fibres. ◻</p>
 </div>
 
-<div id="rem:t-duality-elliptic" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L178" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:t-duality-elliptic" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L254" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.6</strong> (Self-duality of the chiral elliptic
+<p><strong>Remark 7.7</strong> (Self-duality of the chiral elliptic
 curve). <em>The
 cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
 is symmetric under the exchange <span
@@ -2333,9 +2482,9 @@ class="math inline">\(j(E_z)=-1728\cdot 64\,p(z)^3/\Delta(z)\)</span>
 degenerates.</em></p>
 </div>
 
-<div id="rem:chiral-bundles" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L215" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:chiral-bundles" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L291" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.7</strong> (Chiral space as spectral curve and
+<p><strong>Remark 7.8</strong> (Chiral space as spectral curve and
 spinor bundle). <em>The spacetime–chiral decomposition of Bring’s
 surface maps naturally onto three classical bundle structures over the
 <span class="math inline">\(\mathbb{CP}^1\)</span> base <span
@@ -2348,7 +2497,7 @@ curve</em> <span class="math inline">\(\Sigma\subset
 T^{*}\mathbb{CP}^1\)</span>: the base coordinate <span
 class="math inline">\(z\)</span> parametrises spacetime position, and
 the three roots <span class="math inline">\(X_1,X_2,X_3\)</span> of
-Proposition <a href="#prop:chiral-elliptic" data-reference-type="ref" data-reference="prop:chiral-elliptic">7.5</a>
+Proposition <a href="#prop:chiral-elliptic" data-reference-type="ref" data-reference="prop:chiral-elliptic">7.6</a>
 are eigenvalues of a Higgs-like field <span
 class="math inline">\(\Phi\)</span> on the base. The six singular fibres
 (where the discriminant <span class="math inline">\(\Delta(z)\)</span>
@@ -2357,7 +2506,7 @@ differential <span class="math inline">\(dX\)</span> degenerates in the
 cotangent fibre.</em></p>
 <p><em><strong>Spinor bundle.</strong> The spectral modes <span
 class="math inline">\(w_1,\dots,w_4\)</span>
-(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.3</a>)
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>)
 live in a rank-<span class="math inline">\(2\)</span> complex vector
 bundle over <span class="math inline">\(\mathbb{CP}^1\)</span>. The
 chiral doublet <span class="math inline">\(\Psi_L=(w_1,w_2)^T\)</span>
@@ -2385,14 +2534,14 @@ to the principal <span
 class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
 class="math inline">\(P\)</span>. The T-duality involution <span
 class="math inline">\(\iota\colon X\leftrightarrow z\)</span>
-(Remark <a href="#rem:t-duality-elliptic" data-reference-type="ref" data-reference="rem:t-duality-elliptic">7.6</a>)
+(Remark <a href="#rem:t-duality-elliptic" data-reference-type="ref" data-reference="rem:t-duality-elliptic">7.7</a>)
 interchanges the fibre and base of the adjoint bundle, exchanging
 spectral eigenvalues with spacetime coordinates.</em></p>
 </div>
 
-<div id="rem:brings-smoothness" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L255" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:brings-smoothness" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L331" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.8</strong> (Smoothness of the Bring surface and
+<p><strong>Remark 7.9</strong> (Smoothness of the Bring surface and
 resolution of spacetime defects). <em>The Bring surface <span
 class="math inline">\(\mathcal{S}\)</span>
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">7.2</a>)
@@ -2400,7 +2549,7 @@ is a <em>smooth</em> algebraic variety: the three power-sum constraints
 are transverse in <span class="math inline">\(\mathbb{P}^4\)</span>, so
 their intersection carries no singular points. The six topological
 defects identified in
-Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">7.7</a>—where
+Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">7.8</a>—where
 the discriminant <span class="math inline">\(\Delta(z)\)</span> vanishes
 and two chiral sheets <span class="math inline">\(X_i,X_j\)</span>
 collide—are singularities of the <em>projection</em> <span
@@ -2424,10 +2573,10 @@ required.</em></p>
 class="math inline">\(w_k\)</span> coordinates.</strong> The DFT mixes
 all five <span class="math inline">\(x_j\)</span> into every resolvent
 <span class="math inline">\(w_k\)</span>
-(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.3</a>),
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>),
 so no single <span class="math inline">\(w_k\)</span> vanishes at a
 branch point. The Briggs–Klein chart
-(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">7.9</a>)
+(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">7.10</a>)
 remains a smooth coordinate system throughout <span
 class="math inline">\(0&lt;r&lt;\infty\)</span>: the radial
 parameter <span class="math inline">\(r=\lvert w_1\rvert^2\)</span> is a
@@ -2440,9 +2589,9 @@ are artefacts of projecting away the internal degrees of freedom that
 the <span class="math inline">\(w_k\)</span> retain.</em></p>
 </div>
 
-<div id="def:briggs-klein-chart" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L294" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:briggs-klein-chart" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L370" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 7.9</strong> (Briggs–Klein affine chart). <em>Let
+<p><strong>Definition 7.10</strong> (Briggs–Klein affine chart). <em>Let
 <span class="math inline">\(r=\lvert w_1\rvert^2\)</span> denote the
 squared modulus of the first resolvent coordinate on Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">7.2</a>).
@@ -2457,11 +2606,11 @@ coordinate <span class="math inline">\(r\)</span> is <span
 class="math inline">\(C_5\)</span>-invariant.</em></p>
 </div>
 
-<div id="rem:radial-projection" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L306" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:radial-projection" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L382" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.10</strong> (Radial projection of Bring’s surface).
+<p><strong>Remark 7.11</strong> (Radial projection of Bring’s surface).
 <em>Restricting a Briggs–Klein affine chart
-(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">7.9</a>)
+(Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">7.10</a>)
 to the interval <span class="math inline">\(r\in(0,1)\)</span> and
 projecting Bring’s surface onto this radial coordinate yields a
 fibration over the base manifold <span class="math inline">\(M\)</span>
@@ -2483,9 +2632,9 @@ bundle <span class="math inline">\(E=E_0\)</span>: every cell is flat,
 reflecting the absence of torsion on the total space.</em></p>
 </div>
 
-<div id="rem:four-colourability" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L361" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:four-colourability" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L437" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.11</strong> (Four-colourability of Bring’s surface).
+<p><strong>Remark 7.12</strong> (Four-colourability of Bring’s surface).
 <em>By the Heawood bound, an orientable surface of genus <span
 class="math inline">\(g\)</span> has chromatic number at most <span
 class="math inline">\(\lfloor(7+\sqrt{1+48g})/2\rfloor\)</span>. For
@@ -2500,9 +2649,9 @@ genus-<span class="math inline">\(4\)</span> surface would
 require.</em></p>
 </div>
 
-<div id="rem:four-colour-theorem" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L373" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:four-colour-theorem" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L449" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.12</strong> (The four-colour theorem and Bring’s
+<p><strong>Remark 7.13</strong> (The four-colour theorem and Bring’s
 surface). <em>The classical four-colour theorem asserts that every
 planar graph (equivalently, every graph embeddable in <span
 class="math inline">\(S^2\)</span>) is four-colourable. For higher-genus
@@ -2515,14 +2664,14 @@ class="math inline">\(4\)</span> — is a reflection of the rigidity
 imposed by its <span class="math inline">\(S_5\)</span> symmetry. In the
 language of <span id="chap:descartes"></span>the Descartes universe, the trivial bundle <span
 class="math inline">\(E=E_0\)</span>
-(Remark <a href="#rem:radial-projection" data-reference-type="ref" data-reference="rem:radial-projection">7.10</a>)
+(Remark <a href="#rem:radial-projection" data-reference-type="ref" data-reference="rem:radial-projection">7.11</a>)
 carries no torsion, and the resulting flatness of the tessellation
 forces the same chromatic economy as the sphere.</em></p>
 </div>
 
-<div id="rem:cyclotomic-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L388" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:cyclotomic-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L464" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.13</strong> (Cyclotomic reduction and <span
+<p><strong>Remark 7.14</strong> (Cyclotomic reduction and <span
 class="math inline">\(C_{\mathfrak{p}}\)</span> preservation). <em>Let
 <span class="math inline">\(\mathfrak{p}\)</span> be a prime (not to be
 confused with a point <span class="math inline">\(p\in M\)</span>).
@@ -2550,7 +2699,7 @@ because <span class="math inline">\(\sigma\)</span> acts by
 multiplication by <span
 class="math inline">\(\zeta_{\mathfrak{p}}^{-k}\)</span> in the
 resolvent basis
-(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.3</a>),
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>),
 and <span
 class="math inline">\(\zeta_{\mathfrak{p}}^{-k}\in\mathbb{Z}_{\zeta_{\mathfrak{p}}}\)</span>.
 This arithmetic compatibility between the cyclic symmetry and the
@@ -2559,9 +2708,9 @@ class="math inline">\(C_5\)</span> action to finite
 characteristic.</em></p>
 </div>
 
-<div id="def:quaternionic-spectral-resolvents" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L415" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quaternionic-spectral-resolvents" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L491" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 7.14</strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
+<p><strong>Definition 7.15</strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
 <em>Let <span class="math inline">\(\mathcal{S}\)</span> denote the
 Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">7.2</a>).
@@ -2612,12 +2761,12 @@ class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
 (Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
 </div>
 
-<div id="rem:omega-constraints" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L461" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:omega-constraints" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L537" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.15</strong> (Algebraic constraints in the <span
+<p><strong>Remark 7.16</strong> (Algebraic constraints in the <span
 class="math inline">\(\omega_k\)</span> basis). <em>In the spectral
 resolvent basis
-(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">7.14</a>)
+(Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">7.15</a>)
 the Bring’s surface equations take the following form:</em></p>
 <ul>
 <li><p><em><em>Barycentric:</em> <span
@@ -2625,9 +2774,11 @@ class="math inline">\(\omega_0=0\)</span>.</em></p></li>
 <li><p><em><em>Quadric (<span class="math inline">\(\mathbb{H}\)</span>
 condition):</em> <span
 class="math inline">\(\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_3=0\)</span>.
-This preserves the self-duality <span
-class="math inline">\(F_A=*F_A\)</span> and enforces a Minkowski-like
-balance between the space-like and time-like modes.</em></p></li>
+This preserves the horizontal self-duality <span
+class="math inline">\(F_A|_H={*_H}F_A|_H\)</span>
+(Proposition <a href="#prop:self-dual-curvature" data-reference-type="ref" data-reference="prop:self-dual-curvature">1.5</a>)
+and enforces a Minkowski-like balance between the space-like and
+time-like modes.</em></p></li>
 <li><p><em><em>Cubic (phase locking):</em> a quintic resonance condition
 that locks the expansion of <span class="math inline">\(\ln_q\)</span>
 to <span class="math inline">\(\exp_q\)</span>, preserving the <span
@@ -2636,12 +2787,12 @@ class="math inline">\(C_5\)</span> symmetry and the <a class="defn-link" href="#
 </ul>
 </div>
 
-<div id="rem:spectral-dynamics" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L478" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:spectral-dynamics" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L555" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.16</strong> (Spectral dynamics and the <span
+<p><strong>Remark 7.17</strong> (Spectral dynamics and the <span
 class="math inline">\(\mathrm{Sp}(1)\)</span> action). <em>The growth
 profiles in
-Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">7.14</a>
+Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">7.15</a>
 separate the space-like and time-like sectors of the Bring’s
 surface:</em></p>
 <ul>
@@ -2692,9 +2843,9 @@ and classical freeze (<span class="math inline">\(\theta\to 0\)</span>)
 as <span class="math inline">\(r\to\infty\)</span>.</em></p>
 </div>
 
-<div id="rem:primordial-vortex" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L518" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:primordial-vortex" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L595" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.17</strong> (Primordial vortex and the deep-quantum
+<p><strong>Remark 7.18</strong> (Primordial vortex and the deep-quantum
 limit). <em>As <span class="math inline">\(r\to 0\)</span> the spectral
 resolvents converge toward the <em>primordial vortex</em>:</em></p>
 <ul>
@@ -2716,9 +2867,9 @@ turning the <span class="math inline">\(\mathrm{SU}(2)\)</span> holonomy
 into a localised topological charge.</em></p>
 </div>
 
-<div id="rem:geometric-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L537" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:geometric-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L614" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.18</strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
+<p><strong>Remark 7.19</strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
 <em>The Levi form <span class="math inline">\(L\)</span>
 (Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">1.10</a>)
 must be preserved under the <span
@@ -2728,10 +2879,11 @@ class="math display">\[\lVert\boldsymbol{\omega}&#39;\rVert^2
 =\omega_1\bar{\omega}_1+\omega_2\bar{\omega}_2+\omega_3\bar{\omega}_3,\]</span>
 the quadric
 constraint <a href="#eq:resolvent-quadric" data-reference-type="eqref" data-reference="eq:resolvent-quadric">[eq:resolvent-quadric]</a>
-remains satisfied and the self-duality <span
-class="math inline">\(F_A=*F_A\)</span> is preserved. The mass of a
-stable vortex is recovered as the residue of the interaction between the
-growth profiles: <span class="math display">\[\label{eq:mass-residue}
+remains satisfied and the horizontal self-duality <span
+class="math inline">\(F_A|_H={*_H}F_A|_H\)</span> is preserved. The mass
+of a stable vortex is recovered as the residue of the interaction
+between the growth profiles: <span
+class="math display">\[\label{eq:mass-residue}
 m \;\propto\;
 \oint_{\gamma}
 \lVert\nabla_A q\rVert\cdot
@@ -2746,9 +2898,9 @@ in the <span class="math inline">\(\omega_1\)</span> spatial
 filament.</em></p>
 </div>
 
-<div id="rem:seiberg-witten" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L563" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:seiberg-witten" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L640" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.19</strong> (Geometric resolution and the
+<p><strong>Remark 7.20</strong> (Geometric resolution and the
 Seiberg–Witten differential). <em>The infinite geometric torsion <span
 class="math inline">\(T\)</span> and the six topological defects on the
 <span class="math inline">\(\mathbb{CP}^1\)</span> base <span
@@ -2766,9 +2918,9 @@ class="math display">\[z-z_c\;\sim\;\delta^2,\]</span> proving that the
 spacetime base “bounces” at the defect: the chiral coordinate
 continuously glides through the exceptional divisor and transitions
 between sheets without encountering a singularity
-(cf. Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.8</a>).</em></p>
+(cf. Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.9</a>).</em></p>
 <p><em>In the spectral domain, the Jacobian determinant of the DFT
-(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.3</a>)
+(Remark <a href="#rem:lagrange-resolvents" data-reference-type="ref" data-reference="rem:lagrange-resolvents">7.4</a>)
 is a constant <span
 class="math inline">\(\lvert\det(J)\rvert=1\)</span>, so the global
 volume form never collapses: <span class="math display">\[\Omega \;=\;
@@ -2788,7 +2940,7 @@ class="math display">\[\label{eq:seiberg-witten-differential}
 \lambda_{\mathrm{SW}} \;=\; X\,dz,\]</span> where <span
 class="math inline">\(X\in\{x_2,x_3,x_4\}\)</span> is the internal
 momentum (Higgs-field eigenvalue) defining the spectral curve
-(Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">7.7</a>),
+(Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">7.8</a>),
 and <span class="math inline">\(z\)</span> is the spacetime position.
 The exact physical properties of the topological defects—specifically
 the mass/energy spectrum generating the torsion—are rigorously
@@ -2809,9 +2961,9 @@ is simply the continuous Kodaira monodromy of a globally smooth
 Seiberg–Witten gauge theory.</em></p>
 </div>
 
-<div id="rem:reeb-exceptional-divisor" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L627" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:reeb-exceptional-divisor" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/review-chapter-one-again/chapters/brings-surface.tex#L704" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 7.20</strong> (Reeb vector field on the exceptional
+<p><strong>Remark 7.21</strong> (Reeb vector field on the exceptional
 divisor). <em>The Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
 (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.20</a>)
@@ -2843,7 +2995,7 @@ surface.</em></p>
 <p><em><strong>Exceptional divisor as mixing interface.</strong> Blowing
 up a spacetime defect <span class="math inline">\(z_c\)</span> where
 chiral sheets merge
-(Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.8</a>)
+(Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">7.9</a>)
 replaces the singular point with an exceptional divisor <span
 class="math inline">\(E_c\cong\mathbb{CP}^1\cong S^2\)</span>. This
 sphere acts as the boundary between the macroscopic coordinates <span
@@ -2877,7 +3029,7 @@ longitudinal flow along these handles. The quantum torsion <span
 class="math inline">\(q\)</span> modulates the pitch of this flow: when
 <span class="math inline">\(q\to\infty\)</span> (deep-quantum, Big Bang)
 the spinning is maximal and the Heisenberg uncertainty <span
-class="math inline">\([\hat{X},\hat{P}]_q\to i\)</span>; when <span
+class="math inline">\([\hat{X},\hat{P}]_q\to J\)</span>; when <span
 class="math inline">\(q\to 1\)</span> (heat death) the spinning ceases,
 the Reeb field trivialises, and the topology reduces to a static
 cone.</em></p>
