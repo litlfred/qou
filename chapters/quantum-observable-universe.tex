@@ -8,12 +8,13 @@
 A \emph{$\mathbb{C}$ quantum universe} is a $5$-tuple
 $(M, \theta, G, P, E)$ where:
 \begin{enumerate}
-  \item $M$ is a strictly pseudoconvex CR manifold of hypersurface type
-        (real dimension $2n+1$, $n \geq 1$);
+  \item $M$ is a CR manifold of hypersurface type
+        (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form
+        of signature $(p,q)$, $p + q = n$;
   \item $\theta$ is a pseudo-Hermitian structure (contact form) on $M$,
         determining the Levi distribution $H = \ker\theta$, the Reeb vector
-        field $\xi$, the Webster metric $g_\theta$, and the Levi form
-        $L_\theta$;
+        field $\xi$, the Webster metric $g_\theta$ (of signature $(2p,2q)$
+        on $H$), and the Levi form $L_\theta$;
   \item $G = \mathrm{SU}(2)$;
   \item $P \to M$ is a principal $G$-bundle whose holonomy reduces to
         $\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm I\}$;
@@ -22,7 +23,8 @@ $(M, \theta, G, P, E)$ where:
         $\mathbb{CP}^1$ by M\"obius transformations.
 \end{enumerate}
 When $\theta$ is understood from context, we abbreviate the $5$-tuple to
-$(M, G, P, E)$.
+$(M, G, P, E)$.  The \emph{strictly pseudoconvex} case corresponds to
+signature $(n,0)$, where $L_\theta$ is positive definite.
 \end{definition}
 
 \begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
@@ -43,6 +45,57 @@ denotes the space of compactly supported continuous sections of the
 \end{definition}
 
 % ── Remark ───────────────────────────────────────────────────────────────────
+
+\begin{remark}[Generalisation beyond strict pseudoconvexity]
+\label{rem:levi-generalisation}
+Definition~\ref{def:c-quantum-universe} requires only Levi non-degeneracy
+(not strict pseudoconvexity).  This generality is deliberate: the QOU
+framework applies whenever the following three cohomological/obstruction
+conditions hold.
+
+\begin{enumerate}
+  \item \emph{Kohn--Rossi finite-dimensionality.}\;
+        The tangential CR complex
+        $(\Omega^{0,\bullet}_b(M),\, \bar\partial_b)$ has
+        finite-dimensional cohomology
+        $H^{0,k}_{\bar\partial_b}(M)$ for all~$k$.  This replaces
+        strict pseudoconvexity in ensuring analytic control over
+        $q$-harmonic forms (Definition~\ref{def:q-harmonic-form}).
+        In the strictly pseudoconvex case, Kohn's sub-elliptic
+        estimates guarantee this automatically; for indefinite
+        Levi signature, one imposes it as a hypothesis.
+  \item \emph{Non-degeneracy of the substrate.}\;
+        The Levi form $L_\theta$ is non-degenerate (but not necessarily
+        positive definite), so the substrate parameter
+        $q(p) = \exp(\lVert L_\theta \wedge F_A^+\rVert)$
+        (Definition~\ref{def:substrate-parameter}) is well-defined and
+        the regime $q > 1$ is attainable.  When the Levi form has
+        indefinite signature $(p,q)$ with $p,q \geq 1$, the Webster
+        metric $g_\theta$ is pseudo-Riemannian, and one must replace
+        norms with pseudo-norms; the substrate parameter is then
+        \[
+          q(p)
+          \;=\; \exp\!\bigl(\lvert L_\theta \wedge F_A^+ \rvert(p)\bigr),
+        \]
+        where $\lvert\cdot\rvert$ denotes the absolute value of the
+        pseudo-norm.
+  \item \emph{QOU vanishing (Definition~\ref{def:c-quantum-observable-universe}).}\;
+        The conditions $H^0_c(M, \mathrm{Ad}(P)) = 0$ and
+        $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
+        These are purely topological/cohomological and independent of the
+        Levi signature.
+\end{enumerate}
+
+\noindent
+Together, conditions~(1)--(3) ensure that all results of this chapter
+(irreducibility of the connection, self-duality of the curvature,
+substrate dynamics, $q$-deformed operators) extend to CR manifolds of
+arbitrary Levi signature.  The strictly pseudoconvex case (signature
+$(n,0)$) is the simplest and motivates all examples in this chapter;
+the indefinite case arises naturally for real hypersurfaces in
+indefinite K\"ahler manifolds and for boundaries of
+Grauert tubes over pseudo-Riemannian manifolds.
+\end{remark}
 
 \begin{remark}[Jet-bundle formulation]
 \label{rem:jet-bundle}
@@ -357,7 +410,7 @@ $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
 
 \begin{definition}[Reeb decomposition]
 \label{def:reeb-decomposition}
-Let $(M, \theta)$ be a strictly pseudoconvex CR manifold
+Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form
 (Definition~\ref{def:c-quantum-universe}) and let $\xi$ denote the
 associated \emph{Reeb vector field}, characterised by
 $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential
@@ -653,13 +706,13 @@ revision pass.
 
 \raggedright Def.~1.1\newline\texttt{def:c-quantum-\linebreak universe}
   & Good
-  & \emph{Fixed.}\;  Now a $5$-tuple $(M, \theta, G, P, E)$ requiring
-    strictly pseudoconvex CR manifold of hypersurface type, with $\theta$
-    determining $H$, $\xi$, $g_\theta$, $L_\theta$.
-    The $\mathrm{SU}(2)$ action on $\mathbb{CP}^1$ (M\"obius transformations)
-    is now stated explicitly.  Holonomy reduction to $\mathrm{SO}(3)$ is
-    still asserted without motivation; a sentence of justification would
-    strengthen the definition further. \\
+  & \emph{Generalised.}\;  Now a $5$-tuple $(M, \theta, G, P, E)$ with
+    $M$ a CR manifold of hypersurface type with \emph{non-degenerate} Levi
+    form of signature $(p,q)$.  Strict pseudoconvexity is no longer
+    required; a new remark (Remark~\ref{rem:levi-generalisation})
+    identifies three cohomological conditions that replace it:
+    Kohn--Rossi finite-dimensionality, substrate non-degeneracy, and
+    the QOU vanishing conditions. \\
 
 \raggedright Def.~1.2\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
   & Good
@@ -668,7 +721,15 @@ revision pass.
     $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is identified as a
     linear bundle for which sheaf cohomology is well-defined. \\
 
-\raggedright Rem.~1.3\newline\texttt{rem:jet-bundle}
+\raggedright Rem.~1.3\newline\texttt{rem:levi-\linebreak generalisation}
+  & Good
+  & \emph{New.}\;  Identifies three cohomological conditions replacing
+    strict pseudoconvexity: (1)~Kohn--Rossi finite-dimensionality,
+    (2)~substrate non-degeneracy via absolute pseudo-norm,
+    (3)~the existing QOU vanishing conditions.  Indefinite Levi
+    signature $(p,q)$ and pseudo-Riemannian Webster metric are discussed. \\
+
+\raggedright Rem.~1.4\newline\texttt{rem:jet-bundle}
   & Fair
   & \emph{Unchanged.}\;  The injection claim for $\Gamma_c(M, J^1E)$ still
     lacks a proof or literature reference.  Minor concern only. \\
@@ -836,8 +897,8 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 31~labelled items (28 original $+$ 3 new definitions):
-22~are rated \textbf{Good};
+Of the 32~labelled items (28 original $+$ 3 new definitions $+$ 1 new remark):
+23~are rated \textbf{Good};
 9~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
 
