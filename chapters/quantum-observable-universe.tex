@@ -3,9 +3,81 @@
 
 % ── Definitions ──────────────────────────────────────────────────────────────
 
-\begin{definition}[$\mathbb{C}$ Quantum Universe]
+\begin{definition}[Quantum Universe]
+\label{def:quantum-universe}
+Let $k$ be a field.  A \emph{quantum universe over~$k$} is a quadruple
+$(\mathcal{C}, A, \omega, q)$ where:
+\begin{enumerate}
+  \item $(\mathcal{C}, \otimes, \mathbf{1})$ is a $k$-linear rigid
+        monoidal category;
+  \item $A$ is a \emph{Frobenius--Hopf object} in $\mathcal{C}$: an object
+        equipped with a Hopf structure
+        $(\mu, \eta, \Delta, \varepsilon, S)$ and a Frobenius form
+        $\lambda \colon A \to \mathbf{1}$ such that the pairing
+        $A \otimes A \xrightarrow{\mu} A \xrightarrow{\lambda} \mathbf{1}$
+        is non-degenerate and the Frobenius relation
+        $(\mu \otimes \mathrm{id}) \circ
+        (\mathrm{id} \otimes \Delta_\mu)
+        = \Delta_\mu \circ \mu$ holds, where $\Delta_\mu$ is the
+        comultiplication dual to $\mu$ under the pairing;
+  \item $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$ is a fibre functor
+        (exact faithful $k$-linear monoidal functor);
+  \item $q \in k^\times$ is a deformation parameter (invertibility of~$q$
+        is required because the Hopf-algebra relations defining~$A$
+        involve~$q^{-1}$; at $q = 0$ the antipode~$S$ degenerates and
+        the Hopf structure collapses); the Hopf structure on
+        $A$ depends on~$q$, and $q = 1$ recovers the classical
+        (cocommutative) case.
+\end{enumerate}
+The \emph{quantum gauge group} is the affine $k$-group scheme
+$G_q = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
+Tannaka--Krein duality.
+\end{definition}
+
+\begin{definition}[Quantum Observable Universe]
+\label{def:quantum-observable-universe}
+A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$k$
+(Definition~\ref{def:quantum-universe}) is \emph{observable} if:
+\begin{enumerate}
+  \item the Frobenius form $\lambda$ on $A$ is non-degenerate; and
+  \item $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$,
+        where $\mathrm{Ad}(A)$ is the adjoint object
+        ($A$ with the conjugation coaction
+        $a \mapsto \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Base-field independence]
+\label{rem:base-field-independence}
+Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
+are formulated over an arbitrary field~$k$.  The Frobenius--Hopf axioms
+replace the analytic vanishing conditions of the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
+non-degeneracy condition on the Frobenius form.  Concrete realisations
+include:
+\begin{itemize}
+  \item $k = \mathbb{C}$: the classical setting of CR geometry and contact
+        manifolds (Example~\ref{def:c-quantum-universe});
+  \item $k = \mathbb{Q}_\pp$ (a $\pp$-adic field): the gauge datum becomes
+        an $F$-isocrystal with Frobenius lift, and integrability is controlled
+        by the $\pp$-adic Frobenius endomorphism
+        (Example~\ref{ex:p-adic-realisation},
+        Chapter~\ref{chap:p-adic});
+  \item $k = \mathbb{F}_\pp$ (a finite field): the monoidal category is
+        the category of finite-dimensional representations of a quantum group
+        over~$\mathbb{F}_\pp$
+        (Example~\ref{ex:finite-field-realisation}).
+\end{itemize}
+The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$
+is well-defined over any~$k$.
+\end{remark}
+
+% ── ℂ realisation ─────────────────────────────────────────────────────────────
+
+\begin{example}[$\mathbb{C}$ realisation: quantum universe]
 \label{def:c-quantum-universe}
-A \emph{$\mathbb{C}$ quantum universe} is a $5$-tuple
+Over $k = \mathbb{C}$, a quantum universe
+(Definition~\ref{def:quantum-universe}) is realised by a $5$-tuple
 $(M, \theta, G, P, E)$ where:
 \begin{enumerate}
   \item $M$ is a CR manifold of hypersurface type
@@ -22,7 +94,14 @@ $(M, \theta, G, P, E)$ where:
         \emph{state bundle}, where $\mathrm{SU}(2)$ acts on
         $\mathbb{CP}^1$ by M\"obius transformations.
 \end{enumerate}
-\end{definition}
+The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
+(the representation category of the quantum group at the substrate
+parameter~$q(p)$, Definition~\ref{def:substrate-parameter}), the
+Frobenius--Hopf object is
+$A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
+Haar state, and the fibre functor $\omega$ is the forgetful functor
+to $\mathrm{Vect}_{\mathbb{C}}$.
+\end{example}
 
 \begin{remark}[Notation and special cases]
 \label{rem:notation-special-cases}
@@ -31,22 +110,31 @@ $(M, G, P, E)$.  The \emph{strictly pseudoconvex} case corresponds to
 signature $(n,0)$, where $L_\theta$ is positive definite.
 \end{remark}
 
-\begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
+\begin{example}[$\mathbb{C}$ realisation: quantum observable universe]
 \label{def:c-quantum-observable-universe}
 A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
 universe $(M, \theta, G, P, E)$
-(Definition~\ref{def:c-quantum-universe}) that satisfies
-the following vanishing conditions:
+(Example~\ref{def:c-quantum-universe}) that satisfies
+the vanishing conditions
 \[
   H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   \Gamma_c(M, E) = 0.
 \]
-\end{definition}
+These analytic conditions are the $\mathbb{C}$ realisation of the
+categorical observability conditions of
+Definition~\ref{def:quantum-observable-universe}: the Frobenius
+non-degeneracy of the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$,
+combined with irreducibility of the instanton connection
+(Lemma~\ref{lem:irreducible-connection}), forces
+$H^0(M, \mathrm{Ad}(P)) = 0$; the section-vanishing
+$\Gamma_c(M, E) = 0$ follows from the non-existence of
+$A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
+\end{example}
 
 \begin{remark}[Vanishing conditions: explication]
 \label{rem:vanishing-explication}
-In Definition~\ref{def:c-quantum-observable-universe},
+In Example~\ref{def:c-quantum-observable-universe},
 $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
 (a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
 denotes the space of compactly supported continuous sections of the
@@ -60,7 +148,7 @@ infinitesimal gauge symmetry.
 
 \begin{remark}[Generalisation beyond strict pseudoconvexity]
 \label{rem:levi-generalisation}
-Definition~\ref{def:c-quantum-universe} requires only Levi non-degeneracy
+Example~\ref{def:c-quantum-universe} requires only Levi non-degeneracy
 (not strict pseudoconvexity).  This generality is deliberate: the QOU
 framework applies whenever the following three cohomological/obstruction
 conditions hold.
@@ -87,7 +175,7 @@ conditions hold.
         $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
         the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
         one takes the absolute value to ensure $q \geq 1$.
-  \item \emph{QOU vanishing (Definition~\ref{def:c-quantum-observable-universe}).}\;
+  \item \emph{QOU vanishing (Example~\ref{def:c-quantum-observable-universe}).}\;
         The conditions $H^0(M, \mathrm{Ad}(P)) = 0$ and
         $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
         These are purely topological/cohomological and independent of the
@@ -107,7 +195,7 @@ Grauert tubes over pseudo-Riemannian manifolds.
 
 \begin{remark}[Jet-bundle formulation]
 \label{rem:jet-bundle}
-The conditions in Definition~\ref{def:c-quantum-observable-universe} admit a
+The conditions in Example~\ref{def:c-quantum-observable-universe} admit a
 natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
 $\Gamma_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
 $E$ exists, while $H^0(M, \mathrm{Ad}(P)) = 0$ eliminates \emph{all}
@@ -162,7 +250,7 @@ Webster metric $g_\theta$ and the complex structure $J$:
 \end{proposition}
 
 \begin{proof}
-The contact form $\theta$ (Definition~\ref{def:c-quantum-universe}) splits
+The contact form $\theta$ (Example~\ref{def:c-quantum-universe}) splits
 the tangent bundle as $TM = H \oplus \mathbb{R}\xi$, where
 $H = \ker\theta$ has real dimension $4$.  The curvature $F_A$ is an
 $\mathrm{Ad}(P)$-valued $2$-form on $M$.  By the Reeb decomposition
@@ -203,7 +291,7 @@ restricted to $M$ yields a natural principal $\mathrm{SU}(2)$-bundle
 $P \to M$.  The associated state bundle $E = P \times_G \mathbb{CP}^1$
 yields a $\mathbb{C}$ quantum observable universe $(M, \theta, G, P, E)$
 when the vanishing conditions of
-Definition~\ref{def:c-quantum-observable-universe} are satisfied.  (For
+Example~\ref{def:c-quantum-observable-universe} are satisfied.  (For
 higher-dimensional Calabi--Yau manifolds with holonomy $\mathrm{SU}(n)$,
 $n > 2$, a reduction to $\mathrm{SU}(2)$ must be supplied separately.)
 \end{example}
@@ -249,10 +337,12 @@ universe whose exceptional divisors support the $q$-deformed Reeb flow
 (Definition~\ref{def:q-reeb-flow}).
 \end{example}
 
-\begin{remark}[Examples as instances of the generalised framework]
+\begin{remark}[$\mathbb{C}$ examples as instances of the generalised framework]
 \label{rem:examples-unified}
-Each of the preceding examples is an instance of the generalised Levi
-non-degenerate framework of Definition~\ref{def:c-quantum-universe} and
+Each of the preceding $\mathbb{C}$ examples is an instance of the
+base-field-independent Definition~\ref{def:quantum-universe}, realised
+over $k = \mathbb{C}$ via the Levi non-degenerate framework of
+Example~\ref{def:c-quantum-universe} and
 Remark~\ref{rem:levi-generalisation}.
 \begin{itemize}
   \item \emph{CY hypersurfaces} (Example~\ref{ex:calabi-yau}).  A smooth
@@ -281,6 +371,46 @@ of a Grauert tube over a pseudo-Riemannian manifold, yields a CR manifold
 with indefinite Levi signature satisfying these conditions --- extending
 the QOU framework beyond the strictly pseudoconvex setting.
 \end{remark}
+
+\begin{example}[$\mathbb{Q}_\pp$ realisation]
+\label{ex:p-adic-realisation}
+Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
+$F$-isocrystals over~$\mathbb{Q}_\pp$ (modules over the Dieudonn\'e ring
+$k\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional over~$k$).
+This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
+The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
+to~$\mathbb{Q}_\pp$ provides a Frobenius--Hopf object~$A$, where the
+Frobenius form~$\lambda$ arises from the $\pp$-adic Haar measure.
+The Frobenius endomorphism~$\varphi$ on $\mathcal{C}$ plays the
+r\^ole of the Levi-form contraction: the substrate parameter is
+$q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
+Definition~\ref{def:substrate-parameter}).  The fibre functor~$\omega$
+is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
+The observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
+irreducibility of the associated $F$-crystal, generalising
+Lemma~\ref{lem:irreducible-connection} to the $\pp$-adic setting.
+The full $\pp$-adic framework is developed in Chapter~\ref{chap:p-adic}.
+\end{example}
+
+\begin{example}[$\mathbb{F}_\pp$ realisation]
+\label{ex:finite-field-realisation}
+Let $k = \mathbb{F}_\pp$ and let $\mathcal{C} =
+\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
+finite-dimensional representations of the quantum group
+$\mathrm{SU}_q(2)$ over~$\mathbb{F}_\pp$, where $q \in
+\mathbb{F}_\pp^{\times}$.  When $q$ is a primitive $\ell$-th root of
+unity in $\overline{\mathbb{F}}_\pp$ (with $\ell$ coprime to~$\pp$),
+$\mathcal{C}$ is a fusion category with finitely many simple objects.
+The Frobenius--Hopf object~$A$ is the regular representation, and
+the fibre functor~$\omega$ is the forgetful functor to
+$\mathrm{Vect}_{\mathbb{F}_\pp}$.  The non-degeneracy of the
+Frobenius form~$\lambda$ follows from the semisimplicity of the fusion
+category, and the observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$
+(since the trivial representation does not appear as a summand of the
+adjoint representation for generic~$q$).
+\end{example}
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
@@ -643,7 +773,7 @@ encoding the self-dual curvature, with the simplicity constraint
 selecting the physical (instanton) sector.
 \end{remark}
 
-\begin{remark}[Simplification in a Frobenius category]
+\begin{remark}[Frobenius structure of the $\mathbb{C}$ gauge algebra]
 \label{rem:frobenius-simplification}
 The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural
 \emph{Frobenius structure}: the Haar state
@@ -680,23 +810,17 @@ The non-degeneracy of $h_q$ is expressed by requiring the composite
 to be a perfect pairing, i.e.\ the induced map
 $\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
 
-Working in a monoidal category in which the gauge datum carries
-Frobenius--Hopf structure yields a simplified reformulation of the
-QOU definition.  A \emph{Frobenius--Hopf object} in a monoidal
-category~$\mathcal{C}$ is an object $A$ equipped with:
-\begin{enumerate}
-  \item a Hopf structure
-        $(\mu, \eta, \Delta, \varepsilon, S)$; and
-  \item a Frobenius form $\lambda \colon A \to \mathbf{1}$ (the
-        categorical analogue of the Haar state) making the
-        pairing~\eqref{eq:frobenius-nondegen} non-degenerate and
-        satisfying the Frobenius relation~\eqref{eq:frobenius-relation}.
-\end{enumerate}
-In this language, the $5$-tuple
-$(M, \theta, G, P, E)$ of Definition~\ref{def:c-quantum-universe}
-and the two vanishing conditions of
-Definition~\ref{def:c-quantum-observable-universe} simplify to
-a triple:
+This Frobenius--Hopf structure on $\mathcal{O}_q(\mathrm{SU}(2))$ is
+precisely the datum required by the general
+Definition~\ref{def:quantum-universe}: the Haar state $h_q$ realises
+the Frobenius form $\lambda \colon A \to \mathbf{1}$, and the
+non-degeneracy~\eqref{eq:frobenius-nondegen} is the $\mathbb{C}$
+instance of condition~(1) in
+Definition~\ref{def:quantum-observable-universe}.
+In the $\mathbb{C}$ realisation (Example~\ref{def:c-quantum-universe}),
+the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
+conditions of Example~\ref{def:c-quantum-observable-universe}
+reduce to a triple:
 \begin{enumerate}
   \item a CR manifold $(M, \theta)$ of hypersurface type with
         non-degenerate Levi form;
@@ -731,13 +855,7 @@ $H^0(M, \mathrm{Ad}(A)) = 0$.  The section-vanishing condition
 $\Gamma_c(M, E) = 0$ follows similarly from the non-existence of
 $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
 
-This categorical reformulation trades the two analytic vanishing
-conditions of Definition~\ref{def:c-quantum-observable-universe}
-for a single algebraic non-degeneracy condition on the Frobenius form,
-making the definition more uniform and base-field independent ---
-consistent with the Tannakian perspective of
-Remark~\ref{rem:q-torsion-existence}.
-Note, however, that the horizontal distribution $H = \ker\theta$ itself
+Note that the horizontal distribution $H = \ker\theta$ itself
 \emph{fails} to carry a Frobenius structure (as discussed in
 Remark~\ref{rem:q-torsion-existence}); it is the gauge algebra, not the
 distribution, that is Frobenius.
@@ -869,7 +987,7 @@ $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
 \begin{definition}[Reeb decomposition]
 \label{def:reeb-decomposition}
 Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form
-(Definition~\ref{def:c-quantum-universe}) and let $\xi$ denote the
+(Example~\ref{def:c-quantum-universe}) and let $\xi$ denote the
 associated \emph{Reeb vector field}, characterised by
 $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential
 $k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as
@@ -1136,7 +1254,7 @@ dimension bound on integral submanifolds and gives $q$-torsion leaves
 their rigidity.
 
 \medskip\noindent\textit{Beyond~$\mathbb{C}$: the natural categorical setting.}\;
-The framework of Definition~\ref{def:c-quantum-universe} is formulated
+The framework of Example~\ref{def:c-quantum-universe} is formulated
 over~$\mathbb{C}$, but the categorical Frobenius condition suggests
 a natural generalisation.  Over a $\pp$-adic base field~$\mathbb{C}_\pp$,
 the classical Frobenius integrability theorem is replaced by the
@@ -1148,12 +1266,13 @@ More generally, over an arbitrary base field~$k$, the correct setting is
 a \emph{Tannakian category} $\mathcal{C}$ over~$k$ equipped with a
 fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$; the
 quantum gauge group is then reconstructed via Tannaka--Krein duality
-as $\mathrm{Aut}^\otimes(\omega)$.  The QOU definition
-(Definition~\ref{def:c-quantum-observable-universe}) extends to this
-setting by replacing the Hopf algebra
-$\mathcal{O}_q(\mathrm{SU}(2))$ with its Tannakian reconstruction
-over~$k$, and the Levi form with the appropriate non-degeneracy
-condition on the crystalline or \'etale site.  This field-independence
+as $\mathrm{Aut}^\otimes(\omega)$.  This is precisely the setting of the
+base-field-independent Definitions~\ref{def:quantum-universe}
+and~\ref{def:quantum-observable-universe}: the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}) is one instance, and the
+$\pp$-adic and finite-field realisations
+(Examples~\ref{ex:p-adic-realisation} and~\ref{ex:finite-field-realisation})
+are others.  This field-independence
 is the deeper reason why approach~(1) (Hopf-algebra bundles) in
 Remark~\ref{rem:quantum-gauge-group-category} has limited impact on the
 rest of the paper: all later constructions factor through the
@@ -1361,38 +1480,49 @@ revision pass.
 \textbf{Item} & \textbf{Rating} & \textbf{Concerns / Status} \\
 \hline
 
-\raggedright Def.~1.1\newline\texttt{def:c-quantum-\linebreak universe}
+\raggedright Def.~1.1\newline\texttt{def:quantum-\linebreak universe}
   & Good
-  & \emph{Generalised.}\;  Now a $5$-tuple $(M, \theta, G, P, E)$ with
-    $M$ a CR manifold of hypersurface type with \emph{non-degenerate} Levi
-    form of signature $(r,s)$.  Strict pseudoconvexity is no longer
-    required; a new remark (Remark~\ref{rem:levi-generalisation})
-    identifies three cohomological conditions that replace it:
-    Kohn--Rossi finite-dimensionality, substrate non-degeneracy, and
-    the QOU vanishing conditions.  Notation and special cases
-    (abbreviation to $4$-tuple, pseudoconvex case) extracted to
-    Remark~\ref{rem:notation-special-cases}. \\
+  & \emph{New.}\;  Base-field-independent primary definition: a quantum
+    universe over a field~$k$ is a quadruple
+    $(\mathcal{C}, A, \omega, q)$ with $\mathcal{C}$ a $k$-linear rigid
+    monoidal category, $A$ a Frobenius--Hopf object, $\omega$ a fibre
+    functor, and $q \in k^\times$ a deformation parameter.
+    Quantum gauge group reconstructed via Tannaka--Krein duality. \\
+
+\raggedright Def.~1.2\newline\texttt{def:quantum-\linebreak observable-\linebreak universe}
+  & Good
+  & \emph{New.}\;  Base-field-independent observability condition:
+    non-degeneracy of the Frobenius form plus
+    $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
+    Replaces the analytic vanishing conditions of the $\mathbb{C}$
+    realisation with a single algebraic condition. \\
+
+\raggedright Rem.\newline\texttt{rem:base-field-\linebreak independence}
+  & Good
+  & \emph{New.}\;  Lists realisations over $\mathbb{C}$, $\mathbb{Q}_\pp$,
+    and $\mathbb{F}_\pp$; explains how the Frobenius--Hopf axioms replace
+    the analytic vanishing conditions. \\
+
+\raggedright Ex.\newline\texttt{def:c-quantum-\linebreak universe}
+  & Good
+  & \emph{Demoted from Def.~1.1 to Example.}\;  Now the $\mathbb{C}$
+    realisation of Definition~\ref{def:quantum-universe}: a $5$-tuple
+    $(M, \theta, G, P, E)$ with $\mathcal{C} =
+    \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ and Frobenius form from the
+    Haar state. \\
 
 \raggedright Rem.\newline\texttt{rem:notation-\linebreak special-cases}
   & Good
-  & \emph{New.}\;  Extracted from Definition~\ref{def:c-quantum-universe}:
-    abbreviation convention $(M, G, P, E)$ when $\theta$ understood, and
-    identification of the strictly pseudoconvex case as signature
-    $(n,0)$. \\
+  & \emph{Unchanged.}\;  Abbreviation convention $(M, G, P, E)$ and
+    identification of strictly pseudoconvex case as signature $(n,0)$. \\
 
-\raggedright Def.~1.2\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
+\raggedright Ex.\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
   & Good
-  & \emph{Fixed.}\;  Now a pure definition: requires $H^0(M, \mathrm{Ad}(P)) = 0$
-    (global vanishing) and $\Gamma_c(M, E) = 0$.  Explication of the adjoint
-    bundle, compact-support convention, and the significance of global
-    vanishing moved to Remark~\ref{rem:vanishing-explication}. \\
-
-\raggedright Rem.\newline\texttt{rem:vanishing-\linebreak explication}
-  & Good
-  & \emph{New.}\;  Extracted from Definition~\ref{def:c-quantum-observable-universe}:
-    defines $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$, explains
-    $\Gamma_c(M,E)$, and clarifies the significance of global (not merely
-    compactly supported) vanishing. \\
+  & \emph{Demoted from Def.~1.2 to Example.}\;  Now the $\mathbb{C}$
+    realisation of Definition~\ref{def:quantum-observable-universe}:
+    the analytic vanishing conditions $H^0(M, \mathrm{Ad}(P)) = 0$
+    and $\Gamma_c(M, E) = 0$ are derived from Frobenius non-degeneracy
+    plus instanton irreducibility. \\
 
 \raggedright Rem.~1.3\newline\texttt{rem:levi-\linebreak generalisation}
   & Good
@@ -1446,12 +1576,26 @@ revision pass.
   & \emph{New.}\;  Unifying remark explaining that CY hypersurfaces, ALE
     links, and Bring's surface unit circle bundles are all instances of
     the Levi non-degenerate framework of
-    Definition~\ref{def:c-quantum-universe}; each satisfies the three
+    Example~\ref{def:c-quantum-universe}; each satisfies the three
     cohomological conditions of Remark~\ref{rem:levi-generalisation}. \\
 
 \raggedright Ex.~1.9\newline\texttt{ex:brings-\linebreak surface}
   & Good
   & \emph{Unchanged.}\;  Already well-formed. \\
+
+\raggedright Ex.\newline\texttt{ex:p-adic-\linebreak realisation}
+  & Good
+  & \emph{New.}\;  $\mathbb{Q}_\pp$ realisation of
+    Definition~\ref{def:quantum-universe}: $F$-isocrystals over
+    $\mathbb{Q}_\pp$, Frobenius endomorphism as substrate analogue,
+    observability as $F$-crystal irreducibility. \\
+
+\raggedright Ex.\newline\texttt{ex:finite-field-\linebreak realisation}
+  & Good
+  & \emph{New.}\;  $\mathbb{F}_\pp$ realisation of
+    Definition~\ref{def:quantum-universe}: fusion category of
+    finite-dimensional representations over $\mathbb{F}_\pp$,
+    semisimplicity implies Frobenius non-degeneracy. \\
 
 \raggedright Def.~1.10\newline\texttt{def:substrate-\linebreak parameter}
   & Good
@@ -1509,9 +1653,12 @@ revision pass.
 
 \raggedright Rem.\newline\texttt{rem:frobenius-\linebreak simplification}
   & Good
-  & \emph{New.}\;  Shows that working in a Frobenius category simplifies the
-    QOU definition: the $5$-tuple + two vanishing conditions reduce to a
-    triple $(M, \theta, A)$ with non-degeneracy of the Frobenius form.
+  & \emph{Updated.}\;  Retitled from ``Simplification in a Frobenius
+    category'' to ``Frobenius structure of the $\mathbb{C}$ gauge algebra''.
+    Now explicitly connects the $\mathbb{C}$ Frobenius--Hopf structure
+    (Haar state on $\mathcal{O}_q$) to the general
+    Definitions~\ref{def:quantum-universe}
+    and~\ref{def:quantum-observable-universe}.
     Commutative diagrams: Frobenius
     relation~\eqref{eq:frobenius-relation},
     Haar non-degeneracy pairing~\eqref{eq:frobenius-nondegen},
@@ -1684,10 +1831,12 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 43~labelled items (27 original $+$ 3 new definitions $+$ 2 new
-propositions $+$ 9 new remarks $+$ 1 new example $+$ 1 promoted
-proposition, after removal of the former \texttt{ex:spheres} example):
-38~are rated \textbf{Good};
+Of the 48~labelled items (27 original $+$ 2 new primary definitions $+$
+1 new remark $+$ 2 demoted definitions (now examples) $+$ 2 new
+examples ($\mathbb{Q}_\pp$, $\mathbb{F}_\pp$) $+$ 3 earlier new definitions
+$+$ 2 new propositions $+$ 8 earlier new remarks $+$ 1 earlier new example $+$
+1 promoted proposition, after removal of the former \texttt{ex:spheres} example):
+43~are rated \textbf{Good};
 5~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
 
