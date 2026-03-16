@@ -519,3 +519,291 @@ J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
 \end{CD}
 \]
 \end{remark}
+
+% ══════════════════════════════════════════════════════════════════════════════
+% CRITIQUE SUMMARY — Chapter 1
+% ══════════════════════════════════════════════════════════════════════════════
+
+\section{Critique summary}
+\label{sec:ch1-critique}
+
+The table below rates every labelled item in this chapter on a three-point
+scale (\textbf{Good} = rigorous and self-contained,
+\textbf{Fair} = essentially correct but with gaps or ambiguities,
+\textbf{Poor} = contains a material error or an unjustified claim that
+undermines the argument) and lists the concerns that should be addressed.
+
+\medskip
+\noindent
+\begin{small}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.08\textwidth}p{0.70\textwidth}@{}}
+\hline
+\textbf{Item} & \textbf{Rating} & \textbf{Concerns} \\
+\hline
+
+\raggedright Def.~1.1\newline\texttt{def:c-quantum-\linebreak universe}
+  & Fair
+  & (a)~$M$ is required to be a ``CR manifold'' but the
+    type (hypersurface, strictly pseudoconvex) is not specified; later items
+    silently assume a global contact form~$\theta$ and strict pseudoconvexity.
+    (b)~``$\mathrm{SO}(3)$ holonomy'' on an $\mathrm{SU}(2)$-bundle is a
+    non-trivial holonomy reduction that is stated without motivation or
+    justification. (c)~The $\mathrm{SU}(2)$-action on $\mathbb{CP}^1$ used
+    to form the associated bundle is not specified. \\
+
+\raggedright Def.~1.2\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
+  & Fair
+  & (a)~$E = P\times_G\mathbb{CP}^1$ is a fibre bundle with non-linear
+    fibre; $H^0_c(M,E)$ is not a standard cohomology group.  The intended
+    meaning (vanishing of compactly supported sections~$\Gamma_c(M,E)$) should
+    be stated explicitly. (b)~The cohomology theory (sheaf, \v{C}ech, de~Rham)
+    is not identified. \\
+
+\raggedright Rem.~1.3\newline\texttt{rem:jet-bundle}
+  & Fair
+  & The claim that $\Gamma_c(M,J^1E)$ injects into the space of connections on
+    $P$ is non-trivial and is neither proved nor given a literature reference.
+    The jet-bundle construction for a non-linear fibre ($\mathbb{CP}^1$)
+    requires additional care that is not discussed. \\
+
+\raggedright Lem.~1.4\newline\texttt{lem:unique-\linebreak connection}
+  & Fair
+  & (a)~The proof uses only $H^0_c(M,\mathrm{Ad}(P))=0$; the condition
+    $H^0_c(M,E)=0$ is never invoked, so the hypothesis is stronger than
+    necessary.  (b)~The label says ``unique'' but the statement says
+    ``irreducible''---these are distinct properties.
+    (c)~The proof assumes the stabiliser of a reducible connection contains a
+    \emph{compactly supported} section, which requires $M$ to be non-compact
+    or an additional argument. \\
+
+\raggedright Prop.~1.5\newline\texttt{prop:self-dual-\linebreak curvature}
+  & Poor
+  & (a)~Uses the contact form~$\theta$ and Reeb field~$\xi$, neither of which
+    is part of Definition~1.1; a contact form should be part of the data or its
+    existence should be proved. (b)~Self-duality of $2$-forms ($*_H^2=\mathrm{id}$
+    on $\Lambda^2$) holds only when $\dim H=4$ ($n=2$); the proposition is
+    stated for general CR manifolds but the proof restricts to $n=2$ without
+    stating this as a hypothesis.  (c)~The Bogomolny decomposition on lines
+    96--101 mixes pointwise norms and integral expressions inconsistently.
+    (d)~Forward-references Def.~\ref{def:reeb-decomposition}, which appears
+    later in the chapter. \\
+
+\raggedright Ex.~1.6\newline\texttt{ex:calabi-yau}
+  & Fair
+  & (a)~Not every real hypersurface in a Calabi--Yau manifold is strictly
+    pseudoconvex; this should be stated as an assumption.
+    (b)~``The restriction of~$TX$ to~$M$ supplies a natural principal
+    $\mathrm{SU}(2)$-bundle'' holds only when $X$ is a Calabi--Yau $2$-fold
+    (K3 surface); for higher-dimensional CY manifolds the holonomy is
+    $\mathrm{SU}(n)$ with $n>2$. \\
+
+\raggedright Ex.~1.7\newline\texttt{ex:ale}
+  & Fair
+  & (a)~``The hyper-K\"ahler structure restricts to a contact form'' is
+    imprecise: the contact form arises from the CR structure of the boundary,
+    not by restricting a K\"ahler form.  (b)~$\mathbb{CP}^1/\Gamma$ is an
+    orbifold, not a smooth manifold, for most finite subgroups~$\Gamma$.
+    (c)~Satisfaction of the compactly supported cohomology conditions is
+    asserted but not verified. \\
+
+\raggedright Ex.~1.8\newline\texttt{ex:affine}
+  & Poor
+  & (a)~The label \texttt{ex:affine} is misleading; the example concerns
+    spheres.  (b)~A flat connection on a trivial bundle has $F_A=0$, giving
+    $q=\exp(0)=1$ and $\hbar_q=0$ everywhere: the universe is entirely
+    classical and all $q$-deformed structures collapse.  (c)~For the trivial
+    bundle $P=S^{2n-1}\times\mathrm{SU}(2)$, $\mathrm{Ad}(P)$ is the trivial
+    $\mathfrak{su}(2)$-bundle, so $H^0_c(M,\mathrm{Ad}(P))\cong
+    \mathfrak{su}(2)\neq 0$ (the constant sections on a compact manifold have
+    compact support).  The cohomology condition
+    $H^0_c(M,\mathrm{Ad}(P))=0$ therefore \emph{fails}, contradicting the
+    claim that this is a QOU. \\
+
+\raggedright Ex.~1.9\newline\texttt{ex:brings-\linebreak surface}
+  & Good
+  & The distinction between the Riemann surface~$S$ and the
+    $3$-dimensional CR manifold~$M_S$ is correctly handled.
+    Minor: the link between the branched covering
+    $\pi\colon S\to\mathbb{CP}^1$ and the $\mathrm{SU}(2)$-bundle
+    $P\to M_S$ deserves a sentence of justification. \\
+
+\raggedright Rem.~1.10\newline\texttt{rem:substrate-\linebreak parameter}
+  & Fair
+  & (a)~The Levi form lives on the CR distribution $H=\ker\theta$, not on all
+    of~$TM$; the fibre description
+    $L\in\Gamma(T^*M\otimes\overline{T^*M})$ is therefore inaccurate.
+    (b)~$L\wedge F_A^+$ mixes a Hermitian form with an $\mathrm{Ad}(P)$-valued
+    $2$-form; the algebraic operation and the norm are not defined.
+    (c)~This is a \emph{Remark} but it introduces the most important field in
+    the paper; promoting it to a \emph{Definition} would better match the
+    definition-first philosophy. \\
+
+\raggedright Def.~1.11\newline\texttt{def:quantum-\linebreak gauge-group}
+  & Fair
+  & (a)~``A field of quantum groups $\{\mathrm{SU}_{q(p)}(2)\}_{p\in M}$''
+    is a non-standard notion; no fibre-bundle or sheaf-theoretic framework is
+    given for continuously varying Hopf algebras.
+    (b)~$\mathrm{SU}_q(2)$ at $q=1$ is isomorphic to the classical group, but
+    the algebraic structure jumps at $q=1$ in the Hopf-algebra sense; this
+    discontinuity is not discussed. \\
+
+\raggedright Def.~1.12\newline\texttt{def:quantum-\linebreak planck-constant}
+  & Good
+  & Clean and self-contained.  The range $[0,1)$ is correctly deduced from
+    $q\in[1,\infty)$; both asymptotic regimes are described.
+    Minor: calling a smooth field a ``constant'' is mildly misleading, though
+    the text acknowledges this. \\
+
+\raggedright Rem.~1.13\newline\texttt{rem:heisenberg-\linebreak commutator}
+  & Fair
+  & (a)~Position and momentum observables on the compact fibre~$\mathbb{CP}^1$
+    require careful definition; standard $\hat{X},\hat{P}$ have continuous
+    spectra that are incompatible with compact spaces.
+    (b)~$[\hat{X},\hat{P}]_q := J\,\hbar_q(p)$ is postulated, not derived; the
+    analogy with $[\hat{X},\hat{P}]=i\hbar$ relies on $i\mapsto J$ and
+    $\hbar\mapsto\hbar_q$ but this substitution is not justified.
+    (c)~The remark is unusually long (50 lines) with three sub-topics; splitting
+    it would improve readability. \\
+
+\raggedright Rem.~1.14\newline\texttt{rem:cosmological-\linebreak limits}
+  & Fair
+  & (a)~``$q$-torsion twists faster than any divergence can grow in the
+    integral'' is a quantitative claim without a proof or bound.
+    (b)~Both limits are called ``illusory,'' but the mathematical content of
+    this assertion is not made precise.  (c)~The finiteness argument relies on
+    the brane tower (Def.~\ref{def:recursive-brane-tower}), a forward
+    reference to Chapter~2. \\
+
+\raggedright Rem.~1.15\newline\texttt{rem:j1e-local-\linebreak states}
+  & Fair
+  & Very brief (3 sentences).  The claim that $J^1E$ ``serves as the space of
+    local states'' is asserted without justification; ``weighted by~$q$'' is
+    vague. \\
+
+\raggedright Def.~1.16\newline\texttt{def:q-harmonic-\linebreak form}
+  & Fair
+  & (a)~$d_q$ is used but not defined in this chapter; a forward reference or
+    inline definition is needed.  (b)~$\delta_q$ requires an inner product on
+    $\Lambda^k T^*M\otimes J^1E$, which is not specified.  (c)~Sections are
+    valued in $J^1E$ rather than the more conventional $E$ or $\mathrm{Ad}(P)$;
+    the motivation is not given.  (d)~``$q$-viscosity'' is used without
+    definition. \\
+
+\raggedright Def.~1.17\newline\texttt{def:reeb-\linebreak decomposition}
+  & Fair
+  & (a)~The decomposition is not uniquely characterised by the displayed
+    conditions; the standard formula
+    $\alpha_V=\theta\wedge\iota_\xi\alpha$ should be stated.  (b)~The
+    condition $\iota_\xi\alpha_V\neq 0$ fails for $0$-forms (functions), since
+    $\iota_\xi f=0$ for every function~$f$; this degenerate case is not
+    addressed. \\
+
+\raggedright Def.~1.18\newline\texttt{def:fermion}
+  & Good
+  & Well-formed given the prior definitions.  The physics interpretation
+    (half-integer spin) is deferred to a remark, which is appropriate. \\
+
+\raggedright Def.~1.19\newline\texttt{def:boson}
+  & Good
+  & Well-formed and the parenthetical equivalence is helpful. \\
+
+\raggedright Def.~1.20\newline\texttt{def:q-reeb-\linebreak vector-field}
+  & Fair
+  & (a)~The $q$-deformed Lie bracket $[\,\cdot\,,\cdot\,]_q$ is used without
+    an in-chapter definition or forward reference.  (b)~The horizontal lift
+    $X_f$ requires a metric (presumably the Webster metric), which is not
+    stated.  (c)~Behaviour in the deep-quantum limit $q\to\infty$ is not
+    discussed. \\
+
+\raggedright Def.~1.21\newline\texttt{def:q-reeb-flow}
+  & Good
+  & Standard ODE formulation; clean and complete.  Minor: existence and
+    uniqueness (or the conditions guaranteeing them) could be noted. \\
+
+\raggedright Def.~1.22\newline\texttt{def:q-torsion-\linebreak leaf}
+  & Fair
+  & On a strictly pseudoconvex CR manifold the Levi distribution $H$ is
+    non-integrable (the Levi form is non-degenerate), so maximal integral
+    submanifolds are of restricted dimension.  The
+    $q$-Reeb flow generically has a vertical (Reeb) component, so invariance
+    of an $H$-tangent leaf under $\phi_t^q$ is a very strong condition whose
+    feasibility is not discussed. \\
+
+\raggedright Rem.~1.23\newline\texttt{rem:q-torsion-\linebreak leaf-minimum}
+  & Fair
+  & (a)~$A_q$ (the $q$-deformed connection) is introduced without definition.
+    (b)~The vanishing of the first variation under $\phi_t^q$-invariance is
+    claimed without proof.  (c)~The~$\frac{1}{2}$ in the curvature formula
+    suggests the Lie-algebra convention, which should be stated. \\
+
+\raggedright Rem.~1.24\newline\texttt{rem:reeb-\linebreak physical}
+  & Fair
+  & The assertion that vertical components yield half-integer spin and
+    horizontal components yield integer spin is a central physical claim; it is
+    not proved and no reference is given.  The spin--statistics connection
+    requires deep QFT arguments that are not reproduced. \\
+
+\raggedright Rem.~1.25\newline\texttt{rem:q-harmonic-\linebreak physical}
+  & Fair
+  & ``$q$-deformed viscosity'' and the limit $\Delta_q\to\Delta_{\text{Hodge}}$
+    as $q\to 1$ are asserted without proof.  The remark is too brief to
+    support the claims made. \\
+
+\raggedright Rem.~1.26\newline\texttt{rem:gr-substrate-\linebreak geometry}
+  & Poor
+  & (a)~The action $S_q$ is never defined.  (b)~``$\delta S_q/\delta L
+    \implies G_{\mu\nu}\sim T_{\mu\nu}^{(q)}$'' uses an implication arrow and
+    a tilde in place of a rigorous derivation.  (c)~Greek tensor indices
+    ($\mu,\nu$) break the otherwise coordinate-free formulation of the
+    chapter. \\
+
+\raggedright Rem.~1.27\newline\texttt{rem:schrodinger-\linebreak jet-coaction}
+  & Fair
+  & (a)~The $q$-deformed Hamiltonian $\hat{H}_q$ is used but not defined.
+    (b)~The Schr\"odinger equation is a linear PDE, but the state
+    $\psi\in\Gamma(E)$ lives in a $\mathbb{CP}^1$-bundle (a non-linear
+    fibre); this tension is not addressed.
+    (c)~$D_A=d+A$ is standard for vector bundles but $E$ is not a vector
+    bundle. \\
+
+\raggedright Rem.~1.28\newline\texttt{rem:main-\linebreak commutative-\linebreak diagram}
+  & Fair
+  & The diagram is illustrative rather than mathematical: the objects are
+    descriptions (``General Relativity'', ``Schr\"odinger Eq.'') rather than
+    categories or spaces, and the arrows are not defined as morphisms.
+    Commutativity is not proved. \\
+
+\hline
+\end{tabular}
+\end{small}
+
+\medskip
+\noindent\textbf{Summary statistics.}\;
+Of the 28~labelled items:
+5~are rated \textbf{Good} (Defs.~1.12, 1.18, 1.19, 1.21 and Ex.~1.9);
+20~are rated \textbf{Fair}; and
+3~are rated \textbf{Poor} (Prop.~1.5, Ex.~1.8, Rem.~1.26).
+
+\medskip
+\noindent\textbf{Critical issues requiring immediate attention:}
+\begin{enumerate}
+  \item \textbf{Example~1.8 (Odd-dimensional spheres)} contradicts its own
+        framework: the trivial $\mathrm{SU}(2)$-bundle on a compact sphere
+        has $H^0_c(M,\mathrm{Ad}(P))\cong\mathfrak{su}(2)\neq 0$, so the
+        QOU cohomology condition fails.
+  \item \textbf{Proposition~1.5 (Self-duality)} is stated for arbitrary CR
+        dimension but proved only for $n=2$; the hypothesis should be
+        restricted or the proof generalised.
+  \item \textbf{Definition~1.1} should require $M$ to be a strictly
+        pseudoconvex CR manifold of hypersurface type equipped with a
+        pseudo-Hermitian structure~$\theta$, since every subsequent result
+        depends on the contact form.
+  \item Several key objects ($d_q$, $[\,\cdot\,,\cdot\,]_q$, $A_q$, $S_q$,
+        $\hat{H}_q$) are used but not defined in this chapter; either
+        in-chapter definitions or explicit forward references should be
+        provided.
+  \item The substrate parameter (Remark~1.10) is the chapter's central
+        concept yet is housed in a \emph{Remark}; promoting it to a
+        \emph{Definition} would align with the definition-first philosophy
+        stated in the preamble.
+\end{enumerate}
