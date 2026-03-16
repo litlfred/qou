@@ -280,10 +280,7 @@ input[type=range]::-webkit-slider-thumb {
       style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
              color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
              padding:3px 0;font-family:'Share Tech Mono',monospace;">⟳ Auto σ</button>
-    <button id="btn_primes" title="Show CP1 ghost spheres at primes < 69"
-      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
-             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
-             padding:3px 0;font-family:'Share Tech Mono',monospace;">⊕ Primes</button>
+
     <button id="btn_resetcam" title="Reset camera pan to origin"
       style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
              color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
@@ -1398,40 +1395,6 @@ function syncConeOpts() {
 document.getElementById('cb_cp1').addEventListener('change', () => { syncConeOpts(); rebuild(); });
 syncConeOpts();  // apply on load
 
-// ── Prime ghost spheres ───────────────────────────────────────────────
-const PRIME_Z_VALS = [0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67];
-let activePrimeGhosts = [];
-let primesVisible = false;
-
-function updatePrimesBtn() {
-  document.getElementById('btn_primes').textContent = primesVisible ? '⊖ Primes' : '⊕ Primes';
-}
-
-function togglePrimeGhosts() {
-  activePrimeGhosts.forEach(m => scene.remove(m));
-  activePrimeGhosts = [];
-  primesVisible = !primesVisible;
-  if (primesVisible) {
-    const R_CP1 = SPHERE_R * 0.2;
-    for (const n of PRIME_Z_VALS) {
-      // Spread points along a great circle from +y to +z axis
-      const theta = (n / 29) * Math.PI / 2;
-      const pt = new THREE.Vector3(0, Math.cos(theta) * SPHERE_R, Math.sin(theta) * SPHERE_R);
-      const Nv = pt.clone().normalize();
-      const geo = new THREE.SphereGeometry(R_CP1, 20, 12);
-      const mat = new THREE.MeshBasicMaterial({
-        color: 0xffcc44, wireframe: true, transparent: true, opacity: 0.14,
-      });
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.set(pt.x + Nv.x * R_CP1, pt.y + Nv.y * R_CP1, pt.z + Nv.z * R_CP1);
-      mesh.userData.isPrimeGhost = true;
-      scene.add(mesh);
-      activePrimeGhosts.push(mesh);
-    }
-  }
-  updatePrimesBtn();
-}
-document.getElementById('btn_primes').addEventListener('click', togglePrimeGhosts);
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────
 window.addEventListener('keydown', e => {
