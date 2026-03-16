@@ -104,37 +104,44 @@ CR structure $(M,\theta)$.  Then the curvature $F_A$ is self-dual, i.e.\
 
 % ── Examples ─────────────────────────────────────────────────────────────────
 
-\begin{example}[Calabi--Yau manifolds]
+\begin{example}[Calabi--Yau hypersurfaces]
 \label{ex:calabi-yau}
-Let $M$ be a Calabi--Yau manifold.  The Ricci-flat K\"ahler metric on $M$
-endows it with a natural CR structure, and the trivial
-$\mathrm{SU}(2)$-bundle $E = M \times \mathrm{SU}(2)$ yields a $\mathbb{C}$
-quantum observable universe when the compactly supported cohomology conditions
-of Definition~\ref{def:c-quantum-observable-universe} are satisfied.
+Let $X$ be a Calabi--Yau manifold and let $M \subset X$ be a strictly
+pseudoconvex real hypersurface (for instance the boundary of a Stein domain
+in~$X$).  The induced CR structure on $M$ is of hypersurface type, and a
+defining function $\rho$ for $M$ yields the contact form
+$\theta = -\mathrm{Im}(\partial\rho)|_M$.  The trivial
+$\mathrm{SU}(2)$-bundle $E = M \times \mathrm{SU}(2)$ then gives a
+$\mathbb{C}$ quantum observable universe when the compactly supported
+cohomology conditions of
+Definition~\ref{def:c-quantum-observable-universe} are satisfied.
 \end{example}
 
-\begin{example}[ALE spaces]
+\begin{example}[ALE links]
 \label{ex:ale}
-Let $M$ be an asymptotically locally Euclidean (ALE) space.  ALE spaces arise
-as minimal resolutions of quotient singularities
-$\mathbb{C}^2 / \Gamma$ for finite subgroups
-$\Gamma \subset \mathrm{SU}(2)$.  Equipped with a hyper-K\"ahler metric and
-the corresponding principal $\mathrm{SU}(2)$-bundle, $M$ provides a
-$\mathbb{C}$ quantum observable universe satisfying self-dual curvature
+Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and consider the
+quotient singularity $\mathbb{C}^2/\Gamma$.  The \emph{link}
+$M = S^3/\Gamma$ is a $3$-dimensional strictly pseudoconvex CR manifold
+carrying the contact form $\theta$ descended from the standard contact form
+on~$S^3$.  The principal $\mathrm{SU}(2)$-bundle inherited from the minimal
+resolution of $\mathbb{C}^2/\Gamma$ equips $M$ with a $\mathbb{C}$ quantum
+observable universe satisfying self-dual curvature
 (Proposition~\ref{prop:self-dual-curvature}).
 \end{example}
 
-\begin{example}[$n$-dimensional affine space]
+\begin{example}[Odd-dimensional spheres]
 \label{ex:affine}
-Let $M = \mathbb{C}^n$ with the standard CR structure inherited from its
-embedding in $\mathbb{C}^n$.  The trivial principal $\mathrm{SU}(2)$-bundle
-$E = \mathbb{C}^n \times \mathrm{SU}(2)$ admits a flat instanton connection
+Let $M = S^{2n-1} \subset \mathbb{C}^n$ be the unit sphere with the standard
+CR structure inherited from the embedding.  The contact form
+$\theta = -\mathrm{Im}\bigl(\sum_j \bar{z}_j\,dz_j\bigr)\big|_M$ and the
+trivial principal $\mathrm{SU}(2)$-bundle
+$E = S^{2n-1} \times \mathrm{SU}(2)$ admit a flat instanton connection
 satisfying the self-duality condition
 (Proposition~\ref{prop:self-dual-curvature}).  When the compactly supported
 cohomology conditions of
-Definition~\ref{def:c-quantum-observable-universe} hold, $(\mathbb{C}^n, G, E)$
-is a $\mathbb{C}$ quantum observable universe.  For $n = 2$, this recovers the
-two-dimensional affine example $M = \mathbb{C}^2$.
+Definition~\ref{def:c-quantum-observable-universe} hold,
+$(S^{2n-1}, \theta, G, E)$ is a $\mathbb{C}$ quantum observable universe.
+For $n = 2$, this recovers $M = S^3$ with the standard contact structure.
 \end{example}
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
