@@ -52,12 +52,20 @@ echo "::endgroup::"
 # ── 3. Run latexdiff ────────────────────────────────────────────────────────
 # --type=CFONT         : colour + font-size change (no underline/strikethrough)
 # --math-markup=coarse : changed math environments are shown as whole units
-# --append-safecmd     : protect cross-reference commands from being split
+
+# --type=CFONT         : font-based markup (more robust brace handling than
+#                        the default UNDERLINE, which can misparse \ref{} etc.
+#                        inside \DIFdel{...}/\DIFadd{...} wrappers)
+# --append-safecmd     : protect cross-reference commands from being broken
+#                        up by the diff markup (prevents "extra }" errors)
+
 echo "::group::Run latexdiff"
 latexdiff \
   --type=CFONT \
   --math-markup=coarse \
-  --append-safecmd="ref,eqref,cite,label,hyperref" \
+  --type=CFONT \
+  --append-safecmd="ref,eqref,cite,label,autoref,nameref,hyperref" \
+
   "$MAIN_FLAT" "$BRANCH_FLAT" \
   > diff.tex \
   || { echo "::warning::latexdiff failed; falling back to unchanged source"
