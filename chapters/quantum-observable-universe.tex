@@ -809,6 +809,48 @@ flow acting on the Legendrian category.  In this language, the
 \emph{homotopy fixed-point} condition, and one could define a
 \emph{derived} $q$-torsion leaf as a homotopy-coherent fixed point of
 the $\phi_t^q$-action on the $\infty$-category of Legendrian branes.
+
+\medskip\noindent\textit{Categorical Frobenius condition.}\;
+The classical Frobenius theorem used above admits a categorical
+generalisation.  In a monoidal category~$\mathcal{C}$, a
+\emph{Frobenius object} is an object $A$ equipped with compatible
+algebra and coalgebra structures satisfying the Frobenius relation
+$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta) =
+\Delta \circ \mu = (\mathrm{id} \otimes \mu) \circ (\Delta \otimes
+\mathrm{id})$.
+In the category of Lie algebroids over~$M$, the horizontal distribution
+$H = \ker\theta$ with the Lie bracket of vector fields is a Lie
+algebroid; the Frobenius integrability condition is equivalent to $H$
+carrying a Frobenius structure.  Since the Levi form
+$d\theta|_{H \times H}$ is non-degenerate, this Frobenius structure
+\emph{fails} --- and it is precisely this failure that forces the
+dimension bound on integral submanifolds and gives $q$-torsion leaves
+their rigidity.
+
+\medskip\noindent\textit{Beyond~$\mathbb{C}$: the natural categorical setting.}\;
+The framework of Definition~\ref{def:c-quantum-universe} is formulated
+over~$\mathbb{C}$, but the categorical Frobenius condition suggests
+a natural generalisation.  Over a $p$-adic base field~$\mathbb{C}_\pp$,
+the classical Frobenius integrability theorem is replaced by the
+\emph{Frobenius endomorphism} acting on crystalline cohomology: a
+connection is ``integrable'' if and only if the associated $F$-crystal
+is compatible with the Frobenius lift
+(Chapter~\ref{chap:p-adic}, Section~\ref{sec:cp-que}).
+More generally, over an arbitrary base field~$k$, the correct setting is
+a \emph{Tannakian category} $\mathcal{C}$ over~$k$ equipped with a
+fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$; the
+quantum gauge group is then reconstructed via Tannaka--Krein duality
+as $\mathrm{Aut}^\otimes(\omega)$.  The QOU definition
+(Definition~\ref{def:c-quantum-observable-universe}) extends to this
+setting by replacing the Hopf algebra
+$\mathcal{O}_q(\mathrm{SU}(2))$ with its Tannakian reconstruction
+over~$k$, and the Levi form with the appropriate non-degeneracy
+condition on the crystalline or \'etale site.  This field-independence
+is the deeper reason why approach~(1) (Hopf-algebra bundles) in
+Remark~\ref{rem:quantum-gauge-group-category} has limited impact on the
+rest of the paper: all later constructions factor through the
+representation category, which is base-field-independent by Tannakian
+reconstruction.
 \end{remark}
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
@@ -928,6 +970,20 @@ As $q(p) \to 1$ (classicality), the commutator
 $[\hat{X}, \hat{P}]_q \to 0$ (Remark~\ref{rem:heisenberg-commutator}), the
 uncertainty vanishes, and the wave-like nature of the section freezes into a
 classical trajectory.
+
+\medskip\noindent\textit{Categorical role.}\;
+Although this remark is stated as a PDE rather than in categorical language,
+it is essential to the paper's structure: the Schr\"odinger equation
+provides the bottom row of the main commutative diagram
+(Proposition~\ref{prop:main-commutative-diagram}).  Categorically, the
+$q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the
+module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra
+$\Gamma(J^1 E)$, and the Schr\"odinger equation is the condition that
+$\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$.
+In the Tannakian setting of
+Remark~\ref{rem:q-torsion-existence}, this extends to arbitrary base
+fields~$k$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate
+$k$-linear category of sections.
 \end{remark}
 
 \begin{proposition}[Main Commutative Diagram]
@@ -1235,10 +1291,14 @@ revision pass.
 
 \raggedright Rem.~1.26\newline\texttt{rem:q-torsion-\linebreak existence}
   & Good
-  & \emph{New.}\;  Discusses existence of $q$-torsion leaves (Legendrian
-    submanifolds, KAM persistence), and gives a category-theoretic
-    formulation via $\mathbf{Leg}_q(M)$, homotopy fixed points, and
-    derived Legendrian branes. \\
+  & \emph{Updated.}\;  Now includes: (a)~existence via Legendrian
+    submanifolds and KAM persistence; (b)~category-theoretic formulation
+    via $\mathbf{Leg}_q(M)$ and homotopy fixed points; (c)~categorical
+    Frobenius condition (Frobenius objects in monoidal categories)
+    explaining the non-integrability obstruction; (d)~base-field
+    generalisation beyond~$\mathbb{C}$ via Tannakian categories, connecting
+    to the $\pp$-adic Frobenius endomorphism
+    (Chapter~\ref{chap:p-adic}). \\
 
 \raggedright Rem.~1.26\newline\texttt{rem:q-torsion-\linebreak leaf-minimum}
   & Good
@@ -1265,12 +1325,12 @@ revision pass.
 \raggedright Rem.~1.30\newline\texttt{rem:schrodinger-\linebreak jet-coaction}
   & Good
   & \emph{Updated.}\;  Retitled from ``Jet Co-action'' to
-    ``$q$-Deformed Schr\"odinger equation'': the original title suggested a
-    category-theoretic formulation that was not substantiated.  Content
+    ``$q$-Deformed Schr\"odinger equation''.  Content
     retained: $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$,
     linearisation convention for $\mathbb{CP}^1$, identification $i = J$.
-    This remark is essential: it provides the bottom row of the
-    main commutative diagram (Proposition~\ref{prop:main-commutative-diagram}). \\
+    Now includes a categorical-role paragraph: $\hat{H}_q$ as an endomorphism
+    of the module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$, connecting to
+    the Tannakian base-field generalisation. \\
 
 \raggedright Prop.~1.31\newline\texttt{prop:main-\linebreak commutative-\linebreak diagram}
   & Good
