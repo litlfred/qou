@@ -22,10 +22,14 @@ $(M, \theta, G, P, E)$ where:
         \emph{state bundle}, where $\mathrm{SU}(2)$ acts on
         $\mathbb{CP}^1$ by M\"obius transformations.
 \end{enumerate}
+\end{definition}
+
+\begin{remark}[Notation and special cases]
+\label{rem:notation-special-cases}
 When $\theta$ is understood from context, we abbreviate the $5$-tuple to
 $(M, G, P, E)$.  The \emph{strictly pseudoconvex} case corresponds to
 signature $(n,0)$, where $L_\theta$ is positive definite.
-\end{definition}
+\end{remark}
 
 \begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
 \label{def:c-quantum-observable-universe}
@@ -36,16 +40,21 @@ the following vanishing conditions:
 \[
   H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
-  \Gamma_c(M, E) = 0,
+  \Gamma_c(M, E) = 0.
 \]
-where $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
+\end{definition}
+
+\begin{remark}[Vanishing conditions: explication]
+\label{rem:vanishing-explication}
+In Definition~\ref{def:c-quantum-observable-universe},
+$\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
 (a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
 denotes the space of compactly supported continuous sections of the
 (non-linear) fibre bundle $E$.  The condition $H^0(M, \mathrm{Ad}(P)) = 0$
 asserts the vanishing of \emph{all} global parallel sections of the adjoint
 bundle --- not merely compactly supported ones --- eliminating every
 infinitesimal gauge symmetry.
-\end{definition}
+\end{remark}
 
 % ── Remark ───────────────────────────────────────────────────────────────────
 
@@ -285,8 +294,19 @@ curvature and let $F_A^+$ denote its self-dual part
 $L_\theta \colon H \times H \to \mathbb{C}$ be the \emph{Levi form}, the
 Hermitian form on the Levi distribution $H = \ker\theta$ defined by
 $L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.
+The \emph{substrate parameter} is the smooth field
+$q \colon M \to [1,\infty)$ defined by
+\[
+  q(p) \;=\; \exp\!\bigl(\lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p)\bigr),
+  \qquad p \in M,
+\]
+where $\langle L_\theta, F_A^+\rangle$ is the natural contraction
+(Remark~\ref{rem:substrate-contraction}) and $\lvert\cdot\rvert$ denotes
+the absolute value.
+\end{definition}
 
-\medskip\noindent\textit{Natural contraction.}\;
+\begin{remark}[Natural contraction and field character of $q$]
+\label{rem:substrate-contraction}
 The Levi form $L_\theta$ is a section of $\Lambda^{1,1} H^*$
 (the $(1,1)$-component of $\Lambda^2 H^*$ with respect to the complex
 structure $J$).  The self-dual curvature $F_A^+$ is a section of
@@ -299,17 +319,11 @@ with the Killing form on $\mathrm{Ad}(P)$ yields the natural contraction
   \langle L_\theta,\, F_A^+ \rangle_p
   \;\in\; \mathbb{R}, \qquad p \in M.
 \]
-The \emph{substrate parameter} is the smooth field
-$q \colon M \to [1,\infty)$ defined by
-\[
-  q(p) \;=\; \exp\!\bigl(\lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p)\bigr),
-  \qquad p \in M,
-\]
-where $\lvert\cdot\rvert$ denotes the absolute value.  The substrate parameter is not a
+The substrate parameter is not a
 fixed constant but a field on $M$: its value varies from point to point
 according to the local coupling between the Levi form and the self-dual
 curvature.
-\end{definition}
+\end{remark}
 
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
@@ -360,9 +374,40 @@ formalisations, with different trade-offs:
         transparent than in~(2).
 \end{enumerate}
 For the purposes of this paper we work with approach~(1) at the
-computational level.  A category-theoretic treatment via~(2) would make
-the QOU framework compatible with extended topological field theories and
-higher gauge theory; this is deferred to future work.
+computational level.  The category-theoretic perspective of
+approach~(2) recurs throughout later chapters and serves as the
+unifying language for several key constructions:
+\begin{itemize}
+  \item \emph{Terminal objects (Chapter~\ref{chap:descartes}).}\;
+        The category $\mathcal{C}_{-6}$ of $\mathbb{C}$ quantum observable
+        universes with $\chi(E) = -6$ admits Bring's curve as a terminal
+        object (Theorem~\ref{thm:descartes}).  This categorical
+        universality is most naturally formulated when the gauge group
+        itself is a categorical object, i.e.\ via approach~(2).
+  \item \emph{Categorical reformulation
+        (Chapter~\ref{chap:p-adic}).}\;
+        Section~\ref{sec:categorical-reformulation} rephrases the QOU
+        framework in the language of monoidal categories and functors,
+        relating the fibred category of
+        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ over $M$ to
+        Tannaka--Krein duality and $p$-adic universality.
+  \item \emph{Ascent/descent in the brane tower
+        (Chapter~\ref{chap:torsion}).}\;
+        The recursive brane tower $\{E_n\}$ uses jet prolongation to lift
+        connections to higher categorical structures; descent strips
+        these away via a spectral-sequence mechanism.  The formalism
+        of~(2) naturally accommodates these higher-categorical operations.
+  \item \emph{Representation-theoretic braiding
+        (Chapter~\ref{chap:path-integrals-braiding}).}\;
+        Knot holonomy and braid-group representations factor through
+        the adjoint representation in a manner compatible with the
+        category-theoretic setup of
+        Section~\ref{sec:enveloping-algebras}.
+\end{itemize}
+A full categorical treatment via~(2) would make the QOU framework
+compatible with extended topological field theories and higher gauge
+theory; this comparison motivates the categorical developments in the
+chapters cited above.
 \end{remark}
 
 \begin{definition}[Quantum Planck Constant]
@@ -374,10 +419,14 @@ $\hbar_q \colon M \to [0,1)$ defined by
 \[
   \hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.
 \]
+\end{definition}
+
+\begin{remark}[Limiting regimes of $\hbar_q$]
+\label{rem:planck-limits}
 Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$.
 As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
 vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
-\end{definition}
+\end{remark}
 
 \begin{remark}[Heisenberg uncertainty as commutator]
 \label{rem:heisenberg-commutator}
@@ -924,15 +973,30 @@ revision pass.
     required; a new remark (Remark~\ref{rem:levi-generalisation})
     identifies three cohomological conditions that replace it:
     Kohn--Rossi finite-dimensionality, substrate non-degeneracy, and
-    the QOU vanishing conditions. \\
+    the QOU vanishing conditions.  Notation and special cases
+    (abbreviation to $4$-tuple, pseudoconvex case) extracted to
+    Remark~\ref{rem:notation-special-cases}. \\
+
+\raggedright Rem.\newline\texttt{rem:notation-\linebreak special-cases}
+  & Good
+  & \emph{New.}\;  Extracted from Definition~\ref{def:c-quantum-universe}:
+    abbreviation convention $(M, G, P, E)$ when $\theta$ understood, and
+    identification of the strictly pseudoconvex case as signature
+    $(n,0)$. \\
 
 \raggedright Def.~1.2\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
   & Good
-  & \emph{Fixed.}\;  Now requires $H^0(M, \mathrm{Ad}(P)) = 0$
-    (global vanishing, not merely compactly supported) and
-    $\Gamma_c(M, E) = 0$.  The global condition eliminates all
-    infinitesimal gauge symmetries and closes the bump-function gap
-    in the irreducibility proof. \\
+  & \emph{Fixed.}\;  Now a pure definition: requires $H^0(M, \mathrm{Ad}(P)) = 0$
+    (global vanishing) and $\Gamma_c(M, E) = 0$.  Explication of the adjoint
+    bundle, compact-support convention, and the significance of global
+    vanishing moved to Remark~\ref{rem:vanishing-explication}. \\
+
+\raggedright Rem.\newline\texttt{rem:vanishing-\linebreak explication}
+  & Good
+  & \emph{New.}\;  Extracted from Definition~\ref{def:c-quantum-observable-universe}:
+    defines $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$, explains
+    $\Gamma_c(M,E)$, and clarifies the significance of global (not merely
+    compactly supported) vanishing. \\
 
 \raggedright Rem.~1.3\newline\texttt{rem:levi-\linebreak generalisation}
   & Good
@@ -995,13 +1059,16 @@ revision pass.
 
 \raggedright Def.~1.10\newline\texttt{def:substrate-\linebreak parameter}
   & Good
-  & \emph{Fixed.}\;  Promoted from Remark to Definition.  Levi form domain
-    corrected to $H = \ker\theta$.  The ``natural contraction'' between
-    $L_\theta \in \Lambda^{1,1}H^*$ and $F_A^+ \in \Lambda^+ H^* \otimes
-    \mathrm{Ad}(P)$ is now explained via the inclusion
-    $\Lambda^{1,1} \subset \Lambda^+$ and the Webster--Killing pairing.
-    Substrate formula uses $\lvert\langle L_\theta, F_A^+\rangle\rvert$
-    rather than the ill-typed $\lVert L_\theta \wedge F_A^+\rVert$. \\
+  & \emph{Fixed.}\;  Promoted from Remark to Definition.  Now a pure
+    definition (Levi form, contraction formula, $q(p)$).  The
+    ``natural contraction'' explanation and field-character discussion
+    extracted to Remark~\ref{rem:substrate-contraction}. \\
+
+\raggedright Rem.\newline\texttt{rem:substrate-\linebreak contraction}
+  & Good
+  & \emph{New.}\;  Extracted from Definition~\ref{def:substrate-parameter}:
+    explains the inclusion $\Lambda^{1,1} \subset \Lambda^+$, the
+    Webster--Killing pairing, and the field character of $q$. \\
 
 \raggedright Def.~1.11\newline\texttt{def:quantum-\linebreak gauge-group}
   & Good
@@ -1013,15 +1080,29 @@ revision pass.
     $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ handles the algebraic
     jump at $q = 1$ via monoidal functors. \\
 
-\raggedright Rem.~1.12\newline\texttt{rem:quantum-\linebreak gauge-group-\linebreak category}
+\raggedright Rem.\newline\texttt{rem:quantum-\linebreak gauge-group-\linebreak category}
   & Good
-  & \emph{New.}\;  Three formalisations (Hopf-algebra bundle, monoidal
+  & \emph{Updated.}\;  Three formalisations (Hopf-algebra bundle, monoidal
     category, $C^*$-continuous field) discussed with pros, cons, and
-    category-theoretic implications. \\
+    category-theoretic implications.  Now includes forward references
+    comparing with categorical approaches in later chapters:
+    terminal objects (Chapter~\ref{chap:descartes}),
+    categorical reformulation (Chapter~\ref{chap:p-adic}),
+    brane tower ascent/descent (Chapter~\ref{chap:torsion}),
+    and representation-theoretic braiding
+    (Chapter~\ref{chap:path-integrals-braiding}). \\
 
-\raggedright Def.~1.12\newline\texttt{def:quantum-\linebreak planck-constant}
+\raggedright Def.\newline\texttt{def:quantum-\linebreak planck-constant}
   & Good
-  & \emph{Unchanged.}\;  Already well-formed. \\
+  & \emph{Fixed.}\;  Now a pure definition (formula only).  Limiting
+    behaviour ($q \to 1$, $q \to \infty$) extracted to
+    Remark~\ref{rem:planck-limits}. \\
+
+\raggedright Rem.\newline\texttt{rem:planck-limits}
+  & Good
+  & \emph{New.}\;  Extracted from Definition~\ref{def:quantum-planck-constant}:
+    field character of $\hbar_q$ and its behaviour in the classical
+    ($q \to 1$) and deep-quantum ($q \to \infty$) regimes. \\
 
 \raggedright Rem.~1.13\newline\texttt{rem:heisenberg-\linebreak commutator}
   & Fair
@@ -1158,10 +1239,10 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 37~labelled items (27 original $+$ 3 new definitions $+$ 2 new
-propositions $+$ 3 new remarks $+$ 1 new example $+$ 1 promoted
+Of the 41~labelled items (27 original $+$ 3 new definitions $+$ 2 new
+propositions $+$ 7 new remarks $+$ 1 new example $+$ 1 promoted
 proposition, after removal of the former \texttt{ex:spheres} example):
-32~are rated \textbf{Good};
+36~are rated \textbf{Good};
 5~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
 
