@@ -841,7 +841,23 @@ function buildTubeGeoCP1(tubeIndex, P, N, T1, T2, q) {
 let activeTubes = [];
 
 function buildTubes() {
-  for (const m of activeTubes) scene.remove(m);
+  for (const m of activeTubes) {
+    if (m.geometry && typeof m.geometry.dispose === 'function') {
+      m.geometry.dispose();
+    }
+    if (m.material) {
+      if (Array.isArray(m.material)) {
+        for (const mat of m.material) {
+          if (mat && typeof mat.dispose === 'function') {
+            mat.dispose();
+          }
+        }
+      } else if (typeof m.material.dispose === 'function') {
+        m.material.dispose();
+      }
+    }
+    scene.remove(m);
+  }
   activeTubes = [];
   if (cp1GhostMesh) { scene.remove(cp1GhostMesh); cp1GhostMesh = null; }
 
