@@ -208,32 +208,6 @@ the self-duality statement is verified for these $3$-manifolds by the
 isomorphism $\Lambda^2 H^* \cong \mathbb{R}$.
 \end{example}
 
-\begin{example}[Odd-dimensional spheres]
-\label{ex:spheres}
-Let $M = S^{2n-1} \subset \mathbb{C}^n$ ($n \geq 2$) be the unit sphere
-with the standard strictly pseudoconvex CR structure inherited from its
-embedding as the boundary of the unit ball in $\mathbb{C}^n$.  The contact
-form
-$\theta = \frac{i}{2}(\bar\partial - \partial)\lVert z\rVert^2\big|_M$
-equips $M$ with a Reeb vector field generating the Hopf fibration
-$S^{2n-1} \to \mathbb{CP}^{n-1}$.
-
-\medskip\noindent\textit{Choice of bundle.}\;
-The trivial $\mathrm{SU}(2)$-bundle $S^{2n-1} \times \mathrm{SU}(2)$
-does \emph{not} satisfy the QOU conditions: its adjoint bundle has
-$H^0_c(M,\mathrm{Ad}(P)) \cong \mathfrak{su}(2) \neq 0$ (every constant
-section on the compact sphere is compactly supported).  Instead, for
-$n = 2$ one uses the Hopf bundle: the principal $\mathrm{SU}(2)$-bundle
-$P = S^7 \to S^4$ restricted to the equatorial $S^3 \subset S^4$ yields a
-non-trivial $\mathrm{SU}(2)$-bundle over the $3$-sphere.  This bundle
-admits a standard instanton connection with non-vanishing curvature
-$F_A \neq 0$, ensuring $q > 1$, and the non-triviality of $P$ gives
-$H^0_c(S^3, \mathrm{Ad}(P)) = 0$.  With
-$E = P \times_G \mathbb{CP}^1$ and the vanishing conditions of
-Definition~\ref{def:c-quantum-observable-universe}, $(S^3, \theta, G, P, E)$
-is a $\mathbb{C}$ quantum observable universe.
-\end{example}
-
 \begin{example}[Bring's surface unit circle bundle]
 \label{ex:brings-surface}
 Let $S$ denote Bring's surface (Definition~\ref{def:brings-surface}), the
@@ -252,6 +226,38 @@ $(M_S,\, G,\, P,\, E)$ assembles into a $\mathbb{C}$ quantum observable
 universe whose exceptional divisors support the $q$-deformed Reeb flow
 (Definition~\ref{def:q-reeb-flow}).
 \end{example}
+
+\begin{remark}[Examples as instances of the generalised framework]
+\label{rem:examples-unified}
+Each of the preceding examples is an instance of the generalised Levi
+non-degenerate framework of Definition~\ref{def:c-quantum-universe} and
+Remark~\ref{rem:levi-generalisation}.
+\begin{itemize}
+  \item \emph{CY hypersurfaces} (Example~\ref{ex:calabi-yau}).  A smooth
+        strictly convex real hypersurface $M$ in a K\"ahler manifold inherits
+        a strictly pseudoconvex CR structure with Levi signature $(n,0)$.
+        The Kohn--Rossi condition holds automatically by Kohn's sub-elliptic
+        estimates.
+  \item \emph{ALE links} (Example~\ref{ex:ale}).  The link
+        $S^3/\Gamma$ is the CR boundary of the minimal resolution of
+        $\mathbb{C}^2/\Gamma$; its Levi form has signature $(1,0)$.
+        Kohn--Rossi finite-dimensionality follows from compactness of~$M$.
+  \item \emph{Bring's surface unit circle bundle}
+        (Example~\ref{ex:brings-surface}).  The unit circle bundle
+        $M_S \subset T^*S$ is a compact $3$-dimensional strictly
+        pseudoconvex CR manifold with Levi signature~$(1,0)$.
+\end{itemize}
+All three satisfy the three cohomological conditions of
+Remark~\ref{rem:levi-generalisation}: Kohn--Rossi
+finite-dimensionality (by strict pseudoconvexity or compactness),
+substrate non-degeneracy (positive-definite Levi form ensures
+$q > 1$ wherever $F_A^+ \neq 0$), and the QOU vanishing conditions
+(by the topology of the respective principal bundles).  More generally,
+any real hypersurface in an indefinite K\"ahler manifold, or the boundary
+of a Grauert tube over a pseudo-Riemannian manifold, yields a CR manifold
+with indefinite Levi signature satisfying these conditions --- extending
+the QOU framework beyond the strictly pseudoconvex setting.
+\end{remark}
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
@@ -762,13 +768,13 @@ revision pass.
     target $\mathbb{CP}^1/\Gamma$ noted; bundle structure on smooth $M$
     clarified. \\
 
-\raggedright Ex.~1.8\newline\texttt{ex:spheres}
+\raggedright Rem.~1.8\newline\texttt{rem:examples-\linebreak unified}
   & Good
-  & \emph{Fixed.}\;  Label renamed from \texttt{ex:affine}.  Trivial
-    bundle replaced with non-trivial Hopf instanton bundle
-    $P = S^7 \to S^4$ restricted to $S^3$.  The failure of the trivial
-    bundle is now explicitly discussed as motivation.  $F_A \neq 0$
-    ensures $q > 1$. \\
+  & \emph{New.}\;  Unifying remark explaining that CY hypersurfaces, ALE
+    links, and Bring's surface unit circle bundles are all instances of
+    the Levi non-degenerate framework of
+    Definition~\ref{def:c-quantum-universe}; each satisfies the three
+    cohomological conditions of Remark~\ref{rem:levi-generalisation}. \\
 
 \raggedright Ex.~1.9\newline\texttt{ex:brings-\linebreak surface}
   & Good
@@ -897,7 +903,8 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 32~labelled items (28 original $+$ 3 new definitions $+$ 1 new remark):
+Of the 32~labelled items (27 original $+$ 3 new definitions $+$ 2 new remarks,
+after removal of the former \texttt{ex:affine}/\texttt{ex:spheres} example):
 23~are rated \textbf{Good};
 9~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
