@@ -5,22 +5,23 @@
 
 \begin{definition}[$\mathbb{C}$ Quantum Universe]
 \label{def:c-quantum-universe}
-A \emph{$\mathbb{C}$ quantum universe} is a triple $(M, G, E)$ where:
+A \emph{$\mathbb{C}$ quantum universe} is a $4$-tuple $(M, G, P, E)$ where:
 \begin{enumerate}
   \item $M$ is a CR manifold;
   \item $G = \mathrm{SU}(2)$;
-  \item $E \to M$ is a principal $G$-bundle (called the \emph{bulk}) with
-        fibres $\mathbb{CP}$ and $\mathrm{SO}(3)$ holonomy.
+  \item $P \to M$ is a principal $G$-bundle with $\mathrm{SO}(3)$ holonomy;
+  \item $E = P \times_G \mathbb{CP}^1 \to M$ is the associated
+        \emph{state bundle} (the chiral bundle of quantum states).
 \end{enumerate}
 \end{definition}
 
 \begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
 \label{def:c-quantum-observable-universe}
 A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
-universe $(M, G, E)$ (Definition~\ref{def:c-quantum-universe}) that satisfies
+universe $(M, G, P, E)$ (Definition~\ref{def:c-quantum-universe}) that satisfies
 the following compactly supported cohomology conditions:
 \[
-  H^0_c(M, \mathrm{Ad}(E)) = 0
+  H^0_c(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   H^0_c(M, E) = 0.
 \]
@@ -33,84 +34,149 @@ the following compactly supported cohomology conditions:
 The conditions in Definition~\ref{def:c-quantum-observable-universe} admit a
 natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
 $H^0_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
-$E$ exists, while $H^0_c(M, \mathrm{Ad}(E)) = 0$ eliminates compactly
+$E$ exists, while $H^0_c(M, \mathrm{Ad}(P)) = 0$ eliminates compactly
 supported infinitesimal gauge symmetries.  Together, these conditions mean that
 the space of sections of $J^1 E$ with compact support injects into the space of
-connections, preventing any local degeneracy of the gauge field.
+connections on $P$, preventing any local degeneracy of the gauge field.
 \end{remark}
 
 % ── Lemma and Proposition ────────────────────────────────────────────────────
 
-\begin{lemma}[Uniqueness of the connection]
+\begin{lemma}[Irreducibility of the connection]
 \label{lem:unique-connection}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
 vanishing conditions
 \[
-  H^0_c(M, \mathrm{Ad}(E)) = 0
+  H^0_c(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   H^0_c(M, E) = 0
 \]
-imply that the connection $A$ on $E$ is unique up to gauge equivalence.
+imply that every instanton connection $A$ on $P$ is irreducible.
 \end{lemma}
 
 \begin{proof}
-% TODO: proof
+Suppose for contradiction that an instanton connection $A$ on $P$ is
+reducible.  Then $A$ is preserved by a non-trivial element
+$s \in \Gamma_c(M,\, \mathrm{Ad}(P))$: in other words, the infinitesimal
+automorphism $s$ satisfies $D_A s = 0$ and has compact support.  Such a
+section is a non-zero element of $H^0_c(M, \mathrm{Ad}(P))$, contradicting
+the hypothesis $H^0_c(M, \mathrm{Ad}(P)) = 0$.  Hence no non-trivial
+compactly supported gauge symmetry preserves $A$, and $A$ is irreducible.
 \end{proof}
 
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
-$A$.  Then the curvature $F_A$ is self-dual, i.e.\
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with
+instanton connection $A$ on $P$.  Let $H = \ker\theta \subset TM$ denote the
+Levi distribution (the even-dimensional horizontal sub-bundle of the CR
+manifold).  The Hodge star operator $*_H$ is evaluated on $H$, where it is
+well-defined because $H$ is even-dimensional.  Then the curvature $F_A$,
+restricted to $H$, is self-dual:
 \[
-  F_A = {*}\, F_A.
+  F_A\big|_H \;=\; {*_H}\, F_A\big|_H.
 \]
 \end{proposition}
 
 \begin{proof}
-% TODO: proof
+The contact form $\theta$ splits the tangent bundle as
+$TM = H \oplus \mathbb{R}\xi$, where $H = \ker\theta$ has real dimension
+$2n$ (with $\dim_{\mathbb{R}} M = 2n+1$).  The curvature $F_A$ is an
+$\mathrm{Ad}(P)$-valued $2$-form on $M$.  By the Reeb decomposition
+(Definition~\ref{def:reeb-decomposition}), $F_A$ splits into horizontal and
+vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
+\mathrm{Ad}(P))$.
+
+On the even-dimensional bundle $H$, the Webster metric $g_\theta$ and the
+complex structure $J$ determine a Hodge star operator
+$*_H \colon \Lambda^2 H^* \to \Lambda^{2n-2} H^*$.  When $n = 2$ (so
+$\dim H = 4$), $*_H$ maps $2$-forms to $2$-forms and decomposes
+$\Lambda^2 H^*$ into self-dual and anti-self-dual parts.
+
+An instanton connection $A$ minimises the Yang--Mills functional
+$\int_M \lVert F_A|_H \rVert^2$.  By the Bogomolny argument,
+\[
+  \lVert F_A|_H \rVert^2
+  \;=\; \lVert F_A^+|_H \rVert^2 + \lVert F_A^-|_H \rVert^2
+  \;=\; 2\lVert F_A^-|_H \rVert^2
+        + \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H),
+\]
+where the topological term $\int \mathrm{tr}(F_A|_H \wedge F_A|_H)$ is
+fixed by the characteristic class of $P$.  Minimising the functional forces
+$F_A^-|_H = 0$, which is precisely the self-duality condition
+$F_A|_H = {*_H}\,F_A|_H$.
 \end{proof}
 
 % ── Examples ─────────────────────────────────────────────────────────────────
 
-\begin{example}[Calabi--Yau manifolds]
+\begin{example}[Real hypersurface in a Calabi--Yau manifold]
 \label{ex:calabi-yau}
-Let $M$ be a Calabi--Yau manifold.  The Ricci-flat K\"ahler metric on $M$
-endows it with a natural CR structure, and the trivial
-$\mathrm{SU}(2)$-bundle $E = M \times \mathrm{SU}(2)$ yields a $\mathbb{C}$
-quantum observable universe when the compactly supported cohomology conditions
-of Definition~\ref{def:c-quantum-observable-universe} are satisfied.
+Let $X$ be a Calabi--Yau manifold and let $M \subset X$ be a smooth real
+hypersurface.  Then $M$ is an odd-dimensional strictly pseudoconvex CR
+manifold inheriting its CR structure from the ambient K\"ahler geometry.  The
+restriction of the tangent bundle of $X$ to $M$ supplies a natural principal
+$\mathrm{SU}(2)$-bundle $P \to M$, and the associated state bundle
+$E = P \times_G \mathbb{CP}^1$ yields a $\mathbb{C}$ quantum observable
+universe $(M, G, P, E)$ when the compactly supported cohomology conditions of
+Definition~\ref{def:c-quantum-observable-universe} are satisfied.
 \end{example}
 
-\begin{example}[ALE spaces]
+\begin{example}[ALE links]
 \label{ex:ale}
-Let $M$ be an asymptotically locally Euclidean (ALE) space.  ALE spaces arise
-as minimal resolutions of quotient singularities
-$\mathbb{C}^2 / \Gamma$ for finite subgroups
-$\Gamma \subset \mathrm{SU}(2)$.  Equipped with a hyper-K\"ahler metric and
-the corresponding principal $\mathrm{SU}(2)$-bundle, $M$ provides a
-$\mathbb{C}$ quantum observable universe satisfying self-dual curvature
-(Proposition~\ref{prop:self-dual-curvature}).
+Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and let $X$ be the
+minimal resolution of $\mathbb{C}^2 / \Gamma$.  The link
+$M = S^3 / \Gamma$ is the boundary of a tubular neighbourhood of the
+exceptional set in $X$; it is a compact $3$-dimensional strictly pseudoconvex
+CR manifold.  The hyper-K\"ahler structure on $X$ restricts to a contact form
+$\theta$ on $M$ whose Reeb vector field $\xi$ generates the Hopf fibration
+$S^3/\Gamma \to \mathbb{CP}^1/\Gamma$.  Equipped with the induced principal
+$\mathrm{SU}(2)$-bundle $P \to M$ and the associated state bundle
+$E = P \times_G \mathbb{CP}^1$, the $4$-tuple $(M, G, P, E)$ provides a
+$\mathbb{C}$ quantum observable universe satisfying horizontal self-dual
+curvature (Proposition~\ref{prop:self-dual-curvature}).
 \end{example}
 
-\begin{example}[$n$-dimensional affine space]
+\begin{example}[Odd-dimensional spheres]
 \label{ex:affine}
-Let $M = \mathbb{C}^n$ with the standard CR structure inherited from its
-embedding in $\mathbb{C}^n$.  The trivial principal $\mathrm{SU}(2)$-bundle
-$E = \mathbb{C}^n \times \mathrm{SU}(2)$ admits a flat instanton connection
-satisfying the self-duality condition
-(Proposition~\ref{prop:self-dual-curvature}).  When the compactly supported
-cohomology conditions of
-Definition~\ref{def:c-quantum-observable-universe} hold, $(\mathbb{C}^n, G, E)$
-is a $\mathbb{C}$ quantum observable universe.  For $n = 2$, this recovers the
-two-dimensional affine example $M = \mathbb{C}^2$.
+Let $M = S^{2n-1} \subset \mathbb{C}^n$ be the unit sphere with the standard
+strictly pseudoconvex CR structure inherited from its embedding as the boundary
+of the unit ball in $\mathbb{C}^n$.  The contact form
+$\theta = \frac{i}{2}(\bar\partial - \partial)\lVert z\rVert^2\big|_M$
+equips $M$ with a Reeb vector field generating the Hopf fibration
+$S^{2n-1} \to \mathbb{CP}^{n-1}$.  The trivial principal
+$\mathrm{SU}(2)$-bundle $P = S^{2n-1} \times \mathrm{SU}(2)$ admits a flat
+instanton connection satisfying the horizontal self-duality condition
+(Proposition~\ref{prop:self-dual-curvature}).  With
+$E = P \times_G \mathbb{CP}^1$ and the compactly supported cohomology
+conditions of Definition~\ref{def:c-quantum-observable-universe},
+$(S^{2n-1}, G, P, E)$ is a $\mathbb{C}$ quantum observable universe.  For
+$n = 2$, $M = S^3$ is the boundary of $\mathbb{C}^2$.
+\end{example}
+
+\begin{example}[Bring's surface unit circle bundle]
+\label{ex:brings-surface}
+Let $S$ denote Bring's surface (Definition~\ref{def:brings-surface}), the
+genus-$4$ Riemann surface in $\mathbb{P}^4$ cut out by the first three power
+sums $\sum x_j^k = 0$, $k=1,2,3$.  Being a Riemann surface (real
+dimension~$2$), $S$ itself is not a CR manifold.  The CR geometry lives on the
+unit circle bundle $M_S \subset T^*S$: the Liouville $1$-form on $T^*S$
+restricts to a contact form $\theta$ on $M_S$, making it a $3$-dimensional
+strictly pseudoconvex CR manifold.  The Reeb vector field $\xi$ generates the
+$U(1)$ fibre rotation of $M_S \to S$.  The natural projection
+$\pi\colon S \to \mathbb{CP}^1$ (a degree-$4$ branched covering with $6$
+branch points corresponding to the $6$ defects of Euler
+characteristic~$\chi=-6$) lifts to a principal $\mathrm{SU}(2)$-bundle
+$P \to M_S$.  Setting $E = P \times_G \mathbb{CP}^1$, the $4$-tuple
+$(M_S,\, G,\, P,\, E)$ assembles into a $\mathbb{C}$ quantum observable
+universe whose exceptional divisors support the $q$-deformed Reeb flow
+(Definition~\ref{def:q-reeb-flow}).
 \end{example}
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
 \begin{remark}[Substrate parameter]
 \label{rem:substrate-parameter}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
-$A$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with instanton
+connection $A$ on $P$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
 its self-dual part.  Let
 $L \in \Gamma(T^*M \otimes \overline{T^*M})$ be the \emph{Levi form}, a
 Hermitian form on the tangent bundle of $M$.  The \emph{substrate parameter}
@@ -126,7 +192,7 @@ form and the self-dual curvature.
 
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
 \emph{quantum gauge group} is the field of quantum groups
 $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
@@ -135,7 +201,7 @@ group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
 \emph{quantum Planck constant} is the smooth field
 $\hbar_q \colon M \to [0,1)$ defined by
@@ -152,9 +218,13 @@ vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 In the $\mathbb{C}$ quantum observable universe the Heisenberg uncertainty
 principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
 $\hat{P}$ denote position and momentum observables on the fibre
-$\mathbb{CP}$.  We define their $q$-dependent commutator at $p \in M$ by
+$\mathbb{CP}^1$.  Let $J \colon H \to H$ be the complex structure operator
+on the Levi distribution ($J^2 = -\mathrm{Id}$); throughout this paper every
+occurrence of the imaginary unit~$i$ in a physical equation is identified with
+the geometric action of~$J$ on horizontal planes.  We define their
+$q$-dependent commutator at $p \in M$ by
 \[
-  [\hat{X},\, \hat{P}]_q \;:=\; i\,\hbar_q(p),
+  [\hat{X},\, \hat{P}]_q \;:=\; J\,\hbar_q(p),
 \]
 where $\hbar_q(p) = 1 - q(p)^{-1}$
 (Definition~\ref{def:quantum-planck-constant}).  In this remark the subscript
@@ -163,7 +233,7 @@ field $q$ and should not be confused with any $q$-deformed Lie bracket
 $[\cdot,\cdot]_q$ on vector fields that may appear elsewhere.  The commutator
 encodes the local uncertainty: when $q(p) \to 1$ (classicality),
 $[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$
-(deep-quantum regime), $[\hat{X}, \hat{P}]_q \to i$ and maximal uncertainty
+(deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty
 prevails.
 
 \medskip
@@ -209,7 +279,7 @@ between two extreme cosmological regimes:
   \item \emph{Big bang} ($q \to \infty$).  When
         $\lVert L \wedge F_A^+\rVert \to \infty$ the substrate is maximally
         wound and $q(p) \to \infty$.  In this limit $\hbar_q \to 1$, the
-        commutator $[\hat{X}, \hat{P}]_q \to i$, and uncertainty is maximal:
+        commutator $[\hat{X}, \hat{P}]_q \to J$, and uncertainty is maximal:
         the universe is in a purely quantum state with all torsion wound up
         and no classical information from fermionic matter.
 \end{enumerate}
@@ -235,7 +305,7 @@ quantum field algebra $\mathrm{SU}_q(2)$
 
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Remark~\ref{rem:substrate-parameter}).  Let $d_q$ denote the
 $q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
 a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
@@ -295,7 +365,7 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
-Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Remark~\ref{rem:substrate-parameter}) and Reeb vector
 field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
 \emph{$q$-deformed Reeb vector field} is the vector field $\xi_q$ on $M$
@@ -338,7 +408,7 @@ $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
 \label{rem:q-torsion-leaf-minimum}
-Let $A_q$ denote the $q$-deformed connection on $E$ and define the
+Let $A_q$ denote the $q$-deformed connection on $P$ and define the
 $q$-curvature
 \[
   \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q.
@@ -402,20 +472,29 @@ experimental signatures of this emergent geometry.
 \begin{remark}[The Schr\"odinger Equation as ``Jet Co-action'']
 \label{rem:schrodinger-jet-coaction}
 The Schr\"odinger equation describes the evolution of a state in the fibre
-$\mathbb{CP}$.  In the jet-bundle framework this is expressed as the condition
-of parallel transport along the connection $A$.
+$\mathbb{CP}^1$.  In the jet-bundle framework this is expressed as the
+condition of parallel transport along the instanton connection $A$ on $P$.
 
-For a section $\psi \in \Gamma(E)$, the Schr\"odinger dynamics are found in
-the kernel of the $q$-deformed covariant derivative on $J^1 E$:
+Let $J \colon H \to H$ denote the complex structure operator on the Levi
+distribution ($J^2 = -\mathrm{Id}$).  In this framework the symbol~$i$ in the
+Schr\"odinger equation is identified with $J$: it acts as a geometric
+twisting operator on horizontal planes rather than as an algebraic imaginary
+unit.
+
+For a section $\psi \in \Gamma(E)$ and the $q$-deformed Reeb vector field
+$\xi_q$ (Definition~\ref{def:q-reeb-vector-field}), the Schr\"odinger
+dynamics take the form
 \[
-  i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\, \psi,
+  J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,
 \]
 where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
 \begin{itemize}
   \item $\hbar_q(p) = 1 - q(p)^{-1}$: the quantum Planck constant
         (Definition~\ref{def:quantum-planck-constant}) is a local field;
-  \item $D_A = d + A$: the connection $A$ (the instanton) acts as the
-        potential.
+  \item $D_A = d + A$: the instanton connection on $P$ acts as the potential;
+  \item $\iota_{\xi_q} D_A \psi$: the covariant derivative $D_A\psi$ is an
+        $E$-valued $1$-form; contracting it with $\xi_q$ yields an $E$-valued
+        $0$-form (i.e.\ a section of $E$), matching the right-hand side.
 \end{itemize}
 As $q(p) \to 1$ (classicality), the commutator
 $[\hat{X}, \hat{P}]_q \to 0$ (Remark~\ref{rem:heisenberg-commutator}), the
