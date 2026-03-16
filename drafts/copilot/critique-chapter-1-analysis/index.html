@@ -314,6 +314,7 @@ code { font-size: 90%; }
       <button id="toc-btn" class="toc-btn">&#9776; Contents</button>
       <div id="toc-dropdown" class="toc-dropdown">
         <a class="toc-ch" href="#chap:qou">Quantum Observable Universe</a>
+        <a class="toc-sec" href="#sec:qou-critique">Critique summary</a>
         <a class="toc-ch" href="#chap:torsion">Lifting of Quantum Torsion</a>
         <a class="toc-ssec" href="#ssec:descent">Descent</a>
         <a class="toc-ch" href="#texorpdfstringpp">texorpdfstringpp</a>
@@ -369,7 +370,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/copilot/critique-chapter-1-analysis">&#x1F33F; copilot/critique-chapter-1-analysis</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/66e6751c25dc9f9bdd68605c5849166d6679e27d">&#x1F4DD; 66e6751</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/9812d865bf6ab9dd4a62bbf953043c939b720a91">&#x1F4DD; 9812d86</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/52">PR #52</a>
 </div>
 
@@ -1133,6 +1134,430 @@ J^1E @&gt;{\text{Variational Derivative } \mathbf{E}}&gt;&gt;
 \end{CD}\]</span></em></p>
 </div>
 
+<h2 id="critique-summary"><span id="sec:qou-critique"></span>Critique summary</h2>
+<p>The table below rates every labelled item in this chapter on a
+three-point scale (<strong>Good</strong> = rigorous and self-contained,
+<strong>Fair</strong> = essentially correct but with gaps or
+ambiguities, <strong>Poor</strong> = contains a material error or an
+unjustified claim that undermines the argument) and lists the concerns
+that should be addressed.</p>
+<div class="small">
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Item</strong></th>
+<th style="text-align: left;"><strong>Rating</strong></th>
+<th style="text-align: left;"><strong>Concerns</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td
+style="text-align: left;">Def. 1.1<code>def:c-quantum-universe</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) <span class="math inline">\(M\)</span>
+is required to be a “CR manifold” but the type (hypersurface, strictly
+pseudoconvex) is not specified; later items silently assume a global
+contact form <span class="math inline">\(\theta\)</span> and strict
+pseudoconvexity. (b) “<span
+class="math inline">\(\mathrm{SO}(3)\)</span> holonomy” on an <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle is a non-trivial
+holonomy reduction that is stated without motivation or justification.
+(c) The <span class="math inline">\(\mathrm{SU}(2)\)</span>-action on
+<span class="math inline">\(\mathbb{CP}^1\)</span> used to form the
+associated bundle is not specified.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Def. 1.2<code>def:c-quantum-observable-universe</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) <span class="math inline">\(E =
+P\times_G\mathbb{CP}^1\)</span> is a fibre bundle with non-linear fibre;
+<span class="math inline">\(H^0_c(M,E)\)</span> is not a standard
+cohomology group. The intended meaning (vanishing of compactly supported
+sections <span class="math inline">\(\Gamma_c(M,E)\)</span>) should be
+stated explicitly. (b) The cohomology theory (sheaf, Čech, de Rham) is
+not identified.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rem. 1.3<code>rem:jet-bundle</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">The claim that <span
+class="math inline">\(\Gamma_c(M,J^1E)\)</span> injects into the space
+of connections on <span class="math inline">\(P\)</span> is non-trivial
+and is neither proved nor given a literature reference. The jet-bundle
+construction for a non-linear fibre (<span
+class="math inline">\(\mathbb{CP}^1\)</span>) requires additional care
+that is not discussed.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Lem. 1.4<code>lem:unique-connection</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) The proof uses only <span
+class="math inline">\(H^0_c(M,\mathrm{Ad}(P))=0\)</span>; the condition
+<span class="math inline">\(H^0_c(M,E)=0\)</span> is never invoked, so
+the hypothesis is stronger than necessary. (b) The label says “unique”
+but the statement says “irreducible”—these are distinct properties.
+(c) The proof assumes the stabiliser of a reducible connection contains
+a <em>compactly supported</em> section, which requires <span
+class="math inline">\(M\)</span> to be non-compact or an additional
+argument.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Prop. 1.5<code>prop:self-dual-curvature</code></td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">(a) Uses the contact form <span
+class="math inline">\(\theta\)</span> and Reeb field <span
+class="math inline">\(\xi\)</span>, neither of which is part of
+Definition 1.1; a contact form should be part of the data or its
+existence should be proved. (b) Self-duality of <span
+class="math inline">\(2\)</span>-forms (<span
+class="math inline">\(*_H^2=\mathrm{id}\)</span> on <span
+class="math inline">\(\Lambda^2\)</span>) holds only when <span
+class="math inline">\(\dim H=4\)</span> (<span
+class="math inline">\(n=2\)</span>); the proposition is stated for
+general CR manifolds but the proof restricts to <span
+class="math inline">\(n=2\)</span> without stating this as a hypothesis.
+(c) The Bogomolny decomposition on lines 96–101 mixes pointwise norms
+and integral expressions inconsistently. (d) Forward-references
+Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.17</a>,
+which appears later in the chapter.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ex. 1.6<code>ex:calabi-yau</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) Not every real hypersurface in a
+Calabi–Yau manifold is strictly pseudoconvex; this should be stated as
+an assumption. (b) “The restriction of <span
+class="math inline">\(TX\)</span> to <span
+class="math inline">\(M\)</span> supplies a natural principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle” holds only when
+<span class="math inline">\(X\)</span> is a Calabi–Yau <span
+class="math inline">\(2\)</span>-fold (K3 surface); for
+higher-dimensional CY manifolds the holonomy is <span
+class="math inline">\(\mathrm{SU}(n)\)</span> with <span
+class="math inline">\(n&gt;2\)</span>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ex. 1.7<code>ex:ale</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) “The hyper-Kähler structure restricts
+to a contact form” is imprecise: the contact form arises from the CR
+structure of the boundary, not by restricting a Kähler form. (b) <span
+class="math inline">\(\mathbb{CP}^1/\Gamma\)</span> is an orbifold, not
+a smooth manifold, for most finite subgroups <span
+class="math inline">\(\Gamma\)</span>. (c) Satisfaction of the compactly
+supported cohomology conditions is asserted but not verified.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ex. 1.8<code>ex:affine</code></td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">(a) The label <code>ex:affine</code> is
+misleading; the example concerns spheres. (b) A flat connection on a
+trivial bundle has <span class="math inline">\(F_A=0\)</span>, giving
+<span class="math inline">\(q=\exp(0)=1\)</span> and <span
+class="math inline">\(\hbar_q=0\)</span> everywhere: the universe is
+entirely classical and all <span
+class="math inline">\(q\)</span>-deformed structures collapse. (c) For
+the trivial bundle <span
+class="math inline">\(P=S^{2n-1}\times\mathrm{SU}(2)\)</span>, <span
+class="math inline">\(\mathrm{Ad}(P)\)</span> is the trivial <span
+class="math inline">\(\mathfrak{su}(2)\)</span>-bundle, so
+$H^0_c(M,\mathrm{Ad}(P))\cong</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">\mathfrak{su}(2)\neq 0$ (the constant
+sections on a compact manifold have compact support). The cohomology
+condition <span class="math inline">\(H^0_c(M,\mathrm{Ad}(P))=0\)</span>
+therefore <em>fails</em>, contradicting the claim that this is a
+QOU.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ex. 1.9<code>ex:brings-surface</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">The distinction between the Riemann
+surface <span class="math inline">\(S\)</span> and the <span
+class="math inline">\(3\)</span>-dimensional CR manifold <span
+class="math inline">\(M_S\)</span> is correctly handled. Minor: the link
+between the branched covering <span class="math inline">\(\pi\colon
+S\to\mathbb{CP}^1\)</span> and the <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle <span
+class="math inline">\(P\to M_S\)</span> deserves a sentence of
+justification.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.10<code>rem:substrate-parameter</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) The Levi form lives on the CR
+distribution <span class="math inline">\(H=\ker\theta\)</span>, not on
+all of <span class="math inline">\(TM\)</span>; the fibre description
+<span
+class="math inline">\(L\in\Gamma(T^*M\otimes\overline{T^*M})\)</span> is
+therefore inaccurate. (b) <span class="math inline">\(L\wedge
+F_A^+\)</span> mixes a Hermitian form with an <span
+class="math inline">\(\mathrm{Ad}(P)\)</span>-valued <span
+class="math inline">\(2\)</span>-form; the algebraic operation and the
+norm are not defined. (c) This is a <em>Remark</em> but it introduces
+the most important field in the paper; promoting it to a
+<em>Definition</em> would better match the definition-first
+philosophy.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Def. 1.11<code>def:quantum-gauge-group</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) “A field of quantum groups <span
+class="math inline">\(\{\mathrm{SU}_{q(p)}(2)\}_{p\in M}\)</span>” is a
+non-standard notion; no fibre-bundle or sheaf-theoretic framework is
+given for continuously varying Hopf algebras. (b) <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span> at <span
+class="math inline">\(q=1\)</span> is isomorphic to the classical group,
+but the algebraic structure jumps at <span
+class="math inline">\(q=1\)</span> in the Hopf-algebra sense; this
+discontinuity is not discussed.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Def. 1.12<code>def:quantum-planck-constant</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">Clean and self-contained. The range <span
+class="math inline">\([0,1)\)</span> is correctly deduced from <span
+class="math inline">\(q\in[1,\infty)\)</span>; both asymptotic regimes
+are described. Minor: calling a smooth field a “constant” is mildly
+misleading, though the text acknowledges this.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.13<code>rem:heisenberg-commutator</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) Position and momentum observables on
+the compact fibre <span class="math inline">\(\mathbb{CP}^1\)</span>
+require careful definition; standard <span
+class="math inline">\(\hat{X},\hat{P}\)</span> have continuous spectra
+that are incompatible with compact spaces. (b) <span
+class="math inline">\([\hat{X},\hat{P}]_q := J\,\hbar_q(p)\)</span> is
+postulated, not derived; the analogy with <span
+class="math inline">\([\hat{X},\hat{P}]=i\hbar\)</span> relies on <span
+class="math inline">\(i\mapsto J\)</span> and <span
+class="math inline">\(\hbar\mapsto\hbar_q\)</span> but this substitution
+is not justified. (c) The remark is unusually long (50 lines) with three
+sub-topics; splitting it would improve readability.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.14<code>rem:cosmological-limits</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) “<span
+class="math inline">\(q\)</span>-torsion twists faster than any
+divergence can grow in the integral” is a quantitative claim without a
+proof or bound. (b) Both limits are called “illusory,” but the
+mathematical content of this assertion is not made precise. (c) The
+finiteness argument relies on the brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>),
+a forward reference to Chapter 2.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.15<code>rem:j1e-local-states</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">Very brief (3 sentences). The claim that
+<span class="math inline">\(J^1E\)</span> “serves as the space of local
+states” is asserted without justification; “weighted by <span
+class="math inline">\(q\)</span>” is vague.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Def. 1.16<code>def:q-harmonic-form</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) <span
+class="math inline">\(d_q\)</span> is used but not defined in this
+chapter; a forward reference or inline definition is needed. (b) <span
+class="math inline">\(\delta_q\)</span> requires an inner product on
+<span class="math inline">\(\Lambda^k T^*M\otimes J^1E\)</span>, which
+is not specified. (c) Sections are valued in <span
+class="math inline">\(J^1E\)</span> rather than the more conventional
+<span class="math inline">\(E\)</span> or <span
+class="math inline">\(\mathrm{Ad}(P)\)</span>; the motivation is not
+given. (d) “<span class="math inline">\(q\)</span>-viscosity” is used
+without definition.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Def. 1.17<code>def:reeb-decomposition</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) The decomposition is not uniquely
+characterised by the displayed conditions; the standard formula <span
+class="math inline">\(\alpha_V=\theta\wedge\iota_\xi\alpha\)</span>
+should be stated. (b) The condition <span
+class="math inline">\(\iota_\xi\alpha_V\neq 0\)</span> fails for <span
+class="math inline">\(0\)</span>-forms (functions), since <span
+class="math inline">\(\iota_\xi f=0\)</span> for every function <span
+class="math inline">\(f\)</span>; this degenerate case is not
+addressed.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Def. 1.18<code>def:fermion</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">Well-formed given the prior definitions.
+The physics interpretation (half-integer spin) is deferred to a remark,
+which is appropriate.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Def. 1.19<code>def:boson</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">Well-formed and the parenthetical
+equivalence is helpful.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Def. 1.20<code>def:q-reeb-vector-field</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) The <span
+class="math inline">\(q\)</span>-deformed Lie bracket <span
+class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is used without an
+in-chapter definition or forward reference. (b) The horizontal lift
+<span class="math inline">\(X_f\)</span> requires a metric (presumably
+the Webster metric), which is not stated. (c) Behaviour in the
+deep-quantum limit <span class="math inline">\(q\to\infty\)</span> is
+not discussed.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Def. 1.21<code>def:q-reeb-flow</code></td>
+<td style="text-align: left;">Good</td>
+<td style="text-align: left;">Standard ODE formulation; clean and
+complete. Minor: existence and uniqueness (or the conditions
+guaranteeing them) could be noted.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Def. 1.22<code>def:q-torsion-leaf</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">On a strictly pseudoconvex CR manifold the
+Levi distribution <span class="math inline">\(H\)</span> is
+non-integrable (the Levi form is non-degenerate), so maximal integral
+submanifolds are of restricted dimension. The <span
+class="math inline">\(q\)</span>-Reeb flow generically has a vertical
+(Reeb) component, so invariance of an <span
+class="math inline">\(H\)</span>-tangent leaf under <span
+class="math inline">\(\phi_t^q\)</span> is a very strong condition whose
+feasibility is not discussed.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.23<code>rem:q-torsion-leaf-minimum</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) <span
+class="math inline">\(A_q\)</span> (the <span
+class="math inline">\(q\)</span>-deformed connection) is introduced
+without definition. (b) The vanishing of the first variation under <span
+class="math inline">\(\phi_t^q\)</span>-invariance is claimed without
+proof. (c) The <span class="math inline">\(\frac{1}{2}\)</span> in the
+curvature formula suggests the Lie-algebra convention, which should be
+stated.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.24<code>rem:reeb-physical</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">The assertion that vertical components
+yield half-integer spin and horizontal components yield integer spin is
+a central physical claim; it is not proved and no reference is given.
+The spin–statistics connection requires deep QFT arguments that are not
+reproduced.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.25<code>rem:q-harmonic-physical</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">“<span
+class="math inline">\(q\)</span>-deformed viscosity” and the limit <span
+class="math inline">\(\Delta_q\to\Delta_{\text{Hodge}}\)</span> as <span
+class="math inline">\(q\to 1\)</span> are asserted without proof. The
+remark is too brief to support the claims made.</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.26<code>rem:gr-substrate-geometry</code></td>
+<td style="text-align: left;">Poor</td>
+<td style="text-align: left;">(a) The action <span
+class="math inline">\(S_q\)</span> is never defined. (b) “$\delta
+S_q/\delta L</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">\implies G_{\mu\nu}\sim
+T_{\mu\nu}^{(q)}<span class="math inline">\(” uses an implication arrow
+and a tilde in place of a rigorous derivation. (c) Greek tensor indices
+(\)</span>\mu,\nu$) break the otherwise coordinate-free formulation of
+the chapter.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">Rem. 1.27<code>rem:schrodinger-jet-coaction</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">(a) The <span
+class="math inline">\(q\)</span>-deformed Hamiltonian <span
+class="math inline">\(\hat{H}_q\)</span> is used but not defined.
+(b) The Schrödinger equation is a linear PDE, but the state <span
+class="math inline">\(\psi\in\Gamma(E)\)</span> lives in a <span
+class="math inline">\(\mathbb{CP}^1\)</span>-bundle (a non-linear
+fibre); this tension is not addressed. (c) <span
+class="math inline">\(D_A=d+A\)</span> is standard for vector bundles
+but <span class="math inline">\(E\)</span> is not a vector bundle.</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">Rem. 1.28<code>rem:main-commutative-diagram</code></td>
+<td style="text-align: left;">Fair</td>
+<td style="text-align: left;">The diagram is illustrative rather than
+mathematical: the objects are descriptions (“General Relativity”,
+“Schrödinger Eq.”) rather than categories or spaces, and the arrows are
+not defined as morphisms. Commutativity is not proved.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Summary statistics.</strong> Of the 28 labelled items: 5 are
+rated <strong>Good</strong> (Definitions 1.12, 1.18, 1.19, 1.21 and
+Example 1.9); 20 are rated <strong>Fair</strong>; and 3 are rated
+<strong>Poor</strong> (Prop. 1.5, Ex. 1.8, Rem. 1.26).</p>
+<p><strong>Critical issues requiring immediate attention:</strong></p>
+<ol type="1">
+<li><p><strong>Example 1.8 (<a class="defn-link" href="#ex:affine">Odd-dimensional spheres</a>)</strong>
+contradicts its own framework: the trivial <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-bundle on a compact sphere
+has <span
+class="math inline">\(H^0_c(M,\mathrm{Ad}(P))\cong\mathfrak{su}(2)\neq
+0\)</span>, so the QOU cohomology condition fails.</p></li>
+<li><p><strong>Proposition 1.5 (Self-duality)</strong> is stated for
+arbitrary CR dimension but proved only for <span
+class="math inline">\(n=2\)</span>; the hypothesis should be restricted
+or the proof generalised.</p></li>
+<li><p><strong>Definition 1.1</strong> should require <span
+class="math inline">\(M\)</span> to be a strictly pseudoconvex CR
+manifold of hypersurface type equipped with a pseudo-Hermitian
+structure <span class="math inline">\(\theta\)</span>, since every
+subsequent result depends on the contact form.</p></li>
+<li><p>Several key objects (<span class="math inline">\(d_q\)</span>,
+<span class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span>, <span
+class="math inline">\(A_q\)</span>, <span
+class="math inline">\(S_q\)</span>, <span
+class="math inline">\(\hat{H}_q\)</span>) are used but not defined in
+this chapter; either in-chapter definitions or explicit forward
+references should be provided.</p></li>
+<li><p>The <a class="defn-link" href="#rem:substrate-parameter">substrate parameter</a> (Remark 1.10) is the chapter’s central
+concept yet is housed in a <em>Remark</em>; promoting it to a
+<em>Definition</em> would align with the definition-first philosophy
+stated in the preamble.</p></li>
+</ol>
 <h1 id="lifting-of-quantum-torsion"><span id="chap:torsion"></span>Lifting of Quantum Torsion</h1>
 <div id="prop:jet-prolongation" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/copilot/critique-chapter-1-analysis/chapters/lifting-of-quantum-torsion.tex#L7" target="_blank" title="View source">&#x1F4C4;</a>
 
