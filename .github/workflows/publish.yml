@@ -15,6 +15,8 @@
 #   quantum-observable-universe-<slug>.md        Pandoc GFM (feature branches)
 #   index.html                                   HTML page with dark/light mode, TOC, definition links
 #   qa.html                                      QA report from build warnings (feature branches only)
+#   lean/                                        Lean 4 formalisation stubs + mathlib4 linkages
+#   lean-manifest.json                           JSON index of LaTeX labels → Lean stubs
 #
 # Preview builds
 # ──────────────
@@ -235,6 +237,19 @@ jobs:
               --repo   "${{ github.repository }}" \
               --sha    "${{ env.HEAD_SHA }}"
           fi
+
+      # ── 3b. Generate Lean theorem stubs ─────────────────────────────────────
+      - name: Generate Lean theorem index
+        run: |
+          python3 .github/scripts/generate-lean.py \
+            chapters/ \
+            lean/QOU/Defs.lean \
+            --manifest _site/lean-manifest.json
+          # Copy Lean stubs into site for download
+          mkdir -p _site/lean
+          cp -r lean/*.lean lean/lean-toolchain _site/lean/
+          cp -r lean/QOU _site/lean/
+          echo "Lean stubs generated: $(grep -c '^def stub_' lean/QOU/Defs.lean) declarations"
 
       # ── 4. Deploy to target branch ─────────────────────────────────────────
       # peaceiris/actions-gh-pages automatically creates the publish_branch
