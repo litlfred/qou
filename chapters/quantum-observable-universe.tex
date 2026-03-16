@@ -427,12 +427,60 @@ functorial and introduces no new data; it amounts to replacing an
 algebra with its category of modules.
 
 Third, the one genuine tension --- the algebraic discontinuity at
-$q = 1$, where the coalgebra becomes commutative --- is resolved by the
-$C^*$-algebraic perspective of approach~(3), which the paper invokes
-implicitly whenever continuity in $q$ is needed.  A full categorical
-treatment via~(2) would make the QOU framework compatible with extended
-topological field theories and higher gauge theory; this comparison
-motivates the categorical developments in the chapters cited above.
+$q = 1$ --- deserves a closer examination.  In the Hopf algebra
+$\mathcal{O}_q(\mathrm{SU}(2))$, the comultiplication
+$\Delta_q \colon \mathcal{O}_q(\mathrm{SU}(2)) \to
+\mathcal{O}_q(\mathrm{SU}(2)) \otimes \mathcal{O}_q(\mathrm{SU}(2))$
+is cocommutative if and only if $q = 1$; for every $q \neq 1$ the Hopf
+algebra is genuinely non-cocommutative.  In the algebraic category of
+Hopf algebras, $\lim_{q \to 1}\Delta_q$ does not equal $\Delta_1$ in
+any meaningful sense: the fibres
+$\mathcal{O}_{q}(\mathrm{SU}(2))$ and
+$\mathcal{O}_{1}(\mathrm{SU}(2)) = \mathcal{O}(\mathrm{SU}(2))$ are
+not isomorphic as coalgebras for $q \neq 1$, so the bundle
+$\mathcal{H} \to M$ of approach~(1) has a topological discontinuity
+wherever $q(p) = 1$.
+
+The $C^*$-algebraic perspective of approach~(3) resolves this
+discontinuity analytically.  In Rieffel's framework of strict
+deformation quantisation, the assignment
+$q \mapsto C(\mathrm{SU}_q(2))$ forms a continuous field of
+$C^*$-algebras: for every section~$a$ of the field, the norm function
+$q \mapsto \lVert a_q \rVert$ is continuous on $[1,\infty)$, so
+$\lVert a_q - a_1 \rVert \to 0$ as $q \to 1$.  The algebraic jump in
+the coalgebra structure is invisible to the $C^*$-norm topology ---
+continuity is recovered at the analytic level even though it fails at
+the algebraic level.  The paper invokes this resolution implicitly
+whenever continuity in $q$ is needed (e.g.\ the classical limits
+$q \to 1$ in Remark~\ref{rem:planck-limits}).
+
+A full categorical treatment via approach~(2) would provide a
+\emph{structural} resolution complementing the analytic one.  The
+cobordism hypothesis (Baez--Dolan, proved by Lurie) requires that a
+fully extended $n$-dimensional topological field theory assigns to a
+point a \emph{fully dualisable} object in a symmetric monoidal
+$(\infty,n)$-category.  The representation category
+$\mathrm{Rep}(\mathrm{SU}_q(2))$, viewed as a braided fusion category,
+is fully dualisable in the Morita $3$-category of tensor categories;
+it can therefore serve directly as the datum assigned to a point by a
+$3$-dimensional extended TFT (this is the mathematical content
+underlying Chern--Simons theory at level~$k$ when $q$ is a root of
+unity).  In this categorical setting, the passage $q \to 1$ corresponds
+to a degeneration of the fusion category to $\mathrm{Rep}(\mathrm{SU}(2))$
+--- a degeneration that is controlled by the deformation theory of
+tensor categories rather than by norm topology.
+
+Similarly, higher gauge theory replaces a gauge group $G$ with a
+categorical group (a $2$-group), assigning to each point of $M$ not
+merely a group element but a coherent system of morphisms in a
+$2$-category.  Approach~(2) --- viewing the quantum gauge group as a
+fibred category of braided monoidal categories over~$M$ --- is
+precisely the input required by higher gauge theory: the fibres are the
+categorical groups, and the fibration encodes the parallel-transport
+$2$-functor.  Adopting~(2) would therefore embed the QOU framework
+directly into both extended TFT and higher gauge theory.  This
+comparison motivates the categorical developments in the chapters cited
+above.
 \end{remark}
 
 \begin{definition}[Quantum Planck Constant]
@@ -1172,13 +1220,14 @@ revision pass.
   & Good
   & \emph{Updated.}\;  Three formalisations (Hopf-algebra bundle, monoidal
     category, $C^*$-continuous field) discussed with pros, cons, and
-    category-theoretic implications.  Now includes forward references
-    comparing with categorical approaches in later chapters:
-    terminal objects (Chapter~\ref{chap:descartes}),
-    categorical reformulation (Chapter~\ref{chap:p-adic}),
-    brane tower ascent/descent (Chapter~\ref{chap:torsion}),
-    and representation-theoretic braiding
-    (Chapter~\ref{chap:path-integrals-braiding}). \\
+    category-theoretic implications.  Forward references to categorical
+    approaches in later chapters.  Impact assessment now includes an
+    expanded analysis of the $q = 1$ algebraic discontinuity
+    (non-cocommutativity of $\Delta_q$ for $q \neq 1$), the
+    $C^*$-algebraic resolution via Rieffel's strict deformation
+    quantisation, and the structural resolution via approach~(2):
+    fully dualisable objects, the cobordism hypothesis
+    (Baez--Dolan--Lurie), and higher gauge theory via $2$-groups. \\
 
 \raggedright Def.\newline\texttt{def:quantum-\linebreak planck-constant}
   & Good
