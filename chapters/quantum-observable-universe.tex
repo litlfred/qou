@@ -55,7 +55,13 @@ imply that every instanton connection $A$ on $P$ is irreducible.
 \end{lemma}
 
 \begin{proof}
-% TODO: proof
+Suppose for contradiction that an instanton connection $A$ on $P$ is
+reducible.  Then $A$ is preserved by a non-trivial element
+$s \in \Gamma_c(M,\, \mathrm{Ad}(P))$: in other words, the infinitesimal
+automorphism $s$ satisfies $D_A s = 0$ and has compact support.  Such a
+section is a non-zero element of $H^0_c(M, \mathrm{Ad}(P))$, contradicting
+the hypothesis $H^0_c(M, \mathrm{Ad}(P)) = 0$.  Hence no non-trivial
+compactly supported gauge symmetry preserves $A$, and $A$ is irreducible.
 \end{proof}
 
 \begin{proposition}[Self-duality of the curvature]
@@ -72,7 +78,32 @@ restricted to $H$, is self-dual:
 \end{proposition}
 
 \begin{proof}
-% TODO: proof
+The contact form $\theta$ splits the tangent bundle as
+$TM = H \oplus \mathbb{R}\xi$, where $H = \ker\theta$ has real dimension
+$2n$ (with $\dim_{\mathbb{R}} M = 2n+1$).  The curvature $F_A$ is an
+$\mathrm{Ad}(P)$-valued $2$-form on $M$.  By the Reeb decomposition
+(Definition~\ref{def:reeb-decomposition}), $F_A$ splits into horizontal and
+vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
+\mathrm{Ad}(P))$.
+
+On the even-dimensional bundle $H$, the Webster metric $g_\theta$ and the
+complex structure $J$ determine a Hodge star operator
+$*_H \colon \Lambda^2 H^* \to \Lambda^{2n-2} H^*$.  When $n = 2$ (so
+$\dim H = 4$), $*_H$ maps $2$-forms to $2$-forms and decomposes
+$\Lambda^2 H^*$ into self-dual and anti-self-dual parts.
+
+An instanton connection $A$ minimises the Yang--Mills functional
+$\int_M \lVert F_A|_H \rVert^2$.  By the Bogomolny argument,
+\[
+  \lVert F_A|_H \rVert^2
+  \;=\; \lVert F_A^+|_H \rVert^2 + \lVert F_A^-|_H \rVert^2
+  \;=\; 2\lVert F_A^-|_H \rVert^2
+        + \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H),
+\]
+where the topological term $\int \mathrm{tr}(F_A|_H \wedge F_A|_H)$ is
+fixed by the characteristic class of $P$.  Minimising the functional forces
+$F_A^-|_H = 0$, which is precisely the self-duality condition
+$F_A|_H = {*_H}\,F_A|_H$.
 \end{proof}
 
 % ── Examples ─────────────────────────────────────────────────────────────────
