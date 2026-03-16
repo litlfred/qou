@@ -643,6 +643,106 @@ encoding the self-dual curvature, with the simplicity constraint
 selecting the physical (instanton) sector.
 \end{remark}
 
+\begin{remark}[Simplification in a Frobenius category]
+\label{rem:frobenius-simplification}
+The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural
+\emph{Frobenius structure}: the Haar state
+$h_q \colon \mathcal{O}_q \to \mathbb{C}$ induces a non-degenerate
+pairing $\langle a, b \rangle = h_q(ab)$, making $\mathcal{O}_q$ into
+a Frobenius algebra with comultiplication $\Delta_\mu$ dual to the
+multiplication.  This Frobenius comultiplication is compatible with the
+Hopf comultiplication~$\Delta_q$ of~\eqref{eq:coassociativity} and
+satisfies the \emph{Frobenius relation}:
+\begin{equation}\label{eq:frobenius-relation}
+\begin{CD}
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>{\mu}>>
+  \mathcal{O}_q \\
+@V{\mathrm{id} \otimes \Delta_\mu}VV
+  @VV{\Delta_\mu}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\mu \otimes \mathrm{id}}>
+  \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\end{equation}
+where $\mu$ is the algebra multiplication and $\Delta_\mu$ the
+Frobenius comultiplication (dual to $\mu$ under the Haar pairing).
+The non-degeneracy of $h_q$ is expressed by requiring the composite
+\begin{equation}\label{eq:frobenius-nondegen}
+\begin{CD}
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>{\mu}>>
+  \mathcal{O}_q
+  @>{h_q}>>
+  \mathbb{C}
+\end{CD}
+\end{equation}
+to be a perfect pairing, i.e.\ the induced map
+$\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
+
+Working in a monoidal category in which the gauge datum carries
+Frobenius--Hopf structure yields a simplified reformulation of the
+QOU definition.  A \emph{Frobenius--Hopf object} in a monoidal
+category~$\mathcal{C}$ is an object $A$ equipped with:
+\begin{enumerate}
+  \item a Hopf structure
+        $(\mu, \eta, \Delta, \varepsilon, S)$; and
+  \item a Frobenius form $\lambda \colon A \to \mathbf{1}$ (the
+        categorical analogue of the Haar state) making the
+        pairing~\eqref{eq:frobenius-nondegen} non-degenerate and
+        satisfying the Frobenius relation~\eqref{eq:frobenius-relation}.
+\end{enumerate}
+In this language, the $5$-tuple
+$(M, \theta, G, P, E)$ of Definition~\ref{def:c-quantum-universe}
+and the two vanishing conditions of
+Definition~\ref{def:c-quantum-observable-universe} simplify to
+a triple:
+\begin{enumerate}
+  \item a CR manifold $(M, \theta)$ of hypersurface type with
+        non-degenerate Levi form;
+  \item a non-degenerate Frobenius--Hopf object~$A$ in the monoidal
+        category of vector bundles over~$M$, playing the r\^ole of the
+        triple $(G, P, E)$; and
+  \item an instanton connection on the underlying $A$-bundle
+        (Definition~\ref{def:instanton}).
+\end{enumerate}
+The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
+the non-degeneracy of the Frobenius form~$\lambda$ via the diagram
+\begin{equation}\label{eq:frobenius-vanishing}
+\begin{CD}
+\mathrm{Ad}(A) \otimes \mathrm{Ad}(A)
+  @>{\mu_{\mathrm{Ad}}}>>
+  \mathrm{Ad}(A)
+  @>{\lambda_{\mathrm{Ad}}}>>
+  \mathcal{O}_M \\
+@V{\text{global sections}}VV  @.  @VV{\int_M}V \\
+H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
+  @.  @>>{\text{pairing}}>
+  \mathbb{C}
+\end{CD}
+\end{equation}
+The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
+Frobenius pairing from~$\lambda$; any global parallel section would
+pair non-trivially with itself, contradicting the irreducibility of
+the instanton connection
+(Lemma~\ref{lem:irreducible-connection}).  Hence the Frobenius
+non-degeneracy, combined with irreducibility, forces
+$H^0(M, \mathrm{Ad}(A)) = 0$.  The section-vanishing condition
+$\Gamma_c(M, E) = 0$ follows similarly from the non-existence of
+$A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
+
+This categorical reformulation trades the two analytic vanishing
+conditions of Definition~\ref{def:c-quantum-observable-universe}
+for a single algebraic non-degeneracy condition on the Frobenius form,
+making the definition more uniform and base-field independent ---
+consistent with the Tannakian perspective of
+Remark~\ref{rem:q-torsion-existence}.
+Note, however, that the horizontal distribution $H = \ker\theta$ itself
+\emph{fails} to carry a Frobenius structure (as discussed in
+Remark~\ref{rem:q-torsion-existence}); it is the gauge algebra, not the
+distribution, that is Frobenius.
+\end{remark}
+
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
@@ -1407,6 +1507,19 @@ revision pass.
     fake-flatness~\eqref{eq:fake-flatness},
     and the $2$-group instanton diagram~\eqref{eq:2group-instanton}. \\
 
+\raggedright Rem.\newline\texttt{rem:frobenius-\linebreak simplification}
+  & Good
+  & \emph{New.}\;  Shows that working in a Frobenius category simplifies the
+    QOU definition: the $5$-tuple + two vanishing conditions reduce to a
+    triple $(M, \theta, A)$ with non-degeneracy of the Frobenius form.
+    Commutative diagrams: Frobenius
+    relation~\eqref{eq:frobenius-relation},
+    Haar non-degeneracy pairing~\eqref{eq:frobenius-nondegen},
+    and the categorical vanishing
+    condition~\eqref{eq:frobenius-vanishing}.
+    Clarifies that it is the gauge algebra (not the horizontal distribution)
+    that carries the Frobenius structure. \\
+
 \raggedright Def.\newline\texttt{def:quantum-\linebreak planck-constant}
   & Good
   & \emph{Fixed.}\;  Now a pure definition (formula only).  Limiting
@@ -1571,10 +1684,10 @@ revision pass.
 
 \medskip
 \noindent\textbf{Summary statistics (post-revision).}\;
-Of the 42~labelled items (27 original $+$ 3 new definitions $+$ 2 new
-propositions $+$ 8 new remarks $+$ 1 new example $+$ 1 promoted
+Of the 43~labelled items (27 original $+$ 3 new definitions $+$ 2 new
+propositions $+$ 9 new remarks $+$ 1 new example $+$ 1 promoted
 proposition, after removal of the former \texttt{ex:spheres} example):
-37~are rated \textbf{Good};
+38~are rated \textbf{Good};
 5~are rated \textbf{Fair}; and
 0~are rated \textbf{Poor}.
 
