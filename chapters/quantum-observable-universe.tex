@@ -520,6 +520,25 @@ the absolute value.  This defines a smooth field
 $q \colon M \to [1,\infty) \subset \mathbb{C}^{\times}$ with $q(p) = 1$
 at points where $F_A^+ = 0$ (classicality) and $q(p) \to \infty$ in the
 deep-quantum regime.
+
+\textbf{Relation to the exponential.}
+Over~$\mathbb{Q}$ (or any subfield of~$\mathbb{C}$), the classical
+exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an
+equally valid specialisation map, and the two are related by the Taylor
+expansion $\exp(x) = 1 + x + \tfrac{1}{2}x^2 + \cdots$:
+the formula $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
+is the first-order approximation of
+$\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$.
+Both define smooth fields $M \to [1,\infty)$ with
+the same boundary behaviour ($q = 1$ at classicality, $q \to \infty$
+deep-quantum), and all downstream formulas
+($\hbar_q = 1 - q^{-1}$, the Heisenberg commutator, the Schrödinger
+equation, the Yang--Mills functional) are algebraic in~$q$ and therefore
+insensitive to the choice between $1+x$ and $\exp(x)$.  The algebraic
+form is adopted in Definition~\ref{def:substrate-parameter} because it
+is meaningful over every base field~$k$, whereas $\exp(x)$ requires an
+archimedean topology.
+
 Over~$\mathbb{F}_\pp$, the Levi form contraction is replaced by a
 discrete invariant: $q$ is an element of $\mathbb{F}_\pp^{\times}$,
 typically a primitive $\ell$-th root of unity with $\ell$ coprime
