@@ -424,7 +424,26 @@ $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, which is reconstructible from
 the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of approach~(1)
 via Tannaka--Krein duality.  The passage from~(1) to~(2) is therefore
 functorial and introduces no new data; it amounts to replacing an
-algebra with its category of modules.
+algebra with its category of modules.  The following diagram captures
+this functoriality fibrewise: for any two points $p, p' \in M$
+connected by a path~$\gamma$,
+\begin{equation}\label{eq:tannaka-krein-functoriality}
+\begin{CD}
+\mathcal{O}_{q(p)}(\mathrm{SU}(2))
+  @>{\mathrm{Rep}}>>
+  \mathrm{Rep}(\mathrm{SU}_{q(p)}(2)) \\
+@V{\text{transition along } \gamma}VV
+  @VV{\text{monoidal functor}}V \\
+\mathcal{O}_{q(p')}(\mathrm{SU}(2))
+  @>>{\mathrm{Rep}}>
+  \mathrm{Rep}(\mathrm{SU}_{q(p')}(2))
+\end{CD}
+\end{equation}
+The left column is the Hopf-algebra transition map of approach~(1);
+the right column is the induced monoidal functor of approach~(2).
+Tannaka--Krein reconstruction ($\mathrm{End}^{\otimes}(\omega)$, where
+$\omega$ is the forgetful fibre functor) inverts the horizontal arrows,
+making the two approaches equivalent at each fibre.
 
 Third, the one genuine tension --- the algebraic discontinuity at
 $q = 1$ --- deserves a closer examination.  In the Hopf algebra
@@ -440,6 +459,58 @@ $\mathcal{O}_{1}(\mathrm{SU}(2)) = \mathcal{O}(\mathrm{SU}(2))$ are
 not isomorphic as coalgebras for $q \neq 1$, so the bundle
 $\mathcal{H} \to M$ of approach~(1) has a topological discontinuity
 wherever $q(p) = 1$.
+
+\medskip\noindent\textit{Hopf-algebra structure diagrams.}\;
+To make the preceding discussion explicit, write
+$\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
+$\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
+counit, and antipode respectively.  The Hopf-algebra axioms include
+\emph{coassociativity}:
+\begin{equation}\label{eq:coassociativity}
+\begin{CD}
+\mathcal{O}_q @>{\Delta_q}>>
+  \mathcal{O}_q \otimes \mathcal{O}_q \\
+@V{\Delta_q}VV
+  @VV{\mathrm{id} \otimes \Delta_q}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\Delta_q \otimes \mathrm{id}}>
+  \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\end{equation}
+and the \emph{counit} condition:
+\begin{equation}\label{eq:counit}
+\begin{CD}
+\mathbb{C} \otimes \mathcal{O}_q
+  @<{\varepsilon_q \otimes \mathrm{id}}<<
+  \mathcal{O}_q \otimes \mathcal{O}_q
+  @>>{\mathrm{id} \otimes \varepsilon_q}>
+  \mathcal{O}_q \otimes \mathbb{C} \\
+@|  @AA{\Delta_q}A  @| \\
+\mathcal{O}_q @= \mathcal{O}_q @= \mathcal{O}_q
+\end{CD}
+\end{equation}
+Both diagrams~\eqref{eq:coassociativity} and~\eqref{eq:counit}
+commute for every $q \geq 1$.  The tension at $q = 1$ is captured
+by the \emph{cocommutativity} square: let
+$\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
+\mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
+$(a \otimes b \mapsto b \otimes a)$.  Then
+\begin{equation}\label{eq:non-cocommutativity}
+\begin{CD}
+\mathcal{O}_q @>{\Delta_q}>>
+  \mathcal{O}_q \otimes \mathcal{O}_q \\
+@V{\Delta_q}VV  @VV{\sigma}V \\
+\mathcal{O}_q \otimes \mathcal{O}_q
+  @=
+  \mathcal{O}_q \otimes \mathcal{O}_q
+\end{CD}
+\quad\text{commutes}\;\Longleftrightarrow\;q = 1.
+\end{equation}
+For $q \neq 1$ the failure of~\eqref{eq:non-cocommutativity} is
+controlled by the universal $R$-matrix of the quasi-triangular Hopf
+algebra $U_q(\mathfrak{su}(2))$:
+$\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ \Delta_q$,
+where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
 
 The $C^*$-algebraic perspective of approach~(3) resolves this
 discontinuity analytically.  In Rieffel's framework of strict
@@ -481,6 +552,95 @@ $2$-functor.  Adopting~(2) would therefore embed the QOU framework
 directly into both extended TFT and higher gauge theory.  This
 comparison motivates the categorical developments in the chapters cited
 above.
+
+\medskip\noindent\textit{Self-duality as a short exact sequence.}\;
+In the QOU setting with $\dim_{\mathbb{R}} H = 4$, the Hodge star
+$*_H$ gives the splitting
+$\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$ and hence
+the short exact sequence of $\mathrm{Ad}(P)$-valued forms
+\begin{equation}\label{eq:self-dual-ses}
+\begin{CD}
+0 @>>>
+  \Gamma\!\bigl(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>{\iota}>>
+  \Gamma\!\bigl(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>{\pi^+}>>
+  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
+  @>>> 0
+\end{CD}
+\end{equation}
+The instanton condition
+$F_A|_H = {*_H}\,F_A|_H$
+(Proposition~\ref{prop:self-dual-curvature}) is exactly the condition
+$F_A|_H \in \ker(\mathrm{id} - {*_H}) = \mathrm{im}(\iota^+)$,
+i.e.\ $F_A^-|_H = 0$.  In the language of $2$-groups, this has a
+clean reinterpretation
+(Remark~\ref{rem:self-dual-2group}).
+\end{remark}
+
+\begin{remark}[Self-duality as constrained $2$-group gauge theory]
+\label{rem:self-dual-2group}
+A strict $2$-group is equivalently a \emph{crossed module}: a
+group homomorphism $\partial \colon H \to G$ together with an
+action of $G$ on $H$ satisfying the Peiffer identity.  The
+associated exact sequence
+\begin{equation}\label{eq:crossed-module-ses}
+\begin{CD}
+1 @>>> \ker\partial @>>> H @>{\partial}>> G @>>>
+  \mathrm{coker}\,\partial @>>> 1
+\end{CD}
+\end{equation}
+encodes the $2$-group as a homotopy type with
+$\pi_1 = \mathrm{coker}\,\partial$ and
+$\pi_0 = \ker\partial$.
+
+The \emph{inner-automorphism $2$-group}
+$\mathrm{INN}(G) = (G \xrightarrow{\mathrm{id}} G)$
+has $\ker\partial = 1$ and $\mathrm{coker}\,\partial = 1$, so it is
+connected and simply connected as a $2$-group.  A $2$-connection for
+$\mathrm{INN}(G)$ on a principal $2$-bundle over~$M$ consists of a
+$\mathfrak{g}$-valued $1$-form~$A$ and a $\mathfrak{g}$-valued
+$2$-form~$B$, subject to the \emph{fake-flatness} condition
+\begin{equation}\label{eq:fake-flatness}
+F_A \;=\; B.
+\end{equation}
+In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distribution
+$H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
+decomposition $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$
+is available.  Imposing the \emph{simplicity constraint}
+\[
+  B \;\in\; \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
+\]
+--- that is, requiring the $2$-form datum to be self-dual ---
+and combining with fake flatness~\eqref{eq:fake-flatness} yields
+the commutative diagram
+\begin{equation}\label{eq:2group-instanton}
+\begin{CD}
+\Omega^1(M,\,\mathfrak{g})
+  @>{d_A}>>
+  \Omega^2(M,\,\mathfrak{g})
+  @>{\pi^+}>>
+  \Omega^{2,+}(M,\,\mathfrak{g}) \\
+@.  @AA{=\;B}A  @AA{\text{simplicity}}A \\
+@.  F_A @= F_A^+
+\end{CD}
+\end{equation}
+The fake-flatness condition $F_A = B$ combined with the simplicity
+constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
+This is precisely the instanton equation
+$F_A|_H = {*_H}\,F_A|_H$
+of Definition~\ref{def:instanton}.  Thus, the self-dual formulation
+used throughout this paper is a special case of $2$-group gauge theory
+for $\mathrm{INN}(\mathrm{SU}(2))$ subject to a simplicity constraint
+on the $2$-form datum.
+
+This perspective clarifies the relationship between the instanton
+condition in Chapter~1 and the higher-categorical structures of later
+chapters: the parallel-transport $2$-functor of the
+$\mathrm{INN}(\mathrm{SU}(2))$ $2$-bundle assigns to paths in $M$
+not merely group elements in $\mathrm{SU}(2)$ but $2$-morphisms
+encoding the self-dual curvature, with the simplicity constraint
+selecting the physical (instanton) sector.
 \end{remark}
 
 \begin{definition}[Quantum Planck Constant]
@@ -1227,7 +1387,25 @@ revision pass.
     $C^*$-algebraic resolution via Rieffel's strict deformation
     quantisation, and the structural resolution via approach~(2):
     fully dualisable objects, the cobordism hypothesis
-    (Baez--Dolan--Lurie), and higher gauge theory via $2$-groups. \\
+    (Baez--Dolan--Lurie), and higher gauge theory via $2$-groups.
+    Now includes commutative diagrams:
+    Tannaka--Krein functoriality~\eqref{eq:tannaka-krein-functoriality},
+    coassociativity~\eqref{eq:coassociativity},
+    counit~\eqref{eq:counit},
+    non-cocommutativity~\eqref{eq:non-cocommutativity},
+    and self-dual short exact
+    sequence~\eqref{eq:self-dual-ses}. \\
+
+\raggedright Rem.\newline\texttt{rem:self-dual-\linebreak 2group}
+  & Good
+  & \emph{New.}\;  Identifies the self-dual instanton formulation
+    (Definition~\ref{def:instanton},
+    Proposition~\ref{prop:self-dual-curvature}) as a special case of
+    $2$-group gauge theory for $\mathrm{INN}(\mathrm{SU}(2))$ subject to
+    a simplicity constraint.  Commutative diagrams: crossed-module exact
+    sequence~\eqref{eq:crossed-module-ses},
+    fake-flatness~\eqref{eq:fake-flatness},
+    and the $2$-group instanton diagram~\eqref{eq:2group-instanton}. \\
 
 \raggedright Def.\newline\texttt{def:quantum-\linebreak planck-constant}
   & Good
