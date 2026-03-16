@@ -211,15 +211,17 @@ input[type=range]::-webkit-slider-thumb {
   </div>
 
   <div class="sec">── Chiral space projection ─────────────────</div>
+  <div id="cone_opts" style="display:none">
   <div class="row">
-    <span class="lbl">σ  (cone scale)</span>
-    <input type="range" id="sigma" min="0.001" max="0.50" step="0.001" value="0.020">
+    <span class="lbl">σ  (cone width)</span>
+    <input type="range" id="sigma" min="0.001" max="1.0" step="0.001" value="0.020">
     <span class="val" id="v_sigma">0.020</span>
   </div>
   <div class="row">
     <span class="lbl">γ  (pitch scale)</span>
     <input type="range" id="pitch" min="0.01" max="5.0" step="0.05" value="1.0">
     <span class="val" id="v_pitch">1.00</span>
+  </div>
   </div>
   <div class="row">
     <span class="lbl">α  (opacity)</span>
@@ -251,7 +253,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_stars"  checked> Stars</label>
     <label class="ck"><input type="checkbox" id="cb_auto"> Rotate</label>
     <label class="ck"><input type="checkbox" id="cb_click"  checked> Click→p</label>
-    <label class="ck"><input type="checkbox" id="cb_cp1"> CP1 fibre</label>
+    <label class="ck"><input type="checkbox" id="cb_cp1" checked> CP1 fibre</label>
     <label class="ck"><input type="checkbox" id="cb_axispts"> ±Axis pts</label>
   </div>
   <div class="sec">── Panels ──────────────────────────────</div>
@@ -276,6 +278,17 @@ input[type=range]::-webkit-slider-thumb {
       style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
              color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
              padding:3px 0;font-family:'Share Tech Mono',monospace;">⟳ Auto σ</button>
+    <button id="btn_primes" title="Show CP1 ghost spheres at primes < 30"
+      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
+             padding:3px 0;font-family:'Share Tech Mono',monospace;">⊕ Primes</button>
+    <button id="btn_resetcam" title="Reset camera pan to origin"
+      style="flex:1;background:rgba(58,144,255,0.11);border:1px solid rgba(58,144,255,0.26);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:3px;
+             padding:3px 0;font-family:'Share Tech Mono',monospace;">⌖ Reset cam</button>
+  </div>
+  <div style="font-size:8px;color:var(--dim);margin-top:4px;text-align:right;letter-spacing:.05em;">
+    shift+drag: pan · scroll: zoom · drag sphere: move p
   </div>
 </div>
 
@@ -537,14 +550,15 @@ scene.add(ringMesh);
 
 // ── Camera orbit ─────────────────────────────────────────────────────
 // Initial viewport from §screenshot: θ_cam=281.8°, φ_cam=125.2°
-const orb = { th: 281.8 * Math.PI / 180, ph: 125.2 * Math.PI / 180, r: 11 };
+const orb = { th: 281.8 * Math.PI / 180, ph: 125.2 * Math.PI / 180, r: 11,
+              target: { x: 0, y: 0, z: 0 } };
 function applyCam() {
   camera.position.set(
-    orb.r * Math.sin(orb.ph) * Math.sin(orb.th),
-    orb.r * Math.cos(orb.ph),
-    orb.r * Math.sin(orb.ph) * Math.cos(orb.th)
+    orb.target.x + orb.r * Math.sin(orb.ph) * Math.sin(orb.th),
+    orb.target.y + orb.r * Math.cos(orb.ph),
+    orb.target.z + orb.r * Math.sin(orb.ph) * Math.cos(orb.th)
   );
-  camera.lookAt(0, 0, 0);
+  camera.lookAt(orb.target.x, orb.target.y, orb.target.z);
 }
 applyCam();
 
@@ -595,13 +609,17 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
   const tc   = TUBE_COL[tubeIndex];
   const phi0 = TAU * tubeIndex / 3;  // base phase offset (120° per tube)
 
+  // Height renorm: visual tube height always = SPHERE_R/5, independent of N_min/N_max
+  const h_norm  = (SPHERE_R * 0.2) / Math.max(1e-4, (N_max - N_min) * LP);
+
   // Reference Q at endpoint for normalization (keeps torsion_s bounded to gamma_scale turns)
   const r_max   = N_max * LP;
   const Q_end_r = Math.max(1e-4, 2 * (expQ(r_max, Math.exp(-r_max), QN) - 1));
 
   for (let i = 0; i <= AX; i++) {
     const s_N = N_min + (N_max - N_min) * (i / AX);  // Planck multiples
-    const s   = s_N * LP;                             // visual distance along N
+    const s   = s_N * LP;                             // physical distance along N
+    const s_v = s * h_norm;                           // visual distance (renormed)
 
     // Local Weierstrass Q(s) = 2·(expq(s,q_sub(s)) − 1)  [time-like growth factor]
     const q_sub_l = Math.exp(-s);
@@ -611,14 +629,14 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
     const Q_norm    = Q_local / Q_end_r;
     const torsion_s = TAU * gamma_scale * (s_N / Math.max(N_max, 1)) * Q_norm;
 
-    // Centre of this ring (along outward normal from brane surface)
-    const cx = P.x + N.x * s;
-    const cy = P.y + N.y * s;
-    const cz = P.z + N.z * s;
+    // Centre of this ring (visual position along outward normal)
+    const cx = P.x + N.x * s_v;
+    const cy = P.y + N.y * s_v;
+    const cz = P.z + N.z * s_v;
 
-    // q-modulated cone radius: Ξ_q = 1 + 0.3·q·cos(torsion_s)  [Math.cos: always bounded]
+    // q-modulated cone width: Ξ_q = 1 + 0.3·q·cos(torsion_s)
     const xi_q   = 1.0 + 0.30 * q * Math.cos(torsion_s);
-    const ring_r = Math.max(0.0005, s * sigma * xi_q);
+    const ring_r = Math.max(0.0005, s_v * sigma * xi_q);
 
     // Spiral torsion phase: ψᵢ(s) = 2πi/3 + q · torsion_s
     const psi = phi0 + q * torsion_s;
@@ -676,8 +694,10 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
 }
 
 // ── Tube end-cap (disc) ───────────────────────────────────────────────
-function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex) {
+function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex, N_max) {
   const s       = s_N * LP;
+  const h_norm  = (SPHERE_R * 0.2) / Math.max(1e-4, N_max * LP);
+  const s_v     = s * h_norm;
   const q_sub_l = Math.exp(-s);
   const Q_local = Math.max(1e-4, 2 * (expQ(s, q_sub_l, QN) - 1));
   const r_max   = s_N * LP;  // cap is at a fixed s_N
@@ -685,9 +705,9 @@ function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex) {
   const Q_norm  = Q_local / Q_end_r;
   const torsion = TAU * gamma_scale * (s_N / Math.max(s_N, 1)) * Q_norm;
   const xi_q    = 1.0 + 0.30 * q * Math.cos(torsion);
-  const ring_r  = Math.max(0.0005, s * sigma * xi_q);
+  const ring_r  = Math.max(0.0005, s_v * sigma * xi_q);
   const psi     = TAU * tubeIndex / 3 + q * torsion;
-  const cx = P.x + N.x * s, cy = P.y + N.y * s, cz = P.z + N.z * s;
+  const cx = P.x + N.x * s_v, cy = P.y + N.y * s_v, cz = P.z + N.z * s_v;
   const tc = TUBE_COL[tubeIndex];
 
   const RG  = TUBE_RG;
@@ -745,7 +765,7 @@ function buildCP1Ghost(P, N, R_CP1) {
 // φ_lat ∈ [0,π]:  0 = south pole (p),  π = north pole (p + 2R·N)
 // ψ ∈ sector [2πi/3, 2π(i+1)/3]  with torsion twist q·TAU·t·(ΔN/Γ)
 function buildTubeGeoCP1(tubeIndex, P, N, T1, T2, q, N_min, N_max, gamma_scale) {
-  const R_CP1  = Math.max(0.1, (N_max - N_min) * LP * 0.55);
+  const R_CP1  = SPHERE_R * 0.2;  // always 1/5 of spacetime sphere
   const Ox = P.x + N.x * R_CP1;
   const Oy = P.y + N.y * R_CP1;
   const Oz = P.z + N.z * R_CP1;
@@ -845,8 +865,7 @@ function buildTubes() {
 
   if (cp1Mode) {
     // ── CP1 fibre view: three bands tiling a touching CP1 sphere ──
-    const R_CP1 = Math.max(0.1, (N_max - N_min) * LP * 0.55);
-    buildCP1Ghost(selPt, N_vec, R_CP1);
+    buildCP1Ghost(selPt, N_vec, SPHERE_R * 0.2);
     for (let ti = 0; ti < 3; ti++) {
       const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q, N_min, N_max, gamma_scale);
       const mat = new THREE.MeshPhongMaterial({
@@ -876,7 +895,7 @@ function buildTubes() {
       // End caps (opaque discs closing the tube ends)
       for (const s_end of [N_min > 0 ? N_min : null, N_max]) {
         if (s_end === null) continue;
-        const cgeo = buildCapGeo(selPt, N_vec, T1, T2, s_end, sigma, q, gamma_scale, ti);
+        const cgeo = buildCapGeo(selPt, N_vec, T1, T2, s_end, sigma, q, gamma_scale, ti, N_max);
         const cmat = new THREE.MeshPhongMaterial({
           vertexColors: true, side: THREE.DoubleSide, shininess: 40
         });
@@ -1155,18 +1174,34 @@ window.addEventListener('keydown', e => {
   }
 });
 
-// ── Mouse orbit ───────────────────────────────────────────────────────
+// ── Camera orbit + pan ────────────────────────────────────────────────
+// orb.target set in orb definition above; shift+drag pans, drag sphere moves p
+document.getElementById('btn_resetcam').addEventListener('click', () => {
+  orb.target.x = 0; orb.target.y = 0; orb.target.z = 0;
+  orb.r = 11; applyCam();
+});
+
 let drag = false, didDrag = false, canvasDrag = false;
+let ptDragMode = false;   // true when dragging the selected point on sphere
 let pMouse = { x: 0, y: 0 };
 
 renderer.domElement.addEventListener('mousedown', e => {
-  drag = true; didDrag = false; canvasDrag = true;
+  canvasDrag = true; didDrag = false;
   pMouse = { x: e.clientX, y: e.clientY };
+  // If Click→p is enabled, check if mousedown is on the sphere
+  if (document.getElementById('cb_click').checked && !e.shiftKey) {
+    ray.setFromCamera(
+      new THREE.Vector2((e.clientX / innerWidth)*2-1, -(e.clientY/innerHeight)*2+1),
+      camera
+    );
+    ptDragMode = ray.intersectObject(braneMesh).length > 0;
+  } else {
+    ptDragMode = false;
+  }
+  drag = true;
 });
 window.addEventListener('mouseup', e => {
-  // Only act on click-to-select if the mousedown originated on the canvas
-  if (canvasDrag && !didDrag && document.getElementById('cb_click').checked) {
-    // Click on sphere → update selected point
+  if (canvasDrag && !didDrag && !ptDragMode && document.getElementById('cb_click').checked) {
     ray.setFromCamera(
       new THREE.Vector2((e.clientX / innerWidth)*2-1, -(e.clientY/innerHeight)*2+1),
       camera
@@ -1183,19 +1218,47 @@ window.addEventListener('mouseup', e => {
       rebuild();
     }
   }
-  drag = false; canvasDrag = false;
+  drag = false; canvasDrag = false; ptDragMode = false;
 });
 window.addEventListener('mousemove', e => {
   if (!drag) return;
   const dx = e.clientX - pMouse.x, dy = e.clientY - pMouse.y;
-  if (Math.abs(dx) + Math.abs(dy) > 3) didDrag = true;
-  orb.th += dx * .008;
-  orb.ph += dy * .008;
-  pMouse  = { x: e.clientX, y: e.clientY };
-  applyCam();
+  if (Math.abs(dx) + Math.abs(dy) > 2) didDrag = true;
+  pMouse = { x: e.clientX, y: e.clientY };
+
+  if (ptDragMode) {
+    // Drag point along sphere surface
+    ray.setFromCamera(
+      new THREE.Vector2((e.clientX / innerWidth)*2-1, -(e.clientY/innerHeight)*2+1),
+      camera
+    );
+    const hits = ray.intersectObject(braneMesh);
+    if (hits.length) {
+      const hp = hits[0].point;
+      document.getElementById('x_p').value = hp.x.toFixed(2);
+      document.getElementById('y_p').value = hp.y.toFixed(2);
+      document.getElementById('z_p').value = hp.z.toFixed(2);
+      document.getElementById('v_xp').textContent = hp.x.toFixed(2);
+      document.getElementById('v_yp').textContent = hp.y.toFixed(2);
+      document.getElementById('v_zp').textContent = hp.z.toFixed(2);
+      rebuild();
+    }
+  } else if (e.shiftKey) {
+    // Shift+drag: pan camera target in screen-aligned plane
+    const panFactor = orb.r * 0.0015;
+    const cosT = Math.cos(orb.th), sinT = Math.sin(orb.th);
+    orb.target.x -= cosT * dx * panFactor;
+    orb.target.z += sinT * dx * panFactor;
+    orb.target.y += dy * panFactor;
+    applyCam();
+  } else {
+    orb.th += dx * .008;
+    orb.ph += dy * .008;
+    applyCam();
+  }
 });
 renderer.domElement.addEventListener('wheel', e => {
-  orb.r = Math.max(SPHERE_R + 1.5, Math.min(40, orb.r * (1 + e.deltaY * .001)));
+  orb.r = Math.max(SPHERE_R + 1.5, Math.min(60, orb.r * (1 + e.deltaY * .001)));
   applyCam(); e.preventDefault();
 }, { passive: false });
 
@@ -1293,19 +1356,16 @@ function makeDraggable(panel) {
 }
 document.querySelectorAll('.panel').forEach(makeDraggable);
 
-// ── Auto-scale sigma so cone max radius ≈ 18% of SPHERE_R ────────────
+// ── Auto-scale sigma so cone max width ≈ 12% of SPHERE_R ─────────────
+// visual tube height is always SPHERE_R*0.2 (h_norm renorms regardless of N_max)
 function autoSigma() {
   const q           = getQ();
-  const N_max       = parseInt(document.getElementById('n_max').value);
-  const gamma_scale = parseFloat(document.getElementById('pitch').value);
-  const q_e         = qEff(q);
-  const r_end       = N_max * LP;
-  const Q_end       = Math.max(1e-4, 2 * (expQ(r_end, Math.exp(-r_end), QN) - 1));
-  const torsion_end = TAU * gamma_scale;  // normalized: gamma_scale turns at endpoint
+  const torsion_end = TAU * 1.0;  // pitch fixed at 1
   const xi_q_max    = 1.0 + 0.30 * q * (1 + Math.abs(Math.cos(torsion_end)));
-  const target_r  = SPHERE_R * 0.18;
-  const sigma_new = target_r / Math.max(1e-6, N_max * LP * xi_q_max);
-  const clamped   = Math.max(0.02, Math.min(0.50, sigma_new));
+  const s_vis_max   = SPHERE_R * 0.2;
+  const target_r    = SPHERE_R * 0.12;
+  const sigma_new   = target_r / Math.max(1e-6, s_vis_max * xi_q_max);
+  const clamped     = Math.max(0.001, Math.min(1.0, sigma_new));
   document.getElementById('sigma').value = clamped.toFixed(4);
   document.getElementById('v_sigma').textContent = clamped.toFixed(2);
   rebuild();
@@ -1326,6 +1386,49 @@ document.getElementById('tube_opacity').addEventListener('input', () => {
     m.material.needsUpdate = true;
   });
 });
+
+// ── CP1 mode toggle: show/hide cone_opts ─────────────────────────────
+function syncConeOpts() {
+  const cp1 = document.getElementById('cb_cp1').checked;
+  document.getElementById('cone_opts').style.display = cp1 ? 'none' : 'block';
+}
+document.getElementById('cb_cp1').addEventListener('change', () => { syncConeOpts(); rebuild(); });
+syncConeOpts();  // apply on load
+
+// ── Prime ghost spheres ───────────────────────────────────────────────
+const PRIME_Z_VALS = [0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+let activePrimeGhosts = [];
+let primesVisible = false;
+
+function updatePrimesBtn() {
+  document.getElementById('btn_primes').textContent = primesVisible ? '⊖ Primes' : '⊕ Primes';
+}
+
+function togglePrimeGhosts() {
+  activePrimeGhosts.forEach(m => scene.remove(m));
+  activePrimeGhosts = [];
+  primesVisible = !primesVisible;
+  if (primesVisible) {
+    const R_CP1 = SPHERE_R * 0.2;
+    for (const n of PRIME_Z_VALS) {
+      // Spread points along a great circle from +y to +z axis
+      const theta = (n / 29) * Math.PI / 2;
+      const pt = new THREE.Vector3(0, Math.cos(theta) * SPHERE_R, Math.sin(theta) * SPHERE_R);
+      const Nv = pt.clone().normalize();
+      const geo = new THREE.SphereGeometry(R_CP1, 20, 12);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0xffcc44, wireframe: true, transparent: true, opacity: 0.14,
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(pt.x + Nv.x * R_CP1, pt.y + Nv.y * R_CP1, pt.z + Nv.z * R_CP1);
+      mesh.userData.isPrimeGhost = true;
+      scene.add(mesh);
+      activePrimeGhosts.push(mesh);
+    }
+  }
+  updatePrimesBtn();
+}
+document.getElementById('btn_primes').addEventListener('click', togglePrimeGhosts);
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────
 window.addEventListener('keydown', e => {
@@ -1810,7 +1913,7 @@ function animate() {
   requestAnimationFrame(animate);
   frame++;
 
-  if (document.getElementById('cb_auto').checked && !drag) {
+  if (document.getElementById('cb_auto').checked && !drag && !ptDragMode) {
     orb.th += .00095;
     applyCam();
   }
