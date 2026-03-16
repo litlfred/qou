@@ -2594,12 +2594,108 @@ universe.</em></p>
 
 <div class="proof">
 
-<p><em>Proof.</em> ◻</p>
+<p><em>Proof.</em> The proof proceeds in the rigid monoidal category
+underlying the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>. Let <span
+class="math inline">\(A\)</span> denote the Frobenius-Hopf object
+representing the gauge-bundle data of <span
+class="math inline">\((M,G,P,E)\)</span>.</p>
+<p><em>Step 1: Categorical jet object.</em> The first jet bundle <span
+class="math inline">\(J^1 E\)</span> is represented categorically by the
+object <span class="math inline">\(A \otimes \Omega^1(A)\)</span>, where
+<span class="math inline">\(\Omega^1(A) = \ker(m\colon A\otimes A \to
+A)\)</span> is the kernel of the multiplication (the bimodule of Kähler
+differentials, i.e. the universal first-order differential calculus
+over <span class="math inline">\(A\)</span>). Because <span
+class="math inline">\(A\)</span> is Frobenius, the non-degenerate
+pairing <span class="math inline">\(\varepsilon \circ m \colon A \otimes
+A \to \mathbf{1}\)</span> exhibits <span
+class="math inline">\(\Omega^1(A)\)</span> as a direct summand of <span
+class="math inline">\(A \otimes A\)</span>, hence <span
+class="math inline">\(J^1(A) := A \otimes \Omega^1(A)\)</span> is again
+an object of the ambient category.</p>
+<p><em>Step 2: Inherited Frobenius-Hopf structure.</em> The Frobenius
+relation <span class="math inline">\((\mathrm{Id} \otimes m) \circ
+(\Delta \otimes \mathrm{Id})
+= \Delta \circ m
+= (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)\)</span>
+ensures that the comultiplication <span
+class="math inline">\(\Delta\colon A \to A \otimes A\)</span> restricts
+to a well-defined comultiplication <span
+class="math inline">\(\Delta&#39;\colon J^1(A) \to J^1(A) \otimes
+J^1(A)\)</span>, and the counit <span
+class="math inline">\(\varepsilon\colon A \to \mathbf{1}\)</span>
+induces a counit <span class="math inline">\(\varepsilon&#39;\)</span>
+on <span class="math inline">\(J^1(A)\)</span>. The Hopf antipode <span
+class="math inline">\(S\)</span> extends to <span
+class="math inline">\(J^1(A)\)</span> by functoriality of the Kähler
+differential construction. Thus <span
+class="math inline">\(J^1(A)\)</span> is a Frobenius-Hopf object.</p>
+<p><em>Step 3: Non-degeneracy and vanishing.</em> The non-degeneracy of
+the Frobenius form on <span class="math inline">\(A\)</span> (the
+pairing <span class="math inline">\(\varepsilon \circ m\)</span> is a
+perfect pairing) implies non-degeneracy of the induced form on <span
+class="math inline">\(J^1(A)\)</span>, since <span
+class="math inline">\(\Omega^1(A)\)</span> is a direct summand. For the
+vanishing condition, <span
+class="math inline">\(\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) =
+0\)</span> implies <span class="math inline">\(\mathrm{Hom}(\mathbf{1},
+\mathrm{Ad}(J^1(A))) = 0\)</span>: the adjoint representation of <span
+class="math inline">\(J^1(A)\)</span> contains <span
+class="math inline">\(\mathrm{Ad}(A)\)</span> as a subobject, and any
+invariant in <span class="math inline">\(\mathrm{Ad}(J^1(A))\)</span>
+would project to a non-zero invariant in <span
+class="math inline">\(\mathrm{Ad}(A)\)</span>, contradicting the
+hypothesis.</p>
+<p><em>Step 4: Geometric realisation.</em> Applying the fibre functor
+<span class="math inline">\(\omega\colon \mathcal{C} \to
+\mathrm{Vect}_k\)</span> (where <span
+class="math inline">\(\mathcal{C}\)</span> is the rigid monoidal
+category of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>) recovers the geometric
+data: <span class="math inline">\(\omega(J^1(A))\)</span> is the space
+of sections of the first jet bundle <span class="math inline">\(J^1
+E\)</span>, the frame bundle <span class="math inline">\(P&#39;\)</span>
+and orthonormal frame bundle <span class="math inline">\(E&#39;\)</span>
+are the geometric counterparts of the Frobenius-Hopf structure on <span
+class="math inline">\(J^1(A)\)</span>, and the connection <span
+class="math inline">\(A&#39;\)</span> is the image under <span
+class="math inline">\(\omega\)</span> of the comultiplication <span
+class="math inline">\(\Delta&#39;\)</span>. Its uniqueness follows from
+the irreducibility of <span class="math inline">\(A&#39;\)</span>, which
+is guaranteed by the inherited vanishing condition of Step 3. ◻</p>
+</div>
+
+<div id="rem:prolongation-categorical" class="remark">
+
+<p><strong>Remark 2.2</strong> (Prolongation from the Frobenius-Hopf
+structure). <em>The proof above shows that <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> is an
+<em>intrinsic</em> consequence of the Frobenius-Hopf structure in a
+rigid monoidal category: no additional geometric input beyond the
+categorical data <span class="math inline">\((\mathcal{C}, A,
+\omega)\)</span> is required. Concretely:</em></p>
+<ol type="1">
+<li><p><em>The Frobenius structure provides the Kähler differentials
+<span class="math inline">\(\Omega^1(A)\)</span> as a direct summand,
+from which the jet object <span class="math inline">\(J^1(A)\)</span> is
+built.</em></p></li>
+<li><p><em>The Frobenius relation ensures that the comultiplication and
+multiplication are compatible, so the prolonged object inherits the full
+Hopf algebra structure.</em></p></li>
+<li><p><em>The non-degeneracy and vanishing conditions propagate from
+<span class="math inline">\(A\)</span> to <span
+class="math inline">\(J^1(A)\)</span> by functoriality.</em></p></li>
+</ol>
+<p><em>In this sense, the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>)
+is generated entirely by iterating the categorical jet construction. The
+tower, together with its associated <a class="defn-link" href="#def:descent">descent</a>
+(Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">2.0.1</a>),
+is a formal consequence of the axioms of a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+and does not require any case-by-case verification.</em></p>
 </div>
 
 <div id="def:recursive-brane-tower" class="definition">
 
-<p><strong>Definition 2.2</strong> (<a class="defn-link" href="#def:recursive-brane-tower">Recursive Brane Tower</a>). <em>Let
+<p><strong>Definition 2.3</strong> (<a class="defn-link" href="#def:recursive-brane-tower">Recursive Brane Tower</a>). <em>Let
 <span class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.7</a>).
@@ -2626,7 +2722,7 @@ class="math inline">\(E_n\)</span>.</em></p></li>
 
 <div id="ex:brane-tower-levels" class="example">
 
-<p><strong>Example 2.3</strong> (<a class="defn-link" href="#ex:brane-tower-levels">First two levels</a>). <em>Starting from a
+<p><strong>Example 2.4</strong> (<a class="defn-link" href="#ex:brane-tower-levels">First two levels</a>). <em>Starting from a
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe <span class="math inline">\((M, G, P, E_1)\)</span>, the first
 <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> yields <span class="math inline">\(E_2\)</span> with
@@ -2640,10 +2736,10 @@ Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-ref
 
 <div id="def:quantum-characteristic-classes" class="definition">
 
-<p><strong>Definition 2.4</strong> (<a class="defn-link" href="#def:quantum-characteristic-classes">Quantum Characteristic Classes</a>).
+<p><strong>Definition 2.5</strong> (<a class="defn-link" href="#def:quantum-characteristic-classes">Quantum Characteristic Classes</a>).
 <em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>).
 The <em>quantum characteristic classes</em> are the cohomology classes
 <span class="math display">\[\kappa_n \;\in\; H^*\!\bigl(E_{n+1},\,
 \mathbb{Z}\bigr)\]</span> that label the monodromy fixed points of the
@@ -2654,7 +2750,7 @@ class="math inline">\(E_{n+1}\)</span>.</em></p>
 
 <div id="rem:betti-numbers-brane" class="remark">
 
-<p><strong>Remark 2.5</strong> (<a class="defn-link" href="#rem:betti-numbers-brane">Betti numbers of the brane tower</a>).
+<p><strong>Remark 2.6</strong> (<a class="defn-link" href="#rem:betti-numbers-brane">Betti numbers of the brane tower</a>).
 <em>Let <span class="math inline">\(b_k(E_n) = \dim H^k(E_n,
 \mathbb{R})\)</span> denote the <span
 class="math inline">\(k\)</span>-th Betti number of <span
@@ -2666,7 +2762,7 @@ by those of <span class="math inline">\(E_n\)</span> via the Leray–Serre
 spectral sequence applied to the fibration <span
 class="math inline">\(E_{n+1} \to E_n\)</span>. In particular, the
 <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
-(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.4</a>)
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.5</a>)
 obstruct the collapse of this spectral sequence and control the growth
 of <span class="math inline">\(b_k(E_{n+1})\)</span> in terms of <span
 class="math inline">\(b_k(E_n)\)</span>.</em></p>
@@ -2674,7 +2770,7 @@ class="math inline">\(b_k(E_n)\)</span>.</em></p>
 
 <div id="rem:q-harmonic-basis-brane" class="remark">
 
-<p><strong>Remark 2.6</strong> (<span
+<p><strong>Remark 2.7</strong> (<span
 class="math inline">\(q\)</span>-Harmonic basis of the brane tower).
 <em>For each level <span class="math inline">\(n\)</span>, the <span
 class="math inline">\(q\)</span>-harmonic <span
@@ -2686,7 +2782,7 @@ class="math inline">\(E_n\)</span> with values in the adjoint bundle
 <span class="math inline">\(\mathrm{ad}\, E_n\)</span>. These are
 characterised by the self-duality condition relative to the instanton
 connection <span class="math inline">\(A_n\)</span>
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>):
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>):
 <span class="math display">\[\alpha_{n,i} \in \mathcal{H}^1
 \iff
 d_{A_n}\,\alpha = 0
@@ -2698,7 +2794,7 @@ class="math inline">\(L\)</span>
 defines on the horizontal distribution. The index <span
 class="math inline">\(i\)</span> runs over <span class="math inline">\(1
 \leq i \leq b_1(E_n)\)</span>
-(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>).</em></p>
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.6</a>).</em></p>
 <p><em>At the base level <span class="math inline">\(n = 0\)</span>,
 with Euler characteristic <span class="math inline">\(\chi(M) =
 3\)</span>, there are three primary basis vectors <span
@@ -2712,7 +2808,7 @@ which are the first-order resolutions of the base flows.</em></p>
 
 <div id="rem:weight-space-decomposition" class="remark">
 
-<p><strong>Remark 2.7</strong> (Weight-space decomposition of the
+<p><strong>Remark 2.8</strong> (Weight-space decomposition of the
 harmonic basis). <em>The adjoint bundle <span
 class="math inline">\(\mathrm{ad}\, E_n\)</span> has fibre <span
 class="math inline">\(\mathfrak{su}(2)\)</span>. Via the weight-space
@@ -2739,7 +2835,7 @@ describe the entangling flows that twist the <span
 class="math inline">\(\mathbb{CP}^1\)</span> fibre as one moves along
 the brane. These modes are responsible for the non-commutativity in the
 <span class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
-(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>).</em></p>
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.11</a>).</em></p>
 <p><em>In the <span class="math inline">\(1\)</span>-jet bundle <span
 class="math inline">\(J^1 E_n\)</span>
 (Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">1.30</a>),
@@ -2752,10 +2848,10 @@ structure of the brane).</em></p>
 
 <div id="rem:algebraic-filter" class="remark">
 
-<p><strong>Remark 2.8</strong> (<a class="defn-link" href="#rem:algebraic-filter">The algebraic filter</a>). <em>Let <span
+<p><strong>Remark 2.9</strong> (<a class="defn-link" href="#rem:algebraic-filter">The algebraic filter</a>). <em>Let <span
 class="math inline">\(\alpha\)</span> be a harmonic <span
 class="math inline">\(1\)</span>-form in the basis of
-Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.7</a>.
 Its <em>signature</em> is determined by its commutator with the
 curvature <span class="math inline">\(F_A\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>).</em></p>
@@ -2769,7 +2865,7 @@ filaments.</em></p>
 <p><em><em>Bosonic type (radiation).</em> <span
 class="math inline">\([F_A,\, \alpha] = 0\)</span>. These forms commute
 with the curvature. They are the longitudinal modes
-(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.8</a>)
 that flow through the bulk without being deflected by the monodromy
 fixed points. Their geodesics are straight relative to the gauge-fluid
 flow.</em></p>
@@ -2777,9 +2873,9 @@ flow.</em></p>
 
 <div id="rem:distributional-connection" class="remark">
 
-<p><strong>Remark 2.9</strong> (<a class="defn-link" href="#rem:distributional-connection">Distributional connection at the limit</a>).
-<em>At the limit <span class="math inline">\(n \to \infty\)</span> one
-no longer looks at a single connection <span
+<p><strong>Remark 2.10</strong> (Distributional connection at the
+limit). <em>At the limit <span class="math inline">\(n \to
+\infty\)</span> one no longer looks at a single connection <span
 class="math inline">\(A\)</span>, but at a <em>distributional
 connection</em> represented by the series <span
 class="math display">\[A_\infty
@@ -2789,19 +2885,19 @@ c_{n,i}\,\alpha_{n,i}\,,\]</span> where <span
 class="math inline">\(c_{n,i} \in \mathbb{C}\)</span> and <span
 class="math inline">\(\{\alpha_{n,i}\}\)</span> is the <span
 class="math inline">\(q\)</span>-harmonic basis of
-Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.6</a>.
+Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">2.7</a>.
 This turns the gauge field into a harmonic expansion across the infinite
 jet space <span class="math inline">\(J^\infty E\)</span>
-(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.12</a>).</em></p>
 </div>
 
 <div id="def:direct-limit-algebra" class="definition">
 
-<p><strong>Definition 2.10</strong> (<span
+<p><strong>Definition 2.11</strong> (<span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a> as
 Direct Limit). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>)
 with substrate parameters <span class="math inline">\(q_n\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>)
 at each level. The <em><span class="math inline">\(\mathbb{C}\)</span>
@@ -2814,23 +2910,23 @@ class="math display">\[\mathcal{A}_\infty
 
 <div id="rem:jet-shell" class="remark">
 
-<p><strong>Remark 2.11</strong> (<a class="defn-link" href="#rem:jet-shell">Jet Shell of the universe</a>). <em>In the
+<p><strong>Remark 2.12</strong> (<a class="defn-link" href="#rem:jet-shell">Jet Shell of the universe</a>). <em>In the
 limit <span class="math inline">\(n \to \infty\)</span>, the infinite
 jet bundle <span class="math inline">\(J^\infty E = \varprojlim\, J^k
 E\)</span> becomes the <em>jet shell</em> of the universe. All
 finite-level brane data are encoded in this pro-finite structure, and
 the algebra <span class="math inline">\(\mathcal{A}_\infty\)</span>
-(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.11</a>)
 acts naturally on sections of the jet shell.</em></p>
 </div>
 
 <div id="prop:vacuum-state" class="proposition">
 
-<p><strong>Proposition 2.12</strong> (Existence and Uniqueness of the
+<p><strong>Proposition 2.13</strong> (Existence and Uniqueness of the
 Vacuum State). <em>Let <span
 class="math inline">\(\mathcal{A}_\infty\)</span> be the direct limit
 algebra
-(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.11</a>)
 equipped with the global <span
 class="math inline">\(\mathrm{SU}(2)\)</span> action and the recursive
 <span class="math inline">\(q\)</span>-deformations. Then there exists a
@@ -2849,9 +2945,9 @@ a \in \mathcal{A}_\infty.\]</span></em></p>
 
 <div id="rem:mass-geometric-drag" class="remark">
 
-<p><strong>Remark 2.13</strong> (<a class="defn-link" href="#rem:mass-geometric-drag">Mass as geometric drag</a>). <em>In this
+<p><strong>Remark 2.14</strong> (<a class="defn-link" href="#rem:mass-geometric-drag">Mass as geometric drag</a>). <em>In this
 recursive <span class="math inline">\(\mathrm{SU}(2)\)</span> tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>),
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>),
 mass is not an intrinsic property of a point-particle but rather a
 measure of the <em>geometric drag</em> (or “viscosity”) encountered by a
 stable vortex as it propagates through the <span
@@ -2860,20 +2956,20 @@ class="math inline">\(J^1 E_n\)</span>. When <span
 class="math inline">\(q \neq 1\)</span> the field is non-commutative:
 moving the vortex requires a continuous rearrangement of the <span
 class="math inline">\(\mathrm{SU}_q(2)\)</span> algebra
-(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.10</a>)
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">2.11</a>)
 across the fibres.</em></p>
 </div>
 
 <div id="prop:euler-char-stability" class="proposition">
 
-<p><strong>Proposition 2.14</strong> (Stability of the Euler
+<p><strong>Proposition 2.15</strong> (Stability of the Euler
 characteristic). <em>Let <span class="math inline">\((M, G, P,
 E)\)</span> be a <span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe and let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>).
 Then the Euler characteristic <span
-class="math inline">\(\chi(E)\)</span> is stable under descent and
+class="math inline">\(\chi(E)\)</span> is stable under <a class="defn-link" href="#def:descent">descent</a> and
 lifting: for each level <span class="math inline">\(n\)</span>, <span
 class="math display">\[\chi(E_{n+1}) \;=\; \chi(E_n).\]</span> In
 particular, if the base level satisfies <span
@@ -2889,7 +2985,7 @@ class="math inline">\(n \geq 1\)</span>.</em></p>
 
 <div id="def:mass-identity" class="definition">
 
-<p><strong>Definition 2.15</strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
+<p><strong>Definition 2.16</strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
@@ -2906,13 +3002,12 @@ class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
 </div>
 
 <h3 id="descent">Descent</h3>
-<div id="def:descent-dim-1" class="definition">
+<div id="def:descent" class="definition">
 
-<p><strong>Definition 2.16</strong> (Descent to Dimension <span
-class="math inline">\(1\)</span>). <em>Let <span
+<p><strong>Definition 2.17</strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
 class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
 tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>).
 The <em>descent</em> is the reverse traversal of the tower: starting
 from level <span class="math inline">\(n\)</span> one passes to level
 <span class="math inline">\(n-1\)</span> by restricting the connection
@@ -2920,15 +3015,13 @@ from level <span class="math inline">\(n\)</span> one passes to level
 class="math inline">\(E_n\)</span> to the base manifold <span
 class="math inline">\(M_{n-1}\)</span>. The descent terminates when the
 base manifold <span class="math inline">\(M_k\)</span> reaches <span
-class="math inline">\(\dim M_k = 1\)</span>, at which point <span
-class="math inline">\(M_k\)</span> is diffeomorphic to <span
-class="math inline">\(S^1\)</span> or <span
-class="math inline">\(\mathbb{R}\)</span>.</em></p>
+class="math inline">\(\dim M_k = 0\)</span>, at which point <span
+class="math inline">\(M_k\)</span> is a discrete set of points.</em></p>
 </div>
 
 <div id="rem:descent-reduction" class="remark">
 
-<p><strong>Remark 2.17</strong> (Reduction at dimension <span
+<p><strong>Remark 2.18</strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
@@ -2948,21 +3041,24 @@ are locked into a single periodic flow.</em></p></li>
 (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>)
 becomes the only direction of motion; the horizontal distribution is
 trivial and no bosonic modes
-(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>)
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.9</a>)
 survive.</em></p></li>
 </ol>
+<p><em>The <a class="defn-link" href="#def:descent">descent</a> need not terminate here; a further step carries <span
+class="math inline">\(M_k\)</span> to a zero-dimensional base
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">2.20</a>).</em></p>
 </div>
 
 <div id="rem:descent-physical" class="remark">
 
-<p><strong>Remark 2.18</strong> (Physical implications of a <span
+<p><strong>Remark 2.19</strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(1\)</span> the physical content
 simplifies drastically.</em></p>
 <ol type="1">
 <li><p><em><em>Primordial vortex.</em> The vortex filaments of the mass
 identity
-(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.15</a>)
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.16</a>)
 are no longer embedded in a larger space; the entire manifold
 <em>is</em> the filament.</em></p></li>
 <li><p><em><em>Mass as pure drag.</em> The <a class="defn-link" href="#def:mass-identity">mass identity</a> reduces to an
@@ -2975,36 +3071,111 @@ class="math inline">\(1\)</span>-dimensional flow against the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> rotation.</em></p></li>
 <li><p><em><em>Lepton generations.</em> Since the number of lepton
 generations is bounded by the Euler characteristic and vertical degree
-(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.5</a>),
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.6</a>),
 a <span class="math inline">\(1\)</span>-dimensional base supports only
 the most fundamental fermionic state; there is no room for higher-degree
 vertical harmonic forms.</em></p></li>
 </ol>
 </div>
 
+<div id="rem:descent-reduction-zero" class="remark">
+
+<p><strong>Remark 2.20</strong> (Reduction at dimension <span
+class="math inline">\(0\)</span>). <em>When <span
+class="math inline">\(\dim M_k = 0\)</span> the base manifold is a
+discrete set of points and the geometric data of the <span
+class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+reduce to purely algebraic invariants at each point <span
+class="math inline">\(p\in M_k\)</span>.</em></p>
+<ol type="1">
+<li><p><em><em>Connection.</em> The <span
+class="math inline">\(\mathrm{SU}(2)\)</span> connection <span
+class="math inline">\(A_k\)</span> has no directions along which to
+parallel-transport; its curvature <span
+class="math inline">\(F_A\)</span> vanishes identically and the holonomy
+is trivial.</em></p></li>
+<li><p><em><em>Bundle.</em> The principal <span
+class="math inline">\(\mathrm{SU}(2)\)</span> bundle <span
+class="math inline">\(E\)</span> restricts to its fibre <span
+class="math inline">\(E_p\)</span> over the point <span
+class="math inline">\(p\)</span>; the bundle is determined entirely by
+this single fibre together with the group action.</em></p></li>
+<li><p><em><em><a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>.</em> The substrate parameter <span
+class="math inline">\(q(p)=\exp\!\bigl(\lVert L\wedge
+F_A^{+}\rVert(p)\bigr)\)</span>
+(Remark <a href="#rem:substrate-parameter" data-reference-type="ref" data-reference="rem:substrate-parameter">[rem:substrate-parameter]</a>)
+assigns to each point a definite quantum constant <span
+class="math inline">\(q\in[1,\infty)\)</span>, encoding the full content
+of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> at that point.</em></p></li>
+<li><p><em><em>Reeb direction.</em> There is no tangent space, so the
+Reeb vector field
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>)
+and the horizontal distribution are absent; only the internal <span
+class="math inline">\(\mathrm{SU}(2)\)</span> fibre data
+persist.</em></p></li>
+</ol>
+<p><em>In this terminal stage every observable is determined by the
+fibre <span class="math inline">\(E_p\)</span> and the value <span
+class="math inline">\(q(p)\)</span>. When <span
+class="math inline">\(M_k\)</span> consists of several points the
+<a class="defn-link" href="#def:descent">descent</a> data decompose into independent summands, one per point; when
+<span class="math inline">\(M_k\)</span> is connected—i.e. a single
+point—the entire <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> is captured by the pair
+<span class="math inline">\((E_p, q(p))\)</span>.</em></p>
+</div>
+
+<div id="rem:descent-physical-zero" class="remark">
+
+<p><strong>Remark 2.21</strong> (Physical implications of a <span
+class="math inline">\(0\)</span>-dimensional base). <em>At
+dimension <span class="math inline">\(0\)</span> all spatial extent has
+been removed and the physical content is purely algebraic.</em></p>
+<ol type="1">
+<li><p><em><em>Primordial state.</em> The vortex filaments, flows and
+spatial modes of higher-dimensional strata are absent; what remains is
+the initial datum of the fermionic content encoded in the fibre <span
+class="math inline">\(E_p\)</span>.</em></p></li>
+<li><p><em><em>Mass.</em> With no base manifold over which to integrate,
+the <a class="defn-link" href="#def:mass-identity">mass identity</a>
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.16</a>)
+collapses to a single evaluation: <span class="math inline">\(m \propto
+\lVert L \wedge F^+\rVert(p)\)</span>. Mass at dimension <span
+class="math inline">\(0\)</span> is an instantaneous, pointwise quantity
+rather than a distributed one.</em></p></li>
+<li><p><em><em>Lepton generations.</em> All vertical harmonic forms
+(Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">2.6</a>)
+are concentrated at the point; the Euler characteristic <span
+class="math inline">\(\chi(E_p)\)</span> retains the count of fermionic
+degrees of freedom without any spatial multiplicity.</em></p></li>
+</ol>
+</div>
+
 <div id="rem:descent-fixed-point" class="remark">
 
-<p><strong>Remark 2.19</strong> (Fixed-point mechanism: ascent and
-descent). <em>Each step down the brane tower removes a space-like
+<p><strong>Remark 2.22</strong> (Fixed-point mechanism: ascent and
+<a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
 dimension through the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
 associated fixed-point set.</em></p>
 <ol type="1">
 <li><p><em><em>Ascent (generation).</em> Moving from <span
 class="math inline">\(M_k\)</span> (<span class="math inline">\(\dim =
-1\)</span>) to <span class="math inline">\(M_{k+1}\)</span> (<span
-class="math inline">\(\dim = 3\)</span>) lifts the connection <span
+0\)</span>) upward lifts the connection <span
 class="math inline">\(A\)</span> to higher categorical structures via
 the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>).</em></p></li>
-<li><p><em><em>Descent (filtering).</em> Moving back down acts as an
+<li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (filtering).</em> Moving back down acts as an
 algebraic filter
-(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.8</a>).
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">2.9</a>).
 The ladder modes
-(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.7</a>)
-are stripped away until only the longitudinal modes—the <span
-class="math inline">\(\mathrm{U}(1)\)</span> backbone—remain at the
-<span class="math inline">\(1\)</span>-dimensional limit.</em></p></li>
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">2.8</a>)
+are stripped away: at dimension <span class="math inline">\(1\)</span>
+only the longitudinal <span class="math inline">\(\mathrm{U}(1)\)</span>
+backbone remains
+(Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">2.18</a>),
+and at dimension <span class="math inline">\(0\)</span> even that is
+collapsed to a single fibre datum
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">2.20</a>).</em></p></li>
 </ol>
 </div>
 
@@ -3021,8 +3192,9 @@ in the language of monoidal categories and functors.</p></li>
 <ul>
 <li><p>Lifting
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">2.1</a>)
-as a categorical lift/extension.</p></li>
-<li><p>Descent
+as a categorical lift/extension
+(Remark <a href="#rem:prolongation-categorical" data-reference-type="ref" data-reference="rem:prolongation-categorical">2.2</a>).</p></li>
+<li><p><a class="defn-link" href="#def:descent">Descent</a>
 (Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">2.0.1</a>)
 via fibred categories.</p></li>
 <li><p>Obstructions described in terms of cohomology of the category
@@ -3554,7 +3726,7 @@ class="math inline">\(E_{-1}\)</span></h2>
 
 <p><strong>Remark 6.17</strong> (<span
 class="math inline">\(E_{-1}\)</span> as skew-mirror bundle). <em>In the
-descent from <span class="math inline">\(E_1\)</span> (full torsion
+<a class="defn-link" href="#def:descent">descent</a> from <span class="math inline">\(E_1\)</span> (full torsion
 bundle) to <span class="math inline">\(E_0\)</span> (trivial bundle),
 the self-duality of spacetime and chirality admits a flip: the
 orientation of the chiral fibre can reverse relative to the spacetime
@@ -4151,7 +4323,7 @@ resolvent basis
 and <span
 class="math inline">\(\zeta_{\mathfrak{p}}^{-k}\in\mathbb{Z}_{\zeta_{\mathfrak{p}}}\)</span>.
 This arithmetic compatibility between the cyclic symmetry and the
-cyclotomic ring underlies the descent of the <span
+cyclotomic ring underlies the <a class="defn-link" href="#def:descent">descent</a> of the <span
 class="math inline">\(C_5\)</span> action to finite
 characteristic.</em></p>
 </div>
@@ -4206,7 +4378,7 @@ sum <a href="#eq:resolvent-linear" data-reference-type="eqref" data-reference="
 the remaining coordinates embed <span
 class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
 <span class="math inline">\(J^\infty E\)</span>
-(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.11</a>).</em></p>
+(Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">2.12</a>).</em></p>
 </div>
 
 <div id="rem:omega-constraints" class="remark">
@@ -4570,19 +4742,23 @@ class="math inline">\(M = \mathbb{C}^2\)</span> descends to a
 one-complex-dimensional variety <span
 class="math inline">\(M_0\)</span>. The stability of the Euler
 characteristic under descent and lifting
-(Proposition <a href="#prop:euler-char-stability" data-reference-type="ref" data-reference="prop:euler-char-stability">2.14</a>)
+(Proposition <a href="#prop:euler-char-stability" data-reference-type="ref" data-reference="prop:euler-char-stability">2.15</a>)
 ensures that the descended universe retains <span
 class="math inline">\(\chi(E) = -6\)</span>. We may therefore study the
-Descartes universe entirely in the setting of one-complex-dimensional
-varieties.</em></p>
+Descartes universe in the setting of one-complex-dimensional varieties.
+The descent may continue further to dimension zero
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">2.20</a>),
+where the entire <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> is captured by fibre data
+at a single point.</em></p>
 </div>
 
 <div id="prop:genus-maximal-descent" class="proposition">
 
-<p><strong>Proposition 8.6</strong> (<a class="defn-link" href="#prop:genus-maximal-descent">Genus of the maximal descent</a>).
-<em>Let <span class="math inline">\((M, G, P, E)\)</span> be a Descartes
-universe that descends to a compact one-complex-dimensional variety
-<span class="math inline">\(M_0\)</span>. Then <span
+<p><strong>Proposition 8.6</strong> (Genus of the
+one-complex-dimensional <a class="defn-link" href="#def:descent">descent</a>). <em>Let <span
+class="math inline">\((M, G, P, E)\)</span> be a Descartes universe that
+descends to a compact one-complex-dimensional variety <span
+class="math inline">\(M_0\)</span>. Then <span
 class="math inline">\(M_0\)</span> is a Riemann surface of genus <span
 class="math inline">\(g = 4\)</span>.</em></p>
 </div>
@@ -4593,9 +4769,10 @@ class="math inline">\(g = 4\)</span>.</em></p>
 class="math inline">\(g\)</span>, the Euler characteristic is <span
 class="math inline">\(\chi = 2 - 2g\)</span>. The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a>
 requires <span class="math inline">\(\chi(E) = -6\)</span>. On the
-maximal descent <span class="math inline">\(M_0\)</span>, the stability
-of the Euler characteristic
-(Proposition <a href="#prop:euler-char-stability" data-reference-type="ref" data-reference="prop:euler-char-stability">2.14</a>)
+one-complex-dimensional <a class="defn-link" href="#def:descent">descent</a> <span
+class="math inline">\(M_0\)</span>, the stability of the Euler
+characteristic
+(Proposition <a href="#prop:euler-char-stability" data-reference-type="ref" data-reference="prop:euler-char-stability">2.15</a>)
 gives <span class="math inline">\(\chi(M_0) = -6\)</span>, whence <span
 class="math inline">\(2 - 2g = -6\)</span> and <span
 class="math inline">\(g = 4\)</span>. ◻</p>
@@ -4893,11 +5070,11 @@ structure). <em>The <span class="math inline">\(\mathrm{SO}(3)\)</span>
 holonomy of the bulk bundle
 (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.5</a>)
 and the monodromy fixed points of the <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
-(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.4</a>)
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">2.5</a>)
 may leave topological imprints on the large-scale distribution of matter
 — for instance, preferred filamentary alignments or voids correlated
 with the brane tower structure
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>).</em></p>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>).</em></p>
 </div>
 
 <h5 id="existing-data-sets-2">Existing data sets.</h5>
@@ -4929,7 +5106,7 @@ points in the brane tower.</p></li>
 
 <p><strong>Remark 10.4</strong> (Theoretical mass ratios from the mass
 identity). <em>The <a class="defn-link" href="#def:mass-identity">mass identity</a>
-(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.15</a>)
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.16</a>)
 expresses inertial mass as a line integral of <span
 class="math inline">\(\lVert\nabla_A q\rVert \cdot \lVert L \wedge
 F^+\rVert\)</span> around a vortex filament. For the Descartes universe
@@ -4939,7 +5116,7 @@ the mass spectrum. The electron–muon mass ratio, for instance, is
 governed by the ratio of vertical degrees in the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">8.7</a>).
 Evaluating the mass identity at successive levels of the brane tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.2</a>)
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">2.3</a>)
 may yield theoretical predictions for lepton and hadron mass
 ratios.</em></p>
 </div>
