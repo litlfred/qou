@@ -426,6 +426,9 @@ function expQ(x, q, N) {
   return sum;
 }
 function lnQ(x, q, N) {
+  // Clamp |x| to 1.8 to keep the q-log series in a numerically stable regime.
+  // Callers that display an argument corresponding to this value (e.g. "lnq(1+r)")
+  // should apply the same clamp so the UI reflects what is actually computed.
   const xc = Math.min(Math.abs(x), 1.8) * Math.sign(x + 1e-30);
   let sum = 0, xn = 1;
   for (let n = 1; n <= N; n++) {
