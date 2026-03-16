@@ -316,17 +316,29 @@ $\mathrm{SU}(2)$-invariant:
 % TODO: proof
 \end{proof}
 
-% ── Mass as Geometric Drag ───────────────────────────────────────────────────
+% ── Mass in the Brane Tower ──────────────────────────────────────────────────
 
-\begin{remark}[Mass as geometric drag]
+\begin{remark}[Mass in the brane tower]
 \label{rem:mass-geometric-drag}
-In this recursive $\mathrm{SU}(2)$ tower
-(Definition~\ref{def:recursive-brane-tower}), mass is not an intrinsic
-property of a point-particle but rather a measure of the \emph{geometric drag}
-(or ``viscosity'') encountered by a stable vortex as it propagates through the
-$1$-jet bundle $J^1 E_n$.  When $q \neq 1$ the field is non-commutative:
-moving the vortex requires a continuous rearrangement of the $\mathrm{SU}_q(2)$
-algebra (Definition~\ref{def:direct-limit-algebra}) across the fibres.
+In the recursive brane tower (Definition~\ref{def:recursive-brane-tower}),
+mass is not an intrinsic property of a point-particle but a measure of the
+resistance encountered by a stable vortex as it propagates through the
+$1$-jet bundle $J^1 E_n$ (Proposition~\ref{prop:jet-prolongation}).  The
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}) varies from
+fibre to fibre; translation of the vortex along the base therefore requires a
+corresponding variation of the Frobenius--Hopf structure on each fibre, and
+the mass quantifies this variation.
+\end{remark}
+
+\begin{remark}[Non-commutativity and geometric drag]
+\label{rem:mass-noncommutative-drag}
+When the substrate parameter satisfies $q(p) \neq 1$ at every point of the recursive brane tower, the comultiplication on the Frobenius--Hopf object~$A$
+(Definition~\ref{def:quantum-universe}) is non-cocommutative, so the
+algebra $\mathcal{A}_\infty$ (Definition~\ref{def:direct-limit-algebra})
+does not reduce to a commutative direct limit.  Moving a vortex through
+$J^1 E_n$ then requires a continuous rearrangement of the
+$\mathrm{SU}_q(2)$ fibre data, which is the source of the inertial
+resistance described in Remark~\ref{rem:mass-geometric-drag}.
 \end{remark}
 
 \begin{proposition}[Stability of the Euler characteristic]
