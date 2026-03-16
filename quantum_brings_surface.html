@@ -768,8 +768,8 @@ function buildCP1Ghost(P, N, R_CP1) {
 // Center O = p + N·R_CP1.  Parameterisation:
 //   v(φ_lat, ψ) = O + R_CP1·( sin(φ_lat)·(cos(ψ)·T1 + sin(ψ)·T2) − cos(φ_lat)·N )
 // φ_lat ∈ [0,π]:  0 = south pole (p),  π = north pole (p + 2R·N)
-// ψ ∈ sector [2πi/3, 2π(i+1)/3]  — no twist; grid spacing = ℓ_P / R_CP1
-function buildTubeGeoCP1(tubeIndex, P, N, T1, T2) {
+// ψ ∈ sector [2πi/3, 2π(i+1)/3]  + q·TAU chiral twist pole-to-pole; grid spacing = ℓ_P / R_CP1
+function buildTubeGeoCP1(tubeIndex, P, N, T1, T2, q) {
   const R_CP1  = SPHERE_R * 0.2;  // always 1/5 of spacetime sphere
   const Ox = P.x + N.x * R_CP1;
   const Oy = P.y + N.y * R_CP1;
@@ -789,12 +789,13 @@ function buildTubeGeoCP1(tubeIndex, P, N, T1, T2) {
   const psi_span = TAU / 3;              // 120° sector width
 
   for (let i = 0; i <= AX; i++) {
-    const phi_lat = (i / AX) * Math.PI;
+    const t       = i / AX;
+    const phi_lat = t * Math.PI;
     const sinPhi  = Math.sin(phi_lat);
     const cosPhi  = Math.cos(phi_lat);
 
     for (let j = 0; j <= RG; j++) {
-      const psi    = psi_base + (j / RG) * psi_span;
+      const psi    = psi_base + (j / RG) * psi_span + t * q * TAU;
       const cosPsi = Math.cos(psi);
       const sinPsi = Math.sin(psi);
 
@@ -866,7 +867,7 @@ function buildTubes() {
     // ── CP1 fibre view: three Planck-gridded bands on the CP1 sphere ──
     buildCP1Ghost(selPt, N_vec, SPHERE_R * 0.2);
     for (let ti = 0; ti < 3; ti++) {
-      const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2);
+      const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q);
       const mat = new THREE.MeshPhongMaterial({
         vertexColors: true, side: THREE.DoubleSide,
         shininess: 70, specular: new THREE.Color(0.28, 0.30, 0.38),
@@ -944,7 +945,7 @@ function buildAxisTubes() {
     const { T1, T2 } = getFrame(N_vec);
     for (let ti = 0; ti < 3; ti++) {
       const geo = cp1Mode
-        ? buildTubeGeoCP1(ti, pole, N_vec, T1, T2)
+        ? buildTubeGeoCP1(ti, pole, N_vec, T1, T2, q)
         : buildTubeGeo(ti, pole, N_vec, T1, T2, q, N_min, N_max, sigma, gamma_scale);
       const mat = new THREE.MeshPhongMaterial({
         vertexColors: true, side: THREE.DoubleSide,
@@ -1414,7 +1415,7 @@ function togglePrimeGhosts() {
     const R_CP1 = SPHERE_R * 0.2;
     for (const n of PRIME_Z_VALS) {
       // Spread points along a great circle from +y to +z axis
-      const theta = (n / 67) * Math.PI / 2;
+      const theta = (n / 29) * Math.PI / 2;
       const pt = new THREE.Vector3(0, Math.cos(theta) * SPHERE_R, Math.sin(theta) * SPHERE_R);
       const Nv = pt.clone().normalize();
       const geo = new THREE.SphereGeometry(R_CP1, 20, 12);
