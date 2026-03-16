@@ -72,6 +72,63 @@ The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$
 is well-defined over any~$k$.
 \end{remark}
 
+\begin{remark}[TQFT context]
+\label{rem:tqft-context}
+The axioms of
+Definitions~\ref{def:quantum-universe}
+and~\ref{def:quantum-observable-universe} are grounded in the algebraic
+framework of topological quantum field theory (TQFT).
+
+\medskip\noindent\textit{Frobenius--Hopf objects and 2d TQFT.}\;
+By the classification theorem of Abrams, a commutative Frobenius algebra
+over~$k$ is equivalent to a $2$-dimensional TQFT
+$Z \colon \mathbf{2Cob} \to \mathrm{Vect}_k$
+\cite{kock2004, atiyah1988}.  The Frobenius--Hopf object~$A$ in
+Definition~\ref{def:quantum-universe} carries both the Frobenius structure
+(encoding the $2$d cobordism data: the product~$\mu$ corresponds to a
+pair-of-pants cobordism, the Frobenius form~$\lambda$ to a cap) and a
+Hopf structure (encoding the quantum-group symmetry that extends the theory
+to three dimensions).  Concretely, a $2$d TQFT assigns to
+the circle~$S^1$ a Frobenius algebra~$A$ and to each cobordism
+$\Sigma \colon S^1 \sqcup \cdots \to S^1 \sqcup \cdots$ a linear map
+built from~$\mu$, $\Delta_\mu$, $\eta$, and~$\lambda$.  The Hopf
+structure~$(\Delta, \varepsilon, S)$ equips~$A$ with the additional data
+needed for three-dimensional and extended TQFTs
+\cite{turaev2010, witten1988}.
+
+\medskip\noindent\textit{The observability condition as a categorical
+contact condition.}\;
+In the TQFT setting, the condition
+$\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}) is the categorical
+analogue of the \emph{contact condition} (maximal non-integrability).
+A non-zero morphism $\mathbf{1} \to \mathrm{Ad}(A)$ would give a
+global invariant section of the adjoint object --- the categorical
+counterpart of a nowhere-vanishing section of the adjoint bundle --- and
+would force the TQFT to decompose into a direct sum of
+lower-dimensional theories.  Requiring
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ therefore ensures:
+\begin{enumerate}
+  \item \emph{irreducibility}: the associated $3$-dimensional TQFT
+        (Chern--Simons type, with gauge datum~$A$ and quantum
+        parameter~$q$) does not split as a direct sum;
+  \item \emph{non-degeneracy across cobordisms}: the TQFT pairing on
+        state spaces assigned to surfaces is non-degenerate
+        \cite{freedhopkins2010};
+  \item \emph{full dualisability}: in the sense of the cobordism
+        hypothesis \cite{baezdolan1995, lurie2009}, the object~$A$ is
+        fully dualisable in the relevant Morita higher category, so the
+        TQFT extends to a fully local (extended) field theory.
+\end{enumerate}
+In the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}), this categorical
+condition reduces to
+$H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
+instanton connection admits no infinitesimal automorphisms, which is the
+gauge-theoretic manifestation of the contact (maximally non-integrable)
+geometry of $(M, \theta)$.
+\end{remark}
+
 % ── ℂ realisation ─────────────────────────────────────────────────────────────
 
 \begin{example}[$\mathbb{C}$ realisation: quantum universe]
@@ -1467,12 +1524,12 @@ Chapter~\ref{chap:experimental} and is given there.
 \section{Critique summary}
 \label{sec:qou-critique}
 
-This chapter contains 48~labelled items (18~definitions, 8~examples,
-4~propositions/lemmas, 18~remarks).  Each item was rated on a three-point
+This chapter contains 49~labelled items (18~definitions, 8~examples,
+4~propositions/lemmas, 19~remarks).  Each item was rated on a three-point
 scale: \textbf{Good} (rigorous and self-contained),
 \textbf{Fair} (essentially correct but with a gap or ambiguity), or
 \textbf{Poor} (material error or unjustified claim undermining the
-argument).  Of these 48~items, 43~are rated~\textbf{Good},
+argument).  Of these 49~items, 44~are rated~\textbf{Good},
 5~are rated~\textbf{Fair}, and 0~are rated~\textbf{Poor}.  Only the
 Fair and Poor items are listed below.
 
