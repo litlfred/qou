@@ -33,6 +33,40 @@ part of the defining data.  An equivalence of $\mathbb{C}$~quantum universes
 must therefore preserve $\theta$ up to positive rescaling.
 \end{remark}
 
+\begin{remark}[Role of the contact form]
+\label{rem:role-of-contact-form}
+The contact form $\theta$ is the structural engine of the theory.  It
+determines, in order:
+\begin{enumerate}
+  \item \emph{The Reeb vector field $\xi$}, the unique vector field satisfying
+        $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$
+        (Definition~\ref{def:reeb-decomposition}).
+  \item \emph{The horizontal--vertical splitting}
+        $TM = H \oplus \mathbb{R}\,\xi$, where
+        $H = \ker\theta$.  This splitting is the geometric origin of the
+        fermion--boson decomposition
+        (Definitions~\ref{def:fermion}--\ref{def:boson}).
+  \item \emph{The Webster metric} $g_\theta$ on $H$, the Hermitian metric
+        determined by the Levi form $L_\theta$.  The Hodge star $*$ in the
+        self-duality condition $F_A = {*}\,F_A$
+        (Proposition~\ref{prop:self-dual-curvature}) is defined with
+        respect to this metric.
+  \item \emph{The Levi form $L_\theta$}, which enters the substrate parameter
+        $q(p) = \exp\!\bigl(\lVert L \wedge F_A^+\rVert(p)\bigr)$
+        (Remark~\ref{rem:substrate-parameter}).
+  \item \emph{Every $q$-deformed structure}: the operators $d_q$, $[{\cdot},
+        {\cdot}]_q$, $\xi_q$, $A_q$ are all defined through the interpolation
+        $q^{-1}(\text{classical term}) + (1-q^{-1})(\theta\text{-projected
+        term})$
+        (Definitions~\ref{def:q-exterior-derivative}--\ref{def:q-connection}).
+\end{enumerate}
+Without $\theta$ there is no Reeb direction, no horizontal distribution, no
+Webster metric, and hence no way to define the substrate parameter, the
+$q$-Laplacian, or the particle spectrum.  In this sense the contact form is
+not merely an auxiliary datum but the fundamental field that generates all
+dynamics in the $\mathbb{C}$~quantum observable universe.
+\end{remark}
+
 \begin{remark}[Holonomy reduction]
 \label{rem:holonomy-reduction}
 The structure group of $E$ is $G = \mathrm{SU}(2)$, but the holonomy group
