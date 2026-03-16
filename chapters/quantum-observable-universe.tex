@@ -374,9 +374,9 @@ formalisations, with different trade-offs:
         transparent than in~(2).
 \end{enumerate}
 For the purposes of this paper we work with approach~(1) at the
-computational level.  The category-theoretic perspective of
-approach~(2) recurs throughout later chapters and serves as the
-unifying language for several key constructions:
+computational level.  However, the later chapters progressively adopt
+the category-theoretic perspective of approach~(2) as the unifying
+language:
 \begin{itemize}
   \item \emph{Terminal objects (Chapter~\ref{chap:descartes}).}\;
         The category $\mathcal{C}_{-6}$ of $\mathbb{C}$ quantum observable
@@ -404,10 +404,35 @@ unifying language for several key constructions:
         category-theoretic setup of
         Section~\ref{sec:enveloping-algebras}.
 \end{itemize}
-A full categorical treatment via~(2) would make the QOU framework
-compatible with extended topological field theories and higher gauge
-theory; this comparison motivates the categorical developments in the
-chapters cited above.
+
+\medskip\noindent\textit{Impact assessment: approach~(1) vs approach~(2).}\;
+The choice of approach~(1) (Hopf-algebra bundles) in this chapter has a
+\emph{limited} impact on the rest of the paper, for the following
+reasons.  First, the concrete computations in Chapter~1 ---
+the substrate parameter, $q$-deformed operators, and their algebraic
+properties (Propositions~\ref{prop:dq-squared}
+and~\ref{prop:q-jacobiator}) --- depend only on the pointwise value
+$q(p)$ and the contact geometry of~$M$, not on the global
+algebraic structure of the gauge group bundle.  These results hold
+identically under any of the three formalisations.
+
+Second, the categorical content in later chapters
+(Chapters~\ref{chap:descartes}, \ref{chap:p-adic},
+\ref{chap:torsion}, \ref{chap:path-integrals-braiding}) is formulated
+at the level of the representation category
+$\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, which is reconstructible from
+the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of approach~(1)
+via Tannaka--Krein duality.  The passage from~(1) to~(2) is therefore
+functorial and introduces no new data; it amounts to replacing an
+algebra with its category of modules.
+
+Third, the one genuine tension --- the algebraic discontinuity at
+$q = 1$, where the coalgebra becomes commutative --- is resolved by the
+$C^*$-algebraic perspective of approach~(3), which the paper invokes
+implicitly whenever continuity in $q$ is needed.  A full categorical
+treatment via~(2) would make the QOU framework compatible with extended
+topological field theories and higher gauge theory; this comparison
+motivates the categorical developments in the chapters cited above.
 \end{remark}
 
 \begin{definition}[Quantum Planck Constant]
@@ -591,8 +616,7 @@ $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by
         + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,
 \]
 where $d$ is the ordinary exterior derivative, $\theta$ the contact form,
-and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.  When
-$q = 1$, $d_q = d$.
+and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.
 \end{definition}
 
 \begin{proposition}[$d_q^2$ does not vanish]
@@ -648,7 +672,6 @@ Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields.  The
                               - \theta(W)\,\mathcal{L}_\xi V\bigr),
 \]
 where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.
-When $q = 1$, $[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$.
 \end{definition}
 
 \begin{proposition}[Jacobiator of ${{[\,\cdot\,,\cdot\,]}}_q$]
@@ -698,8 +721,6 @@ connection} $A_q$ is defined by
   \;=\; q^{-1}\,A
         + (1 - q^{-1})\,\iota_\xi\,A\;\theta,
 \]
-i.e.\ $A_q$ interpolates between the full connection $A$ and its Reeb
-component.  When $q = 1$, $A_q = A$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Reeb vector field]
@@ -715,9 +736,23 @@ defined by its action on smooth functions $f \in C^\infty(M)$:
 where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to
 $H = \ker\theta$ (using the Webster metric $g_\theta$) and
 $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket
-(Definition~\ref{def:q-lie-bracket}).  When $q = 1$, one recovers the
-classical Reeb field $\xi_1 = \xi$.
+(Definition~\ref{def:q-lie-bracket}).
 \end{definition}
+
+\begin{remark}[Classical recovery of $q$-deformed operators]
+\label{rem:classical-recovery}
+All four $q$-deformed operators interpolate between the classical ($q = 1$)
+and deformed ($q > 1$) regimes via the uniform pattern
+$q^{-1} \cdot (\text{classical}) + (1 - q^{-1}) \cdot (\text{Reeb correction})$.
+At $q = 1$ each recovers its classical counterpart:
+$d_q = d$ (Definition~\ref{def:q-ext-deriv}),
+$[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$
+(Definition~\ref{def:q-lie-bracket}),
+$A_q = A$ (Definition~\ref{def:q-connection}), and
+$\xi_q = \xi$ (Definition~\ref{def:q-reeb-vector-field}).
+The connection $A_q$ interpolates between the full instanton connection and
+its Reeb component $\iota_\xi A\;\theta$.
+\end{remark}
 
 \begin{definition}[$q$-Deformed Reeb flow]
 \label{def:q-reeb-flow}
