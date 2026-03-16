@@ -10,10 +10,10 @@ $(M, \theta, G, P, E)$ where:
 \begin{enumerate}
   \item $M$ is a CR manifold of hypersurface type
         (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form
-        of signature $(p,q)$, $p + q = n$;
+        of signature $(r,s)$, $r + s = n$;
   \item $\theta$ is a pseudo-Hermitian structure (contact form) on $M$,
         determining the Levi distribution $H = \ker\theta$, the Reeb vector
-        field $\xi$, the Webster metric $g_\theta$ (of signature $(2p,2q)$
+        field $\xi$, the Webster metric $g_\theta$ (of signature $(2r,2s)$
         on $H$), and the Levi form $L_\theta$;
   \item $G = \mathrm{SU}(2)$;
   \item $P \to M$ is a principal $G$-bundle whose holonomy reduces to
@@ -32,16 +32,19 @@ signature $(n,0)$, where $L_\theta$ is positive definite.
 A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
 universe $(M, \theta, G, P, E)$
 (Definition~\ref{def:c-quantum-universe}) that satisfies
-the following compactly supported vanishing conditions:
+the following vanishing conditions:
 \[
-  H^0_c(M, \mathrm{Ad}(P)) = 0
+  H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   \Gamma_c(M, E) = 0,
 \]
 where $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
 (a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
 denotes the space of compactly supported continuous sections of the
-(non-linear) fibre bundle $E$.
+(non-linear) fibre bundle $E$.  The condition $H^0(M, \mathrm{Ad}(P)) = 0$
+asserts the vanishing of \emph{all} global parallel sections of the adjoint
+bundle --- not merely compactly supported ones --- eliminating every
+infinitesimal gauge symmetry.
 \end{definition}
 
 % ── Remark ───────────────────────────────────────────────────────────────────
@@ -67,20 +70,16 @@ conditions hold.
   \item \emph{Non-degeneracy of the substrate.}\;
         The Levi form $L_\theta$ is non-degenerate (but not necessarily
         positive definite), so the substrate parameter
-        $q(p) = \exp(\lVert L_\theta \wedge F_A^+\rVert)$
+        $q(p) = \exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$
         (Definition~\ref{def:substrate-parameter}) is well-defined and
         the regime $q > 1$ is attainable.  When the Levi form has
-        indefinite signature $(p,q)$ with $p,q \geq 1$, the Webster
-        metric $g_\theta$ is pseudo-Riemannian, and one must replace
-        norms with pseudo-norms; the substrate parameter is then
-        \[
-          q(p)
-          \;=\; \exp\!\bigl(\lvert L_\theta \wedge F_A^+ \rvert(p)\bigr),
-        \]
-        where $\lvert\cdot\rvert$ denotes the absolute value of the
-        pseudo-norm.
+        indefinite signature $(r,s)$ with $r,s \geq 1$, the Webster
+        metric $g_\theta$ is pseudo-Riemannian; the contraction
+        $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
+        the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
+        one takes the absolute value to ensure $q \geq 1$.
   \item \emph{QOU vanishing (Definition~\ref{def:c-quantum-observable-universe}).}\;
-        The conditions $H^0_c(M, \mathrm{Ad}(P)) = 0$ and
+        The conditions $H^0(M, \mathrm{Ad}(P)) = 0$ and
         $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
         These are purely topological/cohomological and independent of the
         Levi signature.
@@ -101,31 +100,43 @@ Grauert tubes over pseudo-Riemannian manifolds.
 \label{rem:jet-bundle}
 The conditions in Definition~\ref{def:c-quantum-observable-universe} admit a
 natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
-$H^0_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
-$E$ exists, while $H^0_c(M, \mathrm{Ad}(P)) = 0$ eliminates compactly
-supported infinitesimal gauge symmetries.  Together, these conditions mean that
-the space of sections of $J^1 E$ with compact support injects into the space of
-connections on $P$, preventing any local degeneracy of the gauge field.
+$\Gamma_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
+$E$ exists, while $H^0(M, \mathrm{Ad}(P)) = 0$ eliminates \emph{all}
+infinitesimal gauge symmetries (not merely compactly supported ones).  Together,
+these conditions mean that the space of sections of $J^1 E$ injects into the
+space of connections on $P$, preventing any local degeneracy of the gauge field.
 \end{remark}
 
 % ── Lemma and Proposition ────────────────────────────────────────────────────
 
+\begin{definition}[Instanton connection]
+\label{def:instanton}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with
+$\dim_{\mathbb{R}} H = 4$ ($n = 2$).  An \emph{instanton connection} on $P$
+is a connection $A$ whose curvature $F_A$, restricted to the horizontal
+distribution $H = \ker\theta$, is self-dual:
+$F_A|_H = {*_H}\,F_A|_H$, where $*_H$ is the Hodge star on
+$\Lambda^2 H^*$ determined by the Webster metric $g_\theta$.  More generally,
+when $\dim_{\mathbb{R}} H \neq 4$, an instanton connection is a
+Yang--Mills connection that minimises the functional
+$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.
+\end{definition}
+
 \begin{lemma}[Irreducibility of the connection]
 \label{lem:irreducible-connection}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
-vanishing condition $H^0_c(M, \mathrm{Ad}(P)) = 0$ implies that every
-instanton connection $A$ on $P$ is irreducible.
+vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every
+instanton connection $A$ on $P$ (Definition~\ref{def:instanton}) is
+irreducible.
 \end{lemma}
 
 \begin{proof}
 Suppose for contradiction that an instanton connection $A$ on $P$ is
 reducible.  Then the stabiliser of $A$ under the gauge group contains a
 non-trivial element $s \in \Gamma(M,\, \mathrm{Ad}(P))$ satisfying
-$D_A s = 0$.  Because $M$ is non-compact (as required for the compactly
-supported cohomology to be meaningful), a bump-function argument yields a
-non-zero compactly supported section in $\ker D_A \subset
-\Gamma_c(M,\,\mathrm{Ad}(P))$, contradicting
-$H^0_c(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
+$D_A s = 0$.  Such $s$ is a global parallel section of $\mathrm{Ad}(P)$,
+and hence a non-zero element of $H^0(M, \mathrm{Ad}(P))$, contradicting
+$H^0(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
 \end{proof}
 
 \begin{proposition}[Self-duality of the curvature]
@@ -201,11 +212,13 @@ the orbifold $\mathbb{CP}^1/\Gamma$; the bundle structure remains
 well-defined on the smooth manifold $M = S^3/\Gamma$.)  Equipped with the
 induced principal $\mathrm{SU}(2)$-bundle $P \to M$ and the associated
 state bundle $E = P \times_G \mathbb{CP}^1$, the tuple
-$(M, \theta, G, P, E)$ provides a $\mathbb{C}$ quantum observable universe
-satisfying horizontal self-dual curvature
-(Proposition~\ref{prop:self-dual-curvature}), since $\dim H = 2$ and
-the self-duality statement is verified for these $3$-manifolds by the
-isomorphism $\Lambda^2 H^* \cong \mathbb{R}$.
+$(M, \theta, G, P, E)$ provides a $\mathbb{C}$ quantum observable universe.
+Note that $\dim_{\mathbb{R}} H = 2$, so the Hodge-star decomposition
+$\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ is trivial
+($\Lambda^2 H^* \cong \mathbb{R}$); in this dimension the curvature
+$F_A|_H$ is automatically ``self-dual'' in the vacuous sense, and the
+instanton condition reduces to the Yang--Mills equation
+(Definition~\ref{def:instanton}).
 \end{example}
 
 \begin{example}[Bring's surface unit circle bundle]
@@ -265,20 +278,34 @@ the QOU framework beyond the strictly pseudoconvex setting.
 \begin{definition}[Substrate parameter]
 \label{def:substrate-parameter}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
-with instanton connection $A$ on $P$.  Write $F_A = dA + A \wedge A$ for the
+with instanton connection $A$ on $P$
+(Definition~\ref{def:instanton}).  Write $F_A = dA + A \wedge A$ for the
 curvature and let $F_A^+$ denote its self-dual part
 (Proposition~\ref{prop:self-dual-curvature}).  Let
 $L_\theta \colon H \times H \to \mathbb{C}$ be the \emph{Levi form}, the
 Hermitian form on the Levi distribution $H = \ker\theta$ defined by
-$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.  The \emph{substrate parameter}
-is the smooth field $q \colon M \to [1,\infty)$ defined by
+$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.
+
+\medskip\noindent\textit{Natural contraction.}\;
+The Levi form $L_\theta$ is a section of $\Lambda^{1,1} H^*$
+(the $(1,1)$-component of $\Lambda^2 H^*$ with respect to the complex
+structure $J$).  The self-dual curvature $F_A^+$ is a section of
+$\Lambda^+ H^* \otimes \mathrm{Ad}(P)$.  On a $4$-dimensional oriented
+inner-product space, $\Lambda^{1,1} \subset \Lambda^+$, so $L_\theta$ and
+$F_A^+$ live in the same subbundle.  The Webster metric $g_\theta$
+provides a fibrewise inner product on $\Lambda^+ H^*$; composing this
+with the Killing form on $\mathrm{Ad}(P)$ yields the natural contraction
 \[
-  q(p) \;=\; \exp\!\bigl(\lVert L_\theta \wedge F_A^+ \rVert(p)\bigr),
+  \langle L_\theta,\, F_A^+ \rangle_p
+  \;\in\; \mathbb{R}, \qquad p \in M.
+\]
+The \emph{substrate parameter} is the smooth field
+$q \colon M \to [1,\infty)$ defined by
+\[
+  q(p) \;=\; \exp\!\bigl(\lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p)\bigr),
   \qquad p \in M,
 \]
-where $\lVert \cdot \rVert$ denotes the pointwise norm induced by the
-Webster metric $g_\theta$ on sections of
-$\Lambda^2 H^* \otimes \mathrm{Ad}(P)$.  The substrate parameter is not a
+where $\lvert\cdot\rvert$ denotes the absolute value.  The substrate parameter is not a
 fixed constant but a field on $M$: its value varies from point to point
 according to the local coupling between the Levi form and the self-dual
 curvature.
@@ -365,13 +392,13 @@ The substrate field $q$ (Definition~\ref{def:substrate-parameter}) interpolates
 between two extreme cosmological regimes:
 \begin{enumerate}
   \item \emph{Heat death} ($q \to 1$).  When
-        $\lVert L \wedge F_A^+\rVert \to 0$ the curvature--torsion coupling
+        $\lvert\langle L_\theta, F_A^+\rangle\rvert \to 0$ the curvature--torsion coupling
         vanishes and $q(p) \to 1$ everywhere.  In this limit $\hbar_q \to 0$,
         the commutator $[\hat{X}, \hat{P}]_q \to 0$, and no uncertainty
         remains: all quantum dynamics freeze into a classical, torsion-free
         equilibrium.
   \item \emph{Big bang} ($q \to \infty$).  When
-        $\lVert L \wedge F_A^+\rVert \to \infty$ the substrate is maximally
+        $\lvert\langle L_\theta, F_A^+\rangle\rvert \to \infty$ the substrate is maximally
         wound and $q(p) \to \infty$.  In this limit $\hbar_q \to 1$, the
         commutator $[\hat{X}, \hat{P}]_q \to J$, and uncertainty is maximal:
         the universe is in a purely quantum state with all torsion wound up
@@ -606,7 +633,7 @@ Define the \emph{$q$-weighted Yang--Mills--Levi functional}
   \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
         \theta \wedge (d\theta)^n,
 \]
-where $q(p) = \exp(\lVert L_\theta \wedge F_A^+ \rVert(p))$
+where $q(p) = \exp(\lvert\langle L_\theta, F_A^+\rangle\rvert(p))$
 (Definition~\ref{def:substrate-parameter}).
 Variation with respect to the Levi form $L_\theta$ yields field equations
 of the schematic form
@@ -715,7 +742,7 @@ revision pass.
   & Good
   & \emph{Generalised.}\;  Now a $5$-tuple $(M, \theta, G, P, E)$ with
     $M$ a CR manifold of hypersurface type with \emph{non-degenerate} Levi
-    form of signature $(p,q)$.  Strict pseudoconvexity is no longer
+    form of signature $(r,s)$.  Strict pseudoconvexity is no longer
     required; a new remark (Remark~\ref{rem:levi-generalisation})
     identifies three cohomological conditions that replace it:
     Kohn--Rossi finite-dimensionality, substrate non-degeneracy, and
@@ -734,7 +761,7 @@ revision pass.
     strict pseudoconvexity: (1)~Kohn--Rossi finite-dimensionality,
     (2)~substrate non-degeneracy via absolute pseudo-norm,
     (3)~the existing QOU vanishing conditions.  Indefinite Levi
-    signature $(p,q)$ and pseudo-Riemannian Webster metric are discussed. \\
+    signature $(r,s)$ and pseudo-Riemannian Webster metric are discussed. \\
 
 \raggedright Rem.~1.4\newline\texttt{rem:jet-bundle}
   & Fair
