@@ -273,15 +273,14 @@ vortex is
 \subsection{Descent}
 \label{ssec:descent}
 
-\begin{definition}[Descent to Dimension~$1$]
-\label{def:descent-dim-1}
+\begin{definition}[Descent]
+\label{def:descent}
 Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The \emph{descent} is the
 reverse traversal of the tower: starting from level~$n$ one passes to level
 $n-1$ by restricting the connection $A_n$ and the bundle $E_n$ to the base
 manifold $M_{n-1}$.  The descent terminates when the base manifold $M_k$
-reaches $\dim M_k = 1$, at which point $M_k$ is diffeomorphic to
-$S^1$ or $\mathbb{R}$.
+reaches $\dim M_k = 0$, at which point $M_k$ is a discrete set of points.
 \end{definition}
 
 \begin{remark}[Reduction at dimension~$1$]
@@ -300,6 +299,8 @@ universe collapse as follows.
         of motion; the horizontal distribution is trivial and no bosonic modes
         (Remark~\ref{rem:algebraic-filter}) survive.
 \end{enumerate}
+The descent need not terminate here; a further step carries $M_k$ to a
+zero-dimensional base (Remark~\ref{rem:descent-reduction-zero}).
 \end{remark}
 
 \begin{remark}[Physical implications of a $1$-dimensional base]
@@ -325,19 +326,71 @@ At dimension~$1$ the physical content simplifies drastically.
 \end{enumerate}
 \end{remark}
 
+\begin{remark}[Reduction at dimension~$0$]
+\label{rem:descent-reduction-zero}
+When $\dim M_k = 0$ the base manifold is a discrete set of points and
+the geometric data of the $\mathbb{C}$ quantum observable universe
+reduce to purely algebraic invariants at each point $p\in M_k$.
+\begin{enumerate}
+  \item \emph{Connection.}  The $\mathrm{SU}(2)$ connection $A_k$ has no
+        directions along which to parallel-transport; its curvature
+        $F_A$ vanishes identically and the holonomy is trivial.
+  \item \emph{Bundle.}  The principal $\mathrm{SU}(2)$ bundle $E$
+        restricts to its fibre $E_p$ over the point~$p$; the bundle
+        is determined entirely by this single fibre together with
+        the group action.
+  \item \emph{Substrate parameter.}  The substrate parameter
+        $q(p)=\exp\!\bigl(\lVert L\wedge F_A^{+}\rVert(p)\bigr)$
+        (Remark~\ref{rem:substrate-parameter}) assigns to each point a
+        definite quantum constant $q\in[1,\infty)$, encoding the full
+        content of the quantum observable universe at that point.
+  \item \emph{Reeb direction.}  There is no tangent space, so the Reeb
+        vector field (Definition~\ref{def:q-reeb-vector-field}) and the
+        horizontal distribution are absent; only the internal
+        $\mathrm{SU}(2)$ fibre data persist.
+\end{enumerate}
+In this terminal stage every observable is determined by the fibre
+$E_p$ and the value~$q(p)$.  Provided the zero-dimensional stratum is
+connected---i.e.\ $M_k$ is a single point---the entire quantum
+observable universe is captured by the pair $(E_p, q(p))$.
+\end{remark}
+
+\begin{remark}[Physical implications of a $0$-dimensional base]
+\label{rem:descent-physical-zero}
+At dimension~$0$ all spatial extent has been removed and the physical
+content is purely algebraic.
+\begin{enumerate}
+  \item \emph{Primordial state.}  The vortex filaments, flows and spatial
+        modes of higher-dimensional strata are absent; what remains is
+        the initial datum of the fermionic content encoded in the
+        fibre~$E_p$.
+  \item \emph{Mass.}  With no base manifold over which to integrate, the
+        mass identity (Definition~\ref{def:mass-identity}) collapses to a
+        single evaluation: $m \propto \lVert L \wedge F^+\rVert(p)$.
+        Mass at dimension~$0$ is an instantaneous, pointwise quantity
+        rather than a distributed one.
+  \item \emph{Lepton generations.}  All vertical harmonic forms
+        (Remark~\ref{rem:betti-numbers-brane}) are concentrated at the
+        point; the Euler characteristic $\chi(E_p)$ retains the count of
+        fermionic degrees of freedom without any spatial multiplicity.
+\end{enumerate}
+\end{remark}
+
 \begin{remark}[Fixed-point mechanism: ascent and descent]
 \label{rem:descent-fixed-point}
 Each step down the brane tower removes a space-like dimension through the
 $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 \begin{enumerate}
-  \item \emph{Ascent (generation).}  Moving from $M_k$ ($\dim = 1$) to
-        $M_{k+1}$ ($\dim = 3$) lifts the connection $A$ to higher categorical
-        structures via the jet prolongation
-        (Proposition~\ref{prop:jet-prolongation}).
+  \item \emph{Ascent (generation).}  Moving from $M_k$ ($\dim = 0$) upward
+        lifts the connection $A$ to higher categorical structures via the jet
+        prolongation (Proposition~\ref{prop:jet-prolongation}).
   \item \emph{Descent (filtering).}  Moving back down acts as an algebraic
         filter (Remark~\ref{rem:algebraic-filter}).  The ladder modes
-        (Remark~\ref{rem:weight-space-decomposition}) are stripped away until
-        only the longitudinal modes---the $\mathrm{U}(1)$ backbone---remain at
-        the $1$-dimensional limit.
+        (Remark~\ref{rem:weight-space-decomposition}) are stripped away:
+        at dimension~$1$ only the longitudinal
+        $\mathrm{U}(1)$ backbone remains
+        (Remark~\ref{rem:descent-reduction}), and at dimension~$0$ even
+        that is collapsed to a single fibre datum
+        (Remark~\ref{rem:descent-reduction-zero}).
 \end{enumerate}
 \end{remark}
