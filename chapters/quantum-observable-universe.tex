@@ -7,12 +7,25 @@
 \label{def:c-quantum-universe}
 A \emph{$\mathbb{C}$ quantum universe} is a triple $(M, G, E)$ where:
 \begin{enumerate}
-  \item $M$ is a CR manifold;
+  \item $M$ is a CR manifold equipped with a contact form $\theta$ (so
+        that the Levi form is non-degenerate);
   \item $G = \mathrm{SU}(2)$;
   \item $E \to M$ is a principal $G$-bundle (called the \emph{bulk}) with
-        fibres $\mathbb{CP}$ and $\mathrm{SO}(3)$ holonomy.
+        fibres $\mathbb{CP}^1$ and $\mathrm{SO}(3)$ holonomy.
 \end{enumerate}
 \end{definition}
+
+\begin{remark}[Holonomy reduction]
+\label{rem:holonomy-reduction}
+The structure group of $E$ is $G = \mathrm{SU}(2)$, but the holonomy group
+is required to lie in $\mathrm{SO}(3) \cong \mathrm{SU}(2)/\mathbb{Z}_2$.
+This reduction means that the holonomy representation factors through the
+adjoint quotient; equivalently, the associated vector bundle
+$E \times_{\mathrm{SU}(2)} \mathbb{C}^2$ admits no globally flat section,
+while the adjoint bundle $\mathrm{Ad}(E)$ may.  The lift from
+$\mathrm{SO}(3)$ to $\mathrm{SU}(2)$ is the geometric origin of the
+spin structure on~$M$.
+\end{remark}
 
 \begin{definition}[$\mathbb{C}$ Quantum Observable Universe]
 \label{def:c-quantum-observable-universe}
@@ -60,7 +73,8 @@ imply that the connection $A$ on $E$ is unique up to gauge equivalence.
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
-$A$.  Then the curvature $F_A$ is self-dual, i.e.\
+$A$, and let $*$ denote the Hodge star induced by the Webster metric of the
+CR structure $(M,\theta)$.  Then the curvature $F_A$ is self-dual, i.e.\
 \[
   F_A = {*}\, F_A.
 \]
@@ -112,8 +126,8 @@ two-dimensional affine example $M = \mathbb{C}^2$.
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with connection
 $A$.  Write $F_A = dA + A \wedge A$ for the curvature and let $F_A^+$ denote
 its self-dual part.  Let
-$L \in \Gamma(T^*M \otimes \overline{T^*M})$ be the \emph{Levi form}, a
-Hermitian form on the tangent bundle of $M$.  The \emph{substrate parameter}
+$L \in \Gamma(H^* \otimes \overline{H^*})$ be the \emph{Levi form}, the
+Hermitian form on the CR distribution $H = \ker\theta$.  The \emph{substrate parameter}
 is the smooth field $q \colon M \to [1,\infty)$ defined by
 \[
   q(p) \;=\; \exp\!\bigl(\lVert L \wedge F_A^+ \rVert(p)\bigr),
@@ -152,7 +166,7 @@ vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 In the $\mathbb{C}$ quantum observable universe the Heisenberg uncertainty
 principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
 $\hat{P}$ denote position and momentum observables on the fibre
-$\mathbb{CP}$.  We define their $q$-dependent commutator at $p \in M$ by
+$\mathbb{CP}^1$.  We define their $q$-dependent commutator at $p \in M$ by
 \[
   [\hat{X},\, \hat{P}]_q \;:=\; i\,\hbar_q(p),
 \]
@@ -213,11 +227,12 @@ between two extreme cosmological regimes:
         the universe is in a purely quantum state with all torsion wound up
         and no classical information from fermionic matter.
 \end{enumerate}
-Both limits are in a precise sense \emph{illusory}: the $q$-torsion of
-Definition~\ref{def:q-torsion-leaf} twists faster than any divergence can grow
-in the integral, so the finiteness of the brane tower
-(Definition~\ref{def:recursive-brane-tower}) tames the infinities that would
-otherwise appear at either extreme.
+Both limits are conjectured to be \emph{illusory}: the $q$-torsion of
+Definition~\ref{def:q-torsion-leaf} is expected to twist faster than any
+divergence can grow in the integral, so that the finiteness of the brane
+tower (Definition~\ref{def:recursive-brane-tower}) tames the infinities that
+would otherwise appear at either extreme.
+% TODO: prove the torsion-growth bound that prevents divergence at both limits
 \end{remark}
 
 \begin{remark}[$J^1E$ as the space of local states]
@@ -233,11 +248,27 @@ quantum field algebra $\mathrm{SU}_q(2)$
 
 % ── Particles, Reeb decomposition, Fermions and Bosons ──────────────────────
 
+\begin{definition}[$q$-Deformed exterior derivative]
+\label{def:q-exterior-derivative}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Remark~\ref{rem:substrate-parameter}) and contact form
+$\theta$.  The \emph{$q$-deformed exterior derivative} is the operator
+$d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ defined by
+\[
+  d_q \,\alpha
+  \;=\; q^{-1}\, d\alpha \;+\; (1 - q^{-1})\,\theta \wedge \iota_\xi\, d\alpha,
+\]
+where $d$ is the de~Rham differential and $\xi$ is the Reeb vector field of
+$\theta$.  When $q = 1$, $d_1 = d$.  The \emph{formal adjoint}
+$\delta_q \colon \Omega^{k+1}(M) \to \Omega^k(M)$ is defined with respect to
+the Webster metric of $(M, \theta)$.
+\end{definition}
+
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Remark~\ref{rem:substrate-parameter}).  Let $d_q$ denote the
-$q$-deformed exterior derivative on the CR manifold $M$.  A \emph{particle} is
+$q$-deformed exterior derivative (Definition~\ref{def:q-exterior-derivative}).  A \emph{particle} is
 a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is
 $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
 \[
@@ -293,6 +324,21 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 \]
 \end{definition}
 
+\begin{definition}[$q$-Deformed Lie bracket]
+\label{def:q-lie-bracket}
+Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+parameter $q$ (Remark~\ref{rem:substrate-parameter}).  The
+\emph{$q$-deformed Lie bracket} on smooth vector fields
+$X, Y \in \mathfrak{X}(M)$ is defined by
+\[
+  [X, Y]_q \;=\; q^{-1}\,[X, Y]
+    \;+\; (1 - q^{-1})\,[X, Y]_H,
+\]
+where $[X,Y]$ is the ordinary Lie bracket and $[X,Y]_H$ denotes its
+projection onto the horizontal distribution $H = \ker\theta$.  When $q = 1$,
+$[X,Y]_1 = [X,Y]$.
+\end{definition}
+
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
 Let $(M, G, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
@@ -303,10 +349,11 @@ defined by its action on smooth functions $f \in C^\infty(M)$:
 \[
   \xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,
 \]
-where $X_f$ is the horizontal lift of $\mathrm{grad}\,f$ to $H$ and
-$[\,\cdot\,,\cdot\,]_q$ denotes the $q$-deformed Lie bracket on
-$\mathfrak{X}(M)$.  When $q = 1$, one recovers the classical Reeb field
-$\xi_1 = \xi$.
+where $X_f$ is the horizontal lift of $\mathrm{grad}_\theta\,f$ to
+$H = \ker\theta$ (the gradient taken with respect to the Webster metric of
+the contact form $\theta$) and $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed
+Lie bracket (Definition~\ref{def:q-lie-bracket}).  When $q = 1$, one recovers
+the classical Reeb field $\xi_1 = \xi$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Reeb flow]
@@ -338,15 +385,19 @@ $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
 \label{rem:q-torsion-leaf-minimum}
-Let $A_q$ denote the $q$-deformed connection on $E$ and define the
-$q$-curvature
+Let $A_q = q^{-1}A + (1-q^{-1})\theta\otimes\xi$ denote the
+\emph{$q$-deformed connection} on $E$, obtained by interpolating the
+instanton connection $A$ (Lemma~\ref{lem:unique-connection}) with the Reeb
+direction.  Define the $q$-curvature
 \[
   \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q.
 \]
-A $q$-torsion leaf $L$ (Definition~\ref{def:q-torsion-leaf}) is a local
-minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution:
-the invariance of $L$ under $\phi_t^q$ forces the first variation of
-$\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a $q$-curvature well.
+A $q$-torsion leaf $L$ (Definition~\ref{def:q-torsion-leaf}) is conjectured
+to be a local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal
+distribution: the invariance of $L$ under $\phi_t^q$ should force the first
+variation of $\lVert\Omega_q|_L\rVert$ to vanish, so that $L$ sits in a
+$q$-curvature well.
+% TODO: prove that flow-invariance implies vanishing of the first variation
 Physically, a $q$-torsion leaf represents a region of the CR manifold where
 the gauge curvature is minimised and the $q$-deformed dynamics are in
 equilibrium.
@@ -387,6 +438,8 @@ manifold $M$.
 
 The Einstein--Hilbert action is recovered by examining the variation of the
 action $S_q$ with respect to the Levi form $L$:
+% TODO: define the action $S_q$ explicitly (e.g.\ as a $q$-deformed
+% Yang--Mills or Chern--Simons functional)
 \[
   \frac{\delta S_q}{\delta L}
   \;\implies\;
@@ -402,7 +455,7 @@ experimental signatures of this emergent geometry.
 \begin{remark}[The Schr\"odinger Equation as ``Jet Co-action'']
 \label{rem:schrodinger-jet-coaction}
 The Schr\"odinger equation describes the evolution of a state in the fibre
-$\mathbb{CP}$.  In the jet-bundle framework this is expressed as the condition
+$\mathbb{CP}^1$.  In the jet-bundle framework this is expressed as the condition
 of parallel transport along the connection $A$.
 
 For a section $\psi \in \Gamma(E)$, the Schr\"odinger dynamics are found in
@@ -411,6 +464,8 @@ the kernel of the $q$-deformed covariant derivative on $J^1 E$:
   i\,\hbar_q(p)\, D_A \psi \;=\; \hat{H}_q\, \psi,
 \]
 where $\hat{H}_q$ is the $q$-deformed Hamiltonian operator and:
+% TODO: define $\hat{H}_q$ explicitly (e.g.\ as the $q$-Laplacian acting
+% on sections of $E$, or via the $q$-curvature $\Omega_q$)
 \begin{itemize}
   \item $\hbar_q(p) = 1 - q(p)^{-1}$: the quantum Planck constant
         (Definition~\ref{def:quantum-planck-constant}) is a local field;
