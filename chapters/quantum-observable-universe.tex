@@ -320,6 +320,51 @@ $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
 group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 \end{definition}
 
+\begin{remark}[Quantum gauge group: formalisations and category-theoretic perspective]
+\label{rem:quantum-gauge-group-category}
+The ``field of quantum groups'' $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ in
+Definition~\ref{def:quantum-gauge-group} admits at least three
+formalisations, with different trade-offs:
+
+\begin{enumerate}
+  \item \emph{Fibre bundle of Hopf algebras.}\;
+        Let $\mathcal{O}_q(\mathrm{SU}(2))$ denote the Hopf algebra of
+        regular functions on $\mathrm{SU}_q(2)$.  One forms a locally
+        trivial bundle of Hopf algebras
+        $\mathcal{H} \to M$ whose fibre at~$p$ is
+        $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$.
+        \emph{Pro:} concrete and computable.
+        \emph{Con:} Hopf-algebra structure varies non-trivially with
+        $q(p)$; the coalgebra at $q = 1$ is commutative while for
+        $q \neq 1$ it is not, so the transition maps are not algebra
+        homomorphisms.
+  \item \emph{Bundle of monoidal categories.}\;
+        Replace each Hopf algebra with its representation category
+        $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal
+        category.  The field $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ becomes
+        a fibred category over~$M$ whose fibres are fusion categories
+        when $q(p)$ is a root of unity.
+        \emph{Pro:} functorial and compatible with the Tannakian
+        reconstruction program; morphisms between fibres are monoidal
+        functors, which behave well under deformation.
+        \emph{Con:} requires $2$-categorical or $\infty$-categorical
+        machinery; explicit computations are harder.
+  \item \emph{$C^*$-algebraic continuous field.}\;
+        The assignment $p \mapsto C(\mathrm{SU}_{q(p)}(2))$ defines a
+        continuous field of $C^*$-algebras in the sense of
+        Dixmier--Douady.
+        \emph{Pro:} the algebraic discontinuity at $q = 1$ is tamed by
+        the $C^*$-norm topology; the field is continuous in the
+        sense of Rieffel's strict deformation quantisation.
+        \emph{Con:} less algebraic control; functoriality is less
+        transparent than in~(2).
+\end{enumerate}
+For the purposes of this paper we work with approach~(1) at the
+computational level.  A category-theoretic treatment via~(2) would make
+the QOU framework compatible with extended topological field theories and
+higher gauge theory; this is deferred to future work.
+\end{remark}
+
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
@@ -386,30 +431,27 @@ the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and
 its ``strength'' is set by~$\hbar_q(p)$.
 \end{remark}
 
-\begin{remark}[Cosmological limits of $q$]
-\label{rem:cosmological-limits}
-The substrate field $q$ (Definition~\ref{def:substrate-parameter}) interpolates
-between two extreme cosmological regimes:
-\begin{enumerate}
-  \item \emph{Heat death} ($q \to 1$).  When
-        $\lvert\langle L_\theta, F_A^+\rangle\rvert \to 0$ the curvature--torsion coupling
-        vanishes and $q(p) \to 1$ everywhere.  In this limit $\hbar_q \to 0$,
-        the commutator $[\hat{X}, \hat{P}]_q \to 0$, and no uncertainty
-        remains: all quantum dynamics freeze into a classical, torsion-free
-        equilibrium.
-  \item \emph{Big bang} ($q \to \infty$).  When
-        $\lvert\langle L_\theta, F_A^+\rangle\rvert \to \infty$ the substrate is maximally
-        wound and $q(p) \to \infty$.  In this limit $\hbar_q \to 1$, the
-        commutator $[\hat{X}, \hat{P}]_q \to J$, and uncertainty is maximal:
-        the universe is in a purely quantum state with all torsion wound up
-        and no classical information from fermionic matter.
-\end{enumerate}
-Both limits are in a precise sense \emph{illusory}: the $q$-torsion of
-Definition~\ref{def:q-torsion-leaf} twists faster than any divergence can grow
-in the integral, so the finiteness of the brane tower
-(Definition~\ref{def:recursive-brane-tower}) tames the infinities that would
-otherwise appear at either extreme.
-\end{remark}
+\begin{example}[Cosmological limits of $q$ on $S^3$]
+\label{ex:cosmological-limits}
+Consider the link $M = S^3$ with the standard contact form
+$\theta$ (Example~\ref{ex:ale} with $\Gamma = \{1\}$) and let
+$A$ be the standard instanton connection on the Hopf bundle
+$P = S^7 \to S^4$ restricted to $S^3$.  The Levi form $L_\theta$
+has signature $(1,0)$ with $\lvert L_\theta \rvert = 1$ everywhere.
+
+As the instanton curvature concentrates near a point $p_0 \in S^3$
+(a ``collapsing instanton''),
+$\lvert \langle L_\theta, F_A^+ \rangle \rvert$ diverges at $p_0$ and
+tends to zero away from $p_0$.  This produces two regimes simultaneously:
+\begin{itemize}
+  \item \emph{Near $p_0$}: $q(p) \to \infty$, $\hbar_q \to 1$,
+        $[\hat{X},\hat{P}]_q \to J$ --- a ``big bang'' singularity.
+  \item \emph{Away from $p_0$}: $q(p) \to 1$, $\hbar_q \to 0$,
+        $[\hat{X},\hat{P}]_q \to 0$ --- a ``heat death'' region.
+\end{itemize}
+The substrate field $q$ thus captures the phase transition between
+quantum and classical regimes as a geometric phenomenon.
+\end{example}
 
 \begin{remark}[$J^1E$ as the space of local states]
 \label{rem:j1e-local-states}
@@ -504,6 +546,48 @@ and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.  When
 $q = 1$, $d_q = d$.
 \end{definition}
 
+\begin{proposition}[$d_q^2$ does not vanish]
+\label{prop:dq-squared}
+Let $d_q$ be the $q$-deformed exterior derivative
+(Definition~\ref{def:q-ext-deriv}).  For constant $q > 1$, the operator
+$d_q^2$ is given by
+\[
+  d_q^2\,\alpha
+  \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.
+\]
+In particular, $d_q^2 = 0$ if and only if $q = 1$ (classical case) or
+$\alpha$ lies in the kernel of $\mathcal{L}_\xi$ (Reeb-invariant forms).
+On horizontal $\mathcal{L}_\xi$-invariant forms, $d_q$ \emph{does}
+define a cochain complex.
+\end{proposition}
+
+\begin{proof}
+Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $a + b = 1$.  Then
+\begin{align*}
+  d_q^2\,\alpha
+  &= d_q\bigl(a\,d\alpha + b\,\theta \wedge \mathcal{L}_\xi\alpha\bigr) \\
+  &= a^2\,d^2\alpha
+     + ab\,d(\theta \wedge \mathcal{L}_\xi\alpha)
+     + ab\,\theta \wedge \mathcal{L}_\xi\,d\alpha
+     + b^2\,\theta \wedge \mathcal{L}_\xi(\theta \wedge \mathcal{L}_\xi\alpha).
+\end{align*}
+The first term vanishes since $d^2 = 0$.  The second expands as
+$ab\,d\theta \wedge \mathcal{L}_\xi\alpha
+- ab\,\theta \wedge d\mathcal{L}_\xi\alpha$.
+The third term cancels the second's negative part because
+$[d,\, \mathcal{L}_\xi] = 0$ implies
+$\theta \wedge \mathcal{L}_\xi\,d\alpha
+= \theta \wedge d\,\mathcal{L}_\xi\alpha$.
+For the fourth term, the Reeb field satisfies
+$\mathcal{L}_\xi\theta = 0$ (since $\iota_\xi d\theta = 0$ and
+$\theta(\xi)=1$), so
+$\mathcal{L}_\xi(\theta \wedge \mathcal{L}_\xi\alpha)
+= \theta \wedge \mathcal{L}_\xi^2\alpha$;
+the factor $\theta \wedge \theta = 0$ in $b^2\,\theta \wedge \theta
+\wedge \mathcal{L}_\xi^2\alpha$ kills this term.  Hence
+$d_q^2\alpha = ab\,d\theta \wedge \mathcal{L}_\xi\alpha$.
+\end{proof}
+
 \begin{definition}[$q$-Deformed Lie bracket]
 \label{def:q-lie-bracket}
 Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields.  The
@@ -517,6 +601,43 @@ Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields.  The
 where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.
 When $q = 1$, $[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$.
 \end{definition}
+
+\begin{proposition}[Jacobiator of $[\,\cdot\,,\cdot\,]_q$]
+\label{prop:q-jacobiator}
+Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e.\
+$\theta(U) = \theta(V) = \theta(W) = 0$).  The \emph{Jacobiator}
+\[
+  \mathrm{Jac}_q(U,V,W)
+  \;:=\; [[U,V]_q, W]_q + [[V,W]_q, U]_q + [[W,U]_q, V]_q
+\]
+is given by
+\[
+  \mathrm{Jac}_q(U,V,W)
+  \;=\; -q^{-1}(1-q^{-1})\!\sum_{\mathrm{cyc}}
+        d\theta(V,W)\,\mathcal{L}_\xi U,
+\]
+where the sum is over cyclic permutations of $(U,V,W)$.  In particular,
+$\mathrm{Jac}_q = 0$ if and only if $q = 1$ (classical Jacobi identity)
+or $d\theta|_{H \times H} = 0$ (integrable horizontal distribution).
+Since $d\theta|_{H \times H}$ is the Levi form $L_\theta$, which is
+non-degenerate by hypothesis, $[\,\cdot\,,\cdot\,]_q$ violates the Jacobi
+identity for all $q \neq 1$.  Thus $(\mathfrak{X}(M), [\,\cdot\,,\cdot\,]_q)$
+is a \emph{Leibniz algebra} (or a pre-Lie algebra), not a Lie algebra.
+\end{proposition}
+
+\begin{proof}
+For horizontal $V, W$, the bracket reduces to $[V,W]_q = q^{-1}[V,W]$.
+The mixed term $\theta([V,W]_q) = -q^{-1}\,d\theta(V,W)$ is in general
+non-zero.  Substituting into the next bracket:
+\begin{align*}
+  [[V,W]_q,\, U]_q
+  &= q^{-2}\,[[V,W],U]
+    - q^{-1}(1-q^{-1})\,d\theta(V,W)\,\mathcal{L}_\xi U,
+\end{align*}
+using $\theta(U)=0$ and $\theta([V,W]_q) = -q^{-1}d\theta(V,W)$.
+Summing cyclically, the $q^{-2}$ terms assemble into $q^{-2}\,\mathrm{Jac}(U,V,W) = 0$
+by the classical Jacobi identity, leaving only the $d\theta$ terms.
+\end{proof}
 
 \begin{definition}[$q$-Deformed connection]
 \label{def:q-connection}
@@ -575,6 +696,36 @@ $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
   \quad\text{for all } t \in \mathbb{R}.
 \]
 \end{definition}
+
+\begin{remark}[$q$-Torsion leaves: existence and category-theoretic perspective]
+\label{rem:q-torsion-existence}
+The horizontal distribution $H = \ker\theta$ on a contact manifold is
+maximally non-integrable: $d\theta|_{H \times H}$ is non-degenerate.
+By the Frobenius theorem, maximal integral submanifolds of $H$ have
+dimension at most~$n$ (half the rank of~$H$); these are the
+\emph{Legendrian submanifolds}.  Definition~\ref{def:q-torsion-leaf}
+therefore requires $L$ to be a Legendrian submanifold invariant under the
+$q$-deformed Reeb flow.
+
+Existence is not automatic: it depends on the dynamics of~$\xi_q$.
+When $q \to 1$ and $\xi_q \to \xi$, invariant Legendrian submanifolds
+exist whenever the Reeb flow is periodic or integrable (e.g.\ on
+$S^3/\Gamma$).  For $q > 1$, the deformation generically breaks
+periodicity, and one must appeal to KAM-type persistence results.
+
+\medskip\noindent\textit{Category-theoretic formulation.}\;
+A $q$-torsion leaf may be viewed as an object of the category
+$\mathbf{Leg}_q(M)$ whose objects are Legendrian submanifolds
+invariant under $\phi_t^q$ and whose morphisms are
+$\phi_t^q$-equivariant Legendrian cobordisms.  The forgetful
+functor $\mathbf{Leg}_q(M) \to \mathbf{Leg}(M)$ (forget the flow
+invariance) exhibits $q$-torsion leaves as fixed objects of the Reeb
+flow acting on the Legendrian category.  In this language, the
+``equilibrium'' condition of $q$-torsion leaves is a
+\emph{homotopy fixed-point} condition, and one could define a
+\emph{derived} $q$-torsion leaf as a homotopy-coherent fixed point of
+the $\phi_t^q$-action on the $\infty$-category of Legendrian branes.
+\end{remark}
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
 \label{rem:q-torsion-leaf-minimum}
