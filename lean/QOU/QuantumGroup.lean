@@ -93,7 +93,7 @@ structure QuantumSU2 (k : Type u) [QField k] where
   commutator_EF_holds : commutator_EF
 
 -- ═══════════════════════════════════════════════════════════════════════
--- Hopf structure on U_q(𝔰��(2))
+-- Hopf structure on U_q(𝔰𝔲(2))
 -- ═══════════════════════════════════════════════════════════════════════
 
 /-- The **coproduct** Δ on U_q(𝔰𝔲(2)):
