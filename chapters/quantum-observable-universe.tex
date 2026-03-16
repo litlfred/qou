@@ -1467,395 +1467,88 @@ Chapter~\ref{chap:experimental} and is given there.
 \section{Critique summary}
 \label{sec:qou-critique}
 
-The table below rates every labelled item in this chapter on a three-point
-scale (\textbf{Good} = rigorous and self-contained,
-\textbf{Fair} = essentially correct but with gaps or ambiguities,
-\textbf{Poor} = contains a material error or an unjustified claim that
-undermines the argument) and lists the status of each concern after the
-revision pass.
+This chapter contains 48~labelled items (18~definitions, 8~examples,
+4~propositions/lemmas, 18~remarks).  Each item was rated on a three-point
+scale: \textbf{Good} (rigorous and self-contained),
+\textbf{Fair} (essentially correct but with a gap or ambiguity), or
+\textbf{Poor} (material error or unjustified claim undermining the
+argument).  Of these 48~items, 43~are rated~\textbf{Good},
+5~are rated~\textbf{Fair}, and 0~are rated~\textbf{Poor}.  Only the
+Fair and Poor items are listed below.
 
 \medskip
 \noindent
 \begin{small}
 \begin{tabular}{@{}p{0.18\textwidth}p{0.08\textwidth}p{0.70\textwidth}@{}}
 \hline
-\textbf{Item} & \textbf{Rating} & \textbf{Concerns / Status} \\
+\textbf{Item} & \textbf{Rating} & \textbf{Concern} \\
 \hline
 
-\raggedright Def.~1.1\newline\texttt{def:quantum-\linebreak universe}
-  & Good
-  & \emph{New.}\;  Base-field-independent primary definition: a quantum
-    universe over a field~$k$ is a quadruple
-    $(\mathcal{C}, A, \omega, q)$ with $\mathcal{C}$ a $k$-linear rigid
-    monoidal category, $A$ a Frobenius--Hopf object, $\omega$ a fibre
-    functor, and $q \in k^\times$ a deformation parameter.
-    Quantum gauge group reconstructed via Tannaka--Krein duality. \\
-
-\raggedright Def.~1.2\newline\texttt{def:quantum-\linebreak observable-\linebreak universe}
-  & Good
-  & \emph{New.}\;  Base-field-independent observability condition:
-    non-degeneracy of the Frobenius form plus
-    $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
-    Replaces the analytic vanishing conditions of the $\mathbb{C}$
-    realisation with a single algebraic condition. \\
-
-\raggedright Rem.\newline\texttt{rem:base-field-\linebreak independence}
-  & Good
-  & \emph{New.}\;  Lists realisations over $\mathbb{C}$, $\mathbb{Q}_\pp$,
-    and $\mathbb{F}_\pp$; explains how the Frobenius--Hopf axioms replace
-    the analytic vanishing conditions. \\
-
-\raggedright Ex.\newline\texttt{def:c-quantum-\linebreak universe}
-  & Good
-  & \emph{Demoted from Def.~1.1 to Example.}\;  Now the $\mathbb{C}$
-    realisation of Definition~\ref{def:quantum-universe}: a $5$-tuple
-    $(M, \theta, G, P, E)$ with $\mathcal{C} =
-    \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ and Frobenius form from the
-    Haar state. \\
-
-\raggedright Rem.\newline\texttt{rem:notation-\linebreak special-cases}
-  & Good
-  & \emph{Unchanged.}\;  Abbreviation convention $(M, G, P, E)$ and
-    identification of strictly pseudoconvex case as signature $(n,0)$. \\
-
-\raggedright Ex.\newline\texttt{def:c-quantum-\linebreak observable-\linebreak universe}
-  & Good
-  & \emph{Demoted from Def.~1.2 to Example.}\;  Now the $\mathbb{C}$
-    realisation of Definition~\ref{def:quantum-observable-universe}:
-    the analytic vanishing conditions $H^0(M, \mathrm{Ad}(P)) = 0$
-    and $\Gamma_c(M, E) = 0$ are derived from Frobenius non-degeneracy
-    plus instanton irreducibility. \\
-
-\raggedright Rem.~1.3\newline\texttt{rem:levi-\linebreak generalisation}
-  & Good
-  & \emph{New.}\;  Identifies three cohomological conditions replacing
-    strict pseudoconvexity: (1)~Kohn--Rossi finite-dimensionality,
-    (2)~substrate non-degeneracy via absolute pseudo-norm,
-    (3)~the existing QOU vanishing conditions.  Indefinite Levi
-    signature $(r,s)$ and pseudo-Riemannian Webster metric are discussed. \\
-
-\raggedright Rem.~1.4\newline\texttt{rem:jet-bundle}
+\raggedright Rem.\newline\texttt{rem:jet-bundle}
   & Fair
-  & \emph{Unchanged.}\;  The injection claim for $\Gamma_c(M, J^1E)$ still
-    lacks a proof or literature reference.  Minor concern only. \\
+  & The claim that $\Gamma_c(M, J^1E)$ injects into the space of
+    connections on~$P$ is stated without proof or literature reference.
+    Minor concern: the injection is plausible by standard jet-bundle
+    theory but should be justified. \\
 
-\raggedright Def.~1.5\newline\texttt{def:instanton}
-  & Good
-  & \emph{New.}\;  Formal definition of instanton connection: self-dual
-    curvature on $H$ when $\dim H = 4$; Yang--Mills minimiser
-    in general. \\
-
-\raggedright Lem.~1.4\newline\texttt{lem:irreducible-\linebreak connection}
-  & Good
-  & \emph{Fixed.}\;  Label renamed from \texttt{lem:unique-connection}.
-    Hypothesis now uses global $H^0(M, \mathrm{Ad}(P)) = 0$; proof is a
-    clean contradiction without bump-function arguments. \\
-
-\raggedright Prop.~1.5\newline\texttt{prop:self-dual-\linebreak curvature}
-  & Good
-  & \emph{Fixed.}\;  Hypothesis now explicitly requires $\dim H = 4$
-    ($n = 2$).  The contact form $\theta$ is part of the data via
-    Definition~1.1.  Bogomolny decomposition uses consistent integral
-    expressions with the CR volume form
-    $\theta \wedge (d\theta)^2$. \\
-
-\raggedright Ex.~1.6\newline\texttt{ex:calabi-yau}
-  & Good
-  & \emph{Fixed.}\;  Now restricted to CY $2$-folds (K3 surfaces) with
-    holonomy $\mathrm{SU}(2)$.  Strictly convex hypersurface assumption
-    stated.  A note acknowledges higher-dimensional CY manifolds require
-    separate $\mathrm{SU}(2)$ reduction. \\
-
-\raggedright Ex.~1.7\newline\texttt{ex:ale}
-  & Good
-  & \emph{Fixed.}\;  Contact form origin corrected; orbifold
-    target noted.  No longer falsely claims Prop.~1.5 self-duality
-    for $\dim H = 2$; now correctly notes vacuous self-duality
-    and the instanton condition reducing to the Yang--Mills equation. \\
-
-\raggedright Rem.~1.8\newline\texttt{rem:examples-\linebreak unified}
-  & Good
-  & \emph{New.}\;  Unifying remark explaining that CY hypersurfaces, ALE
-    links, and Bring's surface unit circle bundles are all instances of
-    the Levi non-degenerate framework of
-    Example~\ref{def:c-quantum-universe}; each satisfies the three
-    cohomological conditions of Remark~\ref{rem:levi-generalisation}. \\
-
-\raggedright Ex.~1.9\newline\texttt{ex:brings-\linebreak surface}
-  & Good
-  & \emph{Unchanged.}\;  Already well-formed. \\
-
-\raggedright Ex.\newline\texttt{ex:p-adic-\linebreak realisation}
-  & Good
-  & \emph{New.}\;  $\mathbb{Q}_\pp$ realisation of
-    Definition~\ref{def:quantum-universe}: $F$-isocrystals over
-    $\mathbb{Q}_\pp$, Frobenius endomorphism as substrate analogue,
-    observability as $F$-crystal irreducibility. \\
-
-\raggedright Ex.\newline\texttt{ex:finite-field-\linebreak realisation}
-  & Good
-  & \emph{New.}\;  $\mathbb{F}_\pp$ realisation of
-    Definition~\ref{def:quantum-universe}: fusion category of
-    finite-dimensional representations over $\mathbb{F}_\pp$,
-    semisimplicity implies Frobenius non-degeneracy. \\
-
-\raggedright Def.~1.10\newline\texttt{def:substrate-\linebreak parameter}
-  & Good
-  & \emph{Fixed.}\;  Promoted from Remark to Definition.  Now a pure
-    definition (Levi form, contraction formula, $q(p)$).  The
-    ``natural contraction'' explanation and field-character discussion
-    extracted to Remark~\ref{rem:substrate-contraction}. \\
-
-\raggedright Rem.\newline\texttt{rem:substrate-\linebreak contraction}
-  & Good
-  & \emph{New.}\;  Extracted from Definition~\ref{def:substrate-parameter}:
-    explains the inclusion $\Lambda^{1,1} \subset \Lambda^+$, the
-    Webster--Killing pairing, and the field character of $q$. \\
-
-\raggedright Def.~1.11\newline\texttt{def:quantum-\linebreak gauge-group}
-  & Good
-  & \emph{Fixed.}\;  A new remark
-    (Remark~\ref{rem:quantum-gauge-group-category}) discusses three
-    formalisations: Hopf-algebra bundles, monoidal categories (braided
-    fusion), and $C^*$-continuous fields --- with pros and cons of each.
-    The category-theoretic approach via
-    $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ handles the algebraic
-    jump at $q = 1$ via monoidal functors. \\
-
-\raggedright Rem.\newline\texttt{rem:quantum-\linebreak gauge-group-\linebreak category}
-  & Good
-  & \emph{Updated.}\;  Three formalisations (Hopf-algebra bundle, monoidal
-    category, $C^*$-continuous field) discussed with pros, cons, and
-    category-theoretic implications.  Forward references to categorical
-    approaches in later chapters.  Impact assessment now includes an
-    expanded analysis of the $q = 1$ algebraic discontinuity
-    (non-cocommutativity of $\Delta_q$ for $q \neq 1$), the
-    $C^*$-algebraic resolution via Rieffel's strict deformation
-    quantisation, and the structural resolution via approach~(2):
-    fully dualisable objects, the cobordism hypothesis
-    (Baez--Dolan--Lurie), and higher gauge theory via $2$-groups.
-    Now includes commutative diagrams:
-    Tannaka--Krein functoriality~\eqref{eq:tannaka-krein-functoriality},
-    coassociativity~\eqref{eq:coassociativity},
-    counit~\eqref{eq:counit},
-    non-cocommutativity~\eqref{eq:non-cocommutativity},
-    and self-dual short exact
-    sequence~\eqref{eq:self-dual-ses}. \\
-
-\raggedright Rem.\newline\texttt{rem:self-dual-\linebreak 2group}
-  & Good
-  & \emph{New.}\;  Identifies the self-dual instanton formulation
-    (Definition~\ref{def:instanton},
-    Proposition~\ref{prop:self-dual-curvature}) as a special case of
-    $2$-group gauge theory for $\mathrm{INN}(\mathrm{SU}(2))$ subject to
-    a simplicity constraint.  Commutative diagrams: crossed-module exact
-    sequence~\eqref{eq:crossed-module-ses},
-    fake-flatness~\eqref{eq:fake-flatness},
-    and the $2$-group instanton diagram~\eqref{eq:2group-instanton}. \\
-
-\raggedright Rem.\newline\texttt{rem:frobenius-\linebreak simplification}
-  & Good
-  & \emph{Updated.}\;  Retitled from ``Simplification in a Frobenius
-    category'' to ``Frobenius structure of the $\mathbb{C}$ gauge algebra''.
-    Now explicitly connects the $\mathbb{C}$ Frobenius--Hopf structure
-    (Haar state on $\mathcal{O}_q$) to the general
-    Definitions~\ref{def:quantum-universe}
-    and~\ref{def:quantum-observable-universe}.
-    Commutative diagrams: Frobenius
-    relation~\eqref{eq:frobenius-relation},
-    Haar non-degeneracy pairing~\eqref{eq:frobenius-nondegen},
-    and the categorical vanishing
-    condition~\eqref{eq:frobenius-vanishing}.
-    Clarifies that it is the gauge algebra (not the horizontal distribution)
-    that carries the Frobenius structure. \\
-
-\raggedright Def.\newline\texttt{def:quantum-\linebreak planck-constant}
-  & Good
-  & \emph{Fixed.}\;  Now a pure definition (formula only).  Limiting
-    behaviour ($q \to 1$, $q \to \infty$) extracted to
-    Remark~\ref{rem:planck-limits}. \\
-
-\raggedright Rem.\newline\texttt{rem:planck-limits}
-  & Good
-  & \emph{New.}\;  Extracted from Definition~\ref{def:quantum-planck-constant}:
-    field character of $\hbar_q$ and its behaviour in the classical
-    ($q \to 1$) and deep-quantum ($q \to \infty$) regimes. \\
-
-\raggedright Rem.~1.13\newline\texttt{rem:heisenberg-\linebreak commutator}
+\raggedright Rem.\newline\texttt{rem:heisenberg-\linebreak commutator}
   & Fair
-  & \emph{Unchanged.}\;  The commutator is still postulated rather than
-    derived.  The remark remains long; splitting would improve readability. \\
+  & The $q$-deformed commutator
+    $[\hat{X}, \hat{P}]_q := J\,\hbar_q(p)$ is \emph{postulated}
+    rather than derived from the preceding definitions.  A derivation
+    from the $q$-deformed Lie bracket
+    (Definition~\ref{def:q-lie-bracket}) acting on canonically conjugate
+    observables would strengthen the claim.  Additionally, the remark
+    is long; splitting into a definition and a separate remark would
+    improve readability. \\
 
-\raggedright Ex.~1.14\newline\texttt{ex:cosmological-\linebreak limits}
-  & Good
-  & \emph{Fixed.}\;  Replaced discursive motivational remark with a
-    concrete example on $S^3$ with a collapsing instanton, exhibiting
-    both $q \to \infty$ (near singularity) and $q \to 1$ (away) limits
-    simultaneously. \\
-
-\raggedright Rem.~1.15\newline\texttt{rem:j1e-local-\linebreak states}
+\raggedright Rem.\newline\texttt{rem:j1e-local-\linebreak states}
   & Fair
-  & \emph{Unchanged.}\;  Still very brief; ``weighted by $q$'' is vague. \\
+  & The remark is too brief (three sentences) to serve its role of
+    connecting the jet bundle to the quantum field algebra.  The phrase
+    ``weighted by~$q$'' is vague and should be made precise, e.g.\
+    by specifying which $q$-dependent structure on $J^1 E$ is
+    intended. \\
 
-\raggedright Def.~1.16\newline\texttt{def:q-harmonic-\linebreak form}
-  & Good
-  & \emph{Fixed.}\;  $d_q$ now has a forward reference to
-    Definition~\ref{def:q-ext-deriv}.  $\delta_q$ is defined via the
-    Webster-metric inner product.  ``$q$-viscosity'' language removed. \\
-
-\raggedright Def.~1.17\newline\texttt{def:reeb-\linebreak decomposition}
-  & Good
-  & \emph{Fixed.}\;  Explicit formula
-    $\alpha_V = \theta \wedge \iota_\xi \alpha$ now stated.
-    Restricted to $k \geq 1$ forms. \\
-
-\raggedright Def.~1.18\newline\texttt{def:fermion}
-  & Good
-  & \emph{Unchanged.}\;  Already well-formed. \\
-
-\raggedright Def.~1.19\newline\texttt{def:boson}
-  & Good
-  & \emph{Unchanged.}\;  Already well-formed. \\
-
-\raggedright Def.~1.20\newline\texttt{def:q-ext-deriv}
-  & Good
-  & \emph{Updated.}\;  Pure definition: explicit formula
-    $d_q = q^{-1}d + (1-q^{-1})\theta \wedge \mathcal{L}_\xi$.
-    Classical recovery ($d_q = d$ at $q=1$) extracted to
-    Remark~\ref{rem:classical-recovery}.  $d_q^2$ computed in
-    Proposition~\ref{prop:dq-squared}. \\
-
-\raggedright Prop.~1.21\newline\texttt{prop:dq-squared}
-  & Good
-  & \emph{New.}\;  Proves $d_q^2\alpha = q^{-1}(1-q^{-1})\,d\theta
-    \wedge \mathcal{L}_\xi\alpha$; the obstruction to $d_q^2 = 0$
-    is exactly the Levi form $d\theta|_H$. \\
-
-\raggedright Def.~1.21\newline\texttt{def:q-lie-bracket}
-  & Good
-  & \emph{Updated.}\;  Pure definition: explicit formula for
-    $[\,\cdot\,,\cdot\,]_q$.  Classical recovery extracted to
-    Remark~\ref{rem:classical-recovery}.  Jacobiator computed in
-    Proposition~\ref{prop:q-jacobiator}: non-zero for all $q \neq 1$;
-    the bracket defines a Leibniz algebra, not a Lie algebra. \\
-
-\raggedright Prop.~1.22\newline\texttt{prop:q-jacobiator}
-  & Good
-  & \emph{New.}\;  Computes the Jacobiator for horizontal vector fields;
-    non-vanishing proportional to $d\theta \cdot \mathcal{L}_\xi$.
-    $[\,\cdot\,,\cdot\,]_q$ is a Leibniz algebra for $q \neq 1$. \\
-
-\raggedright Def.~1.22\newline\texttt{def:q-connection}
-  & Good
-  & \emph{Updated.}\;  Pure definition.  Interpolation explanation and
-    classical recovery extracted to
-    Remark~\ref{rem:classical-recovery}. \\
-
-\raggedright Def.~1.23\newline\texttt{def:q-reeb-\linebreak vector-field}
-  & Good
-  & \emph{Updated.}\;  Pure definition.  References
-    Definition~\ref{def:q-lie-bracket} for $[\,\cdot\,,\cdot\,]_q$;
-    classical recovery extracted to
-    Remark~\ref{rem:classical-recovery}. \\
-
-\raggedright Rem.\newline\texttt{rem:classical-\linebreak recovery}
-  & Good
-  & \emph{New.}\;  Extracted from Definitions~\ref{def:q-ext-deriv},
-    \ref{def:q-lie-bracket}, \ref{def:q-connection},
-    and~\ref{def:q-reeb-vector-field}: all four $q$-deformed operators
-    recover their classical counterparts at $q = 1$ via the uniform
-    interpolation pattern. \\
-
-\raggedright Def.~1.24\newline\texttt{def:q-reeb-flow}
-  & Good
-  & \emph{Unchanged.}\;  Already well-formed. \\
-
-\raggedright Def.~1.25\newline\texttt{def:q-torsion-\linebreak leaf}
-  & Good
-  & \emph{Fixed.}\;  A new remark (Remark~\ref{rem:q-torsion-existence})
-    addresses existence: $q$-torsion leaves are Legendrian submanifolds
-    invariant under $\phi_t^q$; existence depends on KAM-type persistence.
-    Category-theoretic formulation via $\mathbf{Leg}_q(M)$ and homotopy
-    fixed points is given. \\
-
-\raggedright Rem.~1.26\newline\texttt{rem:q-torsion-\linebreak existence}
-  & Good
-  & \emph{Updated.}\;  Now includes: (a)~existence via Legendrian
-    submanifolds and KAM persistence; (b)~category-theoretic formulation
-    via $\mathbf{Leg}_q(M)$ and homotopy fixed points; (c)~categorical
-    Frobenius condition (Frobenius objects in monoidal categories)
-    explaining the non-integrability obstruction; (d)~base-field
-    generalisation beyond~$\mathbb{C}$ via Tannakian categories, connecting
-    to the $\pp$-adic Frobenius endomorphism
-    (Chapter~\ref{chap:p-adic}). \\
-
-\raggedright Rem.~1.26\newline\texttt{rem:q-torsion-\linebreak leaf-minimum}
-  & Good
-  & \emph{Fixed.}\;  $A_q$ and $[\,\cdot\,,\cdot\,]_q$ now have explicit
-    cross-references to their definitions. \\
-
-\raggedright Rem.~1.27\newline\texttt{rem:reeb-\linebreak physical}
+\raggedright Rem.\newline\texttt{rem:reeb-\linebreak physical}
   & Fair
-  & \emph{Unchanged.}\;  Spin--statistics claim still lacks a proof. \\
+  & The spin--statistics claim (fermions carry half-integer spin,
+    bosons integer spin) is an interpretation of the Reeb decomposition
+    (Definition~\ref{def:reeb-decomposition}) that lacks a proof or
+    external reference.  A derivation --- or at minimum a precise
+    statement of the correspondence between Reeb-vertical degree and
+    spin quantum number --- is needed. \\
 
-\raggedright Rem.~1.28\newline\texttt{rem:q-harmonic-\linebreak physical}
+\raggedright Rem.\newline\texttt{rem:q-harmonic-\linebreak physical}
   & Fair
-  & \emph{Unchanged.}\;  $\Delta_q \to \Delta_{\text{Hodge}}$ as $q\to 1$
-    is now more plausible given Definition~\ref{def:q-ext-deriv}, but a
-    proof is still absent. \\
-
-\raggedright Rem.~1.29\newline\texttt{rem:gr-substrate-\linebreak geometry}
-  & Good
-  & \emph{Fixed.}\;  $S_q$ now defined as $q$-weighted Yang--Mills--Levi
-    functional with explicit formula.  Greek tensor indices removed;
-    field equations expressed in coordinate-free Webster Ricci / stress-energy
-    form. \\
-
-\raggedright Rem.~1.30\newline\texttt{rem:schrodinger-\linebreak jet-coaction}
-  & Good
-  & \emph{Updated.}\;  Retitled from ``Jet Co-action'' to
-    ``$q$-Deformed Schr\"odinger equation''.  Content
-    retained: $\hat{H}_q = -\tfrac{1}{2}\hbar_q\Delta_q + V_q$,
-    linearisation convention for $\mathbb{CP}^1$, identification $i = J$.
-    Now includes a categorical-role paragraph: $\hat{H}_q$ as an endomorphism
-    of the module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$, connecting to
-    the Tannakian base-field generalisation. \\
-
-\raggedright Prop.~1.31\newline\texttt{prop:main-\linebreak commutative-\linebreak diagram}
-  & Good
-  & \emph{Fixed.}\;  Promoted from Remark to Proposition.  Diagram objects
-    are now mathematical spaces (solution sets); a proof sketch is given
-    with full proof deferred to Chapter~\ref{chap:experimental}. \\
+  & The claim that the $q$-Laplacian $\Delta_q$ reduces to the Hodge
+    Laplacian as $q \to 1$ is plausible from
+    Definition~\ref{def:q-ext-deriv} (since $d_q \to d$ and
+    $\delta_q \to \delta$) but has not been proved.  A short argument
+    or explicit reference would close this gap. \\
 
 \hline
 \end{tabular}
 \end{small}
 
 \medskip
-\noindent\textbf{Summary statistics (post-revision).}\;
-Of the 48~labelled items (27 original $+$ 2 new primary definitions $+$
-1 new remark (base-field independence) $+$ 2 demoted definitions
-(now examples) $+$ 2 new examples ($\mathbb{Q}_\pp$, $\mathbb{F}_\pp$)
-$+$ 3 earlier new definitions $+$ 2 new propositions $+$ 8 earlier new
-remarks $+$ 1 promoted proposition, after removal of the former
-\texttt{ex:spheres} example):
-43~are rated \textbf{Good};
-5~are rated \textbf{Fair}; and
-0~are rated \textbf{Poor}.
-
-\medskip
-\noindent\textbf{Remaining open concerns:}
+\noindent\textbf{Open concerns.}
 \begin{enumerate}
-  \item \textbf{Remark~1.4 (Jet-bundle formulation):} the injection claim
+  \item \textbf{Remark \textup{rem:jet-bundle}
+        (Jet-bundle formulation):} the injection claim
         for $\Gamma(M, J^1E)$ needs a proof or literature reference.
-  \item \textbf{Remark~1.13 (Heisenberg commutator):} the commutator is
+  \item \textbf{Remark \textup{rem:heisenberg-commutator}
+        (Heisenberg commutator):} the commutator is
         postulated, not derived; splitting the remark would aid readability.
-  \item \textbf{Remark~1.15 ($J^1E$ as local states):} still very brief;
+  \item \textbf{Remark \textup{rem:j1e-local-states}
+        ($J^1E$ as local states):} too brief;
         ``weighted by $q$'' is vague.
-  \item \textbf{Remark~1.27 (Reeb physical):} the spin--statistics
+  \item \textbf{Remark \textup{rem:reeb-physical}
+        (Reeb physical interpretation):} the spin--statistics
         correspondence between Reeb decomposition components and spin
         quantum numbers needs a proof or external reference.
-  \item \textbf{Remark~1.28 ($q$-harmonic physical):}
+  \item \textbf{Remark \textup{rem:q-harmonic-physical}
+        ($q$-harmonic physical interpretation):}
         $\Delta_q \to \Delta_{\text{Hodge}}$ as $q \to 1$ is plausible
         but unproved.
 \end{enumerate}
