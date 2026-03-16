@@ -251,6 +251,24 @@ jobs:
           cp -r lean/QOU _site/lean/
           echo "Lean modules: $(find lean/QOU -name '*.lean' | wc -l) files, $(wc -l < lean/QOU/Defs.lean) lines in Defs.lean"
 
+      # ── 3c. Lean type-checking ───────────────────────────────────────────────
+      - name: Install Lean (elan)
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+            | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Lean — lake build
+        working-directory: lean
+        run: |
+          # Install the toolchain specified in lean-toolchain
+          elan toolchain install "$(cat lean-toolchain)"
+          # Fetch pre-built Mathlib cache (avoid building from source)
+          lake exe cache get || echo "⚠ Mathlib cache not available; building from source"
+          # Type-check all QOU modules
+          lake build
+        continue-on-error: true   # non-blocking until all sorry/axiom issues are resolved
+
       # ── 4. Deploy to target branch ─────────────────────────────────────────
       # peaceiris/actions-gh-pages automatically creates the publish_branch
       # (default: gh-pages) if it does not already exist, so no manual

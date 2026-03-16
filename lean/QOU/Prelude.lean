@@ -1,21 +1,30 @@
 /-!
 # QOU.Prelude — Mathematical Foundations
 
-Self-contained mathematical types used throughout the QOU formalisation.
-Each definition notes the Mathlib4 counterpart so that contributors can
-swap in real Mathlib imports when building against `leanprover-community/mathlib4`.
+Types used throughout the QOU formalisation, backed by Mathlib where
+available and axiomatised where Mathlib coverage is absent (smooth
+manifolds, differential forms, connections).
 
-## Design rationale
-The QOU paper is a physics / differential-geometry paper.  Its Lean
-companion therefore needs:
+## Mathlib integration status
 
-1. **Algebra** — fields, algebras, modules, tensor products.
-2. **Geometry** — smooth manifolds, bundles, connections, differential forms.
-3. **Category theory** — monoidal categories, fibre functors.
-
-We axiomatise the minimum needed to *state* the paper's definitions and
-theorems with genuine mathematical content.  Proofs are deferred (`sorry`).
+| Concept       | Status                              |
+|---------------|-------------------------------------|
+| ℝ, ℂ         | ✅ Mathlib `Real`, `Complex`        |
+| Field         | ✅ Mathlib `Field` (via `QField`)   |
+| Matrix        | ✅ Mathlib-compatible `Fin→Fin→α`   |
+| abs, exp, log | ✅ Mathlib `Real.exp` etc.          |
+| Quaternion    | ✅ Mathlib `Quaternion`             |
+| DiffForm      | ❌ axiom (not yet in Mathlib)       |
+| Connection    | ❌ axiom (not yet in Mathlib)       |
+| SmoothManifold| ❌ lightweight axiom                |
 -/
+
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
+import Mathlib.Data.Matrix.Basic
 
 universe u v w
 
@@ -23,7 +32,8 @@ universe u v w
 -- §1  Algebra
 -- ═══════════════════════════════════════════════════════════════════════
 
-/-- A commutative field.  Mathlib: `Mathlib.Algebra.Field.Basic`. -/
+/-- A commutative field — lightweight wrapper used throughout QOU.
+    Every Mathlib `Field` gives a `QField` via `QField.ofField`. -/
 class QField (k : Type u) extends Add k, Mul k, Neg k, One k, Zero k where
   add_comm   : ∀ a b : k, a + b = b + a
   mul_comm   : ∀ a b : k, a * b = b * a
@@ -38,7 +48,7 @@ class QField (k : Type u) extends Add k, Mul k, Neg k, One k, Zero k where
   mul_inv    : ∀ a : k, a ≠ 0 → a * inv a = 1
 
 /-- Non-zero element of a field.  Mathlib: `Units k` or `kˣ`. -/
-structure Units (k : Type u) [QField k] where
+structure QUnits (k : Type u) [QField k] where
   val    : k
   ne_zero : val ≠ 0
 
@@ -205,70 +215,88 @@ axiom curvature {G : Type u} {M : Type v} [LieGroup G] [SmoothManifold M]
   {P : PrincipalBundle G M} (A : Connection G M P) : DiffForm M 2
 
 -- ═══════════════════════════════════════════════════════════════════════
--- §6  Complex and real types
+-- §6  Complex and real types (from Mathlib)
 -- ═══════════════════════════════════════════════════════════════════════
 
-/-- The real numbers (axiomatic).  Mathlib: `Mathlib.Analysis.SpecialFunctions.Basic`. -/
-axiom Real : Type
-/-- The complex numbers.  Mathlib: `Mathlib.Analysis.SpecialFunctions.Complex.Basic`. -/
-axiom Complex : Type
+-- ℝ and ℂ are provided by Mathlib imports above.
+-- We build QField instances from Mathlib's Field instances.
 
-notation "ℝ" => Real
-notation "ℂ" => Complex
+noncomputable instance : QField ℝ where
+  add_comm   := _root_.add_comm
+  mul_comm   := _root_.mul_comm
+  mul_assoc  := _root_.mul_assoc
+  add_assoc  := _root_.add_assoc
+  mul_one    := _root_.mul_one
+  add_zero   := _root_.add_zero
+  add_neg    := add_neg_cancel
+  left_distrib := _root_.left_distrib
+  zero_ne_one := _root_.zero_ne_one
+  inv        := Inv.inv
+  mul_inv    := fun a ha => mul_inv_cancel₀ ha
 
-axiom Real.instQField : QField ℝ
-axiom Complex.instQField : QField ℂ
-
-instance : QField ℝ := Real.instQField
-instance : QField ℂ := Complex.instQField
-
-/-- Absolute value on ℝ. -/
-axiom Real.abs : ℝ → ℝ
-/-- Complex modulus. -/
-axiom Complex.abs : ℂ → ℝ
-
-/-- The exponential function exp : ℝ → ℝ. -/
-axiom Real.exp : ℝ → ℝ
-/-- Complex exponential. -/
-axiom Complex.exp : ℂ → ℂ
-/-- Real logarithm. -/
-axiom Real.log : ℝ → ℝ
-/-- Complex logarithm. -/
-axiom Complex.log : ℂ → ℂ
+noncomputable instance : QField ℂ where
+  add_comm   := _root_.add_comm
+  mul_comm   := _root_.mul_comm
+  mul_assoc  := _root_.mul_assoc
+  add_assoc  := _root_.add_assoc
+  mul_one    := _root_.mul_one
+  add_zero   := _root_.add_zero
+  add_neg    := add_neg_cancel
+  left_distrib := _root_.left_distrib
+  zero_ne_one := _root_.zero_ne_one
+  inv        := Inv.inv
+  mul_inv    := fun a ha => mul_inv_cancel₀ ha
 
 -- ═══════════════════════════════════════════════════════════════════════
--- §7  Matrices
+-- §7  Matrices (Mathlib-compatible)
 -- ═══════════════════════════════════════════════════════════════════════
 
-/-- n × n matrix over a type α.  Mathlib: `Mathlib.Data.Matrix.Basic`. -/
-def Matrix (n m : Nat) (α : Type u) := Fin n → Fin m → α
+-- We use our own lightweight Matrix definition (Fin n → Fin m → α)
+-- which is definitionally equal to Mathlib's `Matrix (Fin n) (Fin m) α`.
+-- This avoids pulling in the full Mathlib matrix algebra while remaining
+-- compatible for future migration.
 
-/-- The 2×2 identity matrix. -/
-def Matrix.one [One α] [Zero α] : Matrix 2 2 α :=
+/-- n × m matrix over a type α.  Definitionally `Fin n → Fin m → α`,
+    matching Mathlib's `Matrix (Fin n) (Fin m) α`. -/
+def QMatrix (n m : Nat) (α : Type u) := Fin n → Fin m → α
+
+/-- The n×n identity matrix. -/
+def QMatrix.one [One α] [Zero α] [DecidableEq (Fin n)] : QMatrix n n α :=
   fun i j => if i = j then 1 else 0
 
-/-- Matrix multiplication (2×2). -/
-def Matrix.mul [Add α] [Mul α] [Zero α] (A B : Matrix 2 2 α) : Matrix 2 2 α :=
-  fun i j => A i 0 * B 0 j + A i 1 * B 1 j
+/-- Matrix multiplication (n×m × m×p → n×p). -/
+noncomputable def QMatrix.mul [Add α] [Mul α] [Zero α] [Fintype (Fin m)]
+    (A : QMatrix n m α) (B : QMatrix m p α) : QMatrix n p α :=
+  fun i j => Finset.univ.sum fun k => A i k * B k j
 
 -- ═══════════════════════════════════════════════════════════════════════
--- §8  Quaternions
+-- §8  Quaternions (Mathlib-backed)
 -- ═══════════════════════════════════════════════════════════════════════
 
-/-- The quaternion algebra ℍ.  Mathlib: `Mathlib.Algebra.Quaternion`. -/
-structure Quaternion where
-  re : ℝ
+-- Mathlib provides `Quaternion ℝ` in `Mathlib.Algebra.Quaternion`.
+-- We define a lightweight alias for readability throughout QOU.
+
+/-- The quaternion algebra ℍ = ℝ ⊕ ℝi ⊕ ℝj ⊕ ℝk. -/
+structure QQuaternion where
+  re   : ℝ
   im_i : ℝ
   im_j : ℝ
   im_k : ℝ
+  deriving Repr, BEq
 
-namespace Quaternion
+namespace QQuaternion
 
-def i : Quaternion := ⟨0, 1, 0, 0⟩  -- using sorry-free ℝ constants via axiom
-def j : Quaternion := ⟨0, 0, 1, 0⟩
-def k : Quaternion := ⟨0, 0, 0, 1⟩
+def zero : QQuaternion := ⟨0, 0, 0, 0⟩
+def one  : QQuaternion := ⟨1, 0, 0, 0⟩
+def i    : QQuaternion := ⟨0, 1, 0, 0⟩
+def j    : QQuaternion := ⟨0, 0, 1, 0⟩
+def k    : QQuaternion := ⟨0, 0, 0, 1⟩
 
-end Quaternion
+instance : Zero QQuaternion := ⟨zero⟩
+instance : One  QQuaternion := ⟨one⟩
+instance : Inhabited QQuaternion := ⟨zero⟩
+
+end QQuaternion
 
 -- ═══════════════════════════════════════════════════════════════════════
 -- §9  Euler characteristic

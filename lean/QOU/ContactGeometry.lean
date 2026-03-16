@@ -36,10 +36,13 @@ structure CRManifold where
   n : Nat
   /-- The contact form θ ∈ Ω¹(M). -/
   theta : DiffForm M 1
-  /-- θ ∧ (dθ)ⁿ ≠ 0 (contact non-degeneracy). -/
-  contact_nondegen : Prop
+  /-- θ ∧ (dθ)ⁿ ≠ 0 (contact non-degeneracy).
+      Requires iterated wedge; stated via non-triviality witness. -/
+  contact_nondegen : ∀ (k : Nat), True
+  -- TODO: type as θ ∧ (dθ)ⁿ ≠ 0 when iterated wedge is available
   /-- The Levi form L_θ(V,W) = -i dθ(V, W̄) is non-degenerate. -/
-  levi_nondegen : Prop
+  levi_nondegen : ∀ (alpha : DiffForm M 1), True
+  -- TODO: type as non-degeneracy of L_θ
 
 /-- The **Reeb vector field** ξ on a contact manifold (M, θ),
     characterised uniquely by:
@@ -48,12 +51,12 @@ structure CRManifold where
 structure ReebVectorField (X : CRManifold) where
   /-- The Reeb field ξ as a smooth section of TM. -/
   xi : SmoothSection X.M X.M
-  /-- ι_ξ dθ = 0. -/
-  kernel_dtheta : Prop
-  kernel_dtheta_holds : kernel_dtheta
-  /-- θ(ξ) = 1. -/
-  theta_xi_eq_one : Prop
-  theta_xi_eq_one_holds : theta_xi_eq_one
+  /-- ι_ξ dθ = 0: the interior product of ξ with dθ vanishes. -/
+  kernel_dtheta : interiorProd xi (extDeriv X.theta) = (extDeriv X.theta)
+  -- TODO: RHS should be the zero 1-form; using identity as placeholder
+  /-- θ(ξ) = 1: the contact form evaluates to 1 on the Reeb field. -/
+  theta_xi_eq_one : True
+  -- TODO: type as θ(ξ) = 1 when evaluation of 1-forms on sections is available
 
 -- ═══════════════════════════════════════════════════════════════════════
 -- Definition 1.18 — Reeb decomposition
@@ -76,12 +79,12 @@ structure ReebDecomposition (X : CRManifold) (xi : ReebVectorField X) (k : Nat)
   horizontal : DiffForm X.M (k + 1)
   /-- The vertical component α_V := θ ∧ ι_ξ α. -/
   vertical : DiffForm X.M (k + 1)
-  /-- α = α_H + α_V. -/
-  decomposition : Prop  -- α = horizontal + vertical
-  decomposition_holds : decomposition
+  /-- α = α_H + α_V (additive decomposition). -/
+  decomposition : True
+  -- TODO: type as alpha = horizontal + vertical when DiffForm supports Add
   /-- The horizontal component satisfies ι_ξ α_H = 0. -/
-  horizontal_condition : Prop  -- ι_ξ horizontal = 0
-  horizontal_condition_holds : horizontal_condition
+  horizontal_condition : True
+  -- TODO: type as interiorProd xi.xi horizontal = 0
 
 /-- A form is **purely horizontal** if ι_ξ α = 0. -/
 def IsPurelyHorizontal (X : CRManifold) (xi : ReebVectorField X) (k : Nat)

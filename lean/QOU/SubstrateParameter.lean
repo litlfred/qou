@@ -31,10 +31,11 @@ universe u v
 structure LeviForm (M : Type u) [SmoothManifold M] (H : LeviDistribution M) where
   /-- The bilinear form L_θ(V, W) = -i dθ(V, W̄). -/
   form : DiffForm M 2
-  /-- L_θ is Hermitian. -/
-  hermitian : Prop
-  /-- L_θ is non-degenerate. -/
-  nondegen : Prop
+  /-- L_θ is Hermitian: L_θ(V,W) = conj(L_θ(W,V)). -/
+  hermitian : form = form  -- placeholder: requires conjugation on DiffForm
+  /-- L_θ is non-degenerate: ∀ V ≠ 0, ∃ W, L_θ(V,W) ≠ 0. -/
+  nondegen : ∀ (alpha : DiffForm M 1), True
+  -- TODO: type as non-degeneracy once DiffForm supports evaluation
 
 -- ═══════════════════════════════════════════════════════════════════════
 -- Definition 1.10 — Substrate parameter
@@ -67,8 +68,8 @@ structure SubstrateParameter (M : Type u) [SmoothManifold M]
   q : M → ℝ
   /-- q(p) = exp(|⟨L_θ, F_A⁺⟩|(p)). -/
   q_eq : ∀ p : M, q p = Real.exp (Real.abs (leviCurvatureContraction M H levi F_plus p))
-  /-- q(p) ≥ 1 for all p. -/
-  q_ge_one : ∀ p : M, True  -- placeholder for q p ≥ 1 (needs ≥ on ℝ)
+  /-- q(p) ≥ 1 for all p (since exp(|x|) ≥ exp(0) = 1). -/
+  q_ge_one : ∀ p : M, q p ≥ 1
 
 -- ═══════════════════════════════════════════════════════════════════════
 -- Definition 1.11 — Quantum Gauge Group
@@ -110,7 +111,7 @@ structure QuantumPlanckConstant (M : Type u) [SmoothManifold M]
   /-- The quantum Planck constant field ℏ_q : M → ℝ. -/
   hbar : M → ℝ
   /-- ℏ_q(p) = 1 − q(p)⁻¹. -/
-  hbar_eq : ∀ p : M, hbar p = sorry
-    -- placeholder: 1 - QField.inv (substrate.q p); requires ℝ arithmetic
-  /-- 0 ≤ ℏ_q(p) < 1 for all p. -/
-  hbar_range : ∀ p : M, True  -- placeholder for 0 ≤ hbar p ∧ hbar p < 1
+  hbar_eq : ∀ p : M, hbar p = 1 - (substrate.q p)⁻¹
+  /-- 0 ≤ ℏ_q(p) < 1 for all p (since q(p) ≥ 1). -/
+  hbar_nonneg : ∀ p : M, hbar p ≥ 0
+  hbar_lt_one : ∀ p : M, hbar p < 1
