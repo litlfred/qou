@@ -222,6 +222,163 @@ Remark~\ref{rem:chirality-trefoil}.
 % and relate it to the branched-cover structure of the geometric $S_3$.
 \end{remark}
 
+\begin{definition}[Color tube coordinates]
+\label{def:color-tube-coordinates}
+  Let $z = x_0/x_1 \in \mathbb{CP}^1$ be the spacetime ratio
+  (Remark~\ref{rem:braid-group-action}\textup{(i)}) and let $w_k$,
+  $k \in \{0,\dots,4\}$, be the Lagrange resolvents of Bring's surface
+  (Remark~\ref{rem:lagrange-resolvents}).  The \emph{color tube coordinates}
+  are the shifted spectral coordinates
+  \begin{equation}\label{eq:color-tube-coords}
+    r = w_2 - z, \quad g = w_3 - z, \quad b = w_4 - z,
+  \end{equation}
+  together with the space-like shift $\sigma = w_1 - z$.  The
+  \emph{color vector} is $\vec{c} = (r, g, b)$.
+\end{definition}
+
+\begin{remark}[Aggregate color quantities]
+\label{rem:aggregate-color-quantities}
+  Define the following aggregate quantities in color tube coordinates,
+  with $\zeta = e^{2\pi i/5}$:
+  \begin{align}
+    \widetilde{S} &\;=\; \sigma + r + g + b
+      &&\text{(total color deviation),}
+      \label{eq:agg-S-tilde}\\[4pt]
+    \widetilde{Q} &\;=\; \sigma b + r g
+      &&\text{(paired color product),}
+      \label{eq:agg-Q-tilde}\\[4pt]
+    \widetilde{D} &\;=\; \zeta^{-1}\sigma + \zeta^{-2}r + \zeta^{-3}g + \zeta^{-4}b
+      &&\text{(weighted color deviation),}
+      \label{eq:agg-D-tilde}\\[4pt]
+    \widetilde{C} &\;=\; \sigma^2 g + b^2 r + r^2\sigma + g^2 b
+      &&\text{(intrinsic color cubic).}
+      \label{eq:agg-C-tilde}
+  \end{align}
+  These are related to the unshifted aggregate quantities
+  $S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
+  \begin{equation}\label{eq:aggregate-shift}
+    S \;=\; \widetilde{S} + 4z, \qquad D \;=\; \widetilde{D} - z,
+  \end{equation}
+  where the second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$.
+  The inverse Lagrange resolvent transform
+  (Remark~\ref{rem:lagrange-resolvents}) gives
+  \begin{equation}\label{eq:z-from-SD}
+    z \;=\; \frac{x_0}{x_1} \;=\; \frac{S}{D}.
+  \end{equation}
+\end{remark}
+
+\begin{remark}[Constraint equations in color tube coordinates]
+\label{rem:color-tube-constraints}
+  The Bring surface constraints~\eqref{eq:resolvent-linear}--\eqref{eq:resolvent-cubic}
+  take the following form in color tube coordinates.
+
+  \medskip
+  \noindent\textbf{Spacetime recovery.}\;
+  Substituting~\eqref{eq:aggregate-shift} into $z = S/D$
+  (equation~\eqref{eq:z-from-SD}) yields $z(\widetilde{D} - z) = \widetilde{S} + 4z$,
+  which rearranges to
+  \begin{equation}\label{eq:spacetime-recovery}
+    z^2 - (\widetilde{D} - 4)\,z + \widetilde{S} \;=\; 0.
+  \end{equation}
+  Thus the spacetime coordinate $z$ is determined implicitly by the
+  shifted data $(\widetilde{S}, \widetilde{D})$.
+
+  \medskip
+  \noindent\textbf{Shifted quadric.}\;
+  Substituting $w_k = c_k + z$ into the quadric~\eqref{eq:resolvent-quadric}
+  gives
+  \begin{equation}\label{eq:shifted-quadric}
+    \widetilde{Q} + z\,\widetilde{S} + 2z^2 \;=\; 0,
+  \end{equation}
+  or equivalently $\sigma b + rg = -z(\sigma + r + g + b) - 2z^2$.
+
+  \medskip
+  \noindent\textbf{Shifted cubic.}\;
+  Substituting $w_k = c_k + z$ into the cubic~\eqref{eq:resolvent-cubic}
+  gives
+  \begin{equation}\label{eq:shifted-cubic}
+    \widetilde{C} + z(\widetilde{S}^2 - 2\widetilde{Q})
+    + 3z^2\,\widetilde{S} + 4z^3 \;=\; 0.
+  \end{equation}
+  Eliminating $\widetilde{Q}$ via~\eqref{eq:shifted-quadric} yields the
+  \emph{reduced cubic}:
+  \begin{equation}\label{eq:reduced-cubic}
+    \widetilde{C} + z\,\widetilde{S}^2 + 5z^2\,\widetilde{S} + 8z^3 \;=\; 0.
+  \end{equation}
+  All three equations are polynomial over $\mathbb{Z}$ in $z, r, g, b, \sigma$;
+  they therefore define affine varieties over $\mathbb{Z}$ and descend
+  to $\mathbb{F}_\pp$ for every prime $\pp \ne 5$.
+\end{remark}
+
+\begin{remark}[Interpretation of the color tube]
+\label{rem:color-tube-interpretation}
+  The terminology \emph{color tube} reflects two features.
+
+  \medskip
+  \noindent\textbf{Color.}\;
+  The coordinates $r, g, b$ label the three chiral degrees of freedom
+  that correspond, via the $S_3$ subgroups of $S_5$
+  (Remark~\ref{rem:braid-group-action}\textup{(iii)}), to the three
+  colour charges of quantum chromodynamics.  The chiral coordinates
+  $x_2, x_3, x_4$ of the QOU $4$-tuple
+  (Remark~\ref{rem:brings-qou-4tuple}) descend to $r = w_2 - z$,
+  $g = w_3 - z$, $b = w_4 - z$ after shifting by the spacetime ratio~$z$.
+
+  \medskip
+  \noindent\textbf{Tube.}\;
+  For fixed $z \in \mathbb{CP}^1$, the color vector $\vec{c} = (r, g, b)$
+  is constrained by the shifted quadric~\eqref{eq:shifted-quadric} and
+  cubic~\eqref{eq:shifted-cubic} to lie on a curve inside the
+  three-dimensional color space $\mathbb{A}^3$.  As $z$ varies over the
+  spacetime base, this curve sweeps out a tube --- the total space of
+  the chiral fibration over $\mathbb{CP}^1$.
+
+  \medskip
+  \noindent\textbf{Space-like coordinate.}\;
+  The shift $\sigma = w_1 - z$ is distinguished: it measures the deviation
+  of the $C_5$-fundamental resolvent $w_1$ from the spacetime base,
+  anchoring the $U(1)$ longitudinal backbone
+  (Remark~\ref{rem:spectral-dynamics}) in the shifted frame.
+\end{remark}
+
+\begin{remark}[$C_5$ action in color tube coordinates]
+\label{rem:c5-color-tube}
+  The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
+  (Remark~\ref{rem:lagrange-resolvents}) becomes, in color tube coordinates:
+  \begin{align}
+    \sigma &\;\longmapsto\; \zeta^{-1}\sigma + (\zeta^{-1}-1)\,z,
+      \label{eq:c5-sigma}\\[4pt]
+    r &\;\longmapsto\; \zeta^{-2}r + (\zeta^{-2}-1)\,z,
+      \label{eq:c5-r}\\[4pt]
+    g &\;\longmapsto\; \zeta^{-3}g + (\zeta^{-3}-1)\,z,
+      \label{eq:c5-g}\\[4pt]
+    b &\;\longmapsto\; \zeta^{-4}b + (\zeta^{-4}-1)\,z.
+      \label{eq:c5-b}
+  \end{align}
+  The $C_5$ action is no longer diagonal: each coordinate acquires an
+  additive correction proportional to~$z$, reflecting the cost of
+  breaking projective homogeneity by subtracting the affine
+  quantity~$z$ from each resolvent.
+\end{remark}
+
+\begin{remark}[Intrinsic color cubic: pairing structure]
+\label{rem:intrinsic-color-cubic-pairing}
+  The intrinsic color cubic $\widetilde{C}$~\eqref{eq:agg-C-tilde}
+  admits a natural decomposition into space-like and chiral sectors:
+  \begin{equation}\label{eq:color-cubic-decomp}
+    \widetilde{C}
+    \;=\;
+    \underbrace{\sigma(\sigma g + r^2)}_{\text{space--colour coupling}}
+    \;+\;
+    \underbrace{b(br + g^2)}_{\text{pure colour}}.
+  \end{equation}
+  The four terms pair the resolvent indices as $(1,3)$, $(2,1)$, $(4,2)$,
+  $(3,4)$: each index is squared and contracted with the index two steps
+  ahead in the cyclic order $1 \to 3 \to 4 \to 2 \to 1$.  This
+  skip-one pairing respects the conjugation $w_k \leftrightarrow w_{5-k}$
+  that pairs $(w_1, w_4)$ and $(w_2, w_3)$.
+\end{remark}
+
 \begin{proposition}[Chiral fibre as an elliptic curve]
 \label{prop:chiral-elliptic}
 Let $z=x_0/x_1\in\mathbb{CP}^1$ be the projective spacetime ratio
@@ -285,6 +442,148 @@ The discriminant $\Delta(z)=-4\,p(z)^3-27\,q(z)^2$ is a polynomial in~$z$
 whose roots determine the singular fibres of the elliptic
 fibration $\mathcal{S}\to\mathbb{CP}^1$.  At those roots the
 $j$-invariant $j(E_z)=-1728\cdot 64\,p(z)^3/\Delta(z)$ degenerates.
+\end{remark}
+
+\begin{remark}[Color tube cubic]
+\label{rem:color-tube-cubic}
+  At fixed $z \in \mathbb{CP}^1$, the three chiral roots of the
+  elliptic cubic~\eqref{eq:chiral-elliptic} each satisfy the cubic in
+  the color tube coordinate $\mathbf{c} \in \{\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z\}$
+  obtained by substituting $X = \mathbf{c} + z$
+  into equation~\eqref{eq:chiral-elliptic}.  Expanding gives the
+  \emph{color tube cubic}:
+  \begin{equation}\label{eq:color-tube-cubic}
+    \mathbf{c}^3 + (4z+1)\,\mathbf{c}^2 + (6z^2+3z+1)\,\mathbf{c}
+    + (4z^3+3z^2+2z+1) \;=\; 0.
+  \end{equation}
+  This polynomial lies in $\mathbb{Z}[z][\mathbf{c}]$ and defines a
+  variety over $\mathbb{Z}$.  The leading $z$-coefficients $4, 6, 4$
+  equal $\binom{4}{1}$, $\binom{4}{2}$, $\binom{4}{3}$, and the
+  constant term satisfies
+  \[
+    4z^3 + 3z^2 + 2z + 1 \;=\; \frac{d}{dz}(z^4 + z^3 + z^2 + z).
+  \]
+
+  \medskip
+  \noindent Vieta's formulas for the three roots give:
+  \begin{align}
+    \mathbf{r}_z + \mathbf{g}_z + \mathbf{b}_z
+      &\;=\; -(4z+1),
+      \label{eq:vieta-sum}\\[4pt]
+    \mathbf{r}_z\,\mathbf{g}_z + \mathbf{r}_z\,\mathbf{b}_z
+      + \mathbf{g}_z\,\mathbf{b}_z
+      &\;=\; 6z^2+3z+1,
+      \label{eq:vieta-pairs}\\[4pt]
+    \mathbf{r}_z\,\mathbf{g}_z\,\mathbf{b}_z
+      &\;=\; -(4z^3+3z^2+2z+1).
+      \label{eq:vieta-product}
+  \end{align}
+\end{remark}
+
+\begin{definition}[Color tube fibers]
+\label{def:color-tube-fibers}
+  Let $z \in \mathbb{CP}^1$.  The \emph{color tube} at~$z$ is the
+  affine curve defined over $\mathbb{Z}[z]$ by the color tube
+  cubic~\eqref{eq:color-tube-cubic}; we denote it $R_z$, $G_z$, or
+  $B_z$ according to which color tube coordinate $\mathbf{r}_z$,
+  $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
+  \begin{equation}\label{eq:color-tube-fiber-def}
+    R_z \;:=\;
+    \bigl\{\,\mathbf{r}_z \in \mathbb{A}^1 :
+      \mathbf{r}_z^{\,3} + (4z+1)\,\mathbf{r}_z^{\,2}
+      + (6z^2+3z+1)\,\mathbf{r}_z
+      + (4z^3+3z^2+2z+1) = 0\,\bigr\},
+  \end{equation}
+  and $G_z$, $B_z$ are defined by the same equation with coordinates
+  $\mathbf{g}_z$ and $\mathbf{b}_z$, respectively.  The coordinates
+  are related to the Lagrange resolvents by
+  \[
+    \mathbf{r}_z = w_2 - z, \qquad \mathbf{g}_z = w_3 - z, \qquad
+    \mathbf{b}_z = w_4 - z.
+  \]
+  As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the chiral
+  elliptic fiber~$E_z$ of Proposition~\ref{prop:chiral-elliptic} via
+  the shift $X = \mathbf{c} + z$.
+\end{definition}
+
+\begin{definition}[Observed spacetime value]
+\label{def:observed-value}
+  Let $\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z$ be the color tube
+  coordinates at a point of Bring's surface
+  (Definition~\ref{def:color-tube-fibers}).  The
+  \emph{observed spacetime value} is the element of $\mathbb{A}^1$
+  recovered from the color tube coordinates by the Vieta
+  identity~\eqref{eq:vieta-sum}:
+  \begin{equation}\label{eq:observed-value}
+    \mathbf{r}_z + \mathbf{g}_z + \mathbf{b}_z + 4z + 1 \;=\; 0.
+  \end{equation}
+  This identity defines the projection
+  $\pi_z \colon R_z \times G_z \times B_z \to \mathbb{A}^1$,
+  $({\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z}) \mapsto z$,
+  which is a polynomial map over $\mathbb{Z}$.  At a branch
+  point $z_c$ where chiral sheets merge
+  (Remark~\ref{rem:brings-smoothness}), the exceptional divisor is
+  coordinatised by the limiting color vector; the observed spacetime
+  value reads off $z_c$ from the color data via~\eqref{eq:observed-value},
+  providing a coordinate on the exceptional $\mathbb{CP}^1$.
+\end{definition}
+
+\begin{remark}[T-duality in color tube coordinates]
+\label{rem:t-duality-color-tube}
+  The T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
+  (Remark~\ref{rem:t-duality-elliptic}) acts on color tube
+  coordinates as follows.  Writing $c = X - z$, the dual point has
+  base coordinate $z' = X = c + z$ and chiral coordinate $X' = z$,
+  giving dual color tube coordinate $c' = z - X = -c$.  Hence
+  \begin{equation}\label{eq:t-duality-color-tube}
+    \iota \colon (c,\, z) \;\longmapsto\; (-c,\; c + z).
+  \end{equation}
+  The symmetry $F(X,z) = F(z,X)$
+  (Remark~\ref{rem:t-duality-elliptic}) translates to covariance of
+  the color tube cubic: the cubic~\eqref{eq:color-tube-cubic} at
+  parameter~$z$ with root~$c$ is carried by $\iota$ to the cubic at
+  parameter $c + z$ with root~$-c$.  One verifies this directly from
+  $F(c+z,\, z) = F(z,\, c+z)$, since $F(z, c+z)$ is the color tube
+  cubic at parameter $c+z$ evaluated at~$-c$.
+\end{remark}
+
+\begin{remark}[Sublocus $\widetilde{C}=0$ and colour confinement]
+\label{rem:color-tube-subloci}
+  \textbf{Vanishing of the intrinsic color cubic.}\;
+  If $\widetilde{C} = 0$, the reduced cubic~\eqref{eq:reduced-cubic}
+  factors as
+  \begin{equation}\label{eq:reduced-cubic-factored}
+    z\bigl(\widetilde{S}^2 + 5z\,\widetilde{S} + 8z^2\bigr) \;=\; 0,
+  \end{equation}
+  so either $z = 0$ (the spacetime origin) or $\widetilde{S}$ satisfies
+  the quadratic $\widetilde{S}^2 + 5z\,\widetilde{S} + 8z^2 = 0$.
+  The discriminant of this quadratic (in $\widetilde{S}$) is
+  $25z^2 - 32z^2 = -7z^2$, which is negative for real $z \ne 0$.
+  Over $\mathbb{C}$, the two solutions are
+  \[
+    \widetilde{S} \;=\; z\,\frac{-5 \pm \sqrt{-7}}{2};
+  \]
+  these are non-real for $z \ne 0$, so the locus $\widetilde{C} = 0$
+  meets the real locus only at $z = 0$.  Over $\mathbb{F}_\pp$ the
+  existence of a solution depends on whether $-7$ is a quadratic
+  residue mod~$\pp$.
+
+  \medskip
+  \noindent\textbf{Pure colour sublocus.}\;
+  The pure colour term $b(br + g^2)$
+  (equation~\eqref{eq:color-cubic-decomp}) vanishes on
+  \[
+    \{b = 0\} \;\cup\; \{br + g^2 = 0\}.
+  \]
+  The condition $b = 0$ means $w_4 = z$: the fourth resolvent
+  coincides with the spacetime ratio, collapsing one chiral degree of
+  freedom onto the base.  The condition $br + g^2 = 0$, i.e.\
+  $(w_4 - z)(w_2 - z) + (w_3 - z)^2 = 0$, is a quadratic relation
+  among the chiral resolvents and~$z$.  Either condition can be
+  interpreted as a \emph{colour-confinement} constraint: one chiral
+  mode is frozen in register with the spacetime coordinate, and the
+  remaining two are coupled by a Hermitian-quadric relation in the
+  shifted frame.
 \end{remark}
 
 \begin{remark}[Chiral space as spectral curve and spinor bundle]
