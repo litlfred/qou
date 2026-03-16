@@ -178,9 +178,10 @@ non-singular window onto a portion of the Descartes universe.
   (mud-like), energy capacity drops, and the $q$-deformed Reeb flow
   (Definition~\ref{def:q-reeb-flow}) stiffens to the classical Reeb
   field~$\xi$.  The brown gradient illustrates this increasing viscosity.
-  The displayed region is a single affine chart ($z_1 \neq 0$) on
-  Bring's curve~$\Sigma_4$ (Remark~\ref{rem:brings-curve}), projected
-  stereographically to~$\mathbb{R}^3$.
+  The displayed region is a neighbourhood in the spacetime affine chart
+  $z = x_0/x_1$ on Bring's curve~$\Sigma_4$
+  (Remark~\ref{rem:brings-curve}), projected stereographically
+  to~$\mathbb{R}^3$.
 }
 \label{fig:reeb-viscosity}
 \end{figure}
@@ -209,10 +210,13 @@ Both figures depict a single tiny neighbourhood of Bring's curve~$\Sigma_4$
 (Remark~\ref{rem:brings-curve}).  Good projections for visualising such a
 neighbourhood include:
 \begin{enumerate}
-\item \emph{Affine chart} ($z_i \neq 0$):  picking one of the five
-      homogeneous coordinates $z_1, \ldots, z_5$ as non-zero reduces the
-      three Bring equations to a codimension-$3$ locus in $\mathbb{C}^4$;
-      a small ball in this affine patch gives the displayed region.
+\item \emph{Spacetime affine chart} ($x_1 \neq 0$, $z = x_0/x_1$):
+      setting $x_1 \neq 0$ and using the projective spacetime ratio
+      $z = x_0/x_1 \in \mathbb{CP}^1$ reduces the three Bring equations
+      to a locus in $\mathbb{C}^3$ parametrised by the chiral coordinates
+      $(x_2, x_3, x_4)$; a small ball in this chart gives the displayed
+      region.  This is the chart used in
+      Remark~\ref{rem:brings-qou-4tuple}.
 \item \emph{Stereographic projection} ($\mathbb{P}^4 \to \mathbb{R}^4
       \to \mathbb{R}^3$):  project from a point at infinity onto the tangent
       hyperplane to obtain a real $3$-dimensional image.
@@ -222,8 +226,8 @@ neighbourhood include:
       conformal chart.
 \end{enumerate}
 The boundary of the displayed neighbourhood is the intersection of a small
-geodesic ball $B_\varepsilon(p) \subset \Sigma_4$ with the affine chart
-$\{z_1 \neq 0\}$; the ball radius~$\varepsilon$ is chosen so that the
+geodesic ball $B_\varepsilon(p) \subset \Sigma_4$ with the spacetime affine
+chart $\{x_1 \neq 0\}$; the ball radius~$\varepsilon$ is chosen so that the
 curvature of~$\Sigma_4$ is nearly constant inside $B_\varepsilon(p)$.
 \end{remark}
 
@@ -247,21 +251,24 @@ three $S_3$ subgroups among themselves.
 \begin{remark}[Bring's curve]
 \label{rem:brings-curve}
 Bring's curve is the unique Riemann surface of genus $4$ with the maximal
-automorphism group $S_5$ (order~$120$) for its genus.  It is defined by
-the intersection of three symmetric hypersurfaces in $\mathbb{P}^4$:
+automorphism group $S_5$ (order~$120$) for its genus.  Following the
+conventions of Remark~\ref{rem:brings-qou-4tuple}, let $x_j$,
+$j\in\{0,\dots,4\}$, be homogeneous coordinates on $\mathbb{P}^4$,
+split into spacetime $(x_0,x_1)$ and chiral $(x_2,x_3,x_4)$ degrees of
+freedom.  Bring's curve is defined by the intersection of three symmetric
+hypersurfaces:
 \[
-  \sum_{i=1}^{5} z_i = 0,
-  \qquad
-  \sum_{i=1}^{5} z_i^2 = 0,
-  \qquad
-  \sum_{i=1}^{5} z_i^3 = 0.
+  \sum_{j=0}^{4} x_j^{\,k} = 0,
+  \qquad k = 1, 2, 3.
 \]
 The symmetric group $S_5$ acts by permuting the five homogeneous coordinates,
 and this action realises the monodromy structure described in
 Remark~\ref{rem:chirality-trefoil}: the group $S_5$ contains three copies of
 $S_3$ (quotients of the trefoil knot group) corresponding to the three
 colour charges, and elements outside these subgroups act by conjugation,
-permuting the three copies among themselves.
+permuting the three copies among themselves.  The spacetime affine coordinate
+$z = x_0/x_1 \in \mathbb{CP}^1$ parametrises the base; figures in this
+chapter display a neighbourhood of the curve in this affine chart.
 \end{remark}
 
 % ── The Descartes theorem ────────────────────────────────────────────────────
