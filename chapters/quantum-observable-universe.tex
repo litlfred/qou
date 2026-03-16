@@ -554,11 +554,11 @@ Hopf-algebra and representation-category viewpoints are equivalent
 fibrewise.
 \end{remark}
 
-\begin{remark}[Hopf-algebra structure of the quantum gauge group]
+\begin{remark}[Hopf-algebra structure and non-cocommutativity]
 \label{rem:hopf-structure-diagrams}
 Write $\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
 $\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
-counit, and antipode.  The Hopf-algebra axioms include
+counit, and antipode.  The Hopf comultiplication satisfies
 \emph{coassociativity}:
 \begin{equation}\label{eq:coassociativity}
 \begin{CD}
@@ -571,24 +571,6 @@ counit, and antipode.  The Hopf-algebra axioms include
   \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
 \end{CD}
 \end{equation}
-and the \emph{counit} condition:
-\begin{equation}\label{eq:counit}
-\begin{CD}
-\mathbb{C} \otimes \mathcal{O}_q
-  @<{\varepsilon_q \otimes \mathrm{id}}<<
-  \mathcal{O}_q \otimes \mathcal{O}_q
-  @>>{\mathrm{id} \otimes \varepsilon_q}>
-  \mathcal{O}_q \otimes \mathbb{C} \\
-@|  @AA{\Delta_q}A  @| \\
-\mathcal{O}_q @= \mathcal{O}_q @= \mathcal{O}_q
-\end{CD}
-\end{equation}
-Both diagrams~\eqref{eq:coassociativity} and~\eqref{eq:counit}
-commute for every $q \geq 1$.
-\end{remark}
-
-\begin{remark}[Non-cocommutativity and the $q = 1$ discontinuity]
-\label{rem:q1-discontinuity}
 Let $\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
 \mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
 $(a \otimes b \mapsto b \otimes a)$.  The cocommutativity square
@@ -604,18 +586,9 @@ $(a \otimes b \mapsto b \otimes a)$.  The cocommutativity square
 \quad\text{commutes}\;\Longleftrightarrow\;q = 1.
 \end{equation}
 For $q \neq 1$ the failure of~\eqref{eq:non-cocommutativity} is
-controlled by the universal $R$-matrix of the quasi-triangular Hopf
-algebra $U_q(\mathfrak{su}(2))$:
+controlled by the universal $R$-matrix of $U_q(\mathfrak{su}(2))$:
 $\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ \Delta_q$,
 where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
-Analytically, the assignment $q \mapsto C(\mathrm{SU}_q(2))$ forms a
-continuous field of $C^*$-algebras in the sense of Rieffel's strict
-deformation quantisation: the norm function
-$q \mapsto \lVert a_q \rVert$ is continuous on $[1,\infty)$, so
-$\lVert a_q - a_1 \rVert \to 0$ as $q \to 1$.  The paper invokes
-this resolution implicitly whenever continuity in $q$ is needed
-(e.g.\ the classical limits $q \to 1$ in
-Remark~\ref{rem:planck-limits}).
 \end{remark}
 
 \begin{remark}[Self-duality as a short exact sequence]
@@ -1143,7 +1116,7 @@ $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}):
 \]
 \end{definition}
 
-\begin{remark}[$q$-Torsion leaves: existence and category-theoretic perspective]
+\begin{remark}[$q$-Torsion leaves: existence and Frobenius obstruction]
 \label{rem:q-torsion-existence}
 The horizontal distribution $H = \ker\theta$ on a contact manifold is
 maximally non-integrable: $d\theta|_{H \times H}$ is non-degenerate.
@@ -1159,60 +1132,13 @@ exist whenever the Reeb flow is periodic or integrable (e.g.\ on
 $S^3/\Gamma$).  For $q > 1$, the deformation generically breaks
 periodicity, and one must appeal to KAM-type persistence results.
 
-\medskip\noindent\textit{Category-theoretic formulation.}\;
-A $q$-torsion leaf may be viewed as an object of the category
-$\mathbf{Leg}_q(M)$ whose objects are Legendrian submanifolds
-invariant under $\phi_t^q$ and whose morphisms are
-$\phi_t^q$-equivariant Legendrian cobordisms.  The forgetful
-functor $\mathbf{Leg}_q(M) \to \mathbf{Leg}(M)$ (forget the flow
-invariance) exhibits $q$-torsion leaves as fixed objects of the Reeb
-flow acting on the Legendrian category.  In this language, the
-``equilibrium'' condition of $q$-torsion leaves is a
-\emph{homotopy fixed-point} condition, and one could define a
-\emph{derived} $q$-torsion leaf as a homotopy-coherent fixed point of
-the $\phi_t^q$-action on the $\infty$-category of Legendrian branes.
-
-\medskip\noindent\textit{Categorical Frobenius condition.}\;
-The classical Frobenius theorem used above admits a categorical
-generalisation.  In a monoidal category~$\mathcal{C}$, a
-\emph{Frobenius object} is an object $A$ equipped with compatible
-algebra and coalgebra structures satisfying the Frobenius relation
-$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta) =
-\Delta \circ \mu = (\mathrm{id} \otimes \mu) \circ (\Delta \otimes
-\mathrm{id})$.
-In the category of Lie algebroids over~$M$, the horizontal distribution
-$H = \ker\theta$ with the Lie bracket of vector fields is a Lie
-algebroid; the Frobenius integrability condition is equivalent to $H$
-carrying a Frobenius structure.  Since the Levi form
+In the category of Lie algebroids over~$M$, the Frobenius integrability
+condition is equivalent to $H$ carrying a Frobenius structure
+(Definition~\ref{def:quantum-universe}).  Since the Levi form
 $d\theta|_{H \times H}$ is non-degenerate, this Frobenius structure
 \emph{fails} --- and it is precisely this failure that forces the
 dimension bound on integral submanifolds and gives $q$-torsion leaves
 their rigidity.
-
-\medskip\noindent\textit{Beyond~$\mathbb{C}$: the natural categorical setting.}\;
-The framework of Example~\ref{def:c-quantum-universe} is formulated
-over~$\mathbb{C}$, but the categorical Frobenius condition suggests
-a natural generalisation.  Over a $\pp$-adic base field~$\mathbb{C}_\pp$,
-the classical Frobenius integrability theorem is replaced by the
-\emph{Frobenius endomorphism} acting on crystalline cohomology: a
-connection is ``integrable'' if and only if the associated $F$-crystal
-is compatible with the Frobenius lift
-(Chapter~\ref{chap:p-adic}, Section~\ref{sec:cp-que}).
-More generally, over an arbitrary base field~$k$, the correct setting is
-a \emph{Tannakian category} $\mathcal{C}$ over~$k$ equipped with a
-fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$; the
-quantum gauge group is then reconstructed via Tannaka--Krein duality
-as $\mathrm{Aut}^\otimes(\omega)$.  This is precisely the setting of the
-base-field-independent Definitions~\ref{def:quantum-universe}
-and~\ref{def:quantum-observable-universe}: the $\mathbb{C}$ realisation
-(Example~\ref{def:c-quantum-observable-universe}) is one instance, and the
-$\pp$-adic and finite-field realisations
-(Examples~\ref{ex:p-adic-realisation} and~\ref{ex:finite-field-realisation})
-are others.  This field-independence is the deeper reason why the
-choice of Hopf-algebra realisation in
-Remark~\ref{rem:quantum-gauge-group-category} has no impact on later
-chapters: all constructions factor through the representation category,
-which is base-field-independent by Tannakian reconstruction.
 \end{remark}
 
 \begin{remark}[$q$-Torsion leaves as energy minima]
@@ -1342,8 +1268,9 @@ $q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the
 module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra
 $\Gamma(J^1 E)$, and the Schr\"odinger equation is the condition that
 $\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$.
-In the Tannakian setting of
-Remark~\ref{rem:q-torsion-existence}, this extends to arbitrary base
+In the base-field-independent setting of
+Definitions~\ref{def:quantum-universe}
+and~\ref{def:quantum-observable-universe}, this extends to arbitrary base
 fields~$k$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate
 $k$-linear category of sections.
 \end{remark}

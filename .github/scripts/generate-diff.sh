@@ -50,11 +50,14 @@ latexpand main.tex                      > "$BRANCH_FLAT"
 echo "::endgroup::"
 
 # ── 3. Run latexdiff ────────────────────────────────────────────────────────
+# --type=CFONT         : colour + font-size change (no underline/strikethrough)
 # --math-markup=coarse : changed math environments are shown as whole units
-# --type=CTRADITIONAL  : coloured + strikethrough/underline base style
+# --append-safecmd     : protect cross-reference commands from being split
 echo "::group::Run latexdiff"
 latexdiff \
+  --type=CFONT \
   --math-markup=coarse \
+  --append-safecmd="ref,eqref,cite,label,hyperref" \
   "$MAIN_FLAT" "$BRANCH_FLAT" \
   > diff.tex \
   || { echo "::warning::latexdiff failed; falling back to unchanged source"
@@ -62,22 +65,22 @@ latexdiff \
 echo "::endgroup::"
 
 # ── 4. Patch colours ────────────────────────────────────────────────────────
-# latexdiff default:  added = blue,  deleted = red
+# latexdiff CFONT:    added = blue,  deleted = red
 # We want:            added = dark green (0,0.5,0),  deleted = red (keep)
 #
-# Also replace uwave (wavy underline) with simple text for cleaner output,
-# and keep sout (strikethrough) for deletions.
+# Strategy: define a named colour (DIFgreen) using \definecolor with the
+# {rgb} model, which works with both the color and xcolor packages.
+# Then replace every \color{blue}/\color{BLUE} with \color{DIFgreen}.
 echo "::group::Patch diff colours"
 
-# Added text: blue → dark green (case-insensitive to catch both \color{blue} and \color{BLUE})
-sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color[rgb]{0,0.5,0}/g'   diff.tex
+# 1. Define DIFgreen right after the colour package is loaded
+sed -i '/\\RequirePackage.*{color}/a \\definecolor{DIFgreen}{rgb}{0,0.5,0} %DIF PREAMBLE' diff.tex
 
-# If CFONT type colour definitions are present, override BLUE
-sed -i 's/\\definecolor{BLUE}{rgb}{0,0,1}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
+# 2. Override the BLUE colour definition that CFONT type emits
+sed -i 's/\\definecolor{BLUE}{rgb}{[^}]*}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
 
-# Ensure xcolor is loaded (needed for rgb colour model)
-# Insert after the \RequirePackage{color} line that latexdiff adds
-sed -i 's/\\RequirePackage{color}/\\RequirePackage{xcolor}/' diff.tex
+# 3. Replace \color{blue} / \color{BLUE} with \color{DIFgreen}
+sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color{DIFgreen}/g' diff.tex
 
 echo "::endgroup::"
 
