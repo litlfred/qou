@@ -555,3 +555,62 @@ regime (Remark~\ref{rem:reeb-exceptional-divisor}).  The substrate parameter $q(
 thereby acts as a \emph{spacetime-dependent dynamical parameter}, continuously
 deforming the Julia set geometry as one moves through the QOU.
 \end{remark}
+
+\begin{remark}[Julia sets on the exceptional divisor and the Mandelbrot connectedness locus]
+\label{rem:julia-mandelbrot-exceptional}
+The Böttcher analogy of Remark~\ref{rem:qdlog-julia} admits two complementary
+pictures, corresponding to the classical distinction between Julia sets (dynamical
+plane) and the Mandelbrot set (parameter plane).
+
+\medskip
+\noindent\textbf{Dynamical picture: Julia set on $E_i$.}\;
+Fix a spacetime point $z_c$, so that the substrate parameter
+$q = q(z_c)$ is fixed.  The $q$-deformed Reeb flow
+$\phi_t^q$ (Definition~\ref{def:q-reeb-flow}) acts on the
+exceptional divisor $E_i \cong \mathbb{CP}^1 \cong S^2$.
+Colouring each point $p \in E_i$ by the escape rate of its
+orbit under $\phi_t^q$---bounded orbit receives one colour,
+escaping orbit another---produces a \emph{Julia-set picture}
+on $S^2$: the boundary between trapped and escaping regions on
+the exceptional divisor is the Julia set of the Reeb dynamics at
+that spacetime point.
+
+\medskip
+\noindent\textbf{Parameter picture: Mandelbrot locus in spacetime.}\;
+The Mandelbrot set arises when one instead \emph{varies the
+parameter} and tracks the critical orbit.  Here the parameter is
+$q(z)$: as the spacetime coordinate $z$ moves through the QOU,
+$q(z)$ sweeps a path through parameter space.  For each value of
+$q$, one asks whether the critical orbit of $\phi_t^q$ on $E_i$
+remains bounded.  The set of spacetime positions
+\[
+  \mathcal{M}_{\mathrm{QOU}}
+  \;=\;
+  \bigl\{z \in M \;\big|\;
+    \text{the critical orbit of } \phi_t^{q(z)}
+    \text{ on } E_i \text{ is bounded}\bigr\}
+\]
+is the \emph{connectedness locus} of the $q$-deformed Reeb
+dynamics---the QOU analogue of the Mandelbrot set.  Points inside
+$\mathcal{M}_{\mathrm{QOU}}$ are spacetime positions at which the
+chiral fibre above the exceptional divisor is dynamically stable;
+points outside correspond to positions where the Reeb flow is
+explosive (torsion escapes to $\infty$).
+
+\medskip
+\noindent\textbf{Degree and shape.}\;
+The standard Mandelbrot set $\mathcal{M}$ is the connectedness locus
+for degree-$2$ maps $f_c(z)=z^2+c$.  The Bring surface is a
+degree-$5$ hypersurface, so the Reeb-flow map
+$\phi_1^q \colon E_i \to E_i$ is generically a rational map of
+degree $4$ (the degree of the ramified cover of $\mathbb{CP}^1$
+induced by the Bring equations).  The connectedness locus
+$\mathcal{M}_{\mathrm{QOU}}$ is therefore a \emph{degree-$4$
+Multibrot set}---topologically similar to $\mathcal{M}$ (main
+cardioid replaced by a main period-$1$ component, surrounded by
+bulbs of higher period) but with four-fold rather than two-fold
+symmetry.  In the classical limit $q\to 1$ the dynamics simplify
+and $\mathcal{M}_{\mathrm{QOU}}$ collapses to a standard Mandelbrot
+shape; in the deep-quantum limit $q\to\infty$ the higher-degree
+structure becomes fully visible.
+\end{remark}
