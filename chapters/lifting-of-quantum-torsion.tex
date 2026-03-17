@@ -614,3 +614,67 @@ and $\mathcal{M}_{\mathrm{QOU}}$ collapses to a standard Mandelbrot
 shape; in the deep-quantum limit $q\to\infty$ the higher-degree
 structure becomes fully visible.
 \end{remark}
+
+\begin{remark}[Descent to the $a$-plane: Mandelbrot locus as SW discriminant]
+\label{rem:descent-to-a-plane}
+Applying the descent (Definition~\ref{def:descent}) to the Mandelbrot picture of
+Remark~\ref{rem:julia-mandelbrot-exceptional} projects both the Julia set and the
+connectedness locus through the Seiberg--Witten period map
+\[
+  \Pi_A \colon q \;\longmapsto\;
+  a(q) \;=\; \oint_{A} \lambda_{\mathrm{SW}}^{(q)}
+  \;=\; \oint_{A} X\,dz,
+\]
+which is the $A$-cycle period of the $q$-deformed Seiberg--Witten differential
+(Remark~\ref{rem:brings-smoothness}, equation~\eqref{eq:seiberg-witten-periods}).
+The result is a picture that lives in the complex \emph{mass plane} (the $a$-plane).
+
+\medskip
+\noindent\textbf{Dynamical picture descended to the $A$-cycle.}\;
+At the $\dim = 1$ level of the descent
+(Remark~\ref{rem:descent-reduction}), the horizontal distribution is trivial and
+only the Reeb direction survives.  The Julia set on the exceptional divisor
+$E_c \cong S^2$ collapses: only its intersection with the $A$-cycle
+$S^1_A \subset S^2$ (the equatorial longitude of $E_c$) persists.
+The restriction of the $q$-deformed Reeb flow $\phi_t^q$
+(Definition~\ref{def:q-reeb-flow}) to $S^1_A$ is a circle map of degree equal
+to the degree of the Bring cover, and its Julia set on the circle is a
+\emph{Cantor-type measure} on $S^1_A$: a fractal dust of stable orbits
+alternating with escaping gaps.
+
+\medskip
+\noindent\textbf{Parameter picture in the $a$-plane.}\;
+The period map $\Pi_A$ pushes the connectedness locus
+$\mathcal{M}_{\mathrm{QOU}}$ (Remark~\ref{rem:julia-mandelbrot-exceptional})
+forward to its image $\Pi_A(\mathcal{M}_{\mathrm{QOU}}) \subset \mathbb{C}$ in
+the $a$-plane.  The boundary of this image is exactly the \emph{SW discriminant
+locus}
+\[
+  \Delta_{\mathrm{SW}}(a) = 0,
+\]
+the set of $a$-values at which the SW curve degenerates---i.e.\ where two
+branch points of $\lambda_{\mathrm{SW}}$ collide, which is precisely the
+condition for chiral sheets to merge and a blow-up point $z_c$ to appear
+(Remark~\ref{rem:brings-smoothness}).  The interior of
+$\Pi_A(\mathcal{M}_{\mathrm{QOU}})$ is the region of \emph{dynamically stable
+masses}: $a$-values for which the critical orbit of the descended Reeb flow
+remains bounded.  Points outside correspond to escaping (unphysical)
+mass configurations.
+
+\medskip
+\noindent\textbf{Generation-dependent cusps.}\;
+The generation-dependent SW differentials
+(Remark~\ref{rem:reeb-exceptional-divisor}---specifically the electron period
+$a_D^{(e)} = \oint_{E_c}(c+z)\,dz$ and the muon period
+$a_D^{(\mu)} = \oint_{E_c}\lambda_{\mathrm{SW}}^{(1)}$) descend to two
+distinct images in the $a$-plane.  For the electron the period map is smooth and
+the descended boundary is a smooth conformally distorted Multibrot boundary.
+For the muon, the pole of the prolonged differential $\lambda_{\mathrm{SW}}^{(1)}$
+at the discriminant zero $\partial F/\partial c \to 0$ (see
+Remark~\ref{rem:reeb-exceptional-divisor}) creates a \emph{cusp singularity} on
+the boundary of $\Pi_A(\mathcal{M}_{\mathrm{QOU}})$ in the $a$-plane.  This
+cusp marks the muon mass as a boundary point of the stable mass region, and its
+geometric inflation---captured by the residue of $\lambda_{\mathrm{SW}}^{(1)}$
+at the discriminant zero---produces $m_\mu \gg m_e$ purely from the topology of
+the descent.
+\end{remark}
