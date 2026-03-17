@@ -3348,6 +3348,73 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 the topological charge.</em></p>
 </div>
 
+<div id="rem:qdlog-julia" class="remark">
+
+<p><strong>Remark 4.27</strong> (Quantum dilogarithm integrand as <span
+class="math inline">\(q\)</span>-deformed Böttcher potential density).
+<em>The integrand <span class="math inline">\(\ln_q(1+t)/t\)</span> in
+the quantum dilogarithm formula above has the same formal structure as
+the <em>information-flow density</em> that appears in the computation of
+filled Julia sets via the Böttcher escape potential.</em></p>
+<p><em>For the quadratic family <span
+class="math inline">\(f_c(z)=z^2+c\)</span>, the external Green’s
+function (escape potential) admits the convergent series <span
+class="math display">\[\label{eq:bottcher-series}
+G_c(z)
+\;=\;
+\sum_{k=0}^{\infty}
+\frac{1}{2^{k+1}}\,
+\ln\!\left(1+\frac{c}{f_c^k(z)^2}\right).\]</span> Writing <span
+class="math inline">\(t_k = c/f_c^k(z)^2\)</span>, each summand is <span
+class="math inline">\(\frac{1}{2^{k+1}}\ln(1+t_k)\)</span>: the function
+<span class="math inline">\(\ln(1+t_k)/t_k\)</span> (evaluated at <span
+class="math inline">\(t_k\)</span>) is exactly the classical (<span
+class="math inline">\(q=1\)</span>) limit of the quantum dilogarithm
+integrand. The sum over <span class="math inline">\(k\)</span> weighted
+by <span class="math inline">\(2^{-(k+1)}\)</span> accumulates the
+<em>information flow</em> along the orbit of <span
+class="math inline">\(f_c\)</span>, with the weight <span
+class="math inline">\(2^{-k}\)</span> reflecting the degree-<span
+class="math inline">\(2\)</span> expansion at each step.</em></p>
+<p><em>In the QOU framework the role of the dynamical parameter <span
+class="math inline">\(c\)</span> is played by the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+<span class="math inline">\(q=q(z)\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>),
+which varies continuously with the spacetime coordinate <span
+class="math inline">\(z\)</span>. The <span
+class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+on the exceptional divisor <span class="math inline">\(E_i \cong
+\mathbb{CP}^1\)</span> takes the place of the orbit <span
+class="math inline">\(\{f_c^k(z)\}_{k\geq 0}\)</span>, and the path from
+<span class="math inline">\(0\)</span> to <span
+class="math inline">\(z_i\)</span> in the quantum dilogarithm integral
+accumulates information along that flow exactly as
+<a href="#eq:bottcher-series" data-reference-type="eqref" data-reference="eq:bottcher-series">[eq:bottcher-series]</a>
+accumulates it along the Julia-set orbit. The <span
+class="math inline">\(q\)</span>-deformation of the logarithm encodes
+the departure from classical (<span class="math inline">\(q=1\)</span>)
+dynamics: as <span class="math inline">\(q\to 1\)</span> the flow
+trivialises and <span
+class="math inline">\(\Phi_q(z_i)\to\mathrm{Li}_2(z_i)\)</span>, the
+classical dilogarithm; as <span
+class="math inline">\(q\to\infty\)</span> the quantum-number
+denominators <span class="math inline">\([n]_q\)</span> suppress
+high-order terms, concentrating the topological charge near the blow-up
+centre.</em></p>
+<p><em>In this identification the <em>Julia set boundary</em> of the
+classical problem—the locus where <span
+class="math inline">\(G_c\)</span> transitions from zero to positive—is
+the analogue of the boundary of the exceptional divisor <span
+class="math inline">\(\partial E_i\)</span>, where the <span
+class="math inline">\(q\)</span>-deformed torsion charge changes regime
+(Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.32</a>).
+The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q(z)\)</span>
+thereby acts as a <em>spacetime-dependent dynamical parameter</em>,
+continuously deforming the Julia set geometry as one moves through the
+QOU.</em></p>
+</div>
+
 <h1 id="brings-surface">Bring’s Surface</h1>
 <div id="rem:descent-to-zero" class="remark">
 
