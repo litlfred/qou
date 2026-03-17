@@ -586,6 +586,81 @@ $j$-invariant $j(E_z)=-1728\cdot 64\,p(z)^3/\Delta(z)$ degenerates.
   shifted frame.
 \end{remark}
 
+\begin{remark}[M\"obius transform from the spectral $\delta$-divisor and colour coordinates]
+\label{rem:mobius-delta-color}
+The local coordinate $\delta = x_2 - x_3$ on the exceptional divisor
+$E_c \cong \mathbb{CP}^1$ (Remark~\ref{rem:brings-smoothness}) and
+the colour tube coordinates $(r, g, b)$
+(Definition~\ref{def:color-tube-coordinates}) together produce a
+M\"obius transformation on $E_c$ in a canonical way.
+
+\medskip
+\noindent\textbf{Double root at the branch point.}\;
+At a branch point $z = z_c$ where two chiral sheets merge (say $x_2 = x_3$,
+so $\delta = 0$), the colour tube cubic~\eqref{eq:color-tube-cubic}
+acquires a \emph{double root}: two of its three roots coalesce,
+$r(z_c) = g(z_c) = \rho$.  The third root $b_c = b(z_c)$ remains
+simple.
+
+\medskip
+\noindent\textbf{Puiseux expansion in $\delta$.}\;
+Substituting the local parametrisation $z = z_c + \delta^2$ into the
+colour tube cubic and expanding in $\delta$, the double root splits as
+a Puiseux series:
+\begin{equation}\label{eq:color-puiseux}
+  r(\delta) \;=\; \rho + C\delta + O(\delta^2),
+  \qquad
+  g(\delta) \;=\; \rho - C\delta + O(\delta^2),
+  \qquad
+  b(\delta) \;=\; b_c + O(\delta^2),
+\end{equation}
+where the splitting coefficient is
+\begin{equation}\label{eq:splitting-coeff}
+  C \;=\; \sqrt{-\,\frac{\partial_z P(\rho,\,z_c)}{\rho - b_c}},
+  \qquad
+  P(c,z) \;:=\; c^3+(4z+1)c^2+(6z^2+3z+1)c+(4z^3+3z^2+2z+1).
+\end{equation}
+Here the sign of $C$ is a choice of square-root branch, corresponding
+to the two sheets of the ramified double cover $z \mapsto \delta^2$.
+
+\medskip
+\noindent\textbf{Colour ratio as a M\"obius transformation.}\;
+Setting $\kappa = \rho / C$, the colour ratio $r/g$ restricted to
+$E_c$ is:
+\begin{equation}\label{eq:color-ratio-mobius}
+  \mu(\delta) \;:=\; \frac{r(\delta)}{g(\delta)}
+  \;=\; \frac{\kappa + \delta}{\kappa - \delta}
+  \;=\; \frac{1 \cdot \delta + \kappa}{-1 \cdot \delta + \kappa},
+\end{equation}
+a M\"obius transformation of $\delta \in \mathbb{CP}^1$ with matrix
+$\begin{pmatrix}1 & \kappa \\ -1 & \kappa\end{pmatrix} \in \mathrm{GL}(2,\mathbb{C})$
+and non-zero determinant $2\kappa \neq 0$.  Equivalently, $\mu$ sends
+the three marked points $\delta = -\kappa$, $0$, $\kappa$ to $0$,
+$1$, $\infty$, so it is the unique M\"obius normalization that maps
+the $r$-confinement point, the divisor origin, and the $g$-confinement
+point to the standard triple.
+
+\medskip
+\noindent\textbf{Colour difference as affine coordinate.}\;
+The combination $r - g \sim 2C\delta$ is a non-zero \emph{linear}
+function of $\delta$ on $E_c$, so it provides the affine coordinate
+on $\mathbb{A}^1 \subset E_c \cong \mathbb{CP}^1$ that identifies
+$\delta$ up to the scalar $2C$.  The colour sum $r + g \sim 2\rho$ is
+even in $\delta$ and constant to leading order, confirming that the
+anti-symmetric part $(r-g)$ captures the divisor direction.
+
+\medskip
+\noindent\textbf{Automorphism group.}\;
+Every M\"obius transformation $f \in \mathrm{PSL}(2,\mathbb{C})$ acting
+on $E_c$ is a composition of colour ratios of the form
+$r(\delta)/g(\delta)$, $g(\delta)/b(\delta)$, or $r(\delta)/b(\delta)$,
+taken at the various chiral branch points of the covering
+$\mathcal{S} \to \mathbb{CP}^1$.  The three colour coordinates $(r, g, b)$
+therefore generate the full automorphism group
+$\mathrm{Aut}(E_c) \cong \mathrm{PSL}(2,\mathbb{C})$ of the exceptional
+divisor via the splitting~\eqref{eq:color-puiseux}--\eqref{eq:color-ratio-mobius}.
+\end{remark}
+
 \begin{remark}[Chiral space as spectral curve and spinor bundle]
 \label{rem:chiral-bundles}
 The spacetime--chiral decomposition of Bring's surface maps naturally onto
