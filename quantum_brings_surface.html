@@ -146,7 +146,14 @@ input[type=range]::-webkit-slider-thumb {
 #affine .af-eq  { font-size:9px; line-height:1.8; margin-top:6px; color:#4a5a80; }
 #affine .af-val { color:var(--accent3); }
 
-/* ── Tooltip ────────────────────────────────────────────────────── */
+/* ── Fiber CP1 panel ─────────────────────────────────────────────── */
+#fibercp1 { bottom:14px; left:958px; width:190px; }
+#fibercp1 canvas { display:block; border:1px solid rgba(58,144,255,.10); border-radius:2px; }
+#fibercp1 .fc-eq  { font-size:9px; line-height:1.8; margin-top:5px; color:#4a5a80; }
+#fibercp1 .fc-val { color:var(--accent3); }
+#fibercp1 .fc-int { color:#ffffff; font-weight:bold; }
+
+
 #tip {
   position:fixed; background:var(--panel); border:1px solid var(--border);
   border-radius:3px; padding:5px 9px; font-size:10px; pointer-events:none;
@@ -288,6 +295,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_axispts"> ±Axis pts</label>
     <label class="ck"><input type="checkbox" id="cb_blowup"> Blowup E_p</label>
     <label class="ck"><input type="checkbox" id="cb_primes"> Primes</label>
+    <label class="ck"><input type="checkbox" id="cb_fiber"> Fiber CP1</label>
   </div>
   <div class="sec">── Panels ──────────────────────────────</div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:3px;">
@@ -298,6 +306,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_wstr"> Wstrss</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_afin"> Affine z</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_vizjson"> View JSON</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_fcp1"> Fiber CP1</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -410,6 +419,13 @@ input[type=range]::-webkit-slider-thumb {
   <div class="panel-title">Weierstrass Form  ·  S₃ Embedding<button class="panel-close" onclick="togglePanel('weierstrass')">×</button></div>
   <canvas id="wc_main" width="210" height="110"></canvas>
   <div class="wf-eq" id="wf-text">—</div>
+</div>
+
+<!-- FIBER CP1 PANEL: three ECs in the same ℂP¹ via x₂=x₃=x₄ diagonal -->
+<div class="panel" id="fibercp1" style="display:none">
+  <div class="panel-title">Fiber ℂP¹  ·  x₂=x₃=x₄ diagonal<button class="panel-close" onclick="togglePanel('fibercp1')">×</button></div>
+  <canvas id="fc_main" width="174" height="148"></canvas>
+  <div class="fc-eq" id="fc-text">—</div>
 </div>
 
 <!-- Axis labels -->
@@ -942,7 +958,8 @@ function buildTubes() {
   activeTubes = [];
   if (cp1GhostMesh)  { scene.remove(cp1GhostMesh);  cp1GhostMesh  = null; }
   if (exceptDivMesh) { scene.remove(exceptDivMesh); exceptDivMesh = null; }
-  for (const m of activePrimeGhosts) scene.remove(m); activePrimeGhosts = [];
+  for (const m of activePrimeGhosts)  scene.remove(m); activePrimeGhosts  = [];
+  for (const m of activeFiberMarkers) scene.remove(m); activeFiberMarkers = [];
 
   if (!document.getElementById('cb_tubes').checked) return;
 
@@ -966,6 +983,7 @@ function buildTubes() {
     buildCP1Ghost(selPt, N_vec, R_CP1);
     buildExceptionalDiv(selPt, N_vec, R_CP1);
     buildPrimeGhosts(selPt, N_vec, T1, T2);
+    buildFiberMarkers();
     for (let ti = 0; ti < 3; ti++) {
       const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q);
       const mat = new THREE.MeshPhongMaterial({
@@ -1406,7 +1424,7 @@ document.getElementById('btn_theme').addEventListener('click', () => {
 const PANEL_CB = {
   stats: 'cb_pnl_stats', info: 'cb_pnl_info', formula: 'cb_pnl_fmla',
   chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
-  vizjson: 'cb_pnl_vizjson',
+  vizjson: 'cb_pnl_vizjson', fibercp1: 'cb_pnl_fcp1',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1426,7 +1444,7 @@ Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
 
 // ── Hide / show all info panels ───────────────────────────────────────
 let infoPanelsHidden = true;  // start hidden
-const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson'];
+const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson','fibercp1'];
 function applyHide() {
   const show = !infoPanelsHidden;
   INFO_PANEL_IDS.forEach(id => togglePanel(id, show));
@@ -1499,6 +1517,9 @@ document.getElementById('cb_blowup').addEventListener('change', () => {
   buildTubes(); buildAxisTubes();
 });
 document.getElementById('cb_primes').addEventListener('change', () => {
+  buildTubes(); buildAxisTubes();
+});
+document.getElementById('cb_fiber').addEventListener('change', () => {
   buildTubes(); buildAxisTubes();
 });
 
@@ -1599,6 +1620,182 @@ function buildPrimeGhosts(P_brane, N_vec, T1, T2) {
     scene.add(mesh);
     activePrimeGhosts.push(mesh);
   }
+}
+
+// ── Fiber CP1: map Weierstrass x-coords onto E_p via stereographic ───
+// For each tube i the Weierstrass endpoint x_i maps to a point on E_p:
+//   φ_i = π/2 − arctan(x_i / x_scale)   (stereographic ℝ → (0,π))
+//   ψ_i = 2πi/3 + q·φ_i                 (into the tube's own sector, with twist)
+// x₂=x₃=x₄ means all three φ_i are equal → same latitude circle → intersection.
+// Visible as 3D sphere markers on E_p + a 2D "CP1 line" mini-canvas.
+let activeFiberMarkers = [];
+
+function buildFiberMarkers() {
+  for (const m of activeFiberMarkers) scene.remove(m);
+  activeFiberMarkers = [];
+  if (!document.getElementById('cb_fiber').checked) return;
+  if (!document.getElementById('cb_cp1').checked)   return;
+
+  const state  = getChiralState();
+  const { pts, r_end } = state;
+  const x_scale = Math.max(0.01, Math.min(2.8, r_end + 0.6));
+
+  const R_CP1  = SPHERE_R * 0.2;
+  const N_vec  = selPt.clone().normalize();
+  const { T1, T2 } = getFrame(N_vec);
+  const Ox = selPt.x + N_vec.x * R_CP1;
+  const Oy = selPt.y + N_vec.y * R_CP1;
+  const Oz = selPt.z + N_vec.z * R_CP1;
+  const q  = getQ();
+
+  for (let ti = 0; ti < 3; ti++) {
+    const pt = pts[ti];  if (!pt) continue;
+    const phi = Math.PI / 2 - Math.atan(pt.x / x_scale);
+    const psi = (TAU * ti / 3) + q * phi;
+    const sinPhi = Math.sin(phi), cosPhi = Math.cos(phi);
+    const cosPsi = Math.cos(psi), sinPsi = Math.sin(psi);
+    const mx = Ox + R_CP1 * (sinPhi*(T1.x*cosPsi+T2.x*sinPsi) - cosPhi*N_vec.x);
+    const my = Oy + R_CP1 * (sinPhi*(T1.y*cosPsi+T2.y*sinPsi) - cosPhi*N_vec.y);
+    const mz = Oz + R_CP1 * (sinPhi*(T1.z*cosPsi+T2.z*sinPsi) - cosPhi*N_vec.z);
+    const tc  = TUBE_COL[ti];
+    const geo = new THREE.SphereGeometry(R_CP1 * 0.11, 12, 8);
+    const mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(tc.r, tc.g, tc.b), transparent: true, opacity: 0.95,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(mx, my, mz);
+    mesh.renderOrder = 4;
+    scene.add(mesh);
+    activeFiberMarkers.push(mesh);
+  }
+
+  // Near-intersection glow ring: when spread of x-values < 20% of x_scale
+  const xs = pts.filter(Boolean).map(p => p.x);
+  if (xs.length === 3) {
+    const spread = Math.max(...xs) - Math.min(...xs);
+    const x_mid  = xs.reduce((a,b)=>a+b,0) / 3;
+    const t_norm = Math.max(0, 1 - spread / (x_scale * 0.25));
+    if (t_norm > 0.05) {
+      const phi_mid = Math.PI / 2 - Math.atan(x_mid / x_scale);
+      const rTorus  = R_CP1 * Math.max(0.01, Math.sin(phi_mid));
+      const geo = new THREE.TorusGeometry(rTorus, R_CP1 * 0.018, 8, 48);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0xffffff, transparent: true, opacity: 0.55 * t_norm,
+      });
+      const torus = new THREE.Mesh(geo, mat);
+      const off   = -R_CP1 * Math.cos(phi_mid);
+      torus.position.set(Ox+N_vec.x*off, Oy+N_vec.y*off, Oz+N_vec.z*off);
+      torus.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0), N_vec);
+      torus.renderOrder = 4;
+      scene.add(torus);
+      activeFiberMarkers.push(torus);
+    }
+  }
+}
+
+// ── Draw the 2D Fiber CP1 canvas ──────────────────────────────────────
+// Vertical line = the ℂP¹ parameterized by x (the Weierstrass x-coord).
+// Top = x→+∞ (north pole of E_p).  Bottom = x→−∞ (south pole).
+// Three colored dots show where each tube's x_i sits on this CP1.
+function drawFiberCP1(state) {
+  const canvas = document.getElementById('fc_main');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = '#010409'; ctx.fillRect(0,0,W,H);
+
+  const { pts, r_end, P, Q, disc, j_inv } = state;
+  const x_scale = Math.max(0.01, Math.min(2.8, r_end + 0.6));
+  const xs  = pts.map(p => p ? p.x : null);
+  const ys  = pts.map(p => p ? p.y : null);
+
+  // Map x → vertical pixel: φ(x) = π/2 − arctan(x/x_scale),  then py = H·φ/π
+  const xToY = x => H * (0.5 - Math.atan(x / x_scale) / Math.PI);
+
+  // Centre line
+  const cx = W / 2;
+  ctx.strokeStyle = 'rgba(58,144,255,0.20)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(cx, 0); ctx.lineTo(cx, H); ctx.stroke();
+
+  // Equator tick (x=0, φ=π/2)
+  const eq_y = H / 2;
+  ctx.strokeStyle = 'rgba(58,144,255,0.30)'; ctx.lineWidth = 0.8;
+  ctx.setLineDash([3,3]);
+  ctx.beginPath(); ctx.moveTo(cx-20, eq_y); ctx.lineTo(cx+20, eq_y); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = 'rgba(58,144,255,0.40)'; ctx.font = '7px "Share Tech Mono"';
+  ctx.fillText('x=0', cx+5, eq_y-2);
+
+  // Pole labels
+  ctx.fillStyle = 'rgba(58,144,255,0.30)';
+  ctx.fillText('N', cx+5, 10);
+  ctx.fillText('S', cx+5, H-3);
+
+  // EC curve fragments on either side of the CP1 axis:
+  // for x from bottom to top, draw small y-bar ∝ √(x³+Px+Q)
+  const STEPS = H;
+  for (const sgn of [1,-1]) {
+    ctx.strokeStyle = sgn > 0 ? 'rgba(80,130,255,0.25)' : 'rgba(255,80,80,0.15)';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath(); let first = true;
+    for (let k = 0; k <= STEPS; k++) {
+      const frac = k / STEPS;               // 0=top(+∞), 1=bottom(−∞)
+      const phi  = frac * Math.PI;
+      const xv   = x_scale * Math.tan(Math.PI/2 - phi);
+      const y2   = xv*xv*xv + P*xv + Q;
+      if (y2 < 0) { first=true; continue; }
+      const ybar = Math.sqrt(y2) / (x_scale * 1.5);  // normalised width
+      const py   = k * H / STEPS;
+      const px   = cx + sgn * Math.min(W*0.42, ybar * W * 0.35);
+      if (first) { ctx.moveTo(px, py); first=false; } else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+  }
+
+  // Three colored dots
+  const CLRS = ['#ff4444','#44ff88','#4488ff'];
+  const LBLS = ['𝔯','𝔤','𝔟'];
+  let pys = [];
+  for (let ti = 0; ti < 3; ti++) {
+    if (xs[ti] === null) continue;
+    const py = xToY(xs[ti]);
+    pys.push(py);
+    ctx.fillStyle = CLRS[ti];
+    ctx.shadowBlur = 8; ctx.shadowColor = CLRS[ti];
+    ctx.beginPath(); ctx.arc(cx, py, 4.5, 0, TAU); ctx.fill();
+    ctx.shadowBlur = 0;
+    // x label
+    ctx.fillStyle = CLRS[ti];
+    ctx.font = '8px "Share Tech Mono"';
+    ctx.fillText(`${LBLS[ti]} x=${xs[ti].toFixed(2)}`, 3, py+3);
+  }
+
+  // Intersection proximity highlight
+  if (pys.length === 3) {
+    const spread = Math.max(...pys) - Math.min(...pys);
+    if (spread < H * 0.12) {
+      const mid_py = pys.reduce((a,b)=>a+b,0) / 3;
+      const alpha  = Math.max(0, 1 - spread / (H * 0.12));
+      ctx.strokeStyle = `rgba(255,255,200,${0.7*alpha})`;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([2,2]);
+      ctx.beginPath(); ctx.moveTo(0, mid_py); ctx.lineTo(W, mid_py); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = `rgba(255,255,200,${0.9*alpha})`;
+      ctx.font = 'bold 8px "Share Tech Mono"';
+      ctx.fillText('∩', cx-4, mid_py-5);
+    }
+  }
+
+  // Text info
+  const spreadX = xs.filter(x=>x!==null);
+  const xRange  = spreadX.length > 1 ? Math.max(...spreadX)-Math.min(...spreadX) : 0;
+  const intStr  = xRange < x_scale * 0.10 ? ' ← near x₂=x₃=x₄' : '';
+  document.getElementById('fc-text').innerHTML =
+    `<span style="color:var(--dim)">CP1 ≅ ℙ¹(ℝ) via x-coord · φ=π/2−arctan(x)</span><br>`+
+    `<span class="fc-val">Δx = ${xRange.toFixed(3)}</span>`+
+    `<span class="fc-int">${intStr}</span>`;
 }
 
 // ── Viewport JSON export ──────────────────────────────────────────────
@@ -2146,6 +2343,15 @@ function updateChiralPanels() {
 
   // Affine coordinate chart panel
   drawAffine(state);
+
+  // Fiber CP1 panel (x₂=x₃=x₄ diagonal)
+  drawFiberCP1(state);
+
+  // Sync 3D fiber markers with updated chiral state
+  if (document.getElementById('cb_fiber').checked &&
+      document.getElementById('cb_cp1').checked) {
+    buildFiberMarkers();
+  }
 }
 
 // ── Animation loop ────────────────────────────────────────────────────
