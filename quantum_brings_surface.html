@@ -282,6 +282,28 @@ input[type=range]::-webkit-slider-thumb {
     <input type="range" id="z_p" min="-4" max="4" step="0.01" value="-1.98">
     <span class="val" id="v_zp">-1.98</span>
   </div>
+  <div style="margin:5px 0 2px;font-size:9px;color:var(--dim);letter-spacing:.10em;">CP¹ chart  [1 : z]</div>
+  <div style="display:grid;grid-template-columns:38px 1fr 6px 1fr auto;gap:3px;align-items:center;margin-bottom:5px;">
+    <span style="font-size:9px;color:var(--dim);">Re(z)</span>
+    <input type="number" id="cp1_re" step="0.1" value="0"
+      style="background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:2px 4px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:9px;outline:none;width:100%;">
+    <span style="font-size:9px;color:var(--dim);text-align:center;">+</span>
+    <input type="number" id="cp1_im" step="0.1" value="0"
+      style="background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:2px 4px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:9px;outline:none;width:100%;">
+    <span style="font-size:8px;color:var(--dim);">i</span>
+  </div>
+  <div style="display:flex;gap:5px;margin-bottom:5px;">
+    <button id="cp1_go"
+      style="flex:1;background:rgba(58,144,255,0.14);border:1px solid rgba(58,144,255,0.30);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:2px;
+             padding:2px 0;font-family:'Share Tech Mono',monospace;">→ set p</button>
+    <span id="cp1_z_display" style="flex:2;font-size:8px;color:var(--dim);
+          align-self:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+  </div>
 
   <div id="vis-opts">
     <label class="ck"><input type="checkbox" id="cb_brane"  checked> Brane</label>
@@ -568,7 +590,7 @@ scene.add(starGroup);
   for (let i = 0; i < sp.length; i++) sp[i] = (Math.random() - .5) * 170;
   sg.setAttribute('position', new THREE.BufferAttribute(sp, 3));
   starGroup.add(new THREE.Points(sg, new THREE.PointsMaterial({
-    color: 0x334488, size: .07, transparent: true, opacity: .45
+    color: 0x99aadd, size: .18, transparent: true, opacity: .70
   })));
 }
 
@@ -705,13 +727,13 @@ function buildTubeGeo(tubeIndex, P, N, T1, T2, q, N_min, N_max, sigma, gamma_sca
     const xi_q   = 1.0 + 0.30 * q * Math.cos(torsion_s);
     const ring_r = Math.max(0.0005, s_v * sigma * xi_q);
 
-    // Spiral torsion phase: ψᵢ(s) = 2πi/3 + q · torsion_s
-    const psi = phi0 + q * torsion_s;
+    // Sector start: ψᵢ(s) = 2πi/3 + q·torsion_s; each tube covers exactly 120°
+    const sec_start = phi0 + q * torsion_s;
 
     for (let j = 0; j <= RG; j++) {
-      const theta = j * TAU / RG;
-      const ct    = Math.cos(theta + psi);
-      const st    = Math.sin(theta + psi);
+      const theta = sec_start + (j / RG) * (TAU / 3);
+      const ct    = Math.cos(theta);
+      const st    = Math.sin(theta);
       const vi    = i * RG1 + j;
       pos[vi*3  ] = cx + ring_r * (T1.x * ct + T2.x * st);
       pos[vi*3+1] = cy + ring_r * (T1.y * ct + T2.y * st);
@@ -773,7 +795,7 @@ function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex, N_max)
   const torsion = TAU * gamma_scale * (s_N / Math.max(s_N, 1)) * Q_norm;
   const xi_q    = 1.0 + 0.30 * q * Math.cos(torsion);
   const ring_r  = Math.max(0.0005, s_v * sigma * xi_q);
-  const psi     = TAU * tubeIndex / 3 + q * torsion;
+  const sec_start = TAU * tubeIndex / 3 + q * torsion;
   const cx = P.x + N.x * s_v, cy = P.y + N.y * s_v, cz = P.z + N.z * s_v;
   const tc = TUBE_COL[tubeIndex];
 
@@ -787,8 +809,8 @@ function buildCapGeo(P, N, T1, T2, s_N, sigma, q, gamma_scale, tubeIndex, N_max)
   col[0] = tc.r; col[1] = tc.g; col[2] = tc.b;
 
   for (let j = 0; j <= RG; j++) {
-    const theta = j * TAU / RG;
-    const ct = Math.cos(theta + psi), st = Math.sin(theta + psi);
+    const theta = sec_start + (j / RG) * (TAU / 3);
+    const ct = Math.cos(theta), st = Math.sin(theta);
     const vi = j + 1;
     pos[vi*3  ] = cx + ring_r * (T1.x * ct + T2.x * st);
     pos[vi*3+1] = cy + ring_r * (T1.y * ct + T2.y * st);
@@ -975,13 +997,15 @@ function buildTubes() {
   const tubeOpacity = parseFloat(document.getElementById('tube_opacity').value);
   const tubeTransparent = tubeOpacity < 0.999;
 
+  // E_p blowup and prime ghosts work in both CP1 and cone modes
+  const R_CP1 = SPHERE_R * 0.2;
+  buildExceptionalDiv(selPt, N_vec, R_CP1);
+  buildPrimeGhosts(selPt, N_vec, T1, T2);
+
   if (cp1Mode) {
     // ── CP1 fibre view: three Planck-gridded bands on the CP1 sphere ──
     // Sectors 𝔯 (i=0), 𝔤 (i=1), 𝔟 (i=2) tile E_p exactly (strict, shared boundaries)
-    const R_CP1 = SPHERE_R * 0.2;
     buildCP1Ghost(selPt, N_vec, R_CP1);
-    buildExceptionalDiv(selPt, N_vec, R_CP1);
-    buildPrimeGhosts(selPt, N_vec, T1, T2);
     buildFiberMarkers();
     for (let ti = 0; ti < 3; ti++) {
       const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q);
@@ -1086,6 +1110,7 @@ function rebuild() {
   updateStats();
   updateChiralPanels();
   updateVizJSON();
+  updateCP1ZDisplay();
 }
 
 // ── Stats panel ──────────────────────────────────────────────────────
@@ -1284,6 +1309,44 @@ document.getElementById('snap_root').addEventListener('click', () => {
   document.getElementById('q_num').value = q_slider.toFixed(3);
   rebuild();
 });
+
+// CP1 chart [1:z] → brane point via stereographic projection from north pole
+// [1:z] with z=a+bi: p = SPHERE_R · (2a, 2b, r²−1) / (1+r²)
+function cp1ZtoP() {
+  const a  = parseFloat(document.getElementById('cp1_re').value) || 0;
+  const b  = parseFloat(document.getElementById('cp1_im').value) || 0;
+  const r2 = a*a + b*b;
+  const d  = 1 + r2;
+  const xn = SPHERE_R * 2*a / d;
+  const yn = SPHERE_R * 2*b / d;
+  const zn = SPHERE_R * (r2 - 1) / d;
+  document.getElementById('x_p').value = xn.toFixed(3);
+  document.getElementById('y_p').value = yn.toFixed(3);
+  document.getElementById('z_p').value = zn.toFixed(3);
+  document.getElementById('v_xp').textContent = xn.toFixed(2);
+  document.getElementById('v_yp').textContent = yn.toFixed(2);
+  document.getElementById('v_zp').textContent = zn.toFixed(2);
+  // Display z in CP1 notation
+  const bSign = b >= 0 ? '+' : '−';
+  document.getElementById('cp1_z_display').textContent =
+    `[1 : ${a.toFixed(2)} ${bSign} ${Math.abs(b).toFixed(2)}i]`;
+  selPt.set(xn, yn, zn);
+  rebuild();
+}
+// Also update z display when sliders move (inverse stereographic)
+function updateCP1ZDisplay() {
+  const x = selPt.x / SPHERE_R, y = selPt.y / SPHERE_R, z = selPt.z / SPHERE_R;
+  if (z >= 0.9999) { document.getElementById('cp1_z_display').textContent = '[1:∞] (N pole)'; return; }
+  const denom = 1 - z;
+  const a = x / denom, b = y / denom;
+  const bSign = b >= 0 ? '+' : '−';
+  document.getElementById('cp1_z_display').textContent =
+    `[1 : ${a.toFixed(2)} ${bSign} ${Math.abs(b).toFixed(2)}i]`;
+}
+document.getElementById('cp1_go').addEventListener('click', cp1ZtoP);
+['cp1_re','cp1_im'].forEach(id =>
+  document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') cp1ZtoP(); })
+);
 
 // Spacebar: toggle auto-rotate
 window.addEventListener('keydown', e => {
@@ -1512,7 +1575,6 @@ document.getElementById('tube_opacity').addEventListener('input', () => {
 
 // ── Blowup toggle ─────────────────────────────────────────────────────
 document.getElementById('cb_blowup').addEventListener('change', () => {
-  if (!document.getElementById('cb_cp1').checked) return;
   buildTubes(); buildAxisTubes();
 });
 document.getElementById('cb_primes').addEventListener('change', () => {
