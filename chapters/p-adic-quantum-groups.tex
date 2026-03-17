@@ -1,4 +1,4 @@
-\chapter{\texorpdfstring{$\pp$}{p}-Adic Quantum Groups and Category Theory}
+\chapter{\texorpdfstring{$\pp$}{p}-Adic Quantum Observable Universe}
 \label{chap:p-adic}
 
 % ── Categorical reformulation ───────────────────────────────────────────────
@@ -61,31 +61,68 @@
 \section{\texorpdfstring{$\mathbb{C}_\pp$}{C\_p} Quantum Universe}
 \label{sec:cp-que}
 
+\begin{example}[$\mathbb{Q}_\pp$ realisation]
+\label{ex:p-adic-realisation}
+Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
+$F$-isocrystals over~$\mathbb{Q}_\pp$ (modules over the Dieudonn\'e ring
+$\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
+over~$\mathbb{Q}_\pp$).
+This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
+The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
+to~$\mathbb{Q}_\pp$ provides a Frobenius--Hopf object~$A$, where the
+Frobenius form~$\lambda$ arises from the $\pp$-adic Haar measure.
+The Frobenius endomorphism~$\varphi$ on $\mathcal{C}$ plays the
+r\^ole of the Levi-form contraction: the substrate parameter is
+$q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
+Definition~\ref{def:substrate-parameter}).  The fibre functor~$\omega$
+is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
+The observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
+irreducibility of the associated $F$-crystal, generalising
+Lemma~\ref{lem:irreducible-connection} to the $\pp$-adic setting.
+
+\medskip\noindent\emph{Key structures.}
 \begin{itemize}
-  \item Define the $\mathbb{C}_\pp$-QUE analogue of the $\mathbb{C}$ quantum
-        observable universe (Example~\ref{def:c-quantum-observable-universe}).
-  \item Provide analogues of key structures:
-    \begin{itemize}
-      \item Involution $\longrightarrow$ Frobenius endomorphism.
-            In the $\mathbb{C}$ setting, the classical Frobenius integrability
-            theorem constrains $q$-torsion leaves to be Legendrian
-            (Remark~\ref{rem:q-torsion-existence}).  Over~$\mathbb{C}_\pp$,
-            this is replaced by compatibility of the connection with the
-            Frobenius lift: a $\pp$-adic instanton connection is
-            ``integrable'' if and only if the associated $F$-crystal is
-            unit-root.  The base-field-independent
-            Definitions~\ref{def:quantum-universe}
-            and~\ref{def:quantum-observable-universe} provide the categorical
-            framework via Tannakian reconstruction.
-      \item Crystal cohomology as the appropriate cohomology theory.
-      \item Finiteness of the path integral in the $\pp$-adic setting.
-    \end{itemize}
+  \item The classical Frobenius integrability theorem constrains
+        $q$-torsion leaves to be Legendrian
+        (Remark~\ref{rem:q-torsion-existence}).  Over~$\mathbb{Q}_\pp$,
+        this is replaced by compatibility of the connection with the
+        Frobenius lift: a $\pp$-adic instanton connection is
+        ``integrable'' if and only if the associated $F$-crystal is
+        unit-root.
+  \item Crystal cohomology (de Rham--Witt complex) plays the r\^ole of
+        de Rham cohomology.
+  \item The base-field-independent
+        Definitions~\ref{def:quantum-universe}
+        and~\ref{def:quantum-observable-universe} provide the categorical
+        framework via Tannakian reconstruction.
 \end{itemize}
+\end{example}
 
 % ── Finite fields and representations ───────────────────────────────────────
 
 \section{Quotient to Finite Fields}
 \label{sec:finite-fields}
+
+\begin{example}[$\mathbb{F}_\pp$ realisation]
+\label{ex:finite-field-realisation}
+Let $k = \mathbb{F}_\pp$ and let $\mathcal{C} =
+\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
+finite-dimensional representations of the quantum group
+$\mathrm{SU}_q(2)$ over~$\mathbb{F}_\pp$, where $q \in
+\mathbb{F}_\pp^{\times}$.  More generally, when $q$ is a primitive
+$\ell$-th root of unity in $\overline{\mathbb{F}}_\pp$ (with $\ell$
+coprime to~$\pp$), $\mathcal{C}$ extends to a fusion category over the
+extension field $\mathbb{F}_\pp(q)$ with finitely many simple objects.
+The Frobenius--Hopf object~$A$ is the regular representation, and
+the fibre functor~$\omega$ is the forgetful functor to
+$\mathrm{Vect}_{\mathbb{F}_\pp}$.  The non-degeneracy of the
+Frobenius form~$\lambda$ follows from the semisimplicity of the fusion
+category, and the observability condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$
+(since the trivial representation does not appear as a summand of the
+adjoint representation for generic~$q$).
+\end{example}
 
 \begin{itemize}
   \item Quotienting from $\mathbb{Q}_\pp$ to work over $\mathbb{F}_\pp$:
