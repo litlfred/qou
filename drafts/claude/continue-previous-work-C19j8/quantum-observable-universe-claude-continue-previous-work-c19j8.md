@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-16
+date: 2026-03-17
 title: Quantum Observable Universe
 ---
 
@@ -497,9 +497,37 @@ J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
 
 </div>
 
+<div id="def:exceptional-divisor" class="definition">
+
+**Definition 3.12** (Exceptional divisor at $p$). *Let $(M, G, E)$ be a Descartes universe and let $p \in M$ be a brane point with outward normal $N(p) = p/\lvert p\rvert$ and positively-oriented tangent frame $(T_1, T_2)$. Set $R = R_{\mathbb{CP}^1}$ and $$O(p) \;=\; p + R\,N(p).$$ The *exceptional divisor* at $p$ is the $\mathbb{CP}^1$ fibre $$E_p \;=\; \pi^{-1}(p)
+  \;=\;
+  \bigl\{\,
+    O(p) + R\bigl(\sin\phi\,(\cos\psi\,T_1 + \sin\psi\,T_2) - \cos\phi\,N\bigr)
+    \;:\;
+    \phi \in [0,\pi],\; \psi \in [0,2\pi)
+  \,\bigr\},$$ where $\pi\colon \widetilde{M} \to M$ is the blow-up map that replaces $p$ with $E_p \cong \mathbb{CP}^1$.*
+
+</div>
+
+<div id="def:chiral-sector-coords" class="definition">
+
+**Definition 3.13** (Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$). *With notation as in Definition <a href="#def:exceptional-divisor" data-reference-type="ref" data-reference="def:exceptional-divisor">3.12</a>, fix the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.9</a>) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. Define the *red*, *green*, and *blue* sector embeddings by $$\begin{aligned}
+  \mathfrak{r}(\phi,\psi)
+  &\;=\; O + R\bigl(\sin\phi\,\bigl(\cos(\psi + q\phi)\,T_1
+         + \sin(\psi + q\phi)\,T_2\bigr) - \cos\phi\,N\bigr),\\
+  \mathfrak{g}(\phi,\psi)
+  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{2\pi}{3}\bigr),\\
+  \mathfrak{b}(\phi,\psi)
+  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{4\pi}{3}\bigr).
+\end{aligned}$$ The *chiral twist* $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$), encoding the chirality of the substrate parameter.*
+
+*The three sectors tile the exceptional divisor exactly: $$E_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),$$ where adjacent sectors share only their boundary meridians (at $\psi = 0$ and $\psi = 2\pi/3$ in each sector’s local coordinate), and the union covers $E_p$ without overlap. The three sectors correspond to the three copies of $S_3 \subset S_5$ in Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">3.10</a>: $\mathfrak{r}$ is the first, $\mathfrak{g}$ the second, and $\mathfrak{b}$ the third.*
+
+</div>
+
 <div id="thm:descartes" class="theorem">
 
-**Theorem 3.12** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum observable universes satisfying the Descartes condition $\chi(E) = -6$, with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s curve $\Sigma_4$ (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">3.11</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, E)$ in $\mathcal{C}_{-6}$, there exists a unique morphism $(M, G, E) \to (\Sigma_4, G, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.*
+**Theorem 3.14** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum observable universes satisfying the Descartes condition $\chi(E) = -6$, with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s curve $\Sigma_4$ (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">3.11</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, E)$ in $\mathcal{C}_{-6}$, there exists a unique morphism $(M, G, E) \to (\Sigma_4, G, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.*
 
 </div>
 
@@ -511,7 +539,7 @@ J^1E @>{\text{Variational Derivative } \mathbf{E}}>>
 
 <div id="rem:universality-general" class="remark">
 
-**Remark 3.13** (Universality for a given Euler characteristic). *The Descartes theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">3.12</a>) is expected to be a special case of a more general result: for any admissible Euler characteristic $\chi$, the category $\mathcal{C}_{\chi}$ of $\mathbb{C}$ quantum observable universes with $\chi(E) = \chi$ should admit a terminal object determined by the unique maximally symmetric Riemann surface of the corresponding genus. The Descartes case $\chi = -6$ (genus $4$) is distinguished by Bring’s curve, but analogous universal objects are expected at other values of $\chi$.*
+**Remark 3.15** (Universality for a given Euler characteristic). *The Descartes theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">3.14</a>) is expected to be a special case of a more general result: for any admissible Euler characteristic $\chi$, the category $\mathcal{C}_{\chi}$ of $\mathbb{C}$ quantum observable universes with $\chi(E) = \chi$ should admit a terminal object determined by the unique maximally symmetric Riemann surface of the corresponding genus. The Descartes case $\chi = -6$ (genus $4$) is distinguished by Bring’s curve, but analogous universal objects are expected at other values of $\chi$.*
 
 </div>
 
