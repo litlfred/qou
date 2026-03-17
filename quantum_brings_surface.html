@@ -198,6 +198,35 @@ input[type=range]::-webkit-slider-thumb {
   <div style="font-size:8px;color:var(--dim);margin:1px 0 6px;text-align:right;
               letter-spacing:.08em;">q_eff = cos(2π/n) = Re(ζₙ)</div>
 
+  <div class="sec">── Weierstrass / j-invariant ────────────</div>
+  <div class="row">
+    <span class="lbl">j preset</span>
+    <select id="j_preset"
+      style="width:100%;background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:2px 4px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:9px;outline:none;">
+      <option value="">— select —</option>
+      <option value="golden">φ-spiral  (r=φ, N≈81)</option>
+      <option value="hexagonal">Hexagonal  (j≈0, P≈0)</option>
+      <option value="square">Square  (j≈1728)</option>
+      <option value="custom">Custom j…</option>
+    </select>
+  </div>
+  <div class="row" id="j_custom_row" style="display:none">
+    <span class="lbl">j value</span>
+    <input type="number" id="j_target" value="1728"
+      style="width:100%;background:rgba(20,30,60,0.8);border:1px solid rgba(60,120,255,0.22);
+             color:var(--accent);padding:2px 5px;border-radius:2px;
+             font-family:'Share Tech Mono',monospace;font-size:10px;outline:none;">
+    <button id="j_snap"
+      style="background:rgba(58,144,255,0.14);border:1px solid rgba(58,144,255,0.30);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:2px;
+             padding:2px 5px;white-space:nowrap;font-family:'Share Tech Mono',monospace;">
+      snap</button>
+  </div>
+  <div style="font-size:8px;color:var(--dim);margin:1px 0 6px;text-align:right;
+              letter-spacing:.08em;">current j = <span id="j_display">—</span></div>
+
   <div id="cone_nrange">
   <div class="sec">── Tube segment (× ℓ_P) ───────────────────</div>
   <div class="row">
@@ -257,6 +286,8 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_click"  checked> Click→p</label>
     <label class="ck"><input type="checkbox" id="cb_cp1" checked> CP1 fibre</label>
     <label class="ck"><input type="checkbox" id="cb_axispts"> ±Axis pts</label>
+    <label class="ck"><input type="checkbox" id="cb_blowup"> Blowup E_p</label>
+    <label class="ck"><input type="checkbox" id="cb_primes"> Primes</label>
   </div>
   <div class="sec">── Panels ──────────────────────────────</div>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:3px;">
@@ -266,6 +297,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_chrl"> Chiral</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_wstr"> Wstrss</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_afin"> Affine z</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_vizjson"> View JSON</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -313,19 +345,34 @@ input[type=range]::-webkit-slider-thumb {
 
 <!-- FORMULA -->
 <div class="panel" id="formula">
-  <div class="panel-title">Chiral Tube Parameterisation  ·  Def 3.21<button class="panel-close" onclick="togglePanel('formula')">×</button></div>
-  <span class="fm">Brane M ≅ S³  (brown sphere)</span><br>
-  <span class="fm">p ∈ M,  N = p/|p|,  frame (T₁, T₂)</span><br>
-  <span class="fd">c(s) = p + s·ℓ_P·N          [centre line]</span><br>
-  <span class="fd">ρ(s) = s·ℓ_P·σ·Ξ_q(s)      [cone radius]</span><br>
-  <span class="ft">ψᵢ(s) = 2πi/3 + q·2πs_N·Q(s)·γ  [spiral]</span><br>
-  <span class="fdm">v(s,θ) = c(s) + ρ(s)·(cos(θ+ψᵢ)·T₁ + sin(θ+ψᵢ)·T₂)</span><br>
-  <span style="color:var(--dim)">Q(s) = 2·(expq(s·ℓ_P)−1)  [Weierstrass Q]</span><br>
-  <span style="color:var(--dim)">Ξ_q(s) = 1 + 0.3·q·cosq(ψᵢ(s))</span><br>
-  <span class="fr">■ i=0 Red</span>&nbsp;
-  <span class="fg">■ i=1 Green</span>&nbsp;
-  <span class="fb">■ i=2 Blue</span>&nbsp;← colour charges<br>
+  <div class="panel-title">Chiral Sector Coordinates  ·  Def 3.21<button class="panel-close" onclick="togglePanel('formula')">×</button></div>
+  <span class="fm">E_p = π⁻¹(p)  [exceptional divisor at p]</span><br>
+  <span class="fm">O = p + R·N,  R = R<sub>CP1</sub> = |S³|/5</span><br>
+  <span class="fr">𝔯(φ,ψ) = O + R·(sinφ·(cos(ψ+qφ)·T₁ + sin(ψ+qφ)·T₂) − cosφ·N)</span><br>
+  <span class="fg">𝔤(φ,ψ) = 𝔯 with ψ → ψ + 2π/3</span><br>
+  <span class="fb">𝔟(φ,ψ) = 𝔯 with ψ → ψ + 4π/3</span><br>
+  <span style="color:var(--dim)">ψ ∈ [0, 2π/3],  φ ∈ [0,π],  q-twist: qφ</span><br>
+  <span style="color:var(--dim)">E_p = 𝔯 ∪ 𝔤 ∪ 𝔟  (strict tiling, shared boundaries only)</span><br>
+  <span class="fd">cone: c(s)=p+sℓ_P·N,  ρ(s)=sℓ_P·σ·Ξ_q,  ψᵢ(s)=2πi/3+q·2πs·Q·γ</span><br>
   <span style="color:var(--dim)">[n]_q=(1−qⁿ)/(1−q)  ·  ℏ_q=1−q</span>
+</div>
+
+<!-- VIEWPORT JSON EXPORT -->
+<div class="panel" id="vizjson" style="bottom:14px; left:340px; width:330px; display:none;">
+  <div class="panel-title">Viewport JSON  ·  viz schema<button class="panel-close" onclick="togglePanel('vizjson')">×</button></div>
+  <textarea id="vizjson-text" readonly
+    style="width:100%;height:188px;background:rgba(0,0,20,0.7);border:1px solid rgba(58,144,255,0.18);
+           border-radius:2px;color:var(--accent3);font-family:'Share Tech Mono',monospace;
+           font-size:9px;line-height:1.55;padding:5px;resize:none;outline:none;"></textarea>
+  <div style="display:flex;gap:6px;margin-top:5px;align-items:center;">
+    <button id="vizjson-copy"
+      style="flex:1;background:rgba(58,144,255,0.14);border:1px solid rgba(58,144,255,0.30);
+             color:var(--accent);font-size:9px;cursor:pointer;border-radius:2px;
+             padding:3px 6px;font-family:'Share Tech Mono',monospace;">
+      ⊕ Copy JSON</button>
+    <span style="font-size:8px;color:var(--dim);flex:2;text-align:right;">
+      $schema: litlfred.github.io/qou/schema/viz.json</span>
+  </div>
 </div>
 
 <!-- CHIRAL COORDINATES (2×2 grid, one cell per colour + composite) -->
@@ -562,6 +609,7 @@ function applyCam() {
     orb.target.y + orb.r * Math.cos(orb.ph),
     orb.target.z + orb.r * Math.sin(orb.ph) * Math.cos(orb.th)
   );
+  updateVizJSON();
   camera.lookAt(orb.target.x, orb.target.y, orb.target.z);
 }
 applyCam();
@@ -765,6 +813,34 @@ function buildCP1Ghost(P, N, R_CP1) {
   scene.add(cp1GhostMesh);
 }
 
+// ── Exceptional divisor E_p = π⁻¹(p) ≅ ℂP¹ (solid surface, blowup mode) ──
+// Replaces the point p with the full ℂP¹ sphere; coloured tile sectors
+// (𝔯, 𝔤, 𝔟) are rendered on top (renderOrder=2).
+let exceptDivMesh = null;
+
+function buildExceptionalDiv(P, N, R_CP1) {
+  if (exceptDivMesh) { scene.remove(exceptDivMesh); exceptDivMesh = null; }
+  if (!document.getElementById('cb_blowup').checked) return;
+  const geo = new THREE.SphereGeometry(R_CP1 * 0.998, 48, 32);
+  const mat = new THREE.MeshPhongMaterial({
+    color:       0xc0c8ff,
+    emissive:    0x080818,
+    transparent: true,
+    opacity:     0.42,
+    side:        THREE.DoubleSide,
+    shininess:   12,
+    depthWrite:  false,
+  });
+  exceptDivMesh = new THREE.Mesh(geo, mat);
+  exceptDivMesh.position.set(
+    P.x + N.x * R_CP1,
+    P.y + N.y * R_CP1,
+    P.z + N.z * R_CP1
+  );
+  exceptDivMesh.renderOrder = 1;
+  scene.add(exceptDivMesh);
+}
+
 // ── CP1 fibre band: one coloured sector covering 1/3 of the CP1 sphere ─
 // The CP1 sphere (radius R_CP1) is tangent to the brane at p (south pole).
 // Center O = p + N·R_CP1.  Parameterisation:
@@ -864,7 +940,9 @@ function buildTubes() {
     scene.remove(m);
   }
   activeTubes = [];
-  if (cp1GhostMesh) { scene.remove(cp1GhostMesh); cp1GhostMesh = null; }
+  if (cp1GhostMesh)  { scene.remove(cp1GhostMesh);  cp1GhostMesh  = null; }
+  if (exceptDivMesh) { scene.remove(exceptDivMesh); exceptDivMesh = null; }
+  for (const m of activePrimeGhosts) scene.remove(m); activePrimeGhosts = [];
 
   if (!document.getElementById('cb_tubes').checked) return;
 
@@ -883,7 +961,11 @@ function buildTubes() {
 
   if (cp1Mode) {
     // ── CP1 fibre view: three Planck-gridded bands on the CP1 sphere ──
-    buildCP1Ghost(selPt, N_vec, SPHERE_R * 0.2);
+    // Sectors 𝔯 (i=0), 𝔤 (i=1), 𝔟 (i=2) tile E_p exactly (strict, shared boundaries)
+    const R_CP1 = SPHERE_R * 0.2;
+    buildCP1Ghost(selPt, N_vec, R_CP1);
+    buildExceptionalDiv(selPt, N_vec, R_CP1);
+    buildPrimeGhosts(selPt, N_vec, T1, T2);
     for (let ti = 0; ti < 3; ti++) {
       const geo = buildTubeGeoCP1(ti, selPt, N_vec, T1, T2, q);
       const mat = new THREE.MeshPhongMaterial({
@@ -892,6 +974,7 @@ function buildTubes() {
         transparent: tubeTransparent, opacity: tubeOpacity,
       });
       const mesh = new THREE.Mesh(geo, mat);
+      mesh.renderOrder = 2;  // render 𝔯/𝔤/𝔟 on top of exceptional divisor
       scene.add(mesh);
       activeTubes.push(mesh);
     }
@@ -985,6 +1068,7 @@ function rebuild() {
   buildAxisTubes();
   updateStats();
   updateChiralPanels();
+  updateVizJSON();
 }
 
 // ── Stats panel ──────────────────────────────────────────────────────
@@ -1322,6 +1406,7 @@ document.getElementById('btn_theme').addEventListener('click', () => {
 const PANEL_CB = {
   stats: 'cb_pnl_stats', info: 'cb_pnl_info', formula: 'cb_pnl_fmla',
   chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
+  vizjson: 'cb_pnl_vizjson',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1329,17 +1414,19 @@ function togglePanel(id, forceShow) {
   const show = (forceShow !== undefined) ? forceShow : (el.style.display === 'none');
   el.style.display = show ? '' : 'none';
   if (cb) cb.checked = show;
+  if (id === 'vizjson' && show) updateVizJSON();
 }
 // Wire panel checkboxes
 Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
   document.getElementById(cbId).addEventListener('change', e => {
     document.getElementById(panelId).style.display = e.target.checked ? '' : 'none';
+    if (panelId === 'vizjson' && e.target.checked) updateVizJSON();
   });
 });
 
 // ── Hide / show all info panels ───────────────────────────────────────
 let infoPanelsHidden = true;  // start hidden
-const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula'];
+const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson'];
 function applyHide() {
   const show = !infoPanelsHidden;
   INFO_PANEL_IDS.forEach(id => togglePanel(id, show));
@@ -1404,6 +1491,176 @@ document.getElementById('tube_opacity').addEventListener('input', () => {
     m.material.opacity = m.userData.isAxisTube ? op * 0.70 : op;
     m.material.needsUpdate = true;
   });
+});
+
+// ── Blowup toggle ─────────────────────────────────────────────────────
+document.getElementById('cb_blowup').addEventListener('change', () => {
+  if (!document.getElementById('cb_cp1').checked) return;
+  buildTubes(); buildAxisTubes();
+});
+document.getElementById('cb_primes').addEventListener('change', () => {
+  buildTubes(); buildAxisTubes();
+});
+
+// ── j-invariant / Weierstrass presets ────────────────────────────────
+function computeJForN(N_max) {
+  const r    = N_max * LP;
+  const q_s  = Math.exp(-r);
+  const cq_r = cosQ(r, q_s, QN);
+  const ev_r = Math.min(MAX_G, expQ(r, q_s, QN) - 1);
+  const P    = -3.0 * Math.max(0.05, cq_r);
+  const Q    =  2.0 * Math.max(0.05, ev_r);
+  const disc = -16 * (4*P*P*P + 27*Q*Q);
+  if (Math.abs(disc) < 1e-12) return Infinity;
+  return -1728 * Math.pow(4*P, 3) / disc;
+}
+
+function snapNmaxToJ(j_target) {
+  let best = 4, bestDist = Infinity;
+  for (let n = 2; n <= 200; n++) {
+    const j = computeJForN(n);
+    if (!isFinite(j)) continue;
+    const d = Math.abs(j - j_target);
+    if (d < bestDist) { bestDist = d; best = n; }
+  }
+  return best;
+}
+
+function applyNmax(N_new) {
+  N_new = Math.max(2, Math.min(200, N_new));
+  document.getElementById('n_max').value = N_new;
+  document.getElementById('v_nmax').textContent = N_new;
+  autoSigma();
+}
+
+document.getElementById('j_preset').addEventListener('change', () => {
+  const val = document.getElementById('j_preset').value;
+  const customRow = document.getElementById('j_custom_row');
+  customRow.style.display = (val === 'custom') ? '' : 'none';
+  if (!val || val === 'custom') return;
+  if (val === 'golden') {
+    // r_end = φ (golden ratio): N_max = round(φ / LP)
+    applyNmax(Math.round((1 + Math.sqrt(5)) / 2 / LP));
+  } else if (val === 'hexagonal') {
+    applyNmax(snapNmaxToJ(0));       // j ≈ 0: P ≈ 0
+  } else if (val === 'square') {
+    applyNmax(snapNmaxToJ(1728));    // j ≈ 1728
+  }
+  document.getElementById('j_preset').value = '';  // reset after applying
+});
+
+document.getElementById('j_snap').addEventListener('click', () => {
+  const j_t = parseFloat(document.getElementById('j_target').value);
+  if (!isNaN(j_t)) applyNmax(snapNmaxToJ(j_t));
+});
+
+// ── Prime ghost spheres on E_p at stereographic positions of [1:p] ───
+// Each prime p maps to the stereographic preimage of z=p on CP1 ≅ S²:
+//   φ_p = 2·arctan(1/p)  (from north pole),  ψ_p = 0  (on 0-meridian)
+// This places small primes near the equator and large primes near
+// the north pole (z → ∞), reflecting the distribution on the real line.
+const PRIMES = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67];
+let activePrimeGhosts = [];
+
+function buildPrimeGhosts(P_brane, N_vec, T1, T2) {
+  for (const m of activePrimeGhosts) scene.remove(m);
+  activePrimeGhosts = [];
+  if (!document.getElementById('cb_primes').checked) return;
+  if (!document.getElementById('cb_cp1').checked) return;
+
+  const R_CP1 = SPHERE_R * 0.2;
+  const Ox = P_brane.x + N_vec.x * R_CP1;
+  const Oy = P_brane.y + N_vec.y * R_CP1;
+  const Oz = P_brane.z + N_vec.z * R_CP1;
+
+  const q = getQ();
+
+  for (const p of PRIMES) {
+    // Stereographic position of z = p on S² (CP1)
+    const phi_p = 2 * Math.atan(1 / p);         // colatitude from north pole
+    const t     = phi_p / Math.PI;               // 0..1
+    const psi_p = t * q * TAU;                   // apply chiral twist (same as tiling)
+    const sinPhi = Math.sin(phi_p);
+    const cosPhi = Math.cos(phi_p);
+    const cosPsi = Math.cos(psi_p);
+    const sinPsi = Math.sin(psi_p);
+
+    const px = Ox + R_CP1 * (sinPhi * (T1.x*cosPsi + T2.x*sinPsi) - cosPhi*N_vec.x);
+    const py = Oy + R_CP1 * (sinPhi * (T1.y*cosPsi + T2.y*sinPsi) - cosPhi*N_vec.y);
+    const pz = Oz + R_CP1 * (sinPhi * (T1.z*cosPsi + T2.z*sinPsi) - cosPhi*N_vec.z);
+
+    const geo = new THREE.SphereGeometry(R_CP1 * 0.065, 10, 8);
+    const mat = new THREE.MeshBasicMaterial({
+      color: 0xffcc44, transparent: true, opacity: 0.85,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(px, py, pz);
+    mesh.renderOrder = 3;  // above tiles and exceptional divisor
+    scene.add(mesh);
+    activePrimeGhosts.push(mesh);
+  }
+}
+
+// ── Viewport JSON export ──────────────────────────────────────────────
+function getViewportJSON() {
+  const q = getQ();
+  const cp1Mode = document.getElementById('cb_cp1').checked;
+  const xv = parseFloat(document.getElementById('x_p').value);
+  const yv = parseFloat(document.getElementById('y_p').value);
+  const zv = parseFloat(document.getElementById('z_p').value);
+  return {
+    "$schema": "https://litlfred.github.io/qou/schema/viz.json",
+    "q":      +q.toFixed(4),
+    "mode":   cp1Mode ? "CP1" : "cone",
+    "blowup": document.getElementById('cb_blowup').checked,
+    "brane_point": {
+      "x": +xv.toFixed(4), "y": +yv.toFixed(4), "z": +zv.toFixed(4)
+    },
+    "camera": {
+      "theta":  +orb.th.toFixed(5),
+      "phi":    +orb.ph.toFixed(5),
+      "r":      +orb.r.toFixed(4),
+      "target": {
+        "x": +orb.target.x.toFixed(4),
+        "y": +orb.target.y.toFixed(4),
+        "z": +orb.target.z.toFixed(4)
+      }
+    },
+    "tubes": {
+      "visible": document.getElementById('cb_tubes').checked,
+      "opacity": +parseFloat(document.getElementById('tube_opacity').value).toFixed(3)
+    },
+    "cone": {
+      "N_min":  parseInt(document.getElementById('n_min').value),
+      "N_max":  parseInt(document.getElementById('n_max').value),
+      "sigma":  +parseFloat(document.getElementById('sigma').value).toFixed(5),
+      "gamma":  +parseFloat(document.getElementById('pitch').value).toFixed(4)
+    },
+    "visibility": {
+      "brane":   document.getElementById('cb_brane').checked,
+      "axes":    document.getElementById('cb_axes').checked,
+      "stars":   document.getElementById('cb_stars').checked,
+      "axispts": document.getElementById('cb_axispts').checked
+    }
+  };
+}
+
+function updateVizJSON() {
+  const panel = document.getElementById('vizjson');
+  if (!panel || panel.style.display === 'none') return;
+  document.getElementById('vizjson-text').value =
+    JSON.stringify(getViewportJSON(), null, 2);
+}
+
+document.getElementById('vizjson-copy').addEventListener('click', () => {
+  const txt = document.getElementById('vizjson-text').value;
+  navigator.clipboard.writeText(txt).catch(() => {
+    // fallback: select all
+    const el = document.getElementById('vizjson-text');
+    el.select(); document.execCommand('copy');
+  });
+  const btn = document.getElementById('vizjson-copy');
+  btn.textContent = '✓ Copied'; setTimeout(() => { btn.textContent = '⊕ Copy JSON'; }, 1800);
 });
 
 // ── CP1 mode toggle: show/hide cone-only controls ────────────────────
@@ -1865,6 +2122,12 @@ function drawAffine(state) {
 // ── Redraw both info panels ──────────────────────────────────────────
 function updateChiralPanels() {
   const state = getChiralState();
+  // Update j-display
+  const jEl = document.getElementById('j_display');
+  if (jEl) {
+    const j = state.j_inv;
+    jEl.textContent = isFinite(j) ? j.toFixed(1) : '∞';
+  }
   const { P, Q, pts, composite } = state;
   const CELL_IDS = ['cc_r', 'cc_g', 'cc_b'];
 
