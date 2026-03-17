@@ -316,7 +316,6 @@ code { font-size: 90%; }
         <a class="toc-ch" href="#chap:qou">Quantum Observable Universe</a>
         <a class="toc-sec" href="#sec:preview-lifting">Preview: Lifting and Descent</a>
         <a class="toc-ch" href="#chap:elaboration">Elaboration: Categorical and Analytic Foundations</a>
-        <a class="toc-sec" href="#sec:qou-critique">Critique summary</a>
         <a class="toc-ch" href="#chap:path-integrals-braiding">Path Integrals and Braiding</a>
         <a class="toc-sec" href="#sec:braid-symmetric">Braid group and symmetric group</a>
         <a class="toc-sec" href="#mathrmsu">mathrmSU</a>
@@ -372,7 +371,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/fix-substrate-parameters-I22Ta">&#x1F33F; claude/fix-substrate-parameters-I22Ta</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/f5f7cae9317a25d007f576531a1e1a26f07319aa">&#x1F4DD; f5f7cae</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/7e9cbb6ba7b4a7def16019a33e5eae4dded28f31">&#x1F4DD; 7e9cbb6</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/63">PR #63</a>
 </div>
 
@@ -2254,115 +2253,6 @@ appropriate <span class="math inline">\(k\)</span>-linear category of
 sections.</em></p>
 </div>
 
-<h2 id="critique-summary"><span id="sec:qou-critique"></span>Critique summary</h2>
-<p>This chapter contains 50 labelled items (18 definitions, 8 examples,
-4 propositions/lemmas, 20 remarks). Each item was rated on a three-point
-scale: <strong>Good</strong> (rigorous and self-contained),
-<strong>Fair</strong> (essentially correct but with a gap or ambiguity),
-or <strong>Poor</strong> (material error or unjustified claim
-undermining the argument). Of these 50 items, 45 are
-rated <strong>Good</strong>, 5 are rated <strong>Fair</strong>, and
-0 are rated <strong>Poor</strong>. Only the Fair and Poor items are
-listed below.</p>
-<div class="small">
-
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;"><strong>Item</strong></th>
-<th style="text-align: left;"><strong>Rating</strong></th>
-<th style="text-align: left;"><strong>Concern</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Rem.<code>rem:jet-bundle</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The claim that <span
-class="math inline">\(\Gamma_c(M, J^1E)\)</span> injects into the space
-of connections on <span class="math inline">\(P\)</span> is stated
-without proof or literature reference. Minor concern: the injection is
-plausible by standard jet-bundle theory but should be justified.</td>
-</tr>
-<tr class="even">
-<td
-style="text-align: left;">Rem.<code>rem:heisenberg-commutator</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The <span
-class="math inline">\(q\)</span>-deformed commutator <span
-class="math inline">\([\hat{X}, \hat{P}]_q := J\,\hbar_q(p)\)</span> is
-<em>postulated</em> rather than derived from the preceding definitions.
-A derivation from the <span class="math inline">\(q\)</span>-deformed
-Lie bracket
-(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.22</a>)
-acting on canonically conjugate observables would strengthen the claim.
-Additionally, the remark is long; splitting into a definition and a
-separate remark would improve readability.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rem.<code>rem:j1e-local-states</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The remark is too brief (three sentences)
-to serve its role of connecting the jet bundle to the quantum field
-algebra. The phrase “weighted by <span class="math inline">\(q\)</span>”
-is vague and should be made precise, e.g. by specifying which <span
-class="math inline">\(q\)</span>-dependent structure on <span
-class="math inline">\(J^1 E\)</span> is intended.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Rem.<code>rem:reeb-physical</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The spin–statistics claim (fermions carry
-half-integer spin, bosons integer spin) is an interpretation of the Reeb
-decomposition
-(Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>)
-that lacks a proof or external reference. A derivation — or at minimum a
-precise statement of the correspondence between Reeb-vertical degree and
-spin quantum number — is needed.</td>
-</tr>
-<tr class="odd">
-<td
-style="text-align: left;">Rem.<code>rem:q-harmonic-physical</code></td>
-<td style="text-align: left;">Fair</td>
-<td style="text-align: left;">The claim that the <span
-class="math inline">\(q\)</span>-Laplacian <span
-class="math inline">\(\Delta_q\)</span> reduces to the Hodge Laplacian
-as <span class="math inline">\(q \to 1\)</span> is plausible from
-Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.21</a>
-(since <span class="math inline">\(d_q \to d\)</span> and <span
-class="math inline">\(\delta_q \to \delta\)</span>) but has not been
-proved. A short argument or explicit reference would close this
-gap.</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<p><strong>Open concerns.</strong></p>
-<ol type="1">
-<li><p><strong>Remark <span class="upright">rem:jet-bundle</span>
-(<a class="defn-link" href="#rem:jet-bundle">Jet-bundle formulation</a>):</strong> the injection claim for <span
-class="math inline">\(\Gamma(M, J^1E)\)</span> needs a proof or
-literature reference.</p></li>
-<li><p><strong>Remark
-<span class="upright">rem:heisenberg-commutator</span> (Heisenberg
-commutator):</strong> the commutator is postulated, not derived;
-splitting the remark would aid readability.</p></li>
-<li><p><strong>Remark <span class="upright">rem:j1e-local-states</span>
-(<span class="math inline">\(J^1E\)</span> as local states):</strong>
-too brief; “weighted by <span class="math inline">\(q\)</span>” is
-vague.</p></li>
-<li><p><strong>Remark <span class="upright">rem:reeb-physical</span>
-(Reeb physical interpretation):</strong> the spin–statistics
-correspondence between <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a> components and spin quantum
-numbers needs a proof or external reference.</p></li>
-<li><p><strong>Remark
-<span class="upright">rem:q-harmonic-physical</span> (<span
-class="math inline">\(q\)</span>-harmonic physical
-interpretation):</strong> <span class="math inline">\(\Delta_q \to
-\Delta_{\text{Hodge}}\)</span> as <span class="math inline">\(q \to
-1\)</span> is plausible but unproved.</p></li>
-</ol>
 <h1 id="path-integrals-and-braiding"><span id="chap:path-integrals-braiding"></span>Path Integrals and Braiding</h1>
 <p>In the QOU framework, traditional path integrals are replaced by
 finite sums over the discrete fibre structure. Since the base space

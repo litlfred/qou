@@ -633,34 +633,6 @@ _q,\, U]_q
 
 </div>
 
-## Critique summary
-
-This chapter contains 50 labelled items (18 definitions, 8 examples, 4 propositions/lemmas, 20 remarks). Each item was rated on a three-point scale: **Good** (rigorous and self-contained), **Fair** (essentially correct but with a gap or ambiguity), or **Poor** (material error or unjustified claim undermining the argument). Of these 50 items, 45 are rated **Good**, 5 are rated **Fair**, and 0 are rated **Poor**. Only the Fair and Poor items are listed below.
-
-<div class="small">
-
-| **Item**                        | **Rating** | **Concern**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|:--------------------------------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Rem.`rem:jet-bundle`            | Fair       | The claim that $\Gamma_c(M, J^1E)$ injects into the space of connections on $P$ is stated without proof or literature reference. Minor concern: the injection is plausible by standard jet-bundle theory but should be justified.                                                                                                                                                                                                                                                             |
-| Rem.`rem:heisenberg-commutator` | Fair       | The $q$-deformed commutator $[\hat{X}, \hat{P}]_q := J\,\hbar_q(p)$ is *postulated* rather than derived from the preceding definitions. A derivation from the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.22</a>) acting on canonically conjugate observables would strengthen the claim. Additionally, the remark is long; splitting into a definition and a separate remark would improve readability. |
-| Rem.`rem:j1e-local-states`      | Fair       | The remark is too brief (three sentences) to serve its role of connecting the jet bundle to the quantum field algebra. The phrase “weighted by $q$” is vague and should be made precise, e.g. by specifying which $q$-dependent structure on $J^1 E$ is intended.                                                                                                                                                                                                                             |
-| Rem.`rem:reeb-physical`         | Fair       | The spin–statistics claim (fermions carry half-integer spin, bosons integer spin) is an interpretation of the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>) that lacks a proof or external reference. A derivation — or at minimum a precise statement of the correspondence between Reeb-vertical degree and spin quantum number — is needed.                                                 |
-| Rem.`rem:q-harmonic-physical`   | Fair       | The claim that the $q$-Laplacian $\Delta_q$ reduces to the Hodge Laplacian as $q \to 1$ is plausible from Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.21</a> (since $d_q \to d$ and $\delta_q \to \delta$) but has not been proved. A short argument or explicit reference would close this gap.                                                                                                                                       |
-
-</div>
-
-**Open concerns.**
-
-1.  **Remark <span class="upright">rem:jet-bundle</span> (Jet-bundle formulation):** the injection claim for $\Gamma(M, J^1E)$ needs a proof or literature reference.
-
-2.  **Remark <span class="upright">rem:heisenberg-commutator</span> (Heisenberg commutator):** the commutator is postulated, not derived; splitting the remark would aid readability.
-
-3.  **Remark <span class="upright">rem:j1e-local-states</span> ($J^1E$ as local states):** too brief; “weighted by $q$” is vague.
-
-4.  **Remark <span class="upright">rem:reeb-physical</span> (Reeb physical interpretation):** the spin–statistics correspondence between Reeb decomposition components and spin quantum numbers needs a proof or external reference.
-
-5.  **Remark <span class="upright">rem:q-harmonic-physical</span> ($q$-harmonic physical interpretation):** $\Delta_q \to \Delta_{\text{Hodge}}$ as $q \to 1$ is plausible but unproved.
-
 # Path Integrals and Braiding
 
 In the QOU framework, traditional path integrals are replaced by finite sums over the discrete fibre structure. Since the base space $B$ and each fibre are finite, the continuum measure $\mathcal{D}\phi$ collapses to a combinatorial sum, eliminating the need for renormalisation of divergent integrals.
