@@ -515,6 +515,11 @@ The localized topological mass contribution $\Phi_q(z_i)$ at the $i$-th exceptio
 where $ln_q(1+t) = \sum_{n=1}^\infty (-1)^{n+1} \frac{t^n}{[n]_q}$ governs the continuous Reeb flow[cite: 8]. The integration introduces the factor of $n$ in the denominator, elevating the 1-dimensional path propagation to a geometric volume measure trapping the topological charge.
 \end{corollary}
 
+% ── Julia Sets, Eigenweights, and Computational Input ────────────────────────
+
+\subsection{Julia Sets, Eigenweights, and Computational Input}
+\label{ssec:julia-eigenweights}
+
 \begin{remark}[Quantum dilogarithm integrand as $q$-deformed Böttcher potential density]
 \label{rem:qdlog-julia}
 The integrand $\ln_q(1+t)/t$ in the quantum dilogarithm formula above has the same formal
@@ -677,4 +682,94 @@ cusp marks the muon mass as a boundary point of the stable mass region, and its
 geometric inflation---captured by the residue of $\lambda_{\mathrm{SW}}^{(1)}$
 at the discriminant zero---produces $m_\mu \gg m_e$ purely from the topology of
 the descent.
+\end{remark}
+
+\begin{proposition}[Dimension-$0$ fibre datum as Julia eigenweight]
+\label{prop:julia-eigenweight}
+Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe descended to
+dimension~$0$ at a point $p$ (Remark~\ref{rem:descent-reduction-zero}), so that the
+complete data of the universe at $p$ reduces to the pair $(E_p, q(p))$.  The
+gauge-equivalence class of the fibre datum $E_p$---encoded by the substrate
+parameter $q(p) \in [1,\infty)$---is equivalent to the specification of a Julia set
+\[
+  J_{q(p)} \;\subset\; S^1_A
+\]
+on the $A$-cycle of the exceptional divisor: namely, the Julia set of the circle map
+obtained by restricting the $q(p)$-deformed Reeb flow $\phi_t^q$
+(Definition~\ref{def:q-reeb-flow}) to the equatorial $A$-cycle
+$S^1_A \subset E_c \cong S^2$ at unit time (Remark~\ref{rem:descent-to-a-plane}).
+
+Moreover, the Julia set $J_{q(p)}$ is a sufficient initial condition for the forward
+Reeb flow in the following sense.
+\begin{enumerate}
+  \item \emph{Escaping region (gaps).}  Outside the filled Julia set
+        $K_{q(p)} = \{z \in S^1_A \mid \phi_t^q(z) \not\to \infty\}$, the
+        Böttcher coordinate $\Phi_{q(p)}$
+        (Remark~\ref{rem:qdlog-julia}) conjugates $\phi_1^q$ to the degree-$d$
+        map $z \mapsto z^d$ on $S^1$, making the flow
+        explicitly and completely integrable: the forward orbit of any point in a
+        gap is determined by $J_{q(p)}$ alone.
+  \item \emph{Bounded region (Cantor dust).}  On $J_{q(p)}$ itself---the
+        Cantor dust of stable orbits---the $q$-torsion leaves
+        (Definition~\ref{def:q-torsion-leaf}) provide local integrability: each
+        torsion leaf is a $q$-curvature minimum
+        (Remark~\ref{rem:q-torsion-leaf-minimum}) and the flow restricted to it
+        is governed by the $q$-deformed Reeb dynamics.
+\end{enumerate}
+In this sense the fibre datum $E_p$ acts as an \emph{eigenweight}: it selects
+a unique Julia set on the circle, which in turn encodes the complete dynamical
+state of the observable universe at~$p$.
+
+\begin{proof}
+% TODO: proof --- the equivalence $(E_p, q(p)) \leftrightarrow J_{q(p)}$
+% follows from the injectivity of the map $q \mapsto J_q$ in the
+% degree-$d$ Böttcher family, which holds generically (the exceptional
+% set has measure zero in parameter space by standard results in
+% holomorphic dynamics).  The integrability claims follow from the
+% Böttcher conjugacy outside $K_{q(p)}$ and from
+% Remark~\ref{rem:q-torsion-leaf-minimum} on the Cantor dust.
+\end{proof}
+\end{proposition}
+
+\begin{remark}[Cantor set as computational input: knots, links, and the forward flow]
+\label{rem:cantor-knot-input}
+% TODO: Develop this remark fully.
+%
+% The Julia set $J_{q(p)} \subset S^1_A$ of Proposition~\ref{prop:julia-eigenweight}
+% has a Cantor set structure (Remark~\ref{rem:descent-to-a-plane}): fractal
+% dust alternating with open gaps.  The claim is that this structure encodes
+% the knot and link topology of the universe's particle content as it ascends
+% through the brane tower from dimension~$0$:
+%
+%   - GAPS in $J_{q(p)}$: these are the escaping intervals, where the Reeb
+%     flow is expanding.  As the universe ascends to dimension~$1$ and higher,
+%     each gap unfolds into a CROSSING EVENT in a vortex filament: a point
+%     where two strands pass over/under each other, i.e.\ a crossing in the
+%     knot diagram.  The combinatorial structure of the gaps (their nesting
+%     hierarchy) encodes the crossing number and crossing sequence of the
+%     resulting knot.
+%
+%   - CANTOR DUST of $J_{q(p)}$: these are the bounded orbits, corresponding
+%     to stable torsion leaves.  Each connected component of the dust
+%     corresponds to a stable LINK COMPONENT: a strand of the vortex filament
+%     that persists as a topologically stable excitation (particle) in the
+%     ascending universe.
+%
+% This is the COMPUTATIONAL INPUT VIEW: the Julia set $J_{q(p)}$ is the
+% initial datum from which the universe's knot/link content is read off.
+% It is not a selection of which universe we inhabit; rather, it is the
+% statement that if one knew the exact positions (i.e.\ the Julia set) of
+% all particles at one moment in time, one could determine the forward Reeb
+% flow (by Proposition~\ref{prop:julia-eigenweight}) and hence trace the
+% full evolution of the knot/link structure as the universe unfolds.
+% The non-integer Hausdorff dimension of the Cantor set provides the
+% encoding capacity: a fractal-dimensional space carries strictly more
+% information per unit measure than a smooth one, enabling the compact
+% initial datum $J_{q(p)}$ to specify the full particle content.
+%
+% NOTE: The universe never actually reaches $q \to \infty$ (Big Bang) or
+% $q \to 1$ (heat death) --- it goes into quantum torsion at the extremes
+% (Definition~\ref{def:q-torsion-leaf}, Remark~\ref{rem:q-torsion-leaf-minimum}).
+% The eigenweight picture therefore applies throughout the observable
+% trajectory, not only at a cosmological boundary.
 \end{remark}
