@@ -514,3 +514,71 @@ The localized topological mass contribution $\Phi_q(z_i)$ at the $i$-th exceptio
 \end{equation}
 where $ln_q(1+t) = \sum_{n=1}^\infty (-1)^{n+1} \frac{t^n}{[n]_q}$ governs the continuous Reeb flow[cite: 8]. The integration introduces the factor of $n$ in the denominator, elevating the 1-dimensional path propagation to a geometric volume measure trapping the topological charge.
 \end{corollary}
+
+\begin{remark}[Quantum dilogarithm integrand as $q$-deformed Böttcher potential density]
+\label{rem:qdlog-julia}
+The integrand $\ln_q(1+t)/t$ in the quantum dilogarithm formula above has the same formal
+structure as the \emph{information-flow density} that appears in the computation of
+filled Julia sets via the Böttcher escape potential.
+
+For the quadratic family $f_c(z)=z^2+c$, the external Green's function (escape potential)
+admits the convergent series
+\begin{equation}\label{eq:bottcher-series}
+  G_c(z)
+  \;=\;
+  \sum_{k=0}^{\infty}
+    \frac{1}{2^{k+1}}\,
+    \ln\!\left(1+\frac{c}{f_c^k(z)^2}\right).
+\end{equation}
+Writing $t_k = c/f_c^k(z)^2$, each summand is $\frac{1}{2^{k+1}}\ln(1+t_k)$: the
+function $\ln(1+t_k)/t_k$ (evaluated at $t_k$) is exactly the classical ($q=1$) limit
+of the quantum dilogarithm integrand.  The sum over $k$ weighted by $2^{-(k+1)}$
+accumulates the \emph{information flow} along the orbit of $f_c$, with the weight
+$2^{-k}$ reflecting the degree-$2$ expansion at each step.
+
+In the QOU framework the role of the dynamical parameter $c$ is played by the
+substrate parameter $q=q(z)$ (Definition~\ref{def:substrate-parameter}), which varies
+continuously with the spacetime coordinate $z$.  The $q$-deformed Reeb flow
+(Definition~\ref{def:q-reeb-flow}) on the exceptional divisor $E_i \cong \mathbb{CP}^1$
+takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$
+in the quantum dilogarithm integral accumulates information along that flow exactly as
+\eqref{eq:bottcher-series} accumulates it along the Julia-set orbit.  The
+$q$-deformation of the logarithm encodes the departure from classical ($q=1$)
+dynamics: as $q\to 1$ the flow trivialises and $\Phi_q(z_i)\to\mathrm{Li}_2(z_i)$,
+the classical dilogarithm; as $q\to\infty$ the quantum-number denominators $[n]_q$
+suppress high-order terms, concentrating the topological charge near the blow-up centre.
+
+In this identification the \emph{Julia set boundary} of the classical problem---the
+locus where $G_c$ transitions from zero to positive---is the analogue of the boundary
+of the exceptional divisor $\partial E_i$, where the $q$-deformed torsion charge changes
+regime (Remark~\ref{rem:reeb-exceptional-divisor}).  The substrate parameter $q(z)$
+thereby acts as a \emph{spacetime-dependent dynamical parameter}, continuously
+deforming the Julia set geometry as one moves through the QOU.
+\end{remark}
+
+\begin{remark}[Julia set on $S^1$ as photon scattering at the Big Bang]
+\label{rem:julia-s1-photon-scatter}
+The exceptional divisor $E_i\cong\mathbb{CP}^1$ contains the equatorial circle
+$S^1\subset E_i$.  The $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow})
+restricts to a degree-$2$ endomorphism $f_q\colon S^1\to S^1$, whose
+\emph{Julia set} $J(f_q)\subset S^1$ is the closure of repelling periodic
+points---the locus of non-equicontinuous dynamics on the circle.
+
+Bosons are purely horizontal $q$-harmonic forms (Definition~\ref{def:boson});
+photons are the empty-knot background flux on $E_i$.  The three regions of the
+circle map identify as:
+\begin{itemize}
+  \item \emph{Filled Julia set} $\mathcal{K}(f_q)\cap S^1$: photons trapped in
+        the $q$-torsion plasma---the opaque pre-recombination regime.
+  \item \emph{Julia set boundary} $\partial\mathcal{K}(f_q)\cap S^1$: the
+        surface of last scattering, where photons transition from trapped to
+        free-streaming.
+  \item \emph{Escape region} $S^1\setminus\mathcal{K}(f_q)$: freely propagating
+        photons in the transparent universe.
+\end{itemize}
+
+At the Big Bang ($q\to\infty$, Remark~\ref{rem:reeb-exceptional-divisor}), the
+denominators $[n]_q$ suppress all escape and $J(f_q)=S^1$: total opacity.
+As $q\to 1$ (heat death), $f_q$ trivialises, $J(f_q)$ collapses to a Cantor
+set of measure zero, and the universe becomes transparent.
+\end{remark}
