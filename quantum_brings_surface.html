@@ -153,6 +153,13 @@ input[type=range]::-webkit-slider-thumb {
 #fibercp1 .fc-val { color:var(--accent3); }
 #fibercp1 .fc-int { color:#ffffff; font-weight:bold; }
 
+/* ── Julia set panel ─────────────────────────────────────────────── */
+#juliapnl { bottom:14px; left:1204px; width:250px; }
+#juliapnl canvas { display:block; border:1px solid rgba(58,144,255,.10); border-radius:2px; }
+#juliapnl .jl-eq  { font-size:9px; line-height:1.7; margin-top:5px; color:#4a5a80; }
+#juliapnl .jl-val { color:var(--accent3); }
+#juliapnl .jl-key { color:var(--accent); }
+
 #tip {
   position:fixed; background:var(--panel); border:1px solid var(--border);
   border-radius:3px; padding:5px 9px; font-size:10px; pointer-events:none;
@@ -328,6 +335,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_afin"> Affine z</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_vizjson"> View JSON</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_fcp1"> Fiber CP1</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_julia"> Julia set</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -447,6 +455,12 @@ input[type=range]::-webkit-slider-thumb {
   <div class="panel-title">Fiber ℂP¹  ·  x₂=x₃=x₄ diagonal<button class="panel-close" onclick="togglePanel('fibercp1')">×</button></div>
   <canvas id="fc_main" width="220" height="165"></canvas>
   <div class="fc-eq" id="fc-text">—</div>
+</div>
+
+<div class="panel" id="juliapnl" style="display:none">
+  <div class="panel-title">Julia Set  ·  Böttcher ψ<button class="panel-close" onclick="togglePanel('juliapnl')">×</button></div>
+  <canvas id="julia_canvas" width="234" height="175"></canvas>
+  <div class="jl-eq" id="julia_text">—</div>
 </div>
 
 <!-- Axis labels -->
@@ -1486,7 +1500,7 @@ document.getElementById('btn_theme').addEventListener('click', () => {
 const PANEL_CB = {
   stats: 'cb_pnl_stats', info: 'cb_pnl_info', formula: 'cb_pnl_fmla',
   chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
-  vizjson: 'cb_pnl_vizjson', fibercp1: 'cb_pnl_fcp1',
+  vizjson: 'cb_pnl_vizjson', fibercp1: 'cb_pnl_fcp1', juliapnl: 'cb_pnl_julia',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1506,7 +1520,7 @@ Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
 
 // ── Hide / show all info panels ───────────────────────────────────────
 let infoPanelsHidden = true;  // start hidden
-const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson','fibercp1'];
+const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson','fibercp1','juliapnl'];
 function applyHide() {
   const show = !infoPanelsHidden;
   INFO_PANEL_IDS.forEach(id => togglePanel(id, show));
@@ -2389,6 +2403,180 @@ function drawAffine(state) {
   document.getElementById('ac-text').innerHTML = html;
 }
 
+// ── Julia set panel ──────────────────────────────────────────────────
+// c = main-cardioid parameterisation driven by q:
+//   c(θ) = ½e^{iθ} − ¼e^{2iθ},   θ = q·2π
+// Böttcher coordinate ψ: ℂ\D̄ → ℂ\K_c  satisfies  ψ(w²) = (ψ(w))² + c
+// We render two sub-panels side by side:
+//   Left:  z-plane escape-time Julia set for J_c
+//   Right: w-plane unit circle (Böttcher domain) mapped to J_c boundary
+function drawJuliaPanel(state) {
+  const el = document.getElementById('juliapnl');
+  if (!el || el.style.display === 'none') return;
+  const canvas = document.getElementById('julia_canvas');
+  const CW = canvas.width, CH = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, CW, CH);
+
+  // Derive c from q via main-cardioid parameterisation
+  const q = state.q;
+  const theta = q * TAU;
+  const cr = 0.5 * Math.cos(theta) - 0.25 * Math.cos(2 * theta);
+  const ci = 0.5 * Math.sin(theta) - 0.25 * Math.sin(2 * theta);
+
+  const HALF = Math.floor(CW / 2);  // left panel width
+  const BAILOUT2 = 4;               // escape radius² = 2²
+  const MAX_IT   = 96;
+
+  // ── Left: escape-time Julia set in z-plane ──────────────────────
+  const scale = 2.0;  // view window ±scale
+  const imgData = ctx.createImageData(HALF, CH);
+  const buf = imgData.data;
+
+  for (let py = 0; py < CH; py++) {
+    for (let px = 0; px < HALF; px++) {
+      // Map pixel to complex z
+      let zr = (px / HALF - 0.5) * 2 * scale;
+      let zi = (py / CH  - 0.5) * 2 * scale;
+      let it = 0;
+      while (it < MAX_IT && zr*zr + zi*zi < BAILOUT2) {
+        const zr2 = zr*zr - zi*zi + cr;
+        zi  = 2*zr*zi + ci;
+        zr  = zr2;
+        it++;
+      }
+      const idx = (py * HALF + px) * 4;
+      if (it === MAX_IT) {
+        // In set — deep blue
+        buf[idx  ] = 8;  buf[idx+1] = 14; buf[idx+2] = 38; buf[idx+3] = 255;
+      } else {
+        // Smooth colouring: map escape count to hue
+        const t = it / MAX_IT;
+        const h = (220 + 280 * t) % 360;
+        const s = 0.85, l = 0.10 + 0.55 * t;
+        // hsl to rgb inline
+        const C = (1 - Math.abs(2*l - 1)) * s;
+        const X = C * (1 - Math.abs((h/60) % 2 - 1));
+        const m = l - C/2;
+        let rr=0, gg=0, bb=0;
+        if      (h < 60)  { rr=C; gg=X; }
+        else if (h < 120) { rr=X; gg=C; }
+        else if (h < 180) { gg=C; bb=X; }
+        else if (h < 240) { gg=X; bb=C; }
+        else if (h < 300) { rr=X; bb=C; }
+        else              { rr=C; bb=X; }
+        buf[idx  ] = Math.round((rr+m)*255);
+        buf[idx+1] = Math.round((gg+m)*255);
+        buf[idx+2] = Math.round((bb+m)*255);
+        buf[idx+3] = 255;
+      }
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+
+  // Label
+  ctx.fillStyle = 'rgba(0,0,0,0.45)';
+  ctx.fillRect(0, 0, HALF, 12);
+  ctx.fillStyle = '#6070a0'; ctx.font = '8px "Share Tech Mono"';
+  ctx.fillText('z-plane  J_c', 3, 9);
+
+  // Divider
+  ctx.strokeStyle = 'rgba(60,120,255,0.30)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(HALF, 0); ctx.lineTo(HALF, CH); ctx.stroke();
+
+  // ── Right: Böttcher w-plane unit circle + boundary estimate ─────
+  const RW = CW - HALF;  // right panel width
+  const cx2 = HALF + RW / 2, cy2 = CH / 2;
+  const pxPerUnit = Math.min(RW, CH) * 0.42;
+
+  // Background
+  ctx.fillStyle = '#060b1e';
+  ctx.fillRect(HALF, 0, RW, CH);
+  ctx.fillStyle = 'rgba(0,0,0,0.45)';
+  ctx.fillRect(HALF, 0, RW, 12);
+  ctx.fillStyle = '#6070a0'; ctx.font = '8px "Share Tech Mono"';
+  ctx.fillText('w-plane  ψ(∂D)', HALF + 3, 9);
+
+  // Grid
+  ctx.strokeStyle = 'rgba(50,80,160,0.25)'; ctx.lineWidth = 0.5;
+  for (let d = -2; d <= 2; d++) {
+    const x = cx2 + d * pxPerUnit, y = cy2 + d * pxPerUnit;
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, CH); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(HALF, y); ctx.lineTo(CW, y); ctx.stroke();
+  }
+
+  // Unit circle in w-plane (Böttcher domain boundary)
+  ctx.strokeStyle = 'rgba(80,160,255,0.40)'; ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(cx2, cy2, pxPerUnit, 0, TAU);
+  ctx.stroke();
+
+  // Trace ψ(e^{iθ}) ≈ Julia boundary via Böttcher inverse iteration:
+  // Approximate: ψ(w) ≈ w·∏_{n≥0} (1 + c/ψ_n²)^{1/2^{n+1}}
+  // For |w| slightly > 1, iterate forward then track back.
+  // Fast approximation: use 64 external rays at radius 1 (boundary).
+  // We map w = e^{iφ} by evaluating the escape-time boundary.
+  // Simple approach: plot points on J_c by inverse iteration.
+  const N_INV = 3200;
+  const seeds = [];
+  // Seed from boundary pixels of the Julia set
+  for (let k = 0; k < 64; k++) {
+    const a = k * TAU / 64;
+    seeds.push({ r: 2.1 * Math.cos(a), i: 2.1 * Math.sin(a) });
+  }
+  // Iterate backwards: z_{n-1} = ±√(z_n − c)
+  const pts2 = [];
+  let batch = seeds.slice();
+  for (let iter = 0; iter < 14; iter++) {
+    const next = [];
+    for (const z of batch) {
+      const wr = z.r - cr, wi = z.i - ci;
+      // sqrt of complex wr+i·wi
+      const mod = Math.sqrt(wr*wr + wi*wi);
+      const arg = Math.atan2(wi, wr);
+      const sqr = Math.sqrt(mod);
+      const sqarg = arg / 2;
+      const pr = sqr * Math.cos(sqarg), pi = sqr * Math.sin(sqarg);
+      if (iter > 4) { pts2.push({r:pr,i:pi}); pts2.push({r:-pr,i:-pi}); }
+      if (next.length < N_INV) { next.push({r:pr,i:pi}); next.push({r:-pr,i:-pi}); }
+    }
+    batch = next.slice(0, N_INV);
+  }
+
+  // Plot Julia boundary in right panel
+  ctx.fillStyle = 'rgba(120,200,255,0.55)';
+  for (const p of pts2) {
+    // Map from z-plane to w-plane: we show both superimposed; just render position
+    const bx = cx2 + p.r * pxPerUnit;
+    const by = cy2 + p.i * pxPerUnit;
+    if (bx >= HALF && bx < CW && by >= 0 && by < CH) {
+      ctx.fillRect(bx - 0.5, by - 0.5, 1.5, 1.5);
+    }
+  }
+
+  // Mark c in z-plane (left)
+  {
+    const cpx = (cr / scale + 0.5) * HALF;
+    const cpy = (ci / scale + 0.5) * CH;
+    ctx.strokeStyle = '#ffee44'; ctx.lineWidth = 1; ctx.setLineDash([2,2]);
+    ctx.beginPath(); ctx.arc(cpx, cpy, 4, 0, TAU); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#ffee44'; ctx.font = '8px "Share Tech Mono"';
+    ctx.fillText('c', cpx + 5, cpy + 3);
+  }
+
+  // Text below
+  const bSign = ci >= 0 ? '+' : '−';
+  document.getElementById('julia_text').innerHTML =
+    `<span class="jl-key">c</span> = `+
+    `<span class="jl-val">${cr.toFixed(4)}</span> `+
+    `${bSign} <span class="jl-val">${Math.abs(ci).toFixed(4)}i</span>`+
+    `&emsp;<span style="color:var(--dim)">θ=q·2π</span><br>`+
+    `<span class="jl-key">ψ(w²)</span> = <span class="jl-val">(ψ(w))² + c</span><br>`+
+    `<span style="color:var(--dim)">left: J_c escape-time&nbsp;&nbsp;right: ∂K_c inverse iter</span>`;
+}
+
 // ── Redraw both info panels ──────────────────────────────────────────
 function updateChiralPanels() {
   const state = getChiralState();
@@ -2419,6 +2607,9 @@ function updateChiralPanels() {
 
   // Fiber CP1 panel (x₂=x₃=x₄ diagonal)
   drawFiberCP1(state);
+
+  // Julia set panel (Böttcher coordinate)
+  drawJuliaPanel(state);
 
   // Sync 3D fiber markers with updated chiral state
   if (document.getElementById('cb_fiber').checked &&
