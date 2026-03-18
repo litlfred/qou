@@ -417,7 +417,7 @@ def _fetch_open_prs(repo: str, branch: str) -> list[dict]:
     return prs
 
 
-def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict]) -> str:
+def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict], diff_pdf: str | None = None) -> str:
     """Build a small info bar with GitHub links (feature branches only)."""
     repo_url = f"https://github.com/{repo}"
     lines = ['<div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">']
@@ -426,6 +426,8 @@ def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict]) -> str:
         lines.append(f'  <a class="gh-badge" href="{repo_url}/commit/{sha}">&#x1F4DD; {sha[:7]}</a>')
     for pr in prs:
         lines.append(f'  <a class="gh-badge" href="{pr["url"]}">PR #{pr["number"]}</a>')
+    if diff_pdf:
+        lines.append(f'  <a class="gh-badge" href="{html_mod.escape(diff_pdf)}" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>')
     lines.append("</div>")
     return "\n".join(lines)
 
@@ -553,6 +555,7 @@ def enhance_html(
     repo: str | None = None,
     sha: str | None = None,
     src_dir: str = ".",
+    diff_pdf: str | None = None,
 ) -> str:
     """Return the enhanced HTML string."""
     defs = parse_definitions(tex)
@@ -579,7 +582,7 @@ def enhance_html(
         # Feature-branch bar
         if branch and repo:
             prs = _fetch_open_prs(repo, branch) if repo else []
-            extra += _make_branch_bar(branch, repo, sha or "", prs) + "\n"
+            extra += _make_branch_bar(branch, repo, sha or "", prs, diff_pdf=diff_pdf) + "\n"
         raw_html = raw_html[:insert_pos] + extra + raw_html[insert_pos:]
 
     # ── Ensure anchors exist for all labelled items ─────────────────────────
@@ -614,6 +617,7 @@ def main() -> None:
     ap.add_argument("--repo", default=None, help="GitHub owner/repo")
     ap.add_argument("--sha", default=None, help="Git commit SHA")
     ap.add_argument("--src-dir", default=".", help="Root directory of the LaTeX source tree")
+    ap.add_argument("--diff-pdf", default=None, help="Filename of the diff PDF (feature branches only)")
     args = ap.parse_args()
 
     raw_html = Path(args.input_html).read_text(encoding="utf-8")
@@ -621,7 +625,7 @@ def main() -> None:
     result = enhance_html(
         raw_html, tex,
         branch=args.branch, repo=args.repo, sha=args.sha,
-        src_dir=args.src_dir,
+        src_dir=args.src_dir, diff_pdf=args.diff_pdf,
     )
     Path(args.output_html).write_text(result, encoding="utf-8")
     print(f"✓ Enhanced HTML written to {args.output_html}")

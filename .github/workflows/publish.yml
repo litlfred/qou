@@ -31,6 +31,13 @@ on:
   pull_request_target:      # PRs – no approval needed (e.g. Copilot)
   workflow_dispatch:
     inputs:
+      source_branch:
+        description: >
+          Branch to build from.
+          Leave blank to build from the branch selected in the GitHub UI.
+        required: false
+        default: ''
+        type: string
       publish_branch:
         description: >
           Branch to push the built artefacts to.
@@ -55,7 +62,7 @@ jobs:
     # pull_request_target sets github.ref to the *base* branch, so we use the
     # PR head ref/sha instead for those runs.
     env:
-      HEAD_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      HEAD_REF: ${{ inputs.source_branch || github.event.pull_request.head.ref || github.ref_name }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
 
     steps:
@@ -64,7 +71,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0          # full history needed for merge-base diff
-          ref: ${{ env.HEAD_SHA }}
+          ref: ${{ inputs.source_branch || env.HEAD_SHA }}
+
+      # When a source_branch is supplied via workflow_dispatch, resolve the
+      # actual HEAD SHA now (after checkout) so downstream steps use the right value.
+      - name: Resolve HEAD_SHA after checkout
+        if: inputs.source_branch != ''
+        run: echo "HEAD_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
@@ -220,6 +233,10 @@ jobs:
               --sha    "${{ env.HEAD_SHA }}"
               --src-dir "."
             )
+            # Link to the diff PDF if it was successfully built
+            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+              ENHANCE_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
+            fi
           fi
           python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
 
