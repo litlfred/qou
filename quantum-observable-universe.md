@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-17
+date: 2026-03-18
 title: Quantum Observable Universe
 ---
 
@@ -1103,6 +1103,22 @@ Under this correspondence, specific knot types map to particle identities. The t
 *In the QOU framework the role of the dynamical parameter $c$ is played by the substrate parameter $q=q(z)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>), which varies continuously with the spacetime coordinate $z$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>) on the exceptional divisor $E_i \cong \mathbb{CP}^1$ takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$ in the quantum dilogarithm integral accumulates information along that flow exactly as <a href="#eq:bottcher-series" data-reference-type="eqref" data-reference="eq:bottcher-series">[eq:bottcher-series]</a> accumulates it along the Julia-set orbit. The $q$-deformation of the logarithm encodes the departure from classical ($q=1$) dynamics: as $q\to 1$ the flow trivialises and $\Phi_q(z_i)\to\mathrm{Li}_2(z_i)$, the classical dilogarithm; as $q\to\infty$ the quantum-number denominators $[n]_q$ suppress high-order terms, concentrating the topological charge near the blow-up centre.*
 
 *In this identification the *Julia set boundary* of the classical problem—the locus where $G_c$ transitions from zero to positive—is the analogue of the boundary of the exceptional divisor $\partial E_i$, where the $q$-deformed torsion charge changes regime (Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.32</a>). The substrate parameter $q(z)$ thereby acts as a *spacetime-dependent dynamical parameter*, continuously deforming the Julia set geometry as one moves through the QOU.*
+
+</div>
+
+<div id="rem:julia-s1-photon-scatter" class="remark">
+
+**Remark 4.28** (Julia set on $S^1$ as photon scattering at the Big Bang). *The exceptional divisor $E_i\cong\mathbb{CP}^1$ contains the equatorial circle $S^1\subset E_i$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>) restricts to a degree-$2$ endomorphism $f_q\colon S^1\to S^1$, whose *Julia set* $J(f_q)\subset S^1$ is the closure of repelling periodic points—the locus of non-equicontinuous dynamics on the circle.*
+
+*Bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.20</a>); photons are the empty-knot background flux on $E_i$. The three regions of the circle map identify as:*
+
+- **Filled Julia set* $\mathcal{K}(f_q)\cap S^1$: photons trapped in the $q$-torsion plasma—the opaque pre-recombination regime.*
+
+- **Julia set boundary* $\partial\mathcal{K}(f_q)\cap S^1$: the surface of last scattering, where photons transition from trapped to free-streaming.*
+
+- **Escape region* $S^1\setminus\mathcal{K}(f_q)$: freely propagating photons in the transparent universe.*
+
+*At the Big Bang ($q\to\infty$, Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.32</a>), the denominators $[n]_q$ suppress all escape and $J(f_q)=S^1$: total opacity. As $q\to 1$ (heat death), $f_q$ trivialises, $J(f_q)$ collapses to a Cantor set of measure zero, and the universe becomes transparent.*
 
 </div>
 
