@@ -1,0 +1,820 @@
+% ── Bring's Hierarchy ─────────────────────────────────────────────────────────
+
+\chapter{Bring's Hierarchy}
+\label{chap:brings-hierarchy}
+\label{chap:brings-surface}% alias for backward compatibility
+
+The \emph{Bring hierarchy} is the tower of algebraic curves
+\[
+  B_0 \;\hookrightarrow\; B_1 \;\hookrightarrow\; B_2 \;\hookrightarrow\; B_3,
+\]
+ordered by increasing genus $0, 0, 2, 4$ and connected by degree-$2$
+branched coverings.  $B_3$ is Bring's curve proper; $B_2$ is its
+hyperelliptic quotient; $B_1 = \mathbb{P}^1$ is the spacetime base;
+and $B_0$ is the underlying ground field (a point in the Descartes
+descent).  The hierarchy encodes a filtration of the QOU by topological
+complexity and provides the geometric scaffolding for the particle
+ansatz of Chapter~\ref{chap:path-integrals-braiding}.
+
+% ── Section 1: General Definition ────────────────────────────────────────────
+
+\section{General Definition and the Hierarchy}
+\label{sec:hierarchy-general}
+
+\begin{definition}[Bring hierarchy]
+\label{def:bring-hierarchy}
+The \emph{Bring hierarchy} is the sequence of smooth projective curves
+\[
+  B_0,\quad B_1,\quad B_2,\quad B_3
+\]
+over $\mathbb{C}$ (or any algebraically closed field $k$ of
+characteristic $\neq 5$) with genera $g(B_n) = 2(n-1)$ for $n\ge 1$
+and $B_0$ a point, together with degree-$2$ holomorphic maps
+\[
+  B_3 \xrightarrow{\;\pi_{32}\;} B_2
+  \xrightarrow{\;\pi_{21}\;} B_1
+  \xrightarrow{\;\pi_{10}\;} B_0,
+\]
+characterised as follows.  The covering $\pi_{21}\colon B_2\to B_1$ is
+the hyperelliptic involution of $B_2$; the covering
+$\pi_{32}\colon B_3\to B_2$ is the restriction of the degree-$4$ map
+$\pi\colon B_3\to B_1$ to the intermediate quotient $B_2$.
+\end{definition}
+
+\begin{remark}[$B_0$: the point]
+\label{rem:B0-point}
+$B_0 = \mathrm{Spec}(k)$ is a single $k$-rational point.  In the QOU
+descent picture (Remark~\ref{rem:descent-to-zero}), passing to $B_0$
+means projecting out all spatial and chiral degrees of freedom; the
+resulting object retains only the substrate parameter $q \in [1,\infty)$
+as data.  Topologically, $B_0$ has genus $g = -1$ if one follows the
+recursion $g(B_n)=2(n-1)$; we set $g(B_0)=\varnothing$ (undefined) and
+regard $B_0$ as the degenerate base of the tower.
+\end{remark}
+
+\begin{remark}[$B_1 = \mathbb{P}^1(k)$, genus $0$]
+\label{rem:B1-projective-line}
+$B_1 = \mathbb{P}^1(k)$ is the projective line over $k$, the unique
+smooth projective curve of genus $0$ with a $k$-rational point.  In
+the QOU framework it plays the role of the \emph{spacetime base}: the
+coordinate $z = x_0/x_1 \in \mathbb{P}^1$ parametrises the
+one-dimensional spacetime direction inherited from the Descartes
+descent.  The Euler characteristic is $\chi(B_1) = 2$.
+
+The map $\pi_{10}\colon B_1 \to B_0$ is the structure morphism; it
+records the fact that $\mathbb{P}^1$ has a unique rational point over the
+ground field, namely the class $[B_1]$ itself.
+\end{remark}
+
+\begin{remark}[$B_2$, genus $2$]
+\label{rem:B2-genus2}
+$B_2$ is the unique (up to isomorphism over the moduli space) smooth
+projective curve of genus $2$ that arises as the \emph{discriminant cover}
+of $B_1$ branched at the six singular fibres of the elliptic fibration
+of $B_3$ over $B_1$.  Its Euler characteristic is
+$\chi(B_2) = 2 - 2\cdot 2 = -2$.
+
+Concretely, if $\Delta_{B_3}(z)$ denotes the discriminant of the chiral
+elliptic cubic of $B_3$
+(equation~\eqref{eq:weierstrass-depressed}, Remark~\ref{rem:t-duality-elliptic}),
+then $B_2$ is the hyperelliptic curve
+\begin{equation}\label{eq:B2-hyperelliptic}
+  B_2\colon\quad w^2 = \Delta_{B_3}(z),
+\end{equation}
+where $\Delta_{B_3}(z) = -4\,p(z)^3 - 27\,q(z)^2$, with
+$p(z) = \tfrac{1}{3}(2z^2+z+2)$ and
+$q(z) = \tfrac{5}{27}(4z^3+3z^2+3z+4)$, is a degree-$6$ polynomial
+with $6$ simple roots (the branch locus of $\pi_{21}$).
+The automorphism group of a generic $B_2$ is $\mathbb{Z}/2\mathbb{Z}$
+(the hyperelliptic involution $\iota_2\colon(z,w)\mapsto(z,-w)$);
+the $B_2$ arising here inherits additional automorphisms from the
+$S_5$-symmetry of $B_3$.
+\end{remark}
+
+\begin{remark}[$B_3$: Bring's surface, genus $4$]
+\label{rem:B3-brings-surface}
+$B_3$ is \emph{Bring's curve}, the unique smooth projective curve of
+genus $g = 4$ and Euler characteristic $\chi = -6$ defined by the
+simultaneous vanishing of the first three power sums on $\mathbb{P}^4$
+(Definition~\ref{def:brings-surface}, Section~\ref{sec:brings-surface}).
+Its automorphism group $\mathrm{Aut}(B_3) \cong S_5$ has order $120$,
+the maximum possible for a genus-$4$ curve by the Hurwitz bound.
+
+The degree-$4$ map $\pi\colon B_3 \to B_1$ is a branched covering with
+$6$ branch points at the roots of $\Delta_{B_3}(z)$; it factors as
+$\pi = \pi_{21} \circ \pi_{32}$, where $\pi_{32}$ is a degree-$2$ map
+to the intermediate curve $B_2$.
+\end{remark}
+
+\begin{proposition}[Riemann--Hurwitz for the hierarchy]
+\label{prop:rh-hierarchy}
+The three branched covers in the Bring hierarchy satisfy:
+\begin{alignat}{3}
+  &\pi_{32}\colon B_3\to B_2,\quad\deg=2,
+  &&\quad 2\cdot 4 - 2 = 2(2\cdot 2-2)+2,
+  &&\quad\text{$2$ simple ramification points,}
+  \label{eq:rh-32}\\[4pt]
+  &\pi_{21}\colon B_2\to B_1,\quad\deg=2,
+  &&\quad 2\cdot 2 - 2 = 2(2\cdot 0-2)+6,
+  &&\quad\text{$6$ simple branch points,}
+  \label{eq:rh-21}\\[4pt]
+  &\pi_{10}\colon B_1\to B_0,\quad\deg=1,
+  &&\quad \text{unramified.}
+  &&
+  \label{eq:rh-10}
+\end{alignat}
+\end{proposition}
+\begin{proof}
+Equation~\eqref{eq:rh-21}: $\chi(B_2) = 2\chi(B_1) - R$ with $R=6$
+ramification points gives $-2 = 4 - 6$ \checkmark.
+Equation~\eqref{eq:rh-32}: $\chi(B_3) = 2\chi(B_2) - R$ with $R=2$
+gives $-6 = -4 - 2$ \checkmark.  Equation~\eqref{eq:rh-10} is immediate.
+\end{proof}
+
+\begin{remark}[Genera and Euler characteristics]
+\label{rem:hierarchy-genera}
+The Bring hierarchy levels have the following topological invariants:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ccccc}
+\hline
+Level & Curve & Genus $g$ & $\chi = 2-2g$ & Automorphisms \\
+\hline
+$B_0$ & point & --- & --- & trivial \\
+$B_1$ & $\mathbb{P}^1(k)$ & $0$ & $2$ & $\mathrm{PGL}(2,k)$ \\
+$B_2$ & hyperelliptic & $2$ & $-2$ & $\mathbb{Z}/2\mathbb{Z}$ (generic) \\
+$B_3$ & Bring's curve & $4$ & $-6$ & $S_5$ (order $120$) \\
+\hline
+\end{tabular}
+\end{center}
+\end{remark}
+
+% ── Section 2: Coordinate Development for B_2 ────────────────────────────────
+
+\section{Coordinate Development for $B_2$}
+\label{sec:B2-coordinates}
+
+We develop the coordinate structure of $B_2$ in parallel with the
+treatment of $B_3$ in Section~\ref{sec:brings-surface}.  The key
+simplification is that $B_2$ is a hyperelliptic curve: all its
+geometry is determined by the pair $(z, w)$ satisfying
+equation~\eqref{eq:B2-hyperelliptic}, plus the involution
+$\iota_2\colon w \mapsto -w$.
+
+\begin{definition}[$B_2$ as discriminant cover]
+\label{def:B2-discriminant-cover}
+Let $p(z) = \tfrac{1}{3}(2z^2+z+2)$ and
+$q(z) = \tfrac{5}{27}(4z^3+3z^2+3z+4)$ be the
+Weierstrass coefficients of the $B_3$ chiral elliptic fibration
+(equation~\eqref{eq:weierstrass-depressed}).  The
+\emph{discriminant curve} $B_2$ is the smooth projective model of the
+affine curve
+\begin{equation}\label{eq:B2-affine}
+  w^2 \;=\; \Delta(z)
+  \;:=\; -4\,p(z)^3 - 27\,q(z)^2
+  \;\in\; \mathbb{Z}[z],
+\end{equation}
+a degree-$6$ polynomial.  The six simple roots $z_1,\dots,z_6$
+of $\Delta(z)$ are the \emph{branch points} of $\pi_{21}\colon B_2\to B_1$
+and coincide with the six singular fibres of the $B_3$ elliptic
+fibration.
+\end{definition}
+
+\begin{remark}[QOU $4$-tuple for $B_2$]
+\label{rem:B2-qou-tuple}
+The $\mathbb{C}$ quantum observable universe
+(Example~\ref{def:c-quantum-observable-universe}) for $B_2$
+is the $4$-tuple $(M_{B_2}, G, P_{B_2}, E_{B_2})$ constructed as follows.
+
+\medskip
+\noindent\textbf{1.~CR manifold $M_{B_2}$.}\;
+The unit circle bundle $M_{B_2} = \{(p,\eta)\in T^*B_2 : |\eta|_{g}=1\}$
+over $B_2$ is a $3$-dimensional strictly pseudoconvex CR manifold
+with contact form $\theta_{B_2} = \eta\,dz|_{M_{B_2}}$.
+
+\medskip
+\noindent\textbf{2.~Principal bundle $P_{B_2}$.}\;
+The degree-$2$ covering $\pi_{21}\colon B_2\to\mathbb{P}^1$ branched
+at the six roots $z_1,\dots,z_6$ lifts to a principal
+$\mathrm{SU}(2)$-bundle $P_{B_2}\to M_{B_2}$.  The transition functions
+are the $\mathrm{SU}(2)$ holonomy matrices around the six branch cuts;
+the deck transformation $(z,w)\mapsto(z,-w)$ acts on $P_{B_2}$ by the
+central element $-I\in\mathrm{SU}(2)$.
+
+\medskip
+\noindent\textbf{3.~State bundle $E_{B_2}$.}\;
+The associated state bundle $E_{B_2} = P_{B_2}\times_G\mathbb{CP}^1$
+has fibre $\mathbb{CP}^1$ over each point of $M_{B_2}$.  The two sheets
+of $\pi_{21}$ give the two hemispheres of each $\mathbb{CP}^1$ fibre,
+glued by the monodromy involution.
+
+\medskip
+\noindent\textbf{4.~Substrate parameter.}\;
+The substrate parameter
+$q(p) = 1 + |\langle L_{\theta_{B_2}}, F_{A}^+\rangle|(p)$
+is maximal at the six branch points $z_i$ and tends to $1$ away from
+them; the deep-quantum regime is therefore localised at
+$\Delta(z)=0$.
+\end{remark}
+
+\begin{remark}[Holomorphic differentials on $B_2$]
+\label{rem:B2-holomorphic-differentials}
+A smooth genus-$2$ curve has a $2$-dimensional space of holomorphic
+differentials $H^0(B_2, \Omega^1_{B_2})$.  For the hyperelliptic model
+$w^2 = \Delta(z)$ the two basis differentials are
+\begin{equation}\label{eq:B2-differentials}
+  \omega_1 \;=\; \frac{dz}{w}
+  \;=\; \frac{dz}{\sqrt{\Delta(z)}},
+  \qquad
+  \omega_2 \;=\; \frac{z\,dz}{w}
+  \;=\; \frac{z\,dz}{\sqrt{\Delta(z)}}.
+\end{equation}
+These replace the single holomorphic differential of an elliptic curve;
+the extra factor of $z$ in $\omega_2$ reflects the additional handle
+(genus $2$ vs.\ genus $1$).  The period matrix
+$\tau = (\oint_{A_j}\omega_i)^{-1}(\oint_{B_j}\omega_i)$ encodes the
+complex structure of $B_2$; its imaginary part is positive definite
+(Riemann's bilinear relations).
+\end{remark}
+
+\begin{remark}[Deck transformation and $\mathbb{Z}/2\mathbb{Z}$ spectral action]
+\label{rem:B2-deck-transformation}
+The hyperelliptic involution
+$\iota_2\colon (z,w) \mapsto (z,-w)$
+is the deck transformation of $\pi_{21}\colon B_2\to B_1$.  It acts on
+the holomorphic differentials by
+\[
+  \iota_2^*\omega_1 = \omega_1,
+  \qquad
+  \iota_2^*\omega_2 = \omega_2,
+\]
+preserving the entire space $H^0(B_2,\Omega^1)$ (which is expected:
+the deck transformation of the hyperelliptic map always preserves
+the canonical bundle).  In terms of the DFT analogy with $B_3$:
+whereas $B_3$ carries a $C_5$ spectral action
+$w_k\mapsto\zeta_5^{-k}w_k$ on its Lagrange resolvents, $B_2$ carries a
+$C_2 = \mathbb{Z}/2\mathbb{Z}$ action $w\mapsto -w$ corresponding to
+the fourth root of unity $\zeta_4^2 = -1$.  The role of the DFT basis
+$\{v_k\}_{k=0}^{3}$ with $v_k = \tfrac{1}{2}\sum_{j=0}^{3}i^{kj}y_j$
+is played by the pair $(z, w)$ after the covering identification.
+\end{remark}
+
+\begin{remark}[Spectral forms for $B_2$]
+\label{rem:B2-spectral-forms}
+Parallel to the Lagrange resolvent spectral forms of $B_3$
+(Remark~\ref{rem:lagrange-resolvents}), the $B_2$ model carries two
+spectral constraints.  Setting $v_0 = \tfrac{1}{2}(y_0+y_1+y_2+y_3)$,
+$v_1 = \tfrac{1}{2}(y_0+iy_1-y_2-iy_3)$,
+$v_2 = \tfrac{1}{2}(y_0-y_1+y_2-y_3)$,
+$v_3 = \tfrac{1}{2}(y_0-iy_1-y_2+iy_3)$ for homogeneous coordinates
+$y_0,\dots,y_3$ on $\mathbb{P}^3$, the power-sum constraints
+$\sum y_j = 0$ and $\sum y_j^2 = 0$ become:
+\begin{align}
+  v_0 &= 0
+    &&\text{(linear projection),}
+    \label{eq:B2-resolvent-linear}\\[4pt]
+  2v_1 v_3 + v_2^2 &= 0
+    &&\text{(quadric constraint).}
+    \label{eq:B2-resolvent-quadric}
+\end{align}
+Together these cut out a smooth conic in $\mathbb{P}^2$,
+isomorphic to $\mathbb{P}^1$, which is the spacetime base $B_1$.  The
+full $B_2$ arises by adjoining the square root $w = \sqrt{\Delta(z)}$,
+passing to the branched double cover of this $\mathbb{P}^1$.
+The $C_4$ cyclic action $y_j\mapsto y_{j+1\bmod 4}$ descends to
+the phase rotation $v_k\mapsto i^{-k}v_k$ in the spectral basis,
+paralleling the $C_5$ rotation $w_k\mapsto\zeta_5^{-k}w_k$ of $B_3$.
+\end{remark}
+
+\begin{remark}[Color tube coordinates for $B_2$]
+\label{rem:B2-color-tube}
+The chiral fiber of $B_3$ has three roots $(x_2,x_3,x_4)$ giving three
+color tube coordinates $(r,g,b)$
+(Definition~\ref{def:color-tube-coordinates}).  For $B_2$ the analog is
+a \emph{two-component} chiral fiber: at each $z\in B_1$, the two
+branches of $\pi_{21}$ furnish two color coordinates
+\begin{equation}\label{eq:B2-color-coords}
+  \mathbf{r}^{(2)}_z = z + \sqrt{\Delta(z)},
+  \qquad
+  \mathbf{g}^{(2)}_z = z - \sqrt{\Delta(z)}.
+\end{equation}
+Their sum and product are
+\begin{align}
+  \mathbf{r}^{(2)}_z + \mathbf{g}^{(2)}_z &= 2z,
+    \label{eq:B2-vieta-sum}\\[4pt]
+  \mathbf{r}^{(2)}_z \cdot \mathbf{g}^{(2)}_z &= z^2 - \Delta(z).
+    \label{eq:B2-vieta-product}
+\end{align}
+The $\mathbb{Z}/2\mathbb{Z}$ deck transformation swaps the two branches:
+$\iota_2\colon (\mathbf{r}^{(2)}_z, \mathbf{g}^{(2)}_z) \mapsto (\mathbf{g}^{(2)}_z, \mathbf{r}^{(2)}_z)$.
+This is the genus-$2$ analog of the $S_3$ permutation of three color
+charges in $B_3$; the reduction from $S_3$ to $\mathbb{Z}/2\mathbb{Z}$
+reflects the passage from three quark colors to two.
+\end{remark}
+
+\begin{proposition}[Chiral fiber of $B_2$ as $\mathbb{P}^1$]
+\label{prop:B2-chiral-fiber}
+For each $z \in B_1\setminus\{z_1,\dots,z_6\}$, the fiber
+$(\pi_{21})^{-1}(z)$ consists of exactly two points, making the chiral
+fiber of $B_2$ a genus-$0$ curve ($\mathbb{P}^1$).  At the six branch
+points $z = z_i$ the fiber degenerates to a single (ramified) point.
+\end{proposition}
+\begin{proof}
+Immediate from the definition of $\pi_{21}$ as the hyperelliptic cover
+$w^2=\Delta(z)$: for $\Delta(z)\neq 0$ the equation has two solutions
+$w=\pm\sqrt{\Delta(z)}$, while for $\Delta(z_i)=0$ the unique solution
+is $w=0$.
+\end{proof}
+
+\begin{remark}[Braid group action on $B_2$]
+\label{rem:B2-braid-action}
+The mapping class group of the base $B_1 = \mathbb{P}^1$ punctured at
+the six branch points $z_1,\dots,z_6$ is the braid group $B_6$ on six
+strands.  Its action on $\pi_1$ of the punctured base lifts to the
+\emph{symplectic representation}
+\[
+  \rho\colon B_6 \;\longrightarrow\; \mathrm{Sp}(4,\mathbb{Z}),
+\]
+which is the standard representation of the mapping class group
+$\mathrm{Mod}_{0,6}$ on the homology $H_1(B_2,\mathbb{Z})\cong\mathbb{Z}^4$.
+The monodromy around each branch point $z_i$ is a Dehn twist on $B_2$,
+representing a simple transposition in $B_6$.  The full monodromy group
+$\Gamma_2 = \mathrm{Sp}(4,\mathbb{Z})$ is the Siegel modular group, whose
+orbifold quotient parametrises the principally polarised abelian surfaces
+$J(B_2)$ (the Jacobians of $B_2$).  This replaces the $S_5$ automorphism
+group of $B_3$ by a lattice group, reflecting the transition from finite
+to infinite monodromy as we descend the hierarchy.
+\end{remark}
+
+\begin{remark}[Seiberg--Witten differential for $B_2$]
+\label{rem:B2-SW-differential}
+Parallel to the generation-dependent Seiberg--Witten differentials for
+$B_3$ (Remark~\ref{rem:seiberg-witten}), the relevant
+meromorphic $1$-form on $B_2$ is the \emph{$B_2$ Seiberg--Witten
+differential}
+\begin{equation}\label{eq:B2-SW-diff}
+  \lambda_{B_2} \;=\; z\,\omega_1 \;=\; \frac{z\,dz}{w}
+  \;=\; \frac{z\,dz}{\sqrt{\Delta(z)}}.
+\end{equation}
+Its $A$-cycle period
+$a_{B_2} = \oint_{A_1}\lambda_{B_2}$
+and dual $B$-cycle period
+$a_{B_2}^D = \oint_{B_1}\lambda_{B_2}$
+determine the effective prepotential of the genus-$2$ theory.
+Because $B_2$ has genus $2$ rather than $1$, the prepotential carries
+two independent moduli $(a_{B_2,1}, a_{B_2,2})$ corresponding to the
+two handles of $B_2$; these are identified with the two lightest
+generations in the QOU mass hierarchy.
+\end{remark}
+
+% ── Section 3: Bring's Surface ────────────────────────────────────────────────
+
+\input{chapters/brings-surface}
+
+% ── Section 4: Knots on Surfaces of Genus at Most Four ───────────────────────
+
+\section{Knots on Surfaces of Genus at Most Four}
+\label{sec:knots-genus-leq-4}
+
+\subsection{Particle ansatz}
+\label{subsec:particle-ansatz}
+
+\begin{remark}[Knot--particle correspondence]
+\label{rem:knot-particle-correspondence}
+The Bring hierarchy provides the geometric scaffolding for a knot--particle
+correspondence: stable particle states of the QOU are identified with
+isotopy classes of knots (or links) that can be drawn on a surface of
+genus at most $4$ --- i.e.\ knots $K$ with Seifert genus
+$g_s(K) \le 4$.  The embedding surface is one of the $B_n$:
+\begin{itemize}
+  \item $g_s(K)=0$: $K$ embeds on $B_1 = \mathbb{P}^1$; corresponds to
+        massless/trivial states (neutrinos).
+  \item $g_s(K)=1$: $K$ embeds on the elliptic fiber of $B_3$;
+        corresponds to first-generation fermions (electron, up/down
+        quark).
+  \item $g_s(K)=2$: $K$ embeds on $B_2$; second-generation
+        fermions (muon, strange/charm quark).
+  \item $g_s(K)=3,4$: $K$ embeds on $B_3$; third-generation
+        fermions (tau, bottom/top quark) and heavier states.
+\end{itemize}
+Composite particles (hadrons, nuclei) correspond to connected sums
+$K_1 \mathbin{\#} K_2$ whose Seifert genus equals $g_s(K_1)+g_s(K_2)$.
+\end{remark}
+
+\begin{remark}[Knots embeddable in Bring's surface]
+\label{rem:knots-embeddable}
+A knot $K \subset S^3$ embeds on a Seifert surface of genus $g$ if and
+only if $g_s(K) \le g$.  Since Bring's surface $B_3$ has genus $4$, the
+knots relevant to the QOU are exactly those with $g_s(K) \le 4$.  Every
+torus knot $T(p,q)$ with Seifert genus
+$g_s(T(p,q)) = \tfrac{(p-1)(q-1)}{2} \le 4$ embeds.  The fundamental
+knots for the QOU particle spectrum are:
+\begin{itemize}
+  \item $0_1$ (unknot), $g_s=0$: neutrino.
+  \item $2^2_1$ (Hopf link), $g_s=0$: gauge boson (photon).
+  \item $3_1 = T(2,3)$, $g_s=1$: quark (trefoil, first generation).
+  \item $4_1$, $g_s=1$: amphichiral first-generation state.
+  \item $5_1 = T(2,5)$, $g_s=2$: second-generation fermion.
+  \item $5_2$, $g_s=1$: excited first-generation state.
+  \item $T(3,4)$, $g_s=3$: third-generation fermion.
+  \item $T(2,7)$, $g_s=3$: alternative third-generation state.
+  \item $T(3,5)$, $g_s=4$: maximal-genus fermion on $B_3$.
+  \item $T(2,9)$, $g_s=4$: tau-like state at the boundary.
+\end{itemize}
+Composite knots $3_1 \mathbin{\#} 3_1$ ($g_s=2$) and
+$3_1 \mathbin{\#} 4_1$ ($g_s=2$) correspond to two-quark bound
+states.
+\end{remark}
+
+\subsection{Knot invariant table}
+\label{subsec:knot-invariant-table}
+
+The following table lists invariants for each knot.  Columns:
+\textbf{Name}: standard Rolfsen/Conway notation.
+\textbf{$\Delta(t)$}: Alexander polynomial (symmetric, $\Delta(1)=1$).
+\textbf{$\nabla(z)$}: Conway polynomial ($\Delta(t)=\nabla(t^{1/2}-t^{-1/2})$).
+\textbf{$V(t)$}: Jones polynomial.
+\textbf{$\mathrm{vol}$}: hyperbolic volume of the complement ($0$ for
+non-hyperbolic).
+\textbf{A/C}: amphichiral~(A) or chiral~(C).
+\textbf{$g_s$}: Seifert (minimal) genus.
+\textbf{Tw}: twist knot (Y/N).
+\textbf{Bl}: algebraic link / singularity blowup (Y/N).
+
+\bigskip
+{\renewcommand{\arraystretch}{1.4}
+\noindent
+\begin{tabular}{llllrcccl}
+\hline
+\textbf{Name} & \textbf{$\Delta(t)$} & \textbf{$\nabla(z)$} & \textbf{$V(t)$}
+  & \textbf{vol} & \textbf{A/C} & \textbf{$g_s$} & \textbf{Tw} & \textbf{Bl} \\
+\hline
+$0_1$ unknot
+  & $1$
+  & $1$
+  & $1$
+  & $0$
+  & A & $0$ & Y & Y \\[2pt]
+$2^2_1$ Hopf
+  & $-1$ (link)
+  & $z$
+  & $-t^{-1/2}-t^{-5/2}$
+  & $0$
+  & C & $0$ & --- & Y \\[2pt]
+$3_1$ trefoil
+  & $t^{-1}-1+t$
+  & $1+z^2$
+  & $-t^{-4}+t^{-3}+t^{-1}$
+  & $0$
+  & C & $1$ & Y & Y \\[2pt]
+$4_1$ fig.-eight
+  & $-t^{-1}+3-t$
+  & $1-z^2$
+  & $t^2-t+1-t^{-1}+t^{-2}$
+  & $2.029$
+  & A & $1$ & Y & N \\[2pt]
+$5_1 = T(2,5)$
+  & $t^{-2}-t^{-1}+1-t+t^2$
+  & $1+3z^2+z^4$
+  & $-t^{-4}+t^{-3}-t^{-2}+t^{-1}-1+t$
+  & $0$
+  & C & $2$ & N & Y \\[2pt]
+$5_2$
+  & $2t^{-1}-3+2t$
+  & $1+2z^2$
+  & $-t^6+t^5+t^3$
+  & $2.828$
+  & C & $1$ & Y & N \\[2pt]
+$T(3,4)$
+  & $t^{-3}-t^{-2}+1-t^2+t^3$
+  & $1+2z^2+z^4$
+  & see~\eqref{eq:jones-T34}
+  & $0$
+  & C & $3$ & N & Y \\[2pt]
+$T(2,7)$
+  & $t^{-3}-t^{-2}+t^{-1}-1+t-t^2+t^3$
+  & $1+4z^2+3z^4+z^6$
+  & see~\eqref{eq:jones-T27}
+  & $0$
+  & C & $3$ & N & Y \\[2pt]
+$T(3,5)$
+  & $t^{-4}-t^{-3}+t^{-1}-1+t-t^3+t^4$
+  & $1+3z^2+z^4+z^6$
+  & see~\eqref{eq:jones-T35}
+  & $0$
+  & C & $4$ & N & Y \\[2pt]
+$T(2,9)$
+  & $\sum_{k=-4}^{4}(-1)^k t^k$
+  & $1+5z^2+6z^4+3z^6+z^8$
+  & see~\eqref{eq:jones-T29}
+  & $0$
+  & C & $4$ & N & Y \\[2pt]
+$3_1 \mathbin{\#} 3_1$
+  & $(t^{-1}-1+t)^2$
+  & $(1+z^2)^2$
+  & $(-t^{-4}+t^{-3}+t^{-1})^2$
+  & $0$
+  & C & $2$ & N & N \\[2pt]
+$3_1 \mathbin{\#} 3_1^*$
+  & $(t^{-1}-1+t)^2$
+  & $(1+z^2)^2$
+  & $(-t^{-4}+t^{-3}+t^{-1})(-t^4+t^3+t)$
+  & $0$
+  & A & $2$ & N & N \\[2pt]
+$3_1 \mathbin{\#} 4_1$
+  & $(t^{-1}-1+t)(-t^{-1}+3-t)$
+  & $(1+z^2)(1-z^2)$
+  & $(-t^{-4}+t^{-3}+t^{-1})(t^2-t+1-t^{-1}+t^{-2})$
+  & $2.029$
+  & C & $2$ & N & N \\[2pt]
+\hline
+\end{tabular}}
+
+\bigskip
+\noindent\textbf{Jones polynomials for higher torus knots.}\;
+Using the Kauffman bracket / HOMFLY skein relation
+$t^{-1}V(L_+) - tV(L_-) = (t^{1/2}-t^{-1/2})V(L_0)$:
+\begin{align}
+  V(T(3,4)) &= t^{-8}+t^{-6}-t^{-5}+t^{-4}-t^{-3}+t^{-2},
+    \label{eq:jones-T34}\\[4pt]
+  V(T(2,7)) &= -t^{-10}+t^{-9}-t^{-8}+t^{-7}+t^{-5},
+    \label{eq:jones-T27}\\[4pt]
+  V(T(3,5)) &= -t^{-16}+t^{-15}-t^{-14}+2t^{-13}-t^{-12}+t^{-11}-t^{-10}+t^{-9},
+    \label{eq:jones-T35}\\[4pt]
+  V(T(2,9)) &= -t^{-14}+t^{-13}-t^{-12}+t^{-11}+t^{-9}.
+    \label{eq:jones-T29}
+\end{align}
+
+\subsection{Knot group presentations}
+\label{subsec:knot-groups}
+
+\begin{remark}[Groups of the fundamental knots]
+\label{rem:knot-groups}
+The fundamental group $G_K = \pi_1(S^3 \setminus K)$ of each knot in the
+particle ansatz has the following presentation.  For torus knots
+$T(p,q)$ the group is the \emph{torus knot group}
+$\langle a, b \mid a^p = b^q \rangle$.
+
+\medskip
+{\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\hline
+\textbf{Knot} & \textbf{Generators} & \textbf{Relations} \\
+\hline
+$0_1$ & $\langle a \rangle$ & none \\
+$2^2_1$ Hopf & $\langle a, b \rangle$ & $ab = ba$ \\
+$3_1$ & $\langle a, b \rangle$ & $a^2 = b^3$ \\
+$4_1$ & $\langle x, y \rangle$ & $xyx^{-1}yx = yxy^{-1}xy^{-1}$ \\
+$5_1 = T(2,5)$ & $\langle a, b \rangle$ & $a^2 = b^5$ \\
+$5_2$ & $\langle x, y \rangle$ & $xy^2x = yx^2y$ \\
+$T(3,4)$ & $\langle a, b \rangle$ & $a^3 = b^4$ \\
+$T(2,7)$ & $\langle a, b \rangle$ & $a^2 = b^7$ \\
+$T(3,5)$ & $\langle a, b \rangle$ & $a^3 = b^5$ \\
+$T(2,9)$ & $\langle a, b \rangle$ & $a^2 = b^9$ \\
+$3_1\mathbin{\#}3_1$ & $\langle a,b,c,d \rangle$
+  & $a^2=b^3,\;c^2=d^3,\;a=c_{\mathrm{merid}}$ \\
+$3_1\mathbin{\#}3_1^*$ & $\langle a,b,c,d \rangle$
+  & $a^2=b^3,\;c^2=d^{-3},\;a=c_{\mathrm{merid}}$ \\
+\hline
+\end{tabular}}
+
+\medskip\noindent
+The figure-eight group $G_{4_1}$ has the equivalent Fox presentation
+$\langle x,t \mid txt^{-1}xt = xtx^{-1}tx^{-1}\rangle$ and is the only
+hyperbolic knot group in the table, corresponding to the non-zero
+hyperbolic volume.  For torus knot groups, the center is generated by
+the element $a^p = b^q$ (the longitude), which maps to the Seifert fiber
+in the Seifert fibration of the torus knot complement.
+\end{remark}
+
+% ── Section 5: Knot Braiding and Skein Relations ──────────────────────────────
+
+\section{Knot Braiding and Skein Relations}
+\label{sec:knot-braiding}
+
+\subsection{HOMFLY-PT skein relation}
+\label{subsec:homfly-skein}
+
+\begin{definition}[HOMFLY-PT polynomial]
+\label{def:homfly}
+The \emph{HOMFLY-PT polynomial} $P(K; \ell, m) \in \mathbb{Z}[\ell^{\pm 1}, m^{\pm 1}]$
+of an oriented knot or link $K$ is characterised by the skein relation
+\begin{equation}\label{eq:homfly-skein}
+  \ell\,P(L_+) + \ell^{-1}\,P(L_-) + m\,P(L_0) = 0,
+\end{equation}
+together with the normalisation $P(\text{unknot}) = 1$.  Here
+$L_+$, $L_-$, $L_0$ are three diagrams identical except near one
+crossing, where $L_+$ has a positive crossing, $L_-$ a negative
+crossing, and $L_0$ the oriented smoothing.
+
+\medskip\noindent
+Specialisations recover classical invariants:
+\begin{align}
+  &\text{Jones:} &
+    V(K)(t) &= P(K;\, t^{-1},\, t^{1/2}-t^{-1/2}),
+    \label{eq:jones-specialisation}\\[4pt]
+  &\text{Alexander:} &
+    \Delta(K)(t) &= P(K;\, i,\, i(t^{1/2}-t^{-1/2})),
+    \label{eq:alexander-specialisation}\\[4pt]
+  &\text{Conway:} &
+    \nabla(K)(z) &= P(K;\, i,\, -iz).
+    \label{eq:conway-specialisation}
+\end{align}
+\end{definition}
+
+\begin{definition}[Kauffman bracket skein relation]
+\label{def:kauffman-bracket}
+The \emph{Kauffman bracket} $\langle D \rangle \in \mathbb{Z}[A^{\pm 1}]$ of
+an unoriented link diagram $D$ satisfies
+\begin{equation}\label{eq:kauffman-bracket}
+  \langle \;\slashbox{}{}\; \rangle
+  = A\,\langle \;\raisebox{-2pt}{$\asymp$}\; \rangle
+  + A^{-1}\langle \;\raisebox{2pt}{$\asymp$}\; \rangle,
+  \qquad
+  \langle D \sqcup \bigcirc \rangle = (-A^2 - A^{-2})\langle D \rangle,
+  \qquad
+  \langle \bigcirc \rangle = 1.
+\end{equation}
+The Jones polynomial is recovered by
+$V(K)(t) = (-1)^{w(D)}A^{-3w(D)}\langle D\rangle\big|_{A=t^{-1/4}}$,
+where $w(D)$ is the writhe of a diagram $D$ for $K$.
+\end{definition}
+
+\subsection{Skein triples and braid words}
+\label{subsec:skein-triples}
+
+\begin{remark}[Skein triples for fundamental knots]
+\label{rem:skein-triples}
+Each knot in the particle ansatz fits into a skein triple
+$(L_+, L_-, L_0)$ showing how to reduce it to simpler knots via the
+HOMFLY-PT relation~\eqref{eq:homfly-skein}.  The table below lists the
+skein triples and braid word presentations for each knot.  All knots
+are oriented; the braid word gives the closure $\hat\beta$ realising the
+knot as a closed braid.
+
+\medskip
+{\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabular}{llll}
+\hline
+\textbf{Knot} & \textbf{Braid word} & \textbf{$L_+$} & \textbf{$L_0$} \\
+\hline
+$0_1$ unknot
+  & $1$ (empty)
+  & ---
+  & --- \\[2pt]
+$2^2_1$ Hopf
+  & $\sigma_1^2$
+  & $2^2_1$
+  & $0_1 \sqcup 0_1$ \\[2pt]
+$3_1$ trefoil
+  & $\sigma_1^3$ ($B_2$-braid)
+  & $3_1$
+  & $2^2_1$ \\[2pt]
+$4_1$ fig.-eight
+  & $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$ ($B_3$)
+  & $3_1^*$
+  & $2^2_1$ \\[2pt]
+$5_1 = T(2,5)$
+  & $\sigma_1^5$
+  & $5_1$
+  & $T(2,4)$ \\[2pt]
+$5_2$
+  & $\sigma_1^2\sigma_2^{-1}\sigma_1^2\sigma_2^{-1}$ ($B_3$)
+  & $4_1$
+  & $\text{link}$ \\[2pt]
+$T(3,4)$
+  & $(\sigma_1\sigma_2)^4$ ($B_3$)
+  & $T(3,4)$
+  & $T(3,3)$ \\[2pt]
+$T(2,7)$
+  & $\sigma_1^7$
+  & $T(2,7)$
+  & $T(2,6)$ \\[2pt]
+$T(3,5)$
+  & $(\sigma_1\sigma_2)^5$ ($B_3$)
+  & $T(3,5)$
+  & $T(3,4)$ \\[2pt]
+$T(2,9)$
+  & $\sigma_1^9$
+  & $T(2,9)$
+  & $T(2,8)$ \\[2pt]
+\hline
+\end{tabular}}
+\end{remark}
+
+\begin{remark}[Explicit skein computations]
+\label{rem:skein-computations}
+Applying~\eqref{eq:homfly-skein} at the listed crossing for each knot:
+
+\medskip
+\noindent\textbf{Trefoil $3_1$ from unknot via Hopf link.}\;
+The positive trefoil $3_1^+$ satisfies
+\begin{equation}\label{eq:skein-trefoil}
+  \ell\,P(3_1^+) + \ell^{-1}\,P(0_1) + m\,P(2^2_1) = 0.
+\end{equation}
+With $P(0_1)=1$ and $P(2^2_1) = -\ell(m^{-1}+m) - \ell^{-1}m^{-1}$
+(two-component unlink skein), one recovers
+\[
+  P(3_1^+; \ell, m) = -\ell^{-4}+2\ell^{-2}+\ell^{-2}m^2.
+\]
+
+\noindent\textbf{Figure-eight $4_1$ as amphichiral fixed point.}\;
+The skein relation at the central crossing gives
+\begin{equation}\label{eq:skein-fig8}
+  \ell\,P(L_+) + \ell^{-1}\,P(L_-) + m\,P(L_0) = 0,
+\end{equation}
+where $L_+ = 3_1^*$ (negative trefoil) and $L_- = 3_1^+$ (positive trefoil).
+Since $P(4_1;\ell,m) = P(4_1;\ell^{-1},m)$ (amphichirality),
+the equation constrains $P(4_1)$ to be symmetric in $\ell\leftrightarrow\ell^{-1}$.
+
+\noindent\textbf{Torus knot $T(2,2k+1)$ recursion.}\;
+The skein relation on the last positive crossing of $T(2,2k+1)$ gives
+\begin{equation}\label{eq:skein-torus-2n}
+  \ell\,P(T(2,2k+1)) + \ell^{-1}\,P(T(2,2k-1)) + m\,P(T(2,2k)) = 0,
+\end{equation}
+with $P(T(2,1))=P(0_1)=1$ and $P(T(2,2))=P(2^2_1)$.
+This determines $P(T(2,2k+1))$ inductively for all $k \ge 1$.
+
+\noindent\textbf{Torus knot $T(3,n)$ recursion.}\;
+Writing $T(3,n)$ as the closure of $(\sigma_1\sigma_2)^n$ in $B_3$, the skein relation gives
+\begin{equation}\label{eq:skein-torus-3n}
+  \ell\,P(T(3,n)) + \ell^{-1}\,P(T(3,n-2)) + m\,P(L_n) = 0,
+\end{equation}
+where $L_n$ is an intermediate link whose HOMFLY polynomial is computed
+from lower-crossing diagrams.
+\end{remark}
+
+\begin{remark}[Jones skein relation for each knot]
+\label{rem:jones-skein-per-knot}
+Specialising $\ell = t^{-1}$, $m = t^{1/2}-t^{-1/2}$ in
+\eqref{eq:homfly-skein} gives
+$t^{-1}V(L_+) - tV(L_-) = (t^{1/2}-t^{-1/2})V(L_0)$.
+The table below shows the skein relation at one distinguished crossing
+for each knot, together with the resulting Jones computation:
+
+\medskip
+{\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabular}{lll}
+\hline
+\textbf{Knot $K$} & \textbf{Jones skein identity} & \textbf{Result} \\
+\hline
+$0_1$
+  & $V(0_1) = 1$ (base case)
+  & $1$ \\[2pt]
+$2^2_1$
+  & $t^{-1}V(2^2_1) - t\,V(0_1\sqcup 0_1) = (t^{1/2}-t^{-1/2})V(0_1)$
+  & $-t^{-1/2}-t^{-5/2}$ \\[2pt]
+$3_1$
+  & $t^{-1}V(3_1) - t\,V(0_1) = (t^{1/2}-t^{-1/2})V(2^2_1)$
+  & $-t^{-4}+t^{-3}+t^{-1}$ \\[2pt]
+$4_1$
+  & $t^{-1}V(3_1^*) - t\,V(3_1) = (t^{1/2}-t^{-1/2})V(2^2_1)$
+  & $t^2-t+1-t^{-1}+t^{-2}$ \\[2pt]
+$5_1$
+  & $t^{-1}V(5_1)-t\,V(3_1)=(t^{1/2}-t^{-1/2})V(T(2,4))$
+  & see~\eqref{eq:jones-T35} \\[2pt]
+$5_2$
+  & $t^{-1}V(4_1)-t\,V(5_2^*)=(t^{1/2}-t^{-1/2})V(L)$
+  & $-t^6+t^5+t^3$ \\[2pt]
+$T(3,4)$
+  & $t^{-1}V(T(3,4))-t\,V(T(3,2))=(t^{1/2}-t^{-1/2})V(T(3,3))$
+  & see~\eqref{eq:jones-T34} \\[2pt]
+$T(2,7)$
+  & $t^{-1}V(T(2,7))-t\,V(T(2,5))=(t^{1/2}-t^{-1/2})V(T(2,6))$
+  & see~\eqref{eq:jones-T27} \\[2pt]
+$T(3,5)$
+  & $t^{-1}V(T(3,5))-t\,V(T(3,3))=(t^{1/2}-t^{-1/2})V(T(3,4))$
+  & see~\eqref{eq:jones-T35} \\[2pt]
+$T(2,9)$
+  & $t^{-1}V(T(2,9))-t\,V(T(2,7))=(t^{1/2}-t^{-1/2})V(T(2,8))$
+  & see~\eqref{eq:jones-T29} \\[2pt]
+\hline
+\end{tabular}}
+\end{remark}
+
+\begin{remark}[$q$-deformed skein relation in the QOU]
+\label{rem:q-deformed-skein}
+In the QOU framework, the standard Jones skein relation is replaced by
+a $q$-deformed version incorporating the substrate parameter
+$q(p)$ (Definition~\ref{def:substrate-parameter}):
+\begin{equation}\label{eq:q-skein}
+  q^{-1}\,V_q(L_+) \;-\; q\,V_q(L_-) \;=\;
+  (q^{1/2}-q^{-1/2})\,V_q(L_0),
+\end{equation}
+where $V_q(K)$ is the $q$-deformed Jones polynomial evaluated at the
+substrate parameter $q(p)$ of the QOU point $p \in B_3$.  At
+$q\to 1$ (classical limit, heat death) equation~\eqref{eq:q-skein}
+reduces to the ordinary Jones skein relation.  At $q\to\infty$
+(deep-quantum, Big Bang) the $q$-deformed $R$-matrix of
+$\mathcal{U}_q(\mathfrak{su}(2))$
+(Remark~\ref{rem:r-matrix}) furnishes the twisted exchange operator,
+and the braiding becomes maximal.
+
+\medskip\noindent
+The $q$-deformation parameter couples the knot invariant to the
+topology of the Bring hierarchy: the substrate parameter $q(p)$ is
+maximal at the six branch points (where $B_3$ and $B_2$ have their
+most complex fiber structure), and the $q$-deformed skein relation
+therefore encodes the transition between hierarchy levels as a
+deformation of the classical braid relations.
+\end{remark}
