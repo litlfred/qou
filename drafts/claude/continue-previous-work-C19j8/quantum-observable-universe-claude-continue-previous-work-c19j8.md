@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-17
+date: 2026-03-18
 title: Quantum Observable Universe
 ---
 
