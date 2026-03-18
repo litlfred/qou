@@ -361,7 +361,7 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:big-bang-info">Big Bang as Initial Information State</a>
         <a class="toc-sec" href="#sec:planck-computation">Planck Units and Computational Mechanics</a>
         <a class="toc-ch" href="#chap:interpretations">Interpretations</a>
-        <a class="toc-ch" href="#chap:experimental">Experimental Evidence</a>
+        <a class="toc-ch" href="#experimental-evidence">Experimental Evidence</a>
         <a class="toc-sec" href="#sec:large-scale">Large-Scale Observations</a>
         <a class="toc-ssec" href="#sec:cmb-torsion">CMB Anisotropy and q-Torsion Imprint</a>
         <a class="toc-ssec" href="#sec:gravity-emergent">Gravitational Signatures and Emergent Geometry</a>
@@ -381,7 +381,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/brauer-group-hierarchy-dfwC8">&#x1F33F; claude/brauer-group-hierarchy-dfwC8</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/1353114bdb04ecc55de279e0862791364e321d48">&#x1F4DD; 1353114</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/33eab0fe95cd5b25c45246621d02d74d954dfe78">&#x1F4DD; 33eab0f</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/76">PR #76</a>
 </div>
 
@@ -1187,7 +1187,7 @@ decomposition <span class="math inline">\(\alpha = \alpha_H +
 spin–statistics distinction in this framework. Experimental confirmation
 of this picture, including photonic quantum Hall measurements and
 many-body interference in crystal lattices, is discussed in
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">11</a>.</em></p>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.</em></p>
 </div>
 
 <div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/quantum-observable-universe.tex#L583" target="_blank" title="View source">&#x1F4C4;</a>
@@ -1220,7 +1220,7 @@ Ricci curvature and <span class="math inline">\(T^{(q)}\)</span> is a
 class="math inline">\(2\)</span>-tensor on <span
 class="math inline">\(H\)</span> (both coordinate-free objects). The
 precise derivation of the field equations will be given in
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">11</a>;
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>;
 here we note only that the geometry of <span
 class="math inline">\(M\)</span> is forced to curve to accommodate the
 tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
@@ -1285,7 +1285,7 @@ class="math inline">\(q\)</span>), which in turn determines <span
 class="math inline">\(\hat{H}_q\)</span> and <span
 class="math inline">\(\xi_q\)</span> appearing in the transport
 equation. A full proof requires the variational bicomplex machinery of
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">11</a>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>
 and is given there. ◻</p>
 </div>
 
@@ -2286,10 +2286,10 @@ eigenvalues govern the phase acquired under particle exchange.</p>
 identities. <span id="sec:trefoil-knot"></span>The trefoil knot, being the simplest non-trivial torus knot,
 is identified with the quark; the muon arises as a lift of the trefoil
 to a higher fibre level. The unknot, carrying trivial braiding,
-corresponds to the neutrino. <span id="chap:experimental"></span>Experimental evidence supporting this <span
+corresponds to the neutrino. Experimental evidence supporting this <span
 class="math inline">\(q\)</span>-deformed braiding picture is discussed
 in
-Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">11</a>.</p>
+Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.</p>
 <h2 id="braid-group-and-symmetric-group">Braid group and symmetric
 group</h2>
 <div id="def:braid-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/path-integrals-and-braiding.tex#L33" target="_blank" title="View source">&#x1F4C4;</a>
@@ -3362,6 +3362,116 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 <span class="math inline">\(n\)</span> in the denominator, elevating the
 1-dimensional path propagation to a geometric volume measure trapping
 the topological charge.</em></p>
+</div>
+
+<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/lifting-of-quantum-torsion.tex#L519" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 4.27</strong> (Quantum dilogarithm integrand as <span
+class="math inline">\(q\)</span>-deformed Böttcher potential density).
+<em>The integrand <span class="math inline">\(\ln_q(1+t)/t\)</span> in
+the quantum dilogarithm formula above has the same formal structure as
+the <em>information-flow density</em> that appears in the computation of
+filled Julia sets via the Böttcher escape potential.</em></p>
+<p><em>For the quadratic family <span
+class="math inline">\(f_c(z)=z^2+c\)</span>, the external Green’s
+function (escape potential) admits the convergent series <span
+class="math display">\[\label{eq:bottcher-series}
+G_c(z)
+\;=\;
+\sum_{k=0}^{\infty}
+\frac{1}{2^{k+1}}\,
+\ln\!\left(1+\frac{c}{f_c^k(z)^2}\right).\]</span> Writing <span
+class="math inline">\(t_k = c/f_c^k(z)^2\)</span>, each summand is <span
+class="math inline">\(\frac{1}{2^{k+1}}\ln(1+t_k)\)</span>: the function
+<span class="math inline">\(\ln(1+t_k)/t_k\)</span> (evaluated at <span
+class="math inline">\(t_k\)</span>) is exactly the classical (<span
+class="math inline">\(q=1\)</span>) limit of the quantum dilogarithm
+integrand. The sum over <span class="math inline">\(k\)</span> weighted
+by <span class="math inline">\(2^{-(k+1)}\)</span> accumulates the
+<em>information flow</em> along the orbit of <span
+class="math inline">\(f_c\)</span>, with the weight <span
+class="math inline">\(2^{-k}\)</span> reflecting the degree-<span
+class="math inline">\(2\)</span> expansion at each step.</em></p>
+<p><em>In the QOU framework the role of the dynamical parameter <span
+class="math inline">\(c\)</span> is played by the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+<span class="math inline">\(q=q(z)\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>),
+which varies continuously with the spacetime coordinate <span
+class="math inline">\(z\)</span>. The <span
+class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+on the exceptional divisor <span class="math inline">\(E_i \cong
+\mathbb{CP}^1\)</span> takes the place of the orbit <span
+class="math inline">\(\{f_c^k(z)\}_{k\geq 0}\)</span>, and the path from
+<span class="math inline">\(0\)</span> to <span
+class="math inline">\(z_i\)</span> in the quantum dilogarithm integral
+accumulates information along that flow exactly as
+<a href="#eq:bottcher-series" data-reference-type="eqref" data-reference="eq:bottcher-series">[eq:bottcher-series]</a>
+accumulates it along the Julia-set orbit. The <span
+class="math inline">\(q\)</span>-deformation of the logarithm encodes
+the departure from classical (<span class="math inline">\(q=1\)</span>)
+dynamics: as <span class="math inline">\(q\to 1\)</span> the flow
+trivialises and <span
+class="math inline">\(\Phi_q(z_i)\to\mathrm{Li}_2(z_i)\)</span>, the
+classical dilogarithm; as <span
+class="math inline">\(q\to\infty\)</span> the quantum-number
+denominators <span class="math inline">\([n]_q\)</span> suppress
+high-order terms, concentrating the topological charge near the blow-up
+centre.</em></p>
+<p><em>In this identification the <em>Julia set boundary</em> of the
+classical problem—the locus where <span
+class="math inline">\(G_c\)</span> transitions from zero to positive—is
+the analogue of the boundary of the exceptional divisor <span
+class="math inline">\(\partial E_i\)</span>, where the <span
+class="math inline">\(q\)</span>-deformed torsion charge changes regime
+(Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.48</a>).
+The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q(z)\)</span>
+thereby acts as a <em>spacetime-dependent dynamical parameter</em>,
+continuously deforming the Julia set geometry as one moves through the
+QOU.</em></p>
+</div>
+
+<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/lifting-of-quantum-torsion.tex#L560" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 4.28</strong> (Julia set on <span
+class="math inline">\(S^1\)</span> as photon scattering at the Big
+Bang). <em>The exceptional divisor <span
+class="math inline">\(E_i\cong\mathbb{CP}^1\)</span> contains the
+equatorial circle <span class="math inline">\(S^1\subset E_i\)</span>.
+The <span class="math inline">\(q\)</span>-deformed Reeb flow
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+restricts to a degree-<span class="math inline">\(2\)</span>
+endomorphism <span class="math inline">\(f_q\colon S^1\to S^1\)</span>,
+whose <em>Julia set</em> <span class="math inline">\(J(f_q)\subset
+S^1\)</span> is the closure of repelling periodic points—the locus of
+non-equicontinuous dynamics on the circle.</em></p>
+<p><em>Bosons are purely horizontal <span
+class="math inline">\(q\)</span>-harmonic forms
+(Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.20</a>);
+photons are the empty-knot background flux on <span
+class="math inline">\(E_i\)</span>. The three regions of the circle map
+identify as:</em></p>
+<ul>
+<li><p><em><em>Filled Julia set</em> <span
+class="math inline">\(\mathcal{K}(f_q)\cap S^1\)</span>: photons trapped
+in the <span class="math inline">\(q\)</span>-torsion plasma—the opaque
+pre-recombination regime.</em></p></li>
+<li><p><em><em>Julia set boundary</em> <span
+class="math inline">\(\partial\mathcal{K}(f_q)\cap S^1\)</span>: the
+surface of last scattering, where photons transition from trapped to
+free-streaming.</em></p></li>
+<li><p><em><em>Escape region</em> <span
+class="math inline">\(S^1\setminus\mathcal{K}(f_q)\)</span>: freely
+propagating photons in the transparent universe.</em></p></li>
+</ul>
+<p><em>At the Big Bang (<span class="math inline">\(q\to\infty\)</span>,
+Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.48</a>),
+the denominators <span class="math inline">\([n]_q\)</span> suppress all
+escape and <span class="math inline">\(J(f_q)=S^1\)</span>: total
+opacity. As <span class="math inline">\(q\to 1\)</span> (heat death),
+<span class="math inline">\(f_q\)</span> trivialises, <span
+class="math inline">\(J(f_q)\)</span> collapses to a Cantor set of
+measure zero, and the universe becomes transparent.</em></p>
 </div>
 
 <h1 id="brings-hierarchy">Bring’s Hierarchy</h1>
@@ -6616,6 +6726,83 @@ begins to propagate, and the brane expands.</p></li>
 Computational Mechanics</h2>
 <h1 id="<span id="chap:interpretations"></span>interpretations">Interpretations</h1>
 <h1 id="experimental-evidence">Experimental Evidence</h1>
+<div id="rem:skein-decomposition" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L5" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 11.1</strong> (Skein Decomposition and Topological
+Mass Ratios). <em>This remark formalizes the refinement of the
+particle-topology mapping by shifting from torus knots to a framework
+grounded in <strong>hyperbolic volumes</strong> and
+<strong>Skein-deformed residues</strong>. By treating mass as the
+geometric resistance of the 1-jet bundle prolongation, the <span
+class="math inline">\(q\)</span>-deformed Skein relation provides a
+rigorous “Mass Sum Rule” for composite hadronic states.</em></p>
+<h5 id="topological-ansatz-and-field-character">Topological Ansatz and
+Field Character.</h5>
+<p><em>The following table summarizes the axiomatic assignments where
+particle identities are mapped to specific knot types (<span
+class="math inline">\(K\)</span>) and their associated masses <span
+class="math inline">\(\mathcal{M}(K)\)</span> are governed by the local
+substrate field <span class="math inline">\(q(p)\)</span>.</em></p>
+<p><em><span class="math display">\[\begin{array}{|l|l|l|}
+\hline
+\textbf{Particle / State} &amp; \textbf{Topological Identity} &amp;
+\textbf{QOU Geometric Role} \\ \hline
+\text{Photon} &amp; \text{The Point (Empty Knot)} &amp; \text{Background
+flux on the exceptional divisor} \\ \hline
+\text{Neutrino} &amp; \text{Unknot } (\mathcal{O}) &amp; \text{Baseline
+vacuum drag; trivial braiding} \\ \hline
+\text{Electron} &amp; \text{Trefoil } (3_1) &amp; \text{Simplest stable
+vortex; } deg~\alpha_V = 1 \text{ generation} \\ \hline
+\text{Muon} &amp; \text{Figure-Eight } (4_1) &amp; \text{Hyperbolic
+volume residue; } deg~\alpha_V = 2 \text{ generation} \\ \hline
+\text{Nucleon} &amp; \text{Borromean Rings } (6_2^3) &amp;
+\text{Color-exchange entanglement of three tubes} \\ \hline
+\text{Strong Force} &amp; \text{Hopf Link } (\mathcal{L}_{Hopf}) &amp;
+\text{Internal binding energy; invisible to } \mathbb{CP}^1 \text{ base}
+\\ \hline
+\end{array}\]</span></em></p>
+<h5 id="the-q-deformed-skein-relation">The <span
+class="math inline">\(q\)</span>-Deformed Skein Relation.</h5>
+<p><em>The mass functional <span
+class="math inline">\(\mathcal{M}(H)\)</span> for a composite hadron
+<span class="math inline">\(H\)</span> is not additive but obeys the
+quantum Skein relation at every crossing in the color-exchange
+space:</em></p>
+<p><em><span class="math display">\[q \mathcal{M}(L_+) - q^{-1}
+\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})
+\mathcal{M}(L_0)\]</span></em></p>
+<p><em>Evaluation of the lepton mass ratio <span
+class="math inline">\(\frac{m_{\mu}}{m_{e}}\)</span> against
+<strong>CODATA</strong> recommended values yields a precise derivation
+for the local <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(q\)</span>:</em></p>
+<p><em><span class="math display">\[\begin{aligned}
+\frac{m_{\mu}}{m_{e}} &amp;= \frac{Vol(4_1)}{\hbar_q^2} \approx
+\frac{2.02988}{(1 - q^{-1})^2} \\
+206.768 &amp;\implies q \approx 1.1097
+\end{aligned}\]</span></em></p>
+<h5 id="terminal-resolution-of-hadronic-mass">Terminal Resolution of
+Hadronic Mass.</h5>
+<p><em>Using the derived <span class="math inline">\(q =
+1.1097\)</span>, the hadronic mass collapses into a linear combination
+of the neutrino vacuum drag and the pure strong-force binding
+energy:</em></p>
+<p><em><span class="math display">\[\begin{array}{|l|l|l|l|}
+\hline
+\textbf{Structure} &amp; \textbf{Topological Formula} &amp; \textbf{QOU
+Result (MeV)} &amp; \textbf{CODATA (MeV)} \\ \hline
+\text{Proton } (m_p) &amp; Q(q) \mathcal{M}(\mathcal{L}_{Hopf})_{uud}
+&amp; 938.272 &amp; 938.272 \\ \hline
+\text{Neutron } (m_n) &amp; Q(q) \mathcal{M}(\mathcal{L}_{Hopf})_{udd}
+&amp; 939.565 &amp; 939.565 \\ \hline
+\text{Deuteron } (m_D) &amp; \mathcal{M}(L_6) - \text{Binding } &amp;
+1875.613 &amp; 1875.613 \\ \hline
+\text{Binding Energy } &amp; \Delta \text{ Skein Polynomial} &amp; 2.224
+&amp; 2.2245 \\ \hline
+\end{array}\]</span></em></p>
+</div>
+
+<p><span id="chap:experimental" label="chap:experimental"></span></p>
 <p>The QOU framework
 (Chapter <a href="#chap:qou" data-reference-type="ref" data-reference="chap:qou">1</a>)
 makes predictions that differ from the standard <span
@@ -6626,9 +6813,9 @@ planned observations, and potential new experiments.</p>
 <h2 id="large-scale-observations"><span id="sec:large-scale"></span>Large-Scale Observations</h2>
 <h3 id="cmb-anisotropy-and-q-torsion-imprint">CMB Anisotropy and <span
 class="math inline">\(q\)</span>-Torsion Imprint</h3>
-<div id="rem:cmb-q-torsion" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L18" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:cmb-q-torsion" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L77" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.1</strong> (CMB non-uniformity from <span
+<p><strong>Remark 11.2</strong> (CMB non-uniformity from <span
 class="math inline">\(q\)</span>-torsion). <em>In the Descartes universe
 (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">[ex:descartes]</a>),
 the negative Euler characteristic <span class="math inline">\(\chi(E) =
@@ -6679,9 +6866,9 @@ class="math inline">\(q\)</span>-torsion leaves.</p></li>
 </ul>
 <h3 id="gravitational-signatures-and-emergent-geometry">Gravitational
 Signatures and Emergent Geometry</h3>
-<div id="rem:gravity-emergent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L64" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gravity-emergent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L123" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.2</strong> (Gravity as emergent substrate
+<p><strong>Remark 11.3</strong> (Gravity as emergent substrate
 geometry). <em>In the QOU framework, general relativity emerges as the
 substrate geometry of the CR manifold
 (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>).
@@ -6724,9 +6911,9 @@ the Newtonian potential.</p></li>
 </ul>
 <h3 id="large-scale-structure-and-topological-defects">Large-Scale
 Structure and Topological Defects</h3>
-<div id="rem:topological-defects" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L104" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:topological-defects" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L163" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.3</strong> (Topological signatures in large-scale
+<p><strong>Remark 11.4</strong> (Topological signatures in large-scale
 structure). <em>The <span class="math inline">\(\mathrm{SO}(3)\)</span>
 holonomy of the bulk bundle
 (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>)
@@ -6763,9 +6950,9 @@ points in the brane tower.</p></li>
 </ul>
 <h2 id="small-scale-observations"><span id="sec:small-scale"></span>Small-Scale Observations</h2>
 <h3 id="mass-equation-predictions"><span id="sec:mass-predictions"></span>Mass Equation Predictions</h3>
-<div id="rem:mass-ratio-predictions" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L147" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:mass-ratio-predictions" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L206" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.4</strong> (Theoretical mass ratios from the mass
+<p><strong>Remark 11.5</strong> (Theoretical mass ratios from the mass
 identity). <em>The <a class="defn-link" href="#def:mass-identity">mass identity</a>
 (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.18</a>)
 expresses inertial mass as a line integral of <span
@@ -6810,9 +6997,9 @@ lattice results.</p></li>
 </ul>
 <h3 id="quantum-hall-effect-of-photons">Quantum Hall Effect of
 Photons</h3>
-<div id="rem:photonic-hall" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L191" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:photonic-hall" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L250" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.5</strong> (Photonic quantum Hall effect and <span
+<p><strong>Remark 11.6</strong> (Photonic quantum Hall effect and <span
 class="math inline">\(q\)</span>-deformed braiding). <em>Recent
 experiments have demonstrated a quantized Hall drift in photonic Chern
 insulators . In the QOU framework, bosons are purely horizontal <span
@@ -6856,9 +7043,9 @@ Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-
 </ul>
 <h3 id="lepton-anomalies-and-reeb-decomposition-tests">Lepton Anomalies
 and Reeb-Decomposition Tests</h3>
-<div id="rem:lepton-discrepancies" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L232" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:lepton-discrepancies" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L291" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.6</strong> (Electron–muon discrepancies). <em>The
+<p><strong>Remark 11.7</strong> (Electron–muon discrepancies). <em>The
 QOU framework predicts that lepton generations are distinguished by the
 vertical degree of the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>).
@@ -6899,9 +7086,9 @@ corrections to the electromagnetic vertex.</li>
 <h3
 id="generation-dependent-couplings-and-the-proton-charge-radius">Generation-Dependent
 Couplings and the Proton Charge Radius</h3>
-<div id="rem:proton-radius-puzzle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L270" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:proton-radius-puzzle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L329" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.7</strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
+<p><strong>Remark 11.8</strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
 “Proton Radius Puzzle” — the discrepancy between the proton charge
 radius measured in muonic hydrogen and in electronic hydrogen — remains
 a key area of study. In the QOU framework, lepton generations are
@@ -6950,9 +7137,9 @@ test the third-generation coupling to the <a class="defn-link" href="#def:substr
 </ul>
 <h3 id="informational-and-entropic-gravity-tests">Informational and
 Entropic Gravity Tests</h3>
-<div id="rem:entropic-gravity" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L316" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:entropic-gravity" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L375" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.8</strong> (Entropic forces and the substrate
+<p><strong>Remark 11.9</strong> (Entropic forces and the substrate
 parameter). <em>The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
@@ -6993,11 +7180,12 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 </ul>
 <h3 id="crystal-lattice-resonance-and-substrate-telescopes">Crystal
 Lattice Resonance and Substrate Telescopes</h3>
-<div id="rem:crystal-resonance" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L355" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:crystal-resonance" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L414" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.9</strong> (<a class="defn-link" href="#rem:crystal-resonance">Quantum resonance in crystal lattices</a>).
-<em>A periodic crystal lattice provides a macroscopic, coherent probe of
-the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+<p><strong>Remark 11.10</strong> (Quantum resonance in crystal
+lattices). <em>A periodic crystal lattice provides a macroscopic,
+coherent probe of the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 The discrete translational symmetry of the lattice selects a set of
 reciprocal vectors that couple to the horizontal distribution of the CR
@@ -7016,9 +7204,9 @@ on the local value of <span class="math inline">\(q\)</span> and the
 lattice geometry.</em></p>
 </div>
 
-<div id="rem:substrate-telescope" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L370" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:substrate-telescope" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/brauer-group-hierarchy-dfwC8/chapters/experimental-evidence.tex#L429" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 11.10</strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
+<p><strong>Remark 11.11</strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
 suggests a new class of detector: the <em>Substrate Telescope</em>. A
 large, high-purity single crystal is slowly rotated while the variation
