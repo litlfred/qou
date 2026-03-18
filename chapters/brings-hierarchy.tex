@@ -627,14 +627,16 @@ Specialisations recover classical invariants:
 The \emph{Kauffman bracket} $\langle D \rangle \in \mathbb{Z}[A^{\pm 1}]$ of
 an unoriented link diagram $D$ satisfies
 \begin{equation}\label{eq:kauffman-bracket}
-  \langle \;\slashbox{}{}\; \rangle
-  = A\,\langle \;\raisebox{-2pt}{$\asymp$}\; \rangle
-  + A^{-1}\langle \;\raisebox{2pt}{$\asymp$}\; \rangle,
+  \langle L_+ \rangle
+  = A\,\langle L_{0} \rangle
+  + A^{-1}\langle L_{\infty} \rangle,
   \qquad
   \langle D \sqcup \bigcirc \rangle = (-A^2 - A^{-2})\langle D \rangle,
   \qquad
-  \langle \bigcirc \rangle = 1.
+  \langle \bigcirc \rangle = 1,
 \end{equation}
+where $L_0$ and $L_\infty$ are the two smoothings of a positive crossing $L_+$
+(the $A$-smoothing and $A^{-1}$-smoothing respectively).
 The Jones polynomial is recovered by
 $V(K)(t) = (-1)^{w(D)}A^{-3w(D)}\langle D\rangle\big|_{A=t^{-1/4}}$,
 where $w(D)$ is the writhe of a diagram $D$ for $K$.
