@@ -260,7 +260,7 @@ def ReebDecomposition.isPurelyHorizontal {M : Type*}
     LaTeX: `\label{def:q-harmonic-form}` -/
 structure QHarmonicForm (M : Type*) extends ReebDecomposition M where
   /-- The q-Laplacian applied to this form vanishes: `Δ_q α = 0`. -/
-  q_laplacian_vanishes : ∀ (p : M), (0 : ℝ) = 0  -- placeholder for Δ_q α = 0
+  q_laplacian_vanishes : True := by trivial  -- placeholder for Δ_q α = 0
 
 /-- **Fermion**: a q-harmonic form with non-trivial vertical component.
 
@@ -372,8 +372,8 @@ theorem irreducible_connection (cqou : CQuantumObservableUniverse)
 theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
     (hn : cqou.n = 2)
     (inst : InstantonConnection cqou.toCRManifoldData) :
-    inst.self_dual hn = True := by
-  rfl
+    inst.self_dual hn := by
+  trivial
 
 /-- **Proposition (Main Commutative Diagram).**
     The diagram relating the Euler–Lagrange operator, jet evaluation,
