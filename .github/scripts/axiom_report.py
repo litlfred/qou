@@ -39,6 +39,10 @@ KEY_DECLARATIONS = [
     "QOU.MassDerivation.quantum_planck",
     "QOU.KnotTheory.PlanarDiagram",
     "QOU.KnotTheory.figureEight",
+    "QOU.KnotRegistry.figureEightEntry",
+    "QOU.KnotRegistry.registry_volume_eq_mass_derivation",
+    "QOU.Calculations.full_derivation_chain",
+    "QOU.Calculations.substrate_error_bound",
     "QOU.Glossary.FrobeniusHopfObject",
 ]
 
@@ -312,9 +316,25 @@ def generate_report(build_info, source_axioms, sorry_counts, lean_dir,
     lines.append("  | q           | 1.1097 (derived)| MassDerivation.substrate_q     |")
     lines.append("")
 
+    # Knot Registry audit
+    lines.append("-" * 72)
+    lines.append("§7  KNOT REGISTRY AUDIT (Alexander-Briggs)")
+    lines.append("-" * 72)
+    lines.append("")
+    lines.append("  | A-B Index | QOU Identity | Vol (SnapPy)    | Knot Atlas URL               |")
+    lines.append("  |-----------|-------------|-----------------|------------------------------|")
+    lines.append("  | 0_1       | Neutrino    | 0               | http://katlas.org/wiki/0_1   |")
+    lines.append("  | 3_1       | Electron    | 0 (torus knot)  | http://katlas.org/wiki/3_1   |")
+    lines.append("  | 4_1       | Muon        | 2.0298832128    | http://katlas.org/wiki/4_1   |")
+    lines.append("  | 0_1       | Photon      | 0               | http://katlas.org/wiki/0_1   |")
+    lines.append("")
+    lines.append("  Lean modules:  KnotRegistry.lean  →  Calculations.lean  →  MassDerivation.lean")
+    lines.append("  Bridge check:  KnotRegistry.figureEightEntry.volume.value = MassDerivation.vol_figure_eight")
+    lines.append("")
+
     # Theoretical Gap Report — sorry statements with bibliographic references
     lines.append("-" * 72)
-    lines.append("§7  THEORETICAL GAP REPORT")
+    lines.append("§8  THEORETICAL GAP REPORT")
     lines.append("-" * 72)
     lines.append("")
     lines.append("Each `sorry` below represents an unproved obligation.  Where a")
@@ -355,7 +375,7 @@ def generate_report(build_info, source_axioms, sorry_counts, lean_dir,
     # Warnings summary
     if build_info["warnings"]:
         lines.append("-" * 72)
-        lines.append("§8  BUILD WARNINGS")
+        lines.append("§9  BUILD WARNINGS")
         lines.append("-" * 72)
         for w in build_info["warnings"][:30]:
             lines.append(f"  {w}")

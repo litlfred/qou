@@ -1,0 +1,124 @@
+# LeanBlueprint — Build, validate declarations, and deploy to GitHub Pages
+#
+# Uses the canonical leanblueprint + docgen-action pipeline:
+#   1. Build Lean project (leanprover/lean-action)
+#   2. Compile blueprint (plasTeX → HTML + PDF)
+#   3. Generate doc-gen4 interactive documentation
+#   4. Validate \lean{} declaration names (lake exe checkdecls)
+#   5. Deploy to GitHub Pages (blueprint/, docs/, blueprint.pdf)
+#
+# Published artifacts (GitHub Pages):
+#   /blueprint/         Interactive dependency graph with proof status
+#   /blueprint.pdf      Print version of the blueprint
+#   /docs/              doc-gen4 API documentation
+#   /axiom-report.txt   Verification report (from lean_ci.yml)
+#
+# References:
+#   - https://github.com/PatrickMassot/leanblueprint
+#   - https://github.com/leanprover-community/docgen-action
+#   - https://github.com/leanprover/lean-action
+
+name: Blueprint
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lean/**'
+      - 'blueprint/**'
+      - 'home_page/**'
+      - 'chapters/**'
+      - 'references.bib'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'lean/**'
+      - 'blueprint/**'
+  workflow_dispatch:
+
+concurrency:
+  group: blueprint-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  build_blueprint:
+    runs-on: ubuntu-latest
+    name: Build project & blueprint
+
+    steps:
+      # ── Free disk space (mathlib + doc-gen4 need ~10 GB) ─────────
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be
+        with:
+          tool-cache: false
+          android: true
+          dotnet: false
+          haskell: false
+          large-packages: false
+          docker-images: false
+          swap-storage: false
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ── Pre-build: run ontologist & extraction pipeline ──────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Configure Python path
+        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+
+      - name: Run Ontologist (glossary scan)
+        run: python .github/scripts/ontologist.py all
+
+      - name: Extract proof objects from LaTeX
+        run: python .github/scripts/extract_proof_objects.py
+
+      - name: Generate Lean stubs
+        run: python .github/scripts/generate_lean_stubs.py
+
+      # ── Build Lean project ───────────────────────────────────────
+      - name: Build and lint Lean project
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          lint: false
+          lake-package-directory: lean
+
+      # ── Build blueprint + doc-gen4 + deploy ──────────────────────
+      - name: Compile blueprint and documentation
+        uses: leanprover-community/docgen-action@main
+        with:
+          blueprint: true
+          homepage: home_page
+          lake-package-directory: lean
+          references: references.bib
+
+      # ── Post-build: generate axiom report ────────────────────────
+      - name: Generate axiom report
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          # Build log may be at lean/build.log or captured in previous step
+          touch build.log
+          python .github/scripts/axiom_report.py \
+            --build-log build.log \
+            --lean-dir lean \
+            --output axiom-report.txt
+          # Copy to deployment directory if it exists
+          if [ -d home_page ]; then
+            cp axiom-report.txt home_page/ 2>/dev/null || true
+          fi
+        continue-on-error: true

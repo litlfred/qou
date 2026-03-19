@@ -36,6 +36,21 @@ peer-review practices and the methodology of
 - Magic numbers are explained or referenced.
 - Algorithms are correctly implemented.
 
+### 6. Formalization Cross-References
+- Numerical constants in the manuscript (CODATA values, knot volumes,
+  mass ratios) must match the `noncomputable def` constants in the Lean
+  source exactly.  Cross-check against:
+  - `MassDerivation.vol_figure_eight` (2.0298832128)
+  - `MassDerivation.experimental_mu_e_ratio` (206.768283)
+  - `MassDerivation.substrate_q` (1.1097)
+- Every claim citing experimental data must have a `\cite{key}` whose
+  BibTeX entry includes a DOI or URL to the original source.
+- The `-- Ref: [key]` annotations in Lean `sorry` markers must cite the
+  correct foundational reference for the gap.  Verify that the cited
+  paper is relevant to the unproved obligation.
+- Knot Atlas URLs in `KnotRegistry.lean` docstrings must resolve to
+  valid pages (format: `http://katlas.org/wiki/<ab_index>`).
+
 ## Output Format
 
 ```

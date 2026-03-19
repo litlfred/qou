@@ -14,9 +14,28 @@ structures and the mass-parameter derivation from the manuscript.
 |--------|---------|
 | `QOU.Glossary` | Semantic registry — types for all mathematical objects |
 | `QOU.KnotTheory` | Combinatorial knot representations (PD codes) |
+| `QOU.KnotRegistry` | Alexander-Briggs knot registry with Knot Atlas URLs |
 | `QOU.MassDerivation` | Topological mass conjecture and CODATA derivation |
+| `QOU.Calculations` | Skein-deformed residue proofs and substrate derivation |
 | `QOU.Basic` | Shared foundations |
 | `QOU.*` (chapters) | Per-chapter formalizations |
+
+### Knot Registry
+
+Every knot in the formalization carries an Alexander-Briggs index, a QOU
+physical identity, a SnapPy-verified hyperbolic volume, and a persistent
+link to [The Knot Atlas](http://katlas.org/).
+
+| A-B Index | QOU Identity | Hyperbolic Volume | Knot Atlas |
+|-----------|-------------|-------------------|------------|
+| 0₁ | Neutrino (SU(2) vacuum) | 0 | [0_1](http://katlas.org/wiki/0_1) |
+| 3₁ | Electron (Gen 1, B₃ monodromy) | 0 (torus knot) | [3_1](http://katlas.org/wiki/3_1) |
+| 4₁ | Muon (Gen 2, mass residue) | 2.0298832128 | [4_1](http://katlas.org/wiki/4_1) |
+| 0₁ | Photon (exceptional divisor) | 0 | [0_1](http://katlas.org/wiki/0_1) |
+
+The `Calculations.lean` module proves that the figure-eight volume feeds
+through the mass-ratio formula to yield substrate parameter q ≈ 1.1097
+within tolerance |q − 1.1097| < 0.0001.
 
 **Interactive documentation**: [Lean docs on GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
 
