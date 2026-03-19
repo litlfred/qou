@@ -136,13 +136,14 @@ jobs:
           echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
 
       # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
-      - name: Install pandoc, latexpand and latexdiff
+      - name: Install pandoc, latexpand, latexdiff, and graphviz
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             pandoc \
             texlive-extra-utils \
-            latexdiff
+            latexdiff \
+            graphviz
 
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
@@ -283,6 +284,13 @@ jobs:
             fi
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
+
+          # ── Extract proof objects and generate dependency graph ──────────────
+          python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
+          python3 .github/scripts/generate_dependency_graph.py \
+            --manifest _site/proof-objects.json \
+            --output _site/dependency-graph.svg \
+            --pdf-base-url "${FNAME_BASE}.pdf"
 
           # ── QA report (feature branches only) ───────────────────────────────
           if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then

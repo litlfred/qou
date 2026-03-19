@@ -43,6 +43,25 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{conjecture}[theorem]{Conjecture}
 
+% ── LeanBlueprint macros ──────────────────────────────────────────────────────
+% These macros annotate theorem-like environments with Lean 4 declaration
+% linkages.  They are consumed by the proof-objects extraction pipeline
+% and (optionally) by leanblueprint/plasTeX for dependency graph generation.
+%
+% Usage:
+%   \begin{theorem}\label{thm:my-result}
+%     \lean{QOU.Chapter.my_result}      % Lean declaration name
+%     \leanok                            % proof is sorry-free
+%     \uses{def:prerequisite}            % dependency labels
+%     Statement here.
+%   \end{theorem}
+\newcommand{\lean}[1]{}            % \lean{Lean.Decl.Name}
+\newcommand{\leanok}{}             % marks environment as fully formalized
+\newcommand{\notready}{}           % marks environment as not ready to formalize
+\newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
+\newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
+\newcommand{\mathlibok}{}          % marks declarations merged into mathlib
+
 % ── Notation macros ────────────────────────────────────────────────────────────
 \newcommand{\pp}{\mathfrak{p}}    % prime number (Fraktur p); bare p reserved
                                   % for points on the manifold

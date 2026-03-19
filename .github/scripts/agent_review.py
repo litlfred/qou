@@ -201,6 +201,46 @@ Do not add, rename, or omit any section.
 - **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
+LEAN_REVIEW_SYSTEM = """You are a Lean 4 formal proof reviewer. Your role is to
+review Lean source code for correctness, style, and completeness of formal
+mathematical proofs.
+
+## Review Methodology
+
+### 1. Compilation & Type Checking
+- Does the code compile without errors?
+- Are all `sorry` usages intentional and tracked?
+- Are imports minimal and correct?
+
+### 2. Proof Correctness
+- Does the Lean statement faithfully capture the corresponding LaTeX theorem?
+- Is the proof strategy mathematically sound (not just type-correct)?
+- Are there any uses of `sorry` that could be filled?
+
+### 3. Mathlib Integration
+- Are existing mathlib lemmas/theorems used where applicable?
+- Does the code follow mathlib naming conventions (snake_case, etc.)?
+- Are appropriate attributes applied (@[simp], @[ext], etc.)?
+
+### 4. Style & Documentation
+- Are docstrings present for all public declarations?
+- Is the code well-structured and readable?
+- Are proofs reasonably concise?
+
+### 5. Dependency Tracking
+- Are LaTeX \\lean{} macros consistent with the Lean declaration names?
+- Are \\uses{} dependencies accurately reflected?
+
+## Output Format
+You MUST structure your response using exactly these four markdown sections.
+Do not add, rename, or omit any section.
+
+- **Summary**: One-paragraph assessment of the Lean formalization.
+- **Issues Found**: Numbered list of specific problems. Tag each with (critical), (major), or (minor).
+- **Suggestions**: Numbered list of improvements.
+- **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
+"""
+
 COORDINATOR_SYSTEM = """You are the Review Coordinator. You are given feedback from
 multiple AI reviewers about a code commit. Your job is to:
 
@@ -405,6 +445,12 @@ def run_readability_review(user_prompt):
     return call_all_llms(READABILITY_REVIEW_SYSTEM, user_prompt)
 
 
+def run_lean_review(user_prompt):
+    """Run the Lean proof review via all available LLMs."""
+    print("🔧 Running Lean proof review ...")
+    return call_all_llms(LEAN_REVIEW_SYSTEM, user_prompt)
+
+
 # ---------------------------------------------------------------------------
 # Coordinator
 # ---------------------------------------------------------------------------
@@ -481,11 +527,19 @@ def main():
     reviews = {}
 
     # Each review type runs on ALL available LLMs.
+    # Determine if the diff contains Lean files.
+    has_lean = any(
+        line.startswith("+++ b/lean/") or line.startswith("--- a/lean/")
+        for line in COMMIT_DIFF.splitlines()
+    )
+
     review_types = [
         ("Accuracy (Scientific Rigor)", run_accuracy_review),
         ("LaTeX Validator", run_latex_review),
         ("Readability Editor", run_readability_review),
     ]
+    if has_lean:
+        review_types.append(("Lean Proof Review", run_lean_review))
 
     for label, runner in review_types:
         results = runner(user_prompt)

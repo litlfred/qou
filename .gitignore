@@ -14,3 +14,11 @@ diff.tex
 main-flat.tex
 build-warnings.log
 _site/
+
+# Lean build artifacts
+lean/.lake/
+lean/lake-packages/
+lean/build/
+
+# Generated graph intermediate files
+dependency-graph.dot

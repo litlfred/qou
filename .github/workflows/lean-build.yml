@@ -1,0 +1,70 @@
+name: Lean Build & Proof Status
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lean/**'
+      - 'chapters/**'
+      - 'proof-objects.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ── Step 1: Extract proof objects from LaTeX ──────────────────────
+      - name: Extract proof objects from LaTeX
+        run: python .github/scripts/extract_proof_objects.py
+
+      # ── Step 2: Generate Lean stubs for new objects ──────────────────
+      - name: Generate Lean stubs
+        run: python .github/scripts/generate_lean_stubs.py
+
+      # ── Step 3: Install Lean via elan ────────────────────────────────
+      - name: Install elan (Lean toolchain manager)
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Lean build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            lean/.lake
+            ~/.elan
+          key: lean-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain', 'lean/lakefile.lean') }}
+          restore-keys: |
+            lean-${{ runner.os }}-
+
+      # ── Step 4: Build Lean project ───────────────────────────────────
+      - name: Build Lean project
+        working-directory: lean
+        run: |
+          lake update
+          lake build 2>&1 | tee ../build.log
+        continue-on-error: true
+
+      # ── Step 5: Update proof status from build log ───────────────────
+      - name: Update proof status
+        run: python .github/scripts/update_proof_status.py --build-log build.log
+
+      # ── Step 6: Commit updated manifest ──────────────────────────────
+      - name: Commit proof-objects.json updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add proof-objects.json
+          git diff --staged --quiet || git commit -m "chore: update proof-objects.json from Lean build"
+          git push || true

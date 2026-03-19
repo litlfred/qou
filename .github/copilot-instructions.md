@@ -316,9 +316,36 @@ When **writing or editing manuscript content**, apply the following skills:
 | Brainstorming new research directions | `claude-scientific-skills/hypothesis-generation`, `claude-scientific-skills/scientific-brainstorming` |
 | Literature search | `claude-scientific-skills/literature-review`, `claude-scientific-skills/arxiv-database` |
 
+| Generating or updating Lean stubs | `local/lean-generation` |
+| Reviewing Lean proofs | `local/lean-proof-review` |
+| Tracking proof formalization status | `local/proof-status-tracking` |
+
 **Rules:**
 - Always apply `local/latex-validation` before finalizing any LaTeX change.
 - Always apply `local/scientific-accuracy` when modifying mathematical content.
 - Consult the synced skills proactively — do not wait to be told.
 - If a synced skill directory contains a `SKILL.md`, read it for detailed
   instructions specific to that tool or database.
+
+## 13  Lean Formalization & Proof Linkages
+
+This manuscript has a parallel Lean 4 formalization in the `lean/` directory.
+Every theorem-like environment in `chapters/*.tex` is tracked in
+`proof-objects.json`, which maps LaTeX labels to Lean declarations (referenced
+by doc-gen4 URL).
+
+### When reviewing LaTeX changes:
+- Check `proof-objects.json` for linked Lean declarations.
+- If a theorem statement changes, flag that the linked Lean declaration may
+  need updating.
+- If `\lean{}` macros are present, verify the declaration name is correct.
+
+### LeanBlueprint macros:
+- `\lean{QOU.Namespace.decl_name}` — links to a Lean declaration.
+- `\leanok` — claims the Lean proof is `sorry`-free.
+- `\uses{label1, label2}` — declares mathematical dependencies.
+- `\proves{thm:label}` — links a proof block to its statement.
+
+### Lean file structure:
+One `.lean` file per chapter under `lean/QOU/`.  The `lakefile.lean`
+depends on `mathlib4`.  Stubs use `sorry` for incomplete proofs.
