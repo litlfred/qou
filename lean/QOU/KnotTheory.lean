@@ -58,7 +58,7 @@ structure HyperbolicVolume where
   error_bound : ℝ
   /-- Proof obligation: error bound is non-negative. -/
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
-  error_nonneg : error_bound ≥ 0 := by sorry
+  error_nonneg : error_bound ≥ 0
 
 /-! ## Standard Knots -/
 
@@ -96,6 +96,7 @@ def figureEight : PlanarDiagram where
 noncomputable def vol_figure_eight : HyperbolicVolume where
   value := 2.0298832128
   error_bound := 1e-10
+  error_nonneg := by norm_num
 
 /-- The trefoil is a torus knot and has zero hyperbolic volume. -/
 noncomputable def vol_trefoil : HyperbolicVolume where
