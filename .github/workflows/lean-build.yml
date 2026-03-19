@@ -24,7 +24,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      # ── Step 0: Set PYTHONPATH for qou_lib shared library ──────────
+      - name: Configure Python path
+        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+
       # ── Step 1: Extract proof objects from LaTeX ──────────────────────
+      # Uses lean-generation skill workflow steps 1-2.
       - name: Extract proof objects from LaTeX
         run: python .github/scripts/extract_proof_objects.py
 
@@ -57,6 +62,7 @@ jobs:
         continue-on-error: true
 
       # ── Step 5: Update proof status from build log ───────────────────
+      # Uses proof-status-tracking skill workflow.
       - name: Update proof status
         run: python .github/scripts/update_proof_status.py --build-log build.log
 

@@ -2,20 +2,7 @@
 Generate Dependency Graph SVG from proof-objects.json
 
 Produces a Graphviz DOT file and renders it to SVG showing the logical
-dependency structure of all proof objects.  Nodes are organized into
-subgraphs by chapter (vertical, top to bottom) with horizontal ordering
-by theorem number within each chapter row.
-
-Node colors:
-  - Red:    No proof / blocking (formalization_status in {not_started, has_sorry})
-  - Orange: Reviewed by LLM only (has agentic reviews, no human review)
-  - Green:  Reviewed by human (has at least one human review)
-  - Yellow: Stated in Lean but no reviews yet
-
-Edges: thick lines connecting dependencies.
-
-Each node links to the corresponding section in the published PDF
-(using PDF named destinations / anchor tags).
+dependency structure of all proof objects.
 
 Usage:
     python .github/scripts/generate_dependency_graph.py \\
@@ -25,54 +12,24 @@ Usage:
 """
 
 import argparse
-import json
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_MANIFEST = REPO_ROOT / "proof-objects.json"
+from qou_lib.config import (
+    CHAPTER_TITLES,
+    DEFAULT_MANIFEST,
+    DEFAULT_PDF_URL,
+    REPO_ROOT,
+    TYPE_PREFIX,
+)
+
 DEFAULT_OUTPUT = REPO_ROOT / "dependency-graph.svg"
-DEFAULT_PDF_URL = "https://litlfred.github.io/qou/quantum-observable-universe.pdf"
-
-# Chapter titles for subgraph labels
-CHAPTER_TITLES = {
-    1: "Ch.1 Quantum Observable Universe",
-    2: "Ch.2 Categorical & Analytic Foundations",
-    3: "Ch.3 Path Integrals and Braiding",
-    4: "Ch.4 Lifting of Quantum Torsion",
-    5: "Ch.5 Bring's Surface",
-    6: "Ch.6 The Descartes Universe",
-    7: "Ch.7 p-Adic Quantum Groups",
-    8: "Ch.8 Gauge Field Fluid Dynamics",
-    9: "Ch.9 Information Theory",
-    10: "Ch.10 Interpretations",
-    11: "Ch.11 Experimental Evidence",
-    12: "Ch.12 Speculations",
-}
-
-# Short prefixes for display
-TYPE_PREFIX = {
-    "definition": "Def",
-    "theorem": "Thm",
-    "lemma": "Lem",
-    "proposition": "Prop",
-    "corollary": "Cor",
-    "conjecture": "Conj",
-    "example": "Ex",
-    "remark": "Rem",
-}
 
 
 def node_color(obj):
-    """Determine node fill color based on formalization and review status.
-
-    - Red:    no proof / blocking (not_started or has_sorry)
-    - Yellow: stated in Lean but no reviews
-    - Orange: reviewed by LLM only
-    - Green:  reviewed by human
-    """
+    """Determine node fill color based on formalization and review status."""
     reviews = obj.get("reviews", [])
     has_human = any(r.get("reviewer_type") == "human" for r in reviews)
     has_agentic = any(r.get("reviewer_type") == "agentic" for r in reviews)
@@ -83,8 +40,7 @@ def node_color(obj):
     if has_agentic:
         return "#FFD700"  # gold/orange
     if status in ("proved", "mathlib_ok"):
-        return "#FFFACD"  # light yellow — proved but no review
-    # not_started, stated, has_sorry
+        return "#FFFACD"  # light yellow
     return "#FF6B6B"  # light red
 
 
@@ -92,14 +48,14 @@ def node_border_color(obj):
     """Border color based on formalization status."""
     status = obj.get("formalization_status", "not_started")
     if status == "mathlib_ok":
-        return "#006400"  # dark green
+        return "#006400"
     if status == "proved":
-        return "#228B22"  # forest green
+        return "#228B22"
     if status == "has_sorry":
-        return "#FF8C00"  # dark orange
+        return "#FF8C00"
     if status == "stated":
-        return "#DAA520"  # goldenrod
-    return "#DC143C"  # crimson
+        return "#DAA520"
+    return "#DC143C"
 
 
 def sanitize_id(label):
@@ -112,27 +68,18 @@ def node_display_label(obj):
     label = obj["label"]
     obj_type = obj.get("object_type", "")
     prefix = TYPE_PREFIX.get(obj_type, obj_type.capitalize())
-    # Extract the number part if available
     number = obj.get("latex", {}).get("number", "")
     if number:
         return f"{prefix} {number}"
-    # Fallback: use the label suffix
     suffix = label.split(":", 1)[-1] if ":" in label else label
-    # Truncate long names
     if len(suffix) > 20:
         suffix = suffix[:17] + "..."
     return f"{prefix}\\n{suffix}"
 
 
 def pdf_anchor_url(obj, pdf_base_url):
-    """Generate a URL linking to the object in the PDF.
-
-    PDF viewers support named destinations.  LaTeX hyperref creates
-    destinations from \\label{} commands.  The destination name is the
-    label text itself.
-    """
-    label = obj["label"]
-    return f"{pdf_base_url}#%s" % label
+    """Generate a URL linking to the object in the PDF."""
+    return f"{pdf_base_url}#{obj['label']}"
 
 
 def generate_dot(manifest, pdf_base_url):
@@ -140,13 +87,11 @@ def generate_dot(manifest, pdf_base_url):
     objects = manifest.get("objects", [])
     dependencies = manifest.get("dependencies", [])
 
-    # Group objects by chapter
     by_chapter = {}
     for obj in objects:
         chapter = obj.get("latex", {}).get("chapter", 0)
         by_chapter.setdefault(chapter, []).append(obj)
 
-    # Build label→object lookup
     obj_by_label = {obj["label"]: obj for obj in objects}
 
     lines = []
@@ -172,12 +117,10 @@ def generate_dot(manifest, pdf_base_url):
     lines.append("  }")
     lines.append("")
 
-    # Chapter subgraphs
     for chapter_num in sorted(by_chapter.keys()):
         if chapter_num == 0:
             continue
         chapter_objects = by_chapter[chapter_num]
-        # Sort by line number for horizontal ordering
         chapter_objects.sort(key=lambda o: o.get("latex", {}).get("line", 0))
 
         title = CHAPTER_TITLES.get(chapter_num, f"Ch.{chapter_num}")
@@ -186,7 +129,6 @@ def generate_dot(manifest, pdf_base_url):
         lines.append(f'    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";')
         lines.append(f"    fontsize=10;")
 
-        # Create rank constraint for horizontal layout within chapter
         node_ids = []
         for obj in chapter_objects:
             nid = sanitize_id(obj["label"])
@@ -202,14 +144,12 @@ def generate_dot(manifest, pdf_base_url):
                 f'color="{border}" URL="{url}" tooltip="{tooltip}" target="_blank"];'
             )
 
-        # Force same rank (horizontal layout) within chapter
         if len(node_ids) > 1:
             lines.append(f"    {{ rank=same; {'; '.join(node_ids)}; }}")
 
         lines.append("  }")
         lines.append("")
 
-    # Dependency edges
     for dep in dependencies:
         from_label = dep.get("from", "")
         to_label = dep.get("to", "")
@@ -221,16 +161,13 @@ def generate_dot(manifest, pdf_base_url):
         from_id = sanitize_id(from_label)
         to_id = sanitize_id(to_label)
 
-        # Edge color: dark gray for uses, blue for proves
         if relation == "proves":
-            edge_color = "#4169E1"  # royal blue
-            edge_style = "solid"
+            edge_color = "#4169E1"
         else:
-            edge_color = "#555555"  # dark gray
-            edge_style = "solid"
+            edge_color = "#555555"
 
         lines.append(
-            f'  {to_id} -> {from_id} [color="{edge_color}" style="{edge_style}"];'
+            f'  {to_id} -> {from_id} [color="{edge_color}" style="solid"];'
         )
 
     lines.append("}")
@@ -265,6 +202,7 @@ def main():
         sys.exit(1)
 
     with open(args.manifest, encoding="utf-8") as f:
+        import json
         manifest = json.load(f)
 
     dot_source = generate_dot(manifest, args.pdf_base_url)
@@ -273,11 +211,9 @@ def main():
         print(dot_source)
         return
 
-    # Write DOT file
     dot_path = args.output.with_suffix(".dot")
     dot_path.write_text(dot_source, encoding="utf-8")
 
-    # Render with Graphviz
     try:
         subprocess.run(
             ["dot", "-Tsvg", "-o", str(args.output), str(dot_path)],

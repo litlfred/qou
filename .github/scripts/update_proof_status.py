@@ -13,22 +13,16 @@ This script is designed to run as part of CI after `lake build`.
 """
 
 import argparse
-import json
 import re
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-DEFAULT_MANIFEST = REPO_ROOT / "proof-objects.json"
+from qou_lib.config import DEFAULT_MANIFEST
+from qou_lib.manifest import load_manifest, save_manifest, update_manifest_timestamp
 
 
 def parse_sorry_warnings(log_text):
-    """Extract declaration names that use sorry from build log output.
-
-    Lean emits warnings like:
-        QOU/Torsion.lean:42:0: warning: declaration uses 'sorry'
-    """
+    """Extract declaration locations that use sorry from build log output."""
     sorry_decls = set()
     pattern = re.compile(
         r"(\S+\.lean):(\d+):\d+:\s*warning:\s*declaration uses 'sorry'"
@@ -39,11 +33,7 @@ def parse_sorry_warnings(log_text):
 
 
 def parse_sorry_decl_names(log_text):
-    """Extract sorry-using declaration names from build log.
-
-    Also look for lines like:
-        warning: 'QOU.Torsion.lifting_exists' uses sorry
-    """
+    """Extract sorry-using declaration names from build log."""
     names = set()
     pattern = re.compile(r"'([^']+)'\s+uses sorry")
     for m in pattern.finditer(log_text):
@@ -63,8 +53,9 @@ def main():
     )
     args = parser.parse_args()
 
-    if not args.manifest.exists():
-        print(f"❌ Manifest not found: {args.manifest}")
+    manifest = load_manifest(args.manifest)
+    if not manifest.get("objects"):
+        print(f"❌ No objects in manifest: {args.manifest}")
         sys.exit(1)
 
     if args.build_log and args.build_log.exists():
@@ -73,10 +64,6 @@ def main():
         log_text = sys.stdin.read()
 
     sorry_names = parse_sorry_decl_names(log_text)
-    sorry_locations = parse_sorry_warnings(log_text)
-
-    with open(args.manifest, encoding="utf-8") as f:
-        manifest = json.load(f)
 
     updated = 0
     for obj in manifest.get("objects", []):
@@ -91,8 +78,6 @@ def main():
             new_status = "has_sorry"
             lean_info["sorry_free"] = False
         elif old_status in ("stated", "has_sorry"):
-            # If it was previously stated/has_sorry and no sorry warning,
-            # it may now be proved
             new_status = "proved"
             lean_info["sorry_free"] = True
         else:
@@ -102,11 +87,8 @@ def main():
             obj["formalization_status"] = new_status
             updated += 1
 
-    # Update timestamp
-    manifest["manuscript"]["generated_at"] = datetime.now(timezone.utc).isoformat()
-
-    with open(args.manifest, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    update_manifest_timestamp(manifest)
+    save_manifest(manifest, args.manifest)
 
     print(f"✅ Updated {updated} object statuses in {args.manifest}")
 

@@ -82,6 +82,9 @@ jobs:
         if: inputs.source_branch != ''
         run: echo "HEAD_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
+      - name: Configure Python path for qou_lib
+        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
       # base branch so only trusted code runs with elevated permissions.

@@ -14,106 +14,33 @@ longer exist in the LaTeX source.
 """
 
 import argparse
-import json
-import os
 import re
-import subprocess
-import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
-
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-CHAPTERS_DIR = REPO_ROOT / "chapters"
-SCHEMA_PATH = REPO_ROOT / "schemas" / "proof-objects.schema.json"
-DEFAULT_OUTPUT = REPO_ROOT / "proof-objects.json"
-
-# Map from LaTeX environment name to object_type in the schema.
-ENV_TYPES = {
-    "theorem": "theorem",
-    "lemma": "lemma",
-    "proposition": "proposition",
-    "corollary": "corollary",
-    "definition": "definition",
-    "example": "example",
-    "remark": "remark",
-    "conjecture": "conjecture",
-}
-
-# Chapter file order (matches main.tex \input order).
-CHAPTER_FILES = [
-    "quantum-observable-universe.tex",
-    "qou-elaboration.tex",
-    "path-integrals-and-braiding.tex",
-    "lifting-of-quantum-torsion.tex",
-    "brings-surface.tex",
-    "descartes-universe.tex",
-    "p-adic-quantum-groups.tex",
-    "gauge-field-fluid-dynamics.tex",
-    "information-theory.tex",
-    "interpretations.tex",
-    "experimental-evidence.tex",
-    "speculations.tex",
-]
-
-# Map chapter number to Lean file (for populating lean.file, lean.gh_pages_url, etc.)
-CHAPTER_LEAN_FILES = {
-    1: "QOU/QuantumObservableUniverse.lean",
-    2: "QOU/Elaboration.lean",
-    3: "QOU/PathIntegrals.lean",
-    4: "QOU/Torsion.lean",
-    5: "QOU/BringsSurface.lean",
-    6: "QOU/DescartesUniverse.lean",
-    7: "QOU/PAdicQuantumGroups.lean",
-    8: "QOU/GaugeFieldFluidDynamics.lean",
-    9: "QOU/InformationTheory.lean",
-}
-
-GITHUB_REPO = "litlfred/qou"
-GH_PAGES_BASE = "https://litlfred.github.io/qou"
-
-# Regex patterns
-# Matches \begin{theorem}, \begin{lemma}[title], etc.
-BEGIN_RE = re.compile(
-    r"\\begin\{("
-    + "|".join(ENV_TYPES.keys())
-    + r")\}(?:\[([^\]]*)\])?"
+from qou_lib.config import (
+    BEGIN_RE,
+    CHAPTER_FILES,
+    CHAPTER_LEAN_FILES,
+    CHAPTERS_DIR,
+    ENV_TYPES,
+    GH_PAGES_BASE,
+    GITHUB_REPO,
+    LABEL_RE,
+    LEAN_RE,
+    LEANOK_RE,
+    MAX_ENV_SCAN_LINES,
+    REPO_ROOT,
+    USES_RE,
 )
-# Matches \label{...}
-LABEL_RE = re.compile(r"\\label\{([^}]+)\}")
-# Matches \lean{...}
-LEAN_RE = re.compile(r"\\lean\{([^}]+)\}")
-# Matches \uses{...}
-USES_RE = re.compile(r"\\uses\{([^}]+)\}")
-# Matches \leanok
-LEANOK_RE = re.compile(r"\\leanok\b")
+from qou_lib.git_utils import get_commit_sha
+from qou_lib.manifest import (
+    build_dependency_edges,
+    merge_with_existing,
+    save_manifest,
+    update_manifest_timestamp,
+)
 
-# Maximum lines to scan within a LaTeX environment body.
-MAX_ENV_SCAN_LINES = 50
-
-# Keys to preserve when merging Lean linkage data from existing records.
-LEAN_MERGE_KEYS = ("url", "file", "sorry_free", "mathlib_links")
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-
-def get_commit_sha():
-    """Return the current HEAD commit SHA."""
-    try:
-        return (
-            subprocess.check_output(
-                ["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, stderr=subprocess.DEVNULL
-            )
-            .decode()
-            .strip()
-        )
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return "unknown"
+DEFAULT_OUTPUT = REPO_ROOT / "proof-objects.json"
 
 
 def parse_chapter(filepath, chapter_num):
@@ -142,7 +69,6 @@ def parse_chapter(filepath, chapter_num):
         uses = []
         leanok = False
         j = i + 1
-        # Look within the next 20 lines (or until \end{env})
         end_re = re.compile(r"\\end\{" + re.escape(env_name) + r"\}")
         while j < min(i + MAX_ENV_SCAN_LINES, len(lines)):
             body_line = lines[j]
@@ -180,7 +106,6 @@ def parse_chapter(filepath, chapter_num):
                 obj["title"] = title.strip()
             if lean_decl:
                 lean_ref = {"decl": lean_decl}
-                # Populate file path and URLs if chapter has a Lean file
                 if chapter_num in CHAPTER_LEAN_FILES:
                     lean_file = CHAPTER_LEAN_FILES[chapter_num]
                     lean_ref["file"] = lean_file
@@ -205,49 +130,6 @@ def parse_chapter(filepath, chapter_num):
         i = j + 1 if j > i else i + 1
 
     return objects
-
-
-def merge_with_existing(new_objects, existing_path):
-    """Merge newly extracted objects with existing proof-objects.json.
-
-    Preserves review records and Lean linkage data for objects that still
-    exist.  Removes objects whose labels are no longer in the LaTeX source.
-    """
-    if not existing_path.exists():
-        return new_objects
-
-    with open(existing_path, encoding="utf-8") as f:
-        existing = json.load(f)
-
-    existing_by_label = {obj["label"]: obj for obj in existing.get("objects", [])}
-    merged = []
-
-    for new_obj in new_objects:
-        label = new_obj["label"]
-        if label in existing_by_label:
-            old = existing_by_label[label]
-            # Preserve reviews
-            if "reviews" in old:
-                new_obj["reviews"] = old["reviews"]
-            # Preserve Lean linkage if not overridden by LaTeX macro
-            if "lean" not in new_obj and "lean" in old:
-                new_obj["lean"] = old["lean"]
-                new_obj["formalization_status"] = old.get(
-                    "formalization_status", "not_started"
-                )
-            elif "lean" in new_obj and "lean" in old:
-                # Merge: keep fields from old that new doesn't have
-                for key in LEAN_MERGE_KEYS:
-                    if key in old["lean"] and key not in new_obj["lean"]:
-                        new_obj["lean"][key] = old["lean"][key]
-        merged.append(new_obj)
-
-    return merged
-
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 
 def main():
@@ -275,31 +157,19 @@ def main():
     # Merge with existing data
     all_objects = merge_with_existing(all_objects, args.output)
 
-    # Build dependency edges from uses
-    dependencies = []
-    for obj in all_objects:
-        if "uses" in obj:
-            for dep_label in obj["uses"]:
-                dependencies.append(
-                    {"from": obj["label"], "to": dep_label, "relation": "uses"}
-                )
-
     # Build manifest
     manifest = {
         "version": "1.0",
         "manuscript": {
-            "repo": "litlfred/qou",
-            "commit_sha": get_commit_sha(),
-            "generated_at": datetime.now(timezone.utc).isoformat(),
-            "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
-            "lean_docs_url": "https://litlfred.github.io/qou/lean/",
+            "repo": GITHUB_REPO,
+            "pdf_url": f"{GH_PAGES_BASE}/quantum-observable-universe.pdf",
+            "lean_docs_url": f"{GH_PAGES_BASE}/lean/",
         },
         "objects": all_objects,
-        "dependencies": dependencies,
+        "dependencies": build_dependency_edges(all_objects),
     }
-
-    with open(args.output, "w", encoding="utf-8") as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    update_manifest_timestamp(manifest)
+    save_manifest(manifest, args.output)
 
     print(f"\n✅ Wrote {args.output}")
 

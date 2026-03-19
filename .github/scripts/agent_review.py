@@ -16,6 +16,8 @@ Review types:
     conventions, and cross-references.
   - Readability Editor: Evaluates narrative flow, definition hygiene,
     spelling, grammar, and prose clarity.
+  - Lean Proof Review: Reviews Lean 4 proofs for correctness, style,
+    and completeness.
 
 LLMs (each runs every review type when its key is configured):
   - Claude (Anthropic)
@@ -23,8 +25,8 @@ LLMs (each runs every review type when its key is configured):
   - Copilot / OpenAI (GitHub Models)
 
 Skills:
-  Skill definitions for the specialized reviewers are stored in
-  .claude/skills/ and inform the system prompts used here.
+  Skill definitions for the specialized reviewers are loaded from
+  .claude/skills/ via qou_lib.skills and inform the system prompts.
 
 Configuration:
   Set the following repository secrets to enable each LLM:
@@ -41,6 +43,9 @@ import os
 import re
 import requests
 
+from qou_lib.config import REQUIRED_REVIEW_SECTIONS, VALID_VERDICTS
+from qou_lib.skills import load_all_skills, load_skill
+
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
@@ -54,23 +59,40 @@ COMMIT_MESSAGE = os.environ.get("COMMIT_MESSAGE", "")
 COMMIT_SHA = os.environ.get("COMMIT_SHA", "")
 COMMIT_AUTHOR = os.environ.get("COMMIT_AUTHOR", "")
 REPO_NAME = os.environ.get("REPO_NAME", "")
-SKILLS_CONTENT = os.environ.get("SKILLS_CONTENT", "")
 PDF_URL = os.environ.get("PDF_URL", "")
+
+# Skills content: prefer loading from files, fall back to env var.
+SKILLS_CONTENT = load_all_skills(max_chars=20000) or os.environ.get("SKILLS_CONTENT", "")
 
 CLAUDE_MODEL = "claude-opus-4-20250514"
 GEMINI_MODEL = "gemini-2.5-pro"
 COPILOT_MODEL = "o3"
 API_TIMEOUT = 120
 
-# Required sections that every review must contain.
-REQUIRED_SECTIONS = ["Summary", "Issues Found", "Suggestions", "Verdict"]
-VALID_VERDICTS = {"APPROVE", "REQUEST_CHANGES", "NEEDS_DISCUSSION"}
-
 # ---------------------------------------------------------------------------
-# Scientific accuracy review prompt (sourced from K-Dense-AI/claude-scientific-skills)
+# Build review system prompts from skill files
 # ---------------------------------------------------------------------------
 
-ACCURACY_REVIEW_SYSTEM = """You are a scientific accuracy reviewer. Your role is to
+
+def _build_system_prompt(skill_name, fallback_prompt):
+    """Load skill content and append it to the review system prompt.
+
+    If the skill file exists, its content augments the review instructions.
+    Otherwise, falls back to the hardcoded prompt.
+    """
+    skill_content = load_skill(skill_name)
+    if skill_content:
+        return (
+            f"{fallback_prompt}\n\n"
+            f"## Skill Guide: {skill_name}\n\n"
+            f"Use the following skill definition as additional guidance:\n\n"
+            f"{skill_content}"
+        )
+    return fallback_prompt
+
+
+# Base prompts (also serve as fallbacks if skill files are missing).
+_ACCURACY_REVIEW_BASE = """You are a scientific accuracy reviewer. Your role is to
 evaluate commits for mathematical correctness, scientific rigor, and logical
 consistency. Use the following structured methodology derived from established
 scientific peer-review practices.
@@ -112,7 +134,7 @@ Do not add, rename, or omit any section.
 - **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
-LATEX_REVIEW_SYSTEM = """You are a LaTeX validation reviewer. Your role is to check
+_LATEX_REVIEW_BASE = """You are a LaTeX validation reviewer. Your role is to check
 commits containing LaTeX source for syntactic correctness, structural consistency,
 and adherence to project conventions.
 
@@ -156,7 +178,7 @@ Do not add, rename, or omit any section.
 - **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
-READABILITY_REVIEW_SYSTEM = """You are a readability editor. Your role is to review
+_READABILITY_REVIEW_BASE = """You are a readability editor. Your role is to review
 LaTeX manuscripts for narrative clarity, prose quality, and editorial polish. You
 are less concerned with mathematical correctness and more concerned with how well
 the text communicates ideas to a graduate-level reader.
@@ -201,7 +223,7 @@ Do not add, rename, or omit any section.
 - **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
 
-LEAN_REVIEW_SYSTEM = """You are a Lean 4 formal proof reviewer. Your role is to
+_LEAN_REVIEW_BASE = """You are a Lean 4 formal proof reviewer. Your role is to
 review Lean source code for correctness, style, and completeness of formal
 mathematical proofs.
 
@@ -240,6 +262,12 @@ Do not add, rename, or omit any section.
 - **Suggestions**: Numbered list of improvements.
 - **Verdict**: Exactly one of APPROVE, REQUEST_CHANGES, or NEEDS_DISCUSSION.
 """
+
+# Build final prompts: base + skill content (if available).
+ACCURACY_REVIEW_SYSTEM = _build_system_prompt("scientific-accuracy", _ACCURACY_REVIEW_BASE)
+LATEX_REVIEW_SYSTEM = _build_system_prompt("latex-validation", _LATEX_REVIEW_BASE)
+READABILITY_REVIEW_SYSTEM = _build_system_prompt("readability-editing", _READABILITY_REVIEW_BASE)
+LEAN_REVIEW_SYSTEM = _build_system_prompt("lean-proof-review", _LEAN_REVIEW_BASE)
 
 COORDINATOR_SYSTEM = """You are the Review Coordinator. You are given feedback from
 multiple AI reviewers about a code commit. Your job is to:
@@ -374,11 +402,7 @@ def call_copilot(system_prompt, user_prompt, model=COPILOT_MODEL):
 
 
 def call_all_llms(system_prompt, user_prompt):
-    """Call every available LLM and return a dict of {provider_name: response}.
-
-    Used by specialized reviewers so that each review type gets independent
-    perspectives from every configured LLM.
-    """
+    """Call every available LLM and return a dict of {provider_name: response}."""
     results = {}
     if ANTHROPIC_API_KEY:
         try:
@@ -399,14 +423,14 @@ def call_all_llms(system_prompt, user_prompt):
 
 
 def validate_review_format(content, reviewer_name):
-    """Check that *content* includes every REQUIRED_SECTIONS heading.
+    """Check that *content* includes every required section heading.
 
     Returns the original content if valid.  If sections are missing,
-    appends placeholder sections so that downstream consumers can always
+    appends placeholder sections so downstream consumers can always
     rely on a consistent structure.
     """
     missing = [
-        s for s in REQUIRED_SECTIONS
+        s for s in REQUIRED_REVIEW_SECTIONS
         if not re.search(rf"\*\*{re.escape(s)}\*\*", content)
     ]
     if not missing:
@@ -457,11 +481,7 @@ def run_lean_review(user_prompt):
 
 
 def run_coordinator(reviews, user_prompt):
-    """Synthesize all reviews and return the final summary.
-
-    Uses the first available LLM in order of preference:
-    Claude > Gemini > Copilot.
-    """
+    """Synthesize all reviews and return the final summary."""
     reviews_text = ""
     for name, content in reviews.items():
         reviews_text += f"## {name}\n{content}\n\n"
@@ -480,7 +500,6 @@ def run_coordinator(reviews, user_prompt):
     if GITHUB_TOKEN:
         return call_copilot(COORDINATOR_SYSTEM, coordinator_prompt)
 
-    # No LLM available — return raw concatenation (unstructured fallback).
     return reviews_text
 
 
@@ -500,7 +519,6 @@ def create_issue(title, body):
     payload = {"title": title, "body": body, "labels": ["agent-review"]}
     resp = requests.post(url, headers=headers, json=payload, timeout=30)
     if resp.status_code == 422:
-        # Label might not exist yet — retry without labels
         payload.pop("labels", None)
         resp = requests.post(url, headers=headers, json=payload, timeout=30)
     if not resp.ok:
@@ -526,7 +544,6 @@ def main():
 
     reviews = {}
 
-    # Each review type runs on ALL available LLMs.
     # Determine if the diff contains Lean files.
     has_lean = any(
         line.startswith("+++ b/lean/") or line.startswith("--- a/lean/")
@@ -553,10 +570,8 @@ def main():
 
     print(f"\n📋 Collected {len(reviews)} review(s). Running coordinator ...\n")
 
-    # Coordinator synthesis
     summary = run_coordinator(reviews, user_prompt)
 
-    # Build issue
     title = f"Agent Review: {COMMIT_MESSAGE} ({COMMIT_SHA})"
     body = (
         f"## Agent Review for commit `{COMMIT_SHA}`\n\n"

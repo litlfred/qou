@@ -9,53 +9,26 @@ Usage:
     python .github/scripts/generate_lean_stubs.py [--manifest proof-objects.json]
 
 The script is idempotent: it will not overwrite declarations that already
-exist in the Lean files.  New stubs are appended within the chapter's
-namespace block.
+exist in the Lean files.  New stubs are inserted before the last `end`
+statement in each chapter file to maintain namespace structure.
 """
 
 import argparse
-import json
 import re
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-LEAN_DIR = REPO_ROOT / "lean"
-DEFAULT_MANIFEST = REPO_ROOT / "proof-objects.json"
+from qou_lib.config import CHAPTER_LEAN_FILES, LEAN_DIR, LEAN_KEYWORDS
+from qou_lib.manifest import load_manifest
 
-# Map from chapter number to Lean file (relative to lean/)
-CHAPTER_LEAN_FILES = {
-    1: "QOU/QuantumObservableUniverse.lean",
-    2: "QOU/Elaboration.lean",
-    3: "QOU/PathIntegrals.lean",
-    4: "QOU/Torsion.lean",
-    5: "QOU/BringsSurface.lean",
-    6: "QOU/DescartesUniverse.lean",
-    7: "QOU/PAdicQuantumGroups.lean",
-    8: "QOU/GaugeFieldFluidDynamics.lean",
-    9: "QOU/InformationTheory.lean",
-    # Chapters 10-12 are stubs with minimal mathematical content
-}
-
-# Map object_type to Lean keyword
-LEAN_KEYWORDS = {
-    "theorem": "theorem",
-    "lemma": "lemma",
-    "proposition": "theorem",  # Lean doesn't have proposition keyword
-    "corollary": "theorem",
-    "definition": "def",
-    "conjecture": "theorem",  # conjectures become theorems with sorry
-}
+DEFAULT_MANIFEST = LEAN_DIR.parent / "proof-objects.json"
 
 
 def label_to_lean_name(label):
     """Convert a LaTeX label like 'thm:lifting-exists' to a Lean name
     like 'lifting_exists'."""
-    # Remove the prefix (thm:, def:, etc.)
     name = label.split(":", 1)[-1] if ":" in label else label
-    # Replace hyphens with underscores
     name = name.replace("-", "_")
-    # Remove characters invalid in Lean identifiers
     name = re.sub(r"[^a-zA-Z0-9_]", "", name)
     return name
 
@@ -67,9 +40,7 @@ def generate_stub(obj):
     title = obj.get("title", "")
     lean_keyword = LEAN_KEYWORDS.get(obj_type, "theorem")
 
-    # Use the lean decl name if specified, otherwise derive from label
     if "lean" in obj and "decl" in obj["lean"]:
-        # Extract just the final component
         decl_name = obj["lean"]["decl"].rsplit(".", 1)[-1]
     else:
         decl_name = label_to_lean_name(label)
@@ -82,9 +53,7 @@ def generate_stub(obj):
     lines.append(f"")
     lines.append(f"LaTeX: `{latex_file}:{latex_line}` (`\\label{{{label}}}`)")
     lines.append(f"-/")
-
     lines.append(f"{lean_keyword} {decl_name} : Sorry := sorry")
-
     lines.append("")
     return "\n".join(lines)
 
@@ -95,7 +64,6 @@ def get_existing_decls(filepath):
     if not filepath.exists():
         return decls
     content = filepath.read_text(encoding="utf-8")
-    # Match theorem/lemma/def declarations
     for m in re.finditer(r"(?:theorem|lemma|def)\s+(\w+)", content):
         decls.add(m.group(1))
     return decls
@@ -111,13 +79,11 @@ def main():
     )
     args = parser.parse_args()
 
-    if not args.manifest.exists():
-        print(f"❌ Manifest not found: {args.manifest}")
+    manifest = load_manifest(args.manifest)
+    if not manifest.get("objects"):
+        print(f"❌ No objects in manifest: {args.manifest}")
         print("Run extract_proof_objects.py first.")
         sys.exit(1)
-
-    with open(args.manifest, encoding="utf-8") as f:
-        manifest = json.load(f)
 
     # Group objects by chapter
     by_chapter = {}
@@ -157,7 +123,6 @@ def main():
 
         # Insert stubs before the final `end` line
         content = lean_file.read_text(encoding="utf-8")
-        # Find the last `end` line
         end_match = list(re.finditer(r"^end\s+", content, re.MULTILINE))
         if end_match:
             insert_pos = end_match[-1].start()
