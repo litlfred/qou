@@ -211,27 +211,71 @@ In `glossary.json`, follow the existing notation conventions:
 
 ## Feedback & Iteration Notes
 
-- **Glossary type stubs** (`def X : Type* := sorry`) are usually not provable
-  — they represent abstract types that need concrete mathematical definitions.
-  Resolving these requires designing the right Lean structure, not finding a
-  proof.  Treat them as **design tasks**, not proof tasks.
+These notes capture lessons learned from applying the skill to the QOU codebase.
+Update them after each triage pass.
+
+### Classification Boundaries
+
+- **Glossary type stubs** (`def X : Type* := sorry`) are **design tasks**, not
+  proof tasks.  They need a concrete `structure`/`class`/`inductive`.  Route
+  them through Phase 3b (Design Review), not Phase 3 (Proof Attempts).
+- **Structure field defaults** (`field : P := by sorry`) are a special case:
+  the sorry lives in the structure definition but must be resolved per-instance.
+  The fix is usually to remove the default and provide explicit proofs at each
+  construction site.  This is a **refactoring task**, not a single proof.
+- **Axiom placeholders** (`True := by trivial` with `-- axiom placeholder`
+  comment) are sorry-free by design.  Do not count them in the sorry inventory.
+- **`axiom` declarations** (e.g. `axiom topological_mass_conjecture`) are
+  intentionally unproved — they represent physical conjectures or mathematical
+  assumptions.  Never attempt to prove these without explicit approval.
+
+### Common Proof Patterns
+
+- **Classical limit theorems** (`q = 1 ⟹ classical`) are the easiest wins.
+  Pattern: `unfold <qOp>; rw [hq, inv_one, sub_self, ...]; ring`.  Always
+  attempt these first — they build confidence and verify the operator definitions.
+- **Approximation lemmas** on `noncomputable def` values: always `unfold` first.
+  Without `unfold`, `norm_num` sees an opaque constant and fails silently.
+- **Division rearrangement** (`a/b = c ↔ b*c = a`): `field_simp` is the
+  correct first move.  Always provide `h : b ≠ 0` (or `pow_ne_zero` for `b²`).
+- **Composed numeric expressions** (e.g. `1 - 1/(1.1097)`): if `norm_num` fails
+  after `unfold`, rewrite the constant as an explicit rational (`11097/10000`).
+
+### Escalation Triggers
+
+- **>10 minutes on a single sorry**: move on.  The iterative approach means
+  it's better to attempt the next sorry and come back with new information.
+- **Nonlinear real arithmetic** (square roots, reciprocal composition): these
+  almost never yield to `norm_num`/`linarith`.  Escalate immediately with:
+  (a) the exact goal after `unfold`, (b) which tactics were tried,
+  (c) a suggestion to use `polyrith` or rational rewriting.
+- **Missing mathlib lemma**: if you need a helper that doesn't exist, state it
+  as a local `have` or `lemma` and prove it.  Don't wait for upstream.
+
+### Process Notes
+
 - **Deferred axiom placeholders** should be skipped unless the referenced
   chapter has been formalized.  Check comments for `-- deferred to Ch.N`.
 - **Build errors vs sorry warnings**: A sorry warning means the file compiles
   but has holes.  A build error means something is broken.  Always fix build
   errors before attempting new proofs.
-- **When stuck for >10 minutes on a single sorry**: escalate.  The iterative
-  approach means it's better to move on and come back with new information than
-  to grind on one proof.
+- **Batch size**: resolve 3–5 sorries per commit.  Larger batches make it
+  harder to bisect if a proof breaks something downstream.
+- **Sorry comments**: after each failed attempt, update the sorry comment with
+  what was tried.  This saves future triage passes from repeating work.
 
 ## Checklist
 
 - [ ] All `.lean` files grepped for `sorry`
 - [ ] Each sorry classified (type / proof / field / axiom-placeholder)
+- [ ] Theorem statements checked for well-typedness (no `= True` anti-pattern)
+- [ ] Placeholder axioms use `True := by trivial` consistently
 - [ ] Dependency order established
 - [ ] Easy proofs attempted first (positivity, ring, classical limits)
+- [ ] `noncomputable def` values unfolded before `norm_num`
 - [ ] Mathlib searched for similar lemmas on failed attempts
 - [ ] Failed proofs documented with similar-lemma suggestions
 - [ ] `lake build` passes (sorry warnings OK, errors not OK)
+- [ ] External deps pinned to commit hashes in `lakefile.lean`
 - [ ] Resolved proofs committed with descriptive messages
 - [ ] Summary table generated
