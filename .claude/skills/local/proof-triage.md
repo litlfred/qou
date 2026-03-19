@@ -147,6 +147,68 @@ After each batch of resolved sorries:
 | `P → Q` | `intro h; exact ...` | `fun h => ...` |
 | Anything | `simp` | `aesop` |
 
+## Common Mistakes to Avoid
+
+### 1. Ill-typed theorem conclusions (`= True` anti-pattern)
+
+**Wrong:**
+```lean
+theorem self_dual_curvature ... : inst.self_dual hn = True := by sorry
+```
+Here `inst.self_dual hn` is a *term of type `True`* (a proof), while `True` is
+a *type* (`Prop`).  You cannot compare a proof to its type with `=`.
+
+**Right:**
+```lean
+theorem self_dual_curvature ... : inst.self_dual hn := by sorry
+```
+When the goal is to *prove* a proposition, the conclusion IS the proposition,
+not `proposition = True`.  Before resolving any sorry, verify the statement
+is well-typed by checking that `lake build` produces a sorry warning (not a
+type error).
+
+### 2. Placeholder field axioms: prefer `True := by trivial`
+
+**Wrong:**
+```lean
+q_laplacian_vanishes : ∀ (p : M), (0 : ℝ) = 0  -- placeholder for Δ_q α = 0
+```
+This is technically provable but semantically misleading — it universally
+quantifies over an unused variable and states a tautology unrelated to the
+real axiom.
+
+**Right:**
+```lean
+q_laplacian_vanishes : True := by trivial  -- placeholder for Δ_q α = 0
+```
+Use `True := by trivial` for placeholder axioms.  It's immediately discharged,
+clearly marks itself as a placeholder, and is consistent with other axiom
+placeholders in the codebase (e.g. `FrobeniusHopfData`, `QuantumObservableUniverse`).
+
+### 3. Pin external dependencies to commit hashes
+
+In `lakefile.lean`, never track `main` for external dependencies:
+```lean
+-- Wrong: tracks a moving target, non-reproducible builds
+require «quantumInfo» from git
+  "https://github.com/Timeroot/Lean-QuantumInfo" @ "main"
+
+-- Right: pinned to a specific commit
+require «quantumInfo» from git
+  "https://github.com/Timeroot/Lean-QuantumInfo" @ "abc1234def5678"
+```
+After adding a new dependency, run `lake update` and use the commit hash from
+the generated `lake-manifest.json`.
+
+### 4. Glossary notation consistency
+
+In `glossary.json`, follow the existing notation conventions:
+- Use `q^-1` not `q^{-1}` (no LaTeX-style braces in JSON narrative fields)
+- Use `K^pm 1` not `K^{pm 1}`
+- Use `mapsto` not `->` for function mappings
+- Use `textstylesum` not `sum` for summation notation
+- Check 2–3 neighboring entries for the prevailing style before adding new ones
+
 ## Feedback & Iteration Notes
 
 - **Glossary type stubs** (`def X : Type* := sorry`) are usually not provable
