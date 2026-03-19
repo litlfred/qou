@@ -3,17 +3,40 @@
 A LaTeX mathematics paper exploring the Quantum Observable Universe (QOU),
 quantum torsion, and related topics.
 
+## Published Artefacts (GitHub Pages)
+
+| Artefact | Link |
+|----------|------|
+| Landing page (paper + visualizer) | [index.html](https://litlfred.github.io/qou/) |
+| Paper (HTML) | [paper.html](https://litlfred.github.io/qou/paper.html) |
+| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) |
+| Paper (Markdown) | [quantum-observable-universe.md](https://litlfred.github.io/qou/quantum-observable-universe.md) |
+| Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) |
+| Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) |
+
+Recent feature builds are listed on the [landing page](https://litlfred.github.io/qou/)
+under the **Feature Builds** tab, showing the 5 most recent branch builds with
+links to their PDF, diff PDF, HTML preview, and source branch.
+
 ## Structure
 
 | File | Description |
 |------|-------------|
 | `main.tex` | Top-level document — includes all chapters |
 | `chapters/quantum-observable-universe.tex` | Chapter 1: Quantum Observable Universe |
-| `chapters/lifting-of-quantum-torsion.tex` | Chapter 2: Lifting of Quantum Torsion |
-| `chapters/interpretations.tex` | Chapter 3: Interpretations |
-| `chapters/experimental-evidence.tex` | Chapter 4: Experimental Evidence |
-| `chapters/speculations.tex` | Chapter 5: Speculations |
+| `chapters/qou-elaboration.tex` | Chapter 2: Categorical & Analytic Elaboration |
+| `chapters/path-integrals-and-braiding.tex` | Chapter 3: Path Integrals and Braiding |
+| `chapters/lifting-of-quantum-torsion.tex` | Chapter 4: Lifting of Quantum Torsion |
+| `chapters/brings-surface.tex` | Chapter 5: Bring's Surface |
+| `chapters/descartes-universe.tex` | Chapter 6: Descartes Universe |
+| `chapters/p-adic-quantum-groups.tex` | Chapter 7: p-Adic Quantum Observable Universe |
+| `chapters/gauge-field-fluid-dynamics.tex` | Chapter 8: Gauge Field Fluid Dynamics |
+| `chapters/information-theory.tex` | Chapter 9: Information Theory |
+| `chapters/interpretations.tex` | Chapter 10: Interpretations |
+| `chapters/experimental-evidence.tex` | Chapter 11: Experimental Evidence |
+| `chapters/speculations.tex` | Chapter 12: Speculations |
 | `references.bib` | BibTeX bibliography |
+| `brings_surface.html` | Interactive 3D Bring's Surface visualizer |
 
 ## Building
 

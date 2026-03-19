@@ -8,12 +8,15 @@
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
+#   index.html                                   Landing page with paper/visualizer toggle + feature builds
+#   paper.html                                   Enhanced HTML paper with dark/light mode, TOC, definition links
+#   visualizer.html                              Interactive Bring's surface 3D visualizer
 #   quantum-observable-universe.pdf              compiled PDF (main branch)
-#   quantum-observable-universe-<slug>.pdf       compiled PDF (feature branches)
+#   quantum-observable-universe-<slug>.pdf       compiled PDF (feature branches; header links to source branch)
 #   quantum-observable-universe-<slug>-diff.pdf  latexdiff vs merge-base (feature branches only)
 #   quantum-observable-universe.md               Pandoc GitHub-Flavoured Markdown (main)
 #   quantum-observable-universe-<slug>.md        Pandoc GFM (feature branches)
-#   index.html                                   HTML page with dark/light mode, TOC, definition links
+#   builds.json                                  Manifest of recent feature builds (used by index.html)
 #   qa.html                                      QA report from build warnings (feature branches only)
 #
 # Preview builds
@@ -105,7 +108,14 @@ jobs:
         if: env.HEAD_REF != 'main'
         run: git fetch origin main
 
-      # ── 1. Compile LaTeX → PDF ─────────────────────────────────────────────
+      # ── 1. Inject branch header into PDF (feature branches) ───────────────
+      - name: Add source-branch header to PDF
+        if: env.HEAD_REF != 'main'
+        env:
+          BRANCH_URL: https://github.com/${{ github.repository }}/tree/${{ env.HEAD_REF }}
+        run: python3 .github/scripts/inject-branch-header.py main.tex "$BRANCH_URL"
+
+      # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
@@ -190,6 +200,11 @@ jobs:
             cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
           fi
 
+          # Copy the interactive visualizer
+          if [ -f brings_surface.html ]; then
+            cp brings_surface.html _site/visualizer.html
+          fi
+
           # ── Generate base HTML with Pandoc ──────────────────────────────────
           pandoc "${FNAME_BASE}.md" \
             --from=gfm+tex_math_dollars \
@@ -197,12 +212,12 @@ jobs:
             --standalone \
             --mathjax \
             --metadata title="Quantum Observable Universe" \
-            --output=_site/index-raw.html \
+            --output=_site/paper-raw.html \
             || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
 
           # Fallback landing page if pandoc HTML conversion failed
-          if [ ! -s _site/index-raw.html ]; then
-            cat > _site/index-raw.html << HTML
+          if [ ! -s _site/paper-raw.html ]; then
+            cat > _site/paper-raw.html << HTML
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -220,11 +235,11 @@ jobs:
           HTML
           fi
 
-          # ── Enhance HTML with dark mode, TOC, definition links ──────────────
+          # ── Enhance HTML → paper.html (with dark mode, TOC, definition links)
           ENHANCE_ARGS=(
-            _site/index-raw.html
+            _site/paper-raw.html
             main-flat.tex
-            _site/index.html
+            _site/paper.html
           )
           if [ "${{ env.HEAD_REF }}" != "main" ]; then
             ENHANCE_ARGS+=(
@@ -241,7 +256,33 @@ jobs:
           python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
 
           # Clean up intermediate file
-          rm -f _site/index-raw.html
+          rm -f _site/paper-raw.html
+
+          # ── Generate wrapper index.html with paper/visualizer toggle ────────
+          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          INDEX_ARGS=(
+            _site/index.html
+            paper.html
+            --pdf "${FNAME_BASE}.pdf"
+            --md  "${FNAME_BASE}.md"
+          )
+          if [ -f _site/visualizer.html ]; then
+            INDEX_ARGS+=(--visualizer "visualizer.html")
+          fi
+          if [ "${{ env.HEAD_REF }}" = "main" ]; then
+            INDEX_ARGS+=(--builds-json "builds.json")
+            INDEX_ARGS+=(--repo "${{ github.repository }}")
+          else
+            INDEX_ARGS+=(
+              --branch "${{ env.HEAD_REF }}"
+              --repo   "${{ github.repository }}"
+              --sha    "${{ env.HEAD_SHA }}"
+            )
+            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+              INDEX_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
+            fi
+          fi
+          python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
 
           # ── QA report (feature branches only) ───────────────────────────────
           if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then
@@ -252,6 +293,53 @@ jobs:
               --repo   "${{ github.repository }}" \
               --sha    "${{ env.HEAD_SHA }}"
           fi
+
+      # ── 3b. Update feature-builds manifest ──────────────────────────────────
+      - name: Fetch existing builds.json
+        run: |
+          PUBLISH_BRANCH="${{ inputs.publish_branch || 'gh-pages' }}"
+          git fetch origin "${PUBLISH_BRANCH}" --depth=1 2>/dev/null || true
+          if git show "origin/${PUBLISH_BRANCH}:builds.json" > builds-existing.json 2>/dev/null; then
+            echo "Found existing builds.json"
+          else
+            echo "[]" > builds-existing.json
+            echo "No existing builds.json — starting fresh"
+          fi
+
+      - name: Update builds.json with current feature build
+        if: env.HEAD_REF != 'main'
+        env:
+          FNAME_BASE: ${{ steps.names.outputs.base }}
+        run: |
+          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          DRAFT_PATH="drafts/${{ env.HEAD_REF }}"
+          REPO_URL="https://github.com/${{ github.repository }}"
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          python3 -c "
+          import json
+          builds = json.load(open('builds-existing.json'))
+          builds = [b for b in builds if b.get('branch') != '${{ env.HEAD_REF }}']
+          builds.append({
+              'branch': '${{ env.HEAD_REF }}',
+              'sha': '${{ env.HEAD_SHA }}',
+              'timestamp': '${TIMESTAMP}',
+              'pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}.pdf',
+              'diff_pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}-diff.pdf',
+              'html_url': '${PAGES_URL}/${DRAFT_PATH}/',
+              'source_url': '${REPO_URL}/tree/${{ env.HEAD_REF }}',
+          })
+          builds.sort(key=lambda b: b.get('timestamp', ''), reverse=True)
+          builds = builds[:20]
+          json.dump(builds, open('builds-existing.json', 'w'), indent=2)
+          "
+          # Copy updated manifest into _site so it deploys alongside drafts
+          cp builds-existing.json _site/builds.json
+          echo "Updated builds.json with entry for ${{ env.HEAD_REF }}"
+
+      - name: Preserve builds.json for main deploy
+        if: env.HEAD_REF == 'main'
+        run: cp builds-existing.json _site/builds.json
 
       # ── 4. Deploy to target branch ─────────────────────────────────────────
       # peaceiris/actions-gh-pages automatically creates the publish_branch
@@ -272,6 +360,26 @@ jobs:
           keep_files:     true
           commit_message: >
             docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+
+      # For feature builds, also deploy builds.json to the root of gh-pages
+      # (the main deploy puts it under drafts/<branch>/, so we need a second deploy)
+      - name: Deploy builds.json to gh-pages root
+        if: env.HEAD_REF != 'main'
+        run: |
+          mkdir -p _site-root
+          cp builds-existing.json _site-root/builds.json
+
+      - name: Push builds.json to gh-pages root
+        if: env.HEAD_REF != 'main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site-root
+          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
+          destination_dir: ''
+          keep_files:     true
+          commit_message: >
+            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
       - name: Comment preview link on PR
