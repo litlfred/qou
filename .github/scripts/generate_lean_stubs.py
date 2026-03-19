@@ -83,10 +83,7 @@ def generate_stub(obj):
     lines.append(f"LaTeX: `{latex_file}:{latex_line}` (`\\label{{{label}}}`)")
     lines.append(f"-/")
 
-    if lean_keyword == "def":
-        lines.append(f"{lean_keyword} {decl_name} : Sorry := sorry")
-    else:
-        lines.append(f"{lean_keyword} {decl_name} : Sorry := sorry")
+    lines.append(f"{lean_keyword} {decl_name} : Sorry := sorry")
 
     lines.append("")
     return "\n".join(lines)

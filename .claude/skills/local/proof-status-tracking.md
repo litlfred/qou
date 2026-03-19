@@ -64,7 +64,7 @@ The `lean-build.yml` workflow:
 2. Runs `generate_lean_stubs.py`
 3. Runs `lake build`
 4. Runs `update_proof_status.py`
-5. Commits updated `proof-objects.json`
+5. Commits updated `proof-objects.json` (automated commit by `github-actions[bot]`)
 
 ## Status Dashboard
 

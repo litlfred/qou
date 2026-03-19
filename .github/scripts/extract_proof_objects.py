@@ -91,6 +91,12 @@ USES_RE = re.compile(r"\\uses\{([^}]+)\}")
 # Matches \leanok
 LEANOK_RE = re.compile(r"\\leanok\b")
 
+# Maximum lines to scan within a LaTeX environment body.
+MAX_ENV_SCAN_LINES = 50
+
+# Keys to preserve when merging Lean linkage data from existing records.
+LEAN_MERGE_KEYS = ("url", "file", "sorry_free", "mathlib_links")
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -106,7 +112,7 @@ def get_commit_sha():
             .decode()
             .strip()
         )
-    except Exception:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         return "unknown"
 
 
@@ -138,7 +144,7 @@ def parse_chapter(filepath, chapter_num):
         j = i + 1
         # Look within the next 20 lines (or until \end{env})
         end_re = re.compile(r"\\end\{" + re.escape(env_name) + r"\}")
-        while j < min(i + 50, len(lines)):
+        while j < min(i + MAX_ENV_SCAN_LINES, len(lines)):
             body_line = lines[j]
             if end_re.search(body_line):
                 break
@@ -231,7 +237,7 @@ def merge_with_existing(new_objects, existing_path):
                 )
             elif "lean" in new_obj and "lean" in old:
                 # Merge: keep fields from old that new doesn't have
-                for key in ("url", "file", "sorry_free", "mathlib_links"):
+                for key in LEAN_MERGE_KEYS:
                     if key in old["lean"] and key not in new_obj["lean"]:
                         new_obj["lean"][key] = old["lean"][key]
         merged.append(new_obj)

@@ -39,8 +39,8 @@ etc. and outputs `proof-objects.json`.
 python .github/scripts/generate_lean_stubs.py
 ```
 
-Reads `proof-objects.json` and appends `sorry`-based stubs to the appropriate
-`lean/QOU/*.lean` files.
+Reads `proof-objects.json` and inserts `sorry`-based stubs before the last
+`end` statement in each `lean/QOU/*.lean` file to maintain namespace structure.
 
 ### 3. Add LeanBlueprint macros to LaTeX
 
