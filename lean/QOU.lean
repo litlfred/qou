@@ -9,6 +9,9 @@
 --   - LeanBlueprint macros in the LaTeX source link to declarations here
 
 import QOU.Basic
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.MassDerivation
 import QOU.QuantumObservableUniverse
 import QOU.Elaboration
 import QOU.PathIntegrals

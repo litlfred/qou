@@ -138,3 +138,22 @@ LEAN_MERGE_KEYS = ("url", "file", "sorry_free", "mathlib_links")
 
 VALID_VERDICTS = {"APPROVE", "REQUEST_CHANGES", "NEEDS_DISCUSSION"}
 REQUIRED_REVIEW_SECTIONS = ["Summary", "Issues Found", "Suggestions", "Verdict"]
+
+# ---------------------------------------------------------------------------
+# Ontologist / Formalizer paths
+# ---------------------------------------------------------------------------
+
+DEFAULT_GLOSSARY = REPO_ROOT / "glossary.json"
+DEFAULT_MAPPING = REPO_ROOT / "mapping.json"
+GLOSSARY_LEAN = LEAN_DIR / "QOU" / "Glossary.lean"
+
+# Tactic mapping: narrative phrases → Lean tactics (used by formalizer).
+NARRATIVE_TACTIC_MAP = {
+    "by calculation": ("ring", ["field_simp", "polyrith"]),
+    "clearly follows from": ("aesop", ["linarith", "omega"]),
+    "by the universal property": ("exact Limits.IsLimit.lift", ["exact Limits.IsLimit.hom_ext"]),
+    "diagram commutes": ("aesop_cat", ["slice_lhs 1 2 => { simp [Category.assoc] }"]),
+    "naturality": ("aesop_cat", ["slice_lhs 1 2 => { rw [NatTrans.naturality] }"]),
+    "by contradiction": ("by_contra", ["exfalso"]),
+    "by definition": ("rfl", ["unfold", "simp only"]),
+}

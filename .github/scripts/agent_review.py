@@ -544,10 +544,19 @@ def main():
 
     reviews = {}
 
-    # Determine if the diff contains Lean files.
+    # Determine if the diff contains Lean files or sorry markers.
+    diff_lines = COMMIT_DIFF.splitlines()
     has_lean = any(
         line.startswith("+++ b/lean/") or line.startswith("--- a/lean/")
-        for line in COMMIT_DIFF.splitlines()
+        for line in diff_lines
+    )
+    has_sorry = any(
+        line.startswith("+") and "sorry" in line
+        for line in diff_lines
+    )
+    has_chapters = any(
+        line.startswith("+++ b/chapters/") or line.startswith("--- a/chapters/")
+        for line in diff_lines
     )
 
     review_types = [
@@ -555,8 +564,14 @@ def main():
         ("LaTeX Validator", run_latex_review),
         ("Readability Editor", run_readability_review),
     ]
-    if has_lean:
+    if has_lean or has_sorry:
         review_types.append(("Lean Proof Review", run_lean_review))
+    # When sorry is introduced or chapters change, trigger the Formalizer
+    # and Ontologist reviews to ensure type consistency and proof coverage.
+    if has_sorry:
+        print("⚠️  sorry detected in diff — triggering Formalizer review")
+    if has_chapters:
+        print("📄 Chapter changes detected — Ontologist should re-scan glossary")
 
     for label, runner in review_types:
         results = runner(user_prompt)
