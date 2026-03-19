@@ -1,4 +1,5 @@
 {
+  "$schema": "./skills-config-schema.json",
   "description": "Skill package subscriptions synced nightly into .claude/skills/<package>/",
   "packages": [
     {
