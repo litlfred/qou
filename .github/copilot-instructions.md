@@ -286,6 +286,15 @@ their own line, indented to match the surrounding content.
 - In `\chapter` and `\section` titles that contain `\pp`, wrap the math in
   `\texorpdfstring{$\pp$}{p}` so that PDF bookmarks remain plain text.
 
+### 11.2  Vectors
+
+- All vector quantities must carry a **half-arrow** accent:  use `\vec{…}`.
+  Examples:  `$\vec{q}$`, `$\vec{v}$`, `$\vec{X}$`.
+- This distinguishes vector-valued quantities from scalar parameters
+  (e.g.\ the substrate parameter $q$ from a vector $\vec{q}$).
+- Do **not** use bold (`\mathbf`) for vectors; reserve bold for operator
+  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator).
+
 ---
 
 ## 12  Using Skills for Content Changes
@@ -313,14 +322,3 @@ When **writing or editing manuscript content**, apply the following skills:
 - Consult the synced skills proactively — do not wait to be told.
 - If a synced skill directory contains a `SKILL.md`, read it for detailed
   instructions specific to that tool or database.
-
----
-
-### 11.2  Vectors
-
-- All vector quantities must carry a **half-arrow** accent:  use `\vec{…}`.
-  Examples:  `$\vec{q}$`, `$\vec{v}$`, `$\vec{X}$`.
-- This distinguishes vector-valued quantities from scalar parameters
-  (e.g.\ the substrate parameter $q$ from a vector $\vec{q}$).
-- Do **not** use bold (`\mathbf`) for vectors; reserve bold for operator
-  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator).
