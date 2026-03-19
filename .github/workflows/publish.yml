@@ -55,10 +55,51 @@ concurrency:
 
 permissions:
   contents:       write   # required to push to the gh-pages branch
+  packages:       read    # required to pull CI container from GHCR
   pull-requests:  write   # required to comment on PRs with preview URLs
 
 jobs:
+  preflight:
+    name: Verify CI Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check CI image availability
+        env:
+          IMAGE: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
+        run: |
+          echo "::group::Image pull diagnostics"
+          echo "Image:       $IMAGE"
+          echo "Actor:       ${{ github.actor }}"
+          echo "Repository:  ${{ github.repository }}"
+          echo "Token scope: (GITHUB_TOKEN — packages:read required)"
+          echo "::endgroup::"
+
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin 2>&1 || {
+            echo "::error::GHCR login failed. Check that the workflow has 'packages: read' permission."
+            exit 1
+          }
+
+          docker pull "$IMAGE" 2>&1 || {
+            echo ""
+            echo "::error::Failed to pull $IMAGE"
+            echo ""
+            echo "=== Troubleshooting ==="
+            echo "1. Has the image been built? Run the 'CI Docker Image' workflow manually:"
+            echo "   gh workflow run docker-ci-image.yml --ref main"
+            echo "2. Is the package visible to this repo? Go to:"
+            echo "   https://github.com/users/${{ github.repository_owner }}/packages/container/qou-ci/settings"
+            echo "   → Manage Actions access → Add repository '${{ github.repository }}' with Read role"
+            echo "3. Check package existence:"
+            echo "   gh api users/${{ github.repository_owner }}/packages/container/qou-ci"
+            echo "========================"
+            exit 1
+          }
+
+          echo "✅ Image pulled successfully"
+          docker inspect "$IMAGE" --format 'Created: {{.Created}}'
+
   build-and-publish:
+    needs: preflight
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
