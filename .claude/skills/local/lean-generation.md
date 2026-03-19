@@ -112,6 +112,29 @@ The `proof-objects.json` manifest follows the schema at
 `schemas/proof-objects.schema.json`.  Lean declarations are referenced by
 their doc-gen4 URL — the Lean data model is **not** duplicated in JSON.
 
+## Blueprint Synchronization
+
+When generating or updating Lean stubs, the following artifacts must stay
+in sync — it is the **author's responsibility** to ensure consistency:
+
+| Artifact | Must match |
+|----------|-----------|
+| `\label{thm:foo}` in `chapters/*.tex` | `\label{thm:foo}` in `blueprint/src/content.tex` |
+| `\lean{QOU.Ch.foo}` in blueprint | Actual declaration name in `lean/QOU/Ch.lean` |
+| `\uses{def:bar}` in blueprint | Existing `\label{def:bar}` in same file |
+| `\leanok` in blueprint | Zero `sorry` in the linked Lean declaration |
+| `-- Ref: [key]` before sorry | Entry `@article{key,...}` in `references.bib` |
+| `\cite{key}` in blueprint | Entry `@article{key,...}` in `references.bib` |
+
+### Blueprint update workflow
+
+1. Add/modify a theorem in `chapters/*.tex` with `\label{}`
+2. Run `extract_proof_objects.py` → `generate_lean_stubs.py`
+3. Add the matching entry to `blueprint/src/content.tex` with `\lean{}`
+   and `\uses{}` edges
+4. If the Lean proof is complete, add `\leanok`; otherwise leave it out
+5. CI validates via `lake exe checkdecls blueprint/lean_decls`
+
 ## Checklist
 
 - [ ] All labeled theorem-like environments are in `proof-objects.json`
@@ -119,3 +142,7 @@ their doc-gen4 URL — the Lean data model is **not** duplicated in JSON.
 - [ ] Lean files compile without errors (sorry warnings are expected)
 - [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
 - [ ] `\uses{}` macros capture all mathematical dependencies
+- [ ] Every `sorry` has a preceding `-- Ref: [key] url` comment
+- [ ] Every `-- Ref: [key]` key exists in `references.bib`
+- [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
+- [ ] `\leanok` only appears for sorry-free declarations

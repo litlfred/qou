@@ -10,15 +10,18 @@
 # ──────
 #   1. Build     – lake build verifying all proofs (SU_q(2), mass derivation)
 #   2. Audit     – axiom report listing sorry, axiom deps, conjecture transparency
-#   3. Docs      – doc-gen4 interactive HTML with hover definitions
+#   3. Docs      – doc-gen4 fallback source browser (full docs via blueprint.yml)
 #   4. Deploy    – publish artifacts to gh-pages, update README badge
 #
 # Published artifacts (gh-pages)
 # ─────────────────────────────
-#   lean/docs/          Interactive doc-gen4 documentation
-#   axiom-report.txt    Plaintext verification report
-#   proof-objects.json  Formalization status manifest
+#   lean/              Raw Lean source files for browsing
+#   lean/docs/         doc-gen4 or fallback source browser
+#   axiom-report.txt   Plaintext verification report
+#   proof-objects.json Formalization status manifest
 #   dependency-graph.svg  Visual dependency graph
+#
+# Note: blueprint/ and docs/ are deployed by blueprint.yml, not this workflow.
 
 name: Lean CI
 
