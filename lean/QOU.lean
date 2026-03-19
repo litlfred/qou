@@ -11,7 +11,9 @@
 import QOU.Basic
 import QOU.Glossary
 import QOU.KnotTheory
+import QOU.KnotRegistry
 import QOU.MassDerivation
+import QOU.Calculations
 import QOU.QuantumObservableUniverse
 import QOU.Elaboration
 import QOU.PathIntegrals

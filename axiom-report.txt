@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-19 19:44:20 UTC
-Commit:    91268d43f823db94c3f5389ee23a20e2c2a89c95
+Generated: 2026-03-19 20:25:49 UTC
+Commit:    692e12ef127d9628e1c6635a59e717d040a48112
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -16,7 +16,7 @@ Errors:
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 483
+Total sorry occurrences: 488
 
   File                                          sorry count
   --------------------------------------------------------
@@ -138,6 +138,7 @@ Total sorry occurrences: 483
   .lake/packages/plausible/Test/Tactic.lean        4
   .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean 1
   QOU.lean                                         1
+  QOU/Calculations.lean                            5
   QOU/Glossary.lean                                12
   QOU/KnotTheory.lean                              1
   QOU/MassDerivation.lean                          5
@@ -807,6 +808,22 @@ Any use of `sorryAx` indicates an incomplete proof.
     no such file or directory (error code: 4294967294)
     file: lean/_axiom_check.lean
 
+  #print axioms QOU.KnotRegistry.figureEightEntry
+    no such file or directory (error code: 4294967294)
+    file: lean/_axiom_check.lean
+
+  #print axioms QOU.KnotRegistry.registry_volume_eq_mass_derivation
+    no such file or directory (error code: 4294967294)
+    file: lean/_axiom_check.lean
+
+  #print axioms QOU.Calculations.full_derivation_chain
+    no such file or directory (error code: 4294967294)
+    file: lean/_axiom_check.lean
+
+  #print axioms QOU.Calculations.substrate_error_bound
+    no such file or directory (error code: 4294967294)
+    file: lean/_axiom_check.lean
+
   #print axioms QOU.Glossary.FrobeniusHopfObject
     no such file or directory (error code: 4294967294)
     file: lean/_axiom_check.lean
@@ -841,7 +858,21 @@ Declarations depending on topological_mass_conjecture:
   | q           | 1.1097 (derived)| MassDerivation.substrate_q     |
 
 ------------------------------------------------------------------------
-§7  THEORETICAL GAP REPORT
+§7  KNOT REGISTRY AUDIT (Alexander-Briggs)
+------------------------------------------------------------------------
+
+  | A-B Index | QOU Identity | Vol (SnapPy)    | Knot Atlas URL               |
+  |-----------|-------------|-----------------|------------------------------|
+  | 0_1       | Neutrino    | 0               | http://katlas.org/wiki/0_1   |
+  | 3_1       | Electron    | 0 (torus knot)  | http://katlas.org/wiki/3_1   |
+  | 4_1       | Muon        | 2.0298832128    | http://katlas.org/wiki/4_1   |
+  | 0_1       | Photon      | 0               | http://katlas.org/wiki/0_1   |
+
+  Lean modules:  KnotRegistry.lean  →  Calculations.lean  →  MassDerivation.lean
+  Bridge check:  KnotRegistry.figureEightEntry.volume.value = MassDerivation.vol_figure_eight
+
+------------------------------------------------------------------------
+§8  THEORETICAL GAP REPORT
 ------------------------------------------------------------------------
 
 Each `sorry` below represents an unproved obligation.  Where a
@@ -849,6 +880,22 @@ Each `sorry` below represents an unproved obligation.  Where a
 link to the foundational reference are shown.
 
   ┌─ Gaps with bibliographic references ─────────────────────────────┐
+
+  QOU/Calculations.lean:118  substrate_error_bound
+    Citation: [turaev2010]
+    Link:     https://doi.org/10.1515/9783110221831
+
+  QOU/Calculations.lean:125  h_q_squared_pos
+    Citation: [CODATA2022]
+    Link:     https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
+
+  QOU/Calculations.lean:131  h_q_value_in_unit_interval
+    Citation: [witten1988]
+    Link:     https://doi.org/10.1007/BF01223371
+
+  QOU/Calculations.lean:138  derived_q_gt_one
+    Citation: [lusztig1993]
+    Link:     https://doi.org/10.1007/978-0-8176-4717-9
 
   QOU/Glossary.lean:39  FrobeniusHopfObject
     Citation: [kock2004]
@@ -1354,9 +1401,10 @@ link to the foundational reference are shown.
     .lake/packages/plausible/Test/Tactic.lean:145  (unknown)
     .lake/packages/plausible/Test/Tactic.lean:167  type_u
     .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean:160  ConvSelectionPanel
+    QOU/Calculations.lean:159  full_derivation_chain
     QOU.lean:7  (unknown)
 
-  Summary: 18 referenced / 430 unreferenced / 448 total gaps
+  Summary: 22 referenced / 431 unreferenced / 453 total gaps
 
 ========================================================================
 END OF REPORT
