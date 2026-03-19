@@ -160,6 +160,18 @@ input[type=range]::-webkit-slider-thumb {
 #juliapnl .jl-val { color:var(--accent3); }
 #juliapnl .jl-key { color:var(--accent); }
 
+/* ── Möbius spectral panel ──────────────────────────────────────── */
+#mobiuspnl { top:14px; right:360px; width:232px; font-size:10px; }
+.mob-row  { display:flex; align-items:baseline; gap:5px; margin:2px 0; }
+.mob-key  { width:130px; color:var(--dim); font-size:9px; flex-shrink:0; }
+.mob-val  { color:var(--accent3); }
+.mob-type { font-size:11px; font-weight:bold; letter-spacing:.06em; }
+.type-E   { color:var(--accent3); }
+.type-P   { color:var(--accent4); }
+.type-H   { color:var(--accent2); }
+.mob-mat  { color:var(--dim); font-size:9px; margin-top:6px;
+            border-top:1px solid var(--border); padding-top:5px; line-height:1.65; }
+
 #tip {
   position:fixed; background:var(--panel); border:1px solid var(--border);
   border-radius:3px; padding:5px 9px; font-size:10px; pointer-events:none;
@@ -336,6 +348,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_vizjson"> View JSON</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_fcp1"> Fiber CP1</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_julia"> Julia set</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_mobius"> Möbius</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -461,6 +474,11 @@ input[type=range]::-webkit-slider-thumb {
   <div class="panel-title">Julia Set  ·  Böttcher ψ<button class="panel-close" onclick="togglePanel('juliapnl')">×</button></div>
   <canvas id="julia_canvas" width="234" height="175"></canvas>
   <div class="jl-eq" id="julia_text">—</div>
+</div>
+
+<div class="panel" id="mobiuspnl" style="display:none">
+  <div class="panel-title">Möbius Spectral  ·  Rmk 3.24<button class="panel-close" onclick="togglePanel('mobiuspnl')">×</button></div>
+  <div id="mobius-body"><span style="color:var(--dim);font-size:9px">Waiting for state…</span></div>
 </div>
 
 <!-- Axis labels -->
@@ -1501,6 +1519,7 @@ const PANEL_CB = {
   stats: 'cb_pnl_stats', info: 'cb_pnl_info', formula: 'cb_pnl_fmla',
   chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
   vizjson: 'cb_pnl_vizjson', fibercp1: 'cb_pnl_fcp1', juliapnl: 'cb_pnl_julia',
+  mobiuspnl: 'cb_pnl_mobius',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1520,7 +1539,7 @@ Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
 
 // ── Hide / show all info panels ───────────────────────────────────────
 let infoPanelsHidden = true;  // start hidden
-const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson','fibercp1','juliapnl'];
+const INFO_PANEL_IDS = ['stats','info','chiral','weierstrass','affine','formula','vizjson','fibercp1','juliapnl','mobiuspnl'];
 function applyHide() {
   const show = !infoPanelsHidden;
   INFO_PANEL_IDS.forEach(id => togglePanel(id, show));
@@ -2403,6 +2422,100 @@ function drawAffine(state) {
   document.getElementById('ac-text').innerHTML = html;
 }
 
+// ── Möbius spectral panel ─────────────────────────────────────────────
+// Rmk 3.24 (brings-surface.tex):  P(c,z) = c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1)
+// is the colour-tube cubic: its three real roots are x_r, x_g, x_b at spectral base z.
+// At a branch point where x_r = x_g = ρ (double root), the Puiseux split gives
+//   r(δ) = ρ+Cδ,  g(δ) = ρ−Cδ,  b(δ) = b_c;   C² = −∂_z P(ρ,z)/(ρ−b_c)
+// κ = ρ/C  →  Möbius μ(δ) = (κ+δ)/(κ−δ)  with matrix M = [[1,κ],[−1,κ]] ∈ GL₂
+// disc(μ) = (κ²−6κ+1)/2κ → E(lliptic)|P(arabolic)|H(yperbolic)
+
+// Roots of c³+Ac²+Bc+D = 0 via trigonometric / Cardano
+function colorTubeRoots(z) {
+  const A = 4*z+1, B = 6*z*z+3*z+1, D = 4*z*z*z+3*z*z+2*z+1;
+  const sh = -A/3;
+  const p  = B - A*A/3;
+  const q  = D + 2*A*A*A/27 - A*B/3;
+  const discC = -4*p*p*p - 27*q*q;  // > 0 ↔ three distinct real roots
+  if (discC >= 0) {
+    const m   = 2*Math.sqrt(Math.max(0, -p/3));
+    const arg = (Math.abs(p*m) < 1e-14) ? 0 : Math.max(-1, Math.min(1, 3*q/(p*m)));
+    const phi = Math.acos(arg) / 3;
+    return [
+      m*Math.cos(phi)               + sh,
+      m*Math.cos(phi - TAU/3)       + sh,
+      m*Math.cos(phi - 2*TAU/3)     + sh,
+    ].sort((a, b) => b - a);
+  }
+  const inner = Math.max(0, q*q/4 + p*p*p/27);
+  const sq    = Math.sqrt(inner);
+  const cbrt  = x => Math.sign(x)*Math.pow(Math.abs(x), 1/3);
+  const t = cbrt(-q/2+sq) + cbrt(-q/2-sq);
+  return [t+sh, t+sh, t+sh];
+}
+
+// Compute Möbius parameters from current chiral state
+// z = r_end (spectral base), pts = [{x,y,color}×3] are the three colour-tube x-values
+function mobiusParams(z, pts) {
+  const xr = pts[0].x, xg = pts[1].x, xb = pts[2].x;
+  const delta = xr - xg;                    // δ = x_r − x_g  (Puiseux coordinate)
+  const roots = colorTubeRoots(z);          // [r0≥r1≥r2] analytic roots of P(c,z)
+  // Find closest pair (proxy for double root at nearest branch point)
+  const d01 = roots[0]-roots[1], d12 = roots[1]-roots[2];
+  let ia, ib, ic;
+  if (d01 <= d12) { ia=0; ib=1; ic=2; } else { ia=1; ib=2; ic=0; }
+  const rho = (roots[ia]+roots[ib])/2;
+  const b_c = roots[ic];
+  // C² = −∂_z P(ρ,z) / (ρ−b_c);  ∂_z P(c,z) = (12z+3)c² + (12z²+6z+2) + 4c²...
+  // ∂_z P(c,z) = (4c²+2c·(12z+3)/...  let me use the explicit form:
+  // P(c,z) = c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1)
+  // ∂_z P = 4c² + (12z+3)c + (12z²+6z+2)
+  const dzP   = 4*rho*rho + (12*z+3)*rho + (12*z*z+6*z+2);
+  const denom = rho - b_c;
+  const C2    = (Math.abs(denom)<1e-9) ? NaN : -dzP/denom;
+  const kappa = (!isFinite(C2)||isNaN(C2)||C2<=0) ? NaN : rho/Math.sqrt(C2);
+  let disc_m = NaN, type = '—', typeClass = '';
+  if (isFinite(kappa) && !isNaN(kappa) && Math.abs(kappa)>1e-9) {
+    disc_m = (kappa*kappa - 6*kappa + 1) / (2*kappa);
+    const PAR = 0.012;  // ≈ threshold tolerance
+    if      (Math.abs(disc_m) < PAR) { type='PARABOLIC';  typeClass='type-P'; }
+    else if (disc_m < 0)             { type='ELLIPTIC';   typeClass='type-E'; }
+    else                             { type='HYPERBOLIC'; typeClass='type-H'; }
+  }
+  return { delta, z, rho, b_c, C2, kappa, disc_m, type, typeClass, xr, xg, xb };
+}
+
+function drawMobiusPanel(state) {
+  const el = document.getElementById('mobiuspnl');
+  if (!el || el.style.display === 'none') return;
+  const { r_end, pts } = state;
+  const mob  = mobiusParams(r_end, pts);
+  const fmtM = v => (!isFinite(v)||isNaN(v)) ? '—'
+                  : (Math.abs(v)>99 ? v.toExponential(2) : v.toFixed(4));
+  document.getElementById('mobius-body').innerHTML =
+    `<div class="sec" style="margin-top:0">── z = r_end = ${r_end.toFixed(4)} ──────</div>`+
+    `<div class="mob-row"><span class="mob-key">δ = x_𝔯 − x_𝔤</span>`+
+      `<span class="mob-val">${fmtM(mob.delta)}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">ρ  (near double root)</span>`+
+      `<span class="mob-val">${fmtM(mob.rho)}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">b_c  (simple root)</span>`+
+      `<span class="mob-val">${fmtM(mob.b_c)}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">C² = −∂_zP/(ρ−b)</span>`+
+      `<span class="mob-val">${fmtM(mob.C2)}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">κ = ρ/C</span>`+
+      `<span class="mob-val">${fmtM(mob.kappa)}</span></div>`+
+    `<div class="mob-row"><span class="mob-key">disc(μ) = (κ²−6κ+1)/2κ</span>`+
+      `<span class="mob-val">${fmtM(mob.disc_m)}</span></div>`+
+    `<div class="mob-row" style="margin-top:5px"><span class="mob-key">type</span>`+
+      `<span class="mob-type ${mob.typeClass}">${mob.type}</span></div>`+
+    `<div class="mob-mat">`+
+      `M = [[1,κ],[−1,κ]] ∈ GL₂(ℤ[κ,½κ])<br>`+
+      `κ ∈ ℤ[√2] at parabolic  (κ=(1±√2)²)<br>`+
+      `M = C₀·diag(1,κ),  C₀∈GL₂(ℤ)  (Cayley)<br>`+
+      `<span style="color:var(--dim);font-size:8px">`+
+      `x_𝔯=${fmtM(mob.xr)}  x_𝔤=${fmtM(mob.xg)}  x_𝔟=${fmtM(mob.xb)}</span></div>`;
+}
+
 // ── Julia set panel ──────────────────────────────────────────────────
 // c = main-cardioid parameterisation driven by q:
 //   c(θ) = ½e^{iθ} − ¼e^{2iθ},   θ = q·2π
@@ -2610,6 +2723,9 @@ function updateChiralPanels() {
 
   // Julia set panel (Böttcher coordinate)
   drawJuliaPanel(state);
+
+  // Möbius spectral panel (Rmk 3.24)
+  drawMobiusPanel(state);
 
   // Sync 3D fiber markers with updated chiral state
   if (document.getElementById('cb_fiber').checked &&
