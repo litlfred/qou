@@ -60,6 +60,11 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -139,14 +144,7 @@ jobs:
           echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
 
       # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
-      - name: Install pandoc, latexpand, latexdiff, and graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            pandoc \
-            texlive-extra-utils \
-            latexdiff \
-            graphviz
+      # pandoc, latexpand, latexdiff, and graphviz are pre-installed in the CI image.
 
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
@@ -293,7 +291,7 @@ jobs:
             mkdir -p _site/lean
             cp -r lean/QOU    _site/lean/QOU    2>/dev/null || true
             cp    lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
-            cp    lean/lakefile.lean _site/lean/lakefile.lean 2>/dev/null || true
+            cp    lean/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
             cp    lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
