@@ -1,0 +1,341 @@
+% ═══════════════════════════════════════════════════════════════════════
+% QOU Formalization Blueprint — content.tex
+%
+% This file maps every theorem-like object in the manuscript to its
+% Lean 4 declaration via \lean{} macros and records dependency edges
+% via \uses{}.  Objects whose Lean proof is sorry-free carry \leanok.
+%
+% Convention:
+%   - Labels match the manuscript's \label{} tags exactly.
+%   - Lean declarations live in the QOU.* namespace.
+%   - \uses{} lists the labels this object depends on.
+% ═══════════════════════════════════════════════════════════════════════
+
+\chapter{Core Algebraic Structures (Glossary)}
+
+% ── Frobenius-Hopf Object ──────────────────────────────────────────
+\begin{definition}[Frobenius-Hopf Object]
+  \label{def:frobenius-hopf}
+  \lean{QOU.Glossary.FrobeniusHopfObject}
+  An object $A$ in a rigid monoidal category equipped with a Hopf
+  algebra structure $(\mu, \eta, \Delta, \varepsilon, S)$ and a
+  Frobenius form $\lambda : A \to \mathbf{1}$ satisfying non-degeneracy.
+\end{definition}
+
+% ── Quantum Deformation Parameter ─────────────────────────────────
+\begin{definition}[Quantum Deformation Parameter]
+  \label{def:quantum-parameter}
+  \lean{QOU.Glossary.quantumParameter}
+  \uses{def:frobenius-hopf}
+  The parameter $q \in k^\times$ governing the Hopf algebra structure.
+  At $q = 1$ we recover the classical cocommutative case.
+\end{definition}
+
+% ── Fibre Functor ──────────────────────────────────────────────────
+\begin{definition}[Fibre Functor]
+  \label{def:fibre-functor}
+  \lean{QOU.Glossary.FibreFunctor}
+  An exact faithful $k$-linear monoidal functor
+  $\omega : \mathcal{C} \to \mathrm{Vect}_k$ used in Tannaka-Krein
+  reconstruction.
+\end{definition}
+
+% ── Quantum Gauge Group ───────────────────────────────────────────
+\begin{definition}[Quantum Gauge Group]
+  \label{def:quantum-gauge-group}
+  \lean{QOU.Glossary.QuantumGaugeGroup}
+  \uses{def:fibre-functor, def:quantum-parameter}
+  The quantum group $G_q = \mathrm{Aut}^{\otimes}(\omega)$ reconstructed
+  via Tannaka-Krein duality from the fibre functor.
+\end{definition}
+
+% ── CR Manifold ────────────────────────────────────────────────────
+\begin{definition}[CR Manifold Structure]
+  \label{def:cr-manifold}
+  \lean{QOU.Glossary.CRManifold}
+  A pseudo-Hermitian structure with Levi distribution, Reeb vector
+  field, and Webster metric.
+\end{definition}
+
+% ── Bring's Surface ───────────────────────────────────────────────
+\begin{definition}[Bring's Surface]
+  \label{def:brings-surface}
+  \lean{QOU.Glossary.BringsSurface}
+  \uses{def:cr-manifold}
+  The maximally symmetric CR manifold of genus 4, with Euler
+  characteristic $\chi = -6$, defined by $\sum x_j^k = 0$ for
+  $k = 1,2,3$ in $\mathbb{CP}^4$.
+\end{definition}
+
+% ── Substrate Parameter ───────────────────────────────────────────
+\begin{definition}[Substrate Parameter]
+  \label{def:substrate-parameter}
+  \lean{QOU.Glossary.substrateParameter}
+  \uses{def:brings-surface, def:quantum-parameter}
+  $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p)$ --- couples
+  chiral curvature to contact geometry on Bring's surface.
+\end{definition}
+
+% ── Jet Prolongation ──────────────────────────────────────────────
+\begin{definition}[Jet Prolongation]
+  \label{def:jet-prolongation}
+  \lean{QOU.Glossary.JetProlongation}
+  The first jet bundle $J^1 E$ represented categorically by
+  $A \otimes \Omega^1(A)$.
+\end{definition}
+
+% ── Kähler Differentials ──────────────────────────────────────────
+\begin{definition}[Kähler Differentials]
+  \label{def:kahler-differentials}
+  \lean{QOU.Glossary.KahlerDifferentials}
+  \uses{def:jet-prolongation}
+  $\Omega^1(A) = \ker(m : A \otimes A \to A)$, the universal
+  first-order differential calculus.
+\end{definition}
+
+% ── Braid Group ───────────────────────────────────────────────────
+\begin{definition}[Braid Group $B_3$]
+  \label{def:braid-group}
+  \lean{QOU.Glossary.BraidGroup}
+  The braid group on 3 strands: $\langle \sigma_1, \sigma_2 \mid
+  \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$.
+\end{definition}
+
+% ── Binary Dihedral Group ─────────────────────────────────────────
+\begin{definition}[Binary Dihedral Group]
+  \label{def:binary-dihedral}
+  \lean{QOU.Glossary.BinaryDihedralGroup}
+  \uses{def:braid-group}
+  $\mathrm{Dic}_3 \subset \mathrm{SU}(2)$ of order 12, lifting $S_3$
+  via the double cover $\mathrm{SU}(2) \to \mathrm{SO}(3)$.
+\end{definition}
+
+% ── F-Isocrystal ──────────────────────────────────────────────────
+\begin{definition}[F-Isocrystal]
+  \label{def:f-isocrystal}
+  \lean{QOU.Glossary.FIsocrystal}
+  A module over the Dieudonné ring $\mathbb{Q}_p\langle F, V\rangle
+  / (FV - p)$.
+\end{definition}
+
+
+\chapter{Knot Theory and Combinatorial Types}
+
+% ── Planar Diagram ────────────────────────────────────────────────
+\begin{definition}[Planar Diagram Code]
+  \label{def:planar-diagram}
+  \lean{QOU.KnotTheory.PlanarDiagram}
+  A combinatorial representation of a knot via a list of crossings,
+  each carrying four strand indices and a sign.
+\end{definition}
+
+% ── Unknot ────────────────────────────────────────────────────────
+\begin{definition}[Unknot ($0_1$)]
+  \label{def:unknot}
+  \lean{QOU.KnotRegistry.unknotEntry}
+  \leanok
+  \uses{def:planar-diagram}
+  The trivial knot with 0 crossings.  QOU identity: Neutrino (SU(2) vacuum).
+  \textit{Knot Atlas}: \url{http://katlas.org/wiki/0_1}
+\end{definition}
+
+% ── Trefoil ───────────────────────────────────────────────────────
+\begin{definition}[Trefoil ($3_1$)]
+  \label{def:trefoil}
+  \lean{QOU.KnotRegistry.trefoilEntry}
+  \leanok
+  \uses{def:planar-diagram, def:braid-group}
+  The simplest non-trivial knot (3 crossings, torus knot).
+  QOU identity: Electron (Generation~1), source of the $B_3$ monodromy
+  for Bring's Surface.
+  \textit{Knot Atlas}: \url{http://katlas.org/wiki/3_1}
+\end{definition}
+
+% ── Figure-Eight ──────────────────────────────────────────────────
+\begin{definition}[Figure-Eight Knot ($4_1$)]
+  \label{def:figure-eight}
+  \lean{QOU.KnotRegistry.figureEightEntry}
+  \leanok
+  \uses{def:planar-diagram}
+  The simplest hyperbolic knot (4 crossings).
+  QOU identity: Muon (Generation~2).  Its hyperbolic volume
+  $\mathrm{Vol}(4_1) \approx 2.0298832128$ drives the mass derivation.
+  \textit{Knot Atlas}: \url{http://katlas.org/wiki/4_1}
+\end{definition}
+
+% ── Hyperbolic Volume ─────────────────────────────────────────────
+\begin{definition}[Hyperbolic Volume]
+  \label{def:hyperbolic-volume}
+  \lean{QOU.KnotTheory.HyperbolicVolume}
+  The volume of the hyperbolic knot complement $S^3 \setminus K$,
+  computed via the Bloch-Wigner dilogarithm (SnapPy census).
+\end{definition}
+
+% ── Vol(4_1) ──────────────────────────────────────────────────────
+\begin{definition}[Figure-Eight Volume]
+  \label{def:vol-figure-eight}
+  \lean{QOU.KnotTheory.vol_figure_eight}
+  \leanok
+  \uses{def:hyperbolic-volume, def:figure-eight}
+  $\mathrm{Vol}(4_1) = 2.0298832128 \pm 10^{-10}$.
+  Verified against SnapPy and the Bloch-Wigner function.
+\end{definition}
+
+
+\chapter{Topological Mass Derivation}
+
+% ── Topological Mass Conjecture ───────────────────────────────────
+\begin{conjecture}[Topological Decomposition of Mass]
+  \label{conj:topological-mass}
+  \lean{QOU.MassDerivation.topological_mass_conjecture}
+  \uses{def:hyperbolic-volume, def:substrate-parameter}
+  For a particle identified with knot $K$, its mass satisfies
+  $m = \mathrm{Vol}(K) / \hbar_q^2$ where $\hbar_q = 1 - 1/q$.
+  This is Conjecture~4.25 of the manuscript, assumed as an axiom.
+\end{conjecture}
+
+% ── CODATA Mass Ratio ─────────────────────────────────────────────
+\begin{definition}[Experimental Muon-Electron Mass Ratio]
+  \label{def:mu-e-ratio}
+  \lean{QOU.MassDerivation.experimental_mu_e_ratio}
+  \leanok
+  $m_\mu / m_e = 206.768283$ (CODATA 2022).
+\end{definition}
+
+% ── Quantum Planck Constant ───────────────────────────────────────
+\begin{definition}[Quantum Planck Constant]
+  \label{def:quantum-planck}
+  \lean{QOU.MassDerivation.quantum_planck}
+  \leanok
+  \uses{def:quantum-parameter}
+  $\hbar_q = 1 - 1/q$ for $q > 1$.
+\end{definition}
+
+% ── Substrate Coupling Constant ───────────────────────────────────
+\begin{definition}[Substrate Coupling Constant]
+  \label{def:substrate-q}
+  \lean{QOU.MassDerivation.substrate_q}
+  \leanok
+  $q \approx 1.1097$, the derived value of the substrate parameter.
+\end{definition}
+
+% ── Vol Approximation ─────────────────────────────────────────────
+\begin{lemma}[Figure-Eight Volume Approximation]
+  \label{lem:vol-approx}
+  \lean{QOU.MassDerivation.vol_figure_eight_approx}
+  \uses{def:vol-figure-eight}
+  $|\mathrm{Vol}(4_1) - 2.02988| < 10^{-5}$.
+\end{lemma}
+
+% ── Mass Ratio Approximation ──────────────────────────────────────
+\begin{lemma}[Mass Ratio Approximation]
+  \label{lem:mu-e-approx}
+  \lean{QOU.MassDerivation.mu_e_ratio_approx}
+  \uses{def:mu-e-ratio}
+  $|m_\mu/m_e - 206.768| < 10^{-3}$.
+\end{lemma}
+
+% ── Quantum Planck Approximation ──────────────────────────────────
+\begin{lemma}[Quantum Planck Approximation]
+  \label{lem:hq-approx}
+  \lean{QOU.MassDerivation.quantum_planck_approx}
+  \uses{def:quantum-planck, def:substrate-q}
+  $|\hbar_q(q_0) - 0.09908| < 10^{-4}$.
+\end{lemma}
+
+% ── Derive Substrate q ────────────────────────────────────────────
+\begin{theorem}[Derivation of the Substrate Parameter]
+  \label{thm:derive-substrate-q}
+  \lean{QOU.MassDerivation.derive_substrate_q}
+  \uses{conj:topological-mass, def:vol-figure-eight, def:mu-e-ratio,
+        def:quantum-planck}
+  Given the topological mass conjecture and experimental data,
+  the substrate parameter $q$ must satisfy $|q - 1.1097| < 0.0001$.
+
+  Derivation:
+  \begin{enumerate}
+    \item From $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$, solve for
+          $\hbar_q^2 \approx 2.02988/206.768 \approx 0.009817$.
+    \item $\hbar_q \approx 0.09908$.
+    \item From $\hbar_q = 1 - 1/q$, invert: $q = 1/(1-\hbar_q) \approx 1.1097$.
+  \end{enumerate}
+\end{theorem}
+
+% ── Mass Ratio from Volume ────────────────────────────────────────
+\begin{lemma}[Mass Ratio from Volume]
+  \label{lem:mass-ratio-from-volume}
+  \lean{QOU.MassDerivation.mass_ratio_from_volume}
+  \uses{def:vol-figure-eight, def:mu-e-ratio, def:quantum-planck}
+  $\hbar_q \neq 0 \implies \mathrm{Vol}(4_1)/\hbar_q^2 = m_\mu/m_e
+  \implies \hbar_q^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$.
+\end{lemma}
+
+
+\chapter{Calculations Module (Registry Bridge)}
+
+% ── Registry Volume Consistency ───────────────────────────────────
+\begin{theorem}[Registry Volume Consistency]
+  \label{thm:registry-volume}
+  \lean{QOU.Calculations.registry_volume_eq_mass_derivation}
+  \leanok
+  \uses{def:figure-eight, def:vol-figure-eight}
+  The figure-eight knot's registry volume equals the
+  \texttt{MassDerivation} volume constant.
+\end{theorem}
+
+% ── Skein Mass Residue ────────────────────────────────────────────
+\begin{theorem}[Skein-Deformed Mass Residue]
+  \label{thm:skein-mass-residue}
+  \lean{QOU.Calculations.skein_mass_residue}
+  \uses{thm:registry-volume, def:mu-e-ratio, def:quantum-planck}
+  The muon-electron mass ratio equals
+  $\mathrm{Vol}(4_1)/\hbar_q^2$ where the volume is sourced from
+  the Alexander-Briggs knot registry.
+\end{theorem}
+
+% ── Substrate Error Bound ─────────────────────────────────────────
+\begin{theorem}[Substrate Error Bound]
+  \label{thm:substrate-error-bound}
+  \lean{QOU.Calculations.substrate_error_bound}
+  \uses{thm:derive-substrate-q, thm:registry-volume}
+  $|q_{\mathrm{derived}} - 1.1097| < 0.0001$.
+\end{theorem}
+
+% ── Full Derivation Chain ─────────────────────────────────────────
+\begin{theorem}[Full Derivation Chain]
+  \label{thm:full-derivation-chain}
+  \lean{QOU.Calculations.full_derivation_chain}
+  \uses{def:figure-eight, def:mu-e-ratio, thm:substrate-error-bound}
+  End-to-end witness:
+  \[
+    \mathrm{KnotRegistry}(4_1).\mathrm{vol}
+      \;\longrightarrow\; \hbar_q^2
+      \;\longrightarrow\; \hbar_q
+      \;\longrightarrow\; q
+      \;\longrightarrow\; |q - 1.1097| < 0.0001
+  \]
+\end{theorem}
+
+% ── CODATA Consistency ────────────────────────────────────────────
+\begin{lemma}[$\hbar_q^2 > 0$]
+  \label{lem:hq-squared-pos}
+  \lean{QOU.Calculations.h_q_squared_pos}
+  \uses{def:vol-figure-eight, def:mu-e-ratio}
+  Both $\mathrm{Vol}(4_1)$ and $m_\mu/m_e$ are positive,
+  so $\hbar_q^2 = \mathrm{Vol}/\mathrm{ratio} > 0$.
+\end{lemma}
+
+\begin{lemma}[$\hbar_q \in (0,1)$]
+  \label{lem:hq-unit-interval}
+  \lean{QOU.Calculations.h_q_value_in_unit_interval}
+  \uses{lem:hq-squared-pos}
+  Ensures $q > 1$, as required by the quantum group framework.
+\end{lemma}
+
+\begin{lemma}[$q > 1$]
+  \label{lem:derived-q-gt-one}
+  \lean{QOU.Calculations.derived_q_gt_one}
+  \uses{lem:hq-unit-interval}
+  The derived substrate parameter satisfies $q > 1$
+  ($q = 1$ would collapse to the classical limit).
+\end{lemma}

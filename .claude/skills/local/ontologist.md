@@ -79,8 +79,16 @@ Each entry in `Glossary.lean` follows this pattern:
 
     LaTeX: `chapters/brings-surface.tex:12` (`\label{def:brings-surface}`)
     Mathlib: `Mathlib.Geometry.Manifold.SmoothManifoldWithCorners` -/
+-- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
 def BringsSurface : Type* := sorry
 ```
+
+### Bibliographic reference requirement
+
+Every `sorry` in `Glossary.lean` **must** be preceded by a
+`-- Ref: [key] url` comment linking to the foundational reference.
+The `key` must match an entry in `references.bib` exactly.
+This is enforced by the `axiom_report.py` Theoretical Gap Report.
 
 ## Category Theory Universe Requirements
 
@@ -128,6 +136,20 @@ If `lake build` fails:
 | `lean/QOU/Glossary.lean` | Lean file with formal definitions |
 | `mapping.json` | Narrative-to-Lean identifier mapping |
 
+## Blueprint Integration
+
+Every glossary entry that has a `\label{}` in a chapter file must also
+appear in `blueprint/src/content.tex` with the matching `\lean{}`
+macro.  The Ontologist is responsible for ensuring:
+
+1. **Label consistency**: `\label{def:foo}` in chapters = `\label{def:foo}` in blueprint
+2. **Declaration consistency**: `\lean{QOU.Glossary.Foo}` in blueprint = `def Foo` in `Glossary.lean`
+3. **Dependency edges**: `\uses{}` in the blueprint must reference only labels
+   that exist and whose glossary entries are resolved (not ambiguous)
+4. **BibTeX references**: Every `-- Ref: [key]` in Glossary.lean must match
+   a `references.bib` entry; when adding new glossary terms, identify the
+   foundational paper and add it to `references.bib` if absent
+
 ## Checklist
 
 - [ ] Every definition in `chapters/*.tex` has a glossary entry
@@ -136,3 +158,7 @@ If `lake build` fails:
 - [ ] `mapping.json` covers all `\lean{}` macros in LaTeX
 - [ ] Category-theoretic types have correct universe annotations
 - [ ] Docstrings in `Glossary.lean` match narrative definitions
+- [ ] Every `sorry` in `Glossary.lean` has a `-- Ref: [key] url` comment
+- [ ] All `-- Ref:` keys exist in `references.bib`
+- [ ] `blueprint/src/content.tex` has entries for all glossary definitions
+- [ ] `\uses{}` edges in blueprint are bidirectionally valid

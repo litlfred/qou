@@ -17,3 +17,9 @@ require mathlib from git
     Build with: `lake build QOU:docs` -/
 require «doc-gen4» from git
   "https://github.com/leanprover/doc-gen4" @ "main"
+
+/-- checkdecls verifies that every \lean{} declaration in the blueprint
+    exists in the built project.  Used by docgen-action's validation step:
+    `lake exe checkdecls blueprint/lean_decls` -/
+require checkdecls from git
+  "https://github.com/PatrickMassot/checkdecls" @ "master"

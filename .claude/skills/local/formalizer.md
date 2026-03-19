@@ -66,16 +66,24 @@ When a narrative step is too complex for immediate formalization:
 1. Extract the logical structure of the proof
 2. Create a `lemma` for each non-trivial step
 3. Fill each lemma body with `sorry`
-4. Ensure the file remains syntactically correct
-5. Track the sorry count in `proof-objects.json`
+4. **Add a `-- Ref: [key] url` comment** before each `sorry` linking
+   to the foundational reference that would resolve the gap
+5. Ensure the file remains syntactically correct
+6. Track the sorry count in `proof-objects.json`
 
 ```lean
 /-- Intermediate step: torsion lifts through jet prolongation.
     TODO: formalize using the Frobenius-Hopf structure. -/
 lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
     JetProlongation A → TorsionLifting A := by
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   sorry
 ```
+
+**Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
+must match an entry in `references.bib` exactly (case-sensitive).  If no
+published reference exists, use `[manuscript]` and cite the chapter/section.
+This is enforced by the axiom report's Theoretical Gap Report (§8).
 
 ## Library Synthesis Rules
 
@@ -130,11 +138,27 @@ lean/
     └── ...
 ```
 
+## Blueprint Synchronization
+
+The Formalizer must keep Lean declarations in sync with the blueprint:
+
+1. Every Lean declaration referenced by `\lean{}` in
+   `blueprint/src/content.tex` must exist in the Lean source
+2. When a `sorry` is resolved, update the blueprint entry to add `\leanok`
+3. When adding new theorems, add a corresponding entry to
+   `blueprint/src/content.tex` with `\lean{}` and `\uses{}` edges
+4. The `-- Ref: [key]` in Lean must match `\cite{key}` in the blueprint
+   where applicable, ensuring bibliography consistency across both systems
+
 ## Checklist
 
 - [ ] All theorem statements match the LaTeX originals
 - [ ] Import blocks are minimal and correct
 - [ ] Every `sorry` is tracked in `proof-objects.json`
+- [ ] Every `sorry` has a `-- Ref: [key] url` comment (bibtex-linked)
+- [ ] All `-- Ref:` keys exist in `references.bib`
 - [ ] `lake build` succeeds (sorry warnings are expected)
 - [ ] Tactic choices match the narrative proof strategy
 - [ ] Proof state can be exported at every sorry site
+- [ ] `blueprint/src/content.tex` entries match Lean declarations
+- [ ] `\leanok` only on sorry-free declarations
