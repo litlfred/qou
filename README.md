@@ -38,8 +38,10 @@ through the mass-ratio formula to yield substrate parameter q ≈ 1.1097
 within tolerance |q − 1.1097| < 0.0001.
 
 **Interactive documentation**: [Lean docs on GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
+| [Source on GitHub](https://github.com/litlfred/qou/tree/main/lean)
 
-**Verification report**: [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) —
+**Verification report**: [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt)
+| [Source on GitHub](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) —
 includes the **Theoretical Gap Report** listing every `sorry` with its
 bibliographic reference and clickable DOI link.
 
@@ -48,20 +50,24 @@ linking to the foundational reference that would resolve the gap.
 
 ## Published Artefacts (GitHub Pages)
 
-| Artefact | Link |
-|----------|------|
-| Landing page (paper + visualizer) | [index.html](https://litlfred.github.io/qou/) |
-| Paper (HTML) | [paper.html](https://litlfred.github.io/qou/paper.html) |
-| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) |
-| Paper (Markdown) | [quantum-observable-universe.md](https://litlfred.github.io/qou/quantum-observable-universe.md) |
-| Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) |
-| Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) |
-| Lean Interactive Docs | [lean/docs/](https://litlfred.github.io/qou/lean/docs/) |
-| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) |
-| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) |
-| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) |
+> **Note:** If GitHub Pages is not publicly accessible, use the GitHub source
+> links in the rightmost column to browse the repository directly.
+
+| Artefact | GitHub Pages | GitHub Source |
+|----------|-------------|--------------|
+| Landing page (paper + visualizer) | [index.html](https://litlfred.github.io/qou/) | [home_page/](https://github.com/litlfred/qou/tree/main/home_page) |
+| Paper (HTML) | [paper.html](https://litlfred.github.io/qou/paper.html) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
+| Paper (PDF) | [quantum-observable-universe.pdf](https://litlfred.github.io/qou/quantum-observable-universe.pdf) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
+| Paper (Markdown) | [quantum-observable-universe.md](https://litlfred.github.io/qou/quantum-observable-universe.md) | [main.tex](https://github.com/litlfred/qou/blob/main/main.tex) |
+| Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) | [brings_surface.html](https://github.com/litlfred/qou/blob/main/brings_surface.html) |
+| Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) | [.github/workflows/](https://github.com/litlfred/qou/tree/main/.github/workflows) |
+| Lean Interactive Docs | [lean/docs/](https://litlfred.github.io/qou/lean/docs/) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
+| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
+| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
+| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
 
 Recent feature builds are listed on the [landing page](https://litlfred.github.io/qou/)
+([source](https://github.com/litlfred/qou/tree/main/home_page))
 under the **Feature Builds** tab, showing the 5 most recent branch builds with
 links to their PDF, diff PDF, HTML preview, and source branch.
 
