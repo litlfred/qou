@@ -37,11 +37,11 @@ The `Calculations.lean` module proves that the figure-eight volume feeds
 through the mass-ratio formula to yield substrate parameter q ≈ 1.1097
 within tolerance |q − 1.1097| < 0.0001.
 
-**Interactive documentation**: [Lean docs on GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
-| [Source on GitHub](https://github.com/litlfred/qou/tree/main/lean)
+**Interactive documentation**: [GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
+| [Source](https://github.com/litlfred/qou/tree/main/lean)
 
 **Verification report**: [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt)
-| [Source on GitHub](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) —
+| [Source](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) —
 includes the **Theoretical Gap Report** listing every `sorry` with its
 bibliographic reference and clickable DOI link.
 
@@ -62,9 +62,9 @@ linking to the foundational reference that would resolve the gap.
 | Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) | [brings_surface.html](https://github.com/litlfred/qou/blob/main/brings_surface.html) |
 | Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) | [.github/workflows/](https://github.com/litlfred/qou/tree/main/.github/workflows) |
 | Lean Interactive Docs | [lean/docs/](https://litlfred.github.io/qou/lean/docs/) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
-| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
-| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
-| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | [lean/](https://github.com/litlfred/qou/tree/main/lean) |
+| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) | [axiom-report.txt](https://github.com/litlfred/qou/blob/gh-pages/axiom-report.txt) |
+| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) | [dependency-graph.svg](https://github.com/litlfred/qou/blob/gh-pages/dependency-graph.svg) |
+| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) | [proof-objects.json](https://github.com/litlfred/qou/blob/gh-pages/proof-objects.json) |
 
 Recent feature builds are listed on the [landing page](https://litlfred.github.io/qou/)
 ([source](https://github.com/litlfred/qou/tree/main/home_page))
