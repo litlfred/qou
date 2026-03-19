@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-03-19T19:40:46.113650+00:00",
+  "mappings": [
+    {
+      "narrative": "Quantum Universe",
+      "lean_id": "QOU.QuantumObservableUniverse.QuantumUniverse",
+      "latex_label": "def:quantum-universe"
+    },
+    {
+      "narrative": "Quantum Observable Universe",
+      "lean_id": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
+      "latex_label": "def:quantum-observable-universe"
+    },
+    {
+      "narrative": "Instanton connection",
+      "lean_id": "QOU.QuantumObservableUniverse.Instanton",
+      "latex_label": "def:instanton"
+    },
+    {
+      "narrative": "Substrate parameter",
+      "lean_id": "QOU.QuantumObservableUniverse.SubstrateParameter",
+      "latex_label": "def:substrate-parameter"
+    },
+    {
+      "narrative": "Quantum Gauge Group",
+      "lean_id": "QOU.QuantumObservableUniverse.QuantumGaugeGroup",
+      "latex_label": "def:quantum-gauge-group"
+    },
+    {
+      "narrative": "Quantum Planck Constant",
+      "lean_id": "QOU.QuantumObservableUniverse.QuantumPlanckConstant",
+      "latex_label": "def:quantum-planck-constant"
+    },
+    {
+      "narrative": "$q$-Harmonic form (Particle)",
+      "lean_id": "QOU.QuantumObservableUniverse.QHarmonicForm",
+      "latex_label": "def:q-harmonic-form"
+    },
+    {
+      "narrative": "Reeb decomposition",
+      "lean_id": "QOU.QuantumObservableUniverse.ReebDecomposition",
+      "latex_label": "def:reeb-decomposition"
+    },
+    {
+      "narrative": "Fermion",
+      "lean_id": "QOU.QuantumObservableUniverse.Fermion",
+      "latex_label": "def:fermion"
+    },
+    {
+      "narrative": "Boson",
+      "lean_id": "QOU.QuantumObservableUniverse.Boson",
+      "latex_label": "def:boson"
+    },
+    {
+      "narrative": "$q$-Deformed exterior derivative",
+      "lean_id": "QOU.QuantumObservableUniverse.QExtDeriv",
+      "latex_label": "def:q-ext-deriv"
+    },
+    {
+      "narrative": "$q$-Deformed Lie bracket",
+      "lean_id": "QOU.QuantumObservableUniverse.QLieBracket",
+      "latex_label": "def:q-lie-bracket"
+    },
+    {
+      "narrative": "$q$-Deformed connection",
+      "lean_id": "QOU.QuantumObservableUniverse.QConnection",
+      "latex_label": "def:q-connection"
+    },
+    {
+      "narrative": "$q$-Deformed Reeb vector field",
+      "lean_id": "QOU.QuantumObservableUniverse.QReebVectorField",
+      "latex_label": "def:q-reeb-vector-field"
+    },
+    {
+      "narrative": "$q$-Deformed Reeb flow",
+      "lean_id": "QOU.QuantumObservableUniverse.QReebFlow",
+      "latex_label": "def:q-reeb-flow"
+    },
+    {
+      "narrative": "$q$-Torsion leaf",
+      "lean_id": "QOU.QuantumObservableUniverse.QTorsionLeaf",
+      "latex_label": "def:q-torsion-leaf"
+    },
+    {
+      "narrative": "Braid group on three strands",
+      "lean_id": "QOU.PathIntegrals.BraidGroup",
+      "latex_label": "def:braid-group"
+    },
+    {
+      "narrative": "Symmetric group $S_3$",
+      "lean_id": "QOU.PathIntegrals.S3Group",
+      "latex_label": "def:s3-group"
+    },
+    {
+      "narrative": "$\\mathfrak{su}(2)$ basis",
+      "lean_id": "QOU.PathIntegrals.Su2Basis",
+      "latex_label": "def:su2-basis"
+    },
+    {
+      "narrative": "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
+      "lean_id": "QOU.PathIntegrals.Su2Generators",
+      "latex_label": "def:su2-generators"
+    },
+    {
+      "narrative": "$\\mathrm{SO}(3)$ generators",
+      "lean_id": "QOU.PathIntegrals.So3Generators",
+      "latex_label": "def:so3-generators"
+    },
+    {
+      "narrative": "Braid involutions: twist and flip",
+      "lean_id": "QOU.PathIntegrals.BraidTwistFlip",
+      "latex_label": "def:braid-twist-flip"
+    },
+    {
+      "narrative": "Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$",
+      "lean_id": "QOU.PathIntegrals.QuantumSu2",
+      "latex_label": "def:quantum-su2"
+    },
+    {
+      "narrative": "Recursive Brane Tower",
+      "lean_id": "QOU.Torsion.RecursiveBraneTower",
+      "latex_label": "def:recursive-brane-tower"
+    },
+    {
+      "narrative": "Quantum Characteristic Classes",
+      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
+      "latex_label": "def:quantum-characteristic-classes"
+    },
+    {
+      "narrative": "$\\mathbb{C}$ Quantum Observable Universe as Direct Limit",
+      "lean_id": "QOU.Torsion.DirectLimitAlgebra",
+      "latex_label": "def:direct-limit-algebra"
+    },
+    {
+      "narrative": "Mass Identity",
+      "lean_id": "QOU.Torsion.MassIdentity",
+      "latex_label": "def:mass-identity"
+    },
+    {
+      "narrative": "Descent",
+      "lean_id": "QOU.Torsion.Descent",
+      "latex_label": "def:descent"
+    },
+    {
+      "narrative": "Bring's surface",
+      "lean_id": "QOU.BringsSurface.BringsSurface",
+      "latex_label": "def:brings-surface"
+    },
+    {
+      "narrative": "Color tube coordinates",
+      "lean_id": "QOU.BringsSurface.ColorTubeCoordinates",
+      "latex_label": "def:color-tube-coordinates"
+    },
+    {
+      "narrative": "Color tube fibers",
+      "lean_id": "QOU.BringsSurface.ColorTubeFibers",
+      "latex_label": "def:color-tube-fibers"
+    },
+    {
+      "narrative": "Observed spacetime value",
+      "lean_id": "QOU.BringsSurface.ObservedValue",
+      "latex_label": "def:observed-value"
+    },
+    {
+      "narrative": "Briggs--Klein affine chart",
+      "lean_id": "QOU.BringsSurface.BriggsKleinChart",
+      "latex_label": "def:briggs-klein-chart"
+    },
+    {
+      "narrative": "Quaternionic spectral resolvents",
+      "lean_id": "QOU.BringsSurface.QuaternionicSpectralResolvents",
+      "latex_label": "def:quaternionic-spectral-resolvents"
+    },
+    {
+      "narrative": "Descartes condition",
+      "lean_id": "QOU.DescartesUniverse.DescartesCondition",
+      "latex_label": "def:descartes-condition"
+    }
+  ]
+}
