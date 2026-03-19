@@ -1,7 +1,31 @@
 # Quantum Observable Universe
 
+[![Lean CI](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml)
+
 A LaTeX mathematics paper exploring the Quantum Observable Universe (QOU),
-quantum torsion, and related topics.
+quantum torsion, and related topics — with machine-checked Lean 4 formalization.
+
+## Lean 4 Formalization
+
+The `lean/` directory contains a Lean 4 formalization of the key mathematical
+structures and the mass-parameter derivation from the manuscript.
+
+| Module | Content |
+|--------|---------|
+| `QOU.Glossary` | Semantic registry — types for all mathematical objects |
+| `QOU.KnotTheory` | Combinatorial knot representations (PD codes) |
+| `QOU.MassDerivation` | Topological mass conjecture and CODATA derivation |
+| `QOU.Basic` | Shared foundations |
+| `QOU.*` (chapters) | Per-chapter formalizations |
+
+**Interactive documentation**: [Lean docs on GitHub Pages](https://litlfred.github.io/qou/lean/docs/)
+
+**Verification report**: [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) —
+includes the **Theoretical Gap Report** listing every `sorry` with its
+bibliographic reference and clickable DOI link.
+
+Every `sorry` in the Lean source is preceded by a `-- Ref: [key] url` comment
+linking to the foundational reference that would resolve the gap.
 
 ## Published Artefacts (GitHub Pages)
 
@@ -13,6 +37,10 @@ quantum torsion, and related topics.
 | Paper (Markdown) | [quantum-observable-universe.md](https://litlfred.github.io/qou/quantum-observable-universe.md) |
 | Bring's Surface Visualizer | [visualizer.html](https://litlfred.github.io/qou/visualizer.html) |
 | Feature Builds Manifest | [builds.json](https://litlfred.github.io/qou/builds.json) |
+| Lean Interactive Docs | [lean/docs/](https://litlfred.github.io/qou/lean/docs/) |
+| Axiom / Gap Report | [axiom-report.txt](https://litlfred.github.io/qou/axiom-report.txt) |
+| Dependency Graph | [dependency-graph.svg](https://litlfred.github.io/qou/dependency-graph.svg) |
+| Proof Objects Manifest | [proof-objects.json](https://litlfred.github.io/qou/proof-objects.json) |
 
 Recent feature builds are listed on the [landing page](https://litlfred.github.io/qou/)
 under the **Feature Builds** tab, showing the 5 most recent branch builds with

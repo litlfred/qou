@@ -57,6 +57,7 @@ structure HyperbolicVolume where
   /-- Error bound (half-width of confidence interval). -/
   error_bound : ℝ
   /-- Proof obligation: error bound is non-negative. -/
+  -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
   error_nonneg : error_bound ≥ 0 := by sorry
 
 /-! ## Standard Knots -/

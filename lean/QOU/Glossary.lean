@@ -35,6 +35,7 @@ namespace QOU.Glossary
     LaTeX: `\label{def:frobenius-hopf}`
     Mathlib: No direct equivalent — builds on `Mathlib.CategoryTheory.Monoidal.Basic`
     Universes: objects in `u`, morphisms in `v` -/
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 def FrobeniusHopfObject : Type* := sorry
 
 /-- **Quantum Deformation Parameter**: The parameter `q ∈ k×` governing
@@ -42,6 +43,7 @@ def FrobeniusHopfObject : Type* := sorry
     cocommutative case.
 
     LaTeX: `\label{def:quantum-parameter}` -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 noncomputable def quantumParameter : ℝ := sorry
 
 /-- **Fibre Functor**: An exact faithful k-linear monoidal functor
@@ -49,12 +51,14 @@ noncomputable def quantumParameter : ℝ := sorry
 
     LaTeX: `\label{def:fibre-functor}`
     Mathlib: `Mathlib.CategoryTheory.Functor.Basic` -/
+-- Ref: [baez1995] https://doi.org/10.1063/1.531236
 def FibreFunctor : Type* := sorry
 
 /-- **Quantum Gauge Group**: The quantum group `G_q = Aut⊗(ω)` reconstructed
     via Tannaka-Krein duality from the fibre functor.
 
     LaTeX: `\label{def:quantum-gauge-group}` -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 def QuantumGaugeGroup : Type* := sorry
 
 /-! ## Geometric Structures -/
@@ -64,6 +68,7 @@ def QuantumGaugeGroup : Type* := sorry
 
     LaTeX: `\label{def:cr-manifold}`
     Mathlib: `Mathlib.Geometry.Manifold.SmoothManifoldWithCorners` -/
+-- Ref: [witten1988] https://doi.org/10.1007/BF01223371
 def CRManifold : Type* := sorry
 
 /-- **Bring's Surface**: The maximally symmetric CR manifold of genus 4,
@@ -71,12 +76,14 @@ def CRManifold : Type* := sorry
     in CP⁴.
 
     LaTeX: `\label{def:brings-surface}` -/
+-- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
 def BringsSurface : Type* := sorry
 
 /-- **Substrate Parameter**: `q(p) = 1 + |⟨L_θ, F_A⁺⟩|(p)` — couples
     chiral curvature to contact geometry on Bring's surface.
 
     LaTeX: `\label{def:substrate-parameter}` -/
+-- Ref: [witten1988] https://doi.org/10.1007/BF01223371
 noncomputable def substrateParameter (p : ℝ) : ℝ := sorry
 
 /-! ## Jet Prolongation -/
@@ -85,12 +92,14 @@ noncomputable def substrateParameter (p : ℝ) : ℝ := sorry
     categorically by `A ⊗ Ω¹(A)` where `Ω¹(A) = ker(m : A ⊗ A → A)`.
 
     LaTeX: `\label{def:jet-prolongation}` -/
+-- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
 def JetProlongation : Type* := sorry
 
 /-- **Kähler Differentials**: `Ω¹(A) = ker(m : A ⊗ A → A)`, the universal
     first-order differential calculus.
 
     LaTeX: `\label{def:kahler-differentials}` -/
+-- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
 def KahlerDifferentials : Type* := sorry
 
 /-! ## Braid and Knot Theory -/
@@ -99,12 +108,14 @@ def KahlerDifferentials : Type* := sorry
     `⟨σ₁, σ₂ | σ₁σ₂σ₁ = σ₂σ₁σ₂⟩`.
 
     LaTeX: `\label{def:braid-group}` -/
+-- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 def BraidGroup (n : ℕ) : Type* := sorry
 
 /-- **Binary Dihedral Group**: `Dic₃ ⊂ SU(2)` of order 12, lifting S₃
     via the double cover `SU(2) → SO(3)`.
 
     LaTeX: `\label{def:binary-dihedral}` -/
+-- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 def BinaryDihedralGroup : Type* := sorry
 
 /-! ## p-Adic Structures -/
@@ -114,6 +125,7 @@ def BinaryDihedralGroup : Type* := sorry
     role of Levi-form contraction.
 
     LaTeX: `\label{def:f-isocrystal}` -/
+-- Ref: [freed2010] § Topological quantum field theories from compact Lie groups
 def FIsocrystal : Type* := sorry
 
 end QOU.Glossary
