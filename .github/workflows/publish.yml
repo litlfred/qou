@@ -285,6 +285,15 @@ jobs:
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
 
+          # ── Copy Lean source files to gh-pages ───────────────────────────────
+          if [ -d lean ]; then
+            mkdir -p _site/lean
+            cp -r lean/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    lean/lakefile.lean _site/lean/lakefile.lean 2>/dev/null || true
+            cp    lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+          fi
+
           # ── Extract proof objects and generate dependency graph ──────────────
           python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
           python3 .github/scripts/generate_dependency_graph.py \

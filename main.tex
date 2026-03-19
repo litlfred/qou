@@ -16,6 +16,7 @@
 \usepackage{ccicons}          % CC icon glyphs
 \usepackage{titlesec}         % Compact heading styles
 \usepackage{tikz}             % Inline figures
+\usepackage[dvipsnames]{xcolor}  % Extended colour names (teal, etc.)
 
 \geometry{margin=1in}
 
@@ -55,7 +56,16 @@
 %     \uses{def:prerequisite}            % dependency labels
 %     Statement here.
 %   \end{theorem}
-\newcommand{\lean}[1]{}            % \lean{Lean.Decl.Name}
+% Base URL for Lean documentation (doc-gen4 pages on GitHub Pages)
+\newcommand{\leandocsbase}{https://litlfred.github.io/qou/lean/}
+%
+% \lean{Decl.Name} — renders a clickable ∀ icon linking to the Lean declaration.
+% The ∀ is the motif from the Lean 4 logo.
+\newcommand{\lean}[1]{%
+  \texorpdfstring{%
+    \href{\leandocsbase#1}{\textsuperscript{\textcolor{teal}{$\forall$}}}%
+  }{(Lean: #1)}%
+}
 \newcommand{\leanok}{}             % marks environment as fully formalized
 \newcommand{\notready}{}           % marks environment as not ready to formalize
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}

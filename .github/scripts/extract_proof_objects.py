@@ -59,6 +59,22 @@ CHAPTER_FILES = [
     "speculations.tex",
 ]
 
+# Map chapter number to Lean file (for populating lean.file, lean.gh_pages_url, etc.)
+CHAPTER_LEAN_FILES = {
+    1: "QOU/QuantumObservableUniverse.lean",
+    2: "QOU/Elaboration.lean",
+    3: "QOU/PathIntegrals.lean",
+    4: "QOU/Torsion.lean",
+    5: "QOU/BringsSurface.lean",
+    6: "QOU/DescartesUniverse.lean",
+    7: "QOU/PAdicQuantumGroups.lean",
+    8: "QOU/GaugeFieldFluidDynamics.lean",
+    9: "QOU/InformationTheory.lean",
+}
+
+GITHUB_REPO = "litlfred/qou"
+GH_PAGES_BASE = "https://litlfred.github.io/qou"
+
 # Regex patterns
 # Matches \begin{theorem}, \begin{lemma}[title], etc.
 BEGIN_RE = re.compile(
@@ -157,7 +173,18 @@ def parse_chapter(filepath, chapter_num):
             if title:
                 obj["title"] = title.strip()
             if lean_decl:
-                obj["lean"] = {"decl": lean_decl}
+                lean_ref = {"decl": lean_decl}
+                # Populate file path and URLs if chapter has a Lean file
+                if chapter_num in CHAPTER_LEAN_FILES:
+                    lean_file = CHAPTER_LEAN_FILES[chapter_num]
+                    lean_ref["file"] = lean_file
+                    lean_ref["gh_pages_url"] = f"{GH_PAGES_BASE}/lean/{lean_file}"
+                    commit = get_commit_sha()
+                    lean_ref["github_source_url"] = (
+                        f"https://github.com/{GITHUB_REPO}/blob/{commit}/lean/{lean_file}"
+                    )
+                    lean_ref["last_edited_commit"] = commit
+                obj["lean"] = lean_ref
                 if leanok:
                     obj["formalization_status"] = "proved"
                 else:

@@ -149,6 +149,22 @@
           "type": "boolean",
           "description": "Whether the declaration is free of sorry."
         },
+        "github_source_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the Lean source file on GitHub (at the specific commit).",
+          "examples": ["https://github.com/litlfred/qou/blob/abc1234/lean/QOU/Torsion.lean"]
+        },
+        "gh_pages_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the Lean source file published on GitHub Pages.",
+          "examples": ["https://litlfred.github.io/qou/lean/QOU/Torsion.lean"]
+        },
+        "last_edited_commit": {
+          "type": "string",
+          "description": "Git commit SHA at which this Lean file was last modified."
+        },
         "mathlib_links": {
           "type": "array",
           "items": { "type": "string" },
