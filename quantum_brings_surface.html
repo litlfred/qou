@@ -1272,13 +1272,6 @@ function updateAxLabels() {
 }
 
 // ── Slider event listeners ────────────────────────────────────────────
-function sliderVal(id, decimals) {
-  const v = parseFloat(document.getElementById(id).value);
-  document.getElementById('v_' + id.replace('_val','_q').replace('q_val','q'))
-    ; // handled below individually
-  return v;
-}
-
 const rebuildIds = ['q_val','n_min','sigma','pitch','x_p','y_p','z_p'];
 rebuildIds.forEach(id => {
   document.getElementById(id).addEventListener('input', () => {

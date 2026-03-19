@@ -204,8 +204,10 @@ jobs:
             cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
           fi
 
-          # Copy the interactive visualizer
-          if [ -f brings_surface.html ]; then
+          # Copy the interactive visualizer (prefer quantum_brings_surface.html)
+          if [ -f quantum_brings_surface.html ]; then
+            cp quantum_brings_surface.html _site/visualizer.html
+          elif [ -f brings_surface.html ]; then
             cp brings_surface.html _site/visualizer.html
           fi
 
