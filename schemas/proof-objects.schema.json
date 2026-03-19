@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://litlfred.github.io/qou/schemas/proof-objects.schema.json",
+  "title": "Proof Objects Manifest",
+  "description": "Tracks mathematical objects extracted from LaTeX, their linkage to Lean declarations (by URL), and review records from human and agentic reviewers.",
+  "type": "object",
+  "required": ["version", "manuscript", "objects"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Schema version."
+    },
+    "manuscript": {
+      "type": "object",
+      "required": ["repo", "commit_sha", "generated_at"],
+      "additionalProperties": false,
+      "properties": {
+        "repo": {
+          "type": "string",
+          "description": "GitHub repository (owner/name).",
+          "examples": ["litlfred/qou"]
+        },
+        "commit_sha": {
+          "type": "string",
+          "description": "Git commit SHA from which objects were extracted."
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO-8601 timestamp of extraction."
+        },
+        "pdf_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the published PDF."
+        },
+        "lean_docs_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Base URL for doc-gen4 Lean documentation pages."
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "description": "All theorem-like objects extracted from the LaTeX source.",
+      "items": { "$ref": "#/$defs/ProofObject" }
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "Dependency edges between objects (from \\uses{} macros).",
+      "items": { "$ref": "#/$defs/DependencyEdge" }
+    }
+  },
+  "$defs": {
+    "ProofObject": {
+      "type": "object",
+      "required": ["label", "object_type", "latex"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "pattern": "^(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|tab|sec|ssec|chap):.*",
+          "description": "LaTeX label following the project labeling convention.",
+          "examples": ["thm:lifting-exists", "def:quantum-connection"]
+        },
+        "object_type": {
+          "enum": [
+            "definition", "theorem", "lemma", "proposition",
+            "corollary", "conjecture", "example", "remark"
+          ],
+          "description": "The LaTeX environment type."
+        },
+        "title": {
+          "type": ["string", "null"],
+          "description": "Optional title from the environment's [...] argument."
+        },
+        "latex": {
+          "$ref": "#/$defs/LaTeXLocation"
+        },
+        "lean": {
+          "$ref": "#/$defs/LeanReference"
+        },
+        "formalization_status": {
+          "enum": ["not_started", "stated", "has_sorry", "proved", "mathlib_ok"],
+          "default": "not_started",
+          "description": "Formalization status. 'stated' = Lean decl exists with sorry. 'proved' = sorry-free. 'mathlib_ok' = merged into mathlib."
+        },
+        "reviews": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ReviewRecord" },
+          "description": "Review records from human and agentic reviewers."
+        },
+        "uses": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Labels of objects this one depends on (from \\uses{})."
+        }
+      }
+    },
+    "LaTeXLocation": {
+      "type": "object",
+      "required": ["file", "line"],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Path to the LaTeX source file relative to repo root.",
+          "examples": ["chapters/lifting-of-quantum-torsion.tex"]
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Line number of the \\begin{environment}."
+        },
+        "chapter": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Chapter number."
+        },
+        "number": {
+          "type": "string",
+          "description": "Rendered theorem number (e.g., '4.12')."
+        }
+      }
+    },
+    "LeanReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "decl": {
+          "type": "string",
+          "description": "Fully qualified Lean declaration name.",
+          "examples": ["QOU.Torsion.lifting_exists"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the Lean declaration on doc-gen4 or GitHub Pages."
+        },
+        "file": {
+          "type": "string",
+          "description": "Path to .lean file relative to lean/ directory.",
+          "examples": ["QOU/Torsion.lean"]
+        },
+        "sorry_free": {
+          "type": "boolean",
+          "description": "Whether the declaration is free of sorry."
+        },
+        "github_source_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the Lean source file on GitHub (at the specific commit).",
+          "examples": ["https://github.com/litlfred/qou/blob/abc1234/lean/QOU/Torsion.lean"]
+        },
+        "gh_pages_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the Lean source file published on GitHub Pages.",
+          "examples": ["https://litlfred.github.io/qou/lean/QOU/Torsion.lean"]
+        },
+        "last_edited_commit": {
+          "type": "string",
+          "description": "Git commit SHA at which this Lean file was last modified."
+        },
+        "mathlib_links": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Related mathlib4 declaration names.",
+          "examples": [["Mathlib.Topology.FiberBundle.Basic"]]
+        }
+      }
+    },
+    "ReviewRecord": {
+      "type": "object",
+      "required": ["reviewer_id", "reviewer_type", "review_type", "timestamp", "verdict"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_id": {
+          "type": "string",
+          "description": "Identifier for the reviewer (model name, GitHub username, etc.).",
+          "examples": ["claude-opus-4", "gemini-2.5-pro", "jdoe"]
+        },
+        "reviewer_type": {
+          "enum": ["human", "agentic"],
+          "description": "Whether the reviewer is human or an AI agent."
+        },
+        "review_type": {
+          "enum": [
+            "scientific-accuracy",
+            "latex-validation",
+            "readability",
+            "lean-proof-check",
+            "mathematical-rigor",
+            "general"
+          ],
+          "description": "The type of review performed."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verdict": {
+          "enum": ["APPROVE", "REQUEST_CHANGES", "NEEDS_DISCUSSION"],
+          "description": "Overall verdict for this object."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Reviewer's confidence in the verdict (0–1). Primarily for agentic reviewers."
+        },
+        "severity_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "critical": { "type": "integer", "minimum": 0 },
+            "major": { "type": "integer", "minimum": 0 },
+            "minor": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["severity", "message"],
+            "additionalProperties": false,
+            "properties": {
+              "severity": { "enum": ["critical", "major", "minor"] },
+              "message": { "type": "string" },
+              "line": { "type": "integer" },
+              "suggestion": { "type": "string" }
+            }
+          }
+        },
+        "lean_status": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Lean-specific review data (only for lean-proof-check reviews).",
+          "properties": {
+            "sorry_count": { "type": "integer", "minimum": 0 },
+            "sorry_goals": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Outstanding goal strings from sorry sites."
+            },
+            "type_checks": { "type": "boolean" },
+            "build_log_url": { "type": "string", "format": "uri" }
+          }
+        },
+        "commit_sha": {
+          "type": "string",
+          "description": "The commit at which this review was performed."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-form reviewer notes."
+        }
+      }
+    },
+    "DependencyEdge": {
+      "type": "object",
+      "required": ["from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "type": "string",
+          "description": "Label of the object that uses another."
+        },
+        "to": {
+          "type": "string",
+          "description": "Label of the object being used."
+        },
+        "relation": {
+          "enum": ["uses", "proves"],
+          "default": "uses"
+        }
+      }
+    }
+  }
+}

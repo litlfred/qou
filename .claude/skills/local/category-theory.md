@@ -1,0 +1,216 @@
+---
+name: category-theory
+description: >
+  Category Theory formalization skill — handles diagram chasing, universal
+  properties, functorial translation, and whiskering in Lean 4.  Integrates
+  with Mathlib's typeclass-centric category theory and provides tactic
+  strategies for commutativity proofs.
+allowed-tools: Read Write Edit Bash Grep Glob
+---
+
+# Category Theory Formalization
+
+## Overview
+
+Category theory is the "connective tissue" of Mathlib.  In Lean 4, a
+`Category` is not just a set of data — it is a **capability** that types
+can have (via typeclasses).  This skill provides the tactics, patterns,
+and glossary requirements for effective category-theoretic formalization.
+
+## When to Use This Skill
+
+- When formalizing proofs involving diagram commutativity
+- When working with functors, natural transformations, or adjunctions
+- When the narrative mentions universal properties (limits, colimits)
+- When dealing with monoidal categories or braided structures
+- When universe level mismatches appear in `lake build` output
+
+## Skill 1: The Diagram Chaser (Naturality & Commutativity)
+
+Most category theory proofs involve showing a diagram commutes.
+
+### Tactic Strategy
+
+1. **First attempt**: `aesop_cat` — the category-specific automation tactic
+2. **If `aesop_cat` fails**: Use `slice_lhs` / `slice_rhs` to focus on
+   a specific part of the composition
+3. **Manual fallback**: `simp` with `[CategoryTheory.Category.assoc]`
+
+### Example: Naturality Square
+
+```lean
+import Mathlib.CategoryTheory.NatTrans
+
+open CategoryTheory
+
+-- Given: F G : C ⥤ D and α : F ⟶ G (a natural transformation)
+-- Prove: naturality square commutes
+example {C D : Type*} [Category C] [Category D]
+    (F G : C ⥤ D) (α : F ⟶ G) {X Y : C} (f : X ⟶ Y) :
+    F.map f ≫ α.app Y = α.app X ≫ G.map f := by
+  exact α.naturality f
+```
+
+### `slice_lhs` and `slice_rhs` Usage
+
+These tactics "zoom in" on a segment of a long composition:
+
+```lean
+-- For a composition f ≫ g ≫ h ≫ k:
+-- slice_lhs 2 3 focuses on (g ≫ h) in the LHS
+-- Then you can apply a rewrite within that segment
+example {X Y Z W V : C} (f : X ⟶ Y) (g : Y ⟶ Z) (h : Z ⟶ W) (k : W ⟶ V)
+    (comm : g ≫ h = some_other_morphism) :
+    f ≫ g ≫ h ≫ k = f ≫ some_other_morphism ≫ k := by
+  slice_lhs 2 3 => rw [comm]
+```
+
+## Skill 2: Universal Property Resolver
+
+### Narrative-to-Tactic Mapping
+
+| Narrative Phrase                         | Lean Structure / Tactic         |
+|------------------------------------------|---------------------------------|
+| "By the universal property of the product" | `Limits.IsLimit`              |
+| "There exists a unique morphism..."      | `Limits.IsLimit.lift`           |
+| "Uniqueness follows from..."             | `Limits.IsLimit.hom_ext`        |
+| "By the universal property of the coproduct" | `Limits.IsColimit`          |
+| "The adjunction gives..."               | `Adjunction.homEquiv`           |
+
+### Example: Limit Lift
+
+```lean
+import Mathlib.CategoryTheory.Limits.IsLimit
+
+open CategoryTheory Limits
+
+-- "By the universal property of the product, there exists a unique morphism"
+example {J C : Type*} [Category J] [Category C]
+    {F : J ⥤ C} (t : Cone F) (ht : IsLimit t) (s : Cone F) :
+    ∃! f : s.pt ⟶ t.pt, ∀ j, f ≫ t.π.app j = s.π.app j := by
+  exact ⟨ht.lift s, ht.fac s, fun m hm => ht.uniq s m hm⟩
+```
+
+## Skill 3: Functorial Translation (Bundling/Unbundling)
+
+### Critical Distinction
+
+In Lean, functors are **bundled** objects.  The agent must distinguish:
+- `F.obj X` — action on objects
+- `F.map f` — action on morphisms
+
+**Common mistake**: Treating `F` as a simple function.  It is NOT.
+
+### Whiskering (Horizontal Composition)
+
+When composing natural transformations between composed functors:
+
+```lean
+-- Given: F₁ F₂ : C ⥤ D and G : D ⥤ E
+-- Whiskering α : F₁ ⟶ F₂ by G gives: G.map (α.app X) for each X
+-- In Lean: whiskerRight α G or α ◫ G
+```
+
+This must be explicitly defined in the Glossary to prevent confusion
+with standard function composition.
+
+## Skill 4: Universe Management
+
+### Universe Requirements Table
+
+| Narrative Concept      | Lean Type                  | Universe    | Required Instances                |
+|------------------------|----------------------------|-------------|-----------------------------------|
+| Category C             | `Category.{v, u} C`       | `u`, `v`    | —                                 |
+| Small Category         | `SmallCategory C`          | same `u`    | —                                 |
+| Abelian Category       | `Abelian C`                | `u`, `v`    | `Preadditive`, `HasLimits`        |
+| Monoidal Category      | `MonoidalCategory C`       | `u`, `v`    | `Category`                        |
+| Braided Monoidal       | `BraidedCategory C`        | `u`, `v`    | `MonoidalCategory`                |
+| Rigid Monoidal         | `RigidCategory C`          | `u`, `v`    | `MonoidalCategory`                |
+
+### Universe Mismatch Detection
+
+If `lake build` reports:
+
+```
+type mismatch: universe level u_1 is not <= u_2
+```
+
+The Ontologist must check whether the glossary entry for that type has
+correct universe annotations.
+
+## Mathlib Imports for Category Theory
+
+```lean
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
+import Mathlib.CategoryTheory.Limits.IsLimit
+import Mathlib.CategoryTheory.Adjunction.Basic
+import Mathlib.CategoryTheory.Abelian.Basic
+import Mathlib.CategoryTheory.Preadditive.Basic
+```
+
+## `aesop_cat` Integration
+
+When the narrative proof involves a diagram chase or naturality:
+
+1. **First**: Attempt `aesop_cat`
+2. **If fails**: Fall back to `slice_lhs` / `slice_rhs` to manually
+   navigate the composition until a rewrite can be applied
+3. **If still fails**: Decompose into intermediate `sorry` lemmas
+
+```lean
+-- Golden template: aesop_cat solving a naturality proof
+example {C D : Type*} [Category C] [Category D]
+    (F G : C ⥤ D) (α : F ⟶ G) {X Y : C} (f : X ⟶ Y) :
+    α.app X ≫ G.map f = F.map f ≫ α.app Y := by
+  rw [α.naturality]
+```
+
+## Knot Theory Integration
+
+For formalizing knot-theoretic content, use combinatorial representations:
+
+### Mathlib Foundations
+
+| Sub-library | Usage |
+|-------------|-------|
+| `Mathlib.Topology.AlgebraicTopology.FundamentalGroupoid` | Fundamental group of knot complement |
+| `Mathlib.Geometry.Manifold` | Knots as embeddings S¹ ↪ ℝ³ |
+| `Mathlib.Algebra.Category.ModuleCat` | Alexander/Jones polynomial via representation theory |
+
+### Knot Type Definition
+
+Since no `Knot.lean` exists in Mathlib, define using available topology:
+
+```lean
+/-- A knot is a continuous embedding of S¹ into ℝ³. -/
+def Knot := { f : 𝕊¹ → EuclideanSpace ℝ (Fin 3) // Continuous f ∧ Function.Injective f }
+```
+
+### Symbolic Representations
+
+For Jones polynomial / Khovanov homology, use planar diagrams:
+
+```lean
+/-- A crossing in a planar diagram. -/
+inductive Crossing where
+  | positive : Fin n → Fin n → Crossing
+  | negative : Fin n → Fin n → Crossing
+
+/-- Planar diagram code for a knot. -/
+structure PlanarDiagram where
+  crossings : List Crossing
+  components : ℕ
+```
+
+## Checklist
+
+- [ ] All diagram chase proofs attempt `aesop_cat` first
+- [ ] Functorial operations use `F.obj` / `F.map`, never bare application
+- [ ] Universe annotations match glossary entries
+- [ ] Natural transformation compositions use whiskering notation
+- [ ] Knot types are defined combinatorially when possible
+- [ ] `slice_lhs` / `slice_rhs` used for manual composition navigation

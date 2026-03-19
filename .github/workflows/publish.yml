@@ -82,6 +82,9 @@ jobs:
         if: inputs.source_branch != ''
         run: echo "HEAD_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
+      - name: Configure Python path for qou_lib
+        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
       # base branch so only trusted code runs with elevated permissions.
@@ -136,13 +139,14 @@ jobs:
           echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
 
       # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
-      - name: Install pandoc, latexpand and latexdiff
+      - name: Install pandoc, latexpand, latexdiff, and graphviz
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             pandoc \
             texlive-extra-utils \
-            latexdiff
+            latexdiff \
+            graphviz
 
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
@@ -283,6 +287,22 @@ jobs:
             fi
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
+
+          # ── Copy Lean source files to gh-pages ───────────────────────────────
+          if [ -d lean ]; then
+            mkdir -p _site/lean
+            cp -r lean/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    lean/lakefile.lean _site/lean/lakefile.lean 2>/dev/null || true
+            cp    lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+          fi
+
+          # ── Extract proof objects and generate dependency graph ──────────────
+          python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
+          python3 .github/scripts/generate_dependency_graph.py \
+            --manifest _site/proof-objects.json \
+            --output _site/dependency-graph.svg \
+            --pdf-base-url "${FNAME_BASE}.pdf"
 
           # ── QA report (feature branches only) ───────────────────────────────
           if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then
