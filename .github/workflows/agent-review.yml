@@ -59,13 +59,14 @@ jobs:
           MAX_SKILLS_CHARS=20000
 
           SKILLS=""
-          for f in .claude/skills/*.md; do
+          while IFS= read -r f; do
             [ -f "$f" ] || continue
-            SKILLS="${SKILLS}--- $(basename "$f") ---
+            REL_PATH="${f#.claude/skills/}"
+            SKILLS="${SKILLS}--- ${REL_PATH} ---
           $(cat "$f")
 
           "
-          done
+          done < <(find .claude/skills -name '*.md' -type f | sort)
           {
             echo "content<<SKILLS_EOF"
             echo "$SKILLS" | head -c "$MAX_SKILLS_CHARS"

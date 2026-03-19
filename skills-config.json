@@ -1,0 +1,26 @@
+{
+  "$schema": "./skills-config-schema.json",
+  "description": "Skill package subscriptions synced nightly into .claude/skills/<package>/",
+  "packages": [
+    {
+      "name": "claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "scientific-skills",
+      "ref": "main",
+      "skills": [
+        "arxiv-database",
+        "citation-management",
+        "hypothesis-generation",
+        "latex-posters",
+        "literature-review",
+        "matplotlib",
+        "peer-review",
+        "scientific-brainstorming",
+        "scientific-critical-thinking",
+        "scientific-visualization",
+        "scientific-writing",
+        "sympy"
+      ]
+    }
+  ]
+}

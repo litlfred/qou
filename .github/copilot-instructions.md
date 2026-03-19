@@ -286,6 +286,36 @@ their own line, indented to match the surrounding content.
 - In `\chapter` and `\section` titles that contain `\pp`, wrap the math in
   `\texorpdfstring{$\pp$}{p}` so that PDF bookmarks remain plain text.
 
+---
+
+## 12  Using Skills for Content Changes
+
+This repository subscribes to external skill packages (see `skills-config.json`).
+Synced skills live under `.claude/skills/<package>/` while repo-specific skills
+live under `.claude/skills/local/`.
+
+When **writing or editing manuscript content**, apply the following skills:
+
+| Task | Skill(s) to consult |
+|------|---------------------|
+| Writing new sections or chapters | `local/scientific-accuracy`, `local/readability-editing`, `claude-scientific-skills/scientific-writing` |
+| Reviewing or revising text | `local/readability-editing`, `claude-scientific-skills/peer-review`, `claude-scientific-skills/scientific-critical-thinking` |
+| Adding or verifying references | `local/scientific-accuracy`, `claude-scientific-skills/citation-management`, `claude-scientific-skills/arxiv-database` |
+| Generating figures or plots | `claude-scientific-skills/scientific-visualization`, `claude-scientific-skills/matplotlib` |
+| Verifying equations or proofs | `local/scientific-accuracy`, `claude-scientific-skills/sympy` |
+| Validating LaTeX syntax | `local/latex-validation` |
+| Brainstorming new research directions | `claude-scientific-skills/hypothesis-generation`, `claude-scientific-skills/scientific-brainstorming` |
+| Literature search | `claude-scientific-skills/literature-review`, `claude-scientific-skills/arxiv-database` |
+
+**Rules:**
+- Always apply `local/latex-validation` before finalizing any LaTeX change.
+- Always apply `local/scientific-accuracy` when modifying mathematical content.
+- Consult the synced skills proactively — do not wait to be told.
+- If a synced skill directory contains a `SKILL.md`, read it for detailed
+  instructions specific to that tool or database.
+
+---
+
 ### 11.2  Vectors
 
 - All vector quantities must carry a **half-arrow** accent:  use `\vec{…}`.
