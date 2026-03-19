@@ -439,6 +439,29 @@ detector, but targets the anisotropy of the substrate parameter rather than
 metric strain.
 \end{remark}
 
+\begin{remark}[Non-monotonic magnetic friction from collective rotor dynamics]
+\label{rem:magnetic-friction}
+Recent experiments by Gu, L\"uders, and Bechinger~\cite{gu2026} demonstrate
+that a two-dimensional array of rotatable magnetic dipoles sliding over a
+commensurate magnetic substrate exhibits a pronounced \emph{non-monotonic}
+dependence of friction on interlayer separation.  The friction peaks at an
+intermediate distance where competing ferromagnetic and antiferromagnetic
+interactions induce dynamical frustration and hysteretic torque cycles during
+sliding.  This collective rotor phenomenon may admit a natural explanation
+within the QOU framework: the competing magnetic alignments realise a discrete
+analogue of the $q$-torsion frustration that arises when a lattice's
+translational symmetry is incommensurate with the characteristic scale of the
+$q$-torsion leaves (Definition~\ref{def:q-torsion-leaf}).  In this reading,
+the non-monotonic friction profile reflects a resonance--anti-resonance
+transition governed by the local value of the substrate parameter~$q$
+(Definition~\ref{def:substrate-parameter}), with maximal dissipation occurring
+at the separation where the rotor array's magnetic periodicity matches the
+$q$-harmonic form spectrum (Definition~\ref{def:q-harmonic-form}).  A
+quantitative comparison requires specifying the lattice geometry and its
+coupling to the horizontal distribution of the CR manifold~$M$; we outline
+the necessary ingredients in Remark~\ref{rem:lattice-layout} below.
+\end{remark}
+
 \paragraph{Existing data sets.}
 \begin{itemize}
   \item Many-body interference measurements in kagome
@@ -447,6 +470,9 @@ metric strain.
   \item Chiral phonon spectroscopy in rare-earth halide
         crystals~\cite{luo2023}, demonstrating orientation-dependent
         effective magnetic fields from lattice vibrations.
+  \item Non-monotonic magnetic friction measurements in commensurate
+        rotor--substrate arrays~\cite{gu2026}, exhibiting collective
+        magnetically driven dissipation without physical contact.
   \item High-$Q$ quartz bulk acoustic wave (BAW) oscillator noise
         measurements, which record excess phase noise beyond thermal limits.
   \item Precision Casimir-effect experiments using crystalline surfaces
@@ -455,6 +481,42 @@ metric strain.
         NAUTILUS bar detectors), which recorded orientation-dependent noise
         floors in cryogenic crystalline bars.
 \end{itemize}
+
+\begin{remark}[Lattice layout and quantum resonance implications]
+\label{rem:lattice-layout}
+Connecting the QOU resonance condition (Remark~\ref{rem:crystal-resonance}) to
+concrete lattice experiments requires three structural ingredients that remain
+to be fully developed:
+\begin{enumerate}
+  \item \textbf{Lattice--leaf commensurability.}  For a $d$-dimensional
+        Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance
+        condition of Remark~\ref{rem:crystal-resonance} becomes a Diophantine
+        matching between the reciprocal lattice vectors
+        $\{\vec{G}_j\}$ and the characteristic wave-vectors of the
+        $q$-torsion leaves.  The lattice symmetry group acts on the space of
+        $q$-harmonic forms and selects a finite set of resonance channels
+        indexed by the irreducible representations of the point group.
+  \item \textbf{Frustration and non-monotonicity.}  When the lattice hosts
+        internal rotational degrees of freedom --- as in the magnetic rotor
+        arrays of~\cite{gu2026} --- the coupling to $q$-torsion may be
+        non-monotonic in a control parameter (e.g.\ interlayer separation or
+        applied field).  In the QOU picture, this arises because the
+        $q$-deformed Reeb flow (Definition~\ref{def:q-reeb-flow}) introduces
+        a preferred orientation that competes with the lattice's own symmetry,
+        producing frustrated configurations whose energy dissipation is
+        maximised at an intermediate commensurability.
+  \item \textbf{Quantum coherence at the lattice scale.}  The kagome
+        many-body interference results~\cite{guo2025} suggest that quantum
+        coherence can extend over macroscopic lattice domains.  Within the QOU
+        framework, this coherence length is bounded by the correlation length
+        of the $q$-harmonic forms on the brane, which depends on the local
+        curvature of the CR manifold $M$.  Establishing this bound
+        quantitatively requires an explicit computation of the $q$-deformed
+        propagator on the lattice, which we leave to future work.
+\end{enumerate}
+% TODO: derive the explicit resonance spectrum for a hexagonal rotor lattice
+%       coupled to q-torsion leaves.
+\end{remark}
 
 \paragraph{Planned observations.}
 \begin{itemize}
@@ -465,6 +527,9 @@ metric strain.
         to larger single crystals with controlled rotational staging.
   \item Cryogenic SQUID-based noise spectroscopy on rotating high-purity
         sapphire or silicon crystals.
+  \item Systematic variation of interlayer separation in magnetic rotor arrays
+        to test whether the non-monotonic friction profile~\cite{gu2026}
+        correlates with the predicted $q$-torsion resonance channels.
 \end{itemize}
 
 \paragraph{Potential new experiments.}
