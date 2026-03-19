@@ -37,7 +37,7 @@ _INDEX_TEMPLATE = r"""<!DOCTYPE html>
 <title>Quantum Observable Universe{title_suffix}</title>
 <style>
 /* ── Reset & base ────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
 :root {{
   --bg: #ffffff; --fg: #1a1a1a; --link: #0055cc;
   --header-bg: #1b1f23; --header-fg: #e0e0e0;

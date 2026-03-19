@@ -65,19 +65,22 @@ noncomputable def substrate_q : ℝ := 1.1097
 lemma vol_figure_eight_approx :
     |vol_figure_eight - 2.02988| < 1e-5 := by
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Vol(4₁) via Bloch-Wigner
-  sorry
+  unfold vol_figure_eight
+  norm_num
 
 /-- The muon-electron mass ratio is approximately 206.768. -/
 lemma mu_e_ratio_approx :
     |experimental_mu_e_ratio - 206.768| < 1e-3 := by
   -- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
-  sorry
+  unfold experimental_mu_e_ratio
+  norm_num
 
 /-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09908. -/
 lemma quantum_planck_approx :
     |quantum_planck substrate_q - 0.09908| < 1e-4 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
-  sorry
+  unfold quantum_planck substrate_q
+  norm_num
 
 /-! ## Section 4: Formal Derivation -/
 
@@ -99,6 +102,9 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- Step 2: Take square root to get h_q (quantum Planck constant)
   -- Step 3: Invert the relationship q = 1 / (1 - h_q) to find q
   -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295 — Topological mass conjecture
+  -- sorry: requires nonlinear real arithmetic (square roots, division inversion)
+  -- that exceeds norm_num / linarith capabilities.  A verified proof would need
+  -- interval arithmetic or polyrith with explicit witness polynomials.
   sorry
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
@@ -108,7 +114,10 @@ lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →
     h_q ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
-  sorry
+  intro h_q hne heq
+  have hsq : h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
+  field_simp at heq ⊢
+  linarith
 
 /-! ## Section 5: Summary Table
 

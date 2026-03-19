@@ -59,6 +59,11 @@ jobs:
   build_blueprint:
     runs-on: ubuntu-latest
     name: Build project & blueprint
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       # ── Free disk space (mathlib + doc-gen4 need ~10 GB) ─────────
@@ -79,22 +84,17 @@ jobs:
           fetch-depth: 0
 
       # ── Pre-build: run ontologist & extraction pipeline ──────────
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
       - name: Run Ontologist (glossary scan)
-        run: python .github/scripts/ontologist.py all
+        run: python3 .github/scripts/ontologist.py all
 
       - name: Extract proof objects from LaTeX
-        run: python .github/scripts/extract_proof_objects.py
+        run: python3 .github/scripts/extract_proof_objects.py
 
       - name: Generate Lean stubs
-        run: python .github/scripts/generate_lean_stubs.py
+        run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────
       - name: Build and lint Lean project
@@ -125,7 +125,7 @@ jobs:
       - name: Generate axiom report
         run: |
           touch build.log
-          python .github/scripts/axiom_report.py \
+          python3 .github/scripts/axiom_report.py \
             --build-log build.log \
             --lean-dir lean \
             --output axiom-report.txt
