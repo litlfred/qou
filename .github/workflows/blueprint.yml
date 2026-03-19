@@ -5,13 +5,19 @@
 #   2. Compile blueprint (plasTeX → HTML + PDF)
 #   3. Generate doc-gen4 interactive documentation
 #   4. Validate \lean{} declaration names (lake exe checkdecls)
-#   5. Deploy to GitHub Pages (blueprint/, docs/, blueprint.pdf)
+#   5. Deploy to gh-pages branch (blueprint/, docs/, blueprint.pdf)
 #
-# Published artifacts (GitHub Pages):
+# Published artifacts (gh-pages branch):
 #   /blueprint/         Interactive dependency graph with proof status
 #   /blueprint.pdf      Print version of the blueprint
 #   /docs/              doc-gen4 API documentation
-#   /axiom-report.txt   Verification report (from lean_ci.yml)
+#   /axiom-report.txt   Verification report
+#
+# Deployment note:
+#   docgen-action's built-in deploy uses actions/deploy-pages (artifact-based),
+#   which conflicts with the branch-based gh-pages deployment used by the rest
+#   of this repo.  We set deploy: false and use peaceiris/actions-gh-pages to
+#   push the built output to the gh-pages branch instead.
 #
 # References:
 #   - https://github.com/PatrickMassot/leanblueprint
@@ -43,7 +49,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
   issues: write
@@ -92,33 +98,95 @@ jobs:
 
       # ── Build Lean project ───────────────────────────────────────
       - name: Build and lint Lean project
+        id: lean_build
         uses: leanprover/lean-action@v1
         with:
           build: true
           lint: false
           lake-package-directory: lean
+        continue-on-error: true
 
-      # ── Build blueprint + doc-gen4 + deploy ──────────────────────
+      # ── Build blueprint + doc-gen4 (no deploy) ─────────────────
+      # docgen-action builds blueprint HTML, blueprint PDF, and
+      # doc-gen4 API docs into the homepage directory.  We disable
+      # its built-in deploy and handle deployment ourselves below.
       - name: Compile blueprint and documentation
+        id: docgen
         uses: leanprover-community/docgen-action@main
         with:
           blueprint: true
+          deploy: false
           homepage: home_page
           lake-package-directory: lean
           references: references.bib
+        continue-on-error: true
 
       # ── Post-build: generate axiom report ────────────────────────
       - name: Generate axiom report
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          # Build log may be at lean/build.log or captured in previous step
           touch build.log
           python .github/scripts/axiom_report.py \
             --build-log build.log \
             --lean-dir lean \
             --output axiom-report.txt
-          # Copy to deployment directory if it exists
-          if [ -d home_page ]; then
-            cp axiom-report.txt home_page/ 2>/dev/null || true
-          fi
         continue-on-error: true
+
+      # ── Collect output for deployment ───────────────────────────
+      # docgen-action places its output in home_page/_site/ (Jekyll)
+      # or directly in home_page/ (blueprint/, blueprint.pdf, docs/).
+      # We assemble everything into _deploy/ for gh-pages.
+      - name: Assemble deployment directory
+        run: |
+          mkdir -p _deploy
+
+          # 1. If Jekyll built a _site, use that as the base
+          if [ -d home_page/_site ]; then
+            echo "Found Jekyll _site output"
+            cp -r home_page/_site/* _deploy/
+          fi
+
+          # 2. Blueprint HTML (interactive dependency graph)
+          if [ -d home_page/blueprint ]; then
+            echo "Found blueprint HTML output"
+            cp -r home_page/blueprint _deploy/blueprint
+          fi
+
+          # 3. Blueprint PDF
+          if [ -f home_page/blueprint.pdf ]; then
+            echo "Found blueprint PDF"
+            cp home_page/blueprint.pdf _deploy/blueprint.pdf
+          fi
+
+          # 4. doc-gen4 API docs (may be under home_page/docs/ or
+          #    in the Jekyll _site/docs/ already copied above)
+          if [ -d home_page/docs ] && [ ! -d _deploy/docs ]; then
+            echo "Found doc-gen4 output"
+            cp -r home_page/docs _deploy/docs
+          fi
+
+          # 5. Axiom report
+          if [ -f axiom-report.txt ]; then
+            cp axiom-report.txt _deploy/axiom-report.txt
+          fi
+
+          # 6. Manifests from pre-build pipeline
+          for f in proof-objects.json glossary.json mapping.json; do
+            [ -f "$f" ] && cp "$f" _deploy/
+          done
+
+          echo "── Deployment contents ──"
+          find _deploy -type f | sort | head -50
+          echo "Total files: $(find _deploy -type f | wc -l)"
+
+      # ── Deploy to gh-pages branch ──────────────────────────────
+      - name: Deploy to gh-pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_deploy
+          publish_branch: gh-pages
+          destination_dir: ''
+          keep_files: true
+          commit_message: >
+            docs: deploy blueprint and docs from ${{ github.sha }}
