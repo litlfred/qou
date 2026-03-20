@@ -96,7 +96,9 @@ structure GeneralisedLeviConditions (M : Type*) where
   substrate_nondeg : ∃ (sp : SubstrateParameter M) (p : M),
     sp.field p > 1
   /-- QOU vanishing: adjoint and state sections vanish. -/
-  qou_vanishing : True := by trivial
+  /-- QOU vanishing: adjoint and state sections vanish.  Modelled as
+      the existence of a CQuantumObservableUniverse structure on `M`. -/
+  qou_vanishing : Nonempty (CQuantumObservableUniverse)
 
 /-! ## §4  Examples -/
 

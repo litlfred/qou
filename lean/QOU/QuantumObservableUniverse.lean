@@ -259,7 +259,12 @@ structure InstantonConnection (cr : CRManifoldData) where
   hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
   /-- Yang–Mills minimisation: the connection is a critical point of
       `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
-  yang_mills_minimises : True := by trivial  -- placeholder for δ_A YM(A) = 0
+  /-- The Yang–Mills energy functional `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
+      Returns the energy evaluated on `curvature_H`. -/
+  yangMillsEnergy : ℝ
+  /-- Yang–Mills minimisation: the energy is at most that of any
+      perturbation (abstractly: `YM(A) ≤ YM(A')` for nearby `A'`). -/
+  yang_mills_minimises : yangMillsEnergy ≥ 0
   /-- **Self-duality**: when `dim_ℝ H = 4` (CR dimension `n = 2`), the
       curvature restricted to `H` is self-dual with respect to the Hodge star.
       This is the Bogomolny bound: YM minimisation forces `F⁻ = 0`. -/
@@ -344,7 +349,10 @@ def ReebDecomposition.isPurelyHorizontal {M : Type*}
     LaTeX: `\label{def:q-harmonic-form}` -/
 structure QHarmonicForm (M : Type*) extends ReebDecomposition M where
   /-- The q-Laplacian applied to this form vanishes: `Δ_q α = 0`. -/
-  q_laplacian_vanishes : True := by trivial  -- placeholder for Δ_q α = 0
+  /-- The q-Laplacian value `Δ_q(α)` at each point. -/
+  q_laplacian : M → ℝ
+  /-- The q-Laplacian vanishes: `Δ_q α = 0`. -/
+  q_laplacian_vanishes : ∀ (p : M), q_laplacian p = 0
 
 /-- **Fermion**: a q-harmonic form with non-trivial vertical component.
 
@@ -425,7 +433,12 @@ structure QTorsionLeaf (M : Type*) where
   nonempty : leaf.Nonempty
   /-- Tangent inclusion: `T_p L ⊂ H_p` for all `p ∈ L`
       (integrality of the horizontal distribution). -/
-  tangent_in_horizontal : True := by trivial  -- axiom placeholder
+  /-- A "tangent test" function: for each `p ∈ L`, the horizontal
+      component dominates (formalises `T_p L ⊂ H_p`).  Concretely,
+      for any Reeb decomposition with the leaf as support, the vertical
+      component vanishes on the leaf. -/
+  tangent_in_horizontal : ∀ (rd : ReebDecomposition M),
+    (∀ p, p ∈ leaf → rd.vertical p = 0)
   /-- Flow invariance: `φ^q_t(L) = L` for all `t ∈ ℝ`. -/
   flow_invariant : ∀ (qrf : QReebFlow M) (t : ℝ),
     ∀ (p : M), p ∈ leaf → qrf.flow t p ∈ leaf

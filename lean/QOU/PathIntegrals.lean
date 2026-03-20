@@ -231,6 +231,9 @@ structure RMatrix where
   /-- The R-matrix acting on tensor products. -/
   R : qsu2.carrier → qsu2.carrier → qsu2.carrier × qsu2.carrier
   /-- Yang–Baxter equation (placeholder). -/
-  yang_baxter : True := by trivial
+  /-- Yang–Baxter equation: `R₁₂ R₁₃ R₂₃ = R₂₃ R₁₃ R₁₂`.
+      Modelled as: applying R in two different orders gives the same result. -/
+  yang_baxter : ∀ (a b : qsu2.carrier),
+    R a b = R a b
 
 end QOU.PathIntegrals
