@@ -91,4 +91,163 @@ sed -i 's/\\color{[Bb][Ll][Uu][Ee]}/\\color{DIFgreen}/g' diff.tex
 
 echo "::endgroup::"
 
+# ── 5. Append Lean checks summary ────────────────────────────────────────
+# Show sorry count changes and Lean file diffs between main and the branch.
+echo "::group::Lean checks summary"
+
+# Count sorry markers in each version
+MAIN_SORRY=0
+BRANCH_SORRY=0
+if [ -d "$MAIN_DIR/lean" ]; then
+  MAIN_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$MAIN_DIR/lean/" 2>/dev/null \
+    | awk -F: '{s+=$NF} END {print s+0}')
+fi
+if [ -d lean ]; then
+  BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' lean/ 2>/dev/null \
+    | awk -F: '{s+=$NF} END {print s+0}')
+fi
+
+# Collect changed Lean files
+LEAN_CHANGED_FILES=$(git diff --name-only "$MERGE_BASE" HEAD -- 'lean/**/*.lean' 2>/dev/null || true)
+LEAN_ADDED_FILES=$(git diff --diff-filter=A --name-only "$MERGE_BASE" HEAD -- 'lean/**/*.lean' 2>/dev/null || true)
+LEAN_DELETED_FILES=$(git diff --diff-filter=D --name-only "$MERGE_BASE" HEAD -- 'lean/**/*.lean' 2>/dev/null || true)
+LEAN_MODIFIED_FILES=$(git diff --diff-filter=M --name-only "$MERGE_BASE" HEAD -- 'lean/**/*.lean' 2>/dev/null || true)
+
+# Count changed files
+N_CHANGED=$(echo "$LEAN_CHANGED_FILES" | grep -c . 2>/dev/null || echo 0)
+N_ADDED=$(echo "$LEAN_ADDED_FILES" | grep -c . 2>/dev/null || echo 0)
+N_DELETED=$(echo "$LEAN_DELETED_FILES" | grep -c . 2>/dev/null || echo 0)
+N_MODIFIED=$(echo "$LEAN_MODIFIED_FILES" | grep -c . 2>/dev/null || echo 0)
+
+# Compute sorry delta
+SORRY_DELTA=$((BRANCH_SORRY - MAIN_SORRY))
+if [ "$SORRY_DELTA" -gt 0 ]; then
+  SORRY_STATUS="\\\\textcolor{red}{+${SORRY_DELTA} sorry markers added}"
+elif [ "$SORRY_DELTA" -lt 0 ]; then
+  SORRY_STATUS="\\\\textcolor{DIFgreen}{${SORRY_DELTA} sorry markers removed}"
+else
+  SORRY_STATUS="No change in sorry count"
+fi
+
+# Per-file sorry counts (branch only, for changed files)
+PERFILE_SORRY=""
+if [ -n "$LEAN_CHANGED_FILES" ]; then
+  while IFS= read -r lf; do
+    [ -z "$lf" ] && continue
+    if [ -f "$lf" ]; then
+      FC=$(grep -c '\bsorry\b' "$lf" 2>/dev/null || echo 0)
+      PERFILE_SORRY="${PERFILE_SORRY}    \\\\texttt{${lf//\_/\\_}} & ${FC} \\\\\\\\\n"
+    fi
+  done <<< "$LEAN_CHANGED_FILES"
+fi
+
+# Generate the Lean diff body (unified diff of Lean files, truncated)
+LEAN_DIFF=""
+if [ -n "$LEAN_CHANGED_FILES" ]; then
+  LEAN_DIFF=$(git diff "$MERGE_BASE" HEAD -- 'lean/**/*.lean' 2>/dev/null | head -200 || true)
+fi
+
+# Inject Lean checks appendix before \end{document}
+LEAN_SECTION=$(cat <<'LEANSECTION'
+\clearpage
+\appendix
+\section*{Lean Formalization Changes}
+\addcontentsline{toc}{section}{Lean Formalization Changes}
+
+\subsection*{Sorry Audit}
+\begin{tabular}{lr}
+\hline
+\textbf{Metric} & \textbf{Count} \\
+\hline
+LEANSECTION
+)
+
+# Build the sorry table rows
+LEAN_SECTION="${LEAN_SECTION}
+    Main (merge-base) sorry count & ${MAIN_SORRY} \\\\
+    Branch sorry count & ${BRANCH_SORRY} \\\\
+\\hline
+\\end{tabular}
+
+\\medskip
+${SORRY_STATUS}
+"
+
+# File changes summary
+LEAN_SECTION="${LEAN_SECTION}
+\\subsection*{Changed Lean Files}
+\\begin{tabular}{lr}
+\\hline
+\\textbf{Category} & \\textbf{Count} \\\\
+\\hline
+    Added & ${N_ADDED} \\\\
+    Modified & ${N_MODIFIED} \\\\
+    Deleted & ${N_DELETED} \\\\
+\\hline
+    Total & ${N_CHANGED} \\\\
+\\hline
+\\end{tabular}
+"
+
+# Per-file sorry table (only if there are changed files with sorry)
+if [ -n "$PERFILE_SORRY" ]; then
+  LEAN_SECTION="${LEAN_SECTION}
+\\subsection*{Sorry Counts in Changed Files}
+\\begin{tabular}{lr}
+\\hline
+\\textbf{File} & \\textbf{sorry count} \\\\
+\\hline
+$(echo -e "$PERFILE_SORRY")\\hline
+\\end{tabular}
+"
+fi
+
+# File listing
+if [ -n "$LEAN_CHANGED_FILES" ]; then
+  FILE_LIST=""
+  while IFS= read -r lf; do
+    [ -z "$lf" ] && continue
+    FILE_LIST="${FILE_LIST}  \\item \\texttt{${lf//\_/\\_}}"$'\n'
+  done <<< "$LEAN_CHANGED_FILES"
+  LEAN_SECTION="${LEAN_SECTION}
+\\subsection*{File List}
+\\begin{itemize}
+${FILE_LIST}\\end{itemize}
+"
+fi
+
+# Lean diff listing (truncated to keep PDF manageable)
+if [ -n "$LEAN_DIFF" ]; then
+  # Escape special LaTeX chars in the diff output for verbatim
+  LEAN_SECTION="${LEAN_SECTION}
+\\subsection*{Lean Diff (truncated)}
+{\\small
+\\begin{verbatim}
+${LEAN_DIFF}
+\\end{verbatim}
+}
+"
+fi
+
+# Insert before \end{document}
+# Use a temp file to avoid sed issues with multi-line content
+LEAN_SECTION_FILE="$(mktemp)"
+echo "$LEAN_SECTION" > "$LEAN_SECTION_FILE"
+
+# Use Python for reliable multi-line insertion (sed struggles with this)
+python3 -c "
+import sys
+section = open('$LEAN_SECTION_FILE').read()
+with open('diff.tex', 'r') as f:
+    content = f.read()
+content = content.replace(r'\end{document}', section + r'\end{document}')
+with open('diff.tex', 'w') as f:
+    f.write(content)
+"
+rm -f "$LEAN_SECTION_FILE"
+
+echo "  Sorry: main=${MAIN_SORRY} branch=${BRANCH_SORRY} delta=${SORRY_DELTA}"
+echo "  Changed Lean files: ${N_CHANGED} (added=${N_ADDED} modified=${N_MODIFIED} deleted=${N_DELETED})"
+echo "::endgroup::"
+
 echo "✓ diff.tex generated ($(wc -l < diff.tex) lines)"
