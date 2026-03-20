@@ -241,6 +241,46 @@
       "narrative": "Witt vector lift of a formal group",
       "lean_id": "QOU.PAdicQuantumGroups.WittVectorLift",
       "latex_label": "def:witt-vector-lift"
+    },
+    {
+      "narrative": "Commutative formal group",
+      "lean_id": "Fred2005.CommutativeFormalGroup",
+      "latex_label": "def:witt-vector-lift"
+    },
+    {
+      "narrative": "Skewed-Poisson structure",
+      "lean_id": "Fred2005.SkewedPoissonStructure",
+      "latex_label": "def:witt-vector-lift"
+    },
+    {
+      "narrative": "Non-commutative formal group",
+      "lean_id": "Fred2005.NoncommutativeFormalGroup",
+      "latex_label": "def:witt-vector-lift"
+    },
+    {
+      "narrative": "Integration of skewed-Poisson structures",
+      "lean_id": "Fred2005.skew_poisson_integrates",
+      "latex_label": "prop:skew-poisson-integration"
+    },
+    {
+      "narrative": "Gr\u00f6bner-Shirshov basis",
+      "lean_id": "Fred2005.GrobnerShirshovBasis",
+      "latex_label": "prop:skew-poisson-integration"
+    },
+    {
+      "narrative": "Strong multiplicativity",
+      "lean_id": "Fred2005.strong_multiplicativity_holds",
+      "latex_label": "prop:skew-poisson-integration"
+    },
+    {
+      "narrative": "Witt vector lift",
+      "lean_id": "Fred2005.WittVectorLift",
+      "latex_label": "def:witt-vector-lift"
+    },
+    {
+      "narrative": "Unit-root F-crystal equivalence",
+      "lean_id": "Fred2005.unit_root_iff_integrable",
+      "latex_label": "rem:witt-lift-qou"
     }
   ]
 }
