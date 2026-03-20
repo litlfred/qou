@@ -371,7 +371,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/descent-lemma-proof-rCBr5">&#x1F33F; claude/descent-lemma-proof-rCBr5</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/450c89ccb1389f5d7684801ac47fa565bb773c81">&#x1F4DD; 450c89c</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/492b44a143c076170ec2826215d88a35592edbc4">&#x1F4DD; 492b44a</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/89">PR #89</a>
   <a class="gh-badge" href="quantum-observable-universe-claude-descent-lemma-proof-rcbr5-diff.pdf" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>
 </div>
@@ -3169,41 +3169,35 @@ class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1
 \cong S^2\)</span> with <span class="math inline">\(\chi(S^2) =
 2\)</span>. Nonetheless, the Euler characteristic is preserved for the
 following reason.</p>
-<h2
-id="the-lerayserre-spectral-sequence-of-s2-hookrightarrow-e_n1-to-e_n-has-e_2pq--hpe_n-hqs2-mathbbz-the-quantum-characteristic-classes-kappa_n-definition-45-are-precisely-the-obstructions-to-trivial-monodromy-of-the-fibre-cohomology-hs2-by-the-vanishing-condition-of-the-quantum-observable-universe-axiomswhich-forces-mathrmhommathbf1-mathrmada--0the-monodromy-representation-of-pi_1e_n-on-hs2-mathbbz-is-trivial-the-adjoint-bundle-has-no-invariant-sections-to-twist-the-fibre-cohomology-consequently-the-spectral-sequence-collapses-at-the-e_2-page-and-the-euler-characteristics-satisfy-chie_n1--sum_pq-text-even-dim-e_2pq">The
-Leray–Serre spectral sequence of <span class="math inline">\(S^2
+<p>The Leray–Serre spectral sequence of <span class="math inline">\(S^2
 \hookrightarrow E_{n+1} \to E_n\)</span> has <span
 class="math inline">\(E_2^{p,q} = H^p(E_n;\,
-H^q(S^2;\, \mathbb{Z}))\)</span>. The quantum characteristic classes
+H^q(S^2;\, \mathbb{Z}))\)</span>. The <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
 <span class="math inline">\(\kappa_n\)</span>
 (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>)
 are precisely the obstructions to trivial monodromy of the fibre
 cohomology <span class="math inline">\(H^*(S^2)\)</span>. By the
-vanishing condition of the quantum observable universe axioms—which
+vanishing condition of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> axioms—which
 forces <span class="math inline">\(\mathrm{Hom}(\mathbf{1},
 \mathrm{Ad}(A)) = 0\)</span>—the monodromy representation of <span
 class="math inline">\(\pi_1(E_n)\)</span> on <span
 class="math inline">\(H^*(S^2;\, \mathbb{Z})\)</span> is trivial (the
 adjoint bundle has no invariant sections to twist the fibre cohomology).
 Consequently the spectral sequence collapses at the <span
-class="math inline">\(E_2\)</span> page and the Euler characteristics
-satisfy $$\chi(E_{n+1}) ;=; \sum_{p+q \text{ even}} \dim E_2^{p,q}</h2>
-<p>\sum_{p+q \text{ odd}} \dim E_2^{p,q} ;=; \chi(E_n) \cdot \chi(S^2)
-\cdot \frac{1}{\chi(S^2)} ;=; \chi(E_n),$$ where the factor <span
-class="math inline">\(1/\chi(S^2)\)</span> arises because the instanton
-connection <span class="math inline">\(A_n\)</span> identifies each
-fibre with the coset <span
-class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1)\)</span> via a fixed
-section (the instanton itself), reducing the effective fibre to a point
-for the purpose of the Euler characteristic computation. Formally, the
-instanton provides a global section of the associated <span
-class="math inline">\(S^2\)</span>-bundle <span
-class="math inline">\(E_{n+1}/\mathrm{U}(1) \to E_n\)</span>, which is a
-homotopy equivalence on each fibre, so <span
-class="math inline">\(\chi(E_{n+1}) = \chi(E_n)\)</span>. ◻</p>
+class="math inline">\(E_2\)</span> page. The preservation of the Euler
+characteristic follows from the fact that the <a class="defn-link" href="#def:instanton">instanton connection</a> <span
+class="math inline">\(A_n\)</span> provides a global section of the
+associated <span class="math inline">\(S^2\)</span>-bundle <span
+class="math inline">\(E_{n+1}/\mathrm{U}(1) \to E_n\)</span>: the
+instanton itself determines a preferred point in each fibre <span
+class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2\)</span>.
+This global section makes the projection <span
+class="math inline">\(E_{n+1} \to E_n\)</span> a homotopy equivalence,
+whence <span class="math inline">\(\chi(E_{n+1}) =
+\chi(E_n)\)</span>. ◻</p>
 </div>
 
-<div id="def:mass-identity" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L438" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:mass-identity" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L426" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 4.18</strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
@@ -3222,7 +3216,7 @@ class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
 </div>
 
 <h3 id="descent">Descent</h3>
-<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L456" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L444" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 4.19</strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
 class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
@@ -3239,7 +3233,7 @@ class="math inline">\(\dim M_k = 0\)</span>, at which point <span
 class="math inline">\(M_k\)</span> is a discrete set of points.</em></p>
 </div>
 
-<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L466" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L454" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Lemma 4.20</strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
 universe). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
@@ -3334,62 +3328,79 @@ class="math inline">\(n\)</span> and <span
 class="math inline">\(n{-}1\)</span>. ◻</p>
 </div>
 
-<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L533" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L521" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 4.21</strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
 class="math inline">\(\ell_n\)</span> denote the ascent embedding
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
-and <span class="math inline">\(\mathfrak{d}_n\)</span> the descent
+and <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> the descent
 homomorphism
 (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>).
 The <em>descent involution</em> at level <span
 class="math inline">\(n\)</span> is the endomorphism <span
-class="math display">\[\tau_n \;=\; \mathfrak{d}_{n+1} \circ \ell_n
+class="math display">\[\tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
 \;\colon\;
-\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr)
+\Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
 \;\longrightarrow\;
-\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).\]</span> Since
-<span class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n \circ
-\mathfrak{d}_{n+1} \circ \ell_n
-= \mathfrak{d}_{n+1} \circ (\ell_n \circ \mathfrak{d}_{n+1}) \circ
-\ell_n
-= \mathfrak{d}_{n+1} \circ \mathrm{id}_{J^1(A)} \circ \ell_n =
-\tau_n\)</span>, the map <span class="math inline">\(\tau_n\)</span> is
-idempotent: <span class="math inline">\(\tau_n^2 = \tau_n\)</span>. Its
-image is the <em>descended subalgebra</em> <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{desc}} \subseteq
-\Gamma(J^1 E_n, \mathrm{SU}_{q_n}(2))\)</span>, consisting of sections
-that are stable under one round-trip through the tower.</em></p>
+\Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr).\]</span>
+Since <span class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n =
+\mathrm{id}\)</span> on <span class="math inline">\(\Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))\)</span> (the descent of the ascent recovers the
+original section, because <span class="math inline">\(\ell_n\)</span>
+embeds <span class="math inline">\(A\)</span> as a direct summand of
+<span class="math inline">\(J^1(A)\)</span> and <span
+class="math inline">\(\mathfrak{d}_{n+1}\)</span> is the retraction), we
+have <span class="math display">\[\tau_n^2
+\;=\;
+\ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1}
+\;=\;
+\ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n) \circ \mathfrak{d}_{n+1}
+\;=\;
+\ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1}
+\;=\;
+\tau_n,\]</span> so <span class="math inline">\(\tau_n\)</span> is
+idempotent. Its image is the <em>descended subalgebra</em> <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq
+\Gamma(J^1 E_{n+1}, \mathrm{SU}_{q_{n+1}}(2))\)</span>, consisting of
+sections at level <span class="math inline">\(n{+}1\)</span> that factor
+through the level-<span class="math inline">\(n\)</span> algebra via the
+ascent embedding.</em></p>
 </div>
 
-<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L555" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L556" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 4.22</strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
 involution). <em>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
 (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>)
-decomposes the section algebra into a direct sum <span
-class="math display">\[\Gamma\!\bigl(J^1 E_n,\,
-\mathrm{SU}_{q_n}(2)\bigr)
+decomposes the level-<span class="math inline">\((n{+}1)\)</span>
+section algebra into a direct sum <span
+class="math display">\[\Gamma\!\bigl(J^1 E_{n+1},\,
+\mathrm{SU}_{q_{n+1}}(2)\bigr)
 \;=\;
-\mathcal{A}_n^{\mathrm{desc}} \;\oplus\;
-\mathcal{A}_n^{\mathrm{trans}},\]</span> where <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{desc}} =
-\mathrm{im}\,\tau_n\)</span> is the descended subalgebra and <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{trans}} =
-\ker\,\tau_n\)</span> is the <em>transient complement</em>. The
+\mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\;
+\mathcal{A}_{n+1}^{\mathrm{trans}},\]</span> where <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} =
+\mathrm{im}\,\tau_n\)</span> is the descended subalgebra (sections that
+factor through level <span class="math inline">\(n\)</span>) and <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}} =
+\ker\,\tau_n\)</span> is the <em>transient complement</em> (genuinely
+new modes at level <span class="math inline">\(n{+}1\)</span>). The
 algebraic filter
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>)
 refines this decomposition:</em></p>
 <ol type="1">
-<li><p><em>The bosonic (longitudinal) modes lie entirely in <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{desc}}\)</span>: they
-commute with the curvature and survive every round-trip.</em></p></li>
-<li><p><em>The fermionic (ladder) modes split between the two summands;
+<li><p><em>The bosonic (longitudinal) modes lifted from level <span
+class="math inline">\(n\)</span> lie entirely in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span>: they
+commute with the curvature and survive every round-trip through the
+tower.</em></p></li>
+<li><p><em>The fermionic (ladder) modes at level <span
+class="math inline">\(n{+}1\)</span> split between the two summands;
 those in <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{trans}}\)</span> are the
-modes created by the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> that have no pre-image under
-<a class="defn-link" href="#def:descent">descent</a>.</em></p></li>
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span> are
+the modes created by the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> that have no pre-image at
+level <span class="math inline">\(n\)</span>.</em></p></li>
 </ol>
 </div>
 
@@ -3400,37 +3411,43 @@ an idempotent <span class="math inline">\(*\)</span>-endomorphism of a
 <span class="math inline">\(C^*\)</span>-algebra, the splitting <span
 class="math inline">\(\mathrm{im}\,\tau_n \oplus \ker\,\tau_n\)</span>
 is an orthogonal direct sum.</p>
-<p>For item (1), let <span class="math inline">\(\alpha\)</span> be a
-bosonic mode: <span class="math inline">\([F_A, \alpha] = 0\)</span>
+<p>For item (1), let <span class="math inline">\(\alpha \in \Gamma(J^1
+E_{n+1})\)</span> be a bosonic mode lifted from level <span
+class="math inline">\(n\)</span>: <span class="math inline">\([F_A,
+\alpha] = 0\)</span>
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>).
 Bosonic modes take values in the Cartan subalgebra <span
 class="math inline">\(\mathrm{U}(1) \subset \mathfrak{su}(2)\)</span>
 (Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>).
-The ascent <span class="math inline">\(\ell_n\)</span> embeds <span
-class="math inline">\(\alpha\)</span> into <span
-class="math inline">\(J^1 E_{n+1}\)</span> as a zero-order jet (no new
-derivative data), and the <a class="defn-link" href="#def:descent">descent</a> <span
-class="math inline">\(\mathfrak{d}_{n+1}\)</span> restricts back to the
-same zero-order datum. Hence <span class="math inline">\(\tau_n(\alpha)
-= \alpha\)</span> and <span class="math inline">\(\alpha \in
-\mathcal{A}_n^{\mathrm{desc}}\)</span>.</p>
+Since <span class="math inline">\(\alpha\)</span> lies in the image of
+the ascent <span class="math inline">\(\ell_n\)</span>, we have <span
+class="math inline">\(\alpha = \ell_n(\beta)\)</span> for some <span
+class="math inline">\(\beta \in \Gamma(J^1 E_n)\)</span>. Then <span
+class="math inline">\(\tau_n(\alpha) =
+\ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta)))
+= \ell_n(\beta) = \alpha\)</span>, using <span
+class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n =
+\mathrm{id}\)</span>. Hence <span class="math inline">\(\alpha \in
+\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span>.</p>
 <p>For item (2), the ladder modes <span class="math inline">\(\omega^\pm
-\otimes E_\pm\)</span> acquire non-trivial first-order jet data under
-<span class="math inline">\(\ell_n\)</span>: the off-diagonal generators
-<span class="math inline">\(E_\pm\)</span> couple to the curvature <span
+\otimes E_\pm\)</span> at level <span
+class="math inline">\(n{+}1\)</span> couple to the curvature <span
 class="math inline">\(F_A\)</span> through the covariant derivative
-<span class="math inline">\(d_A\)</span>. Those ladder modes whose jet
-prolongation is uniquely determined by the base data are recovered by
-<span class="math inline">\(\mathfrak{d}_{n+1}\)</span> and belong to
-<span class="math inline">\(\mathcal{A}_n^{\mathrm{desc}}\)</span>. The
-remaining modes—those created <em>ex nihilo</em> by the prolongation
-(new harmonic directions in the enlarged <span class="math inline">\(J^1
-E_{n+1}\)</span>)—lie in <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{trans}}\)</span> and are
-annihilated by <span class="math inline">\(\tau_n\)</span>. ◻</p>
+<span class="math inline">\(d_A\)</span>. Those that arise as lifts of
+level-<span class="math inline">\(n\)</span> modes lie in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span> by the
+same argument as item (1). The remaining modes—genuinely new harmonic
+directions in <span class="math inline">\(J^1 E_{n+1}\)</span> with no
+counterpart at level <span class="math inline">\(n\)</span>—lie in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span> and
+are annihilated by <span class="math inline">\(\tau_n\)</span>: the
+<a class="defn-link" href="#def:descent">descent</a> <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> maps
+them to zero in the level-<span class="math inline">\(n\)</span>
+algebra, so <span class="math inline">\(\tau_n = \ell_n \circ
+\mathfrak{d}_{n+1}\)</span> sends them to zero. ◻</p>
 </div>
 
-<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L605" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L610" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 4.23</strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
 <em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
@@ -3452,7 +3469,7 @@ the restriction <span class="math inline">\(r_n\colon J^1(A) \to
 A\)</span> evaluated fibre by fibre.</em></p>
 </div>
 
-<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L623" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L628" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 4.24</strong> (Structure of the defining
 boundary). <em>The defining boundary <span
@@ -3524,19 +3541,19 @@ class="math inline">\(\mathbb{CP}^1 \cong S^2\)</span>. This is the
 exceptional divisor introduced by the topological blow-up that resolves
 the singularity at <span class="math inline">\(p\)</span>.</p>
 <p><em>(3).</em> The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
-class="math inline">\(\tau_n = \mathfrak{d}_{n+1} \circ
-\ell_n\)</span> maps <span class="math inline">\(\partial E_n\)</span>
-to itself because both <span class="math inline">\(\ell_n\)</span> and
-<span class="math inline">\(\mathfrak{d}_{n+1}\)</span> preserve the
-condition <span class="math inline">\(\ker(\mathfrak{d}_{n+1}|_p)
-\neq 0\)</span> (the image of <span
-class="math inline">\(\ell_n\)</span> at a boundary point still has
-non-trivial kernel under descent). The fixed points of <span
-class="math inline">\(\tau_n|_{\partial E_n}\)</span> are the points
-where <span class="math inline">\(\ell_n \circ
-\mathfrak{d}_{n+1}\)</span> acts as the identity on the kernel—this is
-precisely the monodromy fixed-point condition that defines the quantum
-characteristic classes
+class="math inline">\(\tau_n = \ell_n \circ \mathfrak{d}_{n+1}\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>),
+acting on sections of <span class="math inline">\(J^1 E_{n+1}\)</span>,
+restricts to the boundary locus <span class="math inline">\(\partial
+E_n\)</span> as follows. Since <span class="math inline">\(\partial
+E_n\)</span> is defined by <span
+class="math inline">\(\ker(\mathfrak{d}_{n+1}|_p) \neq 0\)</span>, and
+<span class="math inline">\(\tau_n\)</span> projects onto the image of
+<span class="math inline">\(\ell_n\)</span>, the restriction <span
+class="math inline">\(\tau_n|_{\partial E_n}\)</span> acts as an
+involution whose fixed points are the sections at boundary points that
+are entirely in the descended subalgebra—precisely the monodromy
+fixed-point condition that defines the <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
 (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>).</p>
 <p><em>(4).</em> At <span class="math inline">\(n = 1\)</span> the base
 manifold is <span class="math inline">\(M\)</span> and the total space
@@ -3557,7 +3574,7 @@ with
 Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>. ◻</p>
 </div>
 
-<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L691" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L697" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.25</strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
@@ -3587,7 +3604,7 @@ class="math inline">\(M_k\)</span> to a zero-dimensional base
 (Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>).</em></p>
 </div>
 
-<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L711" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L717" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.26</strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
@@ -3616,7 +3633,7 @@ vertical harmonic forms.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L734" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L740" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.27</strong> (Reduction at dimension <span
 class="math inline">\(0\)</span>). <em>When <span
@@ -3662,7 +3679,7 @@ point—the entire <a class="defn-link" href="#def:quantum-observable-universe">
 <span class="math inline">\((E_p, q(p))\)</span>.</em></p>
 </div>
 
-<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L764" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L770" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.28</strong> (Physical implications of a <span
 class="math inline">\(0\)</span>-dimensional base). <em>At
@@ -3688,7 +3705,7 @@ degrees of freedom without any spatial multiplicity.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L785" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L791" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.29</strong> (Fixed-point mechanism: ascent and
 <a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
@@ -3702,19 +3719,21 @@ class="math inline">\(M_k\)</span> (<span class="math inline">\(\dim =
 class="math inline">\(A\)</span> to higher categorical structures via
 the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>).</em></p></li>
-<li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (filtering).</em> Moving back down via the
+<li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (projection).</em> Moving back down via the
 descent homomorphism <span class="math inline">\(\mathfrak{d}_n\)</span>
 (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>)
 acts as an algebraic filter
-(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>).
-The transient complement <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{trans}}\)</span>
-(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.22</a>)
-is annihilated: the ladder modes
-(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>)
-that were created by the prolongation are stripped away. At
-dimension <span class="math inline">\(1\)</span> only the longitudinal
-<span class="math inline">\(\mathrm{U}(1)\)</span> backbone remains
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>)
+on the level-<span class="math inline">\((n{+}1)\)</span> algebra. The
+transient complement <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span>
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.22</a>)—the
+genuinely new modes at level <span class="math inline">\(n{+}1\)</span>
+with no pre-image at level <span class="math inline">\(n\)</span>—is
+annihilated by the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>. At dimension <span
+class="math inline">\(1\)</span> only the longitudinal <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone remains
 (Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.25</a>),
 and at dimension <span class="math inline">\(0\)</span> even that is
 collapsed to a single fibre datum
@@ -3723,13 +3742,15 @@ collapsed to a single fibre datum
 <a class="defn-link" href="#def:descent">descent</a> is the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
 (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>),
+acting on <span class="math inline">\(\Gamma(J^1 E_{n+1})\)</span>,
 whose image <span
-class="math inline">\(\mathcal{A}_n^{\mathrm{desc}}\)</span> is the
-stable core of the brane algebra. The defining boundary <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span> is the
+stable core of the brane algebra at level <span
+class="math inline">\(n{+}1\)</span>. The defining boundary <span
 class="math inline">\(\partial E_n\)</span>
 (Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>)
-marks the geometric locus where the round-trip loses
-information.</em></p></li>
+marks the geometric locus where the fibrewise descent map has a
+non-trivial kernel.</em></p></li>
 </ol>
 </div>
 
@@ -3781,7 +3802,7 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 the topological charge.</em></p>
 </div>
 
-<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L831" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L839" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.32</strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
@@ -3848,7 +3869,7 @@ continuously deforming the Julia set geometry as one moves through the
 QOU.</em></p>
 </div>
 
-<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L872" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/lifting-of-quantum-torsion.tex#L880" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.33</strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big

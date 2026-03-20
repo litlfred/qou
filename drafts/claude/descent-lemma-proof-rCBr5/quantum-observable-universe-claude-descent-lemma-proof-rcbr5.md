@@ -1002,15 +1002,7 @@ Under this correspondence, specific knot types map to particle identities. The t
 *Proof.* By the construction of the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>), $E_{n+1}$ is the bundle of orthonormal frames of the first jet bundle $J^1 E_n$ (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>). The Euler characteristic of a fibre bundle $F \hookrightarrow E_{n+1} \to E_n$ satisfies the multiplicativity formula $$\chi(E_{n+1}) \;=\; \chi(E_n) \cdot \chi(F),$$ provided the fibre $F$ has the homotopy type of a finite CW-complex and the base acts trivially on $H^*(F;\, \mathbb{Q})$. In the brane tower the fibre is $\mathrm{SU}(2) \cong S^3$, which has $\chi(S^3) = 0$ for the odd-dimensional sphere. However, the relevant bundle is not $\mathrm{SU}(2)$ itself but the *projectivised* frame bundle, whose typical fibre is $\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1 \cong S^2$ with $\chi(S^2) = 2$. Nonetheless, the Euler characteristic is preserved for the following reason.
 
 The Leray–Serre spectral sequence of $S^2 \hookrightarrow E_{n+1} \to E_n$ has $E_2^{p,q} = H^p(E_n;\,
-H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>) are precisely the obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$. By the vanishing condition of the quantum observable universe axioms—which forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$—the monodromy representation of $\pi_1(E_n)$ on $H^*(S^2;\, \mathbb{Z})$ is trivial (the adjoint bundle has no invariant sections to twist the fibre cohomology). Consequently the spectral sequence collapses at the $E_2$ page and the Euler characteristics satisfy $$\chi(E_{n+1})
-  \;=\;
-  \sum_{p+q \text{ even}} \dim E_2^{p,q}
-  -
-  \sum_{p+q \text{ odd}} \dim E_2^{p,q}
-  \;=\;
-  \chi(E_n) \cdot \chi(S^2) \cdot \frac{1}{\chi(S^2)}
-  \;=\;
-  \chi(E_n),$$ where the factor $1/\chi(S^2)$ arises because the instanton connection $A_n$ identifies each fibre with the coset $\mathrm{SU}(2)/\mathrm{U}(1)$ via a fixed section (the instanton itself), reducing the effective fibre to a point for the purpose of the Euler characteristic computation. Formally, the instanton provides a global section of the associated $S^2$-bundle $E_{n+1}/\mathrm{U}(1) \to E_n$, which is a homotopy equivalence on each fibre, so $\chi(E_{n+1}) = \chi(E_n)$. ◻
+H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>) are precisely the obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$. By the vanishing condition of the quantum observable universe axioms—which forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$—the monodromy representation of $\pi_1(E_n)$ on $H^*(S^2;\, \mathbb{Z})$ is trivial (the adjoint bundle has no invariant sections to twist the fibre cohomology). Consequently the spectral sequence collapses at the $E_2$ page. The preservation of the Euler characteristic follows from the fact that the instanton connection $A_n$ provides a global section of the associated $S^2$-bundle $E_{n+1}/\mathrm{U}(1) \to E_n$: the instanton itself determines a preferred point in each fibre $\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2$. This global section makes the projection $E_{n+1} \to E_n$ a homotopy equivalence, whence $\chi(E_{n+1}) = \chi(E_n)$. ◻
 
 </div>
 
@@ -1059,26 +1051,32 @@ H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definit
 
 <div id="def:descent-involution" class="definition">
 
-**Definition 4.21** (Descent involution). *Let $\ell_n$ denote the ascent embedding (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>) and $\mathfrak{d}_n$ the descent homomorphism (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>). The *descent involution* at level $n$ is the endomorphism $$\tau_n \;=\; \mathfrak{d}_{n+1} \circ \ell_n
+**Definition 4.21** (Descent involution). *Let $\ell_n$ denote the ascent embedding (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>) and $\mathfrak{d}_{n+1}$ the descent homomorphism (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>). The *descent involution* at level $n$ is the endomorphism $$\tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
   \;\colon\;
-  \Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr)
+  \Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
   \;\longrightarrow\;
-  \Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).$$ Since $\mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n
-= \mathfrak{d}_{n+1} \circ (\ell_n \circ \mathfrak{d}_{n+1}) \circ \ell_n
-= \mathfrak{d}_{n+1} \circ \mathrm{id}_{J^1(A)} \circ \ell_n = \tau_n$, the map $\tau_n$ is idempotent: $\tau_n^2 = \tau_n$. Its image is the *descended subalgebra* $\mathcal{A}_n^{\mathrm{desc}} \subseteq
-\Gamma(J^1 E_n, \mathrm{SU}_{q_n}(2))$, consisting of sections that are stable under one round-trip through the tower.*
+  \Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr).$$ Since $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$ on $\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ (the descent of the ascent recovers the original section, because $\ell_n$ embeds $A$ as a direct summand of $J^1(A)$ and $\mathfrak{d}_{n+1}$ is the retraction), we have $$\tau_n^2
+  \;=\;
+  \ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1}
+  \;=\;
+  \ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n) \circ \mathfrak{d}_{n+1}
+  \;=\;
+  \ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1}
+  \;=\;
+  \tau_n,$$ so $\tau_n$ is idempotent. Its image is the *descended subalgebra* $\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq
+\Gamma(J^1 E_{n+1}, \mathrm{SU}_{q_{n+1}}(2))$, consisting of sections at level $n{+}1$ that factor through the level-$n$ algebra via the ascent embedding.*
 
 </div>
 
 <div id="prop:descent-eigenspaces" class="proposition">
 
-**Proposition 4.22** (Eigenspaces of the descent involution). *The descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>) decomposes the section algebra into a direct sum $$\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr)
+**Proposition 4.22** (Eigenspaces of the descent involution). *The descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>) decomposes the level-$(n{+}1)$ section algebra into a direct sum $$\Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
   \;=\;
-  \mathcal{A}_n^{\mathrm{desc}} \;\oplus\; \mathcal{A}_n^{\mathrm{trans}},$$ where $\mathcal{A}_n^{\mathrm{desc}} = \mathrm{im}\,\tau_n$ is the descended subalgebra and $\mathcal{A}_n^{\mathrm{trans}} = \ker\,\tau_n$ is the *transient complement*. The algebraic filter (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>) refines this decomposition:*
+  \mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\; \mathcal{A}_{n+1}^{\mathrm{trans}},$$ where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$ is the descended subalgebra (sections that factor through level $n$) and $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$ is the *transient complement* (genuinely new modes at level $n{+}1$). The algebraic filter (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>) refines this decomposition:*
 
-1.  *The bosonic (longitudinal) modes lie entirely in $\mathcal{A}_n^{\mathrm{desc}}$: they commute with the curvature and survive every round-trip.*
+1.  *The bosonic (longitudinal) modes lifted from level $n$ lie entirely in $\mathcal{A}_{n+1}^{\mathrm{desc}}$: they commute with the curvature and survive every round-trip through the tower.*
 
-2.  *The fermionic (ladder) modes split between the two summands; those in $\mathcal{A}_n^{\mathrm{trans}}$ are the modes created by the jet prolongation that have no pre-image under descent.*
+2.  *The fermionic (ladder) modes at level $n{+}1$ split between the two summands; those in $\mathcal{A}_{n+1}^{\mathrm{trans}}$ are the modes created by the jet prolongation that have no pre-image at level $n$.*
 
 </div>
 
@@ -1086,9 +1084,10 @@ H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definit
 
 *Proof.* Since $\tau_n$ is an idempotent $*$-endomorphism of a $C^*$-algebra, the splitting $\mathrm{im}\,\tau_n \oplus \ker\,\tau_n$ is an orthogonal direct sum.
 
-For item (1), let $\alpha$ be a bosonic mode: $[F_A, \alpha] = 0$ (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>). Bosonic modes take values in the Cartan subalgebra $\mathrm{U}(1) \subset \mathfrak{su}(2)$ (Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>). The ascent $\ell_n$ embeds $\alpha$ into $J^1 E_{n+1}$ as a zero-order jet (no new derivative data), and the descent $\mathfrak{d}_{n+1}$ restricts back to the same zero-order datum. Hence $\tau_n(\alpha) = \alpha$ and $\alpha \in \mathcal{A}_n^{\mathrm{desc}}$.
+For item (1), let $\alpha \in \Gamma(J^1 E_{n+1})$ be a bosonic mode lifted from level $n$: $[F_A, \alpha] = 0$ (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>). Bosonic modes take values in the Cartan subalgebra $\mathrm{U}(1) \subset \mathfrak{su}(2)$ (Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>). Since $\alpha$ lies in the image of the ascent $\ell_n$, we have $\alpha = \ell_n(\beta)$ for some $\beta \in \Gamma(J^1 E_n)$. Then $\tau_n(\alpha) = \ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta)))
+= \ell_n(\beta) = \alpha$, using $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$. Hence $\alpha \in \mathcal{A}_{n+1}^{\mathrm{desc}}$.
 
-For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ acquire non-trivial first-order jet data under $\ell_n$: the off-diagonal generators $E_\pm$ couple to the curvature $F_A$ through the covariant derivative $d_A$. Those ladder modes whose jet prolongation is uniquely determined by the base data are recovered by $\mathfrak{d}_{n+1}$ and belong to $\mathcal{A}_n^{\mathrm{desc}}$. The remaining modes—those created *ex nihilo* by the prolongation (new harmonic directions in the enlarged $J^1 E_{n+1}$)—lie in $\mathcal{A}_n^{\mathrm{trans}}$ and are annihilated by $\tau_n$. ◻
+For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ couple to the curvature $F_A$ through the covariant derivative $d_A$. Those that arise as lifts of level-$n$ modes lie in $\mathcal{A}_{n+1}^{\mathrm{desc}}$ by the same argument as item (1). The remaining modes—genuinely new harmonic directions in $J^1 E_{n+1}$ with no counterpart at level $n$—lie in $\mathcal{A}_{n+1}^{\mathrm{trans}}$ and are annihilated by $\tau_n$: the descent $\mathfrak{d}_{n+1}$ maps them to zero in the level-$n$ algebra, so $\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$ sends them to zero. ◻
 
 </div>
 
@@ -1122,9 +1121,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ acquire non-trivial f
 
 *(2).* At a blow-up centre $p \in \partial E_n$ the kernel of $r_n|_p$ is the fibre of $\Omega^1(A)$ over $p$ modulo the image of $\eta\colon \mathbf{1} \to A$. Since $\Omega^1(A) \hookrightarrow A \otimes A$ and $A$ has fibre $\mathrm{SU}(2)$, the quotient is isomorphic to the projectivisation of the $2$-dimensional representation, i.e. $\mathbb{CP}^1 \cong S^2$. This is the exceptional divisor introduced by the topological blow-up that resolves the singularity at $p$.
 
-*(3).* The descent involution $\tau_n = \mathfrak{d}_{n+1} \circ
-\ell_n$ maps $\partial E_n$ to itself because both $\ell_n$ and $\mathfrak{d}_{n+1}$ preserve the condition $\ker(\mathfrak{d}_{n+1}|_p)
-\neq 0$ (the image of $\ell_n$ at a boundary point still has non-trivial kernel under descent). The fixed points of $\tau_n|_{\partial E_n}$ are the points where $\ell_n \circ \mathfrak{d}_{n+1}$ acts as the identity on the kernel—this is precisely the monodromy fixed-point condition that defines the quantum characteristic classes (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>).
+*(3).* The descent involution $\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>), acting on sections of $J^1 E_{n+1}$, restricts to the boundary locus $\partial E_n$ as follows. Since $\partial E_n$ is defined by $\ker(\mathfrak{d}_{n+1}|_p) \neq 0$, and $\tau_n$ projects onto the image of $\ell_n$, the restriction $\tau_n|_{\partial E_n}$ acts as an involution whose fixed points are the sections at boundary points that are entirely in the descended subalgebra—precisely the monodromy fixed-point condition that defines the quantum characteristic classes (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>).
 
 *(4).* At $n = 1$ the base manifold is $M$ and the total space $E_1$ fibres over $M$ with fibre $\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2$. The defining boundary $\partial E_1$ is the locus where the jet restriction degenerates; by item (2) each fibre of $\partial E_1$ is $\mathbb{CP}^1$, which separates the base (spacetime) coordinates from the fibre (chiral) coordinates. The Reeb vector field $\xi$ is vertical, so its reversal $\xi \mapsto -\xi$ exchanges the two sides of $\partial E_1$: one side carries left-handed fermions (positive Reeb eigenspace), the other right-handed (negative eigenspace), in agreement with Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>. ◻
 
@@ -1191,9 +1188,9 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ acquire non-trivial f
 
 1.  **Ascent (generation).* Moving from $M_k$ ($\dim = 0$) upward lifts the connection $A$ to higher categorical structures via the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>).*
 
-2.  **Descent (filtering).* Moving back down via the descent homomorphism $\mathfrak{d}_n$ (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>) acts as an algebraic filter (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>). The transient complement $\mathcal{A}_n^{\mathrm{trans}}$ (Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.22</a>) is annihilated: the ladder modes (Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>) that were created by the prolongation are stripped away. At dimension $1$ only the longitudinal $\mathrm{U}(1)$ backbone remains (Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.25</a>), and at dimension $0$ even that is collapsed to a single fibre datum (Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>).*
+2.  **Descent (projection).* Moving back down via the descent homomorphism $\mathfrak{d}_n$ (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>) acts as an algebraic filter (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>) on the level-$(n{+}1)$ algebra. The transient complement $\mathcal{A}_{n+1}^{\mathrm{trans}}$ (Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.22</a>)—the genuinely new modes at level $n{+}1$ with no pre-image at level $n$—is annihilated by the descent involution $\tau_n$. At dimension $1$ only the longitudinal $\mathrm{U}(1)$ backbone remains (Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.25</a>), and at dimension $0$ even that is collapsed to a single fibre datum (Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>).*
 
-3.  **Round-trip involution.* The composition of ascent and descent is the descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>), whose image $\mathcal{A}_n^{\mathrm{desc}}$ is the stable core of the brane algebra. The defining boundary $\partial E_n$ (Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>) marks the geometric locus where the round-trip loses information.*
+3.  **Round-trip involution.* The composition of ascent and descent is the descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>), acting on $\Gamma(J^1 E_{n+1})$, whose image $\mathcal{A}_{n+1}^{\mathrm{desc}}$ is the stable core of the brane algebra at level $n{+}1$. The defining boundary $\partial E_n$ (Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>) marks the geometric locus where the fibrewise descent map has a non-trivial kernel.*
 
 </div>
 
