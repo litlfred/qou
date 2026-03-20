@@ -1002,7 +1002,11 @@
   \label{def:mass-identity}
   \lean{QOU.Torsion.MassIdentity}
   \uses{def:substrate-parameter-lean, def:instanton}
-  $m \propto \oint_\gamma \lVert\nabla_A q\rVert \cdot \lVert L \wedge F^+\rVert$.
+  $m = \lVert\mathrm{MI}\!\int_\Sigma (\nabla_A q,\; L \wedge F^+)\rVert$,
+  where $\mathrm{MI}\!\int_\Sigma$ is the $2$-dimensional twisted nonabelian
+  multiplicative integral over a surface $\Sigma$ bounding the vortex
+  filament~$\gamma$.  By the nonabelian Stokes theorem this equals
+  $\lVert\mathrm{Hol}_{\nabla_A}(\gamma;\,\mathfrak{G})\rVert$.
 \end{definition}
 
 % ── Descent ──────────────────────────────────────────────────────

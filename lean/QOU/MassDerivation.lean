@@ -34,12 +34,15 @@ namespace QOU.MassDerivation
 
 /-! ## Section 1: The Topological Mass Conjecture -/
 
-/-- **Conjecture 4.25** (Topological Decomposition of Mass).
+/-- **Conjecture 4.34** (Topological Decomposition of Mass).
     We assume this conjecture as an axiom for the derivation.
 
     States that mass `m` of a particle identified with knot `K` is
     determined by: `m = Vol(K) / ℏ_q²`
-    where `ℏ_q = 1 - 1/q` is the quantum Planck constant. -/
+    where `ℏ_q = 1 - 1/q` is the quantum Planck constant.
+    The volume `Vol(K)` arises from evaluating the nonabelian
+    multiplicative integral (MI) over the exceptional divisors of the
+    knot's blow-up sequence; see `\label{conj:topological-mass}`. -/
 axiom topological_mass_conjecture :
   ∀ (m vol h_q : ℝ), h_q ≠ 0 → m = vol / h_q ^ 2
 

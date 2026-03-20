@@ -251,8 +251,10 @@ theorem euler_char_constant (tower : RecursiveBraneTower)
 
 /-! ## §7  Mass Identity -/
 
-/-- **Mass Identity**: the inertial mass of a stable vortex as a line integral.
-    `m ∝ ∮_γ ‖∇_A q‖ · ‖L ∧ F⁺‖`
+/-- **Mass Identity**: the inertial mass of a stable vortex via nonabelian
+    multiplicative integration (Yekutieli).
+    `m = ‖MI∫_Σ (∇_A q, L ∧ F⁺)‖ = ‖Hol_{∇_A}(γ; 𝔊)‖`
+    The surface integral reduces to holonomy by the nonabelian Stokes theorem.
 
     LaTeX: `\label{def:mass-identity}` -/
 structure MassIdentity (M : Type*) where
@@ -451,11 +453,13 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
       · linarith
 
 /-- **Conjecture (Topological Decomposition of Mass).**
-    The continuous geometric mass of a vortex admits the discrete
-    topological decomposition:
-    `m(γ) ∝ ∮_{γ₀} ‖∇_A q‖·‖L ∧ F⁺‖ + Σᵢ λᵢ |Φ_q(zᵢ)|`
+    The mass of a vortex decomposes into descended and transient contributions:
+    `m(γ) = ‖Hol_{∇_A}(γ₀; 𝔊)‖ + Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`
+    where the first term is the holonomy around the unknot core (descended
+    subalgebra) and each summand is the MI integral over the i-th exceptional
+    divisor (transient complement), yielding the quantum dilogarithm Φ_q(zᵢ).
 
-    LaTeX: Conjecture 4.1. -/
+    LaTeX: `\label{conj:topological-mass}` -/
 /-- Placeholder for the conjecture statement.  When formalised, the type
     should assert that the mass functional decomposes into a baseline
     integral plus a sum of quantum dilogarithm terms.  Left as an
