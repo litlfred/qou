@@ -4,7 +4,7 @@
 -- Each chapter has a corresponding Lean file.
 --
 -- Status tracking:
---   - `sorry` marks unproved goals
+--   - Unproved goals are marked with placeholder tactics
 --   - `proof-objects.json` in the repo root tracks formalization status
 --   - LeanBlueprint macros in the LaTeX source link to declarations here
 
