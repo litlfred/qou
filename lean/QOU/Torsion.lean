@@ -377,7 +377,20 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
   · have hq_ne : q ≠ 1 := h
     -- For q > 0, q ≠ 1, n ≥ 1: (q^n - 1)/(q - 1) > 0
     -- This is the sum 1 + q + q² + ... + q^{n-1} > 0
-    sorry
+    -- Case split: q > 1 (both num/denom positive) or 0 < q < 1 (both negative)
+    by_cases hq1 : 1 < q
+    · -- q > 1: q^n > 1 and q - 1 > 0
+      apply div_pos
+      · have : 1 ≤ q ^ n :=
+          one_le_pow_of_one_le₀ (le_of_lt hq1) n
+        linarith [Nat.one_le_pow n q (by linarith : 1 ≤ q)]
+      · linarith
+    · -- 0 < q < 1: q^n < 1 and q - 1 < 0
+      have hq_lt : q < 1 := lt_of_le_of_ne (le_of_not_gt hq1) hq_ne
+      apply div_pos_of_neg_of_neg
+      · have : q ^ n < 1 := pow_lt_one₀ hq.le hq_lt (Nat.pos_iff_ne_zero.mp hn)
+        linarith
+      · linarith
 
 /-- **Conjecture (Topological Decomposition of Mass).**
     The continuous geometric mass of a vortex admits the discrete

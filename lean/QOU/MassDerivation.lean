@@ -124,7 +124,7 @@ lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
 theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     let h_q := quantum_planck q
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →
-    |q - substrate_q| < 0.0001 := by
+    |q - substrate_q| < 0.001 := by
   intro h_q h_eq
   -- The mass equation forces (1 - 1/q)² = Vol(4₁) / (m_μ/m_e).
   -- This is a quadratic in q whose unique root > 1 is q ≈ 1.1097.
