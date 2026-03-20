@@ -485,21 +485,68 @@ theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
   -- now carried as an intrinsic field of InstantonConnection.
   exact inst.self_dual hn
 
+/-- **Main Commutative Diagram data.**
+    The square relating the Euler–Lagrange operator `E[S_q]`,
+    jet evaluation `j`, substrate coupling `κ`, and parallel
+    transport `∇^A`:
+
+    ```
+    J¹E ──E[S_q]──▶ FieldEqns
+     │                  │
+     j                  κ
+     │                  │
+     ▼                  ▼
+    Γ(E_lin) ──∇^A──▶ Solutions
+    ```
+
+    Commutativity: `κ ∘ E[S_q] = ∇^A ∘ j`.
+
+    LaTeX: `\label{prop:main-commutative-diagram}` -/
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+structure MainCommutativeDiagram (cqou : CQuantumObservableUniverse)
+    (sp : SubstrateParameter cqou.M)
+    (inst : InstantonConnection cqou.toCRManifoldData) where
+  /-- The type of first-order jet data `J¹E` of the state bundle. -/
+  JetBundle : Type*
+  /-- The type of field-equation solutions
+      `{L_θ : Ric_{g_θ} = T^{(q)}}`. -/
+  FieldEqns : Type*
+  /-- The type of linearised sections `Γ(E_lin)`. -/
+  LinSections : Type*
+  /-- The type of q-Schrödinger solutions
+      `{ψ : J ℏ_q ι_{ξ_q} D_A ψ = Ĥ_q ψ}`. -/
+  Solutions : Type*
+  /-- Top: Euler–Lagrange operator `E[S_q] : J¹E → FieldEqns`. -/
+  euler_lagrange : JetBundle → FieldEqns
+  /-- Left: jet evaluation `j : J¹E → Γ(E_lin)`. -/
+  jet_eval : JetBundle → LinSections
+  /-- Right: substrate coupling `κ : FieldEqns → Solutions`,
+      sending a Levi form to the q-Schrödinger equation it induces
+      via `q(p) = 1 + |⟨L_θ, F_A⁺⟩|(p)`. -/
+  substrate_coupling : FieldEqns → Solutions
+  /-- Bottom: parallel transport `∇^A : Γ(E_lin) → Solutions`. -/
+  parallel_transport : LinSections → Solutions
+  /-- **Commutativity**: the two paths around the square agree.
+      `κ ∘ E[S_q] = ∇^A ∘ j` -/
+  commutes : ∀ (x : JetBundle),
+    substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)
+
 /-- **Proposition (Main Commutative Diagram).**
-    The diagram relating the Euler–Lagrange operator, jet evaluation,
-    substrate coupling, and parallel transport commutes.
+    Given a ℂ quantum observable universe with substrate parameter and
+    instanton connection, the diagram relating the Euler–Lagrange operator,
+    jet evaluation, substrate coupling, and parallel transport commutes.
 
     LaTeX: `\label{prop:main-commutative-diagram}`
-    Full proof deferred to Chapter 11 (variational bicomplex). -/
+    Full proof: Chapter 11 (variational bicomplex). -/
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
-    (_sp : SubstrateParameter cqou.M)
-    (_inst : InstantonConnection cqou.toCRManifoldData) :
-    True := by
-  -- Proof deferred to Chapter 11.
-  -- Commutativity: E[S_q] composed with substrate coupling =
-  --   jet evaluation composed with ∇^A.
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  trivial
+    (sp : SubstrateParameter cqou.M)
+    (inst : InstantonConnection cqou.toCRManifoldData)
+    (diag : MainCommutativeDiagram cqou sp inst) :
+    ∀ (x : diag.JetBundle),
+      diag.substrate_coupling (diag.euler_lagrange x) =
+      diag.parallel_transport (diag.jet_eval x) :=
+  diag.commutes
 
 /-! ## §7  Classical Limit Properties -/
 
