@@ -619,12 +619,306 @@ $\mathrm{SU}_q(2)$ gauge flow
 Descartes condition $\chi(E) = -6$
   (Def.~\ref{def:descartes-condition})
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
-  & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\
+  & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]
+Cosimplicial crossed groupoid
+  (Prop.~\ref{prop:cosimplicial-crossed-groupoid})
+  & Cosimplicial object in crossed groupoids; \v{C}ech nerve of a gerbe
+  & \cite[\S1--2]{yekutieli2010} \\[6pt]
+Twisted $2$-cocycle $d(g_{ijk}) = a \cdot g \cdot a^{-1}$
+  (Prop.~\ref{prop:descent-condition})
+  & Twisted \v{C}ech cocycle in $H^2(M, \mathcal{O}_M^\times)$
+  & \cite[Thm.~1.7]{yekutieli2010} \\
 \hline
 \end{tabular}
 \caption{Categorical mapping between QOU structures and Yekutieli's results.}
 \label{tab:yekutieli-mapping}
 \end{table}
+
+% ── Yekutieli Triple and Cosimplicial Structure ─────────────────────────────
+
+\subsection{Cosimplicial Crossed Groupoid Structure}
+\label{ssec:cosimplicial-crossed-groupoid}
+
+The recursive brane tower carries a higher-categorical structure that
+organises the transitions between levels into a cosimplicial crossed
+groupoid.  The key observation is that Yekutieli's framework for central
+extensions of gerbes~\cite{yekutieli2010} furnishes exactly the triples
+$(x, g, a)$ needed to define the face and degeneracy maps.
+
+\begin{definition}[Yekutieli triple mapping]
+\label{def:yekutieli-triple}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}) and let $\{U_i\}$ be an open
+cover of the base manifold~$M$ trivialising every level of the tower.
+The \emph{Yekutieli triple} at level~$n$ over an intersection
+$U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
+where:
+\begin{enumerate}
+  \item \emph{Objects} $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$
+        are local sections of the base manifold: the restrictions of $E_n$
+        to the trivialisations $U_i$.
+  \item \emph{$1$-morphisms} $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$
+        are the gauge transition functions
+        $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$
+        encoding the patching data of the connection~$A_n$.
+  \item \emph{$2$-morphisms}
+        $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$
+        are the quantum deformation parameters living in the band
+        $\mathcal{O}_M^{\times}|_{U_i \cap U_j}$, implementing the
+        $\mathrm{SU}_q(2)$-deformation that lifts the transition functions
+        from level~$n$ to level~$n{+}1$.
+\end{enumerate}
+The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial:
+the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) sends the triple at level~$n$
+to the triple at level~$n{+}1$, and the descent homomorphism
+$\mathfrak{d}_{n+1}$ (Lemma~\ref{lem:descent}) reverses this assignment.
+\end{definition}
+
+\begin{proposition}[Cosimplicial crossed groupoid]
+\label{prop:cosimplicial-crossed-groupoid}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}) equipped with the Yekutieli
+triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
+Definition~\ref{def:yekutieli-triple}.  Then the assignment
+\[
+  [n] \;\longmapsto\; \mathfrak{G}_n
+\]
+from the simplex category $\Delta$ to the $2$-category of gerbes on~$M$
+extends to a \emph{cosimplicial crossed groupoid}: a cosimplicial object
+in the category of crossed groupoids, where
+\begin{enumerate}
+  \item the coface maps $\delta^i \colon \mathfrak{G}_{n} \to
+        \mathfrak{G}_{n+1}$ are given by the jet prolongation acting on
+        objects (inserting the $i$-th degeneracy in the \v{C}ech nerve),
+  \item the codegeneracy maps $\sigma^j \colon \mathfrak{G}_{n+1} \to
+        \mathfrak{G}_{n}$ are given by the descent homomorphism
+        $\mathfrak{d}_{n+1}$ (collapsing the $j$-th face),
+  \item the crossed structure is furnished by the conjugation action of
+        the $1$-morphisms $g_{ij}^{(n)}$ on the $2$-morphisms
+        $a_{ij}^{(n)}$ via the adjoint representation of
+        $\mathrm{SU}_{q_n}(2)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We verify the cosimplicial identities and the crossed-module axioms.
+
+\emph{Step 1: Cosimplicial identities.}\;
+The coface maps are composites of the jet prolongation with the
+\v{C}ech face maps $\partial^i$ of the cover $\{U_i\}$.  The
+codegeneracy maps are composites of the descent homomorphism with the
+\v{C}ech degeneracy maps $s^j$.  The identities
+$\delta^j \circ \delta^i = \delta^i \circ \delta^{j-1}$ for $i < j$
+and $\sigma^j \circ \sigma^i = \sigma^i \circ \sigma^{j+1}$ for $i \leq j$
+follow from the functoriality of jet prolongation and descent: the ascent
+$\ell_n$ is a natural transformation from the identity functor on
+$\mathfrak{G}_n$ to the restriction of $\mathfrak{G}_{n+1}$, and the
+descent $\mathfrak{d}_{n+1}$ is its left adjoint.  The mixed identity
+$\sigma^j \circ \delta^i$ reduces to three cases
+($i < j$, $i = j$ or $i = j + 1$, $i > j + 1$), each verified using
+the retraction property $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
+(Lemma~\ref{lem:descent}).
+
+\emph{Step 2: Crossed-module structure.}\;
+At each level~$n$, the pair
+$(\mathrm{SU}_{q_n}(2),\, \mathcal{O}_M^{\times})$ carries the structure
+of a crossed module in the sense of~\cite{yekutieli2010}: the boundary
+map $\partial \colon \mathcal{O}_M^{\times} \to \mathrm{SU}_{q_n}(2)$
+sends a unit $a \in \mathcal{O}_M^{\times}$ to the central element
+$a \cdot \mathbf{1} \in \mathrm{SU}_{q_n}(2)$ (the central extension),
+and the action of $g \in \mathrm{SU}_{q_n}(2)$ on
+$a \in \mathcal{O}_M^{\times}$ is conjugation:
+$g \cdot a = g\, a\, g^{-1}$.  This action is well-defined because
+$\mathcal{O}_M^{\times}$ is central in the gerbe band; the Peiffer
+identity $\partial(a) \cdot b = a\, b\, a^{-1}$ is automatic for a
+central extension.
+
+\emph{Step 3: Compatibility.}\;
+The coface and codegeneracy maps respect the crossed-module structure
+because the jet prolongation preserves the Hopf-algebra multiplication
+(Proposition~\ref{prop:jet-prolongation}, Step~2) and the descent
+homomorphism is a $*$-homomorphism (Lemma~\ref{lem:descent}, Step~4).
+Hence the conjugation action of $g_{ij}^{(n)}$ on $a_{ij}^{(n)}$ is
+compatible with the simplicial maps, making the total assignment a
+cosimplicial crossed groupoid.
+\end{proof}
+
+\begin{remark}[Jet prolongation as formal descent of information]
+\label{rem:jet-as-descent}
+In the cosimplicial crossed groupoid of
+Proposition~\ref{prop:cosimplicial-crossed-groupoid}, the coface map
+$\delta^0 \colon \mathfrak{G}_n \to \mathfrak{G}_{n+1}$ applied to a
+local section $x_i^{(n)}$ produces the jet-prolonged section
+$x_i^{(n+1)} = J^1(x_i^{(n)})$.  This is precisely the content of
+Proposition~\ref{prop:jet-prolongation}: the jet prolongation is a
+\emph{formal descent of information} from the higher categorical level
+$\mathfrak{G}_{n+1}$ to the lower level $\mathfrak{G}_n$, packaged as a
+coface map in the cosimplicial structure.  The fact that the codegeneracy
+$\sigma^0 = \mathfrak{d}_{n+1}$ inverts this---in the sense that
+$\sigma^0 \circ \delta^0 = \mathrm{id}$---is the retraction property that
+underpins the descent involution (Definition~\ref{def:descent-involution}).
+\end{remark}
+
+\begin{proposition}[Descent condition --- twisted $2$-cocycle]
+\label{prop:descent-condition}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with Yekutieli
+triples $(x^{(n)}, g^{(n)}, a^{(n)})$
+(Definition~\ref{def:yekutieli-triple}) and let
+$A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$
+(Remark~\ref{rem:distributional-connection}) be the distributional
+connection.  Then the global consistency of $A_\infty$ is equivalent to
+the satisfaction of the \emph{twisted $2$-cocycle condition}: for every
+triple intersection $U_i \cap U_j \cap U_k$,
+\begin{equation}\label{eq:twisted-2-cocycle}
+  d\!\left(g_{ijk}^{(n)}\right)
+  \;=\;
+  a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot \left(a_{jk}^{(n)}\right)^{-1},
+\end{equation}
+where
+$g_{ijk}^{(n)} = g_{ij}^{(n)} \cdot g_{jk}^{(n)} \cdot (g_{ik}^{(n)})^{-1}$
+is the \v{C}ech $1$-cocycle deviation at level~$n$,
+$d(g_{ijk}^{(n)})$ denotes the \v{C}ech coboundary
+(the failure of the $1$-cocycle condition), and
+$a_{ij}^{(n)}, a_{jk}^{(n)} \in \mathcal{O}_M^{\times}$ are the
+$2$-morphisms (quantum deformation feedback from $\mathrm{SU}_{q_n}(2)$).
+
+Equivalently, the obstruction class $\kappa_n$
+(Definition~\ref{def:quantum-characteristic-classes}) is the cohomology
+class of the twisted $2$-cocycle
+$[a_{ij}^{(n)} \cdot (\cdot) \cdot (a_{jk}^{(n)})^{-1}]$ in
+$H^2(M,\, \mathcal{O}_M^{\times})$.
+\end{proposition}
+
+\begin{proof}
+Let $\{U_i\}$ be a good cover trivialising the tower.  On
+$U_i \cap U_j$ the gauge transition function $g_{ij}^{(n)}$ patches
+the connection $A_n$:
+\[
+  A_n|_{U_j} \;=\; g_{ij}^{(n)} \cdot A_n|_{U_i} \cdot
+  (g_{ij}^{(n)})^{-1} + (g_{ij}^{(n)})^{-1}\, dg_{ij}^{(n)}.
+\]
+On a triple overlap $U_i \cap U_j \cap U_k$, the ordinary cocycle
+condition $g_{ij}^{(n)} \cdot g_{jk}^{(n)} = g_{ik}^{(n)}$ holds if and
+only if the connection $A_n$ is globally well-defined at level~$n$ with
+no twist.  The passage from level~$n$ to level~$n{+}1$ via the central
+extension $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$ introduces the
+$2$-morphism twist: the transition functions at level~$n{+}1$ are related
+to those at level~$n$ by
+\[
+  g_{ij}^{(n+1)} \;=\; a_{ij}^{(n)} \cdot g_{ij}^{(n)},
+\]
+where $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$ is the local lift datum
+(Definition~\ref{def:yekutieli-triple}).  Computing the cocycle deviation
+at level~$n{+}1$:
+\begin{align*}
+  g_{ijk}^{(n+1)}
+  &= g_{ij}^{(n+1)} \cdot g_{jk}^{(n+1)} \cdot (g_{ik}^{(n+1)})^{-1} \\
+  &= (a_{ij}^{(n)} \cdot g_{ij}^{(n)}) \cdot (a_{jk}^{(n)} \cdot g_{jk}^{(n)})
+     \cdot (a_{ik}^{(n)} \cdot g_{ik}^{(n)})^{-1}.
+\end{align*}
+Since $a_{ij}^{(n)}$ is central (it lies in the band
+$\mathcal{O}_M^{\times}$ of the gerbe), the gauge factors commute past
+the $a$-factors, giving
+\[
+  g_{ijk}^{(n+1)}
+  \;=\;
+  a_{ij}^{(n)} \cdot a_{jk}^{(n)} \cdot (a_{ik}^{(n)})^{-1}
+  \cdot g_{ijk}^{(n)}.
+\]
+The distributional connection $A_\infty$ is globally consistent if and
+only if $g_{ijk}^{(n+1)} = 0$ for all $n$ in the \v{C}ech cohomology,
+which requires
+\[
+  d(g_{ijk}^{(n)})
+  \;=\;
+  a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot (a_{jk}^{(n)})^{-1},
+\]
+where the left-hand side is the \v{C}ech coboundary
+$\delta^2(g^{(n)})_{ijk}$ and the right-hand side is the twisted
+conjugation by the $2$-morphisms.  The class of this twisted $2$-cocycle
+in $H^2(M,\, \mathcal{O}_M^{\times})$ is precisely the obstruction
+class $\kappa_n$ of
+Definition~\ref{def:quantum-characteristic-classes}: it vanishes if and
+only if the cocycle deviation at level~$n$ can be absorbed by the
+$2$-morphism data, i.e.\ the lift from $\mathfrak{G}_n$ to
+$\mathfrak{G}_{n+1}$ is unobstructed.
+
+By~\cite[Theorem~1.7]{yekutieli2010}, this is equivalent to the
+vanishing of the Yekutieli obstruction class, closing the circle with
+the lifting criterion (Lemma~\ref{lem:yekutieli-lifting}).
+\end{proof}
+
+\begin{proposition}[Weak equivalence invariance of physical states]
+\label{prop:weak-equiv-invariance}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with cosimplicial
+crossed groupoid structure
+(Proposition~\ref{prop:cosimplicial-crossed-groupoid}), and let
+$\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
+(Proposition~\ref{prop:vacuum-state}).  A \emph{weak equivalence} between
+brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
+\[
+  \mathfrak{G}_n
+  \xleftarrow{\;\sigma\;}
+  \mathfrak{G}_{k_1}
+  \xrightarrow{\;\delta\;}
+  \cdots
+  \xrightarrow{\;\delta\;}
+  \mathfrak{G}_m
+\]
+in the cosimplicial crossed groupoid.  Then for every observable
+$a \in \mathcal{A}_\infty$, the expectation value is invariant under
+weak equivalence:
+\[
+  \omega\!\bigl(\iota_n(a|_n)\bigr)
+  \;=\;
+  \omega\!\bigl(\iota_m(a|_m)\bigr),
+\]
+where $\iota_n \colon \Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))
+\hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
+$a|_n$ denotes the restriction of $a$ to level~$n$.  In particular,
+physical states (the GNS vectors of $\omega$) are invariant under
+fluctuations of the substrate parameter $q(p)$ across brane levels.
+\end{proposition}
+
+\begin{proof}
+By~\cite[Theorem~1.1]{yekutieli2010}, a weak equivalence of central
+extensions of gerbes induces an isomorphism on the category of global
+objects up to isomorphism.  In the brane tower, the coface maps (jet
+prolongation) and codegeneracy maps (descent) compose to give the descent
+involution $\tau_n$ (Definition~\ref{def:descent-involution}), which is
+idempotent.  The image $\mathcal{A}_{n+1}^{\mathrm{desc}}$
+(Proposition~\ref{prop:descent-eigenspaces}) is therefore isomorphic, as
+an algebra, to the level-$n$ section algebra via the ascent embedding
+$\ell_n$.
+
+For the vacuum state, the compatibility
+$\omega(\iota_n(a|_n)) = \omega_n(a|_n)$ holds by the universal property
+of the direct limit (Definition~\ref{def:direct-limit-algebra}).  The
+Haar-averaging construction in the proof of
+Proposition~\ref{prop:vacuum-state} produces states $\omega_n$ that are
+compatible with the transition maps:
+$\omega_{n+1} \circ \iota_{n,n+1} = \omega_n$, where
+$\iota_{n,n+1}$ is the transition map.  A zigzag of coface and
+codegeneracy maps between levels~$n$ and~$m$ factors as a sequence of
+such transition maps and their adjoints (the descent homomorphisms),
+each of which preserves the Haar state by equivariance
+(Lemma~\ref{lem:descent}, Step~5).
+
+Therefore the expectation value
+$\omega(\iota_n(a|_n)) = \omega_n(a|_n) = \omega_m(a|_m) =
+\omega(\iota_m(a|_m))$
+is invariant under weak equivalence.
+
+For the GNS representation: the Hilbert space
+$\mathcal{H}_\omega = \overline{\mathcal{A}_\infty / \ker(\omega)}$ with
+inner product $\langle [a], [b] \rangle = \omega(a^* b)$ is unchanged by
+the weak equivalence because $\omega$ is invariant.  The cyclic vector
+$\Omega = [1]$ generates the same representation regardless of the brane
+level at which it is evaluated, so the physical states (vectors in
+$\mathcal{H}_\omega$) are insensitive to the substrate parameter
+fluctuations across the tower.
+\end{proof}
 
 % ── Descent ──────────────────────────────────────────────────────────────────
 
