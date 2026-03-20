@@ -252,8 +252,9 @@ structure InstantonConnection (cr : CRManifoldData) where
       and the complex structure `J`. -/
   hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
   /-- Yang–Mills minimisation: the connection is a critical point of
-      `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
-  yang_mills_minimises : True := by trivial  -- placeholder for δ_A YM(A) = 0
+      `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
+      Formal statement requires variational calculus on CR manifolds. -/
+  yang_mills_minimises : axiomPlaceholder := sorry
 
 /-! ## §3  Substrate Parameter, Gauge Group, Planck Constant -/
 
@@ -333,8 +334,9 @@ def ReebDecomposition.isPurelyHorizontal {M : Type*}
 
     LaTeX: `\label{def:q-harmonic-form}` -/
 structure QHarmonicForm (M : Type*) extends ReebDecomposition M where
-  /-- The q-Laplacian applied to this form vanishes: `Δ_q α = 0`. -/
-  q_laplacian_vanishes : True := by trivial  -- placeholder for Δ_q α = 0
+  /-- The q-Laplacian applied to this form vanishes: `Δ_q α = 0`.
+      Formal statement requires a q-Laplacian operator definition. -/
+  q_laplacian_vanishes : axiomPlaceholder := sorry
 
 /-- **Fermion**: a q-harmonic form with non-trivial vertical component.
 
@@ -414,8 +416,9 @@ structure QTorsionLeaf (M : Type*) where
   /-- The leaf is non-empty. -/
   nonempty : leaf.Nonempty
   /-- Tangent inclusion: `T_p L ⊂ H_p` for all `p ∈ L`
-      (integrality of the horizontal distribution). -/
-  tangent_in_horizontal : True := by trivial  -- axiom placeholder
+      (integrality of the horizontal distribution).
+      Formal statement requires tangent bundle infrastructure. -/
+  tangent_in_horizontal : axiomPlaceholder := sorry
   /-- Flow invariance: `φ^q_t(L) = L` for all `t ∈ ℝ`. -/
   flow_invariant : ∀ (qrf : QReebFlow M) (t : ℝ),
     ∀ (p : M), p ∈ leaf → qrf.flow t p ∈ leaf
@@ -469,7 +472,7 @@ theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
 theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
     (_sp : SubstrateParameter cqou.M)
     (_inst : InstantonConnection cqou.toCRManifoldData) :
-    True := by
+    axiomPlaceholder := by
   -- Proof deferred to Chapter 11.
   -- Commutativity: E[S_q] composed with substrate coupling =
   --   jet evaluation composed with ∇^A.

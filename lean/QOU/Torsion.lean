@@ -58,10 +58,16 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The restriction is a left inverse of the ascent: `r ∘ ℓ = id_A`.
       This is the key identity used in the descent involution proof. -/
   retraction : ascent ≫ restriction = 𝟙 base.obj
-  /-- The ascent preserves multiplication (coalgebra morphism). -/
-  ascent_preserves_mul : True := by trivial  -- ℓ ≫ jet.mul = base.mul ≫ (ℓ ⊗ ℓ)
-  /-- The restriction preserves comultiplication. -/
-  restriction_preserves_comul : True := by trivial
+  /-- The ascent preserves multiplication: the diagram
+      `(ℓ ⊗ ℓ) ≫ μ_J = μ_A ≫ ℓ` commutes. -/
+  ascent_preserves_mul :
+    CategoryTheory.MonoidalCategory.tensorHom ascent ascent ≫ jet.mul =
+      base.mul ≫ ascent := by sorry
+  /-- The restriction preserves comultiplication: the diagram
+      `r ≫ Δ_A = Δ_J ≫ (r ⊗ r)` commutes. -/
+  restriction_preserves_comul :
+    restriction ≫ base.comul =
+      jet.comul ≫ CategoryTheory.MonoidalCategory.tensorHom restriction restriction := by sorry
 
 /-- **Proposition (Jet Prolongation).**
     Given a ℂ quantum observable universe `(M, G, P, E)` with instanton
@@ -87,8 +93,10 @@ structure JetProlongationQOU where
   prolongedInst : InstantonConnection prolonged.toCRManifoldData
   /-- The prolonged manifold has the same CR dimension. -/
   dim_preserved : prolonged.n = base.n
-  /-- The prolonged connection is uniquely determined by the base data. -/
-  connection_unique : True := by trivial  -- uniqueness from irreducibility
+  /-- The prolonged connection is uniquely determined by the base data
+      (irreducibility of the instanton connection).
+      Formal statement requires connection identity infrastructure. -/
+  connection_unique : axiomPlaceholder := sorry
 
 /-! ## §2  Recursive Brane Tower -/
 
@@ -127,8 +135,9 @@ structure QuantumCharacteristicClasses where
   /-- Abstract representative of the characteristic class at level `n`.
       In the full formalization this would be `H*(E_{n+1}, ℤ)`. -/
   classAt : ℕ → Type*
-  /-- The classes obstruct spectral sequence collapse. -/
-  obstructs_collapse : True := by trivial
+  /-- The classes obstruct spectral sequence collapse:
+      at least one quantum characteristic class is nonempty. -/
+  obstructs_collapse : ∃ n, Nonempty (classAt n) := by sorry
 
 /-! ## §4  Direct Limit Algebra -/
 
@@ -167,10 +176,13 @@ structure DirectLimitAlgebra where
 structure VacuumState (dla : DirectLimitAlgebra) where
   /-- The vacuum state functional `ω : 𝒜_∞ → ℝ`. -/
   state : dla.limitAlgebra → ℝ
-  /-- SU(2)-invariance (abstractly: the state is constant on orbits). -/
-  invariant : True := by trivial  -- ω(g · a) = ω(a) for all g ∈ SU(2)
-  /-- Uniqueness: any other invariant state equals this one. -/
-  unique : True := by trivial  -- follows from adjoint_vanishing
+  /-- SU(2)-invariance: `ω(g · a) = ω(a)` for all `g ∈ SU(2)`.
+      Formal statement requires a group action on `𝒜_∞`. -/
+  invariant : axiomPlaceholder := sorry
+  /-- Uniqueness: any other invariant state equals this one.
+      Follows from adjoint vanishing (multiplicity-one argument).
+      Formal statement requires invariance predicate. -/
+  unique : axiomPlaceholder := sorry
 
 /-- The vacuum state exists for any direct limit algebra built from
     a brane tower of quantum observable universes. -/
@@ -178,7 +190,7 @@ theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
     Nonempty (VacuumState dla) := by
   -- Existence by Haar averaging + universal property of direct limit.
   -- Uniqueness by adjoint vanishing (multiplicity-one argument).
-  exact ⟨⟨fun _ => 0, trivial, trivial⟩⟩
+  exact ⟨⟨fun _ => 0, sorry, sorry⟩⟩
 
 /-! ## §6  Euler Characteristic Stability -/
 
@@ -237,8 +249,9 @@ structure Descent where
   tower : RecursiveBraneTower
   /-- The descent homomorphism `𝔡_n` at each level (abstract type-level map). -/
   descentMap : (n : ℕ) → (n_pos : 0 < n) → Type*
-  /-- Descent preserves the quantum observable universe structure. -/
-  preserves_qou : True := by trivial
+  /-- Descent preserves the quantum observable universe structure.
+      Formal statement requires showing the restricted tuple is a ℂ QOU. -/
+  preserves_qou : axiomPlaceholder := sorry
 
 /-- **Lemma (Descent preserves the quantum observable universe).**
     The restriction of `A_n` and `E_n` to `M_{n-1}` yields a tuple that
@@ -255,8 +268,8 @@ theorem descent_preserves_qou (tower : RecursiveBraneTower) (n : ℕ)
     (hn : 0 < n) :
     -- The level (n-1) data is a QOU (already given by the tower structure).
     -- The descent map is a surjective *-homomorphism intertwining SU(2).
-    True := by
-  trivial
+    axiomPlaceholder := by
+  sorry
 
 /-- The descent map composed with ascent is the identity on level-n sections.
     This is the key identity `𝔡_{n+1} ∘ ℓ_n = id` used for the descent
@@ -338,10 +351,12 @@ theorem bosonic_modes_in_desc {M : Type*} (b : Boson M) :
 structure BraneBoundary (M : Type*) where
   /-- The boundary locus. -/
   boundary : Set M
-  /-- The boundary has codimension ≥ 2 (closed algebraic condition). -/
-  codim_ge_two : True := by trivial
-  /-- At each boundary point, the kernel is isomorphic to CP¹ ≅ S². -/
-  exceptional_divisor_CP1 : True := by trivial
+  /-- The boundary has codimension ≥ 2 (closed algebraic condition).
+      Formal statement requires codimension infrastructure. -/
+  codim_ge_two : axiomPlaceholder := sorry
+  /-- At each boundary point, the kernel is isomorphic to CP¹ ≅ S².
+      Formal statement requires projective space infrastructure. -/
+  exceptional_divisor_CP1 : axiomPlaceholder := sorry
 
 /-- **Proposition (Structure of the defining boundary).**
     (1) Codimension ≥ 2.
@@ -351,10 +366,12 @@ structure BraneBoundary (M : Type*) where
 
     LaTeX: `\label{prop:brane-boundary}` -/
 structure BraneBoundaryStructure (M : Type*) extends BraneBoundary M where
-  /-- The descent involution restricts to the boundary. -/
-  involution_restricts : True := by trivial
-  /-- At n = 1, the boundary separates spacetime from chiral modes. -/
-  chirality_interface : True := by trivial
+  /-- The descent involution restricts to the boundary.
+      Formal statement requires showing `τ(∂E_n) ⊆ ∂E_n`. -/
+  involution_restricts : axiomPlaceholder := sorry
+  /-- At n = 1, the boundary separates spacetime from chiral modes.
+      Formal statement requires chirality decomposition infrastructure. -/
+  chirality_interface : axiomPlaceholder := sorry
 
 /-! ## §11  Topological Mass Decomposition -/
 
@@ -404,12 +421,15 @@ theorem topological_mass_decomposition :
 
     LaTeX: `\label{rem:descent-reduction}` -/
 structure DimensionOneReduction (M : Type*) where
-  /-- The base manifold is 1-dimensional. -/
-  dim_one : True := by trivial  -- dim M = 1
-  /-- The connection reduces to U(1) holonomy. -/
-  holonomy_U1 : True := by trivial
-  /-- No bosonic modes survive. -/
-  no_bosonic_modes : True := by trivial
+  /-- The base manifold is 1-dimensional: `dim M = 1`.
+      Formal statement requires manifold dimension infrastructure. -/
+  dim_one : axiomPlaceholder := sorry
+  /-- The connection reduces to U(1) holonomy around S¹.
+      Formal statement requires holonomy infrastructure. -/
+  holonomy_U1 : axiomPlaceholder := sorry
+  /-- No bosonic modes survive in dimension 1.
+      Formal statement requires showing `Boson M` is empty or trivial. -/
+  no_bosonic_modes : axiomPlaceholder := sorry
 
 /-- **Remark (Reduction at dimension 0).**
     When `dim M_k = 0`, the base is a discrete set of points and all
@@ -417,12 +437,14 @@ structure DimensionOneReduction (M : Type*) where
 
     LaTeX: `\label{rem:descent-reduction-zero}` -/
 structure DimensionZeroReduction (M : Type*) where
-  /-- The base is a discrete set. -/
-  discrete_base : True := by trivial  -- dim M = 0
+  /-- The base is a discrete set: `dim M = 0`.
+      Formal statement requires manifold dimension infrastructure. -/
+  discrete_base : axiomPlaceholder := sorry
   /-- The substrate parameter at each point, reusing the upstream definition. -/
   sp : SubstrateParameter M
-  /-- Curvature vanishes identically. -/
-  curvature_vanishes : True := by trivial
+  /-- Curvature vanishes identically on a discrete base.
+      Formal statement requires curvature-on-discrete infrastructure. -/
+  curvature_vanishes : axiomPlaceholder := sorry
 
 /-! ## §13  Classical Limit Properties (Chapter 4 specific) -/
 

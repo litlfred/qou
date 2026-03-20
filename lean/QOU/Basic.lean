@@ -31,3 +31,14 @@ inductive FormalizationStatus where
   | hasSorry
   | proved
   | mathlibOk
+
+/-- Opaque proposition standing in for a statement whose formal type
+    requires Lean/Mathlib infrastructure not yet available.
+
+    Every declaration that transitively depends on `axiomPlaceholder`
+    will appear in `sorry` / axiom audits — unlike the previous
+    `True := by trivial` pattern, which silently hid incomplete work.
+
+    **Usage**: replace each occurrence with the genuine mathematical
+    statement when the required infrastructure becomes available. -/
+def axiomPlaceholder : Prop := sorry
