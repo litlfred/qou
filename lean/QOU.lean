@@ -14,6 +14,7 @@ import QOU.KnotTheory
 import QOU.KnotRegistry
 import QOU.MassDerivation
 import QOU.Calculations
+import QOU.HadronicMass
 import QOU.QuantumObservableUniverse
 import QOU.Elaboration
 import QOU.PathIntegrals
