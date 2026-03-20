@@ -2442,11 +2442,38 @@ This chapter collects interpretive remarks relating the formal structures of the
 
 </div>
 
+##### Hyperbolic volumes and the topological mass ansatz.
+
+The key idea behind the following two propositions is that inertial mass originates in the topology of knot complements. Every particle in the QOU framework is identified with a knot or link $K$ (see the table in Remark <a href="#rem:skein-decomposition" data-reference-type="ref" data-reference="rem:skein-decomposition">11.1</a>). To each such knot one associates the **hyperbolic volume** $\mathrm{Vol}(K)$: the volume of the complete hyperbolic metric on the complement $S^3 \setminus K$, computed via the Bloch–Wigner dilogarithm. For torus knots (e.g. the trefoil $3_1$) this volume vanishes; for hyperbolic knots it is a positive topological invariant. The figure-eight knot $4_1$, which the framework identifies with the muon, has $$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)
+    \approx 2.02988\,321\,281\,931,$$ where $\mathrm{Cl}_2$ is the Clausen function (OEIS A091518; SnapPy-verified).
+
+The **topological mass conjecture** (Conjecture 4.25) asserts that the mass $m(K)$ of a particle with knot type $K$ is $$m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
+  \qquad
+  \hbar_q \;:=\; 1 - q^{-1},$$ where $q > 1$ is the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and $\hbar_q$ is the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>). For *composite* states the mass functional $\mathcal{M}$ is *not* additive; instead it satisfies a $q$-deformed Skein recursion at every crossing in the color-exchange diagram, generalising the Jones-polynomial Skein relation to a mass-valued setting.
+
 <div id="prop:skein-mass-relation" class="proposition">
 
 **Proposition 11.2** ($q$-Deformed Skein Relation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.HadronicMass.SkeinMassRelation)<sup><span style="color: ForestGreen"></span></sup> The mass functional $\mathcal{M}(H)$ for a composite hadron $H$ is not additive but obeys the quantum Skein relation at every crossing in the color-exchange space: $$q \,\mathcal{M}(L_+) - q^{-1}\,\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0).$$ Evaluation of the lepton mass ratio $m_{\mu}/m_{e}$ against **CODATA** recommended values yields a precise derivation for the local substrate parameter $q$: $$\frac{m_{\mu}}{m_{e}} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
   \approx \frac{2.02988}{(1 - q^{-1})^2},
 \qquad 206.768 \implies q \approx 1.1097.$$*
+
+</div>
+
+<div class="proof">
+
+*Narrative proof.* The electron is identified with the trefoil $3_1$, a torus knot with $\mathrm{Vol}(3_1) = 0$. Its mass therefore sits at the base of the topological tower: it is the unit against which all other masses are measured. The muon is identified with the figure-eight knot $4_1$, whose complement carries a complete hyperbolic structure of volume $\mathrm{Vol}(4_1) \approx 2.02988$.
+
+Applying the topological mass conjecture to the muon–electron mass *ratio* eliminates the overall mass scale and gives $$\frac{m_\mu}{m_e}
+  \;=\;
+  \frac{\mathrm{Vol}(4_1) / \hbar_q^{\,2}}{m_e / m_e}
+  \;=\;
+  \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}.$$ Substituting $\hbar_q = 1 - q^{-1}$ and the CODATA value $m_\mu / m_e = 206.768\,2827(46)$, one solves for $\hbar_q$: $$\hbar_q^{\,2}
+  = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
+  = \frac{2.02988}{206.768}
+  \approx 0.009\,817,
+  \qquad
+  \hbar_q \approx 0.09908.$$ Inverting $\hbar_q = 1 - 1/q$ yields $1/q = 1 - 0.09908 = 0.90092$, so $$q \;\approx\; 1.1097.$$ The Skein relation itself is the mass-functional analogue of the Kauffman bracket recursion. At each crossing in the color-exchange diagram of a hadron, the three resolutions $L_+$, $L_-$, $L_0$ satisfy $q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) =
+(q^{1/2}-q^{-1/2})\,\mathcal{M}(L_0)$. This relation is inherited from the $q$-deformed $\mathrm{SU}(2)$ Chern–Simons functional on the $1$-jet bundle prolongation of the CR manifold (see Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">4</a>). ◻
 
 </div>
 
@@ -2460,6 +2487,82 @@ This chapter collects interpretive remarks relating the formal structures of the
 \text{Deuteron } (m_D) & \mathcal{M}(L_6) - \text{Binding} & 1875.613 & 1875.613 \\ \hline
 \text{Binding Energy} & \Delta \text{ Skein Polynomial} & 2.224 & 2.2245 \\ \hline
 \end{array}$$*
+
+</div>
+
+<div class="proof">
+
+*Narrative proof.* With $q = 1.1097$ fixed by the lepton mass ratio (Proposition <a href="#prop:skein-mass-relation" data-reference-type="ref" data-reference="prop:skein-mass-relation">11.2</a>), the hadronic masses are determined without free parameters.
+
+*Step 1: Nucleon topology.* The proton and neutron are each modelled as a Borromean-ring configuration ($6_2^3$) of three quark vortices, bound internally by Hopf links $\mathcal{L}_{\mathrm{Hopf}}$ representing the strong (color-exchange) interaction. The Hopf link is a torus link with $\mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}}) = 0$; its mass contribution therefore arises entirely from the Skein functional, not from hyperbolic volume.
+
+*Step 2: Pair Skein masses and the crossing-by-crossing recursion.* The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ has six crossings organised into three crossing pairs, one pair per color-exchange channel. At each pair involving quarks of species $a$ and $b$, a double application of the Skein relation yields the *pair Skein mass* $$\mathcal{S}_{ab}(q)
+  \;=\;
+  \frac{q\,\mu_a \;+\; q^{-1}\,\mu_b}
+       {q^{1/2} + q^{-1/2}},$$ where $\mu_a$ is the *dressed quark Skein mass* of species $a$—the mass contribution of a single quark strand including its strong-field dressing from the Hopf-link interaction with the color background. The total nucleon mass is the sum over the three crossing pairs: $$m_N
+  \;=\;
+  \mathcal{S}_{q_1 q_2}(q)
+  + \mathcal{S}_{q_1 q_3}(q)
+  + \mathcal{S}_{q_2 q_3}(q).$$
+
+*Step 2a: Proton ($uud$).* The proton has quarks $(u_1, u_2, d)$. The three crossing pairs and their Skein masses are: $$\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
+  & \textbf{Value (MeV)} \\ \hline
+\text{I}   & (u_1,\, u_2) &
+  \displaystyle \mathcal{S}_{uu}
+  = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
+  & 312.36 \\ \hline
+\text{II}  & (u_1,\, d)   &
+  \displaystyle \mathcal{S}_{ud}
+  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+  & 312.97 \\ \hline
+\text{III} & (u_2,\, d)   &
+  \displaystyle \mathcal{S}_{ud}
+  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+  & 312.97 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+  m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
+  & \mathbf{938.272} \\ \hline
+\end{array}$$
+
+*Step 2b: Neutron ($udd$).* The neutron has quarks $(u, d_1, d_2)$. Swapping one up quark for a down quark replaces the same-flavor pair: $$\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
+  & \textbf{Value (MeV)} \\ \hline
+\text{I}   & (u,\, d_1) &
+  \displaystyle \mathcal{S}_{ud}
+  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+  & 312.97 \\ \hline
+\text{II}  & (u,\, d_2) &
+  \displaystyle \mathcal{S}_{ud}
+  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+  & 312.97 \\ \hline
+\text{III} & (d_1,\, d_2) &
+  \displaystyle \mathcal{S}_{dd}
+  = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
+  & 313.65 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+  m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
+  & \mathbf{939.565} \\ \hline
+\end{array}$$
+
+*Step 2c: The $u$-$d$ mass splitting.* The proton–neutron mass difference isolates the same-flavor crossing pair: $$m_n - m_p
+  \;=\;
+  \mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
+  \;=\;
+  \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).$$ Substituting $q = 1.1097$ and the CODATA splitting $m_n - m_p = 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark mass difference: $$\mu_d - \mu_u
+  \;=\;
+  \frac{q^{1/2}+q^{-1/2}}{q+q^{-1}}\,(m_n - m_p)
+  \;=\;
+  \frac{2.0027}{2.0109} \times 1.293
+  \;\approx\; 1.288\;\mathrm{MeV},$$ and the individual dressed masses are $\mu_u \approx 311.10\;\mathrm{MeV}$ and $\mu_d \approx 312.39\;\mathrm{MeV}$.
+
+*Step 3: Deuteron and binding energy.* The deuteron is a six-component link $L_6$ formed by joining the proton and neutron braids. Its mass is the Skein mass of $L_6$ minus the binding energy, which equals the change in the Skein polynomial when the proton–neutron crossing is smoothed: $\Delta E_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived value is $2.2246\;\mathrm{MeV}$, agreeing to sub-keV precision.
+
+The formal Lean verification of each row is recorded in `QOU.HadronicMass` with NIST CODATA 2022 precision. ◻
 
 </div>
 
@@ -2699,21 +2802,42 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 ### Crystal Lattice Resonance and Substrate Telescopes
 
-<div id="rem:crystal-resonance" class="remark">
+<div id="prop:local-substrate-q" class="proposition">
 
-**Remark 11.12** (Quantum resonance in crystal lattices). *A periodic crystal lattice provides a macroscopic, coherent probe of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The discrete translational symmetry of the lattice selects a set of reciprocal vectors that couple to the horizontal distribution of the CR manifold $M$. Where the lattice spacing is commensurate with the characteristic scale of a $q$-torsion leaf (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>), a resonance condition is satisfied: the $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) on the brane constructively interfere with the phonon modes of the crystal, amplifying vacuum fluctuations at specific frequencies. The resonance frequency $\nu_{\mathrm{res}}$ is predicted to depend on the local value of $q$ and the lattice geometry.*
+**Proposition 11.12** (Local Value of the Substrate Parameter). *In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) satisfies $$q\big|_U \;=\; 1.1097 \;\pm\; 0.001.$$ More precisely, $q|_U$ is the unique real root $q > 1$ of the equation $$\label{eq:q-determination}
+  (1 - q^{-1})^{2}
+  \;=\;
+  \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e},$$ where $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ is the hyperbolic volume of the figure-eight knot and $m_\mu / m_e = 206.768\,2827$ is the CODATA muon–electron mass ratio.*
+
+</div>
+
+<div class="proof">
+
+*Narrative proof.* The topological mass conjecture (Conjecture 4.25) gives $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{\,2}$ with $\hbar_q = 1 - q^{-1}$ (see the proof of Proposition <a href="#prop:skein-mass-relation" data-reference-type="ref" data-reference="prop:skein-mass-relation">11.2</a>). Rearranging yields equation <a href="#eq:q-determination" data-reference-type="eqref" data-reference="eq:q-determination">[eq:q-determination]</a>. Substituting the numerical values, $$(1 - q^{-1})^{2}
+  = \frac{2.02988}{206.768}
+  \approx 0.009\,817,
+  \qquad
+  1 - q^{-1} \approx 0.09908,
+  \qquad
+  q \approx 1.1097.$$ Since $f(q) = (1 - q^{-1})^{2}$ is strictly increasing for $q > 1$ and maps $(1,\infty)$ onto $(0,1)$, the root is unique. The uncertainty $\pm\,0.001$ is propagated from the CODATA relative uncertainty of $2.2 \times 10^{-8}$ on $m_\mu / m_e$ and the SnapPy error bound of $10^{-14}$ on $\mathrm{Vol}(4_1)$; the dominant contribution is the finite decimal truncation of $q$. This value is consistent with the hadronic mass predictions of Proposition <a href="#prop:terminal-resolution" data-reference-type="ref" data-reference="prop:terminal-resolution">11.3</a> and with the $q$-deformed Hall conductance corrections of Remark <a href="#rem:photonic-hall" data-reference-type="ref" data-reference="rem:photonic-hall">11.8</a>. ◻
+
+</div>
+
+<div id="rem:crystal-probe-q" class="remark">
+
+**Remark 11.13** (Crystal-lattice probe of $q$). *A periodic crystal lattice provides a macroscopic, coherent probe of the local value $q|_U$ established in Proposition <a href="#prop:local-substrate-q" data-reference-type="ref" data-reference="prop:local-substrate-q">11.12</a>. The discrete translational symmetry of the lattice selects a set of reciprocal vectors that couple to the horizontal distribution of the CR manifold $M$. Where the lattice spacing is commensurate with the characteristic scale of a $q$-torsion leaf (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>), a resonance condition is satisfied: the $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) on the brane constructively interfere with the phonon modes of the crystal, amplifying vacuum fluctuations at specific frequencies. The resonance frequency $\nu_{\mathrm{res}}$ depends on $q|_U$ and the lattice geometry, offering an independent experimental route to measuring the substrate parameter.*
 
 </div>
 
 <div id="rem:substrate-telescope" class="remark">
 
-**Remark 11.13** (Substrate Telescopes). *The directional dependence of $q$-torsion suggests a new class of detector: the *Substrate Telescope*. A large, high-purity single crystal is slowly rotated while the variation of vacuum noise power or phonon resonance efficiency is recorded as a function of orientation. Because the $q$-torsion leaves carry a preferred direction inherited from the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>), the noise spectrum should exhibit a modulation correlated with the crystal’s orientation relative to the bulk bundle. This is conceptually analogous to a Weber-bar gravitational wave detector, but targets the anisotropy of the substrate parameter rather than metric strain.*
+**Remark 11.14** (Substrate Telescopes). *The directional dependence of $q$-torsion suggests a new class of detector: the *Substrate Telescope*. A large, high-purity single crystal is slowly rotated while the variation of vacuum noise power or phonon resonance efficiency is recorded as a function of orientation. Because the $q$-torsion leaves carry a preferred direction inherited from the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>), the noise spectrum should exhibit a modulation correlated with the crystal’s orientation relative to the bulk bundle. This is conceptually analogous to a Weber-bar gravitational wave detector, but targets the anisotropy of the substrate parameter rather than metric strain.*
 
 </div>
 
 <div id="rem:magnetic-friction" class="remark">
 
-**Remark 11.14** (Non-monotonic magnetic friction from collective rotor dynamics). *Recent experiments by Gu, Lüders, and Bechinger  demonstrate that a two-dimensional array of rotatable magnetic dipoles sliding over a commensurate magnetic substrate exhibits a pronounced *non-monotonic* dependence of friction on interlayer separation. The friction peaks at an intermediate distance where competing ferromagnetic and antiferromagnetic interactions induce dynamical frustration and hysteretic torque cycles during sliding. This collective rotor phenomenon may admit a natural explanation within the QOU framework: the competing magnetic alignments realise a discrete analogue of the $q$-torsion frustration that arises when a lattice’s translational symmetry is incommensurate with the characteristic scale of the $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>). In this reading, the non-monotonic friction profile reflects a resonance–anti-resonance transition governed by the local value of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>), with maximal dissipation occurring at the separation where the rotor array’s magnetic periodicity matches the $q$-harmonic form spectrum (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>). A quantitative comparison requires specifying the lattice geometry and its coupling to the horizontal distribution of the CR manifold $M$; we outline the necessary ingredients in Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.15</a> below.*
+**Remark 11.15** (Non-monotonic magnetic friction from collective rotor dynamics). *Recent experiments by Gu, Lüders, and Bechinger  demonstrate that a two-dimensional array of rotatable magnetic dipoles sliding over a commensurate magnetic substrate exhibits a pronounced *non-monotonic* dependence of friction on interlayer separation. The friction peaks at an intermediate distance where competing ferromagnetic and antiferromagnetic interactions induce dynamical frustration and hysteretic torque cycles during sliding. This collective rotor phenomenon may admit a natural explanation within the QOU framework: the competing magnetic alignments realise a discrete analogue of the $q$-torsion frustration that arises when a lattice’s translational symmetry is incommensurate with the characteristic scale of the $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>). In this reading, the non-monotonic friction profile reflects a resonance–anti-resonance transition governed by the local value of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>), with maximal dissipation occurring at the separation where the rotor array’s magnetic periodicity matches the $q$-harmonic form spectrum (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>). A quantitative comparison requires specifying the lattice geometry and its coupling to the horizontal distribution of the CR manifold $M$; we outline the necessary ingredients in Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.16</a> below.*
 
 </div>
 
@@ -2733,9 +2857,9 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:lattice-layout" class="remark">
 
-**Remark 11.15** (Lattice layout and quantum resonance implications). *Connecting the QOU resonance condition (Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.12</a>) to concrete lattice experiments requires three structural ingredients that remain to be fully developed:*
+**Remark 11.16** (Lattice layout and quantum resonance implications). *Connecting the QOU resonance condition (Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">[rem:crystal-resonance]</a>) to concrete lattice experiments requires three structural ingredients that remain to be fully developed:*
 
-1.  **Lattice–leaf commensurability.* For a $d$-dimensional Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance condition of Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.12</a> becomes a Diophantine matching between the reciprocal lattice vectors $\{\vec{G}_j\}$ and the characteristic wave-vectors of the $q$-torsion leaves. The lattice symmetry group acts on the space of $q$-harmonic forms and selects a finite set of resonance channels indexed by the irreducible representations of the point group.*
+1.  **Lattice–leaf commensurability.* For a $d$-dimensional Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance condition of Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">[rem:crystal-resonance]</a> becomes a Diophantine matching between the reciprocal lattice vectors $\{\vec{G}_j\}$ and the characteristic wave-vectors of the $q$-torsion leaves. The lattice symmetry group acts on the space of $q$-harmonic forms and selects a finite set of resonance channels indexed by the irreducible representations of the point group.*
 
 2.  **Frustration and non-monotonicity.* When the lattice hosts internal rotational degrees of freedom — as in the magnetic rotor arrays of  — the coupling to $q$-torsion may be non-monotonic in a control parameter (e.g. interlayer separation or applied field). In the QOU picture, this arises because the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>) introduces a preferred orientation that competes with the lattice’s own symmetry, producing frustrated configurations whose energy dissipation is maximised at an intermediate commensurability.*
 

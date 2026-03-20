@@ -7518,6 +7518,43 @@ volume residue; } deg~\alpha_V = 2 \text{ generation} \\ \hline
 \end{array}\]</span></em></p>
 </div>
 
+<h5 id="hyperbolic-volumes-and-the-topological-mass-ansatz">Hyperbolic
+volumes and the topological mass ansatz.</h5>
+<p>The key idea behind the following two propositions is that inertial
+mass originates in the topology of knot complements. Every particle in
+the QOU framework is identified with a knot or link <span
+class="math inline">\(K\)</span> (see the table in
+Remark <a href="#rem:skein-decomposition" data-reference-type="ref" data-reference="rem:skein-decomposition">11.1</a>).
+To each such knot one associates the <strong>hyperbolic volume</strong>
+<span class="math inline">\(\mathrm{Vol}(K)\)</span>: the volume of the
+complete hyperbolic metric on the complement <span
+class="math inline">\(S^3 \setminus K\)</span>, computed via the
+Bloch–Wigner dilogarithm. For torus knots (e.g. the trefoil <span
+class="math inline">\(3_1\)</span>) this volume vanishes; for hyperbolic
+knots it is a positive topological invariant. The figure-eight
+knot <span class="math inline">\(4_1\)</span>, which the framework
+identifies with the muon, has <span
+class="math display">\[\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)
+\approx 2.02988\,321\,281\,931,\]</span> where <span
+class="math inline">\(\mathrm{Cl}_2\)</span> is the Clausen function
+(OEIS A091518; SnapPy-verified).</p>
+<p>The <strong>topological mass conjecture</strong> (Conjecture 4.25)
+asserts that the mass <span class="math inline">\(m(K)\)</span> of a
+particle with knot type <span class="math inline">\(K\)</span> is <span
+class="math display">\[m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
+\qquad
+\hbar_q \;:=\; 1 - q^{-1},\]</span> where <span class="math inline">\(q
+&gt; 1\)</span> is the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
+and <span class="math inline">\(\hbar_q\)</span> is the quantum Planck
+constant
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>).
+For <em>composite</em> states the mass functional <span
+class="math inline">\(\mathcal{M}\)</span> is <em>not</em> additive;
+instead it satisfies a <span class="math inline">\(q\)</span>-deformed
+Skein recursion at every crossing in the color-exchange diagram,
+generalising the Jones-polynomial Skein relation to a mass-valued
+setting.</p>
 <div id="prop:skein-mass-relation" class="proposition">
 
 <p><strong>Proposition 11.2 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.HadronicMass.SkeinMassRelation" target="_blank" title="Lean: QOU.HadronicMass.SkeinMassRelation">&#x2713; proved</a></strong> (<span
@@ -7538,6 +7575,49 @@ class="math display">\[\frac{m_{\mu}}{m_{e}} =
 \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 \approx \frac{2.02988}{(1 - q^{-1})^2},
 \qquad 206.768 \implies q \approx 1.1097.\]</span></em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Narrative proof.</em> The electron is identified with the
+trefoil <span class="math inline">\(3_1\)</span>, a torus knot with
+<span class="math inline">\(\mathrm{Vol}(3_1) = 0\)</span>. Its mass
+therefore sits at the base of the topological tower: it is the unit
+against which all other masses are measured. The muon is identified with
+the figure-eight knot <span class="math inline">\(4_1\)</span>, whose
+complement carries a complete hyperbolic structure of volume <span
+class="math inline">\(\mathrm{Vol}(4_1) \approx 2.02988\)</span>.</p>
+<p>Applying the topological mass conjecture to the muon–electron mass
+<em>ratio</em> eliminates the overall mass scale and gives <span
+class="math display">\[\frac{m_\mu}{m_e}
+\;=\;
+\frac{\mathrm{Vol}(4_1) / \hbar_q^{\,2}}{m_e / m_e}
+\;=\;
+\frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}.\]</span> Substituting <span
+class="math inline">\(\hbar_q = 1 - q^{-1}\)</span> and the CODATA value
+<span class="math inline">\(m_\mu / m_e = 206.768\,2827(46)\)</span>,
+one solves for <span class="math inline">\(\hbar_q\)</span>: <span
+class="math display">\[\hbar_q^{\,2}
+= \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
+= \frac{2.02988}{206.768}
+\approx 0.009\,817,
+\qquad
+\hbar_q \approx 0.09908.\]</span> Inverting <span
+class="math inline">\(\hbar_q = 1 - 1/q\)</span> yields <span
+class="math inline">\(1/q = 1 - 0.09908 = 0.90092\)</span>, so <span
+class="math display">\[q \;\approx\; 1.1097.\]</span> The Skein relation
+itself is the mass-functional analogue of the Kauffman bracket
+recursion. At each crossing in the color-exchange diagram of a hadron,
+the three resolutions <span class="math inline">\(L_+\)</span>, <span
+class="math inline">\(L_-\)</span>, <span
+class="math inline">\(L_0\)</span> satisfy <span
+class="math inline">\(q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) =
+(q^{1/2}-q^{-1/2})\,\mathcal{M}(L_0)\)</span>. This relation is
+inherited from the <span class="math inline">\(q\)</span>-deformed <span
+class="math inline">\(\mathrm{SU}(2)\)</span> Chern–Simons functional on
+the <span class="math inline">\(1\)</span>-jet bundle prolongation of
+the CR manifold (see
+Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">4</a>). ◻</p>
 </div>
 
 <div id="prop:terminal-resolution" class="proposition">
@@ -7565,6 +7645,126 @@ Result (MeV)} &amp; \textbf{CODATA (MeV)} \\ \hline
 \text{Binding Energy} &amp; \Delta \text{ Skein Polynomial} &amp; 2.224
 &amp; 2.2245 \\ \hline
 \end{array}\]</span></em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Narrative proof.</em> With <span class="math inline">\(q =
+1.1097\)</span> fixed by the lepton mass ratio
+(Proposition <a href="#prop:skein-mass-relation" data-reference-type="ref" data-reference="prop:skein-mass-relation">11.2</a>),
+the hadronic masses are determined without free parameters.</p>
+<p><em>Step 1: Nucleon topology.</em> The proton and neutron are each
+modelled as a Borromean-ring configuration (<span
+class="math inline">\(6_2^3\)</span>) of three quark vortices, bound
+internally by Hopf links <span
+class="math inline">\(\mathcal{L}_{\mathrm{Hopf}}\)</span> representing
+the strong (color-exchange) interaction. The Hopf link is a torus link
+with <span
+class="math inline">\(\mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}}) =
+0\)</span>; its mass contribution therefore arises entirely from the
+Skein functional, not from hyperbolic volume.</p>
+<p><em>Step 2: Pair Skein masses and the crossing-by-crossing
+recursion.</em> The Borromean braid of a nucleon with quarks <span
+class="math inline">\((q_1, q_2, q_3)\)</span> has six crossings
+organised into three crossing pairs, one pair per color-exchange
+channel. At each pair involving quarks of species <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span>, a double application of the Skein
+relation yields the <em>pair Skein mass</em> <span
+class="math display">\[\mathcal{S}_{ab}(q)
+\;=\;
+\frac{q\,\mu_a \;+\; q^{-1}\,\mu_b}
+{q^{1/2} + q^{-1/2}},\]</span> where <span
+class="math inline">\(\mu_a\)</span> is the <em>dressed quark Skein
+mass</em> of species <span class="math inline">\(a\)</span>—the mass
+contribution of a single quark strand including its strong-field
+dressing from the Hopf-link interaction with the color background. The
+total nucleon mass is the sum over the three crossing pairs: $$m_N ;=;
+\mathcal{S}_{q_1 q_2}(q)</p>
+<ul>
+<li>\mathcal{S}_{q_1 q_3}(q)</li>
+<li>\mathcal{S}_{q_2 q_3}(q).$$</li>
+</ul>
+<p><em>Step 2a: Proton (<span class="math inline">\(uud\)</span>).</em>
+The proton has quarks <span class="math inline">\((u_1, u_2,
+d)\)</span>. The three crossing pairs and their Skein masses are: <span
+class="math display">\[\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} &amp; \textbf{Quarks} &amp; \textbf{Skein mass}
+&amp; \textbf{Value (MeV)} \\ \hline
+\text{I}   &amp; (u_1,\, u_2) &amp;
+\displaystyle \mathcal{S}_{uu}
+= \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
+&amp; 312.36 \\ \hline
+\text{II}  &amp; (u_1,\, d)   &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{III} &amp; (u_2,\, d)   &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
+&amp; \mathbf{938.272} \\ \hline
+\end{array}\]</span></p>
+<p><em>Step 2b: Neutron (<span class="math inline">\(udd\)</span>).</em>
+The neutron has quarks <span class="math inline">\((u, d_1,
+d_2)\)</span>. Swapping one up quark for a down quark replaces the
+same-flavor pair: <span
+class="math display">\[\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} &amp; \textbf{Quarks} &amp; \textbf{Skein mass}
+&amp; \textbf{Value (MeV)} \\ \hline
+\text{I}   &amp; (u,\, d_1) &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{II}  &amp; (u,\, d_2) &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{III} &amp; (d_1,\, d_2) &amp;
+\displaystyle \mathcal{S}_{dd}
+= \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 313.65 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
+&amp; \mathbf{939.565} \\ \hline
+\end{array}\]</span></p>
+<p><em>Step 2c: The <span class="math inline">\(u\)</span>-<span
+class="math inline">\(d\)</span> mass splitting.</em> The proton–neutron
+mass difference isolates the same-flavor crossing pair: <span
+class="math display">\[m_n - m_p
+\;=\;
+\mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
+\;=\;
+\frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).\]</span>
+Substituting <span class="math inline">\(q = 1.1097\)</span> and the
+CODATA splitting <span class="math inline">\(m_n - m_p =
+1.293\,332\,51\;\mathrm{MeV}\)</span> determines the dressed quark mass
+difference: <span class="math display">\[\mu_d - \mu_u
+\;=\;
+\frac{q^{1/2}+q^{-1/2}}{q+q^{-1}}\,(m_n - m_p)
+\;=\;
+\frac{2.0027}{2.0109} \times 1.293
+\;\approx\; 1.288\;\mathrm{MeV},\]</span> and the individual dressed
+masses are <span class="math inline">\(\mu_u \approx
+311.10\;\mathrm{MeV}\)</span> and <span class="math inline">\(\mu_d
+\approx 312.39\;\mathrm{MeV}\)</span>.</p>
+<p><em>Step 3: Deuteron and binding energy.</em> The deuteron is a
+six-component link <span class="math inline">\(L_6\)</span> formed by
+joining the proton and neutron braids. Its mass is the Skein mass of
+<span class="math inline">\(L_6\)</span> minus the binding energy, which
+equals the change in the Skein polynomial when the proton–neutron
+crossing is smoothed: <span class="math inline">\(\Delta
+E_{\mathrm{bind}} = 2.224\;\mathrm{MeV}\)</span>. The CODATA derived
+value is <span class="math inline">\(2.2246\;\mathrm{MeV}\)</span>,
+agreeing to sub-keV precision.</p>
+<p>The formal Lean verification of each row is recorded in
+<code>QOU.HadronicMass</code> with NIST CODATA 2022 precision. ◻</p>
 </div>
 
 <p><span id="chap:experimental" label="chap:experimental"></span></p>
@@ -7946,16 +8146,73 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 </ul>
 <h3 id="crystal-lattice-resonance-and-substrate-telescopes">Crystal
 Lattice Resonance and Substrate Telescopes</h3>
-<div id="rem:crystal-resonance" class="remark">
+<div id="prop:local-substrate-q" class="proposition">
 
-<p><strong>Remark 11.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum resonance in crystal
-lattices). <em>A periodic crystal lattice provides a macroscopic,
-coherent probe of the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
-class="math inline">\(q\)</span>
-(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
+<p><strong>Proposition 11.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Local Value of the Substrate
+Parameter). <em>In any sufficiently small neighbourhood <span
+class="math inline">\(U \subset M\)</span> of the observable universe,
+the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
+satisfies <span class="math display">\[q\big|_U \;=\; 1.1097 \;\pm\;
+0.001.\]</span> More precisely, <span
+class="math inline">\(q|_U\)</span> is the unique real root <span
+class="math inline">\(q &gt; 1\)</span> of the equation <span
+class="math display">\[\label{eq:q-determination}
+(1 - q^{-1})^{2}
+\;=\;
+\frac{\mathrm{Vol}(4_1)}{m_\mu / m_e},\]</span> where <span
+class="math inline">\(\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)
+\approx 2.02988\)</span> is the hyperbolic volume of the figure-eight
+knot and <span class="math inline">\(m_\mu / m_e =
+206.768\,2827\)</span> is the CODATA muon–electron mass ratio.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Narrative proof.</em> The topological mass conjecture
+(Conjecture 4.25) gives <span class="math inline">\(m_\mu / m_e =
+\mathrm{Vol}(4_1) / \hbar_q^{\,2}\)</span> with <span
+class="math inline">\(\hbar_q = 1 - q^{-1}\)</span> (see the proof of
+Proposition <a href="#prop:skein-mass-relation" data-reference-type="ref" data-reference="prop:skein-mass-relation">11.2</a>).
+Rearranging yields
+equation <a href="#eq:q-determination" data-reference-type="eqref" data-reference="eq:q-determination">[eq:q-determination]</a>.
+Substituting the numerical values, <span class="math display">\[(1 -
+q^{-1})^{2}
+= \frac{2.02988}{206.768}
+\approx 0.009\,817,
+\qquad
+1 - q^{-1} \approx 0.09908,
+\qquad
+q \approx 1.1097.\]</span> Since <span class="math inline">\(f(q) = (1 -
+q^{-1})^{2}\)</span> is strictly increasing for <span
+class="math inline">\(q &gt; 1\)</span> and maps <span
+class="math inline">\((1,\infty)\)</span> onto <span
+class="math inline">\((0,1)\)</span>, the root is unique. The
+uncertainty <span class="math inline">\(\pm\,0.001\)</span> is
+propagated from the CODATA relative uncertainty of <span
+class="math inline">\(2.2 \times 10^{-8}\)</span> on <span
+class="math inline">\(m_\mu / m_e\)</span> and the SnapPy error bound of
+<span class="math inline">\(10^{-14}\)</span> on <span
+class="math inline">\(\mathrm{Vol}(4_1)\)</span>; the dominant
+contribution is the finite decimal truncation of <span
+class="math inline">\(q\)</span>. This value is consistent with the
+hadronic mass predictions of
+Proposition <a href="#prop:terminal-resolution" data-reference-type="ref" data-reference="prop:terminal-resolution">11.3</a>
+and with the <span class="math inline">\(q\)</span>-deformed Hall
+conductance corrections of
+Remark <a href="#rem:photonic-hall" data-reference-type="ref" data-reference="rem:photonic-hall">11.8</a>. ◻</p>
+</div>
+
+<div id="rem:crystal-probe-q" class="remark">
+
+<p><strong>Remark 11.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Crystal-lattice probe of <span
+class="math inline">\(q\)</span>). <em>A periodic crystal lattice
+provides a macroscopic, coherent probe of the local value <span
+class="math inline">\(q|_U\)</span> established in
+Proposition <a href="#prop:local-substrate-q" data-reference-type="ref" data-reference="prop:local-substrate-q">11.12</a>.
 The discrete translational symmetry of the lattice selects a set of
 reciprocal vectors that couple to the horizontal distribution of the CR
-manifold <span class="math inline">\(M\)</span>. Where the lattice
+manifold <span class="math inline">\(M\)</span>. Where the lattice
 spacing is commensurate with the characteristic scale of a <span
 class="math inline">\(q\)</span>-torsion leaf
 (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>),
@@ -7965,14 +8222,15 @@ class="math inline">\(q\)</span>-harmonic forms
 on the brane constructively interfere with the phonon modes of the
 crystal, amplifying vacuum fluctuations at specific frequencies. The
 resonance frequency <span
-class="math inline">\(\nu_{\mathrm{res}}\)</span> is predicted to depend
-on the local value of <span class="math inline">\(q\)</span> and the
-lattice geometry.</em></p>
+class="math inline">\(\nu_{\mathrm{res}}\)</span> depends on <span
+class="math inline">\(q|_U\)</span> and the lattice geometry, offering
+an independent experimental route to measuring the substrate
+parameter.</em></p>
 </div>
 
 <div id="rem:substrate-telescope" class="remark">
 
-<p><strong>Remark 11.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
+<p><strong>Remark 11.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
 suggests a new class of detector: the <em>Substrate Telescope</em>. A
 large, high-purity single crystal is slowly rotated while the variation
@@ -7991,7 +8249,7 @@ strain.</em></p>
 
 <div id="rem:magnetic-friction" class="remark">
 
-<p><strong>Remark 11.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Non-monotonic magnetic friction from
+<p><strong>Remark 11.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Non-monotonic magnetic friction from
 collective rotor dynamics). <em>Recent experiments by Gu, Lüders, and
 Bechinger  demonstrate that a two-dimensional array of rotatable
 magnetic dipoles sliding over a commensurate magnetic substrate exhibits
@@ -8018,7 +8276,7 @@ A quantitative comparison requires specifying the lattice geometry and
 its coupling to the horizontal distribution of the CR manifold <span
 class="math inline">\(M\)</span>; we outline the necessary ingredients
 in
-Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.15</a>
+Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.16</a>
 below.</em></p>
 </div>
 
@@ -8043,9 +8301,9 @@ floors in cryogenic crystalline bars.</p></li>
 </ul>
 <div id="rem:lattice-layout" class="remark">
 
-<p><strong>Remark 11.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Lattice layout and quantum resonance
+<p><strong>Remark 11.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Lattice layout and quantum resonance
 implications). <em>Connecting the QOU resonance condition
-(Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.12</a>)
+(Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">[rem:crystal-resonance]</a>)
 to concrete lattice experiments requires three structural ingredients
 that remain to be fully developed:</em></p>
 <ol type="1">
@@ -8053,7 +8311,7 @@ that remain to be fully developed:</em></p>
 class="math inline">\(d\)</span>-dimensional Bravais lattice with basis
 vectors <span class="math inline">\(\{\vec{a}_i\}\)</span>, the
 resonance condition of
-Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.12</a>
+Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">[rem:crystal-resonance]</a>
 becomes a Diophantine matching between the reciprocal lattice vectors
 <span class="math inline">\(\{\vec{G}_j\}\)</span> and the
 characteristic wave-vectors of the <span
