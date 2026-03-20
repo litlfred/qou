@@ -169,6 +169,66 @@ example {C D : Type*} [Category C] [Category D]
   rw [α.naturality]
 ```
 
+## Skill 5: Monoidal Category Notation
+
+### Idiomatic Notation
+
+Always use `open scoped CategoryTheory.MonoidalCategory` and prefer the
+short notation over fully qualified names:
+
+| Fully Qualified | Short Notation | Meaning |
+|-----------------|---------------|---------|
+| `CategoryTheory.MonoidalCategory.tensorObj X Y` | `X ⊗ Y` | Tensor product |
+| `CategoryTheory.MonoidalCategory.tensorUnit` | `𝟙_ C` | Tensor unit |
+| `CategoryTheory.MonoidalCategory.associator X Y Z` | `α_ X Y Z` | Associator |
+| `CategoryTheory.MonoidalCategory.leftUnitor X` | `λ_ X` | Left unitor |
+| `CategoryTheory.MonoidalCategory.rightUnitor X` | `ρ_ X` | Right unitor |
+| `CategoryTheory.MonoidalCategory.whiskerLeft X f` | `X ◁ f` | Left whiskering |
+| `CategoryTheory.MonoidalCategory.whiskerRight f X` | `f ▷ X` | Right whiskering |
+| `CategoryTheory.CategoryStruct.id X` | `𝟙 X` | Identity morphism |
+
+**Rule**: Never write `CategoryTheory.MonoidalCategory.tensorObj` in structure
+fields when the scoped notation is open.  Use `X ⊗ Y` instead.
+
+### Example: Frobenius Object
+
+```lean
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
+
+structure FrobeniusData (C : Type*) [Category C] [MonoidalCategory C] where
+  obj : C
+  mul : (obj ⊗ obj) ⟶ obj
+  unit : (𝟙_ C) ⟶ obj
+  comul : obj ⟶ (obj ⊗ obj)
+  counit : obj ⟶ (𝟙_ C)
+  frobeniusForm : obj ⟶ (𝟙_ C)
+  coevaluation : (𝟙_ C) ⟶ (obj ⊗ obj)
+  -- Snake identities (exact self-pairing / self-duality):
+  pairing_snake_left :
+    (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫ (α_ obj obj obj).inv ≫
+      ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
+  pairing_snake_right :
+    (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫ (α_ obj obj obj).hom ≫
+      (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+  -- Frobenius relation:
+  frobenius_relation :
+    mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
+```
+
+### Categorical Vanishing via Subsingleton
+
+Use `Subsingleton (X ⟶ Y)` to express that a hom-space is trivial
+without requiring `Preadditive`:
+
+```lean
+adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+```
+
+### Categorical Hodge Involution
+
+An involutive endomorphism `⋆ : X ⟶ X` with `⋆ ≫ ⋆ = 𝟙 X` models
+the Hodge star in any category.  Self-duality: `f ≫ ⋆ = f`.
+
 ## Knot Theory Integration
 
 For formalizing knot-theoretic content, use combinatorial representations:

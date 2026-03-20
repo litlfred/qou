@@ -320,6 +320,36 @@ When **writing or editing manuscript content**, apply the following skills:
 | Reviewing Lean proofs | `local/lean-proof-review` |
 | Tracking proof formalization status | `local/proof-status-tracking` |
 
+When **writing or editing Lean formalization code**, apply the following:
+
+| Task | Skill(s) to consult | Key signals in user request |
+|------|---------------------|-----------------------------|
+| Filling `sorry` with proofs | `local/formalizer`, `local/category-theory` | "fill in", "prove", "remove sorry" |
+| Adding new structures/defs | `local/formalizer`, `local/lean-generation` | "define", "formalize", "add structure" |
+| Diagram chasing / naturality | `local/category-theory` | "commutes", "diagram", "naturality", "functor" |
+| Monoidal / braided constructions | `local/category-theory` | "monoidal", "tensor", "braiding", "Hopf", "Frobenius" |
+| Extracting theorems from LaTeX | `local/lean-generation` | "extract", "stub", "from LaTeX", "from chapter" |
+| Reviewing Lean changes (PR) | `local/lean-proof-review` | "review", "check", "audit" |
+| Updating proof-objects.json | `local/proof-status-tracking` | "status", "tracking", "manifest" |
+| Ontology / type resolution | `local/ontologist` | "glossary", "type", "resolve", "naming" |
+| Knot-theoretic formalization | `local/category-theory` (§Knot Theory) | "knot", "crossing", "Jones", "volume" |
+| Triage: what to prove next | `local/proof-triage` | "what next", "priority", "triage", "roadmap" |
+
+### Skill routing decision tree (for agents)
+
+When a user request arrives, apply this decision tree to select skills:
+
+1. **Does it touch `chapters/*.tex`?** → consult LaTeX skills (§12 table above)
+2. **Does it touch `lean/QOU/*.lean`?**
+   a. **Writing new Lean code** → `local/formalizer` + `local/category-theory`
+   b. **Reviewing existing Lean code** → `local/lean-proof-review`
+   c. **Generating stubs from LaTeX** → `local/lean-generation`
+   d. **Updating manifests** → `local/proof-status-tracking`
+3. **Does it touch both LaTeX and Lean?** → also consult `local/lean-generation`
+   for cross-referencing (`\lean{}`, `\leanok`, `\uses{}`)
+4. **Is it a research/brainstorming question?** → synced scientific skills
+5. **Ambiguous?** → read the relevant skill `.md` files, then ask the user
+
 **Rules:**
 - Always apply `local/latex-validation` before finalizing any LaTeX change.
 - Always apply `local/scientific-accuracy` when modifying mathematical content.

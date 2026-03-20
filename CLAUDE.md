@@ -11,12 +11,30 @@ Skills are organized under `.claude/skills/`:
 - **`<package-name>/`** — skills synced nightly from external packages defined
   in `skills-config.json`
 
-### When to use skills
+### Skill routing (quick reference)
+
+When a user request arrives, route to the right skill(s):
+
+| User request pattern | Primary skill(s) |
+|---------------------|------------------|
+| "fill in / prove / remove sorry" | `local/formalizer` + `local/category-theory` |
+| "define / formalize / add structure" | `local/formalizer` + `local/lean-generation` |
+| "diagram / naturality / monoidal" | `local/category-theory` |
+| "extract / stub / from LaTeX" | `local/lean-generation` |
+| "review / check / audit Lean" | `local/lean-proof-review` |
+| "status / tracking / manifest" | `local/proof-status-tracking` |
+| "what next / priority / triage" | `local/proof-triage` |
+| "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` |
+| "validate LaTeX" | `local/latex-validation` |
+
+**Decision tree**: (1) Does it touch `.tex`? → LaTeX skills.
+(2) Does it touch `.lean`? → Lean skills above. (3) Both? → also
+`local/lean-generation` for cross-refs. (4) Ambiguous? → read the skill
+`.md` files, then ask the user.
 
 See **§12 Using Skills for Content Changes** in
-`.github/copilot-instructions.md` for the authoritative task-to-skill mapping
-and rules. That section is the single source of truth — do not duplicate its
-guidance here.
+`.github/copilot-instructions.md` for the full authoritative mapping,
+including the detailed decision tree and Lean-specific routing table.
 
 ### Coding conventions
 
