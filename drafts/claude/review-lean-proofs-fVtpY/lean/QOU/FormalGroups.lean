@@ -58,8 +58,8 @@ structure CommutativeFormalGroup where
   /-- The formal group law `F : 𝒪(H) → 𝒪(H) → 𝒪(H)`. -/
   formalGroupLaw : coordRing → coordRing → coordRing
   /-- The formal group law is commutative: `F(X,Y) = F(Y,X)`.
-      [hazewinkel1978, Ch. I] — left as sorry. -/
-  commutative : ∀ (x y : coordRing), formalGroupLaw x y = formalGroupLaw y x := by sorry
+      [hazewinkel1978, Ch. I] — required proof obligation. -/
+  commutative : ∀ (x y : coordRing), formalGroupLaw x y = formalGroupLaw y x
 
 /-! ## §2  Skewed-Poisson Structure -/
 
@@ -78,19 +78,19 @@ structure SkewedPoissonStructure (H : CommutativeFormalGroup) where
   /-- Negation on the coordinate ring (needed for anti-symmetry). -/
   neg : H.coordRing → H.coordRing
   /-- Graded anti-symmetry: `π_<(f, g) = −π_<(g, f)`.
-      [fred2005, §2, Definition 2.3] — left as sorry. -/
-  antisymmetric : ∀ (f g : H.coordRing), bracket f g = neg (bracket g f) := by sorry
+      [fred2005, §2, Definition 2.3] — required proof obligation. -/
+  antisymmetric : ∀ (f g : H.coordRing), bracket f g = neg (bracket g f)
   /-- The `p`-truncated Jacobi condition:
       `π_<(f, π_<(g, h)) + π_<(g, π_<(h, f)) + π_<(h, π_<(f, g)) = 0`
       modulo `p`-th powers.
-      [fred2005, §2, Definition 2.3] — left as sorry. -/
+      [fred2005, §2, Definition 2.3] — required proof obligation. -/
   jacobi_truncated : ∀ (f g h : H.coordRing),
     H.formalGroupLaw (H.formalGroupLaw (bracket f (bracket g h))
                                        (bracket g (bracket h f)))
                      (bracket h (bracket f g)) =
     H.formalGroupLaw (bracket h (bracket f g))
                      (H.formalGroupLaw (bracket f (bracket g h))
-                                       (bracket g (bracket h f))) := by sorry
+                                       (bracket g (bracket h f)))
 
 /-! ## §3  Strong Multiplicativity -/
 
@@ -112,10 +112,10 @@ structure StrongMultiplicativity (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The Frobenius–Hopf object after deformation. -/
   deformed : FrobeniusHopfData C
   /-- The deformation map preserves the Frobenius relation.
-      [fred2005, Theorem 4.12] — left as sorry. -/
+      [fred2005, Theorem 4.12] — required proof obligation. -/
   frobenius_preserved :
     deformed.mul ≫ deformed.comul =
-    (deformed.comul ▷ deformed.obj) ≫ (deformed.obj ◁ deformed.mul) := by sorry
+    (deformed.comul ▷ deformed.obj) ≫ (deformed.obj ◁ deformed.mul)
 
 /-! ## §4  Integration Theorem (Main Theorem of [fred2005]) -/
 
@@ -184,9 +184,9 @@ structure GrobnerShirshovBasis where
   /-- The composition lemma (confluence): reduction is a retraction,
       i.e. `reduce ∘ embed ∘ reduce = reduce`.  This ensures all
       S-polynomials of leading monomials reduce to zero.
-      [fred2005, Proposition 3.8] — left as sorry. -/
+      [fred2005, Proposition 3.8] — required proof obligation. -/
   composition_lemma : ∀ (a : formalGroup.distAlgebra),
-    reduce (embed (reduce a)) = reduce a := by sorry
+    reduce (embed (reduce a)) = reduce a
 
 /-- The Gröbner–Shirshov basis for `Dist(G)` exists and yields
     a flat deformation of `Dist(H)`.
