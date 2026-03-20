@@ -30,7 +30,7 @@ and any changes made are indicated.
 
 <div id="def:quantum-universe" class="definition">
 
-**Definition 1.1** (Quantum Universe). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumUniverse)<sup><span style="color: ForestGreen"></span></sup> Let $R$ be a commutative ring. A *quantum universe over $R$* is a quadruple $(\mathcal{C}, A, \omega, q)$ where:*
+**Definition 1.1** (Quantum Universe). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumUniverse)<sup><span style="color: ForestGreen"></span></sup> Let $R$ be a commutative ring. A *quantum universe over $R$* is a triple $(\mathcal{C}, A, \omega)$ where:*
 
 1.  *$(\mathcal{C}, \otimes, \mathbf{1})$ is a $R$-linear rigid monoidal category;*
 
@@ -40,17 +40,15 @@ and any changes made are indicated.
 
 3.  *$\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a fibre functor (exact faithful $R$-linear monoidal functor);*
 
-4.  *$q \in R^\times$ is a deformation parameter (invertibility of $q$ is required because the Hopf-algebra relations defining $A$ involve $q^{-1}$; at $q = 0$ the antipode $S$ degenerates and the Hopf structure collapses); the Hopf structure on $A$ depends on $q$, and $q = 1$ recovers the classical (cocommutative) case.*
+4.  *$A$ admits a *differential calculus*: the universal module of Kähler differentials $\Omega^1(A)$ exists as an object of $\mathcal{C}$ (this is the first-order differential structure required for jet prolongation, Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>).*
 
-5.  *$A$ admits a *differential calculus*: the universal module of Kähler differentials $\Omega^1(A)$ exists as an object of $\mathcal{C}$ (this is the first-order differential structure required for jet prolongation, Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>).*
-
-*The *quantum gauge group* is the affine $R$-group scheme $G_q = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via Tannaka–Krein duality.*
+*The deformation parameter $q$ is *not* part of the categorical definition; it enters via the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>) when the Hopf structure on $A$ is specialised. The *quantum gauge group* is the affine $R$-group scheme $G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via Tannaka–Krein duality.*
 
 </div>
 
 <div id="def:quantum-observable-universe" class="definition">
 
-**Definition 1.2** (Quantum Observable Universe). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse)<sup><span style="color: ForestGreen"></span></sup> A quantum universe $(\mathcal{C}, A, \omega, q)$ over $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is *observable* if:*
+**Definition 1.2** (Quantum Observable Universe). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse)<sup><span style="color: ForestGreen"></span></sup> A quantum universe $(\mathcal{C}, A, \omega)$ over $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is *observable* if:*
 
 1.  *the Frobenius form $\lambda$ on $A$ is non-degenerate (restated from Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a> for emphasis); and*
 
@@ -60,14 +58,14 @@ and any changes made are indicated.
 
 <div id="def:projective-line-object" class="definition">
 
-**Definition 1.3** (Projective line object). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) and let $V$ denote the *fundamental object* of $\mathcal{C}$ (the simple object of categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$ representation under $\omega$). The *projective line object* is the coset object $$\mathbb{P}(V) \;=\; G_q \,/\, T,$$ where $T = \mathrm{Aut}^{\otimes}(\omega|_{\mathcal{C}_0})$ is the maximal torus of $G_q$ (the sub-group scheme preserving the weight decomposition). In the archimedean realisation, $\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$. Algebraically, the function algebra of $\mathbb{P}(V)$ is the $T$-coinvariant subalgebra $\mathcal{O}_q(\mathbb{P}(V)) =
+**Definition 1.3** (Projective line object). *Let $(\mathcal{C}, A, \omega)$ be a quantum universe over $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) equipped with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>), and let $V$ denote the *fundamental object* of $\mathcal{C}$ (the simple object of categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$ representation under $\omega$). The *projective line object* is the coset object $$\mathbb{P}(V) \;=\; G_q \,/\, T,$$ where $T = \mathrm{Aut}^{\otimes}(\omega|_{\mathcal{C}_0})$ is the maximal torus of $G_q$ (the sub-group scheme preserving the weight decomposition). In the archimedean realisation, $\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$. Algebraically, the function algebra of $\mathbb{P}(V)$ is the $T$-coinvariant subalgebra $\mathcal{O}_q(\mathbb{P}(V)) =
 A^{\mathrm{co}\,T}$.*
 
 </div>
 
 <div id="prop:fiber-adjoint-involution" class="proposition">
 
-**Proposition 1.4** (Fiber–adjoint-fiber involution). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). The Frobenius form $\lambda \colon A \to \mathbf{1}$ induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under which:*
+**Proposition 1.4** (Fiber–adjoint-fiber involution). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). The Frobenius form $\lambda \colon A \to \mathbf{1}$ induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under which:*
 
 1.  *the projective line object $\mathbb{P}(V)$ (Definition <a href="#def:projective-line-object" data-reference-type="ref" data-reference="def:projective-line-object">1.3</a>) embeds in the adjoint object $\mathrm{Ad}(A)$ as the coadjoint orbit of a highest-weight vector;*
 
@@ -90,7 +88,7 @@ A^{\mathrm{co}\,T}$.*
 
 <div id="def:categorical-connection" class="definition">
 
-**Definition 1.5** (Categorical connection and curvature). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over $R$ with differential calculus $\Omega^1(A)$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>). Write $\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential forms (external tensor powers of the $A$-bimodule $\Omega^1(A)$).*
+**Definition 1.5** (Categorical connection and curvature). *Let $(\mathcal{C}, A, \omega)$ be a quantum universe over $R$ with differential calculus $\Omega^1(A)$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>), and let $q$ denote the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>). Write $\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential forms (external tensor powers of the $A$-bimodule $\Omega^1(A)$).*
 
 *A *connection* on $A$ is a morphism $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathcal{C}$ satisfying the Leibniz rule $$\nabla(a \cdot b)
   \;=\; \nabla(a) \cdot b \;+\; a \cdot \nabla(b),
@@ -107,7 +105,7 @@ A^{\mathrm{co}\,T}$.*
 
 **Definition 1.6** (Categorical action).
 
-*Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) equipped with a connection $\nabla$ (Definition <a href="#def:categorical-connection" data-reference-type="ref" data-reference="def:categorical-connection">1.5</a>) and a section $\psi \colon \mathbf{1} \to A$ (a “state”). The *categorical action* is the $R$-valued functional $$\label{eq:categorical-action}
+*Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) equipped with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>), a connection $\nabla$ (Definition <a href="#def:categorical-connection" data-reference-type="ref" data-reference="def:categorical-connection">1.5</a>), and a section $\psi \colon \mathbf{1} \to A$ (a “state”). The *categorical action* is the $R$-valued functional $$\label{eq:categorical-action}
   \mathcal{S}_q[\nabla,\, \lambda,\, \psi]
   \;=\;
   \underbrace{\mathrm{tr}\bigl(q \cdot R_\lambda\bigr)
@@ -232,9 +230,11 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 </div>
 
+## Substrate parameter and deformation
+
 <div id="def:substrate-parameter" class="definition">
 
-**Definition 1.14** (Substrate parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter)<sup><span style="color: ForestGreen"></span></sup> Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a ring $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>). Let $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the *Lusztig integral form* : the $\mathbb{Z}[q,q^{-1}]$-subalgebra of $\mathcal{U}_q(\mathfrak{su}(2))$ generated by $K^{\pm 1}$ and the divided powers $E^{(n)} = E^n/[n]_q!$, $F^{(n)} = F^n/[n]_q!$. The *substrate parameter* is a ring homomorphism $$\iota \;\colon\; \mathbb{Z}[q, q^{-1}] \;\longrightarrow\; k,
+**Definition 1.14** (Substrate parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter)<sup><span style="color: ForestGreen"></span></sup> Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a ring $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>). Let $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the *Lusztig integral form* : the $\mathbb{Z}[q,q^{-1}]$-subalgebra of $\mathcal{U}_q(\mathfrak{su}(2))$ generated by $K^{\pm 1}$ and the divided powers $E^{(n)} = E^n/[n]_q!$, $F^{(n)} = F^n/[n]_q!$. The *substrate parameter* is a ring homomorphism $$\iota \;\colon\; \mathbb{Z}[q, q^{-1}] \;\longrightarrow\; k,
   \qquad q \;\longmapsto\; q_0 \in k^{\times},$$ and the base-changed algebra $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))
   \otimes_{\mathbb{Z}[q,q^{-1}]} k$ is the quantised enveloping algebra at the specialised value $q_0$. When the quantum universe is fibred over a space $M$ (as in the archimedean realisation, Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.8</a>), $q_0$ may vary from point to point, yielding a *substrate field* $q \colon M \to k^{\times}$.*
 
@@ -321,7 +321,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:observation" class="definition">
 
-**Definition 1.25** (Observation). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). An *observation* is a morphism $$\mathcal{O} \;\colon\; A \;\longrightarrow\; A
+**Definition 1.25** (Observation). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>), and let $q$ denote the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>). An *observation* is a morphism $$\mathcal{O} \;\colon\; A \;\longrightarrow\; A
   \qquad\text{in } \mathcal{C},$$ satisfying:*
 
 1.  ***Frobenius compatibility.** $\lambda \circ \mathcal{O}
@@ -338,7 +338,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="rem:two-observer-parallelogram" class="remark">
 
-**Remark 1.26** (Two-observer parallelogram). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\alpha$ be a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.23</a>) — a $q$-harmonic form with non-trivial vertical component $\iota_\xi\,\alpha_V \neq 0$. Consider two independent observations $\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.25</a>) of the same event. These data assemble into a *parallelogram of observations*: $$\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+**Remark 1.26** (Two-observer parallelogram). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $q$ denote the substrate parameter. Let $\alpha$ be a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.23</a>) — a $q$-harmonic form with non-trivial vertical component $\iota_\xi\,\alpha_V \neq 0$. Consider two independent observations $\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.25</a>) of the same event. These data assemble into a *parallelogram of observations*: $$\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   & \mathcal{O}_1(\alpha) \arrow[dr, "\text{compare}"] & \\
   \alpha \arrow[ur, "\mathcal{O}_1"]
          \arrow[dr, "\mathcal{O}_2"']
@@ -774,7 +774,7 @@ _q,\, U]_q
 
 <div id="prop:jet-prolongation" class="proposition">
 
-**Proposition 3.1** (Jet Prolongation). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Define the *jet object* $$J^1(A) \;:=\; A \otimes \Omega^1(A),$$ where $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$ is the bimodule of Kähler differentials. Then $J^1(A)$ carries a canonical Frobenius–Hopf structure inherited from $A$, and the quadruple $(\mathcal{C},\, J^1(A),\, \omega',\, q)$ — where $\omega' = \omega \circ (\text{--} \otimes \Omega^1)$ is the induced fibre functor — is again a quantum observable universe over $R$.*
+**Proposition 3.1** (Jet Prolongation). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Define the *jet object* $$J^1(A) \;:=\; A \otimes \Omega^1(A),$$ where $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$ is the bimodule of Kähler differentials. Then $J^1(A)$ carries a canonical Frobenius–Hopf structure inherited from $A$, and the quadruple $(\mathcal{C},\, J^1(A),\, \omega',\, q)$ — where $\omega' = \omega \circ (\text{--} \otimes \Omega^1)$ is the induced fibre functor — is again a quantum observable universe over $R$.*
 
 </div>
 
@@ -804,7 +804,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div class="proof">
 
-*Proof.* Apply Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a> to the categorical data $(\mathcal{C}, A, \omega, q)$ underlying the archimedean quantum observable universe (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>), where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$, $A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful functor. The fibre functor $\omega$ converts the categorical jet object $J^1(A)$ into the geometric first jet bundle $J^1 E$, the inherited Frobenius–Hopf structure into the connection $A'$, and the non-degeneracy and vanishing conditions into the analytic conditions of Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>. ◻
+*Proof.* Apply Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a> to the categorical data $(\mathcal{C}, A, \omega)$ underlying the archimedean quantum observable universe (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>); let $q$ denote the substrate parameter, where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$, $A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful functor. The fibre functor $\omega$ converts the categorical jet object $J^1(A)$ into the geometric first jet bundle $J^1 E$, the inherited Frobenius–Hopf structure into the connection $A'$, and the non-degeneracy and vanishing conditions into the analytic conditions of Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>. ◻
 
 </div>
 
@@ -824,7 +824,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="def:recursive-brane-tower" class="definition">
 
-**Definition 3.4** (Recursive Brane Tower). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Set $A_0 = A$. *Inductively*, define $A_{n+1} = J^1(A_n)$ as the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) of the Frobenius–Hopf object $A_n$.*
+**Definition 3.4** (Recursive Brane Tower). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Set $A_0 = A$. *Inductively*, define $A_{n+1} = J^1(A_n)$ as the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) of the Frobenius–Hopf object $A_n$.*
 
 *The *brane relation* is the following recursive structure:*
 
@@ -844,7 +844,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="def:quantum-characteristic-classes" class="definition">
 
-**Definition 3.6** (Quantum Characteristic Classes (Yekutieli obstruction)). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Each transition $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension of gerbes on the underlying site in the sense of Yekutieli : the Frobenius–Hopf object $A_n$ is an object in a gerbe $\mathfrak{G}_n$ banded by the sheaf of units $\mathcal{B}$ (in the archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$), and the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) produces a central extension $$1 \;\longrightarrow\; \mathcal{B}
+**Definition 3.6** (Quantum Characteristic Classes (Yekutieli obstruction)). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Each transition $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension of gerbes on the underlying site in the sense of Yekutieli : the Frobenius–Hopf object $A_n$ is an object in a gerbe $\mathfrak{G}_n$ banded by the sheaf of units $\mathcal{B}$ (in the archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$), and the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) produces a central extension $$1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1.$$ The *quantum characteristic classes* (Yekutieli obstruction classes) are the cohomology classes $$\kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})$$ that obstruct the lifting of objects from $\mathfrak{G}_n$ to $\mathfrak{G}_{n+1}$. By the Yekutieli Lifting Condition (Definition <a href="#def:yekutieli-lifting-condition" data-reference-type="ref" data-reference="def:yekutieli-lifting-condition">3.7</a>), the vanishing $\kappa_n = 0$ is the necessary and sufficient condition for the lift to exist (Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>).*
@@ -862,7 +862,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="prop:yekutieli-lifting" class="proposition">
 
-**Proposition 3.8** (Yekutieli Lifting Condition holds in the brane tower). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 1}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The central extensions of gerbes $$1 \;\longrightarrow\; \mathcal{B}
+**Proposition 3.8** (Yekutieli Lifting Condition holds in the brane tower). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 1}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The central extensions of gerbes $$1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1$$ arising from the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) satisfy the Yekutieli Lifting Condition (Definition <a href="#def:yekutieli-lifting-condition" data-reference-type="ref" data-reference="def:yekutieli-lifting-condition">3.7</a>). In the archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$. In particular, the lift of the Frobenius–Hopf object from level $n$ to level $n{+}1$ exists if and only if the obstruction class $\kappa_n \in H^2(M,\, \mathcal{B})$ (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">3.6</a>) vanishes.*
@@ -877,7 +877,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="thm:qu-to-qou" class="theorem">
 
-**Theorem 3.9** (Quantum universe with observability and Yekutieli is a QOU). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a Noetherian ring $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) satisfying observability $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Then the brane tower $\{A_n\}_{n \geq 0}$ constructed via jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) satisfies the Yekutieli lifting condition (Definition <a href="#def:yekutieli-lifting-condition" data-reference-type="ref" data-reference="def:yekutieli-lifting-condition">3.7</a>, Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>), and $(\mathcal{C}, A, \omega, q)$ is a quantum observable universe with the following structural properties:*
+**Theorem 3.9** (Quantum universe with observability and Yekutieli is a QOU). *Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a Noetherian ring $R$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>); let $q$ denote the substrate parameter. Assume observability $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). Then the brane tower $\{A_n\}_{n \geq 0}$ constructed via jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>) satisfies the Yekutieli lifting condition (Definition <a href="#def:yekutieli-lifting-condition" data-reference-type="ref" data-reference="def:yekutieli-lifting-condition">3.7</a>, Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>), and $(\mathcal{C}, A, \omega)$ is a quantum observable universe with the following structural properties:*
 
 1.  **Descent terminates.* The geometric descent tower has finite length, bounded by $\mathrm{Krull\;dim}\,
             Z(\mathrm{End}_{\mathcal{C}}(A))$. Observability ensures each step is a strict reduction (the $G_q$-action is faithful, so fixed-point reduction strictly decreases dimension).*
@@ -968,7 +968,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="def:direct-limit-algebra" class="definition">
 
-**Definition 3.16** (Quantum Observable Universe as Direct Limit). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The *direct limit algebra of the quantum observable universe* is the colimit in the category of $R$-algebras: $$\mathcal{A}_\infty
+**Definition 3.16** (Quantum Observable Universe as Direct Limit). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>); let $q$ denote the substrate parameter. Let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The *direct limit algebra of the quantum observable universe* is the colimit in the category of $R$-algebras: $$\mathcal{A}_\infty
   \;=\;
   \varinjlim_{n}\,
   \mathrm{End}_{\mathcal{C}}(A_n),$$ taken over the tower of endomorphism algebras with the transition maps induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.*
@@ -1000,7 +1000,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div id="prop:global-gluing" class="proposition">
 
-**Proposition 3.20** (Global gluing via Yekutieli’s twisted quantization). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>). The local deformations of the Frobenius–Hopf object $A$ parameterised by the substrate parameter $q$ induce a twisted associative deformation that admits a unique global gluing via Yekutieli’s twisted quantization map . In particular, the direct limit algebra $\mathcal{A}_\infty$ (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.16</a>) is a well-defined global section of a sheaf of twisted deformation algebras on the underlying site $\mathcal{S}$, and the vacuum state (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.21</a>) is well-defined globally despite local non-commutativity. In the archimedean realisation, this corresponds to the global gluing of the local algebras $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold $M$.*
+**Proposition 3.20** (Global gluing via Yekutieli’s twisted quantization). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>); let $q$ denote the substrate parameter. The local deformations of the Frobenius–Hopf object $A$ parameterised by the substrate parameter $q$ induce a twisted associative deformation that admits a unique global gluing via Yekutieli’s twisted quantization map . In particular, the direct limit algebra $\mathcal{A}_\infty$ (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.16</a>) is a well-defined global section of a sheaf of twisted deformation algebras on the underlying site $\mathcal{S}$, and the vacuum state (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.21</a>) is well-defined globally despite local non-commutativity. In the archimedean realisation, this corresponds to the global gluing of the local algebras $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold $M$.*
 
 </div>
 
@@ -1015,7 +1015,7 @@ The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ (Definiti
 
 <div id="prop:vacuum-state" class="proposition">
 
-**Proposition 3.21** (Existence and Uniqueness of the Vacuum State). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\mathcal{A}_\infty$ be its direct limit algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.16</a>). Let $G_q =
+**Proposition 3.21** (Existence and Uniqueness of the Vacuum State). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>); let $q$ denote the substrate parameter. Let $\mathcal{A}_\infty$ be its direct limit algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.16</a>). Let $G_q =
 \mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.17</a>), acting on $\mathcal{A}_\infty$ by conjugation. Then there exists a unique $R$-linear functional $\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant: $$\varphi(g \cdot a) = \varphi(a)
   \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.$$ In the archimedean realisation, $G_q = \mathrm{SU}_q(2)$ and $\varphi$ is the unique $\mathrm{SU}(2)$-invariant state on the $C^*$-algebraic direct limit.*
@@ -1048,7 +1048,7 @@ The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ (Definiti
 
 <div id="prop:euler-char-stability" class="proposition">
 
-**Proposition 3.24** (Stability of the Euler characteristic). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The categorical Euler characteristic $\chi(A_n) := \mathrm{tr}(\mathrm{id}_{A_n})$ (computed via the rigidity trace of the identity endomorphism in $\mathcal{C}$) is stable under jet prolongation: for each level $n$, $$\chi(A_{n+1}) \;=\; \chi(A_n).$$ In particular, if the base level satisfies $\chi(A_0) = c \in k$, then $\chi(A_n) = c$ for all $n \geq 0$. In the archimedean realisation, $\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the total space $E_n$.*
+**Proposition 3.24** (Stability of the Euler characteristic). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The categorical Euler characteristic $\chi(A_n) := \mathrm{tr}(\mathrm{id}_{A_n})$ (computed via the rigidity trace of the identity endomorphism in $\mathcal{C}$) is stable under jet prolongation: for each level $n$, $$\chi(A_{n+1}) \;=\; \chi(A_n).$$ In particular, if the base level satisfies $\chi(A_0) = c \in k$, then $\chi(A_n) = c$ for all $n \geq 0$. In the archimedean realisation, $\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the total space $E_n$.*
 
 </div>
 
@@ -1063,7 +1063,7 @@ H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definit
 
 <div id="def:mass-identity" class="definition">
 
-**Definition 3.25** (Mass (categorical trace)). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Since $\mathcal{C}$ is a $R$-linear rigid monoidal category, the Frobenius–Hopf object $A$ admits a categorical trace $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ defined by the composition $$\mathrm{tr}(f)
+**Definition 3.25** (Mass (categorical trace)). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>) and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Since $\mathcal{C}$ is a $R$-linear rigid monoidal category, the Frobenius–Hopf object $A$ admits a categorical trace $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ defined by the composition $$\mathrm{tr}(f)
   \;=\;
   \bigl(\mathbf{1}
   \xrightarrow{\;\mathrm{coev}\;}
@@ -1127,7 +1127,7 @@ The recursive brane tower carries a higher-categorical structure that organises 
 
 <div id="def:yekutieli-triple" class="definition">
 
-**Definition 3.27** (Yekutieli triple mapping). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Let $\{U_i\}$ be a covering of the underlying site $\mathcal{S}$ trivialising every level of the tower. The *Yekutieli triple* at level $n$ over an intersection $U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$ where:*
+**Definition 3.27** (Yekutieli triple mapping). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>); let $q$ denote the substrate parameter. Let $\{U_i\}$ be a covering of the underlying site $\mathcal{S}$ trivialising every level of the tower. The *Yekutieli triple* at level $n$ over an intersection $U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$ where:*
 
 1.  **Objects* $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$ are local trivialisations of the Frobenius–Hopf object $A_n$.*
 
@@ -1142,7 +1142,7 @@ The recursive brane tower carries a higher-categorical structure that organises 
 
 <div id="prop:cosimplicial-crossed-groupoid" class="proposition">
 
-**Proposition 3.28** (Cosimplicial crossed groupoid). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>), equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>. Then the assignment $$[n] \;\longmapsto\; \mathfrak{G}_n$$ from the simplex category $\Delta$ to the $2$-category of gerbes on $M$ extends to a *cosimplicial crossed groupoid*: a cosimplicial object in the category of crossed groupoids, where*
+**Proposition 3.28** (Cosimplicial crossed groupoid). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>); let $q$ denote the substrate parameter. Equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>. Then the assignment $$[n] \;\longmapsto\; \mathfrak{G}_n$$ from the simplex category $\Delta$ to the $2$-category of gerbes on $M$ extends to a *cosimplicial crossed groupoid*: a cosimplicial object in the category of crossed groupoids, where*
 
 1.  *the coface maps $\delta^i \colon \mathfrak{G}_{n} \to
             \mathfrak{G}_{n+1}$ are given by the jet prolongation acting on objects (inserting the $i$-th degeneracy in the Čech nerve),*
@@ -1174,7 +1174,7 @@ The recursive brane tower carries a higher-categorical structure that organises 
 
 <div id="prop:descent-condition" class="proposition">
 
-**Proposition 3.30** (Descent condition — twisted $2$-cocycle). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower with Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ (Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>) and let $A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$ (Remark <a href="#rem:distributional-connection" data-reference-type="ref" data-reference="rem:distributional-connection">3.15</a>) be the distributional connection. Then the global consistency of $A_\infty$ is equivalent to the satisfaction of the *twisted $2$-cocycle condition*: for every triple intersection $U_i \cap U_j \cap U_k$, $$\label{eq:twisted-2-cocycle}
+**Proposition 3.30** (Descent condition — twisted $2$-cocycle). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower; let $q$ denote the substrate parameter. With Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ (Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>) and let $A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$ (Remark <a href="#rem:distributional-connection" data-reference-type="ref" data-reference="rem:distributional-connection">3.15</a>) be the distributional connection. Then the global consistency of $A_\infty$ is equivalent to the satisfaction of the *twisted $2$-cocycle condition*: for every triple intersection $U_i \cap U_j \cap U_k$, $$\label{eq:twisted-2-cocycle}
   d\!\left(g_{ijk}^{(n)}\right)
   \;=\;
   a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot \left(a_{jk}^{(n)}\right)^{-1},$$ where $g_{ijk}^{(n)} = g_{ij}^{(n)} \cdot g_{jk}^{(n)} \cdot (g_{ik}^{(n)})^{-1}$ is the Čech $1$-cocycle deviation at level $n$, $d(g_{ijk}^{(n)})$ denotes the Čech coboundary (the failure of the $1$-cocycle condition), and $a_{ij}^{(n)}, a_{jk}^{(n)} \in \mathcal{O}_M^{\times}$ are the $2$-morphisms (quantum deformation feedback from $\mathrm{SU}_{q_n}(2)$).*
@@ -1204,7 +1204,7 @@ By , this is equivalent to the vanishing of the Yekutieli obstruction class, cl
 
 <div id="prop:weak-equiv-invariance" class="proposition">
 
-**Proposition 3.31** (Weak equivalence invariance of physical states). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial crossed groupoid structure (Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">3.28</a>), and let $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.21</a>). A *weak equivalence* between brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps $$\mathfrak{G}_n
+**Proposition 3.31** (Weak equivalence invariance of physical states). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial crossed groupoid structure (Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">3.28</a>); let $q$ denote the substrate parameter. Let $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.21</a>). A *weak equivalence* between brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps $$\mathfrak{G}_n
   \xleftarrow{\;\sigma\;}
   \mathfrak{G}_{k_1}
   \xrightarrow{\;\delta\;}
@@ -1234,13 +1234,13 @@ For the GNS representation: the Hilbert space $\mathcal{H}_\omega = \overline{\m
 
 <div id="def:descent" class="definition">
 
-**Definition 3.32** (Descent). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The *descent* is the reverse traversal of the tower: starting from level $n$ one passes to level $n{-}1$ by applying the restriction morphism $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction of the jet embedding). In the archimedean realisation, this restricts the connection and bundle to the base manifold $M_{n-1}$. By Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(1), the descent terminates in finitely many steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.*
+**Definition 3.32** (Descent). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). The *descent* is the reverse traversal of the tower: starting from level $n$ one passes to level $n{-}1$ by applying the restriction morphism $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction of the jet embedding). In the archimedean realisation, this restricts the connection and bundle to the base manifold $M_{n-1}$. By Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(1), the descent terminates in finitely many steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.*
 
 </div>
 
 <div id="lem:descent" class="lemma">
 
-**Lemma 3.33** (Descent preserves the quantum observable universe). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>), with $n \geq 1$. The restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius–Hopf object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega, q)$ is again a quantum observable universe. Moreover, the induced descent homomorphism $$\mathfrak{d}_n \;\colon\;
+**Lemma 3.33** (Descent preserves the quantum observable universe). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>), with $n \geq 1$; let $q$ denote the substrate parameter. The restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius–Hopf object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega)$ is again a quantum observable universe. Moreover, the induced descent homomorphism $$\mathfrak{d}_n \;\colon\;
   \mathrm{End}_{\mathcal{C}}(A_n)
   \;\longrightarrow\;
   \mathrm{End}_{\mathcal{C}}(A_{n-1})$$ is a surjective algebra homomorphism that intertwines the $G_q$-actions at levels $n$ and $n{-}1$. In the archimedean realisation, this recovers the surjective $*$-homomorphism $\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
@@ -1312,7 +1312,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 <div id="def:brane-boundary" class="definition">
 
-**Definition 3.36** (Defining boundary of the brane). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Let $\mathfrak{d}_{n+1}$ be the descent homomorphism (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">3.33</a>). The *defining boundary* of the $n$-th brane is the full subcategory of $\mathcal{C}$ consisting of subobjects of $A_n$ on which the restriction morphism $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel: $$\partial A_n
+**Definition 3.36** (Defining boundary of the brane). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $\{A_n\}_{n \geq 0}$ be the recursive brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>). Let $\mathfrak{d}_{n+1}$ be the descent homomorphism (Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">3.33</a>). The *defining boundary* of the $n$-th brane is the full subcategory of $\mathcal{C}$ consisting of subobjects of $A_n$ on which the restriction morphism $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel: $$\partial A_n
   \;=\;
   \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
     \ker(r_n|_S) \neq 0 \,\bigr\}.$$ In the archimedean realisation, $\partial A_n$ corresponds to the geometric locus $\partial E_n = \{p \in E_n \mid
@@ -1417,7 +1417,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 <div id="thm:topological-mass" class="theorem">
 
-**Theorem 3.43** (Topological Decomposition of Mass). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>), where $\mathcal{C}$ is the rigid monoidal category, $A$ the Frobenius–Hopf object, and $\omega$ the fibre functor. Let $\gamma \colon \mathbf{1} \to A$ be a morphism (a “closed cycle” in $A$, Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">3.25</a>) whose categorical support is generated by $N$ consecutive extensions along the brane tower $\{A_n\}_{n \geq 0}$ (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>), applied to a base-level morphism $\gamma_0 \colon \mathbf{1} \to A_0$.*
+**Theorem 3.43** (Topological Decomposition of Mass). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>); let $q$ denote the substrate parameter. Here $\mathcal{C}$ is the rigid monoidal category, $A$ the Frobenius–Hopf object, and $\omega$ the fibre functor. Let $\gamma \colon \mathbf{1} \to A$ be a morphism (a “closed cycle” in $A$, Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">3.25</a>) whose categorical support is generated by $N$ consecutive extensions along the brane tower $\{A_n\}_{n \geq 0}$ (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>), applied to a base-level morphism $\gamma_0 \colon \mathbf{1} \to A_0$.*
 
 *The mass $m(\gamma)$ (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">3.25</a>) admits a decomposition into descended and transient contributions via the descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">3.34</a>): $$\label{eq:topological-mass-decomp}
   m(\gamma)
@@ -2269,7 +2269,7 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="def:descartes-condition" class="definition">
 
-**Definition 6.1** (Descartes condition). *A quantum observable universe $(\mathcal{C}, A, \omega, q)$ over $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>, Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>) satisfies the *Descartes condition* if the categorical Euler characteristic $$\chi(A) \;=\; \mathrm{tr}(\mathrm{id}_A) \;=\; -6 \;\in\; R.$$ This requires $6 \in R^{\times}$ (i.e. $\mathrm{char}(R) \nmid 6$). The class $[A] \in K_0(\mathcal{C})$ has rank $-6$, which by Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(3–4) forces $\kappa_n \neq 0$ for all $n$ and produces $6$ branch points in the geometric descent (with total ramification $R_{\mathrm{tot}} = 2d + 6$). A quantum observable universe satisfying the Descartes condition is called a *Descartes universe*.*
+**Definition 6.1** (Descartes condition). *A quantum observable universe $(\mathcal{C}, A, \omega)$ over $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>, Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>) satisfies the *Descartes condition* if the categorical Euler characteristic $$\chi(A) \;=\; \mathrm{tr}(\mathrm{id}_A) \;=\; -6 \;\in\; R.$$ This requires $6 \in R^{\times}$ (i.e. $\mathrm{char}(R) \nmid 6$). The class $[A] \in K_0(\mathcal{C})$ has rank $-6$, which by Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(3–4) forces $\kappa_n \neq 0$ for all $n$ and produces $6$ branch points in the geometric descent (with total ramification $R_{\mathrm{tot}} = 2d + 6$). A quantum observable universe satisfying the Descartes condition is called a *Descartes universe*.*
 
 </div>
 
@@ -2373,19 +2373,19 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="thm:descartes" class="theorem">
 
-**Theorem 6.14** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of quantum observable universes over $R$ satisfying the Descartes condition $\chi(A) = -6$ (Definition <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>), with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s surface $\Sigma_4$ (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>, Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(\mathcal{C}, A, \omega, q)$ in $\mathcal{C}_{-6}$, there exists a unique morphism to the Bring’s QOU.*
+**Theorem 6.14** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of quantum observable universes over $R$ satisfying the Descartes condition $\chi(A) = -6$ (Definition <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>), with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s surface $\Sigma_4$ (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>, Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(\mathcal{C}, A, \omega)$ in $\mathcal{C}_{-6}$, there exists a unique morphism to the Bring’s QOU.*
 
 </div>
 
 <div class="proof">
 
-*Proof.* We must show that for every object $(\mathcal{C}, A, \omega, q)$ in $\mathcal{C}_{-6}$ there exists a unique QOU morphism to the Bring’s QOU $(\mathcal{C}_B, A_B, \omega_B, q_B)$ (Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>).
+*Proof.* We must show that for every object $(\mathcal{C}, A, \omega)$ in $\mathcal{C}_{-6}$ there exists a unique QOU morphism to the Bring’s QOU $(\mathcal{C}_B, A_B, \omega_B, q_B)$ (Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>).
 
-*Existence.* Let $(\mathcal{C}, A, \omega, q)$ be a Descartes universe. The fibre functor $\omega$ identifies $G_q = \mathrm{Aut}^{\otimes}(\omega)$ with a quantum form of $\mathrm{SU}(2)$ (by Tannaka–Krein over $R$), so the base curve of the geometric descent (Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(1)) is a smooth genus-$4$ curve $\Sigma$ over $R$ with $\chi(\Sigma) = -6$ (Proposition <a href="#prop:genus-maximal-descent" data-reference-type="ref" data-reference="prop:genus-maximal-descent">6.6</a>).
+*Existence.* Let $(\mathcal{C}, A, \omega)$ be a Descartes universe; let $q$ denote the substrate parameter. The fibre functor $\omega$ identifies $G_q = \mathrm{Aut}^{\otimes}(\omega)$ with a quantum form of $\mathrm{SU}(2)$ (by Tannaka–Krein over $R$), so the base curve of the geometric descent (Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(1)) is a smooth genus-$4$ curve $\Sigma$ over $R$ with $\chi(\Sigma) = -6$ (Proposition <a href="#prop:genus-maximal-descent" data-reference-type="ref" data-reference="prop:genus-maximal-descent">6.6</a>).
 
 By the Hurwitz bound, $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 84(g-1) = 252$. Among genus-$4$ curves over $R$ (with $30 \in R^{\times}$), Bring’s surface $\Sigma_4$ has automorphism group $S_5$ of order $120$, which is the *maximum* for genus $4$ (Edge, 1978). The $S_5$-equivariant structure forces the power-sum relations $\sum x_j = \sum x_j^2 = \sum x_j^3 = 0$, uniquely determining $\Sigma_4$ up to isomorphism in $\mathbb{P}^4_R$.
 
-The descent data of $(\mathcal{C}, A, \omega, q)$ — specifically, the branch locus of $\pi \colon \Sigma \to \mathbb{P}(V)$ with its $6$ branch points and the $S_5$-symmetric ramification profile — defines a map $\Sigma \to \Sigma_4$ in the category of branched covers of $\mathbb{P}(V)$. This extends to a QOU morphism by the universality of the Frobenius–Hopf structure: the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$ is functorial with respect to quantum group homomorphisms.
+The descent data of $(\mathcal{C}, A, \omega)$ — specifically, the branch locus of $\pi \colon \Sigma \to \mathbb{P}(V)$ with its $6$ branch points and the $S_5$-symmetric ramification profile — defines a map $\Sigma \to \Sigma_4$ in the category of branched covers of $\mathbb{P}(V)$. This extends to a QOU morphism by the universality of the Frobenius–Hopf structure: the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$ is functorial with respect to quantum group homomorphisms.
 
 *Uniqueness.* A QOU morphism preserves the fibre functor $\omega$ (up to natural isomorphism) and the Euler characteristic. By Tannaka–Krein rigidity, any two fibre-preserving monoidal functors between the same Tannakian categories are naturally isomorphic. Therefore the morphism to the Bring’s QOU is unique up to the unique natural isomorphism. ◻
 

@@ -345,6 +345,7 @@ code { font-size: 90%; }
       <button id="toc-btn" class="toc-btn">&#9776; Contents</button>
       <div id="toc-dropdown" class="toc-dropdown">
         <a class="toc-ch" href="#chap:qou">Quantum Observable Universe</a>
+        <a class="toc-sec" href="#sec:substrate-parameter">Substrate parameter and deformation</a>
         <a class="toc-sec" href="#sec:preview-lifting">Preview: Lifting and Descent</a>
         <a class="toc-ch" href="#chap:elaboration">Elaboration: Categorical and Analytic Foundations</a>
         <a class="toc-ch" href="#chap:torsion">Lifting of Quantum Torsion</a>
@@ -404,7 +405,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/review-categorical-spec-kEy1l">&#x1F33F; claude/review-categorical-spec-kEy1l</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/797f235a5dc0b63b15153d4f7c3b338ed83b6f18">&#x1F4DD; 797f235</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/71166ebafe8df9129ffb94806fc755966dc6e28a">&#x1F4DD; 71166eb</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/107">PR #107</a>
 </div>
 <div class="proof-legend"><strong>Proof status:</strong> <span class="proof-status proved">&#x2713; proved</span> <span class="proof-status mathlib-ok">&#x2713;&#x2713; mathlib</span> <span class="proof-status stated">&#x2200; stated</span> <span class="proof-status has-sorry">&#x26A0; sorry</span> <span class="proof-status not-started">&#x2717; no Lean</span> </div>
@@ -463,8 +464,8 @@ href="https://litlfred.github.io/qou/lean/QOU.QuantumUniverse"><sup><span style=
 class="math inline">\(\forall\)</span></span></sup></a><sup><span style="color: ForestGreen"></span></sup>
 Let <span class="math inline">\(R\)</span> be a commutative ring. A
 <em>quantum universe over <span class="math inline">\(R\)</span></em> is
-a quadruple <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> where:</em></p>
+a triple <span class="math inline">\((\mathcal{C}, A, \omega)\)</span>
+where:</em></p>
 <ol type="1">
 <li><p><em><span class="math inline">\((\mathcal{C}, \otimes,
 \mathbf{1})\)</span> is a <span class="math inline">\(R\)</span>-linear
@@ -487,16 +488,6 @@ pairing;</em></p></li>
 <li><p><em><span class="math inline">\(\omega \colon \mathcal{C} \to
 R\text{-}\mathrm{Mod}\)</span> is a fibre functor (exact faithful <span
 class="math inline">\(R\)</span>-linear monoidal functor);</em></p></li>
-<li><p><em><span class="math inline">\(q \in R^\times\)</span> is a
-deformation parameter (invertibility of <span
-class="math inline">\(q\)</span> is required because the Hopf-algebra
-relations defining <span class="math inline">\(A\)</span> involve <span
-class="math inline">\(q^{-1}\)</span>; at <span class="math inline">\(q
-= 0\)</span> the antipode <span class="math inline">\(S\)</span>
-degenerates and the Hopf structure collapses); the Hopf structure on
-<span class="math inline">\(A\)</span> depends on <span
-class="math inline">\(q\)</span>, and <span class="math inline">\(q =
-1\)</span> recovers the classical (cocommutative) case.</em></p></li>
 <li><p><em><span class="math inline">\(A\)</span> admits a
 <em>differential calculus</em>: the universal module of Kähler
 differentials <span class="math inline">\(\Omega^1(A)\)</span> exists as
@@ -504,19 +495,24 @@ an object of <span class="math inline">\(\mathcal{C}\)</span> (this is
 the first-order differential structure required for <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>,
 Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>).</em></p></li>
 </ol>
-<p><em>The <em><a class="defn-link" href="#def:quantum-gauge-group">quantum gauge group</a></em> is the affine <span
+<p><em>The deformation parameter <span class="math inline">\(q\)</span>
+is <em>not</em> part of the categorical definition; it enters via the
+<a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>)
+when the Hopf structure on <span class="math inline">\(A\)</span> is
+specialised. The <em><a class="defn-link" href="#def:quantum-gauge-group">quantum gauge group</a></em> is the affine <span
 class="math inline">\(R\)</span>-group scheme <span
-class="math inline">\(G_q = \mathrm{Aut}^{\otimes}(\omega)\)</span>,
+class="math inline">\(G = \mathrm{Aut}^{\otimes}(\omega)\)</span>,
 reconstructed via Tannaka–Krein duality.</em></p>
 </div>
 
-<div id="def:quantum-observable-universe" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L44" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-observable-universe" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L42" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.2 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse" target="_blank" title="Lean: QOU.QuantumObservableUniverse">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a><sup><span style="color: ForestGreen"></span></sup>
-A <a class="defn-link" href="#def:quantum-universe">quantum universe</a> <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> over <span class="math inline">\(R\)</span>
+A <a class="defn-link" href="#def:quantum-universe">quantum universe</a> <span class="math inline">\((\mathcal{C}, A,
+\omega)\)</span> over <span class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>)
 is <em>observable</em> if:</em></p>
 <ol type="1">
@@ -536,12 +532,14 @@ A\)</span>).</em></p></li>
 </ol>
 </div>
 
-<div id="def:projective-line-object" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L57" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:projective-line-object" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L55" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:projective-line-object">Projective line object</a>). <em>Let
-<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
 <a class="defn-link" href="#def:quantum-universe">quantum universe</a> over <span class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>)
+equipped with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>),
 and let <span class="math inline">\(V\)</span> denote the
 <em>fundamental object</em> of <span
 class="math inline">\(\mathcal{C}\)</span> (the simple object of
@@ -563,11 +561,11 @@ class="math inline">\(\mathcal{O}_q(\mathbb{P}(V)) =
 A^{\mathrm{co}\,T}\)</span>.</em></p>
 </div>
 
-<div id="prop:fiber-adjoint-involution" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L77" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:fiber-adjoint-involution" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L76" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 1.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fiber–adjoint-fiber involution).
-<em>Let <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span>
-be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+<em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
 The Frobenius form <span class="math inline">\(\lambda \colon A \to
 \mathbf{1}\)</span> induces an isomorphism <span class="math inline">\(A
@@ -640,14 +638,17 @@ class="math inline">\(\lambda\)</span> excludes the degenerate
 case). ◻</p>
 </div>
 
-<div id="def:categorical-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L121" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:categorical-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L120" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Categorical connection and
-curvature). <em>Let <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> be a <a class="defn-link" href="#def:quantum-universe">quantum universe</a> over <span
+curvature). <em>Let <span class="math inline">\((\mathcal{C}, A,
+\omega)\)</span> be a <a class="defn-link" href="#def:quantum-universe">quantum universe</a> over <span
 class="math inline">\(R\)</span> with differential calculus <span
 class="math inline">\(\Omega^1(A)\)</span>
-(Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>).
+(Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>),
+and let <span class="math inline">\(q\)</span> denote the substrate
+parameter
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>).
 Write <span class="math inline">\(\Omega^k(A) = \bigwedge_A^k
 \Omega^1(A)\)</span> for the higher differential forms (external tensor
 powers of the <span class="math inline">\(A\)</span>-bimodule <span
@@ -684,11 +685,13 @@ class="math inline">\(G_q\)</span>-invariant top form normalised by
 <div id="def:categorical-action" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L158" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:categorical-action">Categorical action</a>).</p>
-<p><em>Let <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+<p><em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span>
+be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
-equipped with a connection <span class="math inline">\(\nabla\)</span>
-(Definition <a href="#def:categorical-connection" data-reference-type="ref" data-reference="def:categorical-connection">1.5</a>)
+equipped with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>),
+a connection <span class="math inline">\(\nabla\)</span>
+(Definition <a href="#def:categorical-connection" data-reference-type="ref" data-reference="def:categorical-connection">1.5</a>),
 and a section <span class="math inline">\(\psi \colon \mathbf{1} \to
 A\)</span> (a “state”). The <em><a class="defn-link" href="#def:categorical-action">categorical action</a></em> is the <span
 class="math inline">\(R\)</span>-valued functional <span
@@ -770,7 +773,7 @@ class="math inline">\(J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q
 </ol>
 </div>
 
-<div id="rem:base-field-independence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L243" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:base-field-independence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L244" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:base-field-independence">Base-ring independence</a>).
 <em>Definitions <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>
@@ -810,7 +813,7 @@ ensures that <span class="math inline">\(G_q =
 class="math inline">\(R\)</span>.</em></p>
 </div>
 
-<div id="def:c-quantum-universe" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L271" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:c-quantum-universe" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L272" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.8 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.CRManifoldData" target="_blank" title="Lean: QOU.CRManifoldData">&#x2713; proved</a></strong> (Archimedean realisation: quantum
 universe). <em><a
@@ -861,7 +864,7 @@ class="math inline">\(\omega\)</span> is the forgetful functor to <span
 class="math inline">\(K\text{-}\mathrm{Mod}\)</span>.</em></p>
 </div>
 
-<div id="rem:notation-special-cases" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L301" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:notation-special-cases" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L302" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:notation-special-cases">Notation and special cases</a>). <em>When
 <span class="math inline">\(\theta\)</span> is understood from context,
@@ -872,7 +875,7 @@ class="math inline">\((n,0)\)</span>, where <span
 class="math inline">\(L_\theta\)</span> is positive definite.</em></p>
 </div>
 
-<div id="def:c-quantum-observable-universe" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L308" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:c-quantum-observable-universe" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L309" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 1.10 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.CQuantumObservableUniverse" target="_blank" title="Lean: QOU.CQuantumObservableUniverse">&#x2713; proved</a></strong> (Archimedean realisation: quantum
 observable universe). <em><a
@@ -899,7 +902,7 @@ class="math inline">\(A\)</span>-equivariant sections of the associated
 <span class="math inline">\(\mathbb{CP}^1\)</span>-bundle.</em></p>
 </div>
 
-<div id="def:instanton" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L335" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:instanton" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L336" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.11 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.InstantonConnection" target="_blank" title="Lean: QOU.InstantonConnection">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:instanton">Instanton connection</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.InstantonConnection"><sup><span style="color: BurntOrange"><span
@@ -922,7 +925,7 @@ minimises the functional <span class="math inline">\(\int_M \lVert
 F_A|_H \rVert^2\,\theta \wedge (d\theta)^n\)</span>.</em></p>
 </div>
 
-<div id="lem:irreducible-connection" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L349" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="lem:irreducible-connection" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L350" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Lemma 1.12 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.irreducible_connection" target="_blank" title="Lean: QOU.irreducible_connection">&#x2713; proved</a></strong> (<a class="defn-link" href="#lem:irreducible-connection">Irreducibility of the connection</a>).
 <em><a
@@ -953,7 +956,7 @@ class="math inline">\(H^0(M, \mathrm{Ad}(P)) = 0\)</span>. Hence <span
 class="math inline">\(A\)</span> is irreducible. ◻</p>
 </div>
 
-<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L367" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:self-dual-curvature" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L368" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 1.13 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.self_dual_curvature" target="_blank" title="Lean: QOU.self_dual_curvature">&#x2713; proved</a></strong> (<a class="defn-link" href="#prop:self-dual-curvature">Self-duality of the curvature</a>).
 <em><a
@@ -1017,13 +1020,15 @@ self-duality condition <span class="math inline">\(F_A|_H =
 {*_H}\,F_A|_H\)</span>. ◻</p>
 </div>
 
-<div id="def:substrate-parameter" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L418" target="_blank" title="View source">&#x1F4C4;</a>
+<h2 id="substrate-parameter-and-deformation">Substrate parameter and
+deformation</h2>
+<div id="def:substrate-parameter" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L422" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.14 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter" target="_blank" title="Lean: QOU.SubstrateParameter">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a><sup><span style="color: ForestGreen"></span></sup>
-Let <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be
-a <a class="defn-link" href="#def:quantum-universe">quantum universe</a> over a ring <span class="math inline">\(R\)</span>
+Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
+<a class="defn-link" href="#def:quantum-universe">quantum universe</a> over a ring <span class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>).
 Let <span
 class="math inline">\(\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))\)</span>
@@ -1049,7 +1054,7 @@ yielding a <em>substrate field</em> <span class="math inline">\(q \colon
 M \to k^{\times}\)</span>.</em></p>
 </div>
 
-<div id="rem:c-substrate-via-levi" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L443" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:c-substrate-via-levi" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L447" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Archimedean substrate via the Levi
 form). <em>In the archimedean <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
@@ -1114,7 +1119,7 @@ class="math inline">\(q\)</span> is a primitive root of unity
 (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>).</em></p>
 </div>
 
-<div id="rem:substrate-contraction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L494" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:substrate-contraction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L498" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Natural contraction and field character
 of <span class="math inline">\(q\)</span>). <em>The Levi form <span
@@ -1143,7 +1148,7 @@ according to the local coupling between the Levi form and the self-dual
 curvature.</em></p>
 </div>
 
-<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L514" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-gauge-group" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L518" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.17 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup" target="_blank" title="Lean: QOU.QuantumGaugeGroup">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup"><sup><span style="color: BurntOrange"><span
@@ -1159,7 +1164,7 @@ obtained by deforming the structure group <span class="math inline">\(G
 class="math inline">\(q(p)\)</span>.</em></p>
 </div>
 
-<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L524" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-planck-constant" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L528" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.18 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant" target="_blank" title="Lean: QOU.quantumPlanckConstant">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant"><sup><span style="color: BurntOrange"><span
@@ -1174,7 +1179,7 @@ class="math inline">\(\hbar_q \colon M \to [0,1)\)</span> defined by
 \in M.\]</span></em></p>
 </div>
 
-<div id="rem:planck-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L536" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:planck-limits" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L540" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Limiting regimes of <span
 class="math inline">\(\hbar_q\)</span>). <em>Like <span
@@ -1188,7 +1193,7 @@ vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
 1\)</span>.</em></p>
 </div>
 
-<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L543" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:heisenberg-commutator" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L547" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.20 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:heisenberg-commutator">Heisenberg uncertainty as commutator</a>).
 <em>In the archimedean <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> the Heisenberg
@@ -1259,7 +1264,7 @@ class="math inline">\(S^3\to\mathbb{CP}^1\)</span>, and its “strength”
 is set by <span class="math inline">\(\hbar_q(p)\)</span>.</em></p>
 </div>
 
-<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L597" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-harmonic-form" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L601" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.21 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm" target="_blank" title="Lean: QOU.QHarmonicForm">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Harmonic form (Particle)). <em><a
@@ -1286,7 +1291,7 @@ class="math display">\[\Delta_q \alpha
 \;=\; 0.\]</span></em></p>
 </div>
 
-<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L616" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:reeb-decomposition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L620" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.22 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.ReebDecomposition" target="_blank" title="Lean: QOU.ReebDecomposition">&#x2713; proved</a></strong> (<a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ReebDecomposition"><sup><span style="color: BurntOrange"><span
@@ -1312,7 +1317,7 @@ class="math inline">\(\alpha_H := \alpha - \theta \wedge
 class="math inline">\(\iota_\xi\,\alpha = 0\)</span>.</em></p>
 </div>
 
-<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L634" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:fermion" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L638" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.23 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.Fermion" target="_blank" title="Lean: QOU.Fermion">&#x2713; proved</a></strong> (Fermion). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Fermion"><sup><span style="color: BurntOrange"><span
@@ -1327,7 +1332,7 @@ that has a non-trivial vertical component in the <a class="defn-link" href="#def
 \iota_\xi\,\alpha_V \neq 0.\]</span></em></p>
 </div>
 
-<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L648" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:boson" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L652" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.24 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.Boson" target="_blank" title="Lean: QOU.Boson">&#x2713; proved</a></strong> (Boson). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Boson"><sup><span style="color: BurntOrange"><span
@@ -1344,12 +1349,15 @@ that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposit
 \text{ by Definition~\ref{def:reeb-decomposition}}).\]</span></em></p>
 </div>
 
-<div id="def:observation" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L663" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:observation" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L667" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:observation">Observation</a>). <em>Let <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a quantum
 observable universe over a ring <span class="math inline">\(R\)</span>
-(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>),
+and let <span class="math inline">\(q\)</span> denote the substrate
+parameter
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.14</a>).
 An <em>observation</em> is a morphism <span
 class="math display">\[\mathcal{O} \;\colon\; A \;\longrightarrow\; A
 \qquad\text{in } \mathcal{C},\]</span> satisfying:</em></p>
@@ -1386,12 +1394,13 @@ non-commutative geometry:</em></p>
 </blockquote>
 </div>
 
-<div id="rem:two-observer-parallelogram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L702" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:two-observer-parallelogram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L708" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:two-observer-parallelogram">Two-observer parallelogram</a>). <em>Let
-<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
 <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
-class="math inline">\(\alpha\)</span> be a <a class="defn-link" href="#def:fermion">fermion</a>
+class="math inline">\(q\)</span> denote the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>. Let
+<span class="math inline">\(\alpha\)</span> be a <a class="defn-link" href="#def:fermion">fermion</a>
 (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.23</a>)
 — a <span class="math inline">\(q\)</span>-harmonic form with
 non-trivial vertical component <span
@@ -1454,7 +1463,7 @@ magnitude of disagreement governed by the uncertainty encoded in the
 substrate field.</em></p>
 </div>
 
-<div id="def:q-ext-deriv" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L766" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-ext-deriv" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L773" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.27 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.qExtDeriv" target="_blank" title="Lean: QOU.qExtDeriv">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Deformed exterior derivative). <em><a
@@ -1477,7 +1486,7 @@ form, and <span class="math inline">\(\mathcal{L}_\xi\)</span> the Lie
 derivative along the Reeb field.</em></p>
 </div>
 
-<div id="def:q-lie-bracket" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L782" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-lie-bracket" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L789" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.28 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.qLieBracket" target="_blank" title="Lean: QOU.qLieBracket">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Deformed Lie bracket). <em><a
@@ -1495,7 +1504,7 @@ bracket on <span
 class="math inline">\(\mathfrak{X}(M)\)</span>.</em></p>
 </div>
 
-<div id="def:q-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L796" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L803" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.29 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.qConnection" target="_blank" title="Lean: QOU.qConnection">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Deformed connection). <em><a
@@ -1511,7 +1520,7 @@ class="math display">\[A_q
 + (1 - q^{-1})\,\iota_\xi\,A\;\theta,\]</span></em></p>
 </div>
 
-<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L809" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L816" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.30 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.qReebVectorField" target="_blank" title="Lean: QOU.qReebVectorField">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb vector field). <em><a
@@ -1539,7 +1548,7 @@ class="math inline">\(q\)</span>-deformed Lie bracket
 (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.28</a>).</em></p>
 </div>
 
-<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L826" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L833" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.31 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.QReebFlow" target="_blank" title="Lean: QOU.QReebFlow">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em><a
@@ -1558,7 +1567,7 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 \qquad \phi_0^q = \mathrm{id}_M.\]</span></em></p>
 </div>
 
-<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L839" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L846" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 1.32 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf" target="_blank" title="Lean: QOU.QTorsionLeaf">&#x2713; proved</a></strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em><a
@@ -1579,7 +1588,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 \quad\text{for all } t \in \mathbb{R}.\]</span></em></p>
 </div>
 
-<div id="rem:q-torsion-existence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L855" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-torsion-existence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L862" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves: existence and Frobenius
@@ -1616,7 +1625,7 @@ integral submanifolds and gives <span
 class="math inline">\(q\)</span>-torsion leaves their rigidity.</em></p>
 </div>
 
-<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L880" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L887" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.34 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
@@ -1632,7 +1641,7 @@ many-body interference in crystal lattices, is discussed in
 Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.</em></p>
 </div>
 
-<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L895" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L902" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 1.35 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
@@ -1669,7 +1678,7 @@ tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 instantons.</em></p>
 </div>
 
-<div id="prop:main-commutative-diagram" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L926" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:main-commutative-diagram" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/quantum-observable-universe.tex#L933" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 1.36 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram" target="_blank" title="Lean: QOU.main_commutative_diagram">&#x2713; proved</a></strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram"><sup><span style="color: BurntOrange"><span
@@ -2706,7 +2715,7 @@ sections.</em></p>
 <div id="prop:jet-prolongation" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L7" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:jet-prolongation">Jet Prolongation</a>). <em>Let <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a quantum
 observable universe over a ring <span class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
 Define the <em>jet object</em> <span class="math display">\[J^1(A)
@@ -2835,10 +2844,10 @@ archimedean quantum observable universe.</em></p>
 <p><em>Proof.</em> Apply
 Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">3.1</a>
 to the categorical data <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> underlying the archimedean quantum observable
-universe
-(Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>),
-where <span class="math inline">\(\mathcal{C} =
+\omega)\)</span> underlying the archimedean <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+(Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter, where <span class="math inline">\(\mathcal{C} =
 \mathrm{Rep}(\mathrm{SU}_{q}(2))\)</span>, <span class="math inline">\(A
 = \mathcal{O}_q(\mathrm{SU}(2))\)</span>, and <span
 class="math inline">\(\omega\)</span> is the forgetful functor. The
@@ -2851,7 +2860,7 @@ non-degeneracy and vanishing conditions into the analytic conditions of
 Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.10</a>. ◻</p>
 </div>
 
-<div id="rem:prolongation-categorical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L110" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:prolongation-categorical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L111" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Prolongation from the Frobenius-Hopf
 structure). <em>The proof above shows that <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> is an
@@ -2880,10 +2889,10 @@ is a formal consequence of the axioms of a <a class="defn-link" href="#def:quant
 and does not require any case-by-case verification.</em></p>
 </div>
 
-<div id="def:recursive-brane-tower" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L136" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:recursive-brane-tower" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L137" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:recursive-brane-tower">Recursive Brane Tower</a>). <em>Let
-<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
 <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> over a ring <span
 class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
@@ -2915,7 +2924,7 @@ canonical inclusion <span class="math inline">\(A_n \hookrightarrow
 J^1(A_n) = A_{n+1}\)</span> via the unit section.</em></p>
 </div>
 
-<div id="ex:brane-tower-levels" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L159" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="ex:brane-tower-levels" class="example"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L160" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Example 3.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Archimedean realisation of the brane
 tower). <em>Starting from an archimedean <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
@@ -2934,11 +2943,11 @@ class="math inline">\(A_2\)</span> is uniquely determined by
 Corollary <a href="#cor:jet-prolongation-C" data-reference-type="ref" data-reference="cor:jet-prolongation-C">3.2</a>.</em></p>
 </div>
 
-<div id="def:quantum-characteristic-classes" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L173" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:quantum-characteristic-classes" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L174" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum Characteristic Classes
 (Yekutieli obstruction)). <em>Let <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a quantum
 observable universe and let <span class="math inline">\(\{A_n\}_{n \geq
 0}\)</span> be its <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>).
@@ -2969,7 +2978,7 @@ necessary and sufficient condition for the lift to exist
 (Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>).</em></p>
 </div>
 
-<div id="def:yekutieli-lifting-condition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L203" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:yekutieli-lifting-condition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L204" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:yekutieli-lifting-condition">Yekutieli Lifting Condition</a>).
 <em>Let <span class="math inline">\(\mathcal{C}\)</span> be a <span
@@ -2994,11 +3003,11 @@ a lift if and only if <span class="math inline">\(\kappa(x) =
 0\)</span>.</em></p>
 </div>
 
-<div id="prop:yekutieli-lifting" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L225" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:yekutieli-lifting" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L226" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:yekutieli-lifting-condition">Yekutieli Lifting Condition</a> holds
 in the brane tower). <em>Let <span class="math inline">\((\mathcal{C},
-A, \omega, q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+A, \omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
 and let <span class="math inline">\(\{A_n\}_{n \geq 1}\)</span> be the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
@@ -3039,14 +3048,15 @@ class="math inline">\(\kappa_n = 0\)</span> is equivalent to the
 existence of the lift. ◻</p>
 </div>
 
-<div id="thm:qu-to-qou" class="theorem"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L262" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="thm:qu-to-qou" class="theorem"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L263" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Theorem 3.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:quantum-universe">Quantum universe</a> with observability and
 Yekutieli is a QOU). <em>Let <span class="math inline">\((\mathcal{C},
-A, \omega, q)\)</span> be a quantum universe over a Noetherian
-ring <span class="math inline">\(R\)</span>
-(Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>)
-satisfying observability <span
+A, \omega)\)</span> be a quantum universe over a Noetherian ring <span
+class="math inline">\(R\)</span>
+(Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Assume observability <span
 class="math inline">\(\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) =
 0\)</span>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
@@ -3056,8 +3066,8 @@ Then the brane tower <span class="math inline">\(\{A_n\}_{n \geq
 satisfies the <a class="defn-link" href="#def:yekutieli-lifting-condition">Yekutieli lifting condition</a>
 (Definition <a href="#def:yekutieli-lifting-condition" data-reference-type="ref" data-reference="def:yekutieli-lifting-condition">3.7</a>,
 Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>),
-and <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> is
-a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with the following structural
+and <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> is a
+<a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with the following structural
 properties:</em></p>
 <ol type="1">
 <li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> terminates.</em> The geometric descent tower has
@@ -3173,7 +3183,7 @@ class="math inline">\(\sigma \colon \mathbb{P}(V) \hookrightarrow
 Proposition <a href="#prop:fiber-adjoint-involution" data-reference-type="ref" data-reference="prop:fiber-adjoint-involution">1.4</a>. ◻</p>
 </div>
 
-<div id="rem:fermionic-twisted-sectors" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L350" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:fermionic-twisted-sectors" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L351" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:fermionic-twisted-sectors">Fermionic sectors as twisted sectors</a>).
 <em>When the Yekutieli obstruction class <span
@@ -3194,7 +3204,7 @@ localisation of fermionic excitations at the monodromy fixed points of
 the brane tower.</em></p>
 </div>
 
-<div id="rem:betti-numbers-brane" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L367" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:betti-numbers-brane" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L368" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:betti-numbers-brane">Betti numbers of the brane tower</a>).
 <em>Let <span class="math inline">\(b_k(E_n) = \dim H^k(E_n,
@@ -3214,7 +3224,7 @@ of <span class="math inline">\(b_k(E_{n+1})\)</span> in terms of <span
 class="math inline">\(b_k(E_n)\)</span>.</em></p>
 </div>
 
-<div id="rem:q-harmonic-basis-brane" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L381" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-harmonic-basis-brane" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L382" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Harmonic basis of the brane tower).
@@ -3252,7 +3262,7 @@ class="math inline">\(J^1\)</span> prolongations
 which are the first-order resolutions of the base flows.</em></p>
 </div>
 
-<div id="rem:weight-space-decomposition" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L412" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:weight-space-decomposition" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L413" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Weight-space decomposition of the
 harmonic basis). <em>The adjoint bundle <span
@@ -3292,7 +3302,7 @@ class="math inline">\(\mathrm{SU}(2)\)</span> flow in the fibre) and a
 structure of the brane).</em></p>
 </div>
 
-<div id="rem:algebraic-filter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L444" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:algebraic-filter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L445" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:algebraic-filter">The algebraic filter</a>). <em>Let <span
 class="math inline">\(\alpha\)</span> be a harmonic <span
@@ -3317,7 +3327,7 @@ fixed points. Their geodesics are straight relative to the gauge-fluid
 flow.</em></p>
 </div>
 
-<div id="rem:distributional-connection" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L466" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:distributional-connection" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L467" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Distributional connection at the
 limit). <em>At the limit <span class="math inline">\(n \to
@@ -3337,14 +3347,15 @@ jet space <span class="math inline">\(J^\infty E\)</span>
 (Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">3.18</a>).</em></p>
 </div>
 
-<div id="def:direct-limit-algebra" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L484" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:direct-limit-algebra" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L485" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a> as
 Direct Limit). <em>Let <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> be a quantum observable universe
-(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
-and let <span class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its
-<a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+\omega)\)</span> be a quantum observable universe
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Let <span class="math inline">\(\{A_n\}_{n \geq 0}\)</span>
+be its <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>).
 The <em>direct limit algebra of the quantum observable universe</em> is
 the colimit in the category of <span
@@ -3363,7 +3374,7 @@ gives <span class="math inline">\(\mathcal{A}_\infty \cong
 \varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))\)</span>.</em></p>
 </div>
 
-<div id="rem:direct-limit-lusztig" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L508" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:direct-limit-lusztig" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L509" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.17 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Direct limit algebra and the Lusztig
 integral form). <em>The algebra <span
@@ -3411,7 +3422,7 @@ the PBW basis of <span
 class="math inline">\(\mathrm{Dist}(H)\)</span>.</em></p>
 </div>
 
-<div id="rem:jet-shell" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L540" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:jet-shell" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L541" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.18 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:jet-shell">Jet Shell of the universe</a>). <em>In the
 limit <span class="math inline">\(n \to \infty\)</span>, the infinite
@@ -3423,7 +3434,7 @@ the algebra <span class="math inline">\(\mathcal{A}_\infty\)</span>
 acts naturally on sections of the jet shell.</em></p>
 </div>
 
-<div id="rem:stack-like-structure" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L550" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:stack-like-structure" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L551" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Stack-like structure of the direct
 limit algebra). <em>The direct limit algebra <span
@@ -3439,13 +3450,14 @@ class="math inline">\(J^\infty E\)</span>
 (Remark <a href="#rem:jet-shell" data-reference-type="ref" data-reference="rem:jet-shell">3.18</a>).</em></p>
 </div>
 
-<div id="prop:global-gluing" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L562" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:global-gluing" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L563" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.20 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Global gluing via Yekutieli’s
 twisted quantization). <em>Let <span class="math inline">\((\mathcal{C},
-A, \omega, q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
-(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
-The local deformations of the Frobenius–Hopf object <span
+A, \omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. The local deformations of the Frobenius–Hopf object <span
 class="math inline">\(A\)</span> parameterised by the substrate
 parameter <span class="math inline">\(q\)</span> induce a twisted
 associative deformation that admits a unique global gluing via
@@ -3502,14 +3514,15 @@ class="math inline">\(\mathrm{SU}(2)\)</span>-averaging argument of that
 proposition. ◻</p>
 </div>
 
-<div id="prop:vacuum-state" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L609" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:vacuum-state" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L610" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Existence and Uniqueness of the
 Vacuum State). <em>Let <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
-(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
-and let <span class="math inline">\(\mathcal{A}_\infty\)</span> be its
-direct limit algebra
+\omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Let <span class="math inline">\(\mathcal{A}_\infty\)</span>
+be its direct limit algebra
 (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.16</a>).
 Let <span class="math inline">\(G_q =
 \mathrm{Aut}^{\otimes}(\omega)\)</span> be the <a class="defn-link" href="#def:quantum-gauge-group">quantum gauge group</a>
@@ -3573,7 +3586,7 @@ which is one-dimensional. Hence <span
 class="math inline">\(\omega\)</span> is the unique such state. ◻</p>
 </div>
 
-<div id="rem:mass-geometric-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L666" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:mass-geometric-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L667" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.22 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:mass-geometric-drag">Mass in the brane tower</a>). <em>In the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
@@ -3591,7 +3604,7 @@ structure on each fibre, and the mass quantifies this
 variation.</em></p>
 </div>
 
-<div id="rem:mass-noncommutative-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L678" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:mass-noncommutative-drag" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L679" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:mass-noncommutative-drag">Non-commutativity and geometric drag</a>).
 <em>When the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> satisfies <span
@@ -3610,11 +3623,11 @@ source of the inertial resistance described in
 Remark <a href="#rem:mass-geometric-drag" data-reference-type="ref" data-reference="rem:mass-geometric-drag">3.22</a>.</em></p>
 </div>
 
-<div id="prop:euler-char-stability" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L689" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:euler-char-stability" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L690" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Stability of the Euler
 characteristic). <em>Let <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+\omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
 and let <span class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
@@ -3683,10 +3696,10 @@ class="math inline">\(\chi(M_0)\)</span> is preserved at every
 level. ◻</p>
 </div>
 
-<div id="def:mass-identity" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L742" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:mass-identity" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L743" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:mass-identity">Mass (categorical trace)</a>). <em>Let
-<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
 <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>)
 and let <span class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its
@@ -3731,7 +3744,7 @@ class="math inline">\(\gamma\)</span> through the
 comultiplication.</em></p>
 </div>
 
-<div id="cor:mass-identity-C" class="corollary"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L787" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="cor:mass-identity-C" class="corollary"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L788" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Corollary 3.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Archimedean realisation: nonabelian
 multiplicative integration). <em>In the archimedean quantum observable
@@ -3896,18 +3909,20 @@ groupoid. The key <a class="defn-link" href="#def:observation">observation</a> i
 extensions of gerbes  furnishes exactly the triples <span
 class="math inline">\((x, g, a)\)</span> needed to define the face and
 degeneracy maps.</p>
-<div id="def:yekutieli-triple" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L897" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:yekutieli-triple" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L898" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:yekutieli-triple">Yekutieli triple mapping</a>). <em>Let
-<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a
 <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its recursive brane
 tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>).
-Let <span class="math inline">\(\{U_i\}\)</span> be a covering of the
-underlying site <span class="math inline">\(\mathcal{S}\)</span>
-trivialising every level of the tower. The <em>Yekutieli triple</em> at
-level <span class="math inline">\(n\)</span> over an intersection <span
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Let <span class="math inline">\(\{U_i\}\)</span> be a
+covering of the underlying site <span
+class="math inline">\(\mathcal{S}\)</span> trivialising every level of
+the tower. The <em>Yekutieli triple</em> at level <span
+class="math inline">\(n\)</span> over an intersection <span
 class="math inline">\(U_i \cap U_j\)</span> is the datum <span
 class="math inline">\((x_{ij}^{(n)},\, g_{ij}^{(n)},\,
 a_{ij}^{(n)})\)</span> where:</em></p>
@@ -3945,15 +3960,16 @@ transition functions and <span class="math inline">\(a_{ij}^{(n)} \in
 \mathcal{O}_M^{\times}\)</span>.</em></p>
 </div>
 
-<div id="prop:cosimplicial-crossed-groupoid" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L929" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:cosimplicial-crossed-groupoid" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L930" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.28 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">Cosimplicial crossed groupoid</a>).
-<em>Let <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span>
-be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
+<em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its recursive brane
 tower
-(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>),
-equipped with the Yekutieli triples <span
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Equipped with the Yekutieli triples <span
 class="math inline">\((x^{(n)}, g^{(n)}, a^{(n)})\)</span> of
 Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>.
 Then the assignment <span class="math display">\[[n] \;\longmapsto\;
@@ -4044,7 +4060,7 @@ simplicial maps, making the total assignment a cosimplicial crossed
 groupoid. ◻</p>
 </div>
 
-<div id="rem:jet-as-descent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L999" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:jet-as-descent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1000" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:jet-prolongation">Jet prolongation</a> as formal <a class="defn-link" href="#def:descent">descent</a> of
 information). <em>In the <a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">cosimplicial crossed groupoid</a> of
@@ -4067,14 +4083,16 @@ underpins the <a class="defn-link" href="#def:descent-involution">descent involu
 (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">3.34</a>).</em></p>
 </div>
 
-<div id="prop:descent-condition" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1015" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:descent-condition" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1016" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.30 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> condition — twisted <span
 class="math inline">\(2\)</span>-cocycle). <em>Let <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a quantum
 observable universe and let <span class="math inline">\(\{A_n\}_{n \geq
-0}\)</span> be its <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a> with Yekutieli triples <span
-class="math inline">\((x^{(n)}, g^{(n)}, a^{(n)})\)</span>
+0}\)</span> be its <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>; let <span
+class="math inline">\(q\)</span> denote the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>. With
+Yekutieli triples <span class="math inline">\((x^{(n)}, g^{(n)},
+a^{(n)})\)</span>
 (Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">3.27</a>)
 and let <span class="math inline">\(A_\infty = \sum_{n,i} c_{n,i}\,
 \alpha_{n,i}\)</span>
@@ -4181,16 +4199,17 @@ class, closing the circle with the lifting criterion
 (Proposition <a href="#prop:yekutieli-lifting" data-reference-type="ref" data-reference="prop:yekutieli-lifting">3.8</a>). ◻</p>
 </div>
 
-<div id="prop:weak-equiv-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1105" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:weak-equiv-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1106" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Weak equivalence invariance of
 physical states). <em>Let <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
+\omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be its recursive brane
 tower with <span id="ssec:cosimplicial-crossed-groupoid"></span><a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">cosimplicial crossed groupoid</a> structure
-(Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">3.28</a>),
-and let <span class="math inline">\(\omega \colon \mathcal{A}_\infty \to
-\mathbb{C}\)</span> be the vacuum state
+(Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">3.28</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Let <span class="math inline">\(\omega \colon
+\mathcal{A}_\infty \to \mathbb{C}\)</span> be the vacuum state
 (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.21</a>).
 A <em>weak equivalence</em> between brane levels <span
 class="math inline">\(n\)</span> and <span
@@ -4269,10 +4288,10 @@ the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
 </div>
 
 <h3 id="descent">Descent</h3>
-<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1182" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1183" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.32 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> be a quantum
 observable universe and let <span class="math inline">\(\{A_n\}_{n \geq
 0}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>).
@@ -4290,21 +4309,22 @@ class="math inline">\(\mathrm{Krull\;dim}\,
 Z(\mathrm{End}_{\mathcal{C}}(A))\)</span>.</em></p>
 </div>
 
-<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1196" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1197" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Lemma 3.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
-universe). <em>Let <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
+universe). <em>Let <span class="math inline">\((\mathcal{C}, A,
+\omega)\)</span> be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be the recursive brane
 tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>),
-with <span class="math inline">\(n \geq 1\)</span>. The restriction
-morphism <span class="math inline">\(r_n \colon A_n \to A_{n-1}\)</span>
-yields a Frobenius–Hopf object <span
+with <span class="math inline">\(n \geq 1\)</span>; let <span
+class="math inline">\(q\)</span> denote the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>. The
+restriction morphism <span class="math inline">\(r_n \colon A_n \to
+A_{n-1}\)</span> yields a Frobenius–Hopf object <span
 class="math inline">\(A_{n-1}\)</span> such that <span
-class="math inline">\((\mathcal{C}, A_{n-1}, \omega, q)\)</span> is
-again a quantum observable universe. Moreover, the induced descent
-homomorphism <span class="math display">\[\mathfrak{d}_n \;\colon\;
+class="math inline">\((\mathcal{C}, A_{n-1}, \omega)\)</span> is again a
+quantum observable universe. Moreover, the induced descent homomorphism
+<span class="math display">\[\mathfrak{d}_n \;\colon\;
 \mathrm{End}_{\mathcal{C}}(A_n)
 \;\longrightarrow\;
 \mathrm{End}_{\mathcal{C}}(A_{n-1})\]</span> is a surjective algebra
@@ -4390,7 +4410,7 @@ class="math inline">\(n\)</span> and <span
 class="math inline">\(n{-}1\)</span>. ◻</p>
 </div>
 
-<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1267" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1268" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.34 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
 class="math inline">\(\ell_n \colon A_n \hookrightarrow A_{n+1}\)</span>
@@ -4433,7 +4453,7 @@ factor through the level-<span class="math inline">\(n\)</span> algebra
 via the ascent embedding.</em></p>
 </div>
 
-<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1304" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1305" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.35 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
 involution). <em>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
@@ -4512,11 +4532,11 @@ algebra, so <span class="math inline">\(\tau_n = \ell_n \circ
 \mathfrak{d}_{n+1}\)</span> sends them to zero. ◻</p>
 </div>
 
-<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1358" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1359" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 3.36 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
-<em>Let <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span>
-be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
+<em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\{A_n\}_{n \geq 0}\)</span> be the recursive brane
 tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">3.4</a>).
@@ -4540,7 +4560,7 @@ geometric locus <span class="math inline">\(\partial E_n = \{p \in E_n
 degeneracy locus of the fibrewise descent map.</em></p>
 </div>
 
-<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1380" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1381" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 3.37 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Structure of the defining
 boundary). <em>The defining boundary <span
@@ -4646,7 +4666,7 @@ with
 Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>. ◻</p>
 </div>
 
-<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1451" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1452" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.38 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
@@ -4675,7 +4695,7 @@ class="math inline">\(M_k\)</span> to a zero-dimensional base
 (Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">3.40</a>).</em></p>
 </div>
 
-<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1471" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1472" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.39 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
@@ -4713,7 +4733,7 @@ vertical harmonic forms.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1501" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1502" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.40 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(0\)</span>). <em>When <span
@@ -4758,7 +4778,7 @@ point—the entire <a class="defn-link" href="#def:quantum-observable-universe">
 <span class="math inline">\((E_p, q(p))\)</span>.</em></p>
 </div>
 
-<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1531" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1532" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.41 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(0\)</span>-dimensional base). <em>At
@@ -4787,7 +4807,7 @@ degrees of freedom without any spatial multiplicity.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1555" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1556" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.42 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fixed-point mechanism: ascent and
 <a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
@@ -4836,14 +4856,15 @@ non-trivial kernel.</em></p></li>
 </ol>
 </div>
 
-<div id="thm:topological-mass" class="theorem"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1587" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="thm:topological-mass" class="theorem"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1588" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Theorem 3.43 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#thm:topological-mass">Topological Decomposition of Mass</a>).
-<em>Let <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span>
-be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
-(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>),
-where <span class="math inline">\(\mathcal{C}\)</span> is the rigid
-monoidal category, <span class="math inline">\(A\)</span> the
+<em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
+a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>);
+let <span class="math inline">\(q\)</span> denote the substrate
+parameter. Here <span class="math inline">\(\mathcal{C}\)</span> is the
+rigid monoidal category, <span class="math inline">\(A\)</span> the
 Frobenius–Hopf object, and <span class="math inline">\(\omega\)</span>
 the fibre functor. Let <span class="math inline">\(\gamma \colon
 \mathbf{1} \to A\)</span> be a morphism (a “closed cycle” in <span
@@ -5088,7 +5109,7 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 the topological charge.</em></p>
 </div>
 
-<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1804" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1805" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.45 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
@@ -5155,7 +5176,7 @@ continuously deforming the Julia set geometry as one moves through the
 QOU.</em></p>
 </div>
 
-<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1845" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/lifting-of-quantum-torsion.tex#L1846" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 3.46 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big
@@ -7215,8 +7236,8 @@ E\)</span>. ◻</p>
 <div id="def:descartes-condition" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/review-categorical-spec-kEy1l/chapters/descartes-universe.tex#L7" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Definition 6.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descartes-condition">Descartes condition</a>). <em>A quantum
-observable universe <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> over <span class="math inline">\(R\)</span>
+observable universe <span class="math inline">\((\mathcal{C}, A,
+\omega)\)</span> over <span class="math inline">\(R\)</span>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>,
 Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>)
 satisfies the <em>Descartes condition</em> if the categorical Euler
@@ -7532,26 +7553,28 @@ Then Bring’s surface <span class="math inline">\(\Sigma_4\)</span>
 Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>)
 is a terminal object in <span
 class="math inline">\(\mathcal{C}_{-6}\)</span>: for every Descartes
-universe <span class="math inline">\((\mathcal{C}, A, \omega,
-q)\)</span> in <span class="math inline">\(\mathcal{C}_{-6}\)</span>,
-there exists a unique morphism to the Bring’s QOU.</em></p>
+universe <span class="math inline">\((\mathcal{C}, A, \omega)\)</span>
+in <span class="math inline">\(\mathcal{C}_{-6}\)</span>, there exists a
+unique morphism to the Bring’s QOU.</em></p>
 </div>
 
 <div class="proof">
 
 <p><em>Proof.</em> We must show that for every object <span
-class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> in <span
+class="math inline">\((\mathcal{C}, A, \omega)\)</span> in <span
 class="math inline">\(\mathcal{C}_{-6}\)</span> there exists a unique
 QOU morphism to the Bring’s QOU <span
 class="math inline">\((\mathcal{C}_B, A_B, \omega_B, q_B)\)</span>
 (Proposition <a href="#prop:brings-is-qou" data-reference-type="ref" data-reference="prop:brings-is-qou">5.4</a>).</p>
 <p><em>Existence.</em> Let <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> be a Descartes universe. The fibre functor <span
-class="math inline">\(\omega\)</span> identifies <span
-class="math inline">\(G_q = \mathrm{Aut}^{\otimes}(\omega)\)</span> with
-a quantum form of <span class="math inline">\(\mathrm{SU}(2)\)</span>
-(by Tannaka–Krein over <span class="math inline">\(R\)</span>), so the
-base curve of the geometric <a class="defn-link" href="#def:descent">descent</a>
+\omega)\)</span> be a Descartes universe; let <span
+class="math inline">\(q\)</span> denote the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>. The
+fibre functor <span class="math inline">\(\omega\)</span> identifies
+<span class="math inline">\(G_q =
+\mathrm{Aut}^{\otimes}(\omega)\)</span> with a quantum form of <span
+class="math inline">\(\mathrm{SU}(2)\)</span> (by Tannaka–Krein
+over <span class="math inline">\(R\)</span>), so the base curve of the
+geometric <a class="defn-link" href="#def:descent">descent</a>
 (Theorem <a href="#thm:qu-to-qou" data-reference-type="ref" data-reference="thm:qu-to-qou">3.9</a>(1))
 is a smooth genus-<span class="math inline">\(4\)</span> curve <span
 class="math inline">\(\Sigma\)</span> over <span
@@ -7573,7 +7596,7 @@ power-sum relations <span class="math inline">\(\sum x_j = \sum x_j^2 =
 class="math inline">\(\Sigma_4\)</span> up to isomorphism in <span
 class="math inline">\(\mathbb{P}^4_R\)</span>.</p>
 <p>The <a class="defn-link" href="#def:descent">descent</a> data of <span class="math inline">\((\mathcal{C}, A,
-\omega, q)\)</span> — specifically, the branch locus of <span
+\omega)\)</span> — specifically, the branch locus of <span
 class="math inline">\(\pi \colon \Sigma \to \mathbb{P}(V)\)</span> with
 its <span class="math inline">\(6\)</span> branch points and the <span
 class="math inline">\(S_5\)</span>-symmetric ramification profile —
