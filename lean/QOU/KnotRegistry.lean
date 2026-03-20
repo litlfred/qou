@@ -41,6 +41,10 @@ inductive QOUIdentity where
   | muon
   /-- The photon — background flux on the exceptional divisor. -/
   | photon
+  /-- The strong force — Hopf link, internal binding energy. -/
+  | strongForce
+  /-- The nucleon — Borromean rings, color-exchange entanglement. -/
+  | nucleon
   deriving DecidableEq, Repr
 
 /-! ## Registry Entry -/
@@ -128,12 +132,68 @@ noncomputable def photonEntry : KnotEntry where
   identity := .photon
   atlas_url := "http://katlas.org/wiki/0_1"
 
+/-- **Hopf Link (L2a1)** — the simplest non-trivial link (2 components).
+    QOU identity: **Strong Force**.  The Hopf link represents the
+    internal binding energy between quarks; invisible to the ℂP¹ base.
+
+    Knot Atlas: <http://katlas.org/wiki/Hopf_Link>
+    Hyperbolic volume: 0  (torus link — non-hyperbolic)
+    Components: 2 -/
+noncomputable def hopfLinkEntry : KnotEntry where
+  ab_index := "L2a1"
+  diagram := {
+    name := "L2a1"
+    crossings := [
+      ⟨![1, 4, 2, 3], .positive⟩,
+      ⟨![3, 2, 4, 1], .positive⟩,
+    ]
+    components := 2
+  }
+  volume := {
+    value := 0
+    error_bound := 0
+    error_nonneg := le_refl 0
+  }
+  identity := .strongForce
+  atlas_url := "http://katlas.org/wiki/Hopf_Link"
+
+/-- **Borromean Rings (6₂³)** — three mutually linked rings, no two
+    of which are linked pairwise.
+    QOU identity: **Nucleon**.  The Borromean topology encodes the
+    color-exchange entanglement of three quark tubes (uud or udd).
+
+    Knot Atlas: <http://katlas.org/wiki/L6a4>
+    Hyperbolic volume: 7.327724753 ± 1×10⁻⁹  (SnapPy)
+    Components: 3 -/
+noncomputable def borromeanRingsEntry : KnotEntry where
+  ab_index := "L6a4"
+  diagram := {
+    name := "L6a4"
+    crossings := [
+      ⟨![1, 8, 2, 9], .positive⟩,
+      ⟨![3, 10, 4, 11], .positive⟩,
+      ⟨![5, 12, 6, 7], .positive⟩,
+      ⟨![7, 2, 8, 3], .negative⟩,
+      ⟨![9, 4, 10, 5], .negative⟩,
+      ⟨![11, 6, 12, 1], .negative⟩,
+    ]
+    components := 3
+  }
+  volume := {
+    value := 7.327724753
+    error_bound := 1e-9
+    error_nonneg := by norm_num
+  }
+  identity := .nucleon
+  atlas_url := "http://katlas.org/wiki/L6a4"
+
 /-! ## Registry Collection -/
 
 /-- The complete knot registry: all knots with settled types in the QOU
     formalization.  Ordered by Alexander-Briggs crossing number. -/
 noncomputable def registry : List KnotEntry :=
-  [unknotEntry, trefoilEntry, figureEightEntry, photonEntry]
+  [unknotEntry, trefoilEntry, figureEightEntry, photonEntry,
+   hopfLinkEntry, borromeanRingsEntry]
 
 /-! ## Registry Queries -/
 
