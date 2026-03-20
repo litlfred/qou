@@ -1,30 +1,33 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-20 01:22:38 UTC
-Commit:    fc65b535c38db803ddfaae1d141eb05c979b7bf8
+Generated: 2026-03-20 01:58:28 UTC
+Commit:    67a1eb91529cbbdfd71d8171c4707da539751149
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
 ------------------------------------------------------------------------
 §1  BUILD STATUS
 ------------------------------------------------------------------------
-Status: ❌ BUILD FAILED
-
-Errors:
+Status: ✅ BUILD PASSED (no type errors)
 
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 34
+Total sorry occurrences: 94
 
   File                                          sorry count
   --------------------------------------------------------
   QOU.lean                                         1
+  QOU/BringsSurface.lean                           7
   QOU/Calculations.lean                            5
-  QOU/Glossary.lean                                23
-  QOU/MassDerivation.lean                          2
-  QOU/QuantumObservableUniverse.lean               3
+  QOU/DescartesUniverse.lean                       5
+  QOU/Elaboration.lean                             2
+  QOU/Glossary.lean                                38
+  QOU/MassDerivation.lean                          1
+  QOU/PathIntegrals.lean                           7
+  QOU/QuantumObservableUniverse.lean               20
+  QOU/Torsion.lean                                 8
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
@@ -43,43 +46,43 @@ The following key declarations were checked for axiom dependencies.
 Any use of `sorryAx` indicates an incomplete proof.
 
   #print axioms QOU.MassDerivation.topological_mass_conjecture
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.MassDerivation.derive_substrate_q
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.MassDerivation.mass_ratio_from_volume
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.MassDerivation.vol_figure_eight
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.MassDerivation.experimental_mu_e_ratio
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.MassDerivation.quantum_planck
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.KnotTheory.PlanarDiagram
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.KnotTheory.figureEight
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.KnotRegistry.figureEightEntry
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.KnotRegistry.registry_volume_eq_mass_derivation
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.Calculations.full_derivation_chain
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.Calculations.substrate_error_bound
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
   #print axioms QOU.Glossary.FrobeniusHopfObject
-    (could not run — project may not be built)
+    error: lakefile.toml:1:0: missing required key: name
 
 ------------------------------------------------------------------------
 §5  TOPOLOGICAL MASS CONJECTURE TRANSPARENCY
@@ -150,65 +153,6 @@ link to the foundational reference are shown.
     Citation: [lusztig1993]
     Link:     https://doi.org/10.1007/978-0-8176-4717-9
 
-  QOU/Glossary.lean:39  FrobeniusHopfObject
-    Citation: [kock2004]
-    Link:     https://doi.org/10.1017/CBO9780511615443
-
-  QOU/Glossary.lean:47  quantumParameter
-    Citation: [lusztig1993]
-    Link:     https://doi.org/10.1007/978-0-8176-4717-9
-
-  QOU/Glossary.lean:55  FibreFunctor
-    Citation: [baez1995]
-    Link:     https://doi.org/10.1063/1.531236
-
-  QOU/Glossary.lean:62  QuantumGaugeGroup
-    Citation: [lusztig1993]
-    Link:     https://doi.org/10.1007/978-0-8176-4717-9
-
-  QOU/Glossary.lean:72  CRManifold
-    Citation: [witten1988]
-    Link:     https://doi.org/10.1007/BF01223371
-
-  QOU/Glossary.lean:80  BringsSurface
-    Citation: [atiyah1988]
-    Link:     https://doi.org/10.1007/BF02698547
-
-  QOU/Glossary.lean:87  substrateParameter
-    Citation: [witten1988]
-    Link:     https://doi.org/10.1007/BF01223371
-
-  QOU/Glossary.lean:96  JetProlongation
-    Citation: [lurie2009]
-    Link:     https://doi.org/10.4310/CDM.2008.v2008.n1.a3
-
-  QOU/Glossary.lean:103  KahlerDifferentials
-    Citation: [lurie2009]
-    Link:     https://doi.org/10.4310/CDM.2008.v2008.n1.a3
-
-  QOU/Glossary.lean:112  BraidGroup
-    Citation: [turaev2010]
-    Link:     https://doi.org/10.1515/9783110221831
-
-  QOU/Glossary.lean:119  BinaryDihedralGroup
-    Citation: [turaev2010]
-    Link:     https://doi.org/10.1515/9783110221831
-
-  QOU/Glossary.lean:154  LusztigIntegralForm
-    Citation: [lusztig1993]
-    Link:     https://doi.org/10.1007/978-0-8176-4717-9
-
-  QOU/Glossary.lean:211  FIsocrystal
-    Citation: [freed2010]
-
-  QOU/MassDerivation.lean:105  derive_substrate_q
-    Citation: [KronheimerMrowka2004]
-    Link:     https://doi.org/10.2140/gt.2004.8.295
-
-  QOU/MassDerivation.lean:108  derive_substrate_q
-    Citation: [KronheimerMrowka2004]
-    Link:     https://doi.org/10.2140/gt.2004.8.295
-
   QOU/QuantumObservableUniverse.lean:461  self_dual_curvature
     Citation: [manuscript]
 
@@ -216,22 +160,97 @@ link to the foundational reference are shown.
 
   ⚠  Gaps WITHOUT bibliographic references (needs annotation):
 
+    QOU/BringsSurface.lean:17  brings_surface
+    QOU/BringsSurface.lean:23  color_tube_coordinates
+    QOU/BringsSurface.lean:29  chiral_elliptic
+    QOU/BringsSurface.lean:35  color_tube_fibers
+    QOU/BringsSurface.lean:41  observed_value
+    QOU/BringsSurface.lean:47  briggs_klein_chart
+    QOU/BringsSurface.lean:53  quaternionic_spectral_resolvents
     QOU/Calculations.lean:159  full_derivation_chain
-    QOU/Glossary.lean:130  LeviForm
-    QOU/Glossary.lean:138  WebsterMetric
-    QOU/Glossary.lean:145  ReebVectorField
-    QOU/Glossary.lean:161  YangMillsFunctional
-    QOU/Glossary.lean:167  QLaplacian
-    QOU/Glossary.lean:175  HodgeStarH
-    QOU/Glossary.lean:181  StateBundle
-    QOU/Glossary.lean:188  PrincipalBundle
-    QOU/Glossary.lean:195  AdjointObject
-    QOU/Glossary.lean:201  SelfDualCurvature
+    QOU/DescartesUniverse.lean:17  descartes_condition
+    QOU/DescartesUniverse.lean:23  genus_maximal_descent
+    QOU/DescartesUniverse.lean:29  exceptional_divisor
+    QOU/DescartesUniverse.lean:35  chiral_sector_coords
+    QOU/DescartesUniverse.lean:41  descartes
+    QOU/Elaboration.lean:17  dq_squared
+    QOU/Elaboration.lean:23  q_jacobiator
+    QOU/Glossary.lean:28  QuantumUniverse
+    QOU/Glossary.lean:35  QuantumObservableUniverse
+    QOU/Glossary.lean:42  Instanton
+    QOU/Glossary.lean:49  SubstrateParameter
+    QOU/Glossary.lean:56  QuantumGaugeGroup
+    QOU/Glossary.lean:63  QuantumPlanckConstant
+    QOU/Glossary.lean:70  QHarmonicForm
+    QOU/Glossary.lean:77  ReebDecomposition
+    QOU/Glossary.lean:84  Fermion
+    QOU/Glossary.lean:91  Boson
+    QOU/Glossary.lean:100  Observation
+    QOU/Glossary.lean:107  QExtDeriv
+    QOU/Glossary.lean:114  QLieBracket
+    QOU/Glossary.lean:121  QConnection
+    QOU/Glossary.lean:128  QReebVectorField
+    QOU/Glossary.lean:135  QReebFlow
+    QOU/Glossary.lean:142  QTorsionLeaf
+    QOU/Glossary.lean:151  BraidGroup
+    QOU/Glossary.lean:158  S3Group
+    QOU/Glossary.lean:165  Su2Basis
+    QOU/Glossary.lean:172  Su2Generators
+    QOU/Glossary.lean:179  So3Generators
+    QOU/Glossary.lean:186  BraidTwistFlip
+    QOU/Glossary.lean:193  QuantumSu2
+    QOU/Glossary.lean:200  RecursiveBraneTower
+    QOU/Glossary.lean:207  QuantumCharacteristicClasses
+    QOU/Glossary.lean:214  DirectLimitAlgebra
+    QOU/Glossary.lean:221  MassIdentity
+    QOU/Glossary.lean:230  Descent
+    QOU/Glossary.lean:237  BringsSurface
+    QOU/Glossary.lean:246  ColorTubeCoordinates
+    QOU/Glossary.lean:253  ColorTubeFibers
+    QOU/Glossary.lean:262  ObservedValue
+    QOU/Glossary.lean:269  BriggsKleinChart
+    QOU/Glossary.lean:276  QuaternionicSpectralResolvents
+    QOU/Glossary.lean:283  DescartesCondition
+    QOU/Glossary.lean:290  ExceptionalDivisor
+    QOU/Glossary.lean:297  ChiralSectorCoords
+    QOU/MassDerivation.lean:140  derive_substrate_q
+    QOU/PathIntegrals.lean:17  braid_group
+    QOU/PathIntegrals.lean:23  s3_group
+    QOU/PathIntegrals.lean:29  su2_basis
+    QOU/PathIntegrals.lean:35  su2_generators
+    QOU/PathIntegrals.lean:41  so3_generators
+    QOU/PathIntegrals.lean:47  braid_twist_flip
+    QOU/PathIntegrals.lean:53  quantum_su2
     QOU/QuantumObservableUniverse.lean:154  QuantumUniverse.gaugeGroup
     QOU/QuantumObservableUniverse.lean:476  main_commutative_diagram
+    QOU/QuantumObservableUniverse.lean:512  quantum_universe
+    QOU/QuantumObservableUniverse.lean:518  quantum_observable_universe
+    QOU/QuantumObservableUniverse.lean:524  instanton
+    QOU/QuantumObservableUniverse.lean:530  substrate_parameter
+    QOU/QuantumObservableUniverse.lean:536  quantum_gauge_group
+    QOU/QuantumObservableUniverse.lean:542  quantum_planck_constant
+    QOU/QuantumObservableUniverse.lean:548  q_harmonic_form
+    QOU/QuantumObservableUniverse.lean:554  reeb_decomposition
+    QOU/QuantumObservableUniverse.lean:560  fermion
+    QOU/QuantumObservableUniverse.lean:566  boson
+    QOU/QuantumObservableUniverse.lean:572  observation
+    QOU/QuantumObservableUniverse.lean:578  q_ext_deriv
+    QOU/QuantumObservableUniverse.lean:584  q_lie_bracket
+    QOU/QuantumObservableUniverse.lean:590  q_connection
+    QOU/QuantumObservableUniverse.lean:596  q_reeb_vector_field
+    QOU/QuantumObservableUniverse.lean:602  q_reeb_flow
+    QOU/QuantumObservableUniverse.lean:608  q_torsion_leaf
+    QOU/Torsion.lean:17  jet_prolongation
+    QOU/Torsion.lean:23  recursive_brane_tower
+    QOU/Torsion.lean:29  quantum_characteristic_classes
+    QOU/Torsion.lean:35  direct_limit_algebra
+    QOU/Torsion.lean:41  vacuum_state
+    QOU/Torsion.lean:47  euler_char_stability
+    QOU/Torsion.lean:53  mass_identity
+    QOU/Torsion.lean:59  descent
     QOU.lean:7  (unknown)
 
-  Summary: 20 referenced / 14 unreferenced / 34 total gaps
+  Summary: 5 referenced / 89 unreferenced / 94 total gaps
 
 ========================================================================
 END OF REPORT
