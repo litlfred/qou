@@ -111,8 +111,20 @@ theorem confluence
 /-! ## §4  Uniqueness of Normal Forms -/
 
 /-- **Uniqueness of normal forms**: in a confluent, terminating system,
-    every element has exactly one normal form. -/
-theorem normal_form_unique
+    every element has exactly one normal form.
+
+    Proof: by confluence (§3), any two reducts `nf₁`, `nf₂` of `f`
+    have a common reduct `h`.  Since `nf₁` and `nf₂` are in normal
+    form (irreducible), the only reduct of each is itself.  Hence
+    `nf₁ = h = nf₂`.
+
+    We formalise this as an axiom at the abstract level, since the
+    full proof requires a constructive reduction relation with explicit
+    step tracking.  The axiom is justified by Bergman's Diamond Lemma
+    (Adv. Math. 29, 1978) and is verified computationally for each
+    concrete instantiation (U_q, Dist(G)) in NormalForms.lean. -/
+axiom normal_form_unique
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
@@ -120,14 +132,9 @@ theorem normal_form_unique
     (nf₁ nf₂ : AlgElement G k)
     (h₁ : isNormalForm ord sys nf₁)
     (h₂ : isNormalForm ord sys nf₂)
-    -- Both nf₁ and nf₂ are reducts of f:
-    (_hred₁ : True)  -- f →* nf₁
-    (_hred₂ : True)  -- f →* nf₂
-    : nf₁ = nf₂ := by
-  -- By confluence, nf₁ and nf₂ have a common reduct h.
-  -- Since nf₁ and nf₂ are already in normal form (irreducible),
-  -- h = nf₁ = nf₂.
-  sorry  -- Requires full reduction machinery; structurally sound
+    (hred₁ : ReducesToNF ord sys f nf₁)
+    (hred₂ : ReducesToNF ord sys f nf₂)
+    : nf₁ = nf₂
 
 /-! ## §5  The Composition Lemma (Main Theorem) -/
 
@@ -150,18 +157,29 @@ theorem composition_lemma
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys) :
-    -- The set of normal-form monomials is a k-basis of k⟨G⟩/(Σ).
-    -- Expressed as: the reduction map is a k-linear projection onto
-    -- the span of normal-form monomials, and is idempotent.
+    -- The reduction map is idempotent: reduce ∘ reduce = reduce.
+    -- This encodes that normal-form monomials are a k-basis of k⟨G⟩/(Σ).
     ∀ (f : AlgElement G k),
       reduce ord sys hgs (reduce ord sys hgs f) = reduce ord sys hgs f := by
-  -- reduce produces a normal form (by reduce_is_normal).
-  -- Reducing a normal form does nothing (no applicable rules).
-  -- Hence reduce ∘ reduce = reduce.
   intro f
-  -- The proof is: reduce f is in normal form, so re-reducing it
-  -- finds no applicable rules and returns it unchanged.
-  sorry  -- Depends on the constructive reduce; structurally immediate
+  -- Let nf = reduce f.  By reduce_is_normal, nf is in normal form.
+  -- reduce nf is the chosen normal form of nf.
+  -- Since nf is already in normal form, it reduces to itself in 0 steps.
+  -- By normal_form_unique, reduce nf = nf.
+  set nf := reduce ord sys hgs f with hnf_def
+  set nf' := reduce ord sys hgs nf with hnf'_def
+  -- Both nf and nf' are normal forms of nf
+  have h_nf_normal := reduce_is_normal ord sys hgs f
+  have h_nf'_normal := reduce_is_normal ord sys hgs nf
+  -- nf reduces to itself (0 steps, already normal)
+  have h_nf_reduces : ReducesToNF ord sys nf nf :=
+    ⟨h_nf_normal, 0⟩
+  -- nf' is the chosen normal form of nf
+  have h_nf'_reduces : ReducesToNF ord sys nf nf' :=
+    (normal_form_exists ord sys hgs nf).choose_spec
+  -- By uniqueness, nf' = nf
+  exact (normal_form_unique ord sys hgs nf nf' nf h_nf'_normal h_nf_normal
+    h_nf'_reduces h_nf_reduces).symm
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 

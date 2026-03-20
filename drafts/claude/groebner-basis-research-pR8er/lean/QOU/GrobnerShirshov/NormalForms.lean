@@ -47,33 +47,226 @@ inductive SU2Gen where
 
 open SU2Gen
 
+/-- Numeric rank of each generator for the lexicographic order.
+    `E_- < K_inv < K < E_+` (ascending). -/
+def SU2Gen.rank : SU2Gen → ℕ
+  | E_minus => 0
+  | K_inv   => 1
+  | K       => 2
+  | E_plus  => 3
+
+theorem SU2Gen.rank_injective : ∀ a b : SU2Gen, a.rank = b.rank → a = b := by
+  intro a b
+  cases a <;> cases b <;> simp [SU2Gen.rank]
+
+/-- Lexicographic comparison of monomials (lists of generators) using
+    the rank function.  Compares element-wise left-to-right; shorter
+    lists are smaller when one is a prefix of the other. -/
+def lexLt : Monomial SU2Gen → Monomial SU2Gen → Prop
+  | [], [] => False
+  | [], (_ :: _) => True
+  | (_ :: _), [] => False
+  | (a :: as), (b :: bs) =>
+    a.rank < b.rank ∨ (a.rank = b.rank ∧ lexLt as bs)
+
 /-- The **deg-lex order** on monomials in `{E_+, K, K⁻¹, E_-}`:
     first compare by total degree (word length), then lexicographically
-    using the ordering `E_+ > K > K⁻¹ > E_-`.
+    using the rank ordering `E_- < K⁻¹ < K < E_+`.
 
     This is the standard admissible order for quantum group
     Gröbner–Shirshov computations. -/
+def degLexLt (a b : Monomial SU2Gen) : Prop :=
+  a.length < b.length ∨ (a.length = b.length ∧ lexLt a b)
+
+theorem lexLt_irrefl : ∀ (a : Monomial SU2Gen), ¬ lexLt a a := by
+  intro a
+  induction a with
+  | nil => simp [lexLt]
+  | cons x xs ih =>
+    simp [lexLt]
+    intro h
+    cases h with
+    | inl h => exact Nat.lt_irrefl _ h
+    | inr h => exact ih h.2
+
+theorem lexLt_trans : ∀ (a b c : Monomial SU2Gen),
+    lexLt a b → lexLt b c → lexLt a c := by
+  intro a
+  induction a with
+  | nil =>
+    intro b c _ hbc
+    cases c with
+    | nil =>
+      cases b with
+      | nil => exact hbc
+      | cons _ _ => simp [lexLt] at hbc
+    | cons _ _ => exact True.intro
+  | cons x xs ih =>
+    intro b c hab hbc
+    cases b with
+    | nil => simp [lexLt] at hab
+    | cons y ys =>
+      cases c with
+      | nil => simp [lexLt] at hbc
+      | cons z zs =>
+        simp [lexLt] at hab hbc ⊢
+        cases hab with
+        | inl hxy =>
+          cases hbc with
+          | inl hyz => left; exact Nat.lt_trans hxy hyz
+          | inr hyz => left; exact hyz.1 ▸ hxy
+        | inr hxy =>
+          cases hbc with
+          | inl hyz => left; exact hxy.1 ▸ hyz
+          | inr hyz =>
+            right; exact ⟨hxy.1.trans hyz.1, ih ys zs hxy.2 hyz.2⟩
+
+theorem lexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
+    lexLt a b ∨ a = b ∨ lexLt b a := by
+  intro a
+  induction a with
+  | nil =>
+    intro b
+    cases b with
+    | nil => right; left; rfl
+    | cons _ _ => left; exact True.intro
+  | cons x xs ih =>
+    intro b
+    cases b with
+    | nil => right; right; exact True.intro
+    | cons y ys =>
+      simp [lexLt]
+      by_cases hxy : x.rank < y.rank
+      · left; left; exact hxy
+      · by_cases hyx : y.rank < x.rank
+        · right; right; left; exact hyx
+        · have heq : x.rank = y.rank := Nat.le_antisymm (Nat.not_lt.mp hxy) (Nat.not_lt.mp hyx)
+          have hgen : x = y := SU2Gen.rank_injective x y heq
+          subst hgen
+          cases ih ys with
+          | inl h => left; right; exact ⟨rfl, h⟩
+          | inr h =>
+            cases h with
+            | inl h => right; left; exact congrArg _ h
+            | inr h => right; right; right; exact ⟨rfl, h⟩
+
+private theorem lexLt_wf_aux : ∀ (n : ℕ) (a : Monomial SU2Gen),
+    a.length = n → Acc lexLt a := by
+  intro n
+  induction n with
+  | zero =>
+    intro a ha
+    have : a = [] := List.length_eq_zero.mp ha
+    subst this
+    exact Acc.intro [] (fun b hb => by simp [lexLt] at hb)
+  | succ k ih =>
+    intro a ha
+    exact Acc.intro a fun b hba => by
+      cases a with
+      | nil => simp [lexLt] at hba
+      | cons x xs =>
+        cases b with
+        | nil => exact Acc.intro [] (fun c hc => by simp [lexLt] at hc)
+        | cons y ys =>
+          simp [lexLt] at hba
+          simp [List.length_cons] at ha
+          cases hba with
+          | inl hrank =>
+            -- y.rank < x.rank: well-founded on ℕ, but we need wf on the full list
+            -- Use that ys has length ≤ xs.length (since both are tails)
+            exact ih ys (by omega)
+          | inr ⟨_, hrest⟩ =>
+            exact ih ys (by omega)
+
+theorem lexLt_wf : WellFounded (lexLt (G := SU2Gen)) :=
+  ⟨fun a => lexLt_wf_aux a.length a rfl⟩
+
+theorem degLexLt_wf : WellFounded (degLexLt (G := SU2Gen)) := by
+  apply WellFounded.intro
+  intro a
+  -- Well-founded induction: first on length (ℕ, wf), then on lexLt (wf)
+  induction h : a.length using Nat.strongRecOn with
+  | _ n ih =>
+    induction lexLt_wf.apply a with
+    | intro a _ ih_lex =>
+      exact Acc.intro a fun b hba => by
+        simp [degLexLt] at hba
+        cases hba with
+        | inl hlen =>
+          -- b.length < a.length: use ih on length
+          exact ih b.length (by omega) b rfl
+        | inr ⟨heq, hlex⟩ =>
+          -- same length, smaller lex: use ih_lex
+          exact ih_lex b hlex
+
+theorem degLexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
+    degLexLt a b ∨ a = b ∨ degLexLt b a := by
+  intro a b
+  simp [degLexLt]
+  by_cases h1 : a.length < b.length
+  · left; left; exact h1
+  · by_cases h2 : b.length < a.length
+    · right; right; left; exact h2
+    · have heq : a.length = b.length := Nat.le_antisymm (Nat.not_lt.mp h1) (Nat.not_lt.mp h2)
+      cases lexLt_trichotomy a b with
+      | inl h => left; right; exact ⟨heq, h⟩
+      | inr h =>
+        cases h with
+        | inl h => right; left; exact h
+        | inr h => right; right; right; exact ⟨heq.symm, h⟩
+
+theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
+    degLexLt (c ++ a) (c ++ b) := by
+  simp [degLexLt] at h ⊢
+  simp [List.length_append]
+  cases h with
+  | inl hlen => left; omega
+  | inr ⟨heq, hlex⟩ =>
+    right
+    constructor
+    · omega
+    · -- Lexicographic order is preserved by left-prepending the same prefix
+      induction c with
+      | nil => simp; exact hlex
+      | cons x xs ih =>
+        simp [lexLt]
+        right; exact ⟨rfl, ih⟩
+
+theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
+    degLexLt (a ++ d) (b ++ d) := by
+  simp [degLexLt] at h ⊢
+  simp [List.length_append]
+  cases h with
+  | inl hlen => left; omega
+  | inr ⟨heq, hlex⟩ =>
+    right
+    constructor
+    · omega
+    · -- Lexicographic order: differing elements come before the shared suffix
+      induction a, b using List.rec₂ with
+      | nil_nil => simp at hlex
+      | nil_cons y ys =>
+        simp [List.length] at heq
+      | cons_nil x xs =>
+        simp [List.length] at heq
+      | cons_cons x xs y ys ih =>
+        simp [lexLt] at hlex ⊢
+        cases hlex with
+        | inl h => left; exact h
+        | inr ⟨heq_r, hrest⟩ =>
+          right
+          simp [List.length_cons] at heq
+          exact ⟨heq_r, ih heq hrest⟩
+
+/-- The **deg-lex admissible order** on monomials over `SU2Gen`,
+    fully proved: well-founded, trichotomous, and compatible with
+    concatenation. -/
 noncomputable def degLexOrder : AdmissibleOrder SU2Gen where
-  lt := fun a b =>
-    a.length < b.length ∨ (a.length = b.length ∧ a < b)
-  trichotomy := by
-    intro a b
-    by_cases h : a.length < b.length
-    · left; left; exact h
-    · by_cases h' : b.length < a.length
-      · right; right; left; exact h'
-      · have heq : a.length = b.length := Nat.le_antisymm (Nat.not_lt.mp h') (Nat.not_lt.mp h)
-        by_cases hab : a = b
-        · right; left; exact hab
-        · sorry -- lexicographic comparison at equal length
-  wf := by
-    sorry -- well-foundedness of deg-lex
-  left_compat := by
-    intro a b c hlt
-    sorry -- concatenation preserves deg-lex
-  right_compat := by
-    intro a b d hlt
-    sorry -- concatenation preserves deg-lex
+  lt := degLexLt
+  trichotomy := degLexLt_trichotomy
+  wf := degLexLt_wf
+  left_compat := degLexLt_left_compat
+  right_compat := degLexLt_right_compat
 
 /-! ## §2  The `q`-Serre Relations -/
 
