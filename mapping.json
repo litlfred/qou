@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T01:58:18.616474+00:00",
+  "generated_at": "2026-03-20T02:05:14.327566+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -146,6 +146,16 @@
       "narrative": "Descent",
       "lean_id": "QOU.Torsion.Descent",
       "latex_label": "def:descent"
+    },
+    {
+      "narrative": "Descent involution",
+      "lean_id": "QOU.Torsion.DescentInvolution",
+      "latex_label": "def:descent-involution"
+    },
+    {
+      "narrative": "Defining boundary of the brane",
+      "lean_id": "QOU.Torsion.BraneBoundary",
+      "latex_label": "def:brane-boundary"
     },
     {
       "narrative": "Bring's surface",

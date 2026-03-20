@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-20T02:00:02.851808+00:00",
-    "commit_sha": "67a1eb91529cbbdfd71d8171c4707da539751149"
+    "generated_at": "2026-03-20T02:05:14.391888+00:00",
+    "commit_sha": "f4113f3e87e396fc4c8e51817f91474541e2eefb"
   },
   "objects": [
     {
@@ -936,7 +936,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 321,
+        "line": 351,
         "chapter": 4
       },
       "title": "Mass in the brane tower",
@@ -947,7 +947,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 333,
+        "line": 363,
         "chapter": 4
       },
       "title": "Non-commutativity and geometric drag",
@@ -958,7 +958,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 344,
+        "line": 374,
         "chapter": 4
       },
       "title": "Stability of the Euler characteristic",
@@ -969,7 +969,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 361,
+        "line": 425,
         "chapter": 4
       },
       "title": "Mass Identity",
@@ -980,10 +980,65 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 379,
+        "line": 443,
         "chapter": 4
       },
       "title": "Descent",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "lem:descent",
+      "object_type": "lemma",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 453,
+        "chapter": 4
+      },
+      "title": "Descent preserves the quantum observable universe",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:descent-involution",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 520,
+        "chapter": 4
+      },
+      "title": "Descent involution",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "prop:descent-eigenspaces",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 555,
+        "chapter": 4
+      },
+      "title": "Eigenspaces of the descent involution",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:brane-boundary",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 609,
+        "chapter": 4
+      },
+      "title": "Defining boundary of the brane",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "prop:brane-boundary",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 627,
+        "chapter": 4
+      },
+      "title": "Structure of the defining boundary",
       "formalization_status": "not_started"
     },
     {
@@ -991,7 +1046,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 389,
+        "line": 696,
         "chapter": 4
       },
       "title": "Reduction at dimension~$1$",
@@ -1002,7 +1057,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 409,
+        "line": 716,
         "chapter": 4
       },
       "title": "Physical implications of a $1$-dimensional base",
@@ -1013,7 +1068,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 432,
+        "line": 739,
         "chapter": 4
       },
       "title": "Reduction at dimension~$0$",
@@ -1024,7 +1079,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 462,
+        "line": 769,
         "chapter": 4
       },
       "title": "Physical implications of a $0$-dimensional base",
@@ -1035,7 +1090,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 483,
+        "line": 790,
         "chapter": 4
       },
       "title": "Fixed-point mechanism: ascent and descent",
@@ -1046,7 +1101,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 518,
+        "line": 838,
         "chapter": 4
       },
       "title": "Quantum dilogarithm integrand as $q$-deformed Böttcher potential density",
@@ -1057,7 +1112,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 559,
+        "line": 879,
         "chapter": 4
       },
       "title": "Julia set on $S^1$ as photon scattering at the Big Bang",

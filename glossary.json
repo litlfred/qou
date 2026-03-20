@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T01:58:18.613740+00:00",
-  "commit_sha": "67a1eb91529cbbdfd71d8171c4707da539751149",
-  "entry_count": 38,
+  "generated_at": "2026-03-20T02:05:14.324718+00:00",
+  "commit_sha": "f4113f3e87e396fc4c8e51817f91474541e2eefb",
+  "entry_count": 40,
   "ambiguity_count": 5,
   "entries": [
     {
@@ -267,6 +267,22 @@
         ],
         "resolved_to": null
       }
+    },
+    {
+      "narrative_term": "Descent involution",
+      "lean_name": "QOU.Torsion.DescentInvolution",
+      "kind": "def",
+      "narrative_definition": "Let ell_n denote the ascent embedding (Proposition~) and _n+1 the descent homomorphism (Lemma~).  The  at level~n is the endomorphism [ tau_n ;=; ell_n circ _n+1 ;colon; Gamma!bigl(J^1 E_n+1,, _q_n+1(2)bigr) ;longrightarrow; Gamma!bigl(J^1 E_n+1,, _q_n+1(2)bigr). ] Since _n+1 circ ell_n =  on Gamma(J^1 E_n,, _q_n(2)) (the descent of the ascent recovers the original section, because ell_n embeds A as a direct summand of J^1(A) and _n+1 is the retraction), we have [ tau_n^2 ;=; ell_n circ _n+1 cir",
+      "latex_label": "def:descent-involution",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Defining boundary of the brane",
+      "lean_name": "QOU.Torsion.BraneBoundary",
+      "kind": "def",
+      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~) and let _n+1 be the descent homomorphism (Lemma~).  The  of the n-th brane is the subset [ partial E_n ;=; bigl, p in E_n ;bigm|; kerbigl(_n+1big|_pbigr) neq 0 ,bigr ;subseteq; E_n, ] i.e. the locus of points where the fibrewise descent map has a non-trivial kernel.  Equivalently, partial E_n is the degeneracy locus of the restriction r_ncolon J^1(A) to A evaluated fibre by fibre.",
+      "latex_label": "def:brane-boundary",
+      "chapter": 4
     },
     {
       "narrative_term": "Bring's surface",

@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-20 01:58:28 UTC
-Commit:    67a1eb91529cbbdfd71d8171c4707da539751149
+Generated: 2026-03-20 02:05:24 UTC
+Commit:    f4113f3e87e396fc4c8e51817f91474541e2eefb
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -14,7 +14,7 @@ Status: ✅ BUILD PASSED (no type errors)
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 94
+Total sorry occurrences: 103
 
   File                                          sorry count
   --------------------------------------------------------
@@ -23,11 +23,11 @@ Total sorry occurrences: 94
   QOU/Calculations.lean                            5
   QOU/DescartesUniverse.lean                       5
   QOU/Elaboration.lean                             2
-  QOU/Glossary.lean                                38
+  QOU/Glossary.lean                                40
   QOU/MassDerivation.lean                          1
   QOU/PathIntegrals.lean                           7
   QOU/QuantumObservableUniverse.lean               20
-  QOU/Torsion.lean                                 8
+  QOU/Torsion.lean                                 15
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
@@ -204,15 +204,17 @@ link to the foundational reference are shown.
     QOU/Glossary.lean:214  DirectLimitAlgebra
     QOU/Glossary.lean:221  MassIdentity
     QOU/Glossary.lean:230  Descent
-    QOU/Glossary.lean:237  BringsSurface
-    QOU/Glossary.lean:246  ColorTubeCoordinates
-    QOU/Glossary.lean:253  ColorTubeFibers
-    QOU/Glossary.lean:262  ObservedValue
-    QOU/Glossary.lean:269  BriggsKleinChart
-    QOU/Glossary.lean:276  QuaternionicSpectralResolvents
-    QOU/Glossary.lean:283  DescartesCondition
-    QOU/Glossary.lean:290  ExceptionalDivisor
-    QOU/Glossary.lean:297  ChiralSectorCoords
+    QOU/Glossary.lean:237  DescentInvolution
+    QOU/Glossary.lean:244  BraneBoundary
+    QOU/Glossary.lean:251  BringsSurface
+    QOU/Glossary.lean:260  ColorTubeCoordinates
+    QOU/Glossary.lean:267  ColorTubeFibers
+    QOU/Glossary.lean:276  ObservedValue
+    QOU/Glossary.lean:283  BriggsKleinChart
+    QOU/Glossary.lean:290  QuaternionicSpectralResolvents
+    QOU/Glossary.lean:297  DescartesCondition
+    QOU/Glossary.lean:304  ExceptionalDivisor
+    QOU/Glossary.lean:311  ChiralSectorCoords
     QOU/MassDerivation.lean:140  derive_substrate_q
     QOU/PathIntegrals.lean:17  braid_group
     QOU/PathIntegrals.lean:23  s3_group
@@ -240,17 +242,24 @@ link to the foundational reference are shown.
     QOU/QuantumObservableUniverse.lean:596  q_reeb_vector_field
     QOU/QuantumObservableUniverse.lean:602  q_reeb_flow
     QOU/QuantumObservableUniverse.lean:608  q_torsion_leaf
-    QOU/Torsion.lean:17  jet_prolongation
-    QOU/Torsion.lean:23  recursive_brane_tower
-    QOU/Torsion.lean:29  quantum_characteristic_classes
-    QOU/Torsion.lean:35  direct_limit_algebra
-    QOU/Torsion.lean:41  vacuum_state
-    QOU/Torsion.lean:47  euler_char_stability
-    QOU/Torsion.lean:53  mass_identity
-    QOU/Torsion.lean:59  descent
+    QOU/Torsion.lean:380  qNumber_pos
+    QOU/Torsion.lean:390  qNumber_pos
+    QOU/Torsion.lean:446  jet_prolongation
+    QOU/Torsion.lean:452  recursive_brane_tower
+    QOU/Torsion.lean:458  quantum_characteristic_classes
+    QOU/Torsion.lean:464  direct_limit_algebra
+    QOU/Torsion.lean:470  vacuum_state
+    QOU/Torsion.lean:476  euler_char_stability
+    QOU/Torsion.lean:482  mass_identity
+    QOU/Torsion.lean:488  descent
+    QOU/Torsion.lean:494  descent
+    QOU/Torsion.lean:500  descent_involution
+    QOU/Torsion.lean:506  descent_eigenspaces
+    QOU/Torsion.lean:512  brane_boundary
+    QOU/Torsion.lean:518  brane_boundary
     QOU.lean:7  (unknown)
 
-  Summary: 5 referenced / 89 unreferenced / 94 total gaps
+  Summary: 5 referenced / 98 unreferenced / 103 total gaps
 
 ========================================================================
 END OF REPORT
