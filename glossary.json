@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-19T20:23:15.394628+00:00",
-  "commit_sha": "692e12ef127d9628e1c6635a59e717d040a48112",
-  "entry_count": 35,
-  "ambiguity_count": 4,
+  "generated_at": "2026-03-20T00:44:17.617242+00:00",
+  "commit_sha": "cff126c2f3e976f923c88abc93aa84069c397b6d",
+  "entry_count": 38,
+  "ambiguity_count": 5,
   "entries": [
     {
       "narrative_term": "Quantum Universe",
@@ -84,6 +84,24 @@
       "narrative_definition": "A  is a q-harmonic form (Definition~) that is purely horizontal in the Reeb decomposition (Definition~): [ Delta_q,alpha = 0 qquadqquad alpha = alpha_H quad( iota_xi,alpha = 0 ). ]",
       "latex_label": "def:boson",
       "chapter": 1
+    },
+    {
+      "narrative_term": "Observation",
+      "lean_name": "QOU.QuantumObservableUniverse.Observation",
+      "kind": "def",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe over a field~k (Definition~).  An  is a morphism [  ;colon; A ;longrightarrow; A qquad , ] satisfying:  item ; lambda circ  = lambda (the observation preserves the Frobenius form); item ; the induced map on the deformation parameter shifts q mapsto q' = q + delta q, where delta q is determined by the Hopf-algebra coaction of~A on itself: [ delta q ;=; lambdabigl((a_(1)),S(a_(2))bigr) quad a in A, ] with S the antipode and Delta(a) = a_(1) otim",
+      "latex_label": "def:observation",
+      "chapter": 1,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Bundle without specified fiber/base",
+        "candidates": [
+          "FiberBundle",
+          "VectorBundle",
+          "PrincipalBundle"
+        ],
+        "resolved_to": null
+      }
     },
     {
       "narrative_term": "$q$-Deformed exterior derivative",
@@ -325,6 +343,22 @@
       "kind": "def",
       "narrative_definition": "A  quantum observable universe (M, G, P, E) (Example~) satisfies the  if the Euler characteristic of the bulk bundle is [ chi(E) ;=; -6. ] A  quantum observable universe satisfying the Descartes condition is called a .  medskip  itshape ``Je pense, donc je suis.'' --- Ren'e Descartes",
       "latex_label": "def:descartes-condition",
+      "chapter": 6
+    },
+    {
+      "narrative_term": "Exceptional divisor at $p$",
+      "lean_name": "QOU.DescartesUniverse.ExceptionalDivisor",
+      "kind": "def",
+      "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1 and [ O(p) ;=; p + R,N(p). ] The  at p is the ^1 fibre [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ] where picolon  to M is the blow-up map that replaces p with E_p cong ^1.",
+      "latex_label": "def:exceptional-divisor",
+      "chapter": 6
+    },
+    {
+      "narrative_term": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
+      "lean_name": "QOU.DescartesUniverse.ChiralSectorCoords",
+      "kind": "def",
+      "narrative_definition": "With notation as in Definition~, fix the substrate parameter q (Definition~) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by  (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).  The  qphi rotates each sector by q full turns as the latitude phi runs from the south pole~(0) to the north pole~(pi), encoding the chirality of the substra",
+      "latex_label": "def:chiral-sector-coords",
       "chapter": 6
     }
   ]
