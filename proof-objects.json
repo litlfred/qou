@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-20T02:23:11.249797+00:00",
-    "commit_sha": "00f9a385d2c8976504402432b6a9bc94499f3d49"
+    "generated_at": "2026-03-20T02:52:23.013460+00:00",
+    "commit_sha": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
   },
   "objects": [
     {
@@ -21,11 +21,10 @@
         "decl": "QOU.QuantumUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:quantum-observable-universe",
@@ -40,11 +39,10 @@
         "decl": "QOU.QuantumObservableUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:base-field-independence",
@@ -70,11 +68,10 @@
         "decl": "QOU.CRManifoldData",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:notation-special-cases",
@@ -100,11 +97,10 @@
         "decl": "QOU.CQuantumObservableUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:instanton",
@@ -119,11 +115,10 @@
         "decl": "QOU.InstantonConnection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "lem:irreducible-connection",
@@ -138,8 +133,8 @@
         "decl": "QOU.irreducible_connection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49"
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
       "formalization_status": "proved"
     },
@@ -156,11 +151,10 @@
         "decl": "QOU.self_dual_curvature",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:substrate-parameter",
@@ -175,11 +169,10 @@
         "decl": "QOU.SubstrateParameter",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:c-substrate-via-levi",
@@ -216,11 +209,10 @@
         "decl": "QOU.QuantumGaugeGroup",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:quantum-planck-constant",
@@ -235,11 +227,10 @@
         "decl": "QOU.quantumPlanckConstant",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:planck-limits",
@@ -276,11 +267,10 @@
         "decl": "QOU.QHarmonicForm",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:reeb-decomposition",
@@ -295,11 +285,10 @@
         "decl": "QOU.ReebDecomposition",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:fermion",
@@ -314,11 +303,10 @@
         "decl": "QOU.Fermion",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:boson",
@@ -333,11 +321,10 @@
         "decl": "QOU.Boson",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:observation",
@@ -374,11 +361,10 @@
         "decl": "QOU.qExtDeriv",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:q-lie-bracket",
@@ -393,11 +379,10 @@
         "decl": "QOU.qLieBracket",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:q-connection",
@@ -412,11 +397,10 @@
         "decl": "QOU.qConnection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:q-reeb-vector-field",
@@ -431,11 +415,10 @@
         "decl": "QOU.qReebVectorField",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:q-reeb-flow",
@@ -450,11 +433,10 @@
         "decl": "QOU.QReebFlow",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "def:q-torsion-leaf",
@@ -469,11 +451,10 @@
         "decl": "QOU.QTorsionLeaf",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:q-torsion-existence",
@@ -521,11 +502,10 @@
         "decl": "QOU.main_commutative_diagram",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/00f9a385d2c8976504402432b6a9bc94499f3d49/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "00f9a385d2c8976504402432b6a9bc94499f3d49",
-        "sorry_free": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/1dbb755c520b9a6f9ced8cebbcde938e3c5c9840/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "rem:tqft-context",
