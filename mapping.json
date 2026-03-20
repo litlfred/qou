@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T14:43:44.617223+00:00",
+  "generated_at": "2026-03-20T16:21:16.494587+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -128,7 +128,7 @@
       "latex_label": "def:recursive-brane-tower"
     },
     {
-      "narrative": "Quantum Characteristic Classes",
+      "narrative": "Quantum Characteristic Classes (Yekutieli obstruction)",
       "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
       "latex_label": "def:quantum-characteristic-classes"
     },
@@ -138,9 +138,14 @@
       "latex_label": "def:direct-limit-algebra"
     },
     {
-      "narrative": "Mass Identity",
+      "narrative": "Mass Identity (nonabelian multiplicative integration)",
       "lean_id": "QOU.Torsion.MassIdentity",
       "latex_label": "def:mass-identity"
+    },
+    {
+      "narrative": "Yekutieli triple mapping",
+      "lean_id": "QOU.Torsion.YekutieliTriple",
+      "latex_label": "def:yekutieli-triple"
     },
     {
       "narrative": "Descent",
