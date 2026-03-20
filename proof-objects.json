@@ -1595,7 +1595,7 @@
         "line": 1811,
         "chapter": 4
       },
-      "title": "Quantum dilogarithm integrand as $q$-deformed Böttcher potential density",
+      "title": "Quantum dilogarithm integrand as $q$-deformed B\u00f6ttcher potential density",
       "formalization_status": "not_started"
     },
     {
@@ -2201,7 +2201,12 @@
         "chapter": 7
       },
       "title": "Witt vector lift of a formal group",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "Fred2005.WittVectorLift",
+        "file": "Fred2005/FormalGroups.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "prop:skew-poisson-integration",
@@ -2212,7 +2217,12 @@
         "chapter": 7
       },
       "title": "Integration of skewed-Poisson structures",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "Fred2005.skew_poisson_integrates",
+        "file": "Fred2005/FormalGroups.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:witt-lift-qou",
@@ -2223,7 +2233,12 @@
         "chapter": 7
       },
       "title": "Role in the QOU lifting theorem",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "Fred2005.unit_root_iff_integrable",
+        "file": "Fred2005/FormalGroups.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "ex:finite-field-realisation",
