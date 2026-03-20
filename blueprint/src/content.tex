@@ -859,7 +859,20 @@
   For horizontal vector fields $U,V,W$, the Jacobiator is
   $\mathrm{Jac}_q(U,V,W) = -q^{-1}(1-q^{-1})\sum_{\mathrm{cyc}} d\theta(V,W)\,\mathcal{L}_\xi U$.
   Vanishes iff $q=1$ or $d\theta|_{H\times H}=0$.
+  Since $d\theta|_{H \times H}$ is the non-degenerate Levi form,
+  $[\cdot,\cdot]_q$ violates the Jacobi identity for all $q \neq 1$;
+  thus $(\mathfrak{X}(M), [\cdot,\cdot]_q)$ is a \emph{Leibniz algebra},
+  not a Lie algebra.
 \end{proposition}
+
+\begin{theorem}[Jacobi identity violation]
+  \label{thm:jacobi-violation}
+  \lean{QOU.Elaboration.jacobi_identity_violation}
+  \uses{prop:q-jacobiator}
+  For $q \neq 1$ and non-degenerate $d\theta|_{H \times H}$, the Jacobiator
+  $\mathrm{Jac}_q \neq 0$ generically, witnessing failure of the Jacobi
+  identity.
+\end{theorem}
 
 
 \chapter{Path Integrals and Braiding (Chapter 3)}
