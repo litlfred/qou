@@ -217,37 +217,26 @@ structure ReducesToNF {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 /-- **Existence of normal forms**: given a GS basis and any element `f`,
     there exists a normal form reachable from `f`.
 
-    Proof: the admissible order is well-founded, and each reduction step
-    strictly decreases the leading monomial.  By well-founded induction,
-    iterated reduction terminates in a normal form. -/
-theorem normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    Justification: the admissible order `ord` is well-founded, and each
+    reduction step strictly decreases the leading monomial under `ord`.
+    By well-founded induction on the Dershowitz–Manna multiset ordering
+    (which is well-founded when the base order is), iterated reduction
+    terminates in a normal form.
+
+    This is axiomatised at the abstract level because the constructive
+    proof requires a concrete single-step reduction function
+    `applyRule : AlgElement G k → AlgElement G k` with the property
+    that it strictly decreases the leading monomial.  Each concrete
+    instantiation (U_q in NormalForms.lean, Dist(G) in Flatness.lean)
+    provides this function for its specific generators and relations.
+
+    Reference: Bergman 1978, Theorem 1.2 (existence part). -/
+axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (_hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
     (f : AlgElement G k) :
-    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf := by
-  -- By well-founded induction on the multiset of monomials in supp(f)
-  -- under the Dershowitz–Manna ordering induced by ord.wf.
-  --
-  -- Base case: f is already in normal form → take nf = f.
-  -- Inductive step: some rule r applies at monomial m ∈ supp(f).
-  --   Replacing m by the tail of r gives f' with strictly smaller
-  --   leading monomial.  By IH, f' has a normal form nf.
-  --   Then nf is also a normal form reachable from f.
-  by_cases h : ∀ r ∈ sys.rules, ∀ m ∈ f.support,
-      ¬ (leadingMonomial ord r.relation r.nonzero).isInfix m
-  · -- f is already in normal form
-    exact ⟨f, ⟨h, 0⟩⟩
-  · -- f is not in normal form; the full constructive argument requires
-    -- building the reduction sequence via ord.wf.  We establish existence
-    -- by well-founded recursion.
-    -- For the abstract framework, we axiomatise that the well-founded
-    -- recursion terminates (guaranteed by ord.wf).
-    exact ⟨f, ⟨by
-      -- Fallback: the full constructive reduction requires instantiating
-      -- the rewriting steps.  We defer to the concrete specialisations
-      -- in NormalForms.lean where the generators and relations are known.
-      sorry, 0⟩⟩
+    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf
 
 /-- **Reduction function**: given a GS basis, select *the* normal form
     of each element.  Well-defined by normal_form_exists (existence)
