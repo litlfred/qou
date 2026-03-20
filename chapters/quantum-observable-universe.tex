@@ -5,6 +5,7 @@
 
 \begin{definition}[Quantum Universe]
 \label{def:quantum-universe}
+\lean{QOU.QuantumUniverse}
 Let $k$ be a field.  A \emph{quantum universe over~$k$} is a quadruple
 $(\mathcal{C}, A, \omega, q)$ where:
 \begin{enumerate}
@@ -36,6 +37,7 @@ Tannaka--Krein duality.
 
 \begin{definition}[Quantum Observable Universe]
 \label{def:quantum-observable-universe}
+\lean{QOU.QuantumObservableUniverse}
 A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$k$
 (Definition~\ref{def:quantum-universe}) is \emph{observable} if:
 \begin{enumerate}
@@ -76,6 +78,7 @@ is well-defined over any~$k$.
 
 \begin{example}[$\mathbb{C}$ realisation: quantum universe]
 \label{def:c-quantum-universe}
+\lean{QOU.CRManifoldData}
 Over $k = \mathbb{C}$, a quantum universe
 (Definition~\ref{def:quantum-universe}) is realised by a $5$-tuple
 $(M, \theta, G, P, E)$ where:
@@ -112,6 +115,7 @@ signature $(n,0)$, where $L_\theta$ is positive definite.
 
 \begin{example}[$\mathbb{C}$ realisation: quantum observable universe]
 \label{def:c-quantum-observable-universe}
+\lean{QOU.CQuantumObservableUniverse}
 A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
 universe $(M, \theta, G, P, E)$
 (Example~\ref{def:c-quantum-universe}) that satisfies
@@ -138,6 +142,7 @@ $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
 
 \begin{definition}[Instanton connection]
 \label{def:instanton}
+\lean{QOU.InstantonConnection}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with
 $\dim_{\mathbb{R}} H = 4$ ($n = 2$).  An \emph{instanton connection} on $P$
 is a connection $A$ whose curvature $F_A$, restricted to the horizontal
@@ -151,6 +156,7 @@ $\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.
 
 \begin{lemma}[Irreducibility of the connection]
 \label{lem:irreducible-connection}
+\lean{QOU.irreducible_connection}\leanok
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
 vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every
 instanton connection $A$ on $P$ (Definition~\ref{def:instanton}) is
@@ -168,6 +174,7 @@ $H^0(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
 
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
+\lean{QOU.self_dual_curvature}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
 with $\dim_{\mathbb{R}} M = 5$ (i.e.\ the CR dimension $n = 2$, so that the
 Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$).  Let $A$
@@ -218,6 +225,7 @@ $F_A|_H = {*_H}\,F_A|_H$.
 
 \begin{definition}[Substrate parameter]
 \label{def:substrate-parameter}
+\lean{QOU.SubstrateParameter}
 Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a field~$k$
 (Definition~\ref{def:quantum-universe}).  Let
 $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the
@@ -313,6 +321,7 @@ curvature.
 
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
+\lean{QOU.QuantumGaugeGroup}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum gauge group} is the field of quantum groups
@@ -322,6 +331,7 @@ group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
+\lean{QOU.quantumPlanckConstant}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum Planck constant} is the smooth field
@@ -394,6 +404,7 @@ its ``strength'' is set by~$\hbar_q(p)$.
 
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
+\lean{QOU.QHarmonicForm}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with
 substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$
 denote the $q$-deformed exterior derivative
@@ -412,6 +423,7 @@ $q$-harmonic, i.e.\ lies in the kernel of the $q$-Laplacian:
 
 \begin{definition}[Reeb decomposition]
 \label{def:reeb-decomposition}
+\lean{QOU.ReebDecomposition}
 Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form
 (Example~\ref{def:c-quantum-universe}) and let $\xi$ denote the
 associated \emph{Reeb vector field}, characterised by
@@ -429,6 +441,7 @@ $\iota_\xi\,\alpha = 0$.
 
 \begin{definition}[Fermion]
 \label{def:fermion}
+\lean{QOU.Fermion}
 A \emph{fermion} is a $q$-harmonic form
 (Definition~\ref{def:q-harmonic-form}) that has a non-trivial vertical
 component in the Reeb decomposition
@@ -442,6 +455,7 @@ component in the Reeb decomposition
 
 \begin{definition}[Boson]
 \label{def:boson}
+\lean{QOU.Boson}
 A \emph{boson} is a $q$-harmonic form
 (Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
 Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
@@ -559,6 +573,7 @@ the uncertainty encoded in the substrate field.
 
 \begin{definition}[$q$-Deformed exterior derivative]
 \label{def:q-ext-deriv}
+\lean{QOU.qExtDeriv}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
 with substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).
 The \emph{$q$-deformed exterior derivative}
@@ -574,6 +589,7 @@ and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.
 
 \begin{definition}[$q$-Deformed Lie bracket]
 \label{def:q-lie-bracket}
+\lean{QOU.qLieBracket}
 Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields.  The
 \emph{$q$-deformed Lie bracket} is
 \[
@@ -587,6 +603,7 @@ where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.
 
 \begin{definition}[$q$-Deformed connection]
 \label{def:q-connection}
+\lean{QOU.qConnection}
 Let $A$ be an instanton connection on $P$
 (Lemma~\ref{lem:irreducible-connection}).  The \emph{$q$-deformed
 connection} $A_q$ is defined by
@@ -599,6 +616,7 @@ connection} $A_q$ is defined by
 
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
+\lean{QOU.qReebVectorField}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
 with substrate parameter $q$ (Definition~\ref{def:substrate-parameter})
 and Reeb vector field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
@@ -615,6 +633,7 @@ $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket
 
 \begin{definition}[$q$-Deformed Reeb flow]
 \label{def:q-reeb-flow}
+\lean{QOU.QReebFlow}
 Let $\xi_q$ be the $q$-deformed Reeb vector field
 (Definition~\ref{def:q-reeb-vector-field}).  The \emph{$q$-deformed Reeb flow}
 is the one-parameter family of diffeomorphisms
@@ -627,6 +646,7 @@ $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$:
 
 \begin{definition}[$q$-Torsion leaf]
 \label{def:q-torsion-leaf}
+\lean{QOU.QTorsionLeaf}
 Let $H = \ker\theta \subset TM$ be the horizontal distribution on the
 CR manifold $M$.  A \emph{$q$-torsion leaf} is a maximal integral
 submanifold $L \hookrightarrow M$ of $H$ that is invariant under the
@@ -713,6 +733,7 @@ $\mathrm{SU}(2)$ instantons.
 
 \begin{proposition}[Main Commutative Diagram]
 \label{prop:main-commutative-diagram}
+\lean{QOU.main_commutative_diagram}
 Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
 with instanton connection $A$ (Definition~\ref{def:instanton}) and substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let

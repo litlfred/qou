@@ -216,6 +216,9 @@ jobs:
             cp brings_surface.html _site/visualizer.html
           fi
 
+          # ── Extract proof objects early (needed by HTML generator) ──────────
+          python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
+
           # ── Generate base HTML with Pandoc ──────────────────────────────────
           pandoc "${FNAME_BASE}.md" \
             --from=gfm+tex_math_dollars \
@@ -246,11 +249,12 @@ jobs:
           HTML
           fi
 
-          # ── Enhance HTML → paper.html (with dark mode, TOC, definition links)
+          # ── Enhance HTML → paper.html (with dark mode, TOC, definition links, proof status)
           ENHANCE_ARGS=(
             _site/paper-raw.html
             main-flat.tex
             _site/paper.html
+            --manifest _site/proof-objects.json
           )
           if [ "${{ env.HEAD_REF }}" != "main" ]; then
             ENHANCE_ARGS+=(
@@ -304,8 +308,7 @@ jobs:
             cp    lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
-          # ── Extract proof objects and generate dependency graph ──────────────
-          python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
+          # ── Generate dependency graph from proof objects ──────────────────────
           python3 .github/scripts/generate_dependency_graph.py \
             --manifest _site/proof-objects.json \
             --output _site/dependency-graph.svg \
