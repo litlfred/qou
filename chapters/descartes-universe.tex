@@ -5,22 +5,19 @@
 
 \begin{definition}[Descartes condition]
 \label{def:descartes-condition}
-A $\mathbb{C}$ quantum observable universe $(M, G, P, E)$
-(Example~\ref{def:c-quantum-observable-universe}) satisfies the
-\emph{Descartes condition} if the Euler characteristic of the bulk bundle
-is
+A quantum observable universe $(\mathcal{C}, A, \omega, q)$ over~$R$
+(Definition~\ref{def:quantum-observable-universe},
+Theorem~\ref{thm:qu-to-qou}) satisfies the \emph{Descartes condition} if the
+categorical Euler characteristic
 \[
-  \chi(E) \;=\; -6.
+  \chi(A) \;=\; \mathrm{tr}(\mathrm{id}_A) \;=\; -6 \;\in\; R.
 \]
-A $\mathbb{C}$ quantum observable universe satisfying the Descartes condition
-is called a \emph{Descartes universe}.
-
-\medskip
-\begin{center}
-\itshape
-``Je pense, donc je suis.''\\
---- Ren\'e Descartes
-\end{center}
+This requires $6 \in R^{\times}$ (i.e.\ $\mathrm{char}(R) \nmid 6$).  The
+class $[A] \in K_0(\mathcal{C})$ has rank $-6$, which by
+Theorem~\ref{thm:qu-to-qou}(3--4) forces $\kappa_n \neq 0$ for all $n$ and
+produces $6$ branch points in the geometric descent (with total ramification
+$R_{\mathrm{tot}} = 2d + 6$).  A quantum observable universe satisfying the
+Descartes condition is called a \emph{Descartes universe}.
 \end{definition}
 
 % ── Implications on the three examples ───────────────────────────────────────
@@ -238,13 +235,15 @@ second, and $\mathfrak{b}$ the third.
 
 \begin{theorem}[Descartes theorem]
 \label{thm:descartes}
-Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum
-observable universes satisfying the Descartes condition $\chi(E) = -6$,
-with morphisms given by QOU maps that preserve the Euler characteristic.
-Then Bring's curve $\Sigma_4$ (Remark~\ref{rem:brings-curve}) is a terminal
-object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, P, E)$ in
-$\mathcal{C}_{-6}$, there exists a unique morphism
-$(M, G, P, E) \to (\Sigma_4, G, P_{\Sigma_4}, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.
+Let $\mathcal{C}_{-6}$ denote the category of quantum observable universes
+over~$R$ satisfying the Descartes condition $\chi(A) = -6$
+(Definition~\ref{def:descartes-condition}), with morphisms given by QOU maps
+that preserve the Euler characteristic.  Then Bring's surface $\Sigma_4$
+(Definition~\ref{def:brings-surface},
+Proposition~\ref{prop:brings-is-qou}) is a terminal object in
+$\mathcal{C}_{-6}$: for every Descartes universe
+$(\mathcal{C}, A, \omega, q)$ in $\mathcal{C}_{-6}$, there exists a unique
+morphism to the Bring's QOU.
 \end{theorem}
 
 \begin{proof}
