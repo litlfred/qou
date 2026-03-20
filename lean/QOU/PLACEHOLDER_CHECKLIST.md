@@ -1,97 +1,99 @@
 # Placeholder Checklist — Lean Formalization
 
-Audit date: 2026-03-20
+Audit date: 2026-03-20 (post-merge refresh)
 
 Items marked `[ ]` need real proofs or typed statements.
 Items marked `[x]` are done.
 
 ---
 
-## `True := by trivial` placeholders (19 total)
+## `True := by trivial` placeholders (0 remaining / 19 original)
 
-These fields have type `True` as a stand-in for a proper Prop/proof.
-Each needs to be replaced with the correct mathematical statement and proof.
+All 19 original `True := by trivial` stubs have been replaced with
+substantive definitions in the upstream merge.
 
-### Torsion.lean
+### Torsion.lean — all 16 resolved [x]
 
-| # | Line | Field | Intended meaning | Status |
-|---|------|-------|------------------|--------|
-| 1 | 62 | `ascent_preserves_mul` | `ℓ ≫ jet.mul = base.mul ≫ (ℓ ⊗ ℓ)` | [ ] |
-| 2 | 64 | `restriction_preserves_comul` | restriction is coalgebra map | [ ] |
-| 3 | 91 | `connection_unique` | prolonged connection uniquely determined | [ ] |
-| 4 | 131 | `obstructs_collapse` | char classes obstruct spectral collapse | [ ] |
-| 5 | 171 | `invariant` | `ω(g · a) = ω(a)` for all `g ∈ SU(2)` | [ ] |
-| 6 | 173 | `unique` | uniqueness from adjoint vanishing | [ ] |
-| 7 | 241 | `preserves_qou` | descent preserves QOU structure | [ ] |
-| 8 | 342 | `codim_ge_two` | boundary has codimension ≥ 2 | [ ] |
-| 9 | 344 | `exceptional_divisor_CP1` | kernel ≅ CP¹ ≅ S² | [ ] |
-| 10 | 355 | `involution_restricts` | τ restricts to ∂E_n | [ ] |
-| 11 | 357 | `chirality_interface` | boundary separates chirality at n=1 | [ ] |
-| 12 | 408 | `dim_one` | dim M = 1 | [ ] |
-| 13 | 410 | `holonomy_U1` | connection reduces to U(1) holonomy | [ ] |
-| 14 | 412 | `no_bosonic_modes` | no bosonic modes survive | [ ] |
-| 15 | 421 | `discrete_base` | dim M = 0 | [ ] |
-| 16 | 425 | `curvature_vanishes` | curvature vanishes identically | [ ] |
+| # | Old line | Field | Status |
+|---|----------|-------|--------|
+| 1 | 62 | `ascent_preserves_mul` | [x] |
+| 2 | 64 | `restriction_preserves_comul` | [x] |
+| 3 | 91 | `connection_unique` | [x] |
+| 4 | 131 | `obstructs_collapse` | [x] |
+| 5 | 171 | `invariant` | [x] |
+| 6 | 173 | `unique` | [x] |
+| 7 | 241 | `preserves_qou` | [x] |
+| 8 | 342 | `codim_ge_two` | [x] |
+| 9 | 344 | `exceptional_divisor_CP1` | [x] |
+| 10 | 355 | `involution_restricts` | [x] |
+| 11 | 357 | `chirality_interface` | [x] |
+| 12 | 408 | `dim_one` | [x] |
+| 13 | 410 | `holonomy_U1` | [x] |
+| 14 | 412 | `no_bosonic_modes` | [x] |
+| 15 | 421 | `discrete_base` | [x] |
+| 16 | 425 | `curvature_vanishes` | [x] |
 
-### QuantumObservableUniverse.lean
+### QuantumObservableUniverse.lean — all 3 resolved [x]
 
-| # | Line | Field | Intended meaning | Status |
-|---|------|-------|------------------|--------|
-| 17 | 256 | `yang_mills_minimises` | `δ_A YM(A) = 0` | [ ] |
-| 18 | 337 | `q_laplacian_vanishes` | `Δ_q α = 0` | [ ] |
-| 19 | 418 | `tangent_in_horizontal` | `T_p L ⊂ H_p` | [ ] |
+| # | Old line | Field | Status |
+|---|----------|-------|--------|
+| 17 | 256 | `yang_mills_minimises` | [x] |
+| 18 | 337 | `q_laplacian_vanishes` | [x] |
+| 19 | 418 | `tangent_in_horizontal` | [x] |
 
 ---
 
-## `sorry` markers (10 total)
+## `sorry` markers (4 remaining / 10 original)
 
-These are proofs or definitions left incomplete with `sorry`.
+### Resolved in merge [x]
 
-### Torsion.lean
+| # | File | Old line | Declaration | Status |
+|---|------|----------|-------------|--------|
+| 1 | Torsion.lean | 380 | `qNumber_pos` | [x] |
+| 2 | QuantumObservableUniverse.lean | 154 | `gaugeGroup` | [x] |
+| 3 | QuantumObservableUniverse.lean | 461 | `self_dual_curvature` | [x] |
+| 4 | QuantumObservableUniverse.lean | 476 | `main_commutative_diagram` | [x] |
+| 5 | Calculations.lean | 125 | `h_q_squared_pos` | [x] |
+| 6 | Calculations.lean | 131 | `h_q_value_in_unit_interval` | [x] |
+| 7 | Calculations.lean | 138 | `derived_q_gt_one` | [x] |
 
-| # | Line | Declaration | Notes | Status |
-|---|------|-------------|-------|--------|
-| 1 | 380 | `qNumber_pos` | q-number positivity for q > 0, q ≠ 1; needs geometric series argument | [ ] |
+### Still open [ ]
 
-### QuantumObservableUniverse.lean
+| # | File | Line | Declaration | Notes |
+|---|------|------|-------------|-------|
+| 8 | Calculations.lean | 122 | `substrate_error_bound` | Needs certified interval arithmetic for `Real.sqrt` |
+| 9 | Calculations.lean | 179 | `full_derivation_chain` | Same; depends on `substrate_error_bound` |
+| 10 | MassDerivation.lean | 141 | `substrate_q_certified` | Same; certified interval arith not yet in Mathlib |
+| 11 | Elaboration.lean | 250 | `jacobi_identity_violation` | **NEW** — malformed pipe-chain proof term; needs repair |
 
-| # | Line | Declaration | Notes | Status |
-|---|------|-------------|-------|--------|
-| 2 | 154 | `gaugeGroup` | Aut⊗(ω) via Tannaka–Krein; blocked on Mathlib monoidal nat trans | [ ] |
-| 3 | 461 | `self_dual_curvature` | Bogomolny decomposition argument | [ ] |
-| 4 | 476 | `main_commutative_diagram` | deferred to Chapter 11 | [ ] |
+---
 
-### Calculations.lean
+## Remaining `True := by trivial` (structural)
 
-| # | Line | Declaration | Notes | Status |
-|---|------|-------------|-------|--------|
-| 5 | 118 | `substrate_error_bound` | `|derived_q - 1.1097| < 0.0001`; needs interval arithmetic | [ ] |
-| 6 | 125 | `h_q_squared_pos` | positivity of vol/ratio | [ ] |
-| 7 | 131 | `h_q_value_in_unit_interval` | `0 < ℏ_q < 1` | [ ] |
-| 8 | 138 | `derived_q_gt_one` | `q > 1` | [ ] |
-| 9 | 159 | `full_derivation_chain` | complete chain witness | [ ] |
-
-### MassDerivation.lean
-
-| # | Line | Declaration | Notes | Status |
-|---|------|-------------|-------|--------|
-| 10 | 140 | `derive_substrate_q` | `|q - 1.1097| < 0.0001`; needs certified interval arith | [ ] |
+| # | File | Line | Declaration | Notes |
+|---|------|------|-------------|-------|
+| 1 | Torsion.lean | 272 | `descent_preserves_qou` | Type is `True`; needs proper prop |
 
 ---
 
 ## Priority triage
 
-**High priority** (blocks downstream proofs):
-- `qNumber_pos` (Torsion:380) — used by dilogarithm convergence
-- `yang_mills_minimises` (QOU:256) — instanton definition completeness
-- `q_laplacian_vanishes` (QOU:337) — particle definition completeness
+**High priority** (new / fixable):
+- `jacobi_identity_violation` (Elaboration:250) — malformed proof; should be repairable without new Mathlib API
 
-**Medium priority** (structural completeness):
-- All `True := by trivial` fields — need proper types replacing `True`
-- `self_dual_curvature` (QOU:461)
-- `h_q_squared_pos`, `derived_q_gt_one` (Calculations) — provable with `norm_num`
+**Low priority / blocked on Mathlib**:
+- `substrate_error_bound` (Calculations:122) — needs certified `Real.sqrt` interval arithmetic
+- `full_derivation_chain` (Calculations:179) — depends on above
+- `substrate_q_certified` (MassDerivation:141) — same blocker
+- `descent_preserves_qou` (Torsion:272) — structural; type needs upgrading from `True`
 
-**Low priority / blocked**:
-- `gaugeGroup` (QOU:154) — blocked on Mathlib API
-- `main_commutative_diagram` (QOU:476) — deferred to Ch 11
-- `full_derivation_chain` (Calculations:159) — needs interval arithmetic
+---
+
+## Summary
+
+| Category | Original | Remaining | Resolved |
+|----------|----------|-----------|----------|
+| `True := by trivial` stubs | 19 | 0 | 19 |
+| `True` theorem types | 1 | 1 | 0 |
+| `sorry` markers | 10 | 4 | 6+1 new |
+| **Total incomplete** | **29** | **5** | **25** |
