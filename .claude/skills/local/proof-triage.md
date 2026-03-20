@@ -209,6 +209,38 @@ In `glossary.json`, follow the existing notation conventions:
 - Use `textstylesum` not `sum` for summation notation
 - Check 2–3 neighboring entries for the prevailing style before adding new ones
 
+## Current Sorry Inventory (as of 2026-03-20)
+
+**27 active `sorry` statements** across 7 files. 0 `admit`, 0 `axiom` declarations.
+
+| File | Count | Category | Notes |
+|------|-------|----------|-------|
+| `FormalGroups.lean` | 11 | External results | All cite [fred2005] or [hazewinkel1978]; intentionally stubbed per file header |
+| `PAdicQuantumGroups.lean` | 4 | External results | All cite [fred2005]; Witt vector / Frobenius / unit-root |
+| `QuantumObservableUniverse.lean` | 2 | Core theory | Leibniz rule (L652) + observable well-definedness (L701) |
+| `HadronicMass.lean` | 2 | Tactic limitation | Proton/neutron pair-Skein approx; blocked by `Real.rpow` evaluation |
+| `BringsSurface.lean` | 2 | Deep math | Quantum Schur lemma (L242) + Yekutieli lifting (L254) |
+| `DescartesUniverse.lean` | 1 | Deep math | Tannaka–Krein rigidity uniqueness (L161) |
+| `Torsion.lean` | 1 | Commented out | Sheaf-theoretic gluing (L468) — not active |
+
+### Actionable next steps (priority order)
+
+1. **HadronicMass.lean L390/L396** — lowest-hanging fruit. Try `polyrith`,
+   rational rewriting of `Real.rpow`, or certified interval arithmetic witnesses.
+2. **QuantumObservableUniverse.lean L701** — `obs_well_defined` uses
+   `cqou.adjoint_cohomology_vanishes`; check if that field is now provable.
+3. **FormalGroups.lean / PAdicQuantumGroups.lean** — 15 sorry stubs total, all
+   from [fred2005]. These are a large batch but share proof techniques (formal
+   group laws, Witt vectors). Suitable for a dedicated formalization sprint.
+4. **BringsSurface.lean / DescartesUniverse.lean** — require deep categorical
+   arguments (Tannaka–Krein, Yekutieli). Defer unless actively working on
+   those chapters.
+
+### Trivial proofs (not sorry, but worth noting)
+
+6 single-tactic proofs (`by rfl`, `by simp`) in `BringsSurface.lean` and
+`Calculations.lean`. All are definitional equalities — legitimate, not placeholders.
+
 ## Feedback & Iteration Notes
 
 These notes capture lessons learned from applying the skill to the QOU codebase.
