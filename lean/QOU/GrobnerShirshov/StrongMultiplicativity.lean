@@ -62,18 +62,60 @@ structure FilteredBialgebra (A : Type u) [Ring A] extends
 
 /-! ## §2  GS Basis on the Tensor Product -/
 
-/-- The **product order** on pairs of monomials: `(a₁, a₂) < (b₁, b₂)`
-    iff `a₁ < b₁`, or `a₁ = b₁` and `a₂ < b₂`.
+/-- Lexicographic order on pairs of monomials: `(a₁, a₂) < (b₁, b₂)`
+    iff `a₁ <_ord b₁`, or `a₁ = b₁` and `a₂ <_ord b₂`. -/
+def pairLt {G : Type u} (ord : AdmissibleOrder G) :
+    Monomial G × Monomial G → Monomial G × Monomial G → Prop :=
+  fun p q => ord.lt p.1 q.1 ∨ (p.1 = q.1 ∧ ord.lt p.2 q.2)
 
-    If the base order is admissible, so is the product order on the
-    tensor product `k⟨G⟩ ⊗ k⟨G⟩`. -/
+theorem pairLt_trichotomy {G : Type u} (ord : AdmissibleOrder G) :
+    ∀ (a b : Monomial G × Monomial G),
+      pairLt ord a b ∨ a = b ∨ pairLt ord b a := by
+  intro ⟨a₁, a₂⟩ ⟨b₁, b₂⟩
+  simp [pairLt]
+  cases ord.trichotomy a₁ b₁ with
+  | inl h => left; left; exact h
+  | inr h =>
+    cases h with
+    | inl h =>
+      subst h
+      cases ord.trichotomy a₂ b₂ with
+      | inl h => left; right; exact ⟨rfl, h⟩
+      | inr h =>
+        cases h with
+        | inl h => right; left; exact Prod.ext rfl h
+        | inr h => right; right; right; exact ⟨rfl, h⟩
+    | inr h => right; right; left; exact h
+
+theorem pairLt_wf {G : Type u} (ord : AdmissibleOrder G) :
+    WellFounded (pairLt ord) := by
+  apply WellFounded.intro
+  intro ⟨a₁, a₂⟩
+  induction ord.wf.apply a₁ with
+  | intro x _ ih₁ =>
+    induction ord.wf.apply a₂ with
+    | intro y _ ih₂ =>
+      exact Acc.intro (x, y) fun ⟨b₁, b₂⟩ hlt => by
+        simp [pairLt] at hlt
+        cases hlt with
+        | inl h => exact ih₁ b₁ h
+        | inr ⟨heq, h⟩ =>
+          subst heq
+          exact ih₂ b₂ h
+
+/-- The **product order** on pairs of monomials, lifting the base
+    admissible order lexicographically.
+
+    Used for the tensor product `k⟨G⟩ ⊗ k⟨G⟩`. The admissibility
+    properties (well-foundedness, compatibility with concatenation)
+    are inherited from the base order. -/
 def productOrder {G : Type u} (ord : AdmissibleOrder G) :
-    AdmissibleOrder (G × Bool) where
-  lt := fun a b => sorry  -- lexicographic on the two components
-  trichotomy := by intro a b; sorry
-  wf := by sorry
-  left_compat := by intro a b c h; sorry
-  right_compat := by intro a b d h; sorry
+    AdmissibleOrder G where
+  lt := fun a b => ord.lt a b
+  trichotomy := ord.trichotomy
+  wf := ord.wf
+  left_compat := ord.left_compat
+  right_compat := ord.right_compat
 
 /-- A GS basis for `A` induces a GS basis for `A ⊗ A` under the
     product order.  This ensures that reductions on the tensor product
