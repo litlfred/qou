@@ -41,7 +41,7 @@ import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 
-open scoped Topology Manifold CategoryTheory
+open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
@@ -73,12 +73,31 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   antipode : obj ⟶ obj
   /-- Frobenius form `λ : A → 𝟙`. -/
   frobeniusForm : obj ⟶ (CategoryTheory.MonoidalCategory.tensorUnit)
-  /-- Non-degeneracy: the pairing `A ⊗ A →[μ] A →[λ] 𝟙` is non-degenerate.
-      Expressed as: the composite `μ ≫ frobeniusForm` is an isomorphism
-      when curried to `A → A∨`. -/
-  pairing_nondegenerate : True := by trivial  -- sorry-free axiom marker
-  /-- Frobenius relation: `(μ ⊗ id) ∘ (id ⊗ Δ_μ) = Δ_μ ∘ μ`. -/
-  frobenius_relation : True := by trivial  -- sorry-free axiom marker
+  /-- Coevaluation morphism `η̃ : 𝟙 → A ⊗ A`, the dual datum to the
+      evaluation `ev = μ ≫ λ : A ⊗ A → 𝟙`.  Together with `ev`, this
+      exhibits `A` as self-dual in the monoidal category `C`. -/
+  coevaluation : (CategoryTheory.MonoidalCategory.tensorUnit) ⟶
+    (CategoryTheory.MonoidalCategory.tensorObj obj obj)
+  /-- **Snake identity (left).**  The composite
+      `A →[ρ⁻¹] A ⊗ 𝟙 →[A ◁ coev] A ⊗ (A ⊗ A) →[α⁻¹] (A ⊗ A) ⊗ A
+       →[ev ▷ A] 𝟙 ⊗ A →[λ_] A`
+      equals `id_A`, where `ev = μ ≫ λ`.  This is one half of the exact
+      self-pairing making `A` self-dual. -/
+  pairing_snake_left :
+    (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫ (α_ obj obj obj).inv ≫
+      ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
+  /-- **Snake identity (right).**  The composite
+      `A →[λ_⁻¹] 𝟙 ⊗ A →[coev ▷ A] (A ⊗ A) ⊗ A →[α] A ⊗ (A ⊗ A)
+       →[A ◁ ev] A ⊗ 𝟙 →[ρ_] A`
+      equals `id_A`. -/
+  pairing_snake_right :
+    (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫ (α_ obj obj obj).hom ≫
+      (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+  /-- **Frobenius relation**: `μ ≫ Δ = (Δ ▷ A) ≫ α ≫ (A ◁ μ)`.
+      Comultiplication is a bimodule map — the defining axiom of a
+      Frobenius object in a monoidal category. -/
+  frobenius_relation :
+    mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
 
 /-- **Quantum Universe** over a field `k`.
 
@@ -106,17 +125,25 @@ structure QuantumUniverse (k : Type*) [Field k] where
 
 /-- **Quantum Observable Universe** over a field `k`.
 
-    A quantum universe that satisfies two observability conditions:
-    (i) the Frobenius form on `A` is non-degenerate, and
-    (ii) `Hom_C(𝟙, Ad(A)) = 0` (no invariant adjoint sections).
+    A quantum universe satisfying two observability conditions:
+    (i)  the Frobenius form on `A` is non-degenerate — an exact self-pairing,
+         already enforced structurally by the snake identities in
+         `FrobeniusHopfData`.
+    (ii) `Hom_C(𝟙, Ad(A))` is trivial — no non-trivial invariant adjoint
+         morphisms.
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
     extends QuantumUniverse.{u, v} k where
-  /-- Frobenius non-degeneracy (strengthened from the base structure). -/
-  frobenius_nondegenerate : True := by trivial  -- axiom placeholder
-  /-- Vanishing of invariant adjoint sections: `Hom_C(𝟙, Ad(A)) = 0`. -/
-  adjoint_vanishing : True := by trivial  -- axiom placeholder
+  /-- The adjoint object `Ad(A)` in `C`, carrying the adjoint action of the
+      Hopf algebra `A` on itself.  In a braided monoidal category this is
+      constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
+      abstractly. -/
+  adjointObj : C
+  /-- **Adjoint vanishing**: all morphisms `𝟙 → Ad(A)` in `C` are equal.
+      In a `k`-linear category this is equivalent to `Hom_C(𝟙, Ad(A)) = 0`,
+      since the zero morphism is always present and all others must equal it. -/
+  adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
     Tannaka–Krein duality from the fibre functor.
@@ -126,6 +153,44 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
 noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
     (_QU : QuantumUniverse.{u, v} k) : Type* :=
   sorry  -- Aut⊗(ω) via Tannaka–Krein; requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`
+
+/-! ## §1½  Abstract Hodge Theory -/
+
+/-- An **involutive endomorphism** in a category, modeling the Hodge star
+    operator `⋆`.  When `⋆² = id`, the eigenvalue decomposition
+    `V = V⁺ ⊕ V⁻` (self-dual ⊕ anti-self-dual) follows from the spectral
+    theory of involutions.  This is the most general setting: works over any
+    field, in any category with an identity. -/
+structure CatHodgeInvolution {C : Type u} [CategoryTheory.Category.{v} C]
+    (X : C) where
+  /-- The Hodge star operator `⋆ : X ⟶ X`. -/
+  star : X ⟶ X
+  /-- Involutivity: `⋆ ≫ ⋆ = id_X`. -/
+  star_sq : star ≫ star = 𝟙 X
+
+/-- A morphism `f : Y ⟶ X` is **self-dual** w.r.t. a categorical Hodge
+    involution if `f ≫ ⋆ = f`, i.e. `f` lands in the `+1`-eigenspace. -/
+def CatHodgeInvolution.IsSelfDual {C : Type u} [CategoryTheory.Category.{v} C]
+    {X : C} (h : CatHodgeInvolution X) {Y : C} (f : Y ⟶ X) : Prop :=
+  f ≫ h.star = f
+
+/-- An **involution on a type** (concrete version for the ℂ realisation).
+    Models the Hodge star acting pointwise on sections of a bundle. -/
+structure HodgeInvolution (V : Type*) where
+  /-- The Hodge star `⋆ : V → V`. -/
+  star : V → V
+  /-- Involutivity: `⋆(⋆(v)) = v` for all `v`. -/
+  star_sq : ∀ v, star (star v) = v
+
+/-- An element `v : V` is **self-dual** if `⋆(v) = v`. -/
+def HodgeInvolution.IsSelfDual {V : Type*} (h : HodgeInvolution V)
+    (v : V) : Prop :=
+  h.star v = v
+
+/-- An element `v : V` is **anti-self-dual** if `⋆(v) = -v`. -/
+def HodgeInvolution.IsAntiSelfDual {V : Type*} [Neg V]
+    (h : HodgeInvolution V) (v : V) : Prop :=
+  h.star v = -v
 
 /-! ## §2  ℂ Realisation -/
 
@@ -158,10 +223,15 @@ structure CRManifoldData where
 
     LaTeX: `\label{def:c-quantum-observable-universe}` -/
 structure CQuantumObservableUniverse extends CRManifoldData where
-  /-- `H⁰(M, Ad(P)) = 0`: no global sections of the adjoint bundle. -/
-  adjoint_cohomology_vanishes : True := by trivial
-  /-- `Γ_c(M, E) = 0`: no compactly supported sections of the state bundle. -/
-  state_sections_vanish : True := by trivial
+  /-- The type of global sections of the adjoint bundle `Ad(P)`. -/
+  adjointSections : Type*
+  /-- `H⁰(M, Ad(P))` is trivial: all global adjoint sections are equal.
+      In a vector space this means `H⁰(M, Ad(P)) = 0`. -/
+  adjoint_cohomology_vanishes : Subsingleton adjointSections
+  /-- The type of compactly supported sections of the state bundle `E`. -/
+  compactStateSections : Type*
+  /-- `Γ_c(M, E)` is trivial: all compactly supported state sections are equal. -/
+  state_sections_vanish : Subsingleton compactStateSections
 
 /-- **Instanton connection** on a principal bundle `P` over a CR manifold.
 
@@ -173,13 +243,18 @@ structure CQuantumObservableUniverse extends CRManifoldData where
 structure InstantonConnection (cr : CRManifoldData) where
   /-- Abstract connection data (gauge potential). -/
   connectionData : cr.M → ℝ  -- simplified; full: 𝔤-valued 1-form on `P`
-  /-- Curvature `F_A` restricted to `H`. -/
+  /-- Curvature `F_A` restricted to `H = ker θ`. -/
   curvature_H : cr.M → ℝ  -- simplified; full: Ad(P)-valued 2-form on `H`
-  /-- Self-duality condition (when `dim_ℝ H = 4`):
-      `F_A|_H = *_H F_A|_H`. -/
-  self_dual : cr.n = 2 → True := fun _ => trivial
-  /-- Yang–Mills minimisation (general case). -/
-  yang_mills_minimises : True := by trivial
+  /-- The type of covariant-constant sections of `Ad(P)` w.r.t. this
+      connection: `{ s ∈ Γ(Ad(P)) | D_A s = 0 }`. -/
+  parallelAdjointSections : Type*
+  /-- When `n = 2` (`dim_ℝ H = 4`), the Hodge star on `Ad(P)`-valued
+      2-forms restricted to `H`, determined by the Webster metric `g_θ`
+      and the complex structure `J`. -/
+  hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
+  /-- Yang–Mills minimisation: the connection is a critical point of
+      `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
+  yang_mills_minimises : True := by trivial  -- placeholder for δ_A YM(A) = 0
 
 /-! ## §3  Substrate Parameter, Gauge Group, Planck Constant -/
 
@@ -348,32 +423,43 @@ structure QTorsionLeaf (M : Type*) where
 
 /-! ## §6  Lemmas and Propositions -/
 
+/-- A connection is **irreducible** if the space of its covariant-constant
+    adjoint sections is trivial (at most one element, necessarily zero). -/
+def InstantonConnection.IsIrreducible {cr : CRManifoldData}
+    (inst : InstantonConnection cr) : Prop :=
+  Subsingleton inst.parallelAdjointSections
+
 /-- **Lemma (Irreducibility of the connection).**
-    In a ℂ quantum observable universe, the vanishing `H⁰(M, Ad(P)) = 0`
-    implies every instanton connection is irreducible.
+    In a ℂ quantum observable universe, every instanton connection is
+    irreducible, provided parallel adjoint sections embed into global ones.
 
     LaTeX: `\label{lem:irreducible-connection}`
-    Proof: by contradiction — a reducible connection yields a non-zero
-    parallel section of `Ad(P)`, contradicting vanishing. -/
+    Proof: A parallel section `D_A s = 0` is in particular a global section
+    of `Ad(P)`.  By injectivity of the embedding and the vanishing
+    `H⁰(M, Ad(P)) = 0`, all parallel sections are equal — hence the
+    connection is irreducible. -/
 theorem irreducible_connection (cqou : CQuantumObservableUniverse)
-    (_inst : InstantonConnection cqou.toCRManifoldData) :
-    True := by  -- `True` stands for "connection is irreducible"
-  -- Proof sketch: Suppose reducible ⟹ ∃ s ∈ Γ(Ad(P)), D_A s = 0
-  -- ⟹ s ∈ H⁰(M, Ad(P)) ≠ 0, contradicting adjoint_cohomology_vanishes.
-  trivial
+    (inst : InstantonConnection cqou.toCRManifoldData)
+    (embed : inst.parallelAdjointSections → cqou.adjointSections)
+    (h_inj : Function.Injective embed) :
+    inst.IsIrreducible :=
+  ⟨fun a b => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
 
 /-- **Proposition (Self-duality of the curvature).**
-    When `dim_ℝ M = 5` (CR dimension `n = 2`), the curvature of an
-    instanton connection, restricted to `H`, is self-dual.
+    When `dim_ℝ M = 5` (CR dimension `n = 2`, so `dim_ℝ H = 4`), the
+    curvature of an instanton connection, restricted to `H`, is self-dual
+    with respect to the Hodge star `*_H` determined by the Webster metric.
 
     LaTeX: `\label{prop:self-dual-curvature}`
-    Proof: Bogomolny decomposition of the Yang–Mills functional forces
-    the anti-self-dual part to vanish. -/
+    Proof: The contact form `θ` splits `TM = H ⊕ ℝξ`.  By the Bogomolny
+    decomposition, `YM(A) = ∫‖F⁺‖² + ∫‖F⁻‖²`.  Minimisation forces
+    `F⁻ = 0`, which is precisely `⋆_H F_A|_H = F_A|_H`. -/
 theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
     (hn : cqou.n = 2)
     (inst : InstantonConnection cqou.toCRManifoldData) :
-    inst.self_dual hn := by
-  trivial
+    (inst.hodgeStar hn).IsSelfDual inst.curvature_H := by
+  -- Ref: [manuscript] §1, Proposition 1.4
+  sorry
 
 /-- **Proposition (Main Commutative Diagram).**
     The diagram relating the Euler–Lagrange operator, jet evaluation,
