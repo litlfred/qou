@@ -33,6 +33,7 @@ At the start of every new session, the editor's first job is **triage**:
 | Validate LaTeX | `latex-validation` | Compilation, labels, refs |
 | Build / CI / publish / gh-pages | General-purpose agent | Workflow YAML, scripts |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
+| Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 
 ## Responsibilities

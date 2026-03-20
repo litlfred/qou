@@ -6,8 +6,8 @@
 \begin{definition}[Quantum Universe]
 \label{def:quantum-universe}
 \lean{QOU.QuantumUniverse}\leanok
-Let $R$ be a commutative ring.  A \emph{quantum universe over~$R$} is a quadruple
-$(\mathcal{C}, A, \omega, q)$ where:
+Let $R$ be a commutative ring.  A \emph{quantum universe over~$R$} is a triple
+$(\mathcal{C}, A, \omega)$ where:
 \begin{enumerate}
   \item $(\mathcal{C}, \otimes, \mathbf{1})$ is a $R$-linear rigid
         monoidal category;
@@ -23,27 +23,25 @@ $(\mathcal{C}, A, \omega, q)$ where:
         comultiplication dual to $\mu$ under the pairing;
   \item $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a fibre functor
         (exact faithful $R$-linear monoidal functor);
-  \item $q \in R^\times$ is a deformation parameter (invertibility of~$q$
-        is required because the Hopf-algebra relations defining~$A$
-        involve~$q^{-1}$; at $q = 0$ the antipode~$S$ degenerates and
-        the Hopf structure collapses); the Hopf structure on
-        $A$ depends on~$q$, and $q = 1$ recovers the classical
-        (cocommutative) case.
   \item $A$ admits a \emph{differential calculus}: the universal module of
         K\"ahler differentials $\Omega^1(A)$ exists as an object of
         $\mathcal{C}$ (this is the first-order differential structure
         required for jet prolongation,
         Proposition~\ref{prop:jet-prolongation}).
 \end{enumerate}
+The deformation parameter~$q$ is \emph{not} part of the categorical
+definition; it enters via the substrate parameter
+(Definition~\ref{def:substrate-parameter}) when the Hopf structure on~$A$
+is specialised.
 The \emph{quantum gauge group} is the affine $R$-group scheme
-$G_q = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
+$G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
 Tannaka--Krein duality.
 \end{definition}
 
 \begin{definition}[Quantum Observable Universe]
 \label{def:quantum-observable-universe}
 \lean{QOU.QuantumObservableUniverse}\leanok
-A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$R$
+A quantum universe $(\mathcal{C}, A, \omega)$ over~$R$
 (Definition~\ref{def:quantum-universe}) is \emph{observable} if:
 \begin{enumerate}
   \item the Frobenius form $\lambda$ on $A$ is non-degenerate (restated from Definition~\ref{def:quantum-universe} for emphasis); and
@@ -55,10 +53,11 @@ A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$R$
 
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over~$R$
-(Definition~\ref{def:quantum-universe}) and let $V$ denote the
-\emph{fundamental object} of~$\mathcal{C}$ (the simple object of
-categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$
+(Definition~\ref{def:quantum-universe}) equipped with substrate
+parameter~$q$ (Definition~\ref{def:substrate-parameter}), and let $V$
+denote the \emph{fundamental object} of~$\mathcal{C}$ (the simple object
+of categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$
 representation under $\omega$).  The \emph{projective line object} is the
 coset object
 \[
@@ -75,7 +74,7 @@ A^{\mathrm{co}\,T}$.
 
 \begin{proposition}[Fiber--adjoint-fiber involution]
 \label{prop:fiber-adjoint-involution}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}).  The Frobenius form
 $\lambda \colon A \to \mathbf{1}$ induces an isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under
@@ -119,9 +118,10 @@ $\lambda$ excludes the degenerate case).
 
 \begin{definition}[Categorical connection and curvature]
 \label{def:categorical-connection}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over~$R$ with
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$ with
 differential calculus $\Omega^1(A)$
-(Definition~\ref{def:quantum-universe}).  Write
+(Definition~\ref{def:quantum-universe}), and let $q$ denote the substrate
+parameter (Definition~\ref{def:substrate-parameter}).  Write
 $\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential
 forms (external tensor powers of the $A$-bimodule~$\Omega^1(A)$).
 
@@ -157,10 +157,11 @@ $\lambda(\mathrm{vol}) = 1$).
 \begin{definition}[Categorical action]
 \label{def:categorical-action}
 \uses{def:quantum-universe, def:quantum-observable-universe, def:categorical-connection}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) equipped with a
-connection $\nabla$ (Definition~\ref{def:categorical-connection}) and a
-section $\psi \colon \mathbf{1} \to A$ (a ``state'').
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) equipped with
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
+a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
+and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
 The \emph{categorical action} is the $R$-valued functional
 \begin{equation}\label{eq:categorical-action}
   \mathcal{S}_q[\nabla,\, \lambda,\, \psi]
@@ -414,10 +415,13 @@ $F_A|_H = {*_H}\,F_A|_H$.
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
+\section{Substrate parameter and deformation}
+\label{sec:substrate-parameter}
+
 \begin{definition}[Substrate parameter]
 \label{def:substrate-parameter}
 \lean{QOU.SubstrateParameter}\leanok
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a ring~$R$
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a ring~$R$
 (Definition~\ref{def:quantum-universe}).  Let
 $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the
 \emph{Lusztig integral form}~\cite{lusztig1993}: the
@@ -661,8 +665,10 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 
 \begin{definition}[Observation]
 \label{def:observation}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  An
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}), and let $q$
+denote the substrate parameter
+(Definition~\ref{def:substrate-parameter}).  An
 \emph{observation} is a morphism
 \[
   \mathcal{O} \;\colon\; A \;\longrightarrow\; A
@@ -700,8 +706,9 @@ condition~(2), every observation shifts the non-commutative geometry:
 
 \begin{remark}[Two-observer parallelogram]
 \label{rem:two-observer-parallelogram}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and
-let $\alpha$ be a fermion (Definition~\ref{def:fermion}) --- a
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and
+let $q$ denote the substrate parameter.  Let
+$\alpha$ be a fermion (Definition~\ref{def:fermion}) --- a
 $q$-harmonic form with non-trivial vertical component
 $\iota_\xi\,\alpha_V \neq 0$.  Consider two independent observations
 $\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$

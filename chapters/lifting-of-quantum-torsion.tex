@@ -5,7 +5,7 @@
 
 \begin{proposition}[Jet Prolongation]
 \label{prop:jet-prolongation}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
 ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Define the
 \emph{jet object}
 \[
@@ -95,8 +95,9 @@ $(\widetilde{M}, G, P', E')$ is an archimedean quantum observable universe.
 
 \begin{proof}
 Apply Proposition~\ref{prop:jet-prolongation} to the categorical data
-$(\mathcal{C}, A, \omega, q)$ underlying the archimedean quantum
-observable universe (Example~\ref{def:c-quantum-observable-universe}),
+$(\mathcal{C}, A, \omega)$ underlying the archimedean quantum
+observable universe (Example~\ref{def:c-quantum-observable-universe});
+let $q$ denote the substrate parameter,
 where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$,
 $A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful
 functor.  The fibre functor $\omega$ converts the categorical jet object
@@ -134,7 +135,7 @@ case-by-case verification.
 
 \begin{definition}[Recursive Brane Tower]
 \label{def:recursive-brane-tower}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
 ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Set
 $A_0 = A$.  \emph{Inductively}, define
 $A_{n+1} = J^1(A_n)$ as the jet prolongation
@@ -171,7 +172,7 @@ Corollary~\ref{cor:jet-prolongation-C}.
 
 \begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
 \label{def:quantum-characteristic-classes}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Each transition
 $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
@@ -223,7 +224,7 @@ and $x$ admits a lift if and only if $\kappa(x) = 0$.
 
 \begin{proposition}[Yekutieli Lifting Condition holds in the brane tower]
 \label{prop:yekutieli-lifting}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The central extensions of
@@ -260,14 +261,14 @@ to the existence of the lift.
 
 \begin{theorem}[Quantum universe with observability and Yekutieli is a QOU]
 \label{thm:qu-to-qou}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a Noetherian
-ring~$R$ (Definition~\ref{def:quantum-universe}) satisfying observability
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a Noetherian
+ring~$R$ (Definition~\ref{def:quantum-universe}); let $q$ denote the substrate parameter.  Assume observability
 $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$
 (Definition~\ref{def:quantum-observable-universe}).  Then the brane tower
 $\{A_n\}_{n \geq 0}$ constructed via jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) satisfies the Yekutieli lifting
 condition (Definition~\ref{def:yekutieli-lifting-condition},
-Proposition~\ref{prop:yekutieli-lifting}), and $(\mathcal{C}, A, \omega, q)$
+Proposition~\ref{prop:yekutieli-lifting}), and $(\mathcal{C}, A, \omega)$
 is a quantum observable universe with the following structural properties:
 \begin{enumerate}
   \item \emph{Descent terminates.}  The geometric descent tower has finite
@@ -482,8 +483,8 @@ into a harmonic expansion across the infinite jet space $J^\infty E$
 
 \begin{definition}[Quantum Observable Universe as Direct Limit]
 \label{def:direct-limit-algebra}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The
 \emph{direct limit algebra of the quantum observable universe} is the
@@ -560,8 +561,8 @@ into a global object on the jet shell $J^\infty E$
 
 \begin{proposition}[Global gluing via Yekutieli's twisted quantization]
 \label{prop:global-gluing}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}).  The local
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  The local
 deformations of the Frobenius--Hopf object~$A$ parameterised by the
 substrate parameter~$q$ induce a twisted associative deformation that
 admits a unique global gluing via Yekutieli's twisted quantization
@@ -607,8 +608,8 @@ $\mathrm{SU}(2)$-averaging argument of that proposition.
 
 \begin{proposition}[Existence and Uniqueness of the Vacuum State]
 \label{prop:vacuum-state}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Let
 $\mathcal{A}_\infty$ be its direct limit algebra
 (Definition~\ref{def:direct-limit-algebra}).  Let $G_q =
 \mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group
@@ -687,7 +688,7 @@ resistance described in Remark~\ref{rem:mass-geometric-drag}.
 
 \begin{proposition}[Stability of the Euler characteristic]
 \label{prop:euler-char-stability}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The categorical Euler
@@ -740,7 +741,7 @@ geometry.  Hence $\chi(M_0)$ is preserved at every level.
 
 \begin{definition}[Mass (categorical trace)]
 \label{def:mass-identity}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Since $\mathcal{C}$ is a
@@ -895,9 +896,9 @@ $(x, g, a)$ needed to define the face and degeneracy maps.
 
 \begin{definition}[Yekutieli triple mapping]
 \label{def:yekutieli-triple}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  Let $\{U_i\}$ be a covering
+(Definition~\ref{def:recursive-brane-tower}); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site~$\mathcal{S}$ trivialising every level of the tower.
 The \emph{Yekutieli triple} at level~$n$ over an intersection
 $U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
@@ -927,9 +928,9 @@ functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.
 
 \begin{proposition}[Cosimplicial crossed groupoid]
 \label{prop:cosimplicial-crossed-groupoid}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}), equipped with the Yekutieli
+(Definition~\ref{def:recursive-brane-tower}); let $q$ denote the substrate parameter.  Equipped with the Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 Definition~\ref{def:yekutieli-triple}.  Then the assignment
 \[
@@ -1013,8 +1014,8 @@ underpins the descent involution (Definition~\ref{def:descent-involution}).
 
 \begin{proposition}[Descent condition --- twisted $2$-cocycle]
 \label{prop:descent-condition}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower with Yekutieli
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower; let $q$ denote the substrate parameter.  With Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$
 (Definition~\ref{def:yekutieli-triple}) and let
 $A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$
@@ -1103,10 +1104,10 @@ the lifting criterion (Proposition~\ref{prop:yekutieli-lifting}).
 
 \begin{proposition}[Weak equivalence invariance of physical states]
 \label{prop:weak-equiv-invariance}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial
 crossed groupoid structure
-(Proposition~\ref{prop:cosimplicial-crossed-groupoid}), and let
+(Proposition~\ref{prop:cosimplicial-crossed-groupoid}); let $q$ denote the substrate parameter.  Let
 $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
 (Proposition~\ref{prop:vacuum-state}).  A \emph{weak equivalence} between
 brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
@@ -1180,7 +1181,7 @@ fluctuations across the tower.
 
 \begin{definition}[Descent]
 \label{def:descent}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The \emph{descent} is the
 reverse traversal of the tower: starting from level~$n$ one passes to
@@ -1194,11 +1195,11 @@ steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.
 
 \begin{lemma}[Descent preserves the quantum observable universe]
 \label{lem:descent}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}), with $n \geq 1$.  The
+(Definition~\ref{def:recursive-brane-tower}), with $n \geq 1$; let $q$ denote the substrate parameter.  The
 restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius--Hopf
-object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega, q)$ is again a
+object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega)$ is again a
 quantum observable universe.  Moreover, the induced descent homomorphism
 \[
   \mathfrak{d}_n \;\colon\;
@@ -1356,7 +1357,7 @@ sends them to zero.
 
 \begin{definition}[Defining boundary of the brane]
 \label{def:brane-boundary}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Let $\mathfrak{d}_{n+1}$ be
 the descent homomorphism (Lemma~\ref{lem:descent}).  The \emph{defining
@@ -1585,8 +1586,8 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 
 \begin{theorem}[Topological Decomposition of Mass]
 \label{thm:topological-mass}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}), where $\mathcal{C}$
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Here $\mathcal{C}$
 is the rigid monoidal category, $A$ the Frobenius--Hopf object, and
 $\omega$ the fibre functor.  Let
 $\gamma \colon \mathbf{1} \to A$ be a morphism (a ``closed cycle'' in~$A$,
