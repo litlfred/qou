@@ -6,10 +6,10 @@
 \begin{definition}[Quantum Universe]
 \label{def:quantum-universe}
 \lean{QOU.QuantumUniverse}\leanok
-Let $k$ be a field.  A \emph{quantum universe over~$k$} is a quadruple
+Let $R$ be a commutative ring.  A \emph{quantum universe over~$R$} is a quadruple
 $(\mathcal{C}, A, \omega, q)$ where:
 \begin{enumerate}
-  \item $(\mathcal{C}, \otimes, \mathbf{1})$ is a $k$-linear rigid
+  \item $(\mathcal{C}, \otimes, \mathbf{1})$ is a $R$-linear rigid
         monoidal category;
   \item $A$ is a \emph{Frobenius--Hopf object} in $\mathcal{C}$: an object
         equipped with a Hopf structure
@@ -21,16 +21,21 @@ $(\mathcal{C}, A, \omega, q)$ where:
         (\mathrm{id} \otimes \Delta_\mu)
         = \Delta_\mu \circ \mu$ holds, where $\Delta_\mu$ is the
         comultiplication dual to $\mu$ under the pairing;
-  \item $\omega \colon \mathcal{C} \to \mathrm{Vect}_k$ is a fibre functor
-        (exact faithful $k$-linear monoidal functor);
-  \item $q \in k^\times$ is a deformation parameter (invertibility of~$q$
+  \item $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a fibre functor
+        (exact faithful $R$-linear monoidal functor);
+  \item $q \in R^\times$ is a deformation parameter (invertibility of~$q$
         is required because the Hopf-algebra relations defining~$A$
         involve~$q^{-1}$; at $q = 0$ the antipode~$S$ degenerates and
         the Hopf structure collapses); the Hopf structure on
         $A$ depends on~$q$, and $q = 1$ recovers the classical
         (cocommutative) case.
+  \item $A$ admits a \emph{differential calculus}: the universal module of
+        K\"ahler differentials $\Omega^1(A)$ exists as an object of
+        $\mathcal{C}$ (this is the first-order differential structure
+        required for jet prolongation,
+        Proposition~\ref{prop:jet-prolongation}).
 \end{enumerate}
-The \emph{quantum gauge group} is the affine $k$-group scheme
+The \emph{quantum gauge group} is the affine $R$-group scheme
 $G_q = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
 Tannaka--Krein duality.
 \end{definition}
@@ -38,48 +43,112 @@ Tannaka--Krein duality.
 \begin{definition}[Quantum Observable Universe]
 \label{def:quantum-observable-universe}
 \lean{QOU.QuantumObservableUniverse}\leanok
-A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$k$
+A quantum universe $(\mathcal{C}, A, \omega, q)$ over~$R$
 (Definition~\ref{def:quantum-universe}) is \emph{observable} if:
 \begin{enumerate}
-  \item the Frobenius form $\lambda$ on $A$ is non-degenerate; and
+  \item the Frobenius form $\lambda$ on $A$ is non-degenerate (restated from Definition~\ref{def:quantum-universe} for emphasis); and
   \item $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$,
         where $\mathrm{Ad}(A)$ is the adjoint object
-        ($A$ with the conjugation coaction
-        $a \mapsto \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$).
+        ($A$ with the conjugation action $\mathrm{Ad}(a)(b) = \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$ for $a, b \in A$).
 \end{enumerate}
 \end{definition}
 
-\begin{remark}[Base-field independence]
+\begin{definition}[Projective line object]
+\label{def:projective-line-object}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over~$R$
+(Definition~\ref{def:quantum-universe}) and let $V$ denote the
+\emph{fundamental object} of~$\mathcal{C}$ (the simple object of
+categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$
+representation under $\omega$).  The \emph{projective line object} is the
+coset object
+\[
+  \mathbb{P}(V) \;=\; G_q \,/\, T,
+\]
+where $T = \mathrm{Aut}^{\otimes}(\omega|_{\mathcal{C}_0})$ is the maximal
+torus of $G_q$ (the sub-group scheme preserving the weight decomposition).
+In the archimedean realisation,
+$\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
+Algebraically, the function algebra of $\mathbb{P}(V)$ is the
+$T$-coinvariant subalgebra $\mathcal{O}_q(\mathbb{P}(V)) =
+A^{\mathrm{co}\,T}$.
+\end{definition}
+
+\begin{proposition}[Fiber--adjoint-fiber involution]
+\label{prop:fiber-adjoint-involution}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  The Frobenius form
+$\lambda \colon A \to \mathbf{1}$ induces an isomorphism
+$A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under
+which:
+\begin{enumerate}
+  \item the projective line object $\mathbb{P}(V)$
+        (Definition~\ref{def:projective-line-object}) embeds in the adjoint
+        object $\mathrm{Ad}(A)$ as the coadjoint orbit of a highest-weight
+        vector;
+  \item the assignment $\sigma \colon \mathbb{P}(V) \hookrightarrow
+        \mathrm{Ad}(A)$ is an involution in the sense that $\sigma$
+        determines $\mathbb{P}(V)$ from $\mathrm{Ad}(A)$ and vice versa;
+  \item the non-degeneracy of the Frobenius pairing forces the observability
+        condition $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$.
+\end{enumerate}
+In the archimedean realisation, $\sigma$ is the identification
+$\mathbb{CP}^1 \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere in the
+Lie algebra under the Killing form).  For topological $R$-modules of
+rank~$2$, $\mathbb{P}(V) = \mathrm{Gr}(1, M)$ (rank-$1$ direct summands of
+$M \cong R^2$), $\mathrm{Ad}(A) \cong \mathrm{End}_0(M) \cong
+\mathfrak{sl}_2(R)$ (trace-free endomorphisms), and $\sigma$ sends a line
+$\ell \subset M$ to the rank-$1$ projector
+$\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}_M$.
+\end{proposition}
+
+\begin{proof}
+The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \lambda \circ
+\mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
+Under this identification, the coset object $\mathbb{P}(V) = G_q/T$ embeds
+in $\mathrm{Ad}(A)$ via the orbit map $gT \mapsto \mathrm{Ad}(g)(h)$ for a
+fixed highest-weight element $h \in \mathrm{Ad}(A)$.  The orbit is closed
+(by rigidity of~$\mathcal{C}$) and determines a sub-object of
+$\mathrm{Ad}(A)$ isomorphic to $\mathbb{P}(V)$.  Conversely, given the
+sub-object, the coset $G_q/T$ is recovered as its stabiliser quotient.  Item
+(3) follows because $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$ would provide
+a $G_q$-fixed point in $\mathrm{Ad}(A)$, but the coadjoint orbit
+$\mathbb{P}(V)$ is a homogeneous space with no fixed points (the $T$-action
+on $\mathbb{P}(V)$ is free away from the poles, and non-degeneracy of
+$\lambda$ excludes the degenerate case).
+\end{proof}
+
+\begin{remark}[Base-ring independence]
 \label{rem:base-field-independence}
 Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
-are formulated over an arbitrary field~$k$.  The Frobenius--Hopf axioms
+are formulated over an arbitrary commutative ring~$R$.  The Frobenius--Hopf axioms
 replace the analytic vanishing conditions of the $\mathbb{C}$ realisation
 (Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
 non-degeneracy condition on the Frobenius form.  Concrete realisations
 include:
 \begin{itemize}
-  \item $k = \mathbb{C}$: the classical setting of CR geometry and contact
-        manifolds (Example~\ref{def:c-quantum-universe});
-  \item $k = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
-        an $F$-isocrystal with Frobenius lift, and integrability is controlled
-        by the $\pp$-adic Frobenius endomorphism
+  \item $R = K$ an archimedean field (a field with an archimedean absolute
+        value, e.g.\ $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$): the
+        setting of CR geometry and contact manifolds
+        (Example~\ref{def:c-quantum-universe});
+  \item $R = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
+        an $F$-isocrystal with Frobenius lift
         (Example~\ref{ex:p-adic-realisation},
         Chapter~\ref{chap:p-adic});
-  \item $k = \mathbb{F}_\pp$ (a finite field): the monoidal category is
-        the category of finite-dimensional representations of a quantum group
-        over~$\mathbb{F}_\pp$
-        (Example~\ref{ex:finite-field-realisation}).
+  \item $R = \mathbb{F}_\pp$ (a finite field): representations of a quantum
+        group over~$\mathbb{F}_\pp$
+        (Example~\ref{ex:finite-field-realisation});
+  \item $R = \mathbb{Z}[q, q^{-1}]$: the universal (Lusztig) integral form.
 \end{itemize}
 The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$
-is well-defined over any~$k$.
+is well-defined over any~$R$.
 \end{remark}
 
 % ── ℂ realisation ─────────────────────────────────────────────────────────────
 
-\begin{example}[$\mathbb{C}$ realisation: quantum universe]
+\begin{example}[Archimedean realisation: quantum universe]
 \label{def:c-quantum-universe}
 \lean{QOU.CRManifoldData}\leanok
-Over $k = \mathbb{C}$, a quantum universe
+Let $K$ be an archimedean field.  A quantum universe over~$K$
 (Definition~\ref{def:quantum-universe}) is realised by a $5$-tuple
 $(M, \theta, G, P, E)$ where:
 \begin{enumerate}
@@ -103,7 +172,7 @@ parameter~$q(p)$, Definition~\ref{def:substrate-parameter}), the
 Frobenius--Hopf object is
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
 Haar state, and the fibre functor $\omega$ is the forgetful functor
-to $\mathrm{Vect}_{\mathbb{C}}$.
+to $K\text{-}\mathrm{Mod}$.
 \end{example}
 
 \begin{remark}[Notation and special cases]
@@ -113,10 +182,10 @@ $(M, G, P, E)$.  The \emph{strictly pseudoconvex} case corresponds to
 signature $(n,0)$, where $L_\theta$ is positive definite.
 \end{remark}
 
-\begin{example}[$\mathbb{C}$ realisation: quantum observable universe]
+\begin{example}[Archimedean realisation: quantum observable universe]
 \label{def:c-quantum-observable-universe}
 \lean{QOU.CQuantumObservableUniverse}\leanok
-A \emph{$\mathbb{C}$ quantum observable universe} is a $\mathbb{C}$ quantum
+An \emph{archimedean quantum observable universe} is an archimedean quantum
 universe $(M, \theta, G, P, E)$
 (Example~\ref{def:c-quantum-universe}) that satisfies
 the vanishing conditions
@@ -125,7 +194,7 @@ the vanishing conditions
   \qquad\text{and}\qquad
   \Gamma_c(M, E) = 0.
 \]
-These analytic conditions are the $\mathbb{C}$ realisation of the
+These analytic conditions are the archimedean realisation of the
 categorical observability conditions of
 Definition~\ref{def:quantum-observable-universe}: the Frobenius
 non-degeneracy of the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$,
@@ -143,7 +212,7 @@ $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
 \begin{definition}[Instanton connection]
 \label{def:instanton}
 \lean{QOU.InstantonConnection}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with
+Let $(M, \theta, G, P, E)$ be an archimedean quantum universe with
 $\dim_{\mathbb{R}} H = 4$ ($n = 2$).  An \emph{instanton connection} on $P$
 is a connection $A$ whose curvature $F_A$, restricted to the horizontal
 distribution $H = \ker\theta$, is self-dual:
@@ -157,7 +226,7 @@ $\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.
 \begin{lemma}[Irreducibility of the connection]
 \label{lem:irreducible-connection}
 \lean{QOU.irreducible_connection}\leanok
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe.  Then the
+Let $(M, G, P, E)$ be an archimedean quantum observable universe.  Then the
 vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every
 instanton connection $A$ on $P$ (Definition~\ref{def:instanton}) is
 irreducible.
@@ -175,7 +244,7 @@ $H^0(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
 \lean{QOU.self_dual_curvature}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
 with $\dim_{\mathbb{R}} M = 5$ (i.e.\ the CR dimension $n = 2$, so that the
 Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$).  Let $A$
 be an instanton connection on $P$.  Then the curvature $F_A$, restricted to

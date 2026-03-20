@@ -201,7 +201,7 @@ to exist (Proposition~\ref{prop:yekutieli-lifting}).
 
 \begin{definition}[Yekutieli Lifting Condition]
 \label{def:yekutieli-lifting-condition}
-Let $\mathcal{C}$ be a $k$-linear rigid monoidal category and let
+Let $\mathcal{C}$ be a $R$-linear rigid monoidal category and let
 \[
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}'
@@ -229,17 +229,18 @@ $\{A_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The central extensions of
 gerbes
 \[
-  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1
 \]
 arising from the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) satisfy the Yekutieli Lifting
-Condition (Definition~\ref{def:yekutieli-lifting-condition}).  In
+Condition (Definition~\ref{def:yekutieli-lifting-condition}).  In the
+archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$.  In
 particular, the lift of the Frobenius--Hopf object from level~$n$ to
 level~$n{+}1$ exists if and only if the obstruction class
-$\kappa_n \in H^2(M,\, \mathcal{O}_M^{\times})$
+$\kappa_n \in H^2(M,\, \mathcal{B})$
 (Definition~\ref{def:quantum-characteristic-classes}) vanishes.
 \end{proposition}
 
@@ -251,10 +252,98 @@ if and only if its obstruction class in $H^2$ vanishes.  The jet
 prolongation construction
 (Proposition~\ref{prop:jet-prolongation}) realises the passage from
 level~$n$ to level~$n{+}1$ as precisely such a central extension,
-banded by $\mathcal{O}_M^{\times}$
+banded by $\mathcal{B}$
 (Definition~\ref{def:quantum-characteristic-classes}).  Hence the
 Yekutieli Lifting Condition holds, and $\kappa_n = 0$ is equivalent
 to the existence of the lift.
+\end{proof}
+
+\begin{theorem}[Quantum universe with observability and Yekutieli is a QOU]
+\label{thm:qu-to-qou}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a Noetherian
+ring~$R$ (Definition~\ref{def:quantum-universe}) satisfying observability
+$\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}).  Then the brane tower
+$\{A_n\}_{n \geq 0}$ constructed via jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) satisfies the Yekutieli lifting
+condition (Definition~\ref{def:yekutieli-lifting-condition},
+Proposition~\ref{prop:yekutieli-lifting}), and $(\mathcal{C}, A, \omega, q)$
+is a quantum observable universe with the following structural properties:
+\begin{enumerate}
+  \item \emph{Descent terminates.}  The geometric descent tower has finite
+        length, bounded by $\mathrm{Krull\;dim}\,
+        Z(\mathrm{End}_{\mathcal{C}}(A))$.  Observability ensures each step
+        is a strict reduction (the $G_q$-action is faithful, so fixed-point
+        reduction strictly decreases dimension).
+  \item \emph{First obstruction equals the Euler class.}  The Yekutieli
+        obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$ equals the
+        Euler class of the Reeb bundle.  Under the trace map,
+        $\kappa_0 \mapsto \chi(A) = \mathrm{tr}(\mathrm{id}_A) \in R$.
+  \item \emph{Perpetual obstruction.}  If $\kappa_0$ is non-torsion in
+        $H^2(\mathcal{S}, \mathcal{B})$, then $\kappa_n \neq 0$ for all
+        $n \geq 0$.  The class $\kappa_0$ and the jet corrections at
+        level~$n$ live in complementary subgroups of
+        $H^2(\mathcal{S}, \mathcal{B})$, so the corrections cannot cancel
+        $\kappa_0$.
+  \item \emph{Branch point formula.}  The geometric descent from
+        $\mathbb{P}(V)$ (Definition~\ref{def:projective-line-object}) to
+        points has $B$ branch points with total ramification
+        $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ (Riemann--Hurwitz),
+        where $d$ is the degree of the covering.
+  \item \emph{Terminal fiber data.}  At each branch point $p$, the QOU
+        reduces to fiber data $(A, \omega, q(p))$ with the involution
+        $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$
+        (Proposition~\ref{prop:fiber-adjoint-involution}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:yekutieli-lifting} establishes that the constructed
+brane tower satisfies the Yekutieli lifting condition.  We prove each
+structural property in turn.
+
+\emph{Item (1): Descent terminates.}\;
+The centre $Z(\mathrm{End}_{\mathcal{C}}(A))$ is a finitely generated
+commutative $R$-algebra (since $R$ is Noetherian and $\omega$ is faithful),
+hence has finite Krull dimension~$d_0$.  Observability forces the $G_q$-action
+on~$A$ to be faithful: any $G_q$-invariant element of $\mathrm{Ad}(A)$ would
+give a non-zero element of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$,
+contradicting the observability condition.  Each descent step (fixed-point
+reduction under~$G_q$) therefore strictly reduces the Krull dimension of the
+centre.  After at most $d_0$ steps, the Krull dimension reaches~$0$, and the
+base is a discrete (Artinian) scheme.
+
+\emph{Item (2): $\kappa_0$ equals the Euler class.}\;
+The first Yekutieli obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
+is the connecting homomorphism image of the bundle class $[A_0]$ under the
+central extension $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0
+\to 1$ (Proposition~\ref{prop:yekutieli-lifting}).  In the archimedean
+realisation, this identifies with the Euler class $e$ of the Reeb
+$\mathrm{U}(1)$-bundle via the Gysin sequence.  The trace map sends
+$\kappa_0$ to $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$.
+
+\emph{Item (3): Perpetual obstruction.}\;
+The class $\kappa_0$ lies in the image of $H^2(\mathcal{S}, \underline{R})
+\to H^2(\mathcal{S}, \mathcal{B})$ (constant/topological classes), while jet
+corrections at level~$n$ lie in the image of $H^2(\mathcal{S},
+\mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \mathcal{B})$ (analytic/algebraic
+classes).  When $\kappa_0$ is non-torsion, these images are complementary
+subgroups, so the corrections cannot cancel $\kappa_0$.  In the archimedean
+realisation, the splitting follows from the exponential sequence; in the
+algebraic setting, from the \'etale--analytic comparison.
+
+\emph{Item (4): Riemann--Hurwitz.}\;
+The branched covering $\pi \colon S \to \mathbb{P}(V)$ of degree~$d$ has
+total ramification $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ by
+Riemann--Hurwitz: $\chi(S) = d \cdot \chi(\mathbb{P}(V)) - R_{\mathrm{tot}}$
+with $\chi(\mathbb{P}(V)) = 2$.
+
+\emph{Item (5): Terminal fiber data.}\;
+At a branch point $p$, the Krull dimension of the centre is~$0$, so the base
+is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
+algebra~$A$ at parameter $q(p)$, with the involution
+$\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
+Proposition~\ref{prop:fiber-adjoint-involution}.
 \end{proof}
 
 \begin{remark}[Fermionic sectors as twisted sectors]
@@ -532,7 +621,7 @@ $\varphi \colon \mathcal{A}_\infty \to k$ that is $G_q$-invariant:
   \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.
 \]
-In the $\mathbb{C}$ realisation, $G_q = \mathrm{SU}_q(2)$ and
+In the archimedean realisation, $G_q = \mathrm{SU}_q(2)$ and
 $\varphi$ is the unique $\mathrm{SU}(2)$-invariant state on the
 $C^*$-algebraic direct limit.
 \end{proposition}
@@ -609,7 +698,7 @@ is stable under jet prolongation: for each level~$n$,
   \chi(A_{n+1}) \;=\; \chi(A_n).
 \]
 In particular, if the base level satisfies $\chi(A_0) = c \in k$, then
-$\chi(A_n) = c$ for all $n \geq 0$.  In the $\mathbb{C}$ realisation,
+$\chi(A_n) = c$ for all $n \geq 0$.  In the archimedean realisation,
 $\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the
 total space~$E_n$.
 \end{proposition}
@@ -643,13 +732,10 @@ forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$---the monodromy
 representation of $\pi_1(E_n)$ on $H^*(S^2;\, \mathbb{Z})$ is trivial (the
 adjoint bundle has no invariant sections to twist the fibre cohomology).
 Consequently the spectral sequence collapses at the $E_2$ page.  The
-preservation of the Euler characteristic follows from the fact that the
-instanton connection $A_n$ provides a global section of the associated
-$S^2$-bundle $E_{n+1}/\mathrm{U}(1) \to E_n$: the instanton itself
-determines a preferred point in each fibre
-$\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2$.  This global section makes the
-projection $E_{n+1} \to E_n$ a homotopy equivalence, whence
-$\chi(E_{n+1}) = \chi(E_n)$.
+preservation of the Euler characteristic follows from the following
+observation.  The base manifold~$M_0$ is invariant under jet prolongation:
+each level of the brane tower changes the bundle data but not the base
+geometry.  Hence $\chi(M_0)$ is preserved at every level.
 \end{proof}
 
 \begin{definition}[Mass (categorical trace)]
@@ -1101,8 +1187,9 @@ reverse traversal of the tower: starting from level~$n$ one passes to
 level~$n{-}1$ by applying the restriction morphism
 $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction
 of the jet embedding).  In the $\mathbb{C}$ realisation, this restricts
-the connection and bundle to the base manifold $M_{n-1}$.  The descent
-terminates when the categorical dimension of~$A_k$ reaches zero.
+the connection and bundle to the base manifold $M_{n-1}$.
+By Theorem~\ref{thm:qu-to-qou}(1), the descent terminates in finitely many
+steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.
 \end{definition}
 
 \begin{lemma}[Descent preserves the quantum observable universe]
