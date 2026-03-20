@@ -91,11 +91,12 @@ def figureEight : PlanarDiagram where
 
 /-! ## Hyperbolic Volumes of Standard Knots -/
 
-/-- The hyperbolic volume of the figure-eight knot (4_1).
-    Value: 2.0298832128 (computed by SnapPy / Bloch-Wigner function). -/
+/-- The hyperbolic volume of the figure-eight knot (4₁).
+    Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function.
+    Value: 2.02988321281931 (SnapPy / Bloch-Wigner dilogarithm, OEIS A091518). -/
 noncomputable def vol_figure_eight : HyperbolicVolume where
-  value := 2.0298832128
-  error_bound := 1e-10
+  value := 2.02988321281931
+  error_bound := 1e-14
   error_nonneg := by norm_num
 
 /-- The trefoil is a torus knot and has zero hyperbolic volume. -/
