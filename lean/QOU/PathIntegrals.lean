@@ -228,12 +228,27 @@ structure QuantumSU2 where
 structure RMatrix where
   /-- The quantum group. -/
   qsu2 : QuantumSU2
-  /-- The R-matrix acting on tensor products. -/
-  R : qsu2.carrier → qsu2.carrier → qsu2.carrier × qsu2.carrier
-  /-- Yang–Baxter equation (placeholder). -/
-  /-- Yang–Baxter equation: `R₁₂ R₁₃ R₂₃ = R₂₃ R₁₃ R₁₂`.
-      Modelled as: applying R in two different orders gives the same result. -/
-  yang_baxter : ∀ (a b : qsu2.carrier),
-    R a b = R a b
+  /-- The R-matrix acting on tensor products: `R : V ⊗ V → V ⊗ V`,
+      represented as a map on pairs. -/
+  R : qsu2.carrier × qsu2.carrier → qsu2.carrier × qsu2.carrier
+  /-- R is invertible. -/
+  R_inv : qsu2.carrier × qsu2.carrier → qsu2.carrier × qsu2.carrier
+  /-- `R⁻¹ ∘ R = id`. -/
+  R_left_inv : ∀ p, R_inv (R p) = p
+  /-- `R ∘ R⁻¹ = id`. -/
+  R_right_inv : ∀ p, R (R_inv p) = p
+  /-- **Yang–Baxter equation** on three tensor factors:
+      `(R ⊗ id) ∘ (id ⊗ R) ∘ (R ⊗ id) = (id ⊗ R) ∘ (R ⊗ id) ∘ (id ⊗ R)`.
+
+      Given a triple `(a, b, c)`, we define:
+      - `R₁₂` acts on the first two factors: `(a,b,c) ↦ (R(a,b), c)`
+      - `R₂₃` acts on the last two factors:  `(a,b,c) ↦ (a, R(b,c))`
+
+      The equation asserts that `R₁₂ ∘ R₂₃ ∘ R₁₂ = R₂₃ ∘ R₁₂ ∘ R₂₃`
+      on all triples. -/
+  yang_baxter : ∀ (a b c : qsu2.carrier),
+    let r12 := fun (x, y, z) => ((R (x, y)).1, (R (x, y)).2, z)
+    let r23 := fun (x, y, z) => (x, (R (y, z)).1, (R (y, z)).2)
+    r12 (r23 (r12 (a, b, c))) = r23 (r12 (r23 (a, b, c)))
 
 end QOU.PathIntegrals
