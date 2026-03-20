@@ -85,11 +85,7 @@ genus $g = 4$.
 \end{proposition}
 
 \begin{proof}
-For a compact Riemann surface of genus $g$, the Euler characteristic is
-$\chi = 2 - 2g$.  The Descartes condition requires $\chi(E) = -6$.  On
-the one-complex-dimensional descent $M_0$, the stability of the Euler characteristic
-(Proposition~\ref{prop:euler-char-stability}) gives $\chi(M_0) = -6$,
-whence $2 - 2g = -6$ and $g = 4$.
+The Descartes condition gives $\mathrm{tr}(\mathrm{id}_A) = -6$.  Under the fibre functor~$\omega$ of the archimedean realisation, this maps to the sheaf Euler characteristic $\chi(V) = -6$, where $V = P \times_{\mathrm{SU}(2)} K^2$ is the associated rank-$2$ vector bundle over~$M_0$.  Since $G = \mathrm{SU}(2)$, the determinant bundle $\det(V)$ is trivial, so $\deg(V) = 0$.  By Riemann--Roch on the compact Riemann surface~$M_0$: $\chi(V) = \deg(V) + \mathrm{rank}(V)(1-g) = 2(1-g)$.  Setting $2(1-g) = -6$ gives $g = 4$.
 \end{proof}
 
 % ── Leptons and chirality ────────────────────────────────────────────────────
@@ -262,43 +258,31 @@ distinguished by Bring's curve, but analogous universal objects are expected
 at other values of~$\chi$.
 \end{remark}
 
-\begin{example}[The Descartes universe and Yekutieli obstructions]
+\begin{example}[Bring's surface and Yekutieli obstructions]
 \label{ex:descartes-yekutieli}
-In a Descartes universe (Definition~\ref{def:descartes-condition}), the
-topological constraint $\chi(E) = -6$ forces the Yekutieli obstruction
-classes $\kappa_n$ (Definition~\ref{def:quantum-characteristic-classes})
-to be non-trivial.
-
-The negative Euler characteristic $\chi(E) = -6$ implies, via the
-Gauss--Bonnet theorem and the Leray--Serre spectral sequence
-(Proposition~\ref{prop:euler-char-stability}), a non-trivial
-distribution of modes across the manifold: the $6$ branch points of the
-covering $\pi\colon \Sigma_4 \to \mathbb{CP}^1$
-(Example~\ref{ex:brings-surface}) correspond to the $6$ defects of the
-Euler characteristic, and each defect supports a non-vanishing
-monodromy fixed point of the holonomy representation.
-
-Concretely, one verifies that $\kappa_n \neq 0$ for all levels~$n$
-of the brane tower in this model:
+Bring's surface $\Sigma_4$ satisfies the hypotheses of
+Theorem~\ref{thm:qu-to-qou} (Proposition~\ref{prop:brings-is-qou}), with
+$\chi(A) = -6 \neq 0$.  By the main structural theorem:
 \begin{enumerate}
-  \item The central extension of gerbes
-    $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$ is banded by
-    $\mathcal{O}_M^{\times}$ with characteristic class
-    $\kappa_n \in H^2(M,\, \mathcal{O}_M^{\times})$.
-  \item The constraint $\chi(E) = -6$ ensures that the spectral sequence
-    of the fibration $E_{n+1} \to E_n$ does \emph{not} collapse
-    trivially: the $6$ branch points inject non-zero differentials
-    at the $E_2$ page, preventing $\kappa_n$ from vanishing.
+  \item The first Yekutieli obstruction $\kappa_0$ equals the Euler class of
+        the Reeb bundle, with $\kappa_0 \mapsto \chi(A) = -6$ under the trace
+        map (Theorem~\ref{thm:qu-to-qou}(2)).
+  \item Since $\kappa_0$ is non-torsion in
+        $H^2(\mathcal{S}, \mathcal{B})$, the perpetual obstruction
+        $\kappa_n \neq 0$ holds for all $n \geq 0$
+        (Theorem~\ref{thm:qu-to-qou}(3)).  The $6$ branch points of the
+        covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ correspond to the
+        $6$ defects of the Euler characteristic, and each defect supports a
+        non-vanishing monodromy fixed point.
   \item By Proposition~\ref{prop:yekutieli-lifting}, the non-vanishing of
-    $\kappa_n$ obstructs smooth lifting at each level, creating twisted
-    sectors (Remark~\ref{rem:fermionic-twisted-sectors}).
+        $\kappa_n$ obstructs smooth lifting at each level, creating twisted
+        sectors (Remark~\ref{rem:fermionic-twisted-sectors}).
 \end{enumerate}
-
 The ``geometric drag'' responsible for inertial mass
 (Remark~\ref{rem:mass-geometric-drag}) and the multiplicity of lepton
 generations (Remark~\ref{rem:descartes-leptons}) are both controlled by
 these non-vanishing Yekutieli classes: the number of independent twisted
-sectors is bounded by $\lvert\chi(E)\rvert = 6$, and the three lepton
+sectors is bounded by $\lvert\chi(A)\rvert = 6$, and the three lepton
 generations correspond to the three pairs of branch points under the
 $S_3 \subset S_5$ symmetry of Bring's curve
 (Remark~\ref{rem:chirality-trefoil}).

@@ -6,7 +6,7 @@
 \begin{proposition}[Jet Prolongation]
 \label{prop:jet-prolongation}
 Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Define the
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Define the
 \emph{jet object}
 \[
   J^1(A) \;:=\; A \otimes \Omega^1(A),
@@ -16,7 +16,7 @@ K\"ahler differentials.  Then $J^1(A)$ carries a canonical Frobenius--Hopf
 structure inherited from~$A$, and the quadruple
 $(\mathcal{C},\, J^1(A),\, \omega',\, q)$ --- where
 $\omega' = \omega \circ (\text{--} \otimes \Omega^1)$ is the induced fibre
-functor --- is again a quantum observable universe over~$k$.
+functor --- is again a quantum observable universe over~$R$.
 \end{proposition}
 
 \begin{proof}
@@ -82,20 +82,20 @@ of $A'$, which is guaranteed by the inherited vanishing condition of
 Step~3.
 \end{proof}
 
-\begin{corollary}[$\mathbb{C}$ realisation of jet prolongation]
+\begin{corollary}[Archimedean realisation of jet prolongation]
 \label{cor:jet-prolongation-C}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, G, P, E)$ be an archimedean quantum observable universe
 (Example~\ref{def:c-quantum-observable-universe}) with instanton connection
 $A$ on~$P$ and metric~$g$ on~$E$.  Write $\widetilde{M} = E$ for the total
 space of~$E$, define $P'$ as the frame bundle and $E'$ as the bundle of
 orthonormal frames of the first jet bundle $J^1 E$.  Then $A$ and $g$
 uniquely determine a connection~$A'$ on~$P'$ such that
-$(\widetilde{M}, G, P', E')$ is a $\mathbb{C}$ quantum observable universe.
+$(\widetilde{M}, G, P', E')$ is an archimedean quantum observable universe.
 \end{corollary}
 
 \begin{proof}
 Apply Proposition~\ref{prop:jet-prolongation} to the categorical data
-$(\mathcal{C}, A, \omega, q)$ underlying the $\mathbb{C}$ quantum
+$(\mathcal{C}, A, \omega, q)$ underlying the archimedean quantum
 observable universe (Example~\ref{def:c-quantum-observable-universe}),
 where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$,
 $A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful
@@ -135,7 +135,7 @@ case-by-case verification.
 \begin{definition}[Recursive Brane Tower]
 \label{def:recursive-brane-tower}
 Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Set
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Set
 $A_0 = A$.  \emph{Inductively}, define
 $A_{n+1} = J^1(A_n)$ as the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) of the Frobenius--Hopf
@@ -155,9 +155,9 @@ in~$\mathcal{C}$, where each embedding is the canonical inclusion
 $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.
 \end{definition}
 
-\begin{example}[$\mathbb{C}$ realisation of the brane tower]
+\begin{example}[Archimedean realisation of the brane tower]
 \label{ex:brane-tower-levels}
-Starting from a $\mathbb{C}$ quantum observable universe $(M, G, P, E_1)$
+Starting from an archimedean quantum observable universe $(M, G, P, E_1)$
 (Example~\ref{def:c-quantum-observable-universe}), the fibre functor
 $\omega$ converts the categorical brane tower into a geometric tower of
 bundles: $E_{n+1}$ is the bundle of orthonormal frames of $J^1 E_n$, and
@@ -178,7 +178,7 @@ $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
 of gerbes on the underlying site in the sense of
 Yekutieli~\cite{yekutieli2010}: the Frobenius--Hopf object~$A_n$ is an
 object in a gerbe~$\mathfrak{G}_n$ banded by the sheaf of units
-$\mathcal{B}$ (in the $\mathbb{C}$ realisation,
+$\mathcal{B}$ (in the archimedean realisation,
 $\mathcal{B} = \mathcal{O}_M^{\times}$), and the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) produces a central extension
 \[
@@ -487,7 +487,7 @@ Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The
 \emph{direct limit algebra of the quantum observable universe} is the
-colimit in the category of $k$-algebras:
+colimit in the category of $R$-algebras:
 \[
   \mathcal{A}_\infty
   \;=\;
@@ -497,7 +497,7 @@ colimit in the category of $k$-algebras:
 taken over the tower of endomorphism algebras with the transition maps
 induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.
 
-In the $\mathbb{C}$ realisation
+In the archimedean realisation
 (Example~\ref{def:c-quantum-observable-universe}), applying the fibre
 functor $\omega$ gives
 $\mathcal{A}_\infty \cong
@@ -571,7 +571,7 @@ limit algebra $\mathcal{A}_\infty$
 section of a sheaf of twisted deformation algebras on the underlying
 site~$\mathcal{S}$, and the vacuum state
 (Proposition~\ref{prop:vacuum-state}) is well-defined globally despite
-local non-commutativity.  In the $\mathbb{C}$ realisation, this
+local non-commutativity.  In the archimedean realisation, this
 corresponds to the global gluing of the local algebras
 $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold~$M$.
 \end{proposition}
@@ -614,8 +614,8 @@ $\mathcal{A}_\infty$ be its direct limit algebra
 \mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group
 (Definition~\ref{def:quantum-gauge-group}), acting on
 $\mathcal{A}_\infty$ by conjugation.  Then there exists a unique
-$k$-linear functional
-$\varphi \colon \mathcal{A}_\infty \to k$ that is $G_q$-invariant:
+$R$-linear functional
+$\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant:
 \[
   \varphi(g \cdot a) = \varphi(a)
   \quad\text{for all } g \in G_q,\;
@@ -744,9 +744,9 @@ Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Since $\mathcal{C}$ is a
-$k$-linear rigid monoidal category, the Frobenius--Hopf object~$A$
+$R$-linear rigid monoidal category, the Frobenius--Hopf object~$A$
 admits a categorical trace
-$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to k$
+$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$
 defined by the composition
 \[
   \mathrm{tr}(f)
@@ -777,15 +777,15 @@ The \emph{inertial mass} of a morphism $\gamma \colon \mathbf{1} \to A$
   \bigr)
   \,\bigr\rVert,
 \]
-where $\lVert \cdot \rVert$ is the norm on~$k$ induced by the
+where $\lVert \cdot \rVert$ is the norm on~$R$ induced by the
 Frobenius pairing.  The mass measures the resistance of the
 Frobenius--Hopf structure to transporting the cycle $\gamma$ through
 the comultiplication.
 \end{definition}
 
-\begin{corollary}[$\mathbb{C}$ realisation: nonabelian multiplicative integration]
+\begin{corollary}[Archimedean realisation: nonabelian multiplicative integration]
 \label{cor:mass-identity-C}
-In the $\mathbb{C}$ quantum observable universe $(M, G, P, E)$
+In the archimedean quantum observable universe $(M, G, P, E)$
 (Example~\ref{def:c-quantum-observable-universe}) with instanton
 connection $A$, Levi form $L$, and self-dual curvature $F^+$, the
 categorical mass (Definition~\ref{def:mass-identity}) is realised as
@@ -920,7 +920,7 @@ the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) sends the triple at level~$n$
 to the triple at level~$n{+}1$, and the descent homomorphism
 $\mathfrak{d}_{n+1}$ (Lemma~\ref{lem:descent}) reverses this assignment.
-In the $\mathbb{C}$ realisation, $g_{ij}^{(n)} \in
+In the archimedean realisation, $g_{ij}^{(n)} \in
 \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
 functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.
 \end{definition}
@@ -1186,7 +1186,7 @@ $\{A_n\}_{n \geq 0}$ be the recursive brane tower
 reverse traversal of the tower: starting from level~$n$ one passes to
 level~$n{-}1$ by applying the restriction morphism
 $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction
-of the jet embedding).  In the $\mathbb{C}$ realisation, this restricts
+of the jet embedding).  In the archimedean realisation, this restricts
 the connection and bundle to the base manifold $M_{n-1}$.
 By Theorem~\ref{thm:qu-to-qou}(1), the descent terminates in finitely many
 steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.
@@ -1207,7 +1207,7 @@ quantum observable universe.  Moreover, the induced descent homomorphism
   \mathrm{End}_{\mathcal{C}}(A_{n-1})
 \]
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at
-levels~$n$ and~$n{-}1$.  In the $\mathbb{C}$ realisation, this recovers
+levels~$n$ and~$n{-}1$.  In the archimedean realisation, this recovers
 the surjective $*$-homomorphism
 $\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
 \Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
@@ -1369,7 +1369,7 @@ $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel:
   \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
     \ker(r_n|_S) \neq 0 \,\bigr\}.
 \]
-In the $\mathbb{C}$ realisation,
+In the archimedean realisation,
 $\partial A_n$ corresponds to the geometric locus
 $\partial E_n = \{p \in E_n \mid
 \ker(\mathfrak{d}_{n+1}|_p) \neq 0\} \subseteq E_n$,
@@ -1381,12 +1381,12 @@ the degeneracy locus of the fibrewise descent map.
 The defining boundary $\partial A_n$
 (Definition~\ref{def:brane-boundary}) has the following properties:
 \begin{enumerate}
-  \item \emph{Codimension.}\; In the $\mathbb{C}$ realisation,
+  \item \emph{Codimension.}\; In the archimedean realisation,
         $\partial A_n$ corresponds to a closed subset of real codimension at
         least~$2$ in~$E_n$.
   \item \emph{Exceptional object.}\; At each degeneration locus of the
         restriction $r_n$, the kernel $\ker(r_n|_S)$ is isomorphic to a
-        simple object of~$\mathcal{C}$; in the $\mathbb{C}$ realisation
+        simple object of~$\mathcal{C}$; in the archimedean realisation
         this is $\mathbb{CP}^1 \cong S^2$, the exceptional divisor of the
         topological blow-up.
   \item \emph{Involution symmetry.}\; The descent involution $\tau_n$
@@ -1394,7 +1394,7 @@ The defining boundary $\partial A_n$
         endomorphism of $\partial A_n$, whose fixed subobjects coincide
         with the monodromy fixed points of the quantum characteristic
         classes (Definition~\ref{def:quantum-characteristic-classes}).
-  \item \emph{Chirality interface ($\mathbb{C}$ realisation).}\;
+  \item \emph{Chirality interface (archimedean realisation).}\;
         When $n = 1$, $\partial E_1$ separates the macroscopic spacetime
         coordinates from the internal chiral modes: it is the geometric
         boundary between the base manifold~$M$ and the gauge fibre, across
@@ -1449,7 +1449,7 @@ Remark~\ref{rem:descartes-chirality}.
 
 \begin{remark}[Reduction at dimension~$1$]
 \label{rem:descent-reduction}
-When $\dim M_k = 1$ the geometric data of the $\mathbb{C}$ quantum observable
+When $\dim M_k = 1$ the geometric data of the archimedean quantum observable
 universe collapse as follows.
 \begin{enumerate}
   \item \emph{Connection.}  The $\mathrm{SU}(2)$ connection $A_k$ restricts to
@@ -1500,7 +1500,7 @@ At dimension~$1$ the physical content simplifies drastically.
 \begin{remark}[Reduction at dimension~$0$]
 \label{rem:descent-reduction-zero}
 When $\dim M_k = 0$ the base manifold is a discrete set of points and
-the geometric data of the $\mathbb{C}$ quantum observable universe
+the geometric data of the archimedean quantum observable universe
 reduce to purely algebraic invariants at each point $p\in M_k$.
 \begin{enumerate}
   \item \emph{Connection.}  The $\mathrm{SU}(2)$ connection $A_k$ has no

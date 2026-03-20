@@ -121,7 +121,7 @@ $\lambda$ excludes the degenerate case).
 \label{rem:base-field-independence}
 Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
 are formulated over an arbitrary commutative ring~$R$.  The Frobenius--Hopf axioms
-replace the analytic vanishing conditions of the $\mathbb{C}$ realisation
+replace the analytic vanishing conditions of the archimedean realisation
 (Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
 non-degeneracy condition on the Frobenius form.  Concrete realisations
 include:
@@ -295,7 +295,7 @@ $F_A|_H = {*_H}\,F_A|_H$.
 \begin{definition}[Substrate parameter]
 \label{def:substrate-parameter}
 \lean{QOU.SubstrateParameter}\leanok
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a field~$k$
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a ring~$R$
 (Definition~\ref{def:quantum-universe}).  Let
 $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the
 \emph{Lusztig integral form}~\cite{lusztig1993}: the
@@ -312,14 +312,14 @@ $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))
   \otimes_{\mathbb{Z}[q,q^{-1}]} k$
 is the quantised enveloping algebra at the specialised value~$q_0$.
 When the quantum universe is fibred over a space~$M$ (as in the
-$\mathbb{C}$ realisation, Example~\ref{def:c-quantum-universe}), $q_0$
+archimedean realisation, Example~\ref{def:c-quantum-universe}), $q_0$
 may vary from point to point, yielding a \emph{substrate field}
 $q \colon M \to k^{\times}$.
 \end{definition}
 
-\begin{remark}[$\mathbb{C}$ substrate via the Levi form]
+\begin{remark}[Archimedean substrate via the Levi form]
 \label{rem:c-substrate-via-levi}
-In the $\mathbb{C}$ quantum observable universe
+In the archimedean quantum observable universe
 (Example~\ref{def:c-quantum-observable-universe}), let $A$ be an
 instanton connection on~$P$
 (Definition~\ref{def:instanton}), $F_A^+$ its self-dual curvature
@@ -356,7 +356,7 @@ deep-quantum), and all downstream formulas
 equation, the Yang--Mills functional) are algebraic in~$q$ and therefore
 insensitive to the choice between $1+x$ and $\exp(x)$.  The algebraic
 form is adopted in Definition~\ref{def:substrate-parameter} because it
-is meaningful over every base field~$k$, whereas $\exp(x)$ requires an
+is meaningful over every base ring~$R$, whereas $\exp(x)$ requires an
 archimedean topology.
 
 The non-archimedean analogues are developed in
@@ -391,7 +391,7 @@ curvature.
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
 \lean{QOU.QuantumGaugeGroup}\leanok
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum gauge group} is the field of quantum groups
 $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure
@@ -401,7 +401,7 @@ group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.
 \begin{definition}[Quantum Planck Constant]
 \label{def:quantum-planck-constant}
 \lean{QOU.quantumPlanckConstant}\leanok
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
+Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  The
 \emph{quantum Planck constant} is the smooth field
 $\hbar_q \colon M \to [0,1)$ defined by
@@ -419,7 +419,7 @@ vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 
 \begin{remark}[Heisenberg uncertainty as commutator]
 \label{rem:heisenberg-commutator}
-In the $\mathbb{C}$ quantum observable universe the Heisenberg uncertainty
+In the archimedean quantum observable universe the Heisenberg uncertainty
 principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
 $\hat{P}$ denote position and momentum observables on the fibre
 $\mathbb{CP}^1$.  Let $J \colon H \to H$ be the complex structure operator
@@ -474,7 +474,7 @@ its ``strength'' is set by~$\hbar_q(p)$.
 \begin{definition}[$q$-Harmonic form (Particle)]
 \label{def:q-harmonic-form}
 \lean{QOU.QHarmonicForm}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with
 substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let $d_q$
 denote the $q$-deformed exterior derivative
 (Definition~\ref{def:q-ext-deriv} below) and let $\delta_q$ denote its formal
@@ -540,7 +540,7 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 \begin{definition}[Observation]
 \label{def:observation}
 Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-field~$k$ (Definition~\ref{def:quantum-observable-universe}).  An
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  An
 \emph{observation} is a morphism
 \[
   \mathcal{O} \;\colon\; A \;\longrightarrow\; A
@@ -561,7 +561,7 @@ satisfying:
         with $S$ the antipode and $\Delta(a) = a_{(1)} \otimes a_{(2)}$
         the coproduct.
 \end{enumerate}
-In the $\mathbb{C}$ realisation
+In the archimedean realisation
 (Example~\ref{def:c-quantum-observable-universe}), an observation is
 realised as a continuous open map from the spacetime base~$M$ to the
 bundle of endomorphisms $\operatorname{End}(E) \to M$, encoding the
@@ -613,7 +613,7 @@ Each observation perturbs the substrate parameter by $\delta q_i$
 observers induce distinct shifted parameters $q_1' = q + \delta q_1$
 and $q_2' = q + \delta q_2$.  The discrepancy $\delta\alpha$ is
 controlled by the difference in these perturbations.  In the
-$\mathbb{C}$ realisation, the Heisenberg commutator
+archimedean realisation, the Heisenberg commutator
 (Remark~\ref{rem:heisenberg-commutator}) gives
 \[
   \lVert \delta\alpha \rVert
@@ -643,7 +643,7 @@ the uncertainty encoded in the substrate field.
 \begin{definition}[$q$-Deformed exterior derivative]
 \label{def:q-ext-deriv}
 \lean{QOU.qExtDeriv}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
 with substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).
 The \emph{$q$-deformed exterior derivative}
 $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by
@@ -686,7 +686,7 @@ connection} $A_q$ is defined by
 \begin{definition}[$q$-Deformed Reeb vector field]
 \label{def:q-reeb-vector-field}
 \lean{QOU.qReebVectorField}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
 with substrate parameter $q$ (Definition~\ref{def:substrate-parameter})
 and Reeb vector field $\xi$ (Definition~\ref{def:reeb-decomposition}).  The
 \emph{$q$-deformed Reeb vector field} is the vector field $\xi_q$ on $M$
@@ -803,7 +803,7 @@ $\mathrm{SU}(2)$ instantons.
 \begin{proposition}[Main Commutative Diagram]
 \label{prop:main-commutative-diagram}
 \lean{QOU.main_commutative_diagram}\leanok
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
 with instanton connection $A$ (Definition~\ref{def:instanton}) and substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let
 $\mathbf{E}$ denote the Euler--Lagrange operator of the
@@ -853,7 +853,7 @@ Chapter~\ref{chap:experimental} and is given there.
 
 The two central structural results of this paper are:
 \begin{itemize}
-  \item \textbf{Jet Prolongation (Lifting).}  A $\mathbb{C}$ quantum
+  \item \textbf{Jet Prolongation (Lifting).}  An archimedean quantum
         observable universe $(M, G, P, E)$ lifts canonically to a new
         quantum observable universe on the total space of the first jet
         bundle $J^1 E$ (Proposition~\ref{prop:jet-prolongation},
