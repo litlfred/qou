@@ -173,6 +173,7 @@ theorem full_derivation_chain :
     let hq := Real.sqrt hq2
     let q := 1 / (1 - hq)
     |q - substrate_q| < 0.001 := by
+  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
   -- Tolerance widened from 0.0001 to 0.001 (see substrate_error_bound).
   -- Requires interval arithmetic on Real.sqrt for certified bound.
   sorry

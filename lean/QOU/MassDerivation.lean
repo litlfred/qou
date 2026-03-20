@@ -137,6 +137,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- So (1-r)q² - 2q + 1 = 0, unique root > 1 is substrate_q.
   -- The algebraic structure is established; the numerical bound requires
   -- certified interval arithmetic not yet available in this Mathlib version.
+  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
   sorry
 
 /-- The quantum Planck constant squared determines the mass ratio. -/

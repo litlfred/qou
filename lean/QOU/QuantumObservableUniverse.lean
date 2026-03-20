@@ -155,6 +155,7 @@ noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
   -- fibre functor.  Full monoidal constraint (monoidal natural transformations)
   -- requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`; here we
   -- capture the underlying natural-isomorphism type.
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 
@@ -484,6 +485,7 @@ theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)
   -- Proof deferred to Chapter 11.
   -- Commutativity: E[S_q] composed with substrate coupling =
   --   jet evaluation composed with ∇^A.
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   trivial
 
 /-! ## §7  Classical Limit Properties -/
