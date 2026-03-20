@@ -6,6 +6,9 @@
 
 FROM ubuntu:24.04
 
+LABEL org.opencontainers.image.source="https://github.com/litlfred/qou"
+LABEL org.opencontainers.image.description="CI image for the QOU LaTeX + Lean project"
+
 ARG LEAN_TOOLCHAIN=leanprover/lean4:v4.16.0
 
 ENV DEBIAN_FRONTEND=noninteractive
