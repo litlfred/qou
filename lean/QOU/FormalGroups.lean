@@ -20,9 +20,10 @@ field has positive characteristic.
 
 ## Status
 
-All theorems referencing the dissertation are left as `sorry`.
-They represent externally-proven results whose full formalization
-requires porting the dissertation proofs into Lean 4.
+The Gröbner–Shirshov core (composition lemma, normal forms, flatness,
+strong multiplicativity) is now formalized in `QOU.GrobnerShirshov.*`.
+Remaining `sorry`s mark results that depend on domain-specific
+integration arguments beyond the GS framework.
 
 ## References
 
@@ -33,6 +34,7 @@ requires porting the dissertation proofs into Lean 4.
 
 import QOU.Basic
 import QOU.QuantumObservableUniverse
+import QOU.GrobnerShirshov
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Monoidal.Basic
 
@@ -169,6 +171,7 @@ theorem reduction_mod_p_commutative
     `q`-Serre relations provide non-overlapping obstructions, yielding
     a normal-form basis coinciding with the Lusztig divided-power basis.
 
+    The abstract GS framework and proofs are in `QOU.GrobnerShirshov.*`.
     Reference: [fred2005, §3]. -/
 structure GrobnerShirshovBasis where
   /-- The formal group whose distribution algebra is being presented. -/
