@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T01:57:19.173159+00:00",
+  "generated_at": "2026-03-20T02:04:26.272291+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -148,29 +148,14 @@
       "latex_label": "def:descent"
     },
     {
-      "narrative": "Jet Prolongation",
-      "lean_id": "QOU.Torsion.JetProlongation",
-      "latex_label": "prop:jet-prolongation"
-    },
-    {
-      "narrative": "Descent Involution",
+      "narrative": "Descent involution",
       "lean_id": "QOU.Torsion.DescentInvolution",
       "latex_label": "def:descent-involution"
     },
     {
-      "narrative": "Brane Boundary",
+      "narrative": "Defining boundary of the brane",
       "lean_id": "QOU.Torsion.BraneBoundary",
       "latex_label": "def:brane-boundary"
-    },
-    {
-      "narrative": "Euler Characteristic Stability",
-      "lean_id": "QOU.Torsion.EulerCharStability",
-      "latex_label": "prop:euler-char-stability"
-    },
-    {
-      "narrative": "Vacuum State",
-      "lean_id": "QOU.Torsion.VacuumState",
-      "latex_label": "prop:vacuum-state"
     },
     {
       "narrative": "Bring's surface",
