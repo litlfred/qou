@@ -786,7 +786,8 @@
         "chapter": 4
       },
       "title": "Jet Prolongation",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.JetProlongation",
+      "formalization_status": "stated"
     },
     {
       "label": "rem:prolongation-categorical",
@@ -808,7 +809,8 @@
         "chapter": 4
       },
       "title": "Recursive Brane Tower",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.RecursiveBraneTower",
+      "formalization_status": "stated"
     },
     {
       "label": "ex:brane-tower-levels",
@@ -830,7 +832,8 @@
         "chapter": 4
       },
       "title": "Quantum Characteristic Classes",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.QuantumCharacteristicClasses",
+      "formalization_status": "stated"
     },
     {
       "label": "rem:betti-numbers-brane",
@@ -896,7 +899,8 @@
         "chapter": 4
       },
       "title": "$\\mathbb{C}$ Quantum Observable Universe as Direct Limit",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.DirectLimitAlgebra",
+      "formalization_status": "stated"
     },
     {
       "label": "rem:direct-limit-lusztig",
@@ -929,7 +933,8 @@
         "chapter": 4
       },
       "title": "Existence and Uniqueness of the Vacuum State",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.vacuum_state_exists",
+      "formalization_status": "stated"
     },
     {
       "label": "rem:mass-geometric-drag",
@@ -962,7 +967,8 @@
         "chapter": 4
       },
       "title": "Stability of the Euler characteristic",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.euler_char_constant",
+      "formalization_status": "has_sorry"
     },
     {
       "label": "def:mass-identity",
@@ -973,7 +979,8 @@
         "chapter": 4
       },
       "title": "Mass Identity",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.MassIdentity",
+      "formalization_status": "stated"
     },
     {
       "label": "def:descent",
@@ -984,7 +991,8 @@
         "chapter": 4
       },
       "title": "Descent",
-      "formalization_status": "not_started"
+      "lean_declaration": "QOU.Torsion.Descent",
+      "formalization_status": "stated"
     },
     {
       "label": "rem:descent-reduction",
