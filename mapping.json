@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T19:54:07.760708+00:00",
+  "generated_at": "2026-03-20T21:15:11.479081+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -11,6 +11,26 @@
       "narrative": "Quantum Observable Universe",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "latex_label": "def:quantum-observable-universe"
+    },
+    {
+      "narrative": "Projective line object",
+      "lean_id": "QOU.QuantumObservableUniverse.ProjectiveLineObject",
+      "latex_label": "def:projective-line-object"
+    },
+    {
+      "narrative": "Categorical connection and curvature",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalConnection",
+      "latex_label": "def:categorical-connection"
+    },
+    {
+      "narrative": "$q$-Hodge star",
+      "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
+      "latex_label": "def:q-hodge-star"
+    },
+    {
+      "narrative": "Categorical action",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalAction",
+      "latex_label": "def:categorical-action"
     },
     {
       "narrative": "Instanton connection",
@@ -88,6 +108,11 @@
       "latex_label": "def:q-torsion-leaf"
     },
     {
+      "narrative": "$q$-Weighted Yang--Mills--Levi functional",
+      "lean_id": "QOU.QuantumObservableUniverse.QYangMillsLevi",
+      "latex_label": "def:q-yang-mills-levi"
+    },
+    {
       "narrative": "Braid group on three strands",
       "lean_id": "QOU.PathIntegrals.BraidGroup",
       "latex_label": "def:braid-group"
@@ -128,14 +153,14 @@
       "latex_label": "def:recursive-brane-tower"
     },
     {
-      "narrative": "Quantum Characteristic Classes (Yekutieli obstruction)",
-      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
-      "latex_label": "def:quantum-characteristic-classes"
-    },
-    {
       "narrative": "Yekutieli Lifting Condition",
       "lean_id": "QOU.Torsion.YekutieliLiftingCondition",
       "latex_label": "def:yekutieli-lifting-condition"
+    },
+    {
+      "narrative": "Quantum Characteristic Classes (Yekutieli obstruction)",
+      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
+      "latex_label": "def:quantum-characteristic-classes"
     },
     {
       "narrative": "Quantum Observable Universe as Direct Limit",

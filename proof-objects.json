@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-20T19:54:54.918169+00:00",
-    "commit_sha": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5"
+    "generated_at": "2026-03-20T21:15:11.584965+00:00",
+    "commit_sha": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a"
   },
   "objects": [
     {
@@ -21,18 +21,29 @@
         "decl": "QOU.QuantumUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
+    },
+    {
+      "label": "rem:quantum-universe-explication",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 32,
+        "chapter": 1
+      },
+      "title": "Deformation parameter and gauge group",
+      "formalization_status": "not_started"
     },
     {
       "label": "def:quantum-observable-universe",
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 38,
+        "line": 44,
         "chapter": 1
       },
       "title": "Quantum Observable Universe",
@@ -40,21 +51,125 @@
         "decl": "QOU.QuantumObservableUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
+    },
+    {
+      "label": "def:projective-line-object",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 57,
+        "chapter": 1
+      },
+      "title": "Projective line object",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "ex:projective-line-archimedean",
+      "object_type": "example",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 75,
+        "chapter": 1
+      },
+      "title": "Archimedean projective line",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "prop:fiber-adjoint-involution",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 82,
+        "chapter": 1
+      },
+      "title": "Fiber--adjoint-fiber involution",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:categorical-connection",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 126,
+        "chapter": 1
+      },
+      "title": "Categorical connection and curvature",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:q-hodge-star",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 151,
+        "chapter": 1
+      },
+      "title": "$q$-Hodge star",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:categorical-action-notation",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 170,
+        "chapter": 1
+      },
+      "title": "Notation for the categorical action",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:categorical-action",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 204,
+        "chapter": 1
+      },
+      "title": "Categorical action",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:quantum-universe",
+        "def:quantum-observable-universe",
+        "def:categorical-connection"
+      ]
+    },
+    {
+      "label": "prop:variational-equations",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 233,
+        "chapter": 1
+      },
+      "title": "Variational equations of the categorical action",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:variational-archimedean",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 266,
+        "chapter": 1
+      },
+      "title": "Archimedean realisation of the variational equations",
+      "formalization_status": "not_started"
     },
     {
       "label": "rem:base-field-independence",
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 52,
+        "line": 280,
         "chapter": 1
       },
-      "title": "Base-field independence",
+      "title": "Base-ring independence",
       "formalization_status": "not_started"
     },
     {
@@ -62,16 +177,16 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 79,
+        "line": 308,
         "chapter": 1
       },
-      "title": "$\\mathbb{C}$ realisation: quantum universe",
+      "title": "Archimedean realisation: quantum universe",
       "lean": {
         "decl": "QOU.CRManifoldData",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -81,7 +196,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 109,
+        "line": 338,
         "chapter": 1
       },
       "title": "Notation and special cases",
@@ -92,16 +207,16 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 116,
+        "line": 345,
         "chapter": 1
       },
-      "title": "$\\mathbb{C}$ realisation: quantum observable universe",
+      "title": "Archimedean realisation: quantum observable universe",
       "lean": {
         "decl": "QOU.CQuantumObservableUniverse",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -111,7 +226,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 143,
+        "line": 372,
         "chapter": 1
       },
       "title": "Instanton connection",
@@ -119,8 +234,8 @@
         "decl": "QOU.InstantonConnection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -130,7 +245,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 157,
+        "line": 386,
         "chapter": 1
       },
       "title": "Irreducibility of the connection",
@@ -138,8 +253,8 @@
         "decl": "QOU.irreducible_connection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5"
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a"
       },
       "formalization_status": "proved"
     },
@@ -148,7 +263,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 175,
+        "line": 404,
         "chapter": 1
       },
       "title": "Self-duality of the curvature",
@@ -156,8 +271,8 @@
         "decl": "QOU.self_dual_curvature",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -167,7 +282,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 226,
+        "line": 458,
         "chapter": 1
       },
       "title": "Substrate parameter",
@@ -175,8 +290,8 @@
         "decl": "QOU.SubstrateParameter",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -186,10 +301,21 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 251,
+        "line": 483,
         "chapter": 1
       },
-      "title": "$\\mathbb{C}$ substrate via the Levi form",
+      "title": "Archimedean substrate via the Levi form",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:substrate-exponential",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 514,
+        "chapter": 1
+      },
+      "title": "Algebraic vs.\\ exponential specialisation",
       "formalization_status": "not_started"
     },
     {
@@ -197,7 +323,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 302,
+        "line": 532,
         "chapter": 1
       },
       "title": "Natural contraction and field character of $q$",
@@ -208,7 +334,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 322,
+        "line": 552,
         "chapter": 1
       },
       "title": "Quantum Gauge Group",
@@ -216,8 +342,8 @@
         "decl": "QOU.QuantumGaugeGroup",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -227,7 +353,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 332,
+        "line": 562,
         "chapter": 1
       },
       "title": "Quantum Planck Constant",
@@ -235,8 +361,8 @@
         "decl": "QOU.quantumPlanckConstant",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -246,7 +372,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 344,
+        "line": 574,
         "chapter": 1
       },
       "title": "Limiting regimes of $\\hbar_q$",
@@ -257,10 +383,32 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 351,
+        "line": 581,
         "chapter": 1
       },
       "title": "Heisenberg uncertainty as commutator",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:commutator-lie-analogy",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 605,
+        "chapter": 1
+      },
+      "title": "Commutator and the Lie bracket analogy",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:commutator-reeb-vector",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 621,
+        "chapter": 1
+      },
+      "title": "Commutator as Reeb vector",
       "formalization_status": "not_started"
     },
     {
@@ -268,7 +416,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 405,
+        "line": 639,
         "chapter": 1
       },
       "title": "$q$-Harmonic form (Particle)",
@@ -276,8 +424,8 @@
         "decl": "QOU.QHarmonicForm",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -287,7 +435,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 424,
+        "line": 658,
         "chapter": 1
       },
       "title": "Reeb decomposition",
@@ -295,8 +443,8 @@
         "decl": "QOU.ReebDecomposition",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -306,7 +454,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 442,
+        "line": 676,
         "chapter": 1
       },
       "title": "Fermion",
@@ -314,8 +462,8 @@
         "decl": "QOU.Fermion",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -325,7 +473,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 456,
+        "line": 690,
         "chapter": 1
       },
       "title": "Boson",
@@ -333,8 +481,8 @@
         "decl": "QOU.Boson",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -344,10 +492,21 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 471,
+        "line": 705,
         "chapter": 1
       },
       "title": "Observation",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:observation-archimedean",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 733,
+        "chapter": 1
+      },
+      "title": "Archimedean realisation of observation",
       "formalization_status": "not_started"
     },
     {
@@ -355,7 +514,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 510,
+        "line": 746,
         "chapter": 1
       },
       "title": "Two-observer parallelogram",
@@ -366,7 +525,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 574,
+        "line": 811,
         "chapter": 1
       },
       "title": "$q$-Deformed exterior derivative",
@@ -374,8 +533,8 @@
         "decl": "QOU.qExtDeriv",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -385,7 +544,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 590,
+        "line": 827,
         "chapter": 1
       },
       "title": "$q$-Deformed Lie bracket",
@@ -393,8 +552,8 @@
         "decl": "QOU.qLieBracket",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -404,7 +563,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 604,
+        "line": 841,
         "chapter": 1
       },
       "title": "$q$-Deformed connection",
@@ -412,8 +571,8 @@
         "decl": "QOU.qConnection",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -423,7 +582,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 617,
+        "line": 854,
         "chapter": 1
       },
       "title": "$q$-Deformed Reeb vector field",
@@ -431,8 +590,8 @@
         "decl": "QOU.qReebVectorField",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -442,7 +601,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 634,
+        "line": 871,
         "chapter": 1
       },
       "title": "$q$-Deformed Reeb flow",
@@ -450,8 +609,8 @@
         "decl": "QOU.QReebFlow",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -461,7 +620,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 647,
+        "line": 884,
         "chapter": 1
       },
       "title": "$q$-Torsion leaf",
@@ -469,8 +628,8 @@
         "decl": "QOU.QTorsionLeaf",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -480,7 +639,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 663,
+        "line": 900,
         "chapter": 1
       },
       "title": "$q$-Torsion leaves: existence and Frobenius obstruction",
@@ -491,10 +650,21 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 688,
+        "line": 925,
         "chapter": 1
       },
       "title": "Physical interpretation of the Reeb decomposition",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:q-yang-mills-levi",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 940,
+        "chapter": 1
+      },
+      "title": "$q$-Weighted Yang--Mills--Levi functional",
       "formalization_status": "not_started"
     },
     {
@@ -502,7 +672,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 703,
+        "line": 955,
         "chapter": 1
       },
       "title": "General Relativity as the ``Substrate Geometry''",
@@ -513,7 +683,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 734,
+        "line": 977,
         "chapter": 1
       },
       "title": "Main Commutative Diagram",
@@ -521,8 +691,8 @@
         "decl": "QOU.main_commutative_diagram",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "8f314a1b06cdf725b4730e0e7bbb6ab5aa6950d5",
+        "github_source_url": "https://github.com/litlfred/qou/blob/d762d3decb28210091fe9eb6ccde77ea9dc0da9a/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "d762d3decb28210091fe9eb6ccde77ea9dc0da9a",
         "sorry_free": true
       },
       "formalization_status": "proved"
@@ -546,7 +716,7 @@
         "line": 67,
         "chapter": 2
       },
-      "title": "Vanishing conditions: explication",
+      "title": "Vanishing conditions and jet-bundle formulation",
       "formalization_status": "not_started"
     },
     {
@@ -554,21 +724,10 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 79,
+        "line": 83,
         "chapter": 2
       },
       "title": "Generalisation beyond strict pseudoconvexity",
-      "formalization_status": "not_started"
-    },
-    {
-      "label": "rem:jet-bundle",
-      "object_type": "remark",
-      "latex": {
-        "file": "chapters/qou-elaboration.tex",
-        "line": 126,
-        "chapter": 2
-      },
-      "title": "Jet-bundle formulation",
       "formalization_status": "not_started"
     },
     {
@@ -576,7 +735,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 137,
+        "line": 130,
         "chapter": 2
       },
       "title": "Real hypersurface in a Calabi--Yau $2$-fold",
@@ -587,7 +746,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 153,
+        "line": 146,
         "chapter": 2
       },
       "title": "ALE links",
@@ -598,7 +757,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 175,
+        "line": 168,
         "chapter": 2
       },
       "title": "Bring's surface unit circle bundle",
@@ -609,10 +768,10 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 194,
+        "line": 187,
         "chapter": 2
       },
-      "title": "$\\mathbb{C}$ examples as instances of the generalised framework",
+      "title": "Archimedean examples as instances of the generalised framework",
       "formalization_status": "not_started"
     },
     {
@@ -620,7 +779,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 229,
+        "line": 222,
         "chapter": 2
       },
       "title": "Quantum gauge group: category-theoretic perspective",
@@ -631,7 +790,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 260,
+        "line": 253,
         "chapter": 2
       },
       "title": "Hopf-algebra structure and non-cocommutativity",
@@ -642,7 +801,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 297,
+        "line": 290,
         "chapter": 2
       },
       "title": "Self-duality as a short exact sequence",
@@ -653,7 +812,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 323,
+        "line": 316,
         "chapter": 2
       },
       "title": "Self-duality as constrained $2$-group gauge theory",
@@ -664,7 +823,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 388,
+        "line": 381,
         "chapter": 2
       },
       "title": "Frobenius structure of the $\\mathbb{C}$ gauge algebra",
@@ -675,7 +834,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 476,
+        "line": 469,
         "chapter": 2
       },
       "title": "Cosmological limits of $q$ on $S^3$",
@@ -686,7 +845,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 498,
+        "line": 491,
         "chapter": 2
       },
       "title": "$J^1E$ as the space of local states",
@@ -697,7 +856,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 509,
+        "line": 502,
         "chapter": 2
       },
       "title": "$d_q^2$ does not vanish",
@@ -708,7 +867,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 551,
+        "line": 544,
         "chapter": 2
       },
       "title": "Jacobiator of ${{[\\,\\cdot\\,,\\cdot\\,",
@@ -719,7 +878,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 588,
+        "line": 581,
         "chapter": 2
       },
       "title": "Classical recovery of $q$-deformed operators",
@@ -730,7 +889,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 603,
+        "line": 596,
         "chapter": 2
       },
       "title": "$q$-Torsion leaves as energy minima",
@@ -741,7 +900,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 621,
+        "line": 614,
         "chapter": 2
       },
       "title": "Physical interpretation of $q$-harmonicity",
@@ -752,7 +911,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/qou-elaboration.tex",
-        "line": 632,
+        "line": 623,
         "chapter": 2
       },
       "title": "$q$-Deformed Schr\\\"odinger equation",
@@ -963,7 +1122,7 @@
         "line": 85,
         "chapter": 4
       },
-      "title": "$\\mathbb{C}$ realisation of jet prolongation",
+      "title": "Archimedean realisation of jet prolongation",
       "formalization_status": "not_started"
     },
     {
@@ -971,7 +1130,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 109,
+        "line": 110,
         "chapter": 4
       },
       "title": "Prolongation from the Frobenius-Hopf structure",
@@ -982,7 +1141,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 135,
+        "line": 136,
         "chapter": 4
       },
       "title": "Recursive Brane Tower",
@@ -993,21 +1152,10 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 158,
+        "line": 159,
         "chapter": 4
       },
-      "title": "$\\mathbb{C}$ realisation of the brane tower",
-      "formalization_status": "not_started"
-    },
-    {
-      "label": "def:quantum-characteristic-classes",
-      "object_type": "definition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 172,
-        "chapter": 4
-      },
-      "title": "Quantum Characteristic Classes (Yekutieli obstruction)",
+      "title": "Archimedean realisation of the brane tower",
       "formalization_status": "not_started"
     },
     {
@@ -1015,10 +1163,32 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 202,
+        "line": 173,
         "chapter": 4
       },
       "title": "Yekutieli Lifting Condition",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:quantum-characteristic-classes",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 195,
+        "chapter": 4
+      },
+      "title": "Quantum Characteristic Classes (Yekutieli obstruction)",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:yekutieli-archimedean-band",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 224,
+        "chapter": 4
+      },
+      "title": "Archimedean band of the gerbe extension",
       "formalization_status": "not_started"
     },
     {
@@ -1026,10 +1196,21 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 224,
+        "line": 232,
         "chapter": 4
       },
       "title": "Yekutieli Lifting Condition holds in the brane tower",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "thm:qu-to-qou",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 269,
+        "chapter": 4
+      },
+      "title": "Quantum universe with observability and Yekutieli is a QOU",
       "formalization_status": "not_started"
     },
     {
@@ -1037,7 +1218,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 260,
+        "line": 357,
         "chapter": 4
       },
       "title": "Fermionic sectors as twisted sectors",
@@ -1048,7 +1229,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 277,
+        "line": 374,
         "chapter": 4
       },
       "title": "Betti numbers of the brane tower",
@@ -1059,7 +1240,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 291,
+        "line": 388,
         "chapter": 4
       },
       "title": "$q$-Harmonic basis of the brane tower",
@@ -1070,7 +1251,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 322,
+        "line": 419,
         "chapter": 4
       },
       "title": "Weight-space decomposition of the harmonic basis",
@@ -1081,7 +1262,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 354,
+        "line": 451,
         "chapter": 4
       },
       "title": "The algebraic filter",
@@ -1092,7 +1273,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 376,
+        "line": 473,
         "chapter": 4
       },
       "title": "Distributional connection at the limit",
@@ -1103,7 +1284,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 394,
+        "line": 491,
         "chapter": 4
       },
       "title": "Quantum Observable Universe as Direct Limit",
@@ -1114,7 +1295,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 418,
+        "line": 515,
         "chapter": 4
       },
       "title": "Direct limit algebra and the Lusztig integral form",
@@ -1125,7 +1306,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 450,
+        "line": 547,
         "chapter": 4
       },
       "title": "Jet Shell of the universe",
@@ -1136,7 +1317,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 460,
+        "line": 557,
         "chapter": 4
       },
       "title": "Stack-like structure of the direct limit algebra",
@@ -1147,7 +1328,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 472,
+        "line": 569,
         "chapter": 4
       },
       "title": "Global gluing via Yekutieli's twisted quantization",
@@ -1158,7 +1339,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 519,
+        "line": 616,
         "chapter": 4
       },
       "title": "Existence and Uniqueness of the Vacuum State",
@@ -1169,7 +1350,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 576,
+        "line": 673,
         "chapter": 4
       },
       "title": "Mass in the brane tower",
@@ -1180,7 +1361,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 588,
+        "line": 685,
         "chapter": 4
       },
       "title": "Non-commutativity and geometric drag",
@@ -1191,7 +1372,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 599,
+        "line": 696,
         "chapter": 4
       },
       "title": "Stability of the Euler characteristic",
@@ -1202,7 +1383,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 655,
+        "line": 749,
         "chapter": 4
       },
       "title": "Mass (categorical trace)",
@@ -1213,10 +1394,10 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 700,
+        "line": 794,
         "chapter": 4
       },
-      "title": "$\\mathbb{C}$ realisation: nonabelian multiplicative integration",
+      "title": "Archimedean realisation: nonabelian multiplicative integration",
       "formalization_status": "not_started"
     },
     {
@@ -1224,7 +1405,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 810,
+        "line": 904,
         "chapter": 4
       },
       "title": "Yekutieli triple mapping",
@@ -1235,7 +1416,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 842,
+        "line": 936,
         "chapter": 4
       },
       "title": "Cosimplicial crossed groupoid",
@@ -1246,7 +1427,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 912,
+        "line": 1006,
         "chapter": 4
       },
       "title": "Jet prolongation as formal descent of information",
@@ -1257,7 +1438,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 928,
+        "line": 1022,
         "chapter": 4
       },
       "title": "Descent condition --- twisted $2$-cocycle",
@@ -1268,7 +1449,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1018,
+        "line": 1112,
         "chapter": 4
       },
       "title": "Weak equivalence invariance of physical states",
@@ -1279,7 +1460,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1095,
+        "line": 1189,
         "chapter": 4
       },
       "title": "Descent",
@@ -1290,7 +1471,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1108,
+        "line": 1203,
         "chapter": 4
       },
       "title": "Descent preserves the quantum observable universe",
@@ -1301,7 +1482,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1179,
+        "line": 1274,
         "chapter": 4
       },
       "title": "Descent involution",
@@ -1312,7 +1493,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1216,
+        "line": 1311,
         "chapter": 4
       },
       "title": "Eigenspaces of the descent involution",
@@ -1323,7 +1504,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1270,
+        "line": 1365,
         "chapter": 4
       },
       "title": "Defining boundary of the brane",
@@ -1334,7 +1515,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1292,
+        "line": 1387,
         "chapter": 4
       },
       "title": "Structure of the defining boundary",
@@ -1345,7 +1526,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1363,
+        "line": 1458,
         "chapter": 4
       },
       "title": "Reduction at dimension~$1$",
@@ -1356,7 +1537,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1383,
+        "line": 1478,
         "chapter": 4
       },
       "title": "Physical implications of a $1$-dimensional base",
@@ -1367,7 +1548,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1413,
+        "line": 1508,
         "chapter": 4
       },
       "title": "Reduction at dimension~$0$",
@@ -1378,7 +1559,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1443,
+        "line": 1538,
         "chapter": 4
       },
       "title": "Physical implications of a $0$-dimensional base",
@@ -1389,7 +1570,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1467,
+        "line": 1562,
         "chapter": 4
       },
       "title": "Fixed-point mechanism: ascent and descent",
@@ -1400,7 +1581,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1499,
+        "line": 1594,
         "chapter": 4
       },
       "title": "Topological Decomposition of Mass",
@@ -1411,7 +1592,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1716,
+        "line": 1811,
         "chapter": 4
       },
       "title": "Quantum dilogarithm integrand as $q$-deformed Böttcher potential density",
@@ -1422,7 +1603,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1757,
+        "line": 1852,
         "chapter": 4
       },
       "title": "Julia set on $S^1$ as photon scattering at the Big Bang",
@@ -1451,11 +1632,33 @@
       "formalization_status": "not_started"
     },
     {
+      "label": "rem:brings-realisations",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/brings-surface.tex",
+        "line": 43,
+        "chapter": 5
+      },
+      "title": "Realisations of Bring's surface",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "prop:brings-is-qou",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/brings-surface.tex",
+        "line": 55,
+        "chapter": 5
+      },
+      "title": "Bring's surface is a quantum observable universe",
+      "formalization_status": "not_started"
+    },
+    {
       "label": "rem:brings-qou-4tuple",
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 34,
+        "line": 140,
         "chapter": 5
       },
       "title": "QOU $4$-tuple for Bring's surface",
@@ -1466,7 +1669,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 110,
+        "line": 216,
         "chapter": 5
       },
       "title": "Lagrange resolvents and spectral form",
@@ -1477,7 +1680,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 137,
+        "line": 243,
         "chapter": 5
       },
       "title": "Braid-group action on the resolvents",
@@ -1488,7 +1691,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 225,
+        "line": 331,
         "chapter": 5
       },
       "title": "Color tube coordinates",
@@ -1499,7 +1702,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 239,
+        "line": 345,
         "chapter": 5
       },
       "title": "Aggregate color quantities",
@@ -1510,7 +1713,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 270,
+        "line": 376,
         "chapter": 5
       },
       "title": "Constraint equations in color tube coordinates",
@@ -1521,7 +1724,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 313,
+        "line": 419,
         "chapter": 5
       },
       "title": "Interpretation of the color tube",
@@ -1532,7 +1735,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 344,
+        "line": 450,
         "chapter": 5
       },
       "title": "$C_5$ action in color tube coordinates",
@@ -1543,7 +1746,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 364,
+        "line": 470,
         "chapter": 5
       },
       "title": "Intrinsic color cubic: pairing structure",
@@ -1554,7 +1757,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 382,
+        "line": 488,
         "chapter": 5
       },
       "title": "Chiral fibre as an elliptic curve",
@@ -1565,7 +1768,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 410,
+        "line": 516,
         "chapter": 5
       },
       "title": "Self-duality of the chiral elliptic curve",
@@ -1576,7 +1779,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 447,
+        "line": 553,
         "chapter": 5
       },
       "title": "Color tube cubic",
@@ -1587,7 +1790,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 483,
+        "line": 589,
         "chapter": 5
       },
       "title": "Color tube fibers",
@@ -1598,7 +1801,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 509,
+        "line": 615,
         "chapter": 5
       },
       "title": "Observed spacetime value",
@@ -1609,7 +1812,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 531,
+        "line": 637,
         "chapter": 5
       },
       "title": "T-duality in color tube coordinates",
@@ -1620,7 +1823,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 550,
+        "line": 656,
         "chapter": 5
       },
       "title": "Sublocus $\\widetilde{C}=0$ and colour confinement",
@@ -1631,7 +1834,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 589,
+        "line": 695,
         "chapter": 5
       },
       "title": "Chiral space as spectral curve and spinor bundle",
@@ -1642,7 +1845,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 629,
+        "line": 735,
         "chapter": 5
       },
       "title": "Smoothness of the Bring surface and resolution of spacetime defects",
@@ -1653,7 +1856,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 668,
+        "line": 774,
         "chapter": 5
       },
       "title": "Briggs--Klein affine chart",
@@ -1664,7 +1867,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 680,
+        "line": 786,
         "chapter": 5
       },
       "title": "Radial projection of Bring's surface",
@@ -1675,7 +1878,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 692,
+        "line": 798,
         "chapter": 5
       },
       "title": "Four-colourability of Bring's surface",
@@ -1686,7 +1889,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 704,
+        "line": 810,
         "chapter": 5
       },
       "title": "The four-colour theorem and Bring's surface",
@@ -1697,7 +1900,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 719,
+        "line": 825,
         "chapter": 5
       },
       "title": "Cyclotomic reduction and $C_{\\mathfrak{p}}$ preservation",
@@ -1708,7 +1911,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 746,
+        "line": 852,
         "chapter": 5
       },
       "title": "Quaternionic spectral resolvents",
@@ -1719,7 +1922,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 792,
+        "line": 898,
         "chapter": 5
       },
       "title": "Algebraic constraints in the $\\omega_k$ basis",
@@ -1730,7 +1933,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 810,
+        "line": 916,
         "chapter": 5
       },
       "title": "Spectral dynamics and the $\\mathrm{Sp}(1)$ action",
@@ -1741,7 +1944,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 850,
+        "line": 956,
         "chapter": 5
       },
       "title": "Primordial vortex and the deep-quantum limit",
@@ -1752,7 +1955,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 869,
+        "line": 975,
         "chapter": 5
       },
       "title": "Geometric drag and the mass residue",
@@ -1763,7 +1966,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 897,
+        "line": 1003,
         "chapter": 5
       },
       "title": "Geometric resolution and the Seiberg--Witten differential",
@@ -1774,7 +1977,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 963,
+        "line": 1069,
         "chapter": 5
       },
       "title": "Reeb vector field on the exceptional divisor",
@@ -1785,7 +1988,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/brings-surface.tex",
-        "line": 1039,
+        "line": 1145,
         "chapter": 5
       },
       "title": "Abelianisation of the MI integral on exceptional divisors",
@@ -1807,7 +2010,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 28,
+        "line": 25,
         "chapter": 6
       },
       "title": "The Descartes condition on Calabi--Yau manifolds",
@@ -1818,7 +2021,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 39,
+        "line": 36,
         "chapter": 6
       },
       "title": "The Descartes condition on ALE spaces",
@@ -1829,7 +2032,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 50,
+        "line": 47,
         "chapter": 6
       },
       "title": "The Descartes condition on affine space",
@@ -1840,7 +2043,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 67,
+        "line": 64,
         "chapter": 6
       },
       "title": "Descent to one complex dimension",
@@ -1851,7 +2054,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 83,
+        "line": 80,
         "chapter": 6
       },
       "title": "Genus of the one-complex-dimensional descent",
@@ -1862,7 +2065,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 100,
+        "line": 93,
         "chapter": 6
       },
       "title": "Electrons, muons and the Reeb decomposition",
@@ -1873,7 +2076,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 116,
+        "line": 109,
         "chapter": 6
       },
       "title": "Chirality as Reeb orientation",
@@ -1884,7 +2087,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 133,
+        "line": 126,
         "chapter": 6
       },
       "title": "Light cone of an affine chart",
@@ -1895,7 +2098,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 147,
+        "line": 140,
         "chapter": 6
       },
       "title": "Chirality and trefoil subgroups",
@@ -1906,7 +2109,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 162,
+        "line": 155,
         "chapter": 6
       },
       "title": "Bring's curve",
@@ -1917,7 +2120,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 184,
+        "line": 177,
         "chapter": 6
       },
       "title": "Exceptional divisor at $p$",
@@ -1928,7 +2131,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 206,
+        "line": 199,
         "chapter": 6
       },
       "title": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
@@ -1939,7 +2142,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 239,
+        "line": 232,
         "chapter": 6
       },
       "title": "Descartes theorem",
@@ -1950,7 +2153,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 254,
+        "line": 285,
         "chapter": 6
       },
       "title": "Universality for a given Euler characteristic",
@@ -1961,10 +2164,10 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 266,
+        "line": 297,
         "chapter": 6
       },
-      "title": "The Descartes universe and Yekutieli obstructions",
+      "title": "Bring's surface and Yekutieli obstructions",
       "formalization_status": "not_started"
     },
     {
@@ -1972,7 +2175,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 308,
+        "line": 327,
         "chapter": 6
       },
       "title": "Observations on the Bring surface",
@@ -2216,5 +2419,21 @@
       "formalization_status": "not_started"
     }
   ],
-  "dependencies": []
+  "dependencies": [
+    {
+      "from": "def:categorical-action",
+      "to": "def:quantum-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-action",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-action",
+      "to": "def:categorical-connection",
+      "relation": "uses"
+    }
+  ]
 }
