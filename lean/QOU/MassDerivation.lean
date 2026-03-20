@@ -84,6 +84,31 @@ lemma quantum_planck_approx :
 
 /-! ## Section 4: Formal Derivation -/
 
+/-- Algebraic identity: from the mass equation we can express `q` in terms
+    of `h_q = quantum_planck q = 1 - 1/q`, yielding `q = 1 / (1 - h_q)`. -/
+lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
+    quantum_planck q = 1 - 1 / q := by
+  unfold quantum_planck
+  ring
+
+/-- The mass equation pins down `(1 - 1/q)²` to a specific rational value. -/
+lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
+    (h_eq : experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q) ^ 2) :
+    (1 - 1 / q) ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
+  have hq0 : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
+  have hplanck : quantum_planck q = 1 - 1 / q := quantum_planck_inv q hq
+  rw [hplanck] at h_eq
+  have hplanck_ne : (1 - 1 / q) ^ 2 ≠ 0 := by
+    apply pow_ne_zero
+    intro h
+    have : 1 / q = 1 := by linarith
+    have : q = 1 := by field_simp at this; linarith
+    linarith
+  have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
+    unfold experimental_mu_e_ratio; norm_num
+  field_simp at h_eq ⊢
+  nlinarith
+
 /-- **Theorem**: Given the topological mass conjecture and experimental data,
     the substrate parameter `q` must be approximately 1.1097.
 
@@ -98,13 +123,17 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →
     |q - substrate_q| < 0.0001 := by
   intro h_q h_eq
-  -- Step 1: Solve for h_q² = Vol(4₁) / (m_μ/m_e)
-  -- Step 2: Take square root to get h_q (quantum Planck constant)
-  -- Step 3: Invert the relationship q = 1 / (1 - h_q) to find q
-  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295 — Topological mass conjecture
-  -- sorry: requires nonlinear real arithmetic (square roots, division inversion)
-  -- that exceeds norm_num / linarith capabilities.  A verified proof would need
-  -- interval arithmetic or polyrith with explicit witness polynomials.
+  -- The mass equation forces (1 - 1/q)² = Vol(4₁) / (m_μ/m_e).
+  -- This is a quadratic in q whose unique root > 1 is q ≈ 1.1097.
+  -- Full numerical verification requires interval arithmetic (Mathlib.Tactic.Polyrith)
+  -- or a certified polynomial witness, which exceeds current tactic automation.
+  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
+  have hsq := planck_sq_from_mass_eq q hq h_eq
+  -- From hsq: (1 - 1/q)² = 2.0298832128 / 206.768283
+  -- Expanding: q² - 2q + 1 = r·q² where r = vol/ratio
+  -- So (1-r)q² - 2q + 1 = 0, unique root > 1 is substrate_q.
+  -- The algebraic structure is established; the numerical bound requires
+  -- certified interval arithmetic not yet available in this Mathlib version.
   sorry
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
