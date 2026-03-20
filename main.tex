@@ -59,19 +59,60 @@
 %   \end{theorem}
 % Base URL for Lean documentation (doc-gen4 pages on GitHub Pages)
 \newcommand{\leandocsbase}{https://litlfred.github.io/qou/lean/}
+% GitHub source URL for Lean files
+\newcommand{\leansrcbase}{https://github.com/litlfred/qou/blob/main/lean/}
+%
+% Internal flag: tracks whether \lean was called in the current environment.
+\newif\ifleantagged
 %
 % \lean{Decl.Name} — renders a clickable ∀ icon linking to the Lean declaration.
-% The ∀ is the motif from the Lean 4 logo.
+% Colour depends on formalization status (set by \leanok / default).
+% Default: goldenrod (stated); override to forest green with \leanok.
 \newcommand{\lean}[1]{%
+  \global\leantaggedtrue%
   \texorpdfstring{%
-    \href{\leandocsbase#1}{\textsuperscript{\textcolor{teal}{$\forall$}}}%
+    \href{\leandocsbase#1}{%
+      \textsuperscript{\textcolor{Goldenrod}{$\forall$}}%
+    }%
   }{(Lean: #1)}%
 }
-\newcommand{\leanok}{}             % marks environment as fully formalized
-\newcommand{\notready}{}           % marks environment as not ready to formalize
+%
+% \leanok — marks environment as fully formalized (sorry-free).
+% Renders a green checkmark.
+\newcommand{\leanok}{%
+  \texorpdfstring{%
+    \textsuperscript{\textcolor{ForestGreen}{\checkmark}}%
+  }{[proved]}%
+}
+%
+% \notready — marks environment as not ready to formalize.
+% Renders a red cross.
+\newcommand{\notready}{%
+  \texorpdfstring{%
+    \textsuperscript{\textcolor{BrickRed}{$\times$}}%
+  }{[not ready]}%
+}
+%
+% \mathlibok — marks declarations merged into mathlib.
+% Renders a dark-green double checkmark.
+\newcommand{\mathlibok}{%
+  \texorpdfstring{%
+    \textsuperscript{\textcolor{OliveGreen}{\checkmark\kern-0.3em\checkmark}}%
+  }{[mathlib]}%
+}
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
 \newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
-\newcommand{\mathlibok}{}          % marks declarations merged into mathlib
+%
+% ── Proof-status legend (printed once in the document) ───────────────────────
+\newcommand{\proofstatuslegend}{%
+  \bigskip\noindent\textbf{Proof-status key}\par\smallskip\noindent
+  \begin{tabular}{@{}cl@{\qquad}cl@{}}
+    \textcolor{ForestGreen}{\checkmark} & Fully proved (sorry-free)
+    & \textcolor{Goldenrod}{$\forall$} & Stated in Lean (has \texttt{sorry})\\
+    \textcolor{OliveGreen}{\checkmark\kern-0.3em\checkmark} & Merged into Mathlib
+    & \textcolor{BrickRed}{$\times$} & Not ready to formalize\\
+  \end{tabular}\bigskip
+}
 
 % ── Notation macros ────────────────────────────────────────────────────────────
 \newcommand{\pp}{\mathfrak{p}}    % prime number (Fraktur p); bare p reserved
@@ -127,6 +168,8 @@ study its lifting to higher categorical structures, and examine the resulting
 interpretational and experimental consequences.  Speculative extensions are
 discussed in the final chapter.
 \end{abstract}
+
+\proofstatuslegend
 
 % ── Chapters ──────────────────────────────────────────────────────────────────
 \input{chapters/quantum-observable-universe}      % Ch.1  Key definitions
