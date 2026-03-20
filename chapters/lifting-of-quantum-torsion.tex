@@ -121,17 +121,65 @@ Proposition~\ref{prop:jet-prolongation}.
 
 % ── Quantum Characteristic Classes ───────────────────────────────────────────
 
-\begin{definition}[Quantum Characteristic Classes]
+\begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
 \label{def:quantum-characteristic-classes}
 Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  The \emph{quantum
-characteristic classes} are the cohomology classes
+(Definition~\ref{def:recursive-brane-tower}).  Each transition
+$E_n \to E_{n+1}$ defines a central extension of gerbes on the base
+manifold~$M$ in the sense of Yekutieli~\cite{yekutieli2010}: the
+$\mathrm{SU}(2)$-bundle $E_n$ is an object in a gerbe~$\mathfrak{G}_n$
+banded by $\mathcal{O}_M^{\times}$, and the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) produces a central extension
 \[
-  \kappa_n \;\in\; H^*\!\bigl(E_{n+1},\, \mathbb{Z}\bigr)
+  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1.
 \]
-that label the monodromy fixed points of the holonomy representation as one
-transitions from $E_n$ to $E_{n+1}$.
+The \emph{quantum characteristic classes} (Yekutieli obstruction classes)
+are the cohomology classes
+\[
+  \kappa_n \;\in\; H^2\!\bigl(M,\, \mathcal{O}_M^{\times}\bigr)
+\]
+that obstruct the lifting of objects from $\mathfrak{G}_n$
+to~$\mathfrak{G}_{n+1}$.  These classes label the monodromy fixed
+points of the holonomy representation as one transitions from $E_n$
+to $E_{n+1}$, and their vanishing is the necessary and sufficient
+condition for the lift to exist~\cite{yekutieli2010}.
 \end{definition}
+
+\begin{lemma}[Yekutieli lifting criterion]
+\label{lem:yekutieli-lifting}
+The lifting of the principal bundle $E_n$ to $E_{n+1}$ in the recursive
+brane tower (Definition~\ref{def:recursive-brane-tower}) is possible if
+and only if the Yekutieli obstruction class $\kappa_n \in
+H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.
+\end{lemma}
+
+\begin{proof}
+By \cite[Theorem~1.7]{yekutieli2010}, an object in the base gerbe
+$\mathfrak{G}_n$ admits a lift to the total gerbe~$\mathfrak{G}_{n+1}$
+of a central extension if and only if the obstruction class in
+$H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.  The jet prolongation
+construction (Proposition~\ref{prop:jet-prolongation}) realises the
+passage $E_n \to E_{n+1}$ as precisely such a lift, so
+$\kappa_n = 0$ is equivalent to the existence of $E_{n+1}$.
+\end{proof}
+
+\begin{remark}[Fermionic sectors as twisted sectors]
+\label{rem:fermionic-twisted-sectors}
+When the Yekutieli obstruction class $\kappa_n$ does not vanish, the
+lift $E_n \to E_{n+1}$ is obstructed and the transition between brane
+levels acquires a non-trivial twist.  In the algebraic filter
+(Remark~\ref{rem:algebraic-filter}), fermionic-type matter --- those
+$q$-harmonic forms satisfying $[F_A,\, \alpha] \neq 0$ --- exists
+precisely at the loci where $\kappa_n \neq 0$.  The non-vanishing
+obstruction class creates ``twisted'' sectors in the gauge flow: the
+holonomy around these sectors acquires a phase in
+$H^2(M,\, \mathcal{O}_M^{\times})$ that prevents the vortex filament
+from lifting smoothly, forcing the localisation of fermionic excitations
+at the monodromy fixed points of the brane tower.
+\end{remark}
 
 % ── Betti numbers ────────────────────────────────────────────────────────────
 
@@ -296,6 +344,60 @@ structure, and the algebra $\mathcal{A}_\infty$
 jet shell.
 \end{remark}
 
+\begin{remark}[Stack-like structure of the direct limit algebra]
+\label{rem:stack-like-structure}
+The direct limit algebra $\mathcal{A}_\infty$
+(Definition~\ref{def:direct-limit-algebra}) is a global ``stack-like''
+version of the local $\mathrm{SU}_q(2)$ deformations: at each point
+$p \in M$ the fibre algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$
+defines a local twisted deformation in the sense of
+Yekutieli~\cite{yekutieli2008}, and the direct limit assembles these
+into a global object on the jet shell $J^\infty E$
+(Remark~\ref{rem:jet-shell}).
+\end{remark}
+
+\begin{proposition}[Global gluing via Yekutieli's twisted quantization]
+\label{prop:global-gluing}
+The local substrate parameters $q(p)$
+(Definition~\ref{def:substrate-parameter}) induce a twisted associative
+deformation of $\mathcal{O}(\mathrm{SU}(2))$ that admits a unique global
+gluing via Yekutieli's twisted quantization
+map~\cite{yekutieli2008, yekutieli2010}.  In particular, the direct
+limit algebra $\mathcal{A}_\infty$
+(Definition~\ref{def:direct-limit-algebra}) is a well-defined global
+section of a sheaf of twisted deformation algebras on~$M$, and the
+vacuum state $\omega$ (Proposition~\ref{prop:vacuum-state}) is
+well-defined across the entire manifold despite local
+non-commutativity.
+\end{proposition}
+
+\begin{proof}
+At each point $p \in M$ the fibre algebra
+$\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ is a pronilpotent deformation of
+$\mathcal{O}(\mathrm{SU}(2))$ in the formal parameter
+$\hbar_q(p) = 1 - q(p)^{-1}$
+(Definition~\ref{def:quantum-planck-constant}).
+By~\cite{yekutieli2008}, the coordinate bundle $\mathrm{Coor}_M$ of~$M$
+(the bundle of formal coordinate systems) carries a twisted deformation
+datum: a pair consisting of a connection and a Maurer--Cartan element in
+a pronilpotent DG Lie algebra~\cite{yekutieli2009}.  The Yekutieli
+obstruction classes $\kappa_n$
+(Definition~\ref{def:quantum-characteristic-classes}) control whether
+these local twisted deformations glue across coordinate patches.
+
+The vanishing condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}) ensures that the
+gerbe $\mathfrak{G}_n$ of local lifts has trivial band at the level of
+isomorphisms, so by~\cite[Theorem~4.5]{yekutieli2010} the twisted
+deformations at each fibre patch together into a global sheaf of
+algebras on~$M$.  The direct limit $\mathcal{A}_\infty =
+\varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ is then the
+global sections of this sheaf, and the vacuum state $\omega$
+(Proposition~\ref{prop:vacuum-state}) extends uniquely by the
+$\mathrm{SU}(2)$-averaging argument of that proposition.
+\end{proof}
+
 % ── Vacuum State ─────────────────────────────────────────────────────────────
 
 \begin{proposition}[Existence and Uniqueness of the Vacuum State]
@@ -422,17 +524,46 @@ projection $E_{n+1} \to E_n$ a homotopy equivalence, whence
 $\chi(E_{n+1}) = \chi(E_n)$.
 \end{proof}
 
-\begin{definition}[Mass Identity]
+\begin{definition}[Mass Identity (nonabelian multiplicative integration)]
 \label{def:mass-identity}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}), connection $A$, Levi
-form $L$, and self-dual curvature $F^+$.  Let $\gamma$ be a closed cycle
-encircling the vortex filament.  The \emph{inertial mass} $m$ of a stable
-vortex is
+parameter $q$ (Definition~\ref{def:substrate-parameter}), instanton connection
+$A$ (Definition~\ref{def:instanton}), Levi form $L$, and self-dual curvature
+$F^+$.  Let $\gamma$ be a closed cycle encircling the vortex filament, and
+let $\Sigma$ be a surface with $\partial\Sigma = \gamma$.  The vortex
+filament is treated as a singularity in a twisted gerbe
+$\mathfrak{G}$ banded by $\mathcal{O}_M^{\times}$
+(Definition~\ref{def:quantum-characteristic-classes}).
+
+The \emph{inertial mass} $m$ of a stable vortex is defined via the
+nonabelian multiplicative integral of
+Yekutieli~\cite{yekutieli2015}:
 \[
-  m \;\propto\; \oint_\gamma \lVert \nabla_A\, q \rVert
-               \cdot \lVert L \wedge F^+ \rVert\,.
+  m \;=\;
+  \left\lVert\,
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\right\rVert,
 \]
+where $\mathrm{MI}\!\int_\Sigma$ denotes the $2$-dimensional twisted
+nonabelian multiplicative integral over the surface~$\Sigma$.  The
+integrand is the connection--curvature pair
+$(\nabla_A q,\; L \wedge F^+)$ consisting of the
+$\mathfrak{su}(2)$-valued $1$-form $\nabla_A q$ and the
+$\mathfrak{su}(2)$-valued $2$-form $L \wedge F^+$, satisfying
+the fake-flatness equation~\eqref{eq:fake-flatness}.  The norm
+$\lVert\cdot\rVert$ is the Killing-form norm on~$\mathfrak{su}(2)$.
+
+By the nonabelian Stokes theorem~\cite{yekutieli2015}, this surface
+integral reduces to the holonomy around $\gamma$:
+\[
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \;=\;
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma;\, \mathfrak{G}\bigr),
+\]
+so the mass is the norm of the holonomy of the connection $\nabla_A$
+around the vortex filament, computed in the twisted gerbe.
 \end{definition}
 
 % ── Descent ──────────────────────────────────────────────────────────────────
