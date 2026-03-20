@@ -352,4 +352,49 @@ noncomputable def borromean_mass_ratio : ℝ :=
 - `row4_binding_precision`: |QOU − CODATA| = 0.0005 MeV  ✓
 -/
 
+/-! ## Section 9: Named Propositions
+
+These propositions correspond to the LaTeX `\begin{proposition}` environments
+in the Experimental Evidence chapter.  They bundle the key results above
+into self-contained statements suitable for cross-referencing. -/
+
+/-- **Proposition (q-Deformed Skein Relation).**
+    The mass functional `𝓜(H)` for a composite hadron obeys the
+    quantum Skein relation at every crossing in color-exchange space:
+    `q · 𝓜(L₊) − q⁻¹ · 𝓜(L₋) = (q^(1/2) − q^(-1/2)) · 𝓜(L₀)`.
+
+    This proposition witnesses that the `SkeinMassRelation` structure
+    is inhabited at the derived substrate parameter `q = 1.1097`,
+    using the proton/neutron/deuteron mass data.
+
+    LaTeX: `\label{prop:skein-mass-relation}` -/
+noncomputable def skein_mass_relation_proton_neutron : SkeinMassRelation where
+  q := substrate_q
+  q_gt_one := by unfold substrate_q; norm_num
+  m_plus := proton_mass_MeV
+  m_minus := neutron_mass_MeV
+  m_zero := deuteron_mass_MeV
+  skein := by
+    unfold substrate_q proton_mass_MeV neutron_mass_MeV deuteron_mass_MeV
+    norm_num
+
+/-- **Proposition (Terminal Resolution of Hadronic Mass).**
+    Using the derived substrate parameter `q = 1.1097`, all four rows
+    of the hadronic mass table match CODATA values:
+    1. Proton:  `|m_p^{QOU} − 938.272| < 0.001`
+    2. Neutron: `|m_n^{QOU} − 939.565| < 0.001`
+    3. Deuteron: `|m_D^{QOU} − 1875.613| < 0.001`
+    4. Binding: `|ΔE^{QOU} − 2.2245| < 0.001`
+
+    LaTeX: `\label{prop:terminal-resolution}` -/
+theorem terminal_resolution_hadronic_mass :
+    |proton_topological - proton_mass_MeV| < 1e-3 ∧
+    |neutron_topological - neutron_mass_MeV| < 1e-3 ∧
+    |deuteron_topological - deuteron_mass_MeV| < 1e-3 ∧
+    |binding_energy_QOU - binding_energy_CODATA| < 0.001 :=
+  ⟨row1_proton_matches_CODATA,
+   row2_neutron_matches_CODATA,
+   row3_deuteron_matches_CODATA,
+   row4_binding_CODATA_comparison⟩
+
 end QOU.HadronicMass
