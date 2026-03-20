@@ -43,7 +43,6 @@ on:
 
 permissions:
   contents: write
-  packages: read
   pages: write
 
 concurrency:
@@ -56,63 +55,11 @@ env:
 jobs:
 
   # ════════════════════════════════════════════════════════════════════════
-  # Phase 0: Preflight — verify CI image is pullable
-  # ════════════════════════════════════════════════════════════════════════
-  preflight:
-    name: Verify CI Image
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check CI image availability
-        env:
-          IMAGE: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
-        run: |
-          echo "::group::Image pull diagnostics"
-          echo "Image:       $IMAGE"
-          echo "Actor:       ${{ github.actor }}"
-          echo "Repository:  ${{ github.repository }}"
-          echo "Token scope: (GITHUB_TOKEN — packages:read required)"
-          echo ""
-          echo "Attempting: docker pull $IMAGE"
-          echo "::endgroup::"
-
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin 2>&1 || {
-            echo "::error::GHCR login failed. Check that the workflow has 'packages: read' permission."
-            exit 1
-          }
-
-          docker pull "$IMAGE" 2>&1 || {
-            echo ""
-            echo "::error::Failed to pull $IMAGE"
-            echo ""
-            echo "=== Troubleshooting ==="
-            echo "1. Has the image been built? Run the 'CI Docker Image' workflow manually:"
-            echo "   gh workflow run docker-ci-image.yml --ref main"
-            echo "2. Is the package visible to this repo? Go to:"
-            echo "   https://github.com/users/${{ github.repository_owner }}/packages/container/qou-ci/settings"
-            echo "   → Manage Actions access → Add repository '${{ github.repository }}' with Read role"
-            echo "3. Check package existence:"
-            echo "   gh api users/${{ github.repository_owner }}/packages/container/qou-ci"
-            echo "========================"
-            exit 1
-          }
-
-          echo "✅ Image pulled successfully"
-          docker inspect "$IMAGE" --format '{{.Id}}' | head -c 20
-          echo ""
-          docker inspect "$IMAGE" --format 'Created: {{.Created}}'
-
-  # ════════════════════════════════════════════════════════════════════════
   # Phase 1: Build
   # ════════════════════════════════════════════════════════════════════════
   build:
     name: Build & Verify
-    needs: preflight
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       build_status: ${{ steps.build.outcome }}
       sorry_count: ${{ steps.sorry.outputs.count }}
@@ -120,6 +67,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install CI tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+            texlive-science texlive-extra-utils biber \
+            pandoc latexdiff graphviz
+          pip3 install --break-system-packages --no-cache-dir requests>=2.32
+
+      - name: Install Lean via elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
@@ -134,7 +95,6 @@ jobs:
       - name: Generate Lean stubs
         run: python3 .github/scripts/generate_lean_stubs.py
 
-      # Python, elan, and Lean toolchain are pre-installed in the CI image.
       - name: Cache Lean build artifacts
         uses: actions/cache@v4
         with:
@@ -189,15 +149,19 @@ jobs:
     name: Axiom Audit
     runs-on: ubuntu-latest
     needs: build
-    container:
-      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install CI tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+            texlive-science texlive-extra-utils biber \
+            pandoc latexdiff graphviz
+          pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
@@ -248,15 +212,24 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    container:
-      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install CI tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+            texlive-science texlive-extra-utils biber \
+            pandoc latexdiff graphviz
+          pip3 install --break-system-packages --no-cache-dir requests>=2.32
+
+      - name: Install Lean via elan
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
       - name: Restore Lean cache
         uses: actions/cache@v4
@@ -394,15 +367,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, audit, docs]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    container:
-      image: ghcr.io/${{ github.repository_owner }}/qou-ci:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install CI tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+            texlive-science texlive-extra-utils biber \
+            pandoc latexdiff graphviz
+          pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
