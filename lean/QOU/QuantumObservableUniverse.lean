@@ -62,22 +62,21 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The underlying object in `C`. -/
   obj : C
   /-- Multiplication morphism `μ : A ⊗ A → A`. -/
-  mul : (CategoryTheory.MonoidalCategory.tensorObj obj obj) ⟶ obj
+  mul : (obj ⊗ obj) ⟶ obj
   /-- Unit morphism `η : 𝟙 → A`. -/
-  unit : (CategoryTheory.MonoidalCategory.tensorUnit) ⟶ obj
+  unit : (𝟙_ C) ⟶ obj
   /-- Comultiplication morphism `Δ : A → A ⊗ A`. -/
-  comul : obj ⟶ (CategoryTheory.MonoidalCategory.tensorObj obj obj)
+  comul : obj ⟶ (obj ⊗ obj)
   /-- Counit morphism `ε : A → 𝟙`. -/
-  counit : obj ⟶ (CategoryTheory.MonoidalCategory.tensorUnit)
+  counit : obj ⟶ (𝟙_ C)
   /-- Antipode morphism `S : A → A`. -/
   antipode : obj ⟶ obj
   /-- Frobenius form `λ : A → 𝟙`. -/
-  frobeniusForm : obj ⟶ (CategoryTheory.MonoidalCategory.tensorUnit)
+  frobeniusForm : obj ⟶ (𝟙_ C)
   /-- Coevaluation morphism `η̃ : 𝟙 → A ⊗ A`, the dual datum to the
       evaluation `ev = μ ≫ λ : A ⊗ A → 𝟙`.  Together with `ev`, this
       exhibits `A` as self-dual in the monoidal category `C`. -/
-  coevaluation : (CategoryTheory.MonoidalCategory.tensorUnit) ⟶
-    (CategoryTheory.MonoidalCategory.tensorObj obj obj)
+  coevaluation : (𝟙_ C) ⟶ (obj ⊗ obj)
   /-- **Snake identity (left).**  The composite
       `A →[ρ⁻¹] A ⊗ 𝟙 →[A ◁ coev] A ⊗ (A ⊗ A) →[α⁻¹] (A ⊗ A) ⊗ A
        →[ev ▷ A] 𝟙 ⊗ A →[λ_] A`

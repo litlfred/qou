@@ -138,6 +138,80 @@ lean/
     └── ...
 ```
 
+## Proven Patterns
+
+### Subsingleton as Categorical Vanishing
+
+Use `Subsingleton` to model vanishing conditions (e.g., `H⁰(M, Ad(P)) = 0`)
+without requiring `Preadditive` or `AddCommGroup` structure:
+
+```lean
+/-- All morphisms 𝟙 → Ad(A) are equal ⟺ Hom(𝟙, Ad(A)) = 0. -/
+adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+
+/-- All global adjoint sections are equal ⟺ H⁰(M, Ad(P)) = 0. -/
+adjoint_cohomology_vanishes : Subsingleton adjointSections
+```
+
+**Why**: In a `k`-linear category, the zero morphism always exists, so
+`Subsingleton` implies the only morphism is zero — equivalent to the hom-space
+vanishing.  This avoids importing `Preadditive` just for a vanishing axiom.
+
+### Irreducibility via Subsingleton Propagation
+
+Prove irreducibility by propagating `Subsingleton` through an injective map:
+
+```lean
+theorem irreducible_connection (cqou : CQuantumObservableUniverse)
+    (inst : InstantonConnection cqou.toCRManifoldData)
+    (embed : inst.parallelAdjointSections → cqou.adjointSections)
+    (h_inj : Function.Injective embed) :
+    inst.IsIrreducible :=
+  ⟨fun a b => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
+```
+
+**Pattern**: Given `Subsingleton Y` and `f : X → Y` injective, conclude
+`Subsingleton X` by `⟨fun a b => h_inj (inst.allEq _ _)⟩`.
+
+### Coevaluation + Snake Identities for Exact Self-Pairing
+
+Model non-degeneracy of a Frobenius form as a categorical self-duality
+(exact pairing) using coevaluation and snake identities:
+
+```lean
+coevaluation : (𝟙_ C) ⟶ (obj ⊗ obj)
+pairing_snake_left :
+  (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫ (α_ obj obj obj).inv ≫
+    ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
+pairing_snake_right :
+  (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫ (α_ obj obj obj).hom ≫
+    (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
+```
+
+**Why**: Non-degeneracy of a bilinear form is hard to state categorically
+without linear algebra.  The snake identities (`zig-zag`) are equivalent and
+work in any monoidal category.
+
+### Abstract Hodge Involution
+
+Model the Hodge star as an involutive endomorphism — works at both the
+categorical level and the concrete level:
+
+```lean
+-- Categorical level (any category with identity):
+structure CatHodgeInvolution {C : Type u} [Category.{v} C] (X : C) where
+  star : X ⟶ X
+  star_sq : star ≫ star = 𝟙 X
+
+-- Concrete level (Type):
+structure HodgeInvolution (V : Type*) where
+  star : V → V
+  star_sq : ∀ v, star (star v) = v
+```
+
+Self-duality predicates follow as `f ≫ star = f` (categorical) or
+`star v = v` (concrete).
+
 ## Blueprint Synchronization
 
 The Formalizer must keep Lean declarations in sync with the blueprint:
