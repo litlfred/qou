@@ -367,6 +367,7 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:enveloping-algebras">Universal Enveloping Algebras and Quantum Groups</a>
         <a class="toc-sec" href="#texorpdfstringpp">texorpdfstringpp</a>
         <a class="toc-sec" href="#texorpdfstringmathbbc">texorpdfstringmathbbC</a>
+        <a class="toc-sec" href="#sec:witt-vector-lifting">Lifting via Formal Groups and Witt Vectors</a>
         <a class="toc-sec" href="#sec:finite-fields">Quotient to Finite Fields</a>
         <a class="toc-sec" href="#sec:jones-polynomials">Jones Polynomials</a>
         <a class="toc-ch" href="#chap:gauge-fluid">Gauge Field Fluid Dynamics</a>
@@ -547,7 +548,7 @@ Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p
 \mathbb{F}_\mathfrak{p}\)</span> (a finite field): the monoidal category
 is the category of finite-dimensional representations of a quantum group
 over <span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>
-(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.2</a>).</em></p></li>
+(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>).</em></p></li>
 </ul>
 <p><em>The fibre functor <span class="math inline">\(\omega\)</span>
 ensures that <span class="math inline">\(G_q =
@@ -862,7 +863,7 @@ Levi-form contraction is replaced by the Frobenius endomorphism and
 (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>);
 over <span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>, <span
 class="math inline">\(q\)</span> is a primitive root of unity
-(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.2</a>).</em></p>
+(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>).</em></p>
 </div>
 
 <div id="rem:substrate-contraction" class="remark">
@@ -2762,6 +2763,32 @@ unital Gröbner bases
 (Section <a href="#sec:enveloping-algebras" data-reference-type="ref" data-reference="sec:enveloping-algebras">7.2</a>)
 describe the passage from the reducible to the irreducible
 sector.</em></p>
+<p><em>Concretely, the PBW filtration on <span
+class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span> equips
+the associated graded algebra <span
+class="math inline">\(\mathrm{gr}\,\mathcal{U}_q\)</span> with a
+commutative product. A Gröbner–Shirshov basis for the <span
+class="math inline">\(q\)</span>-deformed relations then exhibits <span
+class="math inline">\(\mathcal{U}_q\)</span> as a flat deformation of
+<span class="math inline">\(\mathrm{gr}\,\mathcal{U}_q\)</span>: the
+leading monomials of the <span class="math inline">\(q\)</span>-Serre
+relations provide a set of non-overlapping obstructions whose resolution
+(composition lemma) yields a normal-form basis coinciding with the
+Lusztig divided-power basis . In positive characteristic this
+construction produces the distribution algebra <span
+class="math inline">\(\mathrm{Dist}(G)\)</span> of the lifted formal
+group <span class="math inline">\(G\)</span> as a deformation of the
+commutative <span class="math inline">\(\mathrm{Dist}(H)\)</span> ; the
+strong multiplicativity condition guarantees that the Frobenius relation
+is preserved at every filtration degree
+(Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>).</em></p>
+<p><em>When the representation <span class="math inline">\(\rho\)</span>
+is reducible, all monomials in the Gröbner–Shirshov basis reduce to the
+abelian (Cartan) subalgebra; the passage to irreducible <span
+class="math inline">\(\rho\)</span> corresponds to activating the
+off-diagonal generators <span class="math inline">\(E_\pm\)</span>,
+whose normal-form monomials generate the full non-commutative
+algebra.</em></p>
 </div>
 
 <h2 id="universal-enveloping-algebras-and-quantum-groups">Universal
@@ -2781,6 +2808,32 @@ representation of <span class="math inline">\(\mathfrak{su}(2)\)</span>
 lives and is the classical limit (<span class="math inline">\(q\to
 1\)</span>) of the quantum group <span
 class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span>.</em></p>
+<p><em><em>PBW basis theorem.</em> The monomials <span
+class="math inline">\(\{e_1^{a}\,e_2^{b}\,e_3^{c} : a,b,c \geq
+0\}\)</span> form a <span
+class="math inline">\(\mathbb{C}\)</span>-basis of <span
+class="math inline">\(\mathcal{U}(\mathfrak{su}(2))\)</span> . In the
+<span class="math inline">\(q\)</span>-deformed setting, the analogous
+basis is the set of ordered monomials <span
+class="math inline">\(\{E^{(a)}\,K^{s}\,F^{(b)}\}\)</span> in the
+Lusztig divided-power generators , with ordering enforced by the
+Gröbner–Shirshov resolution of the <span
+class="math inline">\(q\)</span>-Serre relations .</em></p>
+<p><em>In the QOU framework this basis serves two purposes:</em></p>
+<ol type="1">
+<li><p><em>it provides the explicit coordinates for the fibre algebra
+<span class="math inline">\(\mathrm{SU}_{q_n}(2)\)</span> at each
+brane-tower level
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.11</a>
+in
+Chapter <a href="#chap:torsion" data-reference-type="ref" data-reference="chap:torsion">4</a>);</em></p></li>
+<li><p><em>it ensures flatness of the deformation <span
+class="math inline">\(q \mapsto q_n\)</span>, so that the transition
+maps in the direct limit <span class="math inline">\(\mathcal{A}_\infty
+= \varinjlim\,\Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))\)</span> are well-defined algebra
+homomorphisms.</em></p></li>
+</ol>
 </div>
 
 <div id="def:quantum-su2" class="definition">
@@ -2915,6 +2968,18 @@ class="math inline">\(S\)</span> extends to <span
 class="math inline">\(J^1(A)\)</span> by functoriality of the Kähler
 differential construction. Thus <span
 class="math inline">\(J^1(A)\)</span> is a Frobenius-Hopf object.</p>
+<p>This step relies on the <em>strong multiplicativity</em> condition:
+the co-multiplication must be compatible with the deformed product at
+every filtration degree. Over fields of positive characteristic, the
+rigorous proof that this compatibility survives the deformation is the
+main theorem of , which constructs <span
+class="math inline">\(\mathrm{Dist}(G)\)</span> as a Gröbner–Shirshov
+deformation of the commutative <span
+class="math inline">\(\mathrm{Dist}(H)\)</span> and verifies the
+Frobenius relation at each stage (see also
+Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>
+in
+Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>).</p>
 <p><em>Step 3: Non-degeneracy and vanishing.</em> The non-degeneracy of
 the Frobenius form on <span class="math inline">\(A\)</span> (the
 pairing <span class="math inline">\(\varepsilon \circ m\)</span> is a
@@ -3220,6 +3285,25 @@ class="math inline">\(\exp_q(r) - 1\)</span>
 (equation <a href="#eq:q-exp" data-reference-type="eqref" data-reference="eq:q-exp">[eq:q-exp]</a>)
 regulating the transition between the divided power basis of the
 space-like and time-like resolvents.</em></p>
+<p><em>The flatness of this specialisation—the fact that the
+divided-power basis remains a basis after <span class="math inline">\(q
+\mapsto q_n\)</span>—is guaranteed by the Gröbner–Shirshov normal-form
+theorem applied to <span
+class="math inline">\(\mathrm{Dist}(G)\)</span> . In the <span
+class="math inline">\(\mathfrak{p}\)</span>-adic setting
+(Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>),
+the Witt vector lift
+(Definition <a href="#def:witt-vector-lift" data-reference-type="ref" data-reference="def:witt-vector-lift">7.2</a>)
+converts this algebraic flatness into a geometric statement: the formal
+group <span class="math inline">\(\widehat{G}\)</span> over <span
+class="math inline">\(\mathbb{Z}_\mathfrak{p}\)</span> reduces
+modulo <span class="math inline">\(\mathfrak{p}\)</span> to the
+commutative formal group <span class="math inline">\(H\)</span> over
+<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>, and the
+divided-power basis of <span
+class="math inline">\(\mathrm{Dist}(\widehat{G})\)</span> restricts to
+the PBW basis of <span
+class="math inline">\(\mathrm{Dist}(H)\)</span>.</em></p>
 </div>
 
 <div id="rem:jet-shell" class="remark">
@@ -5898,10 +5982,135 @@ reconstruction.</em></p></li>
 </ul>
 </div>
 
+<h2 id="lifting-via-formal-groups-and-witt-vectors">Lifting via Formal
+Groups and Witt Vectors</h2>
+<p>The <span class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>
+realisation
+(Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>)
+provides a QOU over characteristic <span
+class="math inline">\(0\)</span>, while the <span
+class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation
+(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>)
+provides one over characteristic <span
+class="math inline">\(\mathfrak{p}\)</span>. The passage between them is
+mediated by the <em>Witt vector functor</em> <span
+class="math inline">\(W\)</span> and the theory of formal groups over
+<span class="math inline">\(\mathfrak{p}\)</span>-adic rings .</p>
+<div id="def:witt-vector-lift" class="definition">
+
+<p><strong>Definition 7.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:witt-vector-lift">Witt vector lift of a formal group</a>).
+<em>Let <span class="math inline">\(H\)</span> be a commutative formal
+group over <span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>
+equipped with a skewed-Poisson structure <span
+class="math inline">\(\pi_&lt;\)</span> (a biderivation <span
+class="math inline">\(\pi_&lt;\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)\)</span>
+satisfying a graded anti-symmetry and a <span
+class="math inline">\(\mathfrak{p}\)</span>-truncated Jacobi condition).
+The <em>Witt vector lift</em> is the formal group <span
+class="math inline">\(\widehat{G}\)</span> over <span
+class="math inline">\(W(\mathbb{F}_\mathfrak{p}) \cong
+\mathbb{Z}_\mathfrak{p}\)</span> obtained by integrating <span
+class="math inline">\(\pi_&lt;\)</span> in the sense of : the
+distribution algebra <span
+class="math inline">\(\mathrm{Dist}(\widehat{G})\)</span> is the <span
+class="math inline">\(\mathfrak{p}\)</span>-adic completion of the
+<a class="defn-link" href="#rem:enveloping-algebra">universal enveloping algebra</a> <span
+class="math inline">\(\mathcal{U}(\mathrm{Lie}(H))\)</span> deformed
+by <span class="math inline">\(\pi_&lt;\)</span>.</em></p>
+</div>
+
+<div id="prop:skew-poisson-integration" class="proposition">
+
+<p><strong>Proposition 7.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Integration of skewed-Poisson
+structures). <em>Let <span
+class="math inline">\(H/\mathbb{F}_\mathfrak{p}\)</span> be a smooth
+commutative formal group and <span
+class="math inline">\(\pi_&lt;\)</span> a skewed-Poisson structure
+on <span class="math inline">\(H\)</span>. Then there exists a
+(generally non-commutative) formal group <span
+class="math inline">\(G/\mathbb{Z}_\mathfrak{p}\)</span> such
+that:</em></p>
+<ol type="1">
+<li><p><em><span class="math inline">\(G
+\otimes_{\mathbb{Z}_\mathfrak{p}} \mathbb{F}_\mathfrak{p}\;\cong\;
+H\)</span> (reduction modulo <span
+class="math inline">\(\mathfrak{p}\)</span> recovers <span
+class="math inline">\(H\)</span>);</em></p></li>
+<li><p><em><span class="math inline">\(\mathrm{Dist}(G)\)</span> is a
+deformation of <span class="math inline">\(\mathrm{Dist}(H)\)</span>
+computed via a Gröbner–Shirshov basis for the relations of the
+enveloping algebra ;</em></p></li>
+<li><p><em>the comultiplication on <span
+class="math inline">\(\mathrm{Dist}(G)\)</span> satisfies the <em>strong
+multiplicativity</em> condition: the Frobenius relation <span
+class="math inline">\((\mathrm{Id}\otimes
+m)\circ(\Delta\otimes\mathrm{Id})
+= \Delta\circ m\)</span> is preserved under the
+deformation.</em></p></li>
+</ol>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> This is . Item (1) is the existence statement;
+item (2) follows from the Gröbner–Shirshov normal-form construction for
+<span class="math inline">\(\mathrm{Dist}(G)\)</span>; item (3) is the
+strong multiplicativity theorem, which guarantees that the
+co-multiplication is compatible with the deformed product at every stage
+of the <span class="math inline">\(\mathfrak{p}\)</span>-adic
+filtration. ◻</p>
+</div>
+
+<div id="rem:witt-lift-qou" class="remark">
+
+<p><strong>Remark 7.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:witt-lift-qou">Role in the QOU lifting theorem</a>).
+<em>Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>
+provides the algebraic engine behind the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
+when the base field is <span
+class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span> rather than <span
+class="math inline">\(\mathbb{C}\)</span>:</em></p>
+<ol type="1">
+<li><p><em>The Frobenius–Hopf object <span
+class="math inline">\(A\)</span> in the <span
+class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation
+(Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>)
+carries a skewed-Poisson structure induced by the <span
+class="math inline">\(q\)</span>-commutator <span
+class="math inline">\([\hat{X},\hat{P}]_q = i\hbar_q\)</span>
+(Section <a href="#sec:enveloping-algebras" data-reference-type="ref" data-reference="sec:enveloping-algebras">7.2</a>).</em></p></li>
+<li><p><em>The Witt vector lift <span
+class="math inline">\(\widehat{G}\)</span>
+(Definition <a href="#def:witt-vector-lift" data-reference-type="ref" data-reference="def:witt-vector-lift">7.2</a>)
+is the non-commutative formal group whose distribution algebra deforms
+<span class="math inline">\(\mathrm{Dist}(H)\)</span>; in the QOU
+language this is the passage from the <span
+class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> fibre algebra to
+the <span class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span> fibre
+algebra.</em></p></li>
+<li><p><em>Strong multiplicativity (item (3) of
+Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>)
+is exactly the Frobenius relation used in Step 2 of the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
+proof, ensuring that the comultiplication—hence the gauge connection—is
+preserved under the lift.</em></p></li>
+<li><p><em>The unit-root condition on the <span
+class="math inline">\(F\)</span>-crystal
+(Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>)
+corresponds to the integrability of the skewed-Poisson structure: <span
+class="math inline">\(\pi_&lt;\)</span> integrates if and only if the
+associated <span class="math inline">\(F\)</span>-crystal is
+unit-root.</em></p></li>
+</ol>
+<p><em>Without the formal-groups integration theorem, the <span
+class="math inline">\(\mathfrak{p}\)</span>-adic lifting mechanism would
+remain a conjecture; the results of  convert it into a proven
+categorical lift.</em></p>
+</div>
+
 <h2 id="quotient-to-finite-fields"><span id="sec:finite-fields"></span>Quotient to Finite Fields</h2>
 <div id="ex:finite-field-realisation" class="example">
 
-<p><strong>Example 7.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
+<p><strong>Example 7.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation).
 <em>Let <span class="math inline">\(k = \mathbb{F}_\mathfrak{p}\)</span>
 and let <span class="math inline">\(\mathcal{C} =

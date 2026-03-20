@@ -64,7 +64,7 @@ and any changes made are indicated.
 
 - *$k = \mathbb{Q}_\mathfrak{p}$ (the $\mathfrak{p}$-adic field): the gauge datum becomes an $F$-isocrystal with Frobenius lift, and integrability is controlled by the $\mathfrak{p}$-adic Frobenius endomorphism (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>, Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>);*
 
-- *$k = \mathbb{F}_\mathfrak{p}$ (a finite field): the monoidal category is the category of finite-dimensional representations of a quantum group over $\mathbb{F}_\mathfrak{p}$ (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.2</a>).*
+- *$k = \mathbb{F}_\mathfrak{p}$ (a finite field): the monoidal category is the category of finite-dimensional representations of a quantum group over $\mathbb{F}_\mathfrak{p}$ (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>).*
 
 *The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$ is well-defined over any $k$.*
 
@@ -156,7 +156,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 ***Relation to the exponential.** Over $\mathbb{Q}$ (or any subfield of $\mathbb{C}$), the classical exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an equally valid specialisation map, and the two are related by the Taylor expansion $\exp(x) = 1 + x + \tfrac{1}{2}x^2 + \cdots$: the formula $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$ is the first-order approximation of $\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$. Both define smooth fields $M \to [1,\infty)$ with the same boundary behaviour ($q = 1$ at classicality, $q \to \infty$ deep-quantum), and all downstream formulas ($\hbar_q = 1 - q^{-1}$, the Heisenberg commutator, the Schrödinger equation, the Yang–Mills functional) are algebraic in $q$ and therefore insensitive to the choice between $1+x$ and $\exp(x)$. The algebraic form is adopted in Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a> because it is meaningful over every base field $k$, whereas $\exp(x)$ requires an archimedean topology.*
 
-*The non-archimedean analogues are developed in Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>: over $\mathbb{Q}_\mathfrak{p}$ the Levi-form contraction is replaced by the Frobenius endomorphism and $q = \mathfrak{p}^{\,-v_\mathfrak{p}(\det\varphi)}$ (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>); over $\mathbb{F}_\mathfrak{p}$, $q$ is a primitive root of unity (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.2</a>).*
+*The non-archimedean analogues are developed in Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>: over $\mathbb{Q}_\mathfrak{p}$ the Levi-form contraction is replaced by the Frobenius endomorphism and $q = \mathfrak{p}^{\,-v_\mathfrak{p}(\det\varphi)}$ (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>); over $\mathbb{F}_\mathfrak{p}$, $q$ is a primitive root of unity (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>).*
 
 </div>
 
@@ -828,6 +828,10 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 **Remark 3.13** (Reducible representations and fixed points). *When a representation $\rho\colon\pi_1(\mathbb{CP}^1\setminus K)\to\mathrm{PSL}(2,\mathbb{C})$ is reducible, all generators fix the same point on $\mathbb{CP}^1$ — they are simultaneously conjugate to upper-triangular matrices, hence all rotations around a common axis. In the category-theoretic formulation this corresponds to the abelianisation of the knot group. Further generalisations via the Poincaré–Birkhoff–Witt theorem and unital Gröbner bases (Section <a href="#sec:enveloping-algebras" data-reference-type="ref" data-reference="sec:enveloping-algebras">7.2</a>) describe the passage from the reducible to the irreducible sector.*
 
+*Concretely, the PBW filtration on $\mathcal{U}_q(\mathfrak{su}(2))$ equips the associated graded algebra $\mathrm{gr}\,\mathcal{U}_q$ with a commutative product. A Gröbner–Shirshov basis for the $q$-deformed relations then exhibits $\mathcal{U}_q$ as a flat deformation of $\mathrm{gr}\,\mathcal{U}_q$: the leading monomials of the $q$-Serre relations provide a set of non-overlapping obstructions whose resolution (composition lemma) yields a normal-form basis coinciding with the Lusztig divided-power basis . In positive characteristic this construction produces the distribution algebra $\mathrm{Dist}(G)$ of the lifted formal group $G$ as a deformation of the commutative $\mathrm{Dist}(H)$ ; the strong multiplicativity condition guarantees that the Frobenius relation is preserved at every filtration degree (Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>).*
+
+*When the representation $\rho$ is reducible, all monomials in the Gröbner–Shirshov basis reduce to the abelian (Cartan) subalgebra; the passage to irreducible $\rho$ corresponds to activating the off-diagonal generators $E_\pm$, whose normal-form monomials generate the full non-commutative algebra.*
+
 </div>
 
 ## Universal enveloping algebras and quantum groups
@@ -835,6 +839,15 @@ Under this correspondence, specific knot types map to particle identities. The t
 <div id="rem:enveloping-algebra" class="remark">
 
 **Remark 3.14** (Universal enveloping algebra). *The universal enveloping algebra $\mathcal{U}(\mathfrak{su}(2))$ is the associative algebra generated by $e_1,e_2,e_3$ (Definition <a href="#def:su2-basis" data-reference-type="ref" data-reference="def:su2-basis">3.3</a>) subject to the commutation relations <a href="#eq:su2-commutator" data-reference-type="eqref" data-reference="eq:su2-commutator">[eq:su2-commutator]</a>. It provides the algebraic scaffolding in which every finite-dimensional representation of $\mathfrak{su}(2)$ lives and is the classical limit ($q\to 1$) of the quantum group $\mathcal{U}_q(\mathfrak{su}(2))$.*
+
+**PBW basis theorem.* The monomials $\{e_1^{a}\,e_2^{b}\,e_3^{c} : a,b,c \geq 0\}$ form a $\mathbb{C}$-basis of $\mathcal{U}(\mathfrak{su}(2))$ . In the $q$-deformed setting, the analogous basis is the set of ordered monomials $\{E^{(a)}\,K^{s}\,F^{(b)}\}$ in the Lusztig divided-power generators , with ordering enforced by the Gröbner–Shirshov resolution of the $q$-Serre relations .*
+
+*In the QOU framework this basis serves two purposes:*
+
+1.  *it provides the explicit coordinates for the fibre algebra $\mathrm{SU}_{q_n}(2)$ at each brane-tower level (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.11</a> in Chapter <a href="#chap:torsion" data-reference-type="ref" data-reference="chap:torsion">4</a>);*
+
+2.  *it ensures flatness of the deformation $q \mapsto q_n$, so that the transition maps in the direct limit $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 E_n,\,
+            \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.*
 
 </div>
 
@@ -889,6 +902,8 @@ Under this correspondence, specific knot types map to particle identities. The t
 *Step 2: Inherited Frobenius-Hopf structure.* The Frobenius relation $(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id})
  = \Delta \circ m
  = (m \otimes \mathrm{Id}) \circ (\mathrm{Id} \otimes \Delta)$ ensures that the comultiplication $\Delta\colon A \to A \otimes A$ restricts to a well-defined comultiplication $\Delta'\colon J^1(A) \to J^1(A) \otimes J^1(A)$, and the counit $\varepsilon\colon A \to \mathbf{1}$ induces a counit $\varepsilon'$ on $J^1(A)$. The Hopf antipode $S$ extends to $J^1(A)$ by functoriality of the Kähler differential construction. Thus $J^1(A)$ is a Frobenius-Hopf object.
+
+This step relies on the *strong multiplicativity* condition: the co-multiplication must be compatible with the deformed product at every filtration degree. Over fields of positive characteristic, the rigorous proof that this compatibility survives the deformation is the main theorem of , which constructs $\mathrm{Dist}(G)$ as a Gröbner–Shirshov deformation of the commutative $\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage (see also Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a> in Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>).
 
 *Step 3: Non-degeneracy and vanishing.* The non-degeneracy of the Frobenius form on $A$ (the pairing $\varepsilon \circ m$ is a perfect pairing) implies non-degeneracy of the induced form on $J^1(A)$, since $\Omega^1(A)$ is a direct summand. For the vanishing condition, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ implies $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(J^1(A))) = 0$: the adjoint representation of $J^1(A)$ contains $\mathrm{Ad}(A)$ as a subobject, and any invariant in $\mathrm{Ad}(J^1(A))$ would project to a non-zero invariant in $\mathrm{Ad}(A)$, contradicting the hypothesis.
 
@@ -995,6 +1010,8 @@ Under this correspondence, specific knot types map to particle identities. The t
 <div id="rem:direct-limit-lusztig" class="remark">
 
 **Remark 4.12** (Direct limit algebra and the Lusztig integral form). *The algebra $\mathcal{A}_\infty$ (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.11</a>) is explicitly realised as the Lusztig integral form of the quantised enveloping algebra $\mathcal{U}_q(\mathfrak{su}(2))$ . At each level $n$ the fibre algebra $\mathrm{SU}_{q_n}(2)$ is obtained by specialising the $\mathbb{Z}[q,q^{-1}]$-form $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) along $q \mapsto q_n \in k^{\times}$, and the direct limit inherits the divided power basis $(E^{(m)}, F^{(m)}, K^{\pm 1})$ from the integral form. This ensures that the quaternionic jet embedding (Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">5.26</a>) remains robust under the arithmetic descent to $M_0$, with the $q$-deformed scaling function $\exp_q(r) - 1$ (equation <a href="#eq:q-exp" data-reference-type="eqref" data-reference="eq:q-exp">[eq:q-exp]</a>) regulating the transition between the divided power basis of the space-like and time-like resolvents.*
+
+*The flatness of this specialisation—the fact that the divided-power basis remains a basis after $q \mapsto q_n$—is guaranteed by the Gröbner–Shirshov normal-form theorem applied to $\mathrm{Dist}(G)$ . In the $\mathfrak{p}$-adic setting (Chapter <a href="#chap:p-adic" data-reference-type="ref" data-reference="chap:p-adic">7</a>), the Witt vector lift (Definition <a href="#def:witt-vector-lift" data-reference-type="ref" data-reference="def:witt-vector-lift">7.2</a>) converts this algebraic flatness into a geometric statement: the formal group $\widehat{G}$ over $\mathbb{Z}_\mathfrak{p}$ reduces modulo $\mathfrak{p}$ to the commutative formal group $H$ over $\mathbb{F}_\mathfrak{p}$, and the divided-power basis of $\mathrm{Dist}(\widehat{G})$ restricts to the PBW basis of $\mathrm{Dist}(H)$.*
 
 </div>
 
@@ -1915,11 +1932,56 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 </div>
 
+## Lifting via Formal Groups and Witt Vectors
+
+The $\mathbb{Q}_\mathfrak{p}$ realisation (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>) provides a QOU over characteristic $0$, while the $\mathbb{F}_\mathfrak{p}$ realisation (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>) provides one over characteristic $\mathfrak{p}$. The passage between them is mediated by the *Witt vector functor* $W$ and the theory of formal groups over $\mathfrak{p}$-adic rings .
+
+<div id="def:witt-vector-lift" class="definition">
+
+**Definition 7.2** (Witt vector lift of a formal group). *Let $H$ be a commutative formal group over $\mathbb{F}_\mathfrak{p}$ equipped with a skewed-Poisson structure $\pi_<$ (a biderivation $\pi_<\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)$ satisfying a graded anti-symmetry and a $\mathfrak{p}$-truncated Jacobi condition). The *Witt vector lift* is the formal group $\widehat{G}$ over $W(\mathbb{F}_\mathfrak{p}) \cong \mathbb{Z}_\mathfrak{p}$ obtained by integrating $\pi_<$ in the sense of : the distribution algebra $\mathrm{Dist}(\widehat{G})$ is the $\mathfrak{p}$-adic completion of the universal enveloping algebra $\mathcal{U}(\mathrm{Lie}(H))$ deformed by $\pi_<$.*
+
+</div>
+
+<div id="prop:skew-poisson-integration" class="proposition">
+
+**Proposition 7.3** (Integration of skewed-Poisson structures). *Let $H/\mathbb{F}_\mathfrak{p}$ be a smooth commutative formal group and $\pi_<$ a skewed-Poisson structure on $H$. Then there exists a (generally non-commutative) formal group $G/\mathbb{Z}_\mathfrak{p}$ such that:*
+
+1.  *$G \otimes_{\mathbb{Z}_\mathfrak{p}} \mathbb{F}_\mathfrak{p}\;\cong\; H$ (reduction modulo $\mathfrak{p}$ recovers $H$);*
+
+2.  *$\mathrm{Dist}(G)$ is a deformation of $\mathrm{Dist}(H)$ computed via a Gröbner–Shirshov basis for the relations of the enveloping algebra ;*
+
+3.  *the comultiplication on $\mathrm{Dist}(G)$ satisfies the *strong multiplicativity* condition: the Frobenius relation $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id})
+            = \Delta\circ m$ is preserved under the deformation.*
+
+</div>
+
+<div class="proof">
+
+*Proof.* This is . Item (1) is the existence statement; item (2) follows from the Gröbner–Shirshov normal-form construction for $\mathrm{Dist}(G)$; item (3) is the strong multiplicativity theorem, which guarantees that the co-multiplication is compatible with the deformed product at every stage of the $\mathfrak{p}$-adic filtration. ◻
+
+</div>
+
+<div id="rem:witt-lift-qou" class="remark">
+
+**Remark 7.4** (Role in the QOU lifting theorem). *Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a> provides the algebraic engine behind the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>) when the base field is $\mathbb{Q}_\mathfrak{p}$ rather than $\mathbb{C}$:*
+
+1.  *The Frobenius–Hopf object $A$ in the $\mathbb{F}_\mathfrak{p}$ realisation (Example <a href="#ex:finite-field-realisation" data-reference-type="ref" data-reference="ex:finite-field-realisation">7.5</a>) carries a skewed-Poisson structure induced by the $q$-commutator $[\hat{X},\hat{P}]_q = i\hbar_q$ (Section <a href="#sec:enveloping-algebras" data-reference-type="ref" data-reference="sec:enveloping-algebras">7.2</a>).*
+
+2.  *The Witt vector lift $\widehat{G}$ (Definition <a href="#def:witt-vector-lift" data-reference-type="ref" data-reference="def:witt-vector-lift">7.2</a>) is the non-commutative formal group whose distribution algebra deforms $\mathrm{Dist}(H)$; in the QOU language this is the passage from the $\mathbb{F}_\mathfrak{p}$ fibre algebra to the $\mathbb{Q}_\mathfrak{p}$ fibre algebra.*
+
+3.  *Strong multiplicativity (item (3) of Proposition <a href="#prop:skew-poisson-integration" data-reference-type="ref" data-reference="prop:skew-poisson-integration">7.3</a>) is exactly the Frobenius relation used in Step 2 of the jet prolongation proof, ensuring that the comultiplication—hence the gauge connection—is preserved under the lift.*
+
+4.  *The unit-root condition on the $F$-crystal (Example <a href="#ex:p-adic-realisation" data-reference-type="ref" data-reference="ex:p-adic-realisation">7.1</a>) corresponds to the integrability of the skewed-Poisson structure: $\pi_<$ integrates if and only if the associated $F$-crystal is unit-root.*
+
+*Without the formal-groups integration theorem, the $\mathfrak{p}$-adic lifting mechanism would remain a conjecture; the results of  convert it into a proven categorical lift.*
+
+</div>
+
 ## Quotient to Finite Fields
 
 <div id="ex:finite-field-realisation" class="example">
 
-**Example 7.2** ($\mathbb{F}_\mathfrak{p}$ realisation). *Let $k = \mathbb{F}_\mathfrak{p}$ and let $\mathcal{C} =
+**Example 7.5** ($\mathbb{F}_\mathfrak{p}$ realisation). *Let $k = \mathbb{F}_\mathfrak{p}$ and let $\mathcal{C} =
 \mathrm{Rep}_{\mathbb{F}_\mathfrak{p}}(\mathrm{SU}_q(2))$, the category of finite-dimensional representations of the quantum group $\mathrm{SU}_q(2)$ over $\mathbb{F}_\mathfrak{p}$, where $q \in
 \mathbb{F}_\mathfrak{p}^{\times}$. More generally, when $q$ is a primitive $\ell$-th root of unity in $\overline{\mathbb{F}}_\mathfrak{p}$ (with $\ell$ coprime to $\mathfrak{p}$), $\mathcal{C}$ extends to a fusion category over the extension field $\mathbb{F}_\mathfrak{p}(q)$ with finitely many simple objects. The Frobenius–Hopf object $A$ is the regular representation, and the fibre functor $\omega$ is the forgetful functor to $\mathrm{Vect}_{\mathbb{F}_\mathfrak{p}}$. The non-degeneracy of the Frobenius form $\lambda$ follows from the semisimplicity of the fusion category, and the observability condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$ (since the trivial representation does not appear as a summand of the adjoint representation for generic $q$).*
 

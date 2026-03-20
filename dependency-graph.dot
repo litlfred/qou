@@ -213,8 +213,11 @@ digraph ProofDependencies {
     style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
     fontsize=10;
     ex_p_adic_realisation [label="Ex\np-adic-realisation" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe.pdf#ex:p-adic-realisation" tooltip="$\mathbb{Q}_\pp$ realisation" target="_blank"];
+    def_witt_vector_lift [label="Def\nwitt-vector-lift" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe.pdf#def:witt-vector-lift" tooltip="Witt vector lift of a formal group" target="_blank"];
+    prop_skew_poisson_integration [label="Prop\nskew-poisson-inte..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe.pdf#prop:skew-poisson-integration" tooltip="Integration of skewed-Poisson structures" target="_blank"];
+    rem_witt_lift_qou [label="Rem\nwitt-lift-qou" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe.pdf#rem:witt-lift-qou" tooltip="Role in the QOU lifting theorem" target="_blank"];
     ex_finite_field_realisation [label="Ex\nfinite-field-real..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe.pdf#ex:finite-field-realisation" tooltip="$\mathbb{F}_\pp$ realisation" target="_blank"];
-    { rank=same; ex_p_adic_realisation; ex_finite_field_realisation; }
+    { rank=same; ex_p_adic_realisation; def_witt_vector_lift; prop_skew_poisson_integration; rem_witt_lift_qou; ex_finite_field_realisation; }
   }
 
   subgraph cluster_ch11 {
