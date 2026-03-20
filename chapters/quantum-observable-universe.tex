@@ -454,6 +454,107 @@ Reeb decomposition (Definition~\ref{def:reeb-decomposition}):
 \]
 \end{definition}
 
+\begin{definition}[Observation]
+\label{def:observation}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
+field~$k$ (Definition~\ref{def:quantum-observable-universe}).  An
+\emph{observation} is a morphism
+\[
+  \mathcal{O} \;\colon\; A \;\longrightarrow\; A
+  \qquad\text{in } \mathcal{C},
+\]
+satisfying:
+\begin{enumerate}
+  \item \textbf{Frobenius compatibility.}\; $\lambda \circ \mathcal{O}
+        = \lambda$ (the observation preserves the Frobenius form);
+  \item \textbf{Substrate perturbation.}\; the induced map on the
+        deformation parameter shifts $q \mapsto q' = q + \delta q$, where
+        $\delta q$ is determined by the Hopf-algebra coaction of~$A$ on
+        itself:
+        \[
+          \delta q \;=\; \lambda\bigl(\mathcal{O}(a_{(1)})\,S(a_{(2)})\bigr)
+          \quad\text{for } a \in A,
+        \]
+        with $S$ the antipode and $\Delta(a) = a_{(1)} \otimes a_{(2)}$
+        the coproduct.
+\end{enumerate}
+In the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}), an observation is
+realised as a continuous open map from the spacetime base~$M$ to the
+bundle of endomorphisms $\operatorname{End}(E) \to M$, encoding the
+coordinate change in torsion energy of the bundle~$E$.  Because the
+substrate parameter~$q(p)$
+(Definition~\ref{def:substrate-parameter}) is perturbed by
+condition~(2), every observation shifts the non-commutative geometry:
+
+\smallskip
+\begin{quote}
+\itshape ``Observing the universe changes it.''
+\end{quote}
+\end{definition}
+
+\begin{remark}[Two-observer parallelogram]
+\label{rem:two-observer-parallelogram}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and
+let $\alpha$ be a fermion (Definition~\ref{def:fermion}) --- a
+$q$-harmonic form with non-trivial vertical component
+$\iota_\xi\,\alpha_V \neq 0$.  Consider two independent observations
+$\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$
+(Definition~\ref{def:observation}) of the same event.  These data
+assemble into a \emph{parallelogram of observations}:
+\[
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  & \mathcal{O}_1(\alpha) \arrow[dr, "\text{compare}"] & \\
+  \alpha \arrow[ur, "\mathcal{O}_1"]
+         \arrow[dr, "\mathcal{O}_2"']
+  & & \delta\alpha \\
+  & \mathcal{O}_2(\alpha) \arrow[ur, "\text{compare}"'] &
+\end{tikzcd}
+\]
+The fermion $\alpha$ is the \emph{source vertex}: it is the
+physical state prior to measurement, carrying a non-trivial vertical
+(Reeb) component that couples it to the spin direction.  From the
+source, the two observers independently apply their observation
+morphisms, producing $\mathcal{O}_1(\alpha)$ and
+$\mathcal{O}_2(\alpha)$ at the lateral vertices of the parallelogram.
+The two observed values are then compared at the \emph{far vertex},
+yielding the discrepancy
+\[
+  \delta\alpha
+  \;=\; \mathcal{O}_1(\alpha) - \mathcal{O}_2(\alpha).
+\]
+
+\textbf{Relation to uncertainty.}\;
+Each observation perturbs the substrate parameter by $\delta q_i$
+(Definition~\ref{def:observation}, condition~(2)), so the two
+observers induce distinct shifted parameters $q_1' = q + \delta q_1$
+and $q_2' = q + \delta q_2$.  The discrepancy $\delta\alpha$ is
+controlled by the difference in these perturbations.  In the
+$\mathbb{C}$ realisation, the Heisenberg commutator
+(Remark~\ref{rem:heisenberg-commutator}) gives
+\[
+  \lVert \delta\alpha \rVert
+  \;\geq\;
+  \bigl\lvert \hbar_{q_1'}(p) - \hbar_{q_2'}(p) \bigr\rvert
+  \;=\;
+  \bigl\lvert q_1'(p)^{-1} - q_2'(p)^{-1} \bigr\rvert,
+\]
+where $\hbar_q = 1 - q^{-1}$
+(Definition~\ref{def:quantum-planck-constant}).  Thus the observed
+discrepancy at the far vertex of the parallelogram is bounded below
+by the difference of the local Planck constants induced by the two
+observations.
+
+The parallelogram is \emph{degenerate} (i.e.\ $\delta\alpha = 0$)
+only when both observations perturb the substrate identically
+($\delta q_1 = \delta q_2$), which requires the two observation
+morphisms to agree on the adjoint coaction of~$A$.  Generically, the
+non-commutativity of the Hopf structure prevents this, and the
+parallelogram opens: independent observations of a fermion
+necessarily disagree, with the magnitude of disagreement governed by
+the uncertainty encoded in the substrate field.
+\end{remark}
+
 % ── q-Deformed operators ─────────────────────────────────────────────────────
 
 \begin{definition}[$q$-Deformed exterior derivative]
