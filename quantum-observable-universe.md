@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-18
+date: 2026-03-20
 title: Quantum Observable Universe
 ---
 
@@ -1126,7 +1126,7 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="rem:descent-to-zero" class="remark">
 
-**Remark 5.1** (Descent to dimension zero). *By the descent theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.12</a>), it is sufficient to study dimension-zero manifolds equipped with their bundles $P$ and $E$. At a point $p\in M_0$, the substrate parameter $q(p)= 1 + \lvert\langle L_\theta,\, F_A^{+}\rangle\rvert(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) assigns a specific quantum constant $q\in[1,\infty)$ determined by the principal bundle $P$ and the state bundle $E$. Here $E$ represents the totality of fermionic matter packed into spacetime at the Big Bang. The trivial bundle $E=E_0$ corresponds to empty space, in which every point’s location is exactly known; a non-trivial bundle $E$ begins to fill spacetime with fermions, entering the regime of the quantum Bring surface whose underlying geometry is non-commutative (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).*
+**Remark 5.1** (Descent to dimension zero). *By the descent theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.14</a>), it is sufficient to study dimension-zero manifolds equipped with their bundles $P$ and $E$. At a point $p\in M_0$, the substrate parameter $q(p)= 1 + \lvert\langle L_\theta,\, F_A^{+}\rangle\rvert(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) assigns a specific quantum constant $q\in[1,\infty)$ determined by the principal bundle $P$ and the state bundle $E$. Here $E$ represents the totality of fermionic matter packed into spacetime at the Big Bang. The trivial bundle $E=E_0$ corresponds to empty space, in which every point’s location is exactly known; a non-trivial bundle $E$ begins to fill spacetime with fermions, entering the regime of the quantum Bring surface whose underlying geometry is non-commutative (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).*
 
 </div>
 
@@ -1649,9 +1649,37 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 </div>
 
+<div id="def:exceptional-divisor" class="definition">
+
+**Definition 6.12** (Exceptional divisor at $p$). *Let $(M, G, E)$ be a Descartes universe and let $p \in M$ be a brane point with outward normal $N(p) = p/\lvert p\rvert$ and positively-oriented tangent frame $(T_1, T_2)$. Set $R = R_{\mathbb{CP}^1}$ and $$O(p) \;=\; p + R\,N(p).$$ The *exceptional divisor* at $p$ is the $\mathbb{CP}^1$ fibre $$E_p \;=\; \pi^{-1}(p)
+  \;=\;
+  \bigl\{\,
+    O(p) + R\bigl(\sin\phi\,(\cos\psi\,T_1 + \sin\psi\,T_2) - \cos\phi\,N\bigr)
+    \;:\;
+    \phi \in [0,\pi],\; \psi \in [0,2\pi)
+  \,\bigr\},$$ where $\pi\colon \widetilde{M} \to M$ is the blow-up map that replaces $p$ with $E_p \cong \mathbb{CP}^1$.*
+
+</div>
+
+<div id="def:chiral-sector-coords" class="definition">
+
+**Definition 6.13** (Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$). *With notation as in Definition <a href="#def:exceptional-divisor" data-reference-type="ref" data-reference="def:exceptional-divisor">6.12</a>, fix the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. Define the *red*, *green*, and *blue* sector embeddings by $$\begin{aligned}
+  \mathfrak{r}(\phi,\psi)
+  &\;=\; O + R\bigl(\sin\phi\,\bigl(\cos(\psi + q\phi)\,T_1
+         + \sin(\psi + q\phi)\,T_2\bigr) - \cos\phi\,N\bigr),\\
+  \mathfrak{g}(\phi,\psi)
+  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{2\pi}{3}\bigr),\\
+  \mathfrak{b}(\phi,\psi)
+  &\;=\; \mathfrak{r}\!\bigl(\phi,\,\psi + \tfrac{4\pi}{3}\bigr).
+\end{aligned}$$ The *chiral twist* $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$), encoding the chirality of the substrate parameter.*
+
+*The three sectors tile the exceptional divisor exactly: $$E_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),$$ where adjacent sectors share only their boundary meridians (at $\psi = 0$ and $\psi = 2\pi/3$ in each sector’s local coordinate), and the union covers $E_p$ without overlap. The three sectors correspond to the three copies of $S_3 \subset S_5$ in Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-reference="rem:chirality-trefoil">6.10</a>: $\mathfrak{r}$ is the first, $\mathfrak{g}$ the second, and $\mathfrak{b}$ the third.*
+
+</div>
+
 <div id="thm:descartes" class="theorem">
 
-**Theorem 6.12** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum observable universes satisfying the Descartes condition $\chi(E) = -6$, with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s curve $\Sigma_4$ (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">6.11</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, P, E)$ in $\mathcal{C}_{-6}$, there exists a unique morphism $(M, G, P, E) \to (\Sigma_4, G, P_{\Sigma_4}, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.*
+**Theorem 6.14** (Descartes theorem). *Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum observable universes satisfying the Descartes condition $\chi(E) = -6$, with morphisms given by QOU maps that preserve the Euler characteristic. Then Bring’s curve $\Sigma_4$ (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">6.11</a>) is a terminal object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, P, E)$ in $\mathcal{C}_{-6}$, there exists a unique morphism $(M, G, P, E) \to (\Sigma_4, G, P_{\Sigma_4}, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.*
 
 </div>
 
@@ -1663,13 +1691,13 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="rem:universality-general" class="remark">
 
-**Remark 6.13** (Universality for a given Euler characteristic). *The Descartes theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.12</a>) is expected to be a special case of a more general result: for any admissible Euler characteristic $\chi$, the category $\mathcal{C}_{\chi}$ of $\mathbb{C}$ quantum observable universes with $\chi(E) = \chi$ should admit a terminal object determined by the unique maximally symmetric Riemann surface of the corresponding genus. The Descartes case $\chi = -6$ (genus $4$) is distinguished by Bring’s curve, but analogous universal objects are expected at other values of $\chi$.*
+**Remark 6.15** (Universality for a given Euler characteristic). *The Descartes theorem (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.14</a>) is expected to be a special case of a more general result: for any admissible Euler characteristic $\chi$, the category $\mathcal{C}_{\chi}$ of $\mathbb{C}$ quantum observable universes with $\chi(E) = \chi$ should admit a terminal object determined by the unique maximally symmetric Riemann surface of the corresponding genus. The Descartes case $\chi = -6$ (genus $4$) is distinguished by Bring’s curve, but analogous universal objects are expected at other values of $\chi$.*
 
 </div>
 
 <div id="rem:observation" class="remark">
 
-**Remark 6.14** (The notion of an observation). *Given a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>), an *observation* is a continuous open map from the spacetime base $\mathbb{CP}^1$ to the bundle of endomorphisms $\operatorname{End}(E)\to\mathbb{CP}^1$, encoding the coordinate change in torsion energy of the bundle $E$. Because the torsion energy is modified by the act of measurement, observing the universe changes it: every observation perturbs the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and hence shifts the non-commutative geometry of the Bring surface (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).*
+**Remark 6.16** (The notion of an observation). *Given a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>), an *observation* is a continuous open map from the spacetime base $\mathbb{CP}^1$ to the bundle of endomorphisms $\operatorname{End}(E)\to\mathbb{CP}^1$, encoding the coordinate change in torsion energy of the bundle $E$. Because the torsion energy is modified by the act of measurement, observing the universe changes it: every observation perturbs the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and hence shifts the non-commutative geometry of the Bring surface (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).*
 
 > **“Observing the universe changes it.”**
 
@@ -2094,17 +2122,37 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 </div>
 
+<div id="rem:magnetic-friction" class="remark">
+
+**Remark 11.12** (Non-monotonic magnetic friction from collective rotor dynamics). *Recent experiments by Gu, Lüders, and Bechinger  demonstrate that a two-dimensional array of rotatable magnetic dipoles sliding over a commensurate magnetic substrate exhibits a pronounced *non-monotonic* dependence of friction on interlayer separation. The friction peaks at an intermediate distance where competing ferromagnetic and antiferromagnetic interactions induce dynamical frustration and hysteretic torque cycles during sliding. This collective rotor phenomenon may admit a natural explanation within the QOU framework: the competing magnetic alignments realise a discrete analogue of the $q$-torsion frustration that arises when a lattice’s translational symmetry is incommensurate with the characteristic scale of the $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>). In this reading, the non-monotonic friction profile reflects a resonance–anti-resonance transition governed by the local value of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>), with maximal dissipation occurring at the separation where the rotor array’s magnetic periodicity matches the $q$-harmonic form spectrum (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>). A quantitative comparison requires specifying the lattice geometry and its coupling to the horizontal distribution of the CR manifold $M$; we outline the necessary ingredients in Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.13</a> below.*
+
+</div>
+
 ##### Existing data sets.
 
 - Many-body interference measurements in kagome crystals , which probe coherent lattice-scale quantum effects.
 
 - Chiral phonon spectroscopy in rare-earth halide crystals , demonstrating orientation-dependent effective magnetic fields from lattice vibrations.
 
+- Non-monotonic magnetic friction measurements in commensurate rotor–substrate arrays , exhibiting collective magnetically driven dissipation without physical contact.
+
 - High-$Q$ quartz bulk acoustic wave (BAW) oscillator noise measurements, which record excess phase noise beyond thermal limits.
 
 - Precision Casimir-effect experiments using crystalline surfaces (e.g. silicon and gold single crystals).
 
 - Resonant-mass gravitational wave detector data (e.g. AURIGA, NAUTILUS bar detectors), which recorded orientation-dependent noise floors in cryogenic crystalline bars.
+
+<div id="rem:lattice-layout" class="remark">
+
+**Remark 11.13** (Lattice layout and quantum resonance implications). *Connecting the QOU resonance condition (Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.10</a>) to concrete lattice experiments requires three structural ingredients that remain to be fully developed:*
+
+1.  **Lattice–leaf commensurability.* For a $d$-dimensional Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance condition of Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.10</a> becomes a Diophantine matching between the reciprocal lattice vectors $\{\vec{G}_j\}$ and the characteristic wave-vectors of the $q$-torsion leaves. The lattice symmetry group acts on the space of $q$-harmonic forms and selects a finite set of resonance channels indexed by the irreducible representations of the point group.*
+
+2.  **Frustration and non-monotonicity.* When the lattice hosts internal rotational degrees of freedom — as in the magnetic rotor arrays of  — the coupling to $q$-torsion may be non-monotonic in a control parameter (e.g. interlayer separation or applied field). In the QOU picture, this arises because the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>) introduces a preferred orientation that competes with the lattice’s own symmetry, producing frustrated configurations whose energy dissipation is maximised at an intermediate commensurability.*
+
+3.  **Quantum coherence at the lattice scale.* The kagome many-body interference results  suggest that quantum coherence can extend over macroscopic lattice domains. Within the QOU framework, this coherence length is bounded by the correlation length of the $q$-harmonic forms on the brane, which depends on the local curvature of the CR manifold $M$. Establishing this bound quantitatively requires an explicit computation of the $q$-deformed propagator on the lattice, which we leave to future work.*
+
+</div>
 
 ##### Planned observations.
 
@@ -2113,6 +2161,8 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 - Extension of kagome and pyrochlore quantum-interference experiments to larger single crystals with controlled rotational staging.
 
 - Cryogenic SQUID-based noise spectroscopy on rotating high-purity sapphire or silicon crystals.
+
+- Systematic variation of interlayer separation in magnetic rotor arrays to test whether the non-monotonic friction profile  correlates with the predicted $q$-torsion resonance channels.
 
 ##### Potential new experiments.
 

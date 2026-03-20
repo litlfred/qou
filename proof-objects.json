@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-19T20:24:16.424107+00:00",
-    "commit_sha": "692e12ef127d9628e1c6635a59e717d040a48112"
+    "generated_at": "2026-03-20T00:21:59.794144+00:00",
+    "commit_sha": "920eb6d55a751392553cc7246c39714d4682939e"
   },
   "objects": [
     {
@@ -1515,11 +1515,33 @@
       "formalization_status": "not_started"
     },
     {
+      "label": "def:exceptional-divisor",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 184,
+        "chapter": 6
+      },
+      "title": "Exceptional divisor at $p$",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:chiral-sector-coords",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 206,
+        "chapter": 6
+      },
+      "title": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
+      "formalization_status": "not_started"
+    },
+    {
       "label": "thm:descartes",
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 184,
+        "line": 239,
         "chapter": 6
       },
       "title": "Descartes theorem",
@@ -1530,7 +1552,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 199,
+        "line": 254,
         "chapter": 6
       },
       "title": "Universality for a given Euler characteristic",
@@ -1541,7 +1563,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 211,
+        "line": 266,
         "chapter": 6
       },
       "title": "The notion of an observation",
