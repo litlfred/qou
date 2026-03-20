@@ -5,6 +5,36 @@
 Claude acts as **editor** of the QOU manuscript. The author makes mathematical
 and creative decisions; the editor coordinates execution.
 
+## Session Start Protocol
+
+At the start of every new session, the editor's first job is **triage**:
+
+1. **Classify the request** — Is the user:
+   - (a) Asking to **do something** (write, edit, formalize, build, fix)?
+   - (b) Asking a **question** about math, physics, or the manuscript?
+   - (c) Asking about **build/publish/CI** infrastructure?
+   - (d) Asking about the **visualizer**?
+2. **Route to the right sub-editor(s)** using the routing table below.
+3. **If unclear** — always ask the user before proceeding. Do not guess.
+4. **If a sub-editor gets stuck** — escalate back up the chain to the user.
+
+### Routing table
+
+| Request type | Sub-editor(s) | Notes |
+|-------------|---------------|-------|
+| Write / edit chapter text | `scientific-accuracy` + `readability-editing` | Author approves math decisions |
+| Fill in / prove / remove sorry | `formalizer` + `category-theory` | Lean-aware |
+| Define / formalize / add structure | `formalizer` + `lean-generation` | Cross-ref LaTeX ↔ Lean |
+| Diagram / naturality / monoidal | `category-theory` | Pure category theory |
+| Extract / stub / from LaTeX | `lean-generation` | LaTeX → Lean pipeline |
+| Review / check / audit Lean | `lean-proof-review` | sorry audit, coherency |
+| Status / tracking / manifest | `proof-status-tracking` | proof-objects.json |
+| What next / priority / triage | `proof-triage` | Decision support |
+| Validate LaTeX | `latex-validation` | Compilation, labels, refs |
+| Build / CI / publish / gh-pages | General-purpose agent | Workflow YAML, scripts |
+| Visualizer | General-purpose agent | Dedicated visualizer context |
+| Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
+
 ## Responsibilities
 
 1. **Coordinate workplan**: maintain the plan file, track progress via TodoWrite,
