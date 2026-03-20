@@ -237,9 +237,7 @@ structure RMatrix where
   R_left_inv : ∀ p, R_inv (R p) = p
   /-- `R ∘ R⁻¹ = id`. -/
   R_right_inv : ∀ p, R (R_inv p) = p
-  /-- **Yang–Baxter equation** on three tensor factors:
-      `(R ⊗ id) ∘ (id ⊗ R) ∘ (R ⊗ id) = (id ⊗ R) ∘ (R ⊗ id) ∘ (id ⊗ R)`.
-
+  /-- **Yang–Baxter equation** on three tensor factors.
       Given a triple `(a, b, c)`, we define:
       - `R₁₂` acts on the first two factors: `(a,b,c) ↦ (R(a,b), c)`
       - `R₂₃` acts on the last two factors:  `(a,b,c) ↦ (a, R(b,c))`
@@ -247,8 +245,8 @@ structure RMatrix where
       The equation asserts that `R₁₂ ∘ R₂₃ ∘ R₁₂ = R₂₃ ∘ R₁₂ ∘ R₂₃`
       on all triples. -/
   yang_baxter : ∀ (a b c : qsu2.carrier),
-    let r12 := fun (x, y, z) => ((R (x, y)).1, (R (x, y)).2, z)
-    let r23 := fun (x, y, z) => (x, (R (y, z)).1, (R (y, z)).2)
+    let r12 := fun (x, y, z) => let (rx, ry) := R (x, y); (rx, ry, z)
+    let r23 := fun (x, y, z) => let (ry, rz) := R (y, z); (x, ry, rz)
     r12 (r23 (r12 (a, b, c))) = r23 (r12 (r23 (a, b, c)))
 
 end QOU.PathIntegrals
