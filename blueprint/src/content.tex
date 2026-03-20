@@ -1019,10 +1019,12 @@
   \label{conj:topological-mass-ch4}
   \lean{QOU.Torsion.topological_mass_conjecture}
   \uses{def:mass-identity, def:hyperbolic-volume, def:substrate-parameter-lean}
-  $m(\gamma) \propto \oint_{\gamma_0} \lVert\nabla_A q\rVert \cdot
-  \lVert L \wedge F^+\rVert + \sum_{i=1}^N \lambda_i |\Phi_q(z_i)|$,
-  where $\Phi_q$ is the quantum dilogarithm at spectral coordinates
-  of exceptional divisors.
+  $m(\gamma) = \lVert\mathrm{Hol}_{\nabla_A}(\gamma_0;\,\mathfrak{G})\rVert
+  + \sum_{i=1}^N \lVert\mathrm{MI}\!\int_{E_i}(\nabla_A q,\,L \wedge F^+)\rVert$,
+  where the first term is the holonomy around the unknot core in the
+  descended subalgebra and each summand is the MI integral over the
+  $i$-th exceptional divisor, yielding the quantum dilogarithm
+  $\Phi_q(z_i)$.
 \end{conjecture}
 
 % ── Quantum Dilogarithm Corollary ───────────────────────────────

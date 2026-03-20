@@ -687,49 +687,6 @@ $r$, the coordinate $w_1$ is restricted to a circle of radius $\sqrt{r}$ in
 the complex plane $\mathbb{C}_{w_1}$.  This circle is the orbit of the $C_5$
 symmetry: the rotation $w_1\mapsto\zeta\,w_1$ moves the point along this
 circle without changing~$r$.
-
-\medskip
-\begin{center}
-\begin{tikzpicture}[>=stealth, scale=2.5]
-  % Brown tessellation of the brane (trivial bundle E_0: thin, no torsion)
-  \fill[brown!12]
-    plot[domain=0.02:1,samples=50] (\x,{sqrt(\x)})
-    -- plot[domain=1:0.02,samples=50] (\x,{-sqrt(\x)}) -- cycle;
-  % Tessellation grid lines: vertical slices
-  \foreach \rv in {0.1,0.2,...,0.9}{
-    \draw[brown!35,thin] (\rv,{-sqrt(\rv)}) -- (\rv,{sqrt(\rv)});
-  }
-  % Tessellation grid lines: horizontal bands
-  \foreach \hv in {-0.9,-0.7,...,0.9}{
-    \draw[brown!35,thin]
-      plot[domain={\hv*\hv}:1,samples=30] (\x,{\hv});
-  }
-  % Upper envelope: sqrt(r)
-  \draw[thick,domain=0.005:1.08,samples=80]
-    plot (\x,{sqrt(\x)}) node[right]{$\sqrt{r}$};
-  % Lower envelope: -sqrt(r)
-  \draw[thick,domain=0.005:1.08,samples=80]
-    plot (\x,{-sqrt(\x)});
-  % Axes
-  \draw[->] (-0.08,0) -- (1.22,0) node[right]{$r$};
-  \draw[->] (0,-1.18) -- (0,1.18) node[above]{$\mathbb{C}_{w_1}$};
-  % Tick at r = 1
-  \draw (1,0.04) -- (1,-0.04) node[below]{\small$1$};
-  % Representative fibre at r = 0.5
-  \draw[dashed,gray] (0.5,{-sqrt(0.5)}) -- (0.5,{sqrt(0.5)});
-  % C_5 orbit arc at r = 0.5
-  \draw[thick,->] ({0.5+sqrt(0.5)*cos(55)},{sqrt(0.5)*sin(55)})
-    arc[start angle=55, end angle=125, radius={sqrt(0.5)}];
-  \node at (0.5,{sqrt(0.5)+0.13}) {\small$\zeta$};
-  % Labels
-  \node at (0.78,0.22) {$E=E_0$};
-  \node[below] at (0.5,-0.08) {\small$M$};
-\end{tikzpicture}
-\end{center}
-\noindent
-The brown tessellation filling the brane illustrates the trivial bundle
-$E=E_0$: every cell is flat, reflecting the absence of torsion on the total
-space.
 \end{remark}
 
 \begin{remark}[Four-colourability of Bring's surface]
@@ -928,7 +885,9 @@ recovered as the residue of the interaction between the growth profiles:
   \lVert\Omega_1\wedge\Omega_{2,3}\rVert,
 \end{equation}
 where $\Omega_k$ denotes the curvature form restricted to the $\omega_k$
-sector.  When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$;
+sector.  This heuristic is made rigorous by the nonabelian multiplicative
+integral of the mass identity (Definition~\ref{def:mass-identity}).
+When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$;
 when $q\to 0$ (maximal twist), energy is trapped in the $\omega_1$ spatial
 filament.
 \end{remark}
