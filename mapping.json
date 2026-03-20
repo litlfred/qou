@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-19T20:23:14.868102+00:00",
+  "generated_at": "2026-03-20T00:44:01.102919+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -51,6 +51,11 @@
       "narrative": "Boson",
       "lean_id": "QOU.QuantumObservableUniverse.Boson",
       "latex_label": "def:boson"
+    },
+    {
+      "narrative": "Observation",
+      "lean_id": "QOU.QuantumObservableUniverse.Observation",
+      "latex_label": "def:observation"
     },
     {
       "narrative": "$q$-Deformed exterior derivative",
@@ -176,6 +181,16 @@
       "narrative": "Descartes condition",
       "lean_id": "QOU.DescartesUniverse.DescartesCondition",
       "latex_label": "def:descartes-condition"
+    },
+    {
+      "narrative": "Exceptional divisor at $p$",
+      "lean_id": "QOU.DescartesUniverse.ExceptionalDivisor",
+      "latex_label": "def:exceptional-divisor"
+    },
+    {
+      "narrative": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
+      "lean_id": "QOU.DescartesUniverse.ChiralSectorCoords",
+      "latex_label": "def:chiral-sector-coords"
     }
   ]
 }
