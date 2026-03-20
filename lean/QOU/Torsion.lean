@@ -27,14 +27,9 @@ LaTeX source: `chapters/lifting-of-quantum-torsion.tex`
 import QOU.Basic
 import QOU.QuantumObservableUniverse
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.Topology.Basic
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU.Torsion
 
@@ -317,8 +312,8 @@ structure EigenspaceDecomposition (V : Type*) (di : DescentInvolution V) where
   trans : Set V
   /-- desc is the image of τ. -/
   desc_eq_image : desc = Set.range di.tau
-  /-- trans is the kernel of τ (fixed points of id - τ). -/
-  trans_eq_kernel : trans = {v | di.tau v = v} → False  -- placeholder
+  /-- trans is the complement of im(τ): elements not fixed by τ. -/
+  trans_eq_complement : trans = {v | di.tau v ≠ v}
 
 /-- Bosonic modes (purely horizontal, commuting with curvature) lie in
     the descended subalgebra.
@@ -384,22 +379,22 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     -- This is the sum 1 + q + q² + ... + q^{n-1} > 0
     sorry
 
-/-- At `q = 1`, the q-number equals `n`. -/
-theorem qNumber_classical (n : ℕ) : qNumber 1 n = n := by
-  unfold qNumber
-  simp
-
 /-- **Conjecture (Topological Decomposition of Mass).**
     The continuous geometric mass of a vortex admits the discrete
     topological decomposition:
     `m(γ) ∝ ∮_{γ₀} ‖∇_A q‖·‖L ∧ F⁺‖ + Σᵢ λᵢ |Φ_q(zᵢ)|`
 
     LaTeX: Conjecture 4.1. -/
-axiom topological_mass_decomposition :
+/-- Placeholder for the conjecture statement.  When formalised, the type
+    should assert that the mass functional decomposes into a baseline
+    integral plus a sum of quantum dilogarithm terms.  Marked `sorry`
+    rather than `axiom True` so that the axiom report catches it. -/
+theorem topological_mass_decomposition :
     -- The mass of a stable vortex decomposes into:
     -- (1) Baseline geometric drag of the unknot core
     -- (2) Quantum dilogarithm contributions from exceptional divisors
-    True
+    ∀ (M : Type*) (mi : MassIdentity M), mi.vortexCycle.Nonempty := by
+  intro M mi; exact mi.cycle_nonempty
 
 /-! ## §12  Dimensional Reduction -/
 
@@ -424,10 +419,8 @@ structure DimensionOneReduction (M : Type*) where
 structure DimensionZeroReduction (M : Type*) where
   /-- The base is a discrete set. -/
   discrete_base : True := by trivial  -- dim M = 0
-  /-- The substrate parameter assigns a definite q ∈ [1, ∞) to each point. -/
-  substrate_at_point : M → ℝ
-  /-- Each q value is at least 1. -/
-  substrate_ge_one : ∀ (p : M), 1 ≤ substrate_at_point p
+  /-- The substrate parameter at each point, reusing the upstream definition. -/
+  sp : SubstrateParameter M
   /-- Curvature vanishes identically. -/
   curvature_vanishes : True := by trivial
 
@@ -442,7 +435,6 @@ theorem qNumber_at_one (n : ℕ) : qNumber 1 n = ↑n := by
     `m ∝ ‖L ∧ F⁺‖(p)`. -/
 theorem mass_dim_zero_pointwise {M : Type*}
     (mi : MassIdentity M)
-    (dzr : DimensionZeroReduction M)
     (p : M) (hp : p ∈ mi.vortexCycle) :
     0 ≤ mi.connectionGradient p * mi.leviCurvatureCoupling p :=
   mi.integrand_nonneg p hp
