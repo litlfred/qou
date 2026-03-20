@@ -5,13 +5,18 @@
 
 \begin{proposition}[Jet Prolongation]
 \label{prop:jet-prolongation}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
-(Example~\ref{def:c-quantum-observable-universe}) with instanton connection
-$A$ on $P$ and metric $g$ on $E$.  Write $\widetilde{M} = E$ for the total
-space of $E$, viewed as a manifold, and define $P'$ as the frame bundle and
-$E'$ as the bundle of orthonormal frames of the first jet bundle $J^1 E$.
-Then $A$ and $g$ uniquely determine a connection $A'$ on $P'$ such that
-$(\widetilde{M}, G, P', E')$ is a $\mathbb{C}$ quantum observable universe.
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
+field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Define the
+\emph{jet object}
+\[
+  J^1(A) \;:=\; A \otimes \Omega^1(A),
+\]
+where $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$ is the bimodule of
+K\"ahler differentials.  Then $J^1(A)$ carries a canonical Frobenius--Hopf
+structure inherited from~$A$, and the quadruple
+$(\mathcal{C},\, J^1(A),\, \omega',\, q)$ --- where
+$\omega' = \omega \circ (\text{--} \otimes \Omega^1)$ is the induced fibre
+functor --- is again a quantum observable universe over~$k$.
 \end{proposition}
 
 \begin{proof}
@@ -77,6 +82,30 @@ of $A'$, which is guaranteed by the inherited vanishing condition of
 Step~3.
 \end{proof}
 
+\begin{corollary}[$\mathbb{C}$ realisation of jet prolongation]
+\label{cor:jet-prolongation-C}
+Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+(Example~\ref{def:c-quantum-observable-universe}) with instanton connection
+$A$ on~$P$ and metric~$g$ on~$E$.  Write $\widetilde{M} = E$ for the total
+space of~$E$, define $P'$ as the frame bundle and $E'$ as the bundle of
+orthonormal frames of the first jet bundle $J^1 E$.  Then $A$ and $g$
+uniquely determine a connection~$A'$ on~$P'$ such that
+$(\widetilde{M}, G, P', E')$ is a $\mathbb{C}$ quantum observable universe.
+\end{corollary}
+
+\begin{proof}
+Apply Proposition~\ref{prop:jet-prolongation} to the categorical data
+$(\mathcal{C}, A, \omega, q)$ underlying the $\mathbb{C}$ quantum
+observable universe (Example~\ref{def:c-quantum-observable-universe}),
+where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$,
+$A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful
+functor.  The fibre functor $\omega$ converts the categorical jet object
+$J^1(A)$ into the geometric first jet bundle $J^1 E$, the inherited
+Frobenius--Hopf structure into the connection~$A'$, and the
+non-degeneracy and vanishing conditions into the analytic conditions of
+Example~\ref{def:c-quantum-observable-universe}.
+\end{proof}
+
 \begin{remark}[Prolongation from the Frobenius-Hopf structure]
 \label{rem:prolongation-categorical}
 The proof above shows that jet prolongation is an \emph{intrinsic}
@@ -105,43 +134,55 @@ case-by-case verification.
 
 \begin{definition}[Recursive Brane Tower]
 \label{def:recursive-brane-tower}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
-(Example~\ref{def:c-quantum-observable-universe}).  Set $M_0 = M$ and
-$E_1 = E$.  \emph{Inductively}, define $E_{n+1}$ as the jet prolongation
-(Proposition~\ref{prop:jet-prolongation}) of $E_n$.
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
+field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Set
+$A_0 = A$.  \emph{Inductively}, define
+$A_{n+1} = J^1(A_n)$ as the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) of the Frobenius--Hopf
+object~$A_n$.
 
 The \emph{brane relation} is the following recursive structure:
 \begin{enumerate}
-  \item Each total space $E_n$ is treated as the base manifold $M_{n+1}$ for
-        the next level; $E_n$ is the \emph{brane} of $E_{n+1}$.
-  \item At each level, $A_n \in \mathcal{A}(E_{n-1})$ is the $n$-th level
-        instanton connection satisfying the Hermitian Yang--Mills equations on
-        $E_n$.
+  \item Each jet object $A_n$ serves as the base object for the next level;
+        $A_n$ is the \emph{brane} of $A_{n+1}$.
+  \item At each level, the comultiplication $\Delta_n$ on $A_n$ encodes
+        the $n$-th level connection, inherited from the Frobenius--Hopf
+        structure by Proposition~\ref{prop:jet-prolongation}.
 \end{enumerate}
+The \emph{recursive brane tower} is the sequence
+$A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
+in~$\mathcal{C}$, where each embedding is the canonical inclusion
+$A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.
 \end{definition}
 
-\begin{example}[First two levels]
+\begin{example}[$\mathbb{C}$ realisation of the brane tower]
 \label{ex:brane-tower-levels}
-Starting from a $\mathbb{C}$ quantum observable universe $(M, G, P, E_1)$, the
-first jet prolongation yields $E_2$ with base manifold $M_1 = E_1$.  The
-connection $A_1$ on $E_1$ satisfies the Hermitian Yang--Mills equations, and
-$A_2$ on $E_2$ is uniquely determined by
-Proposition~\ref{prop:jet-prolongation}.
+Starting from a $\mathbb{C}$ quantum observable universe $(M, G, P, E_1)$
+(Example~\ref{def:c-quantum-observable-universe}), the fibre functor
+$\omega$ converts the categorical brane tower into a geometric tower of
+bundles: $E_{n+1}$ is the bundle of orthonormal frames of $J^1 E_n$, and
+the connection $A_n$ on~$E_n$ satisfies the Hermitian Yang--Mills equations
+at each level.  The first jet prolongation yields $E_2$ with base manifold
+$M_1 = E_1$, and the connection $A_2$ is uniquely determined by
+Corollary~\ref{cor:jet-prolongation-C}.
 \end{example}
 
 % ── Quantum Characteristic Classes ───────────────────────────────────────────
 
 \begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
 \label{def:quantum-characteristic-classes}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Each transition
-$E_n \to E_{n+1}$ defines a central extension of gerbes on the base
-manifold~$M$ in the sense of Yekutieli~\cite{yekutieli2010}: the
-$\mathrm{SU}(2)$-bundle $E_n$ is an object in a gerbe~$\mathfrak{G}_n$
-banded by $\mathcal{O}_M^{\times}$, and the jet prolongation
+$A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
+of gerbes on the underlying site in the sense of
+Yekutieli~\cite{yekutieli2010}: the Frobenius--Hopf object~$A_n$ is an
+object in a gerbe~$\mathfrak{G}_n$ banded by the sheaf of units
+$\mathcal{B}$ (in the $\mathbb{C}$ realisation,
+$\mathcal{B} = \mathcal{O}_M^{\times}$), and the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) produces a central extension
 \[
-  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1.
@@ -149,31 +190,71 @@ banded by $\mathcal{O}_M^{\times}$, and the jet prolongation
 The \emph{quantum characteristic classes} (Yekutieli obstruction classes)
 are the cohomology classes
 \[
-  \kappa_n \;\in\; H^2\!\bigl(M,\, \mathcal{O}_M^{\times}\bigr)
+  \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
 \]
 that obstruct the lifting of objects from $\mathfrak{G}_n$
-to~$\mathfrak{G}_{n+1}$.  These classes label the monodromy fixed
-points of the holonomy representation as one transitions from $E_n$
-to $E_{n+1}$, and their vanishing is the necessary and sufficient
-condition for the lift to exist~\cite{yekutieli2010}.
+to~$\mathfrak{G}_{n+1}$.  By the Yekutieli Lifting Condition
+(Definition~\ref{def:yekutieli-lifting-condition}), the vanishing
+$\kappa_n = 0$ is the necessary and sufficient condition for the lift
+to exist (Proposition~\ref{prop:yekutieli-lifting}).
 \end{definition}
 
-\begin{lemma}[Yekutieli lifting criterion]
-\label{lem:yekutieli-lifting}
-The lifting of the principal bundle $E_n$ to $E_{n+1}$ in the recursive
-brane tower (Definition~\ref{def:recursive-brane-tower}) is possible if
-and only if the Yekutieli obstruction class $\kappa_n \in
-H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.
-\end{lemma}
+\begin{definition}[Yekutieli Lifting Condition]
+\label{def:yekutieli-lifting-condition}
+Let $\mathcal{C}$ be a $k$-linear rigid monoidal category and let
+\[
+  1 \;\longrightarrow\; \mathcal{B}
+  \;\longrightarrow\; \mathfrak{G}'
+  \;\longrightarrow\; \mathfrak{G}
+  \;\longrightarrow\; 1
+\]
+be a central extension of gerbes on a site~$\mathcal{S}$, banded by an
+abelian sheaf~$\mathcal{B}$.  We say that $\mathcal{C}$ satisfies the
+\emph{Yekutieli Lifting Condition} with respect to
+$(\mathfrak{G}', \mathfrak{G}, \mathcal{B})$ if, for every object
+$x \in \mathrm{Ob}(\mathfrak{G})$, the obstruction to lifting~$x$ to an
+object $x' \in \mathrm{Ob}(\mathfrak{G}')$ is classified by a single
+cohomology class
+\[
+  \kappa(x) \;\in\; H^2(\mathcal{S},\, \mathcal{B}),
+\]
+and $x$ admits a lift if and only if $\kappa(x) = 0$.
+\end{definition}
+
+\begin{proposition}[Yekutieli Lifting Condition holds in the brane tower]
+\label{prop:yekutieli-lifting}
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) and let
+$\{A_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  The central extensions of
+gerbes
+\[
+  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1
+\]
+arising from the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) satisfy the Yekutieli Lifting
+Condition (Definition~\ref{def:yekutieli-lifting-condition}).  In
+particular, the lift of the Frobenius--Hopf object from level~$n$ to
+level~$n{+}1$ exists if and only if the obstruction class
+$\kappa_n \in H^2(M,\, \mathcal{O}_M^{\times})$
+(Definition~\ref{def:quantum-characteristic-classes}) vanishes.
+\end{proposition}
 
 \begin{proof}
-By \cite[Theorem~1.7]{yekutieli2010}, an object in the base gerbe
-$\mathfrak{G}_n$ admits a lift to the total gerbe~$\mathfrak{G}_{n+1}$
-of a central extension if and only if the obstruction class in
-$H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.  The jet prolongation
-construction (Proposition~\ref{prop:jet-prolongation}) realises the
-passage $E_n \to E_{n+1}$ as precisely such a lift, so
-$\kappa_n = 0$ is equivalent to the existence of $E_{n+1}$.
+By~\cite[Theorem~1.7]{yekutieli2010}, any central extension of gerbes
+banded by an abelian sheaf on a ringed space satisfies the lifting
+criterion: an object in the base gerbe admits a lift to the total gerbe
+if and only if its obstruction class in $H^2$ vanishes.  The jet
+prolongation construction
+(Proposition~\ref{prop:jet-prolongation}) realises the passage from
+level~$n$ to level~$n{+}1$ as precisely such a central extension,
+banded by $\mathcal{O}_M^{\times}$
+(Definition~\ref{def:quantum-characteristic-classes}).  Hence the
+Yekutieli Lifting Condition holds, and $\kappa_n = 0$ is equivalent
+to the existence of the lift.
 \end{proof}
 
 \begin{remark}[Fermionic sectors as twisted sectors]
@@ -310,18 +391,28 @@ into a harmonic expansion across the infinite jet space $J^\infty E$
 
 % ── Direct Limit Algebra ─────────────────────────────────────────────────────
 
-\begin{definition}[$\mathbb{C}$ Quantum Observable Universe as Direct Limit]
+\begin{definition}[Quantum Observable Universe as Direct Limit]
 \label{def:direct-limit-algebra}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}) with substrate parameters $q_n$
-(Definition~\ref{def:substrate-parameter}) at each level.  The
-\emph{$\mathbb{C}$ quantum observable universe} is the direct limit algebra
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  The
+\emph{direct limit algebra of the quantum observable universe} is the
+colimit in the category of $k$-algebras:
 \[
   \mathcal{A}_\infty
   \;=\;
-  \varinjlim\,
-  \Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr).
+  \varinjlim_{n}\,
+  \mathrm{End}_{\mathcal{C}}(A_n),
 \]
+taken over the tower of endomorphism algebras with the transition maps
+induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.
+
+In the $\mathbb{C}$ realisation
+(Example~\ref{def:c-quantum-observable-universe}), applying the fibre
+functor $\omega$ gives
+$\mathcal{A}_\infty \cong
+\varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$.
 \end{definition}
 
 \begin{remark}[Direct limit algebra and the Lusztig integral form]
@@ -380,17 +471,20 @@ into a global object on the jet shell $J^\infty E$
 
 \begin{proposition}[Global gluing via Yekutieli's twisted quantization]
 \label{prop:global-gluing}
-The local substrate parameters $q(p)$
-(Definition~\ref{def:substrate-parameter}) induce a twisted associative
-deformation of $\mathcal{O}(\mathrm{SU}(2))$ that admits a unique global
-gluing via Yekutieli's twisted quantization
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  The local
+deformations of the Frobenius--Hopf object~$A$ parameterised by the
+substrate parameter~$q$ induce a twisted associative deformation that
+admits a unique global gluing via Yekutieli's twisted quantization
 map~\cite{yekutieli2008, yekutieli2010}.  In particular, the direct
 limit algebra $\mathcal{A}_\infty$
 (Definition~\ref{def:direct-limit-algebra}) is a well-defined global
-section of a sheaf of twisted deformation algebras on~$M$, and the
-vacuum state $\omega$ (Proposition~\ref{prop:vacuum-state}) is
-well-defined across the entire manifold despite local
-non-commutativity.
+section of a sheaf of twisted deformation algebras on the underlying
+site~$\mathcal{S}$, and the vacuum state
+(Proposition~\ref{prop:vacuum-state}) is well-defined globally despite
+local non-commutativity.  In the $\mathbb{C}$ realisation, this
+corresponds to the global gluing of the local algebras
+$\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold~$M$.
 \end{proposition}
 
 \begin{proof}
@@ -424,16 +518,23 @@ $\mathrm{SU}(2)$-averaging argument of that proposition.
 
 \begin{proposition}[Existence and Uniqueness of the Vacuum State]
 \label{prop:vacuum-state}
-Let $\mathcal{A}_\infty$ be the direct limit algebra
-(Definition~\ref{def:direct-limit-algebra}) equipped with the global
-$\mathrm{SU}(2)$ action and the recursive $q$-deformations.  Then there exists
-a unique state $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ that is
-$\mathrm{SU}(2)$-invariant:
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) and let
+$\mathcal{A}_\infty$ be its direct limit algebra
+(Definition~\ref{def:direct-limit-algebra}).  Let $G_q =
+\mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group
+(Definition~\ref{def:quantum-gauge-group}), acting on
+$\mathcal{A}_\infty$ by conjugation.  Then there exists a unique
+$k$-linear functional
+$\varphi \colon \mathcal{A}_\infty \to k$ that is $G_q$-invariant:
 \[
-  \omega(g \cdot a) = \omega(a)
-  \quad\text{for all } g \in \mathrm{SU}(2),\;
+  \varphi(g \cdot a) = \varphi(a)
+  \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.
 \]
+In the $\mathbb{C}$ realisation, $G_q = \mathrm{SU}_q(2)$ and
+$\varphi$ is the unique $\mathrm{SU}(2)$-invariant state on the
+$C^*$-algebraic direct limit.
 \end{proposition}
 
 \begin{proof}
@@ -497,15 +598,20 @@ resistance described in Remark~\ref{rem:mass-geometric-drag}.
 
 \begin{proposition}[Stability of the Euler characteristic]
 \label{prop:euler-char-stability}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe and let
-$\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  Then the Euler characteristic
-$\chi(E)$ is stable under descent and lifting: for each level $n$,
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  The categorical Euler
+characteristic $\chi(A_n) := \mathrm{tr}(\mathrm{id}_{A_n})$ (computed
+via the rigidity trace of the identity endomorphism in~$\mathcal{C}$)
+is stable under jet prolongation: for each level~$n$,
 \[
-  \chi(E_{n+1}) \;=\; \chi(E_n).
+  \chi(A_{n+1}) \;=\; \chi(A_n).
 \]
-In particular, if the base level satisfies $\chi(E_1) = c$, then
-$\chi(E_n) = c$ for all $n \geq 1$.
+In particular, if the base level satisfies $\chi(A_0) = c \in k$, then
+$\chi(A_n) = c$ for all $n \geq 0$.  In the $\mathbb{C}$ realisation,
+$\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the
+total space~$E_n$.
 \end{proposition}
 
 \begin{proof}
@@ -546,47 +652,81 @@ projection $E_{n+1} \to E_n$ a homotopy equivalence, whence
 $\chi(E_{n+1}) = \chi(E_n)$.
 \end{proof}
 
-\begin{definition}[Mass Identity (nonabelian multiplicative integration)]
+\begin{definition}[Mass (categorical trace)]
 \label{def:mass-identity}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}), instanton connection
-$A$ (Definition~\ref{def:instanton}), Levi form $L$, and self-dual curvature
-$F^+$.  Let $\gamma$ be a closed cycle encircling the vortex filament, and
-let $\Sigma$ be a surface with $\partial\Sigma = \gamma$.  The vortex
-filament is treated as a singularity in a twisted gerbe
-$\mathfrak{G}$ banded by $\mathcal{O}_M^{\times}$
-(Definition~\ref{def:quantum-characteristic-classes}).
-
-The \emph{inertial mass} $m$ of a stable vortex is defined via the
-nonabelian multiplicative integral of
-Yekutieli~\cite{yekutieli2015}:
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  Since $\mathcal{C}$ is a
+$k$-linear rigid monoidal category, the Frobenius--Hopf object~$A$
+admits a categorical trace
+$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to k$
+defined by the composition
 \[
-  m \;=\;
+  \mathrm{tr}(f)
+  \;=\;
+  \bigl(\mathbf{1}
+  \xrightarrow{\;\mathrm{coev}\;}
+  A \otimes A^{\vee}
+  \xrightarrow{\;f \otimes \mathrm{id}\;}
+  A \otimes A^{\vee}
+  \xrightarrow{\;\mathrm{ev}\;}
+  \mathbf{1}\bigr),
+\]
+where $\mathrm{coev}$ and $\mathrm{ev}$ are the rigidity morphisms.
+Let $\Delta \colon A \to A \otimes A$ be the comultiplication (encoding
+the connection) and let $\lambda \colon A \to \mathbf{1}$ be the
+Frobenius form.
+
+The \emph{inertial mass} of a morphism $\gamma \colon \mathbf{1} \to A$
+(a ``closed cycle'' in the Frobenius--Hopf object) is
+\[
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{tr}\bigl(
+    (\lambda \otimes \mathrm{id})
+    \circ \Delta
+    \circ \gamma
+  \bigr)
+  \,\bigr\rVert,
+\]
+where $\lVert \cdot \rVert$ is the norm on~$k$ induced by the
+Frobenius pairing.  The mass measures the resistance of the
+Frobenius--Hopf structure to transporting the cycle $\gamma$ through
+the comultiplication.
+\end{definition}
+
+\begin{corollary}[$\mathbb{C}$ realisation: nonabelian multiplicative integration]
+\label{cor:mass-identity-C}
+In the $\mathbb{C}$ quantum observable universe $(M, G, P, E)$
+(Example~\ref{def:c-quantum-observable-universe}) with instanton
+connection $A$, Levi form $L$, and self-dual curvature $F^+$, the
+categorical mass (Definition~\ref{def:mass-identity}) is realised as
+Yekutieli's nonabelian multiplicative integral~\cite{yekutieli2015}.
+Concretely, let $\gamma$ be a closed cycle encircling a vortex filament
+and let $\Sigma$ be a surface with $\partial\Sigma = \gamma$.  Then:
+\[
+  m(\gamma) \;=\;
   \left\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\right\rVert,
 \]
 where $\mathrm{MI}\!\int_\Sigma$ denotes the $2$-dimensional twisted
-nonabelian multiplicative integral over the surface~$\Sigma$.  The
-integrand is the connection--curvature pair
-$(\nabla_A q,\; L \wedge F^+)$ consisting of the
-$\mathfrak{su}(2)$-valued $1$-form $\nabla_A q$ and the
-$\mathfrak{su}(2)$-valued $2$-form $L \wedge F^+$, satisfying
-the fake-flatness equation~\eqref{eq:fake-flatness}.  The norm
-$\lVert\cdot\rVert$ is the Killing-form norm on~$\mathfrak{su}(2)$.
-
-By the nonabelian Stokes theorem~\cite{yekutieli2015}, this surface
-integral reduces to the holonomy around $\gamma$:
+nonabelian multiplicative integral, the integrand is the
+connection--curvature pair $(\nabla_A q,\; L \wedge F^+)$ satisfying
+the fake-flatness equation~\eqref{eq:fake-flatness}, and
+$\lVert\cdot\rVert$ is the Killing-form norm on $\mathfrak{su}(2)$.
+By the nonabelian Stokes theorem~\cite{yekutieli2015}, this reduces to
+the holonomy:
 \[
-  \mathrm{MI}\!\!\int_\Sigma
-  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
-  \;=\;
-  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma;\, \mathfrak{G}\bigr),
+  m(\gamma) \;=\;
+  \bigl\lVert\,
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma;\, \mathfrak{G}\bigr)
+  \,\bigr\rVert.
 \]
-so the mass is the norm of the holonomy of the connection $\nabla_A$
-around the vortex filament, computed in the twisted gerbe.
-\end{definition}
+\end{corollary}
 
 % ── Yekutieli categorical mapping ────────────────────────────────────────────
 
@@ -669,38 +809,41 @@ $(x, g, a)$ needed to define the face and degeneracy maps.
 
 \begin{definition}[Yekutieli triple mapping]
 \label{def:yekutieli-triple}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}) and let $\{U_i\}$ be an open
-cover of the base manifold~$M$ trivialising every level of the tower.
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  Let $\{U_i\}$ be a covering
+of the underlying site~$\mathcal{S}$ trivialising every level of the tower.
 The \emph{Yekutieli triple} at level~$n$ over an intersection
 $U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
 where:
 \begin{enumerate}
   \item \emph{Objects} $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$
-        are local sections of the base manifold: the restrictions of $E_n$
-        to the trivialisations $U_i$.
+        are local trivialisations of the Frobenius--Hopf object~$A_n$.
   \item \emph{$1$-morphisms} $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$
-        are the gauge transition functions
-        $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$
-        encoding the patching data of the connection~$A_n$.
+        are the transition automorphisms in
+        $\mathrm{Aut}_{\mathcal{C}}(A_n|_{U_i \cap U_j})$, encoding the
+        patching data of the comultiplication~$\Delta_n$.
   \item \emph{$2$-morphisms}
         $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$
-        are the quantum deformation parameters living in the band
-        $\mathcal{O}_M^{\times}|_{U_i \cap U_j}$, implementing the
-        $\mathrm{SU}_q(2)$-deformation that lifts the transition functions
-        from level~$n$ to level~$n{+}1$.
+        are the deformation parameters living in the band~$\mathcal{B}$,
+        implementing the lift of transition automorphisms from level~$n$ to
+        level~$n{+}1$.
 \end{enumerate}
 The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial:
 the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) sends the triple at level~$n$
 to the triple at level~$n{+}1$, and the descent homomorphism
 $\mathfrak{d}_{n+1}$ (Lemma~\ref{lem:descent}) reverses this assignment.
+In the $\mathbb{C}$ realisation, $g_{ij}^{(n)} \in
+\Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
+functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.
 \end{definition}
 
 \begin{proposition}[Cosimplicial crossed groupoid]
 \label{prop:cosimplicial-crossed-groupoid}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}) equipped with the Yekutieli
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}), equipped with the Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 Definition~\ref{def:yekutieli-triple}.  Then the assignment
 \[
@@ -784,7 +927,8 @@ underpins the descent involution (Definition~\ref{def:descent-involution}).
 
 \begin{proposition}[Descent condition --- twisted $2$-cocycle]
 \label{prop:descent-condition}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with Yekutieli
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower with Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$
 (Definition~\ref{def:yekutieli-triple}) and let
 $A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$
@@ -868,12 +1012,13 @@ $\mathfrak{G}_{n+1}$ is unobstructed.
 
 By~\cite[Theorem~1.7]{yekutieli2010}, this is equivalent to the
 vanishing of the Yekutieli obstruction class, closing the circle with
-the lifting criterion (Lemma~\ref{lem:yekutieli-lifting}).
+the lifting criterion (Proposition~\ref{prop:yekutieli-lifting}).
 \end{proof}
 
 \begin{proposition}[Weak equivalence invariance of physical states]
 \label{prop:weak-equiv-invariance}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with cosimplicial
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial
 crossed groupoid structure
 (Proposition~\ref{prop:cosimplicial-crossed-groupoid}), and let
 $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
@@ -949,29 +1094,36 @@ fluctuations across the tower.
 
 \begin{definition}[Descent]
 \label{def:descent}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The \emph{descent} is the
-reverse traversal of the tower: starting from level~$n$ one passes to level
-$n-1$ by restricting the connection $A_n$ and the bundle $E_n$ to the base
-manifold $M_{n-1}$.  The descent terminates when the base manifold $M_k$
-reaches $\dim M_k = 0$, at which point $M_k$ is a discrete set of points.
+reverse traversal of the tower: starting from level~$n$ one passes to
+level~$n{-}1$ by applying the restriction morphism
+$r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction
+of the jet embedding).  In the $\mathbb{C}$ realisation, this restricts
+the connection and bundle to the base manifold $M_{n-1}$.  The descent
+terminates when the categorical dimension of~$A_k$ reaches zero.
 \end{definition}
 
 \begin{lemma}[Descent preserves the quantum observable universe]
 \label{lem:descent}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}) and let $n \geq 2$.  The
-restriction of the connection $A_n$ and bundle $E_n$ to the base manifold
-$M_{n-1} = E_{n-1}$ yields a tuple $(M_{n-1}, G, P_{n-1}, E_{n-1})$ that is
-again a $\mathbb{C}$ quantum observable universe.  Moreover, the descent map
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}), with $n \geq 1$.  The
+restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius--Hopf
+object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega, q)$ is again a
+quantum observable universe.  Moreover, the induced descent homomorphism
 \[
   \mathfrak{d}_n \;\colon\;
-  \Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr)
+  \mathrm{End}_{\mathcal{C}}(A_n)
   \;\longrightarrow\;
-  \Gamma\!\bigl(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2)\bigr)
+  \mathrm{End}_{\mathcal{C}}(A_{n-1})
 \]
-is a surjective $*$-homomorphism that intertwines the $\mathrm{SU}(2)$ actions
-at levels $n$ and $n{-}1$.
+is a surjective algebra homomorphism that intertwines the $G_q$-actions at
+levels~$n$ and~$n{-}1$.  In the $\mathbb{C}$ realisation, this recovers
+the surjective $*$-homomorphism
+$\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
+\Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
 \end{lemma}
 
 \begin{proof}
@@ -1026,21 +1178,23 @@ morphism, it intertwines the adjoint actions at levels $n$ and $n{-}1$.
 
 \begin{definition}[Descent involution]
 \label{def:descent-involution}
-Let $\ell_n$ denote the ascent embedding
-(Proposition~\ref{prop:jet-prolongation}) and $\mathfrak{d}_{n+1}$ the descent
-homomorphism (Lemma~\ref{lem:descent}).  The \emph{descent involution} at
-level~$n$ is the endomorphism
+Let $\ell_n \colon A_n \hookrightarrow A_{n+1}$ denote the ascent embedding
+(Proposition~\ref{prop:jet-prolongation}) and
+$\mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathcal{C}}(A_{n+1}) \to
+\mathrm{End}_{\mathcal{C}}(A_n)$ the descent homomorphism
+(Lemma~\ref{lem:descent}).  The \emph{descent involution} at level~$n$ is
+the endomorphism of the level-$(n{+}1)$ endomorphism algebra:
 \[
   \tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
   \;\colon\;
-  \Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
+  \mathrm{End}_{\mathcal{C}}(A_{n+1})
   \;\longrightarrow\;
-  \Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr).
+  \mathrm{End}_{\mathcal{C}}(A_{n+1}).
 \]
 Since $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$ on
-$\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ (the descent of the ascent
-recovers the original section, because $\ell_n$ embeds $A$ as a direct
-summand of $J^1(A)$ and $\mathfrak{d}_{n+1}$ is the retraction), we have
+$\mathrm{End}_{\mathcal{C}}(A_n)$ (the descent of the ascent recovers the
+original endomorphism, because $\ell_n$ embeds $A_n$ as a direct summand of
+$A_{n+1}$ and $\mathfrak{d}_{n+1}$ is the retraction), we have
 \[
   \tau_n^2
   \;=\;
@@ -1054,7 +1208,7 @@ summand of $J^1(A)$ and $\mathfrak{d}_{n+1}$ is the retraction), we have
 \]
 so $\tau_n$ is idempotent.  Its image is the
 \emph{descended subalgebra} $\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq
-\Gamma(J^1 E_{n+1}, \mathrm{SU}_{q_{n+1}}(2))$, consisting of sections at
+\mathrm{End}_{\mathcal{C}}(A_{n+1})$, consisting of endomorphisms at
 level~$n{+}1$ that factor through the level-$n$ algebra via the ascent
 embedding.
 \end{definition}
@@ -1062,16 +1216,16 @@ embedding.
 \begin{proposition}[Eigenspaces of the descent involution]
 \label{prop:descent-eigenspaces}
 The descent involution $\tau_n$ (Definition~\ref{def:descent-involution})
-decomposes the level-$(n{+}1)$ section algebra into a direct sum
+decomposes the level-$(n{+}1)$ endomorphism algebra into a direct sum
 \[
-  \Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
+  \mathrm{End}_{\mathcal{C}}(A_{n+1})
   \;=\;
   \mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\; \mathcal{A}_{n+1}^{\mathrm{trans}},
 \]
 where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$ is the
-descended subalgebra (sections that factor through level~$n$) and
+descended subalgebra (endomorphisms that factor through level~$n$) and
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$ is the \emph{transient
-complement} (genuinely new modes at level~$n{+}1$).  The algebraic filter
+complement} (genuinely new endomorphisms at level~$n{+}1$).  The algebraic filter
 (Remark~\ref{rem:algebraic-filter}) refines this decomposition:
 \begin{enumerate}
   \item The bosonic (longitudinal) modes lifted from level~$n$ lie entirely in
@@ -1115,44 +1269,50 @@ sends them to zero.
 
 \begin{definition}[Defining boundary of the brane]
 \label{def:brane-boundary}
-Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}) and let $\mathfrak{d}_{n+1}$ be
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  Let $\mathfrak{d}_{n+1}$ be
 the descent homomorphism (Lemma~\ref{lem:descent}).  The \emph{defining
-boundary} of the $n$-th brane is the subset
+boundary} of the $n$-th brane is the full subcategory of~$\mathcal{C}$
+consisting of subobjects of~$A_n$ on which the restriction morphism
+$r_n \colon A_n \to A_{n-1}$ has non-trivial kernel:
 \[
-  \partial E_n
+  \partial A_n
   \;=\;
-  \bigl\{\, p \in E_n \;\bigm|\;
-    \ker\bigl(\mathfrak{d}_{n+1}\big|_p\bigr) \neq 0 \,\bigr\}
-  \;\subseteq\; E_n,
+  \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
+    \ker(r_n|_S) \neq 0 \,\bigr\}.
 \]
-i.e.\ the locus of points where the fibrewise descent map has a non-trivial
-kernel.  Equivalently, $\partial E_n$ is the degeneracy locus of the
-restriction $r_n\colon J^1(A) \to A$ evaluated fibre by fibre.
+In the $\mathbb{C}$ realisation,
+$\partial A_n$ corresponds to the geometric locus
+$\partial E_n = \{p \in E_n \mid
+\ker(\mathfrak{d}_{n+1}|_p) \neq 0\} \subseteq E_n$,
+the degeneracy locus of the fibrewise descent map.
 \end{definition}
 
 \begin{proposition}[Structure of the defining boundary]
 \label{prop:brane-boundary}
-The defining boundary $\partial E_n$
+The defining boundary $\partial A_n$
 (Definition~\ref{def:brane-boundary}) has the following properties:
 \begin{enumerate}
-  \item \emph{Codimension.}\; $\partial E_n$ is a closed subset of
-        real codimension at least~$2$ in~$E_n$.
-  \item \emph{Exceptional divisor.}\; At each blow-up centre
-        $p \in \partial E_n$ the fibre $\ker(\mathfrak{d}_{n+1}|_p)$ is
-        isomorphic to $\mathbb{CP}^1 \cong S^2$, which is the exceptional
-        divisor of the topological blow-up replacing the singular point.
+  \item \emph{Codimension.}\; In the $\mathbb{C}$ realisation,
+        $\partial A_n$ corresponds to a closed subset of real codimension at
+        least~$2$ in~$E_n$.
+  \item \emph{Exceptional object.}\; At each degeneration locus of the
+        restriction $r_n$, the kernel $\ker(r_n|_S)$ is isomorphic to a
+        simple object of~$\mathcal{C}$; in the $\mathbb{C}$ realisation
+        this is $\mathbb{CP}^1 \cong S^2$, the exceptional divisor of the
+        topological blow-up.
   \item \emph{Involution symmetry.}\; The descent involution $\tau_n$
-        (Definition~\ref{def:descent-involution}) restricts to an involution
-        on $\partial E_n$, whose fixed-point set coincides with the monodromy
-        fixed points of the quantum characteristic classes
-        (Definition~\ref{def:quantum-characteristic-classes}).
-  \item \emph{Chirality interface.}\; When $n = 1$, $\partial E_1$ separates
-        the macroscopic spacetime coordinates from the internal chiral modes:
-        it is the geometric boundary between the base manifold~$M$ and the
-        $\mathrm{SU}(2)$ fibre, across which the Reeb involution
-        $\xi \mapsto -\xi$ (Remark~\ref{rem:descartes-chirality}) reverses
-        orientation.
+        (Definition~\ref{def:descent-involution}) restricts to an
+        endomorphism of $\partial A_n$, whose fixed subobjects coincide
+        with the monodromy fixed points of the quantum characteristic
+        classes (Definition~\ref{def:quantum-characteristic-classes}).
+  \item \emph{Chirality interface ($\mathbb{C}$ realisation).}\;
+        When $n = 1$, $\partial E_1$ separates the macroscopic spacetime
+        coordinates from the internal chiral modes: it is the geometric
+        boundary between the base manifold~$M$ and the gauge fibre, across
+        which the Reeb involution $\xi \mapsto -\xi$
+        (Remark~\ref{rem:descartes-chirality}) reverses orientation.
 \end{enumerate}
 \end{proposition}
 
@@ -1338,13 +1498,16 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 
 \begin{theorem}[Topological Decomposition of Mass]
 \label{thm:topological-mass}
-Let $(\mathcal{C}, A, \omega)$ be the categorical data of a
-$\mathbb{C}$ quantum observable universe, where $\mathcal{C}$ is the
-rigid monoidal category, $A$ the Frobenius--Hopf object, and $\omega$
-the fibre functor
-(Proposition~\ref{prop:jet-prolongation}).  Let $\gamma$ be a stable
-vortex filament whose topology is generated by $N$ consecutive
-topological blowups applied to an unknot core $\gamma_0$.
+Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}), where $\mathcal{C}$
+is the rigid monoidal category, $A$ the Frobenius--Hopf object, and
+$\omega$ the fibre functor.  Let
+$\gamma \colon \mathbf{1} \to A$ be a morphism (a ``closed cycle'' in~$A$,
+Definition~\ref{def:mass-identity}) whose categorical support is
+generated by $N$ consecutive extensions along the brane tower
+$\{A_n\}_{n \geq 0}$
+(Definition~\ref{def:recursive-brane-tower}), applied to a base-level
+morphism $\gamma_0 \colon \mathbf{1} \to A_0$.
 
 The mass $m(\gamma)$ (Definition~\ref{def:mass-identity}) admits a
 decomposition into descended and transient contributions via the
