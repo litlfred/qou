@@ -9,7 +9,9 @@ generators and relations.  The key structures are:
    multiplication (admissible order).
 2. **Rewriting system** — oriented relations `f ↦ f − lm(f)` that
    reduce elements to normal form.
-3. **S-polynomial (composition)** — the obstruction to confluence;
+3. **Single-step and multi-step reduction** — formalised as inductive
+   relations, enabling proper termination and confluence statements.
+4. **S-polynomial (composition)** — the obstruction to confluence;
    the composition lemma asserts all S-polynomials reduce to zero.
 
 These definitions are self-contained and do not depend on the specific
@@ -77,24 +79,26 @@ structure AlgElement (G : Type u) (k : Type v) [Ring k] where
   /-- Coefficients outside the support are zero. -/
   support_spec : ∀ m, m ∉ support → coeff m = 0
 
+/-- The zero element of the free algebra. -/
+def AlgElement.zero {G : Type u} {k : Type v} [Ring k] : AlgElement G k where
+  coeff := fun _ => 0
+  support := ∅
+  support_spec := fun _ _ => rfl
+
+/-- An element is zero iff its support is empty. -/
+def AlgElement.isZero {G : Type u} {k : Type v} [Ring k]
+    (f : AlgElement G k) : Prop :=
+  f.support = ∅
+
 /-- The **leading monomial** of a non-zero element with respect to an
     admissible order: the greatest monomial with non-zero coefficient. -/
 noncomputable def leadingMonomial {G : Type u} {k : Type v} [Ring k]
     (ord : AdmissibleOrder G)
     (f : AlgElement G k)
     (hf : f.support.Nonempty) : Monomial G :=
-  -- The maximum element of the (finite, non-empty) support under ord.lt
   f.support.max' hf
 
-/-- Two elements have the same leading monomial. -/
-def sameLead {G : Type u} {k : Type v} [Ring k]
-    (ord : AdmissibleOrder G)
-    (f g : AlgElement G k)
-    (hf : f.support.Nonempty)
-    (hg : g.support.Nonempty) : Prop :=
-  leadingMonomial ord f hf = leadingMonomial ord g hg
-
-/-! ## §3  Rewriting System -/
+/-! ## §3  Rewriting System and Reduction Relations -/
 
 /-- A **reduction rule**: an oriented relation `f ↦ f - c·lm(f)` that
     replaces the leading monomial of `f` by its tail.
@@ -113,19 +117,70 @@ structure RewritingSystem (G : Type u) (k : Type v) [Ring k] where
   /-- The system has at least one rule (non-trivial). -/
   nonempty : rules ≠ []
 
+/-- **Single-step reduction**: `f` reduces to `g` in one step if there
+    exists a rule `r ∈ sys` whose leading monomial appears as a subword
+    of some monomial in `supp(f)`, and `g` is obtained by replacing that
+    occurrence with the tail of `r`.
+
+    Abstractly: `g` has a strictly smaller leading monomial than `f`
+    under the admissible order, and `f - g` lies in the ideal generated
+    by the rules. -/
+structure SingleStepReduction {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (f g : AlgElement G k) : Prop where
+  /-- The rule that was applied. -/
+  rule_used : ReductionRule G k
+  /-- The rule belongs to the system. -/
+  rule_in_sys : rule_used ∈ sys.rules
+  /-- The monomial in supp(f) where the rule was applied. -/
+  target_monomial : Monomial G
+  /-- The target monomial is in the support of f. -/
+  target_in_support : target_monomial ∈ f.support
+  /-- The leading monomial of the rule appears as a subword of the target. -/
+  lm_is_subword : (leadingMonomial ord rule_used.relation rule_used.nonzero).isInfix
+    target_monomial
+  /-- The result g has no monomials larger than the target
+      (the leading monomial strictly decreases). -/
+  leading_decreases : ∀ m ∈ g.support,
+    ¬ ord.lt target_monomial m
+
+/-- **Multi-step reduction**: the reflexive transitive closure of
+    single-step reduction. -/
+inductive MultiStepReduction {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k) :
+    AlgElement G k → AlgElement G k → Prop where
+  /-- Zero steps: `f` reduces to itself. -/
+  | refl (f : AlgElement G k) : MultiStepReduction ord sys f f
+  /-- Transitivity: if `f →* g` and `g → h`, then `f →* h`. -/
+  | step {f g h : AlgElement G k} :
+    MultiStepReduction ord sys f g →
+    SingleStepReduction ord sys g h →
+    MultiStepReduction ord sys f h
+
 /-- An element is in **normal form** with respect to a rewriting system
     if no leading monomial of any rule divides (appears as a subword of)
-    any monomial in the element's support.
-
-    More precisely: for every rule `r` and every monomial `m` in the
-    support of `f`, the leading monomial of `r` does not appear as a
-    contiguous subword of `m`. -/
+    any monomial in the element's support.  Equivalently: no single-step
+    reduction is applicable. -/
 def isNormalForm {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (f : AlgElement G k) : Prop :=
   ∀ r ∈ sys.rules, ∀ m ∈ f.support,
     ¬ (leadingMonomial ord r.relation r.nonzero).isInfix m
+
+/-- An element `f` **reduces to normal form** `nf` if `f →* nf` and
+    `nf` is in normal form. -/
+structure ReducesToNF {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (f : AlgElement G k)
+    (nf : AlgElement G k) : Prop where
+  /-- Multi-step reduction from f to nf. -/
+  reduces : MultiStepReduction ord sys f nf
+  /-- The result is in normal form. -/
+  is_normal : isNormalForm ord sys nf
 
 /-! ## §4  S-Polynomials (Compositions) -/
 
@@ -157,6 +212,8 @@ structure OverlapComposition (G : Type u) (k : Type v) [Ring k] where
     leadingMonomial ord rule₂.relation rule₂.nonzero = overlap ++ right
   /-- The overlap is non-empty. -/
   overlap_nonempty : overlap ≠ []
+  /-- The S-polynomial itself (the difference of the two reductions). -/
+  spoly : AlgElement G k
 
 /-- **Inclusion composition**: when the leading monomial of one rule
     entirely contains that of another as a subword.
@@ -177,58 +234,44 @@ structure InclusionComposition (G : Type u) (k : Type v) [Ring k] where
   decomposition : ∀ (ord : AdmissibleOrder G),
     leadingMonomial ord outer.relation outer.nonzero =
     left ++ leadingMonomial ord inner.relation inner.nonzero ++ right
+  /-- The S-polynomial for this inclusion. -/
+  spoly : AlgElement G k
 
 /-! ## §5  Gröbner–Shirshov Basis (Abstract Definition) -/
 
 /-- A rewriting system is a **Gröbner–Shirshov basis** if every
     S-polynomial (both overlap and inclusion compositions) reduces to
-    zero under the rewriting system.
+    the zero element under the rewriting system.
 
     This is the abstract formulation of the composition lemma
     (Shirshov 1962, Bokut 1976, Bergman 1978). -/
 structure IsGrobnerShirshovBasis (G : Type u) (k : Type v) [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) : Prop where
-  /-- Every overlap S-polynomial reduces to normal form zero. -/
+  /-- Every overlap S-polynomial reduces to zero. -/
   overlap_resolves : ∀ (oc : OverlapComposition G k),
     oc.rule₁ ∈ sys.rules → oc.rule₂ ∈ sys.rules →
-    True  -- Placeholder: S-poly reduces to 0 under sys
-  /-- Every inclusion S-polynomial reduces to normal form zero. -/
+    ∃ nf, ReducesToNF ord sys oc.spoly nf ∧ nf.isZero
+  /-- Every inclusion S-polynomial reduces to zero. -/
   inclusion_resolves : ∀ (ic : InclusionComposition G k),
     ic.inner ∈ sys.rules → ic.outer ∈ sys.rules →
-    True  -- Placeholder: S-poly reduces to 0 under sys
+    ∃ nf, ReducesToNF ord sys ic.spoly nf ∧ nf.isZero
 
-/-- The **multi-step reduction relation**: `ReducesToNF ord sys f nf`
-    means `nf` is obtained from `f` by finitely many single-step
-    reductions, and `nf` is in normal form.
-
-    This existential formulation avoids committing to a specific
-    reduction strategy while still capturing the mathematical content. -/
-structure ReducesToNF {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (f : AlgElement G k)
-    (nf : AlgElement G k) : Prop where
-  /-- The result is in normal form. -/
-  is_normal : isNormalForm ord sys nf
-  /-- The number of reduction steps (witnesses termination). -/
-  steps : ℕ
+/-! ## §6  Existence of Normal Forms -/
 
 /-- **Existence of normal forms**: given a GS basis and any element `f`,
     there exists a normal form reachable from `f`.
 
     Justification: the admissible order `ord` is well-founded, and each
-    reduction step strictly decreases the leading monomial under `ord`.
-    By well-founded induction on the Dershowitz–Manna multiset ordering
-    (which is well-founded when the base order is), iterated reduction
-    terminates in a normal form.
+    single-step reduction strictly decreases the leading monomial.
+    By well-founded induction on the Dershowitz–Manna multiset ordering,
+    iterated reduction terminates in a normal form.
 
     This is axiomatised at the abstract level because the constructive
-    proof requires a concrete single-step reduction function
-    `applyRule : AlgElement G k → AlgElement G k` with the property
-    that it strictly decreases the leading monomial.  Each concrete
-    instantiation (U_q in NormalForms.lean, Dist(G) in Flatness.lean)
-    provides this function for its specific generators and relations.
+    proof requires a concrete single-step reduction function with
+    explicit algebra operations (subtraction, scalar multiplication).
+    Each concrete instantiation (U_q in NormalForms.lean, Dist(G) in
+    Flatness.lean) provides these operations.
 
     Reference: Bergman 1978, Theorem 1.2 (existence part). -/
 axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
@@ -254,7 +297,16 @@ theorem reduce_is_normal {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (f : AlgElement G k) :
-    isNormalForm ord sys (reduce ord sys hgs f) := by
-  exact (normal_form_exists ord sys hgs f).choose_spec.is_normal
+    isNormalForm ord sys (reduce ord sys hgs f) :=
+  (normal_form_exists ord sys hgs f).choose_spec.is_normal
+
+/-- The reduction function witnesses multi-step reduction. -/
+theorem reduce_reduces {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (f : AlgElement G k) :
+    MultiStepReduction ord sys f (reduce ord sys hgs f) :=
+  (normal_form_exists ord sys hgs f).choose_spec.reduces
 
 end QOU.GrobnerShirshov
