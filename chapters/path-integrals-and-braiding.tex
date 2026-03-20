@@ -24,10 +24,143 @@ unknot, carrying trivial braiding, corresponds to the neutrino.
 Experimental evidence supporting this $q$-deformed braiding picture is
 discussed in Chapter~\ref{chap:experimental}.
 
+% ── Categorical origin of braiding ──────────────────────────────────────────
+
+\section{Categorical origin of braiding}
+\label{sec:categorical-braiding}
+
+The braid group is conventionally introduced through the topology of
+configuration spaces or knot complements.  In the QOU framework, however,
+braiding has a \emph{categorical} origin that is logically prior to any
+geometric realisation and carries over unchanged to non-archimedean settings
+(Chapter~\ref{chap:p-adic}) where knot complements in~$S^3$ are unavailable.
+
+\begin{proposition}[Braid-group action on tensor powers]
+\label{prop:braid-action-tensor}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) whose ambient category
+$\mathcal{C}$ is braided monoidal with braiding
+$c_{X,Y}\colon X\otimes Y \xrightarrow{\;\sim\;} Y\otimes X$.
+For each object $V$ in~$\mathcal{C}$ and each $n \geq 2$, there is a
+group homomorphism
+\[
+  \rho_n\colon B_n \;\longrightarrow\; \mathrm{Aut}_{\mathcal{C}}(V^{\otimes n})
+\]
+given on the Artin generators by
+\begin{equation}\label{eq:categorical-braid-rep}
+  \rho_n(\sigma_i)
+  \;=\;
+  \mathrm{id}^{\otimes(i-1)}
+  \otimes\, c_{V,V}
+  \otimes\, \mathrm{id}^{\otimes(n-i-1)},
+  \qquad 1 \leq i \leq n-1.
+\end{equation}
+The braid relation
+$\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})\,\rho_n(\sigma_i)
+= \rho_n(\sigma_{i+1})\,\rho_n(\sigma_i)\,\rho_n(\sigma_{i+1})$
+is equivalent to the Yang--Baxter equation for the braiding~$c_{V,V}$.
+\end{proposition}
+
+\begin{proof}
+The hexagon axioms of a braided monoidal category guarantee that
+$c_{V,V}$ satisfies the Yang--Baxter equation
+\[
+  (c \otimes \mathrm{id})
+  \circ (\mathrm{id} \otimes c)
+  \circ (c \otimes \mathrm{id})
+  \;=\;
+  (\mathrm{id} \otimes c)
+  \circ (c \otimes \mathrm{id})
+  \circ (\mathrm{id} \otimes c)
+\]
+on $V^{\otimes 3}$.  This is exactly the braid relation for adjacent
+generators, and the far-commutativity relation
+$\sigma_i\sigma_j = \sigma_j\sigma_i$ ($\lvert i-j\rvert \geq 2$) follows
+from the naturality of the braiding.  Together these verify the Artin
+presentation of~$B_n$.
+\end{proof}
+
+\begin{remark}[Why $B_3$ in the Descartes universe]
+\label{rem:why-B3}
+The Descartes condition $\chi(A) = -6$ forces the gauge group to be a
+quantum form of $\mathrm{SU}(2)$ (rank~$2$), so the fundamental
+representation~$V$ is $2$-dimensional.  On $V^{\otimes 2}$ the braiding
+gives a single operator $c_{V,V}$; the first non-trivial braid group
+action is on $V^{\otimes 3}$, where the two generators $\sigma_1, \sigma_2$
+of $B_3$ act via~\eqref{eq:categorical-braid-rep}.
+
+The Schur--Weyl decomposition
+$V^{\otimes 3} \cong V_{\frac{3}{2}} \oplus V_{\frac{1}{2}}^{\oplus 2}$
+separates the symmetric (spin-$\frac{3}{2}$) and mixed-symmetry
+(spin-$\frac{1}{2}$) sectors.  The $B_3$-action preserves this
+decomposition: on the symmetric sector the generators act as scalars
+(bosonic exchange), while on the mixed-symmetry sector they act
+non-trivially (fermionic exchange).  This categorical distinction between
+bosons and fermions requires no appeal to topology.
+\end{remark}
+
+\begin{remark}[The symmetric quotient and colour sectors]
+\label{rem:symmetric-quotient-colour}
+The quotient $B_3 \twoheadrightarrow S_3$ obtained by imposing
+$\sigma_i^2 = \mathrm{id}$ corresponds categorically to passing from a
+braided monoidal category to a symmetric monoidal one (i.e.\ requiring
+$c_{V,V}^2 = \mathrm{id}$).  In the Descartes universe, the three copies of
+$S_3$ inside $S_5 = \mathrm{Aut}(\Sigma_4)$
+(Remark~\ref{rem:chirality-trefoil}) are images of three such quotients,
+one for each colour sector $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$
+(Definition~\ref{def:chiral-sector-coords}).  The lifts of these three
+$S_3$ subgroups back to $B_3$ --- via the braiding of
+$\mathrm{Rep}(\mathrm{SU}_q(2))$ --- recover the non-trivial exchange
+phases that distinguish quarks from leptons.
+\end{remark}
+
+\begin{remark}[Independence from the base field]
+\label{rem:braid-base-field}
+Proposition~\ref{prop:braid-action-tensor} uses only the braided monoidal
+structure of~$\mathcal{C}$.  In particular:
+\begin{enumerate}
+  \item For the archimedean realisation
+        (Example~\ref{def:c-quantum-observable-universe}), the braiding
+        is computed by the $R$-matrix of
+        $\mathcal{U}_q(\mathfrak{su}(2))$, and the $B_n$-action
+        recovers the skein relations of Chapter~\ref{chap:experimental}
+        as traces on braid-group representations.
+  \item For the $\pp$-adic realisation
+        (Example~\ref{ex:p-adic-realisation}), the same braiding exists
+        on $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ over
+        $\mathbb{Q}_\pp$; the Yang--Baxter equation is an identity in
+        the endomorphism algebra and holds over any base ring.
+  \item For the finite-field realisation
+        (Example~\ref{ex:finite-field-realisation}), the braiding
+        persists on the fusion category
+        $\mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$.
+\end{enumerate}
+The skein relations, knot invariants, and hyperbolic volumes that appear
+in the archimedean setting (Chapter~\ref{chap:experimental}) are
+\emph{consequences} of the categorical braiding evaluated via a specific
+fibre functor --- they are not the source of the braid-group structure.
+\end{remark}
+
+\begin{remark}[Compatibility with the lifting theorem]
+\label{rem:braid-lifting-compatibility}
+The jet prolongation (Proposition~\ref{prop:jet-prolongation}) preserves
+braided monoidal structure: if $\mathcal{C}$ is braided, then the jet
+object $J^1(A) = A \otimes \Omega^1(A)$ inherits a braiding from the
+tensor product of braidings on~$A$ and~$\Omega^1(A)$.  Consequently the
+braid-group representations $\rho_n$ at each level of the brane tower are
+compatible with the transition maps, and the direct-limit algebra
+$\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))$ carries a well-defined $B_n$-action for
+every~$n$.
+\end{remark}
+
 % ── Braid group and symmetric group ─────────────────────────────────────────
 
 \section{Braid group and symmetric group}
 \label{sec:braid-symmetric}
+
+With the categorical origin established, we now give explicit presentations
+and representations of the braid group.
 
 \begin{definition}[Braid group on three strands]
 \label{def:braid-group}
