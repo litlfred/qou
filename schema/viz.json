@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://litlfred.github.io/qou/schema/viz.json",
+  "title": "Quantum Bring's Surface Viewport",
+  "description": "Serialised state of quantum_brings_surface.html. Pass as URL hash or embed in Markdown to reproduce a specific view. Used by the Python build process to generate static figures.",
+  "type": "object",
+  "required": ["q", "mode", "brane_point", "camera"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "q": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Torsion / chirality parameter (substrate parameter). q=0 is classical; q>0 introduces chiral twist in the colour-sector coordinates (𝔯,𝔤,𝔟)."
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["CP1", "cone"],
+      "description": "Rendering mode. 'CP1' shows the ℂP¹ exceptional fibre tiled by 𝔯,𝔤,𝔟; 'cone' shows the outgoing chiral tube cones."
+    },
+    "blowup": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, renders the exceptional divisor E_p as an opaque ℂP¹ surface; colour tiles (𝔯,𝔤,𝔟) are drawn on top. Only visible in CP1 mode."
+    },
+    "brane_point": {
+      "type": "object",
+      "description": "Pre-normalisation (x,y,z) of the selected point p on the brane S³. The visualiser normalises to |p|=SPHERE_R.",
+      "required": ["x", "y", "z"],
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "z": { "type": "number" }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "description": "Spherical-coordinate camera orbit.",
+      "required": ["theta", "phi", "r"],
+      "additionalProperties": false,
+      "properties": {
+        "theta": {
+          "type": "number",
+          "description": "Azimuthal angle in radians."
+        },
+        "phi": {
+          "type": "number",
+          "description": "Polar angle in radians."
+        },
+        "r": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Distance from target point."
+        },
+        "target": {
+          "type": "object",
+          "description": "Camera look-at target (world coords). Defaults to origin.",
+          "additionalProperties": false,
+          "properties": {
+            "x": { "type": "number", "default": 0 },
+            "y": { "type": "number", "default": 0 },
+            "z": { "type": "number", "default": 0 }
+          }
+        }
+      }
+    },
+    "tubes": {
+      "type": "object",
+      "description": "Tube / tile visibility and opacity.",
+      "additionalProperties": false,
+      "properties": {
+        "visible": { "type": "boolean", "default": true },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.72
+        }
+      }
+    },
+    "cone": {
+      "type": "object",
+      "description": "Parameters for cone-tube mode. Ignored when mode='CP1'.",
+      "additionalProperties": false,
+      "properties": {
+        "N_min": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 4,
+          "description": "Start of tube segment in Planck lengths."
+        },
+        "N_max": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 60,
+          "description": "End of tube segment in Planck lengths."
+        },
+        "sigma": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0.02,
+          "description": "Cone half-angle (σ in ρ(s)=s·ℓ_P·σ·Ξ_q)."
+        },
+        "gamma": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1.0,
+          "description": "Pitch scale (γ in ψᵢ(s)=2πi/3+q·2πs·Q·γ)."
+        }
+      }
+    },
+    "visibility": {
+      "type": "object",
+      "description": "Scene element visibility flags.",
+      "additionalProperties": false,
+      "properties": {
+        "brane":   { "type": "boolean", "default": true,  "description": "Show brane sphere S³." },
+        "axes":    { "type": "boolean", "default": true,  "description": "Show xyz axes helper." },
+        "stars":   { "type": "boolean", "default": true,  "description": "Show background star field." },
+        "axispts": { "type": "boolean", "default": false, "description": "Show colour tubes at ±axis poles." }
+      }
+    }
+  }
+}
