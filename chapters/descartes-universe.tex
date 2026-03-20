@@ -243,7 +243,43 @@ morphism to the Bring's QOU.
 \end{theorem}
 
 \begin{proof}
-% TODO: proof
+We must show that for every object $(\mathcal{C}, A, \omega, q)$ in
+$\mathcal{C}_{-6}$ there exists a unique QOU morphism to the Bring's QOU
+$(\mathcal{C}_B, A_B, \omega_B, q_B)$
+(Proposition~\ref{prop:brings-is-qou}).
+
+\emph{Existence.}\;
+Let $(\mathcal{C}, A, \omega, q)$ be a Descartes universe.  The fibre
+functor~$\omega$ identifies $G_q = \mathrm{Aut}^{\otimes}(\omega)$ with a
+quantum form of $\mathrm{SU}(2)$ (by Tannaka--Krein over~$R$), so the
+base curve of the geometric descent
+(Theorem~\ref{thm:qu-to-qou}(1)) is a smooth genus-$4$ curve~$\Sigma$
+over~$R$ with $\chi(\Sigma) = -6$
+(Proposition~\ref{prop:genus-maximal-descent}).
+
+By the Hurwitz bound, $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 84(g-1) = 252$.
+Among genus-$4$ curves over~$R$ (with $30 \in R^{\times}$),
+Bring's surface $\Sigma_4$ has automorphism group $S_5$ of order~$120$,
+which is the \emph{maximum} for genus~$4$ (Edge, 1978).  The
+$S_5$-equivariant structure forces the power-sum relations
+$\sum x_j = \sum x_j^2 = \sum x_j^3 = 0$, uniquely determining $\Sigma_4$
+up to isomorphism in~$\mathbb{P}^4_R$.
+
+The descent data of~$(\mathcal{C}, A, \omega, q)$ --- specifically, the
+branch locus of $\pi \colon \Sigma \to \mathbb{P}(V)$ with its
+$6$ branch points and the $S_5$-symmetric ramification profile --- defines
+a map $\Sigma \to \Sigma_4$ in the category of branched covers of
+$\mathbb{P}(V)$.  This extends to a QOU morphism by the universality of
+the Frobenius--Hopf structure: the Haar state on
+$\mathcal{O}_q(\mathrm{SU}(2))$ is functorial with respect to quantum
+group homomorphisms.
+
+\emph{Uniqueness.}\;
+A QOU morphism preserves the fibre functor~$\omega$ (up to natural
+isomorphism) and the Euler characteristic.  By Tannaka--Krein rigidity,
+any two fibre-preserving monoidal functors between the same Tannakian
+categories are naturally isomorphic.  Therefore the morphism to the Bring's
+QOU is unique up to the unique natural isomorphism.
 \end{proof}
 
 \begin{remark}[Universality for a given Euler characteristic]
