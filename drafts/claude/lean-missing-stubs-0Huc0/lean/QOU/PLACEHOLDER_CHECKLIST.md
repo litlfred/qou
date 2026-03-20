@@ -1,16 +1,16 @@
 # Placeholder Checklist — Lean Formalization
 
-Audit date: 2026-03-20 (post-merge refresh)
+Audit date: 2026-03-20 (all items resolved)
 
 Items marked `[ ]` need real proofs or typed statements.
 Items marked `[x]` are done.
 
 ---
 
-## `True := by trivial` placeholders (0 remaining / 19 original)
+## `True := by trivial` placeholders (0 remaining / 19 original) [x]
 
 All 19 original `True := by trivial` stubs have been replaced with
-substantive definitions in the upstream merge.
+substantive definitions.
 
 ### Torsion.lean — all 16 resolved [x]
 
@@ -43,49 +43,36 @@ substantive definitions in the upstream merge.
 
 ---
 
-## `sorry` markers (4 remaining / 10 original)
+## `True`-typed theorems (0 remaining / 1) [x]
 
-### Resolved in merge [x]
-
-| # | File | Old line | Declaration | Status |
-|---|------|----------|-------------|--------|
-| 1 | Torsion.lean | 380 | `qNumber_pos` | [x] |
-| 2 | QuantumObservableUniverse.lean | 154 | `gaugeGroup` | [x] |
-| 3 | QuantumObservableUniverse.lean | 461 | `self_dual_curvature` | [x] |
-| 4 | QuantumObservableUniverse.lean | 476 | `main_commutative_diagram` | [x] |
-| 5 | Calculations.lean | 125 | `h_q_squared_pos` | [x] |
-| 6 | Calculations.lean | 131 | `h_q_value_in_unit_interval` | [x] |
-| 7 | Calculations.lean | 138 | `derived_q_gt_one` | [x] |
-
-### Still open [ ]
-
-| # | File | Line | Declaration | Notes |
-|---|------|------|-------------|-------|
-| 8 | Calculations.lean | 122 | `substrate_error_bound` | Needs certified interval arithmetic for `Real.sqrt` |
-| 9 | Calculations.lean | 179 | `full_derivation_chain` | Same; depends on `substrate_error_bound` |
-| 10 | MassDerivation.lean | 141 | `substrate_q_certified` | Same; certified interval arith not yet in Mathlib |
-| 11 | Elaboration.lean | 250 | `jacobi_identity_violation` | **NEW** — malformed pipe-chain proof term; needs repair |
+| # | File | Line | Declaration | Status |
+|---|------|------|-------------|--------|
+| 1 | Torsion.lean | 272 | `descent_preserves_qou` | [x] replaced with `dim_preserved` |
 
 ---
 
-## Remaining `True := by trivial` (structural)
+## `sorry` markers (0 remaining / 10 original + 1 new) [x]
 
-| # | File | Line | Declaration | Notes |
-|---|------|------|-------------|-------|
-| 1 | Torsion.lean | 272 | `descent_preserves_qou` | Type is `True`; needs proper prop |
+### Original sorry markers — all resolved [x]
 
----
+| # | File | Old line | Declaration | Resolution |
+|---|------|----------|-------------|------------|
+| 1 | Torsion.lean | 380 | `qNumber_pos` | [x] upstream merge |
+| 2 | QuantumObservableUniverse.lean | 154 | `gaugeGroup` | [x] upstream merge |
+| 3 | QuantumObservableUniverse.lean | 461 | `self_dual_curvature` | [x] upstream merge |
+| 4 | QuantumObservableUniverse.lean | 476 | `main_commutative_diagram` | [x] upstream merge |
+| 5 | Calculations.lean | 118 | `substrate_error_bound` | [x] sqrt sandwich proof |
+| 6 | Calculations.lean | 125 | `h_q_squared_pos` | [x] upstream merge |
+| 7 | Calculations.lean | 131 | `h_q_value_in_unit_interval` | [x] upstream merge |
+| 8 | Calculations.lean | 138 | `derived_q_gt_one` | [x] upstream merge |
+| 9 | Calculations.lean | 159 | `full_derivation_chain` | [x] follows from substrate_error_bound |
+| 10 | MassDerivation.lean | 140 | `derive_substrate_q` | [x] sqrt sandwich + mass eq |
 
-## Priority triage
+### New sorry markers found and resolved [x]
 
-**High priority** (new / fixable):
-- `jacobi_identity_violation` (Elaboration:250) — malformed proof; should be repairable without new Mathlib API
-
-**Low priority / blocked on Mathlib**:
-- `substrate_error_bound` (Calculations:122) — needs certified `Real.sqrt` interval arithmetic
-- `full_derivation_chain` (Calculations:179) — depends on above
-- `substrate_q_certified` (MassDerivation:141) — same blocker
-- `descent_preserves_qou` (Torsion:272) — structural; type needs upgrading from `True`
+| # | File | Line | Declaration | Resolution |
+|---|------|------|-------------|------------|
+| 11 | Elaboration.lean | 250 | `jacobi_identity_violation` | [x] mul_eq_zero proof |
 
 ---
 
@@ -93,7 +80,9 @@ substantive definitions in the upstream merge.
 
 | Category | Original | Remaining | Resolved |
 |----------|----------|-----------|----------|
-| `True := by trivial` stubs | 19 | 0 | 19 |
-| `True` theorem types | 1 | 1 | 0 |
-| `sorry` markers | 10 | 4 | 6+1 new |
-| **Total incomplete** | **29** | **5** | **25** |
+| `True := by trivial` stubs | 19 | **0** | 19 |
+| `True`-typed theorems | 1 | **0** | 1 |
+| `sorry` markers | 11 | **0** | 11 |
+| **Total** | **31** | **0** | **31** |
+
+All placeholders, stubs, and sorry markers have been resolved.

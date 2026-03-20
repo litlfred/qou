@@ -132,13 +132,46 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- or a certified polynomial witness, which exceeds current tactic automation.
   -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
   have hsq := planck_sq_from_mass_eq q hq h_eq
-  -- From hsq: (1 - 1/q)² = 2.0298832128 / 206.768283
-  -- Expanding: q² - 2q + 1 = r·q² where r = vol/ratio
-  -- So (1-r)q² - 2q + 1 = 0, unique root > 1 is substrate_q.
-  -- The algebraic structure is established; the numerical bound requires
-  -- certified interval arithmetic not yet available in this Mathlib version.
-  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
-  sorry
+  -- From the mass equation: (1-1/q)² = vol/ratio, and since q > 1
+  -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).
+  -- We then sandwich √(vol/ratio) to bound q.
+  have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
+  have hplanck_pos : 1 - 1 / q > 0 := by rw [sub_pos, div_lt_one (by linarith : (0:ℝ) < q)]; linarith
+  -- h_q_squared = vol/ratio
+  set r := vol_figure_eight / experimental_mu_e_ratio with hr_def
+  have hr_pos : r > 0 := by unfold_let r; apply div_pos <;> (unfold vol_figure_eight experimental_mu_e_ratio; positivity)
+  -- (1-1/q) = √r
+  have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
+    have h1 : (1 - 1 / q) ^ 2 = r := hsq
+    have h2 := Real.sqrt_sq (le_of_lt hplanck_pos)
+    rw [← h1] at h2; exact h2.symm
+  -- Therefore q = 1/(1 - √r)
+  have hq_eq : q = 1 / (1 - Real.sqrt r) := by
+    have : 1 / q = 1 - Real.sqrt r := by linarith [hplanck_eq_sqrt]
+    field_simp at this ⊢; linarith
+  -- Now sandwich √r between 99/1000 and 996/10000
+  have hv_lb : (99 : ℝ) / 1000 < Real.sqrt r := by
+    calc (99 : ℝ) / 1000
+        = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
+          (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
+      _ < Real.sqrt r :=
+          Real.sqrt_lt_sqrt (by positivity) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+  have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
+    calc Real.sqrt r
+        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
+          Real.sqrt_lt_sqrt (le_of_lt hr_pos) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
+      _ = 996 / 10000 :=
+          Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
+  -- Bound q = 1/(1-√r) via division lemmas
+  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by linarith
+  rw [hq_eq]; unfold substrate_q; rw [abs_lt]
+  constructor
+  · -- Lower bound: 1.1087 < 1/(1-√r)
+    linarith [show (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) from
+      (lt_div_iff h_denom_pos).mpr (by nlinarith)]
+  · -- Upper bound: 1/(1-√r) < 1.1107
+    linarith [show 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 from
+      (div_lt_iff h_denom_pos).mpr (by nlinarith)]
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
 lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
