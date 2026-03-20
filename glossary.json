@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T14:43:54.759474+00:00",
-  "commit_sha": "c6aae037b3448f257339b86e4a2faefe6a770dfa",
-  "entry_count": 41,
+  "generated_at": "2026-03-20T16:21:17.108374+00:00",
+  "commit_sha": "a47f8947cc3b18095853bb026d33ac611e062bcb",
+  "entry_count": 42,
   "ambiguity_count": 5,
   "entries": [
     {
@@ -227,10 +227,10 @@
       "chapter": 4
     },
     {
-      "narrative_term": "Quantum Characteristic Classes",
+      "narrative_term": "Quantum Characteristic Classes (Yekutieli obstruction)",
       "lean_name": "QOU.Torsion.QuantumCharacteristicClasses",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~).  The  are the cohomology classes [ kappa_n ;in; H^*!bigl(E_n+1,, bigr) ] that label the monodromy fixed points of the holonomy representation as one transitions from E_n to E_n+1.",
+      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~).  Each transition E_n to E_n+1 defines a central extension of gerbes on the base manifold~M in the sense of Yekutieli~: the (2)-bundle E_n is an object in a gerbe~_n banded by _M^times, and the jet prolongation (Proposition~) produces a central extension [ 1 ;longrightarrow; _M^times ;longrightarrow; _n+1 ;longrightarrow; _n ;longrightarrow; 1. ] The  (Yekutieli obstruction classes) are the cohomology classes [ kappa_n ;in; H^2!bigl(M,, ",
       "latex_label": "def:quantum-characteristic-classes",
       "chapter": 4
     },
@@ -243,11 +243,19 @@
       "chapter": 4
     },
     {
-      "narrative_term": "Mass Identity",
+      "narrative_term": "Mass Identity (nonabelian multiplicative integration)",
       "lean_name": "QOU.Torsion.MassIdentity",
       "kind": "def",
-      "narrative_definition": "Let (M, G, P, E) be a  quantum observable universe with substrate parameter q (Definition~), connection A, Levi form L, and self-dual curvature F^+.  Let gamma be a closed cycle encircling the vortex filament.  The  m of a stable vortex is [ m ;propto; oint_gamma lVert nabla_A, q rVert cdot lVert L wedge F^+ rVert,. ]",
+      "narrative_definition": "Let (M, G, P, E) be a  quantum observable universe with substrate parameter q (Definition~), instanton connection A (Definition~), Levi form L, and self-dual curvature F^+.  Let gamma be a closed cycle encircling the vortex filament, and let Sigma be a surface with partialSigma = gamma.  The vortex filament is treated as a singularity in a twisted gerbe  banded by _M^times (Definition~).  The  m of a stable vortex is defined via the nonabelian multiplicative integral of Yekutieli~: [ m ;=; leftl",
       "latex_label": "def:mass-identity",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Yekutieli triple mapping",
+      "lean_name": "QOU.Torsion.YekutieliTriple",
+      "kind": "def",
+      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~) and let U_i be an open cover of the base manifold~M trivialising every level of the tower. The  at level~n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:  item  x_i^(n) in (_n|_U_i) are local sections of the base manifold: the restrictions of E_n to the trivialisations U_i. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the gauge transition functions g_ij^(n) in Gamma(U_i cap U_j,, _q_n(2)) encoding th",
+      "latex_label": "def:yekutieli-triple",
       "chapter": 4
     },
     {
