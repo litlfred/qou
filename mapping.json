@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T16:20:48.014293+00:00",
+  "generated_at": "2026-03-20T17:17:46.440027+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -133,12 +133,17 @@
       "latex_label": "def:quantum-characteristic-classes"
     },
     {
-      "narrative": "$\\mathbb{C}$ Quantum Observable Universe as Direct Limit",
+      "narrative": "Yekutieli Lifting Condition",
+      "lean_id": "QOU.Torsion.YekutieliLiftingCondition",
+      "latex_label": "def:yekutieli-lifting-condition"
+    },
+    {
+      "narrative": "Quantum Observable Universe as Direct Limit",
       "lean_id": "QOU.Torsion.DirectLimitAlgebra",
       "latex_label": "def:direct-limit-algebra"
     },
     {
-      "narrative": "Mass Identity (nonabelian multiplicative integration)",
+      "narrative": "Mass (categorical trace)",
       "lean_id": "QOU.Torsion.MassIdentity",
       "latex_label": "def:mass-identity"
     },

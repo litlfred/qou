@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T16:20:48.011573+00:00",
-  "commit_sha": "a47f8947cc3b18095853bb026d33ac611e062bcb",
-  "entry_count": 42,
+  "generated_at": "2026-03-20T17:17:46.437014+00:00",
+  "commit_sha": "4e611615e15c079d7233c41851304ff47b65f8ca",
+  "entry_count": 43,
   "ambiguity_count": 5,
   "entries": [
     {
@@ -222,7 +222,7 @@
       "narrative_term": "Recursive Brane Tower",
       "lean_name": "QOU.Torsion.RecursiveBraneTower",
       "kind": "def",
-      "narrative_definition": "Let (M, G, P, E) be a  quantum observable universe (Example~).  Set M_0 = M and E_1 = E.  , define E_n+1 as the jet prolongation (Proposition~) of E_n.  The  is the following recursive structure:  item Each total space E_n is treated as the base manifold M_n+1 for the next level; E_n is the  of E_n+1. item At each level, A_n in (E_n-1) is the n-th level instanton connection satisfying the Hermitian Yang--Mills equations on E_n.",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe over a field~k (Definition~).  Set A_0 = A.  , define A_n+1 = J^1(A_n) as the jet prolongation (Proposition~) of the Frobenius--Hopf object~A_n.  The  is the following recursive structure:  item Each jet object A_n serves as the base object for the next level; A_n is the  of A_n+1. item At each level, the comultiplication Delta_n on A_n encodes the n-th level connection, inherited from the Frobenius--Hopf structure by Proposition~.  The  is th",
       "latex_label": "def:recursive-brane-tower",
       "chapter": 4
     },
@@ -230,23 +230,42 @@
       "narrative_term": "Quantum Characteristic Classes (Yekutieli obstruction)",
       "lean_name": "QOU.Torsion.QuantumCharacteristicClasses",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~).  Each transition E_n to E_n+1 defines a central extension of gerbes on the base manifold~M in the sense of Yekutieli~: the (2)-bundle E_n is an object in a gerbe~_n banded by _M^times, and the jet prolongation (Proposition~) produces a central extension [ 1 ;longrightarrow; _M^times ;longrightarrow; _n+1 ;longrightarrow; _n ;longrightarrow; 1. ] The  (Yekutieli obstruction classes) are the cohomology classes [ kappa_n ;in; H^2!bigl(M,, ",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe and let A_n_n geq 0 be its recursive brane tower (Definition~).  Each transition A_n hookrightarrow A_n+1 in  defines a central extension of gerbes on the underlying site in the sense of Yekutieli~: the Frobenius--Hopf object~A_n is an object in a gerbe~_n banded by the sheaf of units  (in the  realisation,  = _M^times), and the jet prolongation (Proposition~) produces a central extension [ 1 ;longrightarrow;  ;longrightarrow; _n+1 ;longrighta",
       "latex_label": "def:quantum-characteristic-classes",
       "chapter": 4
     },
     {
-      "narrative_term": "$\\mathbb{C}$ Quantum Observable Universe as Direct Limit",
-      "lean_name": "QOU.Torsion.DirectLimitAlgebra",
+      "narrative_term": "Yekutieli Lifting Condition",
+      "lean_name": "QOU.Torsion.YekutieliLiftingCondition",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~) with substrate parameters q_n (Definition~) at each level.  The  quantum observable universe is the direct limit algebra [ _infty ;=; varinjlim, Gamma!bigl(J^1 E_n,, _q_n(2)bigr). ]",
-      "latex_label": "def:direct-limit-algebra",
+      "narrative_definition": "Let  be a k-linear rigid monoidal category and let [ 1 ;longrightarrow;  ;longrightarrow; ' ;longrightarrow;  ;longrightarrow; 1 ] be a central extension of gerbes on a site~, banded by an abelian sheaf~.  We say that  satisfies the  with respect to (', , ) if, for every object x in (), the obstruction to lifting~x to an object x' in (') is classified by a single cohomology class [ kappa(x) ;in; H^2(,, ), ] and x admits a lift if and only if kappa(x) = 0.",
+      "latex_label": "def:yekutieli-lifting-condition",
       "chapter": 4
     },
     {
-      "narrative_term": "Mass Identity (nonabelian multiplicative integration)",
+      "narrative_term": "Quantum Observable Universe as Direct Limit",
+      "lean_name": "QOU.Torsion.DirectLimitAlgebra",
+      "kind": "def",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe (Definition~) and let A_n_n geq 0 be its recursive brane tower (Definition~).  The  is the colimit in the category of k-algebras: [ _infty ;=; varinjlim_n, _(A_n), ] taken over the tower of endomorphism algebras with the transition maps induced by the canonical embeddings A_n hookrightarrow A_n+1.  In the  realisation (Example~), applying the fibre functor omega gives _infty cong varinjlim,Gamma(J^1 E_n,, _q_n(2)).",
+      "latex_label": "def:direct-limit-algebra",
+      "chapter": 4,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Category without specified universe or structure level",
+        "candidates": [
+          "Category",
+          "SmallCategory",
+          "Abelian",
+          "MonoidalCategory"
+        ],
+        "resolved_to": null
+      }
+    },
+    {
+      "narrative_term": "Mass (categorical trace)",
       "lean_name": "QOU.Torsion.MassIdentity",
       "kind": "def",
-      "narrative_definition": "Let (M, G, P, E) be a  quantum observable universe with substrate parameter q (Definition~), instanton connection A (Definition~), Levi form L, and self-dual curvature F^+.  Let gamma be a closed cycle encircling the vortex filament, and let Sigma be a surface with partialSigma = gamma.  The vortex filament is treated as a singularity in a twisted gerbe  banded by _M^times (Definition~).  The  m of a stable vortex is defined via the nonabelian multiplicative integral of Yekutieli~: [ m ;=; leftl",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe (Definition~) and let A_n_n geq 0 be its recursive brane tower (Definition~).  Since  is a k-linear rigid monoidal category, the Frobenius--Hopf object~A admits a categorical trace  colon _(A) to k defined by the composition [ (f) ;=; bigl( ; A otimes A^vee ; A otimes A^vee ; bigr), ] where  and  are the rigidity morphisms. Let Delta colon A to A otimes A be the comultiplication (encoding the connection) and let lambda colon A to  be the Frobe",
       "latex_label": "def:mass-identity",
       "chapter": 4
     },
@@ -254,7 +273,7 @@
       "narrative_term": "Yekutieli triple mapping",
       "lean_name": "QOU.Torsion.YekutieliTriple",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~) and let U_i be an open cover of the base manifold~M trivialising every level of the tower. The  at level~n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:  item  x_i^(n) in (_n|_U_i) are local sections of the base manifold: the restrictions of E_n to the trivialisations U_i. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the gauge transition functions g_ij^(n) in Gamma(U_i cap U_j,, _q_n(2)) encoding th",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe and let A_n_n geq 0 be its recursive brane tower (Definition~).  Let U_i be a covering of the underlying site~ trivialising every level of the tower. The  at level~n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:  item  x_i^(n) in (_n|_U_i) are local trivialisations of the Frobenius--Hopf object~A_n. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the transition automorphisms in _(A_n|_U_i cap U_j), encoding ",
       "latex_label": "def:yekutieli-triple",
       "chapter": 4
     },
@@ -262,25 +281,15 @@
       "narrative_term": "Descent",
       "lean_name": "QOU.Torsion.Descent",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~).  The  is the reverse traversal of the tower: starting from level~n one passes to level n-1 by restricting the connection A_n and the bundle E_n to the base manifold M_n-1.  The descent terminates when the base manifold M_k reaches dim M_k = 0, at which point M_k is a discrete set of points.",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe and let A_n_n geq 0 be the recursive brane tower (Definition~).  The  is the reverse traversal of the tower: starting from level~n one passes to level~n-1 by applying the restriction morphism r_n colon A_n = J^1(A_n-1) to A_n-1 (the categorical retraction of the jet embedding).  In the  realisation, this restricts the connection and bundle to the base manifold M_n-1.  The descent terminates when the categorical dimension of~A_k reaches zero.",
       "latex_label": "def:descent",
-      "chapter": 4,
-      "ambiguity": {
-        "is_ambiguous": true,
-        "message": "Bundle without specified fiber/base",
-        "candidates": [
-          "FiberBundle",
-          "VectorBundle",
-          "PrincipalBundle"
-        ],
-        "resolved_to": null
-      }
+      "chapter": 4
     },
     {
       "narrative_term": "Descent involution",
       "lean_name": "QOU.Torsion.DescentInvolution",
       "kind": "def",
-      "narrative_definition": "Let ell_n denote the ascent embedding (Proposition~) and _n+1 the descent homomorphism (Lemma~).  The  at level~n is the endomorphism [ tau_n ;=; ell_n circ _n+1 ;colon; Gamma!bigl(J^1 E_n+1,, _q_n+1(2)bigr) ;longrightarrow; Gamma!bigl(J^1 E_n+1,, _q_n+1(2)bigr). ] Since _n+1 circ ell_n =  on Gamma(J^1 E_n,, _q_n(2)) (the descent of the ascent recovers the original section, because ell_n embeds A as a direct summand of J^1(A) and _n+1 is the retraction), we have [ tau_n^2 ;=; ell_n circ _n+1 cir",
+      "narrative_definition": "Let ell_n colon A_n hookrightarrow A_n+1 denote the ascent embedding (Proposition~) and _n+1 colon _(A_n+1) to _(A_n) the descent homomorphism (Lemma~).  The  at level~n is the endomorphism of the level-(n+1) endomorphism algebra: [ tau_n ;=; ell_n circ _n+1 ;colon; _(A_n+1) ;longrightarrow; _(A_n+1). ] Since _n+1 circ ell_n =  on _(A_n) (the descent of the ascent recovers the original endomorphism, because ell_n embeds A_n as a direct summand of A_n+1 and _n+1 is the retraction), we have [ tau_",
       "latex_label": "def:descent-involution",
       "chapter": 4
     },
@@ -288,7 +297,7 @@
       "narrative_term": "Defining boundary of the brane",
       "lean_name": "QOU.Torsion.BraneBoundary",
       "kind": "def",
-      "narrative_definition": "Let E_n_n geq 1 be the recursive brane tower (Definition~) and let _n+1 be the descent homomorphism (Lemma~).  The  of the n-th brane is the subset [ partial E_n ;=; bigl, p in E_n ;bigm|; kerbigl(_n+1big|_pbigr) neq 0 ,bigr ;subseteq; E_n, ] i.e. the locus of points where the fibrewise descent map has a non-trivial kernel.  Equivalently, partial E_n is the degeneracy locus of the restriction r_ncolon J^1(A) to A evaluated fibre by fibre.",
+      "narrative_definition": "Let (, A, omega, q) be a quantum observable universe and let A_n_n geq 0 be the recursive brane tower (Definition~).  Let _n+1 be the descent homomorphism (Lemma~).  The  of the n-th brane is the full subcategory of~ consisting of subobjects of~A_n on which the restriction morphism r_n colon A_n to A_n-1 has non-trivial kernel: [ partial A_n ;=; bigl, S hookrightarrow A_n ;bigm|; ker(r_n|_S) neq 0 ,bigr. ] In the  realisation, partial A_n corresponds to the geometric locus partial E_n = p in E_n",
       "latex_label": "def:brane-boundary",
       "chapter": 4
     },
