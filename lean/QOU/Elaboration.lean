@@ -247,7 +247,7 @@ theorem jacobi_identity_violation {M : Type*} (sp : SubstrateParameter M)
   -- then cyclic sum = 0
   have h_prefactor : -(sp.field p)⁻¹ * (1 - (sp.field p)⁻¹) ≠ 0 :=
     mul_ne_zero h_neg_qi h1
-  exact (mul_ne_zero h_prefactor · absurd h rfl |>.elim) |> sorry
+  exact (mul_eq_zero.mp h).resolve_left h_prefactor
 
 /-- At `q = 1`, all q-deformed operators recover their classical
     counterparts.  This is a restatement of the classical-limit
