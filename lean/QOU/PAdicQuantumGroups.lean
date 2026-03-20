@@ -60,8 +60,9 @@ structure PAdicQOU extends FIsocrystalData where
   /-- `q ≥ 1` (classicality bound). -/
   q_ge_one : 1 ≤ substrate_q
   /-- Irreducibility of the associated F-crystal: the Frobenius
-      endomorphism has no non-trivial invariant submodules. -/
-  frobenius_irreducible : ∀ (x : carrier), frobenius x = x → x = frobenius x
+      endomorphism has at most one fixed point (the zero element).
+      Equivalently, the fixed-point submodule is trivial. -/
+  frobenius_irreducible : ∀ (x y : carrier), frobenius x = x → frobenius y = y → x = y
 
 /-- The observability condition for the `ℚ_p` realisation generalises
     irreducibility of the instanton connection to the p-adic setting:
@@ -70,8 +71,8 @@ structure PAdicQOU extends FIsocrystalData where
     LaTeX: `\label{ex:p-adic-realisation}`, key structures. -/
 theorem padic_observability_iff_irreducible (pq : PAdicQOU) :
     -- In the p-adic QOU, the observability condition is equivalent
-    -- to irreducibility of the F-crystal.
-    (∀ (x : pq.carrier), pq.frobenius x = x → x = pq.frobenius x) :=
+    -- to irreducibility of the F-crystal: at most one fixed point.
+    (∀ (x y : pq.carrier), pq.frobenius x = x → pq.frobenius y = y → x = y) :=
   pq.frobenius_irreducible
 
 /-! ## §2  Finite-Field Realisation -/
@@ -107,8 +108,14 @@ structure FiniteFieldQOU where
 theorem finite_field_observability (ff : FiniteFieldQOU)
     (hq : ff.root_order ≠ 1) :
     -- Observability (adjoint vanishing) holds for q ≠ 1 over 𝔽_p:
-    -- the root order being > 1 ensures the fusion category is non-trivial.
-    ff.root_order > 0 := by
+    -- the root order being ≥ 2 ensures the fusion category is non-trivially
+    -- deformed, so the trivial representation is not a summand of Ad(A).
+    ff.root_order ≥ 2 := by
+  have h0 : ff.root_order ≠ 0 := by
+    intro heq
+    have hc := ff.coprime
+    rw [heq, Nat.Coprime, Nat.gcd_zero_left] at hc
+    exact absurd hc ff.p_prime.ne_one
   omega
 
 /-! ## §3  Universal Enveloping Algebra -/

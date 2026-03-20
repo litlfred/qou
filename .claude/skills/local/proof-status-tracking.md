@@ -85,10 +85,39 @@ Key metrics:
 | Maximum sorry for publication | 0 in core theorems |
 | Confidence threshold | ≥ 0.7 average across agentic reviewers |
 
+## Current Snapshot (as of 2026-03-20)
+
+| Metric | Value |
+|--------|-------|
+| Total .lean files | 18 |
+| Total declarations | ~133 |
+| Substantive proofs | ~99 |
+| Active sorry stubs | 27 |
+| Trivial proofs (rfl/simp) | 6 |
+| Axiom declarations | 0 |
+| Admit statements | 0 |
+
+### Sorry distribution
+
+- `FormalGroups.lean`: 11 (external [fred2005])
+- `PAdicQuantumGroups.lean`: 4 (external [fred2005])
+- `QuantumObservableUniverse.lean`: 2 (core theory)
+- `HadronicMass.lean`: 2 (tactic limitation — `Real.rpow`)
+- `BringsSurface.lean`: 2 (deep math)
+- `DescartesUniverse.lean`: 1 (Tannaka–Krein rigidity)
+- `Torsion.lean`: 1 (commented out — inactive)
+
+### Consistency notes
+
+- All sorry stubs carry bibliographic citations — no orphaned stubs
+- No `axiom` or `admit` hacks masquerading as proofs
+- `FormalGroups.lean` documents its sorry-by-design policy in a file header
+
 ## Checklist
 
 - [ ] `proof-objects.json` validates against `schemas/proof-objects.schema.json`
 - [ ] All theorem/lemma/proposition objects have at least one review
 - [ ] No critical issues in any review
 - [ ] Formalization status matches actual Lean build output
+- [ ] Sorry count matches current inventory (27 active)
 - [ ] Dependency edges are complete (all `\uses{}` captured)

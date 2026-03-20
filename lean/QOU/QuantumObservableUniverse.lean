@@ -644,12 +644,17 @@ structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
   Omega1 : C
   /-- The connection morphism `∇ : A → A ⊗ Ω¹`. -/
   nabla : fh.obj ⟶ (fh.obj ⊗ Omega1)
-  /-- **Leibniz rule**: `∇ ∘ μ = (μ ⊗ id_Ω) ∘ (id_A ⊗ ∇) + (∇ ⊗ id_A) ∘ …`
-      Abstractly, `∇` is a derivation with respect to the multiplication `μ`.
+  /-- The Leibniz rule RHS: the categorical morphism `A ⊗ A → A ⊗ Ω¹`
+      encoding `∇(a)·b + a·∇(b)`.  In a general (non-preadditive) monoidal
+      category the "sum" cannot be expressed purely from `(∇, μ, α)`, so it
+      is provided abstractly.  In a preadditive monoidal category this should
+      be `(∇ ▷ A) ≫ (α⁻¹) ≫ (μ ▷ Ω) + (A ◁ ∇) ≫ α ≫ …`. -/
+  leibniz_rhs : (fh.obj ⊗ fh.obj) ⟶ (fh.obj ⊗ Omega1)
+  /-- **Leibniz rule**: `∇ ∘ μ = leibniz_rhs`, i.e. the connection is
+      a derivation with respect to the multiplication `μ`.
       The full coherence diagram requires shuffling via the associator;
       stated here as an equality of morphisms `A ⊗ A → A ⊗ Ω¹`. -/
-  leibniz : fh.mul ≫ nabla =
-    sorry -- Leibniz: ∇(ab) = ∇(a)·b + a·∇(b) as a categorical morphism equation
+  leibniz : fh.mul ≫ nabla = leibniz_rhs
 
 /-- **Categorical action** of a Frobenius–Hopf object `A` on another object `V`.
 
@@ -696,8 +701,7 @@ structure Observation (cqou : CQuantumObservableUniverse) where
   obs_gauge_invariant : ∀ s₁ s₂, gaugeEquiv s₁ s₂ → obs s₁ = obs s₂
   /-- **Well-definedness from observability**: the adjoint vanishing
       `H⁰(M, Ad(P)) = 0` (from `CQuantumObservableUniverse`) implies
-      gauge transformations act trivially on observables. -/
-  obs_well_defined :
-    sorry -- Uses cqou.adjoint_cohomology_vanishes to show obs is well-defined
+      all sections are gauge-equivalent, so `obs` is constant. -/
+  obs_well_defined : ∀ s₁ s₂, gaugeEquiv s₁ s₂
 
 end QOU

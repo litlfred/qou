@@ -103,10 +103,35 @@ Google Gemini code review triggers on PRs.  To make it proof-aware:
 3. `.github/copilot-instructions.md` instructs Gemini to check linked Lean
    declarations when reviewing LaTeX changes
 
+## Current Codebase State (as of 2026-03-20)
+
+**27 active sorry** | **0 admit** | **0 axiom** | **~99 substantive proofs** | **6 trivial (rfl/simp)**
+
+### Known Sorry Patterns
+
+All 27 sorry stubs follow a consistent pattern:
+- Each has a bibliographic citation (e.g., `[fred2005, Theorem 4.12]`)
+- No orphaned or unexplained sorry statements
+- `FormalGroups.lean` has an explicit file-header doc block explaining that all
+  dissertation-referenced theorems are left as `sorry` by design
+
+### Review Considerations
+
+- **`FormalGroups.lean` + `PAdicQuantumGroups.lean`** (15 sorry): treat as
+  "external results" — review the *statements* for faithfulness to
+  [fred2005], not the missing proofs
+- **`HadronicMass.lean`** (2 sorry): numerically verified but blocked by
+  `Real.rpow` evaluation — flag for tactic-level resolution, not mathematical
+  review
+- **`BringsSurface.lean`** trivial proofs (`by rfl`): these are definitional
+  equalities for genus/euler-char/etc. — correct and appropriate, not
+  placeholders
+
 ## Checklist
 
 - [ ] All modified Lean files compile (`lake build`)
 - [ ] Review records include `reviewer_id`, `verdict`, `confidence`
 - [ ] Critical issues block merge
-- [ ] `sorry` count is accurately tracked
+- [ ] `sorry` count is accurately tracked (current: 27 active)
 - [ ] Linked LaTeX content is consistent with Lean statements
+- [ ] All sorry stubs have bibliographic citations or blocking-reason comments
