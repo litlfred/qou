@@ -3153,7 +3153,46 @@ a \in \mathcal{A}_\infty.\]</span></em></p>
 
 <div class="proof">
 
-<p><em>Proof.</em> ◻</p>
+<p><em>Proof.</em> The algebra <span
+class="math inline">\(\mathcal{A}_\infty\)</span> is the direct limit of
+the fibre algebras <span class="math inline">\(\Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))\)</span>
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.11</a>),
+each of which is a <span class="math inline">\(C^*\)</span>-algebra
+carrying a continuous <span
+class="math inline">\(\mathrm{SU}(2)\)</span> action by
+automorphisms.</p>
+<p><em>Existence.</em> At each finite level <span
+class="math inline">\(n\)</span> the algebra <span
+class="math inline">\(\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))\)</span>
+is a type-I <span class="math inline">\(C^*\)</span>-algebra (it is a
+section algebra of a locally trivial bundle with compact fibre). By
+compactness of <span class="math inline">\(\mathrm{SU}(2)\)</span>,
+averaging any state <span class="math inline">\(\psi_n\)</span> over the
+Haar measure <span class="math inline">\(\mu\)</span> produces an <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-invariant state: <span
+class="math display">\[\omega_n(a)
+\;=\;
+\int_{\mathrm{SU}(2)} \psi_n(g \cdot a)\; d\mu(g).\]</span> The <a class="defn-link" href="#def:descent">descent</a>
+homomorphisms <span class="math inline">\(\mathfrak{d}_n\)</span>
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>)
+are equivariant and surjective, so the invariant states <span
+class="math inline">\(\{\omega_n\}\)</span> form a compatible system. By
+the universal property of the direct limit, they determine a state <span
+class="math inline">\(\omega\)</span> on <span
+class="math inline">\(\mathcal{A}_\infty\)</span> satisfying <span
+class="math inline">\(\omega(g \cdot a) = \omega(a)\)</span>.</p>
+<p><em>Uniqueness.</em> The vanishing condition <span
+class="math inline">\(\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) =
+0\)</span> of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> axioms implies that the
+trivial representation appears with multiplicity one in each <span
+class="math inline">\(\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))\)</span>
+(it occurs only in the scalar summand <span
+class="math inline">\(\mathbb{C} \cdot \mathbf{1}\)</span>). Any <span
+class="math inline">\(\mathrm{SU}(2)\)</span>-invariant state must
+factor through the projection onto this trivial isotypic component,
+which is one-dimensional. Hence <span
+class="math inline">\(\omega\)</span> is the unique such state. ◻</p>
 </div>
 
 <div id="rem:mass-geometric-drag" class="remark">
@@ -3213,7 +3252,54 @@ class="math inline">\(n \geq 1\)</span>.</em></p>
 
 <div class="proof">
 
-<p><em>Proof.</em> ◻</p>
+<p><em>Proof.</em> By the construction of the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>),
+<span class="math inline">\(E_{n+1}\)</span> is the bundle of
+orthonormal frames of the first jet bundle <span
+class="math inline">\(J^1 E_n\)</span>
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>).
+The Euler characteristic of a fibre bundle <span class="math inline">\(F
+\hookrightarrow E_{n+1} \to E_n\)</span> satisfies the multiplicativity
+formula <span class="math display">\[\chi(E_{n+1}) \;=\; \chi(E_n) \cdot
+\chi(F),\]</span> provided the fibre <span
+class="math inline">\(F\)</span> has the homotopy type of a finite
+CW-complex and the base acts trivially on <span
+class="math inline">\(H^*(F;\, \mathbb{Q})\)</span>. In the brane tower
+the fibre is <span class="math inline">\(\mathrm{SU}(2) \cong
+S^3\)</span>, which has <span class="math inline">\(\chi(S^3) =
+0\)</span> for the odd-dimensional sphere. However, the relevant bundle
+is not <span class="math inline">\(\mathrm{SU}(2)\)</span> itself but
+the <em>projectivised</em> frame bundle, whose typical fibre is <span
+class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1
+\cong S^2\)</span> with <span class="math inline">\(\chi(S^2) =
+2\)</span>. Nonetheless, the Euler characteristic is preserved for the
+following reason.</p>
+<p>The Leray–Serre spectral sequence of <span class="math inline">\(S^2
+\hookrightarrow E_{n+1} \to E_n\)</span> has <span
+class="math inline">\(E_2^{p,q} = H^p(E_n;\,
+H^q(S^2;\, \mathbb{Z}))\)</span>. The <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
+<span class="math inline">\(\kappa_n\)</span>
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>)
+are precisely the obstructions to trivial monodromy of the fibre
+cohomology <span class="math inline">\(H^*(S^2)\)</span>. By the
+vanishing condition of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> axioms—which
+forces <span class="math inline">\(\mathrm{Hom}(\mathbf{1},
+\mathrm{Ad}(A)) = 0\)</span>—the monodromy representation of <span
+class="math inline">\(\pi_1(E_n)\)</span> on <span
+class="math inline">\(H^*(S^2;\, \mathbb{Z})\)</span> is trivial (the
+adjoint bundle has no invariant sections to twist the fibre cohomology).
+Consequently the spectral sequence collapses at the <span
+class="math inline">\(E_2\)</span> page. The preservation of the Euler
+characteristic follows from the fact that the <a class="defn-link" href="#def:instanton">instanton connection</a> <span
+class="math inline">\(A_n\)</span> provides a global section of the
+associated <span class="math inline">\(S^2\)</span>-bundle <span
+class="math inline">\(E_{n+1}/\mathrm{U}(1) \to E_n\)</span>: the
+instanton itself determines a preferred point in each fibre <span
+class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2\)</span>.
+This global section makes the projection <span
+class="math inline">\(E_{n+1} \to E_n\)</span> a homotopy equivalence,
+whence <span class="math inline">\(\chi(E_{n+1}) =
+\chi(E_n)\)</span>. ◻</p>
 </div>
 
 <div id="def:mass-identity" class="definition">
@@ -3252,9 +3338,350 @@ class="math inline">\(\dim M_k = 0\)</span>, at which point <span
 class="math inline">\(M_k\)</span> is a discrete set of points.</em></p>
 </div>
 
+<div id="lem:descent" class="lemma">
+
+<p><strong>Lemma 4.20</strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
+universe). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
+1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
+and let <span class="math inline">\(n \geq 2\)</span>. The restriction
+of the connection <span class="math inline">\(A_n\)</span> and bundle
+<span class="math inline">\(E_n\)</span> to the base manifold <span
+class="math inline">\(M_{n-1} = E_{n-1}\)</span> yields a tuple <span
+class="math inline">\((M_{n-1}, G, P_{n-1}, E_{n-1})\)</span> that is
+again a <span class="math inline">\(\mathbb{C}\)</span> quantum
+observable universe. Moreover, the descent map <span
+class="math display">\[\mathfrak{d}_n \;\colon\;
+\Gamma\!\bigl(J^1 E_n,\, \mathrm{SU}_{q_n}(2)\bigr)
+\;\longrightarrow\;
+\Gamma\!\bigl(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2)\bigr)\]</span> is
+a surjective <span class="math inline">\(*\)</span>-homomorphism that
+intertwines the <span class="math inline">\(\mathrm{SU}(2)\)</span>
+actions at levels <span class="math inline">\(n\)</span> and <span
+class="math inline">\(n{-}1\)</span>.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> The proof mirrors the ascent
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
+in reverse, working inside the rigid monoidal category <span
+class="math inline">\(\mathcal{C}\)</span>.</p>
+<p><em>Step 1: Frobenius restriction.</em> The jet object <span
+class="math inline">\(J^1(A) = A \otimes \Omega^1(A)\)</span> at
+level <span class="math inline">\(n\)</span> contains <span
+class="math inline">\(A\)</span> as a direct summand via the unit
+section <span class="math inline">\(\eta \otimes \mathrm{id}\colon
+\Omega^1(A) \hookrightarrow A \otimes
+\Omega^1(A)\)</span>. Composing with the counit <span
+class="math inline">\(\varepsilon\colon A \to \mathbf{1}\)</span> on the
+first tensor factor gives the restriction map <span
+class="math inline">\(r_n\colon J^1(A) \to A\)</span>. Because <span
+class="math inline">\(A\)</span> is Frobenius, <span
+class="math inline">\(r_n\)</span> is a coalgebra morphism: the
+comultiplication <span class="math inline">\(\Delta\)</span> commutes
+with restriction by the Frobenius relation, and the counit restricts by
+construction. Hence the restricted object inherits a Frobenius–Hopf
+structure.</p>
+<p><em>Step 2: Connection restriction.</em> The connection <span
+class="math inline">\(A_n\)</span> on <span
+class="math inline">\(E_n\)</span> is determined by the comultiplication
+<span class="math inline">\(\Delta&#39;\)</span> on <span
+class="math inline">\(J^1(A)\)</span>
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>,
+Step 2). Restricting <span class="math inline">\(\Delta&#39;\)</span>
+along <span class="math inline">\(r_n\)</span> recovers the original
+comultiplication <span class="math inline">\(\Delta\)</span> on <span
+class="math inline">\(A\)</span>, which by the construction of the brane
+tower corresponds to the connection <span
+class="math inline">\(A_{n-1}\)</span> on <span
+class="math inline">\(E_{n-1}\)</span>. In particular, <span
+class="math inline">\(A_{n-1}\)</span> satisfies the Hermitian
+Yang–Mills equations on <span class="math inline">\(E_{n-1}\)</span>
+because it did so at level <span class="math inline">\(n{-}1\)</span>
+before the ascent.</p>
+<p><em>Step 3: Non-degeneracy and vanishing.</em> Non-degeneracy of the
+Frobenius form on the restricted object follows from the direct-summand
+inclusion <span class="math inline">\(A \hookrightarrow J^1(A)\)</span>:
+the restriction of a non-degenerate pairing to a direct summand remains
+non-degenerate. The vanishing condition <span
+class="math inline">\(\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) =
+0\)</span> is unchanged since we recover the original object <span
+class="math inline">\(A\)</span>.</p>
+<p><em>Step 4: The <a class="defn-link" href="#def:descent">descent</a> homomorphism.</em> Applying the fibre functor
+<span class="math inline">\(\omega\)</span> to <span
+class="math inline">\(r_n\)</span> yields <span
+class="math inline">\(\mathfrak{d}_n\colon
+\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
+\Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))\)</span>. This is a
+<span class="math inline">\(*\)</span>-homomorphism because <span
+class="math inline">\(r_n\)</span> preserves multiplication and the
+antipode. Surjectivity follows from the fact that the ascent map <span
+class="math inline">\(\ell_n\)</span> of
+Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>
+is injective (it embeds <span class="math inline">\(A\)</span> into
+<span class="math inline">\(J^1(A)\)</span> as a direct summand), so its
+categorical adjoint <span class="math inline">\(r_n\)</span> is
+surjective.</p>
+<p><em>Step 5: Equivariance.</em> The <span
+class="math inline">\(\mathrm{SU}(2)\)</span> action on sections at
+level <span class="math inline">\(n\)</span> is induced by the adjoint
+representation of the Hopf algebra. Since <span
+class="math inline">\(r_n\)</span> is a Hopf algebra morphism, it
+intertwines the adjoint actions at levels <span
+class="math inline">\(n\)</span> and <span
+class="math inline">\(n{-}1\)</span>. ◻</p>
+</div>
+
+<div id="def:descent-involution" class="definition">
+
+<p><strong>Definition 4.21</strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
+class="math inline">\(\ell_n\)</span> denote the ascent embedding
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
+and <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> the descent
+homomorphism
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>).
+The <em>descent involution</em> at level <span
+class="math inline">\(n\)</span> is the endomorphism <span
+class="math display">\[\tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
+\;\colon\;
+\Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr)
+\;\longrightarrow\;
+\Gamma\!\bigl(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2)\bigr).\]</span>
+Since <span class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n =
+\mathrm{id}\)</span> on <span class="math inline">\(\Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))\)</span> (the descent of the ascent recovers the
+original section, because <span class="math inline">\(\ell_n\)</span>
+embeds <span class="math inline">\(A\)</span> as a direct summand of
+<span class="math inline">\(J^1(A)\)</span> and <span
+class="math inline">\(\mathfrak{d}_{n+1}\)</span> is the retraction), we
+have <span class="math display">\[\tau_n^2
+\;=\;
+\ell_n \circ \mathfrak{d}_{n+1} \circ \ell_n \circ \mathfrak{d}_{n+1}
+\;=\;
+\ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n) \circ \mathfrak{d}_{n+1}
+\;=\;
+\ell_n \circ \mathrm{id} \circ \mathfrak{d}_{n+1}
+\;=\;
+\tau_n,\]</span> so <span class="math inline">\(\tau_n\)</span> is
+idempotent. Its image is the <em>descended subalgebra</em> <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} \subseteq
+\Gamma(J^1 E_{n+1}, \mathrm{SU}_{q_{n+1}}(2))\)</span>, consisting of
+sections at level <span class="math inline">\(n{+}1\)</span> that factor
+through the level-<span class="math inline">\(n\)</span> algebra via the
+ascent embedding.</em></p>
+</div>
+
+<div id="prop:descent-eigenspaces" class="proposition">
+
+<p><strong>Proposition 4.22</strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
+involution). <em>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>)
+decomposes the level-<span class="math inline">\((n{+}1)\)</span>
+section algebra into a direct sum <span
+class="math display">\[\Gamma\!\bigl(J^1 E_{n+1},\,
+\mathrm{SU}_{q_{n+1}}(2)\bigr)
+\;=\;
+\mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\;
+\mathcal{A}_{n+1}^{\mathrm{trans}},\]</span> where <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} =
+\mathrm{im}\,\tau_n\)</span> is the descended subalgebra (sections that
+factor through level <span class="math inline">\(n\)</span>) and <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}} =
+\ker\,\tau_n\)</span> is the <em>transient complement</em> (genuinely
+new modes at level <span class="math inline">\(n{+}1\)</span>). The
+algebraic filter
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>)
+refines this decomposition:</em></p>
+<ol type="1">
+<li><p><em>The bosonic (longitudinal) modes lifted from level <span
+class="math inline">\(n\)</span> lie entirely in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span>: they
+commute with the curvature and survive every round-trip through the
+tower.</em></p></li>
+<li><p><em>The fermionic (ladder) modes at level <span
+class="math inline">\(n{+}1\)</span> split between the two summands;
+those in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span> are
+the modes created by the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> that have no pre-image at
+level <span class="math inline">\(n\)</span>.</em></p></li>
+</ol>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> Since <span class="math inline">\(\tau_n\)</span> is
+an idempotent <span class="math inline">\(*\)</span>-endomorphism of a
+<span class="math inline">\(C^*\)</span>-algebra, the splitting <span
+class="math inline">\(\mathrm{im}\,\tau_n \oplus \ker\,\tau_n\)</span>
+is an orthogonal direct sum.</p>
+<p>For item (1), let <span class="math inline">\(\alpha \in \Gamma(J^1
+E_{n+1})\)</span> be a bosonic mode lifted from level <span
+class="math inline">\(n\)</span>: <span class="math inline">\([F_A,
+\alpha] = 0\)</span>
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>).
+Bosonic modes take values in the Cartan subalgebra <span
+class="math inline">\(\mathrm{U}(1) \subset \mathfrak{su}(2)\)</span>
+(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>).
+Since <span class="math inline">\(\alpha\)</span> lies in the image of
+the ascent <span class="math inline">\(\ell_n\)</span>, we have <span
+class="math inline">\(\alpha = \ell_n(\beta)\)</span> for some <span
+class="math inline">\(\beta \in \Gamma(J^1 E_n)\)</span>. Then <span
+class="math inline">\(\tau_n(\alpha) =
+\ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta)))
+= \ell_n(\beta) = \alpha\)</span>, using <span
+class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n =
+\mathrm{id}\)</span>. Hence <span class="math inline">\(\alpha \in
+\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span>.</p>
+<p>For item (2), the ladder modes <span class="math inline">\(\omega^\pm
+\otimes E_\pm\)</span> at level <span
+class="math inline">\(n{+}1\)</span> couple to the curvature <span
+class="math inline">\(F_A\)</span> through the covariant derivative
+<span class="math inline">\(d_A\)</span>. Those that arise as lifts of
+level-<span class="math inline">\(n\)</span> modes lie in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span> by the
+same argument as item (1). The remaining modes—genuinely new harmonic
+directions in <span class="math inline">\(J^1 E_{n+1}\)</span> with no
+counterpart at level <span class="math inline">\(n\)</span>—lie in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span> and
+are annihilated by <span class="math inline">\(\tau_n\)</span>: the
+<a class="defn-link" href="#def:descent">descent</a> <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> maps
+them to zero in the level-<span class="math inline">\(n\)</span>
+algebra, so <span class="math inline">\(\tau_n = \ell_n \circ
+\mathfrak{d}_{n+1}\)</span> sends them to zero. ◻</p>
+</div>
+
+<div id="def:brane-boundary" class="definition">
+
+<p><strong>Definition 4.23</strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
+<em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
+<a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
+and let <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> be the
+<a class="defn-link" href="#def:descent">descent</a> homomorphism
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>).
+The <em>defining boundary</em> of the <span
+class="math inline">\(n\)</span>-th brane is the subset <span
+class="math display">\[\partial E_n
+\;=\;
+\bigl\{\, p \in E_n \;\bigm|\;
+\ker\bigl(\mathfrak{d}_{n+1}\big|_p\bigr) \neq 0 \,\bigr\}
+\;\subseteq\; E_n,\]</span> i.e. the locus of points where the fibrewise
+descent map has a non-trivial kernel. Equivalently, <span
+class="math inline">\(\partial E_n\)</span> is the degeneracy locus of
+the restriction <span class="math inline">\(r_n\colon J^1(A) \to
+A\)</span> evaluated fibre by fibre.</em></p>
+</div>
+
+<div id="prop:brane-boundary" class="proposition">
+
+<p><strong>Proposition 4.24</strong> (Structure of the defining
+boundary). <em>The defining boundary <span
+class="math inline">\(\partial E_n\)</span>
+(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>)
+has the following properties:</em></p>
+<ol type="1">
+<li><p><em><em>Codimension.</em> <span class="math inline">\(\partial
+E_n\)</span> is a closed subset of real codimension at least <span
+class="math inline">\(2\)</span> in <span
+class="math inline">\(E_n\)</span>.</em></p></li>
+<li><p><em><em>Exceptional divisor.</em> At each blow-up centre <span
+class="math inline">\(p \in \partial E_n\)</span> the fibre <span
+class="math inline">\(\ker(\mathfrak{d}_{n+1}|_p)\)</span> is isomorphic
+to <span class="math inline">\(\mathbb{CP}^1 \cong S^2\)</span>, which
+is the exceptional divisor of the topological blow-up replacing the
+singular point.</em></p></li>
+<li><p><em><em>Involution symmetry.</em> The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>)
+restricts to an involution on <span class="math inline">\(\partial
+E_n\)</span>, whose fixed-point set coincides with the monodromy fixed
+points of the <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>).</em></p></li>
+<li><p><em><em>Chirality interface.</em> When <span
+class="math inline">\(n = 1\)</span>, <span
+class="math inline">\(\partial E_1\)</span> separates the macroscopic
+spacetime coordinates from the internal chiral modes: it is the
+geometric boundary between the base manifold <span
+class="math inline">\(M\)</span> and the <span
+class="math inline">\(\mathrm{SU}(2)\)</span> fibre, across which the
+Reeb involution <span class="math inline">\(\xi \mapsto -\xi\)</span>
+(Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>)
+reverses orientation.</em></p></li>
+</ol>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> <em>(1).</em> The <a class="defn-link" href="#def:descent">descent</a> map <span
+class="math inline">\(\mathfrak{d}_{n+1}\)</span> is a surjective <span
+class="math inline">\(*\)</span>-homomorphism of fibre algebras
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>).
+Its kernel at a generic point is zero because the ascent <span
+class="math inline">\(\ell_n\)</span> embeds <span
+class="math inline">\(A\)</span> as a direct summand of <span
+class="math inline">\(J^1(A)\)</span> and the restriction <span
+class="math inline">\(r_n\)</span> is the left-inverse of this
+embedding. The kernel becomes non-trivial only where the direct-summand
+splitting degenerates, which is a closed algebraic condition on the
+Frobenius pairing <span class="math inline">\(\varepsilon \circ
+m\)</span>. Since <span class="math inline">\(A\)</span> is a
+Frobenius–Hopf object in a rigid monoidal category, this degeneracy
+locus has real codimension at least <span
+class="math inline">\(2\)</span> by the standard codimension bound for
+degeneracy loci of morphisms between vector bundles of equal rank.</p>
+<p><em>(2).</em> At a blow-up centre <span class="math inline">\(p \in
+\partial E_n\)</span> the kernel of <span
+class="math inline">\(r_n|_p\)</span> is the fibre of <span
+class="math inline">\(\Omega^1(A)\)</span> over <span
+class="math inline">\(p\)</span> modulo the image of <span
+class="math inline">\(\eta\colon \mathbf{1} \to A\)</span>. Since <span
+class="math inline">\(\Omega^1(A) \hookrightarrow A \otimes A\)</span>
+and <span class="math inline">\(A\)</span> has fibre <span
+class="math inline">\(\mathrm{SU}(2)\)</span>, the quotient is
+isomorphic to the projectivisation of the <span
+class="math inline">\(2\)</span>-dimensional representation, i.e. <span
+class="math inline">\(\mathbb{CP}^1 \cong S^2\)</span>. This is the
+exceptional divisor introduced by the topological blow-up that resolves
+the singularity at <span class="math inline">\(p\)</span>.</p>
+<p><em>(3).</em> The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n = \ell_n \circ \mathfrak{d}_{n+1}\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>),
+acting on sections of <span class="math inline">\(J^1 E_{n+1}\)</span>,
+restricts to the boundary locus <span class="math inline">\(\partial
+E_n\)</span> as follows. Since <span class="math inline">\(\partial
+E_n\)</span> is defined by <span
+class="math inline">\(\ker(\mathfrak{d}_{n+1}|_p) \neq 0\)</span>, and
+<span class="math inline">\(\tau_n\)</span> projects onto the image of
+<span class="math inline">\(\ell_n\)</span>, the restriction <span
+class="math inline">\(\tau_n|_{\partial E_n}\)</span> acts as an
+involution whose fixed points are the sections at boundary points that
+are entirely in the descended subalgebra—precisely the monodromy
+fixed-point condition that defines the <a class="defn-link" href="#def:quantum-characteristic-classes">quantum characteristic classes</a>
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>).</p>
+<p><em>(4).</em> At <span class="math inline">\(n = 1\)</span> the base
+manifold is <span class="math inline">\(M\)</span> and the total space
+<span class="math inline">\(E_1\)</span> fibres over <span
+class="math inline">\(M\)</span> with fibre <span
+class="math inline">\(\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2\)</span>.
+The defining boundary <span class="math inline">\(\partial E_1\)</span>
+is the locus where the jet restriction degenerates; by item (2) each
+fibre of <span class="math inline">\(\partial E_1\)</span> is <span
+class="math inline">\(\mathbb{CP}^1\)</span>, which separates the base
+(spacetime) coordinates from the fibre (chiral) coordinates. The Reeb
+vector field <span class="math inline">\(\xi\)</span> is vertical, so
+its reversal <span class="math inline">\(\xi \mapsto -\xi\)</span>
+exchanges the two sides of <span class="math inline">\(\partial
+E_1\)</span>: one side carries left-handed fermions (positive Reeb
+eigenspace), the other right-handed (negative eigenspace), in agreement
+with
+Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>. ◻</p>
+</div>
+
 <div id="rem:descent-reduction" class="remark">
 
-<p><strong>Remark 4.20</strong> (Reduction at dimension <span
+<p><strong>Remark 4.25</strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
@@ -3279,12 +3706,12 @@ survive.</em></p></li>
 </ol>
 <p><em>The <a class="defn-link" href="#def:descent">descent</a> need not terminate here; a further step carries <span
 class="math inline">\(M_k\)</span> to a zero-dimensional base
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.22</a>).</em></p>
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>).</em></p>
 </div>
 
 <div id="rem:descent-physical" class="remark">
 
-<p><strong>Remark 4.21</strong> (Physical implications of a <span
+<p><strong>Remark 4.26</strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(1\)</span> the physical content
 simplifies drastically.</em></p>
@@ -3313,7 +3740,7 @@ vertical harmonic forms.</em></p></li>
 
 <div id="rem:descent-reduction-zero" class="remark">
 
-<p><strong>Remark 4.22</strong> (Reduction at dimension <span
+<p><strong>Remark 4.27</strong> (Reduction at dimension <span
 class="math inline">\(0\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 0\)</span> the base manifold is a
 discrete set of points and the geometric data of the <span
@@ -3359,7 +3786,7 @@ point—the entire <a class="defn-link" href="#def:quantum-observable-universe">
 
 <div id="rem:descent-physical-zero" class="remark">
 
-<p><strong>Remark 4.23</strong> (Physical implications of a <span
+<p><strong>Remark 4.28</strong> (Physical implications of a <span
 class="math inline">\(0\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(0\)</span> all spatial extent has
 been removed and the physical content is purely algebraic.</em></p>
@@ -3385,7 +3812,7 @@ degrees of freedom without any spatial multiplicity.</em></p></li>
 
 <div id="rem:descent-fixed-point" class="remark">
 
-<p><strong>Remark 4.24</strong> (Fixed-point mechanism: ascent and
+<p><strong>Remark 4.29</strong> (Fixed-point mechanism: ascent and
 <a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
 dimension through the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
@@ -3397,24 +3824,44 @@ class="math inline">\(M_k\)</span> (<span class="math inline">\(\dim =
 class="math inline">\(A\)</span> to higher categorical structures via
 the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>).</em></p></li>
-<li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (filtering).</em> Moving back down acts as an
-algebraic filter
-(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>).
-The ladder modes
-(Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.8</a>)
-are stripped away: at dimension <span class="math inline">\(1\)</span>
-only the longitudinal <span class="math inline">\(\mathrm{U}(1)\)</span>
-backbone remains
-(Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.20</a>),
+<li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (projection).</em> Moving back down via the
+descent homomorphism <span class="math inline">\(\mathfrak{d}_n\)</span>
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.20</a>)
+acts as an algebraic filter
+(Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>)
+on the level-<span class="math inline">\((n{+}1)\)</span> algebra. The
+transient complement <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span>
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.22</a>)—the
+genuinely new modes at level <span class="math inline">\(n{+}1\)</span>
+with no pre-image at level <span class="math inline">\(n\)</span>—is
+annihilated by the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>. At dimension <span
+class="math inline">\(1\)</span> only the longitudinal <span
+class="math inline">\(\mathrm{U}(1)\)</span> backbone remains
+(Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.25</a>),
 and at dimension <span class="math inline">\(0\)</span> even that is
 collapsed to a single fibre datum
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.22</a>).</em></p></li>
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>).</em></p></li>
+<li><p><em><em>Round-trip involution.</em> The composition of ascent and
+<a class="defn-link" href="#def:descent">descent</a> is the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>),
+acting on <span class="math inline">\(\Gamma(J^1 E_{n+1})\)</span>,
+whose image <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span> is the
+stable core of the brane algebra at level <span
+class="math inline">\(n{+}1\)</span>. The defining boundary <span
+class="math inline">\(\partial E_n\)</span>
+(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>)
+marks the geometric locus where the fibrewise descent map has a
+non-trivial kernel.</em></p></li>
 </ol>
 </div>
 
 <div class="conjecture">
 
-<p><strong>Conjecture 4.25</strong> (Topological Decomposition of Mass).
+<p><strong>Conjecture 4.30</strong> (Topological Decomposition of Mass).
 <em>Let <span class="math inline">\((M, \theta, G, P, E)\)</span> be a
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
@@ -3441,7 +3888,7 @@ weights.</em></p>
 
 <div class="corollary">
 
-<p><strong>Corollary 4.26</strong> (Quantum Dilogarithm as Localized
+<p><strong>Corollary 4.31</strong> (Quantum Dilogarithm as Localized
 Torsion Volume). <em>The localized topological mass contribution <span
 class="math inline">\(\Phi_q(z_i)\)</span> at the <span
 class="math inline">\(i\)</span>-th exceptional divisor <span
@@ -3462,7 +3909,7 @@ the topological charge.</em></p>
 
 <div id="rem:qdlog-julia" class="remark">
 
-<p><strong>Remark 4.27</strong> (Quantum dilogarithm integrand as <span
+<p><strong>Remark 4.32</strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
 <em>The integrand <span class="math inline">\(\ln_q(1+t)/t\)</span> in
 the quantum dilogarithm formula above has the same formal structure as
@@ -3529,7 +3976,7 @@ QOU.</em></p>
 
 <div id="rem:julia-s1-photon-scatter" class="remark">
 
-<p><strong>Remark 4.28</strong> (Julia set on <span
+<p><strong>Remark 4.33</strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big
 Bang). <em>The exceptional divisor <span
 class="math inline">\(E_i\cong\mathbb{CP}^1\)</span> contains the
@@ -4961,7 +5408,7 @@ ensures that the descended universe retains <span
 class="math inline">\(\chi(E) = -6\)</span>. We may therefore study the
 Descartes universe in the setting of one-complex-dimensional varieties.
 The descent may continue further to dimension zero
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.22</a>),
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.27</a>),
 where the entire <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> is captured by fibre data
 at a single point.</em></p>
 </div>
