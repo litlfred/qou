@@ -43,3 +43,28 @@ Decisions made during editorial review sessions. Entries are append-only.
 ### Labels preserved
 
 All original `\label{}` tags kept for Lean compatibility. New labels added; none removed.
+
+---
+
+## 2026-03-20 — Merge upstream main
+
+**Session**: `claude/review-categorical-spec-kEy1l`
+**Commit**: `8491980`
+
+### Upstream changes (7 commits)
+
+| Commit | Summary |
+|--------|---------|
+| `4d75023` | Clarify topological formulas in Ch. 11: narrative proofs, reformulate q |
+| `043c5ae` | chore: update proof-objects.json and glossary |
+| `a2e4473` | Extract crystal-lattice paragraph from proof into remark |
+| `5044894` | Add explicit Skein recursion formulas and tables for proton/neutron |
+| `8b3fda5` | Add pair Skein mass decomposition to Lean formalization |
+| `8f314a1` | Merge PR #105 (clarify-topological-formulas) |
+| `3ac0d29` | chore: update proof-objects.json and glossary from Lean build |
+
+### Conflict resolution
+
+| File | Conflict | Resolution |
+|------|----------|------------|
+| `experimental-evidence.tex` (×2) | Our branch had `\begin{observation}`; upstream promoted to `\begin{proposition}` and added narrative paragraph + proof | Took upstream: `observation` → `proposition` consistent with editorial rule #7 (derived results are propositions). Added narrative proofs from upstream. |
