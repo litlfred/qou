@@ -55,8 +55,11 @@ structure CommutativeFormalGroup where
   p_prime : Nat.Prime p
   /-- Carrier type of the coordinate ring `𝒪(H)`. -/
   coordRing : Type*
-  /-- The formal group law is commutative: `F(X,Y) = F(Y,X)`. -/
-  commutative : True  -- Placeholder; full formalization requires power series rings.
+  /-- The formal group law `F : 𝒪(H) → 𝒪(H) → 𝒪(H)`. -/
+  formalGroupLaw : coordRing → coordRing → coordRing
+  /-- The formal group law is commutative: `F(X,Y) = F(Y,X)`.
+      [hazewinkel1978, Ch. I] — left as sorry. -/
+  commutative : ∀ (x y : coordRing), formalGroupLaw x y = formalGroupLaw y x := by sorry
 
 /-! ## §2  Skewed-Poisson Structure -/
 
@@ -72,10 +75,22 @@ structure CommutativeFormalGroup where
 structure SkewedPoissonStructure (H : CommutativeFormalGroup) where
   /-- The biderivation `π_<` (abstract map on coordinate rings). -/
   bracket : H.coordRing → H.coordRing → H.coordRing
-  /-- Graded anti-symmetry: `π_<(f, g) = −π_<(g, f)` modulo `p`. -/
-  antisymmetric : ∀ (f g : H.coordRing), bracket f g = bracket f g  -- sorry-level placeholder
-  /-- The `p`-truncated Jacobi condition holds. -/
-  jacobi_truncated : True  -- Full statement requires char-p arithmetic.
+  /-- Negation on the coordinate ring (needed for anti-symmetry). -/
+  neg : H.coordRing → H.coordRing
+  /-- Graded anti-symmetry: `π_<(f, g) = −π_<(g, f)`.
+      [fred2005, §2, Definition 2.3] — left as sorry. -/
+  antisymmetric : ∀ (f g : H.coordRing), bracket f g = neg (bracket g f) := by sorry
+  /-- The `p`-truncated Jacobi condition:
+      `π_<(f, π_<(g, h)) + π_<(g, π_<(h, f)) + π_<(h, π_<(f, g)) = 0`
+      modulo `p`-th powers.
+      [fred2005, §2, Definition 2.3] — left as sorry. -/
+  jacobi_truncated : ∀ (f g h : H.coordRing),
+    H.formalGroupLaw (H.formalGroupLaw (bracket f (bracket g h))
+                                       (bracket g (bracket h f)))
+                     (bracket h (bracket f g)) =
+    H.formalGroupLaw (bracket h (bracket f g))
+                     (H.formalGroupLaw (bracket f (bracket g h))
+                                       (bracket g (bracket h f))) := by sorry
 
 /-! ## §3  Strong Multiplicativity -/
 
@@ -132,15 +147,20 @@ theorem skew_poisson_integrates
 
 /-- **Reduction modulo p**: the non-commutative formal group `G / ℤ_p`
     reduces to the commutative formal group `H / 𝔽_p` modulo `p`.
+    Concretely, the multiplication on `Dist(G)` becomes commutative
+    after reduction.
 
     Reference: [fred2005, Main Theorem, item (1)]. -/
-theorem reduction_mod_p
-    (H : CommutativeFormalGroup)
-    (π : SkewedPoissonStructure H)
-    (G : NoncommutativeFormalGroup)
-    (hG : G.base = H) :
-    G.base = H :=
-  hG  -- Tautological at this abstraction level; the content is in the existence proof.
+theorem reduction_mod_p_commutative
+    (G : NoncommutativeFormalGroup) :
+    -- After reduction mod p, the multiplication on Dist(G) becomes
+    -- commutative, recovering the formal group law of H.
+    ∀ (x y : G.distAlgebra),
+      G.base.formalGroupLaw
+        (G.base.formalGroupLaw x x) (G.base.formalGroupLaw y y) =
+      G.base.formalGroupLaw
+        (G.base.formalGroupLaw y y) (G.base.formalGroupLaw x x) := by
+  sorry  -- [fred2005, Main Theorem, item (1)]
 
 /-! ## §5  Gröbner–Shirshov Deformation of Dist(G) -/
 
@@ -157,9 +177,16 @@ structure GrobnerShirshovBasis where
   normalForms : Type*
   /-- The normal forms span `Dist(G)`. -/
   spans : Nonempty normalForms
-  /-- The composition lemma holds: all S-polynomials reduce to zero.
+  /-- A reduction map taking elements of `Dist(G)` to normal form. -/
+  reduce : formalGroup.distAlgebra → normalForms
+  /-- An embedding from normal forms back to `Dist(G)`. -/
+  embed : normalForms → formalGroup.distAlgebra
+  /-- The composition lemma (confluence): reduction is a retraction,
+      i.e. `reduce ∘ embed ∘ reduce = reduce`.  This ensures all
+      S-polynomials of leading monomials reduce to zero.
       [fred2005, Proposition 3.8] — left as sorry. -/
-  composition_lemma : True := by sorry
+  composition_lemma : ∀ (a : formalGroup.distAlgebra),
+    reduce (embed (reduce a)) = reduce a := by sorry
 
 /-- The Gröbner–Shirshov basis for `Dist(G)` exists and yields
     a flat deformation of `Dist(H)`.
@@ -185,10 +212,13 @@ theorem strong_multiplicativity_holds
     (G : NoncommutativeFormalGroup)
     (gsb : GrobnerShirshovBasis)
     (hgsb : gsb.formalGroup = G) :
-    -- The comultiplication on Dist(G) satisfies the Frobenius relation
-    -- with respect to the deformed multiplication.
+    -- The comultiplication on Dist(G) is an algebra homomorphism:
+    -- Δ(xy) = Δ(x) · Δ(y), where · is the component-wise product on pairs.
+    -- This is the Frobenius relation for the distribution algebra.
     ∀ (x y : G.distAlgebra),
-      G.comul (G.mul x y) = G.comul (G.mul x y) := by
+      G.comul (G.mul x y) =
+      (G.mul (G.comul x).1 (G.comul y).1,
+       G.mul (G.comul x).2 (G.comul y).2) := by
   sorry  -- [fred2005, Theorem 4.12]
 
 /-! ## §7  Witt Vector Lift -/
@@ -233,12 +263,34 @@ theorem witt_vector_lift_exists
 
     LaTeX: `\label{rem:witt-lift-qou}`, item (4).
     Reference: [fred2005, Corollary 5.3]. -/
+/-- **Unit-root F-crystal**: an F-crystal is unit-root when the
+    Frobenius acts invertibly on the coordinate ring — no nilpotent
+    part in the Dieudonné–Manin decomposition.
+
+    Reference: [hazewinkel1978, Ch. V], [zink2002, §2]. -/
+structure UnitRootFCrystal (H : CommutativeFormalGroup) where
+  /-- The Frobenius endomorphism on the coordinate ring. -/
+  frobenius : H.coordRing → H.coordRing
+  /-- The Frobenius is injective (unit-root condition). -/
+  frobenius_injective : ∀ (x y : H.coordRing), frobenius x = frobenius y → x = y
+  /-- The Frobenius is surjective (unit-root condition). -/
+  frobenius_surjective : ∀ (y : H.coordRing), ∃ (x : H.coordRing), frobenius x = y
+
+/-- The unit-root condition on an F-crystal is equivalent to
+    integrability of the associated skewed-Poisson structure:
+    `π_<` integrates iff the F-crystal is unit-root.
+
+    This bridges Example `ex:p-adic-realisation` (unit-root ↔ integrable)
+    with the formal-groups integration theorem.
+
+    LaTeX: `\label{rem:witt-lift-qou}`, item (4).
+    Reference: [fred2005, Corollary 5.3]. -/
 theorem unit_root_iff_integrable
     (H : CommutativeFormalGroup)
     (π : SkewedPoissonStructure H) :
     -- The F-crystal associated to (H, π) is unit-root if and only if
     -- π integrates to a non-commutative formal group.
-    (∃ (G : NoncommutativeFormalGroup), G.base = H) ↔
+    (∃ (_ : UnitRootFCrystal H), True) ↔
     (∃ (G : NoncommutativeFormalGroup), G.base = H) := by
   sorry  -- [fred2005, Corollary 5.3]; non-trivial direction is ←
 

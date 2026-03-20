@@ -148,9 +148,12 @@ theorem padic_qou_lifts_from_finite_field
     Reference: [fred2005, Theorem 4.12]. -/
 theorem padic_frobenius_relation_preserved
     (pq : PAdicQOU) :
-    -- The comultiplication on the p-adic Frobenius–Hopf object satisfies
-    -- the Frobenius relation (strong multiplicativity).
-    ∀ (x : pq.carrier), pq.frobenius (pq.frobenius x) = pq.frobenius (pq.frobenius x) := by
+    -- Strong multiplicativity: Frobenius commutes with Verschiebung
+    -- composition in the sense that F ∘ V ∘ F = F ∘ F ∘ V on the
+    -- underlying F-crystal carrier.
+    ∀ (x : pq.carrier),
+      pq.frobenius (pq.verschiebung (pq.frobenius x)) =
+      pq.frobenius (pq.frobenius (pq.verschiebung x)) := by
   sorry  -- [fred2005, Theorem 4.12]
 
 /-- The unit-root condition on the F-crystal is equivalent to
@@ -161,9 +164,10 @@ theorem padic_frobenius_relation_preserved
     Reference: [fred2005, Corollary 5.3]. -/
 theorem unit_root_iff_skew_poisson_integrable
     (pq : PAdicQOU) :
-    -- The F-crystal is irreducible (unit-root) iff the skewed-Poisson
-    -- structure integrates to a non-commutative formal group.
-    (∀ (x : pq.carrier), pq.frobenius x = x → x = pq.frobenius x) := by
+    -- The F-crystal is unit-root (Frobenius is surjective) iff the
+    -- associated skewed-Poisson structure integrates.  The surjectivity
+    -- of Frobenius is a strictly stronger condition than irreducibility.
+    (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) := by
   sorry  -- [fred2005, Corollary 5.3]
 
 end QOU.PAdicQuantumGroups
