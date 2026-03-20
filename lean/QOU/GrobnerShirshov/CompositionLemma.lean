@@ -7,26 +7,15 @@ theory, Bergman 1978) is the central result of Gröbner–Shirshov theory:
 > A rewriting system `Σ` is confluent (hence yields unique normal forms)
 > **if and only if** every S-polynomial of `Σ` reduces to zero.
 
-This module proves the lemma in the abstract setting of `Basic.lean`
-and then derives the key corollaries:
+This module states the lemma and its corollaries using the proper
+reduction relations defined in `Basic.lean`:
 
-1. **Uniqueness of normal forms** — confluence + termination.
-2. **Embedding theorem** — the normal-form monomials form a `k`-basis
-   of the quotient algebra `k⟨G⟩ / (Σ)`.
-3. **Retraction property** — `reduce ∘ embed ∘ reduce = reduce`,
-   which is exactly `GrobnerShirshovBasis.composition_lemma` in
-   `FormalGroups.lean`.
-
-## Proof strategy
-
-The proof follows Bergman's original argument:
-
-- **Termination**: guaranteed by the well-founded admissible order
-  (every reduction step strictly decreases the leading monomial).
-- **Local confluence**: the only possible non-trivial forks are
-  overlap and inclusion compositions (S-polynomials).  The hypothesis
-  that all S-polynomials reduce to zero gives local confluence.
-- **Newman's lemma**: termination + local confluence ⟹ confluence.
+1. **Termination** — well-founded induction on the admissible order.
+2. **Local confluence** — from S-polynomial resolution.
+3. **Confluence** — Newman's lemma (termination + local confluence).
+4. **Uniqueness of normal forms** — from confluence.
+5. **Idempotency of reduce** — the composition lemma itself.
+6. **Retraction property** — bridge to `FormalGroups.lean`.
 
 ## References
 
@@ -45,93 +34,102 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
 /-! ## §1  Termination -/
 
-/-- Every sequence of reductions terminates: each reduction step strictly
-    decreases the leading monomial under the admissible order. -/
-theorem reduction_terminates
+/-- Every sequence of single-step reductions is finite: the reduction
+    relation is well-founded.
+
+    Proof sketch: each `SingleStepReduction` strictly decreases the
+    leading monomial under the admissible order.  Since `ord.wf` is
+    well-founded, no infinite descending chain of reductions exists. -/
+theorem reduction_well_founded
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
-    -- For any element f, iterated reduction reaches normal form
-    -- in finitely many steps.
-    ∀ (f : AlgElement G k),
-      ∃ (n : ℕ), ∀ (m : ℕ), n ≤ m →
-        True := by
-  -- Follows directly from ord.wf (well-foundedness).
-  -- Each reduction step replaces a monomial m in supp(f) by monomials
-  -- strictly smaller than m.  The multiset of support monomials
-  -- decreases in the Dershowitz–Manna ordering, which is well-founded
-  -- when the base order is.
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f := by
+  -- Each single-step reduction strictly decreases the multiset of
+  -- monomials in the support under the Dershowitz–Manna ordering,
+  -- which inherits well-foundedness from ord.wf.
   intro f
-  exact ⟨0, fun _ _ => trivial⟩
+  exact ord.wf.apply f  -- well-founded induction on elements via the order
 
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
-/-- **Local confluence**: if all S-polynomials reduce to zero, then
-    whenever an element `f` can be reduced in two different ways to
-    `g₁` and `g₂`, there exists a common reduct `h` reachable from both.
+/-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
+    system is a GS basis), then whenever `f → g₁` and `f → g₂` by
+    single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
 
-    The proof analyses the two cases:
-    - **Disjoint reductions**: the two reduction sites do not overlap,
-      so both can be applied independently (Church–Rosser).
-    - **Overlapping reductions**: the overlap forms an S-polynomial,
-      which reduces to zero by hypothesis. -/
+    The proof analyses three cases:
+    - **Disjoint reductions**: non-overlapping sites → apply both.
+    - **Overlap**: the difference `g₁ − g₂` is an S-polynomial,
+      which reduces to zero by `hgs.overlap_resolves`.
+    - **Inclusion**: similarly by `hgs.inclusion_resolves`. -/
 theorem local_confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
-    -- For any f and single-step reducts g₁, g₂ of f,
-    -- ∃ h reachable from both g₁ and g₂.
-    ∀ (_f _g₁ _g₂ : AlgElement G k),
-      True := by
-  -- Case analysis on whether the reduction sites overlap.
-  -- Case 1 (disjoint): trivially confluent — apply both rules.
-  -- Case 2 (overlap): the difference g₁ − g₂ is an S-polynomial
-  --   of the two rules.  By hgs.overlap_resolves, this S-polynomial
-  --   reduces to zero, so g₁ and g₂ have a common reduct.
-  -- Case 3 (inclusion): similarly by hgs.inclusion_resolves.
-  intro _ _ _; trivial
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (f g₁ g₂ : AlgElement G k)
+    (h₁ : SingleStepReduction ord sys f g₁)
+    (h₂ : SingleStepReduction ord sys f g₂) :
+    ∃ (h : AlgElement G k),
+      MultiStepReduction ord sys g₁ h ∧
+      MultiStepReduction ord sys g₂ h := by
+  -- Case analysis on the geometric relationship of the two
+  -- reduction sites within f:
+  --
+  -- Case 1 (disjoint): the two sites don't overlap.
+  --   Then both reductions commute: apply h₂ to g₁ and h₁ to g₂
+  --   to reach the same h.
+  --
+  -- Case 2 (overlap composition): the leading monomials overlap.
+  --   The difference g₁ - g₂ is an overlap S-polynomial.
+  --   By hgs.overlap_resolves, this S-polynomial reduces to zero,
+  --   providing the common reduct.
+  --
+  -- Case 3 (inclusion composition): one leading monomial contains
+  --   the other. Similarly by hgs.inclusion_resolves.
+  sorry  -- Full proof requires algebra operations (subtraction of AlgElements)
 
-/-! ## §3  Newman's Lemma: Termination + Local Confluence ⟹ Confluence -/
+/-! ## §3  Confluence (Newman's Lemma) -/
 
-/-- **Newman's lemma** (adapted): a terminating, locally confluent
-    rewriting system is confluent.
+/-- **Newman's lemma**: a terminating, locally confluent rewriting
+    system is confluent.
 
     Since our reduction terminates (§1) and is locally confluent when
-    all S-polynomials resolve (§2), we obtain full confluence. -/
+    all S-polynomials resolve (§2), any two multi-step reducts of the
+    same element have a common reduct. -/
 theorem confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
-    -- For any f and reducts g₁, g₂ (after arbitrarily many steps),
-    -- ∃ h reachable from both.
-    ∀ (_f : AlgElement G k),
-      True := by
-  -- By well-founded induction using ord.wf and local_confluence.
-  intro _; trivial
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (f g₁ g₂ : AlgElement G k)
+    (h₁ : MultiStepReduction ord sys f g₁)
+    (h₂ : MultiStepReduction ord sys f g₂) :
+    ∃ (h : AlgElement G k),
+      MultiStepReduction ord sys g₁ h ∧
+      MultiStepReduction ord sys g₂ h := by
+  -- By well-founded induction on f using ord.wf, applying
+  -- local_confluence at each fork and composing the joinability
+  -- witnesses.  This is the standard Newman's lemma argument.
+  sorry  -- Requires induction on MultiStepReduction derivations
 
 /-! ## §4  Uniqueness of Normal Forms -/
 
-/-- **Uniqueness of normal forms**: in a confluent, terminating system,
-    every element has exactly one normal form.
+/-- **Uniqueness of normal forms**: if `f →* nf₁` and `f →* nf₂`
+    where both `nf₁` and `nf₂` are in normal form, then `nf₁ = nf₂`.
 
-    Proof: by confluence (§3), any two reducts `nf₁`, `nf₂` of `f`
-    have a common reduct `h`.  Since `nf₁` and `nf₂` are in normal
-    form (irreducible), the only reduct of each is itself.  Hence
-    `nf₁ = h = nf₂`.
+    Proof: by confluence, `nf₁` and `nf₂` have a common reduct `h`.
+    Since both are in normal form (no reduction applies), `h = nf₁`
+    and `h = nf₂`, hence `nf₁ = nf₂`.
 
-    We formalise this as an axiom at the abstract level, since the
-    full proof requires a constructive reduction relation with explicit
-    step tracking.  The axiom is justified by Bergman's Diamond Lemma
-    (Adv. Math. 29, 1978) and is verified computationally for each
-    concrete instantiation (U_q, Dist(G)) in NormalForms.lean. -/
+    Axiomatised because the full proof requires:
+    1. Confluence (which depends on algebra operations for S-poly reduction).
+    2. The fact that normal forms are irreducible under →.
+
+    Justified by Bergman 1978, Theorem 1.2. -/
 axiom normal_form_unique
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (f : AlgElement G k)
-    (nf₁ nf₂ : AlgElement G k)
-    (h₁ : isNormalForm ord sys nf₁)
-    (h₂ : isNormalForm ord sys nf₂)
+    (f nf₁ nf₂ : AlgElement G k)
     (hred₁ : ReducesToNF ord sys f nf₁)
     (hred₂ : ReducesToNF ord sys f nf₂)
     : nf₁ = nf₂
@@ -140,57 +138,44 @@ axiom normal_form_unique
 
 /-- **The Composition Lemma** (Shirshov 1962, Bokut 1976, Bergman 1978):
 
-    A rewriting system `Σ` over a free associative algebra `k⟨G⟩`
-    equipped with an admissible order is a **Gröbner–Shirshov basis**
-    (all S-polynomials reduce to zero) if and only if the normal-form
-    monomials (those not containing any leading monomial of `Σ` as a
-    subword) form a `k`-basis of the quotient `k⟨G⟩ / (Σ)`.
+    The reduction map is **idempotent**: `reduce (reduce f) = reduce f`.
 
-    **Forward direction** (the one we use): GS basis ⟹ normal forms
-    are a basis.  This follows from uniqueness of normal forms
-    (confluence) and the fact that every element reduces to a unique
-    linear combination of normal-form monomials.
+    This encodes the forward direction of the diamond lemma: a GS basis
+    (all S-polynomials reduce to zero) implies that normal-form monomials
+    form a `k`-basis of the quotient `k⟨G⟩ / (Σ)`.
 
-    **Reverse direction**: if the normal forms are a basis, then every
-    S-polynomial, being in the ideal `(Σ)`, must reduce to zero. -/
+    Proof: `reduce f` is in normal form (by `reduce_is_normal`), so it
+    reduces to itself in zero steps.  By `normal_form_unique`, the
+    chosen normal form of `reduce f` must equal `reduce f`. -/
 theorem composition_lemma
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys) :
-    -- The reduction map is idempotent: reduce ∘ reduce = reduce.
-    -- This encodes that normal-form monomials are a k-basis of k⟨G⟩/(Σ).
     ∀ (f : AlgElement G k),
       reduce ord sys hgs (reduce ord sys hgs f) = reduce ord sys hgs f := by
   intro f
-  -- Let nf = reduce f.  By reduce_is_normal, nf is in normal form.
-  -- reduce nf is the chosen normal form of nf.
-  -- Since nf is already in normal form, it reduces to itself in 0 steps.
-  -- By normal_form_unique, reduce nf = nf.
-  set nf := reduce ord sys hgs f with hnf_def
-  set nf' := reduce ord sys hgs nf with hnf'_def
-  -- Both nf and nf' are normal forms of nf
+  set nf := reduce ord sys hgs f
+  set nf' := reduce ord sys hgs nf
+  -- nf is in normal form
   have h_nf_normal := reduce_is_normal ord sys hgs f
+  -- nf' is in normal form
   have h_nf'_normal := reduce_is_normal ord sys hgs nf
-  -- nf reduces to itself (0 steps, already normal)
-  have h_nf_reduces : ReducesToNF ord sys nf nf :=
-    ⟨h_nf_normal, 0⟩
-  -- nf' is the chosen normal form of nf
-  have h_nf'_reduces : ReducesToNF ord sys nf nf' :=
-    (normal_form_exists ord sys hgs nf).choose_spec
-  -- By uniqueness, nf' = nf
-  exact (normal_form_unique ord sys hgs nf nf' nf h_nf'_normal h_nf_normal
-    h_nf'_reduces h_nf_reduces).symm
+  -- nf reduces to itself (zero steps, already normal)
+  have h_nf_self : ReducesToNF ord sys nf nf :=
+    ⟨MultiStepReduction.refl nf, h_nf_normal⟩
+  -- nf' is a normal form of nf (via reduce)
+  have h_nf'_red : ReducesToNF ord sys nf nf' :=
+    ⟨reduce_reduces ord sys hgs nf, h_nf'_normal⟩
+  -- By uniqueness: nf' = nf
+  exact (normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self).symm
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 
 /-- The retraction property `reduce ∘ embed ∘ reduce = reduce`
     needed by `FormalGroups.GrobnerShirshovBasis.composition_lemma`.
 
-    Here `embed` is the inclusion of normal-form monomials back into
-    the full algebra.  Since normal forms are already elements of the
-    algebra, `embed` is essentially the identity on the image of
-    `reduce`.  The retraction property then follows from idempotency
-    of `reduce`. -/
+    If `embed` is the identity on reduced elements, then the property
+    follows from idempotency of `reduce`. -/
 theorem retraction_property
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
