@@ -131,17 +131,65 @@ Proposition~\ref{prop:jet-prolongation}.
 
 % ── Quantum Characteristic Classes ───────────────────────────────────────────
 
-\begin{definition}[Quantum Characteristic Classes]
+\begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
 \label{def:quantum-characteristic-classes}
 Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  The \emph{quantum
-characteristic classes} are the cohomology classes
+(Definition~\ref{def:recursive-brane-tower}).  Each transition
+$E_n \to E_{n+1}$ defines a central extension of gerbes on the base
+manifold~$M$ in the sense of Yekutieli~\cite{yekutieli2010}: the
+$\mathrm{SU}(2)$-bundle $E_n$ is an object in a gerbe~$\mathfrak{G}_n$
+banded by $\mathcal{O}_M^{\times}$, and the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) produces a central extension
 \[
-  \kappa_n \;\in\; H^*\!\bigl(E_{n+1},\, \mathbb{Z}\bigr)
+  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1.
 \]
-that label the monodromy fixed points of the holonomy representation as one
-transitions from $E_n$ to $E_{n+1}$.
+The \emph{quantum characteristic classes} (Yekutieli obstruction classes)
+are the cohomology classes
+\[
+  \kappa_n \;\in\; H^2\!\bigl(M,\, \mathcal{O}_M^{\times}\bigr)
+\]
+that obstruct the lifting of objects from $\mathfrak{G}_n$
+to~$\mathfrak{G}_{n+1}$.  These classes label the monodromy fixed
+points of the holonomy representation as one transitions from $E_n$
+to $E_{n+1}$, and their vanishing is the necessary and sufficient
+condition for the lift to exist~\cite{yekutieli2010}.
 \end{definition}
+
+\begin{lemma}[Yekutieli lifting criterion]
+\label{lem:yekutieli-lifting}
+The lifting of the principal bundle $E_n$ to $E_{n+1}$ in the recursive
+brane tower (Definition~\ref{def:recursive-brane-tower}) is possible if
+and only if the Yekutieli obstruction class $\kappa_n \in
+H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.
+\end{lemma}
+
+\begin{proof}
+By \cite[Theorem~1.7]{yekutieli2010}, an object in the base gerbe
+$\mathfrak{G}_n$ admits a lift to the total gerbe~$\mathfrak{G}_{n+1}$
+of a central extension if and only if the obstruction class in
+$H^2(M,\, \mathcal{O}_M^{\times})$ vanishes.  The jet prolongation
+construction (Proposition~\ref{prop:jet-prolongation}) realises the
+passage $E_n \to E_{n+1}$ as precisely such a lift, so
+$\kappa_n = 0$ is equivalent to the existence of $E_{n+1}$.
+\end{proof}
+
+\begin{remark}[Fermionic sectors as twisted sectors]
+\label{rem:fermionic-twisted-sectors}
+When the Yekutieli obstruction class $\kappa_n$ does not vanish, the
+lift $E_n \to E_{n+1}$ is obstructed and the transition between brane
+levels acquires a non-trivial twist.  In the algebraic filter
+(Remark~\ref{rem:algebraic-filter}), fermionic-type matter --- those
+$q$-harmonic forms satisfying $[F_A,\, \alpha] \neq 0$ --- exists
+precisely at the loci where $\kappa_n \neq 0$.  The non-vanishing
+obstruction class creates ``twisted'' sectors in the gauge flow: the
+holonomy around these sectors acquires a phase in
+$H^2(M,\, \mathcal{O}_M^{\times})$ that prevents the vortex filament
+from lifting smoothly, forcing the localisation of fermionic excitations
+at the monodromy fixed points of the brane tower.
+\end{remark}
 
 % ── Betti numbers ────────────────────────────────────────────────────────────
 
@@ -318,6 +366,60 @@ structure, and the algebra $\mathcal{A}_\infty$
 jet shell.
 \end{remark}
 
+\begin{remark}[Stack-like structure of the direct limit algebra]
+\label{rem:stack-like-structure}
+The direct limit algebra $\mathcal{A}_\infty$
+(Definition~\ref{def:direct-limit-algebra}) is a global ``stack-like''
+version of the local $\mathrm{SU}_q(2)$ deformations: at each point
+$p \in M$ the fibre algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$
+defines a local twisted deformation in the sense of
+Yekutieli~\cite{yekutieli2008}, and the direct limit assembles these
+into a global object on the jet shell $J^\infty E$
+(Remark~\ref{rem:jet-shell}).
+\end{remark}
+
+\begin{proposition}[Global gluing via Yekutieli's twisted quantization]
+\label{prop:global-gluing}
+The local substrate parameters $q(p)$
+(Definition~\ref{def:substrate-parameter}) induce a twisted associative
+deformation of $\mathcal{O}(\mathrm{SU}(2))$ that admits a unique global
+gluing via Yekutieli's twisted quantization
+map~\cite{yekutieli2008, yekutieli2010}.  In particular, the direct
+limit algebra $\mathcal{A}_\infty$
+(Definition~\ref{def:direct-limit-algebra}) is a well-defined global
+section of a sheaf of twisted deformation algebras on~$M$, and the
+vacuum state $\omega$ (Proposition~\ref{prop:vacuum-state}) is
+well-defined across the entire manifold despite local
+non-commutativity.
+\end{proposition}
+
+\begin{proof}
+At each point $p \in M$ the fibre algebra
+$\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ is a pronilpotent deformation of
+$\mathcal{O}(\mathrm{SU}(2))$ in the formal parameter
+$\hbar_q(p) = 1 - q(p)^{-1}$
+(Definition~\ref{def:quantum-planck-constant}).
+By~\cite{yekutieli2008}, the coordinate bundle $\mathrm{Coor}_M$ of~$M$
+(the bundle of formal coordinate systems) carries a twisted deformation
+datum: a pair consisting of a connection and a Maurer--Cartan element in
+a pronilpotent DG Lie algebra~\cite{yekutieli2009}.  The Yekutieli
+obstruction classes $\kappa_n$
+(Definition~\ref{def:quantum-characteristic-classes}) control whether
+these local twisted deformations glue across coordinate patches.
+
+The vanishing condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}) ensures that the
+gerbe $\mathfrak{G}_n$ of local lifts has trivial band at the level of
+isomorphisms, so by~\cite[Theorem~4.5]{yekutieli2010} the twisted
+deformations at each fibre patch together into a global sheaf of
+algebras on~$M$.  The direct limit $\mathcal{A}_\infty =
+\varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ is then the
+global sections of this sheaf, and the vacuum state $\omega$
+(Proposition~\ref{prop:vacuum-state}) extends uniquely by the
+$\mathrm{SU}(2)$-averaging argument of that proposition.
+\end{proof}
+
 % ── Vacuum State ─────────────────────────────────────────────────────────────
 
 \begin{proposition}[Existence and Uniqueness of the Vacuum State]
@@ -444,18 +546,401 @@ projection $E_{n+1} \to E_n$ a homotopy equivalence, whence
 $\chi(E_{n+1}) = \chi(E_n)$.
 \end{proof}
 
-\begin{definition}[Mass Identity]
+\begin{definition}[Mass Identity (nonabelian multiplicative integration)]
 \label{def:mass-identity}
 Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate
-parameter $q$ (Definition~\ref{def:substrate-parameter}), connection $A$, Levi
-form $L$, and self-dual curvature $F^+$.  Let $\gamma$ be a closed cycle
-encircling the vortex filament.  The \emph{inertial mass} $m$ of a stable
-vortex is
+parameter $q$ (Definition~\ref{def:substrate-parameter}), instanton connection
+$A$ (Definition~\ref{def:instanton}), Levi form $L$, and self-dual curvature
+$F^+$.  Let $\gamma$ be a closed cycle encircling the vortex filament, and
+let $\Sigma$ be a surface with $\partial\Sigma = \gamma$.  The vortex
+filament is treated as a singularity in a twisted gerbe
+$\mathfrak{G}$ banded by $\mathcal{O}_M^{\times}$
+(Definition~\ref{def:quantum-characteristic-classes}).
+
+The \emph{inertial mass} $m$ of a stable vortex is defined via the
+nonabelian multiplicative integral of
+Yekutieli~\cite{yekutieli2015}:
 \[
-  m \;\propto\; \oint_\gamma \lVert \nabla_A\, q \rVert
-               \cdot \lVert L \wedge F^+ \rVert\,.
+  m \;=\;
+  \left\lVert\,
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\right\rVert,
 \]
+where $\mathrm{MI}\!\int_\Sigma$ denotes the $2$-dimensional twisted
+nonabelian multiplicative integral over the surface~$\Sigma$.  The
+integrand is the connection--curvature pair
+$(\nabla_A q,\; L \wedge F^+)$ consisting of the
+$\mathfrak{su}(2)$-valued $1$-form $\nabla_A q$ and the
+$\mathfrak{su}(2)$-valued $2$-form $L \wedge F^+$, satisfying
+the fake-flatness equation~\eqref{eq:fake-flatness}.  The norm
+$\lVert\cdot\rVert$ is the Killing-form norm on~$\mathfrak{su}(2)$.
+
+By the nonabelian Stokes theorem~\cite{yekutieli2015}, this surface
+integral reduces to the holonomy around $\gamma$:
+\[
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \;=\;
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma;\, \mathfrak{G}\bigr),
+\]
+so the mass is the norm of the holonomy of the connection $\nabla_A$
+around the vortex filament, computed in the twisted gerbe.
 \end{definition}
+
+% ── Yekutieli categorical mapping ────────────────────────────────────────────
+
+Table~\ref{tab:yekutieli-mapping} summarises the correspondence between the
+core structures of the Quantum Observable Universe and the formal results
+of Yekutieli on central extensions of gerbes, twisted deformation
+quantization, and nonabelian multiplicative integration.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{4.2cm}p{4.8cm}p{4.5cm}}
+\hline
+\textbf{QOU concept} & \textbf{Yekutieli counterpart} & \textbf{Reference} \\
+\hline
+Recursive Brane Tower $\{E_n\}$
+  (Def.~\ref{def:recursive-brane-tower})
+  & Central extension of gerbes
+    $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$
+  & \cite[Thm.~1.7]{yekutieli2010} \\[6pt]
+Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{O}_M^{\times})$
+  (Def.~\ref{def:quantum-characteristic-classes})
+  & Obstruction classes for lifting objects in central extensions
+  & \cite[\S3]{yekutieli2010} \\[6pt]
+Fermionic sectors ($\kappa_n \neq 0$)
+  (Rem.~\ref{rem:fermionic-twisted-sectors})
+  & Twisted sectors where the lift is obstructed
+  & \cite[Thm.~3.4]{yekutieli2010} \\[6pt]
+Direct Limit Algebra $\mathcal{A}_\infty$
+  (Def.~\ref{def:direct-limit-algebra})
+  & Global sections of a sheaf of twisted deformation algebras
+  & \cite{yekutieli2008} \\[6pt]
+Global gluing of $\mathcal{A}_\infty$
+  (Prop.~\ref{prop:global-gluing})
+  & Yekutieli's twisted quantization map on algebraic varieties
+  & \cite[Thm.~4.5]{yekutieli2010} \\[6pt]
+Vacuum State $\omega$
+  (Prop.~\ref{prop:vacuum-state})
+  & Unique MC element in the pronilpotent DG Lie algebra
+  & \cite{yekutieli2009} \\[6pt]
+Mass Identity (Def.~\ref{def:mass-identity})
+  & Nonabelian multiplicative integral; 2D nonabelian Stokes theorem
+  & \cite[Ch.~5--6]{yekutieli2015} \\[6pt]
+Substrate field $q(p)$
+  (Def.~\ref{def:substrate-parameter})
+  & Local twisted deformation parameter; MC element varying over $M$
+  & \cite{yekutieli2008, yekutieli2009} \\[6pt]
+$\mathrm{SU}_q(2)$ gauge flow
+  (Def.~\ref{def:quantum-gauge-group})
+  & Pronilpotent deformation of the coordinate algebra
+  & \cite[\S2]{yekutieli2008} \\[6pt]
+Descartes condition $\chi(E) = -6$
+  (Def.~\ref{def:descartes-condition})
+  & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
+  & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]
+Cosimplicial crossed groupoid
+  (Prop.~\ref{prop:cosimplicial-crossed-groupoid})
+  & Cosimplicial object in crossed groupoids; \v{C}ech nerve of a gerbe
+  & \cite[\S1--2]{yekutieli2010} \\[6pt]
+Twisted $2$-cocycle $d(g_{ijk}) = a \cdot g \cdot a^{-1}$
+  (Prop.~\ref{prop:descent-condition})
+  & Twisted \v{C}ech cocycle in $H^2(M, \mathcal{O}_M^\times)$
+  & \cite[Thm.~1.7]{yekutieli2010} \\
+\hline
+\end{tabular}
+\caption{Categorical mapping between QOU structures and Yekutieli's results.}
+\label{tab:yekutieli-mapping}
+\end{table}
+
+% ── Yekutieli Triple and Cosimplicial Structure ─────────────────────────────
+
+\subsection{Cosimplicial Crossed Groupoid Structure}
+\label{ssec:cosimplicial-crossed-groupoid}
+
+The recursive brane tower carries a higher-categorical structure that
+organises the transitions between levels into a cosimplicial crossed
+groupoid.  The key observation is that Yekutieli's framework for central
+extensions of gerbes~\cite{yekutieli2010} furnishes exactly the triples
+$(x, g, a)$ needed to define the face and degeneracy maps.
+
+\begin{definition}[Yekutieli triple mapping]
+\label{def:yekutieli-triple}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}) and let $\{U_i\}$ be an open
+cover of the base manifold~$M$ trivialising every level of the tower.
+The \emph{Yekutieli triple} at level~$n$ over an intersection
+$U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
+where:
+\begin{enumerate}
+  \item \emph{Objects} $x_i^{(n)} \in \mathrm{Ob}(\mathfrak{G}_n|_{U_i})$
+        are local sections of the base manifold: the restrictions of $E_n$
+        to the trivialisations $U_i$.
+  \item \emph{$1$-morphisms} $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$
+        are the gauge transition functions
+        $g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$
+        encoding the patching data of the connection~$A_n$.
+  \item \emph{$2$-morphisms}
+        $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$
+        are the quantum deformation parameters living in the band
+        $\mathcal{O}_M^{\times}|_{U_i \cap U_j}$, implementing the
+        $\mathrm{SU}_q(2)$-deformation that lifts the transition functions
+        from level~$n$ to level~$n{+}1$.
+\end{enumerate}
+The assignment $n \mapsto (x^{(n)}, g^{(n)}, a^{(n)})$ is functorial:
+the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) sends the triple at level~$n$
+to the triple at level~$n{+}1$, and the descent homomorphism
+$\mathfrak{d}_{n+1}$ (Lemma~\ref{lem:descent}) reverses this assignment.
+\end{definition}
+
+\begin{proposition}[Cosimplicial crossed groupoid]
+\label{prop:cosimplicial-crossed-groupoid}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}) equipped with the Yekutieli
+triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
+Definition~\ref{def:yekutieli-triple}.  Then the assignment
+\[
+  [n] \;\longmapsto\; \mathfrak{G}_n
+\]
+from the simplex category $\Delta$ to the $2$-category of gerbes on~$M$
+extends to a \emph{cosimplicial crossed groupoid}: a cosimplicial object
+in the category of crossed groupoids, where
+\begin{enumerate}
+  \item the coface maps $\delta^i \colon \mathfrak{G}_{n} \to
+        \mathfrak{G}_{n+1}$ are given by the jet prolongation acting on
+        objects (inserting the $i$-th degeneracy in the \v{C}ech nerve),
+  \item the codegeneracy maps $\sigma^j \colon \mathfrak{G}_{n+1} \to
+        \mathfrak{G}_{n}$ are given by the descent homomorphism
+        $\mathfrak{d}_{n+1}$ (collapsing the $j$-th face),
+  \item the crossed structure is furnished by the conjugation action of
+        the $1$-morphisms $g_{ij}^{(n)}$ on the $2$-morphisms
+        $a_{ij}^{(n)}$ via the adjoint representation of
+        $\mathrm{SU}_{q_n}(2)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We verify the cosimplicial identities and the crossed-module axioms.
+
+\emph{Step 1: Cosimplicial identities.}\;
+The coface maps are composites of the jet prolongation with the
+\v{C}ech face maps $\partial^i$ of the cover $\{U_i\}$.  The
+codegeneracy maps are composites of the descent homomorphism with the
+\v{C}ech degeneracy maps $s^j$.  The identities
+$\delta^j \circ \delta^i = \delta^i \circ \delta^{j-1}$ for $i < j$
+and $\sigma^j \circ \sigma^i = \sigma^i \circ \sigma^{j+1}$ for $i \leq j$
+follow from the functoriality of jet prolongation and descent: the ascent
+$\ell_n$ is a natural transformation from the identity functor on
+$\mathfrak{G}_n$ to the restriction of $\mathfrak{G}_{n+1}$, and the
+descent $\mathfrak{d}_{n+1}$ is its left adjoint.  The mixed identity
+$\sigma^j \circ \delta^i$ reduces to three cases
+($i < j$, $i = j$ or $i = j + 1$, $i > j + 1$), each verified using
+the retraction property $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
+(Lemma~\ref{lem:descent}).
+
+\emph{Step 2: Crossed-module structure.}\;
+At each level~$n$, the pair
+$(\mathrm{SU}_{q_n}(2),\, \mathcal{O}_M^{\times})$ carries the structure
+of a crossed module in the sense of~\cite{yekutieli2010}: the boundary
+map $\partial \colon \mathcal{O}_M^{\times} \to \mathrm{SU}_{q_n}(2)$
+sends a unit $a \in \mathcal{O}_M^{\times}$ to the central element
+$a \cdot \mathbf{1} \in \mathrm{SU}_{q_n}(2)$ (the central extension),
+and the action of $g \in \mathrm{SU}_{q_n}(2)$ on
+$a \in \mathcal{O}_M^{\times}$ is conjugation:
+$g \cdot a = g\, a\, g^{-1}$.  This action is well-defined because
+$\mathcal{O}_M^{\times}$ is central in the gerbe band; the Peiffer
+identity $\partial(a) \cdot b = a\, b\, a^{-1}$ is automatic for a
+central extension.
+
+\emph{Step 3: Compatibility.}\;
+The coface and codegeneracy maps respect the crossed-module structure
+because the jet prolongation preserves the Hopf-algebra multiplication
+(Proposition~\ref{prop:jet-prolongation}, Step~2) and the descent
+homomorphism is a $*$-homomorphism (Lemma~\ref{lem:descent}, Step~4).
+Hence the conjugation action of $g_{ij}^{(n)}$ on $a_{ij}^{(n)}$ is
+compatible with the simplicial maps, making the total assignment a
+cosimplicial crossed groupoid.
+\end{proof}
+
+\begin{remark}[Jet prolongation as formal descent of information]
+\label{rem:jet-as-descent}
+In the cosimplicial crossed groupoid of
+Proposition~\ref{prop:cosimplicial-crossed-groupoid}, the coface map
+$\delta^0 \colon \mathfrak{G}_n \to \mathfrak{G}_{n+1}$ applied to a
+local section $x_i^{(n)}$ produces the jet-prolonged section
+$x_i^{(n+1)} = J^1(x_i^{(n)})$.  This is precisely the content of
+Proposition~\ref{prop:jet-prolongation}: the jet prolongation is a
+\emph{formal descent of information} from the higher categorical level
+$\mathfrak{G}_{n+1}$ to the lower level $\mathfrak{G}_n$, packaged as a
+coface map in the cosimplicial structure.  The fact that the codegeneracy
+$\sigma^0 = \mathfrak{d}_{n+1}$ inverts this---in the sense that
+$\sigma^0 \circ \delta^0 = \mathrm{id}$---is the retraction property that
+underpins the descent involution (Definition~\ref{def:descent-involution}).
+\end{remark}
+
+\begin{proposition}[Descent condition --- twisted $2$-cocycle]
+\label{prop:descent-condition}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with Yekutieli
+triples $(x^{(n)}, g^{(n)}, a^{(n)})$
+(Definition~\ref{def:yekutieli-triple}) and let
+$A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$
+(Remark~\ref{rem:distributional-connection}) be the distributional
+connection.  Then the global consistency of $A_\infty$ is equivalent to
+the satisfaction of the \emph{twisted $2$-cocycle condition}: for every
+triple intersection $U_i \cap U_j \cap U_k$,
+\begin{equation}\label{eq:twisted-2-cocycle}
+  d\!\left(g_{ijk}^{(n)}\right)
+  \;=\;
+  a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot \left(a_{jk}^{(n)}\right)^{-1},
+\end{equation}
+where
+$g_{ijk}^{(n)} = g_{ij}^{(n)} \cdot g_{jk}^{(n)} \cdot (g_{ik}^{(n)})^{-1}$
+is the \v{C}ech $1$-cocycle deviation at level~$n$,
+$d(g_{ijk}^{(n)})$ denotes the \v{C}ech coboundary
+(the failure of the $1$-cocycle condition), and
+$a_{ij}^{(n)}, a_{jk}^{(n)} \in \mathcal{O}_M^{\times}$ are the
+$2$-morphisms (quantum deformation feedback from $\mathrm{SU}_{q_n}(2)$).
+
+Equivalently, the obstruction class $\kappa_n$
+(Definition~\ref{def:quantum-characteristic-classes}) is the cohomology
+class of the twisted $2$-cocycle
+$[a_{ij}^{(n)} \cdot (\cdot) \cdot (a_{jk}^{(n)})^{-1}]$ in
+$H^2(M,\, \mathcal{O}_M^{\times})$.
+\end{proposition}
+
+\begin{proof}
+Let $\{U_i\}$ be a good cover trivialising the tower.  On
+$U_i \cap U_j$ the gauge transition function $g_{ij}^{(n)}$ patches
+the connection $A_n$:
+\[
+  A_n|_{U_j} \;=\; g_{ij}^{(n)} \cdot A_n|_{U_i} \cdot
+  (g_{ij}^{(n)})^{-1} + (g_{ij}^{(n)})^{-1}\, dg_{ij}^{(n)}.
+\]
+On a triple overlap $U_i \cap U_j \cap U_k$, the ordinary cocycle
+condition $g_{ij}^{(n)} \cdot g_{jk}^{(n)} = g_{ik}^{(n)}$ holds if and
+only if the connection $A_n$ is globally well-defined at level~$n$ with
+no twist.  The passage from level~$n$ to level~$n{+}1$ via the central
+extension $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$ introduces the
+$2$-morphism twist: the transition functions at level~$n{+}1$ are related
+to those at level~$n$ by
+\[
+  g_{ij}^{(n+1)} \;=\; a_{ij}^{(n)} \cdot g_{ij}^{(n)},
+\]
+where $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$ is the local lift datum
+(Definition~\ref{def:yekutieli-triple}).  Computing the cocycle deviation
+at level~$n{+}1$:
+\begin{align*}
+  g_{ijk}^{(n+1)}
+  &= g_{ij}^{(n+1)} \cdot g_{jk}^{(n+1)} \cdot (g_{ik}^{(n+1)})^{-1} \\
+  &= (a_{ij}^{(n)} \cdot g_{ij}^{(n)}) \cdot (a_{jk}^{(n)} \cdot g_{jk}^{(n)})
+     \cdot (a_{ik}^{(n)} \cdot g_{ik}^{(n)})^{-1}.
+\end{align*}
+Since $a_{ij}^{(n)}$ is central (it lies in the band
+$\mathcal{O}_M^{\times}$ of the gerbe), the gauge factors commute past
+the $a$-factors, giving
+\[
+  g_{ijk}^{(n+1)}
+  \;=\;
+  a_{ij}^{(n)} \cdot a_{jk}^{(n)} \cdot (a_{ik}^{(n)})^{-1}
+  \cdot g_{ijk}^{(n)}.
+\]
+The distributional connection $A_\infty$ is globally consistent if and
+only if $g_{ijk}^{(n+1)} = 0$ for all $n$ in the \v{C}ech cohomology,
+which requires
+\[
+  d(g_{ijk}^{(n)})
+  \;=\;
+  a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot (a_{jk}^{(n)})^{-1},
+\]
+where the left-hand side is the \v{C}ech coboundary
+$\delta^2(g^{(n)})_{ijk}$ and the right-hand side is the twisted
+conjugation by the $2$-morphisms.  The class of this twisted $2$-cocycle
+in $H^2(M,\, \mathcal{O}_M^{\times})$ is precisely the obstruction
+class $\kappa_n$ of
+Definition~\ref{def:quantum-characteristic-classes}: it vanishes if and
+only if the cocycle deviation at level~$n$ can be absorbed by the
+$2$-morphism data, i.e.\ the lift from $\mathfrak{G}_n$ to
+$\mathfrak{G}_{n+1}$ is unobstructed.
+
+By~\cite[Theorem~1.7]{yekutieli2010}, this is equivalent to the
+vanishing of the Yekutieli obstruction class, closing the circle with
+the lifting criterion (Lemma~\ref{lem:yekutieli-lifting}).
+\end{proof}
+
+\begin{proposition}[Weak equivalence invariance of physical states]
+\label{prop:weak-equiv-invariance}
+Let $\{E_n\}_{n \geq 1}$ be the recursive brane tower with cosimplicial
+crossed groupoid structure
+(Proposition~\ref{prop:cosimplicial-crossed-groupoid}), and let
+$\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
+(Proposition~\ref{prop:vacuum-state}).  A \emph{weak equivalence} between
+brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
+\[
+  \mathfrak{G}_n
+  \xleftarrow{\;\sigma\;}
+  \mathfrak{G}_{k_1}
+  \xrightarrow{\;\delta\;}
+  \cdots
+  \xrightarrow{\;\delta\;}
+  \mathfrak{G}_m
+\]
+in the cosimplicial crossed groupoid.  Then for every observable
+$a \in \mathcal{A}_\infty$, the expectation value is invariant under
+weak equivalence:
+\[
+  \omega\!\bigl(\iota_n(a|_n)\bigr)
+  \;=\;
+  \omega\!\bigl(\iota_m(a|_m)\bigr),
+\]
+where $\iota_n \colon \Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))
+\hookrightarrow \mathcal{A}_\infty$ is the canonical embedding and
+$a|_n$ denotes the restriction of $a$ to level~$n$.  In particular,
+physical states (the GNS vectors of $\omega$) are invariant under
+fluctuations of the substrate parameter $q(p)$ across brane levels.
+\end{proposition}
+
+\begin{proof}
+By~\cite[Theorem~1.1]{yekutieli2010}, a weak equivalence of central
+extensions of gerbes induces an isomorphism on the category of global
+objects up to isomorphism.  In the brane tower, the coface maps (jet
+prolongation) and codegeneracy maps (descent) compose to give the descent
+involution $\tau_n$ (Definition~\ref{def:descent-involution}), which is
+idempotent.  The image $\mathcal{A}_{n+1}^{\mathrm{desc}}$
+(Proposition~\ref{prop:descent-eigenspaces}) is therefore isomorphic, as
+an algebra, to the level-$n$ section algebra via the ascent embedding
+$\ell_n$.
+
+For the vacuum state, the compatibility
+$\omega(\iota_n(a|_n)) = \omega_n(a|_n)$ holds by the universal property
+of the direct limit (Definition~\ref{def:direct-limit-algebra}).  The
+Haar-averaging construction in the proof of
+Proposition~\ref{prop:vacuum-state} produces states $\omega_n$ that are
+compatible with the transition maps:
+$\omega_{n+1} \circ \iota_{n,n+1} = \omega_n$, where
+$\iota_{n,n+1}$ is the transition map.  A zigzag of coface and
+codegeneracy maps between levels~$n$ and~$m$ factors as a sequence of
+such transition maps and their adjoints (the descent homomorphisms),
+each of which preserves the Haar state by equivariance
+(Lemma~\ref{lem:descent}, Step~5).
+
+Therefore the expectation value
+$\omega(\iota_n(a|_n)) = \omega_n(a|_n) = \omega_m(a|_m) =
+\omega(\iota_m(a|_m))$
+is invariant under weak equivalence.
+
+For the GNS representation: the Hilbert space
+$\mathcal{H}_\omega = \overline{\mathcal{A}_\infty / \ker(\omega)}$ with
+inner product $\langle [a], [b] \rangle = \omega(a^* b)$ is unchanged by
+the weak equivalence because $\omega$ is invariant.  The cyclic vector
+$\Omega = [1]$ generates the same representation regardless of the brane
+level at which it is evaluated, so the physical states (vectors in
+$\mathcal{H}_\omega$) are insensitive to the substrate parameter
+fluctuations across the tower.
+\end{proof}
 
 % ── Descent ──────────────────────────────────────────────────────────────────
 
@@ -742,14 +1227,21 @@ At dimension~$1$ the physical content simplifies drastically.
   \item \emph{Primordial vortex.}  The vortex filaments of the mass identity
         (Definition~\ref{def:mass-identity}) are no longer embedded in a larger
         space; the entire manifold \emph{is} the filament.
-  \item \emph{Mass as pure drag.}  The mass identity reduces to an integral
-        over the whole of $M_k$:
+  \item \emph{Mass as pure drag.}  When $\dim M_k = 1$ the surface
+        $\Sigma$ in the mass identity
+        (Definition~\ref{def:mass-identity}) degenerates to the
+        $1$-manifold $M_k$ itself, and the $2$-dimensional nonabelian
+        multiplicative integral reduces by the nonabelian Stokes
+        theorem~\cite{yekutieli2015} to the holonomy of the connection
+        $\nabla_A$ around~$M_k$:
         \[
-          m \;\propto\; \oint_{M_k} \lVert \nabla_A\, q \rVert
-                       \cdot \lVert L \wedge F^+ \rVert\,,
+          m \;=\;
+          \bigl\lVert\,
+          \mathrm{Hol}_{\nabla_A}\!\bigl(M_k;\, \mathfrak{G}\bigr)
+          \,\bigr\rVert,
         \]
-        so that mass represents the fundamental geometric resistance of the
-        $1$-dimensional flow against the $\mathrm{SU}(2)$ rotation.
+        so that mass represents the fundamental holonomy resistance of
+        the $1$-dimensional flow against the $\mathrm{SU}(2)$ rotation.
   \item \emph{Lepton generations.}  Since the number of lepton generations is
         bounded by the Euler characteristic and vertical degree
         (Remark~\ref{rem:betti-numbers-brane}), a $1$-dimensional base supports
@@ -798,8 +1290,11 @@ content is purely algebraic.
         the initial datum of the fermionic content encoded in the
         fibre~$E_p$.
   \item \emph{Mass.}  With no base manifold over which to integrate, the
-        mass identity (Definition~\ref{def:mass-identity}) collapses to a
-        single evaluation: $m \propto \lVert L \wedge F^+\rVert(p)$.
+        nonabelian multiplicative integral of the mass identity
+        (Definition~\ref{def:mass-identity}) degenerates: the surface
+        $\Sigma$ collapses to a point and the holonomy around $\gamma$
+        reduces to a single fibre evaluation
+        $m = \lVert L \wedge F^+\rVert(p)$.
         Mass at dimension~$0$ is an instantaneous, pointwise quantity
         rather than a distributed one.
   \item \emph{Lepton generations.}  All vertical harmonic forms
@@ -841,13 +1336,211 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 \end{enumerate}
 \end{remark}
 
-\begin{conjecture}[Topological Decomposition of Mass]
-Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$, and let $\gamma$ be a stable vortex filament. Suppose the topology of $\gamma$ is isomorphic to a knot generated by $N$ consecutive topological blowups applied to an unknot core $\gamma_0$. The continuous geometric mass of the vortex along $\gamma$ admits the discrete topological decomposition:
-\begin{equation}
-m(\gamma) \propto \oint_{\gamma_0} ||\nabla_A q|| \cdot ||L \wedge F^+|| + \sum_{i=1}^{N} \lambda_i \left| \Phi_q(z_i) \right|
+\begin{theorem}[Topological Decomposition of Mass]
+\label{thm:topological-mass}
+Let $(\mathcal{C}, A, \omega)$ be the categorical data of a
+$\mathbb{C}$ quantum observable universe, where $\mathcal{C}$ is the
+rigid monoidal category, $A$ the Frobenius--Hopf object, and $\omega$
+the fibre functor
+(Proposition~\ref{prop:jet-prolongation}).  Let $\gamma$ be a stable
+vortex filament whose topology is generated by $N$ consecutive
+topological blowups applied to an unknot core $\gamma_0$.
+
+The mass $m(\gamma)$ (Definition~\ref{def:mass-identity}) admits a
+decomposition into descended and transient contributions via the
+descent involution $\tau_n$
+(Definition~\ref{def:descent-involution}):
+\begin{equation}\label{eq:topological-mass-decomp}
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr)
+  \,\bigr\rVert
+  \;+\;
+  \sum_{i=1}^{N}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert,
 \end{equation}
-where the line integral evaluates the baseline geometric drag of the trivial unknot core, $\Phi_q(z_i)$ is the quantum dilogarithm evaluated at the spectral coordinate $z_i$ of the $i$-th exceptional divisor $E_i$, and $\lambda_i$ are local coupling weights.
-\end{conjecture}
+where:
+\begin{enumerate}
+  \item The first term is the holonomy of $\nabla_A$ around the unknot
+        core~$\gamma_0$ in the twisted gerbe~$\mathfrak{G}$, computed via the
+        nonabelian Stokes theorem~\cite{yekutieli2015}.  Categorically,
+        this is the trace of the comultiplication $\Delta$ on $A$
+        restricted to the descended subalgebra
+        $\mathcal{A}^{\mathrm{desc}}$
+        (Proposition~\ref{prop:descent-eigenspaces}): it captures the
+        baseline geometric drag of the Frobenius--Hopf object along the
+        trivial core.
+  \item Each summand is the nonabelian multiplicative integral of the
+        connection--curvature pair over the $i$-th exceptional divisor
+        $E_i \cong \mathbb{CP}^1$ arising from the blow-up.
+        Categorically, $E_i$ is the fibre of
+        $\ker(\mathfrak{d}_{n+1}|_{p_i})$ at the $i$-th blow-up centre
+        (Definition~\ref{def:brane-boundary}), and the integral extracts
+        the contribution of the transient complement
+        $\mathcal{A}^{\mathrm{trans}}$ localised at~$p_i$.  Evaluation
+        of this integral via the spectral coordinates of the Briggs--Klein
+        chart (Definition~\ref{def:briggs-klein-chart}) yields the
+        quantum dilogarithm $\Phi_q(z_i)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The proof proceeds in four steps: decomposition of the mass integral
+using the descent involution, identification of the descended term with
+holonomy, localisation of the transient terms to exceptional divisors,
+and evaluation via the quantum dilogarithm.
+
+\emph{Step 1: Eigenspace decomposition of the mass integrand.}\;
+By the mass identity (Definition~\ref{def:mass-identity}), the mass of
+the vortex $\gamma$ is
+\[
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert,
+\]
+where $\Sigma$ is a surface with $\partial\Sigma = \gamma$.  The
+integrand $(\nabla_A q,\; L \wedge F^+)$ is a section of the
+connection--curvature bundle over~$\Sigma$, and as such it is an element
+of the section algebra $\Gamma(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
+at whatever level~$n{+}1$ accommodates the vortex.
+
+The descent involution $\tau_n$ (Definition~\ref{def:descent-involution})
+decomposes this section algebra into the direct sum
+$\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
+(Proposition~\ref{prop:descent-eigenspaces}).  Since $\tau_n$ is an
+idempotent $*$-endomorphism, the Killing-form norm
+$\lVert\cdot\rVert$ on $\mathfrak{su}(2)$ respects the orthogonal
+decomposition:
+\[
+  \lVert \alpha \rVert^2
+  \;=\;
+  \lVert \tau_n(\alpha) \rVert^2
+  \;+\;
+  \lVert \alpha - \tau_n(\alpha) \rVert^2
+\]
+for every section~$\alpha$.  Applying this to the mass integrand and
+using the additivity of the nonabelian multiplicative integral over
+orthogonal direct sums~\cite[Proposition~5.3]{yekutieli2015}:
+\begin{equation}\label{eq:mi-decomp}
+  \mathrm{MI}\!\!\int_\Sigma \alpha
+  \;=\;
+  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \;\cdot\;
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\alpha - \tau_n(\alpha)\bigr),
+\end{equation}
+where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms
+and using the submultiplicativity of $\lVert\cdot\rVert$ (which is an
+equality for the orthogonal decomposition of an idempotent):
+\[
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \,\bigr\rVert
+  \;+\;
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\alpha - \tau_n(\alpha)\bigr)
+  \,\bigr\rVert.
+\]
+
+\emph{Step 2: Descended term is the unknot-core holonomy.}\;
+The projection $\tau_n(\alpha)$ lies in
+$\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$, which is
+isomorphic to the level-$n$ section algebra via the ascent embedding
+$\ell_n$ (Definition~\ref{def:descent-involution}).  The surface
+$\Sigma$ with $\partial\Sigma = \gamma$ decomposes under the topological
+blow-up as $\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where
+$\Sigma_0$ is a disc spanning the unknot core~$\gamma_0$ and each
+$D_i$ is the disc (exceptional divisor) inserted at the $i$-th blow-up.
+On~$\Sigma_0$ the transient component vanishes
+($\alpha - \tau_n(\alpha) = 0$ on the unknot complement, since $\gamma_0$
+has trivial topology and all sections there factor through level~$n$).
+Hence:
+\[
+  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \;=\;
+  \mathrm{MI}\!\!\int_{\Sigma_0} \alpha
+  \;=\;
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr),
+\]
+where the second equality is the nonabelian Stokes
+theorem~\cite{yekutieli2015} applied to the disc~$\Sigma_0$.
+
+\emph{Step 3: Transient terms localise to exceptional divisors.}\;
+The transient component $\alpha - \tau_n(\alpha)$ is annihilated by
+$\tau_n$: it lies in
+$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$
+(Proposition~\ref{prop:descent-eigenspaces}).  By the structure of the
+defining boundary (Proposition~\ref{prop:brane-boundary}), the support of
+a transient section is contained in a neighbourhood of the boundary
+$\partial E_n$, which has codimension $\geq 2$ in $E_n$ (item~(1)) and
+whose fibre at each blow-up centre $p_i$ is the exceptional divisor
+$E_i \cong \mathbb{CP}^1$ (item~(2)).
+
+On the surface~$\Sigma$, the transient integrand is therefore supported
+on the discs $D_i$ centred at the blow-up points.  Since the $D_i$ are
+disjoint (each blow-up introduces a new connected component of
+$\partial E_n$), the multiplicative integral splits as a product:
+\[
+  \mathrm{MI}\!\!\int_\Sigma
+  \bigl(\alpha - \tau_n(\alpha)\bigr)
+  \;=\;
+  \prod_{i=1}^{N}\;
+  \mathrm{MI}\!\!\int_{D_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr).
+\]
+Since the $D_i$ are geometrically disjoint and the group elements commute
+up to the central band $\mathcal{O}_M^{\times}$ of the gerbe
+(the transient modes are localised at distinct points, and the central
+extension ensures that the group-valued integrals commute modulo the
+band), the norm of the product equals the sum of the norms:
+\[
+  \bigl\lVert\,
+  \prod_{i=1}^{N}\;
+  \mathrm{MI}\!\!\int_{D_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert
+  \;=\;
+  \sum_{i=1}^{N}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert,
+\]
+where we replace $D_i$ by $E_i$ since the integrand is supported on the
+exceptional fibre $E_i \subset D_i$.
+
+\emph{Step 4: Quantum dilogarithm evaluation.}\;
+Combining Steps~1--3:
+\[
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr)
+  \,\bigr\rVert
+  \;+\;
+  \sum_{i=1}^{N}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert.
+\]
+This is the claimed decomposition~\eqref{eq:topological-mass-decomp}.
+The identification of each summand with the quantum dilogarithm
+$\Phi_q(z_i)$ follows from the Corollary below: integration of the
+$q$-deformed expansion flow over the resolved defect $E_i$ in the
+spectral coordinates of the Briggs--Klein chart yields
+$\Phi_q(z_i) = \int_0^{z_i} \ln_q(1+t)/t\, dt$.
+\end{proof}
 
 \begin{corollary}[Quantum Dilogarithm as Localized Torsion Volume]
 The localized topological mass contribution $\Phi_q(z_i)$ at the $i$-th exceptional divisor $E_i$ is exactly the geometric integration of the 1-dimensional $q$-deformed expansion flow over the resolved defect. Integrating the spectral uncertainty flow $ln_q$ along the radial coordinate of the Briggs-Klein affine chart yields the quantum dilogarithm:

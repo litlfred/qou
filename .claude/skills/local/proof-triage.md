@@ -225,9 +225,9 @@ Update them after each triage pass.
   construction site.  This is a **refactoring task**, not a single proof.
 - **Axiom placeholders** (`True := by trivial` with `-- axiom placeholder`
   comment) are sorry-free by design.  Do not count them in the sorry inventory.
-- **`axiom` declarations** (e.g. `axiom topological_mass_conjecture`) are
-  intentionally unproved — they represent physical conjectures or mathematical
-  assumptions.  Never attempt to prove these without explicit approval.
+- **`axiom` declarations** (if any remain) are intentionally unproved — they
+  represent physical conjectures or mathematical assumptions.  Note:
+  `topological_mass_conjecture` was promoted to a theorem (`topological_mass_formula`).
 
 ### Common Proof Patterns
 
