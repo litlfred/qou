@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-20T02:51:14.777653+00:00",
+    "generated_at": "2026-03-20T02:51:05.583340+00:00",
     "commit_sha": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840"
   },
   "objects": [
@@ -25,7 +25,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:quantum-observable-universe",
@@ -44,7 +44,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:base-field-independence",
@@ -74,7 +74,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:notation-special-cases",
@@ -104,7 +104,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:instanton",
@@ -123,7 +123,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "lem:irreducible-connection",
@@ -160,7 +160,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:substrate-parameter",
@@ -179,7 +179,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:c-substrate-via-levi",
@@ -220,7 +220,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:quantum-planck-constant",
@@ -239,7 +239,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:planck-limits",
@@ -280,7 +280,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:reeb-decomposition",
@@ -299,7 +299,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:fermion",
@@ -318,7 +318,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:boson",
@@ -337,7 +337,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:observation",
@@ -378,7 +378,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:q-lie-bracket",
@@ -397,7 +397,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:q-connection",
@@ -416,7 +416,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:q-reeb-vector-field",
@@ -435,7 +435,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:q-reeb-flow",
@@ -454,7 +454,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "def:q-torsion-leaf",
@@ -473,7 +473,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:q-torsion-existence",
@@ -525,7 +525,7 @@
         "last_edited_commit": "1dbb755c520b9a6f9ced8cebbcde938e3c5c9840",
         "sorry_free": true
       },
-      "formalization_status": "stated"
+      "formalization_status": "proved"
     },
     {
       "label": "rem:tqft-context",
