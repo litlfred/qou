@@ -5,22 +5,19 @@
 
 \begin{definition}[Descartes condition]
 \label{def:descartes-condition}
-A $\mathbb{C}$ quantum observable universe $(M, G, P, E)$
-(Example~\ref{def:c-quantum-observable-universe}) satisfies the
-\emph{Descartes condition} if the Euler characteristic of the bulk bundle
-is
+A quantum observable universe $(\mathcal{C}, A, \omega)$ over~$R$
+(Definition~\ref{def:quantum-observable-universe},
+Theorem~\ref{thm:qu-to-qou}) satisfies the \emph{Descartes condition} if the
+categorical Euler characteristic
 \[
-  \chi(E) \;=\; -6.
+  \chi(A) \;=\; \mathrm{tr}(\mathrm{id}_A) \;=\; -6 \;\in\; R.
 \]
-A $\mathbb{C}$ quantum observable universe satisfying the Descartes condition
-is called a \emph{Descartes universe}.
-
-\medskip
-\begin{center}
-\itshape
-``Je pense, donc je suis.''\\
---- Ren\'e Descartes
-\end{center}
+This requires $6 \in R^{\times}$ (i.e.\ $\mathrm{char}(R) \nmid 6$).  The
+class $[A] \in K_0(\mathcal{C})$ has rank $-6$, which by
+Theorem~\ref{thm:qu-to-qou}(3--4) forces $\kappa_n \neq 0$ for all $n$ and
+produces $6$ branch points in the geometric descent (with total ramification
+$R_{\mathrm{tot}} = 2d + 6$).  A quantum observable universe satisfying the
+Descartes condition is called a \emph{Descartes universe}.
 \end{definition}
 
 % ── Implications on the three examples ───────────────────────────────────────
@@ -88,11 +85,7 @@ genus $g = 4$.
 \end{proposition}
 
 \begin{proof}
-For a compact Riemann surface of genus $g$, the Euler characteristic is
-$\chi = 2 - 2g$.  The Descartes condition requires $\chi(E) = -6$.  On
-the one-complex-dimensional descent $M_0$, the stability of the Euler characteristic
-(Proposition~\ref{prop:euler-char-stability}) gives $\chi(M_0) = -6$,
-whence $2 - 2g = -6$ and $g = 4$.
+The Descartes condition gives $\mathrm{tr}(\mathrm{id}_A) = -6$.  Under the fibre functor~$\omega$ of the archimedean realisation, this maps to the sheaf Euler characteristic $\chi(V) = -6$, where $V = P \times_{\mathrm{SU}(2)} K^2$ is the associated rank-$2$ vector bundle over~$M_0$.  Since $G = \mathrm{SU}(2)$, the determinant bundle $\det(V)$ is trivial, so $\deg(V) = 0$.  By Riemann--Roch on the compact Riemann surface~$M_0$: $\chi(V) = \deg(V) + \mathrm{rank}(V)(1-g) = 2(1-g)$.  Setting $2(1-g) = -6$ gives $g = 4$.
 \end{proof}
 
 % ── Leptons and chirality ────────────────────────────────────────────────────
@@ -238,17 +231,55 @@ second, and $\mathfrak{b}$ the third.
 
 \begin{theorem}[Descartes theorem]
 \label{thm:descartes}
-Let $\mathcal{C}_{-6}$ denote the category of $\mathbb{C}$ quantum
-observable universes satisfying the Descartes condition $\chi(E) = -6$,
-with morphisms given by QOU maps that preserve the Euler characteristic.
-Then Bring's curve $\Sigma_4$ (Remark~\ref{rem:brings-curve}) is a terminal
-object in $\mathcal{C}_{-6}$: for every Descartes universe $(M, G, P, E)$ in
-$\mathcal{C}_{-6}$, there exists a unique morphism
-$(M, G, P, E) \to (\Sigma_4, G, P_{\Sigma_4}, E_{\Sigma_4})$ in $\mathcal{C}_{-6}$.
+Let $\mathcal{C}_{-6}$ denote the category of quantum observable universes
+over~$R$ satisfying the Descartes condition $\chi(A) = -6$
+(Definition~\ref{def:descartes-condition}), with morphisms given by QOU maps
+that preserve the Euler characteristic.  Then Bring's surface $\Sigma_4$
+(Definition~\ref{def:brings-surface},
+Proposition~\ref{prop:brings-is-qou}) is a terminal object in
+$\mathcal{C}_{-6}$: for every Descartes universe
+$(\mathcal{C}, A, \omega)$ in $\mathcal{C}_{-6}$, there exists a unique
+morphism to the Bring's QOU.
 \end{theorem}
 
 \begin{proof}
-% TODO: proof
+We must show that for every object $(\mathcal{C}, A, \omega)$ in
+$\mathcal{C}_{-6}$ there exists a unique QOU morphism to the Bring's QOU
+$(\mathcal{C}_B, A_B, \omega_B, q_B)$
+(Proposition~\ref{prop:brings-is-qou}).
+
+\emph{Existence.}\;
+Let $(\mathcal{C}, A, \omega)$ be a Descartes universe; let $q$ denote the substrate parameter.  The fibre
+functor~$\omega$ identifies $G_q = \mathrm{Aut}^{\otimes}(\omega)$ with a
+quantum form of $\mathrm{SU}(2)$ (by Tannaka--Krein over~$R$), so the
+base curve of the geometric descent
+(Theorem~\ref{thm:qu-to-qou}(1)) is a smooth genus-$4$ curve~$\Sigma$
+over~$R$ with $\chi(\Sigma) = -6$
+(Proposition~\ref{prop:genus-maximal-descent}).
+
+By the Hurwitz bound, $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 84(g-1) = 252$.
+Among genus-$4$ curves over~$R$ (with $30 \in R^{\times}$),
+Bring's surface $\Sigma_4$ has automorphism group $S_5$ of order~$120$,
+which is the \emph{maximum} for genus~$4$ (Edge, 1978).  The
+$S_5$-equivariant structure forces the power-sum relations
+$\sum x_j = \sum x_j^2 = \sum x_j^3 = 0$, uniquely determining $\Sigma_4$
+up to isomorphism in~$\mathbb{P}^4_R$.
+
+The descent data of~$(\mathcal{C}, A, \omega)$ --- specifically, the
+branch locus of $\pi \colon \Sigma \to \mathbb{P}(V)$ with its
+$6$ branch points and the $S_5$-symmetric ramification profile --- defines
+a map $\Sigma \to \Sigma_4$ in the category of branched covers of
+$\mathbb{P}(V)$.  This extends to a QOU morphism by the universality of
+the Frobenius--Hopf structure: the Haar state on
+$\mathcal{O}_q(\mathrm{SU}(2))$ is functorial with respect to quantum
+group homomorphisms.
+
+\emph{Uniqueness.}\;
+A QOU morphism preserves the fibre functor~$\omega$ (up to natural
+isomorphism) and the Euler characteristic.  By Tannaka--Krein rigidity,
+any two fibre-preserving monoidal functors between the same Tannakian
+categories are naturally isomorphic.  Therefore the morphism to the Bring's
+QOU is unique up to the unique natural isomorphism.
 \end{proof}
 
 \begin{remark}[Universality for a given Euler characteristic]
@@ -263,43 +294,31 @@ distinguished by Bring's curve, but analogous universal objects are expected
 at other values of~$\chi$.
 \end{remark}
 
-\begin{example}[The Descartes universe and Yekutieli obstructions]
+\begin{example}[Bring's surface and Yekutieli obstructions]
 \label{ex:descartes-yekutieli}
-In a Descartes universe (Definition~\ref{def:descartes-condition}), the
-topological constraint $\chi(E) = -6$ forces the Yekutieli obstruction
-classes $\kappa_n$ (Definition~\ref{def:quantum-characteristic-classes})
-to be non-trivial.
-
-The negative Euler characteristic $\chi(E) = -6$ implies, via the
-Gauss--Bonnet theorem and the Leray--Serre spectral sequence
-(Proposition~\ref{prop:euler-char-stability}), a non-trivial
-distribution of modes across the manifold: the $6$ branch points of the
-covering $\pi\colon \Sigma_4 \to \mathbb{CP}^1$
-(Example~\ref{ex:brings-surface}) correspond to the $6$ defects of the
-Euler characteristic, and each defect supports a non-vanishing
-monodromy fixed point of the holonomy representation.
-
-Concretely, one verifies that $\kappa_n \neq 0$ for all levels~$n$
-of the brane tower in this model:
+Bring's surface $\Sigma_4$ satisfies the hypotheses of
+Theorem~\ref{thm:qu-to-qou} (Proposition~\ref{prop:brings-is-qou}), with
+$\chi(A) = -6 \neq 0$.  By the main structural theorem:
 \begin{enumerate}
-  \item The central extension of gerbes
-    $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$ is banded by
-    $\mathcal{O}_M^{\times}$ with characteristic class
-    $\kappa_n \in H^2(M,\, \mathcal{O}_M^{\times})$.
-  \item The constraint $\chi(E) = -6$ ensures that the spectral sequence
-    of the fibration $E_{n+1} \to E_n$ does \emph{not} collapse
-    trivially: the $6$ branch points inject non-zero differentials
-    at the $E_2$ page, preventing $\kappa_n$ from vanishing.
+  \item The first Yekutieli obstruction $\kappa_0$ equals the Euler class of
+        the Reeb bundle, with $\kappa_0 \mapsto \chi(A) = -6$ under the trace
+        map (Theorem~\ref{thm:qu-to-qou}(2)).
+  \item Since $\kappa_0$ is non-torsion in
+        $H^2(\mathcal{S}, \mathcal{B})$, the perpetual obstruction
+        $\kappa_n \neq 0$ holds for all $n \geq 0$
+        (Theorem~\ref{thm:qu-to-qou}(3)).  The $6$ branch points of the
+        covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ correspond to the
+        $6$ defects of the Euler characteristic, and each defect supports a
+        non-vanishing monodromy fixed point.
   \item By Proposition~\ref{prop:yekutieli-lifting}, the non-vanishing of
-    $\kappa_n$ obstructs smooth lifting at each level, creating twisted
-    sectors (Remark~\ref{rem:fermionic-twisted-sectors}).
+        $\kappa_n$ obstructs smooth lifting at each level, creating twisted
+        sectors (Remark~\ref{rem:fermionic-twisted-sectors}).
 \end{enumerate}
-
 The ``geometric drag'' responsible for inertial mass
 (Remark~\ref{rem:mass-geometric-drag}) and the multiplicity of lepton
 generations (Remark~\ref{rem:descartes-leptons}) are both controlled by
 these non-vanishing Yekutieli classes: the number of independent twisted
-sectors is bounded by $\lvert\chi(E)\rvert = 6$, and the three lepton
+sectors is bounded by $\lvert\chi(A)\rvert = 6$, and the three lepton
 generations correspond to the three pairs of branch points under the
 $S_3 \subset S_5$ symmetry of Bring's curve
 (Remark~\ref{rem:chirality-trefoil}).

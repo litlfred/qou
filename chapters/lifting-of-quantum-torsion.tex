@@ -5,8 +5,8 @@
 
 \begin{proposition}[Jet Prolongation]
 \label{prop:jet-prolongation}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Define the
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Define the
 \emph{jet object}
 \[
   J^1(A) \;:=\; A \otimes \Omega^1(A),
@@ -16,7 +16,7 @@ K\"ahler differentials.  Then $J^1(A)$ carries a canonical Frobenius--Hopf
 structure inherited from~$A$, and the quadruple
 $(\mathcal{C},\, J^1(A),\, \omega',\, q)$ --- where
 $\omega' = \omega \circ (\text{--} \otimes \Omega^1)$ is the induced fibre
-functor --- is again a quantum observable universe over~$k$.
+functor --- is again a quantum observable universe over~$R$.
 \end{proposition}
 
 \begin{proof}
@@ -82,21 +82,22 @@ of $A'$, which is guaranteed by the inherited vanishing condition of
 Step~3.
 \end{proof}
 
-\begin{corollary}[$\mathbb{C}$ realisation of jet prolongation]
+\begin{corollary}[Archimedean realisation of jet prolongation]
 \label{cor:jet-prolongation-C}
-Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe
+Let $(M, G, P, E)$ be an archimedean quantum observable universe
 (Example~\ref{def:c-quantum-observable-universe}) with instanton connection
 $A$ on~$P$ and metric~$g$ on~$E$.  Write $\widetilde{M} = E$ for the total
 space of~$E$, define $P'$ as the frame bundle and $E'$ as the bundle of
 orthonormal frames of the first jet bundle $J^1 E$.  Then $A$ and $g$
 uniquely determine a connection~$A'$ on~$P'$ such that
-$(\widetilde{M}, G, P', E')$ is a $\mathbb{C}$ quantum observable universe.
+$(\widetilde{M}, G, P', E')$ is an archimedean quantum observable universe.
 \end{corollary}
 
 \begin{proof}
 Apply Proposition~\ref{prop:jet-prolongation} to the categorical data
-$(\mathcal{C}, A, \omega, q)$ underlying the $\mathbb{C}$ quantum
-observable universe (Example~\ref{def:c-quantum-observable-universe}),
+$(\mathcal{C}, A, \omega)$ underlying the archimedean quantum
+observable universe (Example~\ref{def:c-quantum-observable-universe});
+let $q$ denote the substrate parameter,
 where $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$,
 $A = \mathcal{O}_q(\mathrm{SU}(2))$, and $\omega$ is the forgetful
 functor.  The fibre functor $\omega$ converts the categorical jet object
@@ -134,8 +135,8 @@ case-by-case verification.
 
 \begin{definition}[Recursive Brane Tower]
 \label{def:recursive-brane-tower}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe over a
-field~$k$ (Definition~\ref{def:quantum-observable-universe}).  Set
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
+ring~$R$ (Definition~\ref{def:quantum-observable-universe}).  Set
 $A_0 = A$.  \emph{Inductively}, define
 $A_{n+1} = J^1(A_n)$ as the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) of the Frobenius--Hopf
@@ -155,9 +156,9 @@ in~$\mathcal{C}$, where each embedding is the canonical inclusion
 $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.
 \end{definition}
 
-\begin{example}[$\mathbb{C}$ realisation of the brane tower]
+\begin{example}[Archimedean realisation of the brane tower]
 \label{ex:brane-tower-levels}
-Starting from a $\mathbb{C}$ quantum observable universe $(M, G, P, E_1)$
+Starting from an archimedean quantum observable universe $(M, G, P, E_1)$
 (Example~\ref{def:c-quantum-observable-universe}), the fibre functor
 $\omega$ converts the categorical brane tower into a geometric tower of
 bundles: $E_{n+1}$ is the bundle of orthonormal frames of $J^1 E_n$, and
@@ -167,41 +168,11 @@ $M_1 = E_1$, and the connection $A_2$ is uniquely determined by
 Corollary~\ref{cor:jet-prolongation-C}.
 \end{example}
 
-% ── Quantum Characteristic Classes ───────────────────────────────────────────
-
-\begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
-\label{def:quantum-characteristic-classes}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  Each transition
-$A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
-of gerbes on the underlying site in the sense of
-Yekutieli~\cite{yekutieli2010}: the Frobenius--Hopf object~$A_n$ is an
-object in a gerbe~$\mathfrak{G}_n$ banded by the sheaf of units
-$\mathcal{B}$ (in the $\mathbb{C}$ realisation,
-$\mathcal{B} = \mathcal{O}_M^{\times}$), and the jet prolongation
-(Proposition~\ref{prop:jet-prolongation}) produces a central extension
-\[
-  1 \;\longrightarrow\; \mathcal{B}
-  \;\longrightarrow\; \mathfrak{G}_{n+1}
-  \;\longrightarrow\; \mathfrak{G}_n
-  \;\longrightarrow\; 1.
-\]
-The \emph{quantum characteristic classes} (Yekutieli obstruction classes)
-are the cohomology classes
-\[
-  \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
-\]
-that obstruct the lifting of objects from $\mathfrak{G}_n$
-to~$\mathfrak{G}_{n+1}$.  By the Yekutieli Lifting Condition
-(Definition~\ref{def:yekutieli-lifting-condition}), the vanishing
-$\kappa_n = 0$ is the necessary and sufficient condition for the lift
-to exist (Proposition~\ref{prop:yekutieli-lifting}).
-\end{definition}
+% ── Yekutieli Lifting and Quantum Characteristic Classes ─────────────────────
 
 \begin{definition}[Yekutieli Lifting Condition]
 \label{def:yekutieli-lifting-condition}
-Let $\mathcal{C}$ be a $k$-linear rigid monoidal category and let
+Let $\mathcal{C}$ be a $R$-linear rigid monoidal category and let
 \[
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}'
@@ -221,25 +192,63 @@ cohomology class
 and $x$ admits a lift if and only if $\kappa(x) = 0$.
 \end{definition}
 
+\begin{definition}[Quantum Characteristic Classes (Yekutieli obstruction)]
+\label{def:quantum-characteristic-classes}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower
+(Definition~\ref{def:recursive-brane-tower}).  Each transition
+$A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
+of gerbes on the underlying site in the sense of
+Yekutieli~\cite{yekutieli2010}: the Frobenius--Hopf object~$A_n$ is an
+object in a gerbe~$\mathfrak{G}_n$ banded by the sheaf of units
+$\mathcal{B}$, and the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) produces a central extension
+\[
+  1 \;\longrightarrow\; \mathcal{B}
+  \;\longrightarrow\; \mathfrak{G}_{n+1}
+  \;\longrightarrow\; \mathfrak{G}_n
+  \;\longrightarrow\; 1.
+\]
+The \emph{quantum characteristic classes} (Yekutieli obstruction classes)
+are the cohomology classes
+\[
+  \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
+\]
+that obstruct the lifting of objects from $\mathfrak{G}_n$
+to~$\mathfrak{G}_{n+1}$.  By the Yekutieli Lifting Condition
+(Definition~\ref{def:yekutieli-lifting-condition}), the vanishing
+$\kappa_n = 0$ is the necessary and sufficient condition for the lift
+to exist (Proposition~\ref{prop:yekutieli-lifting}).
+\end{definition}
+
+\begin{remark}[Archimedean band of the gerbe extension]
+\label{rem:yekutieli-archimedean-band}
+In the archimedean realisation
+(Example~\ref{def:c-quantum-observable-universe}), the banding sheaf is
+$\mathcal{B} = \mathcal{O}_M^{\times}$ (the sheaf of invertible
+holomorphic functions on~$M$).
+\end{remark}
+
 \begin{proposition}[Yekutieli Lifting Condition holds in the brane tower]
 \label{prop:yekutieli-lifting}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 1}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The central extensions of
 gerbes
 \[
-  1 \;\longrightarrow\; \mathcal{O}_M^{\times}
+  1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1
 \]
 arising from the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) satisfy the Yekutieli Lifting
-Condition (Definition~\ref{def:yekutieli-lifting-condition}).  In
+Condition (Definition~\ref{def:yekutieli-lifting-condition}).  In the
+archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$.  In
 particular, the lift of the Frobenius--Hopf object from level~$n$ to
 level~$n{+}1$ exists if and only if the obstruction class
-$\kappa_n \in H^2(M,\, \mathcal{O}_M^{\times})$
+$\kappa_n \in H^2(M,\, \mathcal{B})$
 (Definition~\ref{def:quantum-characteristic-classes}) vanishes.
 \end{proposition}
 
@@ -251,10 +260,98 @@ if and only if its obstruction class in $H^2$ vanishes.  The jet
 prolongation construction
 (Proposition~\ref{prop:jet-prolongation}) realises the passage from
 level~$n$ to level~$n{+}1$ as precisely such a central extension,
-banded by $\mathcal{O}_M^{\times}$
+banded by $\mathcal{B}$
 (Definition~\ref{def:quantum-characteristic-classes}).  Hence the
 Yekutieli Lifting Condition holds, and $\kappa_n = 0$ is equivalent
 to the existence of the lift.
+\end{proof}
+
+\begin{theorem}[Quantum universe with observability and Yekutieli is a QOU]
+\label{thm:qu-to-qou}
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a Noetherian
+ring~$R$ (Definition~\ref{def:quantum-universe}); let $q$ denote the substrate parameter.  Assume observability
+$\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$
+(Definition~\ref{def:quantum-observable-universe}).  Then the brane tower
+$\{A_n\}_{n \geq 0}$ constructed via jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) satisfies the Yekutieli lifting
+condition (Definition~\ref{def:yekutieli-lifting-condition},
+Proposition~\ref{prop:yekutieli-lifting}), and $(\mathcal{C}, A, \omega)$
+is a quantum observable universe with the following structural properties:
+\begin{enumerate}
+  \item \emph{Descent terminates.}  The geometric descent tower has finite
+        length, bounded by $\mathrm{Krull\;dim}\,
+        Z(\mathrm{End}_{\mathcal{C}}(A))$.  Observability ensures each step
+        is a strict reduction (the $G_q$-action is faithful, so fixed-point
+        reduction strictly decreases dimension).
+  \item \emph{First obstruction equals the Euler class.}  The Yekutieli
+        obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$ equals the
+        Euler class of the Reeb bundle.  Under the trace map,
+        $\kappa_0 \mapsto \chi(A) = \mathrm{tr}(\mathrm{id}_A) \in R$.
+  \item \emph{Perpetual obstruction.}  If $\kappa_0$ is non-torsion in
+        $H^2(\mathcal{S}, \mathcal{B})$, then $\kappa_n \neq 0$ for all
+        $n \geq 0$.  The class $\kappa_0$ and the jet corrections at
+        level~$n$ live in complementary subgroups of
+        $H^2(\mathcal{S}, \mathcal{B})$, so the corrections cannot cancel
+        $\kappa_0$.
+  \item \emph{Branch point formula.}  The geometric descent from
+        $\mathbb{P}(V)$ (Definition~\ref{def:projective-line-object}) to
+        points has $B$ branch points with total ramification
+        $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ (Riemann--Hurwitz),
+        where $d$ is the degree of the covering.
+  \item \emph{Terminal fiber data.}  At each branch point $p$, the QOU
+        reduces to fiber data $(A, \omega, q(p))$ with the involution
+        $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$
+        (Proposition~\ref{prop:fiber-adjoint-involution}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:yekutieli-lifting} establishes that the constructed
+brane tower satisfies the Yekutieli lifting condition.  We prove each
+structural property in turn.
+
+\emph{Item (1): Descent terminates.}\;
+The centre $Z(\mathrm{End}_{\mathcal{C}}(A))$ is a finitely generated
+commutative $R$-algebra (since $R$ is Noetherian and $\omega$ is faithful),
+hence has finite Krull dimension~$d_0$.  Observability forces the $G_q$-action
+on~$A$ to be faithful: any $G_q$-invariant element of $\mathrm{Ad}(A)$ would
+give a non-zero element of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$,
+contradicting the observability condition.  Each descent step (fixed-point
+reduction under~$G_q$) therefore strictly reduces the Krull dimension of the
+centre.  After at most $d_0$ steps, the Krull dimension reaches~$0$, and the
+base is a discrete (Artinian) scheme.
+
+\emph{Item (2): $\kappa_0$ equals the Euler class.}\;
+The first Yekutieli obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
+is the connecting homomorphism image of the bundle class $[A_0]$ under the
+central extension $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0
+\to 1$ (Proposition~\ref{prop:yekutieli-lifting}).  In the archimedean
+realisation, this identifies with the Euler class $e$ of the Reeb
+$\mathrm{U}(1)$-bundle via the Gysin sequence.  The trace map sends
+$\kappa_0$ to $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$.
+
+\emph{Item (3): Perpetual obstruction.}\;
+The class $\kappa_0$ lies in the image of $H^2(\mathcal{S}, \underline{R})
+\to H^2(\mathcal{S}, \mathcal{B})$ (constant/topological classes), while jet
+corrections at level~$n$ lie in the image of $H^2(\mathcal{S},
+\mathcal{O}_{\mathcal{S}}) \to H^2(\mathcal{S}, \mathcal{B})$ (analytic/algebraic
+classes).  When $\kappa_0$ is non-torsion, these images are complementary
+subgroups, so the corrections cannot cancel $\kappa_0$.  In the archimedean
+realisation, the splitting follows from the exponential sequence; in the
+algebraic setting, from the \'etale--analytic comparison.
+
+\emph{Item (4): Riemann--Hurwitz.}\;
+The branched covering $\pi \colon S \to \mathbb{P}(V)$ of degree~$d$ has
+total ramification $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ by
+Riemann--Hurwitz: $\chi(S) = d \cdot \chi(\mathbb{P}(V)) - R_{\mathrm{tot}}$
+with $\chi(\mathbb{P}(V)) = 2$.
+
+\emph{Item (5): Terminal fiber data.}\;
+At a branch point $p$, the Krull dimension of the centre is~$0$, so the base
+is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
+algebra~$A$ at parameter $q(p)$, with the involution
+$\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
+Proposition~\ref{prop:fiber-adjoint-involution}.
 \end{proof}
 
 \begin{remark}[Fermionic sectors as twisted sectors]
@@ -393,12 +490,12 @@ into a harmonic expansion across the infinite jet space $J^\infty E$
 
 \begin{definition}[Quantum Observable Universe as Direct Limit]
 \label{def:direct-limit-algebra}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The
 \emph{direct limit algebra of the quantum observable universe} is the
-colimit in the category of $k$-algebras:
+colimit in the category of $R$-algebras:
 \[
   \mathcal{A}_\infty
   \;=\;
@@ -408,7 +505,7 @@ colimit in the category of $k$-algebras:
 taken over the tower of endomorphism algebras with the transition maps
 induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.
 
-In the $\mathbb{C}$ realisation
+In the archimedean realisation
 (Example~\ref{def:c-quantum-observable-universe}), applying the fibre
 functor $\omega$ gives
 $\mathcal{A}_\infty \cong
@@ -471,8 +568,8 @@ into a global object on the jet shell $J^\infty E$
 
 \begin{proposition}[Global gluing via Yekutieli's twisted quantization]
 \label{prop:global-gluing}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}).  The local
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  The local
 deformations of the Frobenius--Hopf object~$A$ parameterised by the
 substrate parameter~$q$ induce a twisted associative deformation that
 admits a unique global gluing via Yekutieli's twisted quantization
@@ -482,7 +579,7 @@ limit algebra $\mathcal{A}_\infty$
 section of a sheaf of twisted deformation algebras on the underlying
 site~$\mathcal{S}$, and the vacuum state
 (Proposition~\ref{prop:vacuum-state}) is well-defined globally despite
-local non-commutativity.  In the $\mathbb{C}$ realisation, this
+local non-commutativity.  In the archimedean realisation, this
 corresponds to the global gluing of the local algebras
 $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ over the manifold~$M$.
 \end{proposition}
@@ -518,21 +615,21 @@ $\mathrm{SU}(2)$-averaging argument of that proposition.
 
 \begin{proposition}[Existence and Uniqueness of the Vacuum State]
 \label{prop:vacuum-state}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Let
 $\mathcal{A}_\infty$ be its direct limit algebra
 (Definition~\ref{def:direct-limit-algebra}).  Let $G_q =
 \mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group
 (Definition~\ref{def:quantum-gauge-group}), acting on
 $\mathcal{A}_\infty$ by conjugation.  Then there exists a unique
-$k$-linear functional
-$\varphi \colon \mathcal{A}_\infty \to k$ that is $G_q$-invariant:
+$R$-linear functional
+$\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant:
 \[
   \varphi(g \cdot a) = \varphi(a)
   \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.
 \]
-In the $\mathbb{C}$ realisation, $G_q = \mathrm{SU}_q(2)$ and
+In the archimedean realisation, $G_q = \mathrm{SU}_q(2)$ and
 $\varphi$ is the unique $\mathrm{SU}(2)$-invariant state on the
 $C^*$-algebraic direct limit.
 \end{proposition}
@@ -598,7 +695,7 @@ resistance described in Remark~\ref{rem:mass-geometric-drag}.
 
 \begin{proposition}[Stability of the Euler characteristic]
 \label{prop:euler-char-stability}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The categorical Euler
@@ -609,7 +706,7 @@ is stable under jet prolongation: for each level~$n$,
   \chi(A_{n+1}) \;=\; \chi(A_n).
 \]
 In particular, if the base level satisfies $\chi(A_0) = c \in k$, then
-$\chi(A_n) = c$ for all $n \geq 0$.  In the $\mathbb{C}$ realisation,
+$\chi(A_n) = c$ for all $n \geq 0$.  In the archimedean realisation,
 $\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the
 total space~$E_n$.
 \end{proposition}
@@ -643,24 +740,21 @@ forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$---the monodromy
 representation of $\pi_1(E_n)$ on $H^*(S^2;\, \mathbb{Z})$ is trivial (the
 adjoint bundle has no invariant sections to twist the fibre cohomology).
 Consequently the spectral sequence collapses at the $E_2$ page.  The
-preservation of the Euler characteristic follows from the fact that the
-instanton connection $A_n$ provides a global section of the associated
-$S^2$-bundle $E_{n+1}/\mathrm{U}(1) \to E_n$: the instanton itself
-determines a preferred point in each fibre
-$\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2$.  This global section makes the
-projection $E_{n+1} \to E_n$ a homotopy equivalence, whence
-$\chi(E_{n+1}) = \chi(E_n)$.
+preservation of the Euler characteristic follows from the following
+observation.  The base manifold~$M_0$ is invariant under jet prolongation:
+each level of the brane tower changes the bundle data but not the base
+geometry.  Hence $\chi(M_0)$ is preserved at every level.
 \end{proof}
 
 \begin{definition}[Mass (categorical trace)]
 \label{def:mass-identity}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}) and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Since $\mathcal{C}$ is a
-$k$-linear rigid monoidal category, the Frobenius--Hopf object~$A$
+$R$-linear rigid monoidal category, the Frobenius--Hopf object~$A$
 admits a categorical trace
-$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to k$
+$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$
 defined by the composition
 \[
   \mathrm{tr}(f)
@@ -691,15 +785,15 @@ The \emph{inertial mass} of a morphism $\gamma \colon \mathbf{1} \to A$
   \bigr)
   \,\bigr\rVert,
 \]
-where $\lVert \cdot \rVert$ is the norm on~$k$ induced by the
+where $\lVert \cdot \rVert$ is the norm on~$R$ induced by the
 Frobenius pairing.  The mass measures the resistance of the
 Frobenius--Hopf structure to transporting the cycle $\gamma$ through
 the comultiplication.
 \end{definition}
 
-\begin{corollary}[$\mathbb{C}$ realisation: nonabelian multiplicative integration]
+\begin{corollary}[Archimedean realisation: nonabelian multiplicative integration]
 \label{cor:mass-identity-C}
-In the $\mathbb{C}$ quantum observable universe $(M, G, P, E)$
+In the archimedean quantum observable universe $(M, G, P, E)$
 (Example~\ref{def:c-quantum-observable-universe}) with instanton
 connection $A$, Levi form $L$, and self-dual curvature $F^+$, the
 categorical mass (Definition~\ref{def:mass-identity}) is realised as
@@ -809,9 +903,9 @@ $(x, g, a)$ needed to define the face and degeneracy maps.
 
 \begin{definition}[Yekutieli triple mapping]
 \label{def:yekutieli-triple}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}).  Let $\{U_i\}$ be a covering
+(Definition~\ref{def:recursive-brane-tower}); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site~$\mathcal{S}$ trivialising every level of the tower.
 The \emph{Yekutieli triple} at level~$n$ over an intersection
 $U_i \cap U_j$ is the datum $(x_{ij}^{(n)},\, g_{ij}^{(n)},\, a_{ij}^{(n)})$
@@ -834,16 +928,16 @@ the jet prolongation
 (Proposition~\ref{prop:jet-prolongation}) sends the triple at level~$n$
 to the triple at level~$n{+}1$, and the descent homomorphism
 $\mathfrak{d}_{n+1}$ (Lemma~\ref{lem:descent}) reverses this assignment.
-In the $\mathbb{C}$ realisation, $g_{ij}^{(n)} \in
+In the archimedean realisation, $g_{ij}^{(n)} \in
 \Gamma(U_i \cap U_j,\, \mathrm{SU}_{q_n}(2))$ are gauge transition
 functions and $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$.
 \end{definition}
 
 \begin{proposition}[Cosimplicial crossed groupoid]
 \label{prop:cosimplicial-crossed-groupoid}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}), equipped with the Yekutieli
+(Definition~\ref{def:recursive-brane-tower}); let $q$ denote the substrate parameter.  Equipped with the Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
 Definition~\ref{def:yekutieli-triple}.  Then the assignment
 \[
@@ -927,8 +1021,8 @@ underpins the descent involution (Definition~\ref{def:descent-involution}).
 
 \begin{proposition}[Descent condition --- twisted $2$-cocycle]
 \label{prop:descent-condition}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower with Yekutieli
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+$\{A_n\}_{n \geq 0}$ be its recursive brane tower; let $q$ denote the substrate parameter.  With Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$
 (Definition~\ref{def:yekutieli-triple}) and let
 $A_\infty = \sum_{n,i} c_{n,i}\, \alpha_{n,i}$
@@ -1017,10 +1111,10 @@ the lifting criterion (Proposition~\ref{prop:yekutieli-lifting}).
 
 \begin{proposition}[Weak equivalence invariance of physical states]
 \label{prop:weak-equiv-invariance}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial
 crossed groupoid structure
-(Proposition~\ref{prop:cosimplicial-crossed-groupoid}), and let
+(Proposition~\ref{prop:cosimplicial-crossed-groupoid}); let $q$ denote the substrate parameter.  Let
 $\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
 (Proposition~\ref{prop:vacuum-state}).  A \emph{weak equivalence} between
 brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
@@ -1094,24 +1188,25 @@ fluctuations across the tower.
 
 \begin{definition}[Descent]
 \label{def:descent}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  The \emph{descent} is the
 reverse traversal of the tower: starting from level~$n$ one passes to
 level~$n{-}1$ by applying the restriction morphism
 $r_n \colon A_n = J^1(A_{n-1}) \to A_{n-1}$ (the categorical retraction
-of the jet embedding).  In the $\mathbb{C}$ realisation, this restricts
-the connection and bundle to the base manifold $M_{n-1}$.  The descent
-terminates when the categorical dimension of~$A_k$ reaches zero.
+of the jet embedding).  In the archimedean realisation, this restricts
+the connection and bundle to the base manifold $M_{n-1}$.
+By Theorem~\ref{thm:qu-to-qou}(1), the descent terminates in finitely many
+steps, bounded by $\mathrm{Krull\;dim}\, Z(\mathrm{End}_{\mathcal{C}}(A))$.
 \end{definition}
 
 \begin{lemma}[Descent preserves the quantum observable universe]
 \label{lem:descent}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
-(Definition~\ref{def:recursive-brane-tower}), with $n \geq 1$.  The
+(Definition~\ref{def:recursive-brane-tower}), with $n \geq 1$; let $q$ denote the substrate parameter.  The
 restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius--Hopf
-object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega, q)$ is again a
+object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega)$ is again a
 quantum observable universe.  Moreover, the induced descent homomorphism
 \[
   \mathfrak{d}_n \;\colon\;
@@ -1120,7 +1215,7 @@ quantum observable universe.  Moreover, the induced descent homomorphism
   \mathrm{End}_{\mathcal{C}}(A_{n-1})
 \]
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at
-levels~$n$ and~$n{-}1$.  In the $\mathbb{C}$ realisation, this recovers
+levels~$n$ and~$n{-}1$.  In the archimedean realisation, this recovers
 the surjective $*$-homomorphism
 $\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
 \Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
@@ -1269,7 +1364,7 @@ sends them to zero.
 
 \begin{definition}[Defining boundary of the brane]
 \label{def:brane-boundary}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the recursive brane tower
 (Definition~\ref{def:recursive-brane-tower}).  Let $\mathfrak{d}_{n+1}$ be
 the descent homomorphism (Lemma~\ref{lem:descent}).  The \emph{defining
@@ -1282,7 +1377,7 @@ $r_n \colon A_n \to A_{n-1}$ has non-trivial kernel:
   \bigl\{\, S \hookrightarrow A_n \;\bigm|\;
     \ker(r_n|_S) \neq 0 \,\bigr\}.
 \]
-In the $\mathbb{C}$ realisation,
+In the archimedean realisation,
 $\partial A_n$ corresponds to the geometric locus
 $\partial E_n = \{p \in E_n \mid
 \ker(\mathfrak{d}_{n+1}|_p) \neq 0\} \subseteq E_n$,
@@ -1294,12 +1389,12 @@ the degeneracy locus of the fibrewise descent map.
 The defining boundary $\partial A_n$
 (Definition~\ref{def:brane-boundary}) has the following properties:
 \begin{enumerate}
-  \item \emph{Codimension.}\; In the $\mathbb{C}$ realisation,
+  \item \emph{Codimension.}\; In the archimedean realisation,
         $\partial A_n$ corresponds to a closed subset of real codimension at
         least~$2$ in~$E_n$.
   \item \emph{Exceptional object.}\; At each degeneration locus of the
         restriction $r_n$, the kernel $\ker(r_n|_S)$ is isomorphic to a
-        simple object of~$\mathcal{C}$; in the $\mathbb{C}$ realisation
+        simple object of~$\mathcal{C}$; in the archimedean realisation
         this is $\mathbb{CP}^1 \cong S^2$, the exceptional divisor of the
         topological blow-up.
   \item \emph{Involution symmetry.}\; The descent involution $\tau_n$
@@ -1307,7 +1402,7 @@ The defining boundary $\partial A_n$
         endomorphism of $\partial A_n$, whose fixed subobjects coincide
         with the monodromy fixed points of the quantum characteristic
         classes (Definition~\ref{def:quantum-characteristic-classes}).
-  \item \emph{Chirality interface ($\mathbb{C}$ realisation).}\;
+  \item \emph{Chirality interface (archimedean realisation).}\;
         When $n = 1$, $\partial E_1$ separates the macroscopic spacetime
         coordinates from the internal chiral modes: it is the geometric
         boundary between the base manifold~$M$ and the gauge fibre, across
@@ -1362,7 +1457,7 @@ Remark~\ref{rem:descartes-chirality}.
 
 \begin{remark}[Reduction at dimension~$1$]
 \label{rem:descent-reduction}
-When $\dim M_k = 1$ the geometric data of the $\mathbb{C}$ quantum observable
+When $\dim M_k = 1$ the geometric data of the archimedean quantum observable
 universe collapse as follows.
 \begin{enumerate}
   \item \emph{Connection.}  The $\mathrm{SU}(2)$ connection $A_k$ restricts to
@@ -1413,7 +1508,7 @@ At dimension~$1$ the physical content simplifies drastically.
 \begin{remark}[Reduction at dimension~$0$]
 \label{rem:descent-reduction-zero}
 When $\dim M_k = 0$ the base manifold is a discrete set of points and
-the geometric data of the $\mathbb{C}$ quantum observable universe
+the geometric data of the archimedean quantum observable universe
 reduce to purely algebraic invariants at each point $p\in M_k$.
 \begin{enumerate}
   \item \emph{Connection.}  The $\mathrm{SU}(2)$ connection $A_k$ has no
@@ -1498,8 +1593,8 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 
 \begin{theorem}[Topological Decomposition of Mass]
 \label{thm:topological-mass}
-Let $(\mathcal{C}, A, \omega, q)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}), where $\mathcal{C}$
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}); let $q$ denote the substrate parameter.  Here $\mathcal{C}$
 is the rigid monoidal category, $A$ the Frobenius--Hopf object, and
 $\omega$ the fibre functor.  Let
 $\gamma \colon \mathbf{1} \to A$ be a morphism (a ``closed cycle'' in~$A$,

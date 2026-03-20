@@ -25,6 +25,7 @@ When a user request arrives, route to the right skill(s):
 | "status / tracking / manifest" | `local/proof-status-tracking` |
 | "what next / priority / triage" | `local/proof-triage` |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` |
+| "simplify / streamline proofs" | `local/proof-simplifier` |
 | "validate LaTeX" | `local/latex-validation` |
 
 **Decision tree**: (1) Does it touch `.tex`? → LaTeX skills.

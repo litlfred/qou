@@ -15,9 +15,9 @@ and~\ref{def:quantum-observable-universe} are grounded in the algebraic
 framework of topological quantum field theory (TQFT).
 
 \medskip\noindent\textit{Frobenius--Hopf objects and 2d TQFT.}\;
-A commutative Frobenius algebra over~$k$ is equivalent to a
+A commutative Frobenius algebra over~$R$ is equivalent to a
 $2$-dimensional TQFT
-$Z \colon \mathbf{2Cob} \to \mathrm{Vect}_k$
+$Z \colon \mathbf{2Cob} \to R\text{-}\mathrm{Mod}$
 \cite{kock2004, atiyah1988}.  The Frobenius--Hopf object~$A$ in
 Definition~\ref{def:quantum-universe} carries both the Frobenius structure
 (encoding the $2$d cobordism data: the product~$\mu$ corresponds to a
@@ -55,7 +55,7 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ therefore ensures:
         fully dualisable in the relevant Morita higher category, so the
         TQFT extends to a fully local (extended) field theory.
 \end{enumerate}
-In the $\mathbb{C}$ realisation
+In the archimedean realisation
 (Example~\ref{def:c-quantum-observable-universe}), this categorical
 condition reduces to
 $H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
@@ -64,8 +64,9 @@ gauge-theoretic manifestation of the contact (maximally non-integrable)
 geometry of $(M, \theta)$.
 \end{remark}
 
-\begin{remark}[Vanishing conditions: explication]
+\begin{remark}[Vanishing conditions and jet-bundle formulation]
 \label{rem:vanishing-explication}
+\label{rem:jet-bundle}
 In Example~\ref{def:c-quantum-observable-universe},
 $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
 (a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
@@ -73,7 +74,10 @@ denotes the space of compactly supported continuous sections of the
 (non-linear) fibre bundle $E$.  The condition $H^0(M, \mathrm{Ad}(P)) = 0$
 asserts the vanishing of \emph{all} global parallel sections of the adjoint
 bundle --- not merely compactly supported ones --- eliminating every
-infinitesimal gauge symmetry.
+infinitesimal gauge symmetry.  Together with $\Gamma_c(M, E) = 0$, these
+conditions ensure that the space of sections of $J^1 E$ injects into the
+space of connections on $P$, preventing any local degeneracy of the gauge
+field.
 \end{remark}
 
 \begin{remark}[Generalisation beyond strict pseudoconvexity]
@@ -123,17 +127,6 @@ indefinite K\"ahler manifolds and for boundaries of
 Grauert tubes over pseudo-Riemannian manifolds.
 \end{remark}
 
-\begin{remark}[Jet-bundle formulation]
-\label{rem:jet-bundle}
-The conditions in Example~\ref{def:c-quantum-observable-universe} admit a
-natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
-$\Gamma_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
-$E$ exists, while $H^0(M, \mathrm{Ad}(P)) = 0$ eliminates \emph{all}
-infinitesimal gauge symmetries (not merely compactly supported ones).  Together,
-these conditions mean that the space of sections of $J^1 E$ injects into the
-space of connections on $P$, preventing any local degeneracy of the gauge field.
-\end{remark}
-
 \begin{example}[Real hypersurface in a Calabi--Yau $2$-fold]
 \label{ex:calabi-yau}
 Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
@@ -143,7 +136,7 @@ manifold inheriting its CR structure from the ambient K\"ahler geometry.
 Because the holonomy of $X$ is $\mathrm{SU}(2)$, the frame bundle of $X$
 restricted to $M$ yields a natural principal $\mathrm{SU}(2)$-bundle
 $P \to M$.  The associated state bundle $E = P \times_G \mathbb{CP}^1$
-yields a $\mathbb{C}$ quantum observable universe $(M, \theta, G, P, E)$
+yields an archimedean quantum observable universe $(M, \theta, G, P, E)$
 when the vanishing conditions of
 Example~\ref{def:c-quantum-observable-universe} are satisfied.  (For
 higher-dimensional Calabi--Yau manifolds with holonomy $\mathrm{SU}(n)$,
@@ -163,7 +156,7 @@ the orbifold $\mathbb{CP}^1/\Gamma$; the bundle structure remains
 well-defined on the smooth manifold $M = S^3/\Gamma$.)  Equipped with the
 induced principal $\mathrm{SU}(2)$-bundle $P \to M$ and the associated
 state bundle $E = P \times_G \mathbb{CP}^1$, the tuple
-$(M, \theta, G, P, E)$ provides a $\mathbb{C}$ quantum observable universe.
+$(M, \theta, G, P, E)$ provides an archimedean quantum observable universe.
 Note that $\dim_{\mathbb{R}} H = 2$, so the Hodge-star decomposition
 $\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ is trivial
 ($\Lambda^2 H^* \cong \mathbb{R}$); in this dimension the curvature
@@ -186,16 +179,16 @@ $\pi\colon S \to \mathbb{CP}^1$ (a degree-$4$ branched covering with $6$
 branch points corresponding to the $6$ defects of Euler
 characteristic~$\chi=-6$) lifts to a principal $\mathrm{SU}(2)$-bundle
 $P \to M_S$.  Setting $E = P \times_G \mathbb{CP}^1$, the $4$-tuple
-$(M_S,\, G,\, P,\, E)$ assembles into a $\mathbb{C}$ quantum observable
+$(M_S,\, G,\, P,\, E)$ assembles into an archimedean quantum observable
 universe whose exceptional divisors support the $q$-deformed Reeb flow
 (Definition~\ref{def:q-reeb-flow}).
 \end{example}
 
-\begin{remark}[$\mathbb{C}$ examples as instances of the generalised framework]
+\begin{remark}[Archimedean examples as instances of the generalised framework]
 \label{rem:examples-unified}
-Each of the preceding $\mathbb{C}$ examples is an instance of the
+Each of the preceding archimedean examples is an instance of the
 base-field-independent Definition~\ref{def:quantum-universe}, realised
-over $k = \mathbb{C}$ via the Levi non-degenerate framework of
+over $K = \mathbb{C}$ via the Levi non-degenerate framework of
 Example~\ref{def:c-quantum-universe} and
 Remark~\ref{rem:levi-generalisation}.
 \begin{itemize}
@@ -429,7 +422,7 @@ the Frobenius form $\lambda \colon A \to \mathbf{1}$, and the
 non-degeneracy~\eqref{eq:frobenius-nondegen} is the $\mathbb{C}$
 instance of condition~(1) in
 Definition~\ref{def:quantum-observable-universe}.
-In the $\mathbb{C}$ realisation (Example~\ref{def:c-quantum-universe}),
+In the archimedean realisation (Example~\ref{def:c-quantum-universe}),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
 conditions of Example~\ref{def:c-quantum-observable-universe}
 reduce to a triple:
@@ -620,13 +613,11 @@ dynamics are in equilibrium.
 
 \begin{remark}[Physical interpretation of $q$-harmonicity]
 \label{rem:q-harmonic-physical}
-The $q$-Laplacian $\Delta_q$ encodes the $q$-deformed viscosity of the
-CR geometry.  A $q$-harmonic form is a zero-mode of this operator and thus
-represents a stable excitation --- a particle --- of the quantum observable
-universe.  The deformation parameter $q$ interpolates between the classical
-regime ($q \to 1$, where $\Delta_q$ reduces to the Hodge Laplacian) and the
-deep-quantum regime ($q \to \infty$), so the notion of ``particle'' is itself
-$q$-dependent.
+See Remark~\ref{rem:reeb-physical} for the physical interpretation of
+$q$-harmonic forms and the Reeb decomposition.  In brief: the
+$q$-Laplacian $\Delta_q$ interpolates between the Hodge Laplacian
+($q = 1$) and the deep-quantum regime ($q \to \infty$), so a
+$q$-harmonic form --- a ``particle'' --- is itself $q$-dependent.
 \end{remark}
 
 \begin{remark}[$q$-Deformed Schr\"odinger equation]
@@ -684,7 +675,7 @@ $\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$.
 In the base-field-independent setting of
 Definitions~\ref{def:quantum-universe}
 and~\ref{def:quantum-observable-universe}, this extends to arbitrary base
-fields~$k$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate
-$k$-linear category of sections.
+rings~$R$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate
+$R$-linear category of sections.
 \end{remark}
 

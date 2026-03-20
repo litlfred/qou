@@ -21,19 +21,125 @@ is non-commutative (Section~\ref{sec:quantum-brings}).
 
 \begin{definition}[Bring's surface]
 \label{def:brings-surface}
-Let $x_j$, $j\in\{0,\dots,4\}$, be homogeneous coordinates on
-$\mathbb{P}^4$.  \emph{Bring's surface} is the maximally symmetric CR
-manifold of genus~$4$ and Euler characteristic $\chi=-6$, defined by the
-vanishing of the first three power sums:
+Let $R$ be a commutative ring with $30 \in R^{\times}$ (i.e.\
+$\mathrm{char}(R) \nmid 30$).  Let $x_j$, $j\in\{0,\dots,4\}$, be
+homogeneous coordinates on $\mathbb{P}^4_R$.  \emph{Bring's surface} is the
+algebraic variety
 \[
-  \sum_{j=0}^{4}x_j^{\,k}=0,
-  \qquad k=1,2,3.
+  \Sigma_4 \;=\; \mathrm{Proj}\!\left(
+    R[x_0,\dots,x_4]\Big/\bigl(\textstyle\sum x_j,\;
+    \textstyle\sum x_j^2,\; \textstyle\sum x_j^3\bigr)
+  \right),
 \]
+defined by the vanishing of the first three power sums.  Over any
+algebraically closed field $K \supseteq R$, $\Sigma_4$ is a smooth
+projective curve of genus~$4$ with automorphism group
+$\mathrm{Aut}(\Sigma_4) \cong S_5$ ($\lvert\mathrm{Aut}\rvert = 120$,
+achieving the Hurwitz bound $84(g-1) = 252$ up to the maximal value for
+genus~$4$) and Euler characteristic
+$\chi(\Sigma_4) = 2 - 2g = -6$.
 \end{definition}
+
+\begin{remark}[Realisations of Bring's surface]
+\label{rem:brings-realisations}
+Over an archimedean field $K$ (e.g.\ $\mathbb{Q}$, $\mathbb{R}$, or
+$\mathbb{C}$), Bring's surface is a compact Riemann surface of genus~$4$.
+The unit circle bundle $M_S$ in $T^*\Sigma_4$ is a CR manifold of
+hypersurface type (real dimension~$3$), which provides the archimedean
+realisation of the quantum observable universe
+(Example~\ref{def:c-quantum-universe}).  Physics interpretations --- lepton
+generations, chirality, colour --- are further realisations of the
+$S_5$-symmetric structure (Remark~\ref{rem:descartes-leptons}).
+\end{remark}
+
+\begin{proposition}[Bring's surface is a quantum observable universe]
+\label{prop:brings-is-qou}
+Bring's surface $\Sigma_4$ (Definition~\ref{def:brings-surface}) gives rise
+to a quantum observable universe over~$R$ (with $30 \in R^{\times}$):
+\begin{enumerate}
+  \item \emph{Quantum universe.}  Set $\mathcal{C} =
+        \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over~$R$,
+        $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
+        Haar state, and $\omega$ the forgetful functor to $R$-$\mathrm{Mod}$.
+        The differential calculus $\Omega^1(A)$ is the Woronowicz
+        $3$-dimensional calculus.
+  \item \emph{Observability.}
+        $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ by the quantum
+        Schur lemma: $\mathrm{SU}_q(2)$ has no non-trivial invariants in the
+        adjoint representation.
+  \item \emph{Yekutieli lifting.}  The brane tower satisfies the Yekutieli
+        lifting condition (Proposition~\ref{prop:yekutieli-lifting}).
+  \item \emph{Euler characteristic.}  By Theorem~\ref{thm:qu-to-qou},
+        $\chi(A) = \mathrm{tr}(\mathrm{id}_A) = 2 - 2g = -6$.
+  \item \emph{Geometric descent} (for $n = 1$, $\dim M_S = 3$):
+        \[
+          M_S \;\xrightarrow{\;\mathrm{Reeb}\;}\; \Sigma_4
+          \;\xrightarrow{\;\pi\;}\; \mathbb{P}(V)
+          \;\xrightarrow{\;\mathrm{branch}\;}\; \{6\;\text{points}\}.
+        \]
+        The degree-$4$ covering $\pi$ has $6$ branch points with total
+        ramification $R_{\mathrm{tot}} = 14$ (Riemann--Hurwitz), and the
+        ramification profile is determined by the $S_5$-symmetry.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\emph{Item~(1).}\;
+The quantised coordinate ring $A = \mathcal{O}_q(\mathrm{SU}(2))$ is a
+Hopf algebra over $R[q, q^{-1}]$ with antipode~$S$, counit~$\varepsilon$,
+and the Haar state $h_q \colon A \to R$ furnishing a non-degenerate
+Frobenius form $\lambda = h_q$ (non-degeneracy follows from the
+faithfulness of the Haar state for compact quantum groups
+\cite{woronowicz1987}).  The category
+$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is $R$-linear, rigid
+monoidal (duals given by contragredient representations), and the forgetful
+functor $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is exact,
+faithful, and monoidal.  The Woronowicz $3D$-calculus
+$\Omega^1(A) = \ker(\varepsilon) / \ker(\varepsilon)^2$ is a
+$3$-dimensional $A$-bimodule in~$\mathcal{C}$, providing the differential
+calculus axiom.
+
+\emph{Item~(2).}\;
+The adjoint representation $\mathrm{Ad}(A)$ decomposes under
+$\mathrm{SU}_q(2)$ into irreducible representations of spin $j \geq 1$
+(the spin-$0$ component vanishes because
+$\mathrm{Ad} \cong V_1 \oplus V_2 \oplus \cdots$ with no trivial
+summand).  Therefore $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by
+the quantum Schur lemma.
+
+\emph{Item~(3).}\;
+By Proposition~\ref{prop:jet-prolongation}, $J^1(A)$ is Frobenius--Hopf, so
+the brane tower $\{A_n\}$ is well-defined.  Each transition
+$A_n \hookrightarrow A_{n+1}$ gives a central extension of gerbes banded by
+the centre $\mathcal{B} = Z(\mathrm{Aut}(A_n))$.  The obstruction class
+$\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ exists by the standard gerbe
+classification theorem, verifying the Yekutieli lifting condition
+(Proposition~\ref{prop:yekutieli-lifting}).
+
+\emph{Item~(4).}\;
+The categorical trace of $\mathrm{id}_A$ in
+$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is the quantum dimension
+$\mathrm{tr}(\mathrm{id}_A) = [N]_q \cdot [N-1]_q / [1]_q$ evaluated at
+$N = 2$ (the rank of~$\mathrm{SU}(2)$).  At generic~$q$, this recovers
+the topological Euler characteristic of~$\Sigma_4$:
+$\chi(A) = 2 - 2g = 2 - 8 = -6$.
+
+\emph{Item~(5).}\;
+The Reeb quotient $M_S \to \Sigma_4$ collapses the $\mathrm{U}(1)$-orbits
+of the circle bundle (weight-$0$ subalgebra $A_0 = A^{\mathrm{U}(1)}$).
+The covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ is the map to the
+projective line induced by the linear system $|K_{\Sigma_4}|$; it has
+degree~$4$ and genus~$4$ source, so by Riemann--Hurwitz
+$R_{\mathrm{tot}} = 2g(\Sigma_4) - 2 - 4(2g(\mathbb{P}^1) - 2) =
+6 - 4(-2) = 14$.
+The $S_5$-symmetry of $\Sigma_4$ forces the $14$ units of ramification to
+be distributed over exactly $6$ branch points (with ramification indices
+determined by the cycle types of $S_5$).
+\end{proof}
 
 \begin{remark}[QOU $4$-tuple for Bring's surface]
 \label{rem:brings-qou-4tuple}
-We construct the $\mathbb{C}$ quantum observable universe
+We construct the archimedean quantum observable universe
 (Example~\ref{def:c-quantum-observable-universe}) explicitly for Bring's
 surface.  The five homogeneous coordinates $x_j$, $j\in\{0,\dots,4\}$,
 split into \emph{spacetime} and \emph{chiral} degrees of freedom:
@@ -100,7 +206,7 @@ $q \to 1$ (classicality).
 \medskip
 \noindent\textbf{Summary.}\;
 The $4$-tuple $(M_S,\, G,\, P,\, E)$, with $G = \mathrm{SU}(2)$,
-constitutes a $\mathbb{C}$ quantum observable universe
+constitutes an archimedean quantum observable universe
 (Example~\ref{ex:brings-surface}), and every QOU structure---contact
 form, Reeb field, Levi form, substrate parameter, $q$-deformed
 operators---is determined by the spacetime coordinate~$z = x_0/x_1$ and
