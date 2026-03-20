@@ -102,11 +102,12 @@ noncomputable def trefoilEntry : KnotEntry where
 
 /-- **Figure-Eight Knot (4₁)** — the simplest hyperbolic knot.
     QOU identity: **Muon** (Generation 2).  Its hyperbolic volume
-    Vol(4₁) ≈ 2.0298832128 is the numerator in the mass-ratio derivation
+    Vol(4₁) ≈ 2.02988321281931 is the numerator in the mass-ratio derivation
     `m_μ/m_e = Vol(4₁) / ℏ_q²`.
+    Exact: 3 · Cl₂(π/3) (OEIS A091518).
 
     Knot Atlas: <http://katlas.org/wiki/4_1>
-    Hyperbolic volume: 2.0298832128 ± 1×10⁻¹⁰  (SnapPy / Bloch-Wigner)
+    Hyperbolic volume: 2.02988321281931 ± 1×10⁻¹⁴  (SnapPy / Bloch-Wigner)
     Ref: [turaev2010] https://doi.org/10.1515/9783110221831 -/
 noncomputable def figureEightEntry : KnotEntry where
   ab_index := "4_1"
@@ -161,9 +162,10 @@ noncomputable def hopfLinkEntry : KnotEntry where
     of which are linked pairwise.
     QOU identity: **Nucleon**.  The Borromean topology encodes the
     color-exchange entanglement of three quark tubes (uud or udd).
+    Exact: 8 · G where G = Catalan's constant (OEIS A006752).
 
     Knot Atlas: <http://katlas.org/wiki/L6a4>
-    Hyperbolic volume: 7.327724753 ± 1×10⁻⁹  (SnapPy)
+    Hyperbolic volume: 7.32772475341775 ± 1×10⁻¹⁴  (SnapPy)
     Components: 3 -/
 noncomputable def borromeanRingsEntry : KnotEntry where
   ab_index := "L6a4"
@@ -180,8 +182,8 @@ noncomputable def borromeanRingsEntry : KnotEntry where
     components := 3
   }
   volume := {
-    value := 7.327724753
-    error_bound := 1e-9
+    value := 7.32772475341775
+    error_bound := 1e-14
     error_nonneg := by norm_num
   }
   identity := .nucleon

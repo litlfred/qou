@@ -13,9 +13,9 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 
 ## Data Sources
 
-- Vol(4₁): SnapPy census, Bloch-Wigner dilogarithm
+- Vol(4₁): SnapPy census, Bloch-Wigner dilogarithm, 3·Cl₂(π/3) (OEIS A091518)
   Ref: [turaev2010] https://doi.org/10.1515/9783110221831
-- m_μ/m_e: CODATA 2022 recommended value 206.768283
+- m_μ/m_e: NIST CODATA 2022 recommended value 206.7682827(46)
   Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
 - q derivation: Manuscript §4, Conjecture 4.25
 -/
@@ -204,16 +204,16 @@ theorem full_derivation_chain :
   -- (since figureEightEntry.volume.value = vol_figure_eight by rfl).
   exact substrate_error_bound
 
-/-! ## Section 5: Summary
+/-! ## Section 5: Summary (NIST CODATA 2022 precision)
 
-| Step | Formula | Value | Lean Declaration |
-|------|---------|-------|------------------|
-| 1 | Vol(4₁) | 2.0298832128 | `KnotRegistry.figureEightEntry.volume.value` |
-| 2 | m_μ/m_e | 206.768283 | `MassDerivation.experimental_mu_e_ratio` |
-| 3 | ℏ_q² = Vol/ratio | ≈ 0.009817 | `h_q_squared` |
-| 4 | ℏ_q = √(ℏ_q²) | ≈ 0.09908 | `h_q_value` |
-| 5 | q = 1/(1 − ℏ_q) | ≈ 1.1097 | `derived_q` |
-| 6 | \|q − 1.1097\| < 0.0001 | — | `substrate_error_bound` |
+| Step | Formula | Value (uncertainty)                | Lean Declaration |
+|------|---------|-------------------------------------|------------------|
+| 1 | Vol(4₁) | 2.02988321281931 (OEIS A091518)    | `KnotRegistry.figureEightEntry.volume.value` |
+| 2 | m_μ/m_e | 206.7682827(46) (NIST CODATA 2022) | `MassDerivation.experimental_mu_e_ratio` |
+| 3 | ℏ_q² = Vol/ratio | ≈ 0.009817               | `h_q_squared` |
+| 4 | ℏ_q = √(ℏ_q²) | ≈ 0.09908                   | `h_q_value` |
+| 5 | q = 1/(1 − ℏ_q) | ≈ 1.1097                   | `derived_q` |
+| 6 | \|q − 1.1097\| < 0.001 | —                    | `substrate_error_bound` |
 -/
 
 end QOU.Calculations

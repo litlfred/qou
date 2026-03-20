@@ -46,11 +46,14 @@ axiom topological_mass_conjecture :
 /-! ## Section 2: Experimental & Topological Constants -/
 
 /-- The Hyperbolic Volume of the Figure-Eight Knot (4₁).
+    Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function (OEIS A091518).
     Computed by SnapPy; value from Bloch-Wigner dilogarithm. -/
-noncomputable def vol_figure_eight : ℝ := 2.0298832128
+noncomputable def vol_figure_eight : ℝ := 2.02988321281931
 
-/-- CODATA 2026 Muon-Electron mass ratio. -/
-noncomputable def experimental_mu_e_ratio : ℝ := 206.768283
+/-- CODATA 2022 Muon-Electron mass ratio.
+    NIST: 206.768 2827(46), rel. uncertainty 2.2 × 10⁻⁸.
+    Ref: https://physics.nist.gov/cgi-bin/cuu/Value?mmusme -/
+noncomputable def experimental_mu_e_ratio : ℝ := 206.7682827
 
 /-- The quantum Planck constant derived from substrate parameter q.
     `ℏ_q = 1 - 1/q` for `q > 1`. -/
@@ -61,16 +64,16 @@ noncomputable def substrate_q : ℝ := 1.1097
 
 /-! ## Section 3: Approximation Lemmas -/
 
-/-- The figure-eight volume is approximately 2.02988. -/
+/-- The figure-eight volume is approximately 2.029883. -/
 lemma vol_figure_eight_approx :
-    |vol_figure_eight - 2.02988| < 1e-5 := by
+    |vol_figure_eight - 2.029883| < 1e-6 := by
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Vol(4₁) via Bloch-Wigner
   unfold vol_figure_eight
   norm_num
 
-/-- The muon-electron mass ratio is approximately 206.768. -/
+/-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
-    |experimental_mu_e_ratio - 206.768| < 1e-3 := by
+    |experimental_mu_e_ratio - 206.7683| < 1e-4 := by
   -- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
   unfold experimental_mu_e_ratio
   norm_num
@@ -187,12 +190,12 @@ lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
 
 /-! ## Section 5: Summary Table
 
-| Parameter    | Narrative Origin           | Computed/CODATA Value | Lean Representation   |
-|--------------|----------------------------|-----------------------|-----------------------|
-| Vol(4₁)      | Hyperbolic Geometry        | 2.02988               | `vol_figure_eight`    |
-| m_μ / m_e    | Experimental Observation   | 206.768               | `experimental_mu_e_ratio` |
-| ℏ_q          | Quantum Planck Field       | 0.09908               | `quantum_planck q`    |
-| q            | Substrate Coupling         | 1.1097                | `substrate_q`         |
+| Parameter    | Narrative Origin           | NIST Value (uncertainty)       | Lean Representation   |
+|--------------|----------------------------|--------------------------------|-----------------------|
+| Vol(4₁)      | Hyperbolic Geometry        | 2.02988321281931 (OEIS A091518)| `vol_figure_eight`    |
+| m_μ / m_e    | CODATA 2022                | 206.7682827(46)                | `experimental_mu_e_ratio` |
+| ℏ_q          | Quantum Planck Field       | 0.09908                        | `quantum_planck q`    |
+| q            | Substrate Coupling         | 1.1097                         | `substrate_q`         |
 -/
 
 end QOU.MassDerivation
