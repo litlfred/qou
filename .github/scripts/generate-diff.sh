@@ -79,8 +79,9 @@ echo "::endgroup::"
 # Then replace every \color{blue}/\color{BLUE} with \color{DIFgreen}.
 echo "::group::Patch diff colours"
 
-# 1. Define DIFgreen right after the colour package is loaded
-sed -i '/\\RequirePackage.*{color}/a \\\definecolor{DIFgreen}{rgb}{0,0.5,0} %DIF PREAMBLE' diff.tex
+# 1. Define DIFgreen just before \begin{document} (robust: works regardless of
+#    whether the document loads color, xcolor, or latexdiff injects RequirePackage)
+sed -i '/\\begin{document}/i \\\definecolor{DIFgreen}{rgb}{0,0.5,0} %DIF PREAMBLE' diff.tex
 
 # 2. Override the BLUE colour definition that CFONT type emits
 sed -i 's/\\definecolor{BLUE}{rgb}{[^}]*}/\\definecolor{BLUE}{rgb}{0,0.5,0}/g' diff.tex
