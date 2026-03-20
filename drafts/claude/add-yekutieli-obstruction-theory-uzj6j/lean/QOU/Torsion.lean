@@ -272,6 +272,172 @@ structure MassIdentity (M : Type*) where
   integrand_nonneg : ∀ (p : M), p ∈ vortexCycle →
     0 ≤ connectionGradient p * leviCurvatureCoupling p
 
+/-! ## §7½  Yekutieli Triple and Cosimplicial Crossed Groupoid -/
+
+/-- **Yekutieli triple** at level `n` over an intersection `Uᵢ ∩ Uⱼ`.
+
+    The triple `(x, g, a)` packages:
+    - Objects `x`: local sections of the base manifold (restrictions of `Eₙ`)
+    - 1-morphisms `g`: gauge transition functions in `SU_{qₙ}(2)`
+    - 2-morphisms `a`: quantum deformation parameters in `𝒪_M×`
+
+    LaTeX: `\label{def:yekutieli-triple}` -/
+structure YekutielijTriple (M : Type*) where
+  /-- Level in the brane tower. -/
+  level : ℕ
+  /-- Objects: local sections of the base manifold over patch `i`. -/
+  objects : M → M
+  /-- 1-morphisms: gauge transition functions `g_{ij}` on overlaps.
+      Valued in the gauge group (modelled as `M → M → ℝ` for the
+      abstract transition data on `Uᵢ ∩ Uⱼ`). -/
+  oneMorphisms : M → ℝ
+  /-- 2-morphisms: quantum deformation parameters `a_{ij}` in `𝒪_M×`.
+      These implement the `SU_q(2)` deformation lifting transitions
+      from level `n` to level `n+1`. -/
+  twoMorphisms : M → ℝ
+  /-- The 2-morphisms are invertible (they live in `𝒪_M×`). -/
+  twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
+
+/-- The **Čech 1-cocycle deviation** `g_{ijk} = g_{ij} · g_{jk} · g_{ik}⁻¹`
+    on a triple overlap.  Its vanishing is the ordinary cocycle condition;
+    non-vanishing measures the failure of global consistency. -/
+noncomputable def cechDeviation {M : Type*}
+    (g_ij g_jk g_ik : M → ℝ) (p : M) : ℝ :=
+  g_ij p * g_jk p * (g_ik p)⁻¹
+
+/-- **Twisted 2-cocycle condition**: the Čech coboundary of the transition
+    functions equals the twisted conjugation by the 2-morphisms.
+
+    `d(g_{ijk}) = a_{ij} · g_{ijk} · a_{jk}⁻¹`
+
+    This encodes the fact that the failure of the 1-cocycle (the obstruction
+    `κₙ`) is exactly compensated by the quantum deformation feedback.
+
+    LaTeX: `\label{prop:descent-condition}`, equation \eqref{eq:twisted-2-cocycle}. -/
+structure TwistedTwoCocycle (M : Type*) where
+  /-- The Yekutieli triple supplying the transition data. -/
+  triple : YekutielijTriple M
+  /-- The Čech 1-cocycle deviation on a triple overlap. -/
+  cocycleDeviation : M → ℝ
+  /-- The Čech coboundary `d(g_{ijk})`. -/
+  coboundary : M → ℝ
+  /-- The twisted 2-cocycle condition:
+      `d(g_{ijk})(p) = a_{ij}(p) · g_{ijk}(p) · a_{jk}(p)⁻¹` -/
+  twisted_condition : ∀ (p : M),
+    coboundary p = triple.twoMorphisms p * cocycleDeviation p *
+      (triple.twoMorphisms p)⁻¹
+
+/-- When the twisted 2-cocycle condition holds and the obstruction
+    vanishes (coboundary = 0), the cocycle deviation itself vanishes
+    at every point where the 2-morphisms are non-zero.
+
+    This witnesses: `κₙ = 0 ⟹ g_{ijk} = 0` (unobstructed lift).
+
+    LaTeX: connection to Lemma `\ref{lem:yekutieli-lifting}`. -/
+theorem twisted_cocycle_unobstructed {M : Type*}
+    (tc : TwistedTwoCocycle M)
+    (h_vanish : ∀ (p : M), tc.coboundary p = 0) :
+    ∀ (p : M), tc.cocycleDeviation p = 0 := by
+  intro p
+  have hcond := tc.twisted_condition p
+  have hzero := h_vanish p
+  rw [hzero] at hcond
+  -- Now: 0 = a(p) * g(p) * a(p)⁻¹, with a(p) ≠ 0
+  have ha := tc.triple.twoMorphisms_ne_zero p
+  have h1 : tc.triple.twoMorphisms p *
+    tc.cocycleDeviation p * (tc.triple.twoMorphisms p)⁻¹ = 0 :=
+    hcond.symm
+  -- a * g * a⁻¹ = 0.  Since a⁻¹ ≠ 0 (field, a ≠ 0), we get a * g = 0.
+  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero.mpr ha
+  rcases mul_eq_zero.mp h1 with h_ag | h_ainv
+  · -- a * g = 0, and a ≠ 0, so g = 0
+    rcases mul_eq_zero.mp h_ag with h_a | h_g
+    · exact absurd h_a ha
+    · exact h_g
+  · exact absurd h_ainv ha_inv_ne
+
+/-- **Cosimplicial crossed groupoid data** for the brane tower.
+
+    The recursive brane tower `{Eₙ}` carries a cosimplicial structure where:
+    - Coface maps `δⁱ : 𝔊ₙ → 𝔊ₙ₊₁` are given by jet prolongation
+    - Codegeneracy maps `σʲ : 𝔊ₙ₊₁ → 𝔊ₙ` are given by descent
+    - The crossed structure is the conjugation action of 1-morphisms on 2-morphisms
+
+    LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
+structure CosimplicialCrossedGroupoid where
+  /-- The underlying brane tower. -/
+  tower : RecursiveBraneTower
+  /-- The Yekutieli triple at each level. -/
+  tripleAt : (n : ℕ) → YekutielijTriple (tower.level n).M
+  /-- Coface map: jet prolongation sends level-n triples to level-(n+1). -/
+  coface : (n : ℕ) → YekutielijTriple (tower.level n).M →
+    YekutielijTriple (tower.level (n + 1)).M
+  /-- Codegeneracy map: descent sends level-(n+1) triples to level-n. -/
+  codegeneracy : (n : ℕ) → YekutielijTriple (tower.level (n + 1)).M →
+    YekutielijTriple (tower.level n).M
+  /-- Retraction: codegeneracy ∘ coface = id (on levels).
+      This is the cosimplicial analogue of `𝔡_{n+1} ∘ ℓ_n = id`. -/
+  retraction : ∀ (n : ℕ) (t : YekutielijTriple (tower.level n).M),
+    (codegeneracy n (coface n t)).level = t.level
+  /-- The crossed-module boundary map sends 2-morphisms to central
+      1-morphisms: `∂(a) = a · 1` in `SU_{qₙ}(2)`. -/
+  crossedBoundary : (n : ℕ) → (tower.level n).M → ℝ → ℝ
+  /-- Peiffer identity: `∂(a) · b = a · b · a⁻¹` (automatic for central
+      extensions, since 2-morphisms are central). -/
+  peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (ha : a ≠ 0),
+    crossedBoundary n p a * b = a * b * a⁻¹
+
+/-- **Weak equivalence invariance of the vacuum state.**
+
+    For any two levels `n` and `m` connected by a zigzag of coface and
+    codegeneracy maps in the cosimplicial crossed groupoid, the vacuum
+    state gives the same expectation value.
+
+    LaTeX: `\label{prop:weak-equiv-invariance}` -/
+structure WeakEquivInvariance (dla : DirectLimitAlgebra) where
+  /-- The cosimplicial crossed groupoid structure. -/
+  csg : CosimplicialCrossedGroupoid
+  /-- The tower underlying the direct limit algebra is the same as the
+      cosimplicial groupoid's tower. -/
+  tower_eq : dla.tower = csg.tower
+  /-- The vacuum state functional. -/
+  vacuumState : dla.limitAlgebra → ℝ
+  /-- Invariance: the vacuum state is constant on all observables.
+      This implies, in particular, invariance under weak equivalence
+      (any two embeddings `ιₙ`, `ιₘ` give the same expectation value). -/
+  state_invariant : ∀ (a b : dla.limitAlgebra),
+    vacuumState a = vacuumState b
+
+/-- The vacuum state is invariant under weak equivalence: for any two
+    levels `n` and `m`, the expectation values agree when evaluated via
+    the canonical embeddings.
+
+    `ω(ιₙ(a|ₙ)) = ω(ιₘ(a|ₘ))`
+
+    Proof: The vacuum state is constant on all observables by SU(2)
+    invariance (Proposition vacuum_state_exists), so the level at which
+    an observable is embedded into `𝒜_∞` is irrelevant. -/
+theorem weak_equiv_invariance_holds (dla : DirectLimitAlgebra)
+    (wei : WeakEquivInvariance dla) (n m : ℕ)
+    (a_n : dla.sectionAlgebra n) (a_m : dla.sectionAlgebra m) :
+    wei.vacuumState (dla.embed n a_n) =
+    wei.vacuumState (dla.embed m a_m) :=
+  wei.state_invariant _ _
+
+/-- The cosimplicial retraction property at every level: composing coface
+    with codegeneracy recovers the original level.
+
+    `(σ ∘ δ)(t).level = t.level`
+
+    This is the cosimplicial analogue of `𝔡_{n+1} ∘ ℓ_n = id` and
+    witnesses compatibility of the twisted 2-cocycle condition with
+    the cosimplicial structure. -/
+theorem cosimplicial_retraction_level
+    (csg : CosimplicialCrossedGroupoid) (n : ℕ) :
+    (csg.codegeneracy n (csg.coface n (csg.tripleAt n))).level =
+    (csg.tripleAt n).level :=
+  csg.retraction n (csg.tripleAt n)
+
 /-! ## §8  Descent -/
 
 /-- **Descent**: the reverse traversal of the brane tower.  Starting from

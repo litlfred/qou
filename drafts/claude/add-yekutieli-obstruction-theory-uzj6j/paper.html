@@ -358,6 +358,7 @@ code { font-size: 90%; }
         <a class="toc-ssec" href="#subsec:genus-2">The genus-2 case</a>
         <a class="toc-sec" href="#descent-from-e_1-to-e_0-and-the-mirror-bundle-e_-1">Descent from E_1 to E_0 and the mirror bundle E_-1</a>
         <a class="toc-ch" href="#chap:torsion">Lifting of Quantum Torsion</a>
+        <a class="toc-ssec" href="#ssec:cosimplicial-crossed-groupoid">Cosimplicial Crossed Groupoid Structure</a>
         <a class="toc-ssec" href="#ssec:descent">Descent</a>
         <a class="toc-ch" href="#chap:brings-surface">Bring&#x27;s Surface</a>
         <a class="toc-sec" href="#sec:quantum-brings">Quantum Brings</a>
@@ -402,7 +403,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/add-yekutieli-obstruction-theory-uzj6j">&#x1F33F; claude/add-yekutieli-obstruction-theory-uzj6j</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/0bb01f8b257b567eac8f5b81e0f64b6a35a3032d">&#x1F4DD; 0bb01f8</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/2487185291b3ca81e728d15949a3703bb27f1e98">&#x1F4DD; 2487185</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/103">PR #103</a>
   <a class="gh-badge" href="quantum-observable-universe-claude-add-yekutieli-obstruction-theory-uzj6j-diff.pdf" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>
 </div>
@@ -1508,7 +1509,7 @@ reductions under the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 action produces a tower of nested quantum observable universes <span
 class="math inline">\((M_k)_{k \geq 0}\)</span>, terminating at a
 discrete set of algebraic invariants
-(Section <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.1</a>,
+(Section <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.2</a>,
 Chapter <a href="#chap:torsion" data-reference-type="ref" data-reference="chap:torsion">4</a>).</p></li>
 </ul>
 <p>The categorical and analytic elaborations needed for these theorems —
@@ -2980,7 +2981,7 @@ class="math inline">\(J^1(A)\)</span> by functoriality.</em></p></li>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
 is generated entirely by iterating the categorical jet construction. The
 tower, together with its associated <a class="defn-link" href="#def:descent">descent</a>
-(Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.1</a>),
+(Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.2</a>),
 is a formal consequence of the axioms of a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 and does not require any case-by-case verification.</em></p>
 </div>
@@ -3423,7 +3424,7 @@ class="math display">\[\omega_n(a)
 \;=\;
 \int_{\mathrm{SU}(2)} \psi_n(g \cdot a)\; d\mu(g).\]</span> The <a class="defn-link" href="#def:descent">descent</a>
 homomorphisms <span class="math inline">\(\mathfrak{d}_n\)</span>
-(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.24</a>)
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>)
 are equivariant and surjective, so the invariant states <span
 class="math inline">\(\{\omega_n\}\)</span> form a compatible system. By
 the universal property of the direct limit, they determine a state <span
@@ -3702,16 +3703,405 @@ class="math inline">\(\kappa_n \neq 0\)</span> (non-trivial gerbe)</td>
 <td style="text-align: left;">;
 Ex. <a href="#ex:descartes-yekutieli" data-reference-type="ref" data-reference="ex:descartes-yekutieli">6.16</a></td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">Cosimplicial crossed groupoid
+(Prop. <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">4.24</a>)</td>
+<td style="text-align: left;">Cosimplicial object in crossed groupoids;
+Čech nerve of a gerbe</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Twisted <span
+class="math inline">\(2\)</span>-cocycle <span
+class="math inline">\(d(g_{ijk}) = a \cdot g \cdot a^{-1}\)</span>
+(Prop. <a href="#prop:descent-condition" data-reference-type="ref" data-reference="prop:descent-condition">4.26</a>)</td>
+<td style="text-align: left;">Twisted Čech cocycle in <span
+class="math inline">\(H^2(M, \mathcal{O}_M^\times)\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
 <p>Categorical mapping between QOU structures and Yekutieli’s
 results.</p>
 </div>
 
-<h3 id="descent">Descent</h3>
-<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L635" target="_blank" title="View source">&#x1F4C4;</a>
+<h3 id="cosimplicial-crossed-groupoid-structure">Cosimplicial Crossed
+Groupoid Structure</h3>
+<p>The <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a> carries a higher-categorical structure that
+organises the transitions between levels into a cosimplicial crossed
+groupoid. The key <a class="defn-link" href="#def:observation">observation</a> is that Yekutieli’s framework for central
+extensions of gerbes  furnishes exactly the triples <span
+class="math inline">\((x, g, a)\)</span> needed to define the face and
+degeneracy maps.</p>
+<div id="def:yekutieli-triple" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L649" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 4.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
+<p><strong>Definition 4.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:yekutieli-triple">Yekutieli triple mapping</a>). <em>Let
+<span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive
+brane tower
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
+and let <span class="math inline">\(\{U_i\}\)</span> be an open cover of
+the base manifold <span class="math inline">\(M\)</span> trivialising
+every level of the tower. The <em>Yekutieli triple</em> at level <span
+class="math inline">\(n\)</span> over an intersection <span
+class="math inline">\(U_i \cap U_j\)</span> is the datum <span
+class="math inline">\((x_{ij}^{(n)},\, g_{ij}^{(n)},\,
+a_{ij}^{(n)})\)</span> where:</em></p>
+<ol type="1">
+<li><p><em><em>Objects</em> <span class="math inline">\(x_i^{(n)} \in
+\mathrm{Ob}(\mathfrak{G}_n|_{U_i})\)</span> are local sections of the
+base manifold: the restrictions of <span
+class="math inline">\(E_n\)</span> to the trivialisations <span
+class="math inline">\(U_i\)</span>.</em></p></li>
+<li><p><em><em><span class="math inline">\(1\)</span>-morphisms</em>
+<span class="math inline">\(g_{ij}^{(n)} \colon x_i^{(n)} \to
+x_j^{(n)}\)</span> are the gauge transition functions <span
+class="math inline">\(g_{ij}^{(n)} \in \Gamma(U_i \cap U_j,\,
+\mathrm{SU}_{q_n}(2))\)</span> encoding the patching data of the
+connection <span class="math inline">\(A_n\)</span>.</em></p></li>
+<li><p><em><em><span class="math inline">\(2\)</span>-morphisms</em>
+<span class="math inline">\(a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow
+g_{ij}^{(n+1)}\)</span> are the quantum deformation parameters living in
+the band <span class="math inline">\(\mathcal{O}_M^{\times}|_{U_i \cap
+U_j}\)</span>, implementing the <span
+class="math inline">\(\mathrm{SU}_q(2)\)</span>-deformation that lifts
+the transition functions from level <span
+class="math inline">\(n\)</span> to level <span
+class="math inline">\(n{+}1\)</span>.</em></p></li>
+</ol>
+<p><em>The assignment <span class="math inline">\(n \mapsto (x^{(n)},
+g^{(n)}, a^{(n)})\)</span> is functorial: the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
+sends the triple at level <span class="math inline">\(n\)</span> to the
+triple at level <span class="math inline">\(n{+}1\)</span>, and the
+<a class="defn-link" href="#def:descent">descent</a> homomorphism <span
+class="math inline">\(\mathfrak{d}_{n+1}\)</span>
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>)
+reverses this assignment.</em></p>
+</div>
+
+<div id="prop:cosimplicial-crossed-groupoid" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L679" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Proposition 4.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">Cosimplicial crossed groupoid</a>).
+<em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
+<a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
+(Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
+equipped with the Yekutieli triples <span
+class="math inline">\((x^{(n)}, g^{(n)}, a^{(n)})\)</span> of
+Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">4.23</a>.
+Then the assignment <span class="math display">\[[n] \;\longmapsto\;
+\mathfrak{G}_n\]</span> from the simplex category <span
+class="math inline">\(\Delta\)</span> to the <span
+class="math inline">\(2\)</span>-category of gerbes on <span
+class="math inline">\(M\)</span> extends to a <em>cosimplicial crossed
+groupoid</em>: a cosimplicial object in the category of crossed
+groupoids, where</em></p>
+<ol type="1">
+<li><p><em>the coface maps <span class="math inline">\(\delta^i \colon
+\mathfrak{G}_{n} \to
+\mathfrak{G}_{n+1}\)</span> are given by the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> acting on
+objects (inserting the <span class="math inline">\(i\)</span>-th
+degeneracy in the Čech nerve),</em></p></li>
+<li><p><em>the codegeneracy maps <span class="math inline">\(\sigma^j
+\colon \mathfrak{G}_{n+1} \to
+\mathfrak{G}_{n}\)</span> are given by the <a class="defn-link" href="#def:descent">descent</a> homomorphism <span
+class="math inline">\(\mathfrak{d}_{n+1}\)</span> (collapsing the <span
+class="math inline">\(j\)</span>-th face),</em></p></li>
+<li><p><em>the crossed structure is furnished by the conjugation action
+of the <span class="math inline">\(1\)</span>-morphisms <span
+class="math inline">\(g_{ij}^{(n)}\)</span> on the <span
+class="math inline">\(2\)</span>-morphisms <span
+class="math inline">\(a_{ij}^{(n)}\)</span> via the adjoint
+representation of <span
+class="math inline">\(\mathrm{SU}_{q_n}(2)\)</span>.</em></p></li>
+</ol>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> We verify the cosimplicial identities and the
+crossed-module axioms.</p>
+<p><em>Step 1: Cosimplicial identities.</em> The coface maps are
+composites of the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> with the Čech face maps <span
+class="math inline">\(\partial^i\)</span> of the cover <span
+class="math inline">\(\{U_i\}\)</span>. The codegeneracy maps are
+composites of the <a class="defn-link" href="#def:descent">descent</a> homomorphism with the Čech degeneracy maps
+<span class="math inline">\(s^j\)</span>. The identities <span
+class="math inline">\(\delta^j \circ \delta^i = \delta^i \circ
+\delta^{j-1}\)</span> for <span class="math inline">\(i &lt; j\)</span>
+and <span class="math inline">\(\sigma^j \circ \sigma^i = \sigma^i \circ
+\sigma^{j+1}\)</span> for <span class="math inline">\(i \leq j\)</span>
+follow from the functoriality of jet prolongation and descent: the
+ascent <span class="math inline">\(\ell_n\)</span> is a natural
+transformation from the identity functor on <span
+class="math inline">\(\mathfrak{G}_n\)</span> to the restriction of
+<span class="math inline">\(\mathfrak{G}_{n+1}\)</span>, and the descent
+<span class="math inline">\(\mathfrak{d}_{n+1}\)</span> is its left
+adjoint. The mixed identity <span class="math inline">\(\sigma^j \circ
+\delta^i\)</span> reduces to three cases (<span class="math inline">\(i
+&lt; j\)</span>, <span class="math inline">\(i = j\)</span> or <span
+class="math inline">\(i = j + 1\)</span>, <span class="math inline">\(i
+&gt; j + 1\)</span>), each verified using the retraction property <span
+class="math inline">\(\mathfrak{d}_{n+1} \circ \ell_n =
+\mathrm{id}\)</span>
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>).</p>
+<p><em>Step 2: Crossed-module structure.</em> At each level <span
+class="math inline">\(n\)</span>, the pair <span
+class="math inline">\((\mathrm{SU}_{q_n}(2),\,
+\mathcal{O}_M^{\times})\)</span> carries the structure of a crossed
+module in the sense of : the boundary map <span
+class="math inline">\(\partial \colon \mathcal{O}_M^{\times} \to
+\mathrm{SU}_{q_n}(2)\)</span> sends a unit <span class="math inline">\(a
+\in \mathcal{O}_M^{\times}\)</span> to the central element <span
+class="math inline">\(a \cdot \mathbf{1} \in
+\mathrm{SU}_{q_n}(2)\)</span> (the central extension), and the action of
+<span class="math inline">\(g \in \mathrm{SU}_{q_n}(2)\)</span> on <span
+class="math inline">\(a \in \mathcal{O}_M^{\times}\)</span> is
+conjugation: <span class="math inline">\(g \cdot a = g\, a\,
+g^{-1}\)</span>. This action is well-defined because <span
+class="math inline">\(\mathcal{O}_M^{\times}\)</span> is central in the
+gerbe band; the Peiffer identity <span class="math inline">\(\partial(a)
+\cdot b = a\, b\, a^{-1}\)</span> is automatic for a central
+extension.</p>
+<p><em>Step 3: Compatibility.</em> The coface and codegeneracy maps
+respect the crossed-module structure because the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
+preserves the Hopf-algebra multiplication
+(Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>,
+Step 2) and the <a class="defn-link" href="#def:descent">descent</a> homomorphism is a <span
+class="math inline">\(*\)</span>-homomorphism
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>,
+Step 4). Hence the conjugation action of <span
+class="math inline">\(g_{ij}^{(n)}\)</span> on <span
+class="math inline">\(a_{ij}^{(n)}\)</span> is compatible with the
+simplicial maps, making the total assignment a cosimplicial crossed
+groupoid. ◻</p>
+</div>
+
+<div id="rem:jet-as-descent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L748" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 4.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:jet-prolongation">Jet prolongation</a> as formal <a class="defn-link" href="#def:descent">descent</a> of
+information). <em>In the <a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">cosimplicial crossed groupoid</a> of
+Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">4.24</a>,
+the coface map <span class="math inline">\(\delta^0 \colon
+\mathfrak{G}_n \to \mathfrak{G}_{n+1}\)</span> applied to a local
+section <span class="math inline">\(x_i^{(n)}\)</span> produces the
+jet-prolonged section <span class="math inline">\(x_i^{(n+1)} =
+J^1(x_i^{(n)})\)</span>. This is precisely the content of
+Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>:
+the jet prolongation is a <em>formal descent of information</em> from
+the higher categorical level <span
+class="math inline">\(\mathfrak{G}_{n+1}\)</span> to the lower level
+<span class="math inline">\(\mathfrak{G}_n\)</span>, packaged as a
+coface map in the cosimplicial structure. The fact that the codegeneracy
+<span class="math inline">\(\sigma^0 = \mathfrak{d}_{n+1}\)</span>
+inverts this—in the sense that <span class="math inline">\(\sigma^0
+\circ \delta^0 = \mathrm{id}\)</span>—is the retraction property that
+underpins the <a class="defn-link" href="#def:descent-involution">descent involution</a>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>).</em></p>
+</div>
+
+<div id="prop:descent-condition" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L764" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Proposition 4.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> condition — twisted <span
+class="math inline">\(2\)</span>-cocycle). <em>Let <span
+class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
+tower with Yekutieli triples <span class="math inline">\((x^{(n)},
+g^{(n)}, a^{(n)})\)</span>
+(Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">4.23</a>)
+and let <span class="math inline">\(A_\infty = \sum_{n,i} c_{n,i}\,
+\alpha_{n,i}\)</span>
+(Remark <a href="#rem:distributional-connection" data-reference-type="ref" data-reference="rem:distributional-connection">4.12</a>)
+be the distributional connection. Then the global consistency of <span
+class="math inline">\(A_\infty\)</span> is equivalent to the
+satisfaction of the <em>twisted <span
+class="math inline">\(2\)</span>-cocycle condition</em>: for every
+triple intersection <span class="math inline">\(U_i \cap U_j \cap
+U_k\)</span>, <span class="math display">\[\label{eq:twisted-2-cocycle}
+d\!\left(g_{ijk}^{(n)}\right)
+\;=\;
+a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot
+\left(a_{jk}^{(n)}\right)^{-1},\]</span> where <span
+class="math inline">\(g_{ijk}^{(n)} = g_{ij}^{(n)} \cdot g_{jk}^{(n)}
+\cdot (g_{ik}^{(n)})^{-1}\)</span> is the Čech <span
+class="math inline">\(1\)</span>-cocycle deviation at level <span
+class="math inline">\(n\)</span>, <span
+class="math inline">\(d(g_{ijk}^{(n)})\)</span> denotes the Čech
+coboundary (the failure of the <span
+class="math inline">\(1\)</span>-cocycle condition), and <span
+class="math inline">\(a_{ij}^{(n)}, a_{jk}^{(n)} \in
+\mathcal{O}_M^{\times}\)</span> are the <span
+class="math inline">\(2\)</span>-morphisms (quantum deformation feedback
+from <span
+class="math inline">\(\mathrm{SU}_{q_n}(2)\)</span>).</em></p>
+<p><em>Equivalently, the obstruction class <span
+class="math inline">\(\kappa_n\)</span>
+(Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>)
+is the cohomology class of the twisted <span
+class="math inline">\(2\)</span>-cocycle <span
+class="math inline">\([a_{ij}^{(n)} \cdot (\cdot) \cdot
+(a_{jk}^{(n)})^{-1}]\)</span> in <span class="math inline">\(H^2(M,\,
+\mathcal{O}_M^{\times})\)</span>.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> Let <span class="math inline">\(\{U_i\}\)</span> be a
+good cover trivialising the tower. On <span class="math inline">\(U_i
+\cap U_j\)</span> the gauge transition function <span
+class="math inline">\(g_{ij}^{(n)}\)</span> patches the connection <span
+class="math inline">\(A_n\)</span>: <span
+class="math display">\[A_n|_{U_j} \;=\; g_{ij}^{(n)} \cdot A_n|_{U_i}
+\cdot
+(g_{ij}^{(n)})^{-1} + (g_{ij}^{(n)})^{-1}\, dg_{ij}^{(n)}.\]</span> On a
+triple overlap <span class="math inline">\(U_i \cap U_j \cap
+U_k\)</span>, the ordinary cocycle condition <span
+class="math inline">\(g_{ij}^{(n)} \cdot g_{jk}^{(n)} =
+g_{ik}^{(n)}\)</span> holds if and only if the connection <span
+class="math inline">\(A_n\)</span> is globally well-defined at
+level <span class="math inline">\(n\)</span> with no twist. The passage
+from level <span class="math inline">\(n\)</span> to level <span
+class="math inline">\(n{+}1\)</span> via the central extension <span
+class="math inline">\(\mathfrak{G}_{n+1} \to \mathfrak{G}_n\)</span>
+introduces the <span class="math inline">\(2\)</span>-morphism twist:
+the transition functions at level <span
+class="math inline">\(n{+}1\)</span> are related to those at level <span
+class="math inline">\(n\)</span> by <span
+class="math display">\[g_{ij}^{(n+1)} \;=\; a_{ij}^{(n)} \cdot
+g_{ij}^{(n)},\]</span> where <span class="math inline">\(a_{ij}^{(n)}
+\in \mathcal{O}_M^{\times}\)</span> is the local lift datum
+(Definition <a href="#def:yekutieli-triple" data-reference-type="ref" data-reference="def:yekutieli-triple">4.23</a>).
+Computing the cocycle deviation at level <span
+class="math inline">\(n{+}1\)</span>: <span
+class="math display">\[\begin{aligned}
+g_{ijk}^{(n+1)}
+&amp;= g_{ij}^{(n+1)} \cdot g_{jk}^{(n+1)} \cdot (g_{ik}^{(n+1)})^{-1}
+\\
+&amp;= (a_{ij}^{(n)} \cdot g_{ij}^{(n)}) \cdot (a_{jk}^{(n)} \cdot
+g_{jk}^{(n)})
+\cdot (a_{ik}^{(n)} \cdot g_{ik}^{(n)})^{-1}.
+\end{aligned}\]</span> Since <span
+class="math inline">\(a_{ij}^{(n)}\)</span> is central (it lies in the
+band <span class="math inline">\(\mathcal{O}_M^{\times}\)</span> of the
+gerbe), the gauge factors commute past the <span
+class="math inline">\(a\)</span>-factors, giving <span
+class="math display">\[g_{ijk}^{(n+1)}
+\;=\;
+a_{ij}^{(n)} \cdot a_{jk}^{(n)} \cdot (a_{ik}^{(n)})^{-1}
+\cdot g_{ijk}^{(n)}.\]</span> The distributional connection <span
+class="math inline">\(A_\infty\)</span> is globally consistent if and
+only if <span class="math inline">\(g_{ijk}^{(n+1)} = 0\)</span> for all
+<span class="math inline">\(n\)</span> in the Čech cohomology, which
+requires <span class="math display">\[d(g_{ijk}^{(n)})
+\;=\;
+a_{ij}^{(n)} \cdot g_{ijk}^{(n)} \cdot (a_{jk}^{(n)})^{-1},\]</span>
+where the left-hand side is the Čech coboundary <span
+class="math inline">\(\delta^2(g^{(n)})_{ijk}\)</span> and the
+right-hand side is the twisted conjugation by the <span
+class="math inline">\(2\)</span>-morphisms. The class of this twisted
+<span class="math inline">\(2\)</span>-cocycle in <span
+class="math inline">\(H^2(M,\, \mathcal{O}_M^{\times})\)</span> is
+precisely the obstruction class <span
+class="math inline">\(\kappa_n\)</span> of
+Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>:
+it vanishes if and only if the cocycle deviation at level <span
+class="math inline">\(n\)</span> can be absorbed by the <span
+class="math inline">\(2\)</span>-morphism data, i.e. the lift from <span
+class="math inline">\(\mathfrak{G}_n\)</span> to <span
+class="math inline">\(\mathfrak{G}_{n+1}\)</span> is unobstructed.</p>
+<p>By , this is equivalent to the vanishing of the Yekutieli obstruction
+class, closing the circle with the lifting criterion
+(Lemma <a href="#lem:yekutieli-lifting" data-reference-type="ref" data-reference="lem:yekutieli-lifting">4.6</a>). ◻</p>
+</div>
+
+<div id="prop:weak-equiv-invariance" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L853" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Proposition 4.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Weak equivalence invariance of
+physical states). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
+1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a> with cosimplicial crossed
+groupoid structure
+(Proposition <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">4.24</a>),
+and let <span class="math inline">\(\omega \colon \mathcal{A}_\infty \to
+\mathbb{C}\)</span> be the vacuum state
+(Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">4.18</a>).
+A <em>weak equivalence</em> between brane levels <span
+class="math inline">\(n\)</span> and <span
+class="math inline">\(m\)</span> is a zigzag of coface and codegeneracy
+maps <span class="math display">\[\mathfrak{G}_n
+\xleftarrow{\;\sigma\;}
+\mathfrak{G}_{k_1}
+\xrightarrow{\;\delta\;}
+\cdots
+\xrightarrow{\;\delta\;}
+\mathfrak{G}_m\]</span> in the <a class="defn-link" href="#prop:cosimplicial-crossed-groupoid">cosimplicial crossed groupoid</a>. Then for
+every observable <span class="math inline">\(a \in
+\mathcal{A}_\infty\)</span>, the expectation value is invariant under
+weak equivalence: <span
+class="math display">\[\omega\!\bigl(\iota_n(a|_n)\bigr)
+\;=\;
+\omega\!\bigl(\iota_m(a|_m)\bigr),\]</span> where <span
+class="math inline">\(\iota_n \colon \Gamma(J^1 E_n,\,
+\mathrm{SU}_{q_n}(2))
+\hookrightarrow \mathcal{A}_\infty\)</span> is the canonical embedding
+and <span class="math inline">\(a|_n\)</span> denotes the restriction of
+<span class="math inline">\(a\)</span> to level <span
+class="math inline">\(n\)</span>. In particular, physical states (the
+GNS vectors of <span class="math inline">\(\omega\)</span>) are
+invariant under fluctuations of the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(q(p)\)</span> across brane levels.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof.</em> By , a weak equivalence of central extensions of
+gerbes induces an isomorphism on the category of global objects up to
+isomorphism. In the brane tower, the coface maps (<a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>) and
+codegeneracy maps (<a class="defn-link" href="#def:descent">descent</a>) compose to give the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
+class="math inline">\(\tau_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>),
+which is idempotent. The image <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span>
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.31</a>)
+is therefore isomorphic, as an algebra, to the level-<span
+class="math inline">\(n\)</span> section algebra via the ascent
+embedding <span class="math inline">\(\ell_n\)</span>.</p>
+<p>For the vacuum state, the compatibility <span
+class="math inline">\(\omega(\iota_n(a|_n)) = \omega_n(a|_n)\)</span>
+holds by the universal property of the direct limit
+(Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.13</a>).
+The Haar-averaging construction in the proof of
+Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">4.18</a>
+produces states <span class="math inline">\(\omega_n\)</span> that are
+compatible with the transition maps: <span
+class="math inline">\(\omega_{n+1} \circ \iota_{n,n+1} =
+\omega_n\)</span>, where <span
+class="math inline">\(\iota_{n,n+1}\)</span> is the transition map. A
+zigzag of coface and codegeneracy maps between levels <span
+class="math inline">\(n\)</span> and <span
+class="math inline">\(m\)</span> factors as a sequence of such
+transition maps and their adjoints (the <a class="defn-link" href="#def:descent">descent</a> homomorphisms), each of
+which preserves the Haar state by equivariance
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>,
+Step 5).</p>
+<p>Therefore the expectation value <span
+class="math inline">\(\omega(\iota_n(a|_n)) = \omega_n(a|_n) =
+\omega_m(a|_m) =
+\omega(\iota_m(a|_m))\)</span> is invariant under weak equivalence.</p>
+<p>For the GNS representation: the Hilbert space <span
+class="math inline">\(\mathcal{H}_\omega = \overline{\mathcal{A}_\infty
+/ \ker(\omega)}\)</span> with inner product <span
+class="math inline">\(\langle [a], [b] \rangle = \omega(a^* b)\)</span>
+is unchanged by the weak equivalence because <span
+class="math inline">\(\omega\)</span> is invariant. The cyclic vector
+<span class="math inline">\(\Omega = [1]\)</span> generates the same
+representation regardless of the brane level at which it is evaluated,
+so the physical states (vectors in <span
+class="math inline">\(\mathcal{H}_\omega\)</span>) are insensitive to
+the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> fluctuations across the tower. ◻</p>
+</div>
+
+<h3 id="descent">Descent</h3>
+<div id="def:descent" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L929" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Definition 4.28 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
 class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
 tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>).
@@ -3726,9 +4116,9 @@ class="math inline">\(\dim M_k = 0\)</span>, at which point <span
 class="math inline">\(M_k\)</span> is a discrete set of points.</em></p>
 </div>
 
-<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L645" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="lem:descent" class="lemma"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L939" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Lemma 4.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
+<p><strong>Lemma 4.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
 universe). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
@@ -3821,14 +4211,14 @@ class="math inline">\(n\)</span> and <span
 class="math inline">\(n{-}1\)</span>. ◻</p>
 </div>
 
-<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L712" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:descent-involution" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1006" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 4.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
+<p><strong>Definition 4.30 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
 class="math inline">\(\ell_n\)</span> denote the ascent embedding
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
 and <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> the descent
 homomorphism
-(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.24</a>).
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>).
 The <em>descent involution</em> at level <span
 class="math inline">\(n\)</span> is the endomorphism <span
 class="math display">\[\tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}
@@ -3860,12 +4250,12 @@ through the level-<span class="math inline">\(n\)</span> algebra via the
 ascent embedding.</em></p>
 </div>
 
-<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L747" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:descent-eigenspaces" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1041" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Proposition 4.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
+<p><strong>Proposition 4.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
 involution). <em>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
-(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>)
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>)
 decomposes the level-<span class="math inline">\((n{+}1)\)</span>
 section algebra into a direct sum <span
 class="math display">\[\Gamma\!\bigl(J^1 E_{n+1},\,
@@ -3940,15 +4330,15 @@ algebra, so <span class="math inline">\(\tau_n = \ell_n \circ
 \mathfrak{d}_{n+1}\)</span> sends them to zero. ◻</p>
 </div>
 
-<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L801" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:brane-boundary" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1095" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 4.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
+<p><strong>Definition 4.32 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
 <em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
 and let <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> be the
 <a class="defn-link" href="#def:descent">descent</a> homomorphism
-(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.24</a>).
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>).
 The <em>defining boundary</em> of the <span
 class="math inline">\(n\)</span>-th brane is the subset <span
 class="math display">\[\partial E_n
@@ -3962,12 +4352,12 @@ the restriction <span class="math inline">\(r_n\colon J^1(A) \to
 A\)</span> evaluated fibre by fibre.</em></p>
 </div>
 
-<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L819" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:brane-boundary" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1113" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Proposition 4.28 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Structure of the defining
+<p><strong>Proposition 4.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Structure of the defining
 boundary). <em>The defining boundary <span
 class="math inline">\(\partial E_n\)</span>
-(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.27</a>)
+(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.32</a>)
 has the following properties:</em></p>
 <ol type="1">
 <li><p><em><em>Codimension.</em> <span class="math inline">\(\partial
@@ -3982,7 +4372,7 @@ is the exceptional divisor of the topological blow-up replacing the
 singular point.</em></p></li>
 <li><p><em><em>Involution symmetry.</em> The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
-(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>)
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>)
 restricts to an involution on <span class="math inline">\(\partial
 E_n\)</span>, whose fixed-point set coincides with the monodromy fixed
 points of the quantum characteristic classes
@@ -4005,7 +4395,7 @@ reverses orientation.</em></p></li>
 <p><em>Proof.</em> <em>(1).</em> The <a class="defn-link" href="#def:descent">descent</a> map <span
 class="math inline">\(\mathfrak{d}_{n+1}\)</span> is a surjective <span
 class="math inline">\(*\)</span>-homomorphism of fibre algebras
-(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.24</a>).
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>).
 Its kernel at a generic point is zero because the ascent <span
 class="math inline">\(\ell_n\)</span> embeds <span
 class="math inline">\(A\)</span> as a direct summand of <span
@@ -4035,7 +4425,7 @@ exceptional divisor introduced by the topological blow-up that resolves
 the singularity at <span class="math inline">\(p\)</span>.</p>
 <p><em>(3).</em> The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n = \ell_n \circ \mathfrak{d}_{n+1}\)</span>
-(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>),
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>),
 acting on sections of <span class="math inline">\(J^1 E_{n+1}\)</span>,
 restricts to the boundary locus <span class="math inline">\(\partial
 E_n\)</span> as follows. Since <span class="math inline">\(\partial
@@ -4067,9 +4457,9 @@ with
 Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-reference="rem:descartes-chirality">6.8</a>. ◻</p>
 </div>
 
-<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L888" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1182" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
+<p><strong>Remark 4.34 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
@@ -4094,12 +4484,12 @@ survive.</em></p></li>
 </ol>
 <p><em>The <a class="defn-link" href="#def:descent">descent</a> need not terminate here; a further step carries <span
 class="math inline">\(M_k\)</span> to a zero-dimensional base
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.31</a>).</em></p>
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.36</a>).</em></p>
 </div>
 
-<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L908" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1202" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.30 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
+<p><strong>Remark 4.35 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(1\)</span> the physical content
 simplifies drastically.</em></p>
@@ -4135,9 +4525,9 @@ vertical harmonic forms.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L938" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-reduction-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1232" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
+<p><strong>Remark 4.36 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(0\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 0\)</span> the base manifold is a
 discrete set of points and the geometric data of the <span
@@ -4181,9 +4571,9 @@ point—the entire <a class="defn-link" href="#def:quantum-observable-universe">
 <span class="math inline">\((E_p, q(p))\)</span>.</em></p>
 </div>
 
-<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L968" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-physical-zero" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1262" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.32 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
+<p><strong>Remark 4.37 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(0\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(0\)</span> all spatial extent has
 been removed and the physical content is purely algebraic.</em></p>
@@ -4210,9 +4600,9 @@ degrees of freedom without any spatial multiplicity.</em></p></li>
 </ol>
 </div>
 
-<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L992" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:descent-fixed-point" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1286" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fixed-point mechanism: ascent and
+<p><strong>Remark 4.38 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fixed-point mechanism: ascent and
 <a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
 dimension through the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
@@ -4226,42 +4616,42 @@ the <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a>
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>).</em></p></li>
 <li><p><em><em><a class="defn-link" href="#def:descent">Descent</a> (projection).</em> Moving back down via the
 descent homomorphism <span class="math inline">\(\mathfrak{d}_n\)</span>
-(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.24</a>)
+(Lemma <a href="#lem:descent" data-reference-type="ref" data-reference="lem:descent">4.29</a>)
 acts as an algebraic filter
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.11</a>)
 on the level-<span class="math inline">\((n{+}1)\)</span> algebra. The
 transient complement <span
 class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span>
-(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.26</a>)—the
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.31</a>)—the
 genuinely new modes at level <span class="math inline">\(n{+}1\)</span>
 with no pre-image at level <span class="math inline">\(n\)</span>—is
 annihilated by the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>. At dimension <span
 class="math inline">\(1\)</span> only the longitudinal <span
 class="math inline">\(\mathrm{U}(1)\)</span> backbone remains
-(Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.29</a>),
+(Remark <a href="#rem:descent-reduction" data-reference-type="ref" data-reference="rem:descent-reduction">4.34</a>),
 and at dimension <span class="math inline">\(0\)</span> even that is
 collapsed to a single fibre datum
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.31</a>).</em></p></li>
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.36</a>).</em></p></li>
 <li><p><em><em>Round-trip involution.</em> The composition of ascent and
 <a class="defn-link" href="#def:descent">descent</a> is the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
-(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>),
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>),
 acting on <span class="math inline">\(\Gamma(J^1 E_{n+1})\)</span>,
 whose image <span
 class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}}\)</span> is the
 stable core of the brane algebra at level <span
 class="math inline">\(n{+}1\)</span>. The defining boundary <span
 class="math inline">\(\partial E_n\)</span>
-(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.27</a>)
+(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.32</a>)
 marks the geometric locus where the fibrewise descent map has a
 non-trivial kernel.</em></p></li>
 </ol>
 </div>
 
-<div id="conj:topological-mass" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1024" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="conj:topological-mass" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1318" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Conjecture 4.34 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#conj:topological-mass">Topological Decomposition of Mass</a>).
+<p><strong>Conjecture 4.39 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#conj:topological-mass">Topological Decomposition of Mass</a>).
 <em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
 the categorical data of a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>,
@@ -4279,7 +4669,7 @@ class="math inline">\(\gamma_0\)</span>.</em></p>
 (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>)
 admits a decomposition into descended and transient contributions via
 the <a class="defn-link" href="#def:descent-involution">descent involution</a> <span class="math inline">\(\tau_n\)</span>
-(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>):
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>):
 <span class="math display">\[\label{eq:topological-mass-decomp}
 m(\gamma)
 \;=\;
@@ -4301,7 +4691,7 @@ Stokes theorem . Categorically, this is the trace of the
 comultiplication <span class="math inline">\(\Delta\)</span> on <span
 class="math inline">\(A\)</span> restricted to the descended subalgebra
 <span class="math inline">\(\mathcal{A}^{\mathrm{desc}}\)</span>
-(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.26</a>):
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.31</a>):
 it captures the baseline geometric drag of the Frobenius–Hopf object
 along the trivial core.</em></p></li>
 <li><p><em>Each summand is the nonabelian multiplicative integral of the
@@ -4312,7 +4702,7 @@ blow-up. Categorically, <span class="math inline">\(E_i\)</span> is the
 fibre of <span
 class="math inline">\(\ker(\mathfrak{d}_{n+1}|_{p_i})\)</span> at the
 <span class="math inline">\(i\)</span>-th blow-up centre
-(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.27</a>),
+(Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.32</a>),
 and the integral extracts the contribution of the transient complement
 <span class="math inline">\(\mathcal{A}^{\mathrm{trans}}\)</span>
 localised at <span class="math inline">\(p_i\)</span>. Evaluation of
@@ -4325,7 +4715,7 @@ class="math inline">\(\Phi_q(z_i)\)</span>.</em></p></li>
 
 <div class="corollary">
 
-<p><strong>Corollary 4.35</strong> (Quantum Dilogarithm as Localized
+<p><strong>Corollary 4.40</strong> (Quantum Dilogarithm as Localized
 Torsion Volume). <em>The localized topological mass contribution <span
 class="math inline">\(\Phi_q(z_i)\)</span> at the <span
 class="math inline">\(i\)</span>-th exceptional divisor <span
@@ -4344,9 +4734,9 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 the topological charge.</em></p>
 </div>
 
-<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1084" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1378" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.36 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum dilogarithm integrand as <span
+<p><strong>Remark 4.41 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
 <em>The integrand <span class="math inline">\(\ln_q(1+t)/t\)</span> in
 the quantum dilogarithm formula above has the same formal structure as
@@ -4411,9 +4801,9 @@ continuously deforming the Julia set geometry as one moves through the
 QOU.</em></p>
 </div>
 
-<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1125" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1419" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 4.37 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Julia set on <span
+<p><strong>Remark 4.42 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big
 Bang). <em>The exceptional divisor <span
 class="math inline">\(E_i\cong\mathbb{CP}^1\)</span> contains the
@@ -5959,7 +6349,7 @@ ensures that the descended universe retains <span
 class="math inline">\(\chi(E) = -6\)</span>. We may therefore study the
 Descartes universe in the setting of one-complex-dimensional varieties.
 The descent may continue further to dimension zero
-(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.31</a>),
+(Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">4.36</a>),
 where the entire <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> is captured by fibre data
 at a single point.</em></p>
 </div>
@@ -6304,7 +6694,7 @@ in the language of monoidal categories and functors.</p></li>
 as a categorical lift/extension
 (Remark <a href="#rem:prolongation-categorical" data-reference-type="ref" data-reference="rem:prolongation-categorical">4.2</a>).</p></li>
 <li><p><a class="defn-link" href="#def:descent">Descent</a>
-(Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.1</a>)
+(Subsection <a href="#ssec:descent" data-reference-type="ref" data-reference="ssec:descent">4.0.2</a>)
 via fibred categories.</p></li>
 <li><p>Obstructions described in terms of cohomology of the category
 (sheaf cohomology, derived functors).</p></li>
