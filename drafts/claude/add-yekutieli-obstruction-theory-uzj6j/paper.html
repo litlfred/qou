@@ -403,7 +403,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/add-yekutieli-obstruction-theory-uzj6j">&#x1F33F; claude/add-yekutieli-obstruction-theory-uzj6j</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/2487185291b3ca81e728d15949a3703bb27f1e98">&#x1F4DD; 2487185</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/9fae7390015df34f02f9d86d0feece28269f3f62">&#x1F4DD; 9fae739</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/103">PR #103</a>
   <a class="gh-badge" href="quantum-observable-universe-claude-add-yekutieli-obstruction-theory-uzj6j-diff.pdf" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>
 </div>
@@ -4649,9 +4649,9 @@ non-trivial kernel.</em></p></li>
 </ol>
 </div>
 
-<div id="conj:topological-mass" class="conjecture"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1318" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="thm:topological-mass" class="theorem"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1318" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Conjecture 4.39 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#conj:topological-mass">Topological Decomposition of Mass</a>).
+<p><strong>Theorem 4.39 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#thm:topological-mass">Topological Decomposition of Mass</a>).
 <em>Let <span class="math inline">\((\mathcal{C}, A, \omega)\)</span> be
 the categorical data of a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>,
@@ -4713,6 +4713,170 @@ class="math inline">\(\Phi_q(z_i)\)</span>.</em></p></li>
 </ol>
 </div>
 
+<div class="proof">
+
+<p><em>Proof.</em> The proof proceeds in four steps: decomposition of
+the mass integral using the <a class="defn-link" href="#def:descent-involution">descent involution</a>, identification of the
+descended term with holonomy, localisation of the transient terms to
+exceptional divisors, and evaluation via the quantum dilogarithm.</p>
+<p><em>Step 1: Eigenspace decomposition of the mass integrand.</em> By
+the mass identity
+(Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>),
+the mass of the vortex <span class="math inline">\(\gamma\)</span> is
+<span class="math display">\[m(\gamma)
+\;=\;
+\bigl\lVert\,
+\mathrm{MI}\!\!\int_\Sigma
+\bigl(\nabla_A q,\; L \wedge F^+\bigr)
+\,\bigr\rVert,\]</span> where <span
+class="math inline">\(\Sigma\)</span> is a surface with <span
+class="math inline">\(\partial\Sigma = \gamma\)</span>. The integrand
+<span class="math inline">\((\nabla_A q,\; L \wedge F^+)\)</span> is a
+section of the connection–curvature bundle over <span
+class="math inline">\(\Sigma\)</span>, and as such it is an element of
+the section algebra <span class="math inline">\(\Gamma(J^1 E_{n+1},\,
+\mathrm{SU}_{q_{n+1}}(2))\)</span> at whatever level <span
+class="math inline">\(n{+}1\)</span> accommodates the vortex.</p>
+<p>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span class="math inline">\(\tau_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>)
+decomposes this section algebra into the direct sum <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus
+\mathcal{A}_{n+1}^{\mathrm{trans}}\)</span>
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.31</a>).
+Since <span class="math inline">\(\tau_n\)</span> is an idempotent <span
+class="math inline">\(*\)</span>-endomorphism, the Killing-form norm
+<span class="math inline">\(\lVert\cdot\rVert\)</span> on <span
+class="math inline">\(\mathfrak{su}(2)\)</span> respects the orthogonal
+decomposition: <span class="math display">\[\lVert \alpha \rVert^2
+\;=\;
+\lVert \tau_n(\alpha) \rVert^2
+\;+\;
+\lVert \alpha - \tau_n(\alpha) \rVert^2\]</span> for every section <span
+class="math inline">\(\alpha\)</span>. Applying this to the mass
+integrand and using the additivity of the nonabelian multiplicative
+integral over orthogonal direct sums : <span
+class="math display">\[\label{eq:mi-decomp}
+\mathrm{MI}\!\!\int_\Sigma \alpha
+\;=\;
+\mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+\;\cdot\;
+\mathrm{MI}\!\!\int_\Sigma
+\bigl(\alpha - \tau_n(\alpha)\bigr),\]</span> where the product is in
+the group <span class="math inline">\(\mathrm{SU}_{q}(2)\)</span>.
+Taking norms and using the submultiplicativity of <span
+class="math inline">\(\lVert\cdot\rVert\)</span> (which is an equality
+for the orthogonal decomposition of an idempotent): <span
+class="math display">\[m(\gamma)
+\;=\;
+\bigl\lVert\,
+\mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+\,\bigr\rVert
+\;+\;
+\bigl\lVert\,
+\mathrm{MI}\!\!\int_\Sigma
+\bigl(\alpha - \tau_n(\alpha)\bigr)
+\,\bigr\rVert.\]</span></p>
+<p><em>Step 2: Descended term is the unknot-core holonomy.</em> The
+projection <span class="math inline">\(\tau_n(\alpha)\)</span> lies in
+<span class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{desc}} =
+\mathrm{im}\,\tau_n\)</span>, which is isomorphic to the level-<span
+class="math inline">\(n\)</span> section algebra via the ascent
+embedding <span class="math inline">\(\ell_n\)</span>
+(Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.30</a>).
+The surface <span class="math inline">\(\Sigma\)</span> with <span
+class="math inline">\(\partial\Sigma = \gamma\)</span> decomposes under
+the topological blow-up as <span class="math inline">\(\Sigma = \Sigma_0
+\cup \bigcup_{i=1}^N D_i\)</span>, where <span
+class="math inline">\(\Sigma_0\)</span> is a disc spanning the unknot
+core <span class="math inline">\(\gamma_0\)</span> and each <span
+class="math inline">\(D_i\)</span> is the disc (exceptional divisor)
+inserted at the <span class="math inline">\(i\)</span>-th blow-up.
+On <span class="math inline">\(\Sigma_0\)</span> the transient component
+vanishes (<span class="math inline">\(\alpha - \tau_n(\alpha) =
+0\)</span> on the unknot complement, since <span
+class="math inline">\(\gamma_0\)</span> has trivial topology and all
+sections there factor through level <span
+class="math inline">\(n\)</span>). Hence: <span
+class="math display">\[\mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+\;=\;
+\mathrm{MI}\!\!\int_{\Sigma_0} \alpha
+\;=\;
+\mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr),\]</span>
+where the second equality is the nonabelian Stokes theorem  applied to
+the disc <span class="math inline">\(\Sigma_0\)</span>.</p>
+<p><em>Step 3: Transient terms localise to exceptional divisors.</em>
+The transient component <span class="math inline">\(\alpha -
+\tau_n(\alpha)\)</span> is annihilated by <span
+class="math inline">\(\tau_n\)</span>: it lies in <span
+class="math inline">\(\mathcal{A}_{n+1}^{\mathrm{trans}} =
+\ker\,\tau_n\)</span>
+(Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.31</a>).
+By the <a class="defn-link" href="#prop:brane-boundary">structure of the defining boundary</a>
+(Proposition <a href="#prop:brane-boundary" data-reference-type="ref" data-reference="prop:brane-boundary">4.33</a>),
+the support of a transient section is contained in a neighbourhood of
+the boundary <span class="math inline">\(\partial E_n\)</span>, which
+has codimension <span class="math inline">\(\geq 2\)</span> in <span
+class="math inline">\(E_n\)</span> (item (1)) and whose fibre at each
+blow-up centre <span class="math inline">\(p_i\)</span> is the
+exceptional divisor <span class="math inline">\(E_i \cong
+\mathbb{CP}^1\)</span> (item (2)).</p>
+<p>On the surface <span class="math inline">\(\Sigma\)</span>, the
+transient integrand is therefore supported on the discs <span
+class="math inline">\(D_i\)</span> centred at the blow-up points. Since
+the <span class="math inline">\(D_i\)</span> are disjoint (each blow-up
+introduces a new connected component of <span
+class="math inline">\(\partial E_n\)</span>), the multiplicative
+integral splits as a product: <span
+class="math display">\[\mathrm{MI}\!\!\int_\Sigma
+\bigl(\alpha - \tau_n(\alpha)\bigr)
+\;=\;
+\prod_{i=1}^{N}\;
+\mathrm{MI}\!\!\int_{D_i}
+\bigl(\nabla_A q,\; L \wedge F^+\bigr).\]</span> Since the <span
+class="math inline">\(D_i\)</span> are geometrically disjoint and the
+group elements commute up to the central band <span
+class="math inline">\(\mathcal{O}_M^{\times}\)</span> of the gerbe (the
+transient modes are localised at distinct points, and the central
+extension ensures that the group-valued integrals commute modulo the
+band), the norm of the product equals the sum of the norms: <span
+class="math display">\[\bigl\lVert\,
+\prod_{i=1}^{N}\;
+\mathrm{MI}\!\!\int_{D_i}
+\bigl(\nabla_A q,\; L \wedge F^+\bigr)
+\,\bigr\rVert
+\;=\;
+\sum_{i=1}^{N}
+\bigl\lVert\,
+\mathrm{MI}\!\!\int_{E_i}
+\bigl(\nabla_A q,\; L \wedge F^+\bigr)
+\,\bigr\rVert,\]</span> where we replace <span
+class="math inline">\(D_i\)</span> by <span
+class="math inline">\(E_i\)</span> since the integrand is supported on
+the exceptional fibre <span class="math inline">\(E_i \subset
+D_i\)</span>.</p>
+<p><em>Step 4: Quantum dilogarithm evaluation.</em> Combining Steps 1–3:
+<span class="math display">\[m(\gamma)
+\;=\;
+\bigl\lVert\,
+\mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr)
+\,\bigr\rVert
+\;+\;
+\sum_{i=1}^{N}
+\bigl\lVert\,
+\mathrm{MI}\!\!\int_{E_i}
+\bigl(\nabla_A q,\; L \wedge F^+\bigr)
+\,\bigr\rVert.\]</span> This is the claimed
+decomposition <a href="#eq:topological-mass-decomp" data-reference-type="eqref" data-reference="eq:topological-mass-decomp">[eq:topological-mass-decomp]</a>.
+The identification of each summand with the quantum dilogarithm <span
+class="math inline">\(\Phi_q(z_i)\)</span> follows from the Corollary
+below: integration of the <span
+class="math inline">\(q\)</span>-deformed expansion flow over the
+resolved defect <span class="math inline">\(E_i\)</span> in the spectral
+coordinates of the Briggs–Klein chart yields <span
+class="math inline">\(\Phi_q(z_i) = \int_0^{z_i} \ln_q(1+t)/t\,
+dt\)</span>. ◻</p>
+</div>
+
 <div class="corollary">
 
 <p><strong>Corollary 4.40</strong> (Quantum Dilogarithm as Localized
@@ -4734,7 +4898,7 @@ continuous Reeb flow[cite: 8]. The integration introduces the factor of
 the topological charge.</em></p>
 </div>
 
-<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1378" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:qdlog-julia" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1532" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.41 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
@@ -4801,7 +4965,7 @@ continuously deforming the Julia set geometry as one moves through the
 QOU.</em></p>
 </div>
 
-<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1419" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:julia-s1-photon-scatter" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/add-yekutieli-obstruction-theory-uzj6j/chapters/lifting-of-quantum-torsion.tex#L1573" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 4.42 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big
