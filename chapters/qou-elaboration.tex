@@ -64,8 +64,9 @@ gauge-theoretic manifestation of the contact (maximally non-integrable)
 geometry of $(M, \theta)$.
 \end{remark}
 
-\begin{remark}[Vanishing conditions: explication]
+\begin{remark}[Vanishing conditions and jet-bundle formulation]
 \label{rem:vanishing-explication}
+\label{rem:jet-bundle}
 In Example~\ref{def:c-quantum-observable-universe},
 $\mathrm{Ad}(P) = P \times_G \mathfrak{su}(2)$ is the adjoint bundle
 (a linear bundle, so sheaf cohomology is defined), and $\Gamma_c(M,E)$
@@ -73,7 +74,10 @@ denotes the space of compactly supported continuous sections of the
 (non-linear) fibre bundle $E$.  The condition $H^0(M, \mathrm{Ad}(P)) = 0$
 asserts the vanishing of \emph{all} global parallel sections of the adjoint
 bundle --- not merely compactly supported ones --- eliminating every
-infinitesimal gauge symmetry.
+infinitesimal gauge symmetry.  Together with $\Gamma_c(M, E) = 0$, these
+conditions ensure that the space of sections of $J^1 E$ injects into the
+space of connections on $P$, preventing any local degeneracy of the gauge
+field.
 \end{remark}
 
 \begin{remark}[Generalisation beyond strict pseudoconvexity]
@@ -121,17 +125,6 @@ $(n,0)$) is the simplest and motivates all examples in this chapter;
 the indefinite case arises naturally for real hypersurfaces in
 indefinite K\"ahler manifolds and for boundaries of
 Grauert tubes over pseudo-Riemannian manifolds.
-\end{remark}
-
-\begin{remark}[Jet-bundle formulation]
-\label{rem:jet-bundle}
-The conditions in Example~\ref{def:c-quantum-observable-universe} admit a
-natural reformulation in terms of the first jet bundle $J^1 E$.  The vanishing
-$\Gamma_c(M, E) = 0$ ensures that no non-trivial compactly supported section of
-$E$ exists, while $H^0(M, \mathrm{Ad}(P)) = 0$ eliminates \emph{all}
-infinitesimal gauge symmetries (not merely compactly supported ones).  Together,
-these conditions mean that the space of sections of $J^1 E$ injects into the
-space of connections on $P$, preventing any local degeneracy of the gauge field.
 \end{remark}
 
 \begin{example}[Real hypersurface in a Calabi--Yau $2$-fold]
@@ -620,13 +613,11 @@ dynamics are in equilibrium.
 
 \begin{remark}[Physical interpretation of $q$-harmonicity]
 \label{rem:q-harmonic-physical}
-The $q$-Laplacian $\Delta_q$ encodes the $q$-deformed viscosity of the
-CR geometry.  A $q$-harmonic form is a zero-mode of this operator and thus
-represents a stable excitation --- a particle --- of the quantum observable
-universe.  The deformation parameter $q$ interpolates between the classical
-regime ($q \to 1$, where $\Delta_q$ reduces to the Hodge Laplacian) and the
-deep-quantum regime ($q \to \infty$), so the notion of ``particle'' is itself
-$q$-dependent.
+See Remark~\ref{rem:reeb-physical} for the physical interpretation of
+$q$-harmonic forms and the Reeb decomposition.  In brief: the
+$q$-Laplacian $\Delta_q$ interpolates between the Hodge Laplacian
+($q = 1$) and the deep-quantum regime ($q \to \infty$), so a
+$q$-harmonic form --- a ``particle'' --- is itself $q$-dependent.
 \end{remark}
 
 \begin{remark}[$q$-Deformed Schr\"odinger equation]

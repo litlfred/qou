@@ -25,18 +25,21 @@ $(\mathcal{C}, A, \omega)$ where:
         (exact faithful $R$-linear monoidal functor);
   \item $A$ admits a \emph{differential calculus}: the universal module of
         K\"ahler differentials $\Omega^1(A)$ exists as an object of
-        $\mathcal{C}$ (this is the first-order differential structure
-        required for jet prolongation,
-        Proposition~\ref{prop:jet-prolongation}).
+        $\mathcal{C}$.
 \end{enumerate}
-The deformation parameter~$q$ is \emph{not} part of the categorical
+\end{definition}
+
+\begin{remark}[Deformation parameter and gauge group]
+\label{rem:quantum-universe-explication}
+The deformation parameter~$q$ is not part of the categorical
 definition; it enters via the substrate parameter
 (Definition~\ref{def:substrate-parameter}) when the Hopf structure on~$A$
-is specialised.
-The \emph{quantum gauge group} is the affine $R$-group scheme
-$G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
-Tannaka--Krein duality.
-\end{definition}
+is specialised.  The \emph{quantum gauge group} is the affine $R$-group
+scheme $G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via
+Tannaka--Krein duality
+(see also Definition~\ref{def:quantum-gauge-group} for the archimedean
+case).
+\end{remark}
 
 \begin{definition}[Quantum Observable Universe]
 \label{def:quantum-observable-universe}
@@ -44,7 +47,7 @@ Tannaka--Krein duality.
 A quantum universe $(\mathcal{C}, A, \omega)$ over~$R$
 (Definition~\ref{def:quantum-universe}) is \emph{observable} if:
 \begin{enumerate}
-  \item the Frobenius form $\lambda$ on $A$ is non-degenerate (restated from Definition~\ref{def:quantum-universe} for emphasis); and
+  \item the Frobenius form $\lambda$ on $A$ is non-degenerate; and
   \item $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$,
         where $\mathrm{Ad}(A)$ is the adjoint object
         ($A$ with the conjugation action $\mathrm{Ad}(a)(b) = \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$ for $a, b \in A$).
@@ -65,12 +68,16 @@ coset object
 \]
 where $T = \mathrm{Aut}^{\otimes}(\omega|_{\mathcal{C}_0})$ is the maximal
 torus of $G_q$ (the sub-group scheme preserving the weight decomposition).
-In the archimedean realisation,
-$\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
-Algebraically, the function algebra of $\mathbb{P}(V)$ is the
-$T$-coinvariant subalgebra $\mathcal{O}_q(\mathbb{P}(V)) =
-A^{\mathrm{co}\,T}$.
+The function algebra of $\mathbb{P}(V)$ is the $T$-coinvariant subalgebra
+$\mathcal{O}_q(\mathbb{P}(V)) = A^{\mathrm{co}\,T}$.
 \end{definition}
+
+\begin{example}[Archimedean projective line]
+\label{ex:projective-line-archimedean}
+In the archimedean realisation
+(Example~\ref{def:c-quantum-universe}), the projective line object is
+$\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
+\end{example}
 
 \begin{proposition}[Fiber--adjoint-fiber involution]
 \label{prop:fiber-adjoint-involution}
@@ -120,8 +127,7 @@ $\lambda$ excludes the degenerate case).
 \label{def:categorical-connection}
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$ with
 differential calculus $\Omega^1(A)$
-(Definition~\ref{def:quantum-universe}), and let $q$ denote the substrate
-parameter (Definition~\ref{def:substrate-parameter}).  Write
+(Definition~\ref{def:quantum-universe}).  Write
 $\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential
 forms (external tensor powers of the $A$-bimodule~$\Omega^1(A)$).
 
@@ -140,8 +146,15 @@ The \emph{curvature} of~$\nabla$ is the composition
   \;\colon\; A \;\longrightarrow\; A \otimes \Omega^2(A),
 \]
 which is $A$-linear (a standard consequence of the Leibniz rule).
+\end{definition}
 
-The \emph{$q$-Hodge star} is the involution
+\begin{definition}[$q$-Hodge star]
+\label{def:q-hodge-star}
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$ with
+connection~$\nabla$ (Definition~\ref{def:categorical-connection}), and
+let $q$ denote the substrate parameter
+(Definition~\ref{def:substrate-parameter}).  The \emph{$q$-Hodge star}
+is the involution
 $\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 \[
   \alpha \wedge_q \star_q \beta
@@ -153,6 +166,40 @@ $\mathrm{vol} \in \Omega^n(A)$ is the volume form
 (the unique $G_q$-invariant top form normalised by
 $\lambda(\mathrm{vol}) = 1$).
 \end{definition}
+
+\begin{remark}[Notation for the categorical action]
+\label{rem:categorical-action-notation}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) equipped with
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
+a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
+and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
+The following notation is used in
+Definition~\ref{def:categorical-action}:
+\begin{itemize}
+  \item $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ is the
+        \emph{categorical trace} (the composition
+        $\mathrm{coev} \to \mathrm{id} \to \mathrm{ev}$ via the rigid
+        structure).
+  \item $R_\lambda \in \mathrm{End}_{\mathcal{C}}(A)$ is the
+        \emph{Frobenius--Ricci endomorphism}: the curvature of the
+        Frobenius form~$\lambda$ itself, defined by
+        $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
+        where $\nabla_\lambda$ is the canonical connection on~$A$ induced
+        by~$\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
+        a_{(2)} - a \otimes 1$.
+  \item $\mathrm{tr}_A \colon
+        \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
+        \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the
+        \emph{partial trace} over the~$A$ factor.
+  \item $\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the
+        \emph{adjoint section} (antipode composed with the Frobenius form).
+  \item $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
+        the \emph{$q$-deformed covariant derivative}, where $\xi$ is the
+        Reeb derivation of~$A$
+        (Definition~\ref{def:reeb-decomposition}).
+\end{itemize}
+\end{remark}
 
 \begin{definition}[Categorical action]
 \label{def:categorical-action}
@@ -180,32 +227,14 @@ The \emph{categorical action} is the $R$-valued functional
     \lambda\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
   }_{\text{matter}},
 \end{equation}
-where:
-\begin{itemize}
-  \item $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ is the
-        categorical trace (the composition
-        $\mathrm{coev} \to \mathrm{id} \to \mathrm{ev}$ via the rigid
-        structure);
-  \item $R_\lambda \in \mathrm{End}_{\mathcal{C}}(A)$ is the
-        \emph{Frobenius--Ricci endomorphism}: the curvature of the
-        Frobenius form~$\lambda$ itself, defined by
-        $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
-        where $\nabla_\lambda$ is the canonical connection on~$A$ induced
-        by~$\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
-        a_{(2)} - a \otimes 1$;
-  \item $\mathrm{tr}_A \colon
-        \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
-        \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the partial
-        trace over the~$A$ factor;
-  \item $\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the
-        adjoint section (antipode composed with the Frobenius form);
-  \item $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
-        the \emph{$q$-deformed covariant derivative}, where $\xi$ is the
-        Reeb derivation of~$A$
-        (Definition~\ref{def:reeb-decomposition}).
-\end{itemize}
+with notation as in Remark~\ref{rem:categorical-action-notation}.
+\end{definition}
 
-The three variational equations are:
+\begin{proposition}[Variational equations of the categorical action]
+\label{prop:variational-equations}
+Let $\mathcal{S}_q$ be the categorical action
+(Definition~\ref{def:categorical-action}).  The three variational
+equations are:
 \begin{enumerate}
   \item \emph{Gravity (vary~$\lambda$)}:
     $\delta\mathcal{S}_q / \delta\lambda = 0$ yields the
@@ -216,9 +245,6 @@ The three variational equations are:
     \]
     where $T_q$ is the stress-energy endomorphism constructed from the
     gauge and matter terms.
-    In the archimedean realisation, this reduces to
-    $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-    (Remark~\ref{rem:gr-substrate-geometry}).
   \item \emph{Gauge (vary~$\nabla$)}:
     $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the
     \emph{categorical Yang--Mills equation}:
@@ -234,11 +260,22 @@ The three variational equations are:
     \[
       D_\nabla\,\psi \;=\; 0.
     \]
-    In the archimedean realisation, this reduces to the Schr\"odinger
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Archimedean realisation of the variational equations]
+\label{rem:variational-archimedean}
+In the archimedean realisation
+(Example~\ref{def:c-quantum-observable-universe}):
+\begin{itemize}
+  \item The categorical Einstein equation reduces to
+    $\mathrm{Ric}_{g_\theta} = T^{(q)}$
+    (Remark~\ref{rem:gr-substrate-geometry}).
+  \item The categorical transport equation reduces to the Schr\"odinger
     equation $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
     (Remark~\ref{rem:schrodinger-jet-coaction}).
-\end{enumerate}
-\end{definition}
+\end{itemize}
+\end{remark}
 
 \begin{remark}[Base-ring independence]
 \label{rem:base-field-independence}
@@ -465,33 +502,31 @@ where $\langle L_\theta, F_A^+\rangle$ is the natural contraction
 the absolute value.  This defines a smooth field
 $q \colon M \to [1,\infty) \subset \mathbb{C}^{\times}$ with $q(p) = 1$
 at points where $F_A^+ = 0$ (classicality) and $q(p) \to \infty$ in the
-deep-quantum regime.
-
-\textbf{Relation to the exponential.}
-Over~$\mathbb{Q}$ (or any subfield of~$\mathbb{C}$), the classical
-exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an
-equally valid specialisation map, and the two are related by the Taylor
-expansion $\exp(x) = 1 + x + \tfrac{1}{2}x^2 + \cdots$:
-the formula $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
-is the first-order approximation of
-$\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$.
-Both define smooth fields $M \to [1,\infty)$ with
-the same boundary behaviour ($q = 1$ at classicality, $q \to \infty$
-deep-quantum), and all downstream formulas
-($\hbar_q = 1 - q^{-1}$, the Heisenberg commutator, the Schrödinger
-equation, the Yang--Mills functional) are algebraic in~$q$ and therefore
-insensitive to the choice between $1+x$ and $\exp(x)$.  The algebraic
-form is adopted in Definition~\ref{def:substrate-parameter} because it
-is meaningful over every base ring~$R$, whereas $\exp(x)$ requires an
-archimedean topology.
-
-The non-archimedean analogues are developed in
+deep-quantum regime.  The non-archimedean analogues are developed in
 Chapter~\ref{chap:p-adic}: over~$\mathbb{Q}_\pp$ the Levi-form
 contraction is replaced by the Frobenius endomorphism and
 $q = \pp^{\,-v_\pp(\det\varphi)}$
 (Example~\ref{ex:p-adic-realisation}); over~$\mathbb{F}_\pp$, $q$
 is a primitive root of unity
 (Example~\ref{ex:finite-field-realisation}).
+\end{remark}
+
+\begin{remark}[Algebraic vs.\ exponential specialisation]
+\label{rem:substrate-exponential}
+Over~$\mathbb{Q}$ (or any subfield of~$\mathbb{C}$), the classical
+exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an
+equally valid specialisation map.  The formula
+$q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
+(Remark~\ref{rem:c-substrate-via-levi}) is the first-order approximation
+of $\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$.
+Both define smooth fields $M \to [1,\infty)$ with the same boundary
+behaviour ($q = 1$ at classicality, $q \to \infty$ deep-quantum), and
+all downstream formulas ($\hbar_q = 1 - q^{-1}$, the Heisenberg
+commutator, the Schr\"odinger equation, the Yang--Mills functional) are
+algebraic in~$q$ and therefore insensitive to the choice between $1+x$
+and $\exp(x)$.  The algebraic form is adopted in
+Definition~\ref{def:substrate-parameter} because it is meaningful over
+every base ring~$R$, whereas $\exp(x)$ requires an archimedean topology.
 \end{remark}
 
 \begin{remark}[Natural contraction and field character of $q$]
@@ -565,11 +600,13 @@ encodes the local uncertainty: when $q(p) \to 1$ (classicality),
 $[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$
 (deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty
 prevails.
+\end{remark}
 
-\medskip
-\noindent\textbf{Analogy with the Lie bracket.}\;
-The position--momentum commutator $[\hat{X},\hat{P}]_q$ is the
-quantum-mechanical counterpart of the Lie bracket
+\begin{remark}[Commutator and the Lie bracket analogy]
+\label{rem:commutator-lie-analogy}
+The position--momentum commutator $[\hat{X},\hat{P}]_q$
+(Remark~\ref{rem:heisenberg-commutator}) is the quantum-mechanical
+counterpart of the Lie bracket
 $[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$
 (Definition~\ref{def:su2-basis}).  Both commutators measure the
 first-order non-commutativity of their respective algebras
@@ -579,11 +616,13 @@ $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$
 (Definition~\ref{def:braid-group}); on the Bring surface, it is
 realised by the $S_3$ permutation action on the spectral resolvents
 (Remark~\ref{rem:braid-group-action}).
+\end{remark}
 
-\medskip
-\noindent\textbf{Commutator as Reeb vector.}\;
-The commutator $[\hat{X},\hat{P}]_q$ may be identified with the value
-of the $q$-deformed Reeb vector field~$\xi_q$
+\begin{remark}[Commutator as Reeb vector]
+\label{rem:commutator-reeb-vector}
+The commutator $[\hat{X},\hat{P}]_q$
+(Remark~\ref{rem:heisenberg-commutator}) may be identified with the
+value of the $q$-deformed Reeb vector field~$\xi_q$
 (Definition~\ref{def:q-reeb-vector-field}) evaluated on the contact
 form.  Concretely, the Reeb field is the unique direction along which
 the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$
@@ -689,20 +728,20 @@ satisfying:
         with $S$ the antipode and $\Delta(a) = a_{(1)} \otimes a_{(2)}$
         the coproduct.
 \end{enumerate}
+\end{definition}
+
+\begin{remark}[Archimedean realisation of observation]
+\label{rem:observation-archimedean}
 In the archimedean realisation
-(Example~\ref{def:c-quantum-observable-universe}), an observation is
-realised as a continuous open map from the spacetime base~$M$ to the
-bundle of endomorphisms $\operatorname{End}(E) \to M$, encoding the
-coordinate change in torsion energy of the bundle~$E$.  Because the
-substrate parameter~$q(p)$
+(Example~\ref{def:c-quantum-observable-universe}), an observation
+(Definition~\ref{def:observation}) is realised as a continuous open map
+from the spacetime base~$M$ to the bundle of endomorphisms
+$\operatorname{End}(E) \to M$, encoding the coordinate change in torsion
+energy of the bundle~$E$.  Because the substrate parameter~$q(p)$
 (Definition~\ref{def:substrate-parameter}) is perturbed by
 condition~(2), every observation shifts the non-commutative geometry:
-
-\smallskip
-\begin{quote}
-\itshape ``Observing the universe changes it.''
-\end{quote}
-\end{definition}
+observing the universe changes it.
+\end{remark}
 
 \begin{remark}[Two-observer parallelogram]
 \label{rem:two-observer-parallelogram}
@@ -898,14 +937,12 @@ Chapter~\ref{chap:experimental}.
 
 % ── Remarks: physical interpretation ─────────────────────────────────────────
 
-\begin{remark}[General Relativity as the ``Substrate Geometry'']
-\label{rem:gr-substrate-geometry}
-In this model the metric is effectively replaced by the Levi form
-$L_\theta$ and its coupling to the gauge curvature $F_A$.  Gravity is
-expressed through the Variational Bicomplex as the back-reaction of the
-gauge fields on the CR manifold $M$.
-
-Define the \emph{$q$-weighted Yang--Mills--Levi functional}
+\begin{definition}[$q$-Weighted Yang--Mills--Levi functional]
+\label{def:q-yang-mills-levi}
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
+with instanton connection~$A$ and substrate parameter~$q$
+(Definition~\ref{def:substrate-parameter}).  The
+\emph{$q$-weighted Yang--Mills--Levi functional} is
 \[
   S_q[A, \theta]
   \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
@@ -913,8 +950,16 @@ Define the \emph{$q$-weighted Yang--Mills--Levi functional}
 \]
 where $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
 (Remark~\ref{rem:c-substrate-via-levi}).
-Variation with respect to the Levi form $L_\theta$ yields field equations
-of the schematic form
+\end{definition}
+
+\begin{remark}[General Relativity as the ``Substrate Geometry'']
+\label{rem:gr-substrate-geometry}
+In this model the metric is effectively replaced by the Levi form
+$L_\theta$ and its coupling to the gauge curvature $F_A$.  Gravity is
+expressed through the Variational Bicomplex as the back-reaction of the
+gauge fields on the CR manifold $M$.
+Variation of $S_q$ (Definition~\ref{def:q-yang-mills-levi}) with respect
+to the Levi form $L_\theta$ yields field equations of the schematic form
 \[
   \frac{\delta S_q}{\delta L_\theta}
   \;=\; 0
@@ -937,7 +982,7 @@ with instanton connection $A$ (Definition~\ref{def:instanton}) and substrate
 parameter $q$ (Definition~\ref{def:substrate-parameter}).  Let
 $\mathbf{E}$ denote the Euler--Lagrange operator of the
 $q$-weighted Yang--Mills--Levi functional $S_q$
-(Remark~\ref{rem:gr-substrate-geometry}), and let $\nabla^A$ denote
+(Definition~\ref{def:q-yang-mills-levi}), and let $\nabla^A$ denote
 parallel transport along $A$.  The following diagram commutes:
 \[
 \begin{CD}
