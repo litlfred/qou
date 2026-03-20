@@ -115,11 +115,38 @@ noncomputable def derived_q : ℝ :=
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Vol(4₁) feeds derivation
 theorem substrate_error_bound :
     |derived_q - substrate_q| < 0.001 := by
-  -- Tolerance widened from 0.0001 to 0.001: the exact derived value is
-  -- ≈ 1.10998 vs substrate_q = 1.1097, difference ≈ 0.00028.
-  -- Proving this bound requires certified interval arithmetic on Real.sqrt;
-  -- deferred until Mathlib gains native interval verification for sqrt.
-  sorry
+  -- Strategy: sandwich h_q_value = √(h_q_squared) between rational bounds
+  -- via sqrt monotonicity, then propagate through 1/(1 - h_q_value).
+  have hqs_pos := h_q_squared_pos
+  have ⟨_, hv_lt1⟩ := h_q_value_in_unit_interval
+  -- Lower bound: (99/1000)² = 0.009801 < h_q_squared ≈ 0.009817
+  have hv_lb : (99 : ℝ) / 1000 < h_q_value := by
+    unfold h_q_value
+    have hsq : ((99 : ℝ) / 1000) ^ 2 < h_q_squared := by
+      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
+    calc (99 : ℝ) / 1000
+        = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
+          (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
+      _ < Real.sqrt h_q_squared :=
+          Real.sqrt_lt_sqrt (by positivity) hsq
+  -- Upper bound: h_q_squared ≈ 0.009817 < (996/10000)² = 0.009920
+  have hv_ub : h_q_value < (996 : ℝ) / 10000 := by
+    unfold h_q_value
+    have hsq : h_q_squared < ((996 : ℝ) / 10000) ^ 2 := by
+      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
+    calc Real.sqrt h_q_squared
+        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
+          Real.sqrt_lt_sqrt (le_of_lt hqs_pos) hsq
+      _ = 996 / 10000 :=
+          Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
+  -- Bound derived_q = 1/(1 - h_q_value) between 1.1087 and 1.1107
+  have h_denom_pos : (0 : ℝ) < 1 - h_q_value := by linarith
+  have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - h_q_value) := by
+    rw [lt_div_iff h_denom_pos]; nlinarith
+  have h_ub : 1 / (1 - h_q_value) < (11107 : ℝ) / 10000 := by
+    rw [div_lt_iff h_denom_pos]; nlinarith
+  unfold derived_q substrate_q
+  rw [abs_lt]; constructor <;> linarith
 
 /-! ## Section 4: CODATA Consistency Checks -/
 
@@ -173,10 +200,9 @@ theorem full_derivation_chain :
     let hq := Real.sqrt hq2
     let q := 1 / (1 - hq)
     |q - substrate_q| < 0.001 := by
-  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
-  -- Tolerance widened from 0.0001 to 0.001 (see substrate_error_bound).
-  -- Requires interval arithmetic on Real.sqrt for certified bound.
-  sorry
+  -- The let-bound q is definitionally equal to derived_q
+  -- (since figureEightEntry.volume.value = vol_figure_eight by rfl).
+  exact substrate_error_bound
 
 /-! ## Section 5: Summary
 
