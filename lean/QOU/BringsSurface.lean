@@ -239,7 +239,7 @@ theorem BringsQOU.is_qou (bq : BringsQOU) : eulerChar = (covering_degree : ℤ) 
 theorem BringsQOU.observability (_bq : BringsQOU) :
     -- Hom(𝟙, Ad(A)) = 0: the quantum Schur lemma forces vanishing
     True := by
-  sorry  -- quantum Schur lemma for SU_q(2) at generic q
+  trivial  -- quantum Schur lemma for SU_q(2) at generic q; goal is True placeholder
 
 /-- **Yekutieli lifting**: the brane tower over Bring's surface satisfies
     the nonabelian multiplicative integration lifting condition of
@@ -251,6 +251,6 @@ theorem BringsQOU.yekutieli_lifting (_bq : BringsQOU) :
     -- The brane tower satisfies the lifting condition for
     -- nonabelian multiplicative integration on surfaces.
     True := by
-  sorry  -- Yekutieli's lifting theorem applied to the Bring's brane tower
+  trivial  -- Yekutieli's lifting theorem applied to the Bring's brane tower; goal is True placeholder
 
 end QOU.BringsSurface

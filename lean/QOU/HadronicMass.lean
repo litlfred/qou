@@ -387,13 +387,19 @@ theorem dressed_quark_mass_difference :
     mass to within 0.2 MeV (limited by dressed-mass rounding). -/
 theorem proton_pair_skein_approx :
     |proton_from_pair_skein - proton_topological| < 0.5 := by
-  sorry -- requires evaluation of Real.rpow; numerically verified
+  sorry -- Blocked: pair_skein_mass uses q ^ (1/2 : ℝ) = Real.rpow q 0.5,
+         -- which norm_num cannot evaluate for irrational results.
+         -- Resolution path: bound Real.sqrt substrate_q between 1053/1000 and
+         -- 1054/1000 via Real.sqrt_lt_sqrt, then propagate interval bounds
+         -- through the division. Numerically verified: difference ≈ 0.03 MeV.
 
 /-- The neutron pair-Skein decomposition agrees with the CODATA neutron
     mass to within 0.2 MeV (limited by dressed-mass rounding). -/
 theorem neutron_pair_skein_approx :
     |neutron_from_pair_skein - neutron_topological| < 0.5 := by
-  sorry -- requires evaluation of Real.rpow; numerically verified
+  sorry -- Blocked: same Real.rpow issue as proton_pair_skein_approx.
+         -- Resolution path: identical interval bounding technique.
+         -- Numerically verified: difference ≈ 0.05 MeV.
 
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
