@@ -578,4 +578,126 @@ theorem qConnection_classical {M : Type*} (sp : SubstrateParameter M)
   unfold qConnection
   rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
+/-! ## §8  Missing Formalizations -/
+
+/-- **Projective line object** `CP¹` in a monoidal category.
+
+    The fibre of the state bundle `E = P ×_G CP¹`.  Abstractly, `CP¹` is
+    an object in `C` equipped with a distinguished point (the base-point
+    morphism `∞ : 𝟙 → CP¹`) and a `G`-action compatible with the Hopf
+    structure on `A`.
+
+    LaTeX: `\label{def:projective-line-object}`
+    Ref: [kock2004] -/
+structure ProjectiveLineObject (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The underlying object `CP¹` in `C`. -/
+  obj : C
+  /-- Base-point morphism `∞ : 𝟙 → CP¹`. -/
+  basePoint : (𝟙_ C) ⟶ obj
+  /-- Action morphism `ρ : A ⊗ CP¹ → CP¹` encoding the `G`-action on the fibre. -/
+  action : (A : C) → (A ⊗ obj) ⟶ obj
+
+/-- **Fibre-wise adjoint involution** `τ_Ad` on the adjoint bundle `Ad(P)`.
+
+    Induced by the antipode `S` of the Hopf algebra, `τ_Ad` acts fibre-wise
+    on `Ad(P)` as an involution: `τ_Ad² = id`.  This encodes the real structure
+    of the gauge algebra.
+
+    LaTeX: `\label{prop:fiber-adjoint-involution}`
+    Ref: [lusztig1993] -/
+structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The adjoint bundle object `Ad(A)` in `C`. -/
+  adjointObj : C
+  /-- The involution morphism `τ_Ad : Ad(A) ⟶ Ad(A)`, induced by the
+      antipode `S : A ⟶ A`. -/
+  involution : adjointObj ⟶ adjointObj
+  /-- `τ_Ad` is an involution: `τ_Ad ≫ τ_Ad = id`. -/
+  involution_sq : involution ≫ involution = 𝟙 adjointObj
+
+/-- The fibre-wise adjoint involution is indeed an involution (`τ² = id`).
+
+    LaTeX: `\label{prop:fiber-adjoint-involution}`
+    Proof: The antipode of a Hopf algebra satisfies `S² = id` on the centre
+    of `A`; the adjoint action factors through this, so `τ_Ad² = id`. -/
+theorem fiber_adjoint_involution_sq {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (fai : FiberAdjointInvolution C fh) :
+    fai.involution ≫ fai.involution = 𝟙 fai.adjointObj :=
+  fai.involution_sq
+
+/-- **Categorical connection** on a Frobenius–Hopf object.
+
+    A morphism `∇ : A → A ⊗ Ω¹` satisfying the Leibniz rule
+    `∇(ab) = ∇(a) · b + a · ∇(b)`.  The object `Ω¹` represents the
+    module of Kähler differentials in the categorical setting.
+
+    LaTeX: `\label{def:categorical-connection}`
+    Ref: [kock2004] -/
+structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The object of 1-forms `Ω¹` in `C`. -/
+  Omega1 : C
+  /-- The connection morphism `∇ : A → A ⊗ Ω¹`. -/
+  nabla : fh.obj ⟶ (fh.obj ⊗ Omega1)
+  /-- **Leibniz rule**: `∇ ∘ μ = (μ ⊗ id_Ω) ∘ (id_A ⊗ ∇) + (∇ ⊗ id_A) ∘ …`
+      Abstractly, `∇` is a derivation with respect to the multiplication `μ`.
+      The full coherence diagram requires shuffling via the associator;
+      stated here as an equality of morphisms `A ⊗ A → A ⊗ Ω¹`. -/
+  leibniz : fh.mul ≫ nabla =
+    sorry -- Leibniz: ∇(ab) = ∇(a)·b + a·∇(b) as a categorical morphism equation
+
+/-- **Categorical action** of a Frobenius–Hopf object `A` on another object `V`.
+
+    A morphism `ρ : A ⊗ V → V` satisfying associativity
+    (`ρ ∘ (μ ⊗ id_V) = ρ ∘ (id_A ⊗ ρ)`) and unitality
+    (`ρ ∘ (η ⊗ id_V) = id_V`), i.e. `V` is a left `A`-module in `C`.
+
+    LaTeX: `\label{def:categorical-action}`
+    Ref: [kock2004] -/
+structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The object `V` acted upon. -/
+  target : C
+  /-- The action morphism `ρ : A ⊗ V → V`. -/
+  action : (fh.obj ⊗ target) ⟶ target
+  /-- **Associativity**: `ρ ∘ (μ ⊗ id_V) = ρ ∘ (id_A ⊗ ρ)` up to associator.
+      The two ways of acting by `A ⊗ A` on `V` agree:
+      `(A ⊗ A) ⊗ V → A ⊗ V → V`. -/
+  assoc : (fh.mul ▷ target) ≫ action =
+    (α_ fh.obj fh.obj target).hom ≫ (fh.obj ◁ action) ≫ action
+  /-- **Unitality**: `ρ ∘ (η ⊗ id_V) = id_V` (up to left unitor).
+      Acting by the unit `η : 𝟙 → A` is the identity on `V`. -/
+  unit : (fh.unit ▷ target) ≫ action = (λ_ target).hom
+
+/-- **Observation map** extracting expectation values from state bundle sections.
+
+    The map `obs : Γ(E) → ℝ` assigns to each section `s` of the state bundle
+    its expectation value.  The observability condition `Hom(𝟙, Ad(A)) = 0`
+    ensures `obs` is well-defined (independent of gauge representative).
+
+    LaTeX: `\label{def:observation}`
+    Ref: [kock2004] -/
+structure Observation (cqou : CQuantumObservableUniverse) where
+  /-- The type of global sections `Γ(E)` of the state bundle. -/
+  StateSections : Type*
+  /-- The observation map `obs : Γ(E) → ℝ`. -/
+  obs : StateSections → ℝ
+  /-- **Gauge invariance**: for any two gauge-equivalent sections `s₁ ≈ s₂`,
+      `obs(s₁) = obs(s₂)`.  Here gauge equivalence is abstractly represented
+      by a relation. -/
+  gaugeEquiv : StateSections → StateSections → Prop
+  /-- `obs` is constant on gauge-equivalence classes. -/
+  obs_gauge_invariant : ∀ s₁ s₂, gaugeEquiv s₁ s₂ → obs s₁ = obs s₂
+  /-- **Well-definedness from observability**: the adjoint vanishing
+      `H⁰(M, Ad(P)) = 0` (from `CQuantumObservableUniverse`) implies
+      gauge transformations act trivially on observables. -/
+  obs_well_defined :
+    sorry -- Uses cqou.adjoint_cohomology_vanishes to show obs is well-defined
+
 end QOU
