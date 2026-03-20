@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T13:14:27.817305+00:00",
-  "commit_sha": "248fe343409867877d3b03434253be01c2497f29",
-  "entry_count": 40,
+  "generated_at": "2026-03-20T14:43:54.272390+00:00",
+  "commit_sha": "c6aae037b3448f257339b86e4a2faefe6a770dfa",
+  "entry_count": 41,
   "ambiguity_count": 5,
   "entries": [
     {
@@ -376,6 +376,14 @@
       "narrative_definition": "With notation as in Definition~, fix the substrate parameter q (Definition~) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by  (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).  The  qphi rotates each sector by q full turns as the latitude phi runs from the south pole~(0) to the north pole~(pi), encoding the chirality of the substra",
       "latex_label": "def:chiral-sector-coords",
       "chapter": 6
+    },
+    {
+      "narrative_term": "Witt vector lift of a formal group",
+      "lean_name": "QOU.PAdicQuantumGroups.WittVectorLift",
+      "kind": "def",
+      "narrative_definition": "Let H be a commutative formal group over _pp equipped with a skewed-Poisson structure pi_< (a biderivation pi_<colon(H)otimes(H)to(H) satisfying a graded anti-symmetry and a pp-truncated Jacobi condition). The  is the formal group  over W(_pp) cong _pp obtained by integrating pi_< in the sense of~: the distribution algebra () is the pp-adic completion of the universal enveloping algebra ((H)) deformed by~pi_<.",
+      "latex_label": "def:witt-vector-lift",
+      "chapter": 7
     }
   ]
 }

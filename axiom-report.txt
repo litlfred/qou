@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-20 13:14:37 UTC
-Commit:    248fe343409867877d3b03434253be01c2497f29
+Generated: 2026-03-20 14:44:03 UTC
+Commit:    c6aae037b3448f257339b86e4a2faefe6a770dfa
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -14,14 +14,16 @@ Status: ✅ BUILD PASSED (no type errors)
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 81
+Total sorry occurrences: 104
 
   File                                          sorry count
   --------------------------------------------------------
   QOU/BringsSurface.lean                           7
   QOU/DescartesUniverse.lean                       5
   QOU/Elaboration.lean                             1
-  QOU/Glossary.lean                                40
+  QOU/FormalGroups.lean                            17
+  QOU/Glossary.lean                                41
+  QOU/PAdicQuantumGroups.lean                      5
   QOU/PathIntegrals.lean                           7
   QOU/QuantumObservableUniverse.lean               8
   QOU/Torsion.lean                                 13
@@ -51,7 +53,7 @@ Any use of `sorryAx` indicates an incomplete proof.
     info: quantumInfo: cloning https://github.com/Timeroot/Lean-QuantumInfo
     info: quantumInfo: checking out revision 'b7cf131641037baab9ad2f98444f8094879d226b'
     info: mathlib: cloning https://github.com/leanprover-community/mathlib4
-    info: mathlib: checking out revision '83a9b27e0dc0ec30e3829b4271a48dfcae8d3e34'
+    info: mathlib: checking out revision '7e8a09990b6bbd8ceef61f738f1ec45b65819e5f'
     info: updating toolchain to 'leanprover/lean4:v4.29.0-rc6'
 
   #print axioms QOU.MassDerivation.derive_substrate_q
@@ -168,6 +170,23 @@ link to the foundational reference are shown.
     QOU/DescartesUniverse.lean:178  chiral_sector_coords
     QOU/DescartesUniverse.lean:184  descartes
     QOU/Elaboration.lean:292  dq_squared
+    QOU/FormalGroups.lean:23  (unknown)
+    QOU/FormalGroups.lean:61  (unknown)
+    QOU/FormalGroups.lean:62  (unknown)
+    QOU/FormalGroups.lean:81  (unknown)
+    QOU/FormalGroups.lean:82  (unknown)
+    QOU/FormalGroups.lean:86  (unknown)
+    QOU/FormalGroups.lean:93  (unknown)
+    QOU/FormalGroups.lean:115  (unknown)
+    QOU/FormalGroups.lean:118  (unknown)
+    QOU/FormalGroups.lean:146  skew_poisson_integrates
+    QOU/FormalGroups.lean:163  reduction_mod_p_commutative
+    QOU/FormalGroups.lean:187  reduction_mod_p_commutative
+    QOU/FormalGroups.lean:189  reduction_mod_p_commutative
+    QOU/FormalGroups.lean:198  grobner_shirshov_basis_exists
+    QOU/FormalGroups.lean:222  strong_multiplicativity_holds
+    QOU/FormalGroups.lean:254  witt_vector_lift_exists
+    QOU/FormalGroups.lean:295  unit_root_iff_integrable
     QOU/Glossary.lean:28  QuantumUniverse
     QOU/Glossary.lean:35  QuantumObservableUniverse
     QOU/Glossary.lean:42  Instanton
@@ -208,6 +227,12 @@ link to the foundational reference are shown.
     QOU/Glossary.lean:297  DescartesCondition
     QOU/Glossary.lean:304  ExceptionalDivisor
     QOU/Glossary.lean:311  ChiralSectorCoords
+    QOU/Glossary.lean:318  WittVectorLift
+    QOU/PAdicQuantumGroups.lean:142  padic_qou_lifts_from_finite_field
+    QOU/PAdicQuantumGroups.lean:157  padic_frobenius_relation_preserved
+    QOU/PAdicQuantumGroups.lean:171  unit_root_iff_skew_poisson_integrable
+    QOU/PAdicQuantumGroups.lean:177  witt_vector_lift
+    QOU/PAdicQuantumGroups.lean:183  skew_poisson_integration
     QOU/PathIntegrals.lean:256  braid_group
     QOU/PathIntegrals.lean:262  s3_group
     QOU/PathIntegrals.lean:268  su2_basis
@@ -237,7 +262,7 @@ link to the foundational reference are shown.
     QOU/Torsion.lean:587  brane_boundary
     QOU/Torsion.lean:593  brane_boundary
 
-  Summary: 0 referenced / 81 unreferenced / 81 total gaps
+  Summary: 0 referenced / 104 unreferenced / 104 total gaps
 
 ========================================================================
 END OF REPORT

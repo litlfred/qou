@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-20T13:14:27.819552+00:00",
+  "generated_at": "2026-03-20T14:43:54.275211+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -201,6 +201,11 @@
       "narrative": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
       "lean_id": "QOU.DescartesUniverse.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
+    },
+    {
+      "narrative": "Witt vector lift of a formal group",
+      "lean_id": "QOU.PAdicQuantumGroups.WittVectorLift",
+      "latex_label": "def:witt-vector-lift"
     }
   ]
 }
