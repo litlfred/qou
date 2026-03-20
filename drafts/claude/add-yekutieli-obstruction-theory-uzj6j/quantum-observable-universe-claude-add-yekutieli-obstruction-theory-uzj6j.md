@@ -1111,6 +1111,27 @@ H^q(S^2;\, \mathbb{Z}))$. The quantum characteristic classes $\kappa_n$ (Definit
 
 </div>
 
+Table <a href="#tab:yekutieli-mapping" data-reference-type="ref" data-reference="tab:yekutieli-mapping">4.1</a> summarises the correspondence between the core structures of the Quantum Observable Universe and the formal results of Yekutieli on central extensions of gerbes, twisted deformation quantization, and nonabelian multiplicative integration.
+
+<div id="tab:yekutieli-mapping">
+
+| **QOU concept**                                                                                                                                                                                                         | **Yekutieli counterpart**                                            | **Reference**                                                                                                      |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| Recursive Brane Tower $\{E_n\}$ (Def. <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)                                                                | Central extension of gerbes $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$  |                                                                                                                    |
+| Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{O}_M^{\times})$ (Def. <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>) | Obstruction classes for lifting objects in central extensions        |                                                                                                                    |
+| Fermionic sectors ($\kappa_n \neq 0$) (Rem. <a href="#rem:fermionic-twisted-sectors" data-reference-type="ref" data-reference="rem:fermionic-twisted-sectors">4.7</a>)                                                  | Twisted sectors where the lift is obstructed                         |                                                                                                                    |
+| Direct Limit Algebra $\mathcal{A}_\infty$ (Def. <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.13</a>)                                                       | Global sections of a sheaf of twisted deformation algebras           |                                                                                                                    |
+| Global gluing of $\mathcal{A}_\infty$ (Prop. <a href="#prop:global-gluing" data-reference-type="ref" data-reference="prop:global-gluing">4.17</a>)                                                                      | Yekutieli’s twisted quantization map on algebraic varieties          |                                                                                                                    |
+| Vacuum State $\omega$ (Prop. <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">4.18</a>)                                                                                        | Unique MC element in the pronilpotent DG Lie algebra                 |                                                                                                                    |
+| Mass Identity (Def. <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>)                                                                                                 | Nonabelian multiplicative integral; 2D nonabelian Stokes theorem     |                                                                                                                    |
+| Substrate field $q(p)$ (Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)                                                                            | Local twisted deformation parameter; MC element varying over $M$     |                                                                                                                    |
+| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.13</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                    |
+| Descartes condition $\chi(E) = -6$ (Def. <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>)                                                                 | Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe) | ; Ex. <a href="#ex:descartes-yekutieli" data-reference-type="ref" data-reference="ex:descartes-yekutieli">6.16</a> |
+
+Categorical mapping between QOU structures and Yekutieli’s results.
+
+</div>
+
 ### Descent
 
 <div id="def:descent" class="definition">
@@ -1245,8 +1266,10 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 1.  **Primordial vortex.* The vortex filaments of the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) are no longer embedded in a larger space; the entire manifold *is* the filament.*
 
-2.  **Mass as pure drag.* The mass identity reduces to an integral over the whole of $M_k$: $$m \;\propto\; \oint_{M_k} \lVert \nabla_A\, q \rVert
-                           \cdot \lVert L \wedge F^+ \rVert\,,$$ so that mass represents the fundamental geometric resistance of the $1$-dimensional flow against the $\mathrm{SU}(2)$ rotation.*
+2.  **Mass as pure drag.* When $\dim M_k = 1$ the surface $\Sigma$ in the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) degenerates to the $1$-manifold $M_k$ itself, and the $2$-dimensional nonabelian multiplicative integral reduces by the nonabelian Stokes theorem  to the holonomy of the connection $\nabla_A$ around $M_k$: $$m \;=\;
+              \bigl\lVert\,
+              \mathrm{Hol}_{\nabla_A}\!\bigl(M_k;\, \mathfrak{G}\bigr)
+              \,\bigr\rVert,$$ so that mass represents the fundamental holonomy resistance of the $1$-dimensional flow against the $\mathrm{SU}(2)$ rotation.*
 
 3.  **Lepton generations.* Since the number of lepton generations is bounded by the Euler characteristic and vertical degree (Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">4.8</a>), a $1$-dimensional base supports only the most fundamental fermionic state; there is no room for higher-degree vertical harmonic forms.*
 
@@ -1274,7 +1297,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 1.  **Primordial state.* The vortex filaments, flows and spatial modes of higher-dimensional strata are absent; what remains is the initial datum of the fermionic content encoded in the fibre $E_p$.*
 
-2.  **Mass.* With no base manifold over which to integrate, the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) collapses to a single evaluation: $m \propto \lVert L \wedge F^+\rVert(p)$. Mass at dimension $0$ is an instantaneous, pointwise quantity rather than a distributed one.*
+2.  **Mass.* With no base manifold over which to integrate, the nonabelian multiplicative integral of the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) degenerates: the surface $\Sigma$ collapses to a point and the holonomy around $\gamma$ reduces to a single fibre evaluation $m = \lVert L \wedge F^+\rVert(p)$. Mass at dimension $0$ is an instantaneous, pointwise quantity rather than a distributed one.*
 
 3.  **Lepton generations.* All vertical harmonic forms (Remark <a href="#rem:betti-numbers-brane" data-reference-type="ref" data-reference="rem:betti-numbers-brane">4.8</a>) are concentrated at the point; the Euler characteristic $\chi(E_p)$ retains the count of fermionic degrees of freedom without any spatial multiplicity.*
 
@@ -1292,9 +1315,26 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 </div>
 
-<div class="conjecture">
+<div id="conj:topological-mass" class="conjecture">
 
-**Conjecture 4.34** (Topological Decomposition of Mass). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$, and let $\gamma$ be a stable vortex filament. Suppose the topology of $\gamma$ is isomorphic to a knot generated by $N$ consecutive topological blowups applied to an unknot core $\gamma_0$. The continuous geometric mass of the vortex along $\gamma$ admits the discrete topological decomposition: $$m(\gamma) \propto \oint_{\gamma_0} ||\nabla_A q|| \cdot ||L \wedge F^+|| + \sum_{i=1}^{N} \lambda_i \left| \Phi_q(z_i) \right|$$ where the line integral evaluates the baseline geometric drag of the trivial unknot core, $\Phi_q(z_i)$ is the quantum dilogarithm evaluated at the spectral coordinate $z_i$ of the $i$-th exceptional divisor $E_i$, and $\lambda_i$ are local coupling weights.*
+**Conjecture 4.34** (Topological Decomposition of Mass). *Let $(\mathcal{C}, A, \omega)$ be the categorical data of a $\mathbb{C}$ quantum observable universe, where $\mathcal{C}$ is the rigid monoidal category, $A$ the Frobenius–Hopf object, and $\omega$ the fibre functor (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>). Let $\gamma$ be a stable vortex filament whose topology is generated by $N$ consecutive topological blowups applied to an unknot core $\gamma_0$.*
+
+*The mass $m(\gamma)$ (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) admits a decomposition into descended and transient contributions via the descent involution $\tau_n$ (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.25</a>): $$\label{eq:topological-mass-decomp}
+  m(\gamma)
+  \;=\;
+  \bigl\lVert\,
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr)
+  \,\bigr\rVert
+  \;+\;
+  \sum_{i=1}^{N}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_i}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert,$$ where:*
+
+1.  *The first term is the holonomy of $\nabla_A$ around the unknot core $\gamma_0$ in the twisted gerbe $\mathfrak{G}$, computed via the nonabelian Stokes theorem . Categorically, this is the trace of the comultiplication $\Delta$ on $A$ restricted to the descended subalgebra $\mathcal{A}^{\mathrm{desc}}$ (Proposition <a href="#prop:descent-eigenspaces" data-reference-type="ref" data-reference="prop:descent-eigenspaces">4.26</a>): it captures the baseline geometric drag of the Frobenius–Hopf object along the trivial core.*
+
+2.  *Each summand is the nonabelian multiplicative integral of the connection–curvature pair over the $i$-th exceptional divisor $E_i \cong \mathbb{CP}^1$ arising from the blow-up. Categorically, $E_i$ is the fibre of $\ker(\mathfrak{d}_{n+1}|_{p_i})$ at the $i$-th blow-up centre (Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.27</a>), and the integral extracts the contribution of the transient complement $\mathcal{A}^{\mathrm{trans}}$ localised at $p_i$. Evaluation of this integral via the spectral coordinates of the Briggs–Klein chart (Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">5.21</a>) yields the quantum dilogarithm $\Phi_q(z_i)$.*
 
 </div>
 
@@ -1611,12 +1651,6 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 **Remark 5.22** (Radial projection of Bring’s surface). *Restricting a Briggs–Klein affine chart (Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">5.21</a>) to the interval $r\in(0,1)$ and projecting Bring’s surface onto this radial coordinate yields a fibration over the base manifold $M$ with trivial bundle $E=E_0$. At each $r$, the coordinate $w_1$ is restricted to a circle of radius $\sqrt{r}$ in the complex plane $\mathbb{C}_{w_1}$. This circle is the orbit of the $C_5$ symmetry: the rotation $w_1\mapsto\zeta\,w_1$ moves the point along this circle without changing $r$.*
 
-<div class="center">
-
-</div>
-
-*The brown tessellation filling the brane illustrates the trivial bundle $E=E_0$: every cell is flat, reflecting the absence of torsion on the total space.*
-
 </div>
 
 <div id="rem:four-colourability" class="remark">
@@ -1726,7 +1760,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
   m \;\propto\;
   \oint_{\gamma}
   \lVert\nabla_A q\rVert\cdot
-  \lVert\Omega_1\wedge\Omega_{2,3}\rVert,$$ where $\Omega_k$ denotes the curvature form restricted to the $\omega_k$ sector. When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$; when $q\to 0$ (maximal twist), energy is trapped in the $\omega_1$ spatial filament.*
+  \lVert\Omega_1\wedge\Omega_{2,3}\rVert,$$ where $\Omega_k$ denotes the curvature form restricted to the $\omega_k$ sector. This heuristic is made rigorous by the nonabelian multiplicative integral of the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>). When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$; when $q\to 0$ (maximal twist), energy is trapped in the $\omega_1$ spatial filament.*
 
 </div>
 
@@ -1772,6 +1806,38 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 *For the muon (vertical degree 2), the gauge field is lifted to the 1-jet bundle, forcing the integration of the momentum gradient. The prolonged differential is $\lambda_{SW}^{(1)} = dX$. Substituting the implicit differentiation of the color tube cubic yields the explicit dual mass integral: $$a_D^{(\mu)} = \oint_{E_c} \lambda_{SW}^{(1)} = \oint_{E_c} \frac{4z^3+3z^2+2z+1}{c \left( 3c^2 + 2(4z+1)c + (6z^2+3z+1) \right)} dz$$*
 
 *At the topological defect $z_c$ where chiral sheets merge, the discriminant vanishes and $\partial F / \partial c \to 0$. This induces a severe pole in the prolonged differential $\lambda_{SW}^{(1)}$. By Cauchy’s Residue Theorem, the integral over the exceptional divisor captures the residue of this jet-bundle gradient. This geometrically inflates the trapped quantum dilogarithm volume, producing the mass hierarchy $m_\mu \gg m_e$ purely from the topology of the blowup, without requiring arbitrarily high crossing numbers.*
+
+</div>
+
+<div id="prop:mi-sw-abelianisation" class="proposition">
+
+**Proposition 5.34** (Abelianisation of the MI integral on exceptional divisors). *Let $E_c \cong \mathbb{CP}^1$ be the exceptional divisor at a branch point $z_c$ (Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">5.20</a>), and let $(\nabla_A q,\; L \wedge F^+)$ be the connection–curvature pair of the mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>). Then for each vertical degree $n \geq 0$ in the Reeb decomposition, the restriction of the nonabelian multiplicative integral to $E_c$ abelianises to the $n$-th prolonged Seiberg–Witten period: $$\label{eq:mi-sw-abelianisation}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_c}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert_{J^n}
+  \;=\;
+  \bigl\lvert a_D^{(n)}\bigr\rvert
+  \;=\;
+  \biggl\lvert\oint_{E_c}\lambda_{\mathrm{SW}}^{(n)}\biggr\rvert,$$ where $\lVert\cdot\rVert_{J^n}$ denotes the Killing-form norm projected onto the $n$-th jet component, and $\lambda_{\mathrm{SW}}^{(n)}$ is the $n$-th prolonged Seiberg–Witten differential.*
+
+</div>
+
+<div class="proof">
+
+*Proof.* The proof proceeds in three steps.
+
+*Step 1: Abelianisation of the connection.* On the exceptional divisor $E_c \cong \mathbb{CP}^1$ the principal $\mathrm{SU}(2)$-bundle $P$ trivialises (every $\mathrm{SU}(2)$-bundle over $S^2$ is classified by $\pi_1(\mathrm{SU}(2)) = 0$). The connection $\nabla_A$ therefore reduces to a $\mathfrak{su}(2)$-valued $1$-form $A|_{E_c}$. By the weight-space decomposition (Remark <a href="#rem:weight-space-decomposition" data-reference-type="ref" data-reference="rem:weight-space-decomposition">4.10</a>), the restriction splits as $$A\big|_{E_c}
+  \;=\;
+  A^0 \otimes H
+  \;+\;
+  A^+ \otimes E_+
+  \;+\;
+  A^- \otimes E_-,$$ where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$. The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on $E_c$. Since $E_c \cong \mathbb{CP}^1$ the spectral curve (Remark <a href="#rem:chiral-bundles" data-reference-type="ref" data-reference="rem:chiral-bundles">5.19</a>) restricts to a single sheet, and the Higgs-field eigenvalue is the chiral coordinate $X$. The abelian component therefore satisfies $A^0 = X\,dz = \lambda_{\mathrm{SW}}$, recovering the Seiberg–Witten differential <a href="#eq:seiberg-witten-differential" data-reference-type="eqref" data-reference="eq:seiberg-witten-differential">[eq:seiberg-witten-differential]</a>.
+
+*Step 2: Fake-flatness and the $2$-form datum.* The fake-flatness condition $F_A = B$ <a href="#eq:fake-flatness" data-reference-type="eqref" data-reference="eq:fake-flatness">[eq:fake-flatness]</a> identifies the curvature $2$-form $L \wedge F^+$ on $E_c$ with the $\mathfrak{su}(2)$-valued $2$-form $B|_{E_c}$. The simplicity constraint forces $B|_{E_c} = F_A^+|_{E_c}$, which on the $2$-sphere $E_c$ is proportional to the volume form $\mathrm{vol}_{E_c}$. Consequently the pair $(\nabla_A q,\; L \wedge F^+)$ restricted to $E_c$ is *abelian*: both components lie in the Cartan subalgebra after projection onto the weight-$0$ sector, and the nonabelian MI integral reduces to the ordinary (abelian) multiplicative integral, which equals the exponential of the classical contour integral. Taking the norm yields the absolute value of the period.
+
+*Step 3: Jet prolongation and vertical degree.* At vertical degree $n = 0$ the Killing-form projection onto $J^0$ recovers the base differential $\lambda_{\mathrm{SW}}^{(0)} = X\,dz$ and the electron period $a_D^{(e)}$. At vertical degree $n \geq 1$ the jet prolongation (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>) lifts the connection to $J^n E$, replacing $X\,dz$ with the $n$-th prolonged differential $\lambda_{\mathrm{SW}}^{(n)}$: the $1$-jet component is $dX$ (the implicit derivative of the color tube cubic <a href="#eq:color-tube-cubic" data-reference-type="eqref" data-reference="eq:color-tube-cubic">[eq:color-tube-cubic]</a>), and higher jets follow by induction. The MI integral at jet level $n$ is the abelian integral of $\lambda_{\mathrm{SW}}^{(n)}$ over $E_c$ by the same argument as Steps 1–2 applied to the prolonged connection $A'$ on $J^n E$. ◻
 
 </div>
 
@@ -2056,30 +2122,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 # Interpretations
 
-This chapter collects interpretive remarks relating the formal structures of the preceding chapters to the categorical framework of Yekutieli’s obstruction theory .
-
-## Categorical Mapping: QOU Concepts and Yekutieli’s Results
-
-Table <a href="#tab:yekutieli-mapping" data-reference-type="ref" data-reference="tab:yekutieli-mapping">10.1</a> summarises the correspondence between the core structures of the Quantum Observable Universe and the formal results of Yekutieli on central extensions of gerbes, twisted deformation quantization, and nonabelian multiplicative integration.
-
-<div id="tab:yekutieli-mapping">
-
-| **QOU concept**                                                                                                                                                                                                         | **Yekutieli counterpart**                                            | **Reference**                                                                                                      |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Recursive Brane Tower $\{E_n\}$ (Def. <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)                                                                | Central extension of gerbes $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$  |                                                                                                                    |
-| Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{O}_M^{\times})$ (Def. <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">4.5</a>) | Obstruction classes for lifting objects in central extensions        |                                                                                                                    |
-| Fermionic sectors ($\kappa_n \neq 0$) (Rem. <a href="#rem:fermionic-twisted-sectors" data-reference-type="ref" data-reference="rem:fermionic-twisted-sectors">4.7</a>)                                                  | Twisted sectors where the lift is obstructed                         |                                                                                                                    |
-| Direct Limit Algebra $\mathcal{A}_\infty$ (Def. <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.13</a>)                                                       | Global sections of a sheaf of twisted deformation algebras           |                                                                                                                    |
-| Global gluing of $\mathcal{A}_\infty$ (Prop. <a href="#prop:global-gluing" data-reference-type="ref" data-reference="prop:global-gluing">4.17</a>)                                                                      | Yekutieli’s twisted quantization map on algebraic varieties          |                                                                                                                    |
-| Vacuum State $\omega$ (Prop. <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">4.18</a>)                                                                                        | Unique MC element in the pronilpotent DG Lie algebra                 |                                                                                                                    |
-| Mass Identity (Def. <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>)                                                                                                 | Nonabelian multiplicative integral; 2D nonabelian Stokes theorem     |                                                                                                                    |
-| Substrate field $q(p)$ (Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)                                                                            | Local twisted deformation parameter; MC element varying over $M$     |                                                                                                                    |
-| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.13</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                    |
-| Descartes condition $\chi(E) = -6$ (Def. <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>)                                                                 | Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe) | ; Ex. <a href="#ex:descartes-yekutieli" data-reference-type="ref" data-reference="ex:descartes-yekutieli">6.16</a> |
-
-Categorical mapping between QOU structures and Yekutieli’s results.
-
-</div>
+This chapter collects interpretive remarks relating the formal structures of the preceding chapters to broader mathematical and physical frameworks.
 
 # Experimental Evidence
 
@@ -2225,7 +2268,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:mass-ratio-predictions" class="remark">
 
-**Remark 11.7** (Theoretical mass ratios from the mass identity). *The mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) expresses inertial mass as a line integral of $\lVert\nabla_A q\rVert \cdot \lVert L \wedge F^+\rVert$ around a vortex filament. For the Descartes universe with $\chi(E) = -6$, the topological data of the bundle constrain the allowed vortex configurations and hence the mass spectrum. The electron–muon mass ratio, for instance, is governed by the ratio of vertical degrees in the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>). Evaluating the mass identity at successive levels of the brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>) may yield theoretical predictions for lepton and hadron mass ratios.*
+**Remark 11.7** (Theoretical mass ratios from the mass identity). *The mass identity (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.22</a>) expresses inertial mass as the norm of a nonabelian multiplicative integral of the connection–curvature pair $(\nabla_A q,\; L \wedge F^+)$ over a surface bounding the vortex filament. For the Descartes universe with $\chi(E) = -6$, the topological data of the bundle constrain the allowed vortex configurations and hence the mass spectrum. The electron–muon mass ratio, for instance, is governed by the ratio of vertical degrees in the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>). Evaluating the mass identity at successive levels of the brane tower (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>) may yield theoretical predictions for lepton and hadron mass ratios.*
 
 </div>
 
