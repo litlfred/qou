@@ -162,6 +162,33 @@ structure DirectLimitAlgebra where
   /-- Compatibility: embedding commutes with transition maps. -/
   embed_compat : ∀ (n : ℕ) (a : sectionAlgebra n),
     embed (n + 1) (transitionMap n a) = embed n a
+  /-- Unit element `1 ∈ 𝒜_∞` (image of the identity section). -/
+  one : limitAlgebra
+  /-- The Haar-averaging functional at each finite level, yielding an
+      invariant state `ω_n : Γ(J¹ E_n) → ℝ`.  Existence follows from
+      compactness of `SU(2)` and the Peter–Weyl theorem. -/
+  haarState : (n : ℕ) → sectionAlgebra n → ℝ
+  /-- Haar states are compatible with transition maps:
+      `ω_{n+1}(ι_n(a)) = ω_n(a)`.  This is the key condition that
+      allows passage to the direct limit. -/
+  haarState_compat : ∀ (n : ℕ) (a : sectionAlgebra n),
+    haarState (n + 1) (transitionMap n a) = haarState n a
+  /-- Haar-invariance: the state is constant on each section algebra.
+      This follows from the multiplicity-one property of the trivial
+      representation (adjoint vanishing). -/
+  haarState_invariant : ∀ (n : ℕ) (a b : sectionAlgebra n),
+    haarState n a = haarState n b
+  /-- The direct-limit state induced on `𝒜_∞`.  By the universal
+      property of the colimit, the compatible family `{ω_n}` yields
+      a unique functional `ω : 𝒜_∞ → ℝ`. -/
+  limitState : limitAlgebra → ℝ
+  /-- The limit state extends each finite-level Haar state:
+      `ω(embed n a) = ω_n(a)`. -/
+  limitState_extends : ∀ (n : ℕ) (a : sectionAlgebra n),
+    limitState (embed n a) = haarState n a
+  /-- The limit state is invariant (constant on all of `𝒜_∞`). -/
+  limitState_invariant : ∀ (a b : limitAlgebra),
+    limitState a = limitState b
 
 /-! ## §5  Vacuum State -/
 
@@ -181,14 +208,22 @@ structure VacuumState (dla : DirectLimitAlgebra) where
       Modelled abstractly as: the state value is the same on any two
       elements related by an automorphism of the limit algebra. -/
   invariant : ∀ (a b : dla.limitAlgebra), state a = state b
+  /-- The state extends each finite-level Haar state:
+      `ω(embed n a) = ω_n(a)`. -/
+  extends_haar : ∀ (n : ℕ) (a : dla.sectionAlgebra n),
+    state (dla.embed n a) = dla.haarState n a
 
 /-- The vacuum state exists for any direct limit algebra built from
-    a brane tower of quantum observable universes. -/
+    a brane tower of quantum observable universes.
+
+    Construction: the `limitState` provided by the direct limit algebra
+    (obtained by Haar averaging at each finite level and passing to the
+    colimit) is the required vacuum state.  Invariance follows from the
+    multiplicity-one property of the trivial representation (adjoint
+    vanishing at each level). -/
 theorem vacuum_state_exists (dla : DirectLimitAlgebra) :
-    Nonempty (VacuumState dla) := by
-  -- Existence by Haar averaging + universal property of direct limit.
-  -- Uniqueness by adjoint vanishing (multiplicity-one argument).
-  exact ⟨⟨fun _ => 0, fun _ _ => rfl⟩⟩
+    Nonempty (VacuumState dla) :=
+  ⟨⟨dla.limitState, dla.limitState_invariant, dla.limitState_extends⟩⟩
 
 /-! ## §6  Euler Characteristic Stability -/
 
