@@ -377,6 +377,7 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
   · have hq_ne : q ≠ 1 := h
     -- For q > 0, q ≠ 1, n ≥ 1: (q^n - 1)/(q - 1) > 0
     -- This is the sum 1 + q + q² + ... + q^{n-1} > 0
+    -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
     sorry
 
 /-- **Conjecture (Topological Decomposition of Mass).**
@@ -387,8 +388,9 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     LaTeX: Conjecture 4.1. -/
 /-- Placeholder for the conjecture statement.  When formalised, the type
     should assert that the mass functional decomposes into a baseline
-    integral plus a sum of quantum dilogarithm terms.  Marked `sorry`
-    rather than `axiom True` so that the axiom report catches it. -/
+    integral plus a sum of quantum dilogarithm terms.  Left as an
+    unproved obligation rather than `axiom True` so that the axiom
+    report catches it. -/
 theorem topological_mass_decomposition :
     -- The mass of a stable vortex decomposes into:
     -- (1) Baseline geometric drag of the unknot core

@@ -303,6 +303,37 @@ code { font-size: 90%; }
 .gh-badge:hover { filter: brightness(0.9); }
 #gh-bar { padding: 2px 0; }
 .defn-link { border-bottom: 1px dotted var(--link); text-decoration: none; }
+
+/* ── Proof-status badges ───────────────────────────────────────── */
+.proof-status {
+  display: inline-block; font-size: 0.75em; padding: 1px 7px;
+  border-radius: 10px; margin-left: 0.5em; text-decoration: none;
+  font-weight: 600; vertical-align: middle; line-height: 1.6;
+  transition: filter 0.15s;
+}
+.proof-status:hover { filter: brightness(0.85); }
+.proof-status.proved {
+  background: #228B22; color: #fff;
+}
+.proof-status.stated {
+  background: #DAA520; color: #fff;
+}
+.proof-status.has-sorry {
+  background: #FF8C00; color: #fff;
+}
+.proof-status.not-started {
+  background: #DC143C; color: #fff;
+}
+.proof-status.mathlib-ok {
+  background: #006400; color: #fff;
+}
+/* Legend bar */
+.proof-legend {
+  text-align: center; padding: 6px 0; font-size: 0.8rem;
+  border-bottom: 1px solid var(--border); margin-bottom: 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.proof-legend .proof-status { cursor: default; pointer-events: none; }
 </style>
 </head>
 <body>
@@ -368,6 +399,7 @@ code { font-size: 90%; }
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">&#x1F319;</button>
   </span>
 </header>
+<div class="proof-legend"><strong>Proof status:</strong> <span class="proof-status proved">&#x2713; proved</span> <span class="proof-status mathlib-ok">&#x2713;&#x2713; mathlib</span> <span class="proof-status stated">&#x2200; stated</span> <span class="proof-status has-sorry">&#x26A0; sorry</span> <span class="proof-status not-started">&#x2717; no Lean</span> </div>
 
 <header id="title-block-header">
 <h1 class="title"><span id="chap:qou"></span>Quantum Observable Universe</h1>
@@ -393,10 +425,34 @@ provided,<br />
 and any changes made are indicated.</p>
 </div>
 
+<p><strong>Proof-status key</strong></p>
+<table>
+<tbody>
+<tr class="odd">
+<td
+style="text-align: center;"><span style="color: ForestGreen"></span></td>
+<td style="text-align: left;">Fully proved (sorry-free)</td>
+<td style="text-align: center;"><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></td>
+<td style="text-align: left;">Stated in Lean (has
+<code>sorry</code>)</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: center;"><span style="color: OliveGreen">-0.3em</span></td>
+<td style="text-align: left;">Merged into Mathlib</td>
+<td style="text-align: center;"><span style="color: BrickRed"><span
+class="math inline">\(\times\)</span></span></td>
+<td style="text-align: left;">Not ready to formalize</td>
+</tr>
+</tbody>
+</table>
 <h1 id="quantum-observable-universe">Quantum Observable Universe</h1>
 <div id="def:quantum-universe" class="definition">
 
-<p><strong>Definition 1.1</strong> (<a class="defn-link" href="#def:quantum-universe">Quantum Universe</a>). <em>Let <span
+<p><strong>Definition 1.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumUniverse" target="_blank" title="Lean: QOU.QuantumUniverse">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-universe">Quantum Universe</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QuantumUniverse"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\(k\)</span> be a field. A <em>quantum universe
 over <span class="math inline">\(k\)</span></em> is a quadruple <span
 class="math inline">\((\mathcal{C}, A, \omega, q)\)</span>
@@ -442,8 +498,10 @@ reconstructed via Tannaka–Krein duality.</em></p>
 
 <div id="def:quantum-observable-universe" class="definition">
 
-<p><strong>Definition 1.2</strong> (<a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a>). <em>A
-<a class="defn-link" href="#def:quantum-universe">quantum universe</a> <span class="math inline">\((\mathcal{C}, A, \omega,
+<p><strong>Definition 1.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse" target="_blank" title="Lean: QOU.QuantumObservableUniverse">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> A quantum
+universe <span class="math inline">\((\mathcal{C}, A, \omega,
 q)\)</span> over <span class="math inline">\(k\)</span>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>)
 is <em>observable</em> if:</em></p>
@@ -463,7 +521,7 @@ S(a_{(2)})\)</span>).</em></p></li>
 
 <div id="rem:base-field-independence" class="remark">
 
-<p><strong>Remark 1.3</strong> (<a class="defn-link" href="#rem:base-field-independence">Base-field independence</a>).
+<p><strong>Remark 1.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:base-field-independence">Base-field independence</a>).
 <em>Definitions <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>
 and <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>
 are formulated over an arbitrary field <span
@@ -499,10 +557,12 @@ class="math inline">\(k\)</span>.</em></p>
 
 <div id="def:c-quantum-universe" class="example">
 
-<p><strong>Example 1.4</strong> (<span
+<p><strong>Example 1.4 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CRManifoldData" target="_blank" title="Lean: QOU.CRManifoldData">&#x2200; stated</a></strong> (<span
 class="math inline">\(\mathbb{C}\)</span> realisation: quantum
-universe). <em>Over <span class="math inline">\(k = \mathbb{C}\)</span>,
-a <a class="defn-link" href="#def:quantum-universe">quantum universe</a>
+universe). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.CRManifoldData"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Over <span
+class="math inline">\(k = \mathbb{C}\)</span>, a <a class="defn-link" href="#def:quantum-universe">quantum universe</a>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>)
 is realised by a <span class="math inline">\(5\)</span>-tuple <span
 class="math inline">\((M, \theta, G, P, E)\)</span> where:</em></p>
@@ -548,7 +608,7 @@ class="math inline">\(\mathrm{Vect}_{\mathbb{C}}\)</span>.</em></p>
 
 <div id="rem:notation-special-cases" class="remark">
 
-<p><strong>Remark 1.5</strong> (<a class="defn-link" href="#rem:notation-special-cases">Notation and special cases</a>). <em>When
+<p><strong>Remark 1.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:notation-special-cases">Notation and special cases</a>). <em>When
 <span class="math inline">\(\theta\)</span> is understood from context,
 we abbreviate the <span class="math inline">\(5\)</span>-tuple to <span
 class="math inline">\((M, G, P, E)\)</span>. The <em>strictly
@@ -559,9 +619,11 @@ class="math inline">\(L_\theta\)</span> is positive definite.</em></p>
 
 <div id="def:c-quantum-observable-universe" class="example">
 
-<p><strong>Example 1.6</strong> (<span
+<p><strong>Example 1.6 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CQuantumObservableUniverse" target="_blank" title="Lean: QOU.CQuantumObservableUniverse">&#x2200; stated</a></strong> (<span
 class="math inline">\(\mathbb{C}\)</span> realisation: quantum
-observable universe). <em>A <em><span
+observable universe). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.CQuantumObservableUniverse"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> A <em><span
 class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe</em> is a <span class="math inline">\(\mathbb{C}\)</span>
 <a class="defn-link" href="#def:quantum-universe">quantum universe</a> <span class="math inline">\((M, \theta, G, P,
@@ -587,7 +649,9 @@ class="math inline">\(A\)</span>-equivariant sections of the associated
 
 <div id="def:instanton" class="definition">
 
-<p><strong>Definition 1.7</strong> (<a class="defn-link" href="#def:instanton">Instanton connection</a>). <em>Let <span
+<p><strong>Definition 1.7 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.InstantonConnection" target="_blank" title="Lean: QOU.InstantonConnection">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:instanton">Instanton connection</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.InstantonConnection"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-universe">quantum universe</a> with <span
 class="math inline">\(\dim_{\mathbb{R}} H = 4\)</span> (<span
@@ -608,8 +672,10 @@ F_A|_H \rVert^2\,\theta \wedge (d\theta)^n\)</span>.</em></p>
 
 <div id="lem:irreducible-connection" class="lemma">
 
-<p><strong>Lemma 1.8</strong> (<a class="defn-link" href="#lem:irreducible-connection">Irreducibility of the connection</a>).
-<em>Let <span class="math inline">\((M, G, P, E)\)</span> be a <span
+<p><strong>Lemma 1.8 <a class="proof-status proved" href="https://litlfred.github.io/qou/lean/QOU.irreducible_connection" target="_blank" title="Lean: QOU.irreducible_connection">&#x2713; proved</a></strong> (<a class="defn-link" href="#lem:irreducible-connection">Irreducibility of the connection</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.irreducible_connection"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a><sup><span style="color: ForestGreen"></span></sup>
+Let <span class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>.
 Then the vanishing condition <span class="math inline">\(H^0(M,
 \mathrm{Ad}(P)) = 0\)</span> implies that every <a class="defn-link" href="#def:instanton">instanton connection</a>
@@ -637,14 +703,17 @@ class="math inline">\(A\)</span> is irreducible. ◻</p>
 
 <div id="prop:self-dual-curvature" class="proposition">
 
-<p><strong>Proposition 1.9</strong> (<a class="defn-link" href="#prop:self-dual-curvature">Self-duality of the curvature</a>).
-<em>Let <span class="math inline">\((M, \theta, G, P, E)\)</span> be a
-<span class="math inline">\(\mathbb{C}\)</span> quantum observable
-universe with <span class="math inline">\(\dim_{\mathbb{R}} M =
-5\)</span> (i.e. the CR dimension <span class="math inline">\(n =
-2\)</span>, so that the Levi distribution <span class="math inline">\(H
-= \ker\theta\)</span> has <span class="math inline">\(\dim_{\mathbb{R}}
-H = 4\)</span>). Let <span class="math inline">\(A\)</span> be an
+<p><strong>Proposition 1.9 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.self_dual_curvature" target="_blank" title="Lean: QOU.self_dual_curvature">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:self-dual-curvature">Self-duality of the curvature</a>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.self_dual_curvature"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
+with <span class="math inline">\(\dim_{\mathbb{R}} M = 5\)</span>
+(i.e. the CR dimension <span class="math inline">\(n = 2\)</span>, so
+that the Levi distribution <span class="math inline">\(H =
+\ker\theta\)</span> has <span class="math inline">\(\dim_{\mathbb{R}} H
+= 4\)</span>). Let <span class="math inline">\(A\)</span> be an
 <a class="defn-link" href="#def:instanton">instanton connection</a> on <span class="math inline">\(P\)</span>. Then the
 curvature <span class="math inline">\(F_A\)</span>, restricted to <span
 class="math inline">\(H\)</span>, is self-dual with respect to the Hodge
@@ -698,7 +767,9 @@ self-duality condition <span class="math inline">\(F_A|_H =
 
 <div id="def:substrate-parameter" class="definition">
 
-<p><strong>Definition 1.10</strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em>Let <span
+<p><strong>Definition 1.10 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter" target="_blank" title="Lean: QOU.SubstrateParameter">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
 universe over a field <span class="math inline">\(k\)</span>
 (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>).
@@ -728,7 +799,7 @@ M \to k^{\times}\)</span>.</em></p>
 
 <div id="rem:c-substrate-via-levi" class="remark">
 
-<p><strong>Remark 1.11</strong> (<span
+<p><strong>Remark 1.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{C}\)</span> substrate via the Levi form).
 <em>In the <span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe
@@ -795,7 +866,7 @@ class="math inline">\(q\)</span> is a primitive root of unity
 
 <div id="rem:substrate-contraction" class="remark">
 
-<p><strong>Remark 1.12</strong> (Natural contraction and field character
+<p><strong>Remark 1.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Natural contraction and field character
 of <span class="math inline">\(q\)</span>). <em>The Levi form <span
 class="math inline">\(L_\theta\)</span> is a section of <span
 class="math inline">\(\Lambda^{1,1} H^*\)</span> (the <span
@@ -824,7 +895,9 @@ curvature.</em></p>
 
 <div id="def:quantum-gauge-group" class="definition">
 
-<p><strong>Definition 1.13</strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em>Let <span
+<p><strong>Definition 1.13 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup" target="_blank" title="Lean: QOU.QuantumGaugeGroup">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
@@ -838,8 +911,10 @@ class="math inline">\(q(p)\)</span>.</em></p>
 
 <div id="def:quantum-planck-constant" class="definition">
 
-<p><strong>Definition 1.14</strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em>Let
-<span class="math inline">\((M, G, P, E)\)</span> be a <span
+<p><strong>Definition 1.14 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant" target="_blank" title="Lean: QOU.quantumPlanckConstant">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
@@ -851,7 +926,7 @@ class="math inline">\(\hbar_q \colon M \to [0,1)\)</span> defined by
 
 <div id="rem:planck-limits" class="remark">
 
-<p><strong>Remark 1.15</strong> (Limiting regimes of <span
+<p><strong>Remark 1.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Limiting regimes of <span
 class="math inline">\(\hbar_q\)</span>). <em>Like <span
 class="math inline">\(q\)</span> itself, <span
 class="math inline">\(\hbar_q\)</span> is not a universal constant but a
@@ -865,7 +940,7 @@ vanish; as <span class="math inline">\(q(p) \to \infty\)</span>
 
 <div id="rem:heisenberg-commutator" class="remark">
 
-<p><strong>Remark 1.16</strong> (<a class="defn-link" href="#rem:heisenberg-commutator">Heisenberg uncertainty as commutator</a>).
+<p><strong>Remark 1.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:heisenberg-commutator">Heisenberg uncertainty as commutator</a>).
 <em>In the <span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe the Heisenberg uncertainty principle is expressed
 through the <span class="math inline">\(q\)</span>-deformed commutator.
@@ -936,9 +1011,11 @@ is set by <span class="math inline">\(\hbar_q(p)\)</span>.</em></p>
 
 <div id="def:q-harmonic-form" class="definition">
 
-<p><strong>Definition 1.17</strong> (<span
-class="math inline">\(q\)</span>-Harmonic form (Particle)). <em>Let
-<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+<p><strong>Definition 1.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm" target="_blank" title="Lean: QOU.QHarmonicForm">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Harmonic form (Particle)). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
@@ -961,7 +1038,9 @@ class="math display">\[\Delta_q \alpha
 
 <div id="def:reeb-decomposition" class="definition">
 
-<p><strong>Definition 1.18</strong> (<a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>). <em>Let <span
+<p><strong>Definition 1.18 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ReebDecomposition" target="_blank" title="Lean: QOU.ReebDecomposition">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.ReebDecomposition"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\((M, \theta)\)</span> be a CR manifold with
 non-degenerate Levi form
 (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>)
@@ -985,8 +1064,11 @@ class="math inline">\(\iota_\xi\,\alpha = 0\)</span>.</em></p>
 
 <div id="def:fermion" class="definition">
 
-<p><strong>Definition 1.19</strong> (<a class="defn-link" href="#def:fermion">Fermion</a>). <em>A <em>fermion</em> is
-a <span class="math inline">\(q\)</span>-harmonic form
+<p><strong>Definition 1.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Fermion" target="_blank" title="Lean: QOU.Fermion">&#x2200; stated</a></strong> (Fermion). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Fermion"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> A
+<em>fermion</em> is a <span class="math inline">\(q\)</span>-harmonic
+form
 (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>)
 that has a non-trivial vertical component in the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>):
@@ -997,8 +1079,10 @@ that has a non-trivial vertical component in the <a class="defn-link" href="#def
 
 <div id="def:boson" class="definition">
 
-<p><strong>Definition 1.20</strong> (<a class="defn-link" href="#def:boson">Boson</a>). <em>A <em>boson</em> is a
-<span class="math inline">\(q\)</span>-harmonic form
+<p><strong>Definition 1.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Boson" target="_blank" title="Lean: QOU.Boson">&#x2200; stated</a></strong> (Boson). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Boson"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> A <em>boson</em>
+is a <span class="math inline">\(q\)</span>-harmonic form
 (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>)
 that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>):
@@ -1011,7 +1095,7 @@ that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposit
 
 <div id="def:observation" class="definition">
 
-<p><strong>Definition 1.21</strong> (<a class="defn-link" href="#def:observation">Observation</a>). <em>Let <span
+<p><strong>Definition 1.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:observation">Observation</a>). <em>Let <span
 class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
 observable universe over a field <span class="math inline">\(k\)</span>
 (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
@@ -1054,7 +1138,7 @@ non-commutative geometry:</em></p>
 
 <div id="rem:two-observer-parallelogram" class="remark">
 
-<p><strong>Remark 1.22</strong> (<a class="defn-link" href="#rem:two-observer-parallelogram">Two-observer parallelogram</a>). <em>Let
+<p><strong>Remark 1.22 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:two-observer-parallelogram">Two-observer parallelogram</a>). <em>Let
 <span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
 <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
 class="math inline">\(\alpha\)</span> be a <a class="defn-link" href="#def:fermion">fermion</a>
@@ -1123,9 +1207,11 @@ substrate field.</em></p>
 
 <div id="def:q-ext-deriv" class="definition">
 
-<p><strong>Definition 1.23</strong> (<span
-class="math inline">\(q\)</span>-Deformed exterior derivative). <em>Let
-<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+<p><strong>Definition 1.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qExtDeriv" target="_blank" title="Lean: QOU.qExtDeriv">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Deformed exterior derivative). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.qExtDeriv"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
@@ -1144,8 +1230,10 @@ derivative along the Reeb field.</em></p>
 
 <div id="def:q-lie-bracket" class="definition">
 
-<p><strong>Definition 1.24</strong> (<span
-class="math inline">\(q\)</span>-Deformed Lie bracket). <em>Let <span
+<p><strong>Definition 1.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qLieBracket" target="_blank" title="Lean: QOU.qLieBracket">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Deformed Lie bracket). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.qLieBracket"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\(V, W \in \mathfrak{X}(M)\)</span> be smooth vector
 fields. The <em><span class="math inline">\(q\)</span>-deformed Lie
 bracket</em> is <span class="math display">\[[V, W]_q
@@ -1159,8 +1247,10 @@ class="math inline">\(\mathfrak{X}(M)\)</span>.</em></p>
 
 <div id="def:q-connection" class="definition">
 
-<p><strong>Definition 1.25</strong> (<span
-class="math inline">\(q\)</span>-Deformed connection). <em>Let <span
+<p><strong>Definition 1.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qConnection" target="_blank" title="Lean: QOU.qConnection">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Deformed connection). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.qConnection"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\(A\)</span> be an <a class="defn-link" href="#def:instanton">instanton connection</a> on <span
 class="math inline">\(P\)</span>
 (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.8</a>).
@@ -1173,9 +1263,11 @@ class="math display">\[A_q
 
 <div id="def:q-reeb-vector-field" class="definition">
 
-<p><strong>Definition 1.26</strong> (<span
-class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
-<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+<p><strong>Definition 1.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.qReebVectorField" target="_blank" title="Lean: QOU.qReebVectorField">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Deformed Reeb vector field). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.qReebVectorField"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
@@ -1199,8 +1291,10 @@ class="math inline">\(q\)</span>-deformed Lie bracket
 
 <div id="def:q-reeb-flow" class="definition">
 
-<p><strong>Definition 1.27</strong> (<span
-class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
+<p><strong>Definition 1.27 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QReebFlow" target="_blank" title="Lean: QOU.QReebFlow">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Deformed Reeb flow). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QReebFlow"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\(\xi_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field
 (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>).
@@ -1216,8 +1310,10 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 
 <div id="def:q-torsion-leaf" class="definition">
 
-<p><strong>Definition 1.28</strong> (<span
-class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
+<p><strong>Definition 1.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf" target="_blank" title="Lean: QOU.QTorsionLeaf">&#x2200; stated</a></strong> (<span
+class="math inline">\(q\)</span>-Torsion leaf). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
 class="math inline">\(H = \ker\theta \subset TM\)</span> be the
 horizontal distribution on the CR manifold <span
 class="math inline">\(M\)</span>. A <em><span
@@ -1235,7 +1331,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 
 <div id="rem:q-torsion-existence" class="remark">
 
-<p><strong>Remark 1.29</strong> (<span
+<p><strong>Remark 1.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves: existence and Frobenius
 obstruction). <em>The horizontal distribution <span
 class="math inline">\(H = \ker\theta\)</span> on a contact manifold is
@@ -1272,7 +1368,7 @@ class="math inline">\(q\)</span>-torsion leaves their rigidity.</em></p>
 
 <div id="rem:reeb-physical" class="remark">
 
-<p><strong>Remark 1.30</strong> (Physical interpretation of the Reeb
+<p><strong>Remark 1.30 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
 class="math inline">\(\xi\)</span> singles out the direction of internal
 spin on the CR manifold. Forms that “see” this direction (fermions)
@@ -1288,7 +1384,7 @@ Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="
 
 <div id="rem:gr-substrate-geometry" class="remark">
 
-<p><strong>Remark 1.31</strong> (General Relativity as the “Substrate
+<p><strong>Remark 1.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
 Levi form <span class="math inline">\(L_\theta\)</span> and its coupling
 to the gauge curvature <span class="math inline">\(F_A\)</span>. Gravity
@@ -1325,8 +1421,10 @@ instantons.</em></p>
 
 <div id="prop:main-commutative-diagram" class="proposition">
 
-<p><strong>Proposition 1.32</strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em>Let
-<span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
+<p><strong>Proposition 1.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram" target="_blank" title="Lean: QOU.main_commutative_diagram">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram"><sup><span style="color: Goldenrod"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:instanton">instanton connection</a> <span class="math inline">\(A\)</span>
 (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.7</a>)
@@ -1422,7 +1520,7 @@ may return to specific sections as needed; the remainder of the paper
 does not require this chapter in linear order.</p>
 <div id="rem:tqft-context" class="remark">
 
-<p><strong>Remark 2.1</strong> (<a class="defn-link" href="#rem:tqft-context">TQFT context</a>). <em>The axioms of
+<p><strong>Remark 2.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:tqft-context">TQFT context</a>). <em>The axioms of
 Definitions <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>
 and <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>
 are grounded in the algebraic framework of topological quantum field
@@ -1490,7 +1588,7 @@ geometry of <span class="math inline">\((M, \theta)\)</span>.</em></p>
 
 <div id="rem:vanishing-explication" class="remark">
 
-<p><strong>Remark 2.2</strong> (<a class="defn-link" href="#rem:vanishing-explication">Vanishing conditions: explication</a>).
+<p><strong>Remark 2.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:vanishing-explication">Vanishing conditions: explication</a>).
 <em>In
 Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>,
 <span class="math inline">\(\mathrm{Ad}(P) = P \times_G
@@ -1507,7 +1605,7 @@ gauge symmetry.</em></p>
 
 <div id="rem:levi-generalisation" class="remark">
 
-<p><strong>Remark 2.3</strong> (Generalisation beyond strict
+<p><strong>Remark 2.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Generalisation beyond strict
 pseudoconvexity).
 <em>Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>
 requires only Levi non-degeneracy (not strict pseudoconvexity). This
@@ -1562,7 +1660,7 @@ boundaries of Grauert tubes over pseudo-Riemannian manifolds.</em></p>
 
 <div id="rem:jet-bundle" class="remark">
 
-<p><strong>Remark 2.4</strong> (<a class="defn-link" href="#rem:jet-bundle">Jet-bundle formulation</a>). <em>The
+<p><strong>Remark 2.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:jet-bundle">Jet-bundle formulation</a>). <em>The
 conditions in
 Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>
 admit a natural reformulation in terms of the first jet bundle <span
@@ -1580,7 +1678,7 @@ preventing any local degeneracy of the gauge field.</em></p>
 
 <div id="ex:calabi-yau" class="example">
 
-<p><strong>Example 2.5</strong> (Real hypersurface in a Calabi–Yau <span
+<p><strong>Example 2.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Real hypersurface in a Calabi–Yau <span
 class="math inline">\(2\)</span>-fold). <em>Let <span
 class="math inline">\(X\)</span> be a Calabi–Yau <span
 class="math inline">\(2\)</span>-fold (K3 surface) with holonomy <span
@@ -1609,7 +1707,7 @@ separately.)</em></p>
 
 <div id="ex:ale" class="example">
 
-<p><strong>Example 2.6</strong> (<a class="defn-link" href="#ex:ale">ALE links</a>). <em>Let <span
+<p><strong>Example 2.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#ex:ale">ALE links</a>). <em>Let <span
 class="math inline">\(\Gamma \subset \mathrm{SU}(2)\)</span> be a finite
 subgroup and let <span class="math inline">\(X\)</span> be the minimal
 resolution of <span class="math inline">\(\mathbb{C}^2 /
@@ -1645,7 +1743,7 @@ equation
 
 <div id="ex:brings-surface" class="example">
 
-<p><strong>Example 2.7</strong> (Bring’s surface unit circle bundle).
+<p><strong>Example 2.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Bring’s surface unit circle bundle).
 <em>Let <span class="math inline">\(S\)</span> denote Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>),
 the genus-<span class="math inline">\(4\)</span> Riemann surface in
@@ -1683,7 +1781,7 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 
 <div id="rem:examples-unified" class="remark">
 
-<p><strong>Remark 2.8</strong> (<span
+<p><strong>Remark 2.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{C}\)</span> examples as instances of the
 generalised framework). <em>Each of the preceding <span
 class="math inline">\(\mathbb{C}\)</span> examples is an instance of the
@@ -1734,7 +1832,7 @@ setting.</em></p>
 
 <div id="rem:quantum-gauge-group-category" class="remark">
 
-<p><strong>Remark 2.9</strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum gauge group</a>: category-theoretic
+<p><strong>Remark 2.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum gauge group</a>: category-theoretic
 perspective). <em>The quantum gauge group
 (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.13</a>)
 is realised pointwise by the Hopf algebra <span
@@ -1769,7 +1867,7 @@ equivalent fibrewise.</em></p>
 
 <div id="rem:hopf-structure-diagrams" class="remark">
 
-<p><strong>Remark 2.10</strong> (Hopf-algebra structure and
+<p><strong>Remark 2.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Hopf-algebra structure and
 non-cocommutativity). <em>Write <span
 class="math inline">\(\mathcal{O}_q =
 \mathcal{O}_q(\mathrm{SU}(2))\)</span> and let <span
@@ -1815,7 +1913,7 @@ class="math inline">\(\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ
 
 <div id="rem:self-dual-ses" class="remark">
 
-<p><strong>Remark 2.11</strong> (Self-duality as a short exact
+<p><strong>Remark 2.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Self-duality as a short exact
 sequence). <em>In the QOU setting with <span
 class="math inline">\(\dim_{\mathbb{R}} H = 4\)</span>, the Hodge star
 <span class="math inline">\(*_H\)</span> gives the splitting <span
@@ -1844,7 +1942,7 @@ reinterpretation
 
 <div id="rem:self-dual-2group" class="remark">
 
-<p><strong>Remark 2.12</strong> (Self-duality as constrained <span
+<p><strong>Remark 2.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Self-duality as constrained <span
 class="math inline">\(2\)</span>-group gauge theory). <em>A strict <span
 class="math inline">\(2\)</span>-group is equivalently a <em>crossed
 module</em>: a group homomorphism <span class="math inline">\(\partial
@@ -1928,7 +2026,7 @@ curvature, with the simplicity constraint selecting the physical
 
 <div id="rem:frobenius-simplification" class="remark">
 
-<p><strong>Remark 2.13</strong> (Frobenius structure of the <span
+<p><strong>Remark 2.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Frobenius structure of the <span
 class="math inline">\(\mathbb{C}\)</span> gauge algebra). <em>The Hopf
 algebra <span
 class="math inline">\(\mathcal{O}_q(\mathrm{SU}(2))\)</span> carries a
@@ -2036,7 +2134,7 @@ Frobenius.</em></p>
 
 <div id="ex:cosmological-limits" class="example">
 
-<p><strong>Example 2.14</strong> (Cosmological limits of <span
+<p><strong>Example 2.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Cosmological limits of <span
 class="math inline">\(q\)</span> on <span
 class="math inline">\(S^3\)</span>). <em>Consider the link <span
 class="math inline">\(M = S^3\)</span> with the standard contact form
@@ -2075,7 +2173,7 @@ geometric phenomenon.</em></p>
 
 <div id="rem:j1e-local-states" class="remark">
 
-<p><strong>Remark 2.15</strong> (<span
+<p><strong>Remark 2.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(J^1E\)</span> as the space of local states).
 <em>The jet bundle <span class="math inline">\(J^1 E\)</span> serves as
 the space of local states of the <span
@@ -2093,7 +2191,7 @@ class="math inline">\(\mathrm{SU}_q(2)\)</span>
 
 <div id="prop:dq-squared" class="proposition">
 
-<p><strong>Proposition 2.16</strong> (<span
+<p><strong>Proposition 2.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(d_q^2\)</span> does not vanish). <em>Let <span
 class="math inline">\(d_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed exterior derivative
@@ -2201,7 +2299,7 @@ class="math inline">\(d\theta\)</span> terms. ◻</p>
 
 <div id="rem:classical-recovery" class="remark">
 
-<p><strong>Remark 2.18</strong> (Classical recovery of <span
+<p><strong>Remark 2.18 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Classical recovery of <span
 class="math inline">\(q\)</span>-deformed operators). <em>All four <span
 class="math inline">\(q\)</span>-deformed operators interpolate between
 the classical (<span class="math inline">\(q = 1\)</span>) and deformed
@@ -2225,7 +2323,7 @@ class="math inline">\(\iota_\xi A\;\theta\)</span>.</em></p>
 
 <div id="rem:q-torsion-leaf-minimum" class="remark">
 
-<p><strong>Remark 2.19</strong> (<span
+<p><strong>Remark 2.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
 <em>Let <span class="math inline">\(A_q\)</span> denote the <span
 class="math inline">\(q\)</span>-deformed connection
@@ -2256,7 +2354,7 @@ equilibrium.</em></p>
 
 <div id="rem:q-harmonic-physical" class="remark">
 
-<p><strong>Remark 2.20</strong> (Physical interpretation of <span
+<p><strong>Remark 2.20 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical interpretation of <span
 class="math inline">\(q\)</span>-harmonicity). <em>The <span
 class="math inline">\(q\)</span>-Laplacian <span
 class="math inline">\(\Delta_q\)</span> encodes the <span
@@ -2274,7 +2372,7 @@ class="math inline">\(q\)</span>-dependent.</em></p>
 
 <div id="rem:schrodinger-jet-coaction" class="remark">
 
-<p><strong>Remark 2.21</strong> (<span
+<p><strong>Remark 2.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Deformed Schrödinger equation). <em>The
 <span class="math inline">\(q\)</span>-deformed Schrödinger equation
 governs the evolution of states in the linearised state bundle.
@@ -2390,7 +2488,7 @@ Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="
 group</h2>
 <div id="def:braid-group" class="definition">
 
-<p><strong>Definition 3.1</strong> (<a class="defn-link" href="#def:braid-group">Braid group on three strands</a>).
+<p><strong>Definition 3.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:braid-group">Braid group on three strands</a>).
 <em>The <em>braid group on three strands</em> is the group <span
 class="math display">\[\label{eq:braid-presentation}
 B_3
@@ -2404,7 +2502,7 @@ group of the complement of the trefoil knot
 
 <div id="def:s3-group" class="definition">
 
-<p><strong>Definition 3.2</strong> (Symmetric group <span
+<p><strong>Definition 3.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Symmetric group <span
 class="math inline">\(S_3\)</span>). <em>Imposing the involution
 relations <span class="math inline">\(\sigma_i^2=\mathrm{id}\)</span> on
 the braid group <span class="math inline">\(B_3\)</span>
@@ -2422,7 +2520,7 @@ class="math inline">\(\mathrm{SU}(2)\)</span> and <span
 class="math inline">\(\mathrm{SO}(3)\)</span> framework</h2>
 <div id="def:su2-basis" class="definition">
 
-<p><strong>Definition 3.3</strong> (<span
+<p><strong>Definition 3.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathfrak{su}(2)\)</span> basis). <em>Write <span
 class="math inline">\(\tau_1,\tau_2,\tau_3\)</span> for the Pauli
 matrices and set <span class="math display">\[\label{eq:su2-basis}
@@ -2433,7 +2531,7 @@ bracket is <span class="math display">\[\label{eq:su2-commutator}
 
 <div id="rem:first-order-taylor" class="remark">
 
-<p><strong>Remark 3.4</strong> (<a class="defn-link" href="#rem:first-order-taylor">First-order approximation</a>). <em>The Lie
+<p><strong>Remark 3.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:first-order-taylor">First-order approximation</a>). <em>The Lie
 bracket <a href="#eq:su2-commutator" data-reference-type="eqref" data-reference="eq:su2-commutator">[eq:su2-commutator]</a>
 captures the first-order behaviour of the group operation: for elements
 <span class="math inline">\(A,B\)</span> near the identity, <span
@@ -2448,7 +2546,7 @@ and reappear naturally in the <a class="defn-link" href="#rem:enveloping-algebra
 
 <div id="def:su2-generators" class="definition">
 
-<p><strong>Definition 3.5</strong> (<span
+<p><strong>Definition 3.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathrm{SU}(2)\)</span> generators of <span
 class="math inline">\(\mathrm{Dic}_3\)</span>). <em>Every finite
 subgroup of <span class="math inline">\(\mathrm{SO}(3)\)</span> lifts,
@@ -2476,7 +2574,7 @@ class="math inline">\([\beta,\alpha]=\alpha^{-2}\)</span>.</em></p>
 
 <div id="def:so3-generators" class="definition">
 
-<p><strong>Definition 3.6</strong> (<span
+<p><strong>Definition 3.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathrm{SO}(3)\)</span> generators). <em>Under the
 adjoint map to <span class="math inline">\(\mathrm{SO}(3)\)</span> the
 generators of <span class="math inline">\(\mathrm{Dic}_3\)</span>
@@ -2505,7 +2603,7 @@ class="math inline">\(e_1\)</span> (2-cycle).</em></p>
 holonomy</h2>
 <div id="def:braid-twist-flip" class="definition">
 
-<p><strong>Definition 3.7</strong> (<a class="defn-link" href="#def:braid-twist-flip">Braid involutions: twist and flip</a>).
+<p><strong>Definition 3.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:braid-twist-flip">Braid involutions: twist and flip</a>).
 <em>Let <span
 class="math inline">\(\mathbf{w}=(w_1,w_2,w_3,w_4)\)</span> be a
 spectral resolvent tuple. Define the two involutions <span
@@ -2533,7 +2631,7 @@ class="math inline">\(\sigma_1\sigma_2\colon\mathbf{w}\mapsto(w_3,w_4,w_1,w_2)\)
 
 <div id="rem:holonomy-trefoil" class="remark">
 
-<p><strong>Remark 3.8</strong> (<a class="defn-link" href="#rem:holonomy-trefoil">Holonomy generators and the trefoil</a>).
+<p><strong>Remark 3.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:holonomy-trefoil">Holonomy generators and the trefoil</a>).
 <em>Given a branched cover <span
 class="math inline">\(\mathcal{S}\to\mathbb{CP}^1\)</span> with singular
 fibres at the critical values, choose two loops <span
@@ -2575,7 +2673,7 @@ class="math inline">\(\mathrm{SO}(3)\)</span>.</em></p>
 <h2 id="the-trefoil-knot">The trefoil knot</h2>
 <div id="rem:trefoil-knot-group" class="remark">
 
-<p><strong>Remark 3.9</strong> (<a class="defn-link" href="#rem:trefoil-knot-group">Trefoil knot group</a>). <em>The trefoil
+<p><strong>Remark 3.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:trefoil-knot-group">Trefoil knot group</a>). <em>The trefoil
 knot <span class="math inline">\(K_{3,2}\)</span> is the simplest
 non-trivial torus knot. Its complement has fundamental group <span
 class="math display">\[\pi_1(S^3\setminus K_{3,2})
@@ -2591,7 +2689,7 @@ braid.</em></p>
 
 <div id="ex:trefoil-operator-algebra" class="example">
 
-<p><strong>Example 3.10</strong> (Trefoil braid relation and operator
+<p><strong>Example 3.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Trefoil braid relation and operator
 algebra). <em>In the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 representation
 (Definition <a href="#def:su2-generators" data-reference-type="ref" data-reference="def:su2-generators">3.5</a>),
@@ -2616,7 +2714,7 @@ when quarks exchange colour charges along the trefoil path.</em></p>
 <h2 id="knot-fundamental-groups"><span id="sec:knot-fundamental-groups"></span>Knot fundamental groups</h2>
 <div id="rem:knot-complement-group" class="remark">
 
-<p><strong>Remark 3.11</strong> (Fundamental group of the knot
+<p><strong>Remark 3.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fundamental group of the knot
 complement). <em>For a knot <span class="math inline">\(K\subset
 S^3\)</span> (or, more generally, <span
 class="math inline">\(K\subset\mathbb{CP}^1\)</span>), the fundamental
@@ -2631,7 +2729,7 @@ geometric structure on the knot complement.</em></p>
 
 <div id="rem:kronheimer-mrowka" class="remark">
 
-<p><strong>Remark 3.12</strong> (Non-trivial representations of knot
+<p><strong>Remark 3.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Non-trivial representations of knot
 groups (Kronheimer–Mrowka)). <em>Kronheimer and Mrowka proved that the
 fundamental group of every non-trivial knot admits a non-trivial
 representation into <span class="math inline">\(\mathrm{SU}(2)\)</span>,
@@ -2648,7 +2746,7 @@ where the representation factors through the adjoint form.</em></p>
 
 <div id="rem:reducible-reps" class="remark">
 
-<p><strong>Remark 3.13</strong> (Reducible representations and fixed
+<p><strong>Remark 3.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reducible representations and fixed
 points). <em>When a representation <span
 class="math inline">\(\rho\colon\pi_1(\mathbb{CP}^1\setminus
 K)\to\mathrm{PSL}(2,\mathbb{C})\)</span> is reducible, all generators
@@ -2667,7 +2765,7 @@ sector.</em></p>
 enveloping algebras and quantum groups</h2>
 <div id="rem:enveloping-algebra" class="remark">
 
-<p><strong>Remark 3.14</strong> (<a class="defn-link" href="#rem:enveloping-algebra">Universal enveloping algebra</a>). <em>The
+<p><strong>Remark 3.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:enveloping-algebra">Universal enveloping algebra</a>). <em>The
 universal enveloping algebra <span
 class="math inline">\(\mathcal{U}(\mathfrak{su}(2))\)</span> is the
 associative algebra generated by <span
@@ -2684,7 +2782,7 @@ class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span>.</em></p>
 
 <div id="def:quantum-su2" class="definition">
 
-<p><strong>Definition 3.15</strong> (Quantum group <span
+<p><strong>Definition 3.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum group <span
 class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span>). <em>Let
 <span class="math inline">\(q\in\mathbb{C}^{*}\)</span> with <span
 class="math inline">\(0&lt;\lvert q\rvert\le 1\)</span>. The <em>quantum
@@ -2708,7 +2806,7 @@ recover <a href="#eq:su2-commutator" data-reference-type="eqref" data-reference
 
 <div id="rem:r-matrix-braiding" class="remark">
 
-<p><strong>Remark 3.16</strong> (<span
+<p><strong>Remark 3.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(R\)</span>-matrix and braiding). <em>The <span
 class="math inline">\(R\)</span>-matrix of <span
 class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span>
@@ -2736,7 +2834,7 @@ class="math inline">\(E_0\)</span> and the mirror bundle <span
 class="math inline">\(E_{-1}\)</span></h2>
 <div id="rem:e-minus-one" class="remark">
 
-<p><strong>Remark 3.17</strong> (<span
+<p><strong>Remark 3.17 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(E_{-1}\)</span> as skew-mirror bundle). <em>In the
 <a class="defn-link" href="#def:descent">descent</a> from <span class="math inline">\(E_1\)</span> (full torsion
 bundle) to <span class="math inline">\(E_0\)</span> (trivial bundle),
@@ -2754,7 +2852,7 @@ descent tower.</em></p>
 <h1 id="lifting-of-quantum-torsion"><span id="chap:torsion"></span>Lifting of Quantum Torsion</h1>
 <div id="prop:jet-prolongation" class="proposition">
 
-<p><strong>Proposition 4.1</strong> (<a class="defn-link" href="#prop:jet-prolongation">Jet Prolongation</a>). <em>Let <span
+<p><strong>Proposition 4.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:jet-prolongation">Jet Prolongation</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>)
@@ -2850,7 +2948,7 @@ is guaranteed by the inherited vanishing condition of Step 3. ◻</p>
 
 <div id="rem:prolongation-categorical" class="remark">
 
-<p><strong>Remark 4.2</strong> (Prolongation from the Frobenius-Hopf
+<p><strong>Remark 4.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Prolongation from the Frobenius-Hopf
 structure). <em>The proof above shows that <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> is an
 <em>intrinsic</em> consequence of the Frobenius-Hopf structure in a
 rigid monoidal category: no additional geometric input beyond the
@@ -2879,7 +2977,7 @@ and does not require any case-by-case verification.</em></p>
 
 <div id="def:recursive-brane-tower" class="definition">
 
-<p><strong>Definition 4.3</strong> (<a class="defn-link" href="#def:recursive-brane-tower">Recursive Brane Tower</a>). <em>Let
+<p><strong>Definition 4.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:recursive-brane-tower">Recursive Brane Tower</a>). <em>Let
 <span class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>).
@@ -2906,7 +3004,7 @@ class="math inline">\(E_n\)</span>.</em></p></li>
 
 <div id="ex:brane-tower-levels" class="example">
 
-<p><strong>Example 4.4</strong> (<a class="defn-link" href="#ex:brane-tower-levels">First two levels</a>). <em>Starting from a
+<p><strong>Example 4.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#ex:brane-tower-levels">First two levels</a>). <em>Starting from a
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe <span class="math inline">\((M, G, P, E_1)\)</span>, the first
 <a class="defn-link" href="#prop:jet-prolongation">jet prolongation</a> yields <span class="math inline">\(E_2\)</span> with
@@ -2920,7 +3018,7 @@ Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-ref
 
 <div id="def:quantum-characteristic-classes" class="definition">
 
-<p><strong>Definition 4.5</strong> (<a class="defn-link" href="#def:quantum-characteristic-classes">Quantum Characteristic Classes</a>).
+<p><strong>Definition 4.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:quantum-characteristic-classes">Quantum Characteristic Classes</a>).
 <em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>).
@@ -2934,7 +3032,7 @@ class="math inline">\(E_{n+1}\)</span>.</em></p>
 
 <div id="rem:betti-numbers-brane" class="remark">
 
-<p><strong>Remark 4.6</strong> (<a class="defn-link" href="#rem:betti-numbers-brane">Betti numbers of the brane tower</a>).
+<p><strong>Remark 4.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:betti-numbers-brane">Betti numbers of the brane tower</a>).
 <em>Let <span class="math inline">\(b_k(E_n) = \dim H^k(E_n,
 \mathbb{R})\)</span> denote the <span
 class="math inline">\(k\)</span>-th Betti number of <span
@@ -2954,7 +3052,7 @@ class="math inline">\(b_k(E_n)\)</span>.</em></p>
 
 <div id="rem:q-harmonic-basis-brane" class="remark">
 
-<p><strong>Remark 4.7</strong> (<span
+<p><strong>Remark 4.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(q\)</span>-Harmonic basis of the brane tower).
 <em>For each level <span class="math inline">\(n\)</span>, the <span
 class="math inline">\(q\)</span>-harmonic <span
@@ -2992,7 +3090,7 @@ which are the first-order resolutions of the base flows.</em></p>
 
 <div id="rem:weight-space-decomposition" class="remark">
 
-<p><strong>Remark 4.8</strong> (Weight-space decomposition of the
+<p><strong>Remark 4.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Weight-space decomposition of the
 harmonic basis). <em>The adjoint bundle <span
 class="math inline">\(\mathrm{ad}\, E_n\)</span> has fibre <span
 class="math inline">\(\mathfrak{su}(2)\)</span>. Via the weight-space
@@ -3032,7 +3130,7 @@ structure of the brane).</em></p>
 
 <div id="rem:algebraic-filter" class="remark">
 
-<p><strong>Remark 4.9</strong> (<a class="defn-link" href="#rem:algebraic-filter">The algebraic filter</a>). <em>Let <span
+<p><strong>Remark 4.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:algebraic-filter">The algebraic filter</a>). <em>Let <span
 class="math inline">\(\alpha\)</span> be a harmonic <span
 class="math inline">\(1\)</span>-form in the basis of
 Remark <a href="#rem:q-harmonic-basis-brane" data-reference-type="ref" data-reference="rem:q-harmonic-basis-brane">4.7</a>.
@@ -3057,7 +3155,7 @@ flow.</em></p>
 
 <div id="rem:distributional-connection" class="remark">
 
-<p><strong>Remark 4.10</strong> (Distributional connection at the
+<p><strong>Remark 4.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Distributional connection at the
 limit). <em>At the limit <span class="math inline">\(n \to
 \infty\)</span> one no longer looks at a single connection <span
 class="math inline">\(A\)</span>, but at a <em>distributional
@@ -3077,7 +3175,7 @@ jet space <span class="math inline">\(J^\infty E\)</span>
 
 <div id="def:direct-limit-algebra" class="definition">
 
-<p><strong>Definition 4.11</strong> (<span
+<p><strong>Definition 4.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">Quantum Observable Universe</a> as
 Direct Limit). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
@@ -3094,7 +3192,7 @@ class="math display">\[\mathcal{A}_\infty
 
 <div id="rem:direct-limit-lusztig" class="remark">
 
-<p><strong>Remark 4.12</strong> (Direct limit algebra and the Lusztig
+<p><strong>Remark 4.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Direct limit algebra and the Lusztig
 integral form). <em>The algebra <span
 class="math inline">\(\mathcal{A}_\infty\)</span>
 (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">4.11</a>)
@@ -3123,7 +3221,7 @@ space-like and time-like resolvents.</em></p>
 
 <div id="rem:jet-shell" class="remark">
 
-<p><strong>Remark 4.13</strong> (<a class="defn-link" href="#rem:jet-shell">Jet Shell of the universe</a>). <em>In the
+<p><strong>Remark 4.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:jet-shell">Jet Shell of the universe</a>). <em>In the
 limit <span class="math inline">\(n \to \infty\)</span>, the infinite
 jet bundle <span class="math inline">\(J^\infty E = \varprojlim\, J^k
 E\)</span> becomes the <em>jet shell</em> of the universe. All
@@ -3135,7 +3233,7 @@ acts naturally on sections of the jet shell.</em></p>
 
 <div id="prop:vacuum-state" class="proposition">
 
-<p><strong>Proposition 4.14</strong> (Existence and Uniqueness of the
+<p><strong>Proposition 4.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Existence and Uniqueness of the
 Vacuum State). <em>Let <span
 class="math inline">\(\mathcal{A}_\infty\)</span> be the direct limit
 algebra
@@ -3197,7 +3295,7 @@ class="math inline">\(\omega\)</span> is the unique such state. ◻</p>
 
 <div id="rem:mass-geometric-drag" class="remark">
 
-<p><strong>Remark 4.15</strong> (<a class="defn-link" href="#rem:mass-geometric-drag">Mass in the brane tower</a>). <em>In the
+<p><strong>Remark 4.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:mass-geometric-drag">Mass in the brane tower</a>). <em>In the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>),
 mass is not an intrinsic property of a point-particle but a measure of
@@ -3215,7 +3313,7 @@ variation.</em></p>
 
 <div id="rem:mass-noncommutative-drag" class="remark">
 
-<p><strong>Remark 4.16</strong> (<a class="defn-link" href="#rem:mass-noncommutative-drag">Non-commutativity and geometric drag</a>).
+<p><strong>Remark 4.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:mass-noncommutative-drag">Non-commutativity and geometric drag</a>).
 <em>When the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> satisfies <span
 class="math inline">\(q(p) \neq 1\)</span> at every point of the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>, the comultiplication on the Frobenius–Hopf
@@ -3234,7 +3332,7 @@ Remark <a href="#rem:mass-geometric-drag" data-reference-type="ref" data-refere
 
 <div id="prop:euler-char-stability" class="proposition">
 
-<p><strong>Proposition 4.17</strong> (Stability of the Euler
+<p><strong>Proposition 4.17 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Stability of the Euler
 characteristic). <em>Let <span class="math inline">\((M, G, P,
 E)\)</span> be a <span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe and let <span class="math inline">\(\{E_n\}_{n \geq
@@ -3304,7 +3402,7 @@ whence <span class="math inline">\(\chi(E_{n+1}) =
 
 <div id="def:mass-identity" class="definition">
 
-<p><strong>Definition 4.18</strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
+<p><strong>Definition 4.18 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:mass-identity">Mass Identity</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
@@ -3323,7 +3421,7 @@ class="math display">\[m \;\propto\; \oint_\gamma \lVert \nabla_A\, q
 <h3 id="descent">Descent</h3>
 <div id="def:descent" class="definition">
 
-<p><strong>Definition 4.19</strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
+<p><strong>Definition 4.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a>). <em>Let <span
 class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the recursive brane
 tower
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>).
@@ -3340,7 +3438,7 @@ class="math inline">\(M_k\)</span> is a discrete set of points.</em></p>
 
 <div id="lem:descent" class="lemma">
 
-<p><strong>Lemma 4.20</strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
+<p><strong>Lemma 4.20 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent">Descent</a> preserves the quantum observable
 universe). <em>Let <span class="math inline">\(\{E_n\}_{n \geq
 1}\)</span> be the <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
@@ -3435,7 +3533,7 @@ class="math inline">\(n{-}1\)</span>. ◻</p>
 
 <div id="def:descent-involution" class="definition">
 
-<p><strong>Definition 4.21</strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
+<p><strong>Definition 4.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descent-involution">Descent involution</a>). <em>Let <span
 class="math inline">\(\ell_n\)</span> denote the ascent embedding
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>)
 and <span class="math inline">\(\mathfrak{d}_{n+1}\)</span> the descent
@@ -3474,7 +3572,7 @@ ascent embedding.</em></p>
 
 <div id="prop:descent-eigenspaces" class="proposition">
 
-<p><strong>Proposition 4.22</strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
+<p><strong>Proposition 4.22 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Eigenspaces of the <a class="defn-link" href="#def:descent">descent</a>
 involution). <em>The <a class="defn-link" href="#def:descent-involution">descent involution</a> <span
 class="math inline">\(\tau_n\)</span>
 (Definition <a href="#def:descent-involution" data-reference-type="ref" data-reference="def:descent-involution">4.21</a>)
@@ -3554,7 +3652,7 @@ algebra, so <span class="math inline">\(\tau_n = \ell_n \circ
 
 <div id="def:brane-boundary" class="definition">
 
-<p><strong>Definition 4.23</strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
+<p><strong>Definition 4.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:brane-boundary">Defining boundary of the brane</a>).
 <em>Let <span class="math inline">\(\{E_n\}_{n \geq 1}\)</span> be the
 <a class="defn-link" href="#def:recursive-brane-tower">recursive brane tower</a>
 (Definition <a href="#def:recursive-brane-tower" data-reference-type="ref" data-reference="def:recursive-brane-tower">4.3</a>)
@@ -3576,7 +3674,7 @@ A\)</span> evaluated fibre by fibre.</em></p>
 
 <div id="prop:brane-boundary" class="proposition">
 
-<p><strong>Proposition 4.24</strong> (Structure of the defining
+<p><strong>Proposition 4.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Structure of the defining
 boundary). <em>The defining boundary <span
 class="math inline">\(\partial E_n\)</span>
 (Definition <a href="#def:brane-boundary" data-reference-type="ref" data-reference="def:brane-boundary">4.23</a>)
@@ -3681,7 +3779,7 @@ Remark <a href="#rem:descartes-chirality" data-reference-type="ref" data-refere
 
 <div id="rem:descent-reduction" class="remark">
 
-<p><strong>Remark 4.25</strong> (Reduction at dimension <span
+<p><strong>Remark 4.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(1\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 1\)</span> the geometric data of the
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
@@ -3711,7 +3809,7 @@ class="math inline">\(M_k\)</span> to a zero-dimensional base
 
 <div id="rem:descent-physical" class="remark">
 
-<p><strong>Remark 4.26</strong> (Physical implications of a <span
+<p><strong>Remark 4.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(1\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(1\)</span> the physical content
 simplifies drastically.</em></p>
@@ -3740,7 +3838,7 @@ vertical harmonic forms.</em></p></li>
 
 <div id="rem:descent-reduction-zero" class="remark">
 
-<p><strong>Remark 4.27</strong> (Reduction at dimension <span
+<p><strong>Remark 4.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reduction at dimension <span
 class="math inline">\(0\)</span>). <em>When <span
 class="math inline">\(\dim M_k = 0\)</span> the base manifold is a
 discrete set of points and the geometric data of the <span
@@ -3786,7 +3884,7 @@ point—the entire <a class="defn-link" href="#def:quantum-observable-universe">
 
 <div id="rem:descent-physical-zero" class="remark">
 
-<p><strong>Remark 4.28</strong> (Physical implications of a <span
+<p><strong>Remark 4.28 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Physical implications of a <span
 class="math inline">\(0\)</span>-dimensional base). <em>At
 dimension <span class="math inline">\(0\)</span> all spatial extent has
 been removed and the physical content is purely algebraic.</em></p>
@@ -3812,7 +3910,7 @@ degrees of freedom without any spatial multiplicity.</em></p></li>
 
 <div id="rem:descent-fixed-point" class="remark">
 
-<p><strong>Remark 4.29</strong> (Fixed-point mechanism: ascent and
+<p><strong>Remark 4.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fixed-point mechanism: ascent and
 <a class="defn-link" href="#def:descent">descent</a>). <em>Each step down the brane tower removes a space-like
 dimension through the <span
 class="math inline">\(\mathrm{SU}(2)\)</span> rotation and its
@@ -3909,7 +4007,7 @@ the topological charge.</em></p>
 
 <div id="rem:qdlog-julia" class="remark">
 
-<p><strong>Remark 4.32</strong> (Quantum dilogarithm integrand as <span
+<p><strong>Remark 4.32 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum dilogarithm integrand as <span
 class="math inline">\(q\)</span>-deformed Böttcher potential density).
 <em>The integrand <span class="math inline">\(\ln_q(1+t)/t\)</span> in
 the quantum dilogarithm formula above has the same formal structure as
@@ -3976,7 +4074,7 @@ QOU.</em></p>
 
 <div id="rem:julia-s1-photon-scatter" class="remark">
 
-<p><strong>Remark 4.33</strong> (Julia set on <span
+<p><strong>Remark 4.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Julia set on <span
 class="math inline">\(S^1\)</span> as photon scattering at the Big
 Bang). <em>The exceptional divisor <span
 class="math inline">\(E_i\cong\mathbb{CP}^1\)</span> contains the
@@ -4020,7 +4118,7 @@ measure zero, and the universe becomes transparent.</em></p>
 <h1 id="brings-surface">Bring’s Surface</h1>
 <div id="rem:descent-to-zero" class="remark">
 
-<p><strong>Remark 5.1</strong> (<a class="defn-link" href="#rem:descent-to-zero">Descent to dimension zero</a>). <em>By the
+<p><strong>Remark 5.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:descent-to-zero">Descent to dimension zero</a>). <em>By the
 descent theorem
 (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.14</a>),
 it is sufficient to study dimension-zero manifolds equipped with their
@@ -4046,7 +4144,7 @@ underlying geometry is non-commutative
 
 <div id="def:brings-surface" class="definition">
 
-<p><strong>Definition 5.2</strong> (Bring’s surface). <em>Let <span
+<p><strong>Definition 5.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Bring’s surface). <em>Let <span
 class="math inline">\(x_j\)</span>, <span
 class="math inline">\(j\in\{0,\dots,4\}\)</span>, be homogeneous
 coordinates on <span class="math inline">\(\mathbb{P}^4\)</span>.
@@ -4060,7 +4158,7 @@ class="math display">\[\sum_{j=0}^{4}x_j^{\,k}=0,
 
 <div id="rem:brings-qou-4tuple" class="remark">
 
-<p><strong>Remark 5.3</strong> (QOU <span
+<p><strong>Remark 5.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (QOU <span
 class="math inline">\(4\)</span>-tuple for Bring’s surface). <em>We
 construct the <span class="math inline">\(\mathbb{C}\)</span> quantum
 observable universe
@@ -4156,7 +4254,7 @@ class="math inline">\((x_2, x_3, x_4)\)</span>.</em></p>
 
 <div id="rem:lagrange-resolvents" class="remark">
 
-<p><strong>Remark 5.4</strong> (<a class="defn-link" href="#rem:lagrange-resolvents">Lagrange resolvents and spectral form</a>).
+<p><strong>Remark 5.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:lagrange-resolvents">Lagrange resolvents and spectral form</a>).
 <em>Let <span class="math inline">\(\zeta=e^{2\pi i/5}\)</span>. Apply
 the discrete Fourier transform to the coordinates <span
 class="math inline">\(x_j\)</span> of Bring’s surface
@@ -4185,7 +4283,7 @@ class="math inline">\(w_k\mapsto\zeta^k\,w_k\)</span>.</em></p>
 
 <div id="rem:braid-group-action" class="remark">
 
-<p><strong>Remark 5.5</strong> (<a class="defn-link" href="#rem:braid-group-action">Braid-group action on the resolvents</a>).
+<p><strong>Remark 5.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:braid-group-action">Braid-group action on the resolvents</a>).
 <em>The symmetric group <span class="math inline">\(S_5\)</span> acts on
 Bring’s surface
 (Remark <a href="#rem:brings-curve" data-reference-type="ref" data-reference="rem:brings-curve">6.11</a>)
@@ -4294,7 +4392,7 @@ Remark <a href="#rem:chirality-trefoil" data-reference-type="ref" data-referenc
 
 <div id="def:color-tube-coordinates" class="definition">
 
-<p><strong>Definition 5.6</strong> (<a class="defn-link" href="#def:color-tube-coordinates">Color tube coordinates</a>). <em>Let
+<p><strong>Definition 5.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:color-tube-coordinates">Color tube coordinates</a>). <em>Let
 <span class="math inline">\(z = x_0/x_1 \in \mathbb{CP}^1\)</span> be
 the spacetime ratio
 (Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">5.5</a><span class="upright">(i)</span>)
@@ -4312,7 +4410,7 @@ class="math inline">\(\vec{c} = (r, g, b)\)</span>.</em></p>
 
 <div id="rem:aggregate-color-quantities" class="remark">
 
-<p><strong>Remark 5.7</strong> (<a class="defn-link" href="#rem:aggregate-color-quantities">Aggregate color quantities</a>). *Define the
+<p><strong>Remark 5.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:aggregate-color-quantities">Aggregate color quantities</a>). *Define the
 following aggregate quantities in <a class="defn-link" href="#def:color-tube-coordinates">color tube coordinates</a>, with <span
 class="math inline">\(\zeta = e^{2\pi i/5}\)</span>: $$\begin{aligned}
 \widetilde{S} &amp;;=; \sigma + r + g + b &amp;&amp;\text{(total color
@@ -4338,7 +4436,7 @@ z \;=\; \frac{x_0}{x_1} \;=\; \frac{S}{D}.\]</span>*</p>
 
 <div id="rem:color-tube-constraints" class="remark">
 
-<p><strong>Remark 5.8</strong> (Constraint equations in color tube
+<p><strong>Remark 5.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Constraint equations in color tube
 coordinates). <em>The Bring surface
 constraints <a href="#eq:resolvent-linear" data-reference-type="eqref" data-reference="eq:resolvent-linear">[eq:resolvent-linear]</a>–<a href="#eq:resolvent-cubic" data-reference-type="eqref" data-reference="eq:resolvent-cubic">[eq:resolvent-cubic]</a>
 take the following form in <a class="defn-link" href="#def:color-tube-coordinates">color tube coordinates</a>.</em></p>
@@ -4382,7 +4480,7 @@ class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> for every prime
 
 <div id="rem:color-tube-interpretation" class="remark">
 
-<p><strong>Remark 5.9</strong> (<a class="defn-link" href="#rem:color-tube-interpretation">Interpretation of the color tube</a>).
+<p><strong>Remark 5.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:color-tube-interpretation">Interpretation of the color tube</a>).
 <em>The terminology <em>color tube</em> reflects two features.</em></p>
 <p><em><strong>Color.</strong> The coordinates <span
 class="math inline">\(r, g, b\)</span> label the three chiral degrees of
@@ -4422,7 +4520,7 @@ in the shifted frame.</em></p>
 
 <div id="rem:c5-color-tube" class="remark">
 
-<p><strong>Remark 5.10</strong> (<span
+<p><strong>Remark 5.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(C_5\)</span> action in <a class="defn-link" href="#def:color-tube-coordinates">color tube coordinates</a>).
 *The cyclic symmetry <span class="math inline">\(w_k \mapsto \zeta^{-k}
 w_k\)</span>
@@ -4443,7 +4541,7 @@ resolvent.*</p>
 
 <div id="rem:intrinsic-color-cubic-pairing" class="remark">
 
-<p><strong>Remark 5.11</strong> (Intrinsic color cubic: pairing
+<p><strong>Remark 5.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Intrinsic color cubic: pairing
 structure). <em>The intrinsic color cubic <span
 class="math inline">\(\widetilde{C}\)</span> <a href="#eq:agg-C-tilde" data-reference-type="eqref" data-reference="eq:agg-C-tilde">[eq:agg-C-tilde]</a>
 admits a natural decomposition into space-like and chiral sectors: <span
@@ -4468,7 +4566,7 @@ class="math inline">\((w_2, w_3)\)</span>.</em></p>
 
 <div id="prop:chiral-elliptic" class="proposition">
 
-<p><strong>Proposition 5.12</strong> (Chiral fibre as an elliptic
+<p><strong>Proposition 5.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Chiral fibre as an elliptic
 curve). <em>Let <span
 class="math inline">\(z=x_0/x_1\in\mathbb{CP}^1\)</span> be the
 projective spacetime ratio
@@ -4515,7 +4613,7 @@ fibres. ◻</p>
 
 <div id="rem:t-duality-elliptic" class="remark">
 
-<p><strong>Remark 5.13</strong> (Self-duality of the chiral elliptic
+<p><strong>Remark 5.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Self-duality of the chiral elliptic
 curve). <em>The
 cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
 is symmetric under the exchange <span
@@ -4557,7 +4655,7 @@ degenerates.</em></p>
 
 <div id="rem:color-tube-cubic" class="remark">
 
-<p><strong>Remark 5.14</strong> (<a class="defn-link" href="#rem:color-tube-cubic">Color tube cubic</a>). <em>At fixed <span
+<p><strong>Remark 5.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:color-tube-cubic">Color tube cubic</a>). <em>At fixed <span
 class="math inline">\(z \in \mathbb{CP}^1\)</span>, the three chiral
 roots of the elliptic
 cubic <a href="#eq:chiral-elliptic" data-reference-type="eqref" data-reference="eq:chiral-elliptic">[eq:chiral-elliptic]</a>
@@ -4591,7 +4689,7 @@ satisfies <span class="math display">\[4z^3 + 3z^2 + 2z + 1 \;=\;
 
 <div id="def:color-tube-fibers" class="definition">
 
-<p><strong>Definition 5.15</strong> (<a class="defn-link" href="#def:color-tube-fibers">Color tube fibers</a>). <em>Let <span
+<p><strong>Definition 5.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:color-tube-fibers">Color tube fibers</a>). <em>Let <span
 class="math inline">\(z \in \mathbb{CP}^1\)</span>. The <em>color
 tube</em> at <span class="math inline">\(z\)</span> is the affine curve
 defined over <span class="math inline">\(\mathbb{Z}[z]\)</span> by the
@@ -4626,7 +4724,7 @@ z\)</span>.</em></p>
 
 <div id="def:observed-value" class="definition">
 
-<p><strong>Definition 5.16</strong> (<a class="defn-link" href="#def:observed-value">Observed spacetime value</a>). <em>Let
+<p><strong>Definition 5.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:observed-value">Observed spacetime value</a>). <em>Let
 <span class="math inline">\(\mathbf{r}_z, \mathbf{g}_z,
 \mathbf{b}_z\)</span> be the <a class="defn-link" href="#def:color-tube-coordinates">color tube coordinates</a> at a point of
 Bring’s surface
@@ -4654,7 +4752,7 @@ class="math inline">\(\mathbb{CP}^1\)</span>.</em></p>
 
 <div id="rem:t-duality-color-tube" class="remark">
 
-<p><strong>Remark 5.17</strong> (<a class="defn-link" href="#rem:t-duality-color-tube">T-duality in color tube coordinates</a>).
+<p><strong>Remark 5.17 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:t-duality-color-tube">T-duality in color tube coordinates</a>).
 <em>The T-duality involution <span class="math inline">\(\iota \colon
 (X, z) \mapsto (z, X)\)</span>
 (Remark <a href="#rem:t-duality-elliptic" data-reference-type="ref" data-reference="rem:t-duality-elliptic">5.13</a>)
@@ -4683,7 +4781,7 @@ class="math inline">\(-c\)</span>.</em></p>
 
 <div id="rem:color-tube-subloci" class="remark">
 
-<p><strong>Remark 5.18</strong> (Sublocus <span
+<p><strong>Remark 5.18 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Sublocus <span
 class="math inline">\(\widetilde{C}=0\)</span> and colour confinement).
 <em><strong>Vanishing of the intrinsic color cubic.</strong> If <span
 class="math inline">\(\widetilde{C} = 0\)</span>, the reduced
@@ -4727,7 +4825,7 @@ frame.</em></p>
 
 <div id="rem:chiral-bundles" class="remark">
 
-<p><strong>Remark 5.19</strong> (Chiral space as spectral curve and
+<p><strong>Remark 5.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Chiral space as spectral curve and
 spinor bundle). <em>The spacetime–chiral decomposition of Bring’s
 surface maps naturally onto three classical bundle structures over the
 <span class="math inline">\(\mathbb{CP}^1\)</span> base <span
@@ -4784,7 +4882,7 @@ spectral eigenvalues with spacetime coordinates.</em></p>
 
 <div id="rem:brings-smoothness" class="remark">
 
-<p><strong>Remark 5.20</strong> (Smoothness of the Bring surface and
+<p><strong>Remark 5.20 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Smoothness of the Bring surface and
 resolution of spacetime defects). <em>The Bring surface <span
 class="math inline">\(\mathcal{S}\)</span>
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>)
@@ -4834,7 +4932,7 @@ the <span class="math inline">\(w_k\)</span> retain.</em></p>
 
 <div id="def:briggs-klein-chart" class="definition">
 
-<p><strong>Definition 5.21</strong> (Briggs–Klein affine chart). <em>Let
+<p><strong>Definition 5.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Briggs–Klein affine chart). <em>Let
 <span class="math inline">\(r=\lvert w_1\rvert^2\)</span> denote the
 squared modulus of the first resolvent coordinate on Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>).
@@ -4851,7 +4949,7 @@ class="math inline">\(C_5\)</span>-invariant.</em></p>
 
 <div id="rem:radial-projection" class="remark">
 
-<p><strong>Remark 5.22</strong> (Radial projection of Bring’s surface).
+<p><strong>Remark 5.22 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Radial projection of Bring’s surface).
 <em>Restricting a Briggs–Klein affine chart
 (Definition <a href="#def:briggs-klein-chart" data-reference-type="ref" data-reference="def:briggs-klein-chart">5.21</a>)
 to the interval <span class="math inline">\(r\in(0,1)\)</span> and
@@ -4877,7 +4975,7 @@ reflecting the absence of torsion on the total space.</em></p>
 
 <div id="rem:four-colourability" class="remark">
 
-<p><strong>Remark 5.23</strong> (Four-colourability of Bring’s surface).
+<p><strong>Remark 5.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Four-colourability of Bring’s surface).
 <em>By the Heawood bound, an orientable surface of genus <span
 class="math inline">\(g\)</span> has chromatic number at most <span
 class="math inline">\(\lfloor(7+\sqrt{1+48g})/2\rfloor\)</span>. For
@@ -4894,7 +4992,7 @@ require.</em></p>
 
 <div id="rem:four-colour-theorem" class="remark">
 
-<p><strong>Remark 5.24</strong> (The four-colour theorem and Bring’s
+<p><strong>Remark 5.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (The four-colour theorem and Bring’s
 surface). <em>The classical four-colour theorem asserts that every
 planar graph (equivalently, every graph embeddable in <span
 class="math inline">\(S^2\)</span>) is four-colourable. For higher-genus
@@ -4914,7 +5012,7 @@ forces the same chromatic economy as the sphere.</em></p>
 
 <div id="rem:cyclotomic-reduction" class="remark">
 
-<p><strong>Remark 5.25</strong> (Cyclotomic reduction and <span
+<p><strong>Remark 5.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Cyclotomic reduction and <span
 class="math inline">\(C_{\mathfrak{p}}\)</span> preservation). <em>Let
 <span class="math inline">\(\mathfrak{p}\)</span> be a prime (not to be
 confused with a point <span class="math inline">\(p\in M\)</span>).
@@ -4953,7 +5051,7 @@ characteristic.</em></p>
 
 <div id="def:quaternionic-spectral-resolvents" class="definition">
 
-<p><strong>Definition 5.26</strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
+<p><strong>Definition 5.26 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
 <em>Let <span class="math inline">\(\mathcal{S}\)</span> denote the
 Bring’s surface
 (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>).
@@ -5006,7 +5104,7 @@ class="math inline">\(\mathcal{S}\)</span> into the infinite jet shell
 
 <div id="rem:omega-constraints" class="remark">
 
-<p><strong>Remark 5.27</strong> (Algebraic constraints in the <span
+<p><strong>Remark 5.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Algebraic constraints in the <span
 class="math inline">\(\omega_k\)</span> basis). <em>In the spectral
 resolvent basis
 (Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">5.26</a>)
@@ -5032,7 +5130,7 @@ class="math inline">\(C_5\)</span> symmetry and the <a class="defn-link" href="#
 
 <div id="rem:spectral-dynamics" class="remark">
 
-<p><strong>Remark 5.28</strong> (Spectral dynamics and the <span
+<p><strong>Remark 5.28 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Spectral dynamics and the <span
 class="math inline">\(\mathrm{Sp}(1)\)</span> action). <em>The growth
 profiles in
 Definition <a href="#def:quaternionic-spectral-resolvents" data-reference-type="ref" data-reference="def:quaternionic-spectral-resolvents">5.26</a>
@@ -5088,7 +5186,7 @@ as <span class="math inline">\(r\to\infty\)</span>.</em></p>
 
 <div id="rem:primordial-vortex" class="remark">
 
-<p><strong>Remark 5.29</strong> (Primordial vortex and the deep-quantum
+<p><strong>Remark 5.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Primordial vortex and the deep-quantum
 limit). <em>As <span class="math inline">\(r\to 0\)</span> the spectral
 resolvents converge toward the <em>primordial vortex</em>:</em></p>
 <ul>
@@ -5112,7 +5210,7 @@ into a localised topological charge.</em></p>
 
 <div id="rem:geometric-drag" class="remark">
 
-<p><strong>Remark 5.30</strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
+<p><strong>Remark 5.30 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:geometric-drag">Geometric drag and the mass residue</a>).
 <em>The Levi form <span class="math inline">\(L\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
 must be preserved under the <span
@@ -5143,7 +5241,7 @@ filament.</em></p>
 
 <div id="rem:seiberg-witten" class="remark">
 
-<p><strong>Remark 5.31</strong> (Geometric resolution and the
+<p><strong>Remark 5.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Geometric resolution and the
 Seiberg–Witten differential). <em>The infinite geometric torsion <span
 class="math inline">\(T\)</span> and the six topological defects on the
 <span class="math inline">\(\mathbb{CP}^1\)</span> base <span
@@ -5206,7 +5304,7 @@ Seiberg–Witten gauge theory.</em></p>
 
 <div id="rem:reeb-exceptional-divisor" class="remark">
 
-<p><strong>Remark 5.32</strong> (Reeb vector field on the exceptional
+<p><strong>Remark 5.32 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reeb vector field on the exceptional
 divisor). <em>The Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
 (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>)
@@ -5321,7 +5419,7 @@ numbers.</em></p>
 <h1 id="the-descartes-universe">The Descartes Universe</h1>
 <div id="def:descartes-condition" class="definition">
 
-<p><strong>Definition 6.1</strong> (<a class="defn-link" href="#def:descartes-condition">Descartes condition</a>). <em>A <span
+<p><strong>Definition 6.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#def:descartes-condition">Descartes condition</a>). <em>A <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 <span class="math inline">\((M, G, P, E)\)</span>
 (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>)
@@ -5340,7 +5438,7 @@ observable universe satisfying the Descartes condition is called a
 
 <div id="rem:descartes-calabi-yau" class="remark">
 
-<p><strong>Remark 6.2</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on Calabi–Yau
+<p><strong>Remark 6.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on Calabi–Yau
 manifolds). <em>Let <span class="math inline">\((M, G, P, E)\)</span> be
 a Calabi–Yau <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Example <a href="#ex:calabi-yau" data-reference-type="ref" data-reference="ex:calabi-yau">2.5</a>).
@@ -5356,7 +5454,7 @@ characteristic can realise the Descartes universe.</em></p>
 
 <div id="rem:descartes-ale" class="remark">
 
-<p><strong>Remark 6.3</strong> (<a class="defn-link" href="#rem:descartes-ale">The Descartes condition on ALE spaces</a>).
+<p><strong>Remark 6.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:descartes-ale">The Descartes condition on ALE spaces</a>).
 <em>For an ALE <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 (Example <a href="#ex:ale" data-reference-type="ref" data-reference="ex:ale">2.6</a>),
 the Descartes condition <span class="math inline">\(\chi(E) =
@@ -5372,7 +5470,7 @@ class="math inline">\(\Gamma\)</span>.</em></p>
 
 <div id="rem:descartes-affine" class="remark">
 
-<p><strong>Remark 6.4</strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on affine
+<p><strong>Remark 6.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (The <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> on affine
 space). <em>For the affine <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> <span
 class="math inline">\(M = \mathbb{C}^n\)</span>, the Descartes condition
 <span class="math inline">\(\chi(E) = -6\)</span> forces the principal
@@ -5394,7 +5492,7 @@ forces a non-trivial distribution of these modes across the CR manifold
 
 <div id="rem:descent-one-dim" class="remark">
 
-<p><strong>Remark 6.5</strong> (<a class="defn-link" href="#rem:descent-one-dim">Descent to one complex dimension</a>).
+<p><strong>Remark 6.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:descent-one-dim">Descent to one complex dimension</a>).
 <em>By the descent theorem
 (Proposition <a href="#prop:jet-prolongation" data-reference-type="ref" data-reference="prop:jet-prolongation">4.1</a>),
 a two-complex-dimensional Descartes universe <span
@@ -5415,7 +5513,7 @@ at a single point.</em></p>
 
 <div id="prop:genus-maximal-descent" class="proposition">
 
-<p><strong>Proposition 6.6</strong> (Genus of the
+<p><strong>Proposition 6.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Genus of the
 one-complex-dimensional <a class="defn-link" href="#def:descent">descent</a>). <em>Let <span
 class="math inline">\((M, G, P, E)\)</span> be a Descartes universe that
 descends to a compact one-complex-dimensional variety <span
@@ -5441,7 +5539,7 @@ class="math inline">\(g = 4\)</span>. ◻</p>
 
 <div id="rem:descartes-leptons" class="remark">
 
-<p><strong>Remark 6.7</strong> (Electrons, muons and the Reeb
+<p><strong>Remark 6.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Electrons, muons and the Reeb
 decomposition). <em>The <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>)
 applied to a Descartes universe yields two classes of fermionic
@@ -5465,7 +5563,7 @@ that differs between muonic and electronic hydrogen
 
 <div id="rem:descartes-chirality" class="remark">
 
-<p><strong>Remark 6.8</strong> (<a class="defn-link" href="#rem:descartes-chirality">Chirality as Reeb orientation</a>). <em>The
+<p><strong>Remark 6.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:descartes-chirality">Chirality as Reeb orientation</a>). <em>The
 Reeb vector field <span class="math inline">\(\xi\)</span> on the CR
 manifold <span class="math inline">\(M\)</span> carries a natural
 orientation: the sign of the contact form <span
@@ -5488,7 +5586,7 @@ interactions.</em></p>
 
 <div id="rem:light-cone-affine" class="remark">
 
-<p><strong>Remark 6.9</strong> (<a class="defn-link" href="#rem:light-cone-affine">Light cone of an affine chart</a>).
+<p><strong>Remark 6.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:light-cone-affine">Light cone of an affine chart</a>).
 <em>Consider an open subset <span class="math inline">\(U \subset
 M_0\)</span> representing a portion of the descended universe from the
 big bang to heat death. An <em>affine chart</em> on <span
@@ -5505,7 +5603,7 @@ of the Descartes universe.</em></p>
 
 <div id="rem:chirality-trefoil" class="remark">
 
-<p><strong>Remark 6.10</strong> (<a class="defn-link" href="#rem:chirality-trefoil">Chirality and trefoil subgroups</a>).
+<p><strong>Remark 6.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:chirality-trefoil">Chirality and trefoil subgroups</a>).
 <em>The chirality of the observable universe — manifest in the three
 colour charges of quantum chromodynamics — is encoded in the symmetry
 group of the descended surface <span class="math inline">\(M_0\)</span>.
@@ -5526,7 +5624,7 @@ class="math inline">\(S_3\)</span> subgroups among themselves.</em></p>
 
 <div id="rem:brings-curve" class="remark">
 
-<p><strong>Remark 6.11</strong> (Bring’s curve). <em>Bring’s curve is
+<p><strong>Remark 6.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Bring’s curve). <em>Bring’s curve is
 the unique Riemann surface of genus <span
 class="math inline">\(4\)</span> with the maximal automorphism group
 <span class="math inline">\(S_5\)</span> (order <span
@@ -5551,7 +5649,7 @@ among themselves.</em></p>
 
 <div id="def:exceptional-divisor" class="definition">
 
-<p><strong>Definition 6.12</strong> (Exceptional divisor at <span
+<p><strong>Definition 6.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Exceptional divisor at <span
 class="math inline">\(p\)</span>). <em>Let <span
 class="math inline">\((M, G, E)\)</span> be a Descartes universe and let
 <span class="math inline">\(p \in M\)</span> be a brane point with
@@ -5577,7 +5675,7 @@ class="math inline">\(p\)</span> with <span class="math inline">\(E_p
 
 <div id="def:chiral-sector-coords" class="definition">
 
-<p><strong>Definition 6.13</strong> (Chiral sector coordinates <span
+<p><strong>Definition 6.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Chiral sector coordinates <span
 class="math inline">\(\mathfrak{r},\mathfrak{g},\mathfrak{b}\)</span>).
 <em>With notation as in
 Definition <a href="#def:exceptional-divisor" data-reference-type="ref" data-reference="def:exceptional-divisor">6.12</a>,
@@ -5619,7 +5717,7 @@ class="math inline">\(\mathfrak{b}\)</span> the third.</em></p>
 
 <div id="thm:descartes" class="theorem">
 
-<p><strong>Theorem 6.14</strong> (<a class="defn-link" href="#thm:descartes">Descartes theorem</a>). <em>Let <span
+<p><strong>Theorem 6.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#thm:descartes">Descartes theorem</a>). <em>Let <span
 class="math inline">\(\mathcal{C}_{-6}\)</span> denote the category of
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universes satisfying the <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> <span
@@ -5643,7 +5741,7 @@ class="math inline">\(\mathcal{C}_{-6}\)</span>.</em></p>
 
 <div id="rem:universality-general" class="remark">
 
-<p><strong>Remark 6.15</strong> (Universality for a given Euler
+<p><strong>Remark 6.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Universality for a given Euler
 characteristic). <em>The <a class="defn-link" href="#thm:descartes">Descartes theorem</a>
 (Theorem <a href="#thm:descartes" data-reference-type="ref" data-reference="thm:descartes">6.14</a>)
 is expected to be a special case of a more general result: for any
@@ -5662,7 +5760,7 @@ class="math inline">\(\chi\)</span>.</em></p>
 
 <div id="rem:observation-brings" class="remark">
 
-<p><strong>Remark 6.16</strong> (<a class="defn-link" href="#rem:observation-brings">Observations on the Bring surface</a>).
+<p><strong>Remark 6.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:observation-brings">Observations on the Bring surface</a>).
 <em>The general notion of an observation
 (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.21</a>)
 specialises on the Bring surface as follows: the observation morphism
@@ -5742,7 +5840,7 @@ class="math inline">\(\mathbb{C}_\mathfrak{p}\)</span> Quantum
 Universe</h2>
 <div id="ex:p-adic-realisation" class="example">
 
-<p><strong>Example 7.1</strong> (<span
+<p><strong>Example 7.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span> realisation).
 <em>Let <span class="math inline">\(k = \mathbb{Q}_\mathfrak{p}\)</span>
 and let <span class="math inline">\(\mathcal{C}\)</span> be the category
@@ -5800,7 +5898,7 @@ reconstruction.</em></p></li>
 <h2 id="quotient-to-finite-fields"><span id="sec:finite-fields"></span>Quotient to Finite Fields</h2>
 <div id="ex:finite-field-realisation" class="example">
 
-<p><strong>Example 7.2</strong> (<span
+<p><strong>Example 7.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<span
 class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation).
 <em>Let <span class="math inline">\(k = \mathbb{F}_\mathfrak{p}\)</span>
 and let <span class="math inline">\(\mathcal{C} =
@@ -5916,7 +6014,7 @@ Computational Mechanics</h2>
 <h1 id="experimental-evidence">Experimental Evidence</h1>
 <div id="rem:skein-decomposition" class="remark">
 
-<p><strong>Remark 11.1</strong> (Skein Decomposition and Topological
+<p><strong>Remark 11.1 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Skein Decomposition and Topological
 Mass Ratios). <em>This remark formalizes the refinement of the
 particle-topology mapping by shifting from torus knots to a framework
 grounded in <strong>hyperbolic volumes</strong> and
@@ -6003,7 +6101,7 @@ planned observations, and potential new experiments.</p>
 class="math inline">\(q\)</span>-Torsion Imprint</h3>
 <div id="rem:cmb-q-torsion" class="remark">
 
-<p><strong>Remark 11.2</strong> (CMB non-uniformity from <span
+<p><strong>Remark 11.2 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (CMB non-uniformity from <span
 class="math inline">\(q\)</span>-torsion). <em>In the Descartes universe
 (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">[ex:descartes]</a>),
 the negative Euler characteristic <span class="math inline">\(\chi(E) =
@@ -6056,7 +6154,7 @@ class="math inline">\(q\)</span>-torsion leaves.</p></li>
 Signatures and Emergent Geometry</h3>
 <div id="rem:gravity-emergent" class="remark">
 
-<p><strong>Remark 11.3</strong> (Gravity as emergent substrate
+<p><strong>Remark 11.3 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Gravity as emergent substrate
 geometry). <em>In the QOU framework, general relativity emerges as the
 substrate geometry of the CR manifold
 (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>).
@@ -6101,7 +6199,7 @@ the Newtonian potential.</p></li>
 Structure and Topological Defects</h3>
 <div id="rem:topological-defects" class="remark">
 
-<p><strong>Remark 11.4</strong> (Topological signatures in large-scale
+<p><strong>Remark 11.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Topological signatures in large-scale
 structure). <em>The <span class="math inline">\(\mathrm{SO}(3)\)</span>
 holonomy of the bulk bundle
 (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>)
@@ -6140,7 +6238,7 @@ points in the brane tower.</p></li>
 <h3 id="mass-equation-predictions"><span id="sec:mass-predictions"></span>Mass Equation Predictions</h3>
 <div id="rem:mass-ratio-predictions" class="remark">
 
-<p><strong>Remark 11.5</strong> (Theoretical mass ratios from the mass
+<p><strong>Remark 11.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Theoretical mass ratios from the mass
 identity). <em>The <a class="defn-link" href="#def:mass-identity">mass identity</a>
 (Definition <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">4.18</a>)
 expresses inertial mass as a line integral of <span
@@ -6187,7 +6285,7 @@ lattice results.</p></li>
 Photons</h3>
 <div id="rem:photonic-hall" class="remark">
 
-<p><strong>Remark 11.6</strong> (Photonic quantum Hall effect and <span
+<p><strong>Remark 11.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Photonic quantum Hall effect and <span
 class="math inline">\(q\)</span>-deformed braiding). <em>Recent
 experiments have demonstrated a quantized Hall drift in photonic Chern
 insulators . In the QOU framework, bosons are purely horizontal <span
@@ -6233,7 +6331,7 @@ Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-
 and Reeb-Decomposition Tests</h3>
 <div id="rem:lepton-discrepancies" class="remark">
 
-<p><strong>Remark 11.7</strong> (Electron–muon discrepancies). <em>The
+<p><strong>Remark 11.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Electron–muon discrepancies). <em>The
 QOU framework predicts that lepton generations are distinguished by the
 vertical degree of the <a class="defn-link" href="#def:reeb-decomposition">Reeb decomposition</a>
 (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>).
@@ -6276,7 +6374,7 @@ id="generation-dependent-couplings-and-the-proton-charge-radius">Generation-Depe
 Couplings and the Proton Charge Radius</h3>
 <div id="rem:proton-radius-puzzle" class="remark">
 
-<p><strong>Remark 11.8</strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
+<p><strong>Remark 11.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
 “Proton Radius Puzzle” — the discrepancy between the proton charge
 radius measured in muonic hydrogen and in electronic hydrogen — remains
 a key area of study. In the QOU framework, lepton generations are
@@ -6327,7 +6425,7 @@ test the third-generation coupling to the <a class="defn-link" href="#def:substr
 Entropic Gravity Tests</h3>
 <div id="rem:entropic-gravity" class="remark">
 
-<p><strong>Remark 11.9</strong> (Entropic forces and the substrate
+<p><strong>Remark 11.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Entropic forces and the substrate
 parameter). <em>The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
@@ -6370,7 +6468,7 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 Lattice Resonance and Substrate Telescopes</h3>
 <div id="rem:crystal-resonance" class="remark">
 
-<p><strong>Remark 11.10</strong> (Quantum resonance in crystal
+<p><strong>Remark 11.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Quantum resonance in crystal
 lattices). <em>A periodic crystal lattice provides a macroscopic,
 coherent probe of the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span>
@@ -6394,7 +6492,7 @@ lattice geometry.</em></p>
 
 <div id="rem:substrate-telescope" class="remark">
 
-<p><strong>Remark 11.11</strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
+<p><strong>Remark 11.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
 suggests a new class of detector: the <em>Substrate Telescope</em>. A
 large, high-purity single crystal is slowly rotated while the variation
@@ -6413,7 +6511,7 @@ strain.</em></p>
 
 <div id="rem:magnetic-friction" class="remark">
 
-<p><strong>Remark 11.12</strong> (Non-monotonic magnetic friction from
+<p><strong>Remark 11.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Non-monotonic magnetic friction from
 collective rotor dynamics). <em>Recent experiments by Gu, Lüders, and
 Bechinger  demonstrate that a two-dimensional array of rotatable
 magnetic dipoles sliding over a commensurate magnetic substrate exhibits
@@ -6465,7 +6563,7 @@ floors in cryogenic crystalline bars.</p></li>
 </ul>
 <div id="rem:lattice-layout" class="remark">
 
-<p><strong>Remark 11.13</strong> (Lattice layout and quantum resonance
+<p><strong>Remark 11.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Lattice layout and quantum resonance
 implications). <em>Connecting the QOU resonance condition
 (Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">11.10</a>)
 to concrete lattice experiments requires three structural ingredients

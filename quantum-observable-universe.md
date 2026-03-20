@@ -19,11 +19,18 @@ and any changes made are indicated.
 
 </div>
 
+**Proof-status key**
+
+|                                               |                           |                                                 |                              |
+|:---------------------------------------------:|:--------------------------|:-----------------------------------------------:|:-----------------------------|
+|   <span style="color: ForestGreen"></span>    | Fully proved (sorry-free) | <span style="color: Goldenrod">$\forall$</span> | Stated in Lean (has `sorry`) |
+| <span style="color: OliveGreen">-0.3em</span> | Merged into Mathlib       |  <span style="color: BrickRed">$\times$</span>  | Not ready to formalize       |
+
 # Quantum Observable Universe
 
 <div id="def:quantum-universe" class="definition">
 
-**Definition 1.1** (Quantum Universe). *Let $k$ be a field. A *quantum universe over $k$* is a quadruple $(\mathcal{C}, A, \omega, q)$ where:*
+**Definition 1.1** (Quantum Universe). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumUniverse) Let $k$ be a field. A *quantum universe over $k$* is a quadruple $(\mathcal{C}, A, \omega, q)$ where:*
 
 1.  *$(\mathcal{C}, \otimes, \mathbf{1})$ is a $k$-linear rigid monoidal category;*
 
@@ -41,7 +48,7 @@ and any changes made are indicated.
 
 <div id="def:quantum-observable-universe" class="definition">
 
-**Definition 1.2** (Quantum Observable Universe). *A quantum universe $(\mathcal{C}, A, \omega, q)$ over $k$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is *observable* if:*
+**Definition 1.2** (Quantum Observable Universe). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumObservableUniverse) A quantum universe $(\mathcal{C}, A, \omega, q)$ over $k$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is *observable* if:*
 
 1.  *the Frobenius form $\lambda$ on $A$ is non-degenerate; and*
 
@@ -65,7 +72,7 @@ and any changes made are indicated.
 
 <div id="def:c-quantum-universe" class="example">
 
-**Example 1.4** ($\mathbb{C}$ realisation: quantum universe). *Over $k = \mathbb{C}$, a quantum universe (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is realised by a $5$-tuple $(M, \theta, G, P, E)$ where:*
+**Example 1.4** ($\mathbb{C}$ realisation: quantum universe). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CRManifoldData) Over $k = \mathbb{C}$, a quantum universe (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>) is realised by a $5$-tuple $(M, \theta, G, P, E)$ where:*
 
 1.  *$M$ is a CR manifold of hypersurface type (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form of signature $(r,s)$, $r + s = n$;*
 
@@ -89,7 +96,7 @@ and any changes made are indicated.
 
 <div id="def:c-quantum-observable-universe" class="example">
 
-**Example 1.6** ($\mathbb{C}$ realisation: quantum observable universe). *A *$\mathbb{C}$ quantum observable universe* is a $\mathbb{C}$ quantum universe $(M, \theta, G, P, E)$ (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>) that satisfies the vanishing conditions $$H^0(M, \mathrm{Ad}(P)) = 0
+**Example 1.6** ($\mathbb{C}$ realisation: quantum observable universe). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CQuantumObservableUniverse) A *$\mathbb{C}$ quantum observable universe* is a $\mathbb{C}$ quantum universe $(M, \theta, G, P, E)$ (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>) that satisfies the vanishing conditions $$H^0(M, \mathrm{Ad}(P)) = 0
   \qquad\text{and}\qquad
   \Gamma_c(M, E) = 0.$$ These analytic conditions are the $\mathbb{C}$ realisation of the categorical observability conditions of Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>: the Frobenius non-degeneracy of the Haar state on $\mathcal{O}_q(\mathrm{SU}(2))$, combined with irreducibility of the instanton connection (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.8</a>), forces $H^0(M, \mathrm{Ad}(P)) = 0$; the section-vanishing $\Gamma_c(M, E) = 0$ follows from the non-existence of $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.*
 
@@ -97,13 +104,13 @@ and any changes made are indicated.
 
 <div id="def:instanton" class="definition">
 
-**Definition 1.7** (Instanton connection). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with $\dim_{\mathbb{R}} H = 4$ ($n = 2$). An *instanton connection* on $P$ is a connection $A$ whose curvature $F_A$, restricted to the horizontal distribution $H = \ker\theta$, is self-dual: $F_A|_H = {*_H}\,F_A|_H$, where $*_H$ is the Hodge star on $\Lambda^2 H^*$ determined by the Webster metric $g_\theta$. More generally, when $\dim_{\mathbb{R}} H \neq 4$, an instanton connection is a Yang–Mills connection that minimises the functional $\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.*
+**Definition 1.7** (Instanton connection). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.InstantonConnection) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum universe with $\dim_{\mathbb{R}} H = 4$ ($n = 2$). An *instanton connection* on $P$ is a connection $A$ whose curvature $F_A$, restricted to the horizontal distribution $H = \ker\theta$, is self-dual: $F_A|_H = {*_H}\,F_A|_H$, where $*_H$ is the Hodge star on $\Lambda^2 H^*$ determined by the Webster metric $g_\theta$. More generally, when $\dim_{\mathbb{R}} H \neq 4$, an instanton connection is a Yang–Mills connection that minimises the functional $\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.*
 
 </div>
 
 <div id="lem:irreducible-connection" class="lemma">
 
-**Lemma 1.8** (Irreducibility of the connection). *Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe. Then the vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every instanton connection $A$ on $P$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.7</a>) is irreducible.*
+**Lemma 1.8** (Irreducibility of the connection). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.irreducible_connection)<sup><span style="color: ForestGreen"></span></sup> Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe. Then the vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every instanton connection $A$ on $P$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.7</a>) is irreducible.*
 
 </div>
 
@@ -115,7 +122,7 @@ and any changes made are indicated.
 
 <div id="prop:self-dual-curvature" class="proposition">
 
-**Proposition 1.9** (Self-duality of the curvature). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with $\dim_{\mathbb{R}} M = 5$ (i.e. the CR dimension $n = 2$, so that the Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$). Let $A$ be an instanton connection on $P$. Then the curvature $F_A$, restricted to $H$, is self-dual with respect to the Hodge star $*_H$ determined by the Webster metric $g_\theta$ and the complex structure $J$: $$F_A\big|_H \;=\; {*_H}\, F_A\big|_H.$$*
+**Proposition 1.9** (Self-duality of the curvature). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.self_dual_curvature) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with $\dim_{\mathbb{R}} M = 5$ (i.e. the CR dimension $n = 2$, so that the Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$). Let $A$ be an instanton connection on $P$. Then the curvature $F_A$, restricted to $H$, is self-dual with respect to the Hodge star $*_H$ determined by the Webster metric $g_\theta$ and the complex structure $J$: $$F_A\big|_H \;=\; {*_H}\, F_A\big|_H.$$*
 
 </div>
 
@@ -135,7 +142,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:substrate-parameter" class="definition">
 
-**Definition 1.10** (Substrate parameter). *Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a field $k$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>). Let $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the *Lusztig integral form* : the $\mathbb{Z}[q,q^{-1}]$-subalgebra of $\mathcal{U}_q(\mathfrak{su}(2))$ generated by $K^{\pm 1}$ and the divided powers $E^{(n)} = E^n/[n]_q!$, $F^{(n)} = F^n/[n]_q!$. The *substrate parameter* is a ring homomorphism $$\iota \;\colon\; \mathbb{Z}[q, q^{-1}] \;\longrightarrow\; k,
+**Definition 1.10** (Substrate parameter). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter) Let $(\mathcal{C}, A, \omega, q)$ be a quantum universe over a field $k$ (Definition <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a>). Let $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the *Lusztig integral form* : the $\mathbb{Z}[q,q^{-1}]$-subalgebra of $\mathcal{U}_q(\mathfrak{su}(2))$ generated by $K^{\pm 1}$ and the divided powers $E^{(n)} = E^n/[n]_q!$, $F^{(n)} = F^n/[n]_q!$. The *substrate parameter* is a ring homomorphism $$\iota \;\colon\; \mathbb{Z}[q, q^{-1}] \;\longrightarrow\; k,
   \qquad q \;\longmapsto\; q_0 \in k^{\times},$$ and the base-changed algebra $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))
   \otimes_{\mathbb{Z}[q,q^{-1}]} k$ is the quantised enveloping algebra at the specialised value $q_0$. When the quantum universe is fibred over a space $M$ (as in the $\mathbb{C}$ realisation, Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>), $q_0$ may vary from point to point, yielding a *substrate field* $q \colon M \to k^{\times}$.*
 
@@ -162,13 +169,13 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:quantum-gauge-group" class="definition">
 
-**Definition 1.13** (Quantum Gauge Group). *Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *quantum gauge group* is the field of quantum groups $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.*
+**Definition 1.13** (Quantum Gauge Group). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup) Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *quantum gauge group* is the field of quantum groups $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.*
 
 </div>
 
 <div id="def:quantum-planck-constant" class="definition">
 
-**Definition 1.14** (Quantum Planck Constant). *Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *quantum Planck constant* is the smooth field $\hbar_q \colon M \to [0,1)$ defined by $$\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.$$*
+**Definition 1.14** (Quantum Planck Constant). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant) Let $(M, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *quantum Planck constant* is the smooth field $\hbar_q \colon M \to [0,1)$ defined by $$\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.$$*
 
 </div>
 
@@ -190,7 +197,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-harmonic-form" class="definition">
 
-**Definition 1.17** ($q$-Harmonic form (Particle)). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). Let $d_q$ denote the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.23</a> below) and let $\delta_q$ denote its formal adjoint with respect to the inner product on $\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ induced by the Webster metric $g_\theta$. A *particle* is a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is $q$-harmonic, i.e. lies in the kernel of the $q$-Laplacian: $$\Delta_q \alpha
+**Definition 1.17** ($q$-Harmonic form (Particle)). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHarmonicForm) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). Let $d_q$ denote the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.23</a> below) and let $\delta_q$ denote its formal adjoint with respect to the inner product on $\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ induced by the Webster metric $g_\theta$. A *particle* is a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is $q$-harmonic, i.e. lies in the kernel of the $q$-Laplacian: $$\Delta_q \alpha
   \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
   \;=\; 0.$$*
 
@@ -198,13 +205,13 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:reeb-decomposition" class="definition">
 
-**Definition 1.18** (Reeb decomposition). *Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>) and let $\xi$ denote the associated *Reeb vector field*, characterised by $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$. Every differential $k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as $$\alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,$$ where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the *horizontal component* (satisfying $\iota_\xi\,\alpha_H = 0$) and $\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the *vertical component*. A form is *purely horizontal* if and only if $\iota_\xi\,\alpha = 0$.*
+**Definition 1.18** (Reeb decomposition). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ReebDecomposition) Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.4</a>) and let $\xi$ denote the associated *Reeb vector field*, characterised by $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$. Every differential $k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as $$\alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,$$ where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the *horizontal component* (satisfying $\iota_\xi\,\alpha_H = 0$) and $\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the *vertical component*. A form is *purely horizontal* if and only if $\iota_\xi\,\alpha = 0$.*
 
 </div>
 
 <div id="def:fermion" class="definition">
 
-**Definition 1.19** (Fermion). *A *fermion* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) that has a non-trivial vertical component in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>): $$\Delta_q\,\alpha = 0
+**Definition 1.19** (Fermion). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Fermion) A *fermion* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) that has a non-trivial vertical component in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>): $$\Delta_q\,\alpha = 0
   \qquad\text{and}\qquad
   \iota_\xi\,\alpha_V \neq 0.$$*
 
@@ -212,7 +219,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:boson" class="definition">
 
-**Definition 1.20** (Boson). *A *boson* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) that is purely horizontal in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>): $$\Delta_q\,\alpha = 0
+**Definition 1.20** (Boson). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Boson) A *boson* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>) that is purely horizontal in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>): $$\Delta_q\,\alpha = 0
   \qquad\text{and}\qquad
   \alpha = \alpha_H
   \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
@@ -260,7 +267,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-ext-deriv" class="definition">
 
-**Definition 1.23** ($q$-Deformed exterior derivative). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *$q$-deformed exterior derivative* $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by $$d_q\,\alpha
+**Definition 1.23** ($q$-Deformed exterior derivative). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qExtDeriv) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). The *$q$-deformed exterior derivative* $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by $$d_q\,\alpha
   \;=\; q^{-1}\,d\alpha
         + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,$$ where $d$ is the ordinary exterior derivative, $\theta$ the contact form, and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.*
 
@@ -268,7 +275,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-lie-bracket" class="definition">
 
-**Definition 1.24** ($q$-Deformed Lie bracket). *Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields. The *$q$-deformed Lie bracket* is $$[V, W]_q
+**Definition 1.24** ($q$-Deformed Lie bracket). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qLieBracket) Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields. The *$q$-deformed Lie bracket* is $$[V, W]_q
   \;=\; q^{-1}\,[V, W]
         + (1 - q^{-1})\,\bigl(\theta(V)\,\mathcal{L}_\xi W
                               - \theta(W)\,\mathcal{L}_\xi V\bigr),$$ where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.*
@@ -277,7 +284,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-connection" class="definition">
 
-**Definition 1.25** ($q$-Deformed connection). *Let $A$ be an instanton connection on $P$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.8</a>). The *$q$-deformed connection* $A_q$ is defined by $$A_q
+**Definition 1.25** ($q$-Deformed connection). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qConnection) Let $A$ be an instanton connection on $P$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.8</a>). The *$q$-deformed connection* $A_q$ is defined by $$A_q
   \;=\; q^{-1}\,A
         + (1 - q^{-1})\,\iota_\xi\,A\;\theta,$$*
 
@@ -285,20 +292,20 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-reeb-vector-field" class="definition">
 
-**Definition 1.26** ($q$-Deformed Reeb vector field). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and Reeb vector field $\xi$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>). The *$q$-deformed Reeb vector field* is the vector field $\xi_q$ on $M$ defined by its action on smooth functions $f \in C^\infty(M)$: $$\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,$$ where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to $H = \ker\theta$ (using the Webster metric $g_\theta$) and $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.24</a>).*
+**Definition 1.26** ($q$-Deformed Reeb vector field). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qReebVectorField) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>) and Reeb vector field $\xi$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.18</a>). The *$q$-deformed Reeb vector field* is the vector field $\xi_q$ on $M$ defined by its action on smooth functions $f \in C^\infty(M)$: $$\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,$$ where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to $H = \ker\theta$ (using the Webster metric $g_\theta$) and $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.24</a>).*
 
 </div>
 
 <div id="def:q-reeb-flow" class="definition">
 
-**Definition 1.27** ($q$-Deformed Reeb flow). *Let $\xi_q$ be the $q$-deformed Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>). The *$q$-deformed Reeb flow* is the one-parameter family of diffeomorphisms $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$: $$\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
+**Definition 1.27** ($q$-Deformed Reeb flow). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QReebFlow) Let $\xi_q$ be the $q$-deformed Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>). The *$q$-deformed Reeb flow* is the one-parameter family of diffeomorphisms $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$: $$\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
   \qquad \phi_0^q = \mathrm{id}_M.$$*
 
 </div>
 
 <div id="def:q-torsion-leaf" class="definition">
 
-**Definition 1.28** ($q$-Torsion leaf). *Let $H = \ker\theta \subset TM$ be the horizontal distribution on the CR manifold $M$. A *$q$-torsion leaf* is a maximal integral submanifold $L \hookrightarrow M$ of $H$ that is invariant under the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>): $$T_p L \;\subset\; H_p
+**Definition 1.28** ($q$-Torsion leaf). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf) Let $H = \ker\theta \subset TM$ be the horizontal distribution on the CR manifold $M$. A *$q$-torsion leaf* is a maximal integral submanifold $L \hookrightarrow M$ of $H$ that is invariant under the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>): $$T_p L \;\subset\; H_p
   \quad\text{for all } p \in L,
   \qquad\text{and}\qquad
   \phi_t^q(L) = L
@@ -337,7 +344,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="prop:main-commutative-diagram" class="proposition">
 
-**Proposition 1.32** (Main Commutative Diagram). *Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with instanton connection $A$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.7</a>) and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). Let $\mathbf{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $S_q$ (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>), and let $\nabla^A$ denote parallel transport along $A$. The following diagram commutes: $$\begin{CD}
+**Proposition 1.32** (Main Commutative Diagram). *[<sup><span style="color: Goldenrod">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram) Let $(M, \theta, G, P, E)$ be a $\mathbb{C}$ quantum observable universe with instanton connection $A$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.7</a>) and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>). Let $\mathbf{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $S_q$ (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>), and let $\nabla^A$ denote parallel transport along $A$. The following diagram commutes: $$\begin{CD}
 J^1E @>{\mathbf{E}[S_q]}>>
   \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\} \\
 @V{\text{jet evaluation}}VV

@@ -1,11 +1,12 @@
-[package]
 name = "qou"
-leanOptions = [{ name = "autoImplicit", value = false }]
+defaultTargets = ["QOU"]
+
+[leanOptions]
+autoImplicit = false
 
 [[lean_lib]]
 name = "QOU"
 srcDir = "."
-defaultTarget = true
 
 [[require]]
 name = "mathlib"
