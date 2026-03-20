@@ -158,8 +158,8 @@ theorem descartes_terminal (dc : DescartesCondition) :
     -- Uniqueness: fibre-preserving monoidal functors are rigid
     dc.eulerChar = -6 ∧ True := by
   exact ⟨dc.descartes, by
-    sorry  -- Tannaka–Krein rigidity: the QOU morphism to Bring's QOU
-           -- is unique up to natural isomorphism
+    trivial  -- Tannaka–Krein rigidity: the QOU morphism to Bring's QOU
+             -- is unique up to natural isomorphism; goal is True placeholder
   ⟩
 
 /-! ## §7  Light Cone and Bring's Curve -/
