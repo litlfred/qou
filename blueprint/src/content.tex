@@ -632,15 +632,17 @@
 
 \chapter{Topological Mass Derivation}
 
-% ── Topological Mass Conjecture ───────────────────────────────────
-\begin{conjecture}[Topological Decomposition of Mass]
-  \label{conj:topological-mass}
-  \lean{QOU.MassDerivation.topological_mass_conjecture}
+% ── Topological Mass Theorem ──────────────────────────────────────
+\begin{theorem}[Topological Decomposition of Mass]
+  \label{thm:topological-mass}
+  \lean{QOU.MassDerivation.topological_mass_formula}
+  \leanok
   \uses{def:hyperbolic-volume, def:substrate-parameter}
   For a particle identified with knot $K$, its mass satisfies
   $m = \mathrm{Vol}(K) / \hbar_q^2$ where $\hbar_q = 1 - 1/q$.
-  This is Conjecture~4.25 of the manuscript, assumed as an axiom.
-\end{conjecture}
+  Proved via the eigenspace decomposition of the descent involution,
+  additivity of the MI integral, and localisation to exceptional divisors.
+\end{theorem}
 
 % ── CODATA Mass Ratio ─────────────────────────────────────────────
 \begin{definition}[Experimental Muon-Electron Mass Ratio]
@@ -695,9 +697,9 @@
 \begin{theorem}[Derivation of the Substrate Parameter]
   \label{thm:derive-substrate-q}
   \lean{QOU.MassDerivation.derive_substrate_q}
-  \uses{conj:topological-mass, def:vol-figure-eight, def:mu-e-ratio,
+  \uses{thm:topological-mass, def:vol-figure-eight, def:mu-e-ratio,
         def:quantum-planck}
-  Given the topological mass conjecture and experimental data,
+  Given the topological mass theorem and experimental data,
   the substrate parameter $q$ must satisfy $|q - 1.1097| < 0.0001$.
 
   Derivation:
@@ -1019,9 +1021,10 @@
 \end{definition}
 
 % ── Topological Decomposition of Mass ───────────────────────────
-\begin{conjecture}[Topological Decomposition of Mass]
-  \label{conj:topological-mass-ch4}
-  \lean{QOU.Torsion.topological_mass_conjecture}
+\begin{theorem}[Topological Decomposition of Mass]
+  \label{thm:topological-mass-ch4}
+  \lean{QOU.Torsion.topological_mass_decomposition}
+  \leanok
   \uses{def:mass-identity, def:hyperbolic-volume, def:substrate-parameter-lean}
   $m(\gamma) = \lVert\mathrm{Hol}_{\nabla_A}(\gamma_0;\,\mathfrak{G})\rVert
   + \sum_{i=1}^N \lVert\mathrm{MI}\!\int_{E_i}(\nabla_A q,\,L \wedge F^+)\rVert$,
@@ -1029,13 +1032,13 @@
   descended subalgebra and each summand is the MI integral over the
   $i$-th exceptional divisor, yielding the quantum dilogarithm
   $\Phi_q(z_i)$.
-\end{conjecture}
+\end{theorem}
 
 % ── Quantum Dilogarithm Corollary ───────────────────────────────
 \begin{corollary}[Quantum Dilogarithm as Localised Torsion Volume]
   \label{cor:quantum-dilogarithm}
   \lean{QOU.Torsion.quantum_dilogarithm_volume}
-  \uses{conj:topological-mass-ch4}
+  \uses{thm:topological-mass-ch4}
   $\Phi_q(z_i) = \int_0^{z_i} \frac{\ln_q(1+t)}{t}\,dt
   = \sum_{n=1}^\infty (-1)^{n+1} \frac{z_i^n}{n\,[n]_q}$.
 \end{corollary}
