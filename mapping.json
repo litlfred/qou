@@ -148,6 +148,31 @@
       "latex_label": "def:descent"
     },
     {
+      "narrative": "Jet Prolongation",
+      "lean_id": "QOU.Torsion.JetProlongation",
+      "latex_label": "prop:jet-prolongation"
+    },
+    {
+      "narrative": "Descent Involution",
+      "lean_id": "QOU.Torsion.DescentInvolution",
+      "latex_label": "def:descent-involution"
+    },
+    {
+      "narrative": "Brane Boundary",
+      "lean_id": "QOU.Torsion.BraneBoundary",
+      "latex_label": "def:brane-boundary"
+    },
+    {
+      "narrative": "Euler Characteristic Stability",
+      "lean_id": "QOU.Torsion.EulerCharStability",
+      "latex_label": "prop:euler-char-stability"
+    },
+    {
+      "narrative": "Vacuum State",
+      "lean_id": "QOU.Torsion.VacuumState",
+      "latex_label": "prop:vacuum-state"
+    },
+    {
       "narrative": "Bring's surface",
       "lean_id": "QOU.BringsSurface.BringsSurface",
       "latex_label": "def:brings-surface"

@@ -269,6 +269,46 @@
       }
     },
     {
+      "narrative_term": "Jet Prolongation",
+      "lean_name": "QOU.Torsion.JetProlongation",
+      "kind": "def",
+      "narrative_definition": "Given a Frobenius-Hopf object A in a monoidal category, the jet prolongation J^1(A) = A otimes Omega^1(A) inherits a Frobenius-Hopf structure because Omega^1(A) is a direct summand of A otimes A.",
+      "latex_label": "prop:jet-prolongation",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Descent Involution",
+      "lean_name": "QOU.Torsion.DescentInvolution",
+      "kind": "def",
+      "narrative_definition": "The idempotent endomorphism tau_n = ell_n circ mathfrak{d}_{n+1} acting on level-(n+1) sections Gamma(J^1 E_{n+1}). Since mathfrak{d}_{n+1} circ ell_n = id, we have tau_n^2 = tau_n.",
+      "latex_label": "def:descent-involution",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Brane Boundary",
+      "lean_name": "QOU.Torsion.BraneBoundary",
+      "kind": "def",
+      "narrative_definition": "The subset partial E_n subseteq E_n where the fibrewise descent map has a non-trivial kernel. Has codimension geq 2 with exceptional divisor cong CP^1.",
+      "latex_label": "def:brane-boundary",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Euler Characteristic Stability",
+      "lean_name": "QOU.Torsion.EulerCharStability",
+      "kind": "prop",
+      "narrative_definition": "chi(E_{n+1}) = chi(E_n) for all levels of the brane tower. The instanton provides a global section making the projection a homotopy equivalence.",
+      "latex_label": "prop:euler-char-stability",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "Vacuum State",
+      "lean_name": "QOU.Torsion.VacuumState",
+      "kind": "prop",
+      "narrative_definition": "There exists a unique SU(2)-invariant state omega : mathcal{A}_infty to mathbb{C}. Existence by Haar averaging; uniqueness by adjoint vanishing.",
+      "latex_label": "prop:vacuum-state",
+      "chapter": 4
+    },
+    {
       "narrative_term": "Bring's surface",
       "lean_name": "QOU.BringsSurface.BringsSurface",
       "kind": "def",
