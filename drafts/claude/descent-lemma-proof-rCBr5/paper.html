@@ -371,7 +371,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/descent-lemma-proof-rCBr5">&#x1F33F; claude/descent-lemma-proof-rCBr5</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/492b44a143c076170ec2826215d88a35592edbc4">&#x1F4DD; 492b44a</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/f6e058286eb1577cc1835e65bab1b9197f017fef">&#x1F4DD; f6e0582</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/89">PR #89</a>
   <a class="gh-badge" href="quantum-observable-universe-claude-descent-lemma-proof-rcbr5-diff.pdf" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>
 </div>
@@ -926,7 +926,7 @@ resolvents
 class="math inline">\([\hat{X},\hat{P}]_q\)</span> may be identified
 with the value of the <span class="math inline">\(q\)</span>-deformed
 Reeb vector field <span class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>)
 evaluated on the contact form. Concretely, the Reeb field is the unique
 direction along which the symplectic pairing <span
 class="math inline">\(d\theta\)</span> degenerates, so <span
@@ -951,7 +951,7 @@ with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a
 (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>).
 Let <span class="math inline">\(d_q\)</span> denote the <span
 class="math inline">\(q\)</span>-deformed exterior derivative
-(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.21</a>
+(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.23</a>
 below) and let <span class="math inline">\(\delta_q\)</span> denote its
 formal adjoint with respect to the inner product on <span
 class="math inline">\(\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)\)</span>
@@ -1016,9 +1016,121 @@ that is purely horizontal in the <a class="defn-link" href="#def:reeb-decomposit
 \text{ by Definition~\ref{def:reeb-decomposition}}).\]</span></em></p>
 </div>
 
-<div id="def:q-ext-deriv" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L460" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:observation" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L458" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.21</strong> (<span
+<p><strong>Definition 1.21</strong> (<a class="defn-link" href="#def:observation">Observation</a>). <em>Let <span
+class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a quantum
+observable universe over a field <span class="math inline">\(k\)</span>
+(Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.2</a>).
+An <em>observation</em> is a morphism <span
+class="math display">\[\mathcal{O} \;\colon\; A \;\longrightarrow\; A
+\qquad\text{in } \mathcal{C},\]</span> satisfying:</em></p>
+<ol type="1">
+<li><p><em><strong>Frobenius compatibility.</strong> <span
+class="math inline">\(\lambda \circ \mathcal{O}
+= \lambda\)</span> (the <a class="defn-link" href="#def:observation">observation</a> preserves the Frobenius
+form);</em></p></li>
+<li><p><em><strong>Substrate perturbation.</strong> the induced map on
+the deformation parameter shifts <span class="math inline">\(q \mapsto
+q&#39; = q + \delta q\)</span>, where <span class="math inline">\(\delta
+q\)</span> is determined by the Hopf-algebra coaction of <span
+class="math inline">\(A\)</span> on itself: <span
+class="math display">\[\delta q \;=\;
+\lambda\bigl(\mathcal{O}(a_{(1)})\,S(a_{(2)})\bigr)
+\quad\text{for } a \in A,\]</span> with <span
+class="math inline">\(S\)</span> the antipode and <span
+class="math inline">\(\Delta(a) = a_{(1)} \otimes a_{(2)}\)</span> the
+coproduct.</em></p></li>
+</ol>
+<p><em>In the <span class="math inline">\(\mathbb{C}\)</span>
+realisation
+(Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.6</a>),
+an <a class="defn-link" href="#def:observation">observation</a> is realised as a continuous open map from the spacetime
+base <span class="math inline">\(M\)</span> to the bundle of
+endomorphisms <span class="math inline">\(\operatorname{End}(E) \to
+M\)</span>, encoding the coordinate change in torsion energy of the
+bundle <span class="math inline">\(E\)</span>. Because the substrate
+parameter <span class="math inline">\(q(p)\)</span>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
+is perturbed by condition (2), every observation shifts the
+non-commutative geometry:</em></p>
+<blockquote>
+<p><strong>“Observing the universe changes it.”</strong></p>
+</blockquote>
+</div>
+
+<div id="rem:two-observer-parallelogram" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L497" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Remark 1.22</strong> (<a class="defn-link" href="#rem:two-observer-parallelogram">Two-observer parallelogram</a>). <em>Let
+<span class="math inline">\((\mathcal{C}, A, \omega, q)\)</span> be a
+<a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> and let <span
+class="math inline">\(\alpha\)</span> be a <a class="defn-link" href="#def:fermion">fermion</a>
+(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>)
+— a <span class="math inline">\(q\)</span>-harmonic form with
+non-trivial vertical component <span
+class="math inline">\(\iota_\xi\,\alpha_V \neq 0\)</span>. Consider two
+independent observations <span class="math inline">\(\mathcal{O}_1,
+\mathcal{O}_2 \colon A \to A\)</span>
+(Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.21</a>)
+of the same event. These data assemble into a <em>parallelogram of
+observations</em>: <span class="math display">\[\begin{tikzcd}[row
+sep=2.5em, column sep=3.5em]
+&amp; \mathcal{O}_1(\alpha) \arrow[dr, &quot;\text{compare}&quot;] &amp;
+\\
+\alpha \arrow[ur, &quot;\mathcal{O}_1&quot;]
+\arrow[dr, &quot;\mathcal{O}_2&quot;&#39;]
+&amp; &amp; \delta\alpha \\
+&amp; \mathcal{O}_2(\alpha) \arrow[ur, &quot;\text{compare}&quot;&#39;]
+&amp;
+\end{tikzcd}\]</span> The fermion <span
+class="math inline">\(\alpha\)</span> is the <em>source vertex</em>: it
+is the physical state prior to measurement, carrying a non-trivial
+vertical (Reeb) component that couples it to the spin direction. From
+the source, the two observers independently apply their observation
+morphisms, producing <span
+class="math inline">\(\mathcal{O}_1(\alpha)\)</span> and <span
+class="math inline">\(\mathcal{O}_2(\alpha)\)</span> at the lateral
+vertices of the parallelogram. The two observed values are then compared
+at the <em>far vertex</em>, yielding the discrepancy <span
+class="math display">\[\delta\alpha
+\;=\; \mathcal{O}_1(\alpha) - \mathcal{O}_2(\alpha).\]</span></em></p>
+<p><em><strong>Relation to uncertainty.</strong> Each <a class="defn-link" href="#def:observation">observation</a>
+perturbs the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> by <span class="math inline">\(\delta
+q_i\)</span>
+(Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.21</a>,
+condition (2)), so the two observers induce distinct shifted parameters
+<span class="math inline">\(q_1&#39; = q + \delta q_1\)</span> and <span
+class="math inline">\(q_2&#39; = q + \delta q_2\)</span>. The
+discrepancy <span class="math inline">\(\delta\alpha\)</span> is
+controlled by the difference in these perturbations. In the <span
+class="math inline">\(\mathbb{C}\)</span> realisation, the Heisenberg
+commutator
+(Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.16</a>)
+gives <span class="math display">\[\lVert \delta\alpha \rVert
+\;\geq\;
+\bigl\lvert \hbar_{q_1&#39;}(p) - \hbar_{q_2&#39;}(p) \bigr\rvert
+\;=\;
+\bigl\lvert q_1&#39;(p)^{-1} - q_2&#39;(p)^{-1} \bigr\rvert,\]</span>
+where <span class="math inline">\(\hbar_q = 1 - q^{-1}\)</span>
+(Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>).
+Thus the observed discrepancy at the far vertex of the parallelogram is
+bounded below by the difference of the local Planck constants induced by
+the two observations.</em></p>
+<p><em>The parallelogram is <em>degenerate</em> (i.e. <span
+class="math inline">\(\delta\alpha = 0\)</span>) only when both
+observations perturb the substrate identically (<span
+class="math inline">\(\delta q_1 = \delta q_2\)</span>), which requires
+the two <a class="defn-link" href="#def:observation">observation</a> morphisms to agree on the adjoint coaction of <span
+class="math inline">\(A\)</span>. Generically, the non-commutativity of
+the Hopf structure prevents this, and the parallelogram opens:
+independent observations of a <a class="defn-link" href="#def:fermion">fermion</a> necessarily disagree, with the
+magnitude of disagreement governed by the uncertainty encoded in the
+substrate field.</em></p>
+</div>
+
+<div id="def:q-ext-deriv" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L561" target="_blank" title="View source">&#x1F4C4;</a>
+
+<p><strong>Definition 1.23</strong> (<span
 class="math inline">\(q\)</span>-Deformed exterior derivative). <em>Let
 <span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
@@ -1037,9 +1149,9 @@ form, and <span class="math inline">\(\mathcal{L}_\xi\)</span> the Lie
 derivative along the Reeb field.</em></p>
 </div>
 
-<div id="def:q-lie-bracket" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L475" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-lie-bracket" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L576" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.22</strong> (<span
+<p><strong>Definition 1.24</strong> (<span
 class="math inline">\(q\)</span>-Deformed Lie bracket). <em>Let <span
 class="math inline">\(V, W \in \mathfrak{X}(M)\)</span> be smooth vector
 fields. The <em><span class="math inline">\(q\)</span>-deformed Lie
@@ -1052,9 +1164,9 @@ bracket on <span
 class="math inline">\(\mathfrak{X}(M)\)</span>.</em></p>
 </div>
 
-<div id="def:q-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L488" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-connection" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L589" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.23</strong> (<span
+<p><strong>Definition 1.25</strong> (<span
 class="math inline">\(q\)</span>-Deformed connection). <em>Let <span
 class="math inline">\(A\)</span> be an <a class="defn-link" href="#def:instanton">instanton connection</a> on <span
 class="math inline">\(P\)</span>
@@ -1066,9 +1178,9 @@ class="math display">\[A_q
 + (1 - q^{-1})\,\iota_\xi\,A\;\theta,\]</span></em></p>
 </div>
 
-<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L500" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-vector-field" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L601" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.24</strong> (<span
+<p><strong>Definition 1.26</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb vector field). <em>Let
 <span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
@@ -1089,16 +1201,16 @@ class="math inline">\(H = \ker\theta\)</span> (using the Webster metric
 <span class="math inline">\(g_\theta\)</span>) and <span
 class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is the <span
 class="math inline">\(q\)</span>-deformed Lie bracket
-(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.22</a>).</em></p>
+(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.24</a>).</em></p>
 </div>
 
-<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L516" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-reeb-flow" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L617" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.25</strong> (<span
+<p><strong>Definition 1.27</strong> (<span
 class="math inline">\(q\)</span>-Deformed Reeb flow). <em>Let <span
 class="math inline">\(\xi_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>).
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>).
 The <em><span class="math inline">\(q\)</span>-deformed Reeb flow</em>
 is the one-parameter family of diffeomorphisms <span
 class="math inline">\(\phi_t^q \colon M \to M\)</span>, <span
@@ -1109,9 +1221,9 @@ class="math display">\[\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ
 \qquad \phi_0^q = \mathrm{id}_M.\]</span></em></p>
 </div>
 
-<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L528" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="def:q-torsion-leaf" class="definition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L629" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Definition 1.26</strong> (<span
+<p><strong>Definition 1.28</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaf). <em>Let <span
 class="math inline">\(H = \ker\theta \subset TM\)</span> be the
 horizontal distribution on the CR manifold <span
@@ -1120,7 +1232,7 @@ class="math inline">\(q\)</span>-torsion leaf</em> is a maximal integral
 submanifold <span class="math inline">\(L \hookrightarrow M\)</span> of
 <span class="math inline">\(H\)</span> that is invariant under the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>):
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>):
 <span class="math display">\[T_p L \;\subset\; H_p
 \quad\text{for all } p \in L,
 \qquad\text{and}\qquad
@@ -1128,9 +1240,9 @@ class="math inline">\(q\)</span>-deformed Reeb flow
 \quad\text{for all } t \in \mathbb{R}.\]</span></em></p>
 </div>
 
-<div id="rem:q-torsion-existence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L543" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:q-torsion-existence" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L644" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.27</strong> (<span
+<p><strong>Remark 1.29</strong> (<span
 class="math inline">\(q\)</span>-Torsion leaves: existence and Frobenius
 obstruction). <em>The horizontal distribution <span
 class="math inline">\(H = \ker\theta\)</span> on a contact manifold is
@@ -1140,7 +1252,7 @@ integral submanifolds of <span class="math inline">\(H\)</span> have
 dimension at most <span class="math inline">\(n\)</span> (half the rank
 of <span class="math inline">\(H\)</span>); these are the <em>Legendrian
 submanifolds</em>.
-Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>
+Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>
 therefore requires <span class="math inline">\(L\)</span> to be a
 Legendrian submanifold invariant under the <span
 class="math inline">\(q\)</span>-deformed Reeb flow.</em></p>
@@ -1165,9 +1277,9 @@ integral submanifolds and gives <span
 class="math inline">\(q\)</span>-torsion leaves their rigidity.</em></p>
 </div>
 
-<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L568" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:reeb-physical" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L669" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.28</strong> (Physical interpretation of the Reeb
+<p><strong>Remark 1.30</strong> (Physical interpretation of the Reeb
 decomposition). <em>The Reeb vector field <span
 class="math inline">\(\xi\)</span> singles out the direction of internal
 spin on the CR manifold. Forms that “see” this direction (fermions)
@@ -1181,9 +1293,9 @@ many-body interference in crystal lattices, is discussed in
 Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.</em></p>
 </div>
 
-<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L583" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gr-substrate-geometry" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L684" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 1.29</strong> (General Relativity as the “Substrate
+<p><strong>Remark 1.31</strong> (General Relativity as the “Substrate
 Geometry”). <em>In this model the metric is effectively replaced by the
 Levi form <span class="math inline">\(L_\theta\)</span> and its coupling
 to the gauge curvature <span class="math inline">\(F_A\)</span>. Gravity
@@ -1218,9 +1330,9 @@ tension of the <span class="math inline">\(\mathrm{SU}(2)\)</span>
 instantons.</em></p>
 </div>
 
-<div id="prop:main-commutative-diagram" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L614" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:main-commutative-diagram" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/quantum-observable-universe.tex#L715" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Proposition 1.30</strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em>Let
+<p><strong>Proposition 1.32</strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em>Let
 <span class="math inline">\((M, \theta, G, P, E)\)</span> be a <span
 class="math inline">\(\mathbb{C}\)</span> <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a>
 with <a class="defn-link" href="#def:instanton">instanton connection</a> <span class="math inline">\(A\)</span>
@@ -1231,7 +1343,7 @@ Let <span class="math inline">\(\mathbf{E}\)</span> denote the
 Euler–Lagrange operator of the <span
 class="math inline">\(q\)</span>-weighted Yang–Mills–Levi functional
 <span class="math inline">\(S_q\)</span>
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>),
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>),
 and let <span class="math inline">\(\nabla^A\)</span> denote parallel
 transport along <span class="math inline">\(A\)</span>. The following
 diagram commutes: <span class="math display">\[\begin{CD}
@@ -1573,7 +1685,7 @@ class="math inline">\((M_S,\, G,\, P,\, E)\)</span> assembles into a
 <span class="math inline">\(\mathbb{C}\)</span> quantum observable
 universe whose exceptional divisors support the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>).</em></p>
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>).</em></p>
 </div>
 
 <div id="rem:examples-unified" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/qou-elaboration.tex#L195" target="_blank" title="View source">&#x1F4C4;</a>
@@ -1924,7 +2036,7 @@ class="math inline">\(A\)</span>-equivariant sections of the associated
 <p><em>Note that the horizontal distribution <span
 class="math inline">\(H = \ker\theta\)</span> itself <em>fails</em> to
 carry a Frobenius structure (as discussed in
-Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.27</a>);
+Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.29</a>);
 it is the gauge algebra, not the distribution, that is
 Frobenius.</em></p>
 </div>
@@ -1992,7 +2104,7 @@ class="math inline">\(\mathrm{SU}_q(2)\)</span>
 class="math inline">\(d_q^2\)</span> does not vanish). <em>Let <span
 class="math inline">\(d_q\)</span> be the <span
 class="math inline">\(q\)</span>-deformed exterior derivative
-(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.21</a>).
+(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.23</a>).
 For constant <span class="math inline">\(q &gt; 1\)</span>, the operator
 <span class="math inline">\(d_q^2\)</span> is given by <span
 class="math display">\[d_q^2\,\alpha
@@ -2105,14 +2217,14 @@ pattern <span class="math inline">\(q^{-1} \cdot (\text{classical}) + (1
 - q^{-1}) \cdot (\text{Reeb correction})\)</span>. At <span
 class="math inline">\(q = 1\)</span> each recovers its classical
 counterpart: <span class="math inline">\(d_q = d\)</span>
-(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.21</a>),
+(Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.23</a>),
 <span class="math inline">\([\,\cdot\,,\cdot\,]_q =
 [\,\cdot\,,\cdot\,]\)</span>
-(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.22</a>),
+(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.24</a>),
 <span class="math inline">\(A_q = A\)</span>
-(Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.23</a>),
+(Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.25</a>),
 and <span class="math inline">\(\xi_q = \xi\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>).
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>).
 The connection <span class="math inline">\(A_q\)</span> interpolates
 between the full <a class="defn-link" href="#def:instanton">instanton connection</a> and its Reeb component <span
 class="math inline">\(\iota_\xi A\;\theta\)</span>.</em></p>
@@ -2124,17 +2236,17 @@ class="math inline">\(\iota_\xi A\;\theta\)</span>.</em></p>
 class="math inline">\(q\)</span>-Torsion leaves as energy minima).
 <em>Let <span class="math inline">\(A_q\)</span> denote the <span
 class="math inline">\(q\)</span>-deformed connection
-(Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.23</a>)
+(Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.25</a>)
 and define the <span class="math inline">\(q\)</span>-curvature <span
 class="math display">\[\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\,
 A_q]_q,\]</span> where <span
 class="math inline">\([\,\cdot\,,\cdot\,]_q\)</span> is the <span
 class="math inline">\(q\)</span>-deformed Lie bracket
-(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.22</a>)
+(Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.24</a>)
 extended to <span class="math inline">\(\mathrm{Ad}(P)\)</span>-valued
 forms. A <span class="math inline">\(q\)</span>-torsion leaf <span
 class="math inline">\(L\)</span>
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>)
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>)
 is a local minimum of <span
 class="math inline">\(\lVert\Omega_q\rVert\)</span> restricted to the
 horizontal distribution: the invariance of <span
@@ -2196,7 +2308,7 @@ standard way.</em></p>
 \Gamma(E_{\mathrm{lin}})\)</span> and the <span
 class="math inline">\(q\)</span>-deformed Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>),
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>),
 the Schrödinger dynamics take the form <span
 class="math display">\[J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\;
 \hat{H}_q\, \psi,\]</span> where <span class="math inline">\(\hat{H}_q =
@@ -2235,7 +2347,7 @@ freezes into a classical trajectory.</em></p>
 PDE rather than in categorical language, it is essential to the paper’s
 structure: the Schrödinger equation provides the bottom row of the main
 commutative diagram
-(Proposition <a href="#prop:main-commutative-diagram" data-reference-type="ref" data-reference="prop:main-commutative-diagram">1.30</a>).
+(Proposition <a href="#prop:main-commutative-diagram" data-reference-type="ref" data-reference="prop:main-commutative-diagram">1.32</a>).
 Categorically, the <span class="math inline">\(q\)</span>-deformed
 Hamiltonian <span class="math inline">\(\hat{H}_q\)</span> defines an
 endomorphism of the module category <span
@@ -3593,7 +3705,7 @@ class="math inline">\(E\)</span> descends to a bundle over the <span
 class="math inline">\(1\)</span>-dimensional base whose fibre dynamics
 are locked into a single periodic flow.</em></p></li>
 <li><p><em><em>Reeb direction.</em> The inverse of the Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>)
 becomes the only direction of motion; the horizontal distribution is
 trivial and no bosonic modes
 (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">4.9</a>)
@@ -3664,7 +3776,7 @@ class="math inline">\(q\in[1,\infty)\)</span>, encoding the full content
 of the <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> at that point.</em></p></li>
 <li><p><em><em>Reeb direction.</em> There is no tangent space, so the
 Reeb vector field
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>)
 and the horizontal distribution are absent; only the internal <span
 class="math inline">\(\mathrm{SU}(2)\)</span> fibre data
 persist.</em></p></li>
@@ -3837,7 +3949,7 @@ class="math inline">\(c\)</span> is played by the <a class="defn-link" href="#de
 which varies continuously with the spacetime coordinate <span
 class="math inline">\(z\)</span>. The <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>)
 on the exceptional divisor <span class="math inline">\(E_i \cong
 \mathbb{CP}^1\)</span> takes the place of the orbit <span
 class="math inline">\(\{f_c^k(z)\}_{k\geq 0}\)</span>, and the path from
@@ -3877,7 +3989,7 @@ Bang). <em>The exceptional divisor <span
 class="math inline">\(E_i\cong\mathbb{CP}^1\)</span> contains the
 equatorial circle <span class="math inline">\(S^1\subset E_i\)</span>.
 The <span class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>)
 restricts to a degree-<span class="math inline">\(2\)</span>
 endomorphism <span class="math inline">\(f_q\colon S^1\to S^1\)</span>,
 whose <em>Julia set</em> <span class="math inline">\(J(f_q)\subset
@@ -4949,7 +5061,7 @@ class="math inline">\(\exp_q(r)-1\)</span> vanishes at <span
 class="math inline">\(r=0\)</span> and grows rapidly for small <span
 class="math inline">\(r\)</span>, driven by the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>).
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>).
 These ladder modes expand at the big bang before tapering as the
 geometric viscosity
 (Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">2.20</a>)
@@ -4991,7 +5103,7 @@ resolvents converge toward the <em>primordial vortex</em>:</em></p>
 class="math inline">\(\hbar_q\to 1\)</span>
 (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.14</a>).</em></p></li>
 <li><p><em>The <span class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>)
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>)
 collapse to the zero-dimensional stratum <span
 class="math inline">\(M_0=\{\pm 1\}\)</span>.</em></p></li>
 <li><p><em>The <span class="math inline">\(\omega_0\)</span> coordinate,
@@ -5104,7 +5216,7 @@ Seiberg–Witten gauge theory.</em></p>
 <p><strong>Remark 5.32</strong> (Reeb vector field on the exceptional
 divisor). <em>The Reeb vector field <span
 class="math inline">\(\xi_q\)</span>
-(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.24</a>)
+(Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.26</a>)
 is the dynamical complement to the static topology of the Bring surface.
 While the surface itself provides the handles (genus <span
 class="math inline">\(4\)</span>), the Reeb vector provides the “wind”
@@ -5123,7 +5235,7 @@ chiral tubes are frozen in the configuration determined by the power-sum
 equations. Metrically this is a conical limit—the curvature concentrates
 at the blow-up points but no circulating torsion field smooths it out.
 In terms of the Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>),
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>),
 <span class="math inline">\(\xi_q\to\xi_1=\xi\)</span> becomes the
 classical Reeb field, and the Heisenberg commutator <span
 class="math inline">\([\hat{X},\hat{P}]_q\to 0\)</span>
@@ -5150,7 +5262,7 @@ the <span class="math inline">\(U(1)\)</span> action that rotates the
 chiral fibre above the exceptional divisor. Concretely, the <span
 class="math inline">\(q\)</span>-deformed Reeb flow <span
 class="math inline">\(\phi_t^q\)</span>
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>)
 restricted to <span class="math inline">\(E_c\)</span> generates the
 Hopf fibration <span class="math inline">\(S^3\to S^2\cong E_c\)</span>,
 and the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
@@ -5555,26 +5667,24 @@ analogous universal objects are expected at other values of <span
 class="math inline">\(\chi\)</span>.</em></p>
 </div>
 
-<div id="rem:observation" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/descartes-universe.tex#L267" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:observation-brings" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/descent-lemma-proof-rCBr5/chapters/descartes-universe.tex#L267" target="_blank" title="View source">&#x1F4C4;</a>
 
-<p><strong>Remark 6.16</strong> (<a class="defn-link" href="#rem:observation">The notion of an observation</a>).
-<em>Given a <a class="defn-link" href="#def:fermion">fermion</a>
-(Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.19</a>),
-an <em>observation</em> is a continuous open map from the spacetime base
-<span class="math inline">\(\mathbb{CP}^1\)</span> to the bundle of
-endomorphisms <span
-class="math inline">\(\operatorname{End}(E)\to\mathbb{CP}^1\)</span>,
-encoding the coordinate change in torsion energy of the bundle <span
-class="math inline">\(E\)</span>. Because the torsion energy is modified
-by the act of measurement, observing the universe changes it: every
-observation perturbs the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
+<p><strong>Remark 6.16</strong> (<a class="defn-link" href="#rem:observation-brings">Observations on the Bring surface</a>).
+<em>The general notion of an observation
+(Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.21</a>)
+specialises on the Bring surface as follows: the observation morphism
+<span class="math inline">\(\mathcal{O} \colon A \to A\)</span> acts
+fibrewise on the state bundle <span class="math inline">\(E \to
+M\)</span> and perturbs the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q(p)\)</span>
-(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>)
-and hence shifts the non-commutative geometry of the Bring surface
-(Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).</em></p>
-<blockquote>
-<p><strong>“Observing the universe changes it.”</strong></p>
-</blockquote>
+(Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.10</a>),
+shifting the non-commutative geometry of the quantum Bring surface
+(Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>).
+The <a class="defn-link" href="#rem:two-observer-parallelogram">two-observer parallelogram</a>
+(Remark <a href="#rem:two-observer-parallelogram" data-reference-type="ref" data-reference="rem:two-observer-parallelogram">1.22</a>)
+applies directly: two independent observations of a <a class="defn-link" href="#def:fermion">fermion</a> on the Bring
+surface produce a discrepancy controlled by the local Planck constant
+<span class="math inline">\(\hbar_q(p)\)</span>.</em></p>
 </div>
 
 <h1 id="mathfrakp-adic-quantum-observable-universe"><span
@@ -5678,7 +5788,7 @@ setting.</em></p>
 <ul>
 <li><p><em>The classical Frobenius integrability theorem constrains
 <span class="math inline">\(q\)</span>-torsion leaves to be Legendrian
-(Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.27</a>).
+(Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.29</a>).
 Over <span class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>, this
 is replaced by compatibility of the connection with the Frobenius lift:
 a <span class="math inline">\(\mathfrak{p}\)</span>-adic instanton
@@ -5908,13 +6018,13 @@ the negative Euler characteristic <span class="math inline">\(\chi(E) =
 the CR manifold
 (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">[rem:descartes-cmb]</a>).
 The <span class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>;
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>;
 here “leaves” is the geometric plural of <em>leaf</em>) imprint a
 characteristic pattern on the CMB that deviates from the statistically
 isotropic Gaussian field predicted by <span
 class="math inline">\(\Lambda\)</span>CDM. Specifically, the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>)
 introduces <em>torsion</em> into the temperature and polarisation
 multipoles, producing preferred spiral directions in the <span
 class="math inline">\(B\)</span>-mode spectrum.</em></p>
@@ -5956,7 +6066,7 @@ Signatures and Emergent Geometry</h3>
 <p><strong>Remark 11.3</strong> (Gravity as emergent substrate
 geometry). <em>In the QOU framework, general relativity emerges as the
 substrate geometry of the CR manifold
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>).
 The quantum-weighted stress-energy tensor <span
 class="math inline">\(T_{\mu\nu}^{(q)}\)</span> introduces <span
 class="math inline">\(q\)</span>-dependent corrections to the Einstein
@@ -6231,7 +6341,7 @@ class="math inline">\(q\)</span>
 encodes the coupling between the Levi form and the gauge curvature. In
 the near-classical regime <span class="math inline">\(q \to 1\)</span>,
 gravity emerges as a geometric back-reaction
-(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.29</a>).
+(Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.31</a>).
 Recent work on the quantum mechanics of entropic forces  provides a
 complementary perspective: the entropic interpretation may correspond to
 the thermodynamic limit of the <span
@@ -6277,7 +6387,7 @@ reciprocal vectors that couple to the horizontal distribution of the CR
 manifold <span class="math inline">\(M\)</span>. Where the lattice
 spacing is commensurate with the characteristic scale of a <span
 class="math inline">\(q\)</span>-torsion leaf
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>),
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>),
 a resonance condition is satisfied: the <span
 class="math inline">\(q\)</span>-harmonic forms
 (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.17</a>)
@@ -6300,7 +6410,7 @@ function of orientation. Because the <span
 class="math inline">\(q\)</span>-torsion leaves carry a preferred
 direction inherited from the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>),
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>),
 the noise spectrum should exhibit a modulation correlated with the
 crystal’s orientation relative to the bulk bundle. This is conceptually
 analogous to a Weber-bar gravitational wave detector, but targets the
@@ -6324,7 +6434,7 @@ analogue of the <span class="math inline">\(q\)</span>-torsion
 frustration that arises when a lattice’s translational symmetry is
 incommensurate with the characteristic scale of the <span
 class="math inline">\(q\)</span>-torsion leaves
-(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.26</a>).
+(Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.28</a>).
 In this reading, the non-monotonic friction profile reflects a
 resonance–anti-resonance transition governed by the local value of the
 <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span class="math inline">\(q\)</span>
@@ -6388,7 +6498,7 @@ class="math inline">\(q\)</span>-torsion may be non-monotonic in a
 control parameter (e.g. interlayer separation or applied field). In the
 QOU picture, this arises because the <span
 class="math inline">\(q\)</span>-deformed Reeb flow
-(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.25</a>)
+(Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.27</a>)
 introduces a preferred orientation that competes with the lattice’s own
 symmetry, producing frustrated configurations whose energy dissipation
 is maximised at an intermediate commensurability.</em></p></li>

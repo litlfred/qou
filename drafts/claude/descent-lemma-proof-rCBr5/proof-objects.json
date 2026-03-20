@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-20T01:31:34.143140+00:00",
-    "commit_sha": "492b44a143c076170ec2826215d88a35592edbc4"
+    "generated_at": "2026-03-20T01:54:24.656137+00:00",
+    "commit_sha": "f6e058286eb1577cc1835e65bab1b9197f017fef"
   },
   "objects": [
     {
@@ -229,11 +229,33 @@
       "formalization_status": "not_started"
     },
     {
+      "label": "def:observation",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 457,
+        "chapter": 1
+      },
+      "title": "Observation",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:two-observer-parallelogram",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 496,
+        "chapter": 1
+      },
+      "title": "Two-observer parallelogram",
+      "formalization_status": "not_started"
+    },
+    {
       "label": "def:q-ext-deriv",
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 459,
+        "line": 560,
         "chapter": 1
       },
       "title": "$q$-Deformed exterior derivative",
@@ -244,7 +266,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 474,
+        "line": 575,
         "chapter": 1
       },
       "title": "$q$-Deformed Lie bracket",
@@ -255,7 +277,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 487,
+        "line": 588,
         "chapter": 1
       },
       "title": "$q$-Deformed connection",
@@ -266,7 +288,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 499,
+        "line": 600,
         "chapter": 1
       },
       "title": "$q$-Deformed Reeb vector field",
@@ -277,7 +299,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 515,
+        "line": 616,
         "chapter": 1
       },
       "title": "$q$-Deformed Reeb flow",
@@ -288,7 +310,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 527,
+        "line": 628,
         "chapter": 1
       },
       "title": "$q$-Torsion leaf",
@@ -299,7 +321,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 542,
+        "line": 643,
         "chapter": 1
       },
       "title": "$q$-Torsion leaves: existence and Frobenius obstruction",
@@ -310,7 +332,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 567,
+        "line": 668,
         "chapter": 1
       },
       "title": "Physical interpretation of the Reeb decomposition",
@@ -321,7 +343,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 582,
+        "line": 683,
         "chapter": 1
       },
       "title": "General Relativity as the ``Substrate Geometry''",
@@ -332,7 +354,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 613,
+        "line": 714,
         "chapter": 1
       },
       "title": "Main Commutative Diagram",
@@ -1614,14 +1636,14 @@
       "formalization_status": "not_started"
     },
     {
-      "label": "rem:observation",
+      "label": "rem:observation-brings",
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
         "line": 266,
         "chapter": 6
       },
-      "title": "The notion of an observation",
+      "title": "Observations on the Bring surface",
       "formalization_status": "not_started"
     },
     {
