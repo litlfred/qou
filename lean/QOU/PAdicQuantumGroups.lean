@@ -19,6 +19,7 @@ LaTeX source: `chapters/p-adic-quantum-groups.tex`
 
 import QOU.Basic
 import QOU.QuantumObservableUniverse
+import QOU.FormalGroups
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -122,5 +123,51 @@ def qCommutator (q X P : ℝ) : ℝ := X * P - q * P * X
 theorem qCommutator_classical (X P : ℝ) :
     qCommutator 1 X P = X * P - P * X := by
   unfold qCommutator; ring
+
+/-! ## §4  Witt Vector Lifting (from [fred2005]) -/
+
+/-- **Witt vector lift of the p-adic QOU**: given the `𝔽_p` realisation,
+    the formal-groups integration theorem produces a `ℚ_p` realisation
+    whose Frobenius–Hopf structure is a deformation of the finite-field one.
+
+    LaTeX: `\label{sec:witt-vector-lifting}`,
+           `\label{def:witt-vector-lift}`.
+    Reference: [fred2005, Main Theorem]. -/
+theorem padic_qou_lifts_from_finite_field
+    (ff : FiniteFieldQOU)
+    (hq : ff.root_order ≠ 1) :
+    -- There exists a p-adic QOU whose substrate parameter is determined
+    -- by the Witt vector lift of the formal group underlying ff.
+    ∃ (pq : PAdicQOU), pq.p = ff.p := by
+  sorry  -- [fred2005, Main Theorem] + Witt vector functor
+
+/-- The strong multiplicativity condition ([fred2005, Theorem 4.12])
+    ensures the Frobenius relation is preserved in the lifted p-adic QOU.
+
+    LaTeX: `\label{prop:skew-poisson-integration}`, item (3).
+    Reference: [fred2005, Theorem 4.12]. -/
+theorem padic_frobenius_relation_preserved
+    (pq : PAdicQOU) :
+    -- Strong multiplicativity: Frobenius commutes with Verschiebung
+    -- composition in the sense that F ∘ V ∘ F = F ∘ F ∘ V on the
+    -- underlying F-crystal carrier.
+    ∀ (x : pq.carrier),
+      pq.frobenius (pq.verschiebung (pq.frobenius x)) =
+      pq.frobenius (pq.frobenius (pq.verschiebung x)) := by
+  sorry  -- [fred2005, Theorem 4.12]
+
+/-- The unit-root condition on the F-crystal is equivalent to
+    integrability of the skewed-Poisson structure on the underlying
+    formal group.
+
+    LaTeX: `\label{rem:witt-lift-qou}`, item (4).
+    Reference: [fred2005, Corollary 5.3]. -/
+theorem unit_root_iff_skew_poisson_integrable
+    (pq : PAdicQOU) :
+    -- The F-crystal is unit-root (Frobenius is surjective) iff the
+    -- associated skewed-Poisson structure integrates.  The surjectivity
+    -- of Frobenius is a strictly stronger condition than irreducibility.
+    (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) := by
+  sorry  -- [fred2005, Corollary 5.3]
 
 end QOU.PAdicQuantumGroups

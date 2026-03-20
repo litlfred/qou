@@ -44,6 +44,16 @@ $\varepsilon\colon A \to \mathbf{1}$ induces a counit $\varepsilon'$ on
 $J^1(A)$.  The Hopf antipode $S$ extends to $J^1(A)$ by functoriality of the
 K\"ahler differential construction.  Thus $J^1(A)$ is a Frobenius-Hopf object.
 
+This step relies on the \emph{strong multiplicativity} condition: the
+co-multiplication must be compatible with the deformed product at every
+filtration degree.  Over fields of positive characteristic, the
+rigorous proof that this compatibility survives the deformation is the
+main theorem of~\cite{fred2005}, which constructs $\mathrm{Dist}(G)$
+as a Gr\"obner--Shirshov deformation of the commutative
+$\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage
+(see also Proposition~\ref{prop:skew-poisson-integration} in
+Chapter~\ref{chap:p-adic}).
+
 \emph{Step 3: Non-degeneracy and vanishing.}\;
 The non-degeneracy of the Frobenius form on $A$ (the pairing
 $\varepsilon \circ m$ is a perfect pairing) implies non-degeneracy of the
@@ -284,6 +294,18 @@ under the arithmetic descent to~$M_0$, with the $q$-deformed scaling
 function $\exp_q(r) - 1$ (equation~\eqref{eq:q-exp}) regulating the
 transition between the divided power basis of the space-like and time-like
 resolvents.
+
+The flatness of this specialisation---the fact that the divided-power
+basis remains a basis after $q \mapsto q_n$---is guaranteed by the
+Gr\"obner--Shirshov normal-form theorem applied to
+$\mathrm{Dist}(G)$~\cite{fred2005}.  In the $\pp$-adic setting
+(Chapter~\ref{chap:p-adic}), the Witt vector lift
+(Definition~\ref{def:witt-vector-lift}) converts this algebraic
+flatness into a geometric statement: the formal group $\widehat{G}$
+over $\mathbb{Z}_\pp$ reduces modulo~$\pp$ to the commutative
+formal group~$H$ over $\mathbb{F}_\pp$, and the divided-power basis
+of $\mathrm{Dist}(\widehat{G})$ restricts to the PBW basis of
+$\mathrm{Dist}(H)$.
 \end{remark}
 
 \begin{remark}[Jet Shell of the universe]

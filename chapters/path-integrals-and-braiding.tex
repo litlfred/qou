@@ -290,7 +290,28 @@ formulation this corresponds to the abelianisation of the knot group.
 Further generalisations via the Poincar\'e--Birkhoff--Witt theorem and
 unital Gr\"obner bases (Section~\ref{sec:enveloping-algebras}) describe
 the passage from the reducible to the irreducible sector.
-% TODO: develop using PBW filtration and Gröbner basis techniques.
+
+Concretely, the PBW filtration on
+$\mathcal{U}_q(\mathfrak{su}(2))$ equips the associated graded algebra
+$\mathrm{gr}\,\mathcal{U}_q$ with a commutative product.  A
+Gr\"obner--Shirshov basis for the $q$-deformed relations then exhibits
+$\mathcal{U}_q$ as a flat deformation of $\mathrm{gr}\,\mathcal{U}_q$:
+the leading monomials of the $q$-Serre relations provide a set of
+non-overlapping obstructions whose resolution (composition lemma) yields
+a normal-form basis coinciding with the Lusztig divided-power
+basis~\cite{lusztig1993}.  In positive characteristic this construction
+produces the distribution algebra $\mathrm{Dist}(G)$ of the lifted
+formal group~$G$ as a deformation of the commutative
+$\mathrm{Dist}(H)$~\cite{fred2005}; the strong multiplicativity
+condition guarantees that the Frobenius relation is preserved at every
+filtration degree
+(Proposition~\ref{prop:skew-poisson-integration}).
+
+When the representation $\rho$ is reducible, all monomials in the
+Gr\"obner--Shirshov basis reduce to the abelian (Cartan) subalgebra; the
+passage to irreducible $\rho$ corresponds to activating the
+off-diagonal generators $E_\pm$, whose normal-form monomials generate
+the full non-commutative algebra.
 \end{remark}
 
 % ── Universal enveloping algebras ────────────────────────────────────────────
@@ -307,7 +328,28 @@ commutation relations~\eqref{eq:su2-commutator}.  It provides the
 algebraic scaffolding in which every finite-dimensional representation of
 $\mathfrak{su}(2)$ lives and is the classical limit ($q\to 1$) of the
 quantum group $\mathcal{U}_q(\mathfrak{su}(2))$.
-% TODO: state the PBW basis theorem and its role in the QOU framework.
+
+\emph{PBW basis theorem.}
+The monomials $\{e_1^{a}\,e_2^{b}\,e_3^{c} : a,b,c \geq 0\}$ form a
+$\mathbb{C}$-basis of
+$\mathcal{U}(\mathfrak{su}(2))$~\cite{lusztig1993}.
+In the $q$-deformed setting, the analogous basis is the set of ordered
+monomials $\{E^{(a)}\,K^{s}\,F^{(b)}\}$ in the Lusztig divided-power
+generators~\cite{lusztig1993}, with ordering enforced by the
+Gr\"obner--Shirshov resolution of the $q$-Serre
+relations~\cite{fred2005}.
+
+In the QOU framework this basis serves two purposes:
+\begin{enumerate}
+  \item it provides the explicit coordinates for the fibre algebra
+        $\mathrm{SU}_{q_n}(2)$ at each brane-tower level
+        (Definition~\ref{def:direct-limit-algebra} in
+        Chapter~\ref{chap:torsion});
+  \item it ensures flatness of the deformation $q \mapsto q_n$, so that
+        the transition maps in the direct limit
+        $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 E_n,\,
+        \mathrm{SU}_{q_n}(2))$ are well-defined algebra homomorphisms.
+\end{enumerate}
 \end{remark}
 
 \begin{definition}[Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$]

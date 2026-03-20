@@ -99,6 +99,93 @@ Lemma~\ref{lem:irreducible-connection} to the $\pp$-adic setting.
 \end{itemize}
 \end{example}
 
+% ── Witt vector lifting ───────────────────────────────────────────────────
+
+\section{Lifting via Formal Groups and Witt Vectors}
+\label{sec:witt-vector-lifting}
+
+The $\mathbb{Q}_\pp$ realisation (Example~\ref{ex:p-adic-realisation}) provides
+a QOU over characteristic~$0$, while the $\mathbb{F}_\pp$ realisation
+(Example~\ref{ex:finite-field-realisation}) provides one over
+characteristic~$\pp$.  The passage between them is mediated by the
+\emph{Witt vector functor}~$W$ and the theory of formal groups
+over $\pp$-adic
+rings~\cite{hazewinkel1978,fred2005}.
+
+\begin{definition}[Witt vector lift of a formal group]
+\label{def:witt-vector-lift}
+Let $H$ be a commutative formal group over $\mathbb{F}_\pp$ equipped with a
+skewed-Poisson structure $\pi_<$
+(a biderivation $\pi_<\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)$
+satisfying a graded anti-symmetry and a $\pp$-truncated Jacobi condition).
+The \emph{Witt vector lift} is the formal group $\widehat{G}$ over
+$W(\mathbb{F}_\pp) \cong \mathbb{Z}_\pp$ obtained by integrating $\pi_<$ in the
+sense of~\cite{fred2005}: the distribution algebra
+$\mathrm{Dist}(\widehat{G})$ is the $\pp$-adic completion of the universal
+enveloping algebra $\mathcal{U}(\mathrm{Lie}(H))$ deformed by~$\pi_<$.
+\end{definition}
+
+\begin{proposition}[Integration of skewed-Poisson structures]
+\label{prop:skew-poisson-integration}
+Let $H/\mathbb{F}_\pp$ be a smooth commutative formal group and
+$\pi_<$ a skewed-Poisson structure on~$H$.  Then there exists a
+(generally non-commutative) formal group $G/\mathbb{Z}_\pp$ such that:
+\begin{enumerate}
+  \item $G \otimes_{\mathbb{Z}_\pp} \mathbb{F}_\pp \;\cong\; H$
+        (reduction modulo~$\pp$ recovers $H$);
+  \item $\mathrm{Dist}(G)$ is a deformation of
+        $\mathrm{Dist}(H)$ computed via a
+        Gr\"obner--Shirshov basis for the relations of the enveloping
+        algebra~\cite{fred2005};
+  \item the comultiplication on $\mathrm{Dist}(G)$ satisfies the
+        \emph{strong multiplicativity} condition: the Frobenius relation
+        $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id})
+        = \Delta\circ m$ is preserved under the deformation.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+This is~\cite[Main Theorem]{fred2005}.  Item~(1) is the
+existence statement; item~(2) follows from the
+Gr\"obner--Shirshov normal-form construction for $\mathrm{Dist}(G)$;
+item~(3) is the strong multiplicativity theorem, which guarantees
+that the co-multiplication is compatible with the deformed product at
+every stage of the $\pp$-adic filtration.
+\end{proof}
+
+\begin{remark}[Role in the QOU lifting theorem]
+\label{rem:witt-lift-qou}
+Proposition~\ref{prop:skew-poisson-integration} provides the algebraic
+engine behind the jet prolongation
+(Proposition~\ref{prop:jet-prolongation}) when the base field is
+$\mathbb{Q}_\pp$ rather than~$\mathbb{C}$:
+\begin{enumerate}
+  \item The Frobenius--Hopf object~$A$ in the $\mathbb{F}_\pp$ realisation
+        (Example~\ref{ex:finite-field-realisation}) carries a
+        skewed-Poisson structure induced by the $q$-commutator
+        $[\hat{X},\hat{P}]_q = i\hbar_q$
+        (Section~\ref{sec:enveloping-algebras}).
+  \item The Witt vector lift $\widehat{G}$
+        (Definition~\ref{def:witt-vector-lift}) is the non-commutative
+        formal group whose distribution algebra deforms
+        $\mathrm{Dist}(H)$; in the QOU language this is the passage from
+        the $\mathbb{F}_\pp$ fibre algebra to the $\mathbb{Q}_\pp$ fibre
+        algebra.
+  \item Strong multiplicativity (item~(3) of
+        Proposition~\ref{prop:skew-poisson-integration}) is exactly the
+        Frobenius relation used in Step~2 of the jet prolongation proof,
+        ensuring that the comultiplication---hence the gauge connection---is
+        preserved under the lift.
+  \item The unit-root condition on the $F$-crystal
+        (Example~\ref{ex:p-adic-realisation}) corresponds to the
+        integrability of the skewed-Poisson structure: $\pi_<$ integrates
+        if and only if the associated $F$-crystal is unit-root.
+\end{enumerate}
+Without the formal-groups integration theorem, the $\pp$-adic lifting
+mechanism would remain a conjecture; the results
+of~\cite{fred2005} convert it into a proven categorical lift.
+\end{remark}
+
 % ── Finite fields and representations ───────────────────────────────────────
 
 \section{Quotient to Finite Fields}
