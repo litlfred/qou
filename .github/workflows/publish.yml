@@ -432,6 +432,11 @@ jobs:
           publish_branch="${{ inputs.publish_branch || 'gh-pages' }}"
           source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ env.HEAD_REF }}"
 
+          # Raw download links (direct file download from gh-pages branch)
+          raw_base="https://raw.githubusercontent.com/${{ github.repository }}/${publish_branch}/drafts/${{ env.HEAD_REF }}"
+          raw_pdf_url="${raw_base}/${FNAME_BASE}.pdf"
+          raw_diff_url="${raw_base}/${FNAME_BASE}-diff.pdf"
+
           # Find open PRs whose head branch matches the current ref
           pr_numbers=$(gh pr list \
             --repo "${{ github.repository }}" \
@@ -464,6 +469,12 @@ jobs:
           | Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |
           | HTML     | [Landing page](${html_url}) |
           | QA Report| [qa.html](${qa_url}) |
+
+          **Direct download (raw)**
+          | Artefact | Link |
+          |----------|------|
+          | Full PDF | [⬇ ${FNAME_BASE}.pdf](${raw_pdf_url}) |
+          | Diff PDF | [⬇ ${FNAME_BASE}-diff.pdf](${raw_diff_url}) |
 
           **Source (repo)**
           | Resource | Link |
