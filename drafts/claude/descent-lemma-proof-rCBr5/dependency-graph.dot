@@ -1,0 +1,238 @@
+digraph ProofDependencies {
+  rankdir=TB;
+  newrank=true;
+  graph [fontname="Helvetica", fontsize=11, bgcolor="white",
+         pad=0.5, nodesep=0.4, ranksep=0.8];
+  node [fontname="Helvetica", fontsize=9, style="filled,rounded",
+        shape=box, penwidth=2.0, margin="0.1,0.05"];
+  edge [penwidth=2.5, arrowsize=0.8];
+
+  subgraph cluster_legend {
+    label="Legend";
+    style=dashed; color="#888888"; fontsize=10;
+    legend_red   [label="No proof / Blocking" fillcolor="#FF6B6B" color="#DC143C"];
+    legend_orange [label="LLM Reviewed" fillcolor="#FFD700" color="#DAA520"];
+    legend_green [label="Human Reviewed" fillcolor="#90EE90" color="#228B22"];
+    legend_yellow [label="Proved (no review)" fillcolor="#FFFACD" color="#DAA520"];
+    legend_red -> legend_orange -> legend_green -> legend_yellow [style=invis];
+  }
+
+  subgraph cluster_ch1 {
+    label="Ch.1 Quantum Observable Universe";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    def_quantum_universe [label="Def\nquantum-universe" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-universe" tooltip="Quantum Universe" target="_blank"];
+    def_quantum_observable_universe [label="Def\nquantum-observabl..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-observable-universe" tooltip="Quantum Observable Universe" target="_blank"];
+    rem_base_field_independence [label="Rem\nbase-field-indepe..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:base-field-independence" tooltip="Base-field independence" target="_blank"];
+    def_c_quantum_universe [label="Ex\nc-quantum-universe" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:c-quantum-universe" tooltip="$\mathbb{C}$ realisation: quantum universe" target="_blank"];
+    rem_notation_special_cases [label="Rem\nnotation-special-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:notation-special-cases" tooltip="Notation and special cases" target="_blank"];
+    def_c_quantum_observable_universe [label="Ex\nc-quantum-observa..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:c-quantum-observable-universe" tooltip="$\mathbb{C}$ realisation: quantum observable universe" target="_blank"];
+    def_instanton [label="Def\ninstanton" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:instanton" tooltip="Instanton connection" target="_blank"];
+    lem_irreducible_connection [label="Lem\nirreducible-conne..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#lem:irreducible-connection" tooltip="Irreducibility of the connection" target="_blank"];
+    prop_self_dual_curvature [label="Prop\nself-dual-curvature" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:self-dual-curvature" tooltip="Self-duality of the curvature" target="_blank"];
+    def_substrate_parameter [label="Def\nsubstrate-parameter" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:substrate-parameter" tooltip="Substrate parameter" target="_blank"];
+    rem_c_substrate_via_levi [label="Rem\nc-substrate-via-levi" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:c-substrate-via-levi" tooltip="$\mathbb{C}$ substrate via the Levi form" target="_blank"];
+    rem_substrate_contraction [label="Rem\nsubstrate-contrac..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:substrate-contraction" tooltip="Natural contraction and field character of $q$" target="_blank"];
+    def_quantum_gauge_group [label="Def\nquantum-gauge-group" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-gauge-group" tooltip="Quantum Gauge Group" target="_blank"];
+    def_quantum_planck_constant [label="Def\nquantum-planck-co..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-planck-constant" tooltip="Quantum Planck Constant" target="_blank"];
+    rem_planck_limits [label="Rem\nplanck-limits" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:planck-limits" tooltip="Limiting regimes of $\hbar_q$" target="_blank"];
+    rem_heisenberg_commutator [label="Rem\nheisenberg-commut..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:heisenberg-commutator" tooltip="Heisenberg uncertainty as commutator" target="_blank"];
+    def_q_harmonic_form [label="Def\nq-harmonic-form" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-harmonic-form" tooltip="$q$-Harmonic form (Particle)" target="_blank"];
+    def_reeb_decomposition [label="Def\nreeb-decomposition" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:reeb-decomposition" tooltip="Reeb decomposition" target="_blank"];
+    def_fermion [label="Def\nfermion" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:fermion" tooltip="Fermion" target="_blank"];
+    def_boson [label="Def\nboson" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:boson" tooltip="Boson" target="_blank"];
+    def_q_ext_deriv [label="Def\nq-ext-deriv" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-ext-deriv" tooltip="$q$-Deformed exterior derivative" target="_blank"];
+    def_q_lie_bracket [label="Def\nq-lie-bracket" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-lie-bracket" tooltip="$q$-Deformed Lie bracket" target="_blank"];
+    def_q_connection [label="Def\nq-connection" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-connection" tooltip="$q$-Deformed connection" target="_blank"];
+    def_q_reeb_vector_field [label="Def\nq-reeb-vector-field" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-reeb-vector-field" tooltip="$q$-Deformed Reeb vector field" target="_blank"];
+    def_q_reeb_flow [label="Def\nq-reeb-flow" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-reeb-flow" tooltip="$q$-Deformed Reeb flow" target="_blank"];
+    def_q_torsion_leaf [label="Def\nq-torsion-leaf" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:q-torsion-leaf" tooltip="$q$-Torsion leaf" target="_blank"];
+    rem_q_torsion_existence [label="Rem\nq-torsion-existence" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:q-torsion-existence" tooltip="$q$-Torsion leaves: existence and Frobenius obstruction" target="_blank"];
+    rem_reeb_physical [label="Rem\nreeb-physical" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:reeb-physical" tooltip="Physical interpretation of the Reeb decomposition" target="_blank"];
+    rem_gr_substrate_geometry [label="Rem\ngr-substrate-geom..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:gr-substrate-geometry" tooltip="General Relativity as the ``Substrate Geometry''" target="_blank"];
+    prop_main_commutative_diagram [label="Prop\nmain-commutative-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:main-commutative-diagram" tooltip="Main Commutative Diagram" target="_blank"];
+    { rank=same; def_quantum_universe; def_quantum_observable_universe; rem_base_field_independence; def_c_quantum_universe; rem_notation_special_cases; def_c_quantum_observable_universe; def_instanton; lem_irreducible_connection; prop_self_dual_curvature; def_substrate_parameter; rem_c_substrate_via_levi; rem_substrate_contraction; def_quantum_gauge_group; def_quantum_planck_constant; rem_planck_limits; rem_heisenberg_commutator; def_q_harmonic_form; def_reeb_decomposition; def_fermion; def_boson; def_q_ext_deriv; def_q_lie_bracket; def_q_connection; def_q_reeb_vector_field; def_q_reeb_flow; def_q_torsion_leaf; rem_q_torsion_existence; rem_reeb_physical; rem_gr_substrate_geometry; prop_main_commutative_diagram; }
+  }
+
+  subgraph cluster_ch2 {
+    label="Ch.2 Categorical & Analytic Foundations";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    rem_tqft_context [label="Rem\ntqft-context" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:tqft-context" tooltip="TQFT context" target="_blank"];
+    rem_vanishing_explication [label="Rem\nvanishing-explica..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:vanishing-explication" tooltip="Vanishing conditions: explication" target="_blank"];
+    rem_levi_generalisation [label="Rem\nlevi-generalisation" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:levi-generalisation" tooltip="Generalisation beyond strict pseudoconvexity" target="_blank"];
+    rem_jet_bundle [label="Rem\njet-bundle" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:jet-bundle" tooltip="Jet-bundle formulation" target="_blank"];
+    ex_calabi_yau [label="Ex\ncalabi-yau" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:calabi-yau" tooltip="Real hypersurface in a Calabi--Yau $2$-fold" target="_blank"];
+    ex_ale [label="Ex\nale" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:ale" tooltip="ALE links" target="_blank"];
+    ex_brings_surface [label="Ex\nbrings-surface" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:brings-surface" tooltip="Bring's surface unit circle bundle" target="_blank"];
+    rem_examples_unified [label="Rem\nexamples-unified" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:examples-unified" tooltip="$\mathbb{C}$ examples as instances of the generalised framework" target="_blank"];
+    rem_quantum_gauge_group_category [label="Rem\nquantum-gauge-gro..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:quantum-gauge-group-category" tooltip="Quantum gauge group: category-theoretic perspective" target="_blank"];
+    rem_hopf_structure_diagrams [label="Rem\nhopf-structure-di..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:hopf-structure-diagrams" tooltip="Hopf-algebra structure and non-cocommutativity" target="_blank"];
+    rem_self_dual_ses [label="Rem\nself-dual-ses" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:self-dual-ses" tooltip="Self-duality as a short exact sequence" target="_blank"];
+    rem_self_dual_2group [label="Rem\nself-dual-2group" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:self-dual-2group" tooltip="Self-duality as constrained $2$-group gauge theory" target="_blank"];
+    rem_frobenius_simplification [label="Rem\nfrobenius-simplif..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:frobenius-simplification" tooltip="Frobenius structure of the $\mathbb{C}$ gauge algebra" target="_blank"];
+    ex_cosmological_limits [label="Ex\ncosmological-limits" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:cosmological-limits" tooltip="Cosmological limits of $q$ on $S^3$" target="_blank"];
+    rem_j1e_local_states [label="Rem\nj1e-local-states" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:j1e-local-states" tooltip="$J^1E$ as the space of local states" target="_blank"];
+    prop_dq_squared [label="Prop\ndq-squared" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:dq-squared" tooltip="$d_q^2$ does not vanish" target="_blank"];
+    prop_q_jacobiator [label="Prop\nq-jacobiator" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:q-jacobiator" tooltip="Jacobiator of ${{[\,\cdot\,,\cdot\," target="_blank"];
+    rem_classical_recovery [label="Rem\nclassical-recovery" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:classical-recovery" tooltip="Classical recovery of $q$-deformed operators" target="_blank"];
+    rem_q_torsion_leaf_minimum [label="Rem\nq-torsion-leaf-mi..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:q-torsion-leaf-minimum" tooltip="$q$-Torsion leaves as energy minima" target="_blank"];
+    rem_q_harmonic_physical [label="Rem\nq-harmonic-physical" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:q-harmonic-physical" tooltip="Physical interpretation of $q$-harmonicity" target="_blank"];
+    rem_schrodinger_jet_coaction [label="Rem\nschrodinger-jet-c..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:schrodinger-jet-coaction" tooltip="$q$-Deformed Schr\"odinger equation" target="_blank"];
+    { rank=same; rem_tqft_context; rem_vanishing_explication; rem_levi_generalisation; rem_jet_bundle; ex_calabi_yau; ex_ale; ex_brings_surface; rem_examples_unified; rem_quantum_gauge_group_category; rem_hopf_structure_diagrams; rem_self_dual_ses; rem_self_dual_2group; rem_frobenius_simplification; ex_cosmological_limits; rem_j1e_local_states; prop_dq_squared; prop_q_jacobiator; rem_classical_recovery; rem_q_torsion_leaf_minimum; rem_q_harmonic_physical; rem_schrodinger_jet_coaction; }
+  }
+
+  subgraph cluster_ch3 {
+    label="Ch.3 Path Integrals and Braiding";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    def_braid_group [label="Def\nbraid-group" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:braid-group" tooltip="Braid group on three strands" target="_blank"];
+    def_s3_group [label="Def\ns3-group" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:s3-group" tooltip="Symmetric group $S_3$" target="_blank"];
+    def_su2_basis [label="Def\nsu2-basis" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:su2-basis" tooltip="$\mathfrak{su}(2)$ basis" target="_blank"];
+    rem_first_order_taylor [label="Rem\nfirst-order-taylor" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:first-order-taylor" tooltip="First-order approximation" target="_blank"];
+    def_su2_generators [label="Def\nsu2-generators" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:su2-generators" tooltip="$\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$" target="_blank"];
+    def_so3_generators [label="Def\nso3-generators" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:so3-generators" tooltip="$\mathrm{SO}(3)$ generators" target="_blank"];
+    def_braid_twist_flip [label="Def\nbraid-twist-flip" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:braid-twist-flip" tooltip="Braid involutions: twist and flip" target="_blank"];
+    rem_holonomy_trefoil [label="Rem\nholonomy-trefoil" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:holonomy-trefoil" tooltip="Holonomy generators and the trefoil" target="_blank"];
+    rem_trefoil_knot_group [label="Rem\ntrefoil-knot-group" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:trefoil-knot-group" tooltip="Trefoil knot group" target="_blank"];
+    ex_trefoil_operator_algebra [label="Ex\ntrefoil-operator-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:trefoil-operator-algebra" tooltip="Trefoil braid relation and operator algebra" target="_blank"];
+    rem_knot_complement_group [label="Rem\nknot-complement-g..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:knot-complement-group" tooltip="Fundamental group of the knot complement" target="_blank"];
+    rem_kronheimer_mrowka [label="Rem\nkronheimer-mrowka" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:kronheimer-mrowka" tooltip="rem:kronheimer-mrowka" target="_blank"];
+    rem_reducible_reps [label="Rem\nreducible-reps" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:reducible-reps" tooltip="Reducible representations and fixed points" target="_blank"];
+    rem_enveloping_algebra [label="Rem\nenveloping-algebra" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:enveloping-algebra" tooltip="Universal enveloping algebra" target="_blank"];
+    def_quantum_su2 [label="Def\nquantum-su2" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-su2" tooltip="Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$" target="_blank"];
+    rem_r_matrix_braiding [label="Rem\nr-matrix-braiding" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:r-matrix-braiding" tooltip="$R$-matrix and braiding" target="_blank"];
+    rem_e_minus_one [label="Rem\ne-minus-one" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:e-minus-one" tooltip="$E_{-1}$ as skew-mirror bundle" target="_blank"];
+    { rank=same; def_braid_group; def_s3_group; def_su2_basis; rem_first_order_taylor; def_su2_generators; def_so3_generators; def_braid_twist_flip; rem_holonomy_trefoil; rem_trefoil_knot_group; ex_trefoil_operator_algebra; rem_knot_complement_group; rem_kronheimer_mrowka; rem_reducible_reps; rem_enveloping_algebra; def_quantum_su2; rem_r_matrix_braiding; rem_e_minus_one; }
+  }
+
+  subgraph cluster_ch4 {
+    label="Ch.4 Lifting of Quantum Torsion";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    prop_jet_prolongation [label="Prop\njet-prolongation" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:jet-prolongation" tooltip="Jet Prolongation" target="_blank"];
+    rem_prolongation_categorical [label="Rem\nprolongation-cate..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:prolongation-categorical" tooltip="Prolongation from the Frobenius-Hopf structure" target="_blank"];
+    def_recursive_brane_tower [label="Def\nrecursive-brane-t..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:recursive-brane-tower" tooltip="Recursive Brane Tower" target="_blank"];
+    ex_brane_tower_levels [label="Ex\nbrane-tower-levels" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:brane-tower-levels" tooltip="First two levels" target="_blank"];
+    def_quantum_characteristic_classes [label="Def\nquantum-character..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quantum-characteristic-classes" tooltip="Quantum Characteristic Classes" target="_blank"];
+    rem_betti_numbers_brane [label="Rem\nbetti-numbers-brane" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:betti-numbers-brane" tooltip="Betti numbers of the brane tower" target="_blank"];
+    rem_q_harmonic_basis_brane [label="Rem\nq-harmonic-basis-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:q-harmonic-basis-brane" tooltip="$q$-Harmonic basis of the brane tower" target="_blank"];
+    rem_weight_space_decomposition [label="Rem\nweight-space-deco..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:weight-space-decomposition" tooltip="Weight-space decomposition of the harmonic basis" target="_blank"];
+    rem_algebraic_filter [label="Rem\nalgebraic-filter" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:algebraic-filter" tooltip="The algebraic filter" target="_blank"];
+    rem_distributional_connection [label="Rem\ndistributional-co..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:distributional-connection" tooltip="Distributional connection at the limit" target="_blank"];
+    def_direct_limit_algebra [label="Def\ndirect-limit-algebra" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:direct-limit-algebra" tooltip="$\mathbb{C}$ Quantum Observable Universe as Direct Limit" target="_blank"];
+    rem_direct_limit_lusztig [label="Rem\ndirect-limit-lusztig" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:direct-limit-lusztig" tooltip="Direct limit algebra and the Lusztig integral form" target="_blank"];
+    rem_jet_shell [label="Rem\njet-shell" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:jet-shell" tooltip="Jet Shell of the universe" target="_blank"];
+    prop_vacuum_state [label="Prop\nvacuum-state" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:vacuum-state" tooltip="Existence and Uniqueness of the Vacuum State" target="_blank"];
+    rem_mass_geometric_drag [label="Rem\nmass-geometric-drag" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:mass-geometric-drag" tooltip="Mass in the brane tower" target="_blank"];
+    rem_mass_noncommutative_drag [label="Rem\nmass-noncommutati..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:mass-noncommutative-drag" tooltip="Non-commutativity and geometric drag" target="_blank"];
+    prop_euler_char_stability [label="Prop\neuler-char-stability" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:euler-char-stability" tooltip="Stability of the Euler characteristic" target="_blank"];
+    def_mass_identity [label="Def\nmass-identity" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:mass-identity" tooltip="Mass Identity" target="_blank"];
+    def_descent [label="Def\ndescent" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:descent" tooltip="Descent" target="_blank"];
+    lem_descent [label="Lem\ndescent" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#lem:descent" tooltip="Descent preserves the quantum observable universe" target="_blank"];
+    def_descent_involution [label="Def\ndescent-involution" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:descent-involution" tooltip="Descent involution" target="_blank"];
+    prop_descent_eigenspaces [label="Prop\ndescent-eigenspaces" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:descent-eigenspaces" tooltip="Eigenspaces of the descent involution" target="_blank"];
+    def_brane_boundary [label="Def\nbrane-boundary" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:brane-boundary" tooltip="Defining boundary of the brane" target="_blank"];
+    prop_brane_boundary [label="Prop\nbrane-boundary" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:brane-boundary" tooltip="Structure of the defining boundary" target="_blank"];
+    rem_descent_reduction [label="Rem\ndescent-reduction" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-reduction" tooltip="Reduction at dimension~$1$" target="_blank"];
+    rem_descent_physical [label="Rem\ndescent-physical" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-physical" tooltip="Physical implications of a $1$-dimensional base" target="_blank"];
+    rem_descent_reduction_zero [label="Rem\ndescent-reduction..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-reduction-zero" tooltip="Reduction at dimension~$0$" target="_blank"];
+    rem_descent_physical_zero [label="Rem\ndescent-physical-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-physical-zero" tooltip="Physical implications of a $0$-dimensional base" target="_blank"];
+    rem_descent_fixed_point [label="Rem\ndescent-fixed-point" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-fixed-point" tooltip="Fixed-point mechanism: ascent and descent" target="_blank"];
+    rem_qdlog_julia [label="Rem\nqdlog-julia" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:qdlog-julia" tooltip="Quantum dilogarithm integrand as $q$-deformed Böttcher potential density" target="_blank"];
+    rem_julia_s1_photon_scatter [label="Rem\njulia-s1-photon-s..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:julia-s1-photon-scatter" tooltip="Julia set on $S^1$ as photon scattering at the Big Bang" target="_blank"];
+    { rank=same; prop_jet_prolongation; rem_prolongation_categorical; def_recursive_brane_tower; ex_brane_tower_levels; def_quantum_characteristic_classes; rem_betti_numbers_brane; rem_q_harmonic_basis_brane; rem_weight_space_decomposition; rem_algebraic_filter; rem_distributional_connection; def_direct_limit_algebra; rem_direct_limit_lusztig; rem_jet_shell; prop_vacuum_state; rem_mass_geometric_drag; rem_mass_noncommutative_drag; prop_euler_char_stability; def_mass_identity; def_descent; lem_descent; def_descent_involution; prop_descent_eigenspaces; def_brane_boundary; prop_brane_boundary; rem_descent_reduction; rem_descent_physical; rem_descent_reduction_zero; rem_descent_physical_zero; rem_descent_fixed_point; rem_qdlog_julia; rem_julia_s1_photon_scatter; }
+  }
+
+  subgraph cluster_ch5 {
+    label="Ch.5 Bring's Surface";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    rem_descent_to_zero [label="Rem\ndescent-to-zero" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-to-zero" tooltip="Descent to dimension zero" target="_blank"];
+    def_brings_surface [label="Def\nbrings-surface" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:brings-surface" tooltip="Bring's surface" target="_blank"];
+    rem_brings_qou_4tuple [label="Rem\nbrings-qou-4tuple" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:brings-qou-4tuple" tooltip="QOU $4$-tuple for Bring's surface" target="_blank"];
+    rem_lagrange_resolvents [label="Rem\nlagrange-resolvents" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:lagrange-resolvents" tooltip="Lagrange resolvents and spectral form" target="_blank"];
+    rem_braid_group_action [label="Rem\nbraid-group-action" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:braid-group-action" tooltip="Braid-group action on the resolvents" target="_blank"];
+    def_color_tube_coordinates [label="Def\ncolor-tube-coordi..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:color-tube-coordinates" tooltip="Color tube coordinates" target="_blank"];
+    rem_aggregate_color_quantities [label="Rem\naggregate-color-q..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:aggregate-color-quantities" tooltip="Aggregate color quantities" target="_blank"];
+    rem_color_tube_constraints [label="Rem\ncolor-tube-constr..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:color-tube-constraints" tooltip="Constraint equations in color tube coordinates" target="_blank"];
+    rem_color_tube_interpretation [label="Rem\ncolor-tube-interp..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:color-tube-interpretation" tooltip="Interpretation of the color tube" target="_blank"];
+    rem_c5_color_tube [label="Rem\nc5-color-tube" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:c5-color-tube" tooltip="$C_5$ action in color tube coordinates" target="_blank"];
+    rem_intrinsic_color_cubic_pairing [label="Rem\nintrinsic-color-c..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:intrinsic-color-cubic-pairing" tooltip="Intrinsic color cubic: pairing structure" target="_blank"];
+    prop_chiral_elliptic [label="Prop\nchiral-elliptic" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:chiral-elliptic" tooltip="Chiral fibre as an elliptic curve" target="_blank"];
+    rem_t_duality_elliptic [label="Rem\nt-duality-elliptic" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:t-duality-elliptic" tooltip="Self-duality of the chiral elliptic curve" target="_blank"];
+    rem_color_tube_cubic [label="Rem\ncolor-tube-cubic" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:color-tube-cubic" tooltip="Color tube cubic" target="_blank"];
+    def_color_tube_fibers [label="Def\ncolor-tube-fibers" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:color-tube-fibers" tooltip="Color tube fibers" target="_blank"];
+    def_observed_value [label="Def\nobserved-value" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:observed-value" tooltip="Observed spacetime value" target="_blank"];
+    rem_t_duality_color_tube [label="Rem\nt-duality-color-tube" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:t-duality-color-tube" tooltip="T-duality in color tube coordinates" target="_blank"];
+    rem_color_tube_subloci [label="Rem\ncolor-tube-subloci" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:color-tube-subloci" tooltip="Sublocus $\widetilde{C}=0$ and colour confinement" target="_blank"];
+    rem_chiral_bundles [label="Rem\nchiral-bundles" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:chiral-bundles" tooltip="Chiral space as spectral curve and spinor bundle" target="_blank"];
+    rem_brings_smoothness [label="Rem\nbrings-smoothness" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:brings-smoothness" tooltip="Smoothness of the Bring surface and resolution of spacetime defects" target="_blank"];
+    def_briggs_klein_chart [label="Def\nbriggs-klein-chart" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:briggs-klein-chart" tooltip="Briggs--Klein affine chart" target="_blank"];
+    rem_radial_projection [label="Rem\nradial-projection" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:radial-projection" tooltip="Radial projection of Bring's surface" target="_blank"];
+    rem_four_colourability [label="Rem\nfour-colourability" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:four-colourability" tooltip="Four-colourability of Bring's surface" target="_blank"];
+    rem_four_colour_theorem [label="Rem\nfour-colour-theorem" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:four-colour-theorem" tooltip="The four-colour theorem and Bring's surface" target="_blank"];
+    rem_cyclotomic_reduction [label="Rem\ncyclotomic-reduction" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:cyclotomic-reduction" tooltip="Cyclotomic reduction and $C_{\mathfrak{p}}$ preservation" target="_blank"];
+    def_quaternionic_spectral_resolvents [label="Def\nquaternionic-spec..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:quaternionic-spectral-resolvents" tooltip="Quaternionic spectral resolvents" target="_blank"];
+    rem_omega_constraints [label="Rem\nomega-constraints" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:omega-constraints" tooltip="Algebraic constraints in the $\omega_k$ basis" target="_blank"];
+    rem_spectral_dynamics [label="Rem\nspectral-dynamics" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:spectral-dynamics" tooltip="Spectral dynamics and the $\mathrm{Sp}(1)$ action" target="_blank"];
+    rem_primordial_vortex [label="Rem\nprimordial-vortex" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:primordial-vortex" tooltip="Primordial vortex and the deep-quantum limit" target="_blank"];
+    rem_geometric_drag [label="Rem\ngeometric-drag" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:geometric-drag" tooltip="Geometric drag and the mass residue" target="_blank"];
+    rem_seiberg_witten [label="Rem\nseiberg-witten" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:seiberg-witten" tooltip="Geometric resolution and the Seiberg--Witten differential" target="_blank"];
+    rem_reeb_exceptional_divisor [label="Rem\nreeb-exceptional-..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:reeb-exceptional-divisor" tooltip="Reeb vector field on the exceptional divisor" target="_blank"];
+    { rank=same; rem_descent_to_zero; def_brings_surface; rem_brings_qou_4tuple; rem_lagrange_resolvents; rem_braid_group_action; def_color_tube_coordinates; rem_aggregate_color_quantities; rem_color_tube_constraints; rem_color_tube_interpretation; rem_c5_color_tube; rem_intrinsic_color_cubic_pairing; prop_chiral_elliptic; rem_t_duality_elliptic; rem_color_tube_cubic; def_color_tube_fibers; def_observed_value; rem_t_duality_color_tube; rem_color_tube_subloci; rem_chiral_bundles; rem_brings_smoothness; def_briggs_klein_chart; rem_radial_projection; rem_four_colourability; rem_four_colour_theorem; rem_cyclotomic_reduction; def_quaternionic_spectral_resolvents; rem_omega_constraints; rem_spectral_dynamics; rem_primordial_vortex; rem_geometric_drag; rem_seiberg_witten; rem_reeb_exceptional_divisor; }
+  }
+
+  subgraph cluster_ch6 {
+    label="Ch.6 The Descartes Universe";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    def_descartes_condition [label="Def\ndescartes-condition" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:descartes-condition" tooltip="Descartes condition" target="_blank"];
+    rem_descartes_calabi_yau [label="Rem\ndescartes-calabi-yau" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descartes-calabi-yau" tooltip="The Descartes condition on Calabi--Yau manifolds" target="_blank"];
+    rem_descartes_ale [label="Rem\ndescartes-ale" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descartes-ale" tooltip="The Descartes condition on ALE spaces" target="_blank"];
+    rem_descartes_affine [label="Rem\ndescartes-affine" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descartes-affine" tooltip="The Descartes condition on affine space" target="_blank"];
+    rem_descent_one_dim [label="Rem\ndescent-one-dim" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descent-one-dim" tooltip="Descent to one complex dimension" target="_blank"];
+    prop_genus_maximal_descent [label="Prop\ngenus-maximal-des..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#prop:genus-maximal-descent" tooltip="Genus of the one-complex-dimensional descent" target="_blank"];
+    rem_descartes_leptons [label="Rem\ndescartes-leptons" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descartes-leptons" tooltip="Electrons, muons and the Reeb decomposition" target="_blank"];
+    rem_descartes_chirality [label="Rem\ndescartes-chirality" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:descartes-chirality" tooltip="Chirality as Reeb orientation" target="_blank"];
+    rem_light_cone_affine [label="Rem\nlight-cone-affine" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:light-cone-affine" tooltip="Light cone of an affine chart" target="_blank"];
+    rem_chirality_trefoil [label="Rem\nchirality-trefoil" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:chirality-trefoil" tooltip="Chirality and trefoil subgroups" target="_blank"];
+    rem_brings_curve [label="Rem\nbrings-curve" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:brings-curve" tooltip="Bring's curve" target="_blank"];
+    def_exceptional_divisor [label="Def\nexceptional-divisor" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:exceptional-divisor" tooltip="Exceptional divisor at $p$" target="_blank"];
+    def_chiral_sector_coords [label="Def\nchiral-sector-coords" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#def:chiral-sector-coords" tooltip="Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$" target="_blank"];
+    thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#thm:descartes" tooltip="Descartes theorem" target="_blank"];
+    rem_universality_general [label="Rem\nuniversality-general" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:universality-general" tooltip="Universality for a given Euler characteristic" target="_blank"];
+    rem_observation [label="Rem\nobservation" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:observation" tooltip="The notion of an observation" target="_blank"];
+    { rank=same; def_descartes_condition; rem_descartes_calabi_yau; rem_descartes_ale; rem_descartes_affine; rem_descent_one_dim; prop_genus_maximal_descent; rem_descartes_leptons; rem_descartes_chirality; rem_light_cone_affine; rem_chirality_trefoil; rem_brings_curve; def_exceptional_divisor; def_chiral_sector_coords; thm_descartes; rem_universality_general; rem_observation; }
+  }
+
+  subgraph cluster_ch7 {
+    label="Ch.7 p-Adic Quantum Groups";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    ex_p_adic_realisation [label="Ex\np-adic-realisation" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:p-adic-realisation" tooltip="$\mathbb{Q}_\pp$ realisation" target="_blank"];
+    ex_finite_field_realisation [label="Ex\nfinite-field-real..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#ex:finite-field-realisation" tooltip="$\mathbb{F}_\pp$ realisation" target="_blank"];
+    { rank=same; ex_p_adic_realisation; ex_finite_field_realisation; }
+  }
+
+  subgraph cluster_ch11 {
+    label="Ch.11 Experimental Evidence";
+    style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
+    fontsize=10;
+    rem_skein_decomposition [label="Rem\nskein-decomposition" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:skein-decomposition" tooltip="Skein Decomposition and Topological Mass Ratios" target="_blank"];
+    rem_cmb_q_torsion [label="Rem\ncmb-q-torsion" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:cmb-q-torsion" tooltip="CMB non-uniformity from $q$-torsion" target="_blank"];
+    rem_gravity_emergent [label="Rem\ngravity-emergent" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:gravity-emergent" tooltip="Gravity as emergent substrate geometry" target="_blank"];
+    rem_topological_defects [label="Rem\ntopological-defects" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:topological-defects" tooltip="Topological signatures in large-scale structure" target="_blank"];
+    rem_mass_ratio_predictions [label="Rem\nmass-ratio-predic..." fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:mass-ratio-predictions" tooltip="Theoretical mass ratios from the mass identity" target="_blank"];
+    rem_photonic_hall [label="Rem\nphotonic-hall" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:photonic-hall" tooltip="Photonic quantum Hall effect and $q$-deformed braiding" target="_blank"];
+    rem_lepton_discrepancies [label="Rem\nlepton-discrepancies" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:lepton-discrepancies" tooltip="Electron--muon discrepancies" target="_blank"];
+    rem_proton_radius_puzzle [label="Rem\nproton-radius-puzzle" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:proton-radius-puzzle" tooltip="The Proton Radius Puzzle" target="_blank"];
+    rem_entropic_gravity [label="Rem\nentropic-gravity" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:entropic-gravity" tooltip="Entropic forces and the substrate parameter" target="_blank"];
+    rem_crystal_resonance [label="Rem\ncrystal-resonance" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:crystal-resonance" tooltip="Quantum resonance in crystal lattices" target="_blank"];
+    rem_substrate_telescope [label="Rem\nsubstrate-telescope" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:substrate-telescope" tooltip="Substrate Telescopes" target="_blank"];
+    rem_magnetic_friction [label="Rem\nmagnetic-friction" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:magnetic-friction" tooltip="Non-monotonic magnetic friction from collective rotor dynamics" target="_blank"];
+    rem_lattice_layout [label="Rem\nlattice-layout" fillcolor="#FF6B6B" color="#DC143C" URL="quantum-observable-universe-claude-descent-lemma-proof-rcbr5.pdf#rem:lattice-layout" tooltip="Lattice layout and quantum resonance implications" target="_blank"];
+    { rank=same; rem_skein_decomposition; rem_cmb_q_torsion; rem_gravity_emergent; rem_topological_defects; rem_mass_ratio_predictions; rem_photonic_hall; rem_lepton_discrepancies; rem_proton_radius_puzzle; rem_entropic_gravity; rem_crystal_resonance; rem_substrate_telescope; rem_magnetic_friction; rem_lattice_layout; }
+  }
+
+}
