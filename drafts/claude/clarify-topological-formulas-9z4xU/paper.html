@@ -403,7 +403,7 @@ code { font-size: 90%; }
 </header>
 <div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">
   <a class="gh-badge" href="https://github.com/litlfred/qou/tree/claude/clarify-topological-formulas-9z4xU">&#x1F33F; claude/clarify-topological-formulas-9z4xU</a>
-  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/a2e4473ab66e86ca563ecb297d5112be0835794e">&#x1F4DD; a2e4473</a>
+  <a class="gh-badge" href="https://github.com/litlfred/qou/commit/5044894bb186e40488bb8fd0aba052b536e97215">&#x1F4DD; 5044894</a>
   <a class="gh-badge" href="https://github.com/litlfred/qou/pull/105">PR #105</a>
   <a class="gh-badge" href="quantum-observable-universe-claude-clarify-topological-formulas-9z4xu-diff.pdf" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>
 </div>
@@ -6413,23 +6413,97 @@ with <span
 class="math inline">\(\mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}}) =
 0\)</span>; its mass contribution therefore arises entirely from the
 Skein functional, not from hyperbolic volume.</p>
-<p><em>Step 2: The quark-content factor <span
-class="math inline">\(Q(q)\)</span>.</em> The factor <span
-class="math inline">\(Q(q)\)</span> encodes the flavor composition of
-the hadron—specifically, the number of up (<span
-class="math inline">\(u\)</span>) and down (<span
-class="math inline">\(d\)</span>) quarks and the <span
-class="math inline">\(q\)</span>-weighted color-exchange linking number.
-For the proton (<span class="math inline">\(uud\)</span>) and neutron
-(<span class="math inline">\(udd\)</span>) these factors differ by the
-<span class="math inline">\(u\)</span>-<span
-class="math inline">\(d\)</span> mass splitting, which the Skein
-recursion resolves at each crossing of the color-exchange braid.
-Iterating the Skein relation across all crossings of the <span
-class="math inline">\(uud\)</span> (respectively <span
-class="math inline">\(udd\)</span>) braid diagram yields <span
-class="math inline">\(m_p = 938.272\;\mathrm{MeV}\)</span> and <span
-class="math inline">\(m_n = 939.565\;\mathrm{MeV}\)</span>.</p>
+<p><em>Step 2: Pair Skein masses and the crossing-by-crossing
+recursion.</em> The Borromean braid of a nucleon with quarks <span
+class="math inline">\((q_1, q_2, q_3)\)</span> has six crossings
+organised into three crossing pairs, one pair per color-exchange
+channel. At each pair involving quarks of species <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span>, a double application of the Skein
+relation yields the <em>pair Skein mass</em> <span
+class="math display">\[\mathcal{S}_{ab}(q)
+\;=\;
+\frac{q\,\mu_a \;+\; q^{-1}\,\mu_b}
+{q^{1/2} + q^{-1/2}},\]</span> where <span
+class="math inline">\(\mu_a\)</span> is the <em>dressed quark Skein
+mass</em> of species <span class="math inline">\(a\)</span>—the mass
+contribution of a single quark strand including its strong-field
+dressing from the Hopf-link interaction with the color background. The
+total nucleon mass is the sum over the three crossing pairs: $$m_N ;=;
+\mathcal{S}_{q_1 q_2}(q)</p>
+<ul>
+<li>\mathcal{S}_{q_1 q_3}(q)</li>
+<li>\mathcal{S}_{q_2 q_3}(q).$$</li>
+</ul>
+<p><em>Step 2a: Proton (<span class="math inline">\(uud\)</span>).</em>
+The proton has quarks <span class="math inline">\((u_1, u_2,
+d)\)</span>. The three crossing pairs and their Skein masses are: <span
+class="math display">\[\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} &amp; \textbf{Quarks} &amp; \textbf{Skein mass}
+&amp; \textbf{Value (MeV)} \\ \hline
+\text{I}   &amp; (u_1,\, u_2) &amp;
+\displaystyle \mathcal{S}_{uu}
+= \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
+&amp; 312.36 \\ \hline
+\text{II}  &amp; (u_1,\, d)   &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{III} &amp; (u_2,\, d)   &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
+&amp; \mathbf{938.272} \\ \hline
+\end{array}\]</span></p>
+<p><em>Step 2b: Neutron (<span class="math inline">\(udd\)</span>).</em>
+The neutron has quarks <span class="math inline">\((u, d_1,
+d_2)\)</span>. Swapping one up quark for a down quark replaces the
+same-flavor pair: <span
+class="math display">\[\renewcommand{\arraystretch}{1.3}
+\begin{array}{|c|c|l|c|}
+\hline
+\textbf{Pair} &amp; \textbf{Quarks} &amp; \textbf{Skein mass}
+&amp; \textbf{Value (MeV)} \\ \hline
+\text{I}   &amp; (u,\, d_1) &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{II}  &amp; (u,\, d_2) &amp;
+\displaystyle \mathcal{S}_{ud}
+= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 312.97 \\ \hline
+\text{III} &amp; (d_1,\, d_2) &amp;
+\displaystyle \mathcal{S}_{dd}
+= \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
+&amp; 313.65 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total:}\quad
+m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
+&amp; \mathbf{939.565} \\ \hline
+\end{array}\]</span></p>
+<p><em>Step 2c: The <span class="math inline">\(u\)</span>-<span
+class="math inline">\(d\)</span> mass splitting.</em> The proton–neutron
+mass difference isolates the same-flavor crossing pair: <span
+class="math display">\[m_n - m_p
+\;=\;
+\mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
+\;=\;
+\frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).\]</span>
+Substituting <span class="math inline">\(q = 1.1097\)</span> and the
+CODATA splitting <span class="math inline">\(m_n - m_p =
+1.293\,332\,51\;\mathrm{MeV}\)</span> determines the dressed quark mass
+difference: <span class="math display">\[\mu_d - \mu_u
+\;=\;
+\frac{q^{1/2}+q^{-1/2}}{q+q^{-1}}\,(m_n - m_p)
+\;=\;
+\frac{2.0027}{2.0109} \times 1.293
+\;\approx\; 1.288\;\mathrm{MeV},\]</span> and the individual dressed
+masses are <span class="math inline">\(\mu_u \approx
+311.10\;\mathrm{MeV}\)</span> and <span class="math inline">\(\mu_d
+\approx 312.39\;\mathrm{MeV}\)</span>.</p>
 <p><em>Step 3: Deuteron and binding energy.</em> The deuteron is a
 six-component link <span class="math inline">\(L_6\)</span> formed by
 joining the proton and neutron braids. Its mass is the Skein mass of
@@ -6454,7 +6528,7 @@ planned observations, and potential new experiments.</p>
 <h2 id="large-scale-observations"><span id="sec:large-scale"></span>Large-Scale Observations</h2>
 <h3 id="cmb-anisotropy-and-q-torsion-imprint">CMB Anisotropy and <span
 class="math inline">\(q\)</span>-Torsion Imprint</h3>
-<div id="rem:cmb-q-torsion" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L185" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:cmb-q-torsion" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L277" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.4 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (CMB non-uniformity from <span
 class="math inline">\(q\)</span>-torsion). <em>In the Descartes universe
@@ -6507,7 +6581,7 @@ class="math inline">\(q\)</span>-torsion leaves.</p></li>
 </ul>
 <h3 id="gravitational-signatures-and-emergent-geometry">Gravitational
 Signatures and Emergent Geometry</h3>
-<div id="rem:gravity-emergent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L231" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:gravity-emergent" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L323" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.5 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Gravity as emergent substrate
 geometry). <em>In the QOU framework, general relativity emerges as the
@@ -6552,7 +6626,7 @@ the Newtonian potential.</p></li>
 </ul>
 <h3 id="large-scale-structure-and-topological-defects">Large-Scale
 Structure and Topological Defects</h3>
-<div id="rem:topological-defects" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L271" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:topological-defects" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L363" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.6 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Topological signatures in large-scale
 structure). <em>The <span class="math inline">\(\mathrm{SO}(3)\)</span>
@@ -6591,7 +6665,7 @@ points in the brane tower.</p></li>
 </ul>
 <h2 id="small-scale-observations"><span id="sec:small-scale"></span>Small-Scale Observations</h2>
 <h3 id="mass-equation-predictions"><span id="sec:mass-predictions"></span>Mass Equation Predictions</h3>
-<div id="rem:mass-ratio-predictions" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L314" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:mass-ratio-predictions" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L406" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.7 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Theoretical mass ratios from the mass
 identity). <em>The <a class="defn-link" href="#def:mass-identity">mass identity</a>
@@ -6638,7 +6712,7 @@ lattice results.</p></li>
 </ul>
 <h3 id="quantum-hall-effect-of-photons">Quantum Hall Effect of
 Photons</h3>
-<div id="rem:photonic-hall" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L358" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:photonic-hall" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L450" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.8 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Photonic quantum Hall effect and <span
 class="math inline">\(q\)</span>-deformed braiding). <em>Recent
@@ -6684,7 +6758,7 @@ Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-
 </ul>
 <h3 id="lepton-anomalies-and-reeb-decomposition-tests">Lepton Anomalies
 and Reeb-Decomposition Tests</h3>
-<div id="rem:lepton-discrepancies" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L399" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:lepton-discrepancies" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L491" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.9 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Electron–muon discrepancies). <em>The
 QOU framework predicts that lepton generations are distinguished by the
@@ -6727,7 +6801,7 @@ corrections to the electromagnetic vertex.</li>
 <h3
 id="generation-dependent-couplings-and-the-proton-charge-radius">Generation-Dependent
 Couplings and the Proton Charge Radius</h3>
-<div id="rem:proton-radius-puzzle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L437" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:proton-radius-puzzle" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L529" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.10 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:proton-radius-puzzle">The Proton Radius Puzzle</a>). <em>The
 “Proton Radius Puzzle” — the discrepancy between the proton charge
@@ -6778,7 +6852,7 @@ test the third-generation coupling to the <a class="defn-link" href="#def:substr
 </ul>
 <h3 id="informational-and-entropic-gravity-tests">Informational and
 Entropic Gravity Tests</h3>
-<div id="rem:entropic-gravity" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L483" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:entropic-gravity" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L575" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.11 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Entropic forces and the substrate
 parameter). <em>The <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
@@ -6821,7 +6895,7 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 </ul>
 <h3 id="crystal-lattice-resonance-and-substrate-telescopes">Crystal
 Lattice Resonance and Substrate Telescopes</h3>
-<div id="prop:local-substrate-q" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L522" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="prop:local-substrate-q" class="proposition"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L614" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Proposition 11.12 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Local Value of the Substrate
 Parameter). <em>In any sufficiently small neighbourhood <span
@@ -6878,7 +6952,7 @@ conductance corrections of
 Remark <a href="#rem:photonic-hall" data-reference-type="ref" data-reference="rem:photonic-hall">11.8</a>. ◻</p>
 </div>
 
-<div id="rem:crystal-probe-q" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L567" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:crystal-probe-q" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L659" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.13 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Crystal-lattice probe of <span
 class="math inline">\(q\)</span>). <em>A periodic crystal lattice
@@ -6903,7 +6977,7 @@ an independent experimental route to measuring the substrate
 parameter.</em></p>
 </div>
 
-<div id="rem:substrate-telescope" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L583" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:substrate-telescope" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L675" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.14 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#rem:substrate-telescope">Substrate Telescopes</a>). <em>The
 directional dependence of <span class="math inline">\(q\)</span>-torsion
@@ -6922,7 +6996,7 @@ anisotropy of the <a class="defn-link" href="#def:substrate-parameter">substrate
 strain.</em></p>
 </div>
 
-<div id="rem:magnetic-friction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L597" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:magnetic-friction" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L689" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Non-monotonic magnetic friction from
 collective rotor dynamics). <em>Recent experiments by Gu, Lüders, and
@@ -6974,7 +7048,7 @@ noise beyond thermal limits.</p></li>
 NAUTILUS bar detectors), which recorded orientation-dependent noise
 floors in cryogenic crystalline bars.</p></li>
 </ul>
-<div id="rem:lattice-layout" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L640" target="_blank" title="View source">&#x1F4C4;</a>
+<div id="rem:lattice-layout" class="remark"><a class="src-link" href="https://github.com/litlfred/qou/blob/claude/clarify-topological-formulas-9z4xU/chapters/experimental-evidence.tex#L732" target="_blank" title="View source">&#x1F4C4;</a>
 
 <p><strong>Remark 11.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Lattice layout and quantum resonance
 implications). <em>Connecting the QOU resonance condition
