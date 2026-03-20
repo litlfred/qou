@@ -95,19 +95,22 @@ lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
 lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
     (h_eq : experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q) ^ 2) :
     (1 - 1 / q) ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
-  have hq0 : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
-  have hplanck : quantum_planck q = 1 - 1 / q := quantum_planck_inv q hq
-  rw [hplanck] at h_eq
-  have hplanck_ne : (1 - 1 / q) ^ 2 ≠ 0 := by
-    apply pow_ne_zero
-    intro h
-    have : 1 / q = 1 := by linarith
-    have : q = 1 := by field_simp at this; linarith
+  -- Step 1: Rewrite quantum_planck to 1 - 1/q in the hypothesis
+  have hplanck_def : quantum_planck q = 1 - 1 / q := quantum_planck_inv q hq
+  rw [hplanck_def] at h_eq
+  -- Step 2: Show the denominator (1 - 1/q)² ≠ 0 since q > 1 implies q ≠ 1
+  have hplanck_sq_ne : (1 - 1 / q) ^ 2 ≠ 0 := by
+    apply pow_ne_zero 2
+    have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
+    intro h; have : q = 1 := by field_simp at h; linarith
     linarith
+  -- Step 3: Show experimental_mu_e_ratio ≠ 0
   have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
     unfold experimental_mu_e_ratio; norm_num
-  field_simp at h_eq ⊢
-  nlinarith
+  -- Step 4: Rearrange ratio = vol / sq  ⟹  sq = vol / ratio
+  rw [div_eq_iff hplanck_sq_ne] at h_eq
+  rw [eq_div_iff hmu_ne]
+  linarith
 
 /-- **Theorem**: Given the topological mass conjecture and experimental data,
     the substrate parameter `q` must be approximately 1.1097.
