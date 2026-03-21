@@ -423,3 +423,151 @@ export interface CODATAConstants {
   source: string;
   values: Record<string, { value: number; uncertainty?: number; unit: string }>;
 }
+
+// =============================================================================
+// §8  Test Infrastructure — Definitions, Results, and Reports
+// =============================================================================
+
+/**
+ * Test category — groups tests by what they validate.
+ * Used for filtering and report sections.
+ */
+export type TestCategory =
+  | "lean-compile"       // Does each .lean file compile?
+  | "lean-library"       // Are required libraries (mathlib, etc.) present?
+  | "lean-sorry"         // Sorry audit per declaration
+  | "latex-lean-coverage" // Does every \lean{} in LaTeX have a Lean decl?
+  | "latex-structure"    // LaTeX labels, cross-refs, environments
+  | "schema-validity"   // Do JSON manifests match their schemas?
+  | "infrastructure"    // MCP, scripts, config files
+  | "custom";           // User-defined tests
+
+/** Severity of a test — controls build-breaking behavior. */
+export type TestSeverity = "error" | "warning" | "info";
+
+/** Outcome of a single test. */
+export type TestOutcome = "pass" | "fail" | "skip" | "error";
+
+/**
+ * A single test definition — what to check.
+ * Tests are declarative: the runner interprets them.
+ */
+export interface TestDefinition {
+  /** Unique test ID (e.g., "lean-compile:QOU.Torsion"). */
+  id: string;
+  /** Human-readable description. */
+  description: string;
+  category: TestCategory;
+  severity: TestSeverity;
+  /** Lean project this test applies to (e.g., "QOU", "Fred2005"). Null = repo-wide. */
+  lean_project?: string;
+  /** File path relevant to this test (relative to repo root). */
+  file?: string;
+  /** LaTeX label (for coverage tests). */
+  latex_label?: string;
+  /** Lean declaration name (for compile/sorry tests). */
+  lean_decl?: string;
+  /** Tags for filtering (e.g., ["ch4", "torsion", "blocking"]). */
+  tags?: string[];
+}
+
+/**
+ * Result of running a single test.
+ */
+export interface TestResult {
+  /** References TestDefinition.id. */
+  test_id: string;
+  outcome: TestOutcome;
+  /** Duration in milliseconds. */
+  duration_ms?: number;
+  /** Human-readable message (especially on failure). */
+  message?: string;
+  /** Structured details (compiler output, diff, etc.). */
+  details?: Record<string, unknown>;
+  /** ISO-8601 timestamp. */
+  timestamp: string;
+}
+
+/**
+ * Summary statistics for a test run.
+ */
+export interface TestSummary {
+  total: number;
+  passed: number;
+  failed: number;
+  skipped: number;
+  errored: number;
+  /** Duration of entire run in milliseconds. */
+  duration_ms: number;
+  /** Breakdown by category. */
+  by_category: Record<TestCategory, { total: number; passed: number; failed: number }>;
+}
+
+/**
+ * A complete test report — output of a test run.
+ * Consumed by CI, publication pipeline, and coverage rendering.
+ */
+export interface TestReport {
+  version: "1.0";
+  /** ISO-8601 timestamp of the run. */
+  generated_at: string;
+  /** Git commit SHA. */
+  commit_sha: string;
+  /** Lean project(s) tested (e.g., ["QOU", "Fred2005"]). */
+  lean_projects: string[];
+  summary: TestSummary;
+  results: TestResult[];
+}
+
+// =============================================================================
+// §9  Proof Coverage — Publication Metadata
+// =============================================================================
+
+/** Coverage status for a single proof object, used in PDF/HTML rendering. */
+export type CoverageStatus =
+  | "fully-formalized"   // sorry-free, \leanok
+  | "stated"             // \lean{} present, has sorry
+  | "not-formalized"     // no \lean{} tag
+  | "not-applicable";    // remark, example — no formalization expected
+
+/**
+ * Per-object coverage entry consumed by the publication pipeline.
+ * The ∀ symbol in PDF/HTML links to the lean_docs_url.
+ */
+export interface CoverageEntry {
+  /** LaTeX label (e.g., "thm:lifting-exists"). */
+  label: string;
+  object_type: ObjectType;
+  status: CoverageStatus;
+  /** Lean declaration name (if any). */
+  lean_decl?: string;
+  /** URL to pretty-printed Lean documentation (doc-gen4). */
+  lean_docs_url?: string;
+  /** URL to source on GitHub Pages. */
+  lean_source_url?: string;
+  /** Chapter number. */
+  chapter?: number;
+  /** Rendered theorem number (e.g., "4.12"). */
+  number?: string;
+}
+
+/**
+ * Proof coverage manifest — generated during build,
+ * consumed by LaTeX \lean{} macro and HTML renderer.
+ */
+export interface CoverageManifest {
+  version: "1.0";
+  generated_at: string;
+  commit_sha: string;
+  /** Overall coverage statistics. */
+  stats: {
+    total_objects: number;
+    fully_formalized: number;
+    stated: number;
+    not_formalized: number;
+    not_applicable: number;
+    /** Percentage of formalizable objects that are fully formalized. */
+    coverage_pct: number;
+  };
+  entries: CoverageEntry[];
+}

@@ -27,6 +27,7 @@ When a user request arrives, route to the right skill(s):
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` |
 | "simplify / streamline proofs" | `local/proof-simplifier` |
 | "validate LaTeX" | `local/latex-validation` |
+| "test / unit test / coverage" | `local/test-engineer` |
 
 **Decision tree**: (1) Does it touch `.tex`? → LaTeX skills.
 (2) Does it touch `.lean`? → Lean skills above. (3) Both? → also

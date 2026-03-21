@@ -98,6 +98,8 @@ whether running locally (stdio) or remotely (Streamable HTTP).
 | Visualizer | General-purpose agent | Dedicated visualizer context |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
+| Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
+| Test report / coverage stats | `test-engineer` | JSON TestReport output |
 
 ## Responsibilities
 
@@ -142,6 +144,30 @@ whether running locally (stdio) or remotely (Streamable HTTP).
    - The CI workflows (`lean-build.yml`, `blueprint.yml`, `lean_ci.yml`)
      run generation as part of the automated pipeline — that is CI-only
      behavior and must not be replicated in local agent workflows.
+
+## Proactive error detection → unit tests
+
+Whenever the editor encounters or causes a potential error, it should:
+
+1. **Identify testable invariants** — e.g., "this JSON must always have field X",
+   "this \lean{} tag must resolve", "this label must match its env type".
+2. **Ask the user**: "I noticed [error]. Should I write a unit test to prevent
+   this in the future?" (multiple-choice: Yes / No / Just fix it)
+3. **If yes**: delegate to the `test-engineer` skill to write a regression test
+   in `scripts/tests/`. The test uses `bun:test` and TypeScript.
+4. **Fix the error** regardless of whether a test is written.
+
+Examples of testable errors the editor should watch for:
+- JSON schema violations (proof-objects.json missing fields)
+- \lean{Decl} tags that don't resolve to Lean source
+- Label prefix mismatches (def: on an example environment)
+- Config files missing required fields
+- Build scripts producing invalid output
+- Lean files without imports
+- \leanok without \lean{}
+
+**This behavior persists across sessions** — the editor always watches for
+testable errors and asks before writing tests.
 
 ## Interaction style
 
