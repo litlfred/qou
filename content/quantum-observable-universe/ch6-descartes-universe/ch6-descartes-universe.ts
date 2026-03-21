@@ -20,6 +20,7 @@ export default chapter({
         "descartes-calabi-yau",
         "descent-one-dim",
         "genus-maximal-descent",
+        "genus-maximal-descent-proof",
       ],
     }),
 
@@ -56,6 +57,7 @@ export default chapter({
       label: "sec:descartes-braid",
       blocks: [
         "descartes-braid-structure",
+        "descartes-braid-structure-proof",
         "skein-archimedean-shadow",
       ],
     }),
@@ -65,6 +67,7 @@ export default chapter({
       label: "sec:descartes-theorem",
       blocks: [
         "descartes",
+        "descartes-proof",
         "universality-general",
         "descartes-yekutieli",
         "observation-brings",

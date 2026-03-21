@@ -25,6 +25,7 @@ import type {
   ConjectureBlock,
   ExampleBlock,
   RemarkBlock,
+  ProofBlock,
   ProseBlock,
   EquationBlock,
   DiagramBlock,
@@ -47,6 +48,7 @@ import {
   ConjectureSchema,
   ExampleSchema,
   RemarkSchema,
+  ProofSchema,
   ProseSchema,
   EquationSchema,
   DiagramSchema,
@@ -98,6 +100,10 @@ export function example(data: Omit<ExampleBlock, "kind">): ExampleBlock {
 
 export function remark(data: Omit<RemarkBlock, "kind">): RemarkBlock {
   return validated(RemarkSchema, { kind: "remark" as const, ...data });
+}
+
+export function proof(data: Omit<ProofBlock, "kind">): ProofBlock {
+  return validated(ProofSchema, { kind: "proof" as const, ...data });
 }
 
 export function prose(data?: Omit<ProseBlock, "kind">): ProseBlock {

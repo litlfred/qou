@@ -149,6 +149,7 @@ const ENV_NAMES: Record<string, string> = {
   conjecture: "conjecture",
   example: "example",
   remark: "remark",
+  proof: "proof",
 };
 
 /**
@@ -216,27 +217,11 @@ export function renderBlock(block: Block, mdContent: string): string {
         lines.push(`  \\uses{${block.uses.join(", ")}}`);
       }
 
-      // Body content — strip proof portion (after ---) if present
-      let statementMd = mdContent;
-      let proofMd: string | null = null;
-      if ("hasProof" in block && block.hasProof) {
-        const proofSep = mdContent.indexOf("\n---\n");
-        if (proofSep >= 0) {
-          statementMd = mdContent.slice(0, proofSep);
-          proofMd = mdContent.slice(proofSep + 5);
-        }
-      }
-      const body = markdownToLatex(statementMd);
+      // Body content
+      const body = markdownToLatex(mdContent);
       lines.push(body);
 
       lines.push(`\\end{${envName}}`);
-
-      // Inline proof (for theorems etc.)
-      if (proofMd) {
-        lines.push("\\begin{proof}");
-        lines.push(markdownToLatex(proofMd));
-        lines.push("\\end{proof}");
-      }
       break;
     }
   }

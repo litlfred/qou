@@ -109,6 +109,7 @@
     .blk-stub .stub-kind{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.6rem}
     .blk-stub.remark .stub-kind{color:var(--fg-d)}
     .blk-stub.example .stub-kind{color:var(--grn)}
+    .blk-stub.proof .stub-kind{color:var(--fg-d);font-style:italic}
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
@@ -996,6 +997,59 @@
         return frag;
       }
 
+      // Proof — collapsible, default closed
+      if (block.kind === 'proof') {
+        const frag = document.createDocumentFragment();
+
+        const stub = mk('div', 'blk-stub proof');
+        let stubLean = '';
+        if (block.lean) {
+          const v = block.lean.validation || 'not_checked';
+          stubLean = ` <span style="font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)">${leanIcon(v)}${esc(block.lean.decl)}</span>`;
+        }
+        stub.innerHTML = `<span class="stub-kind">proof</span> ${block.title ? inl(block.title) : (block.label || '')}${stubLean}`;
+        renderMath(stub);
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
+        const wrap = mk('div', 'blk blk-proof');
+        wrap.style.display = 'none'; // default closed
+
+        const d = mk('div', 'env proof');
+        if (block.label) d.id = block.label;
+        const prfHdr = mkBlockHeader('proof', block.title, block.label);
+        // Lean badge
+        if (block.lean) {
+          const s = block.status || 'not_started';
+          const v = block.lean.validation || 'not_checked';
+          const badge = mk('span',`lb ${s}`);
+          badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)}`;
+          badge.title = `Lean: ${s.replace(/_/g,' ')}`;
+          prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
+        }
+        const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
+        prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        prfHdr._acts.appendChild(prfColBtn);
+        const prfFb = mk('button','fb-act'); prfFb.textContent = 'feedback';
+        prfFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        prfHdr._acts.appendChild(prfFb);
+        d.appendChild(prfHdr);
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, prfHdr);
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh + '<div class="qed"></div>';
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb);
+        });
+        return frag;
+      }
+
       // Prose
       if (block.kind === 'prose') {
         const d = mk('div','blk');
@@ -1111,57 +1165,49 @@
       }
       addTodoIndicators(d, block);
 
-      // Proof block (collapsible, below the env)
-      let prfDiv = null;
-      if (block.hasProof) {
-        prfDiv = mk('div','prf');
+      // Proofs toggle (if block has associated proofs, like examples[])
+      if (block.proofs?.length) {
+        const toggle = mk('div','prf-toggle');
+        toggle.innerHTML = `<span class="arrow">▸</span> ${block.proofs.length} proof(s)`;
+        const panel = mk('div','prf-body');
+        let prfLoaded = false;
 
-        // Toggle: "▸ Proof" with optional lean badge
-        const prfToggle = mk('div','prf-toggle');
-        let prfLeanHtml = '';
-        if (block.lean) {
-          const v = block.lean.validation || 'not_checked';
-          prfLeanHtml = `<span class="prf-lean">${leanIcon(v)}${esc(block.lean.decl)}</span>`;
-        }
-        prfToggle.innerHTML = `<span class="arrow">▸</span> Proof${prfLeanHtml}`;
-        const prfBody = mk('div','prf-body');
-
-        prfToggle.onclick = () => {
-          prfToggle.classList.toggle('open');
-          prfBody.classList.toggle('open');
+        toggle.onclick = () => {
+          toggle.classList.toggle('open');
+          panel.classList.toggle('open');
+          if (!prfLoaded) {
+            prfLoaded = true;
+            block.proofs.forEach(prfLabel => {
+              const prfBlock = bix.get(prfLabel);
+              if (prfBlock) {
+                const {html: ph, texBlocks: ptx} = parseMd(prfBlock.md || '');
+                const prfDiv = mk('div','env proof');
+                prfDiv.style.borderLeft = 'none';
+                prfDiv.style.margin = '.4rem 0';
+                let prfHd = `<span class="bk">proof</span>`;
+                if (prfBlock.title) prfHd += `<span class="bt">${inl(prfBlock.title)}</span>`;
+                if (prfBlock.lean) {
+                  const v = prfBlock.lean.validation || 'not_checked';
+                  prfHd += `<span class="prf-lean">${leanIcon(v)}${esc(prfBlock.lean.decl)}</span>`;
+                }
+                prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
+                fillTex(prfDiv, ptx, prfBlock.rendered);
+                renderMath(prfDiv);
+                panel.appendChild(prfDiv);
+              }
+            });
+          }
         };
-        prfDiv.appendChild(prfToggle);
-        prfDiv.appendChild(prfBody);
-        d.appendChild(prfDiv);
+        d.appendChild(toggle);
+        d.appendChild(panel);
       }
 
       // Lazy hydrate the main content
       lazyInit(d, () => {
-        let md = block.md || '';
-        let proofMd = null;
-
-        // Split on --- separator if hasProof
-        if (block.hasProof) {
-          const sepIdx = md.indexOf('\n---\n');
-          if (sepIdx >= 0) {
-            proofMd = md.slice(sepIdx + 5);
-            md = md.slice(0, sepIdx);
-          }
-        }
-
-        const {html: bh, texBlocks: tx} = parseMd(md);
+        const {bh, tx} = hydrateContent();
         bb.innerHTML = bh;
         fillTex(bb, tx, block.rendered);
         renderMath(bb);
-
-        // Hydrate proof content
-        if (proofMd && prfDiv) {
-          const prfBody = prfDiv.querySelector('.prf-body');
-          const {html: ph, texBlocks: ptx} = parseMd(proofMd);
-          prfBody.innerHTML = ph + '<div class="qed"></div>';
-          fillTex(prfBody, ptx, block.rendered);
-          renderMath(prfBody);
-        }
       });
 
       return d;
@@ -1228,10 +1274,11 @@
       paper = p;
       katexMacros = buildKatexMacros(p.macros);
       bix.clear();
-      const childExamples = new Set(); // examples shown via parent's examples[] toggle
+      const childBlocks = new Set(); // examples/proofs shown via parent's toggle
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
-        if (b.examples) for (const ex of b.examples) childExamples.add(ex);
+        if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+        if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
       }
 
       const app = document.getElementById('app');
@@ -1356,7 +1403,7 @@
           renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
-            if (b.kind === 'example' && b.label && childExamples.has(b.label) && pendingScroll !== b.label) continue;
+            if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
             sd.appendChild(renderBlock(b));
           }
           cd.appendChild(sd);
@@ -1560,7 +1607,7 @@
     //   #/view/<label>           → paper view, scrolled to block
     //   #/edit/<label>           → block edit view
     //   #<label>                 → shorthand for #/view/<label>
-    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|sec|chap):/;
+    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
 
     async function route() {

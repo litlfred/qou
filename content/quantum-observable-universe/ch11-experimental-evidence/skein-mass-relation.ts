@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:skein-mass-relation",
   title: "$q$-Deformed Skein Relation",
   uses: ["rem:skein-decomposition", "def:substrate-parameter", "def:quantum-planck-constant"],
-  hasProof: true,
+  proofs: ["prf:skein-mass-relation"],
   lean: {
     decl: "QOU.HadronicMass.SkeinMassRelation",
     validation: "leanok",

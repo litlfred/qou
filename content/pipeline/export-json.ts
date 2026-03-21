@@ -52,7 +52,8 @@ interface ExportedBlock {
   uses?: string[];
   lean?: LeanRef & { source?: string };
   status?: string;
-  hasProof?: boolean;
+  proofs?: string[];
+  examples?: string[];
   tex?: string;
   caption?: string;
   rendered?: RenderedAsset[];
@@ -163,7 +164,8 @@ async function main() {
             uses: "uses" in block ? block.uses : undefined,
             lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
             status: "status" in block ? block.status : undefined,
-            hasProof: "hasProof" in block ? block.hasProof : undefined,
+            proofs: "proofs" in block ? block.proofs : undefined,
+            examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
             caption: "caption" in block ? block.caption : undefined,
             rendered,

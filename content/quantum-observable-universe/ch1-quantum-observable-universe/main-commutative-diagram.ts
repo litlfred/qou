@@ -5,7 +5,7 @@ export default proposition({
   title: "Main Commutative Diagram",
   lean: { decl: "QOU.main_commutative_diagram", validation: "not_checked" },
   uses: ["ex:c-quantum-observable-universe", "ex:instanton", "def:substrate-parameter", "def:q-yang-mills-levi"],
-  hasProof: true,
+  proofs: ["prf:main-commutative-diagram"],
   tags: ["commutative-diagram", "main-result"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/main-commutative-diagram-0.svg", blockIndex: 0, hash: "ac46a8d6ede5" },

@@ -4,6 +4,6 @@ export default proposition({
   label: "prop:local-substrate-q",
   title: "Local Value of the Substrate Parameter",
   uses: ["def:substrate-parameter", "prop:skein-mass-relation", "prop:terminal-resolution", "rem:photonic-hall"],
-  hasProof: true,
+  proofs: ["prf:local-substrate-q"],
   tags: ["substrate", "mass", "observation"],
 });

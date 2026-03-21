@@ -50,6 +50,7 @@ export default chapter({
         "witt-vector-lifting-intro",
         "witt-vector-lift",
         "skew-poisson-integration",
+        "skew-poisson-integration-proof",
         "witt-lift-qou",
       ],
     }),

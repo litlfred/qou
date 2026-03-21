@@ -4,8 +4,8 @@ export default theorem({
   label: "thm:su2-emergence",
   title: "Emergence of the gauge group",
   uses: ["def:quantum-observable-universe"],
+  proofs: ["prf:su2-emergence"],
   examples: ["ex:su2-emergence"],
-  hasProof: true,
   tags: ["emergence", "gauge-group", "su2"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/su2-emergence-0.svg", blockIndex: 0, hash: "ff77986f66d2" },
