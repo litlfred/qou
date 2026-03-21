@@ -378,6 +378,75 @@ encoding the self-dual curvature, with the simplicity constraint
 selecting the physical (instanton) sector.
 \end{remark}
 
+\begin{proposition}[From Tannakian emergence to $2$-group fake flatness]
+\label{prop:emergence-to-fake-flat}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying
+the categorical volume constraint
+(Definition~\ref{def:categorical-volume-constraint}), so that
+$G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$
+(Theorem~\ref{thm:su2-emergence}).  Then the inner-automorphism
+$2$-group $\mathrm{INN}(G_q)$ is the unique strict $2$-group whose
+fake-flatness condition~\eqref{eq:fake-flatness} reproduces the
+instanton equation $F_A^{-} = 0$ under the simplicity constraint.
+\end{proposition}
+
+\begin{proof}
+The argument proceeds in three steps.
+
+\emph{Step~1: The volume constraint determines the Lie algebra.}\;
+The categorical volume constraint provides a non-degenerate epimorphism
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$.  Under the fibre functor
+$\omega$, this endows the rank-$2$ module $\omega(V)$ with a
+$q$-antisymmetric pairing whose invariance algebra is
+$\mathfrak{su}_q(2)$.  This is the Lie algebra of the reconstructed
+group $G_q$, and hence of the crossed module
+$\partial \colon G_q \xrightarrow{\mathrm{id}} G_q$ defining
+$\mathrm{INN}(G_q)$~\eqref{eq:crossed-module-ses}.
+
+\emph{Step~2: The determinant-one condition descends to the
+$2$-form datum.}\;
+A $2$-connection $(A, B)$ for the principal $2$-bundle of
+$\mathrm{INN}(G_q)$ takes values in
+$\mathfrak{g}_q = \mathfrak{su}_q(2)$.  Fake
+flatness~\eqref{eq:fake-flatness} sets $B = F_A$, so $B$ inherits the
+tracelessness forced by the determinant constraint
+$\det(g_V) = 1$ of Theorem~\ref{thm:su2-emergence}: $B$ is
+$\mathrm{Ad}(P)$-valued with $\mathrm{tr}\,B = 0$, i.e.\
+$\mathfrak{su}_q(2)$-valued rather than $\mathfrak{gl}_q(2)$-valued.
+
+\emph{Step~3: Simplicity plus fake flatness gives the instanton
+equation.}\;
+Imposing the simplicity constraint
+$B \in \Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P))$
+(Remark~\ref{rem:self-dual-2group}) and combining with $F_A = B$
+yields $F_A = F_A^+$, hence $F_A^- = 0$.  Step~1 guarantees the
+structure group is $\mathrm{SU}_q(2)$---not a quotient of
+$\mathrm{GL}_q(2)$---so the instanton moduli space carries the
+gauge symmetry dictated by the categorical axioms.
+\end{proof}
+
+\begin{remark}[Categorical origin of the simplicity constraint]
+\label{rem:simplicity-from-category}
+The $*$-involution on~$\mathcal{C}$---required by the QOU
+observability axiom---induces via the fibre functor an involution on
+$\Omega^2(M, \mathfrak{g}_q)$ whose $+1$-eigenspace is exactly the
+self-dual forms $\Omega^{2,+}(M, \mathfrak{g}_q)$.  Thus the full
+chain
+\[
+  \text{volume constraint}
+  \;\xRightarrow{\text{Tannaka}}\;
+  G_q = \mathrm{SU}_q(2)
+  \;\xRightarrow{\mathrm{INN}}\;
+  F_A = B
+  \;\xRightarrow{*\text{-structure}}\;
+  B = F_A^+
+  \;\Longrightarrow\;
+  F_A^- = 0
+\]
+is forced by the axioms of the quantum observable universe, with no
+additional geometric input beyond the CR structure of~$M$.
+\end{remark}
+
 \begin{remark}[Frobenius structure of the $\mathbb{C}$ gauge algebra]
 \label{rem:frobenius-simplification}
 The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural
