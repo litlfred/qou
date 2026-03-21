@@ -83,8 +83,9 @@ Architecture: `Client → oauth2-proxy (Google OAuth) → lean-lsp-mcp (HTTP)`
 - Docker image built by CI on every push to main (`build-lean-mcp.yml`)
 - All Lean deps and oleans baked into the image for fast startup (~10-20s)
 - Auth: Google OAuth with email whitelist (from `lean-mcp.config.json`)
-- Auto-update: Watchtower polls GHCR for new images
+- Auto-update: `self-update.sh` polls git + GHCR every minute via cron
 - Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
+- Hosting: Hetzner CX22 (~€4.50/mo), provisioned via `provision-hetzner.sh`
 
 To switch a client to remote mode, update `.mcp.json`:
 

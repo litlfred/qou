@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Generate deploy/.env and deploy/authorized-emails.txt from lean-mcp.config.json.
+# Generate deploy/.env, authorized-emails.txt, and Caddyfile
+# from lean-mcp.config.json.
 #
 # Reads the repo-root config file and produces deployment artifacts.
 # Secrets (tokens, OAuth creds) are generated or prompted — never stored in config.
@@ -28,10 +29,8 @@ parse_json_array() {
 }
 
 DOMAIN=$(parse_json domain "lean.example.org")
-PORT=$(parse_json port "443")
 IMAGE=$(parse_json image "ghcr.io/litlfred/qou/lean-mcp")
 MCP_PORT=$(parse_json mcp_internal_port "8080")
-WATCHTOWER_POLL=$(parse_json watchtower_poll_seconds "300")
 OAUTH_PROVIDER=$(parse_json oauth_provider "google")
 
 echo "=== Generating deploy config from lean-mcp.config.json ==="
@@ -45,11 +44,9 @@ LEAN_TOKEN=$(openssl rand -hex 32)
 COOKIE=$(openssl rand -base64 32 | head -c 32)
 
 if [ "${1:-}" = "--ci" ]; then
-    # Non-interactive: leave OAuth creds as placeholders
     GOOGLE_CLIENT_ID="FILL_ME_IN"
     GOOGLE_CLIENT_SECRET="FILL_ME_IN"
 else
-    # Interactive: prompt for OAuth creds
     echo "Google OAuth credentials (create at https://console.cloud.google.com/apis/credentials):"
     echo "  Authorized redirect URI: https://$DOMAIN/oauth2/callback"
     echo ""
@@ -66,8 +63,6 @@ cat > "$DEPLOY_DIR/.env" <<ENVEOF
 LEAN_MCP_DOMAIN=$DOMAIN
 LEAN_MCP_IMAGE=$IMAGE
 LEAN_MCP_INTERNAL_PORT=$MCP_PORT
-PROXY_PORT=$PORT
-WATCHTOWER_POLL_INTERVAL=$WATCHTOWER_POLL
 
 # ── Lean MCP Server ──────────────────────────────────────────────
 LEAN_LSP_MCP_TOKEN=$LEAN_TOKEN
@@ -77,9 +72,6 @@ OAUTH2_PROXY_PROVIDER=$OAUTH_PROVIDER
 GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET
 COOKIE_SECRET=$COOKIE
-
-# ── Watchtower ───────────────────────────────────────────────────
-WATCHTOWER_TOKEN=$(openssl rand -hex 16)
 ENVEOF
 
 echo "  ✓ .env generated"

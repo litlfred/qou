@@ -3,11 +3,13 @@
 # All config is driven by lean-mcp.config.json at the repo root.
 # Run ./deploy/generate-config.sh to produce .env + authorized-emails.txt.
 #
-# Four services:
+# Three services:
 #   1. caddy:        Reverse proxy + automatic TLS (Let's Encrypt)
 #   2. lean-mcp:     Lean LSP MCP server (Streamable HTTP)
 #   3. oauth2-proxy: Google OAuth + email whitelist
-#   4. auto-update:  Polls GHCR for new images, restarts lean-mcp
+#
+# Auto-update is handled by self-update.sh via cron (not a Docker service).
+# It polls git + GHCR every minute and bounces services when needed.
 #
 # Full flow:
 #   Internet → Caddy (:443, TLS) → oauth2-proxy (:4180) → lean-mcp (:8080)
@@ -51,8 +53,6 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
 
   # ── OAuth2 Proxy (Google OAuth + email whitelist) ────────────────
   oauth2-proxy:
@@ -81,20 +81,6 @@ services:
     depends_on:
       lean-mcp:
         condition: service_healthy
-
-  # ── Auto-update: polls GHCR for new lean-mcp images ──────────────
-  auto-update:
-    image: containrrr/watchtower
-    container_name: watchtower
-    restart: unless-stopped
-    environment:
-      - WATCHTOWER_LABEL_ENABLE=true
-      - WATCHTOWER_POLL_INTERVAL=${WATCHTOWER_POLL_INTERVAL:-300}
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_TOKEN:-watchtower}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${HOME}/.docker/config.json:/config.json:ro
 
 volumes:
   caddy_data:
