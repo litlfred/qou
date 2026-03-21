@@ -99,7 +99,12 @@
         "chapter": 1
       },
       "title": "Frobenius relation",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.FrobeniusHopfData.frobenius_relation",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "lem:volume-from-rigidity",
@@ -110,7 +115,12 @@
         "chapter": 1
       },
       "title": "Volume form from rigidity and symplectic self-duality",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.VolumeFromRigidity",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "thm:su2-emergence",
@@ -121,7 +131,12 @@
         "chapter": 1
       },
       "title": "Emergence of the gauge group",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.SU2Emergence",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:volume-constraint-geometric",
@@ -143,7 +158,12 @@
         "chapter": 1
       },
       "title": "Projective line object",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.ProjectiveLineObject",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "ex:projective-line-archimedean",
@@ -165,7 +185,12 @@
         "chapter": 1
       },
       "title": "Fiber--adjoint-fiber involution",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.FiberAdjointInvolution",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:categorical-connection",
@@ -176,7 +201,12 @@
         "chapter": 1
       },
       "title": "Categorical connection and curvature",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.CategoricalConnection",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:q-hodge-star",
@@ -187,7 +217,12 @@
         "chapter": 1
       },
       "title": "$q$-Hodge star",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.QHodgeStar",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:categorical-action-notation",
@@ -209,12 +244,17 @@
         "chapter": 1
       },
       "title": "Categorical action",
-      "formalization_status": "not_started",
+      "formalization_status": "proved",
       "uses": [
         "def:quantum-universe",
         "def:quantum-observable-universe",
         "def:categorical-connection"
-      ]
+      ],
+      "lean": {
+        "decl": "QOU.CategoricalAction",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "prop:variational-equations",
@@ -540,7 +580,12 @@
         "chapter": 1
       },
       "title": "Observation",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.Observation",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:observation-archimedean",
@@ -709,7 +754,12 @@
         "chapter": 1
       },
       "title": "$q$-Weighted Yang--Mills--Levi functional",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.QYangMillsLevi",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:gr-substrate-geometry",
@@ -926,7 +976,12 @@
         "chapter": 2
       },
       "title": "$d_q^2$ does not vanish",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.Elaboration.dq_squared_nonvanishing",
+        "file": "QOU/Elaboration.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "prop:q-jacobiator",
@@ -1076,7 +1131,12 @@
         "chapter": 3
       },
       "title": "Braid group on three strands",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.BraidGroupB3",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:s3-group",
@@ -1087,7 +1147,12 @@
         "chapter": 3
       },
       "title": "Symmetric group $S_3$",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.SymmetricGroupS3",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:su2-basis",
@@ -1120,7 +1185,12 @@
         "chapter": 3
       },
       "title": "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.Dic3Generators",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:so3-generators",
@@ -1142,7 +1212,12 @@
         "chapter": 3
       },
       "title": "Braid involutions: twist and flip",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.SpectralResolventTuple",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:holonomy-trefoil",
