@@ -1161,8 +1161,16 @@ structure SU2Emergence {k : Type*} [Field k]
   gaugeGroupType : Type*
   /-- `G` is a group. -/
   [groupInst : Group gaugeGroupType]
-  /-- The determinant constraint: for every `g ∈ G`, `det(g_V) = 1`. -/
-  det_one : ∀ (g : gaugeGroupType), True  -- full: Λ²(g_V) = id on Λ²V
+  /-- The action of `G` on `Λ²V`: each `g ∈ G` acts on the exterior
+      square of the fundamental object by `Λ²(g_V)`.  Since `Λ²V` has
+      rank 1, this action is multiplication by `det(g_V)`. -/
+  ext_sq_action : gaugeGroupType →
+    @CategoryTheory.Hom _ qou.catInst qou.exteriorSquare qou.exteriorSquare
+  /-- **Determinant-one constraint**: for every `g ∈ G`, the induced
+      action on `Λ²V` is the identity, i.e. `det(g_V) = 1`.
+      This is precisely the content of diagram (1.8) in the manuscript:
+      `ε ∘ Λ²(g_V) = g_𝟙 ∘ ε = ε`. -/
+  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 qou.exteriorSquare
 
 /-- **q-Hodge star** involution on differential forms over a Frobenius–Hopf
     object.  Defined by `α ∧_q ⋆_q β = q · λ(α* · β) · vol`.
