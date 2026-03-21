@@ -52,7 +52,7 @@
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
-    #app{max-width:780px;margin:0 auto;padding:48px 1.5rem 4rem}
+    #app{max-width:960px;margin:0 auto;padding:48px 1.5rem 4rem}
     body.has-sidebar #app{margin-left:220px}
 
     /* Sidebar */
@@ -64,7 +64,7 @@
     .sb-sec{padding:.15rem .6rem .15rem 1.2rem;color:var(--fg-d);cursor:pointer;font-size:.65rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .sb-sec:hover{color:var(--fg)}
     .sb-sec.active{color:var(--ac)}
-    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
+    @media(max-width:1200px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
 
     /* Header */
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
@@ -346,13 +346,21 @@
         }
         if (/^\s*[-*]\s/.test(l)) {
           o.push('<ul>');
-          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*[-*]\s/,''))}</li>`); i++; }
+          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
+            const parts = [lines[i].replace(/^\s*[-*]\s/,'')]; i++;
+            while (i < lines.length && lines[i].match(/^\s{2,}/) && !/^\s*[-*]\s/.test(lines[i])) { parts.push(lines[i].trim()); i++; }
+            o.push(`<li>${inl(parts.join(' '))}</li>`);
+          }
           o.push('</ul>');
           continue;
         }
         if (/^\s*\d+\.\s/.test(l)) {
           o.push('<ol>');
-          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*\d+\.\s/,''))}</li>`); i++; }
+          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
+            const parts = [lines[i].replace(/^\s*\d+\.\s/,'')]; i++;
+            while (i < lines.length && lines[i].match(/^\s{2,}/) && !/^\s*\d+\.\s/.test(lines[i])) { parts.push(lines[i].trim()); i++; }
+            o.push(`<li>${inl(parts.join(' '))}</li>`);
+          }
           o.push('</ol>');
           continue;
         }
