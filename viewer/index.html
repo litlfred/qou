@@ -59,12 +59,14 @@
     /* Sidebar */
     #sidebar{display:none}
     body.has-sidebar #sidebar{display:block;position:fixed;top:34px;left:0;width:210px;bottom:0;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;padding:.6rem 0;z-index:90;font-family:var(--f-head);font-size:.72rem}
-    .sb-ch{padding:.2rem .6rem;color:var(--fg-d);cursor:pointer;font-weight:600;font-size:.7rem}
-    .sb-ch:hover{color:var(--fg-b)}
+    .sb-ch{padding:.4rem .6rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
+    .sb-ch:hover{color:var(--ac)}
     .sb-ch.active{color:var(--ac)}
-    .sb-sec{padding:.15rem .6rem .15rem 1.2rem;color:var(--fg-d);cursor:pointer;font-size:.65rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .sb-sec:hover{color:var(--fg)}
-    .sb-sec.active{color:var(--ac)}
+    .sb-sec{padding:.25rem .6rem .25rem 1rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
+    .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
+    .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
+    .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sb-blk:hover{color:var(--fg)}
     @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
 
     /* Header */
@@ -835,8 +837,32 @@
           const sEl = mk('div','sb-sec');
           sEl.textContent = sec.title;
           sEl.title = sec.title;
-          sEl.onclick = () => { const t = document.getElementById(sec.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
+          sEl.onclick = (e) => {
+            e.stopPropagation();
+            const t = document.getElementById(sec.label);
+            if (t) t.scrollIntoView({behavior:'smooth'});
+            // Toggle block list
+            blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
+          };
           sb.appendChild(sEl);
+          const blkList = mk('div','');
+          blkList.style.display = 'none';
+          for (const b of sec.blocks) {
+            const kind = b.kind[0].toUpperCase();
+            const bEl = mk('div','sb-blk');
+            bEl.textContent = `${kind} ${b.title || b.label || b.rootName}`;
+            bEl.title = b.label || b.rootName;
+            bEl.onclick = () => {
+              const t = document.getElementById(b.label);
+              if (t) {
+                const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                t.scrollIntoView({behavior:'smooth', block:'center'});
+              }
+            };
+            blkList.appendChild(bEl);
+          }
+          sb.appendChild(blkList);
         }
       }
 
@@ -865,6 +891,26 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — QOU`;
+
+      // Scroll-spy: highlight active section in sidebar
+      const sectionEls = document.querySelectorAll('.section[id]');
+      const sbSecs = sb.querySelectorAll('.sb-sec');
+      const secMap = new Map();
+      sbSecs.forEach(s => { secMap.set(s.textContent, s); });
+      const secObs = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            const secDiv = e.target;
+            const h3 = secDiv.querySelector('.sec-t');
+            if (h3) {
+              sbSecs.forEach(s => s.classList.remove('active'));
+              const match = secMap.get(h3.textContent);
+              if (match) { match.classList.add('active'); match.scrollIntoView({block:'nearest'}); }
+            }
+          }
+        }
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sectionEls.forEach(el => secObs.observe(el));
 
       // Scroll to pending label anchor
       if (pendingScroll) {
