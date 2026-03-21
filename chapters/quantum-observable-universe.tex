@@ -424,29 +424,59 @@ $A = \mathcal{O}(\mathrm{SU}(2))$, $\omega$ the forgetful functor.
 
 % ── Further structures ───────────────────────────────────────────────────────
 
+\begin{remark}[Spin labels and the fundamental object]
+\label{rem:spin-labels}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  Because
+$G = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}(2)$
+(Theorem~\ref{thm:su2-emergence}), the simple objects of~$\mathcal{C}$
+are indexed by a \emph{spin} label $j \in \{0, \tfrac12, 1,
+\tfrac32, \ldots\}$, with $V_j$ denoting the simple object of
+categorical dimension $2j + 1$.  In particular:
+\begin{itemize}
+  \item $V_0 \cong \mathbf{1}$ (the monoidal unit, spin-$0$, dimension~$1$);
+  \item $V = V_{1/2}$ (the \emph{fundamental object}, spin-$\tfrac12$,
+        dimension~$2$);
+  \item $V_1 \cong \mathrm{Ad}(A)$ (the \emph{adjoint object}, spin-$1$,
+        dimension~$3$).
+\end{itemize}
+The symplectic form $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
+(Definition~\ref{def:quantum-observable-universe}, axiom~(iii)) is the
+unique (up to scalar) $G$-invariant alternating pairing on~$V$.  In the
+$\mathrm{SU}(2)$ realisation (Example~\ref{ex:qou-su2}), this is the
+standard symplectic form $\epsilon(v \wedge w) = v_1 w_2 - v_2 w_1$.
+\end{remark}
+
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$
-(Definition~\ref{def:quantum-universe}) equipped with substrate
-parameter~$q$ (Definition~\ref{def:substrate-parameter}), and let $V$
-denote the \emph{fundamental object} of~$\mathcal{C}$ (the simple object
-of categorical dimension $[2]_q$, corresponding to the spin-$\tfrac12$
-representation under $\omega$).  The \emph{projective line object} is the
-coset object
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  Write
+$G = \mathrm{Aut}^{\otimes}(\omega)$ for the Tannakian gauge group
+(Theorem~\ref{thm:su2-emergence}) and let $T \subset G$ be the maximal
+torus --- the sub-group scheme of~$G$ that acts diagonally on~$V$, i.e.\
+$T = \mathrm{Aut}^{\otimes}(\omega|_{\langle V \rangle})$, where
+$\langle V \rangle \subset \mathcal{C}$ is the full subcategory of weight
+objects (direct sums of weight spaces of~$V$).  The \emph{projective line
+object} is the quotient
 \[
-  \mathbb{P}(V) \;=\; G_q \,/\, T,
+  \mathbb{P}(V) \;=\; G \,/\, T,
 \]
-where $T = \mathrm{Aut}^{\otimes}(\omega|_{\mathcal{C}_0})$ is the maximal
-torus of $G_q$ (the sub-group scheme preserving the weight decomposition).
-The function algebra of $\mathbb{P}(V)$ is the $T$-coinvariant subalgebra
-$\mathcal{O}_q(\mathbb{P}(V)) = A^{\mathrm{co}\,T}$.
+regarded as an object of $\mathrm{Ind}(\mathcal{C})$ via its function
+algebra $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}\,T}$
+(the $T$-coinvariant subalgebra of~$A$).
 \end{definition}
 
-\begin{example}[Archimedean projective line]
-\label{ex:projective-line-archimedean}
-In the archimedean realisation
-(Example~\ref{def:c-quantum-universe}), the projective line object is
-$\mathbb{P}(V) \cong \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
+\begin{example}[Projective line for $\mathrm{SU}(2)$]
+\label{ex:projective-line-su2}
+Continuing Example~\ref{ex:su2-emergence},
+$G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$ (diagonal matrices).
+The quotient is
+$\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
+A point $[\ell] \in \mathbb{CP}^1$ is a line $\ell \subset V = \mathbb{C}^2$;
+equivalently, it is the kernel of a linear form on~$V$, well-defined up
+to scalar.  The function algebra is the polynomial ring
+$\mathcal{O}(\mathbb{CP}^1) = \mathbb{C}[z]$ in the affine coordinate
+$z = v_1 / v_2$.
 \end{example}
 
 \begin{proposition}[Fiber--adjoint-fiber involution]
