@@ -234,6 +234,28 @@ transpose of~$\mu$.  The Frobenius relation then follows from the
 associativity of~$\mu$ by dualising one leg of the multiplication.
 \end{proof}
 
+\begin{definition}[Positive-definite dagger structure]
+\label{def:positive-definite-dagger}
+Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
+category.  A \emph{dagger structure} on~$\mathcal{C}$ is a
+contravariant endofunctor $\dagger \colon \mathcal{C}^{\mathrm{op}} \to
+\mathcal{C}$ that is the identity on objects ($X^{\dagger} = X$) and
+satisfies $f^{\dagger\dagger} = f$ for every morphism~$f$, together with
+the compatibility
+$(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$
+with the monoidal structure.
+
+The dagger structure is \emph{positive-definite} if for every non-zero
+morphism $f \colon \mathbf{1} \to X$ the composite
+\[
+  \mathbf{1} \xrightarrow{\;f\;} X \xrightarrow{\;f^{\dagger}\;} \mathbf{1}
+\]
+is a positive element of $\mathrm{End}(\mathbf{1}) \cong R$; equivalently,
+the sesquilinear form
+$\langle g, h \rangle = g^{\dagger} \circ h$ on $\mathrm{Hom}(\mathbf{1}, X)$
+is positive-definite for every object~$X$.
+\end{definition}
+
 \begin{lemma}[Volume form from rigidity and symplectic self-duality]
 \label{lem:volume-from-rigidity}
 Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
@@ -339,14 +361,18 @@ Since $\omega(\epsilon)$ is non-degenerate (hence non-zero), this forces
 restricting the natural automorphisms from $\mathrm{GL}(2)$ to the
 special subgroup $\mathrm{SL}(2)$.
 
-The QOU observability condition ensures the Frobenius form
+The QOU non-degeneracy axiom ensures the Frobenius form
 $\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the
 Frobenius self-duality $A \cong A^{\vee}$
-(Proposition~\ref{prop:fiber-adjoint-involution}).  This rigid
-self-duality equips $\mathcal{C}$ with a positive-definite
-$*$-structure.  Preserving this duality forces
-$g_V^{-1} = g_V^{\dagger}$, locking the group into its unitary real
-form $\mathrm{SU}(2)$.
+(Proposition~\ref{prop:fiber-adjoint-involution}).  Define a dagger on
+morphisms by $f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$, where
+$S$ is the antipode.  Non-degeneracy of~$\lambda$ and faithfulness
+of~$\omega$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
+is a positive-definite dagger structure
+(Definition~\ref{def:positive-definite-dagger}).  Every tensor
+automorphism $g \in G$ preserves the dagger (it commutes with $S$ and
+$\lambda$), forcing $g_V^{-1} = g_V^{\dagger}$ and locking the group
+into its unitary real form $\mathrm{SU}(2)$.
 \end{proof}
 
 \begin{remark}[Geometric realisation of the volume constraint]
