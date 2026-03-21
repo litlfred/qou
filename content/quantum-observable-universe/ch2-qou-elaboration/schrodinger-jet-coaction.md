@@ -1,6 +1,6 @@
-The $q$-deformed Schrödinger equation governs the evolution of states
+The $q$-deformed Schrodinger equation governs the evolution of states
 in the linearised state bundle. Throughout this paper the symbol $i$ in
-the Schrödinger equation is identified with the complex structure
+the Schrodinger equation is identified with the complex structure
 operator $J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$):
 it acts as a geometric twisting operator on horizontal planes rather than
 as an algebraic imaginary unit.
@@ -17,7 +17,7 @@ standard way.
 
 For a section $\psi \in \Gamma(E_{\mathrm{lin}})$ and the $q$-deformed Reeb
 vector field $\xi_q$ ([Definition](#def:q-reeb-vector-field)), the
-Schrödinger dynamics take the form
+Schrodinger dynamics take the form
 
 $$
   J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,
@@ -43,14 +43,13 @@ classical trajectory.
 
 *Categorical role.*
 Although this remark is stated as a PDE rather than in categorical language,
-it is essential to the paper's structure: the Schrödinger equation
+it is essential to the paper's structure: the Schrodinger equation
 provides the bottom row of the main commutative diagram
 ([Proposition](#prop:main-commutative-diagram)). Categorically, the
 $q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the
 module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra
-$\Gamma(J^1 E)$, and the Schrödinger equation is the condition that
+$\Gamma(J^1 E)$, and the Schrodinger equation is the condition that
 $\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$.
-
 In the base-field-independent setting of
 [Definitions](#def:quantum-universe)
 and [](#def:quantum-observable-universe), this extends to arbitrary base
