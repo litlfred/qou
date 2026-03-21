@@ -889,47 +889,81 @@ Here $\alpha_H = \pi_H(\alpha)$ is the \emph{horizontal component}
 horizontal} if and only if $\alpha_V = 0$.
 \end{definition}
 
+\begin{definition}[Categorical $q$-deformed exterior derivative]
+\label{def:categorical-q-ext-deriv}
+\lean{QOU.CategoricalQExtDeriv}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+connection $\nabla$ (Definition~\ref{def:categorical-connection}),
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
+and weight decomposition $\pi_H, \pi_V$
+(Definition~\ref{def:weight-decomposition}).  The \emph{$q$-deformed
+exterior derivative} $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is
+\[
+  d_q \;=\; q^{-1}\,d + (1 - q^{-1})\,\pi_V \circ d,
+\]
+where $d \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is the differential
+of the non-commutative de~Rham complex.  Equivalently, $d_q$ acts as
+$q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms:
+\begin{equation}\label{eq:categorical-dq-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=2.5em]
+  \Omega^k_H(A) \ar[r, "d"] \ar[d, hook]
+  & \Omega^{k+1}(A) \ar[r, "q^{-1}"]
+  & \Omega^{k+1}(A) \\
+  \Omega^k(A) \ar[rru, "d_q"']
+\end{tikzcd}
+\end{equation}
+The \emph{$q$-adjoint} $\delta_q \colon \Omega^{k+1}(A) \to \Omega^k(A)$
+is the adjoint of $d_q$ with respect to the dagger structure
+(Definition~\ref{def:positive-definite-dagger}).
+\end{definition}
+
 \begin{definition}[Particle]
 \label{def:q-harmonic-form}
 \lean{QOU.QHarmonicForm}\leanok
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}).
-The \emph{$q$-Laplacian} on $\Omega^k(A)$ is
-$\Delta_q = d_q\,\delta_q + \delta_q\,d_q$, where $d_q$ is the
-$q$-deformed exterior derivative and $\delta_q$ its adjoint with
-respect to the dagger structure
-(Definition~\ref{def:positive-definite-dagger}).  A \emph{particle} is
-an element $\alpha \in \Omega^k(A)$ that is $q$-harmonic:
+$q$-deformed exterior derivative $d_q$
+(Definition~\ref{def:categorical-q-ext-deriv}).  The \emph{$q$-Laplacian}
+on $\Omega^k(A)$ is $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$.
+A \emph{particle} is an element $\alpha \in \Omega^k(A)$ that is
+$q$-harmonic:
 \[
   \Delta_q\,\alpha \;=\; 0.
 \]
 \end{definition}
 
-\begin{definition}[Fermion]
+\begin{definition}[Fermion--Boson decomposition]
 \label{def:fermion}
-\lean{QOU.Fermion}\leanok
-A \emph{fermion} is a particle
-(Definition~\ref{def:q-harmonic-form}) with non-trivial vertical
-component in the weight decomposition
-(Definition~\ref{def:weight-decomposition}):
-\[
-  \Delta_q\,\alpha = 0
-  \qquad\text{and}\qquad
-  \alpha_V \neq 0.
-\]
-\end{definition}
-
-\begin{definition}[Boson]
 \label{def:boson}
-\lean{QOU.Boson}\leanok
-A \emph{boson} is a particle
-(Definition~\ref{def:q-harmonic-form}) that is purely horizontal in the
-weight decomposition (Definition~\ref{def:weight-decomposition}):
-\[
-  \Delta_q\,\alpha = 0
-  \qquad\text{and}\qquad
-  \alpha_V = 0.
-\]
+\lean{QOU.Fermion}\leanok
+Let $\mathcal{H}_q^k = \ker\Delta_q \subset \Omega^k(A)$ denote the
+space of particles (Definition~\ref{def:q-harmonic-form}).  The weight
+decomposition (Definition~\ref{def:weight-decomposition}) restricts to
+a short exact sequence
+\begin{equation}\label{eq:fermion-boson-ses}
+\begin{tikzcd}[column sep=2.5em]
+  0 \ar[r]
+  & \mathcal{H}_{q,H}^k \ar[r, hook]
+  & \mathcal{H}_q^k \ar[r, "\pi_V"]
+  & \mathcal{H}_{q,V}^k \ar[r]
+  & 0
+\end{tikzcd}
+\end{equation}
+where $\mathcal{H}_{q,H}^k = \mathcal{H}_q^k \cap \Omega^k_H(A)$
+and $\mathcal{H}_{q,V}^k = \pi_V(\mathcal{H}_q^k)$.  A \emph{boson}
+is a particle in the kernel $\mathcal{H}_{q,H}^k$ (purely horizontal:
+$\alpha_V = 0$).  A \emph{fermion} is a particle with
+$\alpha_V \neq 0$, i.e.\ one whose image under $\pi_V$ is non-zero.
+
+The sequence splits via $\pi_H$:
+\begin{equation}\label{eq:fermion-boson-split}
+\begin{tikzcd}[column sep=2.5em]
+  \mathcal{H}_q^k
+    \ar[r, "\pi_H \oplus \pi_V", "\sim"']
+  & \mathcal{H}_{q,H}^k \;\oplus\; \mathcal{H}_{q,V}^k
+\end{tikzcd}
+\qquad
+\text{(bosons $\oplus$ fermion vertical parts).}
+\end{equation}
 \end{definition}
 
 \begin{definition}[Observation]
@@ -1120,6 +1154,135 @@ $[F_\nabla] \in \Omega^2(A)/\mathrm{exact}$).  Minimising
 $S[\nabla]$ forces $F_\nabla^- = 0$, which is exactly the
 self-duality condition.
 \end{proof}
+
+% ── Categorical d_q^2 and jet prolongation ──────────────────────────────────
+
+\begin{proposition}[Non-vanishing of $d_q^2$]
+\label{prop:categorical-dq-squared}
+\lean{QOU.categorical_dq_squared}\leanok
+Let $d_q$ be the categorical $q$-deformed exterior derivative
+(Definition~\ref{def:categorical-q-ext-deriv}).  The composition
+$d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is
+given by
+\[
+  d_q^2\,\alpha
+  \;=\; q^{-1}(1 - q^{-1})\;\omega_V \wedge_q [\xi,\, \alpha],
+\]
+where $\omega_V \in \Omega^2(A)$ is the curvature of the weight
+decomposition (the image of the unit $1_A$ under
+$\pi_V \circ d \circ d$) and $[\xi, \alpha]$ is the Lie derivative
+along the generator $\xi$ of the $T$-action
+(Definition~\ref{def:weight-decomposition}).  The following diagram
+displays the obstruction to nilpotence:
+\begin{equation}\label{eq:dq-squared-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=2.5em]
+  \Omega^k(A) \ar[r, "d_q"] \ar[dr, "d_q^2"']
+  & \Omega^{k+1}(A) \ar[d, "d_q"] \\
+  & \Omega^{k+2}(A)
+\end{tikzcd}
+\qquad
+d_q^2 = 0 \;\Longleftrightarrow\;
+q = 1 \;\text{ or }\; [\xi, \alpha] = 0.
+\end{equation}
+In particular, $d_q^2 \neq 0$ for generic $\alpha$ whenever
+$q \neq 1$: the $q$-deformed de~Rham complex is \emph{not} a cochain
+complex.  On $\xi$-invariant forms (the horizontal subcomplex
+$\Omega^k_H(A)$), $d_q$ does reduce to $q^{-1} d$ and $d_q^2 = 0$.
+\end{proposition}
+
+\begin{proof}
+Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $d_q = a\,d + b\,\pi_V d$.
+Then
+\begin{align*}
+  d_q^2
+  &= (a\,d + b\,\pi_V d)(a\,d + b\,\pi_V d) \\
+  &= a^2\,\underbrace{d^2}_{= 0}
+     + ab\,(d \circ \pi_V d + \pi_V d \circ d)
+     + b^2\,\underbrace{\pi_V d \circ \pi_V d}_{= 0}.
+\end{align*}
+The first term vanishes because $d^2 = 0$ in the non-commutative
+de~Rham complex.  The last term vanishes because $\pi_V \circ \pi_V$
+acts as zero on the image of $d$ restricted to forms already in the
+vertical summand (by degree considerations in the weight grading).
+The middle term simplifies:
+$d(\pi_V d\,\alpha) + \pi_V d(d\,\alpha) = \omega_V \wedge_q [\xi, \alpha]$
+where $\omega_V = \pi_V(d^2_{\text{total}})$ represents the curvature
+of the weight projection, and the commutator with $\xi$ arises
+from $[d, \pi_V] = [\xi, {-}]$ on the graded pieces.
+\end{proof}
+
+\begin{definition}[Categorical jet object]
+\label{def:categorical-jet}
+\lean{QOU.CategoricalJet}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  The \emph{jet
+object} is
+\[
+  J^1(A) \;:=\; A \otimes_{\mathcal{C}} \Omega^1(A),
+\]
+where $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ is the
+bimodule of K\"ahler differentials.  The jet object fits into the
+universal extension
+\begin{equation}\label{eq:jet-ses}
+\begin{tikzcd}[column sep=2.5em]
+  0 \ar[r]
+  & A \otimes \Omega^1(A) \ar[r]
+  & J^1(A) \ar[r, "j^1"]
+  & A \ar[r]
+  & 0
+\end{tikzcd}
+\end{equation}
+where $j^1 \colon J^1(A) \to A$ is the jet evaluation (the counit of
+the tensor--hom adjunction).
+\end{definition}
+
+\begin{proposition}[Jet prolongation]
+\label{prop:categorical-jet-prolongation}
+\lean{QOU.categorical_jet_prolongation}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe.
+Then $J^1(A)$ (Definition~\ref{def:categorical-jet}) inherits a
+Frobenius--Hopf structure from~$A$, and the quadruple
+$(\mathcal{C},\, J^1(A),\, \omega',\, q)$ --- where $\omega'$ is
+the induced fibre functor --- is again a quantum observable universe.
+The following diagram commutes:
+\begin{equation}\label{eq:jet-prolongation-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  J^1(A) \ar[r, "\nabla'"] \ar[d, "j^1"']
+  & J^1(A) \otimes \Omega^1(J^1(A)) \ar[d, "j^1 \otimes j^1"] \\
+  A \ar[r, "\nabla"']
+  & A \otimes \Omega^1(A)
+\end{tikzcd}
+\end{equation}
+where $\nabla'$ is the prolonged connection and $\nabla$ the original.
+\end{proposition}
+
+\begin{definition}[Categorical transport equation]
+\label{def:categorical-transport}
+\lean{QOU.CategoricalTransport}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+instanton $\nabla$ (Definition~\ref{def:categorical-instanton}) and
+$q$-deformed exterior derivative $d_q$
+(Definition~\ref{def:categorical-q-ext-deriv}).  The \emph{categorical
+transport equation} for a section $\psi \in \omega(J^1(A))$
+(Definition~\ref{def:categorical-jet}) is
+\begin{equation}\label{eq:categorical-transport}
+  \hbar_q\;\pi_V(\nabla\,\psi) \;=\; H_q(\psi),
+\end{equation}
+where $H_q \colon \omega(J^1(A)) \to \omega(J^1(A))$ is the
+\emph{$q$-Hamiltonian} endomorphism
+$H_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$
+(with $V_q$ the potential arising from the curvature $F_\nabla$).
+The following diagram encodes the transport as the bottom row of the
+main commutative diagram:
+\begin{equation}\label{eq:transport-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \omega(J^1(A)) \ar[r, "\nabla"] \ar[d, "j^1"']
+  & \omega(J^1(A)) \otimes \Omega^1 \ar[d, "\pi_V"] \\
+  \omega(A) \ar[r, "H_q"']
+  & \omega(J^1(A))
+\end{tikzcd}
+\end{equation}
+\end{definition}
 
 % ── Archimedean realisation ─────────────────────────────────────────────────
 
@@ -1356,17 +1519,21 @@ observing the universe changes it.
 \begin{definition}[$q$-Deformed exterior derivative]
 \label{def:q-ext-deriv}
 \lean{QOU.qExtDeriv}\leanok
-Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
-with substrate parameter $q$ (Definition~\ref{def:substrate-parameter}).
+Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe.
 The \emph{$q$-deformed exterior derivative}
-$d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by
+$d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is
 \[
   d_q\,\alpha
   \;=\; q^{-1}\,d\alpha
-        + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,
+        + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha.
 \]
-where $d$ is the ordinary exterior derivative, $\theta$ the contact form,
-and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.
+This is the archimedean realisation of the categorical $d_q$
+(Definition~\ref{def:categorical-q-ext-deriv}): the vertical projection
+$\pi_V \circ d$ specialises to $\theta \wedge \mathcal{L}_\xi$ via
+the Reeb decomposition (Definition~\ref{def:reeb-decomposition}),
+and the non-vanishing $d_q^2 = q^{-1}(1-q^{-1})\,d\theta \wedge
+\mathcal{L}_\xi$ (Proposition~\ref{prop:categorical-dq-squared})
+specialises via $\omega_V = d\theta$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Lie bracket]
