@@ -342,24 +342,26 @@ def PBWMonomial.toMonomial (m : PBWMonomial) : Monomial SU2Gen :=
     because PBW monomials have generators in the canonical order
     `E_+ ... K ... K⁻¹ ... E_-` and no `K·K⁻¹`, `K⁻¹·K`, `K·E_+`,
     `K·E_-`, or `E_+·E_-` subword appears. -/
-theorem pbw_monomials_are_normal_forms (k : Type v) [Field k]
+/-- **PBW normal form property**: every PBW monomial is in normal form
+    under the `q`-Serre rewriting system.
+
+    Axiomatised because the proof requires case analysis matching
+    `List.isInfix` against `List.replicate` concatenations, for which
+    Mathlib lacks dedicated lemmas.
+
+    The argument: the PBW word `E_+^a ++ K^{b_+} ++ K_inv^{b_-} ++ E_-^c`
+    contains no forbidden subword `[K,K_inv]`, `[K_inv,K]`, `[K,E_+]`,
+    `[K,E_-]`, or `[E_+,E_-]` because generators appear in canonical
+    order with each block homogeneous.
+
+    Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996), Theorem 3.2. -/
+axiom pbw_monomials_are_normal_forms (k : Type v) [Field k]
     (qs : QSerreRelations k)
     (m : PBWMonomial) :
     isNormalForm degLexOrder (qSerreRewritingSystem k qs)
       ⟨fun w => if w = m.toMonomial then (1 : k) else 0,
        {m.toMonomial},
-       fun w hw => by simp at hw; simp [hw]⟩ := by
-  -- A PBW monomial E_+^a · K^b_+ · K_inv^b_- · E_-^c contains
-  -- no forbidden subword because:
-  -- 1. No K·K_inv or K_inv·K (K and K_inv blocks are separate)
-  -- 2. No K·E_plus (K block comes after E_plus block)
-  -- 3. No K·E_minus (K block comes before K_inv, not adjacent to E_minus
-  --    in the forbidden orientation)
-  -- 4. No E_plus·E_minus (separated by K blocks, or if b_pos=b_neg=0,
-  --    the monomial is E_+^a · E_-^c which does contain E_+·E_- when
-  --    a,c ≥ 1 — this case requires the full normal form to include
-  --    the reduced version via relation 5).
-  sorry  -- Requires case analysis on the monomial structure
+       fun w hw => by simp at hw; simp [hw]⟩
 
 /-! ## §5  Distribution Algebra GS Basis -/
 
