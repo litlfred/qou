@@ -722,13 +722,7 @@
 
       d.appendChild(mkBlockHeader(block.kind, block.title, block.label));
 
-      const bb = mk('div','bb');
-      bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
-      d.appendChild(bb);
-      addFeedbackBtn(d, block);
-      addSrc(d, block.md);
-
-      // Lean badge with validation icon
+      // Lean badge + status at top, right after header
       if (block.lean) {
         const s = block.status || 'not_started';
         const v = block.lean.validation || 'not_checked';
@@ -737,11 +731,15 @@
         d.appendChild(badge);
       }
 
-      // Tags
+      // Tags + uses at top
       if (block.tags?.length) d.appendChild(mkTags(block.tags));
-
-      // Uses
       if (block.uses?.length) d.appendChild(mkUsesInline(block));
+
+      const bb = mk('div','bb');
+      bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+      d.appendChild(bb);
+      addFeedbackBtn(d, block);
+      addSrc(d, block.md);
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
