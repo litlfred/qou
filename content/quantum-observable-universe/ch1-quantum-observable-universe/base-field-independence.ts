@@ -1,0 +1,8 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:base-field-independence",
+  title: "Base-ring independence",
+  tags: ["foundations"],
+  uses: ["def:quantum-universe", "def:quantum-observable-universe"],
+});
