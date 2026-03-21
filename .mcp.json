@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "lean": {
+      "command": "lean",
+      "args": ["--server"],
+      "cwd": "lean",
+      "env": {
+        "LAKE_PATH": "lean"
+      }
+    }
+  }
+}

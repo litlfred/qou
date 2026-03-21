@@ -7,7 +7,48 @@ and creative decisions; the editor coordinates execution.
 
 ## Session Start Protocol
 
-At the start of every new session, the editor's first job is **triage**:
+At the start of every new session, the editor's first job is **environment
+check**, then **triage**:
+
+### 0. Check Lean availability
+
+Before routing any request, run the Lean health check:
+
+```bash
+./scripts/check-lean.sh
+```
+
+Interpret the JSON output:
+
+- **`lean_available: false`** — Lean is not installed or broken.
+  - If the user's request **requires Lean** (formalize, prove, build, sorry,
+    stub, review Lean, status tracking), present this message:
+
+    > Lean is not available on this machine. To set it up:
+    >
+    > ```bash
+    > ./scripts/setup-lean-mcp.sh
+    > ```
+    >
+    > This installs elan, the Lean toolchain (v4.16.0), and fetches the
+    > Mathlib cache. Takes ~5 min on a fresh install.
+    >
+    > Want me to proceed with LaTeX-only work in the meantime?
+
+  - If the request is **LaTeX-only** (write, edit, validate, question),
+    proceed normally — Lean is not needed.
+
+- **`lean_available: true, deps_ready: false`** — Lean is installed but
+  Mathlib cache is missing. Remind the author:
+
+    > Lean is installed but dependencies aren't cached yet. Run:
+    > ```bash
+    > cd lean && lake exe cache get
+    > ```
+
+- **`lean_available: true, deps_ready: true`** — All good, proceed.
+
+### 1. Triage
 
 1. **Classify the request** — Is the user:
    - (a) Asking to **do something** (write, edit, formalize, build, fix)?

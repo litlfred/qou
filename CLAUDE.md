@@ -43,6 +43,27 @@ Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
 
+## Lean MCP server (local)
+
+A local Lean 4 language server is configured via `.mcp.json` for type-checking
+and go-to-definition support within Claude Code sessions.
+
+### Setup (ChromeOS / Crostini)
+
+```bash
+./scripts/setup-lean-mcp.sh
+```
+
+This installs elan, the pinned Lean toolchain (v4.16.0), and fetches Mathlib
+oleans. Requires only `curl` and `git` (the script installs them if missing).
+
+### Session-start hook
+
+A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
+at the beginning of every session. If Lean is not available and the user's
+request requires it, the editor skill will prompt the author with setup
+instructions rather than silently failing.
+
 ## Project structure
 
 | Path | Purpose |
@@ -57,6 +78,7 @@ usage for content changes.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
+| `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `skills-config.json` | Skill package subscriptions |
 
 ## Build output (gh-pages)
