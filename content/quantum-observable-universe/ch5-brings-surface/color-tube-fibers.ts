@@ -4,9 +4,5 @@ export default definition({
   label: "def:color-tube-fibers",
   title: "Color tube fibers",
   tags: ["brings-surface", "color-tube"],
-  uses: [
-    "rem:color-tube-cubic",
-    "prop:chiral-elliptic",
-    "rem:lagrange-resolvents",
-  ],
+  uses: ["rem:color-tube-cubic", "rem:lagrange-resolvents", "prop:chiral-elliptic"],
 });
