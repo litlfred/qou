@@ -1,15 +1,34 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T00:47:38.792120+00:00",
-  "commit_sha": "b57802ce545affdded93268add646af5c2bd7797",
+  "generated_at": "2026-03-21T01:46:10.236856+00:00",
+  "commit_sha": "ec7537297c719e85fd299326e2a6393bb45be79e",
   "entry_count": 49,
   "ambiguity_count": 5,
   "entries": [
     {
+      "narrative_term": "Rigid monoidal category",
+      "lean_name": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
+      "kind": "def",
+      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object~, and natural isomorphisms expressing associativity and unitality: [ [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z),  qquad [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes . ar[l, \"rho_X\"', \"sim\"]  ]  The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V colon  to V^vee otimes V ",
+      "latex_label": "def:rigid-monoidal-category",
+      "chapter": 1,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Category without specified universe or structure level",
+        "candidates": [
+          "Category",
+          "SmallCategory",
+          "Abelian",
+          "MonoidalCategory"
+        ],
+        "resolved_to": null
+      }
+    },
+    {
       "narrative_term": "Quantum Universe",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumUniverse",
       "kind": "def",
-      "narrative_definition": "leanok Let R be a commutative ring.  A  is a triple (, A, omega) where:  item (, otimes, ) is a R-linear rigid monoidal category; item A is a  in : an object equipped with a Hopf structure (mu, eta, Delta, varepsilon, S) and a Frobenius form lambda colon A to  such that the pairing A otimes A  A   is non-degenerate and the Frobenius relation (mu otimes ) circ ( otimes Delta_mu) = Delta_mu circ mu holds, where Delta_mu is the comultiplication dual to mu under the pairing; item omega colon  to R i",
+      "narrative_definition": "leanok Let R be a commutative ring.  A  is a triple (, A, omega) where:  item (, otimes, ) is an R-linear rigid monoidal category (Definition~); item A is a  in~: an object equipped with morphisms [ [row sep=1.5em, column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"lambda\"] &    ar[r, \"eta\"] & A ar[r, \"varepsilon\"] &   A ar[r, \"Delta\"] & A otimes A & A ar[l, \"S\"']  ] --- multiplication~mu, unit~eta, comultiplication~Delta, counit~varepsilon, antipode~S, and Frobenius form~lambda --- satisfying:",
       "latex_label": "def:quantum-universe",
       "chapter": 1
     },
@@ -17,7 +36,7 @@
       "narrative_term": "Quantum Observable Universe",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "kind": "def",
-      "narrative_definition": "leanok A quantum universe (, A, omega) over~R (Definition~) is  if:  item the Frobenius form lambda on A is non-degenerate; and item _(,, (A)) = 0, where (A) is the adjoint object (A with the conjugation action (a)(b) = textstylesum a_(1), b, S(a_(2)) for a, b in A).",
+      "narrative_definition": "leanok A quantum universe (, A, omega) over~R (Definition~) is  if the following three conditions hold:  item  the Frobenius pairing  induces an isomorphism A  A^vee; item  _(,, (A)) = 0, where (A) is the adjoint object (A acted on by conjugation); that is, every morphism  to (A) is zero: [ [column sep=2.5em]  ar[r, \"0\"] & (A)  ] item   let V denote the fundamental object of~ (the simple object of categorical dimension~2); there exists a non-degenerate epimorphism epsilon preserved by the rigid ",
       "latex_label": "def:quantum-observable-universe",
       "chapter": 1
     },
@@ -33,7 +52,7 @@
       "narrative_term": "Categorical connection and curvature",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalConnection",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum universe over~R with differential calculus Omega^1(A) (Definition~).  Write Omega^k(A) = bigwedge_A^k Omega^1(A) for the higher differential forms (external tensor powers of the A-bimodule~Omega^1(A)).  A  on~A is a morphism nabla colon A to A otimes Omega^1(A) in~ satisfying the Leibniz rule [ nabla(a cdot b) ;=; nabla(a) cdot b ;+; a cdot nabla(b), qquad a, b in A. ] The  of~nabla is the composition [ F_nabla ;=; nabla^2 ;colon; A ;longrightarrow; A otimes Omega^2",
+      "narrative_definition": "Let (, A, omega) be a quantum universe over~R with differential calculus Omega^1(A) (Definition~).  Write Omega^k(A) = bigwedge_A^k Omega^1(A) for the higher differential forms (external tensor powers of the A-bimodule~Omega^1(A)).  A  on~A is a morphism nabla colon A to A otimes Omega^1(A) in~ satisfying the Leibniz rule: nabla(mu(a otimes b)) = nabla(a) cdot b + a cdot nabla(b), expressed by the commutativity of the outer square [ [row sep=2.5em, column sep=3.5em] A otimes A ar[r, \"mu\"] ar[d, ",
       "latex_label": "def:categorical-connection",
       "chapter": 1
     },
@@ -68,25 +87,6 @@
       "narrative_definition": "leanok Let (, A, omega) be a quantum universe over a ring~R (Definition~).  Let ^_q((2)) denote the ~: the [q,q^-1]-subalgebra of _q((2)) generated by K^pm 1 and the divided powers E^(n) = E^n/[n]_q!, F^(n) = F^n/[n]_q!. The  is a ring homomorphism [ iota ;colon; [q, q^-1] ;longrightarrow; k, qquad q ;longmapsto; q_0 in k^times, ] and the base-changed algebra ^_q((2)) otimes_[q,q^-1] k is the quantised enveloping algebra at the specialised value~q_0. When the quantum universe is fibred over a sp",
       "latex_label": "def:substrate-parameter",
       "chapter": 1
-    },
-    {
-      "narrative_term": "Categorical volume constraint",
-      "lean_name": "QOU.QuantumObservableUniverse.CategoricalVolumeConstraint",
-      "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe over~R (Definition~), and let V denote the fundamental object of~ (Definition~).  The category~ satisfies the  if there exists a non-degenerate epimorphism  epsilon colon Lambda^2 V ;longrightarrow;   preserved by the rigid dualities of~.",
-      "latex_label": "def:categorical-volume-constraint",
-      "chapter": 1,
-      "ambiguity": {
-        "is_ambiguous": true,
-        "message": "Category without specified universe or structure level",
-        "candidates": [
-          "Category",
-          "SmallCategory",
-          "Abelian",
-          "MonoidalCategory"
-        ],
-        "resolved_to": null
-      }
     },
     {
       "narrative_term": "Quantum Gauge Group",
