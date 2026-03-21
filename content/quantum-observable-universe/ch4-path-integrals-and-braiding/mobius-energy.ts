@@ -17,4 +17,7 @@ export default proposition({
     decl: "QOU.MobiusEnergy",
     validation: "not_checked",
   },
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/mobius-energy-0.svg", blockIndex: 0, hash: "1582a4fa10bb" },
+  ],
 });

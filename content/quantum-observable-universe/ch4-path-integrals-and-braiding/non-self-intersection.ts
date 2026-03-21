@@ -11,4 +11,7 @@ export default corollary({
     "def:q-hodge-star",
     "def:substrate-parameter",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/non-self-intersection-0.svg", blockIndex: 0, hash: "5471f3de17cb" },
+  ],
 });
