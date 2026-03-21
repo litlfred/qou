@@ -1,12 +1,9 @@
 {
   "mcpServers": {
-    "lean": {
-      "command": "lean",
-      "args": ["--server"],
-      "cwd": "lean",
-      "env": {
-        "LAKE_PATH": "lean"
-      }
+    "lean-lsp": {
+      "command": "uvx",
+      "args": ["lean-lsp-mcp"],
+      "cwd": "lean"
     }
   }
 }

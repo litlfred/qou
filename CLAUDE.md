@@ -43,26 +43,36 @@ Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
 
-## Lean MCP server (local)
+## Lean MCP server (lean-lsp-mcp)
 
-A local Lean 4 language server is configured via `.mcp.json` for type-checking
-and go-to-definition support within Claude Code sessions.
+The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
+configured via `.mcp.json`. It provides Claude Code with:
+
+- Diagnostics, goal states, hover docs, completions
+- LeanSearch, Loogle, Lean Finder, Lean Hammer search tools
+- Code actions ("Try This"), profiling, axiom verification
+- Local project search (requires ripgrep)
 
 ### Setup (ChromeOS / Crostini)
+
+Prerequisites: `git`, `curl`.
 
 ```bash
 ./scripts/setup-lean-mcp.sh
 ```
 
-This installs elan, the pinned Lean toolchain (v4.16.0), and fetches Mathlib
-oleans. Requires only `curl` and `git` (the script installs them if missing).
+This installs: uv (Python package manager), elan, Lean v4.16.0 toolchain,
+Mathlib cache, ripgrep, and verifies `lean-lsp-mcp` via uvx.
+
+**Important**: Run `lake build` in `lean/` before first MCP session to avoid
+timeouts.
 
 ### Session-start hook
 
 A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
-at the beginning of every session. If Lean is not available and the user's
-request requires it, the editor skill will prompt the author with setup
-instructions rather than silently failing.
+at the beginning of every session. If Lean or uv is not available and the
+user's request requires Lean, the editor skill will prompt the author with
+setup instructions rather than silently failing.
 
 ## Project structure
 

@@ -30,13 +30,21 @@ Interpret the JSON output:
     > ./scripts/setup-lean-mcp.sh
     > ```
     >
-    > This installs elan, the Lean toolchain (v4.16.0), and fetches the
-    > Mathlib cache. Takes ~5 min on a fresh install.
+    > This installs elan, uv, the Lean toolchain (v4.16.0), Mathlib cache,
+    > ripgrep, and configures the lean-lsp-mcp server. Takes ~5 min.
     >
     > Want me to proceed with LaTeX-only work in the meantime?
 
   - If the request is **LaTeX-only** (write, edit, validate, question),
     proceed normally — Lean is not needed.
+
+- **`uv_available: false`** — uv is missing (needed for `uvx lean-lsp-mcp`).
+  Remind the author:
+
+    > uv is not installed. Run:
+    > ```bash
+    > curl -LsSf https://astral.sh/uv/install.sh | sh
+    > ```
 
 - **`lean_available: true, deps_ready: false`** — Lean is installed but
   Mathlib cache is missing. Remind the author:
@@ -45,8 +53,14 @@ Interpret the JSON output:
     > ```bash
     > cd lean && lake exe cache get
     > ```
+    > Then run `lake build` before starting the MCP server.
 
 - **`lean_available: true, deps_ready: true`** — All good, proceed.
+
+**Note**: The lean-lsp-mcp server (via `.mcp.json`) provides diagnostics,
+goal states, hover docs, completions, LeanSearch, Loogle, and more. It runs
+automatically when Claude Code starts. Run `lake build` before first use to
+avoid timeouts.
 
 ### 1. Triage
 
