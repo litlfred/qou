@@ -13,7 +13,16 @@ export default paper({
   date: "2026-03-21",
   chapters: [
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
-    // chapterRef({ dir: "ch2-brings-surface" }),
-    // chapterRef({ dir: "ch3-descartes-universe", uri: "https://..." }), // remote
+    chapterRef({ dir: "ch2-qou-elaboration" }),
+    chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
+    chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
+    chapterRef({ dir: "ch5-brings-surface" }),
+    chapterRef({ dir: "ch6-descartes-universe" }),
+    chapterRef({ dir: "ch7-p-adic-quantum-groups" }),
+    chapterRef({ dir: "ch8-gauge-field-fluid-dynamics" }),
+    chapterRef({ dir: "ch9-information-theory" }),
+    chapterRef({ dir: "ch10-interpretations" }),
+    chapterRef({ dir: "ch11-experimental-evidence" }),
+    chapterRef({ dir: "ch12-speculations" }),
   ],
 });
