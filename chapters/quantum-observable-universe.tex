@@ -234,6 +234,18 @@ transpose of~$\mu$.  The Frobenius relation then follows from the
 associativity of~$\mu$ by dualising one leg of the multiplication.
 \end{proof}
 
+\begin{example}[Frobenius relation for $\mathrm{SU}(2)$]
+\label{ex:frobenius-su2}
+Continuing Example~\ref{ex:qou-su2}, set
+$A = \mathcal{O}(\mathrm{SU}(2))$ with multiplication
+$\mu(f \otimes g) = fg$ (pointwise product) and Frobenius form
+$\lambda = \int_G$ (Haar integral).  The dual comultiplication is
+$\Delta_\mu(f)(g,h) = \int_G f(xg)\,\overline{h(x)}\,dx$, and the
+Frobenius relation expresses the associativity of convolution:
+$\int_G f(xy)\,g(y)\,dy$ can be evaluated by convolving first with $f$
+or first with~$g$.
+\end{example}
+
 \begin{definition}[Positive-definite dagger structure]
 \label{def:positive-definite-dagger}
 Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
@@ -255,6 +267,17 @@ the sesquilinear form
 $\langle g, h \rangle = g^{\dagger} \circ h$ on $\mathrm{Hom}(\mathbf{1}, X)$
 is positive-definite for every object~$X$.
 \end{definition}
+
+\begin{example}[Dagger structure on $\mathrm{Rep}(\mathrm{SU}(2))$]
+\label{ex:dagger-su2}
+Continuing Example~\ref{ex:frobenius-su2}, the category
+$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ carries a canonical dagger
+structure: for a morphism $f \colon V_j \to V_k$ between irreducible
+representations, $f^{\dagger}$ is the Hilbert-space adjoint with respect
+to the $\mathrm{SU}(2)$-invariant inner product on each $V_j$.
+Positive-definiteness follows: for $f \colon \mathbb{C} \to V_j$
+non-zero, $f^{\dagger} \circ f = \lVert f(1) \rVert^2 > 0$.
+\end{example}
 
 \begin{lemma}[Volume form from rigidity and symplectic self-duality]
 \label{lem:volume-from-rigidity}
@@ -374,6 +397,30 @@ automorphism $g \in G$ preserves the dagger (it commutes with $S$ and
 $\lambda$), forcing $g_V^{-1} = g_V^{\dagger}$ and locking the group
 into its unitary real form $\mathrm{SU}(2)$.
 \end{proof}
+
+\begin{example}[Emergence of $\mathrm{SU}(2)$: the full chain]
+\label{ex:su2-emergence}
+Continuing Examples~\ref{ex:frobenius-su2}--\ref{ex:dagger-su2}, let
+$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
+$A = \mathcal{O}(\mathrm{SU}(2))$, $\omega$ the forgetful functor.
+\begin{enumerate}
+  \item \emph{Volume constraint} $\Rightarrow$ $\det(g_V) = 1$.\;
+        The alternating form $\epsilon(v \wedge w) = v_1 w_2 - v_2 w_1$
+        on $V = \mathbb{C}^2$ is $\mathrm{SU}(2)$-invariant.  Any tensor
+        automorphism $g$ preserves~$\epsilon$, forcing
+        $g_V \in \mathrm{SL}(2, \mathbb{C})$.
+  \item \emph{Dagger structure} $\Rightarrow$ unitarity.\;
+        The dagger on $\mathrm{Rep}(\mathrm{SU}(2))$
+        (Example~\ref{ex:dagger-su2}) forces
+        $g_V^{-1} = g_V^{\dagger}$, cutting from
+        $\mathrm{SL}(2, \mathbb{C})$ to its compact real form
+        $\mathrm{SU}(2)$.
+  \item \emph{Conclusion.}\;
+        $G = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}(2)$,
+        recovering the input gauge group from the categorical axioms
+        alone.
+\end{enumerate}
+\end{example}
 
 % ── Further structures ───────────────────────────────────────────────────────
 
