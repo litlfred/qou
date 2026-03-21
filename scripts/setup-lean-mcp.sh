@@ -108,7 +108,7 @@ fi
 
 # ── 7. Fetch Mathlib cache ───────────────────────────────────────
 echo "▸ Fetching Mathlib oleans (this may take a few minutes)..."
-if lake exe cache get 2>&1 | tail -5; then
+if lake exe cache get; then
     echo "  ✓ Cache fetched"
 else
     echo "  ⚠ Cache fetch had issues (may already be cached, continuing)"
@@ -116,7 +116,7 @@ fi
 
 # ── 8. Build ─────────────────────────────────────────────────────
 echo "▸ Running lake build (recommended before first MCP session)..."
-if lake build 2>&1 | tail -5; then
+if lake build; then
     echo "  ✓ Build succeeded"
 else
     echo "  ⚠ Build had errors (MCP server will still work for diagnostics)"

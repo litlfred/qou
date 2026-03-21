@@ -6,7 +6,7 @@
 # Reads lean-mcp.config.json for the remote server domain.
 # Prints JSON status for Claude Code and the editor skill to consume.
 
-set -uo pipefail
+set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LEAN_DIR="$REPO_ROOT/lean"
@@ -26,6 +26,12 @@ if [ -n "$REMOTE_DOMAIN" ]; then
     REMOTE_URL="https://$REMOTE_DOMAIN/mcp"
 fi
 
+# ── Check uv (needed for local stdio MCP) ────────────────────────
+UV_OK=false
+if command -v uv &>/dev/null; then
+    UV_OK=true
+fi
+
 # ── Check local lean ─────────────────────────────────────────────
 LOCAL_OK=false
 LOCAL_MSG=""
@@ -36,12 +42,6 @@ if command -v lean &>/dev/null; then
     if [ $? -eq 0 ]; then
         LOCAL_OK=true
     fi
-fi
-
-# ── Check uv (needed for local stdio MCP) ────────────────────────
-UV_OK=false
-if command -v uv &>/dev/null; then
-    UV_OK=true
 fi
 
 # ── Check deps + cache (only if local lean exists) ────────────────
