@@ -46,7 +46,7 @@ and any changes made are indicated.
 
 <div id="rem:quantum-universe-explication" class="remark">
 
-**Remark 1.2** (Deformation parameter and gauge group). *The deformation parameter $q$ is not part of the categorical definition; it enters via the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) when the Hopf structure on $A$ is specialised. The *quantum gauge group* is the affine $R$-group scheme $G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via Tannaka–Krein duality (see also Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.24</a> for the archimedean case).*
+**Remark 1.2** (Deformation parameter and gauge group). *The deformation parameter $q$ is not part of the categorical definition; it enters via the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) when the Hopf structure on $A$ is specialised. The *quantum gauge group* is the affine $R$-group scheme $G = \mathrm{Aut}^{\otimes}(\omega)$, reconstructed via Tannaka–Krein duality (see also Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.27</a> for the archimedean case).*
 
 </div>
 
@@ -129,7 +129,7 @@ and any changes made are indicated.
 
 - *$\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the *adjoint section* (antipode composed with the Frobenius form).*
 
-- *$D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is the *$q$-deformed covariant derivative*, where $\xi$ is the Reeb derivation of $A$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>).*
+- *$D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is the *$q$-deformed covariant derivative*, where $\xi$ is the Reeb derivation of $A$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>).*
 
 </div>
 
@@ -171,9 +171,9 @@ and any changes made are indicated.
 
 **Remark 1.12** (Archimedean realisation of the variational equations). *In the archimedean realisation (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.16</a>):*
 
-- *The categorical Einstein equation reduces to $\mathrm{Ric}_{g_\theta} = T^{(q)}$ (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.46</a>).*
+- *The categorical Einstein equation reduces to $\mathrm{Ric}_{g_\theta} = T^{(q)}$ (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.49</a>).*
 
-- *The categorical transport equation reduces to the Schrödinger equation $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$ (Remark <a href="#rem:schrodinger-jet-coaction" data-reference-type="ref" data-reference="rem:schrodinger-jet-coaction">2.20</a>).*
+- *The categorical transport equation reduces to the Schrödinger equation $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$ (Remark <a href="#rem:schrodinger-jet-coaction" data-reference-type="ref" data-reference="rem:schrodinger-jet-coaction">2.22</a>).*
 
 </div>
 
@@ -251,7 +251,7 @@ and any changes made are indicated.
 
 <div class="proof">
 
-*Proof.* The contact form $\theta$ (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a>) splits the tangent bundle as $TM = H \oplus \mathbb{R}\xi$, where $H = \ker\theta$ has real dimension $4$. The curvature $F_A$ is an $\mathrm{Ad}(P)$-valued $2$-form on $M$. By the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>), $F_A$ splits into horizontal and vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
+*Proof.* The contact form $\theta$ (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a>) splits the tangent bundle as $TM = H \oplus \mathbb{R}\xi$, where $H = \ker\theta$ has real dimension $4$. The curvature $F_A$ is an $\mathrm{Ad}(P)$-valued $2$-form on $M$. By the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>), $F_A$ splits into horizontal and vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
 \mathrm{Ad}(P))$.
 
 Since $\dim_{\mathbb{R}} H = 4$, the operator $*_H$ maps $2$-forms to $2$-forms and satisfies $*_H^2 = \mathrm{id}$ on $\Lambda^2 H^*$. This decomposes $\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ into self-dual and anti-self-dual parts.
@@ -294,45 +294,89 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 </div>
 
+<div id="def:categorical-volume-constraint" class="definition">
+
+**Definition 1.24** (Categorical volume constraint). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>), and let $V$ denote the fundamental object of $\mathcal{C}$ (Definition <a href="#def:projective-line-object" data-reference-type="ref" data-reference="def:projective-line-object">1.4</a>). The category $\mathcal{C}$ satisfies the *categorical volume constraint* if there exists a non-degenerate epimorphism $$\label{eq:categorical-volume-constraint}
+  \epsilon \colon \Lambda^2 V \;\longrightarrow\; \mathbf{1}$$ preserved by the rigid dualities of $\mathcal{C}$.*
+
+</div>
+
+<div id="thm:su2-emergence" class="theorem">
+
+**Theorem 1.25** (Emergence of the quantum gauge group). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying the categorical volume constraint (Definition <a href="#def:categorical-volume-constraint" data-reference-type="ref" data-reference="def:categorical-volume-constraint">1.24</a>). Then $G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$ (or $\mathrm{SL}_q(2, R)$ depending on the signature of the Frobenius pairing).*
+
+</div>
+
+<div class="proof">
+
+*Proof.* The quantum gauge group $G_q$ is defined via Tannaka–Krein duality as the group scheme of tensor-preserving natural automorphisms of the fibre functor $\omega$. An element $g \in G_q$ assigns an invertible linear map $g_X \colon \omega(X) \to \omega(X)$ to every object $X \in \mathcal{C}$.
+
+Because $g$ is a natural transformation, it commutes with all morphisms in $\mathcal{C}$, including the volume constraint $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ <a href="#eq:categorical-volume-constraint" data-reference-type="eqref" data-reference="eq:categorical-volume-constraint">[eq:categorical-volume-constraint]</a>. Applying $\omega$ yields the commutative diagram of $R$-modules $$\label{eq:su2-emergence-diagram}
+\begin{CD}
+\Lambda^2 \omega(V)
+  @>{\Lambda^2 g_V}>>
+  \Lambda^2 \omega(V) \\
+@V{\omega(\epsilon)}VV
+  @VV{\omega(\epsilon)}V \\
+\omega(\mathbf{1})
+  @>>{g_{\mathbf{1}} \,=\, \mathrm{id}}>
+  \omega(\mathbf{1})
+\end{CD}$$ The fundamental object $V$ has categorical dimension $[2]_q$, so $\omega(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \omega(V)$ has rank $1$. The induced operator $\Lambda^2 g_V$ acts on this rank-$1$ module as scalar multiplication by $\det(g_V)$. Following diagram <a href="#eq:su2-emergence-diagram" data-reference-type="eqref" data-reference="eq:su2-emergence-diagram">[eq:su2-emergence-diagram]</a> from the top-left to the bottom-right: $$\omega(\epsilon) \circ \Lambda^2 g_V
+  \;=\;
+  g_{\mathbf{1}} \circ \omega(\epsilon)
+  \;=\;
+  \omega(\epsilon).$$ Since $\omega(\epsilon)$ is non-degenerate (hence non-zero), this forces $$\label{eq:det-one}
+  \det(g_V) \;=\; 1,$$ restricting the natural automorphisms from $\mathrm{GL}_q(2)$ to the special subgroup $\mathrm{SL}_q(2)$.
+
+The QOU observability condition ensures the Frobenius form $\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the Frobenius self-duality $A \cong A^{\vee}$ (Proposition <a href="#prop:fiber-adjoint-involution" data-reference-type="ref" data-reference="prop:fiber-adjoint-involution">1.6</a>). This rigid self-duality equips $\mathcal{C}$ with a positive-definite $*$-structure. Preserving this duality forces $g_V^{-1} = g_V^{\dagger}$, locking the group into its unitary real form $\mathrm{SU}_q(2)$. ◻
+
+</div>
+
+<div id="rem:volume-constraint-geometric" class="remark">
+
+**Remark 1.26** (Geometric realisation of the volume constraint). *In the archimedean realisation (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a>), the categorical volume constraint <a href="#eq:categorical-volume-constraint" data-reference-type="eqref" data-reference="eq:categorical-volume-constraint">[eq:categorical-volume-constraint]</a> is a consequence of the CR geometry. The Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$. The Hodge star $*_H$ associated to the Webster metric $g_\theta$ splits the $2$-forms into self-dual and anti-self-dual components, $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$. This decomposition instantiates the alternating morphism $\epsilon$, forcing the local structure group of the instanton connection to be $\mathrm{SU}(2)$.*
+
+</div>
+
 <div id="def:quantum-gauge-group" class="definition">
 
-**Definition 1.24** (Quantum Gauge Group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup)<sup><span style="color: ForestGreen"></span></sup> Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *quantum gauge group* is the field of quantum groups $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.*
+**Definition 1.27** (Quantum Gauge Group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup)<sup><span style="color: ForestGreen"></span></sup> Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *quantum gauge group* is the field of quantum groups $\{\mathrm{SU}_{q(p)}(2)\}_{p \in M}$ obtained by deforming the structure group $G = \mathrm{SU}(2)$ pointwise at the parameter $q(p)$.*
 
 </div>
 
 <div id="def:quantum-planck-constant" class="definition">
 
-**Definition 1.25** (Quantum Planck Constant). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant)<sup><span style="color: ForestGreen"></span></sup> Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *quantum Planck constant* is the smooth field $\hbar_q \colon M \to [0,1)$ defined by $$\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.$$*
+**Definition 1.28** (Quantum Planck Constant). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant)<sup><span style="color: ForestGreen"></span></sup> Let $(M, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *quantum Planck constant* is the smooth field $\hbar_q \colon M \to [0,1)$ defined by $$\hbar_q(p) \;=\; 1 - q(p)^{-1}, \qquad p \in M.$$*
 
 </div>
 
 <div id="rem:planck-limits" class="remark">
 
-**Remark 1.26** (Limiting regimes of $\hbar_q$). *Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$. As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.*
+**Remark 1.29** (Limiting regimes of $\hbar_q$). *Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$. As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.*
 
 </div>
 
 <div id="rem:heisenberg-commutator" class="remark">
 
-**Remark 1.27** (Heisenberg uncertainty as commutator). *In the archimedean quantum observable universe the Heisenberg uncertainty principle is expressed through the $q$-deformed commutator. Let $\hat{X}$ and $\hat{P}$ denote position and momentum observables on the fibre $\mathbb{CP}^1$. Let $J \colon H \to H$ be the complex structure operator on the Levi distribution ($J^2 = -\mathrm{Id}$); throughout this paper every occurrence of the imaginary unit $i$ in a physical equation is identified with the geometric action of $J$ on horizontal planes. We define their $q$-dependent commutator at $p \in M$ by $$[\hat{X},\, \hat{P}]_q \;:=\; J\,\hbar_q(p),$$ where $\hbar_q(p) = 1 - q(p)^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>). In this remark the subscript $q$ serves only to record the dependence of the commutator on the substrate field $q$ and should not be confused with any $q$-deformed Lie bracket $[\cdot,\cdot]_q$ on vector fields that may appear elsewhere. The commutator encodes the local uncertainty: when $q(p) \to 1$ (classicality), $[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$ (deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty prevails.*
+**Remark 1.30** (Heisenberg uncertainty as commutator). *In the archimedean quantum observable universe the Heisenberg uncertainty principle is expressed through the $q$-deformed commutator. Let $\hat{X}$ and $\hat{P}$ denote position and momentum observables on the fibre $\mathbb{CP}^1$. Let $J \colon H \to H$ be the complex structure operator on the Levi distribution ($J^2 = -\mathrm{Id}$); throughout this paper every occurrence of the imaginary unit $i$ in a physical equation is identified with the geometric action of $J$ on horizontal planes. We define their $q$-dependent commutator at $p \in M$ by $$[\hat{X},\, \hat{P}]_q \;:=\; J\,\hbar_q(p),$$ where $\hbar_q(p) = 1 - q(p)^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>). In this remark the subscript $q$ serves only to record the dependence of the commutator on the substrate field $q$ and should not be confused with any $q$-deformed Lie bracket $[\cdot,\cdot]_q$ on vector fields that may appear elsewhere. The commutator encodes the local uncertainty: when $q(p) \to 1$ (classicality), $[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$ (deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty prevails.*
 
 </div>
 
 <div id="rem:commutator-lie-analogy" class="remark">
 
-**Remark 1.28** (Commutator and the Lie bracket analogy). *The position–momentum commutator $[\hat{X},\hat{P}]_q$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.27</a>) is the quantum-mechanical counterpart of the Lie bracket $[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$ (Definition <a href="#def:su2-basis" data-reference-type="ref" data-reference="def:su2-basis">4.3</a>). Both commutators measure the first-order non-commutativity of their respective algebras (Remark <a href="#rem:first-order-taylor" data-reference-type="ref" data-reference="rem:first-order-taylor">4.4</a>). In the braid-group setting, this non-commutativity appears as the defining relation $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$ (Definition <a href="#def:braid-group" data-reference-type="ref" data-reference="def:braid-group">4.1</a>); on the Bring surface, it is realised by the $S_3$ permutation action on the spectral resolvents (Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">5.7</a>).*
+**Remark 1.31** (Commutator and the Lie bracket analogy). *The position–momentum commutator $[\hat{X},\hat{P}]_q$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.30</a>) is the quantum-mechanical counterpart of the Lie bracket $[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$ (Definition <a href="#def:su2-basis" data-reference-type="ref" data-reference="def:su2-basis">4.3</a>). Both commutators measure the first-order non-commutativity of their respective algebras (Remark <a href="#rem:first-order-taylor" data-reference-type="ref" data-reference="rem:first-order-taylor">4.4</a>). In the braid-group setting, this non-commutativity appears as the defining relation $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$ (Definition <a href="#def:braid-group" data-reference-type="ref" data-reference="def:braid-group">4.1</a>); on the Bring surface, it is realised by the $S_3$ permutation action on the spectral resolvents (Remark <a href="#rem:braid-group-action" data-reference-type="ref" data-reference="rem:braid-group-action">5.7</a>).*
 
 </div>
 
 <div id="rem:commutator-reeb-vector" class="remark">
 
-**Remark 1.29** (Commutator as Reeb vector). *The commutator $[\hat{X},\hat{P}]_q$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.27</a>) may be identified with the value of the $q$-deformed Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>) evaluated on the contact form. Concretely, the Reeb field is the unique direction along which the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$ encodes precisely the obstruction to commutativity of canonical coordinates. On the exceptional divisor $\mathbb{CP}^1$ produced by blowing up a spacetime defect on the Bring surface (Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">5.22</a>), the Reeb vector field generates the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and its “strength” is set by $\hbar_q(p)$.*
+**Remark 1.32** (Commutator as Reeb vector). *The commutator $[\hat{X},\hat{P}]_q$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.30</a>) may be identified with the value of the $q$-deformed Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>) evaluated on the contact form. Concretely, the Reeb field is the unique direction along which the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$ encodes precisely the obstruction to commutativity of canonical coordinates. On the exceptional divisor $\mathbb{CP}^1$ produced by blowing up a spacetime defect on the Bring surface (Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">5.22</a>), the Reeb vector field generates the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and its “strength” is set by $\hbar_q(p)$.*
 
 </div>
 
 <div id="def:q-harmonic-form" class="definition">
 
-**Definition 1.30** ($q$-Harmonic form (Particle)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHarmonicForm)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). Let $d_q$ denote the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.37</a> below) and let $\delta_q$ denote its formal adjoint with respect to the inner product on $\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ induced by the Webster metric $g_\theta$. A *particle* is a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is $q$-harmonic, i.e. lies in the kernel of the $q$-Laplacian: $$\Delta_q \alpha
+**Definition 1.33** ($q$-Harmonic form (Particle)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHarmonicForm)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). Let $d_q$ denote the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.40</a> below) and let $\delta_q$ denote its formal adjoint with respect to the inner product on $\Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ induced by the Webster metric $g_\theta$. A *particle* is a section $\alpha \in \Gamma(M,\, \Lambda^k T^*M \otimes J^1 E)$ that is $q$-harmonic, i.e. lies in the kernel of the $q$-Laplacian: $$\Delta_q \alpha
   \;=\; (d_q\,\delta_q + \delta_q\,d_q)\,\alpha
   \;=\; 0.$$*
 
@@ -340,13 +384,13 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:reeb-decomposition" class="definition">
 
-**Definition 1.31** (Reeb decomposition). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ReebDecomposition)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a>) and let $\xi$ denote the associated *Reeb vector field*, characterised by $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$. Every differential $k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as $$\alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,$$ where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the *horizontal component* (satisfying $\iota_\xi\,\alpha_H = 0$) and $\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the *vertical component*. A form is *purely horizontal* if and only if $\iota_\xi\,\alpha = 0$.*
+**Definition 1.34** (Reeb decomposition). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ReebDecomposition)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form (Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a>) and let $\xi$ denote the associated *Reeb vector field*, characterised by $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$. Every differential $k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as $$\alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,$$ where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the *horizontal component* (satisfying $\iota_\xi\,\alpha_H = 0$) and $\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the *vertical component*. A form is *purely horizontal* if and only if $\iota_\xi\,\alpha = 0$.*
 
 </div>
 
 <div id="def:fermion" class="definition">
 
-**Definition 1.32** (Fermion). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Fermion)<sup><span style="color: ForestGreen"></span></sup> A *fermion* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>) that has a non-trivial vertical component in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>): $$\Delta_q\,\alpha = 0
+**Definition 1.35** (Fermion). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Fermion)<sup><span style="color: ForestGreen"></span></sup> A *fermion* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>) that has a non-trivial vertical component in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>): $$\Delta_q\,\alpha = 0
   \qquad\text{and}\qquad
   \iota_\xi\,\alpha_V \neq 0.$$*
 
@@ -354,7 +398,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:boson" class="definition">
 
-**Definition 1.33** (Boson). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Boson)<sup><span style="color: ForestGreen"></span></sup> A *boson* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>) that is purely horizontal in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>): $$\Delta_q\,\alpha = 0
+**Definition 1.36** (Boson). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Boson)<sup><span style="color: ForestGreen"></span></sup> A *boson* is a $q$-harmonic form (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>) that is purely horizontal in the Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>): $$\Delta_q\,\alpha = 0
   \qquad\text{and}\qquad
   \alpha = \alpha_H
   \quad(\text{equivalently, } \iota_\xi\,\alpha = 0
@@ -364,7 +408,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:observation" class="definition">
 
-**Definition 1.34** (Observation). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>), and let $q$ denote the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). An *observation* is a morphism $$\mathcal{O} \;\colon\; A \;\longrightarrow\; A
+**Definition 1.37** (Observation). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a ring $R$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>), and let $q$ denote the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). An *observation* is a morphism $$\mathcal{O} \;\colon\; A \;\longrightarrow\; A
   \qquad\text{in } \mathcal{C},$$ satisfying:*
 
 1.  ***Frobenius compatibility.** $\lambda \circ \mathcal{O}
@@ -377,13 +421,13 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="rem:observation-archimedean" class="remark">
 
-**Remark 1.35** (Archimedean realisation of observation). *In the archimedean realisation (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.16</a>), an observation (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.34</a>) is realised as a continuous open map from the spacetime base $M$ to the bundle of endomorphisms $\operatorname{End}(E) \to M$, encoding the coordinate change in torsion energy of the bundle $E$. Because the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) is perturbed by condition (2), every observation shifts the non-commutative geometry: observing the universe changes it.*
+**Remark 1.38** (Archimedean realisation of observation). *In the archimedean realisation (Example <a href="#def:c-quantum-observable-universe" data-reference-type="ref" data-reference="def:c-quantum-observable-universe">1.16</a>), an observation (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.37</a>) is realised as a continuous open map from the spacetime base $M$ to the bundle of endomorphisms $\operatorname{End}(E) \to M$, encoding the coordinate change in torsion energy of the bundle $E$. Because the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) is perturbed by condition (2), every observation shifts the non-commutative geometry: observing the universe changes it.*
 
 </div>
 
 <div id="rem:two-observer-parallelogram" class="remark">
 
-**Remark 1.36** (Two-observer parallelogram). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $q$ denote the substrate parameter. Let $\alpha$ be a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.32</a>) — a $q$-harmonic form with non-trivial vertical component $\iota_\xi\,\alpha_V \neq 0$. Consider two independent observations $\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.34</a>) of the same event. These data assemble into a *parallelogram of observations*: $$\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+**Remark 1.39** (Two-observer parallelogram). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let $q$ denote the substrate parameter. Let $\alpha$ be a fermion (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.35</a>) — a $q$-harmonic form with non-trivial vertical component $\iota_\xi\,\alpha_V \neq 0$. Consider two independent observations $\mathcal{O}_1, \mathcal{O}_2 \colon A \to A$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.37</a>) of the same event. These data assemble into a *parallelogram of observations*: $$\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   & \mathcal{O}_1(\alpha) \arrow[dr, "\text{compare}"] & \\
   \alpha \arrow[ur, "\mathcal{O}_1"]
          \arrow[dr, "\mathcal{O}_2"']
@@ -392,11 +436,11 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 \end{tikzcd}$$ The fermion $\alpha$ is the *source vertex*: it is the physical state prior to measurement, carrying a non-trivial vertical (Reeb) component that couples it to the spin direction. From the source, the two observers independently apply their observation morphisms, producing $\mathcal{O}_1(\alpha)$ and $\mathcal{O}_2(\alpha)$ at the lateral vertices of the parallelogram. The two observed values are then compared at the *far vertex*, yielding the discrepancy $$\delta\alpha
   \;=\; \mathcal{O}_1(\alpha) - \mathcal{O}_2(\alpha).$$*
 
-***Relation to uncertainty.** Each observation perturbs the substrate parameter by $\delta q_i$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.34</a>, condition (2)), so the two observers induce distinct shifted parameters $q_1' = q + \delta q_1$ and $q_2' = q + \delta q_2$. The discrepancy $\delta\alpha$ is controlled by the difference in these perturbations. In the archimedean realisation, the Heisenberg commutator (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.27</a>) gives $$\lVert \delta\alpha \rVert
+***Relation to uncertainty.** Each observation perturbs the substrate parameter by $\delta q_i$ (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.37</a>, condition (2)), so the two observers induce distinct shifted parameters $q_1' = q + \delta q_1$ and $q_2' = q + \delta q_2$. The discrepancy $\delta\alpha$ is controlled by the difference in these perturbations. In the archimedean realisation, the Heisenberg commutator (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.30</a>) gives $$\lVert \delta\alpha \rVert
   \;\geq\;
   \bigl\lvert \hbar_{q_1'}(p) - \hbar_{q_2'}(p) \bigr\rvert
   \;=\;
-  \bigl\lvert q_1'(p)^{-1} - q_2'(p)^{-1} \bigr\rvert,$$ where $\hbar_q = 1 - q^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>). Thus the observed discrepancy at the far vertex of the parallelogram is bounded below by the difference of the local Planck constants induced by the two observations.*
+  \bigl\lvert q_1'(p)^{-1} - q_2'(p)^{-1} \bigr\rvert,$$ where $\hbar_q = 1 - q^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>). Thus the observed discrepancy at the far vertex of the parallelogram is bounded below by the difference of the local Planck constants induced by the two observations.*
 
 *The parallelogram is *degenerate* (i.e. $\delta\alpha = 0$) only when both observations perturb the substrate identically ($\delta q_1 = \delta q_2$), which requires the two observation morphisms to agree on the adjoint coaction of $A$. Generically, the non-commutativity of the Hopf structure prevents this, and the parallelogram opens: independent observations of a fermion necessarily disagree, with the magnitude of disagreement governed by the uncertainty encoded in the substrate field.*
 
@@ -404,7 +448,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-ext-deriv" class="definition">
 
-**Definition 1.37** ($q$-Deformed exterior derivative). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qExtDeriv)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *$q$-deformed exterior derivative* $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by $$d_q\,\alpha
+**Definition 1.40** ($q$-Deformed exterior derivative). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qExtDeriv)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *$q$-deformed exterior derivative* $d_q \colon \Omega^k(M) \to \Omega^{k+1}(M)$ is defined on $k$-forms by $$d_q\,\alpha
   \;=\; q^{-1}\,d\alpha
         + (1 - q^{-1})\,\theta \wedge \mathcal{L}_\xi\,\alpha,$$ where $d$ is the ordinary exterior derivative, $\theta$ the contact form, and $\mathcal{L}_\xi$ the Lie derivative along the Reeb field.*
 
@@ -412,7 +456,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-lie-bracket" class="definition">
 
-**Definition 1.38** ($q$-Deformed Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qLieBracket)<sup><span style="color: ForestGreen"></span></sup> Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields. The *$q$-deformed Lie bracket* is $$[V, W]_q
+**Definition 1.41** ($q$-Deformed Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qLieBracket)<sup><span style="color: ForestGreen"></span></sup> Let $V, W \in \mathfrak{X}(M)$ be smooth vector fields. The *$q$-deformed Lie bracket* is $$[V, W]_q
   \;=\; q^{-1}\,[V, W]
         + (1 - q^{-1})\,\bigl(\theta(V)\,\mathcal{L}_\xi W
                               - \theta(W)\,\mathcal{L}_\xi V\bigr),$$ where $[\,\cdot\,,\cdot\,]$ is the standard Lie bracket on $\mathfrak{X}(M)$.*
@@ -421,7 +465,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-connection" class="definition">
 
-**Definition 1.39** ($q$-Deformed connection). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qConnection)<sup><span style="color: ForestGreen"></span></sup> Let $A$ be an instanton connection on $P$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.18</a>). The *$q$-deformed connection* $A_q$ is defined by $$A_q
+**Definition 1.42** ($q$-Deformed connection). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qConnection)<sup><span style="color: ForestGreen"></span></sup> Let $A$ be an instanton connection on $P$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.18</a>). The *$q$-deformed connection* $A_q$ is defined by $$A_q
   \;=\; q^{-1}\,A
         + (1 - q^{-1})\,\iota_\xi\,A\;\theta,$$*
 
@@ -429,20 +473,20 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="def:q-reeb-vector-field" class="definition">
 
-**Definition 1.40** ($q$-Deformed Reeb vector field). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qReebVectorField)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) and Reeb vector field $\xi$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>). The *$q$-deformed Reeb vector field* is the vector field $\xi_q$ on $M$ defined by its action on smooth functions $f \in C^\infty(M)$: $$\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,$$ where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to $H = \ker\theta$ (using the Webster metric $g_\theta$) and $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.38</a>).*
+**Definition 1.43** ($q$-Deformed Reeb vector field). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.qReebVectorField)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) and Reeb vector field $\xi$ (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>). The *$q$-deformed Reeb vector field* is the vector field $\xi_q$ on $M$ defined by its action on smooth functions $f \in C^\infty(M)$: $$\xi_q(f) \;=\; q^{-1}\,\xi(f) + (1 - q^{-1})\,[\xi, X_f]_q,$$ where $X_f$ is the horizontal lift of $\mathrm{grad}_{g_\theta}\,f$ to $H = \ker\theta$ (using the Webster metric $g_\theta$) and $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.41</a>).*
 
 </div>
 
 <div id="def:q-reeb-flow" class="definition">
 
-**Definition 1.41** ($q$-Deformed Reeb flow). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QReebFlow)<sup><span style="color: ForestGreen"></span></sup> Let $\xi_q$ be the $q$-deformed Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>). The *$q$-deformed Reeb flow* is the one-parameter family of diffeomorphisms $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$: $$\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
+**Definition 1.44** ($q$-Deformed Reeb flow). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QReebFlow)<sup><span style="color: ForestGreen"></span></sup> Let $\xi_q$ be the $q$-deformed Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>). The *$q$-deformed Reeb flow* is the one-parameter family of diffeomorphisms $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$, generated by $\xi_q$: $$\frac{d}{dt}\,\phi_t^q \;=\; \xi_q \circ \phi_t^q,
   \qquad \phi_0^q = \mathrm{id}_M.$$*
 
 </div>
 
 <div id="def:q-torsion-leaf" class="definition">
 
-**Definition 1.42** ($q$-Torsion leaf). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf)<sup><span style="color: ForestGreen"></span></sup> Let $H = \ker\theta \subset TM$ be the horizontal distribution on the CR manifold $M$. A *$q$-torsion leaf* is a maximal integral submanifold $L \hookrightarrow M$ of $H$ that is invariant under the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>): $$T_p L \;\subset\; H_p
+**Definition 1.45** ($q$-Torsion leaf). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QTorsionLeaf)<sup><span style="color: ForestGreen"></span></sup> Let $H = \ker\theta \subset TM$ be the horizontal distribution on the CR manifold $M$. A *$q$-torsion leaf* is a maximal integral submanifold $L \hookrightarrow M$ of $H$ that is invariant under the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>): $$T_p L \;\subset\; H_p
   \quad\text{for all } p \in L,
   \qquad\text{and}\qquad
   \phi_t^q(L) = L
@@ -452,7 +496,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="rem:q-torsion-existence" class="remark">
 
-**Remark 1.43** ($q$-Torsion leaves: existence and Frobenius obstruction). *The horizontal distribution $H = \ker\theta$ on a contact manifold is maximally non-integrable: $d\theta|_{H \times H}$ is non-degenerate. By the Frobenius theorem, maximal integral submanifolds of $H$ have dimension at most $n$ (half the rank of $H$); these are the *Legendrian submanifolds*. Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a> therefore requires $L$ to be a Legendrian submanifold invariant under the $q$-deformed Reeb flow.*
+**Remark 1.46** ($q$-Torsion leaves: existence and Frobenius obstruction). *The horizontal distribution $H = \ker\theta$ on a contact manifold is maximally non-integrable: $d\theta|_{H \times H}$ is non-degenerate. By the Frobenius theorem, maximal integral submanifolds of $H$ have dimension at most $n$ (half the rank of $H$); these are the *Legendrian submanifolds*. Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a> therefore requires $L$ to be a Legendrian submanifold invariant under the $q$-deformed Reeb flow.*
 
 *Existence is not automatic: it depends on the dynamics of $\xi_q$. When $q \to 1$ and $\xi_q \to \xi$, invariant Legendrian submanifolds exist whenever the Reeb flow is periodic or integrable (e.g. on $S^3/\Gamma$). For $q > 1$, the deformation generically breaks periodicity, and one must appeal to KAM-type persistence results.*
 
@@ -462,13 +506,13 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="rem:reeb-physical" class="remark">
 
-**Remark 1.44** (Physical interpretation of the Reeb decomposition). *The Reeb vector field $\xi$ singles out the direction of internal spin on the CR manifold. Forms that “see” this direction (fermions) carry half-integer spin; forms confined to the horizontal distribution (bosons) do not couple to the Reeb flow and carry integer spin. The decomposition $\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the spin–statistics distinction in this framework. Experimental confirmation of this picture, including photonic quantum Hall measurements and many-body interference in crystal lattices, is discussed in Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.*
+**Remark 1.47** (Physical interpretation of the Reeb decomposition). *The Reeb vector field $\xi$ singles out the direction of internal spin on the CR manifold. Forms that “see” this direction (fermions) carry half-integer spin; forms confined to the horizontal distribution (bosons) do not couple to the Reeb flow and carry integer spin. The decomposition $\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the spin–statistics distinction in this framework. Experimental confirmation of this picture, including photonic quantum Hall measurements and many-body interference in crystal lattices, is discussed in Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>.*
 
 </div>
 
 <div id="def:q-yang-mills-levi" class="definition">
 
-**Definition 1.45** ($q$-Weighted Yang–Mills–Levi functional). *Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *$q$-weighted Yang–Mills–Levi functional* is $$S_q[A, \theta]
+**Definition 1.48** ($q$-Weighted Yang–Mills–Levi functional). *Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). The *$q$-weighted Yang–Mills–Levi functional* is $$S_q[A, \theta]
   \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
         \theta \wedge (d\theta)^n,$$ where $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$ (Remark <a href="#rem:c-substrate-via-levi" data-reference-type="ref" data-reference="rem:c-substrate-via-levi">1.21</a>).*
 
@@ -476,7 +520,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="rem:gr-substrate-geometry" class="remark">
 
-**Remark 1.46** (General Relativity as the “Substrate Geometry”). *In this model the metric is effectively replaced by the Levi form $L_\theta$ and its coupling to the gauge curvature $F_A$. Gravity is expressed through the Variational Bicomplex as the back-reaction of the gauge fields on the CR manifold $M$. Variation of $S_q$ (Definition <a href="#def:q-yang-mills-levi" data-reference-type="ref" data-reference="def:q-yang-mills-levi">1.45</a>) with respect to the Levi form $L_\theta$ yields field equations of the schematic form $$\frac{\delta S_q}{\delta L_\theta}
+**Remark 1.49** (General Relativity as the “Substrate Geometry”). *In this model the metric is effectively replaced by the Levi form $L_\theta$ and its coupling to the gauge curvature $F_A$. Gravity is expressed through the Variational Bicomplex as the back-reaction of the gauge fields on the CR manifold $M$. Variation of $S_q$ (Definition <a href="#def:q-yang-mills-levi" data-reference-type="ref" data-reference="def:q-yang-mills-levi">1.48</a>) with respect to the Levi form $L_\theta$ yields field equations of the schematic form $$\frac{\delta S_q}{\delta L_\theta}
   \;=\; 0
   \qquad\Longrightarrow\qquad
   \mathrm{Ric}_{g_\theta} \;=\; T^{(q)},$$ where $\mathrm{Ric}_{g_\theta}$ is the Webster Ricci curvature and $T^{(q)}$ is a $q$-weighted stress-energy $2$-tensor on $H$ (both coordinate-free objects). The precise derivation of the field equations will be given in Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a>; here we note only that the geometry of $M$ is forced to curve to accommodate the tension of the $\mathrm{SU}(2)$ instantons.*
@@ -485,7 +529,7 @@ An instanton connection $A$ minimises the Yang–Mills functional. By the Bogomo
 
 <div id="prop:main-commutative-diagram" class="proposition">
 
-**Proposition 1.47** (Main Commutative Diagram). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.17</a>) and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). Let $\mathbf{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $S_q$ (Definition <a href="#def:q-yang-mills-levi" data-reference-type="ref" data-reference="def:q-yang-mills-levi">1.45</a>), and let $\nabla^A$ denote parallel transport along $A$. The following diagram commutes: $$\begin{CD}
+**Proposition 1.50** (Main Commutative Diagram). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram)<sup><span style="color: ForestGreen"></span></sup> Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ (Definition <a href="#def:instanton" data-reference-type="ref" data-reference="def:instanton">1.17</a>) and substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>). Let $\mathbf{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $S_q$ (Definition <a href="#def:q-yang-mills-levi" data-reference-type="ref" data-reference="def:q-yang-mills-levi">1.48</a>), and let $\nabla^A$ denote parallel transport along $A$. The following diagram commutes: $$\begin{CD}
 J^1E @>{\mathbf{E}[S_q]}>>
   \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\} \\
 @V{\text{jet evaluation}}VV
@@ -498,7 +542,7 @@ J^1E @>{\mathbf{E}[S_q]}>>
 
 <div class="proof">
 
-*Proof sketch.* The top row is the variational equation $\delta S_q / \delta L_\theta = 0$, which involves $q(p)$ through the functional $S_q$. The bottom row is the $q$-deformed parallel-transport equation $J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi$ (Remark <a href="#rem:schrodinger-jet-coaction" data-reference-type="ref" data-reference="rem:schrodinger-jet-coaction">2.20</a>), linearised at a chosen section. The left column is the jet evaluation map $j^1_p \sigma \mapsto \sigma(p)$ restricted to $E_{\mathrm{lin}}$. Commutativity amounts to the statement that solving the variational equation for $L_\theta$ and then substituting $q(p)$ into the transport equation gives the same solution set $\psi$ as first evaluating the jet and then transporting along $A$. This follows from the chain rule: $\mathbf{E}[S_q]$ determines $L_\theta$ (and hence $q$), which in turn determines $\hat{H}_q$ and $\xi_q$ appearing in the transport equation. A full proof requires the variational bicomplex machinery of Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a> and is given there. ◻
+*Proof sketch.* The top row is the variational equation $\delta S_q / \delta L_\theta = 0$, which involves $q(p)$ through the functional $S_q$. The bottom row is the $q$-deformed parallel-transport equation $J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi$ (Remark <a href="#rem:schrodinger-jet-coaction" data-reference-type="ref" data-reference="rem:schrodinger-jet-coaction">2.22</a>), linearised at a chosen section. The left column is the jet evaluation map $j^1_p \sigma \mapsto \sigma(p)$ restricted to $E_{\mathrm{lin}}$. Commutativity amounts to the statement that solving the variational equation for $L_\theta$ and then substituting $q(p)$ into the transport equation gives the same solution set $\psi$ as first evaluating the jet and then transporting along $A$. This follows from the chain rule: $\mathbf{E}[S_q]$ determines $L_\theta$ (and hence $q$), which in turn determines $\hat{H}_q$ and $\xi_q$ appearing in the transport equation. A full proof requires the variational bicomplex machinery of Chapter <a href="#chap:experimental" data-reference-type="ref" data-reference="chap:experimental">[chap:experimental]</a> and is given there. ◻
 
 </div>
 
@@ -544,7 +588,7 @@ This chapter collects the categorical, algebraic, and analytic details that unde
 
 **Remark 2.3** (Generalisation beyond strict pseudoconvexity). *Example <a href="#def:c-quantum-universe" data-reference-type="ref" data-reference="def:c-quantum-universe">1.14</a> requires only Levi non-degeneracy (not strict pseudoconvexity). This generality is deliberate: the QOU framework applies whenever the following three cohomological/obstruction conditions hold.*
 
-1.  **Kohn–Rossi finite-dimensionality.* The tangential CR complex $(\Omega^{0,\bullet}_b(M),\, \bar\partial_b)$ has finite-dimensional cohomology $H^{0,k}_{\bar\partial_b}(M)$ for all $k$. This replaces strict pseudoconvexity in ensuring analytic control over $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>). In the strictly pseudoconvex case, Kohn’s sub-elliptic estimates guarantee this automatically; for indefinite Levi signature, one imposes it as a hypothesis.*
+1.  **Kohn–Rossi finite-dimensionality.* The tangential CR complex $(\Omega^{0,\bullet}_b(M),\, \bar\partial_b)$ has finite-dimensional cohomology $H^{0,k}_{\bar\partial_b}(M)$ for all $k$. This replaces strict pseudoconvexity in ensuring analytic control over $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>). In the strictly pseudoconvex case, Kohn’s sub-elliptic estimates guarantee this automatically; for indefinite Levi signature, one imposes it as a hypothesis.*
 
 2.  **Non-degeneracy of the substrate.* The Levi form $L_\theta$ is non-degenerate (but not necessarily positive definite), so the substrate parameter $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert$ (Remark <a href="#rem:c-substrate-via-levi" data-reference-type="ref" data-reference="rem:c-substrate-via-levi">1.21</a>) is well-defined and the regime $q > 1$ is attainable. When the Levi form has indefinite signature $(r,s)$ with $r,s \geq 1$, the Webster metric $g_\theta$ is pseudo-Riemannian; the contraction $\langle L_\theta, F_A^+\rangle$ remains well-defined (using the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and one takes the absolute value to ensure $q \geq 1$.*
 
@@ -568,7 +612,7 @@ This chapter collects the categorical, algebraic, and analytic details that unde
 
 <div id="ex:brings-surface" class="example">
 
-**Example 2.6** (Bring’s surface unit circle bundle). *Let $S$ denote Bring’s surface (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>), the genus-$4$ Riemann surface in $\mathbb{P}^4$ cut out by the first three power sums $\sum x_j^k = 0$, $k=1,2,3$. Being a Riemann surface (real dimension $2$), $S$ itself is not a CR manifold. The CR geometry lives on the unit circle bundle $M_S \subset T^*S$: the Liouville $1$-form on $T^*S$ restricts to a contact form $\theta$ on $M_S$, making it a $3$-dimensional strictly pseudoconvex CR manifold. The Reeb vector field $\xi$ generates the $U(1)$ fibre rotation of $M_S \to S$. The natural projection $\pi\colon S \to \mathbb{CP}^1$ (a degree-$4$ branched covering with $6$ branch points corresponding to the $6$ defects of Euler characteristic $\chi=-6$) lifts to a principal $\mathrm{SU}(2)$-bundle $P \to M_S$. Setting $E = P \times_G \mathbb{CP}^1$, the $4$-tuple $(M_S,\, G,\, P,\, E)$ assembles into an archimedean quantum observable universe whose exceptional divisors support the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>).*
+**Example 2.6** (Bring’s surface unit circle bundle). *Let $S$ denote Bring’s surface (Definition <a href="#def:brings-surface" data-reference-type="ref" data-reference="def:brings-surface">5.2</a>), the genus-$4$ Riemann surface in $\mathbb{P}^4$ cut out by the first three power sums $\sum x_j^k = 0$, $k=1,2,3$. Being a Riemann surface (real dimension $2$), $S$ itself is not a CR manifold. The CR geometry lives on the unit circle bundle $M_S \subset T^*S$: the Liouville $1$-form on $T^*S$ restricts to a contact form $\theta$ on $M_S$, making it a $3$-dimensional strictly pseudoconvex CR manifold. The Reeb vector field $\xi$ generates the $U(1)$ fibre rotation of $M_S \to S$. The natural projection $\pi\colon S \to \mathbb{CP}^1$ (a degree-$4$ branched covering with $6$ branch points corresponding to the $6$ defects of Euler characteristic $\chi=-6$) lifts to a principal $\mathrm{SU}(2)$-bundle $P \to M_S$. Setting $E = P \times_G \mathbb{CP}^1$, the $4$-tuple $(M_S,\, G,\, P,\, E)$ assembles into an archimedean quantum observable universe whose exceptional divisors support the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>).*
 
 </div>
 
@@ -588,7 +632,7 @@ This chapter collects the categorical, algebraic, and analytic details that unde
 
 <div id="rem:quantum-gauge-group-category" class="remark">
 
-**Remark 2.8** (Quantum gauge group: category-theoretic perspective). *The quantum gauge group (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.24</a>) is realised pointwise by the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of regular functions on $\mathrm{SU}_{q(p)}(2)$. The categorical view replaces each fibre with its representation category $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal category. Tannaka–Krein duality reconstructs $\mathcal{O}_{q(p)}$ from $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ via $\mathrm{End}^{\otimes}(\omega)$, where $\omega$ is the forgetful fibre functor. For any two points $p, p' \in M$ connected by a path $\gamma$, the passage between fibres is captured by the commutative square $$\label{eq:tannaka-krein-functoriality}
+**Remark 2.8** (Quantum gauge group: category-theoretic perspective). *The quantum gauge group (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.27</a>) is realised pointwise by the Hopf algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ of regular functions on $\mathrm{SU}_{q(p)}(2)$. The categorical view replaces each fibre with its representation category $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal category. Tannaka–Krein duality reconstructs $\mathcal{O}_{q(p)}$ from $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ via $\mathrm{End}^{\otimes}(\omega)$, where $\omega$ is the forgetful fibre functor. For any two points $p, p' \in M$ connected by a path $\gamma$, the passage between fibres is captured by the commutative square $$\label{eq:tannaka-krein-functoriality}
 \begin{CD}
 \mathcal{O}_{q(p)}(\mathrm{SU}(2))
   @>{\mathrm{Rep}}>>
@@ -666,9 +710,41 @@ F_A \;=\; B.$$ In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distributio
 
 </div>
 
+<div id="prop:emergence-to-fake-flat" class="proposition">
+
+**Proposition 2.12** (From Tannakian emergence to $2$-group fake flatness). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying the categorical volume constraint (Definition <a href="#def:categorical-volume-constraint" data-reference-type="ref" data-reference="def:categorical-volume-constraint">1.24</a>), so that $G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$ (Theorem <a href="#thm:su2-emergence" data-reference-type="ref" data-reference="thm:su2-emergence">1.25</a>). Then the inner-automorphism $2$-group $\mathrm{INN}(G_q)$ is the unique strict $2$-group whose fake-flatness condition <a href="#eq:fake-flatness" data-reference-type="eqref" data-reference="eq:fake-flatness">[eq:fake-flatness]</a> reproduces the instanton equation $F_A^{-} = 0$ under the simplicity constraint.*
+
+</div>
+
+<div class="proof">
+
+*Proof.* The argument proceeds in three steps.
+
+*Step 1: The volume constraint determines the Lie algebra.* The categorical volume constraint provides a non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$. Under the fibre functor $\omega$, this endows the rank-$2$ module $\omega(V)$ with a $q$-antisymmetric pairing whose invariance algebra is $\mathfrak{su}_q(2)$. This is the Lie algebra of the reconstructed group $G_q$, and hence of the crossed module $\partial \colon G_q \xrightarrow{\mathrm{id}} G_q$ defining $\mathrm{INN}(G_q)$ <a href="#eq:crossed-module-ses" data-reference-type="eqref" data-reference="eq:crossed-module-ses">[eq:crossed-module-ses]</a>.
+
+*Step 2: The determinant-one condition descends to the $2$-form datum.* A $2$-connection $(A, B)$ for the principal $2$-bundle of $\mathrm{INN}(G_q)$ takes values in $\mathfrak{g}_q = \mathfrak{su}_q(2)$. Fake flatness <a href="#eq:fake-flatness" data-reference-type="eqref" data-reference="eq:fake-flatness">[eq:fake-flatness]</a> sets $B = F_A$, so $B$ inherits the tracelessness forced by the determinant constraint $\det(g_V) = 1$ of Theorem <a href="#thm:su2-emergence" data-reference-type="ref" data-reference="thm:su2-emergence">1.25</a>: $B$ is $\mathrm{Ad}(P)$-valued with $\mathrm{tr}\,B = 0$, i.e. $\mathfrak{su}_q(2)$-valued rather than $\mathfrak{gl}_q(2)$-valued.
+
+*Step 3: Simplicity plus fake flatness gives the instanton equation.* Imposing the simplicity constraint $B \in \Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P))$ (Remark <a href="#rem:self-dual-2group" data-reference-type="ref" data-reference="rem:self-dual-2group">2.11</a>) and combining with $F_A = B$ yields $F_A = F_A^+$, hence $F_A^- = 0$. Step 1 guarantees the structure group is $\mathrm{SU}_q(2)$—not a quotient of $\mathrm{GL}_q(2)$—so the instanton moduli space carries the gauge symmetry dictated by the categorical axioms. ◻
+
+</div>
+
+<div id="rem:simplicity-from-category" class="remark">
+
+**Remark 2.13** (Categorical origin of the simplicity constraint). *The $*$-involution on $\mathcal{C}$—required by the QOU observability axiom—induces via the fibre functor an involution on $\Omega^2(M, \mathfrak{g}_q)$ whose $+1$-eigenspace is exactly the self-dual forms $\Omega^{2,+}(M, \mathfrak{g}_q)$. Thus the full chain $$\text{volume constraint}
+  \;\xRightarrow{\text{Tannaka}}\;
+  G_q = \mathrm{SU}_q(2)
+  \;\xRightarrow{\mathrm{INN}}\;
+  F_A = B
+  \;\xRightarrow{*\text{-structure}}\;
+  B = F_A^+
+  \;\Longrightarrow\;
+  F_A^- = 0$$ is forced by the axioms of the quantum observable universe, with no additional geometric input beyond the CR structure of $M$.*
+
+</div>
+
 <div id="rem:frobenius-simplification" class="remark">
 
-**Remark 2.12** (Frobenius structure of the $\mathbb{C}$ gauge algebra). *The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural *Frobenius structure*: the Haar state $h_q \colon \mathcal{O}_q \to \mathbb{C}$ induces a non-degenerate pairing $\langle a, b \rangle = h_q(ab)$, making $\mathcal{O}_q$ into a Frobenius algebra with comultiplication $\Delta_\mu$ dual to the multiplication. This Frobenius comultiplication is compatible with the Hopf comultiplication $\Delta_q$ of <a href="#eq:coassociativity" data-reference-type="eqref" data-reference="eq:coassociativity">[eq:coassociativity]</a> and satisfies the *Frobenius relation*: $$\label{eq:frobenius-relation}
+**Remark 2.14** (Frobenius structure of the $\mathbb{C}$ gauge algebra). *The Hopf algebra $\mathcal{O}_q(\mathrm{SU}(2))$ carries a natural *Frobenius structure*: the Haar state $h_q \colon \mathcal{O}_q \to \mathbb{C}$ induces a non-degenerate pairing $\langle a, b \rangle = h_q(ab)$, making $\mathcal{O}_q$ into a Frobenius algebra with comultiplication $\Delta_\mu$ dual to the multiplication. This Frobenius comultiplication is compatible with the Hopf comultiplication $\Delta_q$ of <a href="#eq:coassociativity" data-reference-type="eqref" data-reference="eq:coassociativity">[eq:coassociativity]</a> and satisfies the *Frobenius relation*: $$\label{eq:frobenius-relation}
 \begin{CD}
 \mathcal{O}_q \otimes \mathcal{O}_q
   @>{\mu}>>
@@ -708,13 +784,13 @@ H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
   \mathbb{C}
 \end{CD}$$ The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate Frobenius pairing from $\lambda$; any global parallel section would pair non-trivially with itself, contradicting the irreducibility of the instanton connection (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.18</a>). Hence the Frobenius non-degeneracy, combined with irreducibility, forces $H^0(M, \mathrm{Ad}(A)) = 0$. The section-vanishing condition $\Gamma_c(M, E) = 0$ follows similarly from the non-existence of $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.*
 
-*Note that the horizontal distribution $H = \ker\theta$ itself *fails* to carry a Frobenius structure (as discussed in Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.43</a>); it is the gauge algebra, not the distribution, that is Frobenius.*
+*Note that the horizontal distribution $H = \ker\theta$ itself *fails* to carry a Frobenius structure (as discussed in Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.46</a>); it is the gauge algebra, not the distribution, that is Frobenius.*
 
 </div>
 
 <div id="ex:cosmological-limits" class="example">
 
-**Example 2.13** (Cosmological limits of $q$ on $S^3$). *Consider the link $M = S^3$ with the standard contact form $\theta$ (Example <a href="#ex:ale" data-reference-type="ref" data-reference="ex:ale">2.5</a> with $\Gamma = \{1\}$) and let $A$ be the standard instanton connection on the Hopf bundle $P = S^7 \to S^4$ restricted to $S^3$. The Levi form $L_\theta$ has signature $(1,0)$ with $\lvert L_\theta \rvert = 1$ everywhere.*
+**Example 2.15** (Cosmological limits of $q$ on $S^3$). *Consider the link $M = S^3$ with the standard contact form $\theta$ (Example <a href="#ex:ale" data-reference-type="ref" data-reference="ex:ale">2.5</a> with $\Gamma = \{1\}$) and let $A$ be the standard instanton connection on the Hopf bundle $P = S^7 \to S^4$ restricted to $S^3$. The Levi form $L_\theta$ has signature $(1,0)$ with $\lvert L_\theta \rvert = 1$ everywhere.*
 
 *As the instanton curvature concentrates near a point $p_0 \in S^3$ (a “collapsing instanton”), $\lvert \langle L_\theta, F_A^+ \rangle \rvert$ diverges at $p_0$ and tends to zero away from $p_0$. This produces two regimes simultaneously:*
 
@@ -728,13 +804,13 @@ H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
 
 <div id="rem:j1e-local-states" class="remark">
 
-**Remark 2.14** ($J^1E$ as the space of local states). *The jet bundle $J^1 E$ serves as the space of local states of the $\mathbb{C}$ quantum observable universe. The classical gauge dynamics, encoded by the *instanton connection* $A$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.18</a>), are weighted by the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) to define the quantum field algebra $\mathrm{SU}_q(2)$ (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.24</a>).*
+**Remark 2.16** ($J^1E$ as the space of local states). *The jet bundle $J^1 E$ serves as the space of local states of the $\mathbb{C}$ quantum observable universe. The classical gauge dynamics, encoded by the *instanton connection* $A$ (Lemma <a href="#lem:irreducible-connection" data-reference-type="ref" data-reference="lem:irreducible-connection">1.18</a>), are weighted by the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) to define the quantum field algebra $\mathrm{SU}_q(2)$ (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.27</a>).*
 
 </div>
 
 <div id="prop:dq-squared" class="proposition">
 
-**Proposition 2.15** ($d_q^2$ does not vanish). *Let $d_q$ be the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.37</a>). For constant $q > 1$, the operator $d_q^2$ is given by $$d_q^2\,\alpha
+**Proposition 2.17** ($d_q^2$ does not vanish). *Let $d_q$ be the $q$-deformed exterior derivative (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.40</a>). For constant $q > 1$, the operator $d_q^2$ is given by $$d_q^2\,\alpha
   \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.$$ In particular, $d_q^2 = 0$ if and only if $q = 1$ (classical case) or $\alpha$ lies in the kernel of $\mathcal{L}_\xi$ (Reeb-invariant forms). On horizontal $\mathcal{L}_\xi$-invariant forms, $d_q$ *does* define a cochain complex.*
 
 </div>
@@ -758,7 +834,7 @@ H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
 
 <div id="prop:q-jacobiator" class="proposition">
 
-**Proposition 2.16** (Jacobiator of ${{[\,\cdot\,,\cdot\,]}}_q$). *Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e. $\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator* $$\mathrm{Jac}_q(U,V,W)
+**Proposition 2.18** (Jacobiator of ${{[\,\cdot\,,\cdot\,]}}_q$). *Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e. $\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator* $$\mathrm{Jac}_q(U,V,W)
   \;:=\; [[U,V]_q, W]_q + [[V,W]_q, U]_q + [[W,U]_q, V]_q$$ is given by $$\mathrm{Jac}_q(U,V,W)
   \;=\; -q^{-1}(1-q^{-1})\!\sum_{\mathrm{cyc}}
         d\theta(V,W)\,\mathcal{L}_\xi U,$$ where the sum is over cyclic permutations of $(U,V,W)$. In particular, $\mathrm{Jac}_q = 0$ if and only if $q = 1$ (classical Jacobi identity) or $d\theta|_{H \times H} = 0$ (integrable horizontal distribution). Since $d\theta|_{H \times H}$ is the Levi form $L_\theta$, which is non-degenerate by hypothesis, $[\,\cdot\,,\cdot\,]_q$ violates the Jacobi identity for all $q \neq 1$. Thus $(\mathfrak{X}(M), [\,\cdot\,,\cdot\,]_q)$ is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.*
@@ -777,39 +853,39 @@ _q,\, U]_q
 
 <div id="rem:classical-recovery" class="remark">
 
-**Remark 2.17** (Classical recovery of $q$-deformed operators). *All four $q$-deformed operators interpolate between the classical ($q = 1$) and deformed ($q > 1$) regimes via the uniform pattern $q^{-1} \cdot (\text{classical}) + (1 - q^{-1}) \cdot (\text{Reeb correction})$. At $q = 1$ each recovers its classical counterpart: $d_q = d$ (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.37</a>), $[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$ (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.38</a>), $A_q = A$ (Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.39</a>), and $\xi_q = \xi$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>). The connection $A_q$ interpolates between the full instanton connection and its Reeb component $\iota_\xi A\;\theta$.*
+**Remark 2.19** (Classical recovery of $q$-deformed operators). *All four $q$-deformed operators interpolate between the classical ($q = 1$) and deformed ($q > 1$) regimes via the uniform pattern $q^{-1} \cdot (\text{classical}) + (1 - q^{-1}) \cdot (\text{Reeb correction})$. At $q = 1$ each recovers its classical counterpart: $d_q = d$ (Definition <a href="#def:q-ext-deriv" data-reference-type="ref" data-reference="def:q-ext-deriv">1.40</a>), $[\,\cdot\,,\cdot\,]_q = [\,\cdot\,,\cdot\,]$ (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.41</a>), $A_q = A$ (Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.42</a>), and $\xi_q = \xi$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>). The connection $A_q$ interpolates between the full instanton connection and its Reeb component $\iota_\xi A\;\theta$.*
 
 </div>
 
 <div id="rem:q-torsion-leaf-minimum" class="remark">
 
-**Remark 2.18** ($q$-Torsion leaves as energy minima). *Let $A_q$ denote the $q$-deformed connection (Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.39</a>) and define the $q$-curvature $$\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q,$$ where $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.38</a>) extended to $\mathrm{Ad}(P)$-valued forms. A $q$-torsion leaf $L$ (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a>) is a local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution: the invariance of $L$ under $\phi_t^q$ forces the first variation of $\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a $q$-curvature well. Physically, a $q$-torsion leaf represents a region of the CR manifold where the gauge curvature is minimised and the $q$-deformed dynamics are in equilibrium.*
+**Remark 2.20** ($q$-Torsion leaves as energy minima). *Let $A_q$ denote the $q$-deformed connection (Definition <a href="#def:q-connection" data-reference-type="ref" data-reference="def:q-connection">1.42</a>) and define the $q$-curvature $$\Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q,$$ where $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket (Definition <a href="#def:q-lie-bracket" data-reference-type="ref" data-reference="def:q-lie-bracket">1.41</a>) extended to $\mathrm{Ad}(P)$-valued forms. A $q$-torsion leaf $L$ (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a>) is a local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal distribution: the invariance of $L$ under $\phi_t^q$ forces the first variation of $\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a $q$-curvature well. Physically, a $q$-torsion leaf represents a region of the CR manifold where the gauge curvature is minimised and the $q$-deformed dynamics are in equilibrium.*
 
 </div>
 
 <div id="rem:q-harmonic-physical" class="remark">
 
-**Remark 2.19** (Physical interpretation of $q$-harmonicity). *See Remark <a href="#rem:reeb-physical" data-reference-type="ref" data-reference="rem:reeb-physical">1.44</a> for the physical interpretation of $q$-harmonic forms and the Reeb decomposition. In brief: the $q$-Laplacian $\Delta_q$ interpolates between the Hodge Laplacian ($q = 1$) and the deep-quantum regime ($q \to \infty$), so a $q$-harmonic form — a “particle” — is itself $q$-dependent.*
+**Remark 2.21** (Physical interpretation of $q$-harmonicity). *See Remark <a href="#rem:reeb-physical" data-reference-type="ref" data-reference="rem:reeb-physical">1.47</a> for the physical interpretation of $q$-harmonic forms and the Reeb decomposition. In brief: the $q$-Laplacian $\Delta_q$ interpolates between the Hodge Laplacian ($q = 1$) and the deep-quantum regime ($q \to \infty$), so a $q$-harmonic form — a “particle” — is itself $q$-dependent.*
 
 </div>
 
 <div id="rem:schrodinger-jet-coaction" class="remark">
 
-**Remark 2.20** ($q$-Deformed Schrödinger equation). *The $q$-deformed Schrödinger equation governs the evolution of states in the linearised state bundle. Throughout this paper the symbol $i$ in the Schrödinger equation is identified with the complex structure operator $J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$): it acts as a geometric twisting operator on horizontal planes rather than as an algebraic imaginary unit.*
+**Remark 2.22** ($q$-Deformed Schrödinger equation). *The $q$-deformed Schrödinger equation governs the evolution of states in the linearised state bundle. Throughout this paper the symbol $i$ in the Schrödinger equation is identified with the complex structure operator $J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$): it acts as a geometric twisting operator on horizontal planes rather than as an algebraic imaginary unit.*
 
 **Linearisation convention.* The fibre $\mathbb{CP}^1$ is a non-linear space, so one cannot write a linear PDE for sections of $E$ directly. We work instead with the *linearised* model: identify a neighbourhood of a base-point in $\mathbb{CP}^1$ with $\mathbb{C}$ via stereographic projection, and interpret $\psi$ as a section of the line bundle $E_{\mathrm{lin}}$ obtained by linearising $E$ at the chosen section. The covariant derivative $D_A = d + A$ then acts on sections of this line bundle in the standard way.*
 
-*For a section $\psi \in \Gamma(E_{\mathrm{lin}})$ and the $q$-deformed Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>), the Schrödinger dynamics take the form $$J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,$$ where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ is the *$q$-deformed Hamiltonian* (here $\Delta_q$ is the $q$-Laplacian of Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a> acting on sections of $E_{\mathrm{lin}}$, and $V_q$ is a potential depending on the curvature $\Omega_q$), and:*
+*For a section $\psi \in \Gamma(E_{\mathrm{lin}})$ and the $q$-deformed Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>), the Schrödinger dynamics take the form $$J\,\hbar_q(p)\,\iota_{\xi_q} D_A \psi \;=\; \hat{H}_q\, \psi,$$ where $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ is the *$q$-deformed Hamiltonian* (here $\Delta_q$ is the $q$-Laplacian of Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a> acting on sections of $E_{\mathrm{lin}}$, and $V_q$ is a potential depending on the curvature $\Omega_q$), and:*
 
-- *$\hbar_q(p) = 1 - q(p)^{-1}$: the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>) is a local field;*
+- *$\hbar_q(p) = 1 - q(p)^{-1}$: the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>) is a local field;*
 
 - *$D_A = d + A$: the instanton connection on $P$ acts as the potential;*
 
 - *$\iota_{\xi_q} D_A \psi$: the covariant derivative $D_A\psi$ is an $E_{\mathrm{lin}}$-valued $1$-form; contracting it with $\xi_q$ yields a section of $E_{\mathrm{lin}}$, matching the right-hand side.*
 
-*As $q(p) \to 1$ (classicality), the commutator $[\hat{X}, \hat{P}]_q \to 0$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.27</a>), the uncertainty vanishes, and the wave-like nature of the section freezes into a classical trajectory.*
+*As $q(p) \to 1$ (classicality), the commutator $[\hat{X}, \hat{P}]_q \to 0$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.30</a>), the uncertainty vanishes, and the wave-like nature of the section freezes into a classical trajectory.*
 
-**Categorical role.* Although this remark is stated as a PDE rather than in categorical language, it is essential to the paper’s structure: the Schrödinger equation provides the bottom row of the main commutative diagram (Proposition <a href="#prop:main-commutative-diagram" data-reference-type="ref" data-reference="prop:main-commutative-diagram">1.47</a>). Categorically, the $q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra $\Gamma(J^1 E)$, and the Schrödinger equation is the condition that $\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$. In the base-field-independent setting of Definitions <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a> and <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>, this extends to arbitrary base rings $R$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate $R$-linear category of sections.*
+**Categorical role.* Although this remark is stated as a PDE rather than in categorical language, it is essential to the paper’s structure: the Schrödinger equation provides the bottom row of the main commutative diagram (Proposition <a href="#prop:main-commutative-diagram" data-reference-type="ref" data-reference="prop:main-commutative-diagram">1.50</a>). Categorically, the $q$-deformed Hamiltonian $\hat{H}_q$ defines an endomorphism of the module category $\mathrm{Mod}_{E_{\mathrm{lin}}}$ over the jet algebra $\Gamma(J^1 E)$, and the Schrödinger equation is the condition that $\psi$ lies in the kernel of $\hat{H}_q - J\hbar_q\,\iota_{\xi_q}D_A$. In the base-field-independent setting of Definitions <a href="#def:quantum-universe" data-reference-type="ref" data-reference="def:quantum-universe">1.1</a> and <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>, this extends to arbitrary base rings $R$ by replacing $\Gamma(E_{\mathrm{lin}})$ with the appropriate $R$-linear category of sections.*
 
 </div>
 
@@ -992,7 +1068,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 **Ladder modes.* These are the raising and lowering vortices of the decomposition. They take values in the off-diagonal generators $E_\pm$ of $\mathfrak{su}(2)$ and have the geometric form $\omega^\pm \otimes E_\pm$. They describe the entangling flows that twist the $\mathbb{CP}^1$ fibre as one moves along the brane. These modes are responsible for the non-commutativity in the $\mathrm{SU}_q(2)$ algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.17</a>).*
 
-*In the $1$-jet bundle $J^1 E_n$ (Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">2.14</a>), each basis element $\alpha$ is a pair consisting of a *value* (the direction of the $\mathrm{SU}(2)$ flow in the fibre) and a *momentum* (the gradient of that flow relative to the complex structure of the brane).*
+*In the $1$-jet bundle $J^1 E_n$ (Remark <a href="#rem:j1e-local-states" data-reference-type="ref" data-reference="rem:j1e-local-states">2.16</a>), each basis element $\alpha$ is a pair consisting of a *value* (the direction of the $\mathrm{SU}(2)$ flow in the fibre) and a *momentum* (the gradient of that flow relative to the complex structure of the brane).*
 
 </div>
 
@@ -1055,7 +1131,7 @@ This step relies on the *strong multiplicativity* condition: the co-multiplicati
 
 <div class="proof">
 
-*Proof.* At each point $p \in M$ the fibre algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ is a pronilpotent deformation of $\mathcal{O}(\mathrm{SU}(2))$ in the formal parameter $\hbar_q(p) = 1 - q(p)^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>). By , the coordinate bundle $\mathrm{Coor}_M$ of $M$ (the bundle of formal coordinate systems) carries a twisted deformation datum: a pair consisting of a connection and a Maurer–Cartan element in a pronilpotent DG Lie algebra . The Yekutieli obstruction classes $\kappa_n$ (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">3.7</a>) control whether these local twisted deformations glue across coordinate patches.
+*Proof.* At each point $p \in M$ the fibre algebra $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ is a pronilpotent deformation of $\mathcal{O}(\mathrm{SU}(2))$ in the formal parameter $\hbar_q(p) = 1 - q(p)^{-1}$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>). By , the coordinate bundle $\mathrm{Coor}_M$ of $M$ (the bundle of formal coordinate systems) carries a twisted deformation datum: a pair consisting of a connection and a Maurer–Cartan element in a pronilpotent DG Lie algebra . The Yekutieli obstruction classes $\kappa_n$ (Definition <a href="#def:quantum-characteristic-classes" data-reference-type="ref" data-reference="def:quantum-characteristic-classes">3.7</a>) control whether these local twisted deformations glue across coordinate patches.
 
 The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>) ensures that the gerbe $\mathfrak{G}_n$ of local lifts has trivial band at the level of isomorphisms, so by  the twisted deformations at each fibre patch together into a global sheaf of algebras on $M$. The direct limit $\mathcal{A}_\infty =
 \varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ is then the global sections of this sheaf, and the vacuum state $\omega$ (Proposition <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.22</a>) extends uniquely by the $\mathrm{SU}(2)$-averaging argument of that proposition. ◻
@@ -1065,7 +1141,7 @@ The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ (Definiti
 <div id="prop:vacuum-state" class="proposition">
 
 **Proposition 3.22** (Existence and Uniqueness of the Vacuum State). *Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe (Definition <a href="#def:quantum-observable-universe" data-reference-type="ref" data-reference="def:quantum-observable-universe">1.3</a>); let $q$ denote the substrate parameter. Let $\mathcal{A}_\infty$ be its direct limit algebra (Definition <a href="#def:direct-limit-algebra" data-reference-type="ref" data-reference="def:direct-limit-algebra">3.17</a>). Let $G_q =
-\mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.24</a>), acting on $\mathcal{A}_\infty$ by conjugation. Then there exists a unique $R$-linear functional $\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant: $$\varphi(g \cdot a) = \varphi(a)
+\mathrm{Aut}^{\otimes}(\omega)$ be the quantum gauge group (Definition <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.27</a>), acting on $\mathcal{A}_\infty$ by conjugation. Then there exists a unique $R$-linear functional $\varphi \colon \mathcal{A}_\infty \to R$ that is $G_q$-invariant: $$\varphi(g \cdot a) = \varphi(a)
   \quad\text{for all } g \in G_q,\;
   a \in \mathcal{A}_\infty.$$ In the archimedean realisation, $G_q = \mathrm{SU}_q(2)$ and $\varphi$ is the unique $\mathrm{SU}(2)$-invariant state on the $C^*$-algebraic direct limit.*
 
@@ -1161,7 +1237,7 @@ Table <a href="#tab:yekutieli-mapping" data-reference-type="ref" data-reference
 | Vacuum State $\omega$ (Prop. <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">3.22</a>)                                                                                        | Unique MC element in the pronilpotent DG Lie algebra                 |                                                                                                                    |
 | Mass Identity (Def. <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">3.26</a>)                                                                                                 | Nonabelian multiplicative integral; 2D nonabelian Stokes theorem     |                                                                                                                    |
 | Substrate field $q(p)$ (Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>)                                                                            | Local twisted deformation parameter; MC element varying over $M$     |                                                                                                                    |
-| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.24</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                    |
+| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.27</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                    |
 | Descartes condition $\chi(E) = -6$ (Def. <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>)                                                                 | Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe) | ; Ex. <a href="#ex:descartes-yekutieli" data-reference-type="ref" data-reference="ex:descartes-yekutieli">6.16</a> |
 | Cosimplicial crossed groupoid (Prop. <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">3.29</a>)                                              | Cosimplicial object in crossed groupoids; Čech nerve of a gerbe      |                                                                                                                    |
 | Twisted $2$-cocycle $d(g_{ijk}) = a \cdot g \cdot a^{-1}$ (Prop. <a href="#prop:descent-condition" data-reference-type="ref" data-reference="prop:descent-condition">3.31</a>)                                          | Twisted Čech cocycle in $H^2(M, \mathcal{O}_M^\times)$               |                                                                                                                    |
@@ -1403,7 +1479,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 2.  **Bundle.* The principal $\mathrm{SU}(2)$ bundle $E$ descends to a bundle over the $1$-dimensional base whose fibre dynamics are locked into a single periodic flow.*
 
-3.  **Reeb direction.* The inverse of the Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>) becomes the only direction of motion; the horizontal distribution is trivial and no bosonic modes (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">3.15</a>) survive.*
+3.  **Reeb direction.* The inverse of the Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>) becomes the only direction of motion; the horizontal distribution is trivial and no bosonic modes (Remark <a href="#rem:algebraic-filter" data-reference-type="ref" data-reference="rem:algebraic-filter">3.15</a>) survive.*
 
 *The descent need not terminate here; a further step carries $M_k$ to a zero-dimensional base (Remark <a href="#rem:descent-reduction-zero" data-reference-type="ref" data-reference="rem:descent-reduction-zero">3.41</a>).*
 
@@ -1434,7 +1510,7 @@ For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$ cou
 
 3.  **Substrate parameter.* The substrate parameter $q(p) = 1 + \lVert L\wedge F_A^{+}\rVert(p)$ (Remark <a href="#rem:c-substrate-via-levi" data-reference-type="ref" data-reference="rem:c-substrate-via-levi">1.21</a>) assigns to each point a definite quantum constant $q\in[1,\infty)$, encoding the full content of the quantum observable universe at that point.*
 
-4.  **Reeb direction.* There is no tangent space, so the Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>) and the horizontal distribution are absent; only the internal $\mathrm{SU}(2)$ fibre data persist.*
+4.  **Reeb direction.* There is no tangent space, so the Reeb vector field (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>) and the horizontal distribution are absent; only the internal $\mathrm{SU}(2)$ fibre data persist.*
 
 *In this terminal stage every observable is determined by the fibre $E_p$ and the value $q(p)$. When $M_k$ consists of several points the descent data decompose into independent summands, one per point; when $M_k$ is connected—i.e. a single point—the entire quantum observable universe is captured by the pair $(E_p, q(p))$.*
 
@@ -1575,7 +1651,7 @@ On the surface $\Sigma$, the transient integrand is therefore supported on the 
     \frac{1}{2^{k+1}}\,
     \ln\!\left(1+\frac{c}{f_c^k(z)^2}\right).$$ Writing $t_k = c/f_c^k(z)^2$, each summand is $\frac{1}{2^{k+1}}\ln(1+t_k)$: the function $\ln(1+t_k)/t_k$ (evaluated at $t_k$) is exactly the classical ($q=1$) limit of the quantum dilogarithm integrand. The sum over $k$ weighted by $2^{-(k+1)}$ accumulates the *information flow* along the orbit of $f_c$, with the weight $2^{-k}$ reflecting the degree-$2$ expansion at each step.*
 
-*In the QOU framework the role of the dynamical parameter $c$ is played by the substrate parameter $q=q(z)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), which varies continuously with the spacetime coordinate $z$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>) on the exceptional divisor $E_i \cong \mathbb{CP}^1$ takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$ in the quantum dilogarithm integral accumulates information along that flow exactly as <a href="#eq:bottcher-series" data-reference-type="eqref" data-reference="eq:bottcher-series">[eq:bottcher-series]</a> accumulates it along the Julia-set orbit. The $q$-deformation of the logarithm encodes the departure from classical ($q=1$) dynamics: as $q\to 1$ the flow trivialises and $\Phi_q(z_i)\to\mathrm{Li}_2(z_i)$, the classical dilogarithm; as $q\to\infty$ the quantum-number denominators $[n]_q$ suppress high-order terms, concentrating the topological charge near the blow-up centre.*
+*In the QOU framework the role of the dynamical parameter $c$ is played by the substrate parameter $q=q(z)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), which varies continuously with the spacetime coordinate $z$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>) on the exceptional divisor $E_i \cong \mathbb{CP}^1$ takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$ in the quantum dilogarithm integral accumulates information along that flow exactly as <a href="#eq:bottcher-series" data-reference-type="eqref" data-reference="eq:bottcher-series">[eq:bottcher-series]</a> accumulates it along the Julia-set orbit. The $q$-deformation of the logarithm encodes the departure from classical ($q=1$) dynamics: as $q\to 1$ the flow trivialises and $\Phi_q(z_i)\to\mathrm{Li}_2(z_i)$, the classical dilogarithm; as $q\to\infty$ the quantum-number denominators $[n]_q$ suppress high-order terms, concentrating the topological charge near the blow-up centre.*
 
 *In this identification the *Julia set boundary* of the classical problem—the locus where $G_c$ transitions from zero to positive—is the analogue of the boundary of the exceptional divisor $\partial E_i$, where the $q$-deformed torsion charge changes regime (Remark <a href="#rem:reeb-exceptional-divisor" data-reference-type="ref" data-reference="rem:reeb-exceptional-divisor">5.34</a>). The substrate parameter $q(z)$ thereby acts as a *spacetime-dependent dynamical parameter*, continuously deforming the Julia set geometry as one moves through the QOU.*
 
@@ -1583,9 +1659,9 @@ On the surface $\Sigma$, the transient integrand is therefore supported on the 
 
 <div id="rem:julia-s1-photon-scatter" class="remark">
 
-**Remark 3.47** (Julia set on $S^1$ as photon scattering at the Big Bang). *The exceptional divisor $E_i\cong\mathbb{CP}^1$ contains the equatorial circle $S^1\subset E_i$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>) restricts to a degree-$2$ endomorphism $f_q\colon S^1\to S^1$, whose *Julia set* $J(f_q)\subset S^1$ is the closure of repelling periodic points—the locus of non-equicontinuous dynamics on the circle.*
+**Remark 3.47** (Julia set on $S^1$ as photon scattering at the Big Bang). *The exceptional divisor $E_i\cong\mathbb{CP}^1$ contains the equatorial circle $S^1\subset E_i$. The $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>) restricts to a degree-$2$ endomorphism $f_q\colon S^1\to S^1$, whose *Julia set* $J(f_q)\subset S^1$ is the closure of repelling periodic points—the locus of non-equicontinuous dynamics on the circle.*
 
-*Bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.33</a>); photons are the empty-knot background flux on $E_i$. The three regions of the circle map identify as:*
+*Bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.36</a>); photons are the empty-knot background flux on $E_i$. The three regions of the circle map identify as:*
 
 - **Filled Julia set* $\mathcal{K}(f_q)\cap S^1$: photons trapped in the $q$-torsion plasma—the opaque pre-recombination regime.*
 
@@ -2194,7 +2270,7 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 - **$\omega_1$ (space-like):* the factor $1/\ln_q(1+r)$ diverges as $r\to 0$, so $\omega_1$ achieves infinite density at the base stratum $M_0$, characterising the primordial vortex. This mode anchors the $U(1)$ longitudinal backbone of the $\mathrm{SU}(2)$ bundle.*
 
-- **$\omega_2,\omega_3$ (time-like):* the factor $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$, driven by the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>). These ladder modes expand at the big bang before tapering as the geometric viscosity (Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">2.19</a>) takes hold.*
+- **$\omega_2,\omega_3$ (time-like):* the factor $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$, driven by the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>). These ladder modes expand at the big bang before tapering as the geometric viscosity (Remark <a href="#rem:q-harmonic-physical" data-reference-type="ref" data-reference="rem:q-harmonic-physical">2.21</a>) takes hold.*
 
 *To realise the rotation as a function of $r$, embed the radial parameter into $\mathrm{Sp}(1)$ via the unit quaternion $$\label{eq:sp1-quaternion}
   \mathbf{q}(r)
@@ -2211,9 +2287,9 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 **Remark 5.31** (Primordial vortex and the deep-quantum limit). *As $r\to 0$ the spectral resolvents converge toward the *primordial vortex*:*
 
-- *The quantum Planck constant $\hbar_q\to 1$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>).*
+- *The quantum Planck constant $\hbar_q\to 1$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>).*
 
-- *The $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a>) collapse to the zero-dimensional stratum $M_0=\{\pm 1\}$.*
+- *The $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a>) collapse to the zero-dimensional stratum $M_0=\{\pm 1\}$.*
 
 - *The $\omega_0$ coordinate, although identically zero in the balanced state, formally blows up in the jet prolongation, representing the concentration of energy at a singular spatial point.*
 
@@ -2254,13 +2330,13 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="rem:reeb-exceptional-divisor" class="remark">
 
-**Remark 5.34** (Reeb vector field on the exceptional divisor). *The Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.40</a>) is the dynamical complement to the static topology of the Bring surface. While the surface itself provides the handles (genus $4$), the Reeb vector provides the “wind” blowing through them, and the quantum torsion $q$ sets the strength of that wind.*
+**Remark 5.34** (Reeb vector field on the exceptional divisor). *The Reeb vector field $\xi_q$ (Definition <a href="#def:q-reeb-vector-field" data-reference-type="ref" data-reference="def:q-reeb-vector-field">1.43</a>) is the dynamical complement to the static topology of the Bring surface. While the surface itself provides the handles (genus $4$), the Reeb vector provides the “wind” blowing through them, and the quantum torsion $q$ sets the strength of that wind.*
 
-***The classical limit ($q\to 1$): cones and frozen geometry.** If the substrate parameter $q\to 1$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), the torsion coupling vanishes and the phase rotation $w_k\mapsto\zeta^k\,w_k$ loses its temporal component. The fibre over each base point ceases to twist as one moves along a path on $\mathbb{CP}^1$: the chiral tubes are frozen in the configuration determined by the power-sum equations. Metrically this is a conical limit—the curvature concentrates at the blow-up points but no circulating torsion field smooths it out. In terms of the Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>), $\xi_q\to\xi_1=\xi$ becomes the classical Reeb field, and the Heisenberg commutator $[\hat{X},\hat{P}]_q\to 0$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.27</a>): the Bring variety collapses to a non-rotating algebraic surface.*
+***The classical limit ($q\to 1$): cones and frozen geometry.** If the substrate parameter $q\to 1$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), the torsion coupling vanishes and the phase rotation $w_k\mapsto\zeta^k\,w_k$ loses its temporal component. The fibre over each base point ceases to twist as one moves along a path on $\mathbb{CP}^1$: the chiral tubes are frozen in the configuration determined by the power-sum equations. Metrically this is a conical limit—the curvature concentrates at the blow-up points but no circulating torsion field smooths it out. In terms of the Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>), $\xi_q\to\xi_1=\xi$ becomes the classical Reeb field, and the Heisenberg commutator $[\hat{X},\hat{P}]_q\to 0$ (Remark <a href="#rem:heisenberg-commutator" data-reference-type="ref" data-reference="rem:heisenberg-commutator">1.30</a>): the Bring variety collapses to a non-rotating algebraic surface.*
 
 ***Exceptional divisor as mixing interface.** Blowing up a spacetime defect $z_c$ where chiral sheets merge (Remark <a href="#rem:brings-smoothness" data-reference-type="ref" data-reference="rem:brings-smoothness">5.22</a>) replaces the singular point with an exceptional divisor $E_c\cong\mathbb{CP}^1\cong S^2$. This sphere acts as the boundary between the macroscopic coordinates $(x_0,x_1)$ and the internal chiral modes $(w_1,w_2,w_3)$: the self-intersections of the chiral fibres are resolved, and the $C_5$ phase rotation now circulates *around* the exceptional divisor rather than passing through a singularity.*
 
-***Reeb vector as torsion field.** On the blown-up surface, the Reeb vector field $\xi_q$ is the infinitesimal generator of the $U(1)$ action that rotates the chiral fibre above the exceptional divisor. Concretely, the $q$-deformed Reeb flow $\phi_t^q$ (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>) restricted to $E_c$ generates the Hopf fibration $S^3\to S^2\cong E_c$, and the substrate parameter $q$ controls the pitch of this rotation. The vector field $\xi_q$ thereby provides the “time-like” direction within the chiral space: it is the flow that allows the spectral modes $w_k$ to execute the spinning phase rotation $w_k\mapsto\zeta^k\,w_k$.*
+***Reeb vector as torsion field.** On the blown-up surface, the Reeb vector field $\xi_q$ is the infinitesimal generator of the $U(1)$ action that rotates the chiral fibre above the exceptional divisor. Concretely, the $q$-deformed Reeb flow $\phi_t^q$ (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>) restricted to $E_c$ generates the Hopf fibration $S^3\to S^2\cong E_c$, and the substrate parameter $q$ controls the pitch of this rotation. The vector field $\xi_q$ thereby provides the “time-like” direction within the chiral space: it is the flow that allows the spectral modes $w_k$ to execute the spinning phase rotation $w_k\mapsto\zeta^k\,w_k$.*
 
 ***Global picture.** The Bring surface provides the genus-$4$ topology—four handles through which the chiral tubes thread. The Reeb vector field gives the longitudinal flow along these handles. The quantum torsion $q$ modulates the pitch of this flow: when $q\to\infty$ (deep-quantum, Big Bang) the spinning is maximal and the Heisenberg uncertainty $[\hat{X},\hat{P}]_q\to J$; when $q\to 1$ (heat death) the spinning ceases, the Reeb field trivialises, and the topology reduces to a static cone.*
 
@@ -2336,7 +2412,7 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="rem:descartes-affine" class="remark">
 
-**Remark 6.4** (The Descartes condition on affine space). *For the affine quantum observable universe $M = \mathbb{C}^n$, the Descartes condition $\chi(E) = -6$ forces the principal $\mathrm{SU}(2)$-bundle $E$ to carry non-trivial topology despite the contractibility of the base. In the two-dimensional case $M = \mathbb{C}^2$, the $q$-harmonic forms on this bundle (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>) determine the spectrum of stable excitations. In the regime $q(p) \to 1$ (near-classicality), the zero-modes of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic Microwave Background: the Hodge numbers of $E$ govern the multiplicity of angular modes, and the negative Euler characteristic forces a non-trivial distribution of these modes across the CR manifold $M$.*
+**Remark 6.4** (The Descartes condition on affine space). *For the affine quantum observable universe $M = \mathbb{C}^n$, the Descartes condition $\chi(E) = -6$ forces the principal $\mathrm{SU}(2)$-bundle $E$ to carry non-trivial topology despite the contractibility of the base. In the two-dimensional case $M = \mathbb{C}^2$, the $q$-harmonic forms on this bundle (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>) determine the spectrum of stable excitations. In the regime $q(p) \to 1$ (near-classicality), the zero-modes of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic Microwave Background: the Hodge numbers of $E$ govern the multiplicity of angular modes, and the negative Euler characteristic forces a non-trivial distribution of these modes across the CR manifold $M$.*
 
 </div>
 
@@ -2360,13 +2436,13 @@ Under this correspondence, specific knot types map to particle identities. The t
 
 <div id="rem:descartes-leptons" class="remark">
 
-**Remark 6.7** (Electrons, muons and the Reeb decomposition). *The Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.31</a>) applied to a Descartes universe yields two classes of fermionic excitations (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.32</a>). The degree of the vertical component $\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to electrons, while forms with $\deg\alpha_V = 2$ correspond to muons. More generally, each additional unit of vertical degree is identified with a successive lepton generation. The constraint $\chi(E) = -6$ bounds the number of such generations, since the Hodge decomposition of $E$ admits only finitely many independent vertical harmonic forms. This generation-dependent structure leads to testable predictions, including a $q$-correction to the proton charge radius that differs between muonic and electronic hydrogen (Section <a href="#ssec:proton-radius" data-reference-type="ref" data-reference="ssec:proton-radius">11.2.4</a>).*
+**Remark 6.7** (Electrons, muons and the Reeb decomposition). *The Reeb decomposition (Definition <a href="#def:reeb-decomposition" data-reference-type="ref" data-reference="def:reeb-decomposition">1.34</a>) applied to a Descartes universe yields two classes of fermionic excitations (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.35</a>). The degree of the vertical component $\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to electrons, while forms with $\deg\alpha_V = 2$ correspond to muons. More generally, each additional unit of vertical degree is identified with a successive lepton generation. The constraint $\chi(E) = -6$ bounds the number of such generations, since the Hodge decomposition of $E$ admits only finitely many independent vertical harmonic forms. This generation-dependent structure leads to testable predictions, including a $q$-correction to the proton charge radius that differs between muonic and electronic hydrogen (Section <a href="#ssec:proton-radius" data-reference-type="ref" data-reference="ssec:proton-radius">11.2.4</a>).*
 
 </div>
 
 <div id="rem:descartes-chirality" class="remark">
 
-**Remark 6.8** (Chirality as Reeb orientation). *The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a preferred direction along the vertical distribution. Left-handed and right-handed chiralities correspond to the two orientations of $\xi$ relative to the complex structure of $M$. For fermions (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.32</a>), the vertical component $\alpha_V$ transforms with a definite sign under reversal of $\xi$, so chirality is encoded in the $\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$. Bosons (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.33</a>), being purely horizontal, are chirality-blind — consistent with the observed parity invariance of the electromagnetic and strong interactions.*
+**Remark 6.8** (Chirality as Reeb orientation). *The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a preferred direction along the vertical distribution. Left-handed and right-handed chiralities correspond to the two orientations of $\xi$ relative to the complex structure of $M$. For fermions (Definition <a href="#def:fermion" data-reference-type="ref" data-reference="def:fermion">1.35</a>), the vertical component $\alpha_V$ transforms with a definite sign under reversal of $\xi$, so chirality is encoded in the $\pm$-eigenspaces of the Reeb involution $\xi \mapsto -\xi$. Bosons (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.36</a>), being purely horizontal, are chirality-blind — consistent with the observed parity invariance of the electromagnetic and strong interactions.*
 
 </div>
 
@@ -2462,7 +2538,7 @@ The descent data of $(\mathcal{C}, A, \omega)$ — specifically, the branch loc
 
 <div id="rem:observation-brings" class="remark">
 
-**Remark 6.17** (Observations on the Bring surface). *The general notion of an observation (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.34</a>) specialises on the Bring surface as follows: the observation morphism $\mathcal{O} \colon A \to A$ acts fibrewise on the state bundle $E \to M$ and perturbs the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), shifting the non-commutative geometry of the quantum Bring surface (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>). The two-observer parallelogram (Remark <a href="#rem:two-observer-parallelogram" data-reference-type="ref" data-reference="rem:two-observer-parallelogram">1.36</a>) applies directly: two independent observations of a fermion on the Bring surface produce a discrepancy controlled by the local Planck constant $\hbar_q(p)$.*
+**Remark 6.17** (Observations on the Bring surface). *The general notion of an observation (Definition <a href="#def:observation" data-reference-type="ref" data-reference="def:observation">1.37</a>) specialises on the Bring surface as follows: the observation morphism $\mathcal{O} \colon A \to A$ acts fibrewise on the state bundle $E \to M$ and perturbs the substrate parameter $q(p)$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), shifting the non-commutative geometry of the quantum Bring surface (Section <a href="#sec:quantum-brings" data-reference-type="ref" data-reference="sec:quantum-brings">5.1</a>). The two-observer parallelogram (Remark <a href="#rem:two-observer-parallelogram" data-reference-type="ref" data-reference="rem:two-observer-parallelogram">1.39</a>) applies directly: two independent observations of a fermion on the Bring surface produce a discrepancy controlled by the local Planck constant $\hbar_q(p)$.*
 
 </div>
 
@@ -2510,7 +2586,7 @@ The descent data of $(\mathcal{C}, A, \omega)$ — specifically, the branch loc
 
 **Key structures.**
 
-- *The classical Frobenius integrability theorem constrains $q$-torsion leaves to be Legendrian (Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.43</a>). Over $\mathbb{Q}_\mathfrak{p}$, this is replaced by compatibility of the connection with the Frobenius lift: a $\mathfrak{p}$-adic instanton connection is “integrable” if and only if the associated $F$-crystal is unit-root.*
+- *The classical Frobenius integrability theorem constrains $q$-torsion leaves to be Legendrian (Remark <a href="#rem:q-torsion-existence" data-reference-type="ref" data-reference="rem:q-torsion-existence">1.46</a>). Over $\mathbb{Q}_\mathfrak{p}$, this is replaced by compatibility of the connection with the Frobenius lift: a $\mathfrak{p}$-adic instanton connection is “integrable” if and only if the associated $F$-crystal is unit-root.*
 
 - *Crystal cohomology (de Rham–Witt complex) plays the rôle of de Rham cohomology.*
 
@@ -2665,7 +2741,7 @@ The key idea behind the following two propositions is that inertial mass origina
 
 The **topological mass conjecture** (Conjecture 4.25) asserts that the mass $m(K)$ of a particle with knot type $K$ is $$m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
   \qquad
-  \hbar_q \;:=\; 1 - q^{-1},$$ where $q > 1$ is the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) and $\hbar_q$ is the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>). For *composite* states the mass functional $\mathcal{M}$ is *not* additive; instead it satisfies a $q$-deformed Skein recursion at every crossing in the color-exchange diagram, generalising the Jones-polynomial Skein relation to a mass-valued setting.
+  \hbar_q \;:=\; 1 - q^{-1},$$ where $q > 1$ is the substrate parameter (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) and $\hbar_q$ is the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>). For *composite* states the mass functional $\mathcal{M}$ is *not* additive; instead it satisfies a $q$-deformed Skein recursion at every crossing in the color-exchange diagram, generalising the Jones-polynomial Skein relation to a mass-valued setting.
 
 <div id="prop:skein-mass-relation" class="proposition">
 
@@ -2792,7 +2868,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:cmb-q-torsion" class="remark">
 
-**Remark 11.4** (CMB non-uniformity from $q$-torsion). *In the Descartes universe (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">[ex:descartes]</a>), the negative Euler characteristic $\chi(E) = -6$ forces a non-trivial distribution of angular modes across the CR manifold (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">[rem:descartes-cmb]</a>). The $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a>; here “leaves” is the geometric plural of *leaf*) imprint a characteristic pattern on the CMB that deviates from the statistically isotropic Gaussian field predicted by $\Lambda$CDM. Specifically, the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>) introduces *torsion* into the temperature and polarisation multipoles, producing preferred spiral directions in the $B$-mode spectrum.*
+**Remark 11.4** (CMB non-uniformity from $q$-torsion). *In the Descartes universe (Example <a href="#ex:descartes" data-reference-type="ref" data-reference="ex:descartes">[ex:descartes]</a>), the negative Euler characteristic $\chi(E) = -6$ forces a non-trivial distribution of angular modes across the CR manifold (Remark <a href="#rem:descartes-cmb" data-reference-type="ref" data-reference="rem:descartes-cmb">[rem:descartes-cmb]</a>). The $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a>; here “leaves” is the geometric plural of *leaf*) imprint a characteristic pattern on the CMB that deviates from the statistically isotropic Gaussian field predicted by $\Lambda$CDM. Specifically, the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>) introduces *torsion* into the temperature and polarisation multipoles, producing preferred spiral directions in the $B$-mode spectrum.*
 
 </div>
 
@@ -2822,7 +2898,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:gravity-emergent" class="remark">
 
-**Remark 11.5** (Gravity as emergent substrate geometry). *In the QOU framework, general relativity emerges as the substrate geometry of the CR manifold (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.46</a>). The quantum-weighted stress-energy tensor $T_{\mu\nu}^{(q)}$ introduces $q$-dependent corrections to the Einstein field equations. This is consistent with recent work treating gravity as arising from an information-theoretic context .*
+**Remark 11.5** (Gravity as emergent substrate geometry). *In the QOU framework, general relativity emerges as the substrate geometry of the CR manifold (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.49</a>). The quantum-weighted stress-energy tensor $T_{\mu\nu}^{(q)}$ introduces $q$-dependent corrections to the Einstein field equations. This is consistent with recent work treating gravity as arising from an information-theoretic context .*
 
 </div>
 
@@ -2910,7 +2986,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:photonic-hall" class="remark">
 
-**Remark 11.8** (Photonic quantum Hall effect and $q$-deformed braiding). *Recent experiments have demonstrated a quantized Hall drift in photonic Chern insulators . In the QOU framework, bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.33</a>), and the Hall conductance arises from the Chern number of the bulk bundle restricted to the horizontal distribution. The $q$-deformation modifies the quantisation condition, predicting fractional corrections of order $1 - q^{-1}$ to the Hall conductance.*
+**Remark 11.8** (Photonic quantum Hall effect and $q$-deformed braiding). *Recent experiments have demonstrated a quantized Hall drift in photonic Chern insulators . In the QOU framework, bosons are purely horizontal $q$-harmonic forms (Definition <a href="#def:boson" data-reference-type="ref" data-reference="def:boson">1.36</a>), and the Hall conductance arises from the Chern number of the bulk bundle restricted to the horizontal distribution. The $q$-deformation modifies the quantisation condition, predicting fractional corrections of order $1 - q^{-1}$ to the Hall conductance.*
 
 </div>
 
@@ -2930,7 +3006,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 ##### Potential new experiments.
 
-- Measurement of Hall conductance in photonic lattices at varying effective $q$ parameters, seeking the $1 - q^{-1}$ correction predicted by the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>).
+- Measurement of Hall conductance in photonic lattices at varying effective $q$ parameters, seeking the $1 - q^{-1}$ correction predicted by the quantum Planck constant (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>).
 
 - Cold-atom realisations of $\mathrm{SU}(2)$ gauge fields in optical lattices, testing the $q$-deformed braiding statistics of Chapter <a href="#chap:path-integrals-braiding" data-reference-type="ref" data-reference="chap:path-integrals-braiding">4</a>.
 
@@ -2964,7 +3040,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:proton-radius-puzzle" class="remark">
 
-**Remark 11.10** (The Proton Radius Puzzle). *The “Proton Radius Puzzle” — the discrepancy between the proton charge radius measured in muonic hydrogen and in electronic hydrogen — remains a key area of study. In the QOU framework, lepton generations are distinguished by the vertical degree of the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>); each generation couples to the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) through a different vertical harmonic form. If this generation-dependent coupling is physical, the effective electromagnetic interaction between the proton and the orbiting lepton acquires a $q$-correction that depends on the lepton generation. The measured charge radius is therefore expected to differ between electronic and muonic hydrogen by an amount of order $\hbar_q$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.25</a>), providing a direct test of generation-dependent substrate couplings.*
+**Remark 11.10** (The Proton Radius Puzzle). *The “Proton Radius Puzzle” — the discrepancy between the proton charge radius measured in muonic hydrogen and in electronic hydrogen — remains a key area of study. In the QOU framework, lepton generations are distinguished by the vertical degree of the Reeb decomposition (Remark <a href="#rem:descartes-leptons" data-reference-type="ref" data-reference="rem:descartes-leptons">6.7</a>); each generation couples to the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) through a different vertical harmonic form. If this generation-dependent coupling is physical, the effective electromagnetic interaction between the proton and the orbiting lepton acquires a $q$-correction that depends on the lepton generation. The measured charge radius is therefore expected to differ between electronic and muonic hydrogen by an amount of order $\hbar_q$ (Definition <a href="#def:quantum-planck-constant" data-reference-type="ref" data-reference="def:quantum-planck-constant">1.28</a>), providing a direct test of generation-dependent substrate couplings.*
 
 </div>
 
@@ -2992,7 +3068,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:entropic-gravity" class="remark">
 
-**Remark 11.11** (Entropic forces and the substrate parameter). *The substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) encodes the coupling between the Levi form and the gauge curvature. In the near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.46</a>). Recent work on the quantum mechanics of entropic forces  provides a complementary perspective: the entropic interpretation may correspond to the thermodynamic limit of the $q$-deformed partition function on the brane tower.*
+**Remark 11.11** (Entropic forces and the substrate parameter). *The substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>) encodes the coupling between the Levi form and the gauge curvature. In the near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction (Remark <a href="#rem:gr-substrate-geometry" data-reference-type="ref" data-reference="rem:gr-substrate-geometry">1.49</a>). Recent work on the quantum mechanics of entropic forces  provides a complementary perspective: the entropic interpretation may correspond to the thermodynamic limit of the $q$-deformed partition function on the brane tower.*
 
 </div>
 
@@ -3041,19 +3117,19 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 <div id="rem:crystal-probe-q" class="remark">
 
-**Remark 11.13** (Crystal-lattice probe of $q$). *A periodic crystal lattice provides a macroscopic, coherent probe of the local value $q|_U$ established in Proposition <a href="#prop:local-substrate-q" data-reference-type="ref" data-reference="prop:local-substrate-q">11.12</a>. The discrete translational symmetry of the lattice selects a set of reciprocal vectors that couple to the horizontal distribution of the CR manifold $M$. Where the lattice spacing is commensurate with the characteristic scale of a $q$-torsion leaf (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a>), a resonance condition is satisfied: the $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>) on the brane constructively interfere with the phonon modes of the crystal, amplifying vacuum fluctuations at specific frequencies. The resonance frequency $\nu_{\mathrm{res}}$ depends on $q|_U$ and the lattice geometry, offering an independent experimental route to measuring the substrate parameter.*
+**Remark 11.13** (Crystal-lattice probe of $q$). *A periodic crystal lattice provides a macroscopic, coherent probe of the local value $q|_U$ established in Proposition <a href="#prop:local-substrate-q" data-reference-type="ref" data-reference="prop:local-substrate-q">11.12</a>. The discrete translational symmetry of the lattice selects a set of reciprocal vectors that couple to the horizontal distribution of the CR manifold $M$. Where the lattice spacing is commensurate with the characteristic scale of a $q$-torsion leaf (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a>), a resonance condition is satisfied: the $q$-harmonic forms (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>) on the brane constructively interfere with the phonon modes of the crystal, amplifying vacuum fluctuations at specific frequencies. The resonance frequency $\nu_{\mathrm{res}}$ depends on $q|_U$ and the lattice geometry, offering an independent experimental route to measuring the substrate parameter.*
 
 </div>
 
 <div id="rem:substrate-telescope" class="remark">
 
-**Remark 11.14** (Substrate Telescopes). *The directional dependence of $q$-torsion suggests a new class of detector: the *Substrate Telescope*. A large, high-purity single crystal is slowly rotated while the variation of vacuum noise power or phonon resonance efficiency is recorded as a function of orientation. Because the $q$-torsion leaves carry a preferred direction inherited from the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>), the noise spectrum should exhibit a modulation correlated with the crystal’s orientation relative to the bulk bundle. This is conceptually analogous to a Weber-bar gravitational wave detector, but targets the anisotropy of the substrate parameter rather than metric strain.*
+**Remark 11.14** (Substrate Telescopes). *The directional dependence of $q$-torsion suggests a new class of detector: the *Substrate Telescope*. A large, high-purity single crystal is slowly rotated while the variation of vacuum noise power or phonon resonance efficiency is recorded as a function of orientation. Because the $q$-torsion leaves carry a preferred direction inherited from the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>), the noise spectrum should exhibit a modulation correlated with the crystal’s orientation relative to the bulk bundle. This is conceptually analogous to a Weber-bar gravitational wave detector, but targets the anisotropy of the substrate parameter rather than metric strain.*
 
 </div>
 
 <div id="rem:magnetic-friction" class="remark">
 
-**Remark 11.15** (Non-monotonic magnetic friction from collective rotor dynamics). *Recent experiments by Gu, Lüders, and Bechinger  demonstrate that a two-dimensional array of rotatable magnetic dipoles sliding over a commensurate magnetic substrate exhibits a pronounced *non-monotonic* dependence of friction on interlayer separation. The friction peaks at an intermediate distance where competing ferromagnetic and antiferromagnetic interactions induce dynamical frustration and hysteretic torque cycles during sliding. This collective rotor phenomenon may admit a natural explanation within the QOU framework: the competing magnetic alignments realise a discrete analogue of the $q$-torsion frustration that arises when a lattice’s translational symmetry is incommensurate with the characteristic scale of the $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.42</a>). In this reading, the non-monotonic friction profile reflects a resonance–anti-resonance transition governed by the local value of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), with maximal dissipation occurring at the separation where the rotor array’s magnetic periodicity matches the $q$-harmonic form spectrum (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.30</a>). A quantitative comparison requires specifying the lattice geometry and its coupling to the horizontal distribution of the CR manifold $M$; we outline the necessary ingredients in Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.16</a> below.*
+**Remark 11.15** (Non-monotonic magnetic friction from collective rotor dynamics). *Recent experiments by Gu, Lüders, and Bechinger  demonstrate that a two-dimensional array of rotatable magnetic dipoles sliding over a commensurate magnetic substrate exhibits a pronounced *non-monotonic* dependence of friction on interlayer separation. The friction peaks at an intermediate distance where competing ferromagnetic and antiferromagnetic interactions induce dynamical frustration and hysteretic torque cycles during sliding. This collective rotor phenomenon may admit a natural explanation within the QOU framework: the competing magnetic alignments realise a discrete analogue of the $q$-torsion frustration that arises when a lattice’s translational symmetry is incommensurate with the characteristic scale of the $q$-torsion leaves (Definition <a href="#def:q-torsion-leaf" data-reference-type="ref" data-reference="def:q-torsion-leaf">1.45</a>). In this reading, the non-monotonic friction profile reflects a resonance–anti-resonance transition governed by the local value of the substrate parameter $q$ (Definition <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.20</a>), with maximal dissipation occurring at the separation where the rotor array’s magnetic periodicity matches the $q$-harmonic form spectrum (Definition <a href="#def:q-harmonic-form" data-reference-type="ref" data-reference="def:q-harmonic-form">1.33</a>). A quantitative comparison requires specifying the lattice geometry and its coupling to the horizontal distribution of the CR manifold $M$; we outline the necessary ingredients in Remark <a href="#rem:lattice-layout" data-reference-type="ref" data-reference="rem:lattice-layout">11.16</a> below.*
 
 </div>
 
@@ -3077,7 +3153,7 @@ The QOU framework (Chapter <a href="#chap:qou" data-reference-type="ref" data-r
 
 1.  **Lattice–leaf commensurability.* For a $d$-dimensional Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance condition of Remark <a href="#rem:crystal-resonance" data-reference-type="ref" data-reference="rem:crystal-resonance">[rem:crystal-resonance]</a> becomes a Diophantine matching between the reciprocal lattice vectors $\{\vec{G}_j\}$ and the characteristic wave-vectors of the $q$-torsion leaves. The lattice symmetry group acts on the space of $q$-harmonic forms and selects a finite set of resonance channels indexed by the irreducible representations of the point group.*
 
-2.  **Frustration and non-monotonicity.* When the lattice hosts internal rotational degrees of freedom — as in the magnetic rotor arrays of  — the coupling to $q$-torsion may be non-monotonic in a control parameter (e.g. interlayer separation or applied field). In the QOU picture, this arises because the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.41</a>) introduces a preferred orientation that competes with the lattice’s own symmetry, producing frustrated configurations whose energy dissipation is maximised at an intermediate commensurability.*
+2.  **Frustration and non-monotonicity.* When the lattice hosts internal rotational degrees of freedom — as in the magnetic rotor arrays of  — the coupling to $q$-torsion may be non-monotonic in a control parameter (e.g. interlayer separation or applied field). In the QOU picture, this arises because the $q$-deformed Reeb flow (Definition <a href="#def:q-reeb-flow" data-reference-type="ref" data-reference="def:q-reeb-flow">1.44</a>) introduces a preferred orientation that competes with the lattice’s own symmetry, producing frustrated configurations whose energy dissipation is maximised at an intermediate commensurability.*
 
 3.  **Quantum coherence at the lattice scale.* The kagome many-body interference results  suggest that quantum coherence can extend over macroscopic lattice domains. Within the QOU framework, this coherence length is bounded by the correlation length of the $q$-harmonic forms on the brane, which depends on the local curvature of the CR manifold $M$. Establishing this bound quantitatively requires an explicit computation of the $q$-deformed propagator on the lattice, which we leave to future work.*
 
