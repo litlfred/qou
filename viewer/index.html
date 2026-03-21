@@ -109,8 +109,11 @@
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
+    /* Reading mode — hide decorations */
+    body.reading .decor,body.reading .lb,body.reading .tags,body.reading .uses,body.reading .fb-btn,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel{display:none!important}
+    body.reading .bh{margin-bottom:.3rem}
 
-    .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
+    .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head);flex-wrap:wrap}
     .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative}
     .bh-anchor:hover .bk{text-decoration:underline}
     .bh-anchor .anchor-icon{opacity:0;font-size:.7rem;color:var(--fg-d);transition:opacity .15s;margin-left:.2rem}
@@ -140,7 +143,7 @@
     .bsrc.vis{display:block}
 
     /* Lean badge + icons */
-    .lb{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-top:.5rem}
+    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-left:auto;white-space:nowrap}
     .lb.proved{color:var(--grn);border-color:var(--grn)}
     .lb.has_sorry{color:var(--yel);border-color:var(--yel)}
     .lb.stated{color:var(--ac);border-color:var(--ac)}
@@ -252,6 +255,7 @@
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
+    <button id="c-rd" title="Reading mode: hide decorations">reading</button>
     <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
     <span class="hash" id="c-hash"></span>
@@ -355,6 +359,16 @@
     });
     btnRm.classList.add('on'); // remarks on by default
 
+    const btnRd = document.getElementById('c-rd');
+    let readingMode = localStorage.getItem('qou-reading') === '1';
+    if (readingMode) { document.body.classList.add('reading'); btnRd.classList.add('on'); }
+    btnRd.addEventListener('click', () => {
+      readingMode = !readingMode;
+      document.body.classList.toggle('reading', readingMode);
+      btnRd.classList.toggle('on', readingMode);
+      localStorage.setItem('qou-reading', readingMode ? '1' : '0');
+    });
+
     // ── Markdown ─────────────────────────────────────────
     function parseMd(md) {
       const tx = [];
@@ -428,6 +442,11 @@
     function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
     function inl(t) {
+      // LaTeX accent commands → Unicode
+      t = t.replace(/\\"\{([^}])\}/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));
+      t = t.replace(/\\"([aeiouAEIOU])/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));
+      t = t.replace(/\\'\{([^}])\}/g, (_, c) => ({a:'á',e:'é',i:'í',o:'ó',u:'ú',A:'Á',E:'É',O:'Ó',U:'Ú'}[c]||c));
+      t = t.replace(/\\'([aeiouAEIOU])/g, (_, c) => ({a:'á',e:'é',i:'í',o:'ó',u:'ú',A:'Á',E:'É',O:'Ó',U:'Ú'}[c]||c));
       t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
       t = t.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, '<a href="#$2" data-ref="$2">$1</a>');
@@ -720,20 +739,16 @@
       const d = mk('div',`blk env ${block.kind}`);
       if (block.label) d.id = block.label;
 
-      d.appendChild(mkBlockHeader(block.kind, block.title, block.label));
-
-      // Lean badge + status at top, right after header
+      const hdr = mkBlockHeader(block.kind, block.title, block.label);
+      // Lean badge inline in header, pushed right
       if (block.lean) {
         const s = block.status || 'not_started';
         const v = block.lean.validation || 'not_checked';
-        const badge = mk('div',`lb ${s}`);
+        const badge = mk('span',`lb ${s} decor`);
         badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)} · ${s.replace(/_/g,' ')}`;
-        d.appendChild(badge);
+        hdr.appendChild(badge);
       }
-
-      // Tags + uses at top
-      if (block.tags?.length) d.appendChild(mkTags(block.tags));
-      if (block.uses?.length) d.appendChild(mkUsesInline(block));
+      d.appendChild(hdr);
 
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
@@ -774,6 +789,10 @@
         d.appendChild(toggle);
         d.appendChild(panel);
       }
+
+      // Tags + uses at bottom (decorations)
+      if (block.tags?.length) { const t = mkTags(block.tags); t.classList.add('decor'); d.appendChild(t); }
+      if (block.uses?.length) { const u = mkUsesInline(block); u.classList.add('decor'); d.appendChild(u); }
 
       // Lazy hydrate the main content
       lazyInit(d, () => {
