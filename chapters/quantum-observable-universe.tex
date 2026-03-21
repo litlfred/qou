@@ -433,15 +433,35 @@ object~$X$.  This replaces the analytic notion of ``Hilbert-space inner
 product'' with a purely categorical condition.
 \end{definition}
 
-\begin{example}[Dagger structure on $\mathrm{Rep}(\mathrm{SU}(2))$]
+\begin{example}[Involutive structure on $\mathrm{Rep}(\mathrm{SU}(2))$]
 \label{ex:dagger-su2}
 Continuing Example~\ref{ex:frobenius-su2}, the category
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ carries a canonical dagger
-structure: for a morphism $f \colon V_j \to V_k$ between irreducible
-representations, $f^{\dagger}$ is the Hilbert-space adjoint with respect
-to the $\mathrm{SU}(2)$-invariant inner product on each $V_j$.
-Positive-definiteness follows: for $f \colon \mathbb{C} \to V_j$
-non-zero, $f^{\dagger} \circ f = \lVert f(1) \rVert^2 > 0$.
+$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ carries a canonical
+involutive structure built from the antipode:
+\begin{itemize}
+  \item \emph{What it does.}\;  For a morphism $f \colon V_j \to V_k$
+        (an equivariant linear map between representations),
+        $f^{\dagger}$ is the \emph{Hilbert-space adjoint}: the unique
+        map $f^{\dagger} \colon V_k \to V_j$ satisfying
+        $\langle f^{\dagger}(w),\, v \rangle_j
+        = \langle w,\, f(v) \rangle_k$
+        for all $v \in V_j$, $w \in V_k$.
+  \item \emph{Why it exists.}\;  Each irreducible representation $V_j$
+        carries a unique (up to scalar) $\mathrm{SU}(2)$-invariant
+        inner product.  The adjoint $f^{\dagger}$ with respect to
+        these inner products is automatically equivariant, so
+        $f^{\dagger}$ is again a morphism in $\mathcal{C}$.
+  \item \emph{On the algebra.}\;  On $A = \mathcal{O}(\mathrm{SU}(2))$,
+        $f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$, where
+        $S(f)(g) = f(g^{-1})$ is the antipode.  The involution
+        $f \mapsto f^{\dagger}$ is complex conjugation composed with
+        pullback by inversion: $f^{\dagger}(g) = \overline{f(g^{-1})}$.
+  \item \emph{Positive-definiteness.}\;  For a non-zero state
+        $f \colon \mathbb{C} \to V_j$, the composite
+        $f^{\dagger} \circ f = \lVert f(1) \rVert^2 > 0$.
+        This is the statement that the inner product on each $V_j$ is
+        positive-definite --- the categorical encoding of unitarity.
+\end{itemize}
 \end{example}
 
 \begin{lemma}[Volume form from rigidity and symplectic self-duality]
@@ -997,6 +1017,33 @@ follows from the non-degeneracy of the Frobenius form~$\lambda$ and the
 involutivity of the antipode ($S^2 = \mathrm{id}$ on the centre
 of~$A$).
 \end{definition}
+
+\begin{example}[Hodge star on $\mathcal{O}(\mathrm{SU}(2))$]
+\label{ex:hodge-su2}
+Continuing Example~\ref{ex:higher-forms-su2}, the Hodge star on
+$A = \mathcal{O}(\mathrm{SU}(2))$ acts on the $3D$-calculus
+$\Omega^{\bullet}(A)$ as follows.  The volume form is
+$\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$
+(normalised by $\lambda(\mathrm{vol}) = 1$).  Then:
+\begin{itemize}
+  \item $\star 1 = \mathrm{vol}$, \;
+        $\star\mathrm{vol} = 1$.
+  \item On $1$-forms: $\star\omega_i = \tfrac{1}{2}\epsilon_{ijk}\,
+        \omega_j \wedge \omega_k$ (each basis form maps to its
+        complementary $2$-form).
+  \item On $2$-forms: $\star(\omega_i \wedge \omega_j) =
+        \epsilon_{ijk}\,\omega_k$ (each basis $2$-form maps to its
+        complementary $1$-form).
+\end{itemize}
+The Hodge star is the categorical version of ``rotating a form into
+its complement'': it identifies $\Omega^k(A)$ with $\Omega^{n-k}(A)$
+using the Frobenius form as the inner product.  The self-dual
+$2$-forms $\Omega^+(A)$ are the $+1$-eigenspace of~$\star$; in
+$3$ dimensions, $\star$ on $\Omega^2(A)$ maps to $\Omega^1(A)$, so
+the self-dual/anti-self-dual decomposition is trivial.  The
+non-trivial decomposition arises when $\dim H = 4$ (the archimedean
+case, Example~\ref{prop:self-dual-curvature}).
+\end{example}
 
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
@@ -1801,6 +1848,80 @@ the categorical structures specialise to familiar geometric objects:
     \label{rem:variational-archimedean}
 \end{itemize}
 \end{remark}
+
+\begin{example}[Real hypersurface in a Calabi--Yau $2$-fold]
+\label{ex:calabi-yau}
+Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
+$\mathrm{SU}(2)$, and let $M \subset X$ be a smooth, strictly convex real
+hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR
+manifold inheriting its CR structure from the ambient K\"ahler geometry.
+The frame bundle of $X$ restricted to $M$ yields a natural principal
+$\mathrm{SU}(2)$-bundle $P \to M$.  The associated state bundle
+$E = P \times_G \mathbb{P}^1(\mathbb{C})$ yields an archimedean quantum
+observable universe $(M, \theta, G, P, E)$.
+\end{example}
+
+\begin{example}[ALE links]
+\label{ex:ale}
+Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and let $X$ be the
+minimal resolution of $\mathbb{C}^2 / \Gamma$.  The link
+$M = S^3 / \Gamma$ is a compact $3$-dimensional strictly pseudoconvex
+CR manifold.  The Reeb vector field $\xi$ generates the Hopf-type
+fibration $S^3/\Gamma \to S^2$.  Equipped with the induced principal
+$\mathrm{SU}(2)$-bundle $P \to M$ and state bundle
+$E = P \times_G \mathbb{P}^1(\mathbb{C})$, the tuple
+$(M, \theta, G, P, E)$ provides an archimedean quantum observable universe.
+\end{example}
+
+\begin{example}[Bring's surface unit circle bundle]
+\label{ex:brings-surface}
+Let $S$ denote Bring's surface (genus~$4$, $\chi = -6$).  The CR geometry
+lives on the unit circle bundle $M_S \subset T^*S$: the Liouville
+$1$-form restricts to a contact form $\theta$ on $M_S$.  The natural
+projection $\pi \colon S \to \mathbb{P}^1(\mathbb{C})$ (degree-$4$
+branched covering with $6$ branch points) lifts to a principal
+$\mathrm{SU}(2)$-bundle $P \to M_S$, giving an archimedean QOU
+$(M_S, \theta, G, P, E)$.
+\end{example}
+
+\begin{example}[Cosmological limits of $q$]
+\label{ex:cosmological-limits}
+Consider $M = S^3$ with the standard contact form $\theta$ and the
+standard instanton on the Hopf bundle.  As the instanton curvature
+concentrates near a point $p_0 \in S^3$, the substrate field $q$
+exhibits two simultaneous regimes:
+\begin{itemize}
+  \item \emph{Near $p_0$} ($q(p) \to \infty$, $\hbar_q \to 1$):
+        maximal uncertainty $[\hat{X},\hat{P}]_q \to J$.
+        All observables become maximally non-commutative; the
+        Frobenius form degenerates as
+        $\lambda(f^* f) \sim q^{-1} \to 0$.
+        This is the \emph{``big bang'' regime}: the quantum observable
+        universe becomes fully quantum-mechanical, with no classical
+        shadow.
+  \item \emph{Away from $p_0$} ($q(p) \to 1$, $\hbar_q \to 0$):
+        $[\hat{X},\hat{P}]_q \to 0$ and the Hopf algebra becomes
+        cocommutative ($\sigma \circ \Delta = \Delta$,
+        Remark~\ref{rem:hopf-non-cocommutativity}).  Observations
+        commute, the $q$-deformed operators reduce to classical ones,
+        and the transport equation becomes the classical parallel
+        transport $\nabla\psi = 0$.  This is the \emph{``heat death''
+        regime}: a fully classical, frozen universe.
+\end{itemize}
+At both limits the QOU structure \emph{degenerates}:
+\begin{itemize}
+  \item At $q \to \infty$: the Frobenius pairing
+        $\langle f, g \rangle = \lambda(fg)$ loses non-degeneracy
+        (axiom~(1) of Definition~\ref{def:quantum-observable-universe}
+        fails), so the QOU ceases to be observable.
+  \item At $q \to 1$: the $q$-Hodge star $\star_q \to \star_1$ and
+        the deformation collapses; the quantum gauge group
+        $\mathrm{SU}_q(2) \to \mathrm{SU}(2)$ becomes a classical
+        group, and the substrate parameter carries no information.
+\end{itemize}
+The physically meaningful regime is $1 < q < \infty$, where
+both quantum and classical features coexist.
+\end{example}
 
 \begin{example}[Instanton connection]
 \label{def:instanton}

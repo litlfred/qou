@@ -120,72 +120,9 @@ indefinite K\"ahler manifolds and for boundaries of
 Grauert tubes over pseudo-Riemannian manifolds.
 \end{remark}
 
-\begin{example}[Real hypersurface in a Calabi--Yau $2$-fold]
-\label{ex:calabi-yau}
-Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
-$\mathrm{SU}(2)$, and let $M \subset X$ be a smooth, strictly convex real
-hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR
-manifold inheriting its CR structure from the ambient K\"ahler geometry.
-Because the holonomy of $X$ is $\mathrm{SU}(2)$, the frame bundle of $X$
-restricted to $M$ yields a natural principal $\mathrm{SU}(2)$-bundle
-$P \to M$.  The associated state bundle $E = P \times_G \mathbb{P}^1(\mathbb{C})$
-yields an archimedean quantum observable universe $(M, \theta, G, P, E)$
-when the vanishing conditions of
-Example~\ref{def:c-quantum-observable-universe} are satisfied.  (For
-higher-dimensional Calabi--Yau manifolds with holonomy $\mathrm{SU}(n)$,
-$n > 2$, a reduction to $\mathrm{SU}(2)$ must be supplied separately.)
-\end{example}
-
-\begin{example}[ALE links]
-\label{ex:ale}
-Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and let $X$ be the
-minimal resolution of $\mathbb{C}^2 / \Gamma$.  The link
-$M = S^3 / \Gamma$ is the boundary of a tubular neighbourhood of the
-exceptional set in $X$; it is a compact $3$-dimensional strictly pseudoconvex
-CR manifold.  The CR structure of the boundary induces a contact form
-$\theta$ on $M$ whose Reeb vector field $\xi$ generates the Hopf-type
-fibration $S^3/\Gamma \to S^2$.  (When $\Gamma \neq \{1\}$, the target is
-the orbifold $\mathbb{P}^1(\mathbb{C})/\Gamma$; the bundle structure remains
-well-defined on the smooth manifold $M = S^3/\Gamma$.)  Equipped with the
-induced principal $\mathrm{SU}(2)$-bundle $P \to M$ and the associated
-state bundle $E = P \times_G \mathbb{P}^1(\mathbb{C})$, the tuple
-$(M, \theta, G, P, E)$ provides an archimedean quantum observable universe.
-Note that $\dim_{\mathbb{R}} H = 2$, so the Hodge-star decomposition
-$\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ is trivial
-($\Lambda^2 H^* \cong \mathbb{R}$); in this dimension the curvature
-$F_A|_H$ is automatically ``self-dual'' in the vacuous sense, and the
-instanton condition reduces to the Yang--Mills equation
-(Definition~\ref{def:instanton}).
-\end{example}
-
-\begin{example}[Bring's surface unit circle bundle]
-\label{ex:brings-surface}
-Let $S$ denote Bring's surface (Definition~\ref{def:brings-surface}), the
-genus-$4$ Riemann surface in $\mathbb{P}^4$ cut out by the first three power
-sums $\sum x_j^k = 0$, $k=1,2,3$.  Being a Riemann surface (real
-dimension~$2$), $S$ itself is not a CR manifold.  The CR geometry lives on the
-unit circle bundle $M_S \subset T^*S$: the Liouville $1$-form on $T^*S$
-restricts to a contact form $\theta$ on $M_S$, making it a $3$-dimensional
-strictly pseudoconvex CR manifold.  The Reeb vector field $\xi$ generates the
-$U(1)$ fibre rotation of $M_S \to S$.  The natural projection
-$\pi\colon S \to \mathbb{P}^1(\mathbb{C})$ (a degree-$4$ branched covering with $6$
-branch points corresponding to the $6$ defects of Euler
-characteristic~$\chi=-6$) lifts to a principal $\mathrm{SU}(2)$-bundle
-$P \to M_S$.  Setting $E = P \times_G \mathbb{P}^1(\mathbb{C})$, the $4$-tuple
-$(M_S,\, G,\, P,\, E)$ assembles into an archimedean quantum observable
-universe whose exceptional divisors support the $q$-deformed Reeb flow
-(Definition~\ref{def:q-reeb-flow}).
-\end{example}
-
-\begin{remark}[Archimedean examples as instances of the generalised framework]
-\label{rem:examples-unified}
-Examples~\ref{ex:calabi-yau}--\ref{ex:brings-surface} are instances of
-Definition~\ref{def:quantum-universe} over $K = \mathbb{C}$.  All three
-satisfy the cohomological conditions of Remark~\ref{rem:levi-generalisation}:
-Kohn--Rossi finite-dimensionality (by strict pseudoconvexity or compactness),
-substrate non-degeneracy ($q > 1$ wherever $F_A^+ \neq 0$), and QOU
-vanishing (by the topology of the respective principal bundles).
-\end{remark}
+% Archimedean examples (Calabi-Yau, ALE, Bring's) moved to Chapter 1
+% archimedean section. See ex:calabi-yau, ex:ale, ex:brings-surface,
+% ex:cosmological-limits in quantum-observable-universe.tex.
 
 \begin{remark}[Quantum gauge group: category-theoretic perspective]
 \label{rem:quantum-gauge-group-category}
@@ -473,27 +410,8 @@ Remark~\ref{rem:q-torsion-existence}); it is the gauge algebra, not the
 distribution, that is Frobenius.
 \end{remark}
 
-\begin{example}[Cosmological limits of $q$ on $S^3$]
-\label{ex:cosmological-limits}
-Consider the link $M = S^3$ with the standard contact form
-$\theta$ (Example~\ref{ex:ale} with $\Gamma = \{1\}$) and let
-$A$ be the standard instanton connection on the Hopf bundle
-$P = S^7 \to S^4$ restricted to $S^3$.  The Levi form $L_\theta$
-has signature $(1,0)$ with $\lvert L_\theta \rvert = 1$ everywhere.
-
-As the instanton curvature concentrates near a point $p_0 \in S^3$
-(a ``collapsing instanton''),
-$\lvert \langle L_\theta, F_A^+ \rangle \rvert$ diverges at $p_0$ and
-tends to zero away from $p_0$.  This produces two regimes simultaneously:
-\begin{itemize}
-  \item \emph{Near $p_0$}: $q(p) \to \infty$, $\hbar_q \to 1$,
-        $[\hat{X},\hat{P}]_q \to J$ --- a ``big bang'' singularity.
-  \item \emph{Away from $p_0$}: $q(p) \to 1$, $\hbar_q \to 0$,
-        $[\hat{X},\hat{P}]_q \to 0$ --- a ``heat death'' region.
-\end{itemize}
-The substrate field $q$ thus captures the phase transition between
-quantum and classical regimes as a geometric phenomenon.
-\end{example}
+% Cosmological limits moved to Chapter 1. See ex:cosmological-limits
+% in quantum-observable-universe.tex.
 
 \begin{remark}[$J^1E$ as the space of local states]
 \label{rem:j1e-local-states}
