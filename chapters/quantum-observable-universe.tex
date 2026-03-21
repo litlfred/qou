@@ -494,8 +494,11 @@ which:
   \item the assignment $\sigma \colon \mathbb{P}(V) \hookrightarrow
         \mathrm{Ad}(A)$ is an involution in the sense that $\sigma$
         determines $\mathbb{P}(V)$ from $\mathrm{Ad}(A)$ and vice versa;
-  \item the non-degeneracy of the Frobenius pairing forces the observability
-        condition $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$.
+  \item the non-degeneracy of the Frobenius pairing forces the
+        observability condition:
+        \[
+          \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) \;=\; 0.
+        \]
 \end{enumerate}
 In the archimedean realisation, $\sigma$ is the identification
 $\mathbb{CP}^1 \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere in the
@@ -510,18 +513,44 @@ $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}_M$.
 \begin{proof}
 The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \lambda \circ
 \mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
-Under this identification, the coset object $\mathbb{P}(V) = G_q/T$ embeds
+Under this identification, the quotient $\mathbb{P}(V) = G/T$ embeds
 in $\mathrm{Ad}(A)$ via the orbit map $gT \mapsto \mathrm{Ad}(g)(h)$ for a
 fixed highest-weight element $h \in \mathrm{Ad}(A)$.  The orbit is closed
 (by rigidity of~$\mathcal{C}$) and determines a sub-object of
 $\mathrm{Ad}(A)$ isomorphic to $\mathbb{P}(V)$.  Conversely, given the
-sub-object, the coset $G_q/T$ is recovered as its stabiliser quotient.  Item
+sub-object, the quotient $G/T$ is recovered as its stabiliser quotient.  Item
 (3) follows because $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$ would provide
-a $G_q$-fixed point in $\mathrm{Ad}(A)$, but the coadjoint orbit
+a $G$-fixed point in $\mathrm{Ad}(A)$, but the coadjoint orbit
 $\mathbb{P}(V)$ is a homogeneous space with no fixed points (the $T$-action
 on $\mathbb{P}(V)$ is free away from the poles, and non-degeneracy of
 $\lambda$ excludes the degenerate case).
 \end{proof}
+
+\begin{example}[Fiber--adjoint-fiber involution for $\mathrm{SU}(2)$]
+\label{ex:fiber-adjoint-su2}
+Continuing Example~\ref{ex:projective-line-su2}, take
+$G = \mathrm{SU}(2)$, $T = \mathrm{U}(1)$, and
+$V = \mathbb{C}^2$.  The projective line object is
+$\mathbb{P}(V) = \mathbb{CP}^1$, and the adjoint object is
+$\mathrm{Ad}(A) \cong \mathfrak{su}(2) \cong \mathbb{R}^3$
+(trace-free skew-Hermitian $2 \times 2$ matrices under the Killing
+form).  The embedding $\sigma$ sends a line
+$\ell = \mathrm{span}(v) \subset \mathbb{C}^2$ to the rank-$1$
+projector
+\[
+  \sigma([\ell]) \;=\;
+  \frac{v v^{\dagger}}{\lVert v \rVert^2}
+  \;-\; \tfrac{1}{2}\,\mathrm{id}_V
+  \;\in\; \mathfrak{su}(2).
+\]
+This identifies $\mathbb{CP}^1$ with the unit $2$-sphere
+$S^2 \subset \mathfrak{su}(2)$ (the coadjoint orbit of
+$\tfrac{1}{2}\,\mathrm{diag}(i, -i)$).  Observability follows:
+a $G$-fixed point in $\mathfrak{su}(2)$ would be a matrix commuting
+with all of $\mathrm{SU}(2)$, hence a scalar --- but trace-free matrices
+have no non-zero scalars, so
+$\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$.
+\end{example}
 
 \begin{definition}[Categorical connection and curvature]
 \label{def:categorical-connection}
