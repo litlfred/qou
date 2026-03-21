@@ -1,0 +1,7 @@
+When the substrate parameter satisfies $q(p) \neq 1$ at every point of the recursive brane tower, the comultiplication on the Frobenius--Hopf object $A$
+([Definition](#def:quantum-universe)) is non-cocommutative, so the
+algebra $\mathcal{A}_\infty$ ([Definition](#def:direct-limit-algebra))
+does not reduce to a commutative direct limit.  Moving a vortex through
+$J^1 E_n$ then requires a continuous rearrangement of the
+$\mathrm{SU}_q(2)$ fibre data, which is the source of the inertial
+resistance described in [Remark](#rem:mass-geometric-drag).

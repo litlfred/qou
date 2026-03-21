@@ -49,6 +49,7 @@ export default chapter({
       title: "$\\mathrm{SU}(2)$ and $\\mathrm{SO}(3)$ framework",
       label: "sec:su2-so3",
       blocks: [
+        "su2-so3-intro",
         "su2-basis",
         "first-order-taylor",
         "su2-generators",
@@ -60,6 +61,7 @@ export default chapter({
       title: "Braid involutions and holonomy",
       label: "sec:braid-involutions",
       blocks: [
+        "braid-involutions-intro",
         "braid-twist-flip",
         "holonomy-trefoil",
       ],
@@ -69,6 +71,7 @@ export default chapter({
       title: "The trefoil knot",
       label: "sec:trefoil-knot",
       blocks: [
+        "trefoil-knot-intro",
         "trefoil-knot-group",
         "trefoil-operator-algebra",
       ],
@@ -78,6 +81,7 @@ export default chapter({
       title: "Knot fundamental groups",
       label: "sec:knot-fundamental-groups",
       blocks: [
+        "knot-fundamental-groups-intro",
         "knot-complement-group",
         "kronheimer-mrowka",
         "reducible-reps",

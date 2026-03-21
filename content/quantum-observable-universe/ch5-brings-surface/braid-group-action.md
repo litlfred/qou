@@ -7,7 +7,7 @@ spectral resolvents $w_k$
 ([Remark](#rem:lagrange-resolvents)).  We describe each in terms of the
 braid group ([Definition](#def:braid-group)), the resolvent coordinates,
 and the $\mathrm{SU}(2)$/$\mathrm{SO}(3)$ matrices of
-[Definitions](#def:su2-generators)--[](#def:so3-generators).
+[Definition](#def:su2-generators)--[Definition](#def:so3-generators).
 
 **(i) Spacetime action ($\mathbb{P}^1(\mathbb{C})$ base).**
 Fix the chiral-like coordinates $x_2,x_3,x_4$ as internal fiber
