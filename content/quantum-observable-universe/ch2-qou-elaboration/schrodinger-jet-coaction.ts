@@ -2,12 +2,12 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:schrodinger-jet-coaction",
-  title: "q-Deformed Schrödinger equation",
-  tags: ["schrodinger", "q-deformed", "physics"],
+  title: "q-Deformed Schrodinger equation",
+  tags: ["schrodinger", "q-deformation", "jet-bundle"],
   uses: [
     "def:q-reeb-vector-field",
-    "def:quantum-planck-constant",
     "def:q-harmonic-form",
+    "def:quantum-planck-constant",
     "rem:heisenberg-commutator",
     "prop:main-commutative-diagram",
     "def:quantum-universe",
