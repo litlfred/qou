@@ -1,16 +1,5 @@
 {
   "name": "qou-viewer",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "bun run serve.ts",
-    "dev:open": "bun run serve.ts --open"
-  },
-  "dependencies": {
-    "marked": "^15.0.0",
-    "katex": "^0.16.0"
-  },
-  "devDependencies": {
-    "@types/katex": "^0.16.0"
-  }
+  "description": "Pure SPA viewer for QOU content objects. No build step needed — served by the MCP assistant."
 }

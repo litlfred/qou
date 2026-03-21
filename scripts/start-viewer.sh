@@ -1,30 +1,28 @@
 #!/usr/bin/env bash
 #
-# Start the QOU content viewer (HTML renderer).
+# Open the QOU content viewer.
+#
+# The viewer is served by the MCP assistant (start-assistant.sh).
+# This script just opens the browser to the viewer URL.
 #
 # Usage:
-#   ./scripts/start-viewer.sh                  # default paper, port 3200
-#   ./scripts/start-viewer.sh --open           # also open browser
-#   ./scripts/start-viewer.sh --port 8080      # custom port
-#   ./scripts/start-viewer.sh --paper my-paper # different paper
+#   ./scripts/start-viewer.sh              # open default URL
+#   ./scripts/start-viewer.sh --port 3200  # custom port
 #
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+PORT="${1:-3200}"
+[[ "$1" == "--port" ]] && PORT="${2:-3200}"
 
-# Ensure bun is available
-if ! command -v bun &>/dev/null; then
-  echo "[start-viewer] bun not found. Installing..." >&2
-  curl -fsSL https://bun.sh/install | bash
-  export PATH="$HOME/.bun/bin:$PATH"
+URL="http://localhost:${PORT}/viewer/"
+
+echo "Opening viewer: $URL"
+echo "(Make sure the assistant is running: ./scripts/start-assistant.sh)"
+
+if command -v xdg-open &>/dev/null; then
+  xdg-open "$URL"
+elif command -v open &>/dev/null; then
+  open "$URL"
+else
+  echo "Open in browser: $URL"
 fi
-
-# Ensure viewer deps are installed
-if [ ! -d "$REPO_ROOT/viewer/node_modules" ]; then
-  echo "[start-viewer] Installing viewer dependencies..." >&2
-  cd "$REPO_ROOT/viewer" && bun install 2>&1 >&2
-fi
-
-cd "$REPO_ROOT"
-exec bun run viewer/serve.ts "$@"
