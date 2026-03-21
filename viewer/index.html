@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -232,7 +232,7 @@
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
-    <button id="c-th" title="Toggle dark/light">light</button>
+    <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">web font</button>
     <span class="hash" id="c-hash"></span>
   </div>
@@ -284,10 +284,18 @@
     const btnTh = document.getElementById('c-th');
     const btnFn = document.getElementById('c-fn');
 
+    // Restore saved theme preference (default: light)
+    const savedTheme = localStorage.getItem('qou-theme');
+    if (savedTheme) {
+      html.dataset.theme = savedTheme;
+      btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
+    }
+
     btnTh.addEventListener('click', () => {
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('qou-theme', n);
     });
 
     btnFn.addEventListener('click', () => {
