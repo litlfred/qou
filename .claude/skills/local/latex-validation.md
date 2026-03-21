@@ -46,7 +46,31 @@ repository's `copilot-instructions.md`.
 - Every new reference must include at minimum: `author`, `title`,
   `year`, and either `doi` or `url`.
 
-### 6. LeanBlueprint Macros
+### 6. Commutative Diagrams (Herrlich–Strecker style)
+- Use `tikzcd` environments, **not** `CD` (amscd).  Both packages are
+  loaded, but `tikzcd` is the project standard.
+- Every definition must include commutative diagrams alongside equations.
+  Diagrams come first; the equation they express follows.
+- Standard spacings: `row sep=2.5em, column sep=3em` (or `3.5em` for
+  wider labels).
+- Arrow styles: `\ar[r, "label"]` for horizontal,
+  `\ar[d, "label"']` for downward (label below), `two heads` for
+  epimorphisms, `dashed` for induced/factored morphisms,
+  `equal` for identity/equality arrows.
+- Definitions of algebraic structures (Hopf, Frobenius, monoidal) must
+  display the structure morphisms as a diagram before listing axioms.
+
+### 7. Deformation Parameter Convention
+- The parameter $q$ must **not** appear in definitions, examples,
+  lemmas, or theorems before the substrate parameter section
+  (Section~\ref{sec:substrate-parameter}).
+- Categorical dimensions are written as plain integers (e.g.\ `$2$`)
+  in the pre-substrate definitions; the $q$-deformed form `$[2]_q$`
+  appears only after the substrate parameter is introduced.
+- The gauge group is $\mathrm{SU}(2)$ (not $\mathrm{SU}_q(2)$) in
+  the pre-substrate material.
+
+### 8. LeanBlueprint Macros
 - `\lean{QOU.Namespace.decl}` must reference a fully qualified Lean
   declaration that exists (or will exist after stub generation) in the
   `lean/QOU/` source tree.
@@ -71,7 +95,7 @@ repository's `copilot-instructions.md`.
   formalization dependency graph.  Every `\lean{}` macro in
   `chapters/*.tex` must have a corresponding entry there.
 
-### 7. Blueprint-BibTeX Cross-References
+### 9. Blueprint-BibTeX Cross-References
 - Every `-- Ref: [key]` annotation in Lean files must have a matching
   entry in `references.bib` (exact case-sensitive key match).
 - When adding a `sorry` to a Lean file, precede it with a
