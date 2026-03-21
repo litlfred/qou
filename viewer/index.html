@@ -607,7 +607,8 @@
         const frag = document.createDocumentFragment();
 
         const stub = mk('div', 'blk-stub example');
-        stub.innerHTML = `<span class="stub-kind">example</span> ${block.title ? esc(block.title) : (block.label || '')}`;
+        stub.innerHTML = `<span class="stub-kind">example</span> ${block.title ? inl(block.title) : (block.label || '')}`;
+        renderMath(stub);
         stub.style.display = showExamples ? 'none' : '';
         stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
         frag.appendChild(stub);
@@ -646,7 +647,8 @@
 
         // Stub (shown when remarks globally hidden)
         const stub = mk('div', 'blk-stub remark');
-        stub.innerHTML = `<span class="stub-kind">remark</span> ${block.title ? esc(block.title) : (block.label || '')}`;
+        stub.innerHTML = `<span class="stub-kind">remark</span> ${block.title ? inl(block.title) : (block.label || '')}`;
+        renderMath(stub);
         stub.style.display = showRemarks ? 'none' : '';
         stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
         frag.appendChild(stub);
@@ -856,7 +858,7 @@
       document.body.classList.add('has-sidebar');
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.textContent = `${ch.number}. ${ch.title}`;
+        chEl.innerHTML = `${ch.number}. ${inl(ch.title)}`;
         chEl.onclick = () => { const t = document.getElementById(ch.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
         sb.appendChild(chEl);
         for (const sec of ch.sections) {
@@ -874,7 +876,7 @@
           if (secTodos) badges.push(`${secTodos}T`);
           if (secLeanMiss) badges.push(`${secLeanMiss}!L`);
           if (secLeanErr) badges.push(`${secLeanErr}E`);
-          sEl.innerHTML = `<span style="flex:1">${esc(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
+          sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
           sEl.onclick = (e) => {
@@ -891,7 +893,7 @@
             const kind = b.kind[0].toUpperCase();
             const bEl = mk('div','sb-blk');
             const nameSpan = mk('span','sb-name');
-            nameSpan.textContent = `${kind} ${b.title || b.label || b.rootName}`;
+            nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
             bEl.appendChild(nameSpan);
             bEl.title = b.label || b.rootName;
 
@@ -947,6 +949,7 @@
           sb.appendChild(blkList);
         }
       }
+      renderMath(sb);
 
       // Header
       const hdr = mk('div','hdr');
@@ -956,11 +959,13 @@
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${esc(ch.title)}</h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</h2>`;
+        renderMath(cd);
         for (const sec of ch.sections) {
           const sd = mk('div','section');
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t">${esc(sec.title)}</h3>`;
+          sd.innerHTML = `<h3 class="sec-t">${inl(sec.title)}</h3>`;
+          renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
             if (b.kind === 'example' && b.label && childExamples.has(b.label) && pendingScroll !== b.label) continue;

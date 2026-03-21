@@ -49,6 +49,29 @@ function writeFeedback(paperId: string, rootName: string, todos: unknown[]): voi
   writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
 }
 
+/** List all feedback items across all papers, optionally filtered by status. */
+function listAllFeedback(status?: string): { paperId: string; rootName: string; todo: any }[] {
+  const results: { paperId: string; rootName: string; todo: any }[] = [];
+  if (!existsSync(FEEDBACK_DIR)) return results;
+  const { readdirSync } = require("fs") as typeof import("fs");
+  for (const paperId of readdirSync(FEEDBACK_DIR)) {
+    const paperFbDir = join(FEEDBACK_DIR, paperId);
+    try {
+      for (const file of readdirSync(paperFbDir)) {
+        if (!file.endsWith(".json")) continue;
+        const rootName = file.replace(/\.json$/, "");
+        const todos = readFeedback(paperId, rootName);
+        for (const t of todos as any[]) {
+          if (!status || t.status === status) {
+            results.push({ paperId, rootName, todo: t });
+          }
+        }
+      }
+    } catch {}
+  }
+  return results;
+}
+
 // ── Content resolution (dynamic, no static JSON) ────────────────
 
 const CONTENT_DIR = resolve(REPO_ROOT, "content");
@@ -350,8 +373,13 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   }
 
   // ── API: Feedback ─────────────────────────────────────────
-  // GET  /api/feedback?paperId=X&rootName=Y → list todos
+  // GET  /api/feedback?paperId=X&rootName=Y → todos for one block
+  // GET  /api/feedback/all?status=open      → all todos (optional status filter)
   // POST /api/feedback                      → create todo (handled below)
+  if (path === "/api/feedback/all") {
+    const status = url.searchParams.get("status") || undefined;
+    return Response.json(listAllFeedback(status));
+  }
   if (path === "/api/feedback") {
     const paperId = url.searchParams.get("paperId");
     const rootName = url.searchParams.get("rootName");
