@@ -1024,14 +1024,27 @@
         const d = mk('div', 'env proof');
         if (block.label) d.id = block.label;
         const prfHdr = mkBlockHeader('proof', block.title, block.label);
-        // Lean badge
+        // Lean icon — click to toggle lean source
+        let prfLeanPanel = null;
         if (block.lean) {
-          const s = block.status || 'not_started';
           const v = block.lean.validation || 'not_checked';
-          const badge = mk('span',`lb ${s}`);
-          badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)}`;
-          badge.title = `Lean: ${s.replace(/_/g,' ')}`;
-          prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
+          const icon = leanIcon(v);
+          if (icon) {
+            const badge = mk('span',`lb ${block.status || 'not_started'}`);
+            badge.innerHTML = icon;
+            badge.title = `${block.lean.decl} — click to show Lean source`;
+            badge.style.cursor = 'pointer';
+            badge.onclick = (e) => {
+              e.stopPropagation();
+              if (!prfLeanPanel) {
+                prfLeanPanel = mkLeanSrc(block);
+                if (prfLeanPanel) d.appendChild(prfLeanPanel);
+              } else {
+                prfLeanPanel.style.display = prfLeanPanel.style.display === 'none' ? '' : 'none';
+              }
+            };
+            prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
+          }
         }
         const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
         prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
@@ -1052,9 +1065,6 @@
           bb.innerHTML = bh + '<div class="qed"></div>';
           fillTex(bb, tx, block.rendered);
           renderMath(bb);
-          // Add lean source if available
-          const leanEl = mkLeanSrc(block);
-          if (leanEl) d.appendChild(leanEl);
         });
         return frag;
       }
@@ -1098,17 +1108,28 @@
       if (block.label) d.id = block.label;
 
       const hdr = mkBlockHeader(block.kind, block.title, block.label);
-      // Lean badge in header actions (no repeated kind name)
+      // Lean icon in header — click to toggle lean source
+      let leanPanel = null;
       if (block.lean) {
-        const s = block.status || 'not_started';
         const v = block.lean.validation || 'not_checked';
-        const badge = mk('span',`lb ${s}`);
-        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)}`;
-        badge.title = `Lean: ${s.replace(/_/g,' ')}`;
-        hdr._acts.insertBefore(badge, hdr._acts.firstChild);
-        // Clone into hamburger dropdown
-        const badge2 = badge.cloneNode(true);
-        hdr._drop.appendChild(badge2);
+        const icon = leanIcon(v);
+        if (icon) {
+          const badge = mk('span',`lb ${block.status || 'not_started'}`);
+          badge.innerHTML = icon;
+          badge.title = `${block.lean.decl} — click to show Lean source`;
+          badge.style.cursor = 'pointer';
+          badge.onclick = (e) => {
+            e.stopPropagation();
+            if (!leanPanel) {
+              leanPanel = mkLeanSrc(block);
+              if (leanPanel) d.appendChild(leanPanel);
+              else { badge.title = `${block.lean.decl} (no source loaded)`; return; }
+            } else {
+              leanPanel.style.display = leanPanel.style.display === 'none' ? '' : 'none';
+            }
+          };
+          hdr._acts.insertBefore(badge, hdr._acts.firstChild);
+        }
       }
       // Feedback button in header actions
       const fbBtn = mk('button','fb-act');
@@ -1220,9 +1241,6 @@
         bb.innerHTML = bh;
         fillTex(bb, tx, block.rendered);
         renderMath(bb);
-        // Add lean source if available
-        const leanEl = mkLeanSrc(block);
-        if (leanEl) d.appendChild(leanEl);
       });
 
       return d;
