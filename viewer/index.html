@@ -323,11 +323,17 @@
     }
 
     // ── KaTeX ────────────────────────────────────────────
+    const katexMacros = {
+      '\\pp': '\\mathfrak{p}',
+      '\\frakr': '\\mathfrak{r}',
+      '\\frakg': '\\mathfrak{g}',
+      '\\frakb': '\\mathfrak{b}',
+    };
     function renderMath(el) {
       for (const m of el.querySelectorAll('[data-mi]'))
-        try { katex.render(m.textContent, m, {throwOnError:false}); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, macros:katexMacros}); } catch {}
       for (const m of el.querySelectorAll('[data-md]'))
-        try { katex.render(m.textContent, m, {throwOnError:false,displayMode:true}); m.classList.add('katex-display'); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
     }
 
     // ── Lean validation icon ─────────────────────────────

@@ -546,16 +546,22 @@
   }
 
   // ── KaTeX rendering ─────────────────────────────────────
+  const katexMacros = {
+    '\\pp': '\\mathfrak{p}',
+    '\\frakr': '\\mathfrak{r}',
+    '\\frakg': '\\mathfrak{g}',
+    '\\frakb': '\\mathfrak{b}',
+  };
   function renderMath(root) {
     if (!window.katex) return;
     root.querySelectorAll(".katex-display-raw").forEach(el => {
       try {
-        katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
+        katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
     root.querySelectorAll(".katex-inline-raw").forEach(el => {
       try {
-        katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
+        katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
   }
