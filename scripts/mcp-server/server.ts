@@ -36,6 +36,13 @@ import { join, resolve, extname } from "path";
 const CONTENT_DIR = resolve(REPO_ROOT, "content");
 const LEAN_DIR = resolve(REPO_ROOT, "lean");
 
+interface ResolvedRenderedAsset {
+  mime: string;
+  url: string;
+  blockIndex: number;
+  hash?: string;
+}
+
 interface ResolvedBlock {
   rootName: string;
   kind: string;
@@ -49,6 +56,7 @@ interface ResolvedBlock {
   tex?: string;
   caption?: string;
   tags?: string[];
+  rendered?: ResolvedRenderedAsset[];
   md: string;
   todos?: unknown[];
 }
@@ -71,6 +79,7 @@ interface ResolvedPaper {
   id: string;
   title: string;
   authors: string[];
+  affiliations?: string[];
   date?: string;
   chapters: ResolvedChapter[];
   todos?: unknown[];
@@ -191,6 +200,14 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
           }
 
+          // Rewrite rendered asset URLs to serve from content source
+          const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
+            (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
+              ...r,
+              url: `/api/content-asset/${id}/${chRef.dir}/${r.url}`,
+            })
+          );
+
           blocks.push({
             rootName,
             kind: blk.kind,
@@ -204,6 +221,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             tex: blk.tex,
             caption: blk.caption,
             tags: blk.tags,
+            rendered,
             md,
             todos: blk.todos,
           });
@@ -225,6 +243,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     id,
     title: paperMod.title,
     authors: paperMod.authors,
+    affiliations: paperMod.affiliations,
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
@@ -325,7 +344,16 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       });
   }
 
-  // Rendered assets
+  // Content assets — serve SVG/PNG directly from content source directories
+  // URL pattern: /api/content-asset/<paper>/<chapter>/rendered/<file>
+  if (path.startsWith("/api/content-asset/")) {
+    const rel = path.slice("/api/content-asset/".length);
+    const assetPath = join(CONTENT_DIR, rel);
+    return serveFile(assetPath)
+      || new Response("Asset not found", { status: 404 });
+  }
+
+  // Legacy rendered assets (from build output)
   if (path.startsWith("/viewer/assets/") || path.startsWith("/api/rendered/")) {
     const assetRel = path.startsWith("/viewer/assets/")
       ? path.slice("/viewer/".length)
