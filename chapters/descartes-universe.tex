@@ -22,41 +22,23 @@ Descartes condition is called a \emph{Descartes universe}.
 
 % ── Implications on the three examples ───────────────────────────────────────
 
-\begin{remark}[The Descartes condition on Calabi--Yau manifolds]
+\begin{remark}[The Descartes condition on examples]
 \label{rem:descartes-calabi-yau}
-Let $(M, G, P, E)$ be a Calabi--Yau quantum observable universe
-(Example~\ref{ex:calabi-yau}).  The Descartes condition $\chi(E) = -6$
-constrains the Hodge numbers of the Calabi--Yau manifold $M$: the
-alternating sum of Betti numbers of the bulk bundle $E$ must equal $-6$.
-In particular, only Calabi--Yau manifolds whose topology admits a principal
-$\mathrm{SU}(2)$-bundle with this Euler characteristic can realise the
-Descartes universe.
-\end{remark}
-
-\begin{remark}[The Descartes condition on ALE spaces]
 \label{rem:descartes-ale}
-For an ALE quantum observable universe (Example~\ref{ex:ale}), the Descartes
-condition $\chi(E) = -6$ selects specific finite subgroups
-$\Gamma \subset \mathrm{SU}(2)$ in the quotient singularity
-$\mathbb{C}^2 / \Gamma$.  The Euler characteristic of the resolved space
-and its principal bundle are tied to the order and representation theory of
-$\Gamma$, so the Descartes condition imposes arithmetic constraints on the
-McKay quiver of~$\Gamma$.
-\end{remark}
-
-\begin{remark}[The Descartes condition on affine space]
 \label{rem:descartes-affine}
-For the affine quantum observable universe $M = \mathbb{C}^n$,
-the Descartes condition $\chi(E) = -6$ forces the
-principal $\mathrm{SU}(2)$-bundle $E$ to carry non-trivial topology despite
-the contractibility of the base.  In the two-dimensional case $M = \mathbb{C}^2$,
-the $q$-harmonic forms on this bundle
-(Definition~\ref{def:q-harmonic-form}) determine the spectrum of stable
-excitations.  In the regime $q(p) \to 1$ (near-classicality), the zero-modes
-of $\Delta_q$ reproduce the thermal fluctuation spectrum of the Cosmic
-Microwave Background: the Hodge numbers of $E$ govern the multiplicity of
-angular modes, and the negative Euler characteristic forces a non-trivial
-distribution of these modes across the CR manifold $M$.
+The constraint $\chi(E) = -6$ specialises to each archimedean example:
+\begin{itemize}
+  \item \emph{Calabi--Yau} (Example~\ref{ex:calabi-yau}): constrains
+        the alternating sum of Betti numbers; only manifolds admitting
+        a principal $\mathrm{SU}(2)$-bundle with this Euler characteristic
+        realise the Descartes universe.
+  \item \emph{ALE links} (Example~\ref{ex:ale}): selects finite subgroups
+        $\Gamma \subset \mathrm{SU}(2)$ via arithmetic constraints on
+        the McKay quiver.
+  \item \emph{Affine space} $M = \mathbb{C}^2$: forces non-trivial
+        bundle topology; the $q$-harmonic zero-modes of~$\Delta_q$
+        reproduce the CMB thermal spectrum in the $q \to 1$ regime.
+\end{itemize}
 \end{remark}
 
 % ── Descent to one complex dimension ─────────────────────────────────────────
@@ -318,43 +300,22 @@ morphism to the Bring's QOU.
 \end{theorem}
 
 \begin{proof}
-We must show that for every object $(\mathcal{C}, A, \omega)$ in
-$\mathcal{C}_{-6}$ there exists a unique QOU morphism to the Bring's QOU
-$(\mathcal{C}_B, A_B, \omega_B, q_B)$
-(Proposition~\ref{prop:brings-is-qou}).
-
 \emph{Existence.}\;
-Let $(\mathcal{C}, A, \omega)$ be a Descartes universe; let $q$ denote the substrate parameter.  The fibre
-functor~$\omega$ identifies $G_q = \mathrm{Aut}^{\otimes}(\omega)$ with a
-quantum form of $\mathrm{SU}(2)$ (by Tannaka--Krein over~$R$), so the
-base curve of the geometric descent
-(Theorem~\ref{thm:qu-to-qou}(1)) is a smooth genus-$4$ curve~$\Sigma$
-over~$R$ with $\chi(\Sigma) = -6$
-(Proposition~\ref{prop:genus-maximal-descent}).
-
-By the Hurwitz bound, $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 84(g-1) = 252$.
-Among genus-$4$ curves over~$R$ (with $30 \in R^{\times}$),
-Bring's surface $\Sigma_4$ has automorphism group $S_5$ of order~$120$,
-which is the \emph{maximum} for genus~$4$ (Edge, 1978).  The
-$S_5$-equivariant structure forces the power-sum relations
-$\sum x_j = \sum x_j^2 = \sum x_j^3 = 0$, uniquely determining $\Sigma_4$
-up to isomorphism in~$\mathbb{P}^4_R$.
-
-The descent data of~$(\mathcal{C}, A, \omega)$ --- specifically, the
-branch locus of $\pi \colon \Sigma \to \mathbb{P}(V)$ with its
-$6$ branch points and the $S_5$-symmetric ramification profile --- defines
-a map $\Sigma \to \Sigma_4$ in the category of branched covers of
-$\mathbb{P}(V)$.  This extends to a QOU morphism by the universality of
-the Frobenius--Hopf structure: the Haar state on
-$\mathcal{O}_q(\mathrm{SU}(2))$ is functorial with respect to quantum
-group homomorphisms.
+By Theorem~\ref{thm:qu-to-qou} and
+Proposition~\ref{prop:genus-maximal-descent}, the base curve is a smooth
+genus-$4$ curve $\Sigma$ with $\chi(\Sigma) = -6$.
+The Hurwitz bound gives $\lvert\mathrm{Aut}(\Sigma)\rvert \leq 252$;
+among genus-$4$ curves, Bring's surface achieves the maximum
+$\lvert S_5\rvert = 120$ (Edge, 1978), and the $S_5$-equivariant structure
+uniquely determines $\Sigma_4 \subset \mathbb{P}^4_R$.
+The descent data (branch locus with $6$ points, $S_5$-symmetric
+ramification) defines a map $\Sigma \to \Sigma_4$, extending to a QOU
+morphism by functoriality of the Haar state on
+$\mathcal{O}_q(\mathrm{SU}(2))$.
 
 \emph{Uniqueness.}\;
-A QOU morphism preserves the fibre functor~$\omega$ (up to natural
-isomorphism) and the Euler characteristic.  By Tannaka--Krein rigidity,
-any two fibre-preserving monoidal functors between the same Tannakian
-categories are naturally isomorphic.  Therefore the morphism to the Bring's
-QOU is unique up to the unique natural isomorphism.
+By Tannaka--Krein rigidity, any two fibre-preserving monoidal functors
+between Tannakian categories are naturally isomorphic.
 \end{proof}
 
 \begin{remark}[Universality for a given Euler characteristic]
@@ -371,32 +332,13 @@ at other values of~$\chi$.
 
 \begin{example}[Bring's surface and Yekutieli obstructions]
 \label{ex:descartes-yekutieli}
-Bring's surface $\Sigma_4$ satisfies the hypotheses of
-Theorem~\ref{thm:qu-to-qou} (Proposition~\ref{prop:brings-is-qou}), with
-$\chi(A) = -6 \neq 0$.  By the main structural theorem:
-\begin{enumerate}
-  \item The first Yekutieli obstruction $\kappa_0$ equals the Euler class of
-        the Reeb bundle, with $\kappa_0 \mapsto \chi(A) = -6$ under the trace
-        map (Theorem~\ref{thm:qu-to-qou}(2)).
-  \item Since $\kappa_0$ is non-torsion in
-        $H^2(\mathcal{S}, \mathcal{B})$, the perpetual obstruction
-        $\kappa_n \neq 0$ holds for all $n \geq 0$
-        (Theorem~\ref{thm:qu-to-qou}(3)).  The $6$ branch points of the
-        covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ correspond to the
-        $6$ defects of the Euler characteristic, and each defect supports a
-        non-vanishing monodromy fixed point.
-  \item By Proposition~\ref{prop:yekutieli-lifting}, the non-vanishing of
-        $\kappa_n$ obstructs smooth lifting at each level, creating twisted
-        sectors (Remark~\ref{rem:fermionic-twisted-sectors}).
-\end{enumerate}
-The ``geometric drag'' responsible for inertial mass
-(Remark~\ref{rem:mass-geometric-drag}) and the multiplicity of lepton
-generations (Remark~\ref{rem:descartes-leptons}) are both controlled by
-these non-vanishing Yekutieli classes: the number of independent twisted
-sectors is bounded by $\lvert\chi(A)\rvert = 6$, and the three lepton
-generations correspond to the three pairs of branch points under the
-$S_3 \subset S_5$ symmetry of Bring's curve
-(Remark~\ref{rem:chirality-trefoil}).
+Bring's surface satisfies Theorem~\ref{thm:qu-to-qou} with
+$\chi(A) = -6$.  The non-vanishing Yekutieli classes $\kappa_n \neq 0$
+(Theorem~\ref{thm:qu-to-qou}(3)) obstruct smooth lifting at every level,
+creating twisted sectors that control inertial mass
+(Remark~\ref{rem:mass-geometric-drag}) and the three lepton generations
+--- corresponding to the three pairs of branch points under
+$S_3 \subset S_5$ (Remark~\ref{rem:chirality-trefoil}).
 \end{example}
 
 \begin{remark}[Observations on the Bring surface]
