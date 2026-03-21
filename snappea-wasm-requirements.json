@@ -3,7 +3,7 @@
     "name": "snappea-wasm",
     "description": "SnapPea kernel + PARI/GMP compiled to WebAssembly via Emscripten. Computation-only npm package — no UI, no rendering. Embeddable in Pyodide, Node.js, or any browser JS runtime.",
     "license": "GPL-2.0-or-later",
-    "repository": "https://github.com/<org>/snappea-wasm",
+    "repository": "https://github.com/litlfred/qou",
     "npm_package": "@snappea/kernel"
   },
 
@@ -146,6 +146,8 @@
       "AbelianGroup": "{ elementary_divisors: number[] }",
       "GroupPresentation": "{ num_generators: number, relations: string[], num_orig_gens: number }",
       "GeodesicInfo": "{ length: Complex, parity: number, topology: number }",
+      "SymmetryGroup": "{ order: number, is_amphicheiral: boolean, is_invertible: boolean }",
+      "IsometryList": "{ count: number, contains_orientation_reversing: boolean }",
       "TriangulationPtr": "number (opaque WASM heap pointer)"
     }
   },
@@ -179,8 +181,8 @@
   },
 
   "build_system": {
-    "tool": "Makefile + Emscripten",
-    "note": "Following wasm-pari convention: Makefile-based, no shell script orchestration",
+    "tool": "Shell scripts + Emscripten",
+    "note": "Following wasm-pari-gmp convention: shell scripts for each build stage (build-gmp.sh, build-pari.sh, build-snappea.sh, link.sh)",
 
     "directory_layout": {
       "src/": {
@@ -314,13 +316,13 @@
       "method": "Run native SnapPy (CPython) on test inputs, serialize outputs as JSON fixtures",
       "manifolds": [
         "m004 (figure-eight knot complement)",
-        "m003 (trefoil complement — non-hyperbolic, tests error handling)",
+        "m003 (sister of figure-eight — hyperbolic, H₁ = Z/5 + Z)",
         "m015, m016, m017 (various cusped manifolds)",
         "4_1, 5_2, 6_3 (knot complements by Alexander-Briggs)",
         "L2a1 (Hopf link — 2-cusped)",
         "OrientableCuspedCensus sample (first 50 manifolds)"
       ],
-      "output_format": "JSON: { manifold, volume, solution_type, num_tet, cusps, homology, chern_simons, fundamental_group }"
+      "output_format": "JSON: { manifold, volume, solution_type, num_tet, cusps, homology, chern_simons, fundamental_group, symmetry_group }"
     },
 
     "environments": [
@@ -343,7 +345,7 @@
             "steps": [
               "Checkout source",
               "Cache Emscripten sysroot + GMP/PARI WASM objects",
-              "make all",
+              "bash scripts/build-gmp.sh && bash scripts/build-pari.sh && bash scripts/build-snappea.sh && bash scripts/link.sh",
               "Upload dist/ as artifact"
             ]
           },
@@ -356,13 +358,22 @@
               "npx vitest run --reporter=verbose"
             ]
           },
-          "test_browser": {
+          "test_browser_chromium": {
             "runs_on": "ubuntu-latest",
             "needs": "build",
             "steps": [
               "Download dist/ artifact",
               "npx playwright install chromium",
               "npx vitest run --browser.name=chromium"
+            ]
+          },
+          "test_browser_firefox": {
+            "runs_on": "ubuntu-latest",
+            "needs": "build",
+            "steps": [
+              "Download dist/ artifact",
+              "npx playwright install firefox",
+              "npx vitest run --browser.name=firefox"
             ]
           },
           "test_pyodide": {
@@ -377,7 +388,7 @@
         }
       },
       "publish.yml": {
-        "triggers": ["release (published)"],
+        "triggers": { "release": { "types": ["published"] } },
         "jobs": {
           "publish_npm": {
             "runs_on": "ubuntu-latest",
@@ -423,9 +434,9 @@
     "engines": { "node": ">=18" },
     "sideEffects": false,
 
-    "usage_example_js": "const { init } = require('@snappea/kernel');\nconst snappea = await init();\nconst tri = snappea.triangulationFromString(snappeaFileData);\nconsole.log(snappea.volume(tri));\nconsole.log(snappea.homology(tri));\nsnappea.freeTriangulation(tri);\nsnappea.destroy();",
+    "usage_example_js": "(async () => {\n  const { init } = require('@snappea/kernel');\n  const snappea = await init();\n  const tri = snappea.triangulationFromString(snappeaFileData);\n  console.log(snappea.volume(tri));\n  console.log(snappea.homology(tri));\n  snappea.freeTriangulation(tri);\n  snappea.destroy();\n})();",
 
-    "usage_example_pyodide": "import pyodide_js\nfrom js import require\nkernel = require('@snappea/kernel')\nsnappea = await kernel.init()\ntri = snappea.triangulationFromString(data)\nprint(snappea.volume(tri))\nsnappea.freeTriangulation(tri)"
+    "usage_example_pyodide": "import asyncio\nfrom js import snappea_kernel  # Loaded globally via <script> tag\n\nasync def main():\n    snappea = await snappea_kernel.init()\n    tri = snappea.triangulationFromString(data)\n    print(snappea.volume(tri))\n    snappea.freeTriangulation(tri)\n\nasyncio.ensure_future(main())"
   },
 
   "wasm_limitations": [
