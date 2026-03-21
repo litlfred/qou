@@ -51,7 +51,8 @@ $E_c$.  Since $E_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
 ([Remark](#rem:chiral-bundles)) restricts to a single sheet, and the
 Higgs-field eigenvalue is the chiral coordinate $X$.  The abelian
 component therefore satisfies $A^0 = X\,dz = \lambda_{\mathrm{SW}}$,
-recovering the Seiberg--Witten differential.
+recovering the Seiberg--Witten
+differential.
 
 *Step 2: Fake-flatness and the $2$-form datum.*
 The fake-flatness condition $F_A = B$ identifies

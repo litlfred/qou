@@ -7,8 +7,8 @@ export default proposition({
   uses: [
     "rem:brings-smoothness",
     "def:mass-identity",
-    "rem:weight-space-decomposition",
     "rem:chiral-bundles",
+    "rem:weight-space-decomposition",
     "prop:jet-prolongation",
     "rem:color-tube-cubic",
   ],
