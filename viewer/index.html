@@ -75,7 +75,9 @@
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
     .sb-badge.lean-miss{background:#555;color:#aaa}
-    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
+    .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
+    .sb-toggle:hover{color:var(--ac)}
+    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
 
     /* Header */
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
@@ -113,9 +115,9 @@
     /* Print styles — paper-like output */
     @media print{
       /* Hide all chrome */
-      .ctrl,#sidebar,.fb-btn,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,
-      .feedback-overlay,.feedback-panel,.hash,.decor,.lb,.tags,.uses,.bl,
-      .sb-badge,.ex-toggle,.ex-panel,.anchor-icon,.bh-copied{display:none!important}
+      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,
+      .feedback-overlay,.feedback-panel,.hash,.decor,.lb,.blk-foot,.bl,
+      .sb-badge,.ex-toggle,.ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu{display:none!important}
       body.has-sidebar #app{margin-left:0!important}
 
       /* Paper layout: narrow margins, compact font */
@@ -159,28 +161,46 @@
       .section{break-inside:avoid-page}
     }
     /* Reading mode — hide decorations */
-    body.reading .decor,body.reading .lb,body.reading .tags,body.reading .uses,body.reading .fb-btn,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel{display:none!important}
+    body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
     body.reading .bh{margin-bottom:.3rem}
 
-    .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head);flex-wrap:wrap}
-    .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative}
+    .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
+    .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative;min-width:0;flex:1}
     .bh-anchor:hover .bk{text-decoration:underline}
-    .bh-anchor .anchor-icon{opacity:0;font-size:.7rem;color:var(--fg-d);transition:opacity .15s;margin-left:.2rem}
+    .bh-anchor .anchor-icon{opacity:0;font-size:.7rem;color:var(--fg-d);transition:opacity .15s;margin-left:.2rem;flex-shrink:0}
     .bh-anchor:hover .anchor-icon{opacity:.6}
     .bh-copied{position:absolute;left:0;top:100%;font-family:var(--f-mono);font-size:.55rem;color:var(--ac);opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
     .bh-copied.show{opacity:1}
-    .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
+    .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac);flex-shrink:0}
     .env.theorem .bk,.env.proposition .bk{color:var(--yel)}
     .env.lemma .bk,.env.corollary .bk{color:var(--ora)}
     .env.conjecture .bk{color:var(--red)}
     .env.example .bk{color:var(--grn)}
     .env.remark .bk{color:var(--fg-d)}
-    .bt{font-size:.95rem;font-weight:500;color:var(--fg-b)}
-    .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:auto;text-decoration:none}
-    .bl:hover{color:var(--ac)}
+    .bt{font-size:.95rem;font-weight:500;color:var(--fg-b);overflow:hidden;text-overflow:ellipsis}
+    /* Header actions group — right side */
+    .bh-acts{display:flex;align-items:center;gap:.3rem;flex-shrink:0;margin-left:auto}
+    .bh-acts .lb{margin-left:0}
+    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:.1rem .3rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);white-space:nowrap}
+    .bh-acts .bl:hover{color:var(--ac);border-color:var(--ac-d)}
+    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:1px solid var(--brd);border-radius:2px;padding:.1rem .3rem;cursor:pointer;white-space:nowrap}
+    .bh-acts .fb-act:hover{color:var(--ac);border-color:var(--ac-d)}
+    /* Hamburger for narrow — replaces bh-acts */
+    .bh-menu{display:none;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-size:.7rem;padding:.1rem .3rem;margin-left:auto;position:relative}
+    .bh-menu:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .bh-drop{display:none;position:absolute;right:0;top:100%;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;padding:.3rem;z-index:50;min-width:120px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+    .bh-drop.open{display:flex;flex-direction:column;gap:.2rem}
+    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb{font-size:.55rem;display:block;text-align:left;width:100%}
+    @media(max-width:600px){
+      .bh-acts{display:none}
+      .bh-menu{display:block}
+    }
 
     /* Tags */
-    .tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.4rem}
+    .blk-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;padding-top:.3rem;border-top:1px solid var(--brd);gap:.5rem}
+    .blk-foot .tags{margin-top:0}
+    .blk-foot .uses{margin-top:0;text-align:right;margin-left:auto}
+    .tags{display:flex;gap:.3rem;flex-wrap:wrap}
     .tag{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d)}
 
     /* Source toggle */
@@ -290,9 +310,7 @@
     .todo-inline .todo-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
     /* Feedback button on blocks */
-    .fb-btn{position:absolute;top:.4rem;right:1.8rem;background:none;border:none;color:var(--fg-d);cursor:pointer;opacity:0;transition:opacity .2s;font-size:.65rem;font-family:var(--f-mono)}
-    .blk:hover .fb-btn,.env:hover .fb-btn{opacity:.4}
-    .fb-btn:hover{opacity:1!important;color:var(--ac)}
+    /* (old .fb-btn removed — feedback now in .bh-acts) */
 
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
@@ -311,6 +329,7 @@
     <span class="hash" id="c-hash"></span>
   </div>
 
+  <button class="sb-toggle" id="sb-toggle">☰</button>
   <div id="sidebar"></div>
   <div id="app"><div class="loading">loading...</div></div>
 
@@ -413,6 +432,15 @@
       // Force-hydrate all lazy content before printing
       while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
       window.print();
+    });
+
+    // Sidebar hamburger toggle (narrow screens)
+    document.getElementById('sb-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('sb-open');
+    });
+    document.getElementById('sidebar').addEventListener('click', (e) => {
+      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch'))
+        document.body.classList.remove('sb-open');
     });
 
     const btnRd = document.getElementById('c-rd');
@@ -638,14 +666,31 @@
         }
       };
       div.appendChild(anchor);
+
+      // Actions group (wide) + hamburger (narrow)
+      div._acts = mk('div','bh-acts decor');
       if (label) {
         const lbl = document.createElement('a');
         lbl.className = 'bl';
         lbl.href = `#/edit/${label}`;
         lbl.title = `Edit ${label}`;
         lbl.textContent = label;
-        div.appendChild(lbl);
+        div._acts.appendChild(lbl);
       }
+      div.appendChild(div._acts);
+
+      // Hamburger for narrow screens
+      const menu = mk('button','bh-menu decor');
+      menu.textContent = '⋯';
+      menu.title = 'More';
+      const drop = mk('div','bh-drop');
+      menu.appendChild(drop);
+      menu.onclick = (e) => { e.stopPropagation(); drop.classList.toggle('open'); };
+      document.addEventListener('click', () => drop.classList.remove('open'));
+      div._menu = menu;
+      div._drop = drop;
+      div.appendChild(menu);
+
       renderMath(div);
       return div;
     }
@@ -693,15 +738,18 @@
 
         const d = mk('div', 'env example');
         if (block.label) d.id = block.label;
-        d.appendChild(mkBlockHeader('example', block.title, block.label));
-        // Collapse button
-        const colBtn = mk('button','collapse-btn'); colBtn.textContent = '−'; colBtn.title = 'Collapse';
-        colBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
-        d.appendChild(colBtn);
+        const exHdr = mkBlockHeader('example', block.title, block.label);
+        // Collapse into header actions
+        const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
+        exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        exHdr._acts.appendChild(exColBtn);
+        const exFb = mk('button','fb-act'); exFb.textContent = 'feedback';
+        exFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        exHdr._acts.appendChild(exFb);
+        d.appendChild(exHdr);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addFeedbackBtn(d, block);
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
@@ -733,15 +781,17 @@
 
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
-        d.appendChild(mkBlockHeader('remark', block.title, block.label));
-        // Collapse button
-        const colBtn = mk('button','collapse-btn'); colBtn.textContent = '−'; colBtn.title = 'Collapse';
-        colBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
-        d.appendChild(colBtn);
+        const rmHdr = mkBlockHeader('remark', block.title, block.label);
+        const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
+        rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        rmHdr._acts.appendChild(rmColBtn);
+        const rmFb = mk('button','fb-act'); rmFb.textContent = 'feedback';
+        rmFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        rmHdr._acts.appendChild(rmFb);
+        d.appendChild(rmHdr);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addFeedbackBtn(d, block);
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
@@ -796,20 +846,37 @@
       if (block.label) d.id = block.label;
 
       const hdr = mkBlockHeader(block.kind, block.title, block.label);
-      // Lean badge inline in header, pushed right
+      // Lean badge in header actions (no repeated kind name)
       if (block.lean) {
         const s = block.status || 'not_started';
         const v = block.lean.validation || 'not_checked';
-        const badge = mk('span',`lb ${s} decor`);
-        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)} · ${s.replace(/_/g,' ')}`;
-        hdr.appendChild(badge);
+        const badge = mk('span',`lb ${s}`);
+        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)}`;
+        badge.title = `Lean: ${s.replace(/_/g,' ')}`;
+        hdr._acts.insertBefore(badge, hdr._acts.firstChild);
+        // Clone into hamburger dropdown
+        const badge2 = badge.cloneNode(true);
+        hdr._drop.appendChild(badge2);
       }
+      // Feedback button in header actions
+      const fbBtn = mk('button','fb-act');
+      fbBtn.textContent = 'feedback';
+      fbBtn.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+      hdr._acts.appendChild(fbBtn);
+      // Clone label + feedback into hamburger
+      if (block.label) {
+        const lbl2 = mk('a','bl'); lbl2.href = `#/edit/${block.label}`; lbl2.textContent = block.label;
+        hdr._drop.appendChild(lbl2);
+      }
+      const fb2 = mk('button','fb-act'); fb2.textContent = 'feedback';
+      fb2.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+      hdr._drop.appendChild(fb2);
+
       d.appendChild(hdr);
 
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
-      addFeedbackBtn(d, block);
       addSrc(d, block.md);
 
       // Examples toggle (if block has associated examples)
@@ -846,9 +913,14 @@
         d.appendChild(panel);
       }
 
-      // Tags + uses at bottom (decorations)
-      if (block.tags?.length) { const t = mkTags(block.tags); t.classList.add('decor'); d.appendChild(t); }
-      if (block.uses?.length) { const u = mkUsesInline(block); u.classList.add('decor'); d.appendChild(u); }
+      // Footer bar: tags (left) + uses (right)
+      if (block.tags?.length || block.uses?.length) {
+        const foot = mk('div','blk-foot decor');
+        if (block.tags?.length) foot.appendChild(mkTags(block.tags));
+        if (block.uses?.length) foot.appendChild(mkUsesInline(block));
+        d.appendChild(foot);
+      }
+      addTodoIndicators(d, block);
 
       // Lazy hydrate the main content
       lazyInit(d, () => {
@@ -1200,23 +1272,15 @@
       voiceBtn.style.display = 'none'; // hide if not supported
     }
 
-    function addFeedbackBtn(el, block) {
-      const btn = mk('button', 'fb-btn');
-      btn.textContent = 'feedback';
-      btn.title = 'Send feedback on this block';
-      btn.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
-      el.appendChild(btn);
-
-      // Show inline todo indicators for open feedback
-      if (block.todos?.length) {
-        const open = block.todos.filter(t => t.status === 'open');
-        for (const t of open) {
-          const d = mk('div', 'todo-inline');
-          d.innerHTML = `<span class="todo-dot"></span><span class="todo-text">${esc(t.summary || t.comment || '')}</span><span>${t.priority || ''}</span>`;
-          d.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
-          d.style.cursor = 'pointer';
-          el.appendChild(d);
-        }
+    function addTodoIndicators(el, block) {
+      if (!block.todos?.length) return;
+      const open = block.todos.filter(t => t.status === 'open');
+      for (const t of open) {
+        const d = mk('div', 'todo-inline decor');
+        d.innerHTML = `<span class="todo-dot"></span><span class="todo-text">${esc(t.summary || t.comment || '')}</span><span>${t.priority || ''}</span>`;
+        d.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        d.style.cursor = 'pointer';
+        el.appendChild(d);
       }
     }
 
