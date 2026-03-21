@@ -139,6 +139,17 @@ action, keep the vector space).  The triple
 $(\mathcal{C}, A, \omega)$ is a quantum universe over~$\mathbb{C}$.
 \end{example}
 
+\begin{remark}[Higher differential forms]
+\label{rem:higher-forms}
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe with differential
+calculus $\Omega^1(A)$ (Definition~\ref{def:quantum-universe}).  Write
+$\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the \emph{higher
+differential forms} (external tensor powers of the
+$A$-bimodule~$\Omega^1(A)$).  For an object $V$ in~$\mathcal{C}$,
+$\Lambda^k V$ denotes the $k$-th exterior power of~$V$ in the usual
+sense of rigid monoidal categories.
+\end{remark}
+
 \begin{definition}[Quantum Observable Universe]
 \label{def:quantum-observable-universe}
 \lean{QOU.QuantumObservableUniverse}\leanok
@@ -563,10 +574,7 @@ $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}_M$.
 \begin{definition}[Categorical connection and curvature]
 \label{def:categorical-connection}
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$ with
-differential calculus $\Omega^1(A)$
-(Definition~\ref{def:quantum-universe}).  Write
-$\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential
-forms (external tensor powers of the $A$-bimodule~$\Omega^1(A)$).
+differential forms $\Omega^k(A)$ (Remark~\ref{rem:higher-forms}).
 
 A \emph{connection} on~$A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying
