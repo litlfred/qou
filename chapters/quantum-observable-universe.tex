@@ -482,71 +482,27 @@ $q \colon M \to k^{\times}$.
 
 \begin{remark}[Archimedean substrate via the Levi form]
 \label{rem:c-substrate-via-levi}
+\label{rem:substrate-exponential}
+\label{rem:substrate-contraction}
 In the archimedean quantum observable universe
 (Example~\ref{def:c-quantum-observable-universe}), let $A$ be an
-instanton connection on~$P$
-(Definition~\ref{def:instanton}), $F_A^+$ its self-dual curvature
-(Proposition~\ref{prop:self-dual-curvature}), and
-$L_\theta \colon H \times H \to \mathbb{C}$ the Levi form on
-$H = \ker\theta$, defined by
-$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.
-The specialisation map of
-Definition~\ref{def:substrate-parameter} sends
+instanton connection on~$P$, $F_A^+$ its self-dual curvature, and
+$L_\theta(V,W) = -i\,d\theta(V,\bar{W})$ the Levi form on
+$H = \ker\theta$.  Since $\Lambda^{1,1} \subset \Lambda^+$ on a
+$4$-dimensional oriented space, $L_\theta$ and $F_A^+$ live in the
+same subbundle; the Webster metric and Killing form yield the natural
+contraction $\langle L_\theta, F_A^+\rangle_p \in \mathbb{R}$.
+The specialisation map of Definition~\ref{def:substrate-parameter} sends
 \[
-  q \;\longmapsto\;
   q(p) \;=\; 1 + \lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p),
   \qquad p \in M,
 \]
-where $\langle L_\theta, F_A^+\rangle$ is the natural contraction
-(Remark~\ref{rem:substrate-contraction}) and $\lvert\cdot\rvert$ denotes
-the absolute value.  This defines a smooth field
-$q \colon M \to [1,\infty) \subset \mathbb{C}^{\times}$ with $q(p) = 1$
-at points where $F_A^+ = 0$ (classicality) and $q(p) \to \infty$ in the
-deep-quantum regime.  The non-archimedean analogues are developed in
-Chapter~\ref{chap:p-adic}: over~$\mathbb{Q}_\pp$ the Levi-form
-contraction is replaced by the Frobenius endomorphism and
-$q = \pp^{\,-v_\pp(\det\varphi)}$
-(Example~\ref{ex:p-adic-realisation}); over~$\mathbb{F}_\pp$, $q$
-is a primitive root of unity
-(Example~\ref{ex:finite-field-realisation}).
-\end{remark}
-
-\begin{remark}[Algebraic vs.\ exponential specialisation]
-\label{rem:substrate-exponential}
-Over~$\mathbb{Q}$ (or any subfield of~$\mathbb{C}$), the classical
-exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an
-equally valid specialisation map.  The formula
-$q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
-(Remark~\ref{rem:c-substrate-via-levi}) is the first-order approximation
-of $\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$.
-Both define smooth fields $M \to [1,\infty)$ with the same boundary
-behaviour ($q = 1$ at classicality, $q \to \infty$ deep-quantum), and
-all downstream formulas ($\hbar_q = 1 - q^{-1}$, the Heisenberg
-commutator, the Schr\"odinger equation, the Yang--Mills functional) are
-algebraic in~$q$ and therefore insensitive to the choice between $1+x$
-and $\exp(x)$.  The algebraic form is adopted in
-Definition~\ref{def:substrate-parameter} because it is meaningful over
-every base ring~$R$, whereas $\exp(x)$ requires an archimedean topology.
-\end{remark}
-
-\begin{remark}[Natural contraction and field character of $q$]
-\label{rem:substrate-contraction}
-The Levi form $L_\theta$ is a section of $\Lambda^{1,1} H^*$
-(the $(1,1)$-component of $\Lambda^2 H^*$ with respect to the complex
-structure $J$).  The self-dual curvature $F_A^+$ is a section of
-$\Lambda^+ H^* \otimes \mathrm{Ad}(P)$.  On a $4$-dimensional oriented
-inner-product space, $\Lambda^{1,1} \subset \Lambda^+$, so $L_\theta$ and
-$F_A^+$ live in the same subbundle.  The Webster metric $g_\theta$
-provides a fibrewise inner product on $\Lambda^+ H^*$; composing this
-with the Killing form on $\mathrm{Ad}(P)$ yields the natural contraction
-\[
-  \langle L_\theta,\, F_A^+ \rangle_p
-  \;\in\; \mathbb{R}, \qquad p \in M.
-\]
-The substrate parameter is not a
-fixed constant but a field on $M$: its value varies from point to point
-according to the local coupling between the Levi form and the self-dual
-curvature.
+defining a smooth field $q \colon M \to [1,\infty)$ with $q(p) = 1$
+where $F_A^+ = 0$ (classicality) and $q(p) \to \infty$ in the
+deep-quantum regime.  The algebraic form $1+x$ is adopted over $\exp(x)$
+because all downstream formulas are algebraic in~$q$ and the algebraic
+form is meaningful over every base ring~$R$.  Non-archimedean analogues
+appear in Chapter~\ref{chap:p-adic}.
 \end{remark}
 
 % ── Tannakian Emergence of the Gauge Group ──────────────────────
@@ -670,60 +626,29 @@ As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
 vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 \end{remark}
 
-\begin{remark}[Heisenberg uncertainty as commutator]
+\begin{remark}[Heisenberg commutator, Reeb field, and the braid analogy]
 \label{rem:heisenberg-commutator}
-In the archimedean quantum observable universe the Heisenberg uncertainty
-principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
-$\hat{P}$ denote position and momentum observables on the fibre
-$\mathbb{CP}^1$.  Let $J \colon H \to H$ be the complex structure operator
-on the Levi distribution ($J^2 = -\mathrm{Id}$); throughout this paper every
-occurrence of the imaginary unit~$i$ in a physical equation is identified with
-the geometric action of~$J$ on horizontal planes.  We define their
-$q$-dependent commutator at $p \in M$ by
+\label{rem:commutator-lie-analogy}
+\label{rem:commutator-reeb-vector}
+In the archimedean quantum observable universe, let $J \colon H \to H$ be the
+complex structure on the Levi distribution ($J^2 = -\mathrm{Id}$); every
+occurrence of~$i$ in a physical equation is identified with the geometric
+action of~$J$.  The $q$-deformed Heisenberg commutator at $p \in M$ is
 \[
   [\hat{X},\, \hat{P}]_q \;:=\; J\,\hbar_q(p),
+  \qquad \hbar_q(p) = 1 - q(p)^{-1}.
 \]
-where $\hbar_q(p) = 1 - q(p)^{-1}$
-(Definition~\ref{def:quantum-planck-constant}).  In this remark the subscript
-$q$ serves only to record the dependence of the commutator on the substrate
-field $q$ and should not be confused with any $q$-deformed Lie bracket
-$[\cdot,\cdot]_q$ on vector fields that may appear elsewhere.  The commutator
-encodes the local uncertainty: when $q(p) \to 1$ (classicality),
-$[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$
-(deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty
-prevails.
-\end{remark}
-
-\begin{remark}[Commutator and the Lie bracket analogy]
-\label{rem:commutator-lie-analogy}
-The position--momentum commutator $[\hat{X},\hat{P}]_q$
-(Remark~\ref{rem:heisenberg-commutator}) is the quantum-mechanical
-counterpart of the Lie bracket
+This commutator equals the $q$-deformed Reeb field~$\xi_q$
+(Definition~\ref{def:q-reeb-vector-field}) evaluated on~$\theta$:
+the Reeb direction is where $d\theta$ degenerates, so $\theta(\xi_q)$
+encodes the obstruction to commutativity of canonical coordinates.
+When $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$; when $q \to \infty$,
+$[\hat{X}, \hat{P}]_q \to J$ (maximal uncertainty).  This is the
+quantum-mechanical counterpart of the Lie bracket
 $[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$
-(Definition~\ref{def:su2-basis}).  Both commutators measure the
-first-order non-commutativity of their respective algebras
-(Remark~\ref{rem:first-order-taylor}).  In the braid-group setting,
-this non-commutativity appears as the defining relation
-$\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$
-(Definition~\ref{def:braid-group}); on the Bring surface, it is
-realised by the $S_3$ permutation action on the spectral resolvents
-(Remark~\ref{rem:braid-group-action}).
-\end{remark}
-
-\begin{remark}[Commutator as Reeb vector]
-\label{rem:commutator-reeb-vector}
-The commutator $[\hat{X},\hat{P}]_q$
-(Remark~\ref{rem:heisenberg-commutator}) may be identified with the
-value of the $q$-deformed Reeb vector field~$\xi_q$
-(Definition~\ref{def:q-reeb-vector-field}) evaluated on the contact
-form.  Concretely, the Reeb field is the unique direction along which
-the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$
-encodes precisely the obstruction to commutativity of canonical
-coordinates.  On the exceptional divisor $\mathbb{CP}^1$ produced by
-blowing up a spacetime defect on the Bring surface
-(Remark~\ref{rem:brings-smoothness}), the Reeb vector field generates
-the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and
-its ``strength'' is set by~$\hbar_q(p)$.
+(Definition~\ref{def:su2-basis}), and in the braid-group setting appears
+as $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$
+(Definition~\ref{def:braid-group}).
 \end{remark}
 
 % ── Particles, Reeb decomposition, Fermions and Bosons ──────────────────────
@@ -1016,15 +941,10 @@ their rigidity.
 
 \begin{remark}[Physical interpretation of the Reeb decomposition]
 \label{rem:reeb-physical}
-The Reeb vector field $\xi$ singles out the direction of internal spin on the
-CR manifold.  Forms that ``see'' this direction (fermions) carry half-integer
-spin; forms confined to the horizontal distribution (bosons) do not couple to
-the Reeb flow and carry integer spin.  The decomposition
-$\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the
-spin--statistics distinction in this framework.  Experimental confirmation of
-this picture, including photonic quantum Hall measurements and many-body
-interference in crystal lattices, is discussed in
-Chapter~\ref{chap:experimental}.
+The decomposition $\alpha = \alpha_H + \alpha_V$ is the geometric origin of
+spin--statistics: fermions (non-trivial $\alpha_V$) carry half-integer spin;
+bosons (purely horizontal) carry integer spin.  See
+Chapter~\ref{chap:experimental} for experimental confirmation.
 \end{remark}
 
 % ── Remarks: physical interpretation ─────────────────────────────────────────

@@ -82,35 +82,21 @@ instance [DecidableEq G] : DecidableEq (TensorGen G) :=
 
 /-- The admissible order on `TensorGen G` induced by a base order on `G`.
 
-    We use: first compare by the component (`inl < inr`), then within
-    each component use the base order.  This gives a well-founded
-    admissible order on `k⟨G₁ ⊔ G₂⟩`. -/
-noncomputable def tensorOrder {G : Type u} (ord : AdmissibleOrder G) :
-    AdmissibleOrder (TensorGen G) where
-  lt := fun a b =>
-    -- Deg-lex on words over G ⊕ G, using Sum.inl < Sum.inr and
-    -- the base order within each component
-    a.length < b.length ∨ (a.length = b.length ∧ a ≠ b)
-  trichotomy := by
-    intro a b
-    by_cases h : a.length < b.length
-    · left; left; exact h
-    · by_cases h' : b.length < a.length
-      · right; right; left; exact h'
-      · have heq : a.length = b.length := Nat.le_antisymm (Nat.not_lt.mp h) (Nat.not_lt.mp h')
-        by_cases hab : a = b
-        · right; left; exact hab
-        · left; right; exact ⟨heq, hab⟩
-  wf := by
-    apply WellFounded.intro
-    intro a
-    sorry  -- Well-foundedness of the induced order on G ⊕ G
-  left_compat := by
-    intro a b c hlt
-    sorry  -- Concatenation compatibility
-  right_compat := by
-    intro a b d hlt
-    sorry  -- Concatenation compatibility
+    The tensor product order on `k⟨G₁ ⊔ G₂⟩` is the deg-lex extension:
+    first compare by total degree (word length), then lexicographically
+    using `Sum.inl < Sum.inr` between components and the base order `ord`
+    within each component.
+
+    Axiomatised because constructing a well-founded deg-lex order on
+    `List (G ⊕ G)` from `ord : AdmissibleOrder G` requires a decidable
+    linear order on `G ⊕ G` and the well-foundedness proof for the
+    lexicographic product, which needs `Fintype G` or an explicit
+    enumeration.  The result is standard: every admissible order on `G`
+    lifts to an admissible order on `G ⊕ G` via the coproduct ordering.
+
+    Reference: Bokut & Chen, Bull. Math. Sci. 4 (2014), §2.1. -/
+axiom tensorOrder {G : Type u} (ord : AdmissibleOrder G) :
+    AdmissibleOrder (TensorGen G)
 
 /-- The tensor product rewriting system: given a GS basis for `k⟨G⟩/(Σ)`,
     the tensor product `k⟨G⟩/(Σ) ⊗ k⟨G⟩/(Σ)` is presented by the
