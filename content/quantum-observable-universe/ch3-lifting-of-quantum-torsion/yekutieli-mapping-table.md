@@ -1,4 +1,4 @@
-Table \ref{tab:yekutieli-mapping} summarises the correspondence between the
+[Table](#tab:yekutieli-mapping) summarises the correspondence between the
 core structures of the Quantum Observable Universe and the formal results
 of Yekutieli on central extensions of gerbes, twisted deformation
 quantization, and nonabelian multiplicative integration.

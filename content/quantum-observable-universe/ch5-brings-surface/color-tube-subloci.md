@@ -1,6 +1,5 @@
 **Vanishing of the intrinsic color cubic.**
-If $\widetilde{C} = 0$, the reduced cubic
-factors as
+If $\widetilde{C} = 0$, the reduced cubic factors as
 
 ```tex
 \begin{equation}\label{eq:reduced-cubic-factored}

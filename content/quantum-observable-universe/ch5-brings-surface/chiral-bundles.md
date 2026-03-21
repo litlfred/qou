@@ -2,7 +2,7 @@ The spacetime--chiral decomposition of Bring's surface maps naturally onto
 three classical bundle structures over the $\mathbb{P}^1(\mathbb{C})$ base $z=x_0/x_1$.
 
 **Cotangent bundle.**
-The three-sheeted cubic realises the chiral
+The three-sheeted cubic ([Proposition](#prop:chiral-elliptic)) realises the chiral
 variables $X=(x_2,x_3,x_4)$ as a *spectral curve*
 $\Sigma\subset T^{*}\mathbb{P}^1(\mathbb{C})$: the base coordinate $z$ parametrises
 spacetime position, and the three roots $X_1,X_2,X_3$ of
