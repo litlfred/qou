@@ -57,7 +57,7 @@ We say $\mathcal{C}$ is \emph{$R$-linear} (for a commutative ring~$R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
 \end{definition}
 
-\begin{example}[$\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$]
+\begin{example}[{$\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$}]
 \label{ex:rigid-monoidal-vect}
 The polynomial ring $\mathbb{C}[z]$ is the algebra of functions on the
 complex line~$\mathbb{C}$.  The category
@@ -92,13 +92,12 @@ triple $(\mathcal{C}, A, \omega)$ where:
   \item $A$ is a \emph{Frobenius--Hopf object} in~$\mathcal{C}$: an
         object equipped with morphisms
         \[
-        \begin{tikzcd}[row sep=1.5em, column sep=2em]
+        \begin{tikzcd}[row sep=1.5em, column sep=2.5em]
           A \otimes A \ar[r, "\mu"] & A \ar[r, "\lambda"] & \mathbf{1}
           \\
-          \mathbf{1} \ar[r, "\eta"] & A
+          \mathbf{1} \ar[r, "\eta"] & A \ar[r, "\varepsilon"] & \mathbf{1}
           \\
           A \ar[r, "\Delta"] & A \otimes A
-          & A \ar[l, "\varepsilon"']
           & A \ar[l, "S"']
         \end{tikzcd}
         \]
@@ -442,22 +441,21 @@ forms (external tensor powers of the $A$-bimodule~$\Omega^1(A)$).
 
 A \emph{connection} on~$A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying
-the Leibniz rule:
+the Leibniz rule: $\nabla(\mu(a \otimes b)) =
+\nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
+of the outer square
 \[
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mu"]
-    \ar[d, "\nabla \otimes \mathrm{id}\;+\;\mathrm{id} \otimes \nabla"']
+    \ar[d, "{\nabla \otimes 1 \,+\, 1 \otimes \nabla}"']
   & A \ar[d, "\nabla"]
   \\
-  (A \otimes \Omega^1) \otimes A
-    \;+\; A \otimes (A \otimes \Omega^1)
-    \ar[r]
+  A \otimes \Omega^1(A)
+    \ar[r, equal]
   & A \otimes \Omega^1(A)
 \end{tikzcd}
 \]
-that is, $\nabla(\mu(a \otimes b)) =
-\nabla(a) \cdot b + a \cdot \nabla(b)$.
 The \emph{curvature} of~$\nabla$ is the composition
 \[
 \begin{tikzcd}[column sep=3em]
@@ -1323,7 +1321,7 @@ parallel transport along $A$.  The following diagram commutes:
 \[
 \begin{tikzcd}[row sep=2.5em, column sep=2.5em]
   J^1E
-    \ar[r, "\mathbf{E}{[S_q]}"]
+    \ar[r, "{\mathbf{E}[S_q]}"]
     \ar[d, "\text{jet evaluation}"']
   & \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\}
     \ar[d, "{q = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert}"]
