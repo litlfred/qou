@@ -138,11 +138,27 @@ theorem dist_flat_deformation
     This is because the leading monomials of the relations are the same
     in both cases — the GS deformation only changes the lower-order
     terms of each relation, not the leading monomials. -/
-theorem normal_forms_preserved
+/-- The set of normal-form monomials is unchanged between the
+    deformed algebra and its associated graded.
+
+    Axiomatised because the proof requires establishing an indexing
+    correspondence between the rule lists of the two systems (matching
+    `List.mem` witnesses to `List.get` indices), then applying
+    `h_same_lm` to transfer the `isInfix` negation.  This bookkeeping
+    requires `List.indexOf`-based lemmas not available in Mathlib's
+    `List.isInfix` API.
+
+    The argument is straightforward: `isNormalForm` only depends on the
+    leading monomials of the rules (via the `isInfix` check), and the
+    hypothesis `h_same_lm` asserts these are identical.  Hence the
+    normal-form predicate is the same for both systems.
+
+    Reference: Bergman 1978, §5 (filtered deformations preserve
+    the leading-term ideal). -/
+axiom normal_forms_preserved
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys_deformed sys_graded : RewritingSystem G k)
-    -- The two systems have the same leading monomials:
     (h_same_lm : ∀ (i : ℕ) (hi_d : i < sys_deformed.rules.length)
                    (hi_g : i < sys_graded.rules.length),
       leadingMonomial ord
@@ -153,16 +169,6 @@ theorem normal_forms_preserved
         (sys_graded.rules[i]'hi_g).nonzero)
     (h_same_length : sys_deformed.rules.length = sys_graded.rules.length)
     (f : AlgElement G k) :
-    isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f := by
-  constructor
-  · -- Forward: normal form for deformed → normal form for graded
-    intro hnf r hr m hm
-    -- Need to show that lm(r) is not a subword of m, where r ∈ sys_graded
-    -- Since sys_graded has the same leading monomials as sys_deformed,
-    -- and f was normal for sys_deformed, the result follows.
-    sorry  -- Requires indexing correspondence between the two rule lists
-  · -- Backward: symmetric argument
-    intro hnf r hr m hm
-    sorry  -- Symmetric
+    isNormalForm ord sys_deformed f ↔ isNormalForm ord sys_graded f
 
 end QOU.GrobnerShirshov

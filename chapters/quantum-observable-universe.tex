@@ -1453,6 +1453,7 @@ deep-quantum regime.  All downstream formulas ($\hbar_q$, commutators,
 Yang--Mills) are algebraic in~$q$, so the formula $1 + x$ may equally be
 replaced by $\exp(x)$ without affecting the theory; the algebraic form is
 preferred because it is meaningful over every base ring~$R$.
+Non-archimedean analogues appear in Chapter~\ref{chap:p-adic}.
 \end{remark}
 
 \begin{remark}[Heisenberg commutator and the Reeb vector]
@@ -1478,8 +1479,11 @@ evaluated on the contact form: $\xi_q$ is the unique direction along
 which $d\theta$ degenerates, so it encodes the obstruction to
 commutativity.  Algebraically, the commutator is the quantum-mechanical
 counterpart of the Lie bracket $[e_a, e_b] = \epsilon_{abc}\,e_c$ in
-$\mathfrak{su}(2)$ (Definition~\ref{def:su2-basis}).
+$\mathfrak{su}(2)$ (Definition~\ref{def:su2-basis}); in the braid-group
+setting it appears as $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$
+(Definition~\ref{def:braid-group}).
 \end{remark}
+
 
 \begin{definition}[Reeb decomposition]
 \label{def:reeb-decomposition}
@@ -1636,15 +1640,10 @@ their rigidity.
 
 \begin{remark}[Physical interpretation of the Reeb decomposition]
 \label{rem:reeb-physical}
-The Reeb vector field $\xi$ singles out the direction of internal spin on the
-CR manifold.  Forms that ``see'' this direction (fermions) carry half-integer
-spin; forms confined to the horizontal distribution (bosons) do not couple to
-the Reeb flow and carry integer spin.  The decomposition
-$\alpha = \alpha_H + \alpha_V$ is therefore the geometric origin of the
-spin--statistics distinction in this framework.  Experimental confirmation of
-this picture, including photonic quantum Hall measurements and many-body
-interference in crystal lattices, is discussed in
-Chapter~\ref{chap:experimental}.
+The decomposition $\alpha = \alpha_H + \alpha_V$ is the geometric origin of
+spin--statistics: fermions (non-trivial $\alpha_V$) carry half-integer spin;
+bosons (purely horizontal) carry integer spin.  See
+Chapter~\ref{chap:experimental} for experimental confirmation.
 \end{remark}
 
 % ── Remarks: physical interpretation ─────────────────────────────────────────
