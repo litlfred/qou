@@ -31,6 +31,8 @@ export type {
   Chapter,
   ChapterRef,
   Paper,
+  PaperRef,
+  Folio,
   Document,
   TodoItem,
   TodoPriority,
@@ -58,6 +60,8 @@ export {
   chapter,
   chapterRef,
   paper,
+  paperRef,
+  folio,
   document,
 } from "./builders";
 
@@ -79,6 +83,8 @@ export {
   ChapterRefSchema,
   SectionRefSchema,
   PaperSchema,
+  PaperRefSchema,
+  FolioSchema,
   DocumentSchema,
   LeanRefSchema,
   TodoItemSchema,

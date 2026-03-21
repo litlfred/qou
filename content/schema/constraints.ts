@@ -236,6 +236,21 @@ export const DocumentSchema = z.object({
   meta: z.record(z.unknown()).optional(),
 });
 
+// ── Folio schemas ─────────────────────────────────────────────
+
+export const PaperRefSchema = z.object({
+  dir: z.string().min(1),
+  title: z.string().optional(),
+  description: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+});
+
+export const FolioSchema = z.object({
+  title: z.string().min(1),
+  papers: z.array(PaperRefSchema).min(1),
+  meta: z.record(z.unknown()).optional(),
+});
+
 // ── Constraint rules (beyond schema shape) ───────────────────────
 
 export interface ConstraintRule {

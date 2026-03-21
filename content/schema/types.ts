@@ -485,6 +485,39 @@ export interface TodoItem {
   related?: string[];
 }
 
+// ── Folio (collection of papers) ─────────────────────────────
+
+/**
+ * Reference to a paper within the folio.
+ *
+ * The `dir` is the paper's directory name under content/.
+ * The pipeline resolves `<dir>/<dir>.ts` by convention.
+ */
+export interface PaperRef {
+  /** Directory name under content/ (e.g. "quantum-observable-universe"). */
+  dir: string;
+  /** Optional display title override (otherwise read from paper manifest). */
+  title?: string;
+  /** Optional description shown on the landing page. */
+  description?: string;
+  /** Tags for filtering on the landing page. */
+  tags?: string[];
+}
+
+/**
+ * Folio — a collection of papers in this repository.
+ *
+ * Lives at `content/folio.ts` by convention.  The assistant landing
+ * page reads this to discover all papers and render the folio view.
+ */
+export interface Folio {
+  /** Display name for the folio (e.g. "litlfred's Papers"). */
+  title: string;
+  /** Papers in the folio, ordered by display preference. */
+  papers: PaperRef[];
+  meta?: Record<string, unknown>;
+}
+
 // ── Validation result ────────────────────────────────────────────
 
 export interface ValidationIssue {

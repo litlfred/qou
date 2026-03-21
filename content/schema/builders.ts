@@ -33,6 +33,8 @@ import type {
   Section,
   SectionRef,
   Paper,
+  PaperRef,
+  Folio,
   Document,
 } from "./types";
 
@@ -52,6 +54,8 @@ import {
   ChapterRefSchema,
   SectionRefSchema,
   PaperSchema,
+  PaperRefSchema,
+  FolioSchema,
   DocumentSchema,
 } from "./constraints";
 
@@ -128,6 +132,14 @@ export function chapterRef(data: ChapterRef): ChapterRef {
 
 export function paper(data: Paper): Paper {
   return validated(PaperSchema, data) as Paper;
+}
+
+export function paperRef(data: PaperRef): PaperRef {
+  return validated(PaperRefSchema, data) as PaperRef;
+}
+
+export function folio(data: Folio): Folio {
+  return validated(FolioSchema, data) as Folio;
 }
 
 /** @deprecated Use paper() instead. */
