@@ -382,6 +382,16 @@
       t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
       t = t.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, '<a href="#$2" data-ref="$2">$1</a>');
+      // LaTeX cross-ref commands → clickable links
+      // Handle $\eqref{...}$ (math-wrapped refs) first
+      t = t.replace(/\$\\eqref\{([^}]+)\}\$/g, '(<a href="#$1" data-ref="$1">$1</a>)');
+      t = t.replace(/\$\\(?:ref|cref|autoref)\{([^}]+)\}\$/g, '<a href="#$1" data-ref="$1">$1</a>');
+      // Then bare (outside math mode)
+      t = t.replace(/\\eqref\{([^}]+)\}/g, '(<a href="#$1" data-ref="$1">$1</a>)');
+      t = t.replace(/\\(?:ref|cref|autoref)\{([^}]+)\}/g, '<a href="#$1" data-ref="$1">$1</a>');
+      // \cite{key} → [key], ~ → non-breaking space
+      t = t.replace(/\\cite\{([^}]+)\}/g, '[$1]');
+      t = t.replace(/~/g, '&nbsp;');
       // Inline math: walk character-by-character to handle nested braces
       let out = '', i = 0;
       while (i < t.length) {
