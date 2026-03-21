@@ -88,6 +88,15 @@ echo "  ✓ .env generated"
 parse_json_array authorized_emails > "$DEPLOY_DIR/authorized-emails.txt"
 echo "  ✓ authorized-emails.txt generated ($(wc -l < "$DEPLOY_DIR/authorized-emails.txt") emails)"
 
+# ── Generate Caddyfile from template ──────────────────────────────
+if [ -f "$DEPLOY_DIR/Caddyfile.template" ]; then
+    LEAN_MCP_DOMAIN="$DOMAIN" LEAN_MCP_INTERNAL_PORT="$MCP_PORT" \
+        envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT}' \
+        < "$DEPLOY_DIR/Caddyfile.template" \
+        > "$DEPLOY_DIR/Caddyfile"
+    echo "  ✓ Caddyfile generated for $DOMAIN"
+fi
+
 echo ""
 echo "Done. Review $DEPLOY_DIR/.env, then run:"
 echo "  cd $DEPLOY_DIR && docker compose up -d"
