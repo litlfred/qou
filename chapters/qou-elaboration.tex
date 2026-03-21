@@ -234,16 +234,17 @@ fibre functor.  For any two points $p, p' \in M$ connected by a
 path~$\gamma$, the passage between fibres is captured by the
 commutative square
 \begin{equation}\label{eq:tannaka-krein-functoriality}
-\begin{CD}
-\mathcal{O}_{q(p)}(\mathrm{SU}(2))
-  @>{\mathrm{Rep}}>>
-  \mathrm{Rep}(\mathrm{SU}_{q(p)}(2)) \\
-@V{\text{transition along } \gamma}VV
-  @VV{\text{monoidal functor}}V \\
-\mathcal{O}_{q(p')}(\mathrm{SU}(2))
-  @>>{\mathrm{Rep}}>
-  \mathrm{Rep}(\mathrm{SU}_{q(p')}(2))
-\end{CD}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  \mathcal{O}_{q(p)}(\mathrm{SU}(2))
+    \ar[r, "\mathrm{Rep}"]
+    \ar[d, "\text{transition along } \gamma"']
+  & \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))
+    \ar[d, "\text{monoidal functor}"]
+  \\
+  \mathcal{O}_{q(p')}(\mathrm{SU}(2))
+    \ar[r, "\mathrm{Rep}"']
+  & \mathrm{Rep}(\mathrm{SU}_{q(p')}(2))
+\end{tikzcd}
 \end{equation}
 Tannaka--Krein reconstruction inverts the horizontal arrows, so the
 Hopf-algebra and representation-category viewpoints are equivalent
@@ -257,28 +258,33 @@ $\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
 counit, and antipode.  The Hopf comultiplication satisfies
 \emph{coassociativity}:
 \begin{equation}\label{eq:coassociativity}
-\begin{CD}
-\mathcal{O}_q @>{\Delta_q}>>
-  \mathcal{O}_q \otimes \mathcal{O}_q \\
-@V{\Delta_q}VV
-  @VV{\mathrm{id} \otimes \Delta_q}V \\
-\mathcal{O}_q \otimes \mathcal{O}_q
-  @>>{\Delta_q \otimes \mathrm{id}}>
-  \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
-\end{CD}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  \mathcal{O}_q
+    \ar[r, "\Delta_q"]
+    \ar[d, "\Delta_q"']
+  & \mathcal{O}_q \otimes \mathcal{O}_q
+    \ar[d, "\mathrm{id} \otimes \Delta_q"]
+  \\
+  \mathcal{O}_q \otimes \mathcal{O}_q
+    \ar[r, "\Delta_q \otimes \mathrm{id}"']
+  & \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+\end{tikzcd}
 \end{equation}
 Let $\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
 \mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
 $(a \otimes b \mapsto b \otimes a)$.  The cocommutativity square
 \begin{equation}\label{eq:non-cocommutativity}
-\begin{CD}
-\mathcal{O}_q @>{\Delta_q}>>
-  \mathcal{O}_q \otimes \mathcal{O}_q \\
-@V{\Delta_q}VV  @VV{\sigma}V \\
-\mathcal{O}_q \otimes \mathcal{O}_q
-  @=
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  \mathcal{O}_q
+    \ar[r, "\Delta_q"]
+    \ar[d, "\Delta_q"']
+  & \mathcal{O}_q \otimes \mathcal{O}_q
+    \ar[d, "\sigma"]
+  \\
   \mathcal{O}_q \otimes \mathcal{O}_q
-\end{CD}
+    \ar[r, equal]
+  & \mathcal{O}_q \otimes \mathcal{O}_q
+\end{tikzcd}
 \quad\text{commutes}\;\Longleftrightarrow\;q = 1.
 \end{equation}
 For $q \neq 1$ the failure of~\eqref{eq:non-cocommutativity} is
@@ -294,15 +300,16 @@ $*_H$ gives the splitting
 $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$ and hence
 the short exact sequence of $\mathrm{Ad}(P)$-valued forms
 \begin{equation}\label{eq:self-dual-ses}
-\begin{CD}
-0 @>>>
-  \Gamma\!\bigl(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)\bigr)
-  @>{\iota}>>
-  \Gamma\!\bigl(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\bigr)
-  @>{\pi^+}>>
-  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
-  @>>> 0
-\end{CD}
+\begin{tikzcd}[column sep=2em]
+  0 \ar[r]
+  & \Gamma\!\bigl(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)\bigr)
+    \ar[r, "\iota"]
+  & \Gamma\!\bigl(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\bigr)
+    \ar[r, "\pi^+"]
+  & \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
+    \ar[r]
+  & 0
+\end{tikzcd}
 \end{equation}
 The instanton condition
 $F_A|_H = {*_H}\,F_A|_H$
@@ -320,10 +327,14 @@ group homomorphism $\partial \colon H \to G$ together with an
 action of $G$ on $H$ satisfying the Peiffer identity.  The
 associated exact sequence
 \begin{equation}\label{eq:crossed-module-ses}
-\begin{CD}
-1 @>>> \ker\partial @>>> H @>{\partial}>> G @>>>
-  \mathrm{coker}\,\partial @>>> 1
-\end{CD}
+\begin{tikzcd}[column sep=2em]
+  1 \ar[r]
+  & \ker\partial \ar[r]
+  & H \ar[r, "\partial"]
+  & G \ar[r]
+  & \mathrm{coker}\,\partial \ar[r]
+  & 1
+\end{tikzcd}
 \end{equation}
 encodes the $2$-group as a homotopy type with
 $\pi_0 = \mathrm{coker}\,\partial$ and
@@ -350,15 +361,17 @@ is available.  Imposing the \emph{simplicity constraint}
 and combining with fake flatness~\eqref{eq:fake-flatness} yields
 the commutative diagram
 \begin{equation}\label{eq:2group-instanton}
-\begin{CD}
-\Omega^1(M,\,\mathfrak{g})
-  @>{d_A}>>
-  \Omega^2(M,\,\mathfrak{g})
-  @>{\pi^+}>>
-  \Omega^{2,+}(M,\,\mathfrak{g}) \\
-@.  @AA{=\;B}A  @AA{\text{simplicity}}A \\
-@.  F_A @= F_A^+
-\end{CD}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^1(M,\,\mathfrak{g})
+    \ar[r, "d_A"]
+  & \Omega^2(M,\,\mathfrak{g})
+    \ar[r, "\pi^+"]
+  & \Omega^{2,+}(M,\,\mathfrak{g})
+  \\
+  & F_A \ar[u, "=\;B"]
+    \ar[r, equal]
+  & F_A^+ \ar[u, "\text{simplicity}"']
+\end{tikzcd}
 \end{equation}
 The fake-flatness condition $F_A = B$ combined with the simplicity
 constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
@@ -457,29 +470,30 @@ a Frobenius algebra with comultiplication $\Delta_\mu$ dual to the
 multiplication.  This Frobenius comultiplication is compatible with the
 Hopf comultiplication~$\Delta_q$ of~\eqref{eq:coassociativity} and
 satisfies the \emph{Frobenius relation}:
-\begin{equation}\label{eq:frobenius-relation}
-\begin{CD}
-\mathcal{O}_q \otimes \mathcal{O}_q
-  @>{\mu}>>
-  \mathcal{O}_q \\
-@V{\mathrm{id} \otimes \Delta_\mu}VV
-  @VV{\Delta_\mu}V \\
-\mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
-  @>>{\mu \otimes \mathrm{id}}>
+\begin{equation}\label{eq:frobenius-relation-elab}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   \mathcal{O}_q \otimes \mathcal{O}_q
-\end{CD}
+    \ar[r, "\mu"]
+    \ar[d, "\mathrm{id} \otimes \Delta_\mu"']
+  & \mathcal{O}_q
+    \ar[d, "\Delta_\mu"]
+  \\
+  \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
+    \ar[r, "\mu \otimes \mathrm{id}"']
+  & \mathcal{O}_q \otimes \mathcal{O}_q
+\end{tikzcd}
 \end{equation}
 where $\mu$ is the algebra multiplication and $\Delta_\mu$ the
 Frobenius comultiplication (dual to $\mu$ under the Haar pairing).
 The non-degeneracy of $h_q$ is expressed by requiring the composite
 \begin{equation}\label{eq:frobenius-nondegen}
-\begin{CD}
-\mathcal{O}_q \otimes \mathcal{O}_q
-  @>{\mu}>>
-  \mathcal{O}_q
-  @>{h_q}>>
-  \mathbb{C}
-\end{CD}
+\begin{tikzcd}[column sep=3em]
+  \mathcal{O}_q \otimes \mathcal{O}_q
+    \ar[r, "\mu"]
+  & \mathcal{O}_q
+    \ar[r, "h_q"]
+  & \mathbb{C}
+\end{tikzcd}
 \end{equation}
 to be a perfect pairing, i.e.\ the induced map
 $\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
@@ -507,17 +521,19 @@ reduce to a triple:
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
 the non-degeneracy of the Frobenius form~$\lambda$ via the diagram
 \begin{equation}\label{eq:frobenius-vanishing}
-\begin{CD}
-\mathrm{Ad}(A) \otimes \mathrm{Ad}(A)
-  @>{\mu_{\mathrm{Ad}}}>>
-  \mathrm{Ad}(A)
-  @>{\lambda_{\mathrm{Ad}}}>>
-  \mathcal{O}_M \\
-@V{\text{global sections}}VV  @.  @VV{\int_M}V \\
-H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
-  @.  @>>{\text{pairing}}>
-  \mathbb{C}
-\end{CD}
+\begin{tikzcd}[row sep=2.5em, column sep=2.5em]
+  \mathrm{Ad}(A) \otimes \mathrm{Ad}(A)
+    \ar[r, "\mu_{\mathrm{Ad}}"]
+    \ar[d, "\text{global sections}"']
+  & \mathrm{Ad}(A)
+    \ar[r, "\lambda_{\mathrm{Ad}}"]
+  & \mathcal{O}_M
+    \ar[d, "\textstyle\int_M"]
+  \\
+  H^0(M,\,\mathrm{Ad}(A)) \otimes H^0(M,\,\mathrm{Ad}(A))
+    \ar[rr, "\text{pairing}"']
+  & & \mathbb{C}
+\end{tikzcd}
 \end{equation}
 The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
 Frobenius pairing from~$\lambda$; any global parallel section would

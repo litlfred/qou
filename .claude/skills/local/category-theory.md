@@ -266,6 +266,64 @@ structure PlanarDiagram where
   components : ℕ
 ```
 
+## Skill 6: LaTeX Diagram Conventions (Herrlich–Strecker style)
+
+When writing or editing LaTeX definitions involving categorical structures:
+
+### Diagram-First Presentation
+
+Every definition of a categorical structure must include **commutative
+diagrams** (using `tikzcd`, never `CD`/amscd) alongside the equations.
+The diagram comes first; the equation it expresses follows.
+
+### Required Diagrams by Structure
+
+| Structure | Required Diagrams |
+|-----------|-------------------|
+| Monoidal category | Associator $\alpha$, left/right unitors $\ell$, $\rho$ |
+| Rigid monoidal | Snake identity triangles (ev/coev) |
+| Hopf object | Structure morphism layout ($\mu$, $\eta$, $\Delta$, $\varepsilon$, $S$) |
+| Frobenius object | Pairing composition diagram, Frobenius relation square |
+| Volume constraint | Naturality square with $\Lambda^2 g_V$ |
+| Connection | Leibniz rule square, curvature composition |
+| Factorisation | Dashed arrow for induced morphism |
+
+### tikzcd Conventions
+
+```latex
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  X \ar[r, "f"] \ar[d, "g"']   % label below for downward arrows
+  & Y \ar[d, "h"]
+  \\
+  Z \ar[r, "k"']               % label below for bottom arrows
+  & W
+\end{tikzcd}
+```
+
+- Epimorphisms: `two heads`
+- Induced morphisms: `dashed`
+- Isomorphisms: `"\sim"'` as second label
+- Equality: `equal`
+
+### Deformation Parameter Convention
+
+The parameter $q$ must **not** appear before the substrate parameter
+section.  In pre-substrate material:
+- Categorical dimensions are plain integers ($2$, not $[2]_q$)
+- The gauge group is $\mathrm{SU}(2)$, not $\mathrm{SU}_q(2)$
+- Examples use $\mathcal{O}(\mathrm{SU}(2))$, not $\mathcal{O}_q$
+
+### Running Example Convention
+
+Definitions in Ch.1 use a single running example that builds
+progressively:
+1. $\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$ (rigid monoidal)
+2. $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
+   \omega)$ (quantum universe)
+3. Same triple with the three observability axioms verified (QOU)
+
+Each example uses "Continuing Example~\ref{...}" to chain them.
+
 ## Checklist
 
 - [ ] All diagram chase proofs attempt `aesop_cat` first
@@ -274,3 +332,6 @@ structure PlanarDiagram where
 - [ ] Natural transformation compositions use whiskering notation
 - [ ] Knot types are defined combinatorially when possible
 - [ ] `slice_lhs` / `slice_rhs` used for manual composition navigation
+- [ ] LaTeX definitions include tikzcd diagrams (Herrlich–Strecker style)
+- [ ] No $q$ appears before the substrate parameter section
+- [ ] Running examples chain via "Continuing Example" cross-references
