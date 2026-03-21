@@ -53,6 +53,18 @@
 
     /* Layout */
     #app{max-width:780px;margin:0 auto;padding:48px 1.5rem 4rem}
+    body.has-sidebar #app{margin-left:220px}
+
+    /* Sidebar */
+    #sidebar{display:none}
+    body.has-sidebar #sidebar{display:block;position:fixed;top:34px;left:0;width:210px;bottom:0;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;padding:.6rem 0;z-index:90;font-family:var(--f-head);font-size:.72rem}
+    .sb-ch{padding:.2rem .6rem;color:var(--fg-d);cursor:pointer;font-weight:600;font-size:.7rem}
+    .sb-ch:hover{color:var(--fg-b)}
+    .sb-ch.active{color:var(--ac)}
+    .sb-sec{padding:.15rem .6rem .15rem 1.2rem;color:var(--fg-d);cursor:pointer;font-size:.65rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sb-sec:hover{color:var(--fg)}
+    .sb-sec.active{color:var(--ac)}
+    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
 
     /* Header */
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
@@ -75,6 +87,13 @@
     .env.conjecture{border-left-color:var(--red)}
     .env.example{border-left-color:var(--grn)}
     .env.remark{border-left-color:var(--fg-d)}
+
+    /* Collapsed remark/example stub */
+    .blk-stub{margin:.4rem 0;display:flex;align-items:center;gap:.4rem;cursor:pointer;padding:.25rem .6rem;border-radius:3px;border:1px dashed var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d);transition:all .15s}
+    .blk-stub:hover{border-color:var(--ac-d);color:var(--fg)}
+    .blk-stub .stub-kind{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.6rem}
+    .blk-stub.remark .stub-kind{color:var(--fg-d)}
+    .blk-stub.example .stub-kind{color:var(--grn)}
 
     .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
     .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
@@ -178,7 +197,8 @@
     <span class="hash" id="c-hash"></span>
   </div>
 
-  <div id="app"><div class="loading">loading paper.json...</div></div>
+  <div id="sidebar"></div>
+  <div id="app"><div class="loading">loading...</div></div>
 
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
@@ -211,7 +231,14 @@
       showExamples = !showExamples;
       btnEx.classList.toggle('on', showExamples);
       document.querySelectorAll('.blk-example').forEach(el => {
-        el.style.display = showExamples ? '' : 'none';
+        const stub = el.previousElementSibling;
+        if (showExamples) {
+          el.style.display = '';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        } else {
+          el.style.display = 'none';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = '';
+        }
       });
     });
 
@@ -219,7 +246,14 @@
       showRemarks = !showRemarks;
       btnRm.classList.toggle('on', showRemarks);
       document.querySelectorAll('.blk-remark').forEach(el => {
-        el.style.display = showRemarks ? '' : 'none';
+        const stub = el.previousElementSibling;
+        if (showRemarks) {
+          el.style.display = '';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        } else {
+          el.style.display = 'none';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = '';
+        }
       });
     });
     btnRm.classList.add('on'); // remarks on by default
@@ -364,8 +398,16 @@
         return {bh, tx};
       }
 
-      // Example — wrapped for show/hide
+      // Example — with collapsible stub
       if (block.kind === 'example') {
+        const frag = document.createDocumentFragment();
+
+        const stub = mk('div', 'blk-stub example');
+        stub.innerHTML = `<span class="stub-kind">example</span> ${block.title ? esc(block.title) : (block.label || '')}`;
+        stub.style.display = showExamples ? 'none' : '';
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
         const wrap = mk('div', 'blk blk-example');
         wrap.style.display = showExamples ? '' : 'none';
 
@@ -381,6 +423,7 @@
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
+        frag.appendChild(wrap);
 
         lazyInit(wrap, () => {
           const {bh, tx} = hydrateContent();
@@ -388,11 +431,20 @@
           fillTex(bb, tx, block.rendered);
           renderMath(bb);
         });
-        return wrap;
+        return frag;
       }
 
-      // Remark — wrapped for show/hide
+      // Remark — with collapsible stub
       if (block.kind === 'remark') {
+        const frag = document.createDocumentFragment();
+
+        // Stub (shown when remarks globally hidden)
+        const stub = mk('div', 'blk-stub remark');
+        stub.innerHTML = `<span class="stub-kind">remark</span> ${block.title ? esc(block.title) : (block.label || '')}`;
+        stub.style.display = showRemarks ? 'none' : '';
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
         const wrap = mk('div', 'blk blk-remark');
         wrap.style.display = showRemarks ? '' : 'none';
 
@@ -409,6 +461,7 @@
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
         wrap.appendChild(d);
+        frag.appendChild(wrap);
 
         lazyInit(wrap, () => {
           const {bh, tx} = hydrateContent();
@@ -416,7 +469,7 @@
           fillTex(bb, tx, block.rendered);
           renderMath(bb);
         });
-        return wrap;
+        return frag;
       }
 
       // Prose
@@ -587,6 +640,25 @@
       const app = document.getElementById('app');
       app.innerHTML = '';
 
+      // Build sidebar
+      const sb = document.getElementById('sidebar');
+      sb.innerHTML = '';
+      document.body.classList.add('has-sidebar');
+      for (const ch of p.chapters) {
+        const chEl = mk('div','sb-ch');
+        chEl.textContent = `${ch.number}. ${ch.title}`;
+        chEl.onclick = () => { const t = document.getElementById(ch.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
+        sb.appendChild(chEl);
+        for (const sec of ch.sections) {
+          const sEl = mk('div','sb-sec');
+          sEl.textContent = sec.title;
+          sEl.title = sec.title;
+          sEl.onclick = () => { const t = document.getElementById(sec.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
+          sb.appendChild(sEl);
+        }
+      }
+
+      // Header
       const hdr = mk('div','hdr');
       hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.date?`<div class="dt">${p.date}</div>`:''}`;
       app.appendChild(hdr);
@@ -611,6 +683,8 @@
 
     // ── Folio (paper listing) ────────────────────────────
     function renderFolio(data) {
+      document.body.classList.remove('has-sidebar');
+      document.getElementById('sidebar').innerHTML = '';
       const app = document.getElementById('app');
       app.innerHTML = '';
 
