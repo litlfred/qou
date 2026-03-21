@@ -735,6 +735,72 @@ the diagonal matrices in $\mathrm{SU}(2)$.  Each element of $T$ acts on
 $e_{\pm}$ by $e^{\pm i\theta}$: one-dimensional eigenspaces, as required.
 \end{example}
 
+\begin{definition}[Weight decomposition]
+\label{def:weight-decomposition}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) with maximal torus
+$T$ (Definition~\ref{def:maximal-torus}) and higher differential forms
+$\Omega^k(A)$ (Definition~\ref{def:higher-forms}).  The $T$-action on
+$\Omega^k(A)$ induces a $\mathbb{Z}$-grading by weights.  Denoting by
+$\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
+summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
+\begin{equation}\label{eq:weight-decomposition-cd}
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  & \Omega^k(A) \ar[dl, "\pi_H"'] \ar[dr, "\pi_V"] & \\
+  \Omega^k_H(A) \ar[rr, hook, "\oplus"']
+  & & \Omega^k_V(A)
+\end{tikzcd}
+\qquad \alpha = \alpha_H + \alpha_V.
+\end{equation}
+Here $\alpha_H = \pi_H(\alpha)$ is the \emph{horizontal component}
+(weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
+\emph{vertical component} (non-zero weight).  A form is \emph{purely
+horizontal} if and only if $\alpha_V = 0$.
+\end{definition}
+
+\begin{definition}[Categorical Reeb derivation]
+\label{def:categorical-reeb}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+maximal torus $T$ (Definition~\ref{def:maximal-torus}) and weight
+decomposition $\pi_H, \pi_V$
+(Definition~\ref{def:weight-decomposition}).  The \emph{categorical
+Reeb derivation} is the endomorphism $\xi \colon A \to A$ that
+generates the $T$-action: $\xi$ is the infinitesimal generator of the
+one-parameter subgroup $T \cong \mathrm{U}(1) \subset G$, acting on
+the Frobenius--Hopf object~$A$ via the adjoint coaction.  It satisfies:
+\begin{enumerate}
+  \item \textbf{Vertical generator:}\;
+        $\pi_V \circ d = \xi \lrcorner\, d\theta_A$, where
+        $\theta_A \in \Omega^1(A)$ is the canonical $1$-form dual to~$\xi$.
+  \item \textbf{Normalisation:}\;
+        $\theta_A(\xi) = \mathrm{id}_{\mathbf{1}}$.
+  \item \textbf{Kernel:}\;
+        $\Omega^k_H(A) = \ker(\xi \lrcorner)$ (horizontal forms are
+        precisely those annihilated by contraction with~$\xi$).
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Reeb derivation for $\mathrm{SU}(2)$]
+\label{ex:reeb-su2}
+Continuing Example~\ref{ex:maximal-torus-su2}, the maximal torus is
+$T = \mathrm{U}(1)$ with generator
+$\xi = e_3 = \frac{1}{2}\begin{psmallmatrix} 1 & 0 \\ 0 & -1
+\end{psmallmatrix} \in \mathfrak{su}(2)$.
+On $A = \mathcal{O}(\mathrm{SU}(2))$, $\xi$ acts by
+$(\xi \cdot f)(g) = \frac{d}{dt}\big|_{t=0} f(e^{-t\xi} g)$
+(left-invariant vector field).  The canonical $1$-form is
+$\theta_A = \omega_3$ (the left-invariant $1$-form dual to~$e_3$), and:
+\begin{itemize}
+  \item $\omega_3(\xi) = 1$ (normalisation).
+  \item $\Omega^k_H(A) = \{\alpha : \iota_\xi\,\alpha = 0\}$
+        (forms with no $\omega_3$ component).
+  \item In the archimedean realisation on a CR manifold $(M, \theta)$,
+        $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$
+        and $\theta(\xi) = 1$
+        (Example~\ref{def:reeb-decomposition}).
+\end{itemize}
+\end{example}
+
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
@@ -1205,30 +1271,6 @@ of~$\lambda$ and the dagger structure
 \end{proof}
 
 % ── Particles, Fermions, Bosons, Observation ────────────────────────────────
-
-\begin{definition}[Weight decomposition]
-\label{def:weight-decomposition}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}).  The maximal
-torus $T \subset G = \mathrm{Aut}^{\otimes}(\omega)$
-(Definition~\ref{def:maximal-torus}) induces a
-$\mathbb{Z}$-grading on $\Omega^k(A)$
-(Definition~\ref{def:higher-forms}).  Denoting by
-$\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
-summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
-\begin{equation}\label{eq:weight-decomposition-cd}
-\begin{tikzcd}[row sep=2em, column sep=3em]
-  & \Omega^k(A) \ar[dl, "\pi_H"'] \ar[dr, "\pi_V"] & \\
-  \Omega^k_H(A) \ar[rr, hook, "\oplus"']
-  & & \Omega^k_V(A)
-\end{tikzcd}
-\qquad \alpha = \alpha_H + \alpha_V.
-\end{equation}
-Here $\alpha_H = \pi_H(\alpha)$ is the \emph{horizontal component}
-(weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
-\emph{vertical component} (non-zero weight).  A form is \emph{purely
-horizontal} if and only if $\alpha_V = 0$.
-\end{definition}
 
 \begin{definition}[Categorical $q$-deformed exterior derivative]
 \label{def:categorical-q-ext-deriv}
