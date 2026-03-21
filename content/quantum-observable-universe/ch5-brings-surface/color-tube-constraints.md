@@ -2,7 +2,7 @@ The Bring surface constraints take the following form in color tube coordinates.
 
 **Spacetime recovery.**
 Substituting into $z = S/D$
-yields $z(\widetilde{D} - z) = \widetilde{S} + 4z$,
+(equation [](#eq:z-from-SD)) yields $z(\widetilde{D} - z) = \widetilde{S} + 4z$,
 which rearranges to
 
 ```tex
@@ -15,8 +15,7 @@ Thus the spacetime coordinate $z$ is determined implicitly by the
 shifted data $(\widetilde{S}, \widetilde{D})$.
 
 **Shifted quadric.**
-Substituting $w_k = c_k + z$ into the quadric
-gives
+Substituting $w_k = c_k + z$ into the quadric gives
 
 ```tex
 \begin{equation}\label{eq:shifted-quadric}
@@ -27,8 +26,7 @@ gives
 or equivalently $\sigma b + rg = -z(\sigma + r + g + b) - 2z^2$.
 
 **Shifted cubic.**
-Substituting $w_k = c_k + z$ into the cubic
-gives
+Substituting $w_k = c_k + z$ into the cubic gives
 
 ```tex
 \begin{equation}\label{eq:shifted-cubic}

@@ -5,9 +5,11 @@ $q$-deformed exterior derivative $d_q$
 transport equation* for a section $\psi \in \omega(J^1(A))$
 ([Definition](#def:categorical-jet)) is
 
-$$
+```tex
+\begin{equation}\label{eq:categorical-transport}
   \hbar_q\;\pi_V(\nabla\,\psi) \;=\; H_q(\psi),
-$$
+\end{equation}
+```
 
 where $H_q \colon \omega(J^1(A)) \to \omega(J^1(A))$ is the
 *$q$-Hamiltonian* endomorphism
