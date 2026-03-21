@@ -58,7 +58,23 @@ export interface LeanRef {
   sorryFree?: boolean;
   /** Related mathlib4 declaration names. */
   mathlibLinks?: string[];
+  /** Validation status of the Lean code. */
+  validation?: LeanValidation;
 }
+
+/**
+ * Detailed Lean validation status.
+ *
+ * Distinguishes between stub declarations, trivially-true lemmas,
+ * externally-sourced proofs, and fully validated code.
+ */
+export type LeanValidation =
+  | "not_checked"      // .lean file exists but not yet validated
+  | "stub"             // declaration stated but body is `sorry` or `_`
+  | "trivial"          // proof is `by trivial`, `by simp`, `by rfl`, etc.
+  | "external"         // proof references external resource (mathlib, etc.)
+  | "validated"        // built and type-checked successfully
+  | "error";           // build error
 
 // ── Pre-rendered content ─────────────────────────────────────────
 
@@ -135,6 +151,11 @@ interface BlockBase {
   title?: string;
   /** Labels of objects this one depends on (\uses{} in LaTeX). */
   uses?: string[];
+  /**
+   * Thematic tags for filtering and grouping.
+   * Examples: "archimedean", "complex", "p-adic", "su2", "representation-theory"
+   */
+  tags?: string[];
   /** Override companion file resolution (normally by root-name convention). */
   companions?: Companions;
   /** Pre-rendered assets for ```tex blocks that can't be rendered client-side. */
@@ -157,6 +178,8 @@ export interface DefinitionBlock extends BlockBase {
   /** Required: every definition must be formalized. */
   lean: LeanRef;
   status: FormalizationStatus;
+  /** Labels of example blocks illustrating this definition. */
+  examples?: string[];
 }
 
 // ── Blocks where Lean is expected but may be WIP ─────────────────
@@ -175,6 +198,8 @@ interface ProvableBase extends BlockBase {
    * If false/omitted, the proof lives in a separate block or Lean file.
    */
   hasProof?: boolean;
+  /** Labels of example blocks illustrating this result. */
+  examples?: string[];
 }
 
 /** Theorem — a major result. Lean expected; proof may be inline or in .lean. */
@@ -230,6 +255,7 @@ export interface ProseBlock {
   kind: "prose";
   /** Optional label for cross-referencing. */
   label?: string;
+  tags?: string[];
   companions?: Companions;
   /** Pre-rendered assets for ```tex blocks. */
   rendered?: RenderedAsset[];

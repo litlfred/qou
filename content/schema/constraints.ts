@@ -37,11 +37,16 @@ function labelForKind(kind: string) {
 
 // ── Lean reference ───────────────────────────────────────────────
 
+const LeanValidationSchema = z.enum([
+  "not_checked", "stub", "trivial", "external", "validated", "error",
+]);
+
 export const LeanRefSchema = z.object({
   decl: z.string().min(1, "Lean declaration name is required"),
   file: z.string().optional(),
   sorryFree: z.boolean().optional(),
   mathlibLinks: z.array(z.string()).optional(),
+  validation: LeanValidationSchema.optional(),
 });
 
 // ── Companions ───────────────────────────────────────────────────
@@ -50,10 +55,19 @@ export const CompanionsSchema = z.record(z.string().optional());
 
 // ── Block schemas ────────────────────────────────────────────────
 
+const RenderedAssetSchema = z.object({
+  mime: z.string(),
+  url: z.string(),
+  blockIndex: z.number().int().nonneg(),
+  hash: z.string().optional(),
+});
+
 const BlockBaseSchema = z.object({
   title: z.string().optional(),
   uses: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
+  rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
 });
 
@@ -62,12 +76,14 @@ export const DefinitionSchema = BlockBaseSchema.extend({
   label: labelForKind("definition"),
   lean: LeanRefSchema,
   status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]),
+  examples: z.array(z.string()).optional(),
 });
 
 const ProvableBaseSchema = BlockBaseSchema.extend({
   lean: LeanRefSchema.optional(),
   status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
   hasProof: z.boolean().optional(),
+  examples: z.array(z.string()).optional(),
 });
 
 export const TheoremSchema = ProvableBaseSchema.extend({
@@ -111,7 +127,9 @@ export const RemarkSchema = BlockBaseSchema.extend({
 export const ProseSchema = z.object({
   kind: z.literal("prose"),
   label: z.string().optional(),
+  tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
+  rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
 });
 
@@ -119,7 +137,9 @@ export const EquationSchema = z.object({
   kind: z.literal("equation"),
   label: labelForKind("equation").optional(),
   tex: z.string().optional(),
+  tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
+  rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
 });
 
@@ -128,7 +148,9 @@ export const DiagramSchema = z.object({
   label: labelForKind("diagram").optional(),
   tex: z.string().optional(),
   caption: z.string().optional(),
+  tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
+  rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
 });
 

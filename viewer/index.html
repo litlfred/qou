@@ -1,694 +1,533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QOU Viewer</title>
-  <link rel="stylesheet" href="/katex/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0e0e12;
-      --bg-surface: #16161c;
-      --bg-raised: #1e1e26;
-      --fg: #d0d0d8;
-      --fg-dim: #888894;
-      --fg-bright: #eeeef4;
-      --accent: #7ca8e6;
-      --accent-dim: #4a6a9a;
-      --green: #7ce6a4;
-      --yellow: #e6c87c;
-      --red: #e67c7c;
-      --orange: #e6a47c;
-      --border: #2a2a34;
-      --font-mono: 'Share Tech Mono', 'Fira Code', 'Consolas', monospace;
-      --font-serif: 'Crimson Pro', 'Georgia', serif;
-      --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+    :root { --ease: cubic-bezier(0.4,0,0.2,1); }
+
+    [data-theme="dark"] {
+      --bg:#0e0e12; --bg-s:#16161c; --bg-r:#1e1e26; --bg-c:#12121a;
+      --fg:#c8c8d0; --fg-d:#70707c; --fg-b:#eeeef4;
+      --ac:#7ca8e6; --ac-d:#4a6a9a;
+      --grn:#7ce6a4; --yel:#e6c87c; --red:#e67c7c; --ora:#e6a47c;
+      --brd:#2a2a34;
+      --svg-f:invert(0.85) hue-rotate(180deg);
+    }
+    [data-theme="light"] {
+      --bg:#fafafa; --bg-s:#ffffff; --bg-r:#f0f0f4; --bg-c:#f5f5fa;
+      --fg:#2c2c34; --fg-d:#888894; --fg-b:#111118;
+      --ac:#2a6bc4; --ac-d:#6a9ad4;
+      --grn:#1a8a44; --yel:#9a7a20; --red:#c44a4a; --ora:#b07030;
+      --brd:#d8d8e0;
+      --svg-f:none;
+    }
+    [data-font="paper"] {
+      --f-body:'Crimson Pro','Georgia',serif;
+      --f-head:'Inter','Helvetica Neue',sans-serif;
+      --f-mono:'JetBrains Mono','Consolas',monospace;
+      --f-sz:19px; --f-lh:1.75;
+    }
+    [data-font="web"] {
+      --f-body:'Literata','Georgia',serif;
+      --f-head:'Inter','Helvetica Neue',sans-serif;
+      --f-mono:'JetBrains Mono','Consolas',monospace;
+      --f-sz:17px; --f-lh:1.65;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:var(--f-sz);line-height:var(--f-lh);min-height:100vh;transition:background .3s var(--ease),color .2s var(--ease)}
 
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-serif);
-      font-size: 18px;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
+    /* Controls */
+    .ctrl{position:fixed;top:0;left:0;right:0;height:34px;background:var(--bg-s);border-bottom:1px solid var(--brd);display:flex;align-items:center;padding:0 1rem;font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);z-index:100;gap:.6rem}
+    .ctrl button{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;cursor:pointer;transition:all .15s}
+    .ctrl button:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .ctrl button.on{color:var(--ac);border-color:var(--ac)}
+    .ctrl .sp{flex:1}
+    .ctrl .hash{font-size:.55rem;opacity:.4}
 
-    /* ── Layout ─────────────────────────────────────────── */
+    /* Layout */
+    #app{max-width:780px;margin:0 auto;padding:48px 1.5rem 4rem}
 
-    #app {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+    /* Header */
+    .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
+    .hdr h1{font-family:var(--f-head);font-size:1.9rem;font-weight:600;color:var(--fg-b);margin-bottom:.4rem}
+    .hdr .au{font-family:var(--f-head);font-size:.9rem;color:var(--fg-d)}
+    .hdr .dt{font-family:var(--f-mono);font-size:.75rem;color:var(--fg-d);margin-top:.2rem}
 
-    /* ── Header ─────────────────────────────────────────── */
+    /* Structure */
+    .ch{margin-bottom:3rem}
+    .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd)}
+    .ch-t .n{color:var(--ac);font-weight:400}
+    .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem}
 
-    .paper-header {
-      text-align: center;
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 2rem;
-    }
+    /* Blocks */
+    .blk{margin:1.5rem 0;position:relative}
+    .env{background:var(--bg-s);border:1px solid var(--brd);border-left:3px solid var(--ac-d);border-radius:4px;padding:1rem 1.25rem;margin:1.5rem 0;position:relative}
+    .env.definition{border-left-color:var(--ac)}
+    .env.theorem,.env.proposition{border-left-color:var(--yel)}
+    .env.lemma,.env.corollary{border-left-color:var(--ora)}
+    .env.conjecture{border-left-color:var(--red)}
+    .env.example{border-left-color:var(--grn)}
+    .env.remark{border-left-color:var(--fg-d)}
 
-    .paper-header h1 {
-      font-family: var(--font-sans);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--fg-bright);
-      margin-bottom: 0.5rem;
-    }
+    .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
+    .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
+    .env.theorem .bk,.env.proposition .bk{color:var(--yel)}
+    .env.lemma .bk,.env.corollary .bk{color:var(--ora)}
+    .env.conjecture .bk{color:var(--red)}
+    .env.example .bk{color:var(--grn)}
+    .env.remark .bk{color:var(--fg-d)}
+    .bt{font-size:.95rem;font-weight:500;color:var(--fg-b)}
+    .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:auto}
 
-    .paper-header .authors {
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      color: var(--fg-dim);
-    }
+    /* Tags */
+    .tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.4rem}
+    .tag{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d)}
 
-    .paper-header .date {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--fg-dim);
-      margin-top: 0.3rem;
-    }
+    /* Source toggle */
+    .st{position:absolute;top:.4rem;right:.4rem;width:20px;height:16px;background:none;border:none;color:var(--fg-d);cursor:pointer;opacity:0;transition:opacity .2s;font-size:.6rem;font-family:var(--f-mono);display:flex;align-items:center;justify-content:center}
+    .blk:hover .st,.env:hover .st{opacity:.4}
+    .st:hover{opacity:1!important;color:var(--ac)}
+    .st.on{opacity:.7;color:var(--ac)}
+    .bsrc{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:3px;padding:.6rem .8rem;margin-top:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;color:var(--fg-d)}
+    .bsrc.vis{display:block}
 
-    /* ── Status bar ──────────────────────────────────────── */
+    /* Lean badge + icons */
+    .lb{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-top:.5rem}
+    .lb.proved{color:var(--grn);border-color:var(--grn)}
+    .lb.has_sorry{color:var(--yel);border-color:var(--yel)}
+    .lb.stated{color:var(--ac);border-color:var(--ac)}
+    .lb.validated{color:var(--grn);border-color:var(--grn)}
+    .lb.stub{color:var(--red);border-color:var(--red)}
+    .lb.external{color:var(--ora);border-color:var(--ora)}
+    .lb.trivial{color:var(--fg-d)}
 
-    .status-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 28px;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--fg-dim);
-      z-index: 100;
-      gap: 1rem;
-    }
+    /* Lean validation icon */
+    .vi{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.2rem}
+    .vi.validated{background:var(--grn)}
+    .vi.stub{background:var(--red)}
+    .vi.external{background:var(--ora)}
+    .vi.trivial{background:var(--fg-d)}
+    .vi.not_checked{background:var(--brd)}
+    .vi.error{background:var(--red);box-shadow:0 0 4px var(--red)}
 
-    .status-bar .indicator {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
+    /* Examples panel (hidden by default) */
+    .ex-panel{display:none;margin-top:.6rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
+    .ex-panel.open{display:block}
+    .ex-toggle{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;margin-top:.4rem;display:inline-flex;align-items:center;gap:.3rem}
+    .ex-toggle:hover{color:var(--ac)}
+    .ex-toggle .arrow{transition:transform .2s}
+    .ex-toggle.open .arrow{transform:rotate(90deg)}
 
-    .status-bar .indicator.polling { animation: pulse 2s infinite; }
-    .status-bar .indicator.error { background: var(--red); }
+    /* Uses */
+    .uses{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-top:.5rem}
+    .uref{color:var(--ac-d);cursor:pointer;border-bottom:1px dotted var(--ac-d);text-decoration:none}
+    .uref:hover{color:var(--ac);border-bottom-color:var(--ac)}
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+    /* Uses expand panel */
+    .upnl{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:4px;margin-top:.4rem;overflow:hidden}
+    .upnl.open{display:block}
+    .uph{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d)}
+    .upt{display:flex;border-bottom:1px solid var(--brd)}
+    .uptb{padding:.25rem .6rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent}
+    .uptb:hover{color:var(--fg)}
+    .uptb.on{color:var(--ac);border-bottom-color:var(--ac)}
+    .upc{padding:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;max-height:280px;overflow-y:auto}
 
-    /* ── Chapters & sections ─────────────────────────────── */
+    /* Content */
+    .bb p{margin:.5em 0}
+    .bb ul,.bb ol{margin:.4em 0;padding-left:1.5em}
+    .bb li{margin:.15em 0}
+    .bb strong{color:var(--fg-b)}
+    .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+    .bb a:hover{color:var(--fg-b)}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.4rem 0}
+    .katex{color:var(--fg)}
 
-    .chapter {
-      margin-bottom: 3rem;
-    }
+    /* TeX blocks */
+    .txb{background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
+    .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f)}
+    .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left}
 
-    .chapter-title {
-      font-family: var(--font-sans);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--fg-bright);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .chapter-title .chapter-num {
-      color: var(--accent);
-      font-weight: 400;
-    }
-
-    .section-title {
-      font-family: var(--font-sans);
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--fg-bright);
-      margin: 2rem 0 1rem;
-    }
-
-    /* ── Blocks ──────────────────────────────────────────── */
-
-    .block {
-      margin: 1.5rem 0;
-    }
-
-    .block-env {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent-dim);
-      border-radius: 4px;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-
-    .block-env.definition { border-left-color: var(--accent); }
-    .block-env.theorem,
-    .block-env.proposition { border-left-color: var(--yellow); }
-    .block-env.lemma,
-    .block-env.corollary { border-left-color: var(--orange); }
-    .block-env.conjecture { border-left-color: var(--red); }
-    .block-env.example { border-left-color: var(--green); }
-    .block-env.remark { border-left-color: var(--fg-dim); }
-
-    .block-head {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-      font-family: var(--font-sans);
-    }
-
-    .block-kind {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-    }
-
-    .block-env.theorem .block-kind,
-    .block-env.proposition .block-kind { color: var(--yellow); }
-    .block-env.lemma .block-kind,
-    .block-env.corollary .block-kind { color: var(--orange); }
-    .block-env.conjecture .block-kind { color: var(--red); }
-    .block-env.example .block-kind { color: var(--green); }
-    .block-env.remark .block-kind { color: var(--fg-dim); }
-
-    .block-title {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--fg-bright);
-    }
-
-    .block-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--fg-dim);
-      margin-left: auto;
-    }
-
-    /* ── Lean status badge ───────────────────────────────── */
-
-    .lean-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      color: var(--fg-dim);
-      margin-top: 0.5rem;
-    }
-
-    .lean-badge.proved { color: var(--green); border-color: var(--green); }
-    .lean-badge.has_sorry { color: var(--yellow); border-color: var(--yellow); }
-    .lean-badge.not_started { color: var(--fg-dim); }
-    .lean-badge.stated { color: var(--accent); border-color: var(--accent); }
-
-    /* ── Content ─────────────────────────────────────────── */
-
-    .block-body p { margin: 0.6em 0; }
-    .block-body ul, .block-body ol { margin: 0.5em 0; padding-left: 1.5em; }
-    .block-body li { margin: 0.2em 0; }
-    .block-body strong { color: var(--fg-bright); }
-    .block-body em { font-style: italic; }
-
-    .block-body a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-dim);
-    }
-
-    .block-body a:hover {
-      color: var(--fg-bright);
-      border-bottom-color: var(--fg-bright);
-    }
-
-    /* ── Math ────────────────────────────────────────────── */
-
-    .katex-display {
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0.5rem 0;
-    }
-
-    .katex { color: var(--fg); }
-
-    /* ── TeX blocks (pre-rendered or placeholder) ─────────── */
-
-    .tex-block {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1rem;
-      margin: 1rem 0;
-      text-align: center;
-      overflow-x: auto;
-    }
-
-    .tex-block img, .tex-block svg {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .tex-block.placeholder {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--fg-dim);
-      white-space: pre-wrap;
-      text-align: left;
-    }
-
-    /* ── Dependencies ────────────────────────────────────── */
-
-    .block-uses {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--fg-dim);
-      margin-top: 0.75rem;
-    }
-
-    .block-uses a {
-      color: var(--accent-dim);
-      text-decoration: none;
-    }
-
-    .block-uses a:hover { color: var(--accent); }
-
-    /* ── Loading ─────────────────────────────────────────── */
-
-    .loading {
-      text-align: center;
-      padding: 4rem 0;
-      font-family: var(--font-mono);
-      color: var(--fg-dim);
-    }
-
-    .error-msg {
-      background: rgba(230, 124, 124, 0.1);
-      border: 1px solid var(--red);
-      border-radius: 4px;
-      padding: 1rem;
-      color: var(--red);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-    }
+    .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
+    .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
 </head>
-<body>
-  <div id="app">
-    <div class="loading">Loading paper...</div>
+<body data-font="paper">
+  <div class="ctrl">
+    <span style="font-weight:500;color:var(--fg)">QOU</span>
+    <span class="sp"></span>
+    <button id="c-ex" title="Show/hide examples">examples</button>
+    <button id="c-th" title="Toggle dark/light">light</button>
+    <button id="c-fn" title="Toggle paper/web font">web font</button>
+    <span class="hash" id="c-hash"></span>
   </div>
 
-  <div class="status-bar">
-    <div class="indicator polling" id="status-indicator"></div>
-    <span id="status-text">connecting...</span>
-    <span id="status-hash" style="margin-left: auto;"></span>
-  </div>
+  <div id="app"><div class="loading">loading paper.json...</div></div>
 
-  <script src="/katex/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
-    // ── Markdown renderer (inline, no build step) ────────────
+    // ── State ────────────────────────────────────────────
+    let paper = null;
+    const bix = new Map(); // label → block
+    let showExamples = false;
 
-    /**
-     * Minimal markdown-to-HTML renderer.
-     * Handles: bold, italic, inline math, display math, ```tex blocks,
-     * lists, cross-refs, paragraphs.
-     *
-     * ```tex blocks are extracted and returned separately so the caller
-     * can replace them with pre-rendered assets.
-     */
+    // ── Controls ─────────────────────────────────────────
+    const html = document.documentElement;
+    const btnEx = document.getElementById('c-ex');
+    const btnTh = document.getElementById('c-th');
+    const btnFn = document.getElementById('c-fn');
+
+    btnTh.addEventListener('click', () => {
+      const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      html.dataset.theme = n;
+      btnTh.textContent = n === 'dark' ? 'light' : 'dark';
+    });
+
+    btnFn.addEventListener('click', () => {
+      const n = document.body.dataset.font === 'paper' ? 'web' : 'paper';
+      document.body.dataset.font = n;
+      btnFn.textContent = n === 'paper' ? 'web font' : 'paper font';
+    });
+
+    btnEx.addEventListener('click', () => {
+      showExamples = !showExamples;
+      btnEx.classList.toggle('on', showExamples);
+      document.querySelectorAll('.blk-example').forEach(el => {
+        el.style.display = showExamples ? '' : 'none';
+      });
+    });
+
+    // ── Markdown ─────────────────────────────────────────
     function parseMd(md) {
-      const texBlocks = [];
+      const tx = [];
       const lines = md.split('\n');
-      const out = [];
+      const o = [];
       let i = 0;
-
       while (i < lines.length) {
-        const line = lines[i];
-
-        // Fenced ```tex block
-        if (line.trimStart().startsWith('```tex')) {
+        const l = lines[i];
+        if (l.trimStart().startsWith('```tex')) {
           i++;
-          const tex = [];
-          while (i < lines.length && !lines[i].trimStart().startsWith('```')) {
-            tex.push(lines[i]);
-            i++;
-          }
-          i++; // skip closing ```
-          const texSrc = tex.join('\n');
-          const idx = texBlocks.length;
-          texBlocks.push(texSrc);
-          out.push(`<div class="tex-block" data-tex-index="${idx}"></div>`);
-          continue;
-        }
-
-        // Other fenced code blocks
-        if (line.trimStart().startsWith('```')) {
+          const t = [];
+          while (i < lines.length && !lines[i].trimStart().startsWith('```')) { t.push(lines[i]); i++; }
           i++;
-          const code = [];
-          while (i < lines.length && !lines[i].trimStart().startsWith('```')) {
-            code.push(lines[i]);
-            i++;
-          }
+          o.push(`<div class="txb" data-ti="${tx.length}"></div>`);
+          tx.push(t.join('\n'));
+          continue;
+        }
+        if (l.trimStart().startsWith('```')) {
           i++;
-          out.push(`<pre><code>${escHtml(code.join('\n'))}</code></pre>`);
-          continue;
-        }
-
-        // Display math: $$...$$
-        if (line.trimStart().startsWith('$$')) {
-          const mathLines = [line.trimStart().slice(2)];
+          const c = [];
+          while (i < lines.length && !lines[i].trimStart().startsWith('```')) { c.push(lines[i]); i++; }
           i++;
-          while (i < lines.length && !lines[i].includes('$$')) {
-            mathLines.push(lines[i]);
-            i++;
-          }
-          if (i < lines.length) {
-            mathLines.push(lines[i].replace('$$', ''));
-            i++;
-          }
-          const mathSrc = mathLines.join('\n').trim();
-          out.push(`<div class="katex-display-wrap" data-math-display>${escHtml(mathSrc)}</div>`);
+          o.push(`<pre><code>${esc(c.join('\n'))}</code></pre>`);
           continue;
         }
-
-        // Bullet list
-        if (/^\s*[-*]\s/.test(line)) {
-          out.push('<ul>');
-          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
-            out.push(`<li>${inlineMd(lines[i].replace(/^\s*[-*]\s/, ''))}</li>`);
-            i++;
-          }
-          out.push('</ul>');
+        if (l.trimStart().startsWith('$$')) {
+          const m = [l.trimStart().slice(2)]; i++;
+          while (i < lines.length && !lines[i].includes('$$')) { m.push(lines[i]); i++; }
+          if (i < lines.length) { m.push(lines[i].replace('$$','')); i++; }
+          o.push(`<div data-md>${esc(m.join('\n').trim())}</div>`);
           continue;
         }
-
-        // Numbered list
-        if (/^\s*\d+\.\s/.test(line)) {
-          out.push('<ol>');
-          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
-            out.push(`<li>${inlineMd(lines[i].replace(/^\s*\d+\.\s/, ''))}</li>`);
-            i++;
-          }
-          out.push('</ol>');
+        if (/^\s*[-*]\s/.test(l)) {
+          o.push('<ul>');
+          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*[-*]\s/,''))}</li>`); i++; }
+          o.push('</ul>');
           continue;
         }
-
-        // Blank line → paragraph break
-        if (line.trim() === '') {
-          out.push('</p><p>');
-          i++;
+        if (/^\s*\d+\.\s/.test(l)) {
+          o.push('<ol>');
+          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*\d+\.\s/,''))}</li>`); i++; }
+          o.push('</ol>');
           continue;
         }
-
-        // Regular line
-        out.push(inlineMd(line));
-        i++;
+        if (l.trim() === '') { o.push('</p><p>'); i++; continue; }
+        o.push(inl(l)); i++;
       }
-
-      // Wrap in <p> and clean up empty paragraphs
-      let html = '<p>' + out.join('\n') + '</p>';
-      html = html.replace(/<p>\s*<\/p>/g, '');
-      html = html.replace(/<p>\s*<(div|ul|ol|pre)/g, '<$1');
-      html = html.replace(/<\/(div|ul|ol|pre)>\s*<\/p>/g, '</$1>');
-
-      return { html, texBlocks };
+      let h = '<p>' + o.join('\n') + '</p>';
+      h = h.replace(/<p>\s*<\/p>/g,'');
+      h = h.replace(/<p>\s*<(div|ul|ol|pre)/g,'<$1');
+      h = h.replace(/<\/(div|ul|ol|pre)>\s*<\/p>/g,'</$1>');
+      return { html: h, texBlocks: tx };
     }
 
-    function escHtml(s) {
-      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function inl(t) {
+      t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
+      t = t.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, '<a href="#$2" data-ref="$2">$1</a>');
+      t = t.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g, '<span data-mi>$1</span>');
+      return t;
     }
 
-    function inlineMd(text) {
-      // Bold
-      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-      // Italic
-      text = text.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
-      // Cross-refs: [text](#label)
-      text = text.replace(/\[([^\]]+)\]\(#([^)]+)\)/g,
-        '<a href="#$2" data-ref="$2">$1</a>');
-      // Inline math: $...$  (non-greedy, avoid $$)
-      text = text.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g,
-        '<span data-math-inline>$1</span>');
-      return text;
+    // ── KaTeX ────────────────────────────────────────────
+    function renderMath(el) {
+      for (const m of el.querySelectorAll('[data-mi]'))
+        try { katex.render(m.textContent, m, {throwOnError:false}); } catch {}
+      for (const m of el.querySelectorAll('[data-md]'))
+        try { katex.render(m.textContent, m, {throwOnError:false,displayMode:true}); m.classList.add('katex-display'); } catch {}
     }
 
-    // ── KaTeX rendering ──────────────────────────────────────
-
-    function renderMath(container) {
-      // Inline math
-      for (const el of container.querySelectorAll('[data-math-inline]')) {
-        try {
-          katex.render(el.textContent, el, { throwOnError: false });
-        } catch (e) {
-          el.style.color = 'var(--red)';
-        }
-      }
-      // Display math
-      for (const el of container.querySelectorAll('[data-math-display]')) {
-        try {
-          katex.render(el.textContent, el, {
-            throwOnError: false,
-            displayMode: true,
-          });
-          el.classList.add('katex-display');
-        } catch (e) {
-          el.style.color = 'var(--red)';
-        }
-      }
+    // ── Lean validation icon ─────────────────────────────
+    function leanIcon(validation) {
+      const v = validation || 'not_checked';
+      const labels = {
+        validated: 'validated', stub: 'stub', external: 'external',
+        trivial: 'trivial', not_checked: 'not checked', error: 'error'
+      };
+      return `<span class="vi ${v}" title="${labels[v] || v}"></span>`;
     }
 
-    // ── Block renderer ───────────────────────────────────────
+    // ── Uses panel ───────────────────────────────────────
+    function mkUsesPanel(label) {
+      const ref = bix.get(label);
+      if (!ref) return null;
+      const p = mk('div','upnl');
+      const {html: bh, texBlocks: tx} = parseMd(ref.md || '');
 
-    const ENV_KINDS = new Set([
-      'definition', 'theorem', 'lemma', 'proposition',
-      'corollary', 'conjecture', 'example', 'remark',
-    ]);
+      // Head
+      p.innerHTML = `<div class="uph"><span class="bk">${ref.kind}</span> ${ref.title ? inl(ref.title) : label}</div>`;
 
+      // Tabs
+      const tabs = mk('div','upt');
+      const content = mk('div','upc');
+      const views = [
+        {label:'rendered', show:() => { content.innerHTML = bh; fillTex(content, tx, ref.rendered); renderMath(content); }},
+        {label:'source', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.md||'')}</pre>`; }},
+      ];
+      if (ref.lean?.source) views.push({label:'lean', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.lean.source)}</pre>`; }});
+
+      views.forEach((v, i) => {
+        const b = mk('button','uptb' + (i===0?' on':''));
+        b.textContent = v.label;
+        b.onclick = () => { tabs.querySelectorAll('.uptb').forEach(t=>t.classList.remove('on')); b.classList.add('on'); v.show(); };
+        tabs.appendChild(b);
+      });
+      p.appendChild(tabs);
+      p.appendChild(content);
+      views[0].show();
+      return p;
+    }
+
+    // ── Block renderer ───────────────────────────────────
     function renderBlock(block) {
-      const { html, texBlocks } = parseMd(block.md || '');
+      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
 
+      // Example — wrapped for show/hide
+      if (block.kind === 'example') {
+        const wrap = mk('div', 'blk blk-example');
+        wrap.style.display = showExamples ? '' : 'none';
+
+        const d = mk('div', 'env example');
+        if (block.label) d.id = block.label;
+        let hd = `<span class="bk">example</span>`;
+        if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
+        if (block.label) hd += `<span class="bl">${block.label}</span>`;
+        d.innerHTML = `<div class="bh">${hd}</div>`;
+        const bb = mk('div','bb');
+        bb.innerHTML = bh;
+        fillTex(bb, tx, block.rendered);
+        renderMath(bb);
+        d.appendChild(bb);
+        addSrc(d, block.md);
+        if (block.tags?.length) d.appendChild(mkTags(block.tags));
+        wrap.appendChild(d);
+        return wrap;
+      }
+
+      // Prose
       if (block.kind === 'prose') {
-        const div = document.createElement('div');
-        div.className = 'block block-prose';
-        if (block.label) div.id = block.label;
-        div.innerHTML = `<div class="block-body">${html}</div>`;
-        fillTexBlocks(div, texBlocks, block.rendered);
-        renderMath(div);
-        return div;
+        const d = mk('div','blk');
+        if (block.label) d.id = block.label;
+        d.innerHTML = `<div class="bb">${bh}</div>`;
+        addSrc(d, block.md);
+        fillTex(d, tx, block.rendered);
+        renderMath(d);
+        return d;
       }
 
+      // Equation
       if (block.kind === 'equation') {
-        const div = document.createElement('div');
-        div.className = 'block block-equation';
-        if (block.label) div.id = block.label;
-        const tex = block.tex || '';
-        div.innerHTML = `<div class="katex-display-wrap" data-math-display>${escHtml(tex)}</div>`;
-        renderMath(div);
-        return div;
+        const d = mk('div','blk');
+        if (block.label) d.id = block.label;
+        d.innerHTML = `<div data-md>${esc(block.tex||'')}</div>`;
+        renderMath(d);
+        return d;
       }
 
+      // Diagram
       if (block.kind === 'diagram') {
-        const div = document.createElement('div');
-        div.className = 'block block-diagram';
-        if (block.label) div.id = block.label;
-        // Check for pre-rendered
-        if (block.rendered && block.rendered.length > 0) {
-          div.innerHTML = renderAsset(block.rendered[0]);
-        } else {
-          div.innerHTML = `<div class="tex-block placeholder">${escHtml(block.tex || block.md || '')}</div>`;
-        }
-        if (block.caption) {
-          div.innerHTML += `<p style="text-align:center;font-size:0.85rem;color:var(--fg-dim);margin-top:0.5rem">${inlineMd(block.caption)}</p>`;
-        }
-        return div;
+        const d = mk('div','blk');
+        if (block.label) d.id = block.label;
+        if (block.rendered?.length) d.innerHTML = renderAsset(block.rendered[0]);
+        else d.innerHTML = `<div class="txb ph">${esc(block.tex||block.md||'')}</div>`;
+        return d;
       }
 
       // Environment block
-      const div = document.createElement('div');
-      div.className = `block block-env ${block.kind}`;
-      if (block.label) div.id = block.label;
+      const d = mk('div',`blk env ${block.kind}`);
+      if (block.label) d.id = block.label;
 
-      // Head
-      let head = `<span class="block-kind">${block.kind}</span>`;
-      if (block.title) head += `<span class="block-title">${inlineMd(block.title)}</span>`;
-      if (block.label) head += `<span class="block-label">${block.label}</span>`;
-      div.innerHTML = `<div class="block-head">${head}</div>`;
+      let hd = `<span class="bk">${block.kind}</span>`;
+      if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
+      if (block.label) hd += `<span class="bl">${block.label}</span>`;
+      d.innerHTML = `<div class="bh">${hd}</div>`;
 
-      // Body
-      const body = document.createElement('div');
-      body.className = 'block-body';
-      body.innerHTML = html;
-      fillTexBlocks(body, texBlocks, block.rendered);
-      renderMath(body);
-      div.appendChild(body);
+      const bb = mk('div','bb');
+      bb.innerHTML = bh;
+      fillTex(bb, tx, block.rendered);
+      renderMath(bb);
+      d.appendChild(bb);
+      addSrc(d, block.md);
 
-      // Lean badge
+      // Lean badge with validation icon
       if (block.lean) {
-        const statusClass = block.status || 'not_started';
-        const badge = document.createElement('div');
-        badge.className = `lean-badge ${statusClass}`;
-        badge.textContent = `${block.lean.decl} · ${statusClass.replace('_', ' ')}`;
-        div.appendChild(badge);
+        const s = block.status || 'not_started';
+        const v = block.lean.validation || 'not_checked';
+        const badge = mk('div',`lb ${s}`);
+        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)} · ${s.replace(/_/g,' ')}`;
+        d.appendChild(badge);
       }
+
+      // Tags
+      if (block.tags?.length) d.appendChild(mkTags(block.tags));
 
       // Uses
-      if (block.uses && block.uses.length > 0) {
-        const uses = document.createElement('div');
-        uses.className = 'block-uses';
-        uses.innerHTML = 'uses: ' + block.uses.map(u =>
-          `<a href="#${u}">${u}</a>`
-        ).join(', ');
-        div.appendChild(uses);
+      if (block.uses?.length) {
+        const u = mk('div','uses');
+        u.innerHTML = 'uses: ';
+        block.uses.forEach((label, i) => {
+          if (i > 0) u.append(', ');
+          const r = document.createElement('span');
+          r.className = 'uref';
+          r.textContent = label;
+          r.onclick = () => {
+            let p = u.querySelector(`.upnl[data-for="${label}"]`);
+            if (p) { p.classList.toggle('open'); }
+            else { p = mkUsesPanel(label); if (p) { p.dataset.for = label; p.classList.add('open'); u.appendChild(p); } }
+          };
+          u.appendChild(r);
+        });
+        d.appendChild(u);
       }
 
-      return div;
+      // Examples toggle (if block has associated examples)
+      if (block.examples?.length) {
+        const toggle = mk('div','ex-toggle');
+        toggle.innerHTML = `<span class="arrow">▸</span> ${block.examples.length} example(s)`;
+        const panel = mk('div','ex-panel');
+
+        block.examples.forEach(exLabel => {
+          const exBlock = bix.get(exLabel);
+          if (exBlock) {
+            const {html: exHtml, texBlocks: exTx} = parseMd(exBlock.md || '');
+            const exDiv = mk('div','env example');
+            exDiv.style.borderLeft = 'none';
+            exDiv.style.margin = '0';
+            let exHd = `<span class="bk">example</span>`;
+            if (exBlock.title) exHd += `<span class="bt">${inl(exBlock.title)}</span>`;
+            exDiv.innerHTML = `<div class="bh">${exHd}</div><div class="bb">${exHtml}</div>`;
+            fillTex(exDiv, exTx, exBlock.rendered);
+            renderMath(exDiv);
+            panel.appendChild(exDiv);
+          }
+        });
+
+        toggle.onclick = () => {
+          toggle.classList.toggle('open');
+          panel.classList.toggle('open');
+        };
+        d.appendChild(toggle);
+        d.appendChild(panel);
+      }
+
+      return d;
     }
 
-    function fillTexBlocks(container, texBlocks, renderedAssets) {
-      const texEls = container.querySelectorAll('.tex-block[data-tex-index]');
-      for (const el of texEls) {
-        const idx = parseInt(el.dataset.texIndex, 10);
-        // Check for pre-rendered asset at this index
-        const asset = renderedAssets?.find(a => a.blockIndex === idx);
-        if (asset) {
-          el.innerHTML = renderAsset(asset);
-          el.classList.remove('placeholder');
-        } else {
-          // Show raw TeX as placeholder
-          el.textContent = texBlocks[idx] || '';
-          el.classList.add('placeholder');
-        }
+    // ── Helpers ───────────────────────────────────────────
+    function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+
+    function addSrc(el, md) {
+      if (!md) return;
+      const b = mk('button','st'); b.textContent = '<>';  b.title = 'View source';
+      const s = mk('div','bsrc'); s.textContent = md;
+      b.onclick = () => { s.classList.toggle('vis'); b.classList.toggle('on'); };
+      el.appendChild(b); el.appendChild(s);
+    }
+
+    function mkTags(tags) {
+      const d = mk('div','tags');
+      tags.forEach(t => { const s = mk('span','tag'); s.textContent = t; d.appendChild(s); });
+      return d;
+    }
+
+    function fillTex(el, tx, rendered) {
+      for (const t of el.querySelectorAll('.txb[data-ti]')) {
+        const i = +t.dataset.ti;
+        const a = rendered?.find(r => r.blockIndex === i);
+        if (a) { t.innerHTML = renderAsset(a); t.classList.remove('ph'); }
+        else { t.textContent = tx[i] || ''; t.classList.add('ph'); }
       }
     }
 
-    function renderAsset(asset) {
-      if (asset.mime === 'image/svg+xml') {
-        return `<img src="${asset.url}" alt="rendered diagram">`;
-      }
-      if (asset.mime.startsWith('image/')) {
-        return `<img src="${asset.url}" alt="rendered content">`;
-      }
-      return `<a href="${asset.url}" target="_blank">View (${asset.mime})</a>`;
+    function renderAsset(a) {
+      if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="diagram" loading="lazy">`;
+      if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="" loading="lazy">`;
+      return `<a href="${a.url}" target="_blank">[${a.mime}]</a>`;
     }
 
-    // ── Paper renderer ───────────────────────────────────────
+    // ── Paper ────────────────────────────────────────────
+    function renderPaper(p) {
+      paper = p;
+      bix.clear();
+      for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks)
+        if (b.label) bix.set(b.label, b);
 
-    function renderPaper(paper) {
       const app = document.getElementById('app');
       app.innerHTML = '';
 
-      // Header
-      const header = document.createElement('div');
-      header.className = 'paper-header';
-      header.innerHTML = `
-        <h1>${escHtml(paper.title)}</h1>
-        <div class="authors">${paper.authors.map(escHtml).join(', ')}</div>
-        ${paper.date ? `<div class="date">${paper.date}</div>` : ''}
-      `;
-      app.appendChild(header);
+      const hdr = mk('div','hdr');
+      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.date?`<div class="dt">${p.date}</div>`:''}`;
+      app.appendChild(hdr);
 
-      // Chapters
-      for (const ch of paper.chapters) {
-        const chDiv = document.createElement('div');
-        chDiv.className = 'chapter';
-        if (ch.label) chDiv.id = ch.label;
-
-        chDiv.innerHTML = `
-          <h2 class="chapter-title">
-            <span class="chapter-num">Chapter ${ch.number}.</span>
-            ${escHtml(ch.title)}
-          </h2>
-        `;
-
+      for (const ch of p.chapters) {
+        const cd = mk('div','ch');
+        if (ch.label) cd.id = ch.label;
+        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${esc(ch.title)}</h2>`;
         for (const sec of ch.sections) {
-          const secDiv = document.createElement('div');
-          secDiv.className = 'section';
-          if (sec.label) secDiv.id = sec.label;
-
-          secDiv.innerHTML = `<h3 class="section-title">${escHtml(sec.title)}</h3>`;
-
-          for (const block of sec.blocks) {
-            secDiv.appendChild(renderBlock(block));
-          }
-
-          chDiv.appendChild(secDiv);
+          const sd = mk('div','section');
+          if (sec.label) sd.id = sec.label;
+          sd.innerHTML = `<h3 class="sec-t">${esc(sec.title)}</h3>`;
+          for (const b of sec.blocks) sd.appendChild(renderBlock(b));
+          cd.appendChild(sd);
         }
-
-        app.appendChild(chDiv);
+        app.appendChild(cd);
       }
+
+      document.getElementById('c-hash').textContent = p._hash || '';
+      document.title = `${p.title} — QOU`;
     }
 
-    // ── Polling ──────────────────────────────────────────────
-
-    const POLL_INTERVAL = 3000; // 3 seconds
-    let currentHash = null;
-    let pollTimer = null;
-
-    async function fetchPaper() {
-      const hashParam = currentHash ? `?hash=${currentHash}` : '';
-      const res = await fetch(`/api/paper${hashParam}`);
-
-      if (res.status === 304) return null; // unchanged
-      if (!res.ok) throw new Error(`API error: ${res.status}`);
-
-      return await res.json();
-    }
-
-    async function poll() {
-      const indicator = document.getElementById('status-indicator');
-      const statusText = document.getElementById('status-text');
-      const hashEl = document.getElementById('status-hash');
-
-      try {
-        const paper = await fetchPaper();
-
-        if (paper && paper.error) {
-          indicator.className = 'indicator error';
-          statusText.textContent = paper.error;
-          return;
-        }
-
-        if (paper) {
-          currentHash = paper._hash;
-          renderPaper(paper);
-          document.title = `${paper.title} — QOU Viewer`;
-          hashEl.textContent = paper._hash;
-        }
-
-        indicator.className = 'indicator polling';
-        statusText.textContent = `polling · ${new Date().toLocaleTimeString()}`;
-      } catch (e) {
-        indicator.className = 'indicator error';
-        statusText.textContent = e.message;
+    // ── Load ─────────────────────────────────────────────
+    async function load() {
+      for (const src of ['paper.json','./paper.json','/api/paper']) {
+        try {
+          const r = await fetch(src);
+          if (r.ok) { renderPaper(await r.json()); return; }
+        } catch {}
       }
+      document.getElementById('app').innerHTML = '<div class="err">Could not load paper.json. Run: bun run content/pipeline/export-json.ts</div>';
     }
 
-    // ── Init ─────────────────────────────────────────────────
-
-    async function init() {
-      await poll();
-      pollTimer = setInterval(poll, POLL_INTERVAL);
-    }
-
-    init();
+    load();
   </script>
 </body>
 </html>

@@ -5,13 +5,15 @@
   "scripts": {
     "build": "bun run pipeline/build.ts",
     "validate": "bun run pipeline/validate.ts",
-    "render": "bun run pipeline/render-latex.ts"
+    "render": "bun run pipeline/render-latex.ts",
+    "export-json": "bun run pipeline/export-json.ts",
+    "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts"
   },
   "dependencies": {
     "zod": "^3.23.0",
-    "@unified-latex/unified-latex-util-parse": "^1.8.3",
-    "@unified-latex/unified-latex-util-print-raw": "^1.8.3",
-    "@unified-latex/unified-latex-util-visit": "^1.8.3",
-    "@unified-latex/unified-latex-util-arguments": "^1.8.3"
+    "@unified-latex/unified-latex-util-parse": "^1.8.0",
+    "@unified-latex/unified-latex-util-print-raw": "^1.8.0",
+    "@unified-latex/unified-latex-util-visit": "^1.8.0",
+    "@unified-latex/unified-latex-util-arguments": "^1.8.0"
   }
 }
