@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-21 00:29:27 UTC
-Commit:    b425b0b5f8e711bff8a902e8c6a7d63f738a6a9e
+Generated: 2026-03-21 00:48:56 UTC
+Commit:    b57802ce545affdded93268add646af5c2bd7797
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -14,15 +14,15 @@ Status: ✅ BUILD PASSED (no type errors)
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 119
+Total sorry occurrences: 123
 
   File                                          sorry count
   --------------------------------------------------------
   QOU/BringsSurface.lean                           8
   QOU/DescartesUniverse.lean                       5
-  QOU/Elaboration.lean                             1
+  QOU/Elaboration.lean                             2
   QOU/FormalGroups.lean                            1
-  QOU/Glossary.lean                                48
+  QOU/Glossary.lean                                49
   QOU/GrobnerShirshov/CompositionLemma.lean        2
   QOU/GrobnerShirshov/Flatness.lean                2
   QOU/GrobnerShirshov/NormalForms.lean             1
@@ -30,7 +30,7 @@ Total sorry occurrences: 119
   QOU/HadronicMass.lean                            2
   QOU/PAdicQuantumGroups.lean                      2
   QOU/PathIntegrals.lean                           7
-  QOU/QuantumObservableUniverse.lean               15
+  QOU/QuantumObservableUniverse.lean               17
   QOU/Torsion.lean                                 22
 
 ------------------------------------------------------------------------
@@ -202,7 +202,8 @@ link to the foundational reference are shown.
     QOU/DescartesUniverse.lean:194  exceptional_divisor
     QOU/DescartesUniverse.lean:200  chiral_sector_coords
     QOU/DescartesUniverse.lean:206  descartes
-    QOU/Elaboration.lean:292  dq_squared
+    QOU/Elaboration.lean:292  emergence_to_fake_flat
+    QOU/Elaboration.lean:298  dq_squared
     QOU/FormalGroups.lean:22  (unknown)
     QOU/Glossary.lean:28  QuantumUniverse
     QOU/Glossary.lean:35  QuantumObservableUniverse
@@ -212,46 +213,47 @@ link to the foundational reference are shown.
     QOU/Glossary.lean:63  CategoricalAction
     QOU/Glossary.lean:70  Instanton
     QOU/Glossary.lean:77  SubstrateParameter
-    QOU/Glossary.lean:84  QuantumGaugeGroup
-    QOU/Glossary.lean:91  QuantumPlanckConstant
-    QOU/Glossary.lean:98  QHarmonicForm
-    QOU/Glossary.lean:105  ReebDecomposition
-    QOU/Glossary.lean:112  Fermion
-    QOU/Glossary.lean:119  Boson
-    QOU/Glossary.lean:126  Observation
-    QOU/Glossary.lean:133  QExtDeriv
-    QOU/Glossary.lean:140  QLieBracket
-    QOU/Glossary.lean:147  QConnection
-    QOU/Glossary.lean:154  QReebVectorField
-    QOU/Glossary.lean:161  QReebFlow
-    QOU/Glossary.lean:168  QTorsionLeaf
-    QOU/Glossary.lean:175  QYangMillsLevi
-    QOU/Glossary.lean:184  BraidGroup
-    QOU/Glossary.lean:191  S3Group
-    QOU/Glossary.lean:198  Su2Basis
-    QOU/Glossary.lean:205  Su2Generators
-    QOU/Glossary.lean:212  So3Generators
-    QOU/Glossary.lean:219  BraidTwistFlip
-    QOU/Glossary.lean:226  QuantumSu2
-    QOU/Glossary.lean:233  RecursiveBraneTower
-    QOU/Glossary.lean:240  YekutieliLiftingCondition
-    QOU/Glossary.lean:247  QuantumCharacteristicClasses
-    QOU/Glossary.lean:256  DirectLimitAlgebra
-    QOU/Glossary.lean:263  MassIdentity
-    QOU/Glossary.lean:270  YekutieliTriple
-    QOU/Glossary.lean:277  Descent
-    QOU/Glossary.lean:284  DescentInvolution
-    QOU/Glossary.lean:291  BraneBoundary
-    QOU/Glossary.lean:298  BringsSurface
-    QOU/Glossary.lean:307  ColorTubeCoordinates
-    QOU/Glossary.lean:314  ColorTubeFibers
-    QOU/Glossary.lean:323  ObservedValue
-    QOU/Glossary.lean:330  BriggsKleinChart
-    QOU/Glossary.lean:337  QuaternionicSpectralResolvents
-    QOU/Glossary.lean:344  DescartesCondition
-    QOU/Glossary.lean:351  ExceptionalDivisor
-    QOU/Glossary.lean:358  ChiralSectorCoords
-    QOU/Glossary.lean:365  WittVectorLift
+    QOU/Glossary.lean:86  CategoricalVolumeConstraint
+    QOU/Glossary.lean:93  QuantumGaugeGroup
+    QOU/Glossary.lean:100  QuantumPlanckConstant
+    QOU/Glossary.lean:107  QHarmonicForm
+    QOU/Glossary.lean:114  ReebDecomposition
+    QOU/Glossary.lean:121  Fermion
+    QOU/Glossary.lean:128  Boson
+    QOU/Glossary.lean:135  Observation
+    QOU/Glossary.lean:142  QExtDeriv
+    QOU/Glossary.lean:149  QLieBracket
+    QOU/Glossary.lean:156  QConnection
+    QOU/Glossary.lean:163  QReebVectorField
+    QOU/Glossary.lean:170  QReebFlow
+    QOU/Glossary.lean:177  QTorsionLeaf
+    QOU/Glossary.lean:184  QYangMillsLevi
+    QOU/Glossary.lean:193  BraidGroup
+    QOU/Glossary.lean:200  S3Group
+    QOU/Glossary.lean:207  Su2Basis
+    QOU/Glossary.lean:214  Su2Generators
+    QOU/Glossary.lean:221  So3Generators
+    QOU/Glossary.lean:228  BraidTwistFlip
+    QOU/Glossary.lean:235  QuantumSu2
+    QOU/Glossary.lean:242  RecursiveBraneTower
+    QOU/Glossary.lean:249  YekutieliLiftingCondition
+    QOU/Glossary.lean:256  QuantumCharacteristicClasses
+    QOU/Glossary.lean:265  DirectLimitAlgebra
+    QOU/Glossary.lean:272  MassIdentity
+    QOU/Glossary.lean:279  YekutieliTriple
+    QOU/Glossary.lean:286  Descent
+    QOU/Glossary.lean:293  DescentInvolution
+    QOU/Glossary.lean:300  BraneBoundary
+    QOU/Glossary.lean:307  BringsSurface
+    QOU/Glossary.lean:316  ColorTubeCoordinates
+    QOU/Glossary.lean:323  ColorTubeFibers
+    QOU/Glossary.lean:332  ObservedValue
+    QOU/Glossary.lean:339  BriggsKleinChart
+    QOU/Glossary.lean:346  QuaternionicSpectralResolvents
+    QOU/Glossary.lean:353  DescartesCondition
+    QOU/Glossary.lean:360  ExceptionalDivisor
+    QOU/Glossary.lean:367  ChiralSectorCoords
+    QOU/Glossary.lean:374  WittVectorLift
     QOU/GrobnerShirshov/CompositionLemma.lean:88  local_confluence
     QOU/GrobnerShirshov/CompositionLemma.lean:111  confluence
     QOU/GrobnerShirshov/Flatness.lean:163  normal_forms_preserved
@@ -279,13 +281,15 @@ link to the foundational reference are shown.
     QOU/QuantumObservableUniverse.lean:741  categorical_action
     QOU/QuantumObservableUniverse.lean:747  variational_equations
     QOU/QuantumObservableUniverse.lean:753  SubstrateParameter
-    QOU/QuantumObservableUniverse.lean:759  QuantumGaugeGroup
-    QOU/QuantumObservableUniverse.lean:765  QHarmonicForm
-    QOU/QuantumObservableUniverse.lean:771  Fermion
-    QOU/QuantumObservableUniverse.lean:777  observation
-    QOU/QuantumObservableUniverse.lean:783  QReebFlow
-    QOU/QuantumObservableUniverse.lean:789  QTorsionLeaf
-    QOU/QuantumObservableUniverse.lean:795  q_yang_mills_levi
+    QOU/QuantumObservableUniverse.lean:759  categorical_volume_constraint
+    QOU/QuantumObservableUniverse.lean:765  su2_emergence
+    QOU/QuantumObservableUniverse.lean:771  QuantumGaugeGroup
+    QOU/QuantumObservableUniverse.lean:777  QHarmonicForm
+    QOU/QuantumObservableUniverse.lean:783  Fermion
+    QOU/QuantumObservableUniverse.lean:789  observation
+    QOU/QuantumObservableUniverse.lean:795  QReebFlow
+    QOU/QuantumObservableUniverse.lean:801  QTorsionLeaf
+    QOU/QuantumObservableUniverse.lean:807  q_yang_mills_levi
     QOU/Torsion.lean:468  global_gluing
     QOU/Torsion.lean:926  jet_prolongation
     QOU/Torsion.lean:932  recursive_brane_tower
@@ -309,7 +313,7 @@ link to the foundational reference are shown.
     QOU/Torsion.lean:1040  brane_boundary
     QOU/Torsion.lean:1046  topological_mass
 
-  Summary: 0 referenced / 119 unreferenced / 119 total gaps
+  Summary: 0 referenced / 123 unreferenced / 123 total gaps
 
 ========================================================================
 END OF REPORT

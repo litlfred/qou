@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T00:29:15.286877+00:00",
+  "generated_at": "2026-03-21T00:48:42.350240+00:00",
   "mappings": [
     {
       "narrative": "Quantum Universe",
@@ -41,6 +41,11 @@
       "narrative": "Substrate parameter",
       "lean_id": "QOU.QuantumObservableUniverse.SubstrateParameter",
       "latex_label": "def:substrate-parameter"
+    },
+    {
+      "narrative": "Categorical volume constraint",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalVolumeConstraint",
+      "latex_label": "def:categorical-volume-constraint"
     },
     {
       "narrative": "Quantum Gauge Group",
