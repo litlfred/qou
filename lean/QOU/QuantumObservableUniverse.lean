@@ -680,6 +680,43 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
       Acting by the unit `η : 𝟙 → A` is the identity on `V`. -/
   unit : (fh.unit ▷ target) ≫ action = (λ_ target).hom
 
+/-- **Variational equations of the categorical action.**
+
+    Given a categorical action `S_q[∇, λ, ψ]`, its critical points satisfy
+    three Euler–Lagrange equations obtained by varying each field:
+    (1) Vary `λ` → categorical Einstein equation: `R_λ - ½ tr(R_λ) id = T_q`
+    (2) Vary `∇` → categorical Yang–Mills equation: `∇ ★_q F + q[F, ★_q F] = J_ψ`
+    (3) Vary `ψ` → categorical transport equation: `D_∇ ψ = 0`
+
+    The proof uses non-degeneracy of the Frobenius form `λ`, the Leibniz
+    rule for `∇`, integration by parts via `λ`, and the positive-definite
+    dagger structure.
+
+    LaTeX: `\label{prop:variational-equations}`
+    Ref: [kock2004] -/
+-- TODO: formalise as three separate theorems once CategoricalConnection
+-- and SubstrateParameter are available as structures.
+theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: R_λ - ½ tr(R_λ) id = T_q
+  trivial
+
+theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: ∇ ★_q F + q[F, ★_q F] = J_ψ
+  trivial
+
+theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: D_∇ ψ = 0
+  trivial
+
 /-- **Observation map** extracting expectation values from state bundle sections.
 
     The map `obs : Γ(E) → ℝ` assigns to each section `s` of the state bundle

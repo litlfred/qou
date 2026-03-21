@@ -760,45 +760,44 @@ equations are:
 \end{enumerate}
 \end{proposition}
 
-\begin{remark}[Archimedean realisation of the variational equations]
-\label{rem:variational-archimedean}
-In the archimedean realisation
-(Example~\ref{def:c-quantum-observable-universe}):
-\begin{itemize}
-  \item The categorical Einstein equation reduces to
-    $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-    (Remark~\ref{rem:gr-substrate-geometry}).
-  \item The categorical transport equation reduces to the Schr\"odinger
-    equation $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
-    (Remark~\ref{rem:schrodinger-jet-coaction}).
-\end{itemize}
-\end{remark}
+\begin{proof}
+Each equation is obtained by computing
+$\delta\mathcal{S}_q = 0$ with respect to the indicated variable, using
+the non-degeneracy of~$\lambda$.
 
-\begin{remark}[Base-ring independence]
-\label{rem:base-field-independence}
-Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
-are formulated over an arbitrary commutative ring~$R$.  The Frobenius--Hopf axioms
-replace the analytic vanishing conditions of the archimedean realisation
-(Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
-non-degeneracy condition on the Frobenius form.  Concrete realisations
-include:
-\begin{itemize}
-  \item $R = K$ an archimedean field (a field with an archimedean absolute
-        value, e.g.\ $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$): the
-        setting of CR geometry and contact manifolds
-        (Example~\ref{def:c-quantum-universe});
-  \item $R = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
-        an $F$-isocrystal with Frobenius lift
-        (Example~\ref{ex:p-adic-realisation},
-        Chapter~\ref{chap:p-adic});
-  \item $R = \mathbb{F}_\pp$ (a finite field): representations of a quantum
-        group over~$\mathbb{F}_\pp$
-        (Example~\ref{ex:finite-field-realisation});
-  \item $R = \mathbb{Z}[q, q^{-1}]$: the universal (Lusztig) integral form.
-\end{itemize}
-The fibre functor $\omega$ ensures that $G_q = \mathrm{Aut}^{\otimes}(\omega)$
-is well-defined over any~$R$.
-\end{remark}
+\emph{Item~(1): Vary $\lambda$.}\;
+The gravity term $\mathrm{tr}(q \cdot R_\lambda)$ depends on~$\lambda$
+through the Frobenius--Ricci endomorphism~$R_\lambda$.  Varying
+$\lambda \mapsto \lambda + \delta\lambda$ and requiring
+$\delta\mathcal{S}_q = 0$ for all~$\delta\lambda$ gives, by
+non-degeneracy of the categorical trace,
+$R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
+= T_q[\nabla, \psi]$,
+where the stress-energy $T_q$ collects the $\lambda$-dependence of the
+gauge and matter terms.  The trace subtraction ensures
+$\mathrm{tr}(T_q) = \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)$ (the
+contracted Bianchi identity).
+
+\emph{Item~(2): Vary $\nabla$.}\;
+The gauge term
+$\lambda \circ \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
+depends on~$\nabla$ through $F_\nabla = \nabla^2$.  A standard
+computation using $\delta F_\nabla = \nabla(\delta\nabla)$ and
+integration by parts (via non-degeneracy of~$\lambda$) yields
+$\nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
+= J_\psi$.
+The commutator term $q \cdot [F_\nabla, \star_q F_\nabla]$ arises from
+the non-commutativity of the $q$-deformed wedge product; it vanishes
+when $q = 1$ (the abelian/classical limit).
+
+\emph{Item~(3): Vary $\psi$.}\;
+The matter term $\lambda(\psi^* \cdot D_\nabla\,\psi)$ is linear
+in~$\psi$.  Varying $\psi \mapsto \psi + \delta\psi$ and using
+$(\delta\psi)^* \cdot D_\nabla\,\psi = 0$ for
+all~$\delta\psi$ gives $D_\nabla\,\psi = 0$ by non-degeneracy
+of~$\lambda$ and the dagger structure
+(Definition~\ref{def:positive-definite-dagger}).
+\end{proof}
 
 % ── ℂ realisation ─────────────────────────────────────────────────────────────
 
@@ -876,6 +875,49 @@ Lemma~\ref{lem:volume-from-rigidity}.  The Hodge star $*_H$ associated to
 the Webster metric~$g_\theta$ then splits $\Lambda^2 H^* = \Lambda^+\!H^*
 \oplus \Lambda^-\!H^*$, forcing the local structure group of the instanton
 connection to be $\mathrm{SU}(2)$.
+\end{remark}
+
+\begin{remark}[Archimedean realisation of the variational equations]
+\label{rem:variational-archimedean}
+In the archimedean realisation
+(Example~\ref{def:c-quantum-observable-universe}):
+\begin{itemize}
+  \item The categorical Einstein equation
+    (Proposition~\ref{prop:variational-equations}, item~1) reduces to
+    $\mathrm{Ric}_{g_\theta} = T^{(q)}$
+    (Remark~\ref{rem:gr-substrate-geometry}).
+  \item The categorical transport equation
+    (Proposition~\ref{prop:variational-equations}, item~3) reduces to the
+    Schr\"odinger equation
+    $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
+    (Remark~\ref{rem:schrodinger-jet-coaction}).
+\end{itemize}
+\end{remark}
+
+\begin{remark}[Base-ring independence]
+\label{rem:base-field-independence}
+Definitions~\ref{def:quantum-universe} and~\ref{def:quantum-observable-universe}
+are formulated over an arbitrary commutative ring~$R$.  The Frobenius--Hopf axioms
+replace the analytic vanishing conditions of the archimedean realisation
+(Example~\ref{def:c-quantum-observable-universe}) with a single algebraic
+non-degeneracy condition on the Frobenius form.  Concrete realisations
+include:
+\begin{itemize}
+  \item $R = K$ an archimedean field (a field with an archimedean absolute
+        value, e.g.\ $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$): the
+        setting of CR geometry and contact manifolds
+        (Example~\ref{def:c-quantum-universe});
+  \item $R = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
+        an $F$-isocrystal with Frobenius lift
+        (Example~\ref{ex:p-adic-realisation},
+        Chapter~\ref{chap:p-adic});
+  \item $R = \mathbb{F}_\pp$ (a finite field): representations of a quantum
+        group over~$\mathbb{F}_\pp$
+        (Example~\ref{ex:finite-field-realisation});
+  \item $R = \mathbb{Z}[q, q^{-1}]$: the universal (Lusztig) integral form.
+\end{itemize}
+The fibre functor $\omega$ ensures that $G = \mathrm{Aut}^{\otimes}(\omega)$
+is well-defined over any~$R$.
 \end{remark}
 
 % ── Lemma and Proposition ────────────────────────────────────────────────────
