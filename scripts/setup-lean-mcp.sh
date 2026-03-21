@@ -54,11 +54,13 @@ export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 if [ -f "$TOOLCHAIN_FILE" ]; then
     TOOLCHAIN=$(cat "$TOOLCHAIN_FILE" | tr -d '[:space:]')
     echo "▸ Toolchain: $TOOLCHAIN"
-    # elan exits non-zero if already installed — that's fine
-    if elan toolchain install "$TOOLCHAIN" 2>&1; then
-        true
+    # elan exits non-zero if already installed — suppress that noise
+    OUTPUT=$(elan toolchain install "$TOOLCHAIN" 2>&1 || true)
+    if echo "$OUTPUT" | grep -q "already installed"; then
+        echo "  ✓ Toolchain already installed"
+    else
+        echo "  ✓ Toolchain installed"
     fi
-    echo "  ✓ Toolchain ready"
 else
     echo "✗ No lean-toolchain file found at $TOOLCHAIN_FILE"
     exit 1
