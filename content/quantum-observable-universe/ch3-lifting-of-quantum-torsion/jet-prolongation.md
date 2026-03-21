@@ -46,7 +46,7 @@ This step relies on the *strong multiplicativity* condition: the
 co-multiplication must be compatible with the deformed product at every
 filtration degree.  Over fields of positive characteristic, the
 rigorous proof that this compatibility survives the deformation is the
-main theorem of \cite{fred2005}, which constructs $\mathrm{Dist}(G)$
+main theorem of [fred2005], which constructs $\mathrm{Dist}(G)$
 as a Gröbner--Shirshov deformation of the commutative
 $\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage
 (see also [Proposition](#prop:skew-poisson-integration) in
