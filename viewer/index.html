@@ -773,6 +773,11 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — QOU`;
+
+      // Scroll to pending label anchor
+      if (pendingScroll) {
+        requestAnimationFrame(() => scrollToLabel(pendingScroll));
+      }
     }
 
     // ── Feedback panel ────────────────────────────────────
@@ -853,15 +858,47 @@
     }
 
     // ── Router ────────────────────────────────────────────
+    const LABEL_RE = /^#(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|sec|chap):/;
+    let pendingScroll = null;
+
     async function route() {
       const hash = location.hash || '#/';
-      const parts = hash.slice(2).split('/').filter(Boolean);
 
+      // Direct label anchor: #rem:foo, #def:bar, etc.
+      if (LABEL_RE.test(hash)) {
+        const label = hash.slice(1);
+        pendingScroll = label;
+        if (!paper) {
+          // Load default paper, then scroll
+          await loadPaper('quantum-observable-universe');
+        } else {
+          scrollToLabel(label);
+        }
+        return;
+      }
+
+      const parts = hash.slice(2).split('/').filter(Boolean);
       if (parts[0] === 'paper' && parts[1]) {
         await loadPaper(parts[1]);
       } else {
         await loadFolio();
       }
+    }
+
+    function scrollToLabel(label) {
+      const el = document.getElementById(label);
+      if (el) {
+        // Force lazy-hydrate so content is visible
+        const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+        if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+        // If hidden (remark/example), show it
+        const wrap = el.closest('.blk-remark, .blk-example');
+        if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.style.outline = '2px solid var(--ac)';
+        setTimeout(() => { el.style.outline = ''; }, 2000);
+      }
+      pendingScroll = null;
     }
 
     async function loadFolio() {
