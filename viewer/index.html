@@ -98,6 +98,12 @@
     .blk-stub.example .stub-kind{color:var(--grn)}
 
     .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
+    .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative}
+    .bh-anchor:hover .bk{text-decoration:underline}
+    .bh-anchor .anchor-icon{opacity:0;font-size:.7rem;color:var(--fg-d);transition:opacity .15s;margin-left:.2rem}
+    .bh-anchor:hover .anchor-icon{opacity:.6}
+    .bh-copied{position:absolute;left:0;top:100%;font-family:var(--f-mono);font-size:.55rem;color:var(--ac);opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+    .bh-copied.show{opacity:1}
     .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
     .env.theorem .bk,.env.proposition .bk{color:var(--yel)}
     .env.lemma .bk,.env.corollary .bk{color:var(--ora)}
@@ -499,12 +505,37 @@
 
     // ── Block header helper ────────────────────────────────
     function mkBlockHeader(kind, title, label) {
-      let hd = `<span class="bk">${kind}</span>`;
-      if (title) hd += `<span class="bt">${inl(title)}</span>`;
-      if (label) hd += `<a class="bl" href="#/edit/${label}" title="Edit ${label}">${label}</a>`;
       const div = mk('div','bh');
-      div.innerHTML = hd;
-      renderMath(div); // render math in titles immediately
+      // Anchor wrapping kind + title — click to copy permalink
+      const anchor = document.createElement('a');
+      anchor.className = 'bh-anchor';
+      if (label) anchor.href = `#${label}`;
+      anchor.innerHTML = `<span class="bk">${kind}</span>${title ? `<span class="bt">${inl(title)}</span>` : ''}<span class="anchor-icon">#</span>`;
+      const copied = document.createElement('span');
+      copied.className = 'bh-copied';
+      copied.textContent = 'link copied';
+      anchor.appendChild(copied);
+      anchor.onclick = (e) => {
+        e.preventDefault();
+        if (label) {
+          const url = `${location.origin}${location.pathname}#${label}`;
+          navigator.clipboard.writeText(url).then(() => {
+            copied.classList.add('show');
+            setTimeout(() => copied.classList.remove('show'), 1200);
+          });
+          history.replaceState(null, '', `#${label}`);
+        }
+      };
+      div.appendChild(anchor);
+      if (label) {
+        const lbl = document.createElement('a');
+        lbl.className = 'bl';
+        lbl.href = `#/edit/${label}`;
+        lbl.title = `Edit ${label}`;
+        lbl.textContent = label;
+        div.appendChild(lbl);
+      }
+      renderMath(div);
       return div;
     }
 
