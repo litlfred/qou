@@ -21,6 +21,18 @@ ideas to a graduate-level reader.
   are not re-defined later.
 - Every non-trivial definition is followed by at least one example.
 
+### 2a. Forward-Reference Hygiene
+- An example, remark, or definition must **not** reference a lemma,
+  theorem, or proposition that has not yet been stated.
+- **Fix pattern**: remove the forward reference from the earlier
+  environment; add a remark immediately after the later result's proof
+  that back-references the earlier environment and explains the
+  connection.
+- *Example*: Example 1.6 referenced Lemma 1.8 ("This is the content of
+  Lemma …"). Fix: trim the forward reference, add
+  `\begin{remark}[…via the lemma]` after Lemma 1.8's proof that ties
+  the two together.
+
 ### 3. Spelling and Grammar
 - Identify misspelled words (including common LaTeX-adjacent typos).
 - Flag grammatical errors: subject-verb agreement, dangling modifiers,

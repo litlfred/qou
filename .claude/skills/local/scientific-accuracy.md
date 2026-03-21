@@ -31,6 +31,26 @@ peer-review practices and the methodology of
 - Conclusions follow from the presented evidence.
 - Internal consistency is maintained across the changeset.
 
+### 4a. Consequence vs. Axiom Audit
+- When a condition inside a definition looks like it might follow from
+  other axioms or from the ambient structure, investigate before
+  restructuring:
+  1. Identify the **hypotheses** the candidate consequence would need.
+  2. Check whether those hypotheses are already supplied by the other
+     axioms in the definition or by the ambient categorical structure.
+  3. If the condition is **genuinely independent**, leave it in the
+     definition.  If it is **derivable**, extract it into a proposition
+     or lemma with a proof.
+- *Example*: The categorical volume constraint (ε: Λ²V → **1**
+  non-degenerate) was investigated as a possible consequence of
+  non-degeneracy + observability.  It is independent — it is equivalent
+  to symplectic self-duality of V, which is not forced by the other
+  axioms — so it correctly remains as axiom (iii).
+- When multiple objects across chapters share similar-sounding names
+  (e.g., "volume constraint" vs. "volume form"), verify they refer to
+  the same mathematical object before renaming.  Trace the geometric
+  home of each: fiber, base, total space, or categorical.
+
 ### 5. Reproducibility
 - Methods are described with sufficient detail to reproduce.
 - Magic numbers are explained or referenced.
