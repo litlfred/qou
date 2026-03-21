@@ -178,7 +178,7 @@ $G \cong \mathrm{Aut}^{\otimes}(\omega)$, the group of monoidal natural
 automorphisms of the fibre functor.
 
 \medskip\noindent\textbf{(iv) Differential calculus.}\;
-The Woronowicz $3D$-calculus provides
+The left-invariant calculus on $\mathrm{SU}(2)$ provides
 $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$,
 the left-invariant $1$-forms dual to the Lie algebra basis
 $\{e_1, e_2, e_3\}$ of $\mathfrak{su}(2)$ (with
@@ -209,8 +209,8 @@ derivation by the graded Leibniz rule, and satisfies $d^2 = 0$.
 
 \begin{example}[Higher forms on $\mathcal{O}(\mathrm{SU}(2))$]
 \label{ex:higher-forms-su2}
-Continuing Example~\ref{ex:quantum-universe-su2}, the Woronowicz
-$3D$-calculus on $A = \mathcal{O}(\mathrm{SU}(2))$ has
+Continuing Example~\ref{ex:quantum-universe-su2}, the left-invariant
+calculus on $A = \mathcal{O}(\mathrm{SU}(2))$ has
 $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$
 (three left-invariant $1$-forms, dual to the Lie algebra
 $\mathfrak{su}(2) = \mathrm{span}\{e_1, e_2, e_3\}$).  The higher
@@ -832,15 +832,19 @@ consequence of the Leibniz rule).
 \begin{example}[Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$]
 \label{ex:connection-su2}
 Continuing Example~\ref{ex:fiber-adjoint-su2}, take
-$A = \mathcal{O}(\mathrm{SU}(2))$ with its Woronowicz $3D$-calculus
-$\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$.  A
+$A = \mathcal{O}(\mathrm{SU}(2))$ with its left-invariant calculus
+$\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$
+(Example~\ref{ex:higher-forms-su2}).  A
 connection is a covariant derivative
-$\nabla f = df + A \cdot f$ for $f \in A$, where
-$A = A_1\,\omega_1 + A_2\,\omega_2 + A_3\,\omega_3$ is the connection
-$1$-form.  The Leibniz triangle says
+$\nabla f = df + \mathcal{A} \cdot f$ for $f \in A$, where
+$\mathcal{A} = A_1\,\omega_1 + A_2\,\omega_2 + A_3\,\omega_3$ is the
+connection $1$-form.  The Leibniz triangle says
 $\nabla(fg) = (\nabla f)\,g + f\,(dg)$.  The curvature is the $2$-form
-$F_\nabla = dA + A \wedge A \in \Omega^2(A)$, which is
-$A$-linear ($F_\nabla(f \cdot s) = f \cdot F_\nabla(s)$).
+$F_\nabla = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A} \in \Omega^2(A)$,
+which is $A$-linear ($F_\nabla(f \cdot s) = f \cdot F_\nabla(s)$).
+(When the substrate parameter~$q$ is introduced in
+Definition~\ref{def:substrate-parameter}, this calculus deforms to the
+Woronowicz $3D$-calculus on $\mathcal{O}_q(\mathrm{SU}(2))$.)
 \end{example}
 
 \begin{definition}[$q$-Hodge star]
