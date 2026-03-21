@@ -310,19 +310,21 @@
     .env.example .bk{color:var(--grn)}
     .env.remark .bk{color:var(--fg-d)}
     .bt{font-size:.95rem;font-weight:500;color:var(--fg-b);overflow:hidden;text-overflow:ellipsis}
-    /* Header actions group — right side */
-    .bh-acts{display:flex;align-items:center;gap:.3rem;flex-shrink:0;margin-left:auto}
-    .bh-acts .lb{margin-left:0}
-    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:.1rem .3rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);white-space:nowrap}
-    .bh-acts .bl:hover{color:var(--ac);border-color:var(--ac-d)}
-    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:1px solid var(--brd);border-radius:2px;padding:.1rem .3rem;cursor:pointer;white-space:nowrap}
-    .bh-acts .fb-act:hover{color:var(--ac);border-color:var(--ac-d)}
+    /* Header actions group — right side, plain grey text */
+    .bh-acts{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
+    .bh-acts .lb{margin-left:0;background:none;border:none;padding:0;border-radius:0}
+    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:0;border-radius:0;background:none;border:none;white-space:nowrap}
+    .bh-acts .bl:hover{color:var(--ac)}
+    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:none;border-radius:0;padding:0;cursor:pointer;white-space:nowrap}
+    .bh-acts .fb-act:hover{color:var(--ac)}
+    .bh-acts .st{position:static;width:auto;height:auto;opacity:.5;font-size:.55rem;padding:0;display:inline-flex}
     /* Hamburger for narrow — replaces bh-acts */
     .bh-menu{display:none;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-size:.7rem;padding:.1rem .3rem;margin-left:auto;position:relative}
     .bh-menu:hover{color:var(--fg-b);border-color:var(--ac-d)}
     .bh-drop{display:none;position:absolute;right:0;top:100%;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;padding:.3rem;z-index:50;min-width:120px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
     .bh-drop.open{display:flex;flex-direction:column;gap:.2rem}
-    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb{font-size:.55rem;display:block;text-align:left;width:100%}
+    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb,.bh-drop .st{font-size:.55rem;display:block;text-align:left;width:100%;background:none;border:none;padding:.15rem .4rem;color:var(--fg-d);cursor:pointer}
+    .bh-drop .bl:hover,.bh-drop .fb-act:hover,.bh-drop .lb:hover,.bh-drop .st:hover{color:var(--ac)}
     @media(max-width:600px){
       .bh-acts{display:none}
       .bh-menu{display:block}
@@ -343,14 +345,14 @@
     .bsrc{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:3px;padding:.6rem .8rem;margin-top:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;color:var(--fg-d)}
     .bsrc.vis{display:block}
 
-    /* Lean badge + icons */
-    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-left:auto;white-space:nowrap}
-    .lb.proved{color:var(--grn);border-color:var(--grn)}
-    .lb.has_sorry{color:var(--yel);border-color:var(--yel)}
-    .lb.stated{color:var(--ac);border-color:var(--ac)}
-    .lb.validated{color:var(--grn);border-color:var(--grn)}
-    .lb.stub{color:var(--red);border-color:var(--red)}
-    .lb.external{color:var(--ora);border-color:var(--ora)}
+    /* Lean badge — plain grey text, colored by status */
+    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:0;border-radius:0;background:none;border:none;color:var(--fg-d);margin-left:auto;white-space:nowrap}
+    .lb.proved{color:var(--grn)}
+    .lb.has_sorry{color:var(--yel)}
+    .lb.stated{color:var(--ac)}
+    .lb.validated{color:var(--grn)}
+    .lb.stub{color:var(--red)}
+    .lb.external{color:var(--ora)}
     .lb.trivial{color:var(--fg-d)}
 
     /* Lean validation icon */
@@ -749,10 +751,11 @@
     // ── Lean validation icon (∀ symbology from main.tex) ──
     function leanIcon(validation) {
       const v = validation || 'not_checked';
+      // Don't show icon for stubs — just the declaration name
+      if (v === 'stub') return '';
       const icons = {
         validated: { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
         leanok:    { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
-        stub:      { sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (has sorry)' },
         not_checked:{ sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (not checked)' },
         axioms_only:{ sym: '&#x2200;', color: 'var(--yel)', tip: 'axioms only' },
         external:  { sym: '&#x2200;', color: 'var(--ac)',  tip: 'external proof' },
@@ -910,7 +913,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md);
+        addSrc(d, block.md, exHdr);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
         frag.appendChild(wrap);
@@ -952,7 +955,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md);
+        addSrc(d, block.md, rmHdr);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
         wrap.appendChild(d);
@@ -1037,7 +1040,7 @@
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
-      addSrc(d, block.md);
+      addSrc(d, block.md, hdr);
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
@@ -1096,12 +1099,18 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
-    function addSrc(el, md) {
+    function addSrc(el, md, hdr) {
       if (!md) return;
       const b = mk('button','st'); b.textContent = '<>';  b.title = 'View source';
       const s = mk('div','bsrc'); s.textContent = md;
       b.onclick = () => { s.classList.toggle('vis'); b.classList.toggle('on'); };
-      el.appendChild(b); el.appendChild(s);
+      // Place button in header actions row if available, otherwise on the element
+      if (hdr && hdr._acts) {
+        hdr._acts.appendChild(b);
+      } else {
+        el.appendChild(b);
+      }
+      el.appendChild(s);
     }
 
     function mkTags(tags) {
