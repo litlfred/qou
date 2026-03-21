@@ -58,7 +58,7 @@ export const CompanionsSchema = z.record(z.string().optional());
 const RenderedAssetSchema = z.object({
   mime: z.string(),
   url: z.string(),
-  blockIndex: z.number().int().nonneg(),
+  blockIndex: z.number().int().nonnegative(),
   hash: z.string().optional(),
 });
 

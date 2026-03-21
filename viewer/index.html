@@ -171,6 +171,8 @@
 
   <div id="app"><div class="loading">loading paper.json...</div></div>
 
+  <!-- paper.js sets window.__PAPER_DATA__ — works with file:// (no fetch needed) -->
+  <script src="paper.js" onerror="/* ok — will try fetch instead */"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
     // ── State ────────────────────────────────────────────
@@ -518,13 +520,24 @@
 
     // ── Load ─────────────────────────────────────────────
     async function load() {
-      for (const src of ['paper.json','./paper.json','/api/paper']) {
+      // 1. Try inline data from paper.js (works with file://)
+      if (window.__PAPER_DATA__) {
+        renderPaper(window.__PAPER_DATA__);
+        return;
+      }
+
+      // 2. Try fetch (works with http server)
+      for (const src of ['paper.json','./paper.json','/api/paper','/viewer/paper.json']) {
         try {
           const r = await fetch(src);
           if (r.ok) { renderPaper(await r.json()); return; }
         } catch {}
       }
-      document.getElementById('app').innerHTML = '<div class="err">Could not load paper.json. Run: bun run content/pipeline/export-json.ts</div>';
+
+      document.getElementById('app').innerHTML =
+        '<div class="err">Could not load paper data.<br><br>' +
+        'Run: <code>bun run content/pipeline/export-json.ts</code><br>' +
+        'Then reload this page.</div>';
     }
 
     load();
