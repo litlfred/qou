@@ -5,7 +5,7 @@ author:
 - Frederick Carl Leitner[^1]
 bibliography:
 - references.bib
-date: 2026-03-20
+date: 2026-03-21
 title: Quantum Observable Universe
 ---
 
@@ -2553,7 +2553,7 @@ With the categorical origin established, we now give explicit presentations and 
 
 <div class="proof">
 
-*Proof.* Item (1) follows from Proposition <a href="#prop:braid-action-tensor" data-reference-type="ref" data-reference="prop:braid-action-tensor">4.1</a> applied to $V =$ the fundamental representation of $\mathrm{SU}_q(2)$, which is $2$-dimensional. The braiding $c_{V,V}$ is computed by the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ (Remark <a href="#rem:r-matrix-braiding" data-reference-type="ref" data-reference="rem:r-matrix-braiding">4.23</a>), and faithfulness follows from the fact that the eigenvalues of $c_{V,V}$ are $q$ and $-q^{-1}$, which are distinct for $q \neq \pm 1$.
+*Proof.* Item (1) follows from Proposition <a href="#prop:braid-action-tensor" data-reference-type="ref" data-reference="prop:braid-action-tensor">4.1</a> applied to the fundamental representation $V$ of $\mathrm{SU}_q(2)$, which is $2$-dimensional. The braiding $c_{V,V}$ is computed by the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ (Remark <a href="#rem:r-matrix-braiding" data-reference-type="ref" data-reference="rem:r-matrix-braiding">4.23</a>), and faithfulness follows from the fact that the eigenvalues of $c_{V,V}$ are $q$ and $-q^{-1}$, which are distinct for $q \neq \pm 1$.
 
 For item (2), the fibre functor $\omega$ sends the braiding to the matrix $\check{R} = P \circ \mathcal{R}$ acting on $\mathbb{C}^2 \otimes \mathbb{C}^2$. The generators $\sigma_1, \sigma_2$ map to the $\mathrm{SU}(2)$ elements $\alpha, \beta$ (Definition <a href="#def:su2-generators" data-reference-type="ref" data-reference="def:su2-generators">4.12</a>) generating $\mathrm{Dic}_3$, as verified in Example <a href="#ex:trefoil-operator-algebra" data-reference-type="ref" data-reference="ex:trefoil-operator-algebra">4.17</a>.
 
