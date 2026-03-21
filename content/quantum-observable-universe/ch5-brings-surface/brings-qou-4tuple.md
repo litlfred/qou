@@ -30,7 +30,7 @@ of $P$ are the $\mathrm{SU}(2)$ holonomy matrices
 $H_1,H_2$ around the branch cuts; in the
 chiral coordinates $(x_2,x_3,x_4)$, the $S_3$ permutation of the three
 sheets gives the $\mathrm{SO}(3)$ holonomy representation
-([Definitions](#def:su2-generators)--[](#def:so3-generators)).
+([Definition](#def:su2-generators)--[Definition](#def:so3-generators)).
 
 **3. State bundle $E$.**
 The associated state bundle is $E = P \times_G \mathbb{P}^1(\mathbb{C})$,

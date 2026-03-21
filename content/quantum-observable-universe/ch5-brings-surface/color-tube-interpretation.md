@@ -1,0 +1,24 @@
+The terminology *color tube* reflects two features.
+
+**Color.**
+The coordinates $r, g, b$ label the three chiral degrees of freedom
+that correspond, via the $S_3$ subgroups of $S_5$
+([Remark](#rem:braid-group-action)(iii)), to the three
+colour charges of quantum chromodynamics.  The chiral coordinates
+$x_2, x_3, x_4$ of the QOU $4$-tuple
+([Remark](#rem:brings-qou-4tuple)) descend to $r = w_2 - z$,
+$g = w_3 - z$, $b = w_4 - z$ after shifting by the spacetime ratio $z$.
+
+**Tube.**
+For fixed $z \in \mathbb{P}^1(\mathbb{C})$, the color vector $\vec{c} = (r, g, b)$
+is constrained by the shifted quadric and
+cubic to lie on a curve inside the
+three-dimensional color space $\mathbb{A}^3$.  As $z$ varies over the
+spacetime base, this curve sweeps out a tube --- the total space of
+the chiral fibration over $\mathbb{P}^1(\mathbb{C})$.
+
+**Space-like coordinate.**
+The shift $\sigma = w_1 - z$ is distinguished: it measures the deviation
+of the $C_5$-fundamental resolvent $w_1$ from the spacetime base,
+anchoring the $U(1)$ longitudinal backbone
+([Remark](#rem:spectral-dynamics)) in the shifted frame.
