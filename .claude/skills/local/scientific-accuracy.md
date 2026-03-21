@@ -93,6 +93,15 @@ blocks, a missing `.lean` sibling is a warning. The `uses[]` dependency
 graph helps trace which upstream definitions a claim relies on — verify
 those are formalized too.
 
+## Mandatory fallback participation
+
+This skill is invoked automatically by the editor's **content-change fallback**
+(see `editor.md § Content-change fallback`). Whenever any content is modified
+during a session — `.md`, `.ts`, `.lean`, `.tex`, or supporting files — the
+editor triggers a scientific-accuracy pass before the task is considered
+complete. When invoked as a fallback, focus on the changed blocks and their
+immediate dependencies.
+
 ## Output Format
 
 ```

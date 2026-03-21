@@ -87,6 +87,15 @@ expected: `prose` blocks have no formal requirements; `definition` blocks
 must have self-contained definitions; `theorem` blocks should state the
 result clearly. Respect these expectations when restructuring content.
 
+## Mandatory fallback participation
+
+This skill is invoked automatically by the editor's **content-change fallback**
+(see `editor.md § Content-change fallback`). Whenever any content is modified
+during a session — `.md`, `.ts`, `.lean`, `.tex`, or supporting files — the
+editor triggers a readability pass before the task is considered complete. When
+invoked as a fallback, focus on the changed blocks: prose quality, notation
+consistency, and forward-reference hygiene.
+
 ## Output Format
 
 ```
