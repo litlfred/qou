@@ -394,11 +394,29 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return serveFile(join(VIEWER_DIR, "index.html"));
   }
 
+  // ── API: Render PDF status (check if latexmk is available) ────
+  if (path === "/api/render-pdf/status") {
+    try {
+      const { execSync: ex } = await import("child_process");
+      ex("which latexmk", { stdio: "pipe" });
+      return Response.json({ available: true }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch {
+      return Response.json({ available: false, reason: "latexmk not installed" }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
   // ── API: Render PDF (triggers content_build → latexmk) ────────
   if (path === "/api/render-pdf") {
     try {
-      const { spawnSync } = await import("child_process");
+      const { spawnSync, execSync: ex } = await import("child_process");
       const { mkdirSync, readFileSync: rf } = await import("fs");
+
+      // Pre-check: is latexmk installed?
+      try { ex("which latexmk", { stdio: "pipe" }); } catch {
+        return Response.json({
+          error: "latexmk not installed. Install TeX Live: apt install texlive-full",
+        }, { status: 503, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
 
       // Step 1: Build content objects → .tex chapters
       const buildResult = spawnSync("bun", ["run", join(REPO_ROOT, "content/pipeline/build.ts")], {
@@ -442,9 +460,9 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
         error: "LaTeX compilation failed",
         buildLog,
         latexLog: log,
-      }, { status: 500 });
+      }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
-      return Response.json({ error: String(e) }, { status: 500 });
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
   }
 

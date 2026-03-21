@@ -571,11 +571,18 @@
     });
 
     // PDF (trigger server-side LaTeX pipeline)
-    document.getElementById('c-pdf').addEventListener('click', async () => {
-      const btn = document.getElementById('c-pdf');
-      const orig = btn.textContent;
-      btn.textContent = 'building...';
-      btn.disabled = true;
+    // Check PDF availability at startup — hide button if latexmk not installed
+    const pdfBtn = document.getElementById('c-pdf');
+    fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
+      if (!d.available) {
+        pdfBtn.style.display = 'none';
+      }
+    }).catch(() => { pdfBtn.style.display = 'none'; });
+
+    pdfBtn.addEventListener('click', async () => {
+      const orig = pdfBtn.textContent;
+      pdfBtn.textContent = 'building...';
+      pdfBtn.disabled = true;
       try {
         const res = await fetch('/api/render-pdf');
         if (res.ok && res.headers.get('content-type')?.includes('pdf')) {
@@ -585,14 +592,14 @@
           setTimeout(() => URL.revokeObjectURL(url), 60_000);
         } else {
           const err = await res.json().catch(() => ({ error: 'Unknown error' }));
-          alert(`PDF build failed: ${err.error || 'See console'}\n\nCheck that latexmk is installed.`);
+          alert(`PDF build failed: ${err.error || 'See console'}`);
           console.error('PDF render error:', err);
         }
       } catch (e) {
         alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
       } finally {
-        btn.textContent = orig;
-        btn.disabled = false;
+        pdfBtn.textContent = orig;
+        pdfBtn.disabled = false;
       }
     });
 
