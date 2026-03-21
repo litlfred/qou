@@ -40,6 +40,17 @@ REMOTE_SHA=$(git rev-parse origin/main 2>/dev/null)
 
 if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
     echo "[$(date -Is)] Git: new commits on main ($LOCAL_SHA → $REMOTE_SHA)"
+
+    # Clean pull: remove everything not in the repo, but preserve secrets.
+    # -x: remove untracked files including ignored ones
+    # -d: remove untracked directories
+    # -f: force
+    # --exclude: keep deploy secrets that aren't in the repo
+    git clean -xdf \
+        --exclude='deploy/.env' \
+        --exclude='deploy/authorized-emails.txt' \
+        --exclude='deploy/Caddyfile'
+    git checkout -- .
     git pull origin main --quiet
 
     # Regenerate Caddyfile if config changed (no secrets involved)
