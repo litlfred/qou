@@ -379,11 +379,21 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
   // ── Save block markdown ────────────────────────────────────
   if (path === "/api/block/save") {
     try {
-      const body = await req.json() as { paperId: string; chapterDir: string; rootName: string; md: string };
-      const { writeFileSync } = await import("fs");
-      const mdPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.md`);
-      if (!existsSync(join(CONTENT_DIR, body.paperId, body.chapterDir))) {
-        return Response.json({ error: "Chapter directory not found" }, { status: 404 });
+      const body = await req.json() as { paperId: string; rootName: string; md: string };
+      const { writeFileSync, readdirSync } = await import("fs");
+
+      // Find the block's chapter directory
+      const paperDir = join(CONTENT_DIR, body.paperId);
+      if (!existsSync(paperDir)) {
+        return Response.json({ error: "Paper not found" }, { status: 404 });
+      }
+      let mdPath: string | null = null;
+      for (const d of readdirSync(paperDir)) {
+        const candidate = join(paperDir, d, `${body.rootName}.ts`);
+        if (existsSync(candidate)) { mdPath = join(paperDir, d, `${body.rootName}.md`); break; }
+      }
+      if (!mdPath) {
+        return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
       }
       writeFileSync(mdPath, body.md, "utf-8");
       return Response.json({ ok: true, path: mdPath });
