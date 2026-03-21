@@ -664,17 +664,53 @@ component $\mathrm{Sym}^n V \cong V_{n/2}$ is an irreducible
 representation of dimension~$n + 1$.
 \end{example}
 
+\begin{definition}[Maximal torus and weight subcategory]
+\label{def:maximal-torus}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) with fundamental
+object~$V$ (Definition~\ref{def:spin-labels}).  The \emph{weight
+subcategory} $\langle V \rangle \subset \mathcal{C}$ is the full
+subcategory whose objects are direct sums of weight spaces of~$V$
+(i.e.\ simultaneous eigenspaces of the Cartan subalgebra action).
+The \emph{maximal torus} of the gauge group is
+\[
+  T \;=\; \mathrm{Aut}^{\otimes}(\omega|_{\langle V \rangle}),
+\]
+the sub-group scheme of
+$G = \mathrm{Aut}^{\otimes}(\omega)$
+(Theorem~\ref{thm:su2-emergence}) consisting of those natural
+automorphisms that act diagonally on each weight space of~$V$.
+Equivalently, $T$ is the largest subgroup of~$G$ for which every
+object in $\langle V \rangle$ decomposes into one-dimensional
+$T$-eigenspaces.
+\end{definition}
+
+\begin{example}[Maximal torus for $\mathrm{SU}(2)$]
+\label{ex:maximal-torus-su2}
+Continuing Example~\ref{ex:spin-labels-su2}, the fundamental object is
+$V = \mathbb{C}^2$ with the standard $\mathrm{SU}(2)$-action.  The
+weight decomposition is $V = \mathbb{C} e_+ \oplus \mathbb{C} e_-$
+(the $\pm\tfrac{1}{2}$-eigenspaces of
+$e_3 = \frac{1}{2}\begin{psmallmatrix} 1 & 0 \\ 0 & -1 \end{psmallmatrix}$).
+The weight subcategory $\langle V \rangle$ consists of representations
+that decompose into weight spaces: $V$~itself, $\mathbf{1}$, and their
+direct sums.  The maximal torus is
+\[
+  T \;=\; \mathrm{U}(1)
+  \;=\; \left\{
+    \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}
+    : \theta \in \mathbb{R}
+  \right\},
+\]
+the diagonal matrices in $\mathrm{SU}(2)$.  Each element of $T$ acts on
+$e_{\pm}$ by $e^{\pm i\theta}$: one-dimensional eigenspaces, as required.
+\end{example}
+
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}).  Write
-$G = \mathrm{Aut}^{\otimes}(\omega)$ for the Tannakian gauge group
-(Theorem~\ref{thm:su2-emergence}) and let $T \subset G$ be the maximal
-torus --- the sub-group scheme of~$G$ that acts diagonally on~$V$, i.e.\
-$T = \mathrm{Aut}^{\otimes}(\omega|_{\langle V \rangle})$, where
-$\langle V \rangle \subset \mathcal{C}$ is the full subcategory of weight
-objects (direct sums of weight spaces of~$V$).  The \emph{projective line
-object} is the quotient
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+maximal torus $T \subset G$ (Definition~\ref{def:maximal-torus}).
+The \emph{projective line object} is the quotient
 \[
   \mathbb{P}(V) \;=\; G \,/\, T,
 \]
@@ -685,8 +721,8 @@ algebra $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}\,T}$
 
 \begin{example}[Projective line for $\mathrm{SU}(2)$]
 \label{ex:projective-line-su2}
-Continuing Example~\ref{ex:su2-emergence},
-$G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$ (diagonal matrices).
+Continuing Example~\ref{ex:maximal-torus-su2},
+$G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$.
 The quotient is
 $\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
 A point $[\ell] \in \mathbb{CP}^1$ is a line $\ell \subset V = \mathbb{C}^2$;
