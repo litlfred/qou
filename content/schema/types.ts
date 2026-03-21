@@ -413,6 +413,7 @@ export interface PaperMacro {
 export interface Paper {
   title: string;
   authors: string[];
+  affiliations?: string[];
   date?: string;
   /** Chapter references — URIs to chapter .ts manifests. */
   chapters: ChapterRef[];

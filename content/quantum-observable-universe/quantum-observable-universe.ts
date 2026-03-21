@@ -9,7 +9,8 @@ import { paper, chapterRef } from "../schema/builders";
  */
 export default paper({
   title: "Quantum Observable Universe",
-  authors: ["litlfred"],
+  authors: ["Frederick Carl Leitner"],
+  affiliations: ["World Health Organization"],
   date: "2026-03-21",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },

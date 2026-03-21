@@ -39,6 +39,7 @@
       --f-mono:'JetBrains Mono','Consolas',monospace;
       --f-sz:17px; --f-lh:1.65;
     }
+    html{scroll-behavior:smooth}
 
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:var(--f-sz);line-height:var(--f-lh);min-height:100vh;transition:background .3s var(--ease),color .2s var(--ease)}
@@ -70,6 +71,7 @@
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
     .hdr h1{font-family:var(--f-head);font-size:1.9rem;font-weight:600;color:var(--fg-b);margin-bottom:.4rem}
     .hdr .au{font-family:var(--f-head);font-size:.9rem;color:var(--fg-d)}
+    .hdr .af{font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);font-style:italic;margin-top:.1rem}
     .hdr .dt{font-family:var(--f-mono);font-size:.75rem;color:var(--fg-d);margin-top:.2rem}
 
     /* Structure */
@@ -203,6 +205,10 @@
     .fb-controls select{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.2rem .4rem;border-radius:3px}
     .fb-submit{background:var(--ac);border:1px solid var(--ac);color:var(--bg);font-family:var(--f-mono);font-size:.65rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer;margin-left:auto}
     .fb-submit:hover{opacity:.85}
+    .fb-voice{background:none;border:1px solid var(--brd);color:var(--fg-d);cursor:pointer;border-radius:3px;padding:.3rem .6rem;font-size:.75rem;font-family:var(--f-mono);transition:all .2s}
+    .fb-voice:hover{border-color:var(--ac);color:var(--ac)}
+    .fb-voice.recording{border-color:var(--red);color:var(--red);animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
     .fb-history{flex:1;overflow-y:auto;padding:.5rem 1rem}
 
     /* Feedback button on blocks */
@@ -239,6 +245,7 @@
     <div class="fb-input-area">
       <textarea id="fb-text" placeholder="Describe the issue, question, or suggestion..." rows="4"></textarea>
       <div class="fb-controls">
+        <button class="fb-voice" id="fb-voice" title="Voice input (click to start/stop)">mic</button>
         <select id="fb-priority">
           <option value="medium">Medium</option>
           <option value="high">High</option>
@@ -788,7 +795,7 @@
 
       // Header
       const hdr = mk('div','hdr');
-      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.date?`<div class="dt">${p.date}</div>`:''}`;
+      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
       app.appendChild(hdr);
 
       for (const ch of p.chapters) {
@@ -832,6 +839,13 @@
       document.getElementById('feedback-overlay').classList.remove('open');
       document.getElementById('feedback-panel').classList.remove('open');
       fbBlock = null;
+      // Stop voice recording if active
+      if (isRecording && recognition) {
+        isRecording = false;
+        recognition.stop();
+        const vb = document.getElementById('fb-voice');
+        if (vb) { vb.classList.remove('recording'); vb.textContent = 'mic'; }
+      }
     }
     document.getElementById('fb-close').onclick = closeFeedback;
     document.getElementById('feedback-overlay').onclick = closeFeedback;
@@ -857,6 +871,57 @@
         alert('Failed to submit: ' + e.message);
       }
     };
+
+    // ── Voice input (Web Speech API) ──────────────────────
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+    let isRecording = false;
+    const voiceBtn = document.getElementById('fb-voice');
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onresult = (e) => {
+        const ta = document.getElementById('fb-text');
+        let final = '', interim = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const t = e.results[i][0].transcript;
+          if (e.results[i].isFinal) final += t; else interim = t;
+        }
+        if (final) {
+          ta.value += (ta.value && !ta.value.endsWith(' ') ? ' ' : '') + final;
+        }
+        // Show interim in placeholder
+        if (interim) ta.placeholder = interim + '...';
+        else ta.placeholder = 'Listening...';
+      };
+      recognition.onerror = (e) => {
+        if (e.error !== 'no-speech') console.warn('Speech error:', e.error);
+      };
+      recognition.onend = () => {
+        if (isRecording) recognition.start(); // auto-restart if still recording
+      };
+
+      voiceBtn.onclick = () => {
+        if (isRecording) {
+          isRecording = false;
+          recognition.stop();
+          voiceBtn.classList.remove('recording');
+          voiceBtn.textContent = 'mic';
+          document.getElementById('fb-text').placeholder = 'Describe the issue, question, or suggestion...';
+        } else {
+          isRecording = true;
+          recognition.start();
+          voiceBtn.classList.add('recording');
+          voiceBtn.textContent = 'stop';
+        }
+      };
+    } else {
+      voiceBtn.style.display = 'none'; // hide if not supported
+    }
 
     function addFeedbackBtn(el, block) {
       const btn = mk('button', 'fb-btn');
