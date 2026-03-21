@@ -100,11 +100,11 @@ MAIN_SORRY=0
 BRANCH_SORRY=0
 if [ -d "$MAIN_DIR/lean" ]; then
   MAIN_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' "$MAIN_DIR/lean/" 2>/dev/null \
-    | awk -F: '{s+=$NF} END {print s+0}')
+    | awk -F: '{s+=$NF} END {print s+0}' || echo 0)
 fi
 if [ -d lean ]; then
   BRANCH_SORRY=$(grep -r --include='*.lean' -c '\bsorry\b' lean/ 2>/dev/null \
-    | awk -F: '{s+=$NF} END {print s+0}')
+    | awk -F: '{s+=$NF} END {print s+0}' || echo 0)
 fi
 
 # Collect changed Lean files

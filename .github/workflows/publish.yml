@@ -184,14 +184,35 @@ jobs:
       # ── 2b. Generate diff against main (feature branches only) ────────────
       - name: Generate latexdiff against main
         if: env.HEAD_REF != 'main'
+        continue-on-error: true
+        id: generate_diff
         run: bash .github/scripts/generate-diff.sh
 
       - name: Compile diff PDF
-        if: env.HEAD_REF != 'main'
+        if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
         continue-on-error: true
+        id: compile_diff
         uses: xu-cheng/latex-action@v3
         with:
           root_file: diff.tex
+
+      - name: Diff PDF status
+        if: env.HEAD_REF != 'main'
+        run: |
+          if [ -f diff.pdf ]; then
+            echo "✓ diff.pdf generated ($(du -h diff.pdf | cut -f1))"
+          else
+            echo "::warning::diff.pdf was NOT generated."
+            if [ "${{ steps.generate_diff.outcome }}" != "success" ]; then
+              echo "  → latexdiff failed (generate-diff.sh returned non-zero)"
+            elif [ "${{ steps.compile_diff.outcome }}" != "success" ]; then
+              echo "  → LaTeX compilation of diff.tex failed"
+              if [ -f diff.log ]; then
+                echo "  → Last 30 lines of diff.log:"
+                tail -30 diff.log
+              fi
+            fi
+          fi
 
       # ── 3. Assemble gh-pages site ──────────────────────────────────────────
       - name: Assemble site artefacts
@@ -432,8 +453,10 @@ jobs:
           publish_branch="${{ inputs.publish_branch || 'gh-pages' }}"
           source_pdf_url="${repo_url}/tree/${publish_branch}/drafts/${{ env.HEAD_REF }}"
 
-          # Raw download links (direct file download from gh-pages branch)
-          raw_base="https://raw.githubusercontent.com/${{ github.repository }}/${publish_branch}/drafts/${{ env.HEAD_REF }}"
+          # Raw download links — use the GitHub blob/raw endpoint which
+          # reliably serves binary files (raw.githubusercontent.com often
+          # returns 404 for PDFs and other large binaries on gh-pages).
+          raw_base="https://github.com/${{ github.repository }}/raw/${publish_branch}/drafts/${{ env.HEAD_REF }}"
           raw_pdf_url="${raw_base}/${FNAME_BASE}.pdf"
           raw_diff_url="${raw_base}/${FNAME_BASE}-diff.pdf"
 
@@ -444,6 +467,16 @@ jobs:
             --state open \
             --json number \
             --jq '.[].number')
+
+          # Build diff PDF rows conditionally
+          has_diff=${{ steps.compile_diff.outcome == 'success' && 'true' || 'false' }}
+          if [ "$has_diff" = "true" ]; then
+            diff_row="| Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |"
+            raw_diff_row="| Diff PDF | [⬇ ${FNAME_BASE}-diff.pdf](${raw_diff_url}) |"
+          else
+            diff_row="| Diff PDF | ⚠️ _not generated (latexdiff failed)_ |"
+            raw_diff_row=""
+          fi
 
           for pr in $pr_numbers; do
             # Avoid duplicate comments: skip if we already posted a link
@@ -466,15 +499,15 @@ jobs:
           | Artefact | Link |
           |----------|------|
           | PDF      | [${FNAME_BASE}.pdf](${pdf_url}) |
-          | Diff PDF | [${FNAME_BASE}-diff.pdf](${diff_url}) |
+          ${diff_row}
           | HTML     | [Landing page](${html_url}) |
           | QA Report| [qa.html](${qa_url}) |
 
-          **Direct download (raw)**
+          **Direct download**
           | Artefact | Link |
           |----------|------|
           | Full PDF | [⬇ ${FNAME_BASE}.pdf](${raw_pdf_url}) |
-          | Diff PDF | [⬇ ${FNAME_BASE}-diff.pdf](${raw_diff_url}) |
+          ${raw_diff_row}
 
           **Source (repo)**
           | Resource | Link |
