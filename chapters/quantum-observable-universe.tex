@@ -580,16 +580,14 @@ A \emph{connection} on~$A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying
 the Leibniz rule: $\nabla(\mu(a \otimes b)) =
 \nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
-of the outer square
+of
 \[
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mu"]
-    \ar[d, "{\nabla \otimes 1 \,+\, 1 \otimes \nabla}"']
+    \ar[dr, "{\nabla \otimes 1 \,+\, 1 \otimes \nabla}"']
   & A \ar[d, "\nabla"]
   \\
-  A \otimes \Omega^1(A)
-    \ar[r, equal]
   & A \otimes \Omega^1(A)
 \end{tikzcd}
 \]
@@ -604,6 +602,20 @@ The \emph{curvature} of~$\nabla$ is the composition
 denoted $F_\nabla = \nabla^2$, which is $A$-linear (a standard
 consequence of the Leibniz rule).
 \end{definition}
+
+\begin{example}[Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$]
+\label{ex:connection-su2}
+Continuing Example~\ref{ex:fiber-adjoint-su2}, take
+$A = \mathcal{O}(\mathrm{SU}(2))$ with its Woronowicz $3D$-calculus
+$\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$.  A
+connection is a covariant derivative
+$\nabla f = df + A \cdot f$ for $f \in A$, where
+$A = A_1\,\omega_1 + A_2\,\omega_2 + A_3\,\omega_3$ is the connection
+$1$-form.  The Leibniz triangle says
+$\nabla(fg) = (\nabla f)\,g + f\,(dg)$.  The curvature is the $2$-form
+$F_\nabla = dA + A \wedge A \in \Omega^2(A)$, which is
+$A$-linear ($F_\nabla(f \cdot s) = f \cdot F_\nabla(s)$).
+\end{example}
 
 \begin{definition}[$q$-Hodge star]
 \label{def:q-hodge-star}
@@ -622,6 +634,10 @@ $\alpha^* = S(\alpha)$ is the antipode-conjugate, and
 $\mathrm{vol} \in \Omega^n(A)$ is the volume form
 (the unique $G_q$-invariant top form normalised by
 $\lambda(\mathrm{vol}) = 1$).
+That $\star_q^2 = \mathrm{id}$ (i.e.\ $\star_q$ is an involution)
+follows from the non-degeneracy of the Frobenius form~$\lambda$ and the
+involutivity of the antipode ($S^2 = \mathrm{id}$ on the centre
+of~$A$).
 \end{definition}
 
 \begin{remark}[Notation for the categorical action]
