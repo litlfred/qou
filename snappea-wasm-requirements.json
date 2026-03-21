@@ -48,7 +48,12 @@
         "origin": "https://pari.math.u-bordeaux.fr/",
         "wasm_reference": "https://github.com/sagemathinc/wasm-pari-gmp",
         "purpose": "Smith normal form (matsnf), exact integer matrix ops, number-theoretic functions",
-        "api_entry": "gp_embedded_init() / gp_embedded() or direct libpari C calls"
+        "api_entry": "gp_embedded_init(long,long) + gp_embedded(const char*) -> const char*",
+        "wasm_status": "DEPRECATED: @sagemath/pari — use @sagemath/pari-gmp (v1.0.0, ~7.5 MB)",
+        "pari_version": "2.13.2",
+        "build_scripts": ["build-gmp.sh (GMP 6.2.1)", "build-pari.sh (PARI 2.13.2)"],
+        "exported_c_functions": ["_gp_embedded", "_gp_embedded_init", "_pari_emscripten_plot_init"],
+        "pari_build_patch": "#undef UNIX appended to paricfg.h (prevents getpwuid/popen calls)"
       },
       {
         "name": "GMP",
@@ -199,31 +204,58 @@
       }
     },
 
-    "emscripten_flags": [
-      "-O3",
-      "-s WASM=1",
-      "-s ALLOW_MEMORY_GROWTH=1",
-      "-s INITIAL_MEMORY=67108864",
-      "-s EXPORTED_FUNCTIONS=[list of _snappea_* and _pari_* functions]",
-      "-s EXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToUTF8','getValue','setValue']",
-      "-s MODULARIZE=1",
-      "-s EXPORT_ES6=1",
-      "-s ENVIRONMENT='web,node,worker'",
-      "-s FILESYSTEM=1",
-      "-s NO_EXIT_RUNTIME=1",
-      "-s SINGLE_FILE=0",
-      "-lm"
-    ],
+    "emscripten_flags": {
+      "snappea_specific": [
+        "-O3",
+        "-s WASM=1",
+        "-s EXPORTED_FUNCTIONS=[_gp_embedded,_gp_embedded_init,..._snappea_* wrappers]",
+        "-s EXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToUTF8','getValue','setValue']",
+        "-s MODULARIZE=1",
+        "-s EXPORT_ES6=1",
+        "-s ENVIRONMENT='web,node,worker'",
+        "-s FILESYSTEM=1",
+        "-s NO_EXIT_RUNTIME=1",
+        "-s SINGLE_FILE=0",
+        "-s ERROR_ON_UNDEFINED_SYMBOLS=0",
+        "-lm"
+      ],
+      "memory_strategy": {
+        "note": "wasm-pari-gmp uses fixed INITIAL_MEMORY=2146435072 (~2GB) with NO memory growth for PARI performance. For snappea-wasm we have two options.",
+        "option_a": {
+          "name": "Fixed 2GB (match wasm-pari-gmp)",
+          "flags": ["-s INITIAL_MEMORY=2146435072"],
+          "pros": "Best PARI performance, proven pattern",
+          "cons": "Wastes memory if only doing simple triangulations, may fail on 32-bit browsers"
+        },
+        "option_b": {
+          "name": "Growable from 64MB",
+          "flags": ["-s INITIAL_MEMORY=67108864", "-s ALLOW_MEMORY_GROWTH=1"],
+          "pros": "Low baseline memory, works everywhere",
+          "cons": "Slight PARI performance impact (acceptable per Emscripten WASM docs — the asm.js perf issue does not apply to WASM)"
+        },
+        "recommendation": "Option B for v1. Most consumers will do small computations. Add configurable initial memory in init() options."
+      },
+      "gmp_build_flags": "emconfigure ./configure --build i686-pc-linux-gnu --host=none --disable-assembly CFLAGS='-O3 -Wall' ABI=standard",
+      "pari_build_flags": "emconfigure ./Configure --host=wasm-emscripten --graphic=none --with-gmp-include=$PREFIX/include --with-gmp-lib=$PREFIX/lib"
+    },
+
+    "build_scripts_note": "Following wasm-pari-gmp convention: shell scripts (build-gmp.sh, build-pari.sh, build-snappea.sh), NOT Makefile",
 
     "build_steps": [
-      "1. Build GMP with Emscripten (or use pre-built from wasm-pari-gmp)",
-      "2. Build PARI with Emscripten, linking against WASM GMP",
-      "3. Compile SnapPea kernel_code + addl_code + stubs with emcc",
-      "4. Compile C binding wrappers (src/bindings/)",
-      "5. Link all .o files into single snappea_kernel.wasm + .js",
-      "6. Generate TypeScript declarations from binding signatures",
-      "7. Bundle into dist/ with package.json, README, LICENSE"
-    ]
+      "1. scripts/build-gmp.sh — Download GMP 6.2.1, emconfigure/emmake, install to build/local/",
+      "2. scripts/build-pari.sh — Download PARI 2.13.2, patch paricfg.h (#undef UNIX), emconfigure/emmake with GMP paths",
+      "3. scripts/build-snappea.sh — Compile SnapPea kernel_code + addl_code + stubs with emcc -c, produce .o files",
+      "4. scripts/build-bindings.sh — Compile C binding wrappers (src/bindings/) with emcc -c",
+      "5. scripts/link.sh — Final emcc link: all .o files + libpari.a + libgmp.a → dist/snappea_kernel.{wasm,js}",
+      "6. scripts/gen-types.sh — Generate index.d.ts from binding signatures",
+      "7. scripts/package.sh — Bundle into dist/ with package.json, README, LICENSE"
+    ],
+
+    "prior_art": {
+      "wasm_pari_gmp": "https://github.com/sagemathinc/wasm-pari-gmp — GMP+PARI build pattern",
+      "wasm_flint": "https://github.com/sagemathinc/wasm-flint — Multi-library chained static linking (MPFR→MPIR→FLINT)",
+      "jsage": "https://github.com/sagemathinc/JSage — Package architecture for WASM math libraries, each in packages/<name>/dist/wasm/"
+    }
   },
 
   "testing": {
@@ -395,6 +427,14 @@
 
     "usage_example_pyodide": "import pyodide_js\nfrom js import require\nkernel = require('@snappea/kernel')\nsnappea = await kernel.init()\ntri = snappea.triangulationFromString(data)\nprint(snappea.volume(tri))\nsnappea.freeTriangulation(tri)"
   },
+
+  "wasm_limitations": [
+    "No signal handling — Ctrl+C during computation kills Node.js (WASM has no signals). Provide cancellation via uLongComputationContinues callback.",
+    "No threads — single-threaded only (no -pthread). Long computations block the caller.",
+    "32-bit WASM — limited to ~4 GB address space maximum.",
+    "No filesystem by default — PARI commands requiring data files (e.g. polgalois) need --embed-file at build time. SnapPea file I/O uses MEMFS.",
+    "No popen/getpwuid — #undef UNIX patch required for PARI build."
+  ],
 
   "risks_and_mitigations": [
     {
