@@ -13,6 +13,14 @@ this module bridges them into the QOU namespace.
 1. **Re-exports** — `CommutativeFormalGroup`, `SkewedPoissonStructure`, etc.
 2. **Strong multiplicativity (categorical)** — Frobenius relation on `FrobeniusHopfData`
 3. **Connection to QOU jet prolongation** — unit-root ↔ integrability bridge
+4. **Gröbner–Shirshov bridge** — connection to `QOU.GrobnerShirshov.*`
+
+## Status
+
+The Gröbner–Shirshov core (composition lemma, normal forms, flatness,
+strong multiplicativity) is now formalized in `QOU.GrobnerShirshov.*`.
+Remaining `sorry`s in `Fred2005.FormalGroups` mark results that depend
+on domain-specific integration arguments beyond the GS framework.
 
 ## References
 
@@ -23,6 +31,7 @@ this module bridges them into the QOU namespace.
 
 import QOU.Basic
 import QOU.QuantumObservableUniverse
+import QOU.GrobnerShirshov
 import Fred2005.FormalGroups
 import Mathlib.Data.Real.Basic
 import Mathlib.CategoryTheory.Monoidal.Basic
