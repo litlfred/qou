@@ -219,12 +219,10 @@ Hopf-algebra and representation-category viewpoints are equivalent
 fibrewise.
 \end{remark}
 
-\begin{remark}[Hopf-algebra structure and non-cocommutativity]
+\begin{remark}[Hopf-algebra structure: coassociativity]
 \label{rem:hopf-structure-diagrams}
-Write $\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$ and let
-$\Delta_q$, $\varepsilon_q$, $S_q$ denote the comultiplication,
-counit, and antipode.  The Hopf comultiplication satisfies
-\emph{coassociativity}:
+Write $\mathcal{O}_q = \mathcal{O}_q(\mathrm{SU}(2))$.
+The Hopf comultiplication satisfies \emph{coassociativity}:
 \begin{equation}\label{eq:coassociativity}
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   \mathcal{O}_q
@@ -238,54 +236,10 @@ counit, and antipode.  The Hopf comultiplication satisfies
   & \mathcal{O}_q \otimes \mathcal{O}_q \otimes \mathcal{O}_q
 \end{tikzcd}
 \end{equation}
-Let $\sigma \colon \mathcal{O}_q \otimes \mathcal{O}_q \to
-\mathcal{O}_q \otimes \mathcal{O}_q$ denote the tensor flip
-$(a \otimes b \mapsto b \otimes a)$.  The cocommutativity square
-\begin{equation}\label{eq:non-cocommutativity}
-\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
-  \mathcal{O}_q
-    \ar[r, "\Delta_q"]
-    \ar[d, "\Delta_q"']
-  & \mathcal{O}_q \otimes \mathcal{O}_q
-    \ar[d, "\sigma"]
-  \\
-  \mathcal{O}_q \otimes \mathcal{O}_q
-    \ar[r, equal]
-  & \mathcal{O}_q \otimes \mathcal{O}_q
-\end{tikzcd}
-\quad\text{commutes}\;\Longleftrightarrow\;q = 1.
-\end{equation}
-For $q \neq 1$ the failure of~\eqref{eq:non-cocommutativity} is
-controlled by the universal $R$-matrix of $U_q(\mathfrak{su}(2))$:
-$\sigma \circ \Delta_q = \mathrm{Ad}_{R_q} \circ \Delta_q$,
-where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
-\end{remark}
-
-\begin{remark}[Self-duality as a short exact sequence]
-\label{rem:self-dual-ses}
-In the QOU setting with $\dim_{\mathbb{R}} H = 4$, the Hodge star
-$*_H$ gives the splitting
-$\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$ and hence
-the short exact sequence of $\mathrm{Ad}(P)$-valued forms
-\begin{equation}\label{eq:self-dual-ses}
-\begin{tikzcd}[column sep=2em]
-  0 \ar[r]
-  & \Gamma\!\bigl(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)\bigr)
-    \ar[r, "\iota"]
-  & \Gamma\!\bigl(\Lambda^2 H^* \otimes \mathrm{Ad}(P)\bigr)
-    \ar[r, "\pi^+"]
-  & \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)
-    \ar[r]
-  & 0
-\end{tikzcd}
-\end{equation}
-The instanton condition
-$F_A|_H = {*_H}\,F_A|_H$
-(Proposition~\ref{prop:self-dual-curvature}) is exactly the condition
-$F_A|_H \in \ker(\mathrm{id} - {*_H})$,
-i.e.\ $F_A^-|_H = 0$.  In the language of $2$-groups, this has a
-clean reinterpretation
-(Remark~\ref{rem:self-dual-2group}).
+Non-cocommutativity and the self-duality short exact sequence are
+developed categorically in
+Remarks~\ref{rem:hopf-non-cocommutativity}
+and~\ref{rem:self-dual-ses}.
 \end{remark}
 
 \begin{remark}[Self-duality as constrained $2$-group gauge theory]

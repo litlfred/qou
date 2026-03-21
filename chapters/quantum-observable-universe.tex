@@ -1577,6 +1577,64 @@ $S[\nabla]$ forces $F_\nabla^- = 0$, which is exactly the
 self-duality condition.
 \end{proof}
 
+\begin{remark}[Self-duality as a short exact sequence]
+\label{rem:self-dual-ses}
+The $q$-Hodge star $\star_q$ (Definition~\ref{def:q-hodge-star}) is an
+involution on $\Omega^2(A)$, so its eigenspaces give the splitting
+$\Omega^2(A) = \Omega^+(A) \oplus \Omega^-(A)$ and hence
+the short exact sequence
+\begin{equation}\label{eq:self-dual-ses}
+\begin{tikzcd}[column sep=2em]
+  0 \ar[r]
+  & \Omega^-(A)
+    \ar[r, "\iota"]
+  & \Omega^2(A)
+    \ar[r, "\pi^+"]
+  & \Omega^+(A)
+    \ar[r]
+  & 0
+\end{tikzcd}
+\end{equation}
+where $\Omega^{\pm}(A) = \ker(\mathrm{id} \mp \star_q)$.
+The instanton condition
+(Definition~\ref{def:categorical-instanton}) is exactly
+$F_\nabla \in \ker(\pi^-)$, i.e.\ $F_\nabla^- = 0$.
+In the archimedean realisation (Example~\ref{prop:self-dual-curvature}),
+$\star_q$ specialises to $*_H$ and the sequence becomes
+$0 \to \Gamma(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)) \to
+\Gamma(\Lambda^2 H^* \otimes \mathrm{Ad}(P)) \to
+\Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)) \to 0$.
+\end{remark}
+
+\begin{remark}[Non-cocommutativity of the Hopf structure]
+\label{rem:hopf-non-cocommutativity}
+The Hopf comultiplication $\Delta \colon A \to A \otimes A$ of the
+Frobenius--Hopf object is coassociative but \emph{not} cocommutative
+when $q \neq 1$.  Let $\sigma$ denote the tensor flip.  The
+cocommutativity square
+\begin{equation}\label{eq:non-cocommutativity}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  A
+    \ar[r, "\Delta"]
+    \ar[d, "\Delta"']
+  & A \otimes A
+    \ar[d, "\sigma"]
+  \\
+  A \otimes A
+    \ar[r, equal]
+  & A \otimes A
+\end{tikzcd}
+\quad\text{commutes}\;\Longleftrightarrow\;q = 1.
+\end{equation}
+For $q \neq 1$ the failure is controlled by the universal $R$-matrix:
+$\sigma \circ \Delta = \mathrm{Ad}_{R_q} \circ \Delta$,
+where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
+This non-cocommutativity is the algebraic origin of quantum
+uncertainty: it prevents simultaneous diagonalisation of comultiplication
+and its transpose, which in turn prevents independent observations from
+commuting (Remark~\ref{rem:two-observer-parallelogram}).
+\end{remark}
+
 % ── Categorical d_q^2 and jet prolongation ──────────────────────────────────
 
 \begin{proposition}[Non-vanishing of $d_q^2$]
