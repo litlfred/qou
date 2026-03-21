@@ -182,6 +182,30 @@
     .fc-desc{font-size:.9rem;color:var(--fg);margin-bottom:.4rem}
     .fc-meta{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d)}
 
+    /* Feedback panel */
+    .feedback-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:none}
+    .feedback-overlay.open{display:block}
+    .feedback-panel{position:fixed;top:0;right:-400px;bottom:0;width:400px;background:var(--bg-s);border-left:1px solid var(--brd);z-index:301;transition:right .3s var(--ease);display:flex;flex-direction:column}
+    .feedback-panel.open{right:0}
+    .fb-head{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;border-bottom:1px solid var(--brd)}
+    .fb-head h3{font-family:var(--f-head);font-size:.9rem;color:var(--fg-b)}
+    .fb-close{background:none;border:none;color:var(--fg-d);font-size:1.2rem;cursor:pointer}
+    .fb-close:hover{color:var(--fg-b)}
+    .fb-target{padding:.5rem 1rem;font-family:var(--f-mono);font-size:.65rem;color:var(--ac);border-bottom:1px solid var(--brd)}
+    .fb-input-area{padding:1rem}
+    .fb-input-area textarea{width:100%;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-body);font-size:.85rem;padding:.6rem;resize:vertical}
+    .fb-input-area textarea:focus{outline:none;border-color:var(--ac)}
+    .fb-controls{display:flex;gap:.4rem;margin-top:.5rem;align-items:center}
+    .fb-controls select{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.2rem .4rem;border-radius:3px}
+    .fb-submit{background:var(--ac);border:1px solid var(--ac);color:var(--bg);font-family:var(--f-mono);font-size:.65rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer;margin-left:auto}
+    .fb-submit:hover{opacity:.85}
+    .fb-history{flex:1;overflow-y:auto;padding:.5rem 1rem}
+
+    /* Feedback button on blocks */
+    .fb-btn{position:absolute;top:.4rem;right:1.8rem;background:none;border:none;color:var(--fg-d);cursor:pointer;opacity:0;transition:opacity .2s;font-size:.65rem;font-family:var(--f-mono)}
+    .blk:hover .fb-btn,.env:hover .fb-btn{opacity:.4}
+    .fb-btn:hover{opacity:1!important;color:var(--ac)}
+
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
@@ -199,6 +223,34 @@
 
   <div id="sidebar"></div>
   <div id="app"><div class="loading">loading...</div></div>
+
+  <!-- Feedback panel -->
+  <div class="feedback-overlay" id="feedback-overlay"></div>
+  <div class="feedback-panel" id="feedback-panel">
+    <div class="fb-head">
+      <h3>Feedback</h3>
+      <button class="fb-close" id="fb-close">&times;</button>
+    </div>
+    <div class="fb-target" id="fb-target"></div>
+    <div class="fb-input-area">
+      <textarea id="fb-text" placeholder="Describe the issue, question, or suggestion..." rows="4"></textarea>
+      <div class="fb-controls">
+        <select id="fb-priority">
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="critical">Critical</option>
+          <option value="low">Low</option>
+        </select>
+        <select id="fb-assignee">
+          <option value="editor-agent">Editor Agent</option>
+          <option value="proof-agent">Proof Agent</option>
+          <option value="author">Author</option>
+        </select>
+        <button class="fb-submit" id="fb-submit">Submit</button>
+      </div>
+    </div>
+    <div class="fb-history" id="fb-history"></div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
@@ -340,14 +392,21 @@
         try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
     }
 
-    // ── Lean validation icon ─────────────────────────────
+    // ── Lean validation icon (∀ symbology from main.tex) ──
     function leanIcon(validation) {
       const v = validation || 'not_checked';
-      const labels = {
-        validated: 'validated', stub: 'stub', external: 'external',
-        trivial: 'trivial', not_checked: 'not checked', error: 'error'
+      const icons = {
+        validated: { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
+        leanok:    { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
+        stub:      { sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (has sorry)' },
+        not_checked:{ sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (not checked)' },
+        axioms_only:{ sym: '&#x2200;', color: 'var(--yel)', tip: 'axioms only' },
+        external:  { sym: '&#x2200;', color: 'var(--ac)',  tip: 'external proof' },
+        trivial:   { sym: '&#x2713;', color: 'var(--fg-d)', tip: 'trivial' },
+        error:     { sym: '&#x2717;', color: 'var(--red)', tip: 'build error' },
       };
-      return `<span class="vi ${v}" title="${labels[v] || v}"></span>`;
+      const i = icons[v] || { sym: '?', color: 'var(--fg-d)', tip: v };
+      return `<span style="color:${i.color};font-size:.75rem" title="${i.tip}">${i.sym}</span>`;
     }
 
     // ── Uses panel ───────────────────────────────────────
@@ -430,6 +489,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
+        addFeedbackBtn(d, block);
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
@@ -467,6 +527,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
+        addFeedbackBtn(d, block);
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
@@ -528,6 +589,7 @@
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
+      addFeedbackBtn(d, block);
       addSrc(d, block.md);
 
       // Lean badge with validation icon
@@ -690,6 +752,54 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — QOU`;
+    }
+
+    // ── Feedback panel ────────────────────────────────────
+    let fbBlock = null;
+    function openFeedback(block) {
+      fbBlock = block;
+      document.getElementById('fb-target').textContent = block.label || block.rootName || 'block';
+      document.getElementById('fb-text').value = '';
+      document.getElementById('feedback-overlay').classList.add('open');
+      document.getElementById('feedback-panel').classList.add('open');
+      document.getElementById('fb-text').focus();
+    }
+    function closeFeedback() {
+      document.getElementById('feedback-overlay').classList.remove('open');
+      document.getElementById('feedback-panel').classList.remove('open');
+      fbBlock = null;
+    }
+    document.getElementById('fb-close').onclick = closeFeedback;
+    document.getElementById('feedback-overlay').onclick = closeFeedback;
+    document.getElementById('fb-submit').onclick = async () => {
+      if (!fbBlock || !document.getElementById('fb-text').value.trim()) return;
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            paperId: paper?.id,
+            rootName: fbBlock.rootName,
+            summary: document.getElementById('fb-text').value.trim().slice(0, 80),
+            comment: document.getElementById('fb-text').value.trim(),
+            priority: document.getElementById('fb-priority').value,
+            assignee: document.getElementById('fb-assignee').value
+          })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        document.getElementById('fb-text').value = '';
+        closeFeedback();
+      } catch (e) {
+        alert('Failed to submit: ' + e.message);
+      }
+    };
+
+    function addFeedbackBtn(el, block) {
+      const btn = mk('button', 'fb-btn');
+      btn.textContent = 'feedback';
+      btn.title = 'Send feedback on this block';
+      btn.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+      el.appendChild(btn);
     }
 
     // ── Folio (paper listing) ────────────────────────────
