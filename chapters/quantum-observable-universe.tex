@@ -847,24 +847,23 @@ Definition~\ref{def:substrate-parameter}, this calculus deforms to the
 Woronowicz $3D$-calculus on $\mathcal{O}_q(\mathrm{SU}(2))$.)
 \end{example}
 
-\begin{definition}[$q$-Hodge star]
-\label{def:q-hodge-star}
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$ with
-connection~$\nabla$ (Definition~\ref{def:categorical-connection}), and
-let $q$ denote the substrate parameter
-(Definition~\ref{def:substrate-parameter}).  The \emph{$q$-Hodge star}
-is the involution
-$\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
+\begin{definition}[Categorical Hodge star]
+\label{def:categorical-hodge-star}
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over~$R$
+(Definition~\ref{def:quantum-universe}) with higher differential forms
+$\Omega^k(A)$ (Definition~\ref{def:higher-forms}).  The
+\emph{categorical Hodge star} is the involution
+$\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 \[
-  \alpha \wedge_q \star_q \beta
-  \;=\; q \cdot \lambda\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol},
+  \alpha \wedge \star \beta
+  \;=\; \lambda\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol},
 \]
 where $\lambda \colon A \to \mathbf{1}$ is the Frobenius form,
 $\alpha^* = S(\alpha)$ is the antipode-conjugate, and
 $\mathrm{vol} \in \Omega^n(A)$ is the volume form
-(the unique $G_q$-invariant top form normalised by
+(the unique $G$-invariant top form normalised by
 $\lambda(\mathrm{vol}) = 1$).
-That $\star_q^2 = \mathrm{id}$ (i.e.\ $\star_q$ is an involution)
+That $\star^2 = \mathrm{id}$ (i.e.\ $\star$ is an involution)
 follows from the non-degeneracy of the Frobenius form~$\lambda$ and the
 involutivity of the antipode ($S^2 = \mathrm{id}$ on the centre
 of~$A$).
@@ -1107,6 +1106,23 @@ Like $q$ itself, $\hbar_q$ is not a universal constant but a field on $M$.
 As $q(p) \to 1$ (classicality), $\hbar_q(p) \to 0$ and quantum effects
 vanish; as $q(p) \to \infty$ (deep-quantum regime), $\hbar_q(p) \to 1$.
 \end{remark}
+
+\begin{definition}[$q$-Hodge star]
+\label{def:q-hodge-star}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+categorical Hodge star $\star$
+(Definition~\ref{def:categorical-hodge-star}) and substrate
+parameter~$q$ (Definition~\ref{def:substrate-parameter}).  The
+\emph{$q$-Hodge star} is the $q$-deformed involution
+$\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
+\[
+  \alpha \wedge_q \star_q \beta
+  \;=\; q \cdot \lambda\bigl(\alpha^* \cdot \beta\bigr)\;\mathrm{vol}.
+\]
+At $q = 1$ this recovers the categorical Hodge star:
+$\star_1 = \star$.  The factor of~$q$ rescales the inner product on
+forms, coupling the Hodge duality to the local deformation strength.
+\end{definition}
 
 % ── Particles, Fermions, Bosons, Observation ────────────────────────────────
 
