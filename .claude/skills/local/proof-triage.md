@@ -355,6 +355,30 @@ Update them after each triage pass.
 - **Sorry comments**: after each failed attempt, update the sorry comment with
   what was tried.  This saves future triage passes from repeating work.
 
+## Content Object Integration
+
+Each formalizable item lives as a **triple**: `block.ts` (typed manifest with
+`kind`, `label`, `status`, `lean.decl`), `block.md` (narrative), and
+`block.lean` (formalization). The `.ts` manifest is authoritative — it
+determines whether a block requires Lean and tracks formalization status.
+
+**Kind-aware filtering.** Only triage blocks whose `kind` requires Lean:
+- `definition`: `.lean` required — always triage if sorry present.
+- `theorem` / `lemma` / `proposition` / `corollary`: `.lean` expected — triage.
+- `example` / `remark` / `conjecture`: `.lean` optional — triage only if a
+  `.lean` sibling exists and contains sorry.
+- `prose` / `equation` / `diagram`: no Lean — **skip entirely**.
+
+**Dependency-driven prioritization.** Use the `uses[]` field in `.ts`
+manifests to order the work list: blocks depended on by many others should
+be resolved first. This replaces or supplements the DAG built from Lean
+imports in Phase 2.
+
+**Source of truth.** Content object `.ts` manifests carry a `status` field
+(`not_started` | `stated` | `has_sorry` | `proved`). After resolving a
+sorry, update the `.ts` status — `proof-objects.json` is derived from
+content objects, not the other way around.
+
 ## Checklist
 
 - [ ] All `.lean` files grepped for `sorry`

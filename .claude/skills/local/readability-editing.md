@@ -64,6 +64,29 @@ ideas to a graduate-level reader.
   verify that the blueprint entry carries `\leanok` (or flag that it
   does not yet).
 
+## Content Object Integration
+
+Narrative content lives in `.md` files that are part of content object
+triples (`.ts` manifest + `.md` content + optional `.lean` formalization).
+Readability edits target the `.md` files but may require `.ts` updates.
+
+**Editing `.md` files.** Content uses markdown conventions: inline math
+`$...$`, display math `$$...$$`, cross-references `[text](#label)` (which
+render as `\hyperref[label]{text}` in LaTeX). When editing, preserve these
+conventions — do not convert to raw LaTeX.
+
+**Metadata consistency.** If an edit changes the block's label, title, or
+introduces/removes dependencies, update the sibling `.ts` manifest:
+- Renamed labels must be updated in `label` and in all `uses[]` arrays
+  that reference them.
+- Adding a cross-reference `[text](#def:foo)` in `.md` means `def:foo`
+  should appear in `uses[]` of the `.ts` manifest.
+
+**Kind-aware editing.** The `.ts` `kind` determines what content is
+expected: `prose` blocks have no formal requirements; `definition` blocks
+must have self-contained definitions; `theorem` blocks should state the
+result clearly. Respect these expectations when restructuring content.
+
 ## Output Format
 
 ```

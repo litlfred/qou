@@ -71,6 +71,28 @@ peer-review practices and the methodology of
 - Knot Atlas URLs in `KnotRegistry.lean` docstrings must resolve to
   valid pages (format: `http://katlas.org/wiki/<ab_index>`).
 
+## Content Object Integration
+
+Scientific accuracy checks should leverage the content object triple
+architecture (`.ts` manifest + `.md` narrative + `.lean` formalization)
+for cross-validation.
+
+**Lean declaration verification.** The `lean.decl` field in each `.ts`
+manifest names the corresponding Lean declaration. Verify that:
+- The declaration exists in the `.lean` sibling file.
+- The Lean type signature matches the mathematical statement in `.md`.
+- The `status` field reflects reality (`proved` only if sorry-free).
+
+**Formalization cross-check.** Use `lean_hover_info` on the `lean.decl`
+to confirm the Lean type matches the narrative claim. Numerical constants
+in `.md` blocks must match their `noncomputable def` values in `.lean`.
+
+**Content object completeness.** For blocks with `kind: "definition"`,
+all three files must exist and be consistent. For `theorem`/`lemma`
+blocks, a missing `.lean` sibling is a warning. The `uses[]` dependency
+graph helps trace which upstream definitions a claim relies on — verify
+those are formalized too.
+
 ## Output Format
 
 ```

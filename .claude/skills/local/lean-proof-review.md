@@ -152,6 +152,30 @@ Eight new categorical structures added to `QuantumObservableUniverse.lean`:
 - `BringsSurface.lean` trivial proofs (`by rfl`): these are definitional
   equalities for genus/euler-char/etc. — correct and appropriate
 
+## Content Object Integration
+
+Each Lean file under review is part of a **content object triple**: the
+`.lean` sibling has a corresponding `.ts` manifest and `.md` narrative.
+Reviews must cross-check all three.
+
+**Manifest–Lean consistency.** Verify that:
+- The `lean.decl` field in the `.ts` manifest matches the actual Lean
+  declaration name in the `.lean` file.
+- The block `kind` matches the Lean content: `definition` blocks should
+  contain `def` or `structure`; `theorem`/`lemma` blocks should contain
+  `theorem` or `lemma`.
+- The `label` prefix is correct for the kind (`def:`, `thm:`, `lem:`,
+  `prop:`, `cor:`).
+
+**Dependency satisfaction.** The `uses[]` array in the `.ts` manifest
+lists content object labels this block depends on. Verify that the `.lean`
+file imports or references the Lean declarations corresponding to those
+dependencies. Missing imports suggest incomplete formalization.
+
+**Status accuracy.** After review, confirm the `.ts` `status` field
+reflects reality: `proved` only if the `.lean` file has no `sorry`,
+`has_sorry` if stubs remain.
+
 ## Checklist
 
 - [ ] All modified Lean files compile (`lake build`)

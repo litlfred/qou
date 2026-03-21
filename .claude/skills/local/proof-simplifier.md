@@ -86,6 +86,27 @@ When the MCP server is available, use it for analysis and alternatives:
 | `category-theory` | Consult for categorical simplifications (adjunction/naturality shortcuts) |
 | `proof-triage` | Feeds clusters to this skill based on complexity scores |
 
+## Content Object Integration
+
+Simplified proofs live within **content object triples** (`.ts` + `.md` +
+`.lean`). After simplifying a `.lean` file, ensure the content object
+stays consistent.
+
+**Post-simplification validation.** Run content object validation
+(`content_validate`) after changes to verify:
+- The `.ts` manifest's `lean.decl` still matches the (possibly renamed)
+  Lean declaration.
+- The `status` field is accurate — if simplification removes all sorry
+  stubs, update status from `has_sorry` to `proved`.
+- The `uses[]` dependencies are still correct — if a shared lemma was
+  extracted or a dependency removed, update `uses[]` accordingly.
+
+**Kind determines scope.** Only blocks with `kind` requiring Lean
+(`definition`, `theorem`, `lemma`, `proposition`, `corollary`) are
+candidates for proof simplification. The `uses[]` graph identifies the
+cluster boundary — simplify within a connected subgraph of content
+objects, not across unrelated blocks.
+
 ## Constraints
 
 - Never merge or delete declarations without author approval
