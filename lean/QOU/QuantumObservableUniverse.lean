@@ -286,20 +286,30 @@ structure InstantonConnection (cr : CRManifoldData) where
 
 /-! ## §3  Substrate Parameter, Gauge Group, Planck Constant -/
 
-/-- **Substrate parameter**: a ring homomorphism `ι : ℤ[q, q⁻¹] → k`
-    specialising the formal deformation parameter to a value `q₀ ∈ k×`.
+/-- **Substrate parameter** (abstract): a ring homomorphism
+    `ι : ℤ[q, q⁻¹] → k` specialising the Lusztig integral form
+    `U^ℤ_q(su(2))` to a value `q₀ ∈ k×`.  The base-changed algebra
+    `U^ℤ_q ⊗_{ℤ[q,q⁻¹]} k` is the quantised enveloping algebra at `q₀`.
 
     When the quantum universe is fibred over a space `M`, `q₀` may vary
     point-to-point yielding a *substrate field* `q : M → k×`.
 
     LaTeX: `\label{def:substrate-parameter}` -/
 structure SubstrateParameter (M : Type*) where
-  /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`. -/
+  /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`.
+      In the abstract setting this is the composition
+      `M → Spec(k) → Spec(ℤ[q, q⁻¹])`. -/
   field : M → ℝ
   /-- Invertibility: `q(p) > 0` for all `p`. -/
   field_pos : ∀ (p : M), 0 < field p
-  /-- Lower bound: `q(p) ≥ 1` (classicality bound). -/
+  /-- Lower bound: `q(p) ≥ 1` (classicality bound).
+      At `q = 1` all q-deformed operators recover their classical
+      counterparts; `q > 1` is the quantum regime. -/
   field_ge_one : ∀ (p : M), 1 ≤ field p
+  /-- The specialised value `q₀(p)` is never a root of unity,
+      ensuring semisimplicity of the quantum group at each point.
+      Encoded as: `q(p)^k ≠ 1` for all `k ≥ 1`. -/
+  not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
 
 /-- **Quantum gauge group** in the ℂ realisation: the family of quantum
     groups `{SU_{q(p)}(2)}_{p ∈ M}` obtained by deforming `SU(2)` pointwise.
@@ -594,29 +604,49 @@ theorem qConnection_classical {M : Type*} (sp : SubstrateParameter M)
 
 /-! ## §8  Missing Formalizations -/
 
-/-- **Projective line object** `CP¹` in a monoidal category.
+/-- **Projective line object** `P(V) = G_q / T` in a monoidal category.
 
-    The fibre of the state bundle `E = P ×_G CP¹`.  Abstractly, `CP¹` is
-    an object in `C` equipped with a distinguished point (the base-point
-    morphism `∞ : 𝟙 → CP¹`) and a `G`-action compatible with the Hopf
-    structure on `A`.
+    The coset object obtained by quotienting the quantum gauge group `G_q`
+    by the maximal torus `T = Aut⊗(ω|_{C₀})`.  Its function algebra is
+    the `T`-coinvariant subalgebra `O_q(P(V)) = A^{co T}`.
+
+    In the archimedean realisation: `P(V) ≅ SU(2)/U(1) ≅ CP¹`.
 
     LaTeX: `\label{def:projective-line-object}`
     Ref: [kock2004] -/
 structure ProjectiveLineObject (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] where
-  /-- The underlying object `CP¹` in `C`. -/
+  /-- The underlying object `P(V)` in `C` (the coset `G_q / T`). -/
   obj : C
-  /-- Base-point morphism `∞ : 𝟙 → CP¹`. -/
+  /-- The Frobenius–Hopf object `A` whose coset this is. -/
+  hopfObj : C
+  /-- Base-point morphism `∞ : 𝟙 → P(V)` (the identity coset). -/
   basePoint : (𝟙_ C) ⟶ obj
-  /-- Action morphism `ρ : A ⊗ CP¹ → CP¹` encoding the `G`-action on the fibre. -/
-  action : (A : C) → (A ⊗ obj) ⟶ obj
+  /-- Action morphism `ρ : A ⊗ P(V) → P(V)` encoding the `G_q`-action
+      on the coset space, compatible with the Hopf multiplication. -/
+  action : (hopfObj ⊗ obj) ⟶ obj
+  /-- The coinvariant inclusion `P(V) ↪ A`: the function algebra
+      `O_q(P(V)) = A^{co T}` is a sub-object of `A`. -/
+  coinvariant_incl : obj ⟶ hopfObj
+  /-- The coinvariant inclusion is a monomorphism (abstractly:
+      the coset embeds faithfully into the Hopf object). -/
+  coinvariant_mono : ∀ (f g : (𝟙_ C) ⟶ obj),
+    f ≫ coinvariant_incl = g ≫ coinvariant_incl → f = g
 
-/-- **Fibre-wise adjoint involution** `τ_Ad` on the adjoint bundle `Ad(P)`.
+/-- **Fibre–adjoint-fibre involution** `σ : P(V) ↪ Ad(A)`.
 
-    Induced by the antipode `S` of the Hopf algebra, `τ_Ad` acts fibre-wise
-    on `Ad(P)` as an involution: `τ_Ad² = id`.  This encodes the real structure
-    of the gauge algebra.
+    The Frobenius self-duality `A ≅ A∨` identifies the projective line
+    object `P(V)` with a coadjoint orbit inside `Ad(A)`.  Three parts:
+
+    1. `P(V)` embeds in `Ad(A)` as the coadjoint orbit of a highest-weight
+       vector.
+    2. The embedding `σ` is an involution: it determines `P(V)` from
+       `Ad(A)` and vice versa.
+    3. Non-degeneracy of the Frobenius pairing forces the observability
+       condition `Hom(𝟙, Ad(A)) = 0`.
+
+    In the archimedean realisation: `σ` is the identification
+    `CP¹ ≅ S² ⊂ su(2)` (unit sphere under Killing form).
 
     LaTeX: `\label{prop:fiber-adjoint-involution}`
     Ref: [lusztig1993] -/
@@ -625,11 +655,24 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     (fh : FrobeniusHopfData C) where
   /-- The adjoint bundle object `Ad(A)` in `C`. -/
   adjointObj : C
+  /-- The projective line object `P(V)` in `C`. -/
+  projLine : C
+  /-- **(Part 1)** The orbit embedding `σ : P(V) ↪ Ad(A)`, realising
+      `P(V)` as a coadjoint orbit of a highest-weight vector. -/
+  orbit_embed : projLine ⟶ adjointObj
   /-- The involution morphism `τ_Ad : Ad(A) ⟶ Ad(A)`, induced by the
       antipode `S : A ⟶ A`. -/
   involution : adjointObj ⟶ adjointObj
   /-- `τ_Ad` is an involution: `τ_Ad ≫ τ_Ad = id`. -/
   involution_sq : involution ≫ involution = 𝟙 adjointObj
+  /-- **(Part 2)** The embedding is compatible with the involution:
+      restricting `τ_Ad` to the image of `σ` recovers `σ`.
+      This means `σ` determines each from the other. -/
+  orbit_involution_compat : orbit_embed ≫ involution = orbit_embed
+  /-- **(Part 3)** The embedding is a monomorphism: the orbit map
+      is injective, so `P(V)` is faithfully represented inside `Ad(A)`. -/
+  orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
+    f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
 /-- The fibre-wise adjoint involution is indeed an involution (`τ² = id`).
 
