@@ -155,13 +155,21 @@
     .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f)}
     .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left}
 
+    /* Folio */
+    .folio-list{display:flex;flex-direction:column;gap:1rem}
+    .folio-card{background:var(--bg-s);border:1px solid var(--brd);border-radius:6px;padding:1.2rem 1.5rem;transition:border-color .15s,box-shadow .15s}
+    .folio-card:hover{border-color:var(--ac-d);box-shadow:0 2px 12px rgba(0,0,0,.15)}
+    .fc-title{font-family:var(--f-head);font-size:1.2rem;font-weight:600;color:var(--fg-b);margin-bottom:.3rem}
+    .fc-desc{font-size:.9rem;color:var(--fg);margin-bottom:.4rem}
+    .fc-meta{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d)}
+
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
 </head>
 <body data-font="paper">
   <div class="ctrl">
-    <span style="font-weight:500;color:var(--fg)">QOU</span>
+    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">QOU</a>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
@@ -172,8 +180,6 @@
 
   <div id="app"><div class="loading">loading paper.json...</div></div>
 
-  <!-- paper.js sets window.__PAPER_DATA__ — works with file:// (no fetch needed) -->
-  <script src="paper.js" onerror="/* ok — will try fetch instead */"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
     // ── State ────────────────────────────────────────────
@@ -603,29 +609,71 @@
       document.title = `${p.title} — QOU`;
     }
 
-    // ── Load ─────────────────────────────────────────────
-    async function load() {
-      // 1. Try inline data from paper.js (works with file://)
-      if (window.__PAPER_DATA__) {
-        renderPaper(window.__PAPER_DATA__);
-        return;
-      }
+    // ── Folio (paper listing) ────────────────────────────
+    function renderFolio(data) {
+      const app = document.getElementById('app');
+      app.innerHTML = '';
 
-      // 2. Try fetch (works with http server)
-      for (const src of ['paper.json','./paper.json','/api/paper','/viewer/paper.json']) {
-        try {
-          const r = await fetch(src);
-          if (r.ok) { renderPaper(await r.json()); return; }
-        } catch {}
-      }
+      const hdr = mk('div','hdr');
+      hdr.innerHTML = `<h1>${esc(data.title || 'Papers')}</h1>`;
+      app.appendChild(hdr);
 
-      document.getElementById('app').innerHTML =
-        '<div class="err">Could not load paper data.<br><br>' +
-        'Run: <code>bun run content/pipeline/export-json.ts</code><br>' +
-        'Then reload this page.</div>';
+      const list = mk('div','folio-list');
+      for (const p of (data.papers || [])) {
+        const card = mk('div','folio-card');
+        card.innerHTML = `
+          <h2 class="fc-title">${esc(p.title)}</h2>
+          ${p.description ? `<p class="fc-desc">${esc(p.description)}</p>` : ''}
+          <div class="fc-meta">${p.stats?.chapters ?? '?'} chapters · ${p.stats?.blocks ?? '?'} blocks</div>
+        `;
+        card.style.cursor = 'pointer';
+        card.onclick = () => {
+          location.hash = `#/paper/${p.id}`;
+        };
+        list.appendChild(card);
+      }
+      app.appendChild(list);
+      document.title = data.title || 'QOU';
     }
 
-    load();
+    // ── Router ────────────────────────────────────────────
+    async function route() {
+      const hash = location.hash || '#/';
+      const parts = hash.slice(2).split('/').filter(Boolean);
+
+      if (parts[0] === 'paper' && parts[1]) {
+        await loadPaper(parts[1]);
+      } else {
+        await loadFolio();
+      }
+    }
+
+    async function loadFolio() {
+      const app = document.getElementById('app');
+      app.innerHTML = '<div class="loading">loading folio...</div>';
+      try {
+        const r = await fetch('/api/folio');
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+        renderFolio(await r.json());
+      } catch (e) {
+        app.innerHTML = `<div class="err">Could not load folio: ${esc(e.message)}<br><br>Ensure the MCP server is running (port 3200).</div>`;
+      }
+    }
+
+    async function loadPaper(id) {
+      const app = document.getElementById('app');
+      app.innerHTML = '<div class="loading">loading paper...</div>';
+      try {
+        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+        renderPaper(await r.json());
+      } catch (e) {
+        app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
+      }
+    }
+
+    window.addEventListener('hashchange', route);
+    route();
   </script>
 </body>
 </html>
