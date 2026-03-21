@@ -162,6 +162,8 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
@@ -260,6 +262,8 @@ export interface ProseBlock {
   /** Pre-rendered assets for ```tex blocks. */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 }
 
 // ── Display math / equations ─────────────────────────────────────
@@ -275,6 +279,8 @@ export interface EquationBlock {
   /** Pre-rendered equation (e.g. SVG from MathJax/KaTeX server). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 }
 
 // ── Diagrams ─────────────────────────────────────────────────────
@@ -292,6 +298,8 @@ export interface DiagramBlock {
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 }
 
 // ── The discriminated union ──────────────────────────────────────
@@ -376,6 +384,8 @@ export interface Chapter {
   /** Sections can be inline Section objects or SectionRef references. */
   sections: (Section | SectionRef)[];
   meta?: Record<string, unknown>;
+  /** Chapter-level todos. */
+  todos?: TodoItem[];
 }
 
 /**
@@ -393,6 +403,8 @@ export interface Paper {
   /** Chapter references — URIs to chapter .ts manifests. */
   chapters: ChapterRef[];
   meta?: Record<string, unknown>;
+  /** Paper-level todos (cross-cutting concerns, overall tasks). */
+  todos?: TodoItem[];
 }
 
 /**
@@ -404,6 +416,73 @@ export interface Document {
   date?: string;
   chapters: Chapter[];
   meta?: Record<string, unknown>;
+}
+
+// ── Todo items ───────────────────────────────────────────────
+
+/**
+ * Priority level for a todo item.
+ * Agents and humans use these to triage work.
+ */
+export type TodoPriority = "critical" | "high" | "medium" | "low";
+
+/**
+ * Status of a todo item through its lifecycle.
+ */
+export type TodoStatus =
+  | "open"          // newly created, awaiting triage
+  | "in_progress"   // actively being worked on
+  | "blocked"       // waiting on external input (author, upstream change)
+  | "resolved"      // completed successfully
+  | "wontfix";      // closed without resolution
+
+/**
+ * Origin of a todo — who/what created it.
+ */
+export type TodoOrigin =
+  | "agent"         // created by an editor/proof agent
+  | "human"         // created by author via feedback UI
+  | "qc"            // created by QC/validation pipeline
+  | "extracted";    // extracted from existing proof-objects/comments
+
+/**
+ * A todo item attached to a content block or section.
+ *
+ * Serves as the unit of agent-to-agent and human-to-agent communication.
+ * Each todo lives in the `todos` field of a block manifest (.ts) or in a
+ * standalone todos manifest for section/chapter-level items.
+ *
+ * The `comment` field is a quick markdown narrative.  The optional `data`
+ * field carries structured context at the discretion of the creating
+ * agent or user.
+ */
+export interface TodoItem {
+  /** Unique ID (e.g. "todo-001" or a nanoid). */
+  id: string;
+  /** Short summary (one line). */
+  summary: string;
+  /** Markdown narrative with context, rationale, questions. */
+  comment: string;
+  /** Current lifecycle status. */
+  status: TodoStatus;
+  /** Triage priority. */
+  priority: TodoPriority;
+  /** Who/what created this todo. */
+  origin: TodoOrigin;
+  /** Label of the block this todo is attached to (e.g. "def:rigid-monoidal-category"). */
+  targetLabel?: string;
+  /** Who this is assigned to (agent name or "author"). */
+  assignee?: string;
+  /** ISO 8601 timestamp of creation. */
+  createdAt: string;
+  /** ISO 8601 timestamp of last update. */
+  updatedAt?: string;
+  /** Agent/user who last updated. */
+  updatedBy?: string;
+  /** Structured data — schema is at agent/user discretion. */
+  data?: Record<string, unknown>;
+  /** Labels of related todos (for threading). */
+  related?: string[];
 }
 
 // ── Validation result ────────────────────────────────────────────

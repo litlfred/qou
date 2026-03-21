@@ -32,6 +32,10 @@ export type {
   ChapterRef,
   Paper,
   Document,
+  TodoItem,
+  TodoPriority,
+  TodoStatus,
+  TodoOrigin,
   ValidationIssue,
   ValidationResult,
 } from "./types";
@@ -77,6 +81,7 @@ export {
   PaperSchema,
   DocumentSchema,
   LeanRefSchema,
+  TodoItemSchema,
   CONSTRAINT_RULES,
   type ConstraintRule,
   type ConstraintContext,

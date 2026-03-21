@@ -53,6 +53,24 @@ export const LeanRefSchema = z.object({
 
 export const CompanionsSchema = z.record(z.string().optional());
 
+// ── Todo schema ──────────────────────────────────────────────
+
+export const TodoItemSchema = z.object({
+  id: z.string().min(1),
+  summary: z.string().min(1),
+  comment: z.string(),
+  status: z.enum(["open", "in_progress", "blocked", "resolved", "wontfix"]),
+  priority: z.enum(["critical", "high", "medium", "low"]),
+  origin: z.enum(["agent", "human", "qc", "extracted"]),
+  targetLabel: z.string().optional(),
+  assignee: z.string().optional(),
+  createdAt: z.string(),
+  updatedAt: z.string().optional(),
+  updatedBy: z.string().optional(),
+  data: z.record(z.unknown()).optional(),
+  related: z.array(z.string()).optional(),
+});
+
 // ── Block schemas ────────────────────────────────────────────────
 
 const RenderedAssetSchema = z.object({
@@ -69,6 +87,7 @@ const BlockBaseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -131,6 +150,7 @@ export const ProseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const EquationSchema = z.object({
@@ -141,6 +161,7 @@ export const EquationSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const DiagramSchema = z.object({
@@ -152,6 +173,7 @@ export const DiagramSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 /** Discriminated union — validates any Block. */
@@ -188,6 +210,7 @@ export const ChapterSchema = z.object({
   label: z.string().optional(),
   sections: z.array(z.union([SectionSchema, SectionRefSchema])),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const ChapterRefSchema = z.object({
@@ -201,6 +224,7 @@ export const PaperSchema = z.object({
   date: z.string().optional(),
   chapters: z.array(ChapterRefSchema),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 /** @deprecated Use PaperSchema. */
