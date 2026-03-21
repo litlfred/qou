@@ -4,6 +4,10 @@
       "command": "uvx",
       "args": ["lean-lsp-mcp"],
       "cwd": "lean"
+    },
+    "paper-assistant": {
+      "command": "bun",
+      "args": ["run", "scripts/mcp-server/server.ts", "--stdio"]
     }
   }
 }
