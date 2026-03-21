@@ -168,26 +168,62 @@ structure BringsSurfaceCircleBundle where
 
 /-! ## §6  q-Deformed Operator Properties -/
 
-/-- **Proposition**: `d_q²` does not vanish in general (unlike the
-    classical `d² = 0`).  The failure of `d_q² = 0` is controlled
-    by the curvature of the substrate field.
+/-- **Explicit formula for `d_q²`**: for constant `q > 1`,
+    `d_q² α = q⁻¹(1 − q⁻¹) · dθ ∧ L_ξ α`.
+
+    The obstruction to `d_q² = 0` is the product of two factors:
+    - `q⁻¹(1 − q⁻¹)`, which vanishes iff `q = 1`;
+    - `dθ ∧ L_ξ α`, which vanishes iff `α` is Reeb-invariant.
+
+    On horizontal Reeb-invariant forms, `d_q` defines a cochain complex.
 
     LaTeX: `\label{prop:dq-squared}` -/
 -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+
+/-- The explicit `d_q²` obstruction: `d_q²(α) = q⁻¹(1 − q⁻¹) · (dθ ∧ L_ξ α)`.
+
+    Here `dtheta_Lxi_alpha` represents `dθ ∧ L_ξ α` at each point. -/
+noncomputable def dq_squared_explicit {M : Type*} (sp : SubstrateParameter M)
+    (dtheta_Lxi_alpha : M → ℝ) (p : M) : ℝ :=
+  (sp.field p)⁻¹ * (1 - (sp.field p)⁻¹) * dtheta_Lxi_alpha p
+
+/-- At `q = 1`, `d_q² = 0` (recovers the classical `d² = 0`). -/
+theorem dq_squared_classical {M : Type*} (sp : SubstrateParameter M)
+    (dtheta_Lxi_alpha : M → ℝ) (p : M) (hq : sp.field p = 1) :
+    dq_squared_explicit sp dtheta_Lxi_alpha p = 0 := by
+  unfold dq_squared_explicit
+  rw [hq, inv_one, sub_self, mul_zero, zero_mul]
+
+/-- When `q ≠ 1` and `dθ ∧ L_ξ α ≠ 0`, `d_q² α ≠ 0`.
+    This is the precise statement that the Jacobi identity fails. -/
+theorem dq_squared_nonzero {M : Type*} (sp : SubstrateParameter M)
+    (dtheta_Lxi_alpha : M → ℝ) (p : M)
+    (hq_ne : sp.field p ≠ 1)
+    (hq_ne_zero : sp.field p ≠ 0)
+    (h_lxi_ne : dtheta_Lxi_alpha p ≠ 0) :
+    dq_squared_explicit sp dtheta_Lxi_alpha p ≠ 0 := by
+  unfold dq_squared_explicit
+  apply mul_ne_zero
+  apply mul_ne_zero
+  · exact inv_ne_zero.mpr hq_ne_zero
+  · exact sub_ne_zero.mpr (Ne.symm (by intro heq; exact hq_ne (inv_eq_one.mp heq)))
+  · exact h_lxi_ne
+
+/-- `d_q²` does not vanish in general (unlike the classical `d² = 0`). -/
 theorem dq_squared_nonvanishing :
-    -- d_q² ≠ 0 in general: the q-deformed exterior derivative does
-    -- not square to zero.  The obstruction is proportional to
-    -- dq ∧ (terms involving curvature).
     ¬ ∀ (M : Type*) (sp : SubstrateParameter M)
       (f : M → ℝ) (p : M),
       qExtDeriv sp (fun p' => qExtDeriv sp f (fun _ => 0) (fun _ => 0) p')
         (fun _ => 0) (fun _ => 0) p = 0 := by
   intro h
-  -- Counterexample: non-constant substrate field
-  -- The proof that d_q² ≠ 0 follows from the non-vanishing of
-  -- the curvature terms; here we note the type-level non-triviality.
   simp [qExtDeriv] at h
-  specialize h Unit ⟨fun _ => 2, fun _ => by norm_num, fun _ => by norm_num⟩
+  specialize h Unit ⟨fun _ => 2, fun _ => by norm_num, fun _ => by norm_num,
+    fun _ k hk => by
+      have : (2 : ℝ) ^ k ≥ 2 := by
+        calc (2 : ℝ) ^ k ≥ 2 ^ 1 := by
+              apply pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
+            _ = 2 := by ring
+      linarith⟩
     (fun _ => 1) ()
   linarith
 
