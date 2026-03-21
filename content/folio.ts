@@ -17,6 +17,14 @@ export default folio({
         "higher-form symmetries, and observable algebras.",
       tags: ["quantum", "category-theory", "formalization"],
     }),
+    paperRef({
+      dir: "visualizer",
+      title: "QOU Visualizer",
+      description:
+        "Interactive views of QOU content — Bring's surface, " +
+        "knot complements (SnapPea), and dependency graphs.",
+      tags: ["visualizer", "snappea", "interactive"],
+    }),
     // Add more papers here as they are created:
     // paperRef({ dir: "fred2005", title: "Fred 2005", ... }),
   ],

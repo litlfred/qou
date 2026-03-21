@@ -147,8 +147,9 @@ When a Lean declaration corresponds to an existing mathlib result:
 ## Output Format
 
 The `proof-objects.json` manifest follows the schema at
-`schemas/proof-objects.schema.json`.  Lean declarations are referenced by
-their doc-gen4 URL — the Lean data model is **not** duplicated in JSON.
+`schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
+referenced by their doc-gen4 URL — the Lean data model is **not** duplicated
+in JSON.
 
 ## Blueprint Synchronization
 

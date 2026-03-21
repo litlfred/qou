@@ -135,14 +135,14 @@ describe("Schema files", () => {
     expect(existsSync(join(REPO_ROOT, "schemas/qou-types.ts"))).toBe(true);
   });
 
-  test("proof-objects.schema.json is valid", () => {
+  test("qou-types.ts contains ProofObjectsManifest", () => {
     const content = readFileSync(
-      join(REPO_ROOT, "schemas/proof-objects.schema.json"),
+      join(REPO_ROOT, "schemas/qou-types.ts"),
       "utf-8"
     );
-    const schema = JSON.parse(content);
-    expect(schema.$schema).toContain("json-schema.org");
-    expect(schema).toHaveProperty("$defs");
+    expect(content).toContain("ProofObjectsManifest");
+    expect(content).toContain("VizState");
+    expect(content).toContain("SkillsConfig");
   });
 
   test("proof-objects.json matches schema version", () => {
