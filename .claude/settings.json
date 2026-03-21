@@ -10,6 +10,17 @@
           }
         ]
       }
+    ],
+    "PreCommit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/check-no-lean-artifacts.sh"
+          }
+        ]
+      }
     ]
   }
 }

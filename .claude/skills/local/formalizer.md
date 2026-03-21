@@ -248,6 +248,19 @@ structure HodgeInvolution (V : Type*) where
 Self-duality predicates follow as `f ≫ star = f` (categorical) or
 `star v = v` (concrete).
 
+## Adding New Dependencies
+
+When a proof requires a library not in `lakefile.toml`:
+
+1. Add the `[[require]]` entry to `lean/lakefile.toml`
+2. Run `cd lean && lake update` — this fetches the dep into `.lake/packages/`
+3. Run `lake exe cache get` if the dep has prebuilt oleans
+4. Run `lake build` to verify everything compiles
+5. **Only commit**: `lakefile.toml` and `lake-manifest.json`
+6. **Never commit**: `.lake/`, `lake-packages/`, `build/` (all gitignored)
+
+The MCP server will pick up new dependencies automatically after `lake build`.
+
 ## Blueprint Synchronization
 
 The Formalizer must keep Lean declarations in sync with the blueprint:

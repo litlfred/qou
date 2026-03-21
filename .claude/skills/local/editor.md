@@ -116,6 +116,14 @@ avoid timeouts.
 6. **Elaborate understanding**: as work progresses, deepen understanding of the
    mathematical structures. Record insights in the plan file for future
    reference.
+7. **Lean dependency management**: when any agent modifies `lakefile.toml`
+   (adds a `[[require]]`), immediately:
+   1. Run `cd lean && lake update` to fetch the new dependency
+   2. Run `lake exe cache get` if the new dep has a Mathlib-style cache
+   3. Run `lake build` to verify the build
+   4. Verify `lean/.lake/`, `lean/lake-packages/`, `lean/build/` remain
+      in `.gitignore` — **never commit Lean build artifacts**
+   5. Only commit: `lakefile.toml` and `lake-manifest.json`
 
 ## Interaction style
 
