@@ -102,8 +102,6 @@ export const DefinitionSchema = BlockBaseSchema.extend({
 });
 
 const ProvableBaseSchema = BlockBaseSchema.extend({
-  lean: LeanRefSchema.optional(),
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
   proofs: z.array(z.string()).optional(),
   examples: z.array(z.string()).optional(),
 });

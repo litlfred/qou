@@ -194,10 +194,6 @@ export interface DefinitionBlock extends BlockBase {
  * Lean is expected but may be WIP — missing lean triggers a warning, not an error.
  */
 interface ProvableBase extends BlockBase {
-  /** Lean declaration reference (expected but not strictly required). */
-  lean?: LeanRef;
-  /** Formalization progress. */
-  status?: FormalizationStatus;
   /** Labels of proof blocks for this result (like examples[]). */
   proofs?: string[];
   /** Labels of example blocks illustrating this result. */
@@ -348,10 +344,7 @@ export type EnvironmentBlock =
 /** Blocks that can (or must) have Lean declarations. */
 export type FormalizableBlock =
   | DefinitionBlock
-  | TheoremBlock
-  | LemmaBlock
-  | PropositionBlock
-  | CorollaryBlock;
+  | ProofBlock;
 
 // ── Document structure ───────────────────────────────────────────
 

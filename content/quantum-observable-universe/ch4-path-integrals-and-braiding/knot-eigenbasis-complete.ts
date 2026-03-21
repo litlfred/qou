@@ -6,8 +6,4 @@ export default proposition({
   tags: ["braid-group", "hecke-algebra", "knot-invariant", "schur-weyl"],
   uses: ["prop:braid-action-tensor"],
   proofs: ["prf:knot-eigenbasis-complete"],
-  lean: {
-    decl: "QOU.PathIntegrals.KnotEigenbasisComplete",
-    validation: "leanok",
-  },
 });

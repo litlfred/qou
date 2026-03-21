@@ -1108,9 +1108,9 @@
       if (block.label) d.id = block.label;
 
       const hdr = mkBlockHeader(block.kind, block.title, block.label);
-      // Lean icon in header — click to toggle lean source
+      // Lean icon — only for definitions (provable blocks get lean via proof blocks)
       let leanPanel = null;
-      if (block.lean) {
+      if (block.kind === 'definition' && block.lean) {
         const v = block.lean.validation || 'not_checked';
         const icon = leanIcon(v);
         if (icon) {

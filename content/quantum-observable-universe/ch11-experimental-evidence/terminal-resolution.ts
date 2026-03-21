@@ -5,10 +5,6 @@ export default proposition({
   title: "Terminal Resolution of Hadronic Mass",
   uses: ["prop:skein-mass-relation"],
   proofs: ["prf:terminal-resolution"],
-  lean: {
-    decl: "QOU.HadronicMass.terminal_resolution_hadronic_mass",
-    validation: "leanok",
-  },
   tags: ["mass", "hadronic"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/terminal-resolution-0.svg", blockIndex: 0, hash: "819cd133b41b" },

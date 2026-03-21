@@ -91,9 +91,9 @@ interface ResolvedBlock {
   title?: string;
   uses?: string[];
   examples?: string[];
+  proofs?: string[];
   lean?: { decl: string; file?: string; validation?: string; source?: string };
   status?: string;
-  hasProof?: boolean;
   tex?: string;
   caption?: string;
   tags?: string[];
@@ -262,9 +262,9 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             title: blk.title,
             uses: blk.uses,
             examples: blk.examples,
+            proofs: blk.proofs,
             lean: blk.lean ? { ...blk.lean, source: leanSource } : undefined,
             status: blk.status,
-            hasProof: blk.hasProof,
             tex: blk.tex,
             caption: blk.caption,
             tags: blk.tags,
