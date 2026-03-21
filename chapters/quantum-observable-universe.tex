@@ -9,20 +9,50 @@ A \emph{monoidal category} $(\mathcal{C}, \otimes, \mathbf{1})$ is a
 category equipped with a bifunctor
 $\otimes \colon \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ (the
 \emph{tensor product}), a unit object~$\mathbf{1}$, and natural
-isomorphisms expressing associativity and unitality.
+isomorphisms expressing associativity and unitality:
+\[
+\begin{tikzcd}[column sep=3em]
+  (X \otimes Y) \otimes Z
+    \ar[r, "\alpha_{X,Y,Z}", "\sim"']
+  & X \otimes (Y \otimes Z),
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[column sep=2.5em]
+  \mathbf{1} \otimes X
+    \ar[r, "\ell_X", "\sim"']
+  & X
+  & X \otimes \mathbf{1}.
+    \ar[l, "\rho_X"', "\sim"]
+\end{tikzcd}
+\]
 
 The category is \emph{rigid} if every object $V$ has a \emph{dual}
 $V^{\vee}$ together with morphisms
-\[
-  \mathrm{ev}_V \colon V \otimes V^{\vee} \to \mathbf{1},
-  \qquad
-  \mathrm{coev}_V \colon \mathbf{1} \to V^{\vee} \otimes V,
-\]
-satisfying the snake identities
-$(\mathrm{ev}_V \otimes \mathrm{id}_V) \circ
-(\mathrm{id}_V \otimes \mathrm{coev}_V) = \mathrm{id}_V$
-(and symmetrically for~$V^{\vee}$).
-
+$\mathrm{ev}_V \colon V \otimes V^{\vee} \to \mathbf{1}$
+and
+$\mathrm{coev}_V \colon \mathbf{1} \to V^{\vee} \otimes V$
+such that the following \emph{snake identity} diagrams commute:
+\begin{equation}\label{eq:snake-identities}
+\begin{tikzcd}[row sep=2em, column sep=2.5em]
+  V
+    \ar[r, "\mathrm{id} \otimes \mathrm{coev}"]
+    \ar[dr, "\mathrm{id}_V"']
+  & V \otimes V^{\vee} \otimes V
+    \ar[d, "\mathrm{ev} \otimes \mathrm{id}"]
+  \\
+  & V
+\end{tikzcd}
+\qquad\qquad
+\begin{tikzcd}[row sep=2em, column sep=2.5em]
+  V^{\vee}
+    \ar[r, "\mathrm{coev} \otimes \mathrm{id}"]
+    \ar[dr, "\mathrm{id}_{V^{\vee}}"']
+  & V^{\vee} \otimes V \otimes V^{\vee}
+    \ar[d, "\mathrm{id} \otimes \mathrm{ev}"]
+  \\
+  & V^{\vee}
+\end{tikzcd}
+\end{equation}
 We say $\mathcal{C}$ is \emph{$R$-linear} (for a commutative ring~$R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
 \end{definition}
@@ -60,11 +90,35 @@ triple $(\mathcal{C}, A, \omega)$ where:
         monoidal category
         (Definition~\ref{def:rigid-monoidal-category});
   \item $A$ is a \emph{Frobenius--Hopf object} in~$\mathcal{C}$: an
-        object carrying both a Hopf algebra structure
-        $(\mu, \eta, \Delta, \varepsilon, S)$ and a Frobenius form
-        $\lambda \colon A \to \mathbf{1}$ making the pairing
-        $A \otimes A \xrightarrow{\mu} A \xrightarrow{\lambda} \mathbf{1}$
-        non-degenerate;
+        object equipped with morphisms
+        \[
+        \begin{tikzcd}[row sep=1.5em, column sep=2em]
+          A \otimes A \ar[r, "\mu"] & A \ar[r, "\lambda"] & \mathbf{1}
+          \\
+          \mathbf{1} \ar[r, "\eta"] & A
+          \\
+          A \ar[r, "\Delta"] & A \otimes A
+          & A \ar[l, "\varepsilon"']
+          & A \ar[l, "S"']
+        \end{tikzcd}
+        \]
+        --- multiplication~$\mu$, unit~$\eta$, comultiplication~$\Delta$,
+        counit~$\varepsilon$, antipode~$S$, and Frobenius
+        form~$\lambda$ --- satisfying:
+        \begin{enumerate}
+          \item[\textup{(H)}] $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
+                a Hopf algebra object in~$\mathcal{C}$;
+          \item[\textup{(F)}] the \emph{Frobenius pairing} is
+                non-degenerate:
+                \begin{equation}\label{eq:frobenius-pairing}
+                \begin{tikzcd}[column sep=2.5em]
+                  A \otimes A \ar[r, "\mu"]
+                  & A \ar[r, "\lambda"]
+                  & \mathbf{1}
+                \end{tikzcd}
+                \end{equation}
+                induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
+        \end{enumerate}
   \item $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
         \emph{fibre functor}: an exact, faithful, $R$-linear monoidal
         functor;
@@ -90,22 +144,38 @@ $(\mathcal{C}, A, \omega)$ is a quantum universe over~$\mathbb{C}$.
 \label{def:quantum-observable-universe}
 \lean{QOU.QuantumObservableUniverse}\leanok
 A quantum universe $(\mathcal{C}, A, \omega)$ over~$R$
-(Definition~\ref{def:quantum-universe}) is \emph{observable} if:
+(Definition~\ref{def:quantum-universe}) is \emph{observable} if the
+following three conditions hold:
 \begin{enumerate}
-  \item \emph{(non-degeneracy)} the Frobenius form $\lambda$ on $A$ is
-        non-degenerate;
+  \item \emph{(non-degeneracy)} the Frobenius pairing
+        \eqref{eq:frobenius-pairing} induces an isomorphism
+        $A \xrightarrow{\;\sim\;} A^{\vee}$;
   \item \emph{(observability)} $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
         \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
-        ($A$ acted on by conjugation); and
+        ($A$ acted on by conjugation); that is, every morphism
+        $\mathbf{1} \to \mathrm{Ad}(A)$ is zero:
+        \[
+        \begin{tikzcd}[column sep=2.5em]
+          \mathbf{1} \ar[r, "0"] & \mathrm{Ad}(A)
+        \end{tikzcd}
+        \]
   \item \emph{(categorical volume constraint)}
         \label{def:categorical-volume-constraint}
         let $V$ denote the fundamental object of~$\mathcal{C}$ (the simple
         object of categorical dimension~$2$); there exists a
-        non-degenerate epimorphism
+        non-degenerate epimorphism $\epsilon$ preserved by the rigid
+        dualities, making the following diagram commute for every
+        $g \in \mathrm{Aut}^{\otimes}(\omega)$:
         \begin{equation}\label{eq:categorical-volume-constraint}
-          \epsilon \colon \Lambda^2 V \;\longrightarrow\; \mathbf{1}
+        \begin{tikzcd}[row sep=2.5em, column sep=3em]
+          \Lambda^2 V \ar[r, "\Lambda^2 g_V"]
+                      \ar[d, "\epsilon"', two heads]
+          & \Lambda^2 V \ar[d, "\epsilon", two heads]
+          \\
+          \mathbf{1} \ar[r, "g_{\mathbf{1}} = \mathrm{id}"']
+          & \mathbf{1}
+        \end{tikzcd}
         \end{equation}
-        preserved by the rigid dualities of~$\mathcal{C}$.
 \end{enumerate}
 \end{definition}
 
@@ -142,15 +212,24 @@ $V = V_{1/2} \cong \mathbb{C}^2$:
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe
 (Definition~\ref{def:quantum-universe}).  Denote by $\Delta_\mu$ the
 comultiplication on~$A$ dual to the multiplication~$\mu$ under the
-Frobenius pairing
-$A \otimes A \xrightarrow{\mu} A \xrightarrow{\lambda} \mathbf{1}$.
-Then the \emph{Frobenius relation} holds:
-\[
-  (\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)
-  \;=\; \Delta_\mu \circ \mu.
-\]
+Frobenius pairing~\eqref{eq:frobenius-pairing}.  Then the following
+diagram commutes (the \emph{Frobenius relation}):
+\begin{equation}\label{eq:frobenius-relation}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  A \otimes A
+    \ar[r, "\mathrm{id} \otimes \Delta_\mu"]
+    \ar[d, "\mu"']
+  & A \otimes A \otimes A
+    \ar[d, "\mu \otimes \mathrm{id}"]
+  \\
+  A \ar[r, "\Delta_\mu"']
+  & A \otimes A
+\end{tikzcd}
+\end{equation}
 That is, sliding a multiplication past a comultiplication (or vice versa)
-yields the same result as composing them.
+yields the same result as composing them:
+$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)
+= \Delta_\mu \circ \mu$.
 \end{proposition}
 
 \begin{proof}
@@ -168,16 +247,22 @@ category, and let $V$ be an object of categorical dimension~$2$ that is
 \emph{symplectically self-dual}: there exists an isomorphism
 $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
 $\phi^{\vee} = -\phi$ (alternating).  Then the composite
+$\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through
+$\Lambda^2 V$:
 \[
-  \epsilon
-  \;\colon\;
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
   V \otimes V
-  \xrightarrow{\;\mathrm{id} \otimes \phi\;}
-  V \otimes V^{\vee}
-  \xrightarrow{\;\mathrm{ev}_V\;}
-  \mathbf{1}
+    \ar[r, "\mathrm{id} \otimes \phi"]
+    \ar[d, "\pi"', two heads]
+  & V \otimes V^{\vee}
+    \ar[d, "\mathrm{ev}_V"]
+  \\
+  \Lambda^2 V
+    \ar[r, "\epsilon"', dashed]
+  & \mathbf{1}
+\end{tikzcd}
 \]
-factors through $\Lambda^2 V$ and is non-degenerate; that is,
+and $\epsilon$ is non-degenerate; that is,
 condition~\textup{(iii)} of
 Definition~\textup{\ref{def:quantum-observable-universe}} holds.
 \end{lemma}
@@ -218,16 +303,17 @@ $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 \eqref{eq:categorical-volume-constraint}.  Applying~$\omega$ yields the
 commutative diagram of $R$-modules
 \begin{equation}\label{eq:su2-emergence-diagram}
-\begin{CD}
-\Lambda^2 \omega(V)
-  @>{\Lambda^2 g_V}>>
-  \Lambda^2 \omega(V) \\
-@V{\omega(\epsilon)}VV
-  @VV{\omega(\epsilon)}V \\
-\omega(\mathbf{1})
-  @>>{g_{\mathbf{1}} \,=\, \mathrm{id}}>
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  \Lambda^2 \omega(V)
+    \ar[r, "\Lambda^2 g_V"]
+    \ar[d, "\omega(\epsilon)"']
+  & \Lambda^2 \omega(V)
+    \ar[d, "\omega(\epsilon)"]
+  \\
   \omega(\mathbf{1})
-\end{CD}
+    \ar[r, "g_{\mathbf{1}} = \mathrm{id}"']
+  & \omega(\mathbf{1})
+\end{tikzcd}
 \end{equation}
 The fundamental object $V$ has categorical dimension~$2$, so
 $\omega(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \omega(V)$ has
@@ -355,20 +441,33 @@ $\Omega^k(A) = \bigwedge_A^k \Omega^1(A)$ for the higher differential
 forms (external tensor powers of the $A$-bimodule~$\Omega^1(A)$).
 
 A \emph{connection} on~$A$ is a morphism
-$\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying the
-Leibniz rule
+$\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying
+the Leibniz rule:
 \[
-  \nabla(a \cdot b)
-  \;=\; \nabla(a) \cdot b \;+\; a \cdot \nabla(b),
-  \qquad a, b \in A.
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  A \otimes A
+    \ar[r, "\mu"]
+    \ar[d, "\nabla \otimes \mathrm{id}\;+\;\mathrm{id} \otimes \nabla"']
+  & A \ar[d, "\nabla"]
+  \\
+  (A \otimes \Omega^1) \otimes A
+    \;+\; A \otimes (A \otimes \Omega^1)
+    \ar[r]
+  & A \otimes \Omega^1(A)
+\end{tikzcd}
 \]
+that is, $\nabla(\mu(a \otimes b)) =
+\nabla(a) \cdot b + a \cdot \nabla(b)$.
 The \emph{curvature} of~$\nabla$ is the composition
 \[
-  F_\nabla
-  \;=\; \nabla^2
-  \;\colon\; A \;\longrightarrow\; A \otimes \Omega^2(A),
+\begin{tikzcd}[column sep=3em]
+  A \ar[r, "\nabla"]
+  & A \otimes \Omega^1(A) \ar[r, "\nabla"]
+  & A \otimes \Omega^2(A)
+\end{tikzcd}
 \]
-which is $A$-linear (a standard consequence of the Leibniz rule).
+denoted $F_\nabla = \nabla^2$, which is $A$-linear (a standard
+consequence of the Leibniz rule).
 \end{definition}
 
 \begin{definition}[$q$-Hodge star]
@@ -1222,14 +1321,17 @@ $q$-weighted Yang--Mills--Levi functional $S_q$
 (Definition~\ref{def:q-yang-mills-levi}), and let $\nabla^A$ denote
 parallel transport along $A$.  The following diagram commutes:
 \[
-\begin{CD}
-J^1E @>{\mathbf{E}[S_q]}>>
-  \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\} \\
-@V{\text{jet evaluation}}VV
-  @VV{q = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert}V \\
-\Gamma(E_{\mathrm{lin}}) @>{\nabla^A}>>
-  \bigl\{ \psi : J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi \bigr\}
-\end{CD}
+\begin{tikzcd}[row sep=2.5em, column sep=2.5em]
+  J^1E
+    \ar[r, "\mathbf{E}{[S_q]}"]
+    \ar[d, "\text{jet evaluation}"']
+  & \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\}
+    \ar[d, "{q = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert}"]
+  \\
+  \Gamma(E_{\mathrm{lin}})
+    \ar[r, "\nabla^A"']
+  & \bigl\{ \psi : J\hbar_q\,\iota_{\xi_q}D_A\psi = \hat{H}_q\psi \bigr\}
+\end{tikzcd}
 \]
 where the top row sends a jet (a first-order perturbation of the gauge field)
 to the Einstein-type field equation via the Euler--Lagrange operator; the
