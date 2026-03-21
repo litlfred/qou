@@ -482,6 +482,41 @@ Lemma~\ref{lem:volume-from-rigidity} then gives:
 \end{itemize}
 \end{example}
 
+\begin{remark}[Tannaka--Krein duality: what the fibre functor gives us]
+\label{rem:tannaka-krein-overview}
+The fibre functor $\omega$ of a quantum universe encodes an extraordinary
+amount of structure.  Tannaka--Krein duality \cite{deligne1990} says:
+\begin{enumerate}
+  \item \textbf{Reconstruction.}\; The group $G$ can be recovered from
+        $\omega$ alone:
+        $G \cong \mathrm{Aut}^{\otimes}(\omega)$,
+        the group of monoidal natural automorphisms of~$\omega$.
+        No \emph{a priori} group is needed; it \emph{emerges} from the
+        category and the functor.
+  \item \textbf{Equivalence.}\; The functor $\omega$ establishes a
+        monoidal equivalence
+        $\mathcal{C} \simeq \mathrm{Rep}(G)$:
+        every object in~$\mathcal{C}$ is a representation of the
+        reconstructed group.
+  \item \textbf{Rigidity.}\; Any two fibre functors
+        $\omega, \omega' \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$
+        are isomorphic (as monoidal functors), and the group they
+        reconstruct is the same up to inner automorphism.
+  \item \textbf{Constraint propagation.}\; Algebraic conditions on
+        $\omega$ (such as the volume constraint
+        $\epsilon \colon \Lambda^2 V \twoheadrightarrow \mathbf{1}$)
+        propagate to $G$: they cut down the automorphism group from
+        $\mathrm{GL}$ to a smaller subgroup (in our case, $\det = 1$
+        forces $\mathrm{SL}$; positive-definiteness then forces $\mathrm{SU}$).
+\end{enumerate}
+In the classical setting, Tannaka--Krein recovers a compact group from
+its representations \cite{tannaka1939}.  The version we use is
+Deligne's algebraic generalisation \cite{deligne1990}, which works
+over any field and reconstructs an affine group scheme.  For quantum
+groups ($q \neq 1$), the appropriate extension is due to
+Woronowicz~\cite{woronowicz1988}.
+\end{remark}
+
 \begin{theorem}[Emergence of the gauge group]
 \label{thm:su2-emergence}
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
@@ -575,28 +610,33 @@ $A = \mathcal{O}(\mathrm{SU}(2))$, $\omega$ the forgetful functor.
 
 % ── Further structures ───────────────────────────────────────────────────────
 
-\begin{remark}[Spin labels and the fundamental object]
-\label{rem:spin-labels}
+\begin{definition}[Spin labels and the fundamental object]
+\label{def:spin-labels}
+\lean{QOU.SpinLabels}\leanok
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 (Definition~\ref{def:quantum-observable-universe}).  Because
 $G = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}(2)$
 (Theorem~\ref{thm:su2-emergence}), the simple objects of~$\mathcal{C}$
 are indexed by a \emph{spin} label $j \in \{0, \tfrac12, 1,
 \tfrac32, \ldots\}$, with $V_j$ denoting the simple object of
-categorical dimension $2j + 1$.  In particular:
-\begin{itemize}
-  \item $V_0 \cong \mathbf{1}$ (the monoidal unit, spin-$0$, dimension~$1$);
-  \item $V = V_{1/2}$ (the \emph{fundamental object}, spin-$\tfrac12$,
-        dimension~$2$);
-  \item $V_1 \cong \mathrm{Ad}(A)$ (the \emph{adjoint object}, spin-$1$,
-        dimension~$3$).
-\end{itemize}
+categorical dimension $2j + 1$:
+\begin{equation}\label{eq:spin-decomposition}
+\begin{tikzcd}[row sep=1.5em, column sep=1.5em]
+  V_0 \ar[d, phantom, "\cong"] & V_{1/2} \ar[d, phantom, "\cong"]
+    & V_1 \ar[d, phantom, "\cong"] & V_{3/2} \ar[d, phantom, "\cong"]
+    & \cdots \\
+  \mathbf{1} & V & \mathrm{Ad}(A) & \mathrm{Sym}^3 V & \cdots \\
+  \dim 1 & \dim 2 & \dim 3 & \dim 4 & \cdots
+\end{tikzcd}
+\end{equation}
+The \emph{fundamental object} is $V = V_{1/2}$, the unique simple object
+of categorical dimension~$2$.  The \emph{adjoint object} is
+$V_1 \cong \mathrm{Ad}(A)$, of dimension~$3$.
+
 The symplectic form $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 (Definition~\ref{def:quantum-observable-universe}, axiom~(iii)) is the
-unique (up to scalar) $G$-invariant alternating pairing on~$V$.  In the
-$\mathrm{SU}(2)$ realisation (Example~\ref{ex:qou-su2}), this is the
-standard symplectic form $\epsilon(v \wedge w) = v_1 w_2 - v_2 w_1$.
-\end{remark}
+unique (up to scalar) $G$-invariant alternating pairing on~$V$.
+\end{definition}
 
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}

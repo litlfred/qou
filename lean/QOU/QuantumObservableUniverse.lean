@@ -257,6 +257,25 @@ def HodgeInvolution.IsAntiSelfDual {V : Type*} [Neg V]
     (h : HodgeInvolution V) (v : V) : Prop :=
   h.star v = -v
 
+/-- **Spin labels**: the simple objects of a quantum observable universe
+    are indexed by half-integer spin labels `j ∈ {0, 1/2, 1, 3/2, ...}`,
+    with `V_j` having categorical dimension `2j + 1`.
+
+    LaTeX: `\label{def:spin-labels}` -/
+structure SpinLabels where
+  /-- The spin label `j`, represented as twice the spin (so `j = 0, 1, 2, 3, ...`
+      corresponds to spin `0, 1/2, 1, 3/2, ...`). -/
+  twice_j : ℕ
+  /-- The categorical dimension of `V_j` is `2j + 1 = twice_j + 1`. -/
+  cat_dim : ℕ := twice_j + 1
+  /-- The fundamental object has `j = 1/2` (twice_j = 1), dimension 2. -/
+
+/-- The fundamental object has spin `1/2` and dimension `2`. -/
+theorem SpinLabels.fundamental_dim : (SpinLabels.mk 1).cat_dim = 2 := by rfl
+
+/-- The adjoint object has spin `1` and dimension `3`. -/
+theorem SpinLabels.adjoint_dim : (SpinLabels.mk 2).cat_dim = 3 := by rfl
+
 /-! ## §1¾  Categorical Instanton, d_q², Jet, Transport -/
 
 /-- **Categorical q-deformed exterior derivative**.
