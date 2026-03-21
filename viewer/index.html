@@ -110,6 +110,12 @@
     .blk-stub.remark .stub-kind{color:var(--fg-d)}
     .blk-stub.example .stub-kind{color:var(--grn)}
     .blk-stub.proof .stub-kind{color:var(--fg-d);font-style:italic}
+
+    /* Lean source code block */
+    .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
+    .lean-src-hdr{display:flex;align-items:center;justify-content:space-between;padding:.25rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d)}
+    .lean-src pre{margin:0;padding:.6rem .8rem;font-family:var(--f-mono);font-size:.75rem;line-height:1.5;overflow-x:auto;background:var(--bg-c)!important}
+    .lean-src code{font-family:var(--f-mono);font-size:.75rem}
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
@@ -120,7 +126,7 @@
       .todo-inline,.blk-stub,.feedback-overlay,.feedback-panel,
       .hash,.decor,.lb,.blk-foot,.bl,.sb-badge,.ex-toggle,
       .ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu,
-      .bh-drop,.tags,.uses,.uref,.upnl{display:none!important}
+      .bh-drop,.tags,.uses,.uref,.upnl,.lean-src{display:none!important}
       body.has-sidebar #app{margin-left:0!important}
 
       /* ── Page geometry (LaTeX article defaults) ─────────── */
@@ -1046,6 +1052,9 @@
           bb.innerHTML = bh + '<div class="qed"></div>';
           fillTex(bb, tx, block.rendered);
           renderMath(bb);
+          // Add lean source if available
+          const leanEl = mkLeanSrc(block);
+          if (leanEl) d.appendChild(leanEl);
         });
         return frag;
       }
@@ -1193,6 +1202,9 @@
                 prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
                 fillTex(prfDiv, ptx, prfBlock.rendered);
                 renderMath(prfDiv);
+                // Lean source for this proof
+                const prfLean = mkLeanSrc(prfBlock);
+                if (prfLean) prfDiv.appendChild(prfLean);
                 panel.appendChild(prfDiv);
               }
             });
@@ -1208,6 +1220,9 @@
         bb.innerHTML = bh;
         fillTex(bb, tx, block.rendered);
         renderMath(bb);
+        // Add lean source if available
+        const leanEl = mkLeanSrc(block);
+        if (leanEl) d.appendChild(leanEl);
       });
 
       return d;
@@ -1228,6 +1243,59 @@
         el.appendChild(b);
       }
       el.appendChild(s);
+    }
+
+    // Shiki highlighter (lazy-loaded)
+    let shikiHighlighter = null;
+    async function getShiki() {
+      if (shikiHighlighter) return shikiHighlighter;
+      try {
+        const { createHighlighter } = await import('https://esm.sh/shiki@3.2.1');
+        shikiHighlighter = await createHighlighter({
+          themes: ['github-light', 'github-dark'],
+          langs: ['lean4'],
+        });
+        return shikiHighlighter;
+      } catch (e) {
+        console.warn('Shiki load failed:', e);
+        return null;
+      }
+    }
+
+    function mkLeanSrc(block) {
+      if (!block.lean?.source) return null;
+      const wrap = mk('div','lean-src');
+      const hdr = mk('div','lean-src-hdr');
+      hdr.innerHTML = `<span>${esc(block.lean.file || block.lean.decl)}</span>`;
+      wrap.appendChild(hdr);
+      const pre = document.createElement('pre');
+      pre.style.margin = '0';
+      const code = document.createElement('code');
+      code.textContent = block.lean.source;
+      code.style.fontFamily = 'var(--f-mono)';
+      code.style.fontSize = '.75rem';
+      pre.appendChild(code);
+      wrap.appendChild(pre);
+      // Async highlight with Shiki
+      getShiki().then(hl => {
+        if (!hl) return;
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'github-dark' : 'github-light';
+        const html = hl.codeToHtml(block.lean.source, { lang: 'lean4', theme });
+        // Replace pre with highlighted version
+        const container = mk('div','');
+        container.innerHTML = html;
+        const highlighted = container.querySelector('pre');
+        if (highlighted) {
+          highlighted.style.margin = '0';
+          highlighted.style.padding = '.6rem .8rem';
+          highlighted.style.fontSize = '.75rem';
+          highlighted.style.lineHeight = '1.5';
+          highlighted.style.overflowX = 'auto';
+          highlighted.style.borderRadius = '0';
+          wrap.replaceChild(highlighted, pre);
+        }
+      });
+      return wrap;
     }
 
     function mkTags(tags) {
