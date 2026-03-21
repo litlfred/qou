@@ -39,6 +39,8 @@ function labelForKind(kind: string) {
 
 const LeanValidationSchema = z.enum([
   "not_checked", "stub", "trivial", "external", "validated", "error",
+  "leanok",        // sorry-free, built successfully
+  "axioms_only",   // type-checks but uses axioms (no sorry)
 ]);
 
 export const LeanRefSchema = z.object({

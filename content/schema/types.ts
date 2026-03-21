@@ -74,7 +74,9 @@ export type LeanValidation =
   | "trivial"          // proof is `by trivial`, `by simp`, `by rfl`, etc.
   | "external"         // proof references external resource (mathlib, etc.)
   | "validated"        // built and type-checked successfully
-  | "error";           // build error
+  | "error"            // build error
+  | "leanok"           // sorry-free, built successfully
+  | "axioms_only";     // type-checks but uses axioms (no sorry)
 
 // ── Pre-rendered content ─────────────────────────────────────────
 
