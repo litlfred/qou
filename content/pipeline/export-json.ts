@@ -90,10 +90,19 @@ interface ExportedPaper {
 function readLeanSource(leanRef: LeanRef | undefined): string | undefined {
   if (!leanRef) return undefined;
 
-  // Try lean.file path
+  // Try explicit file path
   if (leanRef.file) {
     const leanPath = join(LEAN_ROOT, leanRef.file);
     if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
+  }
+
+  // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean
+  if (leanRef.decl) {
+    const parts = leanRef.decl.split(".");
+    for (let i = parts.length; i >= 2; i--) {
+      const candidate = join(LEAN_ROOT, parts.slice(0, i).join("/") + ".lean");
+      if (existsSync(candidate)) return readFileSync(candidate, "utf-8");
+    }
   }
 
   return undefined;

@@ -242,9 +242,24 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
 
           // Read Lean source if available
           let leanSource: string | undefined;
-          if (blk.lean?.file) {
-            const leanPath = join(LEAN_DIR, blk.lean.file);
-            if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+          if (blk.lean) {
+            // Try explicit file path first
+            if (blk.lean.file) {
+              const leanPath = join(LEAN_DIR, blk.lean.file);
+              if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+            }
+            // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean, etc.
+            if (!leanSource && blk.lean.decl) {
+              const parts = blk.lean.decl.split(".");
+              // Try progressively: QOU/Foo/Bar.lean, QOU/Foo.lean, QOU.lean
+              for (let i = parts.length; i >= 2; i--) {
+                const candidate = join(LEAN_DIR, parts.slice(0, i).join("/") + ".lean");
+                if (existsSync(candidate)) {
+                  leanSource = readFileSync(candidate, "utf-8");
+                  break;
+                }
+              }
+            }
           }
 
           // Rewrite rendered asset URLs to serve from content source
