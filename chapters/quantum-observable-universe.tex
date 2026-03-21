@@ -872,14 +872,21 @@ parameter~$q$ (Definition~\ref{def:substrate-parameter}).  The maximal
 torus $T \subset G = \mathrm{Aut}^{\otimes}(\omega)$
 (Definition~\ref{def:projective-line-object}) induces a
 $\mathbb{Z}$-grading on $\Omega^k(A)$
-(Remark~\ref{rem:higher-forms}): every $\alpha \in \Omega^k(A)$
-decomposes uniquely as
-\[
-  \alpha \;=\; \alpha_H + \alpha_V,
-\]
-where $\alpha_H$ is the \emph{horizontal component} (weight-$0$ under
-$T$) and $\alpha_V$ is the \emph{vertical component} (non-zero weight).
-A form is \emph{purely horizontal} if and only if $\alpha_V = 0$.
+(Remark~\ref{rem:higher-forms}).  Denoting by
+$\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
+summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
+\begin{equation}\label{eq:weight-decomposition-cd}
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  & \Omega^k(A) \ar[dl, "\pi_H"'] \ar[dr, "\pi_V"] & \\
+  \Omega^k_H(A) \ar[rr, hook, "\oplus"']
+  & & \Omega^k_V(A)
+\end{tikzcd}
+\qquad \alpha = \alpha_H + \alpha_V.
+\end{equation}
+Here $\alpha_H = \pi_H(\alpha)$ is the \emph{horizontal component}
+(weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
+\emph{vertical component} (non-zero weight).  A form is \emph{purely
+horizontal} if and only if $\alpha_V = 0$.
 \end{definition}
 
 \begin{definition}[Particle]
@@ -938,18 +945,31 @@ denote the substrate parameter
 \]
 satisfying:
 \begin{enumerate}
-  \item \textbf{Frobenius compatibility.}\; $\lambda \circ \mathcal{O}
-        = \lambda$ (the observation preserves the Frobenius form);
-  \item \textbf{Substrate perturbation.}\; the induced map on the
-        deformation parameter shifts $q \mapsto q' = q + \delta q$, where
-        $\delta q$ is determined by the Hopf-algebra coaction of~$A$ on
-        itself:
-        \[
-          \delta q \;=\; \lambda\bigl(\mathcal{O}(a_{(1)})\,S(a_{(2)})\bigr)
-          \quad\text{for } a \in A,
-        \]
-        with $S$ the antipode and $\Delta(a) = a_{(1)} \otimes a_{(2)}$
-        the coproduct.
+  \item \textbf{Frobenius compatibility.}\; The following diagram commutes:
+    \begin{equation}\label{eq:observation-frobenius}
+    \begin{tikzcd}[row sep=2.5em, column sep=3em]
+      A \ar[r, "\mathcal{O}"] \ar[dr, "\lambda"']
+      & A \ar[d, "\lambda"] \\
+      & \mathbf{1}
+    \end{tikzcd}
+    \end{equation}
+    i.e.\ $\lambda \circ \mathcal{O} = \lambda$ (the observation preserves
+    the Frobenius form).
+  \item \textbf{Substrate perturbation.}\; The observation shifts the
+        deformation parameter $q \mapsto q' = q + \delta q$ via the
+        Hopf coaction:
+    \begin{equation}\label{eq:observation-substrate}
+    \begin{tikzcd}[row sep=2.5em, column sep=3em]
+      A \ar[r, "\Delta"] \ar[d, "\mathcal{O}"']
+      & A \otimes A \ar[r, "\mathcal{O} \otimes S"]
+      & A \otimes A \ar[d, "\mu"] \\
+      A \ar[rr, "\lambda"']
+      & & \mathbf{1}
+    \end{tikzcd}
+    \end{equation}
+        with $S$ the antipode, $\mu$ the multiplication, and
+        $\delta q = \lambda(\mathcal{O}(a_{(1)})\,S(a_{(2)}))$
+        for $a \in A$.
 \end{enumerate}
 \end{definition}
 
@@ -1011,6 +1031,95 @@ include:
 The fibre functor $\omega$ ensures that $G = \mathrm{Aut}^{\otimes}(\omega)$
 is well-defined over any~$R$.
 \end{remark}
+
+% ── Categorical instanton and self-duality ──────────────────────────────────
+
+\begin{definition}[Categorical instanton]
+\label{def:categorical-instanton}
+\lean{QOU.CategoricalInstanton}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) with connection
+$\nabla$ (Definition~\ref{def:categorical-connection}) and
+$q$-Hodge star $\star_q$ (Definition~\ref{def:q-hodge-star}).
+The connection $\nabla$ is an \emph{instanton} if its curvature
+$F_\nabla \in \Omega^2(A)$ is $\star_q$-self-dual:
+\[
+  \star_q\, F_\nabla \;=\; F_\nabla.
+\]
+Equivalently, the curvature factors through the self-dual projection:
+\begin{equation}\label{eq:instanton-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  A \otimes A \ar[r, "\nabla \circ \nabla"]
+    \ar[dr, "0"']
+  & \Omega^2(A) \ar[d, "\pi^-"] \\
+  & \Omega^-(A)
+\end{tikzcd}
+\end{equation}
+where $\pi^- = \tfrac{1}{2}(\mathrm{id} - \star_q)$ is the
+anti-self-dual projector and $\Omega^-(A) = \ker(\mathrm{id} + \star_q)$.
+\end{definition}
+
+\begin{lemma}[Irreducibility from observability]
+\label{lem:categorical-irreducible}
+\lean{QOU.categorical_irreducible}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe.
+Any categorical instanton $\nabla$
+(Definition~\ref{def:categorical-instanton}) is irreducible:
+$\operatorname{Hom}_{\mathcal{C}}(\mathbf{1},\,\mathrm{Ad}(A)) = 0$.
+\end{lemma}
+
+\begin{proof}
+Suppose $s \colon \mathbf{1} \to \mathrm{Ad}(A)$ is a non-zero
+invariant morphism.  The following diagram commutes:
+\[
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathbf{1} \ar[r, "s"] \ar[dr, "0"']
+  & \mathrm{Ad}(A) \ar[d, "\lambda|_{\mathrm{Ad}}"] \\
+  & \mathbf{1}
+\end{tikzcd}
+\]
+Since $\mathrm{Ad}(A)$ is the trace-free part of $A \otimes A^*$,
+the Frobenius form $\lambda$ vanishes on it:
+$\lambda \circ s = 0$.  But $\lambda$ is non-degenerate by the
+observability axiom, so $s = 0$.
+\end{proof}
+
+\begin{proposition}[Categorical self-duality]
+\label{prop:categorical-self-duality}
+\lean{QOU.categorical_self_duality}\leanok
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+with volume form $\mathrm{vol} \in \Omega^n(A)$
+(Definition~\ref{def:q-hodge-star}).  Every connection $\nabla$
+that is a critical point of the categorical Yang--Mills functional
+\[
+  S[\nabla] \;=\; \lambda\!\bigl(\star_q(F_\nabla) \cdot F_\nabla\bigr)
+\]
+is an instanton (Definition~\ref{def:categorical-instanton}).  That is,
+the following diagram commutes:
+\begin{equation}\label{eq:self-duality-cd}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  \Omega^2(A) \ar[r, "\star_q"] \ar[d, "\lambda(\,\cdot\, {*}\, \cdot\,)"']
+  & \Omega^2(A) \ar[d, "\lambda(\,\cdot\, {*}\, \cdot\,)"] \\
+  \mathbf{1} \ar[r, "\mathrm{id}"']
+  & \mathbf{1}
+\end{tikzcd}
+\qquad\Longrightarrow\qquad
+F_\nabla \in \Omega^+(A).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By the Bogomolny decomposition in the dagger category,
+\[
+  \lambda(F_\nabla^* \cdot F_\nabla)
+  \;=\; 2\,\lambda({F_\nabla^-}^* \cdot F_\nabla^-)
+        + \lambda(F_\nabla \wedge_q F_\nabla),
+\]
+where the second term is topological (determined by the class
+$[F_\nabla] \in \Omega^2(A)/\mathrm{exact}$).  Minimising
+$S[\nabla]$ forces $F_\nabla^- = 0$, which is exactly the
+self-duality condition.
+\end{proof}
 
 % ── Archimedean realisation ─────────────────────────────────────────────────
 
@@ -1082,253 +1191,131 @@ $\Gamma_c(M, E) = 0$ follows from the non-existence of
 $A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
 \end{example}
 
-\begin{remark}[Geometric realisation of the volume constraint]
-\label{rem:volume-constraint-geometric}
-In the archimedean realisation (Example~\ref{def:c-quantum-universe}),
-the categorical volume constraint~\eqref{eq:categorical-volume-constraint}
-is a consequence of the contact geometry.  The contact condition requires
-that $d\theta|_{H \times H}$ be non-degenerate on the Levi distribution
-$H = \ker\theta$; this non-degenerate alternating $2$-form is the Levi
-form $L_\theta$.  Because $L_\theta$ is alternating and non-degenerate on
-the rank-$4$ real distribution~$H$, it instantiates the categorical
-volume form $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ of
-Lemma~\ref{lem:volume-from-rigidity}.  The Hodge star $*_H$ associated to
-the Webster metric~$g_\theta$ then splits $\Lambda^2 H^* = \Lambda^+\!H^*
-\oplus \Lambda^-\!H^*$, forcing the local structure group of the instanton
-connection to be $\mathrm{SU}(2)$.
-\end{remark}
-
-\begin{remark}[Archimedean realisation of the involution]
-\label{rem:fiber-adjoint-archimedean}
-In the archimedean realisation
-(Example~\ref{def:c-quantum-observable-universe}), the involution
-$\sigma$ of Proposition~\ref{prop:fiber-adjoint-involution} is the
-identification
-$\mathbb{CP}^1 \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere in
-the Lie algebra under the Killing form).  For topological $R$-modules of
-rank~$2$, $\mathbb{P}(V) = \mathrm{Gr}(1, M)$ (rank-$1$ direct summands
-of $M \cong R^2$),
-$\mathrm{Ad}(A) \cong \mathrm{End}_0(M) \cong \mathfrak{sl}_2(R)$
-(trace-free endomorphisms), and $\sigma$ sends a line
-$\ell \subset M$ to the rank-$1$ projector
-$\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}_M$.
-\end{remark}
-
-\begin{remark}[Archimedean realisation of the variational equations]
-\label{rem:variational-archimedean}
-In the archimedean realisation
-(Example~\ref{def:c-quantum-observable-universe}):
+\begin{remark}[Archimedean realisations of categorical structures]
+\label{rem:archimedean-realisations}
+In the archimedean setting
+(Examples~\ref{def:c-quantum-universe}--\ref{def:c-quantum-observable-universe}),
+the categorical structures specialise to familiar geometric objects:
 \begin{itemize}
-  \item The categorical Einstein equation
-    (Proposition~\ref{prop:variational-equations}, item~1) reduces to
+  \item \textbf{Volume constraint}
+    (\ref{eq:categorical-volume-constraint}).\;
+    The Levi form $L_\theta = -i\,d\theta|_{H \times H}$ is non-degenerate
+    on the rank-$4$ distribution $H = \ker\theta$, realising the
+    categorical volume form
+    $\epsilon \colon \Lambda^2 V \to \mathbf{1}$.  The induced Hodge star
+    $*_H$ splits $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$,
+    forcing the structure group to be $\mathrm{SU}(2)$.
+    \label{rem:volume-constraint-geometric}
+  \item \textbf{Involution}
+    (Proposition~\ref{prop:fiber-adjoint-involution}).\;
+    The categorical involution $\sigma$ becomes the identification
+    $\mathbb{CP}^1 \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere
+    under the Killing form): a line $\ell \subset R^2$ maps to the
+    projector $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}$.
+    \label{rem:fiber-adjoint-archimedean}
+  \item \textbf{Variational equations}
+    (Proposition~\ref{prop:variational-equations}).\;
+    The categorical Einstein equation reduces to
     $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-    (Remark~\ref{rem:gr-substrate-geometry}).
-  \item The categorical transport equation
-    (Proposition~\ref{prop:variational-equations}, item~3) reduces to the
-    Schr\"odinger equation
+    (Remark~\ref{rem:gr-substrate-geometry}); the transport equation
+    reduces to the Schr\"odinger equation
     $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
     (Remark~\ref{rem:schrodinger-jet-coaction}).
+    \label{rem:variational-archimedean}
 \end{itemize}
 \end{remark}
 
 \begin{definition}[Instanton connection]
 \label{def:instanton}
 \lean{QOU.InstantonConnection}\leanok
-Let $(M, \theta, G, P, E)$ be an archimedean quantum universe with
-$\dim_{\mathbb{R}} H = 4$ ($n = 2$).  An \emph{instanton connection} on $P$
-is a connection $A$ whose curvature $F_A$, restricted to the horizontal
-distribution $H = \ker\theta$, is self-dual:
-$F_A|_H = {*_H}\,F_A|_H$, where $*_H$ is the Hodge star on
-$\Lambda^2 H^*$ determined by the Webster metric $g_\theta$.  More generally,
-when $\dim_{\mathbb{R}} H \neq 4$, an instanton connection is a
-Yang--Mills connection that minimises the functional
-$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^n$.
+Let $(M, \theta, G, P, E)$ be an archimedean quantum universe
+(Example~\ref{def:c-quantum-universe}).  An \emph{instanton connection}
+on $P$ is a connection $A$ whose curvature $F_A$, restricted to
+$H = \ker\theta$, is self-dual: $F_A|_H = {*_H}\,F_A|_H$.  This is
+the archimedean realisation of a categorical instanton
+(Definition~\ref{def:categorical-instanton}): the $q$-Hodge star
+$\star_q$ specialises to the Webster Hodge star $*_H$ on
+$\Lambda^2 H^*$, and $\star_q$-self-duality becomes
+$*_H$-self-duality.
 \end{definition}
 
 \begin{lemma}[Irreducibility of the connection]
 \label{lem:irreducible-connection}
 \lean{QOU.irreducible_connection}\leanok
-Let $(M, G, P, E)$ be an archimedean quantum observable universe.  Then the
-vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ implies that every
-instanton connection $A$ on $P$ (Definition~\ref{def:instanton}) is
-irreducible.
+Let $(M, G, P, E)$ be an archimedean quantum observable universe.
+Then every instanton connection $A$ on $P$ is irreducible.
+This is the archimedean instance of
+Lemma~\ref{lem:categorical-irreducible}: the vanishing
+$H^0(M, \mathrm{Ad}(P)) = 0$
+(Example~\ref{def:c-quantum-observable-universe}) specialises
+the categorical condition
+$\operatorname{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
 \end{lemma}
-
-\begin{proof}
-Suppose for contradiction that an instanton connection $A$ on $P$ is
-reducible.  Then the stabiliser of $A$ under the gauge group contains a
-non-trivial element $s \in \Gamma(M,\, \mathrm{Ad}(P))$ satisfying
-$D_A s = 0$.  Such $s$ is a global parallel section of $\mathrm{Ad}(P)$,
-and hence a non-zero element of $H^0(M, \mathrm{Ad}(P))$, contradicting
-$H^0(M, \mathrm{Ad}(P)) = 0$.  Hence $A$ is irreducible.
-\end{proof}
 
 \begin{proposition}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
 \lean{QOU.self_dual_curvature}\leanok
 Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
-with $\dim_{\mathbb{R}} M = 5$ (i.e.\ the CR dimension $n = 2$, so that the
-Levi distribution $H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$).  Let $A$
-be an instanton connection on $P$.  Then the curvature $F_A$, restricted to
-$H$, is self-dual with respect to the Hodge star $*_H$ determined by the
-Webster metric $g_\theta$ and the complex structure $J$:
-\[
-  F_A\big|_H \;=\; {*_H}\, F_A\big|_H.
-\]
-\end{proposition}
-
-\begin{proof}
-The contact form $\theta$ (Example~\ref{def:c-quantum-universe}) splits
-the tangent bundle as $TM = H \oplus \mathbb{R}\xi$, where
-$H = \ker\theta$ has real dimension $4$.  The curvature $F_A$ is an
-$\mathrm{Ad}(P)$-valued $2$-form on $M$.  By the Reeb decomposition
-(Definition~\ref{def:reeb-decomposition}), $F_A$ splits into horizontal and
-vertical parts; we consider $F_A|_H \in \Gamma(\Lambda^2 H^* \otimes
-\mathrm{Ad}(P))$.
-
-Since $\dim_{\mathbb{R}} H = 4$, the operator $*_H$ maps $2$-forms to
-$2$-forms and satisfies $*_H^2 = \mathrm{id}$ on $\Lambda^2 H^*$.  This
-decomposes $\Lambda^2 H^* = \Lambda^+\! H^* \oplus \Lambda^-\! H^*$ into
-self-dual and anti-self-dual parts.
-
-An instanton connection $A$ minimises the Yang--Mills functional.  By the
-Bogomolny argument, the integrated norm satisfies
-\[
-  \int_M \lVert F_A|_H \rVert^2 \,\theta \wedge (d\theta)^2
-  \;=\; 2\!\int_M \lVert F_A^-|_H \rVert^2 \,\theta \wedge (d\theta)^2
-        + \int_M \mathrm{tr}(F_A|_H \wedge F_A|_H)
-          \wedge \theta,
-\]
-where the topological term
-$\int_M \mathrm{tr}(F_A|_H \wedge F_A|_H) \wedge \theta$ is fixed by the
-characteristic class of $P$.  Minimising the functional forces
-$F_A^-|_H = 0$, which is precisely the self-duality condition
+with $\dim_{\mathbb{R}} H = 4$.  Every instanton connection $A$ on $P$
+satisfies
 $F_A|_H = {*_H}\,F_A|_H$.
-\end{proof}
+This is the archimedean instance of
+Proposition~\ref{prop:categorical-self-duality}: the categorical
+Yang--Mills functional $\lambda(\star_q(F_\nabla) \cdot F_\nabla)$
+specialises to
+$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^2$,
+and the Bogomolny decomposition forces $F_A^-|_H = 0$.
+\end{proposition}
 
 \begin{remark}[Archimedean substrate via the Levi form]
 \label{rem:c-substrate-via-levi}
-In the archimedean quantum observable universe
-(Example~\ref{def:c-quantum-observable-universe}), let $A$ be an
-instanton connection on~$P$
+\label{rem:substrate-contraction}
+\label{rem:substrate-exponential}
+Let $A$ be an instanton connection on~$P$
 (Definition~\ref{def:instanton}), $F_A^+$ its self-dual curvature
 (Proposition~\ref{prop:self-dual-curvature}), and
-$L_\theta \colon H \times H \to \mathbb{C}$ the Levi form on
-$H = \ker\theta$, defined by
-$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$.
-The specialisation map of
-Definition~\ref{def:substrate-parameter} sends
+$L_\theta(V, W) = -i\,d\theta(V, \bar{W})$ the Levi form.  Since
+$\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the $4$-dimensional
+distribution~$H$, the Webster metric and Killing form yield a natural
+contraction $\langle L_\theta, F_A^+\rangle_p \in \mathbb{R}$.  The
+substrate parameter
+(Definition~\ref{def:substrate-parameter}) specialises to the smooth
+field
 \[
-  q \;\longmapsto\;
-  q(p) \;=\; 1 + \lvert\langle L_\theta,\, F_A^+ \rangle\rvert(p),
+  q(p) \;=\; 1 + \bigl\lvert\langle L_\theta,\, F_A^+ \rangle\bigr\rvert(p),
   \qquad p \in M,
 \]
-where $\langle L_\theta, F_A^+\rangle$ is the natural contraction
-(Remark~\ref{rem:substrate-contraction}) and $\lvert\cdot\rvert$ denotes
-the absolute value.  This defines a smooth field
-$q \colon M \to [1,\infty) \subset \mathbb{C}^{\times}$ with $q(p) = 1$
-at points where $F_A^+ = 0$ (classicality) and $q(p) \to \infty$ in the
-deep-quantum regime.  The non-archimedean analogues are developed in
-Chapter~\ref{chap:p-adic}: over~$\mathbb{Q}_\pp$ the Levi-form
-contraction is replaced by the Frobenius endomorphism and
-$q = \pp^{\,-v_\pp(\det\varphi)}$
-(Example~\ref{ex:p-adic-realisation}); over~$\mathbb{F}_\pp$, $q$
-is a primitive root of unity
-(Example~\ref{ex:finite-field-realisation}).
+with $q = 1$ at classicality ($F_A^+ = 0$) and $q \to \infty$ in the
+deep-quantum regime.  All downstream formulas ($\hbar_q$, commutators,
+Yang--Mills) are algebraic in~$q$, so the formula $1 + x$ may equally be
+replaced by $\exp(x)$ without affecting the theory; the algebraic form is
+preferred because it is meaningful over every base ring~$R$.
 \end{remark}
 
-\begin{remark}[Algebraic vs.\ exponential specialisation]
-\label{rem:substrate-exponential}
-Over~$\mathbb{Q}$ (or any subfield of~$\mathbb{C}$), the classical
-exponential $\exp(\lvert\langle L_\theta, F_A^+\rangle\rvert)$ is an
-equally valid specialisation map.  The formula
-$q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
-(Remark~\ref{rem:c-substrate-via-levi}) is the first-order approximation
-of $\exp\!\bigl(\lvert\langle L_\theta, F_A^+\rangle\rvert(p)\bigr)$.
-Both define smooth fields $M \to [1,\infty)$ with the same boundary
-behaviour ($q = 1$ at classicality, $q \to \infty$ deep-quantum), and
-all downstream formulas ($\hbar_q = 1 - q^{-1}$, the Heisenberg
-commutator, the Schr\"odinger equation, the Yang--Mills functional) are
-algebraic in~$q$ and therefore insensitive to the choice between $1+x$
-and $\exp(x)$.  The algebraic form is adopted in
-Definition~\ref{def:substrate-parameter} because it is meaningful over
-every base ring~$R$, whereas $\exp(x)$ requires an archimedean topology.
-\end{remark}
-
-\begin{remark}[Natural contraction and field character of $q$]
-\label{rem:substrate-contraction}
-The Levi form $L_\theta$ is a section of $\Lambda^{1,1} H^*$
-(the $(1,1)$-component of $\Lambda^2 H^*$ with respect to the complex
-structure $J$).  The self-dual curvature $F_A^+$ is a section of
-$\Lambda^+ H^* \otimes \mathrm{Ad}(P)$.  On a $4$-dimensional oriented
-inner-product space, $\Lambda^{1,1} \subset \Lambda^+$, so $L_\theta$ and
-$F_A^+$ live in the same subbundle.  The Webster metric $g_\theta$
-provides a fibrewise inner product on $\Lambda^+ H^*$; composing this
-with the Killing form on $\mathrm{Ad}(P)$ yields the natural contraction
-\[
-  \langle L_\theta,\, F_A^+ \rangle_p
-  \;\in\; \mathbb{R}, \qquad p \in M.
-\]
-The substrate parameter is not a
-fixed constant but a field on $M$: its value varies from point to point
-according to the local coupling between the Levi form and the self-dual
-curvature.
-\end{remark}
-
-\begin{remark}[Heisenberg uncertainty as commutator]
+\begin{remark}[Heisenberg commutator and the Reeb vector]
 \label{rem:heisenberg-commutator}
-In the archimedean quantum observable universe the Heisenberg uncertainty
-principle is expressed through the $q$-deformed commutator.  Let $\hat{X}$ and
-$\hat{P}$ denote position and momentum observables on the fibre
-$\mathbb{CP}^1$.  Let $J \colon H \to H$ be the complex structure operator
-on the Levi distribution ($J^2 = -\mathrm{Id}$); throughout this paper every
-occurrence of the imaginary unit~$i$ in a physical equation is identified with
-the geometric action of~$J$ on horizontal planes.  We define their
-$q$-dependent commutator at $p \in M$ by
+\label{rem:commutator-lie-analogy}
+\label{rem:commutator-reeb-vector}
+The Heisenberg uncertainty principle takes the form of a $q$-deformed
+commutator.  Let $\hat{X}, \hat{P}$ be position and momentum observables
+on the fibre $\mathbb{CP}^1$, and let $J \colon H \to H$ be the complex
+structure on the Levi distribution ($J^2 = -\mathrm{Id}$; throughout this
+paper $i$ is identified with the action of~$J$ on horizontal planes).
+The commutator at $p \in M$ is
 \[
   [\hat{X},\, \hat{P}]_q \;:=\; J\,\hbar_q(p),
+  \qquad \hbar_q(p) = 1 - q(p)^{-1}.
 \]
-where $\hbar_q(p) = 1 - q(p)^{-1}$
-(Definition~\ref{def:quantum-planck-constant}).  In this remark the subscript
-$q$ serves only to record the dependence of the commutator on the substrate
-field $q$ and should not be confused with any $q$-deformed Lie bracket
-$[\cdot,\cdot]_q$ on vector fields that may appear elsewhere.  The commutator
-encodes the local uncertainty: when $q(p) \to 1$ (classicality),
-$[\hat{X}, \hat{P}]_q \to 0$ and observables commute; when $q(p) \to \infty$
-(deep-quantum regime), $[\hat{X}, \hat{P}]_q \to J$ and maximal uncertainty
-prevails.
-\end{remark}
+As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classicality); as
+$q \to \infty$, $[\hat{X}, \hat{P}]_q \to J$ (maximal uncertainty).
 
-\begin{remark}[Commutator and the Lie bracket analogy]
-\label{rem:commutator-lie-analogy}
-The position--momentum commutator $[\hat{X},\hat{P}]_q$
-(Remark~\ref{rem:heisenberg-commutator}) is the quantum-mechanical
-counterpart of the Lie bracket
-$[e_a,e_b]=\epsilon_{abc}\,e_c$ in $\mathfrak{su}(2)$
-(Definition~\ref{def:su2-basis}).  Both commutators measure the
-first-order non-commutativity of their respective algebras
-(Remark~\ref{rem:first-order-taylor}).  In the braid-group setting,
-this non-commutativity appears as the defining relation
-$\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$
-(Definition~\ref{def:braid-group}); on the Bring surface, it is
-realised by the $S_3$ permutation action on the spectral resolvents
-(Remark~\ref{rem:braid-group-action}).
-\end{remark}
-
-\begin{remark}[Commutator as Reeb vector]
-\label{rem:commutator-reeb-vector}
-The commutator $[\hat{X},\hat{P}]_q$
-(Remark~\ref{rem:heisenberg-commutator}) may be identified with the
-value of the $q$-deformed Reeb vector field~$\xi_q$
-(Definition~\ref{def:q-reeb-vector-field}) evaluated on the contact
-form.  Concretely, the Reeb field is the unique direction along which
-the symplectic pairing $d\theta$ degenerates, so $\theta(\xi_q)$
-encodes precisely the obstruction to commutativity of canonical
-coordinates.  On the exceptional divisor $\mathbb{CP}^1$ produced by
-blowing up a spacetime defect on the Bring surface
-(Remark~\ref{rem:brings-smoothness}), the Reeb vector field generates
-the $U(1)$ fibration of the Hopf bundle $S^3\to\mathbb{CP}^1$, and
-its ``strength'' is set by~$\hbar_q(p)$.
+Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\theta(\xi_q)$, the
+$q$-deformed Reeb field (Definition~\ref{def:q-reeb-vector-field})
+evaluated on the contact form: $\xi_q$ is the unique direction along
+which $d\theta$ degenerates, so it encodes the obstruction to
+commutativity.  Algebraically, the commutator is the quantum-mechanical
+counterpart of the Lie bracket $[e_a, e_b] = \epsilon_{abc}\,e_c$ in
+$\mathfrak{su}(2)$ (Definition~\ref{def:su2-basis}).
 \end{remark}
 
 \begin{definition}[Reeb decomposition]
