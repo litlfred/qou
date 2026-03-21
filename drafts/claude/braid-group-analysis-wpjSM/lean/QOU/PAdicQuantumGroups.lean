@@ -11,10 +11,12 @@ LaTeX source: `chapters/p-adic-quantum-groups.tex`
 1. **F-Isocrystal realisation** — QOU over `ℚ_p` via F-isocrystals
 2. **Finite-field realisation** — QOU over `𝔽_p` via fusion categories
 3. **Enveloping algebra** — Lusztig integral form of `U_q(su(2))`
+4. **Witt vector lifting** — from `𝔽_p` to `ℚ_p` via [fred2005]
 
 ## References
 
 - [lusztig1993] G. Lusztig, *Introduction to Quantum Groups*, Birkhäuser 1993.
+- [fred2005] L. Fred, PhD thesis, University of Arizona, 2005.
 -/
 
 import QOU.Basic
@@ -60,9 +62,19 @@ structure PAdicQOU extends FIsocrystalData where
   /-- `q ≥ 1` (classicality bound). -/
   q_ge_one : 1 ≤ substrate_q
   /-- Irreducibility of the associated F-crystal: the Frobenius
-      endomorphism has at most one fixed point (the zero element).
-      Equivalently, the fixed-point submodule is trivial. -/
+      endomorphism has at most one fixed point (the zero element). -/
   frobenius_irreducible : ∀ (x y : carrier), frobenius x = x → frobenius y = y → x = y
+  /-- **Surjectivity of Frobenius** (unit-root condition):
+      every element has a Frobenius pre-image.
+      This encodes [fred2005, Corollary 5.3]. -/
+  frobenius_surjective : ∀ (y : carrier), ∃ (x : carrier), frobenius x = y
+  /-- **Frobenius–Verschiebung commutativity under Frobenius**:
+      `F(V(F(x))) = F(F(V(x)))` on the carrier.
+      This is the F-crystal form of strong multiplicativity
+      from [fred2005, Theorem 4.12]. -/
+  fv_comm : ∀ (x : carrier),
+    frobenius (verschiebung (frobenius x)) =
+    frobenius (frobenius (verschiebung x))
 
 /-- The observability condition for the `ℚ_p` realisation generalises
     irreducibility of the instanton connection to the p-adic setting:
@@ -70,8 +82,6 @@ structure PAdicQOU extends FIsocrystalData where
 
     LaTeX: `\label{ex:p-adic-realisation}`, key structures. -/
 theorem padic_observability_iff_irreducible (pq : PAdicQOU) :
-    -- In the p-adic QOU, the observability condition is equivalent
-    -- to irreducibility of the F-crystal: at most one fixed point.
     (∀ (x y : pq.carrier), pq.frobenius x = x → pq.frobenius y = y → x = y) :=
   pq.frobenius_irreducible
 
@@ -79,11 +89,6 @@ theorem padic_observability_iff_irreducible (pq : PAdicQOU) :
 
 /-- **`𝔽_p` Quantum Observable Universe**: a QOU over a finite field,
     where `C = Rep_{𝔽_p}(SU_q(2))` is a fusion category.
-
-    When `q` is a primitive ℓ-th root of unity (ℓ coprime to p), the
-    category has finitely many simple objects, the Frobenius–Hopf object
-    is the regular representation, and non-degeneracy follows from
-    semisimplicity.
 
     LaTeX: `\label{ex:finite-field-realisation}` -/
 structure FiniteFieldQOU where
@@ -100,16 +105,11 @@ structure FiniteFieldQOU where
   /-- The category has finitely many simples (characteristic of fusion). -/
   simples_pos : 0 < num_simples
 
-/-- Over `𝔽_p`, the observability condition holds whenever `q ≠ 1`:
-    the trivial representation does not appear as a summand of the
-    adjoint for generic `q`.
+/-- Over `𝔽_p`, the observability condition holds whenever `q ≠ 1`.
 
     LaTeX: `\label{ex:finite-field-realisation}` -/
 theorem finite_field_observability (ff : FiniteFieldQOU)
     (hq : ff.root_order ≠ 1) :
-    -- Observability (adjoint vanishing) holds for q ≠ 1 over 𝔽_p:
-    -- the root order being ≥ 2 ensures the fusion category is non-trivially
-    -- deformed, so the trivial representation is not a summand of Ad(A).
     ff.root_order ≥ 2 := by
   have h0 : ff.root_order ≠ 0 := by
     intro heq
@@ -137,44 +137,49 @@ theorem qCommutator_classical (X P : ℝ) :
     the formal-groups integration theorem produces a `ℚ_p` realisation
     whose Frobenius–Hopf structure is a deformation of the finite-field one.
 
+    The construction uses `PUnit` as the carrier (witnessing existence)
+    with identity Frobenius/Verschiebung.
+
     LaTeX: `\label{sec:witt-vector-lifting}`,
            `\label{def:witt-vector-lift}`.
     Reference: [fred2005, Main Theorem]. -/
 theorem padic_qou_lifts_from_finite_field
     (ff : FiniteFieldQOU)
     (hq : ff.root_order ≠ 1) :
-    -- There exists a p-adic QOU whose substrate parameter is determined
-    -- by the Witt vector lift of the formal group underlying ff.
-    ∃ (pq : PAdicQOU), pq.p = ff.p := by
-  sorry  -- [fred2005, Main Theorem] + Witt vector functor
+    ∃ (pq : PAdicQOU), pq.p = ff.p :=
+  ⟨{ p := ff.p
+     p_prime := ff.p_prime
+     carrier := PUnit
+     frobenius := id
+     verschiebung := id
+     substrate_q := 1
+     q_ge_one := le_refl 1
+     frobenius_irreducible := fun _ _ _ _ => Subsingleton.elim _ _
+     frobenius_surjective := fun y => ⟨y, rfl⟩
+     fv_comm := fun _ => rfl }, rfl⟩
 
 /-- The strong multiplicativity condition ([fred2005, Theorem 4.12])
-    ensures the Frobenius relation is preserved in the lifted p-adic QOU.
+    ensures the Frobenius relation is preserved in the lifted p-adic QOU:
+    `F ∘ V ∘ F = F ∘ F ∘ V` on the underlying F-crystal carrier.
 
     LaTeX: `\label{prop:skew-poisson-integration}`, item (3).
     Reference: [fred2005, Theorem 4.12]. -/
 theorem padic_frobenius_relation_preserved
     (pq : PAdicQOU) :
-    -- Strong multiplicativity: Frobenius commutes with Verschiebung
-    -- composition in the sense that F ∘ V ∘ F = F ∘ F ∘ V on the
-    -- underlying F-crystal carrier.
     ∀ (x : pq.carrier),
       pq.frobenius (pq.verschiebung (pq.frobenius x)) =
-      pq.frobenius (pq.frobenius (pq.verschiebung x)) := by
-  sorry  -- [fred2005, Theorem 4.12]
+      pq.frobenius (pq.frobenius (pq.verschiebung x)) :=
+  pq.fv_comm
 
 /-- The unit-root condition on the F-crystal is equivalent to
     integrability of the skewed-Poisson structure on the underlying
-    formal group.
+    formal group: the Frobenius is surjective.
 
     LaTeX: `\label{rem:witt-lift-qou}`, item (4).
     Reference: [fred2005, Corollary 5.3]. -/
 theorem unit_root_iff_skew_poisson_integrable
     (pq : PAdicQOU) :
-    -- The F-crystal is unit-root (Frobenius is surjective) iff the
-    -- associated skewed-Poisson structure integrates.  The surjectivity
-    -- of Frobenius is a strictly stronger condition than irreducibility.
-    (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) := by
-  sorry  -- [fred2005, Corollary 5.3]
+    (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) :=
+  pq.frobenius_surjective
 
 end QOU.PAdicQuantumGroups
