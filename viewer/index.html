@@ -781,6 +781,23 @@
         try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
     }
 
+    // ── Resolve cross-ref links: replace generic text with block titles ──
+    function resolveRefs(el) {
+      for (const a of el.querySelectorAll('a[data-ref]')) {
+        const label = a.dataset.ref;
+        const ref = bix.get(label);
+        if (!ref) continue;
+        // Replace generic text (Definition, Theorem, etc.) with the actual title
+        const text = a.textContent.trim();
+        const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
+          'Conjecture','Example','Remark','Proof', label];
+        if (ref.title && (generic.includes(text) || text === label)) {
+          a.innerHTML = inl(ref.title);
+          renderMath(a);
+        }
+      }
+    }
+
     // ── Lean validation icon (∀ symbology from main.tex) ──
     function leanIcon(validation) {
       const v = validation || 'not_checked';
@@ -955,7 +972,7 @@
           const {bh, tx} = hydrateContent();
           bb.innerHTML = bh;
           fillTex(bb, tx, block.rendered);
-          renderMath(bb);
+          renderMath(bb); resolveRefs(bb);
         });
         return frag;
       }
@@ -998,7 +1015,7 @@
           const {bh, tx} = hydrateContent();
           bb.innerHTML = bh;
           fillTex(bb, tx, block.rendered);
-          renderMath(bb);
+          renderMath(bb); resolveRefs(bb);
         });
         return frag;
       }
@@ -1064,7 +1081,7 @@
           const {bh, tx} = hydrateContent();
           bb.innerHTML = bh + '<div class="qed"></div>';
           fillTex(bb, tx, block.rendered);
-          renderMath(bb);
+          renderMath(bb); resolveRefs(bb);
         });
         return frag;
       }
@@ -1080,7 +1097,7 @@
           const {bh, tx} = hydrateContent();
           d.querySelector('.bb').innerHTML = bh;
           fillTex(d, tx, block.rendered);
-          renderMath(d);
+          renderMath(d); resolveRefs(d);
         });
         return d;
       }
