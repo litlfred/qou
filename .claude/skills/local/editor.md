@@ -48,7 +48,11 @@ At the start of every new session, the editor's first job is **triage**:
    (author cannot type easily).
 4. **Maintain consistency**: notation (R not k, K not ℂ), labeling conventions,
    cross-references, glossary terms.
-5. **Elaborate understanding**: as work progresses, deepen understanding of the
+5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
+   propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
+   exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
+   `X` exists in `lean/QOU/*.lean`. Missing stubs must be created before commit.
+6. **Elaborate understanding**: as work progresses, deepen understanding of the
    mathematical structures. Record insights in the plan file for future
    reference.
 
