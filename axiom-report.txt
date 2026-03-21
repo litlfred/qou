@@ -1,7 +1,7 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-21 22:43:31 UTC
+Generated: 2026-03-21 22:46:15 UTC
 Commit:    a51a6fe9c5eb85d1e0421feb10e805d04d839c8a
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
@@ -9,29 +9,770 @@ Mathlib:   master (pinned in lakefile.lean)
 ------------------------------------------------------------------------
 §1  BUILD STATUS
 ------------------------------------------------------------------------
-Status: ✅ BUILD PASSED (no type errors)
+Status: ❌ BUILD FAILED
+
+Errors:
 
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 91
+Total sorry occurrences: 381
 
   File                                          sorry count
   --------------------------------------------------------
-  QOU/BringsSurface.lean                           4
-  QOU/DescartesUniverse.lean                       3
-  QOU/Elaboration.lean                             5
+  .lake/packages/LeanSearchClient/LeanSearchClient/LoogleSyntax.lean 1
+  .lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean 4
+  .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean 5
+  .lake/packages/LeanSearchClient/LeanSearchClientTest/LoogleExamples.lean 1
+  .lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean 4
+  .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean 8
+  .lake/packages/Qq/Qq/Simp.lean                   2
+  .lake/packages/Qq/examples/introQ.lean           1
+  .lake/packages/aesop/Aesop/RuleTac/Tactic.lean   1
+  .lake/packages/aesop/Aesop/Script/Step.lean      1
+  .lake/packages/aesop/Aesop/Tree/ExtractScript.lean 1
+  .lake/packages/aesop/Aesop/Tree/State.lean       1
+  .lake/packages/aesop/AesopTest/205.lean          3
+  .lake/packages/aesop/AesopTest/ExtScript.lean    21
+  .lake/packages/aesop/AesopTest/IncompleteScript.lean 3
+  .lake/packages/aesop/AesopTest/List.lean         1
+  .lake/packages/aesop/AesopTest/SplitScript.lean  4
+  .lake/packages/batteries/Batteries/CodeAction/Basic.lean 1
+  .lake/packages/batteries/Batteries/CodeAction/Misc.lean 5
+  .lake/packages/batteries/Batteries/Linter/UnreachableTactic.lean 1
+  .lake/packages/batteries/Batteries/Tactic/Case.lean 1
+  .lake/packages/batteries/Batteries/Tactic/Lint/Misc.lean 1
+  .lake/packages/batteries/Batteries/Util/ProofWanted.lean 1
+  .lake/packages/batteries/BatteriesTest/conv_equals.lean 4
+  .lake/packages/batteries/BatteriesTest/help_cmd.lean 8
+  .lake/packages/batteries/BatteriesTest/lint_unreachableTactic.lean 3
+  .lake/packages/batteries/BatteriesTest/lintsimp.lean 1
+  .lake/packages/batteries/BatteriesTest/lintunused.lean 3
+  .lake/packages/batteries/BatteriesTest/simpa.lean 2
+  .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean 2
+  .lake/packages/mathlib/Mathlib/Algebra/Group/Invertible/Defs.lean 1
+  .lake/packages/mathlib/Mathlib/Algebra/Homology/HomologicalComplex.lean 2
+  .lake/packages/mathlib/Mathlib/Algebra/Order/CauSeq/Completion.lean 1
+  .lake/packages/mathlib/Mathlib/Algebra/Tropical/Basic.lean 1
+  .lake/packages/mathlib/Mathlib/CategoryTheory/Category/Basic.lean 3
+  .lake/packages/mathlib/Mathlib/CategoryTheory/Limits/Shapes/Equalizers.lean 1
+  .lake/packages/mathlib/Mathlib/CategoryTheory/Limits/Shapes/Multiequalizer.lean 1
+  .lake/packages/mathlib/Mathlib/Data/FunLike/Basic.lean 4
+  .lake/packages/mathlib/Mathlib/Data/FunLike/Embedding.lean 4
+  .lake/packages/mathlib/Mathlib/Data/FunLike/Equiv.lean 4
+  .lake/packages/mathlib/Mathlib/Data/Int/Bitwise.lean 1
+  .lake/packages/mathlib/Mathlib/Data/Nat/Defs.lean 2
+  .lake/packages/mathlib/Mathlib/Data/SetLike/Basic.lean 1
+  .lake/packages/mathlib/Mathlib/Geometry/Manifold/LocalDiffeomorph.lean 1
+  .lake/packages/mathlib/Mathlib/GroupTheory/FiniteAbelian/Basic.lean 2
+  .lake/packages/mathlib/Mathlib/Lean/Expr/Basic.lean 1
+  .lake/packages/mathlib/Mathlib/LinearAlgebra/DirectSum/Finsupp.lean 1
+  .lake/packages/mathlib/Mathlib/Order/PrimeSeparator.lean 1
+  .lake/packages/mathlib/Mathlib/Probability/Integration.lean 4
+  .lake/packages/mathlib/Mathlib/SetTheory/Game/PGame.lean 2
+  .lake/packages/mathlib/Mathlib/Tactic/CongrM.lean 3
+  .lake/packages/mathlib/Mathlib/Tactic/Eval.lean  1
+  .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean 5
+  .lake/packages/mathlib/Mathlib/Tactic/FastInstance.lean 1
+  .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean 7
+  .lake/packages/mathlib/Mathlib/Tactic/LiftLets.lean 1
+  .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean 5
+  .lake/packages/mathlib/Mathlib/Tactic/Linter/GlobalAttributeIn.lean 3
+  .lake/packages/mathlib/Mathlib/Tactic/Qify.lean  2
+  .lake/packages/mathlib/Mathlib/Tactic/Set.lean   1
+  .lake/packages/mathlib/Mathlib/Tactic/SimpIntro.lean 1
+  .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean  12
+  .lake/packages/mathlib/Mathlib/Tactic/ToAdditive/Frontend.lean 1
+  .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean 15
+  .lake/packages/mathlib/Mathlib/Util/AssertNoSorry.lean 1
+  .lake/packages/mathlib/MathlibTest/AdmitLinter.lean 7
+  .lake/packages/mathlib/MathlibTest/Complex.lean  12
+  .lake/packages/mathlib/MathlibTest/ExtractGoal.lean 39
+  .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean 10
+  .lake/packages/mathlib/MathlibTest/LibrarySearch/IsCompact.lean 2
+  .lake/packages/mathlib/MathlibTest/LintStyle.lean 3
+  .lake/packages/mathlib/MathlibTest/MinImports.lean 1
+  .lake/packages/mathlib/MathlibTest/Quaternion.lean 8
+  .lake/packages/mathlib/MathlibTest/Real.lean     5
+  .lake/packages/mathlib/MathlibTest/Tauto.lean    1
+  .lake/packages/mathlib/MathlibTest/Use.lean      1
+  .lake/packages/mathlib/MathlibTest/aesop_cat.lean 2
+  .lake/packages/mathlib/MathlibTest/eqns.lean     1
+  .lake/packages/mathlib/MathlibTest/fast_instance.lean 4
+  .lake/packages/mathlib/MathlibTest/globalAttributeIn.lean 2
+  .lake/packages/mathlib/MathlibTest/itauto.lean   3
+  .lake/packages/mathlib/MathlibTest/jacobiSym.lean 2
+  .lake/packages/mathlib/MathlibTest/linarith.lean 1
+  .lake/packages/mathlib/MathlibTest/polyrith.lean 1
+  .lake/packages/mathlib/MathlibTest/slim_check.lean 1
+  .lake/packages/mathlib/MathlibTest/tfae.lean     2
+  .lake/packages/plausible/Test/Tactic.lean        4
+  .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean 1
+  .lake/packages/quantumInfo/ClassicalInfo/Capacity.lean 4
+  .lake/packages/quantumInfo/ClassicalInfo/Channel.lean 1
+  .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean 12
+  .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean 5
+  .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/CPTP.lean 4
+  .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/Dual.lean 2
+  .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/MatrixMap.lean 2
+  .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/Unbundled.lean 1
+  .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean 7
+  .lake/packages/quantumInfo/QuantumInfo/Finite/Distance/Fidelity.lean 4
+  .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/DPI.lean 2
+  .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/Relative.lean 3
+  .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean 8
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/CFC.lean 3
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/Rpow.lean 2
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Lieb.lean 1
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/MatrixNorm/TraceNorm.lean 1
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Misc.lean 2
+  .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Unitary.lean 1
+  .lake/packages/quantumInfo/QuantumInfo/InfiniteDim/QState.lean 3
+  .lake/packages/quantumInfo/QuantumInfo/Regularized.lean 3
+  .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean 3
   QOU/FormalGroups.lean                            1
-  QOU/Glossary.lean                                57
-  QOU/PAdicQuantumGroups.lean                      2
-  QOU/PathIntegrals.lean                           1
-  QOU/QuantumObservableUniverse.lean               10
-  QOU/Torsion.lean                                 8
+  QOU/Torsion.lean                                 1
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
 ------------------------------------------------------------------------
-Total axiom declarations in source: 17
+Total axiom declarations in source: 229
+
+  axiom R
+    File: .lake/packages/aesop/AesopTest/205.lean
+
+  axiom EqOn
+    File: .lake/packages/aesop/AesopTest/207.lean
+
+  axiom EqOn.eq_of_mem
+    File: .lake/packages/aesop/AesopTest/207.lean
+
+  axiom eqOn_singleton
+    File: .lake/packages/aesop/AesopTest/207.lean
+
+  axiom T
+    File: .lake/packages/aesop/AesopTest/AddRulesCommand.lean
+
+  axiom U
+    File: .lake/packages/aesop/AesopTest/AddRulesCommand.lean
+
+  axiom f
+    File: .lake/packages/aesop/AesopTest/AddRulesCommand.lean
+
+  axiom t
+    File: .lake/packages/aesop/AesopTest/AddRulesCommand.lean
+
+  axiom weaken
+    File: .lake/packages/aesop/AesopTest/AllWeaken.lean
+
+  axiom Ring
+    File: .lake/packages/aesop/AesopTest/DroppedMVars.lean
+
+  axiom RingHom
+    File: .lake/packages/aesop/AesopTest/DroppedMVars.lean
+
+  axiom RingId
+    File: .lake/packages/aesop/AesopTest/DroppedMVars.lean
+
+  axiom ZZ
+    File: .lake/packages/aesop/AesopTest/DroppedMVars.lean
+
+  axiom T
+    File: .lake/packages/aesop/AesopTest/ExtScript.lean
+
+  axiom U
+    File: .lake/packages/aesop/AesopTest/ExtScript.lean
+
+  axiom u
+    File: .lake/packages/aesop/AesopTest/ExtScript.lean
+
+  axiom v
+    File: .lake/packages/aesop/AesopTest/ExtScript.lean
+
+  axiom T_ext
+    File: .lake/packages/aesop/AesopTest/ExtScript.lean
+
+  axiom A
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom B
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom C
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom ab
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom bc
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom α
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom β
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom δ₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom δ₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom r₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom r₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom α
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom β
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom δ₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom δ₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom r₁
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom r₂
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom α
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom P
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom Q
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom R
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom foo
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom β
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom foo
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom bar
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom α
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom a
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom α.{u}
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom β.{v}
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom γ.{w}
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom P.{u,
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom Q.{u,
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom foo
+    File: .lake/packages/aesop/AesopTest/Forward.lean
+
+  axiom len
+    File: .lake/packages/aesop/AesopTest/ForwardRedundantHypsWithMVars.lean
+
+  axiom len_pos
+    File: .lake/packages/aesop/AesopTest/ForwardRedundantHypsWithMVars.lean
+
+  axiom Ring
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom Morphism
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom ZZ
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom f
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom domain
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom ZZ_domain
+    File: .lake/packages/aesop/AesopTest/Jesse.lean
+
+  axiom A
+    File: .lake/packages/aesop/AesopTest/LegacyForward.lean
+
+  axiom B
+    File: .lake/packages/aesop/AesopTest/LegacyForward.lean
+
+  axiom C
+    File: .lake/packages/aesop/AesopTest/LegacyForward.lean
+
+  axiom ab
+    File: .lake/packages/aesop/AesopTest/LegacyForward.lean
+
+  axiom bc
+    File: .lake/packages/aesop/AesopTest/LegacyForward.lean
+
+  axiom ADMIT
+    File: .lake/packages/aesop/AesopTest/List.lean
+
+  axiom TF
+    File: .lake/packages/aesop/AesopTest/NormSimp.lean
+
+  axiom TT
+    File: .lake/packages/aesop/AesopTest/NormSimp.lean
+
+  axiom T
+    File: .lake/packages/aesop/AesopTest/PostponeSafeRules.lean
+
+  axiom t
+    File: .lake/packages/aesop/AesopTest/PostponeSafeRules.lean
+
+  axiom U
+    File: .lake/packages/aesop/AesopTest/PostponeSafeRules.lean
+
+  axiom u₁
+    File: .lake/packages/aesop/AesopTest/PostponeSafeRules.lean
+
+  axiom u₂
+    File: .lake/packages/aesop/AesopTest/PostponeSafeRules.lean
+
+  axiom test
+    File: .lake/packages/aesop/AesopTest/RecursiveUnfoldRule.lean
+
+  axiom falso
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom nat_pos
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom foo
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom abs
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom triangle
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom falso'
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom quuz
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom bar
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom baz
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom falso₁
+    File: .lake/packages/aesop/AesopTest/RulePattern.lean
+
+  axiom P
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom T
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom Q
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom R
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom S
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom q_r_p
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom s_q
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom s_r
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom s
+    File: .lake/packages/aesop/AesopTest/SafeExtractionCopyIntroducedMVars.lean
+
+  axiom loopy
+    File: .lake/packages/aesop/AesopTest/SafePrefixExpansionRappLimit.lean
+
+  axiom foo
+    File: .lake/packages/aesop/AesopTest/WarnApplyIff.lean
+
+  axiom bar
+    File: .lake/packages/aesop/AesopTest/WarnApplyIff.lean
+
+  axiom baz
+    File: .lake/packages/aesop/AesopTest/WarnApplyIff.lean
+
+  axiom div_eq_mul_inv
+    File: .lake/packages/batteries/BatteriesTest/simpa.lean
+
+  axiom mul_left_injective
+    File: .lake/packages/batteries/BatteriesTest/simpa.lean
+
+  axiom mySorry
+    File: .lake/packages/batteries/BatteriesTest/solve_by_elim.lean
+
+  axiom of
+    File: .lake/packages/mathlib/Mathlib/Algebra/Order/Module/OrderedSMul.lean
+
+  axiom `HasFunctorialFactorization
+    File: .lake/packages/mathlib/Mathlib/CategoryTheory/MorphismProperty/Factorization.lean
+
+  axiom that
+    File: .lake/packages/mathlib/Mathlib/Data/Matroid/IndepAxioms.lean
+
+  axiom qc
+    File: .lake/packages/mathlib/Mathlib/Tactic/LinearCombination'.lean
+
+  axiom hqc
+    File: .lake/packages/mathlib/Mathlib/Tactic/LinearCombination'.lean
+
+  axiom scary
+    File: .lake/packages/mathlib/Mathlib/Tactic/Polyrith.lean
+
+  axiom Nat.card
+    File: .lake/packages/mathlib/MathlibTest/FBinop.lean
+
+  axiom Real
+    File: .lake/packages/mathlib/MathlibTest/GCongr/inequalities.lean
+
+  axiom f
+    File: .lake/packages/mathlib/MathlibTest/GCongr/inequalities.lean
+
+  axiom α
+    File: .lake/packages/mathlib/MathlibTest/Inhabit.lean
+
+  axiom a
+    File: .lake/packages/mathlib/MathlibTest/Inhabit.lean
+
+  axiom F
+    File: .lake/packages/mathlib/MathlibTest/LibrarySearch/basic.lean
+
+  axiom foo
+    File: .lake/packages/mathlib/MathlibTest/NthRewrite.lean
+
+  axiom foo'
+    File: .lake/packages/mathlib/MathlibTest/NthRewrite.lean
+
+  axiom bar'
+    File: .lake/packages/mathlib/MathlibTest/NthRewrite.lean
+
+  axiom bar
+    File: .lake/packages/mathlib/MathlibTest/Recall.lean
+
+  axiom f₁
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom g₁
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom f₂
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom g₂
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom R
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom app
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom A
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom B
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom C
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom D
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom E
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom F
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom C_ss
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom a1
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom a2
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom a3
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom mk_B1
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom mk_B2
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom mk_C1
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom mk_C2
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom tr_B
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom x
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom y
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom z
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom f
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom f'
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom g
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom h
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom inv'
+    File: .lake/packages/mathlib/MathlibTest/cc.lean
+
+  axiom Fintype.foo
+    File: .lake/packages/mathlib/MathlibTest/convert.lean
+
+  axiom Fintype.foo'
+    File: .lake/packages/mathlib/MathlibTest/convert.lean
+
+  axiom instFintypeBool
+    File: .lake/packages/mathlib/MathlibTest/convert.lean
+
+  axiom It
+    File: .lake/packages/mathlib/MathlibTest/fast_instance.lean
+
+  axiom silentSorry
+    File: .lake/packages/mathlib/MathlibTest/fun_prop_dev.lean
+
+  axiom abs_nonneg'
+    File: .lake/packages/mathlib/MathlibTest/linarith.lean
+
+  axiom T
+    File: .lake/packages/mathlib/MathlibTest/linarith.lean
+
+  axiom zero_lt_one
+    File: .lake/packages/mathlib/MathlibTest/linarith.lean
+
+  axiom foo
+    File: .lake/packages/mathlib/MathlibTest/linarith.lean
+
+  axiom Real
+    File: .lake/packages/mathlib/MathlibTest/linear_combination'.lean
+
+  axiom qc
+    File: .lake/packages/mathlib/MathlibTest/linear_combination'.lean
+
+  axiom hqc
+    File: .lake/packages/mathlib/MathlibTest/linear_combination'.lean
+
+  axiom bad
+    File: .lake/packages/mathlib/MathlibTest/linear_combination'.lean
+
+  axiom Real
+    File: .lake/packages/mathlib/MathlibTest/linear_combination.lean
+
+  axiom qc
+    File: .lake/packages/mathlib/MathlibTest/linear_combination.lean
+
+  axiom hqc
+    File: .lake/packages/mathlib/MathlibTest/linear_combination.lean
+
+  axiom bad
+    File: .lake/packages/mathlib/MathlibTest/linear_combination.lean
+
+  axiom Real
+    File: .lake/packages/mathlib/MathlibTest/norm_num.lean
+
+  axiom NNReal
+    File: .lake/packages/mathlib/MathlibTest/norm_num.lean
+
+  axiom Complex
+    File: .lake/packages/mathlib/MathlibTest/norm_num.lean
+
+  axiom term
+    File: .lake/packages/mathlib/MathlibTest/polyrith.lean
+
+  axiom qc
+    File: .lake/packages/mathlib/MathlibTest/polyrith.lean
+
+  axiom hqc
+    File: .lake/packages/mathlib/MathlibTest/polyrith.lean
+
+  axiom bad
+    File: .lake/packages/mathlib/MathlibTest/polyrith.lean
+
+  axiom test_sorry
+    File: .lake/packages/mathlib/MathlibTest/renameBvar.lean
+
+  axiom K
+    File: .lake/packages/mathlib/MathlibTest/rewrites.lean
+
+  axiom α
+    File: .lake/packages/mathlib/MathlibTest/rewrites.lean
+
+  axiom f
+    File: .lake/packages/mathlib/MathlibTest/rewrites.lean
+
+  axiom z
+    File: .lake/packages/mathlib/MathlibTest/rewrites.lean
+
+  axiom f_eq
+    File: .lake/packages/mathlib/MathlibTest/rewrites.lean
+
+  axiom Real
+    File: .lake/packages/mathlib/MathlibTest/ring.lean
+
+  axiom mySorry
+    File: .lake/packages/mathlib/MathlibTest/solve_by_elim/basic.lean
+
+  axiom mkDefault
+    File: .lake/packages/mathlib/MathlibTest/spread.lean
+
+  axiom P
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom Q
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom pq
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom qp
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom Q
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom R
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom pq
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom qr
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom rp
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₁
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₂
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₃
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₄
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₅
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₆
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P₇
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₁
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₂
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₃
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₄
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₅
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₆
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom h₇
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom P
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom Q
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom pq
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom qp
+    File: .lake/packages/mathlib/MathlibTest/tfae.lean
+
+  axiom test_sorry
+    File: .lake/packages/proofwidgets/ProofWidgets/Demos/Euclidean.lean
+
+  axiom test_sorry
+    File: .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean
 
   axiom normal_form_exists
     File: QOU/GrobnerShirshov/Basic.lean
@@ -93,160 +834,43 @@ The following key declarations were checked for axiom dependencies.
 Any use of `sorryAx` indicates an incomplete proof.
 
   #print axioms QOU.MassDerivation.topological_mass_formula
-    info: qou: no previous manifest, creating one from scratch
-    info: checkdecls: cloning https://github.com/PatrickMassot/checkdecls
-    info: checkdecls: checking out revision '3d425859e73fcfbef85b9638c2a91708ef4a22d4'
-    info: doc-gen4: cloning https://github.com/leanprover/doc-gen4
-    info: doc-gen4: checking out revision 'af3e1046f897d2f22721413bb095e64849cc76a6'
-    info: quantumInfo: cloning https://github.com/Timeroot/Lean-QuantumInfo
-    info: quantumInfo: checking out revision 'b7cf131641037baab9ad2f98444f8094879d226b'
-    info: mathlib: cloning https://github.com/leanprover-community/mathlib4
-    info: mathlib: checking out revision 'a6276f4c6097675b1cf5ebd49b1146b735f38c02'
-    info: toolchain not updated; already up-to-date
+    (could not run — project may not be built)
 
   #print axioms QOU.MassDerivation.derive_substrate_q
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.MassDerivation.mass_ratio_from_volume
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.MassDerivation.vol_figure_eight
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.MassDerivation.experimental_mu_e_ratio
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.MassDerivation.quantum_planck
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.KnotTheory.PlanarDiagram
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.KnotTheory.figureEight
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.KnotRegistry.figureEightEntry
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.KnotRegistry.registry_volume_eq_mass_derivation
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.Calculations.full_derivation_chain
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.Calculations.substrate_error_bound
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
   #print axioms QOU.Glossary.FrobeniusHopfObject
-    info: qou: no previous manifest, creating one from scratch
-    info: toolchain not updated; already up-to-date
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:39:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
-    instead of
-    String → String
-    warning: /home/runner/work/qou/qou/lean/.lake/packages/doc-gen4/lakefile.lean:52:20: `String.trimRight` has been deprecated: Use `String.trimAsciiEnd` instead
-    Note: The updated constant has a different type:
-    String → String.Slice
+    (could not run — project may not be built)
 
 ------------------------------------------------------------------------
 §5  TOPOLOGICAL MASS THEOREM TRANSPARENCY
@@ -301,99 +925,360 @@ link to the foundational reference are shown.
 
   ⚠  Gaps WITHOUT bibliographic references (needs annotation):
 
-    QOU/BringsSurface.lean:298  brings_is_qou
-    QOU/BringsSurface.lean:304  chiral_elliptic
-    QOU/BringsSurface.lean:310  color_tube_fibers
-    QOU/BringsSurface.lean:316  quaternionic_spectral_resolvents
-    QOU/DescartesUniverse.lean:190  genus_maximal_descent
-    QOU/DescartesUniverse.lean:196  descartes_braid_structure
-    QOU/DescartesUniverse.lean:202  descartes
-    QOU/Elaboration.lean:328  emergence_to_fake_flat
-    QOU/Elaboration.lean:334  categorical_jet_prolongation
-    QOU/Elaboration.lean:340  CategoricalTransport
-    QOU/Elaboration.lean:346  categorical_q_reeb_flow
-    QOU/Elaboration.lean:352  categorical_q_torsion_leaf
+    .lake/packages/LeanSearchClient/LeanSearchClient/LoogleSyntax.lean:170  loogleUsage
+    .lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:343  searchTacticSuggestions
+    .lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:370  searchTacticSuggestions
+    .lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:397  searchTacticSuggestions
+    .lake/packages/LeanSearchClient/LeanSearchClient/Syntax.lean:502  searchTacticSuggestions
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:25  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:29  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:62  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:66  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/Examples.lean:73  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/LoogleExamples.lean:18  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:28  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:33  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:60  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/MoogleExamples.lean:65  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:17  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:22  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:31  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:36  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:57  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:62  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:71  (unknown)
+    .lake/packages/LeanSearchClient/LeanSearchClientTest/StateSearchExamples.lean:76  (unknown)
+    .lake/packages/Qq/Qq/Simp.lean:11  (unknown)
+    .lake/packages/Qq/Qq/Simp.lean:16  (unknown)
+    .lake/packages/Qq/examples/introQ.lean:16  assignQ
+    .lake/packages/aesop/Aesop/RuleTac/Tactic.lean:93  tacticStx
+    .lake/packages/aesop/Aesop/Script/Step.lean:58  mkSorry
+    .lake/packages/aesop/Aesop/Tree/ExtractScript.lean:123  extractScript
+    .lake/packages/aesop/Aesop/Tree/State.lean:129  GoalRef.markProvenByNormalization
+    .lake/packages/aesop/AesopTest/205.lean:25  R
+    .lake/packages/aesop/AesopTest/205.lean:27  R
+    .lake/packages/aesop/AesopTest/205.lean:32  R
+    .lake/packages/aesop/AesopTest/ExtScript.lean:22  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:23  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:25  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:31  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:37  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:39  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:40  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:42  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:48  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:55  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:56  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:58  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:64  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:71  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:73  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:75  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:82  (unknown)
+    .lake/packages/aesop/AesopTest/ExtScript.lean:99  T_ext
+    .lake/packages/aesop/AesopTest/ExtScript.lean:100  T_ext
+    .lake/packages/aesop/AesopTest/ExtScript.lean:102  T_ext
+    .lake/packages/aesop/AesopTest/ExtScript.lean:108  T_ext
+    .lake/packages/aesop/AesopTest/IncompleteScript.lean:19  (unknown)
+    .lake/packages/aesop/AesopTest/IncompleteScript.lean:40  (unknown)
+    .lake/packages/aesop/AesopTest/IncompleteScript.lean:55  (unknown)
+    .lake/packages/aesop/AesopTest/List.lean:14  (unknown)
+    .lake/packages/aesop/AesopTest/SplitScript.lean:19  (unknown)
+    .lake/packages/aesop/AesopTest/SplitScript.lean:20  (unknown)
+    .lake/packages/aesop/AesopTest/SplitScript.lean:22  (unknown)
+    .lake/packages/aesop/AesopTest/SplitScript.lean:27  (unknown)
+    .lake/packages/batteries/Batteries/CodeAction/Basic.lean:16  (unknown)
+    .lake/packages/batteries/Batteries/CodeAction/Misc.lean:29  holeKindToHoleString
+    .lake/packages/batteries/Batteries/CodeAction/Misc.lean:281  findTermInfo?
+    .lake/packages/batteries/Batteries/CodeAction/Misc.lean:282  findTermInfo?
+    .lake/packages/batteries/Batteries/CodeAction/Misc.lean:346  casesExpand
+    .lake/packages/batteries/Batteries/CodeAction/Misc.lean:396  addSubgoalsActionCore
+    .lake/packages/batteries/Batteries/Linter/UnreachableTactic.lean:16  (unknown)
+    .lake/packages/batteries/Batteries/Tactic/Case.lean:70  (unknown)
+    .lake/packages/batteries/Batteries/Tactic/Lint/Misc.lean:37  (unknown)
+    .lake/packages/batteries/Batteries/Util/ProofWanted.lean:35  elabProofWanted
+    .lake/packages/batteries/BatteriesTest/conv_equals.lean:13  (unknown)
+    .lake/packages/batteries/BatteriesTest/conv_equals.lean:22  (unknown)
+    .lake/packages/batteries/BatteriesTest/conv_equals.lean:42  (unknown)
+    .lake/packages/batteries/BatteriesTest/conv_equals.lean:43  (unknown)
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:231  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:232  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:255  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:256  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:283  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:284  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:308  test
+    .lake/packages/batteries/BatteriesTest/help_cmd.lean:309  test
+    .lake/packages/batteries/BatteriesTest/lint_unreachableTactic.lean:20  (unknown)
+    .lake/packages/batteries/BatteriesTest/lint_unreachableTactic.lean:28  t
+    .lake/packages/batteries/BatteriesTest/lint_unreachableTactic.lean:32  a
+    .lake/packages/batteries/BatteriesTest/lintsimp.lean:37  [Mul
+    .lake/packages/batteries/BatteriesTest/lintunused.lean:3  (unknown)
+    .lake/packages/batteries/BatteriesTest/lintunused.lean:4  (unknown)
+    .lake/packages/batteries/BatteriesTest/lintunused.lean:7  Foo
+    .lake/packages/batteries/BatteriesTest/simpa.lean:82  thm
+    .lake/packages/batteries/BatteriesTest/simpa.lean:85  thm2
+    .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:58  (unknown)
+    .lake/packages/mathlib/Mathlib/Algebra/Algebra/RestrictScalars.lean:63  (unknown)
+    .lake/packages/mathlib/Mathlib/Algebra/Group/Invertible/Defs.lean:43  something_that_needs_inverses
+    .lake/packages/mathlib/Mathlib/Algebra/Homology/HomologicalComplex.lean:747  mk'_X_succ
+    .lake/packages/mathlib/Mathlib/Algebra/Homology/HomologicalComplex.lean:753  mk'_d_succ
+    .lake/packages/mathlib/Mathlib/Algebra/Order/CauSeq/Completion.lean:258  Cauchy.divisionRing
+    .lake/packages/mathlib/Mathlib/Algebra/Tropical/Basic.lean:498  succ_nsmul
+    .lake/packages/mathlib/Mathlib/CategoryTheory/Category/Basic.lean:100  (unknown)
+    .lake/packages/mathlib/Mathlib/CategoryTheory/Category/Basic.lean:109  (unknown)
+    .lake/packages/mathlib/Mathlib/CategoryTheory/Limits/Shapes/Equalizers.lean:195  parallelPair
+    .lake/packages/mathlib/Mathlib/CategoryTheory/Limits/Shapes/Multiequalizer.lean:633  ofSigmaCoforkFunctor
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Basic.lean:110  :
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Basic.lean:111  do_something
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Basic.lean:112  do_something
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Embedding.lean:118  :
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Embedding.lean:119  do_something
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Equiv.lean:116  :
+    .lake/packages/mathlib/Mathlib/Data/FunLike/Equiv.lean:117  do_something
+    .lake/packages/mathlib/Mathlib/Data/Int/Bitwise.lean:232  testBit_bit_succ
+    .lake/packages/mathlib/Mathlib/Data/Nat/Defs.lean:682  rec_add_one
+    .lake/packages/mathlib/Mathlib/Data/Nat/Defs.lean:683  rec_add_one
+    .lake/packages/mathlib/Mathlib/Data/SetLike/Basic.lean:33  (unknown)
+    .lake/packages/mathlib/Mathlib/Geometry/Manifold/LocalDiffeomorph.lean:252  IslocalDiffeomorph.diffeomorph_of_bijective
+    .lake/packages/mathlib/Mathlib/GroupTheory/FiniteAbelian/Basic.lean:37  DirectSum.congr
+    .lake/packages/mathlib/Mathlib/GroupTheory/FiniteAbelian/Basic.lean:38  DirectSum.congr
+    .lake/packages/mathlib/Mathlib/Lean/Expr/Basic.lean:187  getAppApps
+    .lake/packages/mathlib/Mathlib/LinearAlgebra/DirectSum/Finsupp.lean:173  finsuppLeft'_apply
+    .lake/packages/mathlib/Mathlib/Order/PrimeSeparator.lean:147  prime_ideal_of_disjoint_filter_ideal
+    .lake/packages/mathlib/Mathlib/Probability/Integration.lean:23  (unknown)
+    .lake/packages/mathlib/Mathlib/Probability/Integration.lean:24  (unknown)
+    .lake/packages/mathlib/Mathlib/SetTheory/Game/PGame.lean:73  le_iff_sub_nonneg
+    .lake/packages/mathlib/Mathlib/SetTheory/Game/PGame.lean:74  lt_iff_sub_pos
+    .lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:41  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:42  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/CongrM.lean:43  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/Eval.lean:29  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean:23  extracted_1
+    .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean:44  int_eq_nat
+    .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean:80  extracted_1.{u_1}
+    .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean:88  extracted_1
+    .lake/packages/mathlib/Mathlib/Tactic/ExtractGoal.lean:169  extracted_1
+    .lake/packages/mathlib/Mathlib/Tactic/FastInstance.lean:110  instSemiring
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:167  :
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:235  Proof.format
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:284  Proof.check
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:392  whenOk
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:429  whenOk
+    .lake/packages/mathlib/Mathlib/Tactic/ITauto.lean:493  whenOk
+    .lake/packages/mathlib/Mathlib/Tactic/LiftLets.lean:115  Lean.Expr.liftLets
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean:14  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean:15  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean:42  getAdmit
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean:43  getAdmit
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/AdmitLinter.lean:52  admitLinter
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/GlobalAttributeIn.lean:32  what
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/GlobalAttributeIn.lean:40  who
+    .lake/packages/mathlib/Mathlib/Tactic/Linter/GlobalAttributeIn.lean:66  what
+    .lake/packages/mathlib/Mathlib/Tactic/Qify.lean:25  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/Qify.lean:47  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/Set.lean:42  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/SimpIntro.lean:62  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:93  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:94  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:95  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:105  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:108  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:115  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:133  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:134  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:135  (unknown)
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:255  elabTFAEType
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:256  elabTFAEType
+    .lake/packages/mathlib/Mathlib/Tactic/TFAE.lean:262  elabTFAEType
+    .lake/packages/mathlib/Mathlib/Tactic/ToAdditive/Frontend.lean:119  foo
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:42  createCalc
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:90  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:91  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:93  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:94  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:95  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:98  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:100  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:103  suggestSteps
+    .lake/packages/mathlib/Mathlib/Tactic/Widget/Calc.lean:105  suggestSteps
+    .lake/packages/mathlib/Mathlib/Util/AssertNoSorry.lean:24  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:6  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:8  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:15  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:17  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:20  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:23  (unknown)
+    .lake/packages/mathlib/MathlibTest/AdmitLinter.lean:26  (unknown)
+    .lake/packages/mathlib/MathlibTest/Complex.lean:7  (unknown)
+    .lake/packages/mathlib/MathlibTest/Complex.lean:13  (unknown)
+    .lake/packages/mathlib/MathlibTest/Complex.lean:19  (unknown)
+    .lake/packages/mathlib/MathlibTest/Complex.lean:25  (unknown)
+    .lake/packages/mathlib/MathlibTest/Complex.lean:31  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:11  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:17  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:25  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:34  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:44  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:53  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:55  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:61  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:64  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:66  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:71  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:74  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:76  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:81  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:89  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:91  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:96  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:100  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:102  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:107  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:110  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:112  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:117  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:121  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:123  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:128  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:132  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:134  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:138  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:140  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:144  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:146  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:152  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:156  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:158  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:164  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:168  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:170  (unknown)
+    .lake/packages/mathlib/MathlibTest/ExtractGoal.lean:178  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:13  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:16  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:30  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:57  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:69  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:81  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:108  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:120  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:128  (unknown)
+    .lake/packages/mathlib/MathlibTest/HaveLetLinter.lean:138  (unknown)
+    .lake/packages/mathlib/MathlibTest/LibrarySearch/IsCompact.lean:4  (unknown)
+    .lake/packages/mathlib/MathlibTest/LibrarySearch/IsCompact.lean:5  (unknown)
+    .lake/packages/mathlib/MathlibTest/LintStyle.lean:241  foo
+    .lake/packages/mathlib/MathlibTest/LintStyle.lean:258  foo
+    .lake/packages/mathlib/MathlibTest/LintStyle.lean:259  foo
+    .lake/packages/mathlib/MathlibTest/MinImports.lean:67  uses_norm_num
+    .lake/packages/mathlib/MathlibTest/Quaternion.lean:25  (unknown)
+    .lake/packages/mathlib/MathlibTest/Quaternion.lean:31  (unknown)
+    .lake/packages/mathlib/MathlibTest/Real.lean:13  (unknown)
+    .lake/packages/mathlib/MathlibTest/Real.lean:14  (unknown)
+    .lake/packages/mathlib/MathlibTest/Real.lean:16  (unknown)
+    .lake/packages/mathlib/MathlibTest/Real.lean:17  (unknown)
+    .lake/packages/mathlib/MathlibTest/Real.lean:19  (unknown)
+    .lake/packages/mathlib/MathlibTest/Tauto.lean:97  (unknown)
+    .lake/packages/mathlib/MathlibTest/Use.lean:44  (unknown)
+    .lake/packages/mathlib/MathlibTest/aesop_cat.lean:7  (unknown)
+    .lake/packages/mathlib/MathlibTest/aesop_cat.lean:10  (unknown)
+    .lake/packages/mathlib/MathlibTest/eqns.lean:30  t_def'
+    .lake/packages/mathlib/MathlibTest/fast_instance.lean:111  It
+    .lake/packages/mathlib/MathlibTest/fast_instance.lean:113  It
+    .lake/packages/mathlib/MathlibTest/fast_instance.lean:115  It
+    .lake/packages/mathlib/MathlibTest/fast_instance.lean:117  dec2
+    .lake/packages/mathlib/MathlibTest/globalAttributeIn.lean:63  :
+    .lake/packages/mathlib/MathlibTest/globalAttributeIn.lean:65  foo
+    .lake/packages/mathlib/MathlibTest/itauto.lean:62  (unknown)
+    .lake/packages/mathlib/MathlibTest/itauto.lean:63  (unknown)
+    .lake/packages/mathlib/MathlibTest/itauto.lean:64  (unknown)
+    .lake/packages/mathlib/MathlibTest/jacobiSym.lean:44  prime_1000003
+    .lake/packages/mathlib/MathlibTest/jacobiSym.lean:49  prime_1000003
+    .lake/packages/mathlib/MathlibTest/linarith.lean:15  testSorryTac
+    .lake/packages/mathlib/MathlibTest/polyrith.lean:728  bad
+    .lake/packages/mathlib/MathlibTest/slim_check.lean:200  (unknown)
+    .lake/packages/mathlib/MathlibTest/tfae.lean:135  qp
+    .lake/packages/plausible/Test/Tactic.lean:125  (unknown)
+    .lake/packages/plausible/Test/Tactic.lean:134  (unknown)
+    .lake/packages/plausible/Test/Tactic.lean:145  (unknown)
+    .lake/packages/plausible/Test/Tactic.lean:167  type_u
+    .lake/packages/proofwidgets/ProofWidgets/Demos/SelectInsertConv.lean:157  ConvSelectionPanel
+    .lake/packages/quantumInfo/ClassicalInfo/Capacity.lean:51  (unknown)
+    .lake/packages/quantumInfo/ClassicalInfo/Capacity.lean:53  (unknown)
+    .lake/packages/quantumInfo/ClassicalInfo/Capacity.lean:54  (unknown)
+    .lake/packages/quantumInfo/ClassicalInfo/Capacity.lean:55  (unknown)
+    .lake/packages/quantumInfo/ClassicalInfo/Channel.lean:64  on_fin
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:143  faithful
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:159  min_eq_top_iff
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:169  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:170  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:171  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:177  not_Nontrivial_min
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:182  min_le
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:205  max
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:211  max
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:215  max
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:224  max
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Defs.lean:230  le_max
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean:19  qRelativeEnt
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean:26  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean:27  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean:28  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/AxiomatizedEntropy/Renyi.lean:31  :
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/CPTP.lean:365  piProd
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/CPTP.lean:371  fin_1_piProd
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/CPTP.lean:372  fin_1_piProd
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/Dual.lean:42  Dual.trace_eq
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/Dual.lean:49  IsHermitianPreserving.dual
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/MatrixMap.lean:125  exists_kraus
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/MatrixMap.lean:367  id_kron_submatrix
+    .lake/packages/quantumInfo/QuantumInfo/Finite/CPTPMap/Unbundled.lean:767  piProd
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:126  achievesRate_0
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:127  achievesRate_0
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:129  achievesRate_0
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:133  achievesRate_0
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:159  not_achievesRate_gt_log_dim_in
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:218  coherentInfo_le_quantumCapacity
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Capacity.lean:223  quantumCapacity_eq_piProd_coherentInfo
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Distance/Fidelity.lean:28  fidelity_le_one
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Distance/Fidelity.lean:51  fidelity_eq_one_iff_self
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Distance/Fidelity.lean:56  fidelity_symm
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Distance/Fidelity.lean:60  fidelity_channel_nondecreasing
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/DPI.lean:414  HermitianMat.eigenvalues_le_imp_le_smul_one
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/DPI.lean:444  sandwichedRenyiEntropy_DPI
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/Relative.lean:429  inner_log_sub_log_nonneg
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/Relative.lean:2058  qRelativeEnt_joint_convexity
+    .lake/packages/quantumInfo/QuantumInfo/Finite/Entropy/Relative.lean:2072  qMutualInfo_as_qRelativeEnt
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:87  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:88  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:101  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:102  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:109  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:114  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:115  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/Finite/ResourceTheory/ResourceTheory.lean:150  maximal_IsMaximal
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/CFC.lean:332  spectrum_subset_of_mem_Icc
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/CFC.lean:336  spectrum_subset_of_mem_Icc
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/CFC.lean:349  spectrum_subset_of_mem_Icc
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/Rpow.lean:670  lieb_thirring_le_one
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/HermitianMat/Rpow.lean:688  trace_rpow_add_le
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Lieb.lean:21  LiebConcavity
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/MatrixNorm/TraceNorm.lean:165  traceNorm_eq_max_tr_U
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Misc.lean:25  subtype_val_iSup
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Misc.lean:29  subtype_val_iSup'
+    .lake/packages/quantumInfo/QuantumInfo/ForMathlib/Unitary.lean:73  conj_unitary_eigenvalue_equiv
+    .lake/packages/quantumInfo/QuantumInfo/InfiniteDim/QState.lean:72  (unknown)
+    .lake/packages/quantumInfo/QuantumInfo/InfiniteDim/QState.lean:73  (unknown)
+    .lake/packages/quantumInfo/QuantumInfo/InfiniteDim/QState.lean:74  (unknown)
+    .lake/packages/quantumInfo/QuantumInfo/Regularized.lean:123  InfRegularized.to_SupRegularized
+    .lake/packages/quantumInfo/QuantumInfo/Regularized.lean:163  InfRegularized.of_Subadditive
+    .lake/packages/quantumInfo/QuantumInfo/Regularized.lean:164  InfRegularized.of_Subadditive
+    .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean:85  isn't
+    .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean:89  DifferentiableAt_Z_if_ZIntegrable
+    .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean:153  β_eq_deriv_S_U
     QOU/FormalGroups.lean:22  (unknown)
-    QOU/Glossary.lean:30  RigidMonoidalCategory
-    QOU/Glossary.lean:37  QuantumUniverse
-    QOU/Glossary.lean:44  HigherForms
-    QOU/Glossary.lean:51  QuantumObservableUniverse
-    QOU/Glossary.lean:58  InvolutiveStructure
-    QOU/Glossary.lean:65  PositiveDefiniteDagger
-    QOU/Glossary.lean:72  SpinLabels
-    QOU/Glossary.lean:79  MaximalTorus
-    QOU/Glossary.lean:86  WeightDecomposition
-    QOU/Glossary.lean:93  CategoricalReeb
-    QOU/Glossary.lean:100  ProjectiveLineObject
-    QOU/Glossary.lean:107  CategoricalConnection
-    QOU/Glossary.lean:114  CategoricalJet
-    QOU/Glossary.lean:121  CategoricalHodgeStar
-    QOU/Glossary.lean:128  SubstrateParameter
-    QOU/Glossary.lean:135  QuantumGaugeGroup
-    QOU/Glossary.lean:142  QuantumPlanckConstant
-    QOU/Glossary.lean:149  QHodgeStar
-    QOU/Glossary.lean:156  CategoricalAction
-    QOU/Glossary.lean:163  CategoricalQExtDeriv
-    QOU/Glossary.lean:170  QHarmonicForm
-    QOU/Glossary.lean:179  Fermion
-    QOU/Glossary.lean:188  CategoricalPoint
-    QOU/Glossary.lean:195  Observation
-    QOU/Glossary.lean:202  CategoricalInstanton
-    QOU/Glossary.lean:209  CategoricalQLieBracket
-    QOU/Glossary.lean:216  CategoricalQConnection
-    QOU/Glossary.lean:223  QYangMillsLevi
-    QOU/Glossary.lean:230  CategoricalTransport
-    QOU/Glossary.lean:237  CategoricalQReebFlow
-    QOU/Glossary.lean:244  CategoricalQTorsionLeaf
-    QOU/Glossary.lean:253  BraidGroup
-    QOU/Glossary.lean:260  S3Group
-    QOU/Glossary.lean:267  Su2Basis
-    QOU/Glossary.lean:274  Su2Generators
-    QOU/Glossary.lean:281  So3Generators
-    QOU/Glossary.lean:288  BraidTwistFlip
-    QOU/Glossary.lean:295  QuantumSu2
-    QOU/Glossary.lean:302  RecursiveBraneTower
-    QOU/Glossary.lean:309  YekutieliLiftingCondition
-    QOU/Glossary.lean:316  QuantumCharacteristicClasses
-    QOU/Glossary.lean:325  DirectLimitAlgebra
-    QOU/Glossary.lean:332  MassIdentity
-    QOU/Glossary.lean:339  YekutieliTriple
-    QOU/Glossary.lean:346  Descent
-    QOU/Glossary.lean:353  DescentInvolution
-    QOU/Glossary.lean:360  BraneBoundary
-    QOU/Glossary.lean:367  BringsSurface
-    QOU/Glossary.lean:376  ColorTubeCoordinates
-    QOU/Glossary.lean:383  ColorTubeFibers
-    QOU/Glossary.lean:392  ObservedValue
-    QOU/Glossary.lean:399  BriggsKleinChart
-    QOU/Glossary.lean:406  QuaternionicSpectralResolvents
-    QOU/Glossary.lean:413  DescartesCondition
-    QOU/Glossary.lean:420  ExceptionalDivisor
-    QOU/Glossary.lean:427  ChiralSectorCoords
-    QOU/Glossary.lean:434  WittVectorLift
-    QOU/PAdicQuantumGroups.lean:189  WittVectorLift
-    QOU/PAdicQuantumGroups.lean:195  skew_poisson_integrates
-    QOU/PathIntegrals.lean:481  braid_action_tensor
-    QOU/QuantumObservableUniverse.lean:1211  rigid_monoidal_category
-    QOU/QuantumObservableUniverse.lean:1217  frobenius_relation
-    QOU/QuantumObservableUniverse.lean:1223  maximal_torus
-    QOU/QuantumObservableUniverse.lean:1229  weight_decomposition
-    QOU/QuantumObservableUniverse.lean:1235  categorical_reeb
-    QOU/QuantumObservableUniverse.lean:1241  categorical_hodge_star
-    QOU/QuantumObservableUniverse.lean:1247  variational_equations
-    QOU/QuantumObservableUniverse.lean:1253  categorical_point
-    QOU/QuantumObservableUniverse.lean:1259  categorical_q_lie_bracket
-    QOU/QuantumObservableUniverse.lean:1265  categorical_q_connection
     QOU/Torsion.lean:471  global_gluing
-    QOU/Torsion.lean:929  yekutieli_lifting_condition
-    QOU/Torsion.lean:935  yekutieli_lifting
-    QOU/Torsion.lean:941  mass_identity_C
-    QOU/Torsion.lean:947  yekutieli_triple
-    QOU/Torsion.lean:953  descent_condition
-    QOU/Torsion.lean:959  descent_eigenspaces
-    QOU/Torsion.lean:965  topological_mass
 
-  Summary: 0 referenced / 91 unreferenced / 91 total gaps
+  Summary: 0 referenced / 352 unreferenced / 352 total gaps
 
 ========================================================================
 END OF REPORT
