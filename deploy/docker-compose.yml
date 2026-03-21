@@ -1,37 +1,36 @@
 # Remote Lean MCP Server Deployment
 #
+# All config is driven by lean-mcp.config.json at the repo root.
+# Run ./deploy/generate-config.sh to produce .env + authorized-emails.txt.
+#
 # Three services:
-#   1. lean-mcp:     The Lean LSP MCP server (Streamable HTTP, port 8080)
-#   2. oauth2-proxy: Google OAuth + email whitelist (port 443/4180)
+#   1. lean-mcp:     Lean LSP MCP server (Streamable HTTP)
+#   2. oauth2-proxy: Google OAuth + email whitelist (external-facing)
 #   3. auto-update:  Polls GHCR for new images, restarts lean-mcp
 #
 # Usage:
-#   cp .env.example .env          # fill in secrets
-#   cp authorized-emails.example authorized-emails.txt  # add emails
-#   docker compose up -d
+#   ./deploy/generate-config.sh     # create .env from lean-mcp.config.json
+#   cd deploy && docker compose up -d
 #
-# Auth flow:
-#   Client → oauth2-proxy (Google login, email whitelist) → lean-mcp
-#
-# For programmatic access (GH Actions, CLI):
-#   Use LEAN_LSP_MCP_TOKEN directly with bearer auth header,
-#   bypassing oauth2-proxy on port 8080 (internal only by default).
+# Auth:
+#   Browser:      Google OAuth via oauth2-proxy → lean-mcp
+#   API/CLI/CI:   Bearer token (LEAN_LSP_MCP_TOKEN) direct to lean-mcp
 
 services:
   # ── Lean MCP Server ──────────────────────────────────────────────
   lean-mcp:
-    image: ghcr.io/litlfred/qou/lean-mcp:latest
+    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest
     container_name: lean-mcp
     restart: unless-stopped
     environment:
       - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
     expose:
-      - "8080"
-    # Uncomment to also expose directly (for token-based access):
+      - "${LEAN_MCP_INTERNAL_PORT:-8080}"
+    # Uncomment for direct token-based access (bypasses OAuth):
     # ports:
-    #   - "8080:8080"
+    #   - "${LEAN_MCP_INTERNAL_PORT:-8080}:${LEAN_MCP_INTERNAL_PORT:-8080}"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/mcp"]
+      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/mcp"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -46,23 +45,17 @@ services:
     ports:
       - "${PROXY_PORT:-4180}:4180"
     environment:
-      # Google OAuth
-      - OAUTH2_PROXY_PROVIDER=google
+      - OAUTH2_PROXY_PROVIDER=${OAUTH2_PROXY_PROVIDER:-google}
       - OAUTH2_PROXY_CLIENT_ID=${GOOGLE_CLIENT_ID}
       - OAUTH2_PROXY_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
       - OAUTH2_PROXY_COOKIE_SECRET=${COOKIE_SECRET}
-      # Email whitelist
       - OAUTH2_PROXY_AUTHENTICATED_EMAILS_FILE=/etc/oauth2-proxy/authorized-emails.txt
-      # Upstream: forward authenticated requests to lean-mcp
-      - OAUTH2_PROXY_UPSTREAMS=http://lean-mcp:8080/
-      # Proxy config
+      - OAUTH2_PROXY_UPSTREAMS=http://lean-mcp:${LEAN_MCP_INTERNAL_PORT:-8080}/
       - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
       - OAUTH2_PROXY_REVERSE_PROXY=true
       - OAUTH2_PROXY_PASS_HOST_HEADER=true
       - OAUTH2_PROXY_SET_XAUTHREQUEST=true
-      # Skip auth for health checks
       - OAUTH2_PROXY_SKIP_AUTH_ROUTES=^/health$
-      # Allow API/MCP requests without browser redirect
       - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
       - OAUTH2_PROXY_API_ROUTES=^/mcp
     volumes:
@@ -77,15 +70,10 @@ services:
     container_name: watchtower
     restart: unless-stopped
     environment:
-      # Only update containers with the watchtower label
       - WATCHTOWER_LABEL_ENABLE=true
-      # Poll every 5 minutes
-      - WATCHTOWER_POLL_INTERVAL=300
-      # Clean up old images
+      - WATCHTOWER_POLL_INTERVAL=${WATCHTOWER_POLL_INTERVAL:-300}
       - WATCHTOWER_CLEANUP=true
-      # GHCR auth (uses same GITHUB_TOKEN as CI)
       - WATCHTOWER_HTTP_API_TOKEN=${WATCHTOWER_TOKEN:-watchtower}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      # Mount Docker config for GHCR auth
       - ${HOME}/.docker/config.json:/config.json:ro

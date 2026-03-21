@@ -1,25 +1,34 @@
 #!/usr/bin/env bash
 # Setup script for the remote Lean MCP server.
 #
-# Run this on your cloud VM / remote host to:
-#   1. Install Docker + Compose (if missing)
-#   2. Authenticate with GHCR
-#   3. Create .env and authorized-emails.txt from examples
-#   4. Pull the lean-mcp image
-#   5. Start all services
+# Reads lean-mcp.config.json from the repo root for all settings.
+# Run this on your cloud VM / remote host.
 #
-# Prerequisites: git, curl
+# Prerequisites: git, curl, python3
 #
 # Usage:
-#   git clone https://github.com/litlfred/qou.git
-#   cd qou/deploy
+#   git clone https://github.com/<owner>/<repo>.git
+#   cd <repo>/deploy
 #   ./setup-remote.sh
 
 set -euo pipefail
 
 DEPLOY_DIR="$(cd "$(dirname "$0")" && pwd)"
+REPO_ROOT="$(cd "$DEPLOY_DIR/.." && pwd)"
+CONFIG="$REPO_ROOT/lean-mcp.config.json"
+
+if [ ! -f "$CONFIG" ]; then
+    echo "✗ lean-mcp.config.json not found at repo root"
+    exit 1
+fi
+
+# Parse config
+DOMAIN=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('domain',''))")
+IMAGE=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('image',''))")
 
 echo "=== Lean MCP Remote Server Setup ==="
+echo "  Domain: $DOMAIN"
+echo "  Image:  $IMAGE"
 echo ""
 
 # ── 1. Docker ────────────────────────────────────────────────────
@@ -41,45 +50,33 @@ fi
 
 # ── 2. GHCR auth ────────────────────────────────────────────────
 echo ""
-echo "▸ Authenticating with GHCR..."
-echo "  You need a GitHub Personal Access Token with 'read:packages' scope."
-echo "  Create one at: https://github.com/settings/tokens/new"
-echo ""
-if [ ! -f "$HOME/.docker/config.json" ] || ! grep -q "ghcr.io" "$HOME/.docker/config.json" 2>/dev/null; then
-    echo "  Run: echo YOUR_TOKEN | docker login ghcr.io -u YOUR_USERNAME --password-stdin"
-    echo "  Then re-run this script."
+if [ -f "$HOME/.docker/config.json" ] && grep -q "ghcr.io" "$HOME/.docker/config.json" 2>/dev/null; then
+    echo "▸ Already authenticated with GHCR"
+else
+    echo "▸ GHCR authentication needed."
+    echo "  You need a GitHub PAT with 'read:packages' scope."
+    echo "  Create at: https://github.com/settings/tokens/new"
     echo ""
+    read -rp "  GitHub username: " GH_USER
+    read -rsp "  GitHub PAT: " GH_TOKEN
+    echo ""
+    echo "$GH_TOKEN" | docker login ghcr.io -u "$GH_USER" --password-stdin
+    echo "  ✓ Authenticated with GHCR"
 fi
 
-# ── 3. Config files ──────────────────────────────────────────────
-cd "$DEPLOY_DIR"
-
-if [ ! -f .env ]; then
-    echo "▸ Creating .env from example..."
-    cp .env.example .env
-    # Generate secrets
-    LEAN_TOKEN=$(openssl rand -hex 32)
-    COOKIE=$(openssl rand -base64 32 | head -c 32)
-    sed -i "s/changeme-generate-with-openssl-rand-hex-32/$LEAN_TOKEN/" .env
-    sed -i "s/changeme-generate-with-openssl/$COOKIE/" .env
-    echo "  ✓ .env created with generated secrets"
-    echo "  ⚠ You still need to fill in GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
-    echo "    Create at: https://console.cloud.google.com/apis/credentials"
+# ── 3. Generate config from lean-mcp.config.json ─────────────────
+echo ""
+if [ ! -f "$DEPLOY_DIR/.env" ]; then
+    echo "▸ Generating deployment config..."
+    "$DEPLOY_DIR/generate-config.sh"
 else
-    echo "▸ .env already exists"
-fi
-
-if [ ! -f authorized-emails.txt ]; then
-    echo "▸ Creating authorized-emails.txt from example..."
-    cp authorized-emails.example authorized-emails.txt
-    echo "  ✓ Created. Edit to add authorized email addresses."
-else
-    echo "▸ authorized-emails.txt already exists"
+    echo "▸ .env already exists (re-run generate-config.sh to regenerate)"
 fi
 
 # ── 4. Pull image ───────────────────────────────────────────────
 echo ""
 echo "▸ Pulling lean-mcp image..."
+cd "$DEPLOY_DIR"
 docker compose pull lean-mcp || echo "  ⚠ Pull failed (image may not be built yet)"
 
 # ── 5. Start ─────────────────────────────────────────────────────
@@ -94,11 +91,11 @@ echo "Services:"
 docker compose ps
 echo ""
 echo "Endpoints:"
-echo "  OAuth (browser):  http://$(hostname -I | awk '{print $1}'):${PROXY_PORT:-4180}/mcp"
-echo "  Token (API/CLI):  Set LEAN_LSP_MCP_TOKEN in .env, expose port 8080"
+echo "  OAuth (browser):  https://$DOMAIN/mcp"
+echo "  Health check:     https://$DOMAIN/health"
 echo ""
-echo "To switch clients to remote mode, update .mcp.json:"
-echo '  {"mcpServers":{"lean-lsp":{"url":"https://YOUR_HOST:4180/mcp"}}}'
+echo "To switch a Claude Code client to remote mode:"
+echo "  Update .mcp.json → {\"mcpServers\":{\"lean-lsp\":{\"url\":\"https://$DOMAIN/mcp\"}}}"
 echo ""
-echo "Watchtower will auto-update lean-mcp when new images are pushed to GHCR."
-echo "Check logs: docker compose logs -f"
+echo "Watchtower polls GHCR every $(python3 -c "import json; print(json.load(open('$CONFIG')).get('watchtower_poll_seconds',300))")s for new images."
+echo "Logs: docker compose logs -f"

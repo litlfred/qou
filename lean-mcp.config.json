@@ -1,0 +1,11 @@
+{
+  "domain": "lean.litlfred.org",
+  "port": 443,
+  "oauth_provider": "google",
+  "authorized_emails": ["litlfred@gmail.com"],
+  "image": "ghcr.io/litlfred/qou/lean-mcp",
+  "transport": "streamable-http",
+  "mcp_internal_port": 8080,
+  "watchtower_poll_seconds": 300,
+  "healthcheck_path": "/mcp"
+}

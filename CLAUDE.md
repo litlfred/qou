@@ -76,19 +76,25 @@ A Docker-based remote deployment is available in `deploy/`:
 cd deploy && ./setup-remote.sh
 ```
 
+All settings are driven by `lean-mcp.config.json` at the repo root.
+
 Architecture: `Client → oauth2-proxy (Google OAuth) → lean-lsp-mcp (HTTP)`
 
 - Docker image built by CI on every push to main (`build-lean-mcp.yml`)
 - All Lean deps and oleans baked into the image for fast startup (~10-20s)
-- Auth: Google OAuth with email whitelist (`authorized-emails.txt`)
-- Auto-update: Watchtower polls GHCR for new images every 5 min
+- Auth: Google OAuth with email whitelist (from `lean-mcp.config.json`)
+- Auto-update: Watchtower polls GHCR for new images
 - Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
 
 To switch a client to remote mode, update `.mcp.json`:
 
 ```json
-{"mcpServers":{"lean-lsp":{"url":"https://YOUR_HOST:4180/mcp"}}}
+{"mcpServers":{"lean-lsp":{"url":"https://lean.litlfred.org/mcp"}}}
 ```
+
+To extract the deploy infrastructure for another repo, copy `deploy/`,
+`lean-mcp.config.json`, `.github/docker/Dockerfile.lean-mcp`, and
+`.github/workflows/build-lean-mcp.yml`, then edit `lean-mcp.config.json`.
 
 ### Session-start hook
 
@@ -112,6 +118,7 @@ setup instructions rather than silently failing.
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
+| `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |
 | `skills-config.json` | Skill package subscriptions |
 
