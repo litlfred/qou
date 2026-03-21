@@ -7,7 +7,7 @@
  *   - Formula/diagram quick preview (LaTeX → PNG)
  *   - User preference storage (render format, scope)
  *   - Lean LSP proxy (delegates to lean-lsp-mcp subprocess)
- *   - Content viewer (serves paper.json + SPA on /viewer/)
+ *   - Content viewer (serves /api/paper from .ts manifests + SPA on /viewer/)
  *
  * Transports:
  *   --stdio   Stdio transport (default, for Claude Code .mcp.json)
@@ -315,11 +315,11 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return serveFile(join(VIEWER_DIR, "index.html"));
   }
 
-  // paper.json — try build output, then viewer dir
+  // Legacy paper.json — viewer now uses /api/paper directly
   if (path === "/viewer/paper.json") {
     return serveFile(join(VIEWER_BUILD_DIR, "paper.json"))
       || serveFile(join(VIEWER_DIR, "paper.json"))
-      || new Response("paper.json not found. Run: bun run content/pipeline/export-json.ts", {
+      || new Response("paper.json is deprecated. The viewer uses /api/paper which reads .ts manifests directly.", {
         status: 404,
         headers: { "Content-Type": "text/plain" },
       });
