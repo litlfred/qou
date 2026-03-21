@@ -301,11 +301,22 @@
     srcBtn.onclick = () => srcPanel.classList.toggle("vis");
     el.appendChild(srcPanel);
 
-    // lean badge
+    // lean badge + source toggle
     if (blk.lean) {
       const cls = blk.status || blk.lean.validation || "";
-      el.appendChild(h("div", `lb ${cls}`,
-        `<span class="vi ${blk.lean.validation || ""}"></span> ${esc(blk.lean.decl)} ${cls ? `(${cls})` : ""}`));
+      const lb = h("div", `lb ${cls}`);
+      lb.innerHTML = `<span class="vi ${blk.lean.validation || ""}"></span> ${esc(blk.lean.decl)} ${cls ? `(${cls})` : ""}`;
+      if (blk.lean.source) {
+        lb.style.cursor = "pointer";
+        lb.title = "Show Lean source";
+        const leanPanel = h("pre", "lean-src");
+        leanPanel.textContent = blk.lean.source;
+        lb.onclick = () => leanPanel.classList.toggle("vis");
+        el.appendChild(lb);
+        el.appendChild(leanPanel);
+      } else {
+        el.appendChild(lb);
+      }
     }
 
     // uses

@@ -160,6 +160,10 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .vi.not_checked{background:var(--brd)}
 .vi.error{background:var(--red);box-shadow:0 0 4px var(--red)}
 
+/* ── Lean source panel ─────────────────────────────────── */
+.lean-src{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:3px;padding:.8rem 1rem;margin-top:.5rem;font-family:var(--f-mono);font-size:.75rem;line-height:1.6;white-space:pre-wrap;overflow-x:auto;color:var(--fg);tab-size:2}
+.lean-src.vis{display:block}
+
 /* ── Example toggle (per-block) ─────────────────────────── */
 .ex-toggle{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;margin-top:.5rem;display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .4rem;border-radius:3px;transition:all .15s}
 .ex-toggle:hover{color:var(--ac);background:var(--bg-r)}
