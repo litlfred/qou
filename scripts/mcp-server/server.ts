@@ -27,9 +27,27 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR } from "./paths.js";
-import { existsSync, readFileSync } from "fs";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR } from "./paths.js";
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
+
+// ── Feedback storage (gitignored, survives branch switches) ─────
+
+function feedbackPath(paperId: string, rootName: string): string {
+  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+}
+
+function readFeedback(paperId: string, rootName: string): unknown[] {
+  const p = feedbackPath(paperId, rootName);
+  if (!existsSync(p)) return [];
+  try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
+}
+
+function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
+  const dir = join(FEEDBACK_DIR, paperId);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
+}
 
 // ── Content resolution (dynamic, no static JSON) ────────────────
 
@@ -193,6 +211,12 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
           const blk = (await import(tsPath)).default;
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
 
+          // Merge feedback todos from gitignored .qou-feedback/
+          const feedback = readFeedback(id, rootName);
+          if (feedback.length) {
+            blk.todos = [...(blk.todos || []), ...feedback];
+          }
+
           // Read Lean source if available
           let leanSource: string | undefined;
           if (blk.lean?.file) {
@@ -325,9 +349,17 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return null;
   }
 
-  // ── API: Submit feedback (create todo) ─────────────────────
-  // POST /api/feedback — handled in fetch() for POST requests
-  if (path === "/api/feedback") return null;
+  // ── API: Feedback ─────────────────────────────────────────
+  // GET  /api/feedback?paperId=X&rootName=Y → list todos
+  // POST /api/feedback                      → create todo (handled below)
+  if (path === "/api/feedback") {
+    const paperId = url.searchParams.get("paperId");
+    const rootName = url.searchParams.get("rootName");
+    if (paperId && rootName) {
+      return Response.json(readFeedback(paperId, rootName));
+    }
+    return null; // POST handled in handlePostRequest
+  }
 
   // ── Legacy viewer SPA ─────────────────────────────────────
   if (path === "/viewer" || path === "/viewer/" || path === "/viewer/index.html") {
@@ -403,27 +435,14 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
   }
 
   // ── Submit feedback as todo ────────────────────────────────
+  // Stored in .qou-feedback/ (gitignored), not in the content tree.
+  // Survives branch switches and won't be accidentally committed.
   if (path === "/api/feedback") {
     try {
       const body = await req.json() as {
         paperId: string; rootName: string;
         summary: string; comment: string; priority: string; assignee: string;
       };
-      const { readFileSync: rfs, writeFileSync: wfs, readdirSync } = await import("fs");
-
-      // Find the block's chapter directory by searching
-      const paperDir = join(CONTENT_DIR, body.paperId);
-      if (!existsSync(paperDir)) {
-        return Response.json({ error: "Paper not found" }, { status: 404 });
-      }
-      let blockDir: string | null = null;
-      for (const d of readdirSync(paperDir)) {
-        const candidate = join(paperDir, d, `${body.rootName}.ts`);
-        if (existsSync(candidate)) { blockDir = join(paperDir, d); break; }
-      }
-      if (!blockDir) {
-        return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
-      }
 
       const todoId = `todo-${Date.now().toString(36)}`;
       const todo = {
@@ -437,14 +456,9 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         createdAt: new Date().toISOString(),
       };
 
-      // Store todos in a sidecar JSON file (non-destructive)
-      const todoPath = join(blockDir, `${body.rootName}.todos.json`);
-      let todos: unknown[] = [];
-      if (existsSync(todoPath)) {
-        try { todos = JSON.parse(rfs(todoPath, "utf-8")); } catch {}
-      }
+      const todos = readFeedback(body.paperId, body.rootName);
       todos.push(todo);
-      wfs(todoPath, JSON.stringify(todos, null, 2), "utf-8");
+      writeFeedback(body.paperId, body.rootName, todos);
 
       return Response.json({ ok: true, todo });
     } catch (e) {
