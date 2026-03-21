@@ -869,165 +869,6 @@ involutivity of the antipode ($S^2 = \mathrm{id}$ on the centre
 of~$A$).
 \end{definition}
 
-\begin{remark}[Notation for the categorical action]
-\label{rem:categorical-action-notation}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) equipped with
-substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
-a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
-and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
-The following notation is used in
-Definition~\ref{def:categorical-action}:
-\begin{itemize}
-  \item $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ is the
-        \emph{categorical trace} (the composition
-        $\mathrm{coev} \to \mathrm{id} \to \mathrm{ev}$ via the rigid
-        structure).
-  \item $R_\lambda \in \mathrm{End}_{\mathcal{C}}(A)$ is the
-        \emph{Frobenius--Ricci endomorphism}: the curvature of the
-        Frobenius form~$\lambda$ itself, defined by
-        $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
-        where $\nabla_\lambda$ is the canonical connection on~$A$ induced
-        by~$\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
-        a_{(2)} - a \otimes 1$.
-  \item $\mathrm{tr}_A \colon
-        \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
-        \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the
-        \emph{partial trace} over the~$A$ factor.
-  \item $\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the
-        \emph{adjoint section} (antipode composed with the Frobenius form).
-  \item $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
-        the \emph{$q$-deformed covariant derivative}, where $\xi$ is the
-        Reeb derivation of~$A$
-        (Definition~\ref{def:reeb-decomposition}).
-\end{itemize}
-\end{remark}
-
-\begin{example}[Categorical-action notation for $\mathrm{SU}(2)$]
-\label{ex:categorical-action-notation-su2}
-Continuing Example~\ref{ex:connection-su2}, take
-$A = \mathcal{O}(\mathrm{SU}(2))$ with Haar integral $\lambda = \int_G$,
-connection $\nabla f = df + A \cdot f$, and a state
-$\psi \in A$ (a function on the group).
-\begin{itemize}
-  \item \emph{Categorical trace.}\;  For $T \in \mathrm{End}(V_j)$,
-        $\mathrm{tr}(T) = \sum_m \langle j,m \mid T \mid j,m \rangle$
-        is the usual matrix trace.
-  \item \emph{Frobenius--Ricci.}\;  $R_\lambda$ measures curvature of
-        the Haar integral itself: on $\mathrm{SU}(2)$ (flat Haar measure),
-        $R_\lambda = 0$ in the classical limit $q = 1$.
-  \item \emph{Adjoint section.}\;  For
-        $\psi \colon \mathbb{C} \to A$, the adjoint is
-        $\psi^*(f) = \int_G \overline{\psi(g)}\,f(g)\,dg$, i.e.\ the
-        inner product with~$\psi$ under the Haar integral.
-  \item \emph{$q$-deformed derivative.}\;  At $q = 1$,
-        $D_\nabla = \nabla$ (ordinary covariant derivative).  For
-        $q \neq 1$, the Reeb component is re-weighted, coupling the
-        connection to the contact geometry.
-\end{itemize}
-\end{example}
-
-\begin{definition}[Categorical action]
-\label{def:categorical-action}
-\uses{def:quantum-universe, def:quantum-observable-universe, def:categorical-connection}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) equipped with
-substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
-a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
-and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
-The \emph{categorical action} is the $R$-valued functional
-\begin{equation}\label{eq:categorical-action}
-  \mathcal{S}_q[\nabla,\, \lambda,\, \psi]
-  \;=\;
-  \underbrace{%
-    \mathrm{tr}\bigl(q \cdot R_\lambda\bigr)
-  }_{\text{gravity}}
-  \;+\;
-  \underbrace{%
-    \lambda \circ \mathrm{tr}_A\bigl(
-      F_\nabla \wedge_q \star_q F_\nabla
-    \bigr)
-  }_{\text{gauge}}
-  \;+\;
-  \underbrace{%
-    \lambda\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
-  }_{\text{matter}},
-\end{equation}
-with notation as in Remark~\ref{rem:categorical-action-notation}.
-\end{definition}
-
-\begin{proposition}[Variational equations of the categorical action]
-\label{prop:variational-equations}
-Let $\mathcal{S}_q$ be the categorical action
-(Definition~\ref{def:categorical-action}).  The three variational
-equations are:
-\begin{enumerate}
-  \item \emph{Gravity (vary~$\lambda$)}:
-    $\delta\mathcal{S}_q / \delta\lambda = 0$ yields the
-    \emph{categorical Einstein equation}:
-    \[
-      R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
-      \;=\; T_q[\nabla, \psi],
-    \]
-    where $T_q$ is the stress-energy endomorphism constructed from the
-    gauge and matter terms.
-  \item \emph{Gauge (vary~$\nabla$)}:
-    $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the
-    \emph{categorical Yang--Mills equation}:
-    \[
-      \nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
-      \;=\; J_\psi,
-    \]
-    where $J_\psi = \psi^* \otimes D_\nabla\psi - D_\nabla\psi^* \otimes \psi$
-    is the matter current.
-  \item \emph{Matter (vary~$\psi$)}:
-    $\delta\mathcal{S}_q / \delta\psi = 0$ yields the
-    \emph{categorical transport equation}:
-    \[
-      D_\nabla\,\psi \;=\; 0.
-    \]
-\end{enumerate}
-\end{proposition}
-
-\begin{proof}
-Each equation is obtained by computing
-$\delta\mathcal{S}_q = 0$ with respect to the indicated variable, using
-the non-degeneracy of~$\lambda$.
-
-\emph{Item~(1): Vary $\lambda$.}\;
-The gravity term $\mathrm{tr}(q \cdot R_\lambda)$ depends on~$\lambda$
-through the Frobenius--Ricci endomorphism~$R_\lambda$.  Varying
-$\lambda \mapsto \lambda + \delta\lambda$ and requiring
-$\delta\mathcal{S}_q = 0$ for all~$\delta\lambda$ gives, by
-non-degeneracy of the categorical trace,
-$R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
-= T_q[\nabla, \psi]$,
-where the stress-energy $T_q$ collects the $\lambda$-dependence of the
-gauge and matter terms.  The trace subtraction ensures
-$\mathrm{tr}(T_q) = \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)$ (the
-contracted Bianchi identity).
-
-\emph{Item~(2): Vary $\nabla$.}\;
-The gauge term
-$\lambda \circ \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
-depends on~$\nabla$ through $F_\nabla = \nabla^2$.  A standard
-computation using $\delta F_\nabla = \nabla(\delta\nabla)$ and
-integration by parts (via non-degeneracy of~$\lambda$) yields
-$\nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
-= J_\psi$.
-The commutator term $q \cdot [F_\nabla, \star_q F_\nabla]$ arises from
-the non-commutativity of the $q$-deformed wedge product; it vanishes
-when $q = 1$ (the abelian/classical limit).
-
-\emph{Item~(3): Vary $\psi$.}\;
-The matter term $\lambda(\psi^* \cdot D_\nabla\,\psi)$ is linear
-in~$\psi$.  Varying $\psi \mapsto \psi + \delta\psi$ and using
-$(\delta\psi)^* \cdot D_\nabla\,\psi = 0$ for
-all~$\delta\psi$ gives $D_\nabla\,\psi = 0$ by non-degeneracy
-of~$\lambda$ and the dagger structure
-(Definition~\ref{def:positive-definite-dagger}).
-\end{proof}
-
 % ── Substrate parameter and quantum gauge group ─────────────────────────────
 
 \section{Substrate parameter and deformation}
@@ -1123,6 +964,169 @@ At $q = 1$ this recovers the categorical Hodge star:
 $\star_1 = \star$.  The factor of~$q$ rescales the inner product on
 forms, coupling the Hodge duality to the local deformation strength.
 \end{definition}
+
+% ── Categorical action and variational equations ────────────────────────────
+
+\begin{remark}[Notation for the categorical action]
+\label{rem:categorical-action-notation}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) equipped with
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
+$q$-Hodge star $\star_q$ (Definition~\ref{def:q-hodge-star}),
+a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
+and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
+The following notation is used in
+Definition~\ref{def:categorical-action}:
+\begin{itemize}
+  \item $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ is the
+        \emph{categorical trace} (the composition
+        $\mathrm{coev} \to \mathrm{id} \to \mathrm{ev}$ via the rigid
+        structure).
+  \item $R_\lambda \in \mathrm{End}_{\mathcal{C}}(A)$ is the
+        \emph{Frobenius--Ricci endomorphism}: the curvature of the
+        Frobenius form~$\lambda$ itself, defined by
+        $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
+        where $\nabla_\lambda$ is the canonical connection on~$A$ induced
+        by~$\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
+        a_{(2)} - a \otimes 1$.
+  \item $\mathrm{tr}_A \colon
+        \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
+        \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the
+        \emph{partial trace} over the~$A$ factor.
+  \item $\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the
+        \emph{adjoint section} (antipode composed with the Frobenius form).
+  \item $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
+        the \emph{$q$-deformed covariant derivative}, where $\xi$ is the
+        Reeb derivation of~$A$
+        (Definition~\ref{def:reeb-decomposition}).
+\end{itemize}
+\end{remark}
+
+\begin{example}[Categorical-action notation for $\mathrm{SU}(2)$]
+\label{ex:categorical-action-notation-su2}
+Continuing Example~\ref{ex:connection-su2}, take
+$A = \mathcal{O}(\mathrm{SU}(2))$ with Haar integral $\lambda = \int_G$,
+connection $\nabla f = df + \mathcal{A} \cdot f$, and a state
+$\psi \in A$ (a function on the group).
+\begin{itemize}
+  \item \emph{Categorical trace.}\;  For $T \in \mathrm{End}(V_j)$,
+        $\mathrm{tr}(T) = \sum_m \langle j,m \mid T \mid j,m \rangle$
+        is the usual matrix trace.
+  \item \emph{Frobenius--Ricci.}\;  $R_\lambda$ measures curvature of
+        the Haar integral itself: on $\mathrm{SU}(2)$ (flat Haar measure),
+        $R_\lambda = 0$ in the classical limit $q = 1$.
+  \item \emph{Adjoint section.}\;  For
+        $\psi \colon \mathbb{C} \to A$, the adjoint is
+        $\psi^*(f) = \int_G \overline{\psi(g)}\,f(g)\,dg$, i.e.\ the
+        inner product with~$\psi$ under the Haar integral.
+  \item \emph{$q$-deformed derivative.}\;  At $q = 1$,
+        $D_\nabla = \nabla$ (ordinary covariant derivative).  For
+        $q \neq 1$, the Reeb component is re-weighted, coupling the
+        connection to the contact geometry.
+\end{itemize}
+\end{example}
+
+\begin{definition}[Categorical action]
+\label{def:categorical-action}
+\uses{def:quantum-universe, def:quantum-observable-universe, def:categorical-connection, def:substrate-parameter, def:q-hodge-star}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}) equipped with
+substrate parameter~$q$ (Definition~\ref{def:substrate-parameter}),
+$q$-Hodge star $\star_q$ (Definition~\ref{def:q-hodge-star}),
+a connection $\nabla$ (Definition~\ref{def:categorical-connection}),
+and a section $\psi \colon \mathbf{1} \to A$ (a ``state'').
+The \emph{categorical action} is the $R$-valued functional
+\begin{equation}\label{eq:categorical-action}
+  \mathcal{S}_q[\nabla,\, \lambda,\, \psi]
+  \;=\;
+  \underbrace{%
+    \mathrm{tr}\bigl(q \cdot R_\lambda\bigr)
+  }_{\text{gravity}}
+  \;+\;
+  \underbrace{%
+    \lambda \circ \mathrm{tr}_A\bigl(
+      F_\nabla \wedge_q \star_q F_\nabla
+    \bigr)
+  }_{\text{gauge}}
+  \;+\;
+  \underbrace{%
+    \lambda\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
+  }_{\text{matter}},
+\end{equation}
+with notation as in Remark~\ref{rem:categorical-action-notation}.
+\end{definition}
+
+\begin{proposition}[Variational equations of the categorical action]
+\label{prop:variational-equations}
+Let $\mathcal{S}_q$ be the categorical action
+(Definition~\ref{def:categorical-action}).  The three variational
+equations are:
+\begin{enumerate}
+  \item \emph{Gravity (vary~$\lambda$)}:
+    $\delta\mathcal{S}_q / \delta\lambda = 0$ yields the
+    \emph{categorical Einstein equation}:
+    \[
+      R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
+      \;=\; T_q[\nabla, \psi],
+    \]
+    where $T_q$ is the stress-energy endomorphism constructed from the
+    gauge and matter terms.
+  \item \emph{Gauge (vary~$\nabla$)}:
+    $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the
+    \emph{categorical Yang--Mills equation}:
+    \[
+      \nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
+      \;=\; J_\psi,
+    \]
+    where $J_\psi = \psi^* \otimes D_\nabla\psi - D_\nabla\psi^* \otimes \psi$
+    is the matter current.
+  \item \emph{Matter (vary~$\psi$)}:
+    $\delta\mathcal{S}_q / \delta\psi = 0$ yields the
+    \emph{categorical transport equation}:
+    \[
+      D_\nabla\,\psi \;=\; 0.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each equation is obtained by computing
+$\delta\mathcal{S}_q = 0$ with respect to the indicated variable, using
+the non-degeneracy of~$\lambda$.
+
+\emph{Item~(1): Vary $\lambda$.}\;
+The gravity term $\mathrm{tr}(q \cdot R_\lambda)$ depends on~$\lambda$
+through the Frobenius--Ricci endomorphism~$R_\lambda$.  Varying
+$\lambda \mapsto \lambda + \delta\lambda$ and requiring
+$\delta\mathcal{S}_q = 0$ for all~$\delta\lambda$ gives, by
+non-degeneracy of the categorical trace,
+$R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
+= T_q[\nabla, \psi]$,
+where the stress-energy $T_q$ collects the $\lambda$-dependence of the
+gauge and matter terms.  The trace subtraction ensures
+$\mathrm{tr}(T_q) = \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)$ (the
+contracted Bianchi identity).
+
+\emph{Item~(2): Vary $\nabla$.}\;
+The gauge term
+$\lambda \circ \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
+depends on~$\nabla$ through $F_\nabla = \nabla^2$.  A standard
+computation using $\delta F_\nabla = \nabla(\delta\nabla)$ and
+integration by parts (via non-degeneracy of~$\lambda$) yields
+$\nabla \star_q F_\nabla + q \cdot [F_\nabla,\, \star_q F_\nabla]
+= J_\psi$.
+The commutator term $q \cdot [F_\nabla, \star_q F_\nabla]$ arises from
+the non-commutativity of the $q$-deformed wedge product; it vanishes
+when $q = 1$ (the abelian/classical limit).
+
+\emph{Item~(3): Vary $\psi$.}\;
+The matter term $\lambda(\psi^* \cdot D_\nabla\,\psi)$ is linear
+in~$\psi$.  Varying $\psi \mapsto \psi + \delta\psi$ and using
+$(\delta\psi)^* \cdot D_\nabla\,\psi = 0$ for
+all~$\delta\psi$ gives $D_\nabla\,\psi = 0$ by non-degeneracy
+of~$\lambda$ and the dagger structure
+(Definition~\ref{def:positive-definite-dagger}).
+\end{proof}
 
 % ── Particles, Fermions, Bosons, Observation ────────────────────────────────
 
