@@ -24,6 +24,39 @@ assignment before formalization can proceed.
 - When filling `sorry` placeholders with actual proofs
 - When `lake build` succeeds but there are remaining `sorry` warnings
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **prefer MCP tools over shell commands**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + parse output | `lean_diagnostic_messages` | Structured errors per file, no parsing |
+| `formalizer.py export-proof-state` | `lean_goal` | Live goal state at any line/column, no Python |
+| Grepping Mathlib for lemmas | `lean_leansearch` / `lean_loogle` | Natural language + type-signature search across all of Mathlib |
+| Guessing tactics one at a time | `lean_multi_attempt` | Try multiple tactics at a sorry position in one call |
+| Manual `exact?` / `apply?` | `lean_completions` | Auto-complete with context-aware suggestions |
+| Reading Mathlib source for docs | `lean_hover_info` | Hover docs for any symbol inline |
+| Manual `Try this` checking | `lean_code_actions` | Get resolved edits from "Try This" suggestions |
+
+### MCP-first tactic workflow
+
+When filling a `sorry`:
+
+1. **`lean_goal`** at the sorry position → read the goal state
+2. **`lean_multi_attempt`** with candidate tactics from the tactic table → try all at once
+3. If no tactic works, **`lean_leansearch`** with the goal in natural language
+4. If leansearch finds a close match, **`lean_loogle`** with the type signature
+5. **`lean_code_actions`** on the line → check for "Try This" suggestions
+6. After editing, **`lean_diagnostic_messages`** → verify no new errors
+
+### MCP-enhanced library synthesis
+
+Instead of the Python script for import synthesis:
+1. Write the theorem stub with a `sorry` body
+2. **`lean_diagnostic_messages`** → see "unknown identifier" errors
+3. **`lean_leansearch`** for each unknown identifier → find the right import
+4. **`lean_completions`** at the import line → auto-complete module paths
+
 ## Workflow
 
 ### 1. Library synthesis
@@ -106,7 +139,10 @@ Based on the glossary types, import the correct Mathlib modules:
 
 ## Proof State Export
 
-The Formalizer can export the current goal state at any `sorry` site:
+**Preferred (MCP):** Use `lean_goal` with the file path and line/column of the
+sorry position. Returns structured goal state directly — no Python needed.
+
+**Fallback (no MCP):** The Formalizer can export the current goal state via:
 
 ```bash
 PYTHONPATH=.github/scripts python .github/scripts/formalizer.py export-proof-state \

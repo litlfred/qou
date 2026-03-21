@@ -23,6 +23,28 @@ workflow.
 - When running the agent-review pipeline with Lean content
 - When a Gemini code review touches files linked to proof objects
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **use MCP tools for all review checks**:
+
+| Review check | MCP tool | What it replaces |
+|-------------|----------|-----------------|
+| Type-checks (`lake build`) | `lean_diagnostic_messages` | Structured errors, no build needed |
+| Sorry audit | `lean_diagnostic_messages` | Filter warnings for sorry count |
+| Axiom dependencies | `lean_verify` | Returns axioms used + optional source scan |
+| Tactic quality | `lean_profile_proof` | Identifies slow tactics in a theorem |
+| Statement correctness | `lean_hover_info` | Check types of all symbols in statement |
+| Cross-references | `lean_references` | Find all uses of a declaration |
+| Declaration source | `lean_declaration_file` | Jump to where a symbol is defined |
+
+### MCP-enhanced review workflow
+
+1. **`lean_diagnostic_messages`** on the file under review → all errors/warnings
+2. **`lean_verify`** on each theorem → axiom audit (no `sorry`, no `Decidable.em` surprises)
+3. **`lean_profile_proof`** on complex theorems → flag tactics taking >1s
+4. **`lean_hover_info`** on key terms → verify types match LaTeX intent
+5. **`lean_references`** on modified declarations → check downstream impact
+
 ## Review Types
 
 ### 1. Lean Proof Check (`lean-proof-check`)

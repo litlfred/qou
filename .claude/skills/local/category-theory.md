@@ -17,6 +17,28 @@ Category theory is the "connective tissue" of Mathlib.  In Lean 4, a
 can have (via typeclasses).  This skill provides the tactics, patterns,
 and glossary requirements for effective category-theoretic formalization.
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, it supercharges category theory work:
+
+| Task | MCP tool | How it helps |
+|------|----------|-------------|
+| Finding Mathlib lemmas | `lean_leansearch` | "naturality of adjunction counit" → exact lemma |
+| Type-signature search | `lean_loogle` | `_ ⟶ _ ≫ NatTrans.app _ _ = _` → matching lemmas |
+| Checking diagram types | `lean_hover_info` | Verify morphism source/target without reading Mathlib |
+| Goal state in diagram chase | `lean_goal` | See exact morphism equation to prove |
+| Trying aesop_cat + fallbacks | `lean_multi_attempt` | Try `[aesop_cat, simp [assoc], rw [naturality]]` at once |
+| "Try This" from simp | `lean_code_actions` | Get the exact simp lemma set that closes the goal |
+| Finding all uses of a functor | `lean_references` | Impact analysis before refactoring |
+| Universe mismatch debugging | `lean_diagnostic_messages` | Structured errors with universe annotations |
+
+### MCP-first diagram chase
+
+1. **`lean_goal`** at the sorry → see the morphism equation
+2. **`lean_multi_attempt`** with `[aesop_cat, simp [Category.assoc], rw [NatTrans.naturality]]`
+3. If that fails, **`lean_leansearch`** with the goal in natural language
+4. **`lean_code_actions`** → check for "Try This" from `simp?` or `exact?`
+
 ## When to Use This Skill
 
 - When formalizing proofs involving diagram commutativity

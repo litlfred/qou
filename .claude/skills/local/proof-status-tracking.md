@@ -16,6 +16,26 @@ truth for which mathematical objects have been formalized, reviewed, and
 approved.  Lean declarations are referenced by URL (doc-gen4 pages), not
 duplicated in JSON.
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **prefer MCP tools for live status**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + `update_proof_status.py` | `lean_diagnostic_messages` | Per-file sorry/error counts without full build |
+| Manual declaration inventory | `lean_file_outline` | All declarations with type sigs in one call |
+| Checking if a decl is sorry-free | `lean_verify` | Axiom audit per theorem |
+| Cross-checking `\lean{}` refs | `lean_hover_info` | Verify declaration exists and get its type |
+
+### MCP-enhanced status update
+
+Instead of the full `extract → build → update` pipeline:
+
+1. **`lean_file_outline`** on each `lean/QOU/*.lean` → inventory all declarations
+2. **`lean_diagnostic_messages`** on each file → sorry warnings = `has_sorry`, no warnings = `proved`
+3. **`lean_verify`** on key theorems → axiom audit for publication readiness
+4. Update `proof-objects.json` with the results
+
 ## When to Use This Skill
 
 - After extracting proof objects from LaTeX
