@@ -103,7 +103,8 @@
     .env.example .bk{color:var(--grn)}
     .env.remark .bk{color:var(--fg-d)}
     .bt{font-size:.95rem;font-weight:500;color:var(--fg-b)}
-    .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:auto}
+    .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:auto;text-decoration:none}
+    .bl:hover{color:var(--ac)}
 
     /* Tags */
     .tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.4rem}
@@ -461,6 +462,14 @@
       return p;
     }
 
+    // ── Block header helper ────────────────────────────────
+    function mkBlockHeader(kind, title, label) {
+      let hd = `<span class="bk">${kind}</span>`;
+      if (title) hd += `<span class="bt">${inl(title)}</span>`;
+      if (label) hd += `<a class="bl" href="#/edit/${label}" title="Edit ${label}">${label}</a>`;
+      return `<div class="bh">${hd}</div>`;
+    }
+
     // ── Uses inline helper ─────────────────────────────────
     function mkUsesInline(block) {
       const u = mk('div','uses');
@@ -503,10 +512,7 @@
 
         const d = mk('div', 'env example');
         if (block.label) d.id = block.label;
-        let hd = `<span class="bk">example</span>`;
-        if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
-        if (block.label) hd += `<span class="bl">${block.label}</span>`;
-        d.innerHTML = `<div class="bh">${hd}</div>`;
+        d.innerHTML = mkBlockHeader('example', block.title, block.label);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -541,10 +547,7 @@
 
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
-        let hd = `<span class="bk">remark</span>`;
-        if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
-        if (block.label) hd += `<span class="bl">${block.label}</span>`;
-        d.innerHTML = `<div class="bh">${hd}</div>`;
+        d.innerHTML = mkBlockHeader('remark', block.title, block.label);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -602,10 +605,7 @@
       const d = mk('div',`blk env ${block.kind}`);
       if (block.label) d.id = block.label;
 
-      let hd = `<span class="bk">${block.kind}</span>`;
-      if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
-      if (block.label) hd += `<span class="bl">${block.label}</span>`;
-      d.innerHTML = `<div class="bh">${hd}</div>`;
+      d.innerHTML = mkBlockHeader(block.kind, block.title, block.label);
 
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
@@ -849,7 +849,7 @@
         `;
         card.style.cursor = 'pointer';
         card.onclick = () => {
-          location.hash = `#/paper/${p.id}`;
+          location.hash = `#/view/${p.id}`;
         };
         list.appendChild(card);
       }
@@ -858,31 +858,107 @@
     }
 
     // ── Router ────────────────────────────────────────────
-    const LABEL_RE = /^#(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|sec|chap):/;
+    // Routes:
+    //   #/                       → folio (paper listing)
+    //   #/view/<paper-id>        → full paper view
+    //   #/view/<label>           → paper view, scrolled to block
+    //   #/edit/<label>           → block edit view
+    //   #<label>                 → shorthand for #/view/<label>
+    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|sec|chap):/;
     let pendingScroll = null;
 
     async function route() {
       const hash = location.hash || '#/';
+      const raw = hash.slice(1); // remove #
 
-      // Direct label anchor: #rem:foo, #def:bar, etc.
-      if (LABEL_RE.test(hash)) {
-        const label = hash.slice(1);
-        pendingScroll = label;
-        if (!paper) {
-          // Load default paper, then scroll
-          await loadPaper('quantum-observable-universe');
-        } else {
-          scrollToLabel(label);
-        }
+      // Shorthand: #rem:foo → treat as #/view/rem:foo
+      if (LABEL_RE.test(raw)) {
+        await routeView(raw);
         return;
       }
 
-      const parts = hash.slice(2).split('/').filter(Boolean);
-      if (parts[0] === 'paper' && parts[1]) {
-        await loadPaper(parts[1]);
+      const parts = raw.replace(/^\//, '').split('/').filter(Boolean);
+      const action = parts[0];
+      const slug = parts.slice(1).join('/');
+
+      if (action === 'view' && slug) {
+        await routeView(slug);
+      } else if (action === 'edit' && slug) {
+        await routeEdit(slug);
       } else {
         await loadFolio();
       }
+    }
+
+    async function routeView(slug) {
+      // Is it a label? (has prefix like def:, rem:, etc.)
+      const isLabel = LABEL_RE.test(slug);
+      if (isLabel) {
+        pendingScroll = slug;
+        if (!paper) await loadDefaultPaper();
+        else scrollToLabel(slug);
+      } else {
+        // It's a paper id
+        await loadPaper(slug);
+      }
+    }
+
+    async function routeEdit(slug) {
+      // Load paper if needed, then show edit UI for the block
+      if (!paper) await loadDefaultPaper();
+      const block = bix.get(slug);
+      if (block) {
+        renderEditView(block);
+      } else {
+        document.getElementById('app').innerHTML =
+          `<div class="err">Block not found: ${esc(slug)}</div>`;
+      }
+    }
+
+    function renderEditView(block) {
+      const app = document.getElementById('app');
+      app.innerHTML = '';
+      document.body.classList.remove('has-sidebar');
+      document.getElementById('sidebar').innerHTML = '';
+
+      const hdr = mk('div','hdr');
+      hdr.innerHTML = `<h1>${esc(block.title || block.label || block.rootName)}</h1>
+        <div class="au"><span class="bk">${block.kind}</span> ${block.label ? `<span class="bl">${block.label}</span>` : ''}</div>
+        <div class="dt"><a href="#/view/${esc(block.label || '')}" style="color:var(--ac)">back to paper</a></div>`;
+      app.appendChild(hdr);
+
+      // Source editor
+      const edArea = mk('div','blk');
+      edArea.innerHTML = `<h3 class="sec-t">Markdown source</h3>`;
+      const ta = document.createElement('textarea');
+      ta.value = block.md || '';
+      ta.style.cssText = 'width:100%;min-height:300px;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-mono);font-size:.8rem;padding:.8rem;resize:vertical';
+      edArea.appendChild(ta);
+      app.appendChild(edArea);
+
+      // Live preview
+      const prev = mk('div','blk');
+      prev.innerHTML = `<h3 class="sec-t">Preview</h3>`;
+      const prevBody = mk('div',`env ${block.kind}`);
+      prev.appendChild(prevBody);
+      app.appendChild(prev);
+
+      function updatePreview() {
+        const {html: bh, texBlocks: tx} = parseMd(ta.value);
+        prevBody.innerHTML = `<div class="bb">${bh}</div>`;
+        fillTex(prevBody, tx, block.rendered);
+        renderMath(prevBody);
+      }
+      ta.addEventListener('input', updatePreview);
+      updatePreview();
+
+      // Manifest view
+      const manifest = mk('div','blk');
+      manifest.innerHTML = `<h3 class="sec-t">Manifest (.ts)</h3>
+        <pre style="background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;font-size:.75rem;color:var(--fg-d);overflow-x:auto">${esc(JSON.stringify({kind:block.kind,label:block.label,title:block.title,uses:block.uses,lean:block.lean,tags:block.tags,status:block.status}, null, 2))}</pre>`;
+      app.appendChild(manifest);
+
+      document.title = `Edit: ${block.title || block.label} — QOU`;
     }
 
     function scrollToLabel(label) {
@@ -910,6 +986,19 @@
         renderFolio(await r.json());
       } catch (e) {
         app.innerHTML = `<div class="err">Could not load folio: ${esc(e.message)}<br><br>Ensure the MCP server is running (port 3200).</div>`;
+      }
+    }
+
+    async function loadDefaultPaper() {
+      // Load first paper from folio
+      try {
+        const r = await fetch('/api/folio');
+        if (!r.ok) throw new Error(`${r.status}`);
+        const data = await r.json();
+        const id = data.papers?.[0]?.id || 'quantum-observable-universe';
+        await loadPaper(id);
+      } catch {
+        await loadPaper('quantum-observable-universe');
       }
     }
 
