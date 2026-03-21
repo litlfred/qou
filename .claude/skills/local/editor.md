@@ -46,16 +46,22 @@ Interpret the JSON output:
     > curl -LsSf https://astral.sh/uv/install.sh | sh
     > ```
 
-- **`lean_available: true, deps_ready: false`** — Lean is installed but
-  Mathlib cache is missing. Remind the author:
+- **`deps_ready: false`** — Dependencies from `lakefile.toml` are missing.
+  The `message` field lists which ones. Remind the author:
 
-    > Lean is installed but dependencies aren't cached yet. Run:
+    > Missing Lean dependencies. Run:
+    > ```bash
+    > cd lean && lake update && lake exe cache get && lake build
+    > ```
+
+- **`cache_ok: false`** — Mathlib oleans not cached. Remind the author:
+
+    > Mathlib cache missing. Run:
     > ```bash
     > cd lean && lake exe cache get
     > ```
-    > Then run `lake build` before starting the MCP server.
 
-- **`lean_available: true, deps_ready: true`** — All good, proceed.
+- **All true** — All good, proceed.
 
 **Note**: The lean-lsp-mcp server (via `.mcp.json`) provides diagnostics,
 goal states, hover docs, completions, LeanSearch, Loogle, and more. It runs
