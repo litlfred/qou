@@ -1,0 +1,8 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:why-B3",
+  title: "Why $B_3$ in the Descartes universe",
+  tags: ["braid-group", "descartes", "schur-weyl"],
+  uses: ["prop:braid-action-tensor"],
+});
