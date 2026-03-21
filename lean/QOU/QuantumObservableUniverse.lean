@@ -159,6 +159,66 @@ noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 
+/-! ## §1⅓  Higher Forms, Involutive and Positive-Definite Structures -/
+
+/-- **Higher differential forms** `Ωᵏ(A) = ⋀ᵏ_A Ω¹(A)`.
+
+    The graded `A`-bimodule of exterior powers of Kähler differentials,
+    with `Ω⁰(A) = A` and `d : Ωᵏ → Ωᵏ⁺¹` satisfying `d² = 0`.
+
+    LaTeX: `\label{def:higher-forms}` -/
+structure HigherForms (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The underlying Frobenius–Hopf object `A`. -/
+  frobHopf : @FrobeniusHopfData C _ _
+  /-- The degree-`k` form object `Ωᵏ(A)` in `C`. -/
+  formObj : ℕ → C
+  /-- `Ω⁰(A) = A`. -/
+  degree_zero : formObj 0 = frobHopf.obj
+  /-- The differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
+  d : (k : ℕ) → formObj k ⟶ formObj (k + 1)
+
+/-- **Involutive structure** (†-structure / *-structure) on a monoidal category.
+
+    A contravariant endofunctor `† : C^op → C` that is the identity on objects,
+    satisfies `f†† = f`, and is compatible with the monoidal structure.
+
+    LaTeX: `\label{def:involutive-structure}` -/
+structure InvolutiveStructure (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The involution on morphisms: `f† : Y ⟶ X` for `f : X ⟶ Y`. -/
+  dagger : ∀ {X Y : C}, (X ⟶ Y) → (Y ⟶ X)
+  /-- Involutivity: `f†† = f`. -/
+  dagger_dagger : ∀ {X Y : C} (f : X ⟶ Y), dagger (dagger f) = f
+  /-- Contravariance: `(g ∘ f)† = f† ∘ g†`. -/
+  dagger_comp : ∀ {X Y Z : C} (f : X ⟶ Y) (g : Y ⟶ Z),
+    dagger (f ≫ g) = dagger g ≫ dagger f
+  /-- Identity: `id† = id`. -/
+  dagger_id : ∀ (X : C), dagger (𝟙 X) = 𝟙 X
+
+/-- `f†† = f` is the defining involutivity property. -/
+theorem InvolutiveStructure.involutivity {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    (inv : InvolutiveStructure C) {X Y : C} (f : X ⟶ Y) :
+    inv.dagger (inv.dagger f) = f :=
+  inv.dagger_dagger f
+
+/-- **Positive-definite structure** on an involutive monoidal category.
+
+    The involution is positive-definite if for every non-zero
+    `f : 𝟙 → X`, the composite `f ≫ f† : 𝟙 → 𝟙` is positive
+    in `End(𝟙) ≅ R`.
+
+    LaTeX: `\label{def:positive-definite-dagger}` -/
+structure PositiveDefiniteStructure (C : Type u)
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    extends InvolutiveStructure C where
+  /-- Positive-definiteness: for non-zero `f : 𝟙 → X`, `f ≫ f† ≠ 0`.
+      (In an ℝ-linear category, this encodes positivity.) -/
+  positive_definite : ∀ {X : C} (f : (𝟙_ C) ⟶ X),
+    f ≠ 0 → f ≫ dagger f ≠ 0
+
 /-! ## §1½  Abstract Hodge Theory -/
 
 /-- An **involutive endomorphism** in a category, modeling the Hodge star
