@@ -240,6 +240,9 @@ cd "$REPO_ROOT/content" && bun install --frozen-lockfile 2>/dev/null || bun inst
 echo "  Test harness deps..."
 cd "$REPO_ROOT/scripts/tests" && bun install --frozen-lockfile 2>/dev/null || bun install
 
+echo "  Viewer deps..."
+cd "$REPO_ROOT/viewer" && bun install --frozen-lockfile 2>/dev/null || bun install
+
 # ── xdg-utils (browser opening) ─────────────────────────────────
 
 section "xdg-utils (browser preview)"

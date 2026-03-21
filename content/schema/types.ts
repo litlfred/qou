@@ -60,6 +60,29 @@ export interface LeanRef {
   mathlibLinks?: string[];
 }
 
+// ── Pre-rendered content ─────────────────────────────────────────
+
+/**
+ * Reference to a pre-rendered asset (e.g. tikzcd → SVG).
+ *
+ * When a .md file contains ```tex blocks that cannot be rendered
+ * client-side (tikzcd, complex align environments), the build pipeline
+ * renders them server-side and records the output here.
+ *
+ * The HTML viewer checks `rendered[]` and displays the pre-rendered
+ * asset instead of attempting client-side rendering.
+ */
+export interface RenderedAsset {
+  /** MIME type of the rendered output. */
+  mime: "image/svg+xml" | "image/png" | "application/pdf" | (string & {});
+  /** URL or relative path to the rendered file. */
+  url: string;
+  /** 0-based index of the ```tex block this replaces in the .md file. */
+  blockIndex: number;
+  /** Content hash for cache invalidation. */
+  hash?: string;
+}
+
 // ── Companion file references ────────────────────────────────────
 
 /**
@@ -114,6 +137,8 @@ interface BlockBase {
   uses?: string[];
   /** Override companion file resolution (normally by root-name convention). */
   companions?: Companions;
+  /** Pre-rendered assets for ```tex blocks that can't be rendered client-side. */
+  rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
 }
@@ -206,6 +231,8 @@ export interface ProseBlock {
   /** Optional label for cross-referencing. */
   label?: string;
   companions?: Companions;
+  /** Pre-rendered assets for ```tex blocks. */
+  rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
 }
 
@@ -219,6 +246,8 @@ export interface EquationBlock {
   /** Inline TeX for the equation (short enough to live in .ts). */
   tex?: string;
   companions?: Companions;
+  /** Pre-rendered equation (e.g. SVG from MathJax/KaTeX server). */
+  rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
 }
 
@@ -234,6 +263,8 @@ export interface DiagramBlock {
   /** Caption text (rendered below diagram in LaTeX). */
   caption?: string;
   companions?: Companions;
+  /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
+  rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
 }
 

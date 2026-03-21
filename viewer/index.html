@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QOU Viewer</title>
+  <link rel="stylesheet" href="/katex/katex.min.css">
+  <style>
+    :root {
+      --bg: #0e0e12;
+      --bg-surface: #16161c;
+      --bg-raised: #1e1e26;
+      --fg: #d0d0d8;
+      --fg-dim: #888894;
+      --fg-bright: #eeeef4;
+      --accent: #7ca8e6;
+      --accent-dim: #4a6a9a;
+      --green: #7ce6a4;
+      --yellow: #e6c87c;
+      --red: #e67c7c;
+      --orange: #e6a47c;
+      --border: #2a2a34;
+      --font-mono: 'Share Tech Mono', 'Fira Code', 'Consolas', monospace;
+      --font-serif: 'Crimson Pro', 'Georgia', serif;
+      --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-serif);
+      font-size: 18px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ─────────────────────────────────────────── */
+
+    #app {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+
+    .paper-header {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .paper-header h1 {
+      font-family: var(--font-sans);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--fg-bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-header .authors {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--fg-dim);
+    }
+
+    .paper-header .date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--fg-dim);
+      margin-top: 0.3rem;
+    }
+
+    /* ── Status bar ──────────────────────────────────────── */
+
+    .status-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--fg-dim);
+      z-index: 100;
+      gap: 1rem;
+    }
+
+    .status-bar .indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    .status-bar .indicator.polling { animation: pulse 2s infinite; }
+    .status-bar .indicator.error { background: var(--red); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ── Chapters & sections ─────────────────────────────── */
+
+    .chapter {
+      margin-bottom: 3rem;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--fg-bright);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-title .chapter-num {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--fg-bright);
+      margin: 2rem 0 1rem;
+    }
+
+    /* ── Blocks ──────────────────────────────────────────── */
+
+    .block {
+      margin: 1.5rem 0;
+    }
+
+    .block-env {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-dim);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .block-env.definition { border-left-color: var(--accent); }
+    .block-env.theorem,
+    .block-env.proposition { border-left-color: var(--yellow); }
+    .block-env.lemma,
+    .block-env.corollary { border-left-color: var(--orange); }
+    .block-env.conjecture { border-left-color: var(--red); }
+    .block-env.example { border-left-color: var(--green); }
+    .block-env.remark { border-left-color: var(--fg-dim); }
+
+    .block-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-sans);
+    }
+
+    .block-kind {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .block-env.theorem .block-kind,
+    .block-env.proposition .block-kind { color: var(--yellow); }
+    .block-env.lemma .block-kind,
+    .block-env.corollary .block-kind { color: var(--orange); }
+    .block-env.conjecture .block-kind { color: var(--red); }
+    .block-env.example .block-kind { color: var(--green); }
+    .block-env.remark .block-kind { color: var(--fg-dim); }
+
+    .block-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--fg-bright);
+    }
+
+    .block-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--fg-dim);
+      margin-left: auto;
+    }
+
+    /* ── Lean status badge ───────────────────────────────── */
+
+    .lean-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      margin-top: 0.5rem;
+    }
+
+    .lean-badge.proved { color: var(--green); border-color: var(--green); }
+    .lean-badge.has_sorry { color: var(--yellow); border-color: var(--yellow); }
+    .lean-badge.not_started { color: var(--fg-dim); }
+    .lean-badge.stated { color: var(--accent); border-color: var(--accent); }
+
+    /* ── Content ─────────────────────────────────────────── */
+
+    .block-body p { margin: 0.6em 0; }
+    .block-body ul, .block-body ol { margin: 0.5em 0; padding-left: 1.5em; }
+    .block-body li { margin: 0.2em 0; }
+    .block-body strong { color: var(--fg-bright); }
+    .block-body em { font-style: italic; }
+
+    .block-body a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-dim);
+    }
+
+    .block-body a:hover {
+      color: var(--fg-bright);
+      border-bottom-color: var(--fg-bright);
+    }
+
+    /* ── Math ────────────────────────────────────────────── */
+
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.5rem 0;
+    }
+
+    .katex { color: var(--fg); }
+
+    /* ── TeX blocks (pre-rendered or placeholder) ─────────── */
+
+    .tex-block {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .tex-block img, .tex-block svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .tex-block.placeholder {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--fg-dim);
+      white-space: pre-wrap;
+      text-align: left;
+    }
+
+    /* ── Dependencies ────────────────────────────────────── */
+
+    .block-uses {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--fg-dim);
+      margin-top: 0.75rem;
+    }
+
+    .block-uses a {
+      color: var(--accent-dim);
+      text-decoration: none;
+    }
+
+    .block-uses a:hover { color: var(--accent); }
+
+    /* ── Loading ─────────────────────────────────────────── */
+
+    .loading {
+      text-align: center;
+      padding: 4rem 0;
+      font-family: var(--font-mono);
+      color: var(--fg-dim);
+    }
+
+    .error-msg {
+      background: rgba(230, 124, 124, 0.1);
+      border: 1px solid var(--red);
+      border-radius: 4px;
+      padding: 1rem;
+      color: var(--red);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="loading">Loading paper...</div>
+  </div>
+
+  <div class="status-bar">
+    <div class="indicator polling" id="status-indicator"></div>
+    <span id="status-text">connecting...</span>
+    <span id="status-hash" style="margin-left: auto;"></span>
+  </div>
+
+  <script src="/katex/katex.min.js"></script>
+  <script type="module">
+    // ── Markdown renderer (inline, no build step) ────────────
+
+    /**
+     * Minimal markdown-to-HTML renderer.
+     * Handles: bold, italic, inline math, display math, ```tex blocks,
+     * lists, cross-refs, paragraphs.
+     *
+     * ```tex blocks are extracted and returned separately so the caller
+     * can replace them with pre-rendered assets.
+     */
+    function parseMd(md) {
+      const texBlocks = [];
+      const lines = md.split('\n');
+      const out = [];
+      let i = 0;
+
+      while (i < lines.length) {
+        const line = lines[i];
+
+        // Fenced ```tex block
+        if (line.trimStart().startsWith('```tex')) {
+          i++;
+          const tex = [];
+          while (i < lines.length && !lines[i].trimStart().startsWith('```')) {
+            tex.push(lines[i]);
+            i++;
+          }
+          i++; // skip closing ```
+          const texSrc = tex.join('\n');
+          const idx = texBlocks.length;
+          texBlocks.push(texSrc);
+          out.push(`<div class="tex-block" data-tex-index="${idx}"></div>`);
+          continue;
+        }
+
+        // Other fenced code blocks
+        if (line.trimStart().startsWith('```')) {
+          i++;
+          const code = [];
+          while (i < lines.length && !lines[i].trimStart().startsWith('```')) {
+            code.push(lines[i]);
+            i++;
+          }
+          i++;
+          out.push(`<pre><code>${escHtml(code.join('\n'))}</code></pre>`);
+          continue;
+        }
+
+        // Display math: $$...$$
+        if (line.trimStart().startsWith('$$')) {
+          const mathLines = [line.trimStart().slice(2)];
+          i++;
+          while (i < lines.length && !lines[i].includes('$$')) {
+            mathLines.push(lines[i]);
+            i++;
+          }
+          if (i < lines.length) {
+            mathLines.push(lines[i].replace('$$', ''));
+            i++;
+          }
+          const mathSrc = mathLines.join('\n').trim();
+          out.push(`<div class="katex-display-wrap" data-math-display>${escHtml(mathSrc)}</div>`);
+          continue;
+        }
+
+        // Bullet list
+        if (/^\s*[-*]\s/.test(line)) {
+          out.push('<ul>');
+          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
+            out.push(`<li>${inlineMd(lines[i].replace(/^\s*[-*]\s/, ''))}</li>`);
+            i++;
+          }
+          out.push('</ul>');
+          continue;
+        }
+
+        // Numbered list
+        if (/^\s*\d+\.\s/.test(line)) {
+          out.push('<ol>');
+          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
+            out.push(`<li>${inlineMd(lines[i].replace(/^\s*\d+\.\s/, ''))}</li>`);
+            i++;
+          }
+          out.push('</ol>');
+          continue;
+        }
+
+        // Blank line → paragraph break
+        if (line.trim() === '') {
+          out.push('</p><p>');
+          i++;
+          continue;
+        }
+
+        // Regular line
+        out.push(inlineMd(line));
+        i++;
+      }
+
+      // Wrap in <p> and clean up empty paragraphs
+      let html = '<p>' + out.join('\n') + '</p>';
+      html = html.replace(/<p>\s*<\/p>/g, '');
+      html = html.replace(/<p>\s*<(div|ul|ol|pre)/g, '<$1');
+      html = html.replace(/<\/(div|ul|ol|pre)>\s*<\/p>/g, '</$1>');
+
+      return { html, texBlocks };
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function inlineMd(text) {
+      // Bold
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Italic
+      text = text.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
+      // Cross-refs: [text](#label)
+      text = text.replace(/\[([^\]]+)\]\(#([^)]+)\)/g,
+        '<a href="#$2" data-ref="$2">$1</a>');
+      // Inline math: $...$  (non-greedy, avoid $$)
+      text = text.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g,
+        '<span data-math-inline>$1</span>');
+      return text;
+    }
+
+    // ── KaTeX rendering ──────────────────────────────────────
+
+    function renderMath(container) {
+      // Inline math
+      for (const el of container.querySelectorAll('[data-math-inline]')) {
+        try {
+          katex.render(el.textContent, el, { throwOnError: false });
+        } catch (e) {
+          el.style.color = 'var(--red)';
+        }
+      }
+      // Display math
+      for (const el of container.querySelectorAll('[data-math-display]')) {
+        try {
+          katex.render(el.textContent, el, {
+            throwOnError: false,
+            displayMode: true,
+          });
+          el.classList.add('katex-display');
+        } catch (e) {
+          el.style.color = 'var(--red)';
+        }
+      }
+    }
+
+    // ── Block renderer ───────────────────────────────────────
+
+    const ENV_KINDS = new Set([
+      'definition', 'theorem', 'lemma', 'proposition',
+      'corollary', 'conjecture', 'example', 'remark',
+    ]);
+
+    function renderBlock(block) {
+      const { html, texBlocks } = parseMd(block.md || '');
+
+      if (block.kind === 'prose') {
+        const div = document.createElement('div');
+        div.className = 'block block-prose';
+        if (block.label) div.id = block.label;
+        div.innerHTML = `<div class="block-body">${html}</div>`;
+        fillTexBlocks(div, texBlocks, block.rendered);
+        renderMath(div);
+        return div;
+      }
+
+      if (block.kind === 'equation') {
+        const div = document.createElement('div');
+        div.className = 'block block-equation';
+        if (block.label) div.id = block.label;
+        const tex = block.tex || '';
+        div.innerHTML = `<div class="katex-display-wrap" data-math-display>${escHtml(tex)}</div>`;
+        renderMath(div);
+        return div;
+      }
+
+      if (block.kind === 'diagram') {
+        const div = document.createElement('div');
+        div.className = 'block block-diagram';
+        if (block.label) div.id = block.label;
+        // Check for pre-rendered
+        if (block.rendered && block.rendered.length > 0) {
+          div.innerHTML = renderAsset(block.rendered[0]);
+        } else {
+          div.innerHTML = `<div class="tex-block placeholder">${escHtml(block.tex || block.md || '')}</div>`;
+        }
+        if (block.caption) {
+          div.innerHTML += `<p style="text-align:center;font-size:0.85rem;color:var(--fg-dim);margin-top:0.5rem">${inlineMd(block.caption)}</p>`;
+        }
+        return div;
+      }
+
+      // Environment block
+      const div = document.createElement('div');
+      div.className = `block block-env ${block.kind}`;
+      if (block.label) div.id = block.label;
+
+      // Head
+      let head = `<span class="block-kind">${block.kind}</span>`;
+      if (block.title) head += `<span class="block-title">${inlineMd(block.title)}</span>`;
+      if (block.label) head += `<span class="block-label">${block.label}</span>`;
+      div.innerHTML = `<div class="block-head">${head}</div>`;
+
+      // Body
+      const body = document.createElement('div');
+      body.className = 'block-body';
+      body.innerHTML = html;
+      fillTexBlocks(body, texBlocks, block.rendered);
+      renderMath(body);
+      div.appendChild(body);
+
+      // Lean badge
+      if (block.lean) {
+        const statusClass = block.status || 'not_started';
+        const badge = document.createElement('div');
+        badge.className = `lean-badge ${statusClass}`;
+        badge.textContent = `${block.lean.decl} · ${statusClass.replace('_', ' ')}`;
+        div.appendChild(badge);
+      }
+
+      // Uses
+      if (block.uses && block.uses.length > 0) {
+        const uses = document.createElement('div');
+        uses.className = 'block-uses';
+        uses.innerHTML = 'uses: ' + block.uses.map(u =>
+          `<a href="#${u}">${u}</a>`
+        ).join(', ');
+        div.appendChild(uses);
+      }
+
+      return div;
+    }
+
+    function fillTexBlocks(container, texBlocks, renderedAssets) {
+      const texEls = container.querySelectorAll('.tex-block[data-tex-index]');
+      for (const el of texEls) {
+        const idx = parseInt(el.dataset.texIndex, 10);
+        // Check for pre-rendered asset at this index
+        const asset = renderedAssets?.find(a => a.blockIndex === idx);
+        if (asset) {
+          el.innerHTML = renderAsset(asset);
+          el.classList.remove('placeholder');
+        } else {
+          // Show raw TeX as placeholder
+          el.textContent = texBlocks[idx] || '';
+          el.classList.add('placeholder');
+        }
+      }
+    }
+
+    function renderAsset(asset) {
+      if (asset.mime === 'image/svg+xml') {
+        return `<img src="${asset.url}" alt="rendered diagram">`;
+      }
+      if (asset.mime.startsWith('image/')) {
+        return `<img src="${asset.url}" alt="rendered content">`;
+      }
+      return `<a href="${asset.url}" target="_blank">View (${asset.mime})</a>`;
+    }
+
+    // ── Paper renderer ───────────────────────────────────────
+
+    function renderPaper(paper) {
+      const app = document.getElementById('app');
+      app.innerHTML = '';
+
+      // Header
+      const header = document.createElement('div');
+      header.className = 'paper-header';
+      header.innerHTML = `
+        <h1>${escHtml(paper.title)}</h1>
+        <div class="authors">${paper.authors.map(escHtml).join(', ')}</div>
+        ${paper.date ? `<div class="date">${paper.date}</div>` : ''}
+      `;
+      app.appendChild(header);
+
+      // Chapters
+      for (const ch of paper.chapters) {
+        const chDiv = document.createElement('div');
+        chDiv.className = 'chapter';
+        if (ch.label) chDiv.id = ch.label;
+
+        chDiv.innerHTML = `
+          <h2 class="chapter-title">
+            <span class="chapter-num">Chapter ${ch.number}.</span>
+            ${escHtml(ch.title)}
+          </h2>
+        `;
+
+        for (const sec of ch.sections) {
+          const secDiv = document.createElement('div');
+          secDiv.className = 'section';
+          if (sec.label) secDiv.id = sec.label;
+
+          secDiv.innerHTML = `<h3 class="section-title">${escHtml(sec.title)}</h3>`;
+
+          for (const block of sec.blocks) {
+            secDiv.appendChild(renderBlock(block));
+          }
+
+          chDiv.appendChild(secDiv);
+        }
+
+        app.appendChild(chDiv);
+      }
+    }
+
+    // ── Polling ──────────────────────────────────────────────
+
+    const POLL_INTERVAL = 3000; // 3 seconds
+    let currentHash = null;
+    let pollTimer = null;
+
+    async function fetchPaper() {
+      const hashParam = currentHash ? `?hash=${currentHash}` : '';
+      const res = await fetch(`/api/paper${hashParam}`);
+
+      if (res.status === 304) return null; // unchanged
+      if (!res.ok) throw new Error(`API error: ${res.status}`);
+
+      return await res.json();
+    }
+
+    async function poll() {
+      const indicator = document.getElementById('status-indicator');
+      const statusText = document.getElementById('status-text');
+      const hashEl = document.getElementById('status-hash');
+
+      try {
+        const paper = await fetchPaper();
+
+        if (paper && paper.error) {
+          indicator.className = 'indicator error';
+          statusText.textContent = paper.error;
+          return;
+        }
+
+        if (paper) {
+          currentHash = paper._hash;
+          renderPaper(paper);
+          document.title = `${paper.title} — QOU Viewer`;
+          hashEl.textContent = paper._hash;
+        }
+
+        indicator.className = 'indicator polling';
+        statusText.textContent = `polling · ${new Date().toLocaleTimeString()}`;
+      } catch (e) {
+        indicator.className = 'indicator error';
+        statusText.textContent = e.message;
+      }
+    }
+
+    // ── Init ─────────────────────────────────────────────────
+
+    async function init() {
+      await poll();
+      pollTimer = setInterval(poll, POLL_INTERVAL);
+    }
+
+    init();
+  </script>
+</body>
+</html>
