@@ -1164,7 +1164,9 @@ Definition~\ref{def:categorical-action}:
         $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
         where $\nabla_\lambda$ is the canonical connection on~$A$ induced
         by~$\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
-        a_{(2)} - a \otimes 1$.
+        a_{(2)} - a \otimes 1$
+        (Sweedler notation: $\Delta(a) = a_{(1)} \otimes a_{(2)}$,
+        summation suppressed).
   \item $\mathrm{tr}_A \colon
         \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
         \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the
@@ -1707,9 +1709,13 @@ Then
      + b^2\,\underbrace{\pi_V d \circ \pi_V d}_{= 0}.
 \end{align*}
 The first term vanishes because $d^2 = 0$ in the non-commutative
-de~Rham complex.  The last term vanishes because $\pi_V \circ \pi_V$
-acts as zero on the image of $d$ restricted to forms already in the
-vertical summand (by degree considerations in the weight grading).
+de~Rham complex.  The last term vanishes because $\pi_V$ is the projection onto the
+vertical (weight-$1$) summand of the Reeb decomposition
+$\Omega^k(A) = \Omega^k_H(A) \oplus \theta_A \wedge \Omega^{k-1}_H(A)$:
+the exterior derivative $d$ applied to a vertical form produces a form
+whose vertical component has weight~$\geq 2$ in~$\theta_A$, but the
+contact distribution forces $\theta_A \wedge \theta_A = 0$
+(since $\theta_A$ is a $1$-form), so $\pi_V(d(\pi_V\alpha)) = 0$.
 The middle term simplifies:
 $d(\pi_V d\,\alpha) + \pi_V d(d\,\alpha) = \omega_V \wedge_q [\xi, \alpha]$
 where $\omega_V = \pi_V(d^2_{\text{total}})$ represents the curvature
@@ -1945,7 +1951,11 @@ every instanton connection $A$ on $P$ is irreducible.
 The vanishing $H^0(M, \mathrm{Ad}(P)) = 0$
 (Example~\ref{def:c-quantum-observable-universe}) is the archimedean
 instance of $\operatorname{Hom}_{\mathcal{C}}(\mathbf{1},
-\mathrm{Ad}(A)) = 0$.
+\mathrm{Ad}(A)) = 0$.  Concretely: a non-zero section
+$s \in H^0(M, \mathrm{Ad}(P))$ would furnish an $\mathrm{Ad}$-invariant
+direction in $\mathfrak{su}(2)$ at every point, reducing the connection
+to $\mathrm{U}(1)$.  The QOU vanishing axiom forbids this, forcing the
+gauge orbit of~$A$ to be free.
 \end{example}
 
 \begin{example}[Self-duality of the curvature]
@@ -1957,8 +1967,13 @@ Proposition~\ref{prop:categorical-self-duality} specialises:
 every instanton connection $A$ on $P$ satisfies
 $F_A|_H = {*_H}\,F_A|_H$.  The categorical Yang--Mills functional
 $\lambda(\star_q(F_\nabla) \cdot F_\nabla)$ specialises to
-$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^2$,
-and the Bogomolny decomposition forces $F_A^-|_H = 0$.
+$\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^2$.
+The Bogomolny trick decomposes
+$\lVert F_A|_H \rVert^2 = \lVert F_A^+ \rVert^2
++ \lVert F_A^- \rVert^2$; since
+$\int \lVert F_A^+ \rVert^2$ is a topological invariant
+(the second Chern number $c_2(P)$), minimising the Yang--Mills
+functional forces $F_A^-|_H = 0$.
 \end{example}
 
 \begin{remark}[Archimedean substrate via the Levi form]
