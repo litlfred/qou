@@ -44,7 +44,7 @@ the retraction property $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
 *Step 2: Crossed-module structure.*
 At each level $n$, the pair
 $(\mathrm{SU}_{q_n}(2),\, \mathcal{O}_M^{\times})$ carries the structure
-of a crossed module in the sense of \cite{yekutieli2010}: the boundary
+of a crossed module in the sense of [yekutieli2010]: the boundary
 map $\partial \colon \mathcal{O}_M^{\times} \to \mathrm{SU}_{q_n}(2)$
 sends a unit $a \in \mathcal{O}_M^{\times}$ to the central element
 $a \cdot \mathbf{1} \in \mathrm{SU}_{q_n}(2)$ (the central extension),

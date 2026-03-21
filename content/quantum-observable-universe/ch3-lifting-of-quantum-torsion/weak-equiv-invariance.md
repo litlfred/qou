@@ -30,7 +30,7 @@ fluctuations of the substrate parameter $q(p)$ across brane levels.
 
 ---
 
-By \cite[Theorem 1.1]{yekutieli2010}, a weak equivalence of central
+By [Theorem 1.1, yekutieli2010], a weak equivalence of central
 extensions of gerbes induces an isomorphism on the category of global
 objects up to isomorphism.  In the brane tower, the coface maps (jet
 prolongation) and codegeneracy maps (descent) compose to give the descent

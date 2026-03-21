@@ -89,6 +89,6 @@ only if the cocycle deviation at level $n$ can be absorbed by the
 $2$-morphism data, i.e. the lift from $\mathfrak{G}_n$ to
 $\mathfrak{G}_{n+1}$ is unobstructed.
 
-By \cite[Theorem 1.7]{yekutieli2010}, this is equivalent to the
+By [Theorem 1.7, yekutieli2010], this is equivalent to the
 vanishing of the Yekutieli obstruction class, closing the circle with
 the lifting criterion ([Proposition](#prop:yekutieli-lifting)).
