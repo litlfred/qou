@@ -12,9 +12,9 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
    ([Proposition](#prop:descent-eigenspaces))---the genuinely new
    modes at level $n{+}1$ with no pre-image at level $n$---is
    annihilated by the descent involution $\tau_n$.
-   At dimension $1$ only the longitudinal
+   At dimension 1 only the longitudinal
    $\mathrm{U}(1)$ backbone remains
-   ([Remark](#rem:descent-reduction)), and at dimension $0$ even
+   ([Remark](#rem:descent-reduction)), and at dimension 0 even
    that is collapsed to a single fibre datum
    ([Remark](#rem:descent-reduction-zero)).
 3. *Round-trip involution.*  The composition of ascent and descent

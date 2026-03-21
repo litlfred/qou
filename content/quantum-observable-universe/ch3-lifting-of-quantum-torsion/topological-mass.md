@@ -34,7 +34,7 @@ where:
 
 1. The first term is the holonomy of $\nabla_A$ around the unknot
    core $\gamma_0$ in the twisted gerbe $\mathfrak{G}$, computed via the
-   nonabelian Stokes theorem \cite{yekutieli2015}.  Categorically,
+   nonabelian Stokes theorem [yekutieli2015].  Categorically,
    this is the trace of the comultiplication $\Delta$ on $A$
    restricted to the descended subalgebra
    $\mathcal{A}^{\mathrm{desc}}$
@@ -93,7 +93,7 @@ $$
 $$
 for every section $\alpha$.  Applying this to the mass integrand and
 using the additivity of the nonabelian multiplicative integral over
-orthogonal direct sums \cite[Proposition 5.3]{yekutieli2015}:
+orthogonal direct sums [Proposition 5.3, yekutieli2015]:
 
 ```tex
 \begin{equation}\label{eq:mi-decomp}
@@ -143,7 +143,7 @@ $$
   \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr),
 $$
 where the second equality is the nonabelian Stokes
-theorem \cite{yekutieli2015} applied to the disc $\Sigma_0$.
+theorem [yekutieli2015] applied to the disc $\Sigma_0$.
 
 *Step 3: Transient terms localise to exceptional divisors.*
 The transient component $\alpha - \tau_n(\alpha)$ is annihilated by
@@ -204,7 +204,7 @@ $$
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert.
 $$
-This is the claimed decomposition $\eqref{eq:topological-mass-decomp}$.
+This is the claimed decomposition [eq:topological-mass-decomp](#eq:topological-mass-decomp).
 The identification of each summand with the quantum dilogarithm
 $\Phi_q(z_i)$ follows from the Corollary below: integration of the
 $q$-deformed expansion flow over the resolved defect $E_i$ in the

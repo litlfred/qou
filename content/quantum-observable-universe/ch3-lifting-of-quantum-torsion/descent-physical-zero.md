@@ -1,4 +1,4 @@
-At dimension $0$ all spatial extent has been removed and the physical
+At dimension 0 all spatial extent has been removed and the physical
 content is purely algebraic.
 
 1. *Primordial state.*  The vortex filaments, flows and spatial
@@ -11,7 +11,7 @@ content is purely algebraic.
    $\Sigma$ collapses to a point and the holonomy around $\gamma$
    reduces to a single fibre evaluation
    $m = \lVert L \wedge F^+\rVert(p)$.
-   Mass at dimension $0$ is an instantaneous, pointwise quantity
+   Mass at dimension 0 is an instantaneous, pointwise quantity
    rather than a distributed one.
 3. *Lepton generations.*  All vertical harmonic forms
    ([Remark](#rem:betti-numbers-brane)) are concentrated at the
