@@ -298,8 +298,8 @@ category, and let $V$ be an object of categorical dimension~$2$ that is
 $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
 $\phi^{\vee} = -\phi$ (alternating).  Then the composite
 $\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through
-$\Lambda^2 V$:
-\[
+$\Lambda^2 V$ (the \emph{volume form factorisation}):
+\begin{equation}\label{eq:volume-form-factorisation}
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   V \otimes V
     \ar[r, "\mathrm{id} \otimes \phi"]
@@ -580,8 +580,8 @@ A \emph{connection} on~$A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in~$\mathcal{C}$ satisfying
 the Leibniz rule: $\nabla(\mu(a \otimes b)) =
 \nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
-of
-\[
+of the \emph{Leibniz triangle}:
+\begin{equation}\label{eq:leibniz-triangle}
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mu"]
@@ -590,15 +590,15 @@ of
   \\
   & A \otimes \Omega^1(A)
 \end{tikzcd}
-\]
+\end{equation}
 The \emph{curvature} of~$\nabla$ is the composition
-\[
+\begin{equation}\label{eq:curvature-composition}
 \begin{tikzcd}[column sep=3em]
   A \ar[r, "\nabla"]
   & A \otimes \Omega^1(A) \ar[r, "\nabla"]
   & A \otimes \Omega^2(A)
 \end{tikzcd}
-\]
+\end{equation}
 denoted $F_\nabla = \nabla^2$, which is $A$-linear (a standard
 consequence of the Leibniz rule).
 \end{definition}
