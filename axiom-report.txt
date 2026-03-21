@@ -1,8 +1,8 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-21 01:50:33 UTC
-Commit:    ec7537297c719e85fd299326e2a6393bb45be79e
+Generated: 2026-03-21 03:01:22 UTC
+Commit:    57330a9feedcb5c4fab50485a83209ad4a789dd9
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
 
@@ -16,7 +16,7 @@ Errors:
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 537
+Total sorry occurrences: 527
 
   File                                          sorry count
   --------------------------------------------------------
@@ -154,18 +154,13 @@ Total sorry occurrences: 537
   .lake/packages/quantumInfo/QuantumInfo/Regularized.lean 3
   .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean 3
   QOU/FormalGroups.lean                            1
-  QOU/GrobnerShirshov/CompositionLemma.lean        2
-  QOU/GrobnerShirshov/Flatness.lean                2
-  QOU/GrobnerShirshov/NormalForms.lean             1
-  QOU/GrobnerShirshov/StrongMultiplicativity.lean  3
-  QOU/HadronicMass.lean                            2
   QOU/PathIntegrals.lean                           1
   QOU/Torsion.lean                                 1
 
 ------------------------------------------------------------------------
 §3  AXIOM DECLARATIONS
 ------------------------------------------------------------------------
-Total axiom declarations in source: 209
+Total axiom declarations in source: 216
 
   axiom R
     File: .lake/packages/aesop/AesopTest/205.lean
@@ -767,10 +762,19 @@ Total axiom declarations in source: 209
   axiom normal_form_exists
     File: QOU/GrobnerShirshov/Basic.lean
 
+  axiom local_confluence
+    File: QOU/GrobnerShirshov/CompositionLemma.lean
+
+  axiom confluence
+    File: QOU/GrobnerShirshov/CompositionLemma.lean
+
   axiom normal_form_unique
     File: QOU/GrobnerShirshov/CompositionLemma.lean
 
   axiom gs_implies_flat
+    File: QOU/GrobnerShirshov/Flatness.lean
+
+  axiom normal_forms_preserved
     File: QOU/GrobnerShirshov/Flatness.lean
 
   axiom qSerreRewritingSystem
@@ -779,8 +783,14 @@ Total axiom declarations in source: 209
   axiom qSerre_is_gs_basis
     File: QOU/GrobnerShirshov/NormalForms.lean
 
+  axiom pbw_monomials_are_normal_forms
+    File: QOU/GrobnerShirshov/NormalForms.lean
+
   axiom dist_algebra_gs_basis
     File: QOU/GrobnerShirshov/NormalForms.lean
+
+  axiom tensorOrder
+    File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
 
   axiom tensorRewritingSystem
     File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
@@ -793,6 +803,12 @@ Total axiom declarations in source: 209
 
   axiom formal_group_is_filtered_bialgebra
     File: QOU/GrobnerShirshov/StrongMultiplicativity.lean
+
+  axiom proton_pair_skein_approx
+    File: QOU/HadronicMass.lean
+
+  axiom neutron_pair_skein_approx
+    File: QOU/HadronicMass.lean
 
 
 ------------------------------------------------------------------------
@@ -1383,20 +1399,10 @@ link to the foundational reference are shown.
     .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean:89  DifferentiableAt_Z_if_ZIntegrable
     .lake/packages/quantumInfo/StatMech/ThermoQuantities.lean:153  β_eq_deriv_S_U
     QOU/FormalGroups.lean:22  (unknown)
-    QOU/GrobnerShirshov/CompositionLemma.lean:88  local_confluence
-    QOU/GrobnerShirshov/CompositionLemma.lean:111  confluence
-    QOU/GrobnerShirshov/Flatness.lean:163  normal_forms_preserved
-    QOU/GrobnerShirshov/Flatness.lean:166  normal_forms_preserved
-    QOU/GrobnerShirshov/NormalForms.lean:362  pbw_monomials_are_normal_forms
-    QOU/GrobnerShirshov/StrongMultiplicativity.lean:107  tensorOrder
-    QOU/GrobnerShirshov/StrongMultiplicativity.lean:110  tensorOrder
-    QOU/GrobnerShirshov/StrongMultiplicativity.lean:113  tensorOrder
-    QOU/HadronicMass.lean:390  proton_pair_skein_approx
-    QOU/HadronicMass.lean:400  neutron_pair_skein_approx
     QOU/PathIntegrals.lean:360  YoungDiagram.spin
     QOU/Torsion.lean:468  global_gluing
 
-  Summary: 0 referenced / 501 unreferenced / 501 total gaps
+  Summary: 0 referenced / 491 unreferenced / 491 total gaps
 
 ========================================================================
 END OF REPORT
