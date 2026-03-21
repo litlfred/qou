@@ -1,20 +1,20 @@
 /**
  * Build pipeline: content objects → LaTeX chapters.
  *
- * Loads a document manifest, resolves all blocks, renders to LaTeX,
+ * Loads a paper manifest (with ChapterRef[]), resolves chapter .ts files,
+ * loads all blocks from chapter directories, renders to LaTeX,
  * validates AST integrity, writes output.
  *
  * Usage:
- *   bun run pipeline/build.ts [document.ts] [--out-dir chapters/]
+ *   bun run pipeline/build.ts [paper.ts] [--out-dir chapters/]
  *
  * @module content/pipeline/build
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
-import type { Document, Block, Chapter } from "../schema/types";
-import { renderBlock, renderChapter, validateLatexAst } from "./render-latex";
-import { validateObjects } from "./validate";
+import type { Paper, Chapter, Section, Block } from "../schema/types";
+import { renderChapter, validateLatexAst } from "./render-latex";
 
 // ── Build ────────────────────────────────────────────────────────
 
@@ -28,58 +28,78 @@ export interface BuildResult {
 }
 
 /**
- * Build a document from its manifest.
+ * Build a paper from its manifest.
  *
- * @param docPath - Path to the document .ts manifest
- * @param objectsDir - Directory containing block .ts + .md files
+ * Resolves ChapterRef[] → Chapter[] by importing chapter .ts manifests
+ * from their directories, then loads block .ts + .md pairs from the
+ * same chapter directories.
+ *
+ * @param paperPath - Path to the paper .ts manifest
  */
-export async function buildDocument(
-  docPath: string,
-  objectsDir: string,
+export async function buildPaper(
+  paperPath: string,
 ): Promise<BuildResult> {
   const issues: { level: string; message: string }[] = [];
+  const paperDir = dirname(paperPath);
 
-  // 1. Validate all objects first
-  const validation = await validateObjects(objectsDir);
-  issues.push(
-    ...validation.issues.map(i => ({ level: i.level, message: `[${i.block}] ${i.message}` })),
-  );
+  // 1. Load paper manifest
+  const paperMod = await import(paperPath);
+  const paper: Paper = paperMod.default;
 
-  // 2. Load document manifest
-  const docMod = await import(docPath);
-  const doc: Document = docMod.default;
-
-  // 3. Load all blocks
+  // 2. Resolve chapters and load all blocks
+  const resolvedChapters: Chapter[] = [];
   const blocks = new Map<string, { block: Block; mdContent: string }>();
 
-  for (const chapter of doc.chapters) {
-    for (const section of chapter.sections) {
-      for (const rootName of section.blocks) {
-        if (blocks.has(rootName)) continue;
+  for (const chRef of paper.chapters) {
+    const chDir = join(paperDir, chRef.dir);
+    const chPath = join(chDir, `${chRef.dir}.ts`);
 
-        const tsPath = join(objectsDir, `${rootName}.ts`);
-        const mdPath = join(objectsDir, `${rootName}.md`);
+    if (!existsSync(chPath)) {
+      issues.push({ level: "error", message: `Chapter manifest not found: ${chPath}` });
+      continue;
+    }
 
-        try {
-          const mod = await import(tsPath);
-          const block: Block = mod.default;
-          const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
-          blocks.set(rootName, { block, mdContent });
-        } catch (e) {
-          issues.push({
-            level: "error",
-            message: `Failed to load block "${rootName}": ${e instanceof Error ? e.message : String(e)}`,
-          });
+    try {
+      const chMod = await import(chPath);
+      const chapter: Chapter = chMod.default;
+      resolvedChapters.push(chapter);
+
+      // Load blocks from the chapter directory
+      for (const sec of chapter.sections) {
+        if (!("blocks" in sec)) continue;
+        const section = sec as Section;
+        for (const rootName of section.blocks) {
+          if (blocks.has(rootName)) continue;
+
+          const tsPath = join(chDir, `${rootName}.ts`);
+          const mdPath = join(chDir, `${rootName}.md`);
+
+          try {
+            const mod = await import(tsPath);
+            const block: Block = mod.default;
+            const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
+            blocks.set(rootName, { block, mdContent });
+          } catch (e) {
+            issues.push({
+              level: "error",
+              message: `Failed to load block "${rootName}": ${e instanceof Error ? e.message : String(e)}`,
+            });
+          }
         }
       }
+    } catch (e) {
+      issues.push({
+        level: "error",
+        message: `Failed to load chapter "${chRef.dir}": ${e instanceof Error ? e.message : String(e)}`,
+      });
     }
   }
 
-  // 4. Render chapters
+  // 3. Render chapters
   const chapters = new Map<number, string>();
   let astValid = true;
 
-  for (const chapter of doc.chapters) {
+  for (const chapter of resolvedChapters) {
     const latex = renderChapter(chapter, blocks);
     chapters.set(chapter.number, latex);
 
@@ -100,16 +120,15 @@ export async function buildDocument(
 
 if (import.meta.main) {
   const args = process.argv.slice(2);
-  const docPath = args[0] || join(import.meta.dir, "../chapters/document.ts");
+  const defaultPaper = join(import.meta.dir, "../quantum-observable-universe/quantum-observable-universe.ts");
+  const paperPath = args[0] || defaultPaper;
   const outDirIdx = args.indexOf("--out-dir");
   const outDir = outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters");
-  const objectsDir = join(import.meta.dir, "../objects");
 
-  console.log(`Building document: ${docPath}`);
-  console.log(`Objects dir: ${objectsDir}`);
+  console.log(`Building paper: ${paperPath}`);
   console.log(`Output dir: ${outDir}\n`);
 
-  const result = await buildDocument(docPath, objectsDir);
+  const result = await buildPaper(paperPath);
 
   // Print issues
   for (const issue of result.issues) {

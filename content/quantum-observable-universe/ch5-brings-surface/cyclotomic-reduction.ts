@@ -1,0 +1,11 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:cyclotomic-reduction",
+  title: "Cyclotomic reduction and $C_{\\mathfrak{p}}$ preservation",
+  uses: ["def:brings-surface", "rem:lagrange-resolvents"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/cyclotomic-reduction-0.svg", blockIndex: 0, hash: "d2265d148681" },
+  ],
+
+});

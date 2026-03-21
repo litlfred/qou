@@ -70,7 +70,19 @@ If the request is LaTeX-only, proceed normally.
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Triage
+### 1. Check open todos
+
+The `scripts/check-todos.sh` hook runs at session start and outputs a
+JSON summary of open feedback todos from `.qou-feedback/`. If there are
+open todos, **present the summary and ask the user** (multiple-choice):
+
+- **Review open todos** — walk through each using the `todo-review` skill
+- **Start a new task** — proceed to normal triage, todos stay open
+- **Do research** — explore codebase, read content, no edits
+
+If there are no open todos, skip straight to triage.
+
+### 2. Triage
 
 1. **Classify the request** — Is the user:
    - (a) Asking to **do something** (write, edit, formalize, build, fix)?

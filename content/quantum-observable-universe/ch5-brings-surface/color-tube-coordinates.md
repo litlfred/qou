@@ -1,0 +1,14 @@
+Let $z = x_0/x_1 \in \mathbb{P}^1(\mathbb{C})$ be the spacetime ratio
+([Remark](#rem:braid-group-action)(i)) and let $w_k$,
+$k \in \{0,\dots,4\}$, be the Lagrange resolvents of Bring's surface
+([Remark](#rem:lagrange-resolvents)).  The *color tube coordinates*
+are the shifted spectral coordinates
+
+```tex
+\begin{equation}\label{eq:color-tube-coords}
+  r = w_2 - z, \quad g = w_3 - z, \quad b = w_4 - z,
+\end{equation}
+```
+
+together with the space-like shift $\sigma = w_1 - z$.  The
+*color vector* is $\vec{c} = (r, g, b)$.

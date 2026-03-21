@@ -346,6 +346,30 @@ progressively:
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
 
+## Content Object Integration
+
+Category-theory blocks are content object triples (`.ts` + `.md` +
+`.lean`). The `.ts` manifest's `kind` field determines formalization
+requirements:
+
+- `definition` (e.g., monoidal structure, Frobenius data): `.lean`
+  **required**, `lean.decl` must name the `structure` or `def` in Lean,
+  label prefix `def:`.
+- `theorem` / `lemma` / `proposition` (e.g., naturality, diagram
+  commutativity): `.lean` expected, `lean.decl` must name the `theorem`,
+  label prefix `thm:` / `lem:` / `prop:`.
+- `example` / `remark`: `.lean` optional.
+
+**Lean declaration alignment.** The `lean.decl` in the `.ts` manifest must
+match the actual declaration name in the `.lean` sibling. For categorical
+structures, this is typically `QOU.<PascalCaseName>`. Verify with
+`lean_hover_info` when reviewing.
+
+**Dependency graph.** Use `uses[]` in `.ts` manifests to track which
+categorical definitions a theorem depends on. This mirrors the Lean import
+graph and enables scoped validation — when a monoidal structure changes,
+all blocks that `uses` it are flagged for re-check.
+
 ## Checklist
 
 - [ ] All diagram chase proofs attempt `aesop_cat` first

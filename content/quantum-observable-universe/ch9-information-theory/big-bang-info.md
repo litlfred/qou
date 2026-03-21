@@ -1,0 +1,1 @@
+At $t = 0$: no information is known about the state of the QOU; matter is concentrated with high torsion pressure. At $t > 0$: the bundle $E$ acts on fermions, information begins to propagate, and the brane expands.

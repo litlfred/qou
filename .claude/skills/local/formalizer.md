@@ -282,9 +282,49 @@ The Formalizer must keep Lean declarations in sync with the blueprint:
 4. The `-- Ref: [key]` in Lean must match `\cite{key}` in the blueprint
    where applicable, ensuring bibliography consistency across both systems
 
+## Content Object Integration
+
+The authoritative source of truth is the **content object** triple, not raw
+LaTeX. Every formalizable block is defined by three sibling files:
+
+```
+content/<paper>/<chapter>/
+  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[], status
+  <block-name>.md    ← Narrative (markdown + TeX snippets)
+  <block-name>.lean  ← Lean formalization (when required by kind)
+```
+
+### Block kind determines Lean requirements
+
+| Block kind | Lean required? | Completeness criteria |
+|-----------|---------------|----------------------|
+| `definition` | **Yes** (enforced) | `.ts` has `lean.decl`, sibling `.lean` exists, compiles |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** (warning) | Same as definition |
+| `example`, `remark`, `conjecture` | Optional | `.lean` only if author requests |
+| `prose`, `equation`, `diagram` | N/A | No Lean needed |
+
+### Workflow with content objects
+
+1. **Read the `.ts` manifest** to get `lean.decl`, `uses[]`, and `status`
+2. **Check `uses[]`** to understand upstream dependencies — ensure they're
+   formalized first (dependency DAG ordering)
+3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
+4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed,
+   update `status` to reflect formalization progress
+5. **Run validation**: `bun run content/pipeline/validate.ts` to check
+   cross-references and constraint rules
+
+### The `uses[]` dependency graph
+
+The `uses` field in `.ts` manifests forms a narrative dependency DAG:
+- When formalizing a theorem, check that all blocks it `uses` are already
+  formalized (or have `sorry`-bridged stubs)
+- The Lean import graph should mirror the `uses[]` graph
+- Use `uses[]` to prioritize: formalize blocks with the most dependents first
+
 ## Checklist
 
-- [ ] All theorem statements match the LaTeX originals
+- [ ] All theorem statements match the `.md` narrative originals
 - [ ] Import blocks are minimal and correct
 - [ ] Every `sorry` is tracked in `proof-objects.json`
 - [ ] Every `sorry` has a `-- Ref: [key] url` comment (bibtex-linked)

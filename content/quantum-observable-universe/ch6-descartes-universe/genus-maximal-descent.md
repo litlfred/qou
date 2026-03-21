@@ -1,0 +1,7 @@
+Let $(M, G, P, E)$ be a Descartes universe that descends to a compact
+one-complex-dimensional variety $M_0$.  Then $M_0$ is a Riemann surface of
+genus $g = 4$.
+
+---
+
+The Descartes condition gives $\mathrm{tr}(\mathrm{id}_A) = -6$.  Under the fibre functor $\omega$ of the archimedean realisation, this maps to the sheaf Euler characteristic $\chi(V) = -6$, where $V = P \times_{\mathrm{SU}(2)} K^2$ is the associated rank-$2$ vector bundle over $M_0$.  Since $G = \mathrm{SU}(2)$, the determinant bundle $\det(V)$ is trivial, so $\deg(V) = 0$.  By Riemann--Roch on the compact Riemann surface $M_0$: $\chi(V) = \deg(V) + \mathrm{rank}(V)(1-g) = 2(1-g)$.  Setting $2(1-g) = -6$ gives $g = 4$.

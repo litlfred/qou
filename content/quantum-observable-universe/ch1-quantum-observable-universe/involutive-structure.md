@@ -1,0 +1,46 @@
+Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
+category. An *involutive structure* (also called a
+*$\ast$-structure* or *dagger structure*) on $\mathcal{C}$ is
+a contravariant endofunctor
+$\dagger \colon \mathcal{C}^{\mathrm{op}} \to \mathcal{C}$ satisfying:
+
+1. **Identity on objects:** $X^{\dagger} = X$ for every
+   object $X$.
+2. **Involutivity:** $f^{\dagger\dagger} = f$ for every
+   morphism $f$, depicted:
+
+   ```tex
+   \begin{equation}\label{eq:involutivity-cd}
+   \begin{tikzcd}[column sep=3em]
+     X \ar[r, "f"] \ar[rr, bend left=30, "f^{\dagger\dagger} = f"]
+     & Y \ar[r, "f^{\dagger}"{description}]
+     & X
+   \end{tikzcd}
+   \end{equation}
+   ```
+
+3. **Monoidal compatibility:**
+   $(\mathrm{id}_X \otimes f)^{\dagger}
+   = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
+   the following square commutes:
+
+   ```tex
+   \begin{equation}\label{eq:monoidal-dagger-cd}
+   \begin{tikzcd}[row sep=2.5em, column sep=3em]
+     X \otimes Y \ar[r, "\mathrm{id} \otimes f"]
+       \ar[d, "(\mathrm{id} \otimes f)^{\dagger}"']
+     & X \otimes Z \ar[d, "\mathrm{id} \otimes f^{\dagger}"] \\
+     X \otimes Z \ar[r, equal]
+     & X \otimes Z
+   \end{tikzcd}
+   \end{equation}
+   ```
+
+4. **Contravariance:**
+   $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$.
+
+For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides
+a natural involutive structure on the representation category via
+$f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$. In the
+$\mathrm{SU}(2)$ example, this is the Hilbert-space adjoint
+([Example](#ex:dagger-su2)).

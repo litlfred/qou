@@ -122,6 +122,7 @@
     try {
       const data = await api(`/api/paper?id=${encodeURIComponent(id)}`);
       paper = data;
+      katexMacros = buildKatexMacros(data.macros);
       buildBlockIndex();
       if (mode === "qc") renderQC(); else renderPaper();
     } catch (e) {
@@ -546,16 +547,26 @@
   }
 
   // ── KaTeX rendering ─────────────────────────────────────
+  let katexMacros = {};
+  function buildKatexMacros(paperMacros) {
+    const m = {};
+    if (paperMacros) {
+      for (const [name, def] of Object.entries(paperMacros)) {
+        m['\\' + name] = def.tex;
+      }
+    }
+    return m;
+  }
   function renderMath(root) {
     if (!window.katex) return;
     root.querySelectorAll(".katex-display-raw").forEach(el => {
       try {
-        katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false });
+        katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
     root.querySelectorAll(".katex-inline-raw").forEach(el => {
       try {
-        katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false });
+        katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
   }

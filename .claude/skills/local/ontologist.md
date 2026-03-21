@@ -173,6 +173,26 @@ macro.  The Ontologist is responsible for ensuring:
    a `references.bib` entry; when adding new glossary terms, identify the
    foundational paper and add it to `references.bib` if absent
 
+## Content Object Integration
+
+Glossary terms should link to **content object labels**. Each `definition`
+block in `content/` has a `.ts` manifest with a `label` (prefix `def:`)
+and a `.md` file containing the narrative definition.
+
+**Glossary–content object linkage.** When scanning for terms:
+- Definitions in `.md` blocks should reference glossary entries by their
+  `lean_name` and include cross-refs using `[term](#def:label)` format.
+- New glossary entries should record the content object `label` they
+  originate from, ensuring bidirectional traceability.
+- The `lean.decl` in a definition's `.ts` manifest should match the
+  corresponding `Glossary.lean` declaration name.
+
+**Content object triples.** Each definition is a `.ts` + `.md` + `.lean`
+triple. The `.ts` manifest is authoritative for the `kind`, `label`, and
+`lean.decl`. When the Ontologist detects a new term in a `.md` file, it
+should check whether a content object already exists before creating a
+glossary entry, to avoid duplication.
+
 ## Checklist
 
 - [ ] Every definition in `chapters/*.tex` has a glossary entry

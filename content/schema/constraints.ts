@@ -39,6 +39,8 @@ function labelForKind(kind: string) {
 
 const LeanValidationSchema = z.enum([
   "not_checked", "stub", "trivial", "external", "validated", "error",
+  "leanok",        // sorry-free, built successfully
+  "axioms_only",   // type-checks but uses axioms (no sorry)
 ]);
 
 export const LeanRefSchema = z.object({
@@ -218,11 +220,17 @@ export const ChapterRefSchema = z.object({
   dir: z.string().min(1),
 });
 
+const PaperMacroSchema = z.object({
+  tex: z.string().min(1),
+  unicode: z.string().optional(),
+});
+
 export const PaperSchema = z.object({
   title: z.string().min(1),
   authors: z.array(z.string().min(1)).min(1),
   date: z.string().optional(),
   chapters: z.array(ChapterRefSchema),
+  macros: z.record(PaperMacroSchema).optional(),
   meta: z.record(z.unknown()).optional(),
   todos: z.array(TodoItemSchema).optional(),
 });

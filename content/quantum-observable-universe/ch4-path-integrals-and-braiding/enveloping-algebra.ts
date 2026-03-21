@@ -1,0 +1,8 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:enveloping-algebra",
+  title: "Universal enveloping algebra",
+  tags: ["enveloping-algebra", "pbw", "quantum-group"],
+  uses: ["def:su2-basis", "def:direct-limit-algebra"],
+});
