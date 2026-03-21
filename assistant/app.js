@@ -176,11 +176,26 @@
       const secList = h("div", "sb-secs");
       for (const sec of ch.sections || []) {
         const secEl = h("div", "sb-sec", esc(sec.title));
+        if (sec.label) secEl.dataset.sbLabel = sec.label;
         secEl.onclick = () => {
           const target = document.getElementById(sec.label || "");
           if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
         };
         secList.appendChild(secEl);
+
+        // block-level labels under each section
+        for (const blk of sec.blocks || []) {
+          if (blk.kind === "prose" || !blk.label) continue;
+          const blkEl = h("div", "sb-blk",
+            `<span class="sb-bk">${kindAbbr(blk.kind)}</span> ${esc(blk.title || blk.label)}`);
+          blkEl.dataset.sbLabel = blk.label;
+          blkEl.onclick = (e) => {
+            e.stopPropagation();
+            const target = document.getElementById(blk.label);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          };
+          secList.appendChild(blkEl);
+        }
       }
       chEl.onclick = () => { chEl.classList.toggle("open"); };
       sb.appendChild(chEl);
@@ -208,6 +223,7 @@
     app.innerHTML = "";
     app.appendChild(wrap);
     renderMath(app);
+    observeVisibleBlocks(sb);
   }
 
   function renderChapter(ch) {
@@ -569,6 +585,27 @@
         katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
+  }
+
+  // ── Scroll-based sidebar highlighting ───────────────────
+  function observeVisibleBlocks(sb) {
+    const sidebarLinks = $$("[data-sb-label]", sb);
+    if (!sidebarLinks.length) return;
+
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const label = entry.target.id;
+        if (!label) continue;
+        const link = sb.querySelector(`[data-sb-label="${CSS.escape(label)}"]`);
+        if (link) link.classList.toggle("active", entry.isIntersecting);
+      }
+    }, { rootMargin: "-40px 0px -40% 0px", threshold: 0 });
+
+    for (const link of sidebarLinks) {
+      const label = link.dataset.sbLabel;
+      const target = document.getElementById(label);
+      if (target) io.observe(target);
+    }
   }
 
   // ── Helpers ─────────────────────────────────────────────
