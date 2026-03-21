@@ -10,7 +10,7 @@ and creative decisions; the editor coordinates execution.
 At the start of every new session, the editor's first job is **environment
 check**, then **triage**:
 
-### 0. Check Lean availability
+### 0. Check Lean availability (local → remote fallback)
 
 Before routing any request, run the Lean health check:
 
@@ -18,56 +18,57 @@ Before routing any request, run the Lean health check:
 ./scripts/check-lean.sh
 ```
 
-Interpret the JSON output:
+The script checks local Lean first, then probes the remote MCP server
+at the domain in `lean-mcp.config.json`. It returns a `mode` field:
 
-- **`lean_available: false`** — Lean is not installed or broken.
-  - If the user's request **requires Lean** (formalize, prove, build, sorry,
-    stub, review Lean, status tracking), present this message:
+#### `mode: "local"` — Local Lean fully ready
 
-    > Lean is not available on this machine. To set it up:
-    >
-    > ```bash
-    > ./scripts/setup-lean-mcp.sh
-    > ```
-    >
-    > This installs elan, uv, the Lean toolchain (pinned in
-    > `lean/lean-toolchain`), Mathlib cache, ripgrep, and configures
-    > the lean-lsp-mcp server. Takes ~5 min.
-    >
-    > Want me to proceed with LaTeX-only work in the meantime?
+Use the local MCP server (stdio via `.mcp.json`). Best performance.
 
-  - If the request is **LaTeX-only** (write, edit, validate, question),
-    proceed normally — Lean is not needed.
+#### `mode: "remote"` — Local unavailable, remote MCP reachable
 
-- **`uv_available: false`** — uv is missing (needed for `uvx lean-lsp-mcp`).
-  Remind the author:
+The local machine doesn't have Lean (or it's incomplete), but the
+hosted server at the `remote_url` is responding. **Use the remote
+MCP server.** Tell the author:
 
-    > uv is not installed. Run:
-    > ```bash
-    > curl -LsSf https://astral.sh/uv/install.sh | sh
-    > ```
+> Local Lean not available — using remote MCP at `<remote_url>`.
+> All Lean MCP tools work normally. To set up local Lean for
+> faster response: `./scripts/setup-lean-mcp.sh`
 
-- **`deps_ready: false`** — Dependencies from `lakefile.toml` are missing.
-  The `message` field lists which ones. Remind the author:
+To use remote mode, the MCP tools should be called via the remote
+server URL. The `.mcp.json` defines the local stdio server; for
+remote, the agent should note the `remote_url` from the check
+output and use it for any HTTP-based MCP tool calls.
 
-    > Missing Lean dependencies. Run:
-    > ```bash
-    > cd lean && lake update && lake exe cache get && lake build
-    > ```
+#### `mode: "local-degraded"` — Lean installed but deps/cache missing
 
-- **`cache_ok: false`** — Mathlib oleans not cached. Remind the author:
+Local Lean exists but isn't fully ready. Show the `message` field
+which explains what to run (e.g. `lake update`, `lake exe cache get`).
+If the remote is also available (`remote_ok: true`), offer:
 
-    > Mathlib cache missing. Run:
-    > ```bash
-    > cd lean && lake exe cache get
-    > ```
+> Local Lean needs setup. Remote MCP is available at `<remote_url>`.
+> Use remote now, or fix local?
 
-- **All true** — All good, proceed.
+#### `mode: "none"` — No Lean available anywhere
 
-**Note**: The lean-lsp-mcp server (via `.mcp.json`) provides diagnostics,
-goal states, hover docs, completions, LeanSearch, Loogle, and more. It runs
-automatically when Claude Code starts. Run `lake build` before first use to
-avoid timeouts.
+Neither local nor remote is reachable. If the request requires Lean:
+
+> No Lean MCP available (local not installed, remote unreachable).
+>
+> **Local setup:**
+> ```bash
+> ./scripts/setup-lean-mcp.sh
+> ```
+>
+> **Remote server:** check if `lean.litlfred.org` is running.
+>
+> Proceed with LaTeX-only work?
+
+If the request is LaTeX-only, proceed normally.
+
+**Note**: The lean-lsp-mcp server provides diagnostics, goal states,
+hover docs, completions, LeanSearch, Loogle, and more — identically
+whether running locally (stdio) or remotely (Streamable HTTP).
 
 ### 1. Triage
 
