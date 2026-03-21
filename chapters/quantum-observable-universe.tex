@@ -1209,10 +1209,9 @@ of~$\lambda$ and the dagger structure
 \begin{definition}[Weight decomposition]
 \label{def:weight-decomposition}
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-(Definition~\ref{def:quantum-observable-universe}) with substrate
-parameter~$q$ (Definition~\ref{def:substrate-parameter}).  The maximal
+(Definition~\ref{def:quantum-observable-universe}).  The maximal
 torus $T \subset G = \mathrm{Aut}^{\otimes}(\omega)$
-(Definition~\ref{def:projective-line-object}) induces a
+(Definition~\ref{def:maximal-torus}) induces a
 $\mathbb{Z}$-grading on $\Omega^k(A)$
 (Definition~\ref{def:higher-forms}).  Denoting by
 $\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
@@ -1809,25 +1808,27 @@ setting it appears as $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$
 \end{remark}
 
 
-\begin{definition}[Reeb decomposition]
+\begin{example}[Reeb decomposition]
 \label{def:reeb-decomposition}
 \lean{QOU.ReebDecomposition}\leanok
-Let $(M, \theta)$ be a CR manifold with non-degenerate Levi form
-(Example~\ref{def:c-quantum-universe}) and let $\xi$ denote the
-associated \emph{Reeb vector field}, characterised by
-$\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$.  Every differential
-$k$-form $\alpha$ ($k \geq 1$) on $M$ decomposes uniquely as
+In the archimedean realisation
+(Example~\ref{def:c-quantum-universe}), the categorical weight
+decomposition (Definition~\ref{def:weight-decomposition}) specialises
+to the \emph{Reeb decomposition}.  Let $\xi$ denote the \emph{Reeb
+vector field}, characterised by $\iota_\xi\,d\theta = 0$ and
+$\theta(\xi) = 1$.  Every differential $k$-form $\alpha$ ($k \geq 1$)
+on $M$ decomposes uniquely as
 \[
   \alpha \;=\; \alpha_H + \theta \wedge \iota_\xi\,\alpha,
 \]
 where $\alpha_H := \alpha - \theta \wedge \iota_\xi\,\alpha$ is the
-\emph{horizontal component} (satisfying $\iota_\xi\,\alpha_H = 0$) and
+\emph{horizontal component} ($\iota_\xi\,\alpha_H = 0$) and
 $\alpha_V := \theta \wedge \iota_\xi\,\alpha$ is the \emph{vertical
-component}.  This is the archimedean realisation of the categorical weight
-decomposition (Definition~\ref{def:weight-decomposition}): the Reeb
-vector $\xi$ generates the $\mathrm{U}(1)$-action whose weight-$0$
-subspace is the horizontal distribution $H = \ker\theta$.
-\end{definition}
+component}.  The Reeb vector $\xi$ generates the
+$\mathrm{U}(1)$-action (the maximal torus,
+Definition~\ref{def:maximal-torus}), and the weight-$0$ subspace is the
+horizontal distribution $H = \ker\theta$.
+\end{example}
 
 \begin{remark}[Archimedean realisation of observation]
 \label{rem:observation-archimedean}
