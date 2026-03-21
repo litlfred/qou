@@ -7,6 +7,7 @@
 
 #include "snappea_wasm.h"
 #include "SnapPea.h"
+#include "kernel_typedefs.h"
 #include "unix_file_io.h"
 
 #include <stdio.h>
@@ -141,7 +142,9 @@ void snappea_set_cusp_info(void *tri, int cusp_index, double m, double l)
 {
     if (tri == NULL)
         return;
-    set_cusp_info((Triangulation *)tri, cusp_index, m, l);
+    /* cusp_is_complete = FALSE when setting specific m,l coefficients */
+    Boolean is_complete = (m == 0.0 && l == 0.0) ? TRUE : FALSE;
+    set_cusp_info((Triangulation *)tri, cusp_index, is_complete, m, l);
 }
 
 int snappea_do_dehn_filling(void *tri)
@@ -199,7 +202,7 @@ void snappea_get_tet_shape(void *tri, int tet_index,
         return;
     }
     /* Get shape via the filled shape — this is the standard access pattern */
-    Complex shape = IsNonZero;
+    Complex shape;
     shape.real = 0.0;
     shape.imag = 0.0;
     /* Note: direct tet shape access requires iterating the tet list.
@@ -238,7 +241,7 @@ void snappea_orient(void *tri)
 {
     if (tri == NULL)
         return;
-    orient((Triangulation *)tri);
+    reorient((Triangulation *)tri);
 }
 
 int snappea_canonize(void *tri)

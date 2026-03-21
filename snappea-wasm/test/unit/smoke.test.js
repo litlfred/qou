@@ -67,6 +67,8 @@ describe('T0 — Smoke Tests', () => {
     );
     const tri = kernel.triangulationFromString(data);
 
+    // Must compute the hyperbolic structure before querying volume
+    kernel.findCompleteHyperbolicStructure(tri);
     const vol = kernel.volume(tri);
     // The figure-eight knot complement has volume ~2.0298832128
     expect(vol).toBeCloseTo(2.0298832128, 6);
@@ -89,6 +91,7 @@ describe('T0 — Smoke Tests', () => {
     const tri2 = kernel.triangulationFromString(serialized);
     expect(kernel.getName(tri2)).toBe('m004');
     expect(kernel.getNumTetrahedra(tri2)).toBe(2);
+    kernel.findCompleteHyperbolicStructure(tri2);
     expect(kernel.volume(tri2)).toBeCloseTo(2.0298832128, 6);
 
     kernel.freeTriangulation(tri);
@@ -101,6 +104,7 @@ describe('T0 — Smoke Tests', () => {
       'utf-8'
     );
     const tri = kernel.triangulationFromString(data);
+    kernel.findCompleteHyperbolicStructure(tri);
     const copy = kernel.copyTriangulation(tri);
 
     expect(copy).not.toBe(tri);
@@ -117,6 +121,7 @@ describe('T0 — Smoke Tests', () => {
       'utf-8'
     );
     const tri = kernel.triangulationFromString(data);
+    kernel.findCompleteHyperbolicStructure(tri);
     const type = kernel.solutionType(tri);
     expect(type).toBe('geometric');
     kernel.freeTriangulation(tri);

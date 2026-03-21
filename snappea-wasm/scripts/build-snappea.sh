@@ -13,7 +13,8 @@ BINDINGS_DIR="${SRC_DIR}/bindings"
 STUBS_DIR="${SRC_DIR}/stubs"
 
 CFLAGS="-O3 -Wall -Wno-unused-variable -Wno-unused-but-set-variable"
-INCLUDES="-I${HEADERS_DIR} -I${BINDINGS_DIR}"
+ADDL_CODE_DIR="${SNAPPEA_DIR}/addl_code"
+INCLUDES="-I${HEADERS_DIR} -I${ADDL_CODE_DIR} -I${BINDINGS_DIR}"
 
 echo "=== Compiling SnapPea kernel for WASM ==="
 
