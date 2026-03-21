@@ -100,6 +100,15 @@ export default chapter({
     }),
 
     section({
+      title: "Categorical Möbius energy and self-avoidance",
+      label: "sec:mobius-energy",
+      blocks: [
+        "mobius-energy",
+        "non-self-intersection",
+      ],
+    }),
+
+    section({
       title: "Varying Euler characteristic",
       label: "sec:varying-euler",
       blocks: [
