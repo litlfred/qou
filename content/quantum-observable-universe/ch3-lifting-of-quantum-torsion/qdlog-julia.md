@@ -1,6 +1,6 @@
 The integrand $\ln_q(1+t)/t$ in the quantum dilogarithm formula above has the same formal
 structure as the *information-flow density* that appears in the computation of
-filled Julia sets via the Böttcher escape potential.
+filled Julia sets via the Bottcher escape potential.
 
 For the quadratic family $f_c(z)=z^2+c$, the external Green's function (escape potential)
 admits the convergent series
@@ -27,7 +27,7 @@ continuously with the spacetime coordinate $z$.  The $q$-deformed Reeb flow
 ([Definition](#def:q-reeb-flow)) on the exceptional divisor $E_i \cong \mathbb{P}^1(\mathbb{C})$
 takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$
 in the quantum dilogarithm integral accumulates information along that flow exactly as
-$\eqref{eq:bottcher-series}$ accumulates it along the Julia-set orbit.  The
+[eq:bottcher-series](#eq:bottcher-series) accumulates it along the Julia-set orbit.  The
 $q$-deformation of the logarithm encodes the departure from classical ($q=1$)
 dynamics: as $q\to 1$ the flow trivialises and $\Phi_q(z_i)\to\mathrm{Li}_2(z_i)$,
 the classical dilogarithm; as $q\to\infty$ the quantum-number denominators $[n]_q$
