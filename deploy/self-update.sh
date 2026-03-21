@@ -41,36 +41,30 @@ REMOTE_SHA=$(git rev-parse origin/main 2>/dev/null)
 if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
     echo "[$(date -Is)] Git: new commits on main ($LOCAL_SHA → $REMOTE_SHA)"
 
-    # Clean pull: remove everything not in the repo, but preserve secrets.
-    # -x: remove untracked files including ignored ones
-    # -d: remove untracked directories
-    # -f: force
-    # --exclude: keep deploy secrets that aren't in the repo
-    git clean -xdf \
-        --exclude='deploy/.env' \
-        --exclude='deploy/authorized-emails.txt' \
-        --exclude='deploy/Caddyfile'
+    # Clean pull: nuke everything except deploy/.env (the only real secret).
+    # Caddyfile and authorized-emails.txt are regenerated from committed files.
+    git clean -xdf --exclude='deploy/.env'
     git checkout -- .
     git pull origin main --quiet
 
-    # Regenerate Caddyfile if config changed (no secrets involved)
-    if [ -f "$DEPLOY_DIR/.env" ] && [ -f "$DEPLOY_DIR/Caddyfile.template" ]; then
-        source "$DEPLOY_DIR/.env"
-        LEAN_MCP_DOMAIN="${LEAN_MCP_DOMAIN}" \
-        LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT}" \
-            envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT}' \
-            < "$DEPLOY_DIR/Caddyfile.template" \
-            > "$DEPLOY_DIR/Caddyfile"
-    fi
-
-    # Regenerate authorized-emails.txt from config
+    # Regenerate non-secret files from committed config
     CONFIG="$REPO_ROOT/lean-mcp.config.json"
-    if [ -f "$CONFIG" ]; then
+    if [ -f "$DEPLOY_DIR/.env" ] && [ -f "$CONFIG" ]; then
+        source "$DEPLOY_DIR/.env"
+
+        # Caddyfile from template
+        if [ -f "$DEPLOY_DIR/Caddyfile.template" ]; then
+            LEAN_MCP_DOMAIN="${LEAN_MCP_DOMAIN}" \
+            LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT}" \
+                envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT}' \
+                < "$DEPLOY_DIR/Caddyfile.template" \
+                > "$DEPLOY_DIR/Caddyfile"
+        fi
+
+        # authorized-emails.txt from lean-mcp.config.json
         python3 -c "
 import json
-d = json.load(open('$CONFIG'))
-for e in d.get('authorized_emails', []):
-    print(e)
+[print(e) for e in json.load(open('$CONFIG')).get('authorized_emails', [])]
 " > "$DEPLOY_DIR/authorized-emails.txt"
     fi
 
