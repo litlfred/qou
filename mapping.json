@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T02:57:44.171631+00:00",
+  "generated_at": "2026-03-21T12:13:25.023292+00:00",
   "mappings": [
     {
       "narrative": "Rigid monoidal category",
@@ -13,9 +13,44 @@
       "latex_label": "def:quantum-universe"
     },
     {
+      "narrative": "Higher differential forms",
+      "lean_id": "QOU.QuantumObservableUniverse.HigherForms",
+      "latex_label": "def:higher-forms"
+    },
+    {
       "narrative": "Quantum Observable Universe",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "latex_label": "def:quantum-observable-universe"
+    },
+    {
+      "narrative": "Involutive structure ($\\ast$-structure)",
+      "lean_id": "QOU.QuantumObservableUniverse.InvolutiveStructure",
+      "latex_label": "def:involutive-structure"
+    },
+    {
+      "narrative": "Positive-definite structure",
+      "lean_id": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
+      "latex_label": "def:positive-definite-dagger"
+    },
+    {
+      "narrative": "Spin labels and the fundamental object",
+      "lean_id": "QOU.QuantumObservableUniverse.SpinLabels",
+      "latex_label": "def:spin-labels"
+    },
+    {
+      "narrative": "Maximal torus and weight subcategory",
+      "lean_id": "QOU.QuantumObservableUniverse.MaximalTorus",
+      "latex_label": "def:maximal-torus"
+    },
+    {
+      "narrative": "Weight decomposition",
+      "lean_id": "QOU.QuantumObservableUniverse.WeightDecomposition",
+      "latex_label": "def:weight-decomposition"
+    },
+    {
+      "narrative": "Categorical Reeb derivation",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalReeb",
+      "latex_label": "def:categorical-reeb"
     },
     {
       "narrative": "Projective line object",
@@ -28,19 +63,14 @@
       "latex_label": "def:categorical-connection"
     },
     {
-      "narrative": "$q$-Hodge star",
-      "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
-      "latex_label": "def:q-hodge-star"
+      "narrative": "Categorical jet object",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalJet",
+      "latex_label": "def:categorical-jet"
     },
     {
-      "narrative": "Categorical action",
-      "lean_id": "QOU.QuantumObservableUniverse.CategoricalAction",
-      "latex_label": "def:categorical-action"
-    },
-    {
-      "narrative": "Instanton connection",
-      "lean_id": "QOU.QuantumObservableUniverse.Instanton",
-      "latex_label": "def:instanton"
+      "narrative": "Categorical Hodge star",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
+      "latex_label": "def:categorical-hodge-star"
     },
     {
       "narrative": "Substrate parameter",
@@ -58,24 +88,34 @@
       "latex_label": "def:quantum-planck-constant"
     },
     {
-      "narrative": "$q$-Harmonic form (Particle)",
+      "narrative": "$q$-Hodge star",
+      "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
+      "latex_label": "def:q-hodge-star"
+    },
+    {
+      "narrative": "Categorical action",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalAction",
+      "latex_label": "def:categorical-action"
+    },
+    {
+      "narrative": "Categorical $q$-deformed exterior derivative",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
+      "latex_label": "def:categorical-q-ext-deriv"
+    },
+    {
+      "narrative": "Particle",
       "lean_id": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "latex_label": "def:q-harmonic-form"
     },
     {
-      "narrative": "Reeb decomposition",
-      "lean_id": "QOU.QuantumObservableUniverse.ReebDecomposition",
-      "latex_label": "def:reeb-decomposition"
-    },
-    {
-      "narrative": "Fermion",
+      "narrative": "Fermion--Boson decomposition",
       "lean_id": "QOU.QuantumObservableUniverse.Fermion",
       "latex_label": "def:fermion"
     },
     {
-      "narrative": "Boson",
-      "lean_id": "QOU.QuantumObservableUniverse.Boson",
-      "latex_label": "def:boson"
+      "narrative": "Categorical point",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalPoint",
+      "latex_label": "def:categorical-point"
     },
     {
       "narrative": "Observation",
@@ -83,39 +123,39 @@
       "latex_label": "def:observation"
     },
     {
-      "narrative": "$q$-Deformed exterior derivative",
-      "lean_id": "QOU.QuantumObservableUniverse.QExtDeriv",
-      "latex_label": "def:q-ext-deriv"
+      "narrative": "Categorical instanton",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalInstanton",
+      "latex_label": "def:categorical-instanton"
     },
     {
-      "narrative": "$q$-Deformed Lie bracket",
-      "lean_id": "QOU.QuantumObservableUniverse.QLieBracket",
-      "latex_label": "def:q-lie-bracket"
+      "narrative": "Categorical $q$-Lie bracket",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
+      "latex_label": "def:categorical-q-lie-bracket"
     },
     {
-      "narrative": "$q$-Deformed connection",
-      "lean_id": "QOU.QuantumObservableUniverse.QConnection",
-      "latex_label": "def:q-connection"
-    },
-    {
-      "narrative": "$q$-Deformed Reeb vector field",
-      "lean_id": "QOU.QuantumObservableUniverse.QReebVectorField",
-      "latex_label": "def:q-reeb-vector-field"
-    },
-    {
-      "narrative": "$q$-Deformed Reeb flow",
-      "lean_id": "QOU.QuantumObservableUniverse.QReebFlow",
-      "latex_label": "def:q-reeb-flow"
-    },
-    {
-      "narrative": "$q$-Torsion leaf",
-      "lean_id": "QOU.QuantumObservableUniverse.QTorsionLeaf",
-      "latex_label": "def:q-torsion-leaf"
+      "narrative": "Categorical $q$-deformed connection",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalQConnection",
+      "latex_label": "def:categorical-q-connection"
     },
     {
       "narrative": "$q$-Weighted Yang--Mills--Levi functional",
       "lean_id": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "latex_label": "def:q-yang-mills-levi"
+    },
+    {
+      "narrative": "Categorical transport equation",
+      "lean_id": "QOU.Elaboration.CategoricalTransport",
+      "latex_label": "def:categorical-transport"
+    },
+    {
+      "narrative": "Categorical $q$-Reeb flow",
+      "lean_id": "QOU.Elaboration.CategoricalQReebFlow",
+      "latex_label": "def:categorical-q-reeb-flow"
+    },
+    {
+      "narrative": "Categorical $q$-torsion leaf",
+      "lean_id": "QOU.Elaboration.CategoricalQTorsionLeaf",
+      "latex_label": "def:categorical-q-torsion-leaf"
     },
     {
       "narrative": "Braid group on three strands",
