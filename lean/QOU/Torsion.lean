@@ -307,8 +307,11 @@ structure MassIdentityC extends MassIdentity M where
   cycle_dim : ℕ := 2
   /-- The mass integrand is compatible with the CR structure:
       the connection gradient `∇_A q` and the Levi-curvature coupling
-      `L ∧ F⁺` are evaluated using the CR connection. -/
-  cr_compatible : True := trivial
+      `L ∧ F⁺` are evaluated using the CR connection.
+      Encoded: the cycle dimension (2) is compatible with the CR
+      dimension of `M` (the Levi form is a (1,1)-form on the
+      4-dimensional horizontal distribution `H`). -/
+  cr_compatible : cycle_dim ≤ 2 * cqou.n := by omega
   /-- The mass is non-negative (inherited, but restated for the ℂ
       specialisation). -/
   mass_nonneg : ∀ (p : M), p ∈ vortexCycle →

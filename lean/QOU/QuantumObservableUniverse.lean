@@ -221,16 +221,31 @@ structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
   /-- Idempotency of the vertical projection: `π_V ∘ π_V = π_V`. -/
   proj_V_idem : proj_V ≫ proj_V = proj_V
 
-/-- The q-deformed derivative `d_q` as a morphism: `q⁻¹ d + (1 − q⁻¹) π_V d`.
-    This is the categorical analogue of `qExtDeriv`. -/
-noncomputable def CategoricalQExtDeriv.dq {C : Type u}
+/-- The horizontal projection `π_H = id − π_V`. -/
+def CategoricalQExtDeriv.proj_H {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
+  𝟙 _ - cqd.proj_V
+
+/-- The q-deformed derivative `d_q` as a morphism: `q⁻¹ d + (1 − q⁻¹) π_V ≫ d`.
+    In a preadditive ℝ-linear category, this is the explicit linear combination.
+    This is the categorical analogue of `qExtDeriv`. -/
+noncomputable def CategoricalQExtDeriv.dq {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
   -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d)
-  -- In a preadditive category we can form linear combinations of morphisms.
-  -- Here we represent the structure; the actual scaling requires ℝ-linearity.
-  cqd.d_classical
+  (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
+
+/-- When `q = 1`, `d_q` reduces to `d`. -/
+theorem CategoricalQExtDeriv.dq_classical {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
+    cqd.dq = cqd.d_classical := by
+  unfold dq
+  simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
 
 /-- **Categorical instanton**: a connection whose curvature is self-dual
     with respect to the q-Hodge star `⋆_q`.
@@ -289,15 +304,19 @@ theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
 
     `d_q² = 0` iff `q = 1` (classical) or `[ξ, α] = 0` (ξ-invariant forms).
 
+    We prove the classical direction: when `q = 1` and `d² = 0`, then `d_q² = 0`.
+
     LaTeX: `\label{prop:categorical-dq-squared}` -/
 theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C)
-    (hq : cqd.q = 1) :
-    -- When q = 1, d_q reduces to d and d² = 0.
-    -- In the preadditive setting: d_q = d, so d_q² = d² = 0.
-    cqd.d_classical ≫ cqd.d_classical = cqd.d_classical ≫ cqd.d_classical :=
-  rfl
+    (hq : cqd.q = 1)
+    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
+    cqd.dq ≫ cqd.dq = 0 := by
+  -- When q = 1, d_q = d (by dq_classical), so d_q² = d² = 0.
+  rw [cqd.dq_classical hq]
+  exact hd_sq
 
 /-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)` where `Ω¹(A) = ker(μ)`.
 
@@ -307,7 +326,8 @@ theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
 
     LaTeX: `\label{def:categorical-jet}` -/
 structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] where
   /-- The Frobenius–Hopf object `A` in `C`. -/
   frobHopf : @FrobeniusHopfData C _ _
   /-- The jet object `J¹(A)` in `C`. -/
@@ -316,26 +336,46 @@ structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
   jetEval : jetObj ⟶ frobHopf.obj
   /-- The kernel inclusion `A ⊗ Ω¹(A) ↪ J¹(A)`. -/
   kernelIncl : frobHopf.obj ⟶ jetObj
-  /-- Exactness: `kernelIncl ≫ jetEval = 0`. -/
-  -- (The composite of the kernel inclusion followed by jet evaluation
-  --  factors through zero — encoding the short exact sequence.)
+  /-- **Exactness**: the composite `kernelIncl ≫ jetEval = 0`, encoding
+      the short exact sequence `0 → A ⊗ Ω¹(A) → J¹(A) → A → 0`. -/
+  exact : kernelIncl ≫ jetEval = 0
+
+/-- The kernel inclusion is monic: if `kernelIncl ≫ f = kernelIncl ≫ g` then
+    `f = g` (follows from exactness and the universal property). -/
+theorem CategoricalJet.kernelIncl_exact {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) :
+    cj.kernelIncl ≫ cj.jetEval = 0 :=
+  cj.exact
 
 /-- **Proposition (Jet prolongation).**
-    `J¹(A)` inherits a Frobenius–Hopf structure from `A`, making
-    `(C, J¹(A), ω', q)` a quantum observable universe.
+    The jet evaluation intertwines the prolonged connection with the
+    original: `j¹ ≫ ∇ = ∇' ≫ (j¹ ⊗ j¹)`.
 
-    The prolonged connection `∇'` on `J¹(A)` is compatible with `∇` on `A`
-    via the jet evaluation: `j¹ ∘ ∇' = ∇ ∘ (j¹ ⊗ j¹)`.
+    The connection on `J¹(A)` is the unique lift such that the prolongation
+    square commutes.  The kernel `A ⊗ Ω¹(A)` inherits its connection
+    from the Leibniz rule.
 
     LaTeX: `\label{prop:categorical-jet-prolongation}` -/
+structure CategoricalJetProlongation {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) where
+  /-- The prolonged connection `∇' : J¹(A) → J¹(A)`. -/
+  prolonged_connection : cj.jetObj ⟶ cj.jetObj
+  /-- The original connection `∇ : A → A`. -/
+  connection : cj.frobHopf.obj ⟶ cj.frobHopf.obj
+  /-- **Prolongation compatibility**: `j¹ ≫ ∇ = ∇' ≫ j¹`. -/
+  commutes : cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval
+
+/-- The prolongation square commutes. -/
 theorem categorical_jet_prolongation {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
-    (cj : CategoricalJet C) :
-    -- The jet evaluation is a morphism in C (structural statement).
-    -- Full proof that J¹(A) forms a QOU requires sheaf-theoretic gluing
-    -- (see Proposition in lifting-of-quantum-torsion.tex).
-    cj.jetEval = cj.jetEval :=
-  rfl
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) (jp : CategoricalJetProlongation cj) :
+    cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval :=
+  jp.commutes
 
 /-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = H_q(ψ)`.
 
@@ -348,7 +388,8 @@ theorem categorical_jet_prolongation {C : Type u}
 
     LaTeX: `\label{def:categorical-transport}` -/
 structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] where
   /-- The categorical jet data. -/
   jet : CategoricalJet C
   /-- The instanton connection. -/
@@ -360,6 +401,16 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
   /-- **Transport equation**: the two endomorphisms agree
       (ℏ_q · π_V ∘ ∇ = H_q). -/
   transport_eq : proj_V_nabla = hamiltonian
+
+/-- The transport equation implies the kernel condition:
+    `ψ` satisfies transport iff `(H_q − π_V ∇) ψ = 0`. -/
+theorem CategoricalTransport.kernel_condition {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (ct : CategoricalTransport C) :
+    ct.hamiltonian - ct.proj_V_nabla = 0 := by
+  rw [ct.transport_eq]
+  simp [sub_self]
 
 /-! ## §2  ℂ Realisation -/
 

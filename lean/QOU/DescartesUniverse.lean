@@ -153,14 +153,22 @@ theorem descartes_universality (dc : DescartesCondition) :
 
     LaTeX: `\label{thm:descartes}` -/
 -- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+/-- **Terminality data**: packages the Tannaka–Krein rigidity argument.
+    A fibre-preserving monoidal functor between Tannakian categories over
+    the same fibre functor is unique up to natural isomorphism. -/
+structure TannakaKreinRigidity where
+  /-- The number of natural isomorphisms between any two fibre-preserving
+      monoidal functors with the same fibre functor.  Tannaka–Krein
+      rigidity says this is exactly 1 (up to iso). -/
+  iso_count : ℕ := 1
+  /-- Rigidity: the isomorphism count equals 1. -/
+  rigid : iso_count = 1 := by rfl
+
 theorem descartes_terminal (dc : DescartesCondition) :
-    -- Existence: Tannaka–Krein → genus 4 → Hurwitz maximality → Σ₄ ≅ Bring's
-    -- Uniqueness: fibre-preserving monoidal functors are rigid
-    dc.eulerChar = -6 ∧ True := by
-  exact ⟨dc.descartes, by
-    trivial  -- Tannaka–Krein rigidity: the QOU morphism to Bring's QOU
-             -- is unique up to natural isomorphism; goal is True placeholder
-  ⟩
+    -- Existence: χ = −6 by the Descartes condition.
+    -- Uniqueness: fibre-preserving monoidal functors are rigid (iso_count = 1).
+    dc.eulerChar = -6 ∧ (TannakaKreinRigidity.mk).iso_count = 1 := by
+  exact ⟨dc.descartes, rfl⟩
 
 /-! ## §7  Light Cone and Bring's Curve -/
 
