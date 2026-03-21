@@ -16,16 +16,16 @@ define a cochain complex.
 
 Write $a = q^{-1}$ and $b = 1 - q^{-1}$, so $a + b = 1$. Then
 
-$$
-\begin{aligned}
+```tex
+\begin{align*}
   d_q^2\,\alpha
   &= d_q\bigl(a\,d\alpha + b\,\theta \wedge \mathcal{L}_\xi\alpha\bigr) \\
   &= a^2\,d^2\alpha
      + ab\,d(\theta \wedge \mathcal{L}_\xi\alpha)
      + ab\,\theta \wedge \mathcal{L}_\xi\,d\alpha
      + b^2\,\theta \wedge \mathcal{L}_\xi(\theta \wedge \mathcal{L}_\xi\alpha).
-\end{aligned}
-$$
+\end{align*}
+```
 
 The first term vanishes since $d^2 = 0$. The second expands as
 $ab\,d\theta \wedge \mathcal{L}_\xi\alpha

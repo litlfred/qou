@@ -5,7 +5,8 @@ $$
   \alpha\,\beta\,\alpha
   \;=\;\beta\,\alpha\,\beta
 $$
-for the generators $\alpha$ and $\beta$.  Explicitly, using
+for the generators $\alpha$ and
+$\beta$.  Explicitly, using
 $$
   \alpha=\begin{pmatrix}e^{i\pi/3}&0\\0&e^{-i\pi/3}\end{pmatrix},
   \qquad

@@ -67,7 +67,7 @@ corrections at level $n$ lie in the image of $H^2(\mathcal{S},
 classes).  When $\kappa_0$ is non-torsion, these images are complementary
 subgroups, so the corrections cannot cancel $\kappa_0$.  In the archimedean
 realisation, the splitting follows from the exponential sequence; in the
-algebraic setting, from the etale--analytic comparison.
+algebraic setting, from the étale--analytic comparison.
 
 *Item (4): Riemann--Hurwitz.*
 The branched covering $\pi \colon S \to \mathbb{P}(V)$ of degree $d$ has

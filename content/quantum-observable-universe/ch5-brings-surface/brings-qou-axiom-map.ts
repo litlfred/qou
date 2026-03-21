@@ -7,9 +7,8 @@ export default remark({
     "def:quantum-observable-universe",
     "def:positive-definite-dagger",
     "rem:brings-qou-4tuple",
-    "rem:archimedean-realisations",
     "rem:lagrange-resolvents",
-    "rem:seiberg-witten",
+    "rem:archimedean-realisations",
     "lem:volume-from-rigidity",
   ],
 });

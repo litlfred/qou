@@ -5,7 +5,6 @@ export default remark({
   title: "J^1E as the space of local states",
   tags: ["jet-bundle", "gauge-theory"],
   uses: [
-    "def:c-quantum-observable-universe",
     "lem:irreducible-connection",
     "def:substrate-parameter",
     "def:quantum-gauge-group",

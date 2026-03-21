@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:classical-recovery",
   title: "Classical recovery of q-deformed operators",
-  tags: ["q-deformed", "classical-limit"],
+  tags: ["q-deformation", "classical-limit"],
   uses: [
     "def:q-ext-deriv",
     "def:q-lie-bracket",

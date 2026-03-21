@@ -20,7 +20,7 @@ $\kappa_n \in H^2(M,\, \mathcal{B})$
 
 ---
 
-By \cite[Theorem 1.7]{yekutieli2010}, any central extension of gerbes
+By [Theorem 1.7, yekutieli2010], any central extension of gerbes
 banded by an abelian sheaf on a ringed space satisfies the lifting
 criterion: an object in the base gerbe admits a lift to the total gerbe
 if and only if its obstruction class in $H^2$ vanishes.  The jet

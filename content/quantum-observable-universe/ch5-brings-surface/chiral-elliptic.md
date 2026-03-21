@@ -1,0 +1,29 @@
+Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio
+([Remark](#rem:braid-group-action)(i)).  Substituting the
+constraint $x_0+x_1=C$ and eliminating $x_0,x_1$ in favour of $z$,
+the quadratic and cubic power-sum
+conditions on
+the chiral variable $X=(x_2,x_3,x_4)$ reduce at each fixed $z$ to the
+cubic
+
+```tex
+\begin{equation}\label{eq:chiral-elliptic}
+  X^3+(z+1)\,X^2+(z^2+z+1)\,X+(z^3+z^2+z+1)=0.
+\end{equation}
+```
+
+For generic $z$ this defines an elliptic curve $E_z$ in the chiral
+fibre; its $j$-invariant varies as a rational function of $z$.  The
+monodromy of $E_z$ around the singular fibres (where the discriminant
+of the cubic vanishes) recovers the holonomy
+generators $H_1,H_2$ of
+[Remark](#rem:holonomy-trefoil).
+
+---
+
+Write $x_0=z\,x_1$ and use $x_0+x_1=C$ to eliminate both spacetime
+variables.  The power-sum conditions $\sum x_j^k=0$ for $k=2,3$ then
+become polynomial in $z$ and $X=x_2+x_3+x_4$, $X_2=\sum_{i<j}x_ix_j$,
+etc.  Reducing by the Newton identities yields the
+cubic; its discriminant is a polynomial
+in $z$ whose roots give the singular fibres.
