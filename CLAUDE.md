@@ -68,6 +68,28 @@ pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
 **Important**: Run `lake build` in `lean/` before first MCP session to avoid
 timeouts.
 
+### Remote MCP server
+
+A Docker-based remote deployment is available in `deploy/`:
+
+```bash
+cd deploy && ./setup-remote.sh
+```
+
+Architecture: `Client → oauth2-proxy (Google OAuth) → lean-lsp-mcp (HTTP)`
+
+- Docker image built by CI on every push to main (`build-lean-mcp.yml`)
+- All Lean deps and oleans baked into the image for fast startup (~10-20s)
+- Auth: Google OAuth with email whitelist (`authorized-emails.txt`)
+- Auto-update: Watchtower polls GHCR for new images every 5 min
+- Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
+
+To switch a client to remote mode, update `.mcp.json`:
+
+```json
+{"mcpServers":{"lean-lsp":{"url":"https://YOUR_HOST:4180/mcp"}}}
+```
+
 ### Session-start hook
 
 A `SessionStart` hook in `.claude/settings.json` runs `scripts/check-lean.sh`
@@ -90,6 +112,7 @@ setup instructions rather than silently failing.
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
+| `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |
 | `skills-config.json` | Skill package subscriptions |
 
 ## Build output (gh-pages)

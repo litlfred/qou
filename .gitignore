@@ -22,3 +22,7 @@ lean/build/
 
 # Generated graph intermediate files
 dependency-graph.dot
+
+# Deployment secrets (never commit)
+deploy/.env
+deploy/authorized-emails.txt
