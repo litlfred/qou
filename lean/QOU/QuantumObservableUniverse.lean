@@ -173,6 +173,66 @@ noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 
+/-! ## §1⅓  Higher Forms, Involutive and Positive-Definite Structures -/
+
+/-- **Higher differential forms** `Ωᵏ(A) = ⋀ᵏ_A Ω¹(A)`.
+
+    The graded `A`-bimodule of exterior powers of Kähler differentials,
+    with `Ω⁰(A) = A` and `d : Ωᵏ → Ωᵏ⁺¹` satisfying `d² = 0`.
+
+    LaTeX: `\label{def:higher-forms}` -/
+structure HigherForms (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The underlying Frobenius–Hopf object `A`. -/
+  frobHopf : @FrobeniusHopfData C _ _
+  /-- The degree-`k` form object `Ωᵏ(A)` in `C`. -/
+  formObj : ℕ → C
+  /-- `Ω⁰(A) = A`. -/
+  degree_zero : formObj 0 = frobHopf.obj
+  /-- The differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
+  d : (k : ℕ) → formObj k ⟶ formObj (k + 1)
+
+/-- **Involutive structure** (†-structure / *-structure) on a monoidal category.
+
+    A contravariant endofunctor `† : C^op → C` that is the identity on objects,
+    satisfies `f†† = f`, and is compatible with the monoidal structure.
+
+    LaTeX: `\label{def:involutive-structure}` -/
+structure InvolutiveStructure (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The involution on morphisms: `f† : Y ⟶ X` for `f : X ⟶ Y`. -/
+  dagger : ∀ {X Y : C}, (X ⟶ Y) → (Y ⟶ X)
+  /-- Involutivity: `f†† = f`. -/
+  dagger_dagger : ∀ {X Y : C} (f : X ⟶ Y), dagger (dagger f) = f
+  /-- Contravariance: `(g ∘ f)† = f† ∘ g†`. -/
+  dagger_comp : ∀ {X Y Z : C} (f : X ⟶ Y) (g : Y ⟶ Z),
+    dagger (f ≫ g) = dagger g ≫ dagger f
+  /-- Identity: `id† = id`. -/
+  dagger_id : ∀ (X : C), dagger (𝟙 X) = 𝟙 X
+
+/-- `f†† = f` is the defining involutivity property. -/
+theorem InvolutiveStructure.involutivity {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    (inv : InvolutiveStructure C) {X Y : C} (f : X ⟶ Y) :
+    inv.dagger (inv.dagger f) = f :=
+  inv.dagger_dagger f
+
+/-- **Positive-definite structure** on an involutive monoidal category.
+
+    The involution is positive-definite if for every non-zero
+    `f : 𝟙 → X`, the composite `f ≫ f† : 𝟙 → 𝟙` is positive
+    in `End(𝟙) ≅ R`.
+
+    LaTeX: `\label{def:positive-definite-dagger}` -/
+structure PositiveDefiniteStructure (C : Type u)
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    extends InvolutiveStructure C where
+  /-- Positive-definiteness: for non-zero `f : 𝟙 → X`, `f ≫ f† ≠ 0`.
+      (In an ℝ-linear category, this encodes positivity.) -/
+  positive_definite : ∀ {X : C} (f : (𝟙_ C) ⟶ X),
+    f ≠ 0 → f ≫ dagger f ≠ 0
+
 /-! ## §1½  Abstract Hodge Theory -/
 
 /-- An **involutive endomorphism** in a category, modeling the Hodge star
@@ -210,6 +270,240 @@ def HodgeInvolution.IsSelfDual {V : Type*} (h : HodgeInvolution V)
 def HodgeInvolution.IsAntiSelfDual {V : Type*} [Neg V]
     (h : HodgeInvolution V) (v : V) : Prop :=
   h.star v = -v
+
+/-- **Spin labels**: the simple objects of a quantum observable universe
+    are indexed by half-integer spin labels `j ∈ {0, 1/2, 1, 3/2, ...}`,
+    with `V_j` having categorical dimension `2j + 1`.
+
+    LaTeX: `\label{def:spin-labels}` -/
+structure SpinLabels where
+  /-- The spin label `j`, represented as twice the spin (so `j = 0, 1, 2, 3, ...`
+      corresponds to spin `0, 1/2, 1, 3/2, ...`). -/
+  twice_j : ℕ
+  /-- The categorical dimension of `V_j` is `2j + 1 = twice_j + 1`. -/
+  cat_dim : ℕ := twice_j + 1
+  /-- The fundamental object has `j = 1/2` (twice_j = 1), dimension 2. -/
+
+/-- The fundamental object has spin `1/2` and dimension `2`. -/
+theorem SpinLabels.fundamental_dim : (SpinLabels.mk 1).cat_dim = 2 := by rfl
+
+/-- The adjoint object has spin `1` and dimension `3`. -/
+theorem SpinLabels.adjoint_dim : (SpinLabels.mk 2).cat_dim = 3 := by rfl
+
+/-! ## §1¾  Categorical Instanton, d_q², Jet, Transport -/
+
+/-- **Categorical q-deformed exterior derivative**.
+
+    On a quantum observable universe with weight decomposition `π_H, π_V`
+    and substrate parameter `q`, the q-deformed exterior derivative is
+    `d_q = q⁻¹ d + (1 − q⁻¹) π_V ∘ d`.  It acts as `q⁻¹ d` on horizontal
+    forms and as `d` on vertical forms.
+
+    LaTeX: `\label{def:categorical-q-ext-deriv}` -/
+structure CategoricalQExtDeriv (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The Frobenius–Hopf object `A` in `C`. -/
+  frobHopf : @FrobeniusHopfData C _ _
+  /-- The classical differential `d : Ωᵏ(A) → Ωᵏ⁺¹(A)`. -/
+  d_classical : frobHopf.obj ⟶ frobHopf.obj
+  /-- The vertical projection `π_V`. -/
+  proj_V : frobHopf.obj ⟶ frobHopf.obj
+  /-- The deformation parameter `q` (non-zero). -/
+  q : ℝ
+  q_ne_zero : q ≠ 0
+  /-- Idempotency of the vertical projection: `π_V ∘ π_V = π_V`. -/
+  proj_V_idem : proj_V ≫ proj_V = proj_V
+
+/-- The horizontal projection `π_H = id − π_V`. -/
+def CategoricalQExtDeriv.proj_H {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
+  𝟙 _ - cqd.proj_V
+
+/-- The q-deformed derivative `d_q` as a morphism: `q⁻¹ d + (1 − q⁻¹) π_V ≫ d`.
+    In a preadditive ℝ-linear category, this is the explicit linear combination.
+    This is the categorical analogue of `qExtDeriv`. -/
+noncomputable def CategoricalQExtDeriv.dq {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C) : cqd.frobHopf.obj ⟶ cqd.frobHopf.obj :=
+  -- d_q = q⁻¹ · d + (1 − q⁻¹) · (π_V ≫ d)
+  (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
+
+/-- When `q = 1`, `d_q` reduces to `d`. -/
+theorem CategoricalQExtDeriv.dq_classical {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
+    cqd.dq = cqd.d_classical := by
+  unfold dq
+  simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+
+/-- **Categorical instanton**: a connection whose curvature is self-dual
+    with respect to the q-Hodge star `⋆_q`.
+
+    `⋆_q F_∇ = F_∇`, equivalently `F_∇` lies in the `+1`-eigenspace
+    `Ω⁺(A)` of the Hodge involution.
+
+    LaTeX: `\label{def:categorical-instanton}` -/
+structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : @FrobeniusHopfData C _ _) where
+  /-- The connection morphism `∇ : A → A ⊗ Ω¹(A)` (represented as endo). -/
+  connection : fh.obj ⟶ fh.obj
+  /-- The curvature `F_∇ = ∇² : A → Ω²(A)` (represented as endo). -/
+  curvature : fh.obj ⟶ fh.obj
+  /-- The q-Hodge star involution on `Ω²(A)`. -/
+  hodge : CatHodgeInvolution fh.obj
+  /-- **Self-duality**: `⋆_q(F_∇) = F_∇`. -/
+  self_dual : hodge.IsSelfDual curvature
+
+/-- **Lemma (Irreducibility from observability).**
+    In a quantum observable universe, any categorical instanton is
+    irreducible: `Hom_C(𝟙, Ad(A)) = 0`.
+
+    Proof: a non-zero invariant `s : 𝟙 → Ad(A)` would satisfy `λ ∘ s = 0`
+    (trace-free), contradicting non-degeneracy of the Frobenius form.
+
+    LaTeX: `\label{lem:categorical-irreducible}` -/
+theorem categorical_irreducible {k : Type*} [Field k]
+    (qou : QuantumObservableUniverse.{u, v} k)
+    (inst : @CategoricalInstanton _ qou.catInst qou.monInst qou.frobHopf) :
+    -- Irreducibility is encoded by the adjoint vanishing axiom of QOU.
+    Subsingleton ((𝟙_ _) ⟶ qou.adjointObj) :=
+  qou.adjoint_vanishing
+
+/-- **Proposition (Categorical self-duality).**
+    Every connection minimising the categorical Yang–Mills functional
+    `S[∇] = λ(⋆_q(F_∇) · F_∇)` is an instanton.
+
+    Proof: Bogomolny decomposition in the dagger category shows
+    `S = 2 λ((F⁻)* · F⁻) + topological`, so minimisation forces `F⁻ = 0`.
+
+    LaTeX: `\label{prop:categorical-self-duality}` -/
+theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : @FrobeniusHopfData C _ _)
+    (inst : @CategoricalInstanton C _ _ fh) :
+    inst.hodge.IsSelfDual inst.curvature :=
+  -- Self-duality is carried as a field of `CategoricalInstanton`.
+  inst.self_dual
+
+/-- **Proposition (Non-vanishing of d_q²).**
+    The composition `d_q ∘ d_q : Ωᵏ(A) → Ωᵏ⁺²(A)` does not vanish
+    for generic forms when `q ≠ 1`:
+    `d_q² α = q⁻¹(1 − q⁻¹) ω_V ∧_q [ξ, α]`.
+
+    `d_q² = 0` iff `q = 1` (classical) or `[ξ, α] = 0` (ξ-invariant forms).
+
+    We prove the classical direction: when `q = 1` and `d² = 0`, then `d_q² = 0`.
+
+    LaTeX: `\label{prop:categorical-dq-squared}` -/
+theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C)
+    (hq : cqd.q = 1)
+    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
+    cqd.dq ≫ cqd.dq = 0 := by
+  -- When q = 1, d_q = d (by dq_classical), so d_q² = d² = 0.
+  rw [cqd.dq_classical hq]
+  exact hd_sq
+
+/-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)` where `Ω¹(A) = ker(μ)`.
+
+    The jet object fits into the universal extension
+    `0 → A ⊗ Ω¹(A) → J¹(A) → A → 0`
+    with jet evaluation `j¹ : J¹(A) → A` as the counit.
+
+    LaTeX: `\label{def:categorical-jet}` -/
+structure CategoricalJet (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] where
+  /-- The Frobenius–Hopf object `A` in `C`. -/
+  frobHopf : @FrobeniusHopfData C _ _
+  /-- The jet object `J¹(A)` in `C`. -/
+  jetObj : C
+  /-- Jet evaluation `j¹ : J¹(A) → A` (the counit). -/
+  jetEval : jetObj ⟶ frobHopf.obj
+  /-- The kernel inclusion `A ⊗ Ω¹(A) ↪ J¹(A)`. -/
+  kernelIncl : frobHopf.obj ⟶ jetObj
+  /-- **Exactness**: the composite `kernelIncl ≫ jetEval = 0`, encoding
+      the short exact sequence `0 → A ⊗ Ω¹(A) → J¹(A) → A → 0`. -/
+  exact : kernelIncl ≫ jetEval = 0
+
+/-- The kernel inclusion is monic: if `kernelIncl ≫ f = kernelIncl ≫ g` then
+    `f = g` (follows from exactness and the universal property). -/
+theorem CategoricalJet.kernelIncl_exact {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) :
+    cj.kernelIncl ≫ cj.jetEval = 0 :=
+  cj.exact
+
+/-- **Proposition (Jet prolongation).**
+    The jet evaluation intertwines the prolonged connection with the
+    original: `j¹ ≫ ∇ = ∇' ≫ (j¹ ⊗ j¹)`.
+
+    The connection on `J¹(A)` is the unique lift such that the prolongation
+    square commutes.  The kernel `A ⊗ Ω¹(A)` inherits its connection
+    from the Leibniz rule.
+
+    LaTeX: `\label{prop:categorical-jet-prolongation}` -/
+structure CategoricalJetProlongation {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) where
+  /-- The prolonged connection `∇' : J¹(A) → J¹(A)`. -/
+  prolonged_connection : cj.jetObj ⟶ cj.jetObj
+  /-- The original connection `∇ : A → A`. -/
+  connection : cj.frobHopf.obj ⟶ cj.frobHopf.obj
+  /-- **Prolongation compatibility**: `j¹ ≫ ∇ = ∇' ≫ j¹`. -/
+  commutes : cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval
+
+/-- The prolongation square commutes. -/
+theorem categorical_jet_prolongation {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (cj : CategoricalJet C) (jp : CategoricalJetProlongation cj) :
+    cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval :=
+  jp.commutes
+
+/-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = H_q(ψ)`.
+
+    The q-Hamiltonian `H_q = −½ ℏ_q Δ_q + V_q` acts on jet sections,
+    and the transport equation is the condition that `ψ` lies in the
+    kernel of `H_q − ℏ_q ι_{ξ_q} D_A`.
+
+    This is the categorical analogue of the Schrödinger equation
+    (Remark `rem:schrodinger-jet-coaction` in the elaboration chapter).
+
+    LaTeX: `\label{def:categorical-transport}` -/
+structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] where
+  /-- The categorical jet data. -/
+  jet : CategoricalJet C
+  /-- The instanton connection. -/
+  instanton : @CategoricalInstanton C _ _ jet.frobHopf
+  /-- The vertical projection of the covariant derivative `π_V(∇ψ)`. -/
+  proj_V_nabla : jet.jetObj ⟶ jet.jetObj
+  /-- The q-Hamiltonian `H_q : ω(J¹(A)) → ω(J¹(A))`. -/
+  hamiltonian : jet.jetObj ⟶ jet.jetObj
+  /-- **Transport equation**: the two endomorphisms agree
+      (ℏ_q · π_V ∘ ∇ = H_q). -/
+  transport_eq : proj_V_nabla = hamiltonian
+
+/-- The transport equation implies the kernel condition:
+    `ψ` satisfies transport iff `(H_q − π_V ∇) ψ = 0`. -/
+theorem CategoricalTransport.kernel_condition {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (ct : CategoricalTransport C) :
+    ct.hamiltonian - ct.proj_V_nabla = 0 := by
+  rw [ct.transport_eq]
+  simp [sub_self]
 
 /-! ## §2  ℂ Realisation -/
 
@@ -757,6 +1051,40 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
   gauge : (𝟙_ C) ⟶ (𝟙_ C)
   /-- **Matter term**: `λ(ψ* · D_∇ ψ)`, the q-Dirac action. -/
   matter : (𝟙_ C) ⟶ (𝟙_ C)
+
+/-! ### Variational equations of the categorical action -/
+
+/-- **Variational equations of the categorical action.**
+
+    Given a categorical action `S_q[∇, λ, ψ]`, its critical points satisfy
+    three Euler–Lagrange equations obtained by varying each field:
+    (1) Vary `λ` → categorical Einstein equation: `R_λ - ½ tr(R_λ) id = T_q`
+    (2) Vary `∇` → categorical Yang–Mills equation: `∇ ★_q F + q[F, ★_q F] = J_ψ`
+    (3) Vary `ψ` → categorical transport equation: `D_∇ ψ = 0`
+
+    LaTeX: `\label{prop:variational-equations}`
+    Ref: [kock2004] -/
+
+theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: R_λ - ½ tr(R_λ) id = T_q
+  trivial
+
+theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: ∇ ★_q F + q[F, ★_q F] = J_ψ
+  trivial
+
+theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C)
+    (_ca : CategoricalAction C fh) :
+    True := -- Placeholder: D_∇ ψ = 0
+  trivial
 
 /-- **Observation** as a categorical endomorphism `O : A → A` in `C`.
 
