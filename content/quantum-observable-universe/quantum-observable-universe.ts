@@ -11,6 +11,12 @@ export default paper({
   title: "Quantum Observable Universe",
   authors: ["litlfred"],
   date: "2026-03-21",
+  macros: {
+    pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
+    frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
+    frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
+    frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
+  },
   chapters: [
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
     chapterRef({ dir: "ch2-qou-elaboration" }),

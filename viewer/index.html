@@ -323,12 +323,16 @@
     }
 
     // ── KaTeX ────────────────────────────────────────────
-    const katexMacros = {
-      '\\pp': '\\mathfrak{p}',
-      '\\frakr': '\\mathfrak{r}',
-      '\\frakg': '\\mathfrak{g}',
-      '\\frakb': '\\mathfrak{b}',
-    };
+    let katexMacros = {};
+    function buildKatexMacros(paperMacros) {
+      const m = {};
+      if (paperMacros) {
+        for (const [name, def] of Object.entries(paperMacros)) {
+          m['\\' + name] = def.tex;
+        }
+      }
+      return m;
+    }
     function renderMath(el) {
       for (const m of el.querySelectorAll('[data-mi]'))
         try { katex.render(m.textContent, m, {throwOnError:false, macros:katexMacros}); } catch {}
@@ -639,6 +643,7 @@
     // ── Paper ────────────────────────────────────────────
     function renderPaper(p) {
       paper = p;
+      katexMacros = buildKatexMacros(p.macros);
       bix.clear();
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks)
         if (b.label) bix.set(b.label, b);

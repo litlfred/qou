@@ -226,6 +226,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     title: paperMod.title,
     authors: paperMod.authors,
     date: paperMod.date,
+    macros: paperMod.macros,
     chapters,
     todos: paperMod.todos,
   };

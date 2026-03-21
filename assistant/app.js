@@ -122,6 +122,7 @@
     try {
       const data = await api(`/api/paper?id=${encodeURIComponent(id)}`);
       paper = data;
+      katexMacros = buildKatexMacros(data.macros);
       buildBlockIndex();
       if (mode === "qc") renderQC(); else renderPaper();
     } catch (e) {
@@ -546,12 +547,16 @@
   }
 
   // ── KaTeX rendering ─────────────────────────────────────
-  const katexMacros = {
-    '\\pp': '\\mathfrak{p}',
-    '\\frakr': '\\mathfrak{r}',
-    '\\frakg': '\\mathfrak{g}',
-    '\\frakb': '\\mathfrak{b}',
-  };
+  let katexMacros = {};
+  function buildKatexMacros(paperMacros) {
+    const m = {};
+    if (paperMacros) {
+      for (const [name, def] of Object.entries(paperMacros)) {
+        m['\\' + name] = def.tex;
+      }
+    }
+    return m;
+  }
   function renderMath(root) {
     if (!window.katex) return;
     root.querySelectorAll(".katex-display-raw").forEach(el => {

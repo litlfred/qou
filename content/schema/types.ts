@@ -398,12 +398,36 @@ export interface Chapter {
  *   - A ChapterRef (with optional URI override)
  *   - An inline Chapter (for simple cases)
  */
+/**
+ * A custom macro defined at the paper level.
+ *
+ * Used by all renderers: KaTeX (viewer), LaTeX (PDF), and plain-text (search).
+ */
+export interface PaperMacro {
+  /** LaTeX expansion (e.g. "\\mathfrak{p}"). Used by KaTeX and LaTeX. */
+  tex: string;
+  /** UTF-8 display string for plain-text contexts (e.g. "𝔭"). */
+  unicode?: string;
+}
+
 export interface Paper {
   title: string;
   authors: string[];
   date?: string;
   /** Chapter references — URIs to chapter .ts manifests. */
   chapters: ChapterRef[];
+  /**
+   * Custom LaTeX macros for this paper.
+   *
+   * Keys are macro names WITHOUT backslash (e.g. "pp" for \pp).
+   * Values define the TeX expansion and optional Unicode fallback.
+   *
+   * All renderers consume these:
+   * - KaTeX: passed as `macros` option
+   * - LaTeX pipeline: emitted as \newcommand in preamble
+   * - Plain-text/search: uses `unicode` field
+   */
+  macros?: Record<string, PaperMacro>;
   meta?: Record<string, unknown>;
   /** Paper-level todos (cross-cutting concerns, overall tasks). */
   todos?: TodoItem[];
