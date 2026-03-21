@@ -3,9 +3,9 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 4: Path Integrals and Braiding.
  *
- * Replaces traditional path integrals with finite sums over discrete fibre
- * structure, and develops the braid-group action from the braided monoidal
- * category.
+ * Categorical origin of braiding, braid group representations,
+ * SU(2)/SO(3) framework, knot groups, quantum groups, and
+ * varying Euler characteristic.
  */
 export default chapter({
   number: 4,
@@ -92,6 +92,7 @@ export default chapter({
       title: "Universal enveloping algebras and quantum groups",
       label: "sec:enveloping-algebras",
       blocks: [
+        "enveloping-algebras-intro",
         "enveloping-algebra",
         "quantum-su2",
         "r-matrix-braiding",
@@ -103,7 +104,7 @@ export default chapter({
       label: "sec:varying-euler",
       blocks: [
         "varying-euler-intro",
-        "genus-2-intro",
+        "genus-2",
       ],
     }),
 
@@ -111,6 +112,7 @@ export default chapter({
       title: "Descent from $E_1$ to $E_0$ and the mirror bundle $E_{-1}$",
       label: "sec:descent-mirror",
       blocks: [
+        "descent-mirror-intro",
         "e-minus-one",
       ],
     }),
