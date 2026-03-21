@@ -466,6 +466,36 @@ const server = new McpServer({
   },
 });
 
+// ── Logging ──────────────────────────────────────────────────────
+
+function log(category: string, message: string, detail?: string) {
+  const ts = new Date().toISOString().slice(11, 23);
+  const d = detail ? ` ${detail}` : '';
+  console.error(`[${ts}] [${category}]  ${message}${d}`);
+}
+
+// ── Wrap server.tool with logging ─────────────────────────────────
+
+const origTool = server.tool.bind(server);
+server.tool = function (...args: Parameters<typeof origTool>) {
+  const toolName = args[0] as string;
+  // The handler is the last argument
+  const handler = args[args.length - 1] as (...a: unknown[]) => Promise<unknown>;
+  args[args.length - 1] = async (...handlerArgs: unknown[]) => {
+    const start = Date.now();
+    log('mcp', `→ ${toolName}`, JSON.stringify(handlerArgs[0] || {}).slice(0, 120));
+    try {
+      const result = await (handler as Function)(...handlerArgs);
+      log('mcp', `← ${toolName}`, `ok (${Date.now()-start}ms)`);
+      return result;
+    } catch (e) {
+      log('mcp', `✗ ${toolName}`, `error: ${e instanceof Error ? e.message : String(e)} (${Date.now()-start}ms)`);
+      throw e;
+    }
+  };
+  return origTool(...args);
+} as typeof origTool;
+
 // ── Register all tool groups ─────────────────────────────────────
 
 registerRenderTools(server);
@@ -497,6 +527,8 @@ if (mode === "stdio") {
     port: viewerPort,
     async fetch(req) {
       const url = new URL(req.url);
+      const start = Date.now();
+      log('http', `${req.method} ${url.pathname}`);
 
       // Root → redirect to assistant
       if (url.pathname === "/" || url.pathname === "") {
@@ -511,18 +543,19 @@ if (mode === "stdio") {
       // POST requests (save, feedback)
       if (req.method === "POST") {
         const postRes = await handlePostRequest(url, req);
-        if (postRes) return postRes;
+        if (postRes) { log('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
       }
 
       const viewerRes = await handleViewerRequest(url);
-      if (viewerRes) return viewerRes;
+      if (viewerRes) { log('http', `${req.method} ${url.pathname}`, `→ ${viewerRes.status} (${Date.now()-start}ms)`); return viewerRes; }
 
+      log('http', `${req.method} ${url.pathname}`, `→ 404 (${Date.now()-start}ms)`);
       return new Response("Not found", { status: 404 });
     },
   });
 
-  console.error(`[qou-mcp] Assistant started (stdio, repo: ${REPO_ROOT})`);
-  console.error(`[qou-mcp] Viewer: http://localhost:${viewerPort}/viewer/`);
+  log('init', `MCP server started (stdio, repo: ${REPO_ROOT})`);
+  log('init', `Viewer: http://localhost:${viewerPort}/viewer/`);
 } else {
   // HTTP mode — MCP + viewer on same port
   const port = parseInt(process.env.MCP_PORT || "8080", 10);
