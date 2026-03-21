@@ -12,4 +12,8 @@ export default proposition({
     "prop:jet-prolongation",
     "rem:color-tube-cubic",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/mi-sw-abelianisation-0.svg", blockIndex: 0, hash: "af7757ccd6f4" },
+  ],
+
 });

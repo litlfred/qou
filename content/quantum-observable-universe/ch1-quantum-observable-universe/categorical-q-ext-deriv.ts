@@ -15,4 +15,8 @@ export default definition({
     "def:substrate-parameter",
     "def:weight-decomposition",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-q-ext-deriv-0.svg", blockIndex: 0, hash: "1098849523c8" },
+  ],
+
 });

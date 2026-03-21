@@ -13,4 +13,9 @@ export default proposition({
     "rem:distributional-connection",
     "prop:yekutieli-lifting",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/descent-condition-0.svg", blockIndex: 0, hash: "2cc87fe2ebcd" },
+    { mime: "image/svg+xml", url: "rendered/descent-condition-1.svg", blockIndex: 1, hash: "bb93a7875439" },
+  ],
+
 });

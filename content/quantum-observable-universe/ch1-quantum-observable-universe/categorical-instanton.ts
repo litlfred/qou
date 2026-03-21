@@ -14,4 +14,8 @@ export default definition({
     "def:categorical-connection",
     "def:q-hodge-star",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-instanton-0.svg", blockIndex: 0, hash: "6acc58fe5e35" },
+  ],
+
 });

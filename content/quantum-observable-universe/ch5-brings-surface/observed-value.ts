@@ -5,4 +5,8 @@ export default definition({
   title: "Observed spacetime value",
   tags: ["brings-surface", "color-tube"],
   uses: ["def:color-tube-fibers", "rem:brings-smoothness"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/observed-value-0.svg", blockIndex: 0, hash: "768da6d6762e" },
+  ],
+
 });

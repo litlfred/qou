@@ -16,4 +16,8 @@ export default definition({
     "def:substrate-parameter",
     "def:q-hodge-star",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-action-0.svg", blockIndex: 0, hash: "cea6a2962fd4" },
+  ],
+
 });

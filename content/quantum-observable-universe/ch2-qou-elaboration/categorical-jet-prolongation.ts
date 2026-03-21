@@ -14,4 +14,8 @@ export default proposition({
     file: "QOU/CategoricalJetProlongation.lean",
     validation: "leanok",
   },
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-jet-prolongation-0.svg", blockIndex: 0, hash: "4cae20680c94" },
+  ],
+
 });

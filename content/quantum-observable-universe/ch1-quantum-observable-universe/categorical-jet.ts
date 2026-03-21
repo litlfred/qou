@@ -10,4 +10,8 @@ export default definition({
   status: "not_started",
   uses: ["def:quantum-universe", "def:categorical-connection"],
   tags: ["jet"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-jet-0.svg", blockIndex: 0, hash: "2604ff8ef04c" },
+  ],
+
 });

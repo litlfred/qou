@@ -7,4 +7,8 @@ export default remark({
   uses: [
     "rem:two-observer-parallelogram",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/hopf-non-cocommutativity-0.svg", blockIndex: 0, hash: "90bf55adfad5" },
+  ],
+
 });

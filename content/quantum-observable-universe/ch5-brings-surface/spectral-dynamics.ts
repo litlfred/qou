@@ -9,4 +9,8 @@ export default remark({
     "def:q-reeb-flow",
     "rem:q-harmonic-physical",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/spectral-dynamics-0.svg", blockIndex: 0, hash: "dbf0b9977a75" },
+  ],
+
 });

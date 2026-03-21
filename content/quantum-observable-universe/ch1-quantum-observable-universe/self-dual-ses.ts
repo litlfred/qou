@@ -8,4 +8,8 @@ export default remark({
     "def:q-hodge-star",
     "def:categorical-instanton",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/self-dual-ses-0.svg", blockIndex: 0, hash: "4fdba16eb525" },
+  ],
+
 });

@@ -9,4 +9,8 @@ export default remark({
     "def:categorical-point",
     "def:fermion-boson-decomposition",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/two-observer-parallelogram-0.svg", blockIndex: 0, hash: "7e4660d88815" },
+  ],
+
 });

@@ -6,4 +6,8 @@ export default proposition({
   hasProof: true,
   tags: ["q-deformation", "exterior-derivative"],
   uses: ["def:q-ext-deriv"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/dq-squared-0.svg", blockIndex: 0, hash: "4b6d1699abb9" },
+  ],
+
 });

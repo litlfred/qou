@@ -10,4 +10,8 @@ export default definition({
   status: "not_started",
   uses: ["def:involutive-structure"],
   tags: ["category-theory", "positive-definite"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/positive-definite-dagger-0.svg", blockIndex: 0, hash: "60707ebb7060" },
+  ],
+
 });

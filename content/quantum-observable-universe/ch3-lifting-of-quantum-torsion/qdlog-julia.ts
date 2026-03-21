@@ -9,4 +9,8 @@ export default remark({
     "def:q-reeb-flow",
     "rem:reeb-exceptional-divisor",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/qdlog-julia-0.svg", blockIndex: 0, hash: "799273e763ad" },
+  ],
+
 });

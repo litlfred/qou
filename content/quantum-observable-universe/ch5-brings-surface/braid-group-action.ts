@@ -12,4 +12,9 @@ export default remark({
     "def:braid-twist-flip",
     "rem:chirality-trefoil",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/braid-group-action-0.svg", blockIndex: 0, hash: "f44799e1a010" },
+    { mime: "image/svg+xml", url: "rendered/braid-group-action-1.svg", blockIndex: 1, hash: "1c761b8c5b7c" },
+  ],
+
 });

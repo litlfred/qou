@@ -6,4 +6,8 @@ export default lemma({
   uses: ["def:quantum-observable-universe"],
   hasProof: true,
   tags: ["category-theory", "volume"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/volume-from-rigidity-0.svg", blockIndex: 0, hash: "e112e206bddc" },
+  ],
+
 });

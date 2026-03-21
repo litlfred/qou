@@ -14,4 +14,9 @@ export default proposition({
     "def:categorical-q-ext-deriv",
     "def:weight-decomposition",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-0.svg", blockIndex: 0, hash: "fdcf22bc0345" },
+    { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-1.svg", blockIndex: 1, hash: "9269fbe261dd" },
+  ],
+
 });

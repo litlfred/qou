@@ -14,4 +14,8 @@ export default lemma({
     "def:quantum-observable-universe",
     "def:categorical-instanton",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-irreducible-0.svg", blockIndex: 0, hash: "2b1f63269ecd" },
+  ],
+
 });

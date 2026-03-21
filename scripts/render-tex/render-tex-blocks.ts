@@ -127,14 +127,53 @@ async function renderToSvg(
     let body = texSource;
     body = body.replace(/^\s*\\\[\s*/, "").replace(/\s*\\\]\s*$/, "");
 
-    // Check if it's a tikzcd or other environment
-    const hasEnvironment = /\\begin\{/.test(body);
+    // Strip stray \label{}, \caption{}, \centering
+    body = body.replace(/\\label\{[^}]*\}/g, "");
+    body = body.replace(/\\caption\{[^}]*\}/g, "");
+    body = body.replace(/\\centering\s*/g, "");
+    // Strip float wrappers (table, figure) — standalone doesn't support floats
+    body = body.replace(/^\s*\\begin\{(table|figure)\*?\}(\[.*?\])?\s*/g, "");
+    body = body.replace(/\s*\\end\{(table|figure)\*?\}\s*$/g, "");
 
-    if (hasEnvironment) {
-      doc = `${preamble}\n\\begin{document}\n${body}\n\\end{document}\n`;
-    } else {
-      // Pure math — wrap in displaymath
+    // Detect and convert top-level math environments to standalone-compatible forms
+    const alignMatch = body.match(/^\s*\\begin\{(align|gather)\*?\}/);
+    const eqMatch = body.match(/^\s*\\begin\{equation\*?\}/);
+
+    if (alignMatch) {
+      // Convert align/align*/gather/gather* → aligned/gathered inside $...$
+      const envName = alignMatch[1];
+      const innerEnv = envName === "align" ? "aligned" : "gathered";
+      body = body.replace(/^\s*\\begin\{(align|gather)\*?\}/, `\\begin{${innerEnv}}`);
+      body = body.replace(/\\end\{(align|gather)\*?\}\s*$/, `\\end{${innerEnv}}`);
+      // Clean up trailing artifacts before \end{aligned/gathered}:
+      // - Remove dangling \\ or \\[...] before \end
+      // - Remove trailing comma + whitespace before \end
+      // - Collapse blank lines (they create \par in math mode)
+      body = body.replace(/[,\s]*\\\\(\[.*?\])?\s*(\\end\{)/g, "\n$2");
+      body = body.replace(/,\s*(\\end\{)/g, "\n$1");
+      body = body.replace(/\n\s*\n/g, "\n");
       doc = `${preamble}\n\\begin{document}\n$\\displaystyle ${body}$\n\\end{document}\n`;
+    } else if (eqMatch) {
+      // Strip equation/equation* wrapper
+      body = body.replace(/^\s*\\begin\{equation\*?\}(\[.*?\])?\s*/, "");
+      body = body.replace(/\s*\\end\{equation\*?\}\s*$/, "");
+      body = body.replace(/\n\s*\n/g, "\n");
+      doc = `${preamble}\n\\begin{document}\n$\\displaystyle ${body}$\n\\end{document}\n`;
+    } else {
+      // Check if it's a tikzcd or other environment (not inside a math env)
+      const hasEnvironment = /\\begin\{/.test(body);
+      // Some environments (array, cases, matrix, etc.) require math mode
+      const needsMathMode = /\\begin\{(array|cases|[pbBvV]?matrix|smallmatrix)/.test(body);
+      if (hasEnvironment && needsMathMode) {
+        body = body.replace(/\n\s*\n/g, "\n");
+        doc = `${preamble}\n\\begin{document}\n$\\displaystyle ${body}$\n\\end{document}\n`;
+      } else if (hasEnvironment) {
+        doc = `${preamble}\n\\begin{document}\n${body}\n\\end{document}\n`;
+      } else {
+        // Pure math — wrap in displaymath, collapse blank lines
+        body = body.replace(/\n\s*\n/g, "\n");
+        doc = `${preamble}\n\\begin{document}\n$\\displaystyle ${body}$\n\\end{document}\n`;
+      }
     }
   }
 

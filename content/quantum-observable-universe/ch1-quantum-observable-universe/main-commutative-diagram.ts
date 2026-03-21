@@ -7,4 +7,8 @@ export default proposition({
   uses: ["ex:c-quantum-observable-universe", "ex:instanton", "def:substrate-parameter", "def:q-yang-mills-levi"],
   hasProof: true,
   tags: ["commutative-diagram", "main-result"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/main-commutative-diagram-0.svg", blockIndex: 0, hash: "ac46a8d6ede5" },
+  ],
+
 });

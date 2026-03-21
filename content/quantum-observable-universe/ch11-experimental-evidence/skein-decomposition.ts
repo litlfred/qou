@@ -5,4 +5,8 @@ export default remark({
   title: "Skein Decomposition and Topological Mass Ratios",
   uses: [],
   tags: ["mass", "topology", "skein"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/skein-decomposition-0.svg", blockIndex: 0, hash: "7060edd5e36b" },
+  ],
+
 });

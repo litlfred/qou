@@ -6,4 +6,8 @@ export default proposition({
   hasProof: true,
   tags: ["q-deformation", "lie-bracket", "leibniz-algebra"],
   uses: ["def:q-lie-bracket"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/q-jacobiator-0.svg", blockIndex: 0, hash: "1aac21e2c547" },
+  ],
+
 });

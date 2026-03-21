@@ -6,4 +6,8 @@ export default proposition({
   hasProof: true,
   tags: ["braid-group", "braided-monoidal", "yang-baxter"],
   uses: ["def:quantum-observable-universe"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/braid-action-tensor-0.svg", blockIndex: 0, hash: "0d1faa325318" },
+  ],
+
 });
