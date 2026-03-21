@@ -371,8 +371,28 @@
       t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
       t = t.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, '<a href="#$2" data-ref="$2">$1</a>');
-      t = t.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g, '<span data-mi>$1</span>');
-      return t;
+      // Inline math: walk character-by-character to handle nested braces
+      let out = '', i = 0;
+      while (i < t.length) {
+        if (t[i] === '$' && t[i+1] !== '$') {
+          let j = i + 1, depth = 0;
+          while (j < t.length) {
+            if (t[j] === '{') depth++;
+            else if (t[j] === '}') depth--;
+            else if (t[j] === '$' && depth === 0) break;
+            j++;
+          }
+          if (j < t.length) {
+            out += `<span data-mi>${esc(t.slice(i+1, j))}</span>`;
+            i = j + 1;
+          } else {
+            out += t[i]; i++;
+          }
+        } else {
+          out += t[i]; i++;
+        }
+      }
+      return out;
     }
 
     // ── KaTeX ────────────────────────────────────────────
