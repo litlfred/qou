@@ -1,0 +1,89 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "qou-content",
+      "dependencies": {
+        "@unified-latex/unified-latex-util-arguments": "^1.8.0",
+        "@unified-latex/unified-latex-util-parse": "^1.8.0",
+        "@unified-latex/unified-latex-util-print-raw": "^1.8.0",
+        "@unified-latex/unified-latex-util-visit": "^1.8.0",
+        "zod": "^3.23.0",
+      },
+    },
+  },
+  "packages": {
+    "@types/unist": ["@types/unist@2.0.11", "", {}, "sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA=="],
+
+    "@unified-latex/unified-latex-builder": ["@unified-latex/unified-latex-builder@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0" } }, "sha512-DxZZHcSBUYaJD4LIDsgHqHG3sxY1Ycb+C+Ig/Xc7yjxV38CF6Hq+AfpgfT4dS5fs/sj0FK2/tNGwKEqRTgXy1w=="],
+
+    "@unified-latex/unified-latex-ctan": ["@unified-latex/unified-latex-ctan@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-builder": "^1.8.3", "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-argspec": "^1.8.3", "@unified-latex/unified-latex-util-arguments": "^1.8.3", "@unified-latex/unified-latex-util-comments": "^1.8.3", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-pegjs": "^1.8.1", "@unified-latex/unified-latex-util-print-raw": "^1.8.0", "@unified-latex/unified-latex-util-render-info": "^1.8.3", "@unified-latex/unified-latex-util-replace": "^1.8.3", "@unified-latex/unified-latex-util-scan": "^1.8.0", "@unified-latex/unified-latex-util-split": "^1.8.0", "@unified-latex/unified-latex-util-trim": "^1.8.3", "@unified-latex/unified-latex-util-visit": "^1.8.3", "color": "^4.2.3" } }, "sha512-bqApSRcGFNMPdAV939E9/oxhGp0AJZ5EfOp1LfdH0qhn0OXMqHYD30GJvvgOh+mfb8MdCcDNKU4QWUHBsvovwQ=="],
+
+    "@unified-latex/unified-latex-types": ["@unified-latex/unified-latex-types@1.8.0", "", {}, "sha512-GLJbBmmfDOWtdEbpQCLb7++zPxXin36aC9XOVCuiVNMR9VYv3szOJa+ZdTilVCFHpOeFhKh6zRws96vJgz2tGA=="],
+
+    "@unified-latex/unified-latex-util-argspec": ["@unified-latex/unified-latex-util-argspec@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-util-pegjs": "^1.8.1" } }, "sha512-GPJIycwLIVpt3g9LIdv+ut5F2N0xscpMlDsrCnjRutgD1GzpbLeROxmRNfZ6EaOlL7POLCyL8TY6S79U2tuTBA=="],
+
+    "@unified-latex/unified-latex-util-arguments": ["@unified-latex/unified-latex-util-arguments@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-builder": "^1.8.3", "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-argspec": "^1.8.3", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-render-info": "^1.8.3", "@unified-latex/unified-latex-util-scan": "^1.8.0", "@unified-latex/unified-latex-util-visit": "^1.8.3", "unified": "^10.1.2" } }, "sha512-CNazx2/PdimzQW7zo9Z1M+/4GBTdpE2hUJdxbXkn9G/dGF4QE63++GWbFiPK/N7+CzVgnewi0TOq6ARL+frN3Q=="],
+
+    "@unified-latex/unified-latex-util-catcode": ["@unified-latex/unified-latex-util-catcode@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-visit": "^1.8.3" } }, "sha512-EHdsqGPGh3pbuQTw8ejcGhDbIKp3ghibT7MCGkDhUK5cUqm8tTPknTg5/cGm3G+te5AsxT8fjlYbFQ/nQGi3UQ=="],
+
+    "@unified-latex/unified-latex-util-comments": ["@unified-latex/unified-latex-util-comments@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-replace": "^1.8.3" } }, "sha512-eC1RXiFia8Fw6RxXKAOI0sVQqqwJhyTO3JhvRSTWAjrvwLoMi9b/96Ny7sBO68haRo4HarwyxmBaIWL3SYVjyQ=="],
+
+    "@unified-latex/unified-latex-util-environments": ["@unified-latex/unified-latex-util-environments@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-arguments": "^1.8.3", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-print-raw": "^1.8.0", "@unified-latex/unified-latex-util-render-info": "^1.8.3", "@unified-latex/unified-latex-util-visit": "^1.8.3", "unified": "^10.1.2" } }, "sha512-5cw+lCxLwv/+VRz2WQpLEG7Emok5SOVgT42bBTpJkeHyrxewiTqnqTbTmZMYYVep1D0lE/1RsO/xd+7+mrVToA=="],
+
+    "@unified-latex/unified-latex-util-match": ["@unified-latex/unified-latex-util-match@1.8.0", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-print-raw": "^1.8.0" } }, "sha512-fjuLI1KVhWTHkfWn0kR8/RhM2oD2hxWhzgskUMLJ/IZMye9ESvVo8ItG4y+BtpwGFWpTmCtpMNXHjknIQxza9Q=="],
+
+    "@unified-latex/unified-latex-util-parse": ["@unified-latex/unified-latex-util-parse@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-ctan": "^1.8.3", "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-arguments": "^1.8.3", "@unified-latex/unified-latex-util-catcode": "^1.8.3", "@unified-latex/unified-latex-util-environments": "^1.8.3", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-pegjs": "^1.8.1", "@unified-latex/unified-latex-util-print-raw": "^1.8.0", "@unified-latex/unified-latex-util-trim": "^1.8.3", "@unified-latex/unified-latex-util-visit": "^1.8.3", "unified": "^10.1.2" } }, "sha512-H+VBB4/hxR1W7sTMMftiQCV9TRGGKVnPpisKBCfONN3KkyGuqGgmFKPna98tmoDU6A75gQCz6tu8f+1eW+RoYA=="],
+
+    "@unified-latex/unified-latex-util-pegjs": ["@unified-latex/unified-latex-util-pegjs@1.8.1", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0" } }, "sha512-1N6WknnzKGACFCmgaEZ2j89j5C2dKhmAOCfy6moD+AMm6nUb69Xp9pJ1jDfqz+Uz9+zRo5I6ksr6q5GgmAJvtw=="],
+
+    "@unified-latex/unified-latex-util-print-raw": ["@unified-latex/unified-latex-util-print-raw@1.8.0", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0" } }, "sha512-lMuLqnHXCDNqrjslf6hBAA2McEI+oaaxvjA9zfeAeWZyZh+DUJjkmwiuxYejwHHKbQvqzregNP4wtb9OvaC21g=="],
+
+    "@unified-latex/unified-latex-util-render-info": ["@unified-latex/unified-latex-util-render-info@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-visit": "^1.8.3" } }, "sha512-L1orYqc9U5DGObSqjYIAclAybMWYpL41eR5E2NkJjZAAypSPkLeRT7yvaGz879HJNS2C1C9UoIsPlHDPok0Gcg=="],
+
+    "@unified-latex/unified-latex-util-replace": ["@unified-latex/unified-latex-util-replace@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-split": "^1.8.0", "@unified-latex/unified-latex-util-trim": "^1.8.3", "@unified-latex/unified-latex-util-visit": "^1.8.3", "unified": "^10.1.2" } }, "sha512-HdrWVF+pwfsXkAiIGK5q7y2klBt5QK7r5sxbSZD+X3wXzpJFuFCYQQYe2Tmi5lOcssqLK94+1OUqRTrmA/rFbg=="],
+
+    "@unified-latex/unified-latex-util-scan": ["@unified-latex/unified-latex-util-scan@1.8.0", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-print-raw": "^1.8.0", "trie-prefix-tree": "^1.5.1" } }, "sha512-4WWDTcLOhlkZsGmGl/IZA0Jg2rTitVwGf6ktxs57AyuCEdzHA5ZeNwzSewW8wpHQdLfnPX+LNEnaukwEdWfF1g=="],
+
+    "@unified-latex/unified-latex-util-split": ["@unified-latex/unified-latex-util-split@1.8.0", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0" } }, "sha512-gRlRge72wcvLRs6bEoVbh0fDACbkioEPDJOr7XaCuQqjNNu1VTXlcvImZQVXCdMG6CJ4lqiaJRwnUupK4rsmsA=="],
+
+    "@unified-latex/unified-latex-util-trim": ["@unified-latex/unified-latex-util-trim@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0", "@unified-latex/unified-latex-util-visit": "^1.8.3", "unified": "^10.1.2" } }, "sha512-Vb5YcVyebWuwU0koBTsVOvxKFWKfqP1T7nJdpzT+IUrfX7zcMiA4HlGdL/3imbEfuLBTHJb3IoLsymU0XfWCZg=="],
+
+    "@unified-latex/unified-latex-util-visit": ["@unified-latex/unified-latex-util-visit@1.8.3", "", { "dependencies": { "@unified-latex/unified-latex-types": "^1.8.0", "@unified-latex/unified-latex-util-match": "^1.8.0" } }, "sha512-y1uxwXLbzXliAhTrxaDx4+LgIWaeNWMgS7q4DC/i/5RXXRQOImdCqQsTWwvQk2x5/8zQ3eweiTsd3q1gbBCqAA=="],
+
+    "bail": ["bail@2.0.2", "", {}, "sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw=="],
+
+    "color": ["color@4.2.3", "", { "dependencies": { "color-convert": "^2.0.1", "color-string": "^1.9.0" } }, "sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A=="],
+
+    "color-convert": ["color-convert@2.0.1", "", { "dependencies": { "color-name": "~1.1.4" } }, "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ=="],
+
+    "color-name": ["color-name@1.1.4", "", {}, "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="],
+
+    "color-string": ["color-string@1.9.1", "", { "dependencies": { "color-name": "^1.0.0", "simple-swizzle": "^0.2.2" } }, "sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg=="],
+
+    "extend": ["extend@3.0.2", "", {}, "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="],
+
+    "is-arrayish": ["is-arrayish@0.3.4", "", {}, "sha512-m6UrgzFVUYawGBh1dUsWR5M2Clqic9RVXC/9f8ceNlv2IcO9j9J/z8UoCLPqtsPBFNzEpfR3xftohbfqDx8EQA=="],
+
+    "is-buffer": ["is-buffer@2.0.5", "", {}, "sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ=="],
+
+    "is-plain-obj": ["is-plain-obj@4.1.0", "", {}, "sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg=="],
+
+    "simple-swizzle": ["simple-swizzle@0.2.4", "", { "dependencies": { "is-arrayish": "^0.3.1" } }, "sha512-nAu1WFPQSMNr2Zn9PGSZK9AGn4t/y97lEm+MXTtUDwfP0ksAIX4nO+6ruD9Jwut4C49SB1Ws+fbXsm/yScWOHw=="],
+
+    "trie-prefix-tree": ["trie-prefix-tree@1.5.1", "", {}, "sha512-Jjvj/dA97wXnabG/NLJUgo4IQMj6vucH+Qxm7of/omfWSmZlPqdRU6Ta4GmQqCZH+n3/iYZUwfvUoEhB0Hs83Q=="],
+
+    "trough": ["trough@2.2.0", "", {}, "sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw=="],
+
+    "unified": ["unified@10.1.2", "", { "dependencies": { "@types/unist": "^2.0.0", "bail": "^2.0.0", "extend": "^3.0.0", "is-buffer": "^2.0.0", "is-plain-obj": "^4.0.0", "trough": "^2.0.0", "vfile": "^5.0.0" } }, "sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q=="],
+
+    "unist-util-stringify-position": ["unist-util-stringify-position@3.0.3", "", { "dependencies": { "@types/unist": "^2.0.0" } }, "sha512-k5GzIBZ/QatR8N5X2y+drfpWG8IDBzdnVj6OInRNWm1oXrzydiaAT2OQiA8DPRRZyAKb9b6I2a6PxYklZD0gKg=="],
+
+    "vfile": ["vfile@5.3.7", "", { "dependencies": { "@types/unist": "^2.0.0", "is-buffer": "^2.0.0", "unist-util-stringify-position": "^3.0.0", "vfile-message": "^3.0.0" } }, "sha512-r7qlzkgErKjobAmyNIkkSpizsFPYiUPuJb5pNW1RB4JcYVZhs4lIbVqk8XPk033CV/1z8ss5pkax8SuhGpcG8g=="],
+
+    "vfile-message": ["vfile-message@3.1.4", "", { "dependencies": { "@types/unist": "^2.0.0", "unist-util-stringify-position": "^3.0.0" } }, "sha512-fa0Z6P8HUrQN4BZaX05SIVXic+7kE3b05PWAtPuYP9QLHsLKYR7/AlLW3NtOrpXRLeawpDLMsVkmk5DG0NXgWw=="],
+
+    "zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
+  }
+}
