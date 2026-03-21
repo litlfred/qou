@@ -153,7 +153,9 @@
     /* Uses expand panel */
     .upnl{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:4px;margin-top:.4rem;overflow:hidden}
     .upnl.open{display:block}
-    .uph{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d)}
+    .uph{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d);flex-wrap:wrap}
+    .uph-goto{margin-left:auto;font-family:var(--f-mono);font-size:.6rem;color:var(--ac-d);text-decoration:none;cursor:pointer;white-space:nowrap}
+    .uph-goto:hover{color:var(--ac)}
     .upt{display:flex;border-bottom:1px solid var(--brd)}
     .uptb{padding:.25rem .6rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent}
     .uptb:hover{color:var(--fg)}
@@ -447,7 +449,15 @@
       const {html: bh, texBlocks: tx} = parseMd(ref.md || '');
 
       // Head
-      p.innerHTML = `<div class="uph"><span class="bk">${ref.kind}</span> ${ref.title ? inl(ref.title) : label}</div>`;
+      const hd = mk('div','uph');
+      hd.innerHTML = `<span class="bk">${ref.kind}</span> ${ref.title ? inl(ref.title) : label}`;
+      const goTo = mk('a','uph-goto');
+      goTo.textContent = 'go to \u2197';
+      goTo.href = `#${label}`;
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth'}); };
+      hd.appendChild(goTo);
+      renderMath(hd);
+      p.appendChild(hd);
 
       // Tabs
       const tabs = mk('div','upt');
