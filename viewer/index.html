@@ -164,6 +164,7 @@
     <span style="font-weight:500;color:var(--fg)">QOU</span>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
+    <button id="c-rm" title="Show/hide remarks">remarks</button>
     <button id="c-th" title="Toggle dark/light">light</button>
     <button id="c-fn" title="Toggle paper/web font">web font</button>
     <span class="hash" id="c-hash"></span>
@@ -179,10 +180,12 @@
     let paper = null;
     const bix = new Map(); // label → block
     let showExamples = false;
+    let showRemarks = true; // remarks visible by default
 
     // ── Controls ─────────────────────────────────────────
     const html = document.documentElement;
     const btnEx = document.getElementById('c-ex');
+    const btnRm = document.getElementById('c-rm');
     const btnTh = document.getElementById('c-th');
     const btnFn = document.getElementById('c-fn');
 
@@ -205,6 +208,15 @@
         el.style.display = showExamples ? '' : 'none';
       });
     });
+
+    btnRm.addEventListener('click', () => {
+      showRemarks = !showRemarks;
+      btnRm.classList.toggle('on', showRemarks);
+      document.querySelectorAll('.blk-remark').forEach(el => {
+        el.style.display = showRemarks ? '' : 'none';
+      });
+    });
+    btnRm.classList.add('on'); // remarks on by default
 
     // ── Markdown ─────────────────────────────────────────
     function parseMd(md) {
@@ -319,9 +331,32 @@
       return p;
     }
 
+    // ── Uses inline helper ─────────────────────────────────
+    function mkUsesInline(block) {
+      const u = mk('div','uses');
+      u.innerHTML = 'uses: ';
+      block.uses.forEach((label, i) => {
+        if (i > 0) u.append(', ');
+        const r = document.createElement('span');
+        r.className = 'uref';
+        r.textContent = label;
+        r.onclick = () => {
+          let p = u.querySelector(`.upnl[data-for="${label}"]`);
+          if (p) { p.classList.toggle('open'); }
+          else { p = mkUsesPanel(label); if (p) { p.dataset.for = label; p.classList.add('open'); u.appendChild(p); } }
+        };
+        u.appendChild(r);
+      });
+      return u;
+    }
+
     // ── Block renderer ───────────────────────────────────
     function renderBlock(block) {
-      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+      // Defer markdown parsing to lazy init for most blocks
+      function hydrateContent(container) {
+        const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+        return {bh, tx};
+      }
 
       // Example — wrapped for show/hide
       if (block.kind === 'example') {
@@ -335,13 +370,46 @@
         if (block.label) hd += `<span class="bl">${block.label}</span>`;
         d.innerHTML = `<div class="bh">${hd}</div>`;
         const bb = mk('div','bb');
-        bb.innerHTML = bh;
-        fillTex(bb, tx, block.rendered);
-        renderMath(bb);
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
         addSrc(d, block.md);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb);
+        });
+        return wrap;
+      }
+
+      // Remark — wrapped for show/hide
+      if (block.kind === 'remark') {
+        const wrap = mk('div', 'blk blk-remark');
+        wrap.style.display = showRemarks ? '' : 'none';
+
+        const d = mk('div', 'env remark');
+        if (block.label) d.id = block.label;
+        let hd = `<span class="bk">remark</span>`;
+        if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
+        if (block.label) hd += `<span class="bl">${block.label}</span>`;
+        d.innerHTML = `<div class="bh">${hd}</div>`;
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md);
+        if (block.tags?.length) d.appendChild(mkTags(block.tags));
+        if (block.uses?.length) d.appendChild(mkUsesInline(block));
+        wrap.appendChild(d);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb);
+        });
         return wrap;
       }
 
@@ -349,10 +417,15 @@
       if (block.kind === 'prose') {
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
-        d.innerHTML = `<div class="bb">${bh}</div>`;
+        d.innerHTML = '<div class="bb"></div>';
         addSrc(d, block.md);
-        fillTex(d, tx, block.rendered);
-        renderMath(d);
+
+        lazyInit(d, () => {
+          const {bh, tx} = hydrateContent();
+          d.querySelector('.bb').innerHTML = bh;
+          fillTex(d, tx, block.rendered);
+          renderMath(d);
+        });
         return d;
       }
 
@@ -361,7 +434,7 @@
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
         d.innerHTML = `<div data-md>${esc(block.tex||'')}</div>`;
-        renderMath(d);
+        lazyInit(d, () => renderMath(d));
         return d;
       }
 
@@ -374,7 +447,7 @@
         return d;
       }
 
-      // Environment block
+      // Environment block (definition, theorem, proposition, lemma, corollary, conjecture)
       const d = mk('div',`blk env ${block.kind}`);
       if (block.label) d.id = block.label;
 
@@ -384,9 +457,7 @@
       d.innerHTML = `<div class="bh">${hd}</div>`;
 
       const bb = mk('div','bb');
-      bb.innerHTML = bh;
-      fillTex(bb, tx, block.rendered);
-      renderMath(bb);
+      bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
       addSrc(d, block.md);
 
@@ -403,53 +474,49 @@
       if (block.tags?.length) d.appendChild(mkTags(block.tags));
 
       // Uses
-      if (block.uses?.length) {
-        const u = mk('div','uses');
-        u.innerHTML = 'uses: ';
-        block.uses.forEach((label, i) => {
-          if (i > 0) u.append(', ');
-          const r = document.createElement('span');
-          r.className = 'uref';
-          r.textContent = label;
-          r.onclick = () => {
-            let p = u.querySelector(`.upnl[data-for="${label}"]`);
-            if (p) { p.classList.toggle('open'); }
-            else { p = mkUsesPanel(label); if (p) { p.dataset.for = label; p.classList.add('open'); u.appendChild(p); } }
-          };
-          u.appendChild(r);
-        });
-        d.appendChild(u);
-      }
+      if (block.uses?.length) d.appendChild(mkUsesInline(block));
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
         const toggle = mk('div','ex-toggle');
         toggle.innerHTML = `<span class="arrow">▸</span> ${block.examples.length} example(s)`;
         const panel = mk('div','ex-panel');
-
-        block.examples.forEach(exLabel => {
-          const exBlock = bix.get(exLabel);
-          if (exBlock) {
-            const {html: exHtml, texBlocks: exTx} = parseMd(exBlock.md || '');
-            const exDiv = mk('div','env example');
-            exDiv.style.borderLeft = 'none';
-            exDiv.style.margin = '0';
-            let exHd = `<span class="bk">example</span>`;
-            if (exBlock.title) exHd += `<span class="bt">${inl(exBlock.title)}</span>`;
-            exDiv.innerHTML = `<div class="bh">${exHd}</div><div class="bb">${exHtml}</div>`;
-            fillTex(exDiv, exTx, exBlock.rendered);
-            renderMath(exDiv);
-            panel.appendChild(exDiv);
-          }
-        });
+        let exLoaded = false;
 
         toggle.onclick = () => {
           toggle.classList.toggle('open');
           panel.classList.toggle('open');
+          // Lazy load example content on first open
+          if (!exLoaded) {
+            exLoaded = true;
+            block.examples.forEach(exLabel => {
+              const exBlock = bix.get(exLabel);
+              if (exBlock) {
+                const {html: exHtml, texBlocks: exTx} = parseMd(exBlock.md || '');
+                const exDiv = mk('div','env example');
+                exDiv.style.borderLeft = 'none';
+                exDiv.style.margin = '0';
+                let exHd = `<span class="bk">example</span>`;
+                if (exBlock.title) exHd += `<span class="bt">${inl(exBlock.title)}</span>`;
+                exDiv.innerHTML = `<div class="bh">${exHd}</div><div class="bb">${exHtml}</div>`;
+                fillTex(exDiv, exTx, exBlock.rendered);
+                renderMath(exDiv);
+                panel.appendChild(exDiv);
+              }
+            });
+          }
         };
         d.appendChild(toggle);
         d.appendChild(panel);
       }
+
+      // Lazy hydrate the main content
+      lazyInit(d, () => {
+        const {bh, tx} = hydrateContent();
+        bb.innerHTML = bh;
+        fillTex(bb, tx, block.rendered);
+        renderMath(bb);
+      });
 
       return d;
     }
@@ -484,6 +551,24 @@
       if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="diagram" loading="lazy">`;
       if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="" loading="lazy">`;
       return `<a href="${a.url}" target="_blank">[${a.mime}]</a>`;
+    }
+
+    // ── Lazy loading via IntersectionObserver ──────────────
+    const lazyQueue = []; // {el, init}
+    const lazyObs = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const task = lazyQueue.find(t => t.el === el);
+          if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); }
+          lazyObs.unobserve(el);
+        }
+      }
+    }, { rootMargin: '200px 0px' }); // start loading 200px before visible
+
+    function lazyInit(el, init) {
+      lazyQueue.push({el, init});
+      lazyObs.observe(el);
     }
 
     // ── Paper ────────────────────────────────────────────
