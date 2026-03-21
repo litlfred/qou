@@ -100,9 +100,11 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-- **Quantum Universe** over a field `k`.
 
-    A quadruple `(C, A, ω, q)` where `C` is a `k`-linear rigid monoidal
-    category, `A` is a Frobenius–Hopf object in `C`, `ω` is a fibre functor,
-    and `q ∈ k×` is a deformation parameter.
+    A triple `(C, A, ω)` where `C` is a `k`-linear rigid monoidal
+    category, `A` is a Frobenius–Hopf object in `C`, and `ω` is a fibre
+    functor.  The deformation parameter `q` is not part of the base
+    definition; it enters via the substrate parameter
+    (Definition 1.x, `SubstrateParameter`).
 
     LaTeX: `\label{def:quantum-universe}` -/
 structure QuantumUniverse (k : Type*) [Field k] where
@@ -116,20 +118,22 @@ structure QuantumUniverse (k : Type*) [Field k] where
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
       An exact faithful `k`-linear monoidal functor. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
-  /-- The deformation parameter `q ∈ k×`. -/
-  q : k
-  /-- Invertibility of `q`: required because the Hopf algebra relations
-      involve `q⁻¹`.  At `q = 0` the antipode degenerates. -/
-  q_ne_zero : q ≠ 0
+  /-- `A` admits a differential calculus: the module of Kähler
+      differentials `Ω¹(A)` exists in `C`.  Represented abstractly as a
+      type (the carrier of `Ω¹(A)`). -/
+  differentialForms : Type*
 
 /-- **Quantum Observable Universe** over a field `k`.
 
-    A quantum universe satisfying two observability conditions:
-    (i)  the Frobenius form on `A` is non-degenerate — an exact self-pairing,
-         already enforced structurally by the snake identities in
-         `FrobeniusHopfData`.
-    (ii) `Hom_C(𝟙, Ad(A))` is trivial — no non-trivial invariant adjoint
-         morphisms.
+    A quantum universe satisfying three observability conditions:
+    (i)   the Frobenius form on `A` is non-degenerate — an exact self-pairing,
+          already enforced structurally by the snake identities in
+          `FrobeniusHopfData`.
+    (ii)  `Hom_C(𝟙, Ad(A))` is trivial — no non-trivial invariant adjoint
+          morphisms.
+    (iii) categorical volume constraint: the fundamental object `V` of
+          categorical dimension 2 admits a non-degenerate epimorphism
+          `ε : Λ²V → 𝟙` preserved by the rigid dualities.
 
     LaTeX: `\label{def:quantum-observable-universe}` -/
 structure QuantumObservableUniverse (k : Type*) [Field k]
@@ -139,10 +143,20 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       constructed from `(A, μ, Δ, S)` and the braiding; here it is provided
       abstractly. -/
   adjointObj : C
-  /-- **Adjoint vanishing**: all morphisms `𝟙 → Ad(A)` in `C` are equal.
-      In a `k`-linear category this is equivalent to `Hom_C(𝟙, Ad(A)) = 0`,
-      since the zero morphism is always present and all others must equal it. -/
+  /-- **Adjoint vanishing** (condition ii): all morphisms `𝟙 → Ad(A)` in
+      `C` are equal.  In a `k`-linear category this is equivalent to
+      `Hom_C(𝟙, Ad(A)) = 0`, since the zero morphism is always present
+      and all others must equal it. -/
   adjoint_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+  /-- The fundamental object `V` of categorical dimension 2. -/
+  fundamentalObj : C
+  /-- The exterior square `Λ²V` as an object of `C`. -/
+  exteriorSquare : C
+  /-- **Volume constraint** (condition iii): the non-degenerate epimorphism
+      `ε : Λ²V → 𝟙` that forces `det(g_V) = 1` for all
+      `g ∈ Aut⊗(ω)`, restricting the gauge group from `GL(2)` to `SL(2)`.
+      LaTeX: `\label{eq:categorical-volume-constraint}` -/
+  volumeForm : exteriorSquare ⟶ (𝟙_ C)
 
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
     Tannaka–Krein duality from the fibre functor.
@@ -566,20 +580,30 @@ structure InstantonConnection (cr : CRManifoldData) where
 
 /-! ## §3  Substrate Parameter, Gauge Group, Planck Constant -/
 
-/-- **Substrate parameter**: a ring homomorphism `ι : ℤ[q, q⁻¹] → k`
-    specialising the formal deformation parameter to a value `q₀ ∈ k×`.
+/-- **Substrate parameter** (abstract): a ring homomorphism
+    `ι : ℤ[q, q⁻¹] → k` specialising the Lusztig integral form
+    `U^ℤ_q(su(2))` to a value `q₀ ∈ k×`.  The base-changed algebra
+    `U^ℤ_q ⊗_{ℤ[q,q⁻¹]} k` is the quantised enveloping algebra at `q₀`.
 
     When the quantum universe is fibred over a space `M`, `q₀` may vary
     point-to-point yielding a *substrate field* `q : M → k×`.
 
     LaTeX: `\label{def:substrate-parameter}` -/
 structure SubstrateParameter (M : Type*) where
-  /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`. -/
+  /-- The substrate field `q : M → ℝ` with `q(p) ≥ 1`.
+      In the abstract setting this is the composition
+      `M → Spec(k) → Spec(ℤ[q, q⁻¹])`. -/
   field : M → ℝ
   /-- Invertibility: `q(p) > 0` for all `p`. -/
   field_pos : ∀ (p : M), 0 < field p
-  /-- Lower bound: `q(p) ≥ 1` (classicality bound). -/
+  /-- Lower bound: `q(p) ≥ 1` (classicality bound).
+      At `q = 1` all q-deformed operators recover their classical
+      counterparts; `q > 1` is the quantum regime. -/
   field_ge_one : ∀ (p : M), 1 ≤ field p
+  /-- The specialised value `q₀(p)` is never a root of unity,
+      ensuring semisimplicity of the quantum group at each point.
+      Encoded as: `q(p)^k ≠ 1` for all `k ≥ 1`. -/
+  not_root_of_unity : ∀ (p : M) (k : ℕ), k ≥ 1 → field p ^ k ≠ 1
 
 /-- **Quantum gauge group** in the ℂ realisation: the family of quantum
     groups `{SU_{q(p)}(2)}_{p ∈ M}` obtained by deforming `SU(2)` pointwise.
@@ -874,29 +898,49 @@ theorem qConnection_classical {M : Type*} (sp : SubstrateParameter M)
 
 /-! ## §8  Missing Formalizations -/
 
-/-- **Projective line object** `CP¹` in a monoidal category.
+/-- **Projective line object** `P(V) = G_q / T` in a monoidal category.
 
-    The fibre of the state bundle `E = P ×_G CP¹`.  Abstractly, `CP¹` is
-    an object in `C` equipped with a distinguished point (the base-point
-    morphism `∞ : 𝟙 → CP¹`) and a `G`-action compatible with the Hopf
-    structure on `A`.
+    The coset object obtained by quotienting the quantum gauge group `G_q`
+    by the maximal torus `T = Aut⊗(ω|_{C₀})`.  Its function algebra is
+    the `T`-coinvariant subalgebra `O_q(P(V)) = A^{co T}`.
+
+    In the archimedean realisation: `P(V) ≅ SU(2)/U(1) ≅ CP¹`.
 
     LaTeX: `\label{def:projective-line-object}`
     Ref: [kock2004] -/
 structure ProjectiveLineObject (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] where
-  /-- The underlying object `CP¹` in `C`. -/
+  /-- The underlying object `P(V)` in `C` (the coset `G_q / T`). -/
   obj : C
-  /-- Base-point morphism `∞ : 𝟙 → CP¹`. -/
+  /-- The Frobenius–Hopf object `A` whose coset this is. -/
+  hopfObj : C
+  /-- Base-point morphism `∞ : 𝟙 → P(V)` (the identity coset). -/
   basePoint : (𝟙_ C) ⟶ obj
-  /-- Action morphism `ρ : A ⊗ CP¹ → CP¹` encoding the `G`-action on the fibre. -/
-  action : (A : C) → (A ⊗ obj) ⟶ obj
+  /-- Action morphism `ρ : A ⊗ P(V) → P(V)` encoding the `G_q`-action
+      on the coset space, compatible with the Hopf multiplication. -/
+  action : (hopfObj ⊗ obj) ⟶ obj
+  /-- The coinvariant inclusion `P(V) ↪ A`: the function algebra
+      `O_q(P(V)) = A^{co T}` is a sub-object of `A`. -/
+  coinvariant_incl : obj ⟶ hopfObj
+  /-- The coinvariant inclusion is a monomorphism (abstractly:
+      the coset embeds faithfully into the Hopf object). -/
+  coinvariant_mono : ∀ (f g : (𝟙_ C) ⟶ obj),
+    f ≫ coinvariant_incl = g ≫ coinvariant_incl → f = g
 
-/-- **Fibre-wise adjoint involution** `τ_Ad` on the adjoint bundle `Ad(P)`.
+/-- **Fibre–adjoint-fibre involution** `σ : P(V) ↪ Ad(A)`.
 
-    Induced by the antipode `S` of the Hopf algebra, `τ_Ad` acts fibre-wise
-    on `Ad(P)` as an involution: `τ_Ad² = id`.  This encodes the real structure
-    of the gauge algebra.
+    The Frobenius self-duality `A ≅ A∨` identifies the projective line
+    object `P(V)` with a coadjoint orbit inside `Ad(A)`.  Three parts:
+
+    1. `P(V)` embeds in `Ad(A)` as the coadjoint orbit of a highest-weight
+       vector.
+    2. The embedding `σ` is an involution: it determines `P(V)` from
+       `Ad(A)` and vice versa.
+    3. Non-degeneracy of the Frobenius pairing forces the observability
+       condition `Hom(𝟙, Ad(A)) = 0`.
+
+    In the archimedean realisation: `σ` is the identification
+    `CP¹ ≅ S² ⊂ su(2)` (unit sphere under Killing form).
 
     LaTeX: `\label{prop:fiber-adjoint-involution}`
     Ref: [lusztig1993] -/
@@ -905,11 +949,24 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     (fh : FrobeniusHopfData C) where
   /-- The adjoint bundle object `Ad(A)` in `C`. -/
   adjointObj : C
+  /-- The projective line object `P(V)` in `C`. -/
+  projLine : C
+  /-- **(Part 1)** The orbit embedding `σ : P(V) ↪ Ad(A)`, realising
+      `P(V)` as a coadjoint orbit of a highest-weight vector. -/
+  orbit_embed : projLine ⟶ adjointObj
   /-- The involution morphism `τ_Ad : Ad(A) ⟶ Ad(A)`, induced by the
       antipode `S : A ⟶ A`. -/
   involution : adjointObj ⟶ adjointObj
   /-- `τ_Ad` is an involution: `τ_Ad ≫ τ_Ad = id`. -/
   involution_sq : involution ≫ involution = 𝟙 adjointObj
+  /-- **(Part 2)** The embedding is compatible with the involution:
+      restricting `τ_Ad` to the image of `σ` recovers `σ`.
+      This means `σ` determines each from the other. -/
+  orbit_involution_compat : orbit_embed ≫ involution = orbit_embed
+  /-- **(Part 3)** The embedding is a monomorphism: the orbit map
+      is injective, so `P(V)` is faithfully represented inside `Ad(A)`. -/
+  orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
+    f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
 /-- The fibre-wise adjoint involution is indeed an involution (`τ² = id`).
 
@@ -950,29 +1007,52 @@ structure CategoricalConnection (C : Type u) [CategoryTheory.Category.{v} C]
       stated here as an equality of morphisms `A ⊗ A → A ⊗ Ω¹`. -/
   leibniz : fh.mul ≫ nabla = leibniz_rhs
 
-/-- **Categorical action** of a Frobenius–Hopf object `A` on another object `V`.
+/-- **Left module action** of a Frobenius–Hopf object `A` on another object `V`.
 
-    A morphism `ρ : A ⊗ V → V` satisfying associativity
-    (`ρ ∘ (μ ⊗ id_V) = ρ ∘ (id_A ⊗ ρ)`) and unitality
-    (`ρ ∘ (η ⊗ id_V) = id_V`), i.e. `V` is a left `A`-module in `C`.
-
-    LaTeX: `\label{def:categorical-action}`
-    Ref: [kock2004] -/
-structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
+    A morphism `ρ : A ⊗ V → V` satisfying associativity and unitality,
+    i.e. `V` is a left `A`-module in `C`.  (Auxiliary structure used in
+    the definition of the categorical action functional.) -/
+structure ModuleAction (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) where
   /-- The object `V` acted upon. -/
   target : C
   /-- The action morphism `ρ : A ⊗ V → V`. -/
   action : (fh.obj ⊗ target) ⟶ target
-  /-- **Associativity**: `ρ ∘ (μ ⊗ id_V) = ρ ∘ (id_A ⊗ ρ)` up to associator.
-      The two ways of acting by `A ⊗ A` on `V` agree:
-      `(A ⊗ A) ⊗ V → A ⊗ V → V`. -/
+  /-- **Associativity**: `ρ ∘ (μ ⊗ id_V) = ρ ∘ (id_A ⊗ ρ)` up to associator. -/
   assoc : (fh.mul ▷ target) ≫ action =
     (α_ fh.obj fh.obj target).hom ≫ (fh.obj ◁ action) ≫ action
-  /-- **Unitality**: `ρ ∘ (η ⊗ id_V) = id_V` (up to left unitor).
-      Acting by the unit `η : 𝟙 → A` is the identity on `V`. -/
+  /-- **Unitality**: `ρ ∘ (η ⊗ id_V) = id_V` (up to left unitor). -/
   unit : (fh.unit ▷ target) ≫ action = (λ_ target).hom
+
+/-- **Categorical action functional** `S_q[∇, λ, ψ]`.
+
+    The `R`-valued functional on a quantum observable universe equipped with
+    connection `∇`, Frobenius form `λ`, and state `ψ : 𝟙 → A`:
+
+    ```
+    S_q = tr(q · R_λ)          (gravity)
+        + λ ∘ tr_A(F_∇ ∧_q ⋆_q F_∇)  (gauge)
+        + λ(ψ* · D_∇ ψ)        (matter)
+    ```
+
+    LaTeX: `\label{def:categorical-action}`
+    Ref: [kock2004] -/
+structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The connection on `A` (Definition `def:categorical-connection`). -/
+  connection : CategoricalConnection C fh
+  /-- The state morphism `ψ : 𝟙 → A`. -/
+  state : (𝟙_ C) ⟶ fh.obj
+  /-- **Gravity term**: `tr(q · R_λ)`, the Frobenius–Ricci scalar. -/
+  gravity : (𝟙_ C) ⟶ (𝟙_ C)
+  /-- **Gauge term**: `λ ∘ tr_A(F_∇ ∧_q ⋆_q F_∇)`, the q-Yang–Mills action. -/
+  gauge : (𝟙_ C) ⟶ (𝟙_ C)
+  /-- **Matter term**: `λ(ψ* · D_∇ ψ)`, the q-Dirac action. -/
+  matter : (𝟙_ C) ⟶ (𝟙_ C)
+
+/-! ### Variational equations of the categorical action -/
 
 /-- **Variational equations of the categorical action.**
 
@@ -982,14 +1062,9 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
     (2) Vary `∇` → categorical Yang–Mills equation: `∇ ★_q F + q[F, ★_q F] = J_ψ`
     (3) Vary `ψ` → categorical transport equation: `D_∇ ψ = 0`
 
-    The proof uses non-degeneracy of the Frobenius form `λ`, the Leibniz
-    rule for `∇`, integration by parts via `λ`, and the positive-definite
-    dagger structure.
-
     LaTeX: `\label{prop:variational-equations}`
     Ref: [kock2004] -/
--- TODO: formalise as three separate theorems once CategoricalConnection
--- and SubstrateParameter are available as structures.
+
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
@@ -1011,28 +1086,122 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     True := -- Placeholder: D_∇ ψ = 0
   trivial
 
-/-- **Observation map** extracting expectation values from state bundle sections.
+/-- **Observation** as a categorical endomorphism `O : A → A` in `C`.
 
-    The map `obs : Γ(E) → ℝ` assigns to each section `s` of the state bundle
-    its expectation value.  The observability condition `Hom(𝟙, Ad(A)) = 0`
-    ensures `obs` is well-defined (independent of gauge representative).
+    An observation preserves the Frobenius form and induces a substrate
+    perturbation `q ↦ q + δq` via the Hopf coaction.
 
-    LaTeX: `\label{def:observation}`
-    Ref: [kock2004] -/
-structure Observation (cqou : CQuantumObservableUniverse) where
+    LaTeX: `\label{def:observation}` -/
+structure Observation {k : Type*} [Field k]
+    (qou : QuantumObservableUniverse.{u, v} k) where
+  /-- The observation morphism `O : A → A` in `C`. -/
+  morphism : @CategoryTheory.Hom _ qou.catInst qou.frobHopf.obj qou.frobHopf.obj
+  /-- **Frobenius compatibility**: `λ ∘ O = λ` — the observation preserves
+      the Frobenius form. -/
+  frobenius_compat : morphism ≫ qou.frobHopf.frobeniusForm =
+    qou.frobHopf.frobeniusForm
+  /-- **Substrate perturbation**: the induced shift `δq` is determined by
+      the Hopf coaction.  Encoded as a morphism `𝟙 → 𝟙`. -/
+  substrate_shift :
+    @CategoryTheory.Hom _ qou.catInst (𝟙_ qou.C) (𝟙_ qou.C)
+
+/-! ### Archimedean observation -/
+
+/-- **Archimedean observation**: concrete realisation of `Observation` on a
+    CR manifold as a gauge-equivariant endomorphism of the state bundle.
+
+    LaTeX: `\label{rem:observation-archimedean}` -/
+structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
   /-- The type of global sections `Γ(E)` of the state bundle. -/
   StateSections : Type*
   /-- The observation map `obs : Γ(E) → ℝ`. -/
   obs : StateSections → ℝ
-  /-- **Gauge invariance**: for any two gauge-equivalent sections `s₁ ≈ s₂`,
-      `obs(s₁) = obs(s₂)`.  Here gauge equivalence is abstractly represented
-      by a relation. -/
+  /-- Gauge equivalence relation. -/
   gaugeEquiv : StateSections → StateSections → Prop
   /-- `obs` is constant on gauge-equivalence classes. -/
   obs_gauge_invariant : ∀ s₁ s₂, gaugeEquiv s₁ s₂ → obs s₁ = obs s₂
   /-- **Well-definedness from observability**: the adjoint vanishing
-      `H⁰(M, Ad(P)) = 0` (from `CQuantumObservableUniverse`) implies
-      all sections are gauge-equivalent, so `obs` is constant. -/
+      `H⁰(M, Ad(P)) = 0` ensures all sections are gauge-equivalent. -/
   obs_well_defined : ∀ s₁ s₂, gaugeEquiv s₁ s₂
+
+/-! ## §9  Volume Form, SU(2) Emergence, and q-Hodge Star -/
+
+/-- **Volume form from rigidity and symplectic self-duality.**
+
+    If `V` has categorical dimension 2 and is symplectically self-dual
+    (`V ≅ V∨` via an alternating form), then `ev_V ∘ (id ⊗ φ)` factors
+    through `Λ²V` yielding a non-degenerate volume form `ε : Λ²V → 𝟙`.
+
+    LaTeX: `\label{lem:volume-from-rigidity}` -/
+structure VolumeFromRigidity (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The fundamental object `V` of categorical dimension 2. -/
+  V : C
+  /-- The dual object `V∨`. -/
+  V_dual : C
+  /-- The symplectic isomorphism `φ : V → V∨` (alternating: `φ∨ = −φ`). -/
+  phi : V ⟶ V_dual
+  /-- The exterior square `Λ²V`. -/
+  exteriorSquare : C
+  /-- The projection `π : V ⊗ V ↠ Λ²V`. -/
+  projection : (V ⊗ V) ⟶ exteriorSquare
+  /-- The volume form `ε : Λ²V → 𝟙`. -/
+  volumeForm : exteriorSquare ⟶ (𝟙_ C)
+
+/-- **Emergence of the gauge group** (Theorem): `Aut⊗(ω) ≅ SU(2)`.
+
+    The categorical volume constraint forces `det(g_V) = 1` for all
+    `g ∈ Aut⊗(ω)`, restricting from `GL(2)` to `SL(2)`.  The Frobenius
+    self-duality then forces the unitary real form `SU(2)`.
+
+    LaTeX: `\label{thm:su2-emergence}` -/
+structure SU2Emergence {k : Type*} [Field k]
+    (qou : QuantumObservableUniverse.{u, v} k) where
+  /-- The gauge group type `G = Aut⊗(ω)`. -/
+  gaugeGroupType : Type*
+  /-- `G` is a group. -/
+  [groupInst : Group gaugeGroupType]
+  /-- The action of `G` on `Λ²V`: each `g ∈ G` acts on the exterior
+      square of the fundamental object by `Λ²(g_V)`.  Since `Λ²V` has
+      rank 1, this action is multiplication by `det(g_V)`. -/
+  ext_sq_action : gaugeGroupType →
+    @CategoryTheory.Hom _ qou.catInst qou.exteriorSquare qou.exteriorSquare
+  /-- **Determinant-one constraint**: for every `g ∈ G`, the induced
+      action on `Λ²V` is the identity, i.e. `det(g_V) = 1`.
+      This is precisely the content of diagram (1.8) in the manuscript:
+      `ε ∘ Λ²(g_V) = g_𝟙 ∘ ε = ε`. -/
+  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 qou.exteriorSquare
+
+/-- **q-Hodge star** involution on differential forms over a Frobenius–Hopf
+    object.  Defined by `α ∧_q ⋆_q β = q · λ(α* · β) · vol`.
+
+    LaTeX: `\label{def:q-hodge-star}` -/
+structure QHodgeStar (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
+  /-- The degree `k` of the forms. -/
+  degree : ℕ
+  /-- The object of `k`-forms `Ω^k(A)`. -/
+  forms_k : C
+  /-- The object of `(n−k)`-forms `Ω^{n−k}(A)`. -/
+  forms_nk : C
+  /-- The star operator `⋆_q : Ω^k(A) → Ω^{n−k}(A)`. -/
+  star : forms_k ⟶ forms_nk
+
+/-- **q-Weighted Yang–Mills–Levi functional** in the archimedean realisation.
+
+    `S_q[A, θ] = ∫_M q(p) ‖F_A⁺|_H‖² θ ∧ (dθ)ⁿ`
+
+    where `q(p) = 1 + |⟨L_θ, F_A⁺⟩|(p)`.
+
+    LaTeX: `\label{def:q-yang-mills-levi}` -/
+structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
+    (sp : SubstrateParameter cqou.M) where
+  /-- The integrand `q(p) · ‖F_A⁺|_H‖²(p)` at each point. -/
+  integrand : cqou.M → ℝ
+  /-- The total action value `S_q[A, θ]`. -/
+  action_value : ℝ
+  /-- The action is non-negative. -/
+  action_nonneg : action_value ≥ 0
 
 end QOU
