@@ -109,6 +109,16 @@
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
+    /* Print styles */
+    @media print{
+      .ctrl,#sidebar,.fb-btn,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,.feedback-overlay,.feedback-panel{display:none!important}
+      body.has-sidebar #app{margin-left:0!important}
+      .decor,.lb,.tags,.uses,.bl,.sb-badge,.ex-toggle,.ex-panel{display:none!important}
+      .env{break-inside:avoid}
+      .ch{break-before:page}
+      .bh{margin-bottom:.3rem}
+      #app{max-width:100%!important;padding:1cm!important}
+    }
     /* Reading mode — hide decorations */
     body.reading .decor,body.reading .lb,body.reading .tags,body.reading .uses,body.reading .fb-btn,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel{display:none!important}
     body.reading .bh{margin-bottom:.3rem}
@@ -258,6 +268,7 @@
     <button id="c-rd" title="Reading mode: hide decorations">reading</button>
     <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
+    <button id="c-pr" title="Print / Save as PDF">print</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -358,6 +369,12 @@
       });
     });
     btnRm.classList.add('on'); // remarks on by default
+
+    document.getElementById('c-pr').addEventListener('click', () => {
+      // Force-hydrate all lazy content before printing
+      while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
+      window.print();
+    });
 
     const btnRd = document.getElementById('c-rd');
     let readingMode = localStorage.getItem('qou-reading') === '1';
