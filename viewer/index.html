@@ -69,12 +69,14 @@
     .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
     .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
-    .sb-badge{font-size:.5rem;padding:0 .3rem;border-radius:3px;line-height:1.4;flex-shrink:0}
+    .sb-badge{font-size:.55rem;padding:.05rem .35rem;border-radius:3px;line-height:1.4;flex-shrink:0;cursor:default;position:relative;letter-spacing:.02em}
     .sb-badge.todo{background:var(--ac);color:var(--bg)}
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
-    .sb-badge.lean-miss{background:#555;color:#aaa}
+    .sb-badge.lean-miss{background:#666;color:#ccc}
+    .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
+    .sb-badge:hover::after{opacity:1}
     .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
     .sb-toggle:hover{color:var(--ac)}
     @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
@@ -1018,9 +1020,9 @@
           }
           let secLabel = sec.title;
           const badges = [];
-          if (secTodos) badges.push(`${secTodos}T`);
-          if (secLeanMiss) badges.push(`${secLeanMiss}!L`);
-          if (secLeanErr) badges.push(`${secLeanErr}E`);
+          if (secTodos) badges.push(`${secTodos} todo`);
+          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+          if (secLeanErr) badges.push(`${secLeanErr} err`);
           sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
@@ -1046,8 +1048,8 @@
             const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
             if (openTodos) {
               const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos}`;
-              tb.title = `${openTodos} open todo(s)`;
+              tb.textContent = `${openTodos} todo`;
+              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
               bEl.appendChild(tb);
             }
 
@@ -1059,24 +1061,24 @@
               const v = b.lean?.validation || 'not_checked';
               if (!b.lean || !b.lean.file) {
                 lb.className = 'sb-badge lean-miss';
-                lb.textContent = '!L';
-                lb.title = 'Missing Lean file';
+                lb.textContent = 'no lean';
+                lb.setAttribute('data-tip', 'No Lean formalization file');
               } else if (s === 'stub' || s === 'not_started') {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = 'S';
-                lb.title = 'Lean stub / not started';
+                lb.textContent = 'stub';
+                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
               } else if (v === 'error' || s === 'has_sorry') {
                 lb.className = 'sb-badge lean-err';
-                lb.textContent = 'E';
-                lb.title = `Lean: ${v === 'error' ? 'validation error' : 'has sorry'}`;
-              } else if (v === 'ok' || s === 'proved') {
+                lb.textContent = v === 'error' ? 'err' : 'sorry';
+                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
+              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
                 lb.className = 'sb-badge lean-ok';
                 lb.textContent = '✓';
-                lb.title = 'Lean: verified';
+                lb.setAttribute('data-tip', 'Lean proof verified');
               } else {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = '?';
-                lb.title = `Lean: ${s} / ${v}`;
+                lb.textContent = s === 'stated' ? 'stated' : 'todo';
+                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
               }
               bEl.appendChild(lb);
             }
