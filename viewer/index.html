@@ -66,8 +66,15 @@
     .sb-sec{padding:.25rem .6rem .25rem 1rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
     .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
     .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
-    .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
+    .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
+    .sb-badge{font-size:.5rem;padding:0 .3rem;border-radius:3px;line-height:1.4;flex-shrink:0}
+    .sb-badge.todo{background:var(--ac);color:var(--bg)}
+    .sb-badge.lean-ok{background:#2a5;color:#fff}
+    .sb-badge.lean-warn{background:#c90;color:#fff}
+    .sb-badge.lean-err{background:#c33;color:#fff}
+    .sb-badge.lean-miss{background:#555;color:#aaa}
     @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}}
 
     /* Header */
@@ -843,7 +850,21 @@
         sb.appendChild(chEl);
         for (const sec of ch.sections) {
           const sEl = mk('div','sb-sec');
-          sEl.textContent = sec.title;
+          // Count stats for section
+          let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+          for (const b of sec.blocks) {
+            secTodos += (b.todos || []).filter(t => t.status === 'open').length;
+            const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+            if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
+            if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
+          }
+          let secLabel = sec.title;
+          const badges = [];
+          if (secTodos) badges.push(`${secTodos}T`);
+          if (secLeanMiss) badges.push(`${secLeanMiss}!L`);
+          if (secLeanErr) badges.push(`${secLeanErr}E`);
+          sEl.innerHTML = `<span style="flex:1">${esc(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
+          sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
           sEl.onclick = (e) => {
             e.stopPropagation();
@@ -858,8 +879,50 @@
           for (const b of sec.blocks) {
             const kind = b.kind[0].toUpperCase();
             const bEl = mk('div','sb-blk');
-            bEl.textContent = `${kind} ${b.title || b.label || b.rootName}`;
+            const nameSpan = mk('span','sb-name');
+            nameSpan.textContent = `${kind} ${b.title || b.label || b.rootName}`;
+            bEl.appendChild(nameSpan);
             bEl.title = b.label || b.rootName;
+
+            // Todo count badge
+            const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
+            if (openTodos) {
+              const tb = mk('span','sb-badge todo');
+              tb.textContent = `${openTodos}`;
+              tb.title = `${openTodos} open todo(s)`;
+              bEl.appendChild(tb);
+            }
+
+            // Lean status badge
+            const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+            if (needsLean) {
+              const lb = mk('span','sb-badge');
+              const s = b.status || 'not_started';
+              const v = b.lean?.validation || 'not_checked';
+              if (!b.lean || !b.lean.file) {
+                lb.className = 'sb-badge lean-miss';
+                lb.textContent = '!L';
+                lb.title = 'Missing Lean file';
+              } else if (s === 'stub' || s === 'not_started') {
+                lb.className = 'sb-badge lean-warn';
+                lb.textContent = 'S';
+                lb.title = 'Lean stub / not started';
+              } else if (v === 'error' || s === 'has_sorry') {
+                lb.className = 'sb-badge lean-err';
+                lb.textContent = 'E';
+                lb.title = `Lean: ${v === 'error' ? 'validation error' : 'has sorry'}`;
+              } else if (v === 'ok' || s === 'proved') {
+                lb.className = 'sb-badge lean-ok';
+                lb.textContent = '✓';
+                lb.title = 'Lean: verified';
+              } else {
+                lb.className = 'sb-badge lean-warn';
+                lb.textContent = '?';
+                lb.title = `Lean: ${s} / ${v}`;
+              }
+              bEl.appendChild(lb);
+            }
+
             bEl.onclick = () => {
               const t = document.getElementById(b.label);
               if (t) {
