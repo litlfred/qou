@@ -89,6 +89,7 @@
     .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd)}
     .ch-t .n{color:var(--ac);font-weight:400}
     .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem}
+    .sec-n{display:none}
 
     /* Blocks */
     .blk{margin:1.5rem 0;position:relative}
@@ -109,15 +110,53 @@
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
-    /* Print styles */
+    /* Print styles — paper-like output */
     @media print{
-      .ctrl,#sidebar,.fb-btn,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,.feedback-overlay,.feedback-panel{display:none!important}
+      /* Hide all chrome */
+      .ctrl,#sidebar,.fb-btn,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,
+      .feedback-overlay,.feedback-panel,.hash,.decor,.lb,.tags,.uses,.bl,
+      .sb-badge,.ex-toggle,.ex-panel,.anchor-icon,.bh-copied{display:none!important}
       body.has-sidebar #app{margin-left:0!important}
-      .decor,.lb,.tags,.uses,.bl,.sb-badge,.ex-toggle,.ex-panel{display:none!important}
-      .env{break-inside:avoid}
+
+      /* Paper layout: narrow margins, compact font */
+      @page{margin:1.5cm 2cm;size:letter}
+      html{font-size:10pt}
+      body{font-family:'Crimson Pro','Times New Roman',serif!important;line-height:1.4;color:#000!important;background:#fff!important}
+      #app{max-width:100%!important;padding:0!important;margin:0!important}
+
+      /* Title page */
+      .hdr{text-align:center;padding:1.5rem 0 1rem;border-bottom:1px solid #999;margin-bottom:1.5rem}
+      .hdr h1{font-size:16pt;color:#000!important}
+      .hdr .au{font-size:11pt;color:#333!important}
+      .hdr .af,.hdr .dt{font-size:9pt;color:#555!important}
+
+      /* Numbered chapters and sections */
       .ch{break-before:page}
-      .bh{margin-bottom:.3rem}
-      #app{max-width:100%!important;padding:1cm!important}
+      .ch:first-child{break-before:auto}
+      .ch-t{font-size:14pt;font-weight:700;color:#000!important;border-bottom:1px solid #999;margin-bottom:1rem;padding-bottom:.3rem}
+      .ch-t .n{color:#000!important;font-weight:700}
+      .sec-t{font-size:12pt;font-weight:600;color:#000!important;margin:1.2rem 0 .6rem}
+      .sec-n{display:inline!important;margin-right:.3em}
+
+      /* Environment blocks — traditional style */
+      .env{border:none!important;padding:0!important;margin:.6rem 0!important;background:none!important}
+      .bh{margin-bottom:.2rem}
+      .bk{font-size:9pt;font-weight:700;text-transform:none;color:#000!important;letter-spacing:0}
+      .bt{font-size:10pt;font-weight:400;font-style:italic;color:#000!important}
+      .bb{font-size:10pt}
+      .bb p{margin:.3em 0}
+      .bb li{margin:.2em 0}
+
+      /* Math */
+      .katex{color:#000!important}
+      .txb{padding:.4rem 0;margin:.4rem 0}
+
+      /* Links — no color in print */
+      a{color:#000!important;text-decoration:none!important}
+
+      /* Break control */
+      .env{break-inside:avoid}
+      .section{break-inside:avoid-page}
     }
     /* Reading mode — hide decorations */
     body.reading .decor,body.reading .lb,body.reading .tags,body.reading .uses,body.reading .fb-btn,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel{display:none!important}
@@ -995,10 +1034,13 @@
         if (ch.label) cd.id = ch.label;
         cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</h2>`;
         renderMath(cd);
+        let secNum = 0;
         for (const sec of ch.sections) {
+          secNum++;
           const sd = mk('div','section');
+          sd.dataset.secNum = `${ch.number}.${secNum}`;
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t">${inl(sec.title)}</h3>`;
+          sd.innerHTML = `<h3 class="sec-t"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</h3>`;
           renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
