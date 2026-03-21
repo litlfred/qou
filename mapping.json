@@ -1,7 +1,12 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T00:47:46.792273+00:00",
+  "generated_at": "2026-03-21T01:46:57.928414+00:00",
   "mappings": [
+    {
+      "narrative": "Rigid monoidal category",
+      "lean_id": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
+      "latex_label": "def:rigid-monoidal-category"
+    },
     {
       "narrative": "Quantum Universe",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumUniverse",
@@ -41,11 +46,6 @@
       "narrative": "Substrate parameter",
       "lean_id": "QOU.QuantumObservableUniverse.SubstrateParameter",
       "latex_label": "def:substrate-parameter"
-    },
-    {
-      "narrative": "Categorical volume constraint",
-      "lean_id": "QOU.QuantumObservableUniverse.CategoricalVolumeConstraint",
-      "latex_label": "def:categorical-volume-constraint"
     },
     {
       "narrative": "Quantum Gauge Group",
