@@ -396,17 +396,25 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
   if (path === "/api/feedback") {
     try {
       const body = await req.json() as {
-        paperId: string; chapterDir: string; rootName: string;
+        paperId: string; rootName: string;
         summary: string; comment: string; priority: string; assignee: string;
       };
-      const { readFileSync: rfs, writeFileSync: wfs } = await import("fs");
-      const tsPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.ts`);
-      if (!existsSync(tsPath)) {
-        return Response.json({ error: "Block manifest not found" }, { status: 404 });
+      const { readFileSync: rfs, writeFileSync: wfs, readdirSync } = await import("fs");
+
+      // Find the block's chapter directory by searching
+      const paperDir = join(CONTENT_DIR, body.paperId);
+      if (!existsSync(paperDir)) {
+        return Response.json({ error: "Paper not found" }, { status: 404 });
+      }
+      let blockDir: string | null = null;
+      for (const d of readdirSync(paperDir)) {
+        const candidate = join(paperDir, d, `${body.rootName}.ts`);
+        if (existsSync(candidate)) { blockDir = join(paperDir, d); break; }
+      }
+      if (!blockDir) {
+        return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
       }
 
-      // Read and patch the .ts manifest to add the todo
-      const tsContent = rfs(tsPath, "utf-8");
       const todoId = `todo-${Date.now().toString(36)}`;
       const todo = {
         id: todoId,
@@ -419,8 +427,8 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         createdAt: new Date().toISOString(),
       };
 
-      // For now, store todos in a sidecar JSON file (non-destructive)
-      const todoPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.todos.json`);
+      // Store todos in a sidecar JSON file (non-destructive)
+      const todoPath = join(blockDir, `${body.rootName}.todos.json`);
       let todos: unknown[] = [];
       if (existsSync(todoPath)) {
         try { todos = JSON.parse(rfs(todoPath, "utf-8")); } catch {}

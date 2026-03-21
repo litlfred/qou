@@ -17,7 +17,7 @@
       --ac:#7ca8e6; --ac-d:#4a6a9a;
       --grn:#7ce6a4; --yel:#e6c87c; --red:#e67c7c; --ora:#e6a47c;
       --brd:#2a2a34;
-      --svg-f:invert(0.85) hue-rotate(180deg);
+      --svg-f:invert(1) hue-rotate(180deg);
     }
     [data-theme="light"] {
       --bg:#fafafa; --bg-s:#ffffff; --bg-r:#f0f0f4; --bg-c:#f5f5fa;
@@ -226,14 +226,14 @@
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
 </head>
-<body data-font="paper">
+<body data-font="web">
   <div class="ctrl">
     <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">QOU</a>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
     <button id="c-th" title="Toggle dark/light">dark</button>
-    <button id="c-fn" title="Toggle paper/web font">web font</button>
+    <button id="c-fn" title="Toggle paper/web font">paper font</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -340,9 +340,13 @@
       const tx = [];
       const lines = md.split('\n');
       const o = [];
+      let para = []; // accumulate text lines for multi-line inline math
       let i = 0;
       while (i < lines.length) {
         const l = lines[i];
+        // Flush accumulated paragraph text before any block-level element
+        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l);
+        if (isBlock && para.length) { o.push(inl(para.join(' '))); para = []; }
         if (l.trimStart().startsWith('```tex')) {
           i++;
           const t = [];
@@ -387,9 +391,13 @@
           o.push('</ol>');
           continue;
         }
-        if (l.trim() === '') { o.push('</p><p>'); i++; continue; }
-        o.push(inl(l)); i++;
+        if (l.trim() === '') {
+          if (para.length) { o.push(inl(para.join(' '))); para = []; }
+          o.push('</p><p>'); i++; continue;
+        }
+        para.push(l); i++;
       }
+      if (para.length) o.push(inl(para.join(' ')));
       let h = '<p>' + o.join('\n') + '</p>';
       h = h.replace(/<p>\s*<\/p>/g,'');
       h = h.replace(/<p>\s*<(div|ul|ol|pre)/g,'<$1');
