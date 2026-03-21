@@ -106,6 +106,9 @@
     .blk-stub .stub-kind{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.6rem}
     .blk-stub.remark .stub-kind{color:var(--fg-d)}
     .blk-stub.example .stub-kind{color:var(--grn)}
+    .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
+    .env:hover .collapse-btn{opacity:.5}
+    .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
 
     .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
     .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative}
@@ -184,7 +187,7 @@
     .bb p{margin:.5em 0}
     .bb ul{margin:.4em 0;padding-left:1.5em;list-style:none}
     .bb ol{margin:.4em 0;padding-left:1.5em}
-    .bb li{margin:.15em 0}
+    .bb li{margin:.4em 0}
     .bb strong{color:var(--fg-b)}
     .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
     .bb a:hover{color:var(--fg-b)}
@@ -615,6 +618,10 @@
         const d = mk('div', 'env example');
         if (block.label) d.id = block.label;
         d.appendChild(mkBlockHeader('example', block.title, block.label));
+        // Collapse button
+        const colBtn = mk('button','collapse-btn'); colBtn.textContent = '−'; colBtn.title = 'Collapse';
+        colBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        d.appendChild(colBtn);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -650,6 +657,10 @@
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
         d.appendChild(mkBlockHeader('remark', block.title, block.label));
+        // Collapse button
+        const colBtn = mk('button','collapse-btn'); colBtn.textContent = '−'; colBtn.title = 'Collapse';
+        colBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        d.appendChild(colBtn);
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -951,8 +962,8 @@
           if (sec.label) sd.id = sec.label;
           sd.innerHTML = `<h3 class="sec-t">${esc(sec.title)}</h3>`;
           for (const b of sec.blocks) {
-            // Skip examples that are already shown via a parent block's examples[] toggle
-            if (b.kind === 'example' && b.label && childExamples.has(b.label)) continue;
+            // Skip child examples unless they're the scroll target
+            if (b.kind === 'example' && b.label && childExamples.has(b.label) && pendingScroll !== b.label) continue;
             sd.appendChild(renderBlock(b));
           }
           cd.appendChild(sd);
@@ -1284,17 +1295,31 @@
 
     function scrollToLabel(label) {
       const el = document.getElementById(label);
-      if (el) {
-        // Force lazy-hydrate so content is visible
-        const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
-        if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-        // If hidden (remark/example), show it
-        const wrap = el.closest('.blk-remark, .blk-example');
-        if (wrap && wrap.style.display === 'none') wrap.style.display = '';
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        el.style.outline = '2px solid var(--ac)';
-        setTimeout(() => { el.style.outline = ''; }, 2000);
+      if (!el) { pendingScroll = null; return; }
+
+      // Force lazy-hydrate so content is visible
+      const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+      if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+
+      // If hidden (remark/example), show it and its wrapper
+      const wrap = el.closest('.blk-remark, .blk-example');
+      if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+
+      // If inside a collapsed example toggle panel, open it
+      const exPanel = el.closest('.ex-panel');
+      if (exPanel && !exPanel.classList.contains('open')) {
+        exPanel.classList.add('open');
+        const toggle = exPanel.previousElementSibling;
+        if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
       }
+
+      // Also hide the stub if there is one
+      const stub = wrap?.previousElementSibling;
+      if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.outline = '2px solid var(--ac)';
+      setTimeout(() => { el.style.outline = ''; }, 2000);
       pendingScroll = null;
     }
 
