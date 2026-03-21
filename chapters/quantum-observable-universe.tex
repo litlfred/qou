@@ -658,7 +658,7 @@ Every finite-dimensional representation decomposes as
 $W \cong \bigoplus_j V_j^{\oplus m_j}$, with multiplicities
 $m_j \in \mathbb{N}$.  The polynomial ring
 $\mathbb{C}[z] = \bigoplus_{n \geq 0} \mathrm{Sym}^n V$ is the
-coordinate ring of $\mathbb{CP}^1 = \mathbb{P}(V)$
+coordinate ring of $\mathbb{P}^1(\mathbb{C}) = \mathbb{P}(V)$
 (Definition~\ref{def:projective-line-object}), and each homogeneous
 component $\mathrm{Sym}^n V \cong V_{n/2}$ is an irreducible
 representation of dimension~$n + 1$.
@@ -724,11 +724,11 @@ algebra $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}\,T}$
 Continuing Example~\ref{ex:maximal-torus-su2},
 $G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$.
 The quotient is
-$\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{CP}^1$.
-A point $[\ell] \in \mathbb{CP}^1$ is a line $\ell \subset V = \mathbb{C}^2$;
+$\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C})$.
+A point $[\ell] \in \mathbb{P}^1(\mathbb{C})$ is a line $\ell \subset V = \mathbb{C}^2$;
 equivalently, it is the kernel of a linear form on~$V$, well-defined up
 to scalar.  The function algebra is the polynomial ring
-$\mathcal{O}(\mathbb{CP}^1) = \mathbb{C}[z]$ in the affine coordinate
+$\mathcal{O}(\mathbb{P}^1(\mathbb{C})) = \mathbb{C}[z]$ in the affine coordinate
 $z = v_1 / v_2$.
 \end{example}
 
@@ -776,7 +776,7 @@ $\lambda$ excludes the degenerate case).
 Continuing Example~\ref{ex:projective-line-su2}, take
 $G = \mathrm{SU}(2)$, $T = \mathrm{U}(1)$, and
 $V = \mathbb{C}^2$.  The projective line object is
-$\mathbb{P}(V) = \mathbb{CP}^1$, and the adjoint object is
+$\mathbb{P}(V) = \mathbb{P}^1(\mathbb{C})$, and the adjoint object is
 $\mathrm{Ad}(A) \cong \mathfrak{su}(2) \cong \mathbb{R}^3$
 (trace-free skew-Hermitian $2 \times 2$ matrices under the Killing
 form).  The embedding $\sigma$ sends a line
@@ -788,7 +788,7 @@ projector
   \;-\; \tfrac{1}{2}\,\mathrm{id}_V
   \;\in\; \mathfrak{su}(2).
 \]
-This identifies $\mathbb{CP}^1$ with the unit $2$-sphere
+This identifies $\mathbb{P}^1(\mathbb{C})$ with the unit $2$-sphere
 $S^2 \subset \mathfrak{su}(2)$ (the coadjoint orbit of
 $\tfrac{1}{2}\,\mathrm{diag}(i, -i)$).  Observability follows:
 a $G$-fixed point in $\mathfrak{su}(2)$ would be a matrix commuting
@@ -1553,9 +1553,9 @@ $(M, \theta, G, P, E)$ where:
   \item $G = \mathrm{SU}(2)$;
   \item $P \to M$ is a principal $G$-bundle whose holonomy reduces to
         $\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm I\}$;
-  \item $E = P \times_G \mathbb{CP}^1 \to M$ is the associated
+  \item $E = P \times_G \mathbb{P}^1(\mathbb{C}) \to M$ is the associated
         \emph{state bundle}, where $\mathrm{SU}(2)$ acts on
-        $\mathbb{CP}^1$ by M\"obius transformations.
+        $\mathbb{P}^1(\mathbb{C})$ by M\"obius transformations.
 \end{enumerate}
 The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 (the representation category of the quantum group at the substrate
@@ -1593,7 +1593,7 @@ combined with irreducibility of the instanton connection
 (Lemma~\ref{lem:irreducible-connection}), forces
 $H^0(M, \mathrm{Ad}(P)) = 0$; the section-vanishing
 $\Gamma_c(M, E) = 0$ follows from the non-existence of
-$A$-equivariant sections of the associated $\mathbb{CP}^1$-bundle.
+$A$-equivariant sections of the associated $\mathbb{P}^1(\mathbb{C})$-bundle.
 \end{example}
 
 \begin{remark}[Archimedean realisations of categorical structures]
@@ -1614,7 +1614,7 @@ the categorical structures specialise to familiar geometric objects:
   \item \textbf{Involution}
     (Proposition~\ref{prop:fiber-adjoint-involution}).\;
     The categorical involution $\sigma$ becomes the identification
-    $\mathbb{CP}^1 \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere
+    $\mathbb{P}^1(\mathbb{C}) \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere
     under the Killing form): a line $\ell \subset R^2$ maps to the
     projector $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}$.
     \label{rem:fiber-adjoint-archimedean}
@@ -1704,7 +1704,7 @@ Non-archimedean analogues appear in Chapter~\ref{chap:p-adic}.
 \label{rem:commutator-reeb-vector}
 The Heisenberg uncertainty principle takes the form of a $q$-deformed
 commutator.  Let $\hat{X}, \hat{P}$ be position and momentum observables
-on the fibre $\mathbb{CP}^1$, and let $J \colon H \to H$ be the complex
+on the fibre $\mathbb{P}^1(\mathbb{C})$, and let $J \colon H \to H$ be the complex
 structure on the Levi distribution ($J^2 = -\mathrm{Id}$; throughout this
 paper $i$ is identified with the action of~$J$ on horizontal planes).
 The commutator at $p \in M$ is
