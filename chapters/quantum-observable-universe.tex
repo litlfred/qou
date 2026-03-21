@@ -1295,18 +1295,30 @@ assemble into a \emph{parallelogram of observations}:
   & \mathcal{O}_2(\alpha) \arrow[ur, "\text{compare}"'] &
 \end{tikzcd}
 \end{equation}
-The discrepancy at the far vertex is
-$\delta\alpha = \mathcal{O}_1(\alpha) - \mathcal{O}_2(\alpha)$.
+The discrepancy at the far vertex is the \emph{commutator of
+observations}:
+\[
+  [\mathcal{O}_1,\, \mathcal{O}_2](\alpha)
+  \;=\;
+  \mathcal{O}_1(\mathcal{O}_2(\alpha))
+  - \mathcal{O}_2(\mathcal{O}_1(\alpha)).
+\]
 Each observation perturbs the substrate parameter by $\delta q_i$
 (Definition~\ref{def:observation}, condition~(2)), so the two
 observers induce distinct shifted parameters $q_1' = q + \delta q_1$
-and $q_2' = q + \delta q_2$.  The discrepancy $\delta\alpha$ is
-controlled by the difference in these perturbations; in particular,
-$\delta\alpha = 0$ only when
-$\delta q_1 = \delta q_2$ (both observations agree on the adjoint
-coaction).  Generically, the non-commutativity of the Hopf structure
-prevents this: independent observations of a fermion necessarily
-disagree.
+and $q_2' = q + \delta q_2$.  The commutator $[q_1',\, q_2']$ of the
+shifted parameters measures the obstruction to commutativity:
+\[
+  [\mathcal{O}_1,\, \mathcal{O}_2](\alpha)
+  \;=\;
+  (q_1' q_2' - q_2' q_1') \cdot \alpha_V
+  \;=\;
+  [q_1',\, q_2'] \cdot \alpha_V.
+\]
+This vanishes if and only if $[q_1', q_2'] = 0$ (the shifted parameters
+commute) or $\alpha_V = 0$ (the particle is a boson).  Generically, the
+non-commutativity of the Hopf structure ensures $[q_1', q_2'] \neq 0$:
+independent observations of a fermion necessarily disagree.
 \end{remark}
 
 \begin{remark}[Base-ring independence]
