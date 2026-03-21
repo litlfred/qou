@@ -1716,47 +1716,43 @@ the categorical structures specialise to familiar geometric objects:
 \end{itemize}
 \end{remark}
 
-\begin{definition}[Instanton connection]
+\begin{example}[Instanton connection]
 \label{def:instanton}
 \lean{QOU.InstantonConnection}\leanok
-Let $(M, \theta, G, P, E)$ be an archimedean quantum universe
-(Example~\ref{def:c-quantum-universe}).  An \emph{instanton connection}
-on $P$ is a connection $A$ whose curvature $F_A$, restricted to
-$H = \ker\theta$, is self-dual: $F_A|_H = {*_H}\,F_A|_H$.  This is
-the archimedean realisation of a categorical instanton
-(Definition~\ref{def:categorical-instanton}): the $q$-Hodge star
-$\star_q$ specialises to the Webster Hodge star $*_H$ on
-$\Lambda^2 H^*$, and $\star_q$-self-duality becomes
-$*_H$-self-duality.
-\end{definition}
+In the archimedean quantum universe
+(Example~\ref{def:c-quantum-universe}), a categorical instanton
+(Definition~\ref{def:categorical-instanton}) specialises to an
+\emph{instanton connection} on $P$: a connection $A$ whose
+curvature $F_A$, restricted to $H = \ker\theta$, is self-dual:
+$F_A|_H = {*_H}\,F_A|_H$.  The $q$-Hodge star $\star_q$ specialises
+to the Webster Hodge star $*_H$ on $\Lambda^2 H^*$, and
+$\star_q$-self-duality becomes $*_H$-self-duality.
+\end{example}
 
-\begin{lemma}[Irreducibility of the connection]
+\begin{example}[Irreducibility of the connection]
 \label{lem:irreducible-connection}
 \lean{QOU.irreducible_connection}\leanok
-Let $(M, G, P, E)$ be an archimedean quantum observable universe.
-Then every instanton connection $A$ on $P$ is irreducible.
-This is the archimedean instance of
-Lemma~\ref{lem:categorical-irreducible}: the vanishing
-$H^0(M, \mathrm{Ad}(P)) = 0$
-(Example~\ref{def:c-quantum-observable-universe}) specialises
-the categorical condition
-$\operatorname{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
-\end{lemma}
+In an archimedean quantum observable universe,
+Lemma~\ref{lem:categorical-irreducible} specialises as follows:
+every instanton connection $A$ on $P$ is irreducible.
+The vanishing $H^0(M, \mathrm{Ad}(P)) = 0$
+(Example~\ref{def:c-quantum-observable-universe}) is the archimedean
+instance of $\operatorname{Hom}_{\mathcal{C}}(\mathbf{1},
+\mathrm{Ad}(A)) = 0$.
+\end{example}
 
-\begin{proposition}[Self-duality of the curvature]
+\begin{example}[Self-duality of the curvature]
 \label{prop:self-dual-curvature}
 \lean{QOU.self_dual_curvature}\leanok
-Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
-with $\dim_{\mathbb{R}} H = 4$.  Every instanton connection $A$ on $P$
-satisfies
-$F_A|_H = {*_H}\,F_A|_H$.
-This is the archimedean instance of
-Proposition~\ref{prop:categorical-self-duality}: the categorical
-Yang--Mills functional $\lambda(\star_q(F_\nabla) \cdot F_\nabla)$
-specialises to
+In an archimedean quantum observable universe with
+$\dim_{\mathbb{R}} H = 4$,
+Proposition~\ref{prop:categorical-self-duality} specialises:
+every instanton connection $A$ on $P$ satisfies
+$F_A|_H = {*_H}\,F_A|_H$.  The categorical Yang--Mills functional
+$\lambda(\star_q(F_\nabla) \cdot F_\nabla)$ specialises to
 $\int_M \lVert F_A|_H \rVert^2\,\theta \wedge (d\theta)^2$,
 and the Bogomolny decomposition forces $F_A^-|_H = 0$.
-\end{proposition}
+\end{example}
 
 \begin{remark}[Archimedean substrate via the Levi form]
 \label{rem:c-substrate-via-levi}
