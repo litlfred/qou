@@ -467,7 +467,10 @@
       let hd = `<span class="bk">${kind}</span>`;
       if (title) hd += `<span class="bt">${inl(title)}</span>`;
       if (label) hd += `<a class="bl" href="#/edit/${label}" title="Edit ${label}">${label}</a>`;
-      return `<div class="bh">${hd}</div>`;
+      const div = mk('div','bh');
+      div.innerHTML = hd;
+      renderMath(div); // render math in titles immediately
+      return div;
     }
 
     // ── Uses inline helper ─────────────────────────────────
@@ -512,7 +515,7 @@
 
         const d = mk('div', 'env example');
         if (block.label) d.id = block.label;
-        d.innerHTML = mkBlockHeader('example', block.title, block.label);
+        d.appendChild(mkBlockHeader('example', block.title, block.label));
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -547,7 +550,7 @@
 
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
-        d.innerHTML = mkBlockHeader('remark', block.title, block.label);
+        d.appendChild(mkBlockHeader('remark', block.title, block.label));
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
@@ -605,7 +608,7 @@
       const d = mk('div',`blk env ${block.kind}`);
       if (block.label) d.id = block.label;
 
-      d.innerHTML = mkBlockHeader(block.kind, block.title, block.label);
+      d.appendChild(mkBlockHeader(block.kind, block.title, block.label));
 
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
@@ -728,8 +731,11 @@
       paper = p;
       katexMacros = buildKatexMacros(p.macros);
       bix.clear();
-      for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks)
+      const childExamples = new Set(); // examples shown via parent's examples[] toggle
+      for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
+        if (b.examples) for (const ex of b.examples) childExamples.add(ex);
+      }
 
       const app = document.getElementById('app');
       app.innerHTML = '';
@@ -765,7 +771,11 @@
           const sd = mk('div','section');
           if (sec.label) sd.id = sec.label;
           sd.innerHTML = `<h3 class="sec-t">${esc(sec.title)}</h3>`;
-          for (const b of sec.blocks) sd.appendChild(renderBlock(b));
+          for (const b of sec.blocks) {
+            // Skip examples that are already shown via a parent block's examples[] toggle
+            if (b.kind === 'example' && b.label && childExamples.has(b.label)) continue;
+            sd.appendChild(renderBlock(b));
+          }
           cd.appendChild(sd);
         }
         app.appendChild(cd);
