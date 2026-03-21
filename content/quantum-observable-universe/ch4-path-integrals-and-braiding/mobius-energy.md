@@ -4,6 +4,7 @@ parameter $q$ ([Definition](#def:substrate-parameter)),
 categorical action $\mathcal{S}_q$
 ([Definition](#def:categorical-action)), and $q$-Hodge star
 $\star_q$ ([Definition](#def:q-hodge-star)).
+
 Let $\gamma \colon S^1 \to \omega(A)$ be a smooth closed curve
 (a knot embedding) and let $m(\gamma)$ denote the categorical mass
 ([Theorem](#thm:topological-mass)).
@@ -13,7 +14,7 @@ Define the *categorical Möbius energy* by
 $$
   E_{\mathrm{cat}}(\gamma)
   \;=\;
-  \lambda \circ \mathrm{tr}_A \!\iint_{S^1 \times S^1 \setminus \Delta}
+  \lambda \circ \mathrm{tr}_A \!\iint_{S^1 \times S^1 \setminus \mathrm{diag}}
   \!\!\Bigl(
     \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
   \Bigr)
@@ -21,24 +22,24 @@ $$
   \Bigl\lVert
     \frac{d\gamma}{ds} \wedge_q \frac{d\gamma}{dt}
   \Bigr\rVert\,
-  ds\, dt,
+  ds\, dt\,,
 $$
 
 where $\Delta$ is the Hopf comultiplication, $\lambda$ is the
 Frobenius form ([Remark](#rem:frobenius-simplification)), and the
-integration excludes the diagonal $\Delta \subset S^1 \times S^1$.
+integration excludes the diagonal $\mathrm{diag} \subset S^1 \times S^1$.
 
-Then in the classical limit $q \to 1$, the categorical mass
-recovers the Möbius energy up to a topological normalisation:
+Then in the classical limit $q \to 1$, the categorical Möbius energy
+recovers the classical Möbius energy up to a topological normalisation:
 
 $$
-  \lim_{q \to 1}\; m(\gamma)
+  \lim_{q \to 1}\; E_{\mathrm{cat}}(\gamma)
   \;=\;
   \frac{1}{4}\, E(\gamma)
-  \;+\; \text{const},
+  \;+\; \text{const}\,.
 $$
 
-where $E(\gamma)$ is the classical Möbius energy
+Here $E(\gamma)$ is the classical Möbius energy
 
 $$
   E(\gamma)
@@ -50,10 +51,10 @@ $$
     \frac{1}{D(\gamma(s), \gamma(t))^2}
   \Bigr)
   \lvert \gamma'(s) \rvert \, \lvert \gamma'(t) \rvert\,
-  ds\, dt,
+  ds\, dt\,.
 $$
 
-with $D(\gamma(s), \gamma(t))$ the intrinsic arc-length distance
+Here $D(\gamma(s), \gamma(t))$ denotes the intrinsic arc-length distance
 along $\gamma$.
 
 ---
@@ -68,7 +69,7 @@ is invariant under the full Möbius group
 $\mathrm{PSL}(2, \mathbb{C})$, matching the conformal invariance
 of the classical functional.
 
-*Step 2: Expansion of the Frobenius--Hopf kernel.*
+*Step 2: Expansion of the Frobenius–Hopf kernel.*
 At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
 and the comultiplication $\Delta$ becomes cocommutative.  The
 Frobenius pairing $\lambda \circ \mu$ on $A \otimes A$ reduces to
@@ -84,17 +85,18 @@ $$
 $$
 
 The repulsive kernel $1/r^2$ is thus the classical shadow of the
-resistance of the Frobenius--Hopf object $A$ to local deformations
+resistance of the Frobenius–Hopf object $A$ to local deformations
 of the connection $\nabla$: the Frobenius form $\lambda$ assigns a
 diverging cost when two strands of $\gamma$ approach.
 
 *Step 3: Subtraction of the self-energy.*
 The diagonal regularisation in the categorical integral (exclusion
-of $\Delta \subset S^1 \times S^1$) matches the arc-length
+of $\mathrm{diag} \subset S^1 \times S^1$) matches the arc-length
 subtraction $1/D(\gamma(s),\gamma(t))^2$ in the classical Möbius
 energy.  In the $q$-deformed setting, this subtraction arises
 naturally from the antipode $S$ of the Hopf structure: the
 self-pairing $\lambda(\gamma(s)^* \cdot S(\gamma(s)))$ cancels the
 short-distance divergence at $s = t$, leaving a finite integral
-that agrees with $E(\gamma)/4$ up to the Euler characteristic
-correction $\chi(\Sigma) \cdot \mathrm{const}$.
+that agrees with $E(\gamma)/4$ up to an Euler characteristic
+correction $\chi(\Sigma_\gamma) \cdot \mathrm{const}$, where
+$\Sigma_\gamma$ is any Seifert surface spanning $\gamma$.
