@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "lean-lsp": {
+      "command": "uvx",
+      "args": ["lean-lsp-mcp"],
+      "cwd": "lean"
+    },
+    "paper-assistant": {
+      "command": "./scripts/start-assistant.sh",
+      "args": ["--stdio"]
+    }
+  }
+}

@@ -16,6 +16,26 @@ truth for which mathematical objects have been formalized, reviewed, and
 approved.  Lean declarations are referenced by URL (doc-gen4 pages), not
 duplicated in JSON.
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **prefer MCP tools for live status**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + `update_proof_status.py` | `lean_diagnostic_messages` | Per-file sorry/error counts without full build |
+| Manual declaration inventory | `lean_file_outline` | All declarations with type sigs in one call |
+| Checking if a decl is sorry-free | `lean_verify` | Axiom audit per theorem |
+| Cross-checking `\lean{}` refs | `lean_hover_info` | Verify declaration exists and get its type |
+
+### MCP-enhanced status update
+
+Instead of the full `extract → build → update` pipeline:
+
+1. **`lean_file_outline`** on each `lean/QOU/*.lean` → inventory all declarations
+2. **`lean_diagnostic_messages`** on each file → sorry warnings = `has_sorry`, no warnings = `proved`
+3. **`lean_verify`** on key theorems → axiom audit for publication readiness
+4. Update `proof-objects.json` with the results
+
 ## When to Use This Skill
 
 - After extracting proof objects from LaTeX
@@ -57,14 +77,20 @@ Multiple reviewers (human + agentic) contribute reviews.  Consensus rules:
 | `generate_lean_stubs.py` | proof-objects.json → lean stub files |
 | `update_proof_status.py` | Lean build log → update statuses |
 
-### GitHub Actions Integration
+### GitHub Actions Integration (CI-only)
 
-The `lean-build.yml` workflow:
+The `lean-build.yml` workflow runs the full pipeline automatically:
 1. Runs `extract_proof_objects.py`
 2. Runs `generate_lean_stubs.py`
 3. Runs `lake build`
 4. Runs `update_proof_status.py`
 5. Commits updated `proof-objects.json` (automated commit by `github-actions[bot]`)
+
+**This pipeline is CI-only.** Locally, agents must not replicate it.
+Local `lake build` is compile-only — no generation scripts before it.
+Generation scripts are proof-writing tools invoked only by the
+`formalizer`, `lean-generation`, and `proof-triage` skills when the
+author requests new formalization work.
 
 ## Status Dashboard
 

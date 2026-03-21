@@ -7,7 +7,70 @@ and creative decisions; the editor coordinates execution.
 
 ## Session Start Protocol
 
-At the start of every new session, the editor's first job is **triage**:
+At the start of every new session, the editor's first job is **environment
+check**, then **triage**:
+
+### 0. Check Lean availability (local → remote fallback)
+
+Before routing any request, run the Lean health check:
+
+```bash
+./scripts/check-lean.sh
+```
+
+The script checks local Lean first, then probes the remote MCP server
+at the domain in `lean-mcp.config.json`. It returns a `mode` field:
+
+#### `mode: "local"` — Local Lean fully ready
+
+Use the local MCP server (stdio via `.mcp.json`). Best performance.
+
+#### `mode: "remote"` — Local unavailable, remote MCP reachable
+
+The local machine doesn't have Lean (or it's incomplete), but the
+hosted server at the `remote_url` is responding. **Use the remote
+MCP server.** Tell the author:
+
+> Local Lean not available — using remote MCP at `<remote_url>`.
+> All Lean MCP tools work normally. To set up local Lean for
+> faster response: `./scripts/setup-lean-mcp.sh`
+
+To use remote mode, the MCP tools should be called via the remote
+server URL. The `.mcp.json` defines the local stdio server; for
+remote, the agent should note the `remote_url` from the check
+output and use it for any HTTP-based MCP tool calls.
+
+#### `mode: "local-degraded"` — Lean installed but deps/cache missing
+
+Local Lean exists but isn't fully ready. Show the `message` field
+which explains what to run (e.g. `lake update`, `lake exe cache get`).
+If the remote is also available (`remote_ok: true`), offer:
+
+> Local Lean needs setup. Remote MCP is available at `<remote_url>`.
+> Use remote now, or fix local?
+
+#### `mode: "none"` — No Lean available anywhere
+
+Neither local nor remote is reachable. If the request requires Lean:
+
+> No Lean MCP available (local not installed, remote unreachable).
+>
+> **Local setup:**
+> ```bash
+> ./scripts/setup-lean-mcp.sh
+> ```
+>
+> **Remote server:** check if `lean.litlfred.org` is running.
+>
+> Proceed with LaTeX-only work?
+
+If the request is LaTeX-only, proceed normally.
+
+**Note**: The lean-lsp-mcp server provides diagnostics, goal states,
+hover docs, completions, LeanSearch, Loogle, and more — identically
+whether running locally (stdio) or remotely (Streamable HTTP).
+
+### 1. Triage
 
 1. **Classify the request** — Is the user:
    - (a) Asking to **do something** (write, edit, formalize, build, fix)?
@@ -35,6 +98,12 @@ At the start of every new session, the editor's first job is **triage**:
 | Visualizer | General-purpose agent | Dedicated visualizer context |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
+| Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
+| Test report / coverage stats | `test-engineer` | JSON TestReport output |
+| Validate content objects | `content-validation` | Schema + constraints + AST |
+| Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
+| Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
+| Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
 
 ## Responsibilities
 
@@ -55,6 +124,54 @@ At the start of every new session, the editor's first job is **triage**:
 6. **Elaborate understanding**: as work progresses, deepen understanding of the
    mathematical structures. Record insights in the plan file for future
    reference.
+7. **Lean dependency management**: when any agent modifies `lakefile.toml`
+   (adds a `[[require]]`), immediately:
+   1. Run `cd lean && lake update` to fetch the new dependency
+   2. Run `lake exe cache get` if the new dep has a Mathlib-style cache
+   3. Run `lake build` to verify the build
+   4. Verify `lean/.lake/`, `lean/lake-packages/`, `lean/build/` remain
+      in `.gitignore` — **never commit Lean build artifacts**
+   5. Only commit: `lakefile.toml` and `lake-manifest.json`
+
+8. **Build vs. generation separation**:
+   - **`lake build`** = compile-only. It must **never** be preceded by
+     `extract_proof_objects.py` or `generate_lean_stubs.py` in local
+     workflows. Build verifies what exists; it does not create new files.
+   - **Generation scripts** (`extract_proof_objects.py`,
+     `generate_lean_stubs.py`, `formalizer.py generate-theorems`) are
+     **proof-writing tools** — only the `formalizer`, `lean-generation`,
+     and `proof-triage` skills may invoke them, and only when the author
+     has requested new formalization work.
+   - **Session-start hooks and setup scripts** must never run generation
+     scripts. They only check that the toolchain and dependencies are
+     present.
+   - The CI workflows (`lean-build.yml`, `blueprint.yml`, `lean_ci.yml`)
+     run generation as part of the automated pipeline — that is CI-only
+     behavior and must not be replicated in local agent workflows.
+
+## Proactive error detection → unit tests
+
+Whenever the editor encounters or causes a potential error, it should:
+
+1. **Identify testable invariants** — e.g., "this JSON must always have field X",
+   "this \lean{} tag must resolve", "this label must match its env type".
+2. **Ask the user**: "I noticed [error]. Should I write a unit test to prevent
+   this in the future?" (multiple-choice: Yes / No / Just fix it)
+3. **If yes**: delegate to the `test-engineer` skill to write a regression test
+   in `scripts/tests/`. The test uses `bun:test` and TypeScript.
+4. **Fix the error** regardless of whether a test is written.
+
+Examples of testable errors the editor should watch for:
+- JSON schema violations (proof-objects.json missing fields)
+- \lean{Decl} tags that don't resolve to Lean source
+- Label prefix mismatches (def: on an example environment)
+- Config files missing required fields
+- Build scripts producing invalid output
+- Lean files without imports
+- \leanok without \lean{}
+
+**This behavior persists across sessions** — the editor always watches for
+testable errors and asks before writing tests.
 
 ## Interaction style
 

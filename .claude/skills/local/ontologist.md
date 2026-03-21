@@ -18,6 +18,29 @@ have a unique type assignment in the Lean type system.  The Ontologist
 detects ambiguities, maintains the formal glossary, and produces the
 machine-readable mapping file.
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **prefer MCP tools for type checking**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` for type mismatches | `lean_diagnostic_messages` | Structured error messages per file |
+| Manual type checking | `lean_hover_info` | Hover over any symbol to see its resolved type |
+| Finding existing definitions | `lean_local_search` | Search project + stdlib for a term |
+| Checking if a type exists in Mathlib | `lean_leansearch` / `lean_loogle` | "TopologicalGroup" → exact Mathlib location |
+| Finding where a type is declared | `lean_declaration_file` | Jump to source of any symbol |
+| Import path guessing | `lean_completions` | Auto-complete `import Mathlib.` paths |
+
+### MCP-enhanced consistency loop
+
+When `lean_diagnostic_messages` reports a type mismatch:
+
+1. **`lean_hover_info`** on the mismatched symbol → see expected vs actual type
+2. **`lean_leansearch`** for the intended type → find correct Mathlib import
+3. **`lean_declaration_file`** → read the actual definition to understand the mismatch
+4. Update `glossary.json` with the corrected type assignment
+5. Regenerate `Glossary.lean` and re-check with `lean_diagnostic_messages`
+
 ## When to Use This Skill
 
 - When new mathematical terms or definitions are added to chapter files

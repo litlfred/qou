@@ -1,0 +1,228 @@
+#!/usr/bin/env bun
+/**
+ * Export content tree to static JSON for the SPA viewer.
+ *
+ * Walks the paper manifest, resolves all chapters/sections/blocks,
+ * reads .md and .lean files, and writes a single paper.json.
+ *
+ * Usage:
+ *   bun run content/pipeline/export-json.ts
+ *   bun run content/pipeline/export-json.ts --paper quantum-observable-universe
+ *   bun run content/pipeline/export-json.ts --out build/viewer
+ *
+ * Output:
+ *   <out>/paper.json — full paper tree with all content inlined
+ *
+ * @module content/pipeline/export-json
+ */
+
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from "fs";
+import { join, resolve } from "path";
+import { createHash } from "crypto";
+import type {
+  Paper,
+  Chapter,
+  Section,
+  Block,
+  RenderedAsset,
+  LeanRef,
+} from "../schema/types";
+
+const REPO_ROOT = resolve(import.meta.dir, "../..");
+const CONTENT_ROOT = join(REPO_ROOT, "content");
+const LEAN_ROOT = join(REPO_ROOT, "lean");
+
+const args = process.argv.slice(2);
+function argVal(name: string, fallback: string): string {
+  const idx = args.indexOf(`--${name}`);
+  return idx >= 0 && args[idx + 1] ? args[idx + 1] : fallback;
+}
+
+const PAPER_NAME = argVal("paper", "quantum-observable-universe");
+const OUT_DIR = argVal("out", join(REPO_ROOT, "build", "viewer"));
+const PAPER_DIR = join(CONTENT_ROOT, PAPER_NAME);
+
+// ── Types for export ─────────────────────────────────────────────
+
+interface ExportedBlock {
+  rootName: string;
+  kind: string;
+  label?: string;
+  title?: string;
+  uses?: string[];
+  lean?: LeanRef & { source?: string };
+  status?: string;
+  hasProof?: boolean;
+  tex?: string;
+  caption?: string;
+  rendered?: RenderedAsset[];
+  md: string;
+  mdModified: string;
+  meta?: Record<string, unknown>;
+}
+
+interface ExportedSection {
+  title: string;
+  label?: string;
+  blocks: ExportedBlock[];
+}
+
+interface ExportedChapter {
+  number: number;
+  title: string;
+  label?: string;
+  sections: ExportedSection[];
+}
+
+interface ExportedPaper {
+  title: string;
+  authors: string[];
+  date?: string;
+  chapters: ExportedChapter[];
+  meta?: Record<string, unknown>;
+  _hash: string;
+  _built: string;
+}
+
+// ── Helpers ──────────────────────────────────────────────────────
+
+function readLeanSource(leanRef: LeanRef | undefined): string | undefined {
+  if (!leanRef) return undefined;
+
+  // Try lean.file path
+  if (leanRef.file) {
+    const leanPath = join(LEAN_ROOT, leanRef.file);
+    if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
+  }
+
+  return undefined;
+}
+
+function readRenderedAssets(
+  rendered: RenderedAsset[] | undefined,
+  blockDir: string,
+  outDir: string,
+): RenderedAsset[] | undefined {
+  if (!rendered || rendered.length === 0) return undefined;
+
+  return rendered.map((asset) => {
+    const srcPath = join(blockDir, asset.url);
+    if (existsSync(srcPath)) {
+      // Copy SVG/PNG to output dir and adjust URL
+      const outPath = join(outDir, "assets", asset.url);
+      const outAssetDir = join(outPath, "..");
+      mkdirSync(outAssetDir, { recursive: true });
+      writeFileSync(outPath, readFileSync(srcPath));
+      return { ...asset, url: `assets/${asset.url}` };
+    }
+    return asset;
+  });
+}
+
+// ── Main ─────────────────────────────────────────────────────────
+
+async function main() {
+  console.log(`Exporting: ${PAPER_NAME}`);
+
+  const paperPath = join(PAPER_DIR, `${PAPER_NAME}.ts`);
+  const paper: Paper = (await import(paperPath)).default;
+
+  const chapters: ExportedChapter[] = [];
+
+  for (const chRef of paper.chapters) {
+    const chDir = join(PAPER_DIR, chRef.dir);
+    const chPath = join(chDir, `${chRef.dir}.ts`);
+    const ch: Chapter = (await import(chPath)).default;
+
+    const sections: ExportedSection[] = [];
+
+    for (const sec of ch.sections) {
+      if ("name" in sec && !("blocks" in sec)) continue;
+      const section = sec as Section;
+      const blocks: ExportedBlock[] = [];
+
+      for (const rootName of section.blocks) {
+        const tsPath = join(chDir, `${rootName}.ts`);
+        const mdPath = join(chDir, `${rootName}.md`);
+
+        try {
+          const block: Block = (await import(tsPath)).default;
+          const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
+          const mdStat = existsSync(mdPath) ? statSync(mdPath) : null;
+          const leanRef = "lean" in block ? (block.lean as LeanRef | undefined) : undefined;
+          const leanSource = readLeanSource(leanRef);
+          const rendered = "rendered" in block
+            ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
+            : undefined;
+
+          blocks.push({
+            rootName,
+            kind: block.kind,
+            label: "label" in block ? block.label : undefined,
+            title: "title" in block ? block.title : undefined,
+            uses: "uses" in block ? block.uses : undefined,
+            lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
+            status: "status" in block ? block.status : undefined,
+            hasProof: "hasProof" in block ? block.hasProof : undefined,
+            tex: "tex" in block ? block.tex : undefined,
+            caption: "caption" in block ? block.caption : undefined,
+            rendered,
+            md,
+            mdModified: mdStat ? mdStat.mtime.toISOString() : "",
+            meta: "meta" in block ? block.meta : undefined,
+          });
+        } catch (e) {
+          blocks.push({
+            rootName,
+            kind: "error",
+            md: `Failed to load: ${e instanceof Error ? e.message : String(e)}`,
+            mdModified: "",
+          });
+        }
+      }
+
+      sections.push({ title: section.title, label: section.label, blocks });
+    }
+
+    chapters.push({
+      number: ch.number,
+      title: ch.title,
+      label: ch.label,
+      sections,
+    });
+  }
+
+  const result: Omit<ExportedPaper, "_hash"> = {
+    title: paper.title,
+    authors: paper.authors,
+    date: paper.date,
+    chapters,
+    meta: paper.meta,
+    _built: new Date().toISOString(),
+  };
+
+  const hash = createHash("sha256")
+    .update(JSON.stringify(result))
+    .digest("hex")
+    .slice(0, 12);
+
+  const exported: ExportedPaper = { ...result, _hash: hash };
+
+  const json = JSON.stringify(exported, null, 2);
+
+  // Write to build dir
+  mkdirSync(OUT_DIR, { recursive: true });
+  const outPath = join(OUT_DIR, "paper.json");
+  writeFileSync(outPath, json);
+  console.log(`  → ${outPath} (${(json.length / 1024).toFixed(1)} KB)`);
+
+  // Also write paper.js into viewer/ for file:// access (no fetch needed)
+  const viewerDir = join(REPO_ROOT, "viewer");
+  if (existsSync(viewerDir)) {
+    const jsPath = join(viewerDir, "paper.js");
+    writeFileSync(jsPath, `// Auto-generated by export-json.ts — do not edit\nwindow.__PAPER_DATA__ = ${json};\n`);
+    console.log(`  → ${jsPath} (file:// compatible)`);
+  }
+}
+
+main();

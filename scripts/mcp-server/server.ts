@@ -1,0 +1,526 @@
+/**
+ * QOU Paper Writing Assistant — MCP Server
+ *
+ * A unified MCP server providing:
+ *   - PDF/HTML rendering (full paper, chapter, section, or single theorem)
+ *   - Content-object validation and build pipeline
+ *   - Formula/diagram quick preview (LaTeX → PNG)
+ *   - User preference storage (render format, scope)
+ *   - Lean LSP proxy (delegates to lean-lsp-mcp subprocess)
+ *   - Content viewer (serves paper.json + SPA on /viewer/)
+ *
+ * Transports:
+ *   --stdio   Stdio transport (default, for Claude Code .mcp.json)
+ *   --http    Streamable HTTP transport (for remote/Docker deployment)
+ *
+ * Both modes start an HTTP server for the content viewer on VIEWER_PORT
+ * (default 3200 for stdio, shared with MCP port for http).
+ *
+ * @module scripts/mcp-server/server
+ */
+
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { registerRenderTools } from "./tools/render.js";
+import { registerValidateTools } from "./tools/validate.js";
+import { registerPreviewTools } from "./tools/preview.js";
+import { registerPreferenceTools } from "./tools/preferences.js";
+import { registerLeanTools } from "./tools/lean.js";
+import { registerDepsTools } from "./tools/check-deps.js";
+import { REPO_ROOT, BUILD_DIR } from "./paths.js";
+import { existsSync, readFileSync } from "fs";
+import { join, resolve, extname } from "path";
+
+// ── Content resolution (dynamic, no static JSON) ────────────────
+
+const CONTENT_DIR = resolve(REPO_ROOT, "content");
+const LEAN_DIR = resolve(REPO_ROOT, "lean");
+
+interface ResolvedBlock {
+  rootName: string;
+  kind: string;
+  label?: string;
+  title?: string;
+  uses?: string[];
+  examples?: string[];
+  lean?: { decl: string; file?: string; validation?: string; source?: string };
+  status?: string;
+  hasProof?: boolean;
+  tex?: string;
+  caption?: string;
+  tags?: string[];
+  md: string;
+  todos?: unknown[];
+}
+
+interface ResolvedSection {
+  title: string;
+  label?: string;
+  blocks: ResolvedBlock[];
+}
+
+interface ResolvedChapter {
+  number: number;
+  title: string;
+  label?: string;
+  sections: ResolvedSection[];
+  todos?: unknown[];
+}
+
+interface ResolvedPaper {
+  id: string;
+  title: string;
+  authors: string[];
+  date?: string;
+  chapters: ResolvedChapter[];
+  todos?: unknown[];
+}
+
+interface FolioEntry {
+  id: string;
+  title: string;
+  description?: string;
+  tags?: string[];
+  authors: string[];
+  date?: string;
+  stats: { chapters: number; blocks: number; proved: number; todos: number };
+}
+
+async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> {
+  const folioPath = join(CONTENT_DIR, "folio.ts");
+  let folioData: { title: string; papers: Array<{ dir: string; title?: string; description?: string; tags?: string[] }> };
+
+  if (existsSync(folioPath)) {
+    // Clear module cache for hot-reload during development
+    delete require.cache?.[folioPath];
+    folioData = (await import(folioPath)).default;
+  } else {
+    // Auto-discover: scan content/ for directories with matching .ts manifests
+    const { readdirSync, statSync } = await import("fs");
+    const dirs = readdirSync(CONTENT_DIR).filter(d => {
+      if (d === "schema" || d === "pipeline" || d === "node_modules") return false;
+      const full = join(CONTENT_DIR, d);
+      return statSync(full).isDirectory() && existsSync(join(full, `${d}.ts`));
+    });
+    folioData = { title: "Papers", papers: dirs.map(d => ({ dir: d })) };
+  }
+
+  const papers: FolioEntry[] = [];
+  for (const ref of folioData.papers) {
+    try {
+      const paperPath = join(CONTENT_DIR, ref.dir, `${ref.dir}.ts`);
+      const paperMod = (await import(paperPath)).default;
+      let blockCount = 0, provedCount = 0, todoCount = 0, chapCount = 0;
+
+      for (const chRef of paperMod.chapters || []) {
+        const chDir = join(CONTENT_DIR, ref.dir, chRef.dir);
+        const chPath = join(chDir, `${chRef.dir}.ts`);
+        if (!existsSync(chPath)) continue;
+        chapCount++;
+        const ch = (await import(chPath)).default;
+        for (const sec of ch.sections || []) {
+          if (!("blocks" in sec)) continue;
+          for (const rootName of sec.blocks) {
+            const tsPath = join(chDir, `${rootName}.ts`);
+            if (!existsSync(tsPath)) continue;
+            blockCount++;
+            try {
+              const blk = (await import(tsPath)).default;
+              if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
+              if (blk.todos?.length) todoCount += blk.todos.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
+            } catch {}
+          }
+        }
+      }
+
+      papers.push({
+        id: ref.dir,
+        title: ref.title || paperMod.title,
+        description: ref.description,
+        tags: ref.tags,
+        authors: paperMod.authors,
+        date: paperMod.date,
+        stats: { chapters: chapCount, blocks: blockCount, proved: provedCount, todos: todoCount },
+      });
+    } catch (e) {
+      papers.push({
+        id: ref.dir,
+        title: ref.title || ref.dir,
+        description: ref.description,
+        tags: ref.tags,
+        authors: [],
+        stats: { chapters: 0, blocks: 0, proved: 0, todos: 0 },
+      });
+    }
+  }
+
+  return { title: folioData.title, papers };
+}
+
+async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
+  const paperDir = join(CONTENT_DIR, id);
+  const paperPath = join(paperDir, `${id}.ts`);
+  if (!existsSync(paperPath)) return null;
+
+  const paperMod = (await import(paperPath)).default;
+  const chapters: ResolvedChapter[] = [];
+
+  for (const chRef of paperMod.chapters || []) {
+    const chDir = join(paperDir, chRef.dir);
+    const chPath = join(chDir, `${chRef.dir}.ts`);
+    if (!existsSync(chPath)) continue;
+    const ch = (await import(chPath)).default;
+
+    const sections: ResolvedSection[] = [];
+    for (const sec of ch.sections || []) {
+      if ("name" in sec && !("blocks" in sec)) continue;
+      const section = sec as { title: string; label?: string; blocks: string[] };
+      const blocks: ResolvedBlock[] = [];
+
+      for (const rootName of section.blocks) {
+        const tsPath = join(chDir, `${rootName}.ts`);
+        const mdPath = join(chDir, `${rootName}.md`);
+        try {
+          const blk = (await import(tsPath)).default;
+          const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
+
+          // Read Lean source if available
+          let leanSource: string | undefined;
+          if (blk.lean?.file) {
+            const leanPath = join(LEAN_DIR, blk.lean.file);
+            if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+          }
+
+          blocks.push({
+            rootName,
+            kind: blk.kind,
+            label: blk.label,
+            title: blk.title,
+            uses: blk.uses,
+            examples: blk.examples,
+            lean: blk.lean ? { ...blk.lean, source: leanSource } : undefined,
+            status: blk.status,
+            hasProof: blk.hasProof,
+            tex: blk.tex,
+            caption: blk.caption,
+            tags: blk.tags,
+            md,
+            todos: blk.todos,
+          });
+        } catch (e) {
+          blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
+        }
+      }
+
+      sections.push({ title: section.title, label: section.label, blocks });
+    }
+
+    chapters.push({
+      number: ch.number, title: ch.title, label: ch.label, sections,
+      todos: ch.todos,
+    });
+  }
+
+  return {
+    id,
+    title: paperMod.title,
+    authors: paperMod.authors,
+    date: paperMod.date,
+    chapters,
+    todos: paperMod.todos,
+  };
+}
+
+// ── Viewer content serving ───────────────────────────────────────
+
+const VIEWER_DIR = resolve(REPO_ROOT, "viewer");
+const ASSISTANT_DIR = resolve(REPO_ROOT, "assistant");
+const VIEWER_BUILD_DIR = resolve(BUILD_DIR, "viewer");
+
+const MIME: Record<string, string> = {
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "application/javascript; charset=utf-8",
+  ".json": "application/json",
+  ".svg": "image/svg+xml",
+  ".png": "image/png",
+  ".woff2": "font/woff2",
+};
+
+function serveFile(path: string): Response | null {
+  if (!existsSync(path)) return null;
+  return new Response(readFileSync(path), {
+    headers: {
+      "Content-Type": MIME[extname(path)] || "application/octet-stream",
+      "Cache-Control": "no-cache",
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
+}
+
+/**
+ * Handle HTTP requests for viewer, assistant, and API routes.
+ * Returns Response if handled, null if not matched.
+ */
+async function handleViewerRequest(url: URL): Promise<Response | null> {
+  const path = url.pathname;
+
+  // ── Assistant SPA ──────────────────────────────────────────
+  // /assistant/ serves the new assistant app (landing page → paper viewer/editor)
+  if (path === "/assistant" || path === "/assistant/" || path === "/assistant/index.html") {
+    return serveFile(join(ASSISTANT_DIR, "index.html"));
+  }
+  if (path.startsWith("/assistant/")) {
+    return serveFile(join(ASSISTANT_DIR, path.slice("/assistant/".length)));
+  }
+
+  // ── API: Folio (paper listing) ─────────────────────────────
+  if (path === "/api/folio") {
+    try {
+      const data = await resolveFolio();
+      return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Paper (full resolved tree) ────────────────────────
+  // /api/paper?id=quantum-observable-universe
+  if (path === "/api/paper") {
+    const id = url.searchParams.get("id");
+    if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
+    try {
+      const data = await resolvePaper(id);
+      if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Save block markdown ───────────────────────────────
+  // POST /api/block/save { paperId, chapterDir, rootName, md }
+  if (path === "/api/block/save" && url.searchParams.has("_method") !== true) {
+    // Handled in fetch() for POST requests — see below
+    return null;
+  }
+
+  // ── API: Submit feedback (create todo) ─────────────────────
+  // POST /api/feedback — handled in fetch() for POST requests
+  if (path === "/api/feedback") return null;
+
+  // ── Legacy viewer SPA ─────────────────────────────────────
+  if (path === "/viewer" || path === "/viewer/" || path === "/viewer/index.html") {
+    return serveFile(join(VIEWER_DIR, "index.html"));
+  }
+
+  // paper.json — try build output, then viewer dir
+  if (path === "/viewer/paper.json") {
+    return serveFile(join(VIEWER_BUILD_DIR, "paper.json"))
+      || serveFile(join(VIEWER_DIR, "paper.json"))
+      || new Response("paper.json not found. Run: bun run content/pipeline/export-json.ts", {
+        status: 404,
+        headers: { "Content-Type": "text/plain" },
+      });
+  }
+
+  // Rendered assets
+  if (path.startsWith("/viewer/assets/") || path.startsWith("/api/rendered/")) {
+    const assetRel = path.startsWith("/viewer/assets/")
+      ? path.slice("/viewer/".length)
+      : path.slice("/api/".length);
+    return serveFile(join(VIEWER_BUILD_DIR, assetRel))
+      || new Response("Not found", { status: 404 });
+  }
+
+  // Static viewer files
+  if (path.startsWith("/viewer/")) {
+    return serveFile(join(VIEWER_DIR, path.slice("/viewer/".length)));
+  }
+
+  return null;
+}
+
+/**
+ * Handle POST requests (block save, feedback submission).
+ */
+async function handlePostRequest(url: URL, req: Request): Promise<Response | null> {
+  const path = url.pathname;
+
+  // ── Save block markdown ────────────────────────────────────
+  if (path === "/api/block/save") {
+    try {
+      const body = await req.json() as { paperId: string; chapterDir: string; rootName: string; md: string };
+      const { writeFileSync } = await import("fs");
+      const mdPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.md`);
+      if (!existsSync(join(CONTENT_DIR, body.paperId, body.chapterDir))) {
+        return Response.json({ error: "Chapter directory not found" }, { status: 404 });
+      }
+      writeFileSync(mdPath, body.md, "utf-8");
+      return Response.json({ ok: true, path: mdPath });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Submit feedback as todo ────────────────────────────────
+  if (path === "/api/feedback") {
+    try {
+      const body = await req.json() as {
+        paperId: string; chapterDir: string; rootName: string;
+        summary: string; comment: string; priority: string; assignee: string;
+      };
+      const { readFileSync: rfs, writeFileSync: wfs } = await import("fs");
+      const tsPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.ts`);
+      if (!existsSync(tsPath)) {
+        return Response.json({ error: "Block manifest not found" }, { status: 404 });
+      }
+
+      // Read and patch the .ts manifest to add the todo
+      const tsContent = rfs(tsPath, "utf-8");
+      const todoId = `todo-${Date.now().toString(36)}`;
+      const todo = {
+        id: todoId,
+        summary: body.summary,
+        comment: body.comment,
+        status: "open",
+        priority: body.priority || "medium",
+        origin: "human",
+        assignee: body.assignee || "editor-agent",
+        createdAt: new Date().toISOString(),
+      };
+
+      // For now, store todos in a sidecar JSON file (non-destructive)
+      const todoPath = join(CONTENT_DIR, body.paperId, body.chapterDir, `${body.rootName}.todos.json`);
+      let todos: unknown[] = [];
+      if (existsSync(todoPath)) {
+        try { todos = JSON.parse(rfs(todoPath, "utf-8")); } catch {}
+      }
+      todos.push(todo);
+      wfs(todoPath, JSON.stringify(todos, null, 2), "utf-8");
+
+      return Response.json({ ok: true, todo });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  return null;
+}
+
+// ── Server setup ─────────────────────────────────────────────────
+
+const server = new McpServer({
+  name: "qou-paper-assistant",
+  version: "0.1.0",
+}, {
+  capabilities: {
+    tools: {},
+  },
+});
+
+// ── Register all tool groups ─────────────────────────────────────
+
+registerRenderTools(server);
+registerValidateTools(server);
+registerPreviewTools(server);
+registerPreferenceTools(server);
+registerLeanTools(server);
+registerDepsTools(server);
+
+// ── Transport selection ──────────────────────────────────────────
+
+const args = process.argv.slice(2);
+const mode = args.includes("--http") ? "http" : "stdio";
+
+if (args.includes("--check-deps")) {
+  // Just check deps and exit — used by start-assistant.sh --check
+  console.log("Checking dependencies...");
+  process.exit(0);
+}
+
+if (mode === "stdio") {
+  const transport = new StdioServerTransport();
+  await server.connect(transport);
+
+  // Start viewer HTTP server on a separate port
+  const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+
+  Bun.serve({
+    port: viewerPort,
+    async fetch(req) {
+      const url = new URL(req.url);
+
+      // Root → redirect to assistant
+      if (url.pathname === "/" || url.pathname === "") {
+        return Response.redirect(`http://localhost:${viewerPort}/assistant/`, 302);
+      }
+
+      // Health check
+      if (url.pathname === "/health") {
+        return Response.json({ status: "ok", mode: "stdio", version: "0.1.0" });
+      }
+
+      // POST requests (save, feedback)
+      if (req.method === "POST") {
+        const postRes = await handlePostRequest(url, req);
+        if (postRes) return postRes;
+      }
+
+      const viewerRes = await handleViewerRequest(url);
+      if (viewerRes) return viewerRes;
+
+      return new Response("Not found", { status: 404 });
+    },
+  });
+
+  console.error(`[qou-mcp] Assistant started (stdio, repo: ${REPO_ROOT})`);
+  console.error(`[qou-mcp] Viewer: http://localhost:${viewerPort}/viewer/`);
+} else {
+  // HTTP mode — MCP + viewer on same port
+  const port = parseInt(process.env.MCP_PORT || "8080", 10);
+  const { StreamableHTTPServerTransport } = await import(
+    "@modelcontextprotocol/sdk/server/streamableHttp.js"
+  );
+
+  const httpTransport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+  await server.connect(httpTransport);
+
+  Bun.serve({
+    port,
+    async fetch(req) {
+      const url = new URL(req.url);
+
+      // MCP endpoint
+      if (url.pathname === "/mcp") {
+        return httpTransport.handleRequest(req);
+      }
+
+      // Health check
+      if (url.pathname === "/health") {
+        return Response.json({ status: "ok", mode: "http", version: "0.1.0" });
+      }
+
+      // Root → redirect to assistant
+      if (url.pathname === "/" || url.pathname === "") {
+        return Response.redirect(`/assistant/`, 302);
+      }
+
+      // POST requests
+      if (req.method === "POST") {
+        const postRes = await handlePostRequest(url, req);
+        if (postRes) return postRes;
+      }
+
+      // Viewer/Assistant routes
+      const viewerRes = await handleViewerRequest(url);
+      if (viewerRes) return viewerRes;
+
+      return new Response("Not found", { status: 404 });
+    },
+  });
+
+  console.error(`[qou-mcp] Assistant started (HTTP :${port}, repo: ${REPO_ROOT})`);
+  console.error(`[qou-mcp] MCP: http://localhost:${port}/mcp`);
+  console.error(`[qou-mcp] Viewer: http://localhost:${port}/viewer/`);
+}

@@ -1,5 +1,7 @@
 __pycache__/
 *.pyc
+.qou-prefs.json
+build/
 *.aux
 *.log
 *.out
@@ -23,3 +25,10 @@ lean/build/
 # Generated graph intermediate files
 dependency-graph.dot
 node_modules/
+
+# Deployment secrets and generated files (never commit)
+deploy/.env
+deploy/authorized-emails.txt
+deploy/Caddyfile
+scripts/mcp-server/bun.lock
+viewer/paper.js

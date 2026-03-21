@@ -22,9 +22,41 @@ the manuscript and machine-checkable formal proofs.
 - When generating or updating Lean stub files
 - When adding `\lean{}`, `\leanok`, or `\uses{}` macros to LaTeX
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, **prefer MCP tools over shell commands**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + parse output | `lean_diagnostic_messages` | Structured errors/warnings per file |
+| Manual file reading for structure | `lean_file_outline` | Concise view of imports + declarations with type sigs |
+| `lake build` for sorry count | `lean_diagnostic_messages` | Filter for sorry warnings directly |
+| Manual cross-checking declarations | `lean_hover_info` | Verify a `\lean{QOU.X}` reference resolves |
+| Manual import guessing | `lean_completions` | Auto-complete import paths |
+| Checking axiom dependencies | `lean_verify` | Returns axioms used by a theorem + source scan |
+
+### MCP-first stub generation
+
+After generating a stub file:
+
+1. **`lean_diagnostic_messages`** on the new file → catch type errors immediately
+2. **`lean_file_outline`** → verify the declaration structure matches expectations
+3. **`lean_hover_info`** on each imported symbol → confirm types resolve
+4. **`lean_verify`** on completed proofs → check axiom soundness
+
+## Important: Generation is agent-only
+
+The generation scripts below are **proof-writing tools**, not build steps.
+
+- **Do not** run them as part of setup, session start, or routine builds.
+- **Do not** run them before `lake build` — build compiles what exists.
+- **Only** invoke them when the author requests new formalization work
+  (new stubs, new extractions, new theorem statements).
+- CI workflows run them automatically — that is CI-only behavior.
+
 ## Workflow
 
-### 1. Extract proof objects from LaTeX
+### 1. Extract proof objects from LaTeX (agent-only)
 
 ```bash
 python .github/scripts/extract_proof_objects.py
@@ -33,7 +65,7 @@ python .github/scripts/extract_proof_objects.py
 This parses all `chapters/*.tex` files for `\begin{theorem}`, `\begin{definition}`,
 etc. and outputs `proof-objects.json`.
 
-### 2. Generate Lean stubs
+### 2. Generate Lean stubs (agent-only)
 
 ```bash
 python .github/scripts/generate_lean_stubs.py

@@ -25,9 +25,49 @@ to a proof writer for guidance.
 - When onboarding a new chapter and filling in proof obligations
 - Periodically as a "proof debt" sweep
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, it **transforms every phase** of triage:
+
+| Phase | Old workflow | MCP tool | Improvement |
+|-------|-------------|----------|-------------|
+| Inventory | `grep sorry` + manual classification | `lean_diagnostic_messages` | Structured sorry warnings with file/line/type |
+| Goal reading | Manual file reading | `lean_goal` | Live goal state at each sorry position |
+| Mathlib search | `Grep` on Mathlib source | `lean_leansearch` | Natural language: "lemma about positivity of norms" |
+| Type-sig search | Manual `exact?` | `lean_loogle` | Type signature search: "_ → 0 ≤ _" |
+| Tactic attempts | Edit → `lake build` → repeat | `lean_multi_attempt` | Try 5+ tactics at once, get goal states for each |
+| "Try This" | Read `lake build` output | `lean_code_actions` | Get resolved edits directly |
+| Verification | `lake build` | `lean_diagnostic_messages` | Per-file, no full rebuild |
+| Axiom check | `axiom_report.py` | `lean_verify` | Axioms used by a specific theorem |
+| Similar lemmas | Grep for conclusion type | `lean_local_search` | Ripgrep-powered search across project + stdlib |
+
+### MCP-first triage loop (replaces Phases 3–4)
+
+For each sorry site:
+
+```
+1. lean_goal          → read the goal
+2. lean_multi_attempt → try [simp, ring, linarith, aesop, positivity, omega]
+3. If all fail:
+   a. lean_leansearch  → "what lemma proves <goal in words>?"
+   b. lean_loogle      → search by type signature of the goal
+   c. lean_code_actions → check for "Try This" suggestions
+4. If a tactic works:
+   a. Apply the edit
+   b. lean_diagnostic_messages → verify no new errors
+   c. lean_verify → check axiom soundness
+5. If nothing works:
+   a. lean_local_search for similar declarations in the project
+   b. Escalate with goal state + failed attempts + similar lemmas
+```
+
+This loop replaces the edit-build-check cycle with **interactive feedback**
+that doesn't require a full `lake build` between attempts.
+
 ## Prerequisites
 
-- `lake build` can be run (even if it produces sorry warnings)
+- `lake build` should be run once before starting (to populate oleans)
+- lean-lsp-mcp MCP server configured (`.mcp.json`)
 - Mathlib4 and any project-specific libraries are in `lakefile.lean`
 - The Lean files follow QOU naming conventions
 
@@ -35,7 +75,7 @@ to a proof writer for guidance.
 
 ### Phase 1 — Inventory
 
-1. **Grep for `sorry`** across all `.lean` files under `lean/QOU/`
+1. **`lean_diagnostic_messages`** on each file (or `grep sorry` as fallback)
 2. For each hit, classify into one of:
    - **Type stub**: `def X : Type* := sorry` — needs a concrete type or structure
    - **Proof stub**: `theorem/lemma ... := sorry` or `by sorry` — needs a proof
@@ -71,18 +111,22 @@ For each sorry site, in priority order:
 
 1. **Read the declaration** and its surrounding context (10 lines above/below)
 2. **Identify the goal type** — what needs to be proved or constructed
-3. **Search mathlib** for relevant lemmas:
-   - Use `Grep` to search mathlib source for key terms in the goal
-   - Check `Mathlib.Tactic` for applicable automation (`norm_num`, `positivity`,
-     `field_simp`, `ring`, `linarith`, `simp`, `omega`)
-   - Look for `exact?`, `apply?`-style matches by examining lemma signatures
-4. **Attempt a proof**:
-   - Start with the simplest tactic chain: `by simp`, `by ring`, `by linarith`
-   - If those fail, try `unfold ...; simp/ring/linarith`
-   - For positivity goals: `by positivity` or `by linarith` with explicit bounds
+3. **Search for relevant lemmas** (MCP preferred):
+   - **`lean_leansearch`** with a natural language description of the goal
+   - **`lean_loogle`** with the type signature of the goal
+   - **`lean_local_search`** for similar declarations in the project
+   - Fallback: `Grep` on Mathlib source for key terms
+4. **Attempt a proof** (MCP preferred):
+   - **`lean_multi_attempt`** with all candidate tactics at once:
+     `[simp, ring, linarith, positivity, omega, norm_num, aesop]`
+   - **`lean_code_actions`** on the sorry line for "Try This" suggestions
+   - For positivity: `by positivity` or `by linarith` with explicit bounds
    - For approximation: `by norm_num` or `by native_decide`
    - For algebraic: `by ring` or `by field_simp; ring`
-5. **Test the proof** by running `lake build` on the specific file
+   - Fallback: edit + `lake build` cycle
+5. **Test the proof**:
+   - **`lean_diagnostic_messages`** on the file (fast, per-file)
+   - Fallback: `lake build` on the specific file
 6. **Record the outcome**:
    - **Success**: mark as resolved, move to next
    - **Failure**: capture the error message, proceed to Phase 4

@@ -1,0 +1,7 @@
+# Authorized email addresses for Lean MCP server access.
+# One email per line. Only these users can authenticate via Google OAuth.
+#
+# Copy to authorized-emails.txt and add your emails.
+# NEVER commit authorized-emails.txt to git.
+#
+litlfred@gmail.com

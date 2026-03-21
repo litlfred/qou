@@ -1,0 +1,87 @@
+# Remote Lean MCP Server Deployment
+#
+# All config is driven by lean-mcp.config.json at the repo root.
+# Run ./deploy/generate-config.sh to produce .env + authorized-emails.txt.
+#
+# Three services:
+#   1. caddy:        Reverse proxy + automatic TLS (Let's Encrypt)
+#   2. lean-mcp:     Lean LSP MCP server (Streamable HTTP)
+#   3. oauth2-proxy: Google OAuth + email whitelist
+#
+# Auto-update is handled by self-update.sh via cron (not a Docker service).
+# It polls git + GHCR every minute and bounces services when needed.
+#
+# Full flow:
+#   Internet → Caddy (:443, TLS) → oauth2-proxy (:4180) → lean-mcp (:8080)
+#
+# Usage:
+#   ./deploy/generate-config.sh     # create .env from lean-mcp.config.json
+#   cd deploy && docker compose up -d
+#
+# Auth:
+#   Browser:      HTTPS → Google OAuth via oauth2-proxy → lean-mcp
+#   API/CLI/CI:   HTTPS → Bearer token header → Caddy → lean-mcp (direct)
+
+services:
+  # ── Caddy: automatic HTTPS + reverse proxy ───────────────────────
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - oauth2-proxy
+      - lean-mcp
+
+  # ── Lean MCP Server ──────────────────────────────────────────────
+  lean-mcp:
+    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest
+    container_name: lean-mcp
+    restart: unless-stopped
+    environment:
+      - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
+    expose:
+      - "${LEAN_MCP_INTERNAL_PORT:-8080}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/mcp"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── OAuth2 Proxy (Google OAuth + email whitelist) ────────────────
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:latest
+    container_name: oauth2-proxy
+    restart: unless-stopped
+    expose:
+      - "4180"
+    environment:
+      - OAUTH2_PROXY_PROVIDER=${OAUTH2_PROXY_PROVIDER:-google}
+      - OAUTH2_PROXY_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - OAUTH2_PROXY_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - OAUTH2_PROXY_COOKIE_SECRET=${COOKIE_SECRET}
+      - OAUTH2_PROXY_AUTHENTICATED_EMAILS_FILE=/etc/oauth2-proxy/authorized-emails.txt
+      - OAUTH2_PROXY_UPSTREAMS=http://lean-mcp:${LEAN_MCP_INTERNAL_PORT:-8080}/
+      - OAUTH2_PROXY_HTTP_ADDRESS=0.0.0.0:4180
+      - OAUTH2_PROXY_REVERSE_PROXY=true
+      - OAUTH2_PROXY_PASS_HOST_HEADER=true
+      - OAUTH2_PROXY_SET_XAUTHREQUEST=true
+      - OAUTH2_PROXY_SKIP_AUTH_ROUTES=^/health$
+      - OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
+      - OAUTH2_PROXY_API_ROUTES=^/mcp
+      - OAUTH2_PROXY_COOKIE_SECURE=true
+    volumes:
+      - ./authorized-emails.txt:/etc/oauth2-proxy/authorized-emails.txt:ro
+    depends_on:
+      lean-mcp:
+        condition: service_healthy
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -14,6 +14,28 @@ allowed-tools: Read Edit Bash Grep Glob Agent
 Review existing proofs in small connected clusters (2–4 declarations that
 depend on each other) and identify simplifications across them.
 
+## Lean MCP Tools (lean-lsp-mcp)
+
+When the MCP server is available, use it for analysis and alternatives:
+
+| Task | MCP tool | How it helps |
+|------|----------|-------------|
+| Identify slow tactics | `lean_profile_proof` | Pinpoint which tactic takes >1s |
+| Try simpler alternatives | `lean_multi_attempt` | Test shorter tactic chains at the same position |
+| Find shared lemmas | `lean_local_search` | Search project for reusable declarations |
+| Find Mathlib shortcuts | `lean_leansearch` / `lean_loogle` | May find a single Mathlib lemma replacing 10 lines |
+| Check "Try This" | `lean_code_actions` | `simp?` / `exact?` suggestions → minimal proof |
+| Verify after simplification | `lean_diagnostic_messages` | Quick check without full `lake build` |
+| Check axiom impact | `lean_verify` | Ensure simplification doesn't change axiom deps |
+
+### MCP-first simplification
+
+1. **`lean_profile_proof`** on each theorem in the cluster → identify slow spots
+2. **`lean_multi_attempt`** at slow tactic positions → try simpler alternatives
+3. **`lean_leansearch`** for the goal → maybe one Mathlib lemma replaces a chain
+4. **`lean_code_actions`** with `simp?` → get the minimal simp lemma set
+5. **`lean_verify`** after edit → confirm axiom soundness unchanged
+
 ## When to use
 
 - After a batch of proofs has been filled in or reviewed

@@ -22,7 +22,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       python3 python3-pip python3-venv \
       # LaTeX (scheme-small covers most needs; extras for latexpand)
       texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-      texlive-science texlive-extra-utils biber \
+      texlive-science texlive-extra-utils biber dvisvgm \
       # Document tools
       pandoc latexdiff graphviz \
       # Needed by some Lean/Lake native deps
