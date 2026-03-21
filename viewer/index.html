@@ -114,51 +114,183 @@
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
     /* Print styles — paper-like output */
     @media print{
-      /* Hide all chrome */
-      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,
-      .feedback-overlay,.feedback-panel,.hash,.decor,.lb,.blk-foot,.bl,
-      .sb-badge,.ex-toggle,.ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu{display:none!important}
+      /* ── Hide all UI chrome ─────────────────────────────── */
+      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,
+      .todo-inline,.blk-stub,.feedback-overlay,.feedback-panel,
+      .hash,.decor,.lb,.blk-foot,.bl,.sb-badge,.ex-toggle,
+      .ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu,
+      .bh-drop,.tags,.uses,.uref,.upnl{display:none!important}
       body.has-sidebar #app{margin-left:0!important}
 
-      /* Paper layout: narrow margins, compact font */
-      @page{margin:1.5cm 2cm;size:letter}
-      html{font-size:10pt}
-      body{font-family:'Crimson Pro','Times New Roman',serif!important;line-height:1.4;color:#000!important;background:#fff!important}
+      /* ── Page geometry (LaTeX article defaults) ─────────── */
+      @page{
+        size:letter;
+        margin:1in 1.25in;
+      }
+      @page:first{margin-top:1.5in}
+
+      /* ── Base typography — Latin Modern / Computer Modern ── */
+      html{font-size:11pt}
+      body{
+        font-family:'Latin Modern Roman','CMU Serif','Computer Modern','Crimson Pro','Times New Roman',serif!important;
+        line-height:1.45;
+        color:#000!important;
+        background:#fff!important;
+        orphans:3;widows:3;
+      }
       #app{max-width:100%!important;padding:0!important;margin:0!important}
 
-      /* Title page */
-      .hdr{text-align:center;padding:1.5rem 0 1rem;border-bottom:1px solid #999;margin-bottom:1.5rem}
-      .hdr h1{font-size:16pt;color:#000!important}
-      .hdr .au{font-size:11pt;color:#333!important}
-      .hdr .af,.hdr .dt{font-size:9pt;color:#555!important}
+      /* ── Title block (centered, LaTeX \maketitle style) ──── */
+      .hdr{
+        text-align:center;
+        padding:0;
+        border:none!important;
+        margin:0 0 2em 0;
+      }
+      .hdr h1{
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        margin-bottom:.6em;
+        line-height:1.25;
+      }
+      .hdr .au{
+        font-size:12pt;
+        font-weight:400;
+        color:#000!important;
+        margin-bottom:.2em;
+      }
+      .hdr .af{
+        font-size:10pt;
+        font-style:italic;
+        color:#444!important;
+        margin-bottom:.1em;
+      }
+      .hdr .dt{
+        font-family:inherit!important;
+        font-size:10pt;
+        color:#444!important;
+        margin-top:.4em;
+      }
 
-      /* Numbered chapters and sections */
-      .ch{break-before:page}
+      /* ── Chapters — each starts a new page ──────────────── */
+      .ch{break-before:page;margin-bottom:0}
       .ch:first-child{break-before:auto}
-      .ch-t{font-size:14pt;font-weight:700;color:#000!important;border-bottom:1px solid #999;margin-bottom:1rem;padding-bottom:.3rem}
+      .ch-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        border-bottom:none!important;
+        margin-bottom:1.2em;
+        padding-bottom:0;
+        text-align:left;
+      }
       .ch-t .n{color:#000!important;font-weight:700}
-      .sec-t{font-size:12pt;font-weight:600;color:#000!important;margin:1.2rem 0 .6rem}
-      .sec-n{display:inline!important;margin-right:.3em}
 
-      /* Environment blocks — traditional style */
-      .env{border:none!important;padding:0!important;margin:.6rem 0!important;background:none!important}
-      .bh{margin-bottom:.2rem}
-      .bk{font-size:9pt;font-weight:700;text-transform:none;color:#000!important;letter-spacing:0}
-      .bt{font-size:10pt;font-weight:400;font-style:italic;color:#000!important}
-      .bb{font-size:10pt}
-      .bb p{margin:.3em 0}
-      .bb li{margin:.2em 0}
+      /* ── Sections ───────────────────────────────────────── */
+      .sec-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:13pt;
+        font-weight:700;
+        color:#000!important;
+        margin:1.5em 0 .6em;
+      }
+      .sec-n{display:inline!important;margin-right:.4em}
 
-      /* Math */
+      /* ── Environment blocks — LaTeX theorem style ───────── */
+      .env{
+        border:none!important;
+        border-left:none!important;
+        padding:0!important;
+        margin:.8em 0!important;
+        background:none!important;
+        border-radius:0!important;
+      }
+
+      /* Block header: "Definition 3.1." or "Theorem 2.4 (Name)." */
+      .bh{
+        display:inline!important;
+        margin-bottom:0!important;
+        gap:0!important;
+      }
+      .bh-anchor{
+        display:inline!important;
+        gap:0!important;
+        text-decoration:none!important;
+      }
+      .bk{
+        font-size:11pt!important;
+        font-weight:700!important;
+        font-style:normal!important;
+        text-transform:capitalize!important;
+        color:#000!important;
+        letter-spacing:0!important;
+        display:inline!important;
+      }
+      .bk::after{content:'.'!important;display:inline!important}
+      .bt{
+        font-size:11pt!important;
+        font-weight:400!important;
+        font-style:normal!important;
+        color:#000!important;
+        display:inline!important;
+      }
+      /* Wrap title in parens for print: "Theorem (Name)." */
+      .bt::before{content:' ('!important}
+      .bt::after{content:')'!important}
+
+      /* Block body */
+      .bb{font-size:11pt!important;display:inline!important}
+      .bb p:first-child{display:inline!important;margin-top:0!important}
+      .bb p{margin:.4em 0!important}
+      .bb li{margin:.2em 0!important}
+
+      /* Theorem/prop/lemma/corollary body in italic (LaTeX convention) */
+      .env.theorem .bb,.env.proposition .bb,
+      .env.lemma .bb,.env.corollary .bb,
+      .env.conjecture .bb{font-style:italic}
+      /* But math inside italic env stays upright */
+      .env.theorem .katex,.env.proposition .katex,
+      .env.lemma .katex,.env.corollary .katex,
+      .env.conjecture .katex{font-style:normal}
+
+      /* Definition body stays roman (LaTeX convention) */
+      .env.definition .bb{font-style:normal}
+
+      /* Remark — smaller, roman */
+      .env.remark .bb{font-style:normal;font-size:10pt!important}
+      .env.remark .bk{font-style:italic!important;font-weight:400!important}
+
+      /* Proof blocks */
+      .env.proof .bk{font-style:italic!important;font-weight:400!important}
+      .env.proof .bk::after{content:'.'!important}
+      .env.proof .bb{font-style:normal}
+
+      /* ── Math ───────────────────────────────────────────── */
       .katex{color:#000!important}
-      .txb{padding:.4rem 0;margin:.4rem 0}
+      .katex-display{margin:.6em 0!important;padding:0!important}
+      .txb{padding:.3em 0!important;margin:.5em 0!important;text-align:center}
+      .txb img,.txb svg{filter:none!important;transform:scale(1)!important}
 
-      /* Links — no color in print */
+      /* ── Links — invisible in print ─────────────────────── */
       a{color:#000!important;text-decoration:none!important}
 
-      /* Break control */
+      /* ── Page break control ─────────────────────────────── */
       .env{break-inside:avoid}
       .section{break-inside:avoid-page}
+      h2,h3{break-after:avoid}
+
+      /* ── Prose blocks — clean inline flow ───────────────── */
+      .blk{margin:.6em 0!important}
+      .blk .bb p{text-indent:0;text-align:justify}
+
+      /* ── Lists ──────────────────────────────────────────── */
+      .bb ul{list-style:disc!important;padding-left:1.8em!important}
+      .bb ol{padding-left:1.8em!important}
+
+      /* ── Footnotes / references ─────────────────────────── */
+      .bb sup{font-size:.75em}
     }
     /* Reading mode — hide decorations */
     body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
@@ -325,7 +457,8 @@
     <button id="c-rd" title="Reading mode: hide decorations">reading</button>
     <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
-    <button id="c-pr" title="Print / Save as PDF">print</button>
+    <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
+    <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -428,10 +561,37 @@
     });
     btnRm.classList.add('on'); // remarks on by default
 
+    // Preview (browser print with LaTeX-styled CSS)
     document.getElementById('c-pr').addEventListener('click', () => {
       // Force-hydrate all lazy content before printing
       while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
       window.print();
+    });
+
+    // PDF (trigger server-side LaTeX pipeline)
+    document.getElementById('c-pdf').addEventListener('click', async () => {
+      const btn = document.getElementById('c-pdf');
+      const orig = btn.textContent;
+      btn.textContent = 'building...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('/api/render-pdf');
+        if (res.ok && res.headers.get('content-type')?.includes('pdf')) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          window.open(url, '_blank');
+          setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        } else {
+          const err = await res.json().catch(() => ({ error: 'Unknown error' }));
+          alert(`PDF build failed: ${err.error || 'See console'}\n\nCheck that latexmk is installed.`);
+          console.error('PDF render error:', err);
+        }
+      } catch (e) {
+        alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
+      } finally {
+        btn.textContent = orig;
+        btn.disabled = false;
+      }
     });
 
     // Sidebar hamburger toggle (narrow screens)

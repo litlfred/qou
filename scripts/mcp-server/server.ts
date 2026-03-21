@@ -394,6 +394,60 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return serveFile(join(VIEWER_DIR, "index.html"));
   }
 
+  // ── API: Render PDF (triggers content_build → latexmk) ────────
+  if (path === "/api/render-pdf") {
+    try {
+      const { spawnSync } = await import("child_process");
+      const { mkdirSync, readFileSync: rf } = await import("fs");
+
+      // Step 1: Build content objects → .tex chapters
+      const buildResult = spawnSync("bun", ["run", join(REPO_ROOT, "content/pipeline/build.ts")], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 60_000,
+      });
+
+      // Step 2: Run latexmk to produce PDF
+      if (!existsSync(BUILD_DIR)) mkdirSync(BUILD_DIR, { recursive: true });
+      const latexResult = spawnSync("latexmk", [
+        "-pdf",
+        `-jobname=quantum-observable-universe`,
+        `-output-directory=${BUILD_DIR}`,
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        MAIN_TEX,
+      ], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 300_000,
+      });
+
+      const pdfPath = join(BUILD_DIR, "quantum-observable-universe.pdf");
+      if (latexResult.status === 0 && existsSync(pdfPath)) {
+        const pdfData = rf(pdfPath);
+        return new Response(pdfData, {
+          headers: {
+            "Content-Type": "application/pdf",
+            "Content-Disposition": 'inline; filename="quantum-observable-universe.pdf"',
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      }
+
+      // Failed — return error details
+      const log = latexResult.stderr?.toString().slice(-3000) || "";
+      const buildLog = buildResult.stderr?.toString().slice(-1000) || "";
+      return Response.json({
+        error: "LaTeX compilation failed",
+        buildLog,
+        latexLog: log,
+      }, { status: 500 });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
   // Legacy paper.json — viewer now uses /api/paper directly
   if (path === "/viewer/paper.json") {
     return serveFile(join(VIEWER_BUILD_DIR, "paper.json"))
