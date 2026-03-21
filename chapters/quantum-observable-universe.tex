@@ -47,12 +47,135 @@ case).
 A quantum universe $(\mathcal{C}, A, \omega)$ over~$R$
 (Definition~\ref{def:quantum-universe}) is \emph{observable} if:
 \begin{enumerate}
-  \item the Frobenius form $\lambda$ on $A$ is non-degenerate; and
+  \item the Frobenius form $\lambda$ on $A$ is non-degenerate;
   \item $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$,
         where $\mathrm{Ad}(A)$ is the adjoint object
-        ($A$ with the conjugation action $\mathrm{Ad}(a)(b) = \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$ for $a, b \in A$).
+        ($A$ with the conjugation action $\mathrm{Ad}(a)(b) = \textstyle\sum a_{(1)}\, b\, S(a_{(2)})$ for $a, b \in A$); and
+  \item \emph{(categorical volume constraint)}
+        \label{def:categorical-volume-constraint}
+        let $V$ denote the fundamental object of~$\mathcal{C}$ (the simple
+        object of categorical dimension $[2]_q$); there exists a
+        non-degenerate epimorphism
+        \begin{equation}\label{eq:categorical-volume-constraint}
+          \epsilon \colon \Lambda^2 V \;\longrightarrow\; \mathbf{1}
+        \end{equation}
+        preserved by the rigid dualities of~$\mathcal{C}$.
 \end{enumerate}
 \end{definition}
+
+\begin{lemma}[Volume form from rigidity and symplectic self-duality]
+\label{lem:volume-from-rigidity}
+Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
+category, and let $V$ be an object of categorical dimension~$2$ that is
+\emph{symplectically self-dual}: there exists an isomorphism
+$\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
+$\phi^{\vee} = -\phi$ (alternating).  Then the composite
+\[
+  \epsilon
+  \;\colon\;
+  V \otimes V
+  \xrightarrow{\;\mathrm{id} \otimes \phi\;}
+  V \otimes V^{\vee}
+  \xrightarrow{\;\mathrm{ev}_V\;}
+  \mathbf{1}
+\]
+factors through $\Lambda^2 V$ and is non-degenerate; that is,
+condition~\textup{(iii)} of
+Definition~\textup{\ref{def:quantum-observable-universe}} holds.
+\end{lemma}
+
+\begin{proof}
+Because $\phi$ is alternating, the pairing
+$B = \mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ satisfies
+$B \circ \tau_{V,V} = -B$, where $\tau_{V,V}$ is the symmetry (or
+braiding) isomorphism.  Hence $B$ vanishes on symmetric tensors and
+factors as $B = \epsilon \circ \pi$, where
+$\pi \colon V \otimes V \twoheadrightarrow \Lambda^2 V$ is the
+canonical projection.  Non-degeneracy of~$\epsilon$ follows from
+non-degeneracy of~$\mathrm{ev}_V$ (guaranteed by rigidity) and the
+isomorphism~$\phi$.  The duality axioms
+$(\mathrm{ev}_V \otimes \mathrm{id}) \circ
+(\mathrm{id} \otimes \mathrm{coev}_V) = \mathrm{id}_V$ ensure that
+$\epsilon$ is preserved by the rigid dualities of~$\mathcal{C}$.
+\end{proof}
+
+\begin{theorem}[Emergence of the quantum gauge group]
+\label{thm:su2-emergence}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+(Definition~\ref{def:quantum-observable-universe}).  Then
+$G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$
+(or $\mathrm{SL}_q(2, R)$ depending on the signature of the Frobenius
+pairing).
+\end{theorem}
+
+\begin{proof}
+The quantum gauge group $G_q$ is defined via Tannaka--Krein duality as
+the group scheme of tensor-preserving natural automorphisms of the fibre
+functor~$\omega$.  An element $g \in G_q$ assigns an invertible linear map
+$g_X \colon \omega(X) \to \omega(X)$ to every object $X \in \mathcal{C}$.
+
+Because $g$ is a natural transformation, it commutes with all morphisms
+in~$\mathcal{C}$, including the volume constraint
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$
+\eqref{eq:categorical-volume-constraint}.  Applying~$\omega$ yields the
+commutative diagram of $R$-modules
+\begin{equation}\label{eq:su2-emergence-diagram}
+\begin{CD}
+\Lambda^2 \omega(V)
+  @>{\Lambda^2 g_V}>>
+  \Lambda^2 \omega(V) \\
+@V{\omega(\epsilon)}VV
+  @VV{\omega(\epsilon)}V \\
+\omega(\mathbf{1})
+  @>>{g_{\mathbf{1}} \,=\, \mathrm{id}}>
+  \omega(\mathbf{1})
+\end{CD}
+\end{equation}
+The fundamental object $V$ has categorical dimension $[2]_q$, so
+$\omega(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \omega(V)$ has
+rank~$1$.  The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
+module as scalar multiplication by $\det(g_V)$.  Following
+diagram~\eqref{eq:su2-emergence-diagram} from the top-left to the
+bottom-right:
+\[
+  \omega(\epsilon) \circ \Lambda^2 g_V
+  \;=\;
+  g_{\mathbf{1}} \circ \omega(\epsilon)
+  \;=\;
+  \omega(\epsilon).
+\]
+Since $\omega(\epsilon)$ is non-degenerate (hence non-zero), this forces
+\begin{equation}\label{eq:det-one}
+  \det(g_V) \;=\; 1,
+\end{equation}
+restricting the natural automorphisms from $\mathrm{GL}_q(2)$ to the
+special subgroup $\mathrm{SL}_q(2)$.
+
+The QOU observability condition ensures the Frobenius form
+$\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the
+Frobenius self-duality $A \cong A^{\vee}$
+(Proposition~\ref{prop:fiber-adjoint-involution}).  This rigid
+self-duality equips $\mathcal{C}$ with a positive-definite
+$*$-structure.  Preserving this duality forces
+$g_V^{-1} = g_V^{\dagger}$, locking the group into its unitary real
+form $\mathrm{SU}_q(2)$.
+\end{proof}
+
+\begin{remark}[Geometric realisation of the volume constraint]
+\label{rem:volume-constraint-geometric}
+In the archimedean realisation (Example~\ref{def:c-quantum-universe}),
+the categorical volume constraint~\eqref{eq:categorical-volume-constraint}
+is a consequence of the contact geometry.  The contact condition requires
+that $d\theta|_{H \times H}$ be non-degenerate on the Levi distribution
+$H = \ker\theta$; this non-degenerate alternating $2$-form is the Levi
+form $L_\theta$.  Because $L_\theta$ is alternating and non-degenerate on
+the rank-$4$ real distribution~$H$, it instantiates the categorical
+volume form $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ of
+Lemma~\ref{lem:volume-from-rigidity}.  The Hodge star $*_H$ associated to
+the Webster metric~$g_\theta$ then splits $\Lambda^2 H^* = \Lambda^+\!H^*
+\oplus \Lambda^-\!H^*$, forcing the local structure group of the instanton
+connection to be $\mathrm{SU}(2)$.
+\end{remark}
 
 \begin{definition}[Projective line object]
 \label{def:projective-line-object}
@@ -547,98 +670,6 @@ The substrate parameter is not a
 fixed constant but a field on $M$: its value varies from point to point
 according to the local coupling between the Levi form and the self-dual
 curvature.
-\end{remark}
-
-% ── Tannakian Emergence of the Gauge Group ──────────────────────
-\begin{definition}[Categorical volume constraint]
-\label{def:categorical-volume-constraint}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over~$R$
-(Definition~\ref{def:quantum-observable-universe}), and let $V$ denote the
-fundamental object of~$\mathcal{C}$
-(Definition~\ref{def:projective-line-object}).  The category~$\mathcal{C}$
-satisfies the \emph{categorical volume constraint} if there exists a
-non-degenerate epimorphism
-\begin{equation}\label{eq:categorical-volume-constraint}
-  \epsilon \colon \Lambda^2 V \;\longrightarrow\; \mathbf{1}
-\end{equation}
-preserved by the rigid dualities of~$\mathcal{C}$.
-\end{definition}
-
-\begin{theorem}[Emergence of the quantum gauge group]
-\label{thm:su2-emergence}
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying
-the categorical volume constraint
-(Definition~\ref{def:categorical-volume-constraint}).  Then
-$G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$
-(or $\mathrm{SL}_q(2, R)$ depending on the signature of the Frobenius
-pairing).
-\end{theorem}
-
-\begin{proof}
-The quantum gauge group $G_q$ is defined via Tannaka--Krein duality as
-the group scheme of tensor-preserving natural automorphisms of the fibre
-functor~$\omega$.  An element $g \in G_q$ assigns an invertible linear map
-$g_X \colon \omega(X) \to \omega(X)$ to every object $X \in \mathcal{C}$.
-
-Because $g$ is a natural transformation, it commutes with all morphisms
-in~$\mathcal{C}$, including the volume constraint
-$\epsilon \colon \Lambda^2 V \to \mathbf{1}$
-\eqref{eq:categorical-volume-constraint}.  Applying~$\omega$ yields the
-commutative diagram of $R$-modules
-\begin{equation}\label{eq:su2-emergence-diagram}
-\begin{CD}
-\Lambda^2 \omega(V)
-  @>{\Lambda^2 g_V}>>
-  \Lambda^2 \omega(V) \\
-@V{\omega(\epsilon)}VV
-  @VV{\omega(\epsilon)}V \\
-\omega(\mathbf{1})
-  @>>{g_{\mathbf{1}} \,=\, \mathrm{id}}>
-  \omega(\mathbf{1})
-\end{CD}
-\end{equation}
-The fundamental object $V$ has categorical dimension $[2]_q$, so
-$\omega(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \omega(V)$ has
-rank~$1$.  The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
-module as scalar multiplication by $\det(g_V)$.  Following
-diagram~\eqref{eq:su2-emergence-diagram} from the top-left to the
-bottom-right:
-\[
-  \omega(\epsilon) \circ \Lambda^2 g_V
-  \;=\;
-  g_{\mathbf{1}} \circ \omega(\epsilon)
-  \;=\;
-  \omega(\epsilon).
-\]
-Since $\omega(\epsilon)$ is non-degenerate (hence non-zero), this forces
-\begin{equation}\label{eq:det-one}
-  \det(g_V) \;=\; 1,
-\end{equation}
-restricting the natural automorphisms from $\mathrm{GL}_q(2)$ to the
-special subgroup $\mathrm{SL}_q(2)$.
-
-The QOU observability condition ensures the Frobenius form
-$\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the
-Frobenius self-duality $A \cong A^{\vee}$
-(Proposition~\ref{prop:fiber-adjoint-involution}).  This rigid
-self-duality equips $\mathcal{C}$ with a positive-definite
-$*$-structure.  Preserving this duality forces
-$g_V^{-1} = g_V^{\dagger}$, locking the group into its unitary real
-form $\mathrm{SU}_q(2)$.
-\end{proof}
-
-\begin{remark}[Geometric realisation of the volume constraint]
-\label{rem:volume-constraint-geometric}
-In the archimedean realisation (Example~\ref{def:c-quantum-universe}),
-the categorical volume constraint~\eqref{eq:categorical-volume-constraint}
-is a consequence of the CR geometry.  The Levi distribution
-$H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$.  The Hodge star
-$*_H$ associated to the Webster metric~$g_\theta$ splits the $2$-forms
-into self-dual and anti-self-dual components,
-$\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$.  This
-decomposition instantiates the alternating morphism~$\epsilon$, forcing
-the local structure group of the instanton connection to be
-$\mathrm{SU}(2)$.
 \end{remark}
 
 \begin{definition}[Quantum Gauge Group]
