@@ -6,8 +6,8 @@
       "cwd": "lean"
     },
     "paper-assistant": {
-      "command": "bun",
-      "args": ["run", "scripts/mcp-server/server.ts", "--stdio"]
+      "command": "./scripts/start-assistant.sh",
+      "args": ["--stdio"]
     }
   }
 }
