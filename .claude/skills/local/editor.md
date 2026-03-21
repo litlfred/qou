@@ -30,8 +30,9 @@ Interpret the JSON output:
     > ./scripts/setup-lean-mcp.sh
     > ```
     >
-    > This installs elan, uv, the Lean toolchain (v4.16.0), Mathlib cache,
-    > ripgrep, and configures the lean-lsp-mcp server. Takes ~5 min.
+    > This installs elan, uv, the Lean toolchain (pinned in
+    > `lean/lean-toolchain`), Mathlib cache, ripgrep, and configures
+    > the lean-lsp-mcp server. Takes ~5 min.
     >
     > Want me to proceed with LaTeX-only work in the meantime?
 

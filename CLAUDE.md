@@ -61,8 +61,9 @@ Prerequisites: `git`, `curl`.
 ./scripts/setup-lean-mcp.sh
 ```
 
-This installs: uv (Python package manager), elan, Lean v4.16.0 toolchain,
-Mathlib cache, ripgrep, and verifies `lean-lsp-mcp` via uvx.
+This installs: uv (Python package manager), elan, the Lean toolchain
+pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
+`lean-lsp-mcp` via uvx.
 
 **Important**: Run `lake build` in `lean/` before first MCP session to avoid
 timeouts.

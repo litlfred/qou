@@ -53,8 +53,11 @@ export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 # ── 3. Install the pinned toolchain ──────────────────────────────
 if [ -f "$TOOLCHAIN_FILE" ]; then
     TOOLCHAIN=$(cat "$TOOLCHAIN_FILE" | tr -d '[:space:]')
-    echo "▸ Installing toolchain: $TOOLCHAIN"
-    elan toolchain install "$TOOLCHAIN"
+    echo "▸ Toolchain: $TOOLCHAIN"
+    # elan exits non-zero if already installed — that's fine
+    if elan toolchain install "$TOOLCHAIN" 2>&1; then
+        true
+    fi
     echo "  ✓ Toolchain ready"
 else
     echo "✗ No lean-toolchain file found at $TOOLCHAIN_FILE"
@@ -103,8 +106,11 @@ fi
 
 # ── 7. Fetch Mathlib cache ───────────────────────────────────────
 echo "▸ Fetching Mathlib oleans (this may take a few minutes)..."
-lake exe cache get 2>&1 | tail -3
-echo "  ✓ Cache fetched"
+if lake exe cache get 2>&1 | tail -5; then
+    echo "  ✓ Cache fetched"
+else
+    echo "  ⚠ Cache fetch had issues (may already be cached, continuing)"
+fi
 
 # ── 8. Build ─────────────────────────────────────────────────────
 echo "▸ Running lake build (recommended before first MCP session)..."
