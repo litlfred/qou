@@ -1,6 +1,9 @@
 # Claude Code — Quantum Observable Universe
 
-This repository is a LaTeX manuscript for a formal mathematics paper.
+This repository is a formal mathematics paper with:
+- **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
+- **LaTeX** as a rendering target (generated from content objects)
+- **Lean 4** formalization linked to content objects
 
 ## Skills
 
@@ -27,12 +30,16 @@ When a user request arrives, route to the right skill(s):
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` |
 | "simplify / streamline proofs" | `local/proof-simplifier` |
 | "validate LaTeX" | `local/latex-validation` |
+| "validate content objects" | `local/content-validation` |
+| "build content → LaTeX" | `local/content-validation` |
+| "add / edit content block" | `local/content-validation` + relevant skill |
 | "test / unit test / coverage" | `local/test-engineer` |
 
-**Decision tree**: (1) Does it touch `.tex`? → LaTeX skills.
-(2) Does it touch `.lean`? → Lean skills above. (3) Both? → also
-`local/lean-generation` for cross-refs. (4) Ambiguous? → read the skill
-`.md` files, then ask the user.
+**Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
+`local/content-validation` + relevant content skill. (2) Does it touch `.tex`?
+→ LaTeX skills. (3) Does it touch `.lean`? → Lean skills above. (4) Both
+content + Lean? → also `local/lean-generation` for cross-refs. (5) Ambiguous?
+→ read the skill `.md` files, then ask the user.
 
 See **§12 Using Skills for Content Changes** in
 `.github/copilot-instructions.md` for the full authoritative mapping,
@@ -43,6 +50,80 @@ including the detailed decision tree and Lean-specific routing table.
 Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
+
+## Content-object architecture
+
+Content is organized as **atomic knowledge units** — each definition,
+theorem, remark, etc. is a self-contained file triple:
+
+```
+content/
+  <paper-name>/
+    <paper-name>.ts              ← Paper manifest (references chapter URIs)
+    <chapter-dir>/
+      <chapter-dir>.ts           ← Chapter manifest (sections → block refs)
+      <block-name>.ts            ← Typed manifest (kind, label, lean ref, status)
+      <block-name>.md            ← Narrative content (markdown + TeX snippets)
+      <block-name>.lean          ← Lean formalization (when required by kind)
+```
+
+### File naming convention
+
+Sibling files share the same root name: `rigid-monoidal-category.ts`,
+`rigid-monoidal-category.md`, `rigid-monoidal-category.lean`.
+
+### Type system
+
+| Block kind | Lean required? | Label prefix |
+|-----------|---------------|-------------|
+| `definition` | **Yes** (enforced at type level) | `def:` |
+| `theorem`, `lemma`, `proposition`, `corollary` | Expected (warning if missing) | `thm:`, `lem:`, `prop:`, `cor:` |
+| `conjecture`, `example`, `remark` | Optional | `conj:`, `ex:`, `rem:` |
+| `prose`, `equation`, `diagram` | N/A | — |
+
+### Pipeline
+
+```
+.ts manifests + .md content
+  → Zod schema validation (shape + types)
+  → Constraint rules (file existence, cross-refs, lean requirements)
+  → LaTeX rendering (markdown → LaTeX conversion)
+  → AST validation (unified-latex parse of rendered output)
+  → chapters/*.tex output
+```
+
+### Key files
+
+| Path | Purpose |
+|------|---------|
+| `content/schema/types.ts` | TypeScript types (discriminated unions) |
+| `content/schema/constraints.ts` | Zod schemas + constraint rules |
+| `content/schema/builders.ts` | `definition()`, `theorem()`, `prose()`, etc. |
+| `content/pipeline/validate.ts` | Three-level validation |
+| `content/pipeline/render-latex.ts` | Block → LaTeX + AST validation |
+| `content/pipeline/build.ts` | Full document build |
+
+### Dependency graph integration
+
+The `uses[]` field in content objects + Lean import graphs form a
+combined dependency DAG. Editors and proof-writers use this to:
+
+- **Track upstream changes**: when a definition changes, find all
+  theorems/lemmas that `uses` it and flag them for re-validation
+- **Track downstream impact**: when proposing a change, identify all
+  blocks that depend on the changed block
+- **Scope test runs**: only run Lean builds / AST validation for the
+  changed block and its downstream dependents
+- **Prioritize formalization**: find blocks with the most dependents
+  that are still `not_started`
+
+### Markdown content convention (in .md files)
+
+- Inline math: `$...$`
+- Display math: `$$...$$`
+- Complex TeX (tikzcd, align): fenced code block with `` ```tex `` tag
+- Bold → `\textbf{}`, italic → `\emph{}` in LaTeX output
+- Cross-refs: `[text](#label)` → `\hyperref[label]{text}`
 
 ## Lean MCP server (lean-lsp-mcp)
 
@@ -109,10 +190,15 @@ setup instructions rather than silently failing.
 
 | Path | Purpose |
 |------|---------|
-| `main.tex` | Preamble and document structure |
-| `chapters/*.tex` | One file per chapter |
+| `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
+| `content/schema/` | Type system, Zod schemas, builder functions |
+| `content/pipeline/` | Validation, rendering, build pipelines |
+| `content/<paper>/` | Paper manifest + chapter directories |
+| `main.tex` | LaTeX preamble and document structure (rendering target) |
+| `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database |
 | `lean/` | Lean 4 formalization (lakefile.lean, QOU/) |
+| `schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |

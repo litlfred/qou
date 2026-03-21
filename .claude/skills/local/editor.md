@@ -100,6 +100,10 @@ whether running locally (stdio) or remotely (Streamable HTTP).
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 | Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
 | Test report / coverage stats | `test-engineer` | JSON TestReport output |
+| Validate content objects | `content-validation` | Schema + constraints + AST |
+| Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
+| Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
+| Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
 
 ## Responsibilities
 
