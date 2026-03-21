@@ -5,6 +5,10 @@ defaultTargets = ["QOU"]
 autoImplicit = false
 
 [[lean_lib]]
+name = "Fred2005"
+srcDir = "."
+
+[[lean_lib]]
 name = "QOU"
 srcDir = "."
 

@@ -549,6 +549,98 @@ according to the local coupling between the Levi form and the self-dual
 curvature.
 \end{remark}
 
+% ── Tannakian Emergence of the Gauge Group ──────────────────────
+\begin{definition}[Categorical volume constraint]
+\label{def:categorical-volume-constraint}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over~$R$
+(Definition~\ref{def:quantum-observable-universe}), and let $V$ denote the
+fundamental object of~$\mathcal{C}$
+(Definition~\ref{def:projective-line-object}).  The category~$\mathcal{C}$
+satisfies the \emph{categorical volume constraint} if there exists a
+non-degenerate epimorphism
+\begin{equation}\label{eq:categorical-volume-constraint}
+  \epsilon \colon \Lambda^2 V \;\longrightarrow\; \mathbf{1}
+\end{equation}
+preserved by the rigid dualities of~$\mathcal{C}$.
+\end{definition}
+
+\begin{theorem}[Emergence of the quantum gauge group]
+\label{thm:su2-emergence}
+Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying
+the categorical volume constraint
+(Definition~\ref{def:categorical-volume-constraint}).  Then
+$G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$
+(or $\mathrm{SL}_q(2, R)$ depending on the signature of the Frobenius
+pairing).
+\end{theorem}
+
+\begin{proof}
+The quantum gauge group $G_q$ is defined via Tannaka--Krein duality as
+the group scheme of tensor-preserving natural automorphisms of the fibre
+functor~$\omega$.  An element $g \in G_q$ assigns an invertible linear map
+$g_X \colon \omega(X) \to \omega(X)$ to every object $X \in \mathcal{C}$.
+
+Because $g$ is a natural transformation, it commutes with all morphisms
+in~$\mathcal{C}$, including the volume constraint
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$
+\eqref{eq:categorical-volume-constraint}.  Applying~$\omega$ yields the
+commutative diagram of $R$-modules
+\begin{equation}\label{eq:su2-emergence-diagram}
+\begin{CD}
+\Lambda^2 \omega(V)
+  @>{\Lambda^2 g_V}>>
+  \Lambda^2 \omega(V) \\
+@V{\omega(\epsilon)}VV
+  @VV{\omega(\epsilon)}V \\
+\omega(\mathbf{1})
+  @>>{g_{\mathbf{1}} \,=\, \mathrm{id}}>
+  \omega(\mathbf{1})
+\end{CD}
+\end{equation}
+The fundamental object $V$ has categorical dimension $[2]_q$, so
+$\omega(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \omega(V)$ has
+rank~$1$.  The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
+module as scalar multiplication by $\det(g_V)$.  Following
+diagram~\eqref{eq:su2-emergence-diagram} from the top-left to the
+bottom-right:
+\[
+  \omega(\epsilon) \circ \Lambda^2 g_V
+  \;=\;
+  g_{\mathbf{1}} \circ \omega(\epsilon)
+  \;=\;
+  \omega(\epsilon).
+\]
+Since $\omega(\epsilon)$ is non-degenerate (hence non-zero), this forces
+\begin{equation}\label{eq:det-one}
+  \det(g_V) \;=\; 1,
+\end{equation}
+restricting the natural automorphisms from $\mathrm{GL}_q(2)$ to the
+special subgroup $\mathrm{SL}_q(2)$.
+
+The QOU observability condition ensures the Frobenius form
+$\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the
+Frobenius self-duality $A \cong A^{\vee}$
+(Proposition~\ref{prop:fiber-adjoint-involution}).  This rigid
+self-duality equips $\mathcal{C}$ with a positive-definite
+$*$-structure.  Preserving this duality forces
+$g_V^{-1} = g_V^{\dagger}$, locking the group into its unitary real
+form $\mathrm{SU}_q(2)$.
+\end{proof}
+
+\begin{remark}[Geometric realisation of the volume constraint]
+\label{rem:volume-constraint-geometric}
+In the archimedean realisation (Example~\ref{def:c-quantum-universe}),
+the categorical volume constraint~\eqref{eq:categorical-volume-constraint}
+is a consequence of the CR geometry.  The Levi distribution
+$H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$.  The Hodge star
+$*_H$ associated to the Webster metric~$g_\theta$ splits the $2$-forms
+into self-dual and anti-self-dual components,
+$\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$.  This
+decomposition instantiates the alternating morphism~$\epsilon$, forcing
+the local structure group of the instanton connection to be
+$\mathrm{SU}(2)$.
+\end{remark}
+
 \begin{definition}[Quantum Gauge Group]
 \label{def:quantum-gauge-group}
 \lean{QOU.QuantumGaugeGroup}\leanok
