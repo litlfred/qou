@@ -69,11 +69,17 @@ cd lean && lake build 2>&1 | python ../.github/scripts/update_proof_status.py
 | `thm:lifting-exists` | `QOU.Torsion.lifting_exists` |
 | `def:quantum-connection` | `QOU.QuantumObservableUniverse.quantum_connection` |
 | `lem:torsion-skew` | `QOU.Torsion.torsion_skew` |
+| `def:categorical-instanton` | `QOU.CategoricalInstanton` |
+| `prop:categorical-dq-squared` | `QOU.categorical_dq_squared` |
+| `def:categorical-jet` | `QOU.CategoricalJet` |
 
 Rules:
 - Hyphens become underscores
 - The Lean namespace matches the chapter module
 - Fully qualified name = `QOU.<Chapter>.<snake_case_name>`
+- Categorical structures (type-level) use `CamelCase` (e.g., `CategoricalJet`)
+- Categorical theorems/lemmas use `snake_case` (e.g., `categorical_self_duality`)
+- Top-level categorical stubs live directly in the `QOU` namespace (not a chapter submodule)
 
 ## Lean Project Structure
 
