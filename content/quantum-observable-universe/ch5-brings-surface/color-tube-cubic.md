@@ -1,5 +1,5 @@
 At fixed $z \in \mathbb{P}^1(\mathbb{C})$, the three chiral roots of the
-elliptic cubic each satisfy the cubic in
+elliptic cubic ([Proposition](#prop:chiral-elliptic)) each satisfy the cubic in
 the color tube coordinate $\mathbf{c} \in \{\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z\}$
 obtained by substituting $X = \mathbf{c} + z$
 into the chiral elliptic equation.  Expanding gives the

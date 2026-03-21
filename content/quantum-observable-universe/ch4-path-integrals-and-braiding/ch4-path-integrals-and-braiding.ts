@@ -104,7 +104,7 @@ export default chapter({
       label: "sec:varying-euler",
       blocks: [
         "varying-euler-intro",
-        "genus-2",
+        "genus-2-intro",
       ],
     }),
 

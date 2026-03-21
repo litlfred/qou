@@ -1,5 +1,4 @@
-The intrinsic color cubic $\widetilde{C}$
-admits a natural decomposition into space-like and chiral sectors:
+The intrinsic color cubic $\widetilde{C}$ admits a natural decomposition into space-like and chiral sectors:
 
 ```tex
 \begin{equation}\label{eq:color-cubic-decomp}
