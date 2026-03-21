@@ -216,22 +216,26 @@ export function renderBlock(block: Block, mdContent: string): string {
         lines.push(`  \\uses{${block.uses.join(", ")}}`);
       }
 
-      // Body content
-      const body = markdownToLatex(mdContent);
+      // Body content — strip proof portion (after ---) if present
+      let statementMd = mdContent;
+      let proofMd: string | null = null;
+      if ("hasProof" in block && block.hasProof) {
+        const proofSep = mdContent.indexOf("\n---\n");
+        if (proofSep >= 0) {
+          statementMd = mdContent.slice(0, proofSep);
+          proofMd = mdContent.slice(proofSep + 5);
+        }
+      }
+      const body = markdownToLatex(statementMd);
       lines.push(body);
 
       lines.push(`\\end{${envName}}`);
 
       // Inline proof (for theorems etc.)
-      if ("hasProof" in block && block.hasProof) {
-        // Proof content expected in .md file after a --- separator
-        const proofSep = mdContent.indexOf("\n---\n");
-        if (proofSep >= 0) {
-          const proofMd = mdContent.slice(proofSep + 5);
-          lines.push("\\begin{proof}");
-          lines.push(markdownToLatex(proofMd));
-          lines.push("\\end{proof}");
-        }
+      if (proofMd) {
+        lines.push("\\begin{proof}");
+        lines.push(markdownToLatex(proofMd));
+        lines.push("\\end{proof}");
       }
       break;
     }
