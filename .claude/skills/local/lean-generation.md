@@ -44,9 +44,19 @@ After generating a stub file:
 3. **`lean_hover_info`** on each imported symbol → confirm types resolve
 4. **`lean_verify`** on completed proofs → check axiom soundness
 
+## Important: Generation is agent-only
+
+The generation scripts below are **proof-writing tools**, not build steps.
+
+- **Do not** run them as part of setup, session start, or routine builds.
+- **Do not** run them before `lake build` — build compiles what exists.
+- **Only** invoke them when the author requests new formalization work
+  (new stubs, new extractions, new theorem statements).
+- CI workflows run them automatically — that is CI-only behavior.
+
 ## Workflow
 
-### 1. Extract proof objects from LaTeX
+### 1. Extract proof objects from LaTeX (agent-only)
 
 ```bash
 python .github/scripts/extract_proof_objects.py
@@ -55,7 +65,7 @@ python .github/scripts/extract_proof_objects.py
 This parses all `chapters/*.tex` files for `\begin{theorem}`, `\begin{definition}`,
 etc. and outputs `proof-objects.json`.
 
-### 2. Generate Lean stubs
+### 2. Generate Lean stubs (agent-only)
 
 ```bash
 python .github/scripts/generate_lean_stubs.py

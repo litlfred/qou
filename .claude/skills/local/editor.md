@@ -125,6 +125,22 @@ avoid timeouts.
       in `.gitignore` — **never commit Lean build artifacts**
    5. Only commit: `lakefile.toml` and `lake-manifest.json`
 
+8. **Build vs. generation separation**:
+   - **`lake build`** = compile-only. It must **never** be preceded by
+     `extract_proof_objects.py` or `generate_lean_stubs.py` in local
+     workflows. Build verifies what exists; it does not create new files.
+   - **Generation scripts** (`extract_proof_objects.py`,
+     `generate_lean_stubs.py`, `formalizer.py generate-theorems`) are
+     **proof-writing tools** — only the `formalizer`, `lean-generation`,
+     and `proof-triage` skills may invoke them, and only when the author
+     has requested new formalization work.
+   - **Session-start hooks and setup scripts** must never run generation
+     scripts. They only check that the toolchain and dependencies are
+     present.
+   - The CI workflows (`lean-build.yml`, `blueprint.yml`, `lean_ci.yml`)
+     run generation as part of the automated pipeline — that is CI-only
+     behavior and must not be replicated in local agent workflows.
+
 ## Interaction style
 
 - Questions to author: always multiple-choice (2-4 options), concise labels.

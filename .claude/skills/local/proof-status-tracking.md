@@ -77,14 +77,20 @@ Multiple reviewers (human + agentic) contribute reviews.  Consensus rules:
 | `generate_lean_stubs.py` | proof-objects.json → lean stub files |
 | `update_proof_status.py` | Lean build log → update statuses |
 
-### GitHub Actions Integration
+### GitHub Actions Integration (CI-only)
 
-The `lean-build.yml` workflow:
+The `lean-build.yml` workflow runs the full pipeline automatically:
 1. Runs `extract_proof_objects.py`
 2. Runs `generate_lean_stubs.py`
 3. Runs `lake build`
 4. Runs `update_proof_status.py`
 5. Commits updated `proof-objects.json` (automated commit by `github-actions[bot]`)
+
+**This pipeline is CI-only.** Locally, agents must not replicate it.
+Local `lake build` is compile-only — no generation scripts before it.
+Generation scripts are proof-writing tools invoked only by the
+`formalizer`, `lean-generation`, and `proof-triage` skills when the
+author requests new formalization work.
 
 ## Status Dashboard
 

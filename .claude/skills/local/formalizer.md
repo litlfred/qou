@@ -57,7 +57,16 @@ Instead of the Python script for import synthesis:
 3. **`lean_leansearch`** for each unknown identifier → find the right import
 4. **`lean_completions`** at the import line → auto-complete module paths
 
-## Workflow
+## Important: Generation is agent-only
+
+The scripts below are **proof-writing tools**. They create or modify Lean
+files. They must only be run when the author has requested formalization.
+
+- **Do not** run them during setup, session start, or routine builds.
+- **`lake build`** = compile-only. Never precede it with generation scripts.
+- CI workflows run them automatically — that is CI-only behavior.
+
+## Workflow (invoke only on author request)
 
 ### 1. Library synthesis
 
