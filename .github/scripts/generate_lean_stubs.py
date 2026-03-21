@@ -58,14 +58,28 @@ def generate_stub(obj):
     return "\n".join(lines)
 
 
+def _camel_to_snake(name):
+    """Convert CamelCase to snake_case: 'ProjectiveLineObject' → 'projective_line_object'."""
+    s = re.sub(r"([A-Z]+)([A-Z][a-z])", r"\1_\2", name)
+    s = re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s)
+    return s.lower()
+
+
 def get_existing_decls(filepath):
-    """Read a Lean file and return the set of declaration names found."""
+    """Read a Lean file and return the set of declaration names found.
+
+    Returns both the original names and their snake_case equivalents so
+    that CamelCase Lean declarations (e.g. ``ProjectiveLineObject``) match
+    snake_case names derived from LaTeX labels (``projective_line_object``).
+    """
     decls = set()
     if not filepath.exists():
         return decls
     content = filepath.read_text(encoding="utf-8")
-    for m in re.finditer(r"(?:theorem|lemma|def)\s+(\w+)", content):
-        decls.add(m.group(1))
+    for m in re.finditer(r"(?:theorem|lemma|def|structure|class|instance|abbrev)\s+(\w+)", content):
+        name = m.group(1)
+        decls.add(name)
+        decls.add(_camel_to_snake(name))
     return decls
 
 

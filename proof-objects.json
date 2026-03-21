@@ -120,6 +120,194 @@
       "formalization_status": "not_started"
     },
     {
+      "label": "prop:frobenius-relation",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 209,
+        "chapter": 1
+      },
+      "title": "Frobenius relation",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.FrobeniusHopfData.frobenius_relation",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "lem:volume-from-rigidity",
+      "object_type": "lemma",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 242,
+        "chapter": 1
+      },
+      "title": "Volume form from rigidity and symplectic self-duality",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.VolumeFromRigidity",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "thm:su2-emergence",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 284,
+        "chapter": 1
+      },
+      "title": "Emergence of the gauge group",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.SU2Emergence",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "rem:volume-constraint-geometric",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 347,
+        "chapter": 1
+      },
+      "title": "Geometric realisation of the volume constraint",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:projective-line-object",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 365,
+        "chapter": 1
+      },
+      "title": "Projective line object",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.ProjectiveLineObject",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "ex:projective-line-archimedean",
+      "object_type": "example",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 383,
+        "chapter": 1
+      },
+      "title": "Archimedean projective line",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "prop:fiber-adjoint-involution",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 390,
+        "chapter": 1
+      },
+      "title": "Fiber--adjoint-fiber involution",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.FiberAdjointInvolution",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "def:categorical-connection",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 434,
+        "chapter": 1
+      },
+      "title": "Categorical connection and curvature",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.CategoricalConnection",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "def:q-hodge-star",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 471,
+        "chapter": 1
+      },
+      "title": "$q$-Hodge star",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.QHodgeStar",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "rem:categorical-action-notation",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 490,
+        "chapter": 1
+      },
+      "title": "Notation for the categorical action",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:categorical-action",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 524,
+        "chapter": 1
+      },
+      "title": "Categorical action",
+      "formalization_status": "proved",
+      "uses": [
+        "def:quantum-universe",
+        "def:quantum-observable-universe",
+        "def:categorical-connection"
+      ],
+      "lean": {
+        "decl": "QOU.CategoricalAction",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
+      "label": "prop:variational-equations",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 553,
+        "chapter": 1
+      },
+      "title": "Variational equations of the categorical action",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:variational-archimedean",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 586,
+        "chapter": 1
+      },
+      "title": "Archimedean realisation of the variational equations",
+      "formalization_status": "not_started"
+    },
+    {
       "label": "rem:base-field-independence",
       "object_type": "remark",
       "latex": {
@@ -672,7 +860,12 @@
         "chapter": 1
       },
       "title": "Observation",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.Observation",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:two-observer-parallelogram",
@@ -1128,6 +1321,44 @@
       "formalization_status": "proved"
     },
     {
+      "label": "rem:q-torsion-existence",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1159,
+        "chapter": 1
+      },
+      "title": "$q$-Torsion leaves: existence and Frobenius obstruction",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "rem:reeb-physical",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1184,
+        "chapter": 1
+      },
+      "title": "Physical interpretation of the Reeb decomposition",
+      "formalization_status": "not_started"
+    },
+    {
+      "label": "def:q-yang-mills-levi",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1194,
+        "chapter": 1
+      },
+      "title": "$q$-Weighted Yang--Mills--Levi functional",
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.QYangMillsLevi",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "sorry_free": true
+      }
+    },
+    {
       "label": "rem:gr-substrate-geometry",
       "object_type": "remark",
       "latex": {
@@ -1276,7 +1507,12 @@
         "chapter": 2
       },
       "title": "$d_q^2$ does not vanish",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.Elaboration.dq_squared_nonvanishing",
+        "file": "QOU/Elaboration.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "prop:q-jacobiator",
@@ -1484,7 +1720,12 @@
         "chapter": 3
       },
       "title": "Braid group on three strands",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.BraidGroupB3",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:s3-group",
@@ -1495,7 +1736,12 @@
         "chapter": 3
       },
       "title": "Symmetric group $S_3$",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.SymmetricGroupS3",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:su2-basis",
@@ -1528,7 +1774,12 @@
         "chapter": 3
       },
       "title": "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.Dic3Generators",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "def:so3-generators",
@@ -1550,7 +1801,12 @@
         "chapter": 3
       },
       "title": "Braid involutions: twist and flip",
-      "formalization_status": "not_started"
+      "formalization_status": "proved",
+      "lean": {
+        "decl": "QOU.PathIntegrals.SpectralResolventTuple",
+        "file": "QOU/PathIntegrals.lean",
+        "sorry_free": true
+      }
     },
     {
       "label": "rem:holonomy-trefoil",
