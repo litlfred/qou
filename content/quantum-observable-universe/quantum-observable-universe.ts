@@ -14,6 +14,6 @@ export default paper({
   chapters: [
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
     // chapterRef({ dir: "ch2-brings-surface" }),
-    // chapterRef({ dir: "ch3-descartes-universe", uri: "https://..." }), // remote
+    chapterRef({ dir: "ch3-path-integrals-and-braiding" }),
   ],
 });
