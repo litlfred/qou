@@ -1012,6 +1012,29 @@
     let currentBranchName = null;
     let selectedBranch = null;
 
+    // ── Client-side fetch cache (5-minute TTL) ────────────
+    const _fetchCache = new Map(); // url → { data, ts }
+    const CACHE_TTL = 5 * 60 * 1000;
+    async function cachedFetch(url) {
+      const entry = _fetchCache.get(url);
+      if (entry && Date.now() - entry.ts < CACHE_TTL) return entry.data;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+      const data = await r.json();
+      _fetchCache.set(url, { data, ts: Date.now() });
+      return data;
+    }
+    function invalidateCache(prefix) {
+      for (const k of [..._fetchCache.keys()]) if (k.includes(prefix)) _fetchCache.delete(k);
+    }
+
+    // ── Lazy-load state (outline → chapter → section) ────
+    let paperOutline = null;        // PaperOutline from /api/paper/outline
+    const chapterDetails = new Map(); // chapterDir → ChapterDetail
+    const loadedSections = new Set(); // "chapterDir:sectionIdx" → loaded
+    const sectionLoadPromises = new Map(); // dedup in-flight section loads
+    const chapterLoadPromises = new Map(); // dedup in-flight chapter loads
+
     // ── Controls ─────────────────────────────────────────
     const html = document.documentElement;
     const btnEx = document.getElementById('c-ex');
@@ -1071,8 +1094,21 @@
     btnRm.classList.add('on'); // remarks on by default
 
     // Preview (browser print with LaTeX-styled CSS)
-    document.getElementById('c-pr').addEventListener('click', () => {
-      // Force-hydrate all lazy content before printing
+    document.getElementById('c-pr').addEventListener('click', async () => {
+      // Force-load all lazy sections before printing
+      if (paperOutline && paper?._loadChapterDetail && paper?._loadSection) {
+        for (const ch of paper.chapters) {
+          if (ch._dir) {
+            await paper._loadChapterDetail(paper.id, ch);
+            for (let si = 0; si < ch.sections.length; si++) {
+              const cd = document.querySelector(`.ch[data-ch-num="${ch.number}"]`);
+              const secDiv = cd?.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
+              if (secDiv) await paper._loadSection(paper.id, ch._dir, si, secDiv);
+            }
+          }
+        }
+      }
+      // Force-hydrate all lazy KaTeX content
       while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
       window.print();
     });
@@ -2597,6 +2633,7 @@
           });
           if (!res.ok) throw new Error(`${res.status}`);
           block.md = ta.value;
+          invalidateCache(paper.id); // clear lazy-load cache after edit
           console.log(`[folio:edit] saved block: ${block.rootName} (${ta.value.length} chars)`);
           // Re-render the block body
           const bb = el.querySelector('.bb');
@@ -2740,16 +2777,18 @@
       bix.clear();
       const childBlocks = new Set(); // examples/proofs shown via parent's toggle
       usedByIndex.clear();
+      // Index blocks that are already loaded (non-lazy path or already fetched)
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
         if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
         if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
-        // Build reverse-reference index: label → [{label, kind, title}]
         if (b.uses) for (const dep of b.uses) {
           if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
           usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
         }
       }
+
+      const isLazy = !!paperOutline; // true when using lazy-load path
 
       const app = document.getElementById('app');
       app.innerHTML = '';
@@ -2773,7 +2812,6 @@
       sb.appendChild(pinRow);
 
       // Collapse all chapters when sidebar collapses (not pinned)
-      // Collapse chapters visually on mouseleave, restore on mouseenter
       let savedOpenChapters = new Set();
       sb.addEventListener('mouseleave', () => {
         if (document.body.classList.contains('sb-pinned')) return;
@@ -2810,7 +2848,152 @@
       // ── Chapter containers (one per chapter, show/hide) ──
       const chapterDivs = new Map(); // number → DOM element
       const chapterHydrated = new Set(); // track which chapters have been hydrated
+      const sidebarChapterBodies = new Map(); // chapterDir → sidebar body element
       let activeChapter = null;
+
+      // ── Lazy section loading ──────────────────────────────
+      async function loadSection(paperId, chapterDir, sectionIndex, sectionDiv) {
+        const key = `${chapterDir}:${sectionIndex}`;
+        if (loadedSections.has(key)) return;
+        if (sectionLoadPromises.has(key)) return sectionLoadPromises.get(key);
+
+        const promise = (async () => {
+          try {
+            const secUrl = `/api/paper/section?id=${encodeURIComponent(paperId)}&chapter=${encodeURIComponent(chapterDir)}&section=${sectionIndex}${branchParam()}`;
+            const secData = await cachedFetch(secUrl);
+            loadedSections.add(key);
+
+            // Find the matching chapter/section in paper.chapters and populate blocks
+            const ch = p.chapters.find(c => c._dir === chapterDir);
+            if (ch) {
+              const sec = ch.sections[sectionIndex];
+              if (sec) sec.blocks = secData.blocks;
+            }
+
+            // Index blocks into bix/usedByIndex
+            for (const b of secData.blocks) {
+              if (b.label) bix.set(b.label, b);
+              if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+              if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+              if (b.uses) for (const dep of b.uses) {
+                if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+              }
+            }
+
+            // Replace placeholder with rendered blocks
+            const placeholder = sectionDiv.querySelector('.sec-loading');
+            if (placeholder) placeholder.remove();
+            for (const b of secData.blocks) {
+              if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
+              sectionDiv.appendChild(renderBlock(b));
+            }
+          } catch (e) {
+            const placeholder = sectionDiv.querySelector('.sec-loading');
+            if (placeholder) placeholder.textContent = `Failed to load section: ${e.message}`;
+          } finally {
+            sectionLoadPromises.delete(key);
+          }
+        })();
+
+        sectionLoadPromises.set(key, promise);
+        return promise;
+      }
+
+      // ── Load chapter detail (sidebar badges + trigger section loads) ──
+      async function loadChapterDetail(paperId, ch) {
+        const dir = ch._dir;
+        if (!dir || chapterDetails.has(dir)) return chapterDetails.get(dir);
+        if (chapterLoadPromises.has(dir)) return chapterLoadPromises.get(dir);
+
+        const promise = (async () => {
+          try {
+            const chUrl = `/api/paper/chapter?id=${encodeURIComponent(paperId)}&chapter=${encodeURIComponent(dir)}${branchParam()}`;
+            const detail = await cachedFetch(chUrl);
+            chapterDetails.set(dir, detail);
+
+            // Update sidebar badges with block stub data
+            const chBodyEl = sidebarChapterBodies.get(dir);
+            if (chBodyEl && detail.sections) {
+              const secEls = chBodyEl.querySelectorAll('.sb-sec');
+              detail.sections.forEach((secDetail, si) => {
+                const sEl = secEls[si];
+                if (!sEl) return;
+                // Rebuild badges from block stubs
+                let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+                for (const bs of secDetail.blockStubs || []) {
+                  secTodos += bs.todoCount || 0;
+                  const nl = ['definition','theorem','lemma','proposition','corollary'].includes(bs.kind);
+                  if (nl && (!bs.lean || !bs.lean.file)) secLeanMiss++;
+                  if (nl && bs.lean && ((bs.lean.validation === 'error') || bs.status === 'has_sorry')) secLeanErr++;
+                }
+                const badges = [];
+                if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+                if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+                if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
+                const badgeSpan = sEl.querySelector('.sb-sec-badges');
+                if (badgeSpan) badgeSpan.innerHTML = badges.length ? badges.join(' ') : '';
+
+                // Populate block list in sidebar
+                const blkList = sEl.nextElementSibling;
+                if (blkList && blkList.children.length === 0) {
+                  for (const bs of secDetail.blockStubs || []) {
+                    const kind = bs.kind[0].toUpperCase();
+                    const bEl = mk('div','sb-blk');
+                    const nameSpan = mk('span','sb-name');
+                    nameSpan.innerHTML = `${kind} ${bs.title ? inl(bs.title) : (bs.label || bs.rootName)}`;
+                    bEl.appendChild(nameSpan);
+                    bEl.title = bs.label || bs.rootName;
+
+                    if (bs.todoCount > 0) {
+                      const tb = mk('span','sb-badge todo');
+                      tb.textContent = `${bs.todoCount} todo${bs.todoCount > 1 ? 's' : ''}`;
+                      bEl.appendChild(tb);
+                    }
+
+                    const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(bs.kind);
+                    if (needsLean) {
+                      const lb = mk('span','sb-badge');
+                      const s = bs.status || 'not_started';
+                      const v = bs.lean?.validation || 'not_checked';
+                      if (!bs.lean || !bs.lean.file) { lb.className = 'sb-badge lean-miss'; lb.textContent = 'no lean'; }
+                      else if (s === 'stub' || s === 'not_started') { lb.className = 'sb-badge lean-warn'; lb.textContent = 'stub'; }
+                      else if (v === 'error' || s === 'has_sorry') { lb.className = 'sb-badge lean-err'; lb.textContent = v === 'error' ? 'err' : 'sorry'; }
+                      else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; }
+                      else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; }
+                      bEl.appendChild(lb);
+                    }
+
+                    bEl.onclick = () => {
+                      showChapter(ch.number);
+                      setTimeout(() => {
+                        const t = document.getElementById(bs.label);
+                        if (t) {
+                          const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                          if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                          t.scrollIntoView({behavior:'smooth', block:'start'});
+                        }
+                      }, 150);
+                    };
+                    blkList.appendChild(bEl);
+                  }
+                }
+              });
+              renderMath(chBodyEl);
+            }
+
+            return detail;
+          } catch (e) {
+            console.error(`[folio:lazy] chapter load failed: ${dir}`, e);
+            return null;
+          } finally {
+            chapterLoadPromises.delete(dir);
+          }
+        })();
+
+        chapterLoadPromises.set(dir, promise);
+        return promise;
+      }
 
       function showChapter(num) {
         if (activeChapter === num) return;
@@ -2823,8 +3006,22 @@
         const cd = chapterDivs.get(num);
         if (!cd) return;
         cd.style.display = '';
-        // Hydrate lazy blocks on first show
-        if (!chapterHydrated.has(num)) {
+
+        // Lazy load: trigger chapter detail + section loads on first show
+        const ch = p.chapters.find(c => c.number === num);
+        if (isLazy && ch?._dir && !chapterHydrated.has(num)) {
+          chapterHydrated.add(num);
+          loadChapterDetail(p.id, ch).then(() => {
+            // Load all sections for this chapter
+            ch.sections.forEach((sec, si) => {
+              const secDiv = cd.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
+              if (secDiv) loadSection(p.id, ch._dir, si, secDiv);
+            });
+          });
+        }
+
+        // Non-lazy: hydrate lazy KaTeX blocks on first show
+        if (!isLazy && !chapterHydrated.has(num)) {
           chapterHydrated.add(num);
           const lazies = lazyQueue.filter(t => cd.contains(t.el));
           for (const t of lazies) {
@@ -2833,6 +3030,7 @@
             lazyQueue.splice(lazyQueue.indexOf(t), 1);
           }
         }
+
         // Highlight sidebar
         sb.querySelectorAll('.sb-ch').forEach(el => {
           const isActive = el.dataset.num === String(num);
@@ -2855,6 +3053,19 @@
             }
           }
         }
+        // In lazy mode, check chapter detail stubs
+        if (isLazy) {
+          for (const ch of p.chapters) {
+            const detail = chapterDetails.get(ch._dir);
+            if (detail) {
+              for (const sec of detail.sections) {
+                for (const bs of sec.blockStubs || []) {
+                  if (bs.label === label) return ch.number;
+                }
+              }
+            }
+          }
+        }
         return null;
       }
 
@@ -2863,6 +3074,7 @@
         chEl.dataset.num = ch.number != null ? String(ch.number) : '';
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
+        if (ch._dir) sidebarChapterBodies.set(ch._dir, chBody);
 
         // Restore open/closed state from localStorage
         if (restoredChapters.has(String(ch.number))) {
@@ -2872,31 +3084,41 @@
 
         // Click chapter title → show chapter content
         chEl.onclick = (e) => {
-          // Toggle sections in sidebar
           chEl.classList.toggle('open');
           chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
           saveSbOpenChapters();
-          // Show chapter content
           showChapter(ch.number);
         };
         sb.appendChild(chEl);
+
         for (const sec of ch.sections) {
           const sEl = mk('div','sb-sec');
-          // Count stats for section
-          let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
-          for (const b of sec.blocks) {
-            secTodos += (b.todos || []).filter(t => t.status === 'open').length;
-            const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
-            if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
-            if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
-          }
-          const badges = [];
-          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
-          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
-          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
-          sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
+
+          if (!isLazy) {
+            // Non-lazy: compute badges from loaded blocks
+            let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+            for (const b of sec.blocks) {
+              secTodos += (b.todos || []).filter(t => t.status === 'open').length;
+              const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+              if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
+              if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
+            }
+            const badges = [];
+            if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+            if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+            if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
+            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : '<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem"></span>'}`;
+          } else {
+            // Lazy: badges placeholder (filled when chapter detail loads)
+            const blockCount = sec._blockCount || 0;
+            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span><span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${blockCount} block${blockCount !== 1 ? 's' : ''}</span>`;
+          }
+
+          const blkList = mk('div','');
+          blkList.style.display = 'none';
+
           sEl.onclick = (e) => {
             e.stopPropagation();
             showChapter(ch.number);
@@ -2907,68 +3129,54 @@
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
           chBody.appendChild(sEl);
-          const blkList = mk('div','');
-          blkList.style.display = 'none';
-          for (const b of sec.blocks) {
-            const kind = b.kind[0].toUpperCase();
-            const bEl = mk('div','sb-blk');
-            const nameSpan = mk('span','sb-name');
-            nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
-            bEl.appendChild(nameSpan);
-            bEl.title = b.label || b.rootName;
 
-            // Todo count badge
-            const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
-            if (openTodos) {
-              const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
-              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
-              bEl.appendChild(tb);
-            }
+          if (!isLazy) {
+            // Non-lazy: populate block list immediately
+            for (const b of sec.blocks) {
+              const kind = b.kind[0].toUpperCase();
+              const bEl = mk('div','sb-blk');
+              const nameSpan = mk('span','sb-name');
+              nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
+              bEl.appendChild(nameSpan);
+              bEl.title = b.label || b.rootName;
 
-            // Lean status badge
-            const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
-            if (needsLean) {
-              const lb = mk('span','sb-badge');
-              const s = b.status || 'not_started';
-              const v = b.lean?.validation || 'not_checked';
-              if (!b.lean || !b.lean.file) {
-                lb.className = 'sb-badge lean-miss';
-                lb.textContent = 'no lean';
-                lb.setAttribute('data-tip', 'No Lean formalization file');
-              } else if (s === 'stub' || s === 'not_started') {
-                lb.className = 'sb-badge lean-warn';
-                lb.textContent = 'stub';
-                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
-              } else if (v === 'error' || s === 'has_sorry') {
-                lb.className = 'sb-badge lean-err';
-                lb.textContent = v === 'error' ? 'err' : 'sorry';
-                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
-              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
-                lb.className = 'sb-badge lean-ok';
-                lb.textContent = '✓';
-                lb.setAttribute('data-tip', 'Lean proof verified');
-              } else {
-                lb.className = 'sb-badge lean-warn';
-                lb.textContent = s === 'stated' ? 'stated' : 'todo';
-                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
+              const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
+              if (openTodos) {
+                const tb = mk('span','sb-badge todo');
+                tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
+                tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
+                bEl.appendChild(tb);
               }
-              bEl.appendChild(lb);
-            }
 
-            bEl.onclick = () => {
-              showChapter(ch.number);
-              setTimeout(() => {
-                const t = document.getElementById(b.label);
-                if (t) {
-                  const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
-                  if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  t.scrollIntoView({behavior:'smooth', block:'start'});
-                }
-              }, 50);
-            };
-            blkList.appendChild(bEl);
+              const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+              if (needsLean) {
+                const lb = mk('span','sb-badge');
+                const s = b.status || 'not_started';
+                const v = b.lean?.validation || 'not_checked';
+                if (!b.lean || !b.lean.file) { lb.className = 'sb-badge lean-miss'; lb.textContent = 'no lean'; lb.setAttribute('data-tip', 'No Lean formalization file'); }
+                else if (s === 'stub' || s === 'not_started') { lb.className = 'sb-badge lean-warn'; lb.textContent = 'stub'; lb.setAttribute('data-tip', 'Lean file exists but proof not started'); }
+                else if (v === 'error' || s === 'has_sorry') { lb.className = 'sb-badge lean-err'; lb.textContent = v === 'error' ? 'err' : 'sorry'; lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry'); }
+                else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; lb.setAttribute('data-tip', 'Lean proof verified'); }
+                else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`); }
+                bEl.appendChild(lb);
+              }
+
+              bEl.onclick = () => {
+                showChapter(ch.number);
+                setTimeout(() => {
+                  const t = document.getElementById(b.label);
+                  if (t) {
+                    const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                    if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                    t.scrollIntoView({behavior:'smooth', block:'start'});
+                  }
+                }, 50);
+              };
+              blkList.appendChild(bEl);
+            }
           }
+          // Lazy: block list populated by loadChapterDetail callback
+
           chBody.appendChild(blkList);
         }
         sb.appendChild(chBody);
@@ -2996,9 +3204,18 @@
           if (sec.label) sd.id = sec.label;
           sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
-          for (const b of sec.blocks) {
-            if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
-            sd.appendChild(renderBlock(b));
+
+          if (isLazy) {
+            // Add loading placeholder — blocks loaded on demand
+            const placeholder = mk('div','sec-loading');
+            placeholder.style.cssText = 'color:var(--fg-d);font-family:var(--f-mono);font-size:.7rem;padding:1rem 0';
+            placeholder.textContent = `loading ${sec._blockCount || 0} blocks...`;
+            sd.appendChild(placeholder);
+          } else {
+            for (const b of sec.blocks) {
+              if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
+              sd.appendChild(renderBlock(b));
+            }
           }
           cd.appendChild(sd);
         }
@@ -3009,20 +3226,34 @@
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — Folio`;
 
-      // Show first chapter (or the one containing pendingScroll)
-      let startChapter = p.chapters[0]?.number || 1;
-      if (pendingScroll) {
-        const target = chapterForLabel(pendingScroll);
-        if (target) startChapter = target;
-      }
-      // Expose chapter navigation for cross-function use
+      // Expose chapter navigation and lazy-load helpers for cross-function use
       paper._showChapter = showChapter;
       paper._chapterForLabel = chapterForLabel;
-      showChapter(startChapter);
+      paper._loadChapterDetail = loadChapterDetail;
+      paper._loadSection = loadSection;
 
-      // Scroll to pending label anchor
-      if (pendingScroll) {
-        requestAnimationFrame(() => scrollToLabel(pendingScroll));
+      // Show first chapter (or the one containing pendingScroll)
+      let startChapter = p.chapters[0]?.number || 1;
+
+      if (pendingScroll && isLazy) {
+        // In lazy mode, load all chapter details to find which chapter contains the label
+        (async () => {
+          await Promise.all(p.chapters.map(ch => ch._dir ? loadChapterDetail(p.id, ch) : Promise.resolve()));
+          const target = chapterForLabel(pendingScroll);
+          if (target) showChapter(target);
+          else showChapter(startChapter);
+          // Wait for sections to load, then scroll
+          setTimeout(() => scrollToLabel(pendingScroll), 500);
+        })();
+      } else {
+        if (pendingScroll) {
+          const target = chapterForLabel(pendingScroll);
+          if (target) startChapter = target;
+        }
+        showChapter(startChapter);
+        if (pendingScroll) {
+          requestAnimationFrame(() => scrollToLabel(pendingScroll));
+        }
       }
     }
 
@@ -4354,9 +4585,44 @@
       const app = document.getElementById('app');
       app.innerHTML = '<div class="loading">loading paper...</div>';
       try {
-        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        renderPaper(await r.json());
+        // Reset lazy-load state
+        paperOutline = null;
+        chapterDetails.clear();
+        loadedSections.clear();
+        sectionLoadPromises.clear();
+        chapterLoadPromises.clear();
+
+        // Load lightweight outline first (paper metadata + chapter titles)
+        const outlineUrl = `/api/paper/outline?id=${encodeURIComponent(id)}${branchParam()}`;
+        paperOutline = await cachedFetch(outlineUrl);
+
+        // Build a minimal paper object for renderPaper (chapters with empty sections)
+        const p = {
+          id: paperOutline.id,
+          title: paperOutline.title,
+          authors: paperOutline.authors,
+          affiliations: paperOutline.affiliations,
+          date: paperOutline.date,
+          macros: paperOutline.macros,
+          branch: paperOutline.branch,
+          chapters: paperOutline.chapters.map(ch => ({
+            number: ch.number,
+            title: ch.title,
+            label: ch.label,
+            _dir: ch.dir,
+            _loading: false,
+            sections: ch.sections.map((s, si) => ({
+              title: s.title,
+              label: s.label,
+              _sectionIndex: si,
+              _chapterDir: ch.dir,
+              _blockCount: s.blockCount,
+              blocks: [], // lazy — filled when section loads
+            })),
+          })),
+        };
+        renderPaper(p);
+
         // Update URL to be shareable (embed branch if non-default)
         const target = hashWithBranch(`view/${id}`);
         history.replaceState(null, '', `#/${target}`);
@@ -4365,7 +4631,20 @@
         diffData = null; diffMode = false; clearInlineDiffs();
         startFeedbackPolling();
       } catch (e) {
-        app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
+        // Fallback: try full paper load if outline endpoint not available
+        try {
+          const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+          if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+          paperOutline = null;
+          renderPaper(await r.json());
+          const target = hashWithBranch(`view/${id}`);
+          history.replaceState(null, '', `#/${target}`);
+          updateDiffButton();
+          diffData = null; diffMode = false; clearInlineDiffs();
+          startFeedbackPolling();
+        } catch (e2) {
+          app.innerHTML = `<div class="err">Could not load paper: ${esc(e2.message)}</div>`;
+        }
       }
     }
 
