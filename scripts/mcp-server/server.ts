@@ -1370,87 +1370,95 @@ These become clickable buttons so users don't have to type. Make them specific t
         content: m.content,
       }));
 
-      // Run tool-use loop (non-streaming, max 3 rounds)
-      let toolRounds = 0;
-      const MAX_TOOL_ROUNDS = 3;
-      while (toolRounds < MAX_TOOL_ROUNDS) {
-        const response = await client.messages.create({
-          model: "claude-haiku-4-5-20251001",
-          max_tokens: 1500,
-          system: systemPrompt,
-          tools: chatTools,
-          messages: apiMessages,
-        });
-
-        // Check if the model wants to use tools
-        const toolUses = response.content.filter(b => b.type === "tool_use");
-        if (toolUses.length === 0) {
-          // No tool calls — this is the final response, stream it back
-          const textBlocks = response.content.filter(b => b.type === "text");
-          const fullText = textBlocks.map(b => (b as any).text).join("");
-
-          const encoder = new TextEncoder();
-          const readable = new ReadableStream({
-            start(controller) {
-              // Send in chunks for streaming feel
-              const chunkSize = 20;
-              for (let i = 0; i < fullText.length; i += chunkSize) {
-                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: fullText.slice(i, i + chunkSize) })}\n\n`));
-              }
-              controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
-              logDebug("chat", `complete (${toolRounds} tool rounds, ${fullText.length} chars)`);
-              controller.close();
-            },
-          });
-
-          return new Response(readable, {
-            headers: {
-              "Content-Type": "text/event-stream",
-              "Cache-Control": "no-cache",
-              "Connection": "keep-alive",
-              "Access-Control-Allow-Origin": "*",
-            },
-          });
-        }
-
-        // Execute tool calls
-        logDebug("chat:tools", `round ${toolRounds + 1}: ${toolUses.length} tool calls`,
-          toolUses.map(t => (t as any).name).join(", "));
-
-        // Add assistant message with tool use
-        apiMessages.push({ role: "assistant", content: response.content });
-
-        // Execute all tool calls and add results
-        const toolResults: Anthropic.ToolResultBlockParam[] = [];
-        for (const tu of toolUses) {
-          const toolUseBlock = tu as Anthropic.ToolUseBlock;
-          const result = await executeTool(toolUseBlock.name, toolUseBlock.input as Record<string, unknown>);
-          toolResults.push({
-            type: "tool_result",
-            tool_use_id: toolUseBlock.id,
-            content: result,
-          });
-        }
-        apiMessages.push({ role: "user", content: toolResults });
-        toolRounds++;
-      }
-
-      // If we exhausted tool rounds, do a final streaming call without tools
-      logDebug("chat", `max tool rounds reached (${MAX_TOOL_ROUNDS}), final call`);
-      const stream = await client.messages.stream({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 1500,
-        system: systemPrompt,
-        messages: apiMessages,
-      });
-
+      // Stream response with progress events during tool-use rounds
       const encoder = new TextEncoder();
+      const sseHeaders = {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+      };
+
       const readable = new ReadableStream({
         async start(controller) {
+          const send = (obj: Record<string, unknown>) =>
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`));
+
           try {
+            let toolRounds = 0;
+            const MAX_TOOL_ROUNDS = 3;
+
+            while (toolRounds < MAX_TOOL_ROUNDS) {
+              send({ status: toolRounds === 0 ? "thinking..." : `looking up data (step ${toolRounds + 1})...` });
+
+              const response = await client.messages.create({
+                model: "claude-haiku-4-5-20251001",
+                max_tokens: 1500,
+                system: systemPrompt,
+                tools: chatTools,
+                messages: apiMessages,
+              });
+
+              const toolUses = response.content.filter(b => b.type === "tool_use");
+              if (toolUses.length === 0) {
+                // Final response — send text in chunks
+                const textBlocks = response.content.filter(b => b.type === "text");
+                const fullText = textBlocks.map(b => (b as any).text).join("");
+                const chunkSize = 20;
+                for (let i = 0; i < fullText.length; i += chunkSize) {
+                  send({ text: fullText.slice(i, i + chunkSize) });
+                }
+                send({});  // clear status
+                controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
+                logDebug("chat", `complete (${toolRounds} tool rounds, ${fullText.length} chars)`);
+                controller.close();
+                return;
+              }
+
+              // Tool calls — send progress with tool names
+              const toolNames = toolUses.map(t => (t as any).name);
+              logDebug("chat:tools", `round ${toolRounds + 1}: ${toolUses.length} tool calls`, toolNames.join(", "));
+              const friendlyNames: Record<string, string> = {
+                get_paper_status: "checking paper status",
+                get_todos: "looking up todos",
+                get_block: "reading block content",
+                get_chapter_blocks: "scanning chapter",
+                search_blocks: "searching",
+                get_imports: "checking imports",
+              };
+              const desc = toolNames.map(n => friendlyNames[n] || n).join(", ");
+              send({ status: desc + "..." });
+
+              apiMessages.push({ role: "assistant", content: response.content });
+
+              const toolResults: Anthropic.ToolResultBlockParam[] = [];
+              for (const tu of toolUses) {
+                const toolUseBlock = tu as Anthropic.ToolUseBlock;
+                const result = await executeTool(toolUseBlock.name, toolUseBlock.input as Record<string, unknown>);
+                toolResults.push({
+                  type: "tool_result",
+                  tool_use_id: toolUseBlock.id,
+                  content: result,
+                });
+              }
+              apiMessages.push({ role: "user", content: toolResults });
+              toolRounds++;
+            }
+
+            // Exhausted tool rounds — final streaming call without tools
+            logDebug("chat", `max tool rounds reached (${MAX_TOOL_ROUNDS}), final call`);
+            send({ status: "composing response..." });
+
+            const stream = await client.messages.stream({
+              model: "claude-haiku-4-5-20251001",
+              max_tokens: 1500,
+              system: systemPrompt,
+              messages: apiMessages,
+            });
+
             for await (const event of stream) {
               if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
+                send({ text: event.delta.text });
               }
             }
             controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
@@ -1459,19 +1467,13 @@ These become clickable buttons so users don't have to type. Make them specific t
           } catch (e) {
             log("chat", "stream error", String(e));
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: String(e) })}\n\n`));
+            controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
             controller.close();
           }
         },
       });
 
-      return new Response(readable, {
-        headers: {
-          "Content-Type": "text/event-stream",
-          "Cache-Control": "no-cache",
-          "Connection": "keep-alive",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+      return new Response(readable, { headers: sseHeaders });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }

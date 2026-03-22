@@ -4206,24 +4206,22 @@
       chatMessages.appendChild(assistDiv);
 
       let fullResponse = '';
-      let firstChunkReceived = false;
-      // Show "looking up..." after a delay if no text yet (tool use happening server-side)
-      const lookupTimer = setTimeout(() => {
-        if (!firstChunkReceived) {
-          assistDiv.innerHTML = '<span style="color:var(--fg-d);font-size:.7rem;font-style:italic">looking up data...</span>';
-        }
-      }, 1500);
+      let firstTextReceived = false;
 
       try {
+        const abort = new AbortController();
+        const timeout = setTimeout(() => abort.abort(), 60000); // 60s timeout
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            messages: chatHistory.slice(-10), // last 10 messages for context
+            messages: chatHistory.slice(-10),
             context,
             mode,
           }),
+          signal: abort.signal,
         });
+        clearTimeout(timeout);
 
         if (!res.ok) {
           const err = await res.json().catch(() => ({ error: 'Unknown error' }));
@@ -4248,10 +4246,16 @@
             if (data === '[DONE]') break;
             try {
               const parsed = JSON.parse(data);
+              if (parsed.status) {
+                // Progress update during tool-use rounds
+                if (!firstTextReceived) {
+                  assistDiv.innerHTML = `<span style="color:var(--fg-d);font-size:.7rem;font-style:italic">${esc(parsed.status)}</span>`;
+                  chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+              }
               if (parsed.text) {
-                if (!firstChunkReceived) { firstChunkReceived = true; clearTimeout(lookupTimer); }
+                firstTextReceived = true;
                 fullResponse += parsed.text;
-                // Render with full markdown pipeline
                 const {html: renderedHtml, texBlocks: tx} = parseMd(fullResponse);
                 assistDiv.innerHTML = renderedHtml;
                 fillTex(assistDiv, tx);
@@ -4324,9 +4328,9 @@
         }
 
       } catch (e) {
-        appendChatError(assistDiv, e.message);
+        const msg = e.name === 'AbortError' ? 'Request timed out — try again or simplify your question' : (e.message || 'Request failed');
+        appendChatError(assistDiv, msg);
       } finally {
-        clearTimeout(lookupTimer);
         chatStreaming = false;
         chatSend.disabled = false;
         chatTyping.classList.remove('active');
