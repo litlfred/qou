@@ -71,6 +71,36 @@ if [ -d "$REPO_ROOT/content" ] && [ ! -d "$REPO_ROOT/content/node_modules" ]; th
   cd "$REPO_ROOT/content" && bun install 2>&1 >&2
 fi
 
+# ── Quick dependency status ─────────────────────────────────────
+# Always show what's available so the user knows what features work.
+
+_check() { command -v "$1" &>/dev/null && echo "✓" || echo "✗"; }
+
+echo "" >&2
+echo "[start-assistant] Dependency status:" >&2
+
+# Required
+for cmd in bun latexmk pdflatex; do
+  printf "  %s %-12s (required)\n" "$(_check "$cmd")" "$cmd" >&2
+done
+
+# Optional
+for cmd in pandoc pdftoppm lean lake uv rg xdg-open; do
+  printf "  %s %-12s (optional)\n" "$(_check "$cmd")" "$cmd" >&2
+done
+
+# Count missing required
+MISSING=0
+for cmd in bun latexmk pdflatex; do
+  command -v "$cmd" &>/dev/null || MISSING=$((MISSING + 1))
+done
+if [ "$MISSING" -gt 0 ]; then
+  echo "" >&2
+  echo "  ⚠  $MISSING required dep(s) missing — some features disabled." >&2
+  echo "     Run: ./scripts/start-assistant.sh --check  for install hints" >&2
+fi
+echo "" >&2
+
 # ── Check-only mode ─────────────────────────────────────────────
 
 if $CHECK_ONLY; then
