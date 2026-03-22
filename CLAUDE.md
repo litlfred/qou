@@ -41,6 +41,10 @@ When a user request arrives, route to the right skill(s):
 | "test / unit test / coverage" | `local/test-engineer` |
 | "import / arxiv / upload paper" | `local/paper-importer` |
 | "import + formalize" | `local/paper-importer` + `local/formalizer` |
+| "critical path / trace dependencies" | `local/critical-path-analysis` |
+| "archimedean vs categorical / context audit" | `local/critical-path-analysis` |
+| "what assumptions does X need" | `local/critical-path-analysis` |
+| "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` |
 
 **Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
 `local/content-validation` + relevant content skill. (2) Does it touch `.tex`?

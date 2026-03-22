@@ -151,6 +151,7 @@ export default chapter({
       label: "sec:topological-mass",
       blocks: [
         "topological-mass",
+        "topological-mass-categorical-proof",
         "qdlog-julia",
         "julia-s1-photon-scatter",
       ],
@@ -171,6 +172,7 @@ export default chapter({
         "qu-to-qou-proof",
         "mass-identity-C",
         "mass-geometric-drag",
+        "euler-char-stability-C",
         "brane-boundary-structure-proof",
         "topological-mass-proof",
         "quantum-dilogarithm",
