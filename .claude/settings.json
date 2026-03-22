@@ -15,6 +15,10 @@
           {
             "type": "command",
             "command": "./scripts/open-assistant.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/lean-build-bg.sh &"
           }
         ]
       }

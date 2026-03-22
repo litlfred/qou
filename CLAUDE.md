@@ -56,6 +56,10 @@ When a user request arrives, route to the right skill(s):
 | "deploy / auth / OAuth / roles" | `local/deployment-auth` | owner |
 | "import / arxiv / upload paper" | `local/paper-importer` | collaborator |
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
+| "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
+| "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
+| "what assumptions does X need" | `local/critical-path-analysis` | reader |
+| "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
 
 ### Skill role assignments
 
@@ -226,7 +230,15 @@ the paper introduces genuinely new axioms/structure, add a definition.
 ### 8. File hygiene
 
 - Never commit `.lake/`, `lake-packages/`, or `build/`.
-- Pin external dependencies to commit hashes in `lakefile.toml`.
+- **Pin external dependencies to commit hashes** in `lakefile.toml` —
+  never use branch names (`main`, `master`) or version tags (`v4.16.0`).
+  Mathlib version numbers ≠ Lean version numbers; tags can resolve to
+  unexpected toolchain versions.
+- **All deps must agree on the same `lean-toolchain`**. Before adding or
+  updating a dep, check `cat .lake/packages/<dep>/lean-toolchain` for
+  every package. If any disagree, find compatible versions first.
+  See `formalizer.md § Adding New Dependencies` for the full procedure.
+- To recover from broken `.lake/`, use `mv .lake /tmp/...` (not `rm -rf`).
 - Keep imports minimal — only import what the file actually uses.
 - The `.lean` sibling file must share the same root name as its `.ts`/`.md`
   siblings (e.g., `rigid-monoidal-category.lean`).

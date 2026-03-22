@@ -262,14 +262,81 @@ Self-duality predicates follow as `f ≫ star = f` (categorical) or
 
 When a proof requires a library not in `lakefile.toml`:
 
-1. Add the `[[require]]` entry to `lean/lakefile.toml`
-2. Run `cd lean && lake update` — this fetches the dep into `.lake/packages/`
+1. Add the `[[require]]` entry to the relevant `lakefile.toml`
+2. Run `lake update` — this fetches the dep into `.lake/packages/`
 3. Run `lake exe cache get` if the dep has prebuilt oleans
 4. Run `lake build` to verify everything compiles
 5. **Only commit**: `lakefile.toml` and `lake-manifest.json`
 6. **Never commit**: `.lake/`, `lake-packages/`, `build/` (all gitignored)
 
 The MCP server will pick up new dependencies automatically after `lake build`.
+
+### Toolchain compatibility (critical)
+
+All `[[require]]` deps in a Lean project **must agree on the same
+`lean-toolchain` version**. A mismatch causes build failures — often
+cryptic Lake API errors in transitive deps like proofwidgets.
+
+**Before adding or changing a dependency:**
+
+1. Check the new dep's `lean-toolchain`:
+   ```bash
+   git ls-remote --refs <repo-url> HEAD
+   # then check lean-toolchain at that commit, or:
+   cat .lake/packages/<dep>/lean-toolchain
+   ```
+2. Compare against every other dep's toolchain:
+   ```bash
+   for pkg in .lake/packages/*/; do
+     echo "$(basename $pkg): $(cat $pkg/lean-toolchain 2>/dev/null)"
+   done
+   ```
+3. If they disagree, **do not proceed**. Find a compatible version.
+
+**How to find a compatible version:**
+
+- Check the new dep's `lake-manifest.json` for the Mathlib commit it
+  was tested against:
+  ```bash
+  cat .lake/packages/<dep>/lake-manifest.json | grep -A3 mathlib
+  ```
+- Use **that same Mathlib commit hash** as `rev` in your `lakefile.toml`.
+  This ensures all transitive deps (proofwidgets, batteries, aesop, etc.)
+  resolve to versions tested together.
+
+**Pin to commit hashes, not tags or branch names:**
+
+- `rev = "master"` or `rev = "main"` — breaks when upstream updates.
+- `rev = "v4.16.0"` — tag may target a different Lean version than
+  you expect (Mathlib version numbers ≠ Lean version numbers).
+- `rev = "f897ebcf72cd..."` — **preferred**. Reproducible and stable.
+
+**When `lake update` changes `lean-toolchain` automatically:**
+
+Lake overwrites `lean-toolchain` if a dep requires a different version.
+This makes the file dirty and blocks `git pull`. Fix with
+`git checkout lean-toolchain` before pulling, then let `lake update`
+set it again.
+
+### Recovery from broken `.lake/`
+
+When dependency resolution is broken, **move** (don't delete) the
+`.lake/` directory and re-resolve:
+
+```bash
+mv .lake /tmp/lake-backup-$(date +%s)
+lake update
+```
+
+Using `mv` to `/tmp` is safer than `rm -rf` — you can recover if
+the new resolution also fails.
+
+### Multiple Lean projects
+
+This repo has multiple Lean projects (`lean/`, `lean-archive/`).
+Each has its own `lakefile.toml` and `lean-toolchain`. They may
+target different Lean versions. Always `cd` into the correct project
+directory before running `lake` commands.
 
 ## Blueprint Synchronization
 

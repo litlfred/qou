@@ -37,7 +37,12 @@ deploy/authorized-emails.txt
 deploy/Caddyfile
 deploy/viewer/
 scripts/mcp-server/bun.lock
+schemas/bun.lock
 viewer/paper.js
+# Root-level dev dependencies (TypeDoc etc.)
+package-lock.json
+bun.lock
+
 # Work-tracking todos (gitignored — survives branch switches)
 todos/
 

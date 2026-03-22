@@ -1144,6 +1144,28 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return null;
   }
 
+  // ── API: Schema manifest (for viewer schema doc panel) ───
+  if (path === "/api/schema-manifest") {
+    const manifestPath = join(REPO_ROOT, "build/schema-manifest.json");
+    if (existsSync(manifestPath)) {
+      return serveFile(manifestPath) || Response.json({ error: "read error" }, { status: 500 });
+    }
+    // Generate on-the-fly if build/ doesn't exist yet
+    try {
+      const { spawnSync } = await import("child_process");
+      spawnSync("bun", ["run", "scripts/generate-schema-manifest.ts"], { cwd: REPO_ROOT, timeout: 10000 });
+      return serveFile(manifestPath) || Response.json({ error: "generation failed" }, { status: 500 });
+    } catch {
+      return Response.json({ error: "schema-manifest.json not found; run: bun run scripts/generate-schema-manifest.ts" }, { status: 404 });
+    }
+  }
+
+  // ── API: Schema docs (TypeDoc static files) ─────────────
+  if (path.startsWith("/schema-docs/")) {
+    const docsPath = join(REPO_ROOT, "build", path);
+    return serveFile(docsPath) || new Response("Not found", { status: 404 });
+  }
+
   // ── API: Feedback ─────────────────────────────────────────
   // GET  /api/feedback?paperId=X&rootName=Y → todos for one block
   // GET  /api/feedback/all?status=open      → all todos (optional status filter)
@@ -1505,6 +1527,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         context?: {
           paperId?: string; blockLabel?: string; blockMd?: string; blockKind?: string;
           selectedText?: string;
+          viewMode?: string;
           visibleBlocks?: Array<{ label: string; kind: string; title: string }>;
         };
         mode?: "read" | "edit" | "status";
@@ -1777,6 +1800,19 @@ These become clickable buttons so users don't have to type. Make them specific t
         systemPrompt += `\n\nThe user is in EDITOR mode. They may want to report errors, suggest improvements, or discuss editorial decisions. Use tools to fetch block content and todos before responding.`;
       } else {
         systemPrompt += `\n\nThe user is in READER mode. They're studying the paper and want to understand the content. Use get_block to fetch full content when explaining. Prioritize clear explanations and intuition.`;
+      }
+
+      // Add view-mode context so the assistant understands the UI context
+      if (body.context?.viewMode) {
+        const vm = body.context.viewMode;
+        const viewDescriptions: Record<string, string> = {
+          "read": "The user is viewing the paper in **read mode** — the full paper content with sidebar navigation. They are reading/studying the paper.",
+          "qc": "The user is viewing the **QC Dashboard** — a quality-control overview showing proof status, sorry counts, and block-level formalization progress. They likely want to understand what needs work.",
+          "diff": "The user is viewing the **diff view** — comparing changes between branches. They are reviewing edits and may want to understand what changed and why.",
+          "critical-path": "The user is viewing the **critical path** — a filtered view showing only the essential proof chain: leaf theorems traced back through their dependencies to foundational definitions. They want to understand the paper's core logical structure and narrative.",
+          "folio": "The user is on the **folio landing page** — browsing the list of available papers. They may want an overview or help choosing what to read.",
+        };
+        systemPrompt += `\n\n## Current view\n${viewDescriptions[vm] || `The user is in the **${vm}** view.`}`;
       }
 
       // Add context about the current block if available
