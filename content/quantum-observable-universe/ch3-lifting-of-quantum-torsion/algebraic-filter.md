@@ -1,7 +1,7 @@
 Let $\alpha$ be a harmonic $1$-form in the basis of
-[Remark](#rem:q-harmonic-basis-brane).  Its *signature* is determined
+[$q$-harmonic basis on branes](#rem:q-harmonic-basis-brane).  Its *signature* is determined
 by its commutator with the curvature $F_A$
-([Definition](#def:substrate-parameter)).
+([substrate parameter](#def:substrate-parameter)).
 
 *Fermionic type (matter).*
 $[F_A,\, \alpha] \neq 0$.  These forms are entangled with the curvature: they
@@ -11,6 +11,6 @@ filaments.
 
 *Bosonic type (radiation).*
 $[F_A,\, \alpha] = 0$.  These forms commute with the curvature.  They are the
-longitudinal modes ([Remark](#rem:weight-space-decomposition)) that flow
+longitudinal modes ([weight space decomposition](#rem:weight-space-decomposition)) that flow
 through the bulk without being deflected by the monodromy fixed points.  Their
 geodesics are straight relative to the gauge-fluid flow.

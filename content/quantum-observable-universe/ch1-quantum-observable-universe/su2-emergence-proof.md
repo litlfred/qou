@@ -53,12 +53,12 @@ special subgroup $\mathrm{SL}(2)$.
 The QOU non-degeneracy axiom ensures the Frobenius form
 $\lambda \colon A \to \mathbf{1}$ is non-degenerate, inducing the
 Frobenius self-duality $A \cong A^{\vee}$
-([Proposition](#prop:fiber-adjoint-involution)). Define a dagger on
+([fibre adjoint involution](#prop:fiber-adjoint-involution)). Define a dagger on
 morphisms by $f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$, where
 $S$ is the antipode. Non-degeneracy of $\lambda$ and faithfulness
 of $\omega$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
 is a positive-definite dagger structure
-([Definition](#def:positive-definite-dagger)). Every tensor
+([positive definite dagger](#def:positive-definite-dagger)). Every tensor
 automorphism $g \in G$ preserves the dagger (it commutes with $S$ and
 $\lambda$), forcing $g_V^{-1} = g_V^{\dagger}$ and locking the group
 into its unitary real form $\mathrm{SU}(2)$.

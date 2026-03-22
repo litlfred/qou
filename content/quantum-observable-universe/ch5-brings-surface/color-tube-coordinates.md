@@ -1,7 +1,7 @@
 Let $z = x_0/x_1 \in \mathbb{P}^1(\mathbb{C})$ be the spacetime ratio
-([Remark](#rem:braid-group-action)(i)) and let $w_k$,
+([braid group action](#rem:braid-group-action)(i)) and let $w_k$,
 $k \in \{0,\dots,4\}$, be the Lagrange resolvents of Bring's surface
-([Remark](#rem:lagrange-resolvents)).  The *color tube coordinates*
+([Lagrange resolvents](#rem:lagrange-resolvents)).  The *color tube coordinates*
 are the shifted spectral coordinates
 
 ```tex

@@ -1,4 +1,4 @@
-Continuing [Example](#ex:maximal-torus-su2), the maximal torus is
+Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), the maximal torus is
 $T = \mathrm{U}(1)$ with generator
 $\xi = e_3 = \frac{1}{2}\begin{psmallmatrix} 1 & 0 \\ 0 & -1
 \end{psmallmatrix} \in \mathfrak{su}(2)$.
@@ -13,4 +13,4 @@ $\theta_A = \omega_3$ (the left-invariant $1$-form dual to $e_3$), and:
 - In the archimedean realisation on a CR manifold $(M, \theta)$,
   $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$
   and $\theta(\xi) = 1$
-  ([Example](#def:reeb-decomposition)).
+  ([Reeb decomposition](#def:reeb-decomposition)).

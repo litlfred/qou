@@ -16,10 +16,10 @@ $$
 proving that the spacetime base "bounces" at the defect: the chiral
 coordinate continuously glides through the exceptional divisor and
 transitions between sheets without encountering a singularity
-(cf. [Remark](#rem:brings-smoothness)).
+(cf. [Bring's surface smoothness](#rem:brings-smoothness)).
 
 In the spectral domain, the Jacobian determinant of the DFT
-([Remark](#rem:lagrange-resolvents)) is a constant
+([Lagrange resolvents](#rem:lagrange-resolvents)) is a constant
 $\lvert\det(J)\rvert=1$, so the global volume form never collapses:
 
 ```tex
@@ -31,7 +31,7 @@ $\lvert\det(J)\rvert=1$, so the global volume form never collapses:
 
 This is the *spectral volume constraint*: the top-degree analogue
 of the categorical volume constraint
-([Definition](#def:quantum-observable-universe), item (iii)).  The categorical
+([quantum observable universe](#def:quantum-observable-universe), item (iii)).  The categorical
 constraint provides a non-degenerate pairing
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ on the rank-$2$ fundamental
 object; the spectral volume constraint
@@ -42,7 +42,7 @@ $\det(J) \in \mathrm{U}(1)$.
 
 The link is made explicit by the symplectic form.  On the categorical
 side, the alternating pairing on $V \cong \mathbb{C}^2$ is
-([Lemma](#lem:volume-from-rigidity))
+([volume from rigidity](#lem:volume-from-rigidity))
 
 $$
   \epsilon(v \wedge w)
@@ -89,7 +89,7 @@ differential*:
 
 where $X\in\{x_2,x_3,x_4\}$ is the internal momentum (Higgs-field
 eigenvalue) defining the spectral curve
-([Remark](#rem:chiral-bundles)), and $z$ is the spacetime position.
+([chiral bundles](#rem:chiral-bundles)), and $z$ is the spacetime position.
 The exact physical properties of the topological defects---specifically
 the mass/energy spectrum generating the torsion---are rigorously
 determined by integrating this differential along the fundamental
@@ -108,6 +108,6 @@ By lifting the Bring surface into the full spatial and spectral
 coordinate spaces, the degenerate branch points resolve completely into
 smooth exceptional divisors.  The infinite local torsion is geometrically
 captured as trapped flux, revealing that the discrete braid-group
-($B_3$) holonomy ([Remark](#rem:holonomy-trefoil)) is simply the
+($B_3$) holonomy ([holonomy of trefoil](#rem:holonomy-trefoil)) is simply the
 continuous Kodaira monodromy of a globally smooth Seiberg--Witten gauge
 theory.

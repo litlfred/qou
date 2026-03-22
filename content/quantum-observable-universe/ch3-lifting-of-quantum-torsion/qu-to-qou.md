@@ -1,11 +1,11 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a Noetherian
-ring $R$ ([Definition](#def:quantum-universe)); let $q$ denote the substrate parameter.  Assume observability
+ring $R$ ([quantum universe](#def:quantum-universe)); let $q$ denote the substrate parameter.  Assume observability
 $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$
-([Definition](#def:quantum-observable-universe)).  Then the brane tower
-$\{A_n\}_{n \geq 0}$ constructed via jet prolongation
-([Proposition](#prop:jet-prolongation)) satisfies the Yekutieli lifting
-condition ([Definition](#def:yekutieli-lifting-condition),
-[Proposition](#prop:yekutieli-lifting)), and $(\mathcal{C}, A, \omega)$
+([quantum observable universe](#def:quantum-observable-universe)).  Then the brane tower
+$\{A_n\}_{n \geq 0}$ constructed via
+([jet prolongation](#prop:jet-prolongation)) satisfies the Yekutieli lifting
+condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition),
+[Yekutieli lifting](#prop:yekutieli-lifting)), and $(\mathcal{C}, A, \omega)$
 is a quantum observable universe with the following structural properties:
 
 1. *Descent terminates.*  The geometric descent tower has finite
@@ -24,12 +24,12 @@ is a quantum observable universe with the following structural properties:
    $H^2(\mathcal{S}, \mathcal{B})$, so the corrections cannot cancel
    $\kappa_0$.
 4. *Branch point formula.*  The geometric descent from
-   $\mathbb{P}(V)$ ([Definition](#def:projective-line-object)) to
+   $\mathbb{P}(V)$ ([projective line object](#def:projective-line-object)) to
    points has $B$ branch points with total ramification
    $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ (Riemann--Hurwitz),
    where $d$ is the degree of the covering.
 5. *Terminal fiber data.*  At each branch point $p$, the QOU
    reduces to fiber data $(A, \omega, q(p))$ with the involution
    $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$
-   ([Proposition](#prop:fiber-adjoint-involution)).
+   ([fibre adjoint involution](#prop:fiber-adjoint-involution)).
 

@@ -34,4 +34,4 @@ in $\psi$.  Varying $\psi \mapsto \psi + \delta\psi$ and using
 $(\delta\psi)^* \cdot D_\nabla\,\psi = 0$ for
 all $\delta\psi$ gives $D_\nabla\,\psi = 0$ by non-degeneracy
 of $\lambda$ and the dagger structure
-([Definition](#def:positive-definite-dagger)).
+([positive definite dagger](#def:positive-definite-dagger)).

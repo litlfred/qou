@@ -22,13 +22,13 @@ summand).  Therefore $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by
 the quantum Schur lemma.
 
 *Item (3).*
-By [Proposition](#prop:jet-prolongation), $J^1(A)$ is Frobenius--Hopf, so
+By [jet prolongation](#prop:jet-prolongation), $J^1(A)$ is Frobenius--Hopf, so
 the brane tower $\{A_n\}$ is well-defined.  Each transition
 $A_n \hookrightarrow A_{n+1}$ gives a central extension of gerbes banded by
 the centre $\mathcal{B} = Z(\mathrm{Aut}(A_n))$.  The obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ exists by the standard gerbe
 classification theorem, verifying the Yekutieli lifting condition
-([Proposition](#prop:yekutieli-lifting)).
+([Yekutieli lifting](#prop:yekutieli-lifting)).
 
 *Item (4).*
 The categorical trace of $\mathrm{id}_A$ in

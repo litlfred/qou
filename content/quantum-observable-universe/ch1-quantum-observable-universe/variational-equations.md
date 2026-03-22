@@ -1,5 +1,5 @@
-Let $\mathcal{S}_q$ be the categorical action
-([Definition](#def:categorical-action)).  The three variational
+Let $\mathcal{S}_q$ be the
+([categorical action](#def:categorical-action)).  The three variational
 equations are:
 
 1. *Gravity (vary $\lambda$)*:

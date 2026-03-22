@@ -4,10 +4,10 @@ splitting $\mathrm{im}\,\tau_n \oplus \ker\,\tau_n$ is an orthogonal direct
 sum.
 
 For item (1), let $\alpha \in \Gamma(J^1 E_{n+1})$ be a bosonic mode lifted
-from level $n$: $[F_A, \alpha] = 0$ ([Remark](#rem:algebraic-filter)).
+from level $n$: $[F_A, \alpha] = 0$ ([algebraic filter](#rem:algebraic-filter)).
 Bosonic modes take values in the Cartan subalgebra
 $\mathrm{U}(1) \subset \mathfrak{su}(2)$
-([Remark](#rem:weight-space-decomposition)).  Since $\alpha$ lies in the
+([weight space decomposition](#rem:weight-space-decomposition)).  Since $\alpha$ lies in the
 image of the ascent $\ell_n$, we have $\alpha = \ell_n(\beta)$ for some
 $\beta \in \Gamma(J^1 E_n)$.  Then
 $\tau_n(\alpha) = \ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta)))

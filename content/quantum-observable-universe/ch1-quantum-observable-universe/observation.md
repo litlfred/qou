@@ -1,9 +1,9 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
-ring $R$ ([Definition](#def:quantum-observable-universe)), let $q$
-denote the substrate parameter
-([Definition](#def:substrate-parameter)), and let
-$p \colon \mathbf{1} \to A$ be a categorical point
-([Definition](#def:categorical-point)).  An
+ring $R$ ([quantum observable universe](#def:quantum-observable-universe)), let $q$
+denote the
+([substrate parameter](#def:substrate-parameter)), and let
+$p \colon \mathbf{1} \to A$ be a
+([categorical point](#def:categorical-point)).  An
 *observation at $p$* is a morphism
 
 $$

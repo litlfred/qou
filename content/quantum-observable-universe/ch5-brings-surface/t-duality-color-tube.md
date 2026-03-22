@@ -1,5 +1,5 @@
 The T-duality involution $\iota \colon (X, z) \mapsto (z, X)$
-([Remark](#rem:t-duality-elliptic)) acts on color tube
+([T-duality on elliptic fibres](#rem:t-duality-elliptic)) acts on color tube
 coordinates as follows.  Writing $c = X - z$, the dual point has
 base coordinate $z' = X = c + z$ and chiral coordinate $X' = z$,
 giving dual color tube coordinate $c' = z - X = -c$.  Hence
@@ -11,7 +11,7 @@ giving dual color tube coordinate $c' = z - X = -c$.  Hence
 ```
 
 The symmetry $F(X,z) = F(z,X)$
-([Remark](#rem:t-duality-elliptic)) translates to covariance of
+([T-duality on elliptic fibres](#rem:t-duality-elliptic)) translates to covariance of
 the color tube cubic: the cubic at
 parameter $z$ with root $c$ is carried by $\iota$ to the cubic at
 parameter $c + z$ with root $-c$.  One verifies this directly from

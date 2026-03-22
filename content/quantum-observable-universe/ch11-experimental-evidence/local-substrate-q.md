@@ -1,6 +1,6 @@
 In any sufficiently small neighbourhood $U \subset M$ of the observable
 universe, the substrate parameter $q$
-([Definition](#def:substrate-parameter)) satisfies
+([substrate parameter](#def:substrate-parameter)) satisfies
 $$
   q\big|_U \;=\; 1.1097 \;\pm\; 0.001.
 $$

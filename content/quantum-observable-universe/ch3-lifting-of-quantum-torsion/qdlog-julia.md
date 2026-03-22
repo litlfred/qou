@@ -22,9 +22,9 @@ accumulates the *information flow* along the orbit of $f_c$, with the weight
 $2^{-k}$ reflecting the degree-$2$ expansion at each step.
 
 In the QOU framework the role of the dynamical parameter $c$ is played by the
-substrate parameter $q=q(z)$ ([Definition](#def:substrate-parameter)), which varies
+substrate parameter $q=q(z)$ ([substrate parameter](#def:substrate-parameter)), which varies
 continuously with the spacetime coordinate $z$.  The $q$-deformed Reeb flow
-([Definition](#def:q-reeb-flow)) on the exceptional divisor $E_i \cong \mathbb{P}^1(\mathbb{C})$
+([$q$-Reeb flow](#def:q-reeb-flow)) on the exceptional divisor $E_i \cong \mathbb{P}^1(\mathbb{C})$
 takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$
 in the quantum dilogarithm integral accumulates information along that flow exactly as
 [eq:bottcher-series](#eq:bottcher-series) accumulates it along the Julia-set orbit.  The
@@ -36,6 +36,6 @@ suppress high-order terms, concentrating the topological charge near the blow-up
 In this identification the *Julia set boundary* of the classical problem---the
 locus where $G_c$ transitions from zero to positive---is the analogue of the boundary
 of the exceptional divisor $\partial E_i$, where the $q$-deformed torsion charge changes
-regime ([Remark](#rem:reeb-exceptional-divisor)).  The substrate parameter $q(z)$
+regime ([Reeb exceptional divisor](#rem:reeb-exceptional-divisor)).  The substrate parameter $q(z)$
 thereby acts as a *spacetime-dependent dynamical parameter*, continuously
 deforming the Julia set geometry as one moves through the QOU.

@@ -1,9 +1,9 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial
 crossed groupoid structure
-([Proposition](#prop:cosimplicial-crossed-groupoid)); let $q$ denote the substrate parameter.  Let
-$\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the vacuum state
-([Proposition](#prop:vacuum-state)).  A *weak equivalence* between
+([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)); let $q$ denote the substrate parameter.  Let
+$\omega \colon \mathcal{A}_\infty \to \mathbb{C}$ be the
+([vacuum state](#prop:vacuum-state)).  A *weak equivalence* between
 brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
 $$
   \mathfrak{G}_n

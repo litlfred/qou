@@ -1,4 +1,4 @@
-The $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)) is an
+The $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an
 involution on $\Omega^2(A)$, so its eigenspaces give the splitting
 $\Omega^2(A) = \Omega^+(A) \oplus \Omega^-(A)$ and hence
 the short exact sequence
@@ -20,9 +20,9 @@ the short exact sequence
 
 where $\Omega^{\pm}(A) = \ker(\mathrm{id} \mp \star_q)$.
 The instanton condition
-([Definition](#def:categorical-instanton)) is exactly
+([categorical instanton](#def:categorical-instanton)) is exactly
 $F_\nabla \in \ker(\pi^-)$, i.e. $F_\nabla^- = 0$.
-In the archimedean realisation ([Example](#prop:self-dual-curvature)),
+In the archimedean realisation ([self-dual curvature](#prop:self-dual-curvature)),
 $\star_q$ specialises to $*_H$ and the sequence becomes
 $0 \to \Gamma(\Lambda^-\!H^* \otimes \mathrm{Ad}(P)) \to
 \Gamma(\Lambda^2 H^* \otimes \mathrm{Ad}(P)) \to

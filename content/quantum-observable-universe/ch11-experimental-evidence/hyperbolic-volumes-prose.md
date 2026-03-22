@@ -2,7 +2,7 @@
 The key idea behind the following two propositions is that inertial mass
 originates in the topology of knot complements. Every particle in the QOU
 framework is identified with a knot or link $K$ (see the table in
-[Remark](#rem:skein-decomposition)). To each such knot one associates the
+[skein decomposition](#rem:skein-decomposition)). To each such knot one associates the
 **hyperbolic volume** $\mathrm{Vol}(K)$: the volume of the complete
 hyperbolic metric on the complement $S^3 \setminus K$, computed via the
 Bloch--Wigner dilogarithm. For torus knots (e.g. the trefoil $3_1$) this
@@ -22,9 +22,9 @@ $$
   \qquad
   \hbar_q \;:=\; 1 - q^{-1},
 $$
-where $q > 1$ is the substrate parameter
-([Definition](#def:substrate-parameter)) and $\hbar_q$ is the quantum
-Planck constant ([Definition](#def:quantum-planck-constant)). For
+where $q > 1$ is the
+([substrate parameter](#def:substrate-parameter)) and $\hbar_q$ is the quantum
+Planck constant ([quantum planck constant](#def:quantum-planck-constant)). For
 *composite* states the mass functional $\mathcal{M}$ is *not*
 additive; instead it satisfies a $q$-deformed Skein recursion at every
 crossing in the color-exchange diagram, generalising the Jones-polynomial

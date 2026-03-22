@@ -1,4 +1,4 @@
-Continuing [Example](#ex:spin-labels-su2), the fundamental object is
+Continuing [spin labels on SU(2)](#ex:spin-labels-su2), the fundamental object is
 $V = \mathbb{C}^2$ with the standard $\mathrm{SU}(2)$-action. The
 weight decomposition is $V = \mathbb{C} e_+ \oplus \mathbb{C} e_-$
 (the $\pm\tfrac{1}{2}$-eigenspaces of

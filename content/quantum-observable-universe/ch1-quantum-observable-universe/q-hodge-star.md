@@ -1,7 +1,7 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
 categorical Hodge star $\star$
-([Definition](#def:categorical-hodge-star)) and substrate
-parameter $q$ ([Definition](#def:substrate-parameter)).  The
+([categorical hodge star](#def:categorical-hodge-star)) and substrate
+parameter $q$ ([substrate parameter](#def:substrate-parameter)).  The
 *$q$-Hodge star* is the $q$-deformed involution
 $\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by
 

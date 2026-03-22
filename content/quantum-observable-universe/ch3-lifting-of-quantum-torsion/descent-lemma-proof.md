@@ -1,5 +1,5 @@
 
-The proof mirrors the ascent ([Proposition](#prop:jet-prolongation)) in
+The proof mirrors the ascent ([jet prolongation](#prop:jet-prolongation)) in
 reverse, working inside the rigid monoidal category $\mathcal{C}$.
 
 *Step 1: Frobenius restriction.*
@@ -15,7 +15,7 @@ restricted object inherits a Frobenius--Hopf structure.
 
 *Step 2: Connection restriction.*
 The connection $A_n$ on $E_n$ is determined by the comultiplication
-$\Delta'$ on $J^1(A)$ ([Proposition](#prop:jet-prolongation), Step 2).
+$\Delta'$ on $J^1(A)$ ([jet prolongation](#prop:jet-prolongation), Step 2).
 Restricting $\Delta'$ along $r_n$ recovers the original comultiplication
 $\Delta$ on $A$, which by the construction of the brane tower corresponds to
 the connection $A_{n-1}$ on $E_{n-1}$.  In particular, $A_{n-1}$ satisfies
@@ -36,7 +36,7 @@ $\mathfrak{d}_n\colon
 \Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
 This is a $*$-homomorphism because $r_n$ preserves multiplication and
 the antipode.  Surjectivity follows from the fact that the ascent map
-$\ell_n$ of [Proposition](#prop:jet-prolongation) is injective (it
+$\ell_n$ of [jet prolongation](#prop:jet-prolongation) is injective (it
 embeds $A$ into $J^1(A)$ as a direct summand), so its categorical adjoint
 $r_n$ is surjective.
 

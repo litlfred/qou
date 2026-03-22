@@ -1,6 +1,6 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-Reeb derivation $\xi$ ([Definition](#def:categorical-reeb)) and
-substrate parameter $q$ ([Definition](#def:substrate-parameter)).
+Reeb derivation $\xi$ ([categorical Reeb derivation](#def:categorical-reeb)) and
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)).
 The *$q$-deformed Lie bracket* on derivations of $A$ is
 
 $$

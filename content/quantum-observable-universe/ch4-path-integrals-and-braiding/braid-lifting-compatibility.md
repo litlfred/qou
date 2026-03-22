@@ -1,4 +1,4 @@
-The jet prolongation ([Proposition](#prop:jet-prolongation)) preserves
+The ([jet prolongation](#prop:jet-prolongation)) preserves
 braided monoidal structure: if $\mathcal{C}$ is braided, then the jet
 object $J^1(A) = A \otimes \Omega^1(A)$ inherits a braiding from the
 tensor product of braidings on $A$ and $\Omega^1(A)$.  Consequently the
