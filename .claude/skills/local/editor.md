@@ -80,7 +80,43 @@ open todos, **present the summary and ask the user** (multiple-choice):
 - **Start a new task** — proceed to normal triage, todos stay open
 - **Do research** — explore codebase, read content, no edits
 
-If there are no open todos, skip straight to triage.
+If there are no open todos, skip straight to step 1b.
+
+### 1b. Cross-reference todos with branch changes
+
+When the current branch is not `main`, check whether any open todos
+target content blocks that were **modified in this branch**:
+
+```bash
+# Get content files changed in this branch vs main
+git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content/**/*.lean'
+```
+
+For each changed file, extract the block root name (filename without
+extension) and check if `.qou-feedback/` has open todos referencing
+that root name.
+
+**If matches are found**, present them to the user:
+
+> These open todos are on content blocks modified in this branch:
+>
+> - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
+> - **[medium]** `hadron`: "Clarify meson binding vs baryon"
+>
+> Address these now?
+
+Offer (multiple-choice):
+- **Address matching todos** — walk through just the branch-relevant
+  todos using the `todo-review` skill
+- **Skip for now** — proceed to triage, todos stay open
+- **Mark as resolved** — auto-close todos that the branch changes
+  already address (editor reviews the diff to confirm)
+
+**If no matches**, proceed to triage silently.
+
+This ensures that when a branch modifies content, any feedback left on
+those blocks surfaces immediately — preventing stale todos from
+surviving past the work that should have resolved them.
 
 ### 2. Triage
 
