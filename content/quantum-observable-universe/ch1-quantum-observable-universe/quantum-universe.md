@@ -11,12 +11,20 @@ triple $(\mathcal{C}, A, \omega)$ where:
    ```tex
    \[
    \begin{tikzcd}[row sep=1.5em, column sep=2.5em]
-     A \otimes A \ar[r, "\mu"] & A \ar[r, "\lambda"] & \mathbf{1}
+     A \otimes A \ar[r, "\mu"]
+     & A \ar[r, "\lambda"]
+     & \mathbf{1}
+     & {\scriptstyle\text{(multiplication, Frobenius form)}}
      \\
-     \mathbf{1} \ar[r, "\eta"] & A \ar[r, "\varepsilon"] & \mathbf{1}
+     \mathbf{1} \ar[r, "\eta"]
+     & A \ar[r, "\varepsilon"]
+     & \mathbf{1}
+     & {\scriptstyle\text{(unit, counit)}}
      \\
-     A \ar[r, "\Delta"] & A \otimes A
+     A \ar[r, "\Delta"]
+     & A \otimes A
      & A \ar[l, "S"']
+     & {\scriptstyle\text{(comultiplication, antipode)}}
    \end{tikzcd}
    \]
    ```
