@@ -2809,9 +2809,10 @@
           <button class="imp-submit" id="imp-arxiv-go">Fetch from arXiv</button>
         </div>
         <div class="imp-form" id="imp-upload-form" style="display:none">
-          <input type="file" id="imp-file" accept=".pdf,.tex,.zip,.tar.gz">
+          <input type="file" id="imp-file" accept=".pdf,.tex,.zip,.tar.gz,.tar,.bbl,.bib">
+          <span style="font-size:.6rem;color:var(--fg-d)">.tex .zip .tar.gz (LaTeX — scans for theorems/definitions) · .pdf (metadata only)</span>
           <input type="text" id="imp-paper-id" placeholder="Paper ID (auto-generated if blank)">
-          <button class="imp-submit" id="imp-upload-go">Upload</button>
+          <button class="imp-submit" id="imp-upload-go">Upload &amp; Scan</button>
         </div>
         <div class="imp-status" id="imp-status"></div>
         <div id="imp-scan-area"></div>
@@ -3070,8 +3071,18 @@
             else { status.className = 'ic-status pending'; status.textContent = 'pending'; }
             card.appendChild(status);
 
-            // Re-scan button for non-generated imports
-            if (imp.hasExtracted && !imp.hasContent) {
+            // Action button for imports that can be processed
+            if (!imp.hasContent) {
+              const actBtn = mk('button','imp-submit');
+              actBtn.style.cssText = 'font-size:.55rem;padding:.2rem .5rem;margin-left:.3rem';
+              if (imp.hasExtracted) {
+                actBtn.textContent = 'review blocks';
+                actBtn.onclick = (e) => { e.stopPropagation(); scanImport(imp.paperId, imp); };
+              } else {
+                actBtn.textContent = 'scan';
+                actBtn.onclick = (e) => { e.stopPropagation(); scanImport(imp.paperId, imp); };
+              }
+              card.appendChild(actBtn);
               card.style.cursor = 'pointer';
               card.onclick = () => scanImport(imp.paperId, imp);
             }
