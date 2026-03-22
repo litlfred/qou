@@ -13,7 +13,7 @@
  */
 
 import { readdirSync, readFileSync, existsSync } from "fs";
-import { join, basename, extname } from "path";
+import { resolve, join, basename, extname } from "path";
 import {
   BlockSchema,
   CONSTRAINT_RULES,
@@ -153,7 +153,7 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
 // ── CLI entry point ──────────────────────────────────────────────
 
 if (import.meta.main) {
-  const dir = process.argv[2] || join(import.meta.dir, "../objects");
+  const dir = resolve(process.argv[2] || join(import.meta.dir, "../objects"));
   console.log(`Validating content objects in: ${dir}\n`);
 
   const result = await validateObjects(dir);
