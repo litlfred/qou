@@ -1,0 +1,86 @@
+# QOU Folio Deployment — Viewer + MCP behind dual OAuth (Google + GitHub)
+#
+# Serves the folio viewer at the root, MCP at /mcp, all behind auth.
+# No secrets in the repo — only deploy/.env (gitignored) holds credentials.
+#
+# Architecture:
+#   Internet → Caddy (:443, auto TLS) → auth-gateway (:4180) → lean-mcp (:8080)
+#                                                               → viewer (static)
+#
+# Auth roles:
+#   Google OAuth → viewer (read + feedback)
+#   GitHub OAuth → collaborator (edit + branches) or owner (commit to main)
+#   Bearer token → direct API access (bypasses OAuth)
+#
+# Usage:
+#   ./deploy/generate-config.sh --folio   # create .env + Caddyfile
+#   cd deploy && docker compose -f docker-compose.folio.yml up -d
+
+services:
+  # ── Caddy: automatic HTTPS + reverse proxy ───────────────────────
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - auth-gateway
+      - lean-mcp
+
+  # ── Lean MCP Server ──────────────────────────────────────────────
+  lean-mcp:
+    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest
+    container_name: lean-mcp
+    restart: unless-stopped
+    environment:
+      - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
+    expose:
+      - "${LEAN_MCP_INTERNAL_PORT:-8080}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/mcp"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── Auth Gateway (dual OAuth + role-based sessions) ──────────────
+  auth-gateway:
+    image: oven/bun:1-alpine
+    container_name: auth-gateway
+    restart: unless-stopped
+    working_dir: /app
+    command: ["bun", "run", "server.ts"]
+    expose:
+      - "4180"
+    environment:
+      - AUTH_GATEWAY_PORT=4180
+      - FOLIO_DOMAIN=${FOLIO_DOMAIN}
+      - COOKIE_SECRET=${COOKIE_SECRET}
+      - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
+      - LEAN_MCP_UPSTREAM=http://lean-mcp:${LEAN_MCP_INTERNAL_PORT:-8080}
+      - VIEWER_ROOT=/var/www/viewer
+      - OWNER_USERNAME=${OWNER_USERNAME:-litlfred}
+      - SESSION_MAX_AGE=${SESSION_MAX_AGE:-86400}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - GOOGLE_VIEWERS_FILE=/etc/auth-gateway/google-viewers.txt
+      - GITHUB_COLLABS_FILE=/etc/auth-gateway/github-collaborators.txt
+    volumes:
+      - ./auth-gateway:/app:ro
+      - ./viewer:/var/www/viewer:ro
+      - ./google-viewers.txt:/etc/auth-gateway/google-viewers.txt:ro
+      - ./github-collaborators.txt:/etc/auth-gateway/github-collaborators.txt:ro
+    depends_on:
+      lean-mcp:
+        condition: service_started
+
+volumes:
+  caddy_data:
+  caddy_config:

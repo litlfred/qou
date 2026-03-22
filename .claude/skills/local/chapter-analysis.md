@@ -1,5 +1,6 @@
 ---
 name: chapter-analysis
+roles: [collaborator, owner]
 description: >
   Thorough analysis and Lean 4 formalization of a single manuscript chapter.
   Extracts all narrative definitions/propositions (excluding remarks), identifies

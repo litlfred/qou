@@ -1,0 +1,8 @@
+# CODEOWNERS — protect sensitive files from unauthorized changes.
+#
+# Whitelist files can ONLY be modified by the repo owner.
+# Coding agents (Claude, Copilot, etc.) must NEVER modify these files.
+
+deploy/google-viewers.txt     @litlfred
+deploy/github-collaborators.txt @litlfred
+.github/CODEOWNERS            @litlfred
