@@ -806,13 +806,18 @@
     .dep-overlay-bar .dep-sp{flex:1}
     /* Split layout: graph LHS + preview RHS */
     .dep-body{display:flex;flex:1;overflow:hidden}
-    .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
-    .dep-graph-wrap{flex:1;overflow:auto}
+    .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:200px}
+    .dep-graph-wrap{flex:1;overflow:hidden;cursor:grab}
+    .dep-graph-wrap.panning{cursor:grabbing}
     .dep-graph-svg{min-height:300px;width:100%;height:100%}
     .dep-graph-svg svg{width:100%;height:100%}
+    /* Draggable divider between LHS and RHS */
+    .dep-divider{width:5px;cursor:col-resize;background:var(--brd);flex-shrink:0;transition:background .15s;display:none}
+    .dep-divider:hover,.dep-divider.active{background:var(--ac-d)}
+    .dep-divider.vis{display:block}
     /* RHS preview panel */
-    .dep-rhs{width:0;overflow:hidden;transition:width .2s var(--ease);border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column}
-    .dep-rhs.open{width:380px}
+    .dep-rhs{width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;flex-shrink:0}
+    .dep-rhs.open{width:500px}
     .dep-rhs-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.72rem;flex-shrink:0}
     .dep-rhs-head .rhs-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase}
     .dep-rhs-head .rhs-title{color:var(--fg-b);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -828,9 +833,9 @@
     .dep-node rect{rx:6;ry:6;stroke-width:1.5;transition:stroke .15s}
     .dep-node:hover rect{stroke-width:2.5}
     .dep-node.dep-hovered rect{stroke-width:3;filter:brightness(1.15)}
-    .dep-node text{font-family:var(--f-head);font-size:11px;fill:var(--fg);pointer-events:none}
-    .dep-node .node-kind{font-family:var(--f-mono);font-size:9px;fill:var(--fg-d)}
-    .dep-node .node-lean{font-family:var(--f-mono);font-size:8px}
+    .dep-node text{font-family:var(--f-head);font-size:13px;fill:var(--fg);pointer-events:none}
+    .dep-node .node-kind{font-family:var(--f-mono);font-size:10px;fill:var(--fg-d)}
+    .dep-node .node-lean{font-family:var(--f-mono);font-size:9px}
     .dep-edge{fill:none;stroke-width:1.5;pointer-events:none}
     .dep-edge.narrative{stroke:var(--ac)}
     .dep-edge.lean-complete{stroke:var(--grn)}
@@ -913,6 +918,7 @@
           </details>
         </div>
       </div>
+      <div class="dep-divider" id="dep-divider"></div>
       <div class="dep-rhs" id="dep-rhs">
         <div class="dep-rhs-head">
           <span class="rhs-kind" id="dep-rhs-kind"></span>
@@ -1617,11 +1623,62 @@
     const depRhsKind = document.getElementById('dep-rhs-kind');
     const depRhsTitle = document.getElementById('dep-rhs-title');
     const depRhsBody = document.getElementById('dep-rhs-body');
+    const depDivider = document.getElementById('dep-divider');
+    const depGraphWrap = document.querySelector('.dep-graph-wrap');
     let depRootLabel = null; // current root for feedback
 
-    document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depRhs.classList.remove('open'); };
-    document.getElementById('dep-rhs-close').onclick = () => depRhs.classList.remove('open');
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depRhs.classList.remove('open'); } });
+    function depCloseRhs() { depRhs.classList.remove('open'); depDivider.classList.remove('vis'); }
+    function depOpenRhs() { depRhs.classList.add('open'); depDivider.classList.add('vis'); }
+
+    document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depCloseRhs(); };
+    document.getElementById('dep-rhs-close').onclick = depCloseRhs;
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depCloseRhs(); } });
+
+    // ── Draggable divider between LHS and RHS ──
+    let divDrag = false;
+    depDivider.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      divDrag = true;
+      depDivider.classList.add('active');
+      depDivider.setPointerCapture(e.pointerId);
+    });
+    depDivider.addEventListener('pointermove', (e) => {
+      if (!divDrag) return;
+      const body = depDivider.parentElement;
+      const rect = body.getBoundingClientRect();
+      const newRhsW = Math.max(200, Math.min(rect.width - 300, rect.right - e.clientX));
+      depRhs.style.width = newRhsW + 'px';
+    });
+    depDivider.addEventListener('pointerup', () => { divDrag = false; depDivider.classList.remove('active'); });
+    depDivider.addEventListener('lostpointercapture', () => { divDrag = false; depDivider.classList.remove('active'); });
+
+    // ── Canvas panning (drag on blank SVG area) ──
+    let panState = null;
+    depGraphWrap.addEventListener('pointerdown', (e) => {
+      // Only if click target is the SVG background, not a node
+      if (e.target.closest('.dep-node')) return;
+      const svg = depGraphSvg.querySelector('svg');
+      if (!svg) return;
+      e.preventDefault();
+      depGraphWrap.classList.add('panning');
+      depGraphWrap.setPointerCapture(e.pointerId);
+      const vb = svg.viewBox.baseVal;
+      panState = { startX: e.clientX, startY: e.clientY, vbX: vb.x, vbY: vb.y, svg, vb };
+    });
+    depGraphWrap.addEventListener('pointermove', (e) => {
+      if (!panState) return;
+      e.preventDefault();
+      const { svg, vb, startX, startY, vbX, vbY } = panState;
+      // Convert pixel delta to SVG units
+      const ctm = svg.getScreenCTM();
+      const scale = ctm ? ctm.a : 1;
+      const dx = (e.clientX - startX) / scale;
+      const dy = (e.clientY - startY) / scale;
+      vb.x = vbX - dx;
+      vb.y = vbY - dy;
+    });
+    depGraphWrap.addEventListener('pointerup', () => { panState = null; depGraphWrap.classList.remove('panning'); });
+    depGraphWrap.addEventListener('lostpointercapture', () => { panState = null; depGraphWrap.classList.remove('panning'); });
 
     // Feedback button in overlay bar — opens feedback for the root block
     document.getElementById('dep-fb-btn').onclick = () => {
@@ -1634,7 +1691,7 @@
     document.getElementById('dep-rhs-goto').onclick = () => {
       if (!depRhsCurrentLabel) return;
       depOverlay.classList.remove('open');
-      depRhs.classList.remove('open');
+      depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     };
@@ -1654,7 +1711,8 @@
       depRhsBody.innerHTML = bh || '<span style="color:var(--fg-d)">No content</span>';
       fillTex(depRhsBody, tx, block.rendered);
       renderMath(depRhsBody);
-      depRhs.classList.add('open');
+      resolveRefs(depRhsBody);
+      depOpenRhs();
       // Highlight hovered node
       depGraphSvg.querySelectorAll('.dep-node').forEach(n => n.classList.toggle('dep-hovered', n.dataset.label === label));
     }
@@ -1788,11 +1846,11 @@
       depRootLabel = rootLabel;
       depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
       depSubtitle.textContent = rootLabel;
-      depRhs.classList.remove('open');
+      depCloseRhs();
 
       // Layout
       const layers = layoutGraph(nodes, edges, rootLabel);
-      const nodeW = 180, nodeH = 52, layerGap = 80, nodeGap = 24;
+      const nodeW = 200, nodeH = 56, layerGap = 80, nodeGap = 28;
 
       // Compute positions
       const pos = new Map();
@@ -1945,7 +2003,7 @@
           // If no drag movement, treat as click → navigate
           if (!dragMoved) {
             depOverlay.classList.remove('open');
-            depRhs.classList.remove('open');
+            depCloseRhs();
             const el = document.getElementById(label);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }
@@ -3949,10 +4007,10 @@
       depRootLabel = null;
       depTitle.textContent = paper?.title || 'Full Paper';
       depSubtitle.textContent = 'all blocks with dependencies';
-      depRhs.classList.remove('open');
+      depCloseRhs();
 
       const layers = layoutGraph(nodes, edges, nodes.keys().next().value);
-      const nodeW = 180, nodeH = 52, layerGap = 80, nodeGap = 24;
+      const nodeW = 200, nodeH = 56, layerGap = 80, nodeGap = 28;
       const pos = new Map();
       let maxX = 0, maxY = 0;
       layers.forEach((layer, li) => {
@@ -4072,7 +4130,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) {
-            depOverlay.classList.remove('open'); depRhs.classList.remove('open');
+            depOverlay.classList.remove('open'); depCloseRhs();
             const el = document.getElementById(label);
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }
