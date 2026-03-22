@@ -511,6 +511,20 @@
     .chat-send{background:var(--ac);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
     .chat-send:disabled{opacity:.4;cursor:default}
 
+    /* Inline editor */
+    .inline-editor{display:none;border-top:1px solid var(--brd);margin-top:.5rem;padding-top:.5rem}
+    .inline-editor.open{display:block}
+    .inline-editor textarea{width:100%;min-height:150px;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-mono);font-size:.78rem;padding:.6rem;resize:vertical;line-height:1.5}
+    .inline-editor textarea:focus{outline:none;border-color:var(--ac)}
+    .ie-toolbar{display:flex;align-items:center;gap:.4rem;margin-bottom:.4rem}
+    .ie-toolbar button{font-family:var(--f-mono);font-size:.6rem;padding:.2rem .5rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer}
+    .ie-toolbar button:hover{border-color:var(--ac);color:var(--ac)}
+    .ie-toolbar .ie-save{background:var(--ac);border-color:var(--ac);color:#fff}
+    .ie-toolbar .ie-save:hover{opacity:.9}
+    .ie-toolbar .ie-status{font-size:.55rem;color:var(--fg-d);margin-left:auto}
+    .ie-preview{margin-top:.5rem;padding:.5rem;border:1px dashed var(--brd);border-radius:4px;min-height:40px}
+    .ie-preview-label{font-size:.55rem;color:var(--fg-d);font-family:var(--f-mono);margin-bottom:.2rem}
+
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
@@ -732,10 +746,68 @@
         }
       } catch { /* /api/branches not available */ }
     }
-    branchSelect.onchange = () => {
-      selectedBranch = branchSelect.value;
+    branchSelect.onchange = async () => {
+      const target = branchSelect.value;
+      if (target === selectedBranch) return;
+
+      // Check if working tree is dirty before switching
+      try {
+        const res = await fetch('/api/git/status');
+        const status = await res.json();
+        if (status.dirty) {
+          const n = status.changes.length;
+          const choice = prompt(
+            `Working tree has ${n} uncommitted change(s).\n\nChoose an action:\n` +
+            `  commit  — commit changes before switching\n` +
+            `  stash   — stash changes (can be restored later)\n` +
+            `  discard — discard all changes (cannot undo!)\n` +
+            `  cancel  — stay on current branch\n\nType: commit, stash, discard, or cancel`,
+            'stash'
+          );
+          if (!choice || choice.toLowerCase() === 'cancel') {
+            branchSelect.value = selectedBranch;
+            return;
+          }
+          const action = choice.toLowerCase().trim();
+          if (!['commit', 'stash', 'discard'].includes(action)) {
+            alert('Unknown action. Staying on current branch.');
+            branchSelect.value = selectedBranch;
+            return;
+          }
+          const coRes = await fetch('/api/git/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ branch: target, action })
+          });
+          const coData = await coRes.json();
+          if (!coRes.ok) {
+            alert('Branch switch failed: ' + (coData.error || 'unknown'));
+            branchSelect.value = selectedBranch;
+            return;
+          }
+        } else {
+          // Clean — just switch
+          const coRes = await fetch('/api/git/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ branch: target })
+          });
+          const coData = await coRes.json();
+          if (!coRes.ok) {
+            alert('Branch switch failed: ' + (coData.error || 'unknown'));
+            branchSelect.value = selectedBranch;
+            return;
+          }
+        }
+      } catch (e) {
+        // If git status API not available, just do a content-level switch
+      }
+
+      selectedBranch = target;
+      currentBranchName = target;
       paper = null;
       bix.clear();
+      await loadBranches();
       route();
     };
     loadBranches();
@@ -1059,7 +1131,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md, exHdr);
+        addSrc(d, block.md, exHdr, block);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
         frag.appendChild(wrap);
@@ -1101,7 +1173,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md, rmHdr);
+        addSrc(d, block.md, rmHdr, block);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
         wrap.appendChild(d);
@@ -1169,7 +1241,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md, prfHdr);
+        addSrc(d, block.md, prfHdr, block);
         wrap.appendChild(d);
         frag.appendChild(wrap);
 
@@ -1187,7 +1259,7 @@
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
         d.innerHTML = '<div class="bb"></div>';
-        addSrc(d, block.md);
+        addSrc(d, block.md, null, block);
 
         lazyInit(d, () => {
           const {bh, tx} = hydrateContent();
@@ -1263,7 +1335,7 @@
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
-      addSrc(d, block.md, hdr);
+      addSrc(d, block.md, hdr, block);
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
@@ -1362,18 +1434,106 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
-    function addSrc(el, md, hdr) {
+    function addSrc(el, md, hdr, block) {
       if (!md) return;
-      const b = mk('button','st'); b.textContent = '<>';  b.title = 'View source';
-      const s = mk('div','bsrc'); s.textContent = md;
-      b.onclick = () => { s.classList.toggle('vis'); b.classList.toggle('on'); };
-      // Place button in header actions row if available, otherwise on the element
+      const b = mk('button','st'); b.textContent = 'edit'; b.title = 'Edit source inline';
+
+      // Build inline editor (hidden by default)
+      const editor = mk('div','inline-editor');
+
+      const toolbar = mk('div','ie-toolbar');
+      const saveBtn = mk('button','ie-save'); saveBtn.textContent = 'save';
+      const cancelBtn = mk('button',''); cancelBtn.textContent = 'close';
+      const previewToggle = mk('button',''); previewToggle.textContent = 'preview';
+      const statusSpan = mk('span','ie-status');
+      toolbar.appendChild(saveBtn);
+      toolbar.appendChild(cancelBtn);
+      toolbar.appendChild(previewToggle);
+      toolbar.appendChild(statusSpan);
+
+      const ta = document.createElement('textarea');
+      ta.value = md;
+
+      const prevLabel = mk('div','ie-preview-label');
+      prevLabel.textContent = 'live preview';
+      prevLabel.style.display = 'none';
+      const prevBody = mk('div','ie-preview');
+      prevBody.style.display = 'none';
+
+      editor.appendChild(toolbar);
+      editor.appendChild(ta);
+      editor.appendChild(prevLabel);
+      editor.appendChild(prevBody);
+
+      let showingPreview = false;
+      function updatePreview() {
+        if (!showingPreview) return;
+        const {html: bh, texBlocks: tx} = parseMd(ta.value);
+        prevBody.innerHTML = bh;
+        fillTex(prevBody, tx, block?.rendered);
+        renderMath(prevBody);
+      }
+
+      previewToggle.onclick = () => {
+        showingPreview = !showingPreview;
+        prevLabel.style.display = showingPreview ? '' : 'none';
+        prevBody.style.display = showingPreview ? '' : 'none';
+        previewToggle.classList.toggle('on', showingPreview);
+        if (showingPreview) updatePreview();
+      };
+      ta.addEventListener('input', updatePreview);
+
+      saveBtn.onclick = async () => {
+        if (!paper?.id || !block?.rootName) { statusSpan.textContent = 'no context'; return; }
+        statusSpan.textContent = 'saving...';
+        try {
+          const res = await fetch('/api/block/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ paperId: paper.id, rootName: block.rootName, md: ta.value })
+          });
+          if (!res.ok) throw new Error(`${res.status}`);
+          block.md = ta.value;
+          // Re-render the block body
+          const bb = el.querySelector('.bb');
+          if (bb) {
+            const {html: bh, texBlocks: tx} = parseMd(ta.value);
+            bb.innerHTML = bh;
+            fillTex(bb, tx, block?.rendered);
+            renderMath(bb); resolveRefs(bb);
+          }
+          statusSpan.textContent = 'saved';
+          setTimeout(() => { statusSpan.textContent = ''; }, 1500);
+        } catch (e) {
+          statusSpan.textContent = 'error: ' + e.message;
+          setTimeout(() => { statusSpan.textContent = ''; }, 3000);
+        }
+      };
+
+      cancelBtn.onclick = () => {
+        editor.classList.remove('open');
+        b.classList.remove('on');
+      };
+
+      b.onclick = () => {
+        const opening = !editor.classList.contains('open');
+        editor.classList.toggle('open');
+        b.classList.toggle('on');
+        if (opening) {
+          ta.value = block?.md || md;
+          ta.focus();
+        }
+      };
+
+      // Store editor reference on element for programmatic opening
+      el._inlineEditor = { editor, btn: b, ta };
+
       if (hdr && hdr._acts) {
         hdr._acts.appendChild(b);
       } else {
         el.appendChild(b);
       }
-      el.appendChild(s);
+      el.appendChild(editor);
     }
 
     // Shiki highlighter (lazy-loaded)
@@ -1846,11 +2006,23 @@
     }
 
     async function routeEdit(slug) {
-      // Load paper if needed, then show edit UI for the block
+      // Load paper if needed, then scroll to block and open inline editor
       if (!paper) await loadDefaultPaper();
       const block = bix.get(slug);
       if (block) {
-        renderEditView(block);
+        const el = document.getElementById(slug);
+        if (el) {
+          // Force lazy-hydrate
+          const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+          if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Open inline editor if it exists
+          setTimeout(() => {
+            if (el._inlineEditor && !el._inlineEditor.editor.classList.contains('open')) {
+              el._inlineEditor.btn.click();
+            }
+          }, 300);
+        }
       } else {
         document.getElementById('app').innerHTML =
           `<div class="err">Block not found: ${esc(slug)}</div>`;

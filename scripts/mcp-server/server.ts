@@ -655,6 +655,29 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
   }
 
+  // GET /api/git/status → { dirty, branch, changes[] }
+  if (path === "/api/git/status") {
+    try {
+      const { spawnSync } = await import("child_process");
+      const r = spawnSync("git", ["status", "--porcelain"], { cwd: REPO_ROOT, stdio: "pipe" });
+      const output = r.stdout.toString().trim();
+      const changes = output ? output.split("\n").map(l => l.trim()).filter(Boolean) : [];
+      return Response.json({
+        branch: currentBranch(),
+        dirty: changes.length > 0,
+        changes,
+      }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
+  // POST /api/git/checkout { branch, action? } — switch branches
+  // action: "switch" (default), "stash", "commit"
+  if (path === "/api/git/checkout") {
+    return null; // POST handled below
+  }
+
   // ── API: Folio (paper listing) ─────────────────────────────
   // Supports ?branch=X to resolve from a different branch
   if (path === "/api/folio") {
@@ -919,6 +942,59 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       return Response.json({ ok: true, todo });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Git checkout (branch switch with dirty-state handling) ───
+  if (path === "/api/git/checkout") {
+    try {
+      const { spawnSync } = await import("child_process");
+      const body = await req.json() as { branch: string; action?: "switch" | "stash" | "commit" | "discard" };
+      const targetBranch = body.branch;
+      const action = body.action || "switch";
+
+      // Check if dirty
+      const st = spawnSync("git", ["status", "--porcelain"], { cwd: REPO_ROOT, stdio: "pipe" });
+      const dirty = st.stdout.toString().trim().length > 0;
+
+      if (dirty) {
+        if (action === "stash") {
+          const stash = spawnSync("git", ["stash", "push", "-m", `folio-auto-stash-${currentBranch()}`], { cwd: REPO_ROOT, stdio: "pipe" });
+          if (stash.status !== 0) {
+            return Response.json({ error: `Stash failed: ${stash.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+          }
+        } else if (action === "commit") {
+          spawnSync("git", ["add", "-A"], { cwd: REPO_ROOT, stdio: "pipe" });
+          const commit = spawnSync("git", ["commit", "-m", "Folio: auto-save before branch switch"], { cwd: REPO_ROOT, stdio: "pipe" });
+          if (commit.status !== 0) {
+            return Response.json({ error: `Commit failed: ${commit.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+          }
+        } else if (action === "discard") {
+          spawnSync("git", ["checkout", "--", "."], { cwd: REPO_ROOT, stdio: "pipe" });
+          spawnSync("git", ["clean", "-fd"], { cwd: REPO_ROOT, stdio: "pipe" });
+        } else {
+          // action === "switch" but dirty — report back
+          return Response.json({
+            error: "dirty",
+            message: "Working tree has uncommitted changes",
+            branch: currentBranch(),
+            changes: st.stdout.toString().trim().split("\n").filter(Boolean),
+          }, { status: 409, headers: { "Access-Control-Allow-Origin": "*" } });
+        }
+      }
+
+      // Do the checkout
+      const co = spawnSync("git", ["checkout", targetBranch], { cwd: REPO_ROOT, stdio: "pipe" });
+      if (co.status !== 0) {
+        return Response.json({ error: `Checkout failed: ${co.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      return Response.json({
+        ok: true,
+        branch: currentBranch(),
+      }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
   }
 
