@@ -790,6 +790,59 @@
 
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
+
+    /* ── Dependency graph lightning bolt ─────────────────── */
+    .dep-bolt{background:none;border:none;cursor:pointer;color:var(--fg-d);font-size:.75rem;padding:.1rem .2rem;margin-left:.15rem;transition:color .15s;line-height:1}
+    .dep-bolt:hover{color:var(--yel)}
+    .dep-bolt svg{width:14px;height:14px;fill:currentColor;vertical-align:middle}
+
+    /* ── Dependency graph overlay ────────────────────────── */
+    .dep-overlay{display:none;position:fixed;top:34px;left:0;right:0;bottom:0;background:var(--bg);z-index:200;overflow:auto}
+    .dep-overlay.open{display:flex;flex-direction:column}
+    .dep-overlay-bar{display:flex;align-items:center;gap:.6rem;padding:.4rem 1rem;background:var(--bg-s);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);flex-shrink:0}
+    .dep-overlay-bar .dep-title{font-weight:600;color:var(--fg-b);font-size:.8rem}
+    .dep-overlay-bar .dep-close{margin-left:auto;background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.65rem;padding:.15rem .5rem;border-radius:3px;cursor:pointer}
+    .dep-overlay-bar .dep-close:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .dep-graph-wrap{flex:1;overflow:auto;display:flex;flex-direction:column}
+    .dep-graph-svg{flex:1;min-height:300px}
+    .dep-graph-svg svg{width:100%;height:100%}
+    /* Graph node styles */
+    .dep-node{cursor:pointer}
+    .dep-node rect{rx:6;ry:6;stroke-width:1.5;transition:stroke .15s}
+    .dep-node:hover rect{stroke-width:2.5}
+    .dep-node text{font-family:var(--f-head);font-size:11px;fill:var(--fg)}
+    .dep-node .node-kind{font-family:var(--f-mono);font-size:9px;fill:var(--fg-d)}
+    .dep-node .node-lean{font-family:var(--f-mono);font-size:8px}
+    .dep-edge{fill:none;stroke-width:1.5}
+    .dep-edge.narrative{stroke:var(--ac)}
+    .dep-edge.lean-complete{stroke:var(--grn)}
+    .dep-edge.lean-incomplete{stroke:var(--ora);stroke-dasharray:6 3}
+    .dep-edge.lean-none{stroke:var(--fg-d);stroke-dasharray:3 3;opacity:.4}
+    .dep-arrowhead-narrative{fill:var(--ac)}
+    .dep-arrowhead-lean-complete{fill:var(--grn)}
+    .dep-arrowhead-lean-incomplete{fill:var(--ora)}
+    .dep-arrowhead-lean-none{fill:var(--fg-d);opacity:.4}
+    /* Legend */
+    .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-top:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
+    .dep-legend-item{display:flex;align-items:center;gap:.3rem}
+    .dep-legend-line{width:24px;height:0;border-top:2px solid}
+    .dep-legend-line.narrative{border-color:var(--ac)}
+    .dep-legend-line.lean-complete{border-color:var(--grn)}
+    .dep-legend-line.lean-incomplete{border-color:var(--ora);border-top-style:dashed}
+    /* Node colors by status */
+    .dep-node-ok rect{fill:rgba(42,170,85,.12);stroke:var(--grn)}
+    .dep-node-sorry rect{fill:rgba(230,200,124,.1);stroke:var(--yel)}
+    .dep-node-stated rect{fill:rgba(122,168,230,.1);stroke:var(--ac)}
+    .dep-node-none rect{fill:var(--bg-r);stroke:var(--brd)}
+    .dep-node-err rect{fill:rgba(230,124,124,.08);stroke:var(--red)}
+    .dep-node-ext rect{fill:rgba(230,164,124,.08);stroke:var(--ora);stroke-dasharray:4 2}
+    .dep-node-root rect{stroke-width:2.5}
+    /* External deps panel */
+    .dep-ext-panel{padding:.5rem 1rem;border-top:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
+    .dep-ext-panel summary{cursor:pointer;font-weight:500;color:var(--fg)}
+    .dep-ext-list{display:flex;flex-direction:column;gap:.2rem;margin-top:.3rem;padding-left:.5rem}
+    .dep-ext-list a{color:var(--ac);text-decoration:none;font-size:.6rem}
+    .dep-ext-list a:hover{text-decoration:underline}
   </style>
 </head>
 <body data-font="web">
@@ -814,6 +867,30 @@
   <button class="sb-toggle" id="sb-toggle">☰</button>
   <div id="sidebar"></div>
   <div id="app"><div class="loading">loading...</div></div>
+
+  <!-- Dependency graph overlay -->
+  <div class="dep-overlay" id="dep-overlay">
+    <div class="dep-overlay-bar">
+      <span>&#x26A1;</span>
+      <span class="dep-title" id="dep-title">Dependency Graph</span>
+      <span id="dep-subtitle" style="font-size:.65rem"></span>
+      <button class="dep-close" id="dep-close">&times; close</button>
+    </div>
+    <div class="dep-graph-wrap">
+      <div class="dep-graph-svg" id="dep-graph-svg"></div>
+    </div>
+    <div class="dep-ext-panel" id="dep-ext-panel" style="display:none">
+      <details>
+        <summary>External Lean dependencies</summary>
+        <div class="dep-ext-list" id="dep-ext-list"></div>
+      </details>
+    </div>
+    <div class="dep-legend">
+      <div class="dep-legend-item"><div class="dep-legend-line narrative"></div> narrative proof</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-complete"></div> Lean proof (complete)</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-incomplete"></div> Lean proof (stub/sorry)</div>
+    </div>
+  </div>
 
   <!-- Feedback panel -->
   <div class="feedback-overlay" id="feedback-overlay"></div>
@@ -1493,6 +1570,288 @@
       return p;
     }
 
+    // ── Dependency graph overlay ─────────────────────────
+    const depOverlay = document.getElementById('dep-overlay');
+    const depGraphSvg = document.getElementById('dep-graph-svg');
+    const depTitle = document.getElementById('dep-title');
+    const depSubtitle = document.getElementById('dep-subtitle');
+    const depExtPanel = document.getElementById('dep-ext-panel');
+    const depExtList = document.getElementById('dep-ext-list');
+    document.getElementById('dep-close').onclick = () => depOverlay.classList.remove('open');
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) depOverlay.classList.remove('open'); });
+
+    /** Determine lean status class for a block */
+    function depNodeClass(b) {
+      if (!b) return 'dep-node-none';
+      if (b._external) return 'dep-node-ext';
+      const v = b.lean?.validation || '';
+      const s = b.status || '';
+      if (v === 'validated' || v === 'leanok' || s === 'proved' || s === 'mathlib_ok') return 'dep-node-ok';
+      if (v === 'error') return 'dep-node-err';
+      if (s === 'has_sorry') return 'dep-node-sorry';
+      if (s === 'stated' || v === 'stub') return 'dep-node-stated';
+      return 'dep-node-none';
+    }
+
+    /** Determine edge type between two blocks */
+    function depEdgeInfo(from, to) {
+      // "from" uses "to" — check if there's a narrative proof and/or lean proof
+      const hasNarrative = from.proofs?.some(pl => { const p = bix.get(pl); return p && p.md && p.md.trim().length > 20; })
+        || (from.md && from.md.trim().length > 20 && ['theorem','lemma','proposition','corollary'].includes(from.kind));
+      const fromLean = from.lean || from.proofs?.some(pl => { const p = bix.get(pl); return p?.lean; });
+      const toLean = to.lean;
+      let leanStatus = 'lean-none';
+      if (fromLean && toLean) {
+        const fromOk = from.lean?.validation === 'validated' || from.lean?.validation === 'leanok' ||
+          from.status === 'proved' || from.status === 'mathlib_ok';
+        leanStatus = fromOk ? 'lean-complete' : 'lean-incomplete';
+      }
+      return { hasNarrative, leanStatus };
+    }
+
+    /**
+     * Build the dependency subgraph rooted at `rootLabel`.
+     * Walks `uses[]` transitively. Returns { nodes: Map<label, block>, edges: [{from,to}], externals: [] }
+     */
+    function buildDepGraph(rootLabel) {
+      const nodes = new Map();
+      const edges = [];
+      const externals = []; // lean dependencies not in paper
+      const visited = new Set();
+
+      function walk(label) {
+        if (visited.has(label)) return;
+        visited.add(label);
+        const b = bix.get(label);
+        if (!b) return; // label not found
+        nodes.set(label, b);
+
+        // Collect Lean mathlibLinks as external dependencies
+        if (b.lean?.mathlibLinks) {
+          for (const ml of b.lean.mathlibLinks) {
+            if (!externals.some(e => e.decl === ml)) {
+              externals.push({ decl: ml, fromLabel: label });
+            }
+          }
+        }
+
+        // Walk uses[] edges
+        if (b.uses) {
+          for (const dep of b.uses) {
+            const depBlock = bix.get(dep);
+            if (depBlock) {
+              edges.push({ from: label, to: dep });
+              walk(dep);
+            }
+          }
+        }
+      }
+
+      walk(rootLabel);
+
+      // Also walk "upward" — blocks that use the root
+      function walkUp(label) {
+        const refs = usedByIndex.get(label) || [];
+        for (const ref of refs) {
+          if (visited.has(ref.label)) continue;
+          visited.add(ref.label);
+          const b = bix.get(ref.label);
+          if (!b) continue;
+          nodes.set(ref.label, b);
+          edges.push({ from: ref.label, to: label });
+          if (b.lean?.mathlibLinks) {
+            for (const ml of b.lean.mathlibLinks) {
+              if (!externals.some(e => e.decl === ml)) {
+                externals.push({ decl: ml, fromLabel: ref.label });
+              }
+            }
+          }
+          // Only one level up to keep graph manageable
+        }
+      }
+      walkUp(rootLabel);
+
+      return { nodes, edges, externals };
+    }
+
+    /**
+     * Assign layers via topological sort (Kahn's algorithm).
+     * Root gets layer 0; its dependencies get deeper layers.
+     */
+    function layoutGraph(nodes, edges, rootLabel) {
+      // Build adjacency (from → [to]) and reverse
+      const adj = new Map();
+      const indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) {
+          adj.get(from).push(to);
+          indeg.set(to, (indeg.get(to) || 0) + 1);
+        }
+      }
+
+      // Topological layers (BFS from sources)
+      const layers = [];
+      let queue = [];
+      for (const [label, deg] of indeg) { if (deg === 0) queue.push(label); }
+      if (queue.length === 0 && nodes.size > 0) queue = [rootLabel]; // cycle fallback
+      while (queue.length > 0) {
+        layers.push([...queue]);
+        const next = [];
+        for (const label of queue) {
+          for (const dep of (adj.get(label) || [])) {
+            indeg.set(dep, indeg.get(dep) - 1);
+            if (indeg.get(dep) === 0) next.push(dep);
+          }
+        }
+        queue = next;
+      }
+      // Ensure all nodes appear (handle cycles)
+      const placed = new Set(layers.flat());
+      const remaining = [...nodes.keys()].filter(l => !placed.has(l));
+      if (remaining.length) layers.push(remaining);
+
+      return layers;
+    }
+
+    /** Render the dependency graph as SVG into depGraphSvg */
+    function renderDepGraph(rootLabel) {
+      const { nodes, edges, externals } = buildDepGraph(rootLabel);
+      const root = bix.get(rootLabel);
+      if (!root) return;
+
+      depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
+      depSubtitle.textContent = rootLabel;
+
+      // Layout
+      const layers = layoutGraph(nodes, edges, rootLabel);
+      const nodeW = 180, nodeH = 52, layerGap = 80, nodeGap = 24;
+
+      // Compute positions
+      const pos = new Map();
+      let maxX = 0, maxY = 0;
+      layers.forEach((layer, li) => {
+        const totalW = layer.length * nodeW + (layer.length - 1) * nodeGap;
+        const startX = -totalW / 2;
+        layer.forEach((label, ni) => {
+          const x = startX + ni * (nodeW + nodeGap);
+          const y = li * (nodeH + layerGap);
+          pos.set(label, { x, y });
+          maxX = Math.max(maxX, x + nodeW);
+          maxY = Math.max(maxY, y + nodeH);
+        });
+      });
+
+      // Compute viewBox centering
+      let minX = Infinity;
+      for (const p of pos.values()) minX = Math.min(minX, p.x);
+      const pad = 40;
+      const vbX = minX - pad;
+      const vbY = -pad;
+      const vbW = (maxX - minX) + nodeW + pad * 2;
+      const vbH = maxY + nodeH + pad * 2;
+
+      // Build SVG
+      let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbX} ${vbY} ${vbW} ${vbH}" style="min-height:${Math.min(vbH + 60, 600)}px">`;
+
+      // Defs for arrowheads
+      svg += `<defs>
+        <marker id="ah-narrative" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-narrative"/></marker>
+        <marker id="ah-lean-complete" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-complete"/></marker>
+        <marker id="ah-lean-incomplete" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-incomplete"/></marker>
+        <marker id="ah-lean-none" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-none"/></marker>
+      </defs>`;
+
+      // Draw edges
+      for (const {from, to} of edges) {
+        const fp = pos.get(from), tp = pos.get(to);
+        if (!fp || !tp) continue;
+        const fromBlock = nodes.get(from), toBlock = nodes.get(to);
+        const info = depEdgeInfo(fromBlock, toBlock);
+
+        const fx = fp.x + nodeW / 2, fy = fp.y + nodeH;
+        const tx = tp.x + nodeW / 2, ty = tp.y;
+        const cy1 = fy + layerGap * 0.35, cy2 = ty - layerGap * 0.35;
+
+        // Narrative edge (solid blue)
+        if (info.hasNarrative) {
+          const ox = -4; // slight offset so both edges visible
+          svg += `<path class="dep-edge narrative" d="M${fx+ox},${fy} C${fx+ox},${cy1} ${tx+ox},${cy2} ${tx+ox},${ty}" marker-end="url(#ah-narrative)"/>`;
+        }
+        // Lean edge
+        const lox = info.hasNarrative ? 4 : 0;
+        svg += `<path class="dep-edge ${info.leanStatus}" d="M${fx+lox},${fy} C${fx+lox},${cy1} ${tx+lox},${cy2} ${tx+lox},${ty}" marker-end="url(#ah-${info.leanStatus})"/>`;
+      }
+
+      // Draw nodes
+      for (const [label, block] of nodes) {
+        const p = pos.get(label);
+        if (!p) continue;
+        const cls = depNodeClass(block);
+        const isRoot = label === rootLabel;
+        const kindAbbr = {definition:'def',theorem:'thm',lemma:'lem',proposition:'prop',corollary:'cor',conjecture:'conj',example:'ex',remark:'rem',proof:'prf'}[block.kind] || block.kind;
+        const title = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        const leanDecl = block.lean?.decl ? esc(block.lean.decl).substring(0, 24) : '';
+
+        svg += `<g class="dep-node ${cls}${isRoot ? ' dep-node-root' : ''}" data-label="${esc(label)}" transform="translate(${p.x},${p.y})">`;
+        svg += `<rect width="${nodeW}" height="${nodeH}" />`;
+        svg += `<text class="node-kind" x="8" y="15">${kindAbbr}</text>`;
+        svg += `<text x="8" y="30">${title}</text>`;
+        if (leanDecl) {
+          const leanColor = cls === 'dep-node-ok' ? 'var(--grn)' : cls === 'dep-node-sorry' ? 'var(--yel)' : 'var(--fg-d)';
+          svg += `<text class="node-lean" x="8" y="44" fill="${leanColor}">${leanDecl}</text>`;
+        }
+        svg += `</g>`;
+      }
+
+      svg += `</svg>`;
+      depGraphSvg.innerHTML = svg;
+
+      // Wire up node clicks → navigate to block
+      depGraphSvg.querySelectorAll('.dep-node').forEach(node => {
+        node.addEventListener('click', () => {
+          const label = node.dataset.label;
+          depOverlay.classList.remove('open');
+          const el = document.getElementById(label);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // External deps
+      if (externals.length > 0) {
+        depExtPanel.style.display = '';
+        depExtList.innerHTML = '';
+        for (const ext of externals) {
+          const row = mk('div','');
+          const parts = ext.decl.split('.');
+          const name = parts[parts.length - 1];
+          // Link to Mathlib docs if it looks like a Mathlib declaration
+          const url = ext.decl.startsWith('Mathlib') || ext.decl.includes('.')
+            ? `https://leanprover-community.github.io/mathlib4_docs/find/#doc/${encodeURIComponent(ext.decl)}`
+            : null;
+          if (url) {
+            row.innerHTML = `<a href="${url}" target="_blank" rel="noopener">${esc(ext.decl)}</a> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`;
+          } else {
+            row.innerHTML = `<span>${esc(ext.decl)}</span> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`;
+          }
+          depExtList.appendChild(row);
+        }
+      } else {
+        depExtPanel.style.display = 'none';
+      }
+
+      depOverlay.classList.add('open');
+    }
+
+    /** Create lightning bolt button for dependency graph */
+    function mkDepBolt(label) {
+      const btn = mk('button','dep-bolt');
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>';
+      btn.title = 'Show dependency graph';
+      btn.onclick = (e) => { e.stopPropagation(); renderDepGraph(label); };
+      return btn;
+    }
+
     // ── Block header helper ────────────────────────────────
     function mkBlockHeader(kind, title, label) {
       const div = mk('div','bh');
@@ -1702,6 +2061,11 @@
             prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
           }
         }
+        // Dependency graph bolt for proof blocks with lean
+        if (block.lean && block.label) {
+          const prfBolt = mkDepBolt(block.label);
+          prfHdr._acts.insertBefore(prfBolt, prfHdr._acts.firstChild);
+        }
         const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
         prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         prfHdr._acts.appendChild(prfColBtn);
@@ -1871,6 +2235,12 @@
       // Insert indicators into header (after title, before actions)
       if (indicators.children.length) {
         hdr.insertBefore(indicators, hdr._acts);
+      }
+
+      // Dependency graph lightning bolt — shown on blocks with lean statement
+      if (block.lean && block.label) {
+        const bolt = mkDepBolt(block.label);
+        hdr._acts.insertBefore(bolt, hdr._acts.firstChild);
       }
 
       // Feedback button in header actions
