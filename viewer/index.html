@@ -771,6 +771,7 @@
         currentBranchName = data.current;
         if (!selectedBranch) selectedBranch = currentBranchName;
         allBranches = data.branches || [];
+        console.log(`[folio:git] loaded ${allBranches.length} branches, HEAD=${currentBranchName}, viewing=${selectedBranch}`);
         brInput.value = selectedBranch;
         brInput.title = selectedBranch === currentBranchName ? `${selectedBranch} (HEAD)` : selectedBranch;
       } catch { /* /api/branches not available */ }
@@ -839,11 +840,13 @@
     async function switchBranch(target) {
       brDrop.classList.remove('open');
       if (target === selectedBranch) { brInput.value = selectedBranch; return; }
+      console.log(`[folio:git] switching branch: ${selectedBranch} → ${target}`);
 
       // Check if working tree is dirty before switching
       try {
         const res = await fetch('/api/git/status');
         const status = await res.json();
+        console.log(`[folio:git] status: dirty=${status.dirty}, changes=${status.changes?.length || 0}`);
         if (status.dirty) {
           const n = status.changes.length;
           const choice = prompt(
@@ -855,15 +858,18 @@
             'stash'
           );
           if (!choice || choice.toLowerCase() === 'cancel') {
+            console.log('[folio:git] branch switch cancelled by user');
             brInput.value = selectedBranch;
             return;
           }
           const action = choice.toLowerCase().trim();
           if (!['commit', 'stash', 'discard'].includes(action)) {
+            console.warn('[folio:git] unknown action:', action);
             alert('Unknown action. Staying on current branch.');
             brInput.value = selectedBranch;
             return;
           }
+          console.log(`[folio:git] dirty worktree — action: ${action}`);
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -871,10 +877,12 @@
           });
           const coData = await coRes.json();
           if (!coRes.ok) {
+            console.error('[folio:git] checkout failed:', coData.error);
             alert('Branch switch failed: ' + (coData.error || 'unknown'));
             brInput.value = selectedBranch;
             return;
           }
+          console.log(`[folio:git] ${action} ok, checked out ${target}`);
         } else {
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
@@ -883,13 +891,15 @@
           });
           const coData = await coRes.json();
           if (!coRes.ok) {
+            console.error('[folio:git] checkout failed:', coData.error);
             alert('Branch switch failed: ' + (coData.error || 'unknown'));
             brInput.value = selectedBranch;
             return;
           }
+          console.log(`[folio:git] checked out ${target}`);
         }
       } catch (e) {
-        // If git status API not available, just do a content-level switch
+        console.warn('[folio:git] git API unavailable, content-level switch only:', e.message);
       }
 
       selectedBranch = target;
@@ -1665,6 +1675,7 @@
           });
           if (!res.ok) throw new Error(`${res.status}`);
           block.md = ta.value;
+          console.log(`[folio:edit] saved block: ${block.rootName} (${ta.value.length} chars)`);
           // Re-render the block body
           const bb = el.querySelector('.bb');
           if (bb) {
@@ -1676,6 +1687,7 @@
           statusSpan.textContent = 'saved';
           setTimeout(() => { statusSpan.textContent = ''; }, 1500);
         } catch (e) {
+          console.error(`[folio:edit] save failed for ${block.rootName}:`, e.message);
           statusSpan.textContent = 'error: ' + e.message;
           setTimeout(() => { statusSpan.textContent = ''; }, 3000);
         }
@@ -2026,6 +2038,7 @@
         });
         if (!res.ok) throw new Error(`${res.status}`);
         const { todo } = await res.json();
+        console.log(`[folio:feedback] submitted: ${todo.id} for ${fbBlock.rootName} (priority=${todo.priority})`);
         // Add to block's local todos so UI updates immediately
         if (!fbBlock.todos) fbBlock.todos = [];
         fbBlock.todos.push(todo);
@@ -2034,6 +2047,7 @@
         openFeedback(fbBlock);
         closeFeedback();
       } catch (e) {
+        console.error('[folio:feedback] submit failed:', e.message);
         alert('Failed to submit: ' + e.message);
       }
     };

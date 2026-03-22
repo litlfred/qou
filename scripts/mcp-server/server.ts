@@ -29,7 +29,7 @@ import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
 import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
 import {
-  currentBranch, listBranches, isCurrentBranch,
+  currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
@@ -643,9 +643,12 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // ── API: Branch info ───────────────────────────────────────
   // GET /api/branches → { current, branches[] }
   if (path === "/api/branches") {
+    fetchOrigin(); // silently update remote refs
+    const branches = listBranches();
+    log('git', `branches: ${branches.length} total, HEAD=${currentBranch()}`);
     return Response.json({
       current: currentBranch(),
-      branches: listBranches(),
+      branches,
     }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
   }
   // GET /api/branch → { branch } (lightweight, for polling)
@@ -662,12 +665,14 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       const r = spawnSync("git", ["status", "--porcelain"], { cwd: REPO_ROOT, stdio: "pipe" });
       const output = r.stdout.toString().trim();
       const changes = output ? output.split("\n").map(l => l.trim()).filter(Boolean) : [];
+      log('git', `status: branch=${currentBranch()} dirty=${changes.length > 0} changes=${changes.length}`);
       return Response.json({
         branch: currentBranch(),
         dirty: changes.length > 0,
         changes,
       }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
+      log('git', `status: error — ${e}`);
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
   }
@@ -910,6 +915,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
       }
       writeFileSync(mdPath, body.md, "utf-8");
+      log('edit', `block saved: ${body.paperId}/${body.rootName}`, `${body.md.length} chars → ${mdPath}`);
       return Response.json({ ok: true, path: mdPath });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
@@ -938,6 +944,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       const todos = readFeedback(body.paperId, body.rootName);
       todos.push(todo);
       writeFeedback(body.paperId, body.rootName, todos);
+      log('feedback', `created: ${body.paperId}/${body.rootName}`, `id=${todo.id} priority=${todo.priority} assignee=${todo.assignee}`);
 
       return Response.json({ ok: true, todo });
     } catch (e) {
@@ -952,32 +959,43 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       const body = await req.json() as { branch: string; action?: "switch" | "stash" | "commit" | "discard" };
       const targetBranch = body.branch;
       const action = body.action || "switch";
+      const fromBranch = currentBranch();
+      log('git', `checkout: ${fromBranch} → ${targetBranch}`, `action=${action}`);
 
       // Check if dirty
       const st = spawnSync("git", ["status", "--porcelain"], { cwd: REPO_ROOT, stdio: "pipe" });
       const dirty = st.stdout.toString().trim().length > 0;
 
       if (dirty) {
+        log('git', `checkout: working tree dirty (${st.stdout.toString().trim().split("\n").length} changes)`);
         if (action === "stash") {
-          const stash = spawnSync("git", ["stash", "push", "-m", `folio-auto-stash-${currentBranch()}`], { cwd: REPO_ROOT, stdio: "pipe" });
+          log('git', `stash: saving changes from ${fromBranch}`);
+          const stash = spawnSync("git", ["stash", "push", "-m", `folio-auto-stash-${fromBranch}`], { cwd: REPO_ROOT, stdio: "pipe" });
           if (stash.status !== 0) {
+            log('git', `stash: FAILED — ${stash.stderr.toString().trim()}`);
             return Response.json({ error: `Stash failed: ${stash.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
           }
+          log('git', `stash: ok`);
         } else if (action === "commit") {
+          log('git', `commit: auto-committing changes on ${fromBranch}`);
           spawnSync("git", ["add", "-A"], { cwd: REPO_ROOT, stdio: "pipe" });
           const commit = spawnSync("git", ["commit", "-m", "Folio: auto-save before branch switch"], { cwd: REPO_ROOT, stdio: "pipe" });
           if (commit.status !== 0) {
+            log('git', `commit: FAILED — ${commit.stderr.toString().trim()}`);
             return Response.json({ error: `Commit failed: ${commit.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
           }
+          log('git', `commit: ok`);
         } else if (action === "discard") {
+          log('git', `discard: discarding all changes on ${fromBranch}`);
           spawnSync("git", ["checkout", "--", "."], { cwd: REPO_ROOT, stdio: "pipe" });
           spawnSync("git", ["clean", "-fd"], { cwd: REPO_ROOT, stdio: "pipe" });
+          log('git', `discard: ok`);
         } else {
-          // action === "switch" but dirty — report back
+          log('git', `checkout: blocked — dirty state, no action specified`);
           return Response.json({
             error: "dirty",
             message: "Working tree has uncommitted changes",
-            branch: currentBranch(),
+            branch: fromBranch,
             changes: st.stdout.toString().trim().split("\n").filter(Boolean),
           }, { status: 409, headers: { "Access-Control-Allow-Origin": "*" } });
         }
@@ -986,14 +1004,17 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       // Do the checkout
       const co = spawnSync("git", ["checkout", targetBranch], { cwd: REPO_ROOT, stdio: "pipe" });
       if (co.status !== 0) {
+        log('git', `checkout: FAILED — ${co.stderr.toString().trim()}`);
         return Response.json({ error: `Checkout failed: ${co.stderr.toString()}` }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
       }
 
+      log('git', `checkout: ok — now on ${currentBranch()}`);
       return Response.json({
         ok: true,
         branch: currentBranch(),
       }, { headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
+      log('git', `checkout: error — ${e}`);
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
   }

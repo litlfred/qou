@@ -25,11 +25,36 @@ export function currentBranch(): string {
   return git("rev-parse", "--abbrev-ref", "HEAD") || "HEAD";
 }
 
-/** List local branch names. */
+/** Fetch from origin silently (best-effort, never blocks). */
+export function fetchOrigin(): void {
+  try {
+    spawnSync("git", ["fetch", "--prune", "--quiet"], { cwd: REPO_ROOT, stdio: "pipe", timeout: 10000 });
+  } catch { /* ignore fetch failures */ }
+}
+
+/** List all branch names (local + remote tracking, deduplicated). */
 export function listBranches(): string[] {
-  const raw = git("branch", "--list", "--format=%(refname:short)");
-  if (!raw) return [];
-  return raw.split("\n").filter(Boolean);
+  // Local branches
+  const localRaw = git("branch", "--list", "--format=%(refname:short)");
+  const local = new Set((localRaw || "").split("\n").filter(Boolean));
+
+  // Remote branches (strip origin/ prefix)
+  const remoteRaw = git("branch", "-r", "--format=%(refname:short)");
+  const remote = (remoteRaw || "").split("\n").filter(Boolean)
+    .map(b => b.replace(/^origin\//, ""))
+    .filter(b => b !== "HEAD");
+
+  for (const b of remote) local.add(b);
+
+  // Sort: current branch first, then main/master, then alphabetical
+  const current = currentBranch();
+  return [...local].sort((a, b) => {
+    if (a === current) return -1;
+    if (b === current) return 1;
+    if (a === "main" || a === "master") return -1;
+    if (b === "main" || b === "master") return 1;
+    return a.localeCompare(b);
+  });
 }
 
 /** Get the commit hash for a branch (for cache invalidation). */
