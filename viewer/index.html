@@ -637,9 +637,9 @@
     /* (old .fb-btn removed — feedback now in .bh-acts) */
 
     /* Claude chat panel */
-    .claude-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;border-radius:50%;background:#1a2a3a;color:#fff;border:none;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;transition:transform .15s var(--ease),background .15s}
+    .claude-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;border-radius:50%;background:var(--ac);color:#fff;border:none;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .15s var(--ease),background .15s}
     .claude-fab:hover{transform:scale(1.08)}
-    .claude-fab.open{background:#0d1a26}
+    .claude-fab.open{background:var(--fg-d);transform:rotate(45deg)}
     .claude-fab .fab-badge{position:absolute;top:-2px;right:-2px;width:10px;height:10px;border-radius:50%;background:var(--grn);border:2px solid var(--bg-s)}
 
     .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head);transition:all .2s var(--ease)}
@@ -846,7 +846,7 @@
   </div>
 
   <!-- Claude assistant chat -->
-  <button class="claude-fab" id="claude-fab" title="Ask Folio assistant"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#7eb8da" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 C4 12 6 8 8 6 L8 2 L10 5 L12 5"/><path d="M12 5 L14 5 L16 2 L16 6 C18 8 20 12 20 18" stroke-dasharray="3 2"/><path d="M4 18 L12 18"/><path d="M12 18 L20 18" stroke-dasharray="3 2"/><circle cx="10" cy="12" r="1" fill="#7eb8da"/><circle cx="14" cy="12" r="1" fill="#7eb8da" opacity=".5"/><path d="M11 14.5 L12 15.5 L13 14.5"/></svg></button>
+  <button class="claude-fab" id="claude-fab" title="Ask Folio assistant">&#x2726;</button>
   <div class="chat-panel" id="chat-panel">
     <div class="chat-head">
       <span class="chat-title">Folio</span>
