@@ -102,6 +102,24 @@ All declarations live under the `QOU` root namespace.
 Agents must update the `.ts` manifest `status` whenever they change the
 `.lean` file.
 
+### 4a. Content TodoItem lifecycle rules
+
+Content TODOs live in the `todos` field of `.ts` block manifests (not
+inline in `.md` files).
+
+| Action | Who may do it |
+|--------|--------------|
+| **Create** a TodoItem | Agent or human |
+| **Update** status to `in_progress` | Agent or human |
+| **Resolve / close** a TodoItem (`resolved`, `wontfix`) | **Human only** |
+| **Remove** a TodoItem from the array | **Human only** |
+
+Agents **must never** set a TodoItem's status to `resolved` or `wontfix`,
+and **must never** delete a TodoItem from a manifest. The author verifies
+completion — even after a commit has been made — and closes the item
+themselves. Agents may add new TodoItems and may move items to
+`in_progress`, but closing is always a human action.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |
