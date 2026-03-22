@@ -86,6 +86,7 @@ const RenderedAssetSchema = z.object({
 const BlockBaseSchema = z.object({
   title: z.string().optional(),
   uses: z.array(z.string()).optional(),
+  cites: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
@@ -153,6 +154,7 @@ export const ProofSchema = BlockBaseSchema.extend({
 export const ProseSchema = z.object({
   kind: z.literal("prose"),
   label: z.string().optional(),
+  cites: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
@@ -283,6 +285,8 @@ export interface ConstraintContext {
   dir: string;
   /** Set of all labels in the document (for cross-ref validation). */
   allLabels: Set<string>;
+  /** Set of all bibliography keys (for citation validation). */
+  allRefIds?: Set<string>;
   /** File existence checker. */
   fileExists: (path: string) => boolean;
 }
@@ -339,6 +343,20 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
       if ("lean" in block && block.lean) return null;
       // Return as warning-level message (prefix convention)
       return `[warning] ${block.label}: no Lean declaration yet`;
+    },
+  },
+  {
+    id: "cites-resolve",
+    description: "All citation keys in cites[] must exist in references.ts",
+    appliesTo: [
+      "definition", "theorem", "lemma", "proposition", "corollary",
+      "conjecture", "example", "remark", "prose",
+    ],
+    check: (block, ctx) => {
+      if (!("cites" in block) || !block.cites || !ctx.allRefIds) return null;
+      const missing = (block.cites as string[]).filter((c: string) => !ctx.allRefIds!.has(c));
+      return missing.length === 0 ? null
+        : `Unresolved citations: ${missing.join(", ")}`;
     },
   },
 ];

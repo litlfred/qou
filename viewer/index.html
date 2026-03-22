@@ -872,6 +872,20 @@
     .dep-ext-list{display:flex;flex-direction:column;gap:.2rem;margin-top:.3rem;padding-left:.5rem}
     .dep-ext-list a{color:var(--ac);text-decoration:none;font-size:.6rem}
     .dep-ext-list a:hover{text-decoration:underline}
+
+    /* ── Bibliography ─────────────────────────────────────── */
+    .cite-link{color:var(--ac);text-decoration:none;cursor:pointer;border-bottom:1px dotted var(--ac)}
+    .cite-link:hover{text-decoration:underline;border-bottom-style:solid}
+    .cite-link.cite-highlight{background:rgba(var(--ac-rgb,59,130,246),.15);border-radius:2px;padding:0 2px}
+    .ch-bibliography{margin-top:3rem;padding-top:1.5rem;border-top:2px solid var(--brd)}
+    .bib-title{font-size:1.1rem;font-weight:600;margin-bottom:.8rem;color:var(--fg)}
+    .bib-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+    .bib-entry{font-size:.82rem;line-height:1.5;padding:.4rem .6rem;border-radius:4px;transition:background .15s}
+    .bib-entry:target,.bib-entry.bib-highlight{background:rgba(var(--ac-rgb,59,130,246),.1)}
+    .bib-key{font-family:var(--f-mono);font-size:.72rem;color:var(--fg-d);margin-right:.3rem}
+    .bib-doi{font-family:var(--f-mono);font-size:.72rem;color:var(--ac)}
+    .bib-entry em{font-style:italic}
+    .bib-entry strong{font-weight:600}
   </style>
 </head>
 <body data-font="web">
@@ -1242,6 +1256,42 @@
       if (!e.target.closest('.br-picker')) { brDrop.classList.remove('open'); brInput.value = selectedBranch; }
     });
 
+    // ── Citation click handling ──────────────────────────────────
+    document.addEventListener('click', (e) => {
+      const citeLink = e.target.closest('.cite-link');
+      if (!citeLink) return;
+      e.preventDefault();
+      const key = citeLink.dataset.cite;
+      if (!key) return;
+      const target = document.getElementById(`bib-${key}`);
+      if (target) {
+        // Scroll to bibliography entry
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Highlight briefly
+        target.classList.add('bib-highlight');
+        setTimeout(() => target.classList.remove('bib-highlight'), 2000);
+      }
+    });
+
+    // Populate cite-link tooltips from loaded references
+    function populateCiteTooltips() {
+      if (!paper?.references) return;
+      const refMap = new Map(paper.references.map(r => [r.id, r]));
+      document.querySelectorAll('.cite-link').forEach(link => {
+        const key = link.dataset.cite;
+        if (!key) return;
+        const ref = refMap.get(key);
+        if (!ref) return;
+        const authors = ref.author?.length
+          ? (ref.author.length <= 2
+            ? ref.author.map(a => a.family || a.literal || '').join(' & ')
+            : `${ref.author[0].family || ref.author[0].literal} et al.`)
+          : '';
+        const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+        link.title = `${authors} (${year}). ${ref.title || ''}`;
+      });
+    }
+
     // ── Branch switch dialog (replaces system prompt/alert) ──────
     function showSwitchDialog({title, body, changes, actions, error}) {
       return new Promise((resolve) => {
@@ -1494,8 +1544,13 @@
       // Then bare (outside math mode)
       t = t.replace(/\\eqref\{([^}]+)\}/g, '(<a href="#$1" data-ref="$1">$1</a>)');
       t = t.replace(/\\(?:ref|cref|autoref)\{([^}]+)\}/g, '<a href="#$1" data-ref="$1">$1</a>');
-      // \cite{key} → [key], ~ → non-breaking space
-      t = t.replace(/\\cite\{([^}]+)\}/g, '[$1]');
+      // \cite[opt]{key1, key2} → clickable citation links
+      t = t.replace(/\\cite(?:\[([^\]]*)\])?\{([^}]+)\}/g, (_, opt, keys) => {
+        const citeKeys = keys.split(',').map(k => k.trim());
+        const links = citeKeys.map(k => `<a href="#bib-${k}" class="cite-link" data-cite="${k}" title="">${k}</a>`);
+        const inner = links.join(', ');
+        return opt ? `[${inner}, ${esc(opt)}]` : `[${inner}]`;
+      });
       t = t.replace(/~/g, '&nbsp;');
       // Inline math: walk character-by-character to handle nested braces
       let out = '', i = 0;
@@ -2097,6 +2152,67 @@
         u.appendChild(r);
       });
       return u;
+    }
+
+    // ── Chapter bibliography renderer ─────────────────────
+    function renderChapterBibliography(refs) {
+      const div = mk('div', 'ch-bibliography');
+      div.innerHTML = '<h3 class="bib-title">References</h3>';
+      const ol = document.createElement('ol');
+      ol.className = 'bib-list';
+      for (const ref of refs) {
+        const li = document.createElement('li');
+        li.id = `bib-${ref.id}`;
+        li.className = 'bib-entry';
+        li.dataset.citeKey = ref.id;
+
+        // Format authors
+        let authors = '';
+        if (ref.author?.length) {
+          const names = ref.author.map(a => {
+            if (a.literal) return esc(a.literal);
+            const parts = [];
+            if (a.given) parts.push(esc(a.given));
+            if (a.family) parts.push(esc(a.family));
+            return parts.join(' ');
+          });
+          authors = names.length <= 3 ? names.join(', ') : `${names[0]} et al.`;
+        }
+
+        // Format year
+        let year = '';
+        if (ref.issued?.['date-parts']?.[0]) {
+          year = `(${ref.issued['date-parts'][0][0]})`;
+        }
+
+        // Format title
+        const title = ref.title ? `<em>${esc(ref.title)}</em>` : '';
+
+        // Format journal/publisher
+        let venue = '';
+        if (ref['container-title']) {
+          venue = esc(ref['container-title']);
+        } else if (ref.publisher) {
+          venue = esc(ref.publisher);
+        }
+
+        // Volume/pages
+        let volPages = '';
+        if (ref.volume) volPages += `<strong>${ref.volume}</strong>`;
+        if (ref.page) volPages += `: ${esc(ref.page)}`;
+
+        // DOI link
+        let doi = '';
+        if (ref.DOI) {
+          doi = `<a href="https://doi.org/${encodeURIComponent(ref.DOI)}" class="bib-doi" target="_blank" rel="noopener">doi:${esc(ref.DOI)}</a>`;
+        }
+
+        const parts = [authors, year, title, venue, volPages, doi].filter(Boolean);
+        li.innerHTML = `<span class="bib-key">[${esc(ref.id)}]</span> ${parts.join('. ')}.`;
+        ol.appendChild(li);
+      }
+      div.appendChild(ol);
+      return div;
     }
 
     // ── Block renderer ───────────────────────────────────
@@ -2832,6 +2948,8 @@
             lazyObs.unobserve(t.el);
             lazyQueue.splice(lazyQueue.indexOf(t), 1);
           }
+          // Populate citation tooltips for this chapter
+          populateCiteTooltips();
         }
         // Highlight sidebar
         sb.querySelectorAll('.sb-ch').forEach(el => {
@@ -3001,6 +3119,10 @@
             sd.appendChild(renderBlock(b));
           }
           cd.appendChild(sd);
+        }
+        // Render chapter-end bibliography
+        if (ch.bibliography?.length) {
+          cd.appendChild(renderChapterBibliography(ch.bibliography));
         }
         chapterDivs.set(ch.number, cd);
         app.appendChild(cd);

@@ -15,6 +15,9 @@ import { readFileSync, existsSync } from "fs";
 import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import type { Block, Chapter, Section } from "../schema/types";
+import { extractCitations } from "./citations";
+import { referenceMap } from "../schema/references";
+import type { Data as CSLData } from "csl-json";
 
 // ── Markdown → LaTeX conversion ──────────────────────────────────
 
@@ -282,7 +285,7 @@ export function renderSection(
 }
 
 /**
- * Render a full chapter to LaTeX.
+ * Render a full chapter to LaTeX, including chapter-end bibliography.
  */
 export function renderChapter(
   chapter: Chapter,
@@ -293,11 +296,116 @@ export function renderChapter(
   const star = chapter.number == null ? "*" : "";
   lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
 
+  // Collect all citation keys used in this chapter
+  const chapterCites = new Set<string>();
+
   for (const section of chapter.sections) {
-    lines.push(renderSection(section, blocks));
+    if (!("blocks" in section)) continue;
+    const sec = section as Section;
+    for (const rootName of sec.blocks) {
+      const entry = blocks.get(rootName);
+      if (!entry) continue;
+      // Extract citations from .md content
+      for (const key of extractCitations(entry.mdContent)) {
+        chapterCites.add(key);
+      }
+      // Also include explicit cites from manifest
+      if ("cites" in entry.block && (entry.block as any).cites) {
+        for (const key of (entry.block as any).cites as string[]) {
+          chapterCites.add(key);
+        }
+      }
+    }
+    lines.push(renderSection(sec, blocks));
+  }
+
+  // Emit chapter-end bibliography if any citations were found
+  if (chapterCites.size > 0) {
+    lines.push("");
+    lines.push(renderChapterBibliography([...chapterCites].sort()));
   }
 
   return lines.join("\n");
+}
+
+/**
+ * Render a chapter-end bibliography listing all cited references.
+ */
+function renderChapterBibliography(citeKeys: string[]): string {
+  const lines: string[] = [];
+  lines.push("\\subsection*{References}");
+  lines.push("\\begin{enumerate}[label={[\\arabic*]},leftmargin=2em]");
+
+  for (const key of citeKeys) {
+    const ref = referenceMap.get(key);
+    if (!ref) {
+      lines.push(`  \\item\\label{bib:${key}} {\\texttt{${key}}} — \\textit{(not found in references.ts)}`);
+      continue;
+    }
+    lines.push(`  \\item\\label{bib:${key}} ${formatBibEntry(ref)}`);
+  }
+
+  lines.push("\\end{enumerate}");
+  return lines.join("\n");
+}
+
+/** Format a CSL-JSON entry as a short bibliographic string for LaTeX. */
+function formatBibEntry(ref: CSLData): string {
+  const parts: string[] = [];
+
+  // Authors
+  if (ref.author?.length) {
+    const names = ref.author.map(a => {
+      if (a.literal) return texSafe(a.literal);
+      const parts: string[] = [];
+      if (a.given) parts.push(texSafe(a.given));
+      if (a.family) parts.push(texSafe(a.family));
+      return parts.join(" ");
+    });
+    if (names.length <= 3) {
+      parts.push(names.join(", "));
+    } else {
+      parts.push(`${names[0]} et al.`);
+    }
+  }
+
+  // Year
+  if (ref.issued && "date-parts" in ref.issued && ref.issued["date-parts"]?.[0]) {
+    parts.push(`(${ref.issued["date-parts"][0][0]})`);
+  }
+
+  // Title
+  if (ref.title) {
+    parts.push(`\\emph{${texSafe(ref.title)}}`);
+  }
+
+  // Journal/container
+  if (ref["container-title"]) {
+    parts.push(texSafe(ref["container-title"]));
+  } else if (ref.publisher) {
+    parts.push(texSafe(ref.publisher));
+  }
+
+  // Volume/pages
+  const vol = ref.volume ? `\\textbf{${ref.volume}}` : "";
+  const pages = ref.page ? `: ${texSafe(ref.page)}` : "";
+  if (vol || pages) parts.push(`${vol}${pages}`);
+
+  // DOI
+  if (ref.DOI) {
+    parts.push(`\\href{https://doi.org/${ref.DOI}}{doi:${texSafe(ref.DOI)}}`);
+  }
+
+  return parts.join(". ") + ".";
+}
+
+/** Minimal TeX escaping for bibliography strings. */
+function texSafe(s: string): string {
+  return s
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/_/g, "\\_")
+    .replace(/#/g, "\\#");
 }
 
 // ── AST validation ───────────────────────────────────────────────

@@ -155,6 +155,14 @@ interface BlockBase {
   /** Labels of objects this one depends on (\uses{} in LaTeX). */
   uses?: string[];
   /**
+   * Bibliography keys cited by this block (e.g. ["kock2004", "atiyah1988"]).
+   *
+   * These are reference ids from content/schema/references.ts.
+   * The build pipeline auto-extracts from \cite{} in .md files,
+   * but explicit values here take precedence.
+   */
+  cites?: string[];
+  /**
    * Thematic tags for filtering and grouping.
    * Examples: "archimedean", "complex", "p-adic", "su2", "representation-theory"
    */
@@ -267,6 +275,8 @@ export interface ProseBlock {
   kind: "prose";
   /** Optional label for cross-referencing. */
   label?: string;
+  /** Bibliography keys cited by this block. */
+  cites?: string[];
   tags?: string[];
   companions?: Companions;
   /** Pre-rendered assets for ```tex blocks. */
