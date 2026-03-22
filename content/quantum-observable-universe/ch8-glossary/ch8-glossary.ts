@@ -20,6 +20,14 @@ export default chapter({
   label: "chap:glossary",
   sections: [
     section({
+      title: "Basic categorical notions",
+      label: "sec:glossary-basic",
+      blocks: [
+        "glossary-hom-set",
+      ],
+    }),
+
+    section({
       title: "Monoidal structure",
       label: "sec:glossary-monoidal",
       blocks: [
