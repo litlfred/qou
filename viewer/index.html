@@ -2481,7 +2481,7 @@
           item.innerHTML = `<div style="display:flex;gap:.4rem;align-items:start">
               <span class="todo-dot" style="${priDot};margin-top:.35rem"></span>
               <div style="flex:1">
-                <div>${esc(t.comment || t.summary || '')}</div>
+                <div style="white-space:pre-wrap">${esc(t.comment || t.summary || '')}</div>
                 <div class="fb-meta">
                   <select class="fb-item-pri" data-id="${t.id}" style="font-size:.6rem;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);border-radius:2px;padding:0 .2rem;font-family:var(--f-mono);cursor:pointer">
                     <option value="high" ${t.priority==='high'?'selected':''}>high</option>
@@ -2655,11 +2655,11 @@
           refreshStructBadges();
         }
         document.getElementById('fb-text').value = '';
+        document.getElementById('fb-priority').value = 'medium';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
-        // Refresh the history panel to show the new item
+        // Refresh the history panel to show the new item (stay open)
         openFeedback(fbBlock);
-        closeFeedback();
         // Update sidebar badges to reflect the new todo
         refreshFeedbackBadges();
       } catch (e) {
