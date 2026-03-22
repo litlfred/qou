@@ -784,17 +784,23 @@
     }
 
     // ── Resolve cross-ref links: replace generic text with block titles ──
+    const kindAbbrev = {
+      definition:'Def.', theorem:'Thm.', lemma:'Lem.', proposition:'Prop.',
+      corollary:'Cor.', conjecture:'Conj.', example:'Ex.', remark:'Rem.',
+      proof:'Proof', equation:'Eqn.', diagram:'Fig.', prose:''
+    };
     function resolveRefs(el) {
       for (const a of el.querySelectorAll('a[data-ref]')) {
         const label = a.dataset.ref;
         const ref = bix.get(label);
         if (!ref) continue;
-        // Replace generic text (Definition, Theorem, etc.) with the actual title
+        // Replace generic or raw-label text with "Abbrev. Title"
         const text = a.textContent.trim();
         const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
-          'Conjecture','Example','Remark','Proof', label];
+          'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
         if (ref.title && (generic.includes(text) || text === label)) {
-          a.innerHTML = inl(ref.title);
+          const abbr = kindAbbrev[ref.kind] || ref.kind;
+          a.innerHTML = `${abbr} ${inl(ref.title)}`;
           renderMath(a);
         }
       }
