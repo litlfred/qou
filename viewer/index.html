@@ -952,13 +952,21 @@
     });
 
     // PDF (trigger server-side LaTeX pipeline)
-    // Check PDF availability at startup — hide button if latexmk not installed
+    // Check PDF availability at startup — disable with hint if latexmk not installed
     const pdfBtn = document.getElementById('c-pdf');
     fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
       if (!d.available) {
-        pdfBtn.style.display = 'none';
+        pdfBtn.disabled = true;
+        pdfBtn.style.opacity = '0.4';
+        pdfBtn.style.cursor = 'not-allowed';
+        pdfBtn.title = 'PDF disabled — latexmk not installed.\nRun: sudo apt install texlive-latex-base texlive-latex-extra latexmk';
       }
-    }).catch(() => { pdfBtn.style.display = 'none'; });
+    }).catch(() => {
+      pdfBtn.disabled = true;
+      pdfBtn.style.opacity = '0.4';
+      pdfBtn.style.cursor = 'not-allowed';
+      pdfBtn.title = 'PDF disabled — build server unreachable';
+    });
 
     pdfBtn.addEventListener('click', async () => {
       const orig = pdfBtn.textContent;
