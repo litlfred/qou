@@ -700,16 +700,21 @@
     .diff-status.added{background:var(--grn);color:#fff}
     .diff-status.removed{background:var(--red);color:#fff}
     .diff-status.changed{background:var(--yel);color:#fff}
+    .diff-card-head .diff-stats{font-family:var(--f-mono);font-size:.55rem;display:flex;gap:.3rem}
+    .diff-card-head .diff-stats .ds-add{color:var(--grn)} .diff-card-head .diff-stats .ds-del{color:var(--red)}
     .diff-card-head .diff-kind{color:var(--fg-d);font-size:.65rem;font-family:var(--f-mono)}
+    .diff-loading{display:flex;align-items:center;justify-content:center;padding:4rem;color:var(--fg-d);gap:.6rem;font-size:.85rem}
+    .diff-loading .spinner{width:18px;height:18px;border:2px solid var(--brd);border-top-color:var(--ac);border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
     .diff-card-head .diff-title{flex:1;color:var(--fg-b);font-weight:500}
     .diff-card-head .diff-goto{font-size:.6rem;color:var(--ac);text-decoration:none;font-family:var(--f-mono)}
     .diff-card-head .diff-goto:hover{text-decoration:underline}
     .diff-card-body{display:none;padding:.6rem .8rem;border-top:1px solid var(--brd);font-size:.78rem;line-height:1.6}
     .diff-card.expanded .diff-card-body{display:block}
     .diff-card-body pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--f-mono);font-size:.7rem;line-height:1.6}
-    .diff-line-add{background:rgba(42,170,70,.12);color:var(--grn)}
-    .diff-line-del{background:rgba(200,70,70,.12);color:var(--red);text-decoration:line-through}
-    .diff-line-ctx{color:var(--fg-d)}
+    .diff-line-add{background:rgba(42,170,70,.15);color:var(--grn);padding:0 .3rem}
+    .diff-line-del{background:rgba(200,70,70,.15);color:var(--red);text-decoration:line-through;padding:0 .3rem}
+    .diff-line-ctx{color:var(--fg-d);opacity:.45;padding:0 .3rem}
     .diff-status-change{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);padding:.3rem 0}
     .diff-status-change span{padding:.1rem .3rem;border-radius:3px}
 
@@ -3543,6 +3548,21 @@
           statusBadge.textContent = bd.status;
           head.appendChild(statusBadge);
 
+          // Line-level +/- stats from diff
+          if (bd.mdDiff || bd.leanDiff) {
+            const mdOps = bd.mdDiff ? lineDiff(bd.mdDiff.base, bd.mdDiff.head) : [];
+            const leanOps = bd.leanDiff ? lineDiff(bd.leanDiff.base, bd.leanDiff.head) : [];
+            const allOps = [...mdOps, ...leanOps];
+            const a = allOps.filter(o => o.type === 'add').length;
+            const d = allOps.filter(o => o.type === 'del').length;
+            if (a || d) {
+              const stats = mk('span','diff-stats');
+              if (a) { const s = mk('span','ds-add'); s.textContent = `+${a}`; stats.appendChild(s); }
+              if (d) { const s = mk('span','ds-del'); s.textContent = `−${d}`; stats.appendChild(s); }
+              head.appendChild(stats);
+            }
+          }
+
           const kind = mk('span','diff-kind');
           kind.textContent = bd.kind;
           head.appendChild(kind);
@@ -3706,21 +3726,21 @@
     diffBtn.addEventListener('click', async () => {
       if (diffOverlay.classList.contains('open')) {
         closeDiffOverlay();
-        // If diff mode was on before overlay, keep it on
         return;
       }
-      // Load diff data if needed
-      if (!diffData || diffData.head !== (selectedBranch || currentBranchName)) {
-        diffBtn.textContent = 'loading...';
-        diffBtn.disabled = true;
+      // Open overlay immediately — show loading state if data not cached
+      const needsLoad = !diffData || diffData.head !== (selectedBranch || currentBranchName);
+      if (needsLoad) {
+        diffTitle.textContent = 'Loading diff…';
+        diffSummaryEl.innerHTML = '';
+        diffBody.innerHTML = '<div class="diff-loading"><div class="spinner"></div>Comparing branches…</div>';
+        openDiffOverlay();
         diffData = await loadDiff();
-        diffBtn.textContent = 'diff';
-        diffBtn.disabled = false;
       }
       if (diffData) {
         renderDiffOverlay(diffData);
+        if (!needsLoad) openDiffOverlay();
       } else {
-        // Show overlay with error/info message
         const head = selectedBranch || currentBranchName;
         diffTitle.textContent = 'Diff unavailable';
         diffSummaryEl.innerHTML = '';
@@ -3731,8 +3751,8 @@
               ? 'No paper is loaded. Open a paper first, then try diff.'
               : 'Could not load diff from server. Check that the API is running and the branch exists on the remote.'
         }</div>`;
+        if (!needsLoad) openDiffOverlay();
       }
-      openDiffOverlay();
     });
 
     // Right-click diff button toggles inline diff mode

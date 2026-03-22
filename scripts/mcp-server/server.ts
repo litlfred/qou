@@ -580,10 +580,16 @@ function computePaperDiff(
     const headBlk = headBlocks.get(name);
 
     if (!baseBlk && headBlk) {
-      blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "added" });
+      blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "added",
+        mdDiff: headBlk.md ? { base: "", head: headBlk.md } : undefined,
+        leanDiff: headBlk.lean?.source ? { base: "", head: headBlk.lean.source } : undefined,
+      });
       summary.added++;
     } else if (baseBlk && !headBlk) {
-      blocks.push({ rootName: name, kind: baseBlk.kind, label: baseBlk.label, title: baseBlk.title, status: "removed" });
+      blocks.push({ rootName: name, kind: baseBlk.kind, label: baseBlk.label, title: baseBlk.title, status: "removed",
+        mdDiff: baseBlk.md ? { base: baseBlk.md, head: "" } : undefined,
+        leanDiff: baseBlk.lean?.source ? { base: baseBlk.lean.source, head: "" } : undefined,
+      });
       summary.removed++;
     } else if (baseBlk && headBlk) {
       const mdChanged = baseBlk.md !== headBlk.md;
