@@ -370,6 +370,28 @@ categorical definitions a theorem depends on. This mirrors the Lean import
 graph and enables scoped validation — when a monoidal structure changes,
 all blocks that `uses` it are flagged for re-check.
 
+## Glossary Chapter (Ch 8)
+
+Chapter 8 contains glossary blocks (`remark` with tag `"glossary"`) that
+map paper terminology to Mathlib declarations. For category-theoretic
+terms, the glossary provides:
+
+- Canonical Mathlib name (e.g. `CategoryTheory.ExactPairing`)
+- Import path (e.g. `Mathlib.CategoryTheory.Monoidal.Rigid.Basic`)
+- Notation (e.g. `X ⊗ Y`, `α_ X Y Z`)
+- Relationship to paper's usage
+
+**When introducing a category-theoretic term** in any chapter `.md`:
+1. Check Ch 8 for an existing glossary entry
+2. If the term is a Mathlib synonym → add a glossary block, not a definition
+3. If the term adds new structure → add a definition block in the chapter
+4. Cross-reference glossary entries using `[term](#rem:glossary-<name>)`
+
+Current glossary entries cover: monoidal category, braided/symmetric
+monoidal, rigid category, exact pairing, left/right dual, pivotal
+category, compact closed category, monoidal functor, $R$-linear category,
+and hom-set.
+
 ## Checklist
 
 - [ ] All diagram chase proofs attempt `aesop_cat` first
@@ -381,3 +403,4 @@ all blocks that `uses` it are flagged for re-check.
 - [ ] LaTeX definitions include tikzcd diagrams (Herrlich–Strecker style)
 - [ ] No $q$ appears before the substrate parameter section
 - [ ] Running examples chain via "Continuing Example" cross-references
+- [ ] New Mathlib-equivalent terms have glossary entries in Ch 8

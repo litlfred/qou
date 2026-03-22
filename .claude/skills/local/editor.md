@@ -151,6 +151,9 @@ surviving past the work that should have resolved them.
 | Validate content objects | `content-validation` | Schema + constraints + AST |
 | Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
 | Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
+| Glossary / terminology / naming | `ontologist` + `content-validation` | Glossary blocks in Ch 8 |
+| Work on todos / process feedback | `todo-review` | Context-aware selection |
+| Missing proofs (narrative or Lean) | See §Proof workflow below | Narrative-first |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
 | **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
 
@@ -254,15 +257,73 @@ committing. This rule persists across sessions.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.
 
+## Todo workflow
+
+When the user asks to "work on todos" or "process feedback":
+
+1. **Check context** — is the user already focused on a specific block?
+   - **Yes** → filter todos to that block, show them directly.
+   - **No** → use `AskUserQuestion` with structured multiple-choice:
+     high priority / by chapter / by section / show all.
+2. **Present selected todos** as a summary table.
+3. **Let user pick** which todo(s) to work on (multi-select).
+4. **For each selected todo** — read the block, assess actionability,
+   route to the appropriate skill, execute, update todo status to
+   `in_progress`.
+
+See `todo-review` skill for full details. Agents may create and
+`in_progress` todos but **never** resolve or delete them.
+
+## Proof workflow (narrative and Lean)
+
+When the user wants to work on **missing proofs**:
+
+### Narrative proofs (`.md` blocks)
+
+1. Check if a `proof` block already exists for the target theorem/lemma.
+2. If not, ask the user (structured choice):
+   - **"I have a suggestion"** → user provides proof sketch, agent writes it up.
+   - **"Agent should try"** → agent reads the theorem statement and
+     `uses[]` dependencies, drafts a proof, presents for review.
+3. Create the `proof` block (`.ts` + `.md` pair) and link via `proofs[]`
+   on the parent theorem.
+
+### Lean proofs (`.lean` files)
+
+1. **Check for narrative first** — does a `.md` proof block exist?
+   - **Yes** → use it as the basis for the Lean formalization. Route to
+     `formalizer` + `category-theory` with the narrative proof as context.
+   - **No** → ask the user whether to write the narrative first or go
+     straight to Lean. Writing narrative first is recommended — it
+     provides structure and the author can review the mathematics before
+     formalization.
+2. Route to `proof-triage` for sorry resolution if the `.lean` file
+   already exists with sorry stubs.
+
+## Glossary routing
+
+When a new mathematical term is encountered during editing:
+
+1. **Is it a Mathlib synonym?** → `ontologist` creates a glossary block
+   in Ch 8 (remark with `"glossary"` tag).
+2. **Does it introduce new mathematics?** → Create a `definition` block
+   in the relevant chapter.
+3. **Unsure?** → Ask the user (structured choice: "glossary entry" /
+   "formal definition" / "skip for now").
+
+See `ontologist` skill §Glossary Block Policy for the full decision tree.
+
 ## Delegation patterns
 
 | Task | Agent | Notes |
 |------|-------|-------|
 | LaTeX definition/theorem edits | formalizer | Give exact file, line range, and desired content |
 | Notation propagation (k→R, ℂ→K) | consistency (general-purpose) | Search-and-replace with mathematical awareness |
-| New terms (P(V), archimedean) | glossary (general-purpose) | Check all files for consistency |
+| New terms (Mathlib synonyms) | ontologist | Glossary block in Ch 8 |
+| New terms (novel definitions) | content-validation + relevant skill | Definition block in chapter |
 | Category theory content | category-theory | For adjunctions, functors, natural transformations |
 | Cross-reference validation | latex-validation | After all edits complete |
+| Todo processing | todo-review | Context-aware selection workflow |
 
 ## Current plan
 
