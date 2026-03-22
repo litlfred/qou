@@ -8,5 +8,5 @@ export default proof({
     decl: "QOU.categorical_dq_squared",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "proved",
 });

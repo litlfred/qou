@@ -25,7 +25,7 @@ assignment before formalization can proceed.
 - When filling `sorry` placeholders with actual proofs
 - When `lake build` succeeds but there are remaining `sorry` warnings
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:
 

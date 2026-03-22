@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.QuantumObservableUniverse",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-universe"],
   examples: ["ex:qou-su2"],
   rendered: [

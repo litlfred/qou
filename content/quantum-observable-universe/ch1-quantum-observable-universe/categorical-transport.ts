@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:categorical-transport",
   lean: { decl: "QOU.CategoricalTransport" },
-  status: "not_started",
+  status: "stated",
   title: "Categorical transport equation",
   tags: ["transport", "jet-bundle", "q-deformation"],
   uses: [

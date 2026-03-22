@@ -8,5 +8,5 @@ export default proof({
     decl: "QOU.categorical_self_duality",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "proved",
 });

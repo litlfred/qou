@@ -24,7 +24,7 @@ workflow.
 - When running the agent-review pipeline with Lean content
 - When a Gemini code review touches files linked to proof objects
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **use MCP tools for all review checks**:
 

@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.Fermion",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:q-harmonic-form", "def:weight-decomposition"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/fermion-boson-decomposition-0.svg", blockIndex: 0, hash: "e2cd03af6567" },

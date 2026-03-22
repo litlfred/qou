@@ -8,6 +8,6 @@ export default definition({
     decl: "QOU.QuantumGaugeGroup",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-observable-universe", "def:substrate-parameter", "thm:su2-emergence"],
 });

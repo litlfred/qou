@@ -19,7 +19,7 @@ have a unique type assignment in the Lean type system.  The Ontologist
 detects ambiguities, maintains the formal glossary, and produces the
 machine-readable mapping file.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools for type checking**:
 

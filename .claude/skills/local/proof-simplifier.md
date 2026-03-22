@@ -15,7 +15,7 @@ allowed-tools: Read Edit Bash Grep Glob Agent
 Review existing proofs in small connected clusters (2–4 declarations that
 depend on each other) and identify simplifications across them.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, use it for analysis and alternatives:
 

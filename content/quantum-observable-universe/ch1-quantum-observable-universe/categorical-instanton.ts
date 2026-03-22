@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.CategoricalInstanton",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "stated",
   uses: [
     "def:quantum-observable-universe",
     "def:categorical-connection",
