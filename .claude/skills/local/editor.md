@@ -73,7 +73,7 @@ whether running locally (stdio) or remotely (Streamable HTTP).
 ### 1. Check open todos
 
 The `scripts/check-todos.sh` hook runs at session start and outputs a
-JSON summary of open feedback todos from `.qou-feedback/`. If there are
+JSON summary of open todos from `todos/`. If there are
 open todos, **present the summary and ask the user** (multiple-choice):
 
 - **Review open todos** — walk through each using the `todo-review` skill
@@ -93,8 +93,8 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `.qou-feedback/` has open todos referencing
-that root name.
+extension) and check if `todos/` has open todos referencing
+that block's label.
 
 **If matches are found**, present them to the user:
 

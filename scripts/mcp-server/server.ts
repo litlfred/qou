@@ -27,49 +27,53 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, TODOS_DIR, MAIN_TEX } from "./paths.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
 
-// ── Feedback storage (gitignored, survives branch switches) ─────
+// ── Todos from todos/ directory ───────────────────────────────────
 
-function feedbackPath(paperId: string, rootName: string): string {
-  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+interface TodoEntry {
+  id: string;
+  summary: string;
+  comment: string;
+  status: string;
+  priority: string;
+  origin: string;
+  targetLabel?: string;
+  assignee?: string;
+  createdAt: string;
+  updatedAt?: string;
+  updatedBy?: string;
+  file: string;
 }
 
-function readFeedback(paperId: string, rootName: string): unknown[] {
-  const p = feedbackPath(paperId, rootName);
-  if (!existsSync(p)) return [];
-  try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
-}
+async function readTodosDir(): Promise<TodoEntry[]> {
+  if (!existsSync(TODOS_DIR)) return [];
+  const { readdirSync } = await import("fs");
+  const files = readdirSync(TODOS_DIR).filter(f => f.endsWith(".ts"));
+  const allTodos: TodoEntry[] = [];
 
-function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
-  const dir = join(FEEDBACK_DIR, paperId);
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
-}
-
-/** List all feedback items across all papers, optionally filtered by status. */
-function listAllFeedback(status?: string): { paperId: string; rootName: string; todo: any }[] {
-  const results: { paperId: string; rootName: string; todo: any }[] = [];
-  if (!existsSync(FEEDBACK_DIR)) return results;
-  const { readdirSync } = require("fs") as typeof import("fs");
-  for (const paperId of readdirSync(FEEDBACK_DIR)) {
-    const paperFbDir = join(FEEDBACK_DIR, paperId);
+  for (const f of files) {
     try {
-      for (const file of readdirSync(paperFbDir)) {
-        if (!file.endsWith(".json")) continue;
-        const rootName = file.replace(/\.json$/, "");
-        const todos = readFeedback(paperId, rootName);
-        for (const t of todos as any[]) {
-          if (!status || t.status === status) {
-            results.push({ paperId, rootName, todo: t });
-          }
-        }
+      const modPath = join(TODOS_DIR, f);
+      // Clear cache for hot-reload
+      delete require.cache?.[modPath];
+      const mod = await import(modPath);
+      // Support: default export, named contentTodos, or named infraTodos
+      const items: any[] = mod.default ?? mod.contentTodos ?? mod.infraTodos ?? [];
+      for (const item of items) {
+        allTodos.push({ ...item, file: f });
       }
     } catch {}
   }
-  return results;
+  return allTodos;
+}
+
+/** Get todos for a specific targetLabel (block). */
+async function todosForLabel(label: string): Promise<TodoEntry[]> {
+  const all = await readTodosDir();
+  return all.filter(t => t.targetLabel === label);
 }
 
 // ── Content resolution (dynamic, no static JSON) ────────────────
@@ -177,8 +181,10 @@ async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> 
             try {
               const blk = (await import(tsPath)).default;
               if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
-              const fb = readFeedback(ref.dir, rootName);
-              if (fb.length) todoCount += fb.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
+              if (blk.label) {
+                const bt = await todosForLabel(blk.label);
+                todoCount += bt.filter(t => t.status !== "resolved" && t.status !== "wontfix").length;
+              }
             } catch {}
           }
         }
@@ -235,10 +241,9 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
           const blk = (await import(tsPath)).default;
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
 
-          // Merge feedback todos from gitignored .qou-feedback/
-          // Build a fresh array each time — never mutate the cached ESM module object
-          const feedback = readFeedback(id, rootName);
-          const blockTodos = feedback.length ? [...feedback] : undefined;
+          // Get todos from todos/ directory (matched by targetLabel)
+          const blockTodos = blk.label ? await todosForLabel(blk.label) : [];
+          const finalTodos = blockTodos.length ? blockTodos : undefined;
 
           // Read Lean source if available
           let leanSource: string | undefined;
@@ -300,7 +305,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             tags: blk.tags,
             rendered,
             md,
-            todos: blockTodos,
+            todos: finalTodos,
           });
         } catch (e) {
           blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -310,14 +315,11 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
-    const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
       number: ch.number, title: ch.title, label: ch.label, sections,
-      todos: chTodos.length ? chTodos : undefined,
     });
   }
 
-  const paperTodos = readFeedback(id, "__paper");
   return {
     id,
     title: paperMod.title,
@@ -326,7 +328,6 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
-    todos: paperTodos.length ? paperTodos : undefined,
   };
 }
 
@@ -404,21 +405,101 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return null;
   }
 
-  // ── API: Feedback ─────────────────────────────────────────
-  // GET  /api/feedback?paperId=X&rootName=Y → todos for one block
-  // GET  /api/feedback/all?status=open      → all todos (optional status filter)
-  // POST /api/feedback                      → create todo (handled below)
-  if (path === "/api/feedback/all") {
-    const status = url.searchParams.get("status") || undefined;
-    return Response.json(listAllFeedback(status));
-  }
-  if (path === "/api/feedback") {
-    const paperId = url.searchParams.get("paperId");
-    const rootName = url.searchParams.get("rootName");
-    if (paperId && rootName) {
-      return Response.json(readFeedback(paperId, rootName));
+  // ── API: Todos (from todos/ directory) ───────────────────
+  // GET /api/todos              → all todos
+  // GET /api/todos?status=open  → filtered by status
+  // GET /api/todos?label=X      → filtered by targetLabel
+  if (path === "/api/todos") {
+    try {
+      let todos = await readTodosDir();
+      const status = url.searchParams.get("status");
+      const label = url.searchParams.get("label");
+      if (status) todos = todos.filter(t => t.status === status);
+      if (label) todos = todos.filter(t => t.targetLabel === label);
+      return Response.json(todos, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
     }
-    return null; // POST handled in handlePostRequest
+  }
+
+  // ── Todos viewer page ──────────────────────────────────────
+  if (path === "/todos" || path === "/todos/") {
+    const todos = await readTodosDir();
+    const byPriority = { high: 0, medium: 0, low: 0, critical: 0 };
+    const byStatus = { open: 0, in_progress: 0, blocked: 0, resolved: 0, wontfix: 0 };
+    for (const t of todos) {
+      if (t.priority in byPriority) byPriority[t.priority as keyof typeof byPriority]++;
+      if (t.status in byStatus) byStatus[t.status as keyof typeof byStatus]++;
+    }
+
+    const rows = todos.map(t => `
+      <tr class="${t.status === 'resolved' || t.status === 'wontfix' ? 'done' : t.priority}">
+        <td><code>${t.id}</code></td>
+        <td><span class="badge ${t.priority}">${t.priority}</span></td>
+        <td><span class="badge ${t.status}">${t.status}</span></td>
+        <td>${t.summary}</td>
+        <td><code>${t.targetLabel || ''}</code></td>
+        <td>${t.origin}</td>
+        <td><small>${t.file}</small></td>
+      </tr>`).join("\n");
+
+    const html = `<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><title>QOU Todos</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #0d1117; color: #c9d1d9; }
+  h1 { color: #58a6ff; }
+  .stats { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .stat { padding: 0.5rem 1rem; border-radius: 6px; background: #161b22; border: 1px solid #30363d; }
+  .stat strong { color: #58a6ff; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #21262d; }
+  th { background: #161b22; color: #8b949e; font-size: 0.85rem; text-transform: uppercase; }
+  tr.done { opacity: 0.4; }
+  .badge { padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+  .badge.high, .badge.critical { background: #da3633; color: #fff; }
+  .badge.medium { background: #d29922; color: #fff; }
+  .badge.low { background: #238636; color: #fff; }
+  .badge.open { background: #1f6feb; color: #fff; }
+  .badge.in_progress { background: #8957e5; color: #fff; }
+  .badge.blocked { background: #da3633; color: #fff; }
+  .badge.resolved { background: #238636; color: #fff; }
+  .badge.wontfix { background: #484f58; color: #c9d1d9; }
+  code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
+  a { color: #58a6ff; }
+</style>
+</head><body>
+<h1>QOU Todos</h1>
+<div class="stats">
+  <div class="stat">Total: <strong>${todos.length}</strong></div>
+  <div class="stat">Open: <strong>${byStatus.open}</strong></div>
+  <div class="stat">In progress: <strong>${byStatus.in_progress}</strong></div>
+  <div class="stat">High: <strong>${byPriority.high + byPriority.critical}</strong></div>
+  <div class="stat">Medium: <strong>${byPriority.medium}</strong></div>
+</div>
+<p><a href="/api/todos">JSON API</a> &middot; <a href="/assistant/">Assistant</a></p>
+<table>
+  <thead><tr><th>ID</th><th>Priority</th><th>Status</th><th>Summary</th><th>Target</th><th>Origin</th><th>File</th></tr></thead>
+  <tbody>${rows}</tbody>
+</table>
+</body></html>`;
+
+    return new Response(html, {
+      headers: { "Content-Type": "text/html; charset=utf-8", "Access-Control-Allow-Origin": "*" },
+    });
+  }
+
+  // ── API: Feedback (deprecated — use /api/todos) ─────────────
+  if (path === "/api/feedback/all" || path === "/api/feedback") {
+    // Redirect to the new todos API
+    const status = url.searchParams.get("status") || undefined;
+    const label = url.searchParams.get("rootName") || undefined;
+    let redirect = "/api/todos";
+    const params: string[] = [];
+    if (status) params.push(`status=${status}`);
+    if (label) params.push(`label=${label}`);
+    if (params.length) redirect += `?${params.join("&")}`;
+    return Response.redirect(redirect, 301);
   }
 
   // ── Legacy viewer SPA ─────────────────────────────────────
@@ -561,57 +642,6 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       }
       writeFileSync(mdPath, body.md, "utf-8");
       return Response.json({ ok: true, path: mdPath });
-    } catch (e) {
-      return Response.json({ error: String(e) }, { status: 500 });
-    }
-  }
-
-  // ── Submit feedback as todo ────────────────────────────────
-  // Stored in .qou-feedback/ (gitignored), not in the content tree.
-  // Survives branch switches and won't be accidentally committed.
-  if (path === "/api/feedback") {
-    try {
-      const body = await req.json() as {
-        paperId: string; rootName: string;
-        summary: string; comment: string; priority: string; assignee: string;
-      };
-
-      const todoId = `todo-${Date.now().toString(36)}`;
-      const todo = {
-        id: todoId,
-        summary: body.summary,
-        comment: body.comment,
-        status: "open",
-        priority: body.priority || "medium",
-        origin: "human",
-        assignee: body.assignee || "editor-agent",
-        createdAt: new Date().toISOString(),
-      };
-
-      const todos = readFeedback(body.paperId, body.rootName);
-      todos.push(todo);
-      writeFeedback(body.paperId, body.rootName, todos);
-
-      return Response.json({ ok: true, todo });
-    } catch (e) {
-      return Response.json({ error: String(e) }, { status: 500 });
-    }
-  }
-
-  // ── Update feedback todo (priority / status) ──────────────────
-  if (path === "/api/feedback/update") {
-    try {
-      const body = await req.json() as {
-        paperId: string; rootName: string; todoId: string;
-        priority?: string; status?: string;
-      };
-      const todos = readFeedback(body.paperId, body.rootName) as any[];
-      const idx = todos.findIndex((t: any) => t.id === body.todoId);
-      if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
-      if (body.priority !== undefined) todos[idx].priority = body.priority;
-      if (body.status !== undefined) todos[idx].status = body.status;
-      writeFeedback(body.paperId, body.rootName, todos);
-      return Response.json({ ok: true, todo: todos[idx] });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
