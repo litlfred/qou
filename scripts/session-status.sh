@@ -119,6 +119,15 @@ if curl -sf --max-time 2 "http://localhost:${ASSISTANT_PORT}/health" &>/dev/null
     ASSISTANT_OK=true
 fi
 
+# ── 5b. Lean build status (from background builder) ──────────────
+LEAN_BUILD_STATUS="unknown"
+LEAN_BUILD_MSG=""
+BUILD_STATUS_FILE="/tmp/qou-lean-build-status.json"
+if [ -f "$BUILD_STATUS_FILE" ]; then
+    LEAN_BUILD_STATUS=$(python3 -c "import json; print(json.load(open('$BUILD_STATUS_FILE')).get('status','unknown'))" 2>/dev/null || echo "unknown")
+    LEAN_BUILD_MSG=$(python3 -c "import json; print(json.load(open('$BUILD_STATUS_FILE')).get('message',''))" 2>/dev/null || echo "")
+fi
+
 # ── 6. TODOs ────────────────────────────────────────────────────
 TODO_COUNT=0
 TODO_SUMMARY="No open todos."
@@ -146,7 +155,8 @@ SUMMARY=$(cat <<EOSUMMARY
 ║  $(ok $PDFLATEX_OK) PDF generation      (pdflatex + latexmk)       ║
 ║  $(ok $TEX_RENDER_OK) TeX block preview   (pdflatex + dvisvgm → SVG)  ║
 ║  $(ok $PANDOC_OK) HTML export        (pandoc)                    ║
-║  $(ok $LEAN_OK) Lean formalization (lean + lake)                ║
+║  $(ok $LEAN_OK) Lean toolchain    (lean + lake)                ║
+║  $(ok $([ "$LEAN_BUILD_STATUS" = "ready" ] && echo true || echo false)) Lean build        ($LEAN_BUILD_STATUS)                  ║
 ║  $(ok $LEAN_REMOTE_OK) Lean remote MCP    ($REMOTE_URL)  ║
 ║  $(ok $ASSISTANT_OK) Paper assistant     (localhost:$ASSISTANT_PORT)           ║
 ║  $(ok $RG_OK) Symbol search      (ripgrep)                   ║
@@ -191,6 +201,8 @@ cat <<EOF
     "lean_local_ready": $LEAN_LOCAL_READY,
     "lean_remote_ok": $LEAN_REMOTE_OK,
     "lean_remote_url": "$REMOTE_URL",
+    "lean_build_status": "$LEAN_BUILD_STATUS",
+    "lean_build_message": "$LEAN_BUILD_MSG",
     "paper_assistant": $ASSISTANT_OK,
     "ripgrep": $RG_OK,
     "bun": $BUN_OK,

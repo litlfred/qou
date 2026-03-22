@@ -15,19 +15,23 @@ srcDir = "."
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "v4.16.0"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 
 [[require]]
 name = "quantumInfo"
 git = "https://github.com/Timeroot/Lean-QuantumInfo"
 rev = "main"
 
-[[require]]
-name = "doc-gen4"
-git = "https://github.com/leanprover/doc-gen4"
-rev = "v4.16.0"
-
-[[require]]
-name = "checkdecls"
-git = "https://github.com/PatrickMassot/checkdecls"
-rev = "master"
+# doc-gen4 and checkdecls are CI-only dependencies.
+# Uncomment when the CI workflow needs them, and ensure rev matches
+# the Lean toolchain version.
+#
+# [[require]]
+# name = "doc-gen4"
+# git = "https://github.com/leanprover/doc-gen4"
+# rev = "v4.29.0-rc6"
+#
+# [[require]]
+# name = "checkdecls"
+# git = "https://github.com/PatrickMassot/checkdecls"
+# rev = "master"

@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.HadronFibreEmbedding",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: [
     "def:hadron",
     "def:localized-hadron",
