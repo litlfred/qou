@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:descent",
   lean: { decl: "QOU.Descent" },
-  status: "not_started",
+  status: "stated",
   title: "Descent",
   tags: ["descent", "brane-tower", "restriction"],
   uses: [
