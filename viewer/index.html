@@ -2085,14 +2085,70 @@
         });
       });
 
+      // ── Chapter containers (one per chapter, show/hide) ──
+      const chapterDivs = new Map(); // number → DOM element
+      const chapterHydrated = new Set(); // track which chapters have been hydrated
+      let activeChapter = null;
+
+      function showChapter(num) {
+        if (activeChapter === num) return;
+        // Hide current
+        if (activeChapter !== null) {
+          const prev = chapterDivs.get(activeChapter);
+          if (prev) prev.style.display = 'none';
+        }
+        activeChapter = num;
+        const cd = chapterDivs.get(num);
+        if (!cd) return;
+        cd.style.display = '';
+        // Hydrate lazy blocks on first show
+        if (!chapterHydrated.has(num)) {
+          chapterHydrated.add(num);
+          const lazies = lazyQueue.filter(t => cd.contains(t.el));
+          for (const t of lazies) {
+            t.init();
+            lazyObs.unobserve(t.el);
+            lazyQueue.splice(lazyQueue.indexOf(t), 1);
+          }
+        }
+        // Highlight sidebar
+        sb.querySelectorAll('.sb-ch').forEach(el => {
+          const isActive = el.dataset.num === String(num);
+          el.classList.toggle('active', isActive);
+          if (isActive && !el.classList.contains('open')) {
+            el.classList.add('open');
+            const body = el.nextElementSibling;
+            if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
+          }
+        });
+        window.scrollTo(0, 0);
+      }
+
+      // Find which chapter a label belongs to
+      function chapterForLabel(label) {
+        for (const ch of p.chapters) {
+          for (const sec of ch.sections) {
+            for (const b of sec.blocks) {
+              if (b.label === label) return ch.number;
+            }
+          }
+        }
+        return null;
+      }
+
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
         chEl.dataset.num = String(ch.number);
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number}. ${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
+
+        // Click chapter title → show chapter content
         chEl.onclick = (e) => {
+          // Toggle sections in sidebar
           chEl.classList.toggle('open');
           chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
+          // Show chapter content
+          showChapter(ch.number);
         };
         sb.appendChild(chEl);
         for (const sec of ch.sections) {
@@ -2105,7 +2161,6 @@
             if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
             if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
           }
-          let secLabel = sec.title;
           const badges = [];
           if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
           if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
@@ -2115,9 +2170,11 @@
           sEl.title = sec.title;
           sEl.onclick = (e) => {
             e.stopPropagation();
-            const t = document.getElementById(sec.label);
-            if (t) t.scrollIntoView({behavior:'smooth'});
-            // Toggle block list
+            showChapter(ch.number);
+            setTimeout(() => {
+              const t = document.getElementById(sec.label);
+              if (t) t.scrollIntoView({behavior:'smooth'});
+            }, 50);
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
           chBody.appendChild(sEl);
@@ -2171,12 +2228,15 @@
             }
 
             bEl.onclick = () => {
-              const t = document.getElementById(b.label);
-              if (t) {
-                const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
-                if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                t.scrollIntoView({behavior:'smooth', block:'center'});
-              }
+              showChapter(ch.number);
+              setTimeout(() => {
+                const t = document.getElementById(b.label);
+                if (t) {
+                  const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                  if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                  t.scrollIntoView({behavior:'smooth', block:'center'});
+                }
+              }, 50);
             };
             blkList.appendChild(bEl);
           }
@@ -2191,8 +2251,11 @@
       hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
       app.appendChild(hdr);
 
+      // Render each chapter into its own hidden div
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
+        cd.dataset.chNum = String(ch.number);
+        cd.style.display = 'none';
         if (ch.label) cd.id = ch.label;
         cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
         renderMath(cd);
@@ -2205,49 +2268,28 @@
           sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
           for (const b of sec.blocks) {
-            // Skip child examples unless they're the scroll target
             if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
             sd.appendChild(renderBlock(b));
           }
           cd.appendChild(sd);
         }
+        chapterDivs.set(ch.number, cd);
         app.appendChild(cd);
       }
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — Folio`;
 
-      // Scroll-spy: highlight active section in sidebar
-      const sectionEls = document.querySelectorAll('.section[id]');
-      const sbSecs = sb.querySelectorAll('.sb-sec');
-      const secMap = new Map();
-      sbSecs.forEach(s => { secMap.set(s.textContent, s); });
-      const secObs = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            const secDiv = e.target;
-            const h3 = secDiv.querySelector('.sec-t');
-            if (h3) {
-              sbSecs.forEach(s => s.classList.remove('active'));
-              const match = secMap.get(h3.textContent);
-              if (match) {
-                match.classList.add('active');
-                // Auto-expand parent chapter
-                const chBody = match.closest('.sb-ch-body');
-                if (chBody) {
-                  const chEl = chBody.previousElementSibling;
-                  if (chEl && !chEl.classList.contains('open')) {
-                    chEl.classList.add('open');
-                    chBody.style.display = 'block';
-                  }
-                }
-                match.scrollIntoView({block:'nearest'});
-              }
-            }
-          }
-        }
-      }, { rootMargin: '-20% 0px -70% 0px' });
-      sectionEls.forEach(el => secObs.observe(el));
+      // Show first chapter (or the one containing pendingScroll)
+      let startChapter = p.chapters[0]?.number || 1;
+      if (pendingScroll) {
+        const target = chapterForLabel(pendingScroll);
+        if (target) startChapter = target;
+      }
+      // Expose chapter navigation for cross-function use
+      paper._showChapter = showChapter;
+      paper._chapterForLabel = chapterForLabel;
+      showChapter(startChapter);
 
       // Scroll to pending label anchor
       if (pendingScroll) {
@@ -3212,6 +3254,12 @@
     }
 
     function scrollToLabel(label) {
+      // Switch to the chapter containing this label
+      if (paper?._showChapter && paper._chapterForLabel) {
+        const chNum = paper._chapterForLabel(label);
+        if (chNum !== null) paper._showChapter(chNum);
+      }
+
       const el = document.getElementById(label);
       if (!el) { pendingScroll = null; return; }
 
