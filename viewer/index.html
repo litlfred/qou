@@ -1951,6 +1951,7 @@
         if (block.label) d.id = block.label;
         const exHdr = mkBlockHeader('example', block.title, block.label);
         // Collapse into header actions
+        if (block.label) { const exBolt = mkDepBolt(block.label); exHdr._acts.appendChild(exBolt); }
         const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
         exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         exHdr._acts.appendChild(exColBtn);
@@ -1993,6 +1994,7 @@
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
         const rmHdr = mkBlockHeader('remark', block.title, block.label);
+        if (block.label) { const rmBolt = mkDepBolt(block.label); rmHdr._acts.appendChild(rmBolt); }
         const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
         rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         rmHdr._acts.appendChild(rmColBtn);
@@ -2061,8 +2063,8 @@
             prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
           }
         }
-        // Dependency graph bolt for proof blocks with lean
-        if (block.lean && block.label) {
+        // Dependency graph bolt for proof blocks
+        if (block.label) {
           const prfBolt = mkDepBolt(block.label);
           prfHdr._acts.insertBefore(prfBolt, prfHdr._acts.firstChild);
         }
@@ -2237,8 +2239,8 @@
         hdr.insertBefore(indicators, hdr._acts);
       }
 
-      // Dependency graph lightning bolt — shown on blocks with lean statement
-      if (block.lean && block.label) {
+      // Dependency graph lightning bolt — shown on all environment blocks with a label
+      if (block.label) {
         const bolt = mkDepBolt(block.label);
         hdr._acts.insertBefore(bolt, hdr._acts.firstChild);
       }
