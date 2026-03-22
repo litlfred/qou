@@ -25,6 +25,7 @@ export default paper({
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
     chapterRef({ dir: "ch6-descartes-universe" }),
+    chapterRef({ dir: "ch8-glossary" }),
     chapterRef({ dir: "ch11-experimental-evidence" }),
     chapterRef({ dir: "ch10-interpretations" }),
   ],

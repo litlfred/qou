@@ -16,6 +16,7 @@ following three conditions hold:
    \begin{tikzcd}[column sep=2.5em]
      \mathbf{1} \ar[r, "0"] & \mathrm{Ad}(A)
    \end{tikzcd}
+   \qquad\text{(observability)}
    \]
    ```
 
@@ -36,5 +37,6 @@ following three conditions hold:
      \mathbf{1} \ar[r, "g_{\mathbf{1}} = \mathrm{id}"']
      & \mathbf{1}
    \end{tikzcd}
+   \qquad\text{(volume constraint)}
    \end{equation}
    ```

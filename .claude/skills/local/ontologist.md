@@ -193,6 +193,66 @@ triple. The `.ts` manifest is authoritative for the `kind`, `label`, and
 should check whether a content object already exists before creating a
 glossary entry, to avoid duplication.
 
+## Glossary Block Policy (Chapter 8)
+
+Chapter 8 ("Glossary of Rigid Monoidal Terms") contains **glossary blocks**
+— `remark` blocks with tag `"glossary"` — that map paper terminology to
+canonical Mathlib declarations. These are the content-object counterpart
+of `glossary.json` entries.
+
+### When to use a glossary block vs. a definition block
+
+| Criterion | Glossary block (`remark`) | Definition block |
+|-----------|--------------------------|------------------|
+| Semantic novelty | **None** — the term is a synonym or light wrapper for a Mathlib type | The paper introduces genuinely new mathematics |
+| Example | "$R$-linear category" → `CategoryTheory.Linear R` | "Quantum universe" (new structure with custom axioms) |
+| Lean file | Not required | **Required** |
+| Label prefix | `rem:glossary-<term>` | `def:<term>` |
+| Chapter | Ch 8 (Glossary) | Relevant content chapter |
+
+### Decision tree for new terms
+
+1. **Does the term exist in Mathlib under a different name?**
+   → Glossary block. Map paper name to Mathlib name.
+2. **Is it a lightweight restriction/specialization of a Mathlib type?**
+   → Glossary block with a note about the restriction.
+3. **Does the paper add new axioms, fields, or structure?**
+   → Definition block in the relevant chapter.
+4. **Ambiguous?** → Ask the author.
+
+### Glossary block structure
+
+Each glossary block is a `.ts` + `.md` pair in `ch8-glossary/`:
+
+```typescript
+// glossary-<term>.ts
+import { remark } from "../../schema/builders";
+export default remark({
+  label: "rem:glossary-<term>",
+  title: "<Human-readable term>",
+  tags: ["glossary", "category-theory", ...],
+  uses: [],   // other glossary entries this depends on
+});
+```
+
+```markdown
+<!-- glossary-<term>.md -->
+**<Term>.** <1–3 sentence definition as used in the paper.>
+
+**Mathlib reference.**
+`<Fully.Qualified.Mathlib.Name>` (<class|structure|def>).
+Import: `<Mathlib.Import.Path>`.
+<Optional: notation, key fields, relationship to paper's usage.>
+```
+
+### Maintaining consistency
+
+- When a new Mathlib-equivalent term appears in any chapter `.md`,
+  check Ch 8 for an existing glossary entry before creating a definition.
+- When `glossary.json` is regenerated, cross-check against Ch 8 entries.
+- The `chapter-analysis` skill's glossary gap analysis should include
+  Ch 8 glossary blocks in its coverage check.
+
 ## Checklist
 
 - [ ] Every definition in `chapters/*.tex` has a glossary entry

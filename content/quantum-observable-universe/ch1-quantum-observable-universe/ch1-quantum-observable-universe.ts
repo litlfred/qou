@@ -25,6 +25,7 @@ export default chapter({
       label: "sec:rigid-monoidal",
       blocks: [
         "rigid-monoidal-category",
+        "snake-identity",
         "rigid-monoidal-vect",
       ],
     }),
@@ -40,6 +41,10 @@ export default chapter({
         "quantum-observable-universe",
         "qou-su2",
         "base-field-independence",
+        "maximal-torus",
+        "maximal-torus-su2",
+        "weight-decomposition",
+        "reeb-physical",
       ],
     }),
 
@@ -69,10 +74,6 @@ export default chapter({
       blocks: [
         "spin-labels",
         "spin-labels-su2",
-        "maximal-torus",
-        "maximal-torus-su2",
-        "weight-decomposition",
-        "reeb-physical",
         "categorical-reeb",
         "reeb-su2",
         "projective-line-object",
@@ -121,6 +122,7 @@ export default chapter({
         "q-harmonic-form",
         "fermion-boson-decomposition",
         "categorical-point",
+        "categorical-point-explication",
         "observation",
         "two-observer-parallelogram",
       ],
