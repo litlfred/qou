@@ -113,6 +113,7 @@ interface ResolvedChapter {
   title: string;
   label?: string;
   sections: ResolvedSection[];
+  todos?: unknown[];
 }
 
 interface ResolvedPaper {
@@ -122,6 +123,7 @@ interface ResolvedPaper {
   affiliations?: string[];
   date?: string;
   chapters: ResolvedChapter[];
+  todos?: unknown[];
 }
 
 interface FolioEntry {
@@ -308,11 +310,14 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
+    const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
       number: ch.number, title: ch.title, label: ch.label, sections,
+      todos: chTodos.length ? chTodos : undefined,
     });
   }
 
+  const paperTodos = readFeedback(id, "__paper");
   return {
     id,
     title: paperMod.title,
@@ -321,6 +326,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
+    todos: paperTodos.length ? paperTodos : undefined,
   };
 }
 
