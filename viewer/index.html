@@ -1646,13 +1646,18 @@
         }
         leanInd.appendChild(leanBadge);
 
-        // Click to toggle lean source panel
+        // Click to toggle lean source panel (inserted right after header)
         if (block.lean?.source) {
           leanInd.onclick = (e) => {
             e.stopPropagation();
             if (!leanPanel) {
               leanPanel = mkLeanSrc(block);
-              if (leanPanel) d.appendChild(leanPanel);
+              if (leanPanel) {
+                // Insert after header so it appears under the ∀ indicator
+                const hdrEl = d.querySelector('.bh');
+                if (hdrEl && hdrEl.nextSibling) d.insertBefore(leanPanel, hdrEl.nextSibling);
+                else d.appendChild(leanPanel);
+              }
             } else {
               leanPanel.style.display = leanPanel.style.display === 'none' ? '' : 'none';
             }
