@@ -21,7 +21,6 @@
   let messages = [];      // { role, content, suggestions? }[]
   let isStreaming = false;
   let abortController = null;
-  let currentPaperId = null;
   let chatOpen = false;
 
   // Detect paper context from hash
@@ -29,37 +28,41 @@
     const hash = location.hash || "#/";
     const parts = hash.slice(2).split("/").filter(Boolean);
     if (parts[0] === "paper" && parts[1]) {
-      currentPaperId = parts[1];
       return { paperId: parts[1] };
     }
     return {};
   }
 
-  // ── Markdown → HTML (chat-optimized, handles partial content) ──
+  // ── Markdown → HTML (chat-optimized, XSS-safe) ──
+  // Strategy: escape ALL input first, then selectively apply markdown
+  // formatting on the escaped text. This ensures no raw HTML from the
+  // LLM response can execute.
   function chatMdToHtml(md) {
     if (!md) return "";
-    let out = md;
 
     // Strip [suggestions]: line (handled separately)
-    out = out.replace(/\[suggestions\]:.*$/m, "").trim();
+    let out = md.replace(/\[suggestions\]:.*$/m, "").trim();
 
-    // Display math $$...$$
+    // Escape everything first — all subsequent regexes operate on safe text
+    out = esc(out);
+
+    // Display math $$...$$ (content already escaped, KaTeX will re-parse)
     out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) =>
-      `<span class="chat-katex-display" data-tex="${esc(tex.trim()).replace(/'/g, "&#39;")}"></span>`);
+      `<span class="chat-katex-display" data-tex="${tex.trim().replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`);
     // Inline math $...$
     out = out.replace(/\$([^\n$]+?)\$/g, (_, tex) =>
-      `<span class="chat-katex-inline" data-tex="${esc(tex.trim()).replace(/'/g, "&#39;")}"></span>`);
-    // Fenced code blocks
+      `<span class="chat-katex-inline" data-tex="${tex.trim().replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`);
+    // Fenced code blocks (``` markers are escaped as-is since no < > remain)
     out = out.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) =>
-      `<pre class="chat-code"><code>${esc(code)}</code></pre>`);
+      `<pre class="chat-code"><code>${code}</code></pre>`);
     // Inline code
     out = out.replace(/`([^`\n]+)`/g, '<code class="chat-inline-code">$1</code>');
     // Bold
     out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     // Italic
     out = out.replace(/\*(.+?)\*/g, "<em>$1</em>");
-    // Links
-    out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    // Links — href is already escaped, add rel for safety
+    out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
     // Lists
     out = out.replace(/^[-*] (.+)$/gm, '<li>$1</li>');
     out = out.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
@@ -231,7 +234,6 @@
   stopBtn.onclick = () => {
     if (abortController) {
       abortController.abort();
-      abortController = null;
     }
   };
 
