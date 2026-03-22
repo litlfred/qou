@@ -1323,7 +1323,11 @@ Your role is that of a knowledgeable editor who:
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
-Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.`;
+Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.
+
+IMPORTANT: End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
+[suggestions]: First option | Second option | Third option
+These become clickable buttons so users don't have to type. Make them specific to the conversation context — not generic. Keep each option under 40 characters.`;
 
       if (mode === "status") {
         systemPrompt += `\n\nThe user is in EDITOR mode. They want to understand the paper's current status — what's complete, what needs work, what the priorities are. Focus on actionable summaries. Use get_paper_status and get_todos to get real data.`;
