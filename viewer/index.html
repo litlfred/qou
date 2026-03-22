@@ -670,6 +670,10 @@
     .chat-msg .chat-math{margin:.3rem 0}
     .chat-msg code{background:rgba(0,0,0,.1);padding:.1rem .3rem;border-radius:3px;font-family:var(--f-mono);font-size:.7rem}
     .chat-msg a{color:inherit;text-decoration:underline}
+    .chat-msg table{border-collapse:collapse;font-size:.72rem;margin:.4rem 0;width:100%}
+    .chat-msg th,.chat-msg td{border:1px solid var(--brd);padding:.25rem .4rem;text-align:left}
+    .chat-msg th{background:var(--bg-s);font-weight:600;font-size:.65rem;text-transform:uppercase;letter-spacing:.03em}
+    .chat-msg tr:nth-child(even){background:rgba(0,0,0,.03)}
 
     .chat-typing{align-self:flex-start;color:var(--fg-d);font-size:.7rem;padding:.3rem .7rem;font-style:italic;display:none}
     .chat-typing.active{display:block}
@@ -1236,7 +1240,7 @@
       while (i < lines.length) {
         const l = lines[i];
         // Flush accumulated paragraph text before any block-level element
-        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l) || /^#{1,6}\s/.test(l);
+        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l) || /^#{1,6}\s/.test(l) || /^\s*\|.+\|/.test(l);
         if (isBlock && para.length) { o.push(inl(para.join(' '))); para = []; }
         // Headers
         const hMatch = l.match(/^(#{1,6})\s+(.+)/);
@@ -1289,6 +1293,29 @@
           o.push('</ol>');
           continue;
         }
+        // Tables: | col | col |
+        if (/^\s*\|.+\|/.test(l)) {
+          const rows = [];
+          while (i < lines.length && /^\s*\|.+\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+          if (rows.length >= 2) {
+            const parseRow = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+            const hdr = parseRow(rows[0]);
+            // Check if row[1] is a separator (|---|---|)
+            const isSep = /^\s*\|[\s:-]+\|/.test(rows[1]);
+            const startIdx = isSep ? 2 : 1;
+            let tbl = '<table><thead><tr>' + hdr.map(h => `<th>${inl(h)}</th>`).join('') + '</tr></thead><tbody>';
+            for (let r = startIdx; r < rows.length; r++) {
+              const cells = parseRow(rows[r]);
+              tbl += '<tr>' + cells.map(c => `<td>${inl(c)}</td>`).join('') + '</tr>';
+            }
+            tbl += '</tbody></table>';
+            o.push(tbl);
+          } else {
+            // Single row — treat as paragraph
+            para.push(rows[0]);
+          }
+          continue;
+        }
         if (l.trim() === '') {
           if (para.length) { o.push(inl(para.join(' '))); para = []; }
           o.push('</p><p>'); i++; continue;
@@ -1298,8 +1325,8 @@
       if (para.length) o.push(inl(para.join(' ')));
       let h = '<p>' + o.join('\n') + '</p>';
       h = h.replace(/<p>\s*<\/p>/g,'');
-      h = h.replace(/<p>\s*<(div|ul|ol|pre)/g,'<$1');
-      h = h.replace(/<\/(div|ul|ol|pre)>\s*<\/p>/g,'</$1>');
+      h = h.replace(/<p>\s*<(div|ul|ol|pre|table|h[1-6])/g,'<$1');
+      h = h.replace(/<\/(div|ul|ol|pre|table|h[1-6])>\s*<\/p>/g,'</$1>');
       return { html: h, texBlocks: tx };
     }
 
