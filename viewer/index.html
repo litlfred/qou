@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>QOU Viewer</title>
+  <title>Folio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +51,7 @@
     .ctrl button:hover{color:var(--fg-b);border-color:var(--ac-d)}
     .ctrl button.on{color:var(--ac);border-color:var(--ac)}
     .ctrl .sp{flex:1}
+    .ctrl select{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.15rem .3rem;border-radius:3px;max-width:160px}
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
@@ -472,13 +473,52 @@
     /* Feedback button on blocks */
     /* (old .fb-btn removed — feedback now in .bh-acts) */
 
+    /* Claude chat panel */
+    .claude-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;border-radius:50%;background:var(--ac);color:#fff;border:none;font-size:1.3rem;cursor:pointer;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:transform .15s var(--ease),background .15s}
+    .claude-fab:hover{transform:scale(1.08)}
+    .claude-fab.open{background:var(--fg-d);transform:rotate(45deg)}
+    .claude-fab .fab-badge{position:absolute;top:-2px;right:-2px;width:10px;height:10px;border-radius:50%;background:var(--grn);border:2px solid var(--bg-s)}
+
+    .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head)}
+    .chat-panel.open{display:flex}
+    @media(max-width:500px){.chat-panel{left:1rem;right:1rem;width:auto;bottom:4.5rem;max-height:60vh}}
+
+    .chat-head{display:flex;align-items:center;padding:.6rem .8rem;border-bottom:1px solid var(--brd);gap:.5rem;flex-shrink:0}
+    .chat-head .chat-title{font-size:.8rem;font-weight:600;color:var(--fg-b);flex:1}
+    .chat-head .chat-mode{font-size:.55rem;padding:.15rem .4rem;border-radius:3px;background:var(--bg-r);color:var(--fg-d);font-family:var(--f-mono)}
+    .chat-head button{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.75rem;padding:.2rem}
+    .chat-head button:hover{color:var(--fg-b)}
+
+    .chat-actions{display:flex;gap:.3rem;padding:.4rem .8rem;border-bottom:1px solid var(--brd);flex-wrap:wrap;flex-shrink:0}
+    .chat-action{font-size:.6rem;padding:.2rem .5rem;border-radius:12px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);transition:all .15s}
+    .chat-action:hover{border-color:var(--ac);color:var(--ac)}
+
+    .chat-messages{flex:1;overflow-y:auto;padding:.6rem .8rem;display:flex;flex-direction:column;gap:.5rem;min-height:80px}
+    .chat-msg{max-width:90%;padding:.5rem .7rem;border-radius:10px;font-size:.78rem;line-height:1.5;word-wrap:break-word}
+    .chat-msg.user{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:3px}
+    .chat-msg.assistant{align-self:flex-start;background:var(--bg-r);color:var(--fg);border-bottom-left-radius:3px}
+    .chat-msg.system{align-self:center;background:none;color:var(--fg-d);font-size:.65rem;font-style:italic;padding:.2rem}
+    .chat-msg .chat-math{margin:.3rem 0}
+    .chat-msg code{background:rgba(0,0,0,.1);padding:.1rem .3rem;border-radius:3px;font-family:var(--f-mono);font-size:.7rem}
+    .chat-msg a{color:inherit;text-decoration:underline}
+
+    .chat-typing{align-self:flex-start;color:var(--fg-d);font-size:.7rem;padding:.3rem .7rem;font-style:italic;display:none}
+    .chat-typing.active{display:block}
+
+    .chat-input-area{display:flex;align-items:flex-end;padding:.5rem .8rem;border-top:1px solid var(--brd);gap:.4rem;flex-shrink:0}
+    .chat-input{flex:1;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg);border-radius:8px;padding:.4rem .6rem;font-family:var(--f-body);font-size:.78rem;resize:none;max-height:80px;min-height:34px;line-height:1.4}
+    .chat-input:focus{outline:none;border-color:var(--ac)}
+    .chat-send{background:var(--ac);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
+    .chat-send:disabled{opacity:.4;cursor:default}
+
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
 </head>
 <body data-font="web">
   <div class="ctrl">
-    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">QOU</a>
+    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
+    <select id="c-br" title="Switch branch"></select>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
@@ -523,6 +563,29 @@
     <div class="fb-history" id="fb-history"></div>
   </div>
 
+  <!-- Claude assistant chat -->
+  <button class="claude-fab" id="claude-fab" title="Ask Folio assistant">&#x2726;</button>
+  <div class="chat-panel" id="chat-panel">
+    <div class="chat-head">
+      <span class="chat-title">Folio</span>
+      <span class="chat-mode" id="chat-mode">reader</span>
+      <button id="chat-clear" title="Clear chat">clear</button>
+      <button id="chat-close" title="Close">&times;</button>
+    </div>
+    <div class="chat-actions" id="chat-actions">
+      <button class="chat-action" data-prompt="Explain this content in simple terms">explain</button>
+      <button class="chat-action" data-prompt="What are the key concepts I should understand here?">key ideas</button>
+      <button class="chat-action" data-prompt="How does this connect to other parts of the paper?">connections</button>
+      <button class="chat-action" data-prompt="I think there may be an error here. Let me describe it:">report error</button>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-typing" id="chat-typing">Folio is thinking...</div>
+    <div class="chat-input-area">
+      <textarea class="chat-input" id="chat-input" placeholder="Ask about the paper..." rows="1"></textarea>
+      <button class="chat-send" id="chat-send" title="Send">&#x2191;</button>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
     // ── State ────────────────────────────────────────────
@@ -530,6 +593,8 @@
     const bix = new Map(); // label → block
     let showExamples = false;
     let showRemarks = true; // remarks visible by default
+    let currentBranchName = null;
+    let selectedBranch = null;
 
     // ── Controls ─────────────────────────────────────────
     const html = document.documentElement;
@@ -647,6 +712,37 @@
       btnRd.classList.toggle('on', readingMode);
       localStorage.setItem('qou-reading', readingMode ? '1' : '0');
     });
+
+    // ── Branch switcher ─────────────────────────────────
+    const branchSelect = document.getElementById('c-br');
+    async function loadBranches() {
+      try {
+        const r = await fetch('/api/branches');
+        if (!r.ok) return;
+        const data = await r.json();
+        currentBranchName = data.current;
+        if (!selectedBranch) selectedBranch = currentBranchName;
+        branchSelect.innerHTML = '';
+        for (const b of (data.branches || [])) {
+          const opt = document.createElement('option');
+          opt.value = b;
+          opt.textContent = b === currentBranchName ? `${b} (HEAD)` : b;
+          if (b === selectedBranch) opt.selected = true;
+          branchSelect.appendChild(opt);
+        }
+      } catch { /* /api/branches not available */ }
+    }
+    branchSelect.onchange = () => {
+      selectedBranch = branchSelect.value;
+      paper = null;
+      bix.clear();
+      route();
+    };
+    loadBranches();
+
+    function branchParam() {
+      return selectedBranch && selectedBranch !== currentBranchName ? `&branch=${encodeURIComponent(selectedBranch)}` : '';
+    }
 
     // ── Markdown ─────────────────────────────────────────
     function parseMd(md) {
@@ -1515,7 +1611,7 @@
       }
 
       document.getElementById('c-hash').textContent = p._hash || '';
-      document.title = `${p.title} — QOU`;
+      document.title = `${p.title} — Folio`;
 
       // Scroll-spy: highlight active section in sidebar
       const sectionEls = document.querySelectorAll('.section[id]');
@@ -1700,7 +1796,7 @@
         list.appendChild(card);
       }
       app.appendChild(list);
-      document.title = data.title || 'QOU';
+      document.title = data.title || 'Folio';
     }
 
     // ── Router ────────────────────────────────────────────
@@ -1825,7 +1921,7 @@
         <pre style="background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;font-size:.75rem;color:var(--fg-d);overflow-x:auto">${esc(JSON.stringify({kind:block.kind,label:block.label,title:block.title,uses:block.uses,lean:block.lean,tags:block.tags,status:block.status}, null, 2))}</pre>`;
       app.appendChild(manifest);
 
-      document.title = `Edit: ${block.title || block.label} — QOU`;
+      document.title = `Edit: ${block.title || block.label} — Folio`;
     }
 
     function scrollToLabel(label) {
@@ -1862,7 +1958,7 @@
       const app = document.getElementById('app');
       app.innerHTML = '<div class="loading">loading folio...</div>';
       try {
-        const r = await fetch('/api/folio');
+        const r = await fetch(`/api/folio?_=1${branchParam()}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderFolio(await r.json());
       } catch (e) {
@@ -1873,7 +1969,7 @@
     async function loadDefaultPaper() {
       // Load first paper from folio
       try {
-        const r = await fetch('/api/folio');
+        const r = await fetch(`/api/folio?_=1${branchParam()}`);
         if (!r.ok) throw new Error(`${r.status}`);
         const data = await r.json();
         const id = data.papers?.[0]?.id || 'quantum-observable-universe';
@@ -1887,7 +1983,7 @@
       const app = document.getElementById('app');
       app.innerHTML = '<div class="loading">loading paper...</div>';
       try {
-        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
+        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderPaper(await r.json());
       } catch (e) {
@@ -1897,6 +1993,302 @@
 
     window.addEventListener('hashchange', route);
     route();
+
+    // ── Claude Chat Assistant ─────────────────────────────
+    const chatFab = document.getElementById('claude-fab');
+    const chatPanel = document.getElementById('chat-panel');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatTyping = document.getElementById('chat-typing');
+    const chatModeEl = document.getElementById('chat-mode');
+    const chatActions = document.getElementById('chat-actions');
+
+    let chatHistory = []; // {role, content}
+    let chatStreaming = false;
+    let chatInitialized = false;
+    let chatOpen = false;
+
+    // Determine mode: reading mode = reader, otherwise editor
+    function getChatMode() {
+      return readingMode ? 'read' : 'edit';
+    }
+
+    function updateChatMode() {
+      const mode = getChatMode();
+      chatModeEl.textContent = mode === 'read' ? 'reader' : 'editor';
+    }
+
+    // Get context: currently visible block or selected text
+    function getChatContext() {
+      const ctx = { paperId: paper?.id };
+      // Check for text selection
+      const sel = window.getSelection();
+      if (sel && sel.toString().trim().length > 5) {
+        ctx.selectedText = sel.toString().trim();
+        // Find the block containing the selection
+        const anchor = sel.anchorNode?.parentElement?.closest?.('.env[id], .blk[id]');
+        if (anchor) {
+          const label = anchor.id;
+          const block = bix.get(label);
+          if (block) {
+            ctx.blockLabel = label;
+            ctx.blockMd = block.md;
+            ctx.blockKind = block.kind;
+          }
+        }
+      }
+      // If no selection, find the block currently in viewport center
+      if (!ctx.blockLabel) {
+        const viewY = window.innerHeight / 2;
+        for (const [label, block] of bix) {
+          const el = document.getElementById(label);
+          if (!el) continue;
+          const r = el.getBoundingClientRect();
+          if (r.top < viewY && r.bottom > viewY - 100) {
+            ctx.blockLabel = label;
+            ctx.blockMd = block.md;
+            ctx.blockKind = block.kind;
+            break;
+          }
+        }
+      }
+      return ctx;
+    }
+
+    function addChatMessage(role, content) {
+      const div = mk('div', `chat-msg ${role}`);
+      // Basic markdown rendering for assistant messages
+      if (role === 'assistant' || role === 'system') {
+        let html = esc(content);
+        // Inline math
+        html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
+        // Bold
+        html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        // Italic
+        html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
+        // Code
+        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+        // Cross-refs to blocks
+        html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
+          '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
+        div.innerHTML = html;
+        renderMath(div);
+      } else {
+        div.textContent = content;
+      }
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return div;
+    }
+
+    async function sendChatMessage(text) {
+      if (chatStreaming || !text.trim()) return;
+
+      chatHistory.push({ role: 'user', content: text.trim() });
+      addChatMessage('user', text.trim());
+      chatInput.value = '';
+      chatInput.style.height = 'auto';
+      chatStreaming = true;
+      chatSend.disabled = true;
+      chatTyping.classList.add('active');
+
+      const mode = getChatMode();
+      const context = getChatContext();
+
+      // Create assistant message container for streaming
+      const assistDiv = mk('div', 'chat-msg assistant');
+      chatMessages.appendChild(assistDiv);
+
+      let fullResponse = '';
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: chatHistory.slice(-10), // last 10 messages for context
+            context,
+            mode,
+          }),
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ error: 'Unknown error' }));
+          throw new Error(err.error || `HTTP ${res.status}`);
+        }
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (!line.startsWith('data: ')) continue;
+            const data = line.slice(6);
+            if (data === '[DONE]') break;
+            try {
+              const parsed = JSON.parse(data);
+              if (parsed.text) {
+                fullResponse += parsed.text;
+                // Re-render with formatting
+                let html = esc(fullResponse);
+                html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
+                html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+                html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
+                html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+                html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
+                  '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
+                // Paragraphs
+                html = html.replace(/\n\n/g, '</p><p>');
+                assistDiv.innerHTML = '<p>' + html + '</p>';
+                renderMath(assistDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+              }
+              if (parsed.error) throw new Error(parsed.error);
+            } catch (e) {
+              if (e.message !== 'Unexpected end of JSON input') console.warn('Chat parse:', e);
+            }
+          }
+        }
+
+        chatHistory.push({ role: 'assistant', content: fullResponse });
+
+        // Check if error was reported — offer to create todo
+        if (mode !== 'read' && /error|mistake|wrong|incorrect|typo|bug/i.test(chatHistory[chatHistory.length - 2]?.content || '')) {
+          const todoBtn = mk('button', 'chat-action');
+          todoBtn.textContent = 'Create feedback todo from this';
+          todoBtn.style.margin = '.3rem 0';
+          todoBtn.onclick = async () => {
+            const ctx = getChatContext();
+            if (!ctx.blockLabel || !paper?.id) {
+              addChatMessage('system', 'Could not determine which block to attach feedback to. Navigate to a block first.');
+              return;
+            }
+            const userMsg = chatHistory[chatHistory.length - 2]?.content || '';
+            try {
+              const res = await fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  paperId: paper.id,
+                  rootName: ctx.blockLabel.replace(/^(def|thm|lem|prop|cor|rem|ex):/, ''),
+                  summary: userMsg.slice(0, 80),
+                  comment: userMsg,
+                  priority: 'medium',
+                  assignee: 'editor-agent',
+                }),
+              });
+              if (res.ok) {
+                addChatMessage('system', 'Feedback todo created.');
+                todoBtn.remove();
+              }
+            } catch (e) {
+              addChatMessage('system', 'Failed to create todo: ' + e.message);
+            }
+          };
+          chatMessages.appendChild(todoBtn);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+      } catch (e) {
+        assistDiv.textContent = `Error: ${e.message}`;
+        assistDiv.style.color = 'var(--red)';
+      } finally {
+        chatStreaming = false;
+        chatSend.disabled = false;
+        chatTyping.classList.remove('active');
+      }
+    }
+
+    // FAB toggle
+    chatFab.onclick = () => {
+      chatOpen = !chatOpen;
+      chatPanel.classList.toggle('open', chatOpen);
+      chatFab.classList.toggle('open', chatOpen);
+      if (chatOpen) {
+        updateChatMode();
+        chatInput.focus();
+        if (!chatInitialized) {
+          chatInitialized = true;
+          // Auto-greeting based on mode
+          const mode = getChatMode();
+          if (mode === 'read') {
+            addChatMessage('assistant', 'Welcome! What would you like to learn about this paper? I can explain concepts, help you navigate between definitions and theorems, or answer questions about the mathematics.');
+          } else {
+            // Editor mode: prompt to get paper status
+            addChatMessage('assistant', 'Editor mode. I can help you review the paper, check status, or triage feedback. What would you like to work on?');
+            // Auto-send a status request
+            setTimeout(() => {
+              chatHistory.push({ role: 'user', content: 'Get paper status — give me a quick overview of what needs attention.' });
+              addChatMessage('user', 'Get paper status');
+              sendChatMessage.call(null, ''); // trigger with history already set
+              // Actually send properly:
+              chatHistory.pop(); // undo the push since sendChatMessage will re-push
+              chatMessages.lastChild.remove(); // undo the addChatMessage
+              sendChatMessage('Get paper status — give me a quick overview of what needs attention.');
+            }, 300);
+          }
+        }
+      }
+    };
+
+    // Close button
+    document.getElementById('chat-close').onclick = () => {
+      chatOpen = false;
+      chatPanel.classList.remove('open');
+      chatFab.classList.remove('open');
+    };
+
+    // Clear button
+    document.getElementById('chat-clear').onclick = () => {
+      chatHistory = [];
+      chatMessages.innerHTML = '';
+      chatInitialized = false;
+      addChatMessage('system', 'Chat cleared.');
+    };
+
+    // Quick action buttons
+    chatActions.addEventListener('click', (e) => {
+      const btn = e.target.closest('.chat-action');
+      if (!btn || !btn.dataset.prompt) return;
+      const prompt = btn.dataset.prompt;
+      if (prompt.endsWith(':')) {
+        // Partial prompt — put in input for user to complete
+        chatInput.value = prompt + ' ';
+        chatInput.focus();
+      } else {
+        sendChatMessage(prompt);
+      }
+    });
+
+    // Send on click or Enter (Shift+Enter for newline)
+    chatSend.onclick = () => sendChatMessage(chatInput.value);
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendChatMessage(chatInput.value);
+      }
+    });
+
+    // Auto-resize textarea
+    chatInput.addEventListener('input', () => {
+      chatInput.style.height = 'auto';
+      chatInput.style.height = Math.min(chatInput.scrollHeight, 80) + 'px';
+    });
+
+    // Update chat mode when reading mode toggles
+    const origBtnRdClick = btnRd.onclick;
+    btnRd.addEventListener('click', () => {
+      setTimeout(updateChatMode, 0);
+    });
   </script>
 </body>
 </html>

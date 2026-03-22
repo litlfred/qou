@@ -922,6 +922,103 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
+  // ── Claude chat: streaming conversational assistant ──────────
+  // POST /api/chat { messages[], context?, mode? }
+  // Returns SSE stream of assistant response chunks
+  if (path === "/api/chat") {
+    try {
+      const body = await req.json() as {
+        messages: Array<{ role: string; content: string }>;
+        context?: { paperId?: string; blockLabel?: string; blockMd?: string; blockKind?: string; selectedText?: string };
+        mode?: "read" | "edit" | "status";
+      };
+
+      const client = getAnthropic();
+      if (!client) {
+        return Response.json(
+          { error: "ANTHROPIC_API_KEY not set. Claude chat requires an API key." },
+          { status: 503, headers: { "Access-Control-Allow-Origin": "*" } }
+        );
+      }
+
+      // Build system prompt based on mode
+      const mode = body.mode || "read";
+      let systemPrompt = `You are Folio, an editorial assistant for a formal mathematics research paper. You help readers understand, navigate, and improve the paper.
+
+Your role is that of a knowledgeable editor who:
+- Explains mathematical content clearly at the reader's level
+- Helps navigate between related definitions, theorems, and proofs
+- Identifies potential errors or improvements when asked
+- Suggests connections between concepts
+- Answers questions about the paper's content and structure
+
+Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.`;
+
+      if (mode === "status") {
+        systemPrompt += `\n\nThe user is in EDITOR mode. They want to understand the paper's current status — what's complete, what needs work, what the priorities are. Focus on actionable summaries: proof status, open todos, missing Lean formalizations, and suggested next steps.`;
+      } else if (mode === "edit") {
+        systemPrompt += `\n\nThe user is in EDITOR mode. They may want to report errors, suggest improvements, or discuss editorial decisions. When they identify an issue, help them articulate it clearly so it can be tracked as a todo.`;
+      } else {
+        systemPrompt += `\n\nThe user is in READER mode. They're studying the paper and want to understand the content. Prioritize clear explanations, motivation, and intuition. When explaining, build from what the reader likely knows.`;
+      }
+
+      // Add context about the current block if available
+      if (body.context) {
+        const ctx = body.context;
+        if (ctx.selectedText) {
+          systemPrompt += `\n\nThe reader has selected this text:\n"""${ctx.selectedText.slice(0, 1000)}"""`;
+        }
+        if (ctx.blockLabel && ctx.blockMd) {
+          systemPrompt += `\n\nThey are looking at block "${ctx.blockLabel}" (${ctx.blockKind || "unknown"}):\n"""${ctx.blockMd.slice(0, 3000)}"""`;
+        }
+        if (ctx.paperId) {
+          systemPrompt += `\n\nPaper ID: ${ctx.paperId}`;
+        }
+      }
+
+      // Stream the response
+      const stream = await client.messages.stream({
+        model: "claude-haiku-4-5-20251001",
+        max_tokens: 1500,
+        system: systemPrompt,
+        messages: body.messages.map(m => ({
+          role: m.role as "user" | "assistant",
+          content: m.content,
+        })),
+      });
+
+      // Return as SSE
+      const encoder = new TextEncoder();
+      const readable = new ReadableStream({
+        async start(controller) {
+          try {
+            for await (const event of stream) {
+              if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
+              }
+            }
+            controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
+            controller.close();
+          } catch (e) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: String(e) })}\n\n`));
+            controller.close();
+          }
+        },
+      });
+
+      return new Response(readable, {
+        headers: {
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          "Connection": "keep-alive",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
   // ── AI triage: review feedback and propose action ────────────
   // POST /api/feedback/triage { paperId, rootName, todoId }
   if (path === "/api/feedback/triage") {
