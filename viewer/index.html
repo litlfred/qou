@@ -2060,6 +2060,16 @@
       pinRow.appendChild(pinBtn);
       sb.appendChild(pinRow);
 
+      // Collapse all chapters when sidebar collapses (not pinned)
+      sb.addEventListener('mouseleave', () => {
+        if (document.body.classList.contains('sb-pinned')) return;
+        sb.querySelectorAll('.sb-ch.open').forEach(ch => {
+          ch.classList.remove('open');
+          const body = ch.nextElementSibling;
+          if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
+        });
+      });
+
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
         chEl.dataset.num = String(ch.number);
