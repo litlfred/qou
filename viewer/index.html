@@ -790,6 +790,88 @@
 
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
+
+    /* ── Dependency graph lightning bolt ─────────────────── */
+    .dep-bolt{background:none;border:none;cursor:pointer;color:var(--fg-d);font-size:.75rem;padding:.1rem .2rem;margin-left:.15rem;transition:color .15s;line-height:1}
+    .dep-bolt:hover{color:var(--yel)}
+    .dep-bolt svg{width:14px;height:14px;fill:currentColor;vertical-align:middle}
+
+    /* ── Dependency graph overlay ────────────────────────── */
+    .dep-overlay{display:none;position:fixed;top:34px;left:0;right:0;bottom:0;background:var(--bg);z-index:200;overflow:hidden}
+    .dep-overlay.open{display:flex;flex-direction:column}
+    .dep-overlay-bar{display:flex;align-items:center;gap:.6rem;padding:.4rem 1rem;background:var(--bg-s);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);flex-shrink:0}
+    .dep-overlay-bar .dep-title{font-weight:600;color:var(--fg-b);font-size:.8rem}
+    .dep-overlay-bar button{background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.65rem;padding:.15rem .5rem;border-radius:3px;cursor:pointer}
+    .dep-overlay-bar button:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .dep-overlay-bar .dep-sp{flex:1}
+    .dep-overlay-bar .dep-link{color:var(--fg-d);text-decoration:none;font-size:.7rem;opacity:.4;transition:opacity .15s;cursor:pointer}
+    .dep-overlay-bar .dep-link:hover{opacity:1;color:var(--ac)}
+    .dep-overlay-bar .dep-copied{font-size:.55rem;color:var(--grn);opacity:0;transition:opacity .3s;margin-left:.2rem}
+    .dep-overlay-bar .dep-copied.show{opacity:1}
+    /* Split layout: graph LHS + preview RHS */
+    .dep-body{display:flex;flex:1;overflow:hidden}
+    .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:200px}
+    .dep-graph-wrap{flex:1;overflow:hidden;cursor:grab}
+    .dep-graph-wrap.panning{cursor:grabbing}
+    .dep-graph-svg{min-height:300px;width:100%;height:100%}
+    .dep-graph-svg svg{width:100%;height:100%}
+    /* Draggable divider between LHS and RHS */
+    .dep-divider{width:5px;cursor:col-resize;background:var(--brd);flex-shrink:0;transition:background .15s;display:none}
+    .dep-divider:hover,.dep-divider.active{background:var(--ac-d)}
+    .dep-divider.vis{display:block}
+    /* RHS preview panel */
+    .dep-rhs{width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;flex-shrink:0}
+    .dep-rhs.open{width:500px}
+    .dep-rhs-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.72rem;flex-shrink:0}
+    .dep-rhs-head .rhs-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase}
+    .dep-rhs-head .rhs-title{color:var(--fg-b);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .dep-rhs-head .rhs-close{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.8rem;padding:0 .2rem}
+    .dep-rhs-head .rhs-close:hover{color:var(--fg-b)}
+    .dep-rhs-body{flex:1;overflow-y:auto;padding:.6rem .8rem;font-size:var(--f-sz);line-height:var(--f-lh)}
+    .dep-rhs-foot{display:flex;gap:.4rem;padding:.3rem .6rem;border-top:1px solid var(--brd);flex-shrink:0;align-items:center}
+    .dep-rhs-foot button{font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer}
+    .dep-rhs-foot button:hover{border-color:var(--ac);color:var(--ac)}
+    /* Graph node styles */
+    .dep-node{cursor:grab}
+    .dep-node.dragging{cursor:grabbing}
+    .dep-node rect{rx:6;ry:6;stroke-width:1.5;transition:stroke .15s}
+    .dep-node:hover rect{stroke-width:2.5}
+    .dep-node.dep-hovered rect{stroke-width:3;filter:brightness(1.15)}
+    .dep-node text{font-family:var(--f-head);font-size:13px;fill:var(--fg);pointer-events:none}
+    .dep-node .node-kind{font-family:var(--f-mono);font-size:10px;fill:var(--fg-d)}
+    .dep-node .node-lean{font-family:var(--f-mono);font-size:9px;fill:var(--fg-d)}
+    .dep-node-ok .node-lean{fill:var(--grn)}
+    .dep-node-sorry .node-lean{fill:var(--yel)}
+    .dep-edge{fill:none;stroke-width:1.5;pointer-events:none}
+    .dep-edge.narrative{stroke:var(--ac)}
+    .dep-edge.lean-complete{stroke:var(--grn)}
+    .dep-edge.lean-incomplete{stroke:var(--ora);stroke-dasharray:6 3}
+    .dep-edge.lean-none{stroke:var(--fg-d);stroke-dasharray:3 3;opacity:.4}
+    .dep-arrowhead-narrative{fill:var(--ac)}
+    .dep-arrowhead-lean-complete{fill:var(--grn)}
+    .dep-arrowhead-lean-incomplete{fill:var(--ora)}
+    .dep-arrowhead-lean-none{fill:var(--fg-d);opacity:.4}
+    /* Legend */
+    .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
+    .dep-legend-item{display:flex;align-items:center;gap:.3rem}
+    .dep-legend-line{width:24px;height:0;border-top:2px solid}
+    .dep-legend-line.narrative{border-color:var(--ac)}
+    .dep-legend-line.lean-complete{border-color:var(--grn)}
+    .dep-legend-line.lean-incomplete{border-color:var(--ora);border-top-style:dashed}
+    /* Node colors by status */
+    .dep-node-ok rect{fill:rgba(42,170,85,.12);stroke:var(--grn)}
+    .dep-node-sorry rect{fill:rgba(230,200,124,.1);stroke:var(--yel)}
+    .dep-node-stated rect{fill:rgba(122,168,230,.1);stroke:var(--ac)}
+    .dep-node-none rect{fill:var(--bg-r);stroke:var(--brd)}
+    .dep-node-err rect{fill:rgba(230,124,124,.08);stroke:var(--red)}
+    .dep-node-ext rect{fill:rgba(230,164,124,.08);stroke:var(--ora);stroke-dasharray:4 2}
+    .dep-node-root rect{stroke-width:2.5}
+    /* External deps panel */
+    .dep-ext-panel{padding:.5rem 1rem;border-top:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
+    .dep-ext-panel summary{cursor:pointer;font-weight:500;color:var(--fg)}
+    .dep-ext-list{display:flex;flex-direction:column;gap:.2rem;margin-top:.3rem;padding-left:.5rem}
+    .dep-ext-list a{color:var(--ac);text-decoration:none;font-size:.6rem}
+    .dep-ext-list a:hover{text-decoration:underline}
   </style>
 </head>
 <body data-font="web">
@@ -814,6 +896,50 @@
   <button class="sb-toggle" id="sb-toggle">☰</button>
   <div id="sidebar"></div>
   <div id="app"><div class="loading">loading...</div></div>
+
+  <!-- Dependency graph overlay -->
+  <div class="dep-overlay" id="dep-overlay">
+    <div class="dep-overlay-bar">
+      <span>&#x26A1;</span>
+      <span class="dep-title" id="dep-title">Dependency Graph</span>
+      <span id="dep-subtitle" style="font-size:.65rem"></span>
+      <a class="dep-link" id="dep-link" title="Copy link / ctrl+click to open in new tab">#</a><span class="dep-copied" id="dep-copied">copied</span>
+      <span class="dep-sp"></span>
+      <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
+      <button id="dep-close">&times; close</button>
+    </div>
+    <div class="dep-legend">
+      <div class="dep-legend-item"><div class="dep-legend-line narrative"></div> narrative proof</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-complete"></div> Lean proof (complete)</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-incomplete"></div> Lean proof (stub/sorry)</div>
+    </div>
+    <div class="dep-body">
+      <div class="dep-lhs">
+        <div class="dep-graph-wrap">
+          <div class="dep-graph-svg" id="dep-graph-svg"></div>
+        </div>
+        <div class="dep-ext-panel" id="dep-ext-panel" style="display:none">
+          <details>
+            <summary>External Lean dependencies</summary>
+            <div class="dep-ext-list" id="dep-ext-list"></div>
+          </details>
+        </div>
+      </div>
+      <div class="dep-divider" id="dep-divider"></div>
+      <div class="dep-rhs" id="dep-rhs">
+        <div class="dep-rhs-head">
+          <span class="rhs-kind" id="dep-rhs-kind"></span>
+          <span class="rhs-title" id="dep-rhs-title"></span>
+          <button class="rhs-close" id="dep-rhs-close">&times;</button>
+        </div>
+        <div class="dep-rhs-body" id="dep-rhs-body"></div>
+        <div class="dep-rhs-foot">
+          <button id="dep-rhs-goto">go to &#x2197;</button>
+          <button id="dep-rhs-fb">feedback</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Feedback panel -->
   <div class="feedback-overlay" id="feedback-overlay"></div>
@@ -1493,6 +1619,410 @@
       return p;
     }
 
+    // ── Dependency graph overlay ─────────────────────────
+    const depOverlay = document.getElementById('dep-overlay');
+    const depGraphSvg = document.getElementById('dep-graph-svg');
+    const depTitle = document.getElementById('dep-title');
+    const depSubtitle = document.getElementById('dep-subtitle');
+    const depExtPanel = document.getElementById('dep-ext-panel');
+    const depExtList = document.getElementById('dep-ext-list');
+    const depRhs = document.getElementById('dep-rhs');
+    const depRhsKind = document.getElementById('dep-rhs-kind');
+    const depRhsTitle = document.getElementById('dep-rhs-title');
+    const depRhsBody = document.getElementById('dep-rhs-body');
+    const depDivider = document.getElementById('dep-divider');
+    const depGraphWrap = document.querySelector('.dep-graph-wrap');
+    let depRootLabel = null; // current root for feedback
+
+    function depCloseRhs() { depRhs.classList.remove('open'); depDivider.classList.remove('vis'); }
+    function depOpenRhs() { depRhs.classList.add('open'); depDivider.classList.add('vis'); }
+
+    document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depCloseRhs(); };
+    document.getElementById('dep-rhs-close').onclick = depCloseRhs;
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depCloseRhs(); } });
+
+    // ── Draggable divider between LHS and RHS ──
+    let divDrag = false;
+    depDivider.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      divDrag = true;
+      depDivider.classList.add('active');
+      depDivider.setPointerCapture(e.pointerId);
+    });
+    depDivider.addEventListener('pointermove', (e) => {
+      if (!divDrag) return;
+      const body = depDivider.parentElement;
+      const rect = body.getBoundingClientRect();
+      const newRhsW = Math.max(200, Math.min(rect.width - 300, rect.right - e.clientX));
+      depRhs.style.width = newRhsW + 'px';
+    });
+    depDivider.addEventListener('pointerup', () => { divDrag = false; depDivider.classList.remove('active'); });
+    depDivider.addEventListener('lostpointercapture', () => { divDrag = false; depDivider.classList.remove('active'); });
+
+    // ── Canvas panning (drag on blank SVG area) ──
+    let panState = null;
+    depGraphWrap.addEventListener('pointerdown', (e) => {
+      // Only if click target is the SVG background, not a node
+      if (e.target.closest('.dep-node')) return;
+      const svg = depGraphSvg.querySelector('svg');
+      if (!svg) return;
+      e.preventDefault();
+      depGraphWrap.classList.add('panning');
+      depGraphWrap.setPointerCapture(e.pointerId);
+      const vb = svg.viewBox.baseVal;
+      panState = { startX: e.clientX, startY: e.clientY, vbX: vb.x, vbY: vb.y, svg, vb };
+    });
+    depGraphWrap.addEventListener('pointermove', (e) => {
+      if (!panState) return;
+      e.preventDefault();
+      const { svg, vb, startX, startY, vbX, vbY } = panState;
+      // Convert pixel delta to SVG units
+      const ctm = svg.getScreenCTM();
+      const scale = ctm ? ctm.a : 1;
+      const dx = (e.clientX - startX) / scale;
+      const dy = (e.clientY - startY) / scale;
+      vb.x = vbX - dx;
+      vb.y = vbY - dy;
+    });
+    depGraphWrap.addEventListener('pointerup', () => { panState = null; depGraphWrap.classList.remove('panning'); });
+    depGraphWrap.addEventListener('lostpointercapture', () => { panState = null; depGraphWrap.classList.remove('panning'); });
+
+    // Feedback button in overlay bar — opens feedback for the root block
+    document.getElementById('dep-fb-btn').onclick = () => {
+      const block = depRootLabel ? bix.get(depRootLabel) : null;
+      if (block) openFeedback(block);
+    };
+
+    // RHS footer buttons
+    let depRhsCurrentLabel = null;
+    document.getElementById('dep-rhs-goto').onclick = () => {
+      if (!depRhsCurrentLabel) return;
+      depOverlay.classList.remove('open');
+      depCloseRhs();
+      const el = document.getElementById(depRhsCurrentLabel);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
+    document.getElementById('dep-rhs-fb').onclick = () => {
+      const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
+      if (block) openFeedback(block);
+    };
+
+    /** Show block preview in RHS panel */
+    function depShowPreview(label) {
+      const block = bix.get(label);
+      if (!block) return;
+      depRhsCurrentLabel = label;
+      depRhsKind.textContent = block.kind;
+      depRhsTitle.textContent = block.title || label;
+      renderBlockContent(depRhsBody, block);
+      depOpenRhs();
+      depGraphSvg.querySelectorAll('.dep-node').forEach(n => n.classList.toggle('dep-hovered', n.dataset.label === label));
+    }
+
+    // ── Shared constants and helpers ──
+    const DEP_OK = new Set(['validated', 'leanok', 'proved', 'mathlib_ok']);
+    const DEP_KIND_ABBR = {definition:'def',theorem:'thm',lemma:'lem',proposition:'prop',corollary:'cor',conjecture:'conj',example:'ex',remark:'rem',proof:'prf'};
+    const DEP_PROVABLE = new Set(['theorem','lemma','proposition','corollary']);
+    const DEP_NS = 'http://www.w3.org/2000/svg';
+    const DEP_NODE_W = 200, DEP_NODE_H = 56, DEP_LAYER_GAP = 80, DEP_NODE_GAP = 28;
+
+    function depNodeClass(b) {
+      if (!b) return 'dep-node-none';
+      if (b._external) return 'dep-node-ext';
+      const v = b.lean?.validation || '', s = b.status || '';
+      if (DEP_OK.has(v) || DEP_OK.has(s)) return 'dep-node-ok';
+      if (v === 'error') return 'dep-node-err';
+      if (s === 'has_sorry') return 'dep-node-sorry';
+      if (s === 'stated' || v === 'stub') return 'dep-node-stated';
+      return 'dep-node-none';
+    }
+
+    function depEdgeInfo(from, to) {
+      const hasNarrative = from.proofs?.some(pl => { const p = bix.get(pl); return p?.md?.trim().length > 20; })
+        || (from.md?.trim().length > 20 && DEP_PROVABLE.has(from.kind));
+      const fromLean = from.lean || from.proofs?.some(pl => bix.get(pl)?.lean);
+      let leanStatus = 'lean-none';
+      if (fromLean && to.lean) {
+        leanStatus = (DEP_OK.has(from.lean?.validation) || DEP_OK.has(from.status)) ? 'lean-complete' : 'lean-incomplete';
+      }
+      return { hasNarrative, leanStatus };
+    }
+
+    function collectMathlibLinks(block, label, externals) {
+      if (!block.lean?.mathlibLinks) return;
+      for (const ml of block.lean.mathlibLinks) {
+        if (!externals.some(e => e.decl === ml)) externals.push({ decl: ml, fromLabel: label });
+      }
+    }
+
+    function buildDepGraph(rootLabel) {
+      const nodes = new Map(), edges = [], externals = [], visited = new Set();
+      function walk(label) {
+        if (visited.has(label)) return;
+        visited.add(label);
+        const b = bix.get(label);
+        if (!b) return;
+        nodes.set(label, b);
+        collectMathlibLinks(b, label, externals);
+        if (b.uses) for (const dep of b.uses) {
+          if (bix.get(dep)) { edges.push({ from: label, to: dep }); walk(dep); }
+        }
+      }
+      walk(rootLabel);
+      for (const ref of (usedByIndex.get(rootLabel) || [])) {
+        if (visited.has(ref.label)) continue;
+        visited.add(ref.label);
+        const b = bix.get(ref.label);
+        if (!b) continue;
+        nodes.set(ref.label, b);
+        edges.push({ from: ref.label, to: rootLabel });
+        collectMathlibLinks(b, ref.label, externals);
+      }
+      return { nodes, edges, externals };
+    }
+
+    function layoutGraph(nodes, edges, rootLabel) {
+      const adj = new Map(), indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
+      }
+      const layers = [];
+      let queue = [];
+      for (const [label, deg] of indeg) { if (deg === 0) queue.push(label); }
+      if (queue.length === 0 && nodes.size > 0) queue = [rootLabel];
+      while (queue.length > 0) {
+        layers.push([...queue]);
+        const next = [];
+        for (const label of queue) {
+          for (const dep of (adj.get(label) || [])) { indeg.set(dep, indeg.get(dep) - 1); if (indeg.get(dep) === 0) next.push(dep); }
+        }
+        queue = next;
+      }
+      const placed = new Set(layers.flat());
+      const remaining = [...nodes.keys()].filter(l => !placed.has(l));
+      if (remaining.length) layers.push(remaining);
+      return layers;
+    }
+
+    function depEdgePath(fp, tp, offsetX) {
+      const fx = fp.x + DEP_NODE_W / 2 + offsetX, fy = fp.y + DEP_NODE_H;
+      const tx = tp.x + DEP_NODE_W / 2 + offsetX, ty = tp.y;
+      const cy1 = fy + DEP_LAYER_GAP * 0.35, cy2 = ty - DEP_LAYER_GAP * 0.35;
+      return `M${fx},${fy} C${fx},${cy1} ${tx},${cy2} ${tx},${ty}`;
+    }
+
+    function depUpdateEdges(edgeData, pos) {
+      for (const ed of edgeData) {
+        const fp = pos.get(ed.from), tp = pos.get(ed.to);
+        if (!fp || !tp) continue;
+        if (ed._pathNarr) ed._pathNarr.setAttribute('d', depEdgePath(fp, tp, ed._info.hasNarrative ? -4 : 0));
+        if (ed._pathLean) ed._pathLean.setAttribute('d', depEdgePath(fp, tp, ed._info.hasNarrative ? 4 : 0));
+      }
+    }
+
+    function computeDepPositions(layers) {
+      const pos = new Map();
+      let maxX = 0, maxY = 0;
+      layers.forEach((layer, li) => {
+        const totalW = layer.length * DEP_NODE_W + (layer.length - 1) * DEP_NODE_GAP;
+        const startX = -totalW / 2;
+        layer.forEach((label, ni) => {
+          const x = startX + ni * (DEP_NODE_W + DEP_NODE_GAP);
+          const y = li * (DEP_NODE_H + DEP_LAYER_GAP);
+          pos.set(label, { x, y });
+          maxX = Math.max(maxX, x + DEP_NODE_W);
+          maxY = Math.max(maxY, y + DEP_NODE_H);
+        });
+      });
+      return { pos, maxX, maxY };
+    }
+
+    function computeDepViewBox(pos, maxX, maxY) {
+      let minX = Infinity;
+      for (const p of pos.values()) minX = Math.min(minX, p.x);
+      const pad = 40;
+      return { vbX: minX - pad, vbY: -pad, vbW: (maxX - minX) + DEP_NODE_W + pad * 2, vbH: maxY + DEP_NODE_H + pad * 2 };
+    }
+
+    function buildDepArrowheads(defs) {
+      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none']) {
+        const marker = document.createElementNS(DEP_NS, 'marker');
+        marker.setAttribute('id', `ah-${type}`);
+        marker.setAttribute('markerWidth', '8'); marker.setAttribute('markerHeight', '6');
+        marker.setAttribute('refX', '8'); marker.setAttribute('refY', '3'); marker.setAttribute('orient', 'auto');
+        const path = document.createElementNS(DEP_NS, 'path');
+        path.setAttribute('d', 'M0,0 L8,3 L0,6Z');
+        path.setAttribute('class', `dep-arrowhead-${type}`);
+        marker.appendChild(path); defs.appendChild(marker);
+      }
+    }
+
+    function buildDepEdges(edges, nodes, pos, edgeGroup) {
+      return edges.map(({from, to}) => {
+        const info = depEdgeInfo(nodes.get(from), nodes.get(to));
+        const fp = pos.get(from), tp = pos.get(to);
+        const entry = { from, to, _info: info, _pathNarr: null, _pathLean: null };
+        if (info.hasNarrative) {
+          const p = document.createElementNS(DEP_NS, 'path');
+          p.setAttribute('class', 'dep-edge narrative');
+          p.setAttribute('d', depEdgePath(fp, tp, -4));
+          p.setAttribute('marker-end', 'url(#ah-narrative)');
+          edgeGroup.appendChild(p); entry._pathNarr = p;
+        }
+        const pl = document.createElementNS(DEP_NS, 'path');
+        pl.setAttribute('class', `dep-edge ${info.leanStatus}`);
+        pl.setAttribute('d', depEdgePath(fp, tp, info.hasNarrative ? 4 : 0));
+        pl.setAttribute('marker-end', `url(#ah-${info.leanStatus})`);
+        edgeGroup.appendChild(pl); entry._pathLean = pl;
+        return entry;
+      });
+    }
+
+    function buildDepNodes(nodes, pos, nodeGroup, svgEl, edgeData, rootLabel) {
+      let dragNode = null, dragOffset = {x:0,y:0}, dragMoved = false;
+      for (const [label, block] of nodes) {
+        const p = pos.get(label);
+        if (!p) continue;
+        const cls = depNodeClass(block);
+        const g = document.createElementNS(DEP_NS, 'g');
+        g.setAttribute('class', `dep-node ${cls}${label === rootLabel ? ' dep-node-root' : ''}`);
+        g.dataset.label = label;
+        g.setAttribute('transform', `translate(${p.x},${p.y})`);
+        const rect = document.createElementNS(DEP_NS, 'rect');
+        rect.setAttribute('width', DEP_NODE_W); rect.setAttribute('height', DEP_NODE_H);
+        g.appendChild(rect);
+        const t1 = document.createElementNS(DEP_NS, 'text');
+        t1.setAttribute('class', 'node-kind'); t1.setAttribute('x', '8'); t1.setAttribute('y', '15');
+        t1.textContent = DEP_KIND_ABBR[block.kind] || block.kind; g.appendChild(t1);
+        const t2 = document.createElementNS(DEP_NS, 'text');
+        t2.setAttribute('x', '8'); t2.setAttribute('y', '30');
+        t2.textContent = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        g.appendChild(t2);
+        if (block.lean?.decl) {
+          const t3 = document.createElementNS(DEP_NS, 'text');
+          t3.setAttribute('class', 'node-lean'); t3.setAttribute('x', '8'); t3.setAttribute('y', '44');
+          t3.textContent = esc(block.lean.decl).substring(0, 24); g.appendChild(t3);
+        }
+        g.addEventListener('mouseenter', () => depShowPreview(label));
+        g.addEventListener('mouseleave', () => g.classList.remove('dep-hovered'));
+        g.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          e.preventDefault(); dragNode = { g, label }; dragMoved = false;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          dragOffset = { x: sp.x - p.x, y: sp.y - p.y };
+          g.classList.add('dragging'); g.setPointerCapture(e.pointerId);
+        });
+        g.addEventListener('pointermove', (e) => {
+          if (!dragNode || dragNode.label !== label) return;
+          e.preventDefault(); dragMoved = true;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          p.x = sp.x - dragOffset.x; p.y = sp.y - dragOffset.y;
+          g.setAttribute('transform', `translate(${p.x},${p.y})`);
+          depUpdateEdges(edgeData, pos);
+        });
+        g.addEventListener('pointerup', () => {
+          if (!dragNode || dragNode.label !== label) return;
+          g.classList.remove('dragging'); dragNode = null;
+          if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+        });
+        nodeGroup.appendChild(g);
+      }
+    }
+
+    function renderDepExternals(externals) {
+      if (externals.length > 0) {
+        depExtPanel.style.display = '';
+        depExtList.innerHTML = '';
+        for (const ext of externals) {
+          const row = mk('div','');
+          const url = (ext.decl.startsWith('Mathlib') || ext.decl.includes('.'))
+            ? `https://leanprover-community.github.io/mathlib4_docs/find/#doc/${encodeURIComponent(ext.decl)}` : null;
+          row.innerHTML = url
+            ? `<a href="${url}" target="_blank" rel="noopener">${esc(ext.decl)}</a> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`
+            : `<span>${esc(ext.decl)}</span> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`;
+          depExtList.appendChild(row);
+        }
+      } else { depExtPanel.style.display = 'none'; }
+    }
+
+    /** Render block content into a container (parse md, fill tex, render math, resolve refs) */
+    function renderBlockContent(container, block) {
+      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+      container.innerHTML = bh || '<span style="color:var(--fg-d)">No content</span>';
+      fillTex(container, tx, block.rendered);
+      renderMath(container);
+      resolveRefs(container);
+    }
+
+    /** Core graph renderer — used by both renderDepGraph and renderFullDepGraph */
+    function renderDepGraphImpl(nodes, edges, externals, rootLabel) {
+      const layers = layoutGraph(nodes, edges, rootLabel || nodes.keys().next().value);
+      const { pos, maxX, maxY } = computeDepPositions(layers);
+      const { vbX, vbY, vbW, vbH } = computeDepViewBox(pos, maxX, maxY);
+
+      const svgEl = document.createElementNS(DEP_NS, 'svg');
+      svgEl.setAttribute('viewBox', `${vbX} ${vbY} ${vbW} ${vbH}`);
+      svgEl.style.minHeight = `${Math.min(vbH + 60, 800)}px`;
+
+      const defs = document.createElementNS(DEP_NS, 'defs');
+      buildDepArrowheads(defs);
+      svgEl.appendChild(defs);
+
+      const edgeGroup = document.createElementNS(DEP_NS, 'g');
+      svgEl.appendChild(edgeGroup);
+      const edgeData = buildDepEdges(edges, nodes, pos, edgeGroup);
+
+      const nodeGroup = document.createElementNS(DEP_NS, 'g');
+      svgEl.appendChild(nodeGroup);
+      buildDepNodes(nodes, pos, nodeGroup, svgEl, edgeData, rootLabel);
+
+      depGraphSvg.innerHTML = '';
+      depGraphSvg.appendChild(svgEl);
+      renderDepExternals(externals);
+      depOverlay.classList.add('open');
+    }
+
+    // Permalink handler for overlay # link
+    const depLink = document.getElementById('dep-link');
+    const depCopied = document.getElementById('dep-copied');
+    depLink.onclick = (e) => {
+      if (e.ctrlKey || e.metaKey) return; // let open-in-new-tab through
+      e.preventDefault();
+      const vizHash = depRootLabel
+        ? `#/viz/${hashWithBranch(depRootLabel)}`
+        : `#/viz/${hashWithBranch(paper?.id || 'paper')}`;
+      const url = `${location.origin}${location.pathname}${vizHash}`;
+      navigator.clipboard.writeText(url).then(() => {
+        depCopied.classList.add('show');
+        setTimeout(() => depCopied.classList.remove('show'), 1200);
+      });
+      history.replaceState(null, '', vizHash);
+    };
+
+    function renderDepGraph(rootLabel) {
+      const { nodes, edges, externals } = buildDepGraph(rootLabel);
+      const root = bix.get(rootLabel);
+      if (!root) return;
+      depRootLabel = rootLabel;
+      depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
+      depSubtitle.textContent = rootLabel;
+      depLink.href = `#/viz/${hashWithBranch(rootLabel)}`;
+      depCloseRhs();
+      renderDepGraphImpl(nodes, edges, externals, rootLabel);
+    }
+
+    function mkDepBolt(label) {
+      const btn = mk('button','dep-bolt');
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>';
+      btn.title = 'Show dependency graph';
+      btn.onclick = (e) => { e.stopPropagation(); renderDepGraph(label); };
+      return btn;
+    }
+
     // ── Block header helper ────────────────────────────────
     function mkBlockHeader(kind, title, label) {
       const div = mk('div','bh');
@@ -1506,6 +2036,8 @@
       copied.textContent = 'link copied';
       anchor.appendChild(copied);
       anchor.onclick = (e) => {
+        // Allow ctrl/cmd/middle-click to open in new tab
+        if (e.ctrlKey || e.metaKey || e.button === 1) return;
         e.preventDefault();
         if (label) {
           const brSuffix = selectedBranch && selectedBranch !== currentBranchName ? `@${encodeURIComponent(selectedBranch)}` : '';
@@ -1517,6 +2049,7 @@
           history.replaceState(null, '', `#${label}${brSuffix}`);
         }
       };
+      anchor.onauxclick = (e) => { if (e.button === 1) return; }; // let middle-click through
       div.appendChild(anchor);
 
       // Actions group (wide) + hamburger (narrow)
@@ -1592,6 +2125,7 @@
         if (block.label) d.id = block.label;
         const exHdr = mkBlockHeader('example', block.title, block.label);
         // Collapse into header actions
+        if (block.label) { const exBolt = mkDepBolt(block.label); exHdr._acts.appendChild(exBolt); }
         const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
         exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         exHdr._acts.appendChild(exColBtn);
@@ -1634,6 +2168,7 @@
         const d = mk('div', 'env remark');
         if (block.label) d.id = block.label;
         const rmHdr = mkBlockHeader('remark', block.title, block.label);
+        if (block.label) { const rmBolt = mkDepBolt(block.label); rmHdr._acts.appendChild(rmBolt); }
         const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
         rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         rmHdr._acts.appendChild(rmColBtn);
@@ -1701,6 +2236,11 @@
             };
             prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
           }
+        }
+        // Dependency graph bolt for proof blocks
+        if (block.label) {
+          const prfBolt = mkDepBolt(block.label);
+          prfHdr._acts.insertBefore(prfBolt, prfHdr._acts.firstChild);
         }
         const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
         prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
@@ -1871,6 +2411,12 @@
       // Insert indicators into header (after title, before actions)
       if (indicators.children.length) {
         hdr.insertBefore(indicators, hdr._acts);
+      }
+
+      // Dependency graph lightning bolt — shown on all environment blocks with a label
+      if (block.label) {
+        const bolt = mkDepBolt(block.label);
+        hdr._acts.insertBefore(bolt, hdr._acts.firstChild);
       }
 
       // Feedback button in header actions
@@ -2715,6 +3261,7 @@
         }
         document.getElementById('fb-text').value = '';
         document.getElementById('fb-priority').value = 'medium';
+        document.getElementById('fb-assignee').value = 'editor-agent';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item (stay open)
@@ -3274,10 +3821,14 @@
     //   #/@branch/name                              → folio on specific branch
     //   #/view/paper-id                             → paper (current branch)
     //   #/view/paper-id@branch/name                 → paper on specific branch
-    //   #/view/label@branch/name                    → paper scrolled to block, on branch
+    //   #/view/label@branch/name                    → paper scrolled to block (in-paper nav)
     //   #/edit/label                                → inline edit (current branch)
     //   #/edit/label@branch/name                    → inline edit on branch
-    //   #label                                      → shorthand for #/view/label
+    //   #/viz/paper-id                              → full dependency graph overlay
+    //   #/viz/paper-id@branch/name                  → dependency graph on branch
+    //   #/diff/paper-id                             → diff mode (current branch vs main)
+    //   #/diff/paper-id@branch/name                 → diff mode on branch
+    //   #label                                      → standalone block detail view
     const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
 
@@ -3311,11 +3862,11 @@
       const hash = location.hash || '#/';
       const raw = hash.slice(1); // remove #
 
-      // Shorthand: #rem:foo or #rem:foo@branch → treat as view
+      // Shorthand: #rem:foo or #rem:foo@branch → standalone block detail view
       if (LABEL_RE.test(raw) || (raw.includes('@') && LABEL_RE.test(raw.split('@')[0]))) {
         const { slug, branch } = parseBranchFromSlug(raw);
         applyUrlBranch(branch);
-        await routeView(slug);
+        await routeBlock(slug);
         return;
       }
 
@@ -3342,6 +3893,14 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeEdit(slug);
+      } else if (action === 'viz' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeViz(slug);
+      } else if (action === 'diff' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeDiff(slug);
       } else {
         await loadFolio();
       }
@@ -3357,6 +3916,202 @@
       } else {
         // It's a paper id
         await loadPaper(slug);
+      }
+    }
+
+    /** Standalone block detail view — shows the block content + what references it */
+    async function routeBlock(label) {
+      // Load paper data (to populate bix/usedByIndex) but don't render full paper
+      if (!paper) {
+        try {
+          const r = await fetch(`/api/folio?_=1${branchParam()}`);
+          const data = r.ok ? await r.json() : null;
+          const id = data?.papers?.[0]?.id || 'quantum-observable-universe';
+          const pr = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+          if (pr.ok) {
+            const p = await pr.json();
+            // Index blocks without rendering the full paper
+            paper = p;
+            katexMacros = buildKatexMacros(p.macros);
+            bix.clear(); usedByIndex.clear();
+            for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+              if (b.label) bix.set(b.label, b);
+              if (b.examples) for (const ex of b.examples) {};
+              if (b.uses) for (const dep of b.uses) {
+                if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+              }
+            }
+          }
+        } catch {}
+      }
+
+      const block = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+
+      if (!block) {
+        app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`;
+        return;
+      }
+
+      // Header: kind + title
+      const header = mk('div','');
+      header.style.cssText = 'margin-bottom:1.5rem';
+      const kindBadge = mk('span','bk');
+      kindBadge.textContent = block.kind;
+      kindBadge.style.cssText = 'font-size:.9rem';
+      header.appendChild(kindBadge);
+      if (block.title) {
+        const titleEl = mk('h1','');
+        titleEl.style.cssText = 'margin:.3rem 0 .5rem;font-family:var(--f-head);font-size:1.5rem;color:var(--fg-b)';
+        titleEl.innerHTML = inl(block.title);
+        renderMath(titleEl);
+        header.appendChild(titleEl);
+      }
+      const labelEl = mk('div','');
+      labelEl.style.cssText = 'font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:.3rem';
+      labelEl.textContent = label;
+      header.appendChild(labelEl);
+
+      // Status indicators
+      if (block.lean) {
+        const leanInfo = mk('div','');
+        leanInfo.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem';
+        leanInfo.innerHTML = `${leanIcon(block.lean.validation || 'not_checked')} <span>${esc(block.lean.decl)}</span>`;
+        if (block.status) {
+          const badge = mk('span','');
+          badge.style.cssText = 'padding:.1rem .4rem;border-radius:3px;font-size:.6rem;border:1px solid var(--brd)';
+          badge.textContent = block.status;
+          leanInfo.appendChild(badge);
+        }
+        header.appendChild(leanInfo);
+      }
+
+      // Action buttons
+      const actions = mk('div','');
+      actions.style.cssText = 'display:flex;gap:.5rem;margin-top:.5rem';
+      const viewInPaper = mk('button','');
+      viewInPaper.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+      viewInPaper.textContent = 'view in paper \u2197';
+      viewInPaper.onclick = () => { location.hash = `#/view/${label}`; };
+      actions.appendChild(viewInPaper);
+      if (block.label) {
+        const graphBtn = mk('button','');
+        graphBtn.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+        graphBtn.innerHTML = '&#x26A1; dependency graph';
+        graphBtn.onclick = () => renderDepGraph(label);
+        actions.appendChild(graphBtn);
+      }
+      const fbBtn = mk('button','');
+      fbBtn.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+      fbBtn.textContent = 'feedback';
+      fbBtn.onclick = () => openFeedback(block);
+      actions.appendChild(fbBtn);
+      header.appendChild(actions);
+      app.appendChild(header);
+
+      // Separator
+      const sep = mk('hr','');
+      sep.style.cssText = 'border:none;border-top:1px solid var(--brd);margin:1rem 0';
+      app.appendChild(sep);
+
+      // Block content
+      const content = mk('div','env ' + block.kind);
+      content.style.cssText = 'margin-bottom:1.5rem';
+      renderBlockContent(content, block);
+      app.appendChild(content);
+
+      // Uses (what this block depends on)
+      if (block.uses?.length) {
+        const usesSection = mk('div','');
+        usesSection.style.cssText = 'margin-bottom:1.5rem';
+        const usesTitle = mk('h3','');
+        usesTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        usesTitle.textContent = `Depends on (${block.uses.length})`;
+        usesSection.appendChild(usesTitle);
+        const usesList = mk('div','ref-by-list');
+        for (const dep of block.uses) {
+          const ref = bix.get(dep);
+          const item = mk('div','ref-by-item');
+          const kind = mk('span','ref-kind');
+          kind.textContent = ref?.kind || '?';
+          item.appendChild(kind);
+          const link = document.createElement('a');
+          link.href = `#${dep}`;
+          link.innerHTML = ref?.title ? inl(ref.title) : esc(dep);
+          renderMath(link);
+          item.appendChild(link);
+          usesList.appendChild(item);
+        }
+        usesSection.appendChild(usesList);
+        app.appendChild(usesSection);
+      }
+
+      // Referenced by (what uses this block)
+      const refs = usedByIndex.get(label);
+      if (refs?.length) {
+        const refSection = mk('div','');
+        refSection.style.cssText = 'margin-bottom:1.5rem';
+        const refTitle = mk('h3','');
+        refTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        refTitle.textContent = `Referenced by (${refs.length})`;
+        refSection.appendChild(refTitle);
+        const refList = mk('div','ref-by-list');
+        for (const ref of refs) {
+          const item = mk('div','ref-by-item');
+          const kind = mk('span','ref-kind');
+          kind.textContent = ref.kind;
+          item.appendChild(kind);
+          const link = document.createElement('a');
+          link.href = `#${ref.label}`;
+          link.innerHTML = ref.title ? inl(ref.title) : esc(ref.label);
+          renderMath(link);
+          item.appendChild(link);
+          refList.appendChild(item);
+        }
+        refSection.appendChild(refList);
+        app.appendChild(refSection);
+      }
+
+      // Proofs
+      if (block.proofs?.length) {
+        const prfSection = mk('div','');
+        prfSection.style.cssText = 'margin-bottom:1.5rem';
+        const prfTitle = mk('h3','');
+        prfTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        prfTitle.textContent = `Proofs (${block.proofs.length})`;
+        prfSection.appendChild(prfTitle);
+        for (const prfLabel of block.proofs) {
+          const prf = bix.get(prfLabel);
+          if (!prf) continue;
+          const prfDiv = mk('div','env proof');
+          prfDiv.style.cssText = 'margin-bottom:.5rem';
+          const {html: ph, texBlocks: ptx} = parseMd(prf.md || '');
+          let prfHd = `<span class="bk">proof</span>`;
+          if (prf.title) prfHd += ` <span class="bt">${inl(prf.title)}</span>`;
+          prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
+          fillTex(prfDiv, ptx, prf.rendered);
+          renderMath(prfDiv);
+          resolveRefs(prfDiv);
+          prfSection.appendChild(prfDiv);
+        }
+        app.appendChild(prfSection);
+      }
+
+      // Lean source
+      if (block.lean?.source) {
+        const leanSection = mk('div','lean-src');
+        const leanHdr = mk('div','lean-src-hdr');
+        leanHdr.innerHTML = `<span>${esc(block.lean.file || block.lean.decl)}</span>`;
+        leanSection.appendChild(leanHdr);
+        const pre = document.createElement('pre');
+        const code = document.createElement('code');
+        code.textContent = block.lean.source;
+        pre.appendChild(code);
+        leanSection.appendChild(pre);
+        app.appendChild(leanSection);
       }
     }
 
@@ -3382,6 +4137,44 @@
         document.getElementById('app').innerHTML =
           `<div class="err">Block not found: ${esc(slug)}</div>`;
       }
+    }
+
+    async function routeViz(slug) {
+      // slug is paper-id — load the paper then open the full dependency graph overlay
+      if (!paper) await loadPaper(slug);
+      else if (paper.id !== slug) await loadPaper(slug);
+      // If paper loaded, show graph for the first provable block with a label
+      // For now, just open the overlay. User can click any bolt to drill in.
+      // Build a full-paper dependency graph showing all blocks
+      renderFullDepGraph();
+    }
+
+    async function routeDiff(slug) {
+      // slug is paper-id — load the paper then trigger diff mode
+      if (!paper) await loadPaper(slug);
+      else if (paper.id !== slug) await loadPaper(slug);
+      // Activate diff mode (same as clicking the diff button)
+      const diffBtn = document.getElementById('c-diff');
+      if (diffBtn && !diffBtn.classList.contains('on')) diffBtn.click();
+    }
+
+    function renderFullDepGraph() {
+      const nodes = new Map(), edges = [], externals = [];
+      for (const [label, b] of bix) {
+        if (!b.uses?.length && !usedByIndex.has(label)) continue;
+        nodes.set(label, b);
+        collectMathlibLinks(b, label, externals);
+        if (b.uses) for (const dep of b.uses) {
+          if (bix.has(dep)) { edges.push({ from: label, to: dep }); nodes.set(dep, bix.get(dep)); }
+        }
+      }
+      if (nodes.size === 0) { alert('No dependency edges found in this paper.'); return; }
+      depRootLabel = null;
+      depTitle.textContent = paper?.title || 'Full Paper';
+      depSubtitle.textContent = 'all blocks with dependencies';
+      depLink.href = `#/viz/${hashWithBranch(paper?.id || 'paper')}`;
+      depCloseRhs();
+      renderDepGraphImpl(nodes, edges, externals, null);
     }
 
     function renderEditView(block) {
