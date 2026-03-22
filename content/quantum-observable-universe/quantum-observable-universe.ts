@@ -21,14 +21,11 @@ export default paper({
   chapters: [
     chapterRef({ dir: "ch0-introduction" }),
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
-    chapterRef({ dir: "ch2-qou-elaboration" }),
+    chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
-    chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch6-descartes-universe" }),
-    chapterRef({ dir: "ch7-p-adic-quantum-groups" }),
-    chapterRef({ dir: "ch10-interpretations" }),
     chapterRef({ dir: "ch11-experimental-evidence" }),
-    chapterRef({ dir: "ch12-speculations" }),
+    chapterRef({ dir: "ch10-interpretations" }),
   ],
 });

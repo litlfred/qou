@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 export default chapter({
-  number: 8,
-  title: "Interpretations",
+  number: 7,
+  title: "Interpretations and Speculations",
   label: "chap:interpretations",
   sections: [
     section({

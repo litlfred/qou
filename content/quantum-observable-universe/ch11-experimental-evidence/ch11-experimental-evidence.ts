@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 export default chapter({
-  number: 9,
+  number: 6,
   title: "Experimental Evidence",
   label: "chap:experimental",
   sections: [

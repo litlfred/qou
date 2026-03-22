@@ -6,11 +6,13 @@ physics.
 **Chapter \ref{chap:qou}** opens with notational preliminaries from
 category theory—rigid monoidal categories, dagger structures, and
 representation-theoretic examples—and gives a succinct axiomatic
-definition of a quantum observable universe.  We then derive several
+definition of a quantum observable universe.  We derive several
 consequences that follow from the rigidity of the symmetries: a
 Frobenius relation, an involutive dagger structure, a canonical volume
 form, and the emergence of $\mathrm{SU}(2)$ via a Tannaka–Krein
-reconstruction.
+reconstruction.  The chapter closes with an elaboration of the
+categorical and analytic foundations, including jet prolongation,
+transport, and torsion.
 
 **Chapter \ref{chap:brings-surface}** focuses on Bring's surface, which
 provides a remarkably rich model for quantum observable universes.  We
@@ -26,15 +28,17 @@ and categorical—to extending local data to global structures.
 in the QOU framework, and provides both a fluid-dynamical and an
 information-theoretic perspective on the resulting invariants.
 
-**Chapters \ref{chap:descartes}–\ref{chap:p-adic}** examine quantum
-observable universes over different ground fields: the Archimedean
-(complex), non-Archimedean ($\pp$-adic), and finite-field cases.  In
-the Archimedean setting we compare the QOU construction in detail with
-traditional mathematical physics, showing how standard objects—gauge
-connections, instantons, the Hodge star—arise as specialisations of
-the categorical framework.
+**Chapter \ref{chap:universes}** examines quantum observable universes
+over different ground fields: the Archimedean (complex), non-Archimedean
+($\pp$-adic), and finite-field cases.  In the Archimedean setting we
+compare the QOU construction in detail with traditional mathematical
+physics, showing how standard objects—gauge connections, instantons, the
+Hodge star—arise as specialisations of the categorical framework.
 
 **Chapter \ref{chap:experimental}** surveys specific experimental and
 observational evidence for the QOU framework, including predictions
 arising from the skein-theoretic mass formula and comparison with
 measured hadronic spectra.
+
+**Chapter \ref{chap:interpretations}** collects interpretive remarks and
+speculative extensions of the theory.

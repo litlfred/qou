@@ -198,5 +198,46 @@ export default chapter({
         "main-commutative-diagram-proof",
       ],
     }),
+
+    // ── Elaboration: categorical and analytic foundations (formerly Ch. 2) ─
+
+    section({
+      title: "Introduction and categorical context",
+      label: "sec:elaboration-intro",
+      blocks: [
+        "ch2-intro",
+        "tqft-context",
+        "vanishing-explication",
+        "levi-generalisation",
+        "quantum-gauge-group-category",
+        "hopf-structure-diagrams",
+        "self-dual-2group",
+        "emergence-to-fake-flat",
+        "emergence-to-fake-flat-proof",
+        "simplicity-from-category",
+        "frobenius-simplification",
+        "j1e-local-states",
+        "dq-squared",
+        "dq-squared-proof",
+        "q-jacobiator",
+        "q-jacobiator-proof",
+        "classical-recovery",
+        "q-torsion-leaf-minimum",
+        "q-harmonic-physical",
+        "schrodinger-jet-coaction",
+      ],
+    }),
+
+    section({
+      title: "Lifting: jet prolongation, transport, and torsion",
+      label: "sec:lifting",
+      blocks: [
+        "lifting-intro",
+        "categorical-jet-prolongation",
+        "categorical-transport",
+        "categorical-q-reeb-flow",
+        "categorical-q-torsion-leaf",
+      ],
+    }),
   ],
 });
