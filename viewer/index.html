@@ -1692,13 +1692,13 @@
       try {
         const r = await fetch('/api/feedback/all?status=open');
         if (!r.ok) return;
-        const allTodos = await r.json();
-        // Group by rootName
+        const allEntries = await r.json();
+        // Unwrap {paperId, rootName, todo} → flat todo with rootName attached
         const byRoot = {};
-        for (const t of allTodos) {
-          const key = t.rootName || t.paperId;
+        for (const entry of allEntries) {
+          const key = entry.rootName || entry.paperId;
           if (!byRoot[key]) byRoot[key] = [];
-          byRoot[key].push(t);
+          byRoot[key].push({ ...entry.todo, rootName: key });
         }
         // Update block-level data and sidebar badges
         for (const ch of paper.chapters) {
@@ -1710,7 +1710,7 @@
               const count = fresh.length;
               secTodos += count;
               // Update block badge in sidebar
-              const sel = CSS.escape(b.label || b.rootName);
+              const sel = (b.label || b.rootName).replace(/"/g, '\\"');
               const blkEl = document.querySelector(`.sb-blk[title="${sel}"]`);
               if (blkEl) {
                 const existing = blkEl.querySelector('.sb-badge.todo');
