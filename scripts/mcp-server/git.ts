@@ -121,14 +121,29 @@ export async function gitImportTs(branch: string, relPath: string): Promise<unkn
   const source = gitShow(branch, relPath);
   if (source === null) return null;
 
-  // Write to temp file and import
-  mkdirSync(TMP_DIR, { recursive: true });
-  const tmpFile = join(TMP_DIR, `_branch_${Date.now()}_${Math.random().toString(36).slice(2)}.ts`);
+  // Write to a temp file that preserves directory structure so relative
+  // imports (e.g. "../../schema/builders") resolve correctly.
+  const branchTmpDir = join(TMP_DIR, `branch_${branch.replace(/[^a-zA-Z0-9_-]/g, '_')}`);
+  const tmpFile = join(branchTmpDir, relPath);
+  const tmpDir = join(tmpFile, "..");
+  mkdirSync(tmpDir, { recursive: true });
   try {
+    // Also need to ensure imported relative deps are on disk.
+    // For content .ts files, they import from schema/ which lives on disk
+    // and is the same across branches. We symlink content/schema → real schema.
+    const schemaLink = join(branchTmpDir, "content", "schema");
+    const realSchema = resolve(REPO_ROOT, "content", "schema");
+    if (!existsSync(schemaLink) && existsSync(realSchema)) {
+      mkdirSync(join(branchTmpDir, "content"), { recursive: true });
+      try {
+        const { symlinkSync } = require("fs") as typeof import("fs");
+        symlinkSync(realSchema, schemaLink, "dir");
+      } catch {}
+    }
+
     writeFileSync(tmpFile, source, "utf-8");
-    // Clear module cache
     delete require.cache?.[tmpFile];
-    const mod = await import(tmpFile);
+    const mod = await import(`${tmpFile}?t=${Date.now()}`);
     const value = mod.default ?? mod;
 
     if (head) tsCache.set(cacheKey, { head, value });
@@ -168,7 +183,8 @@ export async function importTsBranch(branch: string | undefined, relPath: string
   if (isCurrentBranch(branch)) {
     const absPath = resolve(REPO_ROOT, relPath);
     delete require.cache?.[absPath];
-    const mod = await import(absPath);
+    // Bust ESM module cache with timestamp query param
+    const mod = await import(`${absPath}?t=${Date.now()}`);
     return mod.default ?? mod;
   }
   return gitImportTs(branch!, relPath);
