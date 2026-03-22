@@ -815,8 +815,10 @@
     // content
     const content = h("div", "paper-content");
     const hdr = h("div", "diff-header");
+    const mbInfo = diffData.mergeBase ? `<div class="diff-merge-base">from merge-base <code>${esc(diffData.mergeBase.slice(0, 8))}</code></div>` : "";
     hdr.innerHTML = `
       <h1>Changes: ${esc(diffData.base)} \u2192 ${esc(diffData.head)}</h1>
+      ${mbInfo}
       <div class="diff-stats-bar">
         <span class="added">+${diffData.summary.added}</span>
         <span class="removed">\u2212${diffData.summary.removed}</span>
@@ -899,22 +901,202 @@
       el.appendChild(sd);
     }
 
-    // Markdown diff
-    if (blk.mdDiff) {
-      const diffEl = h("div", "diff-content");
-      diffEl.appendChild(renderLineDiff(blk.mdDiff.base, blk.mdDiff.head));
-      el.appendChild(diffEl);
+    // View toggle bar: Diff | Old | New | Source
+    const hasContent = blk.mdDiff || blk.leanDiff;
+    if (hasContent) {
+      const toggleBar = h("div", "diff-toggle-bar");
+      const views = ["diff", "old", "new", "source"];
+      const labels = { diff: "Diff", old: "Old", "new": "New", source: "Source" };
+      const panes = {};
+      let activeView = "diff";
+
+      for (const v of views) {
+        if (v === "old" && blk.status === "added") continue;
+        if (v === "new" && blk.status === "removed") continue;
+        const btn = h("button", `diff-toggle-btn${v === "diff" ? " active" : ""}`, labels[v]);
+        btn.dataset.view = v;
+        btn.onclick = () => {
+          toggleBar.querySelectorAll(".diff-toggle-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          for (const [key, pane] of Object.entries(panes)) {
+            pane.style.display = key === v ? "" : "none";
+          }
+          activeView = v;
+          if (v === "old" || v === "new") renderMath(panes[v]);
+        };
+        toggleBar.appendChild(btn);
+      }
+      el.appendChild(toggleBar);
+
+      // Diff pane (default)
+      const diffPane = h("div", "diff-pane");
+      if (blk.mdDiff) {
+        const diffEl = h("div", "diff-content");
+        diffEl.appendChild(renderLineDiff(blk.mdDiff.base, blk.mdDiff.head));
+        diffPane.appendChild(diffEl);
+      }
+      if (blk.leanDiff) {
+        const leanDiffEl = h("div", "diff-lean");
+        leanDiffEl.appendChild(h("div", "diff-lean-header", "\u2200 Lean source"));
+        leanDiffEl.appendChild(renderLineDiff(blk.leanDiff.base, blk.leanDiff.head));
+        diffPane.appendChild(leanDiffEl);
+      }
+      panes.diff = diffPane;
+      el.appendChild(diffPane);
+
+      // Old pane (rendered base)
+      if (blk.status !== "added") {
+        const oldPane = h("div", "diff-pane diff-pane-old");
+        oldPane.style.display = "none";
+        if (blk.mdDiff) oldPane.appendChild(h("div", "bb diff-rendered", mdToHtml(blk.mdDiff.base || "")));
+        if (blk.leanDiff && blk.leanDiff.base) {
+          const le = h("div", "diff-lean");
+          le.appendChild(h("div", "diff-lean-header", "\u2200 Lean source (old)"));
+          le.appendChild(h("pre", "diff-lean-src", esc(blk.leanDiff.base)));
+          oldPane.appendChild(le);
+        }
+        panes.old = oldPane;
+        el.appendChild(oldPane);
+      }
+
+      // New pane (rendered head)
+      if (blk.status !== "removed") {
+        const newPane = h("div", "diff-pane diff-pane-new");
+        newPane.style.display = "none";
+        if (blk.mdDiff) newPane.appendChild(h("div", "bb diff-rendered", mdToHtml(blk.mdDiff.head || "")));
+        if (blk.leanDiff && blk.leanDiff.head) {
+          const le = h("div", "diff-lean");
+          le.appendChild(h("div", "diff-lean-header", "\u2200 Lean source (new)"));
+          le.appendChild(h("pre", "diff-lean-src", esc(blk.leanDiff.head)));
+          newPane.appendChild(le);
+        }
+        panes["new"] = newPane;
+        el.appendChild(newPane);
+      }
+
+      // Source pane (raw markdown side-by-side)
+      const srcPane = h("div", "diff-pane diff-pane-source");
+      srcPane.style.display = "none";
+      if (blk.mdDiff) {
+        const cols = h("div", "diff-source-columns");
+        const oldCol = h("div", "diff-source-col");
+        oldCol.appendChild(h("div", "diff-source-label", "Old source"));
+        oldCol.appendChild(h("pre", "diff-source-pre", esc(blk.mdDiff.base || "")));
+        cols.appendChild(oldCol);
+        const newCol = h("div", "diff-source-col");
+        newCol.appendChild(h("div", "diff-source-label", "New source"));
+        newCol.appendChild(h("pre", "diff-source-pre", esc(blk.mdDiff.head || "")));
+        cols.appendChild(newCol);
+        srcPane.appendChild(cols);
+      }
+      if (blk.leanDiff) {
+        const cols = h("div", "diff-source-columns");
+        const oldCol = h("div", "diff-source-col");
+        oldCol.appendChild(h("div", "diff-source-label", "\u2200 Old"));
+        oldCol.appendChild(h("pre", "diff-source-pre", esc(blk.leanDiff.base || "")));
+        cols.appendChild(oldCol);
+        const newCol = h("div", "diff-source-col");
+        newCol.appendChild(h("div", "diff-source-label", "\u2200 New"));
+        newCol.appendChild(h("pre", "diff-source-pre", esc(blk.leanDiff.head || "")));
+        cols.appendChild(newCol);
+        srcPane.appendChild(cols);
+      }
+      panes.source = srcPane;
+      el.appendChild(srcPane);
     }
 
-    // Lean diff
-    if (blk.leanDiff) {
-      const leanDiffEl = h("div", "diff-lean");
-      const leanHeader = h("div", "diff-lean-header", "\u2200 Lean source");
-      leanDiffEl.appendChild(leanHeader);
-      leanDiffEl.appendChild(renderLineDiff(blk.leanDiff.base, blk.leanDiff.head));
-      el.appendChild(leanDiffEl);
+    // Feedback: button + inline todo list with edit/delete
+    const fbSection = h("div", "diff-fb-section");
+
+    // "Add feedback" button — reuses the slide-in panel
+    const fbBtn = h("button", "diff-fb-btn", "+ feedback");
+    fbBtn.onclick = () => openFeedback(blk);
+    fbSection.appendChild(fbBtn);
+
+    // Inline existing todos
+    if (blk.todos && blk.todos.length) {
+      const todoList = h("div", "diff-todo-list");
+      for (const td of blk.todos) {
+        todoList.appendChild(renderDiffTodo(td, blk, todoList));
+      }
+      fbSection.appendChild(todoList);
+    }
+    el.appendChild(fbSection);
+
+    return el;
+  }
+
+  /** Render a todo item inside a diff block with inline edit/delete controls. */
+  function renderDiffTodo(td, blk, listEl) {
+    const el = h("div", `diff-todo-item pri-${td.priority || "medium"}`);
+
+    const head = h("div", "diff-todo-head");
+    head.innerHTML = `
+      <span class="diff-todo-status ${td.status || ""}">${esc(td.status || "open")}</span>
+      <span class="diff-todo-summary">${esc(td.summary || "")}</span>`;
+    el.appendChild(head);
+
+    if (td.comment && td.comment !== td.summary) {
+      el.appendChild(h("div", "diff-todo-comment", esc(td.comment)));
     }
 
+    // Controls: priority selector + delete button
+    const controls = h("div", "diff-todo-controls");
+
+    // Priority selector
+    const priSelect = h("select", "diff-todo-pri");
+    for (const p of ["low", "medium", "high", "critical"]) {
+      const opt = document.createElement("option");
+      opt.value = p;
+      opt.textContent = p;
+      if (p === (td.priority || "medium")) opt.selected = true;
+      priSelect.appendChild(opt);
+    }
+    priSelect.onchange = async () => {
+      try {
+        await fetch("/api/feedback/update", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id, priority: priSelect.value }),
+        });
+        td.priority = priSelect.value;
+        el.className = `diff-todo-item pri-${priSelect.value}`;
+        showToast("Priority updated");
+      } catch (e) { showToast("Failed: " + e.message); }
+    };
+    controls.appendChild(priSelect);
+
+    // Assignee label
+    if (td.assignee) {
+      controls.appendChild(h("span", "diff-todo-assignee", esc(td.assignee)));
+    }
+
+    // Date
+    if (td.createdAt) {
+      controls.appendChild(h("span", "diff-todo-date", esc(td.createdAt.slice(0, 10))));
+    }
+
+    // Delete button
+    const delBtn = h("button", "diff-todo-del", "\u00d7");
+    delBtn.title = "Delete feedback";
+    delBtn.onclick = async () => {
+      if (!confirm("Delete this feedback item?")) return;
+      try {
+        const res = await fetch("/api/feedback/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id }),
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        el.remove();
+        // Update blk.todos
+        if (blk.todos) blk.todos = blk.todos.filter(t => t.id !== td.id);
+        showToast("Feedback deleted");
+      } catch (e) { showToast("Failed: " + e.message); }
+    };
+    controls.appendChild(delBtn);
+
+    el.appendChild(controls);
     return el;
   }
 

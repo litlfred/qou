@@ -363,6 +363,27 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .diff-line.ctx{background:transparent}
 .diff-line.ctx .diff-text{color:var(--fg-d)}
 
+/* merge-base info */
+.diff-merge-base{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.3rem}
+.diff-merge-base code{background:var(--bg-r);padding:.1rem .3rem;border-radius:3px}
+
+/* view toggle bar */
+.diff-toggle-bar{display:flex;gap:1px;padding:.3rem 1rem;border-top:1px solid var(--brd);background:var(--bg-r)}
+.diff-toggle-btn{background:transparent;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.15rem .6rem;cursor:pointer;transition:all .15s;border-radius:3px}
+.diff-toggle-btn:hover{color:var(--fg-b);border-color:var(--fg-d)}
+.diff-toggle-btn.active{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+
+/* diff panes */
+.diff-pane{min-height:2rem}
+.diff-rendered{padding:.8rem 1rem;line-height:1.6}
+.diff-lean-src{font-family:var(--f-mono);font-size:.7rem;padding:.6rem 1rem;margin:0;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+
+/* source side-by-side columns */
+.diff-source-columns{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd)}
+.diff-source-col{background:var(--bg);min-width:0;overflow:hidden}
+.diff-source-label{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);padding:.2rem .6rem;background:var(--bg-r);text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--brd)}
+.diff-source-pre{font-family:var(--f-mono);font-size:.65rem;padding:.5rem .6rem;margin:0;overflow-x:auto;white-space:pre-wrap;word-break:break-all;line-height:1.5}
+
 /* unchanged blocks collapsed */
 .diff-unchanged-section{margin:1rem 1.5rem}
 .diff-unchanged-section summary{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);cursor:pointer;padding:.4rem 0}
@@ -370,6 +391,33 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .diff-unchanged-block{padding:.3rem 1rem;border-bottom:1px solid var(--brd)}
 .diff-unchanged-block:last-child{border-bottom:none}
 .diff-unchanged-block .bh{font-size:.75rem}
+
+/* ── Diff feedback ──────────────────────────────────────── */
+.diff-fb-section{padding:.5rem 1rem;border-top:1px solid var(--brd)}
+.diff-fb-btn{background:transparent;border:1px dashed var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.2rem .6rem;border-radius:3px;cursor:pointer;transition:all .15s}
+.diff-fb-btn:hover{border-color:var(--ac);color:var(--ac)}
+
+.diff-todo-list{margin-top:.4rem}
+.diff-todo-item{padding:.4rem .6rem;border:1px solid var(--brd);border-radius:4px;margin-bottom:.3rem;font-size:.75rem;background:var(--bg)}
+.diff-todo-item.pri-critical{border-left:3px solid var(--red)}
+.diff-todo-item.pri-high{border-left:3px solid var(--ora)}
+.diff-todo-item.pri-medium{border-left:3px solid var(--yel)}
+.diff-todo-item.pri-low{border-left:3px solid var(--fg-d)}
+
+.diff-todo-head{display:flex;align-items:center;gap:.4rem;margin-bottom:.2rem}
+.diff-todo-status{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .3rem;border-radius:3px;background:var(--bg-r);text-transform:uppercase;font-weight:600}
+.diff-todo-status.open{color:var(--ac)}
+.diff-todo-status.in_progress{color:var(--yel)}
+.diff-todo-status.resolved{color:var(--grn)}
+.diff-todo-summary{flex:1;color:var(--fg-b)}
+
+.diff-todo-comment{font-size:.7rem;color:var(--fg-d);margin-bottom:.3rem;padding-left:.3rem;border-left:2px solid var(--brd)}
+
+.diff-todo-controls{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.diff-todo-pri{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg);font-family:var(--f-mono);font-size:.55rem;padding:.1rem .2rem;border-radius:3px;cursor:pointer}
+.diff-todo-assignee,.diff-todo-date{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d)}
+.diff-todo-del{background:transparent;border:none;color:var(--fg-d);font-size:.85rem;cursor:pointer;padding:0 .2rem;line-height:1;transition:color .15s}
+.diff-todo-del:hover{color:var(--red)}
 
 /* ── AI Characterize ─────────────────────────────────────── */
 .characterize-section{margin-top:.8rem}

@@ -31,6 +31,7 @@ import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
+  mergeBase,
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
@@ -536,6 +537,7 @@ interface BlockDiff {
   mdDiff?: { base: string; head: string };
   leanDiff?: { base: string; head: string };
   statusDiff?: { base: string; head: string };
+  todos?: unknown[];
 }
 
 interface PaperDiff {
@@ -579,16 +581,22 @@ function computePaperDiff(
     const baseBlk = baseBlocks.get(name);
     const headBlk = headBlocks.get(name);
 
+    // Feedback todos are stored outside git, keyed by rootName
+    const blockTodos = readFeedback(paperId, name);
+    const todos = blockTodos.length ? blockTodos : undefined;
+
     if (!baseBlk && headBlk) {
       blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "added",
         mdDiff: headBlk.md ? { base: "", head: headBlk.md } : undefined,
         leanDiff: headBlk.lean?.source ? { base: "", head: headBlk.lean.source } : undefined,
+        todos,
       });
       summary.added++;
     } else if (baseBlk && !headBlk) {
       blocks.push({ rootName: name, kind: baseBlk.kind, label: baseBlk.label, title: baseBlk.title, status: "removed",
         mdDiff: baseBlk.md ? { base: baseBlk.md, head: "" } : undefined,
         leanDiff: baseBlk.lean?.source ? { base: baseBlk.lean.source, head: "" } : undefined,
+        todos,
       });
       summary.removed++;
     } else if (baseBlk && headBlk) {
@@ -598,7 +606,7 @@ function computePaperDiff(
 
       if (mdChanged || leanChanged || statusChanged) {
         const diff: BlockDiff = {
-          rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "changed",
+          rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "changed", todos,
         };
         if (mdChanged) diff.mdDiff = { base: baseBlk.md, head: headBlk.md };
         if (leanChanged) diff.leanDiff = { base: baseBlk.lean?.source || "", head: headBlk.lean?.source || "" };
@@ -606,7 +614,7 @@ function computePaperDiff(
         blocks.push(diff);
         summary.changed++;
       } else {
-        blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "unchanged" });
+        blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "unchanged", todos });
         summary.unchanged++;
       }
     }
@@ -787,18 +795,24 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 
   // ── API: Diff between branches ─────────────────────────────
   // GET /api/diff?id=<paper>&base=main&head=feature-x
-  // Returns per-block diff info (added, removed, changed blocks)
+  // Compares head against the merge-base (where it forked from base),
+  // so only branch-specific changes are shown.
   if (path === "/api/diff") {
     const id = url.searchParams.get("id");
     const base = url.searchParams.get("base") || "main";
     const head = url.searchParams.get("head") || currentBranch();
     if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
     try {
+      // Use merge-base so we compare against where the branch forked,
+      // not the current tip of base (which may have new commits).
+      const mb = mergeBase(base, head);
+      const effectiveBase = mb || base;
       const [basePaper, headPaper] = await Promise.all([
-        resolvePaper(id, base),
+        resolvePaper(id, effectiveBase),
         resolvePaper(id, head),
       ]);
       const diff = computePaperDiff(basePaper, headPaper, base, head);
+      if (mb) (diff as any).mergeBase = mb;
       return Response.json(diff, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
@@ -813,8 +827,10 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     const head = url.searchParams.get("head") || currentBranch();
     if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
     try {
+      const mb = mergeBase(base, head);
+      const effectiveBase = mb || base;
       const [basePaper, headPaper] = await Promise.all([
-        resolvePaper(id, base),
+        resolvePaper(id, effectiveBase),
         resolvePaper(id, head),
       ]);
       const diff = computePaperDiff(basePaper, headPaper, base, head);
@@ -1866,6 +1882,23 @@ These become clickable buttons so users don't have to type. Make them specific t
       if (body.status !== undefined) todos[idx].status = body.status;
       writeFeedback(body.paperId, body.rootName, todos);
       return Response.json({ ok: true, todo: todos[idx] });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Delete feedback todo ──────────────────────────────────────
+  if (path === "/api/feedback/delete") {
+    try {
+      const body = await req.json() as {
+        paperId: string; rootName: string; todoId: string;
+      };
+      const todos = readFeedback(body.paperId, body.rootName) as any[];
+      const idx = todos.findIndex((t: any) => t.id === body.todoId);
+      if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
+      todos.splice(idx, 1);
+      writeFeedback(body.paperId, body.rootName, todos);
+      return Response.json({ ok: true });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }

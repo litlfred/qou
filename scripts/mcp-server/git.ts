@@ -63,6 +63,15 @@ export function branchHead(branch: string): string | null {
 }
 
 /**
+ * Find the merge-base (common ancestor) of two branches.
+ * This is where `head` diverged from `base`, so diffs only show
+ * what the branch actually changed — not what happened on base after forking.
+ */
+export function mergeBase(base: string, head: string): string | null {
+  return git("merge-base", base, head);
+}
+
+/**
  * Check if the given branch is the current working-tree branch.
  * When true, callers should read from disk instead of git.
  */
