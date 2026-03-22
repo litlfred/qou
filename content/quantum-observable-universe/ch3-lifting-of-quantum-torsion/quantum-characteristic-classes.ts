@@ -12,6 +12,5 @@ export default definition({
     "def:recursive-brane-tower",
     "def:yekutieli-lifting-condition",
     "prop:jet-prolongation",
-    "prop:yekutieli-lifting",
   ],
 });
