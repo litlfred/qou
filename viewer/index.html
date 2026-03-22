@@ -69,12 +69,14 @@
     .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
     .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
-    .sb-badge{font-size:.5rem;padding:0 .3rem;border-radius:3px;line-height:1.4;flex-shrink:0}
+    .sb-badge{font-size:.55rem;padding:.05rem .35rem;border-radius:3px;line-height:1.4;flex-shrink:0;cursor:default;position:relative;letter-spacing:.02em}
     .sb-badge.todo{background:var(--ac);color:var(--bg)}
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
-    .sb-badge.lean-miss{background:#555;color:#aaa}
+    .sb-badge.lean-miss{background:#666;color:#ccc}
+    .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
+    .sb-badge:hover::after{opacity:1}
     .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
     .sb-toggle:hover{color:var(--ac)}
     @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
@@ -466,8 +468,13 @@
     .fb-item.open{border-left:2px solid var(--ac)}
     .fb-item.resolved{border-left:2px solid var(--green,#4a4);opacity:.6}
     .todo-inline{display:flex;gap:.4rem;align-items:center;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.3rem;padding:.2rem .5rem;background:var(--bg-r);border-radius:3px;border:1px solid var(--brd)}
-    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;background:var(--ac);flex-shrink:0}
+    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
     .todo-inline .todo-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .todo-inline .todo-pri{font-size:.55rem;opacity:.7;min-width:2.5rem;text-align:center}
+    .todo-inline .todo-btn{background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);font-size:.55rem;padding:0 .25rem;line-height:1.3}
+    .todo-inline .todo-btn:hover{background:var(--bg-h);color:var(--fg)}
+    .todo-inline .todo-btn.todo-rm{color:var(--red,#c44)}
+    .todo-inline .todo-btn.todo-rm:hover{background:var(--red,#c44);color:#fff}
 
     /* Feedback button on blocks */
     /* (old .fb-btn removed — feedback now in .bh-acts) */
@@ -782,17 +789,23 @@
     }
 
     // ── Resolve cross-ref links: replace generic text with block titles ──
+    const kindAbbrev = {
+      definition:'Def.', theorem:'Thm.', lemma:'Lem.', proposition:'Prop.',
+      corollary:'Cor.', conjecture:'Conj.', example:'Ex.', remark:'Rem.',
+      proof:'Proof', equation:'Eqn.', diagram:'Fig.', prose:''
+    };
     function resolveRefs(el) {
       for (const a of el.querySelectorAll('a[data-ref]')) {
         const label = a.dataset.ref;
         const ref = bix.get(label);
         if (!ref) continue;
-        // Replace generic text (Definition, Theorem, etc.) with the actual title
+        // Replace generic or raw-label text with "Abbrev. Title"
         const text = a.textContent.trim();
         const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
-          'Conjecture','Example','Remark','Proof', label];
+          'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
         if (ref.title && (generic.includes(text) || text === label)) {
-          a.innerHTML = inl(ref.title);
+          const abbr = kindAbbrev[ref.kind] || ref.kind;
+          a.innerHTML = `${abbr} ${inl(ref.title)}`;
           renderMath(a);
         }
       }
@@ -1408,9 +1421,9 @@
           }
           let secLabel = sec.title;
           const badges = [];
-          if (secTodos) badges.push(`${secTodos}T`);
-          if (secLeanMiss) badges.push(`${secLeanMiss}!L`);
-          if (secLeanErr) badges.push(`${secLeanErr}E`);
+          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
           sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
@@ -1436,8 +1449,8 @@
             const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
             if (openTodos) {
               const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos}`;
-              tb.title = `${openTodos} open todo(s)`;
+              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
+              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
               bEl.appendChild(tb);
             }
 
@@ -1449,24 +1462,24 @@
               const v = b.lean?.validation || 'not_checked';
               if (!b.lean || !b.lean.file) {
                 lb.className = 'sb-badge lean-miss';
-                lb.textContent = '!L';
-                lb.title = 'Missing Lean file';
+                lb.textContent = 'no lean';
+                lb.setAttribute('data-tip', 'No Lean formalization file');
               } else if (s === 'stub' || s === 'not_started') {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = 'S';
-                lb.title = 'Lean stub / not started';
+                lb.textContent = 'stub';
+                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
               } else if (v === 'error' || s === 'has_sorry') {
                 lb.className = 'sb-badge lean-err';
-                lb.textContent = 'E';
-                lb.title = `Lean: ${v === 'error' ? 'validation error' : 'has sorry'}`;
-              } else if (v === 'ok' || s === 'proved') {
+                lb.textContent = v === 'error' ? 'err' : 'sorry';
+                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
+              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
                 lb.className = 'sb-badge lean-ok';
                 lb.textContent = '✓';
-                lb.title = 'Lean: verified';
+                lb.setAttribute('data-tip', 'Lean proof verified');
               } else {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = '?';
-                lb.title = `Lean: ${s} / ${v}`;
+                lb.textContent = s === 'stated' ? 'stated' : 'todo';
+                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
               }
               bEl.appendChild(lb);
             }
@@ -1606,6 +1619,8 @@
         // Refresh the history panel to show the new item
         openFeedback(fbBlock);
         closeFeedback();
+        // Update sidebar badges to reflect the new todo
+        refreshFeedbackBadges();
       } catch (e) {
         alert('Failed to submit: ' + e.message);
       }
@@ -1662,17 +1677,169 @@
       voiceBtn.style.display = 'none'; // hide if not supported
     }
 
+    const priOrder = ['critical','high','medium','low'];
+    const priColors = {critical:'var(--red,#c44)',high:'var(--ora,#e90)',medium:'var(--ac)',low:'var(--fg-d)'};
     function addTodoIndicators(el, block) {
       if (!block.todos?.length) return;
       const open = block.todos.filter(t => t.status === 'open');
+      open.sort((a,b) => (priOrder.indexOf(a.priority||'medium') - priOrder.indexOf(b.priority||'medium')));
       for (const t of open) {
+        const pri = t.priority || 'medium';
         const d = mk('div', 'todo-inline decor');
-        d.innerHTML = `<span class="todo-dot"></span><span class="todo-text">${esc(t.summary || t.comment || '')}</span><span>${t.priority || ''}</span>`;
-        d.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
-        d.style.cursor = 'pointer';
+        const dot = mk('span','todo-dot');
+        dot.style.background = priColors[pri] || priColors.medium;
+        d.appendChild(dot);
+        const txt = mk('span','todo-text');
+        txt.textContent = t.summary || t.comment || '';
+        txt.style.cursor = 'pointer';
+        txt.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        d.appendChild(txt);
+        const priLabel = mk('span','todo-pri');
+        priLabel.textContent = pri;
+        d.appendChild(priLabel);
+        // [+] raise priority
+        const upBtn = mk('button','todo-btn');
+        upBtn.textContent = '+';
+        upBtn.title = 'Raise priority';
+        const curIdx = priOrder.indexOf(pri);
+        if (curIdx <= 0) upBtn.disabled = true;
+        upBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx-1]); };
+        d.appendChild(upBtn);
+        // [-] lower priority
+        const dnBtn = mk('button','todo-btn');
+        dnBtn.textContent = '\u2013';
+        dnBtn.title = 'Lower priority';
+        if (curIdx >= priOrder.length - 1) dnBtn.disabled = true;
+        dnBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx+1]); };
+        d.appendChild(dnBtn);
+        // [x] remove
+        const rmBtn = mk('button','todo-btn todo-rm');
+        rmBtn.textContent = '\u00d7';
+        rmBtn.title = 'Remove todo';
+        rmBtn.onclick = (e) => { e.stopPropagation(); removeTodo(block, t); };
+        d.appendChild(rmBtn);
         el.appendChild(d);
       }
     }
+
+    async function updateTodoPri(block, todo, newPri) {
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, priority: newPri })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.priority = newPri;
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to update priority:', e); }
+    }
+
+    async function removeTodo(block, todo) {
+      if (!confirm(`Remove todo: "${todo.summary || todo.comment}"?`)) return;
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, status: 'resolved' })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.status = 'resolved';
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to remove todo:', e); }
+    }
+
+    function refreshTodoInline(block) {
+      if (!block.label) return;
+      const blockEl = document.getElementById(block.label);
+      if (!blockEl) return;
+      blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+      addTodoIndicators(blockEl, block);
+    }
+
+    // ── Feedback badge refresh ──────────────────────────
+    // Fetches open todos from server and updates sidebar badges + inline indicators
+    // without a full re-render. Called after submit and on a polling interval.
+    async function refreshFeedbackBadges() {
+      if (!paper) return;
+      try {
+        const r = await fetch('/api/feedback/all?status=open');
+        if (!r.ok) return;
+        const allEntries = await r.json();
+        // Unwrap {paperId, rootName, todo} → flat todo with rootName attached
+        const byRoot = {};
+        for (const entry of allEntries) {
+          const key = entry.rootName || entry.paperId;
+          if (!byRoot[key]) byRoot[key] = [];
+          byRoot[key].push({ ...entry.todo, rootName: key });
+        }
+        // Update block-level data and sidebar badges
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            let secTodos = 0;
+            for (const b of sec.blocks) {
+              const fresh = byRoot[b.rootName] || [];
+              b.todos = fresh;
+              const count = fresh.length;
+              secTodos += count;
+              // Update block badge in sidebar
+              const sel = (b.label || b.rootName).replace(/"/g, '\\"');
+              const blkEl = document.querySelector(`.sb-blk[title="${sel}"]`);
+              if (blkEl) {
+                const existing = blkEl.querySelector('.sb-badge.todo');
+                if (existing) existing.remove();
+                if (count) {
+                  const tb = mk('span','sb-badge todo');
+                  tb.textContent = `${count} todo`;
+                  tb.setAttribute('data-tip', `${count} open todo${count > 1 ? 's' : ''}`);
+                  const firstBadge = blkEl.querySelector('.sb-badge');
+                  if (firstBadge) blkEl.insertBefore(tb, firstBadge);
+                  else blkEl.appendChild(tb);
+                }
+              }
+              // Update inline todo indicators in the rendered block
+              if (b.label) {
+                const blockEl = document.getElementById(b.label);
+                if (blockEl) {
+                  blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+                  addTodoIndicators(blockEl, b);
+                }
+              }
+            }
+            // Update section summary badge
+            const sEl = document.querySelector(`.sb-sec[title="${sec.title}"]`);
+            if (sEl) {
+              const summarySpan = sEl.querySelector('span:last-child');
+              if (summarySpan && summarySpan.style.fontSize === '.5rem') {
+                // Rebuild just the todo portion of the badge text
+                const text = summarySpan.textContent;
+                const parts = text.split(' | ').filter(p => !p.includes('todo'));
+                if (secTodos) parts.unshift(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+                summarySpan.textContent = parts.join(' | ');
+              }
+            }
+          }
+        }
+      } catch (_) { /* silent — polling failure is not fatal */ }
+    }
+
+    // Poll for fresh feedback every 3 minutes while page is visible
+    let feedbackPollId = null;
+    function startFeedbackPolling() {
+      if (feedbackPollId) return;
+      feedbackPollId = setInterval(() => {
+        if (!document.hidden) refreshFeedbackBadges();
+      }, 3 * 60 * 1000);
+    }
+    function stopFeedbackPolling() {
+      if (feedbackPollId) { clearInterval(feedbackPollId); feedbackPollId = null; }
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopFeedbackPolling();
+      else startFeedbackPolling();
+    });
 
     // ── Folio (paper listing) ────────────────────────────
     function renderFolio(data) {
@@ -1890,6 +2057,7 @@
         const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderPaper(await r.json());
+        startFeedbackPolling();
       } catch (e) {
         app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
       }

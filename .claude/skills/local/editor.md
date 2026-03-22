@@ -116,6 +116,7 @@ If there are no open todos, skip straight to triage.
 | Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
 | Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
+| **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
 
 ## Responsibilities
 
@@ -184,6 +185,31 @@ Examples of testable errors the editor should watch for:
 
 **This behavior persists across sessions** — the editor always watches for
 testable errors and asks before writing tests.
+
+## Content-change fallback (mandatory review)
+
+Whenever **any** content has been added or modified during the current session
+— `.md` narratives, `.ts` manifests, `.lean` formalizations, `.tex` chapters,
+or supporting files like `references.bib` — the editor **must** perform a
+review pass before the task is considered complete. This applies regardless of
+how the session started — even if the original request was about Lean,
+infrastructure, or something else entirely.
+
+The review pass consists of:
+
+1. **Scientific accuracy** (`scientific-accuracy` skill) — verify mathematical
+   claims, cross-references, and formalization alignment.
+2. **Readability editing** (`readability-editing` skill) — check prose quality,
+   definition hygiene, forward-reference hygiene, and notation consistency.
+   (For non-narrative changes, focus on consistency with the narrative.)
+3. **Content validation** — run `content_validate` on affected chapters to
+   confirm schema compliance and LaTeX AST correctness.
+4. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
+   clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
+   confirm `lean.decl` fields match actual Lean declarations.
+
+If the review surfaces issues, fix them (or escalate to the author) before
+committing. This rule persists across sessions.
 
 ## Interaction style
 

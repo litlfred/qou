@@ -177,7 +177,8 @@ async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> 
             try {
               const blk = (await import(tsPath)).default;
               if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
-              if (blk.todos?.length) todoCount += blk.todos.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
+              const fb = readFeedback(ref.dir, rootName);
+              if (fb.length) todoCount += fb.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
             } catch {}
           }
         }
@@ -235,10 +236,9 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
 
           // Merge feedback todos from gitignored .qou-feedback/
+          // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
-          if (feedback.length) {
-            blk.todos = [...(blk.todos || []), ...feedback];
-          }
+          const blockTodos = feedback.length ? [...feedback] : undefined;
 
           // Read Lean source if available
           let leanSource: string | undefined;
@@ -300,7 +300,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             tags: blk.tags,
             rendered,
             md,
-            todos: blk.todos,
+            todos: blockTodos,
           });
         } catch (e) {
           blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -310,12 +310,14 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
+    const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
       number: ch.number, title: ch.title, label: ch.label, sections,
-      todos: ch.todos,
+      todos: chTodos.length ? chTodos : undefined,
     });
   }
 
+  const paperTodos = readFeedback(id, "__paper");
   return {
     id,
     title: paperMod.title,
@@ -324,7 +326,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
-    todos: paperMod.todos,
+    todos: paperTodos.length ? paperTodos : undefined,
   };
 }
 
@@ -591,6 +593,25 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       writeFeedback(body.paperId, body.rootName, todos);
 
       return Response.json({ ok: true, todo });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Update feedback todo (priority / status) ──────────────────
+  if (path === "/api/feedback/update") {
+    try {
+      const body = await req.json() as {
+        paperId: string; rootName: string; todoId: string;
+        priority?: string; status?: string;
+      };
+      const todos = readFeedback(body.paperId, body.rootName) as any[];
+      const idx = todos.findIndex((t: any) => t.id === body.todoId);
+      if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
+      if (body.priority !== undefined) todos[idx].priority = body.priority;
+      if (body.status !== undefined) todos[idx].status = body.status;
+      writeFeedback(body.paperId, body.rootName, todos);
+      return Response.json({ ok: true, todo: todos[idx] });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
