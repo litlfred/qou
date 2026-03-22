@@ -891,13 +891,18 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
         });
       }
 
-      // Failed — return error details
-      const log = latexResult.stderr?.toString().slice(-3000) || "";
-      const buildLog = buildResult.stderr?.toString().slice(-1000) || "";
+      // Failed — return error details (latexmk often writes to stdout)
+      const stderr = latexResult.stderr?.toString().slice(-2000) || "";
+      const stdout = latexResult.stdout?.toString().slice(-2000) || "";
+      const latexLog = (stderr + "\n" + stdout).trim().slice(-3000);
+      const buildStderr = buildResult.stderr?.toString().slice(-1000) || "";
+      const buildStdout = buildResult.stdout?.toString().slice(-1000) || "";
+      const buildLog = (buildStderr + "\n" + buildStdout).trim().slice(-1500);
       return Response.json({
         error: "LaTeX compilation failed",
-        buildLog,
-        latexLog: log,
+        buildLog: buildLog || undefined,
+        latexLog: latexLog || undefined,
+        exitCode: latexResult.status,
       }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });

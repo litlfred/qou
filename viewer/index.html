@@ -957,18 +957,24 @@
     fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
       if (!d.available) {
         pdfBtn.disabled = true;
+        pdfBtn.dataset.unavailable = 'true';
         pdfBtn.style.opacity = '0.4';
         pdfBtn.style.cursor = 'not-allowed';
-        pdfBtn.title = 'PDF disabled — latexmk not installed.\nRun: sudo apt install texlive-latex-base texlive-latex-extra latexmk';
+        pdfBtn.title = `PDF disabled — ${d.reason || 'latexmk not installed'}.\nRun: sudo apt install texlive-latex-base texlive-latex-extra latexmk`;
       }
     }).catch(() => {
       pdfBtn.disabled = true;
+      pdfBtn.dataset.unavailable = 'true';
       pdfBtn.style.opacity = '0.4';
       pdfBtn.style.cursor = 'not-allowed';
       pdfBtn.title = 'PDF disabled — build server unreachable';
     });
 
     pdfBtn.addEventListener('click', async () => {
+      if (pdfBtn.dataset.unavailable === 'true') {
+        alert('PDF generation requires latexmk.\n\nInstall: sudo apt install texlive-latex-base texlive-latex-extra latexmk');
+        return;
+      }
       const orig = pdfBtn.textContent;
       pdfBtn.textContent = 'building...';
       pdfBtn.disabled = true;
@@ -981,8 +987,14 @@
           setTimeout(() => URL.revokeObjectURL(url), 60_000);
         } else {
           const err = await res.json().catch(() => ({ error: 'Unknown error' }));
-          alert(`PDF build failed: ${err.error || 'See console'}`);
+          const details = [
+            err.error,
+            err.buildLog ? `\n── Content build log ──\n${err.buildLog}` : '',
+            err.latexLog ? `\n── LaTeX log (last 3KB) ──\n${err.latexLog}` : '',
+          ].filter(Boolean).join('\n');
           console.error('PDF render error:', err);
+          console.error('Full details:\n', details);
+          alert(`PDF build failed:\n\n${details.slice(0, 2000)}`);
         }
       } catch (e) {
         alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
