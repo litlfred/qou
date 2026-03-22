@@ -41,6 +41,15 @@ on:
         required: false
         default: ''
         type: string
+      feature_branch:
+        description: >
+          Feature branch to diff against main (for latexdiff).
+          Use this when building from a claude/* assistant branch to generate
+          the diff against the actual feature branch instead of the assistant branch.
+          Leave blank to diff the source branch itself against main.
+        required: false
+        default: ''
+        type: string
       publish_branch:
         description: >
           Branch to push the built artefacts to.
@@ -67,6 +76,10 @@ jobs:
     env:
       HEAD_REF: ${{ inputs.source_branch || github.event.pull_request.head.ref || github.ref_name }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      # FEATURE_REF: the branch to diff against main (latexdiff).
+      # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
+      # This ensures diff is main↔feature-branch, not main↔assistant-branch.
+      FEATURE_REF: ${{ inputs.feature_branch || '' }}
 
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
@@ -81,6 +94,27 @@ jobs:
       - name: Resolve HEAD_SHA after checkout
         if: inputs.source_branch != ''
         run: echo "HEAD_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      # Resolve the feature branch for diff generation.
+      # If not explicitly provided, auto-detect from PR metadata or branch name.
+      - name: Resolve FEATURE_REF for diff
+        if: env.HEAD_REF != 'main'
+        run: |
+          if [ -n "${{ env.FEATURE_REF }}" ]; then
+            echo "FEATURE_REF explicitly set to: ${{ env.FEATURE_REF }}"
+          else
+            # For pull_request_target: if the PR's base branch is not main,
+            # use it as the feature branch (PR from claude/* → feature-branch).
+            pr_base="${{ github.event.pull_request.base.ref }}"
+            if [ -n "$pr_base" ] && [ "$pr_base" != "main" ]; then
+              echo "FEATURE_REF=${pr_base}" >> "$GITHUB_ENV"
+              echo "Inferred FEATURE_REF from PR base: ${pr_base}"
+            else
+              # Default: use HEAD_REF (the branch being built)
+              echo "FEATURE_REF=${{ env.HEAD_REF }}" >> "$GITHUB_ENV"
+              echo "FEATURE_REF defaults to HEAD_REF: ${{ env.HEAD_REF }}"
+            fi
+          fi
 
       # ── 0b. Install CI tools ──────────────────────────────────────────────
       # Instead of pulling a custom Docker image from GHCR (which requires
@@ -148,9 +182,15 @@ jobs:
           fi
           echo "base=${base}" >> "$GITHUB_OUTPUT"
 
-      - name: Fetch main branch for diff
+      - name: Fetch main and feature branches for diff
         if: env.HEAD_REF != 'main'
-        run: git fetch origin main
+        run: |
+          git fetch origin main
+          # If FEATURE_REF differs from HEAD_REF, fetch the feature branch too
+          if [ "${{ env.FEATURE_REF }}" != "${{ env.HEAD_REF }}" ]; then
+            echo "Fetching feature branch: ${{ env.FEATURE_REF }}"
+            git fetch origin "${{ env.FEATURE_REF }}"
+          fi
 
       # ── 1. Inject branch header into PDF (feature branches) ───────────────
       - name: Add source-branch header to PDF
@@ -211,10 +251,14 @@ jobs:
           fi
 
       # ── 2b. Generate diff against main (feature branches only) ────────────
+      # FEATURE_REF is passed so the diff compares main↔feature-branch,
+      # not main↔assistant-branch (e.g. claude/* branches).
       - name: Generate latexdiff against main
         if: env.HEAD_REF != 'main'
         continue-on-error: true
         id: generate_diff
+        env:
+          FEATURE_REF: ${{ env.FEATURE_REF }}
         run: bash .github/scripts/generate-diff.sh
 
       - name: Compile diff PDF
