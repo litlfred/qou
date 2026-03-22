@@ -678,7 +678,7 @@
     #c-diff{display:none}
     #c-diff.visible{display:inline-block}
     #c-diff.on{color:var(--ac);border-color:var(--ac)}
-    .diff-overlay{position:fixed;inset:0;z-index:300;background:var(--bg);overflow-y:auto;display:none;flex-direction:column}
+    .diff-overlay{position:fixed;top:35px;left:0;right:0;bottom:0;z-index:300;background:var(--bg);overflow-y:auto;display:none;flex-direction:column}
     .diff-overlay.open{display:flex}
     .diff-head{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:var(--bg-s);border-bottom:1px solid var(--brd);flex-shrink:0}
     .diff-head h2{font-family:var(--f-head);font-size:1rem;font-weight:600;color:var(--fg-b);flex:1}
@@ -3597,11 +3597,22 @@
     function renderDiffOverlay(data) {
       diffData = data;
       diffTitle.textContent = `Changes: ${data.base} → ${data.head}`;
-      const s = data.summary;
-      diffSummaryEl.innerHTML = `<span class="da">+${s.added}</span> <span class="dr">-${s.removed}</span> <span class="dc">~${s.changed}</span> · ${s.unchanged} unchanged`;
 
       diffBody.innerHTML = '';
-      const changed = data.blocks.filter(b => b.status !== 'unchanged');
+      // Filter out unchanged blocks and whitespace-only diffs
+      const changed = data.blocks.filter(b => {
+        if (b.status === 'unchanged') return false;
+        if (b.status === 'changed' && b.mdDiff && !b.leanDiff && !b.statusDiff) {
+          const base = (b.mdDiff.base || '').replace(/\s+/g, '');
+          const head = (b.mdDiff.head || '').replace(/\s+/g, '');
+          if (base === head) return false;
+        }
+        return true;
+      });
+      const added = changed.filter(b => b.status === 'added').length;
+      const removed = changed.filter(b => b.status === 'removed').length;
+      const chg = changed.filter(b => b.status === 'changed').length;
+      diffSummaryEl.innerHTML = `<span class="da">+${added}</span> <span class="dr">-${removed}</span> <span class="dc">~${chg}</span>`;
       if (!changed.length) {
         diffBody.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--fg-d)">No changes between branches</div>';
         return;
@@ -3812,7 +3823,6 @@
     }
     function closeDiffOverlay() {
       diffOverlay.classList.remove('open');
-      if (!diffMode) diffBtn.classList.remove('on');
     }
     document.getElementById('diff-close').onclick = closeDiffOverlay;
 
@@ -3844,6 +3854,13 @@
         if (!bd || bd.status === 'unchanged') {
           el.style.removeProperty('outline');
           continue;
+        }
+
+        // Skip whitespace-only changes
+        if (bd.status === 'changed' && bd.mdDiff && !bd.leanDiff && !bd.statusDiff) {
+          const base = (bd.mdDiff.base || '').replace(/\s+/g, '');
+          const head = (bd.mdDiff.head || '').replace(/\s+/g, '');
+          if (base === head) { el.style.removeProperty('outline'); continue; }
         }
 
         if (bd.status === 'added') {
@@ -3886,13 +3903,15 @@
       }
     }
 
-    // Diff button: first click opens overlay, toggle to close
+    // Diff button: click toggles diff highlighting + overlay
     diffBtn.addEventListener('click', async () => {
-      if (diffOverlay.classList.contains('open')) {
+      // If already on, turn everything off
+      if (diffMode) {
+        toggleDiffMode(false);
         closeDiffOverlay();
         return;
       }
-      // Open overlay immediately — show loading state if data not cached
+      // Turn on: load diff data if needed, enable highlighting, open overlay
       const needsLoad = !diffData || diffData.head !== (selectedBranch || currentBranchName);
       if (needsLoad) {
         diffTitle.textContent = 'Loading diff…';
@@ -3903,6 +3922,7 @@
       }
       if (diffData) {
         renderDiffOverlay(diffData);
+        toggleDiffMode(true);
         if (!needsLoad) openDiffOverlay();
       } else {
         const head = selectedBranch || currentBranchName;
@@ -3917,14 +3937,6 @@
         }</div>`;
         if (!needsLoad) openDiffOverlay();
       }
-    });
-
-    // Right-click diff button toggles inline diff mode
-    diffBtn.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      if (!diffData) return;
-      closeDiffOverlay();
-      toggleDiffMode();
     });
 
     // ── Start routing (after all UI initialized) ──────────
