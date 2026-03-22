@@ -12,6 +12,7 @@
 #
 # Triggers:
 #   push to main     — Auto-update (secrets + restart) if server exists
+#   workflow_run     — After Docker image build completes
 #   workflow_dispatch — Manual provision / update / destroy
 #
 # After first provision, point DNS to the printed IP. Caddy handles TLS.
@@ -67,7 +68,6 @@ jobs:
         run: |
           EVENT="${{ github.event_name }}"
           if [ "$EVENT" = "workflow_run" ]; then
-            # Triggered by Build Lean MCP Image — only proceed if it succeeded
             if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
               echo "Image build did not succeed — skipping deploy."
               echo "action=skip" >> "$GITHUB_OUTPUT"
@@ -85,26 +85,9 @@ jobs:
 
       - name: Parse config
         id: config
-        run: |
-          python3 << 'PYEOF'
-          import json, os
-          c = json.load(open('lean-mcp.config.json'))
-          f = c.get('folio', {})
-          h = c.get('hetzner', {})
-          a = c.get('auth', {})
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
-              out.write(f"domain={f.get('domain', 'folio.example.org')}\n")
-              out.write(f"image={c.get('image', 'ghcr.io/litlfred/qou/lean-mcp')}\n")
-              out.write(f"mcp_port={c.get('mcp_internal_port', 8080)}\n")
-              out.write(f"viewer_dir={f.get('viewer_dir', 'viewer')}\n")
-              out.write(f"owner_username={a.get('owner', 'litlfred')}\n")
-              out.write(f"session_max_age={a.get('session_max_age_hours', 24) * 3600}\n")
-              out.write(f"server_type={h.get('server_type', 'cx22')}\n")
-              out.write(f"location={h.get('location', 'fsn1')}\n")
-              out.write(f"server_image={h.get('image', 'ubuntu-24.04')}\n")
-          PYEOF
+        run: python3 deploy/parse-config.py
 
-      # ── PROVISION: create server from scratch (manual only) ─────────
+      # ── PROVISION ─────────────────────────────────────────────────
       - name: Provision server
         if: steps.action.outputs.action == 'provision'
         env:
@@ -113,105 +96,19 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GITHUB_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
           GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
-        run: |
-          # Fail fast if secrets are missing
-          if [ -z "$GOOGLE_CLIENT_ID" ] || [ -z "$GOOGLE_CLIENT_SECRET" ]; then
-            echo "::error::Missing GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET in GitHub Secrets"
-            exit 1
-          fi
-          if [ -z "$GITHUB_CLIENT_ID" ] || [ -z "$GITHUB_CLIENT_SECRET" ]; then
-            echo "::error::Missing GITHUB_OAUTH_CLIENT_ID or GITHUB_OAUTH_CLIENT_SECRET in GitHub Secrets"
-            exit 1
-          fi
+          REPO_URL: https://github.com/${{ github.repository }}.git
+          DOMAIN: ${{ steps.config.outputs.domain }}
+          IMAGE: ${{ steps.config.outputs.image }}
+          MCP_PORT: ${{ steps.config.outputs.mcp_port }}
+          OWNER_USERNAME: ${{ steps.config.outputs.owner_username }}
+          SESSION_MAX_AGE: ${{ steps.config.outputs.session_max_age }}
+          SERVER_TYPE: ${{ steps.config.outputs.server_type }}
+          SERVER_LOC: ${{ steps.config.outputs.location }}
+          SERVER_IMG: ${{ steps.config.outputs.server_image }}
+        run: deploy/provision.sh
 
-          if hcloud server describe "$SERVER_NAME" &>/dev/null; then
-            echo "::error::Server '$SERVER_NAME' already exists. Use 'update' or 'destroy' first."
-            hcloud server ip "$SERVER_NAME"
-            exit 1
-          fi
-
-          REPO_URL="https://github.com/${{ github.repository }}.git"
-          DOMAIN="${{ steps.config.outputs.domain }}"
-          IMAGE="${{ steps.config.outputs.image }}"
-          MCP_PORT="${{ steps.config.outputs.mcp_port }}"
-          OWNER_USERNAME="${{ steps.config.outputs.owner_username }}"
-          SESSION_MAX_AGE="${{ steps.config.outputs.session_max_age }}"
-          SERVER_TYPE="${{ steps.config.outputs.server_type }}"
-          SERVER_LOC="${{ steps.config.outputs.location }}"
-          SERVER_IMG="${{ steps.config.outputs.server_image }}"
-
-          LEAN_TOKEN=$(openssl rand -hex 32)
-          COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
-
-          # Build cloud-init script with secrets embedded
-          cat > /tmp/cloud-init.sh <<CLOUD_INIT_EOF
-          #!/bin/bash
-          set -euxo pipefail
-
-          curl -fsSL https://get.docker.com | sh
-          apt-get install -y gettext-base python3
-
-          git clone ${REPO_URL} /opt/qou
-          cd /opt/qou
-
-          cat > deploy/.env <<DOTENV
-          DEPLOY_MODE=folio
-          COMPOSE_FILE=docker-compose.folio.yml
-          LEAN_MCP_DOMAIN=${DOMAIN}
-          FOLIO_DOMAIN=${DOMAIN}
-          LEAN_MCP_IMAGE=${IMAGE}
-          LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
-          LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
-          COOKIE_SECRET=${COOKIE_SECRET}
-          OWNER_USERNAME=${OWNER_USERNAME}
-          SESSION_MAX_AGE=${SESSION_MAX_AGE}
-          GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-          GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-          GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
-          GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
-          DOTENV
-
-          export FOLIO_DOMAIN="${DOMAIN}"
-          export LEAN_MCP_INTERNAL_PORT="${MCP_PORT}"
-          export LEAN_MCP_DOMAIN="${DOMAIN}"
-          envsubst '\${LEAN_MCP_DOMAIN} \${LEAN_MCP_INTERNAL_PORT} \${FOLIO_DOMAIN}' \
-            < deploy/Caddyfile.folio.template \
-            > deploy/Caddyfile
-
-          cp -r viewer deploy/viewer 2>/dev/null || true
-          cp -r assistant deploy/assistant 2>/dev/null || true
-
-          cd deploy
-          docker compose -f docker-compose.folio.yml pull
-          docker compose -f docker-compose.folio.yml up -d
-
-          echo "=== Folio provisioning complete ==="
-          CLOUD_INIT_EOF
-
-          # Strip leading whitespace from cloud-init (YAML indentation artifact)
-          sed -i 's/^          //' /tmp/cloud-init.sh
-
-          echo "▸ Creating server..."
-          hcloud server create \
-            --name "$SERVER_NAME" \
-            --type "$SERVER_TYPE" \
-            --image "$SERVER_IMG" \
-            --location "$SERVER_LOC" \
-            --user-data "$(cat /tmp/cloud-init.sh)"
-
-          IP=$(hcloud server ip "$SERVER_NAME")
-          echo ""
-          echo "============================================"
-          echo "  Server created!"
-          echo "  IP: $IP"
-          echo "  Domain: $DOMAIN"
-          echo "============================================"
-          echo ""
-          echo "Next: Point DNS  $DOMAIN → A → $IP"
-          echo "Caddy auto-provisions TLS once DNS propagates."
-
-      # ── UPDATE: push new secrets to existing server ─────────────────
-      - name: Update secrets on existing server
+      # ── UPDATE ────────────────────────────────────────────────────
+      - name: Update server
         if: steps.action.outputs.action == 'update'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
@@ -219,91 +116,18 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GITHUB_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
           GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
-        run: |
-          if ! hcloud server describe "$SERVER_NAME" &>/dev/null; then
-            if [ "${{ steps.action.outputs.auto }}" = "true" ]; then
-              echo "Server '$SERVER_NAME' not provisioned yet — skipping auto-update."
-              exit 0
-            fi
-            echo "::error::Server '$SERVER_NAME' not found. Run 'provision' first."
-            exit 1
-          fi
+          DOMAIN: ${{ steps.config.outputs.domain }}
+          IMAGE: ${{ steps.config.outputs.image }}
+          MCP_PORT: ${{ steps.config.outputs.mcp_port }}
+          OWNER_USERNAME: ${{ steps.config.outputs.owner_username }}
+          SESSION_MAX_AGE: ${{ steps.config.outputs.session_max_age }}
+          AUTO: ${{ steps.action.outputs.auto }}
+        run: deploy/update-server.sh
 
-          IP=$(hcloud server ip "$SERVER_NAME")
-          DOMAIN="${{ steps.config.outputs.domain }}"
-          IMAGE="${{ steps.config.outputs.image }}"
-          MCP_PORT="${{ steps.config.outputs.mcp_port }}"
-          OWNER_USERNAME="${{ steps.config.outputs.owner_username }}"
-          SESSION_MAX_AGE="${{ steps.config.outputs.session_max_age }}"
-
-          # Read existing token + cookie secret from server (preserve them)
-          # Fail loudly if we can't read — silently regenerating would break
-          # all existing CLI sessions and log out all browser users.
-          if ! EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env 2>/dev/null); then
-            echo "::warning::Could not read existing .env from server — generating new secrets"
-            echo "::warning::This will invalidate all existing sessions and API tokens"
-          fi
-
-          LEAN_TOKEN=$(echo "$EXISTING_ENV" | grep '^LEAN_LSP_MCP_TOKEN=' | cut -d= -f2- || true)
-          COOKIE_SECRET=$(echo "$EXISTING_ENV" | grep '^COOKIE_SECRET=' | cut -d= -f2- || true)
-          [ -z "$LEAN_TOKEN" ] && LEAN_TOKEN=$(openssl rand -hex 32)
-          [ -z "$COOKIE_SECRET" ] && COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
-
-          # Write updated .env (heredoc must not be indented — content goes verbatim)
-          hcloud server ssh "$SERVER_NAME" -- tee /opt/qou/deploy/.env > /dev/null <<DOTENV
-DEPLOY_MODE=folio
-COMPOSE_FILE=docker-compose.folio.yml
-LEAN_MCP_DOMAIN=${DOMAIN}
-FOLIO_DOMAIN=${DOMAIN}
-LEAN_MCP_IMAGE=${IMAGE}
-LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
-LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
-COOKIE_SECRET=${COOKIE_SECRET}
-OWNER_USERNAME=${OWNER_USERNAME}
-SESSION_MAX_AGE=${SESSION_MAX_AGE}
-GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
-GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
-DOTENV
-
-          echo "▸ Secrets updated. Pulling latest code and images, restarting..."
-          hcloud server ssh "$SERVER_NAME" -- bash -c "
-            cd /opt/qou
-            git fetch origin main --quiet
-            git reset --hard origin/main
-
-            cd deploy
-            # Regenerate Caddyfile from template
-            FOLIO_DOMAIN='${DOMAIN}' LEAN_MCP_INTERNAL_PORT='${MCP_PORT}' LEAN_MCP_DOMAIN='${DOMAIN}' \
-              envsubst '\\\${LEAN_MCP_DOMAIN} \\\${LEAN_MCP_INTERNAL_PORT} \\\${FOLIO_DOMAIN}' \
-              < Caddyfile.folio.template > Caddyfile
-
-            # Refresh viewer + assistant from repo
-            rm -rf viewer assistant
-            cp -r ../viewer viewer 2>/dev/null || true
-            cp -r ../assistant assistant 2>/dev/null || true
-
-            # Pull latest images and restart
-            docker compose -f docker-compose.folio.yml pull
-            docker compose -f docker-compose.folio.yml up -d --remove-orphans
-          "
-
-          echo "✓ Updated on $IP ($DOMAIN)"
-
-      # ── DESTROY: tear down server (manual only) ─────────────────────
+      # ── DESTROY ───────────────────────────────────────────────────
       - name: Destroy server
         if: steps.action.outputs.action == 'destroy'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
-        run: |
-          if ! hcloud server describe "$SERVER_NAME" &>/dev/null; then
-            echo "Server '$SERVER_NAME' not found — nothing to destroy."
-            exit 0
-          fi
-
-          IP=$(hcloud server ip "$SERVER_NAME")
-          echo "▸ Destroying server $SERVER_NAME ($IP)..."
-          hcloud server delete "$SERVER_NAME"
-          echo "✓ Server destroyed."
-          echo "Remember to remove DNS record for ${{ steps.config.outputs.domain }}"
+          DOMAIN: ${{ steps.config.outputs.domain }}
+        run: deploy/destroy-server.sh

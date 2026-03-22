@@ -439,32 +439,11 @@ jobs:
         if: env.HEAD_REF != 'main'
         env:
           FNAME_BASE: ${{ steps.names.outputs.base }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          REPO_URL: https://github.com/${{ github.repository }}
         run: |
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          DRAFT_PATH="drafts/${{ env.HEAD_REF }}"
-          REPO_URL="https://github.com/${{ github.repository }}"
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          python3 -c "
-          import json
-          builds = json.load(open('builds-existing.json'))
-          builds = [b for b in builds if b.get('branch') != '${{ env.HEAD_REF }}']
-          builds.append({
-              'branch': '${{ env.HEAD_REF }}',
-              'sha': '${{ env.HEAD_SHA }}',
-              'timestamp': '${TIMESTAMP}',
-              'pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}.pdf',
-              'diff_pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}-diff.pdf',
-              'html_url': '${PAGES_URL}/${DRAFT_PATH}/',
-              'source_url': '${REPO_URL}/tree/${{ env.HEAD_REF }}',
-          })
-          builds.sort(key=lambda b: b.get('timestamp', ''), reverse=True)
-          builds = builds[:20]
-          json.dump(builds, open('builds-existing.json', 'w'), indent=2)
-          "
-          # Copy updated manifest into _site so it deploys alongside drafts
+          python3 .github/scripts/update-builds-json.py
           cp builds-existing.json _site/builds.json
-          echo "Updated builds.json with entry for ${{ env.HEAD_REF }}"
 
       - name: Preserve builds.json for main deploy
         if: env.HEAD_REF == 'main'
