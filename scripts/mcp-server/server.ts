@@ -31,6 +31,7 @@ import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
+  mergeBase,
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
@@ -787,18 +788,24 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 
   // ── API: Diff between branches ─────────────────────────────
   // GET /api/diff?id=<paper>&base=main&head=feature-x
-  // Returns per-block diff info (added, removed, changed blocks)
+  // Compares head against the merge-base (where it forked from base),
+  // so only branch-specific changes are shown.
   if (path === "/api/diff") {
     const id = url.searchParams.get("id");
     const base = url.searchParams.get("base") || "main";
     const head = url.searchParams.get("head") || currentBranch();
     if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
     try {
+      // Use merge-base so we compare against where the branch forked,
+      // not the current tip of base (which may have new commits).
+      const mb = mergeBase(base, head);
+      const effectiveBase = mb || base;
       const [basePaper, headPaper] = await Promise.all([
-        resolvePaper(id, base),
+        resolvePaper(id, effectiveBase),
         resolvePaper(id, head),
       ]);
       const diff = computePaperDiff(basePaper, headPaper, base, head);
+      if (mb) (diff as any).mergeBase = mb;
       return Response.json(diff, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
@@ -813,8 +820,10 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     const head = url.searchParams.get("head") || currentBranch();
     if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
     try {
+      const mb = mergeBase(base, head);
+      const effectiveBase = mb || base;
       const [basePaper, headPaper] = await Promise.all([
-        resolvePaper(id, base),
+        resolvePaper(id, effectiveBase),
         resolvePaper(id, head),
       ]);
       const diff = computePaperDiff(basePaper, headPaper, base, head);
