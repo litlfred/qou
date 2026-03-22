@@ -79,7 +79,7 @@ services:
       - ./github-collaborators.txt:/etc/auth-gateway/github-collaborators.txt:ro
     depends_on:
       lean-mcp:
-        condition: service_healthy
+        condition: service_started
 
 volumes:
   caddy_data:

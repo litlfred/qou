@@ -110,7 +110,7 @@ jobs:
           SERVER_IMG="${{ steps.config.outputs.server_image }}"
 
           LEAN_TOKEN=$(openssl rand -hex 32)
-          COOKIE_SECRET=$(openssl rand -base64 32 | head -c 32)
+          COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
 
           # Build cloud-init script with secrets embedded
           cat > /tmp/cloud-init.sh <<CLOUD_INIT_EOF
@@ -215,30 +215,35 @@ jobs:
           SESSION_MAX_AGE="${{ steps.config.outputs.session_max_age }}"
 
           # Read existing token + cookie secret from server (preserve them)
-          EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env 2>/dev/null || echo "")
+          # Fail loudly if we can't read — silently regenerating would break
+          # all existing CLI sessions and log out all browser users.
+          if ! EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env 2>/dev/null); then
+            echo "::warning::Could not read existing .env from server — generating new secrets"
+            echo "::warning::This will invalidate all existing sessions and API tokens"
+          fi
 
           LEAN_TOKEN=$(echo "$EXISTING_ENV" | grep '^LEAN_LSP_MCP_TOKEN=' | cut -d= -f2- || true)
           COOKIE_SECRET=$(echo "$EXISTING_ENV" | grep '^COOKIE_SECRET=' | cut -d= -f2- || true)
           [ -z "$LEAN_TOKEN" ] && LEAN_TOKEN=$(openssl rand -hex 32)
-          [ -z "$COOKIE_SECRET" ] && COOKIE_SECRET=$(openssl rand -base64 32 | head -c 32)
+          [ -z "$COOKIE_SECRET" ] && COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
 
-          # Write updated .env
+          # Write updated .env (heredoc must not be indented — content goes verbatim)
           hcloud server ssh "$SERVER_NAME" -- tee /opt/qou/deploy/.env > /dev/null <<DOTENV
-          DEPLOY_MODE=folio
-          COMPOSE_FILE=docker-compose.folio.yml
-          LEAN_MCP_DOMAIN=${DOMAIN}
-          FOLIO_DOMAIN=${DOMAIN}
-          LEAN_MCP_IMAGE=${IMAGE}
-          LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
-          LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
-          COOKIE_SECRET=${COOKIE_SECRET}
-          OWNER_USERNAME=${OWNER_USERNAME}
-          SESSION_MAX_AGE=${SESSION_MAX_AGE}
-          GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-          GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-          GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
-          GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
-          DOTENV
+DEPLOY_MODE=folio
+COMPOSE_FILE=docker-compose.folio.yml
+LEAN_MCP_DOMAIN=${DOMAIN}
+FOLIO_DOMAIN=${DOMAIN}
+LEAN_MCP_IMAGE=${IMAGE}
+LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
+LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
+COOKIE_SECRET=${COOKIE_SECRET}
+OWNER_USERNAME=${OWNER_USERNAME}
+SESSION_MAX_AGE=${SESSION_MAX_AGE}
+GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+DOTENV
 
           echo "▸ Secrets updated. Restarting auth-gateway..."
           hcloud server ssh "$SERVER_NAME" -- bash -c \

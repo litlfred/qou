@@ -66,7 +66,7 @@ echo ""
 
 # ── Generate .env ────────────────────────────────────────────────
 LEAN_TOKEN=$(openssl rand -hex 32)
-COOKIE=$(openssl rand -base64 32 | head -c 32)
+COOKIE=$(openssl rand -base64 32 | tr -d '\n')
 
 if [ "$CI" = true ]; then
     GOOGLE_CLIENT_ID="FILL_ME_IN"

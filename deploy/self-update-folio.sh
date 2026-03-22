@@ -17,16 +17,11 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEPLOY_DIR="$REPO_ROOT/deploy"
 LOCKFILE="/tmp/folio-update.lock"
 
-# ── Prevent concurrent runs ──────────────────────────────────────
-if [ -f "$LOCKFILE" ]; then
-    LOCK_AGE=$(( $(date +%s) - $(stat -c %Y "$LOCKFILE" 2>/dev/null || echo 0) ))
-    if [ "$LOCK_AGE" -lt 300 ]; then
-        exit 0  # another run is active
-    fi
-    rm -f "$LOCKFILE"  # stale lock
+# ── Prevent concurrent runs (atomic flock) ────────────────────────
+exec 200>"$LOCKFILE"
+if ! flock -n 200; then
+    exit 0  # another run is active
 fi
-trap 'rm -f "$LOCKFILE"' EXIT
-touch "$LOCKFILE"
 
 CHANGED=false
 COMPOSE_FILE="docker-compose.folio.yml"
