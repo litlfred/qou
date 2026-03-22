@@ -1088,15 +1088,13 @@
       paper = null;
       bix.clear();
       diffData = null; diffMode = false;
-      // Update URL — always embed branch for non-HEAD
+      // Update URL with branch and reload
       const curHash = location.hash.slice(1) || '/';
       const cleaned = curHash.replace(/@[^/]*$/, '').replace(/@.*$/, '');
       const path = cleaned.replace(/^\//, '') || '';
-      const brSuffix = target !== currentBranchName ? `@${encodeURIComponent(target)}` : '';
-      const newHash = `#/${path}${brSuffix}`;
+      const newHash = `#/${hashWithBranch(path, target)}`;
       if (location.hash === newHash) {
-        // Hash didn't change (e.g. checked out to HEAD) — force reload
-        await route();
+        await route(); // hash unchanged — force reload
       } else {
         location.hash = newHash; // triggers hashchange → route()
       }
@@ -1105,7 +1103,8 @@
     loadBranches();
 
     function branchParam() {
-      return selectedBranch && selectedBranch !== currentBranchName ? `&branch=${encodeURIComponent(selectedBranch)}` : '';
+      return selectedBranch && selectedBranch !== 'main' && selectedBranch !== 'master'
+        ? `&branch=${encodeURIComponent(selectedBranch)}` : '';
     }
 
     // ── Markdown ─────────────────────────────────────────
@@ -2079,6 +2078,16 @@
         });
       });
 
+      // Persist open/closed chapters to localStorage
+      function saveSbOpenChapters() {
+        const open = [];
+        sb.querySelectorAll('.sb-ch.open').forEach(ch => open.push(ch.dataset.num));
+        localStorage.setItem('qou-sb-chapters', JSON.stringify(open));
+      }
+      const restoredChapters = new Set(
+        (() => { try { return JSON.parse(localStorage.getItem('qou-sb-chapters') || '[]'); } catch { return []; } })()
+      );
+
       // ── Chapter containers (one per chapter, show/hide) ──
       const chapterDivs = new Map(); // number → DOM element
       const chapterHydrated = new Set(); // track which chapters have been hydrated
@@ -2136,11 +2145,18 @@
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number}. ${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
 
+        // Restore open/closed state from localStorage
+        if (restoredChapters.has(String(ch.number))) {
+          chEl.classList.add('open');
+          chBody.style.display = 'block';
+        }
+
         // Click chapter title → show chapter content
         chEl.onclick = (e) => {
           // Toggle sections in sidebar
           chEl.classList.toggle('open');
           chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
+          saveSbOpenChapters();
           // Show chapter content
           showChapter(ch.number);
         };
@@ -3102,7 +3118,8 @@
     /** Build a hash string with the current branch embedded (if not default). */
     function hashWithBranch(path, branch) {
       const br = branch || selectedBranch;
-      if (!br || br === currentBranchName) return path;
+      // Always embed branch in URL unless it's the default (main/master)
+      if (!br || br === 'main' || br === 'master') return path;
       return `${path}@${encodeURIComponent(br)}`;
     }
 
