@@ -7,7 +7,7 @@ moment: positions are known exactly, momenta are undetermined.
 
 ## References
 
-- [leitner2026] §3 Lifting of Quantum Torsion
+- [manuscript] §3 Lifting of Quantum Torsion
 -/
 
 import Mathlib.Data.Real.Basic
@@ -22,7 +22,7 @@ structure BundleInitialConditions where
   /-- The localized knots (position + knot type pairs). -/
   particles : List LocalizedKnot
   /-- Must have at least one particle. -/
-  -- Ref: [leitner2026] §3, Definition: Bundle initial conditions
+  -- Ref: [manuscript] §3, Definition: Bundle initial conditions
   nonempty : particles.length ≥ 1
 
 /-! ## Basic accessors -/
@@ -56,7 +56,7 @@ def BundleInitialConditions.particlesAt (b : BundleInitialConditions)
   b.particles.filter (fun k => k.basePoint = p)
 
 /-- All particles are accounted for by the base-point partition. -/
--- Ref: [leitner2026] §3, Definition: Bundle initial conditions
+-- Ref: [manuscript] §3, Definition: Bundle initial conditions
 theorem BundleInitialConditions.partition_complete
     (b : BundleInitialConditions) :
     (b.basePoints.bind (b.particlesAt ·)).length = b.size := by
@@ -64,7 +64,7 @@ theorem BundleInitialConditions.partition_complete
   sorry
 
 /-- Total crossing number equals the sum over base-point clusters. -/
--- Ref: [leitner2026] §3
+-- Ref: [manuscript] §3
 theorem BundleInitialConditions.totalCrossings_additive
     (b : BundleInitialConditions) :
     b.totalCrossings =

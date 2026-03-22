@@ -7,7 +7,7 @@ q-Reeb flow.
 
 ## References
 
-- [leitner2026] §1 Quantum Observable Universe
+- [manuscript] §1 Quantum Observable Universe
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -20,7 +20,7 @@ variable {R : Type*} [CommRing R]
     and invariant under the q-Reeb flow.
 
     LaTeX: `\label{def:categorical-q-torsion-leaf}` -/
--- Ref: [leitner2026] §1, Definition: Categorical q-torsion leaf
+-- Ref: [manuscript] §1, Definition: Categorical q-torsion leaf
 structure CategoricalQTorsionLeaf (M : Type*) [AddCommGroup M] [Module R M] where
   /-- The leaf as a submodule. -/
   leaf : Submodule R M

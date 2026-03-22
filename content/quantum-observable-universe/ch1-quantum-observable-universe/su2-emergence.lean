@@ -12,7 +12,7 @@ downstream relies on this result.
 ## References
 
 - [lusztig1993] Introduction to Quantum Groups
-- [leitner2026] §1 Theorem: Emergence of SU(2)
+- [manuscript] §1 Theorem: Emergence of SU(2)
 -/
 
 import QOU.Basic
@@ -41,9 +41,9 @@ universe u v
        (split form).
 
     LaTeX: `\label{thm:su2-emergence}`
-    Ref: [lusztig1993], [leitner2026] §1 -/
+    Ref: [lusztig1993], [manuscript] §1 -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
--- Ref: [leitner2026] §1
+-- Ref: [manuscript] §1
 theorem su2_emergence {k : Type*} [Field k]
     (QOU : QuantumObservableUniverse.{u, v} k) :
     -- The gauge group Aut⊗(ω) is a rank-1 semisimple group with

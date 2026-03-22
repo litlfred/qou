@@ -7,7 +7,7 @@ comultiplication and λ the Frobenius form.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -16,7 +16,7 @@ import Mathlib.Analysis.Normed.Group.Basic
 namespace QOU
 
 /-- The data needed to define mass in a Frobenius–Hopf object. -/
--- Ref: [leitner2026] §3, Definition: Mass (categorical trace)
+-- Ref: [manuscript] §3, Definition: Mass (categorical trace)
 structure FrobeniusHopfData (R : Type*) [NormedCommRing R] where
   /-- The categorical trace tr : End(A) → R. -/
   trace : R → R
@@ -29,7 +29,7 @@ structure FrobeniusHopfData (R : Type*) [NormedCommRing R] where
     m(γ) = ‖tr((λ ⊗ id) ∘ Δ ∘ γ)‖
 
     LaTeX: `\label{def:mass-identity}` -/
--- Ref: [leitner2026] §3, Definition: Mass (categorical trace)
+-- Ref: [manuscript] §3, Definition: Mass (categorical trace)
 noncomputable def categoricalMass {R : Type*} [NormedCommRing R]
     (fhd : FrobeniusHopfData R) (γ : R) : ℝ :=
   ‖fhd.trace (fhd.frobenius_form (fhd.comult_trace γ))‖

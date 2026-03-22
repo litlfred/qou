@@ -10,7 +10,7 @@ maps from descent, and the crossed structure from conjugation of
 
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -75,7 +75,7 @@ in the category of crossed groupoids. -/
     - Crossed structure from conjugation via Ad(SU_{qₙ}(2))
 
     LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
--- Ref: [yekutieli2010] §4, [leitner2026] §3
+-- Ref: [yekutieli2010] §4, [manuscript] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
   tripleAt : (n : ℕ) → YekutielijTriple M
@@ -106,7 +106,7 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
     2. Crossed-module axioms: `(SU_{qₙ}(2), 𝒪_M×)` with central boundary map
     3. Compatibility: simplicial maps preserve crossed-module structure -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
+-- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by

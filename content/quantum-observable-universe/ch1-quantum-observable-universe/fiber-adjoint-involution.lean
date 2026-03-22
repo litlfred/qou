@@ -8,7 +8,7 @@ involution σ : P(V) ↪ Ad(A).
 ## References
 
 - [lusztig1993] Introduction to Quantum Groups
-- [leitner2026] §1
+- [manuscript] §1
 -/
 
 import QOU.Basic

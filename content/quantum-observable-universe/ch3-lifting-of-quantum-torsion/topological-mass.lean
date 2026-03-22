@@ -15,7 +15,7 @@ idempotent splitting of End_𝒞(A_{n+1}) and the linearity of the trace.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -47,7 +47,7 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
 
     when the idempotent decomposition is orthogonal with respect
     to the Frobenius norm. -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_categorical
     (md : MassDecomposition R)
     (orthogonal : ‖md.descendedTrace + md.transientTraces.foldl (· + ·) 0‖ =
@@ -61,7 +61,7 @@ theorem mass_decomposition_categorical
 /-- Each transient contribution localises to a single blow-up centre
     because the kernels of 𝔡_{n+1} at distinct centres are disjoint
     submodules of End_𝒞(A_{n+1}). -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem transient_localisation
     (traces : List R)
     (disjoint : ∀ i j, i ≠ j →
@@ -72,7 +72,7 @@ theorem transient_localisation
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem descended_trace_is_base_level
     {N : Type*} [AddCommGroup N] [Module R N]
     {M : Type*} [AddCommGroup M] [Module R M]

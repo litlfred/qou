@@ -12,7 +12,7 @@ is a quantum observable universe with five structural properties:
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes
-- [leitner2026] §3 Theorem: QU to QOU
+- [manuscript] §3 Theorem: QU to QOU
 -/
 
 import Mathlib.Data.Real.Basic
@@ -63,8 +63,8 @@ structure TerminalFiber where
     lifting condition, it is a QOU with descent, obstruction, and fiber data.
 
     LaTeX: `\label{thm:qu-to-qou}`
-    Ref: [leitner2026] §3 -/
--- Ref: [leitner2026] §3
+    Ref: [manuscript] §3 -/
+-- Ref: [manuscript] §3
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 structure QuToQou where
   /-- (1) The descent tower terminates. -/

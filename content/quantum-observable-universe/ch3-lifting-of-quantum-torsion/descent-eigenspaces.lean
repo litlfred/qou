@@ -7,7 +7,7 @@ decomposition into descended (im τₙ) and transient (ker τₙ) subalgebras.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -36,7 +36,7 @@ def IdempotentEndomorphism.transient (τ : IdempotentEndomorphism (R := R) M) :
   LinearMap.ker τ.toFun
 
 /-- Every element decomposes uniquely as descended + transient. -/
--- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_decomposition
     (τ : IdempotentEndomorphism (R := R) M) :
     τ.descended ⊔ τ.transient = ⊤ := by
@@ -54,7 +54,7 @@ theorem idempotent_direct_sum_decomposition
   rw [h, sub_self]
 
 /-- The descended and transient submodules intersect trivially. -/
--- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_disjoint
     (τ : IdempotentEndomorphism (R := R) M) :
     Disjoint τ.descended τ.transient := by
@@ -74,7 +74,7 @@ theorem idempotent_direct_sum_disjoint
   exact hx_trans
 
 /-- An element in the image of the ascent ℓₙ is fixed by τₙ (descended). -/
--- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
 theorem ascent_image_is_descended
     {N : Type*} [AddCommGroup N] [Module R N]
     (ℓ : N →ₗ[R] M) (𝔡 : M →ₗ[R] N)
@@ -93,7 +93,7 @@ theorem ascent_image_is_descended
   simpa [LinearMap.comp_apply] using this
 
 /-- An element with no pre-image under descent is transient. -/
--- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
 theorem no_preimage_is_transient
     {N : Type*} [AddCommGroup N] [Module R N]
     (ℓ : N →ₗ[R] M) (𝔡 : M →ₗ[R] N)

@@ -6,7 +6,7 @@ observables at infinite brane level.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -20,7 +20,7 @@ variable {R : Type*} [CommRing R]
     with connecting maps given by jet prolongation.
 
     LaTeX: `\label{def:direct-limit-algebra}` -/
--- Ref: [leitner2026] §3, Definition: Direct limit algebra
+-- Ref: [manuscript] §3, Definition: Direct limit algebra
 structure DirectLimitAlgebra (R : Type*) [CommRing R] where
   /-- The module at each level. -/
   levelMod : ℕ → Type*

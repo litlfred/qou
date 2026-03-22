@@ -6,7 +6,7 @@ The tower A₀ ↪ A₁ ↪ A₂ ↪ ⋯ carries the ascent/descent structure.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -19,7 +19,7 @@ variable {R : Type*} [CommRing R]
     ascent embeddings (jet prolongation) and descent retractions.
 
     LaTeX: `\label{def:recursive-brane-tower}` -/
--- Ref: [leitner2026] §3, Definition: Recursive brane tower
+-- Ref: [manuscript] §3, Definition: Recursive brane tower
 structure RecursiveBraneTower (R : Type*) [CommRing R] where
   /-- The module at level n (representing End_𝒞(Aₙ)). -/
   level : ℕ → Type*

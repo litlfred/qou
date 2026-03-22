@@ -7,7 +7,7 @@ the recursive brane tower satisfy the Yekutieli lifting condition.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, Theorem 1.7
-- [leitner2026] §3 Proposition: Yekutieli Lifting
+- [manuscript] §3 Proposition: Yekutieli Lifting
 -/
 
 import Mathlib.Data.Real.Basic
@@ -44,7 +44,7 @@ structure YekutieliLifting where
 
 /-- The Euler class identification: κ₀ equals the Euler class of the
     Reeb bundle.  Under the trace map, κ₀ ↦ χ(A) = tr(id_A). -/
--- Ref: [yekutieli2010] §4, [leitner2026] §3
+-- Ref: [yekutieli2010] §4, [manuscript] §3
 theorem kappa_zero_is_euler_class
     (yl : YekutieliLifting)
     (euler_class : yl.ObstructionSpace)
@@ -56,7 +56,7 @@ theorem kappa_zero_is_euler_class
 
     The key insight: κ₀ and the jet corrections at level n live in
     complementary subgroups of H²(S, B), so corrections cannot cancel κ₀. -/
--- Ref: [leitner2026] §3, Item (3)
+-- Ref: [manuscript] §3, Item (3)
 theorem perpetual_obstruction
     (yl : YekutieliLifting)
     (h_nontorsion : yl.kappa 0 ≠ yl.zero)

@@ -7,7 +7,7 @@ inherited from A, and (C, J¹(A), ω') is again a QOU.
 
 ## References
 
-- [leitner2026] §3 Proposition: Jet Prolongation
+- [manuscript] §3 Proposition: Jet Prolongation
 - [fred2005] Strong multiplicativity / Gröbner–Shirshov deformation
 -/
 
@@ -33,8 +33,8 @@ universe u v
     4. Adjoint vanishing: Ad(A) = 0 implies Ad(J¹(A)) = 0.
 
     LaTeX: `\label{prop:jet-prolongation}`
-    Ref: [leitner2026] §3 -/
--- Ref: [leitner2026] §3
+    Ref: [manuscript] §3 -/
+-- Ref: [manuscript] §3
 -- Ref: [fred2005] https://doi.org/10.1090/S0002-9947-05-03749-1
 structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -70,7 +70,7 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
     project to a non-zero invariant in Ad(A), contradicting the hypothesis.
 
     LaTeX: `\label{prop:jet-prolongation}` (conclusion) -/
--- Ref: [leitner2026] §3
+-- Ref: [manuscript] §3
 theorem jet_prolongation_preserves_observability
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -86,7 +86,7 @@ theorem jet_prolongation_preserves_observability
   have hg := h_proj g
   -- In the full proof: h_proj is injective on the adjoint component,
   -- so f = g follows from h_vanishing applied to hf and hg.
-  -- Ref: [leitner2026] §3, Step 3
+  -- Ref: [manuscript] §3, Step 3
   sorry
 
 end QOU

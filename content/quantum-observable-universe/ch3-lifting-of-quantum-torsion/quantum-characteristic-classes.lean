@@ -11,7 +11,7 @@ under the trace map, κ₀ ↦ χ(A) = tr(id_A).
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Data.Real.Basic
@@ -26,7 +26,7 @@ namespace QOU
     continues; non-vanishing κₙ indicates topological charge.
 
     LaTeX: `\label{def:quantum-characteristic-classes}` -/
--- Ref: [yekutieli2010] §4, [leitner2026] §3
+-- Ref: [yekutieli2010] §4, [manuscript] §3
 structure QuantumCharacteristicClass where
   /-- Level in the brane tower. -/
   level : ℕ
@@ -62,7 +62,7 @@ structure QuantumCharacteristicSequence where
 
     This is the perpetual obstruction property: the Euler class cannot
     be cancelled by jet corrections at any level. -/
--- Ref: [leitner2026] §3
+-- Ref: [manuscript] §3
 theorem QuantumCharacteristicSequence.perpetual
     (qcs : QuantumCharacteristicSequence)
     (h_nontorsion : qcs.kappa 0 ≠ @Zero.zero qcs.ObstructionSpace qcs.addCommGroup.toZero)
