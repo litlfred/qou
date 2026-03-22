@@ -4,8 +4,11 @@
 # Runs as a cron job or systemd timer on the remote host.
 # No SSH keys needed in CI — the host pulls, not pushed to.
 #
+# Detects deploy mode from .env (DEPLOY_MODE=mcp or folio) and uses the
+# correct compose file, Caddyfile template, and update logic.
+#
 # What it checks (every run):
-#   1. Git repo: new commits on main? → git pull, regenerate Caddyfile
+#   1. Git repo: new commits on main? → git pull, regenerate config
 #   2. Docker image: new digest on GHCR? → docker compose pull + restart
 #
 # Usage:
@@ -18,18 +21,27 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEPLOY_DIR="$REPO_ROOT/deploy"
 LOCKFILE="/tmp/lean-mcp-update.lock"
 
-# ── Prevent concurrent runs ──────────────────────────────────────
-if [ -f "$LOCKFILE" ]; then
-    LOCK_AGE=$(( $(date +%s) - $(stat -c %Y "$LOCKFILE" 2>/dev/null || echo 0) ))
-    if [ "$LOCK_AGE" -lt 300 ]; then
-        exit 0  # another run is active
-    fi
-    rm -f "$LOCKFILE"  # stale lock
+# ── Prevent concurrent runs (atomic flock) ────────────────────────
+exec 200>"$LOCKFILE"
+if ! flock -n 200; then
+    exit 0  # another run is active
 fi
-trap 'rm -f "$LOCKFILE"' EXIT
-touch "$LOCKFILE"
 
 CHANGED=false
+
+# ── Detect deploy mode ─────────────────────────────────────────────
+source "$DEPLOY_DIR/.env" 2>/dev/null || true
+MODE="${DEPLOY_MODE:-mcp}"
+
+if [ "$MODE" = "folio" ]; then
+    COMPOSE_FILE="docker-compose.folio.yml"
+    CADDY_TEMPLATE="Caddyfile.folio.template"
+    ENVSUBST_VARS='${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}'
+else
+    COMPOSE_FILE="docker-compose.yml"
+    CADDY_TEMPLATE="Caddyfile.template"
+    ENVSUBST_VARS='${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT}'
+fi
 
 # ── 1. Check git for new commits ─────────────────────────────────
 cd "$REPO_ROOT"
@@ -42,30 +54,45 @@ if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
     echo "[$(date -Is)] Git: new commits on main ($LOCAL_SHA → $REMOTE_SHA)"
 
     # Clean pull: nuke everything except deploy/.env (the only real secret).
-    # Caddyfile and authorized-emails.txt are regenerated from committed files.
     git clean -xdf --exclude='deploy/.env'
     git checkout -- .
     git pull origin main --quiet
 
+    # Re-source .env after pull (in case DEPLOY_MODE changed)
+    source "$DEPLOY_DIR/.env" 2>/dev/null || true
+
     # Regenerate non-secret files from committed config
     CONFIG="$REPO_ROOT/lean-mcp.config.json"
     if [ -f "$DEPLOY_DIR/.env" ] && [ -f "$CONFIG" ]; then
-        source "$DEPLOY_DIR/.env"
-
         # Caddyfile from template
-        if [ -f "$DEPLOY_DIR/Caddyfile.template" ]; then
-            LEAN_MCP_DOMAIN="${LEAN_MCP_DOMAIN}" \
+        if [ -f "$DEPLOY_DIR/$CADDY_TEMPLATE" ]; then
+            FOLIO_DOMAIN="${FOLIO_DOMAIN:-${LEAN_MCP_DOMAIN}}" \
             LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT}" \
-                envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT}' \
-                < "$DEPLOY_DIR/Caddyfile.template" \
+            LEAN_MCP_DOMAIN="${LEAN_MCP_DOMAIN}" \
+                envsubst "$ENVSUBST_VARS" \
+                < "$DEPLOY_DIR/$CADDY_TEMPLATE" \
                 > "$DEPLOY_DIR/Caddyfile"
         fi
 
-        # authorized-emails.txt from lean-mcp.config.json
-        python3 -c "
-import json
-[print(e) for e in json.load(open('$CONFIG')).get('authorized_emails', [])]
-" > "$DEPLOY_DIR/authorized-emails.txt"
+        # Refresh viewer + assistant files (folio mode only)
+        if [ "$MODE" = "folio" ]; then
+            VIEWER_DIR=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('folio',{}).get('viewer_dir','viewer'))")
+            VIEWER_SRC="$REPO_ROOT/$VIEWER_DIR"
+            VIEWER_DST="$DEPLOY_DIR/viewer"
+            if [ -d "$VIEWER_SRC" ]; then
+                rm -rf "$VIEWER_DST"
+                cp -r "$VIEWER_SRC" "$VIEWER_DST"
+                echo "[$(date -Is)] Viewer files refreshed from $VIEWER_DIR/"
+            fi
+
+            ASSISTANT_SRC="$REPO_ROOT/assistant"
+            ASSISTANT_DST="$DEPLOY_DIR/assistant"
+            if [ -d "$ASSISTANT_SRC" ]; then
+                rm -rf "$ASSISTANT_DST"
+                cp -r "$ASSISTANT_SRC" "$ASSISTANT_DST"
+                echo "[$(date -Is)] Assistant files refreshed"
+            fi
+        fi
     fi
 
     CHANGED=true
@@ -74,12 +101,9 @@ fi
 # ── 2. Check Docker image for new digest ─────────────────────────
 cd "$DEPLOY_DIR"
 
-# Get the currently running image digest
 RUNNING_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' lean-mcp 2>/dev/null | cut -d@ -f2 || echo "none")
 
-# Pull latest and check if digest changed
-if docker compose pull lean-mcp --quiet 2>/dev/null; then
-    # Get the newly pulled digest
+if docker compose -f "$COMPOSE_FILE" pull lean-mcp --quiet 2>/dev/null; then
     source "$DEPLOY_DIR/.env" 2>/dev/null || true
     IMAGE="${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest"
     NEW_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$IMAGE" 2>/dev/null | cut -d@ -f2 || echo "unknown")
@@ -92,9 +116,15 @@ fi
 
 # ── 3. Restart if anything changed ───────────────────────────────
 if [ "$CHANGED" = true ]; then
-    echo "[$(date -Is)] Restarting services..."
-    docker compose up -d --remove-orphans
-    echo "[$(date -Is)] Services restarted."
+    echo "[$(date -Is)] Clearing cached data and restarting services..."
+
+    # Stop lean-mcp to clear any in-memory/on-disk cache
+    docker compose -f "$COMPOSE_FILE" stop lean-mcp 2>/dev/null || true
+    docker compose -f "$COMPOSE_FILE" rm -f lean-mcp 2>/dev/null || true
+
+    # Bring everything back up
+    docker compose -f "$COMPOSE_FILE" up -d --remove-orphans
+    echo "[$(date -Is)] Services restarted with fresh state."
 else
     # Silent — nothing to do
     :

@@ -74,24 +74,24 @@ apt-get install -y gettext-base python3
 git clone REPO_URL_PLACEHOLDER /opt/qou
 cd /opt/qou
 
-# ── Generate config (non-interactive, OAuth creds need manual fill) ─
-./deploy/generate-config.sh --ci
+# ── Generate config (non-interactive folio mode, OAuth creds need manual fill) ─
+./deploy/generate-config.sh --folio --ci
 
 # ── Authenticate with GHCR (read-only, public images don't need this) ─
 # If the image is private, you'll need to: docker login ghcr.io
 
 # ── Start services ────────────────────────────────────────────────
 cd deploy
-docker compose pull
-docker compose up -d
+docker compose -f docker-compose.folio.yml pull
+docker compose -f docker-compose.folio.yml up -d
 
 # ── Set up self-update cron (every minute) ────────────────────────
-CRON_LINE="* * * * * /opt/qou/deploy/self-update.sh >> /var/log/lean-mcp-update.log 2>&1"
+CRON_LINE="* * * * * /opt/qou/deploy/self-update-folio.sh >> /var/log/folio-update.log 2>&1"
 (crontab -l 2>/dev/null || true; echo "$CRON_LINE") | crontab -
 
 # ── Log rotation for update log ──────────────────────────────────
-cat > /etc/logrotate.d/lean-mcp-update <<'LOGROTATE'
-/var/log/lean-mcp-update.log {
+cat > /etc/logrotate.d/folio-update <<'LOGROTATE'
+/var/log/folio-update.log {
     daily
     rotate 7
     compress
@@ -136,4 +136,4 @@ echo "  5. Restart: cd /opt/qou/deploy && docker compose restart oauth2-proxy"
 echo "  6. Caddy auto-provisions TLS once DNS propagates (~5 min)"
 echo ""
 echo "Self-updater cron runs every minute. Check logs:"
-echo "  ssh root@$IP tail -f /var/log/lean-mcp-update.log"
+echo "  ssh root@$IP tail -f /var/log/folio-update.log"

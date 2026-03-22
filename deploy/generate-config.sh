@@ -91,36 +91,32 @@ else
     echo ""
 fi
 
-cat > "$DEPLOY_DIR/.env" <<ENVEOF
-# Auto-generated from lean-mcp.config.json ($MODE mode) — do not commit
-# Regenerate with: ./deploy/generate-config.sh $([ "$MODE" = "folio" ] && echo "--folio")
-
-# ── Deployment mode ──────────────────────────────────────────────
-DEPLOY_MODE=$MODE
-COMPOSE_FILE=$COMPOSE_FILE
-
-# ── Domain & Image ───────────────────────────────────────────────
-LEAN_MCP_DOMAIN=$DOMAIN
-FOLIO_DOMAIN=$DOMAIN
-LEAN_MCP_IMAGE=$IMAGE
-LEAN_MCP_INTERNAL_PORT=$MCP_PORT
-
-# ── Lean MCP Server ──────────────────────────────────────────────
-LEAN_LSP_MCP_TOKEN=$LEAN_TOKEN
-
-# ── Auth Gateway ─────────────────────────────────────────────────
-COOKIE_SECRET=$COOKIE
-OWNER_USERNAME=$OWNER_USERNAME
-SESSION_MAX_AGE=$SESSION_MAX_AGE
-
-# ── Google OAuth (viewers) ───────────────────────────────────────
-GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET
-
-# ── GitHub OAuth (collaborators) ─────────────────────────────────
-GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID
-GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET
-ENVEOF
+# Write .env safely using printf — no heredoc injection risk from secrets
+# containing $, backticks, or backslashes.
+{
+  printf '# Auto-generated from lean-mcp.config.json (%s mode) — do not commit\n' "$MODE"
+  printf '# Regenerate with: ./deploy/generate-config.sh%s\n' "$([ "$MODE" = "folio" ] && echo " --folio")"
+  printf '\n# ── Deployment mode ──────────────────────────────────────────────\n'
+  printf 'DEPLOY_MODE=%s\n' "$MODE"
+  printf 'COMPOSE_FILE=%s\n' "$COMPOSE_FILE"
+  printf '\n# ── Domain & Image ───────────────────────────────────────────────\n'
+  printf 'LEAN_MCP_DOMAIN=%s\n' "$DOMAIN"
+  printf 'FOLIO_DOMAIN=%s\n' "$DOMAIN"
+  printf 'LEAN_MCP_IMAGE=%s\n' "$IMAGE"
+  printf 'LEAN_MCP_INTERNAL_PORT=%s\n' "$MCP_PORT"
+  printf '\n# ── Lean MCP Server ──────────────────────────────────────────────\n'
+  printf 'LEAN_LSP_MCP_TOKEN=%s\n' "$LEAN_TOKEN"
+  printf '\n# ── Auth Gateway ─────────────────────────────────────────────────\n'
+  printf 'COOKIE_SECRET=%s\n' "$COOKIE"
+  printf 'OWNER_USERNAME=%s\n' "$OWNER_USERNAME"
+  printf 'SESSION_MAX_AGE=%s\n' "$SESSION_MAX_AGE"
+  printf '\n# ── Google OAuth (viewers) ───────────────────────────────────────\n'
+  printf 'GOOGLE_CLIENT_ID=%s\n' "$GOOGLE_CLIENT_ID"
+  printf 'GOOGLE_CLIENT_SECRET=%s\n' "$GOOGLE_CLIENT_SECRET"
+  printf '\n# ── GitHub OAuth (collaborators) ─────────────────────────────────\n'
+  printf 'GITHUB_CLIENT_ID=%s\n' "$GITHUB_CLIENT_ID"
+  printf 'GITHUB_CLIENT_SECRET=%s\n' "$GITHUB_CLIENT_SECRET"
+} > "$DEPLOY_DIR/.env"
 
 echo "  ✓ .env generated"
 

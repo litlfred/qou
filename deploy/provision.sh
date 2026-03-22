@@ -66,6 +66,21 @@ cd deploy
 docker compose -f docker-compose.folio.yml pull
 docker compose -f docker-compose.folio.yml up -d
 
+# ── Set up self-update cron (every minute) ────────────────────────
+CRON_LINE="* * * * * /opt/qou/deploy/self-update-folio.sh >> /var/log/folio-update.log 2>&1"
+(crontab -l 2>/dev/null || true; echo "$CRON_LINE") | crontab -
+
+# ── Log rotation for update log ──────────────────────────────────
+cat > /etc/logrotate.d/folio-update <<'LOGROTATE'
+/var/log/folio-update.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+}
+LOGROTATE
+
 echo "=== Folio provisioning complete ==="
 CLOUD_INIT_EOF
 
