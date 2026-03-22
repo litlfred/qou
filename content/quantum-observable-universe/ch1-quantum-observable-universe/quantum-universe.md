@@ -29,9 +29,9 @@ triple $(\mathcal{C}, A, \omega)$ where:
    \]
    ```
 
-   --- multiplication $\mu$, unit $\eta$, comultiplication $\Delta$,
+   — multiplication $\mu$, unit $\eta$, comultiplication $\Delta$,
    counit $\varepsilon$, antipode $S$, and Frobenius
-   form $\lambda$ --- satisfying:
+   form $\lambda$ — satisfying:
 
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathcal{C}$;
