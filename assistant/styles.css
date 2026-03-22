@@ -392,6 +392,33 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .diff-unchanged-block:last-child{border-bottom:none}
 .diff-unchanged-block .bh{font-size:.75rem}
 
+/* ── Diff feedback ──────────────────────────────────────── */
+.diff-fb-section{padding:.5rem 1rem;border-top:1px solid var(--brd)}
+.diff-fb-btn{background:transparent;border:1px dashed var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.2rem .6rem;border-radius:3px;cursor:pointer;transition:all .15s}
+.diff-fb-btn:hover{border-color:var(--ac);color:var(--ac)}
+
+.diff-todo-list{margin-top:.4rem}
+.diff-todo-item{padding:.4rem .6rem;border:1px solid var(--brd);border-radius:4px;margin-bottom:.3rem;font-size:.75rem;background:var(--bg)}
+.diff-todo-item.pri-critical{border-left:3px solid var(--red)}
+.diff-todo-item.pri-high{border-left:3px solid var(--ora)}
+.diff-todo-item.pri-medium{border-left:3px solid var(--yel)}
+.diff-todo-item.pri-low{border-left:3px solid var(--fg-d)}
+
+.diff-todo-head{display:flex;align-items:center;gap:.4rem;margin-bottom:.2rem}
+.diff-todo-status{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .3rem;border-radius:3px;background:var(--bg-r);text-transform:uppercase;font-weight:600}
+.diff-todo-status.open{color:var(--ac)}
+.diff-todo-status.in_progress{color:var(--yel)}
+.diff-todo-status.resolved{color:var(--grn)}
+.diff-todo-summary{flex:1;color:var(--fg-b)}
+
+.diff-todo-comment{font-size:.7rem;color:var(--fg-d);margin-bottom:.3rem;padding-left:.3rem;border-left:2px solid var(--brd)}
+
+.diff-todo-controls{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.diff-todo-pri{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg);font-family:var(--f-mono);font-size:.55rem;padding:.1rem .2rem;border-radius:3px;cursor:pointer}
+.diff-todo-assignee,.diff-todo-date{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d)}
+.diff-todo-del{background:transparent;border:none;color:var(--fg-d);font-size:.85rem;cursor:pointer;padding:0 .2rem;line-height:1;transition:color .15s}
+.diff-todo-del:hover{color:var(--red)}
+
 /* ── AI Characterize ─────────────────────────────────────── */
 .characterize-section{margin-top:.8rem}
 .char-btn{background:var(--bg-r);border:1px solid var(--ac);color:var(--ac);font-family:var(--f-mono);font-size:.65rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer;transition:all .15s}

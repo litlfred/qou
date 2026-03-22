@@ -1005,6 +1005,98 @@
       el.appendChild(srcPane);
     }
 
+    // Feedback: button + inline todo list with edit/delete
+    const fbSection = h("div", "diff-fb-section");
+
+    // "Add feedback" button — reuses the slide-in panel
+    const fbBtn = h("button", "diff-fb-btn", "+ feedback");
+    fbBtn.onclick = () => openFeedback(blk);
+    fbSection.appendChild(fbBtn);
+
+    // Inline existing todos
+    if (blk.todos && blk.todos.length) {
+      const todoList = h("div", "diff-todo-list");
+      for (const td of blk.todos) {
+        todoList.appendChild(renderDiffTodo(td, blk, todoList));
+      }
+      fbSection.appendChild(todoList);
+    }
+    el.appendChild(fbSection);
+
+    return el;
+  }
+
+  /** Render a todo item inside a diff block with inline edit/delete controls. */
+  function renderDiffTodo(td, blk, listEl) {
+    const el = h("div", `diff-todo-item pri-${td.priority || "medium"}`);
+
+    const head = h("div", "diff-todo-head");
+    head.innerHTML = `
+      <span class="diff-todo-status ${td.status || ""}">${esc(td.status || "open")}</span>
+      <span class="diff-todo-summary">${esc(td.summary || "")}</span>`;
+    el.appendChild(head);
+
+    if (td.comment && td.comment !== td.summary) {
+      el.appendChild(h("div", "diff-todo-comment", esc(td.comment)));
+    }
+
+    // Controls: priority selector + delete button
+    const controls = h("div", "diff-todo-controls");
+
+    // Priority selector
+    const priSelect = h("select", "diff-todo-pri");
+    for (const p of ["low", "medium", "high", "critical"]) {
+      const opt = document.createElement("option");
+      opt.value = p;
+      opt.textContent = p;
+      if (p === (td.priority || "medium")) opt.selected = true;
+      priSelect.appendChild(opt);
+    }
+    priSelect.onchange = async () => {
+      try {
+        await fetch("/api/feedback/update", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id, priority: priSelect.value }),
+        });
+        td.priority = priSelect.value;
+        el.className = `diff-todo-item pri-${priSelect.value}`;
+        showToast("Priority updated");
+      } catch (e) { showToast("Failed: " + e.message); }
+    };
+    controls.appendChild(priSelect);
+
+    // Assignee label
+    if (td.assignee) {
+      controls.appendChild(h("span", "diff-todo-assignee", esc(td.assignee)));
+    }
+
+    // Date
+    if (td.createdAt) {
+      controls.appendChild(h("span", "diff-todo-date", esc(td.createdAt.slice(0, 10))));
+    }
+
+    // Delete button
+    const delBtn = h("button", "diff-todo-del", "\u00d7");
+    delBtn.title = "Delete feedback";
+    delBtn.onclick = async () => {
+      if (!confirm("Delete this feedback item?")) return;
+      try {
+        const res = await fetch("/api/feedback/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id }),
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        el.remove();
+        // Update blk.todos
+        if (blk.todos) blk.todos = blk.todos.filter(t => t.id !== td.id);
+        showToast("Feedback deleted");
+      } catch (e) { showToast("Failed: " + e.message); }
+    };
+    controls.appendChild(delBtn);
+
+    el.appendChild(controls);
     return el;
   }
 
