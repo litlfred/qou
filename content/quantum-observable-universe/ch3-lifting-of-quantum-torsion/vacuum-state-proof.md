@@ -1,7 +1,7 @@
 
 The algebra $\mathcal{A}_\infty$ is the direct limit of the fibre algebras
 $\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$
-([Definition](#def:direct-limit-algebra)), each of which is a
+([direct limit algebra](#def:direct-limit-algebra)), each of which is a
 $C^*$-algebra carrying a continuous $\mathrm{SU}(2)$ action by automorphisms.
 
 *Existence.*
@@ -15,7 +15,7 @@ $$
   \;=\;
   \int_{\mathrm{SU}(2)} \psi_n(g \cdot a)\; d\mu(g).
 $$
-The descent homomorphisms $\mathfrak{d}_n$ ([Lemma](#lem:descent)) are
+The descent homomorphisms $\mathfrak{d}_n$ ([descent](#lem:descent)) are
 equivariant and surjective, so the invariant states $\{\omega_n\}$ form a
 compatible system.  By the universal property of the direct limit, they
 determine a state $\omega$ on $\mathcal{A}_\infty$ satisfying

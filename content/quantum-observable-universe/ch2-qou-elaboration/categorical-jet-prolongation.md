@@ -1,6 +1,6 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe with
-connection $\nabla$ ([Definition](#def:categorical-connection)).
-Then $J^1(A)$ ([Definition](#def:categorical-jet)) inherits a
+connection $\nabla$ ([categorical connection](#def:categorical-connection)).
+Then $J^1(A)$ ([categorical jet](#def:categorical-jet)) inherits a
 Frobenius--Hopf structure from $A$, and the quadruple
 $(\mathcal{C},\, J^1(A),\, \omega',\, q)$ --- where $\omega'$ is
 the induced fibre functor --- is again a quantum universe.

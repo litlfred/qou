@@ -43,4 +43,4 @@ For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides
 a natural involutive structure on the representation category via
 $f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$. In the
 $\mathrm{SU}(2)$ example, this is the Hilbert-space adjoint
-([Example](#ex:dagger-su2)).
+([dagger on SU(2)](#ex:dagger-su2)).

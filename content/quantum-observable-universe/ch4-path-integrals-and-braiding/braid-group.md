@@ -11,4 +11,4 @@ The *braid group on three strands* is the group
 This is the fundamental group of the configuration space of three
 unordered points in the plane, and is isomorphic to the fundamental group
 of the complement of the trefoil knot
-([Remark](#rem:trefoil-knot-group)).
+([trefoil knot group](#rem:trefoil-knot-group)).

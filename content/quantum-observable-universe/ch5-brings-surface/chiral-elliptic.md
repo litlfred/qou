@@ -1,5 +1,5 @@
 Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio
-([Remark](#rem:braid-group-action)(i)).  Substituting the
+([braid group action](#rem:braid-group-action)(i)).  Substituting the
 constraint $x_0+x_1=C$ and eliminating $x_0,x_1$ in favour of $z$,
 the quadratic and cubic power-sum
 conditions on
@@ -17,5 +17,5 @@ fibre; its $j$-invariant varies as a rational function of $z$.  The
 monodromy of $E_z$ around the singular fibres (where the discriminant
 of the cubic vanishes) recovers the holonomy
 generators $H_1,H_2$ of
-[Remark](#rem:holonomy-trefoil).
+[holonomy of trefoil](#rem:holonomy-trefoil).
 

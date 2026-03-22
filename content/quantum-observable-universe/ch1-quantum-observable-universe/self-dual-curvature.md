@@ -1,6 +1,6 @@
 In an archimedean quantum observable universe with
 $\dim_{\mathbb{R}} H = 4$,
-[Proposition](#prop:categorical-self-duality) specialises:
+[categorical self duality](#prop:categorical-self-duality) specialises:
 every instanton connection $A$ on $P$ satisfies
 $F_A|_H = {*_H}\,F_A|_H$.  The categorical Yang--Mills functional
 $\lambda(\star_q(F_\nabla) \cdot F_\nabla)$ specialises to

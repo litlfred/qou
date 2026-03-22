@@ -1,13 +1,13 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
 with volume form $\mathrm{vol} \in \Omega^n(A)$
-([Definition](#def:q-hodge-star)).  Every connection $\nabla$
+([$q$-Hodge star](#def:q-hodge-star)).  Every connection $\nabla$
 that is a critical point of the categorical Yang--Mills functional
 
 $$
   S[\nabla] \;=\; \lambda\!\bigl(\star_q(F_\nabla) \cdot F_\nabla\bigr)
 $$
 
-is an instanton ([Definition](#def:categorical-instanton)).  That is,
+is an instanton ([categorical instanton](#def:categorical-instanton)).  That is,
 the following diagram commutes:
 
 ```tex

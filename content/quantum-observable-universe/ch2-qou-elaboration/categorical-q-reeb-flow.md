@@ -1,6 +1,6 @@
 Let $\xi$ be the Reeb derivation of $A$
-([Definition](#def:categorical-reeb)) and $[\,\cdot\,,\cdot\,]_q$
-the $q$-Lie bracket ([Definition](#def:categorical-q-lie-bracket)).
+([categorical Reeb derivation](#def:categorical-reeb)) and $[\,\cdot\,,\cdot\,]_q$
+the $q$-Lie bracket ([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)).
 The *$q$-deformed Reeb derivation* $\xi_q$ is the derivation of $A$
 defined by
 

@@ -1,11 +1,11 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)). The Frobenius form
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)). The Frobenius form
 $\lambda \colon A \to \mathbf{1}$ induces an isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under
 which:
 
 1. the projective line object $\mathbb{P}(V)$
-   ([Definition](#def:projective-line-object)) embeds in the adjoint
+   ([projective line object](#def:projective-line-object)) embeds in the adjoint
    object $\mathrm{Ad}(A)$ as the coadjoint orbit of a highest-weight
    vector;
 2. the assignment $\sigma \colon \mathbb{P}(V) \hookrightarrow

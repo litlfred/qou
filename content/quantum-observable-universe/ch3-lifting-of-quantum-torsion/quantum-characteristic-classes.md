@@ -1,12 +1,12 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower
-([Definition](#def:recursive-brane-tower)).  Each transition
+$\{A_n\}_{n \geq 0}$ be its
+([recursive brane tower](#def:recursive-brane-tower)).  Each transition
 $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
 of gerbes on the underlying site in the sense of
 Yekutieli [yekutieli2010]: the Frobenius--Hopf object $A_n$ is an
 object in a gerbe $\mathfrak{G}_n$ banded by the sheaf of units
-$\mathcal{B}$, and the jet prolongation
-([Proposition](#prop:jet-prolongation)) produces a central extension
+$\mathcal{B}$, and the
+([jet prolongation](#prop:jet-prolongation)) produces a central extension
 $$
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}_{n+1}
@@ -19,7 +19,7 @@ $$
   \kappa_n \;\in\; H^2(\mathcal{S},\, \mathcal{B})
 $$
 that obstruct the lifting of objects from $\mathfrak{G}_n$
-to $\mathfrak{G}_{n+1}$.  By the Yekutieli Lifting Condition
-([Definition](#def:yekutieli-lifting-condition)), the vanishing
+to $\mathfrak{G}_{n+1}$.  By the
+([Yekutieli lifting condition](#def:yekutieli-lifting-condition)), the vanishing
 $\kappa_n = 0$ is the necessary and sufficient condition for the lift
-to exist ([Proposition](#prop:yekutieli-lifting)).
+to exist ([Yekutieli lifting](#prop:yekutieli-lifting)).

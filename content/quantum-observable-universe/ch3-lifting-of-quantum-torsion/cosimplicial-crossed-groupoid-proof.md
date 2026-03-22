@@ -15,7 +15,7 @@ descent $\mathfrak{d}_{n+1}$ is its left adjoint.  The mixed identity
 $\sigma^j \circ \delta^i$ reduces to three cases
 ($i < j$, $i = j$ or $i = j + 1$, $i > j + 1$), each verified using
 the retraction property $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
-([Lemma](#lem:descent)).
+([descent](#lem:descent)).
 
 *Step 2: Crossed-module structure.*
 At each level $n$, the pair
@@ -34,8 +34,8 @@ central extension.
 *Step 3: Compatibility.*
 The coface and codegeneracy maps respect the crossed-module structure
 because the jet prolongation preserves the Hopf-algebra multiplication
-([Proposition](#prop:jet-prolongation), Step 2) and the descent
-homomorphism is a $*$-homomorphism ([Lemma](#lem:descent), Step 4).
+([jet prolongation](#prop:jet-prolongation), Step 2) and the descent
+homomorphism is a $*$-homomorphism ([descent](#lem:descent), Step 4).
 Hence the conjugation action of $g_{ij}^{(n)}$ on $a_{ij}^{(n)}$ is
 compatible with the simplicial maps, making the total assignment a
 cosimplicial crossed groupoid.

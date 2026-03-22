@@ -1,5 +1,5 @@
 The $q$-deformed Reeb vector field $\xi_q$
-([Example](#ex:q-reeb-vector-field)) generates a one-parameter
+([$q$-Reeb vector field](#ex:q-reeb-vector-field)) generates a one-parameter
 family of diffeomorphisms
 $\phi_t^q \colon M \to M$, $t \in \mathbb{R}$:
 $$

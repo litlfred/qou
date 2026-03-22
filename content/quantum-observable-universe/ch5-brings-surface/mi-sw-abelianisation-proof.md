@@ -7,7 +7,7 @@ $\mathrm{SU}(2)$-bundle $P$ trivialises (every $\mathrm{SU}(2)$-bundle
 over $S^2$ is classified by $\pi_1(\mathrm{SU}(2)) = 0$).  The
 connection $\nabla_A$ therefore reduces to a $\mathfrak{su}(2)$-valued
 $1$-form $A|_{E_c}$.  By the weight-space decomposition
-([Remark](#rem:weight-space-decomposition)), the restriction splits as
+([weight space decomposition](#rem:weight-space-decomposition)), the restriction splits as
 
 $$
   A\big|_{E_c}
@@ -22,7 +22,7 @@ $$
 where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.
 The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on
 $E_c$.  Since $E_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
-([Remark](#rem:chiral-bundles)) restricts to a single sheet, and the
+([chiral bundles](#rem:chiral-bundles)) restricts to a single sheet, and the
 Higgs-field eigenvalue is the chiral coordinate $X$.  The abelian
 component therefore satisfies $A^0 = X\,dz = \lambda_{\mathrm{SW}}$,
 recovering the Seiberg--Witten
@@ -45,7 +45,7 @@ yields the absolute value of the period.
 At vertical degree $n = 0$ the Killing-form projection onto $J^0$
 recovers the base differential $\lambda_{\mathrm{SW}}^{(0)} = X\,dz$
 and the electron period $a_D^{(e)}$.  At vertical degree $n \geq 1$ the
-jet prolongation ([Proposition](#prop:jet-prolongation)) lifts the
+([jet prolongation](#prop:jet-prolongation)) lifts the
 connection to $J^n E$, replacing $X\,dz$ with the $n$-th prolonged
 differential $\lambda_{\mathrm{SW}}^{(n)}$: the $1$-jet component is
 $dX$ (the implicit derivative of the color tube

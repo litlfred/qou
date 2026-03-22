@@ -1,9 +1,9 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-instanton $\nabla$ ([Definition](#def:categorical-instanton)) and
+instanton $\nabla$ ([categorical instanton](#def:categorical-instanton)) and
 $q$-deformed exterior derivative $d_q$
-([Definition](#def:categorical-q-ext-deriv)). The *categorical
+([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The *categorical
 transport equation* for a section $\psi \in \omega(J^1(A))$
-([Definition](#def:categorical-jet)) is
+([categorical jet](#def:categorical-jet)) is
 
 ```tex
 \begin{equation}\label{eq:categorical-transport}

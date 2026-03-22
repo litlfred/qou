@@ -1,6 +1,6 @@
 Let $\nabla$ be a connection on $A$
-([Definition](#def:categorical-connection)) and $\xi$ the Reeb
-derivation ([Definition](#def:categorical-reeb)).  The
+([categorical connection](#def:categorical-connection)) and $\xi$ the Reeb
+derivation ([categorical Reeb derivation](#def:categorical-reeb)).  The
 *$q$-deformed connection* is
 
 $$

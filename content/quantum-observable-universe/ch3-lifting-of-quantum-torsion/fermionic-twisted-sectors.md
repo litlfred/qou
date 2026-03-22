@@ -1,7 +1,7 @@
 When the Yekutieli obstruction class $\kappa_n$ does not vanish, the
 lift $E_n \to E_{n+1}$ is obstructed and the transition between brane
-levels acquires a non-trivial twist.  In the algebraic filter
-([Remark](#rem:algebraic-filter)), fermionic-type matter --- those
+levels acquires a non-trivial twist.  In the
+([algebraic filter](#rem:algebraic-filter)), fermionic-type matter --- those
 $q$-harmonic forms satisfying $[F_A,\, \alpha] \neq 0$ --- exists
 precisely at the loci where $\kappa_n \neq 0$.  The non-vanishing
 obstruction class creates "twisted" sectors in the gauge flow: the

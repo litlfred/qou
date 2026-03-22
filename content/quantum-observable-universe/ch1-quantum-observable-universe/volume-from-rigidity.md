@@ -24,5 +24,5 @@ $\Lambda^2 V$ (the *volume form factorisation*):
 
 and $\epsilon$ is non-degenerate; that is,
 condition (iii) of
-[Definition](#def:quantum-observable-universe) holds.
+[quantum observable universe](#def:quantum-observable-universe) holds.
 

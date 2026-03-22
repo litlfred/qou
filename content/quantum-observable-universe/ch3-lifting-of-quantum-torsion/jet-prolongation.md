@@ -1,5 +1,5 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
-ring $R$ ([Definition](#def:quantum-observable-universe)).  Define the
+ring $R$ ([quantum observable universe](#def:quantum-observable-universe)).  Define the
 *jet object*
 $$
   J^1(A) \;:=\; A \otimes \Omega^1(A),

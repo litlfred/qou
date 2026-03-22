@@ -165,8 +165,7 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
@@ -273,8 +272,7 @@ export interface ProseBlock {
   /** Pre-rendered assets for ```tex blocks. */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Display math / equations ─────────────────────────────────────
@@ -290,8 +288,7 @@ export interface EquationBlock {
   /** Pre-rendered equation (e.g. SVG from MathJax/KaTeX server). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Diagrams ─────────────────────────────────────────────────────
@@ -309,8 +306,7 @@ export interface DiagramBlock {
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── The discriminated union ──────────────────────────────────────
@@ -394,8 +390,6 @@ export interface Chapter {
   /** Sections can be inline Section objects or SectionRef references. */
   sections: (Section | SectionRef)[];
   meta?: Record<string, unknown>;
-  /** Chapter-level todos. */
-  todos?: TodoItem[];
 }
 
 /**
@@ -438,8 +432,6 @@ export interface Paper {
    */
   macros?: Record<string, PaperMacro>;
   meta?: Record<string, unknown>;
-  /** Paper-level todos (cross-cutting concerns, overall tasks). */
-  todos?: TodoItem[];
 }
 
 /**

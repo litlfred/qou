@@ -1,5 +1,5 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-maximal torus $T \subset G$ ([Definition](#def:maximal-torus)).
+maximal torus $T \subset G$ ([maximal torus](#def:maximal-torus)).
 The *projective line object* is the quotient
 $$
   \mathbb{P}(V) = G / T,

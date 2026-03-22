@@ -3,24 +3,24 @@ By [Theorem 1.1, yekutieli2010], a weak equivalence of central
 extensions of gerbes induces an isomorphism on the category of global
 objects up to isomorphism.  In the brane tower, the coface maps (jet
 prolongation) and codegeneracy maps (descent) compose to give the descent
-involution $\tau_n$ ([Definition](#def:descent-involution)), which is
+involution $\tau_n$ ([descent involution](#def:descent-involution)), which is
 idempotent.  The image $\mathcal{A}_{n+1}^{\mathrm{desc}}$
-([Proposition](#prop:descent-eigenspaces)) is therefore isomorphic, as
+([descent eigenspaces](#prop:descent-eigenspaces)) is therefore isomorphic, as
 an algebra, to the level-$n$ section algebra via the ascent embedding
 $\ell_n$.
 
 For the vacuum state, the compatibility
 $\omega(\iota_n(a|_n)) = \omega_n(a|_n)$ holds by the universal property
-of the direct limit ([Definition](#def:direct-limit-algebra)).  The
+of the direct limit ([direct limit algebra](#def:direct-limit-algebra)).  The
 Haar-averaging construction in the proof of
-[Proposition](#prop:vacuum-state) produces states $\omega_n$ that are
+[vacuum state](#prop:vacuum-state) produces states $\omega_n$ that are
 compatible with the transition maps:
 $\omega_{n+1} \circ \iota_{n,n+1} = \omega_n$, where
 $\iota_{n,n+1}$ is the transition map.  A zigzag of coface and
 codegeneracy maps between levels $n$ and $m$ factors as a sequence of
 such transition maps and their adjoints (the descent homomorphisms),
 each of which preserves the Haar state by equivariance
-([Lemma](#lem:descent), Step 5).
+([descent](#lem:descent), Step 5).
 
 Therefore the expectation value
 $\omega(\iota_n(a|_n)) = \omega_n(a|_n) = \omega_m(a|_m) =

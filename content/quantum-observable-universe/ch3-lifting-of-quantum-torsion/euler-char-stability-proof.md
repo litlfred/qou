@@ -1,8 +1,8 @@
 
-By the construction of the recursive brane tower
-([Definition](#def:recursive-brane-tower)), $E_{n+1}$ is the bundle of
+By the construction of the
+([recursive brane tower](#def:recursive-brane-tower)), $E_{n+1}$ is the bundle of
 orthonormal frames of the first jet bundle $J^1 E_n$
-([Proposition](#prop:jet-prolongation)).  The Euler characteristic of a
+([jet prolongation](#prop:jet-prolongation)).  The Euler characteristic of a
 fibre bundle $F \hookrightarrow E_{n+1} \to E_n$ satisfies the
 multiplicativity formula
 $$
@@ -20,7 +20,7 @@ following reason.
 The Leray--Serre spectral sequence of
 $S^2 \hookrightarrow E_{n+1} \to E_n$ has $E_2^{p,q} = H^p(E_n;\,
 H^q(S^2;\, \mathbb{Z}))$.  The quantum characteristic classes $\kappa_n$
-([Definition](#def:quantum-characteristic-classes)) are precisely the
+([quantum characteristic classes](#def:quantum-characteristic-classes)) are precisely the
 obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$.  By
 the vanishing condition of the quantum observable universe axioms---which
 forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$---the monodromy

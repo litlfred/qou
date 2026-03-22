@@ -1,5 +1,5 @@
-With notation as in [Definition](#def:exceptional-divisor), fix the
-substrate parameter $q$ ([Definition](#def:substrate-parameter)) and set
+With notation as in [exceptional divisor](#def:exceptional-divisor), fix the
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set
 $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
 *red*, *green*, and *blue* sector embeddings by
 
@@ -29,5 +29,5 @@ where adjacent sectors share only their boundary meridians
 (at $\psi = 0$ and $\psi = 2\pi/3$ in each sector's local coordinate),
 and the union covers $E_p$ without overlap.  The three sectors correspond to
 the three copies of $S_3 \subset S_5$ in
-[Remark](#rem:chirality-trefoil): $\mathfrak{r}$ is the first, $\mathfrak{g}$ the
+[chirality and trefoil](#rem:chirality-trefoil): $\mathfrak{r}$ is the first, $\mathfrak{g}$ the
 second, and $\mathfrak{b}$ the third.

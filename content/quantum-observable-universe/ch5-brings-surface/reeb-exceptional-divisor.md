@@ -1,5 +1,5 @@
 The Reeb vector field $\xi_q$
-([Definition](#def:q-reeb-vector-field)) is the dynamical
+([$q$-Reeb vector field](#def:q-reeb-vector-field)) is the dynamical
 complement to the static topology of the Bring surface.  While the
 surface itself provides the handles (genus $4$), the Reeb vector
 provides the "wind" blowing through them, and the quantum torsion $q$
@@ -7,7 +7,7 @@ sets the strength of that wind.
 
 **The classical limit ($q\to 1$): cones and frozen geometry.**
 If the substrate parameter $q\to 1$
-([Definition](#def:substrate-parameter)), the
+([substrate parameter](#def:substrate-parameter)), the
 torsion coupling vanishes and the phase rotation
 $w_k\mapsto\zeta^k\,w_k$ loses its temporal component.  The fibre
 over each base point ceases to twist as one moves along a path on
@@ -15,15 +15,15 @@ $\mathbb{P}^1(\mathbb{C})$: the chiral tubes are frozen in the configuration
 determined by the power-sum equations.  Metrically this is a conical
 limit---the curvature concentrates at the blow-up points but no
 circulating torsion field smooths it out.  In terms of the Reeb
-flow ([Definition](#def:q-reeb-flow)), $\xi_q\to\xi_1=\xi$ becomes
+flow ([$q$-Reeb flow](#def:q-reeb-flow)), $\xi_q\to\xi_1=\xi$ becomes
 the classical Reeb field, and the Heisenberg commutator
 $[\hat{X},\hat{P}]_q\to 0$
-([Remark](#rem:heisenberg-commutator)): the Bring variety
+([Heisenberg commutator](#rem:heisenberg-commutator)): the Bring variety
 collapses to a non-rotating algebraic surface.
 
 **Exceptional divisor as mixing interface.**
 Blowing up a spacetime defect $z_c$ where chiral sheets merge
-([Remark](#rem:brings-smoothness)) replaces the singular point with
+([Bring's surface smoothness](#rem:brings-smoothness)) replaces the singular point with
 an exceptional divisor $E_c\cong\mathbb{P}^1(\mathbb{C})\cong S^2$.  This
 sphere acts as the boundary between the macroscopic coordinates
 $(x_0,x_1)$ and the internal chiral modes $(w_1,w_2,w_3)$: the
@@ -36,7 +36,7 @@ On the blown-up surface, the Reeb vector field $\xi_q$ is the
 infinitesimal generator of the $U(1)$ action that rotates the chiral
 fibre above the exceptional divisor.  Concretely, the
 $q$-deformed Reeb flow $\phi_t^q$
-([Definition](#def:q-reeb-flow)) restricted to $E_c$ generates
+([$q$-Reeb flow](#def:q-reeb-flow)) restricted to $E_c$ generates
 the Hopf fibration $S^3\to S^2\cong E_c$, and the substrate
 parameter $q$ controls the pitch of this rotation.  The vector
 field $\xi_q$ thereby provides the "time-like" direction within the

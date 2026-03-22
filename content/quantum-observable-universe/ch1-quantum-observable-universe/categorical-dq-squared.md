@@ -1,5 +1,5 @@
 Let $d_q$ be the categorical $q$-deformed exterior derivative
-([Definition](#def:categorical-q-ext-deriv)).  The composition
+([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).  The composition
 $d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is
 given by
 
@@ -12,7 +12,7 @@ where $\omega_V \in \Omega^2(A)$ is the curvature of the weight
 decomposition (the image of the unit $1_A$ under
 $\pi_V \circ d \circ d$) and $[\xi, \alpha]$ is the Lie derivative
 along the generator $\xi$ of the $T$-action
-([Definition](#def:weight-decomposition)).  The following diagram
+([weight decomposition](#def:weight-decomposition)).  The following diagram
 displays the obstruction to nilpotence:
 
 ```tex

@@ -1,5 +1,5 @@
 The growth profiles in
-[Definition](#def:quaternionic-spectral-resolvents) separate the space-like
+[quaternionic spectral resolvents](#def:quaternionic-spectral-resolvents) separate the space-like
 and time-like sectors of the Bring's surface:
 
 - *$\omega_1$ (space-like):* the factor $1/\ln_q(1+r)$ diverges
@@ -9,9 +9,9 @@ and time-like sectors of the Bring's surface:
 - *$\omega_2,\omega_3$ (time-like):* the factor
   $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$,
   driven by the $q$-deformed Reeb flow
-  ([Definition](#def:q-reeb-flow)).  These ladder modes expand at the big
+  ([$q$-Reeb flow](#def:q-reeb-flow)).  These ladder modes expand at the big
   bang before tapering as the geometric viscosity
-  ([Remark](#rem:q-harmonic-physical)) takes hold.
+  ([$q$-harmonic physical interpretation](#rem:q-harmonic-physical)) takes hold.
 
 To realise the rotation as a function of $r$, embed the radial parameter
 into $\mathrm{Sp}(1)$ via the unit quaternion

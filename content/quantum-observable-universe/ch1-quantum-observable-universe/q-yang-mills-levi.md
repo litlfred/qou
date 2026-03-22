@@ -1,6 +1,6 @@
 Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
 with instanton connection $A$ and substrate parameter $q$
-([Definition](#def:substrate-parameter)).  The
+([substrate parameter](#def:substrate-parameter)).  The
 *$q$-weighted Yang--Mills--Levi functional* is
 $$
   S_q[A, \theta]
@@ -8,4 +8,4 @@ $$
         \theta \wedge (d\theta)^n,
 $$
 where $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert(p)$
-([Remark](#rem:c-substrate-via-levi)).
+([$\mathbb{C}$-substrate via Levi form](#rem:c-substrate-via-levi)).

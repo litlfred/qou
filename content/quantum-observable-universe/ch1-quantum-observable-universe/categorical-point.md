@@ -1,5 +1,5 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe
-([Definition](#def:quantum-universe)).  A *categorical point*
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum universe](#def:quantum-universe)).  A *categorical point*
 of $A$ is a morphism
 
 $$

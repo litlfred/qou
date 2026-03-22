@@ -1,7 +1,7 @@
 Let $E_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a branch
-point $z_c$ ([Remark](#rem:brings-smoothness)), and let
+point $z_c$ ([Bring's surface smoothness](#rem:brings-smoothness)), and let
 $(\nabla_A q,\; L \wedge F^+)$ be the connection--curvature pair of the
-mass identity ([Definition](#def:mass-identity)).  Then for each
+([mass identity](#def:mass-identity)).  Then for each
 vertical degree $n \geq 0$ in the Reeb decomposition, the restriction
 of the nonabelian multiplicative integral to $E_c$ abelianises to the
 $n$-th prolonged Seiberg--Witten period:

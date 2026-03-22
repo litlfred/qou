@@ -1,4 +1,4 @@
-Continuing [Example](#ex:qou-su2), the simple objects of
+Continuing [QOU on SU(2)](#ex:qou-su2), the simple objects of
 $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ are the irreducible
 representations $V_j \cong \mathbb{C}^{2j+1}$:
 
@@ -30,6 +30,6 @@ $W \cong \bigoplus_j V_j^{\oplus m_j}$, with multiplicities
 $m_j \in \mathbb{N}$. The polynomial ring
 $\mathbb{C}[z] = \bigoplus_{n \geq 0} \mathrm{Sym}^n V$ is the
 coordinate ring of $\mathbb{P}^1(\mathbb{C}) = \mathbb{P}(V)$
-([Definition](#def:projective-line-object)), and each homogeneous
+([projective line object](#def:projective-line-object)), and each homogeneous
 component $\mathrm{Sym}^n V \cong V_{n/2}$ is an irreducible
 representation of dimension $n + 1$.

@@ -1,4 +1,4 @@
-Continuing [Example](#ex:frobenius-su2), the category
+Continuing [Frobenius SU(2)](#ex:frobenius-su2), the category
 $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ carries a canonical
 involutive structure built from the antipode:
 

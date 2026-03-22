@@ -60,21 +60,27 @@
     /* Sidebar */
     #sidebar{display:none}
     body.has-sidebar #sidebar{display:block;position:fixed;top:34px;left:0;width:210px;bottom:0;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;padding:.6rem 0;z-index:90;font-family:var(--f-head);font-size:.72rem}
-    .sb-ch{padding:.4rem .6rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
+    .sb-ch{padding:.4rem .6rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem;display:flex;align-items:center;gap:.3rem}
     .sb-ch:hover{color:var(--ac)}
     .sb-ch.active{color:var(--ac)}
+    .sb-ch .sb-arrow{font-size:.5rem;transition:transform .15s;flex-shrink:0}
+    .sb-ch.open .sb-arrow{transform:rotate(90deg)}
+    .sb-ch-body{display:none;overflow:hidden}
+    .sb-ch.open+.sb-ch-body{display:block}
     .sb-sec{padding:.25rem .6rem .25rem 1rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
     .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
     .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
     .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
     .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
-    .sb-badge{font-size:.5rem;padding:0 .3rem;border-radius:3px;line-height:1.4;flex-shrink:0}
+    .sb-badge{font-size:.55rem;padding:.05rem .35rem;border-radius:3px;line-height:1.4;flex-shrink:0;cursor:default;position:relative;letter-spacing:.02em}
     .sb-badge.todo{background:var(--ac);color:var(--bg)}
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
-    .sb-badge.lean-miss{background:#555;color:#aaa}
+    .sb-badge.lean-miss{background:#666;color:#ccc}
+    .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
+    .sb-badge:hover::after{opacity:1}
     .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
     .sb-toggle:hover{color:var(--ac)}
     @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
@@ -88,10 +94,18 @@
 
     /* Structure */
     .ch{margin-bottom:3rem}
-    .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd)}
+    .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd);display:flex;align-items:baseline;gap:.6rem}
     .ch-t .n{color:var(--ac);font-weight:400}
-    .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem}
+    .ch-t .ch-title-text{flex:1}
+    .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem;display:flex;align-items:baseline;gap:.5rem}
+    .sec-t .sec-title-text{flex:1}
     .sec-n{display:none}
+    /* Chapter/section feedback actions — right-aligned, inline with title */
+    .struct-acts{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
+    .struct-acts .sa-btn{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:1px solid transparent;border-radius:2px;padding:.1rem .35rem;cursor:pointer;white-space:nowrap;transition:all .15s}
+    .struct-acts .sa-btn:hover{color:var(--ac);border-color:var(--ac-d)}
+    .struct-acts .sa-count{font-family:var(--f-mono);font-size:.55rem;color:var(--ac);background:var(--bg-r);border-radius:8px;padding:0 .35rem;line-height:1.5;min-width:1.2rem;text-align:center}
+    body.reading .struct-acts{display:none!important}
 
     /* Blocks */
     .blk{margin:1.5rem 0;position:relative}
@@ -306,9 +320,46 @@
       /* ── Footnotes / references ─────────────────────────── */
       .bb sup{font-size:.75em}
     }
-    /* Reading mode — hide decorations */
+    /* Reading mode — hide decorations, clean layout */
     body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
-    body.reading .bh{margin-bottom:.3rem}
+    /* LaTeX article styling for block headers */
+    body.reading .bh{display:inline!important;margin-bottom:0!important;gap:0!important;font-family:var(--f-body)}
+    body.reading .bh-anchor{display:inline!important;gap:0!important}
+    body.reading .bk{font-family:var(--f-body)!important;font-size:var(--f-sz)!important;font-weight:700!important;font-style:normal!important;text-transform:capitalize!important;color:var(--fg-b)!important;letter-spacing:0!important;display:inline!important}
+    body.reading .bk::after{content:'.'!important;display:inline!important}
+    body.reading .bt{font-family:var(--f-body)!important;font-size:var(--f-sz)!important;font-weight:400!important;font-style:normal!important;color:var(--fg-b)!important;display:inline!important}
+    body.reading .bt::before{content:' ('!important}
+    body.reading .bt::after{content:')'!important}
+    /* Block body inline after header */
+    body.reading .bb{display:inline!important}
+    body.reading .bb p:first-child{display:inline!important;margin-top:0!important}
+    /* Theorem-like bodies in italic (LaTeX convention) */
+    body.reading .env.theorem .bb,body.reading .env.proposition .bb,body.reading .env.lemma .bb,body.reading .env.corollary .bb,body.reading .env.conjecture .bb{font-style:italic}
+    body.reading .env.theorem .katex,body.reading .env.proposition .katex,body.reading .env.lemma .katex,body.reading .env.corollary .katex,body.reading .env.conjecture .katex{font-style:normal}
+    body.reading .env.definition .bb{font-style:normal}
+    body.reading .env.remark .bk{font-style:italic!important;font-weight:400!important}
+    /* Section/chapter titles in body font */
+    body.reading .ch-t{font-family:var(--f-body)!important}
+    body.reading .sec-t{font-family:var(--f-body)!important}
+    /* Remove background, borders, coloring from content blocks */
+    body.reading .env{background:none!important;border:none!important;border-left:none!important;padding:.6rem 0!important;border-radius:0!important}
+    body.reading .blk{margin:1rem 0}
+    /* Condense spacing */
+    body.reading .ch{margin-bottom:2rem}
+    body.reading .sec-t{margin:1.5rem 0 .8rem}
+    /* Expand all proofs — hide stubs, show full blocks */
+    body.reading .blk-stub.proof{display:none!important}
+    body.reading .blk-proof{display:block!important}
+    body.reading .prf-toggle{display:none!important}
+    body.reading .prf-body{display:block!important;padding:.4rem 0 .2rem}
+    body.reading .prf-body::before{content:'Proof. ';font-style:italic;font-weight:400}
+    /* QED: black filled rectangle (tombstone) */
+    body.reading .prf-body .qed::after{content:'';display:inline-block;width:8px;height:8px;background:#000;margin-left:.3rem}
+    [data-theme="dark"] body.reading .prf-body .qed::after{background:var(--fg)}
+    body.reading .prf-body .qed{text-align:right;margin-top:.3rem}
+    /* Also handle env.proof blocks */
+    body.reading .env.proof .bb::after{content:'';display:inline-block;width:8px;height:8px;background:#000;float:right;margin-top:.3rem}
+    [data-theme="dark"] body.reading .env.proof .bb::after{background:var(--fg)}
 
     .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
     .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative;min-width:0;flex:1}
@@ -466,8 +517,13 @@
     .fb-item.open{border-left:2px solid var(--ac)}
     .fb-item.resolved{border-left:2px solid var(--green,#4a4);opacity:.6}
     .todo-inline{display:flex;gap:.4rem;align-items:center;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.3rem;padding:.2rem .5rem;background:var(--bg-r);border-radius:3px;border:1px solid var(--brd)}
-    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;background:var(--ac);flex-shrink:0}
+    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
     .todo-inline .todo-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .todo-inline .todo-pri{font-size:.55rem;opacity:.7;min-width:2.5rem;text-align:center}
+    .todo-inline .todo-btn{background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);font-size:.55rem;padding:0 .25rem;line-height:1.3}
+    .todo-inline .todo-btn:hover{background:var(--bg-h);color:var(--fg)}
+    .todo-inline .todo-btn.todo-rm{color:var(--red,#c44)}
+    .todo-inline .todo-btn.todo-rm:hover{background:var(--red,#c44);color:#fff}
 
     /* Feedback button on blocks */
     /* (old .fb-btn removed — feedback now in .bh-acts) */
@@ -782,17 +838,23 @@
     }
 
     // ── Resolve cross-ref links: replace generic text with block titles ──
+    const kindAbbrev = {
+      definition:'Def.', theorem:'Thm.', lemma:'Lem.', proposition:'Prop.',
+      corollary:'Cor.', conjecture:'Conj.', example:'Ex.', remark:'Rem.',
+      proof:'Proof', equation:'Eqn.', diagram:'Fig.', prose:''
+    };
     function resolveRefs(el) {
       for (const a of el.querySelectorAll('a[data-ref]')) {
         const label = a.dataset.ref;
         const ref = bix.get(label);
         if (!ref) continue;
-        // Replace generic text (Definition, Theorem, etc.) with the actual title
+        // Replace generic or raw-label text with "Abbrev. Title"
         const text = a.textContent.trim();
         const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
-          'Conjecture','Example','Remark','Proof', label];
+          'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
         if (ref.title && (generic.includes(text) || text === label)) {
-          a.innerHTML = inl(ref.title);
+          const abbr = kindAbbrev[ref.kind] || ref.kind;
+          a.innerHTML = `${abbr} ${inl(ref.title)}`;
           renderMath(a);
         }
       }
@@ -1393,8 +1455,12 @@
       document.body.classList.add('has-sidebar');
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.innerHTML = `${ch.number}. ${inl(ch.title)}`;
-        chEl.onclick = () => { const t = document.getElementById(ch.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
+        chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number}. ${inl(ch.title)}</span>`;
+        const chBody = mk('div','sb-ch-body');
+        chEl.onclick = (e) => {
+          chEl.classList.toggle('open');
+          chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
+        };
         sb.appendChild(chEl);
         for (const sec of ch.sections) {
           const sEl = mk('div','sb-sec');
@@ -1408,9 +1474,9 @@
           }
           let secLabel = sec.title;
           const badges = [];
-          if (secTodos) badges.push(`${secTodos}T`);
-          if (secLeanMiss) badges.push(`${secLeanMiss}!L`);
-          if (secLeanErr) badges.push(`${secLeanErr}E`);
+          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
           sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
@@ -1421,7 +1487,7 @@
             // Toggle block list
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
-          sb.appendChild(sEl);
+          chBody.appendChild(sEl);
           const blkList = mk('div','');
           blkList.style.display = 'none';
           for (const b of sec.blocks) {
@@ -1436,8 +1502,8 @@
             const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
             if (openTodos) {
               const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos}`;
-              tb.title = `${openTodos} open todo(s)`;
+              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
+              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
               bEl.appendChild(tb);
             }
 
@@ -1449,24 +1515,24 @@
               const v = b.lean?.validation || 'not_checked';
               if (!b.lean || !b.lean.file) {
                 lb.className = 'sb-badge lean-miss';
-                lb.textContent = '!L';
-                lb.title = 'Missing Lean file';
+                lb.textContent = 'no lean';
+                lb.setAttribute('data-tip', 'No Lean formalization file');
               } else if (s === 'stub' || s === 'not_started') {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = 'S';
-                lb.title = 'Lean stub / not started';
+                lb.textContent = 'stub';
+                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
               } else if (v === 'error' || s === 'has_sorry') {
                 lb.className = 'sb-badge lean-err';
-                lb.textContent = 'E';
-                lb.title = `Lean: ${v === 'error' ? 'validation error' : 'has sorry'}`;
-              } else if (v === 'ok' || s === 'proved') {
+                lb.textContent = v === 'error' ? 'err' : 'sorry';
+                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
+              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
                 lb.className = 'sb-badge lean-ok';
                 lb.textContent = '✓';
-                lb.title = 'Lean: verified';
+                lb.setAttribute('data-tip', 'Lean proof verified');
               } else {
                 lb.className = 'sb-badge lean-warn';
-                lb.textContent = '?';
-                lb.title = `Lean: ${s} / ${v}`;
+                lb.textContent = s === 'stated' ? 'stated' : 'todo';
+                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
               }
               bEl.appendChild(lb);
             }
@@ -1481,8 +1547,9 @@
             };
             blkList.appendChild(bEl);
           }
-          sb.appendChild(blkList);
+          chBody.appendChild(blkList);
         }
+        sb.appendChild(chBody);
       }
       renderMath(sb);
 
@@ -1494,7 +1561,7 @@
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
         renderMath(cd);
         let secNum = 0;
         for (const sec of ch.sections) {
@@ -1502,7 +1569,7 @@
           const sd = mk('div','section');
           sd.dataset.secNum = `${ch.number}.${secNum}`;
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</h3>`;
+          sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
@@ -1530,7 +1597,19 @@
             if (h3) {
               sbSecs.forEach(s => s.classList.remove('active'));
               const match = secMap.get(h3.textContent);
-              if (match) { match.classList.add('active'); match.scrollIntoView({block:'nearest'}); }
+              if (match) {
+                match.classList.add('active');
+                // Auto-expand parent chapter
+                const chBody = match.closest('.sb-ch-body');
+                if (chBody) {
+                  const chEl = chBody.previousElementSibling;
+                  if (chEl && !chEl.classList.contains('open')) {
+                    chEl.classList.add('open');
+                    chBody.style.display = 'block';
+                  }
+                }
+                match.scrollIntoView({block:'nearest'});
+              }
             }
           }
         }
@@ -1543,15 +1622,51 @@
       }
     }
 
+    // ── Feedback draft persistence ─────────────────────────
+    const FB_DRAFT_KEY = 'qou-fb-drafts';
+    function loadDrafts() {
+      try { return JSON.parse(localStorage.getItem(FB_DRAFT_KEY) || '{}'); } catch { return {}; }
+    }
+    function saveDraft(target, text, priority, assignee) {
+      const drafts = loadDrafts();
+      if (text.trim()) {
+        drafts[target] = { text, priority, assignee, ts: Date.now() };
+      } else {
+        delete drafts[target];
+      }
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function clearDraft(target) {
+      const drafts = loadDrafts();
+      delete drafts[target];
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function getDraft(target) {
+      return loadDrafts()[target] || null;
+    }
+
     // ── Feedback panel ────────────────────────────────────
     let fbBlock = null;
+    // openFeedback can accept a block object or a {label, rootName, todos, kind} stub
     function openFeedback(block) {
       fbBlock = block;
-      document.getElementById('fb-target').textContent = block.label || block.rootName || 'block';
-      document.getElementById('fb-text').value = '';
+      const target = block.label || block.rootName || 'block';
+      document.getElementById('fb-target').textContent = target;
+
+      // Restore draft if one exists
+      const draft = getDraft(target);
+      const ta = document.getElementById('fb-text');
+      if (draft) {
+        ta.value = draft.text || '';
+        document.getElementById('fb-priority').value = draft.priority || 'medium';
+        document.getElementById('fb-assignee').value = draft.assignee || 'editor-agent';
+      } else {
+        ta.value = '';
+      }
+
       document.getElementById('feedback-overlay').classList.add('open');
       document.getElementById('feedback-panel').classList.add('open');
-      document.getElementById('fb-text').focus();
+      ta.focus();
 
       // Populate history from block todos
       const hist = document.getElementById('fb-history');
@@ -1562,13 +1677,144 @@
       } else {
         for (const t of todos.slice().reverse()) {
           const item = mk('div', `fb-item ${t.status || 'open'}`);
-          item.innerHTML = `<div>${esc(t.comment || t.summary || '')}</div>
-            <div class="fb-meta">${t.priority || ''} · ${t.assignee || ''} · ${t.status || 'open'} · ${t.createdAt ? new Date(t.createdAt).toLocaleDateString() : ''}</div>`;
+          const priDot = t.priority === 'high' ? 'background:var(--red)' :
+                         t.priority === 'medium' ? 'background:var(--yel)' : 'background:var(--fg-d)';
+          item.innerHTML = `<div style="display:flex;gap:.4rem;align-items:start">
+              <span class="todo-dot" style="${priDot};margin-top:.35rem"></span>
+              <div style="flex:1">
+                <div>${esc(t.comment || t.summary || '')}</div>
+                <div class="fb-meta">
+                  <select class="fb-item-pri" data-id="${t.id}" style="font-size:.6rem;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);border-radius:2px;padding:0 .2rem;font-family:var(--f-mono);cursor:pointer">
+                    <option value="high" ${t.priority==='high'?'selected':''}>high</option>
+                    <option value="medium" ${t.priority==='medium'?'selected':''}>med</option>
+                    <option value="low" ${t.priority==='low'?'selected':''}>low</option>
+                  </select>
+                  · ${t.assignee || ''} · ${t.status || 'open'} · ${t.createdAt ? new Date(t.createdAt).toLocaleDateString() : ''}
+                  <button class="fb-item-edit" data-id="${t.id}" style="font-family:var(--f-mono);font-size:.55rem;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;padding:0 .3rem;margin-left:.3rem">edit</button>
+                  <button class="fb-item-del" data-id="${t.id}" style="font-family:var(--f-mono);font-size:.55rem;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--red);cursor:pointer;padding:0 .3rem">del</button>
+                </div>
+              </div>
+            </div>`;
           hist.appendChild(item);
         }
       }
     }
+
+    // Delegated handlers for feedback item edit/delete/priority in the panel
+    document.getElementById('fb-history')?.addEventListener('click', (e) => {
+      const del = e.target.closest('.fb-item-del');
+      if (del && fbBlock) {
+        const id = del.dataset.id;
+        if (fbBlock.todos) {
+          fbBlock.todos = fbBlock.todos.filter(t => t.id !== id);
+        }
+        // Also delete from backend
+        fetch('/api/feedback', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id })
+        }).catch(() => {});
+        openFeedback(fbBlock);
+        refreshFeedbackBadges();
+        return;
+      }
+      const edit = e.target.closest('.fb-item-edit');
+      if (edit && fbBlock) {
+        const id = edit.dataset.id;
+        const todo = (fbBlock.todos || []).find(t => t.id === id);
+        if (todo) {
+          const newText = prompt('Edit feedback:', todo.comment || todo.summary || '');
+          if (newText !== null && newText.trim()) {
+            todo.comment = newText.trim();
+            todo.summary = newText.trim().slice(0, 80);
+            todo.updatedAt = new Date().toISOString();
+            // Persist
+            fetch('/api/feedback', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id, updates: { comment: todo.comment, summary: todo.summary } })
+            }).catch(() => {});
+            openFeedback(fbBlock);
+          }
+        }
+        return;
+      }
+    });
+    document.getElementById('fb-history')?.addEventListener('change', (e) => {
+      const priSel = e.target.closest('.fb-item-pri');
+      if (priSel && fbBlock) {
+        const id = priSel.dataset.id;
+        const todo = (fbBlock.todos || []).find(t => t.id === id);
+        if (todo) {
+          todo.priority = priSel.value;
+          todo.updatedAt = new Date().toISOString();
+          fetch('/api/feedback', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id, updates: { priority: todo.priority } })
+          }).catch(() => {});
+          openFeedback(fbBlock);
+        }
+      }
+    });
+
+    // Delegated handler for chapter/section feedback buttons
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.struct-acts .sa-fb');
+      if (!btn) return;
+      const acts = btn.closest('.struct-acts');
+      const target = acts.dataset.target;
+      const kind = acts.dataset.kind;
+      // Create a stub "block" for the chapter/section
+      openFeedback({
+        label: target,
+        rootName: target,
+        kind: kind,
+        todos: structFeedback[target] || [],
+      });
+    });
+
+    // Track chapter/section-level feedback (local cache, synced to backend)
+    const structFeedback = {};
+    function refreshStructBadges() {
+      document.querySelectorAll('.struct-acts').forEach(acts => {
+        const target = acts.dataset.target;
+        const todos = structFeedback[target] || [];
+        const openTodos = todos.filter(t => t.status !== 'resolved' && t.status !== 'wontfix');
+        let badge = acts.querySelector('.sa-count');
+        if (openTodos.length > 0) {
+          if (!badge) { badge = mk('span','sa-count'); acts.appendChild(badge); }
+          badge.textContent = openTodos.length;
+        } else if (badge) {
+          badge.remove();
+        }
+      });
+    }
+    // Auto-save draft as user types
+    document.getElementById('fb-text')?.addEventListener('input', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      saveDraft(target,
+        document.getElementById('fb-text').value,
+        document.getElementById('fb-priority').value,
+        document.getElementById('fb-assignee').value
+      );
+    });
+    document.getElementById('fb-priority')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+    document.getElementById('fb-assignee')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+
     function closeFeedback() {
+      // Draft is already auto-saved on input — no need to save again here
       document.getElementById('feedback-overlay').classList.remove('open');
       document.getElementById('feedback-panel').classList.remove('open');
       fbBlock = null;
@@ -1602,10 +1848,20 @@
         // Add to block's local todos so UI updates immediately
         if (!fbBlock.todos) fbBlock.todos = [];
         fbBlock.todos.push(todo);
+        // Also track in structFeedback if this is a chapter/section
+        if (fbBlock.kind === 'chapter' || fbBlock.kind === 'section') {
+          if (!structFeedback[fbBlock.label]) structFeedback[fbBlock.label] = [];
+          structFeedback[fbBlock.label] = fbBlock.todos;
+          refreshStructBadges();
+        }
         document.getElementById('fb-text').value = '';
+        // Clear the saved draft since feedback was submitted
+        clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item
         openFeedback(fbBlock);
         closeFeedback();
+        // Update sidebar badges to reflect the new todo
+        refreshFeedbackBadges();
       } catch (e) {
         alert('Failed to submit: ' + e.message);
       }
@@ -1662,17 +1918,169 @@
       voiceBtn.style.display = 'none'; // hide if not supported
     }
 
+    const priOrder = ['critical','high','medium','low'];
+    const priColors = {critical:'var(--red,#c44)',high:'var(--ora,#e90)',medium:'var(--ac)',low:'var(--fg-d)'};
     function addTodoIndicators(el, block) {
       if (!block.todos?.length) return;
       const open = block.todos.filter(t => t.status === 'open');
+      open.sort((a,b) => (priOrder.indexOf(a.priority||'medium') - priOrder.indexOf(b.priority||'medium')));
       for (const t of open) {
+        const pri = t.priority || 'medium';
         const d = mk('div', 'todo-inline decor');
-        d.innerHTML = `<span class="todo-dot"></span><span class="todo-text">${esc(t.summary || t.comment || '')}</span><span>${t.priority || ''}</span>`;
-        d.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
-        d.style.cursor = 'pointer';
+        const dot = mk('span','todo-dot');
+        dot.style.background = priColors[pri] || priColors.medium;
+        d.appendChild(dot);
+        const txt = mk('span','todo-text');
+        txt.textContent = t.summary || t.comment || '';
+        txt.style.cursor = 'pointer';
+        txt.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        d.appendChild(txt);
+        const priLabel = mk('span','todo-pri');
+        priLabel.textContent = pri;
+        d.appendChild(priLabel);
+        // [+] raise priority
+        const upBtn = mk('button','todo-btn');
+        upBtn.textContent = '+';
+        upBtn.title = 'Raise priority';
+        const curIdx = priOrder.indexOf(pri);
+        if (curIdx <= 0) upBtn.disabled = true;
+        upBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx-1]); };
+        d.appendChild(upBtn);
+        // [-] lower priority
+        const dnBtn = mk('button','todo-btn');
+        dnBtn.textContent = '\u2013';
+        dnBtn.title = 'Lower priority';
+        if (curIdx >= priOrder.length - 1) dnBtn.disabled = true;
+        dnBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx+1]); };
+        d.appendChild(dnBtn);
+        // [x] remove
+        const rmBtn = mk('button','todo-btn todo-rm');
+        rmBtn.textContent = '\u00d7';
+        rmBtn.title = 'Remove todo';
+        rmBtn.onclick = (e) => { e.stopPropagation(); removeTodo(block, t); };
+        d.appendChild(rmBtn);
         el.appendChild(d);
       }
     }
+
+    async function updateTodoPri(block, todo, newPri) {
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, priority: newPri })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.priority = newPri;
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to update priority:', e); }
+    }
+
+    async function removeTodo(block, todo) {
+      if (!confirm(`Remove todo: "${todo.summary || todo.comment}"?`)) return;
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, status: 'resolved' })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.status = 'resolved';
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to remove todo:', e); }
+    }
+
+    function refreshTodoInline(block) {
+      if (!block.label) return;
+      const blockEl = document.getElementById(block.label);
+      if (!blockEl) return;
+      blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+      addTodoIndicators(blockEl, block);
+    }
+
+    // ── Feedback badge refresh ──────────────────────────
+    // Fetches open todos from server and updates sidebar badges + inline indicators
+    // without a full re-render. Called after submit and on a polling interval.
+    async function refreshFeedbackBadges() {
+      if (!paper) return;
+      try {
+        const r = await fetch('/api/feedback/all?status=open');
+        if (!r.ok) return;
+        const allEntries = await r.json();
+        // Unwrap {paperId, rootName, todo} → flat todo with rootName attached
+        const byRoot = {};
+        for (const entry of allEntries) {
+          const key = entry.rootName || entry.paperId;
+          if (!byRoot[key]) byRoot[key] = [];
+          byRoot[key].push({ ...entry.todo, rootName: key });
+        }
+        // Update block-level data and sidebar badges
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            let secTodos = 0;
+            for (const b of sec.blocks) {
+              const fresh = byRoot[b.rootName] || [];
+              b.todos = fresh;
+              const count = fresh.length;
+              secTodos += count;
+              // Update block badge in sidebar
+              const sel = (b.label || b.rootName).replace(/"/g, '\\"');
+              const blkEl = document.querySelector(`.sb-blk[title="${sel}"]`);
+              if (blkEl) {
+                const existing = blkEl.querySelector('.sb-badge.todo');
+                if (existing) existing.remove();
+                if (count) {
+                  const tb = mk('span','sb-badge todo');
+                  tb.textContent = `${count} todo`;
+                  tb.setAttribute('data-tip', `${count} open todo${count > 1 ? 's' : ''}`);
+                  const firstBadge = blkEl.querySelector('.sb-badge');
+                  if (firstBadge) blkEl.insertBefore(tb, firstBadge);
+                  else blkEl.appendChild(tb);
+                }
+              }
+              // Update inline todo indicators in the rendered block
+              if (b.label) {
+                const blockEl = document.getElementById(b.label);
+                if (blockEl) {
+                  blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+                  addTodoIndicators(blockEl, b);
+                }
+              }
+            }
+            // Update section summary badge
+            const sEl = document.querySelector(`.sb-sec[title="${sec.title}"]`);
+            if (sEl) {
+              const summarySpan = sEl.querySelector('span:last-child');
+              if (summarySpan && summarySpan.style.fontSize === '.5rem') {
+                // Rebuild just the todo portion of the badge text
+                const text = summarySpan.textContent;
+                const parts = text.split(' | ').filter(p => !p.includes('todo'));
+                if (secTodos) parts.unshift(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+                summarySpan.textContent = parts.join(' | ');
+              }
+            }
+          }
+        }
+      } catch (_) { /* silent — polling failure is not fatal */ }
+    }
+
+    // Poll for fresh feedback every 3 minutes while page is visible
+    let feedbackPollId = null;
+    function startFeedbackPolling() {
+      if (feedbackPollId) return;
+      feedbackPollId = setInterval(() => {
+        if (!document.hidden) refreshFeedbackBadges();
+      }, 3 * 60 * 1000);
+    }
+    function stopFeedbackPolling() {
+      if (feedbackPollId) { clearInterval(feedbackPollId); feedbackPollId = null; }
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopFeedbackPolling();
+      else startFeedbackPolling();
+    });
 
     // ── Folio (paper listing) ────────────────────────────
     function renderFolio(data) {
@@ -1890,6 +2298,7 @@
         const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderPaper(await r.json());
+        startFeedbackPolling();
       } catch (e) {
         app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
       }

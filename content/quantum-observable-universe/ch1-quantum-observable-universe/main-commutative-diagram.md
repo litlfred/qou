@@ -1,9 +1,9 @@
 Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
-with instanton connection $A$ ([Example](#ex:instanton)) and substrate
-parameter $q$ ([Definition](#def:substrate-parameter)).  Let
+with instanton connection $A$ ([instanton](#ex:instanton)) and substrate
+parameter $q$ ([substrate parameter](#def:substrate-parameter)).  Let
 $\mathbf{E}$ denote the Euler--Lagrange operator of the
 $q$-weighted Yang--Mills--Levi functional $S_q$
-([Definition](#def:q-yang-mills-levi)), and let $\nabla^A$ denote
+([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)), and let $\nabla^A$ denote
 parallel transport along $A$.  The following diagram commutes:
 
 ```tex

@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) and let
-$\{A_n\}_{n \geq 1}$ be the recursive brane tower
-([Definition](#def:recursive-brane-tower)).  The central extensions of
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) and let
+$\{A_n\}_{n \geq 1}$ be the
+([recursive brane tower](#def:recursive-brane-tower)).  The central extensions of
 gerbes
 $$
   1 \;\longrightarrow\; \mathcal{B}
@@ -9,12 +9,12 @@ $$
   \;\longrightarrow\; \mathfrak{G}_n
   \;\longrightarrow\; 1
 $$
-arising from the jet prolongation
-([Proposition](#prop:jet-prolongation)) satisfy the Yekutieli Lifting
-Condition ([Definition](#def:yekutieli-lifting-condition)).  In the
+arising from the
+([jet prolongation](#prop:jet-prolongation)) satisfy the Yekutieli Lifting
+Condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition)).  In the
 archimedean realisation, $\mathcal{B} = \mathcal{O}_M^{\times}$.  In
 particular, the lift of the Frobenius--Hopf object from level $n$ to
 level $n{+}1$ exists if and only if the obstruction class
 $\kappa_n \in H^2(M,\, \mathcal{B})$
-([Definition](#def:quantum-characteristic-classes)) vanishes.
+([quantum characteristic classes](#def:quantum-characteristic-classes)) vanishes.
 

@@ -15,7 +15,7 @@ exhibits two simultaneous regimes:
 - *Away from $p_0$* ($q(p) \to 1$, $\hbar_q \to 0$):
   $[\hat{X}, \hat{P}]_q \to 0$ and the Hopf algebra becomes
   cocommutative ($\sigma \circ \Delta = \Delta$,
-  [Remark](#rem:hopf-non-cocommutativity)).  Observations
+  [Hopf non-cocommutativity](#rem:hopf-non-cocommutativity)).  Observations
   commute, the $q$-deformed operators reduce to classical ones,
   and the transport equation becomes the classical parallel
   transport $\nabla\psi = 0$.  This is the *"heat death"
@@ -25,7 +25,7 @@ At both limits the QOU structure *degenerates*:
 
 - At $q \to \infty$: the Frobenius pairing
   $\langle f, g \rangle = \lambda(fg)$ loses non-degeneracy
-  (axiom (1) of [Definition](#def:quantum-observable-universe)
+  (axiom (1) of [quantum observable universe](#def:quantum-observable-universe)
   fails), so the QOU ceases to be observable.
 
 - At $q \to 1$: the $q$-Hodge star $\star_q \to \star_1$ and

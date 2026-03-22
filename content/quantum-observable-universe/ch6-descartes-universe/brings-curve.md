@@ -12,7 +12,7 @@ $$
 
 The symmetric group $S_5$ acts by permuting the five homogeneous coordinates,
 and this action realises the monodromy structure described in
-[Remark](#rem:chirality-trefoil): the group $S_5$ contains three copies of
+[chirality and trefoil](#rem:chirality-trefoil): the group $S_5$ contains three copies of
 $S_3$ (quotients of the trefoil knot group) corresponding to the three
 colour charges, and elements outside these subgroups act by conjugation,
 permuting the three copies among themselves.

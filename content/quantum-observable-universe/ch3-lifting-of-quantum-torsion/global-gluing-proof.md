@@ -3,23 +3,23 @@ At each point $p \in M$ the fibre algebra
 $\mathcal{O}_{q(p)}(\mathrm{SU}(2))$ is a pronilpotent deformation of
 $\mathcal{O}(\mathrm{SU}(2))$ in the formal parameter
 $\hbar_q(p) = 1 - q(p)^{-1}$
-([Definition](#def:quantum-planck-constant)).
+([quantum planck constant](#def:quantum-planck-constant)).
 By [yekutieli2008], the coordinate bundle $\mathrm{Coor}_M$ of $M$
 (the bundle of formal coordinate systems) carries a twisted deformation
 datum: a pair consisting of a connection and a Maurer--Cartan element in
 a pronilpotent DG Lie algebra [yekutieli2009].  The Yekutieli
 obstruction classes $\kappa_n$
-([Definition](#def:quantum-characteristic-classes)) control whether
+([quantum characteristic classes](#def:quantum-characteristic-classes)) control whether
 these local twisted deformations glue across coordinate patches.
 
 The vanishing condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
-([Definition](#def:quantum-observable-universe)) ensures that the
+([quantum observable universe](#def:quantum-observable-universe)) ensures that the
 gerbe $\mathfrak{G}_n$ of local lifts has trivial band at the level of
 isomorphisms, so by [Theorem 4.5, yekutieli2010] the twisted
 deformations at each fibre patch together into a global sheaf of
 algebras on $M$.  The direct limit $\mathcal{A}_\infty =
 \varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ is then the
 global sections of this sheaf, and the vacuum state $\omega$
-([Proposition](#prop:vacuum-state)) extends uniquely by the
+([vacuum state](#prop:vacuum-state)) extends uniquely by the
 $\mathrm{SU}(2)$-averaging argument of that proposition.

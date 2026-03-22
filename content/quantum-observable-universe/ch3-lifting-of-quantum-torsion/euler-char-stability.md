@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower
-([Definition](#def:recursive-brane-tower)).  The categorical Euler
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) and let
+$\{A_n\}_{n \geq 0}$ be its
+([recursive brane tower](#def:recursive-brane-tower)).  The categorical Euler
 characteristic $\chi(A_n) := \mathrm{tr}(\mathrm{id}_{A_n})$ (computed
 via the rigidity trace of the identity endomorphism in $\mathcal{C}$)
 is stable under jet prolongation: for each level $n$,
