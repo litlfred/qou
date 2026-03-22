@@ -4,72 +4,71 @@ The **only manual secrets** required for the folio deployment are a Google
 OAuth Client ID and Client Secret. Everything else is auto-generated or
 read from `lean-mcp.config.json` (version-controlled, no secrets).
 
-## One-time setup (~5 minutes)
+## Recommended: GitHub Secrets (no SSH required)
 
-### 1. Create a Google Cloud project (if you don't have one)
+This is the zero-SSH approach. You never touch the server directly.
 
-Go to https://console.cloud.google.com/projectcreate
+### 1. Create Google OAuth credentials (~3 min)
 
-Name it anything (e.g. "QOU Folio"). No billing required for OAuth.
+1. Go to https://console.cloud.google.com/projectcreate — name it "QOU Folio"
+   (no billing required)
+2. **APIs & Services > OAuth consent screen** → External → fill in app name +
+   emails → **Publish App**
+3. **APIs & Services > Credentials** → **+ Create Credentials > OAuth client ID**
+   - Type: **Web application**
+   - Redirect URI: `https://folio.litlfred.org/oauth2/callback`
+4. Copy the **Client ID** and **Client Secret**
 
-### 2. Configure the OAuth consent screen
+### 2. Add GitHub repo secrets (~1 min)
 
-1. Go to **APIs & Services > OAuth consent screen**
-   https://console.cloud.google.com/apis/credentials/consent
-2. Choose **External** (allows any Google account to sign in)
-3. Fill in:
-   - App name: `QOU Folio`
-   - User support email: your email
-   - Developer contact: your email
-4. Scopes: no changes needed (defaults are fine — email + profile)
-5. Test users: skip (not needed — we use email whitelist in the app)
-6. Click **Publish App** (moves from "Testing" to "Production")
+Go to **Settings > Secrets and variables > Actions** in your GitHub repo.
+Add these three repository secrets:
 
-> **Note**: "External + Published" means any Google account CAN reach the
-> login screen, but only emails in `authorized_emails` in
-> `lean-mcp.config.json` will be granted access. oauth2-proxy enforces the
-> whitelist server-side.
+| Secret name | Value | Where to get it |
+|-------------|-------|-----------------|
+| `HETZNER_API_TOKEN` | Hetzner Cloud API token | https://console.hetzner.cloud/ → project → API tokens |
+| `GOOGLE_CLIENT_ID` | `123...apps.googleusercontent.com` | Step 1 above |
+| `GOOGLE_CLIENT_SECRET` | `GOCSPX-...` | Step 1 above |
 
-### 3. Create OAuth credentials
+### 3. Run the deploy workflow (~5 min)
 
-1. Go to **APIs & Services > Credentials**
-   https://console.cloud.google.com/apis/credentials
-2. Click **+ Create Credentials > OAuth client ID**
-3. Application type: **Web application**
-4. Name: `QOU Folio` (or anything)
-5. Authorized redirect URIs: add exactly one:
+1. Go to **Actions > Deploy Folio** in your GitHub repo
+2. Click **Run workflow** → action: **provision**
+3. Wait for it to complete — it prints the server IP
+4. Point DNS: `folio.litlfred.org` → A record → that IP
+
+Done. Caddy auto-provisions TLS. Self-updater handles all future updates.
+
+### Updating secrets
+
+If you rotate Google OAuth credentials:
+
+1. Update the GitHub secrets
+2. Run **Actions > Deploy Folio** → action: **update**
+
+This uses `hcloud server ssh` (Hetzner console access) to push the new
+`.env` to the server. No SSH keys, no direct server access.
+
+### Destroying
+
+Run **Actions > Deploy Folio** → action: **destroy**. Remove the DNS record.
+
+---
+
+## Alternative: manual SSH setup
+
+If you prefer to manage secrets directly on the server:
+
+1. Complete step 1 above (create Google OAuth credentials)
+2. SSH into the server: `ssh root@<IP>`
+3. Edit `/opt/qou/deploy/.env`:
    ```
-   https://folio.litlfred.org/oauth2/callback
+   GOOGLE_CLIENT_ID=123456789-xxxxx.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET=GOCSPX-xxxxxxxxxxxxxxxxxxxxx
    ```
-   (Replace `folio.litlfred.org` with your actual domain from
-   `lean-mcp.config.json` → `folio.domain`)
-6. Click **Create**
-7. Copy the **Client ID** and **Client Secret**
+4. Restart: `docker compose -f docker-compose.folio.yml restart oauth2-proxy`
 
-### 4. Enter credentials on the server
-
-SSH into the server and edit the `.env` file:
-
-```bash
-ssh root@<server-ip>
-nano /opt/qou/deploy/.env
-```
-
-Replace the two placeholder lines:
-
-```bash
-GOOGLE_CLIENT_ID=123456789-xxxxx.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=GOCSPX-xxxxxxxxxxxxxxxxxxxxx
-```
-
-Then restart oauth2-proxy:
-
-```bash
-cd /opt/qou/deploy
-docker compose -f docker-compose.folio.yml restart oauth2-proxy
-```
-
-That's it. The OAuth flow is now live.
+---
 
 ## How the auth flow works
 
@@ -102,31 +101,39 @@ When you commit a change to this file on `main`:
 
 **No SSH needed** to add/remove users — just edit the config and push.
 
-## Security notes
+## Security model
 
+### What's where
+
+| Secret | Stored in | Accessible to |
+|--------|-----------|---------------|
+| `GOOGLE_CLIENT_ID` | GitHub Secrets + server `.env` | Repo admins, server root |
+| `GOOGLE_CLIENT_SECRET` | GitHub Secrets + server `.env` | Repo admins, server root |
+| `LEAN_LSP_MCP_TOKEN` | Server `.env` only | Server root |
+| `COOKIE_SECRET` | Server `.env` only | Server root |
+| `HETZNER_API_TOKEN` | GitHub Secrets only | Repo admins |
+
+### Threat model
+
+- **GitHub Secrets** are encrypted at rest, only exposed to Actions runs.
+  They appear masked in logs. Repo admins can overwrite but not read them.
+- **Cloud-init** runs once at server creation. The script (with secrets) is
+  stored in Hetzner's metadata — accessible only via the Hetzner API with
+  your token. It's not persisted on disk after execution.
+- **`.env` on server** is only readable by root. Never committed to git.
+  The self-update script preserves it across `git clean`.
 - **Client ID** is semi-public (visible in browser redirects). Not sensitive.
-- **Client Secret** is sensitive — only stored in `.env` on the server.
-  Never committed to git.
-- **Cookie Secret** encrypts the session cookie. Auto-generated by
-  `generate-config.sh`. Rotating it logs out all users.
-- **MCP Token** allows bearer-token access (bypasses OAuth). Auto-generated.
-  Use for CI/CLI access.
+- **Client Secret** is the main secret to protect. Stored in GitHub Secrets
+  (encrypted) and server `.env` (root-only).
+- **oauth2-proxy** enforces the email whitelist server-side. Even if someone
+  has the Google login URL, they get 403 unless their email is in the list.
 
-## Rotating credentials
+### Rotating credentials
 
-To rotate the Google OAuth credentials:
+**Google OAuth** (via GitHub Actions — no SSH):
+1. Reset secret in Google Cloud Console
+2. Update `GOOGLE_CLIENT_SECRET` in GitHub repo secrets
+3. Run Deploy Folio → action: update
 
-1. Go to Google Cloud Console > Credentials
-2. Edit the OAuth client > Reset secret
-3. SSH into server, update `GOOGLE_CLIENT_SECRET` in `.env`
-4. `docker compose -f docker-compose.folio.yml restart oauth2-proxy`
-
-To rotate the session cookie (logs out all users):
-
-```bash
-# On the server
-cd /opt/qou/deploy
-NEW_COOKIE=$(openssl rand -base64 32 | head -c 32)
-sed -i "s/^COOKIE_SECRET=.*/COOKIE_SECRET=$NEW_COOKIE/" .env
-docker compose -f docker-compose.folio.yml restart oauth2-proxy
-```
+**Session cookie** (logs out all users):
+Run Deploy Folio → action: update (generates a new cookie secret)
