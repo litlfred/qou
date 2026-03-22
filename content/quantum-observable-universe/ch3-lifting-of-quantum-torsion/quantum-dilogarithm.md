@@ -1,4 +1,15 @@
-The localized topological mass contribution $\Phi_q(z_i)$ at the $i$-th exceptional divisor $E_i$ is exactly the geometric integration of the 1-dimensional $q$-deformed expansion flow over the resolved defect. Integrating the spectral uncertainty flow $\ln_q$ along the radial coordinate of the Briggs-Klein affine chart yields the quantum dilogarithm:
+In the archimedean realisation, the transient trace contribution
+$\mathrm{tr}_{\mathrm{trans}}(\gamma, p_i)$ from the
+[topological decomposition of mass](#thm:topological-mass) evaluates
+to the quantum dilogarithm $\Phi_q(z_i)$, where $z_i$ is the spectral
+coordinate of $p_i$ in the Briggs--Klein chart
+([Briggs--Klein chart](#def:briggs-klein-chart)).
+
+Concretely, the transient trace at the $i$-th exceptional divisor
+$E_i \cong \mathbb{P}^1(\mathbb{C})$ is the geometric integration
+of the $q$-deformed expansion flow over the resolved defect.
+Integrating the spectral uncertainty flow $\ln_q$ along the radial
+coordinate of the Briggs--Klein affine chart yields:
 
 ```tex
 \begin{equation}
