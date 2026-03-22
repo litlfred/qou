@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.Hadron",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "has_sorry",
   uses: [
     "def:localized-knot",
     "def:projective-line-object",
