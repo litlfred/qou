@@ -1167,6 +1167,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         context?: {
           paperId?: string; blockLabel?: string; blockMd?: string; blockKind?: string;
           selectedText?: string;
+          viewMode?: string;
           visibleBlocks?: Array<{ label: string; kind: string; title: string }>;
         };
         mode?: "read" | "edit" | "status";
@@ -1439,6 +1440,19 @@ These become clickable buttons so users don't have to type. Make them specific t
         systemPrompt += `\n\nThe user is in EDITOR mode. They may want to report errors, suggest improvements, or discuss editorial decisions. Use tools to fetch block content and todos before responding.`;
       } else {
         systemPrompt += `\n\nThe user is in READER mode. They're studying the paper and want to understand the content. Use get_block to fetch full content when explaining. Prioritize clear explanations and intuition.`;
+      }
+
+      // Add view-mode context so the assistant understands the UI context
+      if (body.context?.viewMode) {
+        const vm = body.context.viewMode;
+        const viewDescriptions: Record<string, string> = {
+          "read": "The user is viewing the paper in **read mode** — the full paper content with sidebar navigation. They are reading/studying the paper.",
+          "qc": "The user is viewing the **QC Dashboard** — a quality-control overview showing proof status, sorry counts, and block-level formalization progress. They likely want to understand what needs work.",
+          "diff": "The user is viewing the **diff view** — comparing changes between branches. They are reviewing edits and may want to understand what changed and why.",
+          "critical-path": "The user is viewing the **critical path** — a filtered view showing only the essential proof chain: leaf theorems traced back through their dependencies to foundational definitions. They want to understand the paper's core logical structure and narrative.",
+          "folio": "The user is on the **folio landing page** — browsing the list of available papers. They may want an overview or help choosing what to read.",
+        };
+        systemPrompt += `\n\n## Current view\n${viewDescriptions[vm] || `The user is in the **${vm}** view.`}`;
       }
 
       // Add context about the current block if available
