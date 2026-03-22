@@ -3844,14 +3844,14 @@
     //   #/@branch/name                              → folio on specific branch
     //   #/view/paper-id                             → paper (current branch)
     //   #/view/paper-id@branch/name                 → paper on specific branch
-    //   #/view/label@branch/name                    → paper scrolled to block, on branch
+    //   #/view/label@branch/name                    → paper scrolled to block (in-paper nav)
     //   #/edit/label                                → inline edit (current branch)
     //   #/edit/label@branch/name                    → inline edit on branch
     //   #/viz/paper-id                              → full dependency graph overlay
     //   #/viz/paper-id@branch/name                  → dependency graph on branch
     //   #/diff/paper-id                             → diff mode (current branch vs main)
     //   #/diff/paper-id@branch/name                 → diff mode on branch
-    //   #label                                      → shorthand for #/view/label
+    //   #label                                      → standalone block detail view
     const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
 
@@ -3885,11 +3885,11 @@
       const hash = location.hash || '#/';
       const raw = hash.slice(1); // remove #
 
-      // Shorthand: #rem:foo or #rem:foo@branch → treat as view
+      // Shorthand: #rem:foo or #rem:foo@branch → standalone block detail view
       if (LABEL_RE.test(raw) || (raw.includes('@') && LABEL_RE.test(raw.split('@')[0]))) {
         const { slug, branch } = parseBranchFromSlug(raw);
         applyUrlBranch(branch);
-        await routeView(slug);
+        await routeBlock(slug);
         return;
       }
 
@@ -3939,6 +3939,206 @@
       } else {
         // It's a paper id
         await loadPaper(slug);
+      }
+    }
+
+    /** Standalone block detail view — shows the block content + what references it */
+    async function routeBlock(label) {
+      // Load paper data (to populate bix/usedByIndex) but don't render full paper
+      if (!paper) {
+        try {
+          const r = await fetch(`/api/folio?_=1${branchParam()}`);
+          const data = r.ok ? await r.json() : null;
+          const id = data?.papers?.[0]?.id || 'quantum-observable-universe';
+          const pr = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+          if (pr.ok) {
+            const p = await pr.json();
+            // Index blocks without rendering the full paper
+            paper = p;
+            katexMacros = buildKatexMacros(p.macros);
+            bix.clear(); usedByIndex.clear();
+            for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+              if (b.label) bix.set(b.label, b);
+              if (b.examples) for (const ex of b.examples) {};
+              if (b.uses) for (const dep of b.uses) {
+                if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+              }
+            }
+          }
+        } catch {}
+      }
+
+      const block = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+
+      if (!block) {
+        app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`;
+        return;
+      }
+
+      // Header: kind + title
+      const header = mk('div','');
+      header.style.cssText = 'margin-bottom:1.5rem';
+      const kindBadge = mk('span','bk');
+      kindBadge.textContent = block.kind;
+      kindBadge.style.cssText = 'font-size:.9rem';
+      header.appendChild(kindBadge);
+      if (block.title) {
+        const titleEl = mk('h1','');
+        titleEl.style.cssText = 'margin:.3rem 0 .5rem;font-family:var(--f-head);font-size:1.5rem;color:var(--fg-b)';
+        titleEl.innerHTML = inl(block.title);
+        renderMath(titleEl);
+        header.appendChild(titleEl);
+      }
+      const labelEl = mk('div','');
+      labelEl.style.cssText = 'font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:.3rem';
+      labelEl.textContent = label;
+      header.appendChild(labelEl);
+
+      // Status indicators
+      if (block.lean) {
+        const leanInfo = mk('div','');
+        leanInfo.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem';
+        leanInfo.innerHTML = `${leanIcon(block.lean.validation || 'not_checked')} <span>${esc(block.lean.decl)}</span>`;
+        if (block.status) {
+          const badge = mk('span','');
+          badge.style.cssText = 'padding:.1rem .4rem;border-radius:3px;font-size:.6rem;border:1px solid var(--brd)';
+          badge.textContent = block.status;
+          leanInfo.appendChild(badge);
+        }
+        header.appendChild(leanInfo);
+      }
+
+      // Action buttons
+      const actions = mk('div','');
+      actions.style.cssText = 'display:flex;gap:.5rem;margin-top:.5rem';
+      const viewInPaper = mk('button','');
+      viewInPaper.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+      viewInPaper.textContent = 'view in paper \u2197';
+      viewInPaper.onclick = () => { location.hash = `#/view/${label}`; };
+      actions.appendChild(viewInPaper);
+      if (block.label) {
+        const graphBtn = mk('button','');
+        graphBtn.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+        graphBtn.innerHTML = '&#x26A1; dependency graph';
+        graphBtn.onclick = () => renderDepGraph(label);
+        actions.appendChild(graphBtn);
+      }
+      const fbBtn = mk('button','');
+      fbBtn.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer';
+      fbBtn.textContent = 'feedback';
+      fbBtn.onclick = () => openFeedback(block);
+      actions.appendChild(fbBtn);
+      header.appendChild(actions);
+      app.appendChild(header);
+
+      // Separator
+      const sep = mk('hr','');
+      sep.style.cssText = 'border:none;border-top:1px solid var(--brd);margin:1rem 0';
+      app.appendChild(sep);
+
+      // Block content
+      const content = mk('div','env ' + block.kind);
+      content.style.cssText = 'margin-bottom:1.5rem';
+      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+      content.innerHTML = bh || '<span style="color:var(--fg-d)">No content</span>';
+      fillTex(content, tx, block.rendered);
+      renderMath(content);
+      resolveRefs(content);
+      app.appendChild(content);
+
+      // Uses (what this block depends on)
+      if (block.uses?.length) {
+        const usesSection = mk('div','');
+        usesSection.style.cssText = 'margin-bottom:1.5rem';
+        const usesTitle = mk('h3','');
+        usesTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        usesTitle.textContent = `Depends on (${block.uses.length})`;
+        usesSection.appendChild(usesTitle);
+        const usesList = mk('div','ref-by-list');
+        for (const dep of block.uses) {
+          const ref = bix.get(dep);
+          const item = mk('div','ref-by-item');
+          const kind = mk('span','ref-kind');
+          kind.textContent = ref?.kind || '?';
+          item.appendChild(kind);
+          const link = document.createElement('a');
+          link.href = `#${dep}`;
+          link.innerHTML = ref?.title ? inl(ref.title) : esc(dep);
+          renderMath(link);
+          item.appendChild(link);
+          usesList.appendChild(item);
+        }
+        usesSection.appendChild(usesList);
+        app.appendChild(usesSection);
+      }
+
+      // Referenced by (what uses this block)
+      const refs = usedByIndex.get(label);
+      if (refs?.length) {
+        const refSection = mk('div','');
+        refSection.style.cssText = 'margin-bottom:1.5rem';
+        const refTitle = mk('h3','');
+        refTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        refTitle.textContent = `Referenced by (${refs.length})`;
+        refSection.appendChild(refTitle);
+        const refList = mk('div','ref-by-list');
+        for (const ref of refs) {
+          const item = mk('div','ref-by-item');
+          const kind = mk('span','ref-kind');
+          kind.textContent = ref.kind;
+          item.appendChild(kind);
+          const link = document.createElement('a');
+          link.href = `#${ref.label}`;
+          link.innerHTML = ref.title ? inl(ref.title) : esc(ref.label);
+          renderMath(link);
+          item.appendChild(link);
+          refList.appendChild(item);
+        }
+        refSection.appendChild(refList);
+        app.appendChild(refSection);
+      }
+
+      // Proofs
+      if (block.proofs?.length) {
+        const prfSection = mk('div','');
+        prfSection.style.cssText = 'margin-bottom:1.5rem';
+        const prfTitle = mk('h3','');
+        prfTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
+        prfTitle.textContent = `Proofs (${block.proofs.length})`;
+        prfSection.appendChild(prfTitle);
+        for (const prfLabel of block.proofs) {
+          const prf = bix.get(prfLabel);
+          if (!prf) continue;
+          const prfDiv = mk('div','env proof');
+          prfDiv.style.cssText = 'margin-bottom:.5rem';
+          const {html: ph, texBlocks: ptx} = parseMd(prf.md || '');
+          let prfHd = `<span class="bk">proof</span>`;
+          if (prf.title) prfHd += ` <span class="bt">${inl(prf.title)}</span>`;
+          prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
+          fillTex(prfDiv, ptx, prf.rendered);
+          renderMath(prfDiv);
+          resolveRefs(prfDiv);
+          prfSection.appendChild(prfDiv);
+        }
+        app.appendChild(prfSection);
+      }
+
+      // Lean source
+      if (block.lean?.source) {
+        const leanSection = mk('div','lean-src');
+        const leanHdr = mk('div','lean-src-hdr');
+        leanHdr.innerHTML = `<span>${esc(block.lean.file || block.lean.decl)}</span>`;
+        leanSection.appendChild(leanHdr);
+        const pre = document.createElement('pre');
+        const code = document.createElement('code');
+        code.textContent = block.lean.source;
+        pre.appendChild(code);
+        leanSection.appendChild(pre);
+        app.appendChild(leanSection);
       }
     }
 
