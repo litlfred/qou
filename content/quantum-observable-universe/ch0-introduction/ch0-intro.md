@@ -10,15 +10,17 @@ definition of a quantum observable universe.  We derive several
 consequences that follow from the rigidity of the symmetries: a
 Frobenius relation, an involutive dagger structure, a canonical volume
 form, and the emergence of $\mathrm{SU}(2)$ via a Tannaka–Krein
-reconstruction.  The chapter closes with an elaboration of the
-categorical and analytic foundations, including jet prolongation,
-transport, and torsion.
+reconstruction.  We define the categorical action functional and
+derive the variational equations that govern quantum observable
+universes.  The chapter closes with an elaboration of the categorical
+and analytic foundations, including jet prolongation, transport, and
+torsion.
 
-**[Chapter 2](#chap:brings-surface)** focuses on Bring's surface, which
-provides a remarkably rich model for quantum observable universes.  We
-include a categorical definition of the action functional that controls
-the evolution and shape of quantum observable universes, and develop the
-variational equations that arise from it.
+**[Chapter 2](#chap:brings-surface)** develops Bring's surface as a
+complete worked example of a quantum observable universe, providing
+explicit coordinate systems for spacetime and colour-time.  We construct
+Lagrange resolvents, colour-tube coordinates, chiral fibrations,
+quaternionic spectral resolvents, and the Seiberg–Witten resolution.
 
 **[Chapter 3](#chap:torsion)** establishes lifting and descent theorems
 for quantum torsion, identifying the key obstructions—both cohomological
