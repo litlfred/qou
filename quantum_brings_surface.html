@@ -178,6 +178,71 @@ input[type=range]::-webkit-slider-thumb {
   display:none; line-height:1.8;
 }
 
+/* ── Feedback sidebar ────────────────────────────────────────────── */
+#feedback-sidebar {
+  position:absolute; top:64px; left:280px; width:260px; z-index:12;
+  max-height: calc(100vh - 80px); overflow-y:auto;
+}
+#feedback-sidebar .fb-item {
+  background:rgba(58,144,255,.05); border:1px solid rgba(58,144,255,.12);
+  border-radius:3px; padding:6px 8px; margin:4px 0; position:relative;
+}
+#feedback-sidebar .fb-item.pri-high {
+  border-left:3px solid var(--accent2);
+}
+#feedback-sidebar .fb-item.pri-medium {
+  border-left:3px solid var(--accent4);
+}
+#feedback-sidebar .fb-item.pri-low {
+  border-left:3px solid var(--dim);
+}
+.fb-block-tag {
+  font-size:7px; letter-spacing:.10em; color:var(--dim);
+  text-transform:uppercase; margin-bottom:2px;
+}
+.fb-text {
+  color:var(--text); font-size:10px; line-height:1.5;
+  white-space:pre-wrap; word-break:break-word;
+}
+.fb-text[contenteditable=true] {
+  background:rgba(20,30,60,0.5); border:1px solid rgba(58,144,255,.25);
+  border-radius:2px; padding:2px 4px; outline:none; min-height:1.5em;
+}
+.fb-controls {
+  display:flex; gap:3px; align-items:center; margin-top:3px;
+}
+.fb-btn {
+  background:rgba(58,144,255,0.10); border:1px solid rgba(58,144,255,0.20);
+  color:var(--dim); font-size:8px; cursor:pointer; border-radius:2px;
+  padding:1px 5px; font-family:'Share Tech Mono',monospace;
+}
+.fb-btn:hover { background:rgba(58,144,255,0.22); color:var(--accent); }
+.fb-btn.fb-del:hover { color:var(--red); }
+.fb-pri-sel {
+  background:rgba(20,30,60,0.8); border:1px solid rgba(58,144,255,0.22);
+  color:var(--accent); font-size:8px; padding:1px 3px; border-radius:2px;
+  font-family:'Share Tech Mono',monospace; outline:none; cursor:pointer;
+}
+.fb-add-row {
+  display:flex; gap:4px; margin-top:6px;
+}
+.fb-add-input {
+  flex:1; background:rgba(20,30,60,0.8); border:1px solid rgba(58,144,255,0.22);
+  color:var(--accent); font-size:9px; padding:3px 5px; border-radius:2px;
+  font-family:'Share Tech Mono',monospace; outline:none;
+}
+.fb-add-input::placeholder { color:var(--dim); }
+.fb-empty { color:var(--dim); font-size:9px; font-style:italic; margin:6px 0; }
+.fb-filter-row {
+  display:flex; gap:4px; align-items:center; margin-bottom:4px;
+  font-size:8px; color:var(--dim);
+}
+.fb-filter-row select {
+  background:rgba(20,30,60,0.8); border:1px solid rgba(58,144,255,0.22);
+  color:var(--accent); font-size:8px; padding:1px 3px; border-radius:2px;
+  font-family:'Share Tech Mono',monospace; outline:none;
+}
+
 /* ── Bundle scenarios panel ──────────────────────────────────────── */
 #bundle-panel { top:64px; left:14px; width:252px; z-index:10; }
 #bundle-panel .bp-scenario {
@@ -389,6 +454,7 @@ input[type=range]::-webkit-slider-thumb {
     <label class="ck"><input type="checkbox" id="cb_pnl_julia"> Julia set</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_mobius"> Möbius</label>
     <label class="ck"><input type="checkbox" id="cb_pnl_bundle" checked> Bundle</label>
+    <label class="ck"><input type="checkbox" id="cb_pnl_feedback"> Feedback</label>
   </div>
   <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;">
     <button id="btn_theme" title="Toggle dark/light mode (T)"
@@ -411,6 +477,37 @@ input[type=range]::-webkit-slider-thumb {
   </div>
   <div style="font-size:8px;color:var(--dim);margin-top:4px;text-align:right;letter-spacing:.05em;">
     shift+drag: pan · scroll: zoom · drag sphere: move p
+  </div>
+</div>
+
+<!-- FEEDBACK SIDEBAR -->
+<div class="panel" id="feedback-sidebar" style="display:none">
+  <div class="panel-title">Feedback / Notes
+    <button class="panel-close" onclick="togglePanel('feedback-sidebar')">×</button>
+  </div>
+  <div class="fb-filter-row">
+    <span>block:</span>
+    <select id="fb-block-filter">
+      <option value="_all">all blocks</option>
+      <option value="_active">active scenario</option>
+    </select>
+    <span style="margin-left:auto;">priority:</span>
+    <select id="fb-pri-filter">
+      <option value="all">all</option>
+      <option value="high">high</option>
+      <option value="medium">medium</option>
+      <option value="low">low</option>
+    </select>
+  </div>
+  <div id="fb-items"></div>
+  <div class="fb-add-row">
+    <input class="fb-add-input" id="fb-add-text" placeholder="Add feedback..." />
+    <select class="fb-pri-sel" id="fb-add-pri">
+      <option value="medium">med</option>
+      <option value="high">high</option>
+      <option value="low">low</option>
+    </select>
+    <button class="fb-btn" id="fb-add-btn">+</button>
   </div>
 </div>
 
@@ -1588,6 +1685,7 @@ const PANEL_CB = {
   chiral: 'cb_pnl_chrl', weierstrass: 'cb_pnl_wstr', affine: 'cb_pnl_afin',
   vizjson: 'cb_pnl_vizjson', fibercp1: 'cb_pnl_fcp1', juliapnl: 'cb_pnl_julia',
   mobiuspnl: 'cb_pnl_mobius', 'bundle-panel': 'cb_pnl_bundle',
+  'feedback-sidebar': 'cb_pnl_feedback',
 };
 function togglePanel(id, forceShow) {
   const el = document.getElementById(id);
@@ -1602,6 +1700,16 @@ Object.entries(PANEL_CB).forEach(([panelId, cbId]) => {
   document.getElementById(cbId).addEventListener('change', e => {
     document.getElementById(panelId).style.display = e.target.checked ? '' : 'none';
     if (panelId === 'vizjson' && e.target.checked) updateVizJSON();
+    // Save bundle state when hiding, restore markers when showing
+    if (panelId === 'bundle-panel') {
+      if (!e.target.checked) {
+        saveBundleState();
+      } else if (bundleState.preset) {
+        rebuildBundleMarkers();
+        drawBundleTrailCanvas();
+        updateBundlePairsDisplay();
+      }
+    }
   });
 });
 
@@ -2919,19 +3027,71 @@ const bundleState = {
   trailLen: 400,         // max trail points per particle
 };
 
+// ── Per-preset localStorage persistence ─────────────────────────────
+const BUNDLE_STORE_PREFIX = 'qou_bundle_';
+
+function saveBundleState() {
+  if (!bundleState.preset) return;
+  const key = BUNDLE_STORE_PREFIX + bundleState.preset.id;
+  const data = {
+    time: bundleState.time,
+    speed: bundleState.speed,
+    particles: bundleState.particles.map(p => ({
+      theta: p.theta, phi: p.phi,
+      vTheta: p.vTheta, vPhi: p.vPhi,
+      knot: p.knot,
+      trail: p.trail.slice(-200),  // cap stored trail length
+    })),
+  };
+  try { localStorage.setItem(key, JSON.stringify(data)); } catch(e) {}
+}
+
+function loadBundleState(presetId) {
+  const key = BUNDLE_STORE_PREFIX + presetId;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch(e) { return null; }
+}
+
+function clearBundleState(presetId) {
+  try { localStorage.removeItem(BUNDLE_STORE_PREFIX + presetId); } catch(e) {}
+}
+
 function initBundlePreset(preset) {
   bundleState.preset = preset;
-  bundleState.time = 0;
-  bundleState.particles = preset.particles.map(p => ({
-    theta: p.pos[0],
-    phi:   p.pos[1],
-    vTheta: p.vel[0],
-    vPhi:   p.vel[1],
-    knot:   p.knot,
-    trail:  [{ theta: p.pos[0], phi: p.pos[1] }],
-  }));
-  document.getElementById('bp-time').value = 0;
-  document.getElementById('bp-time-val').textContent = 't=0';
+
+  // Try to restore saved state for this preset
+  const saved = loadBundleState(preset.id);
+  if (saved && saved.particles && saved.particles.length === preset.particles.length) {
+    bundleState.time = saved.time || 0;
+    bundleState.speed = saved.speed || 1.0;
+    bundleState.particles = saved.particles.map(p => ({
+      theta: p.theta, phi: p.phi,
+      vTheta: p.vTheta, vPhi: p.vPhi,
+      knot: p.knot,
+      trail: p.trail || [{ theta: p.theta, phi: p.phi }],
+    }));
+    // Restore UI
+    document.getElementById('bp-time').value = Math.min(1000, bundleState.time);
+    document.getElementById('bp-time-val').textContent = `t=${bundleState.time.toFixed(0)}`;
+    document.getElementById('bp-speed').value = bundleState.speed;
+    document.getElementById('bp-speed-val').textContent = bundleState.speed.toFixed(1) + '×';
+  } else {
+    // Fresh init from preset definition
+    bundleState.time = 0;
+    bundleState.particles = preset.particles.map(p => ({
+      theta: p.pos[0],
+      phi:   p.pos[1],
+      vTheta: p.vel[0],
+      vPhi:   p.vel[1],
+      knot:   p.knot,
+      trail:  [{ theta: p.pos[0], phi: p.pos[1] }],
+    }));
+    document.getElementById('bp-time').value = 0;
+    document.getElementById('bp-time-val').textContent = 't=0';
+  }
   rebuildBundleMarkers();
   drawBundleTrailCanvas();
   updateBundlePairsDisplay();
@@ -3002,6 +3162,9 @@ function stepBundle(dt) {
   }
 
   bundleState.time += dt;
+
+  // Auto-save every ~60 steps (roughly once per second at 60fps)
+  if (Math.round(bundleState.time * 10) % 60 === 0) saveBundleState();
 }
 
 // ── 3D knot markers on the CP1 ghost sphere ─────────────────────────
@@ -3212,8 +3375,11 @@ function setupBundleUI() {
 
   const sel = document.getElementById('bundle-preset');
   sel.addEventListener('change', () => {
+    // Save current state before switching
+    saveBundleState();
     const preset = BUNDLE_PRESETS.find(p => p.id === sel.value);
     if (preset) {
+      try { localStorage.setItem(BUNDLE_STORE_PREFIX + '_active', preset.id); } catch(e) {}
       initBundlePreset(preset);
       const descEl = document.getElementById('bundle-desc');
       descEl.innerHTML = `<div class="bp-desc">${preset.desc}</div>`;
@@ -3225,11 +3391,18 @@ function setupBundleUI() {
     if (!bundleState.preset) return;
     bundleState.playing = !bundleState.playing;
     document.getElementById('bp-play').textContent = bundleState.playing ? '⏸' : '▶';
+    if (!bundleState.playing) saveBundleState();  // save when pausing
   });
 
-  // Reset
+  // Reset — clears saved state for this preset, re-inits from definition
   document.getElementById('bp-reset').addEventListener('click', () => {
-    if (bundleState.preset) initBundlePreset(bundleState.preset);
+    if (bundleState.preset) {
+      clearBundleState(bundleState.preset.id);
+      // Force fresh init by temporarily nulling preset
+      const p = bundleState.preset;
+      bundleState.preset = null;
+      initBundlePreset(p);
+    }
     bundleState.playing = false;
     document.getElementById('bp-play').textContent = '▶';
   });
@@ -3238,6 +3411,7 @@ function setupBundleUI() {
   document.getElementById('bp-speed').addEventListener('input', (e) => {
     bundleState.speed = parseFloat(e.target.value);
     document.getElementById('bp-speed-val').textContent = bundleState.speed.toFixed(1) + '×';
+    saveBundleState();
   });
 
   // Time scrub
@@ -3253,18 +3427,253 @@ function setupBundleUI() {
     rebuildBundleMarkers();
     drawBundleTrailCanvas();
     updateBundlePairsDisplay();
+    saveBundleState();
   });
 
 }
 
+// ════════════════════════════════════════════════════════════════════
+//  FEEDBACK SIDEBAR — Per-block notes with priority, edit, delete
+//
+//  Data stored in localStorage keyed by block label.
+//  Each block has an array of feedback items:
+//    { id, text, priority, created, updated }
+// ════════════════════════════════════════════════════════════════════
+
+const FB_STORE_KEY = 'qou_feedback';
+
+function loadAllFeedback() {
+  try {
+    const raw = localStorage.getItem(FB_STORE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) { return {}; }
+}
+
+function saveAllFeedback(data) {
+  try { localStorage.setItem(FB_STORE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function getFeedbackForBlock(blockId) {
+  const all = loadAllFeedback();
+  return all[blockId] || [];
+}
+
+function setFeedbackForBlock(blockId, items) {
+  const all = loadAllFeedback();
+  if (items.length === 0) delete all[blockId];
+  else all[blockId] = items;
+  saveAllFeedback(all);
+}
+
+function addFeedbackItem(blockId, text, priority) {
+  const items = getFeedbackForBlock(blockId);
+  const now = new Date().toISOString();
+  items.push({
+    id: 'fb-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
+    text,
+    priority: priority || 'medium',
+    created: now,
+    updated: now,
+  });
+  setFeedbackForBlock(blockId, items);
+}
+
+function updateFeedbackItem(blockId, itemId, updates) {
+  const items = getFeedbackForBlock(blockId);
+  const item = items.find(i => i.id === itemId);
+  if (item) {
+    Object.assign(item, updates, { updated: new Date().toISOString() });
+    setFeedbackForBlock(blockId, items);
+  }
+}
+
+function deleteFeedbackItem(blockId, itemId) {
+  let items = getFeedbackForBlock(blockId);
+  items = items.filter(i => i.id !== itemId);
+  setFeedbackForBlock(blockId, items);
+}
+
+function getActiveBlockId() {
+  if (bundleState.preset) return 'bundle:' + bundleState.preset.id;
+  return '_global';
+}
+
+function getAllBlockIds() {
+  const all = loadAllFeedback();
+  return Object.keys(all).sort();
+}
+
+function renderFeedbackSidebar() {
+  const container = document.getElementById('fb-items');
+  if (!container) return;
+
+  const blockFilter = document.getElementById('fb-block-filter').value;
+  const priFilter = document.getElementById('fb-pri-filter').value;
+
+  // Gather items
+  const all = loadAllFeedback();
+  let entries = [];  // [{blockId, item}]
+
+  if (blockFilter === '_all') {
+    for (const [blockId, items] of Object.entries(all)) {
+      for (const item of items) entries.push({ blockId, item });
+    }
+  } else if (blockFilter === '_active') {
+    const activeId = getActiveBlockId();
+    for (const item of (all[activeId] || [])) entries.push({ blockId: activeId, item });
+  } else {
+    for (const item of (all[blockFilter] || [])) entries.push({ blockId: blockFilter, item });
+  }
+
+  // Filter by priority
+  if (priFilter !== 'all') {
+    entries = entries.filter(e => e.item.priority === priFilter);
+  }
+
+  // Sort: high first, then medium, then low; within same priority by creation
+  const priOrder = { high: 0, medium: 1, low: 2 };
+  entries.sort((a, b) => (priOrder[a.item.priority] || 1) - (priOrder[b.item.priority] || 1)
+    || a.item.created.localeCompare(b.item.created));
+
+  if (entries.length === 0) {
+    container.innerHTML = '<div class="fb-empty">No feedback yet. Add one below.</div>';
+    return;
+  }
+
+  container.innerHTML = entries.map(({ blockId, item }) => {
+    const priClass = 'pri-' + item.priority;
+    const blockLabel = blockId.startsWith('bundle:') ? blockId.slice(7) : blockId;
+    return `<div class="fb-item ${priClass}" data-block="${blockId}" data-id="${item.id}">
+      <div class="fb-block-tag">${blockLabel}</div>
+      <div class="fb-text" contenteditable="false">${escapeHtml(item.text)}</div>
+      <div class="fb-controls">
+        <select class="fb-pri-sel fb-pri-change" data-id="${item.id}" data-block="${blockId}">
+          <option value="high" ${item.priority==='high'?'selected':''}>high</option>
+          <option value="medium" ${item.priority==='medium'?'selected':''}>med</option>
+          <option value="low" ${item.priority==='low'?'selected':''}>low</option>
+        </select>
+        <button class="fb-btn fb-edit" data-id="${item.id}" data-block="${blockId}">edit</button>
+        <button class="fb-btn fb-del" data-id="${item.id}" data-block="${blockId}">del</button>
+        <span style="flex:1"></span>
+        <span style="font-size:7px;color:var(--dim)">${new Date(item.updated).toLocaleTimeString()}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function setupFeedbackUI() {
+  // Update block filter options dynamically
+  function updateBlockFilterOptions() {
+    const sel = document.getElementById('fb-block-filter');
+    const current = sel.value;
+    // Keep fixed options, add dynamic ones
+    while (sel.options.length > 2) sel.remove(2);
+    for (const id of getAllBlockIds()) {
+      const opt = document.createElement('option');
+      opt.value = id;
+      opt.textContent = id.startsWith('bundle:') ? id.slice(7) : id;
+      sel.appendChild(opt);
+    }
+    // Restore selection
+    if ([...sel.options].some(o => o.value === current)) sel.value = current;
+  }
+
+  // Add feedback
+  document.getElementById('fb-add-btn').addEventListener('click', () => {
+    const textEl = document.getElementById('fb-add-text');
+    const text = textEl.value.trim();
+    if (!text) return;
+    const pri = document.getElementById('fb-add-pri').value;
+    addFeedbackItem(getActiveBlockId(), text, pri);
+    textEl.value = '';
+    updateBlockFilterOptions();
+    renderFeedbackSidebar();
+  });
+
+  // Enter key in input
+  document.getElementById('fb-add-text').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      document.getElementById('fb-add-btn').click();
+    }
+  });
+
+  // Filter changes
+  document.getElementById('fb-block-filter').addEventListener('change', renderFeedbackSidebar);
+  document.getElementById('fb-pri-filter').addEventListener('change', renderFeedbackSidebar);
+
+  // Delegated event handlers on container
+  document.getElementById('fb-items').addEventListener('click', (e) => {
+    const btn = e.target.closest('.fb-btn');
+    if (!btn) return;
+    const id = btn.dataset.id;
+    const blockId = btn.dataset.block;
+
+    if (btn.classList.contains('fb-del')) {
+      deleteFeedbackItem(blockId, id);
+      updateBlockFilterOptions();
+      renderFeedbackSidebar();
+    } else if (btn.classList.contains('fb-edit')) {
+      const item = btn.closest('.fb-item');
+      const textEl = item.querySelector('.fb-text');
+      const isEditing = textEl.contentEditable === 'true';
+      if (isEditing) {
+        // Save
+        const newText = textEl.textContent.trim();
+        if (newText) {
+          updateFeedbackItem(blockId, id, { text: newText });
+        }
+        textEl.contentEditable = 'false';
+        btn.textContent = 'edit';
+        renderFeedbackSidebar();
+      } else {
+        // Start editing
+        textEl.contentEditable = 'true';
+        textEl.focus();
+        btn.textContent = 'save';
+        // Select all text
+        const range = document.createRange();
+        range.selectNodeContents(textEl);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
+  });
+
+  // Priority change via select
+  document.getElementById('fb-items').addEventListener('change', (e) => {
+    if (e.target.classList.contains('fb-pri-change')) {
+      const id = e.target.dataset.id;
+      const blockId = e.target.dataset.block;
+      updateFeedbackItem(blockId, id, { priority: e.target.value });
+      renderFeedbackSidebar();
+    }
+  });
+
+  updateBlockFilterOptions();
+  renderFeedbackSidebar();
+}
+
+setupFeedbackUI();
+
 setupBundleUI();
 
-// Select first preset by default
-if (BUNDLE_PRESETS.length > 0) {
-  document.getElementById('bundle-preset').value = BUNDLE_PRESETS[0].id;
-  initBundlePreset(BUNDLE_PRESETS[0]);
-  document.getElementById('bundle-desc').innerHTML =
-    `<div class="bp-desc">${BUNDLE_PRESETS[0].desc}</div>`;
+// Restore last-used preset from localStorage, or default to first
+{
+  let restoreId = null;
+  try { restoreId = localStorage.getItem(BUNDLE_STORE_PREFIX + '_active'); } catch(e) {}
+  const restorePreset = BUNDLE_PRESETS.find(p => p.id === restoreId) || BUNDLE_PRESETS[0];
+  if (restorePreset) {
+    document.getElementById('bundle-preset').value = restorePreset.id;
+    initBundlePreset(restorePreset);
+    document.getElementById('bundle-desc').innerHTML =
+      `<div class="bp-desc">${restorePreset.desc}</div>`;
+  }
 }
 
 // ── Animation loop ────────────────────────────────────────────────────
