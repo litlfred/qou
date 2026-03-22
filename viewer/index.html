@@ -2345,63 +2345,60 @@
       document.body.classList.remove('has-sidebar');
       document.getElementById('sidebar').innerHTML = '';
 
-      const hdr = mk('div','hdr');
-      hdr.innerHTML = `<h1>${esc(block.title || block.label || block.rootName)}</h1>
-        <div class="au"><span class="bk">${block.kind}</span> ${block.label ? `<span class="bl">${block.label}</span>` : ''}</div>
-        <div class="dt"><a href="#/view/${esc(block.label || '')}" style="color:var(--ac)">back to paper</a></div>`;
-      app.appendChild(hdr);
+      // Navigation bar
+      const nav = mk('div','blk');
+      nav.style.cssText = 'display:flex;align-items:center;gap:.6rem;padding:.4rem 0;border-bottom:1px solid var(--brd);margin-bottom:.8rem';
+      const backLink = document.createElement('a');
+      backLink.href = `#/${block.label || ''}`;
+      backLink.style.cssText = 'color:var(--ac);font-family:var(--f-mono);font-size:.75rem;text-decoration:none';
+      backLink.textContent = '← back to paper';
+      nav.appendChild(backLink);
+      const labelSpan = mk('span','');
+      labelSpan.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-left:auto';
+      labelSpan.textContent = block.label || '';
+      nav.appendChild(labelSpan);
+      app.appendChild(nav);
 
-      // Source editor
-      const edArea = mk('div','blk');
-      const edHead = mk('div','');
-      edHead.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem';
-      edHead.innerHTML = `<h3 class="sec-t" style="margin:0">Markdown source</h3>`;
-      const saveBtn = document.createElement('button');
-      saveBtn.textContent = 'save';
-      saveBtn.style.cssText = 'background:var(--ac);border:none;color:var(--bg);font-family:var(--f-mono);font-size:.7rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer';
-      saveBtn.onclick = async () => {
-        saveBtn.textContent = 'saving...';
-        try {
-          const res = await fetch('/api/block/save', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, md: ta.value })
-          });
-          if (!res.ok) throw new Error(`${res.status}`);
-          block.md = ta.value;
-          saveBtn.textContent = 'saved';
-          setTimeout(() => { saveBtn.textContent = 'save'; }, 1500);
-        } catch (e) { saveBtn.textContent = 'error'; setTimeout(() => { saveBtn.textContent = 'save'; }, 2000); }
-      };
-      edHead.appendChild(saveBtn);
-      edArea.appendChild(edHead);
-      const ta = document.createElement('textarea');
-      ta.value = block.md || '';
-      ta.style.cssText = 'width:100%;min-height:300px;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-mono);font-size:.8rem;padding:.8rem;resize:vertical';
-      edArea.appendChild(ta);
-      app.appendChild(edArea);
+      // Render using the exact same block renderer as the paper
+      const rendered = renderBlock(block);
+      app.appendChild(rendered);
 
-      // Live preview
-      const prev = mk('div','blk');
-      prev.innerHTML = `<h3 class="sec-t">Preview</h3>`;
-      const prevBody = mk('div',`env ${block.kind}`);
-      prev.appendChild(prevBody);
-      app.appendChild(prev);
+      // Force hydrate (it was lazy-initialized)
+      const idx = lazyQueue.findIndex(t => {
+        const el = t.el;
+        return el === rendered || rendered.contains?.(el) || el.contains?.(rendered);
+      });
+      if (idx >= 0) { lazyQueue[idx].init(); lazyObs.unobserve(lazyQueue[idx].el); lazyQueue.splice(idx, 1); }
 
-      function updatePreview() {
-        const {html: bh, texBlocks: tx} = parseMd(ta.value);
-        prevBody.innerHTML = `<div class="bb">${bh}</div>`;
-        fillTex(prevBody, tx, block.rendered);
-        renderMath(prevBody);
+      // Auto-open the inline editor
+      const target = block.label ? document.getElementById(block.label) : rendered;
+      if (target?._inlineEditor) {
+        setTimeout(() => {
+          if (!target._inlineEditor.editor.classList.contains('open')) {
+            target._inlineEditor.btn.click();
+          }
+        }, 100);
       }
-      ta.addEventListener('input', updatePreview);
-      updatePreview();
 
-      // Manifest view
-      const manifest = mk('div','blk');
-      manifest.innerHTML = `<h3 class="sec-t">Manifest (.ts)</h3>
-        <pre style="background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;font-size:.75rem;color:var(--fg-d);overflow-x:auto">${esc(JSON.stringify({kind:block.kind,label:block.label,title:block.title,uses:block.uses,lean:block.lean,tags:block.tags,status:block.status}, null, 2))}</pre>`;
-      app.appendChild(manifest);
+      // Referenced-by panel
+      if (block.label) showReferencedBy(block.label, target || rendered);
+
+      // Manifest (collapsed by default)
+      const manifestWrap = mk('div','blk');
+      const manifestToggle = mk('div','');
+      manifestToggle.style.cssText = 'cursor:pointer;font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);padding:.3rem 0';
+      manifestToggle.innerHTML = '<span class="arrow">▸</span> manifest (.ts)';
+      const manifestBody = mk('pre','');
+      manifestBody.style.cssText = 'display:none;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;font-size:.75rem;color:var(--fg-d);overflow-x:auto;margin-top:.4rem';
+      manifestBody.textContent = JSON.stringify({kind:block.kind,label:block.label,title:block.title,uses:block.uses,lean:block.lean,tags:block.tags,status:block.status}, null, 2);
+      manifestToggle.onclick = () => {
+        const open = manifestBody.style.display !== 'none';
+        manifestBody.style.display = open ? 'none' : '';
+        manifestToggle.querySelector('.arrow').textContent = open ? '▸' : '▾';
+      };
+      manifestWrap.appendChild(manifestToggle);
+      manifestWrap.appendChild(manifestBody);
+      app.appendChild(manifestWrap);
 
       document.title = `Edit: ${block.title || block.label} — Folio`;
     }
