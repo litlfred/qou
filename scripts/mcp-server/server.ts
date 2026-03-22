@@ -28,39 +28,58 @@ import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
 import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
+import {
+  currentBranch, listBranches, isCurrentBranch,
+  readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
+} from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
 
-// ── Feedback storage (gitignored, survives branch switches) ─────
+// ── Feedback storage (gitignored, branch-scoped) ─────────────────
 
-function feedbackPath(paperId: string, rootName: string): string {
-  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+/** Sanitize branch name for use as directory name. */
+function safeBranch(branch?: string): string {
+  const b = branch || currentBranch();
+  return b.replace(/[^a-zA-Z0-9._-]/g, "_");
 }
 
-function readFeedback(paperId: string, rootName: string): unknown[] {
-  const p = feedbackPath(paperId, rootName);
-  if (!existsSync(p)) return [];
+function feedbackPath(paperId: string, rootName: string, branch?: string): string {
+  return join(FEEDBACK_DIR, safeBranch(branch), paperId, `${rootName}.json`);
+}
+
+function readFeedback(paperId: string, rootName: string, branch?: string): unknown[] {
+  const p = feedbackPath(paperId, rootName, branch);
+  if (!existsSync(p)) {
+    // Migration: check legacy (non-branch-scoped) path
+    const legacy = join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+    if (existsSync(legacy)) {
+      try { return JSON.parse(readFileSync(legacy, "utf-8")); } catch { return []; }
+    }
+    return [];
+  }
   try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
 }
 
-function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
-  const dir = join(FEEDBACK_DIR, paperId);
+function writeFeedback(paperId: string, rootName: string, todos: unknown[], branch?: string): void {
+  const p = feedbackPath(paperId, rootName, branch);
+  const dir = join(FEEDBACK_DIR, safeBranch(branch), paperId);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
+  writeFileSync(p, JSON.stringify(todos, null, 2), "utf-8");
 }
 
-/** List all feedback items across all papers, optionally filtered by status. */
-function listAllFeedback(status?: string): { paperId: string; rootName: string; todo: any }[] {
+/** List all feedback items across all papers, optionally filtered by status and branch. */
+function listAllFeedback(status?: string, branch?: string): { paperId: string; rootName: string; todo: any }[] {
   const results: { paperId: string; rootName: string; todo: any }[] = [];
-  if (!existsSync(FEEDBACK_DIR)) return results;
+  const branchDir = join(FEEDBACK_DIR, safeBranch(branch));
+  if (!existsSync(branchDir)) return results;
   const { readdirSync } = require("fs") as typeof import("fs");
-  for (const paperId of readdirSync(FEEDBACK_DIR)) {
-    const paperFbDir = join(FEEDBACK_DIR, paperId);
+  for (const paperId of readdirSync(branchDir)) {
+    const paperFbDir = join(branchDir, paperId);
     try {
       for (const file of readdirSync(paperFbDir)) {
         if (!file.endsWith(".json")) continue;
         const rootName = file.replace(/\.json$/, "");
-        const todos = readFeedback(paperId, rootName);
+        const todos = readFeedback(paperId, rootName, branch);
         for (const t of todos as any[]) {
           if (!status || t.status === status) {
             results.push({ paperId, rootName, todo: t });
@@ -136,21 +155,18 @@ interface FolioEntry {
   stats: { chapters: number; blocks: number; proved: number; todos: number };
 }
 
-async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> {
-  const folioPath = join(CONTENT_DIR, "folio.ts");
+async function resolveFolio(branch?: string): Promise<{ title: string; papers: FolioEntry[]; branch: string }> {
+  const br = branch;
+  const folioRel = "content/folio.ts";
   let folioData: { title: string; papers: Array<{ dir: string; title?: string; description?: string; tags?: string[] }> };
 
-  if (existsSync(folioPath)) {
-    // Clear module cache for hot-reload during development
-    delete require.cache?.[folioPath];
-    folioData = (await import(folioPath)).default;
+  if (fileExistsBranch(br, folioRel)) {
+    folioData = (await importTsBranch(br, folioRel)) as any;
   } else {
     // Auto-discover: scan content/ for directories with matching .ts manifests
-    const { readdirSync, statSync } = await import("fs");
-    const dirs = readdirSync(CONTENT_DIR).filter(d => {
+    const dirs = listDirBranch(br, "content").filter(d => {
       if (d === "schema" || d === "pipeline" || d === "node_modules") return false;
-      const full = join(CONTENT_DIR, d);
-      return statSync(full).isDirectory() && existsSync(join(full, `${d}.ts`));
+      return fileExistsBranch(br, `content/${d}/${d}.ts`);
     });
     folioData = { title: "Papers", papers: dirs.map(d => ({ dir: d })) };
   }
@@ -158,24 +174,22 @@ async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> 
   const papers: FolioEntry[] = [];
   for (const ref of folioData.papers) {
     try {
-      const paperPath = join(CONTENT_DIR, ref.dir, `${ref.dir}.ts`);
-      const paperMod = (await import(paperPath)).default;
+      const paperMod = (await importTsBranch(br, `content/${ref.dir}/${ref.dir}.ts`)) as any;
       let blockCount = 0, provedCount = 0, todoCount = 0, chapCount = 0;
 
       for (const chRef of paperMod.chapters || []) {
-        const chDir = join(CONTENT_DIR, ref.dir, chRef.dir);
-        const chPath = join(chDir, `${chRef.dir}.ts`);
-        if (!existsSync(chPath)) continue;
+        const chRel = `content/${ref.dir}/${chRef.dir}/${chRef.dir}.ts`;
+        if (!fileExistsBranch(br, chRel)) continue;
         chapCount++;
-        const ch = (await import(chPath)).default;
+        const ch = (await importTsBranch(br, chRel)) as any;
         for (const sec of ch.sections || []) {
           if (!("blocks" in sec)) continue;
           for (const rootName of sec.blocks) {
-            const tsPath = join(chDir, `${rootName}.ts`);
-            if (!existsSync(tsPath)) continue;
+            const blkRel = `content/${ref.dir}/${chRef.dir}/${rootName}.ts`;
+            if (!fileExistsBranch(br, blkRel)) continue;
             blockCount++;
             try {
-              const blk = (await import(tsPath)).default;
+              const blk = (await importTsBranch(br, blkRel)) as any;
               if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
               if (blk.todos?.length) todoCount += blk.todos.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
             } catch {}
@@ -204,22 +218,22 @@ async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> 
     }
   }
 
-  return { title: folioData.title, papers };
+  return { title: folioData.title, papers, branch: currentBranch() };
 }
 
-async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
-  const paperDir = join(CONTENT_DIR, id);
-  const paperPath = join(paperDir, `${id}.ts`);
-  if (!existsSync(paperPath)) return null;
+async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper & { branch: string }) | null> {
+  const br = branch;
+  const paperRel = `content/${id}/${id}.ts`;
+  if (!fileExistsBranch(br, paperRel)) return null;
 
-  const paperMod = (await import(paperPath)).default;
+  const paperMod = (await importTsBranch(br, paperRel)) as any;
   const chapters: ResolvedChapter[] = [];
 
   for (const chRef of paperMod.chapters || []) {
-    const chDir = join(paperDir, chRef.dir);
-    const chPath = join(chDir, `${chRef.dir}.ts`);
-    if (!existsSync(chPath)) continue;
-    const ch = (await import(chPath)).default;
+    const chRel = `content/${id}/${chRef.dir}`;
+    const chTsRel = `${chRel}/${chRef.dir}.ts`;
+    if (!fileExistsBranch(br, chTsRel)) continue;
+    const ch = (await importTsBranch(br, chTsRel)) as any;
 
     const sections: ResolvedSection[] = [];
     for (const sec of ch.sections || []) {
@@ -228,14 +242,14 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
       const blocks: ResolvedBlock[] = [];
 
       for (const rootName of section.blocks) {
-        const tsPath = join(chDir, `${rootName}.ts`);
-        const mdPath = join(chDir, `${rootName}.md`);
+        const blkTsRel = `${chRel}/${rootName}.ts`;
+        const blkMdRel = `${chRel}/${rootName}.md`;
         try {
-          const blk = (await import(tsPath)).default;
-          const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
+          const blk = (await importTsBranch(br, blkTsRel)) as any;
+          const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos from gitignored .qou-feedback/
-          const feedback = readFeedback(id, rootName);
+          // Merge feedback todos (branch-scoped)
+          const feedback = readFeedback(id, rootName, br);
           if (feedback.length) {
             blk.todos = [...(blk.todos || []), ...feedback];
           }
@@ -243,29 +257,22 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
           // Read Lean source if available
           let leanSource: string | undefined;
           if (blk.lean) {
-            // Try explicit file path first
             if (blk.lean.file) {
-              const leanPath = join(LEAN_DIR, blk.lean.file);
-              if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+              leanSource = readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
             }
-            // Try content sibling .lean file (e.g. content/.../categorical-action.lean)
             if (!leanSource) {
-              const siblingLean = join(chDir, `${rootName}.lean`);
-              if (existsSync(siblingLean)) leanSource = readFileSync(siblingLean, "utf-8");
+              leanSource = readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
             }
-            // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo/Bar.lean, QOU/Foo.lean
             if (!leanSource && blk.lean.decl) {
               const parts = blk.lean.decl.split(".");
               for (let i = parts.length; i >= 2; i--) {
-                const candidate = join(LEAN_DIR, parts.slice(0, i).join("/") + ".lean");
-                if (existsSync(candidate)) {
-                  leanSource = readFileSync(candidate, "utf-8");
-                  break;
-                }
+                const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
+                leanSource = readFileBranch(br, candidate) ?? undefined;
+                if (leanSource) break;
               }
             }
-            // Fallback: grep lean/QOU/ for the declaration name
-            if (!leanSource && blk.lean.decl) {
+            // Grep fallback only works for current branch (needs disk access)
+            if (!leanSource && blk.lean.decl && isCurrentBranch(br)) {
               const declName = blk.lean.decl.split(".").pop() || "";
               try {
                 const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
@@ -273,11 +280,10 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
                 if (files.length > 0 && existsSync(files[0])) {
                   leanSource = readFileSync(files[0], "utf-8");
                 }
-              } catch { /* grep not available or no match */ }
+              } catch {}
             }
           }
 
-          // Rewrite rendered asset URLs to serve from content source
           const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
             (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
               ...r,
@@ -325,7 +331,92 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     macros: paperMod.macros,
     chapters,
     todos: paperMod.todos,
+    branch: currentBranch(),
   };
+}
+
+// ── Diff computation ─────────────────────────────────────────────
+
+interface BlockDiff {
+  rootName: string;
+  kind: string;
+  label?: string;
+  title?: string;
+  status: "added" | "removed" | "changed" | "unchanged";
+  mdDiff?: { base: string; head: string };
+  leanDiff?: { base: string; head: string };
+  statusDiff?: { base: string; head: string };
+}
+
+interface PaperDiff {
+  base: string;
+  head: string;
+  paperId: string;
+  blocks: BlockDiff[];
+  summary: { added: number; removed: number; changed: number; unchanged: number };
+}
+
+function computePaperDiff(
+  basePaper: ResolvedPaper | null,
+  headPaper: ResolvedPaper | null,
+  base: string,
+  head: string,
+): PaperDiff {
+  const paperId = headPaper?.id || basePaper?.id || "";
+
+  // Flatten blocks from both papers
+  function flattenBlocks(paper: ResolvedPaper | null): Map<string, ResolvedBlock & { chapterTitle?: string; sectionTitle?: string }> {
+    const map = new Map();
+    if (!paper) return map;
+    for (const ch of paper.chapters || []) {
+      for (const sec of ch.sections || []) {
+        for (const blk of sec.blocks || []) {
+          map.set(blk.rootName, { ...blk, chapterTitle: ch.title, sectionTitle: sec.title });
+        }
+      }
+    }
+    return map;
+  }
+
+  const baseBlocks = flattenBlocks(basePaper);
+  const headBlocks = flattenBlocks(headPaper);
+  const allNames = new Set([...baseBlocks.keys(), ...headBlocks.keys()]);
+
+  const blocks: BlockDiff[] = [];
+  const summary = { added: 0, removed: 0, changed: 0, unchanged: 0 };
+
+  for (const name of allNames) {
+    const baseBlk = baseBlocks.get(name);
+    const headBlk = headBlocks.get(name);
+
+    if (!baseBlk && headBlk) {
+      blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "added" });
+      summary.added++;
+    } else if (baseBlk && !headBlk) {
+      blocks.push({ rootName: name, kind: baseBlk.kind, label: baseBlk.label, title: baseBlk.title, status: "removed" });
+      summary.removed++;
+    } else if (baseBlk && headBlk) {
+      const mdChanged = baseBlk.md !== headBlk.md;
+      const leanChanged = (baseBlk.lean?.source || "") !== (headBlk.lean?.source || "");
+      const statusChanged = baseBlk.status !== headBlk.status;
+
+      if (mdChanged || leanChanged || statusChanged) {
+        const diff: BlockDiff = {
+          rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "changed",
+        };
+        if (mdChanged) diff.mdDiff = { base: baseBlk.md, head: headBlk.md };
+        if (leanChanged) diff.leanDiff = { base: baseBlk.lean?.source || "", head: headBlk.lean?.source || "" };
+        if (statusChanged) diff.statusDiff = { base: baseBlk.status || "", head: headBlk.status || "" };
+        blocks.push(diff);
+        summary.changed++;
+      } else {
+        blocks.push({ rootName: name, kind: headBlk.kind, label: headBlk.label, title: headBlk.title, status: "unchanged" });
+        summary.unchanged++;
+      }
+    }
+  }
+
+  return { base, head, paperId, blocks, summary };
 }
 
 // ── Viewer content serving ───────────────────────────────────────
@@ -371,10 +462,27 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return serveFile(join(ASSISTANT_DIR, path.slice("/assistant/".length)));
   }
 
+  // ── API: Branch info ───────────────────────────────────────
+  // GET /api/branches → { current, branches[] }
+  if (path === "/api/branches") {
+    return Response.json({
+      current: currentBranch(),
+      branches: listBranches(),
+    }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+  }
+  // GET /api/branch → { branch } (lightweight, for polling)
+  if (path === "/api/branch") {
+    return Response.json({
+      branch: currentBranch(),
+    }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+  }
+
   // ── API: Folio (paper listing) ─────────────────────────────
+  // Supports ?branch=X to resolve from a different branch
   if (path === "/api/folio") {
+    const branch = url.searchParams.get("branch") || undefined;
     try {
-      const data = await resolveFolio();
+      const data = await resolveFolio(branch);
       return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
@@ -382,12 +490,13 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   }
 
   // ── API: Paper (full resolved tree) ────────────────────────
-  // /api/paper?id=quantum-observable-universe
+  // /api/paper?id=quantum-observable-universe&branch=feature-x
   if (path === "/api/paper") {
     const id = url.searchParams.get("id");
+    const branch = url.searchParams.get("branch") || undefined;
     if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
     try {
-      const data = await resolvePaper(id);
+      const data = await resolvePaper(id, branch);
       if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
       return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
@@ -408,15 +517,37 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // POST /api/feedback                      → create todo (handled below)
   if (path === "/api/feedback/all") {
     const status = url.searchParams.get("status") || undefined;
-    return Response.json(listAllFeedback(status));
+    const branch = url.searchParams.get("branch") || undefined;
+    return Response.json(listAllFeedback(status, branch));
   }
   if (path === "/api/feedback") {
     const paperId = url.searchParams.get("paperId");
     const rootName = url.searchParams.get("rootName");
+    const branch = url.searchParams.get("branch") || undefined;
     if (paperId && rootName) {
-      return Response.json(readFeedback(paperId, rootName));
+      return Response.json(readFeedback(paperId, rootName, branch));
     }
     return null; // POST handled in handlePostRequest
+  }
+
+  // ── API: Diff between branches ─────────────────────────────
+  // GET /api/diff?id=<paper>&base=main&head=feature-x
+  // Returns per-block diff info (added, removed, changed blocks)
+  if (path === "/api/diff") {
+    const id = url.searchParams.get("id");
+    const base = url.searchParams.get("base") || "main";
+    const head = url.searchParams.get("head") || currentBranch();
+    if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
+    try {
+      const [basePaper, headPaper] = await Promise.all([
+        resolvePaper(id, base),
+        resolvePaper(id, head),
+      ]);
+      const diff = computePaperDiff(basePaper, headPaper, base, head);
+      return Response.json(diff, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
   }
 
   // ── Legacy viewer SPA ─────────────────────────────────────
@@ -564,16 +695,16 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
-  // ── Submit feedback as todo ────────────────────────────────
-  // Stored in .qou-feedback/ (gitignored), not in the content tree.
-  // Survives branch switches and won't be accidentally committed.
+  // ── Submit feedback as todo (branch-scoped) ─────────────────
   if (path === "/api/feedback") {
     try {
       const body = await req.json() as {
         paperId: string; rootName: string;
         summary: string; comment: string; priority: string; assignee: string;
+        branch?: string;
       };
 
+      const branch = body.branch || undefined;
       const todoId = `todo-${Date.now().toString(36)}`;
       const todo = {
         id: todoId,
@@ -584,11 +715,12 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         origin: "human",
         assignee: body.assignee || "editor-agent",
         createdAt: new Date().toISOString(),
+        branch: branch || currentBranch(),
       };
 
-      const todos = readFeedback(body.paperId, body.rootName);
+      const todos = readFeedback(body.paperId, body.rootName, branch);
       todos.push(todo);
-      writeFeedback(body.paperId, body.rootName, todos);
+      writeFeedback(body.paperId, body.rootName, todos, branch);
 
       return Response.json({ ok: true, todo });
     } catch (e) {
