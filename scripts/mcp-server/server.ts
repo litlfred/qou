@@ -27,7 +27,7 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
 
@@ -91,9 +91,9 @@ interface ResolvedBlock {
   title?: string;
   uses?: string[];
   examples?: string[];
+  proofs?: string[];
   lean?: { decl: string; file?: string; validation?: string; source?: string };
   status?: string;
-  hasProof?: boolean;
   tex?: string;
   caption?: string;
   tags?: string[];
@@ -242,9 +242,39 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
 
           // Read Lean source if available
           let leanSource: string | undefined;
-          if (blk.lean?.file) {
-            const leanPath = join(LEAN_DIR, blk.lean.file);
-            if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+          if (blk.lean) {
+            // Try explicit file path first
+            if (blk.lean.file) {
+              const leanPath = join(LEAN_DIR, blk.lean.file);
+              if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
+            }
+            // Try content sibling .lean file (e.g. content/.../categorical-action.lean)
+            if (!leanSource) {
+              const siblingLean = join(chDir, `${rootName}.lean`);
+              if (existsSync(siblingLean)) leanSource = readFileSync(siblingLean, "utf-8");
+            }
+            // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo/Bar.lean, QOU/Foo.lean
+            if (!leanSource && blk.lean.decl) {
+              const parts = blk.lean.decl.split(".");
+              for (let i = parts.length; i >= 2; i--) {
+                const candidate = join(LEAN_DIR, parts.slice(0, i).join("/") + ".lean");
+                if (existsSync(candidate)) {
+                  leanSource = readFileSync(candidate, "utf-8");
+                  break;
+                }
+              }
+            }
+            // Fallback: grep lean/QOU/ for the declaration name
+            if (!leanSource && blk.lean.decl) {
+              const declName = blk.lean.decl.split(".").pop() || "";
+              try {
+                const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
+                const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+                if (files.length > 0 && existsSync(files[0])) {
+                  leanSource = readFileSync(files[0], "utf-8");
+                }
+              } catch { /* grep not available or no match */ }
+            }
           }
 
           // Rewrite rendered asset URLs to serve from content source
@@ -262,9 +292,9 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             title: blk.title,
             uses: blk.uses,
             examples: blk.examples,
+            proofs: blk.proofs,
             lean: blk.lean ? { ...blk.lean, source: leanSource } : undefined,
             status: blk.status,
-            hasProof: blk.hasProof,
             tex: blk.tex,
             caption: blk.caption,
             tags: blk.tags,
@@ -392,6 +422,78 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // ── Legacy viewer SPA ─────────────────────────────────────
   if (path === "/viewer" || path === "/viewer/" || path === "/viewer/index.html") {
     return serveFile(join(VIEWER_DIR, "index.html"));
+  }
+
+  // ── API: Render PDF status (check if latexmk is available) ────
+  if (path === "/api/render-pdf/status") {
+    try {
+      const { execSync: ex } = await import("child_process");
+      ex("which latexmk", { stdio: "pipe" });
+      return Response.json({ available: true }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch {
+      return Response.json({ available: false, reason: "latexmk not installed" }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
+  // ── API: Render PDF (triggers content_build → latexmk) ────────
+  if (path === "/api/render-pdf") {
+    try {
+      const { spawnSync, execSync: ex } = await import("child_process");
+      const { mkdirSync, readFileSync: rf } = await import("fs");
+
+      // Pre-check: is latexmk installed?
+      try { ex("which latexmk", { stdio: "pipe" }); } catch {
+        return Response.json({
+          error: "latexmk not installed. Install TeX Live: apt install texlive-full",
+        }, { status: 503, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Step 1: Build content objects → .tex chapters
+      const buildResult = spawnSync("bun", ["run", join(REPO_ROOT, "content/pipeline/build.ts")], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 60_000,
+      });
+
+      // Step 2: Run latexmk to produce PDF
+      if (!existsSync(BUILD_DIR)) mkdirSync(BUILD_DIR, { recursive: true });
+      const latexResult = spawnSync("latexmk", [
+        "-pdf",
+        `-jobname=quantum-observable-universe`,
+        `-output-directory=${BUILD_DIR}`,
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        MAIN_TEX,
+      ], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 300_000,
+      });
+
+      const pdfPath = join(BUILD_DIR, "quantum-observable-universe.pdf");
+      if (latexResult.status === 0 && existsSync(pdfPath)) {
+        const pdfData = rf(pdfPath);
+        return new Response(pdfData, {
+          headers: {
+            "Content-Type": "application/pdf",
+            "Content-Disposition": 'inline; filename="quantum-observable-universe.pdf"',
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      }
+
+      // Failed — return error details
+      const log = latexResult.stderr?.toString().slice(-3000) || "";
+      const buildLog = buildResult.stderr?.toString().slice(-1000) || "";
+      return Response.json({
+        error: "LaTeX compilation failed",
+        buildLog,
+        latexLog: log,
+      }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
   }
 
   // Legacy paper.json — viewer now uses /api/paper directly

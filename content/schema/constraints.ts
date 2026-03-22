@@ -23,6 +23,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   conjecture: "conj:",
   example: "ex:",
   remark: "rem:",
+  proof: "prf:",
   equation: "eq:",
   diagram: "fig:",
 };
@@ -101,9 +102,7 @@ export const DefinitionSchema = BlockBaseSchema.extend({
 });
 
 const ProvableBaseSchema = BlockBaseSchema.extend({
-  lean: LeanRefSchema.optional(),
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
-  hasProof: z.boolean().optional(),
+  proofs: z.array(z.string()).optional(),
   examples: z.array(z.string()).optional(),
 });
 
@@ -143,6 +142,13 @@ export const RemarkSchema = BlockBaseSchema.extend({
   kind: z.literal("remark"),
   label: labelForKind("remark"),
   lean: LeanRefSchema.optional(),
+});
+
+export const ProofSchema = BlockBaseSchema.extend({
+  kind: z.literal("proof"),
+  label: labelForKind("proof"),
+  lean: LeanRefSchema.optional(),
+  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
 });
 
 export const ProseSchema = z.object({
@@ -188,6 +194,7 @@ export const BlockSchema = z.discriminatedUnion("kind", [
   ConjectureSchema,
   ExampleSchema,
   RemarkSchema,
+  ProofSchema,
   ProseSchema,
   EquationSchema,
   DiagramSchema,

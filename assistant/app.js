@@ -176,11 +176,26 @@
       const secList = h("div", "sb-secs");
       for (const sec of ch.sections || []) {
         const secEl = h("div", "sb-sec", esc(sec.title));
+        if (sec.label) secEl.dataset.sbLabel = sec.label;
         secEl.onclick = () => {
           const target = document.getElementById(sec.label || "");
           if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
         };
         secList.appendChild(secEl);
+
+        // block-level labels under each section
+        for (const blk of sec.blocks || []) {
+          if (blk.kind === "prose" || !blk.label) continue;
+          const blkEl = h("div", "sb-blk",
+            `<span class="sb-bk">${kindAbbr(blk.kind)}</span> ${esc(blk.title || blk.label)}`);
+          blkEl.dataset.sbLabel = blk.label;
+          blkEl.onclick = (e) => {
+            e.stopPropagation();
+            const target = document.getElementById(blk.label);
+            if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+          };
+          secList.appendChild(blkEl);
+        }
       }
       chEl.onclick = () => { chEl.classList.toggle("open"); };
       sb.appendChild(chEl);
@@ -208,6 +223,7 @@
     app.innerHTML = "";
     app.appendChild(wrap);
     renderMath(app);
+    observeVisibleBlocks(sb);
   }
 
   function renderChapter(ch) {
@@ -259,10 +275,19 @@
 
     // header
     const bh = h("div", "bh");
+    const statusCls = blk.status || blk.lean?.validation || "";
+    const statusLabel = blk.status || blk.lean?.validation || "";
+    const leanBadge = blk.lean
+      ? `<span class="bh-lean ${statusCls}" title="${esc(blk.lean.decl)}${statusLabel ? " (" + esc(statusLabel) + ")" : ""}">∀${statusLabel ? `<span class="bh-lean-status">${esc(statusLabel)}</span>` : ""}</span>`
+      : "";
+    const proofBadge = blk.kind === "proof"
+      ? `<span class="bh-lean ${statusCls}" title="proof block${statusLabel ? " (" + esc(statusLabel) + ")" : ""}">∀${statusLabel ? `<span class="bh-lean-status">${esc(statusLabel)}</span>` : ""}</span>`
+      : "";
     bh.innerHTML = `
       <span class="bk">${esc(blk.kind)}</span>
       ${blk.title ? `<span class="bt">${esc(blk.title)}</span>` : ""}
-      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}`;
+      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}
+      ${leanBadge || proofBadge}`;
     el.appendChild(bh);
 
     // action bar
@@ -285,11 +310,28 @@
     srcBtn.onclick = () => srcPanel.classList.toggle("vis");
     el.appendChild(srcPanel);
 
-    // lean badge
+    // lean badge + source toggle
     if (blk.lean) {
       const cls = blk.status || blk.lean.validation || "";
-      el.appendChild(h("div", `lb ${cls}`,
-        `<span class="vi ${blk.lean.validation || ""}"></span> ${esc(blk.lean.decl)} ${cls ? `(${cls})` : ""}`));
+      const lb = h("div", `lb ${cls}`);
+      lb.innerHTML = `<span class="vi ${blk.lean.validation || ""}"></span> ${esc(blk.lean.decl)} ${cls ? `(${cls})` : ""}`;
+      lb.style.cursor = "pointer";
+      lb.title = "Show Lean source";
+      const leanPanel = h("pre", "lean-src");
+      if (blk.lean.source) {
+        leanPanel.textContent = blk.lean.source;
+      } else {
+        leanPanel.textContent = `-- No Lean source available for ${blk.lean.decl}\n-- Status: ${blk.status || "unknown"}`;
+        leanPanel.classList.add("lean-src-empty");
+      }
+      const toggleLean = () => leanPanel.classList.toggle("vis");
+      lb.onclick = toggleLean;
+      el.appendChild(lb);
+      el.appendChild(leanPanel);
+
+      // Wire ∀ badge in header to same toggle
+      const forallBadge = bh.querySelector(".bh-lean");
+      if (forallBadge) forallBadge.onclick = toggleLean;
     }
 
     // uses
@@ -569,6 +611,27 @@
         katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
+  }
+
+  // ── Scroll-based sidebar highlighting ───────────────────
+  function observeVisibleBlocks(sb) {
+    const sidebarLinks = $$("[data-sb-label]", sb);
+    if (!sidebarLinks.length) return;
+
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const label = entry.target.id;
+        if (!label) continue;
+        const link = sb.querySelector(`[data-sb-label="${CSS.escape(label)}"]`);
+        if (link) link.classList.toggle("active", entry.isIntersecting);
+      }
+    }, { rootMargin: "-40px 0px -40% 0px", threshold: 0 });
+
+    for (const link of sidebarLinks) {
+      const label = link.dataset.sbLabel;
+      const target = document.getElementById(label);
+      if (target) io.observe(target);
+    }
   }
 
   // ── Helpers ─────────────────────────────────────────────

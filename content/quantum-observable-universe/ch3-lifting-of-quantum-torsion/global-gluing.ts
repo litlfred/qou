@@ -3,7 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:global-gluing",
   title: "Global gluing via Yekutieli's twisted quantization",
-  hasProof: true,
   tags: ["yekutieli", "twisted-quantization", "global-gluing"],
   uses: [
     "def:quantum-observable-universe",
@@ -12,4 +11,5 @@ export default proposition({
     "def:quantum-characteristic-classes",
     "prop:vacuum-state",
   ],
+  proofs: ["prf:global-gluing"],
 });

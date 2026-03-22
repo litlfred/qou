@@ -109,56 +109,202 @@
     .blk-stub .stub-kind{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.6rem}
     .blk-stub.remark .stub-kind{color:var(--fg-d)}
     .blk-stub.example .stub-kind{color:var(--grn)}
+    .blk-stub.proof .stub-kind{color:var(--fg-d);font-style:italic}
+
+    /* Lean source code block */
+    .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
+    .lean-src-hdr{display:flex;align-items:center;justify-content:space-between;padding:.25rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d)}
+    .lean-src pre{margin:0;padding:.6rem .8rem;font-family:var(--f-mono);font-size:.75rem;line-height:1.5;overflow-x:auto;background:var(--bg-c)!important}
+    .lean-src code{font-family:var(--f-mono);font-size:.75rem}
     .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
     .env:hover .collapse-btn{opacity:.5}
     .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
     /* Print styles — paper-like output */
     @media print{
-      /* Hide all chrome */
-      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,.todo-inline,.blk-stub,
-      .feedback-overlay,.feedback-panel,.hash,.decor,.lb,.blk-foot,.bl,
-      .sb-badge,.ex-toggle,.ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu{display:none!important}
+      /* ── Hide all UI chrome ─────────────────────────────── */
+      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,
+      .todo-inline,.blk-stub,.feedback-overlay,.feedback-panel,
+      .hash,.decor,.lb,.blk-foot,.bl,.sb-badge,.ex-toggle,
+      .ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu,
+      .bh-drop,.tags,.uses,.uref,.upnl,.lean-src{display:none!important}
       body.has-sidebar #app{margin-left:0!important}
 
-      /* Paper layout: narrow margins, compact font */
-      @page{margin:1.5cm 2cm;size:letter}
-      html{font-size:10pt}
-      body{font-family:'Crimson Pro','Times New Roman',serif!important;line-height:1.4;color:#000!important;background:#fff!important}
+      /* ── Page geometry (LaTeX article defaults) ─────────── */
+      @page{
+        size:letter;
+        margin:1in 1.25in;
+      }
+      @page:first{margin-top:1.5in}
+
+      /* ── Base typography — Latin Modern / Computer Modern ── */
+      html{font-size:11pt}
+      body{
+        font-family:'Latin Modern Roman','CMU Serif','Computer Modern','Crimson Pro','Times New Roman',serif!important;
+        line-height:1.45;
+        color:#000!important;
+        background:#fff!important;
+        orphans:3;widows:3;
+      }
       #app{max-width:100%!important;padding:0!important;margin:0!important}
 
-      /* Title page */
-      .hdr{text-align:center;padding:1.5rem 0 1rem;border-bottom:1px solid #999;margin-bottom:1.5rem}
-      .hdr h1{font-size:16pt;color:#000!important}
-      .hdr .au{font-size:11pt;color:#333!important}
-      .hdr .af,.hdr .dt{font-size:9pt;color:#555!important}
+      /* ── Title block (centered, LaTeX \maketitle style) ──── */
+      .hdr{
+        text-align:center;
+        padding:0;
+        border:none!important;
+        margin:0 0 2em 0;
+      }
+      .hdr h1{
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        margin-bottom:.6em;
+        line-height:1.25;
+      }
+      .hdr .au{
+        font-size:12pt;
+        font-weight:400;
+        color:#000!important;
+        margin-bottom:.2em;
+      }
+      .hdr .af{
+        font-size:10pt;
+        font-style:italic;
+        color:#444!important;
+        margin-bottom:.1em;
+      }
+      .hdr .dt{
+        font-family:inherit!important;
+        font-size:10pt;
+        color:#444!important;
+        margin-top:.4em;
+      }
 
-      /* Numbered chapters and sections */
-      .ch{break-before:page}
+      /* ── Chapters — each starts a new page ──────────────── */
+      .ch{break-before:page;margin-bottom:0}
       .ch:first-child{break-before:auto}
-      .ch-t{font-size:14pt;font-weight:700;color:#000!important;border-bottom:1px solid #999;margin-bottom:1rem;padding-bottom:.3rem}
+      .ch-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        border-bottom:none!important;
+        margin-bottom:1.2em;
+        padding-bottom:0;
+        text-align:left;
+      }
       .ch-t .n{color:#000!important;font-weight:700}
-      .sec-t{font-size:12pt;font-weight:600;color:#000!important;margin:1.2rem 0 .6rem}
-      .sec-n{display:inline!important;margin-right:.3em}
 
-      /* Environment blocks — traditional style */
-      .env{border:none!important;padding:0!important;margin:.6rem 0!important;background:none!important}
-      .bh{margin-bottom:.2rem}
-      .bk{font-size:9pt;font-weight:700;text-transform:none;color:#000!important;letter-spacing:0}
-      .bt{font-size:10pt;font-weight:400;font-style:italic;color:#000!important}
-      .bb{font-size:10pt}
-      .bb p{margin:.3em 0}
-      .bb li{margin:.2em 0}
+      /* ── Sections ───────────────────────────────────────── */
+      .sec-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:13pt;
+        font-weight:700;
+        color:#000!important;
+        margin:1.5em 0 .6em;
+      }
+      .sec-n{display:inline!important;margin-right:.4em}
 
-      /* Math */
+      /* ── Environment blocks — LaTeX theorem style ───────── */
+      .env{
+        border:none!important;
+        border-left:none!important;
+        padding:0!important;
+        margin:.8em 0!important;
+        background:none!important;
+        border-radius:0!important;
+      }
+
+      /* Block header: "Definition 3.1." or "Theorem 2.4 (Name)." */
+      .bh{
+        display:inline!important;
+        margin-bottom:0!important;
+        gap:0!important;
+      }
+      .bh-anchor{
+        display:inline!important;
+        gap:0!important;
+        text-decoration:none!important;
+      }
+      .bk{
+        font-size:11pt!important;
+        font-weight:700!important;
+        font-style:normal!important;
+        text-transform:capitalize!important;
+        color:#000!important;
+        letter-spacing:0!important;
+        display:inline!important;
+      }
+      .bk::after{content:'.'!important;display:inline!important}
+      .bt{
+        font-size:11pt!important;
+        font-weight:400!important;
+        font-style:normal!important;
+        color:#000!important;
+        display:inline!important;
+      }
+      /* Wrap title in parens for print: "Theorem (Name)." */
+      .bt::before{content:' ('!important}
+      .bt::after{content:')'!important}
+
+      /* Block body */
+      .bb{font-size:11pt!important;display:inline!important}
+      .bb p:first-child{display:inline!important;margin-top:0!important}
+      .bb p{margin:.4em 0!important}
+      .bb li{margin:.2em 0!important}
+
+      /* Theorem/prop/lemma/corollary body in italic (LaTeX convention) */
+      .env.theorem .bb,.env.proposition .bb,
+      .env.lemma .bb,.env.corollary .bb,
+      .env.conjecture .bb{font-style:italic}
+      /* But math inside italic env stays upright */
+      .env.theorem .katex,.env.proposition .katex,
+      .env.lemma .katex,.env.corollary .katex,
+      .env.conjecture .katex{font-style:normal}
+
+      /* Definition body stays roman (LaTeX convention) */
+      .env.definition .bb{font-style:normal}
+
+      /* Remark — smaller, roman */
+      .env.remark .bb{font-style:normal;font-size:10pt!important}
+      .env.remark .bk{font-style:italic!important;font-weight:400!important}
+
+      /* Proof blocks (collapsible in screen, expanded in print) */
+      .prf-toggle{display:none!important}
+      .prf-body{display:block!important;padding:0!important}
+      .prf-body::before{content:'Proof. ';font-style:italic;font-weight:400}
+      .prf-body .qed::after{content:'\25A1';font-size:10pt}
+      .prf-lean{display:none!important}
+
+      /* Legacy env.proof */
+      .env.proof .bk{font-style:italic!important;font-weight:400!important}
+      .env.proof .bk::after{content:'.'!important}
+      .env.proof .bb{font-style:normal}
+
+      /* ── Math ───────────────────────────────────────────── */
       .katex{color:#000!important}
-      .txb{padding:.4rem 0;margin:.4rem 0}
+      .katex-display{margin:.6em 0!important;padding:0!important}
+      .txb{padding:.3em 0!important;margin:.5em 0!important;text-align:center}
+      .txb img,.txb svg{filter:none!important;transform:scale(1)!important}
 
-      /* Links — no color in print */
+      /* ── Links — invisible in print ─────────────────────── */
       a{color:#000!important;text-decoration:none!important}
 
-      /* Break control */
+      /* ── Page break control ─────────────────────────────── */
       .env{break-inside:avoid}
       .section{break-inside:avoid-page}
+      h2,h3{break-after:avoid}
+
+      /* ── Prose blocks — clean inline flow ───────────────── */
+      .blk{margin:.6em 0!important}
+      .blk .bb p{text-indent:0;text-align:justify}
+
+      /* ── Lists ──────────────────────────────────────────── */
+      .bb ul{list-style:disc!important;padding-left:1.8em!important}
+      .bb ol{padding-left:1.8em!important}
+
+      /* ── Footnotes / references ─────────────────────────── */
+      .bb sup{font-size:.75em}
     }
     /* Reading mode — hide decorations */
     body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
@@ -178,19 +324,21 @@
     .env.example .bk{color:var(--grn)}
     .env.remark .bk{color:var(--fg-d)}
     .bt{font-size:.95rem;font-weight:500;color:var(--fg-b);overflow:hidden;text-overflow:ellipsis}
-    /* Header actions group — right side */
-    .bh-acts{display:flex;align-items:center;gap:.3rem;flex-shrink:0;margin-left:auto}
-    .bh-acts .lb{margin-left:0}
-    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:.1rem .3rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);white-space:nowrap}
-    .bh-acts .bl:hover{color:var(--ac);border-color:var(--ac-d)}
-    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:1px solid var(--brd);border-radius:2px;padding:.1rem .3rem;cursor:pointer;white-space:nowrap}
-    .bh-acts .fb-act:hover{color:var(--ac);border-color:var(--ac-d)}
+    /* Header actions group — right side, plain grey text */
+    .bh-acts{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
+    .bh-acts .lb{margin-left:0;background:none;border:none;padding:0;border-radius:0}
+    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:0;border-radius:0;background:none;border:none;white-space:nowrap}
+    .bh-acts .bl:hover{color:var(--ac)}
+    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:none;border-radius:0;padding:0;cursor:pointer;white-space:nowrap}
+    .bh-acts .fb-act:hover{color:var(--ac)}
+    .bh-acts .st{position:static;width:auto;height:auto;opacity:.5;font-size:.55rem;padding:0;display:inline-flex}
     /* Hamburger for narrow — replaces bh-acts */
     .bh-menu{display:none;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-size:.7rem;padding:.1rem .3rem;margin-left:auto;position:relative}
     .bh-menu:hover{color:var(--fg-b);border-color:var(--ac-d)}
     .bh-drop{display:none;position:absolute;right:0;top:100%;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;padding:.3rem;z-index:50;min-width:120px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
     .bh-drop.open{display:flex;flex-direction:column;gap:.2rem}
-    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb{font-size:.55rem;display:block;text-align:left;width:100%}
+    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb,.bh-drop .st{font-size:.55rem;display:block;text-align:left;width:100%;background:none;border:none;padding:.15rem .4rem;color:var(--fg-d);cursor:pointer}
+    .bh-drop .bl:hover,.bh-drop .fb-act:hover,.bh-drop .lb:hover,.bh-drop .st:hover{color:var(--ac)}
     @media(max-width:600px){
       .bh-acts{display:none}
       .bh-menu{display:block}
@@ -211,14 +359,14 @@
     .bsrc{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:3px;padding:.6rem .8rem;margin-top:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;color:var(--fg-d)}
     .bsrc.vis{display:block}
 
-    /* Lean badge + icons */
-    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-left:auto;white-space:nowrap}
-    .lb.proved{color:var(--grn);border-color:var(--grn)}
-    .lb.has_sorry{color:var(--yel);border-color:var(--yel)}
-    .lb.stated{color:var(--ac);border-color:var(--ac)}
-    .lb.validated{color:var(--grn);border-color:var(--grn)}
-    .lb.stub{color:var(--red);border-color:var(--red)}
-    .lb.external{color:var(--ora);border-color:var(--ora)}
+    /* Lean badge — plain grey text, colored by status */
+    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:0;border-radius:0;background:none;border:none;color:var(--fg-d);margin-left:auto;white-space:nowrap}
+    .lb.proved{color:var(--grn)}
+    .lb.has_sorry{color:var(--yel)}
+    .lb.stated{color:var(--ac)}
+    .lb.validated{color:var(--grn)}
+    .lb.stub{color:var(--red)}
+    .lb.external{color:var(--ora)}
     .lb.trivial{color:var(--fg-d)}
 
     /* Lean validation icon */
@@ -229,6 +377,18 @@
     .vi.trivial{background:var(--fg-d)}
     .vi.not_checked{background:var(--brd)}
     .vi.error{background:var(--red);box-shadow:0 0 4px var(--red)}
+
+    /* Proof block (collapsible, default closed) */
+    .prf{margin-top:.4rem}
+    .prf-toggle{font-family:var(--f-head);font-size:.8rem;color:var(--fg-d);cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;font-style:italic;padding:.2rem 0}
+    .prf-toggle:hover{color:var(--fg-b)}
+    .prf-toggle .arrow{transition:transform .2s;font-style:normal;font-size:.6rem}
+    .prf-toggle.open .arrow{transform:rotate(90deg)}
+    .prf-toggle .prf-lean{font-style:normal;font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);margin-left:.5rem}
+    .prf-body{display:none;padding:.6rem 0 .4rem;font-size:var(--f-sz);line-height:var(--f-lh)}
+    .prf-body.open{display:block}
+    .prf-body p{margin:.4em 0}
+    .prf-body .qed{text-align:right;color:var(--fg-d);font-size:.8rem;margin-top:.2rem}
 
     /* Examples panel (hidden by default) */
     .ex-panel{display:none;margin-top:.6rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
@@ -325,7 +485,8 @@
     <button id="c-rd" title="Reading mode: hide decorations">reading</button>
     <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
-    <button id="c-pr" title="Print / Save as PDF">print</button>
+    <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
+    <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -428,10 +589,44 @@
     });
     btnRm.classList.add('on'); // remarks on by default
 
+    // Preview (browser print with LaTeX-styled CSS)
     document.getElementById('c-pr').addEventListener('click', () => {
       // Force-hydrate all lazy content before printing
       while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
       window.print();
+    });
+
+    // PDF (trigger server-side LaTeX pipeline)
+    // Check PDF availability at startup — hide button if latexmk not installed
+    const pdfBtn = document.getElementById('c-pdf');
+    fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
+      if (!d.available) {
+        pdfBtn.style.display = 'none';
+      }
+    }).catch(() => { pdfBtn.style.display = 'none'; });
+
+    pdfBtn.addEventListener('click', async () => {
+      const orig = pdfBtn.textContent;
+      pdfBtn.textContent = 'building...';
+      pdfBtn.disabled = true;
+      try {
+        const res = await fetch('/api/render-pdf');
+        if (res.ok && res.headers.get('content-type')?.includes('pdf')) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          window.open(url, '_blank');
+          setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        } else {
+          const err = await res.json().catch(() => ({ error: 'Unknown error' }));
+          alert(`PDF build failed: ${err.error || 'See console'}`);
+          console.error('PDF render error:', err);
+        }
+      } catch (e) {
+        alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
+      } finally {
+        pdfBtn.textContent = orig;
+        pdfBtn.disabled = false;
+      }
     });
 
     // Sidebar hamburger toggle (narrow screens)
@@ -586,13 +781,31 @@
         try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
     }
 
+    // ── Resolve cross-ref links: replace generic text with block titles ──
+    function resolveRefs(el) {
+      for (const a of el.querySelectorAll('a[data-ref]')) {
+        const label = a.dataset.ref;
+        const ref = bix.get(label);
+        if (!ref) continue;
+        // Replace generic text (Definition, Theorem, etc.) with the actual title
+        const text = a.textContent.trim();
+        const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
+          'Conjecture','Example','Remark','Proof', label];
+        if (ref.title && (generic.includes(text) || text === label)) {
+          a.innerHTML = inl(ref.title);
+          renderMath(a);
+        }
+      }
+    }
+
     // ── Lean validation icon (∀ symbology from main.tex) ──
     function leanIcon(validation) {
       const v = validation || 'not_checked';
+      // Don't show icon for stubs — just the declaration name
+      if (v === 'stub') return '';
       const icons = {
         validated: { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
         leanok:    { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
-        stub:      { sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (has sorry)' },
         not_checked:{ sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (not checked)' },
         axioms_only:{ sym: '&#x2200;', color: 'var(--yel)', tip: 'axioms only' },
         external:  { sym: '&#x2200;', color: 'var(--ac)',  tip: 'external proof' },
@@ -750,7 +963,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md);
+        addSrc(d, block.md, exHdr);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
         frag.appendChild(wrap);
@@ -759,7 +972,7 @@
           const {bh, tx} = hydrateContent();
           bb.innerHTML = bh;
           fillTex(bb, tx, block.rendered);
-          renderMath(bb);
+          renderMath(bb); resolveRefs(bb);
         });
         return frag;
       }
@@ -792,7 +1005,7 @@
         const bb = mk('div','bb');
         bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md);
+        addSrc(d, block.md, rmHdr);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         if (block.uses?.length) d.appendChild(mkUsesInline(block));
         wrap.appendChild(d);
@@ -802,7 +1015,73 @@
           const {bh, tx} = hydrateContent();
           bb.innerHTML = bh;
           fillTex(bb, tx, block.rendered);
-          renderMath(bb);
+          renderMath(bb); resolveRefs(bb);
+        });
+        return frag;
+      }
+
+      // Proof — collapsible, default closed
+      if (block.kind === 'proof') {
+        const frag = document.createDocumentFragment();
+
+        const stub = mk('div', 'blk-stub proof');
+        let stubLean = '';
+        if (block.lean) {
+          const v = block.lean.validation || 'not_checked';
+          stubLean = ` <span style="font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)">${leanIcon(v)}${esc(block.lean.decl)}</span>`;
+        }
+        stub.innerHTML = `<span class="stub-kind">proof</span> ${block.title ? inl(block.title) : (block.label || '')}${stubLean}`;
+        renderMath(stub);
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
+        const wrap = mk('div', 'blk blk-proof');
+        wrap.style.display = 'none'; // default closed
+
+        const d = mk('div', 'env proof');
+        if (block.label) d.id = block.label;
+        const prfHdr = mkBlockHeader('proof', block.title, block.label);
+        // Lean icon — click to toggle lean source
+        let prfLeanPanel = null;
+        if (block.lean) {
+          const v = block.lean.validation || 'not_checked';
+          const icon = leanIcon(v);
+          if (icon) {
+            const badge = mk('span',`lb ${block.status || 'not_started'}`);
+            badge.innerHTML = icon;
+            badge.title = `${block.lean.decl} — click to show Lean source`;
+            badge.style.cursor = 'pointer';
+            badge.onclick = (e) => {
+              e.stopPropagation();
+              if (!prfLeanPanel) {
+                prfLeanPanel = mkLeanSrc(block);
+                if (prfLeanPanel) d.appendChild(prfLeanPanel);
+              } else {
+                prfLeanPanel.style.display = prfLeanPanel.style.display === 'none' ? '' : 'none';
+              }
+            };
+            prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
+          }
+        }
+        const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
+        prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        prfHdr._acts.appendChild(prfColBtn);
+        const prfFb = mk('button','fb-act'); prfFb.textContent = 'feedback';
+        prfFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        prfHdr._acts.appendChild(prfFb);
+        d.appendChild(prfHdr);
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, prfHdr);
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh + '<div class="qed"></div>';
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
         });
         return frag;
       }
@@ -818,7 +1097,7 @@
           const {bh, tx} = hydrateContent();
           d.querySelector('.bb').innerHTML = bh;
           fillTex(d, tx, block.rendered);
-          renderMath(d);
+          renderMath(d); resolveRefs(d);
         });
         return d;
       }
@@ -846,17 +1125,28 @@
       if (block.label) d.id = block.label;
 
       const hdr = mkBlockHeader(block.kind, block.title, block.label);
-      // Lean badge in header actions (no repeated kind name)
-      if (block.lean) {
-        const s = block.status || 'not_started';
+      // Lean icon — only for definitions (provable blocks get lean via proof blocks)
+      let leanPanel = null;
+      if (block.kind === 'definition' && block.lean) {
         const v = block.lean.validation || 'not_checked';
-        const badge = mk('span',`lb ${s}`);
-        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)}`;
-        badge.title = `Lean: ${s.replace(/_/g,' ')}`;
-        hdr._acts.insertBefore(badge, hdr._acts.firstChild);
-        // Clone into hamburger dropdown
-        const badge2 = badge.cloneNode(true);
-        hdr._drop.appendChild(badge2);
+        const icon = leanIcon(v);
+        if (icon) {
+          const badge = mk('span',`lb ${block.status || 'not_started'}`);
+          badge.innerHTML = icon;
+          badge.title = `${block.lean.decl} — click to show Lean source`;
+          badge.style.cursor = 'pointer';
+          badge.onclick = (e) => {
+            e.stopPropagation();
+            if (!leanPanel) {
+              leanPanel = mkLeanSrc(block);
+              if (leanPanel) d.appendChild(leanPanel);
+              else { badge.title = `${block.lean.decl} (no source loaded)`; return; }
+            } else {
+              leanPanel.style.display = leanPanel.style.display === 'none' ? '' : 'none';
+            }
+          };
+          hdr._acts.insertBefore(badge, hdr._acts.firstChild);
+        }
       }
       // Feedback button in header actions
       const fbBtn = mk('button','fb-act');
@@ -877,7 +1167,7 @@
       const bb = mk('div','bb');
       bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
-      addSrc(d, block.md);
+      addSrc(d, block.md, hdr);
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
@@ -922,6 +1212,46 @@
       }
       addTodoIndicators(d, block);
 
+      // Proofs toggle (if block has associated proofs, like examples[])
+      if (block.proofs?.length) {
+        const toggle = mk('div','prf-toggle');
+        toggle.innerHTML = `<span class="arrow">▸</span> ${block.proofs.length} proof(s)`;
+        const panel = mk('div','prf-body');
+        let prfLoaded = false;
+
+        toggle.onclick = () => {
+          toggle.classList.toggle('open');
+          panel.classList.toggle('open');
+          if (!prfLoaded) {
+            prfLoaded = true;
+            block.proofs.forEach(prfLabel => {
+              const prfBlock = bix.get(prfLabel);
+              if (prfBlock) {
+                const {html: ph, texBlocks: ptx} = parseMd(prfBlock.md || '');
+                const prfDiv = mk('div','env proof');
+                prfDiv.style.borderLeft = 'none';
+                prfDiv.style.margin = '.4rem 0';
+                let prfHd = `<span class="bk">proof</span>`;
+                if (prfBlock.title) prfHd += `<span class="bt">${inl(prfBlock.title)}</span>`;
+                if (prfBlock.lean) {
+                  const v = prfBlock.lean.validation || 'not_checked';
+                  prfHd += `<span class="prf-lean">${leanIcon(v)}${esc(prfBlock.lean.decl)}</span>`;
+                }
+                prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
+                fillTex(prfDiv, ptx, prfBlock.rendered);
+                renderMath(prfDiv);
+                // Lean source for this proof
+                const prfLean = mkLeanSrc(prfBlock);
+                if (prfLean) prfDiv.appendChild(prfLean);
+                panel.appendChild(prfDiv);
+              }
+            });
+          }
+        };
+        d.appendChild(toggle);
+        d.appendChild(panel);
+      }
+
       // Lazy hydrate the main content
       lazyInit(d, () => {
         const {bh, tx} = hydrateContent();
@@ -936,12 +1266,71 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
-    function addSrc(el, md) {
+    function addSrc(el, md, hdr) {
       if (!md) return;
       const b = mk('button','st'); b.textContent = '<>';  b.title = 'View source';
       const s = mk('div','bsrc'); s.textContent = md;
       b.onclick = () => { s.classList.toggle('vis'); b.classList.toggle('on'); };
-      el.appendChild(b); el.appendChild(s);
+      // Place button in header actions row if available, otherwise on the element
+      if (hdr && hdr._acts) {
+        hdr._acts.appendChild(b);
+      } else {
+        el.appendChild(b);
+      }
+      el.appendChild(s);
+    }
+
+    // Shiki highlighter (lazy-loaded)
+    let shikiHighlighter = null;
+    async function getShiki() {
+      if (shikiHighlighter) return shikiHighlighter;
+      try {
+        const { createHighlighter } = await import('https://esm.sh/shiki@3.2.1');
+        shikiHighlighter = await createHighlighter({
+          themes: ['github-light', 'github-dark'],
+          langs: ['lean4'],
+        });
+        return shikiHighlighter;
+      } catch (e) {
+        console.warn('Shiki load failed:', e);
+        return null;
+      }
+    }
+
+    function mkLeanSrc(block) {
+      if (!block.lean?.source) return null;
+      const wrap = mk('div','lean-src');
+      const hdr = mk('div','lean-src-hdr');
+      hdr.innerHTML = `<span>${esc(block.lean.file || block.lean.decl)}</span>`;
+      wrap.appendChild(hdr);
+      const pre = document.createElement('pre');
+      pre.style.margin = '0';
+      const code = document.createElement('code');
+      code.textContent = block.lean.source;
+      code.style.fontFamily = 'var(--f-mono)';
+      code.style.fontSize = '.75rem';
+      pre.appendChild(code);
+      wrap.appendChild(pre);
+      // Async highlight with Shiki
+      getShiki().then(hl => {
+        if (!hl) return;
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'github-dark' : 'github-light';
+        const html = hl.codeToHtml(block.lean.source, { lang: 'lean4', theme });
+        // Replace pre with highlighted version
+        const container = mk('div','');
+        container.innerHTML = html;
+        const highlighted = container.querySelector('pre');
+        if (highlighted) {
+          highlighted.style.margin = '0';
+          highlighted.style.padding = '.6rem .8rem';
+          highlighted.style.fontSize = '.75rem';
+          highlighted.style.lineHeight = '1.5';
+          highlighted.style.overflowX = 'auto';
+          highlighted.style.borderRadius = '0';
+          wrap.replaceChild(highlighted, pre);
+        }
+      });
+      return wrap;
     }
 
     function mkTags(tags) {
@@ -988,10 +1377,11 @@
       paper = p;
       katexMacros = buildKatexMacros(p.macros);
       bix.clear();
-      const childExamples = new Set(); // examples shown via parent's examples[] toggle
+      const childBlocks = new Set(); // examples/proofs shown via parent's toggle
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
-        if (b.examples) for (const ex of b.examples) childExamples.add(ex);
+        if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+        if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
       }
 
       const app = document.getElementById('app');
@@ -1116,7 +1506,7 @@
           renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
-            if (b.kind === 'example' && b.label && childExamples.has(b.label) && pendingScroll !== b.label) continue;
+            if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
             sd.appendChild(renderBlock(b));
           }
           cd.appendChild(sd);
@@ -1320,7 +1710,7 @@
     //   #/view/<label>           → paper view, scrolled to block
     //   #/edit/<label>           → block edit view
     //   #<label>                 → shorthand for #/view/<label>
-    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|eq|fig|sec|chap):/;
+    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
 
     async function route() {

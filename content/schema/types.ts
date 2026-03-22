@@ -141,7 +141,8 @@ export type ObjectKind =
   | "corollary"
   | "conjecture"
   | "example"
-  | "remark";
+  | "remark"
+  | "proof";
 
 // ── Block types (discriminated union on `kind`) ──────────────────
 
@@ -193,15 +194,8 @@ export interface DefinitionBlock extends BlockBase {
  * Lean is expected but may be WIP — missing lean triggers a warning, not an error.
  */
 interface ProvableBase extends BlockBase {
-  /** Lean declaration reference (expected but not strictly required). */
-  lean?: LeanRef;
-  /** Formalization progress. */
-  status?: FormalizationStatus;
-  /**
-   * Whether this block has an inline proof in its .md file.
-   * If false/omitted, the proof lives in a separate block or Lean file.
-   */
-  hasProof?: boolean;
+  /** Labels of proof blocks for this result (like examples[]). */
+  proofs?: string[];
   /** Labels of example blocks illustrating this result. */
   examples?: string[];
 }
@@ -247,6 +241,21 @@ export interface RemarkBlock extends BlockBase {
   kind: "remark";
   /** Optional Lean reference (unusual but allowed). */
   lean?: LeanRef;
+}
+
+/**
+ * Proof — a standalone proof of a theorem/lemma/proposition/corollary.
+ *
+ * Multiple proofs can be linked to a single provable block via its
+ * `proofs: ["prf:foo", "prf:bar"]` field, similar to how examples work.
+ * Each proof is its own content object with .ts + .md + optional .lean files.
+ */
+export interface ProofBlock extends BlockBase {
+  kind: "proof";
+  /** Optional Lean formalization of the proof. */
+  lean?: LeanRef;
+  /** Formalization progress for this proof. */
+  status?: FormalizationStatus;
 }
 
 // ── Prose (non-environment content) ──────────────────────────────
@@ -315,6 +324,7 @@ export type Block =
   | ConjectureBlock
   | ExampleBlock
   | RemarkBlock
+  | ProofBlock
   | ProseBlock
   | EquationBlock
   | DiagramBlock;
@@ -328,15 +338,13 @@ export type EnvironmentBlock =
   | CorollaryBlock
   | ConjectureBlock
   | ExampleBlock
-  | RemarkBlock;
+  | RemarkBlock
+  | ProofBlock;
 
 /** Blocks that can (or must) have Lean declarations. */
 export type FormalizableBlock =
   | DefinitionBlock
-  | TheoremBlock
-  | LemmaBlock
-  | PropositionBlock
-  | CorollaryBlock;
+  | ProofBlock;
 
 // ── Document structure ───────────────────────────────────────────
 

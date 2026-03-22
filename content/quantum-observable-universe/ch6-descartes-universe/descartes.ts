@@ -3,7 +3,6 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:descartes",
   title: "Descartes theorem",
-  hasProof: true,
   tags: ["descartes-universe", "terminal-object", "brings-surface"],
   uses: [
     "def:descartes-condition",
@@ -12,4 +11,5 @@ export default theorem({
     "thm:qu-to-qou",
     "prop:genus-maximal-descent",
   ],
+  proofs: ["prf:descartes"],
 });
