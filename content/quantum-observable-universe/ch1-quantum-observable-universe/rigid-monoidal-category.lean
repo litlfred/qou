@@ -1,36 +1,52 @@
 /-!
 # QOU.RigidMonoidalCategory
 
+A rigid monoidal category: a monoidal category where every object has
+a dual satisfying the snake identities (evaluation/coevaluation).
+
 Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/RigidMonoidalCategory.lean (monolithic)
+Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
-import QOU.Basic
-import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import Mathlib.CategoryTheory.Category.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open CategoryTheory MonoidalCategory
 
 namespace QOU
 
 universe u v
 
--- TODO: Formalize QOU.RigidMonoidalCategory
--- This declaration was referenced in the content manifest but not found
--- in the lean-archive/ source files. It may need to be written from scratch.
--- Ref: [manuscript]
-sorry
+/-- **Rigid monoidal category data**: for a given object `V` in a monoidal
+    category `C`, a rigidity structure consists of a dual `V∨`, evaluation
+    `ev : V ⊗ V∨ → 𝟙`, and coevaluation `coev : 𝟙 → V∨ ⊗ V` satisfying
+    the snake identities.
+
+    LaTeX: `\label{def:rigid-monoidal-category}`
+    Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
+structure RigidMonoidalCategory (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] where
+  /-- The object for which we exhibit rigidity. -/
+  V : C
+  /-- The (right) dual object `V∨`. -/
+  V_dual : C
+  /-- Evaluation morphism `ev : V ⊗ V∨ → 𝟙`. -/
+  eval : (V ⊗ V_dual) ⟶ (𝟙_ C)
+  /-- Coevaluation morphism `coev : 𝟙 → V∨ ⊗ V`. -/
+  coeval : (𝟙_ C) ⟶ (V_dual ⊗ V)
+  /-- **Snake identity (left)**: the composite
+      `V →[ρ⁻¹] V ⊗ 𝟙 →[V ◁ coev] V ⊗ (V∨ ⊗ V) →[α⁻¹] (V ⊗ V∨) ⊗ V
+       →[ev ▷ V] 𝟙 ⊗ V →[λ_] V`
+      equals `𝟙 V`. -/
+  snake_left :
+    (ρ_ V).inv ≫ (V ◁ coeval) ≫ (α_ V V_dual V).inv ≫
+      (eval ▷ V) ≫ (λ_ V).hom = 𝟙 V
+  /-- **Snake identity (right)**: the composite
+      `V∨ →[λ_⁻¹] 𝟙 ⊗ V∨ →[coev ▷ V∨] (V∨ ⊗ V) ⊗ V∨ →[α] V∨ ⊗ (V ⊗ V∨)
+       →[V∨ ◁ ev] V∨ ⊗ 𝟙 →[ρ_] V∨`
+      equals `𝟙 V∨`. -/
+  snake_right :
+    (λ_ V_dual).inv ≫ (coeval ▷ V_dual) ≫ (α_ V_dual V V_dual).hom ≫
+      (V_dual ◁ eval) ≫ (ρ_ V_dual).hom = 𝟙 V_dual
 
 end QOU

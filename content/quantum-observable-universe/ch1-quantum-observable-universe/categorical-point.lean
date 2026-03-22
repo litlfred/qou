@@ -1,36 +1,35 @@
 /-!
 # QOU.CategoricalPoint
 
+A categorical point of a Frobenius–Hopf object `A` is a morphism
+`p : 𝟙 → A` in the monoidal category `C`.
+
 Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/CategoricalPoint.lean (monolithic)
+Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
-import QOU.Basic
-import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import Mathlib.CategoryTheory.Category.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open CategoryTheory MonoidalCategory
 
 namespace QOU
 
 universe u v
 
--- TODO: Formalize QOU.CategoricalPoint
--- This declaration was referenced in the content manifest but not found
--- in the lean-archive/ source files. It may need to be written from scratch.
--- Ref: [manuscript]
-sorry
+/-- **Categorical point** of a Frobenius–Hopf object.
+
+    A morphism `p : 𝟙 → A` in a monoidal category `C`.  In the archimedean
+    realisation `A = 𝒪(G)`, a point corresponds to evaluation at `g ∈ G`;
+    for `A = C^∞(M)`, to a point of the manifold `M`.
+
+    The augmentation ideal at `p` is `𝔪_p = ker(p* : A → 𝟙)`.
+
+    LaTeX: `\label{def:categorical-point}`
+    Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
+structure CategoricalPoint (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] (A : C) where
+  /-- The point morphism `p : 𝟙 → A`. -/
+  point : (𝟙_ C) ⟶ A
 
 end QOU

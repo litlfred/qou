@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.CategoricalPoint",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-universe"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-point-0.svg", blockIndex: 0, hash: "209c12202df6" },

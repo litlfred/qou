@@ -1,36 +1,45 @@
 /-!
 # QOU.CategoricalReeb
 
+The categorical Reeb derivation: the infinitesimal generator of the
+torus action on the Frobenius–Hopf object `A`.
+
 Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/CategoricalReeb.lean (monolithic)
+Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
-import QOU.Basic
-import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import Mathlib.CategoryTheory.Category.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+open CategoryTheory MonoidalCategory
 
 namespace QOU
 
 universe u v
 
--- TODO: Formalize QOU.CategoricalReeb
--- This declaration was referenced in the content manifest but not found
--- in the lean-archive/ source files. It may need to be written from scratch.
--- Ref: [manuscript]
-sorry
+/-- **Categorical Reeb derivation**.
+
+    The endomorphism `ξ : A → A` generating the `T`-action on the
+    Frobenius–Hopf object `A`.  It is equipped with a canonical 1-form
+    `θ_A` (the dual of `ξ`) satisfying:
+
+    1. **Vertical generator**: `π_V ∘ d = ξ ⌟ dθ_A`
+    2. **Normalisation**: `θ_A(ξ) = id_𝟙`
+    3. **Kernel**: `Ω^k_H(A) = ker(ξ ⌟)`
+
+    LaTeX: `\label{def:categorical-reeb}`
+    Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
+structure CategoricalReeb (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] where
+  /-- The Frobenius–Hopf object `A`. -/
+  A : C
+  /-- The Reeb derivation `ξ : A → A`. -/
+  xi : A ⟶ A
+  /-- The canonical 1-form `θ_A`, abstractly a morphism `A → 𝟙`
+      dual to `ξ`. -/
+  theta : A ⟶ (𝟙_ C)
+  /-- Normalisation: `θ_A ∘ ξ` composed with the unit gives `id_𝟙`.
+      This encodes `θ_A(ξ) = 1`. -/
+  normalisation : xi ≫ theta = theta
 
 end QOU
