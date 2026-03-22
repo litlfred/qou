@@ -165,6 +165,8 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 
 }
 
@@ -272,6 +274,8 @@ export interface ProseBlock {
   /** Pre-rendered assets for ```tex blocks. */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 
 }
 
@@ -288,6 +292,8 @@ export interface EquationBlock {
   /** Pre-rendered equation (e.g. SVG from MathJax/KaTeX server). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 
 }
 
@@ -306,6 +312,8 @@ export interface DiagramBlock {
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
+  /** Todo items attached to this block. */
+  todos?: TodoItem[];
 
 }
 

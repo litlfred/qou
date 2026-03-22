@@ -90,6 +90,7 @@ const BlockBaseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -157,6 +158,7 @@ export const ProseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 
 });
 
@@ -168,6 +170,7 @@ export const EquationSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 
 });
 
@@ -180,6 +183,7 @@ export const DiagramSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
+  todos: z.array(TodoItemSchema).optional(),
 
 });
 
