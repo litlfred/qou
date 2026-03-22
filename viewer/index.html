@@ -1608,6 +1608,8 @@
         // Refresh the history panel to show the new item
         openFeedback(fbBlock);
         closeFeedback();
+        // Update sidebar badges to reflect the new todo
+        refreshFeedbackBadges();
       } catch (e) {
         alert('Failed to submit: ' + e.message);
       }
@@ -1675,6 +1677,77 @@
         el.appendChild(d);
       }
     }
+
+    // ── Feedback badge refresh ──────────────────────────
+    // Fetches open todos from server and updates sidebar badges + inline indicators
+    // without a full re-render. Called after submit and on a polling interval.
+    async function refreshFeedbackBadges() {
+      if (!paper) return;
+      try {
+        const r = await fetch('/api/feedback/all?status=open');
+        if (!r.ok) return;
+        const allTodos = await r.json();
+        // Group by rootName
+        const byRoot = {};
+        for (const t of allTodos) {
+          const key = t.rootName || t.paperId;
+          if (!byRoot[key]) byRoot[key] = [];
+          byRoot[key].push(t);
+        }
+        // Update block-level data and sidebar badges
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            let secTodos = 0;
+            for (const b of sec.blocks) {
+              const fresh = byRoot[b.rootName] || [];
+              b.todos = fresh;
+              const count = fresh.length;
+              secTodos += count;
+              // Update block badge in sidebar
+              const blkEl = document.querySelector(`.sb-blk[title="${b.label || b.rootName}"]`);
+              if (blkEl) {
+                const existing = blkEl.querySelector('.sb-badge.todo');
+                if (existing) existing.remove();
+                if (count) {
+                  const tb = mk('span','sb-badge todo');
+                  tb.textContent = `${count} todo`;
+                  tb.setAttribute('data-tip', `${count} open todo${count > 1 ? 's' : ''}`);
+                  blkEl.insertBefore(tb, blkEl.querySelector('.sb-badge'));
+                }
+              }
+            }
+            // Update section summary badge
+            const sEl = document.querySelector(`.sb-sec[title="${sec.title}"]`);
+            if (sEl) {
+              const summarySpan = sEl.querySelector('span:last-child');
+              if (summarySpan && summarySpan.style.fontSize === '.5rem') {
+                // Rebuild just the todo portion of the badge text
+                const text = summarySpan.textContent;
+                const parts = text.split(' | ').filter(p => !p.includes('todo'));
+                if (secTodos) parts.unshift(`${secTodos} todo`);
+                summarySpan.textContent = parts.join(' | ');
+              }
+            }
+          }
+        }
+      } catch (_) { /* silent — polling failure is not fatal */ }
+    }
+
+    // Poll for fresh feedback every 3 minutes while page is visible
+    let feedbackPollId = null;
+    function startFeedbackPolling() {
+      if (feedbackPollId) return;
+      feedbackPollId = setInterval(() => {
+        if (!document.hidden) refreshFeedbackBadges();
+      }, 3 * 60 * 1000);
+    }
+    function stopFeedbackPolling() {
+      if (feedbackPollId) { clearInterval(feedbackPollId); feedbackPollId = null; }
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopFeedbackPolling();
+      else startFeedbackPolling();
+    });
 
     // ── Folio (paper listing) ────────────────────────────
     function renderFolio(data) {
@@ -1892,6 +1965,7 @@
         const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderPaper(await r.json());
+        startFeedbackPolling();
       } catch (e) {
         app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
       }
