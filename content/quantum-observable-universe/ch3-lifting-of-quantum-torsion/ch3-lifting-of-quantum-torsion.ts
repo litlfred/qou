@@ -34,6 +34,22 @@ export default chapter({
     }),
 
     section({
+      title: "Cosimplicial Crossed Groupoid Structure",
+      label: "ssec:cosimplicial-crossed-groupoid",
+      blocks: [
+        "cosimplicial-intro",
+        "yekutieli-triple",
+        "cosimplicial-crossed-groupoid",
+        "cosimplicial-crossed-groupoid-proof",
+        "jet-as-descent",
+        "descent-condition",
+        "descent-condition-proof",
+        "weak-equiv-invariance",
+        "weak-equiv-invariance-proof",
+      ],
+    }),
+
+    section({
       title: "Yekutieli Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
       blocks: [
@@ -93,22 +109,6 @@ export default chapter({
       label: "sec:yekutieli-mapping",
       blocks: [
         "yekutieli-mapping-table",
-      ],
-    }),
-
-    section({
-      title: "Cosimplicial Crossed Groupoid Structure",
-      label: "ssec:cosimplicial-crossed-groupoid",
-      blocks: [
-        "cosimplicial-intro",
-        "yekutieli-triple",
-        "cosimplicial-crossed-groupoid",
-        "cosimplicial-crossed-groupoid-proof",
-        "jet-as-descent",
-        "descent-condition",
-        "descent-condition-proof",
-        "weak-equiv-invariance",
-        "weak-equiv-invariance-proof",
       ],
     }),
 
