@@ -10,17 +10,27 @@
 #   GITHUB_OAUTH_CLIENT_ID     — GitHub OAuth client ID (collaborator auth)
 #   GITHUB_OAUTH_CLIENT_SECRET — GitHub OAuth client secret
 #
-# Manual trigger only (workflow_dispatch). Choose an action:
-#   provision — Create server + deploy from scratch
-#   update    — Push new secrets/config to existing server
-#   destroy   — Tear down the server
+# Triggers:
+#   push to main     — Auto-update (secrets + restart) if server exists
+#   workflow_dispatch — Manual provision / update / destroy
 #
 # After first provision, point DNS to the printed IP. Caddy handles TLS.
-# Self-updater cron handles all future code/image updates automatically.
+# Updates are fully automated — no cron self-updater needed.
 
 name: Deploy Folio
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'deploy/**'
+      - 'lean-mcp.config.json'
+      - 'assistant/**'
+      - 'viewer/**'
+  workflow_run:
+    workflows: ["Build Lean MCP Image"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       action:
@@ -52,6 +62,27 @@ jobs:
           tar xzf /tmp/hcloud.tar.gz -C /usr/local/bin hcloud
           hcloud version
 
+      - name: Resolve action
+        id: action
+        run: |
+          EVENT="${{ github.event_name }}"
+          if [ "$EVENT" = "workflow_run" ]; then
+            # Triggered by Build Lean MCP Image — only proceed if it succeeded
+            if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+              echo "Image build did not succeed — skipping deploy."
+              echo "action=skip" >> "$GITHUB_OUTPUT"
+            else
+              echo "action=update" >> "$GITHUB_OUTPUT"
+            fi
+            echo "auto=true" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT" = "push" ]; then
+            echo "action=update" >> "$GITHUB_OUTPUT"
+            echo "auto=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "action=${{ inputs.action }}" >> "$GITHUB_OUTPUT"
+            echo "auto=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Parse config
         id: config
         run: |
@@ -73,9 +104,9 @@ jobs:
               out.write(f"server_image={h.get('image', 'ubuntu-24.04')}\n")
           PYEOF
 
-      # ── PROVISION: create server from scratch ───────────────────────
+      # ── PROVISION: create server from scratch (manual only) ─────────
       - name: Provision server
-        if: inputs.action == 'provision'
+        if: steps.action.outputs.action == 'provision'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -154,19 +185,6 @@ jobs:
           docker compose -f docker-compose.folio.yml pull
           docker compose -f docker-compose.folio.yml up -d
 
-          CRON_LINE="* * * * * /opt/qou/deploy/self-update-folio.sh >> /var/log/folio-update.log 2>&1"
-          (crontab -l 2>/dev/null || true; echo "\$CRON_LINE") | crontab -
-
-          cat > /etc/logrotate.d/folio-update <<'LOGROTATE'
-          /var/log/folio-update.log {
-              daily
-              rotate 7
-              compress
-              missingok
-              notifempty
-          }
-          LOGROTATE
-
           echo "=== Folio provisioning complete ==="
           CLOUD_INIT_EOF
 
@@ -194,7 +212,7 @@ jobs:
 
       # ── UPDATE: push new secrets to existing server ─────────────────
       - name: Update secrets on existing server
-        if: inputs.action == 'update'
+        if: steps.action.outputs.action == 'update'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
@@ -203,6 +221,10 @@ jobs:
           GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
         run: |
           if ! hcloud server describe "$SERVER_NAME" &>/dev/null; then
+            if [ "${{ steps.action.outputs.auto }}" = "true" ]; then
+              echo "Server '$SERVER_NAME' not provisioned yet — skipping auto-update."
+              exit 0
+            fi
             echo "::error::Server '$SERVER_NAME' not found. Run 'provision' first."
             exit 1
           fi
@@ -245,15 +267,33 @@ GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
 GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
 DOTENV
 
-          echo "▸ Secrets updated. Restarting auth-gateway..."
-          hcloud server ssh "$SERVER_NAME" -- bash -c \
-            "cd /opt/qou/deploy && docker compose -f docker-compose.folio.yml restart auth-gateway"
+          echo "▸ Secrets updated. Pulling latest code and images, restarting..."
+          hcloud server ssh "$SERVER_NAME" -- bash -c "
+            cd /opt/qou
+            git fetch origin main --quiet
+            git reset --hard origin/main
 
-          echo "✓ OAuth creds updated on $IP ($DOMAIN)"
+            cd deploy
+            # Regenerate Caddyfile from template
+            FOLIO_DOMAIN='${DOMAIN}' LEAN_MCP_INTERNAL_PORT='${MCP_PORT}' LEAN_MCP_DOMAIN='${DOMAIN}' \
+              envsubst '\\\${LEAN_MCP_DOMAIN} \\\${LEAN_MCP_INTERNAL_PORT} \\\${FOLIO_DOMAIN}' \
+              < Caddyfile.folio.template > Caddyfile
 
-      # ── DESTROY: tear down server ───────────────────────────────────
+            # Refresh viewer + assistant from repo
+            rm -rf viewer assistant
+            cp -r ../viewer viewer 2>/dev/null || true
+            cp -r ../assistant assistant 2>/dev/null || true
+
+            # Pull latest images and restart
+            docker compose -f docker-compose.folio.yml pull
+            docker compose -f docker-compose.folio.yml up -d --remove-orphans
+          "
+
+          echo "✓ Updated on $IP ($DOMAIN)"
+
+      # ── DESTROY: tear down server (manual only) ─────────────────────
       - name: Destroy server
-        if: inputs.action == 'destroy'
+        if: steps.action.outputs.action == 'destroy'
         env:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
         run: |
