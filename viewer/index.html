@@ -312,9 +312,46 @@
       /* ── Footnotes / references ─────────────────────────── */
       .bb sup{font-size:.75em}
     }
-    /* Reading mode — hide decorations */
+    /* Reading mode — hide decorations, clean layout */
     body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
-    body.reading .bh{margin-bottom:.3rem}
+    /* LaTeX article styling for block headers */
+    body.reading .bh{display:inline!important;margin-bottom:0!important;gap:0!important;font-family:var(--f-body)}
+    body.reading .bh-anchor{display:inline!important;gap:0!important}
+    body.reading .bk{font-family:var(--f-body)!important;font-size:var(--f-sz)!important;font-weight:700!important;font-style:normal!important;text-transform:capitalize!important;color:var(--fg-b)!important;letter-spacing:0!important;display:inline!important}
+    body.reading .bk::after{content:'.'!important;display:inline!important}
+    body.reading .bt{font-family:var(--f-body)!important;font-size:var(--f-sz)!important;font-weight:400!important;font-style:normal!important;color:var(--fg-b)!important;display:inline!important}
+    body.reading .bt::before{content:' ('!important}
+    body.reading .bt::after{content:')'!important}
+    /* Block body inline after header */
+    body.reading .bb{display:inline!important}
+    body.reading .bb p:first-child{display:inline!important;margin-top:0!important}
+    /* Theorem-like bodies in italic (LaTeX convention) */
+    body.reading .env.theorem .bb,body.reading .env.proposition .bb,body.reading .env.lemma .bb,body.reading .env.corollary .bb,body.reading .env.conjecture .bb{font-style:italic}
+    body.reading .env.theorem .katex,body.reading .env.proposition .katex,body.reading .env.lemma .katex,body.reading .env.corollary .katex,body.reading .env.conjecture .katex{font-style:normal}
+    body.reading .env.definition .bb{font-style:normal}
+    body.reading .env.remark .bk{font-style:italic!important;font-weight:400!important}
+    /* Section/chapter titles in body font */
+    body.reading .ch-t{font-family:var(--f-body)!important}
+    body.reading .sec-t{font-family:var(--f-body)!important}
+    /* Remove background, borders, coloring from content blocks */
+    body.reading .env{background:none!important;border:none!important;border-left:none!important;padding:.6rem 0!important;border-radius:0!important}
+    body.reading .blk{margin:1rem 0}
+    /* Condense spacing */
+    body.reading .ch{margin-bottom:2rem}
+    body.reading .sec-t{margin:1.5rem 0 .8rem}
+    /* Expand all proofs — hide stubs, show full blocks */
+    body.reading .blk-stub.proof{display:none!important}
+    body.reading .blk-proof{display:block!important}
+    body.reading .prf-toggle{display:none!important}
+    body.reading .prf-body{display:block!important;padding:.4rem 0 .2rem}
+    body.reading .prf-body::before{content:'Proof. ';font-style:italic;font-weight:400}
+    /* QED: black filled rectangle (tombstone) */
+    body.reading .prf-body .qed::after{content:'';display:inline-block;width:8px;height:8px;background:#000;margin-left:.3rem}
+    [data-theme="dark"] body.reading .prf-body .qed::after{background:var(--fg)}
+    body.reading .prf-body .qed{text-align:right;margin-top:.3rem}
+    /* Also handle env.proof blocks */
+    body.reading .env.proof .bb::after{content:'';display:inline-block;width:8px;height:8px;background:#000;float:right;margin-top:.3rem}
+    [data-theme="dark"] body.reading .env.proof .bb::after{background:var(--fg)}
 
     .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
     .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative;min-width:0;flex:1}
