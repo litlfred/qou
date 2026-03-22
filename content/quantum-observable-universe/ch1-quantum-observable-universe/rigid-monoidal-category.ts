@@ -6,7 +6,6 @@ export default definition({
   tags: ["category-theory", "monoidal"],
   lean: {
     decl: "QOU.RigidMonoidalCategory",
-    file: "QOU/Category/Rigid.lean",
     validation: "not_checked",
   },
   status: "not_started",

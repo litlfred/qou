@@ -6,7 +6,6 @@ export default definition({
   tags: ["differential-forms", "category-theory"],
   lean: {
     decl: "QOU.HigherForms",
-    file: "QOU/HigherForms.lean",
     validation: "not_checked",
   },
   status: "not_started",

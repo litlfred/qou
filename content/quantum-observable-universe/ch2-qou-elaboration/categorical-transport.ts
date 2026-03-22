@@ -11,7 +11,6 @@ export default definition({
   ],
   lean: {
     decl: "QOU.CategoricalTransport",
-    file: "QOU/CategoricalTransport.lean",
     validation: "leanok",
   },
   rendered: [

@@ -10,7 +10,7 @@ STAGED=$(git diff --cached --name-only 2>/dev/null)
 ARTIFACTS=""
 while IFS= read -r file; do
     case "$file" in
-        lean/.lake/*|lean/lake-packages/*|lean/build/*|.lake/*)
+        lean-archive/.lake/*|lean-archive/lake-packages/*|lean-archive/build/*|.lake/*)
             ARTIFACTS="$ARTIFACTS $file"
             ;;
     esac

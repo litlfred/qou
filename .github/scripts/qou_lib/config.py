@@ -13,7 +13,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 CHAPTERS_DIR = REPO_ROOT / "chapters"
-LEAN_DIR = REPO_ROOT / "lean"
+LEAN_DIR = REPO_ROOT / "lean-archive"
 SCHEMA_PATH = REPO_ROOT / "schemas" / "proof-objects.schema.json"
 SKILLS_DIR = REPO_ROOT / ".claude" / "skills"
 DEFAULT_MANIFEST = REPO_ROOT / "proof-objects.json"
