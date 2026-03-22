@@ -23,14 +23,18 @@
   let abortController = null;
   let chatOpen = false;
 
-  // Detect paper context from hash
+  // Detect paper context from hash + current app mode
   function getPaperContext() {
     const hash = location.hash || "#/";
     const parts = hash.slice(2).split("/").filter(Boolean);
+    const ctx = {};
     if (parts[0] === "paper" && parts[1]) {
-      return { paperId: parts[1] };
+      ctx.paperId = parts[1];
     }
-    return {};
+    // Detect current view mode from app state (exposed via data attribute)
+    const appMode = document.body.dataset.folioMode || "read";
+    ctx.viewMode = appMode;
+    return ctx;
   }
 
   // ── Markdown → HTML (chat-optimized, XSS-safe) ──
@@ -165,21 +169,37 @@
   const suggestionsEl = $("#chat-suggestions", panel);
   const welcomeSuggestions = $("#chat-welcome-suggestions", panel);
 
-  // ── Welcome suggestions ─────────────────────────────────
+  // ── Welcome suggestions (context-aware) ─────────────────
+  function getContextSuggestions() {
+    const viewMode = document.body.dataset.folioMode || "read";
+    switch (viewMode) {
+      case "qc":
+        return ["What needs proving next?", "Show sorry status", "Which blocks have no Lean?"];
+      case "diff":
+        return ["Summarize these changes", "What was modified?", "Any proof regressions?"];
+      case "critical-path":
+        return ["Explain this proof chain", "What are the key theorems?", "Which definitions are foundational?"];
+      default:
+        return ["What is this paper about?", "Show paper status", "What needs work?"];
+    }
+  }
+
   function renderWelcomeSuggestions() {
-    const defaults = [
-      "What is this paper about?",
-      "Show paper status",
-      "What needs work?",
-    ];
+    const suggestions = getContextSuggestions();
     welcomeSuggestions.innerHTML = "";
-    for (const s of defaults) {
+    for (const s of suggestions) {
       const chip = h("button", "chat-chip", esc(s));
       chip.onclick = () => sendMessage(s);
       welcomeSuggestions.appendChild(chip);
     }
   }
   renderWelcomeSuggestions();
+
+  // Re-render welcome suggestions when mode changes
+  const modeObserver = new MutationObserver(() => {
+    if (!messages.length) renderWelcomeSuggestions();
+  });
+  modeObserver.observe(document.body, { attributes: true, attributeFilter: ["data-folio-mode"] });
 
   // ── Toggle panel ────────────────────────────────────────
   function toggleChat() {

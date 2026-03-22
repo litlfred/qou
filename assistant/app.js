@@ -196,6 +196,7 @@
 
   // ── Folio (landing page) ────────────────────────────────
   async function loadFolio() {
+    document.body.dataset.folioMode = "folio";
     navLinks.innerHTML = "";
     app.innerHTML = '<div class="loading">loading folio...</div>';
     try {
@@ -291,6 +292,11 @@
       qcLink.onclick = (e) => { e.preventDefault(); mode = "qc"; renderQC(); };
       navLinks.appendChild(qcLink);
 
+      const cpLink = h("a", mode === "critical-path" ? "active" : "", "critical path");
+      cpLink.href = "#";
+      cpLink.onclick = (e) => { e.preventDefault(); mode = "critical-path"; renderCriticalPath(); };
+      navLinks.appendChild(cpLink);
+
       if (selectedBranch && selectedBranch !== "main" && selectedBranch !== "master") {
         const diffLink = h("a", mode === "diff" ? "active" : "", "diff");
         diffLink.href = "#";
@@ -322,6 +328,7 @@
 
   // ── Paper: read mode ────────────────────────────────────
   function renderPaper() {
+    document.body.dataset.folioMode = "read";
     updateNav();
     const wrap = h("div", "paper-layout");
 
@@ -651,6 +658,7 @@
 
   // ── QC Dashboard ────────────────────────────────────────
   function renderQC() {
+    document.body.dataset.folioMode = "qc";
     updateNav();
     const qc = h("div", "qc");
     qc.innerHTML = `<h1>QC Dashboard &mdash; ${esc(paper.title)}</h1>`;
@@ -823,6 +831,7 @@
 
   // ── Diff view ──────────────────────────────────────────
   async function loadDiff() {
+    document.body.dataset.folioMode = "diff";
     updateNav();
     app.innerHTML = '<div class="loading">computing diff...</div>';
     try {
@@ -1373,6 +1382,339 @@
     document.body.appendChild(overlay);
     document.body.appendChild(panel);
     textarea.focus();
+  }
+
+  // ── Critical Path view ─────────────────────────────────
+  function computeCriticalPath() {
+    if (!paper) return [];
+    // Build flat block list and dependency maps
+    const allBlocks = [];
+    const byLabel = {};
+    for (const ch of paper.chapters || []) {
+      for (const sec of ch.sections || []) {
+        for (const blk of sec.blocks || []) {
+          allBlocks.push({ ...blk, _chapter: ch.title, _chapterNum: ch.number, _section: sec.title });
+          if (blk.label) byLabel[blk.label] = blk;
+        }
+      }
+    }
+
+    // Build reverse-dep map: which blocks are used BY other blocks
+    const usedBy = {}; // label → Set of labels that use it
+    for (const blk of allBlocks) {
+      if (blk.uses) {
+        for (const ref of blk.uses) {
+          if (!usedBy[ref]) usedBy[ref] = new Set();
+          usedBy[ref].add(blk.label);
+        }
+      }
+    }
+
+    // Provable block kinds (things that form the proof chain)
+    const provableKinds = new Set(["theorem", "proposition", "lemma", "corollary"]);
+    const defKinds = new Set(["definition"]);
+
+    // Find "leaf" theorems: provable blocks not used by any other provable block
+    const leafTheorems = allBlocks.filter(blk => {
+      if (!provableKinds.has(blk.kind)) return false;
+      if (!blk.label) return false;
+      const consumers = usedBy[blk.label];
+      if (!consumers) return true;
+      // Check if any consumer is also provable
+      for (const c of consumers) {
+        const cb = byLabel[c];
+        if (cb && provableKinds.has(cb.kind)) return false;
+      }
+      return true;
+    });
+
+    // BFS backwards from leaf theorems through uses to collect the full critical path
+    const onPath = new Set();
+    const queue = [...leafTheorems.map(b => b.label).filter(Boolean)];
+    while (queue.length) {
+      const label = queue.shift();
+      if (onPath.has(label)) continue;
+      onPath.add(label);
+      const blk = byLabel[label];
+      if (blk && blk.uses) {
+        for (const ref of blk.uses) {
+          if (!onPath.has(ref) && byLabel[ref]) queue.push(ref);
+        }
+      }
+    }
+
+    // Collect blocks in document order, preserving narrative flow
+    const result = [];
+    for (const blk of allBlocks) {
+      if (!blk.label) continue;
+      if (!onPath.has(blk.label)) continue;
+      result.push(blk);
+    }
+    return result;
+  }
+
+  function renderCriticalPath() {
+    document.body.dataset.folioMode = "critical-path";
+    updateNav();
+    const cpBlocks = computeCriticalPath();
+
+    const wrap = h("div", "critical-path-layout");
+
+    // Header with print controls
+    const hdr = h("div", "cp-header");
+    hdr.innerHTML = `
+      <h1>Critical Path</h1>
+      <p class="cp-subtitle">${esc(paper.title)} &mdash; ${cpBlocks.length} blocks on the critical proof chain</p>
+      <div class="cp-actions">
+        <button class="cp-btn" id="cp-print-browser" title="Print in browser">Print</button>
+        <button class="cp-btn cp-btn-secondary" id="cp-export-latex" title="Export as LaTeX">Export LaTeX</button>
+      </div>`;
+    wrap.appendChild(hdr);
+
+    // Render blocks as a cohesive narrative
+    const content = h("div", "cp-content");
+    let lastChapter = null;
+    let lastSection = null;
+
+    for (const blk of cpBlocks) {
+      // Chapter heading
+      if (blk._chapter !== lastChapter) {
+        lastChapter = blk._chapter;
+        lastSection = null;
+        const ch = h("h2", "cp-chapter", `${blk._chapterNum ? blk._chapterNum + ". " : ""}${esc(blk._chapter)}`);
+        content.appendChild(ch);
+      }
+      // Section heading
+      if (blk._section !== lastSection) {
+        lastSection = blk._section;
+        content.appendChild(h("h3", "cp-section", esc(blk._section)));
+      }
+      // Block
+      content.appendChild(renderCPBlock(blk));
+    }
+
+    if (!cpBlocks.length) {
+      content.appendChild(h("div", "cp-empty", "No critical path blocks found. The paper may not have dependency chains (uses fields) set up yet."));
+    }
+
+    wrap.appendChild(content);
+    app.innerHTML = "";
+    app.appendChild(wrap);
+    renderMath(app);
+
+    // Wire up print buttons
+    const printBtn = $("#cp-print-browser");
+    const latexBtn = $("#cp-export-latex");
+    if (printBtn) printBtn.onclick = () => printCriticalPath(cpBlocks);
+    if (latexBtn) latexBtn.onclick = () => exportCriticalPathLatex(cpBlocks);
+  }
+
+  function renderCPBlock(blk) {
+    const el = h("div", `cp-block cp-kind-${blk.kind}`);
+    if (blk.label) el.id = `cp-${blk.label}`;
+
+    const header = h("div", "cp-block-header");
+    const statusCls = blk.status || "";
+    header.innerHTML = `
+      <span class="bk">${esc(blk.kind)}</span>
+      ${blk.title ? `<span class="bt">${esc(blk.title)}</span>` : ""}
+      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}
+      ${blk.lean ? `<span class="bh-lean ${statusCls}" title="${esc(blk.lean.decl)}">∀${statusCls ? `<span class="bh-lean-status">${esc(statusCls)}</span>` : ""}</span>` : ""}`;
+    el.appendChild(header);
+
+    // Body content
+    const body = h("div", "bb", mdToHtml(blk.md || ""));
+    el.appendChild(body);
+
+    // Uses links
+    if (blk.uses && blk.uses.length) {
+      const uses = h("div", "uses", "uses: ");
+      for (const ref of blk.uses) {
+        const a = h("a", "uref", esc(ref));
+        a.href = `#cp-${ref}`;
+        a.onclick = (e) => {
+          e.preventDefault();
+          const t = document.getElementById(`cp-${ref}`);
+          if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+        uses.appendChild(a);
+        uses.appendChild(document.createTextNode(" "));
+      }
+      el.appendChild(uses);
+    }
+
+    return el;
+  }
+
+  function printCriticalPath(cpBlocks) {
+    // Build a standalone print document
+    const printWin = window.open("", "_blank");
+    if (!printWin) { alert("Pop-up blocked. Please allow pop-ups for this site."); return; }
+
+    const katexCss = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css";
+    const katexJs = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js";
+
+    let bodyHtml = `<h1>${esc(paper.title)}</h1>
+      <p class="subtitle">Critical Path &mdash; ${cpBlocks.length} blocks</p>
+      <p class="meta">${esc((paper.authors || []).join(", "))}${paper.date ? " &middot; " + esc(paper.date) : ""}</p>
+      <hr>`;
+
+    let lastChapter = null, lastSection = null;
+    for (const blk of cpBlocks) {
+      if (blk._chapter !== lastChapter) {
+        lastChapter = blk._chapter;
+        lastSection = null;
+        bodyHtml += `<h2>${blk._chapterNum ? blk._chapterNum + ". " : ""}${esc(blk._chapter)}</h2>`;
+      }
+      if (blk._section !== lastSection) {
+        lastSection = blk._section;
+        bodyHtml += `<h3>${esc(blk._section)}</h3>`;
+      }
+      const kindLabel = blk.kind.charAt(0).toUpperCase() + blk.kind.slice(1);
+      bodyHtml += `<div class="block ${blk.kind}">
+        <div class="block-header"><strong>${esc(kindLabel)}</strong>${blk.title ? ` (${esc(blk.title)})` : ""}${blk.label ? ` <span class="label">[${esc(blk.label)}]</span>` : ""}</div>
+        <div class="block-body">${mdToHtml(blk.md || "")}</div>
+      </div>`;
+    }
+
+    printWin.document.write(`<!DOCTYPE html><html><head>
+      <meta charset="utf-8">
+      <title>Critical Path — ${esc(paper.title)}</title>
+      <link rel="stylesheet" href="${katexCss}">
+      <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+      <style>
+        body { font-family: 'Crimson Pro', 'Georgia', serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; font-size: 11pt; line-height: 1.6; }
+        h1 { font-size: 1.6rem; margin-bottom: .2rem; }
+        h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: .3rem; }
+        h3 { font-size: 1rem; color: #555; margin-top: 1.2rem; }
+        .subtitle { color: #666; font-style: italic; margin: .2rem 0; }
+        .meta { color: #888; font-size: .9rem; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 1rem 0; }
+        .block { margin: 1rem 0; padding: .8rem; border-left: 3px solid #ddd; page-break-inside: avoid; }
+        .block.definition { border-left-color: #4a90d9; }
+        .block.theorem, .block.proposition { border-left-color: #d94a4a; }
+        .block.lemma { border-left-color: #d9974a; }
+        .block.corollary { border-left-color: #7b4ad9; }
+        .block-header { font-variant: small-caps; margin-bottom: .4rem; }
+        .label { font-family: monospace; font-size: .75rem; color: #999; }
+        .block-body p { margin: .3rem 0; }
+        @media print { body { margin: 0; max-width: 100%; } }
+      </style>
+      <script src="${katexJs}"><\/script>
+    </head><body>${bodyHtml}
+      <script>
+        document.querySelectorAll('.katex-display-raw').forEach(function(el) {
+          try { katex.render(el.dataset.tex, el, { displayMode: true, throwOnError: false, macros: ${JSON.stringify(katexMacros)} }); } catch(e) { el.textContent = el.dataset.tex; }
+        });
+        document.querySelectorAll('.katex-inline-raw').forEach(function(el) {
+          try { katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: ${JSON.stringify(katexMacros)} }); } catch(e) { el.textContent = el.dataset.tex; }
+        });
+        setTimeout(function() { window.print(); }, 500);
+      <\/script>
+    </body></html>`);
+    printWin.document.close();
+  }
+
+  function exportCriticalPathLatex(cpBlocks) {
+    // Generate LaTeX document
+    let tex = `\\documentclass[11pt]{article}
+\\usepackage{amsmath,amssymb,amsthm}
+\\usepackage[utf8]{inputenc}
+\\usepackage{hyperref}
+
+\\newtheorem{theorem}{Theorem}[section]
+\\newtheorem{proposition}[theorem]{Proposition}
+\\newtheorem{lemma}[theorem]{Lemma}
+\\newtheorem{corollary}[theorem]{Corollary}
+\\newtheorem{definition}[theorem]{Definition}
+\\newtheorem{remark}[theorem]{Remark}
+\\newtheorem{example}[theorem]{Example}
+\\newtheorem{conjecture}[theorem]{Conjecture}
+
+`;
+    // Add paper macros if available
+    if (paper.macros) {
+      for (const [name, def] of Object.entries(paper.macros)) {
+        const d = def;
+        if (d.args) {
+          tex += `\\newcommand{\\${name}}[${d.args}]{${d.tex}}\n`;
+        } else {
+          tex += `\\newcommand{\\${name}}{${d.tex}}\n`;
+        }
+      }
+      tex += "\n";
+    }
+
+    tex += `\\title{${latexEsc(paper.title)} \\\\ {\\large Critical Path}}
+\\author{${latexEsc((paper.authors || []).join(", "))}}
+${paper.date ? `\\date{${latexEsc(paper.date)}}` : ""}
+
+\\begin{document}
+\\maketitle
+
+`;
+
+    let lastChapter = null, lastSection = null;
+    for (const blk of cpBlocks) {
+      if (blk._chapter !== lastChapter) {
+        lastChapter = blk._chapter;
+        lastSection = null;
+        tex += `\\section{${latexEsc(blk._chapter)}}\n\n`;
+      }
+      if (blk._section !== lastSection) {
+        lastSection = blk._section;
+        tex += `\\subsection{${latexEsc(blk._section)}}\n\n`;
+      }
+      // Environment mapping
+      const envMap = {
+        definition: "definition", theorem: "theorem", proposition: "proposition",
+        lemma: "lemma", corollary: "corollary", remark: "remark",
+        example: "example", conjecture: "conjecture"
+      };
+      const env = envMap[blk.kind];
+      if (env) {
+        const titleOpt = blk.title ? `[${latexEsc(blk.title)}]` : "";
+        const label = blk.label ? `\\label{${blk.label}}\n` : "";
+        tex += `\\begin{${env}}${titleOpt}\n${label}${mdToLatex(blk.md || "")}\n\\end{${env}}\n\n`;
+      } else {
+        // prose or unknown kind
+        tex += `${mdToLatex(blk.md || "")}\n\n`;
+      }
+    }
+
+    tex += `\\end{document}\n`;
+
+    // Download as .tex file
+    const blob = new Blob([tex], { type: "text/x-tex" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `critical-path-${paper.id || "paper"}.tex`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function latexEsc(s) {
+    if (!s) return "";
+    return s.replace(/\\/g, "\\textbackslash{}")
+      .replace(/[&%$#_{}~^]/g, m => "\\" + m);
+  }
+
+  function mdToLatex(md) {
+    if (!md) return "";
+    let out = md;
+    // Display math $$...$$ → \[...\]
+    out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) => `\\[\n${tex.trim()}\n\\]`);
+    // Inline math stays as $...$
+    // Fenced code blocks
+    out = out.replace(/```tex\n([\s\S]*?)```/g, (_, code) => code.trim());
+    out = out.replace(/```\w*\n([\s\S]*?)```/g, (_, code) => `\\begin{verbatim}\n${code}\\end{verbatim}`);
+    // Bold/italic
+    out = out.replace(/\*\*(.+?)\*\*/g, "\\textbf{$1}");
+    out = out.replace(/\*(.+?)\*/g, "\\emph{$1}");
+    // Cross-refs [text](#label) → \hyperref[label]{text}
+    out = out.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, "\\hyperref[$2]{$1}");
+    return out;
   }
 
   // ── Boot ────────────────────────────────────────────────
