@@ -1,0 +1,16 @@
+{
+  "name": "qou",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "cd content && bun run pipeline/validate.ts quantum-observable-universe/",
+    "build:content": "cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts --out-dir ../chapters/",
+    "build:docs": "npx typedoc && bun run scripts/generate-schema-manifest.ts",
+    "build:schema-manifest": "bun run scripts/generate-schema-manifest.ts",
+    "export-json": "cd content && bun run pipeline/export-json.ts"
+  },
+  "devDependencies": {
+    "typedoc": "^0.27.9",
+    "typescript": "^5.8.3"
+  }
+}

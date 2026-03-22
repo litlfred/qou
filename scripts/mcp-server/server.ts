@@ -807,6 +807,28 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return null;
   }
 
+  // ── API: Schema manifest (for viewer schema doc panel) ───
+  if (path === "/api/schema-manifest") {
+    const manifestPath = join(REPO_ROOT, "build/schema-manifest.json");
+    if (existsSync(manifestPath)) {
+      return serveFile(manifestPath) || Response.json({ error: "read error" }, { status: 500 });
+    }
+    // Generate on-the-fly if build/ doesn't exist yet
+    try {
+      const { spawnSync } = await import("child_process");
+      spawnSync("bun", ["run", "scripts/generate-schema-manifest.ts"], { cwd: REPO_ROOT, timeout: 10000 });
+      return serveFile(manifestPath) || Response.json({ error: "generation failed" }, { status: 500 });
+    } catch {
+      return Response.json({ error: "schema-manifest.json not found; run: bun run scripts/generate-schema-manifest.ts" }, { status: 404 });
+    }
+  }
+
+  // ── API: Schema docs (TypeDoc static files) ─────────────
+  if (path.startsWith("/schema-docs/")) {
+    const docsPath = join(REPO_ROOT, "build", path);
+    return serveFile(docsPath) || new Response("Not found", { status: 404 });
+  }
+
   // ── API: Feedback ─────────────────────────────────────────
   // GET  /api/feedback?paperId=X&rootName=Y → todos for one block
   // GET  /api/feedback/all?status=open      → all todos (optional status filter)
