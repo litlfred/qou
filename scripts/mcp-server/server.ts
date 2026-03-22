@@ -755,7 +755,9 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
       return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
-      return Response.json({ error: String(e) }, { status: 500 });
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper id=${id} branch=${branch}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
     }
   }
 

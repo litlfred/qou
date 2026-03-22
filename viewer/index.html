@@ -957,12 +957,25 @@
     });
 
     // Sidebar hamburger toggle (narrow screens)
+    function collapseSidebarChapters() {
+      const sb = document.getElementById('sidebar');
+      if (!sb) return;
+      sb.querySelectorAll('.sb-ch.open').forEach(ch => {
+        ch.classList.remove('open');
+        const body = ch.nextElementSibling;
+        if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
+      });
+    }
     document.getElementById('sb-toggle').addEventListener('click', () => {
+      const wasOpen = document.body.classList.contains('sb-open');
       document.body.classList.toggle('sb-open');
+      if (wasOpen) collapseSidebarChapters();
     });
     document.getElementById('sidebar').addEventListener('click', (e) => {
-      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch'))
+      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch')) {
         document.body.classList.remove('sb-open');
+        collapseSidebarChapters();
+      }
     });
 
     const btnRd = document.getElementById('c-rd');
