@@ -468,8 +468,13 @@
     .fb-item.open{border-left:2px solid var(--ac)}
     .fb-item.resolved{border-left:2px solid var(--green,#4a4);opacity:.6}
     .todo-inline{display:flex;gap:.4rem;align-items:center;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.3rem;padding:.2rem .5rem;background:var(--bg-r);border-radius:3px;border:1px solid var(--brd)}
-    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;background:var(--ac);flex-shrink:0}
+    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
     .todo-inline .todo-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .todo-inline .todo-pri{font-size:.55rem;opacity:.7;min-width:2.5rem;text-align:center}
+    .todo-inline .todo-btn{background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);font-size:.55rem;padding:0 .25rem;line-height:1.3}
+    .todo-inline .todo-btn:hover{background:var(--bg-h);color:var(--fg)}
+    .todo-inline .todo-btn.todo-rm{color:var(--red,#c44)}
+    .todo-inline .todo-btn.todo-rm:hover{background:var(--red,#c44);color:#fff}
 
     /* Feedback button on blocks */
     /* (old .fb-btn removed — feedback now in .bh-acts) */
@@ -1672,16 +1677,86 @@
       voiceBtn.style.display = 'none'; // hide if not supported
     }
 
+    const priOrder = ['critical','high','medium','low'];
+    const priColors = {critical:'var(--red,#c44)',high:'var(--ora,#e90)',medium:'var(--ac)',low:'var(--fg-d)'};
     function addTodoIndicators(el, block) {
       if (!block.todos?.length) return;
       const open = block.todos.filter(t => t.status === 'open');
+      open.sort((a,b) => (priOrder.indexOf(a.priority||'medium') - priOrder.indexOf(b.priority||'medium')));
       for (const t of open) {
+        const pri = t.priority || 'medium';
         const d = mk('div', 'todo-inline decor');
-        d.innerHTML = `<span class="todo-dot"></span><span class="todo-text">${esc(t.summary || t.comment || '')}</span><span>${t.priority || ''}</span>`;
-        d.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
-        d.style.cursor = 'pointer';
+        const dot = mk('span','todo-dot');
+        dot.style.background = priColors[pri] || priColors.medium;
+        d.appendChild(dot);
+        const txt = mk('span','todo-text');
+        txt.textContent = t.summary || t.comment || '';
+        txt.style.cursor = 'pointer';
+        txt.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        d.appendChild(txt);
+        const priLabel = mk('span','todo-pri');
+        priLabel.textContent = pri;
+        d.appendChild(priLabel);
+        // [+] raise priority
+        const upBtn = mk('button','todo-btn');
+        upBtn.textContent = '+';
+        upBtn.title = 'Raise priority';
+        const curIdx = priOrder.indexOf(pri);
+        if (curIdx <= 0) upBtn.disabled = true;
+        upBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx-1]); };
+        d.appendChild(upBtn);
+        // [-] lower priority
+        const dnBtn = mk('button','todo-btn');
+        dnBtn.textContent = '\u2013';
+        dnBtn.title = 'Lower priority';
+        if (curIdx >= priOrder.length - 1) dnBtn.disabled = true;
+        dnBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx+1]); };
+        d.appendChild(dnBtn);
+        // [x] remove
+        const rmBtn = mk('button','todo-btn todo-rm');
+        rmBtn.textContent = '\u00d7';
+        rmBtn.title = 'Remove todo';
+        rmBtn.onclick = (e) => { e.stopPropagation(); removeTodo(block, t); };
+        d.appendChild(rmBtn);
         el.appendChild(d);
       }
+    }
+
+    async function updateTodoPri(block, todo, newPri) {
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, priority: newPri })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.priority = newPri;
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to update priority:', e); }
+    }
+
+    async function removeTodo(block, todo) {
+      if (!confirm(`Remove todo: "${todo.summary || todo.comment}"?`)) return;
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, status: 'resolved' })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.status = 'resolved';
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to remove todo:', e); }
+    }
+
+    function refreshTodoInline(block) {
+      if (!block.label) return;
+      const blockEl = document.getElementById(block.label);
+      if (!blockEl) return;
+      blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+      addTodoIndicators(blockEl, block);
     }
 
     // ── Feedback badge refresh ──────────────────────────

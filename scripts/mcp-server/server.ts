@@ -598,6 +598,25 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
+  // ── Update feedback todo (priority / status) ──────────────────
+  if (path === "/api/feedback/update") {
+    try {
+      const body = await req.json() as {
+        paperId: string; rootName: string; todoId: string;
+        priority?: string; status?: string;
+      };
+      const todos = readFeedback(body.paperId, body.rootName) as any[];
+      const idx = todos.findIndex((t: any) => t.id === body.todoId);
+      if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
+      if (body.priority !== undefined) todos[idx].priority = body.priority;
+      if (body.status !== undefined) todos[idx].status = body.status;
+      writeFeedback(body.paperId, body.rootName, todos);
+      return Response.json({ ok: true, todo: todos[idx] });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
   return null;
 }
 
