@@ -1,0 +1,8 @@
+import { example } from "../../schema/builders";
+
+export default example({
+  label: "ex:yekutieli-lifting-su2",
+  title: "Yekutieli lifting for $\\mathrm{SU}(2)$: perpetual obstruction",
+  tags: ["su2", "yekutieli", "lifting", "brane-tower"],
+  uses: ["prop:yekutieli-lifting", "ex:quantum-characteristic-classes-su2"],
+});

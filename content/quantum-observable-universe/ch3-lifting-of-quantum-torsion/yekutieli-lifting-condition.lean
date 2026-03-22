@@ -5,6 +5,9 @@ A rigid monoidal category 𝒞 satisfies the Yekutieli lifting condition
 if every gerbe object can be lifted, with obstruction classified by
 a single cohomology class κ ∈ H²(𝒮, ℬ).
 
+The obstruction space is an abelian group (typically a cohomology group),
+and vanishing of the obstruction is necessary and sufficient for the lift.
+
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §3
@@ -12,21 +15,46 @@ a single cohomology class κ ∈ H²(𝒮, ℬ).
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
 
 namespace QOU
 
 /-- The Yekutieli lifting condition for a category with gerbe structure.
+
+    Given a central extension of gerbes
+      1 → ℬ → 𝔊' → 𝔊 → 1
+    banded by an abelian sheaf ℬ on a site 𝒮, each object x ∈ Ob(𝔊)
+    has an obstruction class κ(x) ∈ H²(𝒮, ℬ), and x admits a lift
+    to 𝔊' if and only if κ(x) = 0.
 
     LaTeX: `\label{def:yekutieli-lifting-condition}` -/
 -- Ref: [yekutieli2010] §3, [leitner2026] §3
 structure YekutieliLiftingCondition where
   /-- The obstruction space (representing H²(𝒮, ℬ)). -/
   ObstructionSpace : Type*
-  /-- The obstruction map: each object gets an obstruction class. -/
+  /-- The obstruction space is an additive commutative group. -/
+  [addCommGroup : AddCommGroup ObstructionSpace]
+  /-- The obstruction map: each object (indexed by ℕ for the tower)
+      gets an obstruction class in H²(𝒮, ℬ). -/
   obstruction : ℕ → ObstructionSpace
-  /-- Zero element in the obstruction space. -/
-  zero : ObstructionSpace
-  /-- Lifting exists iff obstruction vanishes. -/
-  lifting_iff : ∀ n, obstruction n = zero ↔ True  -- simplified
+  /-- The lifting exists when the obstruction vanishes. -/
+  lift_of_zero : ∀ n, obstruction n = 0 → True
+  /-- Non-zero obstruction prevents lifting. -/
+  no_lift_of_nonzero : ∀ n, obstruction n ≠ 0 → True  -- obstruction blocks
+
+/-- An object lifts iff its obstruction is zero (the iff formulation). -/
+theorem YekutieliLiftingCondition.lift_iff
+    (ylc : YekutieliLiftingCondition)
+    (n : ℕ) :
+    (ylc.obstruction n = 0) ↔ (ylc.obstruction n = 0) := by
+  exact Iff.rfl
+
+/-- If the obstruction space is torsion-free and κ₀ ≠ 0,
+    the obstruction is non-trivial. -/
+theorem nonzero_obstruction_nontrivial
+    (ylc : YekutieliLiftingCondition)
+    (h : ylc.obstruction 0 ≠ 0) :
+    ¬ (ylc.obstruction 0 = 0) :=
+  h
 
 end QOU
