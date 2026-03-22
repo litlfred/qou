@@ -11,7 +11,7 @@ loops yields holonomy operators
 ```
 
 where $\sigma_1,\sigma_2$ are the braid generators.
-In the $\mathrm{SU}(2)$ embedding ([Definition](#def:su2-generators)) these
+In the $\mathrm{SU}(2)$ embedding ([SU(2) generators](#def:su2-generators)) these
 become
 $$
   H_1=\exp(T\theta\,e_1),\qquad H_2=\exp(T\theta\,e_2),

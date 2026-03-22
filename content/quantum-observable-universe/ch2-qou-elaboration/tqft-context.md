@@ -1,5 +1,5 @@
 The axioms of
-[Definitions](#def:quantum-universe)
+[quantum universe](#def:quantum-universe)
 and [](#def:quantum-observable-universe) are grounded in the algebraic
 framework of topological quantum field theory (TQFT).
 
@@ -8,7 +8,7 @@ A commutative Frobenius algebra over $R$ is equivalent to a
 $2$-dimensional TQFT
 $Z \colon \mathbf{2Cob} \to R\text{-}\mathrm{Mod}$
 \cite{kock2004, atiyah1988}. The Frobenius--Hopf object $A$ in
-[Definition](#def:quantum-universe) carries both the Frobenius structure
+[quantum universe](#def:quantum-universe) carries both the Frobenius structure
 (encoding the $2$d cobordism data: the product $\mu$ corresponds to a
 pair-of-pants cobordism, the Frobenius form $\lambda$ to a cap) and a
 Hopf structure (encoding the quantum-group symmetry that extends the theory
@@ -23,7 +23,7 @@ needed for three-dimensional and extended TQFTs
 *The observability condition as a categorical contact condition.*
 In the TQFT setting, the condition
 $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
-([Definition](#def:quantum-observable-universe)) is the categorical
+([quantum observable universe](#def:quantum-observable-universe)) is the categorical
 analogue of the *contact condition* (maximal non-integrability).
 A non-zero morphism $\mathbf{1} \to \mathrm{Ad}(A)$ would give a
 global invariant section of the adjoint object --- the categorical
@@ -44,7 +44,7 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ therefore ensures:
    TQFT extends to a fully local (extended) field theory.
 
 In the archimedean realisation
-([Example](#def:c-quantum-observable-universe)), this categorical
+([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), this categorical
 condition reduces to
 $H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
 instanton connection admits no infinitesimal automorphisms, which is the

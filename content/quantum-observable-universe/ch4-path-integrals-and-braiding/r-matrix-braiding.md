@@ -1,5 +1,5 @@
 The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$
-([Definition](#def:quantum-su2)) is the universal element
+([quantum SU(2)](#def:quantum-su2)) is the universal element
 $$
   \mathcal{R}\;\in\;
   \mathcal{U}_q(\mathfrak{su}(2))\;\hat{\otimes}\;
@@ -12,4 +12,4 @@ Its action on a tensor product of representations gives the braid
 operator $\check{R}=P\circ\mathcal{R}$ (where $P$ is the swap),
 furnishing a $q$-deformed braid group representation that replaces
 the classical twist/flip involutions
-([Definition](#def:braid-twist-flip)).
+([braid twist-flip](#def:braid-twist-flip)).

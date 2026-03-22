@@ -22,7 +22,7 @@ formal group $G$ as a deformation of the commutative
 $\mathrm{Dist}(H)$; the strong multiplicativity
 condition guarantees that the Frobenius relation is preserved at every
 filtration degree
-([Proposition](#prop:skew-poisson-integration)).
+([skew poisson integration](#prop:skew-poisson-integration)).
 
 When the representation $\rho$ is reducible, all monomials in the
 Groebner--Shirshov basis reduce to the abelian (Cartan) subalgebra; the

@@ -1,10 +1,10 @@
-Connecting the QOU resonance condition ([Remark](#rem:crystal-probe-q)) to
+Connecting the QOU resonance condition ([crystal probe of $q$](#rem:crystal-probe-q)) to
 concrete lattice experiments requires three structural ingredients that remain
 to be fully developed:
 
 1. *Lattice--leaf commensurability.* For a $d$-dimensional
    Bravais lattice with basis vectors $\{\vec{a}_i\}$, the resonance
-   condition of [Remark](#rem:crystal-probe-q) becomes a Diophantine
+   condition of [crystal probe of $q$](#rem:crystal-probe-q) becomes a Diophantine
    matching between the reciprocal lattice vectors
    $\{\vec{G}_j\}$ and the characteristic wave-vectors of the
    $q$-torsion leaves. The lattice symmetry group acts on the space of
@@ -16,7 +16,7 @@ to be fully developed:
    arrays --- the coupling to $q$-torsion may be
    non-monotonic in a control parameter (e.g. interlayer separation or
    applied field). In the QOU picture, this arises because the
-   $q$-deformed Reeb flow ([Definition](#def:q-reeb-flow)) introduces
+   $q$-deformed Reeb flow ([$q$-Reeb flow](#def:q-reeb-flow)) introduces
    a preferred orientation that competes with the lattice's own symmetry,
    producing frustrated configurations whose energy dissipation is
    maximised at an intermediate commensurability.

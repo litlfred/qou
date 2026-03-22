@@ -1,10 +1,10 @@
 The constraint $\chi(E) = -6$ specialises to each archimedean example:
 
-- *Calabi--Yau* ([Example](#ex:calabi-yau)): constrains
+- *Calabi--Yau* ([Calabi--Yau](#ex:calabi-yau)): constrains
   the alternating sum of Betti numbers; only manifolds admitting
   a principal $\mathrm{SU}(2)$-bundle with this Euler characteristic
   realise the Descartes universe.
-- *ALE links* ([Example](#ex:ale)): selects finite subgroups
+- *ALE links* ([ALE space](#ex:ale)): selects finite subgroups
   $\Gamma \subset \mathrm{SU}(2)$ via arithmetic constraints on
   the McKay quiver.
 - *Affine space* $M = \mathbb{C}^2$: forces non-trivial

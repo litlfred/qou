@@ -44,14 +44,14 @@ $\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
 
 This Frobenius--Hopf structure on $\mathcal{O}_q(\mathrm{SU}(2))$ is
 precisely the datum required by the general
-[Definition](#def:quantum-universe): the Haar state $h_q$ realises
+[quantum universe](#def:quantum-universe): the Haar state $h_q$ realises
 the Frobenius form $\lambda \colon A \to \mathbf{1}$, and the
 non-degeneracy is the $\mathbb{C}$
 instance of condition (1) in
-[Definition](#def:quantum-observable-universe).
-In the archimedean realisation ([Example](#def:c-quantum-universe)),
+[quantum observable universe](#def:quantum-observable-universe).
+In the archimedean realisation ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
-conditions of [Example](#def:c-quantum-observable-universe)
+conditions of [$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)
 reduce to a triple:
 
 1. a CR manifold $(M, \theta)$ of hypersurface type with
@@ -60,7 +60,7 @@ reduce to a triple:
    category of vector bundles over $M$, playing the role of the
    triple $(G, P, E)$; and
 3. an instanton connection on the underlying $A$-bundle
-   ([Definition](#def:instanton)).
+   ([instanton](#def:instanton)).
 
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
 the non-degeneracy of the Frobenius form $\lambda$ via the diagram
@@ -87,7 +87,7 @@ The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
 Frobenius pairing from $\lambda$; any global parallel section would
 pair non-trivially with itself, contradicting the irreducibility of
 the instanton connection
-([Lemma](#lem:irreducible-connection)). Hence the Frobenius
+([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius
 non-degeneracy, combined with irreducibility, forces
 $H^0(M, \mathrm{Ad}(A)) = 0$. The section-vanishing condition
 $\Gamma_c(M, E) = 0$ follows similarly from the non-existence of
@@ -95,5 +95,5 @@ $A$-equivariant sections of the associated $\mathbb{P}^1(\mathbb{C})$-bundle.
 
 Note that the horizontal distribution $H = \ker\theta$ itself
 *fails* to carry a Frobenius structure (as discussed in
-[Remark](#rem:q-torsion-existence)); it is the gauge algebra, not the
+[$q$-torsion existence](#rem:q-torsion-existence)); it is the gauge algebra, not the
 distribution, that is Frobenius.

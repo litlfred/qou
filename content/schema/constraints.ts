@@ -90,7 +90,6 @@ const BlockBaseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -158,7 +157,7 @@ export const ProseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const EquationSchema = z.object({
@@ -169,7 +168,7 @@ export const EquationSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const DiagramSchema = z.object({
@@ -181,7 +180,7 @@ export const DiagramSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 /** Discriminated union — validates any Block. */
@@ -219,7 +218,7 @@ export const ChapterSchema = z.object({
   label: z.string().optional(),
   sections: z.array(z.union([SectionSchema, SectionRefSchema])),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const ChapterRefSchema = z.object({
@@ -239,7 +238,7 @@ export const PaperSchema = z.object({
   chapters: z.array(ChapterRefSchema),
   macros: z.record(PaperMacroSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 /** @deprecated Use PaperSchema. */

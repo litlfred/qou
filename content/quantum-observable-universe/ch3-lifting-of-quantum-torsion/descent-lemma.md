@@ -1,6 +1,6 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
-$\{A_n\}_{n \geq 0}$ be the recursive brane tower
-([Definition](#def:recursive-brane-tower)), with $n \geq 1$; let $q$ denote the substrate parameter.  The
+$\{A_n\}_{n \geq 0}$ be the
+([recursive brane tower](#def:recursive-brane-tower)), with $n \geq 1$; let $q$ denote the substrate parameter.  The
 restriction morphism $r_n \colon A_n \to A_{n-1}$ yields a Frobenius--Hopf
 object $A_{n-1}$ such that $(\mathcal{C}, A_{n-1}, \omega)$ is again a
 quantum observable universe.  Moreover, the induced descent homomorphism

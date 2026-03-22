@@ -17,7 +17,7 @@ $$
   g_{ij}^{(n+1)} \;=\; a_{ij}^{(n)} \cdot g_{ij}^{(n)},
 $$
 where $a_{ij}^{(n)} \in \mathcal{O}_M^{\times}$ is the local lift datum
-([Definition](#def:yekutieli-triple)).  Computing the cocycle deviation
+([Yekutieli triple](#def:yekutieli-triple)).  Computing the cocycle deviation
 at level $n{+}1$:
 
 ```tex
@@ -51,11 +51,11 @@ $\delta^2(g^{(n)})_{ijk}$ and the right-hand side is the twisted
 conjugation by the $2$-morphisms.  The class of this twisted $2$-cocycle
 in $H^2(M,\, \mathcal{O}_M^{\times})$ is precisely the obstruction
 class $\kappa_n$ of
-[Definition](#def:quantum-characteristic-classes): it vanishes if and
+[quantum characteristic classes](#def:quantum-characteristic-classes): it vanishes if and
 only if the cocycle deviation at level $n$ can be absorbed by the
 $2$-morphism data, i.e. the lift from $\mathfrak{G}_n$ to
 $\mathfrak{G}_{n+1}$ is unobstructed.
 
 By [Theorem 1.7, yekutieli2010], this is equivalent to the
 vanishing of the Yekutieli obstruction class, closing the circle with
-the lifting criterion ([Proposition](#prop:yekutieli-lifting)).
+the lifting criterion ([Yekutieli lifting](#prop:yekutieli-lifting)).

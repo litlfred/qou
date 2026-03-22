@@ -1,4 +1,4 @@
-Bring's surface $\Sigma_4$ ([Definition](#def:brings-surface)) gives rise
+Bring's surface $\Sigma_4$ ([Bring's surface](#def:brings-surface)) gives rise
 to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 
 1. *Quantum universe.*  Set $\mathcal{C} =
@@ -12,8 +12,8 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
    Schur lemma: $\mathrm{SU}_q(2)$ has no non-trivial invariants in the
    adjoint representation.
 3. *Yekutieli lifting.*  The brane tower satisfies the Yekutieli
-   lifting condition ([Proposition](#prop:yekutieli-lifting)).
-4. *Euler characteristic.*  By [Theorem](#thm:qu-to-qou),
+   lifting condition ([Yekutieli lifting](#prop:yekutieli-lifting)).
+4. *Euler characteristic.*  By [QU-to-QOU lifting](#thm:qu-to-qou),
    $\chi(A) = \mathrm{tr}(\mathrm{id}_A) = 2 - 2g = -6$.
 5. *Geometric descent* (for $n = 1$, $\dim M_S = 3$):
    $$

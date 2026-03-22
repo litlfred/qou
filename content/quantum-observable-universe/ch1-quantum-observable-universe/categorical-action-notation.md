@@ -1,11 +1,11 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) equipped with
-substrate parameter $q$ ([Definition](#def:substrate-parameter)),
-$q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)),
-a connection $\nabla$ ([Definition](#def:categorical-connection)),
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) equipped with
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
+$q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
+a connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 and a section $\psi \colon \mathbf{1} \to A$ (a "state").
 The following notation is used in
-[Definition](#def:categorical-action):
+[categorical action](#def:categorical-action):
 
 - $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$ is the
   *categorical trace* (the composition
@@ -29,4 +29,4 @@ The following notation is used in
 - $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
   the *$q$-deformed covariant derivative*, where $\xi$ is the
   Reeb derivation of $A$
-  ([Definition](#def:reeb-decomposition)).
+  ([Reeb decomposition](#def:reeb-decomposition)).

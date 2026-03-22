@@ -1,5 +1,5 @@
 In the $\mathrm{SU}(2)$ representation
-([Definition](#def:su2-generators)), the trefoil braid relation
+([SU(2) generators](#def:su2-generators)), the trefoil braid relation
 $xyx=yxy$ becomes the operator identity
 $$
   \alpha\,\beta\,\alpha

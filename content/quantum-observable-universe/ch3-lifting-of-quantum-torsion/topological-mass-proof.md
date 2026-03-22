@@ -5,7 +5,7 @@ holonomy, localisation of the transient terms to exceptional divisors,
 and evaluation via the quantum dilogarithm.
 
 *Step 1: Eigenspace decomposition of the mass integrand.*
-By the mass identity ([Definition](#def:mass-identity)), the mass of
+By the ([mass identity](#def:mass-identity)), the mass of
 the vortex $\gamma$ is
 $$
   m(\gamma)
@@ -21,10 +21,10 @@ connection--curvature bundle over $\Sigma$, and as such it is an element
 of the section algebra $\Gamma(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
 at whatever level $n{+}1$ accommodates the vortex.
 
-The descent involution $\tau_n$ ([Definition](#def:descent-involution))
+The descent involution $\tau_n$ ([descent involution](#def:descent-involution))
 decomposes this section algebra into the direct sum
 $\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-([Proposition](#prop:descent-eigenspaces)).  Since $\tau_n$ is an
+([descent eigenspaces](#prop:descent-eigenspaces)).  Since $\tau_n$ is an
 idempotent $*$-endomorphism, the Killing-form norm
 $\lVert\cdot\rVert$ on $\mathfrak{su}(2)$ respects the orthogonal
 decomposition:
@@ -70,7 +70,7 @@ $$
 The projection $\tau_n(\alpha)$ lies in
 $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$, which is
 isomorphic to the level-$n$ section algebra via the ascent embedding
-$\ell_n$ ([Definition](#def:descent-involution)).  The surface
+$\ell_n$ ([descent involution](#def:descent-involution)).  The surface
 $\Sigma$ with $\partial\Sigma = \gamma$ decomposes under the topological
 blow-up as $\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where
 $\Sigma_0$ is a disc spanning the unknot core $\gamma_0$ and each
@@ -93,8 +93,8 @@ theorem [yekutieli2015] applied to the disc $\Sigma_0$.
 The transient component $\alpha - \tau_n(\alpha)$ is annihilated by
 $\tau_n$: it lies in
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$
-([Proposition](#prop:descent-eigenspaces)).  By the structure of the
-defining boundary ([Proposition](#prop:brane-boundary)), the support of
+([descent eigenspaces](#prop:descent-eigenspaces)).  By the structure of the
+defining boundary ([brane boundary](#prop:brane-boundary)), the support of
 a transient section is contained in a neighbourhood of the boundary
 $\partial E_n$, which has codimension $\geq 2$ in $E_n$ (item (1)) and
 whose fibre at each blow-up centre $p_i$ is the exceptional divisor

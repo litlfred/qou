@@ -1,13 +1,13 @@
 Let $A_q$ denote the $q$-deformed connection
-([Definition](#def:q-connection)) and define the $q$-curvature
+([$q$-connection](#def:q-connection)) and define the $q$-curvature
 
 $$
   \Omega_q \;=\; dA_q + \tfrac{1}{2}\,[A_q,\, A_q]_q,
 $$
 
 where $[\,\cdot\,,\cdot\,]_q$ is the $q$-deformed Lie bracket
-([Definition](#def:q-lie-bracket)) extended to $\mathrm{Ad}(P)$-valued
-forms. A $q$-torsion leaf $L$ ([Definition](#def:q-torsion-leaf)) is a
+([$q$-Lie bracket](#def:q-lie-bracket)) extended to $\mathrm{Ad}(P)$-valued
+forms. A $q$-torsion leaf $L$ ([$q$-torsion leaf](#def:q-torsion-leaf)) is a
 local minimum of $\lVert\Omega_q\rVert$ restricted to the horizontal
 distribution: the invariance of $L$ under $\phi_t^q$ forces the first
 variation of $\lVert\Omega_q|_L\rVert$ to vanish, so $L$ sits in a

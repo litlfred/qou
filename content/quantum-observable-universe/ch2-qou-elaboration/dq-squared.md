@@ -1,5 +1,5 @@
 Let $d_q$ be the $q$-deformed exterior derivative
-([Definition](#def:q-ext-deriv)). For constant $q > 1$, the operator
+([$q$-exterior derivative](#def:q-ext-deriv)). For constant $q > 1$, the operator
 $d_q^2$ is given by
 
 $$

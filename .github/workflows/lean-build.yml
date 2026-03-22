@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'lean/**'
+      - 'lean-archive/**'
       - 'chapters/**'
       - 'proof-objects.json'
       - 'glossary.json'
@@ -53,14 +53,14 @@ jobs:
       - name: Cache Lean build artifacts
         uses: actions/cache@v4
         with:
-          path: lean/.lake
-          key: lean-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain', 'lean/lakefile.toml') }}
+          path: lean-archive/.lake
+          key: lean-${{ runner.os }}-${{ hashFiles('lean-archive/lean-toolchain', 'lean-archive/lakefile.toml') }}
           restore-keys: |
             lean-${{ runner.os }}-
 
       # ── Step 5: Build Lean project ─────────────────────────────────
       - name: Build Lean project
-        working-directory: lean
+        working-directory: lean-archive
         run: |
           lake update
           lake build 2>&1 | tee ../build.log
@@ -87,7 +87,7 @@ jobs:
       # pipeline to include Formalizer and Ontologist reviews.
       - name: Check sorry status
         run: |
-          SORRY_COUNT=$(grep -rc "sorry" lean/QOU/*.lean 2>/dev/null | awk -F: '{s+=$2} END {print s}')
+          SORRY_COUNT=$(grep -rc "sorry" lean-archive/QOU/*.lean 2>/dev/null | awk -F: '{s+=$2} END {print s}')
           echo "Total sorry occurrences: ${SORRY_COUNT}"
           if [ "${SORRY_COUNT}" -gt 0 ]; then
             echo "⚠️  ${SORRY_COUNT} sorry markers remain — Formalizer review recommended"

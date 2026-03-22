@@ -1,5 +1,5 @@
 Let $K$ be an archimedean field.  A quantum universe over $K$
-([Definition](#def:quantum-universe)) is realised by a $5$-tuple
+([quantum universe](#def:quantum-universe)) is realised by a $5$-tuple
 $(M, \theta, G, P, E)$ where:
 
 1. $M$ is a CR manifold of hypersurface type
@@ -18,7 +18,7 @@ $(M, \theta, G, P, E)$ where:
 
 The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 (the representation category of the quantum group at the substrate
-parameter $q(p)$, [Definition](#def:substrate-parameter)), the
+parameter $q(p)$, [substrate parameter](#def:substrate-parameter)), the
 Frobenius--Hopf object is
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
 Haar state, and the fibre functor $\omega$ is the forgetful functor

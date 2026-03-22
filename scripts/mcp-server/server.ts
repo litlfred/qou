@@ -186,7 +186,8 @@ async function resolveFolio(branch?: string): Promise<{ title: string; papers: F
             try {
               const blk = (await importTsBranch(br, blkRel)) as any;
               if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
-              if (blk.todos?.length) todoCount += blk.todos.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
+              const fb = readFeedback(ref.dir, rootName);
+              if (fb.length) todoCount += fb.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
             } catch {}
           }
         }
@@ -243,11 +244,10 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blk = (await importTsBranch(br, blkTsRel)) as any;
           const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos (global)
+          // Merge feedback todos from gitignored .qou-feedback/
+          // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
-          if (feedback.length) {
-            blk.todos = [...(blk.todos || []), ...feedback];
-          }
+          const blockTodos = feedback.length ? [...feedback] : undefined;
 
           // Read Lean source if available
           let leanSource: string | undefined;
@@ -301,7 +301,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
             tags: blk.tags,
             rendered,
             md,
-            todos: blk.todos,
+            todos: blockTodos,
           });
         } catch (e) {
           blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -311,9 +311,10 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
+    const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
       number: ch.number, title: ch.title, label: ch.label, sections,
-      todos: ch.todos,
+      todos: chTodos.length ? chTodos : undefined,
     });
   }
 
@@ -324,6 +325,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
       for (const blk of sec.blocks)
         blocksByName.set(blk.rootName, blk);
 
+  const paperTodos = readFeedback(id, "__paper");
   return {
     id,
     title: paperMod.title,
@@ -332,7 +334,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
-    todos: paperMod.todos,
+    todos: paperTodos.length ? paperTodos : undefined,
     branch: currentBranch(),
     blocksByName,
   };
@@ -1787,6 +1789,25 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
 
       const triage = await triageFeedback(todo, blockContent, blockKind, body.paperId, body.rootName);
       return Response.json(triage, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Update feedback todo (priority / status) ──────────────────
+  if (path === "/api/feedback/update") {
+    try {
+      const body = await req.json() as {
+        paperId: string; rootName: string; todoId: string;
+        priority?: string; status?: string;
+      };
+      const todos = readFeedback(body.paperId, body.rootName) as any[];
+      const idx = todos.findIndex((t: any) => t.id === body.todoId);
+      if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
+      if (body.priority !== undefined) todos[idx].priority = body.priority;
+      if (body.status !== undefined) todos[idx].status = body.status;
+      writeFeedback(body.paperId, body.rootName, todos);
+      return Response.json({ ok: true, todo: todos[idx] });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }

@@ -12,8 +12,8 @@ $(\mathcal{C}, A, \omega)$ is required.  Concretely:
 3. The non-degeneracy and vanishing conditions propagate from $A$ to
    $J^1(A)$ by functoriality.
 
-In this sense, the recursive brane tower
-([Definition](#def:recursive-brane-tower)) is generated entirely by
+In this sense, the
+([recursive brane tower](#def:recursive-brane-tower)) is generated entirely by
 iterating the categorical jet construction.  The tower, together with its
 associated descent ([Subsection](#ssec:descent)), is a formal consequence
 of the axioms of a quantum observable universe and does not require any

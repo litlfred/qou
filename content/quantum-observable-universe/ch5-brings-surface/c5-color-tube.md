@@ -1,5 +1,5 @@
 The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
-([Remark](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
+([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
 
 ```tex
 \begin{align}

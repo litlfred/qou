@@ -12,17 +12,17 @@ the categorical structures specialise to familiar geometric objects:
   forcing the structure group to be $\mathrm{SU}(2)$.
 
 - **Involution**
-  ([Proposition](#prop:fiber-adjoint-involution)).
+  ([fibre adjoint involution](#prop:fiber-adjoint-involution)).
   The categorical involution $\sigma$ becomes the identification
   $\mathbb{P}^1(\mathbb{C}) \cong S^2 \subset \mathfrak{su}(2)$ (the unit sphere
   under the Killing form): a line $\ell \subset R^2$ maps to the
   projector $\mathrm{proj}_\ell - \tfrac12\,\mathrm{id}$.
 
 - **Variational equations**
-  ([Proposition](#prop:variational-equations)).
+  ([variational equations](#prop:variational-equations)).
   The categorical Einstein equation reduces to
   $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-  ([Remark](#rem:gr-substrate-geometry)); the transport equation
+  ([GR substrate geometry](#rem:gr-substrate-geometry)); the transport equation
   reduces to the Schrodinger equation
   $J\hbar_q\,\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$
-  ([Remark](#rem:schrodinger-jet-coaction)).
+  ([Schr\"{o}dinger jet coaction](#rem:schrodinger-jet-coaction)).

@@ -1,7 +1,7 @@
 In the archimedean quantum observable universe $(M, G, P, E)$
-([Example](#def:c-quantum-observable-universe)) with instanton
+([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)) with instanton
 connection $A$, Levi form $L$, and self-dual curvature $F^+$, the
-categorical mass ([Definition](#def:mass-identity)) is realised as
+categorical mass ([mass identity](#def:mass-identity)) is realised as
 Yekutieli's nonabelian multiplicative integral [yekutieli2015].
 Concretely, let $\gamma$ be a closed cycle encircling a vortex filament
 and let $\Sigma$ be a surface with $\partial\Sigma = \gamma$.  Then:

@@ -3,7 +3,7 @@ triple $(\mathcal{C}, A, \omega)$ where:
 
 1. $(\mathcal{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    monoidal category
-   ([Definition](#def:rigid-monoidal-category));
+   ([rigid monoidal category](#def:rigid-monoidal-category));
 
 2. $A$ is a *Frobenius--Hopf object* in $\mathcal{C}$: an
    object equipped with morphisms
