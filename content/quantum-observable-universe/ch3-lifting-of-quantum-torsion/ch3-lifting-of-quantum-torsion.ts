@@ -135,6 +135,20 @@ export default chapter({
     }),
 
     section({
+      title: "Localized Knots, Hadrons, and Bundle Initial Conditions",
+      label: "sec:localized-knots-bundles",
+      blocks: [
+        "localized-knot-intro",
+        "localized-knot",
+        "hadron",
+        "bundle-initial-conditions",
+        "knot-particle-dictionary",
+        "torsion-knot-flow",
+        "bundle-category",
+      ],
+    }),
+
+    section({
       title: "Topological Decomposition of Mass",
       label: "sec:topological-mass",
       blocks: [
