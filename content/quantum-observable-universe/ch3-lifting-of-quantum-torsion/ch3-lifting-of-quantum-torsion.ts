@@ -34,6 +34,22 @@ export default chapter({
     }),
 
     section({
+      title: "Cosimplicial Crossed Groupoid Structure",
+      label: "ssec:cosimplicial-crossed-groupoid",
+      blocks: [
+        "cosimplicial-intro",
+        "yekutieli-triple",
+        "cosimplicial-crossed-groupoid",
+        "cosimplicial-crossed-groupoid-proof",
+        "jet-as-descent",
+        "descent-condition",
+        "descent-condition-proof",
+        "weak-equiv-invariance",
+        "weak-equiv-invariance-proof",
+      ],
+    }),
+
+    section({
       title: "Yekutieli Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
       blocks: [
@@ -97,22 +113,6 @@ export default chapter({
     }),
 
     section({
-      title: "Cosimplicial Crossed Groupoid Structure",
-      label: "ssec:cosimplicial-crossed-groupoid",
-      blocks: [
-        "cosimplicial-intro",
-        "yekutieli-triple",
-        "cosimplicial-crossed-groupoid",
-        "cosimplicial-crossed-groupoid-proof",
-        "jet-as-descent",
-        "descent-condition",
-        "descent-condition-proof",
-        "weak-equiv-invariance",
-        "weak-equiv-invariance-proof",
-      ],
-    }),
-
-    section({
       title: "Descent",
       label: "ssec:descent",
       blocks: [
@@ -141,7 +141,12 @@ export default chapter({
         "localized-knot-intro",
         "localized-knot",
         "hadron",
+        "hadron-operations",
+        "localized-hadron",
+        "hadron-fibre-embedding",
+        "skein-generation",
         "bundle-initial-conditions",
+        "bundle-isotopy-equivalence",
         "knot-particle-dictionary",
         "torsion-knot-flow",
         "bundle-category",

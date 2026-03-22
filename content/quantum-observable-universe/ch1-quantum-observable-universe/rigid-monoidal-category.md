@@ -6,19 +6,23 @@ isomorphisms expressing associativity and unitality:
 
 ```tex
 \[
+\underbrace{
 \begin{tikzcd}[column sep=3em]
   (X \otimes Y) \otimes Z
     \ar[r, "\alpha_{X,Y,Z}", "\sim"']
-  & X \otimes (Y \otimes Z),
+  & X \otimes (Y \otimes Z)
 \end{tikzcd}
+}_{\text{associativity}}
 \qquad
+\underbrace{
 \begin{tikzcd}[column sep=2.5em]
   \mathbf{1} \otimes X
     \ar[r, "\ell_X", "\sim"']
   & X
-  & X \otimes \mathbf{1}.
+  & X \otimes \mathbf{1}
     \ar[l, "\rho_X"', "\sim"]
 \end{tikzcd}
+}_{\text{unitality}}
 \]
 ```
 
@@ -31,6 +35,7 @@ such that the following *snake identity* diagrams commute:
 
 ```tex
 \begin{equation}\label{eq:snake-identities}
+\underbrace{
 \begin{tikzcd}[row sep=2em, column sep=2.5em]
   V
     \ar[r, "\mathrm{id} \otimes \mathrm{coev}"]
@@ -40,7 +45,9 @@ such that the following *snake identity* diagrams commute:
   \\
   & V
 \end{tikzcd}
+}_{\text{left snake identity}}
 \qquad\qquad
+\underbrace{
 \begin{tikzcd}[row sep=2em, column sep=2.5em]
   V^{\vee}
     \ar[r, "\mathrm{coev} \otimes \mathrm{id}"]
@@ -50,6 +57,7 @@ such that the following *snake identity* diagrams commute:
   \\
   & V^{\vee}
 \end{tikzcd}
+}_{\text{right snake identity}}
 \end{equation}
 ```
 

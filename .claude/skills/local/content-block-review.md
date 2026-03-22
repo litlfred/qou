@@ -140,9 +140,22 @@ Same as above but scoped to one chapter directory.
 
 Skip severity=info and severity=warning. Only report errors.
 
+### 9. Glossary block compliance (Ch 8)
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Glossary blocks use `remark` kind | **error** | Glossary entries must be `remark` blocks, not `definition` |
+| Glossary blocks have `"glossary"` tag | **warning** | Tag enables filtering and discovery |
+| Label follows `rem:glossary-<term>` pattern | **warning** | Consistent naming for glossary entries |
+| `.md` includes "Mathlib reference" section | **warning** | Glossary entries must cite the canonical Mathlib type |
+| No Lean file exists for glossary blocks | **info** | Glossary blocks are terminological wrappers — Lean formalization is not expected |
+| Glossary block does not duplicate a `definition` block | **error** | If the paper introduces new mathematics, it belongs as a `definition`, not a glossary entry |
+| Terms used in chapter `.md` files that are Mathlib synonyms have Ch 8 entries | **info** | Completeness check — missing glossary entries for standard terms |
+
 ## Integration
 
 - Runs **before** `content-validation` (which does schema + AST validation)
 - Complements `lean-proof-review` (which focuses on proof quality, not
   structural compliance)
 - Feeds into `proof-triage` (violations of §4–§5 indicate formalization gaps)
+- Ch 8 glossary blocks are reviewed under §9 for terminology consistency

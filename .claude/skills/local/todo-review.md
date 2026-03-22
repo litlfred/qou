@@ -2,8 +2,10 @@
 name: todo-review
 description: >
   Monitor and triage open feedback todos across all content blocks.
-  Surface actionable items at session start and on demand.
-allowed-tools: Read Edit Bash Grep Glob WebFetch
+  Surface actionable items at session start and on demand. Uses
+  context-aware selection: scoped to current block when context exists,
+  otherwise presents structured choices (priority, chapter, section).
+allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 ---
 
 # Todo Review Skill
@@ -17,7 +19,7 @@ start and provide triage workflows so nothing falls through the cracks.
 
 - **Session start** (automatic): check for open todos, present summary
 - User asks: "show todos", "what feedback is pending", "review todos"
-- User asks: "what needs attention", "any open items"
+- User asks: "what needs attention", "any open items", "work on todos"
 - After completing a block of work, to check if related todos can be closed
 
 ## Todo Storage
@@ -28,95 +30,164 @@ switches). They reference content blocks by `targetLabel` but are
 block type.
 
 Files:
-- `todos/content-todos.ts` — content-related todos
+- `todos/content-todos.ts` — content-related todos (array of `TodoItem`)
 - `todos/infra-todos.ts` — infrastructure / feature request todos (optional)
-
-API:
-- `GET /api/todos` — all todos (JSON)
-- `GET /api/todos?status=open` — filtered by status
-- `GET /todos` — HTML dashboard
 
 ### Todo structure
 
 ```typescript
-{
-  id: string,           // "todo-<base36-timestamp>"
-  summary: string,      // Short description (≤80 chars)
-  comment: string,      // Full description
-  status: "open" | "resolved" | "wontfix",
-  priority: "low" | "medium" | "high",
-  origin: "human" | "agent",
-  assignee: "editor-agent" | "author" | "formalizer",
-  createdAt: string     // ISO 8601
-}
+import type { TodoItem } from "../content/schema/types";
+
+export const todos: TodoItem[] = [
+  {
+    id: "todo-001",
+    summary: "Short description (≤80 chars)",
+    comment: "Full markdown description of the issue",
+    status: "open",               // open | in_progress | blocked
+    priority: "medium",           // critical | high | medium | low
+    origin: "agent",              // agent | human | qc | extracted
+    targetLabel: "def:quantum-universe",  // links to a content block
+    assignee: "editor-agent",
+    createdAt: "2026-03-22T00:00:00Z",
+  },
+];
 ```
 
-## API Endpoints
+## Context-Aware Todo Selection
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/feedback/all?status=open` | GET | All open todos across papers |
-| `/api/feedback?paperId=X&rootName=Y` | GET | Todos for one block |
-| `/api/feedback` | POST | Create a new todo |
+When the user asks to "work on todos" or "process todos", follow this
+decision tree:
 
-## Session Start Workflow
+### Step 1 — Check for active context
 
-At session start, the `scripts/check-todos.sh` hook runs and outputs
-a JSON summary. The editor should then:
+Does the current conversation have a **focus block** (e.g. the user is
+editing `def:rigid-monoidal-category`, or just committed changes to a
+specific definition)?
 
-1. **If todos exist**: present a summary to the user and ask:
-   - "Review open todos" — walk through each, decide action
-   - "Start a new task" — proceed normally, todos stay open
-   - "Do research" — explore codebase, read content, no edits
+- **Yes** → filter todos to those whose `targetLabel` matches the
+  current block (or blocks in the same section). Show those directly.
+  Skip to **Step 3**.
 
-2. **If no todos**: skip straight to normal triage.
+- **No** → proceed to **Step 2**.
 
-### Summary format
+### Step 2 — Ask the user (structured questions)
+
+Use `AskUserQuestion` with structured multiple-choice options so the
+user doesn't have to type. Present **two questions**:
+
+**Question 1: Scope** — "How would you like to select todos?"
+  - "High priority" — show all `critical` and `high` priority todos
+  - "By chapter" — follow up with chapter list
+  - "By section" — follow up with section list (from a specific chapter)
+  - "Show all" — show everything, sorted by priority
+
+**Question 2 (conditional):** If the user chose "By chapter", present
+the chapter list as options:
+  - "Ch 0: Introduction"
+  - "Ch 1: Quantum Observable Universe"
+  - "Ch 2: Bring's Surface"
+  - etc. (populated dynamically from the paper manifest)
+
+If "By section", first ask for chapter, then list sections within it.
+
+### Step 3 — Present selected todos
+
+Show the filtered todo set as a summary table:
 
 ```
-Open todos: 3
-  high:   1  (def:quantum-reeb-graph — "Fix functor coherence")
-  medium: 2  (thm:spectral-convergence, rem:notation-note)
+## Open Todos (3 items)
+
+| # | Priority | Target | Summary |
+|---|----------|--------|---------|
+| 1 | high | def:quantum-universe | Missing Lean formalization |
+| 2 | medium | thm:su2-emergence | Unresolved cross-reference |
+| 3 | low | rem:notation-note | Clarify notation convention |
 ```
 
-## Review Workflow
+Then ask: "Which todo(s) would you like to work on?" with multi-select.
 
-When reviewing todos:
+### Step 4 — Hand off to editor for triage
+
+For each selected todo:
 
 1. **Read the todo** — show summary, comment, priority, assignee, age
-2. **Read the block** — show the content block the todo references
-3. **Ask the user** (multiple-choice):
-   - **Address now** — fix the issue, then mark resolved
-   - **Reassign** — change assignee (author, formalizer, editor-agent)
-   - **Defer** — keep open, move to next
-   - **Won't fix** — mark as wontfix with reason
+2. **Read the block** — load the `.ts` manifest and `.md` content
+3. **Assess actionability** — can this be addressed with a text/code edit?
+4. **Route to the appropriate skill**:
+   - Content/prose issues → `scientific-accuracy` or `readability-editing`
+   - Lean formalization → `formalizer` or `proof-triage`
+   - Validation errors → `content-validation`
+   - Cross-reference issues → `content-block-review`
+5. **Execute the fix** (or explain why it can't be done now)
+6. **Update todo status** to `in_progress` (agents may do this)
+7. **Report outcome** — what was changed, what remains
+8. **Offer "what next?"** — context-aware follow-up (see below)
 
-4. After addressing, update the todo status in the `.json` file directly.
+### Step 5 — "What next?" (after each todo)
+
+After completing a todo, immediately offer context-aware next steps
+via `AskUserQuestion`. Options are derived from the current scope:
+
+1. **More todos on this block?** → "Next todo on `<block>`"
+2. **Related blocks in same section?** → "Next in §`<section>`"
+3. **More todos in this chapter?** → "Other Ch `<N>` todos"
+4. **Always include** → "Something else"
+
+Keep to 3–4 options. If all todos in the current scope are done,
+congratulate briefly and offer to move to the next chapter or switch
+to a different kind of work (proofs, glossary, validation).
+
+This ensures the user stays in flow without having to re-navigate
+the todo landscape after each item.
+
+## Seeding Todos
+
+When `todos/` is empty or doesn't exist, the skill can bootstrap an
+initial set by scanning for issues:
+
+### Sources for auto-generated todos
+
+| Source | How to scan | Priority |
+|--------|-------------|----------|
+| Content validation errors | `content_validate` MCP tool | high |
+| Unresolved `uses[]` refs | Validation output | high |
+| Missing `.lean` files | Definitions without Lean | medium |
+| Missing `.md` files | Blocks without narrative | medium |
+| `sorry` in Lean files | `grep sorry lean/` | medium |
+| Lean `not_started` status | `.ts` manifests with `status: "not_started"` | low |
+| Lean `stated` status | `.ts` manifests with `status: "stated"` | low |
+
+### Seeding workflow
+
+1. Run `content_validate` on all chapters
+2. Parse validation output for errors and warnings
+3. Group by `targetLabel` (one todo per block, not per issue)
+4. Create `todos/content-todos.ts` with the generated items
+5. Present summary to user
 
 ## Creating Todos (Agent-originated)
 
-The editor can create todos during work when it notices issues:
+Agents create todos by appending to `todos/content-todos.ts`:
 
-```bash
-curl -s -X POST http://localhost:3200/api/feedback \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "paperId": "quantum-observable-universe",
-    "rootName": "block-name",
-    "summary": "Short description",
-    "comment": "Full description of the issue",
-    "priority": "medium",
-    "assignee": "editor-agent"
-  }'
+```typescript
+{
+  id: `todo-${Date.now().toString(36)}`,
+  summary: "Short description",
+  comment: "Full description of the issue",
+  status: "open",
+  priority: "medium",
+  origin: "agent",
+  targetLabel: "def:block-label",
+  assignee: "editor-agent",
+  createdAt: new Date().toISOString(),
+}
 ```
-
-Or add directly to the appropriate file in `todos/`.
 
 ## Resolving Todos
 
 **Only the human author** may resolve or remove a TodoItem (see CLAUDE.md §4a).
 Agents must never set status to `resolved` or `wontfix`, and must never
-delete items. The author edits `todos/content-todos.ts` directly.
+delete items. Agents *may* set status to `in_progress`.
 
 ## Integration with Other Skills
 
@@ -125,5 +196,7 @@ delete items. The author edits `todos/content-todos.ts` directly.
 | `editor` | Session start triage includes todo check |
 | `formalizer` | Creates todos when sorry bridges need attention |
 | `proof-status-tracking` | Todos track formalization gaps |
-| `content-validation` | Validation errors can become todos |
+| `content-validation` | Validation errors seed todos |
 | `scientific-accuracy` | Review comments become todos |
+| `proof-triage` | Lean sorry stubs generate high-priority todos |
+| `content-block-review` | Cross-reference issues become todos |

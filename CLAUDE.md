@@ -34,6 +34,10 @@ When a user request arrives, route to the right skill(s):
 | "build content → LaTeX" | `local/content-validation` |
 | "add / edit content block" | `local/content-validation` + relevant skill |
 | "review / audit blocks" | `local/content-block-review` |
+| "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` |
+| "work on todos / process feedback" | `local/todo-review` |
+| "missing proof (narrative)" | `local/editor` §Proof workflow |
+| "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` |
 | "test / unit test / coverage" | `local/test-engineer` |
 | "import / arxiv / upload paper" | `local/paper-importer` |
 | "import + formalize" | `local/paper-importer` + `local/formalizer` |
@@ -136,6 +140,26 @@ and **must never** delete a TodoItem. The author verifies completion —
 even after a commit has been made — and closes the item themselves.
 Agents may add new TodoItems and may move items to `in_progress`, but
 closing is always a human action.
+
+### 4b. Glossary block policy (Chapter 8)
+
+Chapter 8 ("Glossary of Rigid Monoidal Terms") contains **glossary
+blocks** — `remark` blocks with tag `"glossary"` — that map paper
+terminology to canonical Mathlib declarations. These are light
+terminological wrappers: **no semantic novelty**, just naming
+conventions.
+
+| Criterion | Glossary block | Definition block |
+|-----------|---------------|-----------------|
+| Semantic novelty | None (Mathlib synonym) | New mathematics |
+| Block kind | `remark` | `definition` |
+| Label pattern | `rem:glossary-<term>` | `def:<term>` |
+| Lean file | Not required | **Required** |
+| Chapter | Ch 8 | Relevant content chapter |
+
+**Decision rule**: If the paper uses a term that is a synonym for (or
+lightweight wrapper around) a Mathlib type, add a glossary block. If
+the paper introduces genuinely new axioms/structure, add a definition.
 
 ### 5. Tactic strategy (try in order)
 

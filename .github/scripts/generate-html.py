@@ -353,12 +353,22 @@ def _make_header_html(
     headings: list[dict],
     branch: str | None = None,
     repo: str | None = None,
+    pdf: str | None = None,
+    diff_pdf: str | None = None,
 ) -> str:
     """Build the sticky header bar."""
     parts: list[str] = []
     parts.append('<header id="site-header">')
     parts.append('  <span class="title">Quantum Observable Universe</span>')
     parts.append('  <span class="controls">')
+
+    # PDF download buttons
+    if pdf:
+        parts.append(f'    <a class="gh-badge" href="{html_mod.escape(pdf)}" '
+                     f'title="Download publication PDF">&#x1F4C4; PDF</a>')
+    if diff_pdf:
+        parts.append(f'    <a class="gh-badge" href="{html_mod.escape(diff_pdf)}" '
+                     f'title="Download diff PDF (changes vs main)">&#x1F504; Diff</a>')
 
     # GitHub badges (feature branch)
     if branch and repo:
@@ -714,6 +724,7 @@ def enhance_html(
     repo: str | None = None,
     sha: str | None = None,
     src_dir: str = ".",
+    pdf: str | None = None,
     diff_pdf: str | None = None,
     manifest_path: str | None = None,
 ) -> str:
@@ -722,7 +733,7 @@ def enhance_html(
     headings = parse_headings(tex)
 
     # Build pieces
-    header_html = _make_header_html(headings, branch=branch, repo=repo)
+    header_html = _make_header_html(headings, branch=branch, repo=repo, pdf=pdf, diff_pdf=diff_pdf)
     term_map = _build_term_map(defs)
 
     # ── Inject CSS ──────────────────────────────────────────────────────────
@@ -782,6 +793,7 @@ def main() -> None:
     ap.add_argument("--repo", default=None, help="GitHub owner/repo")
     ap.add_argument("--sha", default=None, help="Git commit SHA")
     ap.add_argument("--src-dir", default=".", help="Root directory of the LaTeX source tree")
+    ap.add_argument("--pdf", default=None, help="Filename of the publication PDF")
     ap.add_argument("--diff-pdf", default=None, help="Filename of the diff PDF (feature branches only)")
     ap.add_argument("--manifest", default=None, help="Path to proof-objects.json for status badges")
     args = ap.parse_args()
@@ -791,7 +803,7 @@ def main() -> None:
     result = enhance_html(
         raw_html, tex,
         branch=args.branch, repo=args.repo, sha=args.sha,
-        src_dir=args.src_dir, diff_pdf=args.diff_pdf,
+        src_dir=args.src_dir, pdf=args.pdf, diff_pdf=args.diff_pdf,
         manifest_path=args.manifest,
     )
     Path(args.output_html).write_text(result, encoding="utf-8")

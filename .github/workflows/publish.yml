@@ -147,18 +147,21 @@ jobs:
         run: |
           cd content
           # Validate all content objects if any exist
-          if ls quantum-observable-universe/*//*.ts 2>/dev/null | head -1 > /dev/null; then
+          if ls quantum-observable-universe/*/*.ts 2>/dev/null | head -1 > /dev/null; then
             bun run pipeline/validate.ts quantum-observable-universe/ || echo "::warning::Content validation had issues"
           else
             echo "No content objects to validate (migration in progress)"
           fi
 
       - name: Build content objects to LaTeX
+        id: content_build
         run: |
           cd content
           bun run pipeline/build.ts \
             quantum-observable-universe/quantum-observable-universe.ts \
             --out-dir ../chapters/
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
 
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
@@ -349,6 +352,7 @@ jobs:
             main-flat.tex
             _site/paper.html
             --manifest _site/proof-objects.json
+            --pdf "${FNAME_BASE}.pdf"
           )
           if [ "${{ env.HEAD_REF }}" != "main" ]; then
             ENHANCE_ARGS+=(
