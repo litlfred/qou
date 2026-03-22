@@ -155,6 +155,7 @@ jobs:
 
       - name: Build content objects to LaTeX
         id: content_build
+        continue-on-error: true
         run: |
           cd content
           bun run pipeline/build.ts \

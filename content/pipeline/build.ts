@@ -12,7 +12,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join, dirname } from "path";
+import { join, dirname, resolve } from "path";
 import type { Paper, Chapter, Section, Block } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 
@@ -130,9 +130,10 @@ export async function buildPaper(
 if (import.meta.main) {
   const args = process.argv.slice(2);
   const defaultPaper = join(import.meta.dir, "../quantum-observable-universe/quantum-observable-universe.ts");
-  const paperPath = args[0] || defaultPaper;
+  // Resolve relative paths against cwd so `bun run pipeline/build.ts rel/path` works
+  const paperPath = resolve(args[0] || defaultPaper);
   const outDirIdx = args.indexOf("--out-dir");
-  const outDir = outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters");
+  const outDir = resolve(outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters"));
 
   console.log(`Building paper: ${paperPath}`);
   console.log(`Output dir: ${outDir}\n`);
