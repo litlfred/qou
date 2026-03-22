@@ -113,7 +113,6 @@ interface ResolvedChapter {
   title: string;
   label?: string;
   sections: ResolvedSection[];
-  todos?: unknown[];
 }
 
 interface ResolvedPaper {
@@ -123,7 +122,6 @@ interface ResolvedPaper {
   affiliations?: string[];
   date?: string;
   chapters: ResolvedChapter[];
-  todos?: unknown[];
 }
 
 interface FolioEntry {
@@ -177,7 +175,8 @@ async function resolveFolio(): Promise<{ title: string; papers: FolioEntry[] }> 
             try {
               const blk = (await import(tsPath)).default;
               if (blk.status === "proved" || blk.status === "mathlib_ok") provedCount++;
-              if (blk.todos?.length) todoCount += blk.todos.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
+              const fb = readFeedback(ref.dir, rootName);
+              if (fb.length) todoCount += fb.filter((t: any) => t.status !== "resolved" && t.status !== "wontfix").length;
             } catch {}
           }
         }
@@ -235,10 +234,9 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
 
           // Merge feedback todos from gitignored .qou-feedback/
+          // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
-          if (feedback.length) {
-            blk.todos = [...(blk.todos || []), ...feedback];
-          }
+          const blockTodos = feedback.length ? [...feedback] : undefined;
 
           // Read Lean source if available
           let leanSource: string | undefined;
@@ -300,7 +298,7 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
             tags: blk.tags,
             rendered,
             md,
-            todos: blk.todos,
+            todos: blockTodos,
           });
         } catch (e) {
           blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -312,7 +310,6 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
 
     chapters.push({
       number: ch.number, title: ch.title, label: ch.label, sections,
-      todos: ch.todos,
     });
   }
 
@@ -324,7 +321,6 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
     date: paperMod.date,
     macros: paperMod.macros,
     chapters,
-    todos: paperMod.todos,
   };
 }
 
