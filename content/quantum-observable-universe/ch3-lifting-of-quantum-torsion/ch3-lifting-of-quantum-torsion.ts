@@ -142,6 +142,7 @@ export default chapter({
         "localized-knot",
         "hadron",
         "localized-hadron",
+        "hadron-fibre-embedding",
         "bundle-initial-conditions",
         "bundle-isotopy-equivalence",
         "knot-particle-dictionary",
