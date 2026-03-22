@@ -12,10 +12,13 @@ srcDir = "."
 name = "QOU"
 srcDir = "."
 
+# Mathlib rev must be compatible with the lean-toolchain version.
+# For v4.29.0-rc6, use a recent Mathlib that targets this toolchain.
+# Use `lake update mathlib` to find the latest compatible version.
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "v4.16.0"
+rev = "master"
 
 [[require]]
 name = "quantumInfo"
