@@ -823,7 +823,7 @@
     .dep-arrowhead-lean-incomplete{fill:var(--ora)}
     .dep-arrowhead-lean-none{fill:var(--fg-d);opacity:.4}
     /* Legend */
-    .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-top:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
+    .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
     .dep-legend-item{display:flex;align-items:center;gap:.3rem}
     .dep-legend-line{width:24px;height:0;border-top:2px solid}
     .dep-legend-line.narrative{border-color:var(--ac)}
@@ -876,6 +876,11 @@
       <span id="dep-subtitle" style="font-size:.65rem"></span>
       <button class="dep-close" id="dep-close">&times; close</button>
     </div>
+    <div class="dep-legend">
+      <div class="dep-legend-item"><div class="dep-legend-line narrative"></div> narrative proof</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-complete"></div> Lean proof (complete)</div>
+      <div class="dep-legend-item"><div class="dep-legend-line lean-incomplete"></div> Lean proof (stub/sorry)</div>
+    </div>
     <div class="dep-graph-wrap">
       <div class="dep-graph-svg" id="dep-graph-svg"></div>
     </div>
@@ -884,11 +889,6 @@
         <summary>External Lean dependencies</summary>
         <div class="dep-ext-list" id="dep-ext-list"></div>
       </details>
-    </div>
-    <div class="dep-legend">
-      <div class="dep-legend-item"><div class="dep-legend-line narrative"></div> narrative proof</div>
-      <div class="dep-legend-item"><div class="dep-legend-line lean-complete"></div> Lean proof (complete)</div>
-      <div class="dep-legend-item"><div class="dep-legend-line lean-incomplete"></div> Lean proof (stub/sorry)</div>
     </div>
   </div>
 
