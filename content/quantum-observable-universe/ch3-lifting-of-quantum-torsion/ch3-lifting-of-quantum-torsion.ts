@@ -18,8 +18,6 @@ export default chapter({
       blocks: [
         "jet-prolongation",
         "jet-prolongation-proof",
-        "jet-prolongation-C",
-        "jet-prolongation-C-proof",
         "prolongation-categorical",
       ],
     }),
@@ -55,11 +53,9 @@ export default chapter({
       blocks: [
         "yekutieli-lifting-condition",
         "quantum-characteristic-classes",
-        "yekutieli-archimedean-band",
         "yekutieli-lifting",
         "yekutieli-lifting-proof",
         "qu-to-qou",
-        "qu-to-qou-proof",
         "fermionic-twisted-sectors",
       ],
     }),
@@ -95,12 +91,10 @@ export default chapter({
       title: "Mass in the Brane Tower",
       label: "sec:mass-brane",
       blocks: [
-        "mass-geometric-drag",
         "mass-noncommutative-drag",
         "euler-char-stability",
         "euler-char-stability-proof",
         "mass-identity",
-        "mass-identity-C",
       ],
     }),
 
@@ -125,7 +119,6 @@ export default chapter({
         "descent-eigenspaces-proof",
         "brane-boundary",
         "brane-boundary-structure",
-        "brane-boundary-structure-proof",
         "descent-reduction",
         "descent-physical",
         "descent-reduction-zero",
@@ -158,10 +151,29 @@ export default chapter({
       label: "sec:topological-mass",
       blocks: [
         "topological-mass",
-        "topological-mass-proof",
-        "quantum-dilogarithm",
         "qdlog-julia",
         "julia-s1-photon-scatter",
+      ],
+    }),
+
+    // ── Archimedean specialisations ──────────────────────────────────────
+    // All results below require the archimedean realisation (manifolds,
+    // gauge theory, Killing forms, Stokes theorem, etc.).  The categorical
+    // statements they specialise remain in the sections above.
+
+    section({
+      title: "Archimedean Specialisations",
+      label: "sec:archimedean-lifting",
+      blocks: [
+        "jet-prolongation-C",
+        "jet-prolongation-C-proof",
+        "yekutieli-archimedean-band",
+        "qu-to-qou-proof",
+        "mass-identity-C",
+        "mass-geometric-drag",
+        "brane-boundary-structure-proof",
+        "topological-mass-proof",
+        "quantum-dilogarithm",
       ],
     }),
   ],

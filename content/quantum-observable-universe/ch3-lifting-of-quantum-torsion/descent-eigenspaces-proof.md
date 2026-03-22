@@ -1,26 +1,45 @@
 
-Since $\tau_n$ is an idempotent $*$-endomorphism of a $C^*$-algebra, the
-splitting $\mathrm{im}\,\tau_n \oplus \ker\,\tau_n$ is an orthogonal direct
-sum.
+Since $\tau_n$ is an idempotent endomorphism of the $R$-algebra
+$\mathrm{End}_{\mathcal{C}}(A_{n+1})$, the standard idempotent splitting
+gives a direct sum decomposition
+$$
+  \mathrm{End}_{\mathcal{C}}(A_{n+1})
+  \;=\;
+  \mathrm{im}\,\tau_n \;\oplus\; \ker\,\tau_n.
+$$
+Indeed, every $\alpha \in \mathrm{End}_{\mathcal{C}}(A_{n+1})$ decomposes
+uniquely as $\alpha = \tau_n(\alpha) + (\alpha - \tau_n(\alpha))$, where
+$\tau_n(\tau_n(\alpha)) = \tau_n(\alpha)$ (so $\tau_n(\alpha) \in
+\mathrm{im}\,\tau_n$) and
+$\tau_n(\alpha - \tau_n(\alpha)) = \tau_n(\alpha) - \tau_n(\alpha) = 0$
+(so $\alpha - \tau_n(\alpha) \in \ker\,\tau_n$).  The two summands
+intersect trivially: if $\alpha \in \mathrm{im}\,\tau_n \cap
+\ker\,\tau_n$, then $\alpha = \tau_n(\beta)$ for some $\beta$ and
+$0 = \tau_n(\alpha) = \tau_n^2(\beta) = \tau_n(\beta) = \alpha$.
 
-For item (1), let $\alpha \in \Gamma(J^1 E_{n+1})$ be a bosonic mode lifted
-from level $n$: $[F_A, \alpha] = 0$ ([algebraic filter](#rem:algebraic-filter)).
-Bosonic modes take values in the Cartan subalgebra
-$\mathrm{U}(1) \subset \mathfrak{su}(2)$
-([weight space decomposition](#rem:weight-space-decomposition)).  Since $\alpha$ lies in the
-image of the ascent $\ell_n$, we have $\alpha = \ell_n(\beta)$ for some
-$\beta \in \Gamma(J^1 E_n)$.  Then
+When $\mathrm{End}_{\mathcal{C}}(A_{n+1})$ carries a $*$-involution
+compatible with $\tau_n$ (i.e.\ $\tau_n(\alpha^*) = \tau_n(\alpha)^*$),
+the decomposition respects the $*$-structure: both summands are
+$*$-subalgebras.
+
+For item (1), let $\alpha \in \mathrm{End}_{\mathcal{C}}(A_{n+1})$ lie
+in the image of the ascent $\ell_n$: $\alpha = \ell_n(\beta)$ for some
+$\beta \in \mathrm{End}_{\mathcal{C}}(A_n)$.  Bosonic modes are
+characterised categorically by the
+([algebraic filter](#rem:algebraic-filter)) as those commuting with the
+categorical curvature.  Then
 $\tau_n(\alpha) = \ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta)))
 = \ell_n(\beta) = \alpha$,
-using $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.  Hence
-$\alpha \in \mathcal{A}_{n+1}^{\mathrm{desc}}$.
+using $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
+([descent](#lem:descent)).  Hence $\alpha \in
+\mathcal{A}_{n+1}^{\mathrm{desc}}$.
 
-For item (2), the ladder modes $\omega^\pm \otimes E_\pm$ at level $n{+}1$
-couple to the curvature $F_A$ through the covariant derivative $d_A$.  Those
-that arise as lifts of level-$n$ modes lie in
-$\mathcal{A}_{n+1}^{\mathrm{desc}}$ by the same argument as item (1).  The
-remaining modes---genuinely new harmonic directions in $J^1 E_{n+1}$ with no
-counterpart at level $n$---lie in $\mathcal{A}_{n+1}^{\mathrm{trans}}$ and
-are annihilated by $\tau_n$: the descent $\mathfrak{d}_{n+1}$ maps them to
-zero in the level-$n$ algebra, so $\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$
-sends them to zero.
+For item (2), an endomorphism $\alpha \in
+\mathrm{End}_{\mathcal{C}}(A_{n+1})$ that does not factor through
+level $n$ satisfies $\mathfrak{d}_{n+1}(\alpha) = 0$ in
+$\mathrm{End}_{\mathcal{C}}(A_n)$, so $\tau_n(\alpha) = \ell_n(0) = 0$
+and $\alpha \in \mathcal{A}_{n+1}^{\mathrm{trans}}$.  Those level-$(n{+}1)$
+endomorphisms that do factor through level $n$ lie in
+$\mathcal{A}_{n+1}^{\mathrm{desc}}$ by the argument of item (1).  The
+fermionic/ladder modes therefore split between the two summands according
+to whether they have a pre-image under $\mathfrak{d}_{n+1}$.
