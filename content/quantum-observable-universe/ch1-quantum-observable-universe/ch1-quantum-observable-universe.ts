@@ -25,6 +25,7 @@ export default chapter({
       label: "sec:rigid-monoidal",
       blocks: [
         "rigid-monoidal-category",
+        "snake-identity",
         "rigid-monoidal-vect",
       ],
     }),
