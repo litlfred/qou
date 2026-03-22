@@ -881,8 +881,10 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
         timeout: 300_000,
       });
 
+      // Serve PDF if it exists — latexmk may return non-zero even on success
+      // (e.g. warnings, citation undefined on first pass)
       const pdfPath = join(BUILD_DIR, "quantum-observable-universe.pdf");
-      if (latexResult.status === 0 && existsSync(pdfPath)) {
+      if (existsSync(pdfPath)) {
         const pdfData = rf(pdfPath);
         return new Response(pdfData, {
           headers: {
