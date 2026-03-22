@@ -1348,6 +1348,15 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
         }
         if (ctx.paperId) {
           systemPrompt += `\n\nPaper ID: ${ctx.paperId}`;
+          // Eagerly fetch todos for the context block so LLM has them immediately
+          if (ctx.blockLabel) {
+            const rootName = ctx.blockLabel.replace(/^(def|thm|lem|prop|cor|rem|ex|conj):/, "");
+            const blockTodos = readFeedback(ctx.paperId, rootName);
+            const openTodos = (blockTodos as any[]).filter((t: any) => t.status === "open" || t.status === "in_progress");
+            if (openTodos.length) {
+              systemPrompt += `\n\nOpen todos/feedback for this block (${ctx.blockLabel}):\n${JSON.stringify(openTodos, null, 2)}`;
+            }
+          }
         }
       }
 
