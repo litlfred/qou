@@ -1060,9 +1060,10 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
-  // ── Claude chat: streaming conversational assistant ──────────
+  // ── Claude chat: streaming conversational assistant with tool use ──
   // POST /api/chat { messages[], context?, mode? }
-  // Returns SSE stream of assistant response chunks
+  // Returns SSE stream. LLM can call tools to fetch data from the server
+  // before composing a final response.
   if (path === "/api/chat") {
     try {
       const body = await req.json() as {
@@ -1088,6 +1089,214 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         );
       }
 
+      // ── Tool definitions for the chat LLM ──
+      const chatTools: Anthropic.Tool[] = [
+        {
+          name: "get_paper_status",
+          description: "Get paper overview: chapters, block counts, proof status, lean formalization stats. Use when the user asks about status, progress, or what needs work.",
+          input_schema: {
+            type: "object" as const,
+            properties: { paperId: { type: "string", description: "Paper ID (optional, uses context if omitted)" } },
+            required: [],
+          },
+        },
+        {
+          name: "get_todos",
+          description: "Get open todos/feedback items. Can filter by paper or get all. Use when user asks about tasks, what needs attention, or outstanding work.",
+          input_schema: {
+            type: "object" as const,
+            properties: {
+              paperId: { type: "string", description: "Filter to specific paper" },
+              rootName: { type: "string", description: "Filter to specific block" },
+              status: { type: "string", enum: ["open", "in_progress", "blocked", "resolved"], description: "Filter by status (default: open)" },
+            },
+            required: [],
+          },
+        },
+        {
+          name: "get_block",
+          description: "Get full content of a specific block by label (e.g. def:quantum-connection, thm:main-result). Returns kind, title, markdown content, lean status, uses, and tags.",
+          input_schema: {
+            type: "object" as const,
+            properties: { label: { type: "string", description: "Block label (e.g. def:quantum-connection)" } },
+            required: ["label"],
+          },
+        },
+        {
+          name: "get_chapter_blocks",
+          description: "List all blocks in a chapter with their kinds, labels, titles, lean status, and proof status. Use to understand chapter structure or find specific content.",
+          input_schema: {
+            type: "object" as const,
+            properties: {
+              paperId: { type: "string", description: "Paper ID" },
+              chapterNumber: { type: "number", description: "Chapter number (1-indexed)" },
+            },
+            required: ["chapterNumber"],
+          },
+        },
+        {
+          name: "search_blocks",
+          description: "Search blocks by keyword in title, label, tags, or content. Use when user asks about a concept, definition, or theorem by name.",
+          input_schema: {
+            type: "object" as const,
+            properties: { query: { type: "string", description: "Search query" } },
+            required: ["query"],
+          },
+        },
+        {
+          name: "get_imports",
+          description: "List imported papers (from arXiv or uploads). Use when discussing external references or imported results.",
+          input_schema: {
+            type: "object" as const,
+            properties: {},
+            required: [],
+          },
+        },
+      ];
+
+      // ── Tool execution (calls server functions directly, no HTTP) ──
+      async function executeTool(name: string, input: Record<string, unknown>): Promise<string> {
+        const pid = (input.paperId as string) || body.context?.paperId || "";
+        logDebug("chat:tool", `${name}`, JSON.stringify(input).slice(0, 200));
+
+        try {
+          switch (name) {
+            case "get_paper_status": {
+              const paper = pid ? await resolvePaper(pid) : null;
+              if (!paper) return JSON.stringify({ error: "Paper not found", paperId: pid });
+              const stats = {
+                title: paper.title,
+                chapters: paper.chapters.length,
+                totalBlocks: 0, definitions: 0, theorems: 0, lemmas: 0, propositions: 0,
+                leanFormalized: 0, leanMissing: 0, leanError: 0, hasSorry: 0, proved: 0,
+                openTodos: 0,
+              };
+              for (const ch of paper.chapters) {
+                for (const sec of ch.sections || []) {
+                  for (const blk of sec.blocks || []) {
+                    stats.totalBlocks++;
+                    if (blk.kind === "definition") stats.definitions++;
+                    if (blk.kind === "theorem") stats.theorems++;
+                    if (blk.kind === "lemma") stats.lemmas++;
+                    if (blk.kind === "proposition") stats.propositions++;
+                    const nl = ["definition","theorem","lemma","proposition","corollary"].includes(blk.kind);
+                    if (nl && blk.lean?.file) stats.leanFormalized++;
+                    if (nl && !blk.lean?.file) stats.leanMissing++;
+                    if (blk.lean?.validation === "error") stats.leanError++;
+                    if (blk.status === "has_sorry") stats.hasSorry++;
+                    if (blk.status === "proved" || blk.status === "mathlib_ok") stats.proved++;
+                    stats.openTodos += (blk.todos || []).filter((t: any) => t.status === "open").length;
+                  }
+                }
+              }
+              // Also count global feedback todos
+              const allTodos = listAllFeedback("open");
+              const paperTodos = allTodos.filter(t => t.paperId === pid);
+              stats.openTodos += paperTodos.length;
+              return JSON.stringify(stats);
+            }
+
+            case "get_todos": {
+              if (input.rootName && pid) {
+                const todos = readFeedback(pid, input.rootName as string);
+                return JSON.stringify(todos);
+              }
+              const status = (input.status as string) || "open";
+              const all = listAllFeedback(status);
+              const filtered = pid ? all.filter(t => t.paperId === pid) : all;
+              return JSON.stringify(filtered.slice(0, 30));
+            }
+
+            case "get_block": {
+              const label = input.label as string;
+              const paper = pid ? await resolvePaper(pid) : null;
+              if (!paper) return JSON.stringify({ error: "Paper not found" });
+              for (const ch of paper.chapters) {
+                for (const sec of ch.sections || []) {
+                  for (const blk of sec.blocks || []) {
+                    if (blk.label === label) {
+                      return JSON.stringify({
+                        kind: blk.kind, label: blk.label, title: blk.title,
+                        md: (blk.md || "").slice(0, 3000),
+                        lean: blk.lean ? { decl: blk.lean.decl, validation: blk.lean.validation, sorryFree: blk.lean.sorryFree } : null,
+                        status: blk.status, uses: blk.uses, tags: blk.tags,
+                        chapter: ch.title, section: sec.title,
+                      });
+                    }
+                  }
+                }
+              }
+              return JSON.stringify({ error: `Block not found: ${label}` });
+            }
+
+            case "get_chapter_blocks": {
+              const chNum = input.chapterNumber as number;
+              const paper = pid ? await resolvePaper(pid) : null;
+              if (!paper) return JSON.stringify({ error: "Paper not found" });
+              const ch = paper.chapters.find((c: any) => c.number === chNum);
+              if (!ch) return JSON.stringify({ error: `Chapter ${chNum} not found` });
+              const blocks: unknown[] = [];
+              for (const sec of ch.sections || []) {
+                for (const blk of sec.blocks || []) {
+                  blocks.push({
+                    kind: blk.kind, label: blk.label, title: blk.title,
+                    status: blk.status,
+                    lean: blk.lean ? { decl: blk.lean.decl, validation: blk.lean.validation } : null,
+                    section: sec.title,
+                  });
+                }
+              }
+              return JSON.stringify({ chapter: ch.title, blocks });
+            }
+
+            case "search_blocks": {
+              const q = (input.query as string || "").toLowerCase();
+              const paper = pid ? await resolvePaper(pid) : null;
+              if (!paper) return JSON.stringify({ error: "Paper not found" });
+              const matches: unknown[] = [];
+              for (const ch of paper.chapters) {
+                for (const sec of ch.sections || []) {
+                  for (const blk of sec.blocks || []) {
+                    const searchable = [blk.label, blk.title, blk.kind, ...(blk.tags || []), (blk.md || "").slice(0, 500)].join(" ").toLowerCase();
+                    if (searchable.includes(q)) {
+                      matches.push({
+                        kind: blk.kind, label: blk.label, title: blk.title,
+                        status: blk.status, chapter: ch.title, section: sec.title,
+                        snippet: (blk.md || "").slice(0, 200),
+                      });
+                    }
+                    if (matches.length >= 15) break;
+                  }
+                  if (matches.length >= 15) break;
+                }
+                if (matches.length >= 15) break;
+              }
+              return JSON.stringify(matches);
+            }
+
+            case "get_imports": {
+              const uploadsDir = join(REPO_ROOT, "uploads");
+              const imports: unknown[] = [];
+              if (existsSync(uploadsDir)) {
+                const { readdirSync: rd } = await import("fs");
+                for (const d of rd(uploadsDir)) {
+                  const mp = join(uploadsDir, d, "import-meta.json");
+                  if (existsSync(mp)) {
+                    try { imports.push(JSON.parse(readFileSync(mp, "utf-8"))); } catch {}
+                  }
+                }
+              }
+              return JSON.stringify(imports);
+            }
+
+            default:
+              return JSON.stringify({ error: `Unknown tool: ${name}` });
+          }
+        } catch (e) {
+          return JSON.stringify({ error: String(e) });
+        }
+      }
+
       // Build system prompt based on mode
       const mode = body.mode || "read";
       let systemPrompt = `You are Folio, an editorial assistant for a formal mathematics research paper. You help readers understand, navigate, and improve the paper.
@@ -1099,14 +1308,16 @@ Your role is that of a knowledgeable editor who:
 - Suggests connections between concepts
 - Answers questions about the paper's content and structure
 
+You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
+
 Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.`;
 
       if (mode === "status") {
-        systemPrompt += `\n\nThe user is in EDITOR mode. They want to understand the paper's current status — what's complete, what needs work, what the priorities are. Focus on actionable summaries: proof status, open todos, missing Lean formalizations, and suggested next steps.`;
+        systemPrompt += `\n\nThe user is in EDITOR mode. They want to understand the paper's current status — what's complete, what needs work, what the priorities are. Focus on actionable summaries. Use get_paper_status and get_todos to get real data.`;
       } else if (mode === "edit") {
-        systemPrompt += `\n\nThe user is in EDITOR mode. They may want to report errors, suggest improvements, or discuss editorial decisions. When they identify an issue, help them articulate it clearly so it can be tracked as a todo.`;
+        systemPrompt += `\n\nThe user is in EDITOR mode. They may want to report errors, suggest improvements, or discuss editorial decisions. Use tools to fetch block content and todos before responding.`;
       } else {
-        systemPrompt += `\n\nThe user is in READER mode. They're studying the paper and want to understand the content. Prioritize clear explanations, motivation, and intuition. When explaining, build from what the reader likely knows.`;
+        systemPrompt += `\n\nThe user is in READER mode. They're studying the paper and want to understand the content. Use get_block to fetch full content when explaining. Prioritize clear explanations and intuition.`;
       }
 
       // Add context about the current block if available
@@ -1127,18 +1338,86 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
         }
       }
 
-      // Stream the response
+      // ── Tool-use loop: let LLM call tools, then stream final response ──
+      const apiMessages: Anthropic.MessageParam[] = body.messages.map(m => ({
+        role: m.role as "user" | "assistant",
+        content: m.content,
+      }));
+
+      // Run tool-use loop (non-streaming, max 3 rounds)
+      let toolRounds = 0;
+      const MAX_TOOL_ROUNDS = 3;
+      while (toolRounds < MAX_TOOL_ROUNDS) {
+        const response = await client.messages.create({
+          model: "claude-haiku-4-5-20251001",
+          max_tokens: 1500,
+          system: systemPrompt,
+          tools: chatTools,
+          messages: apiMessages,
+        });
+
+        // Check if the model wants to use tools
+        const toolUses = response.content.filter(b => b.type === "tool_use");
+        if (toolUses.length === 0) {
+          // No tool calls — this is the final response, stream it back
+          const textBlocks = response.content.filter(b => b.type === "text");
+          const fullText = textBlocks.map(b => (b as any).text).join("");
+
+          const encoder = new TextEncoder();
+          const readable = new ReadableStream({
+            start(controller) {
+              // Send in chunks for streaming feel
+              const chunkSize = 20;
+              for (let i = 0; i < fullText.length; i += chunkSize) {
+                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: fullText.slice(i, i + chunkSize) })}\n\n`));
+              }
+              controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
+              logDebug("chat", `complete (${toolRounds} tool rounds, ${fullText.length} chars)`);
+              controller.close();
+            },
+          });
+
+          return new Response(readable, {
+            headers: {
+              "Content-Type": "text/event-stream",
+              "Cache-Control": "no-cache",
+              "Connection": "keep-alive",
+              "Access-Control-Allow-Origin": "*",
+            },
+          });
+        }
+
+        // Execute tool calls
+        logDebug("chat:tools", `round ${toolRounds + 1}: ${toolUses.length} tool calls`,
+          toolUses.map(t => (t as any).name).join(", "));
+
+        // Add assistant message with tool use
+        apiMessages.push({ role: "assistant", content: response.content });
+
+        // Execute all tool calls and add results
+        const toolResults: Anthropic.ToolResultBlockParam[] = [];
+        for (const tu of toolUses) {
+          const toolUseBlock = tu as Anthropic.ToolUseBlock;
+          const result = await executeTool(toolUseBlock.name, toolUseBlock.input as Record<string, unknown>);
+          toolResults.push({
+            type: "tool_result",
+            tool_use_id: toolUseBlock.id,
+            content: result,
+          });
+        }
+        apiMessages.push({ role: "user", content: toolResults });
+        toolRounds++;
+      }
+
+      // If we exhausted tool rounds, do a final streaming call without tools
+      logDebug("chat", `max tool rounds reached (${MAX_TOOL_ROUNDS}), final call`);
       const stream = await client.messages.stream({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 1500,
         system: systemPrompt,
-        messages: body.messages.map(m => ({
-          role: m.role as "user" | "assistant",
-          content: m.content,
-        })),
+        messages: apiMessages,
       });
 
-      // Return as SSE
       const encoder = new TextEncoder();
       const readable = new ReadableStream({
         async start(controller) {
@@ -1149,7 +1428,7 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
               }
             }
             controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
-            logDebug("chat", "stream complete");
+            logDebug("chat", "stream complete (after tool rounds)");
             controller.close();
           } catch (e) {
             log("chat", "stream error", String(e));
