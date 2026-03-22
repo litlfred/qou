@@ -712,6 +712,16 @@
     .diff-card-body{display:none;padding:.6rem .8rem;border-top:1px solid var(--brd);font-size:.78rem;line-height:1.6}
     .diff-card.expanded .diff-card-body{display:block}
     .diff-card-body pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--f-mono);font-size:.7rem;line-height:1.6}
+    .diff-tabs{display:flex;gap:0;margin-bottom:.6rem;border-bottom:1px solid var(--brd)}
+    .diff-tab{padding:.3rem .7rem;font-size:.65rem;font-family:var(--f-mono);cursor:pointer;border:none;background:none;color:var(--fg-d);border-bottom:2px solid transparent}
+    .diff-tab:hover{color:var(--fg-b)}
+    .diff-tab.active{color:var(--ac);border-bottom-color:var(--ac)}
+    .diff-tab-panel{display:none}
+    .diff-tab-panel.active{display:block}
+    .diff-rendered{font-family:var(--f-text);font-size:.82rem;line-height:1.7}
+    .diff-rendered .bb{margin:0}
+    .diff-edit-btn{display:inline-block;font-size:.6rem;font-family:var(--f-mono);color:var(--ac);cursor:pointer;padding:.2rem .5rem;border:1px solid var(--ac);border-radius:3px;margin-top:.4rem;background:none}
+    .diff-edit-btn:hover{background:var(--ac);color:#fff}
     .diff-line-add{background:rgba(42,170,70,.15);color:var(--grn);padding:0 .3rem}
     .diff-line-del{background:rgba(200,70,70,.15);color:var(--red);text-decoration:line-through;padding:0 .3rem}
     .diff-line-ctx{color:var(--fg-d);opacity:.45;padding:0 .3rem}
@@ -3688,7 +3698,7 @@
             head.appendChild(goto);
           }
 
-          // Body (collapsed by default)
+          // Body (collapsed by default) — tabbed: rendered | raw diff
           const body = mk('div','diff-card-body');
 
           if (bd.statusDiff) {
@@ -3697,30 +3707,94 @@
             body.appendChild(sc);
           }
 
+          // Tab bar
+          const tabs = mk('div','diff-tabs');
+          const tabRendered = mk('button','diff-tab active');
+          tabRendered.textContent = 'rendered';
+          const tabRaw = mk('button','diff-tab');
+          tabRaw.textContent = 'raw diff';
+          tabs.appendChild(tabRendered);
+          tabs.appendChild(tabRaw);
+          body.appendChild(tabs);
+
+          // Panel: rendered markdown
+          const panelRendered = mk('div','diff-tab-panel active');
+          const headMd = bd.mdDiff?.head ?? (bd.status === 'added' ? (bix.get(bd.label)?.md || '') : null);
+          if (headMd != null) {
+            const rendered = mk('div','diff-rendered');
+            const bb = mk('div','bb');
+            const {html: bh, texBlocks: tx} = parseMd(headMd);
+            bb.innerHTML = bh;
+            fillTex(bb, tx, bix.get(bd.label)?.rendered);
+            renderMath(bb); resolveRefs(bb);
+            rendered.appendChild(bb);
+
+            // Edit button → navigate to block with editor open
+            const editBtn = mk('button','diff-edit-btn');
+            editBtn.textContent = 'edit';
+            editBtn.onclick = (e) => {
+              e.stopPropagation();
+              closeDiffOverlay();
+              if (bd.label) {
+                const chNum = paper?._chapterForLabel?.(bd.label);
+                if (chNum != null) paper._showChapter(chNum);
+                setTimeout(() => {
+                  const el = document.getElementById(bd.label);
+                  if (el) {
+                    // Hydrate lazy block if needed
+                    const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+                    if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                    el.scrollIntoView({behavior:'smooth', block:'start'});
+                    // Open inline editor
+                    setTimeout(() => {
+                      if (el._inlineEditor) el._inlineEditor.btn.click();
+                    }, 200);
+                  }
+                }, 100);
+              }
+            };
+            rendered.appendChild(editBtn);
+            panelRendered.appendChild(rendered);
+          }
+          body.appendChild(panelRendered);
+
+          // Panel: raw diff
+          const panelRaw = mk('div','diff-tab-panel');
           if (bd.mdDiff) {
             const ops = lineDiff(bd.mdDiff.base, bd.mdDiff.head);
             const pre = document.createElement('pre');
             pre.innerHTML = renderDiffLines(ops);
-            body.appendChild(pre);
+            panelRaw.appendChild(pre);
           } else if (bd.status === 'added') {
-            // Show full content for new blocks
             const blk = bix.get(bd.label);
             if (blk?.md) {
               const pre = document.createElement('pre');
               pre.innerHTML = blk.md.split('\n').map(l => `<span class="diff-line-add">+ ${esc(l)}</span>`).join('\n');
-              body.appendChild(pre);
+              panelRaw.appendChild(pre);
             }
           }
-
           if (bd.leanDiff) {
             const lh = mk('div','diff-status-change');
             lh.textContent = 'Lean source changed:';
-            body.appendChild(lh);
+            panelRaw.appendChild(lh);
             const ops = lineDiff(bd.leanDiff.base, bd.leanDiff.head);
             const pre = document.createElement('pre');
             pre.innerHTML = renderDiffLines(ops);
-            body.appendChild(pre);
+            panelRaw.appendChild(pre);
           }
+          body.appendChild(panelRaw);
+
+          // Tab switching
+          tabRendered.onclick = (e) => {
+            e.stopPropagation();
+            tabRendered.classList.add('active'); tabRaw.classList.remove('active');
+            panelRendered.classList.add('active'); panelRaw.classList.remove('active');
+          };
+          tabRaw.onclick = (e) => {
+            e.stopPropagation();
+            tabRaw.classList.add('active'); tabRendered.classList.remove('active');
+            panelRaw.classList.add('active'); panelRendered.classList.remove('active');
+          };
 
           head.onclick = () => card.classList.toggle('expanded');
           card.appendChild(head);
