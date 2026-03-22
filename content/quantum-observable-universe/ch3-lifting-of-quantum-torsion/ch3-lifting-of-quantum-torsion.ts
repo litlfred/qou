@@ -141,6 +141,7 @@ export default chapter({
         "localized-knot-intro",
         "localized-knot",
         "hadron",
+        "hadron-operations",
         "localized-hadron",
         "hadron-fibre-embedding",
         "bundle-initial-conditions",
