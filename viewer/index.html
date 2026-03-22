@@ -907,6 +907,13 @@
       brInput.value = target;
       paper = null;
       bix.clear();
+      // Update URL to reflect branch (re-encode current view with new branch)
+      const curHash = location.hash.slice(1) || '/';
+      // Strip any existing @branch from current hash
+      const cleaned = curHash.replace(/@[^/]*$/, '').replace(/@.*$/, '');
+      // Don't embed branch if it's now the server HEAD (it was just checked out)
+      // But do update the hash to trigger a re-route
+      history.replaceState(null, '', `#${cleaned}`);
       await loadBranches();
       route();
     }
@@ -1138,12 +1145,13 @@
       anchor.onclick = (e) => {
         e.preventDefault();
         if (label) {
-          const url = `${location.origin}${location.pathname}#${label}`;
+          const brSuffix = selectedBranch && selectedBranch !== currentBranchName ? `@${encodeURIComponent(selectedBranch)}` : '';
+          const url = `${location.origin}${location.pathname}#${label}${brSuffix}`;
           navigator.clipboard.writeText(url).then(() => {
             copied.classList.add('show');
             setTimeout(() => copied.classList.remove('show'), 1200);
           });
-          history.replaceState(null, '', `#${label}`);
+          history.replaceState(null, '', `#${label}${brSuffix}`);
         }
       };
       div.appendChild(anchor);
@@ -2136,7 +2144,7 @@
         `;
         card.style.cursor = 'pointer';
         card.onclick = () => {
-          location.hash = `#/view/${p.id}`;
+          location.hash = `#/${hashWithBranch(`view/${p.id}`)}`;
         };
         list.appendChild(card);
       }
@@ -2145,32 +2153,77 @@
     }
 
     // ── Router ────────────────────────────────────────────
-    // Routes:
-    //   #/                       → folio (paper listing)
-    //   #/view/<paper-id>        → full paper view
-    //   #/view/<label>           → paper view, scrolled to block
-    //   #/edit/<label>           → block edit view
-    //   #<label>                 → shorthand for #/view/<label>
+    // Routes (@ separates slug from branch, since branch names contain /):
+    //   #/                                          → folio (current branch)
+    //   #/@branch/name                              → folio on specific branch
+    //   #/view/paper-id                             → paper (current branch)
+    //   #/view/paper-id@branch/name                 → paper on specific branch
+    //   #/view/label@branch/name                    → paper scrolled to block, on branch
+    //   #/edit/label                                → inline edit (current branch)
+    //   #/edit/label@branch/name                    → inline edit on branch
+    //   #label                                      → shorthand for #/view/label
     const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
+
+    /** Split "slug@branch/name" → { slug, branch } or { slug, branch: null }. */
+    function parseBranchFromSlug(raw) {
+      const at = raw.indexOf('@');
+      if (at === -1) return { slug: raw, branch: null };
+      return { slug: raw.slice(0, at), branch: decodeURIComponent(raw.slice(at + 1)) };
+    }
+
+    /** Update selectedBranch from URL if present, and sync the picker. */
+    function applyUrlBranch(branch) {
+      if (branch && branch !== selectedBranch) {
+        selectedBranch = branch;
+        brInput.value = branch;
+        paper = null;
+        bix.clear();
+        console.log(`[folio:git] branch from URL: ${branch}`);
+      }
+    }
+
+    /** Build a hash string with the current branch embedded (if not default). */
+    function hashWithBranch(path, branch) {
+      const br = branch || selectedBranch;
+      if (!br || br === currentBranchName) return path;
+      return `${path}@${encodeURIComponent(br)}`;
+    }
 
     async function route() {
       const hash = location.hash || '#/';
       const raw = hash.slice(1); // remove #
 
-      // Shorthand: #rem:foo → treat as #/view/rem:foo
-      if (LABEL_RE.test(raw)) {
-        await routeView(raw);
+      // Shorthand: #rem:foo or #rem:foo@branch → treat as view
+      if (LABEL_RE.test(raw) || (raw.includes('@') && LABEL_RE.test(raw.split('@')[0]))) {
+        const { slug, branch } = parseBranchFromSlug(raw);
+        applyUrlBranch(branch);
+        await routeView(slug);
         return;
       }
 
-      const parts = raw.replace(/^\//, '').split('/').filter(Boolean);
-      const action = parts[0];
-      const slug = parts.slice(1).join('/');
+      const stripped = raw.replace(/^\//, '');
 
-      if (action === 'view' && slug) {
+      // #/@branch/name → folio on branch
+      if (stripped.startsWith('@')) {
+        const branch = decodeURIComponent(stripped.slice(1));
+        applyUrlBranch(branch);
+        await loadFolio();
+        return;
+      }
+
+      // Split only first two segments: action / rest (rest may contain @branch)
+      const firstSlash = stripped.indexOf('/');
+      const action = firstSlash === -1 ? stripped : stripped.slice(0, firstSlash);
+      const rest = firstSlash === -1 ? '' : stripped.slice(firstSlash + 1);
+
+      if (action === 'view' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
         await routeView(slug);
-      } else if (action === 'edit' && slug) {
+      } else if (action === 'edit' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
         await routeEdit(slug);
       } else {
         await loadFolio();
@@ -2343,6 +2396,9 @@
         const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         renderPaper(await r.json());
+        // Update URL to be shareable (embed branch if non-default)
+        const target = hashWithBranch(`view/${id}`);
+        history.replaceState(null, '', `#/${target}`);
       } catch (e) {
         app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
       }
