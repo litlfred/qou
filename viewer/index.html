@@ -1713,7 +1713,8 @@
       if (!block) return;
       depRhsCurrentLabel = label;
       depRhsKind.textContent = block.kind;
-      depRhsTitle.textContent = block.title || label;
+      depRhsTitle.innerHTML = inl(block.title || label);
+      renderMath(depRhsTitle);
       renderBlockContent(depRhsBody, block);
       depOpenRhs();
       depGraphSvg.querySelectorAll('.dep-node').forEach(n => n.classList.toggle('dep-hovered', n.dataset.label === label));
@@ -1725,6 +1726,14 @@
     const DEP_PROVABLE = new Set(['theorem','lemma','proposition','corollary']);
     const DEP_NS = 'http://www.w3.org/2000/svg';
     const DEP_NODE_W = 200, DEP_NODE_H = 56, DEP_LAYER_GAP = 80, DEP_NODE_GAP = 28;
+
+    /** Strip $...$ and common LaTeX commands for plain-text SVG labels */
+    function stripTex(s) {
+      return s.replace(/\$([^$]*)\$/g, '$1')
+              .replace(/\\(?:mathbb|mathrm|mathcal|mathfrak|operatorname|text|textbf|emph)\{([^}]*)\}/g, '$1')
+              .replace(/\\[a-zA-Z]+/g, '')
+              .replace(/[{}]/g, '');
+    }
 
     function depNodeClass(b) {
       if (!b) return 'dep-node-none';
@@ -1897,7 +1906,8 @@
         t1.textContent = DEP_KIND_ABBR[block.kind] || block.kind; g.appendChild(t1);
         const t2 = document.createElementNS(DEP_NS, 'text');
         t2.setAttribute('x', '8'); t2.setAttribute('y', '30');
-        t2.textContent = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        const plainTitle = block.title ? stripTex(block.title) : label;
+        t2.textContent = plainTitle.substring(0, 22) + (plainTitle.length > 22 ? '…' : '');
         g.appendChild(t2);
         if (block.lean?.decl) {
           const t3 = document.createElementNS(DEP_NS, 'text');
@@ -2008,7 +2018,8 @@
       const root = bix.get(rootLabel);
       if (!root) return;
       depRootLabel = rootLabel;
-      depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
+      depTitle.innerHTML = `${esc(root.kind)}: ${inl(root.title || rootLabel)}`;
+      renderMath(depTitle);
       depSubtitle.textContent = rootLabel;
       depLink.href = `#/viz/${hashWithBranch(rootLabel)}`;
       depCloseRhs();
@@ -4289,7 +4300,8 @@
       }
       if (nodes.size === 0) { alert('No dependency edges found in this paper.'); return; }
       depRootLabel = null;
-      depTitle.textContent = paper?.title || 'Full Paper';
+      depTitle.innerHTML = inl(paper?.title || 'Full Paper');
+      renderMath(depTitle);
       depSubtitle.textContent = 'all blocks with dependencies';
       depLink.href = `#/viz/${hashWithBranch(paper?.id || 'paper')}`;
       depCloseRhs();
