@@ -1039,6 +1039,7 @@
       console.log(`[folio:git] switching branch: ${selectedBranch} → ${target}`);
 
       // Check if working tree is dirty before switching
+      let checkedOut = false;
       try {
         const res = await fetch('/api/git/status');
         const status = await res.json();
@@ -1079,6 +1080,7 @@
             return;
           }
           console.log(`[folio:git] ${action} ok, checked out ${target}`);
+          checkedOut = true;
         } else {
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
@@ -1094,24 +1096,22 @@
           }
           console.log(`[folio:git] checked out ${target}`);
         }
+        checkedOut = true;
       } catch (e) {
         console.warn('[folio:git] git API unavailable, content-level switch only:', e.message);
       }
 
       selectedBranch = target;
-      currentBranchName = target;
+      if (checkedOut) currentBranchName = target;
       brInput.value = target;
       paper = null;
       bix.clear();
-      // Update URL to reflect branch (re-encode current view with new branch)
+      // Update URL to reflect branch
       const curHash = location.hash.slice(1) || '/';
-      // Strip any existing @branch from current hash
       const cleaned = curHash.replace(/@[^/]*$/, '').replace(/@.*$/, '');
-      // Don't embed branch if it's now the server HEAD (it was just checked out)
-      // But do update the hash to trigger a re-route
-      history.replaceState(null, '', `#${cleaned}`);
+      const newHash = hashWithBranch(cleaned.replace(/^\//, '') || '', target);
+      location.hash = `#/${newHash}`;
       await loadBranches();
-      route();
     }
     loadBranches();
 
@@ -3387,19 +3387,34 @@
     }
 
     async function loadDiff() {
-      if (!paper?.id) return null;
+      if (!paper?.id) {
+        console.warn('[folio:diff] no paper loaded');
+        diffBtn.textContent = 'no paper';
+        setTimeout(() => { diffBtn.textContent = 'diff'; }, 1500);
+        return null;
+      }
       const base = 'main';
       const head = selectedBranch || currentBranchName;
       if (head === 'main' || head === 'master') return null;
       console.log(`[folio:diff] loading diff: ${base}..${head} for ${paper.id}`);
       try {
         const r = await fetch(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`);
-        if (!r.ok) throw new Error(`${r.status}`);
+        if (!r.ok) {
+          const body = await r.json().catch(() => ({}));
+          throw new Error(body.error || `HTTP ${r.status}`);
+        }
         const data = await r.json();
         console.log(`[folio:diff] loaded: +${data.summary.added} -${data.summary.removed} ~${data.summary.changed}`);
+        if (!data.blocks?.length && data.summary?.added === 0 && data.summary?.removed === 0 && data.summary?.changed === 0) {
+          diffBtn.textContent = 'no changes';
+          setTimeout(() => { diffBtn.textContent = 'diff'; }, 1500);
+        }
         return data;
       } catch (e) {
         console.error('[folio:diff] load failed:', e.message);
+        diffBtn.textContent = 'error';
+        diffBtn.title = e.message;
+        setTimeout(() => { diffBtn.textContent = 'diff'; diffBtn.title = 'Show changes vs main'; }, 2000);
         return null;
       }
     }
