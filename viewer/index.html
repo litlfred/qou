@@ -1038,75 +1038,55 @@
       if (target === selectedBranch) { brInput.value = selectedBranch; return; }
       console.log(`[folio:git] switching branch: ${selectedBranch} → ${target}`);
 
-      // Check if working tree is dirty before switching
+      // Try git checkout (optional — content-level switch always happens)
       let checkedOut = false;
       try {
         const res = await fetch('/api/git/status');
         const status = await res.json();
-        console.log(`[folio:git] status: dirty=${status.dirty}, changes=${status.changes?.length || 0}`);
         if (status.dirty) {
-          const n = status.changes.length;
+          const n = status.changes?.length || 0;
           const choice = prompt(
-            `Working tree has ${n} uncommitted change(s).\n\nChoose an action:\n` +
-            `  commit  — commit changes before switching\n` +
+            `Working tree has ${n} uncommitted change(s).\n\n` +
             `  stash   — stash changes (can be restored later)\n` +
             `  discard — discard all changes (cannot undo!)\n` +
-            `  cancel  — stay on current branch\n\nType: commit, stash, discard, or cancel`,
+            `  cancel  — stay on current branch\n\nType: stash, discard, or cancel`,
             'stash'
           );
           if (!choice || choice.toLowerCase() === 'cancel') {
-            console.log('[folio:git] branch switch cancelled by user');
             brInput.value = selectedBranch;
             return;
           }
           const action = choice.toLowerCase().trim();
-          if (!['commit', 'stash', 'discard'].includes(action)) {
-            console.warn('[folio:git] unknown action:', action);
-            alert('Unknown action. Staying on current branch.');
+          if (!['stash', 'discard'].includes(action)) {
             brInput.value = selectedBranch;
             return;
           }
-          console.log(`[folio:git] dirty worktree — action: ${action}`);
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ branch: target, action })
           });
-          const coData = await coRes.json();
-          if (!coRes.ok) {
-            console.error('[folio:git] checkout failed:', coData.error);
-            alert('Branch switch failed: ' + (coData.error || 'unknown'));
-            brInput.value = selectedBranch;
-            return;
-          }
-          console.log(`[folio:git] ${action} ok, checked out ${target}`);
-          checkedOut = true;
+          if (coRes.ok) checkedOut = true;
+          else console.warn('[folio:git] checkout failed, content-level switch only');
         } else {
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ branch: target })
           });
-          const coData = await coRes.json();
-          if (!coRes.ok) {
-            console.error('[folio:git] checkout failed:', coData.error);
-            alert('Branch switch failed: ' + (coData.error || 'unknown'));
-            brInput.value = selectedBranch;
-            return;
-          }
-          console.log(`[folio:git] checked out ${target}`);
+          if (coRes.ok) checkedOut = true;
+          else console.warn('[folio:git] checkout failed, content-level switch only');
         }
-        checkedOut = true;
       } catch (e) {
-        console.warn('[folio:git] git API unavailable, content-level switch only:', e.message);
+        console.warn('[folio:git] git API unavailable, content-level switch only');
       }
 
+      // Always update content-level state and URL
       selectedBranch = target;
       if (checkedOut) currentBranchName = target;
       brInput.value = target;
       paper = null;
       bix.clear();
-      // Update URL to reflect branch
       const curHash = location.hash.slice(1) || '/';
       const cleaned = curHash.replace(/@[^/]*$/, '').replace(/@.*$/, '');
       const newHash = hashWithBranch(cleaned.replace(/^\//, '') || '', target);

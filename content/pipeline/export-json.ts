@@ -87,10 +87,15 @@ interface ExportedPaper {
 
 // ── Helpers ──────────────────────────────────────────────────────
 
-function readLeanSource(leanRef: LeanRef | undefined): string | undefined {
+function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string): string | undefined {
   if (!leanRef) return undefined;
 
-  // Try explicit file path
+  // Try co-located .lean sibling file first (content/<chapter>/<block>.lean)
+  if (colocatedLeanPath && existsSync(colocatedLeanPath)) {
+    return readFileSync(colocatedLeanPath, "utf-8");
+  }
+
+  // Try explicit file path in lean/ project
   if (leanRef.file) {
     const leanPath = join(LEAN_ROOT, leanRef.file);
     if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
@@ -160,7 +165,8 @@ async function main() {
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
           const mdStat = existsSync(mdPath) ? statSync(mdPath) : null;
           const leanRef = "lean" in block ? (block.lean as LeanRef | undefined) : undefined;
-          const leanSource = readLeanSource(leanRef);
+          const colocatedLean = join(chDir, `${rootName}.lean`);
+          const leanSource = readLeanSource(leanRef, colocatedLean);
           const rendered = "rendered" in block
             ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
             : undefined;
