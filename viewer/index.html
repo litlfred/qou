@@ -1564,16 +1564,51 @@
       }
     }
 
+    // ── Feedback draft persistence ─────────────────────────
+    const FB_DRAFT_KEY = 'qou-fb-drafts';
+    function loadDrafts() {
+      try { return JSON.parse(localStorage.getItem(FB_DRAFT_KEY) || '{}'); } catch { return {}; }
+    }
+    function saveDraft(target, text, priority, assignee) {
+      const drafts = loadDrafts();
+      if (text.trim()) {
+        drafts[target] = { text, priority, assignee, ts: Date.now() };
+      } else {
+        delete drafts[target];
+      }
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function clearDraft(target) {
+      const drafts = loadDrafts();
+      delete drafts[target];
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function getDraft(target) {
+      return loadDrafts()[target] || null;
+    }
+
     // ── Feedback panel ────────────────────────────────────
     let fbBlock = null;
     // openFeedback can accept a block object or a {label, rootName, todos, kind} stub
     function openFeedback(block) {
       fbBlock = block;
-      document.getElementById('fb-target').textContent = block.label || block.rootName || 'block';
-      document.getElementById('fb-text').value = '';
+      const target = block.label || block.rootName || 'block';
+      document.getElementById('fb-target').textContent = target;
+
+      // Restore draft if one exists
+      const draft = getDraft(target);
+      const ta = document.getElementById('fb-text');
+      if (draft) {
+        ta.value = draft.text || '';
+        document.getElementById('fb-priority').value = draft.priority || 'medium';
+        document.getElementById('fb-assignee').value = draft.assignee || 'editor-agent';
+      } else {
+        ta.value = '';
+      }
+
       document.getElementById('feedback-overlay').classList.add('open');
       document.getElementById('feedback-panel').classList.add('open');
-      document.getElementById('fb-text').focus();
+      ta.focus();
 
       // Populate history from block todos
       const hist = document.getElementById('fb-history');
@@ -1697,7 +1732,31 @@
         }
       });
     }
+    // Auto-save draft as user types
+    document.getElementById('fb-text')?.addEventListener('input', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      saveDraft(target,
+        document.getElementById('fb-text').value,
+        document.getElementById('fb-priority').value,
+        document.getElementById('fb-assignee').value
+      );
+    });
+    document.getElementById('fb-priority')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+    document.getElementById('fb-assignee')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+
     function closeFeedback() {
+      // Draft is already auto-saved on input — no need to save again here
       document.getElementById('feedback-overlay').classList.remove('open');
       document.getElementById('feedback-panel').classList.remove('open');
       fbBlock = null;
@@ -1738,6 +1797,8 @@
           refreshStructBadges();
         }
         document.getElementById('fb-text').value = '';
+        // Clear the saved draft since feedback was submitted
+        clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item
         openFeedback(fbBlock);
         closeFeedback();
