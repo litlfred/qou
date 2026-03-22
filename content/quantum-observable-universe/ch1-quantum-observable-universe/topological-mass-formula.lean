@@ -52,6 +52,10 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
   q_gt_one : q > 1
   /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
   h_q : ℝ := 1 - 1 / q
+  /-- The quantum Planck constant satisfies its defining equation.
+      This constraint ensures `h_q` cannot be overridden to an
+      inconsistent value. -/
+  h_q_def : h_q = 1 - 1 / q := by rfl
   /-- The hyperbolic volume of the knot `K`. -/
   knotVolume : ℝ
   /-- The knot volume is positive. -/
@@ -70,7 +74,7 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
 /-- The quantum Planck constant is non-zero when `q > 1`. -/
 theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
     (amf : ArchimedeanMassFormula M) : amf.h_q ≠ 0 := by
-  show 1 - 1 / amf.q ≠ 0
+  rw [amf.h_q_def]
   have hq := amf.q_gt_one
   intro h
   have : amf.q = 1 := by linarith [show 1 / amf.q = 1 from by linarith]
@@ -104,11 +108,12 @@ theorem ArchimedeanMassFormula.mass_pos {M : Type*}
   apply sq_pos_of_ne_zero _ amf.h_q_ne_zero
 
 /-- The mass formula is consistent with the `MassDerivation` module:
-    when `knotVolume = vol` and `h_q = 1 - 1/q`, we recover exactly
+    `h_q_def` guarantees `h_q = 1 - 1/q`, so we recover exactly
     the `TopologicalMassFormula` structure from `MassDerivation.lean`. -/
 theorem ArchimedeanMassFormula.consistent_with_MassDerivation {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     amf.totalMass = amf.knotVolume / (1 - 1 / amf.q) ^ 2 := by
+  rw [← amf.h_q_def]
   exact amf.mass_eq_vol_div_h_q_sq
 
 end QOU.Torsion

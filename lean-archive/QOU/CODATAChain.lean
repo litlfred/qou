@@ -131,10 +131,10 @@ CODATA mass ratio, we recover `q ≈ 1.1097`.  Here we show the
 `ArchimedeanMassFormula` is consistent with that derivation. -/
 
 /-- The `ArchimedeanMassFormula` h_q definition is consistent with
-    `MassDerivation.quantum_planck`. -/
+    `MassDerivation.quantum_planck`, via the `h_q_def` constraint. -/
 theorem h_q_eq_quantum_planck {M : Type*}
     (amf : ArchimedeanMassFormula M) :
-    amf.h_q = 1 - 1 / amf.q := rfl
+    amf.h_q = 1 - 1 / amf.q := amf.h_q_def
 
 /-- **Full chain theorem**: Given an `ArchimedeanMassFormula` for
     the muon (knot volume = Vol(4₁)), and the CODATA mass ratio as
