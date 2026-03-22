@@ -136,6 +136,8 @@ interface ResolvedPaper {
   date?: string;
   chapters: ResolvedChapter[];
   todos?: unknown[];
+  /** Flattened O(1) lookup: rootName → block. Not serialized to API responses. */
+  blocksByName?: Map<string, ResolvedBlock>;
 }
 
 interface FolioEntry {
@@ -315,6 +317,13 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     });
   }
 
+  // Build flattened block lookup map
+  const blocksByName = new Map<string, ResolvedBlock>();
+  for (const ch of chapters)
+    for (const sec of ch.sections)
+      for (const blk of sec.blocks)
+        blocksByName.set(blk.rootName, blk);
+
   return {
     id,
     title: paperMod.title,
@@ -325,6 +334,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     chapters,
     todos: paperMod.todos,
     branch: currentBranch(),
+    blocksByName,
   };
 }
 
@@ -1125,22 +1135,11 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
       const todo = (todos as any[]).find(t => t.id === body.todoId);
       if (!todo) return Response.json({ error: "Todo not found" }, { status: 404 });
 
-      // Read the block content for context
+      // Read the block content for context (O(1) via blocksByName map)
       const paper = await resolvePaper(body.paperId);
-      let blockContent = "";
-      let blockKind = "";
-      if (paper) {
-        for (const ch of paper.chapters) {
-          for (const sec of ch.sections) {
-            for (const blk of sec.blocks) {
-              if (blk.rootName === body.rootName) {
-                blockContent = blk.md;
-                blockKind = blk.kind;
-              }
-            }
-          }
-        }
-      }
+      const blk = paper?.blocksByName?.get(body.rootName);
+      const blockContent = blk?.md || "";
+      const blockKind = blk?.kind || "";
 
       const triage = await triageFeedback(todo, blockContent, blockKind, body.paperId, body.rootName);
       return Response.json(triage, { headers: { "Access-Control-Allow-Origin": "*" } });
