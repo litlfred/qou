@@ -1923,6 +1923,8 @@ if (mode === "stdio") {
     port,
     async fetch(req) {
       const url = new URL(req.url);
+      const start = Date.now();
+      logDebug('http', `${req.method} ${url.pathname}`);
 
       // MCP endpoint
       if (url.pathname === "/mcp") {
@@ -1942,7 +1944,7 @@ if (mode === "stdio") {
       // POST requests
       if (req.method === "POST") {
         const postRes = await handlePostRequest(url, req);
-        if (postRes) return postRes;
+        if (postRes) { logDebug('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
       }
 
       // Viewer/Assistant routes

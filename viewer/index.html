@@ -3336,6 +3336,22 @@
       return div;
     }
 
+    function appendChatError(container, message) {
+      const err = mk('div','chat-err');
+      const icon = mk('span','');
+      icon.textContent = '⚠';
+      icon.style.cssText = 'cursor:pointer;color:var(--red);font-size:.85rem';
+      icon.title = 'Error — click for details';
+      const detail = mk('div','');
+      detail.style.cssText = 'display:none;margin-top:.3rem;padding:.3rem .5rem;background:var(--bg-r);border:1px solid var(--red);border-radius:4px;font-family:var(--f-mono);font-size:.6rem;color:var(--red);word-break:break-word;white-space:pre-wrap';
+      detail.textContent = message;
+      icon.onclick = () => { detail.style.display = detail.style.display === 'none' ? '' : 'none'; };
+      err.appendChild(icon);
+      err.appendChild(detail);
+      container.appendChild(err);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
     async function sendChatMessage(text) {
       if (chatStreaming || !text.trim()) return;
 
@@ -3414,7 +3430,9 @@
                 renderMath(assistDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
               }
-              if (parsed.error) throw new Error(parsed.error);
+              if (parsed.error) {
+                appendChatError(assistDiv, parsed.error);
+              }
             } catch (e) {
               if (e.message !== 'Unexpected end of JSON input') console.warn('Chat parse:', e);
             }
@@ -3461,9 +3479,9 @@
         }
 
       } catch (e) {
-        assistDiv.textContent = `Error: ${e.message}`;
-        assistDiv.style.color = 'var(--red)';
+        appendChatError(assistDiv, e.message);
       } finally {
+        clearTimeout(lookupTimer);
         chatStreaming = false;
         chatSend.disabled = false;
         chatTyping.classList.remove('active');
