@@ -3381,9 +3381,6 @@
       }
     }
 
-    window.addEventListener('hashchange', route);
-    route();
-
     // ── Diff overlay + inline diff mode ─────────────────────
     const diffBtn = document.getElementById('c-diff');
     const diffOverlay = document.getElementById('diff-overlay');
@@ -3721,6 +3718,10 @@
       closeDiffOverlay();
       toggleDiffMode();
     });
+
+    // ── Start routing (after all UI initialized) ──────────
+    window.addEventListener('hashchange', route);
+    route();
 
     // ── Claude Chat Assistant ─────────────────────────────
     const chatFab = document.getElementById('claude-fab');
