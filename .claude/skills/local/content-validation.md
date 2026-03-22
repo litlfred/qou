@@ -1,3 +1,8 @@
+---
+name: content-validation
+roles: [reader, collaborator, owner]
+---
+
 # Content Validation Skill
 
 ## Role

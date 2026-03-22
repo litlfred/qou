@@ -37,6 +37,37 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
 import Anthropic from "@anthropic-ai/sdk";
 
+// ── Role-based access control ────────────────────────────────────
+// Auth-gateway injects X-User-Role, X-User-Email, X-User-Name headers.
+// Roles: viewer < collaborator < owner (ascending privilege).
+
+type UserRole = "viewer" | "collaborator" | "owner";
+const ROLE_LEVELS: Record<UserRole, number> = { viewer: 1, collaborator: 2, owner: 3 };
+
+function getUserRole(req: Request): UserRole {
+  const role = req.headers.get("x-user-role") as UserRole | null;
+  return role && role in ROLE_LEVELS ? role : "viewer";
+}
+
+function getUserEmail(req: Request): string {
+  return req.headers.get("x-user-email") || "anonymous";
+}
+
+function getUserName(req: Request): string {
+  return req.headers.get("x-user-name") || "anonymous";
+}
+
+function hasRole(req: Request, minRole: UserRole): boolean {
+  return ROLE_LEVELS[getUserRole(req)] >= ROLE_LEVELS[minRole];
+}
+
+function forbidden(action: string, minRole: UserRole): Response {
+  return Response.json(
+    { error: `Forbidden: ${action} requires ${minRole} role or higher` },
+    { status: 403 }
+  );
+}
+
 // ── Feedback storage (gitignored, global with hash-based IDs) ────
 
 function feedbackPath(paperId: string, rootName: string): string {
@@ -994,8 +1025,11 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 async function handlePostRequest(url: URL, req: Request): Promise<Response | null> {
   const path = url.pathname;
 
-  // ── Save block markdown ────────────────────────────────────
+  // ── Save block markdown (collaborator+ only) ─────────────────
   if (path === "/api/block/save") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("editing content", "collaborator");
+    }
     try {
       const body = await req.json() as { paperId: string; rootName: string; md: string };
       const { writeFileSync, readdirSync } = await import("fs");
@@ -1021,8 +1055,10 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
-  // ── Submit feedback as todo (global, hash-based ID) ─────────
-  if (path === "/api/feedback") {
+  // ── Submit feedback as todo (viewer+ — any authenticated user) ──
+  // Stored in .qou-feedback/ (gitignored), not in the content tree.
+  // Survives branch switches and won't be accidentally committed.
+  if (path === "/api/feedback" && req.method === "POST") {
     try {
       const body = await req.json() as {
         paperId: string; rootName: string;
@@ -1036,6 +1072,8 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         status: "open",
         priority: body.priority || "medium",
         origin: "human",
+        author: getUserName(req),
+        authorEmail: getUserEmail(req),
         assignee: body.assignee || "editor-agent",
         createdAt: new Date().toISOString(),
       };
@@ -1358,8 +1396,10 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         }
       }
 
-      // Build system prompt based on mode
+      // Build system prompt based on mode and user role
       const mode = body.mode || "read";
+      const userRole = getUserRole(req);
+      const userName = getUserName(req);
       let systemPrompt = `You are Folio, an editorial assistant for a formal mathematics research paper. You help readers understand, navigate, and improve the paper.
 
 Your role is that of a knowledgeable editor who:
@@ -1368,6 +1408,22 @@ Your role is that of a knowledgeable editor who:
 - Identifies potential errors or improvements when asked
 - Suggests connections between concepts
 - Answers questions about the paper's content and structure
+
+## User role
+
+The current user is **${userName}** with role **${userRole}**.
+
+Role capabilities:
+- **reader**: Can read the paper, submit feedback/comments, view todos and proof status. Cannot edit content, write proofs, or modify infrastructure.
+- **collaborator**: All reader capabilities, plus: edit markdown content, write/modify Lean proofs, manage branches, delete feedback items, run tests, import papers.
+- **owner**: All collaborator capabilities, plus: commit to main, manage deployment/auth, modify server configuration.
+
+Skills available by role:
+- **reader**: content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, editor (read-only mode)
+- **collaborator**: All reader skills, plus: formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer
+- **owner**: All collaborator skills, plus: deployment-auth
+
+When coordinating work or suggesting actions, ONLY suggest actions and skills that the user's role (${userRole}) permits. If a reader asks to edit content, explain they need collaborator access. If a collaborator tries to manage deployment, explain they need owner access.
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
@@ -1887,14 +1943,18 @@ These become clickable buttons so users don't have to type. Make them specific t
     }
   }
 
-  // ── Delete feedback todo ──────────────────────────────────────
+  // ── Delete feedback todo (collaborator+ only) ─────────────────
   if (path === "/api/feedback/delete") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("deleting feedback", "collaborator");
+    }
     try {
       const body = await req.json() as {
         paperId: string; rootName: string; todoId: string;
       };
-      const todos = readFeedback(body.paperId, body.rootName) as any[];
-      const idx = todos.findIndex((t: any) => t.id === body.todoId);
+      interface FeedbackTodo { id: string; summary: string; comment?: string; status: string; priority?: string; author?: string; assignee?: string; createdAt?: string; }
+      const todos = readFeedback(body.paperId, body.rootName) as FeedbackTodo[];
+      const idx = todos.findIndex((t) => t.id === body.todoId);
       if (idx < 0) return Response.json({ error: "Todo not found" }, { status: 404 });
       todos.splice(idx, 1);
       writeFeedback(body.paperId, body.rootName, todos);
@@ -2036,7 +2096,7 @@ if (mode === "stdio") {
         return Response.json({ status: "ok", mode: "stdio", version: "0.1.0" });
       }
 
-      // POST requests (save, feedback, import)
+      // POST requests (save, feedback, import, git ops)
       if (req.method === "POST") {
         const postRes = await handlePostRequest(url, req);
         if (postRes) { logDebug('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
@@ -2087,8 +2147,8 @@ if (mode === "stdio") {
         return Response.redirect(`/assistant/`, 302);
       }
 
-      // POST requests
-      if (req.method === "POST") {
+      // POST/DELETE requests
+      if (req.method === "POST" || req.method === "DELETE") {
         const postRes = await handlePostRequest(url, req);
         if (postRes) { logDebug('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
       }
