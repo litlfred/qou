@@ -1081,16 +1081,25 @@
         console.warn('[folio:git] git API unavailable, content-level switch only');
       }
 
-      // Always update content-level state and URL
+      // Always update content-level state and reload
       selectedBranch = target;
       if (checkedOut) currentBranchName = target;
       brInput.value = target;
       paper = null;
       bix.clear();
+      diffData = null; diffMode = false;
+      // Update URL — always embed branch for non-HEAD
       const curHash = location.hash.slice(1) || '/';
       const cleaned = curHash.replace(/@[^/]*$/, '').replace(/@.*$/, '');
-      const newHash = hashWithBranch(cleaned.replace(/^\//, '') || '', target);
-      location.hash = `#/${newHash}`;
+      const path = cleaned.replace(/^\//, '') || '';
+      const brSuffix = target !== currentBranchName ? `@${encodeURIComponent(target)}` : '';
+      const newHash = `#/${path}${brSuffix}`;
+      if (location.hash === newHash) {
+        // Hash didn't change (e.g. checked out to HEAD) — force reload
+        await route();
+      } else {
+        location.hash = newHash; // triggers hashchange → route()
+      }
       await loadBranches();
     }
     loadBranches();
@@ -3432,12 +3441,7 @@
     }
 
     async function loadDiff() {
-      if (!paper?.id) {
-        console.warn('[folio:diff] no paper loaded');
-        diffBtn.textContent = 'no paper';
-        setTimeout(() => { diffBtn.textContent = 'diff'; }, 1500);
-        return null;
-      }
+      if (!paper?.id) return null;
       const base = 'main';
       const head = selectedBranch || currentBranchName;
       if (head === 'main' || head === 'master') return null;
@@ -3450,16 +3454,9 @@
         }
         const data = await r.json();
         console.log(`[folio:diff] loaded: +${data.summary.added} -${data.summary.removed} ~${data.summary.changed}`);
-        if (!data.blocks?.length && data.summary?.added === 0 && data.summary?.removed === 0 && data.summary?.changed === 0) {
-          diffBtn.textContent = 'no changes';
-          setTimeout(() => { diffBtn.textContent = 'diff'; }, 1500);
-        }
         return data;
       } catch (e) {
         console.error('[folio:diff] load failed:', e.message);
-        diffBtn.textContent = 'error';
-        diffBtn.title = e.message;
-        setTimeout(() => { diffBtn.textContent = 'diff'; diffBtn.title = 'Show changes vs main'; }, 2000);
         return null;
       }
     }
@@ -3690,9 +3687,22 @@
         diffData = await loadDiff();
         diffBtn.textContent = 'diff';
         diffBtn.disabled = false;
-        if (!diffData) return;
       }
-      renderDiffOverlay(diffData);
+      if (diffData) {
+        renderDiffOverlay(diffData);
+      } else {
+        // Show overlay with error/info message
+        const head = selectedBranch || currentBranchName;
+        diffTitle.textContent = 'Diff unavailable';
+        diffSummaryEl.innerHTML = '';
+        diffBody.innerHTML = `<div style="text-align:center;padding:3rem;color:var(--fg-d)">${
+          head === 'main' || head === 'master'
+            ? 'You are on the main branch — switch to a feature branch to see changes.'
+            : !paper?.id
+              ? 'No paper is loaded. Open a paper first, then try diff.'
+              : 'Could not load diff from server. Check that the API is running and the branch exists on the remote.'
+        }</div>`;
+      }
       openDiffOverlay();
     });
 
