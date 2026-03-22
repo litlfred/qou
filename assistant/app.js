@@ -16,11 +16,16 @@
   // ── State ───────────────────────────────────────────────
   let folio = null;       // FolioEntry[]
   let paper = null;       // ResolvedPaper
-  let mode = "read";      // "read" | "qc"
+  let mode = "read";      // "read" | "qc" | "diff"
   let blockIndex = {};    // label → ResolvedBlock (for cross-ref lookup)
+  let currentBranch = null;   // HEAD branch on server
+  let selectedBranch = null;  // branch the user is viewing (null = current)
+  let diffData = null;        // PaperDiff from /api/diff
 
   const app = $("#app");
   const navLinks = $("#nav-links");
+  const branchSelect = $("#c-br");
+  const diffBtn = $("#c-diff");
 
   // ── Theme / font toggles ────────────────────────────────
   $("#c-th").onclick = () => {
@@ -45,6 +50,106 @@
   if (savedFont) {
     document.body.dataset.font = savedFont;
     $("#c-fn").textContent = savedFont === "paper" ? "web" : "paper";
+  }
+
+  // ── Branch switcher ─────────────────────────────────────
+  async function loadBranches() {
+    try {
+      const data = await api("/api/branches");
+      currentBranch = data.current;
+      if (!selectedBranch) selectedBranch = currentBranch;
+      branchSelect.innerHTML = "";
+      for (const b of data.branches) {
+        const opt = document.createElement("option");
+        opt.value = b;
+        opt.textContent = (b === data.current ? "\u25CF " : "  ") + b;
+        if (b === selectedBranch) opt.selected = true;
+        branchSelect.appendChild(opt);
+      }
+      updateDiffBtn();
+    } catch { /* ignore if /api/branches not available */ }
+  }
+
+  branchSelect.onchange = () => {
+    selectedBranch = branchSelect.value;
+    updateDiffBtn();
+    updateReadOnlyBanner();
+    route(); // re-fetch with new branch
+  };
+
+  function updateDiffBtn() {
+    const show = selectedBranch && selectedBranch !== "main" && selectedBranch !== "master";
+    diffBtn.style.display = show ? "" : "none";
+  }
+
+  diffBtn.onclick = async () => {
+    if (mode === "diff") {
+      mode = "read";
+      if (paper) renderPaper();
+      return;
+    }
+    if (!paper) return;
+    mode = "diff";
+    await loadDiff();
+  };
+
+  function branchParam() {
+    if (!selectedBranch || selectedBranch === currentBranch) return "";
+    return `&branch=${encodeURIComponent(selectedBranch)}`;
+  }
+
+  function branchQuery(base) {
+    const sep = base.includes("?") ? "&" : "?";
+    if (!selectedBranch || selectedBranch === currentBranch) return base;
+    return base + sep + `branch=${encodeURIComponent(selectedBranch)}`;
+  }
+
+  // ── Read-only banner ──────────────────────────────────────
+  function updateReadOnlyBanner() {
+    let banner = $("#readonly-banner");
+    if (selectedBranch && selectedBranch !== currentBranch) {
+      if (!banner) {
+        banner = h("div", "readonly-banner");
+        banner.id = "readonly-banner";
+        document.body.insertBefore(banner, app);
+      }
+      banner.innerHTML = `Viewing <strong>${esc(selectedBranch)}</strong> (read-only)`;
+      banner.style.display = "";
+    } else if (banner) {
+      banner.style.display = "none";
+    }
+  }
+
+  // ── Branch polling (detect branch changes) ────────────────
+  let pollTimer = null;
+  function startBranchPolling() {
+    if (pollTimer) return;
+    pollTimer = setInterval(async () => {
+      try {
+        const data = await api("/api/branch");
+        if (data.branch !== currentBranch) {
+          const oldBranch = currentBranch;
+          currentBranch = data.branch;
+          await loadBranches();
+          // Auto-refresh if viewing the old current branch
+          if (selectedBranch === oldBranch) {
+            selectedBranch = currentBranch;
+            showToast(`Branch changed to ${currentBranch}`);
+            route();
+          }
+        }
+      } catch {}
+    }, 5000);
+  }
+
+  function showToast(msg) {
+    const t = h("div", "toast", esc(msg));
+    document.body.appendChild(t);
+    requestAnimationFrame(() => t.classList.add("show"));
+    setTimeout(() => {
+      t.classList.remove("show");
+      setTimeout(() => t.remove(), 300);
+    }, 3000);
   }
 
   // ── Router ──────────────────────────────────────────────
@@ -72,9 +177,10 @@
     navLinks.innerHTML = "";
     app.innerHTML = '<div class="loading">loading folio...</div>';
     try {
-      const data = await api("/api/folio");
+      const data = await api(branchQuery("/api/folio"));
       folio = data.papers || [];
       renderFolio(data.title, folio);
+      updateReadOnlyBanner();
     } catch (e) {
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
     }
@@ -120,11 +226,14 @@
   async function loadPaper(id) {
     app.innerHTML = '<div class="loading">loading paper...</div>';
     try {
-      const data = await api(`/api/paper?id=${encodeURIComponent(id)}`);
+      const data = await api(branchQuery(`/api/paper?id=${encodeURIComponent(id)}`));
       paper = data;
       katexMacros = buildKatexMacros(data.macros);
       buildBlockIndex();
-      if (mode === "qc") renderQC(); else renderPaper();
+      updateReadOnlyBanner();
+      if (mode === "diff") await loadDiff();
+      else if (mode === "qc") renderQC();
+      else renderPaper();
     } catch (e) {
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
     }
@@ -159,6 +268,13 @@
       qcLink.href = "#";
       qcLink.onclick = (e) => { e.preventDefault(); mode = "qc"; renderQC(); };
       navLinks.appendChild(qcLink);
+
+      if (selectedBranch && selectedBranch !== "main" && selectedBranch !== "master") {
+        const diffLink = h("a", mode === "diff" ? "active" : "", "diff");
+        diffLink.href = "#";
+        diffLink.onclick = async (e) => { e.preventDefault(); mode = "diff"; await loadDiff(); };
+        navLinks.appendChild(diffLink);
+      }
     }
   }
 
@@ -363,7 +479,7 @@
       const badge = h("span", "todo-badge",
         `${blk.todos.length} todo${blk.todos.length > 1 ? "s" : ""}`);
       const list = h("div", "todo-list");
-      for (const td of blk.todos) list.appendChild(renderTodoItem(td));
+      for (const td of blk.todos) list.appendChild(renderTodoItem(td, blk));
       badge.onclick = () => list.classList.toggle("open");
       el.appendChild(badge);
       el.appendChild(list);
@@ -372,7 +488,7 @@
     return el;
   }
 
-  function renderTodoItem(td) {
+  function renderTodoItem(td, blk) {
     const el = h("div", "todo-item");
     el.innerHTML = `
       <div class="ti-head">
@@ -385,6 +501,78 @@
         ${td.assignee ? " &middot; " + esc(td.assignee) : ""}
         ${td.createdAt ? " &middot; " + esc(td.createdAt.slice(0, 10)) : ""}
       </div>`;
+
+    // AI triage button
+    if (blk && paper && td.id) {
+      const triageBtn = h("button", "fb-triage-btn", "AI Triage");
+      const triageArea = h("div", "");
+      triageBtn.onclick = async (e) => {
+        e.stopPropagation();
+        triageBtn.disabled = true;
+        triageBtn.textContent = "Triaging...";
+        triageArea.innerHTML = "";
+        try {
+          const res = await fetch("/api/feedback/triage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id }),
+          });
+          const data = await res.json();
+          if (data.error && !data.assessment) throw new Error(data.error);
+          const result = h("div", "triage-result");
+          result.innerHTML = `<div class="triage-assessment">${esc(data.assessment)}</div>`;
+          if (data.error) result.innerHTML += `<div class="char-error">${esc(data.error)}</div>`;
+          if (data.actionable && data.proposedEdit) {
+            const action = h("div", "triage-action");
+            action.innerHTML = `<span>${esc(data.proposedEdit.description)}</span>`;
+
+            // Branch selector for where to apply
+            const brSelect = h("select", "triage-branch-select");
+            const optCurrent = h("option", "", currentBranch + " (current)");
+            optCurrent.value = "__current__";
+            brSelect.appendChild(optCurrent);
+            const optNew = h("option", "", "New branch");
+            optNew.value = "__new__";
+            brSelect.appendChild(optNew);
+            action.appendChild(brSelect);
+
+            const applyBtn = h("button", "triage-action-btn", "Apply Edit");
+            applyBtn.onclick = async (ev) => {
+              ev.stopPropagation();
+              applyBtn.disabled = true;
+              applyBtn.textContent = "Applying...";
+              try {
+                const saveRes = await fetch("/api/block/save", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, md: data.proposedEdit.newMd }),
+                });
+                if (!saveRes.ok) throw new Error(`${saveRes.status}`);
+                showToast("Edit applied to " + blk.rootName);
+                // Reload paper to reflect changes
+                const hash = location.hash;
+                const parts = hash.slice(2).split("/").filter(Boolean);
+                if (parts[0] === "paper" && parts[1]) loadPaper(parts[1]);
+              } catch (err) {
+                showToast("Failed: " + err.message);
+              }
+              applyBtn.textContent = "Apply Edit";
+              applyBtn.disabled = false;
+            };
+            action.appendChild(applyBtn);
+            result.appendChild(action);
+          }
+          triageArea.appendChild(result);
+        } catch (err) {
+          triageArea.innerHTML = `<div class="char-error">${esc(err.message)}</div>`;
+        }
+        triageBtn.textContent = "AI Triage";
+        triageBtn.disabled = false;
+      };
+      el.querySelector(".ti-meta").appendChild(triageBtn);
+      el.appendChild(triageArea);
+    }
+
     return el;
   }
 
@@ -530,7 +718,7 @@
       // show in history
       if (data.todo) {
         const history = $("#fb-history");
-        history.prepend(renderTodoItem(data.todo));
+        history.prepend(renderTodoItem(data.todo, fbBlock));
       }
       fbText.value = "";
       closeFeedback();
@@ -558,6 +746,236 @@
       };
       rec.start();
     };
+  }
+
+  // ── Diff view ──────────────────────────────────────────
+  async function loadDiff() {
+    updateNav();
+    app.innerHTML = '<div class="loading">computing diff...</div>';
+    try {
+      const base = "main";
+      const head = selectedBranch || currentBranch;
+      const data = await api(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`);
+      diffData = data;
+      renderDiff();
+    } catch (e) {
+      app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
+    }
+  }
+
+  function renderDiff() {
+    if (!diffData) return;
+    const wrap = h("div", "paper-layout");
+
+    // sidebar with change markers
+    const sb = h("aside", "sidebar");
+    const sbHead = h("div", "sidebar-header");
+    sbHead.innerHTML = `Diff: <strong>${esc(diffData.base)}</strong> \u2192 <strong>${esc(diffData.head)}</strong>`;
+    sb.appendChild(sbHead);
+
+    const summary = h("div", "diff-summary");
+    summary.innerHTML = `
+      <span class="diff-stat added">+${diffData.summary.added} added</span>
+      <span class="diff-stat removed">\u2212${diffData.summary.removed} removed</span>
+      <span class="diff-stat changed">\u0394${diffData.summary.changed} changed</span>
+      <span class="diff-stat unchanged">${diffData.summary.unchanged} unchanged</span>`;
+    sb.appendChild(summary);
+
+    // Block list in sidebar — only changed/added/removed, then collapsed unchanged
+    const changedBlocks = diffData.blocks.filter(b => b.status !== "unchanged");
+    const unchangedBlocks = diffData.blocks.filter(b => b.status === "unchanged");
+
+    for (const blk of changedBlocks) {
+      const el = h("div", `sb-blk diff-${blk.status}`);
+      const icon = blk.status === "added" ? "+" : blk.status === "removed" ? "\u2212" : "\u0394";
+      el.innerHTML = `<span class="diff-icon">${icon}</span> ${esc(blk.title || blk.label || blk.rootName)}`;
+      el.onclick = () => {
+        const target = document.getElementById(`diff-${blk.rootName}`);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+      sb.appendChild(el);
+    }
+
+    if (unchangedBlocks.length) {
+      const toggle = h("div", "sb-collapse");
+      toggle.innerHTML = `<span class="arrow">\u25B6</span> ${unchangedBlocks.length} unchanged`;
+      toggle.onclick = () => toggle.classList.toggle("open");
+      sb.appendChild(toggle);
+      const list = h("div", "sb-collapsed-list");
+      for (const blk of unchangedBlocks) {
+        const el = h("div", "sb-blk diff-unchanged");
+        el.textContent = blk.title || blk.label || blk.rootName;
+        list.appendChild(el);
+      }
+      sb.appendChild(list);
+    }
+
+    wrap.appendChild(sb);
+
+    // content
+    const content = h("div", "paper-content");
+    const hdr = h("div", "diff-header");
+    hdr.innerHTML = `
+      <h1>Changes: ${esc(diffData.base)} \u2192 ${esc(diffData.head)}</h1>
+      <div class="diff-stats-bar">
+        <span class="added">+${diffData.summary.added}</span>
+        <span class="removed">\u2212${diffData.summary.removed}</span>
+        <span class="changed">\u0394${diffData.summary.changed}</span>
+      </div>`;
+
+    // AI characterize button + results area
+    const charSection = h("div", "characterize-section");
+    const charBtn = h("button", "char-btn", "Characterize with AI");
+    const charResult = h("div", "char-result");
+    charBtn.onclick = async () => {
+      charBtn.disabled = true;
+      charBtn.textContent = "Analyzing...";
+      charResult.innerHTML = "";
+      try {
+        const data = await api(`/api/characterize?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(diffData.base)}&head=${encodeURIComponent(diffData.head)}`);
+        charResult.innerHTML = `
+          <div class="char-title">${esc(data.title)}</div>
+          <div class="char-summary">${esc(data.summary)}</div>
+          <div class="char-meta">
+            <span class="char-impact char-impact-${data.impact}">${esc(data.impact)}</span>
+            ${(data.categories || []).map(c => `<span class="char-cat">${esc(c)}</span>`).join("")}
+          </div>
+          ${data.suggestions?.length ? `<div class="char-suggestions"><strong>Suggestions:</strong><ul>${data.suggestions.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>` : ""}
+          ${data.error ? `<div class="char-error">${esc(data.error)}</div>` : ""}`;
+      } catch (e) {
+        charResult.innerHTML = `<div class="char-error">${esc(e.message)}</div>`;
+      }
+      charBtn.textContent = "Characterize with AI";
+      charBtn.disabled = false;
+    };
+    charSection.appendChild(charBtn);
+    charSection.appendChild(charResult);
+    hdr.appendChild(charSection);
+
+    content.appendChild(hdr);
+
+    // Changed blocks first, then unchanged (collapsed)
+    for (const blk of changedBlocks) {
+      content.appendChild(renderDiffBlock(blk));
+    }
+
+    if (unchangedBlocks.length) {
+      const collapsedSection = h("details", "diff-unchanged-section");
+      const summ = h("summary", "", `${unchangedBlocks.length} unchanged blocks`);
+      collapsedSection.appendChild(summ);
+      for (const blk of unchangedBlocks) {
+        const el = h("div", "env diff-unchanged-block");
+        el.id = `diff-${blk.rootName}`;
+        el.innerHTML = `<div class="bh"><span class="bk">${esc(blk.kind)}</span> ${blk.title ? `<span class="bt">${esc(blk.title)}</span>` : ""}</div>`;
+        collapsedSection.appendChild(el);
+      }
+      content.appendChild(collapsedSection);
+    }
+
+    wrap.appendChild(content);
+    app.innerHTML = "";
+    app.appendChild(wrap);
+    renderMath(app);
+  }
+
+  function renderDiffBlock(blk) {
+    const el = h("div", `env diff-block diff-${blk.status}`);
+    el.id = `diff-${blk.rootName}`;
+
+    // header with diff status badge
+    const statusIcon = blk.status === "added" ? "+" : blk.status === "removed" ? "\u2212" : "\u0394";
+    const bh = h("div", "bh");
+    bh.innerHTML = `
+      <span class="diff-badge diff-badge-${blk.status}">${statusIcon} ${esc(blk.status)}</span>
+      <span class="bk">${esc(blk.kind)}</span>
+      ${blk.title ? `<span class="bt">${esc(blk.title)}</span>` : ""}
+      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}`;
+    el.appendChild(bh);
+
+    // Status change indicator
+    if (blk.statusDiff) {
+      const sd = h("div", "diff-status-change");
+      sd.innerHTML = `Status: <span class="diff-old">${esc(blk.statusDiff.base)}</span> \u2192 <span class="diff-new">${esc(blk.statusDiff.head)}</span>`;
+      el.appendChild(sd);
+    }
+
+    // Markdown diff
+    if (blk.mdDiff) {
+      const diffEl = h("div", "diff-content");
+      diffEl.appendChild(renderLineDiff(blk.mdDiff.base, blk.mdDiff.head));
+      el.appendChild(diffEl);
+    }
+
+    // Lean diff
+    if (blk.leanDiff) {
+      const leanDiffEl = h("div", "diff-lean");
+      const leanHeader = h("div", "diff-lean-header", "\u2200 Lean source");
+      leanDiffEl.appendChild(leanHeader);
+      leanDiffEl.appendChild(renderLineDiff(blk.leanDiff.base, blk.leanDiff.head));
+      el.appendChild(leanDiffEl);
+    }
+
+    return el;
+  }
+
+  /** Simple line-by-line diff renderer. */
+  function renderLineDiff(base, head) {
+    const baseLines = (base || "").split("\n");
+    const headLines = (head || "").split("\n");
+    const el = h("div", "line-diff");
+
+    // Simple LCS-based diff
+    const lcs = computeLCS(baseLines, headLines);
+    let bi = 0, hi = 0, li = 0;
+
+    while (bi < baseLines.length || hi < headLines.length) {
+      if (li < lcs.length && bi < baseLines.length && hi < headLines.length
+          && baseLines[bi] === lcs[li] && headLines[hi] === lcs[li]) {
+        // context line (same in both)
+        const line = h("div", "diff-line ctx");
+        line.innerHTML = `<span class="diff-gutter"> </span><span class="diff-text">${esc(baseLines[bi])}</span>`;
+        el.appendChild(line);
+        bi++; hi++; li++;
+      } else {
+        // removed lines from base
+        while (bi < baseLines.length && (li >= lcs.length || baseLines[bi] !== lcs[li])) {
+          const line = h("div", "diff-line del");
+          line.innerHTML = `<span class="diff-gutter">\u2212</span><span class="diff-text">${esc(baseLines[bi])}</span>`;
+          el.appendChild(line);
+          bi++;
+        }
+        // added lines from head
+        while (hi < headLines.length && (li >= lcs.length || headLines[hi] !== lcs[li])) {
+          const line = h("div", "diff-line ins");
+          line.innerHTML = `<span class="diff-gutter">+</span><span class="diff-text">${esc(headLines[hi])}</span>`;
+          el.appendChild(line);
+          hi++;
+        }
+      }
+    }
+
+    return el;
+  }
+
+  /** Compute longest common subsequence of two arrays. */
+  function computeLCS(a, b) {
+    const m = a.length, n = b.length;
+    // For very large files, skip LCS and just show side-by-side
+    if (m > 500 || n > 500) return [];
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        dp[i][j] = a[i - 1] === b[j - 1] ? dp[i - 1][j - 1] + 1 : Math.max(dp[i - 1][j], dp[i][j - 1]);
+      }
+    }
+    const result = [];
+    let i = m, j = n;
+    while (i > 0 && j > 0) {
+      if (a[i - 1] === b[j - 1]) { result.unshift(a[i - 1]); i--; j--; }
+      else if (dp[i - 1][j] > dp[i][j - 1]) i--;
+      else j--;
+    }
+    return result;
   }
 
   // ── Markdown → HTML (minimal) ───────────────────────────
@@ -649,5 +1067,8 @@
   }
 
   // ── Boot ────────────────────────────────────────────────
-  route();
+  loadBranches().then(() => {
+    startBranchPolling();
+    route();
+  });
 })();

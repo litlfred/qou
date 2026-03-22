@@ -8,5 +8,5 @@ export default proof({
     decl: "QOU.categorical_irreducible",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "proved",
 });

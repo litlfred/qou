@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.WeightDecomposition",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-observable-universe", "def:maximal-torus", "def:higher-forms"],
   tags: ["weight", "decomposition"],
   rendered: [
