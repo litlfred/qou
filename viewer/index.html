@@ -2234,7 +2234,7 @@
                 if (t) {
                   const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
                   if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  t.scrollIntoView({behavior:'smooth', block:'center'});
+                  t.scrollIntoView({behavior:'smooth', block:'start'});
                 }
               }, 50);
             };
@@ -3175,7 +3175,7 @@
           // Force lazy-hydrate
           const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
           if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           // Open inline editor if it exists
           setTimeout(() => {
             if (el._inlineEditor && !el._inlineEditor.editor.classList.contains('open')) {
@@ -3283,7 +3283,7 @@
       const stub = wrap?.previousElementSibling;
       if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
 
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       el.style.outline = '2px solid var(--ac)';
       setTimeout(() => { el.style.outline = ''; }, 2000);
 
@@ -3558,7 +3558,7 @@
                 if (el) {
                   const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
                   if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  el.scrollIntoView({behavior:'smooth',block:'center'});
+                  el.scrollIntoView({behavior:'smooth',block:'start'});
                   el.style.outline = '2px solid var(--yel)';
                   setTimeout(() => { el.style.outline = ''; }, 2500);
                 }
