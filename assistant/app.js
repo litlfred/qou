@@ -18,9 +18,31 @@
   let paper = null;       // ResolvedPaper
   let mode = "read";      // "read" | "qc"
   let blockIndex = {};    // label → ResolvedBlock (for cross-ref lookup)
+  let currentUser = null; // { email, name, provider, role } or null
 
   const app = $("#app");
   const navLinks = $("#nav-links");
+
+  // ── Auth: fetch current user ──────────────────────────────
+  async function fetchUser() {
+    try {
+      const r = await fetch("/auth/me");
+      if (r.ok) {
+        currentUser = await r.json();
+      } else {
+        currentUser = null;
+      }
+    } catch {
+      // Local dev — no auth gateway, treat as owner
+      currentUser = { email: "local", name: "Local Dev", provider: "github", role: "owner" };
+    }
+  }
+
+  function userCan(minRole) {
+    const levels = { viewer: 1, collaborator: 2, owner: 3 };
+    if (!currentUser) return false;
+    return (levels[currentUser.role] || 0) >= (levels[minRole] || 99);
+  }
 
   // ── Theme / font toggles ────────────────────────────────
   $("#c-th").onclick = () => {
@@ -160,6 +182,21 @@
       qcLink.onclick = (e) => { e.preventDefault(); mode = "qc"; renderQC(); };
       navLinks.appendChild(qcLink);
     }
+
+    // User badge
+    const navRight = $(".nav-right");
+    const existingBadge = $(".user-badge", navRight);
+    if (existingBadge) existingBadge.remove();
+    if (currentUser) {
+      const badge = h("span", "user-badge");
+      const roleClass = currentUser.role === "owner" ? "role-owner"
+        : currentUser.role === "collaborator" ? "role-collab" : "role-viewer";
+      badge.innerHTML = `<span class="user-name">${esc(currentUser.name)}</span><span class="user-role ${roleClass}">${esc(currentUser.role)}</span>`;
+      const logout = h("a", "user-logout", "logout");
+      logout.href = "/auth/logout";
+      badge.appendChild(logout);
+      navRight.insertBefore(badge, navRight.firstChild);
+    }
   }
 
   // ── Paper: read mode ────────────────────────────────────
@@ -265,15 +302,25 @@
       ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}`;
     el.appendChild(bh);
 
-    // action bar
+    // action bar (role-gated)
     const actions = h("div", "blk-actions");
     const srcBtn = h("button", "blk-act", "src");
     srcBtn.title = "Toggle source";
     actions.appendChild(srcBtn);
-    const fbBtn = h("button", "blk-act", "fb");
-    fbBtn.title = "Send feedback";
-    fbBtn.onclick = () => openFeedback(blk);
-    actions.appendChild(fbBtn);
+    // Feedback: any authenticated user (viewer+)
+    if (currentUser) {
+      const fbBtn = h("button", "blk-act", "fb");
+      fbBtn.title = "Send feedback";
+      fbBtn.onclick = () => openFeedback(blk);
+      actions.appendChild(fbBtn);
+    }
+    // Edit: collaborator+ only
+    if (userCan("collaborator")) {
+      const editBtn = h("button", "blk-act blk-act-edit", "edit");
+      editBtn.title = "Edit content (WYSIWYG)";
+      editBtn.onclick = () => openEditor(blk);
+      actions.appendChild(editBtn);
+    }
     el.appendChild(actions);
 
     // body
@@ -321,7 +368,7 @@
       const badge = h("span", "todo-badge",
         `${blk.todos.length} todo${blk.todos.length > 1 ? "s" : ""}`);
       const list = h("div", "todo-list");
-      for (const td of blk.todos) list.appendChild(renderTodoItem(td));
+      for (const td of blk.todos) list.appendChild(renderTodoItem(td, paper?.id, blk.rootName));
       badge.onclick = () => list.classList.toggle("open");
       el.appendChild(badge);
       el.appendChild(list);
@@ -330,7 +377,7 @@
     return el;
   }
 
-  function renderTodoItem(td) {
+  function renderTodoItem(td, paperId, rootName) {
     const el = h("div", "todo-item");
     el.innerHTML = `
       <div class="ti-head">
@@ -339,10 +386,30 @@
       </div>
       ${td.comment ? `<div class="ti-comment">${esc(td.comment)}</div>` : ""}
       <div class="ti-meta">
+        ${td.author ? esc(td.author) + " &middot; " : ""}
         ${td.priority ? td.priority : ""}
         ${td.assignee ? " &middot; " + esc(td.assignee) : ""}
         ${td.createdAt ? " &middot; " + esc(td.createdAt.slice(0, 10)) : ""}
       </div>`;
+    // Delete button: collaborator+ only
+    if (userCan("collaborator") && td.id && paperId && rootName) {
+      const del = h("button", "ti-delete", "\u00d7");
+      del.title = "Delete this todo";
+      del.onclick = async (e) => {
+        e.stopPropagation();
+        if (!confirm("Delete this feedback item?")) return;
+        try {
+          const res = await fetch("/api/feedback", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paperId, rootName, todoId: td.id }),
+          });
+          if (res.ok) el.remove();
+          else alert("Failed to delete: " + (await res.json()).error);
+        } catch (err) { alert("Failed: " + err.message); }
+      };
+      el.querySelector(".ti-head").appendChild(del);
+    }
     return el;
   }
 
@@ -488,7 +555,7 @@
       // show in history
       if (data.todo) {
         const history = $("#fb-history");
-        history.prepend(renderTodoItem(data.todo));
+        history.prepend(renderTodoItem(data.todo, paper?.id, fbBlock?.rootName));
       }
       fbText.value = "";
       closeFeedback();
@@ -585,6 +652,60 @@
     return m[k] || k;
   }
 
+  // ── WYSIWYG editor (collaborator+ only) ─────────────────
+  function openEditor(blk) {
+    if (!userCan("collaborator")) return;
+    const overlay = h("div", "editor-overlay");
+    const panel = h("div", "editor-panel");
+    panel.innerHTML = `
+      <div class="editor-head">
+        <h3>Edit: ${esc(blk.title || blk.rootName)}</h3>
+        <button class="editor-close">&times;</button>
+      </div>`;
+    const textarea = h("textarea", "editor-textarea");
+    textarea.value = blk.md || "";
+    textarea.rows = 20;
+    panel.appendChild(textarea);
+
+    const actions = h("div", "editor-actions");
+    const saveBtn = h("button", "editor-save", "Save");
+    const cancelBtn = h("button", "editor-cancel", "Cancel");
+    actions.appendChild(cancelBtn);
+    actions.appendChild(saveBtn);
+    panel.appendChild(actions);
+
+    function close() { overlay.remove(); panel.remove(); }
+    overlay.onclick = close;
+    panel.querySelector(".editor-close").onclick = close;
+    cancelBtn.onclick = close;
+
+    saveBtn.onclick = async () => {
+      try {
+        const res = await fetch("/api/block/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            paperId: paper.id,
+            rootName: blk.rootName,
+            md: textarea.value,
+          }),
+        });
+        if (!res.ok) {
+          const data = await res.json();
+          alert("Save failed: " + (data.error || res.status));
+          return;
+        }
+        blk.md = textarea.value;
+        close();
+        renderPaper();
+      } catch (e) { alert("Save failed: " + e.message); }
+    };
+
+    document.body.appendChild(overlay);
+    document.body.appendChild(panel);
+    textarea.focus();
+  }
+
   // ── Boot ────────────────────────────────────────────────
-  route();
+  fetchUser().then(() => route());
 })();

@@ -5,6 +5,20 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## CRITICAL: Protected Files — DO NOT MODIFY
+
+The following files are **strictly off-limits** to all coding agents
+(Claude, Copilot, etc.). Only the repo owner may edit them manually:
+
+- `deploy/google-viewers.txt` — Google OAuth viewer whitelist
+- `deploy/github-collaborators.txt` — GitHub OAuth collaborator whitelist
+- `.github/CODEOWNERS` — File ownership rules
+
+These files control authentication access to the folio deployment.
+**Never** read, write, edit, or suggest changes to these files.
+If asked to modify them, refuse and explain that only the repo owner
+can change whitelist files manually.
+
 ## Skills
 
 Skills are organized under `.claude/skills/`:
@@ -34,6 +48,7 @@ When a user request arrives, route to the right skill(s):
 | "build content → LaTeX" | `local/content-validation` |
 | "add / edit content block" | `local/content-validation` + relevant skill |
 | "test / unit test / coverage" | `local/test-engineer` |
+| "deploy / auth / OAuth / roles" | `local/deployment-auth` |
 
 **Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
 `local/content-validation` + relevant content skill. (2) Does it touch `.tex`?
@@ -160,12 +175,14 @@ cd deploy && ./setup-remote.sh
 
 All settings are driven by `lean-mcp.config.json` at the repo root.
 
-Architecture: `Client → oauth2-proxy (Google OAuth) → lean-lsp-mcp (HTTP)`
+Architecture: `Client → Caddy (TLS) → auth-gateway (dual OAuth) → lean-lsp-mcp (HTTP)`
 
 - Docker image built by CI on every push to main (`build-lean-mcp.yml`)
 - All Lean deps and oleans baked into the image for fast startup (~10-20s)
-- Auth: Google OAuth with email whitelist (from `lean-mcp.config.json`)
-- Auto-update: `self-update.sh` polls git + GHCR every minute via cron
+- Auth: Dual OAuth — Google (viewers) + GitHub (collaborators/owner)
+- Roles: viewer (read + feedback), collaborator (edit + branches), owner (commit to main)
+- Whitelists: `deploy/google-viewers.txt` + `deploy/github-collaborators.txt` (manually managed)
+- Auto-update: `self-update-folio.sh` polls git + GHCR every minute via cron
 - Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
 - Hosting: Hetzner CX22 (~€4.50/mo), provisioned via `provision-hetzner.sh`
 

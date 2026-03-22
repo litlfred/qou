@@ -31,6 +31,37 @@ import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR } from "./paths.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
 
+// ── Role-based access control ────────────────────────────────────
+// Auth-gateway injects X-User-Role, X-User-Email, X-User-Name headers.
+// Roles: viewer < collaborator < owner (ascending privilege).
+
+type UserRole = "viewer" | "collaborator" | "owner";
+const ROLE_LEVELS: Record<UserRole, number> = { viewer: 1, collaborator: 2, owner: 3 };
+
+function getUserRole(req: Request): UserRole {
+  const role = req.headers.get("x-user-role") as UserRole | null;
+  return role && role in ROLE_LEVELS ? role : "viewer";
+}
+
+function getUserEmail(req: Request): string {
+  return req.headers.get("x-user-email") || "anonymous";
+}
+
+function getUserName(req: Request): string {
+  return req.headers.get("x-user-name") || "anonymous";
+}
+
+function hasRole(req: Request, minRole: UserRole): boolean {
+  return ROLE_LEVELS[getUserRole(req)] >= ROLE_LEVELS[minRole];
+}
+
+function forbidden(action: string, minRole: UserRole): Response {
+  return Response.json(
+    { error: `Forbidden: ${action} requires ${minRole} role or higher` },
+    { status: 403 }
+  );
+}
+
 // ── Feedback storage (gitignored, survives branch switches) ─────
 
 function feedbackPath(paperId: string, rootName: string): string {
@@ -436,8 +467,11 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 async function handlePostRequest(url: URL, req: Request): Promise<Response | null> {
   const path = url.pathname;
 
-  // ── Save block markdown ────────────────────────────────────
+  // ── Save block markdown (collaborator+ only) ─────────────────
   if (path === "/api/block/save") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("editing content", "collaborator");
+    }
     try {
       const body = await req.json() as { paperId: string; rootName: string; md: string };
       const { writeFileSync, readdirSync } = await import("fs");
@@ -462,10 +496,10 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
-  // ── Submit feedback as todo ────────────────────────────────
+  // ── Submit feedback as todo (viewer+ — any authenticated user) ──
   // Stored in .qou-feedback/ (gitignored), not in the content tree.
   // Survives branch switches and won't be accidentally committed.
-  if (path === "/api/feedback") {
+  if (path === "/api/feedback" && req.method === "POST") {
     try {
       const body = await req.json() as {
         paperId: string; rootName: string;
@@ -480,6 +514,8 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         status: "open",
         priority: body.priority || "medium",
         origin: "human",
+        author: getUserName(req),
+        authorEmail: getUserEmail(req),
         assignee: body.assignee || "editor-agent",
         createdAt: new Date().toISOString(),
       };
@@ -489,6 +525,27 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       writeFeedback(body.paperId, body.rootName, todos);
 
       return Response.json({ ok: true, todo });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Delete feedback todo (collaborator+ only) ─────────────────
+  if (path === "/api/feedback" && req.method === "DELETE") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("deleting feedback", "collaborator");
+    }
+    try {
+      const body = await req.json() as {
+        paperId: string; rootName: string; todoId: string;
+      };
+      const todos = readFeedback(body.paperId, body.rootName) as any[];
+      const filtered = todos.filter((t: any) => t.id !== body.todoId);
+      if (filtered.length === todos.length) {
+        return Response.json({ error: "Todo not found" }, { status: 404 });
+      }
+      writeFeedback(body.paperId, body.rootName, filtered);
+      return Response.json({ ok: true, deleted: body.todoId });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
@@ -582,8 +639,8 @@ if (mode === "stdio") {
         return Response.json({ status: "ok", mode: "stdio", version: "0.1.0" });
       }
 
-      // POST requests (save, feedback)
-      if (req.method === "POST") {
+      // POST/DELETE requests (save, feedback)
+      if (req.method === "POST" || req.method === "DELETE") {
         const postRes = await handlePostRequest(url, req);
         if (postRes) { log('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
       }
@@ -628,8 +685,8 @@ if (mode === "stdio") {
         return Response.redirect(`/assistant/`, 302);
       }
 
-      // POST requests
-      if (req.method === "POST") {
+      // POST/DELETE requests
+      if (req.method === "POST" || req.method === "DELETE") {
         const postRes = await handlePostRequest(url, req);
         if (postRes) return postRes;
       }

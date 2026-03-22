@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generate deploy/.env, authorized-emails.txt, and Caddyfile
+# Generate deploy/.env, whitelist files, and Caddyfile
 # from lean-mcp.config.json.
 #
 # Reads the repo-root config file and produces deployment artifacts.
@@ -39,13 +39,12 @@ parse_json() {
 parse_json_nested() {
     python3 -c "import json,sys; d=json.load(open('$CONFIG')); print(d.get('$1',{}).get('$2','$3'))"
 }
-parse_json_array() {
-    python3 -c "import json,sys; d=json.load(open('$CONFIG')); [print(e) for e in d.get('$1',[])]"
-}
 
 IMAGE=$(parse_json image "ghcr.io/litlfred/qou/lean-mcp")
 MCP_PORT=$(parse_json mcp_internal_port "8080")
-OAUTH_PROVIDER=$(parse_json oauth_provider "google")
+OWNER_USERNAME=$(parse_json_nested auth owner "litlfred")
+SESSION_MAX_AGE_HRS=$(parse_json_nested auth session_max_age_hours "24")
+SESSION_MAX_AGE=$(( SESSION_MAX_AGE_HRS * 3600 ))
 
 if [ "$MODE" = "folio" ]; then
     DOMAIN=$(parse_json_nested folio domain "folio.example.org")
@@ -61,7 +60,7 @@ fi
 echo "=== Generating deploy config ($MODE mode) ==="
 echo "  Domain:    $DOMAIN"
 echo "  Image:     $IMAGE"
-echo "  OAuth:     $OAUTH_PROVIDER"
+echo "  Owner:     $OWNER_USERNAME"
 [ "$MODE" = "folio" ] && echo "  Viewer:    $VIEWER_DIR/"
 echo ""
 
@@ -72,12 +71,23 @@ COOKIE=$(openssl rand -base64 32 | head -c 32)
 if [ "$CI" = true ]; then
     GOOGLE_CLIENT_ID="FILL_ME_IN"
     GOOGLE_CLIENT_SECRET="FILL_ME_IN"
+    GITHUB_CLIENT_ID="FILL_ME_IN"
+    GITHUB_CLIENT_SECRET="FILL_ME_IN"
 else
-    echo "Google OAuth credentials (create at https://console.cloud.google.com/apis/credentials):"
-    echo "  Authorized redirect URI: https://$DOMAIN/oauth2/callback"
+    echo "── Google OAuth (for viewers) ──"
+    echo "  Create at: https://console.cloud.google.com/apis/credentials"
+    echo "  Redirect URI: https://$DOMAIN/auth/google/callback"
     echo ""
     read -rp "  Google Client ID: " GOOGLE_CLIENT_ID
     read -rsp "  Google Client Secret: " GOOGLE_CLIENT_SECRET
+    echo ""
+    echo ""
+    echo "── GitHub OAuth (for collaborators) ──"
+    echo "  Create at: https://github.com/settings/developers"
+    echo "  Callback URL: https://$DOMAIN/auth/github/callback"
+    echo ""
+    read -rp "  GitHub Client ID: " GITHUB_CLIENT_ID
+    read -rsp "  GitHub Client Secret: " GITHUB_CLIENT_SECRET
     echo ""
 fi
 
@@ -98,18 +108,32 @@ LEAN_MCP_INTERNAL_PORT=$MCP_PORT
 # ── Lean MCP Server ──────────────────────────────────────────────
 LEAN_LSP_MCP_TOKEN=$LEAN_TOKEN
 
-# ── Google OAuth ─────────────────────────────────────────────────
-OAUTH2_PROXY_PROVIDER=$OAUTH_PROVIDER
+# ── Auth Gateway ─────────────────────────────────────────────────
+COOKIE_SECRET=$COOKIE
+OWNER_USERNAME=$OWNER_USERNAME
+SESSION_MAX_AGE=$SESSION_MAX_AGE
+
+# ── Google OAuth (viewers) ───────────────────────────────────────
 GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET
-COOKIE_SECRET=$COOKIE
+
+# ── GitHub OAuth (collaborators) ─────────────────────────────────
+GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID
+GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET
 ENVEOF
 
 echo "  ✓ .env generated"
 
-# ── Generate authorized-emails.txt ───────────────────────────────
-parse_json_array authorized_emails > "$DEPLOY_DIR/authorized-emails.txt"
-echo "  ✓ authorized-emails.txt generated ($(wc -l < "$DEPLOY_DIR/authorized-emails.txt") emails)"
+# ── Copy whitelist files ─────────────────────────────────────────
+# These are the source-of-truth whitelists from the repo
+for wl in google-viewers.txt github-collaborators.txt; do
+    if [ -f "$DEPLOY_DIR/$wl" ]; then
+        echo "  ✓ $wl present"
+    else
+        echo "  ⚠ $wl not found — creating empty"
+        echo "# Whitelist — add one entry per line" > "$DEPLOY_DIR/$wl"
+    fi
+done
 
 # ── Generate Caddyfile from template ──────────────────────────────
 if [ -f "$TEMPLATE" ]; then
@@ -131,6 +155,15 @@ if [ "$MODE" = "folio" ]; then
         echo "  ✓ Viewer files copied to deploy/viewer/"
     else
         echo "  ⚠ Viewer dir not found: $VIEWER_SRC"
+    fi
+
+    # Copy assistant files
+    ASSISTANT_SRC="$REPO_ROOT/assistant"
+    ASSISTANT_DST="$DEPLOY_DIR/assistant"
+    if [ -d "$ASSISTANT_SRC" ]; then
+        rm -rf "$ASSISTANT_DST"
+        cp -r "$ASSISTANT_SRC" "$ASSISTANT_DST"
+        echo "  ✓ Assistant files copied to deploy/assistant/"
     fi
 fi
 

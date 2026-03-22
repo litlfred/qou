@@ -1,8 +1,6 @@
 {
   "domain": "lean.litlfred.org",
   "port": 443,
-  "oauth_provider": "google",
-  "authorized_emails": ["litlfred@gmail.com"],
   "image": "ghcr.io/litlfred/qou/lean-mcp",
   "transport": "streamable-http",
   "mcp_internal_port": 8080,
@@ -12,6 +10,18 @@
     "domain": "folio.litlfred.org",
     "viewer_dir": "viewer",
     "clear_cache_on_update": true
+  },
+  "auth": {
+    "google": {
+      "whitelist": "deploy/google-viewers.txt",
+      "role": "viewer"
+    },
+    "github": {
+      "whitelist": "deploy/github-collaborators.txt",
+      "role": "collaborator"
+    },
+    "owner": "litlfred",
+    "session_max_age_hours": 24
   },
   "hetzner": {
     "server_type": "cx22",

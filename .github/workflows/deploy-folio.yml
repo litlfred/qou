@@ -5,8 +5,10 @@
 #
 # Required GitHub secrets:
 #   HETZNER_API_TOKEN    — Hetzner Cloud API token
-#   GOOGLE_CLIENT_ID     — Google OAuth client ID
+#   GOOGLE_CLIENT_ID     — Google OAuth client ID (viewer auth)
 #   GOOGLE_CLIENT_SECRET — Google OAuth client secret
+#   GITHUB_OAUTH_CLIENT_ID     — GitHub OAuth client ID (collaborator auth)
+#   GITHUB_OAUTH_CLIENT_SECRET — GitHub OAuth client secret
 #
 # Manual trigger only (workflow_dispatch). Choose an action:
 #   provision — Create server + deploy from scratch
@@ -58,12 +60,14 @@ jobs:
           c = json.load(open('lean-mcp.config.json'))
           f = c.get('folio', {})
           h = c.get('hetzner', {})
+          a = c.get('auth', {})
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
               out.write(f"domain={f.get('domain', 'folio.example.org')}\n")
               out.write(f"image={c.get('image', 'ghcr.io/litlfred/qou/lean-mcp')}\n")
               out.write(f"mcp_port={c.get('mcp_internal_port', 8080)}\n")
-              out.write(f"oauth_provider={c.get('oauth_provider', 'google')}\n")
               out.write(f"viewer_dir={f.get('viewer_dir', 'viewer')}\n")
+              out.write(f"owner_username={a.get('owner', 'litlfred')}\n")
+              out.write(f"session_max_age={a.get('session_max_age_hours', 24) * 3600}\n")
               out.write(f"server_type={h.get('server_type', 'cx22')}\n")
               out.write(f"location={h.get('location', 'fsn1')}\n")
               out.write(f"server_image={h.get('image', 'ubuntu-24.04')}\n")
@@ -76,10 +80,16 @@ jobs:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GITHUB_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
         run: |
           # Fail fast if secrets are missing
           if [ -z "$GOOGLE_CLIENT_ID" ] || [ -z "$GOOGLE_CLIENT_SECRET" ]; then
             echo "::error::Missing GOOGLE_CLIENT_ID or GOOGLE_CLIENT_SECRET in GitHub Secrets"
+            exit 1
+          fi
+          if [ -z "$GITHUB_CLIENT_ID" ] || [ -z "$GITHUB_CLIENT_SECRET" ]; then
+            echo "::error::Missing GITHUB_OAUTH_CLIENT_ID or GITHUB_OAUTH_CLIENT_SECRET in GitHub Secrets"
             exit 1
           fi
 
@@ -93,7 +103,8 @@ jobs:
           DOMAIN="${{ steps.config.outputs.domain }}"
           IMAGE="${{ steps.config.outputs.image }}"
           MCP_PORT="${{ steps.config.outputs.mcp_port }}"
-          OAUTH_PROVIDER="${{ steps.config.outputs.oauth_provider }}"
+          OWNER_USERNAME="${{ steps.config.outputs.owner_username }}"
+          SESSION_MAX_AGE="${{ steps.config.outputs.session_max_age }}"
           SERVER_TYPE="${{ steps.config.outputs.server_type }}"
           SERVER_LOC="${{ steps.config.outputs.location }}"
           SERVER_IMG="${{ steps.config.outputs.server_image }}"
@@ -102,7 +113,6 @@ jobs:
           COOKIE_SECRET=$(openssl rand -base64 32 | head -c 32)
 
           # Build cloud-init script with secrets embedded
-          # Uses heredoc with unquoted delimiter so shell variables expand
           cat > /tmp/cloud-init.sh <<CLOUD_INIT_EOF
           #!/bin/bash
           set -euxo pipefail
@@ -121,14 +131,14 @@ jobs:
           LEAN_MCP_IMAGE=${IMAGE}
           LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
           LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
-          OAUTH2_PROXY_PROVIDER=${OAUTH_PROVIDER}
+          COOKIE_SECRET=${COOKIE_SECRET}
+          OWNER_USERNAME=${OWNER_USERNAME}
+          SESSION_MAX_AGE=${SESSION_MAX_AGE}
           GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
           GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-          COOKIE_SECRET=${COOKIE_SECRET}
+          GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+          GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
           DOTENV
-
-          python3 -c "import json; [print(e) for e in json.load(open('lean-mcp.config.json')).get('authorized_emails',[])]" \
-            > deploy/authorized-emails.txt
 
           export FOLIO_DOMAIN="${DOMAIN}"
           export LEAN_MCP_INTERNAL_PORT="${MCP_PORT}"
@@ -138,6 +148,7 @@ jobs:
             > deploy/Caddyfile
 
           cp -r viewer deploy/viewer 2>/dev/null || true
+          cp -r assistant deploy/assistant 2>/dev/null || true
 
           cd deploy
           docker compose -f docker-compose.folio.yml pull
@@ -188,6 +199,8 @@ jobs:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GITHUB_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
+          GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
         run: |
           if ! hcloud server describe "$SERVER_NAME" &>/dev/null; then
             echo "::error::Server '$SERVER_NAME' not found. Run 'provision' first."
@@ -198,7 +211,8 @@ jobs:
           DOMAIN="${{ steps.config.outputs.domain }}"
           IMAGE="${{ steps.config.outputs.image }}"
           MCP_PORT="${{ steps.config.outputs.mcp_port }}"
-          OAUTH_PROVIDER="${{ steps.config.outputs.oauth_provider }}"
+          OWNER_USERNAME="${{ steps.config.outputs.owner_username }}"
+          SESSION_MAX_AGE="${{ steps.config.outputs.session_max_age }}"
 
           # Read existing token + cookie secret from server (preserve them)
           EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env 2>/dev/null || echo "")
@@ -217,15 +231,18 @@ jobs:
           LEAN_MCP_IMAGE=${IMAGE}
           LEAN_MCP_INTERNAL_PORT=${MCP_PORT}
           LEAN_LSP_MCP_TOKEN=${LEAN_TOKEN}
-          OAUTH2_PROXY_PROVIDER=${OAUTH_PROVIDER}
+          COOKIE_SECRET=${COOKIE_SECRET}
+          OWNER_USERNAME=${OWNER_USERNAME}
+          SESSION_MAX_AGE=${SESSION_MAX_AGE}
           GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
           GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-          COOKIE_SECRET=${COOKIE_SECRET}
+          GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+          GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
           DOTENV
 
-          echo "▸ Secrets updated. Restarting oauth2-proxy..."
+          echo "▸ Secrets updated. Restarting auth-gateway..."
           hcloud server ssh "$SERVER_NAME" -- bash -c \
-            "cd /opt/qou/deploy && docker compose -f docker-compose.folio.yml restart oauth2-proxy"
+            "cd /opt/qou/deploy && docker compose -f docker-compose.folio.yml restart auth-gateway"
 
           echo "✓ OAuth creds updated on $IP ($DOMAIN)"
 

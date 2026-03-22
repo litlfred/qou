@@ -3,12 +3,9 @@
 #
 # Polls git for new commits on main. When found:
 #   1. Pulls latest code
-#   2. Regenerates Caddyfile, authorized-emails.txt, viewer files
+#   2. Regenerates Caddyfile, whitelist files, viewer + assistant files
 #   3. Checks for new Docker image
 #   4. Clears lean-mcp cached data and bounces all services
-#
-# The key difference from self-update.sh: this always refreshes the viewer
-# and clears the lean-mcp container's cached state on any code change.
 #
 # Usage:
 #   ./deploy/self-update-folio.sh
@@ -63,11 +60,9 @@ if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
                 > "$DEPLOY_DIR/Caddyfile"
         fi
 
-        # authorized-emails.txt from config
-        python3 -c "
-import json
-[print(e) for e in json.load(open('$CONFIG')).get('authorized_emails', [])]
-" > "$DEPLOY_DIR/authorized-emails.txt"
+        # Whitelist files are committed directly — no generation needed.
+        # They're mounted read-only into the auth-gateway container from deploy/.
+        # The auth-gateway re-reads them on every request.
 
         # Refresh viewer files from repo
         VIEWER_DIR=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('folio',{}).get('viewer_dir','viewer'))")
@@ -77,6 +72,15 @@ import json
             rm -rf "$VIEWER_DST"
             cp -r "$VIEWER_SRC" "$VIEWER_DST"
             echo "[$(date -Is)] Viewer files refreshed from $VIEWER_DIR/"
+        fi
+
+        # Refresh assistant files
+        ASSISTANT_SRC="$REPO_ROOT/assistant"
+        ASSISTANT_DST="$DEPLOY_DIR/assistant"
+        if [ -d "$ASSISTANT_SRC" ]; then
+            rm -rf "$ASSISTANT_DST"
+            cp -r "$ASSISTANT_SRC" "$ASSISTANT_DST"
+            echo "[$(date -Is)] Assistant files refreshed"
         fi
     fi
 
