@@ -23,6 +23,8 @@ const DEFAULTS = {
   auto_preview: true,
   formula_dpi: 300,
   default_chapter: null as string | null,
+  print_mode: "compact" as "formal" | "compact",
+  compact_inline_refs: true,
 };
 
 type Prefs = typeof DEFAULTS;
@@ -65,6 +67,10 @@ export function registerPreferenceTools(server: McpServer): void {
         .describe("DPI for formula preview PNG"),
       default_chapter: z.string().optional()
         .describe("Default chapter to render when scope=chapter"),
+      print_mode: z.enum(["formal", "compact"]).optional()
+        .describe("Print mode: formal (affiliations, expanded) or compact (dense, no affiliations)"),
+      compact_inline_refs: z.boolean().optional()
+        .describe("In compact mode, include examples/remarks directly referenced by blocks in the view"),
     },
     async ({ action, ...updates }) => {
       if (action === "reset") {

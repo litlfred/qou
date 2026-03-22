@@ -546,6 +546,35 @@ export interface Folio {
   meta?: Record<string, unknown>;
 }
 
+// ── Print modes ──────────────────────────────────────────────────
+
+/**
+ * Print mode controls document rendering density.
+ *
+ * - `"formal"` — Full academic layout with author affiliations,
+ *   page breaks between chapters, and expanded headings.
+ * - `"compact"` — Dense layout (current default): no page breaks,
+ *   normal-size headings, affiliations omitted. Referenced examples
+ *   and remarks are included unless `compactInlineRefs` is false.
+ */
+export type PrintMode = "formal" | "compact";
+
+/**
+ * Options that control what the rendering pipeline includes.
+ *
+ * Passed through build → renderChapter → renderSection.
+ */
+export interface RenderOptions {
+  /** Print mode (default: "compact"). */
+  printMode?: PrintMode;
+  /**
+   * In compact mode, include example/remark blocks that are directly
+   * referenced via `examples[]` on definitions/theorems in the same view.
+   * Default: true.  Set to false for a minimal compact output.
+   */
+  compactInlineRefs?: boolean;
+}
+
 // ── Validation result ────────────────────────────────────────────
 
 export interface ValidationIssue {

@@ -43,8 +43,10 @@ export function registerRenderTools(server: McpServer): void {
         .describe("LaTeX engine to use"),
       clean: z.boolean().default(false)
         .describe("Run latexmk -C first to clean auxiliary files"),
+      print_mode: z.enum(["formal", "compact"]).default("compact")
+        .describe("Print mode: formal (with affiliations) or compact (dense, no affiliations)"),
     },
-    async ({ scope, target, engine, clean }) => {
+    async ({ scope, target, engine, clean, print_mode }) => {
       // Check deps
       if (!hasCommand("latexmk")) {
         return {
@@ -81,6 +83,19 @@ export function registerRenderTools(server: McpServer): void {
           writeFileSync(wrapperPath, wrapper);
           texFile = wrapperPath;
           jobName = `chapter-${target}`;
+        }
+
+        // Write print-mode preamble (formal mode enables affiliations)
+        if (print_mode === "formal") {
+          writeFileSync(
+            join(REPO_ROOT, "print-mode.tex"),
+            "\\showaffiliationstrue\n",
+          );
+        } else {
+          writeFileSync(
+            join(REPO_ROOT, "print-mode.tex"),
+            "% compact mode — affiliations disabled\n",
+          );
         }
 
         // Clean if requested
