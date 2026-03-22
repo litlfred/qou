@@ -2236,8 +2236,8 @@
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.dataset.num = String(ch.number);
-        chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number}. ${inl(ch.title)}</span>`;
+        chEl.dataset.num = ch.number != null ? String(ch.number) : '★';
+        chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
 
         // Restore open/closed state from localStorage
@@ -2362,7 +2362,7 @@
         cd.dataset.chNum = String(ch.number);
         cd.style.display = 'none';
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text">${ch.number != null ? `<span class="n">Chapter ${ch.number}.</span> ` : ''}${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
         renderMath(cd);
         let secNum = 0;
         for (const sec of ch.sections) {
