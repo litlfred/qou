@@ -865,12 +865,14 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 
       // Step 2: Run latexmk to produce PDF
       if (!existsSync(BUILD_DIR)) mkdirSync(BUILD_DIR, { recursive: true });
+      // -g forces rebuild even if latexmk thinks targets are up-to-date
+      // (avoids confusion from stale aux files or missing PDF)
       const latexResult = spawnSync("latexmk", [
         "-pdf",
+        "-g",
         `-jobname=quantum-observable-universe`,
         `-output-directory=${BUILD_DIR}`,
         "-interaction=nonstopmode",
-        "-halt-on-error",
         "-file-line-error",
         MAIN_TEX,
       ], {
@@ -891,17 +893,40 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
         });
       }
 
-      // Failed — return error details (latexmk often writes to stdout)
-      const stderr = latexResult.stderr?.toString().slice(-2000) || "";
-      const stdout = latexResult.stdout?.toString().slice(-2000) || "";
-      const latexLog = (stderr + "\n" + stdout).trim().slice(-3000);
+      // Failed — return error details
+      // The real errors are in the .log file, not stderr/stdout
+      const logPath = join(BUILD_DIR, "quantum-observable-universe.log");
+      let texLog = "";
+      try {
+        const fullLog = rf(logPath, "utf-8") as string;
+        // Extract lines with "!" (LaTeX errors) plus surrounding context
+        const lines = fullLog.split("\n");
+        const errorLines: string[] = [];
+        for (let i = 0; i < lines.length; i++) {
+          if (lines[i].startsWith("!") || lines[i].includes("Fatal error") ||
+              lines[i].includes("Emergency stop") || lines[i].includes("File not found")) {
+            const start = Math.max(0, i - 2);
+            const end = Math.min(lines.length, i + 5);
+            errorLines.push(`--- line ${i + 1} ---`);
+            for (let j = start; j < end; j++) errorLines.push(lines[j]);
+          }
+        }
+        texLog = errorLines.length > 0
+          ? errorLines.join("\n").slice(-3000)
+          : fullLog.slice(-3000);
+      } catch {
+        // No .log file — fall back to stderr/stdout
+        const stderr = latexResult.stderr?.toString().slice(-2000) || "";
+        const stdout = latexResult.stdout?.toString().slice(-2000) || "";
+        texLog = (stderr + "\n" + stdout).trim().slice(-3000);
+      }
       const buildStderr = buildResult.stderr?.toString().slice(-1000) || "";
       const buildStdout = buildResult.stdout?.toString().slice(-1000) || "";
       const buildLog = (buildStderr + "\n" + buildStdout).trim().slice(-1500);
       return Response.json({
         error: "LaTeX compilation failed",
         buildLog: buildLog || undefined,
-        latexLog: latexLog || undefined,
+        latexLog: texLog || undefined,
         exitCode: latexResult.status,
       }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
