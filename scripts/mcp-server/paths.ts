@@ -29,3 +29,6 @@ export const PREFS_FILE = resolve(REPO_ROOT, ".qou-prefs.json");
 
 /** Gitignored todos directory (survives branch switches). */
 export const TODOS_DIR = resolve(REPO_ROOT, "todos");
+
+/** Gitignored feedback directory (global, hash-based IDs). */
+export const FEEDBACK_DIR = resolve(REPO_ROOT, ".qou-feedback");
