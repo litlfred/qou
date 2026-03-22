@@ -1421,9 +1421,9 @@
           }
           let secLabel = sec.title;
           const badges = [];
-          if (secTodos) badges.push(`${secTodos} todo`);
+          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
           if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
-          if (secLeanErr) badges.push(`${secLeanErr} err`);
+          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
           sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
@@ -1449,7 +1449,7 @@
             const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
             if (openTodos) {
               const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos} todo`;
+              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
               tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
               bEl.appendChild(tb);
             }
@@ -1816,7 +1816,7 @@
                 // Rebuild just the todo portion of the badge text
                 const text = summarySpan.textContent;
                 const parts = text.split(' | ').filter(p => !p.includes('todo'));
-                if (secTodos) parts.unshift(`${secTodos} todo`);
+                if (secTodos) parts.unshift(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
                 summarySpan.textContent = parts.join(' | ');
               }
             }

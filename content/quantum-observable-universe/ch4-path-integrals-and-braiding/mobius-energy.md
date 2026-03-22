@@ -30,7 +30,7 @@ Frobenius form ([Remark](#rem:frobenius-simplification)), and the
 integration excludes the diagonal $\mathrm{diag} \subset S^1 \times S^1$.
 
 Then in the classical limit $q \to 1$, the categorical Möbius energy
-recovers the classical Möbius energy up to a topological normalisation:
+recovers the classical Möbius energy up to a topological normalization:
 
 $$
   \lim_{q \to 1}\; E_{\mathrm{cat}}(\gamma)

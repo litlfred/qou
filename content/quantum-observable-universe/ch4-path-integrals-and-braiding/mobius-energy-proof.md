@@ -29,7 +29,7 @@ of the connection $\nabla$: the Frobenius form $\lambda$ assigns a
 diverging cost when two strands of $\gamma$ approach.
 
 *Step 3: Subtraction of the self-energy.*
-The diagonal regularisation in the categorical integral (exclusion
+The diagonal regularization in the categorical integral (exclusion
 of $\mathrm{diag} \subset S^1 \times S^1$) matches the arc-length
 subtraction $1/D(\gamma(s),\gamma(t))^2$ in the classical Möbius
 energy.  In the $q$-deformed setting, this subtraction arises
