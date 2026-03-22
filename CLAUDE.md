@@ -35,6 +35,8 @@ When a user request arrives, route to the right skill(s):
 | "add / edit content block" | `local/content-validation` + relevant skill |
 | "review / audit blocks" | `local/content-block-review` |
 | "test / unit test / coverage" | `local/test-engineer` |
+| "import / arxiv / upload paper" | `local/paper-importer` |
+| "import + formalize" | `local/paper-importer` + `local/formalizer` |
 
 **Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
 `local/content-validation` + relevant content skill. (2) Does it touch `.tex`?
