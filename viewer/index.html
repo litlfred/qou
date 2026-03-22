@@ -1704,7 +1704,8 @@
               const count = fresh.length;
               secTodos += count;
               // Update block badge in sidebar
-              const blkEl = document.querySelector(`.sb-blk[title="${b.label || b.rootName}"]`);
+              const sel = CSS.escape(b.label || b.rootName);
+              const blkEl = document.querySelector(`.sb-blk[title="${sel}"]`);
               if (blkEl) {
                 const existing = blkEl.querySelector('.sb-badge.todo');
                 if (existing) existing.remove();
@@ -1712,7 +1713,17 @@
                   const tb = mk('span','sb-badge todo');
                   tb.textContent = `${count} todo`;
                   tb.setAttribute('data-tip', `${count} open todo${count > 1 ? 's' : ''}`);
-                  blkEl.insertBefore(tb, blkEl.querySelector('.sb-badge'));
+                  const firstBadge = blkEl.querySelector('.sb-badge');
+                  if (firstBadge) blkEl.insertBefore(tb, firstBadge);
+                  else blkEl.appendChild(tb);
+                }
+              }
+              // Update inline todo indicators in the rendered block
+              if (b.label) {
+                const blockEl = document.getElementById(b.label);
+                if (blockEl) {
+                  blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+                  addTodoIndicators(blockEl, b);
                 }
               }
             }
