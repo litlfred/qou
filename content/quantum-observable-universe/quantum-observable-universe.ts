@@ -19,6 +19,7 @@ export default paper({
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
   },
   chapters: [
+    chapterRef({ dir: "ch0-introduction" }),
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
     chapterRef({ dir: "ch2-qou-elaboration" }),
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
