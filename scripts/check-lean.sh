@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Session-start hook: check local Lean, fall back to remote MCP.
 #
-# Priority: local lean-lsp-mcp (stdio) > remote lean-lsp-mcp (HTTP)
+# Priority: local lean installed locally
 #
 # Reads lean-mcp.config.json for the remote server domain.
 # Prints JSON status for Claude Code and the editor skill to consume.

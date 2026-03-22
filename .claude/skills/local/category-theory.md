@@ -18,7 +18,7 @@ Category theory is the "connective tissue" of Mathlib.  In Lean 4, a
 can have (via typeclasses).  This skill provides the tactics, patterns,
 and glossary requirements for effective category-theoretic formalization.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, it supercharges category theory work:
 

@@ -3,30 +3,36 @@ name: lean-environment-setup
 roles: [collaborator, owner]
 description: >
   Sets up and troubleshoots the Lean 4 environment for Claude Code sessions.
-  Ensures elan, lake, lean, and the lean-lsp MCP server are operational.
-  Handles both local and sandboxed/cloud environments where downloads may be
-  restricted.
+  Ensures elan, lake, lean are installed so the paper-assistant MCP's Lean
+  tools are operational. Handles sandboxed/cloud environments where downloads
+  may be restricted.
 allowed-tools: Read Edit Bash Grep Glob
 ---
 
 # Lean Environment Setup
 
+## Architecture
+
+All MCP functionality — including Lean tools — is served through a single
+`paper-assistant` MCP server (`./scripts/start-assistant.sh`). There is
+**no separate lean-lsp MCP entry**. The paper-assistant detects lean/lake
+on the PATH and enables Lean tools automatically.
+
 ## When to Use This Skill
 
 - At session start when `session-status.sh` reports Lean as unavailable
-- When `lean-lsp` MCP tools fail with "No such file or directory: 'lake'"
+- When paper-assistant Lean tools fail with "No such file or directory: 'lake'"
 - When a user says "set up Lean" or "install Lean"
-- When switching between local and remote MCP modes
 
 ## Prerequisites
 
-The Lean MCP (`lean-lsp-mcp`) requires:
+The paper-assistant's Lean tools require these on the PATH:
 
 1. **elan** — Lean toolchain manager (`~/.elan/bin/`)
 2. **lean** — the Lean compiler (installed via elan)
 3. **lake** — the Lean build tool (installed with lean)
-4. **uv** — Python package manager (for `uvx lean-lsp-mcp`)
-5. **ripgrep** — for `lean_local_search` (optional)
+4. **uv** — Python package manager (optional, for uvx-based tools)
+5. **ripgrep** — for local symbol search (optional)
 
 ## Setup Procedure
 
@@ -34,11 +40,11 @@ The Lean MCP (`lean-lsp-mcp`) requires:
 
 ```bash
 export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
-which elan lean lake uv 2>/dev/null
+which elan lean lake 2>/dev/null
 cat /tmp/qou-lean-build-status.json 2>/dev/null
 ```
 
-### Step 2: Attempt local installation
+### Step 2: Install Lean toolchain
 
 Run the setup script if lean/elan are missing:
 
@@ -60,88 +66,41 @@ curl -sSf --max-time 5 https://raw.githubusercontent.com/leanprover/elan/master/
 curl -sSf --max-time 5 https://github.com/leanprover/lean4/releases -o /dev/null && echo "OK" || echo "BLOCKED"
 ```
 
-If blocked, local Lean installation is impossible. Proceed to Step 4.
+If blocked, local Lean installation is impossible. Inform the user that
+Lean tools require running Claude Code locally where lean/lake are installed.
 
-### Step 4: Switch to remote MCP
+### Step 4: Verify Lean tools via paper-assistant
 
-If local installation fails, configure the remote MCP server:
-
-1. Check if remote is reachable:
-   ```bash
-   DOMAIN=$(python3 -c "import json; print(json.load(open('lean-mcp.config.json')).get('domain',''))" 2>/dev/null)
-   curl -sf --max-time 3 "https://$DOMAIN/mcp" && echo "REACHABLE" || echo "UNREACHABLE"
-   ```
-
-2. If reachable, update `.mcp.json` to use remote:
-   ```json
-   {
-     "mcpServers": {
-       "lean-lsp": {
-         "url": "https://lean.litlfred.org/mcp"
-       },
-       "paper-assistant": {
-         "command": "./scripts/start-assistant.sh",
-         "args": ["--stdio"]
-       }
-     }
-   }
-   ```
-
-3. If neither local nor remote works, inform the user that Lean MCP tools
-   are unavailable. Structural analysis (reading `.lean` files, checking
-   schemas, cross-refs) can still proceed without compilation.
-
-### Step 5: Verify MCP connectivity
-
-After setup, test that MCP tools work:
+After setup, test that MCP Lean tools work:
 
 ```
-lean_diagnostic_messages on any .lean file in lean-archive/
+lean_build (via paper-assistant MCP)
+lean_status (via paper-assistant MCP)
 ```
 
-If this returns results (even errors), the MCP is operational.
+If these return results, Lean is operational.
 
-## MCP Configuration Reference
+## MCP Configuration
 
-The `.mcp.json` file supports two modes for `lean-lsp`:
-
-### Local mode (default — requires lean installed)
+The `.mcp.json` has a single entry — `paper-assistant`:
 
 ```json
 {
-  "lean-lsp": {
-    "command": "uvx",
-    "args": ["lean-lsp-mcp", "--project", "./lean-archive"],
-    "cwd": "."
+  "mcpServers": {
+    "paper-assistant": {
+      "command": "./scripts/start-assistant.sh",
+      "args": ["--stdio"]
+    }
   }
 }
 ```
 
-Or via the wrapper script:
-
-```json
-{
-  "lean-lsp": {
-    "command": "./scripts/start-lean-mcp.sh",
-    "args": [],
-    "cwd": "."
-  }
-}
-```
-
-### Remote mode (no local lean needed)
-
-```json
-{
-  "lean-lsp": {
-    "url": "https://lean.litlfred.org/mcp"
-  }
-}
-```
+The paper-assistant auto-detects lean/lake on the PATH and reports
+availability in its startup dependency status output.
 
 ## Fallback: Structural Analysis Without Lean
 
-When Lean MCP is unavailable, agents can still:
+When Lean is not installed, agents can still:
 
 - Read `.lean` files with the Read tool
 - Search for `sorry` with Grep
@@ -150,12 +109,12 @@ When Lean MCP is unavailable, agents can still:
 - Verify naming conventions (label → declaration mapping)
 - Audit `status` fields against file contents
 
-What agents **cannot** do without Lean MCP:
+What agents **cannot** do without Lean:
 
 - Type-check proofs
 - Get goal states at positions
 - Search Mathlib (leansearch, loogle)
-- Run `lean_verify` for axiom audits
+- Verify axiom dependencies
 - Get autocompletions or hover info
 
 ## Troubleshooting
@@ -163,20 +122,20 @@ What agents **cannot** do without Lean MCP:
 | Symptom | Cause | Fix |
 |---------|-------|-----|
 | "No such file or directory: 'lake'" | lean not on PATH | `export PATH="$HOME/.elan/bin:$PATH"` or install elan |
-| "No valid Lean project path found" | MCP can't find lakefile | Ensure `lean-archive/lakefile.toml` exists, set `--project` arg |
-| elan install 403 | Network restrictions | Use remote MCP mode |
+| elan install 403 | Network restrictions | Run Claude Code locally where lean is installed |
 | "lake update" hangs | Git fetch blocked | Check `git ls-remote` works for mathlib4 |
-| MCP tools return `isError: true` | LSP timeout | Run `lake build` first, or increase timeout |
+| Lean tools timeout | Project not built | Run `lake build` in `lean-archive/` first |
 | "toolchain not installed" | Wrong lean version | `cd lean-archive && elan toolchain install $(cat lean-toolchain)` |
+| paper-assistant shows `✗ lean` | lean not on PATH | Add `$HOME/.elan/bin` to PATH in shell profile |
 
 ## PATH Configuration
 
-The lean-build-bg.sh and session-status.sh scripts both set:
+The `lean-build-bg.sh` and `session-status.sh` scripts both set:
 
 ```bash
 export PATH="$HOME/.elan/bin:$HOME/.local/bin:$PATH"
 ```
 
-If the MCP server is launched via `.mcp.json` command, it inherits the
-shell's PATH. Ensure elan's bin directory is on the PATH in the shell
-profile (`~/.bashrc`, `~/.zshrc`, or `~/.profile`).
+The paper-assistant inherits the shell's PATH when launched via `.mcp.json`.
+Ensure elan's bin directory is on the PATH in the shell profile
+(`~/.bashrc`, `~/.zshrc`, or `~/.profile`).

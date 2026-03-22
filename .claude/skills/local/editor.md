@@ -71,7 +71,7 @@ Neither local nor remote is reachable. If the request requires Lean:
 
 If the request is LaTeX-only, proceed normally.
 
-**Note**: The lean-lsp-mcp server provides diagnostics, goal states,
+**Note**: The paper-assistant MCP server provides diagnostics, goal states,
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
