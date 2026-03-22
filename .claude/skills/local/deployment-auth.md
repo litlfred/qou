@@ -1,3 +1,8 @@
+---
+name: deployment-auth
+roles: [owner]
+---
+
 # Deployment & Auth Skill
 
 ## Role

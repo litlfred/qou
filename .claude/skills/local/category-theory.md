@@ -1,5 +1,6 @@
 ---
 name: category-theory
+roles: [collaborator, owner]
 description: >
   Category Theory formalization skill — handles diagram chasing, universal
   properties, functorial translation, and whiskering in Lean 4.  Integrates

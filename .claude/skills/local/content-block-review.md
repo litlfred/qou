@@ -1,5 +1,6 @@
 ---
 name: content-block-review
+roles: [collaborator, owner]
 description: >
   Reviews existing content blocks for adherence to all requirements — structural
   integrity, Lean proof rules, cross-reference consistency, status accuracy, and

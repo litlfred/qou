@@ -1,3 +1,8 @@
+---
+name: readability-editing
+roles: [reader, collaborator, owner]
+---
+
 # Readability Editing Skill
 
 ## Purpose
