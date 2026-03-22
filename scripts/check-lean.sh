@@ -126,8 +126,14 @@ esac
 RG_OK=false
 command -v rg &>/dev/null && RG_OK=true
 
+# ── LaTeX (latexmk + pdflatex) ──────────────────────────────────
+LATEXMK_OK=false
+command -v latexmk &>/dev/null && LATEXMK_OK=true
+PDFLATEX_OK=false
+command -v pdflatex &>/dev/null && PDFLATEX_OK=true
+
 # ── Output ───────────────────────────────────────────────────────
 cat <<EOF
-{"mode": "$MODE", "local_ready": $LOCAL_READY, "remote_ok": $REMOTE_OK, "remote_url": "$REMOTE_URL", "lean_available": $LOCAL_OK, "uv_available": $UV_OK, "deps_ready": $DEPS_READY, "cache_ok": $CACHE_OK, "ripgrep": $RG_OK, "version": "$LEAN_VERSION", "message": "$MSG"}
+{"mode": "$MODE", "local_ready": $LOCAL_READY, "remote_ok": $REMOTE_OK, "remote_url": "$REMOTE_URL", "lean_available": $LOCAL_OK, "uv_available": $UV_OK, "deps_ready": $DEPS_READY, "cache_ok": $CACHE_OK, "ripgrep": $RG_OK, "latexmk": $LATEXMK_OK, "pdflatex": $PDFLATEX_OK, "version": "$LEAN_VERSION", "message": "$MSG"}
 EOF
 exit 0

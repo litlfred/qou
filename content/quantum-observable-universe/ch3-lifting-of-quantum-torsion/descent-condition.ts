@@ -3,7 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:descent-condition",
   title: "Descent condition --- twisted $2$-cocycle",
-  hasProof: true,
   tags: ["descent", "cocycle", "twisted", "yekutieli"],
   uses: [
     "def:quantum-observable-universe",
@@ -13,6 +12,7 @@ export default proposition({
     "rem:distributional-connection",
     "prop:yekutieli-lifting",
   ],
+  proofs: ["prf:descent-condition"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/descent-condition-0.svg", blockIndex: 0, hash: "2cc87fe2ebcd" },
     { mime: "image/svg+xml", url: "rendered/descent-condition-1.svg", blockIndex: 1, hash: "bb93a7875439" },

@@ -26,11 +26,13 @@ export default chapter({
       blocks: [
         "categorical-braiding-intro",
         "braid-action-tensor",
+        "braid-action-tensor-proof",
         "why-b3",
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
         "knot-eigenbasis-complete",
+        "knot-eigenbasis-complete-proof",
         "feynman-eigenbasis",
       ],
     }),

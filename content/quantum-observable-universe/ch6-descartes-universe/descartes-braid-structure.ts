@@ -3,7 +3,6 @@ import { corollary } from "../../schema/builders";
 export default corollary({
   label: "cor:descartes-braid-structure",
   title: "Braid-group structure of a Descartes universe",
-  hasProof: true,
   tags: ["descartes-universe", "braid-group", "dic3"],
   uses: [
     "def:descartes-condition",
@@ -16,4 +15,5 @@ export default corollary({
     "prop:brings-is-qou",
     "ex:p-adic-realisation",
   ],
+  proofs: ["prf:descartes-braid-structure"],
 });

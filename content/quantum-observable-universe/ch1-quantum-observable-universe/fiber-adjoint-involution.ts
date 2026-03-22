@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:fiber-adjoint-involution",
   title: "Fiber--adjoint-fiber involution",
   uses: ["def:quantum-observable-universe", "def:projective-line-object"],
-  hasProof: true,
+  proofs: ["prf:fiber-adjoint-involution"],
   examples: ["ex:fiber-adjoint-su2"],
   tags: ["involution", "adjoint"],
 });

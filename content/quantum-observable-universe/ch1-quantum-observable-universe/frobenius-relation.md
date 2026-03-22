@@ -24,10 +24,3 @@ yields the same result as composing them:
 $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)
 = \Delta_\mu \circ \mu$.
 
----
-
-Non-degeneracy of the pairing
-$\langle a, b \rangle = \lambda(\mu(a \otimes b))$ identifies
-$A \cong A^{\vee}$. Under this identification, $\Delta_\mu$ is the
-transpose of $\mu$. The Frobenius relation then follows from the
-associativity of $\mu$ by dualising one leg of the multiplication.

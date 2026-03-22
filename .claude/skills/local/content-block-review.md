@@ -1,0 +1,148 @@
+---
+name: content-block-review
+description: >
+  Reviews existing content blocks for adherence to all requirements — structural
+  integrity, Lean proof rules, cross-reference consistency, status accuracy, and
+  naming conventions. Flags violations with actionable diagnostics.
+allowed-tools: Read Grep Glob Bash Agent
+---
+
+# Content Block Review
+
+## Role
+
+Systematically audit content blocks (`.ts` + `.md` + `.lean` triples) against
+project requirements and flag everything that does not conform. This is a
+**read-only review skill** — it reports problems but does not fix them.
+
+## When to Use
+
+- "review blocks", "audit content", "check blocks", "what's broken"
+- Before a release or major merge
+- After bulk edits to content objects
+- Periodic health checks on the content layer
+
+## Review Checklist
+
+Run every check below for each content block. Report violations grouped by
+block, with severity (error / warning / info).
+
+### 1. File triple completeness
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| `.ts` manifest exists | **error** | Every block must have a manifest |
+| `.md` sibling exists | **error** | Every block (except `equation`/`diagram`) needs narrative |
+| `.lean` sibling exists for `definition` | **error** | Definitions **require** Lean formalization |
+| `.lean` sibling exists for `theorem`/`lemma`/`proposition`/`corollary` | **warning** | Provable blocks should have Lean |
+| Sibling files share the same root name | **error** | `foo.ts`, `foo.md`, `foo.lean` — not mismatched names |
+
+### 2. Label conventions
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Label prefix matches kind | **error** | `definition` → `def:`, `theorem` → `thm:`, `lemma` → `lem:`, `proposition` → `prop:`, `corollary` → `cor:`, `conjecture` → `conj:`, `example` → `ex:`, `remark` → `rem:` |
+| Label is unique across the paper | **error** | No duplicate labels |
+| Labels in `uses[]` resolve to existing blocks | **error** | Dangling cross-references break the dependency graph |
+
+### 3. Lean declaration consistency
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| `lean.decl` in `.ts` matches actual declaration in `.lean` | **error** | The manifest must name the real Lean declaration |
+| Declaration lives under `QOU.*` namespace | **warning** | All project declarations should be namespaced |
+| Naming convention followed (hyphens → underscores, correct case) | **warning** | See CLAUDE.md §2 naming table |
+| Block kind matches Lean construct (`definition` → `def`/`structure`/`class`, `theorem` → `theorem`/`lemma`) | **warning** | A `definition` block should not contain a `theorem` in Lean |
+
+### 4. Sorry discipline
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Every `sorry` has a preceding `-- Ref: [key]` comment | **error** | Unannotated sorry is always a violation |
+| `[key]` in `-- Ref:` exists in `references.bib` | **error** | Orphan citation keys break the reference chain |
+| No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
+| No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
+
+### 5. Status accuracy
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| `status: "proved"` but `.lean` contains `sorry` | **error** | Status lies about completion |
+| `status: "not_started"` but `.lean` exists with content | **warning** | Status is stale |
+| `status: "has_sorry"` but `.lean` has no `sorry` | **warning** | Status should be `proved` |
+| `status: "stated"` but proof body is not just `sorry` | **info** | May need promotion to `has_sorry` or `proved` |
+
+### 6. Markdown content quality
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| `.md` is non-empty | **error** | Empty narrative blocks are placeholders, not content |
+| Math delimiters balanced (`$...$`, `$$...$$`) | **warning** | Unbalanced delimiters break LaTeX rendering |
+| Cross-refs use `[text](#label)` format | **info** | Ensures `\hyperref` conversion works |
+| No raw LaTeX commands outside `` ```tex `` fences | **warning** | Raw `\begin{tikzcd}` in markdown breaks rendering |
+
+### 7. Dependency graph health
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| `uses[]` entries all resolve | **error** | (Same as §2, but checked from graph perspective) |
+| No circular dependencies in `uses[]` | **error** | DAG must be acyclic |
+| Lean imports mirror `uses[]` ordering | **info** | Lean import graph should reflect narrative dependencies |
+| Blocks with most dependents are formalized first | **info** | Priority guidance, not a hard rule |
+
+### 8. Chapter manifest consistency
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Every block file in the directory is referenced in the chapter `.ts` | **warning** | Orphan blocks won't appear in output |
+| Chapter `.ts` references only blocks that exist | **error** | Dangling block references break the build |
+| Section ordering in chapter `.ts` is consistent | **info** | Sections should follow a logical order |
+
+## Output Format
+
+Report findings as a structured summary:
+
+```
+## Content Block Review: <paper-name>
+
+### Errors (must fix)
+- **<block-label>** (<file>): <description>
+  - Rule: <rule-id>
+
+### Warnings (should fix)
+- **<block-label>** (<file>): <description>
+
+### Info (consider)
+- **<block-label>** (<file>): <description>
+
+### Summary
+- Blocks reviewed: N
+- Errors: N | Warnings: N | Info: N
+- Blocks fully compliant: N / N
+```
+
+## How to Run
+
+### Full paper review
+
+1. List all content blocks: use `content_list` MCP tool or glob
+   `content/<paper>/**/*.ts` (exclude chapter/paper manifests)
+2. For each block `.ts`, read the manifest and check §1–§8
+3. For blocks with `.lean`, read the Lean source and check §3–§4
+4. For `uses[]` and label uniqueness, collect all labels first (§2, §7)
+5. Cross-check against `references.bib` for sorry citations (§4)
+
+### Single chapter review
+
+Same as above but scoped to one chapter directory.
+
+### Quick check (just errors)
+
+Skip severity=info and severity=warning. Only report errors.
+
+## Integration
+
+- Runs **before** `content-validation` (which does schema + AST validation)
+- Complements `lean-proof-review` (which focuses on proof quality, not
+  structural compliance)
+- Feeds into `proof-triage` (violations of §4–§5 indicate formalization gaps)

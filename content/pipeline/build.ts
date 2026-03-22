@@ -21,6 +21,8 @@ import { renderChapter, validateLatexAst } from "./render-latex";
 export interface BuildResult {
   /** Rendered LaTeX per chapter (keyed by chapter number). */
   chapters: Map<number, string>;
+  /** Chapter slug names derived from directory names (e.g. "quantum-observable-universe"). */
+  chapterSlugs: Map<number, string>;
   /** Validation issues encountered. */
   issues: { level: string; message: string }[];
   /** Whether all rendered LaTeX passes AST validation. */
@@ -48,6 +50,7 @@ export async function buildPaper(
 
   // 2. Resolve chapters and load all blocks
   const resolvedChapters: Chapter[] = [];
+  const chapterSlugs = new Map<number, string>();
   const blocks = new Map<string, { block: Block; mdContent: string }>();
 
   for (const chRef of paper.chapters) {
@@ -63,6 +66,10 @@ export async function buildPaper(
       const chMod = await import(chPath);
       const chapter: Chapter = chMod.default;
       resolvedChapters.push(chapter);
+
+      // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
+      const slug = chRef.dir.replace(/^ch\d+-/, "");
+      chapterSlugs.set(chapter.number, slug);
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -113,7 +120,7 @@ export async function buildPaper(
     }
   }
 
-  return { chapters, issues, astValid };
+  return { chapters, chapterSlugs, issues, astValid };
 }
 
 // ── CLI entry point ──────────────────────────────────────────────
@@ -140,7 +147,9 @@ if (import.meta.main) {
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 
   for (const [num, latex] of result.chapters) {
-    const outPath = join(outDir, `chapter-${num}.tex`);
+    const slug = result.chapterSlugs.get(num);
+    const filename = slug ? `${slug}.tex` : `chapter-${num}.tex`;
+    const outPath = join(outDir, filename);
     writeFileSync(outPath, latex);
     console.log(`  → ${outPath}`);
   }
