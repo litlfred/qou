@@ -141,6 +141,7 @@ export default chapter({
         "localized-knot-intro",
         "localized-knot",
         "hadron",
+        "localized-hadron",
         "bundle-initial-conditions",
         "knot-particle-dictionary",
         "torsion-knot-flow",
