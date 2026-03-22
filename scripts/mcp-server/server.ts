@@ -1112,12 +1112,12 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         },
         {
           name: "get_todos",
-          description: "Get open todos/feedback items. Can filter by paper or get all. Use when user asks about tasks, what needs attention, or outstanding work.",
+          description: "Get open todos/feedback items. Can filter by paper or specific block. Use when user asks about tasks, what needs attention, or outstanding work. The blockLabel can be a full label like 'def:rigid-monoidal-category' or just the root name like 'rigid-monoidal-category'.",
           input_schema: {
             type: "object" as const,
             properties: {
               paperId: { type: "string", description: "Filter to specific paper" },
-              rootName: { type: "string", description: "Filter to specific block" },
+              blockLabel: { type: "string", description: "Filter to specific block — accepts full label (e.g. 'def:rigid-monoidal-category') or root name ('rigid-monoidal-category')" },
               status: { type: "string", enum: ["open", "in_progress", "blocked", "resolved"], description: "Filter by status (default: open)" },
             },
             required: [],
@@ -1207,9 +1207,12 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
             }
 
             case "get_todos": {
-              if (input.rootName && pid) {
-                const todos = readFeedback(pid, input.rootName as string);
-                return JSON.stringify(todos);
+              // Accept full label (def:foo-bar) or rootName (foo-bar)
+              const rawLabel = (input.blockLabel || input.rootName) as string | undefined;
+              const rootName = rawLabel?.replace(/^(def|thm|lem|prop|cor|rem|ex|conj):/, "") || undefined;
+              if (rootName && pid) {
+                const todos = readFeedback(pid, rootName);
+                return JSON.stringify(todos.length ? todos : { message: `No feedback found for '${rootName}' in paper '${pid}'`, rootName });
               }
               const status = (input.status as string) || "open";
               const all = listAllFeedback(status);

@@ -653,6 +653,11 @@
     .chat-head button{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.75rem;padding:.2rem}
     .chat-head button:hover{color:var(--fg-b)}
 
+    .chat-ctx{padding:.25rem .8rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);border-bottom:1px solid var(--brd);flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none}
+    .chat-ctx.active{display:block}
+    .chat-ctx .ctx-label{color:var(--ac);cursor:pointer}
+    .chat-ctx .ctx-label:hover{text-decoration:underline}
+    .chat-ctx .ctx-kind{opacity:.6;margin-right:.3rem}
     .chat-actions{display:flex;gap:.3rem;padding:.4rem .8rem;border-bottom:1px solid var(--brd);flex-wrap:wrap;flex-shrink:0}
     .chat-action{font-size:.6rem;padding:.2rem .5rem;border-radius:12px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);transition:all .15s}
     .chat-action:hover{border-color:var(--ac);color:var(--ac)}
@@ -841,7 +846,7 @@
   </div>
 
   <!-- Claude assistant chat -->
-  <button class="claude-fab" id="claude-fab" title="Ask Folio assistant"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#7eb8da" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="14" width="16" height="8" rx="1"/><path d="M4 14 L8 11"/><path d="M20 14 L16 11"/><path d="M9 14 C9 10 8 7 7 4 L9 6 L11 4 L11 8"/><path d="M15 14 C15 10 16 7 17 4 L15 6 L13 4 L13 8"/><circle cx="10" cy="11" r=".8" fill="#7eb8da"/><circle cx="14" cy="11" r=".8" fill="#7eb8da"/><path d="M11.5 12.5 L12 13 L12.5 12.5"/></svg></button>
+  <button class="claude-fab" id="claude-fab" title="Ask Folio assistant"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#7eb8da" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 C4 12 6 8 8 6 L8 2 L10 5 L12 5"/><path d="M12 5 L14 5 L16 2 L16 6 C18 8 20 12 20 18" stroke-dasharray="3 2"/><path d="M4 18 L12 18"/><path d="M12 18 L20 18" stroke-dasharray="3 2"/><circle cx="10" cy="12" r="1" fill="#7eb8da"/><circle cx="14" cy="12" r="1" fill="#7eb8da" opacity=".5"/><path d="M11 14.5 L12 15.5 L13 14.5"/></svg></button>
   <div class="chat-panel" id="chat-panel">
     <div class="chat-head">
       <span class="chat-title">Folio</span>
@@ -850,6 +855,7 @@
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
+    <div class="chat-ctx" id="chat-ctx" title="Current context block"></div>
     <div class="chat-actions" id="chat-actions"></div>
     <div class="chat-messages" id="chat-messages"></div>
     <div class="chat-typing" id="chat-typing">Folio is thinking...</div>
@@ -3979,6 +3985,10 @@
 
     // Track visible blocks for context awareness
     let visibleBlocks = []; // [{label, kind, title}] — blocks currently on screen
+    let chatCtxLabel = null; // current context block label
+    let chatCtxSource = null; // 'scroll' | 'hover' — how context was determined
+    const chatCtxEl = document.getElementById('chat-ctx');
+
     function updateVisibleBlocks() {
       const vb = [];
       const viewTop = 0;
@@ -3992,7 +4002,62 @@
         }
       }
       visibleBlocks = vb;
+      // Update context from scroll (center block) unless hover is active
+      if (chatCtxSource !== 'hover') {
+        const viewY = window.innerHeight / 2;
+        let found = null;
+        for (const [label, block] of bix) {
+          const el = document.getElementById(label);
+          if (!el) continue;
+          const r = el.getBoundingClientRect();
+          if (r.top < viewY && r.bottom > viewY - 100) { found = label; break; }
+        }
+        if (found && found !== chatCtxLabel) {
+          chatCtxLabel = found;
+          chatCtxSource = 'scroll';
+          updateChatCtxDisplay();
+        }
+      }
     }
+
+    function updateChatCtxDisplay() {
+      if (!chatCtxLabel) { chatCtxEl.classList.remove('active'); return; }
+      const block = bix.get(chatCtxLabel);
+      const kind = block?.kind || '';
+      const title = block?.title || chatCtxLabel;
+      chatCtxEl.innerHTML = `<span class="ctx-kind">${esc(kind)}</span><span class="ctx-label" data-label="${esc(chatCtxLabel)}">${esc(chatCtxLabel)}</span> ${esc(title)}`;
+      chatCtxEl.classList.add('active');
+    }
+
+    // Click on context label → scroll to block
+    chatCtxEl.addEventListener('click', (e) => {
+      const lbl = e.target.closest('.ctx-label');
+      if (lbl?.dataset.label) scrollToLabel(lbl.dataset.label);
+    });
+
+    // Track hover over content blocks
+    let hoverResetTimer = null;
+    document.addEventListener('mouseover', (e) => {
+      const blkEl = e.target.closest?.('.env[id], .blk[id]');
+      if (blkEl && bix.has(blkEl.id)) {
+        clearTimeout(hoverResetTimer);
+        chatCtxLabel = blkEl.id;
+        chatCtxSource = 'hover';
+        updateChatCtxDisplay();
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      const blkEl = e.target.closest?.('.env[id], .blk[id]');
+      if (blkEl && chatCtxSource === 'hover') {
+        // Reset to scroll-based context after a short delay
+        clearTimeout(hoverResetTimer);
+        hoverResetTimer = setTimeout(() => {
+          chatCtxSource = 'scroll';
+          updateVisibleBlocks();
+        }, 1500);
+      }
+    });
+
     // Update on scroll (debounced)
     let visibleTimer = null;
     window.addEventListener('scroll', () => {
@@ -4000,7 +4065,7 @@
       visibleTimer = setTimeout(updateVisibleBlocks, 200);
     }, { passive: true });
 
-    // Get context: currently visible blocks, selected text, center block
+    // Get context: tracked context block, selected text, visible blocks
     function getChatContext() {
       updateVisibleBlocks();
       const ctx = { paperId: paper?.id, visibleBlocks };
@@ -4008,7 +4073,6 @@
       const sel = window.getSelection();
       if (sel && sel.toString().trim().length > 5) {
         ctx.selectedText = sel.toString().trim();
-        // Find the block containing the selection
         const anchor = sel.anchorNode?.parentElement?.closest?.('.env[id], .blk[id]');
         if (anchor) {
           const label = anchor.id;
@@ -4020,19 +4084,13 @@
           }
         }
       }
-      // If no selection, find the block currently in viewport center
-      if (!ctx.blockLabel) {
-        const viewY = window.innerHeight / 2;
-        for (const [label, block] of bix) {
-          const el = document.getElementById(label);
-          if (!el) continue;
-          const r = el.getBoundingClientRect();
-          if (r.top < viewY && r.bottom > viewY - 100) {
-            ctx.blockLabel = label;
-            ctx.blockMd = block.md;
-            ctx.blockKind = block.kind;
-            break;
-          }
+      // Use tracked context block (from scroll or hover)
+      if (!ctx.blockLabel && chatCtxLabel) {
+        const block = bix.get(chatCtxLabel);
+        if (block) {
+          ctx.blockLabel = chatCtxLabel;
+          ctx.blockMd = block.md;
+          ctx.blockKind = block.kind;
         }
       }
       return ctx;
