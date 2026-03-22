@@ -22,9 +22,9 @@ build-warnings.log
 _site/
 
 # Lean build artifacts
-lean/.lake/
-lean/lake-packages/
-lean/build/
+lean-archive/.lake/
+lean-archive/lake-packages/
+lean-archive/build/
 
 # Generated graph intermediate files
 dependency-graph.dot
