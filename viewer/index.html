@@ -952,15 +952,29 @@
     });
 
     // PDF (trigger server-side LaTeX pipeline)
-    // Check PDF availability at startup — hide button if latexmk not installed
+    // Check PDF availability at startup — disable with hint if latexmk not installed
     const pdfBtn = document.getElementById('c-pdf');
     fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
       if (!d.available) {
-        pdfBtn.style.display = 'none';
+        pdfBtn.disabled = true;
+        pdfBtn.dataset.unavailable = 'true';
+        pdfBtn.style.opacity = '0.4';
+        pdfBtn.style.cursor = 'not-allowed';
+        pdfBtn.title = `PDF disabled — ${d.reason || 'latexmk not installed'}.\nRun: sudo apt install texlive-latex-base texlive-latex-extra latexmk`;
       }
-    }).catch(() => { pdfBtn.style.display = 'none'; });
+    }).catch(() => {
+      pdfBtn.disabled = true;
+      pdfBtn.dataset.unavailable = 'true';
+      pdfBtn.style.opacity = '0.4';
+      pdfBtn.style.cursor = 'not-allowed';
+      pdfBtn.title = 'PDF disabled — build server unreachable';
+    });
 
     pdfBtn.addEventListener('click', async () => {
+      if (pdfBtn.dataset.unavailable === 'true') {
+        showError('PDF Unavailable', 'PDF generation requires latexmk.\n\nInstall:\n  sudo apt install texlive-latex-base texlive-latex-extra latexmk');
+        return;
+      }
       const orig = pdfBtn.textContent;
       pdfBtn.textContent = 'building...';
       pdfBtn.disabled = true;
@@ -973,11 +987,17 @@
           setTimeout(() => URL.revokeObjectURL(url), 60_000);
         } else {
           const err = await res.json().catch(() => ({ error: 'Unknown error' }));
-          alert(`PDF build failed: ${err.error || 'See console'}`);
+          const details = [
+            err.error,
+            err.buildLog ? `\n── Content build log ──\n${err.buildLog}` : '',
+            err.latexLog ? `\n── LaTeX log (last 3KB) ──\n${err.latexLog}` : '',
+          ].filter(Boolean).join('\n');
           console.error('PDF render error:', err);
+          console.error('Full details:\n', details);
+          showError('PDF Build Failed', details);
         }
       } catch (e) {
-        alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
+        showError('Build Server Error', `Could not reach build server. Is the MCP server running?\n\n${e.message}`);
       } finally {
         pdfBtn.textContent = orig;
         pdfBtn.disabled = false;
@@ -4501,6 +4521,42 @@
     btnRd.addEventListener('click', () => {
       setTimeout(updateChatMode, 0);
     });
+  </script>
+  <!-- Error dialog (copyable text) -->
+  <div id="err-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center">
+    <div style="background:var(--bg,#1a1a2e);color:var(--fg,#e0e0e0);border:1px solid #444;border-radius:8px;max-width:700px;width:90%;max-height:80vh;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.4)">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #333">
+        <strong id="err-title" style="font-size:14px">Error</strong>
+        <div style="display:flex;gap:8px">
+          <button id="err-copy" style="font-size:12px;padding:4px 10px;cursor:pointer;border:1px solid #555;border-radius:4px;background:transparent;color:inherit">Copy</button>
+          <button id="err-close" style="font-size:16px;padding:2px 8px;cursor:pointer;border:none;background:transparent;color:inherit">&times;</button>
+        </div>
+      </div>
+      <pre id="err-body" style="margin:0;padding:16px;overflow:auto;font-size:12px;line-height:1.5;white-space:pre-wrap;word-break:break-word;flex:1"></pre>
+    </div>
+  </div>
+  <script>
+    (function() {
+      const overlay = document.getElementById('err-overlay');
+      const title = document.getElementById('err-title');
+      const body = document.getElementById('err-body');
+      const copyBtn = document.getElementById('err-copy');
+      const closeBtn = document.getElementById('err-close');
+
+      window.showError = function(heading, text) {
+        title.textContent = heading;
+        body.textContent = text;
+        overlay.style.display = 'flex';
+      };
+      closeBtn.onclick = () => { overlay.style.display = 'none'; };
+      overlay.onclick = (e) => { if (e.target === overlay) overlay.style.display = 'none'; };
+      copyBtn.onclick = () => {
+        navigator.clipboard.writeText(body.textContent).then(() => {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+        });
+      };
+    })();
   </script>
 </body>
 </html>

@@ -865,12 +865,14 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
 
       // Step 2: Run latexmk to produce PDF
       if (!existsSync(BUILD_DIR)) mkdirSync(BUILD_DIR, { recursive: true });
+      // -g forces rebuild even if latexmk thinks targets are up-to-date
+      // (avoids confusion from stale aux files or missing PDF)
       const latexResult = spawnSync("latexmk", [
         "-pdf",
+        "-g",
         `-jobname=quantum-observable-universe`,
         `-output-directory=${BUILD_DIR}`,
         "-interaction=nonstopmode",
-        "-halt-on-error",
         "-file-line-error",
         MAIN_TEX,
       ], {
@@ -879,8 +881,10 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
         timeout: 300_000,
       });
 
+      // Serve PDF if it exists — latexmk may return non-zero even on success
+      // (e.g. warnings, citation undefined on first pass)
       const pdfPath = join(BUILD_DIR, "quantum-observable-universe.pdf");
-      if (latexResult.status === 0 && existsSync(pdfPath)) {
+      if (existsSync(pdfPath)) {
         const pdfData = rf(pdfPath);
         return new Response(pdfData, {
           headers: {
@@ -892,12 +896,40 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       }
 
       // Failed — return error details
-      const log = latexResult.stderr?.toString().slice(-3000) || "";
-      const buildLog = buildResult.stderr?.toString().slice(-1000) || "";
+      // The real errors are in the .log file, not stderr/stdout
+      const logPath = join(BUILD_DIR, "quantum-observable-universe.log");
+      let texLog = "";
+      try {
+        const fullLog = rf(logPath, "utf-8") as string;
+        // Extract lines with "!" (LaTeX errors) plus surrounding context
+        const lines = fullLog.split("\n");
+        const errorLines: string[] = [];
+        for (let i = 0; i < lines.length; i++) {
+          if (lines[i].startsWith("!") || lines[i].includes("Fatal error") ||
+              lines[i].includes("Emergency stop") || lines[i].includes("File not found")) {
+            const start = Math.max(0, i - 2);
+            const end = Math.min(lines.length, i + 5);
+            errorLines.push(`--- line ${i + 1} ---`);
+            for (let j = start; j < end; j++) errorLines.push(lines[j]);
+          }
+        }
+        texLog = errorLines.length > 0
+          ? errorLines.join("\n").slice(-3000)
+          : fullLog.slice(-3000);
+      } catch {
+        // No .log file — fall back to stderr/stdout
+        const stderr = latexResult.stderr?.toString().slice(-2000) || "";
+        const stdout = latexResult.stdout?.toString().slice(-2000) || "";
+        texLog = (stderr + "\n" + stdout).trim().slice(-3000);
+      }
+      const buildStderr = buildResult.stderr?.toString().slice(-1000) || "";
+      const buildStdout = buildResult.stdout?.toString().slice(-1000) || "";
+      const buildLog = (buildStderr + "\n" + buildStdout).trim().slice(-1500);
       return Response.json({
         error: "LaTeX compilation failed",
-        buildLog,
-        latexLog: log,
+        buildLog: buildLog || undefined,
+        latexLog: texLog || undefined,
+        exitCode: latexResult.status,
       }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
@@ -1911,9 +1943,40 @@ const args = process.argv.slice(2);
 const mode = args.includes("--http") ? "http" : "stdio";
 
 if (args.includes("--check-deps")) {
-  // Just check deps and exit — used by start-assistant.sh --check
-  console.log("Checking dependencies...");
-  process.exit(0);
+  // Run real dependency check and exit — used by start-assistant.sh --check
+  const { execSync } = await import("child_process");
+
+  interface DepInfo { name: string; required: boolean; cmd: string; hint: string }
+  const deps: DepInfo[] = [
+    { name: "bun",       required: true,  cmd: "bun --version",     hint: "curl -fsSL https://bun.sh/install | bash" },
+    { name: "latexmk",   required: true,  cmd: "latexmk --version", hint: "sudo apt install latexmk" },
+    { name: "pdflatex",  required: true,  cmd: "pdflatex --version", hint: "sudo apt install texlive-latex-base texlive-latex-extra" },
+    { name: "pandoc",    required: false, cmd: "pandoc --version",  hint: "sudo apt install pandoc" },
+    { name: "pdftoppm",  required: false, cmd: "which pdftoppm",    hint: "sudo apt install poppler-utils" },
+    { name: "lean",      required: false, cmd: "lean --version",    hint: "./scripts/setup-lean-mcp.sh" },
+    { name: "lake",      required: false, cmd: "which lake",        hint: "Installed with lean via elan" },
+    { name: "uv",        required: false, cmd: "uv --version",      hint: "curl -LsSf https://astral.sh/uv/install.sh | sh" },
+    { name: "rg",        required: false, cmd: "rg --version",      hint: "sudo apt install ripgrep" },
+    { name: "xdg-open",  required: false, cmd: "which xdg-open",    hint: "sudo apt install xdg-utils" },
+  ];
+
+  console.log("\nDependency check:\n");
+  let missingReq = 0;
+  for (const d of deps) {
+    let ok = false;
+    try { execSync(d.cmd, { stdio: "pipe" }); ok = true; } catch {}
+    const icon = ok ? "✓" : (d.required ? "✗" : "○");
+    const tag = d.required ? "(required)" : "(optional)";
+    console.log(`  ${icon} ${d.name.padEnd(12)} ${tag}`);
+    if (!ok) {
+      console.log(`    Install: ${d.hint}`);
+      if (d.required) missingReq++;
+    }
+  }
+  console.log(missingReq > 0
+    ? `\n⚠  ${missingReq} required dep(s) missing!\n`
+    : `\n✓  All required deps present.\n`);
+  process.exit(missingReq > 0 ? 1 : 0);
 }
 
 if (mode === "stdio") {
