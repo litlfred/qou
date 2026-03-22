@@ -8,7 +8,7 @@
   - Descent ([Subsection](#ssec:descent)) via fibred categories.
   - Obstructions described in terms of cohomology of the category
     (sheaf cohomology, derived functors).
-  - TODO: show that the Atiyah exact sequence splits if and only
+  - Show that the Atiyah exact sequence splits if and only
     if the bundle admits a linear connection.
 - Role of $\mathrm{SU}(2)$ and $\mathbb{P}^1(\mathbb{C})$ from the symmetry
   perspective; motivate categorical analogies

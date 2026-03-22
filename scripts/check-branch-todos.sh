@@ -2,18 +2,17 @@
 # Cross-reference open todos with content blocks modified in the current branch.
 # Outputs JSON: { "matches": [...], "count": N }
 #
-# Each match: { "rootName": "...", "todo": {...}, "changedFiles": ["..."] }
-#
 # Usage: ./scripts/check-branch-todos.sh [base-branch]
 #   base-branch defaults to "main"
 
 set -euo pipefail
 
 BASE="${1:-main}"
-FEEDBACK_DIR="$(cd "$(dirname "$0")/.." && pwd)/.qou-feedback"
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+TODOS_DIR="$REPO_ROOT/todos"
 
-# If no feedback dir or not in a git repo, exit clean
-if [ ! -d "$FEEDBACK_DIR" ]; then
+# If no todos dir or not in a git repo, exit clean
+if [ ! -d "$TODOS_DIR" ]; then
   echo '{"matches":[],"count":0}'
   exit 0
 fi
@@ -42,58 +41,50 @@ fi
 # Extract unique root names from changed files
 root_names=$(echo "$changed_files" | sed 's|.*/||; s/\.[^.]*$//' | sort -u)
 
-# Find matching todos
-matches=""
-count=0
+# Use the check-todos.sh output to find matching todos by targetLabel
+if ! command -v node &>/dev/null; then
+  echo '{"matches":[],"count":0}'
+  exit 0
+fi
 
-for rootName in $root_names; do
-  # Search for feedback files matching this root name
-  feedback_files=$(find "$FEEDBACK_DIR" -name "${rootName}.json" -type f 2>/dev/null || true)
+# Get all open todos and match against changed root names
+node -e "
+const { readdirSync, readFileSync } = require('fs');
+const { join } = require('path');
 
-  for ff in $feedback_files; do
-    [ -z "$ff" ] && continue
-    [ ! -f "$ff" ] && continue
+const todosDir = '$TODOS_DIR';
+const rootNames = new Set($(echo "$root_names" | jq -R -s 'split("\n") | map(select(length > 0))'));
+const changedFiles = $(echo "$changed_files" | jq -R -s 'split("\n") | map(select(length > 0))');
 
-    # Get open todos from this file
-    if command -v jq &>/dev/null; then
-      open_todos=$(jq -c '[.[] | select(.status == "open")]' "$ff" 2>/dev/null)
-      todo_count=$(echo "$open_todos" | jq 'length' 2>/dev/null || echo "0")
+// Read all todo files
+const allTodos = [];
+try {
+  for (const f of readdirSync(todosDir).filter(f => f.endsWith('.ts'))) {
+    const src = readFileSync(join(todosDir, f), 'utf8');
+    const match = src.match(/\[[\s\S]*\]/);
+    if (!match) continue;
+    try {
+      const cleaned = match[0].replace(/\/\/[^\n]*/g, '').replace(/,(\s*[\]}])/g, '\$1');
+      for (const item of JSON.parse(cleaned)) {
+        if (item.status === 'open' || item.status === 'in_progress') {
+          allTodos.push({ ...item, file: f });
+        }
+      }
+    } catch {}
+  }
+} catch {}
 
-      if [ "$todo_count" -gt 0 ]; then
-        # Get the changed files for this root name
-        block_files=$(echo "$changed_files" | grep "/${rootName}\." | jq -R -s 'split("\n") | map(select(length > 0))' 2>/dev/null)
-
-        # Add each open todo as a match
-        echo "$open_todos" | jq -c ".[] | {rootName: \"$rootName\", todo: ., changedFiles: $block_files}" 2>/dev/null | while read -r match; do
-          if [ -n "$matches" ]; then
-            matches="${matches},${match}"
-          else
-            matches="${match}"
-          fi
-          count=$((count + 1))
-          echo "$match"
-        done
-      fi
-    else
-      # No jq: just check if file has "open" in it
-      if grep -q '"open"' "$ff" 2>/dev/null; then
-        echo "{\"rootName\":\"$rootName\",\"todo\":{\"status\":\"open\"},\"changedFiles\":[]}"
-        count=$((count + 1))
-      fi
-    fi
-  done
-done | {
-  # Collect all matches into a JSON array
-  if command -v jq &>/dev/null; then
-    jq -s '{matches: ., count: length}'
-  else
-    items=""
-    n=0
-    while read -r line; do
-      [ -n "$items" ] && items="${items},"
-      items="${items}${line}"
-      n=$((n + 1))
-    done
-    echo "{\"matches\":[${items}],\"count\":${n}}"
-  fi
+// Match todos whose targetLabel contains a root name
+const matches = [];
+for (const todo of allTodos) {
+  const label = todo.targetLabel || '';
+  // Extract the root-name part from the label (e.g. 'def:localized-knot' -> 'localized-knot')
+  const labelRoot = label.includes(':') ? label.split(':').slice(1).join(':') : label;
+  if (rootNames.has(labelRoot)) {
+    const relevant = changedFiles.filter(f => f.includes(labelRoot));
+    matches.push({ rootName: labelRoot, todo, changedFiles: relevant });
+  }
 }
+
+console.log(JSON.stringify({ matches, count: matches.length }));
+" 2>/dev/null || echo '{"matches":[],"count":0}'

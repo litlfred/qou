@@ -22,9 +22,19 @@ start and provide triage workflows so nothing falls through the cracks.
 
 ## Todo Storage
 
-Todos live in `.qou-feedback/<paperId>/<rootName>.json` (gitignored).
-They reference content blocks by `paperId` + `rootName` but are not
-part of the content tree — they survive branch switches.
+Todos live in `todos/` at the repo root (**gitignored** — survives branch
+switches). They reference content blocks by `targetLabel` but are
+**external to paper content** — no `todos` field exists on any content
+block type.
+
+Files:
+- `todos/content-todos.ts` — content-related todos
+- `todos/infra-todos.ts` — infrastructure / feature request todos (optional)
+
+API:
+- `GET /api/todos` — all todos (JSON)
+- `GET /api/todos?status=open` — filtered by status
+- `GET /todos` — HTML dashboard
 
 ### Todo structure
 
@@ -100,19 +110,13 @@ curl -s -X POST http://localhost:3200/api/feedback \
   }'
 ```
 
-Or write directly to `.qou-feedback/<paperId>/<rootName>.json`.
+Or add directly to the appropriate file in `todos/`.
 
 ## Resolving Todos
 
-To resolve a todo, read the JSON file, find the todo by `id`, set
-`status` to `"resolved"` or `"wontfix"`, and write back:
-
-```typescript
-// In .qou-feedback/quantum-observable-universe/block-name.json
-[
-  { "id": "todo-abc123", "status": "resolved", ... }
-]
-```
+**Only the human author** may resolve or remove a TodoItem (see CLAUDE.md §4a).
+Agents must never set status to `resolved` or `wontfix`, and must never
+delete items. The author edits `todos/content-todos.ts` directly.
 
 ## Integration with Other Skills
 
