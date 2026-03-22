@@ -1865,6 +1865,8 @@
       copied.textContent = 'link copied';
       anchor.appendChild(copied);
       anchor.onclick = (e) => {
+        // Allow ctrl/cmd/middle-click to open in new tab
+        if (e.ctrlKey || e.metaKey || e.button === 1) return;
         e.preventDefault();
         if (label) {
           const brSuffix = selectedBranch && selectedBranch !== currentBranchName ? `@${encodeURIComponent(selectedBranch)}` : '';
@@ -1876,6 +1878,7 @@
           history.replaceState(null, '', `#${label}${brSuffix}`);
         }
       };
+      anchor.onauxclick = (e) => { if (e.button === 1) return; }; // let middle-click through
       div.appendChild(anchor);
 
       // Actions group (wide) + hamburger (narrow)
