@@ -582,6 +582,16 @@
     .inline-diff-add{background:rgba(42,170,70,.15);border-left:2px solid var(--grn);padding-left:.3rem;margin:.1rem 0}
     .inline-diff-del{background:rgba(200,70,70,.12);border-left:2px solid var(--red);padding-left:.3rem;margin:.1rem 0;text-decoration:line-through;opacity:.7}
 
+    /* Referenced-by panel */
+    .ref-by{margin:.8rem 0;padding:.6rem .8rem;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;font-family:var(--f-head);font-size:.75rem}
+    .ref-by-title{font-weight:600;font-size:.7rem;color:var(--fg-d);margin-bottom:.4rem;font-family:var(--f-mono)}
+    .ref-by-list{display:flex;flex-direction:column;gap:.3rem}
+    .ref-by-item{display:flex;align-items:center;gap:.4rem}
+    .ref-by-item .ref-kind{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);min-width:3.5rem}
+    .ref-by-item a{color:var(--ac);text-decoration:none;font-size:.73rem}
+    .ref-by-item a:hover{text-decoration:underline}
+    .ref-by-paper{font-size:.6rem;color:var(--fg-d);font-family:var(--f-mono);margin-left:auto}
+
     /* Inline editor */
     .inline-editor{display:none;border-top:1px solid var(--brd);margin-top:.5rem;padding-top:.5rem}
     .inline-editor.open{display:block}
@@ -690,6 +700,7 @@
     // ── State ────────────────────────────────────────────
     let paper = null;
     const bix = new Map(); // label → block
+    const usedByIndex = new Map(); // label → [{label, kind, title}] (reverse refs)
     let showExamples = false;
     let showRemarks = true; // remarks visible by default
     let currentBranchName = null;
@@ -1880,10 +1891,16 @@
       katexMacros = buildKatexMacros(p.macros);
       bix.clear();
       const childBlocks = new Set(); // examples/proofs shown via parent's toggle
+      usedByIndex.clear();
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
         if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
         if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+        // Build reverse-reference index: label → [{label, kind, title}]
+        if (b.uses) for (const dep of b.uses) {
+          if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+          usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+        }
       }
 
       const app = document.getElementById('app');
@@ -2416,7 +2433,54 @@
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       el.style.outline = '2px solid var(--ac)';
       setTimeout(() => { el.style.outline = ''; }, 2000);
+
+      // Show "referenced by" panel when block is the direct URL target
+      showReferencedBy(label, el);
+
       pendingScroll = null;
+    }
+
+    function showReferencedBy(label, el) {
+      // Remove any existing ref-by panel
+      const existing = el.parentElement?.querySelector('.ref-by[data-for="' + label + '"]');
+      if (existing) existing.remove();
+
+      const refs = usedByIndex.get(label);
+      if (!refs?.length) return;
+
+      const panel = mk('div','ref-by');
+      panel.dataset.for = label;
+      const title = mk('div','ref-by-title');
+      title.textContent = `Referenced by (${refs.length})`;
+      panel.appendChild(title);
+
+      const list = mk('div','ref-by-list');
+      for (const ref of refs) {
+        const item = mk('div','ref-by-item');
+        const kind = mk('span','ref-kind');
+        kind.textContent = ref.kind;
+        item.appendChild(kind);
+        const link = document.createElement('a');
+        link.href = `#${ref.label || ''}`;
+        link.innerHTML = inl(ref.title || ref.rootName || ref.label);
+        renderMath(link);
+        link.onclick = (e) => {
+          e.preventDefault();
+          if (ref.label) scrollToLabel(ref.label);
+        };
+        item.appendChild(link);
+        // Show which paper it's in
+        if (paper?.id) {
+          const paperTag = mk('span','ref-by-paper');
+          paperTag.textContent = paper.id;
+          item.appendChild(paperTag);
+        }
+        list.appendChild(item);
+      }
+      panel.appendChild(list);
+
+      // Insert after the target block element
+      el.after(panel);
     }
 
     async function loadFolio() {
