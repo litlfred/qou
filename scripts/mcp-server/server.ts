@@ -34,52 +34,45 @@ import {
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
+import Anthropic from "@anthropic-ai/sdk";
 
-// ── Feedback storage (gitignored, branch-scoped) ─────────────────
+// ── Feedback storage (gitignored, global with hash-based IDs) ────
 
-/** Sanitize branch name for use as directory name. */
-function safeBranch(branch?: string): string {
-  const b = branch || currentBranch();
-  return b.replace(/[^a-zA-Z0-9._-]/g, "_");
+function feedbackPath(paperId: string, rootName: string): string {
+  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
 }
 
-function feedbackPath(paperId: string, rootName: string, branch?: string): string {
-  return join(FEEDBACK_DIR, safeBranch(branch), paperId, `${rootName}.json`);
-}
-
-function readFeedback(paperId: string, rootName: string, branch?: string): unknown[] {
-  const p = feedbackPath(paperId, rootName, branch);
-  if (!existsSync(p)) {
-    // Migration: check legacy (non-branch-scoped) path
-    const legacy = join(FEEDBACK_DIR, paperId, `${rootName}.json`);
-    if (existsSync(legacy)) {
-      try { return JSON.parse(readFileSync(legacy, "utf-8")); } catch { return []; }
-    }
-    return [];
-  }
+function readFeedback(paperId: string, rootName: string): unknown[] {
+  const p = feedbackPath(paperId, rootName);
+  if (!existsSync(p)) return [];
   try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
 }
 
-function writeFeedback(paperId: string, rootName: string, todos: unknown[], branch?: string): void {
-  const p = feedbackPath(paperId, rootName, branch);
-  const dir = join(FEEDBACK_DIR, safeBranch(branch), paperId);
+function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
+  const dir = join(FEEDBACK_DIR, paperId);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(p, JSON.stringify(todos, null, 2), "utf-8");
+  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
 }
 
-/** List all feedback items across all papers, optionally filtered by status and branch. */
-function listAllFeedback(status?: string, branch?: string): { paperId: string; rootName: string; todo: any }[] {
+/** Generate a unique todo ID: timestamp + 4-char hash to avoid collisions. */
+function makeTodoId(): string {
+  const ts = Date.now().toString(36);
+  const hash = Math.random().toString(36).slice(2, 6);
+  return `todo-${ts}-${hash}`;
+}
+
+/** List all feedback items across all papers, optionally filtered by status. */
+function listAllFeedback(status?: string): { paperId: string; rootName: string; todo: any }[] {
   const results: { paperId: string; rootName: string; todo: any }[] = [];
-  const branchDir = join(FEEDBACK_DIR, safeBranch(branch));
-  if (!existsSync(branchDir)) return results;
+  if (!existsSync(FEEDBACK_DIR)) return results;
   const { readdirSync } = require("fs") as typeof import("fs");
-  for (const paperId of readdirSync(branchDir)) {
-    const paperFbDir = join(branchDir, paperId);
+  for (const paperId of readdirSync(FEEDBACK_DIR)) {
+    const paperFbDir = join(FEEDBACK_DIR, paperId);
     try {
       for (const file of readdirSync(paperFbDir)) {
         if (!file.endsWith(".json")) continue;
         const rootName = file.replace(/\.json$/, "");
-        const todos = readFeedback(paperId, rootName, branch);
+        const todos = readFeedback(paperId, rootName);
         for (const t of todos as any[]) {
           if (!status || t.status === status) {
             results.push({ paperId, rootName, todo: t });
@@ -248,8 +241,8 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blk = (await importTsBranch(br, blkTsRel)) as any;
           const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos (branch-scoped)
-          const feedback = readFeedback(id, rootName, br);
+          // Merge feedback todos (global)
+          const feedback = readFeedback(id, rootName);
           if (feedback.length) {
             blk.todos = [...(blk.todos || []), ...feedback];
           }
@@ -333,6 +326,191 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     todos: paperMod.todos,
     branch: currentBranch(),
   };
+}
+
+// ── Claude API: characterize branch changes ──────────────────────
+
+let anthropic: Anthropic | null = null;
+
+function getAnthropic(): Anthropic | null {
+  if (anthropic) return anthropic;
+  const key = process.env.ANTHROPIC_API_KEY;
+  if (!key) return null;
+  anthropic = new Anthropic({ apiKey: key });
+  return anthropic;
+}
+
+interface BranchCharacterization {
+  title: string;
+  summary: string;
+  categories: string[];
+  impact: "minor" | "moderate" | "major";
+  suggestions?: string[];
+  error?: string;
+}
+
+async function characterizeBranchChanges(diff: PaperDiff): Promise<BranchCharacterization> {
+  const client = getAnthropic();
+  if (!client) {
+    // No API key — return a basic characterization from the diff summary
+    return fallbackCharacterization(diff);
+  }
+
+  // Build a concise prompt from the diff
+  const changedBlocks = diff.blocks.filter(b => b.status !== "unchanged");
+  const blockDescriptions = changedBlocks.slice(0, 30).map(b => {
+    let desc = `[${b.status}] ${b.kind}: ${b.title || b.rootName}`;
+    if (b.label) desc += ` (${b.label})`;
+    if (b.statusDiff) desc += ` | status: ${b.statusDiff.base} → ${b.statusDiff.head}`;
+    if (b.mdDiff) {
+      const added = b.mdDiff.head.split("\n").length;
+      const removed = b.mdDiff.base.split("\n").length;
+      desc += ` | md: ${removed} → ${added} lines`;
+    }
+    if (b.leanDiff) desc += ` | lean source changed`;
+    return desc;
+  }).join("\n");
+
+  const prompt = `You are a mathematical paper assistant. Characterize the changes between branch "${diff.base}" and "${diff.head}" for paper "${diff.paperId}".
+
+Summary: +${diff.summary.added} added, -${diff.summary.removed} removed, ~${diff.summary.changed} changed, ${diff.summary.unchanged} unchanged blocks.
+
+Changed blocks:
+${blockDescriptions}
+
+Respond in JSON with exactly these fields:
+- "title": Short title for these changes (under 60 chars)
+- "summary": 2-3 sentence description of what changed and why it matters
+- "categories": Array of category tags (e.g. "new-definitions", "proof-progress", "restructuring", "notation", "formalization")
+- "impact": One of "minor", "moderate", "major"
+- "suggestions": Optional array of 1-3 follow-up suggestions`;
+
+  try {
+    const response = await client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 500,
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    const text = response.content[0]?.type === "text" ? response.content[0].text : "";
+    // Extract JSON from response (may be wrapped in ```json ... ```)
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        title: parsed.title || "Branch changes",
+        summary: parsed.summary || "",
+        categories: parsed.categories || [],
+        impact: parsed.impact || "moderate",
+        suggestions: parsed.suggestions,
+      };
+    }
+    return fallbackCharacterization(diff);
+  } catch (e) {
+    return { ...fallbackCharacterization(diff), error: `Claude API error: ${e instanceof Error ? e.message : String(e)}` };
+  }
+}
+
+function fallbackCharacterization(diff: PaperDiff): BranchCharacterization {
+  const { added, removed, changed } = diff.summary;
+  const total = added + removed + changed;
+  const categories: string[] = [];
+  const changedBlocks = diff.blocks.filter(b => b.status !== "unchanged");
+
+  // Infer categories from block kinds
+  const kinds = new Set(changedBlocks.map(b => b.kind));
+  if (kinds.has("definition")) categories.push("definitions");
+  if (kinds.has("theorem") || kinds.has("lemma") || kinds.has("proposition")) categories.push("proofs");
+  if (kinds.has("remark") || kinds.has("example")) categories.push("exposition");
+  if (changedBlocks.some(b => b.leanDiff)) categories.push("formalization");
+  if (added > 0) categories.push("new-content");
+  if (removed > 0) categories.push("removals");
+
+  const impact = total > 10 ? "major" : total > 3 ? "moderate" : "minor";
+  const title = `${total} block${total !== 1 ? "s" : ""} changed (${diff.base} → ${diff.head})`;
+  const summary = `${added} blocks added, ${removed} removed, ${changed} modified. ${categories.length ? "Touches: " + categories.join(", ") + "." : ""}`;
+
+  return { title, summary, categories, impact };
+}
+
+// ── AI triage: review feedback and propose actionable edits ──────
+
+interface TriageResult {
+  assessment: string;
+  actionable: boolean;
+  proposedEdit?: {
+    description: string;
+    newMd?: string;       // proposed replacement markdown
+    targetBranch?: string; // suggested branch
+  };
+  error?: string;
+}
+
+async function triageFeedback(
+  todo: any,
+  blockContent: string,
+  blockKind: string,
+  paperId: string,
+  rootName: string,
+): Promise<TriageResult> {
+  const client = getAnthropic();
+  if (!client) {
+    return {
+      assessment: `Feedback: "${todo.summary}". Priority: ${todo.priority}. No AI available — set ANTHROPIC_API_KEY to enable triage.`,
+      actionable: false,
+    };
+  }
+
+  const prompt = `You are an editor triaging feedback on a mathematical research paper.
+
+Block: "${rootName}" (kind: ${blockKind}, paper: ${paperId})
+
+Block content (markdown):
+\`\`\`
+${blockContent.slice(0, 2000)}
+\`\`\`
+
+Feedback:
+- Summary: ${todo.summary}
+- Detail: ${todo.comment || "(none)"}
+- Priority: ${todo.priority}
+- Assignee: ${todo.assignee}
+
+Respond in JSON with exactly these fields:
+- "assessment": 1-2 sentence editorial assessment of the feedback
+- "actionable": boolean — can this be addressed with a text edit right now?
+- "proposedEdit": (only if actionable) object with:
+  - "description": what the edit does
+  - "newMd": the full revised markdown for this block (preserving math notation, cross-refs, etc.)`;
+
+  try {
+    const response = await client.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1500,
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    const text = response.content[0]?.type === "text" ? response.content[0].text : "";
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        assessment: parsed.assessment || "No assessment generated.",
+        actionable: !!parsed.actionable,
+        proposedEdit: parsed.proposedEdit ? {
+          description: parsed.proposedEdit.description || "",
+          newMd: parsed.proposedEdit.newMd,
+        } : undefined,
+      };
+    }
+    return { assessment: "Failed to parse AI response.", actionable: false };
+  } catch (e) {
+    return {
+      assessment: `Feedback: "${todo.summary}". Priority: ${todo.priority}.`,
+      actionable: false,
+      error: `Claude API error: ${e instanceof Error ? e.message : String(e)}`,
+    };
+  }
 }
 
 // ── Diff computation ─────────────────────────────────────────────
@@ -517,15 +695,13 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // POST /api/feedback                      → create todo (handled below)
   if (path === "/api/feedback/all") {
     const status = url.searchParams.get("status") || undefined;
-    const branch = url.searchParams.get("branch") || undefined;
-    return Response.json(listAllFeedback(status, branch));
+    return Response.json(listAllFeedback(status));
   }
   if (path === "/api/feedback") {
     const paperId = url.searchParams.get("paperId");
     const rootName = url.searchParams.get("rootName");
-    const branch = url.searchParams.get("branch") || undefined;
     if (paperId && rootName) {
-      return Response.json(readFeedback(paperId, rootName, branch));
+      return Response.json(readFeedback(paperId, rootName));
     }
     return null; // POST handled in handlePostRequest
   }
@@ -545,6 +721,28 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       ]);
       const diff = computePaperDiff(basePaper, headPaper, base, head);
       return Response.json(diff, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Characterize branch changes via Claude ─────────────
+  // GET /api/characterize?id=<paper>&base=main&head=feature-x
+  if (path === "/api/characterize") {
+    const id = url.searchParams.get("id");
+    const base = url.searchParams.get("base") || "main";
+    const head = url.searchParams.get("head") || currentBranch();
+    if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
+    try {
+      const [basePaper, headPaper] = await Promise.all([
+        resolvePaper(id, base),
+        resolvePaper(id, head),
+      ]);
+      const diff = computePaperDiff(basePaper, headPaper, base, head);
+      const summary = await characterizeBranchChanges(diff);
+      return Response.json({ ...summary, diff: diff.summary }, {
+        headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" },
+      });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
@@ -695,19 +893,16 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
-  // ── Submit feedback as todo (branch-scoped) ─────────────────
+  // ── Submit feedback as todo (global, hash-based ID) ─────────
   if (path === "/api/feedback") {
     try {
       const body = await req.json() as {
         paperId: string; rootName: string;
         summary: string; comment: string; priority: string; assignee: string;
-        branch?: string;
       };
 
-      const branch = body.branch || undefined;
-      const todoId = `todo-${Date.now().toString(36)}`;
       const todo = {
-        id: todoId,
+        id: makeTodoId(),
         summary: body.summary,
         comment: body.comment,
         status: "open",
@@ -715,14 +910,46 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         origin: "human",
         assignee: body.assignee || "editor-agent",
         createdAt: new Date().toISOString(),
-        branch: branch || currentBranch(),
       };
 
-      const todos = readFeedback(body.paperId, body.rootName, branch);
+      const todos = readFeedback(body.paperId, body.rootName);
       todos.push(todo);
-      writeFeedback(body.paperId, body.rootName, todos, branch);
+      writeFeedback(body.paperId, body.rootName, todos);
 
       return Response.json({ ok: true, todo });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── AI triage: review feedback and propose action ────────────
+  // POST /api/feedback/triage { paperId, rootName, todoId }
+  if (path === "/api/feedback/triage") {
+    try {
+      const body = await req.json() as { paperId: string; rootName: string; todoId: string };
+      const todos = readFeedback(body.paperId, body.rootName);
+      const todo = (todos as any[]).find(t => t.id === body.todoId);
+      if (!todo) return Response.json({ error: "Todo not found" }, { status: 404 });
+
+      // Read the block content for context
+      const paper = await resolvePaper(body.paperId);
+      let blockContent = "";
+      let blockKind = "";
+      if (paper) {
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            for (const blk of sec.blocks) {
+              if (blk.rootName === body.rootName) {
+                blockContent = blk.md;
+                blockKind = blk.kind;
+              }
+            }
+          }
+        }
+      }
+
+      const triage = await triageFeedback(todo, blockContent, blockKind, body.paperId, body.rootName);
+      return Response.json(triage, { headers: { "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }

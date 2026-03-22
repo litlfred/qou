@@ -479,7 +479,7 @@
       const badge = h("span", "todo-badge",
         `${blk.todos.length} todo${blk.todos.length > 1 ? "s" : ""}`);
       const list = h("div", "todo-list");
-      for (const td of blk.todos) list.appendChild(renderTodoItem(td));
+      for (const td of blk.todos) list.appendChild(renderTodoItem(td, blk));
       badge.onclick = () => list.classList.toggle("open");
       el.appendChild(badge);
       el.appendChild(list);
@@ -488,7 +488,7 @@
     return el;
   }
 
-  function renderTodoItem(td) {
+  function renderTodoItem(td, blk) {
     const el = h("div", "todo-item");
     el.innerHTML = `
       <div class="ti-head">
@@ -501,6 +501,78 @@
         ${td.assignee ? " &middot; " + esc(td.assignee) : ""}
         ${td.createdAt ? " &middot; " + esc(td.createdAt.slice(0, 10)) : ""}
       </div>`;
+
+    // AI triage button
+    if (blk && paper && td.id) {
+      const triageBtn = h("button", "fb-triage-btn", "AI Triage");
+      const triageArea = h("div", "");
+      triageBtn.onclick = async (e) => {
+        e.stopPropagation();
+        triageBtn.disabled = true;
+        triageBtn.textContent = "Triaging...";
+        triageArea.innerHTML = "";
+        try {
+          const res = await fetch("/api/feedback/triage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, todoId: td.id }),
+          });
+          const data = await res.json();
+          if (data.error && !data.assessment) throw new Error(data.error);
+          const result = h("div", "triage-result");
+          result.innerHTML = `<div class="triage-assessment">${esc(data.assessment)}</div>`;
+          if (data.error) result.innerHTML += `<div class="char-error">${esc(data.error)}</div>`;
+          if (data.actionable && data.proposedEdit) {
+            const action = h("div", "triage-action");
+            action.innerHTML = `<span>${esc(data.proposedEdit.description)}</span>`;
+
+            // Branch selector for where to apply
+            const brSelect = h("select", "triage-branch-select");
+            const optCurrent = h("option", "", currentBranch + " (current)");
+            optCurrent.value = "__current__";
+            brSelect.appendChild(optCurrent);
+            const optNew = h("option", "", "New branch");
+            optNew.value = "__new__";
+            brSelect.appendChild(optNew);
+            action.appendChild(brSelect);
+
+            const applyBtn = h("button", "triage-action-btn", "Apply Edit");
+            applyBtn.onclick = async (ev) => {
+              ev.stopPropagation();
+              applyBtn.disabled = true;
+              applyBtn.textContent = "Applying...";
+              try {
+                const saveRes = await fetch("/api/block/save", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, md: data.proposedEdit.newMd }),
+                });
+                if (!saveRes.ok) throw new Error(`${saveRes.status}`);
+                showToast("Edit applied to " + blk.rootName);
+                // Reload paper to reflect changes
+                const hash = location.hash;
+                const parts = hash.slice(2).split("/").filter(Boolean);
+                if (parts[0] === "paper" && parts[1]) loadPaper(parts[1]);
+              } catch (err) {
+                showToast("Failed: " + err.message);
+              }
+              applyBtn.textContent = "Apply Edit";
+              applyBtn.disabled = false;
+            };
+            action.appendChild(applyBtn);
+            result.appendChild(action);
+          }
+          triageArea.appendChild(result);
+        } catch (err) {
+          triageArea.innerHTML = `<div class="char-error">${esc(err.message)}</div>`;
+        }
+        triageBtn.textContent = "AI Triage";
+        triageBtn.disabled = false;
+      };
+      el.querySelector(".ti-meta").appendChild(triageBtn);
+      el.appendChild(triageArea);
+    }
+
     return el;
   }
 
@@ -638,8 +710,7 @@
           summary: fbText.value.trim().slice(0, 80),
           comment: fbText.value.trim(),
           priority: fbPriority.value,
-          assignee: fbAssignee.value,
-          branch: selectedBranch || currentBranch
+          assignee: fbAssignee.value
         })
       });
       if (!res.ok) throw new Error(`${res.status}`);
@@ -647,7 +718,7 @@
       // show in history
       if (data.todo) {
         const history = $("#fb-history");
-        history.prepend(renderTodoItem(data.todo));
+        history.prepend(renderTodoItem(data.todo, fbBlock));
       }
       fbText.value = "";
       closeFeedback();
@@ -751,6 +822,36 @@
         <span class="removed">\u2212${diffData.summary.removed}</span>
         <span class="changed">\u0394${diffData.summary.changed}</span>
       </div>`;
+
+    // AI characterize button + results area
+    const charSection = h("div", "characterize-section");
+    const charBtn = h("button", "char-btn", "Characterize with AI");
+    const charResult = h("div", "char-result");
+    charBtn.onclick = async () => {
+      charBtn.disabled = true;
+      charBtn.textContent = "Analyzing...";
+      charResult.innerHTML = "";
+      try {
+        const data = await api(`/api/characterize?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(diffData.base)}&head=${encodeURIComponent(diffData.head)}`);
+        charResult.innerHTML = `
+          <div class="char-title">${esc(data.title)}</div>
+          <div class="char-summary">${esc(data.summary)}</div>
+          <div class="char-meta">
+            <span class="char-impact char-impact-${data.impact}">${esc(data.impact)}</span>
+            ${(data.categories || []).map(c => `<span class="char-cat">${esc(c)}</span>`).join("")}
+          </div>
+          ${data.suggestions?.length ? `<div class="char-suggestions"><strong>Suggestions:</strong><ul>${data.suggestions.map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>` : ""}
+          ${data.error ? `<div class="char-error">${esc(data.error)}</div>` : ""}`;
+      } catch (e) {
+        charResult.innerHTML = `<div class="char-error">${esc(e.message)}</div>`;
+      }
+      charBtn.textContent = "Characterize with AI";
+      charBtn.disabled = false;
+    };
+    charSection.appendChild(charBtn);
+    charSection.appendChild(charResult);
+    hdr.appendChild(charSection);
+
     content.appendChild(hdr);
 
     // Changed blocks first, then unchanged (collapsed)
