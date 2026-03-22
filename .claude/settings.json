@@ -34,6 +34,17 @@
         ]
       }
     ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/greeting-task-selection.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
     "PreCommit": [
       {
         "matcher": "",
