@@ -797,23 +797,41 @@
     .dep-bolt svg{width:14px;height:14px;fill:currentColor;vertical-align:middle}
 
     /* ── Dependency graph overlay ────────────────────────── */
-    .dep-overlay{display:none;position:fixed;top:34px;left:0;right:0;bottom:0;background:var(--bg);z-index:200;overflow:auto}
+    .dep-overlay{display:none;position:fixed;top:34px;left:0;right:0;bottom:0;background:var(--bg);z-index:200;overflow:hidden}
     .dep-overlay.open{display:flex;flex-direction:column}
     .dep-overlay-bar{display:flex;align-items:center;gap:.6rem;padding:.4rem 1rem;background:var(--bg-s);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);flex-shrink:0}
     .dep-overlay-bar .dep-title{font-weight:600;color:var(--fg-b);font-size:.8rem}
-    .dep-overlay-bar .dep-close{margin-left:auto;background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.65rem;padding:.15rem .5rem;border-radius:3px;cursor:pointer}
-    .dep-overlay-bar .dep-close:hover{color:var(--fg-b);border-color:var(--ac-d)}
-    .dep-graph-wrap{flex:1;overflow:auto;display:flex;flex-direction:column}
-    .dep-graph-svg{flex:1;min-height:300px}
+    .dep-overlay-bar button{background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.65rem;padding:.15rem .5rem;border-radius:3px;cursor:pointer}
+    .dep-overlay-bar button:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .dep-overlay-bar .dep-sp{flex:1}
+    /* Split layout: graph LHS + preview RHS */
+    .dep-body{display:flex;flex:1;overflow:hidden}
+    .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+    .dep-graph-wrap{flex:1;overflow:auto}
+    .dep-graph-svg{min-height:300px;width:100%;height:100%}
     .dep-graph-svg svg{width:100%;height:100%}
+    /* RHS preview panel */
+    .dep-rhs{width:0;overflow:hidden;transition:width .2s var(--ease);border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column}
+    .dep-rhs.open{width:380px}
+    .dep-rhs-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.72rem;flex-shrink:0}
+    .dep-rhs-head .rhs-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase}
+    .dep-rhs-head .rhs-title{color:var(--fg-b);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .dep-rhs-head .rhs-close{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.8rem;padding:0 .2rem}
+    .dep-rhs-head .rhs-close:hover{color:var(--fg-b)}
+    .dep-rhs-body{flex:1;overflow-y:auto;padding:.6rem .8rem;font-size:var(--f-sz);line-height:var(--f-lh)}
+    .dep-rhs-foot{display:flex;gap:.4rem;padding:.3rem .6rem;border-top:1px solid var(--brd);flex-shrink:0;align-items:center}
+    .dep-rhs-foot button{font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer}
+    .dep-rhs-foot button:hover{border-color:var(--ac);color:var(--ac)}
     /* Graph node styles */
-    .dep-node{cursor:pointer}
+    .dep-node{cursor:grab}
+    .dep-node.dragging{cursor:grabbing}
     .dep-node rect{rx:6;ry:6;stroke-width:1.5;transition:stroke .15s}
     .dep-node:hover rect{stroke-width:2.5}
-    .dep-node text{font-family:var(--f-head);font-size:11px;fill:var(--fg)}
+    .dep-node.dep-hovered rect{stroke-width:3;filter:brightness(1.15)}
+    .dep-node text{font-family:var(--f-head);font-size:11px;fill:var(--fg);pointer-events:none}
     .dep-node .node-kind{font-family:var(--f-mono);font-size:9px;fill:var(--fg-d)}
     .dep-node .node-lean{font-family:var(--f-mono);font-size:8px}
-    .dep-edge{fill:none;stroke-width:1.5}
+    .dep-edge{fill:none;stroke-width:1.5;pointer-events:none}
     .dep-edge.narrative{stroke:var(--ac)}
     .dep-edge.lean-complete{stroke:var(--grn)}
     .dep-edge.lean-incomplete{stroke:var(--ora);stroke-dasharray:6 3}
@@ -874,21 +892,39 @@
       <span>&#x26A1;</span>
       <span class="dep-title" id="dep-title">Dependency Graph</span>
       <span id="dep-subtitle" style="font-size:.65rem"></span>
-      <button class="dep-close" id="dep-close">&times; close</button>
+      <span class="dep-sp"></span>
+      <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
+      <button id="dep-close">&times; close</button>
     </div>
     <div class="dep-legend">
       <div class="dep-legend-item"><div class="dep-legend-line narrative"></div> narrative proof</div>
       <div class="dep-legend-item"><div class="dep-legend-line lean-complete"></div> Lean proof (complete)</div>
       <div class="dep-legend-item"><div class="dep-legend-line lean-incomplete"></div> Lean proof (stub/sorry)</div>
     </div>
-    <div class="dep-graph-wrap">
-      <div class="dep-graph-svg" id="dep-graph-svg"></div>
-    </div>
-    <div class="dep-ext-panel" id="dep-ext-panel" style="display:none">
-      <details>
-        <summary>External Lean dependencies</summary>
-        <div class="dep-ext-list" id="dep-ext-list"></div>
-      </details>
+    <div class="dep-body">
+      <div class="dep-lhs">
+        <div class="dep-graph-wrap">
+          <div class="dep-graph-svg" id="dep-graph-svg"></div>
+        </div>
+        <div class="dep-ext-panel" id="dep-ext-panel" style="display:none">
+          <details>
+            <summary>External Lean dependencies</summary>
+            <div class="dep-ext-list" id="dep-ext-list"></div>
+          </details>
+        </div>
+      </div>
+      <div class="dep-rhs" id="dep-rhs">
+        <div class="dep-rhs-head">
+          <span class="rhs-kind" id="dep-rhs-kind"></span>
+          <span class="rhs-title" id="dep-rhs-title"></span>
+          <button class="rhs-close" id="dep-rhs-close">&times;</button>
+        </div>
+        <div class="dep-rhs-body" id="dep-rhs-body"></div>
+        <div class="dep-rhs-foot">
+          <button id="dep-rhs-goto">go to &#x2197;</button>
+          <button id="dep-rhs-fb">feedback</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1577,8 +1613,51 @@
     const depSubtitle = document.getElementById('dep-subtitle');
     const depExtPanel = document.getElementById('dep-ext-panel');
     const depExtList = document.getElementById('dep-ext-list');
-    document.getElementById('dep-close').onclick = () => depOverlay.classList.remove('open');
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) depOverlay.classList.remove('open'); });
+    const depRhs = document.getElementById('dep-rhs');
+    const depRhsKind = document.getElementById('dep-rhs-kind');
+    const depRhsTitle = document.getElementById('dep-rhs-title');
+    const depRhsBody = document.getElementById('dep-rhs-body');
+    let depRootLabel = null; // current root for feedback
+
+    document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depRhs.classList.remove('open'); };
+    document.getElementById('dep-rhs-close').onclick = () => depRhs.classList.remove('open');
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depRhs.classList.remove('open'); } });
+
+    // Feedback button in overlay bar — opens feedback for the root block
+    document.getElementById('dep-fb-btn').onclick = () => {
+      const block = depRootLabel ? bix.get(depRootLabel) : null;
+      if (block) openFeedback(block);
+    };
+
+    // RHS footer buttons
+    let depRhsCurrentLabel = null;
+    document.getElementById('dep-rhs-goto').onclick = () => {
+      if (!depRhsCurrentLabel) return;
+      depOverlay.classList.remove('open');
+      depRhs.classList.remove('open');
+      const el = document.getElementById(depRhsCurrentLabel);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
+    document.getElementById('dep-rhs-fb').onclick = () => {
+      const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
+      if (block) openFeedback(block);
+    };
+
+    /** Show block preview in RHS panel */
+    function depShowPreview(label) {
+      const block = bix.get(label);
+      if (!block) return;
+      depRhsCurrentLabel = label;
+      depRhsKind.textContent = block.kind;
+      depRhsTitle.textContent = block.title || label;
+      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+      depRhsBody.innerHTML = bh || '<span style="color:var(--fg-d)">No content</span>';
+      fillTex(depRhsBody, tx, block.rendered);
+      renderMath(depRhsBody);
+      depRhs.classList.add('open');
+      // Highlight hovered node
+      depGraphSvg.querySelectorAll('.dep-node').forEach(n => n.classList.toggle('dep-hovered', n.dataset.label === label));
+    }
 
     /** Determine lean status class for a block */
     function depNodeClass(b) {
@@ -1595,7 +1674,6 @@
 
     /** Determine edge type between two blocks */
     function depEdgeInfo(from, to) {
-      // "from" uses "to" — check if there's a narrative proof and/or lean proof
       const hasNarrative = from.proofs?.some(pl => { const p = bix.get(pl); return p && p.md && p.md.trim().length > 20; })
         || (from.md && from.md.trim().length > 20 && ['theorem','lemma','proposition','corollary'].includes(from.kind));
       const fromLean = from.lean || from.proofs?.some(pl => { const p = bix.get(pl); return p?.lean; });
@@ -1609,92 +1687,62 @@
       return { hasNarrative, leanStatus };
     }
 
-    /**
-     * Build the dependency subgraph rooted at `rootLabel`.
-     * Walks `uses[]` transitively. Returns { nodes: Map<label, block>, edges: [{from,to}], externals: [] }
-     */
+    /** Build the dependency subgraph rooted at `rootLabel`. */
     function buildDepGraph(rootLabel) {
       const nodes = new Map();
       const edges = [];
-      const externals = []; // lean dependencies not in paper
+      const externals = [];
       const visited = new Set();
 
       function walk(label) {
         if (visited.has(label)) return;
         visited.add(label);
         const b = bix.get(label);
-        if (!b) return; // label not found
+        if (!b) return;
         nodes.set(label, b);
-
-        // Collect Lean mathlibLinks as external dependencies
         if (b.lean?.mathlibLinks) {
           for (const ml of b.lean.mathlibLinks) {
-            if (!externals.some(e => e.decl === ml)) {
-              externals.push({ decl: ml, fromLabel: label });
-            }
+            if (!externals.some(e => e.decl === ml)) externals.push({ decl: ml, fromLabel: label });
           }
         }
-
-        // Walk uses[] edges
         if (b.uses) {
           for (const dep of b.uses) {
-            const depBlock = bix.get(dep);
-            if (depBlock) {
-              edges.push({ from: label, to: dep });
-              walk(dep);
-            }
+            if (bix.get(dep)) { edges.push({ from: label, to: dep }); walk(dep); }
           }
         }
       }
-
       walk(rootLabel);
 
-      // Also walk "upward" — blocks that use the root
-      function walkUp(label) {
-        const refs = usedByIndex.get(label) || [];
-        for (const ref of refs) {
-          if (visited.has(ref.label)) continue;
-          visited.add(ref.label);
-          const b = bix.get(ref.label);
-          if (!b) continue;
-          nodes.set(ref.label, b);
-          edges.push({ from: ref.label, to: label });
-          if (b.lean?.mathlibLinks) {
-            for (const ml of b.lean.mathlibLinks) {
-              if (!externals.some(e => e.decl === ml)) {
-                externals.push({ decl: ml, fromLabel: ref.label });
-              }
-            }
+      // One level upward
+      const refs = usedByIndex.get(rootLabel) || [];
+      for (const ref of refs) {
+        if (visited.has(ref.label)) continue;
+        visited.add(ref.label);
+        const b = bix.get(ref.label);
+        if (!b) continue;
+        nodes.set(ref.label, b);
+        edges.push({ from: ref.label, to: rootLabel });
+        if (b.lean?.mathlibLinks) {
+          for (const ml of b.lean.mathlibLinks) {
+            if (!externals.some(e => e.decl === ml)) externals.push({ decl: ml, fromLabel: ref.label });
           }
-          // Only one level up to keep graph manageable
         }
       }
-      walkUp(rootLabel);
-
       return { nodes, edges, externals };
     }
 
-    /**
-     * Assign layers via topological sort (Kahn's algorithm).
-     * Root gets layer 0; its dependencies get deeper layers.
-     */
+    /** Assign layers via topological sort (Kahn's algorithm). */
     function layoutGraph(nodes, edges, rootLabel) {
-      // Build adjacency (from → [to]) and reverse
       const adj = new Map();
       const indeg = new Map();
       for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
       for (const {from, to} of edges) {
-        if (adj.has(from) && adj.has(to)) {
-          adj.get(from).push(to);
-          indeg.set(to, (indeg.get(to) || 0) + 1);
-        }
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
       }
-
-      // Topological layers (BFS from sources)
       const layers = [];
       let queue = [];
       for (const [label, deg] of indeg) { if (deg === 0) queue.push(label); }
-      if (queue.length === 0 && nodes.size > 0) queue = [rootLabel]; // cycle fallback
+      if (queue.length === 0 && nodes.size > 0) queue = [rootLabel];
       while (queue.length > 0) {
         layers.push([...queue]);
         const next = [];
@@ -1706,22 +1754,41 @@
         }
         queue = next;
       }
-      // Ensure all nodes appear (handle cycles)
       const placed = new Set(layers.flat());
       const remaining = [...nodes.keys()].filter(l => !placed.has(l));
       if (remaining.length) layers.push(remaining);
-
       return layers;
     }
 
-    /** Render the dependency graph as SVG into depGraphSvg */
+    /** Recompute a cubic bezier edge path between two positions */
+    function depEdgePath(fp, tp, nodeW, nodeH, layerGap, offsetX) {
+      const fx = fp.x + nodeW / 2 + offsetX, fy = fp.y + nodeH;
+      const tx = tp.x + nodeW / 2 + offsetX, ty = tp.y;
+      const cy1 = fy + layerGap * 0.35, cy2 = ty - layerGap * 0.35;
+      return `M${fx},${fy} C${fx},${cy1} ${tx},${cy2} ${tx},${ty}`;
+    }
+
+    /** Update all edge paths from current node positions */
+    function depUpdateEdges(svgEl, edgeData, pos, nodeW, nodeH, layerGap) {
+      for (const ed of edgeData) {
+        const fp = pos.get(ed.from), tp = pos.get(ed.to);
+        if (!fp || !tp) continue;
+        const info = ed._info;
+        if (ed._pathNarr) ed._pathNarr.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, info.hasNarrative ? -4 : 0));
+        if (ed._pathLean) ed._pathLean.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, info.hasNarrative ? 4 : 0));
+      }
+    }
+
+    /** Render the dependency graph as SVG with draggable nodes */
     function renderDepGraph(rootLabel) {
       const { nodes, edges, externals } = buildDepGraph(rootLabel);
       const root = bix.get(rootLabel);
       if (!root) return;
 
+      depRootLabel = rootLabel;
       depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
       depSubtitle.textContent = rootLabel;
+      depRhs.classList.remove('open');
 
       // Layout
       const layers = layoutGraph(nodes, edges, rootLabel);
@@ -1742,80 +1809,153 @@
         });
       });
 
-      // Compute viewBox centering
       let minX = Infinity;
       for (const p of pos.values()) minX = Math.min(minX, p.x);
       const pad = 40;
-      const vbX = minX - pad;
-      const vbY = -pad;
+      const vbX = minX - pad, vbY = -pad;
       const vbW = (maxX - minX) + nodeW + pad * 2;
       const vbH = maxY + nodeH + pad * 2;
 
-      // Build SVG
-      let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbX} ${vbY} ${vbW} ${vbH}" style="min-height:${Math.min(vbH + 60, 600)}px">`;
+      // Build SVG via DOM for drag support
+      const NS = 'http://www.w3.org/2000/svg';
+      const svgEl = document.createElementNS(NS, 'svg');
+      svgEl.setAttribute('viewBox', `${vbX} ${vbY} ${vbW} ${vbH}`);
+      svgEl.style.minHeight = `${Math.min(vbH + 60, 600)}px`;
 
-      // Defs for arrowheads
-      svg += `<defs>
-        <marker id="ah-narrative" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-narrative"/></marker>
-        <marker id="ah-lean-complete" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-complete"/></marker>
-        <marker id="ah-lean-incomplete" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-incomplete"/></marker>
-        <marker id="ah-lean-none" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" class="dep-arrowhead-lean-none"/></marker>
-      </defs>`;
+      // Defs
+      const defs = document.createElementNS(NS, 'defs');
+      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none']) {
+        const marker = document.createElementNS(NS, 'marker');
+        marker.setAttribute('id', `ah-${type}`);
+        marker.setAttribute('markerWidth', '8'); marker.setAttribute('markerHeight', '6');
+        marker.setAttribute('refX', '8'); marker.setAttribute('refY', '3'); marker.setAttribute('orient', 'auto');
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M0,0 L8,3 L0,6Z');
+        path.setAttribute('class', `dep-arrowhead-${type}`);
+        marker.appendChild(path);
+        defs.appendChild(marker);
+      }
+      svgEl.appendChild(defs);
 
-      // Draw edges
-      for (const {from, to} of edges) {
-        const fp = pos.get(from), tp = pos.get(to);
-        if (!fp || !tp) continue;
+      // Edge group (drawn first, behind nodes)
+      const edgeGroup = document.createElementNS(NS, 'g');
+      svgEl.appendChild(edgeGroup);
+
+      // Build edges with DOM references for live update
+      const edgeData = edges.map(({from, to}) => {
         const fromBlock = nodes.get(from), toBlock = nodes.get(to);
         const info = depEdgeInfo(fromBlock, toBlock);
+        const fp = pos.get(from), tp = pos.get(to);
+        const entry = { from, to, _info: info, _pathNarr: null, _pathLean: null };
 
-        const fx = fp.x + nodeW / 2, fy = fp.y + nodeH;
-        const tx = tp.x + nodeW / 2, ty = tp.y;
-        const cy1 = fy + layerGap * 0.35, cy2 = ty - layerGap * 0.35;
-
-        // Narrative edge (solid blue)
         if (info.hasNarrative) {
-          const ox = -4; // slight offset so both edges visible
-          svg += `<path class="dep-edge narrative" d="M${fx+ox},${fy} C${fx+ox},${cy1} ${tx+ox},${cy2} ${tx+ox},${ty}" marker-end="url(#ah-narrative)"/>`;
+          const p = document.createElementNS(NS, 'path');
+          p.setAttribute('class', 'dep-edge narrative');
+          p.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, -4));
+          p.setAttribute('marker-end', 'url(#ah-narrative)');
+          edgeGroup.appendChild(p);
+          entry._pathNarr = p;
         }
-        // Lean edge
-        const lox = info.hasNarrative ? 4 : 0;
-        svg += `<path class="dep-edge ${info.leanStatus}" d="M${fx+lox},${fy} C${fx+lox},${cy1} ${tx+lox},${cy2} ${tx+lox},${ty}" marker-end="url(#ah-${info.leanStatus})"/>`;
-      }
+        const pl = document.createElementNS(NS, 'path');
+        pl.setAttribute('class', `dep-edge ${info.leanStatus}`);
+        pl.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, info.hasNarrative ? 4 : 0));
+        pl.setAttribute('marker-end', `url(#ah-${info.leanStatus})`);
+        edgeGroup.appendChild(pl);
+        entry._pathLean = pl;
+        return entry;
+      });
 
-      // Draw nodes
+      // Node group
+      const nodeGroup = document.createElementNS(NS, 'g');
+      svgEl.appendChild(nodeGroup);
+
+      // Drag state
+      let dragNode = null, dragOffset = {x:0,y:0}, dragMoved = false;
+
       for (const [label, block] of nodes) {
         const p = pos.get(label);
         if (!p) continue;
         const cls = depNodeClass(block);
         const isRoot = label === rootLabel;
         const kindAbbr = {definition:'def',theorem:'thm',lemma:'lem',proposition:'prop',corollary:'cor',conjecture:'conj',example:'ex',remark:'rem',proof:'prf'}[block.kind] || block.kind;
-        const title = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        const titleText = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
         const leanDecl = block.lean?.decl ? esc(block.lean.decl).substring(0, 24) : '';
 
-        svg += `<g class="dep-node ${cls}${isRoot ? ' dep-node-root' : ''}" data-label="${esc(label)}" transform="translate(${p.x},${p.y})">`;
-        svg += `<rect width="${nodeW}" height="${nodeH}" />`;
-        svg += `<text class="node-kind" x="8" y="15">${kindAbbr}</text>`;
-        svg += `<text x="8" y="30">${title}</text>`;
+        const g = document.createElementNS(NS, 'g');
+        g.setAttribute('class', `dep-node ${cls}${isRoot ? ' dep-node-root' : ''}`);
+        g.dataset.label = label;
+        g.setAttribute('transform', `translate(${p.x},${p.y})`);
+
+        const rect = document.createElementNS(NS, 'rect');
+        rect.setAttribute('width', nodeW); rect.setAttribute('height', nodeH);
+        g.appendChild(rect);
+
+        const t1 = document.createElementNS(NS, 'text');
+        t1.setAttribute('class', 'node-kind'); t1.setAttribute('x', '8'); t1.setAttribute('y', '15');
+        t1.textContent = kindAbbr;
+        g.appendChild(t1);
+
+        const t2 = document.createElementNS(NS, 'text');
+        t2.setAttribute('x', '8'); t2.setAttribute('y', '30');
+        t2.textContent = titleText;
+        g.appendChild(t2);
+
         if (leanDecl) {
-          const leanColor = cls === 'dep-node-ok' ? 'var(--grn)' : cls === 'dep-node-sorry' ? 'var(--yel)' : 'var(--fg-d)';
-          svg += `<text class="node-lean" x="8" y="44" fill="${leanColor}">${leanDecl}</text>`;
+          const t3 = document.createElementNS(NS, 'text');
+          t3.setAttribute('class', 'node-lean'); t3.setAttribute('x', '8'); t3.setAttribute('y', '44');
+          t3.setAttribute('fill', cls === 'dep-node-ok' ? 'var(--grn)' : cls === 'dep-node-sorry' ? 'var(--yel)' : 'var(--fg-d)');
+          t3.textContent = leanDecl;
+          g.appendChild(t3);
         }
-        svg += `</g>`;
+
+        // Hover → show preview in RHS
+        g.addEventListener('mouseenter', () => depShowPreview(label));
+        g.addEventListener('mouseleave', () => g.classList.remove('dep-hovered'));
+
+        // Drag start
+        g.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          e.preventDefault();
+          dragNode = { g, label };
+          dragMoved = false;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          dragOffset = { x: sp.x - p.x, y: sp.y - p.y };
+          g.classList.add('dragging');
+          g.setPointerCapture(e.pointerId);
+        });
+
+        g.addEventListener('pointermove', (e) => {
+          if (!dragNode || dragNode.label !== label) return;
+          e.preventDefault();
+          dragMoved = true;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          const np = pos.get(label);
+          np.x = sp.x - dragOffset.x;
+          np.y = sp.y - dragOffset.y;
+          g.setAttribute('transform', `translate(${np.x},${np.y})`);
+          depUpdateEdges(svgEl, edgeData, pos, nodeW, nodeH, layerGap);
+        });
+
+        g.addEventListener('pointerup', (e) => {
+          if (!dragNode || dragNode.label !== label) return;
+          g.classList.remove('dragging');
+          dragNode = null;
+          // If no drag movement, treat as click → navigate
+          if (!dragMoved) {
+            depOverlay.classList.remove('open');
+            depRhs.classList.remove('open');
+            const el = document.getElementById(label);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+
+        nodeGroup.appendChild(g);
       }
 
-      svg += `</svg>`;
-      depGraphSvg.innerHTML = svg;
-
-      // Wire up node clicks → navigate to block
-      depGraphSvg.querySelectorAll('.dep-node').forEach(node => {
-        node.addEventListener('click', () => {
-          const label = node.dataset.label;
-          depOverlay.classList.remove('open');
-          const el = document.getElementById(label);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
+      depGraphSvg.innerHTML = '';
+      depGraphSvg.appendChild(svgEl);
 
       // External deps
       if (externals.length > 0) {
@@ -1823,12 +1963,8 @@
         depExtList.innerHTML = '';
         for (const ext of externals) {
           const row = mk('div','');
-          const parts = ext.decl.split('.');
-          const name = parts[parts.length - 1];
-          // Link to Mathlib docs if it looks like a Mathlib declaration
           const url = ext.decl.startsWith('Mathlib') || ext.decl.includes('.')
-            ? `https://leanprover-community.github.io/mathlib4_docs/find/#doc/${encodeURIComponent(ext.decl)}`
-            : null;
+            ? `https://leanprover-community.github.io/mathlib4_docs/find/#doc/${encodeURIComponent(ext.decl)}` : null;
           if (url) {
             row.innerHTML = `<a href="${url}" target="_blank" rel="noopener">${esc(ext.decl)}</a> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`;
           } else {
@@ -3090,6 +3226,7 @@
         }
         document.getElementById('fb-text').value = '';
         document.getElementById('fb-priority').value = 'medium';
+        document.getElementById('fb-assignee').value = 'editor-agent';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item (stay open)
@@ -3652,6 +3789,10 @@
     //   #/view/label@branch/name                    → paper scrolled to block, on branch
     //   #/edit/label                                → inline edit (current branch)
     //   #/edit/label@branch/name                    → inline edit on branch
+    //   #/viz/paper-id                              → full dependency graph overlay
+    //   #/viz/paper-id@branch/name                  → dependency graph on branch
+    //   #/diff/paper-id                             → diff mode (current branch vs main)
+    //   #/diff/paper-id@branch/name                 → diff mode on branch
     //   #label                                      → shorthand for #/view/label
     const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
     let pendingScroll = null;
@@ -3717,6 +3858,14 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeEdit(slug);
+      } else if (action === 'viz' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeViz(slug);
+      } else if (action === 'diff' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeDiff(slug);
       } else {
         await loadFolio();
       }
@@ -3757,6 +3906,198 @@
         document.getElementById('app').innerHTML =
           `<div class="err">Block not found: ${esc(slug)}</div>`;
       }
+    }
+
+    async function routeViz(slug) {
+      // slug is paper-id — load the paper then open the full dependency graph overlay
+      if (!paper) await loadPaper(slug);
+      else if (paper.id !== slug) await loadPaper(slug);
+      // If paper loaded, show graph for the first provable block with a label
+      // For now, just open the overlay. User can click any bolt to drill in.
+      // Build a full-paper dependency graph showing all blocks
+      renderFullDepGraph();
+    }
+
+    async function routeDiff(slug) {
+      // slug is paper-id — load the paper then trigger diff mode
+      if (!paper) await loadPaper(slug);
+      else if (paper.id !== slug) await loadPaper(slug);
+      // Activate diff mode (same as clicking the diff button)
+      const diffBtn = document.getElementById('c-diff');
+      if (diffBtn && !diffBtn.classList.contains('on')) diffBtn.click();
+    }
+
+    /** Render a full-paper dependency graph (all blocks with uses[]) */
+    function renderFullDepGraph() {
+      const nodes = new Map();
+      const edges = [];
+      const externals = [];
+      for (const [label, b] of bix) {
+        if (!b.uses?.length && !usedByIndex.has(label)) continue;
+        nodes.set(label, b);
+        if (b.lean?.mathlibLinks) {
+          for (const ml of b.lean.mathlibLinks) {
+            if (!externals.some(e => e.decl === ml)) externals.push({ decl: ml, fromLabel: label });
+          }
+        }
+        if (b.uses) for (const dep of b.uses) {
+          if (bix.has(dep)) { edges.push({ from: label, to: dep }); nodes.set(dep, bix.get(dep)); }
+        }
+      }
+      if (nodes.size === 0) { alert('No dependency edges found in this paper.'); return; }
+
+      depRootLabel = null;
+      depTitle.textContent = paper?.title || 'Full Paper';
+      depSubtitle.textContent = 'all blocks with dependencies';
+      depRhs.classList.remove('open');
+
+      const layers = layoutGraph(nodes, edges, nodes.keys().next().value);
+      const nodeW = 180, nodeH = 52, layerGap = 80, nodeGap = 24;
+      const pos = new Map();
+      let maxX = 0, maxY = 0;
+      layers.forEach((layer, li) => {
+        const totalW = layer.length * nodeW + (layer.length - 1) * nodeGap;
+        const startX = -totalW / 2;
+        layer.forEach((label, ni) => {
+          const x = startX + ni * (nodeW + nodeGap);
+          const y = li * (nodeH + layerGap);
+          pos.set(label, { x, y });
+          maxX = Math.max(maxX, x + nodeW);
+          maxY = Math.max(maxY, y + nodeH);
+        });
+      });
+
+      let minX = Infinity;
+      for (const p of pos.values()) minX = Math.min(minX, p.x);
+      const pad = 40;
+      const vbX = minX - pad, vbY = -pad;
+      const vbW = (maxX - minX) + nodeW + pad * 2;
+      const vbH = maxY + nodeH + pad * 2;
+
+      const NS = 'http://www.w3.org/2000/svg';
+      const svgEl = document.createElementNS(NS, 'svg');
+      svgEl.setAttribute('viewBox', `${vbX} ${vbY} ${vbW} ${vbH}`);
+      svgEl.style.minHeight = `${Math.min(vbH + 60, 800)}px`;
+
+      const defs = document.createElementNS(NS, 'defs');
+      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none']) {
+        const marker = document.createElementNS(NS, 'marker');
+        marker.setAttribute('id', `ah-${type}`);
+        marker.setAttribute('markerWidth', '8'); marker.setAttribute('markerHeight', '6');
+        marker.setAttribute('refX', '8'); marker.setAttribute('refY', '3'); marker.setAttribute('orient', 'auto');
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M0,0 L8,3 L0,6Z');
+        path.setAttribute('class', `dep-arrowhead-${type}`);
+        marker.appendChild(path);
+        defs.appendChild(marker);
+      }
+      svgEl.appendChild(defs);
+
+      const edgeGroup = document.createElementNS(NS, 'g');
+      svgEl.appendChild(edgeGroup);
+
+      const edgeData = edges.map(({from, to}) => {
+        const fromBlock = nodes.get(from), toBlock = nodes.get(to);
+        const info = depEdgeInfo(fromBlock, toBlock);
+        const fp = pos.get(from), tp = pos.get(to);
+        const entry = { from, to, _info: info, _pathNarr: null, _pathLean: null };
+        if (info.hasNarrative) {
+          const p = document.createElementNS(NS, 'path');
+          p.setAttribute('class', 'dep-edge narrative');
+          p.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, -4));
+          p.setAttribute('marker-end', 'url(#ah-narrative)');
+          edgeGroup.appendChild(p);
+          entry._pathNarr = p;
+        }
+        const pl = document.createElementNS(NS, 'path');
+        pl.setAttribute('class', `dep-edge ${info.leanStatus}`);
+        pl.setAttribute('d', depEdgePath(fp, tp, nodeW, nodeH, layerGap, info.hasNarrative ? 4 : 0));
+        pl.setAttribute('marker-end', `url(#ah-${info.leanStatus})`);
+        edgeGroup.appendChild(pl);
+        entry._pathLean = pl;
+        return entry;
+      });
+
+      const nodeGroup = document.createElementNS(NS, 'g');
+      svgEl.appendChild(nodeGroup);
+
+      let dragNode = null, dragOffset = {x:0,y:0}, dragMoved = false;
+      for (const [label, block] of nodes) {
+        const p = pos.get(label);
+        if (!p) continue;
+        const cls = depNodeClass(block);
+        const kindAbbr = {definition:'def',theorem:'thm',lemma:'lem',proposition:'prop',corollary:'cor',conjecture:'conj',example:'ex',remark:'rem',proof:'prf'}[block.kind] || block.kind;
+        const titleText = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        const leanDecl = block.lean?.decl ? esc(block.lean.decl).substring(0, 24) : '';
+
+        const g = document.createElementNS(NS, 'g');
+        g.setAttribute('class', `dep-node ${cls}`);
+        g.dataset.label = label;
+        g.setAttribute('transform', `translate(${p.x},${p.y})`);
+        const rect = document.createElementNS(NS, 'rect');
+        rect.setAttribute('width', nodeW); rect.setAttribute('height', nodeH);
+        g.appendChild(rect);
+        const t1 = document.createElementNS(NS, 'text');
+        t1.setAttribute('class', 'node-kind'); t1.setAttribute('x', '8'); t1.setAttribute('y', '15');
+        t1.textContent = kindAbbr; g.appendChild(t1);
+        const t2 = document.createElementNS(NS, 'text');
+        t2.setAttribute('x', '8'); t2.setAttribute('y', '30');
+        t2.textContent = titleText; g.appendChild(t2);
+        if (leanDecl) {
+          const t3 = document.createElementNS(NS, 'text');
+          t3.setAttribute('class', 'node-lean'); t3.setAttribute('x', '8'); t3.setAttribute('y', '44');
+          t3.setAttribute('fill', cls === 'dep-node-ok' ? 'var(--grn)' : cls === 'dep-node-sorry' ? 'var(--yel)' : 'var(--fg-d)');
+          t3.textContent = leanDecl; g.appendChild(t3);
+        }
+        g.addEventListener('mouseenter', () => depShowPreview(label));
+        g.addEventListener('mouseleave', () => g.classList.remove('dep-hovered'));
+        g.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          e.preventDefault(); dragNode = { g, label }; dragMoved = false;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          dragOffset = { x: sp.x - p.x, y: sp.y - p.y };
+          g.classList.add('dragging'); g.setPointerCapture(e.pointerId);
+        });
+        g.addEventListener('pointermove', (e) => {
+          if (!dragNode || dragNode.label !== label) return;
+          e.preventDefault(); dragMoved = true;
+          const ctm = svgEl.getScreenCTM().inverse();
+          const sp = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm);
+          const np = pos.get(label); np.x = sp.x - dragOffset.x; np.y = sp.y - dragOffset.y;
+          g.setAttribute('transform', `translate(${np.x},${np.y})`);
+          depUpdateEdges(svgEl, edgeData, pos, nodeW, nodeH, layerGap);
+        });
+        g.addEventListener('pointerup', (e) => {
+          if (!dragNode || dragNode.label !== label) return;
+          g.classList.remove('dragging'); dragNode = null;
+          if (!dragMoved) {
+            depOverlay.classList.remove('open'); depRhs.classList.remove('open');
+            const el = document.getElementById(label);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        nodeGroup.appendChild(g);
+      }
+
+      depGraphSvg.innerHTML = '';
+      depGraphSvg.appendChild(svgEl);
+
+      if (externals.length > 0) {
+        depExtPanel.style.display = '';
+        depExtList.innerHTML = '';
+        for (const ext of externals) {
+          const row = mk('div','');
+          const url = ext.decl.startsWith('Mathlib') || ext.decl.includes('.')
+            ? `https://leanprover-community.github.io/mathlib4_docs/find/#doc/${encodeURIComponent(ext.decl)}` : null;
+          row.innerHTML = url
+            ? `<a href="${url}" target="_blank" rel="noopener">${esc(ext.decl)}</a> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`
+            : `<span>${esc(ext.decl)}</span> <span style="color:var(--fg-d);font-size:.55rem">(from ${esc(ext.fromLabel)})</span>`;
+          depExtList.appendChild(row);
+        }
+      } else { depExtPanel.style.display = 'none'; }
+
+      depOverlay.classList.add('open');
     }
 
     function renderEditView(block) {
