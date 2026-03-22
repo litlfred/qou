@@ -47,8 +47,15 @@ When a user request arrives, route to the right skill(s):
 | "validate content objects" | `local/content-validation` |
 | "build content → LaTeX" | `local/content-validation` |
 | "add / edit content block" | `local/content-validation` + relevant skill |
+| "review / audit blocks" | `local/content-block-review` |
+| "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` |
+| "work on todos / process feedback" | `local/todo-review` |
+| "missing proof (narrative)" | `local/editor` §Proof workflow |
+| "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` |
 | "test / unit test / coverage" | `local/test-engineer` |
 | "deploy / auth / OAuth / roles" | `local/deployment-auth` |
+| "import / arxiv / upload paper" | `local/paper-importer` |
+| "import + formalize" | `local/paper-importer` + `local/formalizer` |
 
 **Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
 `local/content-validation` + relevant content skill. (2) Does it touch `.tex`?
@@ -65,6 +72,146 @@ including the detailed decision tree and Lean-specific routing table.
 Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
+
+## Writing `.lean` proofs — rules for agents
+
+These rules apply whenever an agent creates or modifies a `.lean` file.
+Agents **must** follow all of them; violations will be caught by the
+`content-block-review` skill.
+
+### 1. Every `sorry` requires a bibliographic citation
+
+```lean
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+sorry
+```
+
+- The `[key]` must match an entry in `references.bib` exactly (case-sensitive).
+- If no published reference exists, use `[manuscript]` and cite chapter/section.
+- A `sorry` without `-- Ref:` is always a review failure.
+
+### 2. Naming convention: LaTeX label → Lean declaration
+
+| LaTeX label | Lean declaration | Rule |
+|---|---|---|
+| `thm:lifting-exists` | `QOU.Torsion.lifting_exists` | Hyphens → underscores |
+| `def:quantum-connection` | `QOU.QuantumObservableUniverse.quantum_connection` | Namespace = chapter module |
+| `def:categorical-instanton` | `CategoricalInstanton` | Type-level structures use CamelCase |
+| `prop:categorical-dq-squared` | `categorical_dq_squared` | Theorems/lemmas use snake_case |
+
+All declarations live under the `QOU` root namespace.
+
+### 3. Block kind determines Lean requirements
+
+| Block kind | `.lean` file required? |
+|---|---|
+| `definition` | **Yes** — enforced; will not build without it |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
+| `conjecture`, `example`, `remark` | Optional |
+| `prose`, `equation`, `diagram` | N/A |
+
+### 4. Status field must reflect reality
+
+| `status` value | Meaning |
+|---|---|
+| `not_started` | No Lean file yet |
+| `stated` | Lean statement exists, body is `sorry` |
+| `has_sorry` | Partial proof with some `sorry` |
+| `proved` | Complete proof, no `sorry` |
+| `mathlib_ok` | Validated and sorry-free |
+
+Agents must update the `.ts` manifest `status` whenever they change the
+`.lean` file.
+
+### 4a. TodoItem lifecycle rules
+
+Content TODOs are **external to paper content**. They live in `todos/`
+(gitignored — survives branch switches), referencing content blocks via
+`targetLabel`. This keeps the paper source clean and avoids confusion
+between scholarly content and work-tracking metadata.
+
+```
+todos/                           ← gitignored
+  content-todos.ts               ← content-related todos
+  infra-todos.ts                 ← infrastructure todos (optional)
+```
+
+The `TodoItem` type is defined in `content/schema/types.ts` for reuse,
+but no `todos` field exists on any content block type or schema.
+
+The MCP server serves todos at `/api/todos` (JSON) and `/todos` (HTML
+dashboard). The `check-todos.sh` SessionStart hook summarizes open
+items at the start of each session.
+
+| Action | Who may do it |
+|--------|--------------|
+| **Create** a TodoItem | Agent or human |
+| **Update** status to `in_progress` | Agent or human |
+| **Resolve / close** a TodoItem (`resolved`, `wontfix`) | **Human only** |
+| **Remove** a TodoItem from the array | **Human only** |
+
+Agents **must never** set a TodoItem's status to `resolved` or `wontfix`,
+and **must never** delete a TodoItem. The author verifies completion —
+even after a commit has been made — and closes the item themselves.
+Agents may add new TodoItems and may move items to `in_progress`, but
+closing is always a human action.
+
+### 4b. Glossary block policy (Chapter 8)
+
+Chapter 8 ("Glossary of Rigid Monoidal Terms") contains **glossary
+blocks** — `remark` blocks with tag `"glossary"` — that map paper
+terminology to canonical Mathlib declarations. These are light
+terminological wrappers: **no semantic novelty**, just naming
+conventions.
+
+| Criterion | Glossary block | Definition block |
+|-----------|---------------|-----------------|
+| Semantic novelty | None (Mathlib synonym) | New mathematics |
+| Block kind | `remark` | `definition` |
+| Label pattern | `rem:glossary-<term>` | `def:<term>` |
+| Lean file | Not required | **Required** |
+| Chapter | Ch 8 | Relevant content chapter |
+
+**Decision rule**: If the paper uses a term that is a synonym for (or
+lightweight wrapper around) a Mathlib type, add a glossary block. If
+the paper introduces genuinely new axioms/structure, add a definition.
+
+### 5. Tactic strategy (try in order)
+
+| Goal pattern | Try first | Then try |
+|---|---|---|
+| Algebraic identity (`x = y`) | `ring` | `field_simp; ring` |
+| Non-negativity (`0 ≤ x`) | `positivity` | `linarith` |
+| Numeric (`x < y`) | `norm_num` | `linarith` |
+| Definitional equality | `rfl` | `unfold …; rfl` |
+| Diagram / naturality | `aesop_cat` | `slice_lhs`, `slice_rhs` |
+| Anything else | `simp` | `aesop` |
+
+### 6. Use MCP tools, not shell commands
+
+| Task | Use this | Not this |
+|---|---|---|
+| Check errors | `lean_diagnostic_messages` | `lake build` + parse |
+| Read goal state | `lean_goal` | Python scripts |
+| Search Mathlib | `lean_leansearch` / `lean_loogle` | grep Mathlib source |
+| Try tactics | `lean_multi_attempt` | edit-build-repeat |
+| Axiom audit | `lean_verify` | manual inspection |
+
+### 7. Category theory conventions
+
+- Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
+- Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
+  `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
+- Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
+- Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
+
+### 8. File hygiene
+
+- Never commit `.lake/`, `lake-packages/`, or `build/`.
+- Pin external dependencies to commit hashes in `lakefile.toml`.
+- Keep imports minimal — only import what the file actually uses.
+- The `.lean` sibling file must share the same root name as its `.ts`/`.md`
+  siblings (e.g., `rigid-monoidal-category.lean`).
 
 ## Content-object architecture
 
@@ -222,6 +369,7 @@ setup instructions rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
+| `todos/` | Work-tracking TodoItems, gitignored (external to paper content) |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |

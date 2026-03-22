@@ -1,6 +1,6 @@
 Let $\mathcal{H}_q^k = \ker\Delta_q \subset \Omega^k(A)$ denote the
-space of particles ([Definition](#def:q-harmonic-form)).  The weight
-decomposition ([Definition](#def:weight-decomposition)) restricts to
+space of particles ([$q$-harmonic form](#def:q-harmonic-form)).  The weight
+decomposition ([weight decomposition](#def:weight-decomposition)) restricts to
 a short exact sequence
 
 ```tex

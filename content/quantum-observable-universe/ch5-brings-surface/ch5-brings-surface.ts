@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * coordinates, chiral fibrations, and Seiberg--Witten theory.
  */
 export default chapter({
-  number: 5,
+  number: 2,
   title: "Bring's Surface",
   label: "chap:brings-surface",
   sections: [
@@ -20,6 +20,7 @@ export default chapter({
         "brings-surface",
         "brings-realisations",
         "brings-is-qou",
+        "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
       ],
@@ -52,6 +53,7 @@ export default chapter({
       label: "sec:chiral-fibration",
       blocks: [
         "chiral-elliptic",
+        "chiral-elliptic-proof",
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
@@ -95,6 +97,7 @@ export default chapter({
         "reeb-exceptional-divisor",
         "generation-dependent-sw",
         "mi-sw-abelianisation",
+        "mi-sw-abelianisation-proof",
       ],
     }),
 

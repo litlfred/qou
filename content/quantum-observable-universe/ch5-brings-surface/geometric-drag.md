@@ -1,4 +1,4 @@
-The Levi form $L$ ([Definition](#def:substrate-parameter)) must be
+The Levi form $L$ ([substrate parameter](#def:substrate-parameter)) must be
 preserved under the $\mathrm{Sp}(1)$ conjugation.  Since
 
 $$
@@ -22,7 +22,7 @@ recovered as the residue of the interaction between the growth profiles:
 
 where $\Omega_k$ denotes the curvature form restricted to the $\omega_k$
 sector.  This heuristic is made rigorous by the nonabelian multiplicative
-integral of the mass identity ([Definition](#def:mass-identity)).
+integral of the ([mass identity](#def:mass-identity)).
 When $q=1$ (trivial bundle), the $\omega_k$ commute and $m=0$;
 when $q\to 0$ (maximal twist), energy is trapped in the $\omega_1$ spatial
 filament.

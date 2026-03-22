@@ -3,7 +3,7 @@
     "lean-lsp": {
       "command": "uvx",
       "args": ["lean-lsp-mcp"],
-      "cwd": "lean"
+      "cwd": "lean-archive"
     },
     "paper-assistant": {
       "command": "./scripts/start-assistant.sh",

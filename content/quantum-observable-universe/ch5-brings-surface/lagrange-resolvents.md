@@ -1,6 +1,6 @@
 Let $\zeta=e^{2\pi i/5}$.  Apply the discrete Fourier transform to the
-coordinates $x_j$ of Bring's surface
-([Definition](#def:brings-surface)):
+coordinates $x_j$ of
+([Bring's surface](#def:brings-surface)):
 
 $$
   w_k \;=\; \frac{1}{\sqrt{5}}\sum_{j=0}^{4}\zeta^{kj}\,x_j,

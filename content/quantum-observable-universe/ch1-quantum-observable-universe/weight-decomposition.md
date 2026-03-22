@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) with maximal torus
-$T$ ([Definition](#def:maximal-torus)) and higher differential forms
-$\Omega^k(A)$ ([Definition](#def:higher-forms)). The $T$-action on
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) with maximal torus
+$T$ ([maximal torus](#def:maximal-torus)) and higher differential forms
+$\Omega^k(A)$ ([higher forms](#def:higher-forms)). The $T$-action on
 $\Omega^k(A)$ induces a $\mathbb{Z}$-grading by weights. Denoting by
 $\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
 summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:

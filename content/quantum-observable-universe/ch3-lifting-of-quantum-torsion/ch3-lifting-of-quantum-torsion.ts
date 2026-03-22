@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 3: Lifting of Quantum Torsion.
+ * Lifting and Descent.
  *
  * Covers jet prolongation, the recursive brane tower, Yekutieli lifting,
  * the main QOU theorem, cosimplicial structure, descent, mass decomposition,
@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   number: 3,
-  title: "Lifting of Quantum Torsion",
+  title: "Lifting and Descent",
   label: "chap:torsion",
   sections: [
     section({
@@ -17,7 +17,9 @@ export default chapter({
       label: "sec:jet-prolongation",
       blocks: [
         "jet-prolongation",
+        "jet-prolongation-proof",
         "jet-prolongation-C",
+        "jet-prolongation-C-proof",
         "prolongation-categorical",
       ],
     }),
@@ -32,6 +34,22 @@ export default chapter({
     }),
 
     section({
+      title: "Cosimplicial Crossed Groupoid Structure",
+      label: "ssec:cosimplicial-crossed-groupoid",
+      blocks: [
+        "cosimplicial-intro",
+        "yekutieli-triple",
+        "cosimplicial-crossed-groupoid",
+        "cosimplicial-crossed-groupoid-proof",
+        "jet-as-descent",
+        "descent-condition",
+        "descent-condition-proof",
+        "weak-equiv-invariance",
+        "weak-equiv-invariance-proof",
+      ],
+    }),
+
+    section({
       title: "Yekutieli Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
       blocks: [
@@ -39,7 +57,9 @@ export default chapter({
         "quantum-characteristic-classes",
         "yekutieli-archimedean-band",
         "yekutieli-lifting",
+        "yekutieli-lifting-proof",
         "qu-to-qou",
+        "qu-to-qou-proof",
         "fermionic-twisted-sectors",
       ],
     }),
@@ -65,7 +85,9 @@ export default chapter({
         "jet-shell",
         "stack-like-structure",
         "global-gluing",
+        "global-gluing-proof",
         "vacuum-state",
+        "vacuum-state-proof",
       ],
     }),
 
@@ -76,6 +98,7 @@ export default chapter({
         "mass-geometric-drag",
         "mass-noncommutative-drag",
         "euler-char-stability",
+        "euler-char-stability-proof",
         "mass-identity",
         "mass-identity-C",
       ],
@@ -90,29 +113,19 @@ export default chapter({
     }),
 
     section({
-      title: "Cosimplicial Crossed Groupoid Structure",
-      label: "ssec:cosimplicial-crossed-groupoid",
-      blocks: [
-        "cosimplicial-intro",
-        "yekutieli-triple",
-        "cosimplicial-crossed-groupoid",
-        "jet-as-descent",
-        "descent-condition",
-        "weak-equiv-invariance",
-      ],
-    }),
-
-    section({
       title: "Descent",
       label: "ssec:descent",
       blocks: [
         "descent-intro",
         "descent",
         "descent-lemma",
+        "descent-lemma-proof",
         "descent-involution",
         "descent-eigenspaces",
+        "descent-eigenspaces-proof",
         "brane-boundary",
         "brane-boundary-structure",
+        "brane-boundary-structure-proof",
         "descent-reduction",
         "descent-physical",
         "descent-reduction-zero",
@@ -122,10 +135,30 @@ export default chapter({
     }),
 
     section({
+      title: "Localized Knots, Hadrons, and Bundle Initial Conditions",
+      label: "sec:localized-knots-bundles",
+      blocks: [
+        "localized-knot-intro",
+        "localized-knot",
+        "hadron",
+        "hadron-operations",
+        "localized-hadron",
+        "hadron-fibre-embedding",
+        "skein-generation",
+        "bundle-initial-conditions",
+        "bundle-isotopy-equivalence",
+        "knot-particle-dictionary",
+        "torsion-knot-flow",
+        "bundle-category",
+      ],
+    }),
+
+    section({
       title: "Topological Decomposition of Mass",
       label: "sec:topological-mass",
       blocks: [
         "topological-mass",
+        "topological-mass-proof",
         "quantum-dilogarithm",
         "qdlog-julia",
         "julia-s1-photon-scatter",

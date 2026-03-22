@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) and let
-$\{A_n\}_{n \geq 0}$ be its recursive brane tower
-([Definition](#def:recursive-brane-tower)).  Since $\mathcal{C}$ is a
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) and let
+$\{A_n\}_{n \geq 0}$ be its
+([recursive brane tower](#def:recursive-brane-tower)).  Since $\mathcal{C}$ is a
 $R$-linear rigid monoidal category, the Frobenius--Hopf object $A$
 admits a categorical trace
 $\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$

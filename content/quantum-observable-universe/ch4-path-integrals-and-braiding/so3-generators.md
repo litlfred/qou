@@ -1,5 +1,5 @@
 Under the adjoint map to $\mathrm{SO}(3)$ the generators of
-$\mathrm{Dic}_3$ ([Definition](#def:su2-generators)) have images
+$\mathrm{Dic}_3$ ([SU(2) generators](#def:su2-generators)) have images
 
 ```tex
 \begin{equation}\label{eq:so3-generators}

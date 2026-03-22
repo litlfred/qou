@@ -31,7 +31,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean/**'
+      - 'lean-archive/**'
       - 'blueprint/**'
       - 'home_page/**'
       - 'chapters/**'
@@ -40,7 +40,7 @@ on:
     branches:
       - main
     paths:
-      - 'lean/**'
+      - 'lean-archive/**'
       - 'blueprint/**'
   workflow_dispatch:
 
@@ -107,7 +107,7 @@ jobs:
         with:
           build: true
           lint: false
-          lake-package-directory: lean
+          lake-package-directory: lean-archive
         continue-on-error: true
 
       # ── Build blueprint + doc-gen4 (no deploy) ─────────────────
@@ -121,7 +121,7 @@ jobs:
           blueprint: true
           deploy: false
           homepage: home_page
-          lake-package-directory: lean
+          lake-package-directory: lean-archive
           references: references.bib
         continue-on-error: true
 
@@ -131,7 +131,7 @@ jobs:
           touch build.log
           python3 .github/scripts/axiom_report.py \
             --build-log build.log \
-            --lean-dir lean \
+            --lean-dir lean-archive \
             --output axiom-report.txt
         continue-on-error: true
 

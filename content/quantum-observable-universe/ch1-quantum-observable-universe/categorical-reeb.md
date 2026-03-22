@@ -1,7 +1,7 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-maximal torus $T$ ([Definition](#def:maximal-torus)) and weight
+maximal torus $T$ ([maximal torus](#def:maximal-torus)) and weight
 decomposition $\pi_H, \pi_V$
-([Definition](#def:weight-decomposition)). The *categorical
+([weight decomposition](#def:weight-decomposition)). The *categorical
 Reeb derivation* is the endomorphism $\xi \colon A \to A$ that
 generates the $T$-action: $\xi$ is the infinitesimal generator of the
 one-parameter subgroup $T \cong \mathrm{U}(1) \subset G$, acting on

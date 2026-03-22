@@ -1,5 +1,5 @@
 In the archimedean realisation, the categorical Reeb derivation
-([Definition](#def:categorical-reeb)) induces the *$q$-deformed
+([categorical Reeb derivation](#def:categorical-reeb)) induces the *$q$-deformed
 Lie bracket* on smooth vector fields $V, W \in \mathfrak{X}(M)$:
 
 $$

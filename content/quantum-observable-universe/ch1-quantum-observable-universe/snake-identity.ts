@@ -1,0 +1,26 @@
+import { definition } from "../../schema/builders";
+
+/**
+ * Snake identity (zig-zag identity) — the defining equations of
+ * an exact pairing / duality in a rigid monoidal category.
+ *
+ * This is a formal definition block (not just a glossary wrapper)
+ * because the paper's formulation involves specific composites
+ * using associators and unitors that must be spelled out precisely.
+ */
+export default definition({
+  label: "def:snake-identity",
+  title: "Snake identity",
+  tags: ["category-theory", "monoidal", "duality"],
+  lean: {
+    decl: "QOU.RigidMonoidalCategory.snake_left",
+    validation: "not_checked",
+    mathlibLinks: [
+      "CategoryTheory.ExactPairing.evaluation_coevaluation'",
+      "CategoryTheory.ExactPairing.coevaluation_evaluation'",
+    ],
+  },
+  status: "stated",
+  uses: ["def:rigid-monoidal-category"],
+  examples: [],
+});

@@ -29,7 +29,7 @@ $S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
 
 where the second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$.
 The inverse Lagrange resolvent transform
-([Remark](#rem:lagrange-resolvents)) gives
+([Lagrange resolvents](#rem:lagrange-resolvents)) gives
 
 ```tex
 \begin{equation}\label{eq:z-from-SD}

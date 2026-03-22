@@ -35,7 +35,11 @@ import { createHmac, timingSafeEqual } from "crypto";
 
 const PORT = parseInt(process.env.AUTH_GATEWAY_PORT || "4180", 10);
 const DOMAIN = process.env.FOLIO_DOMAIN || "localhost";
-const COOKIE_SECRET = process.env.COOKIE_SECRET || "";
+const COOKIE_SECRET = process.env.COOKIE_SECRET;
+if (!COOKIE_SECRET || COOKIE_SECRET.length < 32) {
+  console.error("FATAL: COOKIE_SECRET not set or too short (32+ chars required).");
+  process.exit(1);
+}
 const LEAN_MCP_TOKEN = process.env.LEAN_LSP_MCP_TOKEN || "";
 const MCP_UPSTREAM = process.env.LEAN_MCP_UPSTREAM || "http://lean-mcp:8080";
 const VIEWER_ROOT = process.env.VIEWER_ROOT || "/var/www/viewer";
@@ -328,7 +332,9 @@ Bun.serve({
       const authHeader = req.headers.get("authorization") || "";
       if (authHeader.startsWith("Bearer ") && LEAN_MCP_TOKEN) {
         const token = authHeader.slice(7);
-        if (token === LEAN_MCP_TOKEN) {
+        const tokenBuf = Buffer.from(token);
+        const expectedBuf = Buffer.from(LEAN_MCP_TOKEN);
+        if (tokenBuf.length === expectedBuf.length && timingSafeEqual(tokenBuf, expectedBuf)) {
           return proxyToMcp(req, url);
         }
         return new Response("Unauthorized", { status: 401 });

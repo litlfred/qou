@@ -2,6 +2,8 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:s3-group",
+  lean: { decl: "QOU.S3Group" },
+  status: "not_started",
   title: "Symmetric group $S_3$",
   tags: ["symmetric-group", "group-theory"],
   uses: ["def:braid-group"],

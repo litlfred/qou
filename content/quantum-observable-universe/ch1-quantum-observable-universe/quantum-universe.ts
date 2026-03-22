@@ -6,7 +6,6 @@ export default definition({
   tags: ["category-theory", "quantum"],
   lean: {
     decl: "QOU.QuantumUniverse",
-    file: "QOU/QuantumUniverse.lean",
     validation: "not_checked",
   },
   status: "not_started",

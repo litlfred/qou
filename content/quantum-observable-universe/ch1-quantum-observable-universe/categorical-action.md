@@ -1,8 +1,8 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) equipped with
-substrate parameter $q$ ([Definition](#def:substrate-parameter)),
-$q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)),
-a connection $\nabla$ ([Definition](#def:categorical-connection)),
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) equipped with
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
+$q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
+a connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 and a section $\psi \colon \mathbf{1} \to A$ (a "state").
 The *categorical action* is the $R$-valued functional
 
@@ -26,4 +26,4 @@ The *categorical action* is the $R$-valued functional
 \end{equation}
 ```
 
-with notation as in [Remark](#rem:categorical-action-notation).
+with notation as in [categorical action notation](#rem:categorical-action-notation).

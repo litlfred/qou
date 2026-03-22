@@ -23,6 +23,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   conjecture: "conj:",
   example: "ex:",
   remark: "rem:",
+  proof: "prf:",
   equation: "eq:",
   diagram: "fig:",
 };
@@ -89,7 +90,6 @@ const BlockBaseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -101,9 +101,7 @@ export const DefinitionSchema = BlockBaseSchema.extend({
 });
 
 const ProvableBaseSchema = BlockBaseSchema.extend({
-  lean: LeanRefSchema.optional(),
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
-  hasProof: z.boolean().optional(),
+  proofs: z.array(z.string()).optional(),
   examples: z.array(z.string()).optional(),
 });
 
@@ -145,6 +143,13 @@ export const RemarkSchema = BlockBaseSchema.extend({
   lean: LeanRefSchema.optional(),
 });
 
+export const ProofSchema = BlockBaseSchema.extend({
+  kind: z.literal("proof"),
+  label: labelForKind("proof"),
+  lean: LeanRefSchema.optional(),
+  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
+});
+
 export const ProseSchema = z.object({
   kind: z.literal("prose"),
   label: z.string().optional(),
@@ -152,7 +157,7 @@ export const ProseSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const EquationSchema = z.object({
@@ -163,7 +168,7 @@ export const EquationSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const DiagramSchema = z.object({
@@ -175,7 +180,7 @@ export const DiagramSchema = z.object({
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 /** Discriminated union — validates any Block. */
@@ -188,6 +193,7 @@ export const BlockSchema = z.discriminatedUnion("kind", [
   ConjectureSchema,
   ExampleSchema,
   RemarkSchema,
+  ProofSchema,
   ProseSchema,
   EquationSchema,
   DiagramSchema,
@@ -207,12 +213,12 @@ export const SectionRefSchema = z.object({
 });
 
 export const ChapterSchema = z.object({
-  number: z.number().int().positive(),
+  number: z.number().int().positive().optional(),
   title: z.string().min(1),
   label: z.string().optional(),
   sections: z.array(z.union([SectionSchema, SectionRefSchema])),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 export const ChapterRefSchema = z.object({
@@ -232,7 +238,7 @@ export const PaperSchema = z.object({
   chapters: z.array(ChapterRefSchema),
   macros: z.record(PaperMacroSchema).optional(),
   meta: z.record(z.unknown()).optional(),
-  todos: z.array(TodoItemSchema).optional(),
+
 });
 
 /** @deprecated Use PaperSchema. */

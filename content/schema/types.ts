@@ -141,7 +141,8 @@ export type ObjectKind =
   | "corollary"
   | "conjecture"
   | "example"
-  | "remark";
+  | "remark"
+  | "proof";
 
 // ── Block types (discriminated union on `kind`) ──────────────────
 
@@ -164,8 +165,7 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
@@ -193,15 +193,8 @@ export interface DefinitionBlock extends BlockBase {
  * Lean is expected but may be WIP — missing lean triggers a warning, not an error.
  */
 interface ProvableBase extends BlockBase {
-  /** Lean declaration reference (expected but not strictly required). */
-  lean?: LeanRef;
-  /** Formalization progress. */
-  status?: FormalizationStatus;
-  /**
-   * Whether this block has an inline proof in its .md file.
-   * If false/omitted, the proof lives in a separate block or Lean file.
-   */
-  hasProof?: boolean;
+  /** Labels of proof blocks for this result (like examples[]). */
+  proofs?: string[];
   /** Labels of example blocks illustrating this result. */
   examples?: string[];
 }
@@ -249,6 +242,21 @@ export interface RemarkBlock extends BlockBase {
   lean?: LeanRef;
 }
 
+/**
+ * Proof — a standalone proof of a theorem/lemma/proposition/corollary.
+ *
+ * Multiple proofs can be linked to a single provable block via its
+ * `proofs: ["prf:foo", "prf:bar"]` field, similar to how examples work.
+ * Each proof is its own content object with .ts + .md + optional .lean files.
+ */
+export interface ProofBlock extends BlockBase {
+  kind: "proof";
+  /** Optional Lean formalization of the proof. */
+  lean?: LeanRef;
+  /** Formalization progress for this proof. */
+  status?: FormalizationStatus;
+}
+
 // ── Prose (non-environment content) ──────────────────────────────
 
 /**
@@ -264,8 +272,7 @@ export interface ProseBlock {
   /** Pre-rendered assets for ```tex blocks. */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Display math / equations ─────────────────────────────────────
@@ -281,8 +288,7 @@ export interface EquationBlock {
   /** Pre-rendered equation (e.g. SVG from MathJax/KaTeX server). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── Diagrams ─────────────────────────────────────────────────────
@@ -300,8 +306,7 @@ export interface DiagramBlock {
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];
   meta?: Record<string, unknown>;
-  /** Todo items attached to this block. */
-  todos?: TodoItem[];
+
 }
 
 // ── The discriminated union ──────────────────────────────────────
@@ -315,6 +320,7 @@ export type Block =
   | ConjectureBlock
   | ExampleBlock
   | RemarkBlock
+  | ProofBlock
   | ProseBlock
   | EquationBlock
   | DiagramBlock;
@@ -328,15 +334,13 @@ export type EnvironmentBlock =
   | CorollaryBlock
   | ConjectureBlock
   | ExampleBlock
-  | RemarkBlock;
+  | RemarkBlock
+  | ProofBlock;
 
 /** Blocks that can (or must) have Lean declarations. */
 export type FormalizableBlock =
   | DefinitionBlock
-  | TheoremBlock
-  | LemmaBlock
-  | PropositionBlock
-  | CorollaryBlock;
+  | ProofBlock;
 
 // ── Document structure ───────────────────────────────────────────
 
@@ -380,14 +384,13 @@ export interface ChapterRef {
 }
 
 export interface Chapter {
-  number: number;
+  /** Chapter number. Omit for unnumbered chapters (e.g. Introduction). */
+  number?: number;
   title: string;
   label?: string;
   /** Sections can be inline Section objects or SectionRef references. */
   sections: (Section | SectionRef)[];
   meta?: Record<string, unknown>;
-  /** Chapter-level todos. */
-  todos?: TodoItem[];
 }
 
 /**
@@ -430,8 +433,6 @@ export interface Paper {
    */
   macros?: Record<string, PaperMacro>;
   meta?: Record<string, unknown>;
-  /** Paper-level todos (cross-cutting concerns, overall tasks). */
-  todos?: TodoItem[];
 }
 
 /**

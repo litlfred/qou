@@ -1,8 +1,8 @@
 In an archimedean quantum observable universe,
-[Lemma](#lem:categorical-irreducible) specialises as follows:
+[categorical irreducible](#lem:categorical-irreducible) specialises as follows:
 every instanton connection $A$ on $P$ is irreducible.
 The vanishing $H^0(M, \mathrm{Ad}(P)) = 0$
-([Example](#def:c-quantum-observable-universe)) is the archimedean
+([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)) is the archimedean
 instance of $\operatorname{Hom}_{\mathcal{C}}(\mathbf{1},
 \mathrm{Ad}(A)) = 0$.  Concretely: a non-zero section
 $s \in H^0(M, \mathrm{Ad}(P))$ would furnish an $\mathrm{Ad}$-invariant

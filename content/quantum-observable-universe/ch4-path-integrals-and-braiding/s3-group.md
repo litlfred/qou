@@ -1,5 +1,5 @@
 Imposing the involution relations $\sigma_i^2=\mathrm{id}$ on the braid
-group $B_3$ ([Definition](#def:braid-group)) yields the
+group $B_3$ ([braid group](#def:braid-group)) yields the
 *symmetric group*
 
 ```tex

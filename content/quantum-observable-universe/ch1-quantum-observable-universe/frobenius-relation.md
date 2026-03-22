@@ -1,11 +1,12 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe
-([Definition](#def:quantum-universe)). Denote by $\Delta_\mu$ the
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the
 comultiplication on $A$ dual to the multiplication $\mu$ under the
 Frobenius pairing \eqref{eq:frobenius-pairing}. Then the following
 diagram commutes (the *Frobenius relation*):
 
 ```tex
 \begin{equation}\label{eq:frobenius-relation}
+\underbrace{
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mathrm{id} \otimes \Delta_\mu"]
@@ -16,6 +17,7 @@ diagram commutes (the *Frobenius relation*):
   A \ar[r, "\Delta_\mu"']
   & A \otimes A
 \end{tikzcd}
+}_{\text{Frobenius relation: } (\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu}
 \end{equation}
 ```
 
@@ -24,10 +26,3 @@ yields the same result as composing them:
 $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)
 = \Delta_\mu \circ \mu$.
 
----
-
-Non-degeneracy of the pairing
-$\langle a, b \rangle = \lambda(\mu(a \otimes b))$ identifies
-$A \cong A^{\vee}$. Under this identification, $\Delta_\mu$ is the
-transpose of $\mu$. The Frobenius relation then follows from the
-associativity of $\mu$ by dualising one leg of the multiplication.

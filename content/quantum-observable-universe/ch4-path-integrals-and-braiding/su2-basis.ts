@@ -2,6 +2,8 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:su2-basis",
+  lean: { decl: "QOU.Su2Basis" },
+  status: "not_started",
   title: "$\\mathfrak{su}(2)$ basis",
   tags: ["lie-algebra", "su2"],
   uses: [],

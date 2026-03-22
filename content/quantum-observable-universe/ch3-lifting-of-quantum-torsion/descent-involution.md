@@ -1,8 +1,8 @@
 Let $\ell_n \colon A_n \hookrightarrow A_{n+1}$ denote the ascent embedding
-([Proposition](#prop:jet-prolongation)) and
+([jet prolongation](#prop:jet-prolongation)) and
 $\mathfrak{d}_{n+1} \colon \mathrm{End}_{\mathcal{C}}(A_{n+1}) \to
 \mathrm{End}_{\mathcal{C}}(A_n)$ the descent homomorphism
-([Lemma](#lem:descent)).  The *descent involution* at level $n$ is
+([descent](#lem:descent)).  The *descent involution* at level $n$ is
 the endomorphism of the level-$(n{+}1)$ endomorphism algebra:
 $$
   \tau_n \;=\; \ell_n \circ \mathfrak{d}_{n+1}

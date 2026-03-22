@@ -149,6 +149,7 @@ const ENV_NAMES: Record<string, string> = {
   conjecture: "conjecture",
   example: "example",
   remark: "remark",
+  proof: "proof",
 };
 
 /**
@@ -221,18 +222,6 @@ export function renderBlock(block: Block, mdContent: string): string {
       lines.push(body);
 
       lines.push(`\\end{${envName}}`);
-
-      // Inline proof (for theorems etc.)
-      if ("hasProof" in block && block.hasProof) {
-        // Proof content expected in .md file after a --- separator
-        const proofSep = mdContent.indexOf("\n---\n");
-        if (proofSep >= 0) {
-          const proofMd = mdContent.slice(proofSep + 5);
-          lines.push("\\begin{proof}");
-          lines.push(markdownToLatex(proofMd));
-          lines.push("\\end{proof}");
-        }
-      }
       break;
     }
   }
@@ -301,7 +290,8 @@ export function renderChapter(
 ): string {
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
-  lines.push(`\\chapter{${chapter.title}}\n${label}`);
+  const star = chapter.number == null ? "*" : "";
+  lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
 
   for (const section of chapter.sections) {
     lines.push(renderSection(section, blocks));

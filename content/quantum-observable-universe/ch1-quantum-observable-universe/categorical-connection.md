@@ -1,5 +1,5 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe over $R$ with
-differential forms $\Omega^k(A)$ ([Definition](#def:higher-forms)).
+differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
 
 A *connection* on $A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathcal{C}$ satisfying

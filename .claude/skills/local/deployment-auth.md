@@ -66,7 +66,7 @@ self-updater will pick up changes within 60 seconds.
 | File | Purpose |
 |------|---------|
 | `lean-mcp.config.json` | Central config (auth section defines providers, owner, session TTL) |
-| `deploy/auth-gateway/server.ts` | Auth gateway service (Bun, ~300 lines) |
+| `deploy/auth-gateway/server.ts` | Auth gateway service (Bun, ~520 lines) |
 | `deploy/docker-compose.folio.yml` | Service orchestration (Caddy + auth-gateway + lean-mcp) |
 | `deploy/Caddyfile.folio.template` | Reverse proxy config template |
 | `deploy/generate-config.sh` | Generate .env + Caddyfile from config |

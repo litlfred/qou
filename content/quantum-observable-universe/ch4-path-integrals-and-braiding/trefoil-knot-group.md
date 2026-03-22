@@ -6,7 +6,7 @@ $$
   \;\cong\;B_3,
 $$
 so the trefoil-knot group is isomorphic to the braid group on three
-strands ([Definition](#def:braid-group)).  This relation $xyx=yxy$ is
+strands ([braid group](#def:braid-group)).  This relation $xyx=yxy$ is
 the *braid relation*: it encodes the fact that the three-strand
 braid may be closed into the trefoil by identifying the top and bottom of
 the braid.

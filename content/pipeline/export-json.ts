@@ -52,7 +52,8 @@ interface ExportedBlock {
   uses?: string[];
   lean?: LeanRef & { source?: string };
   status?: string;
-  hasProof?: boolean;
+  proofs?: string[];
+  examples?: string[];
   tex?: string;
   caption?: string;
   rendered?: RenderedAsset[];
@@ -86,13 +87,27 @@ interface ExportedPaper {
 
 // ── Helpers ──────────────────────────────────────────────────────
 
-function readLeanSource(leanRef: LeanRef | undefined): string | undefined {
+function readLeanSource(leanRef: LeanRef | undefined, colocatedLeanPath?: string): string | undefined {
   if (!leanRef) return undefined;
 
-  // Try lean.file path
+  // Try co-located .lean sibling file first (content/<chapter>/<block>.lean)
+  if (colocatedLeanPath && existsSync(colocatedLeanPath)) {
+    return readFileSync(colocatedLeanPath, "utf-8");
+  }
+
+  // Try explicit file path in lean/ project
   if (leanRef.file) {
     const leanPath = join(LEAN_ROOT, leanRef.file);
     if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
+  }
+
+  // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean
+  if (leanRef.decl) {
+    const parts = leanRef.decl.split(".");
+    for (let i = parts.length; i >= 2; i--) {
+      const candidate = join(LEAN_ROOT, parts.slice(0, i).join("/") + ".lean");
+      if (existsSync(candidate)) return readFileSync(candidate, "utf-8");
+    }
   }
 
   return undefined;
@@ -150,7 +165,8 @@ async function main() {
           const md = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
           const mdStat = existsSync(mdPath) ? statSync(mdPath) : null;
           const leanRef = "lean" in block ? (block.lean as LeanRef | undefined) : undefined;
-          const leanSource = readLeanSource(leanRef);
+          const colocatedLean = join(chDir, `${rootName}.lean`);
+          const leanSource = readLeanSource(leanRef, colocatedLean);
           const rendered = "rendered" in block
             ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
             : undefined;
@@ -163,7 +179,8 @@ async function main() {
             uses: "uses" in block ? block.uses : undefined,
             lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
             status: "status" in block ? block.status : undefined,
-            hasProof: "hasProof" in block ? block.hasProof : undefined,
+            proofs: "proofs" in block ? block.proofs : undefined,
+            examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
             caption: "caption" in block ? block.caption : undefined,
             rendered,

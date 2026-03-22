@@ -53,9 +53,13 @@ if $DO_INSTALL; then
   bash "$MCP_DIR/install.sh"
 fi
 
-# ── Ensure MCP server node_modules exist ─────────────────────────
+# ── Ensure MCP server node_modules are up to date ────────────────
+# Re-run bun install if node_modules is missing OR package.json is
+# newer than the lockfile (i.e. a dependency was added/changed).
 
-if [ ! -d "$MCP_DIR/node_modules" ]; then
+if [ ! -d "$MCP_DIR/node_modules" ] \
+  || [ "$MCP_DIR/package.json" -nt "$MCP_DIR/bun.lock" ] 2>/dev/null \
+  || [ ! -f "$MCP_DIR/bun.lock" ]; then
   echo "[start-assistant] Installing MCP server dependencies..." >&2
   cd "$MCP_DIR" && bun install 2>&1 >&2
 fi
@@ -66,6 +70,36 @@ if [ -d "$REPO_ROOT/content" ] && [ ! -d "$REPO_ROOT/content/node_modules" ]; th
   echo "[start-assistant] Installing content pipeline dependencies..." >&2
   cd "$REPO_ROOT/content" && bun install 2>&1 >&2
 fi
+
+# ── Quick dependency status ─────────────────────────────────────
+# Always show what's available so the user knows what features work.
+
+_check() { command -v "$1" &>/dev/null && echo "✓" || echo "✗"; }
+
+echo "" >&2
+echo "[start-assistant] Dependency status:" >&2
+
+# Required
+for cmd in bun latexmk pdflatex; do
+  printf "  %s %-12s (required)\n" "$(_check "$cmd")" "$cmd" >&2
+done
+
+# Optional
+for cmd in pandoc pdftoppm lean lake uv rg xdg-open; do
+  printf "  %s %-12s (optional)\n" "$(_check "$cmd")" "$cmd" >&2
+done
+
+# Count missing required
+MISSING=0
+for cmd in bun latexmk pdflatex; do
+  command -v "$cmd" &>/dev/null || MISSING=$((MISSING + 1))
+done
+if [ "$MISSING" -gt 0 ]; then
+  echo "" >&2
+  echo "  ⚠  $MISSING required dep(s) missing — some features disabled." >&2
+  echo "     Run: ./scripts/start-assistant.sh --check  for install hints" >&2
+fi
+echo "" >&2
 
 # ── Check-only mode ─────────────────────────────────────────────
 

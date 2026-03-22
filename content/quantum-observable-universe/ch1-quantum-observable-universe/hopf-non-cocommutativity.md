@@ -26,4 +26,4 @@ where $R_1 = 1 \otimes 1$ recovers cocommutativity at $q = 1$.
 This non-cocommutativity is the algebraic origin of quantum
 uncertainty: it prevents simultaneous diagonalisation of comultiplication
 and its transpose, which in turn prevents independent observations from
-commuting ([Remark](#rem:two-observer-parallelogram)).
+commuting ([two-observer parallelogram](#rem:two-observer-parallelogram)).

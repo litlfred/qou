@@ -3,7 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:weak-equiv-invariance",
   title: "Weak equivalence invariance of physical states",
-  hasProof: true,
   tags: ["weak-equivalence", "vacuum-state", "physical-states"],
   uses: [
     "def:quantum-observable-universe",
@@ -15,4 +14,5 @@ export default proposition({
     "prop:descent-eigenspaces",
     "lem:descent",
   ],
+  proofs: ["prf:weak-equiv-invariance"],
 });

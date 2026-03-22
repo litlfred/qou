@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 export default chapter({
-  number: 11,
+  number: 6,
   title: "Experimental Evidence",
   label: "chap:experimental",
   sections: [
@@ -12,7 +12,9 @@ export default chapter({
         "skein-decomposition",
         "hyperbolic-volumes-prose",
         "skein-mass-relation",
+        "skein-mass-relation-proof",
         "terminal-resolution",
+        "terminal-resolution-proof",
         "ch11-intro",
       ],
     }),
@@ -45,6 +47,7 @@ export default chapter({
         "entropic-gravity",
         "entropic-gravity-data",
         "local-substrate-q",
+        "local-substrate-q-proof",
         "crystal-probe-q",
         "substrate-telescope",
         "magnetic-friction",

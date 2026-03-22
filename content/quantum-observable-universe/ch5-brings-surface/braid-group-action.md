@@ -1,13 +1,13 @@
 The symmetric group $S_5$ acts on Bring's surface
-([Remark](#rem:brings-curve)) by permuting
+([Bring's curve](#rem:brings-curve)) by permuting
 $(x_0,\dots,x_4)$; this is the maximal automorphism group
 (order $120$) for genus $4$.  Three distinguished families of $S_3$
 subgroups govern the interplay between the base coordinates $x_j$ and the
 spectral resolvents $w_k$
-([Remark](#rem:lagrange-resolvents)).  We describe each in terms of the
-braid group ([Definition](#def:braid-group)), the resolvent coordinates,
+([Lagrange resolvents](#rem:lagrange-resolvents)).  We describe each in terms of the
+([braid group](#def:braid-group)), the resolvent coordinates,
 and the $\mathrm{SU}(2)$/$\mathrm{SO}(3)$ matrices of
-[Definition](#def:su2-generators)--[Definition](#def:so3-generators).
+[SU(2) generators](#def:su2-generators)--[SO(3) generators](#def:so3-generators).
 
 **(i) Spacetime action ($\mathbb{P}^1(\mathbb{C})$ base).**
 Fix the chiral-like coordinates $x_2,x_3,x_4$ as internal fiber
@@ -34,7 +34,7 @@ $\mathbb{P}^1(\mathbb{C})$ fibre.
 **(ii) Spectral $S_3$ (trefoil action).**
 The frequency-coupled pairs $(w_1,w_4)$ and $(w_2,w_3)$ are permuted by
 the twist and flip involutions
-([Definition](#def:braid-twist-flip)).
+([braid twist-flip](#def:braid-twist-flip)).
 The full
 $S_3$ structure emerges on the projective ratios
 
@@ -85,4 +85,4 @@ $\mathcal{S}\to\mathbb{P}^1$, a third family of $S_3$ subgroups arises:
 it permutes the three critical values of the covering map.  These three
 families --- spectral, coordinate, and geometric --- correspond to the
 three copies of $S_3$ inside $S_5$ identified in
-[Remark](#rem:chirality-trefoil).
+[chirality and trefoil](#rem:chirality-trefoil).
