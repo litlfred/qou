@@ -1,0 +1,18 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:bundle-initial-conditions",
+  title: "Bundle initial conditions (big bang state)",
+  tags: ["bundle", "initial-conditions", "knot", "categorical", "big-bang"],
+  lean: {
+    decl: "QOU.BundleInitialConditions",
+    validation: "not_checked",
+  },
+  status: "not_started",
+  uses: [
+    "def:localized-knot",
+    "def:hadron",
+    "def:projective-line-object",
+    "def:quantum-observable-universe",
+  ],
+});

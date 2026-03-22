@@ -1,0 +1,28 @@
+The localized knot framework ([Definition](#def:localized-knot)) assigns
+a topological identity to each fundamental particle.  The dictionary is:
+
+| Knot type | Symbol | Particle | Crossing number | Role in bundle |
+|-----------|--------|----------|-----------------|----------------|
+| Point (empty) | $\varnothing$ | Photon | $0$ | Background flux on $E_p$ |
+| Unknot | $\mathcal{O}$ ($0_1$) | Neutrino | $0$ | Trivial braiding; vacuum drag |
+| Trefoil | $3_1$ | Electron | $3$ | Simplest stable vortex (gen. 1) |
+| Figure-eight | $4_1$ | Muon | $4$ | Hyperbolic volume residue (gen. 2) |
+| Cinquefoil | $5_1$ | Tau | $5$ | Higher-genus lift (gen. 3) |
+| Three-twist | $5_2$ | Strange quark | $5$ | Quark sector, distinct volume |
+| Torus$(7,2)$ | $7_1$ | Charm quark | $7$ | Heavy quark sector |
+
+A hadron ([Definition](#def:hadron)) is then a composite:
+
+- **Proton**: $(p, 3_1) \otimes (p, 3_1) \otimes (p, 5_2)$
+  bound by $\mathcal{L}_{\mathrm{Hopf}}$ (two up-quarks + one down-quark
+  in the knot picture: trefoil $\leftrightarrow$ up, three-twist
+  $\leftrightarrow$ down).
+- **Neutron**: $(p, 3_1) \otimes (p, 5_2) \otimes (p, 5_2)$
+  bound by $\mathcal{L}_{\mathrm{Hopf}}$ (one up + two down).
+
+The mass of each hadron is determined by the terminal resolution
+([Proposition](#prop:terminal-resolution)) and matches CODATA values to
+sub-keV precision.
+
+In a bundle initial condition $E_0$, each entry $(p_i, K_i)$ is one row
+of this dictionary placed at a specific point on $\mathbb{P}(V)$.

@@ -94,10 +94,18 @@
 
     /* Structure */
     .ch{margin-bottom:3rem}
-    .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd)}
+    .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd);display:flex;align-items:baseline;gap:.6rem}
     .ch-t .n{color:var(--ac);font-weight:400}
-    .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem}
+    .ch-t .ch-title-text{flex:1}
+    .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem;display:flex;align-items:baseline;gap:.5rem}
+    .sec-t .sec-title-text{flex:1}
     .sec-n{display:none}
+    /* Chapter/section feedback actions — right-aligned, inline with title */
+    .struct-acts{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
+    .struct-acts .sa-btn{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:1px solid transparent;border-radius:2px;padding:.1rem .35rem;cursor:pointer;white-space:nowrap;transition:all .15s}
+    .struct-acts .sa-btn:hover{color:var(--ac);border-color:var(--ac-d)}
+    .struct-acts .sa-count{font-family:var(--f-mono);font-size:.55rem;color:var(--ac);background:var(--bg-r);border-radius:8px;padding:0 .35rem;line-height:1.5;min-width:1.2rem;text-align:center}
+    body.reading .struct-acts{display:none!important}
 
     /* Blocks */
     .blk{margin:1.5rem 0;position:relative}
@@ -1553,7 +1561,7 @@
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
         renderMath(cd);
         let secNum = 0;
         for (const sec of ch.sections) {
@@ -1561,7 +1569,7 @@
           const sd = mk('div','section');
           sd.dataset.secNum = `${ch.number}.${secNum}`;
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</h3>`;
+          sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
           for (const b of sec.blocks) {
             // Skip child examples unless they're the scroll target
@@ -1614,15 +1622,51 @@
       }
     }
 
+    // ── Feedback draft persistence ─────────────────────────
+    const FB_DRAFT_KEY = 'qou-fb-drafts';
+    function loadDrafts() {
+      try { return JSON.parse(localStorage.getItem(FB_DRAFT_KEY) || '{}'); } catch { return {}; }
+    }
+    function saveDraft(target, text, priority, assignee) {
+      const drafts = loadDrafts();
+      if (text.trim()) {
+        drafts[target] = { text, priority, assignee, ts: Date.now() };
+      } else {
+        delete drafts[target];
+      }
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function clearDraft(target) {
+      const drafts = loadDrafts();
+      delete drafts[target];
+      localStorage.setItem(FB_DRAFT_KEY, JSON.stringify(drafts));
+    }
+    function getDraft(target) {
+      return loadDrafts()[target] || null;
+    }
+
     // ── Feedback panel ────────────────────────────────────
     let fbBlock = null;
+    // openFeedback can accept a block object or a {label, rootName, todos, kind} stub
     function openFeedback(block) {
       fbBlock = block;
-      document.getElementById('fb-target').textContent = block.label || block.rootName || 'block';
-      document.getElementById('fb-text').value = '';
+      const target = block.label || block.rootName || 'block';
+      document.getElementById('fb-target').textContent = target;
+
+      // Restore draft if one exists
+      const draft = getDraft(target);
+      const ta = document.getElementById('fb-text');
+      if (draft) {
+        ta.value = draft.text || '';
+        document.getElementById('fb-priority').value = draft.priority || 'medium';
+        document.getElementById('fb-assignee').value = draft.assignee || 'editor-agent';
+      } else {
+        ta.value = '';
+      }
+
       document.getElementById('feedback-overlay').classList.add('open');
       document.getElementById('feedback-panel').classList.add('open');
-      document.getElementById('fb-text').focus();
+      ta.focus();
 
       // Populate history from block todos
       const hist = document.getElementById('fb-history');
@@ -1633,13 +1677,144 @@
       } else {
         for (const t of todos.slice().reverse()) {
           const item = mk('div', `fb-item ${t.status || 'open'}`);
-          item.innerHTML = `<div>${esc(t.comment || t.summary || '')}</div>
-            <div class="fb-meta">${t.priority || ''} · ${t.assignee || ''} · ${t.status || 'open'} · ${t.createdAt ? new Date(t.createdAt).toLocaleDateString() : ''}</div>`;
+          const priDot = t.priority === 'high' ? 'background:var(--red)' :
+                         t.priority === 'medium' ? 'background:var(--yel)' : 'background:var(--fg-d)';
+          item.innerHTML = `<div style="display:flex;gap:.4rem;align-items:start">
+              <span class="todo-dot" style="${priDot};margin-top:.35rem"></span>
+              <div style="flex:1">
+                <div>${esc(t.comment || t.summary || '')}</div>
+                <div class="fb-meta">
+                  <select class="fb-item-pri" data-id="${t.id}" style="font-size:.6rem;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);border-radius:2px;padding:0 .2rem;font-family:var(--f-mono);cursor:pointer">
+                    <option value="high" ${t.priority==='high'?'selected':''}>high</option>
+                    <option value="medium" ${t.priority==='medium'?'selected':''}>med</option>
+                    <option value="low" ${t.priority==='low'?'selected':''}>low</option>
+                  </select>
+                  · ${t.assignee || ''} · ${t.status || 'open'} · ${t.createdAt ? new Date(t.createdAt).toLocaleDateString() : ''}
+                  <button class="fb-item-edit" data-id="${t.id}" style="font-family:var(--f-mono);font-size:.55rem;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;padding:0 .3rem;margin-left:.3rem">edit</button>
+                  <button class="fb-item-del" data-id="${t.id}" style="font-family:var(--f-mono);font-size:.55rem;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--red);cursor:pointer;padding:0 .3rem">del</button>
+                </div>
+              </div>
+            </div>`;
           hist.appendChild(item);
         }
       }
     }
+
+    // Delegated handlers for feedback item edit/delete/priority in the panel
+    document.getElementById('fb-history')?.addEventListener('click', (e) => {
+      const del = e.target.closest('.fb-item-del');
+      if (del && fbBlock) {
+        const id = del.dataset.id;
+        if (fbBlock.todos) {
+          fbBlock.todos = fbBlock.todos.filter(t => t.id !== id);
+        }
+        // Also delete from backend
+        fetch('/api/feedback', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id })
+        }).catch(() => {});
+        openFeedback(fbBlock);
+        refreshFeedbackBadges();
+        return;
+      }
+      const edit = e.target.closest('.fb-item-edit');
+      if (edit && fbBlock) {
+        const id = edit.dataset.id;
+        const todo = (fbBlock.todos || []).find(t => t.id === id);
+        if (todo) {
+          const newText = prompt('Edit feedback:', todo.comment || todo.summary || '');
+          if (newText !== null && newText.trim()) {
+            todo.comment = newText.trim();
+            todo.summary = newText.trim().slice(0, 80);
+            todo.updatedAt = new Date().toISOString();
+            // Persist
+            fetch('/api/feedback', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id, updates: { comment: todo.comment, summary: todo.summary } })
+            }).catch(() => {});
+            openFeedback(fbBlock);
+          }
+        }
+        return;
+      }
+    });
+    document.getElementById('fb-history')?.addEventListener('change', (e) => {
+      const priSel = e.target.closest('.fb-item-pri');
+      if (priSel && fbBlock) {
+        const id = priSel.dataset.id;
+        const todo = (fbBlock.todos || []).find(t => t.id === id);
+        if (todo) {
+          todo.priority = priSel.value;
+          todo.updatedAt = new Date().toISOString();
+          fetch('/api/feedback', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ paperId: paper?.id, rootName: fbBlock.rootName || fbBlock.label, todoId: id, updates: { priority: todo.priority } })
+          }).catch(() => {});
+          openFeedback(fbBlock);
+        }
+      }
+    });
+
+    // Delegated handler for chapter/section feedback buttons
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.struct-acts .sa-fb');
+      if (!btn) return;
+      const acts = btn.closest('.struct-acts');
+      const target = acts.dataset.target;
+      const kind = acts.dataset.kind;
+      // Create a stub "block" for the chapter/section
+      openFeedback({
+        label: target,
+        rootName: target,
+        kind: kind,
+        todos: structFeedback[target] || [],
+      });
+    });
+
+    // Track chapter/section-level feedback (local cache, synced to backend)
+    const structFeedback = {};
+    function refreshStructBadges() {
+      document.querySelectorAll('.struct-acts').forEach(acts => {
+        const target = acts.dataset.target;
+        const todos = structFeedback[target] || [];
+        const openTodos = todos.filter(t => t.status !== 'resolved' && t.status !== 'wontfix');
+        let badge = acts.querySelector('.sa-count');
+        if (openTodos.length > 0) {
+          if (!badge) { badge = mk('span','sa-count'); acts.appendChild(badge); }
+          badge.textContent = openTodos.length;
+        } else if (badge) {
+          badge.remove();
+        }
+      });
+    }
+    // Auto-save draft as user types
+    document.getElementById('fb-text')?.addEventListener('input', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      saveDraft(target,
+        document.getElementById('fb-text').value,
+        document.getElementById('fb-priority').value,
+        document.getElementById('fb-assignee').value
+      );
+    });
+    document.getElementById('fb-priority')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+    document.getElementById('fb-assignee')?.addEventListener('change', () => {
+      if (!fbBlock) return;
+      const target = fbBlock.label || fbBlock.rootName || 'block';
+      const text = document.getElementById('fb-text').value;
+      if (text.trim()) saveDraft(target, text, document.getElementById('fb-priority').value, document.getElementById('fb-assignee').value);
+    });
+
     function closeFeedback() {
+      // Draft is already auto-saved on input — no need to save again here
       document.getElementById('feedback-overlay').classList.remove('open');
       document.getElementById('feedback-panel').classList.remove('open');
       fbBlock = null;
@@ -1673,7 +1848,15 @@
         // Add to block's local todos so UI updates immediately
         if (!fbBlock.todos) fbBlock.todos = [];
         fbBlock.todos.push(todo);
+        // Also track in structFeedback if this is a chapter/section
+        if (fbBlock.kind === 'chapter' || fbBlock.kind === 'section') {
+          if (!structFeedback[fbBlock.label]) structFeedback[fbBlock.label] = [];
+          structFeedback[fbBlock.label] = fbBlock.todos;
+          refreshStructBadges();
+        }
         document.getElementById('fb-text').value = '';
+        // Clear the saved draft since feedback was submitted
+        clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item
         openFeedback(fbBlock);
         closeFeedback();
