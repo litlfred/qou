@@ -67,20 +67,50 @@
 
     /* Layout */
     #app{max-width:960px;margin:0 auto;padding:48px 1.5rem 4rem}
-    body.has-sidebar #app{margin-left:220px}
+    body.has-sidebar #app{margin-left:44px;transition:margin-left .2s var(--ease)}
+    body.has-sidebar.sb-peek #app{margin-left:290px}
 
-    /* Sidebar */
+    /* Sidebar — collapsed strip by default, expands on hover */
     #sidebar{display:none}
-    body.has-sidebar #sidebar{display:block;position:fixed;top:34px;left:0;width:210px;bottom:0;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;padding:.6rem 0;z-index:90;font-family:var(--f-head);font-size:.72rem}
-    .sb-ch{padding:.4rem .6rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
+    body.has-sidebar #sidebar{
+      display:block;position:fixed;top:34px;left:0;bottom:0;
+      width:36px;overflow:hidden;
+      background:var(--bg-s);border-right:1px solid var(--brd);
+      z-index:90;font-family:var(--f-head);font-size:.72rem;
+      transition:width .2s var(--ease),box-shadow .2s var(--ease);
+    }
+    body.has-sidebar #sidebar:hover,
+    body.has-sidebar.sb-pinned #sidebar,
+    body.has-sidebar.sb-open #sidebar{
+      width:280px;overflow-y:auto;padding:.6rem 0;
+      box-shadow:4px 0 20px rgba(0,0,0,.08);
+    }
+    /* Pin indicator */
+    .sb-pin{position:sticky;top:0;z-index:1;display:flex;justify-content:flex-end;padding:.2rem .4rem;background:var(--bg-s)}
+    .sb-pin button{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.65rem;font-family:var(--f-mono)}
+    .sb-pin button:hover{color:var(--ac)}
+    body.sb-pinned .sb-pin button{color:var(--ac)}
+
+    /* Collapsed state: show chapter initials */
+    body.has-sidebar #sidebar:not(:hover):not(.sb-pinned #sidebar) .sb-sec,
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-sec,
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-blk,
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-pin{display:none}
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-ch{
+      writing-mode:vertical-rl;text-orientation:mixed;
+      padding:.5rem .3rem;font-size:.55rem;border-bottom:none;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:80px;
+    }
+
+    .sb-ch{padding:.4rem .8rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
     .sb-ch:hover{color:var(--ac)}
     .sb-ch.active{color:var(--ac)}
     .sb-ch .katex,.sb-ch .katex *{color:inherit!important}
-    .sb-sec{padding:.25rem .6rem .25rem 1rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
+    .sb-sec{padding:.25rem .8rem .25rem 1.2rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
     .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
     .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
     .sb-sec .katex,.sb-sec .katex *{color:inherit!important}
-    .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
+    .sb-blk{padding:.15rem .8rem .15rem 1.8rem;color:var(--fg-d);cursor:pointer;font-size:.6rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
     .sb-blk:hover{color:var(--fg)}
     .sb-blk .katex,.sb-blk .katex *{color:inherit!important}
     .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
@@ -92,7 +122,18 @@
     .sb-badge.lean-miss{background:#555;color:#aaa}
     .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
     .sb-toggle:hover{color:var(--ac)}
-    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
+
+    /* Tablet: overlay sidebar */
+    @media(max-width:900px){
+      body.has-sidebar #app{margin-left:0!important}
+      body.has-sidebar #sidebar{display:none!important;width:300px}
+      .sb-toggle{display:block}
+      body.sb-open #sidebar{display:block!important;width:min(300px,80vw);box-shadow:4px 0 20px rgba(0,0,0,.3);overflow-y:auto;padding:.6rem 0}
+    }
+    /* Phone: full-width overlay */
+    @media(max-width:500px){
+      body.sb-open #sidebar{width:100vw;border-right:none}
+    }
 
     /* Header */
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
@@ -468,6 +509,41 @@
     .fc-desc{font-size:.9rem;color:var(--fg);margin-bottom:.4rem}
     .fc-meta{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d)}
 
+    /* Paper importer */
+    .importer{margin-top:1.5rem;border:1px dashed var(--brd);border-radius:8px;padding:1.2rem;background:var(--bg-s)}
+    .importer-title{font-family:var(--f-head);font-size:.85rem;font-weight:600;color:var(--fg-b);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+    .importer-tabs{display:flex;gap:.4rem;margin-bottom:.8rem}
+    .importer-tabs button{background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.3rem .7rem;font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);cursor:pointer}
+    .importer-tabs button.active{background:var(--ac);color:#fff;border-color:var(--ac)}
+    .imp-form{display:flex;flex-direction:column;gap:.5rem}
+    .imp-form input[type=text],.imp-form input[type=url]{width:100%;background:var(--bg);border:1px solid var(--brd);border-radius:4px;padding:.4rem .6rem;font-family:var(--f-mono);font-size:.75rem;color:var(--fg)}
+    .imp-form input[type=file]{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d)}
+    .imp-submit{background:var(--ac);border:none;color:#fff;font-family:var(--f-mono);font-size:.7rem;padding:.4rem .8rem;border-radius:4px;cursor:pointer;align-self:flex-start}
+    .imp-submit:disabled{opacity:.5;cursor:not-allowed}
+    .imp-status{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);min-height:1.2rem}
+
+    /* Scan results */
+    .scan-results{margin-top:.8rem}
+    .scan-summary{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:.6rem}
+    .scan-block{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;border:1px solid var(--brd);border-radius:4px;margin-bottom:.3rem;font-size:.75rem;background:var(--bg)}
+    .scan-block input[type=checkbox]{margin:0}
+    .scan-block .sb-kind{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);min-width:5rem;text-transform:uppercase}
+    .scan-block .sb-title{flex:1;color:var(--fg-b);font-weight:500}
+    .scan-block .sb-label{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d)}
+    .scan-block .sb-body-preview{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);max-height:3rem;overflow:hidden;margin-top:.2rem;padding:.3rem;background:var(--bg-r);border-radius:3px;width:100%;display:none}
+    .scan-block.expanded .sb-body-preview{display:block}
+    .scan-actions{display:flex;gap:.4rem;margin-top:.6rem}
+
+    /* Import history */
+    .import-history{margin-top:1rem}
+    .import-card{display:flex;align-items:center;gap:.6rem;padding:.5rem .7rem;border:1px solid var(--brd);border-radius:4px;margin-bottom:.3rem;font-size:.75rem;background:var(--bg)}
+    .import-card .ic-source{font-family:var(--f-mono);font-size:.55rem;color:var(--ac);min-width:4rem}
+    .import-card .ic-title{flex:1;color:var(--fg-b)}
+    .import-card .ic-status{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .35rem;border-radius:3px}
+    .import-card .ic-status.scanned{background:var(--yel);color:#fff}
+    .import-card .ic-status.generated{background:var(--grn);color:#fff}
+    .import-card .ic-status.pending{background:var(--fg-d);color:#fff}
+
     /* Feedback panel */
     .feedback-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:none}
     .feedback-overlay.open{display:block}
@@ -681,12 +757,7 @@
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
-    <div class="chat-actions" id="chat-actions">
-      <button class="chat-action" data-prompt="Explain this content in simple terms">explain</button>
-      <button class="chat-action" data-prompt="What are the key concepts I should understand here?">key ideas</button>
-      <button class="chat-action" data-prompt="How does this connect to other parts of the paper?">connections</button>
-      <button class="chat-action" data-prompt="I think there may be an error here. Let me describe it:">report error</button>
-    </div>
+    <div class="chat-actions" id="chat-actions"></div>
     <div class="chat-messages" id="chat-messages"></div>
     <div class="chat-typing" id="chat-typing">Folio is thinking...</div>
     <div class="chat-input-area">
@@ -1910,6 +1981,20 @@
       const sb = document.getElementById('sidebar');
       sb.innerHTML = '';
       document.body.classList.add('has-sidebar');
+
+      // Pin control
+      const pinRow = mk('div','sb-pin');
+      const pinBtn = document.createElement('button');
+      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? 'unpin' : 'pin';
+      if (localStorage.getItem('qou-sb-pinned') === '1') document.body.classList.add('sb-pinned');
+      pinBtn.onclick = () => {
+        const pinned = document.body.classList.toggle('sb-pinned');
+        pinBtn.textContent = pinned ? 'unpin' : 'pin';
+        localStorage.setItem('qou-sb-pinned', pinned ? '1' : '0');
+      };
+      pinRow.appendChild(pinBtn);
+      sb.appendChild(pinRow);
+
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
         chEl.innerHTML = `${ch.number}. ${inl(ch.title)}`;
@@ -2221,6 +2306,292 @@
         list.appendChild(card);
       }
       app.appendChild(list);
+
+      // ── Paper Importer ────────────────────────────
+      const imp = mk('div','importer');
+      imp.innerHTML = `
+        <div class="importer-title">Import Paper</div>
+        <div class="importer-tabs">
+          <button class="active" data-tab="arxiv">arXiv</button>
+          <button data-tab="upload">Upload</button>
+        </div>
+        <div class="imp-form" id="imp-arxiv-form">
+          <input type="text" id="imp-arxiv-id" placeholder="arXiv ID or URL (e.g. 2301.12345)">
+          <button class="imp-submit" id="imp-arxiv-go">Fetch from arXiv</button>
+        </div>
+        <div class="imp-form" id="imp-upload-form" style="display:none">
+          <input type="file" id="imp-file" accept=".pdf,.tex,.zip,.tar.gz">
+          <input type="text" id="imp-paper-id" placeholder="Paper ID (auto-generated if blank)">
+          <button class="imp-submit" id="imp-upload-go">Upload</button>
+        </div>
+        <div class="imp-status" id="imp-status"></div>
+        <div id="imp-scan-area"></div>
+        <div class="import-history" id="imp-history"></div>
+      `;
+      app.appendChild(imp);
+
+      // Tab switching
+      const tabs = imp.querySelectorAll('.importer-tabs button');
+      tabs.forEach(tab => {
+        tab.onclick = () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById('imp-arxiv-form').style.display = tab.dataset.tab === 'arxiv' ? '' : 'none';
+          document.getElementById('imp-upload-form').style.display = tab.dataset.tab === 'upload' ? '' : 'none';
+        };
+      });
+
+      const impStatus = document.getElementById('imp-status');
+      const scanArea = document.getElementById('imp-scan-area');
+
+      // arXiv fetch
+      document.getElementById('imp-arxiv-go').onclick = async () => {
+        const idInput = document.getElementById('imp-arxiv-id');
+        const arxivId = idInput.value.trim();
+        if (!arxivId) return;
+        impStatus.textContent = 'Fetching from arXiv...';
+        try {
+          const r = await fetch('/api/import/arxiv', {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({ arxivId })
+          });
+          const d = await r.json();
+          if (!r.ok) throw new Error(d.error);
+          impStatus.textContent = `Fetched: ${d.meta.title} (${d.meta.format})`;
+          if (d.meta.format === 'latex') {
+            await scanImport(d.paperId, d.meta);
+          } else {
+            impStatus.textContent += ' — no LaTeX source available, PDF only';
+          }
+          loadImportHistory();
+        } catch(e) { impStatus.textContent = 'Error: ' + e.message; }
+      };
+
+      // File upload
+      document.getElementById('imp-upload-go').onclick = async () => {
+        const fileInput = document.getElementById('imp-file');
+        const file = fileInput.files?.[0];
+        if (!file) return;
+        impStatus.textContent = 'Uploading...';
+        const fd = new FormData();
+        fd.append('file', file);
+        const paperId = document.getElementById('imp-paper-id').value.trim();
+        if (paperId) fd.append('paperId', paperId);
+        try {
+          const r = await fetch('/api/import/upload', { method: 'POST', body: fd });
+          const d = await r.json();
+          if (!r.ok) throw new Error(d.error);
+          impStatus.textContent = `Uploaded: ${d.meta.title}`;
+          if (d.meta.format === 'latex') {
+            await scanImport(d.paperId, d.meta);
+          } else {
+            impStatus.textContent += ' — PDF uploaded. Scan requires LaTeX source.';
+          }
+          loadImportHistory();
+        } catch(e) { impStatus.textContent = 'Error: ' + e.message; }
+      };
+
+      // Scan for environments
+      async function scanImport(paperId, meta) {
+        impStatus.textContent = 'Scanning for theorems, definitions...';
+        try {
+          const r = await fetch('/api/import/scan', {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({ paperId })
+          });
+          const d = await r.json();
+          if (!r.ok) throw new Error(d.error);
+
+          const blocks = d.blocks;
+          const summary = d.summary;
+          impStatus.textContent = `Found ${blocks.length} blocks: ${Object.entries(summary).map(([k,v]) => `${v} ${k}s`).join(', ')}`;
+          renderScanResults(paperId, meta, blocks);
+        } catch(e) { impStatus.textContent = 'Scan error: ' + e.message; }
+      }
+
+      function renderScanResults(paperId, meta, blocks) {
+        scanArea.innerHTML = '';
+        if (!blocks.length) {
+          scanArea.innerHTML = '<div class="scan-summary">No formal environments found.</div>';
+          return;
+        }
+
+        const heading = mk('div','scan-summary');
+        heading.textContent = `Review extracted blocks. Check the ones you want to import:`;
+        scanArea.appendChild(heading);
+
+        // Select all / none
+        const selRow = mk('div','');
+        selRow.style.cssText = 'display:flex;gap:.4rem;margin-bottom:.4rem';
+        const selAll = mk('button','imp-submit'); selAll.textContent = 'select all'; selAll.style.fontSize = '.6rem';
+        const selNone = mk('button','imp-submit'); selNone.textContent = 'select none'; selNone.style.cssText = 'font-size:.6rem;background:var(--fg-d)';
+        selRow.appendChild(selAll); selRow.appendChild(selNone);
+        scanArea.appendChild(selRow);
+
+        const checkboxes = [];
+        for (let i = 0; i < blocks.length; i++) {
+          const b = blocks[i];
+          const row = mk('div','scan-block');
+          const cb = document.createElement('input');
+          cb.type = 'checkbox';
+          cb.checked = ['theorem','definition','proposition','lemma','corollary'].includes(b.kind);
+          checkboxes.push({ cb, block: b });
+          row.appendChild(cb);
+
+          const kind = mk('span','sb-kind'); kind.textContent = b.kind;
+          row.appendChild(kind);
+
+          const title = mk('span','sb-title');
+          title.textContent = b.title || `(${b.kind} at line ${b.line})`;
+          row.appendChild(title);
+
+          if (b.label) {
+            const lbl = mk('span','sb-label'); lbl.textContent = b.label;
+            row.appendChild(lbl);
+          }
+
+          // Click to expand/collapse body preview
+          const preview = mk('div','sb-body-preview');
+          preview.textContent = b.body?.slice(0, 300) || '';
+          row.onclick = (e) => {
+            if (e.target === cb) return;
+            row.classList.toggle('expanded');
+          };
+          row.appendChild(preview);
+          scanArea.appendChild(row);
+        }
+
+        selAll.onclick = () => checkboxes.forEach(c => c.cb.checked = true);
+        selNone.onclick = () => checkboxes.forEach(c => c.cb.checked = false);
+
+        // Generate button
+        const actions = mk('div','scan-actions');
+        const genBtn = mk('button','imp-submit');
+        genBtn.textContent = 'Generate content objects';
+        const genLeanCb = document.createElement('input');
+        genLeanCb.type = 'checkbox'; genLeanCb.id = 'imp-gen-lean';
+        const genLeanLabel = document.createElement('label');
+        genLeanLabel.htmlFor = 'imp-gen-lean';
+        genLeanLabel.textContent = ' Also generate .lean stubs';
+        genLeanLabel.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);cursor:pointer';
+        actions.appendChild(genBtn);
+        actions.appendChild(genLeanCb);
+        actions.appendChild(genLeanLabel);
+        scanArea.appendChild(actions);
+
+        genBtn.onclick = async () => {
+          const selected = checkboxes.filter(c => c.cb.checked).map(c => {
+            const b = c.block;
+            // Generate rootName from label or kind+line
+            const rn = (b.label || `${b.kind}-${b.line}`)
+              .replace(/^(thm|def|lem|prop|cor|conj|ex|rem|prf):/, '')
+              .replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+            return {
+              kind: b.kind,
+              title: b.title,
+              label: b.label,
+              body: b.body,
+              rootName: `imported-${rn}`,
+              generateLean: genLeanCb.checked,
+            };
+          });
+
+          if (!selected.length) { impStatus.textContent = 'No blocks selected'; return; }
+
+          genBtn.disabled = true;
+          genBtn.textContent = 'Generating...';
+          impStatus.textContent = `Generating ${selected.length} content objects...`;
+
+          const source = meta.source === 'arxiv'
+            ? { type: 'arxiv', id: meta.arxivId, url: meta.url, citationKey: meta.arxivId?.replace(/[/.]/g, '') || '' }
+            : { type: 'upload', id: paperId, url: '', citationKey: paperId };
+
+          try {
+            const r = await fetch('/api/import/generate', {
+              method: 'POST', headers: {'Content-Type':'application/json'},
+              body: JSON.stringify({ paperId, blocks: selected, source })
+            });
+            const d = await r.json();
+            if (!r.ok) throw new Error(d.error);
+            impStatus.textContent = `Generated ${d.generated.length} objects → ${d.path}`;
+            genBtn.textContent = 'Done';
+            loadImportHistory();
+
+            // Suggest todos to user
+            const todoSuggestions = selected
+              .filter(b => ['theorem','lemma','proposition','corollary'].includes(b.kind))
+              .map(b => `Formalize proof of ${b.title || b.rootName}`);
+            if (todoSuggestions.length) {
+              const sugDiv = mk('div','');
+              sugDiv.style.cssText = 'margin-top:.6rem;padding:.5rem;background:var(--bg-r);border-radius:4px;font-size:.7rem;font-family:var(--f-head)';
+              sugDiv.innerHTML = `<strong style="font-size:.65rem;color:var(--fg-d)">Suggested todos (click to create):</strong>`;
+              for (const s of todoSuggestions) {
+                const item = mk('div','');
+                item.style.cssText = 'padding:.2rem 0;color:var(--ac);cursor:pointer;font-size:.7rem';
+                item.textContent = s;
+                item.onclick = async () => {
+                  try {
+                    await fetch('/api/feedback', {
+                      method: 'POST', headers: {'Content-Type':'application/json'},
+                      body: JSON.stringify({
+                        paperId, rootName: 'paper-level',
+                        summary: s, comment: `Imported from ${source.type}:${source.id}. Formal proof needed.`,
+                        priority: 'medium', assignee: 'proof-agent', origin: 'human'
+                      })
+                    });
+                    item.style.color = 'var(--grn)';
+                    item.textContent = '✓ ' + s;
+                    item.onclick = null;
+                  } catch(e) { item.style.color = 'var(--red)'; }
+                };
+                sugDiv.appendChild(item);
+              }
+              scanArea.appendChild(sugDiv);
+            }
+          } catch(e) {
+            impStatus.textContent = 'Generate error: ' + e.message;
+            genBtn.disabled = false;
+            genBtn.textContent = 'Generate content objects';
+          }
+        };
+      }
+
+      // Load import history
+      async function loadImportHistory() {
+        const histEl = document.getElementById('imp-history');
+        try {
+          const r = await fetch('/api/import/list');
+          const imports = await r.json();
+          if (!imports.length) { histEl.innerHTML = ''; return; }
+
+          histEl.innerHTML = `<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.4rem">Previous imports:</div>`;
+          for (const imp of imports) {
+            const card = mk('div','import-card');
+            const src = mk('span','ic-source');
+            src.textContent = imp.source || 'upload';
+            card.appendChild(src);
+
+            const title = mk('span','ic-title');
+            title.textContent = imp.title || imp.paperId;
+            card.appendChild(title);
+
+            const status = mk('span','ic-status');
+            if (imp.hasContent) { status.className = 'ic-status generated'; status.textContent = 'generated'; }
+            else if (imp.hasExtracted) { status.className = 'ic-status scanned'; status.textContent = `${imp.blockCount} blocks`; }
+            else { status.className = 'ic-status pending'; status.textContent = 'pending'; }
+            card.appendChild(status);
+
+            // Re-scan button for non-generated imports
+            if (imp.hasExtracted && !imp.hasContent) {
+              card.style.cursor = 'pointer';
+              card.onclick = () => scanImport(imp.paperId, imp);
+            }
+            histEl.appendChild(card);
+          }
+        } catch(e) { histEl.innerHTML = ''; }
+      }
+      loadImportHistory();
+
       document.title = data.title || 'Folio';
     }
 
@@ -2875,9 +3246,33 @@
       chatModeEl.textContent = mode === 'read' ? 'reader' : 'editor';
     }
 
-    // Get context: currently visible block or selected text
+    // Track visible blocks for context awareness
+    let visibleBlocks = []; // [{label, kind, title}] — blocks currently on screen
+    function updateVisibleBlocks() {
+      const vb = [];
+      const viewTop = 0;
+      const viewBottom = window.innerHeight;
+      for (const [label, block] of bix) {
+        const el = document.getElementById(label);
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        if (r.bottom > viewTop && r.top < viewBottom) {
+          vb.push({ label, kind: block.kind, title: block.title || label });
+        }
+      }
+      visibleBlocks = vb;
+    }
+    // Update on scroll (debounced)
+    let visibleTimer = null;
+    window.addEventListener('scroll', () => {
+      clearTimeout(visibleTimer);
+      visibleTimer = setTimeout(updateVisibleBlocks, 200);
+    }, { passive: true });
+
+    // Get context: currently visible blocks, selected text, center block
     function getChatContext() {
-      const ctx = { paperId: paper?.id };
+      updateVisibleBlocks();
+      const ctx = { paperId: paper?.id, visibleBlocks };
       // Check for text selection
       const sel = window.getSelection();
       if (sel && sel.toString().trim().length > 5) {
@@ -3064,6 +3459,92 @@
       }
     }
 
+    // Quick prompt definitions (mode-aware)
+    const QUICK_PROMPTS = {
+      read: [
+        { label: 'explain', prompt: 'Explain this content in simple terms' },
+        { label: 'key ideas', prompt: 'What are the key concepts I should understand here?' },
+        { label: 'connections', prompt: 'How does this connect to other parts of the paper?' },
+      ],
+      edit: [
+        { label: 'status', prompt: 'Give me a quick overview of what needs attention in this paper.' },
+        { label: 'review block', prompt: 'Review the current block for correctness and completeness.' },
+        { label: 'suggest todos', prompt: 'What todos should I create for the blocks visible on screen?' },
+      ],
+    };
+
+    function renderQuickPrompts() {
+      const mode = getChatMode();
+      const prompts = QUICK_PROMPTS[mode] || QUICK_PROMPTS.read;
+      chatActions.innerHTML = '';
+      for (const p of prompts) {
+        const btn = mk('button','chat-action');
+        btn.dataset.prompt = p.prompt;
+        btn.textContent = p.label;
+        chatActions.appendChild(btn);
+      }
+      // Always add voice button
+      const voiceBtn = mk('button','chat-action');
+      voiceBtn.id = 'chat-voice';
+      voiceBtn.textContent = 'mic';
+      voiceBtn.title = 'Voice input (click to start/stop)';
+      voiceBtn.style.cssText = 'border-color:var(--ac);color:var(--ac)';
+      chatActions.appendChild(voiceBtn);
+      setupVoiceInput(voiceBtn);
+    }
+
+    // Voice input for chat
+    let voiceRecognition = null;
+    let voiceActive = false;
+    function setupVoiceInput(btn) {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) { btn.style.display = 'none'; return; }
+
+      btn.onclick = () => {
+        if (voiceActive) {
+          voiceRecognition?.stop();
+          return;
+        }
+        voiceRecognition = new SpeechRecognition();
+        voiceRecognition.continuous = true;
+        voiceRecognition.interimResults = true;
+        voiceRecognition.lang = 'en-US';
+        voiceActive = true;
+        btn.textContent = 'stop';
+        btn.style.background = 'var(--red)';
+        btn.style.color = '#fff';
+
+        let finalTranscript = chatInput.value;
+        voiceRecognition.onresult = (e) => {
+          let interim = '';
+          for (let i = e.resultIndex; i < e.results.length; i++) {
+            if (e.results[i].isFinal) {
+              finalTranscript += e.results[i][0].transcript + ' ';
+            } else {
+              interim += e.results[i][0].transcript;
+            }
+          }
+          chatInput.value = finalTranscript + interim;
+          chatInput.dispatchEvent(new Event('input'));
+        };
+        voiceRecognition.onend = () => {
+          voiceActive = false;
+          btn.textContent = 'mic';
+          btn.style.background = '';
+          btn.style.color = 'var(--ac)';
+          chatInput.value = finalTranscript.trim();
+          if (chatInput.value) chatInput.focus();
+        };
+        voiceRecognition.onerror = () => {
+          voiceActive = false;
+          btn.textContent = 'mic';
+          btn.style.background = '';
+          btn.style.color = 'var(--ac)';
+        };
+        voiceRecognition.start();
+      };
+    }
+
     // FAB toggle
     chatFab.onclick = () => {
       chatOpen = !chatOpen;
@@ -3071,26 +3552,15 @@
       chatFab.classList.toggle('open', chatOpen);
       if (chatOpen) {
         updateChatMode();
+        renderQuickPrompts();
         chatInput.focus();
         if (!chatInitialized) {
           chatInitialized = true;
-          // Auto-greeting based on mode
           const mode = getChatMode();
           if (mode === 'read') {
-            addChatMessage('assistant', 'Welcome! What would you like to learn about this paper? I can explain concepts, help you navigate between definitions and theorems, or answer questions about the mathematics.');
+            addChatMessage('assistant', 'What would you like to learn? Pick a quick prompt above or type your question.');
           } else {
-            // Editor mode: prompt to get paper status
-            addChatMessage('assistant', 'Editor mode. I can help you review the paper, check status, or triage feedback. What would you like to work on?');
-            // Auto-send a status request
-            setTimeout(() => {
-              chatHistory.push({ role: 'user', content: 'Get paper status — give me a quick overview of what needs attention.' });
-              addChatMessage('user', 'Get paper status');
-              sendChatMessage.call(null, ''); // trigger with history already set
-              // Actually send properly:
-              chatHistory.pop(); // undo the push since sendChatMessage will re-push
-              chatMessages.lastChild.remove(); // undo the addChatMessage
-              sendChatMessage('Get paper status — give me a quick overview of what needs attention.');
-            }, 300);
+            addChatMessage('assistant', 'Editor mode. Pick a quick action above, use voice, or type your question.');
           }
         }
       }

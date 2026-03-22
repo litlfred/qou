@@ -693,6 +693,37 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return null; // POST handled below
   }
 
+  // ── API: Import list (available imports) ────────────────────
+  if (path === "/api/import/list") {
+    try {
+      const uploadsDir = join(REPO_ROOT, "uploads");
+      const imports: Array<Record<string, unknown>> = [];
+      if (existsSync(uploadsDir)) {
+        const { readdirSync } = await import("fs");
+        for (const d of readdirSync(uploadsDir)) {
+          const metaPath = join(uploadsDir, d, "import-meta.json");
+          if (existsSync(metaPath)) {
+            const meta = JSON.parse(readFileSync(metaPath, "utf-8"));
+            // Check if extracted blocks exist
+            const extractedPath = join(uploadsDir, d, "extracted-blocks.json");
+            const hasExtracted = existsSync(extractedPath);
+            let blockCount = 0;
+            if (hasExtracted) {
+              try { blockCount = JSON.parse(readFileSync(extractedPath, "utf-8")).length; } catch {}
+            }
+            // Check if content objects were generated
+            const contentDir = join(REPO_ROOT, "content", d);
+            const hasContent = existsSync(contentDir);
+            imports.push({ ...meta, hasExtracted, blockCount, hasContent });
+          }
+        }
+      }
+      return Response.json(imports, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
   // ── API: Folio (paper listing) ─────────────────────────────
   // Supports ?branch=X to resolve from a different branch
   if (path === "/api/folio") {
@@ -1036,12 +1067,21 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     try {
       const body = await req.json() as {
         messages: Array<{ role: string; content: string }>;
-        context?: { paperId?: string; blockLabel?: string; blockMd?: string; blockKind?: string; selectedText?: string };
+        context?: {
+          paperId?: string; blockLabel?: string; blockMd?: string; blockKind?: string;
+          selectedText?: string;
+          visibleBlocks?: Array<{ label: string; kind: string; title: string }>;
+        };
         mode?: "read" | "edit" | "status";
       };
 
+      logDebug("chat", `mode=${body.mode || "read"} msgs=${body.messages.length}`,
+        body.context?.blockLabel ? `block=${body.context.blockLabel}` :
+        body.context?.visibleBlocks?.length ? `visible=${body.context.visibleBlocks.length} blocks` : undefined);
+
       const client = getAnthropic();
       if (!client) {
+        log("chat", "ANTHROPIC_API_KEY not set — chat unavailable");
         return Response.json(
           { error: "ANTHROPIC_API_KEY not set. Claude chat requires an API key." },
           { status: 503, headers: { "Access-Control-Allow-Origin": "*" } }
@@ -1078,6 +1118,10 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
         if (ctx.blockLabel && ctx.blockMd) {
           systemPrompt += `\n\nThey are looking at block "${ctx.blockLabel}" (${ctx.blockKind || "unknown"}):\n"""${ctx.blockMd.slice(0, 3000)}"""`;
         }
+        if (ctx.visibleBlocks?.length) {
+          const vbList = ctx.visibleBlocks.slice(0, 10).map(b => `- ${b.label} (${b.kind}): ${b.title}`).join("\n");
+          systemPrompt += `\n\nBlocks currently visible on screen:\n${vbList}`;
+        }
         if (ctx.paperId) {
           systemPrompt += `\n\nPaper ID: ${ctx.paperId}`;
         }
@@ -1105,8 +1149,10 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
               }
             }
             controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
+            logDebug("chat", "stream complete");
             controller.close();
           } catch (e) {
+            log("chat", "stream error", String(e));
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: String(e) })}\n\n`));
             controller.close();
           }
@@ -1124,6 +1170,325 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
+  }
+
+  // ── Paper import: upload file ────────────────────────────────
+  // POST /api/import/upload  (multipart/form-data with file + metadata)
+  if (path === "/api/import/upload") {
+    try {
+      const formData = await req.formData();
+      const file = formData.get("file") as File | null;
+      const paperId = (formData.get("paperId") as string) || "";
+      const source = (formData.get("source") as string) || "upload";
+
+      if (!file) return Response.json({ error: "No file uploaded" }, { status: 400 });
+
+      const id = paperId || file.name.replace(/\.[^.]+$/, "").replace(/[^a-z0-9-]/gi, "-").toLowerCase();
+      const uploadDir = join(REPO_ROOT, "uploads", id);
+      mkdirSync(uploadDir, { recursive: true });
+
+      // Save the file
+      const buf = Buffer.from(await file.arrayBuffer());
+      const ext = extname(file.name) || (file.type === "application/pdf" ? ".pdf" : ".tex");
+      const filename = ext === ".pdf" ? "original.pdf" : file.name;
+      writeFileSync(join(uploadDir, filename), buf);
+
+      // Write import metadata
+      const meta = {
+        source,
+        title: formData.get("title") || file.name,
+        format: ext === ".pdf" ? "pdf" : "latex",
+        files: [filename],
+        uploadedAt: new Date().toISOString(),
+        paperId: id,
+      };
+      writeFileSync(join(uploadDir, "import-meta.json"), JSON.stringify(meta, null, 2));
+      log("import", `uploaded ${filename} → uploads/${id}/`, `${buf.length} bytes`);
+
+      return Response.json({ ok: true, paperId: id, uploadDir: `uploads/${id}`, meta }, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // POST /api/import/arxiv { arxivId }
+  if (path === "/api/import/arxiv") {
+    try {
+      const body = await req.json() as { arxivId: string; paperId?: string };
+      const arxivId = body.arxivId.replace(/^(https?:\/\/)?(arxiv\.org\/(abs|pdf)\/)?/, "").replace(/\.pdf$/, "").trim();
+      if (!arxivId) return Response.json({ error: "Missing arxivId" }, { status: 400 });
+
+      // Fetch arXiv metadata
+      const metaRes = await fetch(`https://export.arxiv.org/api/query?id_list=${encodeURIComponent(arxivId)}`);
+      if (!metaRes.ok) throw new Error(`arXiv API: ${metaRes.status}`);
+      const xml = await metaRes.text();
+
+      // Parse basic fields from Atom XML
+      const title = xml.match(/<title[^>]*>([\s\S]*?)<\/title>/g)?.[1]?.replace(/<[^>]+>/g, "").trim() || arxivId;
+      const authors = [...xml.matchAll(/<name>(.*?)<\/name>/g)].map(m => m[1]);
+      const summary = xml.match(/<summary>([\s\S]*?)<\/summary>/)?.[1]?.trim() || "";
+      const doi = xml.match(/<arxiv:doi[^>]*>(.*?)<\/arxiv:doi>/)?.[1] || "";
+      const categories = [...xml.matchAll(/<category[^>]*term="([^"]+)"/g)].map(m => m[1]);
+      const published = xml.match(/<published>(.*?)<\/published>/)?.[1] || "";
+
+      const id = body.paperId || `arxiv-${arxivId.replace(/[/.]/g, "-")}`;
+      const uploadDir = join(REPO_ROOT, "uploads", id);
+      mkdirSync(uploadDir, { recursive: true });
+
+      // Try to fetch LaTeX source
+      let sourceFiles: string[] = [];
+      let format = "metadata-only";
+      try {
+        const srcRes = await fetch(`https://arxiv.org/e-print/${arxivId}`);
+        if (srcRes.ok) {
+          const srcBuf = Buffer.from(await srcRes.arrayBuffer());
+          const contentType = srcRes.headers.get("content-type") || "";
+          if (contentType.includes("gzip") || contentType.includes("tar")) {
+            writeFileSync(join(uploadDir, "source.tar.gz"), srcBuf);
+            // Extract using tar
+            const { execSync } = await import("child_process");
+            try {
+              execSync(`tar xzf source.tar.gz`, { cwd: uploadDir, timeout: 15000 });
+              const { readdirSync } = await import("fs");
+              sourceFiles = readdirSync(uploadDir).filter(f => f.endsWith(".tex"));
+              format = "latex";
+            } catch { /* tar extract failed — might be single file */ }
+            if (!sourceFiles.length) {
+              // Try as single .tex file
+              try {
+                const { renameSync } = await import("fs");
+                renameSync(join(uploadDir, "source.tar.gz"), join(uploadDir, "main.tex"));
+                sourceFiles = ["main.tex"];
+                format = "latex";
+              } catch {}
+            }
+          } else {
+            // Plain text source
+            writeFileSync(join(uploadDir, "main.tex"), srcBuf);
+            sourceFiles = ["main.tex"];
+            format = "latex";
+          }
+        }
+      } catch (e) {
+        log("import", `arXiv source fetch failed for ${arxivId}:`, String(e));
+      }
+
+      // Write import metadata
+      const meta = {
+        source: "arxiv",
+        arxivId,
+        url: `https://arxiv.org/abs/${arxivId}`,
+        title,
+        authors,
+        abstract: summary,
+        doi,
+        categories,
+        published,
+        format,
+        files: sourceFiles,
+        fetchedAt: new Date().toISOString(),
+        paperId: id,
+      };
+      writeFileSync(join(uploadDir, "import-meta.json"), JSON.stringify(meta, null, 2));
+      log("import", `fetched arXiv:${arxivId} → uploads/${id}/`, `${sourceFiles.length} .tex files`);
+
+      return Response.json({ ok: true, paperId: id, uploadDir: `uploads/${id}`, meta }, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // POST /api/import/scan { paperId } — scan uploaded files for environments
+  if (path === "/api/import/scan") {
+    try {
+      const body = await req.json() as { paperId: string };
+      const uploadDir = join(REPO_ROOT, "uploads", body.paperId);
+      const metaPath = join(uploadDir, "import-meta.json");
+      if (!existsSync(metaPath)) {
+        return Response.json({ error: `No import found: ${body.paperId}` }, { status: 404 });
+      }
+      const meta = JSON.parse(readFileSync(metaPath, "utf-8"));
+
+      // Scan .tex files for theorem environments
+      const envRe = /\\begin\{(theorem|definition|proposition|lemma|corollary|conjecture|example|remark|proof)\}(\[([^\]]*)\])?([\s\S]*?)\\end\{\1\}/g;
+      const labelRe = /\\label\{([^}]+)\}/;
+      const blocks: Array<{
+        kind: string; title: string; label: string; body: string;
+        file: string; line: number; originalEnv: string;
+      }> = [];
+
+      const { readdirSync } = await import("fs");
+      const texFiles = meta.files?.length ? meta.files : readdirSync(uploadDir).filter((f: string) => f.endsWith(".tex"));
+
+      for (const tf of texFiles) {
+        const texPath = join(uploadDir, tf);
+        if (!existsSync(texPath)) continue;
+        const src = readFileSync(texPath, "utf-8");
+        const lines = src.split("\n");
+
+        let match;
+        while ((match = envRe.exec(src)) !== null) {
+          const kind = match[1];
+          const optTitle = match[3] || "";
+          const body = match[4].trim();
+          const lblMatch = body.match(labelRe);
+          const label = lblMatch?.[1] || "";
+
+          // Find line number
+          const beforeMatch = src.slice(0, match.index);
+          const line = beforeMatch.split("\n").length;
+
+          blocks.push({
+            kind,
+            title: optTitle,
+            label,
+            body: body.replace(labelRe, "").trim(),
+            file: tf,
+            line,
+            originalEnv: match[0],
+          });
+        }
+
+        // Also scan for custom theorem environments (\newtheorem{thm}{Theorem})
+        const customRe = /\\newtheorem\{(\w+)\}(?:\[(\w+)\])?\{(\w+)\}/g;
+        const customEnvs = new Map<string, string>();
+        let cm;
+        while ((cm = customRe.exec(src)) !== null) {
+          const envName = cm[1];
+          const displayName = cm[3].toLowerCase();
+          const kindMap: Record<string, string> = {
+            theorem: "theorem", definition: "definition", proposition: "proposition",
+            lemma: "lemma", corollary: "corollary", conjecture: "conjecture",
+            example: "example", remark: "remark",
+          };
+          customEnvs.set(envName, kindMap[displayName] || "theorem");
+        }
+
+        // Scan for custom environments
+        for (const [envName, kind] of customEnvs) {
+          const customEnvRe = new RegExp(`\\\\begin\\{${envName}\\}(\\[([^\\]]*)\\])?([\\s\\S]*?)\\\\end\\{${envName}\\}`, "g");
+          let m;
+          while ((m = customEnvRe.exec(src)) !== null) {
+            const optTitle = m[2] || "";
+            const body = m[3].trim();
+            const lblMatch = body.match(labelRe);
+            const beforeMatch = src.slice(0, m.index);
+            blocks.push({
+              kind,
+              title: optTitle,
+              label: lblMatch?.[1] || "",
+              body: body.replace(labelRe, "").trim(),
+              file: tf,
+              line: beforeMatch.split("\n").length,
+              originalEnv: m[0],
+            });
+          }
+        }
+      }
+
+      // Cache extraction results
+      writeFileSync(join(uploadDir, "extracted-blocks.json"), JSON.stringify(blocks, null, 2));
+
+      // Summary
+      const summary: Record<string, number> = {};
+      for (const b of blocks) summary[b.kind] = (summary[b.kind] || 0) + 1;
+
+      log("import", `scanned ${body.paperId}:`, `${blocks.length} blocks found`);
+      return Response.json({ ok: true, paperId: body.paperId, meta, blocks, summary }, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // POST /api/import/generate { paperId, blocks: [{kind, title, label, body, rootName}], chapterTitle }
+  // Generates content objects from confirmed blocks
+  if (path === "/api/import/generate") {
+    try {
+      const body = await req.json() as {
+        paperId: string;
+        chapterTitle?: string;
+        chapterDir?: string;
+        blocks: Array<{
+          kind: string; title: string; label: string; body: string;
+          rootName: string; generateLean?: boolean;
+        }>;
+        source?: { type: string; id: string; url: string; citationKey: string };
+      };
+
+      const paperDir = join(REPO_ROOT, "content", body.paperId);
+      const chDir = body.chapterDir || `imported-${body.source?.id || "upload"}`.replace(/[^a-z0-9-]/gi, "-").toLowerCase();
+      const chapterPath = join(paperDir, chDir);
+      mkdirSync(chapterPath, { recursive: true });
+
+      const generated: string[] = [];
+      const blockRefs: string[] = [];
+      const { writeFileSync: wfs } = await import("fs");
+
+      for (const blk of body.blocks) {
+        const rn = blk.rootName;
+        blockRefs.push(rn);
+
+        // Generate .ts manifest
+        const kindToPrefix: Record<string, string> = {
+          definition: "def", theorem: "thm", lemma: "lem", proposition: "prop",
+          corollary: "cor", conjecture: "conj", example: "ex", remark: "rem", proof: "prf",
+        };
+        const prefix = kindToPrefix[blk.kind] || "thm";
+        const label = blk.label || `${prefix}:imported-${rn}`;
+
+        const builderName = blk.kind === "proof" ? "proof" : blk.kind;
+        const metaFields = body.source ? `\n  meta: { source: "${body.source.type}:${body.source.id}", originalLabel: "${blk.label || ""}", importedAt: "${new Date().toISOString()}" },` : "";
+        const tagsField = `\n  tags: ["imported"${body.source ? `, "${body.source.type}:${body.source.id}"` : ""}],`;
+
+        let tsContent = `import { ${builderName} } from "../../schema/builders";\n\nexport default ${builderName}({\n  label: "${label}",`;
+        if (blk.title) tsContent += `\n  title: "${blk.title.replace(/"/g, '\\"')}",`;
+        tsContent += tagsField;
+        tsContent += metaFields;
+        if (blk.kind === "definition") {
+          tsContent += `\n  lean: { decl: "QOU.Imported.${rn.replace(/-/g, "_")}" },\n  status: "not_started",`;
+        }
+        tsContent += "\n});\n";
+        wfs(join(chapterPath, `${rn}.ts`), tsContent);
+
+        // Generate .md content
+        let mdContent = blk.body || "";
+        // Basic LaTeX → project markdown conversion
+        mdContent = mdContent
+          .replace(/\\textbf\{([^}]+)\}/g, "**$1**")
+          .replace(/\\emph\{([^}]+)\}/g, "*$1*")
+          .replace(/\\cite\{([^}]+)\}/g, "[$1]")
+          .replace(/\\ref\{([^}]+)\}/g, "[](#$1)");
+        wfs(join(chapterPath, `${rn}.md`), mdContent);
+
+        generated.push(rn);
+      }
+
+      // Generate chapter manifest
+      const chapterTs = `import { chapter } from "../../schema/builders";\n\nexport default chapter({\n  number: 99,\n  title: "${(body.chapterTitle || `Imported: ${body.source?.id || "Upload"}`).replace(/"/g, '\\"')}",\n  sections: [{\n    title: "Imported Results",\n    blocks: ${JSON.stringify(blockRefs)},\n  }],\n});\n`;
+      wfs(join(chapterPath, `${chDir}.ts`), chapterTs);
+
+      log("import", `generated ${generated.length} content objects`, `→ content/${body.paperId}/${chDir}/`);
+      return Response.json({
+        ok: true,
+        paperId: body.paperId,
+        chapterDir: chDir,
+        generated,
+        path: `content/${body.paperId}/${chDir}`,
+      }, { headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // GET /api/import/list — list all imports
+  if (path === "/api/import/list") {
+    // Handled as GET in handleViewerRequest
   }
 
   // ── AI triage: review feedback and propose action ────────────
@@ -1164,10 +1529,23 @@ const server = new McpServer({
 
 // ── Logging ──────────────────────────────────────────────────────
 
+const LOG_DEBUG = process.env.LOG_LEVEL !== 'quiet';
+const LOG_JSON = process.env.LOG_FORMAT === 'json';
+
 function log(category: string, message: string, detail?: string) {
-  const ts = new Date().toISOString().slice(11, 23);
-  const d = detail ? ` ${detail}` : '';
-  console.error(`[${ts}] [${category}]  ${message}${d}`);
+  const ts = new Date().toISOString();
+  if (LOG_JSON) {
+    const entry: Record<string, unknown> = { ts, cat: category, msg: message };
+    if (detail) entry.detail = detail;
+    console.error(JSON.stringify(entry));
+  } else {
+    const d = detail ? ` ${detail}` : '';
+    console.error(`[${ts.slice(11, 23)}] [${category}]  ${message}${d}`);
+  }
+}
+
+function logDebug(category: string, message: string, detail?: string) {
+  if (LOG_DEBUG) log(category, message, detail);
 }
 
 // ── Wrap server.tool with logging ─────────────────────────────────
@@ -1224,7 +1602,7 @@ if (mode === "stdio") {
     async fetch(req) {
       const url = new URL(req.url);
       const start = Date.now();
-      log('http', `${req.method} ${url.pathname}`);
+      logDebug('http', `${req.method} ${url.pathname}`);
 
       // Root → redirect to assistant
       if (url.pathname === "/" || url.pathname === "") {
@@ -1236,16 +1614,16 @@ if (mode === "stdio") {
         return Response.json({ status: "ok", mode: "stdio", version: "0.1.0" });
       }
 
-      // POST requests (save, feedback)
+      // POST requests (save, feedback, import)
       if (req.method === "POST") {
         const postRes = await handlePostRequest(url, req);
-        if (postRes) { log('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
+        if (postRes) { logDebug('http', `${req.method} ${url.pathname}`, `→ ${postRes.status} (${Date.now()-start}ms)`); return postRes; }
       }
 
       const viewerRes = await handleViewerRequest(url);
-      if (viewerRes) { log('http', `${req.method} ${url.pathname}`, `→ ${viewerRes.status} (${Date.now()-start}ms)`); return viewerRes; }
+      if (viewerRes) { logDebug('http', `${req.method} ${url.pathname}`, `→ ${viewerRes.status} (${Date.now()-start}ms)`); return viewerRes; }
 
-      log('http', `${req.method} ${url.pathname}`, `→ 404 (${Date.now()-start}ms)`);
+      logDebug('http', `${req.method} ${url.pathname}`, `→ 404 (${Date.now()-start}ms)`);
       return new Response("Not found", { status: 404 });
     },
   });
