@@ -52,7 +52,8 @@ interface ExportedBlock {
   uses?: string[];
   lean?: LeanRef & { source?: string };
   status?: string;
-  hasProof?: boolean;
+  proofs?: string[];
+  examples?: string[];
   tex?: string;
   caption?: string;
   rendered?: RenderedAsset[];
@@ -89,10 +90,19 @@ interface ExportedPaper {
 function readLeanSource(leanRef: LeanRef | undefined): string | undefined {
   if (!leanRef) return undefined;
 
-  // Try lean.file path
+  // Try explicit file path
   if (leanRef.file) {
     const leanPath = join(LEAN_ROOT, leanRef.file);
     if (existsSync(leanPath)) return readFileSync(leanPath, "utf-8");
+  }
+
+  // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean
+  if (leanRef.decl) {
+    const parts = leanRef.decl.split(".");
+    for (let i = parts.length; i >= 2; i--) {
+      const candidate = join(LEAN_ROOT, parts.slice(0, i).join("/") + ".lean");
+      if (existsSync(candidate)) return readFileSync(candidate, "utf-8");
+    }
   }
 
   return undefined;
@@ -163,7 +173,8 @@ async function main() {
             uses: "uses" in block ? block.uses : undefined,
             lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
             status: "status" in block ? block.status : undefined,
-            hasProof: "hasProof" in block ? block.hasProof : undefined,
+            proofs: "proofs" in block ? block.proofs : undefined,
+            examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
             caption: "caption" in block ? block.caption : undefined,
             rendered,

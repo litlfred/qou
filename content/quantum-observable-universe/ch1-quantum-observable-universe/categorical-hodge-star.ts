@@ -1,0 +1,14 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:categorical-hodge-star",
+  title: "Categorical Hodge star",
+  lean: {
+    decl: "QOU.CategoricalHodgeStar",
+    validation: "not_checked",
+  },
+  status: "not_started",
+  uses: ["def:quantum-universe", "def:higher-forms"],
+  examples: ["ex:hodge-su2"],
+  tags: ["hodge-star"],
+});

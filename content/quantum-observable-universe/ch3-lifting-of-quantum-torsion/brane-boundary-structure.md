@@ -1,0 +1,23 @@
+The defining boundary $\partial A_n$
+([Definition](#def:brane-boundary)) has the following properties:
+
+1. *Codimension.*  In the archimedean realisation,
+   $\partial A_n$ corresponds to a closed subset of real codimension at
+   least 2 in $E_n$.
+2. *Exceptional object.*  At each degeneration locus of the
+   restriction $r_n$, the kernel $\ker(r_n|_S)$ is isomorphic to a
+   simple object of $\mathcal{C}$; in the archimedean realisation
+   this is $\mathbb{P}^1(\mathbb{C}) \cong S^2$, the exceptional divisor of the
+   topological blow-up.
+3. *Involution symmetry.*  The descent involution $\tau_n$
+   ([Definition](#def:descent-involution)) restricts to an
+   endomorphism of $\partial A_n$, whose fixed subobjects coincide
+   with the monodromy fixed points of the quantum characteristic
+   classes ([Definition](#def:quantum-characteristic-classes)).
+4. *Chirality interface (archimedean realisation).*
+   When $n = 1$, $\partial E_1$ separates the macroscopic spacetime
+   coordinates from the internal chiral modes: it is the geometric
+   boundary between the base manifold $M$ and the gauge fibre, across
+   which the Reeb involution $\xi \mapsto -\xi$
+   ([Remark](#rem:descartes-chirality)) reverses orientation.
+

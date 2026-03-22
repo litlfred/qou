@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
       --ac:#7ca8e6; --ac-d:#4a6a9a;
       --grn:#7ce6a4; --yel:#e6c87c; --red:#e67c7c; --ora:#e6a47c;
       --brd:#2a2a34;
-      --svg-f:invert(0.85) hue-rotate(180deg);
+      --svg-f:invert(1) hue-rotate(180deg);
     }
     [data-theme="light"] {
       --bg:#fafafa; --bg-s:#ffffff; --bg-r:#f0f0f4; --bg-c:#f5f5fa;
@@ -39,6 +39,8 @@
       --f-mono:'JetBrains Mono','Consolas',monospace;
       --f-sz:17px; --f-lh:1.65;
     }
+    html{scroll-behavior:smooth;scroll-padding-top:50px}
+    .ch-t,.sec-t,.env[id],.blk[id]{scroll-margin-top:50px}
 
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:var(--f-sz);line-height:var(--f-lh);min-height:100vh;transition:background .3s var(--ease),color .2s var(--ease)}
@@ -52,12 +54,38 @@
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
-    #app{max-width:780px;margin:0 auto;padding:48px 1.5rem 4rem}
+    #app{max-width:960px;margin:0 auto;padding:48px 1.5rem 4rem}
+    body.has-sidebar #app{margin-left:220px}
+
+    /* Sidebar */
+    #sidebar{display:none}
+    body.has-sidebar #sidebar{display:block;position:fixed;top:34px;left:0;width:210px;bottom:0;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;padding:.6rem 0;z-index:90;font-family:var(--f-head);font-size:.72rem}
+    .sb-ch{padding:.4rem .6rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
+    .sb-ch:hover{color:var(--ac)}
+    .sb-ch.active{color:var(--ac)}
+    .sb-sec{padding:.25rem .6rem .25rem 1rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
+    .sb-sec:hover{color:var(--ac);border-left-color:var(--ac)}
+    .sb-sec.active{color:var(--ac);border-left-color:var(--ac);font-weight:500}
+    .sb-blk{padding:.1rem .6rem .1rem 1.6rem;color:var(--fg-d);cursor:pointer;font-size:.58rem;font-family:var(--f-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:.3rem}
+    .sb-blk:hover{color:var(--fg)}
+    .sb-blk .sb-name{flex:1;overflow:hidden;text-overflow:ellipsis}
+    .sb-badge{font-size:.55rem;padding:.05rem .35rem;border-radius:3px;line-height:1.4;flex-shrink:0;cursor:default;position:relative;letter-spacing:.02em}
+    .sb-badge.todo{background:var(--ac);color:var(--bg)}
+    .sb-badge.lean-ok{background:#2a5;color:#fff}
+    .sb-badge.lean-warn{background:#c90;color:#fff}
+    .sb-badge.lean-err{background:#c33;color:#fff}
+    .sb-badge.lean-miss{background:#666;color:#ccc}
+    .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
+    .sb-badge:hover::after{opacity:1}
+    .sb-toggle{display:none;position:fixed;top:34px;left:0;z-index:95;background:var(--bg-s);border:1px solid var(--brd);border-left:none;border-top:none;border-radius:0 0 4px 0;padding:.3rem .5rem;font-size:.7rem;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono)}
+    .sb-toggle:hover{color:var(--ac)}
+    @media(max-width:900px){body.has-sidebar #app{margin-left:0}#sidebar{display:none!important}.sb-toggle{display:block}body.sb-open #sidebar{display:block!important;width:250px;box-shadow:4px 0 20px rgba(0,0,0,.3)}}
 
     /* Header */
     .hdr{text-align:center;padding:2.5rem 0 2rem;border-bottom:1px solid var(--brd);margin-bottom:2rem}
     .hdr h1{font-family:var(--f-head);font-size:1.9rem;font-weight:600;color:var(--fg-b);margin-bottom:.4rem}
     .hdr .au{font-family:var(--f-head);font-size:.9rem;color:var(--fg-d)}
+    .hdr .af{font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);font-style:italic;margin-top:.1rem}
     .hdr .dt{font-family:var(--f-mono);font-size:.75rem;color:var(--fg-d);margin-top:.2rem}
 
     /* Structure */
@@ -65,6 +93,7 @@
     .ch-t{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:var(--fg-b);margin-bottom:1.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--brd)}
     .ch-t .n{color:var(--ac);font-weight:400}
     .sec-t{font-family:var(--f-head);font-size:1.2rem;font-weight:500;color:var(--fg-b);margin:2rem 0 1rem}
+    .sec-n{display:none}
 
     /* Blocks */
     .blk{margin:1.5rem 0;position:relative}
@@ -76,18 +105,252 @@
     .env.example{border-left-color:var(--grn)}
     .env.remark{border-left-color:var(--fg-d)}
 
-    .bh{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
-    .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
+    /* Collapsed remark/example stub */
+    .blk-stub{margin:.4rem 0;display:flex;align-items:center;gap:.4rem;cursor:pointer;padding:.25rem .6rem;border-radius:3px;border:1px dashed var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d);transition:all .15s}
+    .blk-stub:hover{border-color:var(--ac-d);color:var(--fg)}
+    .blk-stub .stub-kind{font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:.6rem}
+    .blk-stub.remark .stub-kind{color:var(--fg-d)}
+    .blk-stub.example .stub-kind{color:var(--grn)}
+    .blk-stub.proof .stub-kind{color:var(--fg-d);font-style:italic}
+
+    /* Lean source code block */
+    .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
+    .lean-src-hdr{display:flex;align-items:center;justify-content:space-between;padding:.25rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d)}
+    .lean-src pre{margin:0;padding:.6rem .8rem;font-family:var(--f-mono);font-size:.75rem;line-height:1.5;overflow-x:auto;background:var(--bg-c)!important}
+    .lean-src code{font-family:var(--f-mono);font-size:.75rem}
+    .collapse-btn{position:absolute;top:.3rem;right:.4rem;background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.9rem;line-height:1;padding:.1rem .3rem;opacity:0;transition:opacity .15s}
+    .env:hover .collapse-btn{opacity:.5}
+    .collapse-btn:hover{opacity:1!important;color:var(--fg-b)}
+    /* Print styles — paper-like output */
+    @media print{
+      /* ── Hide all UI chrome ─────────────────────────────── */
+      .ctrl,#sidebar,.sb-toggle,.fb-act,.st,.bsrc,.collapse-btn,
+      .todo-inline,.blk-stub,.feedback-overlay,.feedback-panel,
+      .hash,.decor,.lb,.blk-foot,.bl,.sb-badge,.ex-toggle,
+      .ex-panel,.anchor-icon,.bh-copied,.bh-acts,.bh-menu,
+      .bh-drop,.tags,.uses,.uref,.upnl,.lean-src{display:none!important}
+      body.has-sidebar #app{margin-left:0!important}
+
+      /* ── Page geometry (LaTeX article defaults) ─────────── */
+      @page{
+        size:letter;
+        margin:1in 1.25in;
+      }
+      @page:first{margin-top:1.5in}
+
+      /* ── Base typography — Latin Modern / Computer Modern ── */
+      html{font-size:11pt}
+      body{
+        font-family:'Latin Modern Roman','CMU Serif','Computer Modern','Crimson Pro','Times New Roman',serif!important;
+        line-height:1.45;
+        color:#000!important;
+        background:#fff!important;
+        orphans:3;widows:3;
+      }
+      #app{max-width:100%!important;padding:0!important;margin:0!important}
+
+      /* ── Title block (centered, LaTeX \maketitle style) ──── */
+      .hdr{
+        text-align:center;
+        padding:0;
+        border:none!important;
+        margin:0 0 2em 0;
+      }
+      .hdr h1{
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        margin-bottom:.6em;
+        line-height:1.25;
+      }
+      .hdr .au{
+        font-size:12pt;
+        font-weight:400;
+        color:#000!important;
+        margin-bottom:.2em;
+      }
+      .hdr .af{
+        font-size:10pt;
+        font-style:italic;
+        color:#444!important;
+        margin-bottom:.1em;
+      }
+      .hdr .dt{
+        font-family:inherit!important;
+        font-size:10pt;
+        color:#444!important;
+        margin-top:.4em;
+      }
+
+      /* ── Chapters — each starts a new page ──────────────── */
+      .ch{break-before:page;margin-bottom:0}
+      .ch:first-child{break-before:auto}
+      .ch-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:17pt;
+        font-weight:700;
+        color:#000!important;
+        border-bottom:none!important;
+        margin-bottom:1.2em;
+        padding-bottom:0;
+        text-align:left;
+      }
+      .ch-t .n{color:#000!important;font-weight:700}
+
+      /* ── Sections ───────────────────────────────────────── */
+      .sec-t{
+        font-family:'Latin Modern Sans','CMU Sans Serif','Computer Modern Sans','Inter','Helvetica Neue',sans-serif!important;
+        font-size:13pt;
+        font-weight:700;
+        color:#000!important;
+        margin:1.5em 0 .6em;
+      }
+      .sec-n{display:inline!important;margin-right:.4em}
+
+      /* ── Environment blocks — LaTeX theorem style ───────── */
+      .env{
+        border:none!important;
+        border-left:none!important;
+        padding:0!important;
+        margin:.8em 0!important;
+        background:none!important;
+        border-radius:0!important;
+      }
+
+      /* Block header: "Definition 3.1." or "Theorem 2.4 (Name)." */
+      .bh{
+        display:inline!important;
+        margin-bottom:0!important;
+        gap:0!important;
+      }
+      .bh-anchor{
+        display:inline!important;
+        gap:0!important;
+        text-decoration:none!important;
+      }
+      .bk{
+        font-size:11pt!important;
+        font-weight:700!important;
+        font-style:normal!important;
+        text-transform:capitalize!important;
+        color:#000!important;
+        letter-spacing:0!important;
+        display:inline!important;
+      }
+      .bk::after{content:'.'!important;display:inline!important}
+      .bt{
+        font-size:11pt!important;
+        font-weight:400!important;
+        font-style:normal!important;
+        color:#000!important;
+        display:inline!important;
+      }
+      /* Wrap title in parens for print: "Theorem (Name)." */
+      .bt::before{content:' ('!important}
+      .bt::after{content:')'!important}
+
+      /* Block body */
+      .bb{font-size:11pt!important;display:inline!important}
+      .bb p:first-child{display:inline!important;margin-top:0!important}
+      .bb p{margin:.4em 0!important}
+      .bb li{margin:.2em 0!important}
+
+      /* Theorem/prop/lemma/corollary body in italic (LaTeX convention) */
+      .env.theorem .bb,.env.proposition .bb,
+      .env.lemma .bb,.env.corollary .bb,
+      .env.conjecture .bb{font-style:italic}
+      /* But math inside italic env stays upright */
+      .env.theorem .katex,.env.proposition .katex,
+      .env.lemma .katex,.env.corollary .katex,
+      .env.conjecture .katex{font-style:normal}
+
+      /* Definition body stays roman (LaTeX convention) */
+      .env.definition .bb{font-style:normal}
+
+      /* Remark — smaller, roman */
+      .env.remark .bb{font-style:normal;font-size:10pt!important}
+      .env.remark .bk{font-style:italic!important;font-weight:400!important}
+
+      /* Proof blocks (collapsible in screen, expanded in print) */
+      .prf-toggle{display:none!important}
+      .prf-body{display:block!important;padding:0!important}
+      .prf-body::before{content:'Proof. ';font-style:italic;font-weight:400}
+      .prf-body .qed::after{content:'\25A1';font-size:10pt}
+      .prf-lean{display:none!important}
+
+      /* Legacy env.proof */
+      .env.proof .bk{font-style:italic!important;font-weight:400!important}
+      .env.proof .bk::after{content:'.'!important}
+      .env.proof .bb{font-style:normal}
+
+      /* ── Math ───────────────────────────────────────────── */
+      .katex{color:#000!important}
+      .katex-display{margin:.6em 0!important;padding:0!important}
+      .txb{padding:.3em 0!important;margin:.5em 0!important;text-align:center}
+      .txb img,.txb svg{filter:none!important;transform:scale(1)!important}
+
+      /* ── Links — invisible in print ─────────────────────── */
+      a{color:#000!important;text-decoration:none!important}
+
+      /* ── Page break control ─────────────────────────────── */
+      .env{break-inside:avoid}
+      .section{break-inside:avoid-page}
+      h2,h3{break-after:avoid}
+
+      /* ── Prose blocks — clean inline flow ───────────────── */
+      .blk{margin:.6em 0!important}
+      .blk .bb p{text-indent:0;text-align:justify}
+
+      /* ── Lists ──────────────────────────────────────────── */
+      .bb ul{list-style:disc!important;padding-left:1.8em!important}
+      .bb ol{padding-left:1.8em!important}
+
+      /* ── Footnotes / references ─────────────────────────── */
+      .bb sup{font-size:.75em}
+    }
+    /* Reading mode — hide decorations */
+    body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
+    body.reading .bh{margin-bottom:.3rem}
+
+    .bh{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;font-family:var(--f-head)}
+    .bh-anchor{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;cursor:pointer;position:relative;min-width:0;flex:1}
+    .bh-anchor:hover .bk{text-decoration:underline}
+    .bh-anchor .anchor-icon{opacity:0;font-size:.7rem;color:var(--fg-d);transition:opacity .15s;margin-left:.2rem;flex-shrink:0}
+    .bh-anchor:hover .anchor-icon{opacity:.6}
+    .bh-copied{position:absolute;left:0;top:100%;font-family:var(--f-mono);font-size:.55rem;color:var(--ac);opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+    .bh-copied.show{opacity:1}
+    .bk{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ac);flex-shrink:0}
     .env.theorem .bk,.env.proposition .bk{color:var(--yel)}
     .env.lemma .bk,.env.corollary .bk{color:var(--ora)}
     .env.conjecture .bk{color:var(--red)}
     .env.example .bk{color:var(--grn)}
     .env.remark .bk{color:var(--fg-d)}
-    .bt{font-size:.95rem;font-weight:500;color:var(--fg-b)}
-    .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:auto}
+    .bt{font-size:.95rem;font-weight:500;color:var(--fg-b);overflow:hidden;text-overflow:ellipsis}
+    /* Header actions group — right side, plain grey text */
+    .bh-acts{display:flex;align-items:center;gap:.5rem;flex-shrink:0;margin-left:auto}
+    .bh-acts .lb{margin-left:0;background:none;border:none;padding:0;border-radius:0}
+    .bh-acts .bl{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);text-decoration:none;padding:0;border-radius:0;background:none;border:none;white-space:nowrap}
+    .bh-acts .bl:hover{color:var(--ac)}
+    .bh-acts .fb-act{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);background:none;border:none;border-radius:0;padding:0;cursor:pointer;white-space:nowrap}
+    .bh-acts .fb-act:hover{color:var(--ac)}
+    .bh-acts .st{position:static;width:auto;height:auto;opacity:.5;font-size:.55rem;padding:0;display:inline-flex}
+    /* Hamburger for narrow — replaces bh-acts */
+    .bh-menu{display:none;background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-size:.7rem;padding:.1rem .3rem;margin-left:auto;position:relative}
+    .bh-menu:hover{color:var(--fg-b);border-color:var(--ac-d)}
+    .bh-drop{display:none;position:absolute;right:0;top:100%;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;padding:.3rem;z-index:50;min-width:120px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+    .bh-drop.open{display:flex;flex-direction:column;gap:.2rem}
+    .bh-drop .bl,.bh-drop .fb-act,.bh-drop .lb,.bh-drop .st{font-size:.55rem;display:block;text-align:left;width:100%;background:none;border:none;padding:.15rem .4rem;color:var(--fg-d);cursor:pointer}
+    .bh-drop .bl:hover,.bh-drop .fb-act:hover,.bh-drop .lb:hover,.bh-drop .st:hover{color:var(--ac)}
+    @media(max-width:600px){
+      .bh-acts{display:none}
+      .bh-menu{display:block}
+    }
 
     /* Tags */
-    .tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.4rem}
+    .blk-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.5rem;padding-top:.3rem;border-top:1px solid var(--brd);gap:.5rem}
+    .blk-foot .tags{margin-top:0}
+    .blk-foot .uses{margin-top:0;text-align:right;margin-left:auto}
+    .tags{display:flex;gap:.3rem;flex-wrap:wrap}
     .tag{font-family:var(--f-mono);font-size:.55rem;padding:.1rem .4rem;border-radius:2px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d)}
 
     /* Source toggle */
@@ -98,14 +361,14 @@
     .bsrc{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:3px;padding:.6rem .8rem;margin-top:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;color:var(--fg-d)}
     .bsrc.vis{display:block}
 
-    /* Lean badge + icons */
-    .lb{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:3px;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);margin-top:.5rem}
-    .lb.proved{color:var(--grn);border-color:var(--grn)}
-    .lb.has_sorry{color:var(--yel);border-color:var(--yel)}
-    .lb.stated{color:var(--ac);border-color:var(--ac)}
-    .lb.validated{color:var(--grn);border-color:var(--grn)}
-    .lb.stub{color:var(--red);border-color:var(--red)}
-    .lb.external{color:var(--ora);border-color:var(--ora)}
+    /* Lean badge — plain grey text, colored by status */
+    .lb{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.55rem;padding:0;border-radius:0;background:none;border:none;color:var(--fg-d);margin-left:auto;white-space:nowrap}
+    .lb.proved{color:var(--grn)}
+    .lb.has_sorry{color:var(--yel)}
+    .lb.stated{color:var(--ac)}
+    .lb.validated{color:var(--grn)}
+    .lb.stub{color:var(--red)}
+    .lb.external{color:var(--ora)}
     .lb.trivial{color:var(--fg-d)}
 
     /* Lean validation icon */
@@ -117,6 +380,18 @@
     .vi.not_checked{background:var(--brd)}
     .vi.error{background:var(--red);box-shadow:0 0 4px var(--red)}
 
+    /* Proof block (collapsible, default closed) */
+    .prf{margin-top:.4rem}
+    .prf-toggle{font-family:var(--f-head);font-size:.8rem;color:var(--fg-d);cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;font-style:italic;padding:.2rem 0}
+    .prf-toggle:hover{color:var(--fg-b)}
+    .prf-toggle .arrow{transition:transform .2s;font-style:normal;font-size:.6rem}
+    .prf-toggle.open .arrow{transform:rotate(90deg)}
+    .prf-toggle .prf-lean{font-style:normal;font-family:var(--f-mono);font-size:.55rem;color:var(--fg-d);margin-left:.5rem}
+    .prf-body{display:none;padding:.6rem 0 .4rem;font-size:var(--f-sz);line-height:var(--f-lh)}
+    .prf-body.open{display:block}
+    .prf-body p{margin:.4em 0}
+    .prf-body .qed{text-align:right;color:var(--fg-d);font-size:.8rem;margin-top:.2rem}
+
     /* Examples panel (hidden by default) */
     .ex-panel{display:none;margin-top:.6rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
     .ex-panel.open{display:block}
@@ -126,14 +401,16 @@
     .ex-toggle.open .arrow{transform:rotate(90deg)}
 
     /* Uses */
-    .uses{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-top:.5rem}
+    .uses{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.5rem;text-align:right}
     .uref{color:var(--ac-d);cursor:pointer;border-bottom:1px dotted var(--ac-d);text-decoration:none}
     .uref:hover{color:var(--ac);border-bottom-color:var(--ac)}
 
     /* Uses expand panel */
     .upnl{display:none;background:var(--bg-c);border:1px solid var(--brd);border-radius:4px;margin-top:.4rem;overflow:hidden}
     .upnl.open{display:block}
-    .uph{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d)}
+    .uph{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.7rem;color:var(--fg-d);flex-wrap:wrap}
+    .uph-goto{margin-left:auto;font-family:var(--f-mono);font-size:.6rem;color:var(--ac-d);text-decoration:none;cursor:pointer;white-space:nowrap}
+    .uph-goto:hover{color:var(--ac)}
     .upt{display:flex;border-bottom:1px solid var(--brd)}
     .uptb{padding:.25rem .6rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent}
     .uptb:hover{color:var(--fg)}
@@ -142,8 +419,9 @@
 
     /* Content */
     .bb p{margin:.5em 0}
-    .bb ul,.bb ol{margin:.4em 0;padding-left:1.5em}
-    .bb li{margin:.15em 0}
+    .bb ul{margin:.4em 0;padding-left:1.5em;list-style:none}
+    .bb ol{margin:.4em 0;padding-left:1.5em}
+    .bb li{margin:.4em 0}
     .bb strong{color:var(--fg-b)}
     .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
     .bb a:hover{color:var(--fg-b)}
@@ -151,45 +429,134 @@
     .katex{color:var(--fg)}
 
     /* TeX blocks */
-    .txb{background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
-    .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f)}
+    .txb{background:transparent;border:none;border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
+    .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f);transform:scale(1.25);transform-origin:center}
     .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left}
+
+    /* Folio */
+    .folio-list{display:flex;flex-direction:column;gap:1rem}
+    .folio-card{background:var(--bg-s);border:1px solid var(--brd);border-radius:6px;padding:1.2rem 1.5rem;transition:border-color .15s,box-shadow .15s}
+    .folio-card:hover{border-color:var(--ac-d);box-shadow:0 2px 12px rgba(0,0,0,.15)}
+    .fc-title{font-family:var(--f-head);font-size:1.2rem;font-weight:600;color:var(--fg-b);margin-bottom:.3rem}
+    .fc-desc{font-size:.9rem;color:var(--fg);margin-bottom:.4rem}
+    .fc-meta{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d)}
+
+    /* Feedback panel */
+    .feedback-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300;display:none}
+    .feedback-overlay.open{display:block}
+    .feedback-panel{position:fixed;top:0;right:-400px;bottom:0;width:400px;background:var(--bg-s);border-left:1px solid var(--brd);z-index:301;transition:right .3s var(--ease);display:flex;flex-direction:column}
+    .feedback-panel.open{right:0}
+    .fb-head{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;border-bottom:1px solid var(--brd)}
+    .fb-head h3{font-family:var(--f-head);font-size:.9rem;color:var(--fg-b)}
+    .fb-close{background:none;border:none;color:var(--fg-d);font-size:1.2rem;cursor:pointer}
+    .fb-close:hover{color:var(--fg-b)}
+    .fb-target{padding:.5rem 1rem;font-family:var(--f-mono);font-size:.65rem;color:var(--ac);border-bottom:1px solid var(--brd)}
+    .fb-input-area{padding:1rem}
+    .fb-input-area textarea{width:100%;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-body);font-size:.85rem;padding:.6rem;resize:vertical}
+    .fb-input-area textarea:focus{outline:none;border-color:var(--ac)}
+    .fb-controls{display:flex;gap:.4rem;margin-top:.5rem;align-items:center}
+    .fb-controls select{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.2rem .4rem;border-radius:3px}
+    .fb-submit{background:var(--ac);border:1px solid var(--ac);color:var(--bg);font-family:var(--f-mono);font-size:.65rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer;margin-left:auto}
+    .fb-submit:hover{opacity:.85}
+    .fb-voice{background:none;border:1px solid var(--brd);color:var(--fg-d);cursor:pointer;border-radius:3px;padding:.3rem .6rem;font-size:.75rem;font-family:var(--f-mono);transition:all .2s}
+    .fb-voice:hover{border-color:var(--ac);color:var(--ac)}
+    .fb-voice.recording{border-color:var(--red);color:var(--red);animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    .fb-history{flex:1;overflow-y:auto;padding:.5rem 1rem}
+    .fb-item{padding:.5rem;border:1px solid var(--brd);border-radius:4px;margin-bottom:.4rem;font-size:.75rem}
+    .fb-item .fb-meta{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.2rem}
+    .fb-item.open{border-left:2px solid var(--ac)}
+    .fb-item.resolved{border-left:2px solid var(--green,#4a4);opacity:.6}
+    .todo-inline{display:flex;gap:.4rem;align-items:center;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.3rem;padding:.2rem .5rem;background:var(--bg-r);border-radius:3px;border:1px solid var(--brd)}
+    .todo-inline .todo-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .todo-inline .todo-text{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .todo-inline .todo-pri{font-size:.55rem;opacity:.7;min-width:2.5rem;text-align:center}
+    .todo-inline .todo-btn{background:none;border:1px solid var(--brd);border-radius:2px;color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);font-size:.55rem;padding:0 .25rem;line-height:1.3}
+    .todo-inline .todo-btn:hover{background:var(--bg-h);color:var(--fg)}
+    .todo-inline .todo-btn.todo-rm{color:var(--red,#c44)}
+    .todo-inline .todo-btn.todo-rm:hover{background:var(--red,#c44);color:#fff}
+
+    /* Feedback button on blocks */
+    /* (old .fb-btn removed — feedback now in .bh-acts) */
 
     .loading{text-align:center;padding:4rem 0;font-family:var(--f-mono);color:var(--fg-d)}
     .err{background:rgba(230,124,124,.08);border:1px solid var(--red);border-radius:4px;padding:1rem;color:var(--red);font-family:var(--f-mono);font-size:.8rem}
   </style>
 </head>
-<body data-font="paper">
+<body data-font="web">
   <div class="ctrl">
-    <span style="font-weight:500;color:var(--fg)">QOU</span>
+    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">QOU</a>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
-    <button id="c-th" title="Toggle dark/light">light</button>
-    <button id="c-fn" title="Toggle paper/web font">web font</button>
+    <button id="c-rm" title="Show/hide remarks">remarks</button>
+    <button id="c-rd" title="Reading mode: hide decorations">reading</button>
+    <button id="c-th" title="Toggle dark/light">dark</button>
+    <button id="c-fn" title="Toggle paper/web font">paper font</button>
+    <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
+    <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
-  <div id="app"><div class="loading">loading paper.json...</div></div>
+  <button class="sb-toggle" id="sb-toggle">☰</button>
+  <div id="sidebar"></div>
+  <div id="app"><div class="loading">loading...</div></div>
 
-  <!-- paper.js sets window.__PAPER_DATA__ — works with file:// (no fetch needed) -->
-  <script src="paper.js" onerror="/* ok — will try fetch instead */"></script>
+  <!-- Feedback panel -->
+  <div class="feedback-overlay" id="feedback-overlay"></div>
+  <div class="feedback-panel" id="feedback-panel">
+    <div class="fb-head">
+      <h3>Feedback</h3>
+      <button class="fb-close" id="fb-close">&times;</button>
+    </div>
+    <div class="fb-target" id="fb-target"></div>
+    <div class="fb-input-area">
+      <textarea id="fb-text" placeholder="Describe the issue, question, or suggestion..." rows="4"></textarea>
+      <div class="fb-controls">
+        <button class="fb-voice" id="fb-voice" title="Voice input (click to start/stop)">mic</button>
+        <select id="fb-priority">
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="critical">Critical</option>
+          <option value="low">Low</option>
+        </select>
+        <select id="fb-assignee">
+          <option value="editor-agent">Editor Agent</option>
+          <option value="proof-agent">Proof Agent</option>
+          <option value="author">Author</option>
+        </select>
+        <button class="fb-submit" id="fb-submit">Submit</button>
+      </div>
+    </div>
+    <div class="fb-history" id="fb-history"></div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="module">
     // ── State ────────────────────────────────────────────
     let paper = null;
     const bix = new Map(); // label → block
     let showExamples = false;
+    let showRemarks = true; // remarks visible by default
 
     // ── Controls ─────────────────────────────────────────
     const html = document.documentElement;
     const btnEx = document.getElementById('c-ex');
+    const btnRm = document.getElementById('c-rm');
     const btnTh = document.getElementById('c-th');
     const btnFn = document.getElementById('c-fn');
+
+    // Restore saved theme preference (default: light)
+    const savedTheme = localStorage.getItem('qou-theme');
+    if (savedTheme) {
+      html.dataset.theme = savedTheme;
+      btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
+    }
 
     btnTh.addEventListener('click', () => {
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('qou-theme', n);
     });
 
     btnFn.addEventListener('click', () => {
@@ -202,8 +569,90 @@
       showExamples = !showExamples;
       btnEx.classList.toggle('on', showExamples);
       document.querySelectorAll('.blk-example').forEach(el => {
-        el.style.display = showExamples ? '' : 'none';
+        const stub = el.previousElementSibling;
+        if (showExamples) {
+          el.style.display = '';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        } else {
+          el.style.display = 'none';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = '';
+        }
       });
+    });
+
+    btnRm.addEventListener('click', () => {
+      showRemarks = !showRemarks;
+      btnRm.classList.toggle('on', showRemarks);
+      document.querySelectorAll('.blk-remark').forEach(el => {
+        const stub = el.previousElementSibling;
+        if (showRemarks) {
+          el.style.display = '';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        } else {
+          el.style.display = 'none';
+          if (stub?.classList.contains('blk-stub')) stub.style.display = '';
+        }
+      });
+    });
+    btnRm.classList.add('on'); // remarks on by default
+
+    // Preview (browser print with LaTeX-styled CSS)
+    document.getElementById('c-pr').addEventListener('click', () => {
+      // Force-hydrate all lazy content before printing
+      while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
+      window.print();
+    });
+
+    // PDF (trigger server-side LaTeX pipeline)
+    // Check PDF availability at startup — hide button if latexmk not installed
+    const pdfBtn = document.getElementById('c-pdf');
+    fetch('/api/render-pdf/status').then(r => r.json()).then(d => {
+      if (!d.available) {
+        pdfBtn.style.display = 'none';
+      }
+    }).catch(() => { pdfBtn.style.display = 'none'; });
+
+    pdfBtn.addEventListener('click', async () => {
+      const orig = pdfBtn.textContent;
+      pdfBtn.textContent = 'building...';
+      pdfBtn.disabled = true;
+      try {
+        const res = await fetch('/api/render-pdf');
+        if (res.ok && res.headers.get('content-type')?.includes('pdf')) {
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          window.open(url, '_blank');
+          setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        } else {
+          const err = await res.json().catch(() => ({ error: 'Unknown error' }));
+          alert(`PDF build failed: ${err.error || 'See console'}`);
+          console.error('PDF render error:', err);
+        }
+      } catch (e) {
+        alert(`Could not reach build server. Is the MCP server running?\n\n${e.message}`);
+      } finally {
+        pdfBtn.textContent = orig;
+        pdfBtn.disabled = false;
+      }
+    });
+
+    // Sidebar hamburger toggle (narrow screens)
+    document.getElementById('sb-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('sb-open');
+    });
+    document.getElementById('sidebar').addEventListener('click', (e) => {
+      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch'))
+        document.body.classList.remove('sb-open');
+    });
+
+    const btnRd = document.getElementById('c-rd');
+    let readingMode = localStorage.getItem('qou-reading') === '1';
+    if (readingMode) { document.body.classList.add('reading'); btnRd.classList.add('on'); }
+    btnRd.addEventListener('click', () => {
+      readingMode = !readingMode;
+      document.body.classList.toggle('reading', readingMode);
+      btnRd.classList.toggle('on', readingMode);
+      localStorage.setItem('qou-reading', readingMode ? '1' : '0');
     });
 
     // ── Markdown ─────────────────────────────────────────
@@ -211,9 +660,13 @@
       const tx = [];
       const lines = md.split('\n');
       const o = [];
+      let para = []; // accumulate text lines for multi-line inline math
       let i = 0;
       while (i < lines.length) {
         const l = lines[i];
+        // Flush accumulated paragraph text before any block-level element
+        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l);
+        if (isBlock && para.length) { o.push(inl(para.join(' '))); para = []; }
         if (l.trimStart().startsWith('```tex')) {
           i++;
           const t = [];
@@ -240,19 +693,31 @@
         }
         if (/^\s*[-*]\s/.test(l)) {
           o.push('<ul>');
-          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*[-*]\s/,''))}</li>`); i++; }
+          while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
+            const parts = [lines[i].replace(/^\s*[-*]\s/,'')]; i++;
+            while (i < lines.length && lines[i].match(/^\s{2,}/) && !/^\s*[-*]\s/.test(lines[i])) { parts.push(lines[i].trim()); i++; }
+            o.push(`<li>${inl(parts.join(' '))}</li>`);
+          }
           o.push('</ul>');
           continue;
         }
         if (/^\s*\d+\.\s/.test(l)) {
           o.push('<ol>');
-          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) { o.push(`<li>${inl(lines[i].replace(/^\s*\d+\.\s/,''))}</li>`); i++; }
+          while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
+            const parts = [lines[i].replace(/^\s*\d+\.\s/,'')]; i++;
+            while (i < lines.length && lines[i].match(/^\s{2,}/) && !/^\s*\d+\.\s/.test(lines[i])) { parts.push(lines[i].trim()); i++; }
+            o.push(`<li>${inl(parts.join(' '))}</li>`);
+          }
           o.push('</ol>');
           continue;
         }
-        if (l.trim() === '') { o.push('</p><p>'); i++; continue; }
-        o.push(inl(l)); i++;
+        if (l.trim() === '') {
+          if (para.length) { o.push(inl(para.join(' '))); para = []; }
+          o.push('</p><p>'); i++; continue;
+        }
+        para.push(l); i++;
       }
+      if (para.length) o.push(inl(para.join(' ')));
       let h = '<p>' + o.join('\n') + '</p>';
       h = h.replace(/<p>\s*<\/p>/g,'');
       h = h.replace(/<p>\s*<(div|ul|ol|pre)/g,'<$1');
@@ -263,29 +728,105 @@
     function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
     function inl(t) {
+      // LaTeX accent commands → Unicode
+      t = t.replace(/\\"\{([^}])\}/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));
+      t = t.replace(/\\"([aeiouAEIOU])/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));
+      t = t.replace(/\\'\{([^}])\}/g, (_, c) => ({a:'á',e:'é',i:'í',o:'ó',u:'ú',A:'Á',E:'É',O:'Ó',U:'Ú'}[c]||c));
+      t = t.replace(/\\'([aeiouAEIOU])/g, (_, c) => ({a:'á',e:'é',i:'í',o:'ó',u:'ú',A:'Á',E:'É',O:'Ó',U:'Ú'}[c]||c));
       t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
       t = t.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, '<a href="#$2" data-ref="$2">$1</a>');
-      t = t.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g, '<span data-mi>$1</span>');
-      return t;
+      // LaTeX cross-ref commands → clickable links
+      // Handle $\eqref{...}$ (math-wrapped refs) first
+      t = t.replace(/\$\\eqref\{([^}]+)\}\$/g, '(<a href="#$1" data-ref="$1">$1</a>)');
+      t = t.replace(/\$\\(?:ref|cref|autoref)\{([^}]+)\}\$/g, '<a href="#$1" data-ref="$1">$1</a>');
+      // Then bare (outside math mode)
+      t = t.replace(/\\eqref\{([^}]+)\}/g, '(<a href="#$1" data-ref="$1">$1</a>)');
+      t = t.replace(/\\(?:ref|cref|autoref)\{([^}]+)\}/g, '<a href="#$1" data-ref="$1">$1</a>');
+      // \cite{key} → [key], ~ → non-breaking space
+      t = t.replace(/\\cite\{([^}]+)\}/g, '[$1]');
+      t = t.replace(/~/g, '&nbsp;');
+      // Inline math: walk character-by-character to handle nested braces
+      let out = '', i = 0;
+      while (i < t.length) {
+        if (t[i] === '$' && t[i+1] !== '$') {
+          let j = i + 1, depth = 0;
+          while (j < t.length) {
+            if (t[j] === '{') depth++;
+            else if (t[j] === '}') depth--;
+            else if (t[j] === '$' && depth === 0) break;
+            j++;
+          }
+          if (j < t.length) {
+            out += `<span data-mi>${esc(t.slice(i+1, j))}</span>`;
+            i = j + 1;
+          } else {
+            out += t[i]; i++;
+          }
+        } else {
+          out += t[i]; i++;
+        }
+      }
+      return out;
     }
 
     // ── KaTeX ────────────────────────────────────────────
+    let katexMacros = {};
+    function buildKatexMacros(paperMacros) {
+      const m = {};
+      if (paperMacros) {
+        for (const [name, def] of Object.entries(paperMacros)) {
+          m['\\' + name] = def.tex;
+        }
+      }
+      return m;
+    }
     function renderMath(el) {
       for (const m of el.querySelectorAll('[data-mi]'))
-        try { katex.render(m.textContent, m, {throwOnError:false}); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, macros:katexMacros}); } catch {}
       for (const m of el.querySelectorAll('[data-md]'))
-        try { katex.render(m.textContent, m, {throwOnError:false,displayMode:true}); m.classList.add('katex-display'); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
     }
 
-    // ── Lean validation icon ─────────────────────────────
+    // ── Resolve cross-ref links: replace generic text with block titles ──
+    const kindAbbrev = {
+      definition:'Def.', theorem:'Thm.', lemma:'Lem.', proposition:'Prop.',
+      corollary:'Cor.', conjecture:'Conj.', example:'Ex.', remark:'Rem.',
+      proof:'Proof', equation:'Eqn.', diagram:'Fig.', prose:''
+    };
+    function resolveRefs(el) {
+      for (const a of el.querySelectorAll('a[data-ref]')) {
+        const label = a.dataset.ref;
+        const ref = bix.get(label);
+        if (!ref) continue;
+        // Replace generic or raw-label text with "Abbrev. Title"
+        const text = a.textContent.trim();
+        const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
+          'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
+        if (ref.title && (generic.includes(text) || text === label)) {
+          const abbr = kindAbbrev[ref.kind] || ref.kind;
+          a.innerHTML = `${abbr} ${inl(ref.title)}`;
+          renderMath(a);
+        }
+      }
+    }
+
+    // ── Lean validation icon (∀ symbology from main.tex) ──
     function leanIcon(validation) {
       const v = validation || 'not_checked';
-      const labels = {
-        validated: 'validated', stub: 'stub', external: 'external',
-        trivial: 'trivial', not_checked: 'not checked', error: 'error'
+      // Don't show icon for stubs — just the declaration name
+      if (v === 'stub') return '';
+      const icons = {
+        validated: { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
+        leanok:    { sym: '&#x2713;', color: 'var(--grn)', tip: 'proved (sorry-free)' },
+        not_checked:{ sym: '&#x2200;', color: 'var(--ora)', tip: 'stated (not checked)' },
+        axioms_only:{ sym: '&#x2200;', color: 'var(--yel)', tip: 'axioms only' },
+        external:  { sym: '&#x2200;', color: 'var(--ac)',  tip: 'external proof' },
+        trivial:   { sym: '&#x2713;', color: 'var(--fg-d)', tip: 'trivial' },
+        error:     { sym: '&#x2717;', color: 'var(--red)', tip: 'build error' },
       };
-      return `<span class="vi ${v}" title="${labels[v] || v}"></span>`;
+      const i = icons[v] || { sym: '?', color: 'var(--fg-d)', tip: v };
+      return `<span style="color:${i.color};font-size:.75rem" title="${i.tip}">${i.sym}</span>`;
     }
 
     // ── Uses panel ───────────────────────────────────────
@@ -296,7 +837,15 @@
       const {html: bh, texBlocks: tx} = parseMd(ref.md || '');
 
       // Head
-      p.innerHTML = `<div class="uph"><span class="bk">${ref.kind}</span> ${ref.title ? inl(ref.title) : label}</div>`;
+      const hd = mk('div','uph');
+      hd.innerHTML = `<span class="bk">${ref.kind}</span> ${ref.title ? inl(ref.title) : label}`;
+      const goTo = mk('a','uph-goto');
+      goTo.textContent = 'go to \u2197';
+      goTo.href = `#${label}`;
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth'}); };
+      hd.appendChild(goTo);
+      renderMath(hd);
+      p.appendChild(hd);
 
       // Tabs
       const tabs = mk('div','upt');
@@ -319,40 +868,250 @@
       return p;
     }
 
+    // ── Block header helper ────────────────────────────────
+    function mkBlockHeader(kind, title, label) {
+      const div = mk('div','bh');
+      // Anchor wrapping kind + title — click to copy permalink
+      const anchor = document.createElement('a');
+      anchor.className = 'bh-anchor';
+      if (label) anchor.href = `#${label}`;
+      anchor.innerHTML = `<span class="bk">${kind}</span>${title ? `<span class="bt">${inl(title)}</span>` : ''}<span class="anchor-icon">#</span>`;
+      const copied = document.createElement('span');
+      copied.className = 'bh-copied';
+      copied.textContent = 'link copied';
+      anchor.appendChild(copied);
+      anchor.onclick = (e) => {
+        e.preventDefault();
+        if (label) {
+          const url = `${location.origin}${location.pathname}#${label}`;
+          navigator.clipboard.writeText(url).then(() => {
+            copied.classList.add('show');
+            setTimeout(() => copied.classList.remove('show'), 1200);
+          });
+          history.replaceState(null, '', `#${label}`);
+        }
+      };
+      div.appendChild(anchor);
+
+      // Actions group (wide) + hamburger (narrow)
+      div._acts = mk('div','bh-acts decor');
+      if (label) {
+        const lbl = document.createElement('a');
+        lbl.className = 'bl';
+        lbl.href = `#/edit/${label}`;
+        lbl.title = `Edit ${label}`;
+        lbl.textContent = label;
+        div._acts.appendChild(lbl);
+      }
+      div.appendChild(div._acts);
+
+      // Hamburger for narrow screens
+      const menu = mk('button','bh-menu decor');
+      menu.textContent = '⋯';
+      menu.title = 'More';
+      const drop = mk('div','bh-drop');
+      menu.appendChild(drop);
+      menu.onclick = (e) => { e.stopPropagation(); drop.classList.toggle('open'); };
+      document.addEventListener('click', () => drop.classList.remove('open'));
+      div._menu = menu;
+      div._drop = drop;
+      div.appendChild(menu);
+
+      renderMath(div);
+      return div;
+    }
+
+    // ── Uses inline helper ─────────────────────────────────
+    function mkUsesInline(block) {
+      const u = mk('div','uses');
+      u.innerHTML = 'uses: ';
+      block.uses.forEach((label, i) => {
+        if (i > 0) u.append(', ');
+        const r = document.createElement('span');
+        r.className = 'uref';
+        r.textContent = label;
+        r.onclick = () => {
+          let p = u.querySelector(`.upnl[data-for="${label}"]`);
+          if (p) { p.classList.toggle('open'); }
+          else { p = mkUsesPanel(label); if (p) { p.dataset.for = label; p.classList.add('open'); u.appendChild(p); } }
+        };
+        u.appendChild(r);
+      });
+      return u;
+    }
+
     // ── Block renderer ───────────────────────────────────
     function renderBlock(block) {
-      const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+      // Defer markdown parsing to lazy init for most blocks
+      function hydrateContent(container) {
+        const {html: bh, texBlocks: tx} = parseMd(block.md || '');
+        return {bh, tx};
+      }
 
-      // Example — wrapped for show/hide
+      // Example — with collapsible stub
       if (block.kind === 'example') {
+        const frag = document.createDocumentFragment();
+
+        const stub = mk('div', 'blk-stub example');
+        stub.innerHTML = `<span class="stub-kind">example</span> ${block.title ? inl(block.title) : (block.label || '')}`;
+        renderMath(stub);
+        stub.style.display = showExamples ? 'none' : '';
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
         const wrap = mk('div', 'blk blk-example');
         wrap.style.display = showExamples ? '' : 'none';
 
         const d = mk('div', 'env example');
         if (block.label) d.id = block.label;
-        let hd = `<span class="bk">example</span>`;
-        if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
-        if (block.label) hd += `<span class="bl">${block.label}</span>`;
-        d.innerHTML = `<div class="bh">${hd}</div>`;
+        const exHdr = mkBlockHeader('example', block.title, block.label);
+        // Collapse into header actions
+        const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
+        exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        exHdr._acts.appendChild(exColBtn);
+        const exFb = mk('button','fb-act'); exFb.textContent = 'feedback';
+        exFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        exHdr._acts.appendChild(exFb);
+        d.appendChild(exHdr);
         const bb = mk('div','bb');
-        bb.innerHTML = bh;
-        fillTex(bb, tx, block.rendered);
-        renderMath(bb);
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
         d.appendChild(bb);
-        addSrc(d, block.md);
+        addSrc(d, block.md, exHdr);
         if (block.tags?.length) d.appendChild(mkTags(block.tags));
         wrap.appendChild(d);
-        return wrap;
+        frag.appendChild(wrap);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
+        });
+        return frag;
+      }
+
+      // Remark — with collapsible stub
+      if (block.kind === 'remark') {
+        const frag = document.createDocumentFragment();
+
+        // Stub (shown when remarks globally hidden)
+        const stub = mk('div', 'blk-stub remark');
+        stub.innerHTML = `<span class="stub-kind">remark</span> ${block.title ? inl(block.title) : (block.label || '')}`;
+        renderMath(stub);
+        stub.style.display = showRemarks ? 'none' : '';
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
+        const wrap = mk('div', 'blk blk-remark');
+        wrap.style.display = showRemarks ? '' : 'none';
+
+        const d = mk('div', 'env remark');
+        if (block.label) d.id = block.label;
+        const rmHdr = mkBlockHeader('remark', block.title, block.label);
+        const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
+        rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        rmHdr._acts.appendChild(rmColBtn);
+        const rmFb = mk('button','fb-act'); rmFb.textContent = 'feedback';
+        rmFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        rmHdr._acts.appendChild(rmFb);
+        d.appendChild(rmHdr);
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, rmHdr);
+        if (block.tags?.length) d.appendChild(mkTags(block.tags));
+        if (block.uses?.length) d.appendChild(mkUsesInline(block));
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
+        });
+        return frag;
+      }
+
+      // Proof — collapsible, default closed
+      if (block.kind === 'proof') {
+        const frag = document.createDocumentFragment();
+
+        const stub = mk('div', 'blk-stub proof');
+        let stubLean = '';
+        if (block.lean) {
+          const v = block.lean.validation || 'not_checked';
+          stubLean = ` <span style="font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)">${leanIcon(v)}${esc(block.lean.decl)}</span>`;
+        }
+        stub.innerHTML = `<span class="stub-kind">proof</span> ${block.title ? inl(block.title) : (block.label || '')}${stubLean}`;
+        renderMath(stub);
+        stub.onclick = () => { wrap.style.display = ''; stub.style.display = 'none'; };
+        frag.appendChild(stub);
+
+        const wrap = mk('div', 'blk blk-proof');
+        wrap.style.display = 'none'; // default closed
+
+        const d = mk('div', 'env proof');
+        if (block.label) d.id = block.label;
+        const prfHdr = mkBlockHeader('proof', block.title, block.label);
+        // Lean icon — click to toggle lean source
+        let prfLeanPanel = null;
+        if (block.lean) {
+          const v = block.lean.validation || 'not_checked';
+          const icon = leanIcon(v);
+          if (icon) {
+            const badge = mk('span',`lb ${block.status || 'not_started'}`);
+            badge.innerHTML = icon;
+            badge.title = `${block.lean.decl} — click to show Lean source`;
+            badge.style.cursor = 'pointer';
+            badge.onclick = (e) => {
+              e.stopPropagation();
+              if (!prfLeanPanel) {
+                prfLeanPanel = mkLeanSrc(block);
+                if (prfLeanPanel) d.appendChild(prfLeanPanel);
+              } else {
+                prfLeanPanel.style.display = prfLeanPanel.style.display === 'none' ? '' : 'none';
+              }
+            };
+            prfHdr._acts.insertBefore(badge, prfHdr._acts.firstChild);
+          }
+        }
+        const prfColBtn = mk('button','fb-act'); prfColBtn.textContent = '−'; prfColBtn.title = 'Collapse';
+        prfColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
+        prfHdr._acts.appendChild(prfColBtn);
+        const prfFb = mk('button','fb-act'); prfFb.textContent = 'feedback';
+        prfFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        prfHdr._acts.appendChild(prfFb);
+        d.appendChild(prfHdr);
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, prfHdr);
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+
+        lazyInit(wrap, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh + '<div class="qed"></div>';
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
+        });
+        return frag;
       }
 
       // Prose
       if (block.kind === 'prose') {
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
-        d.innerHTML = `<div class="bb">${bh}</div>`;
+        d.innerHTML = '<div class="bb"></div>';
         addSrc(d, block.md);
-        fillTex(d, tx, block.rendered);
-        renderMath(d);
+
+        lazyInit(d, () => {
+          const {bh, tx} = hydrateContent();
+          d.querySelector('.bb').innerHTML = bh;
+          fillTex(d, tx, block.rendered);
+          renderMath(d); resolveRefs(d);
+        });
         return d;
       }
 
@@ -361,7 +1120,7 @@
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
         d.innerHTML = `<div data-md>${esc(block.tex||'')}</div>`;
-        renderMath(d);
+        lazyInit(d, () => renderMath(d));
         return d;
       }
 
@@ -374,82 +1133,145 @@
         return d;
       }
 
-      // Environment block
+      // Environment block (definition, theorem, proposition, lemma, corollary, conjecture)
       const d = mk('div',`blk env ${block.kind}`);
       if (block.label) d.id = block.label;
 
-      let hd = `<span class="bk">${block.kind}</span>`;
-      if (block.title) hd += `<span class="bt">${inl(block.title)}</span>`;
-      if (block.label) hd += `<span class="bl">${block.label}</span>`;
-      d.innerHTML = `<div class="bh">${hd}</div>`;
+      const hdr = mkBlockHeader(block.kind, block.title, block.label);
+      // Lean icon — only for definitions (provable blocks get lean via proof blocks)
+      let leanPanel = null;
+      if (block.kind === 'definition' && block.lean) {
+        const v = block.lean.validation || 'not_checked';
+        const icon = leanIcon(v);
+        if (icon) {
+          const badge = mk('span',`lb ${block.status || 'not_started'}`);
+          badge.innerHTML = icon;
+          badge.title = `${block.lean.decl} — click to show Lean source`;
+          badge.style.cursor = 'pointer';
+          badge.onclick = (e) => {
+            e.stopPropagation();
+            if (!leanPanel) {
+              leanPanel = mkLeanSrc(block);
+              if (leanPanel) d.appendChild(leanPanel);
+              else { badge.title = `${block.lean.decl} (no source loaded)`; return; }
+            } else {
+              leanPanel.style.display = leanPanel.style.display === 'none' ? '' : 'none';
+            }
+          };
+          hdr._acts.insertBefore(badge, hdr._acts.firstChild);
+        }
+      }
+      // Feedback button in header actions
+      const fbBtn = mk('button','fb-act');
+      fbBtn.textContent = 'feedback';
+      fbBtn.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+      hdr._acts.appendChild(fbBtn);
+      // Clone label + feedback into hamburger
+      if (block.label) {
+        const lbl2 = mk('a','bl'); lbl2.href = `#/edit/${block.label}`; lbl2.textContent = block.label;
+        hdr._drop.appendChild(lbl2);
+      }
+      const fb2 = mk('button','fb-act'); fb2.textContent = 'feedback';
+      fb2.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+      hdr._drop.appendChild(fb2);
+
+      d.appendChild(hdr);
 
       const bb = mk('div','bb');
-      bb.innerHTML = bh;
-      fillTex(bb, tx, block.rendered);
-      renderMath(bb);
+      bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
       d.appendChild(bb);
-      addSrc(d, block.md);
-
-      // Lean badge with validation icon
-      if (block.lean) {
-        const s = block.status || 'not_started';
-        const v = block.lean.validation || 'not_checked';
-        const badge = mk('div',`lb ${s}`);
-        badge.innerHTML = `${leanIcon(v)}${esc(block.lean.decl)} · ${s.replace(/_/g,' ')}`;
-        d.appendChild(badge);
-      }
-
-      // Tags
-      if (block.tags?.length) d.appendChild(mkTags(block.tags));
-
-      // Uses
-      if (block.uses?.length) {
-        const u = mk('div','uses');
-        u.innerHTML = 'uses: ';
-        block.uses.forEach((label, i) => {
-          if (i > 0) u.append(', ');
-          const r = document.createElement('span');
-          r.className = 'uref';
-          r.textContent = label;
-          r.onclick = () => {
-            let p = u.querySelector(`.upnl[data-for="${label}"]`);
-            if (p) { p.classList.toggle('open'); }
-            else { p = mkUsesPanel(label); if (p) { p.dataset.for = label; p.classList.add('open'); u.appendChild(p); } }
-          };
-          u.appendChild(r);
-        });
-        d.appendChild(u);
-      }
+      addSrc(d, block.md, hdr);
 
       // Examples toggle (if block has associated examples)
       if (block.examples?.length) {
         const toggle = mk('div','ex-toggle');
         toggle.innerHTML = `<span class="arrow">▸</span> ${block.examples.length} example(s)`;
         const panel = mk('div','ex-panel');
-
-        block.examples.forEach(exLabel => {
-          const exBlock = bix.get(exLabel);
-          if (exBlock) {
-            const {html: exHtml, texBlocks: exTx} = parseMd(exBlock.md || '');
-            const exDiv = mk('div','env example');
-            exDiv.style.borderLeft = 'none';
-            exDiv.style.margin = '0';
-            let exHd = `<span class="bk">example</span>`;
-            if (exBlock.title) exHd += `<span class="bt">${inl(exBlock.title)}</span>`;
-            exDiv.innerHTML = `<div class="bh">${exHd}</div><div class="bb">${exHtml}</div>`;
-            fillTex(exDiv, exTx, exBlock.rendered);
-            renderMath(exDiv);
-            panel.appendChild(exDiv);
-          }
-        });
+        let exLoaded = false;
 
         toggle.onclick = () => {
           toggle.classList.toggle('open');
           panel.classList.toggle('open');
+          // Lazy load example content on first open
+          if (!exLoaded) {
+            exLoaded = true;
+            block.examples.forEach(exLabel => {
+              const exBlock = bix.get(exLabel);
+              if (exBlock) {
+                const {html: exHtml, texBlocks: exTx} = parseMd(exBlock.md || '');
+                const exDiv = mk('div','env example');
+                exDiv.style.borderLeft = 'none';
+                exDiv.style.margin = '0';
+                let exHd = `<span class="bk">example</span>`;
+                if (exBlock.title) exHd += `<span class="bt">${inl(exBlock.title)}</span>`;
+                exDiv.innerHTML = `<div class="bh">${exHd}</div><div class="bb">${exHtml}</div>`;
+                fillTex(exDiv, exTx, exBlock.rendered);
+                renderMath(exDiv);
+                panel.appendChild(exDiv);
+              }
+            });
+          }
         };
         d.appendChild(toggle);
         d.appendChild(panel);
       }
+
+      // Footer bar: tags (left) + uses (right)
+      if (block.tags?.length || block.uses?.length) {
+        const foot = mk('div','blk-foot decor');
+        if (block.tags?.length) foot.appendChild(mkTags(block.tags));
+        if (block.uses?.length) foot.appendChild(mkUsesInline(block));
+        d.appendChild(foot);
+      }
+      addTodoIndicators(d, block);
+
+      // Proofs toggle (if block has associated proofs, like examples[])
+      if (block.proofs?.length) {
+        const toggle = mk('div','prf-toggle');
+        toggle.innerHTML = `<span class="arrow">▸</span> ${block.proofs.length} proof(s)`;
+        const panel = mk('div','prf-body');
+        let prfLoaded = false;
+
+        toggle.onclick = () => {
+          toggle.classList.toggle('open');
+          panel.classList.toggle('open');
+          if (!prfLoaded) {
+            prfLoaded = true;
+            block.proofs.forEach(prfLabel => {
+              const prfBlock = bix.get(prfLabel);
+              if (prfBlock) {
+                const {html: ph, texBlocks: ptx} = parseMd(prfBlock.md || '');
+                const prfDiv = mk('div','env proof');
+                prfDiv.style.borderLeft = 'none';
+                prfDiv.style.margin = '.4rem 0';
+                let prfHd = `<span class="bk">proof</span>`;
+                if (prfBlock.title) prfHd += `<span class="bt">${inl(prfBlock.title)}</span>`;
+                if (prfBlock.lean) {
+                  const v = prfBlock.lean.validation || 'not_checked';
+                  prfHd += `<span class="prf-lean">${leanIcon(v)}${esc(prfBlock.lean.decl)}</span>`;
+                }
+                prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
+                fillTex(prfDiv, ptx, prfBlock.rendered);
+                renderMath(prfDiv);
+                // Lean source for this proof
+                const prfLean = mkLeanSrc(prfBlock);
+                if (prfLean) prfDiv.appendChild(prfLean);
+                panel.appendChild(prfDiv);
+              }
+            });
+          }
+        };
+        d.appendChild(toggle);
+        d.appendChild(panel);
+      }
+
+      // Lazy hydrate the main content
+      lazyInit(d, () => {
+        const {bh, tx} = hydrateContent();
+        bb.innerHTML = bh;
+        fillTex(bb, tx, block.rendered);
+        renderMath(bb);
+      });
 
       return d;
     }
@@ -457,12 +1279,71 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
-    function addSrc(el, md) {
+    function addSrc(el, md, hdr) {
       if (!md) return;
       const b = mk('button','st'); b.textContent = '<>';  b.title = 'View source';
       const s = mk('div','bsrc'); s.textContent = md;
       b.onclick = () => { s.classList.toggle('vis'); b.classList.toggle('on'); };
-      el.appendChild(b); el.appendChild(s);
+      // Place button in header actions row if available, otherwise on the element
+      if (hdr && hdr._acts) {
+        hdr._acts.appendChild(b);
+      } else {
+        el.appendChild(b);
+      }
+      el.appendChild(s);
+    }
+
+    // Shiki highlighter (lazy-loaded)
+    let shikiHighlighter = null;
+    async function getShiki() {
+      if (shikiHighlighter) return shikiHighlighter;
+      try {
+        const { createHighlighter } = await import('https://esm.sh/shiki@3.2.1');
+        shikiHighlighter = await createHighlighter({
+          themes: ['github-light', 'github-dark'],
+          langs: ['lean4'],
+        });
+        return shikiHighlighter;
+      } catch (e) {
+        console.warn('Shiki load failed:', e);
+        return null;
+      }
+    }
+
+    function mkLeanSrc(block) {
+      if (!block.lean?.source) return null;
+      const wrap = mk('div','lean-src');
+      const hdr = mk('div','lean-src-hdr');
+      hdr.innerHTML = `<span>${esc(block.lean.file || block.lean.decl)}</span>`;
+      wrap.appendChild(hdr);
+      const pre = document.createElement('pre');
+      pre.style.margin = '0';
+      const code = document.createElement('code');
+      code.textContent = block.lean.source;
+      code.style.fontFamily = 'var(--f-mono)';
+      code.style.fontSize = '.75rem';
+      pre.appendChild(code);
+      wrap.appendChild(pre);
+      // Async highlight with Shiki
+      getShiki().then(hl => {
+        if (!hl) return;
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'github-dark' : 'github-light';
+        const html = hl.codeToHtml(block.lean.source, { lang: 'lean4', theme });
+        // Replace pre with highlighted version
+        const container = mk('div','');
+        container.innerHTML = html;
+        const highlighted = container.querySelector('pre');
+        if (highlighted) {
+          highlighted.style.margin = '0';
+          highlighted.style.padding = '.6rem .8rem';
+          highlighted.style.fontSize = '.75rem';
+          highlighted.style.lineHeight = '1.5';
+          highlighted.style.overflowX = 'auto';
+          highlighted.style.borderRadius = '0';
+          wrap.replaceChild(highlighted, pre);
+        }
+      });
+      return wrap;
     }
 
     function mkTags(tags) {
@@ -486,29 +1367,161 @@
       return `<a href="${a.url}" target="_blank">[${a.mime}]</a>`;
     }
 
+    // ── Lazy loading via IntersectionObserver ──────────────
+    const lazyQueue = []; // {el, init}
+    const lazyObs = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const task = lazyQueue.find(t => t.el === el);
+          if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); }
+          lazyObs.unobserve(el);
+        }
+      }
+    }, { rootMargin: '200px 0px' }); // start loading 200px before visible
+
+    function lazyInit(el, init) {
+      lazyQueue.push({el, init});
+      lazyObs.observe(el);
+    }
+
     // ── Paper ────────────────────────────────────────────
     function renderPaper(p) {
       paper = p;
+      katexMacros = buildKatexMacros(p.macros);
       bix.clear();
-      for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks)
+      const childBlocks = new Set(); // examples/proofs shown via parent's toggle
+      for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
+        if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+        if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+      }
 
       const app = document.getElementById('app');
       app.innerHTML = '';
 
+      // Build sidebar
+      const sb = document.getElementById('sidebar');
+      sb.innerHTML = '';
+      document.body.classList.add('has-sidebar');
+      for (const ch of p.chapters) {
+        const chEl = mk('div','sb-ch');
+        chEl.innerHTML = `${ch.number}. ${inl(ch.title)}`;
+        chEl.onclick = () => { const t = document.getElementById(ch.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
+        sb.appendChild(chEl);
+        for (const sec of ch.sections) {
+          const sEl = mk('div','sb-sec');
+          // Count stats for section
+          let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+          for (const b of sec.blocks) {
+            secTodos += (b.todos || []).filter(t => t.status === 'open').length;
+            const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+            if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
+            if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
+          }
+          let secLabel = sec.title;
+          const badges = [];
+          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
+          sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
+          sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
+          sEl.title = sec.title;
+          sEl.onclick = (e) => {
+            e.stopPropagation();
+            const t = document.getElementById(sec.label);
+            if (t) t.scrollIntoView({behavior:'smooth'});
+            // Toggle block list
+            blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
+          };
+          sb.appendChild(sEl);
+          const blkList = mk('div','');
+          blkList.style.display = 'none';
+          for (const b of sec.blocks) {
+            const kind = b.kind[0].toUpperCase();
+            const bEl = mk('div','sb-blk');
+            const nameSpan = mk('span','sb-name');
+            nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
+            bEl.appendChild(nameSpan);
+            bEl.title = b.label || b.rootName;
+
+            // Todo count badge
+            const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
+            if (openTodos) {
+              const tb = mk('span','sb-badge todo');
+              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
+              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
+              bEl.appendChild(tb);
+            }
+
+            // Lean status badge
+            const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+            if (needsLean) {
+              const lb = mk('span','sb-badge');
+              const s = b.status || 'not_started';
+              const v = b.lean?.validation || 'not_checked';
+              if (!b.lean || !b.lean.file) {
+                lb.className = 'sb-badge lean-miss';
+                lb.textContent = 'no lean';
+                lb.setAttribute('data-tip', 'No Lean formalization file');
+              } else if (s === 'stub' || s === 'not_started') {
+                lb.className = 'sb-badge lean-warn';
+                lb.textContent = 'stub';
+                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
+              } else if (v === 'error' || s === 'has_sorry') {
+                lb.className = 'sb-badge lean-err';
+                lb.textContent = v === 'error' ? 'err' : 'sorry';
+                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
+              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
+                lb.className = 'sb-badge lean-ok';
+                lb.textContent = '✓';
+                lb.setAttribute('data-tip', 'Lean proof verified');
+              } else {
+                lb.className = 'sb-badge lean-warn';
+                lb.textContent = s === 'stated' ? 'stated' : 'todo';
+                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
+              }
+              bEl.appendChild(lb);
+            }
+
+            bEl.onclick = () => {
+              const t = document.getElementById(b.label);
+              if (t) {
+                const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                t.scrollIntoView({behavior:'smooth', block:'center'});
+              }
+            };
+            blkList.appendChild(bEl);
+          }
+          sb.appendChild(blkList);
+        }
+      }
+      renderMath(sb);
+
+      // Header
       const hdr = mk('div','hdr');
-      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.date?`<div class="dt">${p.date}</div>`:''}`;
+      hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
       app.appendChild(hdr);
 
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${esc(ch.title)}</h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</h2>`;
+        renderMath(cd);
+        let secNum = 0;
         for (const sec of ch.sections) {
+          secNum++;
           const sd = mk('div','section');
+          sd.dataset.secNum = `${ch.number}.${secNum}`;
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t">${esc(sec.title)}</h3>`;
-          for (const b of sec.blocks) sd.appendChild(renderBlock(b));
+          sd.innerHTML = `<h3 class="sec-t"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</h3>`;
+          renderMath(sd);
+          for (const b of sec.blocks) {
+            // Skip child examples unless they're the scroll target
+            if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
+            sd.appendChild(renderBlock(b));
+          }
           cd.appendChild(sd);
         }
         app.appendChild(cd);
@@ -516,31 +1529,542 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — QOU`;
+
+      // Scroll-spy: highlight active section in sidebar
+      const sectionEls = document.querySelectorAll('.section[id]');
+      const sbSecs = sb.querySelectorAll('.sb-sec');
+      const secMap = new Map();
+      sbSecs.forEach(s => { secMap.set(s.textContent, s); });
+      const secObs = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            const secDiv = e.target;
+            const h3 = secDiv.querySelector('.sec-t');
+            if (h3) {
+              sbSecs.forEach(s => s.classList.remove('active'));
+              const match = secMap.get(h3.textContent);
+              if (match) { match.classList.add('active'); match.scrollIntoView({block:'nearest'}); }
+            }
+          }
+        }
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sectionEls.forEach(el => secObs.observe(el));
+
+      // Scroll to pending label anchor
+      if (pendingScroll) {
+        requestAnimationFrame(() => scrollToLabel(pendingScroll));
+      }
     }
 
-    // ── Load ─────────────────────────────────────────────
-    async function load() {
-      // 1. Try inline data from paper.js (works with file://)
-      if (window.__PAPER_DATA__) {
-        renderPaper(window.__PAPER_DATA__);
+    // ── Feedback panel ────────────────────────────────────
+    let fbBlock = null;
+    function openFeedback(block) {
+      fbBlock = block;
+      document.getElementById('fb-target').textContent = block.label || block.rootName || 'block';
+      document.getElementById('fb-text').value = '';
+      document.getElementById('feedback-overlay').classList.add('open');
+      document.getElementById('feedback-panel').classList.add('open');
+      document.getElementById('fb-text').focus();
+
+      // Populate history from block todos
+      const hist = document.getElementById('fb-history');
+      hist.innerHTML = '';
+      const todos = block.todos || [];
+      if (!todos.length) {
+        hist.innerHTML = '<div style="color:var(--fg-d);font-size:.7rem;padding:.5rem 0">No feedback yet</div>';
+      } else {
+        for (const t of todos.slice().reverse()) {
+          const item = mk('div', `fb-item ${t.status || 'open'}`);
+          item.innerHTML = `<div>${esc(t.comment || t.summary || '')}</div>
+            <div class="fb-meta">${t.priority || ''} · ${t.assignee || ''} · ${t.status || 'open'} · ${t.createdAt ? new Date(t.createdAt).toLocaleDateString() : ''}</div>`;
+          hist.appendChild(item);
+        }
+      }
+    }
+    function closeFeedback() {
+      document.getElementById('feedback-overlay').classList.remove('open');
+      document.getElementById('feedback-panel').classList.remove('open');
+      fbBlock = null;
+      // Stop voice recording if active
+      if (isRecording && recognition) {
+        isRecording = false;
+        recognition.stop();
+        const vb = document.getElementById('fb-voice');
+        if (vb) { vb.classList.remove('recording'); vb.textContent = 'mic'; }
+      }
+    }
+    document.getElementById('fb-close').onclick = closeFeedback;
+    document.getElementById('feedback-overlay').onclick = closeFeedback;
+    document.getElementById('fb-submit').onclick = async () => {
+      if (!fbBlock || !document.getElementById('fb-text').value.trim()) return;
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            paperId: paper?.id,
+            rootName: fbBlock.rootName,
+            summary: document.getElementById('fb-text').value.trim().slice(0, 80),
+            comment: document.getElementById('fb-text').value.trim(),
+            priority: document.getElementById('fb-priority').value,
+            assignee: document.getElementById('fb-assignee').value
+          })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        const { todo } = await res.json();
+        // Add to block's local todos so UI updates immediately
+        if (!fbBlock.todos) fbBlock.todos = [];
+        fbBlock.todos.push(todo);
+        document.getElementById('fb-text').value = '';
+        // Refresh the history panel to show the new item
+        openFeedback(fbBlock);
+        closeFeedback();
+        // Update sidebar badges to reflect the new todo
+        refreshFeedbackBadges();
+      } catch (e) {
+        alert('Failed to submit: ' + e.message);
+      }
+    };
+
+    // ── Voice input (Web Speech API) ──────────────────────
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+    let isRecording = false;
+    const voiceBtn = document.getElementById('fb-voice');
+
+    if (SpeechRecognition) {
+      recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onresult = (e) => {
+        const ta = document.getElementById('fb-text');
+        let final = '', interim = '';
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const t = e.results[i][0].transcript;
+          if (e.results[i].isFinal) final += t; else interim = t;
+        }
+        if (final) {
+          ta.value += (ta.value && !ta.value.endsWith(' ') ? ' ' : '') + final;
+        }
+        // Show interim in placeholder
+        if (interim) ta.placeholder = interim + '...';
+        else ta.placeholder = 'Listening...';
+      };
+      recognition.onerror = (e) => {
+        if (e.error !== 'no-speech') console.warn('Speech error:', e.error);
+      };
+      recognition.onend = () => {
+        if (isRecording) recognition.start(); // auto-restart if still recording
+      };
+
+      voiceBtn.onclick = () => {
+        if (isRecording) {
+          isRecording = false;
+          recognition.stop();
+          voiceBtn.classList.remove('recording');
+          voiceBtn.textContent = 'mic';
+          document.getElementById('fb-text').placeholder = 'Describe the issue, question, or suggestion...';
+        } else {
+          isRecording = true;
+          recognition.start();
+          voiceBtn.classList.add('recording');
+          voiceBtn.textContent = 'stop';
+        }
+      };
+    } else {
+      voiceBtn.style.display = 'none'; // hide if not supported
+    }
+
+    const priOrder = ['critical','high','medium','low'];
+    const priColors = {critical:'var(--red,#c44)',high:'var(--ora,#e90)',medium:'var(--ac)',low:'var(--fg-d)'};
+    function addTodoIndicators(el, block) {
+      if (!block.todos?.length) return;
+      const open = block.todos.filter(t => t.status === 'open');
+      open.sort((a,b) => (priOrder.indexOf(a.priority||'medium') - priOrder.indexOf(b.priority||'medium')));
+      for (const t of open) {
+        const pri = t.priority || 'medium';
+        const d = mk('div', 'todo-inline decor');
+        const dot = mk('span','todo-dot');
+        dot.style.background = priColors[pri] || priColors.medium;
+        d.appendChild(dot);
+        const txt = mk('span','todo-text');
+        txt.textContent = t.summary || t.comment || '';
+        txt.style.cursor = 'pointer';
+        txt.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        d.appendChild(txt);
+        const priLabel = mk('span','todo-pri');
+        priLabel.textContent = pri;
+        d.appendChild(priLabel);
+        // [+] raise priority
+        const upBtn = mk('button','todo-btn');
+        upBtn.textContent = '+';
+        upBtn.title = 'Raise priority';
+        const curIdx = priOrder.indexOf(pri);
+        if (curIdx <= 0) upBtn.disabled = true;
+        upBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx-1]); };
+        d.appendChild(upBtn);
+        // [-] lower priority
+        const dnBtn = mk('button','todo-btn');
+        dnBtn.textContent = '\u2013';
+        dnBtn.title = 'Lower priority';
+        if (curIdx >= priOrder.length - 1) dnBtn.disabled = true;
+        dnBtn.onclick = (e) => { e.stopPropagation(); updateTodoPri(block, t, priOrder[curIdx+1]); };
+        d.appendChild(dnBtn);
+        // [x] remove
+        const rmBtn = mk('button','todo-btn todo-rm');
+        rmBtn.textContent = '\u00d7';
+        rmBtn.title = 'Remove todo';
+        rmBtn.onclick = (e) => { e.stopPropagation(); removeTodo(block, t); };
+        d.appendChild(rmBtn);
+        el.appendChild(d);
+      }
+    }
+
+    async function updateTodoPri(block, todo, newPri) {
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, priority: newPri })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.priority = newPri;
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to update priority:', e); }
+    }
+
+    async function removeTodo(block, todo) {
+      if (!confirm(`Remove todo: "${todo.summary || todo.comment}"?`)) return;
+      try {
+        const res = await fetch('/api/feedback/update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, todoId: todo.id, status: 'resolved' })
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        todo.status = 'resolved';
+        refreshTodoInline(block);
+        refreshFeedbackBadges();
+      } catch (e) { console.error('Failed to remove todo:', e); }
+    }
+
+    function refreshTodoInline(block) {
+      if (!block.label) return;
+      const blockEl = document.getElementById(block.label);
+      if (!blockEl) return;
+      blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+      addTodoIndicators(blockEl, block);
+    }
+
+    // ── Feedback badge refresh ──────────────────────────
+    // Fetches open todos from server and updates sidebar badges + inline indicators
+    // without a full re-render. Called after submit and on a polling interval.
+    async function refreshFeedbackBadges() {
+      if (!paper) return;
+      try {
+        const r = await fetch('/api/feedback/all?status=open');
+        if (!r.ok) return;
+        const allEntries = await r.json();
+        // Unwrap {paperId, rootName, todo} → flat todo with rootName attached
+        const byRoot = {};
+        for (const entry of allEntries) {
+          const key = entry.rootName || entry.paperId;
+          if (!byRoot[key]) byRoot[key] = [];
+          byRoot[key].push({ ...entry.todo, rootName: key });
+        }
+        // Update block-level data and sidebar badges
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            let secTodos = 0;
+            for (const b of sec.blocks) {
+              const fresh = byRoot[b.rootName] || [];
+              b.todos = fresh;
+              const count = fresh.length;
+              secTodos += count;
+              // Update block badge in sidebar
+              const sel = (b.label || b.rootName).replace(/"/g, '\\"');
+              const blkEl = document.querySelector(`.sb-blk[title="${sel}"]`);
+              if (blkEl) {
+                const existing = blkEl.querySelector('.sb-badge.todo');
+                if (existing) existing.remove();
+                if (count) {
+                  const tb = mk('span','sb-badge todo');
+                  tb.textContent = `${count} todo`;
+                  tb.setAttribute('data-tip', `${count} open todo${count > 1 ? 's' : ''}`);
+                  const firstBadge = blkEl.querySelector('.sb-badge');
+                  if (firstBadge) blkEl.insertBefore(tb, firstBadge);
+                  else blkEl.appendChild(tb);
+                }
+              }
+              // Update inline todo indicators in the rendered block
+              if (b.label) {
+                const blockEl = document.getElementById(b.label);
+                if (blockEl) {
+                  blockEl.querySelectorAll('.todo-inline').forEach(el => el.remove());
+                  addTodoIndicators(blockEl, b);
+                }
+              }
+            }
+            // Update section summary badge
+            const sEl = document.querySelector(`.sb-sec[title="${sec.title}"]`);
+            if (sEl) {
+              const summarySpan = sEl.querySelector('span:last-child');
+              if (summarySpan && summarySpan.style.fontSize === '.5rem') {
+                // Rebuild just the todo portion of the badge text
+                const text = summarySpan.textContent;
+                const parts = text.split(' | ').filter(p => !p.includes('todo'));
+                if (secTodos) parts.unshift(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+                summarySpan.textContent = parts.join(' | ');
+              }
+            }
+          }
+        }
+      } catch (_) { /* silent — polling failure is not fatal */ }
+    }
+
+    // Poll for fresh feedback every 3 minutes while page is visible
+    let feedbackPollId = null;
+    function startFeedbackPolling() {
+      if (feedbackPollId) return;
+      feedbackPollId = setInterval(() => {
+        if (!document.hidden) refreshFeedbackBadges();
+      }, 3 * 60 * 1000);
+    }
+    function stopFeedbackPolling() {
+      if (feedbackPollId) { clearInterval(feedbackPollId); feedbackPollId = null; }
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopFeedbackPolling();
+      else startFeedbackPolling();
+    });
+
+    // ── Folio (paper listing) ────────────────────────────
+    function renderFolio(data) {
+      document.body.classList.remove('has-sidebar');
+      document.getElementById('sidebar').innerHTML = '';
+      const app = document.getElementById('app');
+      app.innerHTML = '';
+
+      const hdr = mk('div','hdr');
+      hdr.innerHTML = `<h1>${esc(data.title || 'Papers')}</h1>`;
+      app.appendChild(hdr);
+
+      const list = mk('div','folio-list');
+      for (const p of (data.papers || [])) {
+        const card = mk('div','folio-card');
+        card.innerHTML = `
+          <h2 class="fc-title">${esc(p.title)}</h2>
+          ${p.description ? `<p class="fc-desc">${esc(p.description)}</p>` : ''}
+          <div class="fc-meta">${p.stats?.chapters ?? '?'} chapters · ${p.stats?.blocks ?? '?'} blocks</div>
+        `;
+        card.style.cursor = 'pointer';
+        card.onclick = () => {
+          location.hash = `#/view/${p.id}`;
+        };
+        list.appendChild(card);
+      }
+      app.appendChild(list);
+      document.title = data.title || 'QOU';
+    }
+
+    // ── Router ────────────────────────────────────────────
+    // Routes:
+    //   #/                       → folio (paper listing)
+    //   #/view/<paper-id>        → full paper view
+    //   #/view/<label>           → paper view, scrolled to block
+    //   #/edit/<label>           → block edit view
+    //   #<label>                 → shorthand for #/view/<label>
+    const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap):/;
+    let pendingScroll = null;
+
+    async function route() {
+      const hash = location.hash || '#/';
+      const raw = hash.slice(1); // remove #
+
+      // Shorthand: #rem:foo → treat as #/view/rem:foo
+      if (LABEL_RE.test(raw)) {
+        await routeView(raw);
         return;
       }
 
-      // 2. Try fetch (works with http server)
-      for (const src of ['paper.json','./paper.json','/api/paper','/viewer/paper.json']) {
-        try {
-          const r = await fetch(src);
-          if (r.ok) { renderPaper(await r.json()); return; }
-        } catch {}
-      }
+      const parts = raw.replace(/^\//, '').split('/').filter(Boolean);
+      const action = parts[0];
+      const slug = parts.slice(1).join('/');
 
-      document.getElementById('app').innerHTML =
-        '<div class="err">Could not load paper data.<br><br>' +
-        'Run: <code>bun run content/pipeline/export-json.ts</code><br>' +
-        'Then reload this page.</div>';
+      if (action === 'view' && slug) {
+        await routeView(slug);
+      } else if (action === 'edit' && slug) {
+        await routeEdit(slug);
+      } else {
+        await loadFolio();
+      }
     }
 
-    load();
+    async function routeView(slug) {
+      // Is it a label? (has prefix like def:, rem:, etc.)
+      const isLabel = LABEL_RE.test(slug);
+      if (isLabel) {
+        pendingScroll = slug;
+        if (!paper) await loadDefaultPaper();
+        else scrollToLabel(slug);
+      } else {
+        // It's a paper id
+        await loadPaper(slug);
+      }
+    }
+
+    async function routeEdit(slug) {
+      // Load paper if needed, then show edit UI for the block
+      if (!paper) await loadDefaultPaper();
+      const block = bix.get(slug);
+      if (block) {
+        renderEditView(block);
+      } else {
+        document.getElementById('app').innerHTML =
+          `<div class="err">Block not found: ${esc(slug)}</div>`;
+      }
+    }
+
+    function renderEditView(block) {
+      const app = document.getElementById('app');
+      app.innerHTML = '';
+      document.body.classList.remove('has-sidebar');
+      document.getElementById('sidebar').innerHTML = '';
+
+      const hdr = mk('div','hdr');
+      hdr.innerHTML = `<h1>${esc(block.title || block.label || block.rootName)}</h1>
+        <div class="au"><span class="bk">${block.kind}</span> ${block.label ? `<span class="bl">${block.label}</span>` : ''}</div>
+        <div class="dt"><a href="#/view/${esc(block.label || '')}" style="color:var(--ac)">back to paper</a></div>`;
+      app.appendChild(hdr);
+
+      // Source editor
+      const edArea = mk('div','blk');
+      const edHead = mk('div','');
+      edHead.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem';
+      edHead.innerHTML = `<h3 class="sec-t" style="margin:0">Markdown source</h3>`;
+      const saveBtn = document.createElement('button');
+      saveBtn.textContent = 'save';
+      saveBtn.style.cssText = 'background:var(--ac);border:none;color:var(--bg);font-family:var(--f-mono);font-size:.7rem;padding:.3rem .8rem;border-radius:3px;cursor:pointer';
+      saveBtn.onclick = async () => {
+        saveBtn.textContent = 'saving...';
+        try {
+          const res = await fetch('/api/block/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ paperId: paper?.id, rootName: block.rootName, md: ta.value })
+          });
+          if (!res.ok) throw new Error(`${res.status}`);
+          block.md = ta.value;
+          saveBtn.textContent = 'saved';
+          setTimeout(() => { saveBtn.textContent = 'save'; }, 1500);
+        } catch (e) { saveBtn.textContent = 'error'; setTimeout(() => { saveBtn.textContent = 'save'; }, 2000); }
+      };
+      edHead.appendChild(saveBtn);
+      edArea.appendChild(edHead);
+      const ta = document.createElement('textarea');
+      ta.value = block.md || '';
+      ta.style.cssText = 'width:100%;min-height:300px;background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;color:var(--fg);font-family:var(--f-mono);font-size:.8rem;padding:.8rem;resize:vertical';
+      edArea.appendChild(ta);
+      app.appendChild(edArea);
+
+      // Live preview
+      const prev = mk('div','blk');
+      prev.innerHTML = `<h3 class="sec-t">Preview</h3>`;
+      const prevBody = mk('div',`env ${block.kind}`);
+      prev.appendChild(prevBody);
+      app.appendChild(prev);
+
+      function updatePreview() {
+        const {html: bh, texBlocks: tx} = parseMd(ta.value);
+        prevBody.innerHTML = `<div class="bb">${bh}</div>`;
+        fillTex(prevBody, tx, block.rendered);
+        renderMath(prevBody);
+      }
+      ta.addEventListener('input', updatePreview);
+      updatePreview();
+
+      // Manifest view
+      const manifest = mk('div','blk');
+      manifest.innerHTML = `<h3 class="sec-t">Manifest (.ts)</h3>
+        <pre style="background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;font-size:.75rem;color:var(--fg-d);overflow-x:auto">${esc(JSON.stringify({kind:block.kind,label:block.label,title:block.title,uses:block.uses,lean:block.lean,tags:block.tags,status:block.status}, null, 2))}</pre>`;
+      app.appendChild(manifest);
+
+      document.title = `Edit: ${block.title || block.label} — QOU`;
+    }
+
+    function scrollToLabel(label) {
+      const el = document.getElementById(label);
+      if (!el) { pendingScroll = null; return; }
+
+      // Force lazy-hydrate so content is visible
+      const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+      if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+
+      // If hidden (remark/example), show it and its wrapper
+      const wrap = el.closest('.blk-remark, .blk-example');
+      if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+
+      // If inside a collapsed example toggle panel, open it
+      const exPanel = el.closest('.ex-panel');
+      if (exPanel && !exPanel.classList.contains('open')) {
+        exPanel.classList.add('open');
+        const toggle = exPanel.previousElementSibling;
+        if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
+      }
+
+      // Also hide the stub if there is one
+      const stub = wrap?.previousElementSibling;
+      if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.outline = '2px solid var(--ac)';
+      setTimeout(() => { el.style.outline = ''; }, 2000);
+      pendingScroll = null;
+    }
+
+    async function loadFolio() {
+      const app = document.getElementById('app');
+      app.innerHTML = '<div class="loading">loading folio...</div>';
+      try {
+        const r = await fetch('/api/folio');
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+        renderFolio(await r.json());
+      } catch (e) {
+        app.innerHTML = `<div class="err">Could not load folio: ${esc(e.message)}<br><br>Ensure the MCP server is running (port 3200).</div>`;
+      }
+    }
+
+    async function loadDefaultPaper() {
+      // Load first paper from folio
+      try {
+        const r = await fetch('/api/folio');
+        if (!r.ok) throw new Error(`${r.status}`);
+        const data = await r.json();
+        const id = data.papers?.[0]?.id || 'quantum-observable-universe';
+        await loadPaper(id);
+      } catch {
+        await loadPaper('quantum-observable-universe');
+      }
+    }
+
+    async function loadPaper(id) {
+      const app = document.getElementById('app');
+      app.innerHTML = '<div class="loading">loading paper...</div>';
+      try {
+        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}`);
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+        renderPaper(await r.json());
+        startFeedbackPolling();
+      } catch (e) {
+        app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
+      }
+    }
+
+    window.addEventListener('hashchange', route);
+    route();
   </script>
 </body>
 </html>

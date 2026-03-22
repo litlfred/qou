@@ -1,0 +1,16 @@
+When $\dim M_k = 1$ the geometric data of the archimedean quantum observable
+universe collapse as follows.
+
+1. *Connection.*  The $\mathrm{SU}(2)$ connection $A_k$ restricts to
+   a single dimension; its holonomy reduces to a $\mathrm{U}(1)$ phase
+   around $S^1$.
+2. *Bundle.*  The principal $\mathrm{SU}(2)$ bundle $E$ descends to a
+   bundle over the $1$-dimensional base whose fibre dynamics are locked
+   into a single periodic flow.
+3. *Reeb direction.*  The inverse of the Reeb vector field
+   ([Definition](#def:q-reeb-vector-field)) becomes the only direction
+   of motion; the horizontal distribution is trivial and no bosonic modes
+   ([Remark](#rem:algebraic-filter)) survive.
+
+The descent need not terminate here; a further step carries $M_k$ to a
+zero-dimensional base ([Remark](#rem:descent-reduction-zero)).

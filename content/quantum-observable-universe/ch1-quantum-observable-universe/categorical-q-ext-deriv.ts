@@ -1,0 +1,22 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:categorical-q-ext-deriv",
+  title: "Categorical $q$-deformed exterior derivative",
+  tags: ["exterior-derivative", "deformation"],
+  lean: {
+    decl: "QOU.CategoricalQExtDeriv",
+    validation: "leanok",
+  },
+  status: "not_started",
+  uses: [
+    "def:quantum-observable-universe",
+    "def:categorical-connection",
+    "def:substrate-parameter",
+    "def:weight-decomposition",
+  ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-q-ext-deriv-0.svg", blockIndex: 0, hash: "1098849523c8" },
+  ],
+
+});

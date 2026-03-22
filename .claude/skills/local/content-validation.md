@@ -82,6 +82,13 @@ CONSTRAINT_RULES.push({
 });
 ```
 
+## Mandatory fallback participation
+
+This skill is invoked automatically by the editor's **content-change fallback**
+(see `editor.md § Content-change fallback`). Whenever any content is modified
+during a session, the editor runs `content_validate` on affected chapters
+before the task is considered complete.
+
 ## Integration with test-engineer
 
 The content-validation skill produces `ValidationResult` objects that the

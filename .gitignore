@@ -2,6 +2,10 @@ __pycache__/
 *.pyc
 .qou-prefs.json
 build/
+
+# Generated LaTeX chapters (from content pipeline)
+chapters/*.tex
+chapters/*.md
 *.aux
 *.log
 *.out
@@ -32,3 +36,4 @@ deploy/authorized-emails.txt
 deploy/Caddyfile
 scripts/mcp-server/bun.lock
 viewer/paper.js
+.qou-feedback/
