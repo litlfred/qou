@@ -70,7 +70,55 @@ If the request is LaTeX-only, proceed normally.
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Triage
+### 1. Check open todos
+
+The `scripts/check-todos.sh` hook runs at session start and outputs a
+JSON summary of open feedback todos from `.qou-feedback/`. If there are
+open todos, **present the summary and ask the user** (multiple-choice):
+
+- **Review open todos** — walk through each using the `todo-review` skill
+- **Start a new task** — proceed to normal triage, todos stay open
+- **Do research** — explore codebase, read content, no edits
+
+If there are no open todos, skip straight to step 1b.
+
+### 1b. Cross-reference todos with branch changes
+
+When the current branch is not `main`, check whether any open todos
+target content blocks that were **modified in this branch**:
+
+```bash
+# Get content files changed in this branch vs main
+git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content/**/*.lean'
+```
+
+For each changed file, extract the block root name (filename without
+extension) and check if `.qou-feedback/` has open todos referencing
+that root name.
+
+**If matches are found**, present them to the user:
+
+> These open todos are on content blocks modified in this branch:
+>
+> - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
+> - **[medium]** `hadron`: "Clarify meson binding vs baryon"
+>
+> Address these now?
+
+Offer (multiple-choice):
+- **Address matching todos** — walk through just the branch-relevant
+  todos using the `todo-review` skill
+- **Skip for now** — proceed to triage, todos stay open
+- **Mark as resolved** — auto-close todos that the branch changes
+  already address (editor reviews the diff to confirm)
+
+**If no matches**, proceed to triage silently.
+
+This ensures that when a branch modifies content, any feedback left on
+those blocks surfaces immediately — preventing stale todos from
+surviving past the work that should have resolved them.
+
+### 2. Triage
 
 1. **Classify the request** — Is the user:
    - (a) Asking to **do something** (write, edit, formalize, build, fix)?
@@ -104,6 +152,7 @@ whether running locally (stdio) or remotely (Streamable HTTP).
 | Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
 | Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
+| **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
 
 ## Responsibilities
 
@@ -172,6 +221,31 @@ Examples of testable errors the editor should watch for:
 
 **This behavior persists across sessions** — the editor always watches for
 testable errors and asks before writing tests.
+
+## Content-change fallback (mandatory review)
+
+Whenever **any** content has been added or modified during the current session
+— `.md` narratives, `.ts` manifests, `.lean` formalizations, `.tex` chapters,
+or supporting files like `references.bib` — the editor **must** perform a
+review pass before the task is considered complete. This applies regardless of
+how the session started — even if the original request was about Lean,
+infrastructure, or something else entirely.
+
+The review pass consists of:
+
+1. **Scientific accuracy** (`scientific-accuracy` skill) — verify mathematical
+   claims, cross-references, and formalization alignment.
+2. **Readability editing** (`readability-editing` skill) — check prose quality,
+   definition hygiene, forward-reference hygiene, and notation consistency.
+   (For non-narrative changes, focus on consistency with the narrative.)
+3. **Content validation** — run `content_validate` on affected chapters to
+   confirm schema compliance and LaTeX AST correctness.
+4. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
+   clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
+   confirm `lean.decl` fields match actual Lean declarations.
+
+If the review surfaces issues, fix them (or escalate to the author) before
+committing. This rule persists across sessions.
 
 ## Interaction style
 

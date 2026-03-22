@@ -139,6 +139,32 @@ Key metrics:
 - No `axiom` or `admit` hacks masquerading as proofs
 - `FormalGroups.lean` documents its sorry-by-design policy in a file header
 
+## Content Object Integration
+
+Formalization status is tracked through **content object triples**: each
+block has a `.ts` manifest, `.md` narrative, and (when required) `.lean`
+formalization. The `.ts` manifest is the **single source of truth** for
+status — `proof-objects.json` is a derived artifact generated from content
+objects, not the other way around.
+
+**Completeness by kind:**
+- `definition`: `.ts` + `.md` + `.lean` required; `lean.decl` must be set;
+  label prefix `def:`.
+- `theorem` / `lemma` / `proposition` / `corollary`: `.ts` + `.md` + `.lean`
+  expected; label prefixes `thm:` / `lem:` / `prop:` / `cor:`.
+- `example` / `remark` / `conjecture`: `.ts` + `.md` required; `.lean`
+  optional.
+- `prose` / `equation` / `diagram`: `.ts` + `.md` only; no Lean.
+
+**Status field.** The `.ts` manifest carries `status: "not_started" |
+"stated" | "has_sorry" | "proved" | "mathlib_ok"`. When updating
+`proof-objects.json`, read status from the `.ts` manifests first. Never
+write a status to `proof-objects.json` that contradicts the `.ts` source.
+
+**Dependency tracking.** The `uses[]` array in `.ts` manifests forms the
+dependency DAG. Use it to populate the dependency edges in
+`proof-objects.json` and to scope impact analysis when a block changes.
+
 ## Checklist
 
 - [ ] `proof-objects.json` conforms to `schemas/qou-types.ts` ProofObjectsManifest

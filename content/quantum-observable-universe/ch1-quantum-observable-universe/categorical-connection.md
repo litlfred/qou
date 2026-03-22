@@ -1,0 +1,36 @@
+Let $(\mathcal{C}, A, \omega)$ be a quantum universe over $R$ with
+differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
+
+A *connection* on $A$ is a morphism
+$\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathcal{C}$ satisfying
+the Leibniz rule: $\nabla(\mu(a \otimes b)) =
+\nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity
+of the *Leibniz triangle*:
+
+```tex
+\begin{equation}\label{eq:leibniz-triangle}
+\begin{tikzcd}[row sep=2.5em, column sep=3.5em]
+  A \otimes A
+    \ar[r, "\mu"]
+    \ar[dr, "{\nabla \otimes 1 \,+\, 1 \otimes \nabla}"']
+  & A \ar[d, "\nabla"]
+  \\
+  & A \otimes \Omega^1(A)
+\end{tikzcd}
+\end{equation}
+```
+
+The *curvature* of $\nabla$ is the composition
+
+```tex
+\begin{equation}\label{eq:curvature-composition}
+\begin{tikzcd}[column sep=3em]
+  A \ar[r, "\nabla"]
+  & A \otimes \Omega^1(A) \ar[r, "\nabla"]
+  & A \otimes \Omega^2(A)
+\end{tikzcd}
+\end{equation}
+```
+
+denoted $F_\nabla = \nabla^2$, which is $A$-linear (a standard
+consequence of the Leibniz rule).

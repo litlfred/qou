@@ -1,0 +1,9 @@
+import { example } from "../../schema/builders";
+
+export default example({
+  label: "ex:q-reeb-flow",
+  title: "$q$-Deformed Reeb flow",
+  lean: { decl: "QOU.QReebFlow", validation: "not_checked" },
+  uses: ["ex:q-reeb-vector-field"],
+  tags: ["reeb-flow", "archimedean"],
+});

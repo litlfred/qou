@@ -154,6 +154,29 @@ For each lemma/proposition in the chapter:
 | Continuous functions | `Mathlib.Topology.ContinuousFunction.Basic` |
 | Fiber bundles | `Mathlib.Topology.FiberBundle.Basic` |
 
+## Content Object Integration
+
+Chapter analysis should populate **content object triples**, not just
+extract items from LaTeX. Each narrative definition, theorem, lemma,
+proposition, example, or corollary becomes a triple:
+
+- `block-name.ts` — typed manifest with `kind`, `label`, `lean.decl`,
+  `status`, and `uses[]` referencing other content object labels.
+- `block-name.md` — narrative content (markdown with inline/display math).
+- `block-name.lean` — Lean formalization (required for `definition`,
+  expected for `theorem`/`lemma`/`proposition`/`corollary`, optional for
+  `example`/`remark`/`conjecture`, absent for `prose`/`equation`/`diagram`).
+
+**Chunk 1 output should feed content object creation.** The narrative
+inventory table maps directly to `.ts` manifests: environment type becomes
+`kind`, LaTeX label becomes `label`, and `\ref` dependencies become
+`uses[]` entries. Populate content objects during analysis rather than
+treating LaTeX as the authoritative source.
+
+**Dependency graph.** Build `uses[]` edges from `\ref` cross-references
+found during inventory. These edges drive both the Lean import graph and
+formalization priority ordering.
+
 ## Checklist
 
 - [ ] All non-remark narrative items have Lean declarations

@@ -174,9 +174,51 @@ in sync — it is the **author's responsibility** to ensure consistency:
 4. If the Lean proof is complete, add `\leanok`; otherwise leave it out
 5. CI validates via `lake exe checkdecls blueprint/lean_decls`
 
+## Content Object Integration
+
+Content objects (`.ts` + `.md` + `.lean` triples) are the **authoritative
+source**, not raw LaTeX. The Lean generation pipeline should be
+content-object-aware:
+
+### Block kind determines Lean requirements
+
+| Block kind | Lean required? | Action |
+|-----------|---------------|--------|
+| `definition` | **Yes** (enforced by constraint rule) | Must generate `.lean` sibling |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** | Should generate `.lean` sibling |
+| `example`, `remark`, `conjecture` | Optional | Only if author requests |
+| `prose`, `equation`, `diagram` | N/A | Skip |
+
+### Content-object-aware stub generation
+
+Instead of extracting from LaTeX, read the `.ts` manifest:
+
+1. **Scan content objects**: find all blocks where `kind` requires Lean
+2. **Check for existing `.lean` sibling**: skip if already exists
+3. **Read the `.md` file**: extract the mathematical statement
+4. **Generate the `.lean` sibling** alongside the `.ts` and `.md` files
+5. **Update the `.ts` manifest**: set `lean.decl` and `lean.file`
+
+### The `uses[]` dependency graph
+
+The `uses` field in content `.ts` manifests forms a dependency DAG:
+- Generate stubs in topological order (dependencies first)
+- The Lean import graph should reflect the `uses[]` ordering
+- When a definition changes, re-validate all blocks that `uses` it
+
+### Naming: `.ts` label → Lean declaration
+
+| `.ts` label | Lean declaration |
+|-------------|-----------------|
+| `def:quantum-universe` | `QOU.QuantumUniverse` |
+| `thm:su2-emergence` | `QOU.su2_emergence` |
+| `prop:frobenius-relation` | `QOU.frobenius_relation` |
+
+The `lean.decl` field in the `.ts` manifest is the canonical mapping.
+
 ## Checklist
 
-- [ ] All labeled theorem-like environments are in `proof-objects.json`
+- [ ] All content blocks requiring Lean have sibling `.lean` files
 - [ ] Every object with `formalization_status != "not_started"` has a `lean.decl`
 - [ ] Lean files compile without errors (sorry warnings are expected)
 - [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly

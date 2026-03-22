@@ -1,0 +1,25 @@
+Let $E_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a branch
+point $z_c$ ([Bring's surface smoothness](#rem:brings-smoothness)), and let
+$(\nabla_A q,\; L \wedge F^+)$ be the connection--curvature pair of the
+([mass identity](#def:mass-identity)).  Then for each
+vertical degree $n \geq 0$ in the Reeb decomposition, the restriction
+of the nonabelian multiplicative integral to $E_c$ abelianises to the
+$n$-th prolonged Seiberg--Witten period:
+
+```tex
+\begin{equation}\label{eq:mi-sw-abelianisation}
+  \bigl\lVert\,
+  \mathrm{MI}\!\!\int_{E_c}
+  \bigl(\nabla_A q,\; L \wedge F^+\bigr)
+  \,\bigr\rVert_{J^n}
+  \;=\;
+  \bigl\lvert a_D^{(n)}\bigr\rvert
+  \;=\;
+  \biggl\lvert\oint_{E_c}\lambda_{\mathrm{SW}}^{(n)}\biggr\rvert,
+\end{equation}
+```
+
+where $\lVert\cdot\rVert_{J^n}$ denotes the Killing-form norm projected
+onto the $n$-th jet component, and $\lambda_{\mathrm{SW}}^{(n)}$ is the
+$n$-th prolonged Seiberg--Witten differential.
+

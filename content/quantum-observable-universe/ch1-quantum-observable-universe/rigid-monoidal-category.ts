@@ -12,4 +12,9 @@ export default definition({
   status: "not_started",
   uses: [],
   examples: ["ex:rigid-monoidal-vect"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/rigid-monoidal-category-0.svg", blockIndex: 0, hash: "885747a5a6f5" },
+    { mime: "image/svg+xml", url: "rendered/rigid-monoidal-category-1.svg", blockIndex: 1, hash: "e48d1755413f" },
+  ],
+
 });
