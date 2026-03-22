@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * coordinates, chiral fibrations, and Seiberg--Witten theory.
  */
 export default chapter({
-  number: 5,
+  number: 2,
   title: "Bring's Surface",
   label: "chap:brings-surface",
   sections: [

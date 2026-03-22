@@ -290,7 +290,8 @@ export function renderChapter(
 ): string {
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
-  lines.push(`\\chapter{${chapter.title}}\n${label}`);
+  const star = chapter.number == null ? "*" : "";
+  lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
 
   for (const section of chapter.sections) {
     lines.push(renderSection(section, blocks));

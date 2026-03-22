@@ -642,8 +642,9 @@
     .claude-fab.open{background:var(--fg-d);transform:rotate(45deg)}
     .claude-fab .fab-badge{position:absolute;top:-2px;right:-2px;width:10px;height:10px;border-radius:50%;background:var(--grn);border:2px solid var(--bg-s)}
 
-    .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head)}
+    .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head);transition:all .2s var(--ease)}
     .chat-panel.open{display:flex}
+    .chat-panel.expanded{top:35px;left:0;right:0;bottom:0;width:auto;max-height:none;border-radius:0;box-shadow:none}
     @media(max-width:500px){.chat-panel{left:1rem;right:1rem;width:auto;bottom:4.5rem;max-height:60vh}}
 
     .chat-head{display:flex;align-items:center;padding:.6rem .8rem;border-bottom:1px solid var(--brd);gap:.5rem;flex-shrink:0}
@@ -652,6 +653,11 @@
     .chat-head button{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.75rem;padding:.2rem}
     .chat-head button:hover{color:var(--fg-b)}
 
+    .chat-ctx{padding:.25rem .8rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);border-bottom:1px solid var(--brd);flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none}
+    .chat-ctx.active{display:block}
+    .chat-ctx .ctx-label{color:var(--ac);cursor:pointer}
+    .chat-ctx .ctx-label:hover{text-decoration:underline}
+    .chat-ctx .ctx-kind{opacity:.6;margin-right:.3rem}
     .chat-actions{display:flex;gap:.3rem;padding:.4rem .8rem;border-bottom:1px solid var(--brd);flex-wrap:wrap;flex-shrink:0}
     .chat-action{font-size:.6rem;padding:.2rem .5rem;border-radius:12px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg-d);cursor:pointer;font-family:var(--f-mono);transition:all .15s}
     .chat-action:hover{border-color:var(--ac);color:var(--ac)}
@@ -664,9 +670,18 @@
     .chat-msg .chat-math{margin:.3rem 0}
     .chat-msg code{background:rgba(0,0,0,.1);padding:.1rem .3rem;border-radius:3px;font-family:var(--f-mono);font-size:.7rem}
     .chat-msg a{color:inherit;text-decoration:underline}
+    .chat-msg table{border-collapse:collapse;font-size:.72rem;margin:.4rem 0;width:100%}
+    .chat-msg th,.chat-msg td{border:1px solid var(--brd);padding:.25rem .4rem;text-align:left}
+    .chat-msg th{background:var(--bg-s);font-weight:600;font-size:.65rem;text-transform:uppercase;letter-spacing:.03em}
+    .chat-msg tr:nth-child(even){background:rgba(0,0,0,.03)}
 
     .chat-typing{align-self:flex-start;color:var(--fg-d);font-size:.7rem;padding:.3rem .7rem;font-style:italic;display:none}
     .chat-typing.active{display:block}
+
+    .chat-suggestions{display:none;flex-wrap:wrap;gap:.3rem;padding:.4rem .8rem;border-top:1px solid var(--brd);flex-shrink:0}
+    .chat-suggestions.active{display:flex}
+    .chat-sug{font-size:.65rem;padding:.3rem .6rem;border-radius:14px;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg);cursor:pointer;font-family:var(--f-body);transition:all .15s;line-height:1.3;text-align:left}
+    .chat-sug:hover{border-color:var(--ac);color:var(--ac);background:var(--bg-s)}
 
     .chat-input-area{display:flex;align-items:flex-end;padding:.5rem .8rem;border-top:1px solid var(--brd);gap:.4rem;flex-shrink:0}
     .chat-input{flex:1;border:1px solid var(--brd);background:var(--bg-r);color:var(--fg);border-radius:8px;padding:.4rem .6rem;font-family:var(--f-body);font-size:.78rem;resize:none;max-height:80px;min-height:34px;line-height:1.4}
@@ -678,7 +693,7 @@
     #c-diff{display:none}
     #c-diff.visible{display:inline-block}
     #c-diff.on{color:var(--ac);border-color:var(--ac)}
-    .diff-overlay{position:fixed;inset:0;z-index:300;background:var(--bg);overflow-y:auto;display:none;flex-direction:column}
+    .diff-overlay{position:fixed;top:35px;left:0;right:0;bottom:0;z-index:300;background:var(--bg);overflow-y:auto;display:none;flex-direction:column}
     .diff-overlay.open{display:flex}
     .diff-head{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:var(--bg-s);border-bottom:1px solid var(--brd);flex-shrink:0}
     .diff-head h2{font-family:var(--f-head);font-size:1rem;font-weight:600;color:var(--fg-b);flex:1}
@@ -712,6 +727,16 @@
     .diff-card-body{display:none;padding:.6rem .8rem;border-top:1px solid var(--brd);font-size:.78rem;line-height:1.6}
     .diff-card.expanded .diff-card-body{display:block}
     .diff-card-body pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--f-mono);font-size:.7rem;line-height:1.6}
+    .diff-tabs{display:flex;gap:0;margin-bottom:.6rem;border-bottom:1px solid var(--brd)}
+    .diff-tab{padding:.3rem .7rem;font-size:.65rem;font-family:var(--f-mono);cursor:pointer;border:none;background:none;color:var(--fg-d);border-bottom:2px solid transparent}
+    .diff-tab:hover{color:var(--fg-b)}
+    .diff-tab.active{color:var(--ac);border-bottom-color:var(--ac)}
+    .diff-tab-panel{display:none}
+    .diff-tab-panel.active{display:block}
+    .diff-rendered{font-family:var(--f-text);font-size:.82rem;line-height:1.7}
+    .diff-rendered .bb{margin:0}
+    .diff-edit-btn{display:inline-block;font-size:.6rem;font-family:var(--f-mono);color:var(--ac);cursor:pointer;padding:.2rem .5rem;border:1px solid var(--ac);border-radius:3px;margin-top:.4rem;background:none}
+    .diff-edit-btn:hover{background:var(--ac);color:#fff}
     .diff-line-add{background:rgba(42,170,70,.15);color:var(--grn);padding:0 .3rem}
     .diff-line-del{background:rgba(200,70,70,.15);color:var(--red);text-decoration:line-through;padding:0 .3rem}
     .diff-line-ctx{color:var(--fg-d);opacity:.45;padding:0 .3rem}
@@ -835,12 +860,15 @@
     <div class="chat-head">
       <span class="chat-title">Folio</span>
       <span class="chat-mode" id="chat-mode">reader</span>
+      <button id="chat-expand" title="Expand/collapse">⛶</button>
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
+    <div class="chat-ctx" id="chat-ctx" title="Current context block"></div>
     <div class="chat-actions" id="chat-actions"></div>
     <div class="chat-messages" id="chat-messages"></div>
     <div class="chat-typing" id="chat-typing">Folio is thinking...</div>
+    <div class="chat-suggestions" id="chat-suggestions"></div>
     <div class="chat-input-area">
       <textarea class="chat-input" id="chat-input" placeholder="Ask about the paper..." rows="1"></textarea>
       <button class="chat-send" id="chat-send" title="Send">&#x2191;</button>
@@ -957,12 +985,25 @@
     });
 
     // Sidebar hamburger toggle (narrow screens)
+    function collapseSidebarChapters() {
+      const sb = document.getElementById('sidebar');
+      if (!sb) return;
+      sb.querySelectorAll('.sb-ch.open').forEach(ch => {
+        ch.classList.remove('open');
+        const body = ch.nextElementSibling;
+        if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
+      });
+    }
     document.getElementById('sb-toggle').addEventListener('click', () => {
+      const wasOpen = document.body.classList.contains('sb-open');
       document.body.classList.toggle('sb-open');
+      if (wasOpen) collapseSidebarChapters();
     });
     document.getElementById('sidebar').addEventListener('click', (e) => {
-      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch'))
+      if (e.target.classList.contains('sb-blk') || e.target.classList.contains('sb-sec') || e.target.classList.contains('sb-ch')) {
         document.body.classList.remove('sb-open');
+        collapseSidebarChapters();
+      }
     });
 
     const btnRd = document.getElementById('c-rd');
@@ -1199,8 +1240,15 @@
       while (i < lines.length) {
         const l = lines[i];
         // Flush accumulated paragraph text before any block-level element
-        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l);
+        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l) || /^#{1,6}\s/.test(l) || /^\s*\|.+\|/.test(l);
         if (isBlock && para.length) { o.push(inl(para.join(' '))); para = []; }
+        // Headers
+        const hMatch = l.match(/^(#{1,6})\s+(.+)/);
+        if (hMatch) {
+          const level = Math.min(hMatch[1].length + 2, 6); // offset so # → h3, ## → h4
+          o.push(`</p><h${level}>${inl(hMatch[2])}</h${level}><p>`);
+          i++; continue;
+        }
         if (l.trimStart().startsWith('```tex')) {
           i++;
           const t = [];
@@ -1245,6 +1293,29 @@
           o.push('</ol>');
           continue;
         }
+        // Tables: | col | col |
+        if (/^\s*\|.+\|/.test(l)) {
+          const rows = [];
+          while (i < lines.length && /^\s*\|.+\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+          if (rows.length >= 2) {
+            const parseRow = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+            const hdr = parseRow(rows[0]);
+            // Check if row[1] is a separator (|---|---|)
+            const isSep = /^\s*\|[\s:-]+\|/.test(rows[1]);
+            const startIdx = isSep ? 2 : 1;
+            let tbl = '<table><thead><tr>' + hdr.map(h => `<th>${inl(h)}</th>`).join('') + '</tr></thead><tbody>';
+            for (let r = startIdx; r < rows.length; r++) {
+              const cells = parseRow(rows[r]);
+              tbl += '<tr>' + cells.map(c => `<td>${inl(c)}</td>`).join('') + '</tr>';
+            }
+            tbl += '</tbody></table>';
+            o.push(tbl);
+          } else {
+            // Single row — treat as paragraph
+            para.push(rows[0]);
+          }
+          continue;
+        }
         if (l.trim() === '') {
           if (para.length) { o.push(inl(para.join(' '))); para = []; }
           o.push('</p><p>'); i++; continue;
@@ -1254,8 +1325,8 @@
       if (para.length) o.push(inl(para.join(' ')));
       let h = '<p>' + o.join('\n') + '</p>';
       h = h.replace(/<p>\s*<\/p>/g,'');
-      h = h.replace(/<p>\s*<(div|ul|ol|pre)/g,'<$1');
-      h = h.replace(/<\/(div|ul|ol|pre)>\s*<\/p>/g,'</$1>');
+      h = h.replace(/<p>\s*<(div|ul|ol|pre|table|h[1-6])/g,'<$1');
+      h = h.replace(/<\/(div|ul|ol|pre|table|h[1-6])>\s*<\/p>/g,'</$1>');
       return { html: h, texBlocks: tx };
     }
 
@@ -2125,11 +2196,11 @@
       // Pin control
       const pinRow = mk('div','sb-pin');
       const pinBtn = document.createElement('button');
-      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? 'unpin' : 'pin';
+      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? '📌' : '📍';
       if (localStorage.getItem('qou-sb-pinned') === '1') document.body.classList.add('sb-pinned');
       pinBtn.onclick = () => {
         const pinned = document.body.classList.toggle('sb-pinned');
-        pinBtn.textContent = pinned ? 'unpin' : 'pin';
+        pinBtn.textContent = pinned ? '📌' : '📍';
         localStorage.setItem('qou-sb-pinned', pinned ? '1' : '0');
       };
       pinRow.appendChild(pinBtn);
@@ -2223,8 +2294,8 @@
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.dataset.num = String(ch.number);
-        chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number}. ${inl(ch.title)}</span>`;
+        chEl.dataset.num = ch.number != null ? String(ch.number) : '';
+        chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
 
         // Restore open/closed state from localStorage
@@ -2349,7 +2420,7 @@
         cd.dataset.chNum = String(ch.number);
         cd.style.display = 'none';
         if (ch.label) cd.id = ch.label;
-        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text"><span class="n">Chapter ${ch.number}.</span> ${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
+        cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text">${ch.number != null ? `<span class="n">Chapter ${ch.number}.</span> ` : ''}${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
         renderMath(cd);
         let secNum = 0;
         for (const sec of ch.sections) {
@@ -2449,7 +2520,7 @@
           item.innerHTML = `<div style="display:flex;gap:.4rem;align-items:start">
               <span class="todo-dot" style="${priDot};margin-top:.35rem"></span>
               <div style="flex:1">
-                <div>${esc(t.comment || t.summary || '')}</div>
+                <div style="white-space:pre-wrap">${esc(t.comment || t.summary || '')}</div>
                 <div class="fb-meta">
                   <select class="fb-item-pri" data-id="${t.id}" style="font-size:.6rem;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);border-radius:2px;padding:0 .2rem;font-family:var(--f-mono);cursor:pointer">
                     <option value="high" ${t.priority==='high'?'selected':''}>high</option>
@@ -2623,11 +2694,11 @@
           refreshStructBadges();
         }
         document.getElementById('fb-text').value = '';
+        document.getElementById('fb-priority').value = 'medium';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
-        // Refresh the history panel to show the new item
+        // Refresh the history panel to show the new item (stay open)
         openFeedback(fbBlock);
-        closeFeedback();
         // Update sidebar badges to reflect the new todo
         refreshFeedbackBadges();
       } catch (e) {
@@ -3574,11 +3645,22 @@
     function renderDiffOverlay(data) {
       diffData = data;
       diffTitle.textContent = `Changes: ${data.base} → ${data.head}`;
-      const s = data.summary;
-      diffSummaryEl.innerHTML = `<span class="da">+${s.added}</span> <span class="dr">-${s.removed}</span> <span class="dc">~${s.changed}</span> · ${s.unchanged} unchanged`;
 
       diffBody.innerHTML = '';
-      const changed = data.blocks.filter(b => b.status !== 'unchanged');
+      // Filter out unchanged blocks and whitespace-only diffs
+      const changed = data.blocks.filter(b => {
+        if (b.status === 'unchanged') return false;
+        if (b.status === 'changed' && b.mdDiff && !b.leanDiff && !b.statusDiff) {
+          const base = (b.mdDiff.base || '').replace(/\s+/g, '');
+          const head = (b.mdDiff.head || '').replace(/\s+/g, '');
+          if (base === head) return false;
+        }
+        return true;
+      });
+      const added = changed.filter(b => b.status === 'added').length;
+      const removed = changed.filter(b => b.status === 'removed').length;
+      const chg = changed.filter(b => b.status === 'changed').length;
+      diffSummaryEl.innerHTML = `<span class="da">+${added}</span> <span class="dr">-${removed}</span> <span class="dc">~${chg}</span>`;
       if (!changed.length) {
         diffBody.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--fg-d)">No changes between branches</div>';
         return;
@@ -3675,7 +3757,7 @@
             head.appendChild(goto);
           }
 
-          // Body (collapsed by default)
+          // Body (collapsed by default) — tabbed: rendered | raw diff
           const body = mk('div','diff-card-body');
 
           if (bd.statusDiff) {
@@ -3684,30 +3766,94 @@
             body.appendChild(sc);
           }
 
+          // Tab bar
+          const tabs = mk('div','diff-tabs');
+          const tabRendered = mk('button','diff-tab active');
+          tabRendered.textContent = 'rendered';
+          const tabRaw = mk('button','diff-tab');
+          tabRaw.textContent = 'raw diff';
+          tabs.appendChild(tabRendered);
+          tabs.appendChild(tabRaw);
+          body.appendChild(tabs);
+
+          // Panel: rendered markdown
+          const panelRendered = mk('div','diff-tab-panel active');
+          const headMd = bd.mdDiff?.head ?? (bd.status === 'added' ? (bix.get(bd.label)?.md || '') : null);
+          if (headMd != null) {
+            const rendered = mk('div','diff-rendered');
+            const bb = mk('div','bb');
+            const {html: bh, texBlocks: tx} = parseMd(headMd);
+            bb.innerHTML = bh;
+            fillTex(bb, tx, bix.get(bd.label)?.rendered);
+            renderMath(bb); resolveRefs(bb);
+            rendered.appendChild(bb);
+
+            // Edit button → navigate to block with editor open
+            const editBtn = mk('button','diff-edit-btn');
+            editBtn.textContent = 'edit';
+            editBtn.onclick = (e) => {
+              e.stopPropagation();
+              closeDiffOverlay();
+              if (bd.label) {
+                const chNum = paper?._chapterForLabel?.(bd.label);
+                if (chNum != null) paper._showChapter(chNum);
+                setTimeout(() => {
+                  const el = document.getElementById(bd.label);
+                  if (el) {
+                    // Hydrate lazy block if needed
+                    const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+                    if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                    el.scrollIntoView({behavior:'smooth', block:'start'});
+                    // Open inline editor
+                    setTimeout(() => {
+                      if (el._inlineEditor) el._inlineEditor.btn.click();
+                    }, 200);
+                  }
+                }, 100);
+              }
+            };
+            rendered.appendChild(editBtn);
+            panelRendered.appendChild(rendered);
+          }
+          body.appendChild(panelRendered);
+
+          // Panel: raw diff
+          const panelRaw = mk('div','diff-tab-panel');
           if (bd.mdDiff) {
             const ops = lineDiff(bd.mdDiff.base, bd.mdDiff.head);
             const pre = document.createElement('pre');
             pre.innerHTML = renderDiffLines(ops);
-            body.appendChild(pre);
+            panelRaw.appendChild(pre);
           } else if (bd.status === 'added') {
-            // Show full content for new blocks
             const blk = bix.get(bd.label);
             if (blk?.md) {
               const pre = document.createElement('pre');
               pre.innerHTML = blk.md.split('\n').map(l => `<span class="diff-line-add">+ ${esc(l)}</span>`).join('\n');
-              body.appendChild(pre);
+              panelRaw.appendChild(pre);
             }
           }
-
           if (bd.leanDiff) {
             const lh = mk('div','diff-status-change');
             lh.textContent = 'Lean source changed:';
-            body.appendChild(lh);
+            panelRaw.appendChild(lh);
             const ops = lineDiff(bd.leanDiff.base, bd.leanDiff.head);
             const pre = document.createElement('pre');
             pre.innerHTML = renderDiffLines(ops);
-            body.appendChild(pre);
+            panelRaw.appendChild(pre);
           }
+          body.appendChild(panelRaw);
+
+          // Tab switching
+          tabRendered.onclick = (e) => {
+            e.stopPropagation();
+            tabRendered.classList.add('active'); tabRaw.classList.remove('active');
+            panelRendered.classList.add('active'); panelRaw.classList.remove('active');
+          };
+          tabRaw.onclick = (e) => {
+            e.stopPropagation();
+            tabRaw.classList.add('active'); tabRendered.classList.remove('active');
+            panelRaw.classList.add('active'); panelRendered.classList.remove('active');
+          };
 
           head.onclick = () => card.classList.toggle('expanded');
           card.appendChild(head);
@@ -3725,7 +3871,6 @@
     }
     function closeDiffOverlay() {
       diffOverlay.classList.remove('open');
-      if (!diffMode) diffBtn.classList.remove('on');
     }
     document.getElementById('diff-close').onclick = closeDiffOverlay;
 
@@ -3757,6 +3902,13 @@
         if (!bd || bd.status === 'unchanged') {
           el.style.removeProperty('outline');
           continue;
+        }
+
+        // Skip whitespace-only changes
+        if (bd.status === 'changed' && bd.mdDiff && !bd.leanDiff && !bd.statusDiff) {
+          const base = (bd.mdDiff.base || '').replace(/\s+/g, '');
+          const head = (bd.mdDiff.head || '').replace(/\s+/g, '');
+          if (base === head) { el.style.removeProperty('outline'); continue; }
         }
 
         if (bd.status === 'added') {
@@ -3799,13 +3951,15 @@
       }
     }
 
-    // Diff button: first click opens overlay, toggle to close
+    // Diff button: click toggles diff highlighting + overlay
     diffBtn.addEventListener('click', async () => {
-      if (diffOverlay.classList.contains('open')) {
+      // If already on, turn everything off
+      if (diffMode) {
+        toggleDiffMode(false);
         closeDiffOverlay();
         return;
       }
-      // Open overlay immediately — show loading state if data not cached
+      // Turn on: load diff data if needed, enable highlighting, open overlay
       const needsLoad = !diffData || diffData.head !== (selectedBranch || currentBranchName);
       if (needsLoad) {
         diffTitle.textContent = 'Loading diff…';
@@ -3816,6 +3970,7 @@
       }
       if (diffData) {
         renderDiffOverlay(diffData);
+        toggleDiffMode(true);
         if (!needsLoad) openDiffOverlay();
       } else {
         const head = selectedBranch || currentBranchName;
@@ -3830,14 +3985,6 @@
         }</div>`;
         if (!needsLoad) openDiffOverlay();
       }
-    });
-
-    // Right-click diff button toggles inline diff mode
-    diffBtn.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      if (!diffData) return;
-      closeDiffOverlay();
-      toggleDiffMode();
     });
 
     // ── Start routing (after all UI initialized) ──────────
@@ -3871,6 +4018,10 @@
 
     // Track visible blocks for context awareness
     let visibleBlocks = []; // [{label, kind, title}] — blocks currently on screen
+    let chatCtxLabel = null; // current context block label
+    let chatCtxSource = null; // 'scroll' | 'hover' — how context was determined
+    const chatCtxEl = document.getElementById('chat-ctx');
+
     function updateVisibleBlocks() {
       const vb = [];
       const viewTop = 0;
@@ -3884,7 +4035,62 @@
         }
       }
       visibleBlocks = vb;
+      // Update context from scroll (center block) unless hover is active
+      if (chatCtxSource !== 'hover') {
+        const viewY = window.innerHeight / 2;
+        let found = null;
+        for (const [label, block] of bix) {
+          const el = document.getElementById(label);
+          if (!el) continue;
+          const r = el.getBoundingClientRect();
+          if (r.top < viewY && r.bottom > viewY - 100) { found = label; break; }
+        }
+        if (found && found !== chatCtxLabel) {
+          chatCtxLabel = found;
+          chatCtxSource = 'scroll';
+          updateChatCtxDisplay();
+        }
+      }
     }
+
+    function updateChatCtxDisplay() {
+      if (!chatCtxLabel) { chatCtxEl.classList.remove('active'); return; }
+      const block = bix.get(chatCtxLabel);
+      const kind = block?.kind || '';
+      const title = block?.title || chatCtxLabel;
+      chatCtxEl.innerHTML = `<span class="ctx-kind">${esc(kind)}</span><span class="ctx-label" data-label="${esc(chatCtxLabel)}">${esc(chatCtxLabel)}</span> ${esc(title)}`;
+      chatCtxEl.classList.add('active');
+    }
+
+    // Click on context label → scroll to block
+    chatCtxEl.addEventListener('click', (e) => {
+      const lbl = e.target.closest('.ctx-label');
+      if (lbl?.dataset.label) scrollToLabel(lbl.dataset.label);
+    });
+
+    // Track hover over content blocks
+    let hoverResetTimer = null;
+    document.addEventListener('mouseover', (e) => {
+      const blkEl = e.target.closest?.('.env[id], .blk[id]');
+      if (blkEl && bix.has(blkEl.id)) {
+        clearTimeout(hoverResetTimer);
+        chatCtxLabel = blkEl.id;
+        chatCtxSource = 'hover';
+        updateChatCtxDisplay();
+      }
+    });
+    document.addEventListener('mouseout', (e) => {
+      const blkEl = e.target.closest?.('.env[id], .blk[id]');
+      if (blkEl && chatCtxSource === 'hover') {
+        // Reset to scroll-based context after a short delay
+        clearTimeout(hoverResetTimer);
+        hoverResetTimer = setTimeout(() => {
+          chatCtxSource = 'scroll';
+          updateVisibleBlocks();
+        }, 1500);
+      }
+    });
+
     // Update on scroll (debounced)
     let visibleTimer = null;
     window.addEventListener('scroll', () => {
@@ -3892,7 +4098,7 @@
       visibleTimer = setTimeout(updateVisibleBlocks, 200);
     }, { passive: true });
 
-    // Get context: currently visible blocks, selected text, center block
+    // Get context: tracked context block, selected text, visible blocks
     function getChatContext() {
       updateVisibleBlocks();
       const ctx = { paperId: paper?.id, visibleBlocks };
@@ -3900,7 +4106,6 @@
       const sel = window.getSelection();
       if (sel && sel.toString().trim().length > 5) {
         ctx.selectedText = sel.toString().trim();
-        // Find the block containing the selection
         const anchor = sel.anchorNode?.parentElement?.closest?.('.env[id], .blk[id]');
         if (anchor) {
           const label = anchor.id;
@@ -3912,19 +4117,13 @@
           }
         }
       }
-      // If no selection, find the block currently in viewport center
-      if (!ctx.blockLabel) {
-        const viewY = window.innerHeight / 2;
-        for (const [label, block] of bix) {
-          const el = document.getElementById(label);
-          if (!el) continue;
-          const r = el.getBoundingClientRect();
-          if (r.top < viewY && r.bottom > viewY - 100) {
-            ctx.blockLabel = label;
-            ctx.blockMd = block.md;
-            ctx.blockKind = block.kind;
-            break;
-          }
+      // Use tracked context block (from scroll or hover)
+      if (!ctx.blockLabel && chatCtxLabel) {
+        const block = bix.get(chatCtxLabel);
+        if (block) {
+          ctx.blockLabel = chatCtxLabel;
+          ctx.blockMd = block.md;
+          ctx.blockKind = block.kind;
         }
       }
       return ctx;
@@ -3932,21 +4131,14 @@
 
     function addChatMessage(role, content) {
       const div = mk('div', `chat-msg ${role}`);
-      // Basic markdown rendering for assistant messages
-      if (role === 'assistant' || role === 'system') {
-        let html = esc(content);
-        // Inline math
-        html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
-        // Bold
-        html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        // Italic
-        html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
-        // Code
-        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-        // Cross-refs to blocks
-        html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
-          '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
-        div.innerHTML = html;
+      if (role === 'assistant') {
+        const {html: renderedHtml, texBlocks: tx} = parseMd(content);
+        div.innerHTML = renderedHtml;
+        fillTex(div, tx);
+        renderMath(div);
+        resolveRefs(div);
+      } else if (role === 'system') {
+        div.innerHTML = inl(content);
         renderMath(div);
       } else {
         div.textContent = content;
@@ -3954,6 +4146,28 @@
       chatMessages.appendChild(div);
       chatMessages.scrollTop = chatMessages.scrollHeight;
       return div;
+    }
+
+    const chatSuggestions = document.getElementById('chat-suggestions');
+
+    function showSuggestions(options) {
+      chatSuggestions.innerHTML = '';
+      if (!options || !options.length) { chatSuggestions.classList.remove('active'); return; }
+      for (const opt of options) {
+        const btn = mk('button', 'chat-sug');
+        btn.textContent = opt;
+        btn.onclick = () => {
+          clearSuggestions();
+          sendChatMessage(opt);
+        };
+        chatSuggestions.appendChild(btn);
+      }
+      chatSuggestions.classList.add('active');
+    }
+
+    function clearSuggestions() {
+      chatSuggestions.innerHTML = '';
+      chatSuggestions.classList.remove('active');
     }
 
     function appendChatError(container, message) {
@@ -3974,6 +4188,7 @@
 
     async function sendChatMessage(text) {
       if (chatStreaming || !text.trim()) return;
+      clearSuggestions();
 
       chatHistory.push({ role: 'user', content: text.trim() });
       addChatMessage('user', text.trim());
@@ -3991,24 +4206,22 @@
       chatMessages.appendChild(assistDiv);
 
       let fullResponse = '';
-      let firstChunkReceived = false;
-      // Show "looking up..." after a delay if no text yet (tool use happening server-side)
-      const lookupTimer = setTimeout(() => {
-        if (!firstChunkReceived) {
-          assistDiv.innerHTML = '<span style="color:var(--fg-d);font-size:.7rem;font-style:italic">looking up data...</span>';
-        }
-      }, 1500);
+      let firstTextReceived = false;
 
       try {
+        const abort = new AbortController();
+        const timeout = setTimeout(() => abort.abort(), 60000); // 60s timeout
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            messages: chatHistory.slice(-10), // last 10 messages for context
+            messages: chatHistory.slice(-10),
             context,
             mode,
           }),
+          signal: abort.signal,
         });
+        clearTimeout(timeout);
 
         if (!res.ok) {
           const err = await res.json().catch(() => ({ error: 'Unknown error' }));
@@ -4033,21 +4246,21 @@
             if (data === '[DONE]') break;
             try {
               const parsed = JSON.parse(data);
+              if (parsed.status) {
+                // Progress update during tool-use rounds
+                if (!firstTextReceived) {
+                  assistDiv.innerHTML = `<span style="color:var(--fg-d);font-size:.7rem;font-style:italic">${esc(parsed.status)}</span>`;
+                  chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+              }
               if (parsed.text) {
-                if (!firstChunkReceived) { firstChunkReceived = true; clearTimeout(lookupTimer); }
+                firstTextReceived = true;
                 fullResponse += parsed.text;
-                // Re-render with formatting
-                let html = esc(fullResponse);
-                html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
-                html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-                html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
-                html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-                html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
-                  '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
-                // Paragraphs
-                html = html.replace(/\n\n/g, '</p><p>');
-                assistDiv.innerHTML = '<p>' + html + '</p>';
+                const {html: renderedHtml, texBlocks: tx} = parseMd(fullResponse);
+                assistDiv.innerHTML = renderedHtml;
+                fillTex(assistDiv, tx);
                 renderMath(assistDiv);
+                resolveRefs(assistDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
               }
               if (parsed.error) {
@@ -4057,6 +4270,22 @@
               if (e.message !== 'Unexpected end of JSON input') console.warn('Chat parse:', e);
             }
           }
+        }
+
+        // Parse and display suggestions from the response
+        const sugMatch = fullResponse.match(/\[suggestions?\]:\s*(.+)$/im);
+        if (sugMatch) {
+          // Strip suggestions line from displayed content
+          fullResponse = fullResponse.replace(/\n?\[suggestions?\]:\s*(.+)$/im, '');
+          const {html: finalHtml, texBlocks: ftx} = parseMd(fullResponse);
+          assistDiv.innerHTML = finalHtml;
+          fillTex(assistDiv, ftx);
+          renderMath(assistDiv);
+          resolveRefs(assistDiv);
+
+          // Render suggestion buttons
+          const suggestions = sugMatch[1].split('|').map(s => s.trim()).filter(Boolean);
+          showSuggestions(suggestions);
         }
 
         chatHistory.push({ role: 'assistant', content: fullResponse });
@@ -4099,9 +4328,9 @@
         }
 
       } catch (e) {
-        appendChatError(assistDiv, e.message);
+        const msg = e.name === 'AbortError' ? 'Request timed out — try again or simplify your question' : (e.message || 'Request failed');
+        appendChatError(assistDiv, msg);
       } finally {
-        clearTimeout(lookupTimer);
         chatStreaming = false;
         chatSend.disabled = false;
         chatTyping.classList.remove('active');
@@ -4215,11 +4444,19 @@
       }
     };
 
+    // Expand/collapse button
+    document.getElementById('chat-expand').onclick = () => {
+      const expanding = !chatPanel.classList.contains('expanded');
+      chatPanel.classList.toggle('expanded');
+      chatFab.style.display = expanding ? 'none' : '';
+    };
+
     // Close button
     document.getElementById('chat-close').onclick = () => {
       chatOpen = false;
-      chatPanel.classList.remove('open');
+      chatPanel.classList.remove('open', 'expanded');
       chatFab.classList.remove('open');
+      chatFab.style.display = '';
     };
 
     // Clear button

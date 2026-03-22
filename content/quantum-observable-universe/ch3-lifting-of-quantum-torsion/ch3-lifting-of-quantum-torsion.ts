@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 3: Lifting of Quantum Torsion.
+ * Lifting and Descent.
  *
  * Covers jet prolongation, the recursive brane tower, Yekutieli lifting,
  * the main QOU theorem, cosimplicial structure, descent, mass decomposition,
@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   number: 3,
-  title: "Lifting of Quantum Torsion",
+  title: "Lifting and Descent",
   label: "chap:torsion",
   sections: [
     section({

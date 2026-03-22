@@ -755,7 +755,9 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
       return Response.json(data, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
-      return Response.json({ error: String(e) }, { status: 500 });
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper id=${id} branch=${branch}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
     }
   }
 
@@ -1110,12 +1112,12 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         },
         {
           name: "get_todos",
-          description: "Get open todos/feedback items. Can filter by paper or get all. Use when user asks about tasks, what needs attention, or outstanding work.",
+          description: "Get open todos/feedback items. Can filter by paper or specific block. Use when user asks about tasks, what needs attention, or outstanding work. The blockLabel can be a full label like 'def:rigid-monoidal-category' or just the root name like 'rigid-monoidal-category'.",
           input_schema: {
             type: "object" as const,
             properties: {
               paperId: { type: "string", description: "Filter to specific paper" },
-              rootName: { type: "string", description: "Filter to specific block" },
+              blockLabel: { type: "string", description: "Filter to specific block — accepts full label (e.g. 'def:rigid-monoidal-category') or root name ('rigid-monoidal-category')" },
               status: { type: "string", enum: ["open", "in_progress", "blocked", "resolved"], description: "Filter by status (default: open)" },
             },
             required: [],
@@ -1205,9 +1207,12 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
             }
 
             case "get_todos": {
-              if (input.rootName && pid) {
-                const todos = readFeedback(pid, input.rootName as string);
-                return JSON.stringify(todos);
+              // Accept full label (def:foo-bar) or rootName (foo-bar)
+              const rawLabel = (input.blockLabel || input.rootName) as string | undefined;
+              const rootName = rawLabel?.replace(/^(def|thm|lem|prop|cor|rem|ex|conj):/, "") || undefined;
+              if (rootName && pid) {
+                const todos = readFeedback(pid, rootName);
+                return JSON.stringify(todos.length ? todos : { message: `No feedback found for '${rootName}' in paper '${pid}'`, rootName });
               }
               const status = (input.status as string) || "open";
               const all = listAllFeedback(status);
@@ -1318,7 +1323,11 @@ Your role is that of a knowledgeable editor who:
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
-Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.`;
+Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.
+
+IMPORTANT: End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
+[suggestions]: First option | Second option | Third option
+These become clickable buttons so users don't have to type. Make them specific to the conversation context — not generic. Keep each option under 40 characters.`;
 
       if (mode === "status") {
         systemPrompt += `\n\nThe user is in EDITOR mode. They want to understand the paper's current status — what's complete, what needs work, what the priorities are. Focus on actionable summaries. Use get_paper_status and get_todos to get real data.`;
@@ -1343,6 +1352,15 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
         }
         if (ctx.paperId) {
           systemPrompt += `\n\nPaper ID: ${ctx.paperId}`;
+          // Eagerly fetch todos for the context block so LLM has them immediately
+          if (ctx.blockLabel) {
+            const rootName = ctx.blockLabel.replace(/^(def|thm|lem|prop|cor|rem|ex|conj):/, "");
+            const blockTodos = readFeedback(ctx.paperId, rootName);
+            const openTodos = (blockTodos as any[]).filter((t: any) => t.status === "open" || t.status === "in_progress");
+            if (openTodos.length) {
+              systemPrompt += `\n\nOpen todos/feedback for this block (${ctx.blockLabel}):\n${JSON.stringify(openTodos, null, 2)}`;
+            }
+          }
         }
       }
 
@@ -1352,87 +1370,95 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
         content: m.content,
       }));
 
-      // Run tool-use loop (non-streaming, max 3 rounds)
-      let toolRounds = 0;
-      const MAX_TOOL_ROUNDS = 3;
-      while (toolRounds < MAX_TOOL_ROUNDS) {
-        const response = await client.messages.create({
-          model: "claude-haiku-4-5-20251001",
-          max_tokens: 1500,
-          system: systemPrompt,
-          tools: chatTools,
-          messages: apiMessages,
-        });
-
-        // Check if the model wants to use tools
-        const toolUses = response.content.filter(b => b.type === "tool_use");
-        if (toolUses.length === 0) {
-          // No tool calls — this is the final response, stream it back
-          const textBlocks = response.content.filter(b => b.type === "text");
-          const fullText = textBlocks.map(b => (b as any).text).join("");
-
-          const encoder = new TextEncoder();
-          const readable = new ReadableStream({
-            start(controller) {
-              // Send in chunks for streaming feel
-              const chunkSize = 20;
-              for (let i = 0; i < fullText.length; i += chunkSize) {
-                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: fullText.slice(i, i + chunkSize) })}\n\n`));
-              }
-              controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
-              logDebug("chat", `complete (${toolRounds} tool rounds, ${fullText.length} chars)`);
-              controller.close();
-            },
-          });
-
-          return new Response(readable, {
-            headers: {
-              "Content-Type": "text/event-stream",
-              "Cache-Control": "no-cache",
-              "Connection": "keep-alive",
-              "Access-Control-Allow-Origin": "*",
-            },
-          });
-        }
-
-        // Execute tool calls
-        logDebug("chat:tools", `round ${toolRounds + 1}: ${toolUses.length} tool calls`,
-          toolUses.map(t => (t as any).name).join(", "));
-
-        // Add assistant message with tool use
-        apiMessages.push({ role: "assistant", content: response.content });
-
-        // Execute all tool calls and add results
-        const toolResults: Anthropic.ToolResultBlockParam[] = [];
-        for (const tu of toolUses) {
-          const toolUseBlock = tu as Anthropic.ToolUseBlock;
-          const result = await executeTool(toolUseBlock.name, toolUseBlock.input as Record<string, unknown>);
-          toolResults.push({
-            type: "tool_result",
-            tool_use_id: toolUseBlock.id,
-            content: result,
-          });
-        }
-        apiMessages.push({ role: "user", content: toolResults });
-        toolRounds++;
-      }
-
-      // If we exhausted tool rounds, do a final streaming call without tools
-      logDebug("chat", `max tool rounds reached (${MAX_TOOL_ROUNDS}), final call`);
-      const stream = await client.messages.stream({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 1500,
-        system: systemPrompt,
-        messages: apiMessages,
-      });
-
+      // Stream response with progress events during tool-use rounds
       const encoder = new TextEncoder();
+      const sseHeaders = {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "Access-Control-Allow-Origin": "*",
+      };
+
       const readable = new ReadableStream({
         async start(controller) {
+          const send = (obj: Record<string, unknown>) =>
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`));
+
           try {
+            let toolRounds = 0;
+            const MAX_TOOL_ROUNDS = 3;
+
+            while (toolRounds < MAX_TOOL_ROUNDS) {
+              send({ status: toolRounds === 0 ? "thinking..." : `looking up data (step ${toolRounds + 1})...` });
+
+              const response = await client.messages.create({
+                model: "claude-haiku-4-5-20251001",
+                max_tokens: 1500,
+                system: systemPrompt,
+                tools: chatTools,
+                messages: apiMessages,
+              });
+
+              const toolUses = response.content.filter(b => b.type === "tool_use");
+              if (toolUses.length === 0) {
+                // Final response — send text in chunks
+                const textBlocks = response.content.filter(b => b.type === "text");
+                const fullText = textBlocks.map(b => (b as any).text).join("");
+                const chunkSize = 20;
+                for (let i = 0; i < fullText.length; i += chunkSize) {
+                  send({ text: fullText.slice(i, i + chunkSize) });
+                }
+                send({});  // clear status
+                controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
+                logDebug("chat", `complete (${toolRounds} tool rounds, ${fullText.length} chars)`);
+                controller.close();
+                return;
+              }
+
+              // Tool calls — send progress with tool names
+              const toolNames = toolUses.map(t => (t as any).name);
+              logDebug("chat:tools", `round ${toolRounds + 1}: ${toolUses.length} tool calls`, toolNames.join(", "));
+              const friendlyNames: Record<string, string> = {
+                get_paper_status: "checking paper status",
+                get_todos: "looking up todos",
+                get_block: "reading block content",
+                get_chapter_blocks: "scanning chapter",
+                search_blocks: "searching",
+                get_imports: "checking imports",
+              };
+              const desc = toolNames.map(n => friendlyNames[n] || n).join(", ");
+              send({ status: desc + "..." });
+
+              apiMessages.push({ role: "assistant", content: response.content });
+
+              const toolResults: Anthropic.ToolResultBlockParam[] = [];
+              for (const tu of toolUses) {
+                const toolUseBlock = tu as Anthropic.ToolUseBlock;
+                const result = await executeTool(toolUseBlock.name, toolUseBlock.input as Record<string, unknown>);
+                toolResults.push({
+                  type: "tool_result",
+                  tool_use_id: toolUseBlock.id,
+                  content: result,
+                });
+              }
+              apiMessages.push({ role: "user", content: toolResults });
+              toolRounds++;
+            }
+
+            // Exhausted tool rounds — final streaming call without tools
+            logDebug("chat", `max tool rounds reached (${MAX_TOOL_ROUNDS}), final call`);
+            send({ status: "composing response..." });
+
+            const stream = await client.messages.stream({
+              model: "claude-haiku-4-5-20251001",
+              max_tokens: 1500,
+              system: systemPrompt,
+              messages: apiMessages,
+            });
+
             for await (const event of stream) {
               if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
+                send({ text: event.delta.text });
               }
             }
             controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
@@ -1441,19 +1467,13 @@ Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$
           } catch (e) {
             log("chat", "stream error", String(e));
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: String(e) })}\n\n`));
+            controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
             controller.close();
           }
         },
       });
 
-      return new Response(readable, {
-        headers: {
-          "Content-Type": "text/event-stream",
-          "Cache-Control": "no-cache",
-          "Connection": "keep-alive",
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+      return new Response(readable, { headers: sseHeaders });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
     }
@@ -1935,7 +1955,10 @@ if (mode === "stdio") {
   });
 
   log('init', `MCP server started (stdio, repo: ${REPO_ROOT})`);
-  log('init', `Viewer: http://localhost:${viewerPort}/viewer/`);
+  const branch = currentBranch();
+  const branchSuffix = branch && branch !== 'main' && branch !== 'master'
+    ? `#/@${encodeURIComponent(branch)}` : '';
+  log('init', `Viewer: http://localhost:${viewerPort}/viewer/${branchSuffix}`);
 } else {
   // HTTP mode — MCP + viewer on same port
   const port = parseInt(process.env.MCP_PORT || "8080", 10);
@@ -1984,5 +2007,8 @@ if (mode === "stdio") {
 
   console.error(`[qou-mcp] Assistant started (HTTP :${port}, repo: ${REPO_ROOT})`);
   console.error(`[qou-mcp] MCP: http://localhost:${port}/mcp`);
-  console.error(`[qou-mcp] Viewer: http://localhost:${port}/viewer/`);
+  const brH = currentBranch();
+  const brSuffix = brH && brH !== 'main' && brH !== 'master'
+    ? `#/@${encodeURIComponent(brH)}` : '';
+  console.error(`[qou-mcp] Viewer: http://localhost:${port}/viewer/${brSuffix}`);
 }
