@@ -154,6 +154,8 @@ surviving past the work that should have resolved them.
 | Glossary / terminology / naming | `ontologist` + `content-validation` | Glossary blocks in Ch 8 |
 | Work on todos / process feedback | `todo-review` | Context-aware selection |
 | Missing proofs (narrative or Lean) | See §Proof workflow below | Narrative-first |
+| Critical path / context audit | `critical-path-analysis` | Archimedean vs categorical |
+| What assumptions does X need | `critical-path-analysis` | Dependency tracing |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
 | **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
 
@@ -253,9 +255,17 @@ committing. This rule persists across sessions.
 ## Interaction style
 
 - Questions to author: always multiple-choice (2-4 options), concise labels.
+- **Multi-select by default**: when presenting actionable items where the user
+  might want more than one, use `multiSelect: true` (checkboxes). Only use
+  single-select (radio) when the options are mutually exclusive.
+  - Checkboxes: "Which of these should I do next?" (can pick several)
+  - Radio: "Which approach should we take?" (pick one)
 - Status updates: brief, at natural milestones.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.
+- **Internal tracking**: use `TodoWrite` to track progress on multi-item work.
+  Keep the todo list current — mark items complete immediately, add new items
+  as they are discovered. The user sees these as a progress indicator.
 
 ### "What next?" prompt (after completing a task)
 
