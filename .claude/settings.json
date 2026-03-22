@@ -55,6 +55,18 @@
           }
         ]
       }
+    ],
+    "PostCommit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/check-upstream.sh",
+            "timeout": 15
+          }
+        ]
+      }
     ]
   }
 }

@@ -38,3 +38,6 @@ scripts/mcp-server/bun.lock
 viewer/paper.js
 # Work-tracking todos (gitignored — survives branch switches)
 todos/
+
+# Local agent state (per-machine, not shared)
+.claude/local-state/
