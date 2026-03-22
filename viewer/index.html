@@ -2061,12 +2061,27 @@
       sb.appendChild(pinRow);
 
       // Collapse all chapters when sidebar collapses (not pinned)
+      // Collapse chapters visually on mouseleave, restore on mouseenter
+      let savedOpenChapters = new Set();
       sb.addEventListener('mouseleave', () => {
         if (document.body.classList.contains('sb-pinned')) return;
+        savedOpenChapters.clear();
         sb.querySelectorAll('.sb-ch.open').forEach(ch => {
+          savedOpenChapters.add(ch.dataset.num);
           ch.classList.remove('open');
           const body = ch.nextElementSibling;
           if (body?.classList.contains('sb-ch-body')) body.style.display = 'none';
+        });
+      });
+      sb.addEventListener('mouseenter', () => {
+        if (document.body.classList.contains('sb-pinned')) return;
+        if (!savedOpenChapters.size) return;
+        sb.querySelectorAll('.sb-ch').forEach(ch => {
+          if (savedOpenChapters.has(ch.dataset.num)) {
+            ch.classList.add('open');
+            const body = ch.nextElementSibling;
+            if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
+          }
         });
       });
 
