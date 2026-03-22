@@ -91,16 +91,18 @@
     .sb-pin button:hover{color:var(--ac)}
     body.sb-pinned .sb-pin button{color:var(--ac)}
 
-    /* Collapsed state: show chapter initials */
-    body.has-sidebar #sidebar:not(:hover):not(.sb-pinned #sidebar) .sb-sec,
+    /* Collapsed state: show only chapter numbers */
     body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-sec,
     body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-blk,
     body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-pin{display:none}
     body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-ch{
-      writing-mode:vertical-rl;text-orientation:mixed;
-      padding:.5rem .3rem;font-size:.55rem;border-bottom:none;
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-height:80px;
+      font-size:0;line-height:0;border-bottom:none;
+      padding:.6rem 0;text-align:center;margin:0;
     }
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-ch::before{
+      content:attr(data-num);font-size:.75rem;line-height:1;font-weight:700;color:var(--fg-d);
+    }
+    body.has-sidebar:not(.sb-pinned):not(.sb-open) #sidebar:not(:hover) .sb-ch.active::before{color:var(--ac)}
 
     .sb-ch{padding:.4rem .8rem .2rem;color:var(--fg-b);cursor:pointer;font-weight:600;font-size:.7rem;border-bottom:1px solid var(--brd);margin-top:.3rem}
     .sb-ch:hover{color:var(--ac)}
@@ -1997,6 +1999,7 @@
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
+        chEl.dataset.num = String(ch.number);
         chEl.innerHTML = `${ch.number}. ${inl(ch.title)}`;
         chEl.onclick = () => { const t = document.getElementById(ch.label); if (t) t.scrollIntoView({behavior:'smooth'}); };
         sb.appendChild(chEl);
