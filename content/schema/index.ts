@@ -67,6 +67,18 @@ export {
   document,
 } from "./builders";
 
+// Bibliography (CSL-JSON source of truth)
+export {
+  references,
+  referenceMap,
+  ref,
+  getRef,
+  allRefIds,
+  CSLEntrySchema,
+  CSLItemTypeSchema,
+} from "./references";
+export type { CSLData, CSLPerson, CSLDate, ItemType } from "./references";
+
 // Zod schemas (for runtime validation, CI, tests)
 export {
   BlockSchema,
