@@ -1,5 +1,5 @@
 A quantum universe $(\mathcal{C}, A, \omega)$ over $R$
-([Definition](#def:quantum-universe)) is *observable* if the
+([quantum universe](#def:quantum-universe)) is *observable* if the
 following three conditions hold:
 
 1. *(non-degeneracy)* the Frobenius pairing

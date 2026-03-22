@@ -1,5 +1,5 @@
-Let $\mathcal{S}$ denote the Bring's surface
-([Definition](#def:brings-surface)).  Let $q\in\mathbb{C}$ with
+Let $\mathcal{S}$ denote the
+([Bring's surface](#def:brings-surface)).  Let $q\in\mathbb{C}$ with
 $0<\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
 $\lvert q\rvert=e^{-r}$.
 Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
@@ -47,4 +47,4 @@ $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 By the first power sum, $\omega_0=0$ in the
 balanced state; the remaining coordinates embed $\mathcal{S}$ into the
 infinite jet shell $J^\infty E$
-([Remark](#rem:jet-shell)).
+([jet shell](#rem:jet-shell)).

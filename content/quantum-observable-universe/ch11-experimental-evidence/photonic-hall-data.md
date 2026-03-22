@@ -11,5 +11,5 @@
 
 **Potential new experiments.**
 
-- Measurement of Hall conductance in photonic lattices at varying effective $q$ parameters, seeking the $1 - q^{-1}$ correction predicted by the quantum Planck constant ([Definition](#def:quantum-planck-constant)).
+- Measurement of Hall conductance in photonic lattices at varying effective $q$ parameters, seeking the $1 - q^{-1}$ correction predicted by the ([quantum planck constant](#def:quantum-planck-constant)).
 - Cold-atom realisations of $\mathrm{SU}(2)$ gauge fields in optical lattices, testing the $q$-deformed braiding statistics of [Chapter](#chap:path-integrals-braiding).

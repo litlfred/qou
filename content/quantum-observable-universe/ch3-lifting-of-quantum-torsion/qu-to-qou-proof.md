@@ -1,5 +1,5 @@
 
-[Proposition](#prop:yekutieli-lifting) establishes that the constructed
+[Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
 brane tower satisfies the Yekutieli lifting condition.  We prove each
 structural property in turn.
 
@@ -18,7 +18,7 @@ base is a discrete (Artinian) scheme.
 The first Yekutieli obstruction $\kappa_0 \in H^2(\mathcal{S}, \mathcal{B})$
 is the connecting homomorphism image of the bundle class $[A_0]$ under the
 central extension $1 \to \mathcal{B} \to \mathfrak{G}_1 \to \mathfrak{G}_0
-\to 1$ ([Proposition](#prop:yekutieli-lifting)).  In the archimedean
+\to 1$ ([Yekutieli lifting](#prop:yekutieli-lifting)).  In the archimedean
 realisation, this identifies with the Euler class $e$ of the Reeb
 $\mathrm{U}(1)$-bundle via the Gysin sequence.  The trace map sends
 $\kappa_0$ to $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$.
@@ -44,4 +44,4 @@ At a branch point $p$, the Krull dimension of the centre is $0$, so the base
 is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
 algebra $A$ at parameter $q(p)$, with the involution
 $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
-[Proposition](#prop:fiber-adjoint-involution).
+[fibre adjoint involution](#prop:fiber-adjoint-involution).

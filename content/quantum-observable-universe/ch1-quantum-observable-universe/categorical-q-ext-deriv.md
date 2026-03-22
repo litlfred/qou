@@ -1,8 +1,8 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-connection $\nabla$ ([Definition](#def:categorical-connection)),
-substrate parameter $q$ ([Definition](#def:substrate-parameter)),
+connection $\nabla$ ([categorical connection](#def:categorical-connection)),
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 and weight decomposition $\pi_H, \pi_V$
-([Definition](#def:weight-decomposition)).  The *$q$-deformed
+([weight decomposition](#def:weight-decomposition)).  The *$q$-deformed
 exterior derivative* $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is
 
 $$
@@ -26,4 +26,4 @@ $q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms:
 
 The *$q$-adjoint* $\delta_q \colon \Omega^{k+1}(A) \to \Omega^k(A)$
 is the adjoint of $d_q$ with respect to the dagger structure
-([Definition](#def:positive-definite-dagger)).
+([positive definite dagger](#def:positive-definite-dagger)).

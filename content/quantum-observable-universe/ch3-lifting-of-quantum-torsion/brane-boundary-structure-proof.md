@@ -1,6 +1,6 @@
 
 *(1).* The descent map $\mathfrak{d}_{n+1}$ is a surjective
-$*$-homomorphism of fibre algebras ([Lemma](#lem:descent)).  Its kernel at a
+$*$-homomorphism of fibre algebras ([descent](#lem:descent)).  Its kernel at a
 generic point is zero because the ascent $\ell_n$ embeds $A$ as a direct
 summand of $J^1(A)$ and the restriction $r_n$ is the left-inverse of this
 embedding.  The kernel becomes non-trivial only where the direct-summand
@@ -20,15 +20,15 @@ $\mathbb{P}^1(\mathbb{C}) \cong S^2$.  This is the exceptional divisor introduce
 by the topological blow-up that resolves the singularity at $p$.
 
 *(3).* The descent involution $\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$
-([Definition](#def:descent-involution)), acting on sections of
+([descent involution](#def:descent-involution)), acting on sections of
 $J^1 E_{n+1}$, restricts to the boundary locus $\partial E_n$ as follows.
 Since $\partial E_n$ is defined by $\ker(\mathfrak{d}_{n+1}|_p) \neq 0$,
 and $\tau_n$ projects onto the image of $\ell_n$, the restriction
 $\tau_n|_{\partial E_n}$ acts as an involution whose fixed points are
 the sections at boundary points that are entirely in the descended
 subalgebra---precisely the monodromy fixed-point condition that
-defines the quantum characteristic classes
-([Definition](#def:quantum-characteristic-classes)).
+defines the
+([quantum characteristic classes](#def:quantum-characteristic-classes)).
 
 *(4).* At $n = 1$ the base manifold is $M$ and the total space
 $E_1$ fibres over $M$ with fibre $\mathrm{SU}(2)/\mathrm{U}(1) \cong S^2$.
@@ -39,4 +39,4 @@ fibre (chiral) coordinates.  The Reeb vector field $\xi$ is vertical, so
 its reversal $\xi \mapsto -\xi$ exchanges the two sides of $\partial E_1$:
 one side carries left-handed fermions (positive Reeb eigenspace), the other
 right-handed (negative eigenspace), in agreement with
-[Remark](#rem:descartes-chirality).
+[Descartes chirality](#rem:descartes-chirality).

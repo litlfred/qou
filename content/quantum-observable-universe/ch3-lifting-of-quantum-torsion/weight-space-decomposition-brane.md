@@ -17,10 +17,10 @@ values in the off-diagonal generators $E_\pm$ of $\mathfrak{su}(2)$ and have
 the geometric form $\omega^\pm \otimes E_\pm$.  They describe the entangling
 flows that twist the $\mathbb{P}^1(\mathbb{C})$ fibre as one moves along the brane.
 These modes are responsible for the non-commutativity in the
-$\mathrm{SU}_q(2)$ algebra ([Definition](#def:direct-limit-algebra)).
+$\mathrm{SU}_q(2)$ algebra ([direct limit algebra](#def:direct-limit-algebra)).
 
 In the $1$-jet bundle $J^1 E_n$
-([Remark](#rem:j1e-local-states)), each basis element $\alpha$ is a pair
+([$J^1E$ local states](#rem:j1e-local-states)), each basis element $\alpha$ is a pair
 consisting of a *value* (the direction of the $\mathrm{SU}(2)$ flow in
 the fibre) and a *momentum* (the gradient of that flow relative to the
 complex structure of the brane).

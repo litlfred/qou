@@ -2,9 +2,9 @@ As $r\to 0$ the spectral resolvents converge toward the
 *primordial vortex*:
 
 - The quantum Planck constant
-  $\hbar_q\to 1$ ([Definition](#def:quantum-planck-constant)).
+  $\hbar_q\to 1$ ([quantum planck constant](#def:quantum-planck-constant)).
 - The $q$-torsion leaves
-  ([Definition](#def:q-torsion-leaf)) collapse to the zero-dimensional
+  ([$q$-torsion leaf](#def:q-torsion-leaf)) collapse to the zero-dimensional
   stratum $M_0=\{\pm 1\}$.
 - The $\omega_0$ coordinate, although identically zero in the
   balanced state, formally blows up in the jet prolongation, representing

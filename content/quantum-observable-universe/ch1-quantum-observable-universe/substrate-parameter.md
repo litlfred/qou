@@ -1,5 +1,5 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a ring $R$
-([Definition](#def:quantum-universe)).  Let
+([quantum universe](#def:quantum-universe)).  Let
 $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ denote the
 *Lusztig integral form* \cite{lusztig1993}: the
 $\mathbb{Z}[q,q^{-1}]$-subalgebra of $\mathcal{U}_q(\mathfrak{su}(2))$
@@ -17,6 +17,6 @@ $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))
   \otimes_{\mathbb{Z}[q,q^{-1}]} k$
 is the quantised enveloping algebra at the specialised value $q_0$.
 When the quantum universe is fibred over a space $M$ (as in the
-archimedean realisation, [Example](#def:c-quantum-universe)), $q_0$
+archimedean realisation, [$\mathbb{C}$-quantum universe](#def:c-quantum-universe)), $q_0$
 may vary from point to point, yielding a *substrate field*
 $q \colon M \to k^{\times}$.

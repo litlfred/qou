@@ -1,4 +1,4 @@
-[Example](#def:c-quantum-universe) requires only Levi non-degeneracy
+[$\mathbb{C}$-quantum universe](#def:c-quantum-universe) requires only Levi non-degeneracy
 (not strict pseudoconvexity). This generality is deliberate: the QOU
 framework applies whenever the following three cohomological/obstruction
 conditions hold.
@@ -9,7 +9,7 @@ conditions hold.
    finite-dimensional cohomology
    $H^{0,k}_{\bar\partial_b}(M)$ for all $k$. This replaces
    strict pseudoconvexity in ensuring analytic control over
-   $q$-harmonic forms ([Definition](#def:q-harmonic-form)).
+   $q$-harmonic forms ([$q$-harmonic form](#def:q-harmonic-form)).
    In the strictly pseudoconvex case, Kohn's sub-elliptic
    estimates guarantee this automatically; for indefinite
    Levi signature, one imposes it as a hypothesis.
@@ -17,14 +17,14 @@ conditions hold.
    The Levi form $L_\theta$ is non-degenerate (but not necessarily
    positive definite), so the substrate parameter
    $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert$
-   ([Remark](#rem:c-substrate-via-levi)) is well-defined and
+   ([$\mathbb{C}$-substrate via Levi form](#rem:c-substrate-via-levi)) is well-defined and
    the regime $q > 1$ is attainable. When the Levi form has
    indefinite signature $(r,s)$ with $r,s \geq 1$, the Webster
    metric $g_\theta$ is pseudo-Riemannian; the contraction
    $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
    the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
    one takes the absolute value to ensure $q \geq 1$.
-3. *QOU vanishing ([Example](#def:c-quantum-observable-universe)).*
+3. *QOU vanishing ([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)).*
    The conditions $H^0(M, \mathrm{Ad}(P)) = 0$ and
    $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
    These are purely topological/cohomological and independent of the

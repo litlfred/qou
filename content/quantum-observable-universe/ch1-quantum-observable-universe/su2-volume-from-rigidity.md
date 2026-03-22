@@ -1,8 +1,8 @@
-Continuing [Example](#ex:qou-su2), take $V = V_{1/2} \cong \mathbb{C}^2$.
+Continuing [QOU on SU(2)](#ex:qou-su2), take $V = V_{1/2} \cong \mathbb{C}^2$.
 The symplectic form is
 $\phi = \begin{psmallmatrix} 0 & 1 \\ -1 & 0 \end{psmallmatrix}$,
 identifying $V \cong V^{\vee}$ with $\phi^{\vee} = -\phi$ (alternating).
-[Lemma](#lem:volume-from-rigidity) then gives:
+[volume from rigidity](#lem:volume-from-rigidity) then gives:
 
 - The evaluation pairing becomes
   $B(v, w) = v_1 w_2 - v_2 w_1$ (the determinant).

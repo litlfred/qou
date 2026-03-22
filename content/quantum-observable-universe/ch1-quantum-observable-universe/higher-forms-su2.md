@@ -1,4 +1,4 @@
-Continuing [Example](#ex:quantum-universe-su2), the left-invariant
+Continuing [quantum universe on SU(2)](#ex:quantum-universe-su2), the left-invariant
 calculus on $A = \mathcal{O}(\mathrm{SU}(2))$ has
 $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$
 (three left-invariant $1$-forms, dual to the Lie algebra

@@ -1,4 +1,4 @@
-The descent involution $\tau_n$ ([Definition](#def:descent-involution))
+The descent involution $\tau_n$ ([descent involution](#def:descent-involution))
 decomposes the level-$(n{+}1)$ endomorphism algebra into a direct sum
 $$
   \mathrm{End}_{\mathcal{C}}(A_{n+1})
@@ -8,8 +8,8 @@ $$
 where $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$ is the
 descended subalgebra (endomorphisms that factor through level $n$) and
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$ is the *transient
-complement* (genuinely new endomorphisms at level $n{+}1$).  The algebraic filter
-([Remark](#rem:algebraic-filter)) refines this decomposition:
+complement* (genuinely new endomorphisms at level $n{+}1$).  The
+([algebraic filter](#rem:algebraic-filter)) refines this decomposition:
 
 1. The bosonic (longitudinal) modes lifted from level $n$ lie entirely in
    $\mathcal{A}_{n+1}^{\mathrm{desc}}$: they commute with the curvature

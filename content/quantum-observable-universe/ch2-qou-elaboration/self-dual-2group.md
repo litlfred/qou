@@ -61,7 +61,7 @@ The fake-flatness condition $F_A = B$ combined with the simplicity
 constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
 This is precisely the instanton equation
 $F_A|_H = {*_H}\,F_A|_H$
-of [Definition](#def:instanton). Thus, the self-dual formulation
+of [instanton](#def:instanton). Thus, the self-dual formulation
 used throughout this paper is a special case of $2$-group gauge theory
 for $\mathrm{INN}(\mathrm{SU}(2))$ subject to a simplicity constraint
 on the $2$-form datum.

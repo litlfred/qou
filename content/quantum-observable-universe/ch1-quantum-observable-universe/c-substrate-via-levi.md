@@ -1,12 +1,11 @@
 Let $A$ be an instanton connection on $P$
-([Example](#def:instanton)), $F_A^+$ its self-dual curvature
-([Example](#prop:self-dual-curvature)), and
+([instanton](#def:instanton)), $F_A^+$ its self-dual curvature
+([self-dual curvature](#prop:self-dual-curvature)), and
 $L_\theta(V, W) = -i\,d\theta(V, \bar{W})$ the Levi form.  Since
 $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the $4$-dimensional
 distribution $H$, the Webster metric and Killing form yield a natural
 contraction $\langle L_\theta, F_A^+\rangle_p \in \mathbb{R}$.  The
-substrate parameter
-([Definition](#def:substrate-parameter)) specialises to the smooth
+([substrate parameter](#def:substrate-parameter)) specialises to the smooth
 field
 
 $$

@@ -1,13 +1,13 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
 substrate parameter $q$, and let
-$p \colon \mathbf{1} \to A$ be a categorical point
-([Definition](#def:categorical-point)).  Let
-$\alpha$ be a fermion ([Definition](#def:fermion)) with germ
+$p \colon \mathbf{1} \to A$ be a
+([categorical point](#def:categorical-point)).  Let
+$\alpha$ be a ([fermion](#def:fermion)) with germ
 $\alpha_p \in A / \mathfrak{m}_p^2$.
 Consider two independent observations at $p$,
 $\mathcal{O}_{1,p},\, \mathcal{O}_{2,p} \colon
 A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$
-([Definition](#def:observation)).  These data
+([observation](#def:observation)).  These data
 assemble into a *parallelogram of observations at $p$*:
 
 ```tex
@@ -32,7 +32,7 @@ $$
 $$
 
 Each observation perturbs the substrate parameter at $p$ by
-$\delta q_i(p)$ ([Definition](#def:observation), condition (2)),
+$\delta q_i(p)$ ([observation](#def:observation), condition (2)),
 inducing shifted parameters $q_1'(p) = q(p) + \delta q_1(p)$
 and $q_2'(p) = q(p) + \delta q_2(p)$.  The commutator
 $[q_1'(p),\, q_2'(p)]$ measures the obstruction:
@@ -55,6 +55,6 @@ object in $\mathcal{C}$, not a topological ring).  Working with germs
 $A / \mathfrak{m}_p^2$ at a point $p$ plays the role of localisation:
 it captures the first-order jet of the observation without requiring a
 topology on $A$.  In the archimedean realisation
-([Example](#def:c-quantum-observable-universe)), where
+([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), where
 $A = C^{\infty}(M)$, germs at $p$ recover the usual smooth germs
 $C^{\infty}_p(M) / \mathfrak{m}_p^2$.

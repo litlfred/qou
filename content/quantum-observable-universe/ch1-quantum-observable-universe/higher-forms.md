@@ -1,5 +1,5 @@
 Let $(\mathcal{C}, A, \omega)$ be a quantum universe with differential
-calculus $\Omega^1(A)$ ([Definition](#def:quantum-universe)). The
+calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). The
 *higher differential forms* are the graded $A$-bimodule
 
 $$

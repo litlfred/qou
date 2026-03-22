@@ -2,9 +2,9 @@
   ([Chapter](#chap:qou)) in the language of monoidal categories
   and functors.
 - Key theorems to establish in the categorical setting:
-  - Lifting ([Proposition](#prop:jet-prolongation)) as a
+  - Lifting ([jet prolongation](#prop:jet-prolongation)) as a
     categorical lift/extension
-    ([Remark](#rem:prolongation-categorical)).
+    ([prolongation (categorical)](#rem:prolongation-categorical)).
   - Descent ([Subsection](#ssec:descent)) via fibred categories.
   - Obstructions described in terms of cohomology of the category
     (sheaf cohomology, derived functors).

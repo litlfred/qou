@@ -1,6 +1,6 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe
-([Definition](#def:quantum-universe)) with connection $\nabla$
-([Definition](#def:categorical-connection)). The *jet
+Let $(\mathcal{C}, A, \omega)$ be a
+([quantum universe](#def:quantum-universe)) with connection $\nabla$
+([categorical connection](#def:categorical-connection)). The *jet
 object* is
 $$
   J^1(A) := A \otimes_{\mathcal{C}} \Omega^1(A),

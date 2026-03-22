@@ -7,6 +7,6 @@ $$
   c_{n,i}\,\alpha_{n,i}\,,
 $$
 where $c_{n,i} \in \mathbb{C}$ and $\{\alpha_{n,i}\}$ is the $q$-harmonic
-basis of [Remark](#rem:q-harmonic-basis-brane).  This turns the gauge field
+basis of [$q$-harmonic basis on branes](#rem:q-harmonic-basis-brane).  This turns the gauge field
 into a harmonic expansion across the infinite jet space $J^\infty E$
-([Remark](#rem:jet-shell)).
+([jet shell](#rem:jet-shell)).
