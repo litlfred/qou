@@ -1937,7 +1937,10 @@ if (mode === "stdio") {
   });
 
   log('init', `MCP server started (stdio, repo: ${REPO_ROOT})`);
-  log('init', `Viewer: http://localhost:${viewerPort}/viewer/`);
+  const branch = currentBranch();
+  const branchSuffix = branch && branch !== 'main' && branch !== 'master'
+    ? `#/@${encodeURIComponent(branch)}` : '';
+  log('init', `Viewer: http://localhost:${viewerPort}/viewer/${branchSuffix}`);
 } else {
   // HTTP mode — MCP + viewer on same port
   const port = parseInt(process.env.MCP_PORT || "8080", 10);
@@ -1986,5 +1989,8 @@ if (mode === "stdio") {
 
   console.error(`[qou-mcp] Assistant started (HTTP :${port}, repo: ${REPO_ROOT})`);
   console.error(`[qou-mcp] MCP: http://localhost:${port}/mcp`);
-  console.error(`[qou-mcp] Viewer: http://localhost:${port}/viewer/`);
+  const brH = currentBranch();
+  const brSuffix = brH && brH !== 'main' && brH !== 'master'
+    ? `#/@${encodeURIComponent(brH)}` : '';
+  console.error(`[qou-mcp] Viewer: http://localhost:${port}/viewer/${brSuffix}`);
 }
