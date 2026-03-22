@@ -642,8 +642,9 @@
     .claude-fab.open{background:var(--fg-d);transform:rotate(45deg)}
     .claude-fab .fab-badge{position:absolute;top:-2px;right:-2px;width:10px;height:10px;border-radius:50%;background:var(--grn);border:2px solid var(--bg-s)}
 
-    .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head)}
+    .chat-panel{position:fixed;bottom:5rem;right:1.5rem;width:380px;max-height:min(70vh,560px);background:var(--bg-s);border:1px solid var(--brd);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:199;display:none;flex-direction:column;overflow:hidden;font-family:var(--f-head);transition:all .2s var(--ease)}
     .chat-panel.open{display:flex}
+    .chat-panel.expanded{top:35px;left:0;right:0;bottom:0;width:auto;max-height:none;border-radius:0;box-shadow:none}
     @media(max-width:500px){.chat-panel{left:1rem;right:1rem;width:auto;bottom:4.5rem;max-height:60vh}}
 
     .chat-head{display:flex;align-items:center;padding:.6rem .8rem;border-bottom:1px solid var(--brd);gap:.5rem;flex-shrink:0}
@@ -845,6 +846,7 @@
     <div class="chat-head">
       <span class="chat-title">Folio</span>
       <span class="chat-mode" id="chat-mode">reader</span>
+      <button id="chat-expand" title="Expand/collapse">⛶</button>
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
@@ -1222,8 +1224,15 @@
       while (i < lines.length) {
         const l = lines[i];
         // Flush accumulated paragraph text before any block-level element
-        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l);
+        const isBlock = l.trimStart().startsWith('```') || l.trimStart().startsWith('$$') || /^\s*[-*]\s/.test(l) || /^\s*\d+\.\s/.test(l) || /^#{1,6}\s/.test(l);
         if (isBlock && para.length) { o.push(inl(para.join(' '))); para = []; }
+        // Headers
+        const hMatch = l.match(/^(#{1,6})\s+(.+)/);
+        if (hMatch) {
+          const level = Math.min(hMatch[1].length + 2, 6); // offset so # → h3, ## → h4
+          o.push(`</p><h${level}>${inl(hMatch[2])}</h${level}><p>`);
+          i++; continue;
+        }
         if (l.trimStart().startsWith('```tex')) {
           i++;
           const t = [];
@@ -4031,21 +4040,14 @@
 
     function addChatMessage(role, content) {
       const div = mk('div', `chat-msg ${role}`);
-      // Basic markdown rendering for assistant messages
-      if (role === 'assistant' || role === 'system') {
-        let html = esc(content);
-        // Inline math
-        html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
-        // Bold
-        html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        // Italic
-        html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
-        // Code
-        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-        // Cross-refs to blocks
-        html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
-          '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
-        div.innerHTML = html;
+      if (role === 'assistant') {
+        const {html: renderedHtml, texBlocks: tx} = parseMd(content);
+        div.innerHTML = renderedHtml;
+        fillTex(div, tx);
+        renderMath(div);
+        resolveRefs(div);
+      } else if (role === 'system') {
+        div.innerHTML = inl(content);
         renderMath(div);
       } else {
         div.textContent = content;
@@ -4135,18 +4137,12 @@
               if (parsed.text) {
                 if (!firstChunkReceived) { firstChunkReceived = true; clearTimeout(lookupTimer); }
                 fullResponse += parsed.text;
-                // Re-render with formatting
-                let html = esc(fullResponse);
-                html = html.replace(/\$([^$]+)\$/g, '<span data-mi>$1</span>');
-                html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-                html = html.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>');
-                html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-                html = html.replace(/\b(def|thm|lem|prop|cor|rem|ex):([a-z0-9-]+)/g,
-                  '<a href="#$1:$2" style="color:var(--ac)">$1:$2</a>');
-                // Paragraphs
-                html = html.replace(/\n\n/g, '</p><p>');
-                assistDiv.innerHTML = '<p>' + html + '</p>';
+                // Render with full markdown pipeline
+                const {html: renderedHtml, texBlocks: tx} = parseMd(fullResponse);
+                assistDiv.innerHTML = renderedHtml;
+                fillTex(assistDiv, tx);
                 renderMath(assistDiv);
+                resolveRefs(assistDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
               }
               if (parsed.error) {
@@ -4314,10 +4310,15 @@
       }
     };
 
+    // Expand/collapse button
+    document.getElementById('chat-expand').onclick = () => {
+      chatPanel.classList.toggle('expanded');
+    };
+
     // Close button
     document.getElementById('chat-close').onclick = () => {
       chatOpen = false;
-      chatPanel.classList.remove('open');
+      chatPanel.classList.remove('open', 'expanded');
       chatFab.classList.remove('open');
     };
 
