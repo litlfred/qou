@@ -52,6 +52,17 @@
     .ctrl button.on{color:var(--ac);border-color:var(--ac)}
     .ctrl .sp{flex:1}
     .ctrl select{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.6rem;padding:.15rem .3rem;border-radius:3px;max-width:160px}
+    /* Searchable branch picker */
+    .br-picker{position:relative;display:inline-block}
+    .br-picker input{background:var(--bg-r);border:1px solid var(--brd);color:var(--fg);font-family:var(--f-mono);font-size:.6rem;padding:.15rem .4rem;border-radius:3px;width:150px;outline:none}
+    .br-picker input:focus{border-color:var(--ac)}
+    .br-picker input::placeholder{color:var(--fg-d)}
+    .br-drop{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-s);border:1px solid var(--brd);border-top:none;border-radius:0 0 4px 4px;max-height:200px;overflow-y:auto;z-index:110;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    .br-drop.open{display:block}
+    .br-opt{padding:.25rem .5rem;font-family:var(--f-mono);font-size:.58rem;color:var(--fg-d);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .br-opt:hover,.br-opt.active{background:var(--bg-r);color:var(--fg)}
+    .br-opt.current{font-weight:600;color:var(--ac)}
+    .br-opt .br-head{font-size:.45rem;color:var(--fg-d);margin-left:.3rem}
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
@@ -116,6 +127,19 @@
     .blk-stub.proof .stub-kind{color:var(--fg-d);font-style:italic}
 
     /* Lean source code block */
+    /* Block header proof/lean indicators */
+    .bh-indicators{display:inline-flex;align-items:center;gap:.4rem;margin-left:.5rem;font-family:var(--f-mono);font-size:.65rem}
+    .bh-ind{display:inline-flex;align-items:center;gap:.2rem;cursor:pointer;padding:.1rem .3rem;border-radius:3px;transition:background .15s}
+    .bh-ind:hover{background:var(--bg-r)}
+    .bh-ind .ind-sym{font-size:.8rem}
+    .bh-ind .ind-badge{font-size:.5rem;padding:.05rem .25rem;border-radius:3px;line-height:1.3;font-weight:500}
+    .bh-ind .ind-badge.ok{background:var(--grn);color:#fff}
+    .bh-ind .ind-badge.warn{background:var(--yel);color:#fff}
+    .bh-ind .ind-badge.err{background:var(--red);color:#fff}
+    .bh-ind .ind-badge.miss{background:var(--bg-r);color:var(--fg-d);border:1px solid var(--brd)}
+    .bh-ind .ind-badge.stub{background:var(--ora);color:#fff}
+    .bh-ind .ind-label{font-size:.5rem;color:var(--fg-d)}
+
     .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
     .lean-src-hdr{display:flex;align-items:center;justify-content:space-between;padding:.25rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d)}
     .lean-src pre{margin:0;padding:.6rem .8rem;font-family:var(--f-mono);font-size:.75rem;line-height:1.5;overflow-x:auto;background:var(--bg-c)!important}
@@ -535,7 +559,10 @@
 <body data-font="web">
   <div class="ctrl">
     <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
-    <select id="c-br" title="Switch branch"></select>
+    <div class="br-picker" id="br-picker">
+      <input id="br-input" type="text" placeholder="branch..." autocomplete="off">
+      <div class="br-drop" id="br-drop"></div>
+    </div>
     <span class="sp"></span>
     <button id="c-ex" title="Show/hide examples">examples</button>
     <button id="c-rm" title="Show/hide remarks">remarks</button>
@@ -730,8 +757,12 @@
       localStorage.setItem('qou-reading', readingMode ? '1' : '0');
     });
 
-    // ── Branch switcher ─────────────────────────────────
-    const branchSelect = document.getElementById('c-br');
+    // ── Branch switcher (searchable) ─────────────────────
+    const brInput = document.getElementById('br-input');
+    const brDrop = document.getElementById('br-drop');
+    let allBranches = [];
+    let brActiveIdx = -1;
+
     async function loadBranches() {
       try {
         const r = await fetch('/api/branches');
@@ -739,19 +770,75 @@
         const data = await r.json();
         currentBranchName = data.current;
         if (!selectedBranch) selectedBranch = currentBranchName;
-        branchSelect.innerHTML = '';
-        for (const b of (data.branches || [])) {
-          const opt = document.createElement('option');
-          opt.value = b;
-          opt.textContent = b === currentBranchName ? `${b} (HEAD)` : b;
-          if (b === selectedBranch) opt.selected = true;
-          branchSelect.appendChild(opt);
-        }
+        allBranches = data.branches || [];
+        brInput.value = selectedBranch;
+        brInput.title = selectedBranch === currentBranchName ? `${selectedBranch} (HEAD)` : selectedBranch;
       } catch { /* /api/branches not available */ }
     }
-    branchSelect.onchange = async () => {
-      const target = branchSelect.value;
-      if (target === selectedBranch) return;
+
+    function renderBranchDropdown(filter) {
+      brDrop.innerHTML = '';
+      brActiveIdx = -1;
+      const q = (filter || '').toLowerCase();
+      const matches = allBranches.filter(b => !q || b.toLowerCase().includes(q));
+      if (!matches.length) {
+        const empty = mk('div','br-opt');
+        empty.textContent = 'no matches';
+        empty.style.fontStyle = 'italic';
+        brDrop.appendChild(empty);
+        return;
+      }
+      matches.forEach((b, i) => {
+        const opt = mk('div','br-opt');
+        if (b === currentBranchName) opt.classList.add('current');
+        if (b === selectedBranch) opt.classList.add('active');
+        opt.textContent = b;
+        if (b === currentBranchName) {
+          const head = mk('span','br-head');
+          head.textContent = 'HEAD';
+          opt.appendChild(head);
+        }
+        opt.onclick = () => switchBranch(b);
+        brDrop.appendChild(opt);
+      });
+    }
+
+    brInput.addEventListener('focus', () => {
+      brInput.select();
+      renderBranchDropdown(brInput.value !== selectedBranch ? brInput.value : '');
+      brDrop.classList.add('open');
+    });
+    brInput.addEventListener('input', () => {
+      renderBranchDropdown(brInput.value);
+      brDrop.classList.add('open');
+    });
+    brInput.addEventListener('keydown', (e) => {
+      const opts = brDrop.querySelectorAll('.br-opt:not([style*="italic"])');
+      if (e.key === 'ArrowDown') { e.preventDefault(); brActiveIdx = Math.min(brActiveIdx + 1, opts.length - 1); highlightBrOpt(opts); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); brActiveIdx = Math.max(brActiveIdx - 1, 0); highlightBrOpt(opts); }
+      else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (brActiveIdx >= 0 && opts[brActiveIdx]) {
+          opts[brActiveIdx].click();
+        } else {
+          // If typed text matches exactly, switch
+          const exact = allBranches.find(b => b === brInput.value);
+          if (exact) switchBranch(exact);
+        }
+      }
+      else if (e.key === 'Escape') { brDrop.classList.remove('open'); brInput.value = selectedBranch; brInput.blur(); }
+    });
+    function highlightBrOpt(opts) {
+      opts.forEach((o, i) => o.classList.toggle('active', i === brActiveIdx));
+      if (opts[brActiveIdx]) opts[brActiveIdx].scrollIntoView({block:'nearest'});
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.br-picker')) { brDrop.classList.remove('open'); brInput.value = selectedBranch; }
+    });
+
+    async function switchBranch(target) {
+      brDrop.classList.remove('open');
+      if (target === selectedBranch) { brInput.value = selectedBranch; return; }
 
       // Check if working tree is dirty before switching
       try {
@@ -768,13 +855,13 @@
             'stash'
           );
           if (!choice || choice.toLowerCase() === 'cancel') {
-            branchSelect.value = selectedBranch;
+            brInput.value = selectedBranch;
             return;
           }
           const action = choice.toLowerCase().trim();
           if (!['commit', 'stash', 'discard'].includes(action)) {
             alert('Unknown action. Staying on current branch.');
-            branchSelect.value = selectedBranch;
+            brInput.value = selectedBranch;
             return;
           }
           const coRes = await fetch('/api/git/checkout', {
@@ -785,11 +872,10 @@
           const coData = await coRes.json();
           if (!coRes.ok) {
             alert('Branch switch failed: ' + (coData.error || 'unknown'));
-            branchSelect.value = selectedBranch;
+            brInput.value = selectedBranch;
             return;
           }
         } else {
-          // Clean — just switch
           const coRes = await fetch('/api/git/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -798,7 +884,7 @@
           const coData = await coRes.json();
           if (!coRes.ok) {
             alert('Branch switch failed: ' + (coData.error || 'unknown'));
-            branchSelect.value = selectedBranch;
+            brInput.value = selectedBranch;
             return;
           }
         }
@@ -808,11 +894,12 @@
 
       selectedBranch = target;
       currentBranchName = target;
+      brInput.value = target;
       paper = null;
       bix.clear();
       await loadBranches();
       route();
-    };
+    }
     loadBranches();
 
     function branchParam() {
@@ -1296,29 +1383,110 @@
       if (block.label) d.id = block.label;
 
       const hdr = mkBlockHeader(block.kind, block.title, block.label);
-      // Lean icon — only for definitions (provable blocks get lean via proof blocks)
+      const isProvable = ['theorem','proposition','lemma','corollary'].includes(block.kind);
+
+      // ── Indicators row (lean ∀ + proof ∎) for provable and definition blocks ──
       let leanPanel = null;
-      if (block.kind === 'definition' && block.lean) {
-        const v = block.lean.validation || 'not_checked';
-        const icon = leanIcon(v);
-        if (icon) {
-          const badge = mk('span',`lb ${block.status || 'not_started'}`);
-          badge.innerHTML = icon;
-          badge.title = `${block.lean.decl} — click to show Lean source`;
-          badge.style.cursor = 'pointer';
-          badge.onclick = (e) => {
+      const indicators = mk('span','bh-indicators');
+
+      // Lean indicator (∀ symbol + status badge)
+      if (block.lean || isProvable || block.kind === 'definition') {
+        const leanInd = mk('span','bh-ind');
+        const leanSym = mk('span','ind-sym');
+        leanSym.innerHTML = '&#x2200;'; // ∀
+        leanSym.style.color = block.lean ? 'var(--ac)' : 'var(--fg-d)';
+        leanInd.appendChild(leanSym);
+
+        // Status badge
+        const leanBadge = mk('span','ind-badge');
+        if (!block.lean) {
+          leanBadge.className = 'ind-badge miss';
+          leanBadge.textContent = 'none';
+          leanInd.title = 'No Lean formalization';
+        } else {
+          const v = block.lean.validation || 'not_checked';
+          const s = block.status || 'not_started';
+          if (v === 'validated' || v === 'leanok' || s === 'proved' || s === 'mathlib_ok') {
+            leanBadge.className = 'ind-badge ok';
+            leanBadge.textContent = 'proved';
+          } else if (s === 'has_sorry') {
+            leanBadge.className = 'ind-badge warn';
+            leanBadge.textContent = 'sorry';
+          } else if (v === 'error') {
+            leanBadge.className = 'ind-badge err';
+            leanBadge.textContent = 'error';
+          } else if (s === 'stated' || v === 'stub') {
+            leanBadge.className = 'ind-badge stub';
+            leanBadge.textContent = 'stated';
+          } else {
+            leanBadge.className = 'ind-badge miss';
+            leanBadge.textContent = s === 'not_started' ? 'stub' : s;
+          }
+          leanInd.title = `${block.lean.decl} — click to show Lean source`;
+        }
+        leanInd.appendChild(leanBadge);
+
+        // Click to toggle lean source panel
+        if (block.lean?.source) {
+          leanInd.onclick = (e) => {
             e.stopPropagation();
             if (!leanPanel) {
               leanPanel = mkLeanSrc(block);
               if (leanPanel) d.appendChild(leanPanel);
-              else { badge.title = `${block.lean.decl} (no source loaded)`; return; }
             } else {
               leanPanel.style.display = leanPanel.style.display === 'none' ? '' : 'none';
             }
           };
-          hdr._acts.insertBefore(badge, hdr._acts.firstChild);
         }
+        indicators.appendChild(leanInd);
       }
+
+      // Proof indicator (∎ symbol + status badge) for provable blocks
+      if (isProvable) {
+        const prfInd = mk('span','bh-ind');
+        const prfSym = mk('span','ind-sym');
+        prfSym.innerHTML = '&#x220E;'; // ∎
+        const prfBadge = mk('span','ind-badge');
+
+        // Check if block has associated proof blocks
+        const hasProofs = block.proofs?.length > 0;
+        if (hasProofs) {
+          // Check proof block statuses
+          const proofBlocks = block.proofs.map(l => bix.get(l)).filter(Boolean);
+          const allComplete = proofBlocks.length > 0 && proofBlocks.every(p => p.md && p.md.trim().length > 20);
+          const hasLeanProof = proofBlocks.some(p => p.lean?.source);
+          prfSym.style.color = 'var(--yel)';
+          if (allComplete) {
+            prfBadge.className = 'ind-badge ok';
+            prfBadge.textContent = hasLeanProof ? 'written+lean' : 'written';
+          } else {
+            prfBadge.className = 'ind-badge warn';
+            prfBadge.textContent = 'partial';
+          }
+          prfInd.title = `${proofBlocks.length} proof(s) — scroll to proofs toggle`;
+          prfInd.onclick = (e) => {
+            e.stopPropagation();
+            // Click the proofs toggle to open it
+            const toggle = d.querySelector('.prf-toggle');
+            if (toggle && !toggle.classList.contains('open')) toggle.click();
+            else if (toggle) toggle.scrollIntoView({behavior:'smooth',block:'nearest'});
+          };
+        } else {
+          prfSym.style.color = 'var(--fg-d)';
+          prfBadge.className = 'ind-badge miss';
+          prfBadge.textContent = 'none';
+          prfInd.title = 'No written proof';
+        }
+        prfInd.appendChild(prfSym);
+        prfInd.appendChild(prfBadge);
+        indicators.appendChild(prfInd);
+      }
+
+      // Insert indicators into header (after title, before actions)
+      if (indicators.children.length) {
+        hdr.insertBefore(indicators, hdr._acts);
+      }
+
       // Feedback button in header actions
       const fbBtn = mk('button','fb-act');
       fbBtn.textContent = 'feedback';
