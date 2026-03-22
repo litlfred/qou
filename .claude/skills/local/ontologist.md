@@ -1,5 +1,6 @@
 ---
 name: ontologist
+roles: [collaborator, owner]
 description: >
   Semantic Ontologist — scans narrative mathematical text for ambiguous terms,
   generates a formal Glossary.lean registry, and produces mapping.json linking

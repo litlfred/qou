@@ -1,5 +1,6 @@
 ---
 name: todo-review
+roles: [reader, collaborator, owner]
 description: >
   Monitor and triage open feedback todos across all content blocks.
   Surface actionable items at session start and on demand. Uses
