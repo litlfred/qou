@@ -257,6 +257,38 @@ committing. This rule persists across sessions.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.
 
+### "What next?" prompt (after completing a task)
+
+After finishing any task (todo, proof, edit, review), the editor **must**
+offer context-aware next steps via `AskUserQuestion`. The options should
+be derived from the current context — not generic.
+
+**Context sources** (check in order):
+1. **Same block** — are there more open todos for this block?
+2. **Same section** — are there related blocks with open todos or
+   missing proofs in the same section?
+3. **Same chapter** — other pending work in this chapter?
+4. **Global** — high-priority items elsewhere?
+
+**Template** (adapt labels to actual content):
+
+```
+"What would you like to do next?"
+  - "Next todo on <block>"        (if more todos exist for this block)
+  - "Next in §<section>"          (if related work in same section)
+  - "Other Ch <N> todos"          (if more chapter work exists)
+  - "Something else"              (user picks freely)
+```
+
+**Rules:**
+- Always include at least one contextual option (not just "something else").
+- If the just-completed task was a todo, show the next-highest-priority
+  todo in the same scope as the first option.
+- If all todos in scope are done, congratulate briefly and offer to
+  move to the next chapter or switch to a different kind of work
+  (proofs, glossary, validation).
+- Keep it to 3–4 options. Don't overwhelm.
+
 ## Todo workflow
 
 When the user asks to "work on todos" or "process feedback":

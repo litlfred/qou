@@ -121,6 +121,24 @@ For each selected todo:
 5. **Execute the fix** (or explain why it can't be done now)
 6. **Update todo status** to `in_progress` (agents may do this)
 7. **Report outcome** — what was changed, what remains
+8. **Offer "what next?"** — context-aware follow-up (see below)
+
+### Step 5 — "What next?" (after each todo)
+
+After completing a todo, immediately offer context-aware next steps
+via `AskUserQuestion`. Options are derived from the current scope:
+
+1. **More todos on this block?** → "Next todo on `<block>`"
+2. **Related blocks in same section?** → "Next in §`<section>`"
+3. **More todos in this chapter?** → "Other Ch `<N>` todos"
+4. **Always include** → "Something else"
+
+Keep to 3–4 options. If all todos in the current scope are done,
+congratulate briefly and offer to move to the next chapter or switch
+to a different kind of work (proofs, glossary, validation).
+
+This ensures the user stays in flow without having to re-navigate
+the todo landscape after each item.
 
 ## Seeding Todos
 
