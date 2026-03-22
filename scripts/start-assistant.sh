@@ -53,9 +53,13 @@ if $DO_INSTALL; then
   bash "$MCP_DIR/install.sh"
 fi
 
-# ── Ensure MCP server node_modules exist ─────────────────────────
+# ── Ensure MCP server node_modules are up to date ────────────────
+# Re-run bun install if node_modules is missing OR package.json is
+# newer than the lockfile (i.e. a dependency was added/changed).
 
-if [ ! -d "$MCP_DIR/node_modules" ]; then
+if [ ! -d "$MCP_DIR/node_modules" ] \
+  || [ "$MCP_DIR/package.json" -nt "$MCP_DIR/bun.lock" ] 2>/dev/null \
+  || [ ! -f "$MCP_DIR/bun.lock" ]; then
   echo "[start-assistant] Installing MCP server dependencies..." >&2
   cd "$MCP_DIR" && bun install 2>&1 >&2
 fi
