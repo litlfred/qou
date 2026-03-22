@@ -248,10 +248,14 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
               const leanPath = join(LEAN_DIR, blk.lean.file);
               if (existsSync(leanPath)) leanSource = readFileSync(leanPath, "utf-8");
             }
-            // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo.lean, QOU/Foo/Bar.lean, etc.
+            // Try content sibling .lean file (e.g. content/.../categorical-action.lean)
+            if (!leanSource) {
+              const siblingLean = join(chDir, `${rootName}.lean`);
+              if (existsSync(siblingLean)) leanSource = readFileSync(siblingLean, "utf-8");
+            }
+            // Auto-resolve from decl name: QOU.Foo.Bar → QOU/Foo/Bar.lean, QOU/Foo.lean
             if (!leanSource && blk.lean.decl) {
               const parts = blk.lean.decl.split(".");
-              // Try progressively: QOU/Foo/Bar.lean, QOU/Foo.lean, QOU.lean
               for (let i = parts.length; i >= 2; i--) {
                 const candidate = join(LEAN_DIR, parts.slice(0, i).join("/") + ".lean");
                 if (existsSync(candidate)) {
@@ -259,6 +263,17 @@ async function resolvePaper(id: string): Promise<ResolvedPaper | null> {
                   break;
                 }
               }
+            }
+            // Fallback: grep lean/QOU/ for the declaration name
+            if (!leanSource && blk.lean.decl) {
+              const declName = blk.lean.decl.split(".").pop() || "";
+              try {
+                const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
+                const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+                if (files.length > 0 && existsSync(files[0])) {
+                  leanSource = readFileSync(files[0], "utf-8");
+                }
+              } catch { /* grep not available or no match */ }
             }
           }
 

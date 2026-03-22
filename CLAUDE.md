@@ -33,6 +33,7 @@ When a user request arrives, route to the right skill(s):
 | "validate content objects" | `local/content-validation` |
 | "build content → LaTeX" | `local/content-validation` |
 | "add / edit content block" | `local/content-validation` + relevant skill |
+| "review / audit blocks" | `local/content-block-review` |
 | "test / unit test / coverage" | `local/test-engineer` |
 
 **Decision tree**: (1) Does it touch content objects (`.ts` + `.md`)? →
@@ -50,6 +51,93 @@ including the detailed decision tree and Lean-specific routing table.
 Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
+
+## Writing `.lean` proofs — rules for agents
+
+These rules apply whenever an agent creates or modifies a `.lean` file.
+Agents **must** follow all of them; violations will be caught by the
+`content-block-review` skill.
+
+### 1. Every `sorry` requires a bibliographic citation
+
+```lean
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+sorry
+```
+
+- The `[key]` must match an entry in `references.bib` exactly (case-sensitive).
+- If no published reference exists, use `[manuscript]` and cite chapter/section.
+- A `sorry` without `-- Ref:` is always a review failure.
+
+### 2. Naming convention: LaTeX label → Lean declaration
+
+| LaTeX label | Lean declaration | Rule |
+|---|---|---|
+| `thm:lifting-exists` | `QOU.Torsion.lifting_exists` | Hyphens → underscores |
+| `def:quantum-connection` | `QOU.QuantumObservableUniverse.quantum_connection` | Namespace = chapter module |
+| `def:categorical-instanton` | `CategoricalInstanton` | Type-level structures use CamelCase |
+| `prop:categorical-dq-squared` | `categorical_dq_squared` | Theorems/lemmas use snake_case |
+
+All declarations live under the `QOU` root namespace.
+
+### 3. Block kind determines Lean requirements
+
+| Block kind | `.lean` file required? |
+|---|---|
+| `definition` | **Yes** — enforced; will not build without it |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
+| `conjecture`, `example`, `remark` | Optional |
+| `prose`, `equation`, `diagram` | N/A |
+
+### 4. Status field must reflect reality
+
+| `status` value | Meaning |
+|---|---|
+| `not_started` | No Lean file yet |
+| `stated` | Lean statement exists, body is `sorry` |
+| `has_sorry` | Partial proof with some `sorry` |
+| `proved` | Complete proof, no `sorry` |
+| `mathlib_ok` | Validated and sorry-free |
+
+Agents must update the `.ts` manifest `status` whenever they change the
+`.lean` file.
+
+### 5. Tactic strategy (try in order)
+
+| Goal pattern | Try first | Then try |
+|---|---|---|
+| Algebraic identity (`x = y`) | `ring` | `field_simp; ring` |
+| Non-negativity (`0 ≤ x`) | `positivity` | `linarith` |
+| Numeric (`x < y`) | `norm_num` | `linarith` |
+| Definitional equality | `rfl` | `unfold …; rfl` |
+| Diagram / naturality | `aesop_cat` | `slice_lhs`, `slice_rhs` |
+| Anything else | `simp` | `aesop` |
+
+### 6. Use MCP tools, not shell commands
+
+| Task | Use this | Not this |
+|---|---|---|
+| Check errors | `lean_diagnostic_messages` | `lake build` + parse |
+| Read goal state | `lean_goal` | Python scripts |
+| Search Mathlib | `lean_leansearch` / `lean_loogle` | grep Mathlib source |
+| Try tactics | `lean_multi_attempt` | edit-build-repeat |
+| Axiom audit | `lean_verify` | manual inspection |
+
+### 7. Category theory conventions
+
+- Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
+- Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
+  `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
+- Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
+- Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
+
+### 8. File hygiene
+
+- Never commit `.lake/`, `lake-packages/`, or `build/`.
+- Pin external dependencies to commit hashes in `lakefile.toml`.
+- Keep imports minimal — only import what the file actually uses.
+- The `.lean` sibling file must share the same root name as its `.ts`/`.md`
+  siblings (e.g., `rigid-monoidal-category.lean`).
 
 ## Content-object architecture
 

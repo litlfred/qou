@@ -275,10 +275,19 @@
 
     // header
     const bh = h("div", "bh");
+    const statusCls = blk.status || blk.lean?.validation || "";
+    const statusLabel = blk.status || blk.lean?.validation || "";
+    const leanBadge = blk.lean
+      ? `<span class="bh-lean ${statusCls}" title="${esc(blk.lean.decl)}${statusLabel ? " (" + esc(statusLabel) + ")" : ""}">∀${statusLabel ? `<span class="bh-lean-status">${esc(statusLabel)}</span>` : ""}</span>`
+      : "";
+    const proofBadge = blk.kind === "proof"
+      ? `<span class="bh-lean ${statusCls}" title="proof block${statusLabel ? " (" + esc(statusLabel) + ")" : ""}">∀${statusLabel ? `<span class="bh-lean-status">${esc(statusLabel)}</span>` : ""}</span>`
+      : "";
     bh.innerHTML = `
       <span class="bk">${esc(blk.kind)}</span>
       ${blk.title ? `<span class="bt">${esc(blk.title)}</span>` : ""}
-      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}`;
+      ${blk.label ? `<span class="bl">${esc(blk.label)}</span>` : ""}
+      ${leanBadge || proofBadge}`;
     el.appendChild(bh);
 
     // action bar
@@ -306,17 +315,23 @@
       const cls = blk.status || blk.lean.validation || "";
       const lb = h("div", `lb ${cls}`);
       lb.innerHTML = `<span class="vi ${blk.lean.validation || ""}"></span> ${esc(blk.lean.decl)} ${cls ? `(${cls})` : ""}`;
+      lb.style.cursor = "pointer";
+      lb.title = "Show Lean source";
+      const leanPanel = h("pre", "lean-src");
       if (blk.lean.source) {
-        lb.style.cursor = "pointer";
-        lb.title = "Show Lean source";
-        const leanPanel = h("pre", "lean-src");
         leanPanel.textContent = blk.lean.source;
-        lb.onclick = () => leanPanel.classList.toggle("vis");
-        el.appendChild(lb);
-        el.appendChild(leanPanel);
       } else {
-        el.appendChild(lb);
+        leanPanel.textContent = `-- No Lean source available for ${blk.lean.decl}\n-- Status: ${blk.status || "unknown"}`;
+        leanPanel.classList.add("lean-src-empty");
       }
+      const toggleLean = () => leanPanel.classList.toggle("vis");
+      lb.onclick = toggleLean;
+      el.appendChild(lb);
+      el.appendChild(leanPanel);
+
+      // Wire ∀ badge in header to same toggle
+      const forallBadge = bh.querySelector(".bh-lean");
+      if (forallBadge) forallBadge.onclick = toggleLean;
     }
 
     // uses
