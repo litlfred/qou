@@ -143,6 +143,7 @@ export default chapter({
         "hadron",
         "localized-hadron",
         "bundle-initial-conditions",
+        "bundle-isotopy-equivalence",
         "knot-particle-dictionary",
         "torsion-knot-flow",
         "bundle-category",
