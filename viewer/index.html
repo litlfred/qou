@@ -2138,11 +2138,11 @@
       // Pin control
       const pinRow = mk('div','sb-pin');
       const pinBtn = document.createElement('button');
-      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? 'unpin' : 'pin';
+      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? '📌' : '📍';
       if (localStorage.getItem('qou-sb-pinned') === '1') document.body.classList.add('sb-pinned');
       pinBtn.onclick = () => {
         const pinned = document.body.classList.toggle('sb-pinned');
-        pinBtn.textContent = pinned ? 'unpin' : 'pin';
+        pinBtn.textContent = pinned ? '📌' : '📍';
         localStorage.setItem('qou-sb-pinned', pinned ? '1' : '0');
       };
       pinRow.appendChild(pinBtn);
