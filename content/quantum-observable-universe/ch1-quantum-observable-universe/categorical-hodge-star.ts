@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.CategoricalHodgeStar",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-universe", "def:higher-forms"],
   examples: ["ex:hodge-su2"],
   tags: ["hodge-star"],

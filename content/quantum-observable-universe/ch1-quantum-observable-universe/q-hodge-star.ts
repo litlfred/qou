@@ -8,6 +8,6 @@ export default definition({
     decl: "QOU.QHodgeStar",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:categorical-hodge-star", "def:substrate-parameter"],
 });

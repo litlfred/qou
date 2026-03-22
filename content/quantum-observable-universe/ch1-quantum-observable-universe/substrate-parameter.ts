@@ -8,6 +8,6 @@ export default definition({
     decl: "QOU.SubstrateParameter",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:quantum-universe"],
 });
