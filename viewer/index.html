@@ -3531,7 +3531,8 @@
 
         const chDiv = mk('div','diff-ch');
         const chHead = mk('div','diff-ch-title');
-        chHead.textContent = chTitle;
+        chHead.innerHTML = inl(chTitle);
+        renderMath(chHead);
         chDiv.appendChild(chHead);
 
         for (const bd of blks) {
