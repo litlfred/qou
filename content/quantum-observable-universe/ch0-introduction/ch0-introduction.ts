@@ -6,7 +6,6 @@ import { chapter, section } from "../../schema/builders";
  * A guide to the paper's structure and main results.
  */
 export default chapter({
-  number: 0,
   title: "Introduction",
   label: "chap:introduction",
   sections: [

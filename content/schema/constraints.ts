@@ -213,7 +213,7 @@ export const SectionRefSchema = z.object({
 });
 
 export const ChapterSchema = z.object({
-  number: z.number().int().positive(),
+  number: z.number().int().positive().optional(),
   title: z.string().min(1),
   label: z.string().optional(),
   sections: z.array(z.union([SectionSchema, SectionRefSchema])),

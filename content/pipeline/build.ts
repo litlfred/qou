@@ -69,7 +69,8 @@ export async function buildPaper(
 
       // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
       const slug = chRef.dir.replace(/^ch\d+-/, "");
-      chapterSlugs.set(chapter.number, slug);
+      const key = chapter.number ?? -(resolvedChapters.length);
+      chapterSlugs.set(key, slug);
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -108,14 +109,15 @@ export async function buildPaper(
 
   for (const chapter of resolvedChapters) {
     const latex = renderChapter(chapter, blocks);
-    chapters.set(chapter.number, latex);
+    const chKey = chapter.number ?? -(resolvedChapters.indexOf(chapter) + 1);
+    chapters.set(chKey, latex);
 
     // AST validation
     const ast = validateLatexAst(latex);
     if (!ast.valid) {
       astValid = false;
       for (const err of ast.errors) {
-        issues.push({ level: "error", message: `Chapter ${chapter.number} AST: ${err}` });
+        issues.push({ level: "error", message: `Chapter ${chapter.number ?? chapter.title} AST: ${err}` });
       }
     }
   }

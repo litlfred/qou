@@ -27,8 +27,6 @@ export default paper({
     chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch6-descartes-universe" }),
     chapterRef({ dir: "ch7-p-adic-quantum-groups" }),
-    chapterRef({ dir: "ch8-gauge-field-fluid-dynamics" }),
-    chapterRef({ dir: "ch9-information-theory" }),
     chapterRef({ dir: "ch10-interpretations" }),
     chapterRef({ dir: "ch11-experimental-evidence" }),
     chapterRef({ dir: "ch12-speculations" }),

@@ -384,7 +384,8 @@ export interface ChapterRef {
 }
 
 export interface Chapter {
-  number: number;
+  /** Chapter number. Omit for unnumbered chapters (e.g. Introduction). */
+  number?: number;
   title: string;
   label?: string;
   /** Sections can be inline Section objects or SectionRef references. */
