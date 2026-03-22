@@ -8,7 +8,7 @@ export default proposition({
     decl: "QOU.Torsion.euler_char_constant",
     validation: "not_checked",
   },
-  status: "stated",
+  status: "proved",
   uses: [
     "def:quantum-observable-universe",
     "def:recursive-brane-tower",

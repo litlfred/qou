@@ -40,16 +40,38 @@ def IdempotentEndomorphism.transient (τ : IdempotentEndomorphism (R := R) M) :
 theorem idempotent_direct_sum_decomposition
     (τ : IdempotentEndomorphism (R := R) M) :
     τ.descended ⊔ τ.transient = ⊤ := by
-  -- Ref: [leitner2026] §3
-  sorry
+  -- For any x, write x = τ(x) + (x - τ(x)).
+  -- τ(x) ∈ im(τ) and (x - τ(x)) ∈ ker(τ) since τ² = τ.
+  rw [eq_top_iff]
+  intro x _
+  rw [Submodule.mem_sup]
+  refine ⟨τ.toFun x, LinearMap.mem_range_self τ.toFun x,
+         x - τ.toFun x, ?_, by abel⟩
+  rw [LinearMap.mem_ker, map_sub]
+  have h : τ.toFun (τ.toFun x) = τ.toFun x := by
+    change (τ.toFun ∘ₗ τ.toFun) x = τ.toFun x
+    rw [τ.idem]
+  rw [h, sub_self]
 
 /-- The descended and transient submodules intersect trivially. -/
 -- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_disjoint
     (τ : IdempotentEndomorphism (R := R) M) :
     Disjoint τ.descended τ.transient := by
-  -- Ref: [leitner2026] §3
-  sorry
+  -- If x ∈ im(τ) ∩ ker(τ), then x = τ(y) and τ(x) = 0.
+  -- But τ(x) = τ(τ(y)) = τ(y) = x by idempotence, so x = 0.
+  rw [disjoint_def]
+  intro x hx_desc hx_trans
+  rw [IdempotentEndomorphism.transient, LinearMap.mem_ker] at hx_trans
+  rw [IdempotentEndomorphism.descended, LinearMap.mem_range] at hx_desc
+  obtain ⟨y, rfl⟩ := hx_desc
+  -- hx_trans : τ.toFun (τ.toFun y) = 0
+  -- By idempotence: τ(τ(y)) = τ(y), so τ(y) = 0.
+  have h : τ.toFun (τ.toFun y) = τ.toFun y := by
+    change (τ.toFun ∘ₗ τ.toFun) y = τ.toFun y
+    rw [τ.idem]
+  rw [h] at hx_trans
+  exact hx_trans
 
 /-- An element in the image of the ascent ℓₙ is fixed by τₙ (descended). -/
 -- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
@@ -61,8 +83,14 @@ theorem ascent_image_is_descended
     (hτ : τ.toFun = ℓ ∘ₗ 𝔡)
     (x : M) (hx : x ∈ LinearMap.range ℓ) :
     τ.toFun x = x := by
-  -- Ref: [leitner2026] §3
-  sorry
+  -- x ∈ im(ℓ), so x = ℓ(y). Then τ(x) = ℓ(𝔡(ℓ(y))) = ℓ(y) = x
+  -- using the retraction 𝔡 ∘ ℓ = id.
+  obtain ⟨y, rfl⟩ := hx
+  simp only [hτ, LinearMap.comp_apply]
+  congr 1
+  -- Goal: 𝔡 (ℓ y) = y
+  have : (𝔡 ∘ₗ ℓ) y = y := by rw [retraction]; rfl
+  simpa [LinearMap.comp_apply] using this
 
 /-- An element with no pre-image under descent is transient. -/
 -- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
@@ -73,7 +101,7 @@ theorem no_preimage_is_transient
     (hτ : τ.toFun = ℓ ∘ₗ 𝔡)
     (x : M) (hx : 𝔡 x = 0) :
     τ.toFun x = 0 := by
-  -- Ref: [leitner2026] §3
-  sorry
+  -- τ(x) = ℓ(𝔡(x)) = ℓ(0) = 0
+  simp only [hτ, LinearMap.comp_apply, hx, map_zero]
 
 end QOU.Torsion

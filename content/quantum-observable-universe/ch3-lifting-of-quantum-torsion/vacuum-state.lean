@@ -63,8 +63,14 @@ theorem frobenius_trace_invariant
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) :
     ∀ n x, ft.trace n ((T.descent n) ((T.ascent n) x)) = ft.trace n x := by
-  -- Ref: [leitner2026] §3
-  sorry
+  -- The retraction 𝔡ₙ ∘ ℓₙ = id gives 𝔡ₙ(ℓₙ(x)) = x,
+  -- so trₙ(𝔡ₙ(ℓₙ(x))) = trₙ(x).
+  intro n x
+  congr 1
+  -- Goal: (T.descent n) ((T.ascent n) x) = x
+  have h : ((T.descent n) ∘ₗ (T.ascent n)) x = x := by
+    rw [T.retraction n]; rfl
+  simpa [LinearMap.comp_apply] using h
 
 /-- **Uniqueness**: Any G_q-invariant functional equals the Frobenius trace
     (up to normalisation), by the vanishing condition and Schur's lemma. -/
@@ -78,7 +84,15 @@ theorem invariant_functional_unique
     (ψ_compat : ∀ n x, ψ n ((T.descent n) x) = ψ (n + 1) x)
     (ψ_inv : ∀ n x, ψ n ((T.descent n) ((T.ascent n) x)) = ψ n x) :
     ∃ (c : R), ∀ n x, ψ n x = c • ft.trace n x := by
-  -- Ref: [leitner2026] §3
+  -- Proof sketch (requires non-degeneracy of tr, not yet in hypotheses):
+  -- 1. Define δₙ = ψₙ - c · trₙ for c = ψ₀(1₀) / tr₀(1₀).
+  -- 2. δₙ is compatible (δₙ ∘ 𝔡ₙ = δ_{n+1}) and invariant (δₙ ∘ τₙ = δₙ).
+  -- 3. For any G_q-fixed x, the vanishing condition gives x = r · 1,
+  --    so δₙ(x) = r · δₙ(1) = r · (ψ(1) - c · tr(1)) = 0 by choice of c.
+  -- 4. Extend to all x by decomposing via descent eigenspaces.
+  -- Requires: tr(1) ≠ 0 (non-degeneracy), which follows from
+  -- the faithfulness of the fibre functor in the QOU axioms.
+  -- Ref: [leitner2026] §3, Proposition: Vacuum state (uniqueness)
   sorry
 
 end QOU.Torsion

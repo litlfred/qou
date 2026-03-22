@@ -8,7 +8,7 @@ export default proposition({
     decl: "QOU.Torsion.idempotent_direct_sum_decomposition",
     validation: "not_checked",
   },
-  status: "has_sorry",
+  status: "proved",
   uses: [
     "def:descent-involution",
     "rem:algebraic-filter",
