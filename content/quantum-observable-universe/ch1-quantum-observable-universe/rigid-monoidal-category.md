@@ -6,15 +6,17 @@ isomorphisms expressing associativity and unitality:
 
 ```tex
 \[
-\underbrace{
+\begin{gathered}
 \begin{tikzcd}[column sep=3em]
   (X \otimes Y) \otimes Z
     \ar[r, "\alpha_{X,Y,Z}", "\sim"']
   & X \otimes (Y \otimes Z)
 \end{tikzcd}
-}_{\text{associativity}}
+\\[-0.5em]
+\text{\small associativity}
+\end{gathered}
 \qquad
-\underbrace{
+\begin{gathered}
 \begin{tikzcd}[column sep=2.5em]
   \mathbf{1} \otimes X
     \ar[r, "\ell_X", "\sim"']
@@ -22,7 +24,9 @@ isomorphisms expressing associativity and unitality:
   & X \otimes \mathbf{1}
     \ar[l, "\rho_X"', "\sim"]
 \end{tikzcd}
-}_{\text{unitality}}
+\\[-0.5em]
+\text{\small unitality}
+\end{gathered}
 \]
 ```
 
@@ -35,7 +39,7 @@ such that the following *snake identity* diagrams commute:
 
 ```tex
 \begin{equation}\label{eq:snake-identities}
-\underbrace{
+\begin{gathered}
 \begin{tikzcd}[row sep=2em, column sep=2.5em]
   V
     \ar[r, "\mathrm{id} \otimes \mathrm{coev}"]
@@ -45,9 +49,11 @@ such that the following *snake identity* diagrams commute:
   \\
   & V
 \end{tikzcd}
-}_{\text{left snake identity}}
+\\[-0.5em]
+\text{\small left snake identity}
+\end{gathered}
 \qquad\qquad
-\underbrace{
+\begin{gathered}
 \begin{tikzcd}[row sep=2em, column sep=2.5em]
   V^{\vee}
     \ar[r, "\mathrm{coev} \otimes \mathrm{id}"]
@@ -57,7 +63,9 @@ such that the following *snake identity* diagrams commute:
   \\
   & V^{\vee}
 \end{tikzcd}
-}_{\text{right snake identity}}
+\\[-0.5em]
+\text{\small right snake identity}
+\end{gathered}
 \end{equation}
 ```
 

@@ -6,7 +6,7 @@ diagram commutes (the *Frobenius relation*):
 
 ```tex
 \begin{equation}\label{eq:frobenius-relation}
-\underbrace{
+\begin{gathered}
 \begin{tikzcd}[row sep=2.5em, column sep=3.5em]
   A \otimes A
     \ar[r, "\mathrm{id} \otimes \Delta_\mu"]
@@ -17,7 +17,9 @@ diagram commutes (the *Frobenius relation*):
   A \ar[r, "\Delta_\mu"']
   & A \otimes A
 \end{tikzcd}
-}_{\text{Frobenius relation: } (\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu}
+\\[-0.5em]
+\text{\small Frobenius relation: } (\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu
+\end{gathered}
 \end{equation}
 ```
 
