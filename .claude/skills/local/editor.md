@@ -65,7 +65,7 @@ Neither local nor remote is reachable. If the request requires Lean:
 > ./scripts/setup-lean-mcp.sh
 > ```
 >
-> **Remote server:** check if `lean.litlfred.org` is running.
+> **Remote server:** check if `folio.litlfred.org` is running.
 >
 > Proceed with LaTeX-only work?
 

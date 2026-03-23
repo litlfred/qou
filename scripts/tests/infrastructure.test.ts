@@ -102,7 +102,7 @@ describe("Deploy infrastructure", () => {
       join(REPO_ROOT, "deploy/Caddyfile.template"),
       "utf-8"
     );
-    expect(caddyfile).toContain("${LEAN_MCP_DOMAIN}");
+    expect(caddyfile).toContain("${FOLIO_DOMAIN}");
   });
 
   test("self-update.sh preserves .env", () => {

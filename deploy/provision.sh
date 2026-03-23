@@ -5,10 +5,10 @@
 #   SERVER_NAME, REPO_URL, DOMAIN, IMAGE, MCP_PORT, OWNER_USERNAME,
 #   SESSION_MAX_AGE, SERVER_TYPE, SERVER_LOC, SERVER_IMG,
 #   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET,
-#   GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET,
+#   GH_CLIENT_ID, GH_CLIENT_SECRET,
 #   HCLOUD_TOKEN (used by hcloud CLI)
 #
-# Generates: LEAN_LSP_MCP_TOKEN, COOKIE_SECRET (random)
+# Generates: FOLIO_API_TOKEN, COOKIE_SECRET (random)
 
 set -euo pipefail
 
@@ -16,7 +16,7 @@ set -euo pipefail
 for var in SERVER_NAME REPO_URL DOMAIN IMAGE MCP_PORT OWNER_USERNAME \
            SESSION_MAX_AGE SERVER_TYPE SERVER_LOC SERVER_IMG \
            GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET \
-           GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET; do
+           GH_CLIENT_ID GH_CLIENT_SECRET; do
   if [ -z "${!var:-}" ]; then
     echo "::error::Missing required env var: $var"
     exit 1
@@ -31,7 +31,7 @@ if hcloud server describe "$SERVER_NAME" &>/dev/null; then
 fi
 
 # ── Generate one-time secrets ─────────────────────────────────────
-LEAN_LSP_MCP_TOKEN=$(openssl rand -hex 32)
+FOLIO_API_TOKEN=$(openssl rand -hex 32)
 COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
 
 # ── Build cloud-init script ──────────────────────────────────────
@@ -53,9 +53,8 @@ cd /opt/qou
 base64 -d <<< "__ENV_B64__" > deploy/.env
 
 export FOLIO_DOMAIN="__DOMAIN__"
-export LEAN_MCP_INTERNAL_PORT="__MCP_PORT__"
-export LEAN_MCP_DOMAIN="__DOMAIN__"
-envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+export MCP_INTERNAL_PORT="__MCP_PORT__"
+envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT}' \
   < deploy/Caddyfile.folio.template \
   > deploy/Caddyfile
 
@@ -66,20 +65,34 @@ cd deploy
 docker compose -f docker-compose.folio.yml pull
 docker compose -f docker-compose.folio.yml up -d
 
+# ── Set up self-update cron (every minute) ────────────────────────
+CRON_LINE="* * * * * /opt/qou/deploy/self-update-folio.sh >> /var/log/folio-update.log 2>&1"
+(crontab -l 2>/dev/null || true; echo "$CRON_LINE") | crontab -
+
+# ── Log rotation for update log ──────────────────────────────────
+cat > /etc/logrotate.d/folio-update <<'LOGROTATE'
+/var/log/folio-update.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+}
+LOGROTATE
+
 echo "=== Folio provisioning complete ==="
 CLOUD_INIT_EOF
 
 # ── Generate .env content safely and base64-encode ────────────────
-export LEAN_MCP_DOMAIN="$DOMAIN"
 export FOLIO_DOMAIN="$DOMAIN"
-export LEAN_MCP_IMAGE="$IMAGE"
-export LEAN_MCP_INTERNAL_PORT="$MCP_PORT"
-export LEAN_LSP_MCP_TOKEN
+export PAPER_ASSISTANT_IMAGE="$IMAGE"
+export MCP_INTERNAL_PORT="$MCP_PORT"
+export FOLIO_API_TOKEN
 export COOKIE_SECRET
 export OWNER_USERNAME
 export SESSION_MAX_AGE
 export GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET
-export GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET
+export GH_CLIENT_ID GH_CLIENT_SECRET
 
 ENV_CONTENT=$(bash "$(dirname "$0")/write-env.sh" /dev/stdout)
 ENV_B64=$(printf '%s' "$ENV_CONTENT" | base64 -w0)
@@ -92,12 +105,16 @@ sed -i "s|__ENV_B64__|${ENV_B64}|g" /tmp/cloud-init.sh
 
 # ── Create server ─────────────────────────────────────────────────
 echo "▸ Creating server..."
+# Redirect stdout to /dev/null — hcloud prints root password there.
+# Errors still go to stderr. We don't need the password (cloud-init
+# handles setup, hcloud ssh uses the API for access).
 hcloud server create \
   --name "$SERVER_NAME" \
   --type "$SERVER_TYPE" \
   --image "$SERVER_IMG" \
   --location "$SERVER_LOC" \
-  --user-data "$(cat /tmp/cloud-init.sh)"
+  --user-data-from-file /tmp/cloud-init.sh \
+  > /dev/null
 
 rm -f /tmp/cloud-init.sh
 

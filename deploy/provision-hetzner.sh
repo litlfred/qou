@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-# Provision a Hetzner Cloud CX22 server for the Lean MCP service.
+# Provision a Hetzner Cloud server for the QOU Folio deployment.
 #
 # Requires: hcloud CLI (https://github.com/hetznercloud/cli)
 #   brew install hcloud  OR  apt install hcloud-cli
 #   hcloud context create qou  # then paste your API token
 #
 # What this does:
-#   1. Creates a CX22 server (2 vCPU, 4GB RAM, 40GB SSD, ~€4.50/mo)
+#   1. Creates a server per lean-mcp.config.json hetzner settings
 #   2. Installs Docker + Compose via cloud-init
-#   3. Clones the repo, runs generate-config.sh, starts services
+#   3. Clones the repo, runs generate-config.sh --folio, starts services
 #   4. Sets up self-update cron (polls every minute)
 #   5. Prints the IP for DNS setup
 #
 # After running:
-#   - Point lean.litlfred.org A record to the printed IP
-#   - SSH in and fill in Google OAuth creds in deploy/.env
+#   - Point folio.litlfred.org A record to the printed IP
+#   - SSH in and fill in OAuth creds in deploy/.env
 #   - Caddy auto-provisions TLS once DNS propagates
 #
 # Usage:
@@ -26,13 +26,13 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CONFIG="$REPO_ROOT/lean-mcp.config.json"
 
 # ── Parse config ──────────────────────────────────────────────────
-DOMAIN=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('domain','lean.example.org'))")
+DOMAIN=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('folio',{}).get('domain','folio.example.org'))")
 REPO_URL=$(git -C "$REPO_ROOT" remote get-url origin 2>/dev/null | sed 's|git@github.com:|https://github.com/|' || echo "https://github.com/litlfred/qou.git")
 
-SERVER_NAME="lean-mcp"
-SERVER_TYPE="cx22"        # 2 vCPU, 4GB RAM, 40GB SSD
-IMAGE="ubuntu-24.04"
-LOCATION="fsn1"           # Falkenstein, Germany (cheapest)
+SERVER_NAME="qou-folio"
+SERVER_TYPE=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('hetzner',{}).get('server_type','cx22'))")
+IMAGE=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('hetzner',{}).get('image','ubuntu-24.04'))")
+LOCATION=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('hetzner',{}).get('location','fsn1'))")
 
 echo "=== Hetzner Lean MCP Provisioning ==="
 echo "  Server:   $SERVER_NAME ($SERVER_TYPE)"
@@ -74,24 +74,24 @@ apt-get install -y gettext-base python3
 git clone REPO_URL_PLACEHOLDER /opt/qou
 cd /opt/qou
 
-# ── Generate config (non-interactive, OAuth creds need manual fill) ─
-./deploy/generate-config.sh --ci
+# ── Generate config (non-interactive folio mode, OAuth creds need manual fill) ─
+./deploy/generate-config.sh --folio --ci
 
 # ── Authenticate with GHCR (read-only, public images don't need this) ─
 # If the image is private, you'll need to: docker login ghcr.io
 
 # ── Start services ────────────────────────────────────────────────
 cd deploy
-docker compose pull
-docker compose up -d
+docker compose -f docker-compose.folio.yml pull
+docker compose -f docker-compose.folio.yml up -d
 
 # ── Set up self-update cron (every minute) ────────────────────────
-CRON_LINE="* * * * * /opt/qou/deploy/self-update.sh >> /var/log/lean-mcp-update.log 2>&1"
+CRON_LINE="* * * * * /opt/qou/deploy/self-update-folio.sh >> /var/log/folio-update.log 2>&1"
 (crontab -l 2>/dev/null || true; echo "$CRON_LINE") | crontab -
 
 # ── Log rotation for update log ──────────────────────────────────
-cat > /etc/logrotate.d/lean-mcp-update <<'LOGROTATE'
-/var/log/lean-mcp-update.log {
+cat > /etc/logrotate.d/folio-update <<'LOGROTATE'
+/var/log/folio-update.log {
     daily
     rotate 7
     compress
@@ -129,11 +129,13 @@ echo "Next steps:"
 echo "  1. Point DNS: $DOMAIN → A record → $IP"
 echo "  2. Wait ~3 min for cloud-init to finish"
 echo "  3. SSH in: ssh root@$IP"
-echo "  4. Edit /opt/qou/deploy/.env — fill in GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET"
-echo "     (Create at https://console.cloud.google.com/apis/credentials)"
-echo "     (Redirect URI: https://$DOMAIN/oauth2/callback)"
-echo "  5. Restart: cd /opt/qou/deploy && docker compose restart oauth2-proxy"
+echo "  4. Edit /opt/qou/deploy/.env — fill in OAuth credentials:"
+echo "     Google: https://console.cloud.google.com/apis/credentials"
+echo "       Redirect URI: https://$DOMAIN/auth/google/callback"
+echo "     GitHub: https://github.com/settings/developers"
+echo "       Callback URL: https://$DOMAIN/auth/github/callback"
+echo "  5. Restart: cd /opt/qou/deploy && docker compose -f docker-compose.folio.yml restart"
 echo "  6. Caddy auto-provisions TLS once DNS propagates (~5 min)"
 echo ""
 echo "Self-updater cron runs every minute. Check logs:"
-echo "  ssh root@$IP tail -f /var/log/lean-mcp-update.log"
+echo "  ssh root@$IP tail -f /var/log/folio-update.log"

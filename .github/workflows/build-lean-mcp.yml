@@ -1,28 +1,30 @@
-# Build and push the Lean MCP server Docker image to GHCR.
+# Build and push the Paper Assistant Docker image to GHCR.
 #
 # Triggers on:
-#   - Push to main touching lean/ files or lakefile.toml
+#   - Push to main touching mcp-server/, content/, lean-archive/, or Dockerfile
 #   - Manual dispatch
 #   - Weekly (to pick up Mathlib cache updates)
 #
-# The image is used by the remote MCP server deployment.
-# Watchers (docker compose with auto-update) pull new images automatically.
+# The image is used by the folio deployment (folio.litlfred.org).
+# The self-updater polls for new image digests and auto-deploys.
 
-name: Build Lean MCP Image
+name: Build Paper Assistant Image
 
 on:
   push:
     branches: [main]
     paths:
+      - 'scripts/mcp-server/**'
+      - 'content/**'
       - 'lean-archive/**'
-      - '.github/docker/Dockerfile.lean-mcp'
+      - 'scripts/mcp-server/Dockerfile'
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/lean-mcp
+  IMAGE_NAME: ${{ github.repository }}/paper-assistant
 
 permissions:
   contents: read
@@ -61,7 +63,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: .github/docker/Dockerfile.lean-mcp
+          file: scripts/mcp-server/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

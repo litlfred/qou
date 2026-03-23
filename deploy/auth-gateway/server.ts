@@ -6,7 +6,7 @@
  *   2. Handles Google OAuth → viewer role (from google-viewers.txt)
  *   3. Handles GitHub OAuth → collaborator/owner role (from github-collaborators.txt)
  *   4. Issues HMAC-signed session cookies with {email, provider, role, name}
- *   5. Proxies authenticated requests to lean-mcp and static viewer files
+ *   5. Proxies authenticated requests to paper-assistant and static viewer files
  *   6. Bearer token bypass for CLI/API access
  *
  * Roles:
@@ -16,10 +16,10 @@
  *
  * Environment:
  *   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
- *   GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
+ *   GH_CLIENT_ID, GH_CLIENT_SECRET
  *   COOKIE_SECRET         — HMAC signing key (32+ chars)
- *   LEAN_LSP_MCP_TOKEN    — Bearer token for direct API access
- *   LEAN_MCP_UPSTREAM     — lean-mcp URL (default: http://lean-mcp:8080)
+ *   FOLIO_API_TOKEN    — Bearer token for direct API access
+ *   PAPER_ASSISTANT_UPSTREAM     — paper-assistant URL (default: http://paper-assistant:8080)
  *   VIEWER_ROOT           — static viewer dir (default: /var/www/viewer)
  *   OWNER_USERNAME        — GitHub username of repo owner (default from config)
  *   SESSION_MAX_AGE       — session duration in seconds (default: 86400)
@@ -40,16 +40,16 @@ if (!COOKIE_SECRET || COOKIE_SECRET.length < 32) {
   console.error("FATAL: COOKIE_SECRET not set or too short (32+ chars required).");
   process.exit(1);
 }
-const LEAN_MCP_TOKEN = process.env.LEAN_LSP_MCP_TOKEN || "";
-const MCP_UPSTREAM = process.env.LEAN_MCP_UPSTREAM || "http://lean-mcp:8080";
+const FOLIO_API_TOKEN = process.env.FOLIO_API_TOKEN || "";
+const MCP_UPSTREAM = process.env.PAPER_ASSISTANT_UPSTREAM || "http://paper-assistant:8080";
 const VIEWER_ROOT = process.env.VIEWER_ROOT || "/var/www/viewer";
 const OWNER_USERNAME = process.env.OWNER_USERNAME || "litlfred";
 const SESSION_MAX_AGE = parseInt(process.env.SESSION_MAX_AGE || "86400", 10);
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || "";
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || "";
+const GITHUB_CLIENT_ID = process.env.GH_CLIENT_ID || "";
+const GITHUB_CLIENT_SECRET = process.env.GH_CLIENT_SECRET || "";
 
 const GOOGLE_VIEWERS_FILE = process.env.GOOGLE_VIEWERS_FILE || "/etc/auth-gateway/google-viewers.txt";
 const GITHUB_COLLABS_FILE = process.env.GITHUB_COLLABS_FILE || "/etc/auth-gateway/github-collaborators.txt";
@@ -330,10 +330,10 @@ Bun.serve({
     // ── Bearer token bypass for /mcp ────────────────────────
     if (path === "/mcp") {
       const authHeader = req.headers.get("authorization") || "";
-      if (authHeader.startsWith("Bearer ") && LEAN_MCP_TOKEN) {
+      if (authHeader.startsWith("Bearer ") && FOLIO_API_TOKEN) {
         const token = authHeader.slice(7);
         const tokenBuf = Buffer.from(token);
-        const expectedBuf = Buffer.from(LEAN_MCP_TOKEN);
+        const expectedBuf = Buffer.from(FOLIO_API_TOKEN);
         if (tokenBuf.length === expectedBuf.length && timingSafeEqual(tokenBuf, expectedBuf)) {
           return proxyToMcp(req, url);
         }
@@ -465,7 +465,7 @@ Bun.serve({
       });
     }
 
-    // ── Proxy to lean-mcp with role headers ─────────────────
+    // ── Proxy to paper-assistant with role headers ─────────────────
     if (path === "/mcp" || path.startsWith("/api/")) {
       // Inject auth headers for downstream
       const headers = new Headers(req.headers);
