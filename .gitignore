@@ -38,6 +38,7 @@ deploy/Caddyfile
 deploy/viewer/
 scripts/mcp-server/bun.lock
 schemas/bun.lock
+schemas/docs/
 viewer/paper.js
 # Root-level dev dependencies (TypeDoc etc.)
 package-lock.json
