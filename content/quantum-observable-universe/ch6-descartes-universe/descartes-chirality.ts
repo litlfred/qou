@@ -5,7 +5,6 @@ export default remark({
   title: "Chirality as Reeb orientation",
   tags: ["descartes-universe", "chirality", "reeb"],
   uses: [
-    "def:fermion",
-    "def:boson",
+    "def:fermion-boson-decomposition",
   ],
 });

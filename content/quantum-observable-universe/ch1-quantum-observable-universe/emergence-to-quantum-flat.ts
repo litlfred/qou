@@ -5,10 +5,10 @@ export default proposition({
   title: "From Tannakian emergence to 2-group quantum flatness",
   tags: ["tannaka-krein", "2-group", "instanton"],
   uses: [
-    "def:categorical-volume-constraint",
+    "def:quantum-observable-universe",
     "thm:su2-emergence",
     "rem:self-dual-2group",
-    "def:instanton",
+    "ex:instanton",
   ],
   proofs: ["prf:emergence-to-quantum-flat"],
 });

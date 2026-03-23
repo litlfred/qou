@@ -11,7 +11,7 @@ export default definition({
   status: "stated",
   uses: [
     "def:projective-line-object",
-    "def:reeb-decomposition",
+    "ex:reeb-decomposition",
     "def:weight-decomposition",
   ],
 });
