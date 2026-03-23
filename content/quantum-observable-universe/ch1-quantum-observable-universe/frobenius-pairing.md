@@ -24,7 +24,7 @@ $$
 A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
   \xrightarrow{\mathrm{id} \otimes \tilde{\eta}} A \otimes A \otimes A
   \xrightarrow{\alpha^{-1}} (A \otimes A) \otimes A
-  \xrightarrow{(\mu \circ \lambda) \otimes \mathrm{id}} \mathbf{1} \otimes A
+  \xrightarrow{(\lambda \circ \mu) \otimes \mathrm{id}} \mathbf{1} \otimes A
   \xrightarrow{\lambda_A} A
 $$
 
