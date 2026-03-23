@@ -65,10 +65,16 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
+  packages:       read    # required to pull the latex-ci container image
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -116,27 +122,17 @@ jobs:
             fi
           fi
 
-      # ── 0b. Install CI tools ──────────────────────────────────────────────
-      # Instead of pulling a custom Docker image from GHCR (which requires
-      # package visibility configuration), install tools directly.
-      - name: Install CI tools
+      # ── 0b. Configure environment ──────────────────────────────────────
+      # All CI tools (TeX Live, pandoc, latexdiff, graphviz, Bun, Python)
+      # are pre-installed in the ghcr.io/.../latex-ci container image.
+      # See .github/docker/Dockerfile.latex for the full list.
+      - name: Configure environment
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
-          pip3 install --break-system-packages --no-cache-dir requests>=2.32
+          echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+          # Trust the workspace directory for git operations inside container
+          git config --global --add safe.directory "${{ github.workspace }}"
 
-      - name: Configure Python path for qou_lib
-        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
-
-      # ── 0c. Install Bun + content pipeline ──────────────────────────────
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
+      # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
         run: |
           cd content && bun install --frozen-lockfile 2>/dev/null || bun install
@@ -205,9 +201,7 @@ jobs:
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 
       - name: Capture LaTeX build warnings
         if: always()
@@ -269,9 +263,7 @@ jobs:
         if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
         continue-on-error: true
         id: compile_diff
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: diff.tex
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'
