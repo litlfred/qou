@@ -41,7 +41,6 @@ noncomputable def qLieBracket {M : Type*} (sp : SubstrateParameter M)
 theorem qLieBracket_classical {M : Type*} (sp : SubstrateParameter M)
     (bracket_VW thetaV_LxiW thetaW_LxiV : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qLieBracket sp bracket_VW thetaV_LxiW thetaW_LxiV p = bracket_VW p := by
-  unfold qLieBracket
-  rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
+  simp [qLieBracket, hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
 end QOU

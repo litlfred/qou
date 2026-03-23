@@ -44,8 +44,6 @@ structure Boson (M : Type*) extends QHarmonicForm M where
 /-- A boson's total form equals its horizontal component. -/
 theorem Boson.total_eq_horizontal {M : Type*} (b : Boson M) (p : M) :
     b.total p = b.horizontal p := by
-  have h := b.decomp p
-  rw [b.purely_horizontal p, add_zero] at h
-  exact h
+  simpa [b.purely_horizontal p] using b.decomp p
 
 end QOU

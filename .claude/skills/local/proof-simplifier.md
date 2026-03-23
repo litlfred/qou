@@ -108,6 +108,26 @@ candidates for proof simplification. The `uses[]` graph identifies the
 cluster boundary — simplify within a connected subgraph of content
 objects, not across unrelated blocks.
 
+## Common anti-patterns (mechanically fixable)
+
+These patterns should be flagged and fixed automatically during any
+simplification pass:
+
+| Anti-pattern | Fix |
+|-------------|-----|
+| `by exact X` | `X` (drop tactic wrapper) |
+| `by rfl` | `rfl` (term-mode) |
+| `unfold f; simp [...]` | `simp [f, ...]` |
+| `unfold f; rw [h₁, h₂, ...]` | `simp [f, h₁, h₂, ...]` |
+| `have h := foo; linarith` | `linarith [foo]` |
+| `have h := foo; exact h` | `exact foo` |
+| `apply f; apply g x` | `exact f (g x)` |
+| `rw [h]; simp [sub_self]` | `simp [h, sub_self]` |
+| `@Zero.zero T inst.toZero` | `(0 : T)` |
+| Theorem restating a structure field | Delete it; use `s.field` directly |
+| `rw [retraction]; rfl` | `congr_fun (congr_arg DFunLike.coe retraction) x` |
+| Duplicate docstrings on a field | Keep only the latest version |
+
 ## Constraints
 
 - Never merge or delete declarations without author approval

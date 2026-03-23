@@ -44,7 +44,7 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ therefore ensures:
    TQFT extends to a fully local (extended) field theory.
 
 In the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), this categorical
+([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), this categorical
 condition reduces to
 $H^0(M, \mathrm{Ad}(P)) = 0$ --- the classical requirement that the
 instanton connection admits no infinitesimal automorphisms, which is the

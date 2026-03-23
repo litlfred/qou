@@ -7,7 +7,7 @@ constituent knots; mesons have two (knot–antiknot pair).
 
 ## References
 
-- [leitner2026] §3 Lifting of Quantum Torsion
+- [manuscript] §3 Lifting of Quantum Torsion
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
 
@@ -26,7 +26,7 @@ structure Hadron where
   /-- The constituent knot types (valence quarks in the knot picture). -/
   constituents : List KnotTheory.PlanarDiagram
   /-- A hadron must have at least 2 constituents. -/
-  -- Ref: [leitner2026] §3, Definition: Hadron
+  -- Ref: [manuscript] §3, Definition: Hadron
   constituents_nonempty : constituents.length ≥ 2
 
 /-! ## Classification -/
@@ -38,7 +38,7 @@ def Hadron.isBaryon (h : Hadron) : Prop := h.constituents.length = 3
 def Hadron.isMeson (h : Hadron) : Prop := h.constituents.length = 2
 
 /-- Every hadron is either a meson, a baryon, or exotic (≥ 4 constituents). -/
--- Ref: [leitner2026] §3, Remark: Hadron classification
+-- Ref: [manuscript] §3, Remark: Hadron classification
 theorem Hadron.meson_or_baryon_or_exotic (h : Hadron) :
     h.isMeson ∨ h.isBaryon ∨ h.constituents.length ≥ 4 := by
   unfold isMeson isBaryon
@@ -64,7 +64,7 @@ The hadronic mass formula: m_H = Q(q) · M(L_Hopf) + Σᵢ M(Kᵢ)
 where Q(q) encodes the q-deformed Skein polynomial of the binding link. -/
 
 /-- Binding structure: the Hopf link and its Skein polynomial contribution. -/
--- Ref: [leitner2026] §3, Definition: Hadron mass
+-- Ref: [manuscript] §3, Definition: Hadron mass
 structure HadronBinding where
   /-- The q-deformation parameter. -/
   q : ℝ
@@ -73,7 +73,7 @@ structure HadronBinding where
   /-- The Skein polynomial evaluation Q(q) · M(L_Hopf). -/
   bindingMass : ℝ
   /-- Binding mass is non-negative. -/
-  -- Ref: [leitner2026] §3
+  -- Ref: [manuscript] §3
   bindingMass_nonneg : 0 ≤ bindingMass
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
@@ -84,7 +84,7 @@ noncomputable def constituentMass (k : KnotTheory.PlanarDiagram)
 
 /-- The total mass of a hadron given a binding structure and constituent volumes.
     m_H = bindingMass + Σᵢ vol(Kᵢ) -/
--- Ref: [leitner2026] §3, Proposition: Terminal resolution
+-- Ref: [manuscript] §3, Proposition: Terminal resolution
 noncomputable def Hadron.mass (h : Hadron) (binding : HadronBinding)
     (volumes : List KnotTheory.HyperbolicVolume) : ℝ :=
   binding.bindingMass + volumes.foldl (fun acc v => acc + v.value) 0

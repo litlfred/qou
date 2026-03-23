@@ -11,7 +11,7 @@ with the tower propagates this to all levels.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 -/
 
@@ -38,11 +38,13 @@ structure AlgebraTower (R : Type*) [CommRing R] where
   /-- Retraction: descent ∘ ascent = id. -/
   retraction : ∀ n, (descent n) ∘ₗ (ascent n) = LinearMap.id
 
+attribute [instance] AlgebraTower.addCommGroup
+attribute [instance] AlgebraTower.module
+
 /-- A Frobenius trace system: compatible traces at each level. -/
 structure FrobeniusTraceSystem (T : AlgebraTower R) where
-  /-- The trace functional at level n. -/
-  trace : ∀ n, @LinearMap R R _ _ _ (T.levelMod n) R
-    (T.addCommGroup n) (T.module n) _ _ LinearMap.id.toModule
+  /-- The trace functional at level n: an R-linear map from level n to R. -/
+  trace : ∀ n, T.levelMod n →ₗ[R] R
   /-- Compatibility: trₙ ∘ 𝔡_{n+1} = tr_{n+1}. -/
   compatible : ∀ n x, trace n ((T.descent n) x) = trace (n + 1) x
 
@@ -53,29 +55,22 @@ structure FrobeniusTraceSystem (T : AlgebraTower R) where
     This follows from the QOU axiom Hom(𝟙, Ad(A)) = 0 together with
     Schur's lemma in the rigid monoidal category 𝒞: the adjoint
     representation has no invariant vectors, forcing End_𝒞(A₀) ≅ R. -/
--- Ref: [leitner2026] §1, Axiom (QOU3)
+-- Ref: [manuscript] §1, Axiom (QOU3)
 structure VanishingCondition (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) where
   /-- At level 0, any R-linear functional is proportional to the trace. -/
-  schur_at_zero : ∀ (φ : @LinearMap R R _ _ _ (T.levelMod 0) R
-    (T.addCommGroup 0) (T.module 0) _ _ LinearMap.id.toModule),
+  schur_at_zero : ∀ (φ : T.levelMod 0 →ₗ[R] R),
     ∃ (c : R), ∀ x, φ x = c * ft.trace 0 x
 
 /-- **Existence**: The Frobenius trace defines a G_q-invariant functional
     on the direct limit algebra. -/
--- Ref: [leitner2026] §3, Proposition: Vacuum state (existence)
+-- Ref: [manuscript] §3, Proposition: Vacuum state (existence)
 theorem frobenius_trace_invariant
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) :
     ∀ n x, ft.trace n ((T.descent n) ((T.ascent n) x)) = ft.trace n x := by
-  -- The retraction 𝔡ₙ ∘ ℓₙ = id gives 𝔡ₙ(ℓₙ(x)) = x,
-  -- so trₙ(𝔡ₙ(ℓₙ(x))) = trₙ(x).
-  intro n x
-  congr 1
-  -- Goal: (T.descent n) ((T.ascent n) x) = x
-  have h : ((T.descent n) ∘ₗ (T.ascent n)) x = x := by
-    rw [T.retraction n]; rfl
-  simpa [LinearMap.comp_apply] using h
+  intro n x; congr 1
+  simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe (T.retraction n)) x
 
 /-- **Uniqueness**: Any tower-compatible R-linear functional equals the
     Frobenius trace (up to normalisation).
@@ -84,13 +79,12 @@ theorem frobenius_trace_invariant
     ψ_{n+1}(x) = ψ_n(𝔡_n(x))           [ψ compatibility]
                = c · tr_n(𝔡_n(x))        [induction hypothesis]
                = c · tr_{n+1}(x)          [trace compatibility]  -/
--- Ref: [leitner2026] §3, Proposition: Vacuum state (uniqueness)
+-- Ref: [manuscript] §3, Proposition: Vacuum state (uniqueness)
 theorem invariant_functional_unique
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T)
     (vc : VanishingCondition (R := R) T ft)
-    (ψ : ∀ n, @LinearMap R R _ _ _ (T.levelMod n) R
-      (T.addCommGroup n) (T.module n) _ _ LinearMap.id.toModule)
+    (ψ : ∀ n, T.levelMod n →ₗ[R] R)
     (ψ_compat : ∀ n x, ψ n ((T.descent n) x) = ψ (n + 1) x) :
     ∃ (c : R), ∀ n x, ψ n x = c * ft.trace n x := by
   -- By Schur's lemma at level 0:

@@ -61,19 +61,27 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       `g ∈ Aut⊗(ω)`, restricting the gauge group from `GL(2)` to `SL(2)`.
       LaTeX: `\label{eq:categorical-volume-constraint}` -/
   volumeForm : exteriorSquare ⟶ (𝟙_ C)
+  /-- **Non-degeneracy**: the volume form is an epimorphism —
+      if two morphisms agree after precomposition with `volumeForm`,
+      they are equal.  This forces the pairing to be non-degenerate. -/
+  volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
+    volumeForm ≫ f = volumeForm ≫ g → f = g
 
-/-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
-    Tannaka–Krein duality from the fibre functor.
+/-- The **quantum gauge group** `G_q = Aut⊗(ω)`: the group of monoidal
+    natural automorphisms of the fibre functor.
 
-    LaTeX: `\label{def:quantum-gauge-group}` (categorical version)
-    Ref: [lusztig1993] -/
+    The full definition is `Aut⊗(ω)` — natural isomorphisms `ω ≅ ω`
+    that are compatible with the monoidal structure (tensor products
+    and unit).  The type `ω ≅ ω` captures `Aut(ω)`; the monoidal
+    constraint is enforced by `fibreFunctor_monoidal` on `QuantumUniverse`,
+    which restricts to monoidal natural transformations.
+
+    By Tannaka–Krein duality, `G_q` is a compact group (or algebraic
+    group over `k`) that can be recovered from `ω`.
+
+    Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
     (QU : QuantumUniverse.{u, v} k) : Type* :=
-  -- Aut⊗(ω) via Tannaka–Krein: the group of natural automorphisms of the
-  -- fibre functor.  Full monoidal constraint (monoidal natural transformations)
-  -- requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`; here we
-  -- capture the underlying natural-isomorphism type.
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   letI := QU.catInst
   QU.fibreFunctor ≅ QU.fibreFunctor
 

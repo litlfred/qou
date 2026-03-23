@@ -1,5 +1,5 @@
 In the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), an
+([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), an
 ([observation](#def:observation)) is realised as a continuous open map
 from the spacetime base $M$ to the bundle of endomorphisms
 $\operatorname{End}(E) \to M$, encoding the coordinate change in torsion

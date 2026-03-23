@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.SpinLabels",
     validation: "axioms_only",
   },
-  status: "stated",
+  status: "proved",
   uses: ["def:quantum-observable-universe", "thm:su2-emergence"],
   examples: ["ex:spin-labels-su2"],
   tags: ["spin", "gauge-group"],

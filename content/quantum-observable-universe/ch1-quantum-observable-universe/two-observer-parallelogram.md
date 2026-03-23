@@ -55,6 +55,6 @@ object in $\mathcal{C}$, not a topological ring).  Working with germs
 $A / \mathfrak{m}_p^2$ at a point $p$ plays the role of localisation:
 it captures the first-order jet of the observation without requiring a
 topology on $A$.  In the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), where
+([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), where
 $A = C^{\infty}(M)$, germs at $p$ recover the usual smooth germs
 $C^{\infty}_p(M) / \mathfrak{m}_p^2$.

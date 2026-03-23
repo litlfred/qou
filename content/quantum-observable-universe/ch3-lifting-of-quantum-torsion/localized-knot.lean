@@ -7,7 +7,7 @@ fundamental unit of matter in the QOU framework.
 
 ## References
 
-- [leitner2026] §3 Lifting of Quantum Torsion
+- [manuscript] §3 Lifting of Quantum Torsion
 -/
 
 import Mathlib.Data.Real.Basic
@@ -28,7 +28,7 @@ structure LocalizedKnot where
   /-- θ is in valid range. -/
   theta_range : 0 ≤ theta ∧ theta ≤ Real.pi
   /-- φ is in valid range. -/
-  -- Ref: [leitner2026] §3, Definition: Localized knot
+  -- Ref: [manuscript] §3, Definition: Localized knot
   phi_range : 0 ≤ phi ∧ phi < 2 * Real.pi
 
 /-! ## Base point and crossing number -/
@@ -103,12 +103,12 @@ classification in the QOU framework. -/
 
 /-- Intrinsic angular momentum of a localized knot, proportional to
     crossing number: J = c(K) / 2 (in natural units). -/
--- Ref: [leitner2026] §3, Proposition: Intrinsic angular momentum
+-- Ref: [manuscript] §3, Proposition: Intrinsic angular momentum
 noncomputable def LocalizedKnot.intrinsicAngularMomentum (k : LocalizedKnot) : ℝ :=
   (k.crossingNumber : ℝ) / 2
 
 /-- The trefoil (3 crossings) has spin 3/2 — a fermion (baryon constituent). -/
--- Ref: [leitner2026] §3, Example: Trefoil spin
+-- Ref: [manuscript] §3, Example: Trefoil spin
 theorem trefoil_spin_three_halves (k : LocalizedKnot)
     (hk : k.knot = KnotTheory.trefoil) :
     k.intrinsicAngularMomentum = 3 / 2 := by
@@ -118,7 +118,7 @@ theorem trefoil_spin_three_halves (k : LocalizedKnot)
   ring
 
 /-- The unknot (0 crossings) has spin 0 — a scalar. -/
--- Ref: [leitner2026] §3, Example: Unknot spin
+-- Ref: [manuscript] §3, Example: Unknot spin
 theorem unknot_spin_zero (k : LocalizedKnot)
     (hk : k.knot = KnotTheory.unknot) :
     k.intrinsicAngularMomentum = 0 := by
@@ -127,11 +127,10 @@ theorem unknot_spin_zero (k : LocalizedKnot)
   simp [KnotTheory.PlanarDiagram.crossingCount, KnotTheory.unknot]
 
 /-- Angular momentum is non-negative. -/
--- Ref: [leitner2026] §3
+-- Ref: [manuscript] §3
 theorem LocalizedKnot.angularMomentum_nonneg (k : LocalizedKnot) :
     0 ≤ k.intrinsicAngularMomentum := by
-  unfold intrinsicAngularMomentum crossingNumber
-  -- Ref: [manuscript] §3, crossing count is a natural number
-  sorry
+  unfold intrinsicAngularMomentum
+  apply div_nonneg (Nat.cast_nonneg _) (by norm_num : (0 : ℝ) ≤ 2)
 
 end QOU

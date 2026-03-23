@@ -6,7 +6,7 @@ observables at infinite brane level.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -20,17 +20,19 @@ variable {R : Type*} [CommRing R]
     with connecting maps given by jet prolongation.
 
     LaTeX: `\label{def:direct-limit-algebra}` -/
--- Ref: [leitner2026] §3, Definition: Direct limit algebra
+-- Ref: [manuscript] §3, Definition: Direct limit algebra
 structure DirectLimitAlgebra (R : Type*) [CommRing R] where
   /-- The module at each level. -/
   levelMod : ℕ → Type*
   /-- Module instances. -/
-  addCommGroup : ∀ n, AddCommGroup (levelMod n)
-  module : ∀ n, Module R (levelMod n)
+  instAddCommGroup : ∀ n, AddCommGroup (levelMod n)
+  instModule : ∀ n, Module R (levelMod n)
   /-- Connecting maps (from jet prolongation). -/
-  connect : ∀ n, @LinearMap R R _ _ _ (levelMod n) (levelMod (n + 1))
-    (addCommGroup n) (module n) (addCommGroup (n + 1)) (module (n + 1)) LinearMap.id.toModule
+  connect : ∀ n, levelMod n →ₗ[R] levelMod (n + 1)
   /-- Connecting maps are injective (ascent is an embedding). -/
   connect_injective : ∀ n, Function.Injective (connect n)
+
+attribute [instance] DirectLimitAlgebra.instAddCommGroup
+attribute [instance] DirectLimitAlgebra.instModule
 
 end QOU

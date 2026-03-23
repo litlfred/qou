@@ -75,10 +75,7 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
 theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
     (amf : ArchimedeanMassFormula M) : amf.h_q ≠ 0 := by
   rw [amf.h_q_def]
-  have hq := amf.q_gt_one
-  intro h
-  have : amf.q = 1 := by linarith [show 1 / amf.q = 1 from by linarith]
-  linarith
+  intro h; linarith [amf.q_gt_one]
 
 /-- **Theorem.** Given the two evaluation hypotheses, the total mass
     equals `Vol(K) / ℏ_q²`.
@@ -88,24 +85,16 @@ theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
 theorem ArchimedeanMassFormula.mass_eq_vol_div_h_q_sq {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     amf.totalMass = amf.knotVolume / amf.h_q ^ 2 := by
-  -- From TopologicalMassDecomposition: totalMass = baseline + Σ exceptional
   have hdecomp := amf.decomposition
-  -- Substitute the two evaluation hypotheses
   rw [amf.baseline_eq_volume, amf.exceptional_sum_eq] at hdecomp
-  -- Now: totalMass = knotVolume + knotVolume * (1/h_q² - 1)
-  -- Simplify: = knotVolume * (1 + 1/h_q² - 1) = knotVolume / h_q²
-  have h_ne : amf.h_q ^ 2 ≠ 0 := pow_ne_zero 2 amf.h_q_ne_zero
-  rw [hdecomp]
-  field_simp
-  ring
+  rw [hdecomp]; field_simp [pow_ne_zero 2 amf.h_q_ne_zero]; ring
 
 /-- The mass is positive (since the knot volume is positive and ℏ_q² > 0). -/
 theorem ArchimedeanMassFormula.mass_pos {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     0 < amf.totalMass := by
   rw [amf.mass_eq_vol_div_h_q_sq]
-  apply div_pos amf.knotVolume_pos
-  apply sq_pos_of_ne_zero _ amf.h_q_ne_zero
+  exact div_pos amf.knotVolume_pos (sq_pos_of_ne_zero _ amf.h_q_ne_zero)
 
 /-- The mass formula is consistent with the `MassDerivation` module:
     `h_q_def` guarantees `h_q = 1 - 1/q`, so we recover exactly

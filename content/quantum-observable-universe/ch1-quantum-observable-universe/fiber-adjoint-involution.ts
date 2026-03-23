@@ -2,6 +2,8 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:fiber-adjoint-involution",
+  lean: { decl: "QOU.FiberAdjointInvolution" },
+  status: "stated",
   title: "Fiber--adjoint-fiber involution",
   uses: ["def:quantum-observable-universe", "def:projective-line-object"],
   proofs: ["prf:fiber-adjoint-involution"],

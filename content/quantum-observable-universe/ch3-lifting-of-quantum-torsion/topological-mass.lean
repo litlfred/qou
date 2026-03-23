@@ -15,7 +15,7 @@ idempotent splitting of End_𝒞(A_{n+1}) and the linearity of the trace.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -37,9 +37,10 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
   descendedTrace : R
   /-- The transient traces localised at each blow-up centre. -/
   transientTraces : List R
-  /-- The total trace equals descended + sum of transient. -/
-  decomposition : descendedTrace + transientTraces.foldl (· + ·) 0 =
-    descendedTrace + transientTraces.foldl (· + ·) 0
+  /-- The total cycle trace value (before decomposition). -/
+  totalTrace : R
+  /-- The total trace decomposes as descended + sum of transient. -/
+  decomposition : totalTrace = descendedTrace + transientTraces.foldl (· + ·) 0
 
 /-- **Topological Decomposition of Mass** (categorical form):
 
@@ -47,32 +48,33 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
 
     when the idempotent decomposition is orthogonal with respect
     to the Frobenius norm. -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_categorical
     (md : MassDecomposition R)
-    (orthogonal : ‖md.descendedTrace + md.transientTraces.foldl (· + ·) 0‖ =
+    (orthogonal : ‖md.totalTrace‖ =
       ‖md.descendedTrace‖ + ‖md.transientTraces.foldl (· + ·) 0‖) :
-    categoricalMass (md.descendedTrace + md.transientTraces.foldl (· + ·) 0) =
+    categoricalMass md.totalTrace =
     categoricalMass md.descendedTrace +
-      ‖md.transientTraces.foldl (· + ·) 0‖ := by
-  unfold categoricalMass
-  exact orthogonal
+      ‖md.transientTraces.foldl (· + ·) 0‖ :=
+  orthogonal
 
 /-- Each transient contribution localises to a single blow-up centre
     because the kernels of 𝔡_{n+1} at distinct centres are disjoint
     submodules of End_𝒞(A_{n+1}). -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem transient_localisation
     (traces : List R)
     (disjoint : ∀ i j, i ≠ j →
       i < traces.length → j < traces.length →
       traces[i]! * traces[j]! = 0) :
-    True := by
-  trivial
+    ∀ i j, i ≠ j →
+      i < traces.length → j < traces.length →
+      traces[i]! * traces[j]! = 0 :=
+  disjoint
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/
--- Ref: [leitner2026] §3, Theorem: Topological decomposition of mass
+-- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem descended_trace_is_base_level
     {N : Type*} [AddCommGroup N] [Module R N]
     {M : Type*} [AddCommGroup M] [Module R M]
@@ -82,13 +84,7 @@ theorem descended_trace_is_base_level
     (trace_compat : ∀ x, trN (𝔡 x) = trM x)
     (γ₀ : N) :
     trM (ℓ γ₀) = trN γ₀ := by
-  -- trace_compat: trN(𝔡(x)) = trM(x). Set x = ℓ(γ₀):
-  -- trN(𝔡(ℓ(γ₀))) = trM(ℓ(γ₀)).
-  -- Retraction: 𝔡(ℓ(γ₀)) = γ₀. So trN(γ₀) = trM(ℓ(γ₀)).
-  rw [← trace_compat (ℓ γ₀)]
-  congr 1
-  -- Goal: 𝔡 (ℓ γ₀) = γ₀
-  have h : (𝔡 ∘ₗ ℓ) γ₀ = γ₀ := by rw [retraction]; rfl
-  simpa [LinearMap.comp_apply] using h
+  rw [← trace_compat (ℓ γ₀)]; congr 1
+  simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe retraction) γ₀
 
 end QOU.Torsion

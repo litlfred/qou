@@ -51,7 +51,7 @@ instance of condition (1) in
 [quantum observable universe](#def:quantum-observable-universe).
 In the archimedean realisation ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
-conditions of [$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)
+conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)
 reduce to a triple:
 
 1. a CR manifold $(M, \theta)$ of hypersurface type with
