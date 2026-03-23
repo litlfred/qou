@@ -35,6 +35,7 @@ export default chapter({
       label: "sec:core-definitions",
       blocks: [
         "quantum-universe",
+        "frobenius-pairing",
         "quantum-universe-su2",
         "higher-forms",
         "higher-forms-su2",

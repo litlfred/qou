@@ -84,7 +84,7 @@ the non-degeneracy of the Frobenius form $\lambda$ via the diagram
 ```
 
 The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
-Frobenius pairing from $\lambda$; any global parallel section would
+[Frobenius pairing](#def:frobenius-pairing) from $\lambda$; any global parallel section would
 pair non-trivially with itself, contradicting the irreducibility of
 the instanton connection
 ([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius

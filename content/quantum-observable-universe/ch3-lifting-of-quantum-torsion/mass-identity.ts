@@ -8,6 +8,7 @@ export default definition({
   tags: ["mass", "categorical-trace", "frobenius-hopf"],
   uses: [
     "def:quantum-observable-universe",
+    "def:frobenius-pairing",
     "def:recursive-brane-tower",
   ],
 });
