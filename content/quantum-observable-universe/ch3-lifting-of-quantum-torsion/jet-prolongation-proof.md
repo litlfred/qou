@@ -1,6 +1,6 @@
 
 The proof proceeds in the rigid monoidal category underlying the quantum
-observable universe.  Let $A$ denote the Frobenius-Hopf object
+observable universe.  Let $A$ denote the Frobenius--Hopf object
 representing the gauge-bundle data of $(M,G,P,E)$.
 
 *Step 1: Categorical jet object.*
@@ -16,7 +16,7 @@ $\Omega^1(A)$ as a direct summand of $A \otimes A$, hence
 $J^1(A) := A \otimes \Omega^1(A)$ is again an object of the ambient
 category.
 
-*Step 2: Inherited Frobenius-Hopf structure.*
+*Step 2: Inherited Frobenius--Hopf structure.*
 The Frobenius relation
 $(\mathrm{Id} \otimes m) \circ (\Delta \otimes \mathrm{Id})
  = \Delta \circ m
@@ -26,7 +26,7 @@ to a well-defined comultiplication
 $\Delta'\colon J^1(A) \to J^1(A) \otimes J^1(A)$, and the counit
 $\varepsilon\colon A \to \mathbf{1}$ induces a counit $\varepsilon'$ on
 $J^1(A)$.  The Hopf antipode $S$ extends to $J^1(A)$ by functoriality of the
-Kähler differential construction.  Thus $J^1(A)$ is a Frobenius-Hopf object.
+Kähler differential construction.  Thus $J^1(A)$ is a Frobenius--Hopf object.
 
 This step relies on the *strong multiplicativity* condition: the
 co-multiplication must be compatible with the deformed product at every
@@ -54,7 +54,7 @@ Applying the fibre functor $\omega\colon \mathcal{C} \to \mathrm{Vect}_k$
 observable universe)
 recovers the geometric data: $\omega(J^1(A))$ is the space of sections of the
 first jet bundle $J^1 E$, the frame bundle $P'$ and orthonormal frame bundle
-$E'$ are the geometric counterparts of the Frobenius-Hopf structure on
+$E'$ are the geometric counterparts of the Frobenius--Hopf structure on
 $J^1(A)$, and the connection $A'$ is the image under $\omega$ of the
 comultiplication $\Delta'$.  Its uniqueness follows from the irreducibility
 of $A'$, which is guaranteed by the inherited vanishing condition of

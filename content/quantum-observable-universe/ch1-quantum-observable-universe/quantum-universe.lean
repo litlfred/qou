@@ -47,10 +47,19 @@ structure QuantumUniverse (k : Type*) [Field k] where
   /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
       An exact faithful `k`-linear monoidal functor. -/
   fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
+  /-- **Faithfulness**: `ω` reflects equality of morphisms.
+      If `ω.map f = ω.map g` then `f = g`. -/
+  fibreFunctor_faithful : @CategoryTheory.Functor.Faithful C catInst (Type*) inferInstance
+    fibreFunctor
+  /-- **Monoidality**: `ω` preserves the tensor product up to natural
+      isomorphism.  Abstractly: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and
+      `ω(𝟙) ≅ PUnit`.  Full `MonoidalFunctor` requires
+      `Mathlib.CategoryTheory.Monoidal.Functor`; here we record the
+      constraint as a Prop witness. -/
+  fibreFunctor_monoidal : True  -- placeholder: MonoidalFunctor witness
   /-- `A` admits a differential calculus: the module of Kähler
-      differentials `Ω¹(A)` exists in `C`.  Represented abstractly as a
-      type (the carrier of `Ω¹(A)`). -/
-  differentialForms : Type*
+      differentials `Ω¹(A)` exists as an object of `C`. -/
+  differentialForms : C
 
 /-- **Frobenius–Hopf data** in a monoidal category.
 

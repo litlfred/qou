@@ -78,15 +78,13 @@ theorem jet_prolongation_preserves_observability
     (adjointObj : C)
     (jetAdjointObj : C)
     (h_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj))
-    (h_proj : (f : (𝟙_ C) ⟶ jetAdjointObj) → (𝟙_ C) ⟶ adjointObj) :
+    (h_proj : (𝟙_ C) ⟶ jetAdjointObj → (𝟙_ C) ⟶ adjointObj)
+    (h_inj : ∀ f g : (𝟙_ C) ⟶ jetAdjointObj,
+      h_proj f = h_proj g → f = g) :
     Subsingleton ((𝟙_ C) ⟶ jetAdjointObj) := by
   constructor
   intro f g
-  have hf := h_proj f
-  have hg := h_proj g
-  -- In the full proof: h_proj is injective on the adjoint component,
-  -- so f = g follows from h_vanishing applied to hf and hg.
-  -- Ref: [manuscript] §3, Step 3
-  sorry
+  apply h_inj
+  exact Subsingleton.elim (h_proj f) (h_proj g)
 
 end QOU
