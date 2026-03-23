@@ -25,12 +25,14 @@ structure DirectLimitAlgebra (R : Type*) [CommRing R] where
   /-- The module at each level. -/
   levelMod : ℕ → Type*
   /-- Module instances. -/
-  addCommGroup : ∀ n, AddCommGroup (levelMod n)
-  module : ∀ n, Module R (levelMod n)
+  instAddCommGroup : ∀ n, AddCommGroup (levelMod n)
+  instModule : ∀ n, Module R (levelMod n)
   /-- Connecting maps (from jet prolongation). -/
-  connect : ∀ n, @LinearMap R R _ _ _ (levelMod n) (levelMod (n + 1))
-    (addCommGroup n) (module n) (addCommGroup (n + 1)) (module (n + 1)) LinearMap.id.toModule
+  connect : ∀ n, levelMod n →ₗ[R] levelMod (n + 1)
   /-- Connecting maps are injective (ascent is an embedding). -/
   connect_injective : ∀ n, Function.Injective (connect n)
+
+attribute [instance] DirectLimitAlgebra.instAddCommGroup
+attribute [instance] DirectLimitAlgebra.instModule
 
 end QOU

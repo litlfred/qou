@@ -38,11 +38,13 @@ structure AlgebraTower (R : Type*) [CommRing R] where
   /-- Retraction: descent ∘ ascent = id. -/
   retraction : ∀ n, (descent n) ∘ₗ (ascent n) = LinearMap.id
 
+attribute [instance] AlgebraTower.addCommGroup
+attribute [instance] AlgebraTower.module
+
 /-- A Frobenius trace system: compatible traces at each level. -/
 structure FrobeniusTraceSystem (T : AlgebraTower R) where
-  /-- The trace functional at level n. -/
-  trace : ∀ n, @LinearMap R R _ _ _ (T.levelMod n) R
-    (T.addCommGroup n) (T.module n) _ _ LinearMap.id.toModule
+  /-- The trace functional at level n: an R-linear map from level n to R. -/
+  trace : ∀ n, T.levelMod n →ₗ[R] R
   /-- Compatibility: trₙ ∘ 𝔡_{n+1} = tr_{n+1}. -/
   compatible : ∀ n x, trace n ((T.descent n) x) = trace (n + 1) x
 
@@ -57,8 +59,7 @@ structure FrobeniusTraceSystem (T : AlgebraTower R) where
 structure VanishingCondition (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) where
   /-- At level 0, any R-linear functional is proportional to the trace. -/
-  schur_at_zero : ∀ (φ : @LinearMap R R _ _ _ (T.levelMod 0) R
-    (T.addCommGroup 0) (T.module 0) _ _ LinearMap.id.toModule),
+  schur_at_zero : ∀ (φ : T.levelMod 0 →ₗ[R] R),
     ∃ (c : R), ∀ x, φ x = c * ft.trace 0 x
 
 /-- **Existence**: The Frobenius trace defines a G_q-invariant functional
@@ -89,8 +90,7 @@ theorem invariant_functional_unique
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T)
     (vc : VanishingCondition (R := R) T ft)
-    (ψ : ∀ n, @LinearMap R R _ _ _ (T.levelMod n) R
-      (T.addCommGroup n) (T.module n) _ _ LinearMap.id.toModule)
+    (ψ : ∀ n, T.levelMod n →ₗ[R] R)
     (ψ_compat : ∀ n x, ψ n ((T.descent n) x) = ψ (n + 1) x) :
     ∃ (c : R), ∀ n x, ψ n x = c * ft.trace n x := by
   -- By Schur's lemma at level 0:
