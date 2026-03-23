@@ -34,17 +34,17 @@ if ! EXISTING_ENV=$(hcloud server ssh "$SERVER_NAME" -- cat /opt/qou/deploy/.env
   EXISTING_ENV=""
 fi
 
-LEAN_LSP_MCP_TOKEN=$(echo "$EXISTING_ENV" | grep '^LEAN_LSP_MCP_TOKEN=' | cut -d= -f2- || true)
+FOLIO_API_TOKEN=$(echo "$EXISTING_ENV" | grep '^FOLIO_API_TOKEN=' | cut -d= -f2- || true)
 COOKIE_SECRET=$(echo "$EXISTING_ENV" | grep '^COOKIE_SECRET=' | cut -d= -f2- || true)
-[ -z "$LEAN_LSP_MCP_TOKEN" ] && LEAN_LSP_MCP_TOKEN=$(openssl rand -hex 32)
+[ -z "$FOLIO_API_TOKEN" ] && FOLIO_API_TOKEN=$(openssl rand -hex 32)
 [ -z "$COOKIE_SECRET" ] && COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
 
 # ── Write .env safely (no heredoc, no injection) ──────────────────
-export LEAN_MCP_DOMAIN="$DOMAIN"
 export FOLIO_DOMAIN="$DOMAIN"
-export LEAN_MCP_IMAGE="$IMAGE"
-export LEAN_MCP_INTERNAL_PORT="$MCP_PORT"
-export LEAN_LSP_MCP_TOKEN
+export FOLIO_DOMAIN="$DOMAIN"
+export PAPER_ASSISTANT_IMAGE="$IMAGE"
+export MCP_INTERNAL_PORT="$MCP_PORT"
+export FOLIO_API_TOKEN
 export COOKIE_SECRET
 export OWNER_USERNAME
 export SESSION_MAX_AGE
@@ -64,9 +64,9 @@ hcloud server ssh "$SERVER_NAME" -- bash -c '
   cd deploy
   source .env
   FOLIO_DOMAIN="${FOLIO_DOMAIN}" \
-  LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT}" \
-  LEAN_MCP_DOMAIN="${LEAN_MCP_DOMAIN}" \
-    envsubst '"'"'${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}'"'"' \
+  MCP_INTERNAL_PORT="${MCP_INTERNAL_PORT}" \
+  FOLIO_DOMAIN="${FOLIO_DOMAIN}" \
+    envsubst '"'"'${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}'"'"' \
     < Caddyfile.folio.template > Caddyfile
 
   rm -rf viewer assistant

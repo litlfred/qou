@@ -99,12 +99,11 @@ fi
   printf 'DEPLOY_MODE=%s\n' "$MODE"
   printf 'COMPOSE_FILE=%s\n' "$COMPOSE_FILE"
   printf '\n# ── Domain & Image ───────────────────────────────────────────────\n'
-  printf 'LEAN_MCP_DOMAIN=%s\n' "$DOMAIN"
   printf 'FOLIO_DOMAIN=%s\n' "$DOMAIN"
-  printf 'LEAN_MCP_IMAGE=%s\n' "$IMAGE"
-  printf 'LEAN_MCP_INTERNAL_PORT=%s\n' "$MCP_PORT"
+  printf 'PAPER_ASSISTANT_IMAGE=%s\n' "$IMAGE"
+  printf 'MCP_INTERNAL_PORT=%s\n' "$MCP_PORT"
   printf '\n# ── Lean MCP Server ──────────────────────────────────────────────\n'
-  printf 'LEAN_LSP_MCP_TOKEN=%s\n' "$LEAN_TOKEN"
+  printf 'FOLIO_API_TOKEN=%s\n' "$LEAN_TOKEN"
   printf '\n# ── Auth Gateway ─────────────────────────────────────────────────\n'
   printf 'COOKIE_SECRET=%s\n' "$COOKIE"
   printf 'OWNER_USERNAME=%s\n' "$OWNER_USERNAME"
@@ -132,9 +131,8 @@ done
 
 # ── Generate Caddyfile from template ──────────────────────────────
 if [ -f "$TEMPLATE" ]; then
-    LEAN_MCP_DOMAIN="$DOMAIN" LEAN_MCP_INTERNAL_PORT="$MCP_PORT" \
-    FOLIO_DOMAIN="$DOMAIN" \
-        envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+    FOLIO_DOMAIN="$DOMAIN" MCP_INTERNAL_PORT="$MCP_PORT" \
+        envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT}' \
         < "$TEMPLATE" \
         > "$DEPLOY_DIR/Caddyfile"
     echo "  ✓ Caddyfile generated for $DOMAIN"

@@ -8,7 +8,7 @@
 #   GH_CLIENT_ID, GH_CLIENT_SECRET,
 #   HCLOUD_TOKEN (used by hcloud CLI)
 #
-# Generates: LEAN_LSP_MCP_TOKEN, COOKIE_SECRET (random)
+# Generates: FOLIO_API_TOKEN, COOKIE_SECRET (random)
 
 set -euo pipefail
 
@@ -31,7 +31,7 @@ if hcloud server describe "$SERVER_NAME" &>/dev/null; then
 fi
 
 # ── Generate one-time secrets ─────────────────────────────────────
-LEAN_LSP_MCP_TOKEN=$(openssl rand -hex 32)
+FOLIO_API_TOKEN=$(openssl rand -hex 32)
 COOKIE_SECRET=$(openssl rand -base64 32 | tr -d '\n')
 
 # ── Build cloud-init script ──────────────────────────────────────
@@ -53,9 +53,8 @@ cd /opt/qou
 base64 -d <<< "__ENV_B64__" > deploy/.env
 
 export FOLIO_DOMAIN="__DOMAIN__"
-export LEAN_MCP_INTERNAL_PORT="__MCP_PORT__"
-export LEAN_MCP_DOMAIN="__DOMAIN__"
-envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+export MCP_INTERNAL_PORT="__MCP_PORT__"
+envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT}' \
   < deploy/Caddyfile.folio.template \
   > deploy/Caddyfile
 
@@ -85,11 +84,10 @@ echo "=== Folio provisioning complete ==="
 CLOUD_INIT_EOF
 
 # ── Generate .env content safely and base64-encode ────────────────
-export LEAN_MCP_DOMAIN="$DOMAIN"
 export FOLIO_DOMAIN="$DOMAIN"
-export LEAN_MCP_IMAGE="$IMAGE"
-export LEAN_MCP_INTERNAL_PORT="$MCP_PORT"
-export LEAN_LSP_MCP_TOKEN
+export PAPER_ASSISTANT_IMAGE="$IMAGE"
+export MCP_INTERNAL_PORT="$MCP_PORT"
+export FOLIO_API_TOKEN
 export COOKIE_SECRET
 export OWNER_USERNAME
 export SESSION_MAX_AGE

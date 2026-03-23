@@ -118,7 +118,7 @@ User visits folio.litlfred.org
 | `GITHUB_OAUTH_CLIENT_ID` | GitHub Secrets + server `.env` | Repo admins, server root |
 | `GITHUB_OAUTH_CLIENT_SECRET` | GitHub Secrets + server `.env` | Repo admins, server root |
 | `COOKIE_SECRET` | Server `.env` only | Server root (HMAC signing key) |
-| `LEAN_LSP_MCP_TOKEN` | Server `.env` only | Server root |
+| `FOLIO_API_TOKEN` | Server `.env` only | Server root |
 | `HETZNER_API_TOKEN` | GitHub Secrets only | Repo admins |
 
 ### Threat model

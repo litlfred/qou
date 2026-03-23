@@ -34,16 +34,16 @@ services:
 
   # ── Paper Assistant (MCP + viewer + content API) ────────────────
   paper-assistant:
-    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest
+    image: ${PAPER_ASSISTANT_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest
     container_name: paper-assistant
     restart: unless-stopped
     environment:
-      - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
-      - MCP_PORT=${LEAN_MCP_INTERNAL_PORT:-8080}
+      - FOLIO_API_TOKEN=${FOLIO_API_TOKEN}
+      - MCP_PORT=${MCP_INTERNAL_PORT:-8080}
     expose:
-      - "${LEAN_MCP_INTERNAL_PORT:-8080}"
+      - "${MCP_INTERNAL_PORT:-8080}"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:${MCP_INTERNAL_PORT:-8080}/health"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -61,8 +61,8 @@ services:
       - AUTH_GATEWAY_PORT=4180
       - FOLIO_DOMAIN=${FOLIO_DOMAIN}
       - COOKIE_SECRET=${COOKIE_SECRET}
-      - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
-      - LEAN_MCP_UPSTREAM=http://paper-assistant:${LEAN_MCP_INTERNAL_PORT:-8080}
+      - FOLIO_API_TOKEN=${FOLIO_API_TOKEN}
+      - PAPER_ASSISTANT_UPSTREAM=http://paper-assistant:${MCP_INTERNAL_PORT:-8080}
       - VIEWER_ROOT=/var/www/viewer
       - OWNER_USERNAME=${OWNER_USERNAME:-litlfred}
       - SESSION_MAX_AGE=${SESSION_MAX_AGE:-86400}

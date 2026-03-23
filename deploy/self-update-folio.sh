@@ -48,9 +48,9 @@ if [ "$LOCAL_SHA" != "$REMOTE_SHA" ]; then
 
         # Caddyfile from folio template
         if [ -f "$DEPLOY_DIR/Caddyfile.folio.template" ]; then
-            FOLIO_DOMAIN="${FOLIO_DOMAIN:-${LEAN_MCP_DOMAIN}}" \
-            LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT}" \
-                envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+            FOLIO_DOMAIN="${FOLIO_DOMAIN:-${FOLIO_DOMAIN}}" \
+            MCP_INTERNAL_PORT="${MCP_INTERNAL_PORT}" \
+                envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
                 < "$DEPLOY_DIR/Caddyfile.folio.template" \
                 > "$DEPLOY_DIR/Caddyfile"
         fi
@@ -89,7 +89,7 @@ RUNNING_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' paper-assist
 
 if docker compose -f "$COMPOSE_FILE" pull paper-assistant --quiet 2>/dev/null; then
     source "$DEPLOY_DIR/.env" 2>/dev/null || true
-    IMAGE="${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest"
+    IMAGE="${PAPER_ASSISTANT_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest"
     NEW_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$IMAGE" 2>/dev/null | cut -d@ -f2 || echo "unknown")
 
     if [ "$RUNNING_DIGEST" != "$NEW_DIGEST" ] && [ "$NEW_DIGEST" != "unknown" ]; then

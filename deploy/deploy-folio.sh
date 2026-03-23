@@ -99,8 +99,8 @@ else
     source "$DEPLOY_DIR/.env"
     if [ -f "$DEPLOY_DIR/Caddyfile.folio.template" ]; then
         FOLIO_DOMAIN="${FOLIO_DOMAIN:-$DOMAIN}" \
-        LEAN_MCP_INTERNAL_PORT="${LEAN_MCP_INTERNAL_PORT:-8080}" \
-            envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+        MCP_INTERNAL_PORT="${MCP_INTERNAL_PORT:-8080}" \
+            envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
             < "$DEPLOY_DIR/Caddyfile.folio.template" \
             > "$DEPLOY_DIR/Caddyfile"
     fi

@@ -361,7 +361,7 @@ Architecture: `Client → Caddy (TLS) → auth-gateway (dual OAuth) → lean-lsp
 - Roles: viewer (read + feedback), collaborator (edit + branches), owner (commit to main)
 - Whitelists: `deploy/google-viewers.txt` + `deploy/github-collaborators.txt` (manually managed)
 - Auto-update: `self-update-folio.sh` polls git + GHCR every minute via cron
-- Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
+- Programmatic access: bearer token via `FOLIO_API_TOKEN`
 - Hosting: Hetzner CX22 (~€4.50/mo), provisioned via `provision-hetzner.sh`
 
 To switch a client to remote mode, update `.mcp.json`:

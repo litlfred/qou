@@ -13,11 +13,10 @@ OUTPUT="${1:?Usage: write-env.sh /path/to/.env}"
 {
   printf 'DEPLOY_MODE=folio\n'
   printf 'COMPOSE_FILE=docker-compose.folio.yml\n'
-  printf 'LEAN_MCP_DOMAIN=%s\n' "$LEAN_MCP_DOMAIN"
   printf 'FOLIO_DOMAIN=%s\n' "$FOLIO_DOMAIN"
-  printf 'LEAN_MCP_IMAGE=%s\n' "$LEAN_MCP_IMAGE"
-  printf 'LEAN_MCP_INTERNAL_PORT=%s\n' "$LEAN_MCP_INTERNAL_PORT"
-  printf 'LEAN_LSP_MCP_TOKEN=%s\n' "$LEAN_LSP_MCP_TOKEN"
+  printf 'PAPER_ASSISTANT_IMAGE=%s\n' "$PAPER_ASSISTANT_IMAGE"
+  printf 'MCP_INTERNAL_PORT=%s\n' "$MCP_INTERNAL_PORT"
+  printf 'FOLIO_API_TOKEN=%s\n' "$FOLIO_API_TOKEN"
   printf 'COOKIE_SECRET=%s\n' "$COOKIE_SECRET"
   printf 'OWNER_USERNAME=%s\n' "$OWNER_USERNAME"
   printf 'SESSION_MAX_AGE=%s\n' "$SESSION_MAX_AGE"
