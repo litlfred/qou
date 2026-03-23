@@ -1,5 +1,5 @@
 We construct the archimedean quantum observable universe
-([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)) explicitly for Bring's
+([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) explicitly for Bring's
 surface.  The five homogeneous coordinates $x_j$, $j\in\{0,\dots,4\}$,
 split into *spacetime* and *chiral* degrees of freedom:
 

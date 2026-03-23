@@ -94,7 +94,7 @@ The transient component $\alpha - \tau_n(\alpha)$ is annihilated by
 $\tau_n$: it lies in
 $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$
 ([descent eigenspaces](#prop:descent-eigenspaces)).  By the structure of the
-defining boundary ([brane boundary](#prop:brane-boundary)), the support of
+defining boundary ([brane boundary](#def:brane-boundary)), the support of
 a transient section is contained in a neighbourhood of the boundary
 $\partial E_n$, which has codimension $\geq 2$ in $E_n$ (item (1)) and
 whose fibre at each blow-up centre $p_i$ is the exceptional divisor

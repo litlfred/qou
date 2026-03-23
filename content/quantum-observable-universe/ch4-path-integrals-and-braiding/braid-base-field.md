@@ -2,7 +2,7 @@
 structure of $\mathcal{C}$.  In particular:
 
 1. For the archimedean realisation
-   ([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), the braiding
+   ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the braiding
    is computed by the $R$-matrix of
    $\mathcal{U}_q(\mathfrak{su}(2))$, and the $B_n$-action
    recovers the skein relations of [Chapter 5](#chap:experimental)
