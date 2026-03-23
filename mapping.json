@@ -1,290 +1,330 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T22:42:26.262391+00:00",
+  "generated_at": "2026-03-23T17:39:24.490543+00:00",
   "mappings": [
     {
-      "narrative": "Rigid monoidal category",
+      "narrative": "{Rigid monoidal category}",
       "lean_id": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
       "latex_label": "def:rigid-monoidal-category"
     },
     {
-      "narrative": "Quantum Universe",
+      "narrative": "{Snake identity}",
+      "lean_id": "QOU.QuantumObservableUniverse.SnakeIdentity",
+      "latex_label": "def:snake-identity"
+    },
+    {
+      "narrative": "{Quantum Universe}",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumUniverse",
       "latex_label": "def:quantum-universe"
     },
     {
-      "narrative": "Higher differential forms",
+      "narrative": "{Frobenius pairing}",
+      "lean_id": "QOU.QuantumObservableUniverse.FrobeniusPairing",
+      "latex_label": "def:frobenius-pairing"
+    },
+    {
+      "narrative": "{Higher differential forms}",
       "lean_id": "QOU.QuantumObservableUniverse.HigherForms",
       "latex_label": "def:higher-forms"
     },
     {
-      "narrative": "Quantum Observable Universe",
+      "narrative": "{Quantum Observable Universe}",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "latex_label": "def:quantum-observable-universe"
     },
     {
-      "narrative": "Involutive structure ($\\ast$-structure)",
-      "lean_id": "QOU.QuantumObservableUniverse.InvolutiveStructure",
-      "latex_label": "def:involutive-structure"
-    },
-    {
-      "narrative": "Positive-definite structure",
-      "lean_id": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
-      "latex_label": "def:positive-definite-dagger"
-    },
-    {
-      "narrative": "Spin labels and the fundamental object",
-      "lean_id": "QOU.QuantumObservableUniverse.SpinLabels",
-      "latex_label": "def:spin-labels"
-    },
-    {
-      "narrative": "Maximal torus and weight subcategory",
+      "narrative": "{Maximal torus and weight subcategory}",
       "lean_id": "QOU.QuantumObservableUniverse.MaximalTorus",
       "latex_label": "def:maximal-torus"
     },
     {
-      "narrative": "Weight decomposition",
+      "narrative": "{Weight decomposition}",
       "lean_id": "QOU.QuantumObservableUniverse.WeightDecomposition",
       "latex_label": "def:weight-decomposition"
     },
     {
-      "narrative": "Categorical Reeb derivation",
+      "narrative": "{Involutive structure (\\$\\textbackslash\\{\\}ast\\$-structure)}",
+      "lean_id": "QOU.QuantumObservableUniverse.InvolutiveStructure",
+      "latex_label": "def:involutive-structure"
+    },
+    {
+      "narrative": "{Positive-definite structure}",
+      "lean_id": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
+      "latex_label": "def:positive-definite-dagger"
+    },
+    {
+      "narrative": "{Spin labels and the fundamental object}",
+      "lean_id": "QOU.QuantumObservableUniverse.SpinLabels",
+      "latex_label": "def:spin-labels"
+    },
+    {
+      "narrative": "{Categorical Reeb derivation}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalReeb",
       "latex_label": "def:categorical-reeb"
     },
     {
-      "narrative": "Projective line object",
+      "narrative": "{Projective line object}",
       "lean_id": "QOU.QuantumObservableUniverse.ProjectiveLineObject",
       "latex_label": "def:projective-line-object"
     },
     {
-      "narrative": "Categorical connection and curvature",
+      "narrative": "{Categorical connection and curvature}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalConnection",
       "latex_label": "def:categorical-connection"
     },
     {
-      "narrative": "Categorical jet object",
+      "narrative": "{Categorical jet object}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalJet",
       "latex_label": "def:categorical-jet"
     },
     {
-      "narrative": "Categorical Hodge star",
+      "narrative": "{Categorical Hodge star}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
       "latex_label": "def:categorical-hodge-star"
     },
     {
-      "narrative": "Substrate parameter",
+      "narrative": "{Substrate parameter}",
       "lean_id": "QOU.QuantumObservableUniverse.SubstrateParameter",
       "latex_label": "def:substrate-parameter"
     },
     {
-      "narrative": "Quantum Gauge Group",
+      "narrative": "{Quantum Gauge Group}",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumGaugeGroup",
       "latex_label": "def:quantum-gauge-group"
     },
     {
-      "narrative": "Quantum Planck Constant",
+      "narrative": "{Quantum Planck Constant}",
       "lean_id": "QOU.QuantumObservableUniverse.QuantumPlanckConstant",
       "latex_label": "def:quantum-planck-constant"
     },
     {
-      "narrative": "$q$-Hodge star",
+      "narrative": "{\\$q\\$-Hodge star}",
       "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
       "latex_label": "def:q-hodge-star"
     },
     {
-      "narrative": "Categorical action",
+      "narrative": "{Categorical action}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalAction",
       "latex_label": "def:categorical-action"
     },
     {
-      "narrative": "Categorical $q$-deformed exterior derivative",
+      "narrative": "{Categorical \\$q\\$-deformed exterior derivative}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
       "latex_label": "def:categorical-q-ext-deriv"
     },
     {
-      "narrative": "Particle",
+      "narrative": "{\\$q\\$-harmonic form (particle)}",
       "lean_id": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "latex_label": "def:q-harmonic-form"
     },
     {
-      "narrative": "Fermion--Boson decomposition",
-      "lean_id": "QOU.QuantumObservableUniverse.Fermion",
-      "latex_label": "def:fermion"
+      "narrative": "{Fermion--Boson decomposition}",
+      "lean_id": "QOU.QuantumObservableUniverse.FermionBosonDecomposition",
+      "latex_label": "def:fermion-boson-decomposition"
     },
     {
-      "narrative": "Categorical point",
+      "narrative": "{Categorical point}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalPoint",
       "latex_label": "def:categorical-point"
     },
     {
-      "narrative": "Observation",
+      "narrative": "{Observation}",
       "lean_id": "QOU.QuantumObservableUniverse.Observation",
       "latex_label": "def:observation"
     },
     {
-      "narrative": "Categorical instanton",
+      "narrative": "{Categorical instanton}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalInstanton",
       "latex_label": "def:categorical-instanton"
     },
     {
-      "narrative": "Categorical $q$-Lie bracket",
+      "narrative": "{Categorical \\$q\\$-Lie bracket}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
       "latex_label": "def:categorical-q-lie-bracket"
     },
     {
-      "narrative": "Categorical $q$-deformed connection",
+      "narrative": "{Categorical \\$q\\$-deformed connection}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQConnection",
       "latex_label": "def:categorical-q-connection"
     },
     {
-      "narrative": "$q$-Weighted Yang--Mills--Levi functional",
+      "narrative": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
       "lean_id": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "latex_label": "def:q-yang-mills-levi"
     },
     {
-      "narrative": "Categorical transport equation",
-      "lean_id": "QOU.Elaboration.CategoricalTransport",
+      "narrative": "{Categorical transport equation}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalTransport",
       "latex_label": "def:categorical-transport"
     },
     {
-      "narrative": "Categorical $q$-Reeb flow",
-      "lean_id": "QOU.Elaboration.CategoricalQReebFlow",
+      "narrative": "{Categorical q-Reeb flow}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalQReebFlow",
       "latex_label": "def:categorical-q-reeb-flow"
     },
     {
-      "narrative": "Categorical $q$-torsion leaf",
-      "lean_id": "QOU.Elaboration.CategoricalQTorsionLeaf",
+      "narrative": "{Categorical q-torsion leaf}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalQTorsionLeaf",
       "latex_label": "def:categorical-q-torsion-leaf"
     },
     {
-      "narrative": "Braid group on three strands",
-      "lean_id": "QOU.PathIntegrals.BraidGroup",
-      "latex_label": "def:braid-group"
-    },
-    {
-      "narrative": "Symmetric group $S_3$",
-      "lean_id": "QOU.PathIntegrals.S3Group",
-      "latex_label": "def:s3-group"
-    },
-    {
-      "narrative": "$\\mathfrak{su}(2)$ basis",
-      "lean_id": "QOU.PathIntegrals.Su2Basis",
-      "latex_label": "def:su2-basis"
-    },
-    {
-      "narrative": "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
-      "lean_id": "QOU.PathIntegrals.Su2Generators",
-      "latex_label": "def:su2-generators"
-    },
-    {
-      "narrative": "$\\mathrm{SO}(3)$ generators",
-      "lean_id": "QOU.PathIntegrals.So3Generators",
-      "latex_label": "def:so3-generators"
-    },
-    {
-      "narrative": "Braid involutions: twist and flip",
-      "lean_id": "QOU.PathIntegrals.BraidTwistFlip",
-      "latex_label": "def:braid-twist-flip"
-    },
-    {
-      "narrative": "Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$",
-      "lean_id": "QOU.PathIntegrals.QuantumSu2",
-      "latex_label": "def:quantum-su2"
-    },
-    {
-      "narrative": "Recursive Brane Tower",
-      "lean_id": "QOU.Torsion.RecursiveBraneTower",
-      "latex_label": "def:recursive-brane-tower"
-    },
-    {
-      "narrative": "Yekutieli Lifting Condition",
-      "lean_id": "QOU.Torsion.YekutieliLiftingCondition",
-      "latex_label": "def:yekutieli-lifting-condition"
-    },
-    {
-      "narrative": "Quantum Characteristic Classes (Yekutieli obstruction)",
-      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
-      "latex_label": "def:quantum-characteristic-classes"
-    },
-    {
-      "narrative": "Quantum Observable Universe as Direct Limit",
-      "lean_id": "QOU.Torsion.DirectLimitAlgebra",
-      "latex_label": "def:direct-limit-algebra"
-    },
-    {
-      "narrative": "Mass (categorical trace)",
-      "lean_id": "QOU.Torsion.MassIdentity",
-      "latex_label": "def:mass-identity"
-    },
-    {
-      "narrative": "Yekutieli triple mapping",
-      "lean_id": "QOU.Torsion.YekutieliTriple",
-      "latex_label": "def:yekutieli-triple"
-    },
-    {
-      "narrative": "Descent",
-      "lean_id": "QOU.Torsion.Descent",
-      "latex_label": "def:descent"
-    },
-    {
-      "narrative": "Descent involution",
-      "lean_id": "QOU.Torsion.DescentInvolution",
-      "latex_label": "def:descent-involution"
-    },
-    {
-      "narrative": "Defining boundary of the brane",
-      "lean_id": "QOU.Torsion.BraneBoundary",
-      "latex_label": "def:brane-boundary"
-    },
-    {
-      "narrative": "Bring's surface",
-      "lean_id": "QOU.BringsSurface.BringsSurface",
-      "latex_label": "def:brings-surface"
-    },
-    {
-      "narrative": "Color tube coordinates",
+      "narrative": "{Color tube coordinates}",
       "lean_id": "QOU.BringsSurface.ColorTubeCoordinates",
       "latex_label": "def:color-tube-coordinates"
     },
     {
-      "narrative": "Color tube fibers",
+      "narrative": "{Color tube fibers}",
       "lean_id": "QOU.BringsSurface.ColorTubeFibers",
       "latex_label": "def:color-tube-fibers"
     },
     {
-      "narrative": "Observed spacetime value",
+      "narrative": "{Observed spacetime value}",
       "lean_id": "QOU.BringsSurface.ObservedValue",
       "latex_label": "def:observed-value"
     },
     {
-      "narrative": "Briggs--Klein affine chart",
+      "narrative": "{Briggs--Klein affine chart}",
       "lean_id": "QOU.BringsSurface.BriggsKleinChart",
       "latex_label": "def:briggs-klein-chart"
     },
     {
-      "narrative": "Quaternionic spectral resolvents",
+      "narrative": "{Quaternionic spectral resolvents}",
       "lean_id": "QOU.BringsSurface.QuaternionicSpectralResolvents",
       "latex_label": "def:quaternionic-spectral-resolvents"
     },
     {
-      "narrative": "Descartes condition",
+      "narrative": "{Recursive Brane Tower}",
+      "lean_id": "QOU.Torsion.RecursiveBraneTower",
+      "latex_label": "def:recursive-brane-tower"
+    },
+    {
+      "narrative": "{Yekutieli triple mapping}",
+      "lean_id": "QOU.Torsion.YekutieliTriple",
+      "latex_label": "def:yekutieli-triple"
+    },
+    {
+      "narrative": "{Yekutieli Lifting Condition}",
+      "lean_id": "QOU.Torsion.YekutieliLiftingCondition",
+      "latex_label": "def:yekutieli-lifting-condition"
+    },
+    {
+      "narrative": "{Quantum Characteristic Classes (Yekutieli obstruction)}",
+      "lean_id": "QOU.Torsion.QuantumCharacteristicClasses",
+      "latex_label": "def:quantum-characteristic-classes"
+    },
+    {
+      "narrative": "{Quantum Observable Universe as Direct Limit}",
+      "lean_id": "QOU.Torsion.DirectLimitAlgebra",
+      "latex_label": "def:direct-limit-algebra"
+    },
+    {
+      "narrative": "{Mass (categorical trace)}",
+      "lean_id": "QOU.Torsion.MassIdentity",
+      "latex_label": "def:mass-identity"
+    },
+    {
+      "narrative": "{Descent}",
+      "lean_id": "QOU.Torsion.Descent",
+      "latex_label": "def:descent"
+    },
+    {
+      "narrative": "{Descent involution}",
+      "lean_id": "QOU.Torsion.DescentInvolution",
+      "latex_label": "def:descent-involution"
+    },
+    {
+      "narrative": "{Defining boundary of the brane}",
+      "lean_id": "QOU.Torsion.BraneBoundary",
+      "latex_label": "def:brane-boundary"
+    },
+    {
+      "narrative": "{Localized knot (knot at a point)}",
+      "lean_id": "QOU.Torsion.LocalizedKnot",
+      "latex_label": "def:localized-knot"
+    },
+    {
+      "narrative": "{Hadron (abstract composite knot)}",
+      "lean_id": "QOU.Torsion.Hadron",
+      "latex_label": "def:hadron"
+    },
+    {
+      "narrative": "{Localized hadron}",
+      "lean_id": "QOU.Torsion.LocalizedHadron",
+      "latex_label": "def:localized-hadron"
+    },
+    {
+      "narrative": "{Fibre-compatible hadron embedding}",
+      "lean_id": "QOU.Torsion.HadronFibreEmbedding",
+      "latex_label": "def:hadron-fibre-embedding"
+    },
+    {
+      "narrative": "{Bundle initial conditions (big bang state)}",
+      "lean_id": "QOU.Torsion.BundleInitialConditions",
+      "latex_label": "def:bundle-initial-conditions"
+    },
+    {
+      "narrative": "{Isotopy equivalence of bundle initial conditions}",
+      "lean_id": "QOU.Torsion.BundleIsotopyEquivalence",
+      "latex_label": "def:bundle-isotopy-equivalence"
+    },
+    {
+      "narrative": "{Torsion-driven knot flow}",
+      "lean_id": "QOU.Torsion.TorsionKnotFlow",
+      "latex_label": "def:torsion-knot-flow"
+    },
+    {
+      "narrative": "{Braid group on three strands}",
+      "lean_id": "QOU.PathIntegrals.BraidGroup",
+      "latex_label": "def:braid-group"
+    },
+    {
+      "narrative": "{Symmetric group \\$S\\_3\\$}",
+      "lean_id": "QOU.PathIntegrals.S3Group",
+      "latex_label": "def:s3-group"
+    },
+    {
+      "narrative": "{\\$\\textbackslash\\{\\}mathfrak\\{su\\}(2)\\$ basis}",
+      "lean_id": "QOU.PathIntegrals.Su2Basis",
+      "latex_label": "def:su2-basis"
+    },
+    {
+      "narrative": "{\\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$ generators of \\$\\textbackslash\\{\\}mathrm\\{Dic\\}\\_3\\$}",
+      "lean_id": "QOU.PathIntegrals.Su2Generators",
+      "latex_label": "def:su2-generators"
+    },
+    {
+      "narrative": "{\\$\\textbackslash\\{\\}mathrm\\{SO\\}(3)\\$ generators}",
+      "lean_id": "QOU.PathIntegrals.So3Generators",
+      "latex_label": "def:so3-generators"
+    },
+    {
+      "narrative": "{Braid involutions: twist and flip}",
+      "lean_id": "QOU.PathIntegrals.BraidTwistFlip",
+      "latex_label": "def:braid-twist-flip"
+    },
+    {
+      "narrative": "{Quantum group \\$\\textbackslash\\{\\}mathcal\\{U\\}\\_q(\\textbackslash\\{\\}mathfrak\\{su\\}(2))\\$}",
+      "lean_id": "QOU.PathIntegrals.QuantumSu2",
+      "latex_label": "def:quantum-su2"
+    },
+    {
+      "narrative": "{Descartes condition}",
       "lean_id": "QOU.DescartesUniverse.DescartesCondition",
       "latex_label": "def:descartes-condition"
     },
     {
-      "narrative": "Exceptional divisor at $p$",
+      "narrative": "{Exceptional divisor at \\$p\\$}",
       "lean_id": "QOU.DescartesUniverse.ExceptionalDivisor",
       "latex_label": "def:exceptional-divisor"
     },
     {
-      "narrative": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
+      "narrative": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
       "lean_id": "QOU.DescartesUniverse.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
     },
     {
-      "narrative": "Witt vector lift of a formal group",
-      "lean_id": "QOU.PAdicQuantumGroups.WittVectorLift",
+      "narrative": "{Witt vector lift of a formal group}",
+      "lean_id": "QOU.DescartesUniverse.WittVectorLift",
       "latex_label": "def:witt-vector-lift"
     }
   ]
