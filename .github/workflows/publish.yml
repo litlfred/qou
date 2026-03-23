@@ -315,10 +315,10 @@ jobs:
           mkdir -p _site
 
           # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
-          # Currently, we have one LaTeX entry point (main.tex) for the
-          # quantum-observable-universe paper.  The loop below places each
-          # paper's output into papers/<dir>/.  Future papers will need their
-          # own LaTeX entry points.
+          # Each paper discovered from folio.ts gets its own subdirectory.
+          # The LaTeX compilation uses main.tex (shared preamble + chapter
+          # includes).  The content pipeline has already built chapters/*.tex
+          # from the paper's content objects above.
 
           PAPER_DIR="quantum-observable-universe"
           PAPER_OUTDIR="_site/papers/${PAPER_DIR}"
