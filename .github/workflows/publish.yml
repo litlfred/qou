@@ -199,7 +199,9 @@ jobs:
       # base branch so only trusted code runs with elevated permissions.
       - name: Restore base-branch CI scripts
         if: github.event_name == 'pull_request_target'
-        run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
 
       # Compute output filename base.  Feature branches include the
       # sanitised branch name so downloads are distinguishable.
