@@ -184,8 +184,8 @@ jobs:
       - name: Build schema docs
         continue-on-error: true
         run: |
-          npm install --no-save 2>/dev/null || true
-          npm run build:docs || echo "::warning::TypeDoc build failed"
+          bun install --no-save 2>/dev/null || bun install || true
+          bun run build:docs || echo "::warning::TypeDoc build failed"
           if [ -d build/schema-docs ]; then
             echo "✓ Schema docs generated ($(find build/schema-docs -name '*.html' | wc -l) pages)"
           fi
