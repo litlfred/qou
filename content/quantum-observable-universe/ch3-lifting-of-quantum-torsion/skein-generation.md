@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$ and Skein module
 $\mathcal{S}_q = \mathcal{S}_q(\mathcal{C})$.
 

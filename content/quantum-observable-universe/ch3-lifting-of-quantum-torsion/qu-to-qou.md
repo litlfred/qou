@@ -1,11 +1,11 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe over a Noetherian
+Let $(\mathcal{C}, A, \tau)$ be a quantum universe over a Noetherian
 ring $R$ ([quantum universe](#def:quantum-universe)); let $q$ denote the substrate parameter.  Assume observability
 $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$
 ([quantum observable universe](#def:quantum-observable-universe)).  Then the brane tower
 $\{A_n\}_{n \geq 0}$ constructed via
 ([jet prolongation](#prop:jet-prolongation)) satisfies the Yekutieli lifting
 condition ([Yekutieli lifting condition](#def:yekutieli-lifting-condition),
-[Yekutieli lifting](#prop:yekutieli-lifting)), and $(\mathcal{C}, A, \omega)$
+[Yekutieli lifting](#prop:yekutieli-lifting)), and $(\mathcal{C}, A, \tau)$
 is a quantum observable universe with the following structural properties:
 
 1. *Descent terminates.*  The geometric descent tower has finite
@@ -29,7 +29,7 @@ is a quantum observable universe with the following structural properties:
    $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ (Riemann--Hurwitz),
    where $d$ is the degree of the covering.
 5. *Terminal fiber data.*  At each branch point $p$, the QOU
-   reduces to fiber data $(A, \omega, q(p))$ with the involution
+   reduces to fiber data $(A, \tau, q(p))$ with the involution
    $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$
    ([fibre adjoint involution](#prop:fiber-adjoint-involution)).
 

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  Let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)).  The
@@ -15,6 +15,6 @@ induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.
 
 In the archimedean realisation
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), applying the fibre
-functor $\omega$ gives
+functor $\tau$ gives
 $\mathcal{A}_\infty \cong
 \varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$.

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum universe](#def:quantum-universe)).  A *categorical point*
 of $A$ is a morphism
 

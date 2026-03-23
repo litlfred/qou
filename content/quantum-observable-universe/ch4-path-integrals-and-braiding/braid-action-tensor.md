@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) whose ambient category
 $\mathcal{C}$ is braided monoidal with braiding
 $c_{X,Y}\colon X\otimes Y \xrightarrow{\;\sim\;} Y\otimes X$.

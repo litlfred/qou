@@ -4,7 +4,7 @@ The argument proceeds in three steps.
 *Step 1: The volume constraint determines the Lie algebra.*
 The categorical volume constraint provides a non-degenerate epimorphism
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$. Under the forgetful functor
-$\omega$, this endows the rank-$2$ module $\omega(V)$ with a
+$\tau$, this endows the rank-$2$ module $\tau(V)$ with a
 $q$-antisymmetric pairing whose invariance algebra is
 $\mathfrak{su}_q(2)$. This is the Lie algebra of the reconstructed
 group $G_q$, and hence of the crossed module

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)).  Each transition
 $A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension

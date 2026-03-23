@@ -18,5 +18,5 @@ include:
   ([finite field realisation](#ex:finite-field-realisation));
 - $R = \mathbb{Z}[q, q^{-1}]$: the universal (Lusztig) integral form.
 
-The fibre functor $\omega$ ensures that $G = \mathrm{Aut}^{\otimes}(\omega)$
+The fibre functor $\tau$ ensures that $G = \mathrm{Aut}^{\otimes}(\tau)$
 is well-defined over any $R$.

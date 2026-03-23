@@ -10,13 +10,13 @@ is the defining (spin-$\tfrac{1}{2}$) representation. Every other
 simple object $V_j$ is an exterior or symmetric power of $V$, so $V$
 generates $\mathcal{C}$ as a tensor category.
 
-**The emergent gauge group $G = \mathrm{Aut}^{\otimes}(\omega)$.**
-Let $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ be the
+**The emergent gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$.**
+Let $\tau \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ be the
 forgetful functor. The *tensor automorphism group*
-$G = \mathrm{Aut}^{\otimes}(\omega)$ consists of all monoidal natural
-automorphisms of $\omega$: families of $R$-module automorphisms
-$\{g_X \colon \omega(X) \xrightarrow{\sim} \omega(X)\}_{X \in \mathcal{C}}$
+$G = \mathrm{Aut}^{\otimes}(\tau)$ consists of all monoidal natural
+automorphisms of $\tau$: families of $R$-module automorphisms
+$\{g_X \colon \tau(X) \xrightarrow{\sim} \tau(X)\}_{X \in \mathcal{C}}$
 compatible with the tensor product. By Tannaka--Krein duality, $G$ is
-an affine group scheme over $R$, and $\omega$ establishes a monoidal
+an affine group scheme over $R$, and $\tau$ establishes a monoidal
 equivalence $\mathcal{C} \simeq \mathrm{Rep}(G)$. No group is
-postulated *a priori*; it *emerges* from $(\mathcal{C}, \omega)$.
+postulated *a priori*; it *emerges* from $(\mathcal{C}, \tau)$.

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 [quantum universe](#def:quantum-universe) with multiplication
 $\mu \colon A \otimes A \to A$ and Frobenius form
 $\lambda \colon A \to \mathbf{1}$. The *Frobenius pairing* is the

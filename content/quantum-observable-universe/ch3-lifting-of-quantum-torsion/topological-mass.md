@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$
 denote the substrate parameter.  Let
 $\gamma \colon \mathbf{1} \to A$ be a morphism (a "closed cycle" in $A$,

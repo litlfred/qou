@@ -10,12 +10,12 @@ an algebra, to the level-$n$ section algebra via the ascent embedding
 $\ell_n$.
 
 For the vacuum state, the compatibility
-$\omega(\iota_n(a|_n)) = \omega_n(a|_n)$ holds by the universal property
+$\tau(\iota_n(a|_n)) = \tau^{(n)}(a|_n)$ holds by the universal property
 of the direct limit ([direct limit algebra](#def:direct-limit-algebra)).  The
 Haar-averaging construction in the proof of
-[vacuum state](#prop:vacuum-state) produces states $\omega_n$ that are
+[vacuum state](#prop:vacuum-state) produces states $\tau^{(n)}$ that are
 compatible with the transition maps:
-$\omega_{n+1} \circ \iota_{n,n+1} = \omega_n$, where
+$\tau^{(n+1)} \circ \iota_{n,n+1} = \tau^{(n)}$, where
 $\iota_{n,n+1}$ is the transition map.  A zigzag of coface and
 codegeneracy maps between levels $n$ and $m$ factors as a sequence of
 such transition maps and their adjoints (the descent homomorphisms),
@@ -23,15 +23,15 @@ each of which preserves the Haar state by equivariance
 ([descent](#lem:descent), Step 5).
 
 Therefore the expectation value
-$\omega(\iota_n(a|_n)) = \omega_n(a|_n) = \omega_m(a|_m) =
-\omega(\iota_m(a|_m))$
+$\tau(\iota_n(a|_n)) = \tau^{(n)}(a|_n) = \tau^{(m)}(a|_m) =
+\tau(\iota_m(a|_m))$
 is invariant under weak equivalence.
 
 For the GNS representation: the Hilbert space
-$\mathcal{H}_\omega = \overline{\mathcal{A}_\infty / \ker(\omega)}$ with
-inner product $\langle [a], [b] \rangle = \omega(a^* b)$ is unchanged by
-the weak equivalence because $\omega$ is invariant.  The cyclic vector
+$\mathcal{H}_\tau = \overline{\mathcal{A}_\infty / \ker(\tau)}$ with
+inner product $\langle [a], [b] \rangle = \tau(a^* b)$ is unchanged by
+the weak equivalence because $\tau$ is invariant.  The cyclic vector
 $\Omega = [1]$ generates the same representation regardless of the brane
 level at which it is evaluated, so the physical states (vectors in
-$\mathcal{H}_\omega$) are insensitive to the substrate parameter
+$\mathcal{H}_\tau$) are insensitive to the substrate parameter
 fluctuations across the tower.

@@ -5,7 +5,7 @@ five structural properties of the
 
 **Hypotheses.** From the [SU(2) QOU](#ex:qou-su2), the quantum universe
 is $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
-\omega)$ with substrate parameter $q$.  Observability holds:
+\tau)$ with substrate parameter $q$.  Observability holds:
 $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$ because
 $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial
 sub-representation (the adjoint representation is irreducible,
@@ -59,7 +59,7 @@ with $B = 2$ branch points (the north and south poles of $\mathbb{CP}^1
 **(5) Terminal fiber data.**
 At each branch point $p \in \{0, \infty\} \subset \mathbb{CP}^1$, the
 QOU reduces to fiber data
-$(\mathcal{O}(\mathrm{SU}(2)),\, \omega,\, q(p))$ with the involution
+$(\mathcal{O}(\mathrm{SU}(2)),\, \tau,\, q(p))$ with the involution
 $$
   \sigma \colon \mathbb{CP}^1
   \;\hookrightarrow\;
@@ -77,7 +77,7 @@ $w \colon e_3 \mapsto -e_3$.
 **Conclusion.** All five properties of the
 [main theorem](#thm:qu-to-qou) are verified for $\mathrm{SU}(2)$.  The
 quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)),\,
-\mathcal{O}(\mathrm{SU}(2)),\, \omega)$ with observability and the
+\mathcal{O}(\mathrm{SU}(2)),\, \tau)$ with observability and the
 Yekutieli lifting condition is a quantum observable universe, with
 descent terminating in $1$ step, perpetually obstructed brane tower,
 $2$ branch points on $\mathbb{CP}^1$, and fiber data governed by the

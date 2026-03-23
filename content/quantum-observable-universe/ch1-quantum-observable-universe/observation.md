@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe over a
 ring $R$ ([quantum observable universe](#def:quantum-observable-universe)), let $q$
 denote the
 ([substrate parameter](#def:substrate-parameter)), and let

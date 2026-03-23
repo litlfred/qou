@@ -49,13 +49,13 @@ invariant in $\mathrm{Ad}(J^1(A))$ would project to a non-zero invariant in
 $\mathrm{Ad}(A)$, contradicting the hypothesis.
 
 *Step 4: Geometric realisation.*
-Applying the fibre functor $\omega\colon \mathcal{C} \to \mathrm{Vect}_k$
+Applying the fibre functor $\tau\colon \mathcal{C} \to \mathrm{Vect}_k$
 (where $\mathcal{C}$ is the rigid monoidal category of the quantum
 observable universe)
-recovers the geometric data: $\omega(J^1(A))$ is the space of sections of the
+recovers the geometric data: $\tau(J^1(A))$ is the space of sections of the
 first jet bundle $J^1 E$, the frame bundle $P'$ and orthonormal frame bundle
 $E'$ are the geometric counterparts of the Frobenius--Hopf structure on
-$J^1(A)$, and the connection $A'$ is the image under $\omega$ of the
+$J^1(A)$, and the connection $A'$ is the image under $\tau$ of the
 comultiplication $\Delta'$.  Its uniqueness follows from the irreducibility
 of $A'$, which is guaranteed by the inherited vanishing condition of
 Step 3.

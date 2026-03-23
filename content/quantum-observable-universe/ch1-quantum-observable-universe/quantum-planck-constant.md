@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q_0$
 ([substrate parameter](#def:substrate-parameter)).  The
 *quantum Planck constant* is the element

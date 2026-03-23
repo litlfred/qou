@@ -1,6 +1,6 @@
-A quantum universe $(\mathcal{C}, A, \omega)$ over $R$
+A quantum universe $(\mathcal{C}, A, \tau)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
-forgetful functor $\omega$
+forgetful functor $\tau$
 ([Example](#ex:rigid-monoidal-vect)) is faithful and the following
 conditions hold:
 
@@ -27,7 +27,7 @@ conditions hold:
 
 3. *(measurability / anomaly-free)* the primary Chern classes of the
    adjoint object vanish in the cohomology induced by the forgetful
-   projection $\omega$:
+   projection $\tau$:
 
    $$
      c_1(\mathrm{Ad}(A)) = 0
@@ -43,7 +43,7 @@ conditions hold:
    ([Remark](#rem:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every
-   $g \in \mathrm{Aut}^{\otimes}(\omega)$:
+   $g \in \mathrm{Aut}^{\otimes}(\tau)$:
 
    ```tex
    \begin{equation}\label{eq:categorical-volume-constraint}

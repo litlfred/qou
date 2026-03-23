@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower; let $q$ denote the substrate parameter.  With Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$
 ([Yekutieli triple](#def:yekutieli-triple)) and let

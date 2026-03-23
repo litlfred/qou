@@ -35,6 +35,7 @@ export default chapter({
       label: "sec:core-definitions",
       blocks: [
         "quantum-universe",
+        "tau-notation",
         "frobenius-pairing",
         "frobenius-geometric-role",
         "quantum-universe-su2",

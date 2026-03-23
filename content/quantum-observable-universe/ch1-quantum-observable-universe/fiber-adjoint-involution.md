@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)). The Frobenius form
 $\lambda \colon A \to \mathbf{1}$ induces an isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under

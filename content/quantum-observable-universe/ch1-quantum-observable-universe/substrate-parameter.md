@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)) with
 weight decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)) and Reeb derivation
@@ -26,7 +26,7 @@ At $q = 1$ the operator $d_q$ recovers $d$ (classicality: horizontal
 and vertical differentiation are treated equally).  As
 $q \to \infty$, $d_q$ projects onto $\pi_V \circ d$ (deep-quantum
 regime: only the Reeb direction contributes).  The substrate
-parameter is *not* intrinsic to the triple $(\mathcal{C}, A, \omega)$;
+parameter is *not* intrinsic to the triple $(\mathcal{C}, A, \tau)$;
 it records where one sits in the $\mathbb{G}_m$-family of
 interpolations between $d$ and $\pi_V \circ d$.
 

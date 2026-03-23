@@ -1,11 +1,11 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
 ([Definition](#def:quantum-observable-universe)) with substrate
 parameter $q$ ([Definition](#def:substrate-parameter)),
 categorical action $\mathcal{S}_q$
 ([Definition](#def:categorical-action)), and $q$-Hodge star
 $\star_q$ ([Definition](#def:q-hodge-star)).
 
-Let $\gamma \colon S^1 \to \omega(A)$ be a smooth closed curve
+Let $\gamma \colon S^1 \to \tau(A)$ be a smooth closed curve
 (a knot embedding) and let $m(\gamma)$ denote the categorical mass
 ([Theorem](#thm:topological-mass)).
 

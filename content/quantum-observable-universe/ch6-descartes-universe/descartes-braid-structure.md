@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a Descartes universe
+Let $(\mathcal{C}, A, \tau)$ be a Descartes universe
 ([Descartes condition](#def:descartes-condition)).  Then:
 
 1. The braiding of $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$
@@ -7,7 +7,7 @@ Let $(\mathcal{C}, A, \omega)$ be a Descartes universe
    on the fundamental representation $V$
    ([braid action on tensor products](#prop:braid-action-tensor)).
 2. The image of $\rho_3$ in $\mathrm{SU}(2)$ (via the fibre
-   functor $\omega$) is the binary dihedral group
+   functor $\tau$) is the binary dihedral group
    $\mathrm{Dic}_3$ of order $12$
    ([SU(2) generators](#def:su2-generators)).
 3. The composite $B_3 \xrightarrow{\;\rho_3\;}

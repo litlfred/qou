@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe satisfying
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe satisfying
 the
 ([categorical volume constraint](#def:categorical-volume-constraint)), so that
-$G_q = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}_q(2)$
+$G_q = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}_q(2)$
 ([SU(2) emergence](#thm:su2-emergence)). Then the inner-automorphism
 $2$-group $\mathrm{INN}(G_q)$ is the unique strict $2$-group whose
 quantum flatness condition $F_A = B$ reproduces the
