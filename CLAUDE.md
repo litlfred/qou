@@ -423,9 +423,12 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 
 | Path | Source | Description |
 |------|--------|-------------|
-| `index.html` | publish.yml | Landing page with paper/visualizer toggle |
-| `quantum-observable-universe.pdf` | publish.yml | Compiled paper |
-| `quantum-observable-universe.md` | publish.yml | Pandoc Markdown |
+| `index.html` | publish.yml | Folio landing page (links to all papers) |
+| `papers/<dir>/index.html` | publish.yml | Per-paper viewer with paper/visualizer toggle |
+| `papers/<dir>/paper.html` | publish.yml | Enhanced HTML paper |
+| `papers/<dir>/<dir>.pdf` | publish.yml | Compiled paper PDF |
+| `papers/<dir>/<dir>.md` | publish.yml | Pandoc Markdown |
+| `quantum-observable-universe.pdf` | publish.yml | Backward-compat copy of first paper PDF |
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
