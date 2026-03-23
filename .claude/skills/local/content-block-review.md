@@ -37,6 +37,7 @@ block, with severity (error / warning / info).
 | `.lean` sibling exists for `definition` | **error** | Definitions **require** Lean formalization |
 | `.lean` sibling exists for `theorem`/`lemma`/`proposition`/`corollary` | **warning** | Provable blocks should have Lean |
 | Sibling files share the same root name | **error** | `foo.ts`, `foo.md`, `foo.lean` — not mismatched names |
+| **No orphan `.lean` files** | **error** | Every `.lean` file MUST have a `.ts` manifest sibling. A `.lean` file without a `.ts` is never valid — Lean files are always part of a content triple, never standalone. |
 
 ### 2. Label conventions
 
