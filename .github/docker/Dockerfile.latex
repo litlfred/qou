@@ -21,7 +21,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
       texlive-science texlive-extra-utils latexmk biber \
       # Document tools
-      pandoc latexdiff graphviz \
+      pandoc latexdiff graphviz jq \
     && rm -rf /var/lib/apt/lists/*
 
 # ── Python packages ──────────────────────────────────────────────────
