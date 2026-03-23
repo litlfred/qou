@@ -88,20 +88,4 @@ structure QuToQou where
   /-- (5) Terminal fiber data at each branch point. -/
   terminalFibers : Fin branchData.numBranchPoints → TerminalFiber
 
-/-- Descent terminates in at most Krull-dim steps. -/
-theorem descent_bound (qtq : QuToQou) :
-    qtq.descent.dimAtStep qtq.descent.krullDim = 0 :=
-  qtq.descent.terminates
-
-/-- The Riemann–Hurwitz formula holds for the branch data. -/
-theorem branch_formula (qtq : QuToQou) :
-    qtq.branchData.totalRamification =
-      2 * qtq.branchData.degree + qtq.branchData.eulerChar.natAbs :=
-  qtq.branchData.riemann_hurwitz
-
-/-- If κ₀ ≠ 0, the obstruction is perpetual. -/
-theorem perpetual_from_nontorsion (qtq : QuToQou) (h : qtq.kappa_zero_obstruction ≠ 0) :
-    ∀ n, qtq.kappa n ≠ 0 :=
-  qtq.perpetual h
-
 end QOU

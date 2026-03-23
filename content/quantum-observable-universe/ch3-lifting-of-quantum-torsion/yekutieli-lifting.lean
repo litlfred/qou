@@ -46,16 +46,6 @@ structure YekutieliLifting where
       live in a complementary subgroup, so cannot cancel κ₀). -/
   persistence : ∀ n, kappa n ≠ zero → kappa (n + 1) ≠ zero
 
-/-- The Euler class identification: κ₀ equals the Euler class of the
-    Reeb bundle.  Under the trace map, κ₀ ↦ χ(A) = tr(id_A). -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
-theorem kappa_zero_is_euler_class
-    (yl : YekutieliLifting)
-    (euler_class : yl.ObstructionSpace)
-    (h_euler : yl.kappa 0 = euler_class) :
-    yl.kappa_zero = euler_class := by
-  exact h_euler
-
 /-- **Perpetual obstruction**: if κ₀ is non-torsion, then κₙ ≠ 0 for all n.
 
     The key insight: κ₀ and the jet corrections at level n live in

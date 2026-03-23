@@ -37,11 +37,11 @@ structure QuantumCharacteristicClass where
   /-- The obstruction value κₙ ∈ H²(𝒮, ℬ). -/
   kappa : ObstructionSpace
   /-- Zero of the obstruction space. -/
-  zero : ObstructionSpace := @Zero.zero ObstructionSpace addCommGroup.toZero
+  zero : ObstructionSpace := (0 : ObstructionSpace)
 
 /-- The extension is unobstructed iff κₙ = 0. -/
 def QuantumCharacteristicClass.isUnobstructed (qcc : QuantumCharacteristicClass) : Prop :=
-  qcc.kappa = @Zero.zero qcc.ObstructionSpace qcc.addCommGroup.toZero
+  qcc.kappa = (0 : qcc.ObstructionSpace)
 
 /-- The full sequence of quantum characteristic classes for a brane tower. -/
 structure QuantumCharacteristicSequence where
@@ -60,8 +60,8 @@ structure QuantumCharacteristicSequence where
       at each level is independent of the base obstruction.
       Encoded: if κₙ ≠ 0 then κ_{n+1} ≠ 0 (persistence). -/
   corrections_persistent : ∀ n,
-    kappa n ≠ @Zero.zero ObstructionSpace addCommGroup.toZero →
-    kappa (n + 1) ≠ @Zero.zero ObstructionSpace addCommGroup.toZero
+    kappa n ≠ (0 : ObstructionSpace) →
+    kappa (n + 1) ≠ (0 : ObstructionSpace)
 
 /-- If κ₀ ≠ 0 and corrections are complementary, then κₙ ≠ 0 for all n.
 
@@ -70,11 +70,11 @@ structure QuantumCharacteristicSequence where
 -- Ref: [manuscript] §3
 theorem QuantumCharacteristicSequence.perpetual
     (qcs : QuantumCharacteristicSequence)
-    (h_nontorsion : qcs.kappa 0 ≠ @Zero.zero qcs.ObstructionSpace qcs.addCommGroup.toZero)
+    (h_nontorsion : qcs.kappa 0 ≠ (0 : qcs.ObstructionSpace))
     (h_persistent : ∀ n,
-      qcs.kappa n ≠ @Zero.zero qcs.ObstructionSpace qcs.addCommGroup.toZero →
-      qcs.kappa (n + 1) ≠ @Zero.zero qcs.ObstructionSpace qcs.addCommGroup.toZero) :
-    ∀ n, qcs.kappa n ≠ @Zero.zero qcs.ObstructionSpace qcs.addCommGroup.toZero := by
+      qcs.kappa n ≠ (0 : qcs.ObstructionSpace) →
+      qcs.kappa (n + 1) ≠ (0 : qcs.ObstructionSpace)) :
+    ∀ n, qcs.kappa n ≠ (0 : qcs.ObstructionSpace) := by
   intro n
   induction n with
   | zero => exact h_nontorsion

@@ -62,19 +62,11 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       LaTeX: `\label{eq:categorical-volume-constraint}` -/
   volumeForm : exteriorSquare ⟶ (𝟙_ C)
   /-- **Non-degeneracy**: the volume form is an epimorphism —
-      every morphism `𝟙 → 𝟙` factors through `volumeForm`.
-      This ensures the pairing is non-degenerate. -/
-  /-- **Non-degeneracy**: the volume form is an epimorphism —
       if two morphisms agree after precomposition with `volumeForm`,
       they are equal.  This forces the pairing to be non-degenerate. -/
   volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
     volumeForm ≫ f = volumeForm ≫ g → f = g
 
-/-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
-    Tannaka–Krein duality from the fibre functor.
-
-    LaTeX: `\label{def:quantum-gauge-group}` (categorical version)
-    Ref: [lusztig1993] -/
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)`: the group of monoidal
     natural automorphisms of the fibre functor.
 

@@ -77,14 +77,10 @@ theorem jet_prolongation_preserves_observability
     (fh : FrobeniusHopfData C)
     (adjointObj : C)
     (jetAdjointObj : C)
-    (h_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj))
-    (h_proj : (𝟙_ C) ⟶ jetAdjointObj → (𝟙_ C) ⟶ adjointObj)
-    (h_inj : ∀ f g : (𝟙_ C) ⟶ jetAdjointObj,
-      h_proj f = h_proj g → f = g) :
-    Subsingleton ((𝟙_ C) ⟶ jetAdjointObj) := by
-  constructor
-  intro f g
-  apply h_inj
-  exact Subsingleton.elim (h_proj f) (h_proj g)
+    (h_proj : ((𝟙_ C) ⟶ jetAdjointObj) → ((𝟙_ C) ⟶ adjointObj))
+    (h_inj : Function.Injective h_proj)
+    [h_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
+    Subsingleton ((𝟙_ C) ⟶ jetAdjointObj) :=
+  ⟨fun f g => h_inj (Subsingleton.elim _ _)⟩
 
 end QOU

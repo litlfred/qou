@@ -56,12 +56,4 @@ theorem YekutieliLiftingCondition.lift_iff
     by_contra h
     exact (ylc.no_lift_of_nonzero n h).elim ‹_›
 
-/-- If the obstruction space is torsion-free and κ₀ ≠ 0,
-    the obstruction is non-trivial. -/
-theorem nonzero_obstruction_nontrivial
-    (ylc : YekutieliLiftingCondition)
-    (h : ylc.obstruction 0 ≠ 0) :
-    ¬ (ylc.obstruction 0 = 0) :=
-  h
-
 end QOU

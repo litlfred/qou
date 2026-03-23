@@ -64,16 +64,4 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
   orbit_mono : ∀ (f g : (𝟙_ C) ⟶ projLine),
     f ≫ orbit_embed = g ≫ orbit_embed → f = g
 
-/-- The fibre-wise adjoint involution is indeed an involution (`τ² = id`).
-
-    LaTeX: `\label{prop:fiber-adjoint-involution}`
-    Proof: The antipode of a Hopf algebra satisfies `S² = id` on the centre
-    of `A`; the adjoint action factors through this, so `τ_Ad² = id`. -/
-theorem fiber_adjoint_involution_sq {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    (fh : FrobeniusHopfData C)
-    (fai : FiberAdjointInvolution C fh) :
-    fai.involution ≫ fai.involution = 𝟙 fai.adjointObj :=
-  fai.involution_sq
-
 end QOU
