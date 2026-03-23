@@ -107,12 +107,16 @@ sed -i "s|__ENV_B64__|${ENV_B64}|g" /tmp/cloud-init.sh
 
 # ── Create server ─────────────────────────────────────────────────
 echo "▸ Creating server..."
+# Redirect stdout to /dev/null — hcloud prints root password there.
+# Errors still go to stderr. We don't need the password (cloud-init
+# handles setup, hcloud ssh uses the API for access).
 hcloud server create \
   --name "$SERVER_NAME" \
   --type "$SERVER_TYPE" \
   --image "$SERVER_IMG" \
   --location "$SERVER_LOC" \
-  --user-data-from-file /tmp/cloud-init.sh
+  --user-data-from-file /tmp/cloud-init.sh \
+  > /dev/null
 
 rm -f /tmp/cloud-init.sh
 
