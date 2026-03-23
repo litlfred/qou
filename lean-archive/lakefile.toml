@@ -18,7 +18,7 @@ git = "https://github.com/leanprover-community/mathlib4"
 rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 
 # doc-gen4 and checkdecls are CI-only dependencies.
-# Pinned to commit hashes matching the Lean v4.24.0 toolchain.
+# Pinned to commit hashes matching the Lean toolchain version.
 
 [[require]]
 name = "doc-gen4"
