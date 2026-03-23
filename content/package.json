@@ -7,8 +7,7 @@
     "validate": "bun run pipeline/validate.ts",
     "render": "bun run pipeline/render-latex.ts",
     "export-json": "bun run pipeline/export-json.ts",
-    "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts",
-    "validate-tex": "bun run pipeline/validate-tex.ts"
+    "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",
