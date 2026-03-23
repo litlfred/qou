@@ -17,7 +17,7 @@ truth for which mathematical objects have been formalized, reviewed, and
 approved.  Lean declarations are referenced by URL (doc-gen4 pages), not
 duplicated in JSON.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools for live status**:
 

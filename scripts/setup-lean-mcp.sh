@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
-# Setup script for Lean 4 + lean-lsp-mcp on ChromeOS/Crostini
+# Setup script for Lean 4 toolchain on ChromeOS/Crostini
 #
 # Scans lakefile.toml for all dependencies and ensures everything is
 # installed and built. Safe to re-run — skips already-installed components.
 #
 # Installs:
-#   1. uv (Python package manager, needed by lean-lsp-mcp)
+#   1. uv (Python package manager)
 #   2. elan + pinned Lean toolchain
-#   3. ripgrep (for lean_local_search)
+#   3. ripgrep (for local search)
 #   4. All Lake dependencies (lake update)
 #   5. Mathlib cache (lake exe cache get)
 #   6. Full build (lake build)
-#   7. Verifies lean-lsp-mcp is runnable
 #
 # Prerequisites: git, curl (assumed installed)
 #
@@ -25,7 +24,7 @@ LEAN_DIR="$REPO_ROOT/lean-archive"
 TOOLCHAIN_FILE="$LEAN_DIR/lean-toolchain"
 LAKEFILE="$LEAN_DIR/lakefile.toml"
 
-echo "=== Lean 4 MCP Setup (lean-lsp-mcp) ==="
+echo "=== Lean 4 Setup ==="
 echo ""
 
 # ── 1. Install uv ────────────────────────────────────────────────
@@ -122,15 +121,7 @@ else
     echo "  ⚠ Build had errors (MCP server will still work for diagnostics)"
 fi
 
-# ── 9. Verify lean-lsp-mcp is runnable ───────────────────────────
-echo "▸ Checking lean-lsp-mcp..."
-if uvx lean-lsp-mcp --help &>/dev/null; then
-    echo "  ✓ lean-lsp-mcp available via uvx"
-else
-    echo "  ⚠ lean-lsp-mcp test failed (uvx will auto-install it on first use)"
-fi
-
-# ── 10. Summary ──────────────────────────────────────────────────
+# ── 9. Summary ───────────────────────────────────────────────────
 echo ""
 echo "=== Setup complete ==="
 echo ""
@@ -142,8 +133,7 @@ command -v lake &>/dev/null && echo "  ✓ lake     $(lake --version 2>&1 | head
 command -v rg   &>/dev/null && echo "  ✓ ripgrep  $(rg --version 2>&1 | head -1)"
 [ -f "$LEAN_DIR/lake-manifest.json" ] && echo "  ✓ lake-manifest.json (deps fetched)"
 echo ""
-echo "The .mcp.json in the repo root configures lean-lsp-mcp for Claude Code."
-echo "Claude Code will auto-start the MCP server on next session."
+echo "Lean tools are available through the paper-assistant MCP server."
 echo ""
 echo "Quick reference:"
 echo "  lake build              — rebuild Lean files"
@@ -151,4 +141,3 @@ echo "  lake exe cache get      — refresh Mathlib cache"
 echo "  lake update             — re-fetch all dependencies"
 echo "  lean --version          — check Lean version"
 echo "  elan show               — show installed toolchains"
-echo "  uvx lean-lsp-mcp --help — MCP server help"

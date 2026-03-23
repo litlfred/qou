@@ -17,11 +17,6 @@ name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
 rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 
-[[require]]
-name = "quantumInfo"
-git = "https://github.com/Timeroot/Lean-QuantumInfo"
-rev = "main"
-
 # doc-gen4 and checkdecls are CI-only dependencies.
 # Uncomment when the CI workflow needs them, and ensure rev matches
 # the Lean toolchain version.

@@ -39,7 +39,6 @@ noncomputable def qConnection {M : Type*} (sp : SubstrateParameter M)
 theorem qConnection_classical {M : Type*} (sp : SubstrateParameter M)
     (connA iotaXiA theta : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qConnection sp connA iotaXiA theta p = connA p := by
-  unfold qConnection
-  rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
+  simp [qConnection, hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
 end QOU

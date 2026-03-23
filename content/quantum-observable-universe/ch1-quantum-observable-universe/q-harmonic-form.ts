@@ -8,6 +8,6 @@ export default definition({
     decl: "QOU.QHarmonicForm",
     validation: "leanok",
   },
-  status: "not_started",
+  status: "stated",
   uses: ["def:categorical-q-ext-deriv"],
 });

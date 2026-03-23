@@ -11,7 +11,7 @@ of the classical functional.
 *Step 2: Expansion of the Frobenius–Hopf kernel.*
 At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
 and the comultiplication $\Delta$ becomes cocommutative.  The
-Frobenius pairing $\lambda \circ \mu$ on $A \otimes A$ reduces to
+[Frobenius pairing](#def:frobenius-pairing) $\lambda \circ \mu$ on $A \otimes A$ reduces to
 the standard $\mathrm{SU}(2)$ Killing form, so the integrand
 simplifies to
 

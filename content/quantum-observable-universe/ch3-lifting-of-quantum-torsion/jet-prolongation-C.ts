@@ -4,6 +4,6 @@ export default corollary({
   label: "cor:jet-prolongation-C",
   title: "Archimedean realisation of jet prolongation",
   tags: ["archimedean", "jet-bundle"],
-  uses: ["prop:jet-prolongation", "def:c-quantum-observable-universe"],
+  uses: ["prop:jet-prolongation", "ex:c-quantum-observable-universe"],
   proofs: ["prf:jet-prolongation-C"],
 });

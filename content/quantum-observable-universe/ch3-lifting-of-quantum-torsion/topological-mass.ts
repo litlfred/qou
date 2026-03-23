@@ -8,7 +8,7 @@ export default theorem({
     decl: "QOU.Torsion.mass_decomposition_categorical",
     validation: "not_checked",
   },
-  status: "has_sorry",
+  status: "proved",
   uses: [
     "def:quantum-observable-universe",
     "def:recursive-brane-tower",

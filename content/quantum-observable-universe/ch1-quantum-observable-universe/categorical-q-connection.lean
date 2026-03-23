@@ -57,7 +57,6 @@ theorem CategoricalQConnection.nabla_q_classical {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear ℝ C]
     (cqc : CategoricalQConnection C) (hq : cqc.q = 1) :
     cqc.nabla_q = cqc.nabla := by
-  unfold nabla_q
-  simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  simp [nabla_q, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
 
 end QOU

@@ -23,7 +23,7 @@ exhibits two simultaneous regimes:
 
 At both limits the QOU structure *degenerates*:
 
-- At $q \to \infty$: the Frobenius pairing
+- At $q \to \infty$: the [Frobenius pairing](#def:frobenius-pairing)
   $\langle f, g \rangle = \lambda(fg)$ loses non-degeneracy
   (axiom (1) of [quantum observable universe](#def:quantum-observable-universe)
   fails), so the QOU ceases to be observable.

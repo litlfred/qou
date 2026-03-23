@@ -6,5 +6,6 @@ export default definition({
   status: "stated",
   title: "Yekutieli Lifting Condition",
   tags: ["yekutieli", "gerbe", "cohomology", "lifting"],
+  examples: ["ex:yekutieli-lifting-condition-su2"],
   uses: [],
 });

@@ -51,7 +51,7 @@ instance of condition (1) in
 [quantum observable universe](#def:quantum-observable-universe).
 In the archimedean realisation ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
-conditions of [$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)
+conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)
 reduce to a triple:
 
 1. a CR manifold $(M, \theta)$ of hypersurface type with
@@ -84,7 +84,7 @@ the non-degeneracy of the Frobenius form $\lambda$ via the diagram
 ```
 
 The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
-Frobenius pairing from $\lambda$; any global parallel section would
+[Frobenius pairing](#def:frobenius-pairing) from $\lambda$; any global parallel section would
 pair non-trivially with itself, contradicting the irreducibility of
 the instanton connection
 ([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius

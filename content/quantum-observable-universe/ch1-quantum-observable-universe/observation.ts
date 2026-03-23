@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.Observation",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: [
     "def:quantum-observable-universe",
     "def:substrate-parameter",

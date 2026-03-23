@@ -14,7 +14,7 @@
 import { readFileSync, existsSync } from "fs";
 import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
-import type { Block, Chapter, Section } from "../schema/types";
+import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 
 // ── Markdown → LaTeX conversion ──────────────────────────────────
 
@@ -196,7 +196,7 @@ export function renderBlock(block: Block, mdContent: string): string {
       const envName = ENV_NAMES[block.kind];
       if (!envName) throw new Error(`Unknown block kind: ${block.kind}`);
 
-      const titleArg = "title" in block && block.title ? `[${block.title}]` : "";
+      const titleArg = "title" in block && block.title ? `[{${block.title}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
       // Label
@@ -229,6 +229,62 @@ export function renderBlock(block: Block, mdContent: string): string {
   return lines.join("\n");
 }
 
+// ── Print-mode block filtering ───────────────────────────────────
+
+/** Block kinds that are excluded in compact mode unless referenced. */
+const COMPACT_OPTIONAL_KINDS = new Set(["example", "remark"]);
+
+/**
+ * Collect labels of examples/remarks referenced by blocks in a section.
+ *
+ * Scans all blocks in the section for `examples[]` fields (on definitions,
+ * theorems, lemmas, propositions, corollaries) and returns the set of
+ * referenced labels.
+ */
+function collectReferencedLabels(
+  rootNames: string[],
+  blocks: Map<string, { block: Block; mdContent: string }>,
+): Set<string> {
+  const refs = new Set<string>();
+  for (const rootName of rootNames) {
+    const entry = blocks.get(rootName);
+    if (!entry) continue;
+    const block = entry.block;
+    if ("examples" in block && Array.isArray(block.examples)) {
+      for (const label of block.examples) refs.add(label);
+    }
+  }
+  return refs;
+}
+
+/**
+ * Determine whether a block should be included in the current render.
+ *
+ * - In formal mode: all blocks included.
+ * - In compact mode: example/remark blocks are excluded UNLESS they
+ *   are directly referenced via `examples[]` by another block in the
+ *   same section (and `compactInlineRefs` is true).
+ */
+function shouldIncludeBlock(
+  block: Block,
+  referencedLabels: Set<string>,
+  opts: RenderOptions,
+): boolean {
+  const mode = opts.printMode ?? "compact";
+  if (mode === "formal") return true;
+
+  // Compact mode — check if this is an optional kind
+  if (!COMPACT_OPTIONAL_KINDS.has(block.kind)) return true;
+
+  // compactInlineRefs defaults to true
+  const inlineRefs = opts.compactInlineRefs ?? true;
+  if (!inlineRefs) return false;
+
+  // Include if this block's label is referenced by another block
+  const label = "label" in block ? block.label : undefined;
+  return label != null && referencedLabels.has(label);
+}
+
 // ── Chapter rendering ────────────────────────────────────────────
 
 /**
@@ -259,19 +315,30 @@ export function loadAndRenderBlock(rootName: string, objectsDir: string): {
 
 /**
  * Render a full section to LaTeX.
+ *
+ * @param section - Section manifest
+ * @param blocks - All loaded blocks (keyed by root name)
+ * @param opts - Print mode options (controls block filtering)
  */
 export function renderSection(
   section: Section,
   blocks: Map<string, { block: Block; mdContent: string }>,
+  opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
   const label = section.label ? `\\label{${section.label}}\n` : "";
   lines.push(`\\section{${section.title}}\n${label}`);
 
+  // Collect referenced example/remark labels for compact-mode filtering
+  const referencedLabels = collectReferencedLabels(section.blocks, blocks);
+
   for (const rootName of section.blocks) {
     const entry = blocks.get(rootName);
     if (!entry) {
       lines.push(`% ERROR: block "${rootName}" not found`);
+      continue;
+    }
+    if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
       continue;
     }
     lines.push(renderBlock(entry.block, entry.mdContent));
@@ -283,10 +350,15 @@ export function renderSection(
 
 /**
  * Render a full chapter to LaTeX.
+ *
+ * @param chapter - Chapter manifest
+ * @param blocks - All loaded blocks (keyed by root name)
+ * @param opts - Print mode options (controls block filtering and affiliations)
  */
 export function renderChapter(
   chapter: Chapter,
   blocks: Map<string, { block: Block; mdContent: string }>,
+  opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
@@ -294,7 +366,7 @@ export function renderChapter(
   lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
 
   for (const section of chapter.sections) {
-    lines.push(renderSection(section, blocks));
+    lines.push(renderSection(section, blocks, opts));
   }
 
   return lines.join("\n");

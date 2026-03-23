@@ -7,7 +7,7 @@ compatibility, and volume compatibility conditions.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Data.Real.Basic
@@ -19,7 +19,7 @@ namespace QOU
     volume compatibility.
 
     LaTeX: `\label{def:hadron-fibre-embedding}` -/
--- Ref: [leitner2026] §3, Definition: Fibre-compatible hadron embedding
+-- Ref: [manuscript] §3, Definition: Fibre-compatible hadron embedding
 structure HadronFibreEmbedding where
   /-- The base point in the projective line. -/
   theta : ℝ

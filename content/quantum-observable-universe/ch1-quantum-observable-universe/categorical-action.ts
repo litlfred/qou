@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.CategoricalAction",
     validation: "not_checked",
   },
-  status: "not_started",
+  status: "stated",
   uses: [
     "def:quantum-universe",
     "def:quantum-observable-universe",

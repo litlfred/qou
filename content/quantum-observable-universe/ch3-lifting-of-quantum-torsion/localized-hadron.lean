@@ -6,7 +6,7 @@ projective line ℙ(V), via a morphism 𝟙 → Sym^n(𝒦_p) ⊗ ℒ_p^bind.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Data.Real.Basic
@@ -17,7 +17,7 @@ namespace QOU
 /-- A localized hadron: a hadron placed at a specific categorical point.
 
     LaTeX: `\label{def:localized-hadron}` -/
--- Ref: [leitner2026] §3, Definition: Localized hadron
+-- Ref: [manuscript] §3, Definition: Localized hadron
 structure LocalizedHadron extends Hadron where
   /-- The categorical point (base point in the projective line). -/
   point_theta : ℝ

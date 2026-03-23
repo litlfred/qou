@@ -13,7 +13,7 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join, dirname, resolve } from "path";
-import type { Paper, Chapter, Section, Block } from "../schema/types";
+import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 
 // ── Build ────────────────────────────────────────────────────────
@@ -37,9 +37,11 @@ export interface BuildResult {
  * same chapter directories.
  *
  * @param paperPath - Path to the paper .ts manifest
+ * @param opts - Render options (print mode, compact inline refs)
  */
 export async function buildPaper(
   paperPath: string,
+  opts: RenderOptions = {},
 ): Promise<BuildResult> {
   const issues: { level: string; message: string }[] = [];
   const paperDir = dirname(paperPath);
@@ -108,7 +110,7 @@ export async function buildPaper(
   let astValid = true;
 
   for (const chapter of resolvedChapters) {
-    const latex = renderChapter(chapter, blocks);
+    const latex = renderChapter(chapter, blocks, opts);
     const chKey = chapter.number ?? -(resolvedChapters.indexOf(chapter) + 1);
     chapters.set(chKey, latex);
 
@@ -135,10 +137,19 @@ if (import.meta.main) {
   const outDirIdx = args.indexOf("--out-dir");
   const outDir = resolve(outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters"));
 
-  console.log(`Building paper: ${paperPath}`);
-  console.log(`Output dir: ${outDir}\n`);
+  // Parse print mode options
+  const printModeIdx = args.indexOf("--print-mode");
+  const printMode = printModeIdx >= 0 ? args[printModeIdx + 1] as "formal" | "compact" : "compact";
+  const noInlineRefs = args.includes("--no-inline-refs");
 
-  const result = await buildPaper(paperPath);
+  console.log(`Building paper: ${paperPath}`);
+  console.log(`Output dir: ${outDir}`);
+  console.log(`Print mode: ${printMode}${noInlineRefs ? " (inline refs disabled)" : ""}\n`);
+
+  const result = await buildPaper(paperPath, {
+    printMode,
+    compactInlineRefs: !noInlineRefs,
+  });
 
   // Print issues
   for (const issue of result.issues) {

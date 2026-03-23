@@ -37,6 +37,8 @@ export type {
   TodoPriority,
   TodoStatus,
   TodoOrigin,
+  PrintMode,
+  RenderOptions,
   ValidationIssue,
   ValidationResult,
 } from "../../schemas/types";

@@ -2,8 +2,8 @@ A quantum universe $(\mathcal{C}, A, \omega)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
 following three conditions hold:
 
-1. *(non-degeneracy)* the Frobenius pairing
-   $\eqref{eq:frobenius-pairing}$ induces an isomorphism
+1. *(non-degeneracy)* the
+   [Frobenius pairing](#def:frobenius-pairing) induces an isomorphism
    $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 2. *(observability)* $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,

@@ -6,9 +6,10 @@ export default remark({
   tags: ["frobenius", "hopf-algebra", "gauge-theory"],
   uses: [
     "def:quantum-universe",
+    "def:frobenius-pairing",
     "def:quantum-observable-universe",
     "def:c-quantum-universe",
-    "def:c-quantum-observable-universe",
+    "ex:c-quantum-observable-universe",
     "def:instanton",
     "lem:irreducible-connection",
     "rem:q-torsion-existence",

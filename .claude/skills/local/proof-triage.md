@@ -26,7 +26,7 @@ to a proof writer for guidance.
 - When onboarding a new chapter and filling in proof obligations
 - Periodically as a "proof debt" sweep
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, it **transforms every phase** of triage:
 
@@ -68,7 +68,7 @@ that doesn't require a full `lake build` between attempts.
 ## Prerequisites
 
 - `lake build` should be run once before starting (to populate oleans)
-- lean-lsp-mcp MCP server configured (`.mcp.json`)
+- paper-assistant MCP server configured (`.mcp.json`)
 - Mathlib4 and any project-specific libraries are in `lakefile.lean`
 - The Lean files follow QOU naming conventions
 

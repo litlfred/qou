@@ -31,11 +31,16 @@ universe u v
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 structure MaximalTorus (C : Type u) [Category.{v} C]
     [MonoidalCategory C] where
+  /-- The Frobenius–Hopf object `A` in `C` (from the QOU). -/
+  hopfObj : C
   /-- The fundamental object `V` of categorical dimension 2. -/
   V : C
-  /-- The fibre functor `ω : C → Type*`. -/
+  /-- The fibre functor `ω : C → Type*` (from the QOU). -/
   fibreFunctor : Functor C (Type*)
-  /-- The number of weight spaces of `V` under the torus action. -/
+  /-- **Faithfulness** of the fibre functor (inherited from QuantumUniverse). -/
+  fibreFunctor_faithful : Functor.Faithful fibreFunctor
+  /-- The number of weight spaces of `V` under the torus action.
+      For SU(2): `numWeights = 2` (the ±1/2 weight spaces). -/
   numWeights : ℕ
   /-- The diagonal automorphism type (abstracting `T ≅ U(1)^r`). -/
   torusType : Type*
@@ -44,5 +49,16 @@ structure MaximalTorus (C : Type u) [Category.{v} C]
   /-- The torus embeds into the gauge group: every torus element
       yields a natural isomorphism `ω ≅ ω`. -/
   embed : torusType → (fibreFunctor ≅ fibreFunctor)
+  /-- **Diagonal action**: the torus acts diagonally on each weight
+      space of `V`.  Abstractly: the restriction of `embed(t)` to `V`
+      is a diagonal matrix in the weight basis. -/
+  /-- **Diagonal action**: the torus acts on V by scaling each weight
+      space independently.  Encoded: for each t, the natural isomorphism
+      embed(t) commutes with itself (the image is abelian). -/
+  diagonal_action : ∀ (t₁ t₂ : torusType),
+    (embed t₁).hom ≫ (embed t₂).hom = (embed t₂).hom ≫ (embed t₁).hom
+  /-- **Maximality**: the torus is maximal — its rank equals the rank
+      of the gauge group. For SU(2): `rank T = 1`. -/
+  rank : ℕ
 
 end QOU

@@ -250,6 +250,10 @@ async function resolveFolio(branch?: string): Promise<{ title: string; papers: F
 }
 
 async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper & { branch: string }) | null> {
+  const cacheKey = `${id}:${branch || "HEAD"}`;
+  const cached = cacheGet(fullPaperCache, cacheKey);
+  if (cached) return cached;
+
   const br = branch;
   const paperRel = `content/${id}/${id}.ts`;
   if (!fileExistsBranch(br, paperRel)) return null;
@@ -358,7 +362,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
         blocksByName.set(blk.rootName, blk);
 
   const paperTodos = readFeedback(id, "__paper");
-  return {
+  const result = {
     id,
     title: paperMod.title,
     authors: paperMod.authors,
@@ -370,6 +374,285 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     branch: currentBranch(),
     blocksByName,
   };
+  cacheSet(fullPaperCache, cacheKey, result);
+  return result;
+}
+
+// ── Cache layer (5-minute TTL) ──────────────────────────────────
+
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+interface CacheEntry<T> {
+  data: T;
+  ts: number;
+}
+
+const paperOutlineCache = new Map<string, CacheEntry<any>>();
+const chapterCache = new Map<string, CacheEntry<any>>();
+const sectionCache = new Map<string, CacheEntry<ResolvedSection>>();
+const fullPaperCache = new Map<string, CacheEntry<any>>();
+
+function cacheGet<T>(cache: Map<string, CacheEntry<T>>, key: string): T | null {
+  const entry = cache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > CACHE_TTL_MS) { cache.delete(key); return null; }
+  return entry.data;
+}
+
+function cacheSet<T>(cache: Map<string, CacheEntry<T>>, key: string, data: T): void {
+  cache.set(key, { data, ts: Date.now() });
+}
+
+/** Invalidate all caches for a paper (call after edits/saves). */
+function invalidatePaperCache(paperId?: string): void {
+  if (paperId) {
+    for (const cache of [paperOutlineCache, chapterCache, fullPaperCache, sectionCache]) {
+      for (const k of [...cache.keys()]) if (k.startsWith(paperId + ":")) cache.delete(k);
+    }
+  } else {
+    paperOutlineCache.clear();
+    chapterCache.clear();
+    fullPaperCache.clear();
+    sectionCache.clear();
+  }
+}
+
+// ── Paper outline (lightweight — no blocks/md/lean) ─────────────
+
+interface ChapterOutline {
+  number: number;
+  title: string;
+  label?: string;
+  dir: string;
+  sections: { title: string; label?: string; blockCount: number }[];
+}
+
+interface PaperOutline {
+  id: string;
+  title: string;
+  authors: string[];
+  affiliations?: string[];
+  date?: string;
+  macros?: Record<string, string>;
+  chapters: ChapterOutline[];
+  branch: string;
+}
+
+async function resolvePaperOutline(id: string, branch?: string): Promise<PaperOutline | null> {
+  const cacheKey = `${id}:${branch || "HEAD"}`;
+  const cached = cacheGet(paperOutlineCache, cacheKey);
+  if (cached) return cached;
+
+  const br = branch;
+  const paperRel = `content/${id}/${id}.ts`;
+  if (!fileExistsBranch(br, paperRel)) return null;
+
+  const paperMod = (await importTsBranch(br, paperRel)) as any;
+  const chapters: ChapterOutline[] = [];
+
+  for (const chRef of paperMod.chapters || []) {
+    const chRel = `content/${id}/${chRef.dir}`;
+    const chTsRel = `${chRel}/${chRef.dir}.ts`;
+    if (!fileExistsBranch(br, chTsRel)) continue;
+    const ch = (await importTsBranch(br, chTsRel)) as any;
+
+    const sections: ChapterOutline["sections"] = [];
+    for (const sec of ch.sections || []) {
+      if ("name" in sec && !("blocks" in sec)) continue;
+      const section = sec as { title: string; label?: string; blocks: string[] };
+      sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
+    }
+
+    chapters.push({ number: ch.number, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+  }
+
+  const result: PaperOutline = {
+    id,
+    title: paperMod.title,
+    authors: paperMod.authors,
+    affiliations: paperMod.affiliations,
+    date: paperMod.date,
+    macros: paperMod.macros,
+    chapters,
+    branch: currentBranch(),
+  };
+
+  cacheSet(paperOutlineCache, cacheKey, result);
+  return result;
+}
+
+// ── Single chapter resolver (section stubs only) ────────────────
+
+interface SectionStub {
+  title: string;
+  label?: string;
+  blockCount: number;
+  /** Lightweight block summaries for sidebar (no md/lean source). */
+  blockStubs: { rootName: string; kind: string; label?: string; title?: string; status?: string; lean?: { decl?: string; file?: string; validation?: string }; todoCount: number }[];
+}
+
+interface ChapterDetail {
+  number: number;
+  title: string;
+  label?: string;
+  dir: string;
+  sections: SectionStub[];
+  todos?: unknown[];
+}
+
+async function resolveChapterDetail(
+  paperId: string, chapterDir: string, branch?: string
+): Promise<ChapterDetail | null> {
+  const cacheKey = `${paperId}:${branch || "HEAD"}:ch:${chapterDir}`;
+  const cached = cacheGet(chapterCache, cacheKey) as unknown as ChapterDetail | null;
+  if (cached) return cached;
+
+  const br = branch;
+  const chRel = `content/${paperId}/${chapterDir}`;
+  const chTsRel = `${chRel}/${chapterDir}.ts`;
+  if (!fileExistsBranch(br, chTsRel)) return null;
+
+  const ch = (await importTsBranch(br, chTsRel)) as any;
+  const sections: SectionStub[] = [];
+
+  for (const sec of ch.sections || []) {
+    if ("name" in sec && !("blocks" in sec)) continue;
+    const section = sec as { title: string; label?: string; blocks: string[] };
+
+    const blockStubs: SectionStub["blockStubs"] = [];
+    for (const rootName of section.blocks) {
+      const blkTsRel = `${chRel}/${rootName}.ts`;
+      try {
+        const blk = (await importTsBranch(br, blkTsRel)) as any;
+        const feedback = readFeedback(paperId, rootName);
+        blockStubs.push({
+          rootName,
+          kind: blk.kind,
+          label: blk.label,
+          title: blk.title,
+          status: blk.status,
+          lean: blk.lean ? { decl: blk.lean.decl, file: blk.lean.file, validation: blk.lean.validation } : undefined,
+          todoCount: feedback.filter((t: any) => t.status === "open").length,
+        });
+      } catch {
+        blockStubs.push({ rootName, kind: "error", todoCount: 0 });
+      }
+    }
+
+    sections.push({
+      title: section.title,
+      label: section.label,
+      blockCount: section.blocks.length,
+      blockStubs,
+    });
+  }
+
+  const chTodos = readFeedback(paperId, `__chapter:${chapterDir}`);
+  const result: ChapterDetail = {
+    number: ch.number, title: ch.title, label: ch.label, dir: chapterDir,
+    sections,
+    todos: chTodos.length ? chTodos : undefined,
+  };
+
+  cacheSet(chapterCache, cacheKey, result as any);
+  return result;
+}
+
+// ── Section resolver (full blocks with md/lean) ─────────────────
+
+async function resolveSection(
+  paperId: string, chapterDir: string, sectionIndex: number, branch?: string
+): Promise<ResolvedSection | null> {
+  const cacheKey = `${paperId}:${branch || "HEAD"}:sec:${chapterDir}:${sectionIndex}`;
+  const cached = cacheGet(sectionCache, cacheKey);
+  if (cached) return cached;
+
+  const br = branch;
+  const chRel = `content/${paperId}/${chapterDir}`;
+  const chTsRel = `${chRel}/${chapterDir}.ts`;
+  if (!fileExistsBranch(br, chTsRel)) return null;
+
+  const ch = (await importTsBranch(br, chTsRel)) as any;
+
+  // Filter to real sections (skip name-only refs)
+  const realSections = (ch.sections || []).filter(
+    (s: any) => !("name" in s && !("blocks" in s))
+  );
+  if (sectionIndex < 0 || sectionIndex >= realSections.length) return null;
+
+  const sec = realSections[sectionIndex] as { title: string; label?: string; blocks: string[] };
+  const blocks: ResolvedBlock[] = [];
+
+  for (const rootName of sec.blocks) {
+    const blkTsRel = `${chRel}/${rootName}.ts`;
+    const blkMdRel = `${chRel}/${rootName}.md`;
+    try {
+      const blk = (await importTsBranch(br, blkTsRel)) as any;
+      const md = readFileBranch(br, blkMdRel) || "";
+
+      const feedback = readFeedback(paperId, rootName);
+      const blockTodos = feedback.length ? [...feedback] : undefined;
+
+      let leanSource: string | undefined;
+      if (blk.lean) {
+        if (blk.lean.file) {
+          leanSource = readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
+        }
+        if (!leanSource) {
+          leanSource = readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
+        }
+        if (!leanSource && blk.lean.decl) {
+          const parts = blk.lean.decl.split(".");
+          for (let i = parts.length; i >= 2; i--) {
+            const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
+            leanSource = readFileBranch(br, candidate) ?? undefined;
+            if (leanSource) break;
+          }
+        }
+        if (!leanSource && blk.lean.decl && isCurrentBranch(br)) {
+          const declName = blk.lean.decl.split(".").pop() || "";
+          try {
+            const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
+            const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+            if (files.length > 0 && existsSync(files[0])) {
+              leanSource = readFileSync(files[0], "utf-8");
+            }
+          } catch {}
+        }
+      }
+
+      const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
+        (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
+          ...r,
+          url: `/api/content-asset/${paperId}/${chapterDir}/${r.url}`,
+        })
+      );
+
+      blocks.push({
+        rootName,
+        kind: blk.kind,
+        label: blk.label,
+        title: blk.title,
+        uses: blk.uses,
+        examples: blk.examples,
+        proofs: blk.proofs,
+        lean: blk.lean ? { ...blk.lean, source: leanSource } : undefined,
+        status: blk.status,
+        tex: blk.tex,
+        caption: blk.caption,
+        tags: blk.tags,
+        rendered,
+        md,
+        todos: blockTodos,
+      });
+    } catch (e) {
+      blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
+    }
+  }
+
+  const result: ResolvedSection = { title: sec.title, label: sec.label, blocks };
+  cacheSet(sectionCache, cacheKey, result);
+  return result;
 }
 
 // ── Claude API: characterize branch changes ──────────────────────
@@ -800,6 +1083,60 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }
   }
 
+  // ── API: Paper outline (lightweight — chapter/section stubs, no block content) ──
+  // /api/paper/outline?id=quantum-observable-universe&branch=feature-x
+  if (path === "/api/paper/outline") {
+    const id = url.searchParams.get("id");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
+    try {
+      const data = await resolvePaperOutline(id, branch);
+      if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/outline id=${id} branch=${branch}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // ── API: Chapter detail (section stubs with block metadata, no md/lean) ──
+  // /api/paper/chapter?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&branch=feature-x
+  if (path === "/api/paper/chapter") {
+    const id = url.searchParams.get("id");
+    const chapter = url.searchParams.get("chapter");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !chapter) return Response.json({ error: "Missing ?id= or ?chapter= parameter" }, { status: 400 });
+    try {
+      const data = await resolveChapterDetail(id, chapter, branch);
+      if (!data) return Response.json({ error: `Chapter not found: ${chapter}` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/chapter id=${id} chapter=${chapter}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // ── API: Section (full blocks with md/lean source) ──
+  // /api/paper/section?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&section=0&branch=feature-x
+  if (path === "/api/paper/section") {
+    const id = url.searchParams.get("id");
+    const chapter = url.searchParams.get("chapter");
+    const sectionIdx = url.searchParams.get("section");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !chapter || sectionIdx == null) return Response.json({ error: "Missing ?id=, ?chapter=, or ?section= parameter" }, { status: 400 });
+    try {
+      const data = await resolveSection(id, chapter, parseInt(sectionIdx, 10), branch);
+      if (!data) return Response.json({ error: `Section not found: ${chapter}[${sectionIdx}]` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/section id=${id} chapter=${chapter} section=${sectionIdx}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
   // ── API: Save block markdown ───────────────────────────────
   // POST /api/block/save { paperId, chapterDir, rootName, md }
   if (path === "/api/block/save" && url.searchParams.has("_method") !== true) {
@@ -1070,6 +1407,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
       }
       writeFileSync(mdPath, body.md, "utf-8");
+      invalidatePaperCache(body.paperId);
       log('edit', `block saved: ${body.paperId}/${body.rootName}`, `${body.md.length} chars → ${mdPath}`);
       return Response.json({ ok: true, path: mdPath });
     } catch (e) {

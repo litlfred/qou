@@ -1,7 +1,7 @@
 [quantum universe](#def:quantum-universe) and [quantum observable universe](#def:quantum-observable-universe)
 are formulated over an arbitrary commutative ring $R$. The Frobenius--Hopf axioms
 replace the analytic vanishing conditions of the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)) with a single algebraic
+([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with a single algebraic
 non-degeneracy condition on the Frobenius form. Concrete realisations
 include:
 

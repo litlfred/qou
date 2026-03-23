@@ -9,6 +9,6 @@ export default definition({
   uses: [
     "def:quantum-observable-universe",
     "def:recursive-brane-tower",
-    "def:c-quantum-observable-universe",
+    "ex:c-quantum-observable-universe",
   ],
 });

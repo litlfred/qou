@@ -4,5 +4,5 @@ export default remark({
   label: "rem:vanishing-explication",
   title: "Vanishing conditions",
   tags: ["gauge-theory", "vanishing"],
-  uses: ["def:c-quantum-observable-universe"],
+  uses: ["ex:c-quantum-observable-universe"],
 });

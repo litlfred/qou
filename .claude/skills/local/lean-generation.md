@@ -23,7 +23,7 @@ the manuscript and machine-checkable formal proofs.
 - When generating or updating Lean stub files
 - When adding `\lean{}`, `\leanok`, or `\uses{}` macros to LaTeX
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:
 

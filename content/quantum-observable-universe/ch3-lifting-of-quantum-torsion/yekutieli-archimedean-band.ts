@@ -4,5 +4,5 @@ export default remark({
   label: "rem:yekutieli-archimedean-band",
   title: "Archimedean band of the gerbe extension",
   tags: ["archimedean", "gerbe", "yekutieli"],
-  uses: ["def:c-quantum-observable-universe"],
+  uses: ["ex:c-quantum-observable-universe"],
 });

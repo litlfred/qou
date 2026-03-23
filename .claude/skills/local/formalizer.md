@@ -25,7 +25,7 @@ assignment before formalization can proceed.
 - When filling `sorry` placeholders with actual proofs
 - When `lake build` succeeds but there are remaining `sorry` warnings
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:
 
@@ -389,6 +389,56 @@ The `uses` field in `.ts` manifests forms a narrative dependency DAG:
   formalized (or have `sorry`-bridged stubs)
 - The Lean import graph should mirror the `uses[]` graph
 - Use `uses[]` to prioritize: formalize blocks with the most dependents first
+
+## Post-proof simplification pass
+
+After completing a proof (or batch of proofs), run a simplification pass
+before committing. This catches verbose patterns that accumulate during
+iterative proof development.
+
+### Checklist (apply in order)
+
+1. **`by exact X` → `X`** — drop the tactic mode wrapper when a single
+   term suffices. Similarly `by rfl` → `rfl`.
+
+2. **`unfold f; simp [...]` → `simp [f, ...]`** — `simp` can unfold
+   definitions directly; the separate `unfold` is redundant.
+
+3. **`unfold f; rw [...]` → `simp [f, ...]`** — when the rewrite chain
+   is just normalization, `simp` with the definition is cleaner.
+
+4. **Intermediate `have` → inline in `linarith`/`simp`** — if a `have`
+   exists only to feed the next tactic, pass it inline:
+   ```lean
+   -- Before:
+   have h := foo; linarith
+   -- After:
+   linarith [foo]
+   ```
+
+5. **Multi-line `apply; apply` → single `exact`** — chain applications:
+   ```lean
+   -- Before:
+   apply div_pos; apply sq_pos_of_ne_zero _ h
+   -- After:
+   exact div_pos ... (sq_pos_of_ne_zero _ h)
+   ```
+
+6. **Tautological theorems** — never create theorems that just restate a
+   structure field (`theorem foo (s : S) : ... := s.field`). Callers
+   should use `s.field` directly.
+
+7. **`@Zero.zero T inst.toZero` → `(0 : T)`** — let Lean infer instances.
+
+8. **Retraction pattern** — when proving `(f ∘ₗ g) x = x` from
+   `f ∘ₗ g = LinearMap.id`, prefer:
+   ```lean
+   congr_fun (congr_arg DFunLike.coe h_retraction) x
+   ```
+   over `rw [h]; rfl`.
+
+9. **Dead code** — remove duplicate docstrings, stale comments, and
+   unreferenced helper lemmas.
 
 ## Checklist
 

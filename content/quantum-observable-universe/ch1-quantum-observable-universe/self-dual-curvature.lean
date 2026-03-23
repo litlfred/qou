@@ -39,10 +39,7 @@ universe u v
 theorem self_dual_curvature (cqou : CQuantumObservableUniverse)
     (hn : cqou.n = 2)
     (inst : InstantonConnection cqou.toCRManifoldData) :
-    (inst.hodgeStar hn).IsSelfDual inst.curvature_H := by
-  -- Ref: [manuscript] §1, Proposition 1.4
-  -- Self-duality is a consequence of Yang–Mills minimisation (Bogomolny bound);
-  -- now carried as an intrinsic field of InstantonConnection.
-  exact inst.self_dual hn
+    (inst.hodgeStar hn).IsSelfDual inst.curvature_H :=
+  inst.self_dual hn
 
 end QOU

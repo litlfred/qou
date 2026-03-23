@@ -35,17 +35,21 @@ universe u v
 
     LaTeX: `\label{def:instanton}` -/
 structure InstantonConnection (cr : CRManifoldData) where
-  /-- Abstract connection data (gauge potential). -/
-  connectionData : cr.M → ℝ  -- simplified; full: 𝔤-valued 1-form on `P`
-  /-- Curvature `F_A` restricted to `H = ker θ`. -/
-  curvature_H : cr.M → ℝ  -- simplified; full: Ad(P)-valued 2-form on `H`
+  /-- Abstract connection data (gauge potential).
+      Full type: a 𝔤-valued 1-form on `P`. Modelled as `C(M, ℝ)` —
+      the real-valued proxy captures the norm ‖A‖ at each point. -/
+  connectionData : C(cr.M, ℝ)
+  /-- Curvature `F_A` restricted to `H = ker θ`.
+      Full type: an Ad(P)-valued 2-form on `H`. Modelled as `C(M, ℝ)` —
+      the real-valued proxy captures the norm ‖F_A|_H‖ at each point. -/
+  curvature_H : C(cr.M, ℝ)
   /-- The type of covariant-constant sections of `Ad(P)` w.r.t. this
       connection: `{ s ∈ Γ(Ad(P)) | D_A s = 0 }`. -/
   parallelAdjointSections : Type*
   /-- When `n = 2` (`dim_ℝ H = 4`), the Hodge star on `Ad(P)`-valued
       2-forms restricted to `H`, determined by the Webster metric `g_θ`
       and the complex structure `J`. -/
-  hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
+  hodgeStar : cr.n = 2 → HodgeInvolution C(cr.M, ℝ)
   /-- Yang–Mills minimisation: the connection is a critical point of
       `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
   /-- The Yang–Mills energy functional `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.

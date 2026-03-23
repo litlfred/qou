@@ -59,7 +59,6 @@ theorem CategoricalQLieBracket.q_bracket_classical {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear ℝ C]
     (qlb : CategoricalQLieBracket C) (hq : qlb.q = 1) (X Y : qlb.A ⟶ qlb.A) :
     qlb.q_bracket X Y = qlb.bracket X Y := by
-  unfold q_bracket
-  simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  simp [q_bracket, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
 
 end QOU

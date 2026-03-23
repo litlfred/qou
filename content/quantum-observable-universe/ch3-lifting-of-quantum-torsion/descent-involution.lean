@@ -7,7 +7,7 @@ decomposition gives the descended/transient splitting.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -22,7 +22,7 @@ variable {R : Type*} [CommRing R]
     the composition τₙ is idempotent: τₙ² = τₙ.
 
     LaTeX: `\label{def:descent-involution}` -/
--- Ref: [leitner2026] §3, Definition: Descent involution
+-- Ref: [manuscript] §3, Definition: Descent involution
 structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
   /-- The ascent embedding ℓₙ. -/
   ascent : M →ₗ[R] M
@@ -34,16 +34,10 @@ structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
   tau : M →ₗ[R] M := ascent ∘ₗ descent
 
 /-- τₙ is idempotent. -/
--- Ref: [leitner2026] §3
+-- Ref: [manuscript] §3
 theorem DescentInvolution.tau_idem {M : Type*} [AddCommGroup M] [Module R M]
     (di : DescentInvolution (R := R) M) :
     di.tau ∘ₗ di.tau = di.tau := by
-  simp only [DescentInvolution.tau]
-  ext x
-  simp only [LinearMap.comp_apply]
-  congr 1
-  have h : (di.descent ∘ₗ di.ascent) (di.descent x) = di.descent x := by
-    rw [di.retraction]; rfl
-  simpa [LinearMap.comp_apply] using h
+  ext x; simp [DescentInvolution.tau, LinearMap.comp_apply, di.retraction]
 
 end QOU

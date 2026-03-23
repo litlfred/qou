@@ -36,6 +36,6 @@ $$
   \,\bigr\rVert,
 $$
 where $\lVert \cdot \rVert$ is the norm on $R$ induced by the
-Frobenius pairing.  The mass measures the resistance of the
+[Frobenius pairing](#def:frobenius-pairing).  The mass measures the resistance of the
 Frobenius--Hopf structure to transporting the cycle $\gamma$ through
 the comultiplication.

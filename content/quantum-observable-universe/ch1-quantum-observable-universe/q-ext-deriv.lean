@@ -39,7 +39,6 @@ noncomputable def qExtDeriv {M : Type*} (sp : SubstrateParameter M)
 theorem qExtDeriv_classical {M : Type*} (sp : SubstrateParameter M)
     (d_alpha lieDerivReeb theta : M → ℝ) (p : M) (hq : sp.field p = 1) :
     qExtDeriv sp d_alpha lieDerivReeb theta p = d_alpha p := by
-  unfold qExtDeriv
-  rw [hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
+  simp [qExtDeriv, hq, inv_one, sub_self, one_mul, zero_mul, add_zero]
 
 end QOU
