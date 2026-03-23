@@ -21,5 +21,13 @@ export const formalizer: SkillDefinition = {
     "remove\\s+sorry",
     "formalize",
   ],
+  scripts: [
+    { path: ".github/scripts/formalizer.py", runtime: "python", phase: "execute", args: ["all"] },
+    { path: ".github/scripts/generate_lean_stubs.py", runtime: "python", phase: "execute" },
+  ],
+  schemas: [
+    { module: "schemas/types", types: ["Block", "LeanRef", "FormalizationStatus", "DefinitionBlock"], access: "read-write" },
+    { module: "schemas/qou-types", types: ["ProofObject", "TacticMapping"], access: "read-write" },
+  ],
   tags: ["lean", "formalization", "proof"],
 };

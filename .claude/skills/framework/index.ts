@@ -11,6 +11,7 @@ export type {
   SkillDependency,
   SkillScript,
   SkillValidator,
+  SkillSchemaRef,
   SkillDefinition,
   // Requirements
   SatisfiedByRef,

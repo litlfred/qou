@@ -13,5 +13,12 @@ export const leanGeneration: SkillDefinition = {
   ],
   mcpServices: ["lean-lsp"],
   routingPatterns: ["extract.*stub", "from\\s+latex", "generate.*lean"],
+  scripts: [
+    { path: ".github/scripts/generate_lean_stubs.py", runtime: "python", phase: "execute" },
+  ],
+  schemas: [
+    { module: "schemas/types", types: ["Block", "LeanRef", "DefinitionBlock"], access: "read" },
+    { module: "schemas/qou-types", types: ["ProofObject"], access: "read-write" },
+  ],
   tags: ["lean", "generation", "stub"],
 };

@@ -16,5 +16,9 @@ export const criticalPathAnalysis: SkillDefinition = {
     "assumption.*need",
     "archimedean.*categorical",
   ],
+  schemas: [
+    { module: "schemas/types", types: ["Block", "Chapter"], access: "read" },
+    { module: "schemas/qou-types", types: ["DependencyEdge", "ProofObjectsManifest"], access: "read" },
+  ],
   tags: ["analysis", "dependencies", "critical-path"],
 };

@@ -16,5 +16,14 @@ export const docsGeneration: SkillDefinition = {
     "compile\\s+pdf",
     "render\\s+html",
   ],
+  scripts: [
+    { path: ".github/scripts/generate-html.py", runtime: "python", phase: "execute" },
+    { path: ".github/scripts/generate-index.py", runtime: "python", phase: "execute" },
+    { path: ".github/scripts/generate_dependency_graph.py", runtime: "python", phase: "execute" },
+  ],
+  mcpServices: ["paper-assistant"],
+  schemas: [
+    { module: "schemas/qou-types", types: ["ProofObjectsManifest", "GlossaryManifest"], access: "read" },
+  ],
   tags: ["docs", "generation", "build"],
 };

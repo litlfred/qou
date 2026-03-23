@@ -23,5 +23,14 @@ export const contentValidation: SkillDefinition = {
     "check.*schema",
     "build\\s+content",
   ],
+  scripts: [
+    { path: "content/pipeline/validate.ts", runtime: "bun", phase: "execute" },
+    { path: "content/pipeline/build.ts", runtime: "bun", phase: "execute" },
+  ],
+  mcpServices: ["paper-assistant"],
+  schemas: [
+    { module: "schemas/types", types: ["Block", "Chapter", "Paper", "ValidationResult"], access: "read" },
+    { module: "schemas/constraints", types: ["BlockSchema", "CONSTRAINT_RULES"], access: "read" },
+  ],
   tags: ["validation", "content", "schema"],
 };

@@ -4,7 +4,10 @@
     "schemas/types.ts",
     "schemas/constraints.ts",
     "schemas/builders.ts",
-    "schemas/qou-types.ts"
+    "schemas/qou-types.ts",
+    "schemas/assistant-types.ts",
+    "schemas/assistant-package.ts",
+    "schemas/assistant-workflow.ts"
   ],
   "tsconfig": "schemas/tsconfig.json",
   "out": "build/schema-docs",

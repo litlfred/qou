@@ -15,5 +15,10 @@ export const editor: SkillDefinition = {
     "triage",
     "what.*should.*work\\s+on",
   ],
+  mcpServices: ["paper-assistant"],
+  schemas: [
+    { module: "schemas/types", types: ["Paper", "Chapter", "Block"], access: "read" },
+    { module: "schemas/assistant-workflow", types: ["WorkflowDefinition", "LifecycleStage"], access: "read" },
+  ],
   tags: ["coordination", "session"],
 };
