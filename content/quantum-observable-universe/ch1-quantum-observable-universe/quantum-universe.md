@@ -36,20 +36,10 @@ triple $(\mathcal{C}, A, \omega)$ where:
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathcal{C}$;
 
-   **(F)** the *Frobenius pairing* is
-   non-degenerate:
-
-   ```tex
-   \begin{equation}\label{eq:frobenius-pairing}
-   \begin{tikzcd}[column sep=2.5em]
-     A \otimes A \ar[r, "\mu"]
-     & A \ar[r, "\lambda"]
-     & \mathbf{1}
-   \end{tikzcd}
-   \end{equation}
-   ```
-
-   induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
+   **(F)** the [Frobenius pairing](#def:frobenius-pairing)
+   $\lambda \circ \mu \colon A \otimes A \to \mathbf{1}$ is
+   non-degenerate, inducing an isomorphism
+   $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 3. $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal
