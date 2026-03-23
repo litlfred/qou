@@ -196,7 +196,7 @@ export function renderBlock(block: Block, mdContent: string): string {
       const envName = ENV_NAMES[block.kind];
       if (!envName) throw new Error(`Unknown block kind: ${block.kind}`);
 
-      const titleArg = "title" in block && block.title ? `[${block.title}]` : "";
+      const titleArg = "title" in block && block.title ? `[{${block.title}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
       // Label
