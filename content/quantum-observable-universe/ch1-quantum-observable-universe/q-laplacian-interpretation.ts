@@ -1,0 +1,8 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:q-laplacian-interpretation",
+  title: "The $q$-Laplacian as quantum averaging",
+  uses: ["def:q-harmonic-form", "def:categorical-q-ext-deriv", "def:substrate-parameter"],
+  tags: ["pedagogy", "q-laplacian", "physics"],
+});

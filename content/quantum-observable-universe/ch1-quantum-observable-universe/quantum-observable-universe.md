@@ -1,10 +1,15 @@
 A quantum universe $(\mathcal{C}, A, \omega)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
-following three conditions hold:
+forgetful functor $\omega$
+([Example](#ex:rigid-monoidal-vect)) is faithful and the following
+conditions hold:
 
-1. *(non-degeneracy)* the
-   [Frobenius pairing](#def:frobenius-pairing) induces an isomorphism
-   $A \xrightarrow{\;\sim\;} A^{\vee}$;
+1. *(non-degenerate integration)* the Frobenius form
+   $\int_A := \lambda \colon A \to \mathbf{1}$ induces a
+   non-degenerate pairing
+   $(a, b) \mapsto \int_A ab$
+   ([Frobenius pairing](#def:frobenius-pairing)), giving an
+   isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 2. *(observability)* $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
    \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
@@ -20,9 +25,22 @@ following three conditions hold:
    \]
    ```
 
-3. *(categorical volume constraint)*
-   let $V$ denote the fundamental object of $\mathcal{C}$ (the simple
-   object of categorical dimension $2$); there exists a
+3. *(measurability / anomaly-free)* the primary Chern classes of the
+   adjoint object vanish in the cohomology induced by the forgetful
+   projection $\omega$:
+
+   $$
+     c_1(\mathrm{Ad}(A)) = 0
+     \qquad\text{and}\qquad
+     c_2(\mathrm{Ad}(A)) = 0.
+   $$
+
+   The first condition precludes hidden symmetries; the second ensures
+   that the volume form acquires no topological phases.
+
+4. *(categorical volume constraint)*
+   let $V$ denote the fundamental object of $\mathcal{C}$
+   ([Remark](#rem:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every
    $g \in \mathrm{Aut}^{\otimes}(\omega)$:

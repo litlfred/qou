@@ -3,7 +3,7 @@ The argument proceeds in three steps.
 
 *Step 1: The volume constraint determines the Lie algebra.*
 The categorical volume constraint provides a non-degenerate epimorphism
-$\epsilon \colon \Lambda^2 V \to \mathbf{1}$. Under the fibre functor
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$. Under the forgetful functor
 $\omega$, this endows the rank-$2$ module $\omega(V)$ with a
 $q$-antisymmetric pairing whose invariance algebra is
 $\mathfrak{su}_q(2)$. This is the Lie algebra of the reconstructed
@@ -15,14 +15,14 @@ $\mathrm{INN}(G_q)$.
 2-form datum.*
 A $2$-connection $(A, B)$ for the principal $2$-bundle of
 $\mathrm{INN}(G_q)$ takes values in
-$\mathfrak{g}_q = \mathfrak{su}_q(2)$. Fake
+$\mathfrak{g}_q = \mathfrak{su}_q(2)$. Quantum
 flatness sets $B = F_A$, so $B$ inherits the
 tracelessness forced by the determinant constraint
 $\det(g_V) = 1$ of [SU(2) emergence](#thm:su2-emergence): $B$ is
 $\mathrm{Ad}(P)$-valued with $\mathrm{tr}\,B = 0$, i.e.
 $\mathfrak{su}_q(2)$-valued rather than $\mathfrak{gl}_q(2)$-valued.
 
-*Step 3: Simplicity plus fake flatness gives the instanton
+*Step 3: Simplicity plus quantum flatness gives the instanton
 equation.*
 Imposing the simplicity constraint
 $B \in \Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P))$

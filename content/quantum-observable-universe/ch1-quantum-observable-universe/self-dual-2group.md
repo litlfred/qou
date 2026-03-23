@@ -26,7 +26,7 @@ has $\ker\partial = 1$ and $\mathrm{coker}\,\partial = 1$, so it is
 connected and simply connected as a $2$-group. A $2$-connection for
 $\mathrm{INN}(G)$ on a principal $2$-bundle over $M$ consists of a
 $\mathfrak{g}$-valued $1$-form $A$ and a $\mathfrak{g}$-valued
-$2$-form $B$, subject to the *fake-flatness* condition
+$2$-form $B$, subject to the *quantum flatness* condition
 
 $$F_A \;=\; B.$$
 
@@ -38,7 +38,7 @@ is available. Imposing the *simplicity constraint*
 $$B \;\in\; \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)$$
 
 --- that is, requiring the $2$-form datum to be self-dual ---
-and combining with fake flatness gives
+and combining with quantum flatness gives
 the commutative diagram
 
 ```tex
@@ -57,7 +57,7 @@ the commutative diagram
 \end{equation}
 ```
 
-The fake-flatness condition $F_A = B$ combined with the simplicity
+The quantum flatness condition $F_A = B$ combined with the simplicity
 constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
 This is precisely the instanton equation
 $F_A|_H = {*_H}\,F_A|_H$
