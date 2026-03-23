@@ -61,6 +61,9 @@ When a user request arrives, route to the right skill(s):
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
+| "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
+| "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
+| "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 
 ### Skill role assignments
 
@@ -70,7 +73,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
