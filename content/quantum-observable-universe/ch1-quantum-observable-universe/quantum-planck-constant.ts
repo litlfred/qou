@@ -8,6 +8,6 @@ export default definition({
     decl: "QOU.quantumPlanckConstant",
     validation: "leanok",
   },
-  status: "stated",
+  status: "proved",
   uses: ["def:quantum-observable-universe", "def:substrate-parameter"],
 });

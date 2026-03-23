@@ -4,7 +4,7 @@ export default definition({
   label: "def:categorical-hodge-star",
   title: "Categorical Hodge star",
   lean: {
-    decl: "QOU.CategoricalHodgeStar",
+    decl: "QOU.CatHodgeInvolution",
     validation: "not_checked",
   },
   status: "stated",

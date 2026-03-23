@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.SubstrateParameter",
     validation: "leanok",
   },
-  status: "stated",
+  status: "proved",
   uses: [
     "def:quantum-observable-universe",
     "def:weight-decomposition",

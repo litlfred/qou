@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.LocalizedKnot",
     validation: "not_checked",
   },
-  status: "has_sorry",
+  status: "proved",
   uses: [
     "def:categorical-point",
     "def:projective-line-object",
