@@ -147,9 +147,7 @@ surviving past the work that should have resolved them.
 | Status / tracking / manifest | `proof-status-tracking` | proof-objects.json |
 | What next / priority / triage | `proof-triage` | Decision support |
 | Validate LaTeX | `latex-validation` | Compilation, labels, refs |
-| Build / CI / publish / gh-pages | `docs-generation` | Workflow YAML, scripts |
-| Generate docs / schema docs / TypeDoc | `docs-generation` | TypeDoc, dep graph, axiom report |
-| Build paper / compile PDF / render HTML | `docs-generation` | Content → PDF/HTML pipeline |
+| Build / CI / publish / gh-pages | General-purpose agent | Workflow YAML, scripts |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
