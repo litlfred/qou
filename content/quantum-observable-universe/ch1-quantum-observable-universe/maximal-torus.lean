@@ -52,7 +52,11 @@ structure MaximalTorus (C : Type u) [Category.{v} C]
   /-- **Diagonal action**: the torus acts diagonally on each weight
       space of `V`.  Abstractly: the restriction of `embed(t)` to `V`
       is a diagonal matrix in the weight basis. -/
-  diagonal_action : ∀ (t : torusType), True  -- placeholder: diag on weight spaces
+  /-- **Diagonal action**: the torus acts on V by scaling each weight
+      space independently.  Encoded: for each t, the natural isomorphism
+      embed(t) commutes with itself (the image is abelian). -/
+  diagonal_action : ∀ (t₁ t₂ : torusType),
+    (embed t₁).hom ≫ (embed t₂).hom = (embed t₂).hom ≫ (embed t₁).hom
   /-- **Maximality**: the torus is maximal — its rank equals the rank
       of the gauge group. For SU(2): `rank T = 1`. -/
   rank : ℕ

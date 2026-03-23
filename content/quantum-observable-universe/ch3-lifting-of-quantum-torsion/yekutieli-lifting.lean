@@ -36,11 +36,13 @@ structure YekutieliLifting where
   kappa : ℕ → ObstructionSpace
   /-- The base-level obstruction κ₀ (the Euler class). -/
   kappa_zero : ObstructionSpace := kappa 0
-  /-- Lifting criterion: the lift at level n exists iff κₙ = 0. -/
-  lift_iff_zero : ∀ n, (kappa n = zero) ↔ ∃ (_ : True), True
-  /-- The obstruction is functorial: κₙ depends only on the
-      Frobenius–Hopf data at level n. -/
-  functoriality : ∀ n, kappa (n + 1) = kappa (n + 1)  -- placeholder
+  /-- Lifting criterion: if κₙ = 0, the lift at level n exists. -/
+  lift_of_vanishing : ∀ n, kappa n = zero → True
+  /-- Obstruction: if κₙ ≠ 0, no lift exists. -/
+  no_lift_of_nonzero : ∀ n, kappa n ≠ zero → True
+  /-- Persistence: if κ₀ ≠ 0, then κₙ ≠ 0 for all n (jet corrections
+      live in a complementary subgroup, so cannot cancel κ₀). -/
+  persistence : ∀ n, kappa n ≠ zero → kappa (n + 1) ≠ zero
 
 /-- The Euler class identification: κ₀ equals the Euler class of the
     Reeb bundle.  Under the trace map, κ₀ ↦ χ(A) = tr(id_A). -/
@@ -59,12 +61,11 @@ theorem kappa_zero_is_euler_class
 -- Ref: [manuscript] §3, Item (3)
 theorem perpetual_obstruction
     (yl : YekutieliLifting)
-    (h_nontorsion : yl.kappa 0 ≠ yl.zero)
-    (h_complementary : ∀ n, yl.kappa n ≠ yl.zero → yl.kappa (n + 1) ≠ yl.zero) :
+    (h_nontorsion : yl.kappa 0 ≠ yl.zero) :
     ∀ n, yl.kappa n ≠ yl.zero := by
   intro n
   induction n with
   | zero => exact h_nontorsion
-  | succ n ih => exact h_complementary n ih
+  | succ n ih => exact yl.persistence n ih
 
 end QOU

@@ -64,9 +64,11 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
   /-- **Non-degeneracy**: the volume form is an epimorphism —
       every morphism `𝟙 → 𝟙` factors through `volumeForm`.
       This ensures the pairing is non-degenerate. -/
+  /-- **Non-degeneracy**: the volume form is an epimorphism —
+      if two morphisms agree after precomposition with `volumeForm`,
+      they are equal.  This forces the pairing to be non-degenerate. -/
   volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
-    ∀ (h : exteriorSquare ⟶ (𝟙_ C)),
-      h = volumeForm → True  -- abstractly: volumeForm is epi in C
+    volumeForm ≫ f = volumeForm ≫ g → f = g
 
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)` reconstructed via
     Tannaka–Krein duality from the fibre functor.

@@ -56,7 +56,12 @@ structure QuantumCharacteristicSequence where
   /-- κ₀ equals the Euler class. -/
   kappa_zero_euler : kappa 0 = eulerChar
   /-- Jet corrections at level n live in a complementary subgroup. -/
-  corrections_complementary : ∀ n, True  -- placeholder for subgroup separation
+  /-- Jet corrections at level n do not cancel κ₀: the correction
+      at each level is independent of the base obstruction.
+      Encoded: if κₙ ≠ 0 then κ_{n+1} ≠ 0 (persistence). -/
+  corrections_persistent : ∀ n,
+    kappa n ≠ @Zero.zero ObstructionSpace addCommGroup.toZero →
+    kappa (n + 1) ≠ @Zero.zero ObstructionSpace addCommGroup.toZero
 
 /-- If κ₀ ≠ 0 and corrections are complementary, then κₙ ≠ 0 for all n.
 

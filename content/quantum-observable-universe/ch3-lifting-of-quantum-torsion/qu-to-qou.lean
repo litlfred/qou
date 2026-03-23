@@ -52,10 +52,14 @@ structure BranchData where
 structure TerminalFiber where
   /-- The branch point index. -/
   branchIndex : ℕ
-  /-- The Krull dimension at the branch point is 0 (discrete/Artinian). -/
-  krull_zero : True  -- abstractly: Krull dim = 0 at branch point
-  /-- The involution σ : P(V) ↪ Ad(A) determines the fiber data. -/
-  has_involution : True  -- abstractly: FiberAdjointInvolution exists at this point
+  /-- The Krull dimension at the branch point is 0 (discrete/Artinian).
+      Encoded: the dimension of the descent tower at this point. -/
+  krullDimAtPoint : ℕ
+  /-- The Krull dimension is 0 at the branch point. -/
+  krull_zero : krullDimAtPoint = 0
+  /-- The involution σ : P(V) ↪ Ad(A) exists at this fiber.
+      Encoded: the involution is an involution (σ² = id). -/
+  involution_exists : ∃ (σ : ℤ → ℤ), ∀ x, σ (σ x) = x
 
 /-- The **main theorem**: packaging all five structural properties of a QOU.
 

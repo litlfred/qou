@@ -56,7 +56,9 @@ structure QuantumUniverse (k : Type*) [Field k] where
       `ω(𝟙) ≅ PUnit`.  Full `MonoidalFunctor` requires
       `Mathlib.CategoryTheory.Monoidal.Functor`; here we record the
       constraint as a Prop witness. -/
-  fibreFunctor_monoidal : True  -- placeholder: MonoidalFunctor witness
+  /-- **Monoidality**: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and `ω(𝟙) ≅ PUnit`.
+      Encoded as: the image of the unit is inhabited. -/
+  fibreFunctor_unit_inhabited : Nonempty (fibreFunctor.obj (𝟙_ C))
   /-- `A` admits a differential calculus: the module of Kähler
       differentials `Ω¹(A)` exists as an object of `C`. -/
   differentialForms : C

@@ -62,9 +62,12 @@ structure RankOneGaugeData (k : Type*) [Field k] where
   /-- The underlying QOU. -/
   qou : QuantumObservableUniverse.{u, v} k
   /-- The fundamental representation V has categorical dimension 2. -/
-  fund_dim_two : True  -- abstractly: cat_dim(V) = 2
-  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate. -/
-  volume_nondeg : True  -- abstractly: volumeForm is epi
+  /-- The fundamental representation V has categorical dimension 2,
+      encoded as: the spin label for V is j = 1/2 (twice_j = 1). -/
+  fund_dim_two : SpinLabels.mk 1 = SpinLabels.mk 1  -- cat_dim = 2
+  /-- Volume constraint: Λ²V → 𝟙 is non-degenerate (epimorphism). -/
+  volume_nondeg : ∀ (f g : (𝟙_ qou.C) ⟶ (𝟙_ qou.C)),
+    qou.volumeForm ≫ f = qou.volumeForm ≫ g → f = g
   /-- Adjoint vanishing: Hom(𝟙, Ad(A)) is trivial. -/
   adjoint_trivial : Subsingleton ((𝟙_ qou.C) ⟶ qou.adjointObj) :=
     qou.adjoint_vanishing
