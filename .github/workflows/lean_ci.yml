@@ -85,7 +85,25 @@ jobs:
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
-      # ── Pre-build: Extract & generate ──────────────────────────────
+      # ── Pre-build: content pipeline + extraction ──────────────────
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Build content objects to LaTeX chapters
+        continue-on-error: true
+        run: |
+          cd content && bun install --frozen-lockfile 2>/dev/null || bun install
+          bun run pipeline/build.ts \
+            quantum-observable-universe/quantum-observable-universe.ts \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+
       - name: Run Ontologist (glossary scan)
         run: python3 .github/scripts/ontologist.py all
 
