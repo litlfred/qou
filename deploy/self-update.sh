@@ -101,11 +101,11 @@ fi
 # ── 2. Check Docker image for new digest ─────────────────────────
 cd "$DEPLOY_DIR"
 
-RUNNING_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' lean-mcp 2>/dev/null | cut -d@ -f2 || echo "none")
+RUNNING_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' paper-assistant 2>/dev/null | cut -d@ -f2 || echo "none")
 
-if docker compose -f "$COMPOSE_FILE" pull lean-mcp --quiet 2>/dev/null; then
+if docker compose -f "$COMPOSE_FILE" pull paper-assistant --quiet 2>/dev/null; then
     source "$DEPLOY_DIR/.env" 2>/dev/null || true
-    IMAGE="${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest"
+    IMAGE="${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest"
     NEW_DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$IMAGE" 2>/dev/null | cut -d@ -f2 || echo "unknown")
 
     if [ "$RUNNING_DIGEST" != "$NEW_DIGEST" ] && [ "$NEW_DIGEST" != "unknown" ]; then
@@ -118,9 +118,9 @@ fi
 if [ "$CHANGED" = true ]; then
     echo "[$(date -Is)] Clearing cached data and restarting services..."
 
-    # Stop lean-mcp to clear any in-memory/on-disk cache
-    docker compose -f "$COMPOSE_FILE" stop lean-mcp 2>/dev/null || true
-    docker compose -f "$COMPOSE_FILE" rm -f lean-mcp 2>/dev/null || true
+    # Stop paper-assistant to clear any in-memory/on-disk cache
+    docker compose -f "$COMPOSE_FILE" stop paper-assistant 2>/dev/null || true
+    docker compose -f "$COMPOSE_FILE" rm -f paper-assistant 2>/dev/null || true
 
     # Bring everything back up
     docker compose -f "$COMPOSE_FILE" up -d --remove-orphans

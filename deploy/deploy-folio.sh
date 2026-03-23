@@ -14,7 +14,7 @@
 #   - Domain, image, email whitelist, viewer dir, update interval
 #
 # Architecture:
-#   Internet → Caddy (auto TLS) → oauth2-proxy (Google OAuth) → viewer / lean-mcp
+#   Internet → Caddy (auto TLS) → auth-gateway (dual OAuth) → paper-assistant
 #
 # Prerequisites: git, curl, python3, Docker, Docker Compose
 #
@@ -116,9 +116,9 @@ fi
 
 # ── 4. Pull image + start ────────────────────────────────────────
 echo ""
-echo "▸ Pulling lean-mcp image..."
+echo "▸ Pulling paper-assistant image..."
 cd "$DEPLOY_DIR"
-docker compose -f docker-compose.folio.yml pull lean-mcp || echo "  ⚠ Pull failed (image may not be built yet)"
+docker compose -f docker-compose.folio.yml pull paper-assistant || echo "  ⚠ Pull failed (image may not be built yet)"
 
 echo ""
 echo "▸ Starting services..."

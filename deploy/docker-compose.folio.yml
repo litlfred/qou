@@ -1,11 +1,10 @@
-# QOU Folio Deployment — Viewer + MCP behind dual OAuth (Google + GitHub)
+# QOU Folio Deployment — Paper Assistant + Auth behind Caddy
 #
-# Serves the folio viewer at the root, MCP at /mcp, all behind auth.
+# Serves the paper assistant (MCP + viewer + content API) behind dual OAuth.
 # No secrets in the repo — only deploy/.env (gitignored) holds credentials.
 #
 # Architecture:
-#   Internet → Caddy (:443, auto TLS) → auth-gateway (:4180) → lean-mcp (:8080)
-#                                                               → viewer (static)
+#   Internet → Caddy (:443, auto TLS) → auth-gateway (:4180) → paper-assistant (:8080)
 #
 # Auth roles:
 #   Google OAuth → viewer (read + feedback)
@@ -31,19 +30,20 @@ services:
       - caddy_config:/config
     depends_on:
       - auth-gateway
-      - lean-mcp
+      - paper-assistant
 
-  # ── Lean MCP Server ──────────────────────────────────────────────
-  lean-mcp:
-    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/lean-mcp}:latest
-    container_name: lean-mcp
+  # ── Paper Assistant (MCP + viewer + content API) ────────────────
+  paper-assistant:
+    image: ${LEAN_MCP_IMAGE:-ghcr.io/litlfred/qou/paper-assistant}:latest
+    container_name: paper-assistant
     restart: unless-stopped
     environment:
       - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
+      - MCP_PORT=${LEAN_MCP_INTERNAL_PORT:-8080}
     expose:
       - "${LEAN_MCP_INTERNAL_PORT:-8080}"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/mcp"]
+      test: ["CMD", "curl", "-f", "http://localhost:${LEAN_MCP_INTERNAL_PORT:-8080}/health"]
       interval: 30s
       timeout: 5s
       retries: 3
@@ -62,7 +62,7 @@ services:
       - FOLIO_DOMAIN=${FOLIO_DOMAIN}
       - COOKIE_SECRET=${COOKIE_SECRET}
       - LEAN_LSP_MCP_TOKEN=${LEAN_LSP_MCP_TOKEN}
-      - LEAN_MCP_UPSTREAM=http://lean-mcp:${LEAN_MCP_INTERNAL_PORT:-8080}
+      - LEAN_MCP_UPSTREAM=http://paper-assistant:${LEAN_MCP_INTERNAL_PORT:-8080}
       - VIEWER_ROOT=/var/www/viewer
       - OWNER_USERNAME=${OWNER_USERNAME:-litlfred}
       - SESSION_MAX_AGE=${SESSION_MAX_AGE:-86400}
@@ -78,7 +78,7 @@ services:
       - ./google-viewers.txt:/etc/auth-gateway/google-viewers.txt:ro
       - ./github-collaborators.txt:/etc/auth-gateway/github-collaborators.txt:ro
     depends_on:
-      lean-mcp:
+      paper-assistant:
         condition: service_started
 
 volumes:

@@ -6,7 +6,7 @@
  *   2. Handles Google OAuth → viewer role (from google-viewers.txt)
  *   3. Handles GitHub OAuth → collaborator/owner role (from github-collaborators.txt)
  *   4. Issues HMAC-signed session cookies with {email, provider, role, name}
- *   5. Proxies authenticated requests to lean-mcp and static viewer files
+ *   5. Proxies authenticated requests to paper-assistant and static viewer files
  *   6. Bearer token bypass for CLI/API access
  *
  * Roles:
@@ -19,7 +19,7 @@
  *   GH_CLIENT_ID, GH_CLIENT_SECRET
  *   COOKIE_SECRET         — HMAC signing key (32+ chars)
  *   LEAN_LSP_MCP_TOKEN    — Bearer token for direct API access
- *   LEAN_MCP_UPSTREAM     — lean-mcp URL (default: http://lean-mcp:8080)
+ *   LEAN_MCP_UPSTREAM     — paper-assistant URL (default: http://paper-assistant:8080)
  *   VIEWER_ROOT           — static viewer dir (default: /var/www/viewer)
  *   OWNER_USERNAME        — GitHub username of repo owner (default from config)
  *   SESSION_MAX_AGE       — session duration in seconds (default: 86400)
@@ -41,7 +41,7 @@ if (!COOKIE_SECRET || COOKIE_SECRET.length < 32) {
   process.exit(1);
 }
 const LEAN_MCP_TOKEN = process.env.LEAN_LSP_MCP_TOKEN || "";
-const MCP_UPSTREAM = process.env.LEAN_MCP_UPSTREAM || "http://lean-mcp:8080";
+const MCP_UPSTREAM = process.env.LEAN_MCP_UPSTREAM || "http://paper-assistant:8080";
 const VIEWER_ROOT = process.env.VIEWER_ROOT || "/var/www/viewer";
 const OWNER_USERNAME = process.env.OWNER_USERNAME || "litlfred";
 const SESSION_MAX_AGE = parseInt(process.env.SESSION_MAX_AGE || "86400", 10);
@@ -465,7 +465,7 @@ Bun.serve({
       });
     }
 
-    // ── Proxy to lean-mcp with role headers ─────────────────
+    // ── Proxy to paper-assistant with role headers ─────────────────
     if (path === "/mcp" || path.startsWith("/api/")) {
       // Inject auth headers for downstream
       const headers = new Headers(req.headers);

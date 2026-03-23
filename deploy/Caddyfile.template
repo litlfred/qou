@@ -14,7 +14,7 @@ ${LEAN_MCP_DOMAIN} {
     # fall through to oauth2-proxy for browser access
     route /mcp {
         @has_token header Authorization Bearer*
-        reverse_proxy @has_token lean-mcp:${LEAN_MCP_INTERNAL_PORT}
+        reverse_proxy @has_token paper-assistant:${LEAN_MCP_INTERNAL_PORT}
 
         # No token → OAuth flow
         reverse_proxy oauth2-proxy:4180
@@ -22,7 +22,7 @@ ${LEAN_MCP_DOMAIN} {
 
     # Health check (no auth)
     route /health {
-        reverse_proxy lean-mcp:${LEAN_MCP_INTERNAL_PORT}
+        reverse_proxy paper-assistant:${LEAN_MCP_INTERNAL_PORT}
     }
 
     # Everything else → oauth2-proxy

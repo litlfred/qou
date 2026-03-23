@@ -1,7 +1,5 @@
 {
-  "domain": "lean.litlfred.org",
-  "port": 443,
-  "image": "ghcr.io/litlfred/qou/lean-mcp",
+  "image": "ghcr.io/litlfred/qou/paper-assistant",
   "transport": "streamable-http",
   "mcp_internal_port": 8080,
   "self_update_interval_seconds": 60,

@@ -367,7 +367,7 @@ Architecture: `Client → Caddy (TLS) → auth-gateway (dual OAuth) → lean-lsp
 To switch a client to remote mode, update `.mcp.json`:
 
 ```json
-{"mcpServers":{"lean-lsp":{"url":"https://lean.litlfred.org/mcp"}}}
+{"mcpServers":{"lean-lsp":{"url":"https://folio.litlfred.org/mcp"}}}
 ```
 
 To extract the deploy infrastructure for another repo, copy `deploy/`,

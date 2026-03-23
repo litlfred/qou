@@ -18,7 +18,7 @@ if not output_file:
 
 with open(output_file, "a") as out:
     out.write(f"domain={f.get('domain', 'folio.example.org')}\n")
-    out.write(f"image={c.get('image', 'ghcr.io/litlfred/qou/lean-mcp')}\n")
+    out.write(f"image={c.get('image', 'ghcr.io/litlfred/qou/paper-assistant')}\n")
     out.write(f"mcp_port={c.get('mcp_internal_port', 8080)}\n")
     out.write(f"viewer_dir={f.get('viewer_dir', 'viewer')}\n")
     out.write(f"owner_username={a.get('owner', 'litlfred')}\n")

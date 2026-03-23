@@ -23,7 +23,7 @@ if [ ! -f "$CONFIG" ]; then
 fi
 
 # Parse config
-DOMAIN=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('domain',''))")
+DOMAIN=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('folio',{}).get('domain','folio.example.org'))")
 IMAGE=$(python3 -c "import json; print(json.load(open('$CONFIG')).get('image',''))")
 
 echo "=== Lean MCP Remote Server Setup ==="
@@ -75,9 +75,9 @@ fi
 
 # ── 4. Pull image ───────────────────────────────────────────────
 echo ""
-echo "▸ Pulling lean-mcp image..."
+echo "▸ Pulling paper-assistant image..."
 cd "$DEPLOY_DIR"
-docker compose pull lean-mcp || echo "  ⚠ Pull failed (image may not be built yet)"
+docker compose pull paper-assistant || echo "  ⚠ Pull failed (image may not be built yet)"
 
 # ── 5. Start ─────────────────────────────────────────────────────
 echo ""
