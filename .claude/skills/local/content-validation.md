@@ -48,28 +48,61 @@ content/
 - **uses-resolve**: All labels in `uses[]` exist in the document
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
-### Level 3: AST validation
+### Level 3: LaTeX AST validation
 - Rendered LaTeX parses through unified-latex without errors
 - Environment balance (\begin matches \end)
 - No malformed macro syntax
 - No unbalanced braces
 
+### Level 4: TeX snippet validation (in .md files)
+
+The `.md` files are parsed using **remark + remark-math** (formal markdown
+grammar with math extension). Each extracted TeX snippet is validated via
+**unified-latex** AST parsing. This catches:
+
+- Non-math environments inside math mode (e.g. `\begin{itemize}` inside `$$`)
+- Unbalanced braces or environments in inline/display math
+- Malformed TeX in fenced ` ```tex ` blocks
+
+The markdown AST node types used:
+
+| Markdown syntax | remark AST node | Validated as |
+|-----------------|-----------------|-------------|
+| `$...$` | `inlineMath` | Math-mode TeX |
+| `$$...$$` | `math` (display) | Display-mode TeX |
+| ` ```tex ``` ` | `code` (lang=tex) | Raw LaTeX |
+
 ## Running validation
 
 ```bash
-# Validate all objects in a paper
-cd content && bun run pipeline/validate.ts quantum-observable-universe/ch1-quantum-observable-universe
+# Validate all objects in a paper (schema + constraints + LaTeX AST)
+cd content && bun run pipeline/validate.ts quantum-observable-universe/
 
 # Full build with validation
 cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts
+
+# Validate TeX snippets in .md files (AST-based, no compilation)
+cd content && bun run pipeline/validate-tex.ts
+
+# Validate specific file
+cd content && bun run pipeline/validate-tex.ts --file path/to/block.md
+
+# Validate with pdflatex compilation (slower, catches more)
+cd content && bun run pipeline/validate-tex.ts --compile
+
+# JSON output (for programmatic use by skills)
+cd content && bun run pipeline/validate-tex.ts --json
 ```
 
 ## When to validate
 
 1. **Before commit**: Run validation on changed content objects
-2. **After editing .md files**: Ensure LaTeX rendering still valid
+2. **After editing .md files**: Run `validate-tex.ts` on changed files —
+   this uses the remark AST parser to extract and validate all TeX snippets
 3. **After adding new blocks**: Check constraints (lean file exists, labels resolve)
 4. **After modifying schema**: Run validation across all content
+5. **After creating .md content**: Any skill that creates or edits `.md` files
+   MUST run `validate-tex.ts --file <path>` before considering the task complete
 
 ## Adding custom constraints
 

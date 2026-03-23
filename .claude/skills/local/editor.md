@@ -250,7 +250,10 @@ The review pass consists of:
    (For non-narrative changes, focus on consistency with the narrative.)
 3. **Content validation** — run `content_validate` on affected chapters to
    confirm schema compliance and LaTeX AST correctness.
-4. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
+4. **TeX snippet validation** — if any `.md` files were created or edited,
+   run `cd content && bun run pipeline/validate-tex.ts --file <path>` on
+   each changed `.md` to validate TeX snippets via remark AST parsing.
+5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
    confirm `lean.decl` fields match actual Lean declarations.
 
