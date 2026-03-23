@@ -19,6 +19,7 @@ import QOU.HadronicMass
 import QOU.QuantumObservableUniverse
 import QOU.Elaboration
 import QOU.PathIntegrals
+import QOU.MobiusEnergy
 import QOU.Torsion
 import QOU.BringsSurface
 import QOU.DescartesUniverse
