@@ -4,7 +4,7 @@
 # Required env vars:
 #   SERVER_NAME, DOMAIN, IMAGE, MCP_PORT, OWNER_USERNAME, SESSION_MAX_AGE,
 #   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET,
-#   GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET,
+#   GH_CLIENT_ID, GH_CLIENT_SECRET,
 #   HCLOUD_TOKEN (used by hcloud CLI)
 #
 # Optional:
@@ -49,7 +49,7 @@ export COOKIE_SECRET
 export OWNER_USERNAME
 export SESSION_MAX_AGE
 export GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET
-export GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET
+export GH_CLIENT_ID GH_CLIENT_SECRET
 
 ENV_CONTENT=$("$SCRIPT_DIR/write-env.sh" /dev/stdout)
 printf '%s' "$ENV_CONTENT" | hcloud server ssh "$SERVER_NAME" -- tee /opt/qou/deploy/.env > /dev/null

@@ -16,7 +16,7 @@
  *
  * Environment:
  *   GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET
- *   GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
+ *   GH_CLIENT_ID, GH_CLIENT_SECRET
  *   COOKIE_SECRET         — HMAC signing key (32+ chars)
  *   LEAN_LSP_MCP_TOKEN    — Bearer token for direct API access
  *   LEAN_MCP_UPSTREAM     — lean-mcp URL (default: http://lean-mcp:8080)
@@ -48,8 +48,8 @@ const SESSION_MAX_AGE = parseInt(process.env.SESSION_MAX_AGE || "86400", 10);
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "";
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || "";
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || "";
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || "";
+const GITHUB_CLIENT_ID = process.env.GH_CLIENT_ID || "";
+const GITHUB_CLIENT_SECRET = process.env.GH_CLIENT_SECRET || "";
 
 const GOOGLE_VIEWERS_FILE = process.env.GOOGLE_VIEWERS_FILE || "/etc/auth-gateway/google-viewers.txt";
 const GITHUB_COLLABS_FILE = process.env.GITHUB_COLLABS_FILE || "/etc/auth-gateway/github-collaborators.txt";

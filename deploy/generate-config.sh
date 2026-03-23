@@ -71,8 +71,8 @@ COOKIE=$(openssl rand -base64 32 | tr -d '\n')
 if [ "$CI" = true ]; then
     GOOGLE_CLIENT_ID="FILL_ME_IN"
     GOOGLE_CLIENT_SECRET="FILL_ME_IN"
-    GITHUB_CLIENT_ID="FILL_ME_IN"
-    GITHUB_CLIENT_SECRET="FILL_ME_IN"
+    GH_CLIENT_ID="FILL_ME_IN"
+    GH_CLIENT_SECRET="FILL_ME_IN"
 else
     echo "── Google OAuth (for viewers) ──"
     echo "  Create at: https://console.cloud.google.com/apis/credentials"
@@ -86,8 +86,8 @@ else
     echo "  Create at: https://github.com/settings/developers"
     echo "  Callback URL: https://$DOMAIN/auth/github/callback"
     echo ""
-    read -rp "  GitHub Client ID: " GITHUB_CLIENT_ID
-    read -rsp "  GitHub Client Secret: " GITHUB_CLIENT_SECRET
+    read -rp "  GitHub Client ID: " GH_CLIENT_ID
+    read -rsp "  GitHub Client Secret: " GH_CLIENT_SECRET
     echo ""
 fi
 
@@ -114,8 +114,8 @@ fi
   printf 'GOOGLE_CLIENT_ID=%s\n' "$GOOGLE_CLIENT_ID"
   printf 'GOOGLE_CLIENT_SECRET=%s\n' "$GOOGLE_CLIENT_SECRET"
   printf '\n# ── GitHub OAuth (collaborators) ─────────────────────────────────\n'
-  printf 'GITHUB_CLIENT_ID=%s\n' "$GITHUB_CLIENT_ID"
-  printf 'GITHUB_CLIENT_SECRET=%s\n' "$GITHUB_CLIENT_SECRET"
+  printf 'GH_CLIENT_ID=%s\n' "$GH_CLIENT_ID"
+  printf 'GH_CLIENT_SECRET=%s\n' "$GH_CLIENT_SECRET"
 } > "$DEPLOY_DIR/.env"
 
 echo "  ✓ .env generated"
