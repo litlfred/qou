@@ -205,6 +205,10 @@ a:hover {{ text-decoration: underline; }}
         <div class="resource-label">Lean Source</div>
         <div class="resource-desc">Raw Lean 4 files</div>
       </a>
+      <a class="resource-link" href="schema-docs/">
+        <div class="resource-label">Schema Docs</div>
+        <div class="resource-desc">Content-object type reference</div>
+      </a>
     </div>
   </div>
 </div>

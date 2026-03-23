@@ -21,6 +21,7 @@ title: litlfred's Papers
 | [Axiom Report](axiom-report.txt) | Verification report with sorry audit |
 | [Dependency Graph](dependency-graph.svg) | Visual proof dependency graph |
 | [Lean Source](lean/) | Raw Lean 4 source files |
+| [Schema Docs](schema-docs/) | Content-object type reference (TypeDoc) |
 
 ## Knot Registry
 

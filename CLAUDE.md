@@ -417,7 +417,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
 | `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
-| `publish.yml` | `quantum-observable-universe.pdf`, `.md`, `index.html`, `paper.html`, `style.css`, `drafts/` (feature branches) |
+| `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
 
@@ -436,6 +436,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
+| `schema-docs/` | publish.yml | TypeDoc content-object type reference |
 | `proof-objects.json` | all | Formalization status manifest |
 | `glossary.json` | all | Semantic glossary |
 | `mapping.json` | all | Narrative-to-Lean identifier map |

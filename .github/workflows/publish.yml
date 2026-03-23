@@ -184,6 +184,16 @@ jobs:
           echo "Generated main.tex:"
           head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
 
+      # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
+      - name: Build schema docs
+        continue-on-error: true
+        run: |
+          npm install --no-save 2>/dev/null || true
+          npm run build:docs || echo "::warning::TypeDoc build failed"
+          if [ -d build/schema-docs ]; then
+            echo "✓ Schema docs generated ($(find build/schema-docs -name '*.html' | wc -l) pages)"
+          fi
+
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
       # base branch so only trusted code runs with elevated permissions.
@@ -460,6 +470,12 @@ jobs:
             cp    lean-archive/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
             cp    lean-archive/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
             cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+          fi
+
+          # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────
+          if [ -d build/schema-docs ]; then
+            cp -r build/schema-docs _site/schema-docs
+            echo "✓ Schema docs deployed to schema-docs/"
           fi
 
           # ── Generate dependency graph from proof objects ──────────────────────
