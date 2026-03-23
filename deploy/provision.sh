@@ -112,7 +112,7 @@ hcloud server create \
   --type "$SERVER_TYPE" \
   --image "$SERVER_IMG" \
   --location "$SERVER_LOC" \
-  --user-data "$(cat /tmp/cloud-init.sh)"
+  --user-data-from-file /tmp/cloud-init.sh
 
 rm -f /tmp/cloud-init.sh
 
