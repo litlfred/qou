@@ -6,7 +6,7 @@ The muon is identified with the figure-eight knot $4_1$, whose complement
 carries a complete hyperbolic structure of volume
 $\mathrm{Vol}(4_1) \approx 2.02988$.
 
-Applying the topological mass conjecture to the muon--electron mass
+Applying the [topological mass theorem](#thm:topological-mass) to the muon--electron mass
 *ratio* eliminates the overall mass scale and gives
 $$
   \frac{m_\mu}{m_e}
@@ -28,7 +28,7 @@ $$
 Inverting $\hbar_q = 1 - 1/q$ yields
 $1/q = 1 - 0.09908 = 0.90092$, so
 $$
-  q \;\approx\; 1.1097.
+  q \;\approx\; 1.10997.
 $$
 The Skein relation itself is the mass-functional analogue of the Kauffman
 bracket recursion. At each crossing in the color-exchange diagram of a
