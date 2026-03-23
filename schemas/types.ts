@@ -417,7 +417,13 @@ export interface Paper {
   title: string;
   authors: string[];
   affiliations?: string[];
+  /** Author email addresses (parallel to authors array). */
+  emails?: string[];
+  /** Author URLs / homepages (parallel to authors array). */
+  urls?: string[];
   date?: string;
+  /** Paper abstract (plain text or markdown). */
+  abstract?: string;
   /** Chapter references — URIs to chapter .ts manifests. */
   chapters: ChapterRef[];
   /**

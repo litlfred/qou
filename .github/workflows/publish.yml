@@ -157,7 +157,7 @@ jobs:
           # Store as output for downstream steps
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
-      # ── 0e. Run content pipeline (content objects → LaTeX chapters) ─────
+      # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
       - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
@@ -174,10 +174,15 @@ jobs:
             bun run pipeline/build.ts \
               "${paper_dir}/${paper_dir}.ts" \
               --out-dir ../chapters/ \
+              --generate-main \
+              --main-out ../main.tex \
+              --preamble ../latex/preamble.tex \
               || echo "::warning::Content build had issues for ${paper_dir}"
           done
           echo "Generated chapters:"
           ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+          echo "Generated main.tex:"
+          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
 
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the

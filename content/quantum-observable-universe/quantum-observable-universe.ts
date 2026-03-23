@@ -12,6 +12,12 @@ export default paper({
   authors: ["Frederick Carl Leitner"],
   affiliations: ["World Health Organization"],
   date: "2026-03-21",
+  abstract:
+    "This paper presents a mathematical framework for the Quantum Observable " +
+    "Universe (QOU).  We introduce the notion of quantum torsion in this setting, " +
+    "study its lifting to higher categorical structures, and examine the resulting " +
+    "interpretational and experimental consequences.  Speculative extensions are " +
+    "discussed in the final chapter.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
