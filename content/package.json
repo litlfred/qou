@@ -10,10 +10,14 @@
     "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts"
   },
   "dependencies": {
-    "zod": "^3.23.0",
+    "@unified-latex/unified-latex-util-arguments": "^1.8.0",
     "@unified-latex/unified-latex-util-parse": "^1.8.0",
     "@unified-latex/unified-latex-util-print-raw": "^1.8.0",
     "@unified-latex/unified-latex-util-visit": "^1.8.0",
-    "@unified-latex/unified-latex-util-arguments": "^1.8.0"
+    "remark": "^15.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^3.23.0"
   }
 }

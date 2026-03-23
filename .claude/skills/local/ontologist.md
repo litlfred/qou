@@ -246,6 +246,18 @@ Import: `<Mathlib.Import.Path>`.
 <Optional: notation, key fields, relationship to paper's usage.>
 ```
 
+### TeX snippet validation (mandatory after creating .md)
+
+After creating any glossary `.md` file, validate its TeX snippets:
+
+```bash
+cd content && bun run pipeline/validate-tex.ts --file <path-to-new.md>
+```
+
+This uses **remark + remark-math** to parse the markdown and validate all
+inline/display math and fenced TeX blocks via **unified-latex** AST parsing.
+Fix any TeX errors before committing.
+
 ### Maintaining consistency
 
 - When a new Mathlib-equivalent term appears in any chapter `.md`,

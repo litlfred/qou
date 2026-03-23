@@ -25,17 +25,95 @@
  *   rigid-monoidal-category.md   — narrative
  *   rigid-monoidal-category.lean — Lean (when required)
  *
- * ## Content convention (in .md files)
+ * ## Markdown content grammar (in .md files)
  *
- * - Inline math: $...$
- * - Display math: $$...$$
- * - Complex TeX (tikzcd, align, custom macros): fenced code block with `tex` tag
+ * Each .md file uses a constrained markdown dialect that embeds TeX.
+ * The content is parsed by **remark + remark-math** (AST-based, not regex),
+ * and the extracted TeX is validated by **unified-latex** (LaTeX AST parser).
  *
- * ```tex
- * \begin{tikzcd}
- *   A \arrow[r] & B
- * \end{tikzcd}
- * ```
+ * ### AST node mapping
+ *
+ * | Markdown syntax              | remark AST node  | LaTeX output              |
+ * |------------------------------|------------------|---------------------------|
+ * | `$...$`                      | `inlineMath`     | passthrough               |
+ * | `$$...$$`                    | `math` (display) | `\[...\]`                 |
+ * | ` ```tex ... ``` `           | `code` (lang=tex)| raw LaTeX passthrough     |
+ * | `**bold**`                   | `strong`         | `\textbf{}`               |
+ * | `*italic*`                   | `emphasis`       | `\emph{}`                 |
+ * | `[text](#label)`             | `link`           | `\hyperref[label]{text}`  |
+ * | `- item`                     | `listItem`       | `\begin{itemize} \item`   |
+ * | `1. item`                    | `listItem`       | `\begin{enumerate} \item` |
+ * | blank line                   | paragraph break  | `\par` / blank line       |
+ *
+ * ### TeX embedding rules
+ *
+ * **Inline math** (`$...$`):
+ *   - Single-line only. Content is raw TeX in math mode.
+ *   - Escape literal `$` with `\$` in surrounding prose.
+ *   - Example: `The connection $\nabla_q$ satisfies $d_q^2 = 0$.`
+ *
+ * **Display math** (`$$...$$`):
+ *   - Multi-line allowed. Content is raw TeX in display math mode.
+ *   - Do NOT nest `\begin{equation}` inside `$$...$$` — the pipeline wraps
+ *     display math in `\[...\]` automatically.
+ *   - Example:
+ *     ```
+ *     $$
+ *     F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+ *     $$
+ *     ```
+ *
+ * **Fenced TeX** (` ```tex ... ``` `):
+ *   - Raw LaTeX passthrough — inserted verbatim into the output.
+ *   - Use for environments that cannot appear in math mode:
+ *     tikzcd, align, gather, figure, tabular, etc.
+ *   - The pipeline does NOT wrap this in math mode.
+ *   - Example:
+ *     ```tex
+ *     \begin{tikzcd}
+ *       A \arrow[r, "f"] & B \arrow[d, "g"] \\
+ *       C \arrow[u, "h"] & D
+ *     \end{tikzcd}
+ *     ```
+ *
+ * ### Block-kind–specific content rules
+ *
+ * | Block kind          | .md content contains                             |
+ * |---------------------|--------------------------------------------------|
+ * | `prose`             | Full markdown (lists, bold, math, fenced TeX)    |
+ * | `definition`        | Full markdown (body of the definition env)        |
+ * | `theorem` etc.      | Full markdown (statement body)                    |
+ * | `proof`             | Full markdown (proof body)                        |
+ * | `equation`          | TeX math ONLY — no lists, no bold, no prose       |
+ * | `diagram`           | Raw TeX ONLY (tikzcd, figure, etc.)              |
+ *
+ * **Critical**: For `equation` and `diagram` blocks, the pipeline uses
+ * `extractMathContent()` (not `markdownToLatex()`) to prevent list
+ * environments from appearing inside math mode. Authors should put
+ * pure TeX in these .md files, not markdown prose.
+ *
+ * ### Validation pipeline
+ *
+ * Three-level validation runs on every .md file:
+ *
+ * 1. **Markdown AST** (remark + remark-math):
+ *    - Parses markdown into typed AST nodes
+ *    - Extracts `inlineMath`, `math`, and `code[lang=tex]` nodes
+ *    - Provides source positions (line:column) for error reporting
+ *
+ * 2. **LaTeX AST** (unified-latex):
+ *    - Parses each extracted TeX snippet into a LaTeX AST
+ *    - Detects: unbalanced braces, malformed environments, invalid nesting
+ *    - Catches: non-math environments in math context (e.g. itemize in $$)
+ *
+ * 3. **Compilation** (optional, pdflatex):
+ *    - Compiles each snippet with the project's preamble
+ *    - Catches: undefined commands, missing packages, font issues
+ *    - Enabled via `--compile` flag on `validate-tex.ts`
+ *
+ * Tools:
+ *   - `bun run pipeline/validate-tex.ts` — AST validation of all .md files
+ *   - `bun run pipeline/validate.ts` — full content validation (schema + constraints + AST)
  *
  * ## Constraint enforcement
  *
