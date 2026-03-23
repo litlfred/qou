@@ -37,9 +37,10 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
   descendedTrace : R
   /-- The transient traces localised at each blow-up centre. -/
   transientTraces : List R
-  /-- The total trace equals descended + sum of transient. -/
-  decomposition : descendedTrace + transientTraces.foldl (· + ·) 0 =
-    descendedTrace + transientTraces.foldl (· + ·) 0
+  /-- The total cycle trace value (before decomposition). -/
+  totalTrace : R
+  /-- The total trace decomposes as descended + sum of transient. -/
+  decomposition : totalTrace = descendedTrace + transientTraces.foldl (· + ·) 0
 
 /-- **Topological Decomposition of Mass** (categorical form):
 
@@ -50,9 +51,9 @@ structure MassDecomposition (R : Type*) [NormedCommRing R] where
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_categorical
     (md : MassDecomposition R)
-    (orthogonal : ‖md.descendedTrace + md.transientTraces.foldl (· + ·) 0‖ =
+    (orthogonal : ‖md.totalTrace‖ =
       ‖md.descendedTrace‖ + ‖md.transientTraces.foldl (· + ·) 0‖) :
-    categoricalMass (md.descendedTrace + md.transientTraces.foldl (· + ·) 0) =
+    categoricalMass md.totalTrace =
     categoricalMass md.descendedTrace +
       ‖md.transientTraces.foldl (· + ·) 0‖ := by
   unfold categoricalMass
@@ -67,8 +68,10 @@ theorem transient_localisation
     (disjoint : ∀ i j, i ≠ j →
       i < traces.length → j < traces.length →
       traces[i]! * traces[j]! = 0) :
-    True := by
-  trivial
+    ∀ i j, i ≠ j →
+      i < traces.length → j < traces.length →
+      traces[i]! * traces[j]! = 0 :=
+  disjoint
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/

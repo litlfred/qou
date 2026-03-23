@@ -37,17 +37,24 @@ structure YekutieliLiftingCondition where
   /-- The obstruction map: each object (indexed by ℕ for the tower)
       gets an obstruction class in H²(𝒮, ℬ). -/
   obstruction : ℕ → ObstructionSpace
+  /-- The type of lifts at level n. -/
+  LiftType : ℕ → Type*
   /-- The lifting exists when the obstruction vanishes. -/
-  lift_of_zero : ∀ n, obstruction n = 0 → True
+  lift_of_zero : ∀ n, obstruction n = 0 → Nonempty (LiftType n)
   /-- Non-zero obstruction prevents lifting. -/
-  no_lift_of_nonzero : ∀ n, obstruction n ≠ 0 → True  -- obstruction blocks
+  no_lift_of_nonzero : ∀ n, obstruction n ≠ 0 → IsEmpty (LiftType n)
 
-/-- An object lifts iff its obstruction is zero (the iff formulation). -/
+/-- An object lifts iff its obstruction is zero (the iff formulation).
+    Combines lift_of_zero and no_lift_of_nonzero. -/
 theorem YekutieliLiftingCondition.lift_iff
     (ylc : YekutieliLiftingCondition)
     (n : ℕ) :
-    (ylc.obstruction n = 0) ↔ (ylc.obstruction n = 0) := by
-  exact Iff.rfl
+    (ylc.obstruction n = 0) ↔ Nonempty (ylc.LiftType n) := by
+  constructor
+  · exact ylc.lift_of_zero n
+  · intro ⟨_⟩
+    by_contra h
+    exact (ylc.no_lift_of_nonzero n h).elim ‹_›
 
 /-- If the obstruction space is torsion-free and κ₀ ≠ 0,
     the obstruction is non-trivial. -/

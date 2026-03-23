@@ -36,10 +36,12 @@ structure YekutieliLifting where
   kappa : ℕ → ObstructionSpace
   /-- The base-level obstruction κ₀ (the Euler class). -/
   kappa_zero : ObstructionSpace := kappa 0
+  /-- The type of lifts at level n. -/
+  LiftType : ℕ → Type*
   /-- Lifting criterion: if κₙ = 0, the lift at level n exists. -/
-  lift_of_vanishing : ∀ n, kappa n = zero → True
+  lift_of_vanishing : ∀ n, kappa n = zero → Nonempty (LiftType n)
   /-- Obstruction: if κₙ ≠ 0, no lift exists. -/
-  no_lift_of_nonzero : ∀ n, kappa n ≠ zero → True
+  no_lift_of_nonzero : ∀ n, kappa n ≠ zero → IsEmpty (LiftType n)
   /-- Persistence: if κ₀ ≠ 0, then κₙ ≠ 0 for all n (jet corrections
       live in a complementary subgroup, so cannot cancel κ₀). -/
   persistence : ∀ n, kappa n ≠ zero → kappa (n + 1) ≠ zero
