@@ -3,7 +3,7 @@ By [Theorem 1.1, yekutieli2010], a weak equivalence of central
 extensions of gerbes induces an isomorphism on the category of global
 objects up to isomorphism.  In the brane tower, the coface maps (jet
 prolongation) and codegeneracy maps (descent) compose to give the descent
-involution $\tau_n$ ([descent involution](#def:descent-involution)), which is
+involution $\hat{\tau}_n$ ([descent involution](#def:descent-involution)), which is
 idempotent.  The image $\mathcal{A}_{n+1}^{\mathrm{desc}}$
 ([descent eigenspaces](#prop:descent-eigenspaces)) is therefore isomorphic, as
 an algebra, to the level-$n$ section algebra via the ascent embedding

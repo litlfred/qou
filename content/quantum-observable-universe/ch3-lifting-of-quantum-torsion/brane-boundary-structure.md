@@ -9,7 +9,7 @@ The defining boundary $\partial A_n$
    simple object of $\mathcal{C}$; in the archimedean realisation
    this is $\mathbb{P}^1(\mathbb{C}) \cong S^2$, the exceptional divisor of the
    topological blow-up.
-3. *Involution symmetry.*  The descent involution $\tau_n$
+3. *Involution symmetry.*  The descent involution $\hat{\tau}_n$
    ([descent involution](#def:descent-involution)) restricts to an
    endomorphism of $\partial A_n$, whose fixed subobjects coincide
    with the monodromy fixed points of the quantum characteristic

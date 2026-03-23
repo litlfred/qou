@@ -19,12 +19,12 @@ the $2$-dimensional representation, i.e.
 $\mathbb{P}^1(\mathbb{C}) \cong S^2$.  This is the exceptional divisor introduced
 by the topological blow-up that resolves the singularity at $p$.
 
-*(3).* The descent involution $\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$
+*(3).* The descent involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$
 ([descent involution](#def:descent-involution)), acting on sections of
 $J^1 E_{n+1}$, restricts to the boundary locus $\partial E_n$ as follows.
 Since $\partial E_n$ is defined by $\ker(\mathfrak{d}_{n+1}|_p) \neq 0$,
-and $\tau_n$ projects onto the image of $\ell_n$, the restriction
-$\tau_n|_{\partial E_n}$ acts as an involution whose fixed points are
+and $\hat{\tau}_n$ projects onto the image of $\ell_n$, the restriction
+$\hat{\tau}_n|_{\partial E_n}$ acts as an involution whose fixed points are
 the sections at boundary points that are entirely in the descended
 subalgebra---precisely the monodromy fixed-point condition that
 defines the
