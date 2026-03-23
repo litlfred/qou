@@ -16,6 +16,29 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 
+// ── LaTeX character escaping ─────────────────────────────────────
+
+/**
+ * Escape special LaTeX characters in plain text (titles, captions, etc.).
+ *
+ * This must NOT be applied to content that already contains intentional
+ * LaTeX markup (e.g., math mode, macros). Use only for structural
+ * metadata like block titles, section titles, and chapter titles.
+ */
+export function escapeLatex(text: string): string {
+  return text
+    .replace(/\\/g, "\\textbackslash{}")
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/\$/g, "\\$")
+    .replace(/#/g, "\\#")
+    .replace(/_/g, "\\_")
+    .replace(/\{/g, "\\{")
+    .replace(/\}/g, "\\}")
+    .replace(/~/g, "\\textasciitilde{}")
+    .replace(/\^/g, "\\textasciicircum{}");
+}
+
 // ── Markdown → LaTeX conversion ──────────────────────────────────
 
 /**
@@ -187,7 +210,7 @@ export function renderBlock(block: Block, mdContent: string): string {
       const tex = block.tex || markdownToLatex(mdContent);
       if (block.label) lines.push(`% diagram: ${block.label}`);
       lines.push(tex);
-      if (block.caption) lines.push(`% caption: ${block.caption}`);
+      if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
       break;
     }
 
@@ -196,7 +219,7 @@ export function renderBlock(block: Block, mdContent: string): string {
       const envName = ENV_NAMES[block.kind];
       if (!envName) throw new Error(`Unknown block kind: ${block.kind}`);
 
-      const titleArg = "title" in block && block.title ? `[{${block.title}}]` : "";
+      const titleArg = "title" in block && block.title ? `[{${escapeLatex(block.title)}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
       // Label
@@ -327,7 +350,7 @@ export function renderSection(
 ): string {
   const lines: string[] = [];
   const label = section.label ? `\\label{${section.label}}\n` : "";
-  lines.push(`\\section{${section.title}}\n${label}`);
+  lines.push(`\\section{${escapeLatex(section.title)}}\n${label}`);
 
   // Collect referenced example/remark labels for compact-mode filtering
   const referencedLabels = collectReferencedLabels(section.blocks, blocks);
@@ -363,7 +386,7 @@ export function renderChapter(
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
   const star = chapter.number == null ? "*" : "";
-  lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
+  lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
 
   for (const section of chapter.sections) {
     lines.push(renderSection(section, blocks, opts));
