@@ -24,7 +24,7 @@ $$
   \alpha \;=\; \tau_n(\alpha) \;+\; (\alpha - \tau_n(\alpha)).
 $$
 
-When the Frobenius pairing is compatible with the $*$-involution
+When the [Frobenius pairing](#def:frobenius-pairing) is compatible with the $*$-involution
 ($\langle \alpha^*, \beta \rangle = \overline{\langle \alpha, \beta \rangle}$),
 the idempotent decomposition is orthogonal with respect to the
 Frobenius norm.  Therefore:

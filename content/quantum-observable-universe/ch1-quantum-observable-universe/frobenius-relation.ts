@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:frobenius-relation",
   title: "Frobenius relation",
-  uses: ["def:quantum-universe"],
+  uses: ["def:quantum-universe", "def:frobenius-pairing"],
   proofs: ["prf:frobenius-relation"],
   examples: ["ex:frobenius-su2"],
   tags: ["category-theory", "frobenius"],

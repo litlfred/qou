@@ -5,7 +5,7 @@ generic point is zero because the ascent $\ell_n$ embeds $A$ as a direct
 summand of $J^1(A)$ and the restriction $r_n$ is the left-inverse of this
 embedding.  The kernel becomes non-trivial only where the direct-summand
 splitting degenerates, which is a closed algebraic condition on the
-Frobenius pairing $\varepsilon \circ m$.  Since $A$ is a Frobenius--Hopf
+[Frobenius pairing](#def:frobenius-pairing) $\varepsilon \circ m$.  Since $A$ is a Frobenius--Hopf
 object in a rigid monoidal category, this degeneracy locus has real
 codimension at least 2 by the standard codimension bound for degeneracy loci
 of morphisms between vector bundles of equal rank.

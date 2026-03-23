@@ -8,7 +8,7 @@ group $G_q = \mathrm{Aut}^{\otimes}(\omega)$
 *Existence.*
 The fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_R$ is
 $R$-linear and exact.  It sends the unit $\mathbf{1} \in \mathcal{C}$ to
-$R$ and the Frobenius pairing on $A$ to a non-degenerate $R$-bilinear
+$R$ and the [Frobenius pairing](#def:frobenius-pairing) on $A$ to a non-degenerate $R$-bilinear
 form on $\omega(A)$.  At each finite level, $\omega$ maps
 $\mathrm{End}_{\mathcal{C}}(A_n)$ to a finite-dimensional $R$-algebra
 $\mathrm{End}_R(\omega(A_n))$.  The Frobenius trace

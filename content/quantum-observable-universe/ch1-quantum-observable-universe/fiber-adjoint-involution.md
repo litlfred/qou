@@ -11,7 +11,7 @@ which:
 2. the assignment $\sigma \colon \mathbb{P}(V) \hookrightarrow
    \mathrm{Ad}(A)$ is an involution in the sense that $\sigma$
    determines $\mathbb{P}(V)$ from $\mathrm{Ad}(A)$ and vice versa;
-3. the non-degeneracy of the Frobenius pairing forces the
+3. the non-degeneracy of the [Frobenius pairing](#def:frobenius-pairing) forces the
    observability condition:
    $$
      \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0.

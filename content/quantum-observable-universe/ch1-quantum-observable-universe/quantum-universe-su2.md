@@ -25,7 +25,7 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Antipode* $S(f)(x)$ | $f(x^{-1})$ | pullback of inversion |
 | *Frobenius form* $\lambda(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
-The Frobenius pairing
+The [Frobenius pairing](#def:frobenius-pairing)
 $\langle f, g \rangle = \lambda(\mu(f \otimes g)) = \int_G f g\, d\mu$
 is positive definite (faithfulness of the Haar integral).
 
