@@ -9,7 +9,7 @@ Frobenius form $\lambda$ arises from the $\pp$-adic Haar measure.
 The Frobenius endomorphism $\varphi$ on $\mathcal{C}$ plays the
 role of the Levi-form contraction: the substrate parameter is
 $q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
-[substrate parameter](#def:substrate-parameter)).  The fibre functor $\omega$
+[substrate parameter](#def:substrate-parameter)).  The fibre functor $\tau$
 is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
 The observability condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the

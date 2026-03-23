@@ -11,14 +11,14 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
    $\mathcal{A}_{n+1}^{\mathrm{trans}}$
    ([descent eigenspaces](#prop:descent-eigenspaces))---the genuinely new
    modes at level $n{+}1$ with no pre-image at level $n$---is
-   annihilated by the descent involution $\tau_n$.
+   annihilated by the descent involution $\hat{\tau}_n$.
    At dimension 1 only the longitudinal
    $\mathrm{U}(1)$ backbone remains
    ([descent reduction](#rem:descent-reduction)), and at dimension 0 even
    that is collapsed to a single fibre datum
    ([descent reduction to zero](#rem:descent-reduction-zero)).
 3. *Round-trip involution.*  The composition of ascent and descent
-   is the descent involution $\tau_n$
+   is the descent involution $\hat{\tau}_n$
    ([descent involution](#def:descent-involution)), acting on
    $\Gamma(J^1 E_{n+1})$, whose image
    $\mathcal{A}_{n+1}^{\mathrm{desc}}$ is the stable core of the brane

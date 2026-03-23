@@ -6,7 +6,7 @@ export default remark({
   uses: [
     "def:quaternionic-spectral-resolvents",
     "def:quantum-planck-constant",
-    "def:q-reeb-flow",
+    "ex:q-reeb-flow",
     "rem:q-harmonic-physical",
   ],
   rendered: [

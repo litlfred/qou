@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 maximal torus $T$ ([maximal torus](#def:maximal-torus)) and weight
 decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)). The *categorical

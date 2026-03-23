@@ -9,22 +9,22 @@ the endomorphism algebra $\mathrm{End}_{\mathcal{C}}(A_1)$ is
 $6$-dimensional: $3$ dimensions from the base $\mathrm{SU}(2)$
 directions and $3$ from the cotangent fibre directions.
 
-**Definition.** The descent involution $\tau_1$ on
+**Definition.** The descent involution $\hat{\tau}_1$ on
 $\mathrm{End}_{\mathcal{C}}(A_1)$ is the composition
-$\tau = \ell \circ \mathfrak{d}$, where $\mathfrak{d}$ is the descent
+$\hat{\tau} = \ell \circ \mathfrak{d}$, where $\mathfrak{d}$ is the descent
 map (averaging over $\mathrm{U}(1)$-orbits in the Hopf fibration
 $\mathrm{SU}(2) \to \mathbb{CP}^1$) and $\ell$ is the ascent
 (jet prolongation of the descended endomorphism).
 
 **Idempotence.** Since descent is averaging over the $\mathrm{U}(1)$
-action and ascent re-embeds the result, we have $\tau^2 = \tau$. That
-is, $\tau$ is a projection, not merely an involution of order $2$.
+action and ascent re-embeds the result, we have $\hat{\tau}^2 = \hat{\tau}$. That
+is, $\hat{\tau}$ is a projection, not merely an involution of order $2$.
 Explicitly, for $\phi \in \mathrm{End}_{\mathcal{C}}(A_1)$,
 $$
-  \tau(\phi)(f \otimes \omega_a)
+  \hat{\tau}(\phi)(f \otimes \omega_a)
   \;=\; \frac{1}{2\pi} \int_0^{2\pi}
   \phi\bigl(e^{i\theta} \cdot (f \otimes \omega_a)\bigr)\, d\theta,
 $$
 where $e^{i\theta}$ acts via the $\mathrm{U}(1) \hookrightarrow \mathrm{SU}(2)$
-maximal torus. The fixed-point set $\mathrm{End}_{\mathcal{C}}(A_1)^\tau$
+maximal torus. The fixed-point set $\mathrm{End}_{\mathcal{C}}(A_1)^{\hat{\tau}}$
 consists of the $\mathrm{U}(1)$-equivariant endomorphisms.

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$
 denote the substrate parameter.  Let
 $\gamma \colon \mathbf{1} \to A$ be a morphism (a "closed cycle" in $A$,
@@ -10,7 +10,7 @@ base-level morphism $\gamma_0 \colon \mathbf{1} \to A_0$.
 
 The mass $m(\gamma)$ ([mass identity](#def:mass-identity)) admits a
 decomposition into descended and transient contributions via the
-descent involution $\tau_n$
+descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)):
 
 ```tex
@@ -33,7 +33,7 @@ where:
 1. $\mathrm{tr}_{\mathrm{desc}}(\gamma)$ is the categorical trace of
    $(\lambda \otimes \mathrm{id}) \circ \Delta \circ \gamma$ restricted
    to the descended subalgebra
-   $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$
+   $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$
    ([descent eigenspaces](#prop:descent-eigenspaces)).  Since
    $\mathcal{A}^{\mathrm{desc}} \cong \mathrm{End}_{\mathcal{C}}(A_n)$
    via the ascent embedding $\ell_n$, this equals the mass of the
@@ -41,7 +41,7 @@ where:
    the Frobenius--Hopf structure along the trivial core.
 2. Each $\mathrm{tr}_{\mathrm{trans}}(\gamma, p_i)$ is the categorical
    trace restricted to the component of the transient complement
-   $\mathcal{A}^{\mathrm{trans}} = \ker\,\tau_n$ localised at the
+   $\mathcal{A}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$ localised at the
    $i$-th blow-up centre $p_i$
    ([brane boundary](#def:brane-boundary)).  The localisation is
    well-defined because the kernels of $\mathfrak{d}_{n+1}$ at
@@ -54,8 +54,8 @@ $\mathrm{End}_{\mathcal{C}}(A_{n+1}) =
 ([descent eigenspaces](#prop:descent-eigenspaces)) and the linearity of
 the categorical trace.  When the splitting is orthogonal with respect to
 the Frobenius norm, $\lVert \alpha \rVert^2 =
-\lVert \tau_n(\alpha) \rVert^2 +
-\lVert \alpha - \tau_n(\alpha) \rVert^2$, the mass decomposes additively
+\lVert \hat{\tau}_n(\alpha) \rVert^2 +
+\lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2$, the mass decomposes additively
 as stated.
 
 For the archimedean realisation---where the descended trace becomes the

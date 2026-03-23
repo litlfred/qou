@@ -8,10 +8,10 @@ export default remark({
     "def:quantum-universe",
     "def:frobenius-pairing",
     "def:quantum-observable-universe",
-    "def:c-quantum-universe",
+    "ex:c-quantum-universe",
     "ex:c-quantum-observable-universe",
-    "def:instanton",
-    "lem:irreducible-connection",
+    "ex:instanton",
+    "ex:irreducible-connection",
     "rem:q-torsion-existence",
   ],
   rendered: [

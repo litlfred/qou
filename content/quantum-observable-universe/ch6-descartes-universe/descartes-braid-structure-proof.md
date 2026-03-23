@@ -8,7 +8,7 @@ $\mathcal{U}_q(\mathfrak{su}(2))$
 fact that the eigenvalues of $c_{V,V}$ are $q$ and $-q^{-1}$, which
 are distinct for $q \neq \pm 1$.
 
-For *item (2)*, the fibre functor $\omega$ sends the braiding to the
+For *item (2)*, the fibre functor $\tau$ sends the braiding to the
 matrix $\check{R} = P \circ \mathcal{R}$ acting on
 $\mathbb{C}^2 \otimes \mathbb{C}^2$.  The generators $\sigma_1, \sigma_2$
 map to the $\mathrm{SU}(2)$ elements $\alpha, \beta$

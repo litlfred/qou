@@ -21,19 +21,19 @@ connection--curvature bundle over $\Sigma$, and as such it is an element
 of the section algebra $\Gamma(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
 at whatever level $n{+}1$ accommodates the vortex.
 
-The descent involution $\tau_n$ ([descent involution](#def:descent-involution))
+The descent involution $\hat{\tau}_n$ ([descent involution](#def:descent-involution))
 decomposes this section algebra into the direct sum
 $\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-([descent eigenspaces](#prop:descent-eigenspaces)).  Since $\tau_n$ is an
+([descent eigenspaces](#prop:descent-eigenspaces)).  Since $\hat{\tau}_n$ is an
 idempotent $*$-endomorphism, the Killing-form norm
 $\lVert\cdot\rVert$ on $\mathfrak{su}(2)$ respects the orthogonal
 decomposition:
 $$
   \lVert \alpha \rVert^2
   \;=\;
-  \lVert \tau_n(\alpha) \rVert^2
+  \lVert \hat{\tau}_n(\alpha) \rVert^2
   \;+\;
-  \lVert \alpha - \tau_n(\alpha) \rVert^2
+  \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2
 $$
 for every section $\alpha$.  Applying this to the mass integrand and
 using the additivity of the nonabelian multiplicative integral over
@@ -43,10 +43,10 @@ orthogonal direct sums [Proposition 5.3, yekutieli2015]:
 \begin{equation}\label{eq:mi-decomp}
   \mathrm{MI}\!\!\int_\Sigma \alpha
   \;=\;
-  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
   \;\cdot\;
   \mathrm{MI}\!\!\int_\Sigma
-  \bigl(\alpha - \tau_n(\alpha)\bigr),
+  \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr),
 \end{equation}
 ```
 
@@ -57,18 +57,18 @@ $$
   m(\gamma)
   \;=\;
   \bigl\lVert\,
-  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
   \,\bigr\rVert
   \;+\;
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
-  \bigl(\alpha - \tau_n(\alpha)\bigr)
+  \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
   \,\bigr\rVert.
 $$
 
 *Step 2: Descended term is the unknot-core holonomy.*
-The projection $\tau_n(\alpha)$ lies in
-$\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\tau_n$, which is
+The projection $\hat{\tau}_n(\alpha)$ lies in
+$\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$, which is
 isomorphic to the level-$n$ section algebra via the ascent embedding
 $\ell_n$ ([descent involution](#def:descent-involution)).  The surface
 $\Sigma$ with $\partial\Sigma = \gamma$ decomposes under the topological
@@ -76,11 +76,11 @@ blow-up as $\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where
 $\Sigma_0$ is a disc spanning the unknot core $\gamma_0$ and each
 $D_i$ is the disc (exceptional divisor) inserted at the $i$-th blow-up.
 On $\Sigma_0$ the transient component vanishes
-($\alpha - \tau_n(\alpha) = 0$ on the unknot complement, since $\gamma_0$
+($\alpha - \hat{\tau}_n(\alpha) = 0$ on the unknot complement, since $\gamma_0$
 has trivial topology and all sections there factor through level $n$).
 Hence:
 $$
-  \mathrm{MI}\!\!\int_\Sigma \tau_n(\alpha)
+  \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
   \;=\;
   \mathrm{MI}\!\!\int_{\Sigma_0} \alpha
   \;=\;
@@ -90,9 +90,9 @@ where the second equality is the nonabelian Stokes
 theorem [yekutieli2015] applied to the disc $\Sigma_0$.
 
 *Step 3: Transient terms localise to exceptional divisors.*
-The transient component $\alpha - \tau_n(\alpha)$ is annihilated by
-$\tau_n$: it lies in
-$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\tau_n$
+The transient component $\alpha - \hat{\tau}_n(\alpha)$ is annihilated by
+$\hat{\tau}_n$: it lies in
+$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$
 ([descent eigenspaces](#prop:descent-eigenspaces)).  By the structure of the
 defining boundary ([brane boundary](#def:brane-boundary)), the support of
 a transient section is contained in a neighbourhood of the boundary
@@ -106,7 +106,7 @@ disjoint (each blow-up introduces a new connected component of
 $\partial E_n$), the multiplicative integral splits as a product:
 $$
   \mathrm{MI}\!\!\int_\Sigma
-  \bigl(\alpha - \tau_n(\alpha)\bigr)
+  \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
   \;=\;
   \prod_{i=1}^{N}\;
   \mathrm{MI}\!\!\int_{D_i}

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$, and let
 $p \colon \mathbf{1} \to A$ be a
 ([categorical point](#def:categorical-point)).  Let

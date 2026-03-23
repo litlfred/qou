@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 categorical Hodge star $\star$
 ([categorical hodge star](#def:categorical-hodge-star)) and substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)).  The

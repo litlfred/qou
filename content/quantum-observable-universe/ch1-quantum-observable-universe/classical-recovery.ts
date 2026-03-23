@@ -5,9 +5,9 @@ export default remark({
   title: "Classical recovery of q-deformed operators",
   tags: ["q-deformation", "classical-limit"],
   uses: [
-    "def:q-ext-deriv",
-    "def:q-lie-bracket",
-    "def:q-connection",
-    "def:q-reeb-vector-field",
+    "def:categorical-q-ext-deriv",
+    "def:categorical-q-lie-bracket",
+    "def:categorical-q-connection",
+    "ex:q-reeb-vector-field",
   ],
 });

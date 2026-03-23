@@ -5,8 +5,8 @@ export default remark({
   title: "q-Torsion leaves as energy minima",
   tags: ["q-deformation", "torsion", "curvature"],
   uses: [
-    "def:q-connection",
-    "def:q-lie-bracket",
-    "def:q-torsion-leaf",
+    "def:categorical-q-connection",
+    "def:categorical-q-lie-bracket",
+    "ex:q-torsion-leaf",
   ],
 });

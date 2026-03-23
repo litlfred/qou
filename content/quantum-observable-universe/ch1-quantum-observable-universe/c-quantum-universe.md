@@ -21,5 +21,5 @@ The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 parameter $q(p)$, [substrate parameter](#def:substrate-parameter)), the
 Frobenius--Hopf object is
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
-Haar state, and the fibre functor $\omega$ is the forgetful functor
+Haar state, and the fibre functor $\tau$ is the forgetful functor
 to $K\text{-}\mathrm{Mod}$.

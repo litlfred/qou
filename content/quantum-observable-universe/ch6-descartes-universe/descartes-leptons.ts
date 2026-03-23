@@ -5,7 +5,7 @@ export default remark({
   title: "Electrons, muons and the Reeb decomposition",
   tags: ["descartes-universe", "leptons", "reeb-decomposition"],
   uses: [
-    "def:reeb-decomposition",
-    "def:fermion",
+    "ex:reeb-decomposition",
+    "def:fermion-boson-decomposition",
   ],
 });

@@ -1,4 +1,4 @@
-A quantum observable universe $(\mathcal{C}, A, \omega)$ over $R$
+A quantum observable universe $(\mathcal{C}, A, \tau)$ over $R$
 ([quantum observable universe](#def:quantum-observable-universe),
 [QU-to-QOU lifting](#thm:qu-to-qou)) satisfies the *Descartes condition* if the
 categorical Euler characteristic

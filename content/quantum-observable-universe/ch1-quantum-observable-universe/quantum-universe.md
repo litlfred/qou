@@ -1,5 +1,5 @@
 Let $R$ be a commutative ring. A *quantum universe over $R$* is a
-triple $(\mathcal{C}, A, \omega)$ where:
+triple $(\mathcal{C}, A, \tau)$ where:
 
 1. $(\mathcal{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    monoidal category
@@ -41,7 +41,7 @@ triple $(\mathcal{C}, A, \omega)$ where:
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-3. $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
+3. $\tau \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal
    functor;
 

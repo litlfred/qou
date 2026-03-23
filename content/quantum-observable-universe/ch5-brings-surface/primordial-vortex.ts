@@ -5,7 +5,7 @@ export default remark({
   title: "Primordial vortex and the deep-quantum limit",
   uses: [
     "def:quantum-planck-constant",
-    "def:q-torsion-leaf",
+    "ex:q-torsion-leaf",
     "rem:heisenberg-commutator",
   ],
 });

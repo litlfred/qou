@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) equipped with
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),

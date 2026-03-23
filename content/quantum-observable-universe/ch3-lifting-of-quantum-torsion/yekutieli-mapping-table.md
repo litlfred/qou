@@ -32,7 +32,7 @@ Global gluing of $\mathcal{A}_\infty$
   (Prop.~\ref{prop:global-gluing})
   & Yekutieli's twisted quantization map on algebraic varieties
   & \cite[Thm.~4.5]{yekutieli2010} \\[6pt]
-Vacuum State $\omega$
+Vacuum State $\tau$
   (Prop.~\ref{prop:vacuum-state})
   & Unique MC element in the pronilpotent DG Lie algebra
   & \cite{yekutieli2009} \\[6pt]

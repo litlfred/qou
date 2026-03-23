@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the
 comultiplication on $A$ dual to the multiplication $\mu$ under the
 [Frobenius pairing](#def:frobenius-pairing). Then the following
