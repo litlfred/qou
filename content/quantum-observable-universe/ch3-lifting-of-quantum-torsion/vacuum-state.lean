@@ -69,14 +69,8 @@ theorem frobenius_trace_invariant
     (T : AlgebraTower R)
     (ft : FrobeniusTraceSystem (R := R) T) :
     ∀ n x, ft.trace n ((T.descent n) ((T.ascent n) x)) = ft.trace n x := by
-  -- The retraction 𝔡ₙ ∘ ℓₙ = id gives 𝔡ₙ(ℓₙ(x)) = x,
-  -- so trₙ(𝔡ₙ(ℓₙ(x))) = trₙ(x).
-  intro n x
-  congr 1
-  -- Goal: (T.descent n) ((T.ascent n) x) = x
-  have h : ((T.descent n) ∘ₗ (T.ascent n)) x = x := by
-    rw [T.retraction n]; rfl
-  simpa [LinearMap.comp_apply] using h
+  intro n x; congr 1
+  simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe (T.retraction n)) x
 
 /-- **Uniqueness**: Any tower-compatible R-linear functional equals the
     Frobenius trace (up to normalisation).

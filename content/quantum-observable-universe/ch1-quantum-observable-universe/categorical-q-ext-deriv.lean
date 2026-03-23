@@ -72,7 +72,6 @@ theorem CategoricalQExtDeriv.dq_classical {C : Type u}
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
-  unfold dq
-  simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  simp [dq, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
 
 end QOU

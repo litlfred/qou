@@ -59,7 +59,6 @@ theorem CategoricalTransport.kernel_condition {C : Type u}
     [CategoryTheory.Preadditive C]
     (ct : CategoricalTransport C) :
     ct.hamiltonian - ct.proj_V_nabla = 0 := by
-  rw [ct.transport_eq]
-  simp [sub_self]
+  simp [ct.transport_eq, sub_self]
 
 end QOU

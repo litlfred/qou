@@ -85,7 +85,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
     ca.gauge = ca.gauge ≫ 𝟙 (𝟙_ C) → ca.gauge = ca.gauge := by
-  intro h; simp [CategoryTheory.Category.comp_id] at h; exact h
+  simp [CategoryTheory.Category.comp_id]
 
 /-- **Categorical transport equation**: the state is critical iff
     `D_∇ ψ = 0`, i.e. the covariant derivative of the state vanishes.

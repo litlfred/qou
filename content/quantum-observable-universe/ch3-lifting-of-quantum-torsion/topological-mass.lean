@@ -55,9 +55,8 @@ theorem mass_decomposition_categorical
       ‖md.descendedTrace‖ + ‖md.transientTraces.foldl (· + ·) 0‖) :
     categoricalMass md.totalTrace =
     categoricalMass md.descendedTrace +
-      ‖md.transientTraces.foldl (· + ·) 0‖ := by
-  unfold categoricalMass
-  exact orthogonal
+      ‖md.transientTraces.foldl (· + ·) 0‖ :=
+  orthogonal
 
 /-- Each transient contribution localises to a single blow-up centre
     because the kernels of 𝔡_{n+1} at distinct centres are disjoint

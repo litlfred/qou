@@ -64,12 +64,12 @@ structure SpinDecomposition (C : Type u) [CategoryTheory.Category.{v} C]
   adjoint_is_one : adjointObj = simpleObj ⟨2⟩
 
 /-- The fundamental object has spin `1/2` and dimension `2`. -/
-theorem SpinLabels.fundamental_dim : (SpinLabels.mk 1).cat_dim = 2 := by rfl
+theorem SpinLabels.fundamental_dim : (SpinLabels.mk 1).cat_dim = 2 := rfl
 
 /-- The adjoint object has spin `1` and dimension `3`. -/
-theorem SpinLabels.adjoint_dim : (SpinLabels.mk 2).cat_dim = 3 := by rfl
+theorem SpinLabels.adjoint_dim : (SpinLabels.mk 2).cat_dim = 3 := rfl
 
 /-- The trivial object has spin `0` and dimension `1`. -/
-theorem SpinLabels.trivial_dim : (SpinLabels.mk 0).cat_dim = 1 := by rfl
+theorem SpinLabels.trivial_dim : (SpinLabels.mk 0).cat_dim = 1 := rfl
 
 end QOU
