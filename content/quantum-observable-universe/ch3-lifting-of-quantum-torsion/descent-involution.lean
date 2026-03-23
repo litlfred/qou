@@ -38,9 +38,6 @@ structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
 theorem DescentInvolution.tau_idem {M : Type*} [AddCommGroup M] [Module R M]
     (di : DescentInvolution (R := R) M) :
     di.tau ∘ₗ di.tau = di.tau := by
-  ext x; simp only [DescentInvolution.tau, LinearMap.comp_apply]; congr 1
-  have : (di.descent ∘ₗ di.ascent) (di.descent x) = di.descent x := by
-    simp [LinearMap.comp_apply, di.retraction]
-  simpa [LinearMap.comp_apply] using this
+  ext x; simp [DescentInvolution.tau, LinearMap.comp_apply, di.retraction]
 
 end QOU

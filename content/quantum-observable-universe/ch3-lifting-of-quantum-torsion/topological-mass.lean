@@ -84,13 +84,7 @@ theorem descended_trace_is_base_level
     (trace_compat : ∀ x, trN (𝔡 x) = trM x)
     (γ₀ : N) :
     trM (ℓ γ₀) = trN γ₀ := by
-  -- trace_compat: trN(𝔡(x)) = trM(x). Set x = ℓ(γ₀):
-  -- trN(𝔡(ℓ(γ₀))) = trM(ℓ(γ₀)).
-  -- Retraction: 𝔡(ℓ(γ₀)) = γ₀. So trN(γ₀) = trM(ℓ(γ₀)).
-  rw [← trace_compat (ℓ γ₀)]
-  congr 1
-  -- Goal: 𝔡 (ℓ γ₀) = γ₀
-  have h : (𝔡 ∘ₗ ℓ) γ₀ = γ₀ := by rw [retraction]; rfl
-  simpa [LinearMap.comp_apply] using h
+  rw [← trace_compat (ℓ γ₀)]; congr 1
+  simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe retraction) γ₀
 
 end QOU.Torsion
