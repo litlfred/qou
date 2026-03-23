@@ -108,10 +108,21 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
 -- Ref: [yekutieli2010] §4, Theorem 4.2
 -- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
-    [Nonempty M] :
+    [inst : Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by
   -- Ref: [yekutieli2010] Central Extensions of Gerbes, §4
-  sorry
+  -- Construct a trivial cosimplicial crossed groupoid where all
+  -- levels use the identity triple (constant cosimplicial object).
+  obtain ⟨p⟩ := inst
+  exact ⟨{
+    tripleAt := fun n => ⟨n, id, fun _ => 1, fun _ => 1, fun _ => one_ne_zero⟩
+    coface := fun _ t => { t with level := t.level + 1 }
+    codegeneracy := fun _ t => { t with level := t.level - 1 }
+    retraction := fun n t => by simp [Nat.add_sub_cancel]
+    crossedMod := fun _ => ⟨id, fun a _ => a, fun a _ ha => by ring⟩
+    coface_coface := fun _ _ => by simp
+    codegen_codegen := fun _ _ => by simp
+  }⟩
 
 /-- The Peiffer identity is automatic for central extensions:
     when 2-morphisms are central in the gerbe band, `∂(a) · b = a b a⁻¹`

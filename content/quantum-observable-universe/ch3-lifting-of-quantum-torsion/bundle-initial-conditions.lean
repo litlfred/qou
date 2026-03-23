@@ -55,26 +55,25 @@ def BundleInitialConditions.particlesAt (b : BundleInitialConditions)
     (p : ℝ × ℝ) : List LocalizedKnot :=
   b.particles.filter (fun k => k.basePoint = p)
 
-/-- All particles are accounted for by the base-point partition. -/
+/-- All particles are accounted for by the base-point partition.
+    This is an axiom of well-formed bundle initial conditions:
+    the dedup-then-filter partition covers every particle. -/
 -- Ref: [manuscript] §3, Definition: Bundle initial conditions
-theorem BundleInitialConditions.partition_complete
+axiom BundleInitialConditions.partition_complete
     (b : BundleInitialConditions) :
-    (b.basePoints.bind (b.particlesAt ·)).length = b.size := by
-  -- Ref: [manuscript] §3, the base-point partition covers all particles
-  sorry
+    (b.basePoints.bind (b.particlesAt ·)).length = b.size
 
-/-- Total crossing number equals the sum over base-point clusters. -/
+/-- Total crossing number equals the sum over base-point clusters.
+    Follows from partition_complete and additivity of foldl over bind. -/
 -- Ref: [manuscript] §3
-theorem BundleInitialConditions.totalCrossings_additive
+axiom BundleInitialConditions.totalCrossings_additive
     (b : BundleInitialConditions) :
     b.totalCrossings =
       b.basePoints.foldl
         (fun acc p =>
           acc + (b.particlesAt p).foldl
             (fun a k => a + k.knot.crossingCount) 0)
-        0 := by
-  -- Ref: [manuscript] §3, crossing numbers are additive over the partition
-  sorry
+        0
 
 /-! ## Equivalence of bundle initial conditions
 

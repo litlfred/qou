@@ -130,8 +130,7 @@ theorem unknot_spin_zero (k : LocalizedKnot)
 -- Ref: [manuscript] §3
 theorem LocalizedKnot.angularMomentum_nonneg (k : LocalizedKnot) :
     0 ≤ k.intrinsicAngularMomentum := by
-  unfold intrinsicAngularMomentum crossingNumber
-  -- Ref: [manuscript] §3, crossing count is a natural number
-  sorry
+  unfold intrinsicAngularMomentum
+  apply div_nonneg (Nat.cast_nonneg _) (by norm_num : (0 : ℝ) ≤ 2)
 
 end QOU
