@@ -160,6 +160,81 @@ function convertInline(text: string): string {
   return text;
 }
 
+// ── Math-only content extraction ─────────────────────────────────
+
+/**
+ * Extract raw TeX content from markdown intended for math contexts
+ * (equation and diagram blocks).
+ *
+ * Unlike markdownToLatex(), this does NOT convert lists or prose.
+ * It extracts content from:
+ *   1. ```tex fenced blocks (highest priority — raw LaTeX passthrough)
+ *   2. $$...$$ display math blocks (strip delimiters)
+ *   3. Remaining lines passed through as-is (assumed to be raw TeX)
+ *
+ * This prevents list environments (\begin{itemize}, \begin{enumerate})
+ * from appearing inside math mode.
+ */
+export function extractMathContent(md: string): string {
+  const lines = md.split("\n");
+  const output: string[] = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Fenced TeX block: ```tex ... ``` → raw LaTeX passthrough
+    if (line.trimStart().startsWith("```tex")) {
+      i++;
+      while (i < lines.length && !lines[i].trimStart().startsWith("```")) {
+        output.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing ```
+      continue;
+    }
+
+    // Skip other fenced code blocks entirely
+    if (line.trimStart().startsWith("```")) {
+      i++;
+      while (i < lines.length && !lines[i].trimStart().startsWith("```")) {
+        i++;
+      }
+      i++;
+      continue;
+    }
+
+    // Display math: $$...$$ → strip delimiters, keep inner content
+    if (line.trimStart().startsWith("$$")) {
+      const firstLine = line.trimStart().slice(2);
+      if (firstLine.trim()) output.push(firstLine);
+      i++;
+      while (i < lines.length && !lines[i].includes("$$")) {
+        output.push(lines[i]);
+        i++;
+      }
+      if (i < lines.length) {
+        const lastLine = lines[i].replace("$$", "").trim();
+        if (lastLine) output.push(lastLine);
+        i++;
+      }
+      continue;
+    }
+
+    // Skip blank lines and markdown list markers (not valid in math mode)
+    if (line.trim() === "" || /^\s*[-*]\s/.test(line) || /^\s*\d+\.\s/.test(line)) {
+      i++;
+      continue;
+    }
+
+    // Everything else passes through as raw TeX
+    output.push(line);
+    i++;
+  }
+
+  return output.join("\n").trim();
+}
+
 // ── Block → LaTeX rendering ──────────────────────────────────────
 
 /** LaTeX environment names for each block kind. */
@@ -192,7 +267,9 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "equation": {
-      const tex = block.tex || markdownToLatex(mdContent);
+      // Use extractMathContent (not markdownToLatex) to avoid list
+      // environments inside math mode.
+      const tex = block.tex || extractMathContent(mdContent);
       if (block.label) {
         lines.push("\\begin{equation}");
         lines.push(`  \\label{${block.label}}`);
@@ -207,7 +284,9 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "diagram": {
-      const tex = block.tex || markdownToLatex(mdContent);
+      // Use extractMathContent (not markdownToLatex) to avoid list
+      // environments inside tikzcd/diagram environments.
+      const tex = block.tex || extractMathContent(mdContent);
       if (block.label) lines.push(`% diagram: ${block.label}`);
       lines.push(tex);
       if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);

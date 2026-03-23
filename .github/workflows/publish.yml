@@ -405,6 +405,18 @@ jobs:
             --output _site/dependency-graph.svg \
             --pdf-base-url "${FNAME_BASE}.pdf"
 
+          # ── Validate TeX snippets in content .md files ──────────────────────
+          if [ -d content ]; then
+            python3 .github/scripts/validate-tex-snippets.py \
+              content/ \
+              --warnings-log tex-snippet-warnings.log \
+              -v || true
+            # Append snippet warnings to the main warnings log
+            if [ -f tex-snippet-warnings.log ] && [ -s tex-snippet-warnings.log ]; then
+              cat tex-snippet-warnings.log >> build-warnings.log
+            fi
+          fi
+
           # ── QA report (feature branches only) ───────────────────────────────
           if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then
             python3 .github/scripts/generate-qa.py \
