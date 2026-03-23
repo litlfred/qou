@@ -234,11 +234,14 @@ const PaperMacroSchema = z.object({
 export const PaperSchema = z.object({
   title: z.string().min(1),
   authors: z.array(z.string().min(1)).min(1),
+  affiliations: z.array(z.string()).optional(),
+  emails: z.array(z.string().email()).optional(),
+  urls: z.array(z.string().url()).optional(),
   date: z.string().optional(),
+  abstract: z.string().optional(),
   chapters: z.array(ChapterRefSchema),
   macros: z.record(z.string(), PaperMacroSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
-
 });
 
 /** @deprecated Use PaperSchema. */

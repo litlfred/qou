@@ -38,15 +38,34 @@ jobs:
       - name: Configure Python path
         run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
-      # ── Step 1: Run Ontologist — scan LaTeX for glossary terms ─────
+      # ── Step 1: Build content objects → LaTeX chapters ─────────────
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Build content objects to LaTeX chapters
+        continue-on-error: true
+        run: |
+          cd content && bun install --frozen-lockfile 2>/dev/null || bun install
+          bun run pipeline/build.ts \
+            quantum-observable-universe/quantum-observable-universe.ts \
+            --out-dir ../chapters/ \
+            --generate-main \
+            --main-out ../main.tex \
+            --preamble ../latex/preamble.tex
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+
+      # ── Step 2: Run Ontologist — scan LaTeX for glossary terms ─────
       - name: Run Ontologist (glossary scan)
         run: python3 .github/scripts/ontologist.py all
 
-      # ── Step 2: Extract proof objects from LaTeX ───────────────────
+      # ── Step 3: Extract proof objects from LaTeX ───────────────────
       - name: Extract proof objects from LaTeX
         run: python3 .github/scripts/extract_proof_objects.py
 
-      # ── Step 3: Generate Lean stubs for new objects ────────────────
+      # ── Step 4: Generate Lean stubs for new objects ────────────────
       - name: Generate Lean stubs
         run: python3 .github/scripts/generate_lean_stubs.py
 

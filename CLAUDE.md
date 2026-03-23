@@ -61,6 +61,9 @@ When a user request arrives, route to the right skill(s):
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
+| "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
+| "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
+| "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 
 ### Skill role assignments
 
@@ -70,7 +73,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -417,15 +420,18 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
 | `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
-| `publish.yml` | `quantum-observable-universe.pdf`, `.md`, `index.html`, `paper.html`, `style.css`, `drafts/` (feature branches) |
+| `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
 
 | Path | Source | Description |
 |------|--------|-------------|
-| `index.html` | publish.yml | Landing page with paper/visualizer toggle |
-| `quantum-observable-universe.pdf` | publish.yml | Compiled paper |
-| `quantum-observable-universe.md` | publish.yml | Pandoc Markdown |
+| `index.html` | publish.yml | Folio landing page (links to all papers) |
+| `papers/<dir>/index.html` | publish.yml | Per-paper viewer with paper/visualizer toggle |
+| `papers/<dir>/paper.html` | publish.yml | Enhanced HTML paper |
+| `papers/<dir>/<dir>.pdf` | publish.yml | Compiled paper PDF |
+| `papers/<dir>/<dir>.md` | publish.yml | Pandoc Markdown |
+| `quantum-observable-universe.pdf` | publish.yml | Backward-compat copy of first paper PDF |
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
@@ -433,6 +439,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
+| `schema-docs/` | publish.yml | TypeDoc content-object type reference |
 | `proof-objects.json` | all | Formalization status manifest |
 | `glossary.json` | all | Semantic glossary |
 | `mapping.json` | all | Narrative-to-Lean identifier map |

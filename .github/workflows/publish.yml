@@ -1,4 +1,10 @@
-# Build the LaTeX paper (PDF + Markdown + HTML) and publish to gh-pages.
+# Build all papers in the folio (PDF + Markdown + HTML) and publish to gh-pages.
+#
+# Multi-paper architecture
+# ────────────────────────
+#   Papers are discovered from content/folio.ts.  Each paper's artifacts
+#   are deployed under  papers/<dir>/  on gh-pages.  The root index.html
+#   is a folio landing page that links to each paper's viewer.
 #
 # Triggers
 # ─────────
@@ -8,16 +14,16 @@
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
-#   index.html                                   Landing page with paper/visualizer toggle + feature builds
-#   paper.html                                   Enhanced HTML paper with dark/light mode, TOC, definition links
-#   visualizer.html                              Interactive Bring's surface 3D visualizer
-#   quantum-observable-universe.pdf              compiled PDF (main branch)
-#   quantum-observable-universe-<slug>.pdf       compiled PDF (feature branches; header links to source branch)
-#   quantum-observable-universe-<slug>-diff.pdf  latexdiff vs merge-base (feature branches only)
-#   quantum-observable-universe.md               Pandoc GitHub-Flavoured Markdown (main)
-#   quantum-observable-universe-<slug>.md        Pandoc GFM (feature branches)
-#   builds.json                                  Manifest of recent feature builds (used by index.html)
-#   qa.html                                      QA report from build warnings (feature branches only)
+#   index.html                                         Folio landing page (links to all papers)
+#   papers/<dir>/index.html                            Per-paper viewer with paper/visualizer toggle
+#   papers/<dir>/paper.html                            Enhanced HTML paper
+#   papers/<dir>/<dir>.pdf                             compiled PDF (main branch)
+#   papers/<dir>/<dir>-<slug>.pdf                      compiled PDF (feature branches)
+#   papers/<dir>/<dir>-<slug>-diff.pdf                 latexdiff vs merge-base (feature branches only)
+#   papers/<dir>/<dir>.md                              Pandoc GitHub-Flavoured Markdown
+#   quantum-observable-universe.pdf                    backward-compat copy of first paper PDF
+#   builds.json                                        Manifest of recent feature builds
+#   qa.html                                            QA report (feature branches only)
 #
 # Preview builds
 # ──────────────
@@ -137,35 +143,61 @@ jobs:
         run: |
           cd content && bun install --frozen-lockfile 2>/dev/null || bun install
 
-      # ── 0d. Run content pipeline (content objects → LaTeX chapters) ─────
-      - name: Validate content objects
-        continue-on-error: true
+      # ── 0d. Discover papers from folio ────────────────────────────
+      - name: Extract paper list from folio
+        id: folio
         run: |
-          cd content
-          # Validate all content objects if any exist
-          if ls quantum-observable-universe/*/*.ts 2>/dev/null | head -1 > /dev/null; then
-            bun run pipeline/validate.ts quantum-observable-universe/ || echo "::warning::Content validation had issues"
-          else
-            echo "No content objects to validate (migration in progress)"
-          fi
+          python3 .github/scripts/extract-folio.py > papers.json
+          echo "Discovered papers:"
+          cat papers.json
+          # Store as output for downstream steps
+          echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
-      - name: Build content objects to LaTeX
-        id: content_build
+      # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
+      - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
           cd content
-          bun run pipeline/build.ts \
-            quantum-observable-universe/quantum-observable-universe.ts \
-            --out-dir ../chapters/
+          for paper_dir in $(cat ../papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
+            echo "── Validating: ${paper_dir}"
+            if ls "${paper_dir}"/*/*.ts 2>/dev/null | head -1 > /dev/null; then
+              bun run pipeline/validate.ts "${paper_dir}/" || echo "::warning::Content validation had issues for ${paper_dir}"
+            else
+              echo "  No content objects to validate for ${paper_dir}"
+            fi
+
+            echo "── Building: ${paper_dir}"
+            bun run pipeline/build.ts \
+              "${paper_dir}/${paper_dir}.ts" \
+              --out-dir ../chapters/ \
+              --generate-main \
+              --main-out ../main.tex \
+              --preamble ../latex/preamble.tex \
+              || echo "::warning::Content build had issues for ${paper_dir}"
+          done
           echo "Generated chapters:"
           ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+          echo "Generated main.tex:"
+          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+
+      # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
+      - name: Build schema docs
+        continue-on-error: true
+        run: |
+          npm install --no-save 2>/dev/null || true
+          npm run build:docs || echo "::warning::TypeDoc build failed"
+          if [ -d build/schema-docs ]; then
+            echo "✓ Schema docs generated ($(find build/schema-docs -name '*.html' | wc -l) pages)"
+          fi
 
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
       # base branch so only trusted code runs with elevated permissions.
       - name: Restore base-branch CI scripts
         if: github.event_name == 'pull_request_target'
-        run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
 
       # Compute output filename base.  Feature branches include the
       # sanitised branch name so downloads are distinguishable.
@@ -291,19 +323,35 @@ jobs:
         run: |
           mkdir -p _site
 
-          cp main.pdf                  "_site/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md"        "_site/${FNAME_BASE}.md"
+          # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
+          # Each paper discovered from folio.ts gets its own subdirectory.
+          # The LaTeX compilation uses main.tex (shared preamble + chapter
+          # includes).  The content pipeline has already built chapters/*.tex
+          # from the paper's content objects above.
+
+          PAPER_DIR="quantum-observable-universe"
+          PAPER_OUTDIR="_site/papers/${PAPER_DIR}"
+          mkdir -p "${PAPER_OUTDIR}"
+
+          cp main.pdf                  "${PAPER_OUTDIR}/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md"        "${PAPER_OUTDIR}/${FNAME_BASE}.md"
+
+          # Canonical name copies (so links from folio index work consistently)
+          if [ "${FNAME_BASE}" != "${PAPER_DIR}" ]; then
+            cp main.pdf "${PAPER_OUTDIR}/${PAPER_DIR}.pdf"
+            cp "${FNAME_BASE}.md" "${PAPER_OUTDIR}/${PAPER_DIR}.md"
+          fi
 
           # Include diff PDF for feature-branch builds
           if [ -f diff.pdf ]; then
-            cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
+            cp diff.pdf "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf"
           fi
 
           # Copy the interactive visualizer (prefer quantum_brings_surface.html)
           if [ -f quantum_brings_surface.html ]; then
-            cp quantum_brings_surface.html _site/visualizer.html
+            cp quantum_brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
           elif [ -f brings_surface.html ]; then
-            cp brings_surface.html _site/visualizer.html
+            cp brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
           fi
 
           # ── Extract proof objects early (needed by HTML generator) ──────────
@@ -316,12 +364,12 @@ jobs:
             --standalone \
             --mathjax \
             --metadata title="Quantum Observable Universe" \
-            --output=_site/paper-raw.html \
+            --output="${PAPER_OUTDIR}/paper-raw.html" \
             || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
 
           # Fallback landing page if pandoc HTML conversion failed
-          if [ ! -s _site/paper-raw.html ]; then
-            cat > _site/paper-raw.html << HTML
+          if [ ! -s "${PAPER_OUTDIR}/paper-raw.html" ]; then
+            cat > "${PAPER_OUTDIR}/paper-raw.html" << HTML
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -341,9 +389,9 @@ jobs:
 
           # ── Enhance HTML → paper.html (with dark mode, TOC, definition links, proof status)
           ENHANCE_ARGS=(
-            _site/paper-raw.html
+            "${PAPER_OUTDIR}/paper-raw.html"
             main-flat.tex
-            _site/paper.html
+            "${PAPER_OUTDIR}/paper.html"
             --manifest _site/proof-objects.json
             --pdf "${FNAME_BASE}.pdf"
           )
@@ -355,28 +403,27 @@ jobs:
               --src-dir "."
             )
             # Link to the diff PDF if it was successfully built
-            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+            if [ -f "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf" ]; then
               ENHANCE_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
             fi
           fi
           python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
 
           # Clean up intermediate file
-          rm -f _site/paper-raw.html
+          rm -f "${PAPER_OUTDIR}/paper-raw.html"
 
-          # ── Generate wrapper index.html with paper/visualizer toggle ────────
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          # ── Generate per-paper index.html with paper/visualizer toggle ──────
           INDEX_ARGS=(
-            _site/index.html
+            "${PAPER_OUTDIR}/index.html"
             paper.html
             --pdf "${FNAME_BASE}.pdf"
             --md  "${FNAME_BASE}.md"
           )
-          if [ -f _site/visualizer.html ]; then
+          if [ -f "${PAPER_OUTDIR}/visualizer.html" ]; then
             INDEX_ARGS+=(--visualizer "visualizer.html")
           fi
           if [ "${{ env.HEAD_REF }}" = "main" ]; then
-            INDEX_ARGS+=(--builds-json "builds.json")
+            INDEX_ARGS+=(--builds-json "../../builds.json")
             INDEX_ARGS+=(--repo "${{ github.repository }}")
           else
             INDEX_ARGS+=(
@@ -384,11 +431,31 @@ jobs:
               --repo   "${{ github.repository }}"
               --sha    "${{ env.HEAD_SHA }}"
             )
-            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+            if [ -f "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf" ]; then
               INDEX_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
             fi
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
+
+          # ── Backward compatibility: copy first paper PDF to root ────────────
+          cp main.pdf "_site/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"
+
+          # ── Generate folio root index.html ──────────────────────────────────
+          FOLIO_ARGS=(
+            _site/index.html
+            --papers-json papers.json
+          )
+          if [ "${{ env.HEAD_REF }}" = "main" ]; then
+            FOLIO_ARGS+=(--repo "${{ github.repository }}")
+          else
+            FOLIO_ARGS+=(
+              --branch "${{ env.HEAD_REF }}"
+              --repo   "${{ github.repository }}"
+              --sha    "${{ env.HEAD_SHA }}"
+            )
+          fi
+          python3 .github/scripts/generate-folio-index.py "${FOLIO_ARGS[@]}"
 
           # ── Copy Lean source files to gh-pages ───────────────────────────────
           if [ -d lean-archive ]; then
@@ -399,11 +466,17 @@ jobs:
             cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
           fi
 
+          # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────
+          if [ -d build/schema-docs ]; then
+            cp -r build/schema-docs _site/schema-docs
+            echo "✓ Schema docs deployed to schema-docs/"
+          fi
+
           # ── Generate dependency graph from proof objects ──────────────────────
           python3 .github/scripts/generate_dependency_graph.py \
             --manifest _site/proof-objects.json \
             --output _site/dependency-graph.svg \
-            --pdf-base-url "${FNAME_BASE}.pdf"
+            --pdf-base-url "papers/${PAPER_DIR}/${FNAME_BASE}.pdf"
 
           # ── Validate TeX snippets in content .md files (AST-based) ────────
           if [ -d content ]; then
@@ -501,10 +574,13 @@ jobs:
         run: |
           # Derive the GitHub Pages base URL from the repository metadata
           pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}.pdf"
-          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}-diff.pdf"
-          html_url="${pages_url}/drafts/${{ env.HEAD_REF }}/"
-          qa_url="${pages_url}/drafts/${{ env.HEAD_REF }}/qa.html"
+          draft_base="${pages_url}/drafts/${{ env.HEAD_REF }}"
+          paper_base="${draft_base}/papers/quantum-observable-universe"
+          pdf_url="${paper_base}/${FNAME_BASE}.pdf"
+          diff_url="${paper_base}/${FNAME_BASE}-diff.pdf"
+          html_url="${draft_base}/"
+          qa_url="${draft_base}/qa.html"
+          viewer_url="${paper_base}/"
 
           # Repository source links (useful when repo is private)
           repo_url="https://github.com/${{ github.repository }}"
@@ -516,7 +592,7 @@ jobs:
           # Raw download links — use the GitHub blob/raw endpoint which
           # reliably serves binary files (raw.githubusercontent.com often
           # returns 404 for PDFs and other large binaries on gh-pages).
-          raw_base="https://github.com/${{ github.repository }}/raw/${publish_branch}/drafts/${{ env.HEAD_REF }}"
+          raw_base="https://github.com/${{ github.repository }}/raw/${publish_branch}/drafts/${{ env.HEAD_REF }}/papers/quantum-observable-universe"
           raw_pdf_url="${raw_base}/${FNAME_BASE}.pdf"
           raw_diff_url="${raw_base}/${FNAME_BASE}-diff.pdf"
 
@@ -560,7 +636,8 @@ jobs:
           |----------|------|
           | PDF      | [${FNAME_BASE}.pdf](${pdf_url}) |
           ${diff_row}
-          | HTML     | [Landing page](${html_url}) |
+          | Folio    | [Landing page](${html_url}) |
+          | Viewer   | [Paper viewer](${viewer_url}) |
           | QA Report| [qa.html](${qa_url}) |
 
           **Direct download**

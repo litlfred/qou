@@ -41,6 +41,7 @@ CHAPTER_FILES = [
     "descartes-universe.tex",
     "experimental-evidence.tex",
     "interpretations.tex",
+    "glossary.tex",
 ]
 
 # Map chapter number to Lean file (relative to lean/).
