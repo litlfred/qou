@@ -7,8 +7,8 @@
 #   HETZNER_API_TOKEN    — Hetzner Cloud API token
 #   GOOGLE_CLIENT_ID     — Google OAuth client ID (viewer auth)
 #   GOOGLE_CLIENT_SECRET — Google OAuth client secret
-#   GITHUB_OAUTH_CLIENT_ID     — GitHub OAuth client ID (collaborator auth)
-#   GITHUB_OAUTH_CLIENT_SECRET — GitHub OAuth client secret
+#   GH_OAUTH_CLIENT_ID         — GitHub OAuth client ID (collaborator auth)
+#   GH_OAUTH_CLIENT_SECRET     — GitHub OAuth client secret
 #
 # Triggers:
 #   push to main     — Auto-update (secrets + restart) if server exists
@@ -94,8 +94,8 @@ jobs:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GH_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
-          GH_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
+          GH_CLIENT_ID: ${{ secrets.GH_OAUTH_CLIENT_ID }}
+          GH_CLIENT_SECRET: ${{ secrets.GH_OAUTH_CLIENT_SECRET }}
           REPO_URL: https://github.com/${{ github.repository }}.git
           DOMAIN: ${{ steps.config.outputs.domain }}
           IMAGE: ${{ steps.config.outputs.image }}
@@ -114,8 +114,8 @@ jobs:
           HCLOUD_TOKEN: ${{ secrets.HETZNER_API_TOKEN }}
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          GH_CLIENT_ID: ${{ secrets.GITHUB_OAUTH_CLIENT_ID }}
-          GH_CLIENT_SECRET: ${{ secrets.GITHUB_OAUTH_CLIENT_SECRET }}
+          GH_CLIENT_ID: ${{ secrets.GH_OAUTH_CLIENT_ID }}
+          GH_CLIENT_SECRET: ${{ secrets.GH_OAUTH_CLIENT_SECRET }}
           DOMAIN: ${{ steps.config.outputs.domain }}
           IMAGE: ${{ steps.config.outputs.image }}
           MCP_PORT: ${{ steps.config.outputs.mcp_port }}
