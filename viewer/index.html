@@ -908,6 +908,9 @@
       <span id="dep-subtitle" style="font-size:.65rem"></span>
       <a class="dep-link" id="dep-link" title="Copy link / ctrl+click to open in new tab">#</a><span class="dep-copied" id="dep-copied">copied</span>
       <span class="dep-sp"></span>
+      <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include examples in print"><input type="checkbox" id="dep-inc-ex" style="margin:0"> examples</label>
+      <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include remarks in print"><input type="checkbox" id="dep-inc-rm" style="margin:0"> remarks</label>
+      <button id="dep-print-btn" title="Print preview: paper with just these dependencies">print</button>
       <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
       <button id="dep-close">&times; close</button>
     </div>
@@ -1707,6 +1710,143 @@
     document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depCloseRhs(); };
     document.getElementById('dep-rhs-close').onclick = depCloseRhs;
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depCloseRhs(); } });
+
+    // ── Dep graph: print preview (paper with just dependencies) ──
+    document.getElementById('dep-print-btn').onclick = () => {
+      if (!depRootLabel) return;
+      const { nodes, edges } = buildDepGraph(depRootLabel);
+      const incEx = document.getElementById('dep-inc-ex').checked;
+      const incRm = document.getElementById('dep-inc-rm').checked;
+
+      // Topological sort: dependencies first, root last
+      const adj = new Map(), indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
+      }
+      const queue = [], sorted = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift(); sorted.push(l);
+        for (const n of (adj.get(l) || [])) { indeg.set(n, indeg.get(n) - 1); if (indeg.get(n) === 0) queue.push(n); }
+      }
+      // Reverse so leaf dependencies come first
+      sorted.reverse();
+
+      // Filter by kind based on checkboxes
+      const skipKinds = new Set();
+      if (!incEx) skipKinds.add('example');
+      if (!incRm) skipKinds.add('remark');
+
+      // Build print content
+      const blocks = [];
+      for (const label of sorted) {
+        const b = bix.get(label);
+        if (!b) continue;
+        if (skipKinds.has(b.kind)) continue;
+        blocks.push(b);
+        // Include child examples/proofs if toggled on
+        if (incEx && b.examples) {
+          for (const exLabel of b.examples) {
+            const ex = bix.get(exLabel);
+            if (ex) blocks.push(ex);
+          }
+        }
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) {
+            const prf = bix.get(prfLabel);
+            if (prf) blocks.push(prf);
+          }
+        }
+      }
+
+      // Collect tex block data for each block (rendered SVGs + LaTeX source fallback)
+      const blockData = blocks.map(b => {
+        const {html: bh, texBlocks: tx} = parseMd(b.md || '');
+        return { block: b, html: bh, texBlocks: tx };
+      });
+
+      // Open print window with rendered blocks
+      const win = window.open('', '_blank');
+      if (!win) return;
+      const root = bix.get(depRootLabel);
+      const title = root?.title || depRootLabel;
+      const theme = document.documentElement.dataset.theme || '';
+      win.document.write(`<!DOCTYPE html><html data-theme="${esc(theme)}"><head>
+        <title>${esc(title)} — Dependencies</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+        <style>
+          :root{--fg:#222;--fg-b:#333;--fg-d:#888;--bg:#fff;--bg-r:#fafafa;--bg-s:#f5f5f5;--brd:#e0e0e0;--ac:#4f46e5;--grn:#22c55e;--red:#dc2626;--ora:#f59e0b;--yel:#eab308;
+            --f-body:'Crimson Pro',Georgia,serif;--f-head:'Inter',system-ui,sans-serif;--f-mono:'JetBrains Mono',monospace}
+          [data-theme="dark"]{--fg:#ddd;--fg-b:#ccc;--fg-d:#888;--bg:#1a1a1a;--bg-r:#222;--bg-s:#1e1e1e;--brd:#333;--ac:#818cf8;--grn:#4ade80;--red:#f87171;--ora:#fbbf24;--yel:#facc15}
+          body{font-family:var(--f-body);color:var(--fg);background:var(--bg);max-width:800px;margin:2rem auto;padding:0 2rem;line-height:1.6}
+          h1{font-family:var(--f-head);font-size:1.4rem;margin-bottom:.5rem}
+          .dep-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+          .blk{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--brd)}
+          .blk:last-child{border-bottom:none}
+          .bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+          .bt{font-family:var(--f-head);font-weight:600}
+          .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+          .bb{margin-top:.5rem}
+          .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+          .txb img,.txb svg{max-width:100%;height:auto}
+          .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+          table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+          th,td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+          th{background:var(--bg-s);font-weight:600}
+          .qed{text-align:right;font-size:.8rem}
+          .qed::after{content:'\\25A1'}
+          @media print{body{max-width:100%;margin:0;padding:1cm}.txb.ph{background:#f5f5f5}}
+        </style>
+      </head><body>`);
+      win.document.write(`<h1>${esc(title)}</h1>`);
+      win.document.write(`<div class="dep-count">${blocks.length} blocks in dependency chain</div>`);
+      for (const {block: b, html: bh, texBlocks: tx} of blockData) {
+        const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+        win.document.write(`<div class="blk">`);
+        win.document.write(`<span class="bk">${esc(kindLabel)}.</span>`);
+        if (b.title) win.document.write(`<span class="bt">${inl(b.title)}</span>`);
+        if (b.label) win.document.write(`<span class="bl">${esc(b.label)}</span>`);
+        // Render HTML, then fill tex block placeholders
+        let bodyHtml = bh;
+        // Replace txb placeholders with rendered SVGs or LaTeX source
+        bodyHtml = bodyHtml.replace(/<div class="txb" data-ti="(\d+)"><\/div>/g, (_, idx) => {
+          const i = +idx;
+          const texSrc = tx[i] || '';
+          const escapedTex = esc(texSrc);
+          const a = b.rendered?.find(r => r.blockIndex === i);
+          if (a && a.mime === 'image/svg+xml') {
+            return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" title="LaTeX source (hover)" loading="lazy"></div>`;
+          }
+          if (a && a.mime?.startsWith('image/')) {
+            return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" title="LaTeX source (hover)" loading="lazy"></div>`;
+          }
+          // Fallback: show LaTeX source
+          return `<div class="txb ph">${escapedTex}</div>`;
+        });
+        win.document.write(`<div class="bb">${bodyHtml}</div>`);
+        if (b.kind === 'proof') win.document.write(`<div class="qed"></div>`);
+        win.document.write(`</div>`);
+      }
+      win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>`);
+      win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>`);
+      win.document.write(`<script>
+        document.addEventListener('DOMContentLoaded', function() {
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: '\\\\(', right: '\\\\)', display: false},
+              {left: '\\\\[', right: '\\\\]', display: true}
+            ],
+            throwOnError: false
+          });
+          document.querySelectorAll('[data-md]').forEach(el => {
+            try { katex.render(el.textContent, el, {displayMode: true, throwOnError: false}); } catch {}
+          });
+        });
+      <\/script>`);
+      win.document.write(`</body></html>`);
+      win.document.close();
+    };
 
     // ── Draggable divider between LHS and RHS ──
     let divDrag = false;
@@ -2907,14 +3047,15 @@
       for (const t of el.querySelectorAll('.txb[data-ti]')) {
         const i = +t.dataset.ti;
         const a = rendered?.find(r => r.blockIndex === i);
-        if (a) { t.innerHTML = renderAsset(a); t.classList.remove('ph'); }
+        if (a) { t.innerHTML = renderAsset(a, tx[i]); t.classList.remove('ph'); }
         else { t.textContent = tx[i] || ''; t.classList.add('ph'); }
       }
     }
 
-    function renderAsset(a) {
-      if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="diagram" loading="lazy">`;
-      if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="" loading="lazy">`;
+    function renderAsset(a, texSrc) {
+      const alt = esc(texSrc || 'diagram');
+      if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="${alt}" title="LaTeX source (hover)" loading="lazy">`;
+      if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="${alt}" title="LaTeX source (hover)" loading="lazy">`;
       return `<a href="${a.url}" target="_blank">[${a.mime}]</a>`;
     }
 

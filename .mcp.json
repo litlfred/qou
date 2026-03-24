@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "paper-assistant": {
-      "command": "./scripts/start-assistant.sh",
+      "command": "./scripts/start-folio-assistant.sh",
       "args": ["--stdio"]
     }
   }

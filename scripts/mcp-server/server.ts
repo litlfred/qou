@@ -2514,7 +2514,7 @@ const args = process.argv.slice(2);
 const mode = args.includes("--http") ? "http" : "stdio";
 
 if (args.includes("--check-deps")) {
-  // Run real dependency check and exit — used by start-assistant.sh --check
+  // Run real dependency check and exit — used by start-folio-assistant.sh --check
   const { execSync } = await import("child_process");
 
   interface DepInfo { name: string; required: boolean; cmd: string; hint: string }
