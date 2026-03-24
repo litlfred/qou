@@ -29,4 +29,4 @@ The following notation is used in
 - $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
   the *$q$-deformed covariant derivative*, where $\xi$ is the
   Reeb derivation of $A$
-  ([Reeb decomposition](#def:reeb-decomposition)).
+  ([Reeb decomposition](#ex:reeb-decomposition)).

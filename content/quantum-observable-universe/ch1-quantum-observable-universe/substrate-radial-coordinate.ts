@@ -13,5 +13,6 @@ export default proposition({
     "def:substrate-parameter",
     "def:fermion-boson-decomposition",
     "def:quantum-planck-constant",
+    "ex:q-reeb-flow",
   ],
 });

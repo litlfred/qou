@@ -1,5 +1,5 @@
 The exceptional divisor $E_i\cong\mathbb{P}^1(\mathbb{C})$ contains the equatorial circle
-$S^1\subset E_i$.  The $q$-deformed Reeb flow ([$q$-Reeb flow](#def:q-reeb-flow))
+$S^1\subset E_i$.  The $q$-deformed Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow))
 restricts to a degree-$2$ endomorphism $f_q\colon S^1\to S^1$, whose
 *Julia set* $J(f_q)\subset S^1$ is the closure of repelling periodic
 points---the locus of non-equicontinuous dynamics on the circle.

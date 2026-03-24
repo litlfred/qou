@@ -1,7 +1,7 @@
 The archimedean specialisation of the categorical $d_q^2$ formula
 ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)) yields,
 for the $q$-deformed exterior derivative
-([$q$-exterior derivative](#def:q-ext-deriv)) acting on
+([$q$-exterior derivative](#ex:q-ext-deriv)) acting on
 $\Omega^k(M)$:
 
 $$
