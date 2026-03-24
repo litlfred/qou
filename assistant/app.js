@@ -1264,9 +1264,19 @@
     // cross-refs [text](#label)
     out = out.replace(/\[([^\]]+)\]\(#([^)]+)\)/g,
       '<a class="uref" href="#$2" onclick="event.preventDefault();document.getElementById(\'$2\')?.scrollIntoView({behavior:\'smooth\',block:\'start\'})">$1</a>');
-    // paragraphs
+    // unordered lists: convert consecutive "- " lines into <ul><li>
+    out = out.replace(/(^|\n)(- .+(?:\n(?:  .+|-).*)*)/g, (match, pre, block) => {
+      const items = block.split(/\n- /).map((s, i) =>
+        `<li>${(i === 0 ? s.replace(/^- /, "") : s).replace(/\n  /g, " ").trim()}</li>`
+      );
+      return `${pre}<ul>${items.join("")}</ul>`;
+    });
+    // paragraphs (skip if content is already block-level)
     out = out.replace(/\n{2,}/g, "</p><p>");
     out = "<p>" + out + "</p>";
+    // clean up empty paragraphs wrapping block elements
+    out = out.replace(/<p>\s*(<ul>)/g, "$1");
+    out = out.replace(/(<\/ul>)\s*<\/p>/g, "$1");
     return out;
   }
 
