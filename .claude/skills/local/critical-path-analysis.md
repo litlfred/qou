@@ -129,7 +129,7 @@ Tier 1:
 
 Tier 2:
   def:quantum-observable-universe      GENERAL
-  def:spin-labels                      GENERAL
+  prop:spin-labels                     GENERAL
 
 Tier 3:
   def:maximal-torus                    GENERAL

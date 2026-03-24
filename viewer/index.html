@@ -1627,7 +1627,7 @@
       const goTo = mk('a','uph-goto');
       goTo.textContent = 'go to \u2197';
       goTo.href = `#${label}`;
-      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth'}); };
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
       hd.appendChild(goTo);
       renderMath(hd);
       p.appendChild(hd);
@@ -1718,7 +1718,7 @@
       depOverlay.classList.remove('open');
       depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     document.getElementById('dep-rhs-fb').onclick = () => {
       const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
@@ -1955,7 +1955,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
-            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
         nodeGroup.appendChild(g);
       }
@@ -2031,7 +2031,9 @@
       history.replaceState(null, '', vizHash);
     };
 
-    function renderDepGraph(rootLabel) {
+    async function renderDepGraph(rootLabel) {
+      // Force-index all blocks so the dep graph has the complete uses/usedBy data
+      if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
       const { nodes, edges, externals } = buildDepGraph(rootLabel);
       const root = bix.get(rootLabel);
       if (!root) return;
@@ -3236,7 +3238,7 @@
             showChapter(ch.number);
             setTimeout(() => {
               const t = document.getElementById(sec.label);
-              if (t) t.scrollIntoView({behavior:'smooth'});
+              if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
             }, 50);
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
@@ -3343,6 +3345,37 @@
       paper._chapterForLabel = chapterForLabel;
       paper._loadChapterDetail = loadChapterDetail;
       paper._loadSection = loadSection;
+
+      // Ensure all blocks are indexed into bix (for dep graph, full-paper search, etc.)
+      // Fetches section data without rendering into the DOM.
+      let _allIndexed = false;
+      paper._ensureAllBlocksIndexed = async () => {
+        if (_allIndexed) return;
+        for (const ch of p.chapters) {
+          if (ch._dir) await loadChapterDetail(p.id, ch);
+          for (let si = 0; si < ch.sections.length; si++) {
+            const key = `${ch._dir}:${si}`;
+            if (loadedSections.has(key)) continue;
+            try {
+              const secUrl = `/api/paper/section?id=${encodeURIComponent(p.id)}&chapter=${encodeURIComponent(ch._dir)}&section=${si}${branchParam()}`;
+              const secData = await cachedFetch(secUrl);
+              loadedSections.add(key);
+              const chObj = p.chapters.find(c => c._dir === ch._dir);
+              if (chObj) { const sec = chObj.sections[si]; if (sec) sec.blocks = secData.blocks; }
+              for (const b of secData.blocks) {
+                if (b.label) bix.set(b.label, b);
+                if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+                if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+                if (b.uses) for (const dep of b.uses) {
+                  if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                  usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+                }
+              }
+            } catch {}
+          }
+        }
+        _allIndexed = true;
+      };
 
       // Show first chapter (or the one containing pendingScroll)
       let startChapter = p.chapters[0]?.number || 1;
