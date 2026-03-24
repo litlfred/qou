@@ -66,7 +66,7 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The restriction preserves comultiplication:
       `r ≫ base.comul = jet.comul ≫ (r ⊗ r)`. -/
   restriction_preserves_comul :
-    restriction ≫ base.comul = jet.comul ≫ (restriction ▷ jet.obj ≫ (jet.obj ◁ restriction))
+    restriction ≫ base.comul = jet.comul ≫ (restriction ▷ jet.obj ≫ (base.obj ◁ restriction))
 
 /-- **Proposition (Jet Prolongation).**
     Given a ℂ quantum observable universe `(M, G, P, E)` with instanton
@@ -393,7 +393,7 @@ theorem twisted_cocycle_unobstructed {M : Type*}
     tc.cocycleDeviation p * (tc.triple.twoMorphisms p)⁻¹ = 0 :=
     hcond.symm
   -- a * g * a⁻¹ = 0.  Since a⁻¹ ≠ 0 (field, a ≠ 0), we get a * g = 0.
-  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero.2 ha
+  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero ha
   rcases mul_eq_zero.mp h1 with h_ag | h_ainv
   · -- a * g = 0, and a ≠ 0, so g = 0
     rcases mul_eq_zero.mp h_ag with h_a | h_g

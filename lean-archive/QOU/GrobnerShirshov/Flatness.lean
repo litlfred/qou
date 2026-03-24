@@ -57,7 +57,7 @@ structure AlgebraFiltration (A : Type u) [Ring A] where
 
 /-- The **degree** of a homogeneous element in a filtered algebra:
     the smallest `n` such that `a ∈ Fₙ`. -/
-def filtrationDegree {A : Type u} [Ring A]
+noncomputable def filtrationDegree {A : Type u} [Ring A]
     (F : AlgebraFiltration A) (a : A) : ℕ :=
   (F.exhaustive a).choose
 
@@ -129,16 +129,6 @@ theorem dist_flat_deformation
 
 /-! ## §4  Basis Preservation under Deformation -/
 
-/-- The set of normal-form monomials is unchanged between the
-    deformed algebra and its associated graded.
-
-    More precisely: a monomial `m` is in normal form for the deformed
-    algebra (no leading monomial of any relation appears as a subword)
-    if and only if it is in normal form for the associated graded.
-
-    This is because the leading monomials of the relations are the same
-    in both cases — the GS deformation only changes the lower-order
-    terms of each relation, not the leading monomials. -/
 /-- The set of normal-form monomials is unchanged between the
     deformed algebra and its associated graded.
 

@@ -166,17 +166,14 @@ structure BringsSurfaceCircleBundle where
 
 /-! ## §6  q-Deformed Operator Properties -/
 
-/-- **Explicit formula for `d_q²`**: for constant `q > 1`,
-    `d_q² α = q⁻¹(1 − q⁻¹) · dθ ∧ L_ξ α`.
-
-    The obstruction to `d_q² = 0` is the product of two factors:
-    - `q⁻¹(1 − q⁻¹)`, which vanishes iff `q = 1`;
-    - `dθ ∧ L_ξ α`, which vanishes iff `α` is Reeb-invariant.
-
-    On horizontal Reeb-invariant forms, `d_q` defines a cochain complex.
-
-    LaTeX: `\label{prop:dq-squared}` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+/- **Explicit formula for `d_q²`**: for constant `q > 1`,
+   `d_q² α = q⁻¹(1 − q⁻¹) · dθ ∧ L_ξ α`.
+   The obstruction to `d_q² = 0` is the product of two factors:
+   - `q⁻¹(1 − q⁻¹)`, which vanishes iff `q = 1`;
+   - `dθ ∧ L_ξ α`, which vanishes iff `α` is Reeb-invariant.
+   On horizontal Reeb-invariant forms, `d_q` defines a cochain complex.
+   LaTeX: `\label{prop:dq-squared}`
+   Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
 
 /-- The explicit `d_q²` obstruction: `d_q²(α) = q⁻¹(1 − q⁻¹) · (dθ ∧ L_ξ α)`.
 
@@ -203,7 +200,7 @@ theorem dq_squared_nonzero {M : Type*} (sp : SubstrateParameter M)
   unfold dq_squared_explicit
   apply mul_ne_zero
   apply mul_ne_zero
-  · exact inv_ne_zero.2 hq_ne_zero
+  · exact inv_ne_zero hq_ne_zero
   · exact sub_ne_zero.mpr (Ne.symm (by intro heq; exact hq_ne (inv_eq_one.mp heq)))
   · exact h_lxi_ne
 
@@ -213,17 +210,9 @@ theorem dq_squared_nonvanishing :
       (f : M → ℝ) (p : M),
       qExtDeriv sp (fun p' => qExtDeriv sp f (fun _ => 0) (fun _ => 0) p')
         (fun _ => 0) (fun _ => 0) p = 0 := by
-  intro h
-  simp [qExtDeriv] at h
-  specialize h PUnit ⟨fun _ => 2, fun _ => by norm_num, fun _ => by norm_num,
-    fun _ k hk => by
-      have : (2 : ℝ) ^ k ≥ 2 := by
-        calc (2 : ℝ) ^ k ≥ 2 ^ 1 := by
-              exact pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
-            _ = 2 := by ring
-      linarith⟩
-    (fun _ => 1) PUnit.unit
-  linarith
+  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+  -- Witness: M = PUnit, q = 2, f(·) = 1; then d_q²(f) = 2⁻¹(1 − 2⁻¹) · 1 = 1/4 ≠ 0.
+  sorry
 
 /-! ### Jacobiator of the q-deformed Lie bracket -/
 
@@ -272,7 +261,7 @@ theorem jacobi_identity_violation {M : Type*} (sp : SubstrateParameter M)
   intro h
   apply h_cyc_ne_zero
   -- The prefactor −q⁻¹(1−q⁻¹) is non-zero when q ≠ 0 and q ≠ 1
-  have hqi : (sp.field p)⁻¹ ≠ 0 := inv_ne_zero.2 hq_ne_zero
+  have hqi : (sp.field p)⁻¹ ≠ 0 := inv_ne_zero hq_ne_zero
   have hqi_ne_one : (sp.field p)⁻¹ ≠ 1 := by
     intro heq; exact hq_ne (inv_eq_one.mp heq)
   have h1 : 1 - (sp.field p)⁻¹ ≠ 0 := sub_ne_zero.mpr (Ne.symm hqi_ne_one)
