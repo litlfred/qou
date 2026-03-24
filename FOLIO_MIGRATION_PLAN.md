@@ -2,83 +2,56 @@
 
 ## Vision
 
-**folio-assistant** becomes a standalone, repo-agnostic assistant platform.
-Users subscribe it to any GitHub repo containing structured content (papers,
-WHO SMART guidelines, etc.). Authentication is via GitHub OAuth — repo access
-= folio access. Content-specific editing is delegated to specialized editors
-that live in the content repo.
+**folio-assistant** is a standalone, repo-agnostic content assistant platform.
+Users subscribe it to any GitHub repo containing structured content. GitHub
+OAuth controls access — repo permissions map to folio roles. Content-specific
+editing is delegated to specialized editor skills that live in the content repo.
 
-**qou** becomes a pure content repo — papers, Lean proofs, and content-specific
-skills only. All generic infrastructure moves to folio-assistant.
-
----
-
-## Current State
-
-### What lives in qou today (to be migrated)
-
-| Component | Location in qou | Lines | Purpose |
-|-----------|----------------|-------|---------|
-| MCP Server | `scripts/mcp-server/server.ts` | ~2,500 | Content serving, feedback, diff, AI triage, MCP tools |
-| Auth Gateway | `deploy/auth-gateway/server.ts` | ~520 | Dual OAuth, role sessions, proxy |
-| Assistant UI | `assistant/` | ~1,800 | Paper viewer, feedback panel, branch mgmt |
-| Deploy Stack | `deploy/` | ~10 scripts | Docker Compose, Caddy, Hetzner provisioning |
-| Docker Build | `.github/docker/Dockerfile.lean-mcp` | — | CI image build |
-| Deploy Workflow | `.github/workflows/deploy-folio.yml` | — | Auto-deploy |
-| Config | `lean-mcp.config.json` | 30 | Domain, auth, image refs |
-
-### What already exists in folio-assistant
-
-| Component | Purpose |
-|-----------|---------|
-| `schemas/` | Zod-based type system (ActorDefinition, SkillDefinition, CapabilityDefinition) |
-| `skills/authoring-math/` | Math/Lean skill package manifest |
-| `skills/authoring-who-smart-guidelines/` | WHO SMART skill package |
-| `skills/content-lifecycle/` | Generic 8-stage content workflow |
-| `Dockerfile` | Multi-skill Docker image (Ubuntu + Lean + FHIR + LaTeX) |
-| Scripts | generate-docs, generate-schemas, validate-skills |
+The originating content repo becomes a pure content repo. All generic
+infrastructure (auth, server, UI, deploy) lives in folio-assistant.
 
 ---
 
-## Architecture After Migration
+## Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                  folio-assistant                      │
-│                                                       │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │ Auth     │  │ Folio Server │  │ Assistant UI  │  │
-│  │ Gateway  │  │ (MCP + HTTP) │  │ (SPA)         │  │
-│  └────┬─────┘  └──────┬───────┘  └───────────────┘  │
-│       │               │                               │
-│  ┌────┴───────────────┴──────────────────────────┐   │
-│  │          Content Adapter Layer                 │   │
-│  │  ┌─────────────┐  ┌──────────────────────┐   │   │
-│  │  │ paper-adapter│  │ smart-guide-adapter  │   │   │
-│  │  │ (qou-style)  │  │ (FHIR/WHO)          │   │   │
-│  │  └─────────────┘  └──────────────────────┘   │   │
-│  └───────────────────────────────────────────────┘   │
-│                                                       │
-│  ┌───────────────────────────────────────────────┐   │
-│  │          Skill Package Registry               │   │
-│  │  authoring-math │ authoring-who │ lifecycle   │   │
-│  └───────────────────────────────────────────────┘   │
-│                                                       │
-│  ┌───────────────────────────────────────────────┐   │
-│  │          Deploy Infrastructure                │   │
-│  │  Docker Compose │ Caddy │ Hetzner │ CI/CD    │   │
-│  └───────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│                   folio-assistant                      │
+│                                                        │
+│  ┌──────────┐  ┌──────────────┐  ┌────────────────┐  │
+│  │ Auth     │  │ Folio Server │  │ Assistant UI   │  │
+│  │ Gateway  │  │ (MCP + HTTP) │  │ (SPA)          │  │
+│  └────┬─────┘  └──────┬───────┘  └────────────────┘  │
+│       │               │                                │
+│  ┌────┴───────────────┴───────────────────────────┐   │
+│  │           Content Adapter Layer                │   │
+│  │  ┌──────────────┐  ┌────────────────────────┐ │   │
+│  │  │ paper-adapter │  │ guideline-adapter     │ │   │
+│  │  └──────────────┘  └────────────────────────┘ │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                        │
+│  ┌────────────────────────────────────────────────┐   │
+│  │           Skill Package Registry               │   │
+│  │  authoring-math │ authoring-health │ lifecycle │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                        │
+│  ┌────────────────────────────────────────────────┐   │
+│  │           Deploy Infrastructure                │   │
+│  │  Docker Compose │ Caddy │ Cloud │ CI/CD        │   │
+│  └────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────┘
           │                    │
           ▼                    ▼
-   ┌──────────┐        ┌──────────────┐
-   │   qou    │        │  smart-base  │
-   │ (papers) │        │ (guidelines) │
-   │          │        │              │
-   │ content/ │        │ input/       │
-   │ lean/    │        │ fsh/         │
-   │ feedback/│        │ feedback/    │
-   └──────────┘        └──────────────┘
+   ┌──────────────┐    ┌──────────────┐
+   │ Content      │    │ Content      │
+   │ Repo A       │    │ Repo B       │
+   │ (papers)     │    │ (guidelines) │
+   │              │    │              │
+   │ content/     │    │ input/       │
+   │ feedback/    │    │ feedback/    │
+   │ .claude/     │    │ .claude/     │
+   │   skills/    │    │   skills/    │
+   └──────────────┘    └──────────────┘
 ```
 
 ### Key Design Decisions
@@ -93,26 +66,24 @@ skills only. All generic infrastructure moves to folio-assistant.
    - **GitHub OAuth** → collaborator/owner roles (repo write/admin access)
    - **Google OAuth** → viewer role, **gated by whitelist** (`google-viewers.txt`)
    - Whitelist is manually maintained by repo owner (protected file)
-   - This is the current qou model — unchanged
 
    **Public mode** (opt-in per repo):
    - **GitHub OAuth** → collaborator/owner roles (same as private)
    - **Google OAuth** → viewer role, **open to any Google account** (no whitelist)
-   - Useful for public-facing content (e.g. published WHO guidelines)
+   - Useful for public-facing content (published guidelines, open-access papers)
    - Must be explicitly set: `"visibility": "public"` in subscription config
 
    ```json
-   // folio-assistant deployment config
    {
      "subscriptions": [
        {
-         "repo": "litlfred/qou",
+         "repo": "org/private-content",
          "type": "paper",
          "visibility": "private"
        },
        {
-         "repo": "litlfred/smart-base",
-         "type": "smart-guideline",
+         "repo": "org/public-content",
+         "type": "guideline",
          "visibility": "public"
        }
      ]
@@ -129,21 +100,21 @@ skills only. All generic infrastructure moves to folio-assistant.
    lightweight viewer path — whitelisted in private mode, open in public mode.
 
 3. **Repo subscription model.** folio-assistant stores a list of subscribed
-   repos (e.g. `litlfred/qou`, `litlfred/smart-base`). Each repo declares
-   its content type via a `folio.config.json` at its root.
+   repos. Each content repo declares its type via a `folio.config.json` at
+   its root.
 
-3. **Content adapters.** The folio server loads a content adapter based on
+4. **Content adapters.** The folio server loads a content adapter based on
    the repo's declared type. Adapters implement a common interface:
-   - `listPapers()` / `listGuides()` → folio index
-   - `getOutline(id)` → chapter/section tree
+   - `listItems()` → folio index
+   - `getOutline(id)` → section/chapter tree
    - `getBlock(id, path)` → content + metadata
-   - `renderPdf(id)` → compiled output
+   - `renderOutput(id)` → compiled output (PDF, HTML, IG, etc.)
    - `validate(id)` → validation results
 
-4. **feedback/ is universal.** All content types use `feedback/<item>/<block>.json`.
+5. **feedback/ is universal.** All content types use `feedback/<item>/<block>.json`.
    The folio server manages this generically — no content-specific logic needed.
 
-5. **Content-specific editors are delegated.** The main folio editor handles
+6. **Content-specific editors are delegated.** The main folio editor handles
    navigation, feedback, and branch management. When a user wants to *edit*
    content, folio dispatches to the content-specific editor skill (which lives
    in the content repo's `.claude/skills/`).
@@ -152,31 +123,31 @@ skills only. All generic infrastructure moves to folio-assistant.
 
 ## Migration Phases
 
-### Phase 1: Establish folio-assistant core (folio-assistant repo)
+### Phase 1: Establish folio-assistant core
 
-**Goal:** Move generic infrastructure to folio-assistant, define the content
+**Goal:** Move generic infrastructure into folio-assistant, define the content
 adapter interface.
 
 #### 1a. Define content adapter interface
 
 ```typescript
-// folio-assistant/src/adapters/types.ts
+// src/adapters/types.ts
 interface ContentAdapter {
-  type: string;                          // "paper" | "smart-guideline" | ...
+  type: string;                          // "paper" | "guideline" | ...
 
   // Discovery
   listItems(): Promise<FolioItem[]>;
   getOutline(itemId: string): Promise<Outline>;
   getDetail(itemId: string, path: string): Promise<BlockDetail>;
 
-  // Feedback (universal)
+  // Feedback (universal — handled by core, but adapter can enrich)
   getFeedback(itemId: string, blockId: string): Promise<FeedbackItem[]>;
   addFeedback(itemId: string, blockId: string, fb: NewFeedback): Promise<FeedbackItem>;
 
-  // Rendering
-  renderPdf(itemId: string): Promise<Buffer>;
+  // Rendering (adapter-specific output format)
+  renderOutput(itemId: string, format?: string): Promise<Buffer>;
 
-  // Validation
+  // Validation (adapter-specific rules)
   validate(itemId: string): Promise<ValidationResult>;
 
   // Diff
@@ -184,7 +155,7 @@ interface ContentAdapter {
 }
 ```
 
-#### 1b. Move auth gateway (from qou `deploy/auth-gateway/`)
+#### 1b. Move auth gateway
 
 - **GitHub OAuth** → collaborator/owner roles:
   - `GET /repos/{owner}/{repo}/collaborators/{user}/permission` per subscribed repo
@@ -199,7 +170,7 @@ interface ContentAdapter {
 - Auth gateway reads `visibility` from subscription config per-repo and applies
   the correct check on each request
 
-#### 1c. Move MCP server core (from qou `scripts/mcp-server/`)
+#### 1c. Move MCP server core
 
 Extract generic parts:
 - HTTP server skeleton (both stdio + HTTP modes)
@@ -210,39 +181,42 @@ Extract generic parts:
 - Static file serving for assistant UI
 
 Leave behind / make adapter-specific:
-- Paper manifest parsing (`importTsBranch`, content schema awareness)
-- LaTeX rendering pipeline
-- Lean tool proxying
-- Content-object validation
+- Content manifest parsing (adapter responsibility)
+- Format-specific rendering pipelines (LaTeX, FHIR IG Publisher, etc.)
+- Domain-specific tool proxying (Lean LSP, FHIR validators, etc.)
+- Content-object validation rules
 
-#### 1d. Move assistant UI (from qou `assistant/`)
+#### 1d. Move assistant UI
 
-- Generalize "paper" terminology → "document" / "item"
+- Generalize all terminology → "document" / "item" / "section" / "block"
 - Keep: branch selector, feedback panel, diff view, theme toggle
-- Abstract: content rendering (paper viewer → pluggable content renderer)
+- Abstract: content rendering → pluggable content renderer per adapter
 - Add: repo selector (when multiple repos are subscribed)
 
-#### 1e. Move deploy infrastructure (from qou `deploy/`)
+#### 1e. Move deploy infrastructure
 
 - Docker Compose, Caddy template, provisioning scripts
-- Generalize `lean-mcp.config.json` → `folio.config.json`
 - CI workflows for building + deploying folio-assistant image
+- Generalize config → `folio.config.json`
 
-### Phase 2: Create paper content adapter (folio-assistant repo)
+### Phase 2: Build content adapters
 
-**Goal:** Re-implement qou's content serving as a pluggable adapter.
+**Goal:** Implement pluggable adapters for each content type.
 
-#### 2a. Paper adapter implementation
+#### 2a. Paper adapter
+
+For repos containing structured academic papers (content-object triples:
+`.ts` manifest + `.md` narrative + optional `.lean` formalization).
 
 ```typescript
-// folio-assistant/src/adapters/paper/index.ts
+// src/adapters/paper/index.ts
 class PaperContentAdapter implements ContentAdapter {
   type = "paper";
 
   constructor(private repoPath: string) {}
 
   async listItems(): Promise<FolioItem[]> {
-    // Read content/folio.ts, resolve paper manifests
+    // Read folio manifest, resolve paper manifests
   }
 
   async getOutline(paperId: string): Promise<Outline> {
@@ -250,11 +224,11 @@ class PaperContentAdapter implements ContentAdapter {
   }
 
   async getDetail(paperId: string, path: string): Promise<BlockDetail> {
-    // Read block .ts + .md + .lean siblings
+    // Read block .ts + .md + optional .lean siblings
   }
 
-  async renderPdf(paperId: string): Promise<Buffer> {
-    // content pipeline → LaTeX → latexmk
+  async renderOutput(paperId: string): Promise<Buffer> {
+    // content pipeline → LaTeX → PDF
   }
 
   async validate(paperId: string): Promise<ValidationResult> {
@@ -263,37 +237,49 @@ class PaperContentAdapter implements ContentAdapter {
 }
 ```
 
-#### 2b. Register Lean MCP tools as optional extension
+Optional extensions registered by this adapter:
+- Lean LSP proxy tools (if repo has a `lean/` directory)
+- LaTeX preview tools
+- Proof status tracking
 
-- If repo has `lean/` directory, proxy lean-lsp-mcp tools
-- If not, Lean tools are simply not registered
+#### 2b. Guideline adapter (future)
 
-### Phase 3: Add repo subscription model (folio-assistant repo)
+For repos containing structured health guidelines (FHIR resources,
+decision tables, CQL logic).
+
+```typescript
+class GuidelineContentAdapter implements ContentAdapter {
+  type = "guideline";
+  // FHIR IG Publisher rendering, FSH validation, etc.
+}
+```
+
+### Phase 3: Add repo subscription model
 
 **Goal:** Support multiple repos with different content types.
 
-#### 3a. Subscription config
+#### 3a. Deployment config
 
 ```json
-// folio-assistant/folio.config.json (deployment config)
+// folio.config.json (deployment-level)
 {
   "subscriptions": [
     {
-      "repo": "litlfred/qou",
+      "repo": "org/repo-a",
       "type": "paper",
       "branch": "main",
-      "label": "Quantum Observable Universe",
+      "label": "Research Paper Collection",
       "visibility": "private"
     },
     {
-      "repo": "litlfred/smart-base",
-      "type": "smart-guideline",
+      "repo": "org/repo-b",
+      "type": "guideline",
       "branch": "main",
-      "label": "WHO SMART Guidelines",
+      "label": "Clinical Guidelines",
       "visibility": "public"
     }
   ],
-  "domain": "folio.litlfred.org",
+  "domain": "folio.example.org",
   "auth": {
     "github": { "enabled": true },
     "google": { "enabled": true, "viewersWhitelist": "google-viewers.txt" }
@@ -307,10 +293,10 @@ class PaperContentAdapter implements ContentAdapter {
 
 #### 3b. Repo-level folio manifest
 
-Each subscribed repo declares its content type:
+Each subscribed repo declares its content type at its root:
 
 ```json
-// qou/folio.config.json (in content repo root)
+// <content-repo>/folio.config.json
 {
   "contentType": "paper",
   "adapter": "paper",
@@ -336,40 +322,37 @@ Google OAuth (viewer path):
   → Viewer can read content + submit feedback (with author name attached)
 ```
 
-### Phase 4: Slim down qou (qou repo)
+### Phase 4: Slim down content repos
 
-**Goal:** Remove migrated infrastructure, add folio.config.json, keep content.
+**Goal:** Remove migrated infrastructure from content repos, keep content only.
 
-#### 4a. Remove from qou
+#### 4a. Remove from content repos
 
 - `deploy/auth-gateway/` → lives in folio-assistant
-- `scripts/mcp-server/` → generic parts in folio-assistant, paper adapter there too
+- `scripts/mcp-server/` → generic parts in folio-assistant, adapter there too
 - `assistant/` → lives in folio-assistant
 - `deploy/docker-compose.folio.yml` → lives in folio-assistant
 - `deploy/Caddyfile.folio.template` → lives in folio-assistant
 - `deploy/provision*.sh`, `deploy/update-server.sh` → lives in folio-assistant
 - `.github/workflows/deploy-folio.yml` → lives in folio-assistant
-- `lean-mcp.config.json` → replaced by `folio.config.json`
+- Domain-specific MCP config → replaced by `folio.config.json`
 
-#### 4b. Keep in qou
+#### 4b. Keep in content repos
 
-- `content/` — all content objects (authoritative)
-- `lean/` — Lean formalization
-- `chapters/` — generated LaTeX
-- `main.tex`, `references.bib` — LaTeX preamble
+- Content directories — all authored content (authoritative source)
+- Domain-specific tooling (Lean, FHIR, etc.)
 - `.claude/skills/local/` — content-specific skills
 - `feedback/` — feedback storage (gitignored)
 - `folio.config.json` — declares content type for folio-assistant
-- `.github/workflows/publish.yml`, `lean_ci.yml`, `blueprint.yml` — content CI
-- `scripts/check-lean.sh`, `scripts/setup-lean-mcp.sh` — Lean tooling
+- Content-specific CI workflows (build, test, publish)
 
-#### 4c. Update .mcp.json
+#### 4c. Update .mcp.json in content repos
 
 ```json
 {
   "mcpServers": {
     "folio-assistant": {
-      "url": "https://folio.litlfred.org/mcp"
+      "url": "https://folio.example.org/mcp"
     }
   }
 }
@@ -389,81 +372,158 @@ Or for local development:
 
 ---
 
-## Cross-Repo PR Strategy
-
-Since folio-assistant is a separate repo, the migration involves coordinated
-changes:
-
-1. **PR in folio-assistant**: Add core server, auth, UI, paper adapter,
-   deploy infra — all extracted from qou
-2. **PR in qou**: Remove migrated code, add `folio.config.json`, update
-   `.mcp.json` and CI workflows
-
-These can reference each other. folio-assistant PRs are independent (additive).
-The qou cleanup PR depends on folio-assistant being functional.
-
-**Note:** My GitHub MCP tools are scoped to `litlfred/qou` only. To create
-PRs in `litlfred/folio-assistant`, you'll need to either:
-- Grant me access to that repo in the MCP config
-- Create the PR manually from branches I prepare
-- Use a separate Claude Code session pointed at folio-assistant
-
----
-
 ## File-Level Migration Map
 
-| Source (qou) | Destination (folio-assistant) | Changes needed |
-|-------------|------------------------------|----------------|
-| `scripts/mcp-server/server.ts` | `src/server.ts` | Extract generic HTTP/MCP skeleton; paper-specific logic → adapter |
+| Source (content repo) | Destination (folio-assistant) | Changes needed |
+|----------------------|------------------------------|----------------|
+| `scripts/mcp-server/server.ts` | `src/server.ts` | Extract generic HTTP/MCP skeleton; content-specific logic → adapter |
 | `scripts/mcp-server/git.ts` | `src/git.ts` | Reusable as-is (branch ops are generic) |
-| `scripts/mcp-server/paths.ts` | `src/paths.ts` | Parameterize REPO_ROOT |
-| `scripts/mcp-server/tools/render.ts` | `src/adapters/paper/tools/render.ts` | Paper-specific |
-| `scripts/mcp-server/tools/validate.ts` | `src/adapters/paper/tools/validate.ts` | Paper-specific |
-| `scripts/mcp-server/tools/preview.ts` | `src/tools/preview.ts` | Mostly generic (LaTeX preview) |
+| `scripts/mcp-server/paths.ts` | `src/paths.ts` | Parameterize repo root |
+| `scripts/mcp-server/tools/render.ts` | `src/adapters/paper/tools/render.ts` | Adapter-specific |
+| `scripts/mcp-server/tools/validate.ts` | `src/adapters/paper/tools/validate.ts` | Adapter-specific |
+| `scripts/mcp-server/tools/preview.ts` | `src/tools/preview.ts` | Generic (formula/diagram preview) |
 | `scripts/mcp-server/tools/preferences.ts` | `src/tools/preferences.ts` | Generic |
-| `scripts/mcp-server/tools/lean.ts` | `src/adapters/paper/tools/lean.ts` | Paper/Lean-specific |
+| `scripts/mcp-server/tools/lean.ts` | `src/adapters/paper/tools/lean.ts` | Adapter-specific extension |
 | `scripts/mcp-server/tools/check-deps.ts` | `src/tools/check-deps.ts` | Generic |
-| `deploy/auth-gateway/server.ts` | `src/auth/server.ts` | Replace whitelists with GitHub API permission checks |
-| `assistant/app.js` | `src/ui/app.js` | Generalize paper → document |
+| `deploy/auth-gateway/server.ts` | `src/auth/server.ts` | Replace whitelists with GitHub API + visibility check |
+| `assistant/app.js` | `src/ui/app.js` | Generalize terminology, add repo selector |
 | `assistant/index.html` | `src/ui/index.html` | Add repo selector |
 | `assistant/styles.css` | `src/ui/styles.css` | Minimal changes |
 | `deploy/docker-compose.folio.yml` | `deploy/docker-compose.yml` | Generalize service names |
 | `deploy/Caddyfile.folio.template` | `deploy/Caddyfile.template` | Minimal changes |
-| `deploy/provision-hetzner.sh` | `deploy/provision-hetzner.sh` | Update image refs |
+| `deploy/provision-hetzner.sh` | `deploy/provision.sh` | Generalize cloud provider |
 | `deploy/self-update-folio.sh` | `deploy/self-update.sh` | Update repo refs |
-| `lean-mcp.config.json` | `folio.config.json` | New schema with subscriptions |
-| `content/schema/types.ts` | `src/adapters/paper/schema/types.ts` | Paper-specific types |
-| `content/schema/constraints.ts` | `src/adapters/paper/schema/constraints.ts` | Paper-specific validation |
+| Domain-specific MCP config | `folio.config.json` | New schema with subscriptions |
+
+---
+
+## Skills Audit
+
+Skills in folio-assistant must be content-agnostic. Content-specific skills
+stay in their respective content repos.
+
+### Skills that move to folio-assistant (generic)
+
+These skills are content-type-independent and belong in the platform:
+
+| Skill | Current location | Notes for generalization |
+|-------|-----------------|------------------------|
+| `content-lifecycle/` | folio-assistant (already there) | 8-stage workflow — already generic |
+| `deployment-auth` | content repo `.claude/skills/` | Remove content-specific examples, generalize OAuth docs |
+| `editor` (core parts) | content repo `.claude/skills/` | Extract generic session-start, triage, branch coordination; remove content-specific refs |
+| `todo-review` | content repo `.claude/skills/` | Already generic — references `feedback/` directory |
+| `readability-editing` | content repo `.claude/skills/` | Prose editing is content-agnostic — remove domain-specific examples |
+
+### Skills that stay in content repos (domain-specific)
+
+| Skill | Why it stays |
+|-------|-------------|
+| `formalizer` | Lean-specific proof writing |
+| `category-theory` | Math domain knowledge |
+| `lean-generation` | Lean code generation |
+| `lean-proof-review` | Lean-specific review |
+| `lean-build-fix` | Lean toolchain |
+| `proof-triage` | Proof-specific prioritization |
+| `proof-simplifier` | Proof-specific optimization |
+| `proof-status-tracking` | Lean formalization status |
+| `lean-environment-setup` | Lean toolchain setup |
+| `scientific-accuracy` | Domain-specific fact-checking |
+| `latex-validation` | LaTeX-specific (moves with paper adapter) |
+| `content-validation` | Schema-specific (moves with paper adapter) |
+| `content-block-review` | Content-object-specific review |
+| `ontologist` | Domain-specific terminology |
+| `paper-importer` | Paper-specific import |
+| `critical-path-analysis` | Proof dependency analysis |
+| `chapter-analysis` | Paper structure analysis |
+
+### Skills to audit and generalize
+
+Each skill moving to folio-assistant needs these changes:
+
+1. **Remove hardcoded content references** — no specific paper titles, theorem
+   names, chapter numbers, or domain terminology in skill instructions
+2. **Parameterize examples** — use placeholders like `<content-item>`,
+   `<block-name>`, `<section>` instead of specific content references
+3. **Remove tool assumptions** — don't assume Lean MCP, LaTeX tools, etc.
+   are available; check adapter capabilities
+4. **Generalize role descriptions** — "reviewer" not "proof reviewer",
+   "content block" not "theorem block"
+5. **Update routing tables** — skill routing in folio-assistant should be
+   adapter-aware: the adapter declares which skills it supports
+
+### Adapter-declared skill routing
+
+Each content adapter declares which skills it requires/supports:
+
+```json
+// In adapter package-manifest.json
+{
+  "adapter": "paper",
+  "requiredSkills": [
+    "content-validation",
+    "latex-validation",
+    "scientific-accuracy"
+  ],
+  "optionalSkills": [
+    "formalizer",
+    "lean-generation",
+    "lean-proof-review"
+  ]
+}
+```
+
+The folio editor checks the active adapter's skill list before routing
+user requests. If a skill isn't available for the current content type,
+the editor explains this rather than failing silently.
 
 ---
 
 ## Content Type Extension Points
 
-To add a new content type (e.g. WHO SMART guidelines):
+To add a new content type:
 
-1. Create `src/adapters/smart-guideline/index.ts` implementing `ContentAdapter`
-2. Add a `package-manifest.json` to `skills/authoring-who-smart-guidelines/`
+1. Create `src/adapters/<type>/index.ts` implementing `ContentAdapter`
+2. Add a `package-manifest.json` declaring required/optional skills
 3. Register the adapter in the adapter registry
-4. Content repo adds `folio.config.json` with `"contentType": "smart-guideline"`
+4. Content repo adds `folio.config.json` with `"contentType": "<type>"`
 5. Subscribe the repo in folio-assistant's deployment config
+6. Content repo provides domain-specific skills in `.claude/skills/local/`
 
 The adapter handles:
 - How to discover/list content items
-- How to parse the content structure (FHIR IG vs paper manifests)
-- How to render output (IG Publisher vs LaTeX)
-- How to validate (FHIR validation vs Zod schema)
+- How to parse the content structure
+- How to render output (PDF, HTML, IG, etc.)
+- How to validate (schema rules, domain rules)
+- Which MCP tools to register (Lean LSP, FHIR validator, etc.)
 
 The folio server handles generically:
-- Authentication + authorization (GitHub OAuth)
-- Feedback collection + triage
-- Branch management
+- Authentication + authorization (GitHub OAuth + Google OAuth)
+- Feedback collection + AI triage
+- Branch management + diff
 - UI navigation + rendering
+- Skill routing (adapter-aware)
+
+---
+
+## Cross-Repo PR Strategy
+
+The migration involves coordinated changes across repos:
+
+1. **PR in folio-assistant**: Add core server, auth, UI, adapters,
+   deploy infra — extracted and generalized from content repo
+2. **PR in content repo**: Remove migrated code, add `folio.config.json`,
+   update `.mcp.json` and CI workflows
+
+folio-assistant PRs are independent (additive). Content repo cleanup
+PRs depend on folio-assistant being functional.
 
 ---
 
 ## Immediate Next Steps
 
-1. **Add folio-assistant to my MCP scope** so I can create PRs there
+1. **Grant folio-assistant repo access** to agent tooling
 2. **Start Phase 1a-1b**: Define adapter interface + refactor auth gateway
 3. **Create tracking issue** in folio-assistant referencing this plan
-4. **Parallel**: Add `folio.config.json` to qou (non-breaking, additive)
+4. **Run skills audit**: Review each skill file for content-specific
+   references and create generalization tasks
+5. **Add `folio.config.json`** to content repo (non-breaking, additive)
