@@ -258,10 +258,9 @@ theorem degLexLt_wf : WellFounded degLexLt :=
       simp [degLexLt] at h
       show Prod.Lex (· < ·) (· < ·)
         (a.length, lexEncoding a) (b.length, lexEncoding b)
-      cases h with
-      | inl hlen => exact Prod.Lex.left _ _ hlen
-      | inr ⟨heq, hlex⟩ =>
-        exact Prod.Lex.right _ (lexEncoding_lt_of_lexLt_same_length a b heq hlex))
+      rcases h with hlen | ⟨heq, hlex⟩
+      · exact Prod.Lex.left _ _ hlen
+      · exact Prod.Lex.right _ (lexEncoding_lt_of_lexLt_same_length a b heq hlex))
     (InvImage.wf (fun a => (a.length, lexEncoding a))
       (Prod.Lex.wellFounded Nat.lt_wfRel.wf Nat.lt_wfRel.wf))
 
