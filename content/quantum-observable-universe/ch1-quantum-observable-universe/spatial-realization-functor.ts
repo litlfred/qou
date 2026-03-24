@@ -12,5 +12,6 @@ export default definition({
     "def:quantum-observable-universe",
     "def:categorical-point",
     "def:frobenius-pairing",
+    "def:categorical-reeb",
   ],
 });
