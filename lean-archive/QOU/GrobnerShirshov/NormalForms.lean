@@ -1,5 +1,6 @@
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Nat.Prime.Defs
+import Mathlib.Data.List.Lex
 
 /-!
 # Normal Forms and PBW-Type Bases
@@ -238,9 +239,32 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- `degLexLt_wf` is needed (proved below via `lexEncoding` embedding
 -- into `ℕ ×ₗ ℕ`).  This theorem is retained for completeness.
 -- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
-theorem lexLt_wf : WellFounded lexLt := by
-  -- Ref: [bokut2014] https://doi.org/10.1007/s11538-014-9967-4
-  sorry
+-- lexLt embeds into List.Lex (· < ·) on ℕ via List.map rank.
+private theorem lexLt_sub_mapped :
+    ∀ (a b : Monomial SU2Gen), lexLt a b →
+      List.Lex (· < ·) (a.map SU2Gen.rank) (b.map SU2Gen.rank) := by
+  intro a
+  induction a with
+  | nil =>
+    intro b h
+    cases b with
+    | nil => simp [lexLt] at h
+    | cons _ _ => simp [List.map]; exact List.Lex.nil
+  | cons x xs ih =>
+    intro b h
+    cases b with
+    | nil => simp [lexLt] at h
+    | cons y ys =>
+      simp [lexLt] at h
+      simp [List.map]
+      cases h with
+      | inl hr => exact List.Lex.rel hr
+      | inr ⟨heq, htail⟩ => rw [heq]; exact List.Lex.cons (ih ys htail)
+
+theorem lexLt_wf : WellFounded lexLt :=
+  Subrelation.wf
+    (fun {a b} h => lexLt_sub_mapped a b h)
+    (InvImage.wf (List.map SU2Gen.rank) WellFoundedLT.wf)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
