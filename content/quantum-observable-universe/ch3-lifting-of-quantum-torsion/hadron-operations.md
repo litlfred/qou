@@ -38,8 +38,7 @@ where $L_+$, $L_-$, $L_0$ are the positive-crossing, negative-crossing,
 and smoothed configurations. Iterating over all crossings resolves
 the linked composite into a polynomial in $q$ times unlinked
 constituents, yielding the mass formula
-$\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})
-+ \sum_i \mathcal{M}(K_i)$.
+$\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
 
 **Fusion.** Two hadrons $H_1 \in \mathrm{Sym}^{n_1}(K)$ and
 $H_2 \in \mathrm{Sym}^{n_2}(K)$ can be *fused* into a composite
