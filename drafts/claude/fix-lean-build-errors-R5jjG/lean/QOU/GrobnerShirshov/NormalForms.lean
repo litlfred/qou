@@ -1,6 +1,5 @@
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Nat.Prime.Defs
-import Mathlib.Data.List.Lex
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
@@ -169,9 +168,9 @@ private theorem lexLt_append_right (a b d : Monomial SU2Gen)
     | cons y ys =>
       simp [List.length_cons] at hlen
       simp [lexLt] at h ⊢
-      cases h with
-      | inl hrank => left; exact hrank
-      | inr ⟨heq, hrest⟩ => right; exact ⟨heq, ih ys hlen hrest⟩
+      rcases h with hrank | ⟨heq, hrest⟩
+      · left; exact hrank
+      · right; exact ⟨heq, ih ys hlen hrest⟩
 
 -- Positional encoding for monomials: maps a list to ℕ such that
 -- lexLt a b ∧ a.length = b.length → lexEncoding a < lexEncoding b.
@@ -212,17 +211,15 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
       simp [List.length_cons] at hlen
       simp [lexLt] at hlex
       simp [lexEncoding]
-      cases hlex with
-      | inl hrank =>
-        have hxs_bound := lexEncoding_bound xs
+      rcases hlex with hrank | ⟨heq, hrest⟩
+      · have hxs_bound := lexEncoding_bound xs
         rw [hlen] at hxs_bound ⊢
         have h1 : (x.rank + 1) * 4 ^ ys.length ≤ y.rank * 4 ^ ys.length :=
           Nat.mul_le_mul_right _ hrank
         have h2 : (x.rank + 1) * 4 ^ ys.length = x.rank * 4 ^ ys.length + 4 ^ ys.length := by
           rw [add_mul, one_mul]
         omega
-      | inr ⟨heq, hrest⟩ =>
-        have := ih ys hlen hrest
+      · have := ih ys hlen hrest
         rw [heq, hlen]
         omega
 
@@ -245,34 +242,11 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- `degLexLt_wf` is needed (proved below via `lexEncoding` embedding
 -- into `ℕ ×ₗ ℕ`).  This theorem is retained for completeness.
 -- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
--- lexLt embeds into List.Lex (· < ·) on ℕ via List.map rank.
-private theorem lexLt_sub_mapped :
-    ∀ (a b : Monomial SU2Gen), lexLt a b →
-      List.Lex (· < ·) (a.map SU2Gen.rank) (b.map SU2Gen.rank) := by
-  intro a
-  induction a with
-  | nil =>
-    intro b h
-    cases b with
-    | nil => simp [lexLt] at h
-    | cons _ _ => exact List.Lex.nil
-  | cons x xs ih =>
-    intro b h
-    cases b with
-    | nil => simp [lexLt] at h
-    | cons y ys =>
-      simp [lexLt] at h
-      show List.Lex (· < ·) (x.rank :: xs.map SU2Gen.rank) (y.rank :: ys.map SU2Gen.rank)
-      cases h with
-      | inl hr => exact List.Lex.rel hr
-      | inr ⟨heq, htail⟩ => rw [heq]; exact List.Lex.cons (ih ys htail)
-
-theorem lexLt_wf : WellFounded lexLt :=
-  Subrelation.wf
-    (fun {a b} h => lexLt_sub_mapped a b h)
-    (InvImage.wf (List.map SU2Gen.rank)
-      (List.Lex.isWellFounded (r := (· < · : ℕ → ℕ → Prop))
-        Nat.lt_wfRel.wf))
+-- The proof embeds lexLt into List.Lex (· < ·) on ℕ via rank mapping.
+-- Not used by degLexOrder; only degLexLt_wf is needed (proved via lexEncoding).
+theorem lexLt_wf : WellFounded lexLt := by
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+  sorry
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),

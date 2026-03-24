@@ -759,7 +759,7 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
       apply div_pos
       · have : 1 ≤ q ^ n := by
           rw [← one_pow n]
-          exact pow_le_pow_left₀ (by linarith : 0 ≤ 1) (le_of_lt hq1) n
+          exact pow_le_pow_left (by norm_num : (0 : ℝ) ≤ 1) (le_of_lt hq1) n
         linarith
       · linarith
     · -- 0 < q < 1: q^n < 1 (so q^n - 1 < 0) and q - 1 < 0
@@ -877,10 +877,10 @@ theorem mass_single_blowup {M : Type*}
   rw [tmd.decomposition]
   congr 1
   -- Ref: [manuscript] sum over Fin 1 is a single term
-  -- Can't subst h since tmd.numBlowups is not a free variable
-  apply Finset.sum_eq_single ⟨0, by omega⟩
-  · intro b _ hb; exact (hb (by ext; omega)).elim
-  · intro h'; exact absurd (Finset.mem_univ _) h'
+  -- All elements of Fin numBlowups are ⟨0, _⟩ when numBlowups = 1
+  have huniq : ∀ (i : Fin tmd.numBlowups), i = ⟨0, by omega⟩ := by
+    intro ⟨i, hi⟩; ext; omega
+  simp_rw [huniq, Finset.sum_const, Fintype.card_fin, h, one_smul]
 
 /-! ## §12  Dimensional Reduction -/
 
