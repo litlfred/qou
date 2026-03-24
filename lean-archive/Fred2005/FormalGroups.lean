@@ -97,7 +97,7 @@ structure SkewedPoissonStructure (H : CommutativeFormalGroup) where
     Reference: [fred2005, Main Theorem]. -/
 structure NoncommutativeFormalGroup where
   /-- The commutative base group `H / 𝔽_p`. -/
-  base : CommutativeFormalGroup
+  base : CommutativeFormalGroup.{u}
   /-- Carrier type of `Dist(G)`. -/
   distAlgebra : Type u
   /-- The multiplication on `Dist(G)` (generally non-commutative). -/
@@ -159,7 +159,7 @@ theorem reduction_mod_p_commutative
     Reference: [fred2005, §3]. -/
 structure GrobnerShirshovBasis where
   /-- The formal group whose distribution algebra is being presented. -/
-  formalGroup : NoncommutativeFormalGroup
+  formalGroup : NoncommutativeFormalGroup.{u}
   /-- The set of normal-form monomials (abstract type). -/
   normalForms : Type u
   /-- The normal forms span `Dist(G)`. -/
@@ -227,11 +227,11 @@ theorem strong_multiplicativity_holds
     Reference: [fred2005, §5], [hazewinkel1978, Ch. V]. -/
 structure WittVectorLift where
   /-- The commutative formal group `H / 𝔽_p`. -/
-  base : CommutativeFormalGroup
+  base : CommutativeFormalGroup.{u}
   /-- The skewed-Poisson structure driving the deformation. -/
   poisson : SkewedPoissonStructure base
   /-- The lifted non-commutative formal group `G / ℤ_p`. -/
-  lifted : NoncommutativeFormalGroup
+  lifted : NoncommutativeFormalGroup.{u}
   /-- Reduction: `G mod p ≅ H`. -/
   reduces : lifted.base = base
 

@@ -2,6 +2,7 @@ import Mathlib.Order.WellFounded
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
 
 /-!
 # Gröbner–Shirshov Bases — Foundational Definitions
@@ -139,8 +140,7 @@ structure SingleStepReduction {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
   /-- The target monomial is in the support of f. -/
   target_in_support : target_monomial ∈ f.support
   /-- The leading monomial of the rule appears as a subword of the target. -/
-  lm_is_subword : (leadingMonomial ord rule_used.relation rule_used.nonzero).isInfix
-    target_monomial
+  lm_is_subword : (leadingMonomial ord rule_used.relation rule_used.nonzero) <:+: target_monomial
   /-- The result g has no monomials larger than the target
       (the leading monomial strictly decreases). -/
   leading_decreases : ∀ m ∈ g.support,
@@ -169,7 +169,7 @@ def isNormalForm {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (sys : RewritingSystem G k)
     (f : AlgElement G k) : Prop :=
   ∀ r ∈ sys.rules, ∀ m ∈ f.support,
-    ¬ (leadingMonomial ord r.relation r.nonzero).isInfix m
+    ¬ (leadingMonomial ord r.relation r.nonzero) <:+: m
 
 /-- An element `f` **reduces to normal form** `nf` if `f →* nf` and
     `nf` is in normal form. -/
