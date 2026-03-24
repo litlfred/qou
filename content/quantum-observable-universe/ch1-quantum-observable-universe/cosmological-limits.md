@@ -25,7 +25,7 @@ is expected to exhibit two simultaneous regimes:
 At both limits the QOU structure *degenerates*:
 
 - At $q \to \infty$: the [Frobenius pairing](#def:frobenius-pairing)
-  $\langle f, g \rangle = \int_A(fg)$ loses non-degeneracy
+  $\langle f, g \rangle = \int_A(\mu(f \otimes g))$ loses non-degeneracy
   (axiom (1) of [quantum observable universe](#def:quantum-observable-universe)
   fails), so the QOU ceases to be observable.
 

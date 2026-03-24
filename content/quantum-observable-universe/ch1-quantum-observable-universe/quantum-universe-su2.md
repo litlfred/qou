@@ -26,7 +26,7 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Frobenius form* $\int_A(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
 The [Frobenius pairing](#def:frobenius-pairing)
-$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f g\, d\mu$
+$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x)\, g(x)\, d\mu_{\mathrm{Haar}}(x)$
 is positive definite (faithfulness of the Haar integral).
 
 **(iii) Fibre functor.**
