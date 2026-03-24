@@ -30,6 +30,7 @@ lean-archive/build/
 # Generated graph intermediate files
 dependency-graph.dot
 node_modules/
+node_modules
 
 # Deployment secrets and generated files (never commit)
 deploy/.env
