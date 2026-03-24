@@ -25,18 +25,12 @@ $$
 The mass predictions then evaluate as follows over $\mathbb{C}[z]$
 at $z = q_0$:
 
-```tex
-$$
-\begin{array}{|l|l|l|l|}
-\hline
-\textbf{Particle} & \textbf{Vol}(K) & m(K) = \operatorname{Vol}(K) / \hbar_{q_0}^2 & \textbf{CODATA} \\ \hline
-\text{Electron } (3_1) & 0 \text{ (non-hyp.)} & m_e \text{ (baseline)} & 0.511 \text{ MeV} \\ \hline
-\text{Muon } (4_1) & 2.0299 & 2.0299 \times 102.25 \approx 207.6\, m_e & 206.768\, m_e \\ \hline
-\text{Proton} & Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud} & 938.272 \text{ MeV} & 938.272 \text{ MeV} \\ \hline
-\text{Neutron} & Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd} & 939.565 \text{ MeV} & 939.565 \text{ MeV} \\ \hline
-\end{array}
-$$
-```
+| **Particle** | $\operatorname{Vol}(K)$ | $m(K) = \operatorname{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
+|---|---|---|---|
+| Electron ($3_1$) | 0 (non-hyp.) | $m_e$ (baseline) | 0.511 MeV |
+| Muon ($4_1$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6\, m_e$ | $206.768\, m_e$ |
+| Proton | $Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
+| Neutron | $Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
 
 The passage from the categorical formula to these numbers requires
 exactly the archimedean bridge: the fibre functor $\tau$ maps the
