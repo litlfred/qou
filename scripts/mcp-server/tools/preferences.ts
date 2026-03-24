@@ -4,7 +4,7 @@
  * Tools:
  *   paper_preferences  — Get or set rendering preferences
  *
- * Stored in .qou-prefs.json at repo root (gitignored).
+ * Stored in .folio-assistant-prefs.json at repo root (gitignored).
  *
  * @module scripts/mcp-server/tools/preferences
  */
@@ -48,7 +48,7 @@ export function registerPreferenceTools(server: McpServer): void {
   server.tool(
     "paper_preferences",
     "Get or set user rendering preferences. Preferences persist across " +
-    "sessions in .qou-prefs.json. Set action='get' to view current, " +
+    "sessions in .folio-assistant-prefs.json. Set action='get' to view current, " +
     "'set' to update, 'reset' to restore defaults.",
     {
       action: z.enum(["get", "set", "reset"]).default("get")

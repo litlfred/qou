@@ -75,22 +75,34 @@ If the request is LaTeX-only, proceed normally.
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Check open todos
+### 1. Check open feedback
 
-The `scripts/check-todos.sh` hook runs at session start and outputs a
-JSON summary of open todos from `todos/`. If there are
-open todos, **present the summary and ask the user** (multiple-choice):
+The `scripts/check-todos.sh` hook runs at session start and scans
+`feedback/<paper-dir>/*.ts` for open feedback items. If there are
+open items, **ask the user if they'd like to work on feedback**:
 
-- **Review open todos** — walk through each using the `todo-review` skill
-- **Start a new task** — proceed to normal triage, todos stay open
-- **Do research** — explore codebase, read content, no edits
+> **You have N open feedback items** (X high, Y medium, Z low).
+>
+> Would you like to work on feedback today?
 
-If there are no open todos, skip straight to step 1b.
+Options (multiple-choice):
+- **Yes, let's review feedback** — enter the `todo-review` skill's
+  structured workflow (overview → pick chapter → review items → iterate)
+- **No, I have something else in mind** — proceed to normal triage
 
-### 1b. Cross-reference todos with branch changes
+If there are no open items, skip straight to step 1b.
 
-When the current branch is not `main`, check whether any open todos
-target content blocks that were **modified in this branch**:
+When the user chooses to review feedback, hand off entirely to the
+`todo-review` skill which runs the full feedback cycle:
+1. Show overview grouped by chapter
+2. Let user pick scope (high priority / chapter / all)
+3. For each item: show feedback, read block, propose fix, ask approval
+4. Iterate until user says "done"
+
+### 1b. Cross-reference feedback with branch changes
+
+When the current branch is not `main`, check whether any open feedback
+targets content blocks that were **modified in this branch**:
 
 ```bash
 # Get content files changed in this branch vs main
@@ -98,12 +110,12 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `todos/` has open todos referencing
-that block's label.
+extension) and check if `feedback/<paper-dir>/` has open items
+referencing that block.
 
 **If matches are found**, present them to the user:
 
-> These open todos are on content blocks modified in this branch:
+> These open feedback items are on content blocks modified in this branch:
 >
 > - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
 > - **[medium]** `hadron`: "Clarify meson binding vs baryon"
@@ -111,16 +123,14 @@ that block's label.
 > Address these now?
 
 Offer (multiple-choice):
-- **Address matching todos** — walk through just the branch-relevant
-  todos using the `todo-review` skill
-- **Skip for now** — proceed to triage, todos stay open
-- **Mark as resolved** — auto-close todos that the branch changes
-  already address (editor reviews the diff to confirm)
+- **Address matching feedback** — walk through just the branch-relevant
+  items using the `todo-review` skill
+- **Skip for now** — proceed to triage, items stay open
 
 **If no matches**, proceed to triage silently.
 
 This ensures that when a branch modifies content, any feedback left on
-those blocks surfaces immediately — preventing stale todos from
+those blocks surfaces immediately — preventing stale items from
 surviving past the work that should have resolved them.
 
 ### 2. Triage

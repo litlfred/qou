@@ -27,7 +27,7 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
@@ -68,22 +68,57 @@ function forbidden(action: string, minRole: UserRole): Response {
   );
 }
 
-// ── Feedback storage (gitignored, global with hash-based IDs) ────
+// ── Feedback storage (TypeScript files, committed to main via worktree) ────
+//
+// Structure: feedback/<paper-dir>/<rootName>.ts
+//   export default [{ id, summary, ... }, ...]
+//
+// On write, the feedback is written to both:
+//   1. The main repo's feedback/ (for immediate reads)
+//   2. The .feedback-wt/ worktree (for committing to main)
 
-function feedbackPath(paperId: string, rootName: string): string {
-  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+import { spawnSync } from "child_process";
+
+/** Resolve feedback .ts path relative to a base dir. */
+function feedbackPath(paperId: string, rootName: string, base = FEEDBACK_DIR): string {
+  return join(base, paperId, `${rootName}.ts`);
+}
+
+/** Parse a feedback .ts file → array of FeedbackItems. */
+function parseFeedbackTs(content: string): unknown[] {
+  // Strip import line and satisfies clause, then extract the JSON array
+  const stripped = content
+    .replace(/^import\s+.*;\s*/m, '')
+    .replace(/\s+satisfies\s+\S+;\s*$/, ';');
+  const match = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+  if (!match) return [];
+  try {
+    return JSON.parse(match[1]);
+  } catch { return []; }
+}
+
+/** Serialize feedback items to TypeScript source. */
+function serializeFeedbackTs(items: unknown[]): string {
+  const json = JSON.stringify(items, null, 2);
+  return `import type { FeedbackItem } from "../../schemas/types";\n\nexport default ${json} satisfies FeedbackItem[];\n`;
 }
 
 function readFeedback(paperId: string, rootName: string): unknown[] {
   const p = feedbackPath(paperId, rootName);
   if (!existsSync(p)) return [];
-  try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
+  try { return parseFeedbackTs(readFileSync(p, "utf-8")); } catch { return []; }
 }
 
 function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
+  const ts = serializeFeedbackTs(todos);
+
+  // Write to main repo feedback/ (for immediate reads)
   const dir = join(FEEDBACK_DIR, paperId);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
+  writeFileSync(feedbackPath(paperId, rootName), ts, "utf-8");
+
+  // Write to worktree and commit to main
+  commitFeedbackToMain(paperId, rootName, ts);
 }
 
 /** Generate a unique todo ID: timestamp + 4-char hash to avoid collisions. */
@@ -91,6 +126,76 @@ function makeTodoId(): string {
   const ts = Date.now().toString(36);
   const hash = Math.random().toString(36).slice(2, 6);
   return `todo-${ts}-${hash}`;
+}
+
+// ── Worktree: commit feedback to main ────────────────────────────
+
+let worktreeReady = false;
+
+function ensureWorktree(): boolean {
+  if (worktreeReady) return true;
+  try {
+    if (!existsSync(FEEDBACK_WORKTREE)) {
+      // Create worktree checked out to main
+      const r = spawnSync("git", ["worktree", "add", FEEDBACK_WORKTREE, "main"], {
+        cwd: REPO_ROOT, stdio: "pipe", timeout: 15000,
+      });
+      if (r.status !== 0) {
+        log("feedback", "worktree setup failed", r.stderr?.toString().trim());
+        return false;
+      }
+    }
+    worktreeReady = true;
+    return true;
+  } catch (e) {
+    log("feedback", "worktree error", String(e));
+    return false;
+  }
+}
+
+function commitFeedbackToMain(paperId: string, rootName: string, content: string): void {
+  if (!ensureWorktree()) return;
+
+  try {
+    // Pull latest main in worktree
+    spawnSync("git", ["pull", "--ff-only", "origin", "main"], {
+      cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 15000,
+    });
+
+    // Write file in worktree
+    const wtDir = join(FEEDBACK_WORKTREE, "feedback", paperId);
+    mkdirSync(wtDir, { recursive: true });
+    const wtPath = join(wtDir, `${rootName}.ts`);
+    writeFileSync(wtPath, content, "utf-8");
+
+    // Stage + commit + push
+    const relPath = `feedback/${paperId}/${rootName}.ts`;
+    spawnSync("git", ["add", relPath], { cwd: FEEDBACK_WORKTREE, stdio: "pipe" });
+
+    const commitResult = spawnSync("git", ["commit", "-m", `feedback: ${paperId}/${rootName}`], {
+      cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 10000,
+    });
+
+    if (commitResult.status === 0) {
+      // Push with retry (up to 3 attempts with backoff)
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const push = spawnSync("git", ["push", "origin", "main"], {
+          cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 30000,
+        });
+        if (push.status === 0) {
+          log("feedback", `committed to main: ${relPath}`);
+          return;
+        }
+        if (attempt < 2) {
+          // Brief backoff before retry
+          spawnSync("sleep", [String(2 ** (attempt + 1))]);
+        }
+      }
+      log("feedback", `push failed after retries: ${relPath}`);
+    }
+  } catch (e) {
+    log("feedback", "commit error", String(e));
+  }
 }
 
 /** List all feedback items across all papers, optionally filtered by status. */
@@ -102,8 +207,8 @@ function listAllFeedback(status?: string): { paperId: string; rootName: string; 
     const paperFbDir = join(FEEDBACK_DIR, paperId);
     try {
       for (const file of readdirSync(paperFbDir)) {
-        if (!file.endsWith(".json")) continue;
-        const rootName = file.replace(/\.json$/, "");
+        if (!file.endsWith(".ts")) continue;
+        const rootName = file.replace(/\.ts$/, "");
         const todos = readFeedback(paperId, rootName);
         for (const t of todos as any[]) {
           if (!status || t.status === status) {
@@ -280,7 +385,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blk = (await importTsBranch(br, blkTsRel)) as any;
           const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos from gitignored .qou-feedback/
+          // Merge feedback todos from feedback/<paperId>/<rootName>.ts
           // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
           const blockTodos = feedback.length ? [...feedback] : undefined;
@@ -1416,8 +1521,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
   }
 
   // ── Submit feedback as todo (viewer+ — any authenticated user) ──
-  // Stored in .qou-feedback/ (gitignored), not in the content tree.
-  // Survives branch switches and won't be accidentally committed.
+  // Stored in feedback/<paper-dir>/ as TypeScript, committed to main via worktree.
   if (path === "/api/feedback" && req.method === "POST") {
     try {
       const body = await req.json() as {
@@ -1788,9 +1892,23 @@ When coordinating work or suggesting actions, ONLY suggest actions and skills th
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
-Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.
+Keep responses concise and well-formatted.
 
-IMPORTANT: End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
+## Math formatting
+CRITICAL: ALL mathematical expressions MUST be wrapped in dollar signs.
+- Inline math: $S_{uu} = 312.36$ MeV (NOT S_{uu} or Suu)
+- Display math: $$\\sum_{i} m_i = M$$
+- Variables, subscripts, Greek letters — always wrap: $q$, $\\alpha$, $x_n$
+Never write bare math symbols/subscripts outside dollar signs — the renderer requires them.
+
+## Block references
+When mentioning a specific definition, theorem, proposition, etc., ALWAYS use markdown link syntax with the label:
+- [Proposition Title](#prop:terminal-resolution)
+- [Definition Title](#def:quantum-connection)
+These become clickable navigation links in the viewer. When answering "where is X" questions, always include the block reference link so the user can navigate directly.
+
+## Response format
+End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
 [suggestions]: First option | Second option | Third option
 These become clickable buttons so users don't have to type. Make them specific to the conversation context — not generic. Keep each option under 40 characters.`;
 
@@ -2344,7 +2462,7 @@ These become clickable buttons so users don't have to type. Make them specific t
 // ── Server setup ─────────────────────────────────────────────────
 
 const server = new McpServer({
-  name: "qou-paper-assistant",
+  name: "folio-assistant",
   version: "0.1.0",
 }, {
   capabilities: {
@@ -2410,7 +2528,7 @@ const args = process.argv.slice(2);
 const mode = args.includes("--http") ? "http" : "stdio";
 
 if (args.includes("--check-deps")) {
-  // Run real dependency check and exit — used by start-assistant.sh --check
+  // Run real dependency check and exit — used by start-folio-assistant.sh --check
   const { execSync } = await import("child_process");
 
   interface DepInfo { name: string; required: boolean; cmd: string; hint: string }
