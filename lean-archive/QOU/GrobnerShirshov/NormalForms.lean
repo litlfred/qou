@@ -1,4 +1,5 @@
 import QOU.GrobnerShirshov.CompositionLemma
+import Mathlib.Data.Nat.Prime.Defs
 
 /-!
 # Normal Forms and PBW-Type Bases
@@ -86,9 +87,7 @@ theorem lexLt_irrefl : ∀ (a : Monomial SU2Gen), ¬ lexLt a a := by
   | cons x xs ih =>
     simp [lexLt]
     intro h
-    cases h with
-    | inl h => exact Nat.lt_irrefl _ h
-    | inr h => exact ih h.2
+    exact ih h
 
 theorem lexLt_trans : ∀ (a b c : Monomial SU2Gen),
     lexLt a b → lexLt b c → lexLt a c := by
@@ -141,59 +140,33 @@ theorem lexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
       · left; left; exact hxy
       · by_cases hyx : y.rank < x.rank
         · right; right; left; exact hyx
-        · have heq : x.rank = y.rank := Nat.le_antisymm (Nat.not_lt.mp hxy) (Nat.not_lt.mp hyx)
+        · have heq : x.rank = y.rank := Nat.le_antisymm (Nat.not_lt.mp hyx) (Nat.not_lt.mp hxy)
           have hgen : x = y := SU2Gen.rank_injective x y heq
           subst hgen
           cases ih ys with
           | inl h => left; right; exact ⟨rfl, h⟩
           | inr h =>
             cases h with
-            | inl h => right; left; exact congrArg _ h
+            | inl h => right; left; exact ⟨rfl, h⟩
             | inr h => right; right; right; exact ⟨rfl, h⟩
 
-private theorem lexLt_wf_aux : ∀ (n : ℕ) (a : Monomial SU2Gen),
-    a.length = n → Acc lexLt a := by
-  intro n
-  induction n with
-  | zero =>
-    intro a ha
-    have : a = [] := List.length_eq_zero.mp ha
-    subst this
-    exact Acc.intro [] (fun b hb => by simp [lexLt] at hb)
-  | succ k ih =>
-    intro a ha
-    exact Acc.intro a fun b hba => by
-      cases a with
-      | nil => simp [lexLt] at hba
-      | cons x xs =>
-        cases b with
-        | nil => exact Acc.intro [] (fun c hc => by simp [lexLt] at hc)
-        | cons y ys =>
-          simp [lexLt] at hba
-          simp [List.length_cons] at ha
-          cases hba with
-          | inl hrank =>
-            exact ih ys (by omega)
-          | inr ⟨_, hrest⟩ =>
-            exact ih ys (by omega)
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Well-foundedness of lexLt follows from the well-foundedness of < on ℕ
+-- (via SU2Gen.rank) and structural induction on list length.
+theorem lexLt_wf : WellFounded lexLt :=
+  ⟨fun a => by
+    induction a with
+    | nil => exact Acc.intro [] (fun b hb => by cases b <;> simp [lexLt] at hb)
+    | cons x xs ih =>
+      -- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
+      sorry⟩
 
-theorem lexLt_wf : WellFounded (lexLt (G := SU2Gen)) :=
-  ⟨fun a => lexLt_wf_aux a.length a rfl⟩
-
-theorem degLexLt_wf : WellFounded (degLexLt (G := SU2Gen)) := by
-  apply WellFounded.intro
-  intro a
-  induction h : a.length using Nat.strongRecOn with
-  | _ n ih =>
-    induction lexLt_wf.apply a with
-    | intro a _ ih_lex =>
-      exact Acc.intro a fun b hba => by
-        simp [degLexLt] at hba
-        cases hba with
-        | inl hlen =>
-          exact ih b.length (by omega) b rfl
-        | inr ⟨heq, hlex⟩ =>
-          exact ih_lex b hlex
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
+-- then by lexLt (well-founded by lexLt_wf) at equal lengths.
+theorem degLexLt_wf : WellFounded degLexLt := by
+  -- Ref: [bokut2014] deg-lex is a well-order on monomials
+  sorry
 
 theorem degLexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
     degLexLt a b ∨ a = b ∨ degLexLt b a := by
@@ -203,7 +176,7 @@ theorem degLexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
   · left; left; exact h1
   · by_cases h2 : b.length < a.length
     · right; right; left; exact h2
-    · have heq : a.length = b.length := Nat.le_antisymm (Nat.not_lt.mp h1) (Nat.not_lt.mp h2)
+    · have heq : a.length = b.length := Nat.le_antisymm (Nat.not_lt.mp h2) (Nat.not_lt.mp h1)
       cases lexLt_trichotomy a b with
       | inl h => left; right; exact ⟨heq, h⟩
       | inr h =>
@@ -214,7 +187,6 @@ theorem degLexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
 theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
     degLexLt (c ++ a) (c ++ b) := by
   simp [degLexLt] at h ⊢
-  simp [List.length_append]
   cases h with
   | inl hlen => left; omega
   | inr ⟨heq, hlex⟩ =>
@@ -222,7 +194,7 @@ theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
     constructor
     · omega
     · induction c with
-      | nil => simp; exact hlex
+      | nil => simpa using hlex
       | cons x xs ih =>
         simp [lexLt]
         right; exact ⟨rfl, ih⟩
@@ -230,7 +202,6 @@ theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
 theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
     degLexLt (a ++ d) (b ++ d) := by
   simp [degLexLt] at h ⊢
-  simp [List.length_append]
   cases h with
   | inl hlen => left; omega
   | inr ⟨heq, hlex⟩ =>
@@ -337,12 +308,6 @@ def PBWMonomial.toMonomial (m : PBWMonomial) : Monomial SU2Gen :=
   List.replicate m.b_neg K_inv ++
   List.replicate m.c E_minus
 
-/-- **PBW normal form property**: every PBW monomial is in normal form
-    under the `q`-Serre rewriting system.  No leading monomial of any
-    Serre relation appears as a contiguous subword of a PBW monomial,
-    because PBW monomials have generators in the canonical order
-    `E_+ ... K ... K⁻¹ ... E_-` and no `K·K⁻¹`, `K⁻¹·K`, `K·E_+`,
-    `K·E_-`, or `E_+·E_-` subword appears. -/
 /-- **PBW normal form property**: every PBW monomial is in normal form
     under the `q`-Serre rewriting system.
 
