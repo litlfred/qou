@@ -83,11 +83,52 @@ skills only. All generic infrastructure moves to folio-assistant.
 
 ### Key Design Decisions
 
-1. **GitHub OAuth = access control.** If you have read access to the repo,
-   you're a viewer. Write access = collaborator. Admin = owner. No separate
-   whitelists needed — GitHub's own permissions are the source of truth.
+1. **Two access modes: private (default) and public.**
 
-2. **Repo subscription model.** folio-assistant stores a list of subscribed
+   Every repo subscription defaults to **private mode**. Public mode must be
+   explicitly enabled via `"visibility": "public"` in the folio-assistant
+   deployment config.
+
+   **Private mode** (default):
+   - **GitHub OAuth** → collaborator/owner roles (repo write/admin access)
+   - **Google OAuth** → viewer role, **gated by whitelist** (`google-viewers.txt`)
+   - Whitelist is manually maintained by repo owner (protected file)
+   - This is the current qou model — unchanged
+
+   **Public mode** (opt-in per repo):
+   - **GitHub OAuth** → collaborator/owner roles (same as private)
+   - **Google OAuth** → viewer role, **open to any Google account** (no whitelist)
+   - Useful for public-facing content (e.g. published WHO guidelines)
+   - Must be explicitly set: `"visibility": "public"` in subscription config
+
+   ```json
+   // folio-assistant deployment config
+   {
+     "subscriptions": [
+       {
+         "repo": "litlfred/qou",
+         "type": "paper",
+         "visibility": "private"
+       },
+       {
+         "repo": "litlfred/smart-base",
+         "type": "smart-guideline",
+         "visibility": "public"
+       }
+     ]
+   }
+   ```
+
+   The auth gateway checks visibility per-repo:
+   - Private → Google login succeeds only if email is in `google-viewers.txt`
+   - Public → any authenticated Google user gets viewer role
+   - GitHub permissions always checked against the actual repo via API
+
+2. **GitHub OAuth for collaborators, Google OAuth for viewers.** GitHub repo
+   permissions determine collaborator/owner roles. Google OAuth provides a
+   lightweight viewer path — whitelisted in private mode, open in public mode.
+
+3. **Repo subscription model.** folio-assistant stores a list of subscribed
    repos (e.g. `litlfred/qou`, `litlfred/smart-base`). Each repo declares
    its content type via a `folio.config.json` at its root.
 
@@ -145,14 +186,18 @@ interface ContentAdapter {
 
 #### 1b. Move auth gateway (from qou `deploy/auth-gateway/`)
 
-- Refactor to use GitHub API for permission checks instead of whitelist files
-- `GET /user/repos` → check if user has access to subscribed repo
-- Map GitHub repo permissions to roles:
-  - `pull` → viewer
-  - `push` → collaborator
-  - `admin` → owner
-- Keep Google OAuth as optional secondary provider (for non-GitHub users)
+- **GitHub OAuth** → collaborator/owner roles:
+  - `GET /repos/{owner}/{repo}/collaborators/{user}/permission` per subscribed repo
+  - `push` permission → collaborator role
+  - `admin` permission → owner role
+  - Read-only or no access → no collaborator/owner grant
+- **Google OAuth** → viewer role, visibility-dependent:
+  - **Private repos** (default): check email against `google-viewers.txt` whitelist
+  - **Public repos** (`"visibility": "public"`): any Google-authenticated user gets viewer
+  - Whitelist file remains a protected file — owner-managed only
 - Keep bearer token bypass for API/CLI access
+- Auth gateway reads `visibility` from subscription config per-repo and applies
+  the correct check on each request
 
 #### 1c. Move MCP server core (from qou `scripts/mcp-server/`)
 
@@ -230,26 +275,35 @@ class PaperContentAdapter implements ContentAdapter {
 #### 3a. Subscription config
 
 ```json
-// folio-assistant/folio.config.json (or per-deployment)
+// folio-assistant/folio.config.json (deployment config)
 {
   "subscriptions": [
     {
       "repo": "litlfred/qou",
       "type": "paper",
       "branch": "main",
-      "label": "Quantum Observable Universe"
+      "label": "Quantum Observable Universe",
+      "visibility": "private"
     },
     {
       "repo": "litlfred/smart-base",
       "type": "smart-guideline",
       "branch": "main",
-      "label": "WHO SMART Guidelines"
+      "label": "WHO SMART Guidelines",
+      "visibility": "public"
     }
   ],
   "domain": "folio.litlfred.org",
-  "auth": { "github": true, "google": false }
+  "auth": {
+    "github": { "enabled": true },
+    "google": { "enabled": true, "viewersWhitelist": "google-viewers.txt" }
+  }
 }
 ```
+
+**visibility** (per subscription):
+- `"private"` (default if omitted) — Google viewers must be whitelisted
+- `"public"` — any Google-authenticated user can view
 
 #### 3b. Repo-level folio manifest
 
@@ -265,13 +319,21 @@ Each subscribed repo declares its content type:
 }
 ```
 
-#### 3c. Permission model via GitHub API
+#### 3c. Permission model
 
 ```
-User authenticates with GitHub OAuth
-  → folio-assistant calls GitHub API: GET /repos/{owner}/{repo}/collaborators/{user}/permission
-  → Maps permission level to folio role
-  → Caches for session duration
+GitHub OAuth (collaborator/owner path):
+  → User authenticates with GitHub
+  → folio-assistant calls: GET /repos/{owner}/{repo}/collaborators/{user}/permission
+  → push → collaborator, admin → owner
+  → Caches permission for session duration
+
+Google OAuth (viewer path):
+  → User authenticates with Google
+  → Check subscription visibility for requested repo:
+     - "private" → email must be in google-viewers.txt → viewer role (or reject)
+     - "public"  → any Google account → viewer role
+  → Viewer can read content + submit feedback (with author name attached)
 ```
 
 ### Phase 4: Slim down qou (qou repo)
