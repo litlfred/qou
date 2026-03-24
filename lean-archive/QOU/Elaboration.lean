@@ -212,7 +212,25 @@ theorem dq_squared_nonvanishing :
         (fun _ => 0) (fun _ => 0) p = 0 := by
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
   -- Witness: M = PUnit, q = 2, f(·) = 1; then d_q²(f) = 2⁻¹(1 − 2⁻¹) · 1 = 1/4 ≠ 0.
-  sorry
+  intro h
+  -- Construct a SubstrateParameter on PUnit with constant q = 2
+  let sp : SubstrateParameter PUnit := {
+    field := fun _ => 2
+    field_pos := fun _ => by norm_num
+    field_ge_one := fun _ => by norm_num
+    not_root_of_unity := fun _ k hk => by
+      have : (2 : ℝ) ^ k ≥ 2 := by
+        calc (2 : ℝ) ^ k ≥ 2 ^ 1 := by
+              exact pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
+          _ = 2 := by ring
+      linarith
+  }
+  -- Specialize the hypothesis with M = PUnit, sp, f = constant 1, p = PUnit.unit
+  have := h PUnit sp (fun _ => 1) PUnit.unit
+  -- Simplify qExtDeriv with zero theta and lieDerivReeb
+  simp [qExtDeriv] at this
+  -- After simplification, this should be 2⁻¹ * (2⁻¹ * 1) = 1/4 ≠ 0
+  norm_num at this
 
 /-! ### Jacobiator of the q-deformed Lie bracket -/
 

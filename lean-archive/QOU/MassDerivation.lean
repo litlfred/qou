@@ -176,10 +176,13 @@ lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →
     h_q ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
-  -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
   -- Algebraic rearrangement: vol / h² = ratio ⟹ h² = vol / ratio
-  intro _h_q _hne _heq
-  sorry
+  intro _h_q hne heq
+  have hsq : _h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
+  have hratio_ne : experimental_mu_e_ratio ≠ 0 := by
+    unfold experimental_mu_e_ratio; norm_num
+  field_simp at heq ⊢
+  linarith
 
 /-! ## Section 5: Summary Table
 

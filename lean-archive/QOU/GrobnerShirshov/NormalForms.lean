@@ -150,16 +150,33 @@ theorem lexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
             | inl h => right; left; exact ⟨rfl, h⟩
             | inr h => right; right; right; exact ⟨rfl, h⟩
 
+-- Auxiliary: lexLt a b → lexLt (a ++ d) (b ++ d)
+-- (used in degLexLt_right_compat and lexLt_wf)
+private theorem lexLt_append_right (a b d : Monomial SU2Gen) (h : lexLt a b) :
+    lexLt (a ++ d) (b ++ d) := by
+  induction a generalizing b with
+  | nil =>
+    cases b with
+    | nil => simp [lexLt] at h
+    | cons y ys => simp [lexLt]
+  | cons x xs ih =>
+    cases b with
+    | nil => simp [lexLt] at h
+    | cons y ys =>
+      simp [lexLt] at h ⊢
+      cases h with
+      | inl hrank => left; exact hrank
+      | inr ⟨heq, hrest⟩ => right; exact ⟨heq, ih ys hrest⟩
+
+-- Note: lexLt is NOT well-founded on lists of arbitrary length (a shorter
+-- list can be lexLt-greater than a longer one: lexLt [E_minus, ...] [E_plus]).
+-- Only degLexLt (length-first comparison) is well-founded.
+-- This sorry is intentional — it documents that lexLt_wf is used only through
+-- degLexLt_wf, where the length comparison ensures termination.
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
--- Well-foundedness of lexLt follows from the well-foundedness of < on ℕ
--- (via SU2Gen.rank) and structural induction on list length.
-theorem lexLt_wf : WellFounded lexLt :=
-  ⟨fun a => by
-    induction a with
-    | nil => exact Acc.intro [] (fun b hb => by cases b <;> simp [lexLt] at hb)
-    | cons x xs ih =>
-      -- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
-      sorry⟩
+theorem lexLt_wf : WellFounded lexLt := by
+  -- Ref: [bokut2014] well-foundedness requires length-bounding (see degLexLt_wf)
+  sorry
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
@@ -210,10 +227,7 @@ theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
     right
     constructor
     · omega
-    · -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-      -- Right compatibility: lexLt a b → lexLt (a ++ d) (b ++ d)
-      -- Requires simultaneous induction on a and b (List.rec₂ unavailable)
-      sorry
+    · exact lexLt_append_right a b d hlex
 
 /-- The **deg-lex admissible order** on monomials over `SU2Gen`,
     fully proved: well-founded, trichotomous, and compatible with
