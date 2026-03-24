@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-23T17:39:24.490543+00:00",
+  "generated_at": "2026-03-24T21:23:23.836893+00:00",
   "mappings": [
     {
       "narrative": "{Rigid monoidal category}",
@@ -53,11 +53,6 @@
       "latex_label": "def:positive-definite-dagger"
     },
     {
-      "narrative": "{Spin labels and the fundamental object}",
-      "lean_id": "QOU.QuantumObservableUniverse.SpinLabels",
-      "latex_label": "def:spin-labels"
-    },
-    {
       "narrative": "{Categorical Reeb derivation}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalReeb",
       "latex_label": "def:categorical-reeb"
@@ -66,6 +61,11 @@
       "narrative": "{Projective line object}",
       "lean_id": "QOU.QuantumObservableUniverse.ProjectiveLineObject",
       "latex_label": "def:projective-line-object"
+    },
+    {
+      "narrative": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
+      "lean_id": "QOU.QuantumObservableUniverse.ContactAffineChart",
+      "latex_label": "def:contact-affine-chart"
     },
     {
       "narrative": "{Categorical connection and curvature}",
@@ -81,6 +81,11 @@
       "narrative": "{Categorical Hodge star}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
       "latex_label": "def:categorical-hodge-star"
+    },
+    {
+      "narrative": "{Spatial realization functor}",
+      "lean_id": "QOU.QuantumObservableUniverse.SpatialRealizationFunctor",
+      "latex_label": "def:spatial-realization-functor"
     },
     {
       "narrative": "{Substrate parameter}",
@@ -151,6 +156,11 @@
       "narrative": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
       "lean_id": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "latex_label": "def:q-yang-mills-levi"
+    },
+    {
+      "narrative": "{Quantum flatness}",
+      "lean_id": "QOU.QuantumObservableUniverse.QuantumFlatness",
+      "latex_label": "def:quantum-flatness"
     },
     {
       "narrative": "{Categorical transport equation}",
@@ -308,24 +318,24 @@
       "latex_label": "def:quantum-su2"
     },
     {
+      "narrative": "{Witt vector lift of a formal group}",
+      "lean_id": "QOU.DescartesUniverse.WittVectorLift",
+      "latex_label": "def:witt-vector-lift"
+    },
+    {
       "narrative": "{Descartes condition}",
-      "lean_id": "QOU.DescartesUniverse.DescartesCondition",
+      "lean_id": "QOU.DescartesCondition",
       "latex_label": "def:descartes-condition"
     },
     {
       "narrative": "{Exceptional divisor at \\$p\\$}",
-      "lean_id": "QOU.DescartesUniverse.ExceptionalDivisor",
+      "lean_id": "QOU.ExceptionalDivisor",
       "latex_label": "def:exceptional-divisor"
     },
     {
       "narrative": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
-      "lean_id": "QOU.DescartesUniverse.ChiralSectorCoords",
+      "lean_id": "QOU.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
-    },
-    {
-      "narrative": "{Witt vector lift of a formal group}",
-      "lean_id": "QOU.DescartesUniverse.WittVectorLift",
-      "latex_label": "def:witt-vector-lift"
     }
   ]
 }
