@@ -78,8 +78,8 @@ noncomputable def qReynoldsNumber {M : Type*} (sp : SubstrateParameter M)
 /-- In the classical limit `q → 1`, the q-Reynolds number diverges
     (viscosity vanishes, turbulence onset). -/
 theorem qReynolds_classical_diverges {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (hq : sp.field p = 1) (v : M → ℝ) (L : ℝ) (hv : v p ≠ 0)
-    (hL : L ≠ 0) :
+    (p : M) (hq : sp.field p = 1) (_v : M → ℝ) (_L : ℝ) (_hv : _v p ≠ 0)
+    (_hL : _L ≠ 0) :
     quantumPlanckConstant sp p = 0 :=
   planck_classical_limit sp p hq
 

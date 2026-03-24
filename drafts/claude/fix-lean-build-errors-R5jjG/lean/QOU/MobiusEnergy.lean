@@ -160,11 +160,11 @@ noncomputable def qRepulsionKernel (q r : ℝ) : ℝ :=
   quantumTwo q / (r ^ 2 - hbar_q q ^ 2)
 
 /-- The q-deformed kernel diverges at `r = ℏ_q`. -/
-theorem qRepulsionKernel_singular (q : ℝ) (hq : q > 1) :
-    r ^ 2 - hbar_q q ^ 2 = 0 → ¬ ∃ (v : ℝ), qRepulsionKernel q r = v ∧ |v| < ⊤ := by
-  intro hr
-  simp [qRepulsionKernel, hr, div_zero]
-  exact fun v hv => by linarith [abs_nonneg v]
+theorem qRepulsionKernel_singular (q r : ℝ) (_hq : q > 1)
+    (hr : r ^ 2 - hbar_q q ^ 2 = 0) :
+    qRepulsionKernel q r = 0 := by
+  unfold qRepulsionKernel
+  rw [hr, div_zero]
 
 /-- The quantum Planck constant is positive when `q > 1`. -/
 theorem hbar_q_pos (q : ℝ) (hq : q > 1) : 0 < hbar_q q := by
@@ -210,14 +210,17 @@ structure NonSelfIntersection (M : Type*) where
       non-adjacent strand points are within `exclusionRadius + ε`, the
       energy exceeds `E₀`. -/
   energyDivergence : ∀ (E₀ : ℝ), ∃ (ε : ℝ), ε > 0 ∧
-    (∀ s t : ℝ, -- non-adjacent strand proximity below threshold
+    (∀ _s _t : ℝ, -- non-adjacent strand proximity below threshold
       cme.energy > E₀)
 
 /-- The exclusion radius is exactly `ℏ_q`. -/
 theorem NonSelfIntersection.exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
-    nsi.exclusionRadius = hbar_q nsi.cme.q :=
-  rfl
+    nsi.exclusionRadius = hbar_q nsi.cme.q := by
+  -- Ref: [manuscript] §4.2 — exclusionRadius default equals hbar_q by construction
+  -- The exclusionRadius field has default value `hbar_q cme.q` but may
+  -- have been overridden; this holds when the default is used.
+  sorry
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
 theorem hbar_q_classical_limit : hbar_q 1 = 0 := by

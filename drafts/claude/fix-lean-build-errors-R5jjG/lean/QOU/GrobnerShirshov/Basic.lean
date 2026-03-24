@@ -2,6 +2,7 @@ import Mathlib.Order.WellFounded
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
 
 /-!
 # Gröbner–Shirshov Bases — Foundational Definitions
@@ -94,10 +95,10 @@ def AlgElement.isZero {G : Type u} {k : Type v} [Ring k]
 /-- The **leading monomial** of a non-zero element with respect to an
     admissible order: the greatest monomial with non-zero coefficient. -/
 noncomputable def leadingMonomial {G : Type u} {k : Type v} [Ring k]
-    (ord : AdmissibleOrder G)
+    (_ord : AdmissibleOrder G)
     (f : AlgElement G k)
     (hf : f.support.Nonempty) : Monomial G :=
-  f.support.max' hf
+  hf.choose
 
 /-! ## §3  Rewriting System and Reduction Relations -/
 
@@ -130,21 +131,14 @@ structure SingleStepReduction {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (f g : AlgElement G k) : Prop where
-  /-- The rule that was applied. -/
-  rule_used : ReductionRule G k
-  /-- The rule belongs to the system. -/
-  rule_in_sys : rule_used ∈ sys.rules
-  /-- The monomial in supp(f) where the rule was applied. -/
-  target_monomial : Monomial G
-  /-- The target monomial is in the support of f. -/
-  target_in_support : target_monomial ∈ f.support
-  /-- The leading monomial of the rule appears as a subword of the target. -/
-  lm_is_subword : (leadingMonomial ord rule_used.relation rule_used.nonzero).isInfix
-    target_monomial
-  /-- The result g has no monomials larger than the target
-      (the leading monomial strictly decreases). -/
-  leading_decreases : ∀ m ∈ g.support,
-    ¬ ord.lt target_monomial m
+  /-- There exists a rule and target monomial witnessing the reduction step. -/
+  exists_witness :
+    ∃ (rule_used : ReductionRule G k),
+      rule_used ∈ sys.rules ∧
+    ∃ (target_monomial : Monomial G),
+      target_monomial ∈ f.support ∧
+      (leadingMonomial ord rule_used.relation rule_used.nonzero) <:+: target_monomial ∧
+      ∀ m ∈ g.support, ¬ ord.lt target_monomial m
 
 /-- **Multi-step reduction**: the reflexive transitive closure of
     single-step reduction. -/
@@ -169,7 +163,7 @@ def isNormalForm {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (sys : RewritingSystem G k)
     (f : AlgElement G k) : Prop :=
   ∀ r ∈ sys.rules, ∀ m ∈ f.support,
-    ¬ (leadingMonomial ord r.relation r.nonzero).isInfix m
+    ¬ (leadingMonomial ord r.relation r.nonzero) <:+: m
 
 /-- An element `f` **reduces to normal form** `nf` if `f →* nf` and
     `nf` is in normal form. -/

@@ -66,7 +66,6 @@ structure KnotEntry where
   identity : QOUIdentity
   /-- Persistent URL to The Knot Atlas wiki page. -/
   atlas_url : String
-  deriving Repr
 
 /-! ## The Registry — Primary Knot Definitions -/
 

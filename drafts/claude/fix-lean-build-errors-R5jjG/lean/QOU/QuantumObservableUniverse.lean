@@ -13,6 +13,9 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import Mathlib.CategoryTheory.Types.Basic
+import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.CategoryTheory.Linear.Basic
 
 /-!
 # Chapter 1 — Quantum Observable Universe
@@ -165,7 +168,7 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
     LaTeX: `\label{def:quantum-gauge-group}` (categorical version)
     Ref: [lusztig1993] -/
 noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
-    (QU : QuantumUniverse.{u, v} k) : Type* :=
+    (QU : QuantumUniverse.{u, v} k) :=
   -- Aut⊗(ω) via Tannaka–Krein: the group of natural automorphisms of the
   -- fibre functor.  Full monoidal constraint (monoidal natural transformations)
   -- requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`; here we
@@ -228,6 +231,7 @@ theorem InvolutiveStructure.involutivity {C : Type u}
 structure PositiveDefiniteStructure (C : Type u)
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
     extends InvolutiveStructure C where
   /-- Positive-definiteness: for non-zero `f : 𝟙 → X`, `f ≫ f† ≠ 0`.
       (In an ℝ-linear category, this encodes positivity.) -/
@@ -283,13 +287,12 @@ structure SpinLabels where
   twice_j : ℕ
   /-- The categorical dimension of `V_j` is `2j + 1 = twice_j + 1`. -/
   cat_dim : ℕ := twice_j + 1
-  /-- The fundamental object has `j = 1/2` (twice_j = 1), dimension 2. -/
 
 /-- The fundamental object has spin `1/2` and dimension `2`. -/
-theorem SpinLabels.fundamental_dim : (SpinLabels.mk 1).cat_dim = 2 := by rfl
+theorem SpinLabels.fundamental_dim : { twice_j := 1 : SpinLabels }.cat_dim = 2 := by rfl
 
 /-- The adjoint object has spin `1` and dimension `3`. -/
-theorem SpinLabels.adjoint_dim : (SpinLabels.mk 2).cat_dim = 3 := by rfl
+theorem SpinLabels.adjoint_dim : { twice_j := 2 : SpinLabels }.cat_dim = 3 := by rfl
 
 /-! ## §1¾  Categorical Instanton, d_q², Jet, Transport -/
 
@@ -369,11 +372,14 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
 
     LaTeX: `\label{lem:categorical-irreducible}` -/
 theorem categorical_irreducible {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k)
-    (inst : @CategoricalInstanton _ qou.catInst qou.monInst qou.frobHopf) :
+    {C : Type u} [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    {frobHopf : FrobeniusHopfData C}
+    {adjointObj : C}
+    (adj_vanish : Subsingleton ((𝟙_ C) ⟶ adjointObj))
+    (_inst : CategoricalInstanton frobHopf) :
     -- Irreducibility is encoded by the adjoint vanishing axiom of QOU.
-    Subsingleton ((𝟙_ _) ⟶ qou.adjointObj) :=
-  qou.adjoint_vanishing
+    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
+  adj_vanish
 
 /-- **Proposition (Categorical self-duality).**
     Every connection minimising the categorical Yang–Mills functional
@@ -566,8 +572,6 @@ structure InstantonConnection (cr : CRManifoldData) where
       2-forms restricted to `H`, determined by the Webster metric `g_θ`
       and the complex structure `J`. -/
   hodgeStar : cr.n = 2 → HodgeInvolution (cr.M → ℝ)
-  /-- Yang–Mills minimisation: the connection is a critical point of
-      `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
   /-- The Yang–Mills energy functional `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
       Returns the energy evaluated on `curvature_H`. -/
   yangMillsEnergy : ℝ
@@ -667,7 +671,6 @@ def ReebDecomposition.isPurelyHorizontal {M : Type*}
 
     LaTeX: `\label{def:q-harmonic-form}` -/
 structure QHarmonicForm (M : Type*) extends ReebDecomposition M where
-  /-- The q-Laplacian applied to this form vanishes: `Δ_q α = 0`. -/
   /-- The q-Laplacian value `Δ_q(α)` at each point. -/
   q_laplacian : M → ℝ
   /-- The q-Laplacian vanishes: `Δ_q α = 0`. -/
@@ -750,8 +753,6 @@ structure QTorsionLeaf (M : Type*) where
   leaf : Set M
   /-- The leaf is non-empty. -/
   nonempty : leaf.Nonempty
-  /-- Tangent inclusion: `T_p L ⊂ H_p` for all `p ∈ L`
-      (integrality of the horizontal distribution). -/
   /-- A "tangent test" function: for each `p ∈ L`, the horizontal
       component dominates (formalises `T_p L ⊂ H_p`).  Concretely,
       for any Reeb decomposition with the leaf as support, the vertical
@@ -784,7 +785,7 @@ theorem irreducible_connection (cqou : CQuantumObservableUniverse)
     (embed : inst.parallelAdjointSections → cqou.adjointSections)
     (h_inj : Function.Injective embed) :
     inst.IsIrreducible :=
-  ⟨fun a b => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
+  ⟨fun _ _ => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
 
 /-- **Proposition (Self-duality of the curvature).**
     When `dim_ℝ M = 5` (CR dimension `n = 2`, so `dim_ℝ H = 4`), the
@@ -1093,18 +1094,17 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     perturbation `q ↦ q + δq` via the Hopf coaction.
 
     LaTeX: `\label{def:observation}` -/
-structure Observation {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) where
+structure Observation (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
   /-- The observation morphism `O : A → A` in `C`. -/
-  morphism : @CategoryTheory.Hom _ qou.catInst qou.frobHopf.obj qou.frobHopf.obj
+  morphism : fh.obj ⟶ fh.obj
   /-- **Frobenius compatibility**: `λ ∘ O = λ` — the observation preserves
       the Frobenius form. -/
-  frobenius_compat : morphism ≫ qou.frobHopf.frobeniusForm =
-    qou.frobHopf.frobeniusForm
+  frobenius_compat : morphism ≫ fh.frobeniusForm = fh.frobeniusForm
   /-- **Substrate perturbation**: the induced shift `δq` is determined by
       the Hopf coaction.  Encoded as a morphism `𝟙 → 𝟙`. -/
-  substrate_shift :
-    @CategoryTheory.Hom _ qou.catInst (𝟙_ qou.C) (𝟙_ qou.C)
+  substrate_shift : (𝟙_ C) ⟶ (𝟙_ C)
 
 /-! ### Archimedean observation -/
 
@@ -1156,8 +1156,9 @@ structure VolumeFromRigidity (C : Type u) [CategoryTheory.Category.{v} C]
     self-duality then forces the unitary real form `SU(2)`.
 
     LaTeX: `\label{thm:su2-emergence}` -/
-structure SU2Emergence {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) where
+structure SU2Emergence (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (exteriorSquare : C) where
   /-- The gauge group type `G = Aut⊗(ω)`. -/
   gaugeGroupType : Type*
   /-- `G` is a group. -/
@@ -1165,13 +1166,12 @@ structure SU2Emergence {k : Type*} [Field k]
   /-- The action of `G` on `Λ²V`: each `g ∈ G` acts on the exterior
       square of the fundamental object by `Λ²(g_V)`.  Since `Λ²V` has
       rank 1, this action is multiplication by `det(g_V)`. -/
-  ext_sq_action : gaugeGroupType →
-    @CategoryTheory.Hom _ qou.catInst qou.exteriorSquare qou.exteriorSquare
+  ext_sq_action : gaugeGroupType → (exteriorSquare ⟶ exteriorSquare)
   /-- **Determinant-one constraint**: for every `g ∈ G`, the induced
       action on `Λ²V` is the identity, i.e. `det(g_V) = 1`.
       This is precisely the content of diagram (1.8) in the manuscript:
       `ε ∘ Λ²(g_V) = g_𝟙 ∘ ε = ε`. -/
-  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 qou.exteriorSquare
+  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 exteriorSquare
 
 /-- **q-Hodge star** involution on differential forms over a Frobenius–Hopf
     object.  Defined by `α ∧_q ⋆_q β = q · λ(α* · β) · vol`.

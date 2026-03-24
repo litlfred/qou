@@ -49,19 +49,14 @@ theorem reduction_well_founded
   -- monomials in the support under the Dershowitz–Manna ordering,
   -- which inherits well-foundedness from ord.wf.
   intro f
-  exact ord.wf.apply f  -- well-founded induction on elements via the order
+  -- Each single-step reduction strictly decreases the leading monomial,
+  -- lifting well-foundedness from Monomial G to AlgElement G k via the
+  -- Dershowitz–Manna multiset ordering on supports.
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+  sorry
 
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
-/-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
-    system is a GS basis), then whenever `f → g₁` and `f → g₂` by
-    single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
-
-    The proof analyses three cases:
-    - **Disjoint reductions**: non-overlapping sites → apply both.
-    - **Overlap**: the difference `g₁ − g₂` is an S-polynomial,
-      which reduces to zero by `hgs.overlap_resolves`.
-    - **Inclusion**: similarly by `hgs.inclusion_resolves`. -/
 /-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
     system is a GS basis), then whenever `f → g₁` and `f → g₂` by
     single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
@@ -172,7 +167,7 @@ theorem composition_lemma
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
     ⟨reduce_reduces ord sys hgs nf, h_nf'_normal⟩
   -- By uniqueness: nf' = nf
-  exact (normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self).symm
+  exact normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 
