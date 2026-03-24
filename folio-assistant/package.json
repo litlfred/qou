@@ -1,0 +1,18 @@
+{
+  "name": "folio-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Content-agnostic assistant platform — MCP server, auth, UI, deploy",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "start:stdio": "bun run src/index.ts --stdio",
+    "start:http": "bun run src/index.ts --http",
+    "check-deps": "bun run src/index.ts --check-deps"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.0"
+  }
+}
