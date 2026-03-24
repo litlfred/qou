@@ -7,7 +7,14 @@ export default proposition({
     validation: "not_checked",
   },
   title: "$q$-Deformed Skein Relation (Observation)",
-  uses: ["rem:skein-decomposition", "def:substrate-parameter", "def:quantum-planck-constant"],
+  uses: [
+    "rem:skein-decomposition",
+    "def:substrate-parameter",
+    "def:quantum-planck-constant",
+    "thm:weight-decomposition-exists",
+    "thm:categorical-reeb-exists",
+    "thm:substrate-parameter-exists",
+  ],
   proofs: ["prf:skein-mass-relation"],
   tags: ["mass", "skein"],
 });

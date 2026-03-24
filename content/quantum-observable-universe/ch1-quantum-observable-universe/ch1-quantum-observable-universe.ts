@@ -51,6 +51,7 @@ export default chapter({
         "maximal-torus",
         "maximal-torus-su2",
         "weight-decomposition",
+        "weight-decomposition-exists",
         "reeb-physical",
       ],
     }),
@@ -82,6 +83,7 @@ export default chapter({
         "spin-labels",
         "spin-labels-su2",
         "categorical-reeb",
+        "categorical-reeb-exists",
         "reeb-su2",
         "projective-line-object",
         "projective-line-su2",
@@ -114,6 +116,7 @@ export default chapter({
       blocks: [
         "quantum-universe-explication",
         "substrate-parameter",
+        "substrate-parameter-exists",
         "quantum-gauge-group",
         "quantum-planck-constant",
         "planck-limits",
