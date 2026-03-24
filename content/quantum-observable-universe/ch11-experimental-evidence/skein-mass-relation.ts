@@ -8,6 +8,7 @@ export default proposition({
   },
   title: "$q$-Deformed Skein Relation (Observation)",
   uses: [
+    "conj:topological-mass-formula",
     "rem:skein-decomposition",
     "def:substrate-parameter",
     "def:quantum-planck-constant",
