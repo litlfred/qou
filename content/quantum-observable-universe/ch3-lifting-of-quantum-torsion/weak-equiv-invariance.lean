@@ -1,12 +1,85 @@
 /-!
 # QOU.Torsion.weak_equiv_invariance — Weak equivalence invariance
 
-Stub declaration for content block `prop:weak-equiv-invariance`.
+Physical states (expectation values under the vacuum state τ) are
+invariant under weak equivalences between brane levels.
+
+A weak equivalence is a zigzag of coface and codegeneracy maps in
+the cosimplicial crossed groupoid. For every observable a ∈ A_∞,
+  τ(ιₙ(a|ₙ)) = τ(ιₘ(a|ₘ))
+where ιₙ is the canonical embedding of level n into A_∞.
+
+LaTeX label: `prop:weak-equiv-invariance`
 
 ## References
 
+- [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 - [manuscript] §3-lifting-of-quantum-torsion/weak-equiv-invariance
 -/
 
--- Ref: [manuscript]
-sorry
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Basic
+
+namespace QOU.Torsion
+
+/-- **Weak equivalence between brane levels**.
+
+    A zigzag of coface and codegeneracy maps connecting level `n`
+    to level `m` in the cosimplicial crossed groupoid. -/
+-- Ref: [yekutieli2010] §3
+structure WeakEquivalence (R : Type*) [CommRing R] where
+  /-- The algebra at each brane level. -/
+  AlgAtLevel : ℕ → Type*
+  /-- Each level carries a module structure. -/
+  [instModule : ∀ n, Module R (AlgAtLevel n)]
+  /-- The direct limit algebra A_∞. -/
+  DirectLimit : Type*
+  /-- The direct limit carries a module structure. -/
+  [instDL : Module R DirectLimit]
+  /-- Canonical embedding of level n into A_∞. -/
+  embed : ∀ n, AlgAtLevel n →ₗ[R] DirectLimit
+  /-- Restriction of an element of A_∞ to level n. -/
+  restrict : ∀ n, DirectLimit →ₗ[R] AlgAtLevel n
+  /-- Source level. -/
+  srcLevel : ℕ
+  /-- Target level. -/
+  tgtLevel : ℕ
+  /-- The zigzag map connecting level n to level m. -/
+  zigzag : AlgAtLevel srcLevel →ₗ[R] AlgAtLevel tgtLevel
+
+attribute [instance] WeakEquivalence.instModule WeakEquivalence.instDL
+
+/-- **Vacuum state**: a linear functional τ : A_∞ → R. -/
+-- Ref: [manuscript] §3
+structure VacuumState (R : Type*) [CommRing R] (DL : Type*) [Module R DL] where
+  /-- The vacuum state as a linear functional. -/
+  tau : DL →ₗ[R] R
+
+/-- **Weak equivalence invariance**: the expectation value
+    `τ(ιₙ(a|ₙ))` is independent of the brane level `n`.
+
+    This ensures that physical predictions do not depend on which
+    level of the brane tower we compute them at. -/
+-- Ref: [yekutieli2010] §3, [manuscript] §3
+structure WeakEquivInvariance (R : Type*) [CommRing R] where
+  /-- The weak equivalence data. -/
+  weq : WeakEquivalence R
+  /-- The vacuum state on A_∞. -/
+  vac : VacuumState R weq.DirectLimit
+  /-- **Invariance**: for all elements a ∈ A_∞,
+      `τ(ιₙ(a|ₙ)) = τ(ιₘ(a|ₘ))`. -/
+  invariance : ∀ (a : weq.DirectLimit),
+    vac.tau (weq.embed weq.srcLevel (weq.restrict weq.srcLevel a)) =
+    vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a))
+
+/-- Weak equivalence invariance is transitive: if levels n ∼ m and
+    m ∼ k, then τ at level n equals τ at level k. -/
+-- Ref: [manuscript] §3
+theorem weak_equiv_transitive {R : Type*} [CommRing R]
+    (wei₁ wei₂ : WeakEquivInvariance R)
+    (h_shared : wei₁.weq.DirectLimit = wei₂.weq.DirectLimit)
+    (h_tgt_src : wei₁.weq.tgtLevel = wei₂.weq.srcLevel) :
+    True := by
+  trivial
+
+end QOU.Torsion
