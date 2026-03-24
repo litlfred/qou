@@ -847,10 +847,12 @@
     .dep-edge.lean-complete{stroke:var(--grn)}
     .dep-edge.lean-incomplete{stroke:var(--ora);stroke-dasharray:6 3}
     .dep-edge.lean-none{stroke:var(--fg-d);stroke-dasharray:3 3;opacity:.4}
+    .dep-edge.lean-trivial{stroke:var(--fg-d);opacity:.3}
     .dep-arrowhead-narrative{fill:var(--ac)}
     .dep-arrowhead-lean-complete{fill:var(--grn)}
     .dep-arrowhead-lean-incomplete{fill:var(--ora)}
     .dep-arrowhead-lean-none{fill:var(--fg-d);opacity:.4}
+    .dep-arrowhead-lean-trivial{fill:var(--fg-d);opacity:.3}
     /* Legend */
     .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
     .dep-legend-item{display:flex;align-items:center;gap:.3rem}
@@ -1795,7 +1797,12 @@
       const fromLean = from.lean || from.proofs?.some(pl => bix.get(pl)?.lean);
       let leanStatus = 'lean-none';
       if (fromLean && to.lean) {
-        leanStatus = (DEP_OK.has(from.lean?.validation) || DEP_OK.has(from.status)) ? 'lean-complete' : 'lean-incomplete';
+        // Definition → definition edges are tautological (definitional dependency)
+        if (from.kind === 'definition' && to.kind === 'definition') {
+          leanStatus = 'lean-trivial';
+        } else {
+          leanStatus = (DEP_OK.has(from.lean?.validation) || DEP_OK.has(from.status)) ? 'lean-complete' : 'lean-incomplete';
+        }
       }
       return { hasNarrative, leanStatus };
     }
@@ -1898,7 +1905,7 @@
     }
 
     function buildDepArrowheads(defs) {
-      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none']) {
+      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none','lean-trivial']) {
         const marker = document.createElementNS(DEP_NS, 'marker');
         marker.setAttribute('id', `ah-${type}`);
         marker.setAttribute('markerWidth', '8'); marker.setAttribute('markerHeight', '6');
