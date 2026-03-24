@@ -3,20 +3,20 @@ compute the [mass identity](#def:mass-identity) for
 $G = \mathrm{SU}(2)$.
 
 **Setup.** Take $A = \mathcal{O}(\mathrm{SU}(2))$ with Frobenius form
-$\lambda = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
+$\int_A = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
 normalised Haar measure. The comultiplication is
 $\Delta(f)(x, y) = f(xy)$, and the categorical trace is
-$\operatorname{tr}(\phi) = (\lambda \otimes \mathrm{id}) \circ \Delta \circ \phi$.
+$\operatorname{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 
 **The mass formula.** For a cycle $\gamma \in A$, the
 [mass identity](#def:mass-identity) gives
 $$
   m(\gamma)
-  \;=\; \bigl\lVert \operatorname{tr}\bigl((\lambda \otimes \mathrm{id})
+  \;=\; \bigl\lVert \operatorname{tr}\bigl((\int_A \otimes \mathrm{id})
   \circ \Delta \circ \gamma\bigr) \bigr\rVert.
 $$
 Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to
-$(\lambda \otimes \mathrm{id})(\Delta(\gamma)) = \int_{\mathrm{SU}(2)} \gamma(xy)\, d\mu(x)$,
+$(\int_A \otimes \mathrm{id})(\Delta(\gamma)) = \int_{\mathrm{SU}(2)} \gamma(xy)\, d\mu(x)$,
 which is the convolution of $\gamma$ with the Haar measure.
 
 **Fundamental representation.** For the spin-$\tfrac{1}{2}$

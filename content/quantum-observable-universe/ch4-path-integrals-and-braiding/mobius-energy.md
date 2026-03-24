@@ -14,7 +14,7 @@ Define the *categorical Möbius energy* by
 $$
   E_{\mathrm{cat}}(\gamma)
   \;=\;
-  \lambda \circ \mathrm{tr}_A \!\iint_{S^1 \times S^1 \setminus \mathrm{diag}}
+  \int_A \!\circ\, \mathrm{tr}_A \!\iint_{S^1 \times S^1 \setminus \mathrm{diag}}
   \!\!\Bigl(
     \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
   \Bigr)
@@ -25,7 +25,7 @@ $$
   ds\, dt\,,
 $$
 
-where $\Delta$ is the Hopf comultiplication, $\lambda$ is the
+where $\Delta$ is the Hopf comultiplication, $\int_A$ is the
 Frobenius form ([Remark](#rem:frobenius-simplification)), and the
 integration excludes the diagonal $\mathrm{diag} \subset S^1 \times S^1$.
 

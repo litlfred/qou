@@ -23,10 +23,10 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Comultiplication* $\Delta(f)(x, y)$ | $f(xy)$ | pullback of group multiplication |
 | *Counit* $\varepsilon(f)$ | $f(e)$ | evaluation at the identity |
 | *Antipode* $S(f)(x)$ | $f(x^{-1})$ | pullback of inversion |
-| *Frobenius form* $\lambda(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
+| *Frobenius form* $\int_A(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
 The [Frobenius pairing](#def:frobenius-pairing)
-$\langle f, g \rangle = \lambda(\mu(f \otimes g)) = \int_G f g\, d\mu$
+$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f g\, d\mu$
 is positive definite (faithfulness of the Haar integral).
 
 **(iii) Fibre functor.**

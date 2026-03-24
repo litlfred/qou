@@ -1,5 +1,5 @@
 
-The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \lambda \circ
+The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \int_A \circ
 \mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
 Under this identification, the quotient $\mathbb{P}(V) = G/T$ embeds
 in $\mathrm{Ad}(A)$ via the orbit map $gT \mapsto \mathrm{Ad}(g)(h)$ for a
@@ -11,4 +11,4 @@ sub-object, the quotient $G/T$ is recovered as its stabiliser quotient. Item
 a $G$-fixed point in $\mathrm{Ad}(A)$, but the coadjoint orbit
 $\mathbb{P}(V)$ is a homogeneous space with no fixed points (the $T$-action
 on $\mathbb{P}(V)$ is free away from the poles, and non-degeneracy of
-$\lambda$ excludes the degenerate case).
+$\int_A$ excludes the degenerate case).

@@ -15,7 +15,7 @@ involutive structure built from the antipode:
   these inner products is automatically equivariant, so
   $f^{\dagger}$ is again a morphism in $\mathcal{C}$.
 - *On the algebra.* On $A = \mathcal{O}(\mathrm{SU}(2))$,
-  $f^{\dagger} = \lambda \circ \mu(S(f) \otimes -)$, where
+  $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$, where
   $S(f)(g) = f(g^{-1})$ is the antipode. The involution
   $f \mapsto f^{\dagger}$ is complex conjugation composed with
   pullback by inversion: $f^{\dagger}(g) = \overline{f(g^{-1})}$.

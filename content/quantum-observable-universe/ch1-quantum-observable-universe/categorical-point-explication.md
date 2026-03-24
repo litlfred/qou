@@ -20,6 +20,6 @@ evaluation at $p \in M$:
 
 The *augmentation ideal* at $p$ is
 $\mathfrak{m}_p = \ker(p^* \colon A \to \mathbf{1})$, where
-$p^* = \lambda \circ \mu(p \otimes -)$.  The *germ* of $A$
+$p^* = \int_A \circ \mu(p \otimes -)$.  The *germ* of $A$
 at $p$ is the quotient $A / \mathfrak{m}_p^2$, which captures the
 first-order behaviour of $A$ near $p$.

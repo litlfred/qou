@@ -12,7 +12,7 @@ triple $(\mathcal{C}, A, \tau)$ where:
    \[
    \begin{tikzcd}[row sep=1.5em, column sep=2.5em]
      A \otimes A \ar[r, "\mu"]
-     & A \ar[r, "\lambda"]
+     & A \ar[r, "\int_A"]
      & \mathbf{1}
      & {\scriptstyle\text{(multiplication, Frobenius form)}}
      \\
@@ -31,13 +31,13 @@ triple $(\mathcal{C}, A, \tau)$ where:
 
    — multiplication $\mu$, unit $\eta$, comultiplication $\Delta$,
    counit $\varepsilon$, antipode $S$, and Frobenius
-   form $\lambda$ — satisfying:
+   form $\int_A$ — satisfying:
 
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathcal{C}$;
 
    **(F)** the [Frobenius pairing](#def:frobenius-pairing)
-   $\lambda \circ \mu \colon A \otimes A \to \mathbf{1}$ is
+   $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{\;\sim\;} A^{\vee}$;
 

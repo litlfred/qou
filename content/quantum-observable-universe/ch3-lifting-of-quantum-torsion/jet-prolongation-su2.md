@@ -33,7 +33,7 @@ The counit and antipode extend similarly:
 $\varepsilon'(f \otimes \theta) = f(e)\,\theta_e$ and
 $S'(f \otimes \theta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\theta$.
 The Frobenius form is
-$\lambda'(f \otimes \theta) = \int_G f\,\theta$, integrating the
+$\int_{J^1 A}(f \otimes \theta) = \int_G f\,\theta$, integrating the
 $1$-form component over $G$ using the Haar measure.
 
 **QOU structure.** The induced fibre functor is

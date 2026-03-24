@@ -8,20 +8,20 @@ The *categorical action* is the $R$-valued functional
 
 ```tex
 \begin{equation}\label{eq:categorical-action}
-  \mathcal{S}_q[\nabla,\, \lambda,\, \psi]
+  \mathcal{S}_q[\nabla,\, \textstyle\int_A,\, \psi]
   \;=\;
   \underbrace{%
-    \mathrm{tr}\bigl(q \cdot R_\lambda\bigr)
+    \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)
   }_{\text{gravity}}
   \;+\;
   \underbrace{%
-    \lambda \circ \mathrm{tr}_A\bigl(
+    \int_A \!\circ\, \mathrm{tr}_A\bigl(
       F_\nabla \wedge_q \star_q F_\nabla
     \bigr)
   }_{\text{gauge}}
   \;+\;
   \underbrace{%
-    \lambda\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
+    \int_A\!\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
   }_{\text{matter}},
 \end{equation}
 ```

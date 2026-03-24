@@ -7,7 +7,7 @@ exhibits two simultaneous regimes:
   maximal uncertainty $[\hat{X},\hat{P}]_q \to J$.
   All observables become maximally non-commutative; the
   Frobenius form degenerates as
-  $\lambda(f^* f) \sim q^{-1} \to 0$.
+  $\int_A(f^* f) \sim q^{-1} \to 0$.
   This is the *"big bang" regime*: the quantum observable
   universe becomes fully quantum-mechanical, with no classical
   shadow.
@@ -24,7 +24,7 @@ exhibits two simultaneous regimes:
 At both limits the QOU structure *degenerates*:
 
 - At $q \to \infty$: the [Frobenius pairing](#def:frobenius-pairing)
-  $\langle f, g \rangle = \lambda(fg)$ loses non-degeneracy
+  $\langle f, g \rangle = \int_A(fg)$ loses non-degeneracy
   (axiom (1) of [quantum observable universe](#def:quantum-observable-universe)
   fails), so the QOU ceases to be observable.
 

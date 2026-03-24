@@ -38,15 +38,15 @@ $$
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
-    (\lambda \otimes \mathrm{id})
+    (\int_A \otimes \mathrm{id})
     \circ \Delta
     \circ \gamma
   \bigr)
   \,\bigr\rVert,
 $$
-where $\lambda$ is the Frobenius form and $\Delta$ the comultiplication.
+where $\int_A$ is the Frobenius form and $\Delta$ the comultiplication.
 This is a *finite* expression: $A$ is a finite-dimensional
-Frobenius--Hopf object, $\Delta$ and $\lambda$ are morphisms in the
+Frobenius--Hopf object, $\Delta$ and $\int_A$ are morphisms in the
 category, and the trace is the categorical trace of a rigid monoidal
 category.  No regularisation is required because the sum is over the
 finitely many irreducible summands of $V^{\otimes n}$, not over a

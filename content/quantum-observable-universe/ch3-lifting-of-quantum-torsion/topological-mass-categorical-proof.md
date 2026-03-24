@@ -6,13 +6,13 @@ $$
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
-    (\lambda \otimes \mathrm{id})
+    (\int_A \otimes \mathrm{id})
     \circ \Delta
     \circ \gamma
   \bigr)
   \,\bigr\rVert.
 $$
-The integrand $\alpha = (\lambda \otimes \mathrm{id}) \circ \Delta
+The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta
 \circ \gamma$ is an element of $\mathrm{End}_{\mathcal{C}}(A_{n+1})$.
 The descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)) decomposes this algebra
@@ -65,7 +65,7 @@ $$
   \;=\;
   \mathrm{tr}_n(\alpha_0),
 $$
-where $\alpha_0 = (\lambda \otimes \mathrm{id}) \circ \Delta
+where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta
 \circ \gamma_0$ is the mass integrand of the base-level cycle.  Hence
 $\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = m(\gamma_0)$.
 

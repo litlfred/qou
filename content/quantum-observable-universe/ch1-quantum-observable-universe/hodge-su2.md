@@ -2,7 +2,7 @@ Continuing [higher forms on SU(2)](#ex:higher-forms-su2), the Hodge star on
 $A = \mathcal{O}(\mathrm{SU}(2))$ acts on the $3D$-calculus
 $\Omega^{\bullet}(A)$ as follows. The volume form is
 $\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$
-(normalised by $\lambda(\mathrm{vol}) = 1$). Then:
+(normalised by $\int_A(\mathrm{vol}) = 1$). Then:
 
 - $\star 1 = \mathrm{vol}$,
   $\star\mathrm{vol} = 1$.
