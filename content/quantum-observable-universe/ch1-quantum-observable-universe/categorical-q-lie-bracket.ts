@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.CategoricalQLieBracket",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:categorical-reeb",
     "def:substrate-parameter",

@@ -65,16 +65,7 @@ block, with severity (error / warning / info).
 | No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
 | No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
 
-### 5. Status accuracy
-
-| Check | Severity | Rule |
-|-------|----------|------|
-| `status: "proved"` but `.lean` contains `sorry` | **error** | Status lies about completion |
-| `status: "not_started"` but `.lean` exists with content | **warning** | Status is stale |
-| `status: "has_sorry"` but `.lean` has no `sorry` | **warning** | Status should be `proved` |
-| `status: "stated"` but proof body is not just `sorry` | **info** | May need promotion to `has_sorry` or `proved` |
-
-### 6. Markdown content quality
+### 5. Markdown content quality
 
 | Check | Severity | Rule |
 |-------|----------|------|

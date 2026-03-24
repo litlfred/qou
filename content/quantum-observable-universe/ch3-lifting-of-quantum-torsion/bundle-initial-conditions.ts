@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.BundleInitialConditions",
     validation: "not_checked",
   },
-  status: "has_sorry",
   uses: [
     "def:localized-knot",
     "def:hadron",

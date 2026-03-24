@@ -357,7 +357,7 @@ LaTeX. Every formalizable block is defined by three sibling files:
 
 ```
 content/<paper>/<chapter>/
-  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[], status
+  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[]
   <block-name>.md    ← Narrative (markdown + TeX snippets)
   <block-name>.lean  ← Lean formalization (when required by kind)
 ```
@@ -373,12 +373,11 @@ content/<paper>/<chapter>/
 
 ### Workflow with content objects
 
-1. **Read the `.ts` manifest** to get `lean.decl`, `uses[]`, and `status`
+1. **Read the `.ts` manifest** to get `lean.decl` and `uses[]`
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
-4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed,
-   update `status` to reflect formalization progress
+4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
 

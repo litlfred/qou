@@ -3,7 +3,6 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:braid-twist-flip",
   lean: { decl: "QOU.BraidTwistFlip" },
-  status: "stated",
   title: "Braid involutions: twist and flip",
   tags: ["braid-group", "involution", "klein-four"],
   uses: [],

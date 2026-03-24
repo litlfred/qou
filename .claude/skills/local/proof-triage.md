@@ -375,10 +375,9 @@ manifests to order the work list: blocks depended on by many others should
 be resolved first. This replaces or supplements the DAG built from Lean
 imports in Phase 2.
 
-**Source of truth.** Content object `.ts` manifests carry a `status` field
-(`not_started` | `stated` | `has_sorry` | `proved`). After resolving a
-sorry, update the `.ts` status — `proof-objects.json` is derived from
-content objects, not the other way around.
+**Source of truth.** Formalization status is derived at build time from
+`.lean` file content and Lean build output, then written to
+`proof-objects.json`. It is not stored in `.ts` manifests.
 
 ## Checklist
 

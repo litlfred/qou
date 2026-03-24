@@ -204,6 +204,11 @@ export interface Companions {
 
 // ── Formalization constraints ────────────────────────────────────
 
+/**
+ * Formalization status — derived at build time from .lean file content.
+ * NOT stored in content block .ts manifests.
+ * Used only by CI scripts and proof-objects.json.
+ */
 export type FormalizationStatus =
   | "not_started"
   | "stated"
@@ -259,7 +264,6 @@ export interface DefinitionBlock extends BlockBase {
   kind: "definition";
   /** Required: every definition must be formalized. */
   lean: LeanRef;
-  status: FormalizationStatus;
   /** Labels of example blocks illustrating this definition. */
   examples?: string[];
 }
@@ -331,8 +335,6 @@ export interface ProofBlock extends BlockBase {
   kind: "proof";
   /** Optional Lean formalization of the proof. */
   lean?: LeanRef;
-  /** Formalization progress for this proof. */
-  status?: FormalizationStatus;
 }
 
 // ── Prose (non-environment content) ──────────────────────────────

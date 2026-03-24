@@ -262,7 +262,7 @@ Before completing an import:
 - [ ] `meta.source` populated on every imported block
 - [ ] BibTeX entry exists in `references.bib` (or suggested to user)
 - [ ] Any `.lean` files have `sorry` with `-- Ref:` citations
-- [ ] `.ts` status fields reflect reality (`not_started` or `stated`)
+- [ ] `.ts` manifests have `lean.decl` set for definition blocks
 - [ ] Todo suggestions presented to user (NOT auto-created)
 - [ ] Chapter manifest references all blocks in order
 - [ ] Paper manifest added to `content/folio.ts` (or existing paper updated)

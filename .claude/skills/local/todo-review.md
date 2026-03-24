@@ -155,8 +155,7 @@ initial set by scanning for issues:
 | Missing `.lean` files | Definitions without Lean | medium |
 | Missing `.md` files | Blocks without narrative | medium |
 | `sorry` in Lean files | `grep sorry lean/` | medium |
-| Lean `not_started` status | `.ts` manifests with `status: "not_started"` | low |
-| Lean `stated` status | `.ts` manifests with `status: "stated"` | low |
+| Missing `.lean` siblings | Definitions without `.lean` files | low |
 
 ### Seeding workflow
 

@@ -7,7 +7,6 @@ export default definition({
     decl: "QOU.ProjectiveLineObject",
     validation: "not_checked",
   },
-  status: "stated",
   uses: ["def:quantum-observable-universe", "def:maximal-torus"],
   examples: ["ex:projective-line-su2"],
   tags: ["projective-line"],

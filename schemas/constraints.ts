@@ -96,7 +96,6 @@ export const DefinitionSchema = BlockBaseSchema.extend({
   kind: z.literal("definition"),
   label: labelForKind("definition"),
   lean: LeanRefSchema,
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]),
   examples: z.array(z.string()).optional(),
 });
 
@@ -147,7 +146,6 @@ export const ProofSchema = BlockBaseSchema.extend({
   kind: z.literal("proof"),
   label: labelForKind("proof"),
   lean: LeanRefSchema.optional(),
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
 });
 
 export const ProseSchema = z.object({

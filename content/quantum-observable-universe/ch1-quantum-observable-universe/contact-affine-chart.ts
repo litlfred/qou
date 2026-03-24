@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.ContactAffineChart",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:projective-line-object",
     "ex:reeb-decomposition",

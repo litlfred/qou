@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.RigidMonoidalCategory",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [],
   examples: ["ex:rigid-monoidal-vect"],
   rendered: [
