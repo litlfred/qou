@@ -186,6 +186,70 @@ lean/
 
 ## Proven Patterns
 
+### Existence Constructors for Structure Definitions
+
+Every `structure` definition must have at least one **existence constructor**
+— a `def` or `noncomputable def` that builds an instance of the structure
+from its prerequisites. Without this, downstream theorems depend on
+structures that may be vacuously satisfiable.
+
+**Pattern**: The constructor takes upstream structures as parameters and
+returns the target structure. The type signature makes the dependency
+chain explicit — the type checker enforces it.
+
+```lean
+-- Definition: declares WHAT the structure looks like
+structure WeightDecomposition (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] [Preadditive C] where
+  forms : C
+  proj_H : forms ⟶ forms
+  proj_V : forms ⟶ forms
+  complementary : proj_H + proj_V = 𝟙 forms
+  ...
+
+-- Existence constructor: proves THAT it can be built
+noncomputable def WeightDecomposition.ofMaximalTorus
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [Preadditive C]
+    (mt : MaximalTorus C) (forms : C) : WeightDecomposition C :=
+  { forms := forms
+    proj_H := sorry  -- Ref: [lusztig1993] ...
+    proj_V := sorry  -- Ref: [lusztig1993] ...
+    complementary := sorry  -- Ref: [lusztig1993] ...
+    ... }
+```
+
+**Naming convention**: `StructureName.ofPrerequisite` (e.g.,
+`CategoricalReeb.ofWeightDecomposition`,
+`SubstrateParameter.ofReebDecomposition`).
+
+**When to use each variant**:
+
+| Situation | Pattern | Example |
+|-----------|---------|---------|
+| Concrete construction (no sorry) | Direct `def` | `SubstrateParameter.ofConstant q₀ hq_pos hq_ge hq_root` |
+| Construction from upstream structures | `noncomputable def` with sorry | `CategoricalReeb.ofWeightDecomposition mt wd` |
+| Canonical/unique choice | `instance : Inhabited T` | `instance : Inhabited (SubstrateParameter ℝ)` |
+| Auto-resolved by typeclass | `class` + `instance` | `class HasSubstrateParameter M` |
+
+**Content object requirements**: Each existence constructor gets its own
+content block triple (`.ts` + `.md` + `.lean`):
+- Block kind: `theorem` (label: `thm:<name>-exists`)
+- `uses[]`: must list the definition it constructs AND all prerequisite definitions
+- `.lean`: the constructor function, with sorry-annotated fields citing references
+
+**Dependency graph rule**: If definition B's `.lean` `structure` takes a
+parameter of type A (another project structure), there MUST exist a
+`thm:<b>-exists` block whose `uses[]` includes both `def:a` and `def:b`.
+This creates the existence edge in the dependency graph. Without it,
+the graph shows B floating without connection to A.
+
+**Checklist for every `structure` definition**:
+- [ ] At least one `.ofFoo` constructor exists in a sibling `.lean` file
+- [ ] A `thm:*-exists` content block triple references it
+- [ ] The constructor's parameters include all upstream structures
+- [ ] Each `sorry` in the constructor has a `-- Ref:` annotation
+- [ ] The chapter manifest places the existence theorem after the definition
+
 ### Subsingleton as Categorical Vanishing
 
 Use `Subsingleton` to model vanishing conditions (e.g., `H⁰(M, Ad(P)) = 0`)
