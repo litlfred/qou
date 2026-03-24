@@ -243,7 +243,7 @@ V^{\vee} \otimes \mathbf{1}
 
 *\| Operation \| Formula \| Meaning \| \|———–\|———\|———\| \| *Multiplication* $\mu(f \otimes g)$ \| $f \cdot g$ \| pointwise product of functions \| \| *Unit* $\eta(1)$ \| $1_A$ \| constant function $1$ \| \| *Comultiplication* $\Delta(f)(x, y)$ \| $f(xy)$ \| pullback of group multiplication \| \| *Counit* $\varepsilon(f)$ \| $f(e)$ \| evaluation at the identity \| \| *Antipode* $S(f)(x)$ \| $f(x^{-1})$ \| pullback of inversion \| \| *Frobenius form* $\int_A(f)$ \| $\int_G f\, d\mu$ \| Haar integration on $G$ \|*
 
-*The [Frobenius pairing](#def:frobenius-pairing) $\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f g\, d\mu$ is positive definite (faithfulness of the Haar integral).*
+*The [Frobenius pairing](#def:frobenius-pairing) $\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x)\, g(x)\, d\mu_{\mathrm{Haar}}(x)$ is positive definite (faithfulness of the Haar integral).*
 
 ***(iii) Fibre functor.** $\tau \colon \mathrm{Rep}(\mathrm{SU}(2)) \to
 \mathrm{Vect}_{\mathbb{C}}$ is the forgetful functor: $\tau(V, \rho)
@@ -3690,7 +3690,7 @@ The Skein relation itself is the mass-functional analogue of the Kauffman bracke
 
 *$$\begin{array}{|l|l|l|l|}
 \hline
-\textbf{Structure} & \textbf{Topological Formula} & \textbf{QOU Result (MeV)} & \textbf{CODATA (MeV)} \\ \hline
+\text{\textbf{Structure}} & \text{\textbf{Topological Formula}} & \text{\textbf{QOU Result (MeV)}} & \text{\textbf{CODATA (MeV)}} \\ \hline
 \text{Proton } (m_p) & Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{uud} & 938.272 & 938.272 \\ \hline
 \text{Neutron } (m_n) & Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{udd} & 939.565 & 939.565 \\ \hline
 \text{Deuteron } (m_D) & \mathcal{M}(L_6) - \text{Binding} & 1875.613 & 1875.613 \\ \hline
@@ -3727,8 +3727,8 @@ $$m_N
 $$\renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|l|c|}
 \hline
-\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
-  & \textbf{Value (MeV)} \\ \hline
+\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
+  & \text{\textbf{Value (MeV)}} \\ \hline
 \text{I}   & (u_1,\, u_2) &
   \displaystyle \mathcal{S}_{uu}
   = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
@@ -3741,7 +3741,7 @@ $$\renewcommand{\arraystretch}{1.3}
   \displaystyle \mathcal{S}_{ud}
   = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
   & 312.97 \\ \hline
-\multicolumn{3}{|r|}{\textbf{Total:}\quad
+\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
   m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
   & \mathbf{938.272} \\ \hline
 \end{array}$$
@@ -3751,8 +3751,8 @@ $$\renewcommand{\arraystretch}{1.3}
 $$\renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|l|c|}
 \hline
-\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
-  & \textbf{Value (MeV)} \\ \hline
+\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
+  & \text{\textbf{Value (MeV)}} \\ \hline
 \text{I}   & (u,\, d_1) &
   \displaystyle \mathcal{S}_{ud}
   = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
@@ -3765,7 +3765,7 @@ $$\renewcommand{\arraystretch}{1.3}
   \displaystyle \mathcal{S}_{dd}
   = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
   & 313.65 \\ \hline
-\multicolumn{3}{|r|}{\textbf{Total:}\quad
+\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
   m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
   & \mathbf{939.565} \\ \hline
 \end{array}$$

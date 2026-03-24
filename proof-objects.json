@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-24T18:54:13.157911+00:00",
+    "generated_at": "2026-03-24T19:54:10.562794+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -2727,7 +2727,11 @@
       },
       "formalization_status": "stated",
       "uses": [
-        "prop:skein-mass-relation"
+        "prop:skein-mass-relation",
+        "def:mass-identity",
+        "thm:topological-mass",
+        "cor:mass-identity-C",
+        "conj:topological-mass-formula"
       ]
     },
     {
@@ -4355,6 +4359,26 @@
     {
       "from": "prop:terminal-resolution",
       "to": "prop:skein-mass-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "def:mass-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "thm:topological-mass",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "cor:mass-identity-C",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "conj:topological-mass-formula",
       "relation": "uses"
     },
     {

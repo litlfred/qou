@@ -470,6 +470,10 @@ digraph ProofDependencies {
   def_substrate_parameter -> prop_skein_mass_relation [color="#555555" style="solid"];
   def_quantum_planck_constant -> prop_skein_mass_relation [color="#555555" style="solid"];
   prop_skein_mass_relation -> prop_terminal_resolution [color="#555555" style="solid"];
+  def_mass_identity -> prop_terminal_resolution [color="#555555" style="solid"];
+  thm_topological_mass -> prop_terminal_resolution [color="#555555" style="solid"];
+  cor_mass_identity_C -> prop_terminal_resolution [color="#555555" style="solid"];
+  conj_topological_mass_formula -> prop_terminal_resolution [color="#555555" style="solid"];
   def_substrate_parameter -> prop_local_substrate_q [color="#555555" style="solid"];
   prop_skein_mass_relation -> prop_local_substrate_q [color="#555555" style="solid"];
   prop_terminal_resolution -> prop_local_substrate_q [color="#555555" style="solid"];
