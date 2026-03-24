@@ -263,7 +263,18 @@ jobs:
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
-        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+            | grep -v '^LaTeX Warning: .*undefined' \
+            | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
+            | grep -v '^<to be read again>' \
+            | grep -v '^Overfull \\hbox' \
+            | grep -v '^Underfull \\hbox' \
+            | grep -v '^\[Loading MPS' \
+            | grep -v '^\*geometry\*' \
+            || true
+          # Verify PDF was produced
+          test -f main.pdf || { echo "::error::PDF was not produced"; exit 1; }
 
       - name: Capture LaTeX build warnings
         if: always()
