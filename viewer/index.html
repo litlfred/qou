@@ -917,6 +917,7 @@
       <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include examples in print"><input type="checkbox" id="dep-inc-ex" style="margin:0"> examples</label>
       <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include remarks in print"><input type="checkbox" id="dep-inc-rm" style="margin:0"> remarks</label>
       <button id="dep-print-btn" title="Print preview: paper with just these dependencies">print</button>
+      <a class="dep-link" id="dep-preview-link" title="Open addressable preview page" style="font-size:.6rem">preview</a>
       <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
       <button id="dep-close">&times; close</button>
     </div>
@@ -1837,17 +1838,23 @@
       }
       win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>`);
       win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>`);
+      const macrosJson = JSON.stringify(katexMacros);
       win.document.write(`<script>
         document.addEventListener('DOMContentLoaded', function() {
+          var macros = ${macrosJson};
           renderMathInElement(document.body, {
             delimiters: [
               {left: '\\\\(', right: '\\\\)', display: false},
               {left: '\\\\[', right: '\\\\]', display: true}
             ],
-            throwOnError: false
+            throwOnError: false,
+            macros: macros
           });
           document.querySelectorAll('[data-md]').forEach(el => {
-            try { katex.render(el.textContent, el, {displayMode: true, throwOnError: false}); } catch {}
+            try { katex.render(el.textContent, el, {displayMode: true, throwOnError: false, macros: macros}); } catch {}
+          });
+          document.querySelectorAll('[data-mi]').forEach(el => {
+            try { katex.render(el.textContent, el, {throwOnError: false, macros: macros}); } catch {}
           });
         });
       <\/script>`);
@@ -2241,6 +2248,8 @@
       renderMath(depTitle);
       depSubtitle.textContent = rootLabel;
       depLink.href = `#/viz/${hashWithBranch(rootLabel)}`;
+      const depPreviewLink = document.getElementById('dep-preview-link');
+      if (depPreviewLink) depPreviewLink.href = `#/preview-dep-graph/${hashWithBranch(rootLabel)}`;
       depCloseRhs();
       renderDepGraphImpl(nodes, edges, externals, rootLabel);
     }
@@ -4370,6 +4379,171 @@
       document.getElementById('toplet').textContent = 'Folio';
     }
 
+    // ── Preview route helpers ────────────────────────────
+
+    /** Ensure paper data is loaded (bix + usedByIndex) without rendering the full paper. */
+    async function ensurePaperIndex() {
+      if (paper) return;
+      try {
+        const r = await fetch(`/api/folio?_=1${branchParam()}`);
+        const data = r.ok ? await r.json() : null;
+        const id = data?.papers?.[0]?.id || 'quantum-observable-universe';
+        const pr = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+        if (pr.ok) {
+          const p = await pr.json();
+          paper = p;
+          katexMacros = buildKatexMacros(p.macros);
+          bix.clear(); usedByIndex.clear();
+          for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+            if (b.label) bix.set(b.label, b);
+            if (b.uses) for (const dep of b.uses) {
+              if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+              usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+            }
+          }
+        }
+      } catch {}
+    }
+
+    /** Shared CSS for inline preview pages. */
+    const PREVIEW_CSS = `
+      .pv-wrap{max-width:800px;margin:2rem auto;padding:0 2rem;line-height:1.6;font-family:var(--f-body);color:var(--fg)}
+      .pv-bar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;font-family:var(--f-head);font-size:.8rem}
+      .pv-bar a{color:var(--ac);text-decoration:none}
+      .pv-bar button{font-size:.7rem;padding:.25rem .6rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg-s);color:var(--fg);cursor:pointer}
+      .pv-title{font-family:var(--f-head);font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+      .pv-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+      .pv-blk{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--brd)}
+      .pv-blk:last-child{border-bottom:none}
+      .pv-bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+      .pv-bt{font-family:var(--f-head);font-weight:600}
+      .pv-bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+      .pv-bb{margin-top:.5rem}
+      .pv-bb .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+      .pv-bb .txb img,.pv-bb .txb svg{max-width:100%;height:auto}
+      .pv-bb .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+      .pv-bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+      .pv-bb th,.pv-bb td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+      .pv-bb th{background:var(--bg-s);font-weight:600}
+      .pv-qed{text-align:right;font-size:.8rem}
+      .pv-qed::after{content:'\\25A1'}
+      @media print{.pv-wrap{max-width:100%;margin:0;padding:1cm}.pv-bar{display:none}}
+    `;
+
+    /** Collect blocks for a dependency chain in topological order. */
+    function collectDepChainBlocks(rootLabel, opts) {
+      const { nodes, edges } = buildDepGraph(rootLabel);
+      const adj = new Map(), indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
+      }
+      const queue = [], sorted = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift(); sorted.push(l);
+        for (const n of (adj.get(l) || [])) { indeg.set(n, indeg.get(n) - 1); if (indeg.get(n) === 0) queue.push(n); }
+      }
+      sorted.reverse();
+      const skipKinds = new Set();
+      if (!opts?.includeExamples) skipKinds.add('example');
+      if (!opts?.includeRemarks) skipKinds.add('remark');
+      const blocks = [];
+      for (const label of sorted) {
+        const b = bix.get(label);
+        if (!b) continue;
+        if (skipKinds.has(b.kind)) continue;
+        blocks.push(b);
+        if (opts?.includeExamples && b.examples) {
+          for (const exLabel of b.examples) { const ex = bix.get(exLabel); if (ex) blocks.push(ex); }
+        }
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) { const prf = bix.get(prfLabel); if (prf) blocks.push(prf); }
+        }
+      }
+      return blocks;
+    }
+
+    /** Render a single block into a container element (in-page, not popup). */
+    function renderPreviewBlock(container, b) {
+      const div = mk('div', 'pv-blk');
+      const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+      let hdr = `<span class="pv-bk">${esc(kindLabel)}.</span>`;
+      if (b.title) hdr += `<span class="pv-bt">${inl(b.title)}</span>`;
+      if (b.label) hdr += `<span class="pv-bl">${esc(b.label)}</span>`;
+      div.innerHTML = hdr;
+      const body = mk('div', 'pv-bb');
+      renderBlockContent(body, b);
+      div.appendChild(body);
+      if (b.kind === 'proof') { const qed = mk('div', 'pv-qed'); div.appendChild(qed); }
+      container.appendChild(div);
+    }
+
+    /** Route: #/preview/label — single block print-friendly page */
+    async function routePreview(label) {
+      await ensurePaperIndex();
+      const block = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!block) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const style = mk('style', ''); style.textContent = PREVIEW_CSS; app.appendChild(style);
+      const wrap = mk('div', 'pv-wrap'); app.appendChild(wrap);
+
+      const bar = mk('div', 'pv-bar');
+      bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
+        <a href="#/preview-dep-graph/${esc(label)}">View dependency chain</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      const title = mk('div', 'pv-title');
+      title.innerHTML = inl(block.title || label);
+      renderMath(title);
+      wrap.appendChild(title);
+
+      renderPreviewBlock(wrap, block);
+      // Also render proofs inline
+      if (block.proofs) {
+        for (const prfLabel of block.proofs) {
+          const prf = bix.get(prfLabel);
+          if (prf) renderPreviewBlock(wrap, prf);
+        }
+      }
+    }
+
+    /** Route: #/preview-dep-graph/label — full dependency chain print-friendly page */
+    async function routePreviewDepGraph(label) {
+      await ensurePaperIndex();
+      const root = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!root) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const style = mk('style', ''); style.textContent = PREVIEW_CSS; app.appendChild(style);
+      const wrap = mk('div', 'pv-wrap'); app.appendChild(wrap);
+
+      const bar = mk('div', 'pv-bar');
+      bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
+        <a href="#/preview/${esc(label)}">Single block preview</a>
+        <a href="#/viz/${esc(label)}">Interactive graph</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      const title = mk('div', 'pv-title');
+      title.innerHTML = inl(root.title || label);
+      renderMath(title);
+      wrap.appendChild(title);
+
+      const blocks = collectDepChainBlocks(label, { includeExamples: false, includeRemarks: false });
+      const count = mk('div', 'pv-count');
+      count.textContent = `${blocks.length} blocks in dependency chain`;
+      wrap.appendChild(count);
+
+      for (const b of blocks) { renderPreviewBlock(wrap, b); }
+    }
+
     // ── Router ────────────────────────────────────────────
     // Routes (@ separates slug from branch, since branch names contain /):
     //   #/                                          → folio (current branch)
@@ -4381,6 +4555,8 @@
     //   #/edit/label@branch/name                    → inline edit on branch
     //   #/viz/paper-id                              → full dependency graph overlay
     //   #/viz/paper-id@branch/name                  → dependency graph on branch
+    //   #/preview/label                             → single block print preview
+    //   #/preview-dep-graph/label                   → dependency chain print preview
     //   #/diff/paper-id                             → diff mode (current branch vs main)
     //   #/diff/paper-id@branch/name                 → diff mode on branch
     //   #label                                      → standalone block detail view
@@ -4452,6 +4628,14 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeViz(slug);
+      } else if (action === 'preview' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routePreview(slug);
+      } else if (action === 'preview-dep-graph' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routePreviewDepGraph(slug);
       } else if (action === 'diff' && rest) {
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
