@@ -1,3 +1,13 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Topology.Basic
+import Mathlib.Geometry.Manifold.IsManifold.Basic
+import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Monoidal.Category
+
 /-!
 # QOU.Glossary — Formal Semantic Registry
 
@@ -12,15 +22,6 @@ Generated scaffold; entries are populated by:
   `python .github/scripts/ontologist.py generate-lean`
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped Topology Manifold CategoryTheory
 
@@ -33,7 +34,7 @@ namespace QOU.Glossary
     Frobenius form `λ : A → 𝟙` satisfying non-degeneracy.
 
     LaTeX: `\label{def:frobenius-hopf}`
-    Mathlib: No direct equivalent — builds on `Mathlib.CategoryTheory.Monoidal.Basic`
+    Mathlib: No direct equivalent — builds on `Mathlib.CategoryTheory.Monoidal.Category`
     Universes: objects in `u`, morphisms in `v` -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 structure FrobeniusHopfObject where
@@ -93,7 +94,7 @@ structure QuantumGaugeGroup where
     distribution, Reeb vector field, and Webster metric.
 
     LaTeX: `\label{def:cr-manifold}`
-    Mathlib: `Mathlib.Geometry.Manifold.SmoothManifoldWithCorners` -/
+    Mathlib: `Mathlib.Geometry.Manifold.IsManifold.Basic` -/
 -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
 structure CRManifold where
   /-- The underlying topological space. -/
@@ -199,7 +200,7 @@ structure LeviForm where
     form `θ` and the Levi form `L_θ`.
 
     LaTeX: used in `\label{def:c-quantum-universe}`, item (ii).
-    Mathlib: `Mathlib.Geometry.Manifold.SmoothManifoldWithCorners` -/
+    Mathlib: `Mathlib.Geometry.Manifold.IsManifold.Basic` -/
 structure WebsterMetric where
   /-- The horizontal distribution `H` as a type. -/
   horizontal : Type*

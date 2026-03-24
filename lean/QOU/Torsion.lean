@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.Data.Real.Basic
+
 /-!
 # Chapter 4 — Lifting of Quantum Torsion
 
@@ -24,10 +29,6 @@ LaTeX source: `chapters/lifting-of-quantum-torsion.tex`
 - [kock2004] J. Kock, *Frobenius Algebras and 2D TQFTs*, CUP 2004.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Data.Real.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
@@ -61,11 +62,11 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The ascent preserves multiplication: `ℓ ≫ jet.mul = (ℓ ⊗ ℓ) ≫ base.mul`
       (ascent is a coalgebra morphism). -/
   ascent_preserves_mul :
-    (base.mul) ≫ ascent = (ascent ▷ base.obj ≫ (base.obj ◁ ascent)) ≫ jet.mul
+    (base.mul) ≫ ascent = (ascent ▷ base.obj ≫ (jet.obj ◁ ascent)) ≫ jet.mul
   /-- The restriction preserves comultiplication:
       `r ≫ base.comul = jet.comul ≫ (r ⊗ r)`. -/
   restriction_preserves_comul :
-    restriction ≫ base.comul = jet.comul ≫ (restriction ▷ jet.obj ≫ (jet.obj ◁ restriction))
+    restriction ≫ base.comul = jet.comul ≫ (restriction ▷ jet.obj ≫ (base.obj ◁ restriction))
 
 /-- **Proposition (Jet Prolongation).**
     Given a ℂ quantum observable universe `(M, G, P, E)` with instanton
@@ -91,7 +92,6 @@ structure JetProlongationQOU where
   prolongedInst : InstantonConnection prolonged.toCRManifoldData
   /-- The prolonged manifold has the same CR dimension. -/
   dim_preserved : prolonged.n = base.n
-  /-- The prolonged connection is uniquely determined by the base data. -/
   /-- The prolonged connection is uniquely determined by the base data
       (irreducibility forces uniqueness). -/
   connection_unique : prolongedInst.parallelAdjointSections →
@@ -147,7 +147,6 @@ structure QuantumCharacteristicClasses where
   /-- Abstract representative of the characteristic class at level `n`.
       In the full formalization this would be `H*(E_{n+1}, ℤ)`. -/
   classAt : ℕ → Type*
-  /-- The classes obstruct spectral sequence collapse. -/
   /-- The classes obstruct spectral sequence collapse: if any `κ_n ≠ 0`,
       the Leray–Serre spectral sequence for `E_{n+1} → E_n` does not
       collapse at `E₂`. -/
@@ -296,7 +295,7 @@ structure MassIdentity (M : Type*) where
 
     LaTeX: `\label{cor:mass-identity-C}`
     -- Ref: [yekutieli2015] nonabelian multiplicative integration. -/
-structure MassIdentityC extends MassIdentity M where
+structure MassIdentityC (M : Type*) extends MassIdentity M where
   /-- The underlying ℂ quantum observable universe. -/
   cqou : CQuantumObservableUniverse
   /-- The base manifold of the QOU is `M`. -/
@@ -394,7 +393,7 @@ theorem twisted_cocycle_unobstructed {M : Type*}
     tc.cocycleDeviation p * (tc.triple.twoMorphisms p)⁻¹ = 0 :=
     hcond.symm
   -- a * g * a⁻¹ = 0.  Since a⁻¹ ≠ 0 (field, a ≠ 0), we get a * g = 0.
-  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero.mpr ha
+  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero ha
   rcases mul_eq_zero.mp h1 with h_ag | h_ainv
   · -- a * g = 0, and a ≠ 0, so g = 0
     rcases mul_eq_zero.mp h_ag with h_a | h_g
@@ -428,7 +427,7 @@ structure YekutielijLiftingCondition where
   /-- Central extension: the 2-morphisms at each level are central,
       i.e., they commute with all 1-morphisms (modelled as the Peiffer
       identity holding for the underlying Yekutieli triple). -/
-  central : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ),
+  central : ∀ (n : ℕ) (p : (tower.level n).M) (_a b : ℝ),
     (twistedCocycle n).triple.twoMorphisms p * b =
     b * (twistedCocycle n).triple.twoMorphisms p
 
@@ -498,7 +497,7 @@ structure CosimplicialCrossedGroupoid where
   crossedBoundary : (n : ℕ) → (tower.level n).M → ℝ → ℝ
   /-- Peiffer identity: `∂(a) · b = a · b · a⁻¹` (automatic for central
       extensions, since 2-morphisms are central). -/
-  peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (ha : a ≠ 0),
+  peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (_ha : a ≠ 0),
     crossedBoundary n p a * b = a * b * a⁻¹
 
 /-- **Weak equivalence invariance of the vacuum state.**
@@ -574,7 +573,7 @@ theorem qu_to_qou
     (ylc : YekutielijLiftingCondition)
     (ecs : EulerCharStability ylc.tower)
     (csg : CosimplicialCrossedGroupoid)
-    (h_tower : csg.tower = ylc.tower)
+    (_h_tower : csg.tower = ylc.tower)
     (g : ℕ) (h_genus : ecs.eulerChar 0 = 2 - 2 * (g : ℤ)) :
     -- The quantum universe descends to a QOU with χ = 2 − 2g,
     -- witnessed by the Euler characteristic at every level equalling
@@ -604,7 +603,7 @@ structure Descent where
       for each level `n > 0`, there is a surjective *-homomorphism
       from level-n sections to level-(n−1) sections (modelled as a
       function between descent-map types). -/
-  preserves_qou : ∀ (n : ℕ) (hn : 0 < n) (m : ℕ) (hm : 0 < m) (hmn : m < n),
+  preserves_qou : ∀ (n : ℕ) (hn : 0 < n) (m : ℕ) (hm : 0 < m) (_hmn : m < n),
     descentMap n hn → descentMap m hm
 
 /-- **Lemma (Descent preserves the quantum observable universe).**
@@ -664,8 +663,12 @@ noncomputable def DescentInvolution.fromJetProlongation
     DescentInvolution (jp.base.obj ⟶ jp.jet.obj) := by
   -- The involution τ = ℓ ∘ r acts on morphisms into the jet object.
   -- Idempotency follows from r ∘ ℓ = id (the retraction property).
-  exact ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f),
-    fun f => by simp [CategoryTheory.Category.assoc, jp.retraction]⟩
+  refine ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f), fun f => ?_⟩
+  -- τ²(f) = ℓ ∘ r ∘ ℓ ∘ r ∘ f = (ℓ ∘ r) ∘ (ℓ ∘ r ∘ f) = id ∘ (ℓ ∘ r ∘ f) = τ(f)
+  show jp.ascent ≫ (jp.restriction ≫ (jp.ascent ≫ (jp.restriction ≫ f))) =
+       jp.ascent ≫ (jp.restriction ≫ f)
+  rw [← CategoryTheory.Category.assoc jp.ascent jp.restriction,
+      jp.retraction, CategoryTheory.Category.id_comp]
 
 /-- **Eigenspace decomposition** of the descent involution.
     `V = 𝒜_{n+1}^{desc} ⊕ 𝒜_{n+1}^{trans}`
@@ -750,21 +753,19 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
   split_ifs with h
   · exact Nat.cast_pos.mpr hn
   · have hq_ne : q ≠ 1 := h
-    -- For q > 0, q ≠ 1, n ≥ 1: (q^n - 1)/(q - 1) > 0
-    -- This is the sum 1 + q + q² + ... + q^{n-1} > 0
-    -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
     -- Case split: q > 1 (both num/denom positive) or 0 < q < 1 (both negative)
     by_cases hq1 : 1 < q
-    · -- q > 1: q^n > 1 and q - 1 > 0
+    · -- q > 1: q^n ≥ q ≥ q > 1, so q^n - 1 > 0 and q - 1 > 0
       apply div_pos
-      · have : 1 ≤ q ^ n :=
-          one_le_pow_of_one_le₀ (le_of_lt hq1) n
-        linarith [Nat.one_le_pow n q (by linarith : 1 ≤ q)]
+      · have : 1 < q ^ n :=
+          one_lt_pow₀ hq1 (Nat.pos_iff_ne_zero.mp hn)
+        linarith
       · linarith
-    · -- 0 < q < 1: q^n < 1 and q - 1 < 0
+    · -- 0 < q < 1: q^n < 1 (so q^n - 1 < 0) and q - 1 < 0
       have hq_lt : q < 1 := lt_of_le_of_ne (le_of_not_gt hq1) hq_ne
       apply div_pos_of_neg_of_neg
-      · have : q ^ n < 1 := pow_lt_one₀ hq.le hq_lt (Nat.pos_iff_ne_zero.mp hn)
+      · have : q ^ n < 1 := by
+          exact pow_lt_one₀ hq.le hq_lt (Nat.pos_iff_ne_zero.mp hn)
         linarith
       · linarith
 
@@ -851,7 +852,9 @@ theorem mass_ge_baseline {M : Type*}
     (tmd : TopologicalMassDecomposition M) :
     tmd.baselineHolonomy ≤ tmd.totalMass := by
   rw [tmd.decomposition]
-  linarith [Finset.sum_nonneg (fun i _ => tmd.exceptional_nonneg i)]
+  have h : 0 ≤ Finset.univ.sum tmd.exceptionalContribution :=
+    Finset.sum_nonneg (fun i _ => tmd.exceptional_nonneg i)
+  linarith
 
 /-- When there are no blow-ups (`N = 0`), the mass equals the baseline
     holonomy — the vortex is an unknot and carries no transient modes. -/
@@ -872,8 +875,12 @@ theorem mass_single_blowup {M : Type*}
       tmd.exceptionalContribution ⟨0, by omega⟩ := by
   rw [tmd.decomposition]
   congr 1
+  -- Ref: [manuscript] sum over Fin 1 is a single term
+  -- All elements of Fin numBlowups are ⟨0, _⟩ when numBlowups = 1
+  have huniq : ∀ (i : Fin tmd.numBlowups), i = ⟨0, by omega⟩ := by
+    intro ⟨i, hi⟩; ext; omega
   have : Finset.univ (α := Fin tmd.numBlowups) = {⟨0, by omega⟩} := by
-    rw [h]; exact Finset.univ_eq_singleton_ofSubsingleton _
+    ext x; simp [huniq x]
   rw [this, Finset.sum_singleton]
 
 /-! ## §12  Dimensional Reduction -/

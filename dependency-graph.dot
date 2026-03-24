@@ -57,6 +57,8 @@ digraph ProofDependencies {
     def_categorical_jet [label="Def\ncategorical-jet" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-jet" tooltip="{Categorical jet object}" target="_blank"];
     def_categorical_hodge_star [label="Def\ncategorical-hodge..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-hodge-star" tooltip="{Categorical Hodge star}" target="_blank"];
     ex_hodge_su2 [label="Ex\nhodge-su2" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#ex:hodge-su2" tooltip="{Hodge star on \$\textbackslash\{\}mathcal\{O\}(\textbackslash\{\}mathrm\{SU\}(2))\$}" target="_blank"];
+    def_spatial_realization_functor [label="Def\nspatial-realizati..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:spatial-realization-functor" tooltip="{Spatial realization functor}" target="_blank"];
+    prop_categorical_archimedean_bridge [label="Prop\ncategorical-archi..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:categorical-archimedean-bridge" tooltip="{Categorical--geometric correspondence}" target="_blank"];
     def_substrate_parameter [label="Def\nsubstrate-parameter" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:substrate-parameter" tooltip="{Substrate parameter}" target="_blank"];
     def_quantum_gauge_group [label="Def\nquantum-gauge-group" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-gauge-group" tooltip="{Quantum Gauge Group}" target="_blank"];
     def_quantum_planck_constant [label="Def\nquantum-planck-co..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-planck-constant" tooltip="{Quantum Planck Constant}" target="_blank"];
@@ -74,9 +76,9 @@ digraph ProofDependencies {
     prop_categorical_dq_squared [label="Prop\ncategorical-dq-sq..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:categorical-dq-squared" tooltip="{Non-vanishing of \$d\_q\textasciicircum{}2\$}" target="_blank"];
     def_categorical_q_lie_bracket [label="Def\ncategorical-q-lie..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-q-lie-bracket" tooltip="{Categorical \$q\$-Lie bracket}" target="_blank"];
     def_categorical_q_connection [label="Def\ncategorical-q-con..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-q-connection" tooltip="{Categorical \$q\$-deformed connection}" target="_blank"];
-    conj_topological_mass_formula [label="Conj\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
     def_q_yang_mills_levi [label="Def\nq-yang-mills-levi" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:q-yang-mills-levi" tooltip="{\$q\$-Weighted Yang--Mills--Levi functional}" target="_blank"];
     prop_main_commutative_diagram [label="Prop\nmain-commutative-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:main-commutative-diagram" tooltip="{Main Commutative Diagram}" target="_blank"];
+    def_quantum_flatness [label="Def\nquantum-flatness" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-flatness" tooltip="{Quantum flatness}" target="_blank"];
     prop_emergence_to_quantum_flat [label="Prop\nemergence-to-quan..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:emergence-to-quantum-flat" tooltip="{From Tannakian emergence to 2-group quantum flatness}" target="_blank"];
     prop_dq_squared [label="Prop\ndq-squared" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:dq-squared" tooltip="{d\_q\textasciicircum{}2 does not vanish}" target="_blank"];
     prop_q_jacobiator [label="Prop\nq-jacobiator" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:q-jacobiator" tooltip="{Jacobiator of the q-Lie bracket}" target="_blank"];
@@ -84,7 +86,7 @@ digraph ProofDependencies {
     def_categorical_transport [label="Def\ncategorical-trans..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-transport" tooltip="{Categorical transport equation}" target="_blank"];
     def_categorical_q_reeb_flow [label="Def\ncategorical-q-ree..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-q-reeb-flow" tooltip="{Categorical q-Reeb flow}" target="_blank"];
     def_categorical_q_torsion_leaf [label="Def\ncategorical-q-tor..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-q-torsion-leaf" tooltip="{Categorical q-torsion leaf}" target="_blank"];
-    { rank=same; def_rigid_monoidal_category; def_snake_identity; ex_rigid_monoidal_vect; def_quantum_universe; def_frobenius_pairing; ex_quantum_universe_su2; def_higher_forms; ex_higher_forms_su2; def_quantum_observable_universe; ex_qou_su2; def_maximal_torus; ex_maximal_torus_su2; def_weight_decomposition; prop_frobenius_relation; ex_frobenius_su2; def_involutive_structure; def_positive_definite_dagger; ex_dagger_su2; lem_volume_from_rigidity; thm_su2_emergence; ex_su2_emergence; def_spin_labels; ex_spin_labels_su2; def_categorical_reeb; ex_reeb_su2; def_projective_line_object; ex_projective_line_su2; def_contact_affine_chart; prop_substrate_radial_coordinate; prop_fiber_adjoint_involution; ex_fiber_adjoint_su2; def_categorical_connection; ex_connection_su2; def_categorical_jet; def_categorical_hodge_star; ex_hodge_su2; def_substrate_parameter; def_quantum_gauge_group; def_quantum_planck_constant; def_q_hodge_star; def_categorical_action; prop_variational_equations; def_categorical_q_ext_deriv; def_q_harmonic_form; def_fermion_boson_decomposition; def_categorical_point; def_observation; def_categorical_instanton; lem_categorical_irreducible; prop_categorical_self_duality; prop_categorical_dq_squared; def_categorical_q_lie_bracket; def_categorical_q_connection; conj_topological_mass_formula; def_q_yang_mills_levi; prop_main_commutative_diagram; prop_emergence_to_quantum_flat; prop_dq_squared; prop_q_jacobiator; prop_categorical_jet_prolongation; def_categorical_transport; def_categorical_q_reeb_flow; def_categorical_q_torsion_leaf; }
+    { rank=same; def_rigid_monoidal_category; def_snake_identity; ex_rigid_monoidal_vect; def_quantum_universe; def_frobenius_pairing; ex_quantum_universe_su2; def_higher_forms; ex_higher_forms_su2; def_quantum_observable_universe; ex_qou_su2; def_maximal_torus; ex_maximal_torus_su2; def_weight_decomposition; prop_frobenius_relation; ex_frobenius_su2; def_involutive_structure; def_positive_definite_dagger; ex_dagger_su2; lem_volume_from_rigidity; thm_su2_emergence; ex_su2_emergence; def_spin_labels; ex_spin_labels_su2; def_categorical_reeb; ex_reeb_su2; def_projective_line_object; ex_projective_line_su2; def_contact_affine_chart; prop_substrate_radial_coordinate; prop_fiber_adjoint_involution; ex_fiber_adjoint_su2; def_categorical_connection; ex_connection_su2; def_categorical_jet; def_categorical_hodge_star; ex_hodge_su2; def_spatial_realization_functor; prop_categorical_archimedean_bridge; def_substrate_parameter; def_quantum_gauge_group; def_quantum_planck_constant; def_q_hodge_star; def_categorical_action; prop_variational_equations; def_categorical_q_ext_deriv; def_q_harmonic_form; def_fermion_boson_decomposition; def_categorical_point; def_observation; def_categorical_instanton; lem_categorical_irreducible; prop_categorical_self_duality; prop_categorical_dq_squared; def_categorical_q_lie_bracket; def_categorical_q_connection; def_q_yang_mills_levi; prop_main_commutative_diagram; def_quantum_flatness; prop_emergence_to_quantum_flat; prop_dq_squared; prop_q_jacobiator; prop_categorical_jet_prolongation; def_categorical_transport; def_categorical_q_reeb_flow; def_categorical_q_torsion_leaf; }
   }
 
   subgraph cluster_ch3 {
@@ -164,25 +166,26 @@ digraph ProofDependencies {
     label="Ch.5 The Descartes Universe";
     style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
     fontsize=10;
-    def_descartes_condition [label="Def\ndescartes-condition" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:descartes-condition" tooltip="{Descartes condition}" target="_blank"];
-    prop_genus_maximal_descent [label="Prop\ngenus-maximal-des..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:genus-maximal-descent" tooltip="{Genus of the one-complex-dimensional descent}" target="_blank"];
-    def_exceptional_divisor [label="Def\nexceptional-divisor" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:exceptional-divisor" tooltip="{Exceptional divisor at \$p\$}" target="_blank"];
-    def_chiral_sector_coords [label="Def\nchiral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:chiral-sector-coords" tooltip="{Chiral sector coordinates \$\textbackslash\{\}mathfrak\{r\},\textbackslash\{\}mathfrak\{g\},\textbackslash\{\}mathfrak\{b\}\$}" target="_blank"];
-    cor_descartes_braid_structure [label="Cor\ndescartes-braid-s..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-braid-structure" tooltip="{Braid-group structure of a Descartes universe}" target="_blank"];
-    thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
     def_witt_vector_lift [label="Def\nwitt-vector-lift" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:witt-vector-lift" tooltip="{Witt vector lift of a formal group}" target="_blank"];
     prop_skew_poisson_integration [label="Prop\nskew-poisson-inte..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skew-poisson-integration" tooltip="{Integration of skewed-Poisson structures}" target="_blank"];
-    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; thm_descartes; def_witt_vector_lift; prop_skew_poisson_integration; }
+    { rank=same; def_witt_vector_lift; prop_skew_poisson_integration; }
   }
 
   subgraph cluster_ch7 {
     label="Ch.6 Experimental Evidence";
     style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
     fontsize=10;
+    def_descartes_condition [label="Def\ndescartes-condition" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:descartes-condition" tooltip="{Descartes condition}" target="_blank"];
+    prop_genus_maximal_descent [label="Prop\ngenus-maximal-des..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:genus-maximal-descent" tooltip="{Genus of the one-complex-dimensional descent}" target="_blank"];
+    def_exceptional_divisor [label="Def\nexceptional-divisor" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:exceptional-divisor" tooltip="{Exceptional divisor at \$p\$}" target="_blank"];
+    def_chiral_sector_coords [label="Def\nchiral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:chiral-sector-coords" tooltip="{Chiral sector coordinates \$\textbackslash\{\}mathfrak\{r\},\textbackslash\{\}mathfrak\{g\},\textbackslash\{\}mathfrak\{b\}\$}" target="_blank"];
+    cor_descartes_braid_structure [label="Cor\ndescartes-braid-s..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-braid-structure" tooltip="{Braid-group structure of a Descartes universe}" target="_blank"];
+    thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
+    conj_topological_mass_formula [label="Conj\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
     prop_skein_mass_relation [label="Prop\nskein-mass-relation" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skein-mass-relation" tooltip="{\$q\$-Deformed Skein Relation (Observation)}" target="_blank"];
     prop_terminal_resolution [label="Prop\nterminal-resolution" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:terminal-resolution" tooltip="{Terminal Resolution of Hadronic Mass (Observation)}" target="_blank"];
     prop_local_substrate_q [label="Prop\nlocal-substrate-q" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:local-substrate-q" tooltip="{Local Value of the Substrate Parameter}" target="_blank"];
-    { rank=same; prop_skein_mass_relation; prop_terminal_resolution; prop_local_substrate_q; }
+    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; thm_descartes; conj_topological_mass_formula; prop_skein_mass_relation; prop_terminal_resolution; prop_local_substrate_q; }
   }
 
   def_rigid_monoidal_category -> def_snake_identity [color="#555555" style="solid"];
@@ -253,6 +256,12 @@ digraph ProofDependencies {
   def_higher_forms -> def_categorical_hodge_star [color="#555555" style="solid"];
   def_categorical_hodge_star -> ex_hodge_su2 [color="#555555" style="solid"];
   ex_higher_forms_su2 -> ex_hodge_su2 [color="#555555" style="solid"];
+  def_quantum_observable_universe -> def_spatial_realization_functor [color="#555555" style="solid"];
+  def_categorical_point -> def_spatial_realization_functor [color="#555555" style="solid"];
+  def_frobenius_pairing -> def_spatial_realization_functor [color="#555555" style="solid"];
+  def_spatial_realization_functor -> prop_categorical_archimedean_bridge [color="#555555" style="solid"];
+  def_weight_decomposition -> prop_categorical_archimedean_bridge [color="#555555" style="solid"];
+  def_categorical_q_ext_deriv -> prop_categorical_archimedean_bridge [color="#555555" style="solid"];
   def_quantum_observable_universe -> def_substrate_parameter [color="#555555" style="solid"];
   def_weight_decomposition -> def_substrate_parameter [color="#555555" style="solid"];
   def_categorical_reeb -> def_substrate_parameter [color="#555555" style="solid"];
@@ -293,13 +302,12 @@ digraph ProofDependencies {
   def_substrate_parameter -> def_categorical_q_lie_bracket [color="#555555" style="solid"];
   def_categorical_connection -> def_categorical_q_connection [color="#555555" style="solid"];
   def_categorical_reeb -> def_categorical_q_connection [color="#555555" style="solid"];
-  def_mass_identity -> conj_topological_mass_formula [color="#555555" style="solid"];
-  thm_topological_mass -> conj_topological_mass_formula [color="#555555" style="solid"];
-  def_substrate_parameter -> conj_topological_mass_formula [color="#555555" style="solid"];
-  def_quantum_planck_constant -> conj_topological_mass_formula [color="#555555" style="solid"];
   def_substrate_parameter -> def_q_yang_mills_levi [color="#555555" style="solid"];
   def_substrate_parameter -> prop_main_commutative_diagram [color="#555555" style="solid"];
   def_q_yang_mills_levi -> prop_main_commutative_diagram [color="#555555" style="solid"];
+  def_categorical_connection -> def_quantum_flatness [color="#555555" style="solid"];
+  def_categorical_instanton -> def_quantum_flatness [color="#555555" style="solid"];
+  def_quantum_gauge_group -> def_quantum_flatness [color="#555555" style="solid"];
   def_quantum_observable_universe -> prop_emergence_to_quantum_flat [color="#555555" style="solid"];
   thm_su2_emergence -> prop_emergence_to_quantum_flat [color="#555555" style="solid"];
   def_categorical_q_ext_deriv -> prop_dq_squared [color="#555555" style="solid"];
@@ -439,6 +447,7 @@ digraph ProofDependencies {
   prop_mobius_energy -> cor_non_self_intersection [color="#555555" style="solid"];
   def_q_hodge_star -> cor_non_self_intersection [color="#555555" style="solid"];
   def_substrate_parameter -> cor_non_self_intersection [color="#555555" style="solid"];
+  def_witt_vector_lift -> prop_skew_poisson_integration [color="#555555" style="solid"];
   def_quantum_observable_universe -> def_descartes_condition [color="#555555" style="solid"];
   thm_qu_to_qou -> def_descartes_condition [color="#555555" style="solid"];
   def_descartes_condition -> prop_genus_maximal_descent [color="#555555" style="solid"];
@@ -454,7 +463,10 @@ digraph ProofDependencies {
   prop_brings_is_qou -> thm_descartes [color="#555555" style="solid"];
   thm_qu_to_qou -> thm_descartes [color="#555555" style="solid"];
   prop_genus_maximal_descent -> thm_descartes [color="#555555" style="solid"];
-  def_witt_vector_lift -> prop_skew_poisson_integration [color="#555555" style="solid"];
+  def_mass_identity -> conj_topological_mass_formula [color="#555555" style="solid"];
+  thm_topological_mass -> conj_topological_mass_formula [color="#555555" style="solid"];
+  def_substrate_parameter -> conj_topological_mass_formula [color="#555555" style="solid"];
+  def_quantum_planck_constant -> conj_topological_mass_formula [color="#555555" style="solid"];
   def_substrate_parameter -> prop_skein_mass_relation [color="#555555" style="solid"];
   def_quantum_planck_constant -> prop_skein_mass_relation [color="#555555" style="solid"];
   prop_skein_mass_relation -> prop_terminal_resolution [color="#555555" style="solid"];
