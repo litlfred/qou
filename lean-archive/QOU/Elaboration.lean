@@ -219,10 +219,11 @@ theorem dq_squared_nonvanishing :
     field_pos := fun _ => by norm_num
     field_ge_one := fun _ => by norm_num
     not_root_of_unity := fun _ k hk => by
-      have : (2 : ℝ) ^ k ≥ 2 := by
-        calc (2 : ℝ) ^ k ≥ 2 ^ 1 := by
-              exact pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
-          _ = 2 := by ring
+      have h2k : (2 : ℝ) ^ k ≥ 2 := by
+        calc (2 : ℝ) ^ k = 2 ^ k := rfl
+          _ ≥ 2 ^ 1 := by
+            apply pow_le_pow_right₀ (by norm_num : (1 : ℝ) ≤ 2) hk
+          _ = 2 := by norm_num
       linarith
   }
   -- Specialize the hypothesis with M = PUnit, sp, f = constant 1, p = PUnit.unit

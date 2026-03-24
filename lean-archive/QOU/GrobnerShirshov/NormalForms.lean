@@ -1,6 +1,8 @@
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Nat.Prime.Defs
 import Mathlib.Data.List.Lex
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 /-!
 # Normal Forms and PBW-Type Bases
@@ -151,23 +153,25 @@ theorem lexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
             | inl h => right; left; exact ⟨rfl, h⟩
             | inr h => right; right; right; exact ⟨rfl, h⟩
 
--- Auxiliary: lexLt a b → lexLt (a ++ d) (b ++ d)
+-- Auxiliary: same-length lexLt a b → lexLt (a ++ d) (b ++ d)
 -- (used in degLexLt_right_compat)
-private theorem lexLt_append_right (a b d : Monomial SU2Gen) (h : lexLt a b) :
+private theorem lexLt_append_right (a b d : Monomial SU2Gen)
+    (hlen : a.length = b.length) (h : lexLt a b) :
     lexLt (a ++ d) (b ++ d) := by
   induction a generalizing b with
   | nil =>
     cases b with
     | nil => simp [lexLt] at h
-    | cons y ys => simp [lexLt]
+    | cons _ _ => simp at hlen
   | cons x xs ih =>
     cases b with
-    | nil => simp [lexLt] at h
+    | nil => simp at hlen
     | cons y ys =>
+      simp [List.length_cons] at hlen
       simp [lexLt] at h ⊢
       cases h with
       | inl hrank => left; exact hrank
-      | inr ⟨heq, hrest⟩ => right; exact ⟨heq, ih ys hrest⟩
+      | inr ⟨heq, hrest⟩ => right; exact ⟨heq, ih ys hlen hrest⟩
 
 -- Positional encoding for monomials: maps a list to ℕ such that
 -- lexLt a b ∧ a.length = b.length → lexEncoding a < lexEncoding b.
@@ -183,12 +187,11 @@ private theorem lexEncoding_bound : ∀ (a : Monomial SU2Gen),
   induction a with
   | nil => simp [lexEncoding]
   | cons x xs ih =>
-    simp [lexEncoding, List.length_cons, Nat.pow_succ]
+    simp only [lexEncoding, List.length_cons, pow_succ]
     have hrank : x.rank ≤ 3 := by cases x <;> simp [SU2Gen.rank]
-    calc x.rank * 4 ^ xs.length + lexEncoding xs
-        < x.rank * 4 ^ xs.length + 4 ^ xs.length := by omega
-      _ = (x.rank + 1) * 4 ^ xs.length := by ring
-      _ ≤ 4 * 4 ^ xs.length := by nlinarith
+    have h1 : x.rank * 4 ^ xs.length ≤ 3 * 4 ^ xs.length :=
+      Nat.mul_le_mul_right _ hrank
+    omega
 
 -- At the same length, lexLt implies strict inequality of encodings
 private theorem lexEncoding_lt_of_lexLt_same_length :
@@ -212,12 +215,15 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
       cases hlex with
       | inl hrank =>
         have hxs_bound := lexEncoding_bound xs
-        have : xs.length = ys.length := hlen
-        rw [this] at hxs_bound
-        nlinarith
+        rw [hlen] at hxs_bound ⊢
+        have h1 : (x.rank + 1) * 4 ^ ys.length ≤ y.rank * 4 ^ ys.length :=
+          Nat.mul_le_mul_right _ hrank
+        have h2 : (x.rank + 1) * 4 ^ ys.length = x.rank * 4 ^ ys.length + 4 ^ ys.length := by
+          rw [add_mul, one_mul]
+        omega
       | inr ⟨heq, hrest⟩ =>
         have := ih ys hlen hrest
-        rw [heq]
+        rw [heq, hlen]
         omega
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
@@ -249,14 +255,14 @@ private theorem lexLt_sub_mapped :
     intro b h
     cases b with
     | nil => simp [lexLt] at h
-    | cons _ _ => simp [List.map]; exact List.Lex.nil
+    | cons _ _ => exact List.Lex.nil
   | cons x xs ih =>
     intro b h
     cases b with
     | nil => simp [lexLt] at h
     | cons y ys =>
       simp [lexLt] at h
-      simp [List.map]
+      show List.Lex (· < ·) (x.rank :: xs.map SU2Gen.rank) (y.rank :: ys.map SU2Gen.rank)
       cases h with
       | inl hr => exact List.Lex.rel hr
       | inr ⟨heq, htail⟩ => rw [heq]; exact List.Lex.cons (ih ys htail)
@@ -264,7 +270,9 @@ private theorem lexLt_sub_mapped :
 theorem lexLt_wf : WellFounded lexLt :=
   Subrelation.wf
     (fun {a b} h => lexLt_sub_mapped a b h)
-    (InvImage.wf (List.map SU2Gen.rank) WellFoundedLT.wf)
+    (InvImage.wf (List.map SU2Gen.rank)
+      (List.Lex.isWellFounded (r := (· < · : ℕ → ℕ → Prop))
+        Nat.lt_wfRel.wf))
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
@@ -325,7 +333,7 @@ theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
     right
     constructor
     · omega
-    · exact lexLt_append_right a b d hlex
+    · exact lexLt_append_right a b d heq hlex
 
 /-- The **deg-lex admissible order** on monomials over `SU2Gen`,
     fully proved: well-founded, trichotomous, and compatible with
