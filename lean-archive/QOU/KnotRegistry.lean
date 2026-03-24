@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import QOU.KnotTheory
+
 /-!
 # QOU.KnotRegistry — Formal Knot Registry with Alexander-Briggs Indexing
 
@@ -22,8 +25,6 @@ Every `def` or `theorem` involving a registered knot includes a docstring
 with a persistent link to `http://katlas.org/wiki/<knot>`.
 -/
 
-import Mathlib.Data.Real.Basic
-import QOU.KnotTheory
 
 open QOU.KnotTheory
 

@@ -1,3 +1,13 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Topology.Basic
+import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Monoidal.Basic
+
 /-!
 # QOU.Glossary — Formal Semantic Registry
 
@@ -12,15 +22,6 @@ Generated scaffold; entries are populated by:
   `python .github/scripts/ontologist.py generate-lean`
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Functor.Basic
-import Mathlib.CategoryTheory.NatTrans
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped Topology Manifold CategoryTheory
 

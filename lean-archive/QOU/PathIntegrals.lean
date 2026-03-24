@@ -1,3 +1,21 @@
+import QOU.Basic
+import QOU.Glossary
+import QOU.KnotTheory
+import Mathlib.Data.Real.Basic
+import Mathlib.GroupTheory.SpecificGroups.Dihedral
+import Mathlib.GroupTheory.PresentedGroup
+import Mathlib.GroupTheory.FreeGroup.Basic
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.LinearAlgebra.DirectSum.Finsupp
+import Mathlib.LinearAlgebra.TensorProduct.Basic
+import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Data.List.Basic
+import Mathlib.Order.Filter.Basic
+
 /-!
 # Chapter 3 — Path Integrals and Braiding
 
@@ -20,23 +38,6 @@ LaTeX source: `chapters/path-integrals-and-braiding.tex`
 - [lusztig1993] G. Lusztig, *Introduction to Quantum Groups*, Birkhäuser 1993.
 -/
 
-import QOU.Basic
-import QOU.Glossary
-import QOU.KnotTheory
-import Mathlib.Data.Real.Basic
-import Mathlib.GroupTheory.SpecificGroups.Dihedral
-import Mathlib.GroupTheory.PresentedGroup
-import Mathlib.GroupTheory.FreeGroup.Basic
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.LinearAlgebra.DirectSum.Finsupp
-import Mathlib.LinearAlgebra.TensorProduct.Basic
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Data.List.Basic
-import Mathlib.Order.Filter.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory TensorProduct
 

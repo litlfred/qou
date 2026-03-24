@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.FormalGroups
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
 /-!
 # Chapter 7 — p-Adic Quantum Observable Universe
 
@@ -19,12 +26,6 @@ LaTeX source: `chapters/p-adic-quantum-groups.tex`
 - [fred2005] L. Fred, PhD thesis, University of Arizona, 2005.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.FormalGroups
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

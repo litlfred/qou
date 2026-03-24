@@ -1,3 +1,14 @@
+import QOU.Basic
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.QuantumObservableUniverse
+import QOU.PathIntegrals
+import QOU.MassDerivation
+import Mathlib.Data.Real.Basic
+import Mathlib.Topology.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.CategoryTheory.Monoidal.Basic
+
 /-!
 # QOU.MobiusEnergy — Categorical Möbius Energy and Self-Avoidance
 
@@ -20,16 +31,6 @@ non-self-intersection corollary from Chapter 4, §9 of the QOU manuscript.
 - [ohara1991] J. O'Hara, "Energy of a knot", Topology 30 (1991), 241–247.
 -/
 
-import QOU.Basic
-import QOU.Glossary
-import QOU.KnotTheory
-import QOU.QuantumObservableUniverse
-import QOU.PathIntegrals
-import QOU.MassDerivation
-import Mathlib.Data.Real.Basic
-import Mathlib.Topology.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

@@ -1,3 +1,9 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
 /-!
 # Chapter 2 — Categorical & Analytic Foundations (Elaboration)
 
@@ -21,11 +27,6 @@ LaTeX source: `chapters/qou-elaboration.tex`
 - [atiyah1988] M. Atiyah, *Topological quantum field theories*, 1988.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 open QOU

@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Complex.Basic
+import Mathlib.Data.Fin.Basic
+
 /-!
 # Chapter 5 — Bring's Surface
 
@@ -20,12 +27,6 @@ LaTeX source: `chapters/brings-surface.tex`
 - [turaev2010] V. Turaev, *Quantum Invariants of Knots and 3-Manifolds*, 2010.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Complex.Basic
-import Mathlib.Data.Fin.Basic
 
 namespace QOU.BringsSurface
 

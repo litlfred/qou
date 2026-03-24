@@ -1,3 +1,9 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
 /-!
 # Chapter 6 — The Descartes Universe
 
@@ -18,11 +24,6 @@ LaTeX source: `chapters/descartes-universe.tex`
 - [atiyah1988] M. Atiyah, *New invariants of 3- and 4-manifolds*, 1988.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.DescartesUniverse
 

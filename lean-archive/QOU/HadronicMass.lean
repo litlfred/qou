@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MassDerivation
+import QOU.KnotRegistry
+
 /-!
 # QOU.HadronicMass — Terminal Resolution of Hadronic Mass
 
@@ -39,10 +44,6 @@ The mass functional `𝓜(K)` for a knot/link `K` satisfies:
   Property P*, Geom. Topol. 2004.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.MassDerivation
-import QOU.KnotRegistry
 
 open QOU.MassDerivation QOU.KnotRegistry QOU.KnotTheory
 

@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.KnotRegistry
+import QOU.MassDerivation
+
 /-!
 # QOU.Calculations — Skein-Deformed Residue Proofs and Substrate Derivation
 
@@ -20,10 +25,6 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 - q derivation: Manuscript §4, Conjecture 4.25
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.KnotRegistry
-import QOU.MassDerivation
 
 open QOU.KnotRegistry QOU.MassDerivation QOU.KnotTheory
 

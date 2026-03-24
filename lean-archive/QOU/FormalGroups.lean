@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.GrobnerShirshov
+import Fred2005.FormalGroups
+import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Monoidal.Basic
+
 /-!
 # Formal Groups — QOU Interface
 
@@ -29,12 +36,6 @@ on domain-specific integration arguments beyond the GS framework.
 - [zink2002] T. Zink, *The Display of a Formal p-Divisible Group*, Astérisque 278.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.GrobnerShirshov
-import Fred2005.FormalGroups
-import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 open Fred2005

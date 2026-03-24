@@ -1,3 +1,9 @@
+import QOU.GrobnerShirshov.Basic
+import QOU.GrobnerShirshov.CompositionLemma
+import QOU.GrobnerShirshov.NormalForms
+import QOU.GrobnerShirshov.Flatness
+import QOU.GrobnerShirshov.StrongMultiplicativity
+
 /-!
 # Gröbner–Shirshov Bases — Module Root
 
@@ -35,9 +41,3 @@ The composition lemma does triple duty:
 - Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978).
 - Bokut & Chen, *Gröbner–Shirshov bases*, Bull. Math. Sci. 4 (2014).
 -/
-
-import QOU.GrobnerShirshov.Basic
-import QOU.GrobnerShirshov.CompositionLemma
-import QOU.GrobnerShirshov.NormalForms
-import QOU.GrobnerShirshov.Flatness
-import QOU.GrobnerShirshov.StrongMultiplicativity

@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.Torsion
+
 /-!
 # QOU.MassDerivation — Topological Mass-Parameter Derivation
 
@@ -25,11 +31,6 @@ transcendental, we use the "Opaque Constants" approach:
   acknowledging their numerical representation.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.Glossary
-import QOU.KnotTheory
-import QOU.Torsion
 
 namespace QOU.MassDerivation
 

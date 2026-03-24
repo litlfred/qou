@@ -1,3 +1,9 @@
+import Mathlib.Topology.Basic
+import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Functor.Basic
+
 /-!
 # QOU.Basic — Shared Foundations
 
@@ -5,11 +11,6 @@ Common imports, notation, and base structures used throughout the
 Quantum Observable Universe formalization.
 -/
 
-import Mathlib.Topology.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.CategoryTheory.Category.Basic
-import Mathlib.CategoryTheory.Functor.Basic
 
 open scoped Topology Manifold
 

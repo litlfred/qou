@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import Mathlib.Data.Real.Basic
+
 /-!
 # Chapter 8 — Gauge Field Fluid Dynamics
 
@@ -14,9 +18,6 @@ LaTeX source: `chapters/gauge-field-fluid-dynamics.tex`
 4. **Planck–Reynolds** — q-parameter, Planck limit, Reynolds number
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import Mathlib.Data.Real.Basic
 
 namespace QOU.GaugeFieldFluidDynamics
 

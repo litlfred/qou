@@ -1,3 +1,8 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.Data.Real.Basic
+
 /-!
 # Chapter 4 — Lifting of Quantum Torsion
 
@@ -24,10 +29,6 @@ LaTeX source: `chapters/lifting-of-quantum-torsion.tex`
 - [kock2004] J. Kock, *Frobenius Algebras and 2D TQFTs*, CUP 2004.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Data.Real.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 

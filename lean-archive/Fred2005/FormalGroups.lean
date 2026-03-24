@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Prime.Basic
+
 /-!
 # Formal Groups and the Lifting Theorem
 
@@ -28,8 +31,6 @@ field has positive characteristic.
 - [zink2002] T. Zink, *The Display of a Formal p-Divisible Group*, Astérisque 278.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Prime.Basic
 
 namespace Fred2005
 
