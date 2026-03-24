@@ -13,7 +13,7 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
-import Mathlib.CategoryTheory.Category.Types
+import Mathlib.CategoryTheory.Types
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.CategoryTheory.Linear.Basic
 
