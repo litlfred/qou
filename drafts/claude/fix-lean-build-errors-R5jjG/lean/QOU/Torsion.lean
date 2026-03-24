@@ -759,7 +759,8 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
       apply div_pos
       · have : 1 ≤ q ^ n := by
           rw [← one_pow n]
-          exact pow_le_pow_left (by norm_num : (0 : ℝ) ≤ 1) (le_of_lt hq1) n
+          gcongr
+          exact le_of_lt hq1
         linarith
       · linarith
     · -- 0 < q < 1: q^n < 1 (so q^n - 1 < 0) and q - 1 < 0
@@ -880,7 +881,9 @@ theorem mass_single_blowup {M : Type*}
   -- All elements of Fin numBlowups are ⟨0, _⟩ when numBlowups = 1
   have huniq : ∀ (i : Fin tmd.numBlowups), i = ⟨0, by omega⟩ := by
     intro ⟨i, hi⟩; ext; omega
-  simp_rw [huniq, Finset.sum_const, Fintype.card_fin, h, one_smul]
+  have : Finset.univ (α := Fin tmd.numBlowups) = {⟨0, by omega⟩} := by
+    ext x; simp [huniq x]
+  rw [this, Finset.sum_singleton]
 
 /-! ## §12  Dimensional Reduction -/
 
