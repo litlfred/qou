@@ -189,7 +189,8 @@ theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
   simp [degLexLt] at h ⊢
   cases h with
   | inl hlen => left; omega
-  | inr ⟨heq, hlex⟩ =>
+  | inr h =>
+    obtain ⟨heq, hlex⟩ := h
     right
     constructor
     · omega
@@ -204,7 +205,8 @@ theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
   simp [degLexLt] at h ⊢
   cases h with
   | inl hlen => left; omega
-  | inr ⟨heq, hlex⟩ =>
+  | inr h =>
+    obtain ⟨heq, hlex⟩ := h
     right
     constructor
     · omega
@@ -218,7 +220,8 @@ theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
         simp [lexLt] at hlex ⊢
         cases hlex with
         | inl h => left; exact h
-        | inr ⟨heq_r, hrest⟩ =>
+        | inr h =>
+          obtain ⟨heq_r, hrest⟩ := h
           right
           simp [List.length_cons] at heq
           exact ⟨heq_r, ih heq hrest⟩

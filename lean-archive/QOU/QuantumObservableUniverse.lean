@@ -168,7 +168,7 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
     LaTeX: `\label{def:quantum-gauge-group}` (categorical version)
     Ref: [lusztig1993] -/
 noncomputable def QuantumUniverse.gaugeGroup {k : Type*} [Field k]
-    (QU : QuantumUniverse.{u, v} k) : Type* :=
+    (QU : QuantumUniverse.{u, v} k) :=
   -- Aut⊗(ω) via Tannaka–Krein: the group of natural automorphisms of the
   -- fibre functor.  Full monoidal constraint (monoidal natural transformations)
   -- requires `Mathlib.CategoryTheory.Monoidal.NaturalTransformation`; here we
