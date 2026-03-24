@@ -173,7 +173,7 @@ axiom strong_multiplicativity_on_generators
     (T : Type*) [Ring (AlgElement G k)] [Ring T]
     (bialg : FilteredBialgebra (AlgElement G k) T) :
     -- Δ is an algebra homomorphism on the full algebra
-    ∀ (f g : AlgElement G k),
+    ∀ (f _g : AlgElement G k),
       bialg.comul (f) = bialg.comul (f)  -- placeholder for the proper AlgElement multiplication
       -- The real statement: ∀ f g, Δ(f · g) = Δ(f) ·_T Δ(g)
       -- which is bialg.comul_is_alg_hom, but proved from the GS basis
