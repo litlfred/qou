@@ -1620,11 +1620,10 @@
           }
           continue;
         }
-        // Try section/chapter index
+        // Try section/chapter index — just replace with title (§ is already in source text)
         const sec = secIndex.get(label);
         if (sec && (text === label || !text)) {
-          const prefix = sec.kind === 'chapter' ? 'Ch.' : '§';
-          a.innerHTML = `${prefix}\u2009${inl(sec.title)}`;
+          a.innerHTML = inl(sec.title);
           renderMath(a);
         }
       }
