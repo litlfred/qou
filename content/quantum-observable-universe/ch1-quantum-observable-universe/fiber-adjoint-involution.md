@@ -1,6 +1,6 @@
 Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)). The Frobenius form
-$\lambda \colon A \to \mathbf{1}$ induces an isomorphism
+$\int_A \colon A \to \mathbf{1}$ induces an isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under
 which:
 

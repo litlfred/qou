@@ -31,7 +31,7 @@ descent involution $\hat{\tau}_n$
 where:
 
 1. $\mathrm{tr}_{\mathrm{desc}}(\gamma)$ is the categorical trace of
-   $(\lambda \otimes \mathrm{id}) \circ \Delta \circ \gamma$ restricted
+   $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \gamma$ restricted
    to the descended subalgebra
    $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$
    ([descent eigenspaces](#prop:descent-eigenspaces)).  Since

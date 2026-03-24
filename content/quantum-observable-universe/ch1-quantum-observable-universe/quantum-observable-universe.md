@@ -5,7 +5,7 @@ forgetful functor $\tau$
 conditions hold:
 
 1. *(non-degenerate integration)* the Frobenius form
-   $\int_A := \lambda \colon A \to \mathbf{1}$ induces a
+   $\int_A \colon A \to \mathbf{1}$ induces a
    non-degenerate pairing
    $(a, b) \mapsto \int_A ab$
    ([Frobenius pairing](#def:frobenius-pairing)), giving an

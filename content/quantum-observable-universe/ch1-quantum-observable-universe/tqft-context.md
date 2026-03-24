@@ -10,12 +10,12 @@ $Z \colon \mathbf{2Cob} \to R\text{-}\mathrm{Mod}$
 \cite{kock2004, atiyah1988}. The Frobenius--Hopf object $A$ in
 [quantum universe](#def:quantum-universe) carries both the Frobenius structure
 (encoding the $2$d cobordism data: the product $\mu$ corresponds to a
-pair-of-pants cobordism, the Frobenius form $\lambda$ to a cap) and a
+pair-of-pants cobordism, the Frobenius form $\int_A$ to a cap) and a
 Hopf structure (encoding the quantum-group symmetry that extends the theory
 to three dimensions). Concretely, a $2$d TQFT assigns to
 the circle $S^1$ a Frobenius algebra $A$ and to each cobordism
 $\Sigma \colon S^1 \sqcup \cdots \to S^1 \sqcup \cdots$ a linear map
-built from $\mu$, $\Delta_\mu$, $\eta$, and $\lambda$. The Hopf
+built from $\mu$, $\Delta_\mu$, $\eta$, and $\int_A$. The Hopf
 structure $(\Delta, \varepsilon, S)$ equips $A$ with the additional data
 needed for three-dimensional and extended TQFTs
 \cite{turaev2010, witten1988}.

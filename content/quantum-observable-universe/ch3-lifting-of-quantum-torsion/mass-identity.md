@@ -19,7 +19,7 @@ $$
 $$
 where $\mathrm{coev}$ and $\mathrm{ev}$ are the rigidity morphisms.
 Let $\Delta \colon A \to A \otimes A$ be the comultiplication (encoding
-the connection) and let $\lambda \colon A \to \mathbf{1}$ be the
+the connection) and let $\int_A \colon A \to \mathbf{1}$ be the
 Frobenius form.
 
 The *inertial mass* of a morphism $\gamma \colon \mathbf{1} \to A$
@@ -29,7 +29,7 @@ $$
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
-    (\lambda \otimes \mathrm{id})
+    (\int_A \otimes \mathrm{id})
     \circ \Delta
     \circ \gamma
   \bigr)

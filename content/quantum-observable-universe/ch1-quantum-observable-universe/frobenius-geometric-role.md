@@ -7,7 +7,7 @@ quantum universe pairs:
   measure infinitesimal change within $A$;
 
 - **Integration**: the Frobenius form
-  $\int_A := \lambda \colon A \to \mathbf{1}$, which assigns to each
+  $\int_A \colon A \to \mathbf{1}$, which assigns to each
   element of $A$ a scalar in $\mathbf{1}$.
 
 The non-degeneracy of the Frobenius pairing

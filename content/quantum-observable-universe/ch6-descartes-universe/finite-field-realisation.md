@@ -9,7 +9,7 @@ extension field $\mathbb{F}_\pp(q)$ with finitely many simple objects.
 The Frobenius--Hopf object $A$ is the regular representation, and
 the fibre functor $\tau$ is the forgetful functor to
 $\mathrm{Vect}_{\mathbb{F}_\pp}$.  The non-degeneracy of the
-Frobenius form $\lambda$ follows from the semisimplicity of the fusion
+Frobenius form $\int_A$ follows from the semisimplicity of the fusion
 category, and the observability condition
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds whenever $q \neq 1$
 (since the trivial representation does not appear as a summand of the

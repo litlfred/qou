@@ -11,7 +11,7 @@ of the classical functional.
 *Step 2: Expansion of the Frobenius–Hopf kernel.*
 At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
 and the comultiplication $\Delta$ becomes cocommutative.  The
-[Frobenius pairing](#def:frobenius-pairing) $\lambda \circ \mu$ on $A \otimes A$ reduces to
+[Frobenius pairing](#def:frobenius-pairing) $\int_A \circ \mu$ on $A \otimes A$ reduces to
 the standard $\mathrm{SU}(2)$ Killing form, so the integrand
 simplifies to
 
@@ -25,7 +25,7 @@ $$
 
 The repulsive kernel $1/r^2$ is thus the classical shadow of the
 resistance of the Frobenius–Hopf object $A$ to local deformations
-of the connection $\nabla$: the Frobenius form $\lambda$ assigns a
+of the connection $\nabla$: the Frobenius form $\int_A$ assigns a
 diverging cost when two strands of $\gamma$ approach.
 
 *Step 3: Subtraction of the self-energy.*
@@ -34,7 +34,7 @@ of $\mathrm{diag} \subset S^1 \times S^1$) matches the arc-length
 subtraction $1/D(\gamma(s),\gamma(t))^2$ in the classical Möbius
 energy.  In the $q$-deformed setting, this subtraction arises
 naturally from the antipode $S$ of the Hopf structure: the
-self-pairing $\lambda(\gamma(s)^* \cdot S(\gamma(s)))$ cancels the
+self-pairing $\int_A(\gamma(s)^* \cdot S(\gamma(s)))$ cancels the
 short-distance divergence at $s = t$, leaving a finite integral
 that agrees with $E(\gamma)/4$ up to an Euler characteristic
 correction $\chi(\Sigma_\gamma) \cdot \mathrm{const}$, where

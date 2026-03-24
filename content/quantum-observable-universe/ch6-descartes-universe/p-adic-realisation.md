@@ -5,7 +5,7 @@ over $\mathbb{Q}_\pp$).
 This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
 The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
 to $\mathbb{Q}_\pp$ provides a Frobenius--Hopf object $A$, where the
-Frobenius form $\lambda$ arises from the $\pp$-adic Haar measure.
+Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure.
 The Frobenius endomorphism $\varphi$ on $\mathcal{C}$ plays the
 role of the Levi-form contraction: the substrate parameter is
 $q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
