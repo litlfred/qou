@@ -8,7 +8,3 @@ categorical dimension $2j + 1$.
 The *fundamental object* is $V = V_{1/2}$, the unique simple object
 of categorical dimension $2$. The *adjoint object* is
 $V_1 \cong \mathrm{Ad}(A)$, of dimension $3$.
-
-The symplectic form $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
-([quantum observable universe](#def:quantum-observable-universe), axiom (iii)) is the
-unique (up to scalar) $G$-invariant alternating pairing on $V$.

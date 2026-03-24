@@ -7,6 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Jet prolongation",
+  proofs: ["prf:categorical-jet-prolongation"],
   tags: ["jet-bundle", "frobenius-hopf", "category-theory"],
   uses: [
     "def:categorical-connection",

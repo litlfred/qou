@@ -16,6 +16,7 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   number: 8,
+  tabLabel: "G",
   title: "Glossary of Rigid Monoidal Terms",
   label: "chap:glossary",
   sections: [

@@ -8,6 +8,7 @@ export default proposition({
     validation: "axioms_only",
   },
   uses: ["def:quantum-observable-universe", "thm:su2-emergence"],
+  proofs: ["prf:spin-labels"],
   examples: ["ex:spin-labels-su2"],
   tags: ["spin", "gauge-group"],
 });

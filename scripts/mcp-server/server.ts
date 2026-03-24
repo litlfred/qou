@@ -454,7 +454,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
 
     const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
-      number: ch.number, title: ch.title, label: ch.label, sections,
+      number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, sections,
       todos: chTodos.length ? chTodos : undefined,
     });
   }
@@ -568,7 +568,7 @@ async function resolvePaperOutline(id: string, branch?: string): Promise<PaperOu
       sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
     }
 
-    chapters.push({ number: ch.number, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+    chapters.push({ number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
   }
 
   const result: PaperOutline = {
