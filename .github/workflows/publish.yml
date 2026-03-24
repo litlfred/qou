@@ -76,6 +76,9 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     container:
       image: ghcr.io/${{ github.repository }}/latex-ci:latest
       credentials:
