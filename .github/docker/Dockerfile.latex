@@ -29,6 +29,7 @@ RUN mkdir -p /tmp/ccicons && cd /tmp/ccicons \
     && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
     && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
     && texhash \
+    && updmap-sys --enable Map=ccicons.map \
     && rm -rf /tmp/ccicons
 
 # ── Python packages ──────────────────────────────────────────────────

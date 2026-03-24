@@ -157,6 +157,16 @@ jobs:
             && rm -rf /var/lib/apt/lists/*
             echo "latexmk installed: $(latexmk --version | head -1)"
           fi
+          # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
+          if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
+            echo "ccicons not found — installing from CTAN..."
+            mkdir -p /tmp/ccicons && cd /tmp/ccicons \
+              && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
+              && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
+              && texhash \
+              && updmap-sys --enable Map=ccicons.map \
+              && rm -rf /tmp/ccicons
+          fi
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
