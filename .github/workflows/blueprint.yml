@@ -54,11 +54,17 @@ permissions:
   id-token: write
   issues: write
   pull-requests: write
+  packages: read          # required to pull the latex-ci container image
 
 jobs:
   build_blueprint:
     runs-on: ubuntu-latest
     name: Build project & blueprint
+    container:
+      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       # ── Free disk space (mathlib + doc-gen4 need ~10 GB) ─────────
@@ -78,23 +84,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install CI tools
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
-          pip3 install --break-system-packages --no-cache-dir requests>=2.32
-
       # ── Pre-build: content pipeline + extraction ──────────────────
-      - name: Configure Python path
-        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+      - name: Configure environment
+        run: |
+          git config --global --add safe.directory "${{ github.workspace }}"
+          echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      # Bun is pre-installed in the latex-ci container image.
 
       - name: Build content objects to LaTeX chapters
         continue-on-error: true
