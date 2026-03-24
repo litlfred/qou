@@ -76,6 +76,10 @@ permissions:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    outputs:
+      head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
+      head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
+      publish_branch: ${{ steps.deploy-vars.outputs.publish_branch }}
     defaults:
       run:
         shell: bash
@@ -566,45 +570,34 @@ jobs:
         if: env.HEAD_REF == 'main'
         run: cp builds-existing.json _site/builds.json
 
-      # ── 4. Deploy to target branch ─────────────────────────────────────────
-      # peaceiris/actions-gh-pages automatically creates the publish_branch
-      # (default: gh-pages) if it does not already exist, so no manual
-      # branch-creation step is required.
-      #
-      # Feature-branch builds are placed under  drafts/<branch>/  so that
-      # every open PR gets its own preview URL without overwriting the main
-      # site.  keep_files is enabled so that main deployments preserve the
-      # drafts directory and feature-branch deployments preserve each other.
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
-          keep_files:     true
-          commit_message: >
-            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+      # ── 4. Prepare deploy outputs and artifacts ─────────────────────────────
+      - name: Set deploy variables
+        id: deploy-vars
+        run: |
+          echo "head_ref=${{ env.HEAD_REF }}" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${{ env.HEAD_SHA }}" >> "$GITHUB_OUTPUT"
+          echo "publish_branch=${{ inputs.publish_branch || 'gh-pages' }}" >> "$GITHUB_OUTPUT"
 
-      # For feature builds, also deploy builds.json to the root of gh-pages
-      # (the main deploy puts it under drafts/<branch>/, so we need a second deploy)
-      - name: Deploy builds.json to gh-pages root
+      - name: Upload site artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+          retention-days: 1
+
+      - name: Prepare builds.json root artifact
         if: env.HEAD_REF != 'main'
         run: |
           mkdir -p _site-root
           cp builds-existing.json _site-root/builds.json
 
-      - name: Push builds.json to gh-pages root
+      - name: Upload builds.json root artifact
         if: env.HEAD_REF != 'main'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/upload-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site-root
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ''
-          keep_files:     true
-          commit_message: >
-            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+          name: publish-site-root
+          path: _site-root
+          retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
       - name: Comment preview link on PR
@@ -697,3 +690,57 @@ jobs:
           )"
             echo "Commented on PR #${pr}."
           done
+
+  # ── Deploy job — serialized across all workflows via shared concurrency group
+  deploy:
+    name: Deploy to gh-pages
+    runs-on: ubuntu-latest
+    needs: [build-and-publish]
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    env:
+      HEAD_REF: ${{ needs.build-and-publish.outputs.head_ref }}
+      HEAD_SHA: ${{ needs.build-and-publish.outputs.head_sha }}
+      PUBLISH_BRANCH: ${{ needs.build-and-publish.outputs.publish_branch }}
+    steps:
+      - name: Download site artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+
+      # Feature-branch builds are placed under  drafts/<branch>/  so that
+      # every open PR gets its own preview URL without overwriting the main
+      # site.  keep_files is enabled so that main deployments preserve the
+      # drafts directory and feature-branch deployments preserve each other.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
+          keep_files:     true
+          commit_message: >
+            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+
+      # For feature builds, also deploy builds.json to the root of gh-pages
+      - name: Download builds.json root artifact
+        if: env.HEAD_REF != 'main'
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site-root
+          path: _site-root
+
+      - name: Push builds.json to gh-pages root
+        if: env.HEAD_REF != 'main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site-root
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ''
+          keep_files:     true
+          commit_message: >
+            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
