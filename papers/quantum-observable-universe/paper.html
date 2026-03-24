@@ -397,6 +397,14 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:time-info">Time as Information Transfer</a>
         <a class="toc-sec" href="#sec:big-bang-info">Big Bang as Initial Information State</a>
         <a class="toc-sec" href="#sec:planck-computation">Planck Units and Computational Mechanics</a>
+        <a class="toc-ch" href="#chap:universality">Universality</a>
+        <a class="toc-sec" href="#sec:categorical-reformulation">Key Results in Categorical Language</a>
+        <a class="toc-sec" href="#sec:enveloping-algebras">Universal Enveloping Algebras and Quantum Groups</a>
+        <a class="toc-sec" href="#textbackslash">textbackslash</a>
+        <a class="toc-sec" href="#textbackslash">textbackslash</a>
+        <a class="toc-sec" href="#sec:witt-vector-lifting">Lifting via Formal Groups and Witt Vectors</a>
+        <a class="toc-sec" href="#sec:finite-fields">Quotient to Finite Fields</a>
+        <a class="toc-sec" href="#sec:jones-polynomials">Jones Polynomials</a>
         <a class="toc-ch" href="#chap:brings-surface">Bring&#x27;s Surface</a>
         <a class="toc-sec" href="#sec:brings-qou">Bring&#x27;s surface as a QOU</a>
         <a class="toc-sec" href="#sec:resolvents-braid">Lagrange resolvents and braid-group action</a>
@@ -407,14 +415,6 @@ code { font-size: 90%; }
         <a class="toc-sec" href="#sec:seiberg-witten">Geometric resolution and Seiberg--Witten theory</a>
         <a class="toc-sec" href="#sec:quantum-brings">Quantum Brings</a>
         <a class="toc-sec" href="#sec:other-euler">Other Euler characteristics</a>
-        <a class="toc-ch" href="#chap:universality">Universality</a>
-        <a class="toc-sec" href="#sec:categorical-reformulation">Key Results in Categorical Language</a>
-        <a class="toc-sec" href="#sec:enveloping-algebras">Universal Enveloping Algebras and Quantum Groups</a>
-        <a class="toc-sec" href="#textbackslash">textbackslash</a>
-        <a class="toc-sec" href="#textbackslash">textbackslash</a>
-        <a class="toc-sec" href="#sec:witt-vector-lifting">Lifting via Formal Groups and Witt Vectors</a>
-        <a class="toc-sec" href="#sec:finite-fields">Quotient to Finite Fields</a>
-        <a class="toc-sec" href="#sec:jones-polynomials">Jones Polynomials</a>
         <a class="toc-ch" href="#chap:descartes-universe">The Descartes Universe</a>
         <a class="toc-sec" href="#sec:descartes-condition">The Descartes condition</a>
         <a class="toc-sec" href="#sec:descartes-leptons-chirality">Leptons and chirality</a>
@@ -512,17 +512,17 @@ to global structures.</p>
 3</a></strong> explores knots and braids in the QOU framework, and
 provides both a fluid-dynamical and an information-theoretic perspective
 on the resulting invariants.</p>
-<p><strong><a href="#chap:brings-surface">Chapter 4</a></strong>
+<p><strong><a href="#chap:<span id="chap:universality"></span>universality">Chapter 4</a></strong> examines
+quantum observable universes over different ground fields: the
+Archimedean (complex), non-Archimedean (<span
+class="math inline">\(\mathfrak{p}\)</span>-adic), and finite-field
+cases.</p>
+<p><strong><a href="#chap:brings-surface">Chapter 5</a></strong>
 develops Bring’s surface as a complete worked example of a quantum
 observable universe, providing explicit coordinate systems for spacetime
 and colour-time. We construct Lagrange resolvents, colour-tube
 coordinates, chiral fibrations, <span id="sec:quaternionic-resolvents"></span><a class="defn-link" href="#def:quaternionic-spectral-resolvents">quaternionic spectral resolvents</a>, and
 the Seiberg–Witten resolution.</p>
-<p><strong><a href="#chap:<span id="chap:universality"></span>universality">Chapter 5</a></strong> examines
-quantum observable universes over different ground fields: the
-Archimedean (complex), non-Archimedean (<span
-class="math inline">\(\mathfrak{p}\)</span>-adic), and finite-field
-cases.</p>
 <p><strong><a href="#chap:descartes-universe">Chapter 6</a></strong>
 opens with <span id="sec:descartes-condition"></span>the <a class="defn-link" href="#def:descartes-condition">Descartes condition</a> and theorem, then presents the
 <span id="sec:topological-mass-ansatz"></span>topological mass ansatz and surveys experimental and observational
@@ -1198,13 +1198,19 @@ class="math inline">\(\pi_H + \pi_V =
 class="math inline">\(\pi_H^2 = \pi_H\)</span> and <span
 class="math inline">\(\pi_V^2 = \pi_V\)</span>.</em></p></li>
 </ol>
-<p><em>The projections are constructed from the torus averaging
-operator: for each weight <span class="math inline">\(\lambda\)</span>
-of the <span class="math inline">\(T\)</span>-action, the <span
+</div>
+
+<div class="proof">
+
+<p><em>Proof of <a class="defn-link" href="#thm:weight-decomposition-exists">existence of the weight decomposition</a>.</em>
+<span id="prf:weight-decomposition-exists" label="prf:weight-decomposition-exists"></span></p>
+<p>The projections are constructed from the torus averaging operator:
+for each weight <span class="math inline">\(\lambda\)</span> of the
+<span class="math inline">\(T\)</span>-action, the <span
 class="math inline">\(\lambda\)</span>-isotypic projector <span
 class="math inline">\(e_\lambda\)</span> is idempotent, and <span
 class="math inline">\(\pi_H = e_0\)</span>, <span
-class="math inline">\(\pi_V = \mathrm{id} - e_0\)</span>.</em></p>
+class="math inline">\(\pi_V = \mathrm{id} - e_0\)</span>. ◻</p>
 </div>
 
 <h2 id="consequences-of-the-axioms"><span id="sec:axiom-consequences"></span>Consequences of the axioms</h2>
@@ -1631,12 +1637,26 @@ V_{1/2}\)</span>, the unique simple object of categorical dimension
 <span class="math inline">\(2\)</span>. The <em>adjoint object</em> is
 <span class="math inline">\(V_1 \cong \mathrm{Ad}(A)\)</span>, of
 dimension <span class="math inline">\(3\)</span>.</em></p>
-<p><em>The symplectic form <span class="math inline">\(\epsilon \colon
+</div>
+
+<div class="proof">
+
+<p><em>Proof of spin labels.</em>
+<span id="prf:spin-labels" label="prf:spin-labels"></span></p>
+<p>Because <span class="math inline">\(G = \mathrm{Aut}^{\otimes}(\tau)
+\cong \mathrm{SU}(2)\)</span> (<a href="#thm:su2-emergence">SU(2)
+emergence</a>), the simple objects of <span
+class="math inline">\(\mathcal{C}\)</span> are indexed by a spin label
+<span class="math inline">\(j \in \{0, \tfrac12, 1, \tfrac32,
+\ldots\}\)</span>, with <span class="math inline">\(V_j\)</span>
+denoting the simple object of categorical dimension <span
+class="math inline">\(2j + 1\)</span>.</p>
+<p>The symplectic form <span class="math inline">\(\epsilon \colon
 \Lambda^2 V \to \mathbf{1}\)</span> (<a
 href="#def:quantum-observable-universe">quantum observable universe</a>,
 axiom (iii)) is the unique (up to scalar) <span
 class="math inline">\(G\)</span>-invariant alternating pairing on <span
-class="math inline">\(V\)</span>.</em></p>
+class="math inline">\(V\)</span>. ◻</p>
 </div>
 
 <div id="ex:spin-labels-su2" class="example">
@@ -1751,11 +1771,17 @@ class="math inline">\(\xi \mathbin{;} \theta_A = \theta_A\)</span>
 (categorically: <span class="math inline">\(\theta_A(\xi) =
 \mathrm{id}_{\mathbf{1}}\)</span>).</em></p></li>
 </ol>
-<p><em>The derivation <span class="math inline">\(\xi\)</span> is the
+</div>
+
+<div class="proof">
+
+<p><em>Proof of <a class="defn-link" href="#thm:categorical-reeb-exists">existence of the categorical Reeb derivation</a>.</em>
+<span id="prf:categorical-reeb-exists" label="prf:categorical-reeb-exists"></span></p>
+<p>The derivation <span class="math inline">\(\xi\)</span> is the
 infinitesimal generator of the one-parameter subgroup <span
 class="math inline">\(T \cong \mathrm{U}(1) \subset G\)</span>, and
 <span class="math inline">\(\theta_A\)</span> is its Maurer–Cartan dual,
-uniquely determined by the normalisation condition.</em></p>
+uniquely determined by the normalisation condition. ◻</p>
 </div>
 
 <div id="ex:reeb-su2" class="example">
@@ -1877,36 +1903,58 @@ href="#def:contact-affine-chart">contact affine chart</a>), the
 href="#def:substrate-parameter">substrate parameter</a>) governs the
 radial and phase coordinates of the state. Let <span
 class="math inline">\(Z\)</span> be the affine coordinate of a state.
-Then:</em></p>
-<ol type="1">
-<li><p><em><strong>Deep-quantum origin</strong> (<span
-class="math inline">\(Z \to 0\)</span>): as <span
-class="math inline">\(q \to \infty\)</span> (collapsing instanton), the
-state becomes purely vertical (<span class="math inline">\(\alpha_H \to
-0\)</span>). The affine coordinate vanishes, locating the primordial
-fermion at the origin of the chart.</em></p></li>
-<li><p><em><strong>Classical boundary</strong> (<span
-class="math inline">\(Z \to \infty\)</span>): as <span
-class="math inline">\(q \to 1\)</span> (classical vacuum), the state
-becomes purely horizontal (<span class="math inline">\(\iota_\xi\,\alpha
-\to 0\)</span>, a boson). The affine coordinate diverges, pushing the
-state to the point at infinity of the <span
-class="math inline">\(\mathbb{CP}^1\)</span> fibre.</em></p></li>
-</ol>
-<p><em>Furthermore, the <span class="math inline">\(q\)</span>-deformed
-Reeb flow (<a href="#ex:q-reeb-flow">q-Reeb flow</a>) rotates the phase
-of <span class="math inline">\(Z\)</span> at a rate proportional to the
-<a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>:</em></p>
+Then <span class="math inline">\(Z \to 0\)</span> as <span
+class="math inline">\(q \to \infty\)</span> (deep-quantum origin) and
+<span class="math inline">\(Z \to \infty\)</span> as <span
+class="math inline">\(q \to 1\)</span> (classical boundary). The <span
+class="math inline">\(q\)</span>-deformed Reeb flow rotates the phase of
+<span class="math inline">\(Z\)</span>:</em></p>
 <p><em><span class="math display">\[\mathcal{L}_\xi\,Z \;=\;
 J\,\hbar_q\,Z,\]</span></em></p>
 <p><em>where <span class="math inline">\(\hbar_q = 1 - q^{-1}\)</span>
 (<a href="#def:quantum-planck-constant">quantum Planck constant</a>) and
 <span class="math inline">\(J\)</span> is the complex structure on <span
 class="math inline">\(H\)</span>.</em></p>
-<p><em>This unifies bosons and fermions geometrically: <span
+</div>
+
+<div class="proof">
+
+<p><em>Proof of substrate radial coordinate.</em>
+<span id="prf:substrate-radial-coordinate" label="prf:substrate-radial-coordinate"></span></p>
+<p>Within the contact affine chart <span
+class="math inline">\(U_\xi\)</span> (<a
+href="#def:contact-affine-chart">contact affine chart</a>), let <span
+class="math inline">\(Z\)</span> be the affine coordinate of a
+state.</p>
+<ol type="1">
+<li><p><strong>Deep-quantum origin</strong> (<span
+class="math inline">\(Z \to 0\)</span>): as <span
+class="math inline">\(q \to \infty\)</span> (collapsing instanton), the
+state becomes purely vertical (<span class="math inline">\(\alpha_H \to
+0\)</span>). The affine coordinate vanishes, locating the primordial
+fermion at the origin of the chart.</p></li>
+<li><p><strong>Classical boundary</strong> (<span
+class="math inline">\(Z \to \infty\)</span>): as <span
+class="math inline">\(q \to 1\)</span> (classical vacuum), the state
+becomes purely horizontal (<span class="math inline">\(\iota_\xi\,\alpha
+\to 0\)</span>, a boson). The affine coordinate diverges, pushing the
+state to the point at infinity of the <span
+class="math inline">\(\mathbb{CP}^1\)</span> fibre.</p></li>
+</ol>
+<p>Furthermore, the <span class="math inline">\(q\)</span>-deformed Reeb
+flow (<a href="#ex:q-reeb-flow">q-Reeb flow</a>) rotates the phase of
+<span class="math inline">\(Z\)</span> at a rate proportional to the
+<a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>:</p>
+<p><span class="math display">\[\mathcal{L}_\xi\,Z \;=\;
+J\,\hbar_q\,Z,\]</span></p>
+<p>where <span class="math inline">\(\hbar_q = 1 - q^{-1}\)</span> (<a
+href="#def:quantum-planck-constant">quantum Planck constant</a>) and
+<span class="math inline">\(J\)</span> is the complex structure on <span
+class="math inline">\(H\)</span>.</p>
+<p>This unifies bosons and fermions geometrically: <span
 class="math inline">\(q\)</span> controls the radial position in <span
 class="math inline">\(\mathbb{P}(V)\)</span>, with the bosonic sector at
-the boundary and the fermionic sector at the origin.</em></p>
+the boundary and the fermionic sector at the origin. ◻</p>
 </div>
 
 <div id="prop:fiber-adjoint-involution" class="proposition">
@@ -2468,14 +2516,20 @@ class="math inline">\(d\)</span> (at <span class="math inline">\(q =
 1\)</span>) and the vertical projection <span
 class="math inline">\(\pi_V \circ d\)</span> (as <span
 class="math inline">\(q \to \infty\)</span>).</em></p>
-<p><em>The construction proceeds by choosing <span
-class="math inline">\(q_0 &gt; 1\)</span> transcendental (hence not a
-root of unity) and setting <span class="math inline">\(q(p) =
-q_0\)</span> for all <span class="math inline">\(p\)</span>. The
-classicality bound <span class="math inline">\(q \ge 1\)</span> and
-positivity are immediate from <span class="math inline">\(q_0 &gt;
-1\)</span>. Non-constant substrate fields arise from the Reeb flow
-parameterisation of the fibre coordinate.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof of <a class="defn-link" href="#thm:substrate-parameter-exists">existence of the substrate parameter</a>.</em>
+<span id="prf:substrate-parameter-exists" label="prf:substrate-parameter-exists"></span></p>
+<p>The construction proceeds by choosing <span class="math inline">\(q_0
+&gt; 1\)</span> transcendental (hence not a root of unity) and setting
+<span class="math inline">\(q(p) = q_0\)</span> for all <span
+class="math inline">\(p\)</span>. The classicality bound <span
+class="math inline">\(q \ge 1\)</span> and positivity are immediate from
+<span class="math inline">\(q_0 &gt; 1\)</span>. Non-constant substrate
+fields arise from the Reeb flow parameterisation of the fibre
+coordinate. ◻</p>
 </div>
 
 <div id="def:quantum-gauge-group" class="definition">
@@ -3549,18 +3603,36 @@ Frobenius–Hopf structure from <span class="math inline">\(A\)</span>,
 and the quadruple <span class="math inline">\((\mathcal{C},\, J^1(A),\,
 \tau&#39;,\, q)\)</span> — where <span
 class="math inline">\(\tau&#39;\)</span> is the induced fibre functor —
-is again a quantum universe. The following diagram commutes:</em></p>
-<p><em><span class="math display">\[\label{eq:jet-prolongation-cd}
-\begin{tikzcd}[row sep=2.5em, column sep=3em]
+is again a quantum universe.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof of categorical <a class="defn-link" href="#prop:categorical-jet-prolongation">jet prolongation</a>.</em>
+<span id="prf:categorical-jet-prolongation" label="prf:categorical-jet-prolongation"></span></p>
+<p>The Frobenius–Hopf structure on <span
+class="math inline">\(J^1(A)\)</span> is inherited from <span
+class="math inline">\(A\)</span> via the <a class="defn-link" href="#prop:categorical-jet-prolongation">jet prolongation</a> functor. The
+induced fibre functor <span class="math inline">\(\tau&#39;\)</span> is
+defined by composition with the canonical projection <span
+class="math inline">\(J^1(A) \to A\)</span>, and the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a>
+<span class="math inline">\(q\)</span> carries over unchanged. The
+commutativity of the diagram</p>
+<p><span class="math display">\[\begin{tikzcd}[row sep=2.5em, column
+sep=3em]
 J^1(A) \ar[r, &quot;\nabla&#39;&quot;] \ar[d, &quot;j^1&quot;&#39;]
 &amp; J^1(A) \otimes \Omega^1(J^1(A)) \ar[d, &quot;j^1 \otimes
 j^1&quot;] \\
 A \ar[r, &quot;\nabla&quot;&#39;]
 &amp; A \otimes \Omega^1(A)
-\end{tikzcd}\]</span></em></p>
-<p><em>where <span class="math inline">\(\nabla&#39;\)</span> is the
-prolonged connection and <span class="math inline">\(\nabla\)</span> the
-original.</em></p>
+\end{tikzcd}\]</span></p>
+<p>follows from the universal property of the jet bundle: <span
+class="math inline">\(j^1\)</span> is the universal first-order
+differential operator, so any connection <span
+class="math inline">\(\nabla\)</span> on <span
+class="math inline">\(A\)</span> lifts uniquely to <span
+class="math inline">\(\nabla&#39;\)</span> on <span
+class="math inline">\(J^1(A)\)</span> making the square commute. ◻</p>
 </div>
 
 <div id="def:categorical-transport" class="definition">
@@ -5409,17 +5481,7 @@ class="math inline">\(\forall\)</span></span></sup></a></em></p>
 be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
 class="math inline">\(q\)</span> and Skein module <span
 class="math inline">\(\mathcal{S}_q =
-\mathcal{S}_q(\mathcal{C})\)</span>.</em></p>
-<p><em><strong>Generators.</strong> Call a knot type <span
-class="math inline">\(K\)</span> <em>fundamental</em> if its hyperbolic
-volume vanishes: <span class="math inline">\(\mathrm{Vol}(K) =
-0\)</span>. By the geometrization of knot complements, these are
-precisely the torus knots (and the unknot). In the particle dictionary,
-the fundamental knots are the fermions: the unknot (neutrino), trefoil
-<span class="math inline">\(3_1\)</span> (electron), cinquefoil <span
-class="math inline">\(5_1\)</span> (tau), and the torus<span
-class="math inline">\((p,2)\)</span> family.</em></p>
-<p><em><strong>Statement.</strong> The Skein module <span
+\mathcal{S}_q(\mathcal{C})\)</span>. The Skein module <span
 class="math inline">\(\mathcal{S}_q\)</span> is generated as an algebra
 by:</em></p>
 <ol type="1">
@@ -5430,23 +5492,45 @@ knots), and</em></p></li>
 class="math inline">\(\mathcal{L}_{\mathrm{Hopf}}\)</span> (the binding
 operation).</em></p></li>
 </ol>
-<p><em>Every hadron <span class="math inline">\(H \in \mathrm{Sym}^n(K)
-\otimes \mathcal{L}_{\mathrm{Hopf}}\)</span> admits a <strong>terminal
-Skein resolution</strong>: iterating the Skein relation</em></p>
-<p><em><span class="math display">\[q \cdot L_+ \;-\; q^{-1} \cdot L_-
-\;=\; (q - q^{-1}) \cdot L_0\]</span></em></p>
-<p><em>at every crossing in the linked configuration terminates in a
-finite polynomial</em></p>
-<p><em><span class="math display">\[[H] \;=\; \sum_{\alpha} c_\alpha(q)
+<p><em>Every hadron admits a terminal Skein resolution into a finite
+polynomial in these generators with coefficients in <span
+class="math inline">\(\mathbb{Z}[q^{\pm 1}]\)</span>.</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof of Skein generation.</em>
+<span id="prf:skein-generation" label="prf:skein-generation"></span></p>
+<p><strong>Generators.</strong> A knot type <span
+class="math inline">\(K\)</span> is <em>fundamental</em> if its
+hyperbolic volume vanishes: <span class="math inline">\(\mathrm{Vol}(K)
+= 0\)</span>. By the geometrization of knot complements, these are
+precisely the torus knots (and the unknot). In the particle dictionary,
+the fundamental knots are the fermions: the unknot (neutrino), trefoil
+<span class="math inline">\(3_1\)</span> (electron), cinquefoil <span
+class="math inline">\(5_1\)</span> (tau), and the torus<span
+class="math inline">\((p,2)\)</span> family.</p>
+<p><strong>Generation.</strong> The Skein module <span
+class="math inline">\(\mathcal{S}_q\)</span> is generated as an algebra
+by the fundamental knot types <span class="math inline">\(\{K_i\}_{i \in
+\mathcal{F}}\)</span> and the Hopf link <span
+class="math inline">\(\mathcal{L}_{\mathrm{Hopf}}\)</span>. Every hadron
+<span class="math inline">\(H \in \mathrm{Sym}^n(K) \otimes
+\mathcal{L}_{\mathrm{Hopf}}\)</span> admits a <strong>terminal Skein
+resolution</strong>: iterating the Skein relation</p>
+<p><span class="math display">\[q \cdot L_+ \;-\; q^{-1} \cdot L_-
+\;=\; (q - q^{-1}) \cdot L_0\]</span></p>
+<p>at every crossing terminates in a finite polynomial</p>
+<p><span class="math display">\[[H] \;=\; \sum_{\alpha} c_\alpha(q)
 \cdot
-[K_{i_1}] \cdots [K_{i_k}]\]</span></em></p>
-<p><em>where each <span class="math inline">\([K_{i_j}]\)</span> is the
+[K_{i_1}] \cdots [K_{i_k}]\]</span></p>
+<p>where each <span class="math inline">\([K_{i_j}]\)</span> is the
 class of a fundamental knot and <span class="math inline">\(c_\alpha(q)
-\in \mathbb{Z}[q^{\pm 1}]\)</span>.</em></p>
-<p><em><strong>Mass from linking.</strong> Evaluating the mass
-functional <span class="math inline">\(\mathcal{M}\)</span> on the Skein
-resolution gives:</em></p>
-<p><em><span class="math display">\[\mathcal{M}(H)
+\in \mathbb{Z}[q^{\pm 1}]\)</span>.</p>
+<p><strong>Mass from linking.</strong> Evaluating the mass functional
+<span class="math inline">\(\mathcal{M}\)</span> on the Skein resolution
+gives:</p>
+<p><span class="math display">\[\mathcal{M}(H)
 \;=\;
 \underbrace{Q(q) \cdot
 \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})}_{\text{binding energy (from
@@ -5454,28 +5538,16 @@ linking)}}
 \;+\;
 \underbrace{\sum_{i=1}^{n}
 \frac{\mathrm{Vol}(K_i)}{\hbar_q^{\,2}}}_{\text{constituent mass (zero
-for torus knots)}}\]</span></em></p>
-<p><em>where <span class="math inline">\(Q(q) \in \mathbb{Z}[q^{\pm
+for torus knots)}}\]</span></p>
+<p>where <span class="math inline">\(Q(q) \in \mathbb{Z}[q^{\pm
 1}]\)</span> is the Skein polynomial of the linking configuration and
-<span class="math inline">\(\hbar_q = 1 - q^{-1}\)</span>.</em></p>
-<p><em><strong>Consequence.</strong> For hadrons composed entirely of
-fundamental (torus-knot) constituents, <span
-class="math inline">\(\mathrm{Vol}(K_i) = 0\)</span> for all <span
-class="math inline">\(i\)</span>, so the entire inertial mass arises
-from the linking topology:</em></p>
-<p><em><span class="math display">\[\mathcal{M}(H)
-\;=\; Q(q) \cdot
-\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}).\]</span></em></p>
-<p><em>Mass is purely a property of <em>how</em> the constituents are
-linked, not <em>what</em> they are. The Skein polynomial <span
-class="math inline">\(Q(q)\)</span> encodes the crossing structure of
-the binding Hopf link, and the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> <span
-class="math inline">\(q\)</span> converts this combinatorial data into a
-physical mass. This explains the sub-keV agreement with CODATA values
-(<a href="#prop:terminal-resolution">terminal resolution</a>): the
-proton and neutron masses are determined entirely by the Skein
-polynomial of the Borromean/Hopf binding structure on three torus-knot
-constituents.</em></p>
+<span class="math inline">\(\hbar_q = 1 - q^{-1}\)</span>.</p>
+<p>For hadrons composed entirely of fundamental (torus-knot)
+constituents, <span class="math inline">\(\mathrm{Vol}(K_i) = 0\)</span>
+for all <span class="math inline">\(i\)</span>, so the entire inertial
+mass arises from the linking topology:</p>
+<p><span class="math display">\[\mathcal{M}(H) \;=\; Q(q) \cdot
+\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}).\]</span> ◻</p>
 </div>
 
 <div id="def:bundle-initial-conditions" class="definition">
@@ -5920,31 +5992,38 @@ class="math inline">\(A\)</span>, Levi form <span
 class="math inline">\(L\)</span>, and self-dual curvature <span
 class="math inline">\(F^+\)</span>, the categorical mass (<a
 href="#def:mass-identity">mass identity</a>) is realised as Yekutieli’s
-nonabelian multiplicative integral [yekutieli2015]. Concretely, let
-<span class="math inline">\(\gamma\)</span> be a closed cycle encircling
-a vortex filament and let <span class="math inline">\(\Sigma\)</span> be
-a surface with <span class="math inline">\(\partial\Sigma =
-\gamma\)</span>. Then:</em></p>
-<p><em><span class="math display">\[m(\gamma) \;=\;
+nonabelian multiplicative integral [yekutieli2015].</em></p>
+</div>
+
+<div class="proof">
+
+<p><em>Proof of archimedean mass identity.</em>
+<span id="prf:mass-identity-C" label="prf:mass-identity-C"></span></p>
+<p>Let <span class="math inline">\(\gamma\)</span> be a closed cycle
+encircling a vortex filament and let <span
+class="math inline">\(\Sigma\)</span> be a surface with <span
+class="math inline">\(\partial\Sigma = \gamma\)</span>. The categorical
+mass (<a href="#def:mass-identity">mass identity</a>) is realised as
+Yekutieli’s nonabelian multiplicative integral [yekutieli2015]:</p>
+<p><span class="math display">\[m(\gamma) \;=\;
 \left\lVert\,
 \mathrm{MI}\!\!\int_\Sigma
 \bigl(\nabla_A q,\; L \wedge F^+\bigr)
-\,\right\rVert,\]</span></em></p>
-<p><em>where <span
-class="math inline">\(\mathrm{MI}\!\int_\Sigma\)</span> denotes the
-<span class="math inline">\(2\)</span>-dimensional twisted nonabelian
-multiplicative integral, the integrand is the connection–curvature pair
-<span class="math inline">\((\nabla_A q,\; L \wedge F^+)\)</span>
-satisfying the <a class="defn-link" href="#def:quantum-flatness">quantum flatness</a> equation (<a
+\,\right\rVert,\]</span></p>
+<p>where <span class="math inline">\(\mathrm{MI}\!\int_\Sigma\)</span>
+denotes the <span class="math inline">\(2\)</span>-dimensional twisted
+nonabelian multiplicative integral, the integrand is the
+connection–curvature pair <span class="math inline">\((\nabla_A q,\; L
+\wedge F^+)\)</span> satisfying the <a class="defn-link" href="#def:quantum-flatness">quantum flatness</a> equation (<a
 href="#eq:quantum-flatness">eq:quantum-flatness</a>), and <span
 class="math inline">\(\lVert\cdot\rVert\)</span> is the Killing-form
 norm on <span class="math inline">\(\mathfrak{su}(2)\)</span>. By the
 nonabelian Stokes theorem [yekutieli2015], this reduces to the
-holonomy:</em></p>
-<p><em><span class="math display">\[m(\gamma) \;=\;
+holonomy:</p>
+<p><span class="math display">\[m(\gamma) \;=\;
 \bigl\lVert\,
 \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma;\, \mathfrak{G}\bigr)
-\,\bigr\rVert.\]</span></em></p>
+\,\bigr\rVert.\]</span> ◻</p>
 </div>
 
 <div class="proof">
@@ -6256,23 +6335,28 @@ class="math inline">\(\Phi_q(z_i)\)</span>, where <span
 class="math inline">\(z_i\)</span> is the spectral coordinate of <span
 class="math inline">\(p_i\)</span> in the Briggs–Klein chart (<a
 href="#def:briggs-klein-chart">Briggs–Klein chart</a>).</em></p>
-<p><em>Concretely, the transient trace at the <span
-class="math inline">\(i\)</span>-th exceptional divisor <span
-class="math inline">\(E_i \cong \mathbb{P}^1(\mathbb{C})\)</span> is the
-geometric integration of the <span
-class="math inline">\(q\)</span>-deformed expansion flow over the
+</div>
+
+<div class="proof">
+
+<p><em>Proof of quantum dilogarithm corollary.</em>
+<span id="prf:quantum-dilogarithm" label="prf:quantum-dilogarithm"></span></p>
+<p>The transient trace at the <span class="math inline">\(i\)</span>-th
+exceptional divisor <span class="math inline">\(E_i \cong
+\mathbb{P}^1(\mathbb{C})\)</span> is the geometric integration of the
+<span class="math inline">\(q\)</span>-deformed expansion flow over the
 resolved defect. Integrating the spectral uncertainty flow <span
 class="math inline">\(\ln_q\)</span> along the radial coordinate of the
-Briggs–Klein affine chart yields:</em></p>
-<p><em><span class="math display">\[\Phi_q(z_i) = \int_0^{z_i}
+Briggs–Klein affine chart yields:</p>
+<p><span class="math display">\[\Phi_q(z_i) = \int_0^{z_i}
 \frac{\ln_q(1+t)}{t} dt = \sum_{n=1}^\infty (-1)^{n+1} \frac{z_i^n}{n
-[n]_q}\]</span></em></p>
-<p><em>where <span class="math inline">\(\ln_q(1+t) = \sum_{n=1}^\infty
+[n]_q}\]</span></p>
+<p>where <span class="math inline">\(\ln_q(1+t) = \sum_{n=1}^\infty
 (-1)^{n+1} \frac{t^n}{[n]_q}\)</span> governs the continuous Reeb flow.
 The integration introduces the factor of <span
 class="math inline">\(n\)</span> in the denominator, elevating the
 1-dimensional path propagation to a geometric volume measure trapping
-the topological charge.</em></p>
+the topological charge. ◻</p>
 </div>
 
 <h1 id="braids-knots-and-fluid-dynamics">Braids, Knots and Fluid
@@ -6933,11 +7017,166 @@ information begins to propagate, and the brane expands.</p>
 Computational Mechanics</h2>
 <p>Develop the analogue of the Planck length for time and clarify its
 role in computational mechanics.</p>
+<h1 id="universality">Universality</h1>
+<h2 id="key-results-in-categorical-language">Key Results in Categorical
+Language</h2>
+<ul>
+<li><p>Rephrase the QOU definitions (<a href="#chap:qou">Chapter</a>) in
+the language of monoidal categories and functors.</p></li>
+<li><p>Key theorems to establish in the categorical setting:</p>
+<ul>
+<li><p>Lifting (<a href="#prop:jet-prolongation">jet prolongation</a>)
+as a categorical lift/extension (<a
+href="#rem:prolongation-categorical">prolongation
+(categorical)</a>).</p></li>
+<li><p><a class="defn-link" href="#def:descent">Descent</a> (<a href="#ssec:descent">Subsection</a>) via fibred
+categories.</p></li>
+<li><p>Obstructions described in terms of cohomology of the category
+(sheaf cohomology, derived functors).</p></li>
+<li><p>Show that the Atiyah exact sequence splits if and only if the
+bundle admits a linear connection.</p></li>
+</ul></li>
+<li><p>Role of <span class="math inline">\(\mathrm{SU}(2)\)</span> and
+<span class="math inline">\(\mathbb{P}^1(\mathbb{C})\)</span> from the
+symmetry perspective; motivate categorical analogies (e.g. Tannaka–Krein
+duality).</p></li>
+</ul>
+<h2 id="universal-enveloping-algebras-and-quantum-groups-1">Universal
+Enveloping Algebras and Quantum Groups</h2>
+<ul>
+<li><p>Lusztig integral form of <span
+class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span> and its
+triangular decomposition.</p></li>
+<li><p>Poincare–Birkhoff–Witt (PBW) basis and its <span
+class="math inline">\(q\)</span>-deformed analogue.</p></li>
+<li><p>Universal enveloping algebras and their role in lifting (cf. <a
+href="https://arxiv.org/abs/math/0409565">arXiv:math/0409565</a>).</p></li>
+<li><p>Heisenberg uncertainty as a <span
+class="math inline">\(q\)</span>-commutator: <span
+class="math inline">\([\hat{X},\hat{P}]_q = i\hbar_q\)</span>.</p></li>
+</ul>
+<h2 id="pp-adic-number-fields-and-universality">$\}pp$-Adic Number
+Fields and Universality</h2>
+<ul>
+<li><p>Describe <span class="math inline">\(\mathbb{Q}\)</span>, <span
+class="math inline">\(\mathbb{C}_\mathfrak{p}\)</span>, <span
+class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>, and <span
+class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> in terms of their
+category-theoretic universality relationships to each other.</p></li>
+<li><p>Ostrowski’s theorem as a categorical coproduct
+characterisation.</p></li>
+<li><p>Connections between <span
+class="math inline">\(\mathfrak{p}\)</span>-adic completions and inverse
+limits in the category of topological rings.</p></li>
+</ul>
+<h2 id="mathbbc_pp-quantum-universe">$\}mathbb{C}_\}pp$ Quantum
+Universe</h2>
+<h2 id="lifting-via-formal-groups-and-witt-vectors">Lifting via Formal
+Groups and Witt Vectors</h2>
+<p>The <span class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>
+realisation (<a href="#ex:p-adic-realisation"><span
+class="math inline">\(p\)</span>-adic realisation</a>) provides a QOU
+over characteristic <span class="math inline">\(0\)</span>, while the
+<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation
+(<a href="#ex:finite-field-realisation">finite field realisation</a>)
+provides one over characteristic <span
+class="math inline">\(\mathfrak{p}\)</span>. The passage between them is
+mediated by the <em>Witt vector functor</em> <span
+class="math inline">\(W\)</span> and the theory of formal groups over
+<span class="math inline">\(\mathfrak{p}\)</span>-adic rings.</p>
+<div id="def:witt-vector-lift" class="definition">
+
+<p><strong>Definition 4.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.WittVectorLift" target="_blank" title="Lean: QOU.WittVectorLift">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:witt-vector-lift">Witt vector lift of a formal group</a>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.WittVectorLift"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a> Let <span
+class="math inline">\(H\)</span> be a commutative formal group over
+<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> equipped
+with a skewed-Poisson structure <span
+class="math inline">\(\pi_&lt;\)</span> (a biderivation <span
+class="math inline">\(\pi_&lt;\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)\)</span>
+satisfying a graded anti-symmetry and a <span
+class="math inline">\(\mathfrak{p}\)</span>-truncated Jacobi condition).
+The <em>Witt vector lift</em> is the formal group <span
+class="math inline">\(\widehat{G}\)</span> over <span
+class="math inline">\(W(\mathbb{F}_\mathfrak{p}) \cong
+\mathbb{Z}_\mathfrak{p}\)</span> obtained by integrating <span
+class="math inline">\(\pi_&lt;\)</span> in the sense of Fresse: the
+distribution algebra <span
+class="math inline">\(\mathrm{Dist}(\widehat{G})\)</span> is the <span
+class="math inline">\(\mathfrak{p}\)</span>-adic completion of the
+universal enveloping algebra <span
+class="math inline">\(\mathcal{U}(\mathrm{Lie}(H))\)</span> deformed by
+<span class="math inline">\(\pi_&lt;\)</span>.</em></p>
+</div>
+
+<div id="prop:skew-poisson-integration" class="proposition">
+
+<p><strong>Proposition 4.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Descartes.skew_poisson_integration" target="_blank" title="Lean: QOU.Descartes.skew_poisson_integration">&#x2200; stated</a></strong> (Integration of skewed-Poisson
+structures). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.Descartes.skew_poisson_integration"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span
+class="math inline">\(H/\mathbb{F}_\mathfrak{p}\)</span> be a smooth
+commutative formal group and <span
+class="math inline">\(\pi_&lt;\)</span> a skewed-Poisson structure on
+<span class="math inline">\(H\)</span>. Then there exists a (generally
+non-commutative) formal group <span
+class="math inline">\(G/\mathbb{Z}_\mathfrak{p}\)</span> such
+that:</em></p>
+<ol type="1">
+<li><p><em><span class="math inline">\(G
+\otimes_{\mathbb{Z}_\mathfrak{p}} \mathbb{F}_\mathfrak{p}\;\cong\;
+H\)</span> (reduction modulo <span
+class="math inline">\(\mathfrak{p}\)</span> recovers <span
+class="math inline">\(H\)</span>);</em></p></li>
+<li><p><em><span class="math inline">\(\mathrm{Dist}(G)\)</span> is a
+deformation of <span class="math inline">\(\mathrm{Dist}(H)\)</span>
+computed via a Grobner–Shirshov basis for the relations of the
+enveloping algebra;</em></p></li>
+<li><p><em>the comultiplication on <span
+class="math inline">\(\mathrm{Dist}(G)\)</span> satisfies the <em>strong
+multiplicativity</em> condition: the <a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a> <span
+class="math inline">\((\mathrm{Id}\otimes
+m)\circ(\Delta\otimes\mathrm{Id})
+= \Delta\circ m\)</span> is preserved under the
+deformation.</em></p></li>
+</ol>
+</div>
+
+<div class="proof">
+
+<p><em>Proof of <a class="defn-link" href="#prop:skew-poisson-integration">Integration of skewed-Poisson structures</a>.</em>
+<span id="prf:skew-poisson-integration" label="prf:skew-poisson-integration"></span></p>
+<p>This is the Main Theorem of Fresse. Item (1) is the existence
+statement; item (2) follows from the Grobner–Shirshov normal-form
+construction for <span class="math inline">\(\mathrm{Dist}(G)\)</span>;
+item (3) is the strong multiplicativity theorem, which guarantees that
+the co-multiplication is compatible with the deformed product at every
+stage of the <span class="math inline">\(\mathfrak{p}\)</span>-adic
+filtration. ◻</p>
+</div>
+
+<h2 id="quotient-to-finite-fields"><span id="sec:finite-fields"></span>Quotient to Finite Fields</h2>
+<ul>
+<li><p>Quotienting from <span
+class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span> to work over
+<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>: reduction
+modulo <span class="math inline">\(\mathfrak{p}\)</span>.</p></li>
+<li><p>Finite group representations in the QOU context.</p></li>
+<li><p>Betti numbers over finite fields and comparison with
+characteristic-zero values.</p></li>
+</ul>
+<h2 id="jones-polynomials"><span id="sec:jones-polynomials"></span>Jones Polynomials</h2>
+<p>The role of Jones polynomials in the <span
+class="math inline">\(\mathfrak{p}\)</span>-adic story and their
+relationship to the braid-group representations of <a
+href="#chap:path-integrals-braiding">Chapter</a>.</p>
 <h1 id="brings-surface">Bring’s Surface</h1>
 <h2 id="brings-surface-as-a-qou">Bring’s surface as a QOU</h2>
 <div id="prop:brings-is-qou" class="proposition">
 
-<p><strong>Proposition 4.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.brings_is_qou" target="_blank" title="Lean: QOU.Brings.brings_is_qou">&#x2200; stated</a></strong> (Bring’s surface is a quantum
+<p><strong>Proposition 5.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.brings_is_qou" target="_blank" title="Lean: QOU.Brings.brings_is_qou">&#x2200; stated</a></strong> (Bring’s surface is a quantum
 observable universe). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Brings.brings_is_qou"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -7065,7 +7304,7 @@ and braid-group action</h2>
 <h2 id="color-tube-coordinates"><span id="sec:color-tube"></span>Color tube coordinates</h2>
 <div id="def:color-tube-coordinates" class="definition">
 
-<p><strong>Definition 4.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ColorTubeCoordinates" target="_blank" title="Lean: QOU.ColorTubeCoordinates">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:color-tube-coordinates">Color tube coordinates</a>). <em><a
+<p><strong>Definition 5.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ColorTubeCoordinates" target="_blank" title="Lean: QOU.ColorTubeCoordinates">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:color-tube-coordinates">Color tube coordinates</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ColorTubeCoordinates"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(z = x_0/x_1 \in
@@ -7088,7 +7327,7 @@ b)\)</span>.</em></p>
 elliptic curves</h2>
 <div id="prop:chiral-elliptic" class="proposition">
 
-<p><strong>Proposition 4.3 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.chiral_elliptic" target="_blank" title="Lean: QOU.Brings.chiral_elliptic">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:chiral-elliptic">Chiral fibre as an elliptic curve</a>).
+<p><strong>Proposition 5.3 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.chiral_elliptic" target="_blank" title="Lean: QOU.Brings.chiral_elliptic">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:chiral-elliptic">Chiral fibre as an elliptic curve</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Brings.chiral_elliptic"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -7132,7 +7371,7 @@ fibres. ◻</p>
 
 <div id="def:color-tube-fibers" class="definition">
 
-<p><strong>Definition 4.4 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ColorTubeFibers" target="_blank" title="Lean: QOU.ColorTubeFibers">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:color-tube-fibers">Color tube fibers</a>). <em><a
+<p><strong>Definition 5.4 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ColorTubeFibers" target="_blank" title="Lean: QOU.ColorTubeFibers">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:color-tube-fibers">Color tube fibers</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ColorTubeFibers"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(z \in
@@ -7168,7 +7407,7 @@ href="#prop:chiral-elliptic">chiral elliptic curve</a> via the shift
 
 <div id="def:observed-value" class="definition">
 
-<p><strong>Definition 4.5 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservedValue" target="_blank" title="Lean: QOU.ObservedValue">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:observed-value">Observed spacetime value</a>). <em><a
+<p><strong>Definition 5.5 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ObservedValue" target="_blank" title="Lean: QOU.ObservedValue">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:observed-value">Observed spacetime value</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ObservedValue"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(\mathbf{r}_z, \mathbf{g}_z,
@@ -7198,7 +7437,7 @@ class="math inline">\(\mathbb{P}^1(\mathbb{C})\)</span>.</em></p>
 smoothness</h2>
 <div id="def:briggs-klein-chart" class="definition">
 
-<p><strong>Definition 4.6 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BriggsKleinChart" target="_blank" title="Lean: QOU.BriggsKleinChart">&#x2200; stated</a></strong> (Briggs–Klein affine chart). <em><a
+<p><strong>Definition 5.6 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.BriggsKleinChart" target="_blank" title="Lean: QOU.BriggsKleinChart">&#x2200; stated</a></strong> (Briggs–Klein affine chart). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.BriggsKleinChart"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(r=\lvert w_1\rvert^2\)</span>
@@ -7219,7 +7458,7 @@ class="math inline">\(C_5\)</span>-invariant.</em></p>
 resolvents</h2>
 <div id="def:quaternionic-spectral-resolvents" class="definition">
 
-<p><strong>Definition 4.7 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuaternionicSpectralResolvents" target="_blank" title="Lean: QOU.QuaternionicSpectralResolvents">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
+<p><strong>Definition 5.7 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuaternionicSpectralResolvents" target="_blank" title="Lean: QOU.QuaternionicSpectralResolvents">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quaternionic-spectral-resolvents">Quaternionic spectral resolvents</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QuaternionicSpectralResolvents"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -7277,7 +7516,7 @@ href="#rem:jet-shell">jet shell</a>).</em></p>
 resolution and Seiberg–Witten theory</h2>
 <div id="prop:mi-sw-abelianisation" class="proposition">
 
-<p><strong>Proposition 4.8 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.mi_sw_abelianisation" target="_blank" title="Lean: QOU.Brings.mi_sw_abelianisation">&#x2200; stated</a></strong> (Abelianisation of the MI integral
+<p><strong>Proposition 5.8 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Brings.mi_sw_abelianisation" target="_blank" title="Lean: QOU.Brings.mi_sw_abelianisation">&#x2200; stated</a></strong> (Abelianisation of the MI integral
 on exceptional divisors). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Brings.mi_sw_abelianisation"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -7414,161 +7653,6 @@ Euler characteristics other than <span class="math inline">\(\chi =
 -2, -4, -8, \ldots\)</span>, determining which automorphism groups
 arise, and connecting to the varying Euler characteristic
 discussion.</p>
-<h1 id="universality">Universality</h1>
-<h2 id="key-results-in-categorical-language">Key Results in Categorical
-Language</h2>
-<ul>
-<li><p>Rephrase the QOU definitions (<a href="#chap:qou">Chapter</a>) in
-the language of monoidal categories and functors.</p></li>
-<li><p>Key theorems to establish in the categorical setting:</p>
-<ul>
-<li><p>Lifting (<a href="#prop:jet-prolongation">jet prolongation</a>)
-as a categorical lift/extension (<a
-href="#rem:prolongation-categorical">prolongation
-(categorical)</a>).</p></li>
-<li><p><a class="defn-link" href="#def:descent">Descent</a> (<a href="#ssec:descent">Subsection</a>) via fibred
-categories.</p></li>
-<li><p>Obstructions described in terms of cohomology of the category
-(sheaf cohomology, derived functors).</p></li>
-<li><p>Show that the Atiyah exact sequence splits if and only if the
-bundle admits a linear connection.</p></li>
-</ul></li>
-<li><p>Role of <span class="math inline">\(\mathrm{SU}(2)\)</span> and
-<span class="math inline">\(\mathbb{P}^1(\mathbb{C})\)</span> from the
-symmetry perspective; motivate categorical analogies (e.g. Tannaka–Krein
-duality).</p></li>
-</ul>
-<h2 id="universal-enveloping-algebras-and-quantum-groups-1">Universal
-Enveloping Algebras and Quantum Groups</h2>
-<ul>
-<li><p>Lusztig integral form of <span
-class="math inline">\(\mathcal{U}_q(\mathfrak{su}(2))\)</span> and its
-triangular decomposition.</p></li>
-<li><p>Poincare–Birkhoff–Witt (PBW) basis and its <span
-class="math inline">\(q\)</span>-deformed analogue.</p></li>
-<li><p>Universal enveloping algebras and their role in lifting (cf. <a
-href="https://arxiv.org/abs/math/0409565">arXiv:math/0409565</a>).</p></li>
-<li><p>Heisenberg uncertainty as a <span
-class="math inline">\(q\)</span>-commutator: <span
-class="math inline">\([\hat{X},\hat{P}]_q = i\hbar_q\)</span>.</p></li>
-</ul>
-<h2 id="pp-adic-number-fields-and-universality">$\}pp$-Adic Number
-Fields and Universality</h2>
-<ul>
-<li><p>Describe <span class="math inline">\(\mathbb{Q}\)</span>, <span
-class="math inline">\(\mathbb{C}_\mathfrak{p}\)</span>, <span
-class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>, and <span
-class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> in terms of their
-category-theoretic universality relationships to each other.</p></li>
-<li><p>Ostrowski’s theorem as a categorical coproduct
-characterisation.</p></li>
-<li><p>Connections between <span
-class="math inline">\(\mathfrak{p}\)</span>-adic completions and inverse
-limits in the category of topological rings.</p></li>
-</ul>
-<h2 id="mathbbc_pp-quantum-universe">$\}mathbb{C}_\}pp$ Quantum
-Universe</h2>
-<h2 id="lifting-via-formal-groups-and-witt-vectors">Lifting via Formal
-Groups and Witt Vectors</h2>
-<p>The <span class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span>
-realisation (<a href="#ex:p-adic-realisation"><span
-class="math inline">\(p\)</span>-adic realisation</a>) provides a QOU
-over characteristic <span class="math inline">\(0\)</span>, while the
-<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> realisation
-(<a href="#ex:finite-field-realisation">finite field realisation</a>)
-provides one over characteristic <span
-class="math inline">\(\mathfrak{p}\)</span>. The passage between them is
-mediated by the <em>Witt vector functor</em> <span
-class="math inline">\(W\)</span> and the theory of formal groups over
-<span class="math inline">\(\mathfrak{p}\)</span>-adic rings.</p>
-<div id="def:witt-vector-lift" class="definition">
-
-<p><strong>Definition 5.1 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.WittVectorLift" target="_blank" title="Lean: QOU.WittVectorLift">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:witt-vector-lift">Witt vector lift of a formal group</a>).
-<em><a
-href="https://litlfred.github.io/qou/lean/QOU.WittVectorLift"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a> Let <span
-class="math inline">\(H\)</span> be a commutative formal group over
-<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span> equipped
-with a skewed-Poisson structure <span
-class="math inline">\(\pi_&lt;\)</span> (a biderivation <span
-class="math inline">\(\pi_&lt;\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)\)</span>
-satisfying a graded anti-symmetry and a <span
-class="math inline">\(\mathfrak{p}\)</span>-truncated Jacobi condition).
-The <em>Witt vector lift</em> is the formal group <span
-class="math inline">\(\widehat{G}\)</span> over <span
-class="math inline">\(W(\mathbb{F}_\mathfrak{p}) \cong
-\mathbb{Z}_\mathfrak{p}\)</span> obtained by integrating <span
-class="math inline">\(\pi_&lt;\)</span> in the sense of Fresse: the
-distribution algebra <span
-class="math inline">\(\mathrm{Dist}(\widehat{G})\)</span> is the <span
-class="math inline">\(\mathfrak{p}\)</span>-adic completion of the
-universal enveloping algebra <span
-class="math inline">\(\mathcal{U}(\mathrm{Lie}(H))\)</span> deformed by
-<span class="math inline">\(\pi_&lt;\)</span>.</em></p>
-</div>
-
-<div id="prop:skew-poisson-integration" class="proposition">
-
-<p><strong>Proposition 5.2 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Descartes.skew_poisson_integration" target="_blank" title="Lean: QOU.Descartes.skew_poisson_integration">&#x2200; stated</a></strong> (Integration of skewed-Poisson
-structures). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.Descartes.skew_poisson_integration"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a></em></p>
-<p><em>Let <span
-class="math inline">\(H/\mathbb{F}_\mathfrak{p}\)</span> be a smooth
-commutative formal group and <span
-class="math inline">\(\pi_&lt;\)</span> a skewed-Poisson structure on
-<span class="math inline">\(H\)</span>. Then there exists a (generally
-non-commutative) formal group <span
-class="math inline">\(G/\mathbb{Z}_\mathfrak{p}\)</span> such
-that:</em></p>
-<ol type="1">
-<li><p><em><span class="math inline">\(G
-\otimes_{\mathbb{Z}_\mathfrak{p}} \mathbb{F}_\mathfrak{p}\;\cong\;
-H\)</span> (reduction modulo <span
-class="math inline">\(\mathfrak{p}\)</span> recovers <span
-class="math inline">\(H\)</span>);</em></p></li>
-<li><p><em><span class="math inline">\(\mathrm{Dist}(G)\)</span> is a
-deformation of <span class="math inline">\(\mathrm{Dist}(H)\)</span>
-computed via a Grobner–Shirshov basis for the relations of the
-enveloping algebra;</em></p></li>
-<li><p><em>the comultiplication on <span
-class="math inline">\(\mathrm{Dist}(G)\)</span> satisfies the <em>strong
-multiplicativity</em> condition: the <a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a> <span
-class="math inline">\((\mathrm{Id}\otimes
-m)\circ(\Delta\otimes\mathrm{Id})
-= \Delta\circ m\)</span> is preserved under the
-deformation.</em></p></li>
-</ol>
-</div>
-
-<div class="proof">
-
-<p><em>Proof of <a class="defn-link" href="#prop:skew-poisson-integration">Integration of skewed-Poisson structures</a>.</em>
-<span id="prf:skew-poisson-integration" label="prf:skew-poisson-integration"></span></p>
-<p>This is the Main Theorem of Fresse. Item (1) is the existence
-statement; item (2) follows from the Grobner–Shirshov normal-form
-construction for <span class="math inline">\(\mathrm{Dist}(G)\)</span>;
-item (3) is the strong multiplicativity theorem, which guarantees that
-the co-multiplication is compatible with the deformed product at every
-stage of the <span class="math inline">\(\mathfrak{p}\)</span>-adic
-filtration. ◻</p>
-</div>
-
-<h2 id="quotient-to-finite-fields"><span id="sec:finite-fields"></span>Quotient to Finite Fields</h2>
-<ul>
-<li><p>Quotienting from <span
-class="math inline">\(\mathbb{Q}_\mathfrak{p}\)</span> to work over
-<span class="math inline">\(\mathbb{F}_\mathfrak{p}\)</span>: reduction
-modulo <span class="math inline">\(\mathfrak{p}\)</span>.</p></li>
-<li><p>Finite group representations in the QOU context.</p></li>
-<li><p>Betti numbers over finite fields and comparison with
-characteristic-zero values.</p></li>
-</ul>
-<h2 id="jones-polynomials"><span id="sec:jones-polynomials"></span>Jones Polynomials</h2>
-<p>The role of Jones polynomials in the <span
-class="math inline">\(\mathfrak{p}\)</span>-adic story and their
-relationship to the braid-group representations of <a
-href="#chap:path-integrals-braiding">Chapter</a>.</p>
 <h1 id="the-descartes-universe"><span id="chap:descartes-universe"></span>The Descartes Universe</h1>
 <h2 id="the-descartes-condition">The Descartes condition</h2>
 <div id="def:descartes-condition" class="definition">
