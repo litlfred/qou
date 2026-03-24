@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-24T15:07:26.656544+00:00",
-  "commit_sha": "576b00ef495139b9e715ab961764b87102400591",
-  "entry_count": 68,
+  "generated_at": "2026-03-24T21:23:23.833498+00:00",
+  "commit_sha": "bfe684d36dd99578cc5f405499bed4ee569d97ea",
+  "entry_count": 67,
   "ambiguity_count": 9,
   "entries": [
     {
@@ -68,7 +68,7 @@
       "narrative_term": "{Maximal torus and weight subcategory}",
       "lean_name": "QOU.QuantumObservableUniverse.MaximalTorus",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with fundamental object V (the unique simple object of categorical dimension 2; see hyperref[def:spin-labels]spin labels for the full labelling). The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is  [ T = ^otimes(tau|_langle V rangle), ]  the sub-group scheme of G",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with fundamental object V (the unique simple object of categorical dimension 2; see hyperref[prop:spin-labels]spin labels for the full labelling). The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is  [ T = ^otimes(tau|_langle V rangle), ]  the sub-group scheme of ",
       "latex_label": "def:maximal-torus",
       "chapter": 2
     },
@@ -97,14 +97,6 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Spin labels and the fundamental object}",
-      "lean_name": "QOU.QuantumObservableUniverse.SpinLabels",
-      "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe). Because G = ^otimes(tau) cong (2) (hyperref[thm:su2-emergence]SU(2) emergence), the simple objects of  are indexed by a  label j in 0, tfrac12, 1, tfrac32, ldots, with V_j denoting the simple object of categorical dimension 2j + 1. The  is V = V_1/2, the unique simple object of categorical dimension 2. The  is V_1 cong (A), of dimension 3.  The symplectic form epsilon colon Lambda^2 V to  (hyperref[def:qu",
-      "latex_label": "def:spin-labels",
-      "chapter": 2
-    },
-    {
       "narrative_term": "{Categorical Reeb derivation}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalReeb",
       "kind": "def",
@@ -124,7 +116,7 @@
       "narrative_term": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
       "lean_name": "QOU.QuantumObservableUniverse.ContactAffineChart",
       "kind": "def",
-      "narrative_definition": "Let E be the state bundle over M whose fibres are the spaces of 1-forms, and let (V) be the projective line object (hyperref[def:projective-line-object]projective line object). Using the Reeb decomposition (hyperref[def:reeb-decomposition]Reeb decomposition), every form splits as alpha = alpha_H + theta wedge iota_xi alpha.  The  U_xi subset (V) is the open dense subset of states with non-vanishing Reeb component:  [ U_xi ;=; bigl, [alpha] in (V) ;big|; iota_xi,alpha neq 0 ,bigr. ]  On U_xi, the",
+      "narrative_definition": "Let E be the state bundle over M whose fibres are the spaces of 1-forms, and let (V) be the projective line object (hyperref[def:projective-line-object]projective line object). Using the Reeb decomposition (hyperref[ex:reeb-decomposition]Reeb decomposition), every form splits as alpha = alpha_H + theta wedge iota_xi alpha.  The  U_xi subset (V) is the open dense subset of states with non-vanishing Reeb component:  [ U_xi ;=; bigl, [alpha] in (V) ;big|; iota_xi,alpha neq 0 ,bigr. ]  On U_xi, the ",
       "latex_label": "def:contact-affine-chart",
       "chapter": 2
     },
