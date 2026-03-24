@@ -189,6 +189,14 @@ content-object-aware:
 | `example`, `remark`, `conjecture` | Optional | Only if author requests |
 | `prose`, `equation`, `diagram` | N/A | Skip |
 
+### CRITICAL: `.lean` files are NEVER standalone
+
+A `.lean` file MUST always be part of a content triple (`.ts` + `.md` +
+`.lean`).  There is no valid scenario where a `.lean` file exists without
+a corresponding `.ts` manifest.  The `.ts` manifest is the authoritative
+record of the block's kind, label, lean declaration, status, and
+dependency graph.  An orphan `.lean` file is always a bug.
+
 ### Content-object-aware stub generation
 
 Instead of extracting from LaTeX, read the `.ts` manifest:

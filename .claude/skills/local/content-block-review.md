@@ -37,6 +37,7 @@ block, with severity (error / warning / info).
 | `.lean` sibling exists for `definition` | **error** | Definitions **require** Lean formalization |
 | `.lean` sibling exists for `theorem`/`lemma`/`proposition`/`corollary` | **warning** | Provable blocks should have Lean |
 | Sibling files share the same root name | **error** | `foo.ts`, `foo.md`, `foo.lean` — not mismatched names |
+| **No orphan `.lean` files** | **error** | Every `.lean` file MUST have a `.ts` manifest sibling. A `.lean` file without a `.ts` is never valid — Lean files are always part of a content triple, never standalone. |
 
 ### 2. Label conventions
 
@@ -64,16 +65,7 @@ block, with severity (error / warning / info).
 | No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
 | No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
 
-### 5. Status accuracy
-
-| Check | Severity | Rule |
-|-------|----------|------|
-| `status: "proved"` but `.lean` contains `sorry` | **error** | Status lies about completion |
-| `status: "not_started"` but `.lean` exists with content | **warning** | Status is stale |
-| `status: "has_sorry"` but `.lean` has no `sorry` | **warning** | Status should be `proved` |
-| `status: "stated"` but proof body is not just `sorry` | **info** | May need promotion to `has_sorry` or `proved` |
-
-### 6. Markdown content quality
+### 5. Markdown content quality
 
 | Check | Severity | Rule |
 |-------|----------|------|

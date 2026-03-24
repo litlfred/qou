@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-jet-prolongation",
+  lean: {
+    decl: "QOU.categorical_jet_prolongation",
+    validation: "not_checked",
+  },
   title: "Jet prolongation",
   tags: ["jet-bundle", "frobenius-hopf", "category-theory"],
   uses: [

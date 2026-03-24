@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.QuantumUniverse",
     validation: "not_checked",
   },
-  status: "stated",
   uses: ["def:rigid-monoidal-category"],
   examples: ["ex:quantum-universe-su2"],
   rendered: [

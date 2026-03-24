@@ -136,18 +136,13 @@ All declarations live under the `QOU` root namespace.
 | `conjecture`, `example`, `remark` | Optional |
 | `prose`, `equation`, `diagram` | N/A |
 
-### 4. Status field must reflect reality
+### 4. Formalization status is derived, not stored
 
-| `status` value | Meaning |
-|---|---|
-| `not_started` | No Lean file yet |
-| `stated` | Lean statement exists, body is `sorry` |
-| `has_sorry` | Partial proof with some `sorry` |
-| `proved` | Complete proof, no `sorry` |
-| `mathlib_ok` | Validated and sorry-free |
-
-Agents must update the `.ts` manifest `status` whenever they change the
-`.lean` file.
+Formalization status (`not_started`, `stated`, `has_sorry`, `proved`,
+`mathlib_ok`) is **not stored in `.ts` manifests**. It is derived at
+build time by CI scripts from `.lean` file content and Lean build output,
+then written to `proof-objects.json`. Agents must **never** add a `status`
+field to content block `.ts` files.
 
 ### 4a. TodoItem lifecycle rules
 

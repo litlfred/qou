@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:terminal-resolution",
+  lean: {
+    decl: "QOU.Experimental.terminal_resolution",
+    validation: "not_checked",
+  },
   title: "Terminal Resolution of Hadronic Mass (Observation)",
   uses: ["prop:skein-mass-relation"],
   proofs: ["prf:terminal-resolution"],

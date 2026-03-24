@@ -7,7 +7,6 @@ export default definition({
     decl: "QOU.InvolutiveStructure",
     validation: "not_checked",
   },
-  status: "stated",
   uses: ["def:rigid-monoidal-category"],
   examples: ["ex:dagger-su2"],
   tags: ["category-theory", "involutive"],

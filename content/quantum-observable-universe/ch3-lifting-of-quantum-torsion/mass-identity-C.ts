@@ -3,7 +3,6 @@ import { corollary } from "../../schema/builders";
 export default corollary({
   label: "cor:mass-identity-C",
   lean: { decl: "QOU.MassIdentityC" },
-  status: "stated",
   title: "Archimedean realisation: nonabelian multiplicative integration",
   tags: ["archimedean", "mass", "multiplicative-integral", "yekutieli"],
   uses: [

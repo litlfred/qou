@@ -45,6 +45,7 @@ content/
 ### Level 2: Constraint rules
 - **md-exists**: Every block has a sibling `.md` file
 - **lean-file-exists**: Definitions have a sibling `.lean` or `lean.file` reference
+- **no-orphan-lean**: Every `.lean` file MUST have a `.ts` manifest sibling — `.lean` files are NEVER standalone, always part of a content triple (`.ts` + `.md` + `.lean`)
 - **uses-resolve**: All labels in `uses[]` exist in the document
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 

@@ -3,7 +3,6 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:chiral-sector-coords",
   lean: { decl: "QOU.ChiralSectorCoords" },
-  status: "not_started",
   title: "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
   tags: ["descartes-universe", "chiral-sectors", "color-charge"],
   uses: [

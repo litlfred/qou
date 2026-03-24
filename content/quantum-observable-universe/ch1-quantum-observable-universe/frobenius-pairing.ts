@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.FrobeniusHopfData.frobeniusForm",
     validation: "not_checked",
   },
-  status: "stated",
   uses: ["def:quantum-universe"],
   examples: ["ex:frobenius-su2"],
 });

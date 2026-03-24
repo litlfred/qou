@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.HigherForms",
     validation: "not_checked",
   },
-  status: "stated",
   uses: ["def:quantum-universe"],
   examples: ["ex:higher-forms-su2"],
 });

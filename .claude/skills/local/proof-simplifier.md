@@ -97,8 +97,6 @@ stays consistent.
 (`content_validate`) after changes to verify:
 - The `.ts` manifest's `lean.decl` still matches the (possibly renamed)
   Lean declaration.
-- The `status` field is accurate — if simplification removes all sorry
-  stubs, update status from `has_sorry` to `proved`.
 - The `uses[]` dependencies are still correct — if a shared lemma was
   extracted or a dependency removed, update `uses[]` accordingly.
 
