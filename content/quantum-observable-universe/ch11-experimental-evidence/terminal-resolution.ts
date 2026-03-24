@@ -7,7 +7,13 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Terminal Resolution of Hadronic Mass (Observation)",
-  uses: ["prop:skein-mass-relation"],
+  uses: [
+    "prop:skein-mass-relation",
+    "def:mass-identity",
+    "thm:topological-mass",
+    "cor:mass-identity-C",
+    "conj:topological-mass-formula",
+  ],
   proofs: ["prf:terminal-resolution"],
   tags: ["mass", "hadronic"],
   rendered: [

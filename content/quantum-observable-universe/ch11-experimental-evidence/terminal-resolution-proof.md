@@ -44,8 +44,8 @@ $$
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|l|c|}
 \hline
-\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
-  & \textbf{Value (MeV)} \\ \hline
+\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
+  & \text{\textbf{Value (MeV)}} \\ \hline
 \text{I}   & (u_1,\, u_2) &
   \displaystyle \mathcal{S}_{uu}
   = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
@@ -58,7 +58,7 @@ $$
   \displaystyle \mathcal{S}_{ud}
   = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
   & 312.97 \\ \hline
-\multicolumn{3}{|r|}{\textbf{Total:}\quad
+\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
   m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
   & \mathbf{938.272} \\ \hline
 \end{array}
@@ -74,8 +74,8 @@ $$
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|l|c|}
 \hline
-\textbf{Pair} & \textbf{Quarks} & \textbf{Skein mass}
-  & \textbf{Value (MeV)} \\ \hline
+\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
+  & \text{\textbf{Value (MeV)}} \\ \hline
 \text{I}   & (u,\, d_1) &
   \displaystyle \mathcal{S}_{ud}
   = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
@@ -88,7 +88,7 @@ $$
   \displaystyle \mathcal{S}_{dd}
   = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
   & 313.65 \\ \hline
-\multicolumn{3}{|r|}{\textbf{Total:}\quad
+\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
   m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
   & \mathbf{939.565} \\ \hline
 \end{array}
