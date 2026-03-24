@@ -11,6 +11,7 @@ export default proposition({
     "rem:skein-decomposition",
     "def:substrate-parameter",
     "def:quantum-planck-constant",
+    "ex:c-quantum-observable-universe",
     "thm:weight-decomposition-exists",
     "thm:categorical-reeb-exists",
     "thm:substrate-parameter-exists",
