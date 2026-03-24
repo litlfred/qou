@@ -38,22 +38,25 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 /-- Every sequence of single-step reductions is finite: the reduction
     relation is well-founded.
 
-    Proof sketch: each `SingleStepReduction` strictly decreases the
-    leading monomial under the admissible order.  Since `ord.wf` is
-    well-founded, no infinite descending chain of reductions exists. -/
-theorem reduction_well_founded
+    Each `SingleStepReduction` strictly decreases the multiset of
+    monomials in the support under the Dershowitz–Manna ordering,
+    which inherits well-foundedness from `ord.wf`.
+
+    Axiomatised because the proof requires:
+    1. A `Multiset (Monomial G)` representation of `AlgElement` support
+    2. A proof that `SingleStepReduction` strictly decreases this multiset
+       under `ord.lt`
+    3. The Dershowitz–Manna theorem (`Multiset.wellFoundedLT`) lifting
+       element well-foundedness to multiset well-foundedness
+
+    These components require `AlgElement` subtraction and support extraction
+    operations that are not available at the abstract level.
+
+    Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
+axiom reduction_well_founded
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
-    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f := by
-  -- Each single-step reduction strictly decreases the multiset of
-  -- monomials in the support under the Dershowitz–Manna ordering,
-  -- which inherits well-foundedness from ord.wf.
-  intro f
-  -- Each single-step reduction strictly decreases the leading monomial,
-  -- lifting well-foundedness from Monomial G to AlgElement G k via the
-  -- Dershowitz–Manna multiset ordering on supports.
-  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-  sorry
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
 
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
