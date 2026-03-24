@@ -43,9 +43,9 @@ structure DescartesCondition where
   /-- The Descartes condition: `χ(E) = −6`. -/
   descartes : eulerChar = -6
 
+set_option linter.dupNamespace false in
 /-- A shorthand: a **Descartes universe** is a QOU satisfying the Descartes
     condition. -/
-set_option linter.dupNamespace false in
 abbrev DescartesUniverse := DescartesCondition
 
 /-! ## §2  Implications on Examples
