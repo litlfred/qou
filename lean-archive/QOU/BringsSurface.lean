@@ -32,6 +32,7 @@ namespace QOU.BringsSurface
 
 /-! ## §1  Bring's Surface -/
 
+set_option linter.dupNamespace false in
 /-- **Bring's surface**: the maximally symmetric Riemann surface of genus 4
     and Euler characteristic χ = −6, defined in CP⁴ by the vanishing of
     the first three power sums: `Σ xⱼᵏ = 0` for `k = 1, 2, 3`.

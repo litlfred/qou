@@ -45,6 +45,7 @@ structure DescartesCondition where
 
 /-- A shorthand: a **Descartes universe** is a QOU satisfying the Descartes
     condition. -/
+set_option linter.dupNamespace false in
 abbrev DescartesUniverse := DescartesCondition
 
 /-! ## §2  Implications on Examples
