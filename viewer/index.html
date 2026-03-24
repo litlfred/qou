@@ -4831,6 +4831,48 @@
       pendingScroll = null;
     }
 
+    // ── Scroll-tracking: update URL hash after 5s pause on same block ──
+    let scrollTrackLabel = null, scrollTrackTimer = null;
+    const paperView = document.getElementById('paper-view');
+    const scrollTrackObs = new IntersectionObserver((entries) => {
+      // Find topmost visible .env[id]
+      let topEl = null, topY = Infinity;
+      for (const e of entries) {
+        if (e.isIntersecting && e.boundingClientRect.top < topY) {
+          topY = e.boundingClientRect.top; topEl = e.target;
+        }
+      }
+      if (!topEl) return;
+      const lbl = topEl.id;
+      if (!lbl || lbl === scrollTrackLabel) return;
+      scrollTrackLabel = lbl;
+      clearTimeout(scrollTrackTimer);
+      scrollTrackTimer = setTimeout(() => {
+        if (scrollTrackLabel === lbl) {
+          const brSuffix = selectedBranch && selectedBranch !== currentBranchName ? `@${encodeURIComponent(selectedBranch)}` : '';
+          history.replaceState(null, '', `#${lbl}${brSuffix}`);
+        }
+      }, 5000);
+    }, { threshold: 0, rootMargin: '-40px 0px -60% 0px' });
+
+    // Observe all .env[id] blocks; re-observe when new ones appear (lazy sections)
+    function startScrollTracking() {
+      scrollTrackObs.disconnect();
+      scrollTrackLabel = null; clearTimeout(scrollTrackTimer);
+      const observe = (el) => { if (el.id) scrollTrackObs.observe(el); };
+      for (const el of document.querySelectorAll('.env[id], .ch-t[id], .sec-t[id]')) observe(el);
+      // Watch for dynamically added blocks (lazy-loaded sections)
+      if (window._scrollTrackMut) window._scrollTrackMut.disconnect();
+      window._scrollTrackMut = new MutationObserver((muts) => {
+        for (const m of muts) for (const n of m.addedNodes) {
+          if (n.nodeType !== 1) continue;
+          if ((n.classList?.contains('env') || n.classList?.contains('ch-t') || n.classList?.contains('sec-t')) && n.id) observe(n);
+          for (const c of n.querySelectorAll?.('.env[id], .ch-t[id], .sec-t[id]') || []) observe(c);
+        }
+      });
+      window._scrollTrackMut.observe(document.getElementById('app'), { childList: true, subtree: true });
+    }
+
     function showReferencedBy(label, el) {
       // Remove any existing ref-by panel
       const existing = el.parentElement?.querySelector('.ref-by[data-for="' + label + '"]');
@@ -4941,6 +4983,7 @@
           })),
         };
         renderPaper(p);
+        startScrollTracking();
 
         // Update URL to be shareable (embed branch if non-default)
         const target = hashWithBranch(`view/${id}`);
@@ -4956,6 +4999,7 @@
           if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
           paperOutline = null;
           renderPaper(await r.json());
+          startScrollTracking();
           const target = hashWithBranch(`view/${id}`);
           history.replaceState(null, '', `#/${target}`);
           updateDiffButton();
