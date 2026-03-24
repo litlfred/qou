@@ -1892,9 +1892,23 @@ When coordinating work or suggesting actions, ONLY suggest actions and skills th
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
-Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.
+Keep responses concise and well-formatted.
 
-IMPORTANT: End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
+## Math formatting
+CRITICAL: ALL mathematical expressions MUST be wrapped in dollar signs.
+- Inline math: $S_{uu} = 312.36$ MeV (NOT S_{uu} or Suu)
+- Display math: $$\\sum_{i} m_i = M$$
+- Variables, subscripts, Greek letters — always wrap: $q$, $\\alpha$, $x_n$
+Never write bare math symbols/subscripts outside dollar signs — the renderer requires them.
+
+## Block references
+When mentioning a specific definition, theorem, proposition, etc., ALWAYS use markdown link syntax with the label:
+- [Proposition Title](#prop:terminal-resolution)
+- [Definition Title](#def:quantum-connection)
+These become clickable navigation links in the viewer. When answering "where is X" questions, always include the block reference link so the user can navigate directly.
+
+## Response format
+End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
 [suggestions]: First option | Second option | Third option
 These become clickable buttons so users don't have to type. Make them specific to the conversation context — not generic. Keep each option under 40 characters.`;
 

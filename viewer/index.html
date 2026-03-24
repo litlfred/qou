@@ -667,9 +667,15 @@
     .chat-msg.user{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:3px}
     .chat-msg.assistant{align-self:flex-start;background:var(--bg-r);color:var(--fg);border-bottom-left-radius:3px}
     .chat-msg.system{align-self:center;background:none;color:var(--fg-d);font-size:.65rem;font-style:italic;padding:.2rem}
+    .chat-msg{position:relative}
+    .chat-msg .chat-copy{position:absolute;top:.2rem;right:.2rem;background:none;border:none;color:var(--fg-d);font-size:.55rem;cursor:pointer;opacity:0;transition:opacity .15s;font-family:var(--f-mono);padding:.1rem .3rem}
+    .chat-msg:hover .chat-copy{opacity:.5}
+    .chat-msg .chat-copy:hover{opacity:1;color:var(--ac)}
     .chat-msg .chat-math{margin:.3rem 0}
     .chat-msg code{background:rgba(0,0,0,.1);padding:.1rem .3rem;border-radius:3px;font-family:var(--f-mono);font-size:.7rem}
     .chat-msg a{color:inherit;text-decoration:underline}
+    .chat-msg .chat-nav-link{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.65rem;background:var(--bg-s);border:1px solid var(--brd);border-radius:3px;padding:.1rem .4rem;margin:.2rem 0;cursor:pointer;color:var(--ac);text-decoration:none}
+    .chat-msg .chat-nav-link:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
     .chat-msg table{border-collapse:collapse;font-size:.72rem;margin:.4rem 0;width:100%}
     .chat-msg th,.chat-msg td{border:1px solid var(--brd);padding:.25rem .4rem;text-align:left}
     .chat-msg th{background:var(--bg-s);font-weight:600;font-size:.65rem;text-transform:uppercase;letter-spacing:.03em}
@@ -993,6 +999,7 @@
       <span class="chat-title">Folio</span>
       <span class="chat-mode" id="chat-mode">reader</span>
       <button id="chat-expand" title="Expand/collapse">⛶</button>
+      <button id="chat-copy-all" title="Copy entire chat">copy</button>
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
@@ -5586,21 +5593,49 @@
 
     function addChatMessage(role, content) {
       const div = mk('div', `chat-msg ${role}`);
+      div.dataset.rawContent = content; // store raw for copy
+      div.dataset.role = role;
       if (role === 'assistant') {
         const {html: renderedHtml, texBlocks: tx} = parseMd(content);
         div.innerHTML = renderedHtml;
         fillTex(div, tx);
         renderMath(div);
         resolveRefs(div);
+        addNavLinks(div);
       } else if (role === 'system') {
         div.innerHTML = inl(content);
         renderMath(div);
       } else {
         div.textContent = content;
       }
+      // Copy button on each message (except system)
+      if (role !== 'system') {
+        const cpBtn = mk('button', 'chat-copy');
+        cpBtn.textContent = 'copy';
+        cpBtn.onclick = (e) => {
+          e.stopPropagation();
+          navigator.clipboard.writeText(div.dataset.rawContent || div.textContent).then(() => {
+            cpBtn.textContent = 'copied'; setTimeout(() => { cpBtn.textContent = 'copy'; }, 1200);
+          });
+        };
+        div.appendChild(cpBtn);
+      }
       chatMessages.appendChild(div);
       chatMessages.scrollTop = chatMessages.scrollHeight;
       return div;
+    }
+
+    /** Add navigation links for block references in assistant responses */
+    function addNavLinks(el) {
+      for (const a of el.querySelectorAll('a[data-ref]')) {
+        const label = a.dataset.ref;
+        const block = bix.get(label);
+        if (!block) continue;
+        a.onclick = (e) => {
+          e.preventDefault();
+          scrollToLabel(label);
+        };
+      }
     }
 
     const chatSuggestions = document.getElementById('chat-suggestions');
@@ -5742,6 +5777,20 @@
           const suggestions = sugMatch[1].split('|').map(s => s.trim()).filter(Boolean);
           showSuggestions(suggestions);
         }
+
+        // Store raw content, add nav links and copy button
+        assistDiv.dataset.rawContent = fullResponse;
+        assistDiv.dataset.role = 'assistant';
+        addNavLinks(assistDiv);
+        const cpBtn = mk('button', 'chat-copy');
+        cpBtn.textContent = 'copy';
+        cpBtn.onclick = (e) => {
+          e.stopPropagation();
+          navigator.clipboard.writeText(fullResponse).then(() => {
+            cpBtn.textContent = 'copied'; setTimeout(() => { cpBtn.textContent = 'copy'; }, 1200);
+          });
+        };
+        assistDiv.appendChild(cpBtn);
 
         chatHistory.push({ role: 'assistant', content: fullResponse });
 
@@ -5915,6 +5964,21 @@
     };
 
     // Clear button
+    document.getElementById('chat-copy-all').onclick = () => {
+      const msgs = chatMessages.querySelectorAll('.chat-msg');
+      const lines = [];
+      for (const m of msgs) {
+        const role = m.dataset.role || 'system';
+        const raw = m.dataset.rawContent || m.textContent;
+        lines.push(`[${role}]: ${raw}`);
+      }
+      const text = lines.join('\n\n');
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('chat-copy-all');
+        btn.textContent = 'copied'; setTimeout(() => { btn.textContent = 'copy'; }, 1200);
+      });
+    };
+
     document.getElementById('chat-clear').onclick = () => {
       chatHistory = [];
       chatMessages.innerHTML = '';
