@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-24T00:24:02.852934+00:00",
-  "commit_sha": "049a21f873921e9ce07ee1f9e6149fcf8615f7c3",
-  "entry_count": 66,
-  "ambiguity_count": 8,
+  "generated_at": "2026-03-24T15:05:17.860319+00:00",
+  "commit_sha": "unknown",
+  "entry_count": 68,
+  "ambiguity_count": 9,
   "entries": [
     {
       "narrative_term": "{Rigid monoidal category}",
@@ -36,7 +36,7 @@
       "narrative_term": "{Quantum Universe}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumUniverse",
       "kind": "def",
-      "narrative_definition": "Let R be a commutative ring. A  is a triple (, A, tau) where:   item (, otimes, ) is an R-linear rigid monoidal category (hyperref[def:rigid-monoidal-category]rigid monoidal category); item A is a  in : an object equipped with morphisms [ [row sep=1.5em, column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"lambda\"] &  & scriptstyle   ar[r, \"eta\"] & A ar[r, \"varepsilon\"] &  & scriptstyle  A ar[r, \"Delta\"] & A otimes A & A ar[l, \"S\"'] & scriptstyle  ] — multiplication mu, unit eta, comultiplication",
+      "narrative_definition": "Let R be a commutative ring. A  is a triple (, A, tau) where:   item (, otimes, ) is an R-linear rigid symmetric monoidal category (hyperref[def:rigid-monoidal-category]rigid monoidal category) — the symmetric braiding sigma_X,Y colon X otimes Y  Y otimes X is required for exterior powers Lambda^k V and is canonically induced by the fibre functor tau via the Tannakian structure; item A is a  in : an object equipped with morphisms [ [row sep=1.5em, column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[",
       "latex_label": "def:quantum-universe",
       "chapter": 2
     },
@@ -44,7 +44,7 @@
       "narrative_term": "{Frobenius pairing}",
       "lean_name": "QOU.QuantumObservableUniverse.FrobeniusPairing",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a hyperref[def:quantum-universe]quantum universe with multiplication mu colon A otimes A to A and Frobenius form lambda colon A to . The  is the composite   [column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"lambda\"] &     We say the Frobenius pairing is  when this composite induces an isomorphism A  A^vee to the dual object. Equivalently, the snake identities hold: there exists a coevaluation  colon  to A otimes A such that the two composites  [ A  A otimes   otimes  A otime",
+      "narrative_definition": "Let (, A, tau) be a hyperref[def:quantum-universe]quantum universe with multiplication mu colon A otimes A to A and Frobenius form int_A colon A to . The  is the composite   [column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"int_A\"] &     We say the Frobenius pairing is  when this composite induces an isomorphism A  A^vee to the dual object. Equivalently, the snake identities hold: there exists a coevaluation  colon  to A otimes A such that the two composites  [ A  A otimes   otimes  A otimes ",
       "latex_label": "def:frobenius-pairing",
       "chapter": 2
     },
@@ -60,7 +60,7 @@
       "narrative_term": "{Quantum Observable Universe}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "kind": "def",
-      "narrative_definition": "A quantum universe (, A, tau) over R (hyperref[def:quantum-universe]quantum universe) is  if the forgetful functor tau (hyperref[ex:rigid-monoidal-vect]Example) is faithful and the following conditions hold:   item  the Frobenius form int_A := lambda colon A to  induces a non-degenerate pairing (a, b) mapsto int_A ab (hyperref[def:frobenius-pairing]Frobenius pairing), giving an isomorphism A  A^vee; item  _(,, (A)) = 0, where (A) is the adjoint object (A acted on by conjugation); that is, every ",
+      "narrative_definition": "A quantum universe (, A, tau) over R (hyperref[def:quantum-universe]quantum universe) is  if the forgetful functor tau (hyperref[ex:rigid-monoidal-vect]Example) is faithful and the following conditions hold:   item  the Frobenius form int_A colon A to  induces a non-degenerate pairing (a, b) mapsto int_A ab (hyperref[def:frobenius-pairing]Frobenius pairing), giving an isomorphism A  A^vee; item  there are no hidden global symmetries: _(,, (A)) = 0, where (A) is the adjoint object (A acted on by ",
       "latex_label": "def:quantum-observable-universe",
       "chapter": 2
     },
@@ -68,7 +68,7 @@
       "narrative_term": "{Maximal torus and weight subcategory}",
       "lean_name": "QOU.QuantumObservableUniverse.MaximalTorus",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with fundamental object V (hyperref[def:spin-labels]spin labels). The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is  [ T = ^otimes(tau|_langle V rangle), ]  the sub-group scheme of G = ^otimes(tau) (hyperref[thm:su2-emergence]SU(2) emergence) consisting of those",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with fundamental object V (the unique simple object of categorical dimension 2; see hyperref[def:spin-labels]spin labels for the full labelling). The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is  [ T = ^otimes(tau|_langle V rangle), ]  the sub-group scheme of G",
       "latex_label": "def:maximal-torus",
       "chapter": 2
     },
@@ -148,9 +148,28 @@
       "narrative_term": "{Categorical Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum universe over R (hyperref[def:quantum-universe]quantum universe) with higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge star beta = lambdabigl(alpha^* cdot betabigr);, ]  where lambda colon A to  is the Frobenius form, alpha^* = S(alpha) is the antipode-conjugate, and  in Omega^n(A) is the volume form (the unique G-invariant top form normalised by lambda",
+      "narrative_definition": "Let (, A, tau) be a quantum universe over R (hyperref[def:quantum-universe]quantum universe) with higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge star beta = int_A!bigl(alpha^* cdot betabigr);, ]  where int_A colon A to  is the Frobenius form, alpha^* = S(alpha) is the antipode-conjugate, and  in Omega^n(A) is the volume form (the unique G-invariant top form normalised by int_A()",
       "latex_label": "def:categorical-hodge-star",
       "chapter": 2
+    },
+    {
+      "narrative_term": "{Spatial realization functor}",
+      "lean_name": "QOU.QuantumObservableUniverse.SpatialRealizationFunctor",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe (hyperref[def:quantum-observable-universe]quantum observable universe). The  of A is the space  [ M = (A) =  p colon  to A mid p   ]  (hyperref[def:categorical-point]categorical point), equipped with the following structures derived purely within :   item  For each point p, the  _p = ker(p^* colon A to ) captures the functions vanishing at p. The quotient _p / _p^2 is functorially dual to the tangent space T_p M, giving the first-order germ decompo",
+      "latex_label": "def:spatial-realization-functor",
+      "chapter": 2,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Space without specified structure",
+        "candidates": [
+          "TopologicalSpace",
+          "MetricSpace",
+          "SmoothManifold",
+          "Scheme"
+        ],
+        "resolved_to": null
+      }
     },
     {
       "narrative_term": "{Substrate parameter}",
@@ -180,7 +199,7 @@
       "narrative_term": "{\\$q\\$-Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.QHodgeStar",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot lambdabigl(alpha^* cdot betabigr);. ]  At q = 1 this recovers the categorical Hodge star: star_1 = star.  The factor of q rescales the inner product o",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot int_A!bigl(alpha^* cdot betabigr);. ]  At q = 1 this recovers the categorical Hodge star: star_1 = star.  The factor of q rescales the inner product o",
       "latex_label": "def:q-hodge-star",
       "chapter": 2
     },
@@ -188,7 +207,7 @@
       "narrative_term": "{Categorical action}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalAction",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) equipped with substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), q-Hodge star star_q (hyperref[def:q-hodge-star]q-Hodge star), a connection nabla (hyperref[def:categorical-connection]categorical connection), and a section psi colon  to A (a \"state\"). The  is the R-valued functional   _q[nabla,, lambda,, psi] ;=; bigl(q cdot R_lambdabigr) _ ;+; _Abigl( F_nabla wedge_q star_q F_nab",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) equipped with substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), q-Hodge star star_q (hyperref[def:q-hodge-star]q-Hodge star), a connection nabla (hyperref[def:categorical-connection]categorical connection), and a section psi colon  to A (a \"state\"). The  is the R-valued functional   _q[nabla,, textstyleint_A,, psi] ;=; bigl(q cdot R_intbigr) _ ;+; _Abigl( F_nabla wedge_q star_q ",
       "latex_label": "def:categorical-action",
       "chapter": 2
     },
@@ -273,6 +292,14 @@
       "kind": "def",
       "narrative_definition": "Let (M, theta, G, P, E) be an archimedean quantum observable universe with instanton connection A and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is  [ S_q[A, theta] ;=; int_M q(p),lVert F_A^+|_H rVert^2, theta wedge (dtheta)^n, ]  where q(p) = 1 + lvertlangle L_theta, F_A^+ranglervert(p) (hyperref[rem:c-substrate-via-levi]-substrate via Levi form).",
       "latex_label": "def:q-yang-mills-levi",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Quantum flatness}",
+      "lean_name": "QOU.QuantumObservableUniverse.QuantumFlatness",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with gauge group G_q = ^otimes(tau) (hyperref[def:quantum-gauge-group]quantum gauge group) and connection nabla on A (hyperref[def:categorical-connection]categorical connection). Let (G_q) denote the inner-automorphism 2-group of G_q, with 2-form datum B in Omega^2(A) otimes (A).  The connection nabla is  if the curvature F_nabla equals the 2-form datum:  [ F_nabla = B. ]  This is not an independent axiom. It is a derived consequence of the instant",
+      "latex_label": "def:quantum-flatness",
       "chapter": 2
     },
     {
@@ -588,36 +615,36 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{Descartes condition}",
-      "lean_name": "QOU.DescartesUniverse.DescartesCondition",
-      "kind": "def",
-      "narrative_definition": "A quantum observable universe (, A, tau) over R (hyperref[def:quantum-observable-universe]quantum observable universe, hyperref[thm:qu-to-qou]QU-to-QOU lifting) satisfies the  if the categorical Euler characteristic  [ chi(A) ;=; (_A) ;=; -6 ;in; R. ]  This requires 6 in R^times (i.e. (R) nmid 6).  The class [A] in K_0() has rank -6, which by hyperref[thm:qu-to-qou]QU-to-QOU lifting(3--4) forces kappa_n neq 0 for all n and produces 6 branch points in the geometric descent (with total ramificatio",
-      "latex_label": "def:descartes-condition",
-      "chapter": 6
-    },
-    {
-      "narrative_term": "{Exceptional divisor at \\$p\\$}",
-      "lean_name": "QOU.DescartesUniverse.ExceptionalDivisor",
-      "kind": "def",
-      "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1() and  [ O(p) ;=; p + R,N(p). ]  The  at p is the ^1() fibre  [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ]  where picolon  to M is the blow-up map that replaces p with E_p cong ^1().",
-      "latex_label": "def:exceptional-divisor",
-      "chapter": 6
-    },
-    {
-      "narrative_term": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
-      "lean_name": "QOU.DescartesUniverse.ChiralSectorCoords",
-      "kind": "def",
-      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).   The  qphi rotates each sector by q full turns as the latitude phi runs f",
-      "latex_label": "def:chiral-sector-coords",
-      "chapter": 6
-    },
-    {
       "narrative_term": "{Witt vector lift of a formal group}",
       "lean_name": "QOU.DescartesUniverse.WittVectorLift",
       "kind": "def",
       "narrative_definition": "Let H be a commutative formal group over _pp equipped with a skewed-Poisson structure pi_< (a biderivation pi_<colon(H)otimes(H)to(H) satisfying a graded anti-symmetry and a pp-truncated Jacobi condition). The  is the formal group  over W(_pp) cong _pp obtained by integrating pi_< in the sense of Fresse: the distribution algebra () is the pp-adic completion of the universal enveloping algebra ((H)) deformed by pi_<.",
       "latex_label": "def:witt-vector-lift",
       "chapter": 6
+    },
+    {
+      "narrative_term": "{Descartes condition}",
+      "lean_name": "QOU.DescartesCondition",
+      "kind": "def",
+      "narrative_definition": "A quantum observable universe (, A, tau) over R (hyperref[def:quantum-observable-universe]quantum observable universe, hyperref[thm:qu-to-qou]QU-to-QOU lifting) satisfies the  if the categorical Euler characteristic  [ chi(A) ;=; (_A) ;=; -6 ;in; R. ]  This requires 6 in R^times (i.e. (R) nmid 6).  The class [A] in K_0() has rank -6, which by hyperref[thm:qu-to-qou]QU-to-QOU lifting(3--4) forces kappa_n neq 0 for all n and produces 6 branch points in the geometric descent (with total ramificatio",
+      "latex_label": "def:descartes-condition",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{Exceptional divisor at \\$p\\$}",
+      "lean_name": "QOU.ExceptionalDivisor",
+      "kind": "def",
+      "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1() and  [ O(p) ;=; p + R,N(p). ]  The  at p is the ^1() fibre  [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ]  where picolon  to M is the blow-up map that replaces p with E_p cong ^1().",
+      "latex_label": "def:exceptional-divisor",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
+      "lean_name": "QOU.ChiralSectorCoords",
+      "kind": "def",
+      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).   The  qphi rotates each sector by q full turns as the latitude phi runs f",
+      "latex_label": "def:chiral-sector-coords",
+      "chapter": 7
     }
   ]
 }
