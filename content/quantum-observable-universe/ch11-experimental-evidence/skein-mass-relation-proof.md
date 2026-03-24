@@ -20,7 +20,7 @@ $m_\mu / m_e = 206.768\,2827(46)$, one solves for $\hbar_q$:
 $$
   \hbar_q^{\,2}
   = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
-  = \frac{2.02988}{206.768}
+  = \frac{2.02988}{206.7683}
   \approx 0.009\,817,
   \qquad
   \hbar_q \approx 0.09908.

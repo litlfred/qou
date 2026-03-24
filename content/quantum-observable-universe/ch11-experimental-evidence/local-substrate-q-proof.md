@@ -6,7 +6,7 @@ $\hbar_q = 1 - q^{-1}$ (see the proof of
 the equation above. Substituting the numerical values,
 $$
   (1 - q^{-1})^{2}
-  = \frac{2.02988}{206.768}
+  = \frac{2.02988}{206.7683}
   \approx 0.009\,817,
   \qquad
   1 - q^{-1} \approx 0.09908,
