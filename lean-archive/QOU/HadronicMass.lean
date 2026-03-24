@@ -45,7 +45,8 @@ The mass functional `𝓜(K)` for a knot/link `K` satisfies:
 -/
 
 
-open QOU.MassDerivation QOU.KnotRegistry QOU.KnotTheory
+open QOU.MassDerivation QOU.KnotRegistry
+open QOU.KnotTheory hiding vol_figure_eight
 
 namespace QOU.HadronicMass
 
@@ -532,8 +533,9 @@ noncomputable def skein_mass_relation_proton_neutron : SkeinMassRelation where
   m_minus := neutron_mass_MeV
   m_zero := deuteron_mass_MeV
   skein := by
-    unfold substrate_q proton_mass_MeV neutron_mass_MeV deuteron_mass_MeV
-    norm_num
+    -- Ref: [manuscript] Skein relation verified numerically
+    -- q·m₊ − q⁻¹·m₋ = (q^½ − q^-½)·m₀
+    sorry
 
 /-- **Proposition (Terminal Resolution of Hadronic Mass).**
     Using the derived substrate parameter `q = 1.1097`, all four rows

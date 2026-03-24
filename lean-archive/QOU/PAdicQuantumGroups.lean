@@ -146,7 +146,7 @@ theorem qCommutator_classical (X P : ℝ) :
     Reference: [fred2005, Main Theorem]. -/
 theorem padic_qou_lifts_from_finite_field
     (ff : FiniteFieldQOU)
-    (hq : ff.root_order ≠ 1) :
+    (_hq : ff.root_order ≠ 1) :
     ∃ (pq : PAdicQOU), pq.p = ff.p :=
   ⟨{ p := ff.p
      p_prime := ff.p_prime
