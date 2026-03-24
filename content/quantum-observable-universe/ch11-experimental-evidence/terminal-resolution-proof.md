@@ -39,61 +39,23 @@ $$
 The proton has quarks $(u_1, u_2, d)$. The three crossing pairs and their
 Skein masses are:
 
-```tex
-$$
-\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
-  & \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   & (u_1,\, u_2) &
-  \displaystyle \mathcal{S}_{uu}
-  = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
-  & 312.36 \\ \hline
-\text{II}  & (u_1,\, d)   &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{III} & (u_2,\, d)   &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-  m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
-  & \mathbf{938.272} \\ \hline
-\end{array}
-$$
-```
+| **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
+|---|---|---|---|
+| I | $(u_1,\, u_2)$ | $\mathcal{S}_{uu} = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}$ | 312.36 |
+| II | $(u_1,\, d)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(u_2,\, d)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| | | **Total:** $m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}$ | **938.272** |
 
 *Step 2b: Neutron ($udd$).*
 The neutron has quarks $(u, d_1, d_2)$. Swapping one up quark for a down
 quark replaces the same-flavor pair:
 
-```tex
-$$
-\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
-  & \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   & (u,\, d_1) &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{II}  & (u,\, d_2) &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{III} & (d_1,\, d_2) &
-  \displaystyle \mathcal{S}_{dd}
-  = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 313.65 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-  m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
-  & \mathbf{939.565} \\ \hline
-\end{array}
-$$
-```
+| **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
+|---|---|---|---|
+| I | $(u,\, d_1)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| II | $(u,\, d_2)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(d_1,\, d_2)$ | $\mathcal{S}_{dd} = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 313.65 |
+| | | **Total:** $m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}$ | **939.565** |
 
 *Step 2c: The $u$-$d$ mass splitting.*
 The proton--neutron mass difference isolates the same-flavor crossing pair:

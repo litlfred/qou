@@ -14,6 +14,7 @@ export default definition({
     "def:categorical-connection",
     "def:substrate-parameter",
     "def:q-hodge-star",
+    "rem:categorical-action-notation",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-action-0.svg", blockIndex: 0, hash: "cea6a2962fd4" },

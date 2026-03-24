@@ -9,17 +9,14 @@ export default proposition({
   title: "Terminal Resolution of Hadronic Mass (Observation)",
   uses: [
     "prop:skein-mass-relation",
+    "ex:c-quantum-observable-universe",
     "def:mass-identity",
     "thm:topological-mass",
     "cor:mass-identity-C",
     "conj:topological-mass-formula",
   ],
   proofs: ["prf:terminal-resolution"],
+  examples: ["ex:terminal-resolution-cz"],
   tags: ["mass", "hadronic"],
-  rendered: [
-    { mime: "image/svg+xml", url: "rendered/terminal-resolution-0.svg", blockIndex: 0, hash: "819cd133b41b" },
-    { mime: "image/svg+xml", url: "rendered/terminal-resolution-1.svg", blockIndex: 1, hash: "8800cf8145b6" },
-    { mime: "image/svg+xml", url: "rendered/terminal-resolution-2.svg", blockIndex: 2, hash: "c65bdec0bd3a" },
-  ],
 
 });

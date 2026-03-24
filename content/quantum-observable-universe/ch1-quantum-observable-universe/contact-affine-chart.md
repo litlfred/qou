@@ -1,7 +1,7 @@
 Let $E$ be the state bundle over $M$ whose fibres are the spaces of
 $1$-forms, and let $\mathbb{P}(V)$ be the projective line object
 ([projective line object](#def:projective-line-object)). Using the
-Reeb decomposition ([Reeb decomposition](#def:reeb-decomposition)),
+Reeb decomposition ([Reeb decomposition](#ex:reeb-decomposition)),
 every form splits as
 $\alpha = \alpha_H + \theta \wedge \iota_\xi \alpha$.
 

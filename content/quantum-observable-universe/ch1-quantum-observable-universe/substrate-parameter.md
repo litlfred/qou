@@ -32,7 +32,7 @@ interpolations between $d$ and $\pi_V \circ d$.
 
 When the quantum universe is fibred over a space $M$ (as in the
 archimedean realisation,
-[$\mathbb{C}$-quantum universe](#def:c-quantum-universe)), the substrate
+[$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the substrate
 parameter becomes a *substrate field*
 $q \colon M \to k^{\times}$, encoding the local position in the
 Reeb fibre at each point.

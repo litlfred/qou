@@ -1,6 +1,6 @@
 The archimedean specialisation of the categorical $q$-Lie bracket
 ([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)) to
-the $q$-deformed Lie bracket ([$q$-Lie bracket](#def:q-lie-bracket))
+the $q$-deformed Lie bracket ([$q$-Lie bracket](#ex:q-lie-bracket))
 violates the Jacobi identity when $q \neq 1$.
 
 Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e.

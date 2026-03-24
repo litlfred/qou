@@ -547,6 +547,11 @@
     .bb strong{color:var(--fg-b)}
     .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
     .bb a:hover{color:var(--fg-b)}
+    .bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9em}
+    .bb th,.bb td{border:1px solid var(--brd);padding:.4rem .6rem;text-align:left}
+    .bb th{background:var(--bg-r);font-weight:600;font-family:var(--f-head);font-size:.85em}
+    .bb td{vertical-align:middle}
+    .bb tr:hover{background:var(--bg-r)}
     .katex-display{overflow-x:auto;overflow-y:hidden;padding:.4rem 0}
     .katex{color:var(--fg)}
 
@@ -814,20 +819,18 @@
     .dep-overlay-bar .dep-link:hover{opacity:1;color:var(--ac)}
     .dep-overlay-bar .dep-copied{font-size:.55rem;color:var(--grn);opacity:0;transition:opacity .3s;margin-left:.2rem}
     .dep-overlay-bar .dep-copied.show{opacity:1}
-    /* Split layout: graph LHS + preview RHS */
-    .dep-body{display:flex;flex:1;overflow:hidden}
+    /* Split layout: graph LHS + overlay RHS */
+    .dep-body{display:flex;flex:1;overflow:hidden;position:relative}
     .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:200px}
     .dep-graph-wrap{flex:1;overflow:hidden;cursor:grab}
     .dep-graph-wrap.panning{cursor:grabbing}
     .dep-graph-svg{min-height:300px;width:100%;height:100%}
     .dep-graph-svg svg{width:100%;height:100%}
-    /* Draggable divider between LHS and RHS */
-    .dep-divider{width:5px;cursor:col-resize;background:var(--brd);flex-shrink:0;transition:background .15s;display:none}
-    .dep-divider:hover,.dep-divider.active{background:var(--ac-d)}
-    .dep-divider.vis{display:block}
-    /* RHS preview panel */
-    .dep-rhs{width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;flex-shrink:0}
-    .dep-rhs.open{width:500px}
+    /* Draggable divider — hidden, kept for compat */
+    .dep-divider{display:none}
+    /* RHS preview panel — overlay, does not shift LHS */
+    .dep-rhs{position:absolute;top:0;right:0;bottom:0;width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;z-index:10;transition:width .2s ease;box-shadow:none}
+    .dep-rhs.open{width:420px;box-shadow:-4px 0 16px rgba(0,0,0,.15)}
     .dep-rhs-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.72rem;flex-shrink:0}
     .dep-rhs-head .rhs-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase}
     .dep-rhs-head .rhs-title{color:var(--fg-b);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -1671,7 +1674,7 @@
       const goTo = mk('a','uph-goto');
       goTo.textContent = 'go to \u2197';
       goTo.href = `#${label}`;
-      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth'}); };
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
       hd.appendChild(goTo);
       renderMath(hd);
       p.appendChild(hd);
@@ -1712,8 +1715,8 @@
     const depGraphWrap = document.querySelector('.dep-graph-wrap');
     let depRootLabel = null; // current root for feedback
 
-    function depCloseRhs() { depRhs.classList.remove('open'); depDivider.classList.remove('vis'); }
-    function depOpenRhs() { depRhs.classList.add('open'); depDivider.classList.add('vis'); }
+    function depCloseRhs() { depRhs.classList.remove('open'); }
+    function depOpenRhs() { depRhs.classList.add('open'); }
 
     document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depCloseRhs(); };
     document.getElementById('dep-rhs-close').onclick = depCloseRhs;
@@ -1921,7 +1924,7 @@
       depOverlay.classList.remove('open');
       depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     document.getElementById('dep-rhs-fb').onclick = () => {
       const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
@@ -2163,7 +2166,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
-            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
         nodeGroup.appendChild(g);
       }
@@ -2239,7 +2242,9 @@
       history.replaceState(null, '', vizHash);
     };
 
-    function renderDepGraph(rootLabel) {
+    async function renderDepGraph(rootLabel) {
+      // Force-index all blocks so the dep graph has the complete uses/usedBy data
+      if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
       const { nodes, edges, externals } = buildDepGraph(rootLabel);
       const root = bix.get(rootLabel);
       if (!root) return;
@@ -3447,7 +3452,7 @@
             showChapter(ch.number);
             setTimeout(() => {
               const t = document.getElementById(sec.label);
-              if (t) t.scrollIntoView({behavior:'smooth'});
+              if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
             }, 50);
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
@@ -3563,6 +3568,37 @@
       paper._chapterForLabel = chapterForLabel;
       paper._loadChapterDetail = loadChapterDetail;
       paper._loadSection = loadSection;
+
+      // Ensure all blocks are indexed into bix (for dep graph, full-paper search, etc.)
+      // Fetches section data without rendering into the DOM.
+      let _allIndexed = false;
+      paper._ensureAllBlocksIndexed = async () => {
+        if (_allIndexed) return;
+        for (const ch of p.chapters) {
+          if (ch._dir) await loadChapterDetail(p.id, ch);
+          for (let si = 0; si < ch.sections.length; si++) {
+            const key = `${ch._dir}:${si}`;
+            if (loadedSections.has(key)) continue;
+            try {
+              const secUrl = `/api/paper/section?id=${encodeURIComponent(p.id)}&chapter=${encodeURIComponent(ch._dir)}&section=${si}${branchParam()}`;
+              const secData = await cachedFetch(secUrl);
+              loadedSections.add(key);
+              const chObj = p.chapters.find(c => c._dir === ch._dir);
+              if (chObj) { const sec = chObj.sections[si]; if (sec) sec.blocks = secData.blocks; }
+              for (const b of secData.blocks) {
+                if (b.label) bix.set(b.label, b);
+                if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+                if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+                if (b.uses) for (const dep of b.uses) {
+                  if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                  usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+                }
+              }
+            } catch {}
+          }
+        }
+        _allIndexed = true;
+      };
 
       // Show first chapter (or the one containing pendingScroll)
       let startChapter = p.chapters[0]?.number || 1;

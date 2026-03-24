@@ -33,4 +33,4 @@ $$
   \mathcal{L}_\xi,
 $$
 which is precisely the archimedean formula for $d_q$
-([archimedean $q$-exterior derivative](#def:q-ext-deriv)).
+([archimedean $q$-exterior derivative](#ex:q-ext-deriv)).

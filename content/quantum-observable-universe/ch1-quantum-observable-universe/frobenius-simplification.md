@@ -49,7 +49,7 @@ the Frobenius form $\int_A \colon A \to \mathbf{1}$, and the
 non-degeneracy is the $\mathbb{C}$
 instance of condition (1) in
 [quantum observable universe](#def:quantum-observable-universe).
-In the archimedean realisation ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)),
+In the archimedean realisation ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
 conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)
 reduce to a triple:

@@ -1,4 +1,4 @@
-[$\mathbb{C}$-quantum universe](#def:c-quantum-universe) requires only Levi non-degeneracy
+[$\mathbb{C}$-quantum universe](#ex:c-quantum-universe) requires only Levi non-degeneracy
 (not strict pseudoconvexity). This generality is deliberate: the QOU
 framework applies whenever the following three cohomological/obstruction
 conditions hold.

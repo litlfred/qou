@@ -24,7 +24,7 @@ $2^{-k}$ reflecting the degree-$2$ expansion at each step.
 In the QOU framework the role of the dynamical parameter $c$ is played by the
 substrate parameter $q=q(z)$ ([substrate parameter](#def:substrate-parameter)), which varies
 continuously with the spacetime coordinate $z$.  The $q$-deformed Reeb flow
-([$q$-Reeb flow](#def:q-reeb-flow)) on the exceptional divisor $E_i \cong \mathbb{P}^1(\mathbb{C})$
+([$q$-Reeb flow](#ex:q-reeb-flow)) on the exceptional divisor $E_i \cong \mathbb{P}^1(\mathbb{C})$
 takes the place of the orbit $\{f_c^k(z)\}_{k\geq 0}$, and the path from $0$ to $z_i$
 in the quantum dilogarithm integral accumulates information along that flow exactly as
 [eq:bottcher-series](#eq:bottcher-series) accumulates it along the Julia-set orbit.  The

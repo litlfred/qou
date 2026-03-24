@@ -8,7 +8,7 @@ sliding. This collective rotor phenomenon may admit a natural explanation
 within the QOU framework: the competing magnetic alignments realise a discrete
 analogue of the $q$-torsion frustration that arises when a lattice's
 translational symmetry is incommensurate with the characteristic scale of the
-$q$-torsion leaves ([$q$-torsion leaf](#def:q-torsion-leaf)). In this reading,
+$q$-torsion leaves ([$q$-torsion leaf](#ex:q-torsion-leaf)). In this reading,
 the non-monotonic friction profile reflects a resonance--anti-resonance
 transition governed by the local value of the substrate parameter $q$
 ([substrate parameter](#def:substrate-parameter)), with maximal dissipation occurring

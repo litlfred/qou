@@ -31,7 +31,7 @@ of the fibre, where $d_q \to \pi_V \circ d$).
 
 Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\theta(\xi_q)$, the
 $q$-deformed Reeb field
-([$q$-Reeb vector field](#def:q-reeb-vector-field)) evaluated on the
+([$q$-Reeb vector field](#ex:q-reeb-vector-field)) evaluated on the
 contact form: $\xi_q$ is the unique direction along which $d\theta$
 degenerates, so it encodes the obstruction to commutativity.
 Uncertainty is displacement along the Reeb fibre --- the further from

@@ -35,7 +35,7 @@ universe u v
     of any QOU is `SU(2)`, whose irreducible representations are exactly
     the spin-`j` representations `V_j` with `dim V_j = 2j + 1`.
 
-    LaTeX: `\label{def:spin-labels}` -/
+    LaTeX: `\label{prop:spin-labels}` -/
 structure SpinLabels where
   /-- The spin label `j`, represented as twice the spin (so `j = 0, 1, 2, 3, ...`
       corresponds to spin `0, 1/2, 1, 3/2, ...`). -/
