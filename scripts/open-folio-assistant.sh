@@ -14,7 +14,7 @@ URL="http://localhost:${PORT}/assistant/"
 if curl -sf --max-time 2 "http://localhost:${PORT}/health" &>/dev/null; then
   echo '{"assistant_server": "running", "url": "'"$URL"'"}'
 else
-  echo '{"assistant_server": "not_running", "url": "'"$URL"'", "message": "Start with: ./scripts/start-assistant.sh"}'
+  echo '{"assistant_server": "not_running", "url": "'"$URL"'", "message": "Start with: ./scripts/start-folio-assistant.sh"}'
 fi
 
 # ── Open browser ─────────────────────────────────────────────────
