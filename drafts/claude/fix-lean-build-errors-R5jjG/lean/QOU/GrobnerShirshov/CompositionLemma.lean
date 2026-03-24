@@ -1,3 +1,5 @@
+import QOU.GrobnerShirshov.Basic
+
 /-!
 # Gröbner–Shirshov Composition Lemma (Diamond Lemma)
 
@@ -24,7 +26,6 @@ reduction relations defined in `Basic.lean`:
 - [fred2005, §3, Proposition 3.8].
 -/
 
-import QOU.GrobnerShirshov.Basic
 
 namespace QOU.GrobnerShirshov
 

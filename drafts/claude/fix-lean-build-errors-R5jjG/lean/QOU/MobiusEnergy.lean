@@ -7,7 +7,7 @@ import QOU.MassDerivation
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 /-!
 # QOU.MobiusEnergy — Categorical Möbius Energy and Self-Avoidance

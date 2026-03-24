@@ -1,3 +1,5 @@
+import QOU.GrobnerShirshov.CompositionLemma
+
 /-!
 # Normal Forms and PBW-Type Bases
 
@@ -29,7 +31,6 @@ appearing in the QOU manuscript:
   algebras*, Israel J. Math. 96 (1996), 97–113.
 -/
 
-import QOU.GrobnerShirshov.CompositionLemma
 
 namespace QOU.GrobnerShirshov
 

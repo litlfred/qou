@@ -1,3 +1,5 @@
+import QOU.GrobnerShirshov.Flatness
+
 /-!
 # Strong Multiplicativity from the GS Deformation
 
@@ -33,7 +35,6 @@ The proof has three steps:
 - [fred2005, §4] — proof via filtration-degree induction
 -/
 
-import QOU.GrobnerShirshov.Flatness
 
 namespace QOU.GrobnerShirshov
 

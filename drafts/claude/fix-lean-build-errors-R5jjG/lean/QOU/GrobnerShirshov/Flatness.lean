@@ -1,3 +1,5 @@
+import QOU.GrobnerShirshov.NormalForms
+
 /-!
 # Flatness of the Gröbner–Shirshov Deformation
 
@@ -33,7 +35,6 @@ is unchanged under quantisation.
   PBW deformations and Koszulity
 -/
 
-import QOU.GrobnerShirshov.NormalForms
 
 namespace QOU.GrobnerShirshov
 
