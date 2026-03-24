@@ -878,7 +878,7 @@
 </head>
 <body data-font="web">
   <div class="ctrl">
-    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
+    <a id="toplet" href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
     <div class="br-picker" id="br-picker">
       <input id="br-input" type="text" placeholder="branch..." autocomplete="off">
       <div class="br-drop" id="br-drop"></div>
@@ -1046,7 +1046,7 @@
     const btnFn = document.getElementById('c-fn');
 
     // Restore saved theme preference (default: light)
-    const savedTheme = localStorage.getItem('qou-theme');
+    const savedTheme = localStorage.getItem('folio-assistant-theme');
     if (savedTheme) {
       html.dataset.theme = savedTheme;
       btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
@@ -1056,7 +1056,7 @@
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('qou-theme', n);
+      localStorage.setItem('folio-assistant-theme', n);
     });
 
     btnFn.addEventListener('click', () => {
@@ -1192,13 +1192,13 @@
     });
 
     const btnRd = document.getElementById('c-rd');
-    let readingMode = localStorage.getItem('qou-reading') === '1';
+    let readingMode = localStorage.getItem('folio-assistant-reading') === '1';
     if (readingMode) { document.body.classList.add('reading'); btnRd.classList.add('on'); }
     btnRd.addEventListener('click', () => {
       readingMode = !readingMode;
       document.body.classList.toggle('reading', readingMode);
       btnRd.classList.toggle('on', readingMode);
-      localStorage.setItem('qou-reading', readingMode ? '1' : '0');
+      localStorage.setItem('folio-assistant-reading', readingMode ? '1' : '0');
     });
 
     // ── Clear cache button ──────────────────────────────
@@ -1206,7 +1206,7 @@
       const keys = [];
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
-        if (k && k.startsWith('qou-')) keys.push(k);
+        if (k && k.startsWith('folio-assistant-')) keys.push(k);
       }
       keys.forEach(k => localStorage.removeItem(k));
       location.reload();
@@ -2957,12 +2957,12 @@
       // Pin control
       const pinRow = mk('div','sb-pin');
       const pinBtn = document.createElement('button');
-      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? '📌' : '📍';
-      if (localStorage.getItem('qou-sb-pinned') === '1') document.body.classList.add('sb-pinned');
+      pinBtn.textContent = localStorage.getItem('folio-assistant-sb-pinned') === '1' ? '📌' : '📍';
+      if (localStorage.getItem('folio-assistant-sb-pinned') === '1') document.body.classList.add('sb-pinned');
       pinBtn.onclick = () => {
         const pinned = document.body.classList.toggle('sb-pinned');
         pinBtn.textContent = pinned ? '📌' : '📍';
-        localStorage.setItem('qou-sb-pinned', pinned ? '1' : '0');
+        localStorage.setItem('folio-assistant-sb-pinned', pinned ? '1' : '0');
       };
       pinRow.appendChild(pinBtn);
       sb.appendChild(pinRow);
@@ -2995,9 +2995,9 @@
       function saveSbOpenChapters() {
         const open = [];
         sb.querySelectorAll('.sb-ch.open').forEach(ch => open.push(ch.dataset.num));
-        localStorage.setItem('qou-sb-chapters', JSON.stringify(open));
+        localStorage.setItem('folio-assistant-sb-chapters', JSON.stringify(open));
       }
-      const _storedChapters = (() => { try { return JSON.parse(localStorage.getItem('qou-sb-chapters')); } catch { return null; } })();
+      const _storedChapters = (() => { try { return JSON.parse(localStorage.getItem('folio-assistant-sb-chapters')); } catch { return null; } })();
       // Default: all chapters closed unless session cache specifies otherwise
       const restoredChapters = new Set(_storedChapters || []);
 
@@ -3381,6 +3381,7 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — Folio`;
+      document.getElementById('toplet').textContent = `Folio: ${p.title}`;
 
       // Expose chapter navigation and lazy-load helpers for cross-function use
       paper._showChapter = showChapter;
@@ -3414,7 +3415,7 @@
     }
 
     // ── Feedback draft persistence ─────────────────────────
-    const FB_DRAFT_KEY = 'qou-fb-drafts';
+    const FB_DRAFT_KEY = 'folio-assistant-fb-drafts';
     function loadDrafts() {
       try { return JSON.parse(localStorage.getItem(FB_DRAFT_KEY) || '{}'); } catch { return {}; }
     }
@@ -4200,6 +4201,7 @@
       loadImportHistory();
 
       document.title = data.title || 'Folio';
+      document.getElementById('toplet').textContent = 'Folio';
     }
 
     // ── Router ────────────────────────────────────────────
@@ -4627,6 +4629,7 @@
       app.appendChild(manifestWrap);
 
       document.title = `Edit: ${block.title || block.label} — Folio`;
+      document.getElementById('toplet').textContent = `Folio: ${block.title || block.label}`;
     }
 
     function scrollToLabel(label) {

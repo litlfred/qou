@@ -54,21 +54,21 @@
     const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = t;
     $("#c-th").textContent = t === "dark" ? "light" : "dark";
-    localStorage.setItem("qou-theme", t);
+    localStorage.setItem("folio-assistant-theme", t);
   };
   $("#c-fn").onclick = () => {
     const f = document.body.dataset.font === "paper" ? "web" : "paper";
     document.body.dataset.font = f;
     $("#c-fn").textContent = f === "paper" ? "web" : "paper";
-    localStorage.setItem("qou-font", f);
+    localStorage.setItem("folio-assistant-font", f);
   };
   // restore saved prefs
-  const savedTheme = localStorage.getItem("qou-theme");
+  const savedTheme = localStorage.getItem("folio-assistant-theme");
   if (savedTheme) {
     document.documentElement.dataset.theme = savedTheme;
     $("#c-th").textContent = savedTheme === "dark" ? "light" : "dark";
   }
-  const savedFont = localStorage.getItem("qou-font");
+  const savedFont = localStorage.getItem("folio-assistant-font");
   if (savedFont) {
     document.body.dataset.font = savedFont;
     $("#c-fn").textContent = savedFont === "paper" ? "web" : "paper";

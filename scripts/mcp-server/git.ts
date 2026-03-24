@@ -111,7 +111,7 @@ export function gitLs(branch: string, relDir: string): string[] {
 
 // ── TypeScript module evaluation from git branches ────────────────
 
-const TMP_DIR = join(REPO_ROOT, ".qou-tmp");
+const TMP_DIR = join(REPO_ROOT, ".folio-assistant-tmp");
 
 /**
  * Import a TypeScript module from a non-current branch.

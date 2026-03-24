@@ -86,12 +86,14 @@ function feedbackPath(paperId: string, rootName: string, base = FEEDBACK_DIR): s
 
 /** Parse a feedback .ts file → array of FeedbackItems. */
 function parseFeedbackTs(content: string): unknown[] {
-  // Extract the array from: export default [ ... ];
-  const match = content.match(/export\s+default\s+(\[[\s\S]*\]);?\s*$/);
+  // Strip import line and satisfies clause, then extract the JSON array
+  const stripped = content
+    .replace(/^import\s+.*;\s*/m, '')
+    .replace(/\s+satisfies\s+\S+;\s*$/, ';');
+  const match = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
   if (!match) return [];
   try {
-    // Use Function to evaluate the array literal (safe — we control the files)
-    return new Function(`return ${match[1]}`)();
+    return JSON.parse(match[1]);
   } catch { return []; }
 }
 
@@ -383,7 +385,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blk = (await importTsBranch(br, blkTsRel)) as any;
           const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos from gitignored .qou-feedback/
+          // Merge feedback todos from feedback/<paperId>/<rootName>.ts
           // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
           const blockTodos = feedback.length ? [...feedback] : undefined;
@@ -2446,7 +2448,7 @@ These become clickable buttons so users don't have to type. Make them specific t
 // ── Server setup ─────────────────────────────────────────────────
 
 const server = new McpServer({
-  name: "qou-paper-assistant",
+  name: "folio-assistant",
   version: "0.1.0",
 }, {
   capabilities: {
