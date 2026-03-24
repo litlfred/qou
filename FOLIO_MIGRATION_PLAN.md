@@ -155,6 +155,18 @@ interface ContentAdapter {
 }
 ```
 
+#### Adapter Types
+
+| Type | Description |
+|------|-------------|
+| `FolioItem` | A paper or content collection listed on the folio landing page (title, slug, description, status) |
+| `Outline` | Hierarchical table-of-contents for a content item (chapters → sections → blocks with labels) |
+| `BlockDetail` | Full content of a single block including rendered HTML/LaTeX, metadata, and cross-references |
+| `FeedbackItem` | A single piece of feedback on a block (author, timestamp, body, triage status) |
+| `NewFeedback` | Input payload for creating feedback (body text, optional author name) |
+| `ValidationResult` | Aggregated validation output (errors, warnings, info) from schema and domain rules |
+| `DiffResult` | Structured diff between two refs for a content item (changed blocks, added/removed sections) |
+
 #### 1b. Move auth gateway
 
 - **GitHub OAuth** → collaborator/owner roles:
@@ -305,6 +317,14 @@ Each subscribed repo declares its content type at its root:
 }
 ```
 
+> **`contentType` vs `adapter`:** `contentType` is the semantic category of the
+> repo's content (paper, guideline, specification) — used for display labels,
+> skill routing, and UI theming. `adapter` is the module name implementing the
+> `ContentAdapter` interface for that content type — used to resolve the runtime
+> adapter class. They often match (e.g., both `"paper"`), but they can diverge
+> when multiple semantic categories share the same adapter implementation (e.g.,
+> `"contentType": "specification"` with `"adapter": "guideline"`).
+
 #### 3c. Permission model
 
 ```
@@ -381,7 +401,7 @@ Or for local development:
 | `scripts/mcp-server/paths.ts` | `src/paths.ts` | Parameterize repo root |
 | `scripts/mcp-server/tools/render.ts` | `src/adapters/paper/tools/render.ts` | Adapter-specific |
 | `scripts/mcp-server/tools/validate.ts` | `src/adapters/paper/tools/validate.ts` | Adapter-specific |
-| `scripts/mcp-server/tools/preview.ts` | `src/tools/preview.ts` | Generic (formula/diagram preview) |
+| `scripts/mcp-server/tools/preview.ts` | `src/tools/preview.ts` | Generic preview framework; LaTeX-specific rendering in `renderBlock()` needs adapter dispatch |
 | `scripts/mcp-server/tools/preferences.ts` | `src/tools/preferences.ts` | Generic |
 | `scripts/mcp-server/tools/lean.ts` | `src/adapters/paper/tools/lean.ts` | Adapter-specific extension |
 | `scripts/mcp-server/tools/check-deps.ts` | `src/tools/check-deps.ts` | Generic |
