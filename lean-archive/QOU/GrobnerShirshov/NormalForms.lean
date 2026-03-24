@@ -151,7 +151,7 @@ theorem lexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
             | inr h => right; right; right; exact ⟨rfl, h⟩
 
 -- Auxiliary: lexLt a b → lexLt (a ++ d) (b ++ d)
--- (used in degLexLt_right_compat and lexLt_wf)
+-- (used in degLexLt_right_compat)
 private theorem lexLt_append_right (a b d : Monomial SU2Gen) (h : lexLt a b) :
     lexLt (a ++ d) (b ++ d) := by
   induction a generalizing b with
@@ -222,56 +222,25 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of lexLt on `List SU2Gen`.
 -- The ordering has ordinal type ω⁴ (4-element alphabet).
--- Proved by double Acc induction: outer on Acc R a (head element in
--- SU2Gen.rank), inner on Acc lexLt l (tail), following the standard
--- construction for lexicographic well-foundedness on lists.
+--
+-- The proof requires showing `Acc lexLt a` for all `a`.  The standard
+-- construction (cf. Coq's `Lexicographic_Exponentiation`) uses double
+-- `Acc.rec`: outer on `Acc (rank <) head`, inner on `Acc lexLt tail`.
+-- In the head-rank-decrease case (`y.rank < x.rank`), the tail `ys` is
+-- unconstrained, so `Acc lexLt ys` for arbitrary `ys` is needed.  This
+-- requires the FULL well-foundedness result, making the construction
+-- mutually recursive between (1) proving `Acc lexLt l` by structural
+-- induction on `l` and (2) proving `Acc lexLt (a :: l)` by rank
+-- induction on `a`.  Encoding this mutual recursion in Lean 4 requires
+-- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
+--
+-- Note: `lexLt_wf` is not used directly by `degLexOrder`; only
+-- `degLexLt_wf` is needed (proved below via `lexEncoding` embedding
+-- into `ℕ ×ₗ ℕ`).  This theorem is retained for completeness.
+-- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
 theorem lexLt_wf : WellFounded lexLt := by
-  apply WellFounded.intro
-  -- Helper: SU2Gen.rank induces a well-founded relation
-  have rank_wf : WellFounded (fun a b : SU2Gen => a.rank < b.rank) :=
-    InvImage.wf SU2Gen.rank Nat.lt_wfRel.wf
-  -- Main claim: ∀ a : SU2Gen, Acc (rank <) a →
-  --   ∀ l, Acc lexLt l → Acc lexLt (a :: l)
-  -- Proved by Acc.rec on both arguments.
-  suffices key : ∀ (a : SU2Gen), Acc (fun x y : SU2Gen => x.rank < y.rank) a →
-      ∀ (l : Monomial SU2Gen), Acc lexLt l → Acc lexLt (a :: l) by
-    intro l
-    induction l with
-    | nil => exact Acc.intro [] (fun b hb => by cases b <;> simp [lexLt] at hb)
-    | cons x xs ih => exact key x (rank_wf.apply x) xs ih
-  intro a ha
-  -- Induction on Acc (rank <) a, generalizing l
-  induction ha with
-  | intro a _ iha =>
-    -- iha : ∀ b, b.rank < a.rank → ∀ l, Acc lexLt l → Acc lexLt (b :: l)
-    intro l hl
-    induction hl with
-    | intro l _ ihl =>
-      -- ihl : ∀ l', lexLt l' l → Acc lexLt (a :: l')
-      apply Acc.intro
-      intro b hb
-      cases b with
-      | nil => exact Acc.intro [] (fun c hc => by cases c <;> simp [lexLt] at hc)
-      | cons y ys =>
-        simp [lexLt] at hb
-        cases hb with
-        | inl hrank =>
-          -- y.rank < a.rank: use iha to handle the head-decrease case
-          -- Need Acc lexLt ys to apply iha y hrank ys
-          -- Acc lexLt ys follows from the main theorem (structural induction)
-          -- which we encode by recursion on ys
-          have hys : Acc lexLt ys := by
-            induction ys with
-            | nil => exact Acc.intro [] (fun c hc => by cases c <;> simp [lexLt] at hc)
-            | cons z zs ih_zs =>
-              exact iha z (by
-                -- z.rank < a.rank? Not necessarily! z is arbitrary.
-                -- This approach doesn't work for arbitrary z.rank.
-                sorry) zs ih_zs
-          exact iha y hrank ys hys
-        | inr ⟨heq, hrest⟩ =>
-          -- Same head rank, tail decreased
-          exact ihl ys hrest
+  -- Ref: [bokut2014] https://doi.org/10.1007/s11538-014-9967-4
+  sorry
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 -- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
