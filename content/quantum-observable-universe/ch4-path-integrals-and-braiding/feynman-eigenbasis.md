@@ -53,7 +53,7 @@ finitely many irreducible summands of $V^{\otimes n}$, not over a
 continuum of paths.
 
 The connection to the skein-based mass calculation of
-[Chapter 5](#chap:experimental) is then as follows.  The skein relation
+[Chapter 6](#chap:descartes-universe) is then as follows.  The skein relation
 $q\,\mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) =
 (q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0)$
 ([skein mass relation](#prop:skein-mass-relation)) is the

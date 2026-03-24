@@ -34,6 +34,7 @@ heuristic specialisation (each step involves unproven identifications):
 Combined with a conjectural ansatz identifying particles with specific
 knots (e.g.\ the figure-eight knot $4_1$ with the muon), this formula
 would determine the substrate parameter $q$ from experimental mass
-ratios (see [§11](#sec:experimental-evidence)). The ansatz itself
-requires independent justification; §11 presents numerical evidence
-but not a derivation from the categorical axioms.
+ratios (see [§6.10](#sec:small-scale)). The ansatz itself
+requires independent justification; the experimental sections below
+present numerical evidence but not a derivation from the categorical
+axioms.

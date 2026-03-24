@@ -1,5 +1,6 @@
 
-The topological mass conjecture (Conjecture 4.25) gives
+The topological mass conjecture
+([topological mass formula](#conj:topological-mass-formula)) gives
 $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{\,2}$ with
 $\hbar_q = 1 - q^{-1}$ (see the proof of
 [skein mass relation](#prop:skein-mass-relation)). Rearranging yields
