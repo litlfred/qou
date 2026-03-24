@@ -16,7 +16,7 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 - Vol(4₁): SnapPy census, Bloch-Wigner dilogarithm, 3·Cl₂(π/3) (OEIS A091518)
   Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 - m_μ/m_e: NIST CODATA 2022 recommended value 206.7682827(46)
-  Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
+  Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
 - q derivation: Manuscript §4, Conjecture 4.25
 -/
 
@@ -70,7 +70,7 @@ where `ℏ_q = 1 - 1/q` is the quantum Planck constant. -/
 
     This is the central equation of the QOU mass derivation.
     Ref: Manuscript Conjecture 4.25. -/
--- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
+-- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
 theorem skein_mass_residue (q : ℝ) (hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
@@ -111,7 +111,7 @@ noncomputable def derived_q : ℝ :=
     Specifically: `|derived_q - 1.1097| < 0.0001`
 
     Knot Atlas: <http://katlas.org/wiki/4_1>
-    Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme -/
+    Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme -/
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Vol(4₁) feeds derivation
 theorem substrate_error_bound :
     |derived_q - substrate_q| < 0.001 := by
@@ -151,7 +151,7 @@ theorem substrate_error_bound :
 /-! ## Section 4: CODATA Consistency Checks -/
 
 /-- The h_q² value is positive (since both Vol(4₁) and m_μ/m_e are positive). -/
--- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
+-- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
 theorem h_q_squared_pos : h_q_squared > 0 := by
   unfold h_q_squared
   apply div_pos
@@ -192,7 +192,7 @@ theorem derived_q_gt_one :
         → |derived_q - 1.1097| < 0.0001
 
     Knot Atlas: <http://katlas.org/wiki/4_1> -/
--- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295 — Topological mass conjecture
+-- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295 — Topological mass conjecture
 theorem full_derivation_chain :
     let vol := figureEightEntry.volume.value
     let ratio := experimental_mu_e_ratio

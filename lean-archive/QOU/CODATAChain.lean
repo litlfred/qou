@@ -41,7 +41,7 @@ Proton, Neutron, Deuteron, Binding Energy matching CODATA
 
 ## References
 
-- [CODATA2022] https://physics.nist.gov/cuu/Constants/
+- [codata2022] https://physics.nist.gov/cuu/Constants/
 - [turaev2010] https://doi.org/10.1515/9783110221831
 -/
 

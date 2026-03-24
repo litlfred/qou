@@ -105,7 +105,7 @@ lemma vol_figure_eight_approx :
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
     |experimental_mu_e_ratio - 206.7683| < 1e-4 := by
-  -- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
+  -- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
   unfold experimental_mu_e_ratio
   norm_num
 
@@ -164,7 +164,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   -- This is a quadratic in q whose unique root > 1 is q ≈ 1.1097.
   -- Full numerical verification requires interval arithmetic (Mathlib.Tactic.Polyrith)
   -- or a certified polynomial witness, which exceeds current tactic automation.
-  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
+  -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
   have hsq := planck_sq_from_mass_eq q hq h_eq
   -- From the mass equation: (1-1/q)² = vol/ratio, and since q > 1
   -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).

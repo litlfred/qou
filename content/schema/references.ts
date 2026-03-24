@@ -248,7 +248,7 @@ export const references: CSLData[] = [
 
   // ── CODATA 2022 ───────────────────────────────────────────────
   ref({
-    id: "CODATA2022",
+    id: "codata2022",
     type: "dataset",
     title: "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
     author: [
@@ -262,7 +262,7 @@ export const references: CSLData[] = [
 
   // ── Kronheimer and Mrowka 2004 ────────────────────────────────
   ref({
-    id: "KronheimerMrowka2004",
+    id: "kronheimer2004",
     type: "article-journal",
     title: "Witten's conjecture and Property P",
     author: [
@@ -510,7 +510,7 @@ export const references: CSLData[] = [
 
   // ── Chari and Pressley 1994 ───────────────────────────────────
   ref({
-    id: "chari1994guide",
+    id: "chari1994",
     type: "book",
     title: "A Guide to Quantum Groups",
     author: [
