@@ -74,6 +74,13 @@ export const TodoItemSchema = z.object({
   related: z.array(z.string()).optional(),
 });
 
+// ── Feedback schema ──────────────────────────────────────────
+
+export const FeedbackItemSchema = TodoItemSchema.extend({
+  author: z.string().optional(),
+  authorEmail: z.string().optional(),
+});
+
 // ── Block schemas ────────────────────────────────────────────────
 
 const RenderedAssetSchema = z.object({

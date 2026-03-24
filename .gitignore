@@ -48,5 +48,7 @@ todos/
 
 # Local agent state (per-machine, not shared)
 .claude/local-state/
-.qou-feedback/
 .qou-tmp/
+
+# Feedback worktree (local checkout of main for committing feedback)
+.feedback-wt/

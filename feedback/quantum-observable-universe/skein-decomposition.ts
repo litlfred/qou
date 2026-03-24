@@ -1,0 +1,14 @@
+import type { FeedbackItem } from "../../schemas/types";
+
+export default [
+  {
+    "id": "todo-mn14stkl",
+    "summary": "does not display fully in table.  many are blank",
+    "comment": "does not display fully in table.  many are blank",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T02:22:13.173Z"
+  }
+] satisfies FeedbackItem[];

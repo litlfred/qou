@@ -599,6 +599,23 @@ export interface TodoItem {
   related?: string[];
 }
 
+// ── Feedback (committed to main via worktree) ────────────────
+
+/**
+ * A feedback item submitted by a user or agent against a content block.
+ *
+ * Feedback lives in `feedback/<paper-dir>/<rootName>.ts` and is committed
+ * to main immediately via a git worktree, so it persists across branches.
+ *
+ * Extends TodoItem with authorship fields from the feedback UI.
+ */
+export interface FeedbackItem extends TodoItem {
+  /** Display name of the submitter (from OAuth or local config). */
+  author?: string;
+  /** Email of the submitter (from OAuth or local config). */
+  authorEmail?: string;
+}
+
 // ── Folio (collection of papers) ─────────────────────────────
 
 /**
