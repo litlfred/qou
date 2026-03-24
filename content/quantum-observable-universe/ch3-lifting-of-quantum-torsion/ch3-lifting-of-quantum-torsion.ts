@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * and the quantum dilogarithm.
  */
 export default chapter({
-  number: 3,
+  number: 2,
   title: "Lifting and Descent",
   label: "chap:torsion",
   sections: [

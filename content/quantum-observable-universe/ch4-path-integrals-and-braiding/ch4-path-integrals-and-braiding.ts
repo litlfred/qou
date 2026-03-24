@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * and information-theoretic perspectives.
  */
 export default chapter({
-  number: 4,
+  number: 3,
   title: "Braids, Knots and Fluid Dynamics",
   label: "chap:path-integrals-braiding",
   sections: [

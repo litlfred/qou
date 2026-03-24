@@ -5,4 +5,5 @@ hypersurface type (real dimension $3$), which provides the archimedean
 realisation of the quantum observable universe
 ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)).  Physics interpretations --- lepton
 generations, chirality, colour --- are further realisations of the
-$S_5$-symmetric structure ([Descartes leptons](#rem:descartes-leptons)).
+$S_5$-symmetric structure (see [Descartes leptons](#rem:descartes-leptons)
+in [Chapter 6](#chap:descartes-universe)).

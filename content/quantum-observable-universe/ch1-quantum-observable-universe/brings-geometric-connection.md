@@ -1,7 +1,7 @@
 The geometric structures developed above — the $q$-Laplacian, the
 fermion--boson decomposition, the three-term expansion, and the
 contact affine chart — become concrete on the
-[Brings surface](#ex:brings-surface) studied in Chapter 5.
+[Brings surface](#ex:brings-surface) studied in [Chapter 4](#chap:brings-surface).
 There, the contact structure $\theta$, the Reeb vector field $\xi$,
 and the substrate parameter $q$ are given by explicit formulas on
 a genus-$4$ Riemann surface with $\mathrm{PSL}(2,7)$ symmetry.

@@ -21,7 +21,7 @@ In the QOU framework this basis serves two purposes:
 1. it provides the explicit coordinates for the fibre algebra
    $\mathrm{SU}_{q_n}(2)$ at each brane-tower level
    ([direct limit algebra](#def:direct-limit-algebra) in
-   [Chapter 3](#chap:torsion));
+   [Chapter 2](#chap:torsion));
 2. it ensures flatness of the deformation $q \mapsto q_n$, so that
    the transition maps in the direct limit
    $\mathcal{A}_\infty = \varinjlim\,\Gamma(J^1 E_n,\,

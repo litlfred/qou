@@ -71,3 +71,12 @@ such that the following *snake identity* diagrams commute:
 
 We say $\mathcal{C}$ is *$R$-linear* (for a commutative ring $R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
+
+The category is *symmetric monoidal* if it is further equipped with a
+natural isomorphism (the *braiding*)
+$\sigma_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$
+satisfying $\sigma_{Y,X} \circ \sigma_{X,Y} = \mathrm{id}$ and
+compatible with the associator. Given a braiding, the *exterior
+power* $\Lambda^k V$ is defined as the image of the antisymmetriser
+$\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\,\pi$ acting
+on $V^{\otimes k}$, where permutations act via $\sigma$.

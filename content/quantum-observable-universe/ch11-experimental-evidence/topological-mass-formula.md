@@ -17,8 +17,9 @@ and $\hbar_q = 1 - 1/q$ is the quantum Planck constant
 ([quantum Planck constant](#def:quantum-planck-constant)) at the substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)).
 
-This arises from the general decomposition
-([topological mass](#thm:topological-mass)) as follows:
+This conjectural formula arises from the general decomposition
+([topological mass](#thm:topological-mass)) under the following
+heuristic specialisation (each step involves unproven identifications):
 
 1. The baseline holonomy term
    $\lVert \mathrm{Hol}_{\nabla_A}(\gamma_0;\, \mathfrak{G}) \rVert$
@@ -30,7 +31,10 @@ This arises from the general decomposition
 3. Adding baseline and exceptional terms:
    $m = \operatorname{Vol}(K) + \operatorname{Vol}(K)(1/\hbar_q^{\,2} - 1) = \operatorname{Vol}(K)/\hbar_q^{\,2}$.
 
-Combined with an ansatz identifying particles with specific knots
-(e.g.\ the figure-eight knot $4_1$ with the muon), this formula determines
-the substrate parameter $q$ from experimental mass ratios
-(see [§11](#sec:experimental-evidence)).
+Combined with a conjectural ansatz identifying particles with specific
+knots (e.g.\ the figure-eight knot $4_1$ with the muon), this formula
+would determine the substrate parameter $q$ from experimental mass
+ratios (see [§6.10](#sec:small-scale)). The ansatz itself
+requires independent justification; the experimental sections below
+present numerical evidence but not a derivation from the categorical
+axioms.

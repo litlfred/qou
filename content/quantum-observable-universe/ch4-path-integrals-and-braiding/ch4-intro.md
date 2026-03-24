@@ -19,4 +19,4 @@ trefoil knot, being the simplest non-trivial torus knot, is identified with the
 quark; the muon arises as a lift of the trefoil to a higher fibre level.  The
 unknot, carrying trivial braiding, corresponds to the neutrino.
 Experimental evidence supporting this $q$-deformed braiding picture is
-discussed in [Chapter 5](#chap:experimental).
+discussed in [Chapter 6](#chap:descartes-universe).

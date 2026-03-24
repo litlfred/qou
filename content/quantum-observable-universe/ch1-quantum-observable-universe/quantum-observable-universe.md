@@ -11,9 +11,13 @@ conditions hold:
    ([Frobenius pairing](#def:frobenius-pairing)), giving an
    isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-2. *(observability)* $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
+2. *(observability)* there are no hidden global symmetries:
+   $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
    \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
-   ($A$ acted on by conjugation); that is, every morphism
+   ($A$ acted on by conjugation). Physically, this means every
+   internal degree of freedom is accessible to measurement — no
+   gauge transformation acts trivially on all observables. The
+   formal statement is that every morphism
    $\mathbf{1} \to \mathrm{Ad}(A)$ is zero:
 
    ```tex
@@ -35,8 +39,14 @@ conditions hold:
      c_2(\mathrm{Ad}(A)) = 0.
    $$
 
-   The first condition precludes hidden symmetries; the second ensures
-   that the volume form acquires no topological phases.
+   Here the Chern classes $c_i$ are defined via the fibre functor:
+   $c_i(\mathrm{Ad}(A)) := c_i(\tau(\mathrm{Ad}(A)))$ in the
+   de Rham cohomology of the realised bundle.
+   The first condition ($c_1 = 0$) ensures the adjoint bundle is
+   orientable, precluding global anomalies; the second ($c_2 = 0$)
+   ensures the volume form acquires no topological phases.
+   For many applications, axioms (1), (2), and (4) suffice — axiom
+   (3) is needed only when global topology of $M$ matters.
 
 4. *(categorical volume constraint)*
    let $V$ denote the fundamental object of $\mathcal{C}$
