@@ -42,6 +42,7 @@ When a user request arrives, route to the right skill(s):
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
+| "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "simplify / streamline proofs" | `local/proof-simplifier` | collaborator |
 | "validate LaTeX" | `local/latex-validation` | reader |
 | "validate content objects" | `local/content-validation` | reader |
@@ -74,7 +75,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
