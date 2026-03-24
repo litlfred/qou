@@ -1,14 +1,14 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Bring's Surface.
+ * Chapter 5 (was 4): Bring's Surface.
  *
  * The classical and quantum geometry of Bring's surface as a
  * quantum observable universe: spectral resolvents, color tube
  * coordinates, chiral fibrations, and Seiberg--Witten theory.
  */
 export default chapter({
-  number: 4,
+  number: 5,
   title: "Bring's Surface",
   label: "chap:brings-surface",
   sections: [

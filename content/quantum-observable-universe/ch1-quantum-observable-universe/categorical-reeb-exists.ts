@@ -8,5 +8,6 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["def:quantum-observable-universe", "def:maximal-torus", "def:weight-decomposition", "def:categorical-reeb"],
+  proofs: ["prf:categorical-reeb-exists"],
   tags: ["existence", "reeb", "derivation"],
 });

@@ -466,6 +466,11 @@ export interface ChapterRef {
 export interface Chapter {
   /** Chapter number. Omit for unnumbered chapters (e.g. Introduction). */
   number?: number;
+  /**
+   * Short label shown in collapsed sidebar tab (e.g. "I" for Introduction,
+   * "G" for Glossary). Defaults to `String(number)` when omitted.
+   */
+  tabLabel?: string;
   title: string;
   label?: string;
   /** Sections can be inline Section objects or SectionRef references. */
