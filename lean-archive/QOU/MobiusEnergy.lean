@@ -217,6 +217,7 @@ structure NonSelfIntersection (M : Type*) where
 theorem NonSelfIntersection.exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
     nsi.exclusionRadius = hbar_q nsi.cme.q := by
+  -- Ref: [manuscript] §4.2 — exclusionRadius default equals hbar_q by construction
   -- The exclusionRadius field has default value `hbar_q cme.q` but may
   -- have been overridden; this holds when the default is used.
   sorry
