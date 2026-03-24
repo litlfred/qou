@@ -13,7 +13,7 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
-import Mathlib.CategoryTheory.Types
+import Mathlib.CategoryTheory.Category.Types
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.CategoryTheory.Linear.Basic
 
@@ -1094,24 +1094,17 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     perturbation `q ↦ q + δq` via the Hopf coaction.
 
     LaTeX: `\label{def:observation}` -/
-structure Observation {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) where
+structure Observation (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) where
   /-- The observation morphism `O : A → A` in `C`. -/
-  morphism : @Quiver.Hom qou.C qou.catInst.toCategoryStruct.toQuiver
-    qou.frobHopf.obj qou.frobHopf.obj
+  morphism : fh.obj ⟶ fh.obj
   /-- **Frobenius compatibility**: `λ ∘ O = λ` — the observation preserves
       the Frobenius form. -/
-  frobenius_compat : @CategoryTheory.CategoryStruct.comp qou.C
-    qou.catInst.toCategoryStruct _ _ _ morphism qou.frobHopf.frobeniusForm =
-    qou.frobHopf.frobeniusForm
+  frobenius_compat : morphism ≫ fh.frobeniusForm = fh.frobeniusForm
   /-- **Substrate perturbation**: the induced shift `δq` is determined by
       the Hopf coaction.  Encoded as a morphism `𝟙 → 𝟙`. -/
-  substrate_shift :
-    @Quiver.Hom qou.C qou.catInst.toCategoryStruct.toQuiver
-      (@CategoryTheory.MonoidalCategoryStruct.tensorUnit qou.C
-        qou.monInst.toMonoidalCategoryStruct)
-      (@CategoryTheory.MonoidalCategoryStruct.tensorUnit qou.C
-        qou.monInst.toMonoidalCategoryStruct)
+  substrate_shift : (𝟙_ C) ⟶ (𝟙_ C)
 
 /-! ### Archimedean observation -/
 
@@ -1163,8 +1156,9 @@ structure VolumeFromRigidity (C : Type u) [CategoryTheory.Category.{v} C]
     self-duality then forces the unitary real form `SU(2)`.
 
     LaTeX: `\label{thm:su2-emergence}` -/
-structure SU2Emergence {k : Type*} [Field k]
-    (qou : QuantumObservableUniverse.{u, v} k) where
+structure SU2Emergence (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (exteriorSquare : C) where
   /-- The gauge group type `G = Aut⊗(ω)`. -/
   gaugeGroupType : Type*
   /-- `G` is a group. -/
@@ -1172,13 +1166,12 @@ structure SU2Emergence {k : Type*} [Field k]
   /-- The action of `G` on `Λ²V`: each `g ∈ G` acts on the exterior
       square of the fundamental object by `Λ²(g_V)`.  Since `Λ²V` has
       rank 1, this action is multiplication by `det(g_V)`. -/
-  ext_sq_action : gaugeGroupType →
-    @CategoryTheory.Hom _ qou.catInst qou.exteriorSquare qou.exteriorSquare
+  ext_sq_action : gaugeGroupType → (exteriorSquare ⟶ exteriorSquare)
   /-- **Determinant-one constraint**: for every `g ∈ G`, the induced
       action on `Λ²V` is the identity, i.e. `det(g_V) = 1`.
       This is precisely the content of diagram (1.8) in the manuscript:
       `ε ∘ Λ²(g_V) = g_𝟙 ∘ ε = ε`. -/
-  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 qou.exteriorSquare
+  det_one : ∀ (g : gaugeGroupType), ext_sq_action g = 𝟙 exteriorSquare
 
 /-- **q-Hodge star** involution on differential forms over a Frobenius–Hopf
     object.  Defined by `α ∧_q ⋆_q β = q · λ(α* · β) · vol`.

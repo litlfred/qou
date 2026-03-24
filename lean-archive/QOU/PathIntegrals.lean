@@ -167,12 +167,12 @@ def flip {α : Type*} (w : SpectralResolventTuple α) :
 /-- The twist is an involution: `σ₁² = id`. -/
 theorem twist_involution {α : Type*} (w : SpectralResolventTuple α) :
     twist (twist w) = w := by
-  simp [twist, SpectralResolventTuple.mk.injEq]
+  simp [twist]
 
 /-- The flip is an involution: `σ₂² = id`. -/
 theorem flip_involution {α : Type*} (w : SpectralResolventTuple α) :
     flip (flip w) = w := by
-  simp [flip, SpectralResolventTuple.mk.injEq]
+  simp [flip]
 
 /-- The composite `σ₁σ₂` gives `(w₁, w₂, w₃, w₄) ↦ (w₃, w₄, w₁, w₂)`. -/
 def twistFlip {α : Type*} (w : SpectralResolventTuple α) :
@@ -182,7 +182,7 @@ def twistFlip {α : Type*} (w : SpectralResolventTuple α) :
 /-- The twist–flip composite has order 2: `(σ₁σ₂)² = id`. -/
 theorem twistFlip_order_two {α : Type*} (w : SpectralResolventTuple α) :
     twistFlip (twistFlip w) = w := by
-  simp [twistFlip, twist, flip, SpectralResolventTuple.mk.injEq]
+  simp [twistFlip, twist, flip]
 
 /-- **Holonomy generators**: parallel transport of spectral modes around
     branch points gives braid operators `H₁ = σ₁`, `H₂ = σ₂`.
@@ -330,7 +330,7 @@ structure YoungDiagram where
   /-- The partition as a list of row lengths in non-increasing order. -/
   rows : List ℕ
   /-- Non-increasing. -/
-  nonincreasing : rows.Chain' (· ≥ ·) -- List.Chain' deprecated but still functional
+  nonincreasing : rows.IsChain (· ≥ ·)
   /-- Non-empty partition. -/
   nonempty : rows ≠ []
 
@@ -383,8 +383,8 @@ structure SchurWeylDecomposition where
   summand_embed : ∀ μ ∈ partitions, V_irrep μ → S_irrep μ → tensor_power
   /-- **Completeness**: every element of `V^{⊗n}` lies in the image of some
       summand embedding — the direct sum spans the tensor power. -/
-  complete : ∀ (v : tensor_power), ∃ μ ∈ partitions,
-    ∃ (w : V_irrep μ) (s : S_irrep μ), summand_embed μ ‹_› w s = v
+  complete : ∀ (v : tensor_power), ∃ μ, ∃ (hμ : μ ∈ partitions),
+    ∃ (w : V_irrep μ) (s : S_irrep μ), summand_embed μ hμ w s = v
 
 /-- **Alexander's theorem**: every oriented link in `S³` is the closure
     `β̂` of some braid `β ∈ B_n` for some `n`.
@@ -462,7 +462,7 @@ structure KnotEigenbasisComplete where
       a braid `β` whose closure detects `μ` — the Markov trace of the
       Hecke-algebra image of `β`, restricted to the `S_μ` summand,
       is non-zero.  Encoded via the representation map `ρ`. -/
-  braid_rep : alexander.Braid → decomposition.hecke.carrier
+  braid_rep : alexander.Braid → markov.hecke.carrier
   /-- For each partition `μ`, there exists a braid whose trace on the
       corresponding Hecke-summand is non-zero. -/
   summands_detected : ∀ μ ∈ decomposition.partitions,
