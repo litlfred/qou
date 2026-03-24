@@ -1,5 +1,5 @@
 import Mathlib.Topology.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.Functor.Basic

@@ -1,6 +1,6 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Data.Real.Basic
 
 /-!

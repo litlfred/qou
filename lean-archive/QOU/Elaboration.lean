@@ -2,7 +2,7 @@ import QOU.Basic
 import QOU.QuantumObservableUniverse
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 /-!
 # Chapter 2 — Categorical & Analytic Foundations (Elaboration)

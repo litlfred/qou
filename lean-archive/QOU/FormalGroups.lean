@@ -3,7 +3,7 @@ import QOU.QuantumObservableUniverse
 import QOU.GrobnerShirshov
 import Fred2005.FormalGroups
 import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 /-!
 # Formal Groups — QOU Interface

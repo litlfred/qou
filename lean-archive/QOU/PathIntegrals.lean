@@ -11,7 +11,7 @@ import Mathlib.Algebra.Ring.Basic
 import Mathlib.LinearAlgebra.DirectSum.Finsupp
 import Mathlib.LinearAlgebra.TensorProduct.Basic
 import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Data.List.Basic
 import Mathlib.Order.Filter.Basic

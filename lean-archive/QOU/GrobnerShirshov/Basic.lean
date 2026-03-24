@@ -1,3 +1,8 @@
+import Mathlib.Order.WellFounded
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Data.List.Basic
+
 /-!
 # Gröbner–Shirshov Bases — Foundational Definitions
 
@@ -26,10 +31,6 @@ choice of algebra (`U_q`, `Dist(G)`, etc.).  Specialisations are in
 - Bergman, *The diamond lemma for ring theory*, Adv. Math. 29 (1978), 178–218.
 -/
 
-import Mathlib.Order.WellFounded
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Data.List.Basic
 
 namespace QOU.GrobnerShirshov
 

@@ -3,7 +3,7 @@ import QOU.QuantumObservableUniverse
 import QOU.FormalGroups
 import QOU.Glossary
 import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
 
 /-!
 # Chapter 7 — p-Adic Quantum Observable Universe
