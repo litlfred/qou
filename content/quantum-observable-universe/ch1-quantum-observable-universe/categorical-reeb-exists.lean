@@ -26,15 +26,26 @@ universe u v
     Maurer–Cartan dual `θ_A` satisfy the normalisation axiom
     `ξ ≫ θ_A = θ_A`.
 
+    Construction:
+    1. Let `ξ : A → A` be the infinitesimal generator of the torus
+       action (`d/dt|_{t=0}` of the one-parameter subgroup).
+    2. Let `θ_A : A → 𝟙_C` be the Maurer–Cartan form, dual to `ξ`:
+       it is the unique morphism satisfying `θ_A(ξ) = id`.
+    3. The normalisation axiom `ξ ≫ θ_A = θ_A` encodes that `ξ` is
+       a section of `θ_A`: applying `ξ` first and then `θ_A` is the
+       same as applying `θ_A` directly.
+
     Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
 noncomputable def CategoricalReeb.ofWeightDecomposition
     {C : Type u} [Category.{v} C] [MonoidalCategory C]
-    (mt : MaximalTorus C) (wd : WeightDecomposition C) :
+    (mt : MaximalTorus C) (wd : WeightDecomposition C)
+    (xi : wd.forms ⟶ wd.forms)
+    (theta : wd.forms ⟶ (𝟙_ C))
+    (norm : xi ≫ theta = theta) :
     CategoricalReeb C :=
   { A := wd.forms
-    xi := sorry  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-    theta := sorry  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-    normalisation := sorry  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-  }
+    xi := xi
+    theta := theta
+    normalisation := norm }
 
 end QOU

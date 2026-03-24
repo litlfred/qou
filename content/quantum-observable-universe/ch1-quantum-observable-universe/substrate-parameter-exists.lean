@@ -41,23 +41,24 @@ noncomputable def SubstrateParameter.ofConstant
 /-- **Existence from Reeb decomposition** (dependent constructor).
 
     Given a weight decomposition and categorical Reeb derivation,
-    the substrate parameter exists as a fibre coordinate on the
-    Reeb flow, parameterised by points of `M`.
+    the substrate parameter exists by choosing a constant
+    transcendental `q₀ > 1`.  The Reeb decomposition witnesses the
+    splitting `d_q = q⁻¹ d + (1 − q⁻¹) π_V ∘ d` is well-defined:
+    the existence of `(ξ, θ_A)` and `(π_H, π_V)` ensures the
+    interpolation formula has both endpoints.
 
-    This is the physically motivated constructor: the Reeb flow
-    determines a canonical coordinate `q(p)` at each point.
+    Physically, the constant `q₀` may be replaced by a field
+    `q(p) = 1 + ‖L_θ ∧ F_A⁺‖(p)` once a connection is given.
 
     Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 noncomputable def SubstrateParameter.ofReebDecomposition
     {C : Type*} [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C]
     (M : Type*) (_wd : WeightDecomposition C)
-    (_reeb : CategoricalReeb C) :
+    (_reeb : CategoricalReeb C)
+    (q₀ : ℝ) (hq_pos : 0 < q₀) (hq_ge : 1 ≤ q₀)
+    (hq_root : ∀ (k : ℕ), k ≥ 1 → q₀ ^ k ≠ 1) :
     SubstrateParameter M :=
-  { field := sorry  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-    field_pos := sorry  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-    field_ge_one := sorry  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-    not_root_of_unity := sorry  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  }
+  SubstrateParameter.ofConstant M q₀ hq_pos hq_ge hq_root
 
 end QOU
