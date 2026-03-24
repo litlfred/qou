@@ -75,15 +75,18 @@ export function registerValidateTools(server: McpServer): void {
         }
 
         // Run validation pipeline via bun
-        const chapterDirs = chapter ? [chapter] : findChapterDirs(paperDir);
         const results: string[] = [];
         let totalErrors = 0;
         let totalWarnings = 0;
 
-        for (const dir of chapterDirs) {
-          const chapterPath = join(paperDir, dir);
-          if (!existsSync(chapterPath)) continue;
-
+        if (chapter) {
+          // Validate a single chapter dir
+          const chapterPath = join(paperDir, chapter);
+          if (!existsSync(chapterPath)) {
+            return {
+              content: [{ type: "text" as const, text: `Chapter not found: ${chapterPath}` }],
+            };
+          }
           const result = spawnSync("bun", [
             "run", join(CONTENT_DIR, "pipeline/validate.ts"),
             chapterPath,
@@ -92,12 +95,24 @@ export function registerValidateTools(server: McpServer): void {
             stdio: "pipe",
             timeout: 60_000,
           });
-
           const output = result.stdout?.toString() || "";
           const stderr = result.stderr?.toString() || "";
-          results.push(`## ${dir}\n${output}${stderr ? `\nStderr: ${stderr}` : ""}`);
-
-          // Count issues from output
+          results.push(`## ${chapter}\n${output}${stderr ? `\nStderr: ${stderr}` : ""}`);
+          totalErrors += (output.match(/✗/g) || []).length;
+          totalWarnings += (output.match(/⚠/g) || []).length;
+        } else {
+          // Validate whole paper (paper manifest + all chapters)
+          const result = spawnSync("bun", [
+            "run", join(CONTENT_DIR, "pipeline/validate.ts"),
+            paperDir,
+          ], {
+            cwd: CONTENT_DIR,
+            stdio: "pipe",
+            timeout: 120_000,
+          });
+          const output = result.stdout?.toString() || "";
+          const stderr = result.stderr?.toString() || "";
+          results.push(output + (stderr ? `\nStderr: ${stderr}` : ""));
           totalErrors += (output.match(/✗/g) || []).length;
           totalWarnings += (output.match(/⚠/g) || []).length;
         }
@@ -214,13 +229,11 @@ export function registerValidateTools(server: McpServer): void {
                 const tsContent = readFileSync(join(chPath, `${name}.ts`), "utf-8");
                 const kindMatch = tsContent.match(/kind:\s*["'](\w+)["']/);
                 const labelMatch = tsContent.match(/label:\s*["']([^"']+)["']/);
-                const statusMatch = tsContent.match(/status:\s*["']([^"']+)["']/);
 
                 const kind = kindMatch?.[1] || "unknown";
                 const label = labelMatch?.[1] || name;
-                const status = statusMatch?.[1] || "-";
 
-                lines.push(`  ${kind.padEnd(12)} ${label.padEnd(35)} status=${status.padEnd(12)} [${companions}]`);
+                lines.push(`  ${kind.padEnd(12)} ${label.padEnd(35)} [${companions}]`);
               } catch {
                 lines.push(`  ${"?".padEnd(12)} ${name.padEnd(35)} ${"".padEnd(19)} [${companions}]`);
               }
