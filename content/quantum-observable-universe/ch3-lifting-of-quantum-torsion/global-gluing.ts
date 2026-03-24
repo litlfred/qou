@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:global-gluing",
+  lean: {
+    decl: "QOU.Torsion.global_gluing",
+    validation: "not_checked",
+  },
   title: "Global gluing via Yekutieli's twisted quantization",
   tags: ["yekutieli", "twisted-quantization", "global-gluing"],
   uses: [

@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:q-jacobiator",
+  lean: {
+    decl: "QOU.q_jacobiator",
+    validation: "not_checked",
+  },
   title: "Jacobiator of the q-Lie bracket",
   tags: ["q-deformation", "lie-bracket", "leibniz-algebra"],
   uses: ["def:categorical-q-lie-bracket"],

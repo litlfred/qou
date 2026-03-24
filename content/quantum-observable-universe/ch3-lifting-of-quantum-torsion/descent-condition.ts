@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:descent-condition",
+  lean: {
+    decl: "QOU.Torsion.descent_condition",
+    validation: "not_checked",
+  },
   title: "Descent condition --- twisted $2$-cocycle",
   tags: ["descent", "cocycle", "twisted", "yekutieli"],
   uses: [
