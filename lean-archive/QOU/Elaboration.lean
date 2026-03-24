@@ -56,20 +56,19 @@ structure TQFTDatum where
   /-- Commutativity of the Frobenius algebra. -/
   comm : ∀ (a b : carrier), mul a b = mul b a
 
-/-- The observability condition `Hom(𝟙, Ad(A)) = 0` is the categorical
-    analogue of the contact condition (maximal non-integrability).  A
-    non-zero morphism would force the TQFT to decompose as a direct sum.
+/- The observability condition `Hom(𝟙, Ad(A)) = 0` is the categorical
+   analogue of the contact condition (maximal non-integrability).  A
+   non-zero morphism would force the TQFT to decompose as a direct sum.
+   LaTeX: `\label{rem:tqft-context}`, observability paragraph.
+   Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 -/
 
-    LaTeX: `\label{rem:tqft-context}`, observability paragraph. -/
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+/-! ## §2  Vanishing Conditions
 
-/-! ## §2  Vanishing Conditions -/
-
-/-- **Adjoint bundle sections**: `Ad(P) = P ×_G su(2)` is a linear bundle
-    whose global sections `H⁰(M, Ad(P))` must vanish for observability.
-
-    LaTeX: `\label{rem:vanishing-explication}` -/
--- Ref: [freed2010] Freed, Hopkins, Lurie, Teleman — Topological quantum field theories
+**Adjoint bundle sections**: `Ad(P) = P ×_G su(2)` is a linear bundle
+whose global sections `H⁰(M, Ad(P))` must vanish for observability.
+LaTeX: `\label{rem:vanishing-explication}`
+Ref: [freed2010] Freed, Hopkins, Lurie, Teleman — Topological quantum field theories
+-/
 
 /-! ## §3  Generalisation Beyond Strict Pseudoconvexity -/
 
@@ -153,19 +152,17 @@ structure BringsSurfaceCircleBundle where
 
 /-! ## §5  Quantum Gauge Group: Categorical Perspective -/
 
-/-- The quantum gauge group `G_q = Aut⊗(ω)` is the Tannaka–Krein dual
-    of the fibre functor.  At the categorical level, this is the group
-    of monoidal natural automorphisms of `ω`.
+/- The quantum gauge group `G_q = Aut⊗(ω)` is the Tannaka–Krein dual
+   of the fibre functor.  At the categorical level, this is the group
+   of monoidal natural automorphisms of `ω`.
+   LaTeX: `\label{rem:quantum-gauge-group-category}`
+   Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 
-    LaTeX: `\label{rem:quantum-gauge-group-category}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-
-/-- **Hopf algebra non-cocommutativity**: the coproduct `Δ` of the
-    Frobenius–Hopf object `A` is non-cocommutative when `q ≠ 1`.
-    This is the source of the quantum deformation.
-
-    LaTeX: `\label{rem:hopf-structure-diagrams}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+/- **Hopf algebra non-cocommutativity**: the coproduct `Δ` of the
+   Frobenius–Hopf object `A` is non-cocommutative when `q ≠ 1`.
+   This is the source of the quantum deformation.
+   LaTeX: `\label{rem:hopf-structure-diagrams}`
+   Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 
 /-! ## §6  q-Deformed Operator Properties -/
 
@@ -206,7 +203,7 @@ theorem dq_squared_nonzero {M : Type*} (sp : SubstrateParameter M)
   unfold dq_squared_explicit
   apply mul_ne_zero
   apply mul_ne_zero
-  · exact inv_ne_zero.mpr hq_ne_zero
+  · exact inv_ne_zero.2 hq_ne_zero
   · exact sub_ne_zero.mpr (Ne.symm (by intro heq; exact hq_ne (inv_eq_one.mp heq)))
   · exact h_lxi_ne
 
@@ -218,14 +215,14 @@ theorem dq_squared_nonvanishing :
         (fun _ => 0) (fun _ => 0) p = 0 := by
   intro h
   simp [qExtDeriv] at h
-  specialize h Unit ⟨fun _ => 2, fun _ => by norm_num, fun _ => by norm_num,
+  specialize h PUnit ⟨fun _ => 2, fun _ => by norm_num, fun _ => by norm_num,
     fun _ k hk => by
       have : (2 : ℝ) ^ k ≥ 2 := by
         calc (2 : ℝ) ^ k ≥ 2 ^ 1 := by
-              apply pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
+              exact pow_le_pow_right (by norm_num : (1 : ℝ) ≤ 2) hk
             _ = 2 := by ring
       linarith⟩
-    (fun _ => 1) ()
+    (fun _ => 1) PUnit.unit
   linarith
 
 /-! ### Jacobiator of the q-deformed Lie bracket -/
@@ -275,7 +272,7 @@ theorem jacobi_identity_violation {M : Type*} (sp : SubstrateParameter M)
   intro h
   apply h_cyc_ne_zero
   -- The prefactor −q⁻¹(1−q⁻¹) is non-zero when q ≠ 0 and q ≠ 1
-  have hqi : (sp.field p)⁻¹ ≠ 0 := inv_ne_zero.mpr hq_ne_zero
+  have hqi : (sp.field p)⁻¹ ≠ 0 := inv_ne_zero.2 hq_ne_zero
   have hqi_ne_one : (sp.field p)⁻¹ ≠ 1 := by
     intro heq; exact hq_ne (inv_eq_one.mp heq)
   have h1 : 1 - (sp.field p)⁻¹ ≠ 0 := sub_ne_zero.mpr (Ne.symm hqi_ne_one)
@@ -286,18 +283,16 @@ theorem jacobi_identity_violation {M : Type*} (sp : SubstrateParameter M)
     mul_ne_zero h_neg_qi h1
   exact (mul_eq_zero.mp h).resolve_left h_prefactor
 
-/-- At `q = 1`, all q-deformed operators recover their classical
-    counterparts.  This is a restatement of the classical-limit
-    theorems from Chapter 1.
+/- At `q = 1`, all q-deformed operators recover their classical
+   counterparts.  This is a restatement of the classical-limit
+   theorems from Chapter 1.
+   LaTeX: `\label{rem:classical-recovery}`
+   Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
 
-    LaTeX: `\label{rem:classical-recovery}` -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-
-/-- **Schrödinger equation**: `[X̂, P̂]_q = iℏ_q`, the q-deformed
-    Heisenberg commutation relation.
-
-    LaTeX: `\label{rem:schrodinger-jet-coaction}` -/
--- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+/- **Schrödinger equation**: `[X̂, P̂]_q = iℏ_q`, the q-deformed
+   Heisenberg commutation relation.
+   LaTeX: `\label{rem:schrodinger-jet-coaction}`
+   Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 
 /-! ### Leibniz algebra structure
 

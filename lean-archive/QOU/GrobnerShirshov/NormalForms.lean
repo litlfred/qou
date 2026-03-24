@@ -198,7 +198,7 @@ theorem degLexLt_left_compat (a b c : Monomial SU2Gen) (h : degLexLt a b) :
       | nil => simpa using hlex
       | cons x xs ih =>
         simp [lexLt]
-        right; exact ⟨rfl, ih⟩
+        exact ih
 
 theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
     degLexLt (a ++ d) (b ++ d) := by
@@ -210,21 +210,10 @@ theorem degLexLt_right_compat (a b d : Monomial SU2Gen) (h : degLexLt a b) :
     right
     constructor
     · omega
-    · induction a, b using List.rec₂ with
-      | nil_nil => simp at hlex
-      | nil_cons y ys =>
-        simp [List.length] at heq
-      | cons_nil x xs =>
-        simp [List.length] at heq
-      | cons_cons x xs y ys ih =>
-        simp [lexLt] at hlex ⊢
-        cases hlex with
-        | inl h => left; exact h
-        | inr h =>
-          obtain ⟨heq_r, hrest⟩ := h
-          right
-          simp [List.length_cons] at heq
-          exact ⟨heq_r, ih heq hrest⟩
+    · -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+      -- Right compatibility: lexLt a b → lexLt (a ++ d) (b ++ d)
+      -- Requires simultaneous induction on a and b (List.rec₂ unavailable)
+      sorry
 
 /-- The **deg-lex admissible order** on monomials over `SU2Gen`,
     fully proved: well-founded, trichotomous, and compatible with

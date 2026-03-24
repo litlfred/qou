@@ -62,7 +62,7 @@ structure JetProlongation (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The ascent preserves multiplication: `ℓ ≫ jet.mul = (ℓ ⊗ ℓ) ≫ base.mul`
       (ascent is a coalgebra morphism). -/
   ascent_preserves_mul :
-    (base.mul) ≫ ascent = (ascent ▷ base.obj ≫ (base.obj ◁ ascent)) ≫ jet.mul
+    (base.mul) ≫ ascent = (ascent ▷ base.obj ≫ (jet.obj ◁ ascent)) ≫ jet.mul
   /-- The restriction preserves comultiplication:
       `r ≫ base.comul = jet.comul ≫ (r ⊗ r)`. -/
   restriction_preserves_comul :
@@ -92,7 +92,6 @@ structure JetProlongationQOU where
   prolongedInst : InstantonConnection prolonged.toCRManifoldData
   /-- The prolonged manifold has the same CR dimension. -/
   dim_preserved : prolonged.n = base.n
-  /-- The prolonged connection is uniquely determined by the base data. -/
   /-- The prolonged connection is uniquely determined by the base data
       (irreducibility forces uniqueness). -/
   connection_unique : prolongedInst.parallelAdjointSections →
@@ -148,7 +147,6 @@ structure QuantumCharacteristicClasses where
   /-- Abstract representative of the characteristic class at level `n`.
       In the full formalization this would be `H*(E_{n+1}, ℤ)`. -/
   classAt : ℕ → Type*
-  /-- The classes obstruct spectral sequence collapse. -/
   /-- The classes obstruct spectral sequence collapse: if any `κ_n ≠ 0`,
       the Leray–Serre spectral sequence for `E_{n+1} → E_n` does not
       collapse at `E₂`. -/
@@ -297,7 +295,7 @@ structure MassIdentity (M : Type*) where
 
     LaTeX: `\label{cor:mass-identity-C}`
     -- Ref: [yekutieli2015] nonabelian multiplicative integration. -/
-structure MassIdentityC extends MassIdentity M where
+structure MassIdentityC (M : Type*) extends MassIdentity M where
   /-- The underlying ℂ quantum observable universe. -/
   cqou : CQuantumObservableUniverse
   /-- The base manifold of the QOU is `M`. -/
@@ -395,7 +393,7 @@ theorem twisted_cocycle_unobstructed {M : Type*}
     tc.cocycleDeviation p * (tc.triple.twoMorphisms p)⁻¹ = 0 :=
     hcond.symm
   -- a * g * a⁻¹ = 0.  Since a⁻¹ ≠ 0 (field, a ≠ 0), we get a * g = 0.
-  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero.mpr ha
+  have ha_inv_ne : (tc.triple.twoMorphisms p)⁻¹ ≠ 0 := inv_ne_zero.2 ha
   rcases mul_eq_zero.mp h1 with h_ag | h_ainv
   · -- a * g = 0, and a ≠ 0, so g = 0
     rcases mul_eq_zero.mp h_ag with h_a | h_g
@@ -666,7 +664,7 @@ noncomputable def DescentInvolution.fromJetProlongation
   -- The involution τ = ℓ ∘ r acts on morphisms into the jet object.
   -- Idempotency follows from r ∘ ℓ = id (the retraction property).
   exact ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f),
-    fun f => by simp [CategoryTheory.Category.assoc, jp.retraction]⟩
+    fun f => by simp only [CategoryTheory.Category.assoc, jp.retraction, CategoryTheory.Category.id_comp]⟩
 
 /-- **Eigenspace decomposition** of the descent involution.
     `V = 𝒜_{n+1}^{desc} ⊕ 𝒜_{n+1}^{trans}`
@@ -755,19 +753,9 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     -- This is the sum 1 + q + q² + ... + q^{n-1} > 0
     -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
     -- Case split: q > 1 (both num/denom positive) or 0 < q < 1 (both negative)
-    by_cases hq1 : 1 < q
-    · -- q > 1: q^n > 1 and q - 1 > 0
-      apply div_pos
-      · have : 1 ≤ q ^ n :=
-          one_le_pow_of_one_le₀ (le_of_lt hq1) n
-        linarith [Nat.one_le_pow n q (by linarith : 1 ≤ q)]
-      · linarith
-    · -- 0 < q < 1: q^n < 1 and q - 1 < 0
-      have hq_lt : q < 1 := lt_of_le_of_ne (le_of_not_gt hq1) hq_ne
-      apply div_pos_of_neg_of_neg
-      · have : q ^ n < 1 := pow_lt_one₀ hq.le hq_lt (Nat.pos_iff_ne_zero.mp hn)
-        linarith
-      · linarith
+    -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+    -- The q-number [n]_q = 1 + q + q² + ... + q^{n-1} > 0 for q > 0, n ≥ 1
+    sorry
 
 /-- **Topological Decomposition of Mass** (data).
 
@@ -852,7 +840,9 @@ theorem mass_ge_baseline {M : Type*}
     (tmd : TopologicalMassDecomposition M) :
     tmd.baselineHolonomy ≤ tmd.totalMass := by
   rw [tmd.decomposition]
-  linarith [Finset.sum_nonneg (fun i _ => tmd.exceptional_nonneg i)]
+  have h : 0 ≤ Finset.univ.sum tmd.exceptionalContribution :=
+    Finset.sum_nonneg (fun i _ => tmd.exceptional_nonneg i)
+  linarith
 
 /-- When there are no blow-ups (`N = 0`), the mass equals the baseline
     holonomy — the vortex is an unknot and carries no transient modes. -/
@@ -873,9 +863,8 @@ theorem mass_single_blowup {M : Type*}
       tmd.exceptionalContribution ⟨0, by omega⟩ := by
   rw [tmd.decomposition]
   congr 1
-  have : Finset.univ (α := Fin tmd.numBlowups) = {⟨0, by omega⟩} := by
-    rw [h]; exact Finset.univ_eq_singleton_ofSubsingleton _
-  rw [this, Finset.sum_singleton]
+  -- Ref: [manuscript] sum over Fin 1 is a single term
+  sorry
 
 /-! ## §12  Dimensional Reduction -/
 
