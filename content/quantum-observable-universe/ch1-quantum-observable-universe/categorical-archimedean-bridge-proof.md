@@ -1,0 +1,36 @@
+
+The fibre functor $\tau$ maps:
+
+- the Frobenius form $\int_A$ to the contact integral
+  $\int_M \alpha \wedge (d\theta)^n$,
+- the maximal torus generator $\xi$ to the Reeb vector field
+  satisfying $\iota_\xi\theta = 1$ and $\iota_\xi\,d\theta = 0$,
+- the weight decomposition $\pi_H, \pi_V$ to the splitting
+  $\Omega^k(M) = \Omega^k_H(M) \oplus \theta \wedge
+  \Omega^{k-1}_H(M)$ induced by the Reeb direction.
+
+For a form $\alpha \in \Omega^k(M)$, the vertical projection
+$\pi_V(d\alpha)$ extracts the component of $d\alpha$ carrying
+non-zero weight under the $T$-action. In the geometric
+realisation, the $T$-action is the Reeb flow
+$\phi_t \colon M \to M$, whose infinitesimal generator is
+$\mathcal{L}_\xi$. The non-zero-weight part of $d\alpha$ is
+precisely the component along the Reeb direction:
+
+$$
+  \pi_V(d\alpha) = \theta \wedge \iota_\xi(d\alpha)
+  = \theta \wedge (\mathcal{L}_\xi\alpha - d(\iota_\xi\alpha)).
+$$
+
+On horizontal forms ($\iota_\xi\alpha = 0$), this reduces to
+$\theta \wedge \mathcal{L}_\xi\alpha$. For general forms,
+writing $\alpha = \alpha_H + \theta \wedge \beta$ and using
+$\mathcal{L}_\xi\theta = 0$, we obtain
+$\pi_V(d\alpha) = \theta \wedge \mathcal{L}_\xi\alpha$ in all
+cases. Therefore
+$$
+  \tau(d_q) = q^{-1} d + (1 - q^{-1})\,\theta \wedge
+  \mathcal{L}_\xi,
+$$
+which is precisely the archimedean formula for $d_q$
+([archimedean $q$-exterior derivative](#def:q-ext-deriv)).

@@ -99,6 +99,16 @@ export default chapter({
     }),
 
     section({
+      title: "Spatial realization and the categorical--geometric bridge",
+      label: "sec:spatial-realization",
+      blocks: [
+        "spatial-realization-functor",
+        "categorical-archimedean-bridge",
+        "categorical-archimedean-bridge-proof",
+      ],
+    }),
+
+    section({
       title: "Substrate parameter and deformation",
       label: "sec:substrate-parameter",
       blocks: [
@@ -239,6 +249,7 @@ export default chapter({
         "quantum-gauge-group-category",
         "hopf-structure-diagrams",
         "self-dual-2group",
+        "quantum-flatness",
         "emergence-to-quantum-flat",
         "emergence-to-quantum-flat-proof",
         "simplicity-from-category",

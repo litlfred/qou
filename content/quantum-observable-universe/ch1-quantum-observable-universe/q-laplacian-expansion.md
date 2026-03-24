@@ -26,6 +26,23 @@ $q$-Laplacian separates into three distinct types of terms:
    measure the interference between moving through macroscopic
    space and spinning in the internal dimension.
 
+In summary:
+
+$$
+  \Delta_q = q^{-2}\,\Delta
+  \;+\; q^{-1}(1 - q^{-1})\,\bigl[
+    d(\mathcal{L}_\xi^* \iota_\xi)
+    + (\theta \wedge \mathcal{L}_\xi)\delta
+    + \delta(\theta \wedge \mathcal{L}_\xi)
+    + (\mathcal{L}_\xi^* \iota_\xi)d
+  \bigr]
+  \;+\; (1 - q^{-1})^2\,\Delta_{\xi},
+$$
+
+where $\Delta_\xi = (\theta \wedge \mathcal{L}_\xi)
+(\mathcal{L}_\xi^* \iota_\xi) + (\mathcal{L}_\xi^* \iota_\xi)
+(\theta \wedge \mathcal{L}_\xi)$ is the pure spin Laplacian.
+
 At $q = 1$ the spin-core and cross-coupling terms vanish, recovering
 $\Delta_1 = \Delta$. As $q \to \infty$, the classical core is
 suppressed and the spin core dominates.

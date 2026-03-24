@@ -13,6 +13,10 @@ $\mathrm{vol} \in \Omega^n(A)$ is the volume form
 (the unique $G$-invariant top form normalised by
 $\int_A(\mathrm{vol}) = 1$).
 That $\star^2 = \mathrm{id}$ (i.e. $\star$ is an involution)
-follows from the non-degeneracy of the Frobenius form $\int_A$ and the
-involutivity of the antipode ($S^2 = \mathrm{id}$ on the centre
-of $A$).
+follows from the non-degeneracy of $\int_A$ and the involutivity of
+the antipode. More precisely: $S^2 = \mathrm{id}$ holds on $A$
+because a commutative Hopf algebra has involutive antipode (and our
+Frobenius--Hopf axioms imply commutativity of $A$ via the faithfulness
+of $\tau$ into $R\text{-}\mathrm{Mod}$). The extension to
+$\Omega^k(A)$ follows from the graded Leibniz rule for $S$ on the
+differential graded algebra.

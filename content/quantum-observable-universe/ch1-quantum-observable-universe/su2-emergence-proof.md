@@ -60,5 +60,17 @@ of $\tau$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
 is a positive-definite dagger structure
 ([positive definite dagger](#def:positive-definite-dagger)). Every tensor
 automorphism $g \in G$ preserves the dagger (it commutes with $S$ and
-$\int_A$), forcing $g_V^{-1} = g_V^{\dagger}$ and locking the group
-into its unitary real form $\mathrm{SU}(2)$.
+$\int_A$), forcing $g_V^{-1} = g_V^{\dagger}$ and restricting $G$ to
+the unitary subgroup $\mathrm{U}(2)$.
+
+Combining both constraints:
+
+$$
+  G \;=\; \mathrm{SL}(2) \;\cap\; \mathrm{U}(2)
+  \;=\; \mathrm{SU}(2).
+$$
+
+The volume constraint provides the special-linear condition
+($\det = 1$), while the positive-definite dagger structure provides
+the compactness (unitarity), locking the gauge group exclusively to
+$\mathrm{SU}(2)$.
