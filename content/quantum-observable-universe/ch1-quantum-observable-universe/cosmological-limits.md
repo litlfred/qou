@@ -1,7 +1,8 @@
+**Conjectural interpretation.**
 Consider $M = S^3$ with the standard contact form $\theta$ and the
 standard instanton on the Hopf bundle.  As the instanton curvature
 concentrates near a point $p_0 \in S^3$, the substrate field $q$
-exhibits two simultaneous regimes:
+is expected to exhibit two simultaneous regimes:
 
 - *Near $p_0$* ($q(p) \to \infty$, $\hbar_q \to 1$):
   maximal uncertainty $[\hat{X},\hat{P}]_q \to J$.
@@ -33,5 +34,8 @@ At both limits the QOU structure *degenerates*:
   $\mathrm{SU}_q(2) \to \mathrm{SU}(2)$ becomes a classical
   group, and the substrate parameter carries no information.
 
-The physically meaningful regime is $1 < q < \infty$, where
-both quantum and classical features coexist.
+The physically meaningful regime is conjectured to be
+$1 < q < \infty$, where both quantum and classical features coexist.
+A rigorous analysis of these limiting regimes requires
+control over the singular behaviour of the Frobenius form as
+$q \to \infty$, which remains an open problem.

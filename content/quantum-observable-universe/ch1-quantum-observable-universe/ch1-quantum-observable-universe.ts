@@ -262,6 +262,7 @@ export default chapter({
         "classical-recovery",
         "q-torsion-leaf-minimum",
         "q-harmonic-physical",
+        "linearisation-convention",
         "schrodinger-jet-coaction",
       ],
     }),

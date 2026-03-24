@@ -1,2 +1,6 @@
 The instanton connection ([instanton](#ex:instanton)) deforms to
 $A_q = q^{-1}\,A + (1 - q^{-1})\,\iota_\xi\,A\;\theta$.
+At $q = 1$ this recovers the full instanton connection $A$; as
+$q \to \infty$, the connection reduces to its Reeb component
+$\iota_\xi A\;\theta$, retaining only the vertical (internal spin)
+part of the gauge potential.

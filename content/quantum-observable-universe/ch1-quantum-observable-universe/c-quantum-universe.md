@@ -1,6 +1,10 @@
 Let $K$ be an archimedean field.  A quantum universe over $K$
 ([quantum universe](#def:quantum-universe)) is realised by a $5$-tuple
-$(M, \theta, G, P, E)$ where:
+$(M, \theta, G, P, E)$: here $M$ is the spacetime (a CR manifold),
+$\theta$ encodes the contact geometry and Reeb structure,
+$G = \mathrm{SU}(2)$ is the gauge group, $P$ is the gauge bundle,
+and $E$ is the state bundle carrying the quantum degrees of freedom.
+The precise requirements are:
 
 1. $M$ is a CR manifold of hypersurface type
    (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form

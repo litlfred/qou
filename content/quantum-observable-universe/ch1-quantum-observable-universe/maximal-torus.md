@@ -1,6 +1,7 @@
 Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with fundamental
-object $V$ ([spin labels](#def:spin-labels)). The *weight
+object $V$ (the unique simple object of categorical dimension $2$;
+see [spin labels](#def:spin-labels) for the full labelling). The *weight
 subcategory* $\langle V \rangle \subset \mathcal{C}$ is the full
 subcategory whose objects are direct sums of weight spaces of $V$
 (i.e. simultaneous eigenspaces of the Cartan subalgebra action).
