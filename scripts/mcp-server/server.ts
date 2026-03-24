@@ -1447,6 +1447,246 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }
   }
 
+  // ── API: PDF alias (same as render-pdf) ─────────────────────────
+  if (path === "/api/pdf") {
+    // Redirect internally to render-pdf handler
+    const pdfUrl = new URL(url.toString());
+    pdfUrl.pathname = "/api/render-pdf";
+    return handleViewerRequest(pdfUrl);
+  }
+
+  // ── API: PDF Lightning — PDF of only the critical path for a label ──
+  if (path === "/api/pdf-lightning") {
+    const label = url.searchParams.get("label");
+    const paperId = url.searchParams.get("id") || "quantum-observable-universe";
+    if (!label) {
+      return Response.json({ error: "Missing ?label= parameter" }, { status: 400, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+    try {
+      const { spawnSync } = await import("child_process");
+      const { mkdirSync, readFileSync: rf, writeFileSync: wf } = await import("fs");
+
+      // Pre-check: is latexmk installed?
+      try { spawnSync("which", ["latexmk"], { stdio: "pipe" }); } catch {
+        return Response.json({
+          error: "latexmk not installed. Install TeX Live: apt install texlive-full",
+        }, { status: 503, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Step 1: Resolve paper and find all blocks
+      const paper = await resolvePaper(paperId);
+      if (!paper) {
+        return Response.json({ error: `Paper not found: ${paperId}` }, { status: 404, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Build block index: label → block
+      const blockIndex = new Map<string, ResolvedBlock>();
+      for (const ch of paper.chapters) {
+        for (const sec of ch.sections) {
+          for (const b of sec.blocks) {
+            if (b.label) blockIndex.set(b.label, b);
+          }
+        }
+      }
+
+      if (!blockIndex.has(label)) {
+        return Response.json({ error: `Block not found: ${label}` }, { status: 404, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Step 2: Trace dependency chain (topological sort)
+      const visited = new Set<string>();
+      const edges: Array<{from: string; to: string}> = [];
+      function walkDeps(l: string) {
+        if (visited.has(l)) return;
+        visited.add(l);
+        const b = blockIndex.get(l);
+        if (!b) return;
+        if (b.uses) {
+          for (const dep of b.uses) {
+            if (blockIndex.has(dep)) {
+              edges.push({ from: l, to: dep });
+              walkDeps(dep);
+            }
+          }
+        }
+      }
+      walkDeps(label);
+
+      // Topological sort: dependencies first
+      const adj = new Map<string, string[]>();
+      const indeg = new Map<string, number>();
+      for (const l of visited) { adj.set(l, []); indeg.set(l, 0); }
+      for (const { from, to } of edges) {
+        adj.get(from)!.push(to);
+        indeg.set(to, (indeg.get(to) || 0) + 1);
+      }
+      const queue: string[] = [];
+      const sorted: string[] = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift()!;
+        sorted.push(l);
+        for (const n of (adj.get(l) || [])) {
+          indeg.set(n, indeg.get(n)! - 1);
+          if (indeg.get(n) === 0) queue.push(n);
+        }
+      }
+      sorted.reverse(); // leaf deps first
+
+      // Filter out examples/remarks for the formal view
+      const skipKinds = new Set(["example", "remark"]);
+      const chainBlocks: ResolvedBlock[] = [];
+      for (const l of sorted) {
+        const b = blockIndex.get(l);
+        if (!b || skipKinds.has(b.kind)) continue;
+        chainBlocks.push(b);
+        // Include proofs
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) {
+            const prf = blockIndex.get(prfLabel);
+            if (prf) chainBlocks.push(prf);
+          }
+        }
+      }
+
+      // Step 3: Build the content pipeline and generate lightning LaTeX
+      const lightningDir = join(BUILD_DIR, "lightning");
+      if (!existsSync(lightningDir)) mkdirSync(lightningDir, { recursive: true });
+
+      // Build content objects → .tex first (for preamble/macros)
+      const buildResult = spawnSync("bun", ["run", join(REPO_ROOT, "content/pipeline/build.ts")], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 60_000,
+      });
+
+      // Step 4: Generate a standalone lightning .tex file
+      const rootBlock = blockIndex.get(label)!;
+      const rootTitle = rootBlock.title || label;
+      const preamblePath = join(REPO_ROOT, "latex/preamble.tex");
+      let preamble = "";
+      if (existsSync(preamblePath)) {
+        preamble = rf(preamblePath, "utf-8") as string;
+      } else {
+        // Fallback: read from main.tex up to \begin{document}
+        const mainTex = rf(MAIN_TEX, "utf-8") as string;
+        const docIdx = mainTex.indexOf("\\begin{document}");
+        preamble = docIdx > 0 ? mainTex.slice(0, docIdx) : "";
+      }
+
+      // Read the rendered LaTeX for blocks from chapters/*.tex
+      // We need to extract block LaTeX from the rendered chapters
+      // Alternative: render blocks directly using the pipeline
+      const { renderBlock } = await import(join(REPO_ROOT, "content/pipeline/render-latex.ts"));
+
+      // Render each block to LaTeX
+      const blockTexParts: string[] = [];
+      for (const b of chainBlocks) {
+        try {
+          // Load the actual typed block for rendering
+          const blkTsRel = `content/${paperId}`;
+          // Find the chapter dir for this block
+          let blockObj: any = null;
+          let mdContent = b.md || "";
+          for (const ch of paper.chapters) {
+            for (const sec of ch.sections) {
+              for (const sb of sec.blocks) {
+                if (sb.label === b.label || sb.rootName === b.rootName) {
+                  blockObj = sb;
+                  break;
+                }
+              }
+              if (blockObj) break;
+            }
+            if (blockObj) break;
+          }
+          if (blockObj) {
+            blockTexParts.push(renderBlock(blockObj as any, mdContent));
+          }
+        } catch (e) {
+          blockTexParts.push(`% Error rendering ${b.label}: ${String(e)}`);
+        }
+      }
+
+      const lightningTex = [
+        preamble.includes("\\documentclass") ? preamble : `\\documentclass[11pt]{article}\n${preamble}`,
+        "",
+        "\\begin{document}",
+        "",
+        `\\title{${rootTitle} --- Critical Path}`,
+        "\\maketitle",
+        "",
+        `\\noindent{\\small ${chainBlocks.length} blocks in dependency chain for \\texttt{${label.replace(/_/g, "\\_")}}.}`,
+        "\\bigskip",
+        "",
+        ...blockTexParts,
+        "",
+        "\\end{document}",
+      ].join("\n");
+
+      const lightningTexPath = join(lightningDir, "lightning.tex");
+      wf(lightningTexPath, lightningTex);
+
+      // Step 5: Compile with latexmk
+      const latexResult = spawnSync("latexmk", [
+        "-pdf",
+        "-g",
+        "-jobname=lightning",
+        `-output-directory=${lightningDir}`,
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        lightningTexPath,
+      ], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 300_000,
+      });
+
+      const pdfPath = join(lightningDir, "lightning.pdf");
+      if (existsSync(pdfPath)) {
+        const pdfData = rf(pdfPath);
+        return new Response(pdfData, {
+          headers: {
+            "Content-Type": "application/pdf",
+            "Content-Disposition": `inline; filename="lightning-${label}.pdf"`,
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      }
+
+      // Failed — return error details
+      const logPath = join(lightningDir, "lightning.log");
+      let texLog = "";
+      try {
+        const fullLog = rf(logPath, "utf-8") as string;
+        const lines = fullLog.split("\n");
+        const errorLines: string[] = [];
+        for (let i = 0; i < lines.length; i++) {
+          if (lines[i].startsWith("!") || lines[i].includes("Fatal error") ||
+              lines[i].includes("Emergency stop") || lines[i].includes("File not found")) {
+            const start = Math.max(0, i - 2);
+            const end = Math.min(lines.length, i + 5);
+            errorLines.push(`--- line ${i + 1} ---`);
+            for (let j = start; j < end; j++) errorLines.push(lines[j]);
+          }
+        }
+        texLog = errorLines.length > 0
+          ? errorLines.join("\n").slice(-3000)
+          : fullLog.slice(-3000);
+      } catch {
+        texLog = latexResult.stderr?.toString().slice(-2000) || "";
+      }
+      return Response.json({
+        error: "Lightning PDF compilation failed",
+        latexLog: texLog || undefined,
+        blockCount: chainBlocks.length,
+        exitCode: latexResult.status,
+      }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
   // Legacy paper.json — viewer now uses /api/paper directly
   if (path === "/viewer/paper.json") {
     return serveFile(join(VIEWER_BUILD_DIR, "paper.json"))
