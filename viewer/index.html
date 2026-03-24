@@ -892,6 +892,7 @@
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
     <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
     <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
+    <button id="c-cc" title="Clear session cache (localStorage) and reload">clear cache</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -1198,6 +1199,17 @@
       document.body.classList.toggle('reading', readingMode);
       btnRd.classList.toggle('on', readingMode);
       localStorage.setItem('qou-reading', readingMode ? '1' : '0');
+    });
+
+    // ── Clear cache button ──────────────────────────────
+    document.getElementById('c-cc').addEventListener('click', () => {
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('qou-')) keys.push(k);
+      }
+      keys.forEach(k => localStorage.removeItem(k));
+      location.reload();
     });
 
     // ── Branch switcher (searchable) ─────────────────────
