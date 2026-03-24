@@ -1086,7 +1086,7 @@ be a (<a href="#def:quantum-observable-universe">quantum observable
 universe</a>) with fundamental object <span
 class="math inline">\(V\)</span> (the unique simple object of
 categorical dimension <span class="math inline">\(2\)</span>; see <a
-href="#def:spin-labels">spin labels</a> for the full labelling). The
+href="#prop:spin-labels">spin labels</a> for the full labelling). The
 <em>weight subcategory</em> <span class="math inline">\(\langle V
 \rangle \subset \mathcal{C}\)</span> is the full subcategory whose
 objects are direct sums of weight spaces of <span
@@ -1175,10 +1175,42 @@ horizontal</em> if and only if <span class="math inline">\(\alpha_V =
 0\)</span>.</em></p>
 </div>
 
+<div id="thm:weight-decomposition-exists" class="theorem">
+
+<p><strong>Theorem 1.14 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.WeightDecomposition.ofMaximalTorus" target="_blank" title="Lean: QOU.WeightDecomposition.ofMaximalTorus">&#x2200; stated</a></strong> (Existence of the weight
+decomposition). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.WeightDecomposition.ofMaximalTorus"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
+be a (<a href="#def:quantum-observable-universe">quantum observable
+universe</a>) with <a href="#def:maximal-torus">maximal torus</a> <span
+class="math inline">\(T\)</span> acting on <a
+href="#def:higher-forms">higher forms</a> <span
+class="math inline">\(\Omega^k(A)\)</span>. Then there exists a <a
+href="#def:weight-decomposition">weight decomposition</a> <span
+class="math inline">\((\pi_H, \pi_V)\)</span> of <span
+class="math inline">\(\Omega^k(A)\)</span> satisfying:</em></p>
+<ol type="1">
+<li><p><em><strong>Complementarity:</strong> <span
+class="math inline">\(\pi_H + \pi_V =
+\mathrm{id}\)</span>.</em></p></li>
+<li><p><em><strong>Idempotency:</strong> <span
+class="math inline">\(\pi_H^2 = \pi_H\)</span> and <span
+class="math inline">\(\pi_V^2 = \pi_V\)</span>.</em></p></li>
+</ol>
+<p><em>The projections are constructed from the torus averaging
+operator: for each weight <span class="math inline">\(\lambda\)</span>
+of the <span class="math inline">\(T\)</span>-action, the <span
+class="math inline">\(\lambda\)</span>-isotypic projector <span
+class="math inline">\(e_\lambda\)</span> is idempotent, and <span
+class="math inline">\(\pi_H = e_0\)</span>, <span
+class="math inline">\(\pi_V = \mathrm{id} - e_0\)</span>.</em></p>
+</div>
+
 <h2 id="consequences-of-the-axioms"><span id="sec:axiom-consequences"></span>Consequences of the axioms</h2>
 <div id="prop:frobenius-relation" class="proposition">
 
-<p><strong>Proposition 1.14 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.frobenius_relation" target="_blank" title="Lean: QOU.frobenius_relation">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a>). <em><a
+<p><strong>Proposition 1.15 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.frobenius_relation" target="_blank" title="Lean: QOU.frobenius_relation">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.frobenius_relation"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -1227,7 +1259,7 @@ multiplication. ◻</p>
 
 <div id="ex:frobenius-su2" class="example">
 
-<p><strong>Example 1.15 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a> for
+<p><strong>Example 1.16 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (<a class="defn-link" href="#prop:frobenius-relation">Frobenius relation</a> for
 $\}mathrm{SU}(2)$).</p>
 <p><em>Continuing <a href="#ex:qou-su2">QOU on SU(2)</a>, set <span
 class="math inline">\(A = \mathcal{O}(\mathrm{SU}(2))\)</span> with
@@ -1244,7 +1276,7 @@ with <span class="math inline">\(g\)</span>.</em></p>
 
 <div id="def:involutive-structure" class="definition">
 
-<p><strong>Definition 1.16 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.InvolutiveStructure" target="_blank" title="Lean: QOU.InvolutiveStructure">&#x2200; stated</a></strong> (Involutive structure
+<p><strong>Definition 1.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.InvolutiveStructure" target="_blank" title="Lean: QOU.InvolutiveStructure">&#x2200; stated</a></strong> (Involutive structure
 ($\}ast$-structure)). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.InvolutiveStructure"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1307,7 +1339,7 @@ SU(2)</a>).</em></p>
 
 <div id="def:positive-definite-dagger" class="definition">
 
-<p><strong>Definition 1.17 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.PositiveDefiniteStructure" target="_blank" title="Lean: QOU.PositiveDefiniteStructure">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:positive-definite-dagger">Positive-definite structure</a>).
+<p><strong>Definition 1.18 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.PositiveDefiniteStructure" target="_blank" title="Lean: QOU.PositiveDefiniteStructure">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:positive-definite-dagger">Positive-definite structure</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.PositiveDefiniteStructure"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1338,7 +1370,7 @@ categorical condition.</em></p>
 
 <div id="ex:dagger-su2" class="example">
 
-<p><strong>Example 1.18 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Involutive structure on
+<p><strong>Example 1.19 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Involutive structure on
 $\}mathrm{Rep}(\}mathrm{SU}(2))$).</p>
 <p><em>Continuing <a href="#ex:frobenius-su2">Frobenius SU(2)</a>, the
 category <span class="math inline">\(\mathcal{C} =
@@ -1382,7 +1414,7 @@ the categorical encoding of unitarity.</em></p></li>
 
 <div id="lem:volume-from-rigidity" class="lemma">
 
-<p><strong>Lemma 1.19 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.volume_from_rigidity" target="_blank" title="Lean: QOU.volume_from_rigidity">&#x2200; stated</a></strong> (Volume form from rigidity and symplectic
+<p><strong>Lemma 1.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.volume_from_rigidity" target="_blank" title="Lean: QOU.volume_from_rigidity">&#x2200; stated</a></strong> (Volume form from rigidity and symplectic
 self-duality). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.volume_from_rigidity"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1444,7 +1476,7 @@ class="math inline">\(\mathcal{C}\)</span>. ◻</p>
 
 <div id="thm:su2-emergence" class="theorem">
 
-<p><strong>Theorem 1.20 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.RankOneGaugeData" target="_blank" title="Lean: QOU.RankOneGaugeData">&#x2200; stated</a></strong> (<a class="defn-link" href="#thm:su2-emergence">Emergence of the gauge group</a>). <em><a
+<p><strong>Theorem 1.21 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.RankOneGaugeData" target="_blank" title="Lean: QOU.RankOneGaugeData">&#x2200; stated</a></strong> (<a class="defn-link" href="#thm:su2-emergence">Emergence of the gauge group</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.RankOneGaugeData"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -1544,7 +1576,7 @@ class="math inline">\(\mathrm{SU}(2)\)</span>. ◻</p>
 
 <div id="ex:su2-emergence" class="example">
 
-<p><strong>Example 1.21 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Emergence of $\}mathrm{SU}(2)$: the
+<p><strong>Example 1.22 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Emergence of $\}mathrm{SU}(2)$: the
 full chain).</p>
 <p><em>Continuing <a href="#ex:frobenius-su2">Examples</a>–<a
 href="#ex:dagger-su2"></a>, let <span class="math inline">\(\mathcal{C}
@@ -1578,11 +1610,11 @@ the input gauge group from the categorical axioms alone.</em></p></li>
 
 <h2 id="differential-structures-and-gauge-actions">Differential
 structures and gauge actions</h2>
-<div id="def:spin-labels" class="definition">
+<div id="prop:spin-labels" class="proposition">
 
-<p><strong>Definition 1.22 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SpinLabels" target="_blank" title="Lean: QOU.SpinLabels">&#x2200; stated</a></strong> (Spin labels and the fundamental
+<p><strong>Proposition 1.23 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SpinDecomposition" target="_blank" title="Lean: QOU.SpinDecomposition">&#x2200; stated</a></strong> (Spin labels and the fundamental
 object). <em><a
-href="https://litlfred.github.io/qou/lean/QOU.SpinLabels"><sup><span style="color: BurntOrange"><span
+href="https://litlfred.github.io/qou/lean/QOU.SpinDecomposition"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
 be a (<a href="#def:quantum-observable-universe">quantum observable
@@ -1609,7 +1641,7 @@ class="math inline">\(V\)</span>.</em></p>
 
 <div id="ex:spin-labels-su2" class="example">
 
-<p><strong>Example 1.23 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Spin decomposition of
+<p><strong>Example 1.24 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Spin decomposition of
 $\}mathrm{Rep}(\}mathrm{SU}(2))$).</p>
 <p><em>Continuing <a href="#ex:qou-su2">QOU on SU(2)</a>, the simple
 objects of <span class="math inline">\(\mathcal{C} =
@@ -1659,7 +1691,7 @@ each homogeneous component <span class="math inline">\(\mathrm{Sym}^n V
 
 <div id="def:categorical-reeb" class="definition">
 
-<p><strong>Definition 1.24 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalReeb" target="_blank" title="Lean: QOU.CategoricalReeb">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-reeb">Categorical Reeb derivation</a>).
+<p><strong>Definition 1.25 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalReeb" target="_blank" title="Lean: QOU.CategoricalReeb">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-reeb">Categorical Reeb derivation</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalReeb"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1695,9 +1727,40 @@ class="math inline">\(\Omega^k_H(A) = \ker(\iota_\xi)\)</span>
 </ol>
 </div>
 
+<div id="thm:categorical-reeb-exists" class="theorem">
+
+<p><strong>Theorem 1.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalReeb.ofWeightDecomposition" target="_blank" title="Lean: QOU.CategoricalReeb.ofWeightDecomposition">&#x2200; stated</a></strong> (Existence of the categorical Reeb
+derivation). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.CategoricalReeb.ofWeightDecomposition"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
+be a (<a href="#def:quantum-observable-universe">quantum observable
+universe</a>) with <a href="#def:maximal-torus">maximal torus</a> <span
+class="math inline">\(T\)</span> and <a
+href="#def:weight-decomposition">weight decomposition</a> <span
+class="math inline">\((\pi_H, \pi_V)\)</span>. Then there exists a <a
+href="#def:categorical-reeb">categorical Reeb derivation</a> <span
+class="math inline">\((\xi, \theta_A)\)</span> on <span
+class="math inline">\(A\)</span> satisfying:</em></p>
+<ol type="1">
+<li><p><em><strong>Vertical generator:</strong> <span
+class="math inline">\(\pi_V \circ d = \iota_\xi\,
+d\theta_A\)</span>.</em></p></li>
+<li><p><em><strong>Normalisation:</strong> <span
+class="math inline">\(\xi \mathbin{;} \theta_A = \theta_A\)</span>
+(categorically: <span class="math inline">\(\theta_A(\xi) =
+\mathrm{id}_{\mathbf{1}}\)</span>).</em></p></li>
+</ol>
+<p><em>The derivation <span class="math inline">\(\xi\)</span> is the
+infinitesimal generator of the one-parameter subgroup <span
+class="math inline">\(T \cong \mathrm{U}(1) \subset G\)</span>, and
+<span class="math inline">\(\theta_A\)</span> is its Maurer–Cartan dual,
+uniquely determined by the normalisation condition.</em></p>
+</div>
+
 <div id="ex:reeb-su2" class="example">
 
-<p><strong>Example 1.25 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reeb derivation for
+<p><strong>Example 1.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Reeb derivation for
 $\}mathrm{SU}(2)$).</p>
 <p><em>Continuing <a href="#ex:maximal-torus-su2">maximal torus of
 SU(2)</a>, the maximal torus is <span class="math inline">\(T =
@@ -1723,13 +1786,13 @@ class="math inline">\((M, \theta)\)</span>, <span
 class="math inline">\(\xi\)</span> becomes the Reeb vector field with
 <span class="math inline">\(\iota_\xi\,d\theta = 0\)</span> and <span
 class="math inline">\(\theta(\xi) = 1\)</span> (<a
-href="#def:reeb-decomposition">Reeb decomposition</a>).</em></p></li>
+href="#ex:reeb-decomposition">Reeb decomposition</a>).</em></p></li>
 </ul>
 </div>
 
 <div id="def:projective-line-object" class="definition">
 
-<p><strong>Definition 1.26 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ProjectiveLineObject" target="_blank" title="Lean: QOU.ProjectiveLineObject">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:projective-line-object">Projective line object</a>). <em><a
+<p><strong>Definition 1.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ProjectiveLineObject" target="_blank" title="Lean: QOU.ProjectiveLineObject">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:projective-line-object">Projective line object</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ProjectiveLineObject"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -1749,7 +1812,7 @@ class="math inline">\(A\)</span>).</em></p>
 
 <div id="ex:projective-line-su2" class="example">
 
-<p><strong>Example 1.27 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Projective line for
+<p><strong>Example 1.29 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Projective line for
 $\}mathrm{SU}(2)$).</p>
 <p><em>Continuing <a href="#ex:maximal-torus-su2">maximal torus of
 SU(2)</a>, <span class="math inline">\(G = \mathrm{SU}(2)\)</span> and
@@ -1768,7 +1831,7 @@ class="math inline">\(z = v_1 / v_2\)</span>.</em></p>
 
 <div id="def:contact-affine-chart" class="definition">
 
-<p><strong>Definition 1.28 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ContactAffineChart" target="_blank" title="Lean: QOU.ContactAffineChart">&#x2200; stated</a></strong> (Contact affine chart on
+<p><strong>Definition 1.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.ContactAffineChart" target="_blank" title="Lean: QOU.ContactAffineChart">&#x2200; stated</a></strong> (Contact affine chart on
 $\}mathbb{P}(V)$). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.ContactAffineChart"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1778,8 +1841,8 @@ of <span class="math inline">\(1\)</span>-forms, and let <span
 class="math inline">\(\mathbb{P}(V)\)</span> be the projective line
 object (<a href="#def:projective-line-object">projective line
 object</a>). Using the Reeb decomposition (<a
-href="#def:reeb-decomposition">Reeb decomposition</a>), every form
-splits as <span class="math inline">\(\alpha = \alpha_H + \theta \wedge
+href="#ex:reeb-decomposition">Reeb decomposition</a>), every form splits
+as <span class="math inline">\(\alpha = \alpha_H + \theta \wedge
 \iota_\xi \alpha\)</span>.</em></p>
 <p><em>The <em>contact affine chart</em> <span
 class="math inline">\(U_\xi \subset \mathbb{P}(V)\)</span> is the open
@@ -1803,7 +1866,7 @@ coordinates are needed.</em></p>
 
 <div id="prop:substrate-radial-coordinate" class="proposition">
 
-<p><strong>Proposition 1.29 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.substrate_radial_coordinate" target="_blank" title="Lean: QOU.substrate_radial_coordinate">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a> as the radial
+<p><strong>Proposition 1.31 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.substrate_radial_coordinate" target="_blank" title="Lean: QOU.substrate_radial_coordinate">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a> as the radial
 coordinate). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.substrate_radial_coordinate"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1831,7 +1894,7 @@ state to the point at infinity of the <span
 class="math inline">\(\mathbb{CP}^1\)</span> fibre.</em></p></li>
 </ol>
 <p><em>Furthermore, the <span class="math inline">\(q\)</span>-deformed
-Reeb flow (<a href="#def:q-reeb-flow">q-Reeb flow</a>) rotates the phase
+Reeb flow (<a href="#ex:q-reeb-flow">q-Reeb flow</a>) rotates the phase
 of <span class="math inline">\(Z\)</span> at a rate proportional to the
 <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a>:</em></p>
 <p><em><span class="math display">\[\mathcal{L}_\xi\,Z \;=\;
@@ -1848,7 +1911,7 @@ the boundary and the fermionic sector at the origin.</em></p>
 
 <div id="prop:fiber-adjoint-involution" class="proposition">
 
-<p><strong>Proposition 1.30 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.FiberAdjointInvolution" target="_blank" title="Lean: QOU.FiberAdjointInvolution">&#x2200; stated</a></strong> (Fiber–adjoint-fiber involution).
+<p><strong>Proposition 1.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.FiberAdjointInvolution" target="_blank" title="Lean: QOU.FiberAdjointInvolution">&#x2200; stated</a></strong> (Fiber–adjoint-fiber involution).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.FiberAdjointInvolution"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -1954,7 +2017,7 @@ bundle. ◻</p>
 
 <div id="ex:fiber-adjoint-su2" class="example">
 
-<p><strong>Example 1.31 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fiber–adjoint-fiber involution for
+<p><strong>Example 1.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Fiber–adjoint-fiber involution for
 $\}mathrm{SU}(2)$).</p>
 <p><em>Continuing <a href="#ex:projective-line-su2">projective line on
 SU(2)</a>, take <span class="math inline">\(G = \mathrm{SU}(2)\)</span>,
@@ -1990,7 +2053,7 @@ class="math inline">\(\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) =
 
 <div id="def:categorical-connection" class="definition">
 
-<p><strong>Definition 1.32 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalConnection" target="_blank" title="Lean: QOU.CategoricalConnection">&#x2200; stated</a></strong> (Categorical connection and
+<p><strong>Definition 1.34 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalConnection" target="_blank" title="Lean: QOU.CategoricalConnection">&#x2200; stated</a></strong> (Categorical connection and
 curvature). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalConnection"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2029,7 +2092,7 @@ consequence of the Leibniz rule).</em></p>
 
 <div id="ex:connection-su2" class="example">
 
-<p><strong>Example 1.33 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Connection and curvature on
+<p><strong>Example 1.35 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Connection and curvature on
 $\}mathcal{O}(\}mathrm{SU}(2))$).</p>
 <p><em>Continuing <a href="#ex:fiber-adjoint-su2">fibre adjoint on
 SU(2)</a>, take <span class="math inline">\(A =
@@ -2058,7 +2121,7 @@ class="math inline">\(\mathcal{O}_q(\mathrm{SU}(2))\)</span>.)</em></p>
 
 <div id="def:categorical-jet" class="definition">
 
-<p><strong>Definition 1.34 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalJet" target="_blank" title="Lean: QOU.CategoricalJet">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-jet">Categorical jet object</a>). <em><a
+<p><strong>Definition 1.36 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalJet" target="_blank" title="Lean: QOU.CategoricalJet">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-jet">Categorical jet object</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalJet"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2086,7 +2149,7 @@ adjunction).</em></p>
 
 <div id="def:categorical-hodge-star" class="definition">
 
-<p><strong>Definition 1.35 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CatHodgeInvolution" target="_blank" title="Lean: QOU.CatHodgeInvolution">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-hodge-star">Categorical Hodge star</a>). <em><a
+<p><strong>Definition 1.37 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CatHodgeInvolution" target="_blank" title="Lean: QOU.CatHodgeInvolution">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-hodge-star">Categorical Hodge star</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CatHodgeInvolution"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2123,7 +2186,7 @@ differential graded algebra.</em></p>
 
 <div id="ex:hodge-su2" class="example">
 
-<p><strong>Example 1.36 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Hodge star on
+<p><strong>Example 1.38 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Hodge star on
 $\}mathcal{O}(\}mathrm{SU}(2))$).</p>
 <p><em>Continuing <a href="#ex:higher-forms-su2">higher forms on
 SU(2)</a>, the Hodge star on <span class="math inline">\(A =
@@ -2171,7 +2234,7 @@ href="#prop:self-dual-curvature">self-dual curvature</a>).</em></p>
 realization and the categorical–geometric bridge</h2>
 <div id="def:spatial-realization-functor" class="definition">
 
-<p><strong>Definition 1.37 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SpatialRealizationFunctor" target="_blank" title="Lean: QOU.SpatialRealizationFunctor">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:spatial-realization-functor">Spatial realization functor</a>).
+<p><strong>Definition 1.39 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SpatialRealizationFunctor" target="_blank" title="Lean: QOU.SpatialRealizationFunctor">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:spatial-realization-functor">Spatial realization functor</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.SpatialRealizationFunctor"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2235,8 +2298,10 @@ defining property of a contact manifold.</em></p>
 
 <div id="prop:categorical-archimedean-bridge" class="proposition">
 
-<p><strong>Proposition 1.38 <span class="proof-status not-started">&#x2717; no Lean</span></strong> (Categorical–geometric
-correspondence).</p>
+<p><strong>Proposition 1.40 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_archimedean_bridge" target="_blank" title="Lean: QOU.categorical_archimedean_bridge">&#x2200; stated</a></strong> (Categorical–geometric
+correspondence). <em><a
+href="https://litlfred.github.io/qou/lean/QOU.categorical_archimedean_bridge"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
 be a <a class="defn-link" href="#def:quantum-observable-universe">quantum observable universe</a> with <a class="defn-link" href="#def:weight-decomposition">weight decomposition</a> <span
 class="math inline">\(\pi_H, \pi_V\)</span> (<a
@@ -2303,7 +2368,7 @@ q^{-1})\,\theta \wedge
 \mathcal{L}_\xi,\]</span></p>
 <p>which is precisely the archimedean formula for <span
 class="math inline">\(d_q\)</span> (<a
-href="#def:q-ext-deriv">archimedean <span
+href="#ex:q-ext-deriv">archimedean <span
 class="math inline">\(q\)</span>-exterior derivative</a>). ◻</p>
 </div>
 
@@ -2311,7 +2376,7 @@ class="math inline">\(q\)</span>-exterior derivative</a>). ◻</p>
 deformation</h2>
 <div id="def:substrate-parameter" class="definition">
 
-<p><strong>Definition 1.39 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter" target="_blank" title="Lean: QOU.SubstrateParameter">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em><a
+<p><strong>Definition 1.41 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter" target="_blank" title="Lean: QOU.SubstrateParameter">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:substrate-parameter">Substrate parameter</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2357,7 +2422,7 @@ of interpolations between <span class="math inline">\(d\)</span> and
 <span class="math inline">\(\pi_V \circ d\)</span>.</em></p>
 <p><em>When the <a class="defn-link" href="#def:quantum-universe">quantum universe</a> is fibred over a space <span
 class="math inline">\(M\)</span> (as in the archimedean realisation, <a
-href="#def:c-quantum-universe"><span
+href="#ex:c-quantum-universe"><span
 class="math inline">\(\mathbb{C}\)</span>-quantum universe</a>), the
 <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> becomes a <em>substrate field</em> <span
 class="math inline">\(q \colon M \to k^{\times}\)</span>, encoding the
@@ -2379,9 +2444,43 @@ class="math inline">\(q_0 = \iota(q)\)</span> determine the same
 deformation.</em></p>
 </div>
 
+<div id="thm:substrate-parameter-exists" class="theorem">
+
+<p><strong>Theorem 1.42 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter.ofReebDecomposition" target="_blank" title="Lean: QOU.SubstrateParameter.ofReebDecomposition">&#x2200; stated</a></strong> (<a class="defn-link" href="#thm:substrate-parameter-exists">Existence of the substrate parameter</a>).
+<em><a
+href="https://litlfred.github.io/qou/lean/QOU.SubstrateParameter.ofReebDecomposition"><sup><span style="color: BurntOrange"><span
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
+be a (<a href="#def:quantum-observable-universe">quantum observable
+universe</a>) with <a href="#def:weight-decomposition">weight
+decomposition</a> <span class="math inline">\((\pi_H, \pi_V)\)</span>
+and <a href="#def:categorical-reeb">categorical Reeb derivation</a>
+<span class="math inline">\((\xi, \theta_A)\)</span>. Then there exists
+a <a href="#def:substrate-parameter">substrate parameter</a> <span
+class="math inline">\(q \colon M \to \mathbb{R}_{&gt;0}\)</span> with
+<span class="math inline">\(q(p) \ge 1\)</span>, not a root of unity,
+such that the <span class="math inline">\(q\)</span>-deformed
+differential</em></p>
+<p><em><span class="math inline">\(d_q = q^{-1}\, d + (1 - q^{-1})\,
+\pi_V \circ d\)</span></em></p>
+<p><em>interpolates between the full differential <span
+class="math inline">\(d\)</span> (at <span class="math inline">\(q =
+1\)</span>) and the vertical projection <span
+class="math inline">\(\pi_V \circ d\)</span> (as <span
+class="math inline">\(q \to \infty\)</span>).</em></p>
+<p><em>The construction proceeds by choosing <span
+class="math inline">\(q_0 &gt; 1\)</span> transcendental (hence not a
+root of unity) and setting <span class="math inline">\(q(p) =
+q_0\)</span> for all <span class="math inline">\(p\)</span>. The
+classicality bound <span class="math inline">\(q \ge 1\)</span> and
+positivity are immediate from <span class="math inline">\(q_0 &gt;
+1\)</span>. Non-constant substrate fields arise from the Reeb flow
+parameterisation of the fibre coordinate.</em></p>
+</div>
+
 <div id="def:quantum-gauge-group" class="definition">
 
-<p><strong>Definition 1.40 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup" target="_blank" title="Lean: QOU.QuantumGaugeGroup">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em><a
+<p><strong>Definition 1.43 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup" target="_blank" title="Lean: QOU.QuantumGaugeGroup">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-gauge-group">Quantum Gauge Group</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2402,7 +2501,7 @@ class="math inline">\(\{G_{q(p)}\}_{p \in M}\)</span>.</em></p>
 
 <div id="def:quantum-planck-constant" class="definition">
 
-<p><strong>Definition 1.41 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant" target="_blank" title="Lean: QOU.quantumPlanckConstant">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em><a
+<p><strong>Definition 1.44 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant" target="_blank" title="Lean: QOU.quantumPlanckConstant">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-planck-constant">Quantum Planck Constant</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2419,7 +2518,7 @@ class="math inline">\(\hbar_q(p) = 1 - q(p)^{-1}\)</span>.</em></p>
 
 <div id="def:q-hodge-star" class="definition">
 
-<p><strong>Definition 1.42 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QHodgeStar" target="_blank" title="Lean: QOU.QHodgeStar">&#x2200; stated</a></strong> ($q$-Hodge star). <em><a
+<p><strong>Definition 1.45 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QHodgeStar" target="_blank" title="Lean: QOU.QHodgeStar">&#x2200; stated</a></strong> ($q$-Hodge star). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QHodgeStar"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2446,7 +2545,7 @@ local deformation strength.</em></p>
 and variational equations</h2>
 <div id="def:categorical-action" class="definition">
 
-<p><strong>Definition 1.43 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalAction" target="_blank" title="Lean: QOU.CategoricalAction">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-action">Categorical action</a>). <em><a
+<p><strong>Definition 1.46 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalAction" target="_blank" title="Lean: QOU.CategoricalAction">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-action">Categorical action</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalAction"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2482,7 +2581,7 @@ notation</a>.</em></p>
 
 <div id="prop:variational-equations" class="proposition">
 
-<p><strong>Proposition 1.44 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.variational_equations" target="_blank" title="Lean: QOU.variational_equations">&#x2200; stated</a></strong> (Variational equations of the
+<p><strong>Proposition 1.47 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.variational_equations" target="_blank" title="Lean: QOU.variational_equations">&#x2200; stated</a></strong> (Variational equations of the
 <a class="defn-link" href="#def:categorical-action">categorical action</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.variational_equations"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2571,7 +2670,7 @@ definite dagger</a>). ◻</p>
 bosons, and observation</h2>
 <div id="def:categorical-q-ext-deriv" class="definition">
 
-<p><strong>Definition 1.45 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQExtDeriv" target="_blank" title="Lean: QOU.CategoricalQExtDeriv">&#x2200; stated</a></strong> (Categorical $q$-deformed exterior
+<p><strong>Definition 1.48 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQExtDeriv" target="_blank" title="Lean: QOU.CategoricalQExtDeriv">&#x2200; stated</a></strong> (Categorical $q$-deformed exterior
 derivative). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalQExtDeriv"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2611,7 +2710,7 @@ dagger</a>).</em></p>
 
 <div id="def:q-harmonic-form" class="definition">
 
-<p><strong>Definition 1.46 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm" target="_blank" title="Lean: QOU.QHarmonicForm">&#x2200; stated</a></strong> ($q$-harmonic form (particle)).
+<p><strong>Definition 1.49 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm" target="_blank" title="Lean: QOU.QHarmonicForm">&#x2200; stated</a></strong> ($q$-harmonic form (particle)).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QHarmonicForm"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2633,7 +2732,7 @@ class="math inline">\(q\)</span>-harmonic:</em></p>
 
 <div id="def:fermion-boson-decomposition" class="definition">
 
-<p><strong>Definition 1.47 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Fermion" target="_blank" title="Lean: QOU.Fermion">&#x2200; stated</a></strong> (Fermion–Boson decomposition).
+<p><strong>Definition 1.50 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Fermion" target="_blank" title="Lean: QOU.Fermion">&#x2200; stated</a></strong> (Fermion–Boson decomposition).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Fermion"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2674,7 +2773,7 @@ class="math inline">\(\pi_H\)</span>:</em></p>
 
 <div id="def:categorical-point" class="definition">
 
-<p><strong>Definition 1.48 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalPoint" target="_blank" title="Lean: QOU.CategoricalPoint">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-point">Categorical point</a>). <em><a
+<p><strong>Definition 1.51 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalPoint" target="_blank" title="Lean: QOU.CategoricalPoint">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-point">Categorical point</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalPoint"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2688,7 +2787,7 @@ a morphism</em></p>
 
 <div id="def:observation" class="definition">
 
-<p><strong>Definition 1.49 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Observation" target="_blank" title="Lean: QOU.Observation">&#x2200; stated</a></strong> (Observation). <em><a
+<p><strong>Definition 1.52 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Observation" target="_blank" title="Lean: QOU.Observation">&#x2200; stated</a></strong> (Observation). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Observation"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2739,7 +2838,7 @@ point <span class="math inline">\(p\)</span>.</em></p></li>
 and self-duality</h2>
 <div id="def:categorical-instanton" class="definition">
 
-<p><strong>Definition 1.50 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalInstanton" target="_blank" title="Lean: QOU.CategoricalInstanton">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-instanton">Categorical instanton</a>). <em><a
+<p><strong>Definition 1.53 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalInstanton" target="_blank" title="Lean: QOU.CategoricalInstanton">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-instanton">Categorical instanton</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalInstanton"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2773,7 +2872,7 @@ projector and <span class="math inline">\(\Omega^-(A) = \ker(\mathrm{id}
 
 <div id="lem:categorical-irreducible" class="lemma">
 
-<p><strong>Lemma 1.51 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_irreducible" target="_blank" title="Lean: QOU.categorical_irreducible">&#x2200; stated</a></strong> (<a class="defn-link" href="#lem:categorical-irreducible">Irreducibility from observability</a>).
+<p><strong>Lemma 1.54 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_irreducible" target="_blank" title="Lean: QOU.categorical_irreducible">&#x2200; stated</a></strong> (<a class="defn-link" href="#lem:categorical-irreducible">Irreducibility from observability</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.categorical_irreducible"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2807,7 +2906,7 @@ observability axiom, so <span class="math inline">\(s =
 
 <div id="prop:categorical-self-duality" class="proposition">
 
-<p><strong>Proposition 1.52 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_self_duality" target="_blank" title="Lean: QOU.categorical_self_duality">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:categorical-self-duality">Categorical self-duality</a>). <em><a
+<p><strong>Proposition 1.55 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_self_duality" target="_blank" title="Lean: QOU.categorical_self_duality">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:categorical-self-duality">Categorical self-duality</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.categorical_self_duality"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -2856,7 +2955,7 @@ self-duality condition. ◻</p>
 $d_q^2$ and jet prolongation</h2>
 <div id="prop:categorical-dq-squared" class="proposition">
 
-<p><strong>Proposition 1.53 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_dq_squared" target="_blank" title="Lean: QOU.categorical_dq_squared">&#x2200; stated</a></strong> (Non-vanishing of $d_q^2$). <em><a
+<p><strong>Proposition 1.56 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_dq_squared" target="_blank" title="Lean: QOU.categorical_dq_squared">&#x2200; stated</a></strong> (Non-vanishing of $d_q^2$). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.categorical_dq_squared"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(d_q\)</span> be the categorical
@@ -2961,7 +3060,7 @@ failure of the horizontal distribution to be integrable. ◻</p>
 
 <div id="def:categorical-q-lie-bracket" class="definition">
 
-<p><strong>Definition 1.54 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQLieBracket" target="_blank" title="Lean: QOU.CategoricalQLieBracket">&#x2200; stated</a></strong> (Categorical $q$-Lie bracket).
+<p><strong>Definition 1.57 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQLieBracket" target="_blank" title="Lean: QOU.CategoricalQLieBracket">&#x2200; stated</a></strong> (Categorical $q$-Lie bracket).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalQLieBracket"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -2987,7 +3086,7 @@ class="math inline">\(\mathcal{C}\)</span>.</em></p>
 
 <div id="def:categorical-q-connection" class="definition">
 
-<p><strong>Definition 1.55 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQConnection" target="_blank" title="Lean: QOU.CategoricalQConnection">&#x2200; stated</a></strong> (Categorical $q$-deformed
+<p><strong>Definition 1.58 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQConnection" target="_blank" title="Lean: QOU.CategoricalQConnection">&#x2200; stated</a></strong> (Categorical $q$-deformed
 connection). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalQConnection"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -3026,7 +3125,7 @@ commutative diagram within this setting.</p>
 and main result</h2>
 <div id="def:q-yang-mills-levi" class="definition">
 
-<p><strong>Definition 1.56 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QYangMillsLevi" target="_blank" title="Lean: QOU.QYangMillsLevi">&#x2200; stated</a></strong> ($q$-Weighted Yang–Mills–Levi
+<p><strong>Definition 1.59 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QYangMillsLevi" target="_blank" title="Lean: QOU.QYangMillsLevi">&#x2200; stated</a></strong> ($q$-Weighted Yang–Mills–Levi
 functional). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QYangMillsLevi"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -3049,7 +3148,7 @@ form</a>).</em></p>
 
 <div id="prop:main-commutative-diagram" class="proposition">
 
-<p><strong>Proposition 1.57 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram" target="_blank" title="Lean: QOU.main_commutative_diagram">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em><a
+<p><strong>Proposition 1.60 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram" target="_blank" title="Lean: QOU.main_commutative_diagram">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:main-commutative-diagram">Main Commutative Diagram</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((M, \theta, G, P, E)\)</span> be
@@ -3163,7 +3262,7 @@ the remainder of the paper does not require this chapter in linear
 order.</p>
 <div id="def:quantum-flatness" class="definition">
 
-<p><strong>Definition 1.58 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumFlatness" target="_blank" title="Lean: QOU.QuantumFlatness">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-flatness">Quantum flatness</a>). <em><a
+<p><strong>Definition 1.61 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.QuantumFlatness" target="_blank" title="Lean: QOU.QuantumFlatness">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:quantum-flatness">Quantum flatness</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.QuantumFlatness"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -3208,7 +3307,7 @@ ordinary connection.</em></p>
 
 <div id="prop:emergence-to-quantum-flat" class="proposition">
 
-<p><strong>Proposition 1.59 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.emergence_to_quantum_flat" target="_blank" title="Lean: QOU.emergence_to_quantum_flat">&#x2200; stated</a></strong> (From Tannakian emergence to
+<p><strong>Proposition 1.62 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.emergence_to_quantum_flat" target="_blank" title="Lean: QOU.emergence_to_quantum_flat">&#x2200; stated</a></strong> (From Tannakian emergence to
 2-group <a class="defn-link" href="#def:quantum-flatness">quantum flatness</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.emergence_to_quantum_flat"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -3286,7 +3385,7 @@ axioms. ◻</p>
 
 <div id="prop:dq-squared" class="proposition">
 
-<p><strong>Proposition 1.60 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.dq_squared" target="_blank" title="Lean: QOU.dq_squared">&#x2200; stated</a></strong> (d_q^2 does not vanish). <em><a
+<p><strong>Proposition 1.63 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.dq_squared" target="_blank" title="Lean: QOU.dq_squared">&#x2200; stated</a></strong> (d_q^2 does not vanish). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.dq_squared"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>The archimedean specialisation of the categorical <span
@@ -3294,7 +3393,7 @@ class="math inline">\(d_q^2\)</span> formula (<a
 href="#prop:categorical-dq-squared">non-vanishing of <span
 class="math inline">\(d_q^2\)</span></a>) yields, for the <span
 class="math inline">\(q\)</span>-deformed exterior derivative (<a
-href="#def:q-ext-deriv"><span class="math inline">\(q\)</span>-exterior
+href="#ex:q-ext-deriv"><span class="math inline">\(q\)</span>-exterior
 derivative</a>) acting on <span
 class="math inline">\(\Omega^k(M)\)</span>:</em></p>
 <p><em><span class="math display">\[d_q^2\,\alpha
@@ -3357,7 +3456,7 @@ class="math inline">\(d_q^2\alpha = ab\,d\theta \wedge
 
 <div id="prop:q-jacobiator" class="proposition">
 
-<p><strong>Proposition 1.61 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.q_jacobiator" target="_blank" title="Lean: QOU.q_jacobiator">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:q-jacobiator">Jacobiator of the q-Lie bracket</a>).
+<p><strong>Proposition 1.64 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.q_jacobiator" target="_blank" title="Lean: QOU.q_jacobiator">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:q-jacobiator">Jacobiator of the q-Lie bracket</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.q_jacobiator"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -3366,7 +3465,7 @@ class="math inline">\(q\)</span>-Lie bracket (<a
 href="#def:categorical-q-lie-bracket">categorical <span
 class="math inline">\(q\)</span>-Lie bracket</a>) to the <span
 class="math inline">\(q\)</span>-deformed Lie bracket (<a
-href="#def:q-lie-bracket"><span class="math inline">\(q\)</span>-Lie
+href="#ex:q-lie-bracket"><span class="math inline">\(q\)</span>-Lie
 bracket</a>) violates the Jacobi identity when <span
 class="math inline">\(q \neq 1\)</span>.</em></p>
 <p><em>Let <span class="math inline">\(U, V, W \in \Gamma(H)\)</span> be
@@ -3437,7 +3536,7 @@ class="math inline">\(J^1(A)\)</span>, and iterating to build the brane
 tower.</p>
 <div id="prop:categorical-jet-prolongation" class="proposition">
 
-<p><strong>Proposition 1.62 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_jet_prolongation" target="_blank" title="Lean: QOU.categorical_jet_prolongation">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:categorical-jet-prolongation">Jet prolongation</a>). <em><a
+<p><strong>Proposition 1.65 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.categorical_jet_prolongation" target="_blank" title="Lean: QOU.categorical_jet_prolongation">&#x2200; stated</a></strong> (<a class="defn-link" href="#prop:categorical-jet-prolongation">Jet prolongation</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.categorical_jet_prolongation"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\((\mathcal{C}, A, \tau)\)</span>
@@ -3466,7 +3565,7 @@ original.</em></p>
 
 <div id="def:categorical-transport" class="definition">
 
-<p><strong>Definition 1.63 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalTransport" target="_blank" title="Lean: QOU.CategoricalTransport">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-transport">Categorical transport equation</a>).
+<p><strong>Definition 1.66 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalTransport" target="_blank" title="Lean: QOU.CategoricalTransport">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-transport">Categorical transport equation</a>).
 <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalTransport"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
@@ -3503,7 +3602,7 @@ diagram:</em></p>
 
 <div id="def:categorical-q-reeb-flow" class="definition">
 
-<p><strong>Definition 1.64 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQReebFlow" target="_blank" title="Lean: QOU.CategoricalQReebFlow">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-q-reeb-flow">Categorical q-Reeb flow</a>). <em><a
+<p><strong>Definition 1.67 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQReebFlow" target="_blank" title="Lean: QOU.CategoricalQReebFlow">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-q-reeb-flow">Categorical q-Reeb flow</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalQReebFlow"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>
 <p><em>Let <span class="math inline">\(\xi\)</span> be the Reeb
@@ -3531,12 +3630,12 @@ class="math inline">\(\phi_t^q \in \mathrm{Aut}(A)\)</span> generated by
 
 <div id="def:categorical-q-torsion-leaf" class="definition">
 
-<p><strong>Definition 1.65 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQTorsionLeaf" target="_blank" title="Lean: QOU.CategoricalQTorsionLeaf">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-q-torsion-leaf">Categorical q-torsion leaf</a>). <em><a
+<p><strong>Definition 1.68 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.CategoricalQTorsionLeaf" target="_blank" title="Lean: QOU.CategoricalQTorsionLeaf">&#x2200; stated</a></strong> (<a class="defn-link" href="#def:categorical-q-torsion-leaf">Categorical q-torsion leaf</a>). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.CategoricalQTorsionLeaf"><sup><span style="color: BurntOrange"><span
-class="math inline">\(\forall\)</span></span></sup></a> A <em><span
-class="math inline">\(q\)</span>-torsion leaf</em> is a maximal
-sub-object <span class="math inline">\(L \hookrightarrow A\)</span> such
-that:</em></p>
+class="math inline">\(\forall\)</span></span></sup></a></em></p>
+<p><em>A <em><span class="math inline">\(q\)</span>-torsion leaf</em> is
+a maximal sub-object <span class="math inline">\(L \hookrightarrow
+A\)</span> such that:</em></p>
 <ol type="1">
 <li><p><em><strong>Horizontality:</strong> <span class="math inline">\(L
 \subset \ker(\pi_V)\)</span> (all forms on <span
@@ -4672,7 +4771,7 @@ nonabelian Stokes theorem</td>
 <tr class="even">
 <td style="text-align: left;">Substrate field <span
 class="math inline">\(q(p)\)</span>
-(Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.39</a>)</td>
+(Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.41</a>)</td>
 <td style="text-align: left;">Local twisted deformation parameter; MC
 element varying over <span class="math inline">\(M\)</span></td>
 <td style="text-align: left;"></td>
@@ -4680,7 +4779,7 @@ element varying over <span class="math inline">\(M\)</span></td>
 <tr class="odd">
 <td style="text-align: left;"><span
 class="math inline">\(\mathrm{SU}_q(2)\)</span> gauge flow
-(Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.40</a>)</td>
+(Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.43</a>)</td>
 <td style="text-align: left;">Pronilpotent deformation of the coordinate
 algebra</td>
 <td style="text-align: left;"></td>
@@ -7953,22 +8052,19 @@ class="math inline">\(\forall\)</span></span></sup></a></em></p>
 1.1097\)</span>, the hadronic mass collapses into a linear combination
 of the neutrino vacuum drag and the pure strong-force binding energy.
 All four rows match CODATA to sub-keV precision:</em></p>
-<p><em><span class="math display">\[\begin{array}{|l|l|l|l|}
-\hline
-\text{\textbf{Structure}} &amp; \text{\textbf{Topological Formula}}
-&amp; \text{\textbf{QOU Result (MeV)}} &amp; \text{\textbf{CODATA
-(MeV)}} \\ \hline
-\text{Proton } (m_p) &amp; Q(q)\,
-\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{uud} &amp; 938.272 &amp;
-938.272 \\ \hline
-\text{Neutron } (m_n) &amp; Q(q)\,
-\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{udd} &amp; 939.565 &amp;
-939.565 \\ \hline
-\text{Deuteron } (m_D) &amp; \mathcal{M}(L_6) - \text{Binding} &amp;
-1875.613 &amp; 1875.613 \\ \hline
-\text{Binding Energy} &amp; \Delta \text{ Skein Polynomial} &amp; 2.224
-&amp; 2.2245 \\ \hline
-\end{array}\]</span></em></p>
+<p><em>| <strong>Structure</strong> | <strong>Topological
+Formula</strong> | <strong>QOU Result (MeV)</strong> | <strong>CODATA
+(MeV)</strong> | |—|—|—|—| | Proton (<span
+class="math inline">\(m_p\)</span>) | <span class="math inline">\(Q(q)\,
+\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{uud}\)</span> | 938.272 |
+938.272 | | Neutron (<span class="math inline">\(m_n\)</span>) | <span
+class="math inline">\(Q(q)\,
+\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{udd}\)</span> | 939.565 |
+939.565 | | Deuteron (<span class="math inline">\(m_D\)</span>) | <span
+class="math inline">\(\mathcal{M}(L_6) - \text{Binding}\)</span> |
+1875.613 | 1875.613 | | Binding Energy | <span
+class="math inline">\(\Delta\)</span> Skein Polynomial | 2.224 | 2.2245
+|</em></p>
 </div>
 
 <div class="proof">
@@ -8018,54 +8114,38 @@ pairs:</p>
 <p><em>Step 2a: Proton (<span class="math inline">\(uud\)</span>).</em>
 The proton has quarks <span class="math inline">\((u_1, u_2,
 d)\)</span>. The three crossing pairs and their Skein masses are:</p>
-<p><span class="math display">\[\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} &amp; \text{\textbf{Quarks}} &amp;
-\text{\textbf{Skein mass}}
-&amp; \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   &amp; (u_1,\, u_2) &amp;
-\displaystyle \mathcal{S}_{uu}
-= \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
-&amp; 312.36 \\ \hline
-\text{II}  &amp; (u_1,\, d)   &amp;
-\displaystyle \mathcal{S}_{ud}
-= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-&amp; 312.97 \\ \hline
-\text{III} &amp; (u_2,\, d)   &amp;
-\displaystyle \mathcal{S}_{ud}
-= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-&amp; 312.97 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
-&amp; \mathbf{938.272} \\ \hline
-\end{array}\]</span></p>
+<p>| <strong>Pair</strong> | <strong>Quarks</strong> | <strong>Skein
+mass</strong> | <strong>Value (MeV)</strong> | |—|—|—|—| | I | <span
+class="math inline">\((u_1,\, u_2)\)</span> | <span
+class="math inline">\(\mathcal{S}_{uu} = \frac{(q +
+q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}\)</span> | 312.36 | | II | <span
+class="math inline">\((u_1,\, d)\)</span> | <span
+class="math inline">\(\mathcal{S}_{ud} = \frac{q\,\mu_u +
+q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}\)</span> | 312.97 | | III | <span
+class="math inline">\((u_2,\, d)\)</span> | <span
+class="math inline">\(\mathcal{S}_{ud} = \frac{q\,\mu_u +
+q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}\)</span> | 312.97 | | | |
+<strong>Total:</strong> <span class="math inline">\(m_p =
+\mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}\)</span> |
+<strong>938.272</strong> |</p>
 <p><em>Step 2b: Neutron (<span class="math inline">\(udd\)</span>).</em>
 The neutron has quarks <span class="math inline">\((u, d_1,
 d_2)\)</span>. Swapping one up quark for a down quark replaces the
 same-flavor pair:</p>
-<p><span class="math display">\[\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} &amp; \text{\textbf{Quarks}} &amp;
-\text{\textbf{Skein mass}}
-&amp; \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   &amp; (u,\, d_1) &amp;
-\displaystyle \mathcal{S}_{ud}
-= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-&amp; 312.97 \\ \hline
-\text{II}  &amp; (u,\, d_2) &amp;
-\displaystyle \mathcal{S}_{ud}
-= \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-&amp; 312.97 \\ \hline
-\text{III} &amp; (d_1,\, d_2) &amp;
-\displaystyle \mathcal{S}_{dd}
-= \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
-&amp; 313.65 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
-&amp; \mathbf{939.565} \\ \hline
-\end{array}\]</span></p>
+<p>| <strong>Pair</strong> | <strong>Quarks</strong> | <strong>Skein
+mass</strong> | <strong>Value (MeV)</strong> | |—|—|—|—| | I | <span
+class="math inline">\((u,\, d_1)\)</span> | <span
+class="math inline">\(\mathcal{S}_{ud} = \frac{q\,\mu_u +
+q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}\)</span> | 312.97 | | II | <span
+class="math inline">\((u,\, d_2)\)</span> | <span
+class="math inline">\(\mathcal{S}_{ud} = \frac{q\,\mu_u +
+q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}\)</span> | 312.97 | | III | <span
+class="math inline">\((d_1,\, d_2)\)</span> | <span
+class="math inline">\(\mathcal{S}_{dd} = \frac{(q +
+q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}\)</span> | 313.65 | | | |
+<strong>Total:</strong> <span class="math inline">\(m_n =
+2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}\)</span> |
+<strong>939.565</strong> |</p>
 <p><em>Step 2c: The <span class="math inline">\(u\)</span>-<span
 class="math inline">\(d\)</span> mass splitting.</em> The proton–neutron
 mass difference isolates the same-flavor crossing pair:</p>
@@ -8099,6 +8179,64 @@ value is <span class="math inline">\(2.2246\;\mathrm{MeV}\)</span>,
 agreeing to sub-keV precision.</p>
 <p>The formal Lean verification of each row is recorded in
 QOU.HadronicMass with NIST CODATA 2022 precision. ◻</p>
+</div>
+
+<div id="ex:terminal-resolution-cz" class="example">
+
+<p><strong>Example 6.10</strong> (Terminal resolution in
+$\}mathbb{C}[z]$).</p>
+<p><em>In the archimedean realisation (<a
+href="#ex:c-quantum-observable-universe"><span
+class="math inline">\(\mathbb{C}\)</span>-quantum observable
+universe</a>), the <a class="defn-link" href="#def:substrate-parameter">substrate parameter</a> is a smooth function <span
+class="math inline">\(q \colon M \to \mathbb{C}^{\times}\)</span>. At a
+point <span class="math inline">\(p \in M\)</span> where the substrate
+is locally constant, the fibre algebra is <span
+class="math inline">\(\mathcal{O}_{q(p)}(\mathrm{SU}(2))
+\otimes_{\mathbb{Z}[q,q^{-1}]}
+\mathbb{C}\)</span>, and the <a class="defn-link" href="#def:quantum-planck-constant">quantum Planck constant</a> (<a
+href="#def:quantum-planck-constant">quantum Planck constant</a>)
+evaluates to</em></p>
+<p><em><span class="math display">\[\hbar_q(p) = 1 -
+q(p)^{-1}.\]</span></em></p>
+<p><em>Specialising the topological mass formula (<a
+href="#conj:topological-mass-formula">topological mass formula</a>) to
+<span class="math inline">\(q_0 = 1.1097\)</span> (derived from <span
+class="math inline">\(m_\mu / m_e\)</span>, <a
+href="#prop:skein-mass-relation">skein mass relation</a>):</em></p>
+<p><em><span class="math display">\[\hbar_{q_0} = 1 - \frac{1}{1.1097}
+\approx 0.09889,
+\qquad
+\hbar_{q_0}^{-2} \approx 102.25.\]</span></em></p>
+<p><em>The mass predictions then evaluate as follows over <span
+class="math inline">\(\mathbb{C}[z]\)</span> at <span
+class="math inline">\(z = q_0\)</span>:</em></p>
+<p><em>| <strong>Particle</strong> | <span
+class="math inline">\(\operatorname{Vol}(K)\)</span> | <span
+class="math inline">\(m(K) = \operatorname{Vol}(K) /
+\hbar_{q_0}^2\)</span> | <strong>CODATA</strong> | |—|—|—|—| | Electron
+(<span class="math inline">\(3_1\)</span>) | 0 (non-hyp.) | <span
+class="math inline">\(m_e\)</span> (baseline) | 0.511 MeV | | Muon
+(<span class="math inline">\(4_1\)</span>) | 2.0299 | <span
+class="math inline">\(2.0299 \times 102.25 \approx 207.6\, m_e\)</span>
+| <span class="math inline">\(206.768\, m_e\)</span> | | Proton | <span
+class="math inline">\(Q(q_0)\,
+\operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}\)</span> | 938.272
+MeV | 938.272 MeV | | Neutron | <span class="math inline">\(Q(q_0)\,
+\operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}\)</span> | 939.565
+MeV | 939.565 MeV |</em></p>
+<p><em>The passage from the categorical formula to these numbers
+requires exactly the archimedean bridge: the fibre functor <span
+class="math inline">\(\tau\)</span> maps the categorical Frobenius form
+<span class="math inline">\(\int_A\)</span> to the Webster inner product
+on <span class="math inline">\(M\)</span>, and the categorical substrate
+parameter to the smooth function <span
+class="math inline">\(q(p)\)</span>. The polynomial ring <span
+class="math inline">\(\mathbb{C}[z]\)</span> serves as the universal
+coefficient ring: specialising <span class="math inline">\(z \mapsto
+q_0\)</span> recovers the numerical predictions, while keeping <span
+class="math inline">\(z\)</span> formal retains the full <span
+class="math inline">\(q\)</span>-deformed algebraic structure.</em></p>
 </div>
 
 <p>The QOU framework (<a href="#chap:qou">Chapter</a>) makes predictions
@@ -8323,7 +8461,7 @@ class="math inline">\(q\)</span>-deformed vacuum fluctuations.</p></li>
 </ul>
 <div id="prop:local-substrate-q" class="proposition">
 
-<p><strong>Proposition 6.10 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Experimental.local_substrate_q" target="_blank" title="Lean: QOU.Experimental.local_substrate_q">&#x2200; stated</a></strong> (Local Value of the Substrate
+<p><strong>Proposition 6.11 <a class="proof-status stated" href="https://litlfred.github.io/qou/lean/QOU.Experimental.local_substrate_q" target="_blank" title="Lean: QOU.Experimental.local_substrate_q">&#x2200; stated</a></strong> (Local Value of the Substrate
 Parameter). <em><a
 href="https://litlfred.github.io/qou/lean/QOU.Experimental.local_substrate_q"><sup><span style="color: BurntOrange"><span
 class="math inline">\(\forall\)</span></span></sup></a></em></p>

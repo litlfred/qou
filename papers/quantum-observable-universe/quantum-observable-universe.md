@@ -338,7 +338,7 @@ V^{\vee} \otimes \mathbf{1}
 
 **Definition 1.11** (Maximal torus and weight subcategory). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.MaximalTorus)*
 
-*Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with fundamental object $V$ (the unique simple object of categorical dimension $2$; see [spin labels](#def:spin-labels) for the full labelling). The *weight subcategory* $\langle V \rangle \subset \mathcal{C}$ is the full subcategory whose objects are direct sums of weight spaces of $V$ (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The *maximal torus* of the gauge group is*
+*Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with fundamental object $V$ (the unique simple object of categorical dimension $2$; see [spin labels](#prop:spin-labels) for the full labelling). The *weight subcategory* $\langle V \rangle \subset \mathcal{C}$ is the full subcategory whose objects are direct sums of weight spaces of $V$ (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The *maximal torus* of the gauge group is*
 
 *$$T = \mathrm{Aut}^{\otimes}(\tau|_{\langle V \rangle}),$$*
 
@@ -380,11 +380,25 @@ V^{\vee} \otimes \mathbf{1}
 
 </div>
 
+<div id="thm:weight-decomposition-exists" class="theorem">
+
+**Theorem 1.14** (Existence of the weight decomposition). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.WeightDecomposition.ofMaximalTorus)*
+
+*Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with [maximal torus](#def:maximal-torus) $T$ acting on [higher forms](#def:higher-forms) $\Omega^k(A)$. Then there exists a [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ of $\Omega^k(A)$ satisfying:*
+
+1.  ***Complementarity:** $\pi_H + \pi_V = \mathrm{id}$.*
+
+2.  ***Idempotency:** $\pi_H^2 = \pi_H$ and $\pi_V^2 = \pi_V$.*
+
+*The projections are constructed from the torus averaging operator: for each weight $\lambda$ of the $T$-action, the $\lambda$-isotypic projector $e_\lambda$ is idempotent, and $\pi_H = e_0$, $\pi_V = \mathrm{id} - e_0$.*
+
+</div>
+
 ## Consequences of the axioms
 
 <div id="prop:frobenius-relation" class="proposition">
 
-**Proposition 1.14** (Frobenius relation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.frobenius_relation)*
+**Proposition 1.15** (Frobenius relation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.frobenius_relation)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the comultiplication on $A$ dual to the multiplication $\mu$ under the [Frobenius pairing](#def:frobenius-pairing). Then the following diagram commutes (the *Frobenius relation*):*
 
@@ -419,7 +433,7 @@ Non-degeneracy of the pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$ 
 
 <div id="ex:frobenius-su2" class="example">
 
-**Example 1.15** (Frobenius relation for \$\\}mathrm{SU}(2)\$).
+**Example 1.16** (Frobenius relation for \$\\}mathrm{SU}(2)\$).
 
 *Continuing [QOU on SU(2)](#ex:qou-su2), set $A = \mathcal{O}(\mathrm{SU}(2))$ with multiplication $\mu(f \otimes g) = fg$ (pointwise product) and Frobenius form $\int_A = \int_G$ (Haar integral). The dual comultiplication is $\Delta_\mu(f)(g,h) = \int_G f(xg)\,\overline{h(x)}\,dx$, and the Frobenius relation expresses the associativity of convolution: $\int_G f(xy)\,g(y)\,dy$ can be evaluated by convolving first with $f$ or first with $g$.*
 
@@ -427,7 +441,7 @@ Non-degeneracy of the pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$ 
 
 <div id="def:involutive-structure" class="definition">
 
-**Definition 1.16** (Involutive structure (\$\\}ast\$-structure)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.InvolutiveStructure)*
+**Definition 1.17** (Involutive structure (\$\\}ast\$-structure)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.InvolutiveStructure)*
 
 *Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal category. An *involutive structure* (also called a *$\ast$-structure* or *dagger structure*) on $\mathcal{C}$ is a contravariant endofunctor $\dagger \colon \mathcal{C}^{\mathrm{op}} \to \mathcal{C}$ satisfying:*
 
@@ -466,7 +480,7 @@ Non-degeneracy of the pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$ 
 
 <div id="def:positive-definite-dagger" class="definition">
 
-**Definition 1.17** (Positive-definite structure). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.PositiveDefiniteStructure)*
+**Definition 1.18** (Positive-definite structure). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.PositiveDefiniteStructure)*
 
 *Let $(\mathcal{C}, \dagger)$ be a rigid monoidal category with involutive structure ([involutive structure](#def:involutive-structure)). The involution is *positive-definite* if for every non-zero morphism $f \colon \mathbf{1} \to X$ the composite*
 
@@ -489,7 +503,7 @@ Non-degeneracy of the pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$ 
 
 <div id="ex:dagger-su2" class="example">
 
-**Example 1.18** (Involutive structure on \$\\}mathrm{Rep}(\\}mathrm{SU}(2))\$).
+**Example 1.19** (Involutive structure on \$\\}mathrm{Rep}(\\}mathrm{SU}(2))\$).
 
 *Continuing [Frobenius SU(2)](#ex:frobenius-su2), the category $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ carries a canonical involutive structure built from the antipode:*
 
@@ -506,7 +520,7 @@ Non-degeneracy of the pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$ 
 
 <div id="lem:volume-from-rigidity" class="lemma">
 
-**Lemma 1.19** (Volume form from rigidity and symplectic self-duality). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.volume_from_rigidity)*
+**Lemma 1.20** (Volume form from rigidity and symplectic self-duality). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.volume_from_rigidity)*
 
 *Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal category, and let $V$ be an object of categorical dimension $2$ that is *symplectically self-dual*: there exists an isomorphism $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying $\phi^{\vee} = -\phi$ (alternating). Then the composite $\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through $\Lambda^2 V$ (the *volume form factorisation*):*
 
@@ -538,7 +552,7 @@ Because $\phi$ is alternating, the pairing $B = \mathrm{ev}_V \circ (\mathrm{id}
 
 <div id="thm:su2-emergence" class="theorem">
 
-**Theorem 1.20** (Emergence of the gauge group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.RankOneGaugeData)*
+**Theorem 1.21** (Emergence of the gauge group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.RankOneGaugeData)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)). Then $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ (or $\mathrm{SL}(2, R)$ depending on the signature of the Frobenius pairing).*
 
@@ -593,7 +607,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="ex:su2-emergence" class="example">
 
-**Example 1.21** (Emergence of \$\\}mathrm{SU}(2)\$: the full chain).
+**Example 1.22** (Emergence of \$\\}mathrm{SU}(2)\$: the full chain).
 
 *Continuing [Examples](#ex:frobenius-su2)–[](#ex:dagger-su2), let $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$, $A = \mathcal{O}(\mathrm{SU}(2))$, $\tau$ the forgetful functor.*
 
@@ -607,9 +621,9 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 ## Differential structures and gauge actions
 
-<div id="def:spin-labels" class="definition">
+<div id="prop:spin-labels" class="proposition">
 
-**Definition 1.22** (Spin labels and the fundamental object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SpinLabels)*
+**Proposition 1.23** (Spin labels and the fundamental object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SpinDecomposition)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)). Because $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ ([SU(2) emergence](#thm:su2-emergence)), the simple objects of $\mathcal{C}$ are indexed by a *spin* label $j \in \{0, \tfrac12, 1,
 \tfrac32, \ldots\}$, with $V_j$ denoting the simple object of categorical dimension $2j + 1$. The *fundamental object* is $V = V_{1/2}$, the unique simple object of categorical dimension $2$. The *adjoint object* is $V_1 \cong \mathrm{Ad}(A)$, of dimension $3$.*
@@ -620,7 +634,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="ex:spin-labels-su2" class="example">
 
-**Example 1.23** (Spin decomposition of \$\\}mathrm{Rep}(\\}mathrm{SU}(2))\$).
+**Example 1.24** (Spin decomposition of \$\\}mathrm{Rep}(\\}mathrm{SU}(2))\$).
 
 *Continuing [QOU on SU(2)](#ex:qou-su2), the simple objects of $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ are the irreducible representations $V_j \cong \mathbb{C}^{2j+1}$:*
 
@@ -648,7 +662,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="def:categorical-reeb" class="definition">
 
-**Definition 1.24** (Categorical Reeb derivation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalReeb)*
+**Definition 1.25** (Categorical Reeb derivation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalReeb)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with maximal torus $T$ ([maximal torus](#def:maximal-torus)) and weight decomposition $\pi_H, \pi_V$ ([weight decomposition](#def:weight-decomposition)). The *categorical Reeb derivation* is the endomorphism $\xi \colon A \to A$ that generates the $T$-action: $\xi$ is the infinitesimal generator of the one-parameter subgroup $T \cong \mathrm{U}(1) \subset G$, acting on the Frobenius–Hopf object $A$ via the adjoint coaction. It satisfies:*
 
@@ -660,9 +674,23 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 </div>
 
+<div id="thm:categorical-reeb-exists" class="theorem">
+
+**Theorem 1.26** (Existence of the categorical Reeb derivation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalReeb.ofWeightDecomposition)*
+
+*Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with [maximal torus](#def:maximal-torus) $T$ and [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$. Then there exists a [categorical Reeb derivation](#def:categorical-reeb) $(\xi, \theta_A)$ on $A$ satisfying:*
+
+1.  ***Vertical generator:** $\pi_V \circ d = \iota_\xi\, d\theta_A$.*
+
+2.  ***Normalisation:** $\xi \mathbin{;} \theta_A = \theta_A$ (categorically: $\theta_A(\xi) = \mathrm{id}_{\mathbf{1}}$).*
+
+*The derivation $\xi$ is the infinitesimal generator of the one-parameter subgroup $T \cong \mathrm{U}(1) \subset G$, and $\theta_A$ is its Maurer–Cartan dual, uniquely determined by the normalisation condition.*
+
+</div>
+
 <div id="ex:reeb-su2" class="example">
 
-**Example 1.25** (Reeb derivation for \$\\}mathrm{SU}(2)\$).
+**Example 1.27** (Reeb derivation for \$\\}mathrm{SU}(2)\$).
 
 *Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), the maximal torus is $T = \mathrm{U}(1)$ with generator $\xi = e_3 = \frac{1}{2}\begin{psmallmatrix} 1 & 0 \\ 0 & -1
 \end{psmallmatrix} \in \mathfrak{su}(2)$. On $A = \mathcal{O}(\mathrm{SU}(2))$, $\xi$ acts by $(\xi \cdot f)(g) = \frac{d}{dt}\big|_{t=0} f(e^{-t\xi} g)$ (left-invariant vector field). The canonical $1$-form is $\theta_A = \omega_3$ (the left-invariant $1$-form dual to $e_3$), and:*
@@ -671,13 +699,13 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 - *$\Omega^k_H(A) = \{\alpha : \iota_\xi\,\alpha = 0\}$ (forms with no $\omega_3$ component).*
 
-- *In the archimedean realisation on a CR manifold $(M, \theta)$, $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$ ([Reeb decomposition](#def:reeb-decomposition)).*
+- *In the archimedean realisation on a CR manifold $(M, \theta)$, $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$ and $\theta(\xi) = 1$ ([Reeb decomposition](#ex:reeb-decomposition)).*
 
 </div>
 
 <div id="def:projective-line-object" class="definition">
 
-**Definition 1.26** (Projective line object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ProjectiveLineObject)*
+**Definition 1.28** (Projective line object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ProjectiveLineObject)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with maximal torus $T \subset G$ ([maximal torus](#def:maximal-torus)). The *projective line object* is the quotient*
 
@@ -689,7 +717,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="ex:projective-line-su2" class="example">
 
-**Example 1.27** (Projective line for \$\\}mathrm{SU}(2)\$).
+**Example 1.29** (Projective line for \$\\}mathrm{SU}(2)\$).
 
 *Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), $G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$. The quotient is $\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C})$. A point $[\ell] \in \mathbb{P}^1(\mathbb{C})$ is a line $\ell \subset V = \mathbb{C}^2$; equivalently, it is the kernel of a linear form on $V$, well-defined up to scalar. The function algebra is the polynomial ring $\mathcal{O}(\mathbb{P}^1(\mathbb{C})) = \mathbb{C}[z]$ in the affine coordinate $z = v_1 / v_2$.*
 
@@ -697,9 +725,9 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="def:contact-affine-chart" class="definition">
 
-**Definition 1.28** (Contact affine chart on \$\\}mathbb{P}(V)\$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ContactAffineChart)*
+**Definition 1.30** (Contact affine chart on \$\\}mathbb{P}(V)\$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.ContactAffineChart)*
 
-*Let $E$ be the state bundle over $M$ whose fibres are the spaces of $1$-forms, and let $\mathbb{P}(V)$ be the projective line object ([projective line object](#def:projective-line-object)). Using the Reeb decomposition ([Reeb decomposition](#def:reeb-decomposition)), every form splits as $\alpha = \alpha_H + \theta \wedge \iota_\xi \alpha$.*
+*Let $E$ be the state bundle over $M$ whose fibres are the spaces of $1$-forms, and let $\mathbb{P}(V)$ be the projective line object ([projective line object](#def:projective-line-object)). Using the Reeb decomposition ([Reeb decomposition](#ex:reeb-decomposition)), every form splits as $\alpha = \alpha_H + \theta \wedge \iota_\xi \alpha$.*
 
 *The *contact affine chart* $U_\xi \subset \mathbb{P}(V)$ is the open dense subset of states with non-vanishing Reeb component:*
 
@@ -716,7 +744,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="prop:substrate-radial-coordinate" class="proposition">
 
-**Proposition 1.29** (Substrate parameter as the radial coordinate). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.substrate_radial_coordinate)*
+**Proposition 1.31** (Substrate parameter as the radial coordinate). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.substrate_radial_coordinate)*
 
 *Within the contact affine chart $U_\xi$ ([contact affine chart](#def:contact-affine-chart)), the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) governs the radial and phase coordinates of the state. Let $Z$ be the affine coordinate of a state. Then:*
 
@@ -724,7 +752,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 2.  ***Classical boundary** ($Z \to \infty$): as $q \to 1$ (classical vacuum), the state becomes purely horizontal ($\iota_\xi\,\alpha \to 0$, a boson). The affine coordinate diverges, pushing the state to the point at infinity of the $\mathbb{CP}^1$ fibre.*
 
-*Furthermore, the $q$-deformed Reeb flow ([q-Reeb flow](#def:q-reeb-flow)) rotates the phase of $Z$ at a rate proportional to the quantum Planck constant:*
+*Furthermore, the $q$-deformed Reeb flow ([q-Reeb flow](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate proportional to the quantum Planck constant:*
 
 *$$\mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z,$$*
 
@@ -736,7 +764,7 @@ The volume constraint provides the special-linear condition ($\det = 1$), while 
 
 <div id="prop:fiber-adjoint-involution" class="proposition">
 
-**Proposition 1.30** (Fiber–adjoint-fiber involution). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.FiberAdjointInvolution)*
+**Proposition 1.32** (Fiber–adjoint-fiber involution). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.FiberAdjointInvolution)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)). The Frobenius form $\int_A \colon A \to \mathbf{1}$ induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$ (the Frobenius self-duality), under which:*
 
@@ -780,7 +808,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="ex:fiber-adjoint-su2" class="example">
 
-**Example 1.31** (Fiber–adjoint-fiber involution for \$\\}mathrm{SU}(2)\$).
+**Example 1.33** (Fiber–adjoint-fiber involution for \$\\}mathrm{SU}(2)\$).
 
 *Continuing [projective line on SU(2)](#ex:projective-line-su2), take $G = \mathrm{SU}(2)$, $T = \mathrm{U}(1)$, and $V = \mathbb{C}^2$. The projective line object is $\mathbb{P}(V) = \mathbb{P}^1(\mathbb{C})$, and the adjoint object is $\mathrm{Ad}(A) \cong \mathfrak{su}(2) \cong \mathbb{R}^3$ (trace-free skew-Hermitian $2 \times 2$ matrices under the Killing form). The embedding $\sigma$ sends a line $\ell = \mathrm{span}(v) \subset \mathbb{C}^2$ to the rank-$1$ projector*
 
@@ -795,7 +823,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="def:categorical-connection" class="definition">
 
-**Definition 1.32** (Categorical connection and curvature). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalConnection)*
+**Definition 1.34** (Categorical connection and curvature). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalConnection)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum universe over $R$ with differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).*
 
@@ -827,7 +855,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="ex:connection-su2" class="example">
 
-**Example 1.33** (Connection and curvature on \$\\}mathcal{O}(\\}mathrm{SU}(2))\$).
+**Example 1.35** (Connection and curvature on \$\\}mathcal{O}(\\}mathrm{SU}(2))\$).
 
 *Continuing [fibre adjoint on SU(2)](#ex:fiber-adjoint-su2), take $A = \mathcal{O}(\mathrm{SU}(2))$ with its left-invariant calculus $\Omega^1(A) = \mathrm{span}\{\omega_1, \omega_2, \omega_3\}$ ([higher forms on SU(2)](#ex:higher-forms-su2)). A connection is a covariant derivative $\nabla f = df + \mathcal{A} \cdot f$ for $f \in A$, where $\mathcal{A} = A_1\,\omega_1 + A_2\,\omega_2 + A_3\,\omega_3$ is the connection $1$-form. The Leibniz triangle says $\nabla(fg) = (\nabla f)\,g + f\,(dg)$. The curvature is the $2$-form $F_\nabla = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A} \in \Omega^2(A)$, which is $A$-linear ($F_\nabla(f \cdot s) = f \cdot F_\nabla(s)$). (When the substrate parameter $q$ is introduced in [substrate parameter](#def:substrate-parameter), this calculus deforms to the Woronowicz $3D$-calculus on $\mathcal{O}_q(\mathrm{SU}(2))$.)*
 
@@ -835,7 +863,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="def:categorical-jet" class="definition">
 
-**Definition 1.34** (Categorical jet object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalJet)*
+**Definition 1.36** (Categorical jet object). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalJet)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum universe](#def:quantum-universe)) with connection $\nabla$ ([categorical connection](#def:categorical-connection)). The *jet object* is*
 
@@ -858,7 +886,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="def:categorical-hodge-star" class="definition">
 
-**Definition 1.35** (Categorical Hodge star). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CatHodgeInvolution)*
+**Definition 1.37** (Categorical Hodge star). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CatHodgeInvolution)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum universe over $R$ ([quantum universe](#def:quantum-universe)) with higher differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)). The *categorical Hodge star* is the involution $\star \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by*
 
@@ -871,7 +899,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="ex:hodge-su2" class="example">
 
-**Example 1.36** (Hodge star on \$\\}mathcal{O}(\\}mathrm{SU}(2))\$).
+**Example 1.38** (Hodge star on \$\\}mathcal{O}(\\}mathrm{SU}(2))\$).
 
 *Continuing [higher forms on SU(2)](#ex:higher-forms-su2), the Hodge star on $A = \mathcal{O}(\mathrm{SU}(2))$ acts on the $3D$-calculus $\Omega^{\bullet}(A)$ as follows. The volume form is $\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$ (normalised by $\int_A(\mathrm{vol}) = 1$). Then:*
 
@@ -891,7 +919,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="def:spatial-realization-functor" class="definition">
 
-**Definition 1.37** (Spatial realization functor). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SpatialRealizationFunctor)*
+**Definition 1.39** (Spatial realization functor). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SpatialRealizationFunctor)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)). The *spatial realization* of $A$ is the space*
 
@@ -916,7 +944,7 @@ Hence $\mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0$. The non-degeneracy of $\
 
 <div id="prop:categorical-archimedean-bridge" class="proposition">
 
-**Proposition 1.38** (Categorical–geometric correspondence).
+**Proposition 1.40** (Categorical–geometric correspondence). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_archimedean_bridge)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with weight decomposition $\pi_H, \pi_V$ ([weight decomposition](#def:weight-decomposition)) and categorical $q$-exterior derivative $d_q$ ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). Under the fibre functor $\tau$, the categorical and geometric formulations of $d_q$ coincide:*
 
@@ -951,7 +979,7 @@ On horizontal forms ($\iota_\xi\alpha = 0$), this reduces to $\theta \wedge \mat
 $$\tau(d_q) = q^{-1} d + (1 - q^{-1})\,\theta \wedge
   \mathcal{L}_\xi,$$
 
-which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior derivative](#def:q-ext-deriv)). ◻
+which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior derivative](#ex:q-ext-deriv)). ◻
 
 </div>
 
@@ -959,7 +987,7 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 <div id="def:substrate-parameter" class="definition">
 
-**Definition 1.39** (Substrate parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter)*
+**Definition 1.41** (Substrate parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)) with weight decomposition $\pi_H, \pi_V$ ([weight decomposition](#def:weight-decomposition)) and Reeb derivation $\xi$ ([categorical Reeb](#def:categorical-reeb)). The non-commutative de Rham complex $(\Omega^\bullet(A), d)$ carries two canonical endomorphisms:*
 
@@ -975,15 +1003,29 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 *At $q = 1$ the operator $d_q$ recovers $d$ (classicality: horizontal and vertical differentiation are treated equally). As $q \to \infty$, $d_q$ projects onto $\pi_V \circ d$ (deep-quantum regime: only the Reeb direction contributes). The substrate parameter is *not* intrinsic to the triple $(\mathcal{C}, A, \tau)$; it records where one sits in the $\mathbb{G}_m$-family of interpolations between $d$ and $\pi_V \circ d$.*
 
-*When the quantum universe is fibred over a space $M$ (as in the archimedean realisation, [$\mathbb{C}$-quantum universe](#def:c-quantum-universe)), the substrate parameter becomes a *substrate field* $q \colon M \to k^{\times}$, encoding the local position in the Reeb fibre at each point.*
+*When the quantum universe is fibred over a space $M$ (as in the archimedean realisation, [$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the substrate parameter becomes a *substrate field* $q \colon M \to k^{\times}$, encoding the local position in the Reeb fibre at each point.*
 
 **Algebraic perspective.* The Lusztig integral form $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ is the universal $\mathbb{Z}[q, q^{-1}]$-algebra generated by $K^{\pm 1}$ and the divided powers $E^{(n)}, F^{(n)}$. A ring homomorphism $\iota \colon \mathbb{Z}[q, q^{-1}] \to k$, $q \mapsto q_0$, base-changes this to the quantised enveloping algebra at $q_0$. The categorical and algebraic viewpoints agree: the interpolation parameter $q$ in $d_q$ and the specialisation target $q_0 = \iota(q)$ determine the same deformation.*
 
 </div>
 
+<div id="thm:substrate-parameter-exists" class="theorem">
+
+**Theorem 1.42** (Existence of the substrate parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.SubstrateParameter.ofReebDecomposition)*
+
+*Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ and [categorical Reeb derivation](#def:categorical-reeb) $(\xi, \theta_A)$. Then there exists a [substrate parameter](#def:substrate-parameter) $q \colon M \to \mathbb{R}_{>0}$ with $q(p) \ge 1$, not a root of unity, such that the $q$-deformed differential*
+
+*$d_q = q^{-1}\, d + (1 - q^{-1})\, \pi_V \circ d$*
+
+*interpolates between the full differential $d$ (at $q = 1$) and the vertical projection $\pi_V \circ d$ (as $q \to \infty$).*
+
+*The construction proceeds by choosing $q_0 > 1$ transcendental (hence not a root of unity) and setting $q(p) = q_0$ for all $p$. The classicality bound $q \ge 1$ and positivity are immediate from $q_0 > 1$. Non-constant substrate fields arise from the Reeb flow parameterisation of the fibre coordinate.*
+
+</div>
+
 <div id="def:quantum-gauge-group" class="definition">
 
-**Definition 1.40** (Quantum Gauge Group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup)*
+**Definition 1.43** (Quantum Gauge Group). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumGaugeGroup)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with substrate parameter $q_0$ ([substrate parameter](#def:substrate-parameter)). The *quantum gauge group* is $G_{q_0} = \mathrm{SU}_{q_0}(2)$, the quantum group obtained by deforming the Tannakian gauge group $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ ([SU(2) emergence](#thm:su2-emergence)) at the parameter $q_0$. When the substrate parameter varies over a space $M$ (e.g. the archimedean realisation), this yields a field of quantum groups $\{G_{q(p)}\}_{p \in M}$.*
 
@@ -991,7 +1033,7 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 <div id="def:quantum-planck-constant" class="definition">
 
-**Definition 1.41** (Quantum Planck Constant). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant)*
+**Definition 1.44** (Quantum Planck Constant). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.quantumPlanckConstant)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q_0$ ([substrate parameter](#def:substrate-parameter)). The *quantum Planck constant* is the element $\hbar_q = 1 - q_0^{-1} \in R$. When the substrate parameter varies over a space $M$, this defines a field $\hbar_q \colon M \to R$ by $\hbar_q(p) = 1 - q(p)^{-1}$.*
 
@@ -999,7 +1041,7 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 <div id="def:q-hodge-star" class="definition">
 
-**Definition 1.42** (\$q\$-Hodge star). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHodgeStar)*
+**Definition 1.45** (\$q\$-Hodge star). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHodgeStar)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with categorical Hodge star $\star$ ([categorical hodge star](#def:categorical-hodge-star)) and substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)). The *$q$-Hodge star* is the $q$-deformed involution $\star_q \colon \Omega^k(A) \to \Omega^{n-k}(A)$ defined by*
 
@@ -1014,7 +1056,7 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 <div id="def:categorical-action" class="definition">
 
-**Definition 1.43** (Categorical action). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalAction)*
+**Definition 1.46** (Categorical action). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalAction)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) equipped with substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)), $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)), a connection $\nabla$ ([categorical connection](#def:categorical-connection)), and a section $\psi \colon \mathbf{1} \to A$ (a "state"). The *categorical action* is the $R$-valued functional*
 
@@ -1038,7 +1080,7 @@ which is precisely the archimedean formula for $d_q$ ([archimedean $q$-exterior 
 
 <div id="prop:variational-equations" class="proposition">
 
-**Proposition 1.44** (Variational equations of the categorical action). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.variational_equations)*
+**Proposition 1.47** (Variational equations of the categorical action). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.variational_equations)*
 
 *Let $\mathcal{S}_q$ be the ([categorical action](#def:categorical-action)). The three variational equations are:*
 
@@ -1072,7 +1114,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:categorical-q-ext-deriv" class="definition">
 
-**Definition 1.45** (Categorical \$q\$-deformed exterior derivative). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQExtDeriv)*
+**Definition 1.48** (Categorical \$q\$-deformed exterior derivative). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQExtDeriv)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with connection $\nabla$ ([categorical connection](#def:categorical-connection)), substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)), and weight decomposition $\pi_H, \pi_V$ ([weight decomposition](#def:weight-decomposition)). The *$q$-deformed exterior derivative* $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ is*
 
@@ -1094,7 +1136,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:q-harmonic-form" class="definition">
 
-**Definition 1.46** (\$q\$-harmonic form (particle)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHarmonicForm)*
+**Definition 1.49** (\$q\$-harmonic form (particle)). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QHarmonicForm)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with $q$-deformed exterior derivative $d_q$ ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The *$q$-Laplacian* on $\Omega^k(A)$ is $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$. A *particle* is an element $\alpha \in \Omega^k(A)$ that is $q$-harmonic:*
 
@@ -1104,7 +1146,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:fermion-boson-decomposition" class="definition">
 
-**Definition 1.47** (Fermion–Boson decomposition). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Fermion)*
+**Definition 1.50** (Fermion–Boson decomposition). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Fermion)*
 
 *Let $\mathcal{H}_q^k = \ker\Delta_q \subset \Omega^k(A)$ denote the space of particles ([$q$-harmonic form](#def:q-harmonic-form)). The weight decomposition ([weight decomposition](#def:weight-decomposition)) restricts to a short exact sequence*
 
@@ -1134,7 +1176,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:categorical-point" class="definition">
 
-**Definition 1.48** (Categorical point). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalPoint)*
+**Definition 1.51** (Categorical point). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalPoint)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum universe](#def:quantum-universe)). A *categorical point* of $A$ is a morphism*
 
@@ -1145,7 +1187,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:observation" class="definition">
 
-**Definition 1.49** (Observation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Observation)*
+**Definition 1.52** (Observation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Observation)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe over a ring $R$ ([quantum observable universe](#def:quantum-observable-universe)), let $q$ denote the ([substrate parameter](#def:substrate-parameter)), and let $p \colon \mathbf{1} \to A$ be a ([categorical point](#def:categorical-point)). An *observation at $p$* is a morphism*
 
@@ -1179,7 +1221,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="def:categorical-instanton" class="definition">
 
-**Definition 1.50** (Categorical instanton). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalInstanton)*
+**Definition 1.53** (Categorical instanton). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalInstanton)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a ([quantum observable universe](#def:quantum-observable-universe)) with connection $\nabla$ ([categorical connection](#def:categorical-connection)) and $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)). The connection $\nabla$ is an *instanton* if its curvature $F_\nabla \in \Omega^2(A)$ is $\star_q$-self-dual:*
 
@@ -1201,7 +1243,7 @@ Each equation is obtained by computing $\delta\mathcal{S}_q = 0$ with respect to
 
 <div id="lem:categorical-irreducible" class="lemma">
 
-**Lemma 1.51** (Irreducibility from observability). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_irreducible)*
+**Lemma 1.54** (Irreducibility from observability). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_irreducible)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe. Any categorical instanton $\nabla$ ([categorical instanton](#def:categorical-instanton)) is irreducible: $\operatorname{Hom}_{\mathcal{C}}(\mathbf{1},\,\mathrm{Ad}(A)) = 0$.*
 
@@ -1219,7 +1261,7 @@ Since $\mathrm{Ad}(A)$ is the trace-free part of $A \otimes A^*$, the Frobenius 
 
 <div id="prop:categorical-self-duality" class="proposition">
 
-**Proposition 1.52** (Categorical self-duality). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_self_duality)*
+**Proposition 1.55** (Categorical self-duality). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_self_duality)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with volume form $\mathrm{vol} \in \Omega^n(A)$ ([$q$-Hodge star](#def:q-hodge-star)). Every connection $\nabla$ that is a critical point of the categorical Yang–Mills functional*
 
@@ -1257,7 +1299,7 @@ where the second term is topological (determined by the class $[F_\nabla] \in \O
 
 <div id="prop:categorical-dq-squared" class="proposition">
 
-**Proposition 1.53** (Non-vanishing of \$d_q^2\$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_dq_squared)*
+**Proposition 1.56** (Non-vanishing of \$d_q^2\$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_dq_squared)*
 
 *Let $d_q$ be the categorical $q$-deformed exterior derivative ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The composition $d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is given by*
 
@@ -1305,7 +1347,7 @@ Since $\pi_H + \pi_V = \mathrm{id}$ and $\mathcal{L}_\xi = \iota_\xi \circ d + d
 
 <div id="def:categorical-q-lie-bracket" class="definition">
 
-**Definition 1.54** (Categorical \$q\$-Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQLieBracket)*
+**Definition 1.57** (Categorical \$q\$-Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQLieBracket)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with Reeb derivation $\xi$ ([categorical Reeb derivation](#def:categorical-reeb)) and substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)). The *$q$-deformed Lie bracket* on derivations of $A$ is*
 
@@ -1319,7 +1361,7 @@ Since $\pi_H + \pi_V = \mathrm{id}$ and $\mathcal{L}_\xi = \iota_\xi \circ d + d
 
 <div id="def:categorical-q-connection" class="definition">
 
-**Definition 1.55** (Categorical \$q\$-deformed connection). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQConnection)*
+**Definition 1.58** (Categorical \$q\$-deformed connection). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQConnection)*
 
 *Let $\nabla$ be a connection on $A$ ([categorical connection](#def:categorical-connection)) and $\xi$ the Reeb derivation ([categorical Reeb derivation](#def:categorical-reeb)). The *$q$-deformed connection* is*
 
@@ -1340,7 +1382,7 @@ We now specialise the categorical framework to the archimedean setting, where th
 
 <div id="def:q-yang-mills-levi" class="definition">
 
-**Definition 1.56** (\$q\$-Weighted Yang–Mills–Levi functional). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QYangMillsLevi)*
+**Definition 1.59** (\$q\$-Weighted Yang–Mills–Levi functional). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QYangMillsLevi)*
 
 *Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)). The *$q$-weighted Yang–Mills–Levi functional* is*
 
@@ -1354,7 +1396,7 @@ We now specialise the categorical framework to the archimedean setting, where th
 
 <div id="prop:main-commutative-diagram" class="proposition">
 
-**Proposition 1.57** (Main Commutative Diagram). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram)*
+**Proposition 1.60** (Main Commutative Diagram). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.main_commutative_diagram)*
 
 *Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe with instanton connection $A$ ([instanton](#ex:instanton)) and substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)). Let $\mathbf{E}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $S_q$ ([$q$-Yang–Mills–Levi functional](#def:q-yang-mills-levi)), and let $\nabla^A$ denote parallel transport along $A$. The following diagram commutes:*
 
@@ -1400,7 +1442,7 @@ This chapter collects the categorical, algebraic, and analytic details that unde
 
 <div id="def:quantum-flatness" class="definition">
 
-**Definition 1.58** (Quantum flatness). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumFlatness)*
+**Definition 1.61** (Quantum flatness). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.QuantumFlatness)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with gauge group $G_q = \mathrm{Aut}^{\otimes}(\tau)$ ([quantum gauge group](#def:quantum-gauge-group)) and connection $\nabla$ on $A$ ([categorical connection](#def:categorical-connection)). Let $\mathrm{INN}(G_q)$ denote the inner-automorphism $2$-group of $G_q$, with $2$-form datum $B \in \Omega^2(A) \otimes \mathrm{Ad}(A)$.*
 
@@ -1422,7 +1464,7 @@ This chapter collects the categorical, algebraic, and analytic details that unde
 
 <div id="prop:emergence-to-quantum-flat" class="proposition">
 
-**Proposition 1.59** (From Tannakian emergence to 2-group quantum flatness). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.emergence_to_quantum_flat)*
+**Proposition 1.62** (From Tannakian emergence to 2-group quantum flatness). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.emergence_to_quantum_flat)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe satisfying the ([categorical volume constraint](#def:categorical-volume-constraint)), so that $G_q = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}_q(2)$ ([SU(2) emergence](#thm:su2-emergence)). Then the inner-automorphism $2$-group $\mathrm{INN}(G_q)$ is the unique strict $2$-group whose quantum flatness condition $F_A = B$ reproduces the instanton equation $F_A^{-} = 0$ under the simplicity constraint.*
 
@@ -1446,9 +1488,9 @@ The argument proceeds in three steps.
 
 <div id="prop:dq-squared" class="proposition">
 
-**Proposition 1.60** (d_q^2 does not vanish). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.dq_squared)*
+**Proposition 1.63** (d_q^2 does not vanish). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.dq_squared)*
 
-*The archimedean specialisation of the categorical $d_q^2$ formula ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)) yields, for the $q$-deformed exterior derivative ([$q$-exterior derivative](#def:q-ext-deriv)) acting on $\Omega^k(M)$:*
+*The archimedean specialisation of the categorical $d_q^2$ formula ([non-vanishing of $d_q^2$](#prop:categorical-dq-squared)) yields, for the $q$-deformed exterior derivative ([$q$-exterior derivative](#ex:q-ext-deriv)) acting on $\Omega^k(M)$:*
 
 *$$d_q^2\,\alpha
   \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.$$*
@@ -1480,9 +1522,9 @@ The first term vanishes since $d^2 = 0$. The second expands as $ab\,d\theta \wed
 
 <div id="prop:q-jacobiator" class="proposition">
 
-**Proposition 1.61** (Jacobiator of the q-Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.q_jacobiator)*
+**Proposition 1.64** (Jacobiator of the q-Lie bracket). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.q_jacobiator)*
 
-*The archimedean specialisation of the categorical $q$-Lie bracket ([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)) to the $q$-deformed Lie bracket ([$q$-Lie bracket](#def:q-lie-bracket)) violates the Jacobi identity when $q \neq 1$.*
+*The archimedean specialisation of the categorical $q$-Lie bracket ([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)) to the $q$-deformed Lie bracket ([$q$-Lie bracket](#ex:q-lie-bracket)) violates the Jacobi identity when $q \neq 1$.*
 
 *Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e. $\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator**
 
@@ -1523,7 +1565,7 @@ The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet)) en
 
 <div id="prop:categorical-jet-prolongation" class="proposition">
 
-**Proposition 1.62** (Jet prolongation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_jet_prolongation)*
+**Proposition 1.65** (Jet prolongation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.categorical_jet_prolongation)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum universe with connection $\nabla$ ([categorical connection](#def:categorical-connection)). Then $J^1(A)$ ([categorical jet](#def:categorical-jet)) inherits a Frobenius–Hopf structure from $A$, and the quadruple $(\mathcal{C},\, J^1(A),\, \tau',\, q)$ — where $\tau'$ is the induced fibre functor — is again a quantum universe. The following diagram commutes:*
 
@@ -1541,7 +1583,7 @@ The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet)) en
 
 <div id="def:categorical-transport" class="definition">
 
-**Definition 1.63** (Categorical transport equation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalTransport)*
+**Definition 1.66** (Categorical transport equation). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalTransport)*
 
 *Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with instanton $\nabla$ ([categorical instanton](#def:categorical-instanton)) and $q$-deformed exterior derivative $d_q$ ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The *categorical transport equation* for a section $\psi \in \tau(J^1(A))$ ([categorical jet](#def:categorical-jet)) is*
 
@@ -1562,7 +1604,7 @@ The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet)) en
 
 <div id="def:categorical-q-reeb-flow" class="definition">
 
-**Definition 1.64** (Categorical q-Reeb flow). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQReebFlow)*
+**Definition 1.67** (Categorical q-Reeb flow). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQReebFlow)*
 
 *Let $\xi$ be the Reeb derivation of $A$ ([categorical Reeb derivation](#def:categorical-reeb)) and $[\,\cdot\,,\cdot\,]_q$ the $q$-Lie bracket ([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)). The *$q$-deformed Reeb derivation* $\xi_q$ is the derivation of $A$ defined by*
 
@@ -1575,7 +1617,9 @@ The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet)) en
 
 <div id="def:categorical-q-torsion-leaf" class="definition">
 
-**Definition 1.65** (Categorical q-torsion leaf). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQTorsionLeaf) A *$q$-torsion leaf* is a maximal sub-object $L \hookrightarrow A$ such that:*
+**Definition 1.68** (Categorical q-torsion leaf). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.CategoricalQTorsionLeaf)*
+
+*A *$q$-torsion leaf* is a maximal sub-object $L \hookrightarrow A$ such that:*
 
 1.  ***Horizontality:** $L \subset \ker(\pi_V)$ (all forms on $L$ are horizontal).*
 
@@ -2048,8 +2092,8 @@ The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ ensures t
 | Global gluing of $\mathcal{A}_\infty$ (Prop. <a href="#prop:global-gluing" data-reference-type="ref" data-reference="prop:global-gluing">2.12</a>)                                                                      | Yekutieli’s twisted quantization map on algebraic varieties          |                                                                                                                                        |
 | Vacuum State $\tau$ (Prop. <a href="#prop:vacuum-state" data-reference-type="ref" data-reference="prop:vacuum-state">2.13</a>)                                                                                          | Unique MC element in the pronilpotent DG Lie algebra                 |                                                                                                                                        |
 | Mass Identity (Def. <a href="#def:mass-identity" data-reference-type="ref" data-reference="def:mass-identity">2.15</a>)                                                                                                 | Nonabelian multiplicative integral; 2D nonabelian Stokes theorem     |                                                                                                                                        |
-| Substrate field $q(p)$ (Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.39</a>)                                                                            | Local twisted deformation parameter; MC element varying over $M$     |                                                                                                                                        |
-| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.40</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                                        |
+| Substrate field $q(p)$ (Def. <a href="#def:substrate-parameter" data-reference-type="ref" data-reference="def:substrate-parameter">1.41</a>)                                                                            | Local twisted deformation parameter; MC element varying over $M$     |                                                                                                                                        |
+| $\mathrm{SU}_q(2)$ gauge flow (Def. <a href="#def:quantum-gauge-group" data-reference-type="ref" data-reference="def:quantum-gauge-group">1.43</a>)                                                                     | Pronilpotent deformation of the coordinate algebra                   |                                                                                                                                        |
 | Descartes condition $\chi(E) = -6$ (Def. <a href="#def:descartes-condition" data-reference-type="ref" data-reference="def:descartes-condition">6.1</a>)                                                                 | Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe) | ; Ex. <a href="#ex:descartes-yekutieli" data-reference-type="ref" data-reference="ex:descartes-yekutieli">[ex:descartes-yekutieli]</a> |
 | Cosimplicial crossed groupoid (Prop. <a href="#prop:cosimplicial-crossed-groupoid" data-reference-type="ref" data-reference="prop:cosimplicial-crossed-groupoid">2.4</a>)                                               | Cosimplicial object in crossed groupoids; Čech nerve of a gerbe      |                                                                                                                                        |
 | Twisted $2$-cocycle $d(g_{ijk}) = a \cdot g \cdot a^{-1}$ (Prop. <a href="#prop:descent-condition" data-reference-type="ref" data-reference="prop:descent-condition">2.5</a>)                                           | Twisted Čech cocycle in $H^2(M, \mathcal{O}_M^\times)$               |                                                                                                                                        |
@@ -3688,14 +3732,7 @@ The Skein relation itself is the mass-functional analogue of the Kauffman bracke
 
 *Using the derived $q = 1.1097$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:*
 
-*$$\begin{array}{|l|l|l|l|}
-\hline
-\text{\textbf{Structure}} & \text{\textbf{Topological Formula}} & \text{\textbf{QOU Result (MeV)}} & \text{\textbf{CODATA (MeV)}} \\ \hline
-\text{Proton } (m_p) & Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{uud} & 938.272 & 938.272 \\ \hline
-\text{Neutron } (m_n) & Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{udd} & 939.565 & 939.565 \\ \hline
-\text{Deuteron } (m_D) & \mathcal{M}(L_6) - \text{Binding} & 1875.613 & 1875.613 \\ \hline
-\text{Binding Energy} & \Delta \text{ Skein Polynomial} & 2.224 & 2.2245 \\ \hline
-\end{array}$$*
+*\| **Structure** \| **Topological Formula** \| **QOU Result (MeV)** \| **CODATA (MeV)** \| \|—\|—\|—\|—\| \| Proton ($m_p$) \| $Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ \| 938.272 \| 938.272 \| \| Neutron ($m_n$) \| $Q(q)\, \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ \| 939.565 \| 939.565 \| \| Deuteron ($m_D$) \| $\mathcal{M}(L_6) - \text{Binding}$ \| 1875.613 \| 1875.613 \| \| Binding Energy \| $\Delta$ Skein Polynomial \| 2.224 \| 2.2245 \|*
 
 </div>
 
@@ -3724,51 +3761,11 @@ $$m_N
 
 *Step 2a: Proton ($uud$).* The proton has quarks $(u_1, u_2, d)$. The three crossing pairs and their Skein masses are:
 
-$$\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
-  & \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   & (u_1,\, u_2) &
-  \displaystyle \mathcal{S}_{uu}
-  = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}
-  & 312.36 \\ \hline
-\text{II}  & (u_1,\, d)   &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{III} & (u_2,\, d)   &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-  m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}}
-  & \mathbf{938.272} \\ \hline
-\end{array}$$
+\| **Pair** \| **Quarks** \| **Skein mass** \| **Value (MeV)** \| \|—\|—\|—\|—\| \| I \| $(u_1,\, u_2)$ \| $\mathcal{S}_{uu} = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}$ \| 312.36 \| \| II \| $(u_1,\, d)$ \| $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ \| 312.97 \| \| III \| $(u_2,\, d)$ \| $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ \| 312.97 \| \| \| \| **Total:** $m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}$ \| **938.272** \|
 
 *Step 2b: Neutron ($udd$).* The neutron has quarks $(u, d_1, d_2)$. Swapping one up quark for a down quark replaces the same-flavor pair:
 
-$$\renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|l|c|}
-\hline
-\text{\textbf{Pair}} & \text{\textbf{Quarks}} & \text{\textbf{Skein mass}}
-  & \text{\textbf{Value (MeV)}} \\ \hline
-\text{I}   & (u,\, d_1) &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{II}  & (u,\, d_2) &
-  \displaystyle \mathcal{S}_{ud}
-  = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 312.97 \\ \hline
-\text{III} & (d_1,\, d_2) &
-  \displaystyle \mathcal{S}_{dd}
-  = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}
-  & 313.65 \\ \hline
-\multicolumn{3}{|r|}{\text{\textbf{Total:}}\quad
-  m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}}
-  & \mathbf{939.565} \\ \hline
-\end{array}$$
+\| **Pair** \| **Quarks** \| **Skein mass** \| **Value (MeV)** \| \|—\|—\|—\|—\| \| I \| $(u,\, d_1)$ \| $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ \| 312.97 \| \| II \| $(u,\, d_2)$ \| $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ \| 312.97 \| \| III \| $(d_1,\, d_2)$ \| $\mathcal{S}_{dd} = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}$ \| 313.65 \| \| \| \| **Total:** $m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}$ \| **939.565** \|
 
 *Step 2c: The $u$-$d$ mass splitting.* The proton–neutron mass difference isolates the same-flavor crossing pair:
 
@@ -3792,6 +3789,29 @@ and the individual dressed masses are $\mu_u \approx 311.10\;\mathrm{MeV}$ and $
 *Step 3: Deuteron and binding energy.* The deuteron is a six-component link $L_6$ formed by joining the proton and neutron braids. Its mass is the Skein mass of $L_6$ minus the binding energy, which equals the change in the Skein polynomial when the proton–neutron crossing is smoothed: $\Delta E_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived value is $2.2246\;\mathrm{MeV}$, agreeing to sub-keV precision.
 
 The formal Lean verification of each row is recorded in QOU.HadronicMass with NIST CODATA 2022 precision. ◻
+
+</div>
+
+<div id="ex:terminal-resolution-cz" class="example">
+
+**Example 6.10** (Terminal resolution in \$\\}mathbb{C}\[z\]\$).
+
+*In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the substrate parameter is a smooth function $q \colon M \to \mathbb{C}^{\times}$. At a point $p \in M$ where the substrate is locally constant, the fibre algebra is $\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]}
+\mathbb{C}$, and the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)) evaluates to*
+
+*$$\hbar_q(p) = 1 - q(p)^{-1}.$$*
+
+*Specialising the topological mass formula ([topological mass formula](#conj:topological-mass-formula)) to $q_0 = 1.1097$ (derived from $m_\mu / m_e$, [skein mass relation](#prop:skein-mass-relation)):*
+
+*$$\hbar_{q_0} = 1 - \frac{1}{1.1097} \approx 0.09889,
+  \qquad
+  \hbar_{q_0}^{-2} \approx 102.25.$$*
+
+*The mass predictions then evaluate as follows over $\mathbb{C}[z]$ at $z = q_0$:*
+
+*\| **Particle** \| $\operatorname{Vol}(K)$ \| $m(K) = \operatorname{Vol}(K) / \hbar_{q_0}^2$ \| **CODATA** \| \|—\|—\|—\|—\| \| Electron ($3_1$) \| 0 (non-hyp.) \| $m_e$ (baseline) \| 0.511 MeV \| \| Muon ($4_1$) \| 2.0299 \| $2.0299 \times 102.25 \approx 207.6\, m_e$ \| $206.768\, m_e$ \| \| Proton \| $Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ \| 938.272 MeV \| 938.272 MeV \| \| Neutron \| $Q(q_0)\, \operatorname{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ \| 939.565 MeV \| 939.565 MeV \|*
+
+*The passage from the categorical formula to these numbers requires exactly the archimedean bridge: the fibre functor $\tau$ maps the categorical Frobenius form $\int_A$ to the Webster inner product on $M$, and the categorical substrate parameter to the smooth function $q(p)$. The polynomial ring $\mathbb{C}[z]$ serves as the universal coefficient ring: specialising $z \mapsto q_0$ recovers the numerical predictions, while keeping $z$ formal retains the full $q$-deformed algebraic structure.*
 
 </div>
 
@@ -3965,7 +3985,7 @@ The QOU framework ([Chapter](#chap:qou)) makes predictions that differ from the 
 
 <div id="prop:local-substrate-q" class="proposition">
 
-**Proposition 6.10** (Local Value of the Substrate Parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Experimental.local_substrate_q)*
+**Proposition 6.11** (Local Value of the Substrate Parameter). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.Experimental.local_substrate_q)*
 
 *In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) satisfies*
 

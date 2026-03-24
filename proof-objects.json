@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-24T19:54:10.562794+00:00",
+    "generated_at": "2026-03-24T20:48:45.860940+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -211,7 +211,7 @@
       "formalization_status": "stated",
       "uses": [
         "def:quantum-observable-universe",
-        "def:spin-labels",
+        "prop:spin-labels",
         "thm:su2-emergence"
       ]
     },
@@ -254,11 +254,35 @@
       ]
     },
     {
+      "label": "thm:weight-decomposition-exists",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 553,
+        "chapter": 2
+      },
+      "title": "{Existence of the weight decomposition}",
+      "lean": {
+        "decl": "QOU.WeightDecomposition.ofMaximalTorus",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:maximal-torus",
+        "def:higher-forms",
+        "def:weight-decomposition"
+      ]
+    },
+    {
       "label": "prop:frobenius-relation",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 556,
+        "line": 578,
         "chapter": 2
       },
       "title": "{Frobenius relation}",
@@ -280,7 +304,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 599,
+        "line": 621,
         "chapter": 2
       },
       "title": "{Frobenius relation for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -295,7 +319,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 612,
+        "line": 634,
         "chapter": 2
       },
       "title": "{Involutive structure (\\$\\textbackslash\\{\\}ast\\$-structure)}",
@@ -316,7 +340,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 668,
+        "line": 690,
         "chapter": 2
       },
       "title": "{Positive-definite structure}",
@@ -337,7 +361,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 699,
+        "line": 721,
         "chapter": 2
       },
       "title": "{Involutive structure on \\$\\textbackslash\\{\\}mathrm\\{Rep\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -353,7 +377,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 732,
+        "line": 754,
         "chapter": 2
       },
       "title": "{Volume form from rigidity and symplectic self-duality}",
@@ -374,7 +398,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 780,
+        "line": 802,
         "chapter": 2
       },
       "title": "{Emergence of the gauge group}",
@@ -395,7 +419,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 869,
+        "line": 891,
         "chapter": 2
       },
       "title": "{Emergence of \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$: the full chain}",
@@ -407,16 +431,16 @@
       ]
     },
     {
-      "label": "def:spin-labels",
-      "object_type": "definition",
+      "label": "prop:spin-labels",
+      "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 898,
+        "line": 920,
         "chapter": 2
       },
       "title": "{Spin labels and the fundamental object}",
       "lean": {
-        "decl": "QOU.SpinLabels",
+        "decl": "QOU.SpinDecomposition",
         "file": "QOU/QuantumObservableUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
@@ -433,13 +457,13 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 918,
+        "line": 940,
         "chapter": 2
       },
       "title": "{Spin decomposition of \\$\\textbackslash\\{\\}mathrm\\{Rep\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
       "formalization_status": "not_started",
       "uses": [
-        "def:spin-labels",
+        "prop:spin-labels",
         "ex:qou-su2"
       ]
     },
@@ -448,7 +472,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 958,
+        "line": 980,
         "chapter": 2
       },
       "title": "{Categorical Reeb derivation}",
@@ -466,11 +490,35 @@
       ]
     },
     {
+      "label": "thm:categorical-reeb-exists",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1007,
+        "chapter": 2
+      },
+      "title": "{Existence of the categorical Reeb derivation}",
+      "lean": {
+        "decl": "QOU.CategoricalReeb.ofWeightDecomposition",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:maximal-torus",
+        "def:weight-decomposition",
+        "def:categorical-reeb"
+      ]
+    },
+    {
       "label": "ex:reeb-su2",
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 985,
+        "line": 1031,
         "chapter": 2
       },
       "title": "{Reeb derivation for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -485,7 +533,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1008,
+        "line": 1054,
         "chapter": 2
       },
       "title": "{Projective line object}",
@@ -499,6 +547,7 @@
       "formalization_status": "stated",
       "uses": [
         "def:quantum-observable-universe",
+        "thm:su2-emergence",
         "def:maximal-torus"
       ]
     },
@@ -507,7 +556,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1025,
+        "line": 1071,
         "chapter": 2
       },
       "title": "{Projective line for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -522,7 +571,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1039,
+        "line": 1085,
         "chapter": 2
       },
       "title": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
@@ -536,6 +585,7 @@
       "formalization_status": "stated",
       "uses": [
         "def:projective-line-object",
+        "def:categorical-reeb",
         "ex:reeb-decomposition",
         "def:weight-decomposition"
       ]
@@ -545,7 +595,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1071,
+        "line": 1117,
         "chapter": 2
       },
       "title": "{Substrate parameter as the radial coordinate}",
@@ -560,7 +610,9 @@
       "uses": [
         "def:contact-affine-chart",
         "def:substrate-parameter",
-        "def:fermion-boson-decomposition"
+        "def:fermion-boson-decomposition",
+        "def:quantum-planck-constant",
+        "ex:q-reeb-flow"
       ]
     },
     {
@@ -568,7 +620,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1110,
+        "line": 1156,
         "chapter": 2
       },
       "title": "{Fiber--adjoint-fiber involution}",
@@ -591,7 +643,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1198,
+        "line": 1244,
         "chapter": 2
       },
       "title": "{Fiber--adjoint-fiber involution for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -606,7 +658,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1227,
+        "line": 1273,
         "chapter": 2
       },
       "title": "{Categorical connection and curvature}",
@@ -628,7 +680,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1265,
+        "line": 1311,
         "chapter": 2
       },
       "title": "{Connection and curvature on \\$\\textbackslash\\{\\}mathcal\\{O\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -643,7 +695,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1284,
+        "line": 1330,
         "chapter": 2
       },
       "title": "{Categorical jet object}",
@@ -665,7 +717,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1315,
+        "line": 1361,
         "chapter": 2
       },
       "title": "{Categorical Hodge star}",
@@ -687,7 +739,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1345,
+        "line": 1391,
         "chapter": 2
       },
       "title": "{Hodge star on \\$\\textbackslash\\{\\}mathcal\\{O\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -702,7 +754,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1378,
+        "line": 1424,
         "chapter": 2
       },
       "title": "{Spatial realization functor}",
@@ -717,7 +769,8 @@
       "uses": [
         "def:quantum-observable-universe",
         "def:categorical-point",
-        "def:frobenius-pairing"
+        "def:frobenius-pairing",
+        "def:categorical-reeb"
       ]
     },
     {
@@ -725,11 +778,18 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1429,
+        "line": 1475,
         "chapter": 2
       },
       "title": "{Categorical--geometric correspondence}",
-      "formalization_status": "not_started",
+      "lean": {
+        "decl": "QOU.categorical_archimedean_bridge",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
       "uses": [
         "def:spatial-realization-functor",
         "def:weight-decomposition",
@@ -741,7 +801,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1498,
+        "line": 1545,
         "chapter": 2
       },
       "title": "{Substrate parameter}",
@@ -760,11 +820,35 @@
       ]
     },
     {
+      "label": "thm:substrate-parameter-exists",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1601,
+        "chapter": 2
+      },
+      "title": "{Existence of the substrate parameter}",
+      "lean": {
+        "decl": "QOU.SubstrateParameter.ofReebDecomposition",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:categorical-reeb",
+        "def:weight-decomposition",
+        "def:substrate-parameter"
+      ]
+    },
+    {
       "label": "def:quantum-gauge-group",
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1554,
+        "line": 1626,
         "chapter": 2
       },
       "title": "{Quantum Gauge Group}",
@@ -787,7 +871,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1571,
+        "line": 1643,
         "chapter": 2
       },
       "title": "{Quantum Planck Constant}",
@@ -809,7 +893,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1584,
+        "line": 1656,
         "chapter": 2
       },
       "title": "{\\$q\\$-Hodge star}",
@@ -831,7 +915,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1608,
+        "line": 1680,
         "chapter": 2
       },
       "title": "{Categorical action}",
@@ -848,7 +932,8 @@
         "def:quantum-observable-universe",
         "def:categorical-connection",
         "def:substrate-parameter",
-        "def:q-hodge-star"
+        "def:q-hodge-star",
+        "rem:categorical-action-notation"
       ]
     },
     {
@@ -856,7 +941,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1641,
+        "line": 1713,
         "chapter": 2
       },
       "title": "{Variational equations of the categorical action}",
@@ -877,7 +962,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1721,
+        "line": 1793,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-deformed exterior derivative}",
@@ -893,7 +978,8 @@
         "def:quantum-observable-universe",
         "def:categorical-connection",
         "def:substrate-parameter",
-        "def:weight-decomposition"
+        "def:weight-decomposition",
+        "def:positive-definite-dagger"
       ]
     },
     {
@@ -901,7 +987,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1754,
+        "line": 1826,
         "chapter": 2
       },
       "title": "{\\$q\\$-harmonic form (particle)}",
@@ -922,7 +1008,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1770,
+        "line": 1842,
         "chapter": 2
       },
       "title": "{Fermion--Boson decomposition}",
@@ -944,7 +1030,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1808,
+        "line": 1880,
         "chapter": 2
       },
       "title": "{Categorical point}",
@@ -965,7 +1051,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1822,
+        "line": 1894,
         "chapter": 2
       },
       "title": "{Observation}",
@@ -988,7 +1074,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1876,
+        "line": 1948,
         "chapter": 2
       },
       "title": "{Categorical instanton}",
@@ -1011,7 +1097,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1906,
+        "line": 1978,
         "chapter": 2
       },
       "title": "{Irreducibility from observability}",
@@ -1033,7 +1119,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1935,
+        "line": 2007,
         "chapter": 2
       },
       "title": "{Categorical self-duality}",
@@ -1055,7 +1141,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1984,
+        "line": 2056,
         "chapter": 2
       },
       "title": "{Non-vanishing of \\$d\\_q\\textasciicircum{}2\\$}",
@@ -1077,7 +1163,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2068,
+        "line": 2140,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-Lie bracket}",
@@ -1099,7 +1185,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2087,
+        "line": 2159,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-deformed connection}",
@@ -1121,7 +1207,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2125,
+        "line": 2197,
         "chapter": 2
       },
       "title": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
@@ -1144,7 +1230,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2144,
+        "line": 2216,
         "chapter": 2
       },
       "title": "{Main Commutative Diagram}",
@@ -1168,7 +1254,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2235,
+        "line": 2307,
         "chapter": 2
       },
       "title": "{Quantum flatness}",
@@ -1191,7 +1277,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2271,
+        "line": 2343,
         "chapter": 2
       },
       "title": "{From Tannakian emergence to 2-group quantum flatness}",
@@ -1215,7 +1301,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2329,
+        "line": 2401,
         "chapter": 2
       },
       "title": "{d\\_q\\textasciicircum{}2 does not vanish}",
@@ -1236,7 +1322,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2381,
+        "line": 2453,
         "chapter": 2
       },
       "title": "{Jacobiator of the q-Lie bracket}",
@@ -1257,7 +1343,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2447,
+        "line": 2519,
         "chapter": 2
       },
       "title": "{Jet prolongation}",
@@ -1279,7 +1365,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2471,
+        "line": 2543,
         "chapter": 2
       },
       "title": "{Categorical transport equation}",
@@ -1302,7 +1388,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2503,
+        "line": 2575,
         "chapter": 2
       },
       "title": "{Categorical q-Reeb flow}",
@@ -1324,7 +1410,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2524,
+        "line": 2596,
         "chapter": 2
       },
       "title": "{Categorical q-torsion leaf}",
@@ -1335,7 +1421,11 @@
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
         "last_edited_commit": "unknown"
       },
-      "formalization_status": "stated"
+      "formalization_status": "stated",
+      "uses": [
+        "def:weight-decomposition",
+        "def:categorical-q-reeb-flow"
+      ]
     },
     {
       "label": "prop:brings-is-qou",
@@ -2708,9 +2798,14 @@
       },
       "formalization_status": "stated",
       "uses": [
+        "conj:topological-mass-formula",
         "rem:skein-decomposition",
         "def:substrate-parameter",
-        "def:quantum-planck-constant"
+        "def:quantum-planck-constant",
+        "ex:c-quantum-observable-universe",
+        "thm:weight-decomposition-exists",
+        "thm:categorical-reeb-exists",
+        "thm:substrate-parameter-exists"
       ]
     },
     {
@@ -2728,6 +2823,7 @@
       "formalization_status": "stated",
       "uses": [
         "prop:skein-mass-relation",
+        "ex:c-quantum-observable-universe",
         "def:mass-identity",
         "thm:topological-mass",
         "cor:mass-identity-C",
@@ -2735,11 +2831,29 @@
       ]
     },
     {
+      "label": "ex:terminal-resolution-cz",
+      "object_type": "example",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 512,
+        "chapter": 7
+      },
+      "title": "{Terminal resolution in \\$\\textbackslash\\{\\}mathbb\\{C\\}[z",
+      "formalization_status": "not_started",
+      "uses": [
+        "prop:terminal-resolution",
+        "ex:c-quantum-observable-universe",
+        "conj:topological-mass-formula",
+        "def:substrate-parameter",
+        "def:quantum-planck-constant"
+      ]
+    },
+    {
       "label": "prop:local-substrate-q",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 738,
+        "line": 747,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -2833,7 +2947,7 @@
     },
     {
       "from": "def:maximal-torus",
-      "to": "def:spin-labels",
+      "to": "prop:spin-labels",
       "relation": "uses"
     },
     {
@@ -2864,6 +2978,26 @@
     {
       "from": "def:weight-decomposition",
       "to": "def:higher-forms",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:weight-decomposition-exists",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:weight-decomposition-exists",
+      "to": "def:maximal-torus",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:weight-decomposition-exists",
+      "to": "def:higher-forms",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:weight-decomposition-exists",
+      "to": "def:weight-decomposition",
       "relation": "uses"
     },
     {
@@ -2937,18 +3071,18 @@
       "relation": "uses"
     },
     {
-      "from": "def:spin-labels",
+      "from": "prop:spin-labels",
       "to": "def:quantum-observable-universe",
       "relation": "uses"
     },
     {
-      "from": "def:spin-labels",
+      "from": "prop:spin-labels",
       "to": "thm:su2-emergence",
       "relation": "uses"
     },
     {
       "from": "ex:spin-labels-su2",
-      "to": "def:spin-labels",
+      "to": "prop:spin-labels",
       "relation": "uses"
     },
     {
@@ -2967,6 +3101,26 @@
       "relation": "uses"
     },
     {
+      "from": "thm:categorical-reeb-exists",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:categorical-reeb-exists",
+      "to": "def:maximal-torus",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:categorical-reeb-exists",
+      "to": "def:weight-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:categorical-reeb-exists",
+      "to": "def:categorical-reeb",
+      "relation": "uses"
+    },
+    {
       "from": "ex:reeb-su2",
       "to": "def:categorical-reeb",
       "relation": "uses"
@@ -2979,6 +3133,11 @@
     {
       "from": "def:projective-line-object",
       "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:projective-line-object",
+      "to": "thm:su2-emergence",
       "relation": "uses"
     },
     {
@@ -2999,6 +3158,11 @@
     {
       "from": "def:contact-affine-chart",
       "to": "def:projective-line-object",
+      "relation": "uses"
+    },
+    {
+      "from": "def:contact-affine-chart",
+      "to": "def:categorical-reeb",
       "relation": "uses"
     },
     {
@@ -3024,6 +3188,16 @@
     {
       "from": "prop:substrate-radial-coordinate",
       "to": "def:fermion-boson-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:substrate-radial-coordinate",
+      "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:substrate-radial-coordinate",
+      "to": "ex:q-reeb-flow",
       "relation": "uses"
     },
     {
@@ -3117,6 +3291,11 @@
       "relation": "uses"
     },
     {
+      "from": "def:spatial-realization-functor",
+      "to": "def:categorical-reeb",
+      "relation": "uses"
+    },
+    {
       "from": "prop:categorical-archimedean-bridge",
       "to": "def:spatial-realization-functor",
       "relation": "uses"
@@ -3144,6 +3323,26 @@
     {
       "from": "def:substrate-parameter",
       "to": "def:categorical-reeb",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:substrate-parameter-exists",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:substrate-parameter-exists",
+      "to": "def:categorical-reeb",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:substrate-parameter-exists",
+      "to": "def:weight-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:substrate-parameter-exists",
+      "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
@@ -3207,6 +3406,11 @@
       "relation": "uses"
     },
     {
+      "from": "def:categorical-action",
+      "to": "rem:categorical-action-notation",
+      "relation": "uses"
+    },
+    {
       "from": "prop:variational-equations",
       "to": "def:categorical-action",
       "relation": "uses"
@@ -3229,6 +3433,11 @@
     {
       "from": "def:categorical-q-ext-deriv",
       "to": "def:weight-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-q-ext-deriv",
+      "to": "def:positive-definite-dagger",
       "relation": "uses"
     },
     {
@@ -3444,6 +3653,16 @@
     {
       "from": "def:categorical-q-reeb-flow",
       "to": "def:categorical-q-lie-bracket",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-q-torsion-leaf",
+      "to": "def:weight-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-q-torsion-leaf",
+      "to": "def:categorical-q-reeb-flow",
       "relation": "uses"
     },
     {
@@ -4343,6 +4562,11 @@
     },
     {
       "from": "prop:skein-mass-relation",
+      "to": "conj:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:skein-mass-relation",
       "to": "rem:skein-decomposition",
       "relation": "uses"
     },
@@ -4357,8 +4581,33 @@
       "relation": "uses"
     },
     {
+      "from": "prop:skein-mass-relation",
+      "to": "ex:c-quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:skein-mass-relation",
+      "to": "thm:weight-decomposition-exists",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:skein-mass-relation",
+      "to": "thm:categorical-reeb-exists",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:skein-mass-relation",
+      "to": "thm:substrate-parameter-exists",
+      "relation": "uses"
+    },
+    {
       "from": "prop:terminal-resolution",
       "to": "prop:skein-mass-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "ex:c-quantum-observable-universe",
       "relation": "uses"
     },
     {
@@ -4379,6 +4628,31 @@
     {
       "from": "prop:terminal-resolution",
       "to": "conj:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "ex:terminal-resolution-cz",
+      "to": "prop:terminal-resolution",
+      "relation": "uses"
+    },
+    {
+      "from": "ex:terminal-resolution-cz",
+      "to": "ex:c-quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "ex:terminal-resolution-cz",
+      "to": "conj:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "ex:terminal-resolution-cz",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "ex:terminal-resolution-cz",
+      "to": "def:quantum-planck-constant",
       "relation": "uses"
     },
     {
