@@ -537,7 +537,17 @@
     .uptb{padding:.25rem .6rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent}
     .uptb:hover{color:var(--fg)}
     .uptb.on{color:var(--ac);border-bottom-color:var(--ac)}
-    .upc{padding:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;max-height:280px;overflow-y:auto}
+    .upc{padding:.6rem;font-size:.7rem;line-height:1.5;overflow-x:auto;max-height:280px;overflow-y:auto}
+    .upc.upc-src{font-family:var(--f-mono);white-space:pre-wrap}
+    .upc.upc-rendered p{margin:.5em 0}
+    .upc.upc-rendered ul{margin:.4em 0;padding-left:1.5em;list-style:none}
+    .upc.upc-rendered ol{margin:.4em 0;padding-left:1.5em}
+    .upc.upc-rendered li{margin:.4em 0}
+    .upc.upc-rendered strong{color:var(--fg-b)}
+    .upc.upc-rendered a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+    .upc.upc-rendered a:hover{color:var(--fg-b)}
+    .uph-close{margin-left:.4rem;font-size:.8rem;color:var(--fg-d);cursor:pointer;line-height:1;padding:0 .2rem}
+    .uph-close:hover{color:var(--ac)}
 
     /* Content */
     .bb p{margin:.5em 0}
@@ -920,7 +930,7 @@
       <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include examples in print"><input type="checkbox" id="dep-inc-ex" style="margin:0"> examples</label>
       <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include remarks in print"><input type="checkbox" id="dep-inc-rm" style="margin:0"> remarks</label>
       <button id="dep-print-btn" title="Print preview: paper with just these dependencies">print</button>
-      <a class="dep-link" id="dep-preview-link" title="Open addressable preview page" style="font-size:.6rem">preview</a>
+      <a class="dep-link" id="dep-preview-link" title="Open lightning view (critical path)" style="font-size:.6rem">&#x26A1; lightning</a>
       <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
       <button id="dep-close">&times; close</button>
     </div>
@@ -1676,6 +1686,11 @@
       goTo.href = `#${label}`;
       goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
       hd.appendChild(goTo);
+      const closeBtn = mk('span','uph-close');
+      closeBtn.textContent = '\u2715';
+      closeBtn.title = 'Close';
+      closeBtn.onclick = (e) => { e.stopPropagation(); p.classList.remove('open'); };
+      hd.appendChild(closeBtn);
       renderMath(hd);
       p.appendChild(hd);
 
@@ -1683,10 +1698,10 @@
       const tabs = mk('div','upt');
       const content = mk('div','upc');
       const views = [
-        {label:'rendered', show:() => { content.innerHTML = bh; fillTex(content, tx, ref.rendered); renderMath(content); }},
-        {label:'source', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.md||'')}</pre>`; }},
+        {label:'rendered', show:() => { content.className = 'upc upc-rendered'; content.innerHTML = bh; fillTex(content, tx, ref.rendered); renderMath(content); }},
+        {label:'source', show:() => { content.className = 'upc upc-src'; content.innerHTML = `<pre style="margin:0">${esc(ref.md||'')}</pre>`; }},
       ];
-      if (ref.lean?.source) views.push({label:'lean', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.lean.source)}</pre>`; }});
+      if (ref.lean?.source) views.push({label:'lean', show:() => { content.className = 'upc upc-src'; content.innerHTML = `<pre style="margin:0">${esc(ref.lean.source)}</pre>`; }});
 
       views.forEach((v, i) => {
         const b = mk('button','uptb' + (i===0?' on':''));
@@ -2254,7 +2269,7 @@
       depSubtitle.textContent = rootLabel;
       depLink.href = `#/viz/${hashWithBranch(rootLabel)}`;
       const depPreviewLink = document.getElementById('dep-preview-link');
-      if (depPreviewLink) depPreviewLink.href = `#/preview-dep-graph/${hashWithBranch(rootLabel)}`;
+      if (depPreviewLink) depPreviewLink.href = `#/view-lightning/${hashWithBranch(rootLabel)}`;
       depCloseRhs();
       renderDepGraphImpl(nodes, edges, externals, rootLabel);
     }
@@ -4529,7 +4544,8 @@
 
       const bar = mk('div', 'pv-bar');
       bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
-        <a href="#/preview-dep-graph/${esc(label)}">View dependency chain</a>
+        <a href="#/view-lightning/${esc(label)}">&#x26A1; Lightning view</a>
+        <a href="#/preview-lightning/${esc(label)}">Dependency chain</a>
         <button onclick="window.print()">Print</button>`;
       wrap.appendChild(bar);
 
@@ -4548,7 +4564,7 @@
       }
     }
 
-    /** Route: #/preview-dep-graph/label — full dependency chain print-friendly page */
+    /** Route: #/preview-lightning/label — full dependency chain print-friendly page */
     async function routePreviewDepGraph(label) {
       await ensurePaperIndex();
       const root = bix.get(label);
@@ -4562,8 +4578,10 @@
 
       const bar = mk('div', 'pv-bar');
       bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
+        <a href="#/view-lightning/${esc(label)}">&#x26A1; Lightning view</a>
         <a href="#/preview/${esc(label)}">Single block preview</a>
         <a href="#/viz/${esc(label)}">Interactive graph</a>
+        <a href="/api/pdf-lightning?label=${encodeURIComponent(label)}" target="_blank">&#x26A1; PDF</a>
         <button onclick="window.print()">Print</button>`;
       wrap.appendChild(bar);
 
@@ -4580,6 +4598,119 @@
       for (const b of blocks) { renderPreviewBlock(wrap, b); }
     }
 
+    /** Route: #/view-lightning/label — paper view filtered to critical path only */
+    async function routeViewLightning(label) {
+      await ensurePaperIndex();
+      const root = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!root) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const blocks = collectDepChainBlocks(label, { includeExamples: false, includeRemarks: false });
+      const chainLabels = new Set(blocks.map(b => b.label).filter(Boolean));
+
+      // Lightning view CSS — paper-like styling with lightning accent
+      const style = mk('style', '');
+      style.textContent = `
+        .lt-wrap{max-width:800px;margin:2rem auto;padding:0 2rem;line-height:var(--f-lh);font-family:var(--f-body);color:var(--fg)}
+        .lt-bar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;font-family:var(--f-head);font-size:.8rem;flex-wrap:wrap}
+        .lt-bar a,.lt-bar button{color:var(--ac);text-decoration:none;background:none;border:none;cursor:pointer;font-size:.8rem;font-family:var(--f-head)}
+        .lt-bar button{padding:.25rem .6rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg-s);color:var(--fg)}
+        .lt-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.3rem}
+        .lt-head svg{width:20px;height:20px;fill:var(--yel);flex-shrink:0}
+        .lt-title{font-family:var(--f-head);font-size:1.4rem;font-weight:600}
+        .lt-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+        .lt-blk{margin-bottom:1.8rem}
+        .lt-blk .env{border-left:3px solid var(--brd);padding:.8rem 1rem;margin:0}
+        .lt-blk .bh{margin-bottom:.4rem}
+        .lt-blk .bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+        .lt-blk .bt{font-family:var(--f-head);font-weight:600}
+        .lt-blk .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+        .lt-blk .bb{margin-top:.5rem}
+        .lt-blk .bb p{margin:.5em 0}
+        .lt-blk .bb ul{margin:.4em 0;padding-left:1.5em}
+        .lt-blk .bb ol{margin:.4em 0;padding-left:1.5em}
+        .lt-blk .bb li{margin:.4em 0}
+        .lt-blk .bb strong{color:var(--fg-b)}
+        .lt-blk .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+        .lt-blk .bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+        .lt-blk .bb th,.lt-blk .bb td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+        .lt-blk .bb th{background:var(--bg-s);font-weight:600}
+        .lt-blk .bb .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+        .lt-blk .bb .txb img,.lt-blk .bb .txb svg{max-width:100%;height:auto}
+        .lt-blk .bb .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+        .lt-uses{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.4rem;text-align:right}
+        .lt-uses a{color:var(--ac-d);text-decoration:none;border-bottom:1px dotted var(--ac-d)}
+        .lt-uses a:hover{color:var(--ac)}
+        .lt-qed{text-align:right;font-size:.8rem}
+        .lt-qed::after{content:'\\25A1'}
+        @media print{.lt-wrap{max-width:100%;margin:0;padding:1cm}.lt-bar{display:none}}
+      `;
+      app.appendChild(style);
+
+      const wrap = mk('div', 'lt-wrap');
+      app.appendChild(wrap);
+
+      // Navigation bar
+      const bar = mk('div', 'lt-bar');
+      bar.innerHTML = `<a href="#/view/${hashWithBranch(label)}">&larr; Back to paper</a>
+        <a href="#/preview-lightning/${hashWithBranch(label)}">Print preview</a>
+        <a href="#/viz/${hashWithBranch(label)}">Interactive graph</a>
+        <a href="/api/pdf" target="_blank">PDF</a>
+        <a href="/api/pdf-lightning?label=${encodeURIComponent(label)}" target="_blank">&#x26A1; PDF</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      // Title with lightning bolt
+      const head = mk('div', 'lt-head');
+      head.innerHTML = `<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>`;
+      const titleEl = mk('span', 'lt-title');
+      titleEl.innerHTML = inl(root.title || label);
+      renderMath(titleEl);
+      head.appendChild(titleEl);
+      wrap.appendChild(head);
+
+      const count = mk('div', 'lt-count');
+      count.textContent = `${blocks.length} blocks in critical path`;
+      wrap.appendChild(count);
+
+      // Render each block in paper-like format
+      for (const b of blocks) {
+        const div = mk('div', 'lt-blk');
+        const env = mk('div', 'env');
+        const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+
+        // Header
+        let hdr = `<div class="bh"><span class="bk">${esc(kindLabel)}.</span>`;
+        if (b.title) hdr += `<span class="bt">${inl(b.title)}</span>`;
+        if (b.label) hdr += `<span class="bl">${esc(b.label)}</span>`;
+        hdr += `</div>`;
+        env.innerHTML = hdr;
+
+        // Body
+        const body = mk('div', 'bb');
+        renderBlockContent(body, b);
+        env.appendChild(body);
+
+        // Uses (filtered to chain only)
+        if (b.uses?.length) {
+          const usesInChain = b.uses.filter(u => chainLabels.has(u));
+          if (usesInChain.length) {
+            const usesDiv = mk('div', 'lt-uses');
+            usesDiv.innerHTML = 'uses: ' + usesInChain.map(u =>
+              `<a href="#/view-lightning/${hashWithBranch(u)}">${esc(u)}</a>`
+            ).join(', ');
+            env.appendChild(usesDiv);
+          }
+        }
+
+        if (b.kind === 'proof') { const qed = mk('div', 'lt-qed'); env.appendChild(qed); }
+        div.appendChild(env);
+        wrap.appendChild(div);
+      }
+    }
+
     // ── Router ────────────────────────────────────────────
     // Routes (@ separates slug from branch, since branch names contain /):
     //   #/                                          → folio (current branch)
@@ -4592,7 +4723,8 @@
     //   #/viz/paper-id                              → full dependency graph overlay
     //   #/viz/paper-id@branch/name                  → dependency graph on branch
     //   #/preview/label                             → single block print preview
-    //   #/preview-dep-graph/label                   → dependency chain print preview
+    //   #/preview-lightning/label                   → dependency chain print preview
+    //   #/view-lightning/label                      → paper view filtered to critical path
     //   #/diff/paper-id                             → diff mode (current branch vs main)
     //   #/diff/paper-id@branch/name                 → diff mode on branch
     //   #label                                      → standalone block detail view
@@ -4668,10 +4800,14 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routePreview(slug);
-      } else if (action === 'preview-dep-graph' && rest) {
+      } else if (action === 'preview-lightning' && rest) {
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routePreviewDepGraph(slug);
+      } else if (action === 'view-lightning' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeViewLightning(slug);
       } else if (action === 'diff' && rest) {
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
