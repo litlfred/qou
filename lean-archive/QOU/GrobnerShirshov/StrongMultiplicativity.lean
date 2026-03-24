@@ -48,7 +48,7 @@ universe u v
     We model `A ⊗ A` abstractly as a separate type `T` with a
     multiplication, rather than using pairs (which incorrectly model
     `A × A` rather than `A ⊗ A`). -/
-structure FilteredBialgebra (A : Type u) (T : Type u) [Ring A] [Ring T] extends
+structure FilteredBialgebra (A : Type*) (T : Type*) [Ring A] [Ring T] extends
     AlgebraFiltration A where
   /-- Comultiplication `Δ : A → A ⊗ A`. -/
   comul : A → T
@@ -78,7 +78,7 @@ structure FilteredBialgebra (A : Type u) (T : Type u) [Ring A] [Ring T] extends
     copy represents `g ⊗ 1` and `Sum.inr` represents `1 ⊗ g`. -/
 def TensorGen (G : Type u) := G ⊕ G
 
-instance [DecidableEq G] : DecidableEq (TensorGen G) :=
+instance {G : Type u} [DecidableEq G] : DecidableEq (TensorGen G) :=
   inferInstanceAs (DecidableEq (G ⊕ G))
 
 /-- The admissible order on `TensorGen G` induced by a base order on `G`.
@@ -170,7 +170,7 @@ axiom strong_multiplicativity_on_generators
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (T : Type u) [Ring T]
+    (T : Type*) [Ring (AlgElement G k)] [Ring T]
     (bialg : FilteredBialgebra (AlgElement G k) T) :
     -- Δ is an algebra homomorphism on the full algebra
     ∀ (f g : AlgElement G k),
@@ -195,11 +195,11 @@ axiom strong_multiplicativity_on_generators
       terms in `F_{n-1}`.  By the inductive hypothesis and the
       generator-level computation, `Δ(xy) = Δ(x)·Δ(y)`. -/
 theorem frobenius_preserved_by_degree
-    {A T : Type u} [Ring A] [Ring T]
+    {A T : Type*} [Ring A] [Ring T]
     (bialg : FilteredBialgebra A T)
-    (n m : ℕ) (x y : A)
-    (hx : bialg.filt n x)
-    (hy : bialg.filt m y) :
+    (_n _m : ℕ) (x y : A)
+    (_hx : bialg.filt _n x)
+    (_hy : bialg.filt _m y) :
     bialg.comul (x * y) = bialg.tensor_mul (bialg.comul x) (bialg.comul y) :=
   bialg.comul_is_alg_hom x y
 
@@ -223,7 +223,7 @@ axiom formal_group_is_filtered_bialgebra
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (T : Type u) [Ring T] :
+    (T : Type*) [Ring (AlgElement G k)] [Ring T] :
     FilteredBialgebra (AlgElement G k) T
 
 end QOU.GrobnerShirshov

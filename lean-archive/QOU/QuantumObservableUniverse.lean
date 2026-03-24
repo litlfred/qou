@@ -785,7 +785,7 @@ theorem irreducible_connection (cqou : CQuantumObservableUniverse)
     (embed : inst.parallelAdjointSections → cqou.adjointSections)
     (h_inj : Function.Injective embed) :
     inst.IsIrreducible :=
-  ⟨fun a b => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
+  ⟨fun _ _ => h_inj (cqou.adjoint_cohomology_vanishes.allEq _ _)⟩
 
 /-- **Proposition (Self-duality of the curvature).**
     When `dim_ℝ M = 5` (CR dimension `n = 2`, so `dim_ℝ H = 4`), the

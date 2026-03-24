@@ -187,12 +187,12 @@ theorem riemann_hurwitz_check :
     LaTeX: `\label{prop:mi-sw-abelianisation}` -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
 theorem mi_sw_abelianisation
-    (bs : BringsSurface)
+    (_bs : BringsSurface)
     (n : ℕ)  -- vertical degree (jet level)
     (sw_period : ℕ → ℝ)  -- |a_D^(n)| for each jet level
     (mi_integral : ℕ → ℝ)  -- ‖MI∫_{E_c}(∇_A q, L ∧ F⁺)‖_{Jⁿ}
     -- The SU(2) bundle trivialises over CP¹ ≅ S²
-    (bundle_trivial : True)
+    (_bundle_trivial : True)
     -- Fake-flatness forces abelianisation on the exceptional divisor
     (fake_flat_abelian : ∀ k, mi_integral k = sw_period k)
     : mi_integral n = sw_period n := by
@@ -229,7 +229,7 @@ structure BringsQOU where
 
 /-- The Riemann–Hurwitz relation holds for the Bring's QOU data:
     `χ(S) = deg · χ(CP¹) − (total ramification)`. -/
-theorem BringsQOU.is_qou (bq : BringsQOU) : eulerChar = (covering_degree : ℤ) * 2 - 14 :=
+theorem BringsQOU.is_qou (_bq : BringsQOU) : eulerChar = (covering_degree : ℤ) * 2 - 14 :=
   riemann_hurwitz_check
 
 /-- **Observability data** for the quantum Schur lemma argument.

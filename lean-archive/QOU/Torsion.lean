@@ -427,7 +427,7 @@ structure YekutielijLiftingCondition where
   /-- Central extension: the 2-morphisms at each level are central,
       i.e., they commute with all 1-morphisms (modelled as the Peiffer
       identity holding for the underlying Yekutieli triple). -/
-  central : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ),
+  central : ∀ (n : ℕ) (p : (tower.level n).M) (_a b : ℝ),
     (twistedCocycle n).triple.twoMorphisms p * b =
     b * (twistedCocycle n).triple.twoMorphisms p
 
@@ -497,7 +497,7 @@ structure CosimplicialCrossedGroupoid where
   crossedBoundary : (n : ℕ) → (tower.level n).M → ℝ → ℝ
   /-- Peiffer identity: `∂(a) · b = a · b · a⁻¹` (automatic for central
       extensions, since 2-morphisms are central). -/
-  peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (ha : a ≠ 0),
+  peiffer : ∀ (n : ℕ) (p : (tower.level n).M) (a b : ℝ) (_ha : a ≠ 0),
     crossedBoundary n p a * b = a * b * a⁻¹
 
 /-- **Weak equivalence invariance of the vacuum state.**
@@ -573,7 +573,7 @@ theorem qu_to_qou
     (ylc : YekutielijLiftingCondition)
     (ecs : EulerCharStability ylc.tower)
     (csg : CosimplicialCrossedGroupoid)
-    (h_tower : csg.tower = ylc.tower)
+    (_h_tower : csg.tower = ylc.tower)
     (g : ℕ) (h_genus : ecs.eulerChar 0 = 2 - 2 * (g : ℤ)) :
     -- The quantum universe descends to a QOU with χ = 2 − 2g,
     -- witnessed by the Euler characteristic at every level equalling
@@ -603,7 +603,7 @@ structure Descent where
       for each level `n > 0`, there is a surjective *-homomorphism
       from level-n sections to level-(n−1) sections (modelled as a
       function between descent-map types). -/
-  preserves_qou : ∀ (n : ℕ) (hn : 0 < n) (m : ℕ) (hm : 0 < m) (hmn : m < n),
+  preserves_qou : ∀ (n : ℕ) (hn : 0 < n) (m : ℕ) (hm : 0 < m) (_hmn : m < n),
     descentMap n hn → descentMap m hm
 
 /-- **Lemma (Descent preserves the quantum observable universe).**
@@ -663,8 +663,12 @@ noncomputable def DescentInvolution.fromJetProlongation
     DescentInvolution (jp.base.obj ⟶ jp.jet.obj) := by
   -- The involution τ = ℓ ∘ r acts on morphisms into the jet object.
   -- Idempotency follows from r ∘ ℓ = id (the retraction property).
-  exact ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f),
-    fun f => by simp only [CategoryTheory.Category.assoc, jp.retraction, CategoryTheory.Category.id_comp]⟩
+  refine ⟨fun f => jp.ascent ≫ (jp.restriction ≫ f), fun f => ?_⟩
+  -- τ²(f) = ℓ ∘ r ∘ ℓ ∘ r ∘ f = (ℓ ∘ r) ∘ (ℓ ∘ r ∘ f) = id ∘ (ℓ ∘ r ∘ f) = τ(f)
+  show jp.ascent ≫ (jp.restriction ≫ (jp.ascent ≫ (jp.restriction ≫ f))) =
+       jp.ascent ≫ (jp.restriction ≫ f)
+  rw [← CategoryTheory.Category.assoc jp.ascent jp.restriction,
+      jp.retraction, CategoryTheory.Category.id_comp]
 
 /-- **Eigenspace decomposition** of the descent involution.
     `V = 𝒜_{n+1}^{desc} ⊕ 𝒜_{n+1}^{trans}`

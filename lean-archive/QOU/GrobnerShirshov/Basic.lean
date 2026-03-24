@@ -95,7 +95,7 @@ def AlgElement.isZero {G : Type u} {k : Type v} [Ring k]
 /-- The **leading monomial** of a non-zero element with respect to an
     admissible order: the greatest monomial with non-zero coefficient. -/
 noncomputable def leadingMonomial {G : Type u} {k : Type v} [Ring k]
-    (ord : AdmissibleOrder G)
+    (_ord : AdmissibleOrder G)
     (f : AlgElement G k)
     (hf : f.support.Nonempty) : Monomial G :=
   hf.choose
