@@ -170,7 +170,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   sorry
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
-lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
+lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →
