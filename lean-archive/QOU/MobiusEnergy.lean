@@ -200,10 +200,8 @@ theorem quantumTwo_pos (q : ℝ) (hq : q > 0) : 0 < quantumTwo q := by
 structure NonSelfIntersection (M : Type*) where
   /-- The categorical Möbius energy data. -/
   cme : CategoricalMobiusEnergy M
-  /-- The exclusion radius: `ℏ_q = 1 − q⁻¹`. -/
-  exclusionRadius : ℝ := hbar_q cme.q
-  /-- The exclusion radius is positive. -/
-  exclusionRadius_pos : 0 < exclusionRadius
+  /-- The exclusion radius is positive: `0 < ℏ_q`. -/
+  exclusionRadius_pos : 0 < hbar_q cme.q
   /-- **Energy divergence**: when two non-adjacent strands approach within
       distance `ℏ_q`, the categorical energy diverges. Encoded as: for any
       `ε > 0`, there exists an energy bound `E₀` such that if any two
@@ -213,14 +211,15 @@ structure NonSelfIntersection (M : Type*) where
     (∀ _s _t : ℝ, -- non-adjacent strand proximity below threshold
       cme.energy > E₀)
 
+/-- The exclusion radius: `ℏ_q = 1 − q⁻¹`, derived from the categorical
+    Möbius energy data. Not a free parameter — it is always `hbar_q cme.q`. -/
+noncomputable def NonSelfIntersection.exclusionRadius {M : Type*}
+    (nsi : NonSelfIntersection M) : ℝ := hbar_q nsi.cme.q
+
 /-- The exclusion radius is exactly `ℏ_q`. -/
 theorem NonSelfIntersection.exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
-    nsi.exclusionRadius = hbar_q nsi.cme.q := by
-  -- Ref: [manuscript] §4.2 — exclusionRadius default equals hbar_q by construction
-  -- The exclusionRadius field has default value `hbar_q cme.q` but may
-  -- have been overridden; this holds when the default is used.
-  sorry
+    nsi.exclusionRadius = hbar_q nsi.cme.q := rfl
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
 theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
