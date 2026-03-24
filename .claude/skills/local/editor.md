@@ -151,6 +151,7 @@ surviving past the work that should have resolved them.
 | Generate docs / schema docs / TypeDoc | `docs-generation` | TypeDoc, dep graph, axiom report |
 | Build paper / compile PDF / render HTML | `docs-generation` | Content → PDF/HTML pipeline |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
+| Fix lean build / lake build fails | `lean-build-fix` | Iterative error diagnosis + fix |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 | Write / run / review tests | `test-engineer` | TypeScript/Bun tests |

@@ -1,3 +1,21 @@
+import QOU.Basic
+import QOU.Glossary
+import QOU.KnotTheory
+import Mathlib.Data.Real.Basic
+import Mathlib.GroupTheory.SpecificGroups.Dihedral
+import Mathlib.GroupTheory.PresentedGroup
+import Mathlib.GroupTheory.FreeGroup.Basic
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.LinearAlgebra.DirectSum.Finsupp
+import Mathlib.LinearAlgebra.TensorProduct.Basic
+import Mathlib.RingTheory.Ideal.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Data.List.Basic
+import Mathlib.Order.Filter.Basic
+
 /-!
 # Chapter 3 — Path Integrals and Braiding
 
@@ -20,23 +38,6 @@ LaTeX source: `chapters/path-integrals-and-braiding.tex`
 - [lusztig1993] G. Lusztig, *Introduction to Quantum Groups*, Birkhäuser 1993.
 -/
 
-import QOU.Basic
-import QOU.Glossary
-import QOU.KnotTheory
-import Mathlib.Data.Real.Basic
-import Mathlib.GroupTheory.SpecificGroups.Dihedral
-import Mathlib.GroupTheory.PresentedGroup
-import Mathlib.GroupTheory.FreeGroup.Basic
-import Mathlib.Algebra.Algebra.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.LinearAlgebra.DirectSum.Finsupp
-import Mathlib.LinearAlgebra.TensorProduct.Basic
-import Mathlib.RingTheory.Ideal.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Data.List.Basic
-import Mathlib.Order.Filter.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory TensorProduct
 
@@ -166,12 +167,12 @@ def flip {α : Type*} (w : SpectralResolventTuple α) :
 /-- The twist is an involution: `σ₁² = id`. -/
 theorem twist_involution {α : Type*} (w : SpectralResolventTuple α) :
     twist (twist w) = w := by
-  simp [twist, SpectralResolventTuple.mk.injEq]
+  simp [twist]
 
 /-- The flip is an involution: `σ₂² = id`. -/
 theorem flip_involution {α : Type*} (w : SpectralResolventTuple α) :
     flip (flip w) = w := by
-  simp [flip, SpectralResolventTuple.mk.injEq]
+  simp [flip]
 
 /-- The composite `σ₁σ₂` gives `(w₁, w₂, w₃, w₄) ↦ (w₃, w₄, w₁, w₂)`. -/
 def twistFlip {α : Type*} (w : SpectralResolventTuple α) :
@@ -181,7 +182,7 @@ def twistFlip {α : Type*} (w : SpectralResolventTuple α) :
 /-- The twist–flip composite has order 2: `(σ₁σ₂)² = id`. -/
 theorem twistFlip_order_two {α : Type*} (w : SpectralResolventTuple α) :
     twistFlip (twistFlip w) = w := by
-  simp [twistFlip, twist, flip, SpectralResolventTuple.mk.injEq]
+  simp [twistFlip, twist, flip]
 
 /-- **Holonomy generators**: parallel transport of spectral modes around
     branch points gives braid operators `H₁ = σ₁`, `H₂ = σ₂`.
@@ -310,8 +311,8 @@ structure HeckeAlgebra where
   T : Fin (n - 1) → carrier
   /-- Braid relation: `TᵢTᵢ₊₁Tᵢ = Tᵢ₊₁TᵢTᵢ₊₁` for adjacent generators. -/
   braid_relation : ∀ (i : Fin (n - 2)),
-    let i' := ⟨i.val, Nat.lt_of_lt_of_le i.isLt (Nat.sub_le_sub_right (Nat.le_of_lt_succ (Nat.lt_of_lt_of_le i.isLt (le_refl _))) 1)⟩
-    let j := ⟨i.val + 1, by omega⟩
+    let i' : Fin (n - 1) := ⟨i.val, by omega⟩
+    let j : Fin (n - 1) := ⟨i.val + 1, by omega⟩
     mul (mul (T i') (T j)) (T i') = mul (mul (T j) (T i')) (T j)
   /-- Subtraction in the algebra. -/
   sub : carrier → carrier → carrier
@@ -329,20 +330,20 @@ structure YoungDiagram where
   /-- The partition as a list of row lengths in non-increasing order. -/
   rows : List ℕ
   /-- Non-increasing. -/
-  nonincreasing : rows.Chain' (· ≥ ·)
+  nonincreasing : rows.IsChain (· ≥ ·)
   /-- Non-empty partition. -/
   nonempty : rows ≠ []
 
 /-- The size (number of boxes) of a Young diagram. -/
-def YoungDiagram.size (λ : YoungDiagram) : ℕ := λ.rows.sum
+def YoungDiagram.size (μ : YoungDiagram) : ℕ := μ.rows.sum
 
 /-- The number of parts (rows) of a Young diagram. -/
-def YoungDiagram.numParts (λ : YoungDiagram) : ℕ := λ.rows.length
+def YoungDiagram.numParts (μ : YoungDiagram) : ℕ := μ.rows.length
 
 /-- The spin label associated to a two-row Young diagram:
     `j = (λ₁ − λ₂)/2`. -/
-noncomputable def YoungDiagram.spin (λ : YoungDiagram) : ℝ :=
-  match λ.rows with
+noncomputable def YoungDiagram.spin (μ : YoungDiagram) : ℝ :=
+  match μ.rows with
   | [a] => (a : ℝ) / 2
   | [a, b] => ((a : ℝ) - (b : ℝ)) / 2
   | _ => 0
@@ -371,19 +372,19 @@ structure SchurWeylDecomposition where
   /-- The set of partitions of `n` with at most 2 parts. -/
   partitions : List YoungDiagram
   /-- Each partition has size `n`. -/
-  partitions_size : ∀ λ ∈ partitions, λ.size = n
+  partitions_size : ∀ μ ∈ partitions, μ.size = n
   /-- Each partition has at most 2 parts. -/
-  partitions_rank : ∀ λ ∈ partitions, λ.numParts ≤ 2
-  /-- Irreducible `SU_q(2)`-module for partition `λ` (spin `j = (λ₁−λ₂)/2`). -/
+  partitions_rank : ∀ μ ∈ partitions, μ.numParts ≤ 2
+  /-- Irreducible `SU_q(2)`-module for partition `μ` (spin `j = (μ₁−μ₂)/2`). -/
   V_irrep : YoungDiagram → Type*
-  /-- Irreducible `H_n(q)`-module for partition `λ`. -/
+  /-- Irreducible `H_n(q)`-module for partition `μ`. -/
   S_irrep : YoungDiagram → Type*
-  /-- Embedding of each summand `V_λ ⊗ S_λ` into `V^{⊗n}`. -/
-  summand_embed : ∀ λ ∈ partitions, V_irrep λ → S_irrep λ → tensor_power
+  /-- Embedding of each summand `V_μ ⊗ S_μ` into `V^{⊗n}`. -/
+  summand_embed : ∀ μ ∈ partitions, V_irrep μ → S_irrep μ → tensor_power
   /-- **Completeness**: every element of `V^{⊗n}` lies in the image of some
       summand embedding — the direct sum spans the tensor power. -/
-  complete : ∀ (v : tensor_power), ∃ λ ∈ partitions,
-    ∃ (w : V_irrep λ) (s : S_irrep λ), summand_embed λ ‹_› w s = v
+  complete : ∀ (v : tensor_power), ∃ μ, ∃ (hμ : μ ∈ partitions),
+    ∃ (w : V_irrep μ) (s : S_irrep μ), summand_embed μ hμ w s = v
 
 /-- **Alexander's theorem**: every oriented link in `S³` is the closure
     `β̂` of some braid `β ∈ B_n` for some `n`.
@@ -457,15 +458,14 @@ structure KnotEigenbasisComplete where
       as the decomposition. -/
   consistent : markov.hecke = decomposition.hecke
   /-- The braid-closure map labels irreducible summands:
-      for each partition `λ` in the decomposition, there exists
-      a braid `β` whose closure detects `λ` — the Markov trace of the
-      Hecke-algebra image of `β`, restricted to the `S_λ` summand,
+      for each partition `μ` in the decomposition, there exists
+      a braid `β` whose closure detects `μ` — the Markov trace of the
+      Hecke-algebra image of `β`, restricted to the `S_μ` summand,
       is non-zero.  Encoded via the representation map `ρ`. -/
-  /-- Representation map: braid → Hecke algebra element. -/
-  braid_rep : alexander.Braid → decomposition.hecke.carrier
-  /-- For each partition `λ`, there exists a braid whose trace on the
+  braid_rep : alexander.Braid → markov.hecke.carrier
+  /-- For each partition `μ`, there exists a braid whose trace on the
       corresponding Hecke-summand is non-zero. -/
-  summands_detected : ∀ λ ∈ decomposition.partitions,
+  summands_detected : ∀ μ ∈ decomposition.partitions,
     ∃ (β : alexander.Braid),
     markov.tr (braid_rep β) ≠ 0
   /-- **Density** (Part 3): the physical Hilbert space

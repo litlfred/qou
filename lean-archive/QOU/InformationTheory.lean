@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import Mathlib.Data.Real.Basic
+
 /-!
 # Chapter 9 — Information-Theoretic Perspective
 
@@ -14,9 +18,6 @@ LaTeX source: `chapters/information-theory.tex`
 4. **Classical (heat death) limit** — `q → 1`, information transfer → 0
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import Mathlib.Data.Real.Basic
 
 namespace QOU.InformationTheory
 

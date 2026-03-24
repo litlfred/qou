@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+import QOU.Glossary
+
 /-!
 # QOU.KnotTheory — Combinatorial Knot Representations
 
@@ -11,9 +15,6 @@ problems and is sufficient for computing Jones polynomials, Khovanov
 homology, and the hyperbolic volumes used in the QOU mass derivation.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.List.Basic
-import QOU.Glossary
 
 namespace QOU.KnotTheory
 

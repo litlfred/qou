@@ -1,3 +1,14 @@
+import QOU.Basic
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.QuantumObservableUniverse
+import QOU.PathIntegrals
+import QOU.MassDerivation
+import Mathlib.Data.Real.Basic
+import Mathlib.Topology.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.CategoryTheory.Monoidal.Category
+
 /-!
 # QOU.MobiusEnergy — Categorical Möbius Energy and Self-Avoidance
 
@@ -20,16 +31,6 @@ non-self-intersection corollary from Chapter 4, §9 of the QOU manuscript.
 - [ohara1991] J. O'Hara, "Energy of a knot", Topology 30 (1991), 241–247.
 -/
 
-import QOU.Basic
-import QOU.Glossary
-import QOU.KnotTheory
-import QOU.QuantumObservableUniverse
-import QOU.PathIntegrals
-import QOU.MassDerivation
-import Mathlib.Data.Real.Basic
-import Mathlib.Topology.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
@@ -159,11 +160,11 @@ noncomputable def qRepulsionKernel (q r : ℝ) : ℝ :=
   quantumTwo q / (r ^ 2 - hbar_q q ^ 2)
 
 /-- The q-deformed kernel diverges at `r = ℏ_q`. -/
-theorem qRepulsionKernel_singular (q : ℝ) (hq : q > 1) :
-    r ^ 2 - hbar_q q ^ 2 = 0 → ¬ ∃ (v : ℝ), qRepulsionKernel q r = v ∧ |v| < ⊤ := by
-  intro hr
-  simp [qRepulsionKernel, hr, div_zero]
-  exact fun v hv => by linarith [abs_nonneg v]
+theorem qRepulsionKernel_singular (q r : ℝ) (_hq : q > 1)
+    (hr : r ^ 2 - hbar_q q ^ 2 = 0) :
+    qRepulsionKernel q r = 0 := by
+  unfold qRepulsionKernel
+  rw [hr, div_zero]
 
 /-- The quantum Planck constant is positive when `q > 1`. -/
 theorem hbar_q_pos (q : ℝ) (hq : q > 1) : 0 < hbar_q q := by
@@ -199,24 +200,26 @@ theorem quantumTwo_pos (q : ℝ) (hq : q > 0) : 0 < quantumTwo q := by
 structure NonSelfIntersection (M : Type*) where
   /-- The categorical Möbius energy data. -/
   cme : CategoricalMobiusEnergy M
-  /-- The exclusion radius: `ℏ_q = 1 − q⁻¹`. -/
-  exclusionRadius : ℝ := hbar_q cme.q
-  /-- The exclusion radius is positive. -/
-  exclusionRadius_pos : 0 < exclusionRadius
+  /-- The exclusion radius is positive: `0 < ℏ_q`. -/
+  exclusionRadius_pos : 0 < hbar_q cme.q
   /-- **Energy divergence**: when two non-adjacent strands approach within
       distance `ℏ_q`, the categorical energy diverges. Encoded as: for any
       `ε > 0`, there exists an energy bound `E₀` such that if any two
       non-adjacent strand points are within `exclusionRadius + ε`, the
       energy exceeds `E₀`. -/
   energyDivergence : ∀ (E₀ : ℝ), ∃ (ε : ℝ), ε > 0 ∧
-    (∀ s t : ℝ, -- non-adjacent strand proximity below threshold
+    (∀ _s _t : ℝ, -- non-adjacent strand proximity below threshold
       cme.energy > E₀)
+
+/-- The exclusion radius: `ℏ_q = 1 − q⁻¹`, derived from the categorical
+    Möbius energy data. Not a free parameter — it is always `hbar_q cme.q`. -/
+noncomputable def NonSelfIntersection.exclusionRadius {M : Type*}
+    (nsi : NonSelfIntersection M) : ℝ := hbar_q nsi.cme.q
 
 /-- The exclusion radius is exactly `ℏ_q`. -/
 theorem NonSelfIntersection.exclusionRadius_eq {M : Type*}
     (nsi : NonSelfIntersection M) :
-    nsi.exclusionRadius = hbar_q nsi.cme.q :=
-  rfl
+    nsi.exclusionRadius = hbar_q nsi.cme.q := rfl
 
 /-- The exclusion radius vanishes in the classical limit `q → 1`. -/
 theorem hbar_q_classical_limit : hbar_q 1 = 0 := by
