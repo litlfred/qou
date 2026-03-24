@@ -167,9 +167,9 @@ theorem substrate_error_bound :
   -- Bound derived_q = 1/(1 - h_q_value) between 1.1087 and 1.1107
   have h_denom_pos : (0 : ℝ) < 1 - h_q_value := by linarith
   have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - h_q_value) := by
-    rw [div_lt_div_iff (by norm_num : (0:ℝ) < 10000) h_denom_pos]; nlinarith
+    rw [div_lt_div_iff₀ (by norm_num : (0:ℝ) < 10000) h_denom_pos]; nlinarith
   have h_ub : 1 / (1 - h_q_value) < (11107 : ℝ) / 10000 := by
-    rw [div_lt_div_iff h_denom_pos (by norm_num : (0:ℝ) < 10000)]; nlinarith
+    rw [div_lt_div_iff₀ h_denom_pos (by norm_num : (0:ℝ) < 10000)]; nlinarith
   unfold derived_q substrate_q
   rw [abs_lt]; constructor <;> linarith
 
