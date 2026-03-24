@@ -99,6 +99,7 @@ export default chapter({
         "skein-mass-relation-proof",
         "terminal-resolution",
         "terminal-resolution-proof",
+        "terminal-resolution-cz",
         "ch11-intro",
       ],
     }),

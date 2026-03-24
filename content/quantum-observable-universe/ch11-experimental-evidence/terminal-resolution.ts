@@ -9,6 +9,7 @@ export default proposition({
   title: "Terminal Resolution of Hadronic Mass (Observation)",
   uses: ["prop:skein-mass-relation", "ex:c-quantum-observable-universe"],
   proofs: ["prf:terminal-resolution"],
+  examples: ["ex:terminal-resolution-cz"],
   tags: ["mass", "hadronic"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/terminal-resolution-0.svg", blockIndex: 0, hash: "819cd133b41b" },
