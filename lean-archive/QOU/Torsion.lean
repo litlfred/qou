@@ -757,10 +757,8 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
     by_cases hq1 : 1 < q
     · -- q > 1: q^n ≥ q ≥ q > 1, so q^n - 1 > 0 and q - 1 > 0
       apply div_pos
-      · have : 1 ≤ q ^ n := by
-          rw [← one_pow n]
-          gcongr
-          exact le_of_lt hq1
+      · have : 1 < q ^ n :=
+          one_lt_pow₀ hq1 (Nat.pos_iff_ne_zero.mp hn)
         linarith
       · linarith
     · -- 0 < q < 1: q^n < 1 (so q^n - 1 < 0) and q - 1 < 0

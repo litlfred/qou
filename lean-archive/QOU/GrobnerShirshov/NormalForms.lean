@@ -260,9 +260,9 @@ theorem degLexLt_wf : WellFounded degLexLt :=
         (a.length, lexEncoding a) (b.length, lexEncoding b)
       rcases h with hlen | ⟨heq, hlex⟩
       · exact Prod.Lex.left _ _ hlen
-      · exact Prod.Lex.right _ (lexEncoding_lt_of_lexLt_same_length a b heq hlex))
+      · exact heq ▸ Prod.Lex.right _ (lexEncoding_lt_of_lexLt_same_length a b heq hlex))
     (InvImage.wf (fun a => (a.length, lexEncoding a))
-      (Prod.Lex.wellFounded Nat.lt_wfRel.wf Nat.lt_wfRel.wf))
+      (Nat.lt_wfRel.wf.prod_lex Nat.lt_wfRel.wf))
 
 theorem degLexLt_trichotomy : ∀ (a b : Monomial SU2Gen),
     degLexLt a b ∨ a = b ∨ degLexLt b a := by
