@@ -171,8 +171,10 @@ the structure consumer.
 The archimedean corollary (nonabelian Stokes) is a structure with the
 Stokes relation as a field.
 
-**Severity**: **LOW** — the Yekutieli integral is genuinely hard to
-formalize; structure-assumption is a reasonable intermediate step.
+**Severity**: **MEDIUM** — the Yekutieli integral is genuinely hard to
+formalize, but the nonabelian Stokes theorem is a deep result that
+should be explicitly axiomatized rather than silently assumed via
+a structure field.
 
 ---
 
@@ -366,7 +368,7 @@ declared dependency graph in the content manifests.
 | 8 | Lean dependency graph disconnected from .ts manifests | All Ch 3, Ch 11 files | Missing imports | **HIGH** |
 | 9 | Shadow types (duplicate `FrobeniusHopfData`, etc.) | mass-identity.lean et al. | Type duplication | **HIGH** |
 | 10 | `SpinDecomposition` structure, not proposition | spin-labels.lean | Structure-as-prop | MEDIUM |
-| 11 | `MassIdentityC` structure with Stokes as field | mass-identity-C.lean | Structure-as-cor | LOW |
+| 11 | `MassIdentityC` structure with Stokes as field | mass-identity-C.lean | Structure-as-cor | MEDIUM |
 | 12 | `CategoricalReeb.ofWeightDecomposition` takes answer as input | categorical-reeb-exists.lean | Non-constructive | MEDIUM |
 | 13 | `LocalSubstrateQ` structure, not derived | local-substrate-q.lean | Structure-as-prop | MEDIUM |
 | 14 | `HigherForms` missing graded Leibniz | higher-forms.lean | Narrative gap | MEDIUM |
