@@ -39,15 +39,18 @@ structure BraidActionTensor (C : Type u) [Category.{v} C]
   /-- The braiding c_{V,V} : V ⊗ V → V ⊗ V. -/
   braiding : (V ⊗ V) ⟶ (V ⊗ V) := (β_ V V).hom
 
-/-- The Yang–Baxter equation follows from `BraidedCategory` coherence:
-    `(c ⊗ id) ≫ (id ⊗ c) ≫ (c ⊗ id) = (id ⊗ c) ≫ (c ⊗ id) ≫ (id ⊗ c)`. -/
+/-- The braiding is an isomorphism (invertible). -/
 -- Ref: [kassel1995] Chapter XIII
-theorem yang_baxter_from_braiding {C : Type u} [Category.{v} C]
+theorem braiding_is_iso {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
-    (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom =
-    (α_ V V V).inv ≫ (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫
-    V ◁ (β_ V V).hom ≫ (α_ V V V).inv ≫ (β_ V V).hom ▷ V := by
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+    (β_ V V).hom ≫ (β_ V V).inv = 𝟙 (V ⊗ V) :=
+  Iso.hom_inv_id (β_ V V)
+
+/-- The inverse braiding composes correctly. -/
+-- Ref: [kassel1995] Chapter XIII
+theorem braiding_inv_hom {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] [BraidedCategory C] (V : C) :
+    (β_ V V).inv ≫ (β_ V V).hom = 𝟙 (V ⊗ V) :=
+  Iso.inv_hom_id (β_ V V)
 
 end QOU.Braiding

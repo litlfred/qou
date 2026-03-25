@@ -264,8 +264,11 @@ theorem hadron_tensor_factorization
     (spins_pos : ∀ i, h.constituent_spins i ≥ 1) :
     h.totalTensorPower ≥ 2 * h.valence := by
   unfold CategoricalHadron.totalTensorPower
-  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-  sorry
+  apply Nat.mul_le_mul_left
+  calc Finset.univ.sum h.constituent_spins
+      ≥ Finset.univ.sum (fun _ : Fin h.valence => 1) :=
+        Finset.sum_le_sum (fun i _ => spins_pos i)
+    _ = h.valence := by simp
 
 /-- The Clebsch–Gordan decomposition: `V_{1/2} ⊗ V_{1/2} ≅ V_0 ⊕ V_1`.
     In terms of categorical dimensions: `dim(V_{1/2})² = dim(V_0) + dim(V_1)`,

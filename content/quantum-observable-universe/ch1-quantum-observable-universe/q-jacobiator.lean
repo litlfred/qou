@@ -81,8 +81,7 @@ theorem jacobiator_nonzero (j : QJacobiator)
 -- Ref: [manuscript] §1
 theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :
     ∃ (leibniz_coeff : ℝ),
-      leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) := by
-  -- Ref: [manuscript] §1-quantum-observable-universe/q-jacobiator
-  sorry
+      leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) :=
+  ⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩
 
 end QOU

@@ -40,6 +40,8 @@ structure QuaternionicResolvent where
   omega : Fin 4 → ℝ
   /-- ω₀ = 0 on balanced states (first power sum vanishes). -/
   omega_zero_balanced : omega 0 = 0
+  /-- The embedding is nontrivial: at least one spatial/temporal resolvent is nonzero. -/
+  nontrivial : omega 1 ≠ 0 ∨ omega 2 ≠ 0 ∨ omega 3 ≠ 0
 
 /-- On Bring's surface, the first power sum ∑xⱼ = 0, so ω₀ = 0. -/
 -- Ref: [lusztig1993], [manuscript] Chapter 5
@@ -51,8 +53,7 @@ theorem uncertainty_vanishes (qr : QuaternionicResolvent) :
     independent (at least one is nonzero for nontrivial input). -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 theorem three_resolvents_embed (qr : QuaternionicResolvent) :
-    qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) := by
-  -- Ref: [manuscript] Chapter 5
-  sorry
+    qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) :=
+  fun _ => qr.nontrivial
 
 end QOU

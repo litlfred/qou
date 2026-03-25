@@ -117,9 +117,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
-    ca.gravity = ca.gravity := by
-  -- Ref: [donaldson1990] https://doi.org/10.1093/oso/9780198535874.001.0001
-  sorry
+    ca.gravity = ca.gravity := rfl
 
 /-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
@@ -127,9 +125,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
-    ca.gauge = ca.gauge := by
-  -- Ref: [donaldson1990] https://doi.org/10.1093/oso/9780198535874.001.0001
-  sorry
+    ca.gauge = ca.gauge := rfl
 
 /-- **Transport equation**: `D_∇ ψ = 0`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
@@ -137,9 +133,7 @@ theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
-    ca.matter = ca.matter := by
-  -- Ref: [manuscript] §1-quantum-observable-universe
-  sorry
+    ca.matter = ca.matter := rfl
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/
