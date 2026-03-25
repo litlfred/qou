@@ -337,6 +337,63 @@ viewer routing. BibTeX entries for folio-hosted papers include a
 - Bold → `\textbf{}`, italic → `\emph{}` in LaTeX output
 - Cross-refs: `[text](#label)` → `\hyperref[label]{text}`
 
+### TeX authoring patterns for agents
+
+These rules prevent rendering errors in the content pipeline.
+Violations produce broken LaTeX in titles, captions, and body text.
+
+**1. Math in titles is supported.** Block titles (in `.ts` manifests)
+may contain inline math. The `escapeLatex()` function preserves
+`$...$` segments verbatim. Always use `$...$` delimiters:
+
+```ts
+// CORRECT — math preserved in rendered \begin{example}[{...}]
+title: "Reeb derivation for $\\mathrm{SU}(2)$"
+
+// WRONG — bare LaTeX commands will be escaped to garbage
+title: "Reeb derivation for \\mathrm{SU}(2)"
+```
+
+**2. Multi-line inline math is valid.** The remark-math parser handles
+`$...$` spanning multiple lines. This is the standard pattern for long
+inline expressions in list items:
+
+```md
+1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) =
+   \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
+   Frobenius relation.
+```
+
+**3. Never use raw TeX commands in prose outside `$...$`.** The markdown
+→ LaTeX converter only passes through content inside math delimiters
+or `` ```tex `` fenced blocks. Bare `\mathrm{...}` outside delimiters
+renders as literal text.
+
+**4. Use `$$...$$` on separate lines for display math.** The `$$`
+delimiter must be alone on its line (or at the very start/end):
+
+```md
+The formula is:
+
+$$
+  \nabla^2 \phi = 0
+$$
+```
+
+**5. For complex environments (tikzcd, align), use fenced tex blocks:**
+
+````md
+```tex
+\begin{tikzcd}
+  A \arrow[r] & B
+\end{tikzcd}
+```
+````
+
+**6. Ampersands in math are fine.** The `&` character inside `$...$` or
+`` ```tex `` blocks is not escaped (it's a column separator in matrices
+and alignments). Only `&` in prose text causes LaTeX errors.
+
 ## Lean MCP server (lean-lsp-mcp)
 
 The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
