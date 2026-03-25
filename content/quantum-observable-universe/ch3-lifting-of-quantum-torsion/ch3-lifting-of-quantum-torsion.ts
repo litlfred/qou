@@ -8,9 +8,11 @@ import { chapter, section } from "../../schema/builders";
  * and the quantum dilogarithm.
  *
  * Section ordering optimised to minimise dependency-graph backward edges
- * (19 → 4 after section reorder + block-level fixes).  The key insight:
- * Descent machinery must precede Cosimplicial Crossed Groupoid, which
- * references lem:descent, def:descent-involution, and prop:descent-eigenspaces.
+ * (19 → 3 after section reorder + block extraction).  Key moves:
+ * - lem:descent + def:descent-involution extracted into early "Descent
+ *   Preliminaries" section (only depend on S1/S2 foundations).
+ * - Full Descent section precedes Cosimplicial Crossed Groupoid.
+ * - Yekutieli Lifting and Direct Limit moved earlier.
  */
 export default chapter({
   number: 2,
@@ -34,6 +36,20 @@ export default chapter({
       blocks: [
         "recursive-brane-tower",
         "brane-tower-levels",
+      ],
+    }),
+
+    // ── Descent primitives (only need jet + brane tower) ───────────────
+    // Extracted here because lem:descent and def:descent-involution are
+    // referenced by Direct Limit, Cosimplicial, and other sections that
+    // appear long before the full Descent section.
+    section({
+      title: "Descent Preliminaries",
+      label: "ssec:descent-prelim",
+      blocks: [
+        "descent-lemma",
+        "descent-lemma-proof",
+        "descent-involution",
       ],
     }),
 
@@ -99,9 +115,6 @@ export default chapter({
       blocks: [
         "descent-intro",
         "descent",
-        "descent-lemma",
-        "descent-lemma-proof",
-        "descent-involution",
         "descent-eigenspaces",
         "descent-eigenspaces-proof",
         "brane-boundary",
