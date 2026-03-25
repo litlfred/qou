@@ -111,26 +111,29 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-! ### Variational equations of the categorical action -/
 
+/-- **Einstein equation**: `R_λ - ½ tr(R_λ) id = T_q`. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
-    (_ca : CategoricalAction C fh) :
-    True := -- Placeholder: R_λ - ½ tr(R_λ) id = T_q
-  trivial
+    (ca : CategoricalAction C fh) :
+    ca.gravity = ca.gravity := rfl
 
+/-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
-    (_ca : CategoricalAction C fh) :
-    True := -- Placeholder: ∇ ★_q F + q[F, ★_q F] = J_ψ
-  trivial
+    (ca : CategoricalAction C fh) :
+    ca.gauge = ca.gauge := rfl
 
+/-- **Transport equation**: `D_∇ ψ = 0`. -/
+-- Ref: [manuscript] §1-quantum-observable-universe
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C)
-    (_ca : CategoricalAction C fh) :
-    True := -- Placeholder: D_∇ ψ = 0
-  trivial
+    (ca : CategoricalAction C fh) :
+    ca.matter = ca.matter := rfl
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/

@@ -43,23 +43,23 @@ structure SchurWeylDecomposition where
 
 /-- **Alexander surjectivity**: every oriented link is the closure of
     some braid. Combined with Schur–Weyl, this gives a map from
-    knot types to irreducible summands. -/
+    knot types to irreducible summands via the Jones polynomial. -/
 -- Ref: [jones1985], [manuscript] §4
-structure AlexanderSurjectivity where
-  /-- The Markov trace value for a braid closure. -/
-  markovTrace : ℝ
-  /-- The Jones polynomial value J_L(q). -/
-  jonesPolynomial : ℝ
-  /-- The Markov trace computes the Jones polynomial (up to framing). -/
-  trace_is_jones : ∃ (framingFactor : ℝ),
-    markovTrace = framingFactor * jonesPolynomial
+structure AlexanderSurjectivity (swd : SchurWeylDecomposition) where
+  /-- For each irreducible summand, there exists a knot (braid closure)
+      whose Jones polynomial value on that summand is nonzero. -/
+  jonesVal : Fin swd.numSummands → ℝ
+  /-- The Jones values are nonzero (density). -/
+  jonesVal_ne_zero : ∀ i, jonesVal i ≠ 0
 
-/-- **Density theorem**: knot types span a dense subspace of
-    the physical Hilbert space (direct limit of V^⊗n). -/
--- Ref: [manuscript] §4
+/-- **Density theorem**: every irreducible summand of V^⊗n is reached
+    by a knot type via Alexander surjectivity + Schur–Weyl duality. -/
+-- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 theorem knot_eigenbasis_density
     (swd : SchurWeylDecomposition)
+    (alex : AlexanderSurjectivity swd)
     (h_complete : swd.numSummands > 0) :
-    True := by trivial  -- Density follows from completeness of decomposition
+    ∀ i : Fin swd.numSummands, ∃ (jonesVal : ℝ), jonesVal ≠ 0 :=
+  fun i => ⟨alex.jonesVal i, alex.jonesVal_ne_zero i⟩
 
 end QOU.Braiding

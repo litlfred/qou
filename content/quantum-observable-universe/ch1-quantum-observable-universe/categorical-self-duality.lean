@@ -62,10 +62,7 @@ structure Instanton (C : Type u) [Category.{v} C]
   anti_self_dual_vanishes :
     curvature ≫ projMinus = 0
 
-/-- **Self-duality theorem**: critical points of S[∇] are instantons.
-
-    At a critical point, the Euler–Lagrange equation reduces to
-    F⁻_∇ = 0 (the anti-self-dual component vanishes). -/
+/-- **Self-duality theorem**: critical points of S[∇] are instantons. -/
 -- Ref: [donaldson1990], [manuscript] §1
 theorem critical_point_is_instanton {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (inst : Instanton C) :
