@@ -20,5 +20,8 @@ export default definition({
     "rem:skein-crossing-asymmetry",
     "def:hadron",
     "def:substrate-parameter",
+    "def:categorical-lagrangian",
+    "def:qou-canonical-action",
+    "def:mass-identity",
   ],
 });
