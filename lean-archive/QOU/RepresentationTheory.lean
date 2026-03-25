@@ -189,9 +189,13 @@ noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
     is one-dimensional — there is a unique embedding up to scalar. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawLei_minimal_dim (twice_j : ℕ) :
-    pawLeiDim twice_j twice_j ≥ 0 := by
+    pawLeiDim twice_j twice_j = 1 := by
   unfold pawLeiDim
-  split <;> omega
+  simp only [Nat.mod_self, ne_eq, not_true, ite_false, lt_self_iff_false]
+  -- The factorial expression simplifies to (twice_j+1) · twice_j! / ((twice_j+1)! · 0!)
+  -- = (twice_j+1) · twice_j! / ((twice_j+1) · twice_j! · 1) = 1
+  sorry
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 
 /-- The **Pawlowski–Leitner basis** for the intertwiner space
     `Hom_{SU(2)}(V_j, V_{1/2}^⊗n)` is indexed by standard Young
@@ -243,26 +247,35 @@ theorem pawLei_orthogonal
 /-! ## §6  Knot Factorization through Tensor Powers of V -/
 
 /-- A categorical hadron factors through tensor powers of `V` via
-    the Pawlowski–Leitner embedding.  Each constituent `V_{j_i}` embeds
-    into `V_{1/2}^⊗(2j_i)`, so the full hadron embeds into
+    the PawLei embedding.  Each constituent `V_{j_i}` embeds into
+    `V_{1/2}^⊗(2j_i)`, so the full hadron embeds into
     `V_{1/2}^⊗(2(j_1 + ⋯ + j_n))`.
+
+    The hypothesis `spins_pos` ensures all constituents have nonzero
+    spin (spin-0 is the trivial representation, which contributes
+    nothing to the tensor embedding).
 
     LaTeX: `\label{rem:knot-factorization}` -/
 theorem hadron_tensor_factorization
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
-    (h : CategoricalHadron C) :
+    (h : CategoricalHadron C)
+    (spins_pos : ∀ i, h.constituent_spins i ≥ 1) :
     h.totalTensorPower ≥ 2 * h.valence := by
   unfold CategoricalHadron.totalTensorPower
+  -- ∑ spins ≥ ∑ (fun _ => 1) = Fintype.card (Fin valence) = valence
   sorry
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 
 /-- The Clebsch–Gordan decomposition: `V_{1/2} ⊗ V_{1/2} ≅ V_0 ⊕ V_1`.
-    In terms of spin labels: `1 ⊗ 1 = 0 ⊕ 2` (using twice_j). -/
+    In terms of categorical dimensions: `dim(V_{1/2})² = dim(V_0) + dim(V_1)`,
+    i.e. `2 · 2 = 1 + 3`.  Generic over any monoidal category `C`. -/
 -- Ref: [manuscript] §1, Remark: Spin-half representation
-theorem clebsch_gordan_fundamental :
-    (spinSimpleObject (Type*) 1).catDim * (spinSimpleObject (Type*) 1).catDim =
-    (spinSimpleObject (Type*) 0).catDim + (spinSimpleObject (Type*) 2).catDim := by
+theorem clebsch_gordan_fundamental
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    (spinSimpleObject C 1).catDim * (spinSimpleObject C 1).catDim =
+    (spinSimpleObject C 0).catDim + (spinSimpleObject C 2).catDim := by
   rfl
 
 end QOU
