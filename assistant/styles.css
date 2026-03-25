@@ -4,7 +4,7 @@
 [data-theme="dark"] {
   --bg:#0e0e12; --bg-s:#16161c; --bg-r:#1e1e26; --bg-c:#12121a;
   --fg:#c8c8d0; --fg-d:#70707c; --fg-b:#eeeef4;
-  --ac:#7ca8e6; --ac-d:#4a6a9a;
+  --ac:#90b8f0; --ac-d:#5a7ab0; --ac-v:#a890d8;
   --grn:#7ce6a4; --yel:#e6c87c; --red:#e67c7c; --ora:#e6a47c;
   --brd:#2a2a34;
   --svg-f:invert(0.85) hue-rotate(180deg);
@@ -12,7 +12,7 @@
 [data-theme="light"] {
   --bg:#fafafa; --bg-s:#ffffff; --bg-r:#f0f0f4; --bg-c:#f5f5fa;
   --fg:#2c2c34; --fg-d:#888894; --fg-b:#111118;
-  --ac:#2a6bc4; --ac-d:#6a9ad4;
+  --ac:#2a6bc4; --ac-d:#6a9ad4; --ac-v:#6a4aaa;
   --grn:#1a8a44; --yel:#9a7a20; --red:#c44a4a; --ora:#b07030;
   --brd:#d8d8e0;
   --svg-f:none;
@@ -108,6 +108,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .sec-t{font-family:var(--f-head);font-size:1.15rem;font-weight:500;color:var(--fg-b);margin:1.5rem 0 1rem}
 .sec-jump{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.5rem;padding:.5rem;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px}
 .sec-jump a{font-family:var(--f-mono);font-size:.6rem;padding:.15rem .5rem;border-radius:2px;color:var(--fg-d);text-decoration:none;transition:all .15s}
+.sec-jump a:visited{color:var(--ac-v)}
 .sec-jump a:hover{color:var(--ac);background:var(--bg-r)}
 
 /* ── Block rendering ────────────────────────────────────── */
@@ -204,6 +205,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .bb li{margin:.5em 0}
 .bb strong{color:var(--fg-b)}
 .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+.bb a:visited{color:var(--ac-v)}
 .bb a:hover{color:var(--fg-b)}
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:.4rem 0}
 .katex{color:var(--fg)}
@@ -531,6 +533,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .chat-content ul,.chat-content ol{margin:.3em 0;padding-left:1.3em}
 .chat-content li{margin:.1em 0}
 .chat-content a{color:var(--ac);text-decoration:none;border-bottom:1px dotted var(--ac-d)}
+.chat-content a:visited{color:var(--ac-v)}
 .chat-content a:hover{color:var(--fg-b)}
 .chat-content .chat-h2{font-family:var(--f-head);font-size:.85rem;font-weight:600;color:var(--fg-b);margin:.6em 0 .3em}
 .chat-content .chat-h3{font-family:var(--f-head);font-size:.8rem;font-weight:500;color:var(--fg-b);margin:.5em 0 .2em}
