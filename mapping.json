@@ -1,16 +1,16 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T05:16:43.584343+00:00",
+  "generated_at": "2026-03-25T12:59:28.466051+00:00",
   "mappings": [
-    {
-      "narrative": "{Rigid monoidal category}",
-      "lean_id": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
-      "latex_label": "def:rigid-monoidal-category"
-    },
     {
       "narrative": "{Snake identity}",
       "lean_id": "QOU.QuantumObservableUniverse.SnakeIdentity",
       "latex_label": "def:snake-identity"
+    },
+    {
+      "narrative": "{Rigid monoidal category}",
+      "lean_id": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
+      "latex_label": "def:rigid-monoidal-category"
     },
     {
       "narrative": "{Quantum Universe}",
@@ -123,7 +123,7 @@
       "latex_label": "def:categorical-q-ext-deriv"
     },
     {
-      "narrative": "{$q$-harmonic form (particle)}",
+      "narrative": "{Particle ($q$-harmonic form)}",
       "lean_id": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "latex_label": "def:q-harmonic-form"
     },
