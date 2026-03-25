@@ -27,7 +27,7 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX, FOLIO_PORT } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
@@ -2809,7 +2809,7 @@ if (mode === "stdio") {
   await server.connect(transport);
 
   // Start viewer HTTP server on a separate port
-  const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+  const viewerPort = FOLIO_PORT;
 
   Bun.serve({
     port: viewerPort,
@@ -2849,7 +2849,7 @@ if (mode === "stdio") {
   log('init', `Viewer: http://localhost:${viewerPort}/viewer/${branchSuffix}`);
 } else {
   // HTTP mode — MCP + viewer on same port
-  const port = parseInt(process.env.MCP_PORT || "8080", 10);
+  const port = FOLIO_PORT;
   const { StreamableHTTPServerTransport } = await import(
     "@modelcontextprotocol/sdk/server/streamableHttp.js"
   );

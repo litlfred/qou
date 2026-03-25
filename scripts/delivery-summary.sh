@@ -8,8 +8,9 @@
 #
 set -uo pipefail
 
+source "$(dirname "$0")/folio-port.sh"
 BRANCH=$(git branch --show-current 2>/dev/null || echo "unknown")
-PORT="${VIEWER_PORT:-3200}"
+PORT="$FOLIO_PORT"
 
 # Only show after a push (remote tracking branch matches local HEAD)
 LOCAL_SHA=$(git rev-parse HEAD 2>/dev/null)

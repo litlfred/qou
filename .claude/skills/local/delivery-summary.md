@@ -22,13 +22,13 @@ Replace `<BRANCH>` with the actual branch name you pushed to.
 ## 2. Viewer links
 
 Provide links to the relevant pages showing the changes. The viewer runs on
-`localhost:3200` by default (or `$VIEWER_PORT`).
+`localhost:<viewer_port>` where `viewer_port` comes from `lean-mcp.config.json`.
 
 Common viewer URLs:
-- **Paper viewer**: `http://localhost:3200/viewer/`
-- **Assistant**: `http://localhost:3200/assistant/`
-- **Chapter viewer**: `http://localhost:3200/viewer/#chapter-N`
-- **Specific block**: `http://localhost:3200/viewer/#<label>` (e.g., `#def:quantum-connection`)
+- **Paper viewer**: `http://localhost:8080/viewer/`
+- **Assistant**: `http://localhost:8080/assistant/`
+- **Chapter viewer**: `http://localhost:8080/viewer/#chapter-N`
+- **Specific block**: `http://localhost:8080/viewer/#<label>` (e.g., `#def:quantum-connection`)
 
 For remote/deployed builds:
 - **GitHub Pages**: `https://litlfred.github.io/qou/`
@@ -47,5 +47,5 @@ After pushing changes to `claude/feature-xyz`:
 > ```
 >
 > **See changes:**
-> - Paper viewer: http://localhost:3200/viewer/#def:quantum-connection
-> - Assistant: http://localhost:3200/assistant/
+> - Paper viewer: http://localhost:8080/viewer/#def:quantum-connection
+> - Assistant: http://localhost:8080/assistant/
