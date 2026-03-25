@@ -12,7 +12,7 @@ export default proposition({
   examples: ["ex:frobenius-su2"],
   tags: ["category-theory", "frobenius"],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/frobenius-relation-0.svg", blockIndex: 0, hash: "bf89ade962b6" },
+    { mime: "image/svg+xml", url: "rendered/frobenius-relation-0.svg", blockIndex: 0, hash: "d6fa534adf36" },
   ],
 
 });

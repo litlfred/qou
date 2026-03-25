@@ -65,6 +65,7 @@ When a user request arrives, route to the right skill(s):
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
+| "diff / changes / what changed / undo" | `local/diff` | reader |
 
 ### Skill role assignments
 
@@ -74,7 +75,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -308,6 +309,25 @@ combined dependency DAG. Editors and proof-writers use this to:
   changed block and its downstream dependents
 - **Prioritize formalization**: find blocks with the most dependents
   that are still `not_started`
+
+### Cross-paper references
+
+The `uses[]` field supports three reference scopes:
+
+| Scope | Syntax | Example |
+|-------|--------|---------|
+| Same paper | bare label | `"def:quantum-universe"` |
+| Same folio | `"paper-dir:label"` | `"unital-groebner-bases:cor:pbw"` |
+| External folio | full URL | `"https://folio.example.org/viewer/#/view/paper-id"` |
+
+Cross-paper refs are validated at folio level, not per-paper. The
+`uses-resolve` constraint skips qualified refs (those matching
+`paper-dir:label` or starting with `https://`).
+
+Each paper in `content/folio.ts` has an optional `url` field for
+viewer routing. BibTeX entries for folio-hosted papers include a
+`folio-url` field matching the viewer hash route
+(e.g. `/viewer/#/view/unital-groebner-bases`).
 
 ### Markdown content convention (in .md files)
 

@@ -27,11 +27,11 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX, FOLIO_PORT } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
-  mergeBase,
+  mergeBase, gitLogFiles, gitShowBinaryAt, gitShowAt,
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
@@ -1338,6 +1338,127 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }
   }
 
+  // ── API: Block changelog (derived from git log) ──────────────
+  // GET /api/block-changelog?id=<paper>&label=<label>&limit=20
+  if (path === "/api/block-changelog") {
+    const id = url.searchParams.get("id") || "quantum-observable-universe";
+    const label = url.searchParams.get("label");
+    const limit = parseInt(url.searchParams.get("limit") || "20");
+    if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400 });
+    try {
+      const paper = await resolvePaper(id);
+      // Find the block's rootName and chapter directory
+      let rootName: string | null = null;
+      let chapterDir: string | null = null;
+      for (const ch of paper.chapters || []) {
+        for (const sec of ch.sections || []) {
+          for (const blk of sec.blocks || []) {
+            if (blk.label === label) {
+              rootName = blk.rootName;
+              // Extract chapter dir from rendered URL or walk paper structure
+              break;
+            }
+          }
+          if (rootName) break;
+        }
+        if (rootName) {
+          // Get chapter dir from the chapter's label or directory listing
+          const { readdirSync } = await import("fs");
+          const paperDir = join(CONTENT_DIR, id);
+          for (const d of readdirSync(paperDir)) {
+            const candidate = join(paperDir, d, `${rootName}.ts`);
+            if (existsSync(candidate)) { chapterDir = d; break; }
+          }
+          break;
+        }
+      }
+      if (!rootName || !chapterDir) {
+        return Response.json({ error: `Block "${label}" not found` }, { status: 404 });
+      }
+      const base = `content/${id}/${chapterDir}/${rootName}`;
+      const files = [`${base}.ts`, `${base}.md`, `${base}.lean`];
+      const commits = gitLogFiles(files, limit);
+      return Response.json({ label, rootName, chapterDir, commits }, {
+        headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Content asset at specific commit ───────────────────
+  // GET /api/content-asset-at/<sha>/<paper>/<chapter>/rendered/<file>
+  if (path.startsWith("/api/content-asset-at/")) {
+    const rel = path.slice("/api/content-asset-at/".length);
+    const slashIdx = rel.indexOf("/");
+    if (slashIdx < 0) return new Response("Bad request", { status: 400 });
+    const sha = rel.slice(0, slashIdx);
+    const filePath = `content/${rel.slice(slashIdx + 1)}`;
+    const buf = gitShowBinaryAt(sha, filePath);
+    if (!buf) return new Response("Not found at that commit", { status: 404 });
+    const ext = extname(filePath);
+    return new Response(buf, {
+      headers: {
+        "Content-Type": MIME[ext] || "application/octet-stream",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+
+  // ── API: Undo impact analysis (reverse dependency walk) ─────
+  // GET /api/undo-impact?id=<paper>&label=<label>
+  if (path === "/api/undo-impact") {
+    const id = url.searchParams.get("id") || "quantum-observable-universe";
+    const label = url.searchParams.get("label");
+    if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400 });
+    try {
+      const paper = await resolvePaper(id);
+      // Build block index and reverse dependency map
+      const allBlocks: Array<{ label: string; kind: string; title: string; uses: string[] }> = [];
+      const reverseDeps = new Map<string, string[]>();
+      for (const ch of paper.chapters || []) {
+        for (const sec of ch.sections || []) {
+          for (const blk of sec.blocks || []) {
+            if (!blk.label) continue;
+            allBlocks.push({ label: blk.label, kind: blk.kind, title: blk.title || "", uses: blk.uses || [] });
+            for (const dep of blk.uses || []) {
+              if (!reverseDeps.has(dep)) reverseDeps.set(dep, []);
+              reverseDeps.get(dep)!.push(blk.label);
+            }
+          }
+        }
+      }
+      // Find target
+      const target = allBlocks.find(b => b.label === label);
+      if (!target) return Response.json({ error: `Block "${label}" not found` }, { status: 404 });
+      // BFS for transitive dependents
+      const directDependents = (reverseDeps.get(label) || []).map(l => allBlocks.find(b => b.label === l)!).filter(Boolean);
+      const visited = new Set<string>([label]);
+      const queue = [...(reverseDeps.get(label) || [])];
+      const transitive: typeof allBlocks = [];
+      while (queue.length) {
+        const cur = queue.shift()!;
+        if (visited.has(cur)) continue;
+        visited.add(cur);
+        const blk = allBlocks.find(b => b.label === cur);
+        if (blk) transitive.push(blk);
+        for (const next of reverseDeps.get(cur) || []) {
+          if (!visited.has(next)) queue.push(next);
+        }
+      }
+      return Response.json({
+        target: { label: target.label, kind: target.kind, title: target.title },
+        directDependents: directDependents.map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+        transitiveDependents: transitive.filter(b => !directDependents.some(d => d.label === b.label))
+          .map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+        totalAffected: transitive.length,
+      }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
   // ── Legacy viewer SPA ─────────────────────────────────────
   if (path === "/viewer" || path === "/viewer/" || path === "/viewer/index.html") {
     return serveFile(join(VIEWER_DIR, "index.html"));
@@ -1755,6 +1876,43 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
       invalidatePaperCache(body.paperId);
       log('edit', `block saved: ${body.paperId}/${body.rootName}`, `${body.md.length} chars → ${mdPath}`);
       return Response.json({ ok: true, path: mdPath });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── Revert block to a previous commit (collaborator+ only) ──────
+  // POST /api/block/revert { paperId, rootName, sha }
+  if (path === "/api/block/revert") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("reverting content", "collaborator");
+    }
+    try {
+      const body = await req.json() as { paperId: string; rootName: string; sha: string };
+      const { readdirSync } = await import("fs");
+      const paperDir = join(CONTENT_DIR, body.paperId);
+      if (!existsSync(paperDir)) {
+        return Response.json({ error: "Paper not found" }, { status: 404 });
+      }
+      // Find block's chapter directory
+      let chapterDir: string | null = null;
+      for (const d of readdirSync(paperDir)) {
+        if (existsSync(join(paperDir, d, `${body.rootName}.ts`))) { chapterDir = d; break; }
+      }
+      if (!chapterDir) {
+        return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
+      }
+      // Revert .md content from the specified commit
+      const relMd = `content/${body.paperId}/${chapterDir}/${body.rootName}.md`;
+      const oldMd = gitShowAt(body.sha, relMd);
+      if (oldMd === null) {
+        return Response.json({ error: `No .md found at commit ${body.sha}` }, { status: 404 });
+      }
+      const mdPath = join(paperDir, chapterDir, `${body.rootName}.md`);
+      writeFileSync(mdPath, oldMd, "utf-8");
+      invalidatePaperCache(body.paperId);
+      log('revert', `block reverted: ${body.paperId}/${body.rootName}`, `to commit ${body.sha.slice(0, 8)}`);
+      return Response.json({ ok: true, sha: body.sha, path: mdPath });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
@@ -2809,7 +2967,7 @@ if (mode === "stdio") {
   await server.connect(transport);
 
   // Start viewer HTTP server on a separate port
-  const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+  const viewerPort = FOLIO_PORT;
 
   Bun.serve({
     port: viewerPort,
@@ -2849,7 +3007,7 @@ if (mode === "stdio") {
   log('init', `Viewer: http://localhost:${viewerPort}/viewer/${branchSuffix}`);
 } else {
   // HTTP mode — MCP + viewer on same port
-  const port = parseInt(process.env.MCP_PORT || "8080", 10);
+  const port = FOLIO_PORT;
   const { StreamableHTTPServerTransport } = await import(
     "@modelcontextprotocol/sdk/server/streamableHttp.js"
   );

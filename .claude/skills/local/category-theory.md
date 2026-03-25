@@ -347,6 +347,29 @@ progressively:
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
 
+### PawLei Basis and Cross-Paper Dependencies
+
+The **PawLei basis** (Pawlowski–Leitner, abbreviated PawLei) provides
+a canonical basis for intertwiner spaces
+$\mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$.
+
+This depends on the **PBW theorem over commutative rings**
+(`cor:pbw` in the `unital-groebner-bases` paper), which is a
+cross-paper dependency:
+
+```typescript
+uses: ["unital-groebner-bases:cor:pbw"],  // qualified cross-paper ref
+```
+
+Lean declarations use the `PawLei` prefix:
+- `QOU.PawLeiBasis` — basis structure
+- `QOU.PawLeiInnerProduct` — orthogonality
+- `QOU.pawLeiDim` — dimension formula
+
+The chain: PBW (Gröbner bases) → $U(\mathfrak{su}(2))$ monomial basis
+→ contraction with volume form $\epsilon$ → PawLei basis for
+intertwiners → hadron decomposition.
+
 ## Content Object Integration
 
 Category-theory blocks are content object triples (`.ts` + `.md` +

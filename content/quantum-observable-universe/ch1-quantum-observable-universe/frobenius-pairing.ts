@@ -10,4 +10,8 @@ export default definition({
   },
   uses: ["def:quantum-universe"],
   examples: ["ex:frobenius-su2"],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/frobenius-pairing-0.svg", blockIndex: 0, hash: "9097b644f678" },
+  ],
+
 });

@@ -10,7 +10,7 @@ import { paper, chapterRef } from "../schema/builders";
 export default paper({
   title: "Quantum Observable Universe",
   authors: ["Frederick Carl Leitner"],
-  affiliations: ["World Health Organization"],
+  affiliations: [],
   date: "2026-03-21",
   abstract:
     "This paper presents a mathematical framework for the Quantum Observable " +

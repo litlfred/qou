@@ -135,6 +135,7 @@ export default chapter({
         "localized-knot",
         "hadron",
         "hadron-operations",
+        "knot-factorization",
         "localized-hadron",
         "hadron-fibre-embedding",
         "skein-generation",
