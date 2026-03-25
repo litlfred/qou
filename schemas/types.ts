@@ -647,13 +647,16 @@ export interface PaperRef {
   /** Tags for filtering on the landing page. */
   tags?: string[];
   /**
-   * Folio assistant URL for this paper.  Used for:
+   * Folio viewer URL for this paper.  Used for:
    * - Cross-paper dependency resolution (qualified `uses` refs)
    * - BibTeX `folio-url` field for folio-hosted citations
    * - Read-only import of external papers for commenting/referencing
    *
-   * For local papers: relative path or same-origin URL.
-   * For external papers: full URL (e.g. "https://folio.example.org/papers/foo").
+   * Local papers use the viewer hash route: "/viewer/#/view/{paper-id}".
+   * To link to a specific block: append the label fragment
+   *   (e.g. "/viewer/#/view/unital-groebner-bases" then "#cor:pbw").
+   * External folios use full URLs:
+   *   "https://folio.example.org/viewer/#/view/paper-id".
    */
   url?: string;
 }

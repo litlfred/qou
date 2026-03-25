@@ -16,7 +16,7 @@ export default folio({
         "A framework for quantum physics via rigid monoidal categories, " +
         "higher-form symmetries, and observable algebras.",
       tags: ["quantum", "category-theory", "formalization"],
-      url: "papers/quantum-observable-universe",
+      url: "/viewer/#/view/quantum-observable-universe",
     }),
     paperRef({
       dir: "unital-groebner-bases",
@@ -25,7 +25,7 @@ export default folio({
         "Proves that quotients A/I are free R-modules when I has a unital " +
         "Gröbner basis; obtains PBW over commutative rings as a corollary.",
       tags: ["algebra", "groebner-basis", "pbw", "formalization"],
-      url: "papers/unital-groebner-bases",
+      url: "/viewer/#/view/unital-groebner-bases",
     }),
   ],
 });
