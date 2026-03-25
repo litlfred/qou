@@ -80,16 +80,4 @@ noncomputable def czTerminalResolution : CZTerminalResolution where
   neutron_mass := 939.565
   neutron_match := by norm_num
 
-/-- The proton mass prediction matches CODATA to sub-keV. -/
--- Ref: CODATA 2018
-theorem cz_proton_sub_keV : |czTerminalResolution.proton_mass - 938.272| < 0.001 := by
-  simp [czTerminalResolution]
-  norm_num
-
-/-- The neutron mass prediction matches CODATA to sub-keV. -/
--- Ref: CODATA 2018
-theorem cz_neutron_sub_keV : |czTerminalResolution.neutron_mass - 939.565| < 0.001 := by
-  simp [czTerminalResolution]
-  norm_num
-
 end QOU.Examples

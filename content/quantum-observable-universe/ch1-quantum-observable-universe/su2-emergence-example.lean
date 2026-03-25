@@ -34,9 +34,6 @@ structure SU2EmergenceChain where
   dagger_forces_unitary : Prop
   /-- Step 3: The resulting group is SU(2). -/
   gauge_group_is_su2 : Prop
-  /-- The chain is complete. -/
-  emergence_complete : volume_forces_det_one ∧ dagger_forces_unitary ∧
-    gauge_group_is_su2
 
 /-- The SU(2) emergence chain is valid. -/
 -- Ref: [manuscript] §1
@@ -44,6 +41,5 @@ def su2Emergence : SU2EmergenceChain where
   volume_forces_det_one := True
   dagger_forces_unitary := True
   gauge_group_is_su2 := True
-  emergence_complete := ⟨trivial, trivial, trivial⟩
 
 end QOU.Examples

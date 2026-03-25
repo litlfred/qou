@@ -34,8 +34,6 @@ structure SU2FrobeniusData where
   haar_invariant : Prop
   /-- The Frobenius relation holds: comultiplication is a bimodule map. -/
   frobenius_holds : Prop
-  /-- All properties hold. -/
-  all_ok : haar_normalised ∧ haar_invariant ∧ frobenius_holds
 
 /-- The Frobenius data for SU(2). -/
 -- Ref: [manuscript] §1
@@ -43,6 +41,5 @@ def su2Frobenius : SU2FrobeniusData where
   haar_normalised := True
   haar_invariant := True
   frobenius_holds := True
-  all_ok := ⟨trivial, trivial, trivial⟩
 
 end QOU.Examples

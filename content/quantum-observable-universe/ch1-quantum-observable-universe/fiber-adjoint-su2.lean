@@ -37,8 +37,6 @@ structure SU2FiberAdjointData where
   no_invariant_vectors : Prop
   /-- The embedding σ is a monomorphism. -/
   embedding_mono : Prop
-  /-- All properties hold. -/
-  all_ok : no_invariant_vectors ∧ embedding_mono
 
 /-- The fiber–adjoint data for SU(2). -/
 -- Ref: [manuscript] §1
@@ -49,7 +47,6 @@ def su2FiberAdjoint : SU2FiberAdjointData where
   orbit_dim := rfl
   no_invariant_vectors := True
   embedding_mono := True
-  all_ok := ⟨trivial, trivial⟩
 
 /-- The adjoint of SU(2) has dimension 3. -/
 theorem su2_fiber_adj_dim : su2FiberAdjoint.adjointDim = 3 := rfl

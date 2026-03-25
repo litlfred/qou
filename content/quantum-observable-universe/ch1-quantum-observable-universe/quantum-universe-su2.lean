@@ -41,10 +41,8 @@ structure SU2QuantumUniverseData where
   numCoordGenerators : ℕ
   /-- O(SU(2)) has 4 generators: α, β, ᾱ, β̄. -/
   coord_gens : numCoordGenerators = 4
-  /-- The fibre functor is faithful (abstract witness). -/
-  fibreFunctorFaithful : Prop
-  /-- Tannaka–Krein: Aut⊗(τ) ≅ SU(2). -/
-  tannaka_faithful : fibreFunctorFaithful
+  /-- Tannaka–Krein: Aut⊗(τ) ≅ SU(2), fibre functor is faithful. -/
+  tannaka_faithful : Prop
 
 /-- The SU(2) quantum universe instance. -/
 -- Ref: [manuscript] §1
@@ -55,8 +53,7 @@ def su2QuantumUniverse : SU2QuantumUniverseData where
   lie_dim := rfl
   numCoordGenerators := 4
   coord_gens := rfl
-  fibreFunctorFaithful := True
-  tannaka_faithful := trivial
+  tannaka_faithful := True
 
 /-- The Frobenius form on O(SU(2)) is the Haar integral ∫_G.
 
@@ -69,15 +66,12 @@ structure HaarFrobeniusData where
   faithful : Prop
   /-- The integral is normalised: ∫(1) = 1. -/
   normalised : Prop
-  /-- Both properties hold for SU(2). -/
-  haar_ok : faithful ∧ normalised
 
 /-- Haar integral on O(SU(2)) is a valid Frobenius form. -/
 -- Ref: [manuscript] §1
 def su2HaarFrobenius : HaarFrobeniusData where
   faithful := True
   normalised := True
-  haar_ok := ⟨trivial, trivial⟩
 
 /-- The 3D left-invariant calculus has structure constants ε_{abc}
     (Levi-Civita symbol): [e_a, e_b] = ε_{abc} e_c. -/

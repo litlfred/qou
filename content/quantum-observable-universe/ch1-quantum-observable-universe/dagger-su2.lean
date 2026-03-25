@@ -33,8 +33,6 @@ structure SU2DaggerData where
   contravariant : Prop
   /-- Positive-definiteness: f†∘f > 0 for non-zero f. -/
   positive_definite : Prop
-  /-- All properties hold. -/
-  all_ok : invariant_ip_unique ∧ involutive ∧ contravariant ∧ positive_definite
 
 /-- The dagger data for Rep(SU(2)). -/
 -- Ref: [manuscript] §1
@@ -43,6 +41,5 @@ def su2Dagger : SU2DaggerData where
   involutive := True
   contravariant := True
   positive_definite := True
-  all_ok := ⟨trivial, trivial, trivial, trivial⟩
 
 end QOU.Examples

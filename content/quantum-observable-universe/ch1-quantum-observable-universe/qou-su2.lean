@@ -35,8 +35,6 @@ structure SU2ObservabilityData where
   /-- (iii) The fundamental V = ℂ² admits a non-degenerate alternating form
       ε : Λ²V → ℂ, forcing det(g_V) = 1 for all gauge transformations. -/
   volume_form_exists : Prop
-  /-- All three conditions hold. -/
-  is_observable : haar_faithful ∧ adjoint_irreducible ∧ volume_form_exists
 
 /-- SU(2) satisfies all observability conditions. -/
 -- Ref: [manuscript] §1
@@ -46,7 +44,6 @@ def su2Observable : SU2ObservabilityData where
   adjoint_irreducible := True
   adj_dim_eq := rfl
   volume_form_exists := True
-  is_observable := ⟨trivial, trivial, trivial⟩
 
 /-- The adjoint of SU(2) has dimension 3 (spin-1). -/
 theorem su2_adjoint_dim : su2Observable.adjoint_dim = 3 := rfl
