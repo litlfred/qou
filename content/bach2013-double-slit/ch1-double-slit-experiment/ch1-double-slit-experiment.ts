@@ -21,6 +21,7 @@ export default chapter({
       title: "Experimental setup",
       label: "sec:bach-setup",
       blocks: [
+        "bach-fig1-setup",
         "bach-apparatus",
         "bach-slit-parameters",
       ],
@@ -30,7 +31,9 @@ export default chapter({
       title: "Results",
       label: "sec:bach-results",
       blocks: [
+        "bach-fig2-mask",
         "bach-mask-control",
+        "bach-fig3-buildup",
         "bach-single-electron-buildup",
         "bach-intensity-profile",
       ],
