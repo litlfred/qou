@@ -26,3 +26,4 @@ import QOU.DescartesUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
+import QOU.RepresentationTheory
