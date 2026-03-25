@@ -23,6 +23,7 @@ $$
     \ar[r, "\int_A \circ \mu"]
   & \mathbf{1}
 \end{tikzcd}
+\qquad\text{(PawLei inner product)}
 \end{equation}
 ```
 

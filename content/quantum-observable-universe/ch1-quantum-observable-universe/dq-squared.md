@@ -9,6 +9,17 @@ $$
   \;=\; q^{-1}(1 - q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha.
 $$
 
+```tex
+\begin{equation}\label{eq:dq-squared-archimedean-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^k(M) \ar[r, "d_q"] \ar[rr, bend left=25, "d_q^2"]
+  & \Omega^{k+1}(M) \ar[r, "d_q"]
+  & \Omega^{k+2}(M)
+\end{tikzcd}
+\qquad\text{($d_q^2 \neq 0$ for $q \neq 1$)}
+\end{equation}
+```
+
 Here the categorical curvature $\omega_V$ of the weight projection
 specialises to $d\theta$ (the symplectic form on $H$) via the
 ([categorical--geometric correspondence](#prop:categorical-archimedean-bridge)),

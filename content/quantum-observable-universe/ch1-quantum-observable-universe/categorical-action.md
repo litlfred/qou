@@ -30,6 +30,7 @@ where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is called the
     \ar[r, "\mathrm{ev}_A"]
   & \mathbf{1}
 \end{tikzcd}
+\qquad\text{(categorical action)}
 \end{equation}
 ```
 

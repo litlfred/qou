@@ -29,6 +29,7 @@ which:
     \ar[r, hook, "\text{coadjoint orbit}"]
   & A^{\vee}
 \end{tikzcd}
+\qquad\text{(fibre--adjoint involution)}
 \end{equation}
 ```
 

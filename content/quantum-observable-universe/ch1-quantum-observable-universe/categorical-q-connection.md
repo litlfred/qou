@@ -16,6 +16,7 @@ $$
     \ar[d, "q^{-1}\,\mathrm{id} \,+\, (1 - q^{-1})\,\theta_A \circ \iota_\xi"] \\
   & \Omega^1(A) \otimes A
 \end{tikzcd}
+\qquad\text{($q$-connection)}
 \end{equation}
 ```
 

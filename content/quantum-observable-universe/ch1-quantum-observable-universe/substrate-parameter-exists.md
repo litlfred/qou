@@ -19,5 +19,6 @@ vertical projection $\pi_V \circ d$ (as $q \to \infty$).
   & d_q \ar[r, phantom, "\xrightarrow{q \to \infty}"]
   & \pi_V \circ d
 \end{tikzcd}
+\qquad\text{(substrate interpolation)}
 \end{equation}
 ```

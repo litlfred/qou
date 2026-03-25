@@ -19,6 +19,7 @@ constituents — that is, $h$ lies in the span of morphisms of the form
   & A^{\otimes n} \ar[r, "\pi_{j_1} \otimes \cdots \otimes \pi_{j_n}"]
   & V_{j_1} \otimes \cdots \otimes V_{j_n}
 \end{tikzcd}
+\qquad\text{(hadron factorisation)}
 \end{equation}
 ```
 

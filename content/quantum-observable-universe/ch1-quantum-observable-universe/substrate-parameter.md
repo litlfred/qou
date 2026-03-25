@@ -26,6 +26,7 @@ $$
   & {} \ar[u, phantom, "q{=}1"' near start]
     \ar[l, phantom, "q{\to}\infty" near start]
 \end{tikzcd}
+\qquad\text{(substrate family)}
 \end{equation}
 ```
 

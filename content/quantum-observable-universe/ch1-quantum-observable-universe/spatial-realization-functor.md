@@ -37,6 +37,25 @@ $\mathbf{C}$:
    and $\iota_\xi\,d\theta_A = 0$ within the non-commutative
    differential calculus.
 
+```tex
+\begin{equation}\label{eq:spatial-realization-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  A \ar[r, "\tau"] \ar[d, "d"']
+  & C^{\infty}(M) \ar[d, "d"] \\
+  \Omega^1(A) \ar[r, "\tau"']
+  & \Gamma(T^* M)
+\end{tikzcd}
+\qquad
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \theta_A \ar[r, mapsto, "\tau"]
+  & \theta \\
+  \xi \ar[r, mapsto, "\tau"']
+  & \xi_{\mathrm{Reeb}}
+\end{tikzcd}
+\qquad\text{(spatial realisation)}
+\end{equation}
+```
+
 Under $\tau$, these algebraic objects map to their geometric
 counterparts: $\theta_A$ becomes the global contact $1$-form
 $\theta$, $\xi$ becomes the Reeb vector field, and non-degeneracy

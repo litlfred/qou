@@ -14,6 +14,7 @@ formulations of $d_q$ coincide:
   \Omega^k(M) \ar[r, "\theta \wedge \mathcal{L}_\xi"']
   & \Omega^{k+1}(M)
 \end{tikzcd}
+\qquad\text{(categorical--geometric bridge)}
 \end{equation}
 ```
 

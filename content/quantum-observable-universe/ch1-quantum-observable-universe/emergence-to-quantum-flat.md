@@ -16,6 +16,7 @@ instanton equation $F_A^{-} = 0$ under the simplicity constraint.
   B \ar[r, equal]
   & F_A^+
 \end{tikzcd}
+\qquad\text{(derived quantum flatness)}
 \end{equation}
 ```
 

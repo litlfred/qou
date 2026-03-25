@@ -28,6 +28,7 @@ contraction with the volume form.
   & V_{1/2}^{\otimes n} \ar[r, "\pi_j"]
   & V_j
 \end{tikzcd}
+\qquad\text{(PawLei contraction)}
 \end{equation}
 ```
 

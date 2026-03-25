@@ -17,6 +17,18 @@ instanton condition ([categorical instanton](#def:categorical-instanton))
 combined with the simplicity constraint
 $B \in \Gamma(\Lambda^+ H^* \otimes \mathrm{Ad}(P))$:
 
+```tex
+\begin{equation}\label{eq:quantum-flatness-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  F_\nabla \ar[r, equal, "\text{instanton}"]
+    \ar[dr, equal, "F_\nabla = B"']
+  & F_\nabla^+ \ar[d, equal, "\text{simplicity}"] \\
+  & B
+\end{tikzcd}
+\qquad\text{(quantum flatness)}
+\end{equation}
+```
+
 1. The instanton equation $\star_q F_\nabla = F_\nabla$ forces
    $F_\nabla = F_\nabla^+$ (self-dual curvature).
 2. The simplicity constraint restricts $B = F_\nabla^+$.

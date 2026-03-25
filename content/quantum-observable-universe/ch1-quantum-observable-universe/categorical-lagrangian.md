@@ -25,6 +25,7 @@ adjoint section (antipode composed with the Frobenius form).
   & \Omega^1(A) \otimes A \ar[d, "\mathcal{D}_\nabla \,+\, \psi^* \otimes (-)"] \\
   & \mathrm{End}_{\mathbf{C}}(A)
 \end{tikzcd}
+\qquad\text{(Lagrangian)}
 \end{equation}
 ```
 

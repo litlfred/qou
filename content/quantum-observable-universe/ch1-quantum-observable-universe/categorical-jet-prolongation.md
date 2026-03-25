@@ -14,5 +14,6 @@ the induced fibre functor --- is again a quantum universe.
   A \ar[u, phantom, "\ni"] \ar[r, hook, "j^1"']
   & J^1(A) \ar[u, phantom, "\ni"]
 \end{tikzcd}
+\qquad\text{(jet prolongation)}
 \end{equation}
 ```

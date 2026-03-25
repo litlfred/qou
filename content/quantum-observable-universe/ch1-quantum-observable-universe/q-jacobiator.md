@@ -27,6 +27,19 @@ non-degenerate by hypothesis, $[\,\cdot\,,\cdot\,]_q$ violates the Jacobi
 identity for all $q \neq 1$. Thus $(\mathfrak{X}(M), [\,\cdot\,,\cdot\,]_q)$
 is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.
 
+```tex
+\begin{equation}\label{eq:q-jacobiator-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  {[\,\cdot\,,\cdot\,]_q} \ar[r, "\mathrm{Jac}_q"]
+    \ar[d, "q{=}1"']
+  & q^{-1}(1{-}q^{-1})\,d\theta \wedge \mathcal{L}_\xi \\
+  {[\,\cdot\,,\cdot\,]} \ar[r, "\mathrm{Jac}"']
+  & 0
+\end{tikzcd}
+\qquad\text{(Jacobiator)}
+\end{equation}
+```
+
 The coefficient $q^{-1}(1-q^{-1})$ matches the $d_q^2$ obstruction
 ([archimedean $d_q^2$](#thm:dq-squared)), confirming that both
 failures — of nilpotence and of the Jacobi identity — are driven by

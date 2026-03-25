@@ -22,6 +22,7 @@ automorphisms that act diagonally on each weight space of $V$.
   \mathrm{Aut}(\tau(V))
   & \mathrm{Aut}^{\otimes}(\tau) \ar[l]
 \end{tikzcd}
+\qquad\text{(maximal torus)}
 \end{equation}
 ```
 
