@@ -18,6 +18,21 @@ $\mathcal{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is called the
 *physics endomorphism*.
 
+```tex
+\begin{equation}\label{eq:categorical-action-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathbf{1}
+    \ar[r, "\mathrm{coev}_A"]
+    \ar[rr, bend right=25, "\mathcal{S}"']
+  & A \otimes A^{\vee}
+    \ar[r, "\Phi \otimes \mathrm{id}"]
+  & A \otimes A^{\vee}
+    \ar[r, "\mathrm{ev}_A"]
+  & \mathbf{1}
+\end{tikzcd}
+\end{equation}
+```
+
 The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$
 and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$
 are the structure maps of the rigid duality on $A$

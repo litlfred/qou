@@ -17,3 +17,18 @@ which:
      \mathrm{Hom}(\mathbf{1},\, \mathrm{Ad}(A)) = 0.
    $$
 
+```tex
+\begin{equation}\label{eq:fiber-adjoint-involution-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathbb{P}(V)
+    \ar[r, hook, "\sigma"]
+    \ar[d, "\cong"']
+  & \mathrm{Ad}(A)
+    \ar[d, "\cong", "\int_A"'] \\
+  G/T
+    \ar[r, hook, "\text{coadjoint orbit}"]
+  & A^{\vee}
+\end{tikzcd}
+\end{equation}
+```
+
