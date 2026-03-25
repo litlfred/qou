@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T03:58:34.963381+00:00",
+  "generated_at": "2026-03-25T05:16:43.584343+00:00",
   "mappings": [
     {
       "narrative": "{Rigid monoidal category}",
@@ -43,7 +43,7 @@
       "latex_label": "def:weight-decomposition"
     },
     {
-      "narrative": "{Involutive structure (\\$\\textbackslash\\{\\}ast\\$-structure)}",
+      "narrative": "{Involutive structure ($\\ast$-structure)}",
       "lean_id": "QOU.QuantumObservableUniverse.InvolutiveStructure",
       "latex_label": "def:involutive-structure"
     },
@@ -68,7 +68,7 @@
       "latex_label": "def:projective-line-object"
     },
     {
-      "narrative": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
+      "narrative": "{Contact affine chart on $\\mathbb{P}(V)$}",
       "lean_id": "QOU.QuantumObservableUniverse.ContactAffineChart",
       "latex_label": "def:contact-affine-chart"
     },
@@ -108,7 +108,7 @@
       "latex_label": "def:quantum-planck-constant"
     },
     {
-      "narrative": "{\\$q\\$-Hodge star}",
+      "narrative": "{$q$-Hodge star}",
       "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
       "latex_label": "def:q-hodge-star"
     },
@@ -118,12 +118,12 @@
       "latex_label": "def:categorical-action"
     },
     {
-      "narrative": "{Categorical \\$q\\$-deformed exterior derivative}",
+      "narrative": "{Categorical $q$-deformed exterior derivative}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
       "latex_label": "def:categorical-q-ext-deriv"
     },
     {
-      "narrative": "{\\$q\\$-harmonic form (particle)}",
+      "narrative": "{$q$-harmonic form (particle)}",
       "lean_id": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "latex_label": "def:q-harmonic-form"
     },
@@ -148,17 +148,17 @@
       "latex_label": "def:categorical-instanton"
     },
     {
-      "narrative": "{Categorical \\$q\\$-Lie bracket}",
+      "narrative": "{Categorical $q$-Lie bracket}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
       "latex_label": "def:categorical-q-lie-bracket"
     },
     {
-      "narrative": "{Categorical \\$q\\$-deformed connection}",
+      "narrative": "{Categorical $q$-deformed connection}",
       "lean_id": "QOU.QuantumObservableUniverse.CategoricalQConnection",
       "latex_label": "def:categorical-q-connection"
     },
     {
-      "narrative": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
+      "narrative": "{$q$-Weighted Yang--Mills--Levi functional}",
       "lean_id": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "latex_label": "def:q-yang-mills-levi"
     },
@@ -213,9 +213,9 @@
       "latex_label": "def:recursive-brane-tower"
     },
     {
-      "narrative": "{Yekutieli triple mapping}",
-      "lean_id": "QOU.Torsion.YekutieliTriple",
-      "latex_label": "def:yekutieli-triple"
+      "narrative": "{Descent involution}",
+      "lean_id": "QOU.Torsion.DescentInvolution",
+      "latex_label": "def:descent-involution"
     },
     {
       "narrative": "{Yekutieli Lifting Condition}",
@@ -243,14 +243,14 @@
       "latex_label": "def:descent"
     },
     {
-      "narrative": "{Descent involution}",
-      "lean_id": "QOU.Torsion.DescentInvolution",
-      "latex_label": "def:descent-involution"
-    },
-    {
       "narrative": "{Defining boundary of the brane}",
       "lean_id": "QOU.Torsion.BraneBoundary",
       "latex_label": "def:brane-boundary"
+    },
+    {
+      "narrative": "{Yekutieli triple mapping}",
+      "lean_id": "QOU.Torsion.YekutieliTriple",
+      "latex_label": "def:yekutieli-triple"
     },
     {
       "narrative": "{Localized knot (knot at a point)}",
@@ -293,22 +293,22 @@
       "latex_label": "def:braid-group"
     },
     {
-      "narrative": "{Symmetric group \\$S\\_3\\$}",
+      "narrative": "{Symmetric group $S_3$}",
       "lean_id": "QOU.PathIntegrals.S3Group",
       "latex_label": "def:s3-group"
     },
     {
-      "narrative": "{\\$\\textbackslash\\{\\}mathfrak\\{su\\}(2)\\$ basis}",
+      "narrative": "{$\\mathfrak{su}(2)$ basis}",
       "lean_id": "QOU.PathIntegrals.Su2Basis",
       "latex_label": "def:su2-basis"
     },
     {
-      "narrative": "{\\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$ generators of \\$\\textbackslash\\{\\}mathrm\\{Dic\\}\\_3\\$}",
+      "narrative": "{$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$}",
       "lean_id": "QOU.PathIntegrals.Su2Generators",
       "latex_label": "def:su2-generators"
     },
     {
-      "narrative": "{\\$\\textbackslash\\{\\}mathrm\\{SO\\}(3)\\$ generators}",
+      "narrative": "{$\\mathrm{SO}(3)$ generators}",
       "lean_id": "QOU.PathIntegrals.So3Generators",
       "latex_label": "def:so3-generators"
     },
@@ -318,7 +318,7 @@
       "latex_label": "def:braid-twist-flip"
     },
     {
-      "narrative": "{Quantum group \\$\\textbackslash\\{\\}mathcal\\{U\\}\\_q(\\textbackslash\\{\\}mathfrak\\{su\\}(2))\\$}",
+      "narrative": "{Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$}",
       "lean_id": "QOU.PathIntegrals.QuantumSu2",
       "latex_label": "def:quantum-su2"
     },
@@ -333,12 +333,12 @@
       "latex_label": "def:descartes-condition"
     },
     {
-      "narrative": "{Exceptional divisor at \\$p\\$}",
+      "narrative": "{Exceptional divisor at $p$}",
       "lean_id": "QOU.ExceptionalDivisor",
       "latex_label": "def:exceptional-divisor"
     },
     {
-      "narrative": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
+      "narrative": "{Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean_id": "QOU.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
     }
