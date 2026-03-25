@@ -4292,6 +4292,106 @@
       }
       app.appendChild(list);
 
+      // ── Content Index: all blocks as stubs ──────────────
+      if (data.papers?.length) {
+        const idx = mk('div','content-index');
+        idx.innerHTML = `<h2 style="font-family:var(--f-head);font-size:1.1rem;margin:2rem 0 .5rem">Content Index</h2>
+          <p style="font-size:.65rem;color:var(--fg-d);margin-bottom:.8rem">All content blocks across papers. Click to view in paper context.</p>
+          <div id="ci-filter" style="margin-bottom:.6rem"><input id="ci-search" type="text" placeholder="Filter blocks..." style="font-size:.7rem;padding:.3rem .5rem;width:100%;max-width:400px;border:1px solid var(--bd);border-radius:4px;background:var(--bg-r);color:var(--fg);font-family:var(--f-mono)"></div>
+          <div id="ci-blocks" style="font-size:.65rem"></div>`;
+        app.appendChild(idx);
+
+        // Load paper data to get all blocks
+        (async () => {
+          for (const p of data.papers) {
+            try {
+              const pr = await fetch(`/api/paper?id=${encodeURIComponent(p.id)}${branchParam()}`);
+              if (!pr.ok) continue;
+              const pd = await pr.json();
+              const container = document.getElementById('ci-blocks');
+              if (!container) return;
+
+              for (const ch of pd.chapters) {
+                const chDiv = mk('div','ci-chapter');
+                const chTitle = mk('div','');
+                chTitle.style.cssText = 'font-weight:600;font-size:.7rem;margin:.8rem 0 .3rem;color:var(--fg);font-family:var(--f-head)';
+                chTitle.textContent = `${ch.number != null ? 'Ch ' + ch.number + '. ' : ''}${ch.title}`;
+                chDiv.appendChild(chTitle);
+
+                for (const sec of ch.sections) {
+                  for (const b of sec.blocks) {
+                    const stub = mk('div','ci-stub');
+                    stub.dataset.search = `${b.kind} ${b.label || ''} ${b.title || ''} ${(b.tags || []).join(' ')}`.toLowerCase();
+                    stub.style.cssText = 'display:flex;align-items:baseline;gap:.4rem;padding:.2rem .4rem;border-radius:3px;cursor:pointer;border-left:3px solid transparent';
+
+                    const kindColors = {definition:'#4a9eff',theorem:'#e06c75',proposition:'#c678dd',lemma:'#c678dd',corollary:'#c678dd',remark:'#98c379',example:'#d19a66',proof:'#abb2bf',prose:'#abb2bf',conjecture:'#e5c07b'};
+                    stub.style.borderLeftColor = kindColors[b.kind] || 'var(--bd)';
+
+                    const kindSpan = mk('span','');
+                    kindSpan.style.cssText = 'font-family:var(--f-mono);font-size:.55rem;min-width:3rem;color:var(--fg-d)';
+                    kindSpan.textContent = b.kind;
+                    stub.appendChild(kindSpan);
+
+                    const titleSpan = mk('span','');
+                    titleSpan.style.cssText = 'flex:1;font-family:var(--f-head)';
+                    titleSpan.innerHTML = inl(b.title || b.rootName);
+                    renderMath(titleSpan);
+                    stub.appendChild(titleSpan);
+
+                    const labelSpan = mk('span','');
+                    labelSpan.style.cssText = 'font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)';
+                    labelSpan.textContent = b.label || '';
+                    stub.appendChild(labelSpan);
+
+                    // Lean badge
+                    if (b.lean?.file || b.lean?.decl) {
+                      const lBadge = mk('span','');
+                      lBadge.style.cssText = 'font-size:.5rem;padding:0 .2rem;border-radius:2px;background:rgba(42,170,70,.15);color:#2aaa46';
+                      lBadge.textContent = 'lean';
+                      stub.appendChild(lBadge);
+                    }
+
+                    // Uses count
+                    if (b.uses?.length) {
+                      const uBadge = mk('span','');
+                      uBadge.style.cssText = 'font-size:.5rem;color:var(--fg-d)';
+                      uBadge.textContent = `${b.uses.length} dep${b.uses.length > 1 ? 's' : ''}`;
+                      stub.appendChild(uBadge);
+                    }
+
+                    stub.onclick = () => {
+                      location.hash = `#/${hashWithBranch(`view/${p.id}`)}`;
+                      // After navigation, scroll to block
+                      setTimeout(() => { if (b.label) scrollToLabel(b.label); }, 500);
+                    };
+                    stub.onmouseover = () => { stub.style.background = 'var(--bg-r)'; };
+                    stub.onmouseout = () => { stub.style.background = ''; };
+
+                    chDiv.appendChild(stub);
+                  }
+                }
+                container.appendChild(chDiv);
+              }
+
+              // Filter
+              const searchInput = document.getElementById('ci-search');
+              if (searchInput) {
+                searchInput.oninput = () => {
+                  const q = searchInput.value.toLowerCase().trim();
+                  for (const s of container.querySelectorAll('.ci-stub')) {
+                    s.style.display = (!q || s.dataset.search.includes(q)) ? '' : 'none';
+                  }
+                  for (const c of container.querySelectorAll('.ci-chapter')) {
+                    const visible = c.querySelectorAll('.ci-stub:not([style*="display: none"])').length;
+                    c.style.display = visible ? '' : 'none';
+                  }
+                };
+              }
+            } catch(e) { console.error('content index:', e); }
+          }
+        })();
+      }
+
       // ── Paper Importer ────────────────────────────
       const imp = mk('div','importer');
       imp.innerHTML = `
@@ -5767,9 +5867,12 @@
           const tabs = mk('div','diff-tabs');
           const tabRendered = mk('button','diff-tab active');
           tabRendered.textContent = 'rendered';
+          const tabStub = mk('button','diff-tab');
+          tabStub.textContent = 'stub';
           const tabRaw = mk('button','diff-tab');
           tabRaw.textContent = 'raw diff';
           tabs.appendChild(tabRendered);
+          tabs.appendChild(tabStub);
           tabs.appendChild(tabRaw);
           body.appendChild(tabs);
 
@@ -5814,6 +5917,34 @@
           }
           body.appendChild(panelRendered);
 
+          // Panel: stub (content object manifest)
+          const panelStub = mk('div','diff-tab-panel');
+          const blk = bix.get(bd.label);
+          if (blk || bd.kind) {
+            const stubDiv = mk('div','');
+            stubDiv.style.cssText = 'font-family:var(--f-mono);font-size:.6rem;line-height:1.6;padding:.5rem';
+            const src = blk || bd;
+            const lines = [];
+            lines.push(`<span style="color:var(--fg-d)">kind:</span> <strong>${esc(src.kind || bd.kind)}</strong>`);
+            if (bd.label) lines.push(`<span style="color:var(--fg-d)">label:</span> ${esc(bd.label)}`);
+            if (src.title) lines.push(`<span style="color:var(--fg-d)">title:</span> ${esc(src.title)}`);
+            if (src.lean?.decl) lines.push(`<span style="color:var(--fg-d)">lean:</span> ${esc(src.lean.decl)}`);
+            if (src.lean?.file) lines.push(`<span style="color:var(--fg-d)">lean file:</span> ${esc(src.lean.file)}`);
+            if (src.uses?.length) {
+              lines.push(`<span style="color:var(--fg-d)">uses:</span>`);
+              for (const u of src.uses) {
+                const isResolved = bix.has(u);
+                lines.push(`  <span style="color:${isResolved ? 'var(--ac)' : '#e06c75'};cursor:pointer" onclick="location.hash='#${esc(u)}'">${esc(u)}</span>`);
+              }
+            }
+            if (src.tags?.length) lines.push(`<span style="color:var(--fg-d)">tags:</span> ${src.tags.map(t => esc(t)).join(', ')}`);
+            if (src.proofs?.length) lines.push(`<span style="color:var(--fg-d)">proofs:</span> ${src.proofs.map(p => esc(p)).join(', ')}`);
+            if (src.examples?.length) lines.push(`<span style="color:var(--fg-d)">examples:</span> ${src.examples.map(e => esc(e)).join(', ')}`);
+            stubDiv.innerHTML = lines.join('<br>');
+            panelStub.appendChild(stubDiv);
+          }
+          body.appendChild(panelStub);
+
           // Panel: raw diff
           const panelRaw = mk('div','diff-tab-panel');
           if (bd.mdDiff) {
@@ -5841,16 +5972,15 @@
           body.appendChild(panelRaw);
 
           // Tab switching
-          tabRendered.onclick = (e) => {
-            e.stopPropagation();
-            tabRendered.classList.add('active'); tabRaw.classList.remove('active');
-            panelRendered.classList.add('active'); panelRaw.classList.remove('active');
-          };
-          tabRaw.onclick = (e) => {
-            e.stopPropagation();
-            tabRaw.classList.add('active'); tabRendered.classList.remove('active');
-            panelRaw.classList.add('active'); panelRendered.classList.remove('active');
-          };
+          const allTabs = [tabRendered, tabStub, tabRaw];
+          const allPanels = [panelRendered, panelStub, panelRaw];
+          function activateTab(idx) {
+            allTabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+            allPanels.forEach((p, i) => p.classList.toggle('active', i === idx));
+          }
+          tabRendered.onclick = (e) => { e.stopPropagation(); activateTab(0); };
+          tabStub.onclick = (e) => { e.stopPropagation(); activateTab(1); };
+          tabRaw.onclick = (e) => { e.stopPropagation(); activateTab(2); };
 
           head.onclick = () => card.classList.toggle('expanded');
           card.appendChild(head);
