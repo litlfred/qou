@@ -167,6 +167,7 @@ export default chapter({
         "skein-generation-proof",
         "knot-particle-generation",
         "torus-knot-generators",
+        "embeddability-closure",
         "bundle-initial-conditions",
         "bundle-isotopy-equivalence",
         "knot-particle-dictionary",
