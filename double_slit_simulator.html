@@ -146,13 +146,13 @@ canvas { display:block; }
   <div class="sec">── Geometry ─────────────────────────</div>
   <div class="row">
     <span class="lbl">a (slit width)</span>
-    <input type="range" id="sl_a" min="10" max="300" step="1" value="62">
-    <span class="val" id="v_a">62 nm</span>
+    <input type="range" id="sl_a" min="10" max="300" step="1" value="50">
+    <span class="val" id="v_a">50 nm</span>
   </div>
   <div class="row">
     <span class="lbl">d (separation)</span>
-    <input type="range" id="sl_d" min="50" max="1000" step="1" value="272">
-    <span class="val" id="v_d">272 nm</span>
+    <input type="range" id="sl_d" min="50" max="1000" step="1" value="280">
+    <span class="val" id="v_d">280 nm</span>
   </div>
   <div class="row">
     <span class="lbl">λ (wavelength)</span>
@@ -168,9 +168,9 @@ canvas { display:block; }
   </div>
 
   <div class="sec">── Display ──────────────────────────</div>
-  <label class="ck"><input type="checkbox" id="cb_fraunhofer" checked> Show Fraunhofer (q=1)</label>
+  <label class="ck"><input type="checkbox" id="cb_fraunhofer" checked> Standard QM (Fraunhofer)</label>
   <label class="ck"><input type="checkbox" id="cb_envelope"> Show envelope</label>
-  <label class="ck"><input type="checkbox" id="cb_bach"> Bach 2013 data</label>
+  <label class="ck"><input type="checkbox" id="cb_bach"> Bach 2013 data (digitized)</label>
 </div>
 
 <!-- Mode + presets -->
@@ -185,7 +185,7 @@ canvas { display:block; }
   </div>
 
   <div class="sec">── Presets ──────────────────────────</div>
-  <button class="preset-btn" onclick="preset('bach')">Bach 2013 electrons (600 eV)</button>
+  <button class="preset-btn" onclick="preset('bach')">Bach 2013 electrons (600 eV) + data</button>
   <button class="preset-btn" onclick="preset('c60')">C₆₀ fullerene</button>
   <button class="preset-btn" onclick="preset('photon')">Visible photon</button>
   <button class="preset-btn" onclick="preset('classical')">Classical limit (q = 1)</button>
@@ -220,7 +220,7 @@ let detections = [];
 let animId = null;
 
 const P = {
-  q: 1.02, a: 62, d: 272, lam: 50, rxi: 0.1
+  q: 1.02, a: 50, d: 280, lam: 50, rxi: 0.1
 };
 
 // ── Slider binding ─────────────────────────────────────────────────
@@ -241,6 +241,46 @@ sliders.forEach(([sid, vid, key, fmt]) => {
     draw();
   });
 });
+
+// ── Bach 2013 digitized data ──────────────────────────────────────
+// Extracted from Figure 3e (6235 electrons) of arXiv:1210.6243v1
+// Bach, Pope, Liou, Batelaan — New J. Phys. 15 (2013) 033018
+// Experimental parameters: a=50nm, d=280nm, λ=50pm, E=600eV
+// angle_mrad, normalized_intensity (150 bins across 5 central orders)
+const BACH_DATA = [
+  [-2.5584,0.1781],[-2.5240,0.2756],[-2.4897,0.2851],[-2.4554,0.2822],[-2.4210,0.2711],
+  [-2.3867,0.3044],[-2.3523,0.3149],[-2.3180,0.2994],[-2.2837,0.2844],[-2.2493,0.3470],
+  [-2.2150,0.4921],[-2.1806,0.5803],[-2.1463,0.6441],[-2.1120,0.5930],[-2.0776,0.6273],
+  [-2.0433,0.6457],[-2.0089,0.7225],[-1.9746,0.7156],[-1.9402,0.7194],[-1.9059,0.7298],
+  [-1.8716,0.7552],[-1.8372,0.7663],[-1.8029,0.7971],[-1.7685,0.7559],[-1.7342,0.7317],
+  [-1.6999,0.7060],[-1.6655,0.6575],[-1.6312,0.6152],[-1.5968,0.5384],[-1.5625,0.5000],
+  [-1.5282,0.4565],[-1.4938,0.4298],[-1.4595,0.4492],[-1.4251,0.4302],[-1.3908,0.4079],
+  [-1.3565,0.4324],[-1.3221,0.5000],[-1.2878,0.5749],[-1.2534,0.6552],[-1.2191,0.6870],
+  [-1.1848,0.7171],[-1.1504,0.7629],[-1.1161,0.8537],[-1.0817,0.8997],[-1.0474,0.8886],
+  [-1.0130,0.9060],[-0.9787,0.9667],[-0.9444,0.9952],[-0.9100,0.9492],[-0.8757,0.9489],
+  [-0.8413,0.9575],[-0.8070,0.9495],[-0.7727,0.8838],[-0.7383,0.8006],[-0.7040,0.7787],
+  [-0.6696,0.7521],[-0.6353,0.7063],[-0.6010,0.6648],[-0.5666,0.5492],[-0.5323,0.4962],
+  [-0.4979,0.4876],[-0.4636,0.5206],[-0.4293,0.5254],[-0.3949,0.5213],[-0.3606,0.5600],
+  [-0.3262,0.6295],[-0.2919,0.6527],[-0.2576,0.7054],[-0.2232,0.8073],[-0.1889,0.8997],
+  [-0.1545,0.9390],[-0.1202,0.9029],[-0.0859,0.9790],[-0.0515,0.9632],[-0.0172,1.0000],
+  [0.0172,0.9390],[0.0515,0.9708],[0.0859,0.9429],[0.1202,0.9070],[0.1545,0.8641],
+  [0.1889,0.8060],[0.2232,0.6810],[0.2576,0.5895],[0.2919,0.5537],[0.3262,0.5660],
+  [0.3606,0.5568],[0.3949,0.4594],[0.4293,0.4508],[0.4636,0.3883],[0.4979,0.4283],
+  [0.5323,0.3914],[0.5666,0.4419],[0.6010,0.5175],[0.6353,0.5851],[0.6696,0.6451],
+  [0.7040,0.6149],[0.7383,0.6089],[0.7727,0.6746],[0.8070,0.7857],[0.8413,0.8781],
+  [0.8757,0.8940],[0.9100,0.8346],[0.9444,0.8594],[0.9787,0.8048],[1.0130,0.8333],
+  [1.0474,0.8057],[1.0817,0.8165],[1.1161,0.8029],[1.1504,0.6698],[1.1848,0.5470],
+  [1.2191,0.4197],[1.2534,0.3762],[1.2878,0.3632],[1.3221,0.3225],[1.3565,0.3162],
+  [1.3908,0.2610],[1.4251,0.2368],[1.4595,0.2619],[1.4938,0.2733],[1.5282,0.3311],
+  [1.5625,0.2946],[1.5968,0.3102],[1.6312,0.3400],[1.6655,0.4070],[1.6999,0.4635],
+  [1.7342,0.5133],[1.7685,0.4860],[1.8029,0.4940],[1.8372,0.4327],[1.8716,0.4835],
+  [1.9059,0.4762],[1.9402,0.4765],[1.9746,0.4387],[2.0089,0.3683],[2.0433,0.3511],
+  [2.0776,0.3584],[2.1120,0.3924],[2.1463,0.3810],[2.1806,0.3451],[2.2150,0.3263],
+  [2.2493,0.2917],[2.2837,0.2308],[2.3180,0.1756],[2.3523,0.1349],[2.3867,0.1394],
+  [2.4210,0.1965],[2.4554,0.2381],[2.4897,0.2857],[2.5240,0.2727],[2.5584,0.1867],
+];
+// Bach experimental params (from paper): a=50nm, d=280nm, lambda=50pm
+const BACH_PARAMS = { a: 50, d: 280, lam: 50 };
 
 // ── Physics ────────────────────────────────────────────────────────
 
@@ -350,7 +390,6 @@ function draw() {
   const curve = new Float64Array(nPts);
   const curveFH = new Float64Array(nPts);
   const curveEnv = new Float64Array(nPts);
-  const curveBach = new Float64Array(nPts);
   let maxI = 0;
 
   for (let i = 0; i < nPts; i++) {
@@ -363,9 +402,6 @@ function draw() {
       curveEnv[i] = envelopePhoton(theta, q, a);
     }
     curveFH[i] = intensityFraunhofer(theta, a, d, lam);
-    // Simulated Bach data: Fraunhofer + broadening + noise
-    curveBach[i] = intensityFraunhofer(theta, 62, 272, 50) *
-      (1 + 0.03 * Math.pow(1 - 1/1.02, 2) * Math.abs(theta) / thetaMax);
     maxI = Math.max(maxI, curve[i], curveFH[i]);
   }
   if (maxI < 1e-12) maxI = 1;
@@ -422,25 +458,59 @@ function draw() {
     ctx.setLineDash([]);
   }
 
-  // Bach data (noisy overlay)
-  if (showBach && mode === 1) {
-    // Add noise to Bach curve
-    ctx.globalAlpha = 0.4;
-    const bachNoisy = new Float64Array(nPts);
-    for (let i = 0; i < nPts; i++) {
-      bachNoisy[i] = Math.max(0, curveBach[i] + (Math.random() - 0.5) * 0.04);
+  // Bach 2013 digitized experimental data
+  if (showBach) {
+    // Convert BACH_DATA (angle_mrad, intensity) to pixel coordinates
+    // Bach data spans ±2.56 mrad; map onto the plot's angle range
+    ctx.globalAlpha = 0.7;
+    const bachColor = isDark ? '#ffaa33' : '#885500';
+    ctx.strokeStyle = bachColor;
+    ctx.lineWidth = 1.8;
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    let started = false;
+    for (const [ang_mrad, intensity] of BACH_DATA) {
+      const theta = ang_mrad / 1000; // mrad -> rad
+      if (Math.abs(theta) > thetaMax) continue;
+      const xFrac = (theta + thetaMax) / (2 * thetaMax);
+      const x = ml + xFrac * pw;
+      const y = mt + ph - (ph * intensity * maxI) / maxI;
+      if (!started) { ctx.moveTo(x, y); started = true; }
+      else ctx.lineTo(x, y);
     }
-    plotCurve(bachNoisy, isDark ? '#ffaa33' : '#885500', [], 1);
+    ctx.stroke();
+    ctx.setLineDash([]);
     ctx.globalAlpha = 1;
+
+    // Scatter dots for individual data points
+    ctx.fillStyle = bachColor;
+    ctx.globalAlpha = 0.5;
+    for (const [ang_mrad, intensity] of BACH_DATA) {
+      const theta = ang_mrad / 1000;
+      if (Math.abs(theta) > thetaMax) continue;
+      const xFrac = (theta + thetaMax) / (2 * thetaMax);
+      const x = ml + xFrac * pw;
+      const y = mt + ph - ph * intensity;
+      ctx.beginPath();
+      ctx.arc(x, y, 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
     // Label
-    ctx.fillStyle = isDark ? '#ffaa33' : '#885500';
+    ctx.fillStyle = bachColor;
     ctx.font = '8px "Share Tech Mono"';
-    ctx.fillText('Bach et al. 2013 (simulated)', ml + 10, mt + 16);
+    ctx.fillText('Bach et al. 2013 (digitized, 6235 e⁻)', ml + 10, mt + 16);
   }
 
-  // Fraunhofer reference
+  // Standard QM Fraunhofer reference
   if (showFH) {
-    plotCurve(curveFH, isDark ? 'rgba(58,144,255,0.3)' : 'rgba(60,80,180,0.3)', [4, 4], 1);
+    plotCurve(curveFH, isDark ? 'rgba(58,144,255,0.45)' : 'rgba(60,80,180,0.45)', [4, 4], 1.5);
+    // Label
+    ctx.fillStyle = isDark ? 'rgba(58,144,255,0.6)' : 'rgba(60,80,180,0.6)';
+    ctx.font = '8px "Share Tech Mono"';
+    const fhLabelY = showBach ? mt + 28 : mt + 16;
+    ctx.fillText('Standard QM (Fraunhofer, q=1)', ml + 10, fhLabelY);
   }
 
   // Envelope
@@ -448,13 +518,19 @@ function draw() {
     plotCurve(curveEnv, isDark ? 'rgba(51,255,170,0.3)' : 'rgba(0,102,51,0.3)', [2, 3], 1);
   }
 
-  // Main curve
+  // Main QOU curve
   const mainColor = mode === 1
     ? (isDark ? '#3a90ff' : '#1a5fcc')
     : (isDark ? '#ff5533' : '#cc3300');
   plotCurve(curve, mainColor, [], 2);
 
-  // q annotation
+  // QOU label
+  const qouLabelY = mt + (showBach && showFH ? 40 : showBach || showFH ? 28 : 16);
+  ctx.fillStyle = mainColor;
+  ctx.font = '8px "Share Tech Mono"';
+  ctx.fillText('QOU prediction (q=' + q.toFixed(3) + ')', ml + 10, qouLabelY);
+
+  // q annotation (top-right)
   ctx.fillStyle = isDark ? '#3a90ff' : '#1a5fcc';
   ctx.font = '12px "Rajdhani"';
   ctx.textAlign = 'right';
@@ -570,9 +646,10 @@ function setMode(m) {
 
 function preset(name) {
   if (name === 'bach') {
-    setSliders({ q: 1.02, a: 62, d: 272, lam: 50, rxi: 0.1 });
+    setSliders({ q: 1.02, a: 50, d: 280, lam: 50, rxi: 0.1 });
     setMode(1);
     document.getElementById('cb_bach').checked = true;
+    document.getElementById('cb_fraunhofer').checked = true;
   } else if (name === 'c60') {
     setSliders({ q: 1.05, a: 50, d: 100, lam: 2.5, rxi: 0.25 });
     setMode(1);
