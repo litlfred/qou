@@ -287,19 +287,22 @@ const BACH_PARAMS = { a: 50, d: 280, lam: 50 };
 function sinc(x) { return Math.abs(x) < 1e-12 ? 1 : Math.sin(x) / x; }
 
 // Mode 1: massive particle, q-corrected Fraunhofer
+// ΔΦ_q = q⁻¹·(2πd sinθ/λ) + (1−q⁻¹)·Δφ_ξ   [full phase difference]
+// I_q  = cos²(ΔΦ_q/2) · sinc²(β_q)
 function intensityMassive(theta, q, a, d, lam, rxi) {
-  const k = Math.PI * Math.sin(theta);
-  // interference phase
-  const dPhi = (1/q) * k * d / lam + (1 - 1/q) * 0.02 * Math.sin(theta);
-  // envelope parameter
+  const k = Math.PI * Math.sin(theta);  // π sinθ
+  // full phase difference: q⁻¹·2π d sinθ/λ + Reeb correction
+  const REEB_COUPLING = 0.02;  // Reeb phase mismatch scale Δφ_ξ
+  const dPhi = (1/q) * 2 * k * d / lam + (1 - 1/q) * REEB_COUPLING * Math.sin(theta);
+  // envelope parameter: β_q = q⁻¹·πa sinθ/λ + (1−q⁻¹)²·r_ξ·πa sinθ/λ
   const beta = (1/q) * k * a / lam + Math.pow(1 - 1/q, 2) * rxi * k * a / lam;
   return Math.pow(Math.cos(dPhi / 2), 2) * Math.pow(sinc(beta), 2);
 }
 
-// Standard Fraunhofer (q=1)
+// Standard Fraunhofer (q=1): cos²(πd sinθ/λ)·sinc²(πa sinθ/λ)
 function intensityFraunhofer(theta, a, d, lam) {
-  const k = Math.PI * Math.sin(theta);
-  return Math.pow(Math.cos(k * d / lam / 2), 2) * Math.pow(sinc(k * a / lam), 2);
+  const k = Math.PI * Math.sin(theta);  // π sinθ
+  return Math.pow(Math.cos(k * d / lam), 2) * Math.pow(sinc(k * a / lam), 2);
 }
 
 // Mode 1 envelope only
@@ -311,9 +314,9 @@ function envelopeMassive(theta, q, a, lam, rxi) {
 
 // Mode 2: photon, Julia-set envelope
 function juliaEscape(theta, q, a, maxIter) {
-  const R = 1.0;
-  const x = a * Math.sin(theta) / R;
-  // f_q(z) = z^2 + c, c from q-deformed Reeb
+  const R_PROJ = 1.0;  // ℙ¹ fiber radius
+  const x = a * Math.sin(theta) / R_PROJ;
+  // f_q(z) = z² + c, c from q-deformed Reeb flow on ℙ¹
   const cr = (q - 1) * Math.cos(Math.PI / 4);
   const ci = (q - 1) * Math.sin(Math.PI / 4);
   let zr = Math.cos(x), zi = Math.sin(x);
@@ -326,18 +329,21 @@ function juliaEscape(theta, q, a, maxIter) {
   return 1;
 }
 
-function intensityPhoton(theta, q, a, d, lam) {
-  const R = 1.0;
-  const cosPhase = Math.cos(q * d * Math.sin(theta) / (2 * R));
-  const dH = 1 + 0.4 * Math.abs(q - 1);
-  const esc = juliaEscape(theta, q, a * 1e-9 * 500, 64);
+const PHOTON_SCALE = 500;  // nm-to-ℙ¹ scale factor for Julia iteration
+const JULIA_ITERS = 64;    // max iterations for escape-time computation
+
+function intensityPhoton(theta, q, a, d) {
+  const R_PROJ = 1.0;
+  const cosPhase = Math.cos(q * d * Math.sin(theta) / (2 * R_PROJ));
+  const dH = 1 + 0.4 * Math.abs(q - 1);  // Hausdorff dimension
+  const esc = juliaEscape(theta, q, a * 1e-9 * PHOTON_SCALE, JULIA_ITERS);
   const env = Math.pow(esc, 2 / dH);
   return cosPhase * cosPhase * env;
 }
 
 function envelopePhoton(theta, q, a) {
   const dH = 1 + 0.4 * Math.abs(q - 1);
-  const esc = juliaEscape(theta, q, a * 1e-9 * 500, 64);
+  const esc = juliaEscape(theta, q, a * 1e-9 * PHOTON_SCALE, JULIA_ITERS);
   return Math.pow(esc, 2 / dH);
 }
 
@@ -398,7 +404,7 @@ function draw() {
       curve[i] = intensityMassive(theta, q, a, d, lam, rxi);
       curveEnv[i] = envelopeMassive(theta, q, a, lam, rxi);
     } else {
-      curve[i] = intensityPhoton(theta, q, a, d, lam);
+      curve[i] = intensityPhoton(theta, q, a, d);
       curveEnv[i] = envelopePhoton(theta, q, a);
     }
     curveFH[i] = intensityFraunhofer(theta, a, d, lam);
@@ -578,7 +584,7 @@ function sampleTheta() {
     const theta = (Math.random() * 2 - 1) * thetaMax;
     const I = mode === 1
       ? intensityMassive(theta, q, a, d, lam, rxi)
-      : intensityPhoton(theta, q, a, d, lam);
+      : intensityPhoton(theta, q, a, d);
     if (Math.random() < I) return theta;
   }
   return 0;

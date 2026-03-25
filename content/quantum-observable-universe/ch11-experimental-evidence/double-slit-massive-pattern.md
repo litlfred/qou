@@ -15,7 +15,7 @@ where the *interference phase* is
 
 $$
   \Delta\Phi_q(\theta)
-  \;=\; q^{-1}\,\frac{\pi\,d\sin\theta}{\lambda}
+  \;=\; q^{-1}\,\frac{2\pi\,d\sin\theta}{\lambda}
         \;+\; (1 - q^{-1})\,\Delta\phi_\xi(\theta)
 $$
 
@@ -64,7 +64,7 @@ where $\langle\Delta_\xi\rangle / \langle\Delta\rangle$ is the ratio
 of Reeb to spatial Laplacian eigenvalues on the particle's harmonic
 mode.
 
-At $q = 1$: $\Delta\Phi_1 = \pi d\sin\theta/\lambda$,
+At $q = 1$: $\Delta\Phi_1 = 2\pi d\sin\theta/\lambda$,
 $\beta_1 = \pi a\sin\theta/\lambda$, and the standard Fraunhofer
 double-slit pattern is recovered exactly.  For $q \neq 1$ the
 envelope is *wider* than Fraunhofer by a factor of order
