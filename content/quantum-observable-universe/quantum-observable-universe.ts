@@ -20,6 +20,7 @@ export default paper({
     "discussed in the final chapter.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
+    nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
@@ -34,5 +35,6 @@ export default paper({
     chapterRef({ dir: "ch11-experimental-evidence" }),
     chapterRef({ dir: "ch10-interpretations" }),
     chapterRef({ dir: "ch8-glossary" }),
+    chapterRef({ dir: "appendix-knot-periodic-table" }),
   ],
 });
