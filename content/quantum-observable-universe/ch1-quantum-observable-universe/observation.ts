@@ -14,8 +14,8 @@ export default definition({
     "def:categorical-point",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "f1af0d9a68b2" },
-    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "d1d06a9dd1ef" },
+    { mime: "image/svg+xml", url: "rendered/observation-0.svg", blockIndex: 0, hash: "dc276429434c" },
+    { mime: "image/svg+xml", url: "rendered/observation-1.svg", blockIndex: 1, hash: "98292928e613" },
   ],
 
 });

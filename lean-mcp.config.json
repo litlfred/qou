@@ -2,6 +2,7 @@
   "image": "ghcr.io/litlfred/qou/paper-assistant",
   "transport": "streamable-http",
   "mcp_internal_port": 8080,
+  "viewer_port": 8080,
   "self_update_interval_seconds": 60,
   "healthcheck_path": "/mcp",
   "folio": {
