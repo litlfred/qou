@@ -1,0 +1,12 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:remainder-module",
+  title: "Remainder modules $O(I)$ and $\\tilde{O}(I)$",
+  lean: {
+    decl: "Fred2005.RemainderModule",
+    validation: "not_checked",
+  },
+  tags: ["groebner-basis", "remainder", "free-module"],
+  uses: ["def:admissible-system", "def:monomial-basis"],
+});
