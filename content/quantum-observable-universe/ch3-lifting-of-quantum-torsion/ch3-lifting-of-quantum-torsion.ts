@@ -165,6 +165,8 @@ export default chapter({
         "hadron-fibre-embedding",
         "skein-generation",
         "skein-generation-proof",
+        "knot-particle-generation",
+        "torus-knot-generators",
         "bundle-initial-conditions",
         "bundle-isotopy-equivalence",
         "knot-particle-dictionary",

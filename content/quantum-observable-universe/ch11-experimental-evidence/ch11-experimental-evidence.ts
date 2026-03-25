@@ -137,6 +137,7 @@ export default chapter({
       blocks: [
         "mass-ratio-predictions",
         "mass-predictions-data",
+        "mass-from-generators",
         "photonic-hall",
         "photonic-hall-data",
         "lepton-discrepancies",
