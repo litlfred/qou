@@ -92,10 +92,10 @@ export default chapter({
       ],
     }),
 
-    // ── Mass conjecture and ansatz ──
+    // ── Mass formula ──
 
     section({
-      title: "Topological mass ansatz",
+      title: "Topological mass formula",
       label: "sec:topological-mass-ansatz",
       blocks: [
         "topological-mass-formula",

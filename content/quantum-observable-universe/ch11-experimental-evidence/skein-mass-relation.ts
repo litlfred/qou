@@ -8,7 +8,7 @@ export default remark({
   },
   title: "$q$-Deformed Skein Relation (Observation)",
   uses: [
-    "conj:topological-mass-formula",
+    "prop:topological-mass-formula",
     "rem:skein-decomposition",
     "def:substrate-parameter",
     "def:quantum-planck-constant",

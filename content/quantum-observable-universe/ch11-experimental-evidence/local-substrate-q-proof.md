@@ -1,6 +1,6 @@
 
-The topological mass conjecture
-([topological mass formula](#conj:topological-mass-formula)) gives
+The topological mass formula
+([topological mass formula](#prop:topological-mass-formula)) gives
 $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{\,2}$ with
 $\hbar_q = 1 - q^{-1}$ (see the proof of
 [skein mass relation](#rem:skein-mass-relation)). Rearranging yields
@@ -20,6 +20,6 @@ $\pm\,0.001$ is propagated from the CODATA relative uncertainty of
 $2.2 \times 10^{-8}$ on $m_\mu / m_e$ and the SnapPy error bound of
 $10^{-14}$ on $\mathrm{Vol}(4_1)$; the dominant contribution is the
 finite decimal truncation of $q$. This value is consistent with the
-hadronic mass predictions of [terminal resolution](#rem:terminal-resolution) and
+hadronic mass predictions of [terminal resolution](#prop:terminal-resolution) and
 with the $q$-deformed Hall conductance corrections of
 [photonic Hall effect](#rem:photonic-hall).
