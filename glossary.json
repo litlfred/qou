@@ -1,15 +1,23 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T05:18:59.314897+00:00",
-  "commit_sha": "36d7c052751d3dba00f77e424032cd43da129ecb",
+  "generated_at": "2026-03-25T12:59:44.742382+00:00",
+  "commit_sha": "unknown",
   "entry_count": 68,
   "ambiguity_count": 9,
   "entries": [
     {
+      "narrative_term": "{Snake identity}",
+      "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two equations:    [ ( otimes _V) circ (_V otimes ) = _V. ]  More precisely, unfolding the associator and unitor isomorphisms, the composite  [ V  V otimes  _V otimes  V otimes (V^vee otimes V) _V, V^vee, V (V otimes V^vee) otimes V  otimes _V  otimes V  V ]  equals _V.   The composite  [ V^vee ^-1  otimes V^v",
+      "latex_label": "def:snake-identity",
+      "chapter": 2
+    },
+    {
       "narrative_term": "{Rigid monoidal category}",
       "lean_name": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
       "kind": "def",
-      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object , and natural isomorphisms expressing associativity and unitality:  [  [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z)  [-0.5em]   qquad  [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes  ar[l, \"rho_X\"', \"sim\"]  [-0.5em]   ]  The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V co",
+      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object , and natural isomorphisms expressing associativity and unitality:    [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z)  [-0.5em]   qquad  [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes  ar[l, \"rho_X\"', \"sim\"]  [-0.5em]     The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V colo",
       "latex_label": "def:rigid-monoidal-category",
       "chapter": 2,
       "ambiguity": {
@@ -23,14 +31,6 @@
         ],
         "resolved_to": null
       }
-    },
-    {
-      "narrative_term": "{Snake identity}",
-      "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
-      "kind": "def",
-      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two equations:    [ ( otimes _V) circ (_V otimes ) = _V. ]  More precisely, unfolding the associator and unitor isomorphisms, the composite  [ V  V otimes  _V otimes  V otimes (V^vee otimes V) _V, V^vee, V (V otimes V^vee) otimes V  otimes _V  otimes V  V ]  equals _V.   The composite  [ V^vee ^-1  otimes V^v",
-      "latex_label": "def:snake-identity",
-      "chapter": 2
     },
     {
       "narrative_term": "{Quantum Universe}",
@@ -220,7 +220,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{$q$-harmonic form (particle)}",
+      "narrative_term": "{Particle ($q$-harmonic form)}",
       "lean_name": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe with q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic:  [ Delta_q,alpha ;=; 0. ]",
