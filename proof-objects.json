@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T03:56:18.826899+00:00",
+    "generated_at": "2026-03-25T03:58:55.428407+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -431,11 +431,81 @@
       ]
     },
     {
+      "label": "def:categorical-hadron",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 924,
+        "chapter": 2
+      },
+      "title": "{Categorical hadron}",
+      "lean": {
+        "decl": "QOU.CategoricalHadron",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:rigid-monoidal-category",
+        "rem:simple-objects-V",
+        "def:frobenius-pairing"
+      ]
+    },
+    {
+      "label": "prop:pawlowski-leitner-basis",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 963,
+        "chapter": 2
+      },
+      "title": "{Pawlowski--Leitner basis for \\$\\textbackslash\\{\\}mathrm\\{Hom\\}(V\\_j, V\\_\\{1/2\\}\\textasciicircum{}\\{\\textbackslash\\{\\}otimes n\\})\\$}",
+      "lean": {
+        "decl": "QOU.PawLeiBasis",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "rem:spin-half-representation",
+        "rem:simple-objects-V",
+        "thm:su2-emergence",
+        "unital-groebner-bases:cor:pbw"
+      ]
+    },
+    {
+      "label": "prop:pawlowski-leitner-inner-product",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1014,
+        "chapter": 2
+      },
+      "title": "{Inner product on intertwiner spaces}",
+      "lean": {
+        "decl": "QOU.PawLeiInnerProduct",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:pawlowski-leitner-basis",
+        "rem:adjoint-trace",
+        "def:frobenius-pairing"
+      ]
+    },
+    {
       "label": "prop:spin-labels",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 924,
+        "line": 1068,
         "chapter": 2
       },
       "title": "{Spin labels and the fundamental object}",
@@ -457,7 +527,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 953,
+        "line": 1097,
         "chapter": 2
       },
       "title": "{Spin decomposition of \\$\\textbackslash\\{\\}mathrm\\{Rep\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -472,7 +542,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 993,
+        "line": 1137,
         "chapter": 2
       },
       "title": "{Categorical Reeb derivation}",
@@ -494,7 +564,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1020,
+        "line": 1164,
         "chapter": 2
       },
       "title": "{Existence of the categorical Reeb derivation}",
@@ -518,7 +588,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1048,
+        "line": 1192,
         "chapter": 2
       },
       "title": "{Reeb derivation for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -533,7 +603,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1071,
+        "line": 1215,
         "chapter": 2
       },
       "title": "{Projective line object}",
@@ -556,7 +626,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1088,
+        "line": 1232,
         "chapter": 2
       },
       "title": "{Projective line for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -571,7 +641,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1102,
+        "line": 1246,
         "chapter": 2
       },
       "title": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
@@ -595,7 +665,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1134,
+        "line": 1278,
         "chapter": 2
       },
       "title": "{Substrate parameter as the radial coordinate}",
@@ -620,7 +690,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1191,
+        "line": 1335,
         "chapter": 2
       },
       "title": "{Fiber--adjoint-fiber involution}",
@@ -643,7 +713,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1279,
+        "line": 1423,
         "chapter": 2
       },
       "title": "{Fiber--adjoint-fiber involution for \\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$}",
@@ -658,7 +728,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1308,
+        "line": 1452,
         "chapter": 2
       },
       "title": "{Categorical connection and curvature}",
@@ -680,7 +750,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1346,
+        "line": 1490,
         "chapter": 2
       },
       "title": "{Connection and curvature on \\$\\textbackslash\\{\\}mathcal\\{O\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -695,7 +765,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1365,
+        "line": 1509,
         "chapter": 2
       },
       "title": "{Categorical jet object}",
@@ -717,7 +787,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1396,
+        "line": 1540,
         "chapter": 2
       },
       "title": "{Categorical Hodge star}",
@@ -739,7 +809,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1426,
+        "line": 1570,
         "chapter": 2
       },
       "title": "{Hodge star on \\$\\textbackslash\\{\\}mathcal\\{O\\}(\\textbackslash\\{\\}mathrm\\{SU\\}(2))\\$}",
@@ -754,7 +824,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1459,
+        "line": 1603,
         "chapter": 2
       },
       "title": "{Spatial realization functor}",
@@ -778,7 +848,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1510,
+        "line": 1654,
         "chapter": 2
       },
       "title": "{Categorical--geometric correspondence}",
@@ -801,7 +871,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1580,
+        "line": 1724,
         "chapter": 2
       },
       "title": "{Substrate parameter}",
@@ -824,7 +894,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1636,
+        "line": 1780,
         "chapter": 2
       },
       "title": "{Existence of the substrate parameter}",
@@ -848,7 +918,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1665,
+        "line": 1809,
         "chapter": 2
       },
       "title": "{Quantum Gauge Group}",
@@ -871,7 +941,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1682,
+        "line": 1826,
         "chapter": 2
       },
       "title": "{Quantum Planck Constant}",
@@ -893,7 +963,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1695,
+        "line": 1839,
         "chapter": 2
       },
       "title": "{\\$q\\$-Hodge star}",
@@ -915,7 +985,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1719,
+        "line": 1863,
         "chapter": 2
       },
       "title": "{Categorical action}",
@@ -941,7 +1011,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1752,
+        "line": 1896,
         "chapter": 2
       },
       "title": "{Variational equations of the categorical action}",
@@ -962,7 +1032,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1832,
+        "line": 1976,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-deformed exterior derivative}",
@@ -987,7 +1057,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1865,
+        "line": 2009,
         "chapter": 2
       },
       "title": "{\\$q\\$-harmonic form (particle)}",
@@ -1008,7 +1078,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1881,
+        "line": 2025,
         "chapter": 2
       },
       "title": "{Fermion--Boson decomposition}",
@@ -1030,7 +1100,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1919,
+        "line": 2063,
         "chapter": 2
       },
       "title": "{Categorical point}",
@@ -1051,7 +1121,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1933,
+        "line": 2077,
         "chapter": 2
       },
       "title": "{Observation}",
@@ -1074,7 +1144,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1987,
+        "line": 2131,
         "chapter": 2
       },
       "title": "{Categorical instanton}",
@@ -1097,7 +1167,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2017,
+        "line": 2161,
         "chapter": 2
       },
       "title": "{Irreducibility from observability}",
@@ -1119,7 +1189,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2046,
+        "line": 2190,
         "chapter": 2
       },
       "title": "{Categorical self-duality}",
@@ -1141,7 +1211,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2095,
+        "line": 2239,
         "chapter": 2
       },
       "title": "{Non-vanishing of \\$d\\_q\\textasciicircum{}2\\$}",
@@ -1163,7 +1233,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2179,
+        "line": 2323,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-Lie bracket}",
@@ -1185,7 +1255,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2198,
+        "line": 2342,
         "chapter": 2
       },
       "title": "{Categorical \\$q\\$-deformed connection}",
@@ -1207,7 +1277,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2236,
+        "line": 2380,
         "chapter": 2
       },
       "title": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
@@ -1230,7 +1300,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2255,
+        "line": 2399,
         "chapter": 2
       },
       "title": "{Main Commutative Diagram}",
@@ -1254,7 +1324,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2346,
+        "line": 2490,
         "chapter": 2
       },
       "title": "{Quantum flatness}",
@@ -1277,7 +1347,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2382,
+        "line": 2526,
         "chapter": 2
       },
       "title": "{From Tannakian emergence to 2-group quantum flatness}",
@@ -1301,7 +1371,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2440,
+        "line": 2584,
         "chapter": 2
       },
       "title": "{d\\_q\\textasciicircum{}2 does not vanish}",
@@ -1322,7 +1392,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2492,
+        "line": 2636,
         "chapter": 2
       },
       "title": "{Jacobiator of the q-Lie bracket}",
@@ -1343,7 +1413,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2558,
+        "line": 2702,
         "chapter": 2
       },
       "title": "{Jet prolongation}",
@@ -1365,7 +1435,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2594,
+        "line": 2738,
         "chapter": 2
       },
       "title": "{Categorical transport equation}",
@@ -1388,7 +1458,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2626,
+        "line": 2770,
         "chapter": 2
       },
       "title": "{Categorical q-Reeb flow}",
@@ -1410,7 +1480,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2647,
+        "line": 2791,
         "chapter": 2
       },
       "title": "{Categorical q-torsion leaf}",
@@ -3068,6 +3138,56 @@
     {
       "from": "ex:su2-emergence",
       "to": "ex:dagger-su2",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-hadron",
+      "to": "def:rigid-monoidal-category",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-hadron",
+      "to": "rem:simple-objects-V",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-hadron",
+      "to": "def:frobenius-pairing",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-basis",
+      "to": "rem:spin-half-representation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-basis",
+      "to": "rem:simple-objects-V",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-basis",
+      "to": "thm:su2-emergence",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-basis",
+      "to": "unital-groebner-bases:cor:pbw",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-inner-product",
+      "to": "prop:pawlowski-leitner-basis",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-inner-product",
+      "to": "rem:adjoint-trace",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:pawlowski-leitner-inner-product",
+      "to": "def:frobenius-pairing",
       "relation": "uses"
     },
     {
