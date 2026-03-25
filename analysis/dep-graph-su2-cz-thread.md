@@ -138,7 +138,7 @@ Everything converges.
 
 | # | Block | Type | Status | What it does |
 |---|-------|------|--------|-------------|
-| 24 | `conj:topological-mass-formula` | conjecture | **proved** | $m(K) = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume / quantum Planck²) |
+| 24 | `prop:topological-mass-formula` | proposition | **proved** | $m(K) = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume / quantum Planck²) |
 | 25 | `prop:skein-mass-relation` | proposition | **proved** | Quantum skein relation determines $q \approx 1.1097$ from $m_\mu / m_e$ |
 | 26 | `prop:terminal-resolution` | proposition | **proved** | At $q_0 \approx 1.1097$: proton 938.272 MeV, neutron 939.565 MeV — matches CODATA to sub-keV |
 | **27** | **`ex:terminal-resolution-cz`** | **example** | **not started** | **THE C[z] SINK**: Full $\mathbb{C}[z]$ specialisation — $q(p)$ as smooth function, $\hbar_q = 1 - q^{-1}$, mass predictions via $\mathbb{C}[z]$ coefficient ring |
@@ -190,7 +190,7 @@ Everything converges.
  depth 10 cor:mass-identity-C ──────────────────► "χ(CP¹) = 2"
                 │
                 ▼
- depth 11 conj:topological-mass-formula
+ depth 11 prop:topological-mass-formula
               + prop:skein-mass-relation ────────► "q ≈ 1.1097 from m_μ/m_e"
                 │
                 ▼
@@ -238,7 +238,7 @@ Everything converges.
 | 9 | `prop:descent-eigenspaces` | proposition | [X] proved |
 | 10 | `thm:topological-mass` | theorem | [X] proved |
 | 10 | `cor:mass-identity-C` | corollary | [X] proved |
-| 11 | `conj:topological-mass-formula` | conjecture | [X] proved |
+| 11 | `prop:topological-mass-formula` | proposition | [X] proved |
 | 11 | `prop:skein-mass-relation` | proposition | [X] proved |
 | 12 | `prop:terminal-resolution` | proposition | [X] proved |
 | 13 | `prop:local-substrate-q` | proposition | [X] proved |

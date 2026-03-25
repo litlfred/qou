@@ -87,15 +87,14 @@ export default chapter({
         "double-slit-intro",
         "double-slit-q-phase",
         "double-slit-massive-pattern",
-        "double-slit-photon-pattern",
         "double-slit-two-modes",
       ],
     }),
 
-    // ── Mass conjecture and ansatz ──
+    // ── Mass formula ──
 
     section({
-      title: "Topological mass ansatz",
+      title: "Topological mass formula",
       label: "sec:topological-mass-ansatz",
       blocks: [
         "topological-mass-formula",
@@ -138,6 +137,9 @@ export default chapter({
       blocks: [
         "mass-ratio-predictions",
         "mass-predictions-data",
+        "mass-from-generators",
+        "knot-formula-table",
+        "mass-comparison-table",
         "photonic-hall",
         "photonic-hall-data",
         "lepton-discrepancies",

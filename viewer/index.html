@@ -39,7 +39,7 @@
       --f-mono:'JetBrains Mono','Consolas',monospace;
       --f-sz:17px; --f-lh:1.65;
     }
-    html{scroll-behavior:smooth;scroll-padding-top:50px}
+    html{scroll-behavior:auto;scroll-padding-top:50px}
     .ch-t,.sec-t,.env[id],.blk[id]{scroll-margin-top:50px}
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -1736,7 +1736,7 @@
       const goTo = mk('a','uph-goto');
       goTo.textContent = 'go to \u2197';
       goTo.href = `#${label}`;
-      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'instant', block:'start'}); };
       hd.appendChild(goTo);
       const closeBtn = mk('span','uph-close');
       closeBtn.textContent = '\u2715';
@@ -2048,7 +2048,7 @@
       depOverlay.classList.remove('open');
       depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
     };
     document.getElementById('dep-rhs-fb').onclick = () => {
       const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
@@ -2290,7 +2290,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
-            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' }); }
         });
         nodeGroup.appendChild(g);
       }
@@ -2813,7 +2813,7 @@
             // Click the proofs toggle to open it
             const toggle = d.querySelector('.prf-toggle');
             if (toggle && !toggle.classList.contains('open')) toggle.click();
-            else if (toggle) toggle.scrollIntoView({behavior:'smooth',block:'nearest'});
+            else if (toggle) toggle.scrollIntoView({behavior:'instant',block:'nearest'});
           };
         } else {
           prfSym.style.color = 'var(--fg-d)';
@@ -3502,7 +3502,7 @@
                         if (t) {
                           const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
                           if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                          t.scrollIntoView({behavior:'smooth', block:'start'});
+                          t.scrollIntoView({behavior:'instant', block:'start'});
                         }
                       }, 150);
                     };
@@ -3572,7 +3572,6 @@
             if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
           }
         });
-        window.scrollTo(0, 0);
       }
 
       // Find which chapter a label belongs to
@@ -3653,10 +3652,10 @@
           sEl.onclick = (e) => {
             e.stopPropagation();
             showChapter(ch.number);
-            setTimeout(() => {
+            requestAnimationFrame(() => {
               const t = document.getElementById(sec.label);
-              if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
-            }, 50);
+              if (t) window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
+            });
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
           chBody.appendChild(sEl);
@@ -3707,14 +3706,19 @@
 
               bEl.onclick = () => {
                 showChapter(ch.number);
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                   const t = document.getElementById(b.label);
                   if (t) {
                     const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
                     if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                    t.scrollIntoView({behavior:'smooth', block:'start'});
+                    // Show hidden blocks (remarks/examples)
+                    const wrap = t.closest('.blk-remark, .blk-example');
+                    if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+                    window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
+                    t.style.outline = '2px solid var(--ac)';
+                    setTimeout(() => { t.style.outline = ''; }, 2000);
                   }
-                }, 50);
+                });
               };
               blkList.appendChild(bEl);
             }
@@ -3773,6 +3777,117 @@
         }
         chapterDivs.set(ch.number, cd);
         app.appendChild(cd);
+      }
+
+      // ── Content Index: virtual chapter at end ──────────────
+      const ciNum = -999; // virtual chapter number
+      const ciEl = mk('div','sb-ch');
+      ciEl.dataset.num = 'I';
+      ciEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>I. Content Index</span>`;
+      const ciBody = mk('div','sb-ch-body');
+      ciEl.onclick = (e) => {
+        ciEl.classList.toggle('open');
+        ciBody.style.display = ciEl.classList.contains('open') ? 'block' : 'none';
+        saveSbOpenChapters();
+        showChapter(ciNum);
+      };
+      sb.appendChild(ciEl);
+      sb.appendChild(ciBody);
+
+      // Build Content Index chapter div
+      const ciDiv = mk('div','ch');
+      ciDiv.dataset.chNum = String(ciNum);
+      ciDiv.style.display = 'none';
+      ciDiv.innerHTML = `<h2 class="ch-t"><span class="ch-title-text">Content Index</span></h2>
+        <p style="font-size:.7rem;color:var(--fg-d);margin:0 0 .8rem;font-family:var(--f-head)">All content blocks. Click to navigate.</p>
+        <div style="margin-bottom:.6rem"><input id="ci-search" type="text" placeholder="Filter blocks..." style="font-size:.7rem;padding:.3rem .5rem;width:100%;max-width:400px;border:1px solid var(--bd);border-radius:4px;background:var(--bg-r);color:var(--fg);font-family:var(--f-mono)"></div>
+        <div id="ci-blocks" style="font-size:.65rem"></div>`;
+      chapterDivs.set(ciNum, ciDiv);
+      app.appendChild(ciDiv);
+
+      // Populate content index from paper data
+      const ciContainer = ciDiv.querySelector('#ci-blocks');
+      const kindColors = {definition:'#4a9eff',theorem:'#e06c75',proposition:'#c678dd',lemma:'#c678dd',corollary:'#c678dd',remark:'#98c379',example:'#d19a66',proof:'#abb2bf',prose:'#abb2bf',conjecture:'#e5c07b'};
+      for (const ch of p.chapters) {
+        const chGrp = mk('div','ci-chapter');
+        const chHdr = mk('div','');
+        chHdr.style.cssText = 'font-weight:600;font-size:.7rem;margin:.8rem 0 .3rem;color:var(--fg);font-family:var(--f-head)';
+        chHdr.textContent = `${ch.number != null ? 'Ch ' + ch.number + '. ' : ''}${ch.title}`;
+        chGrp.appendChild(chHdr);
+
+        for (const sec of ch.sections) {
+          for (const b of sec.blocks) {
+            const stub = mk('div','ci-stub');
+            stub.dataset.search = `${b.kind} ${b.label || ''} ${b.title || ''} ${(b.tags || []).join(' ')}`.toLowerCase();
+            stub.style.cssText = 'display:flex;align-items:baseline;gap:.4rem;padding:.2rem .4rem;border-radius:3px;cursor:pointer;border-left:3px solid transparent';
+            stub.style.borderLeftColor = kindColors[b.kind] || 'var(--bd)';
+
+            const kindSpan = mk('span','');
+            kindSpan.style.cssText = 'font-family:var(--f-mono);font-size:.55rem;min-width:3rem;color:var(--fg-d)';
+            kindSpan.textContent = b.kind;
+            stub.appendChild(kindSpan);
+
+            const titleSpan = mk('span','');
+            titleSpan.style.cssText = 'flex:1;font-family:var(--f-head)';
+            titleSpan.innerHTML = inl(b.title || b.rootName);
+            renderMath(titleSpan);
+            stub.appendChild(titleSpan);
+
+            const labelSpan = mk('span','');
+            labelSpan.style.cssText = 'font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)';
+            labelSpan.textContent = b.label || '';
+            stub.appendChild(labelSpan);
+
+            if (b.lean?.file || b.lean?.decl) {
+              const lBadge = mk('span','');
+              lBadge.style.cssText = 'font-size:.5rem;padding:0 .2rem;border-radius:2px;background:rgba(42,170,70,.15);color:#2aaa46';
+              lBadge.textContent = 'lean';
+              stub.appendChild(lBadge);
+            }
+            if (b.uses?.length) {
+              const uBadge = mk('span','');
+              uBadge.style.cssText = 'font-size:.5rem;color:var(--fg-d)';
+              uBadge.textContent = `${b.uses.length} dep${b.uses.length > 1 ? 's' : ''}`;
+              stub.appendChild(uBadge);
+            }
+
+            stub.onclick = () => {
+              showChapter(ch.number);
+              requestAnimationFrame(() => {
+                if (b.label) {
+                  const el = document.getElementById(b.label);
+                  if (el) {
+                    const wrap = el.closest('.blk-remark, .blk-example');
+                    if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+                    window.scrollTo({ top: el.offsetTop - 48, behavior: 'instant' });
+                    el.style.outline = '2px solid var(--ac)';
+                    setTimeout(() => { el.style.outline = ''; }, 2000);
+                  }
+                }
+              });
+            };
+            stub.onmouseover = () => { stub.style.background = 'var(--bg-r)'; };
+            stub.onmouseout = () => { stub.style.background = ''; };
+            chGrp.appendChild(stub);
+          }
+        }
+        ciContainer.appendChild(chGrp);
+      }
+      renderMath(ciContainer);
+
+      // Filter input
+      const ciSearch = ciDiv.querySelector('#ci-search');
+      if (ciSearch) {
+        ciSearch.oninput = () => {
+          const q = ciSearch.value.toLowerCase().trim();
+          for (const s of ciContainer.querySelectorAll('.ci-stub')) {
+            s.style.display = (!q || s.dataset.search.includes(q)) ? '' : 'none';
+          }
+          for (const c of ciContainer.querySelectorAll('.ci-chapter')) {
+            const visible = c.querySelectorAll('.ci-stub:not([style*="display: none"])').length;
+            c.style.display = visible ? '' : 'none';
+          }
+        };
       }
 
       document.getElementById('c-hash').textContent = p._hash || '';
@@ -5385,7 +5500,7 @@
           // Force lazy-hydrate
           const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
           if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.scrollIntoView({ behavior: 'instant', block: 'start' });
           // Open inline editor if it exists
           setTimeout(() => {
             if (el._inlineEditor && !el._inlineEditor.editor.classList.contains('open')) {
@@ -5510,37 +5625,41 @@
         if (chNum !== null) paper._showChapter(chNum);
       }
 
-      const el = document.getElementById(label);
-      if (!el) { pendingScroll = null; return; }
+      // Use rAF to ensure layout is settled after chapter switch
+      requestAnimationFrame(() => {
+        const el = document.getElementById(label);
+        if (!el) { pendingScroll = null; return; }
 
-      // Force lazy-hydrate so content is visible
-      const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
-      if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+        // Force lazy-hydrate so content is visible
+        const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+        if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
 
-      // If hidden (remark/example), show it and its wrapper
-      const wrap = el.closest('.blk-remark, .blk-example');
-      if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+        // If hidden (remark/example), show it and its wrapper
+        const wrap = el.closest('.blk-remark, .blk-example');
+        if (wrap && wrap.style.display === 'none') wrap.style.display = '';
 
-      // If inside a collapsed example toggle panel, open it
-      const exPanel = el.closest('.ex-panel');
-      if (exPanel && !exPanel.classList.contains('open')) {
-        exPanel.classList.add('open');
-        const toggle = exPanel.previousElementSibling;
-        if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
-      }
+        // If inside a collapsed example toggle panel, open it
+        const exPanel = el.closest('.ex-panel');
+        if (exPanel && !exPanel.classList.contains('open')) {
+          exPanel.classList.add('open');
+          const toggle = exPanel.previousElementSibling;
+          if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
+        }
 
-      // Also hide the stub if there is one
-      const stub = wrap?.previousElementSibling;
-      if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        // Also hide the stub if there is one
+        const stub = wrap?.previousElementSibling;
+        if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
 
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      el.style.outline = '2px solid var(--ac)';
-      setTimeout(() => { el.style.outline = ''; }, 2000);
+        // Instant jump — no smooth scroll (avoids drift from lazy content)
+        window.scrollTo({ top: el.offsetTop - 48, behavior: 'instant' });
+        el.style.outline = '2px solid var(--ac)';
+        setTimeout(() => { el.style.outline = ''; }, 2000);
 
-      // Show "referenced by" panel when block is the direct URL target
-      showReferencedBy(label, el);
+        // Show "referenced by" panel when block is the direct URL target
+        showReferencedBy(label, el);
 
-      pendingScroll = null;
+        pendingScroll = null;
+      });
     }
 
     // ── Scroll-tracking: update URL hash after 5s pause on same block ──
@@ -5558,6 +5677,19 @@
       const lbl = topEl.id;
       if (!lbl || lbl === scrollTrackLabel) return;
       scrollTrackLabel = lbl;
+
+      // Update toplet with current content name
+      const toplet = document.getElementById('toplet');
+      if (toplet && paper) {
+        const titleEl = topEl.querySelector('.env-title, .sec-title-text, .ch-title-text');
+        const titleText = titleEl?.textContent?.trim();
+        if (titleText) {
+          toplet.textContent = titleText;
+        } else {
+          toplet.textContent = `Folio: ${paper.title}`;
+        }
+      }
+
       clearTimeout(scrollTrackTimer);
       scrollTrackTimer = setTimeout(() => {
         if (scrollTrackLabel === lbl) {
@@ -5915,7 +6047,7 @@
                 if (el) {
                   const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
                   if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  el.scrollIntoView({behavior:'smooth',block:'start'});
+                  el.scrollIntoView({behavior:'instant',block:'start'});
                   el.style.outline = '2px solid var(--yel)';
                   setTimeout(() => { el.style.outline = ''; }, 2500);
                 }
@@ -5937,9 +6069,12 @@
           const tabs = mk('div','diff-tabs');
           const tabRendered = mk('button','diff-tab active');
           tabRendered.textContent = 'rendered';
+          const tabStub = mk('button','diff-tab');
+          tabStub.textContent = 'stub';
           const tabRaw = mk('button','diff-tab');
           tabRaw.textContent = 'raw diff';
           tabs.appendChild(tabRendered);
+          tabs.appendChild(tabStub);
           tabs.appendChild(tabRaw);
           body.appendChild(tabs);
 
@@ -5970,7 +6105,7 @@
                     // Hydrate lazy block if needed
                     const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
                     if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                    el.scrollIntoView({behavior:'smooth', block:'start'});
+                    el.scrollIntoView({behavior:'instant', block:'start'});
                     // Open inline editor
                     setTimeout(() => {
                       if (el._inlineEditor) el._inlineEditor.btn.click();
@@ -5983,6 +6118,34 @@
             panelRendered.appendChild(rendered);
           }
           body.appendChild(panelRendered);
+
+          // Panel: stub (content object manifest)
+          const panelStub = mk('div','diff-tab-panel');
+          const blk = bix.get(bd.label);
+          if (blk || bd.kind) {
+            const stubDiv = mk('div','');
+            stubDiv.style.cssText = 'font-family:var(--f-mono);font-size:.6rem;line-height:1.6;padding:.5rem';
+            const src = blk || bd;
+            const lines = [];
+            lines.push(`<span style="color:var(--fg-d)">kind:</span> <strong>${esc(src.kind || bd.kind)}</strong>`);
+            if (bd.label) lines.push(`<span style="color:var(--fg-d)">label:</span> ${esc(bd.label)}`);
+            if (src.title) lines.push(`<span style="color:var(--fg-d)">title:</span> ${esc(src.title)}`);
+            if (src.lean?.decl) lines.push(`<span style="color:var(--fg-d)">lean:</span> ${esc(src.lean.decl)}`);
+            if (src.lean?.file) lines.push(`<span style="color:var(--fg-d)">lean file:</span> ${esc(src.lean.file)}`);
+            if (src.uses?.length) {
+              lines.push(`<span style="color:var(--fg-d)">uses:</span>`);
+              for (const u of src.uses) {
+                const isResolved = bix.has(u);
+                lines.push(`  <span style="color:${isResolved ? 'var(--ac)' : '#e06c75'};cursor:pointer" onclick="location.hash='#${esc(u)}'">${esc(u)}</span>`);
+              }
+            }
+            if (src.tags?.length) lines.push(`<span style="color:var(--fg-d)">tags:</span> ${src.tags.map(t => esc(t)).join(', ')}`);
+            if (src.proofs?.length) lines.push(`<span style="color:var(--fg-d)">proofs:</span> ${src.proofs.map(p => esc(p)).join(', ')}`);
+            if (src.examples?.length) lines.push(`<span style="color:var(--fg-d)">examples:</span> ${src.examples.map(e => esc(e)).join(', ')}`);
+            stubDiv.innerHTML = lines.join('<br>');
+            panelStub.appendChild(stubDiv);
+          }
+          body.appendChild(panelStub);
 
           // Panel: raw diff
           const panelRaw = mk('div','diff-tab-panel');
@@ -6011,16 +6174,15 @@
           body.appendChild(panelRaw);
 
           // Tab switching
-          tabRendered.onclick = (e) => {
-            e.stopPropagation();
-            tabRendered.classList.add('active'); tabRaw.classList.remove('active');
-            panelRendered.classList.add('active'); panelRaw.classList.remove('active');
-          };
-          tabRaw.onclick = (e) => {
-            e.stopPropagation();
-            tabRaw.classList.add('active'); tabRendered.classList.remove('active');
-            panelRaw.classList.add('active'); panelRendered.classList.remove('active');
-          };
+          const allTabs = [tabRendered, tabStub, tabRaw];
+          const allPanels = [panelRendered, panelStub, panelRaw];
+          function activateTab(idx) {
+            allTabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+            allPanels.forEach((p, i) => p.classList.toggle('active', i === idx));
+          }
+          tabRendered.onclick = (e) => { e.stopPropagation(); activateTab(0); };
+          tabStub.onclick = (e) => { e.stopPropagation(); activateTab(1); };
+          tabRaw.onclick = (e) => { e.stopPropagation(); activateTab(2); };
 
           head.onclick = () => card.classList.toggle('expanded');
           card.appendChild(head);

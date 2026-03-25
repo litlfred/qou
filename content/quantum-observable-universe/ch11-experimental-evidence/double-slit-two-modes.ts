@@ -5,7 +5,6 @@ export default remark({
   title: "Two scattering modes and band-width anomalies",
   uses: [
     "prop:double-slit-massive-pattern",
-    "prop:double-slit-photon-pattern",
     "def:observation",
     "def:substrate-parameter",
   ],
