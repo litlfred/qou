@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-24T21:23:23.836893+00:00",
+  "generated_at": "2026-03-25T03:58:34.963381+00:00",
   "mappings": [
     {
       "narrative": "{Rigid monoidal category}",
@@ -51,6 +51,11 @@
       "narrative": "{Positive-definite structure}",
       "lean_id": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
       "latex_label": "def:positive-definite-dagger"
+    },
+    {
+      "narrative": "{Categorical hadron}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalHadron",
+      "latex_label": "def:categorical-hadron"
     },
     {
       "narrative": "{Categorical Reeb derivation}",

@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-24T21:23:23.833498+00:00",
-  "commit_sha": "bfe684d36dd99578cc5f405499bed4ee569d97ea",
-  "entry_count": 67,
+  "generated_at": "2026-03-25T03:58:34.960858+00:00",
+  "commit_sha": "unknown",
+  "entry_count": 68,
   "ambiguity_count": 9,
   "entries": [
     {
@@ -94,6 +94,14 @@
       "kind": "def",
       "narrative_definition": "Let (, dagger) be a rigid monoidal category with involutive structure (hyperref[def:involutive-structure]involutive structure). The involution is  if for every non-zero morphism f colon  to X the composite   [column sep=2.5em]  ar[r, \"f\"] & X ar[r, \"f^dagger\"] &     is a positive element of () cong R. Equivalently, the sesquilinear form  [ langle g, h rangle = g^dagger circ h in () ]  is positive-definite on (, X) for every object X. This replaces the analytic notion of \"Hilbert-space inner prod",
       "latex_label": "def:positive-definite-dagger",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical hadron}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalHadron",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be a hyperref[def:rigid-monoidal-category]rigid monoidal category with fundamental object V and Frobenius algebra (A, mu, eta, Delta, epsilon, int_A). A  is a morphism  [ h colon  ;longrightarrow; V^otimes n ]  for some n geq 2, subject to the constraint that h factors through the image of the multiplication mu restricted to simple constituents — that is, h lies in the span of morphisms of the form  [   A ; A^otimes n  otimes cdots otimes pi_j_n; V_j_1 otimes cdots otimes V_j_n ",
+      "latex_label": "def:categorical-hadron",
       "chapter": 2
     },
     {
