@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe satisfying
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying
 the
 ([categorical volume constraint](#def:categorical-volume-constraint)), so that
 $G_q = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}_q(2)$

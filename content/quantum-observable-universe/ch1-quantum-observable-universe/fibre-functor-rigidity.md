@@ -3,7 +3,7 @@ The fibre functor $\tau$ plays a deliberately passive role in this paper.
 The reason is cohomological: the observability axiom
 
 $$
-  \mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0
+  \mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\, \mathrm{Ad}(A)) = 0
 $$
 
 is equivalent to the vanishing of zeroth adjoint cohomology,
@@ -17,7 +17,7 @@ it admits no non-trivial first-order deformations, and Tannaka--Krein
 reconstruction pins it uniquely (up to monoidal natural isomorphism).
 There is, consequently, nothing geometrically or algebraically interesting
 happening at the level of $\tau$ itself — the entire content of the
-theory lives in $(\mathcal{C}, A)$.
+theory lives in $(\mathbf{C}, A)$.
 
 If one relaxes the observability axiom — allowing
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$ — the situation

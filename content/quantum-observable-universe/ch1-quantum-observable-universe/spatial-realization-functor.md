@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)).
 The *spatial realization* of $A$ is the space
 $$
@@ -7,7 +7,7 @@ $$
 $$
 ([categorical point](#def:categorical-point)),
 equipped with the following structures derived purely within
-$\mathcal{C}$:
+$\mathbf{C}$:
 
 1. **Local germs.** For each point $p$, the *augmentation ideal*
    $\mathfrak{m}_p = \ker(p^* \colon A \to \mathbf{1})$ captures
@@ -21,7 +21,7 @@ $\mathcal{C}$:
    $$
 
 2. **Kähler differentials.** The module $\Omega^1(A)$ of Kähler
-   differentials exists in $\mathcal{C}$ by hypothesis. Under the
+   differentials exists in $\mathbf{C}$ by hypothesis. Under the
    fibre functor, $\tau(\Omega^1(A))$ maps to sections of the
    cotangent bundle $\Gamma(T^* M)$.
 

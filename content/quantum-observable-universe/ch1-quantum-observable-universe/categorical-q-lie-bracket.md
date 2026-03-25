@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 Reeb derivation $\xi$ ([categorical Reeb derivation](#def:categorical-reeb)) and
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)).
 The *$q$-deformed Lie bracket* on derivations of $A$ is
@@ -10,4 +10,4 @@ $$
 $$
 
 where $\theta_A$ is the canonical $1$-form dual to $\xi$ and
-$[X, Y]$ is the commutator of derivations in $\mathcal{C}$.
+$[X, Y]$ is the commutator of derivations in $\mathbf{C}$.

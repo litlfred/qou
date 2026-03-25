@@ -1,10 +1,10 @@
-Let $k = \mathbb{F}_\pp$ and let $\mathcal{C} =
+Let $k = \mathbb{F}_\pp$ and let $\mathbf{C} =
 \mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
 finite-dimensional representations of the quantum group
 $\mathrm{SU}_q(2)$ over $\mathbb{F}_\pp$, where $q \in
 \mathbb{F}_\pp^{\times}$.  More generally, when $q$ is a primitive
 $\ell$-th root of unity in $\overline{\mathbb{F}}_\pp$ (with $\ell$
-coprime to $\pp$), $\mathcal{C}$ extends to a fusion category over the
+coprime to $\pp$), $\mathbf{C}$ extends to a fusion category over the
 extension field $\mathbb{F}_\pp(q)$ with finitely many simple objects.
 The Frobenius--Hopf object $A$ is the regular representation, and
 the fibre functor $\tau$ is the forgetful functor to

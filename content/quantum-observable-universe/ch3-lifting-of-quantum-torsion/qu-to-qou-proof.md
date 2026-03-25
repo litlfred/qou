@@ -4,7 +4,7 @@ brane tower satisfies the Yekutieli lifting condition.  We prove each
 structural property in turn.
 
 *Item (1): Descent terminates.*
-The centre $Z(\mathrm{End}_{\mathcal{C}}(A))$ is a finitely generated
+The centre $Z(\mathrm{End}_{\mathbf{C}}(A))$ is a finitely generated
 commutative $R$-algebra (since $R$ is Noetherian and $\tau$ is faithful),
 hence has finite Krull dimension $d_0$.  Observability forces the $G_q$-action
 on $A$ to be faithful: any $G_q$-invariant element of $\mathrm{Ad}(A)$ would

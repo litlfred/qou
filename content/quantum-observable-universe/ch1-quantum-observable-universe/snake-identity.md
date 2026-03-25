@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, \otimes, \mathbf{1})$ be a monoidal category and
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a monoidal category and
 let $V$ be an object with dual $V^{\vee}$, evaluation
 $\mathrm{ev} \colon V \otimes V^{\vee} \to \mathbf{1}$, and
 coevaluation $\mathrm{coev} \colon \mathbf{1} \to V^{\vee} \otimes V$.

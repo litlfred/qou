@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with
 [maximal torus](#def:maximal-torus) $T$ acting on
 [higher forms](#def:higher-forms) $\Omega^k(A)$. Then there exists a

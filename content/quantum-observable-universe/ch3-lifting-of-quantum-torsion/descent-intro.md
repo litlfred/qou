@@ -1,5 +1,5 @@
 The descent machinery connects the infinite brane tower to finite-dimensional
-geometry.  Given a quantum observable universe $(\mathcal{C}, A, \tau)$ with
+geometry.  Given a quantum observable universe $(\mathbf{C}, A, \tau)$ with
 brane tower $\{A_n\}_{n \geq 0}$
 ([recursive brane tower](#def:recursive-brane-tower)), the descent lemma
 ([descent lemma](#lem:descent)) shows that each level $A_n$ inherits the

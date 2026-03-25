@@ -1,6 +1,6 @@
-A **monoidal category** $(\mathcal{C}, \otimes, \mathbf{1})$ is a
+A **monoidal category** $(\mathbf{C}, \otimes, \mathbf{1})$ is a
 category equipped with a bifunctor
-$\otimes \colon \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ (the
+$\otimes \colon \mathbf{C} \times \mathbf{C} \to \mathbf{C}$ (the
 *tensor product*), a unit object $\mathbf{1}$, and natural
 isomorphisms expressing associativity and unitality:
 
@@ -69,7 +69,7 @@ such that the following *snake identity* diagrams commute:
 \end{equation}
 ```
 
-We say $\mathcal{C}$ is *$R$-linear* (for a commutative ring $R$)
+We say $\mathbf{C}$ is *$R$-linear* (for a commutative ring $R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
 
 The category is *symmetric monoidal* if it is further equipped with a

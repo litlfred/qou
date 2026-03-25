@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
 category, and let $V$ be a simple object that is
 *symplectically self-dual*: there exists an isomorphism
 $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying

@@ -1,8 +1,8 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with fundamental
 object $V$ (the unique simple object of categorical dimension $2$;
 see [spin labels](#prop:spin-labels) for the full labelling). The *weight
-subcategory* $\langle V \rangle \subset \mathcal{C}$ is the full
+subcategory* $\langle V \rangle \subset \mathbf{C}$ is the full
 subcategory whose objects are direct sums of weight spaces of $V$
 (i.e. simultaneous eigenspaces of the Cartan subalgebra action).
 The *maximal torus* of the gauge group is

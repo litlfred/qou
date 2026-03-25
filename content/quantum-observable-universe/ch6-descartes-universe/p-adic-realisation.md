@@ -1,4 +1,4 @@
-Let $k = \mathbb{Q}_\pp$ and let $\mathcal{C}$ be the category of
+Let $k = \mathbb{Q}_\pp$ and let $\mathbf{C}$ be the category of
 $F$-isocrystals over $\mathbb{Q}_\pp$ (modules over the Dieudonne ring
 $\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
 over $\mathbb{Q}_\pp$).
@@ -6,7 +6,7 @@ This is a $\mathbb{Q}_\pp$-linear rigid monoidal category.
 The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
 to $\mathbb{Q}_\pp$ provides a Frobenius--Hopf object $A$, where the
 Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure.
-The Frobenius endomorphism $\varphi$ on $\mathcal{C}$ plays the
+The Frobenius endomorphism $\varphi$ on $\mathbf{C}$ plays the
 role of the Levi-form contraction: the substrate parameter is
 $q = \pp^{\,-v_\pp(\det\varphi)}$ (a $\pp$-adic analogue of
 [substrate parameter](#def:substrate-parameter)).  The fibre functor $\tau$

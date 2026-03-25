@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with substrate
 parameter $q_0$ ([substrate parameter](#def:substrate-parameter)).  The
 *quantum gauge group* is

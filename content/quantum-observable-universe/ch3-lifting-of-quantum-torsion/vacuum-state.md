@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  Let
 $\mathcal{A}_\infty$ be its
 ([direct limit algebra](#def:direct-limit-algebra)).  Let $G_q =

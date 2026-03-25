@@ -1,6 +1,6 @@
 
 The proof mirrors the ascent ([jet prolongation](#prop:jet-prolongation)) in
-reverse, working inside the rigid monoidal category $\mathcal{C}$.
+reverse, working inside the rigid monoidal category $\mathbf{C}$.
 
 *Step 1: Frobenius restriction.*
 The jet object $J^1(A) = A \otimes \Omega^1(A)$ at level $n$ contains $A$

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 gauge group $G_q = \mathrm{Aut}^{\otimes}(\tau)$
 ([quantum gauge group](#def:quantum-gauge-group)) and connection
 $\nabla$ on $A$ ([categorical connection](#def:categorical-connection)).

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 weight decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)) and categorical
 $q$-exterior derivative $d_q$

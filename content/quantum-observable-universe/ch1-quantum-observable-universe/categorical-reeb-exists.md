@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with
 [maximal torus](#def:maximal-torus) $T$ and
 [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$.

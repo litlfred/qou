@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, \otimes, \mathbf{1})$ be a
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a
 [rigid monoidal category](#def:rigid-monoidal-category) with fundamental
 object $V$ and Frobenius algebra $(A, \mu, \eta, \Delta, \epsilon,
 \int_A)$. A *categorical hadron* is a morphism
@@ -20,13 +20,13 @@ $$
 
 where each $\pi_{j_i}$ is the projection onto the simple summand
 $V_{j_i} \hookrightarrow A$, and the $V_{j_i}$ are simple objects of
-$\mathcal{C}$.
+$\mathbf{C}$.
 
 The integer $n$ is the *valence* of the hadron. A categorical hadron
 of valence $3$ is a *categorical baryon*; valence $2$ is a
 *categorical meson*.
 
-This definition is purely categorical: it lives in $\mathcal{C}$
+This definition is purely categorical: it lives in $\mathbf{C}$
 without reference to a base point, coordinates, or a specific gauge
 group. The [concrete hadron](#def:hadron) of Chapter 3 is obtained by
 composing a categorical hadron with localization to a

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its recursive brane tower with cosimplicial
 crossed groupoid structure
 ([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)); let $q$ denote the substrate parameter.  Let
