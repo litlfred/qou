@@ -52,6 +52,11 @@
           {
             "type": "command",
             "command": "./scripts/check-no-lean-artifacts.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/render-pre-commit.sh",
+            "timeout": 120
           }
         ]
       }
