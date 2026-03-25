@@ -30,7 +30,7 @@ acting on germs at $p$, satisfying:
    where $\int_{A,p}$ is the germ of the Frobenius form at $p$.
 
 2. **Substrate perturbation.** The observation shifts the
-   deformation parameter $q \mapsto q' = q + \delta q$ via the
+   substrate parameter $q \mapsto q' = q + \delta q$ via the
    Hopf coaction:
 
    ```tex

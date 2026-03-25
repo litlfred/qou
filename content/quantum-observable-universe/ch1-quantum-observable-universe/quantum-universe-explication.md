@@ -1,6 +1,6 @@
-The deformation parameter $q$ is not part of the categorical
-definition of a quantum universe or observable universe; it is a
-*fibre coordinate* on the one-parameter family of interpolations
+The substrate parameter $q \in \mathrm{End}(\mathbf{1})$ is not part
+of the categorical definition of a quantum universe or observable
+universe; it parametrises the $\mathbb{G}_m$-family of interpolations
 between the full differential $d$ and the vertical projection
 $\pi_V \circ d$ ([substrate parameter](#def:substrate-parameter)).
 The triple $(\mathbf{C}, A, \tau)$ carries both endomorphisms
