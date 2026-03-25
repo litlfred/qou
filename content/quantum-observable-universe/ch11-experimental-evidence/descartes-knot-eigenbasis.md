@@ -1,6 +1,6 @@
-Let $(\mathcal{C}, A, \tau)$ be a Descartes universe
+Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
 ([Descartes condition](#def:descartes-condition)) with
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Then the knot-type eigenbasis is complete:
 
 1. **(Hecke algebra instantiation.)**  The Descartes condition forces
@@ -8,7 +8,7 @@ representation.  Then the knot-type eigenbasis is complete:
    $\mathrm{SU}_q(2)$ of rank $2$.  The $R$-matrix of
    $\mathcal{U}_q(\mathfrak{su}(2))$
    ([$R$-matrix braiding](#rem:r-matrix-braiding)) furnishes a braiding
-   $c_{V,V}$ on $\mathcal{C}$ whose eigenvalues are $q$ and $-q^{-1}$.
+   $c_{V,V}$ on $\mathbf{C}$ whose eigenvalues are $q$ and $-q^{-1}$.
    The quotient by the quadratic relation
    $(c_{V,V} - q)(c_{V,V} + q^{-1}) = 0$ yields the Hecke algebra
    $H_n(q)$ acting on $V^{\otimes n}$.
@@ -22,9 +22,9 @@ representation.  Then the knot-type eigenbasis is complete:
    labelled by two-part partitions $\lambda \vdash n$.
 
 3. **(Braid representation.)**  The faithful representation
-   $\rho_3 \colon B_3 \to \mathrm{Aut}_{\mathcal{C}}(V^{\otimes 3})$
+   $\rho_3 \colon B_3 \to \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$
    ([braid-group structure](#cor:descartes-braid-structure)(1))
-   extends to $\rho_n \colon B_n \to \mathrm{Aut}_{\mathcal{C}}(V^{\otimes n})$
+   extends to $\rho_n \colon B_n \to \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})$
    for all $n$ via
    [braid action on tensor products](#prop:braid-action-tensor).
    The Markov trace on the Hecke algebra tower detects every irreducible

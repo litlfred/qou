@@ -1,7 +1,7 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)).  Each transition
-$A_n \hookrightarrow A_{n+1}$ in $\mathcal{C}$ defines a central extension
+$A_n \hookrightarrow A_{n+1}$ in $\mathbf{C}$ defines a central extension
 of gerbes on the underlying site in the sense of
 Yekutieli [yekutieli2010]: the Frobenius--Hopf object $A_n$ is an
 object in a gerbe $\mathfrak{G}_n$ banded by the sheaf of units

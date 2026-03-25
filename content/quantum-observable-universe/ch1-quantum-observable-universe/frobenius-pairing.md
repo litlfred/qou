@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 [quantum universe](#def:quantum-universe) with multiplication
 $\mu \colon A \otimes A \to A$ and Frobenius form
 $\int_A \colon A \to \mathbf{1}$. The *Frobenius pairing* is the

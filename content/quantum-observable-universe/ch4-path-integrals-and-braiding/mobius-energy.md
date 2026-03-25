@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([Definition](#def:quantum-observable-universe)) with substrate
 parameter $q$ ([Definition](#def:substrate-parameter)),
 categorical action $\mathcal{S}_q$

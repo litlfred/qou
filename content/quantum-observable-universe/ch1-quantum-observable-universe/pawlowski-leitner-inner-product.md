@@ -13,6 +13,20 @@ $$
     \circ \mathrm{coev}_{V_j}.
 $$
 
+```tex
+\begin{equation}\label{eq:pawlei-inner-product-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathbf{1} \ar[r, "\mathrm{coev}_{V_j}"]
+  & V_j \otimes V_j^{\vee}
+    \ar[r, "\phi^{\dagger} \circ \psi \,\otimes\, \mathrm{id}"]
+  & A \otimes V_j^{\vee}
+    \ar[r, "\int_A \circ \mu"]
+  & \mathbf{1}
+\end{tikzcd}
+\qquad\text{(PawLei inner product)}
+\end{equation}
+```
+
 The [PawLei basis](#prop:pawlowski-leitner-basis)
 $\{T_{\lambda}\}$ is *orthogonal* with respect to this pairing:
 

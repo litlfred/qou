@@ -13,7 +13,7 @@ $$
   \,\bigr\rVert.
 $$
 The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta
-\circ \gamma$ is an element of $\mathrm{End}_{\mathcal{C}}(A_{n+1})$.
+\circ \gamma$ is an element of $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 The descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)) decomposes this algebra
 into the direct sum
@@ -51,7 +51,7 @@ $$
 *Step 2: Descended term is the base-level mass.*
 The projection $\hat{\tau}_n(\alpha)$ lies in
 $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$, which is
-isomorphic to $\mathrm{End}_{\mathcal{C}}(A_n)$ via the ascent embedding
+isomorphic to $\mathrm{End}_{\mathbf{C}}(A_n)$ via the ascent embedding
 $\ell_n$ ([descent involution](#def:descent-involution)).  The
 compatibility of the categorical trace with descent
 ($\mathrm{tr}_n \circ \mathfrak{d}_{n+1} = \mathrm{tr}_{n+1}$ on

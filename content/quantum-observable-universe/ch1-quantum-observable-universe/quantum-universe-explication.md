@@ -3,7 +3,7 @@ of the categorical definition of a quantum universe or observable
 universe; it parametrises the $\mathbb{G}_m$-family of interpolations
 between the full differential $d$ and the vertical projection
 $\pi_V \circ d$ ([substrate parameter](#def:substrate-parameter)).
-The triple $(\mathcal{C}, A, \tau)$ carries both endomorphisms
+The triple $(\mathbf{C}, A, \tau)$ carries both endomorphisms
 canonically; $q$ records *where one sits* in the
 $\mathbb{G}_m$-family they span.  Once a substrate parameter is
 fixed, the categorical dimension of the fundamental object $V$

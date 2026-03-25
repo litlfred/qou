@@ -1,4 +1,4 @@
-Let $\mathcal{C}$ be a $R$-linear rigid monoidal category and let
+Let $\mathbf{C}$ be a $R$-linear rigid monoidal category and let
 $$
   1 \;\longrightarrow\; \mathcal{B}
   \;\longrightarrow\; \mathfrak{G}'
@@ -6,7 +6,7 @@ $$
   \;\longrightarrow\; 1
 $$
 be a central extension of gerbes on a site $\mathcal{S}$, banded by an
-abelian sheaf $\mathcal{B}$.  We say that $\mathcal{C}$ satisfies the
+abelian sheaf $\mathcal{B}$.  We say that $\mathbf{C}$ satisfies the
 *Yekutieli Lifting Condition* with respect to
 $(\mathfrak{G}', \mathfrak{G}, \mathcal{B})$ if, for every object
 $x \in \mathrm{Ob}(\mathfrak{G})$, the obstruction to lifting $x$ to an

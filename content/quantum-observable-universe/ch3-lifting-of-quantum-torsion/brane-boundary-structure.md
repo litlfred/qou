@@ -6,7 +6,7 @@ The defining boundary $\partial A_n$
    least 2 in $E_n$.
 2. *Exceptional object.*  At each degeneration locus of the
    restriction $r_n$, the kernel $\ker(r_n|_S)$ is isomorphic to a
-   simple object of $\mathcal{C}$; in the archimedean realisation
+   simple object of $\mathbf{C}$; in the archimedean realisation
    this is $\mathbb{P}^1(\mathbb{C}) \cong S^2$, the exceptional divisor of the
    topological blow-up.
 3. *Involution symmetry.*  The descent involution $\hat{\tau}_n$

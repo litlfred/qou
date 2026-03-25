@@ -15,6 +15,6 @@ commutativity constraint
 ([categorical volume constraint](#eq:categorical-volume-constraint)).
 
 This structure anchors the topological invariants directly within
-the categorical data $(\mathcal{C}, A, \tau)$: the volume
+the categorical data $(\mathbf{C}, A, \tau)$: the volume
 $\epsilon$ arises not as an external parameter but as a structural
 morphism intrinsic to the observable universe.

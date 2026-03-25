@@ -2,7 +2,7 @@ A *hadron* is an abstract composite of fundamental knots linked
 together by the Hopf link.
 
 Let $K_1, \ldots, K_n$ be fundamental (prime) knot types in the
-representation category $\mathcal{C}$. A **hadron** is an element
+representation category $\mathbf{C}$. A **hadron** is an element
 
 $$
   H \;\in\; \mathrm{Sym}^n\!\bigl(K_1, \ldots, K_n\bigr)
@@ -25,7 +25,7 @@ $$
 $$
 
 This construction is purely abstract — the hadron lives in the
-category $\mathcal{C}$ without reference to a base point.
+category $\mathbf{C}$ without reference to a base point.
 Localization to a point is a separate operation
 ([localized hadron](#def:localized-hadron)).
 

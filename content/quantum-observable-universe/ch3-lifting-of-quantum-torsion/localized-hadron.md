@@ -2,7 +2,7 @@ A *localized hadron* is a hadron ([Definition](#def:hadron)) that has
 been placed at a categorical point $p$ of the projective line
 $\mathbb{P}(V)$ ([Definition](#def:projective-line-object)).
 
-Formally, a **localized hadron** at $p$ is a morphism in $\mathcal{C}$:
+Formally, a **localized hadron** at $p$ is a morphism in $\mathbf{C}$:
 
 $$
   H_p \;\colon\; \mathbf{1}

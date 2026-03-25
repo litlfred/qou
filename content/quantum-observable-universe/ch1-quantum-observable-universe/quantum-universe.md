@@ -1,7 +1,7 @@
 Let $R$ be a commutative ring. A *quantum universe over $R$* is a
-triple $(\mathcal{C}, A, \tau)$ where:
+triple $(\mathbf{C}, A, \tau)$ where:
 
-1. $(\mathcal{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
+1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    symmetric monoidal category
    ([rigid monoidal category](#def:rigid-monoidal-category)) — the
    symmetric braiding $\sigma_{X,Y} \colon X \otimes Y
@@ -9,7 +9,7 @@ triple $(\mathcal{C}, A, \tau)$ where:
    $\Lambda^k V$ and is canonically induced by the fibre functor
    $\tau$ via the Tannakian structure;
 
-2. $A$ is a *Frobenius--Hopf object* in $\mathcal{C}$: an
+2. $A$ is a *Frobenius--Hopf object* in $\mathbf{C}$: an
    object equipped with morphisms
 
    ```tex
@@ -38,16 +38,16 @@ triple $(\mathcal{C}, A, \tau)$ where:
    form $\int_A$ — satisfying:
 
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
-   a Hopf algebra object in $\mathcal{C}$;
+   a Hopf algebra object in $\mathbf{C}$;
 
    **(F)** the [Frobenius pairing](#def:frobenius-pairing)
    $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-3. $\tau \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
+3. $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal
    functor;
 
 4. $A$ admits a *differential calculus*: the module of
-   K\"ahler differentials $\Omega^1(A)$ exists in $\mathcal{C}$.
+   K\"ahler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.

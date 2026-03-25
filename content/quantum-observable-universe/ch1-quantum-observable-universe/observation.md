@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe over a
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a
 ring $R$ ([quantum observable universe](#def:quantum-observable-universe)), let $q$
 denote the
 ([substrate parameter](#def:substrate-parameter)), and let
@@ -9,7 +9,7 @@ $p \colon \mathbf{1} \to A$ be a
 $$
   \mathcal{O}_p \;\colon\; A / \mathfrak{m}_p^2
   \;\longrightarrow\; A / \mathfrak{m}_p^2
-  \qquad\text{in } \mathcal{C},
+  \qquad\text{in } \mathbf{C},
 $$
 
 acting on germs at $p$, satisfying:

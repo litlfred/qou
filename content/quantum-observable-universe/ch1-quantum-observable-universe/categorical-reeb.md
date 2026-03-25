@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 maximal torus $T$ ([maximal torus](#def:maximal-torus)) and weight
 decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)). The *categorical
@@ -17,3 +17,15 @@ the Frobenius--Hopf object $A$ via the adjoint coaction. It satisfies:
 3. **Kernel:**
    $\Omega^k_H(A) = \ker(\iota_\xi)$ (horizontal forms are
    precisely those annihilated by contraction with $\xi$).
+
+```tex
+\begin{equation}\label{eq:reeb-decomposition-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^k(A) \ar[r, "\pi_H"] \ar[d, "\pi_V"']
+  & \Omega^k_H(A) \ar[d, hook] \\
+  \theta_A \wedge \Omega^{k-1}_H(A) \ar[r, hook]
+  & \Omega^k(A)
+\end{tikzcd}
+\qquad (\pi_H + \pi_V = \mathrm{id})
+\end{equation}
+```

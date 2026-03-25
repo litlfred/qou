@@ -1,8 +1,8 @@
-Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
 category. An *involutive structure* (also called a
-*$\ast$-structure* or *dagger structure*) on $\mathcal{C}$ is
+*$\ast$-structure* or *dagger structure*) on $\mathbf{C}$ is
 a contravariant endofunctor
-$\dagger \colon \mathcal{C}^{\mathrm{op}} \to \mathcal{C}$ satisfying:
+$\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
 
 1. **Identity on objects:** $X^{\dagger} = X$ for every
    object $X$.

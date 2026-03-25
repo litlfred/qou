@@ -1,7 +1,7 @@
 
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$ and Skein module
-$\mathcal{S}_q = \mathcal{S}_q(\mathcal{C})$.
+$\mathcal{S}_q = \mathcal{S}_q(\mathbf{C})$.
 The Skein module $\mathcal{S}_q$ is generated as an
 algebra by:
 
