@@ -75,11 +75,12 @@ is:
 
 $$
   \text{Proton} \;=\;
-  \ell_c\bigl(T_{2,3},\; T_{2,3},\; T_{2,3}\bigr)
+  \ell_c\bigl(T_{2,3},\; T_{2,3},\; \sigma(T_{2,3})\bigr)
   \;\otimes\; \mathcal{L}_{\mathrm{Hopf}}
 $$
 
-where $\ell_c$ threads one trefoil through each color tube and
+where $\ell_c$ threads two trefoils (up quarks) and one Skein
+descendant $\sigma(T_{2,3})$ (down quark) through the color tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$
