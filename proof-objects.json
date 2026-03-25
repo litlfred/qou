@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T19:03:24.233578+00:00",
+    "generated_at": "2026-03-25T20:05:32.710427+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -3088,31 +3088,11 @@
       ]
     },
     {
-      "label": "prop:double-slit-photon-pattern",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/experimental-evidence.tex",
-        "line": 445,
-        "chapter": 7
-      },
-      "title": "{Photon interference pattern via Julia-set envelope}",
-      "lean": {
-        "decl": "QOU.Experimental.double_slit_photon_pattern"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:double-slit-q-phase",
-        "def:exceptional-divisor",
-        "def:chiral-sector-coords",
-        "rem:julia-s1-photon-scatter"
-      ]
-    },
-    {
       "label": "conj:topological-mass-formula",
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 522,
+        "line": 448,
         "chapter": 7
       },
       "title": "{Topological mass formula (Archimedean)}",
@@ -3133,7 +3113,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 954,
+        "line": 880,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -5003,26 +4983,6 @@
     {
       "from": "prop:double-slit-massive-pattern",
       "to": "def:q-hodge-star",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:double-slit-photon-pattern",
-      "to": "def:double-slit-q-phase",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:double-slit-photon-pattern",
-      "to": "def:exceptional-divisor",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:double-slit-photon-pattern",
-      "to": "def:chiral-sector-coords",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:double-slit-photon-pattern",
-      "to": "rem:julia-s1-photon-scatter",
       "relation": "uses"
     },
     {
