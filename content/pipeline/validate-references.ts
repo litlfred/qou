@@ -19,7 +19,7 @@
  * @module content/pipeline/validate-references
  */
 
-import { readFileSync, existsSync, readdirSync, statSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { resolve, join } from "path";
 import { references, referenceMap, CSLEntrySchema } from "../schema/references";
 import type { Data as CSLData } from "csl-json";
@@ -117,23 +117,6 @@ for (const entry of references) {
 console.log("Cross-checking Lean -- Ref: citations...");
 const REF_PATTERN = /--\s*Ref:\s*\[([^\]]+)\]/g;
 const leanCitations = new Set<string>();
-
-function scanDirForPattern(dir: string, ext: string, pattern: RegExp): Map<string, string[]> {
-  const found = new Map<string, string[]>();
-  if (!existsSync(dir)) return found;
-  const files = scanFilesRecursive(dir, ext);
-  for (const fullPath of files) {
-    const content = readFileSync(fullPath, "utf-8");
-    let match;
-    const localPattern = new RegExp(pattern.source, pattern.flags);
-    while ((match = localPattern.exec(content)) !== null) {
-      const key = match[1];
-      if (!found.has(key)) found.set(key, []);
-      found.get(key)!.push(fullPath.replace(dir + "/", ""));
-    }
-  }
-  return found;
-}
 
 // Scan .lean files for -- Ref: [key] patterns
 const leanDir = join(REPO_ROOT, "lean");

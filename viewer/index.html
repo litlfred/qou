@@ -1386,7 +1386,7 @@
         const ref = refMap.get(key);
         if (!ref) return;
         const authors = ref.author?.length
-          ? (ref.author.length <= 2
+          ? (ref.author.length <= 3
             ? ref.author.map(a => a.family || a.literal || '').join(' & ')
             : `${ref.author[0].family || ref.author[0].literal} et al.`)
           : '';
