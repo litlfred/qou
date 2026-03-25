@@ -78,6 +78,20 @@ export default chapter({
       ],
     }),
 
+    // ── Double-slit experiment ──
+
+    section({
+      title: "Double-slit experiment",
+      label: "sec:double-slit-experiment",
+      blocks: [
+        "double-slit-intro",
+        "double-slit-q-phase",
+        "double-slit-massive-pattern",
+        "double-slit-photon-pattern",
+        "double-slit-two-modes",
+      ],
+    }),
+
     // ── Mass conjecture and ansatz ──
 
     section({
