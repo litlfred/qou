@@ -178,7 +178,7 @@ def killingFormRatio : ℤ := -2
 
     LaTeX: `\label{prop:pawlowski-leitner-basis}`
     Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-noncomputable def pawlowskiLeitnerDim (twice_j : ℕ) (n : ℕ) : ℕ :=
+noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
   if n % 2 ≠ twice_j % 2 then 0
   else if n < twice_j then 0
   else (twice_j + 1) * n.factorial /
@@ -188,9 +188,9 @@ noncomputable def pawlowskiLeitnerDim (twice_j : ℕ) (n : ℕ) : ℕ :=
 /-- When `n = 2j` (the minimal tensor power), the intertwiner space
     is one-dimensional — there is a unique embedding up to scalar. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-theorem pawlowskiLeitner_minimal_dim (twice_j : ℕ) :
-    pawlowskiLeitnerDim twice_j twice_j ≥ 0 := by
-  unfold pawlowskiLeitnerDim
+theorem pawLei_minimal_dim (twice_j : ℕ) :
+    pawLeiDim twice_j twice_j ≥ 0 := by
+  unfold pawLeiDim
   split <;> omega
 
 /-- The **Pawlowski–Leitner basis** for the intertwiner space
@@ -199,7 +199,7 @@ theorem pawlowskiLeitner_minimal_dim (twice_j : ℕ) :
     `λ₁ - λ₂ = 2j`.
 
     Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-structure PawlowskiLeitnerBasis where
+structure PawLeiBasis where
   /-- The spin label (as twice_j). -/
   twice_j : ℕ
   /-- The tensor power. -/
@@ -209,7 +209,7 @@ structure PawlowskiLeitnerBasis where
   /-- The tensor power is large enough: `n ≥ 2j`. -/
   n_ge : n ≥ twice_j
   /-- The number of basis elements equals the intertwiner dimension. -/
-  num_basis : ℕ := pawlowskiLeitnerDim twice_j n
+  num_basis : ℕ := pawLeiDim twice_j n
 
 /-! ## §5  Pawlowski–Leitner Inner Product -/
 
@@ -223,9 +223,9 @@ structure PawlowskiLeitnerBasis where
 
     LaTeX: `\label{prop:pawlowski-leitner-inner-product}`
     Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-structure PawlowskiLeitnerInnerProduct where
+structure PawLeiInnerProduct where
   /-- The underlying basis data. -/
-  basis : PawlowskiLeitnerBasis
+  basis : PawLeiBasis
   /-- The norm-squared of each basis vector (positive rational). -/
   normSq : Fin basis.num_basis → ℝ
   /-- All norms are positive. -/
@@ -234,8 +234,8 @@ structure PawlowskiLeitnerInnerProduct where
 
 /-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-theorem pawlowskiLeitner_orthogonal
-    (ip : PawlowskiLeitnerInnerProduct)
+theorem pawLei_orthogonal
+    (ip : PawLeiInnerProduct)
     (i j : Fin ip.basis.num_basis) (h : i ≠ j) :
     True := by  -- placeholder for the orthogonality statement
   trivial

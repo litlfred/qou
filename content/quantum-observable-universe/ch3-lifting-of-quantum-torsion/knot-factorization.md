@@ -6,7 +6,7 @@ construction: every constituent knot type $K_i$ in a
 Specifically, if $K_i$ is a knot whose associated simple object is
 $V_{j_i}$, then $V_{j_i}$ appears as a direct summand of
 $V^{\otimes 2j_i}$. The
-[Pawlowski--Leitner basis](#prop:pawlowski-leitner-basis) provides a
+[PawLei basis](#prop:pawlowski-leitner-basis) provides a
 canonical embedding
 
 $$
@@ -24,7 +24,7 @@ $$
 $$
 
 This embedding is *not* unique — the choice of
-Pawlowski--Leitner basis element for each factor corresponds to a
+PawLei basis element for each factor corresponds to a
 choice of partial-wave channel. The physical hadron is obtained by
 summing over all channels weighted by the Skein polynomial, so the
 [hadronic mass formula](#def:hadron) arises as a contraction of the

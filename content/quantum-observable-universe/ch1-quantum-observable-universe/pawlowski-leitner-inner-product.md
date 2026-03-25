@@ -13,7 +13,7 @@ $$
     \circ \mathrm{coev}_{V_j}.
 $$
 
-The [Pawlowski--Leitner basis](#prop:pawlowski-leitner-basis)
+The [PawLei basis](#prop:pawlowski-leitner-basis)
 $\{T_{\lambda}\}$ is *orthogonal* with respect to this pairing:
 
 $$
@@ -29,7 +29,7 @@ This orthogonality has two consequences for the QOU framework:
 
 1. **Decomposition of hadron states.** A
    [categorical hadron](#def:categorical-hadron) of valence $n$ can be
-   uniquely expanded in the Pawlowski--Leitner basis, with
+   uniquely expanded in the PawLei basis, with
    coefficients that are physically interpretable as partial-wave
    amplitudes.
 2. **Compatibility with the Frobenius form.** The inner product

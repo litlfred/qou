@@ -10,17 +10,22 @@ $$
     V_{1/2}^{\otimes n}\bigr)
 $$
 
-admits a *canonical* basis, indexed by standard Young tableaux of
-shape $\lambda \vdash n$ with at most $2$ rows and with
-$\lambda_1 - \lambda_2 = 2j$.
+admits a *canonical* basis — the **PawLei basis** — indexed by
+standard Young tableaux of shape $\lambda \vdash n$ with at most
+$2$ rows and with $\lambda_1 - \lambda_2 = 2j$.
 
-Concretely, these basis vectors are constructed as follows. The
-volume form $\epsilon \colon \Lambda^2 V_{1/2} \to \mathbf{1}$ and
-its dual $\epsilon^{\vee} \colon \mathbf{1} \to \Lambda^2 V_{1/2}$
-generate *contraction operators* on tensor powers. The
-Pawlowski--Leitner basis elements are obtained by applying a
-specific sequence of pairwise contractions (determined by the
-tableau) to the highest-weight vector
+The construction rests on the
+[PBW theorem over commutative rings](#cor:pbw): the unital Gröbner
+basis for $U(\mathfrak{su}(2))$ provides a monomial basis for the
+enveloping algebra, from which the intertwiner basis is derived by
+contraction with the volume form.
+
+Concretely, the volume form
+$\epsilon \colon \Lambda^2 V_{1/2} \to \mathbf{1}$ and its dual
+$\epsilon^{\vee} \colon \mathbf{1} \to \Lambda^2 V_{1/2}$ generate
+*contraction operators* on tensor powers. The PawLei basis elements
+are obtained by applying a specific sequence of pairwise contractions
+(determined by the tableau) to the highest-weight vector
 $e_+^{\otimes (j+m)} \otimes e_-^{\otimes (j-m)}$, then
 symmetrising according to the row structure of the tableau.
 

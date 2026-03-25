@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:pawlowski-leitner-inner-product",
   title: "Inner product on intertwiner spaces",
   lean: {
-    decl: "QOU.PawlowskiLeitnerInnerProduct",
+    decl: "QOU.PawLeiInnerProduct",
     validation: "not_checked",
   },
   uses: [

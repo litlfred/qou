@@ -80,7 +80,7 @@ export default chapter({
     }),
 
     section({
-      title: "Vectors, hadrons, and the Pawlowski--Leitner basis",
+      title: "Vectors, hadrons, and the PawLei basis",
       label: "sec:vectors-hadrons",
       blocks: [
         "categorical-hadron",
