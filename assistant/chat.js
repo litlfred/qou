@@ -37,10 +37,17 @@
     return ctx;
   }
 
+  // ── HTML entity unescape (for recovering TeX from escaped text) ──
+  function unesc(s) {
+    if (!s) return "";
+    return s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+  }
+
   // ── Markdown → HTML (chat-optimized, XSS-safe) ──
   // Strategy: escape ALL input first, then selectively apply markdown
   // formatting on the escaped text. This ensures no raw HTML from the
-  // LLM response can execute.
+  // LLM response can execute. Math content is unescaped before passing
+  // to KaTeX so that <, >, & etc. render correctly in TeX.
   function chatMdToHtml(md) {
     if (!md) return "";
 
@@ -50,12 +57,16 @@
     // Escape everything first — all subsequent regexes operate on safe text
     out = esc(out);
 
-    // Display math $$...$$ (content already escaped, KaTeX will re-parse)
-    out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) =>
-      `<span class="chat-katex-display" data-tex="${tex.trim().replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`);
-    // Inline math $...$
-    out = out.replace(/\$([^\n$]+?)\$/g, (_, tex) =>
-      `<span class="chat-katex-inline" data-tex="${tex.trim().replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`);
+    // Display math $$...$$ — unescape HTML entities so KaTeX gets raw TeX
+    out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) => {
+      const raw = unesc(tex.trim());
+      return `<span class="chat-katex-display" data-tex="${raw.replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`;
+    });
+    // Inline math $...$ — same unescape treatment
+    out = out.replace(/\$([^\n$]+?)\$/g, (_, tex) => {
+      const raw = unesc(tex.trim());
+      return `<span class="chat-katex-inline" data-tex="${raw.replace(/"/g, "&quot;").replace(/'/g, "&#39;")}"></span>`;
+    });
     // Fenced code blocks (``` markers are escaped as-is since no < > remain)
     out = out.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) =>
       `<pre class="chat-code"><code>${code}</code></pre>`);
@@ -67,11 +78,15 @@
     out = out.replace(/\*(.+?)\*/g, "<em>$1</em>");
     // Links — href is already escaped, add rel for safety
     out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-    // Lists
+    // Unordered lists
     out = out.replace(/^[-*] (.+)$/gm, '<li>$1</li>');
     out = out.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-    // Numbered lists
+    // Numbered lists — wrap in <ol> (must run after <ul> wrapping)
     out = out.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+    out = out.replace(/(<li>(?:(?!<\/?[uo]l>)[\s\S])*<\/li>\n?)+/g, (m) => {
+      // Only wrap if not already inside a <ul>
+      return m.includes('<ul>') ? m : `<ol>${m}</ol>`;
+    });
     // Headers (in chat, keep them subtle)
     out = out.replace(/^### (.+)$/gm, '<div class="chat-h3">$1</div>');
     out = out.replace(/^## (.+)$/gm, '<div class="chat-h2">$1</div>');
@@ -91,8 +106,14 @@
   }
 
   // Render KaTeX in a container
+  let katexReady = !!window.katex;
   function renderChatMath(container) {
     if (!window.katex) return;
+    if (!katexReady) {
+      katexReady = true;
+      // KaTeX just became available — re-render any unrendered math in all messages
+      container = messagesEl || container;
+    }
     container.querySelectorAll(".chat-katex-display").forEach(el => {
       if (el.dataset.rendered) return;
       try {
@@ -109,6 +130,20 @@
     });
   }
 
+  // If KaTeX loads after chat messages are already rendered, catch up
+  if (!window.katex) {
+    const checkKatex = setInterval(() => {
+      if (window.katex) {
+        clearInterval(checkKatex);
+        katexReady = true;
+        const msgs = document.getElementById("chat-messages");
+        if (msgs) renderChatMath(msgs);
+      }
+    }, 200);
+    // Stop checking after 30s
+    setTimeout(() => clearInterval(checkKatex), 30000);
+  }
+
   // ── Build DOM ───────────────────────────────────────────
 
   // FAB button
@@ -120,6 +155,9 @@
   // Chat panel
   const panel = h("div", "chat-panel");
   panel.innerHTML = `
+    <div class="chat-resize-handle chat-resize-top" data-dir="top"></div>
+    <div class="chat-resize-handle chat-resize-left" data-dir="left"></div>
+    <div class="chat-resize-handle chat-resize-corner" data-dir="corner"></div>
     <div class="chat-header">
       <div class="chat-header-left">
         <span class="chat-avatar">F</span>
@@ -451,6 +489,60 @@
 
     scrollToBottom();
   }
+
+  // ── Resize drag handling ────────────────────────────────
+  const MIN_W = 300, MIN_H = 250, MAX_W_FRAC = 0.9, MAX_H_FRAC = 0.95;
+
+  // Restore saved size
+  try {
+    const saved = JSON.parse(localStorage.getItem("folio-chat-size") || "null");
+    if (saved) {
+      if (saved.w) panel.style.width = saved.w + "px";
+      if (saved.h) panel.style.height = saved.h + "px";
+    }
+  } catch (_) {}
+
+  function initResize(e) {
+    e.preventDefault();
+    const dir = e.target.dataset.dir;
+    if (!dir) return;
+    const rect = panel.getBoundingClientRect();
+    const startX = e.clientX, startY = e.clientY;
+    const startW = rect.width, startH = rect.height;
+    const maxW = window.innerWidth * MAX_W_FRAC;
+    const maxH = window.innerHeight * MAX_H_FRAC;
+
+    panel.classList.add("resizing");
+
+    function onMove(ev) {
+      if (dir === "left" || dir === "corner") {
+        const w = Math.max(MIN_W, Math.min(maxW, startW - (ev.clientX - startX)));
+        panel.style.width = w + "px";
+      }
+      if (dir === "top" || dir === "corner") {
+        const h = Math.max(MIN_H, Math.min(maxH, startH - (ev.clientY - startY)));
+        panel.style.height = h + "px";
+      }
+    }
+
+    function onUp() {
+      panel.classList.remove("resizing");
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onUp);
+      // Persist size
+      try {
+        localStorage.setItem("folio-chat-size", JSON.stringify({
+          w: panel.offsetWidth, h: panel.offsetHeight,
+        }));
+      } catch (_) {}
+    }
+
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
+  }
+
+  panel.querySelectorAll(".chat-resize-handle").forEach(el =>
+    el.addEventListener("mousedown", initResize));
 
   // ── Keyboard shortcut (Cmd/Ctrl + K) ───────────────────
   document.addEventListener("keydown", (e) => {
