@@ -10,7 +10,7 @@ All four rows match CODATA to sub-keV precision:
 - Deuteron: 1875.613 MeV (QOU) vs 1875.613 MeV (CODATA)
 - Binding:  2.224 MeV (QOU) vs 2.2245 MeV (CODATA)
 
-LaTeX label: `prop:terminal-resolution`
+LaTeX label: `rem:terminal-resolution`
 
 ## References
 

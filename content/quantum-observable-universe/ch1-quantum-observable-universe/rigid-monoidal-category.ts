@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.RigidMonoidalCategory",
     validation: "not_checked",
   },
-  uses: [],
+  uses: ["def:snake-identity"],
   examples: ["ex:rigid-monoidal-vect"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/rigid-monoidal-category-1.svg", blockIndex: 1, hash: "9b5f1dfb5af4" },

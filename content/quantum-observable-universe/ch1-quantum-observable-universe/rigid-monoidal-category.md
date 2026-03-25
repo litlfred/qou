@@ -5,7 +5,7 @@ $\otimes \colon \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ (the
 isomorphisms expressing associativity and unitality:
 
 ```tex
-\[
+\begin{equation}\label{eq:monoidal-axioms}
 \begin{gathered}
 \begin{tikzcd}[column sep=3em]
   (X \otimes Y) \otimes Z
@@ -13,7 +13,7 @@ isomorphisms expressing associativity and unitality:
   & X \otimes (Y \otimes Z)
 \end{tikzcd}
 \\[-0.5em]
-\text{\small associativity}
+\text{\small (associativity)}
 \end{gathered}
 \qquad
 \begin{gathered}
@@ -25,9 +25,9 @@ isomorphisms expressing associativity and unitality:
     \ar[l, "\rho_X"', "\sim"]
 \end{tikzcd}
 \\[-0.5em]
-\text{\small unitality}
+\text{\small (unitality)}
 \end{gathered}
-\]
+\end{equation}
 ```
 
 The category is *rigid* if every object $V$ has a *dual*
@@ -50,7 +50,7 @@ such that the following *snake identity* diagrams commute:
   & V
 \end{tikzcd}
 \\[-0.5em]
-\text{\small left snake identity}
+\text{\small (left snake identity)}
 \end{gathered}
 \qquad\qquad
 \begin{gathered}
@@ -64,7 +64,7 @@ such that the following *snake identity* diagrams commute:
   & V^{\vee}
 \end{tikzcd}
 \\[-0.5em]
-\text{\small right snake identity}
+\text{\small (right snake identity)}
 \end{gathered}
 \end{equation}
 ```

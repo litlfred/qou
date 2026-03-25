@@ -1,6 +1,6 @@
 
 With $q = 1.1097$ fixed by the lepton mass ratio
-([skein mass relation](#prop:skein-mass-relation)), the hadronic masses are
+([skein mass relation](#rem:skein-mass-relation)), the hadronic masses are
 determined without free parameters.
 
 *Step 1: Nucleon topology.*

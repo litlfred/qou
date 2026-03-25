@@ -5,7 +5,7 @@ export default [
     "id": "todo-mn172945-8q8z",
     "summary": "titile of defintion is wrong",
     "comment": "titile of defintion is wrong",
-    "status": "open",
+    "status": "in_progress",
     "priority": "medium",
     "origin": "human",
     "assignee": "editor-agent",
