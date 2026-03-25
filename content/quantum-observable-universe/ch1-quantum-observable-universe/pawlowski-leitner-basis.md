@@ -20,6 +20,17 @@ basis for $U(\mathfrak{su}(2))$ provides a monomial basis for the
 enveloping algebra, from which the intertwiner basis is derived by
 contraction with the volume form.
 
+```tex
+\begin{equation}\label{eq:pawlei-basis-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathbf{1} \ar[r, "\epsilon^{\vee}"]
+  & \Lambda^2 V_{1/2} \ar[r, hook]
+  & V_{1/2}^{\otimes n} \ar[r, "\pi_j"]
+  & V_j
+\end{tikzcd}
+\end{equation}
+```
+
 Concretely, the volume form
 $\epsilon \colon \Lambda^2 V_{1/2} \to \mathbf{1}$ and its dual
 $\epsilon^{\vee} \colon \mathbf{1} \to \Lambda^2 V_{1/2}$ generate

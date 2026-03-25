@@ -17,6 +17,18 @@ $$
   d_q \;=\; q^{-1}\,d \;+\; (1 - q^{-1})\,\pi_V \circ d.
 $$
 
+```tex
+\begin{equation}\label{eq:substrate-family-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^k(A) \ar[r, "d"] \ar[d, "\pi_V \circ d"'] \ar[dr, "d_q"]
+  & \Omega^{k+1}(A) \\
+  \Omega^{k+1}(A)
+  & {} \ar[u, phantom, "q{=}1"' near start]
+    \ar[l, phantom, "q{\to}\infty" near start]
+\end{tikzcd}
+\end{equation}
+```
+
 The *substrate parameter* is the fibre coordinate
 $q \in k^{\times}$ on this family.  Equivalently, $q$ is the
 unique element of $\mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$

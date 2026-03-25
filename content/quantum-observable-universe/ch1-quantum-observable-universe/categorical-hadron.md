@@ -11,12 +11,16 @@ for some $n \geq 2$, subject to the constraint that $h$ factors through
 the image of the multiplication $\mu$ restricted to simple
 constituents — that is, $h$ lies in the span of morphisms of the form
 
-$$
-  \mathbf{1} \xrightarrow{\;\eta\;}
-  A \xrightarrow{\;\Delta^{(n-1)}\;}
-  A^{\otimes n} \xrightarrow{\;\pi_{j_1} \otimes \cdots \otimes \pi_{j_n}\;}
-  V_{j_1} \otimes \cdots \otimes V_{j_n}
-$$
+```tex
+\begin{equation}\label{eq:categorical-hadron-diagram}
+\begin{tikzcd}[row sep=2em, column sep=2.5em]
+  \mathbf{1} \ar[r, "\eta"]
+  & A \ar[r, "\Delta^{(n-1)}"]
+  & A^{\otimes n} \ar[r, "\pi_{j_1} \otimes \cdots \otimes \pi_{j_n}"]
+  & V_{j_1} \otimes \cdots \otimes V_{j_n}
+\end{tikzcd}
+\end{equation}
+```
 
 where each $\pi_{j_i}$ is the projection onto the simple summand
 $V_{j_i} \hookrightarrow A$, and the $V_{j_i}$ are simple objects of

@@ -13,6 +13,18 @@ the sub-group scheme of
 $G = \mathrm{Aut}^{\otimes}(\tau)$
 ([SU(2) emergence](#thm:su2-emergence)) consisting of those natural
 automorphisms that act diagonally on each weight space of $V$.
+
+```tex
+\begin{equation}\label{eq:maximal-torus-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  T \ar[r, hook] \ar[d, "\mathrm{diag}"']
+  & G = \mathrm{Aut}^{\otimes}(\tau) \ar[d] \\
+  \mathrm{Aut}(\tau(V))
+  & \mathrm{Aut}^{\otimes}(\tau) \ar[l]
+\end{tikzcd}
+\end{equation}
+```
+
 Equivalently, $T$ is the largest subgroup of $G$ for which every
 object in $\langle V \rangle$ decomposes into one-dimensional
 $T$-eigenspaces.
