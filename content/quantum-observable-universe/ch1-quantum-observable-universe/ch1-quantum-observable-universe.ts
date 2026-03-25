@@ -42,6 +42,7 @@ export default chapter({
         "higher-forms",
         "higher-forms-su2",
         "fundamental-object-explication",
+        "simple-objects-V",
         "unit-simplicity",
         "quantum-observable-universe",
         "frobenius-integration",
@@ -74,6 +75,18 @@ export default chapter({
         "su2-emergence",
         "su2-emergence-proof",
         "su2-emergence-example",
+        "spin-half-representation",
+      ],
+    }),
+
+    section({
+      title: "Vectors, hadrons, and the Pawlowski--Leitner basis",
+      label: "sec:vectors-hadrons",
+      blocks: [
+        "categorical-hadron",
+        "adjoint-trace",
+        "pawlowski-leitner-basis",
+        "pawlowski-leitner-inner-product",
       ],
     }),
 
