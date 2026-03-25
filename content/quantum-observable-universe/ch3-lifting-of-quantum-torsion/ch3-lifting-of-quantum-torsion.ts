@@ -179,8 +179,6 @@ export default chapter({
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
-        "qdlog-julia",
-        "julia-s1-photon-scatter",
       ],
     }),
 
