@@ -87,13 +87,15 @@ theorem sigma2_is_iso {C : Type u} [Category.{v} C]
     sigma2 V ≫ ((α_ V V V).hom ≫ (V ◁ (β_ V V).inv) ≫ (α_ V V V).inv)
     = 𝟙 ((V ⊗ V) ⊗ V) := by
   simp only [sigma2, Category.assoc]
-  -- α ≫ (V◁β) ≫ α⁻¹ ≫ α ≫ (V◁β⁻¹) ≫ α⁻¹
-  -- = α ≫ (V◁β) ≫ (V◁β⁻¹) ≫ α⁻¹     [α⁻¹ ≫ α = id]
-  -- = α ≫ (V◁(β ≫ β⁻¹)) ≫ α⁻¹        [whiskerLeft_comp]
-  -- = α ≫ (V◁id) ≫ α⁻¹               [β ≫ β⁻¹ = id]
-  -- = α ≫ id ≫ α⁻¹ = α ≫ α⁻¹ = id
-  -- Ref: [kassel1995] Chapter XIII
-  sorry
+  -- After simp: α ≫ (V◁β) ≫ α⁻¹ ≫ α ≫ (V◁β⁻¹) ≫ α⁻¹ = id
+  -- Cancel α⁻¹ ≫ α = id in the middle:
+  rw [Iso.inv_hom_id_assoc]
+  -- Now: α ≫ (V◁β) ≫ (V◁β⁻¹) ≫ α⁻¹ = id
+  -- Combine whiskers: (V◁β) ≫ (V◁β⁻¹) = V◁(β ≫ β⁻¹) = V◁id = id
+  rw [← MonoidalCategory.whiskerLeft_comp, Iso.hom_inv_id,
+      MonoidalCategory.whiskerLeft_id]
+  -- Now: α ≫ α⁻¹ = id
+  exact Iso.hom_inv_id (α_ V V V)
 
 /-! ## Yang–Baxter Equation (Braid Relation) -/
 

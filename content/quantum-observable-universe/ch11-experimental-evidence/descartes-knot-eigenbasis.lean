@@ -164,6 +164,10 @@ structure DescartesBraidRep (D : DescartesData) where
     let i' : Fin (n - 1) := ⟨i.val, by omega⟩
     let j : Fin (n - 1) := ⟨i.val + 1, by omega⟩
     sigma i' * sigma j * sigma i' = sigma j * sigma i' * sigma j
+  /-- Far commutativity: σᵢσⱼ = σⱼσᵢ for |i - j| ≥ 2. -/
+  far_comm : ∀ (i j : Fin (n - 1)),
+    i.val + 2 ≤ j.val →
+    sigma i * sigma j = sigma j * sigma i
 
 /-! ## Markov Trace from the Descartes Hecke Algebra -/
 
