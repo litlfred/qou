@@ -235,7 +235,15 @@ interface BlockBase {
   label: string;
   /** Optional display title. */
   title?: string;
-  /** Labels of objects this one depends on (\uses{} in LaTeX). */
+  /**
+   * Labels of objects this one depends on (\uses{} in LaTeX).
+   *
+   * Within the same paper: bare label (e.g. "def:quantum-universe").
+   * Cross-paper (same folio): qualified "paper-dir:label"
+   *   (e.g. "unital-groebner-bases:cor:pbw").
+   * Cross-folio (external): full URL
+   *   (e.g. "https://folio.example.org/papers/foo#def:bar").
+   */
   uses?: string[];
   /**
    * Thematic tags for filtering and grouping.
@@ -638,6 +646,16 @@ export interface PaperRef {
   description?: string;
   /** Tags for filtering on the landing page. */
   tags?: string[];
+  /**
+   * Folio assistant URL for this paper.  Used for:
+   * - Cross-paper dependency resolution (qualified `uses` refs)
+   * - BibTeX `folio-url` field for folio-hosted citations
+   * - Read-only import of external papers for commenting/referencing
+   *
+   * For local papers: relative path or same-origin URL.
+   * For external papers: full URL (e.g. "https://folio.example.org/papers/foo").
+   */
+  url?: string;
 }
 
 /**

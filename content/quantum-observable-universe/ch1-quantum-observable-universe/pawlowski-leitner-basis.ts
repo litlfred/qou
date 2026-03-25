@@ -11,7 +11,7 @@ export default proposition({
     "rem:spin-half-representation",
     "rem:simple-objects-V",
     "thm:su2-emergence",
-    "cor:pbw",
+    "unital-groebner-bases:cor:pbw",
   ],
   tags: ["basis", "intertwiner", "representation", "pawlei"],
 });
