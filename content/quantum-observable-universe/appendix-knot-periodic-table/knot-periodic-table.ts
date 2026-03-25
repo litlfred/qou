@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:knot-periodic-table",
+export default prose({
+  label: "knot-periodic-table",
   title: "Knot-periodic table of the elements",
   tags: [
     "knot",
@@ -12,14 +12,5 @@ export default remark({
     "proton",
     "neutron",
     "appendix",
-  ],
-  uses: [
-    "def:knot-particle-generation",
-    "prop:torus-knot-generators",
-    "thm:embeddability-closure",
-    "rem:knot-formula-table",
-    "rem:mass-comparison-table",
-    "prop:terminal-resolution",
-    "def:substrate-parameter",
   ],
 });
