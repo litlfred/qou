@@ -123,20 +123,9 @@
 \newcommand{\frakg}{\mathfrak{g}}
 \newcommand{\frakb}{\mathfrak{b}}
 
-% ── Print mode: affiliations ──────────────────────────────────────────────────
-% In compact mode (default), affiliations are omitted.
-% Set \showaffiliationstrue for formal print view.
-% The MCP render tool writes print-mode.tex to set this flag automatically.
-\newif\ifshowaffiliations
-\IfFileExists{print-mode.tex}{\input{print-mode.tex}}{}
-
 % ── Metadata ──────────────────────────────────────────────────────────────────
 \title{Quantum Observable Universe}
-\ifshowaffiliations
-  \author{Frederick Carl Leitner\thanks{World Health Organization}}
-\else
-  \author{Frederick Carl Leitner}
-\fi
+\author{Frederick Carl Leitner}
 \date{\today}
 
 \hypersetup{
