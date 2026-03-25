@@ -101,6 +101,7 @@ export default chapter({
         "enveloping-algebra",
         "quantum-su2",
         "r-matrix-braiding",
+        "skein-crossing-asymmetry",
       ],
     }),
 
