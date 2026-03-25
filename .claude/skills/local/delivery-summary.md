@@ -14,7 +14,7 @@ After completing a feature or edit (i.e., after pushing changes), provide:
 A single copy-paste block to fetch, switch to the branch, pull, and restart:
 
 ```bash
-git fetch origin <BRANCH> && git switch <BRANCH> && git pull origin <BRANCH> && ./scripts/start-folio-assistant.sh --http &
+git fetch origin <BRANCH> && git switch <BRANCH> && git pull origin <BRANCH> && ./scripts/start-folio-assistant.sh --http
 ```
 
 Replace `<BRANCH>` with the actual branch name you pushed to.
@@ -43,7 +43,7 @@ After pushing changes to `claude/feature-xyz`:
 
 > **Restart & preview:**
 > ```bash
-> git fetch origin claude/feature-xyz && git switch claude/feature-xyz && git pull origin claude/feature-xyz && ./scripts/start-folio-assistant.sh --http &
+> git fetch origin claude/feature-xyz && git switch claude/feature-xyz && git pull origin claude/feature-xyz && ./scripts/start-folio-assistant.sh --http
 > ```
 >
 > **See changes:**

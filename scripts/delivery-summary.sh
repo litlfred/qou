@@ -41,7 +41,7 @@ cat <<EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Restart & preview:
-  git fetch origin $BRANCH && git switch $BRANCH && git pull origin $BRANCH && ./scripts/start-folio-assistant.sh --http &
+  git fetch origin $BRANCH && git switch $BRANCH && git pull origin $BRANCH && ./scripts/start-folio-assistant.sh --http
 
 Viewer links:
   http://localhost:${PORT}/viewer/
