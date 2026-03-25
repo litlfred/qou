@@ -1841,6 +1841,14 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     return serveFile(join(VIEWER_DIR, path.slice("/viewer/".length)));
   }
 
+  // Standalone HTML simulators served from repo root
+  if (path.endsWith(".html") && !path.slice(1).includes("/")) {
+    const fileName = path.slice(1); // strip leading /
+    if (/^[\w.-]+\.html$/.test(fileName)) {
+      return serveFile(join(REPO_ROOT, fileName));
+    }
+  }
+
   return null;
 }
 
