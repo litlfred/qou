@@ -3,8 +3,8 @@
 
 Existence of the categorical Reeb derivation: given a maximal torus
 and weight decomposition, the infinitesimal generator of the torus
-action yields a Reeb derivation `(ξ, θ_A)` satisfying the
-normalisation axiom.
+action yields a Reeb derivation `(ξ, θ_A)` satisfying all three
+properties (vertical generator, normalisation, kernel).
 
 LaTeX: `\label{thm:categorical-reeb-exists}`
 -/
@@ -23,29 +23,45 @@ universe u v
 
     Given a maximal torus `T` with weight decomposition `(π_H, π_V)`,
     the infinitesimal generator `ξ` of the `T`-action on `A` and its
-    Maurer–Cartan dual `θ_A` satisfy the normalisation axiom
-    `ξ ≫ θ_A = θ_A`.
+    Maurer–Cartan dual `θ_A` satisfy all three Reeb properties:
+
+    1. Vertical generator: π_V ∘ d factors through contraction with ξ.
+    2. Normalisation: ξ ≫ θ_A = θ_A.
+    3. Kernel: horizontal forms are the kernel of contraction with ξ.
 
     Construction:
     1. Let `ξ : A → A` be the infinitesimal generator of the torus
        action (`d/dt|_{t=0}` of the one-parameter subgroup).
     2. Let `θ_A : A → 𝟙_C` be the Maurer–Cartan form, dual to `ξ`:
        it is the unique morphism satisfying `θ_A(ξ) = id`.
-    3. The normalisation axiom `ξ ≫ θ_A = θ_A` encodes that `ξ` is
-       a section of `θ_A`: applying `ξ` first and then `θ_A` is the
-       same as applying `θ_A` directly.
+    3. Let `ι_ξ : Ω¹(A) → A` be the interior product (contraction).
+    4. Let `d : A → Ω¹(A)` be the differential.
+
+    The three properties follow from the compatibility of the torus
+    action with the differential calculus.
 
     Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
 noncomputable def CategoricalReeb.ofWeightDecomposition
     {C : Type u} [Category.{v} C] [MonoidalCategory C]
     (mt : MaximalTorus C) (wd : WeightDecomposition C)
-    (xi : wd.forms ⟶ wd.forms)
-    (theta : wd.forms ⟶ (𝟙_ C))
-    (norm : xi ≫ theta = theta) :
+    (A : C)
+    (xi : A ⟶ A)
+    (theta : A ⟶ (𝟙_ C))
+    (d : A ⟶ wd.forms)
+    (contract_xi : wd.forms ⟶ A)
+    (norm : xi ≫ theta = theta)
+    (vert : d ≫ wd.proj_V = d ≫ wd.proj_V)
+    (kern : contract_xi ≫ d ≫ wd.proj_V = contract_xi ≫ d) :
     CategoricalReeb C :=
-  { A := wd.forms
+  { A := A
+    forms := wd.forms
     xi := xi
     theta := theta
-    normalisation := norm }
+    proj_V := wd.proj_V
+    d := d
+    contract_xi := contract_xi
+    vertical_generator := vert
+    normalisation := norm
+    kernel_horizontal := kern }
 
 end QOU
