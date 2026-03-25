@@ -21,4 +21,7 @@ fractal Julia-set envelope for photons.  Both reduce to the standard
 Fraunhofer and Airy patterns in the classical limit $q \to 1$, but at
 $q \neq 1$ the band widths differ from the textbook predictions in
 ways that match anomalies reported in precision scattering
-experiments.
+experiments.  The benchmark dataset is the controlled double-slit
+electron diffraction experiment of Bach et al. \cite{bach2013},
+which recorded 6235 individual electron detections at 600 eV
+($\lambda = 50$ pm, slit width $a = 50$ nm, separation $d = 280$ nm).

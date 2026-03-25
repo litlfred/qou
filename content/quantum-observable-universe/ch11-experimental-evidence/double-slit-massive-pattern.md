@@ -69,4 +69,5 @@ $\beta_1 = \pi a\sin\theta/\lambda$, and the standard Fraunhofer
 double-slit pattern is recovered exactly.  For $q \neq 1$ the
 envelope is *wider* than Fraunhofer by a factor of order
 $(1 - q^{-1})^2$, consistent with the systematic excess width
-observed in precision electron and molecular diffraction experiments.
+observed in precision electron and molecular diffraction experiments
+\cite{bach2013}.
