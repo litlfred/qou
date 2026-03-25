@@ -17,7 +17,14 @@ export default folio({
         "higher-form symmetries, and observable algebras.",
       tags: ["quantum", "category-theory", "formalization"],
     }),
-    // Add more papers here as they are created:
-    // paperRef({ dir: "fred2005", title: "Fred 2005", ... }),
+    paperRef({
+      dir: "unital-groebner-bases",
+      title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+      description:
+        "A generalization of Gröbner basis theory to non-commutative algebras " +
+        "over arbitrary commutative ground rings, with a Gröbner basis proof " +
+        "of the Poincaré–Birkhoff–Witt theorem.",
+      tags: ["algebra", "groebner-basis", "pbw", "lie-algebra"],
+    }),
   ],
 });
