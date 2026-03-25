@@ -110,6 +110,7 @@ export default chapter({
       label: "sec:nuclear-binding-lagrangian",
       blocks: [
         "skein-binding-lagrangian",
+        "nuclear-binding-from-canonical-action",
         "beta-stability",
       ],
     }),
