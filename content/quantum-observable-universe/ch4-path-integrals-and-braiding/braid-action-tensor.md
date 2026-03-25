@@ -1,11 +1,11 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) whose ambient category
-$\mathcal{C}$ is braided monoidal with braiding
+$\mathbf{C}$ is braided monoidal with braiding
 $c_{X,Y}\colon X\otimes Y \xrightarrow{\;\sim\;} Y\otimes X$.
-For each object $V$ in $\mathcal{C}$ and each $n \geq 2$, there is a
+For each object $V$ in $\mathbf{C}$ and each $n \geq 2$, there is a
 group homomorphism
 $$
-  \rho_n\colon B_n \;\longrightarrow\; \mathrm{Aut}_{\mathcal{C}}(V^{\otimes n})
+  \rho_n\colon B_n \;\longrightarrow\; \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})
 $$
 given on the Artin generators by
 

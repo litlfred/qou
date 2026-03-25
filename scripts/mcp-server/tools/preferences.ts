@@ -4,7 +4,7 @@
  * Tools:
  *   paper_preferences  — Get or set rendering preferences
  *
- * Stored in .qou-prefs.json at repo root (gitignored).
+ * Stored in .folio-assistant-prefs.json at repo root (gitignored).
  *
  * @module scripts/mcp-server/tools/preferences
  */
@@ -23,6 +23,8 @@ const DEFAULTS = {
   auto_preview: true,
   formula_dpi: 300,
   default_chapter: null as string | null,
+  print_mode: "compact" as "formal" | "compact",
+  compact_inline_refs: true,
 };
 
 type Prefs = typeof DEFAULTS;
@@ -46,7 +48,7 @@ export function registerPreferenceTools(server: McpServer): void {
   server.tool(
     "paper_preferences",
     "Get or set user rendering preferences. Preferences persist across " +
-    "sessions in .qou-prefs.json. Set action='get' to view current, " +
+    "sessions in .folio-assistant-prefs.json. Set action='get' to view current, " +
     "'set' to update, 'reset' to restore defaults.",
     {
       action: z.enum(["get", "set", "reset"]).default("get")
@@ -65,6 +67,10 @@ export function registerPreferenceTools(server: McpServer): void {
         .describe("DPI for formula preview PNG"),
       default_chapter: z.string().optional()
         .describe("Default chapter to render when scope=chapter"),
+      print_mode: z.enum(["formal", "compact"]).optional()
+        .describe("Print mode: formal (affiliations, expanded) or compact (dense, no affiliations)"),
+      compact_inline_refs: z.boolean().optional()
+        .describe("In compact mode, include examples/remarks directly referenced by blocks in the view"),
     },
     async ({ action, ...updates }) => {
       if (action === "reset") {

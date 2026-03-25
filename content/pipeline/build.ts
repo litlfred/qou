@@ -12,9 +12,10 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join, dirname } from "path";
-import type { Paper, Chapter, Section, Block } from "../schema/types";
+import { join, dirname, resolve } from "path";
+import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
+import { generateMainTex } from "./generate-main-tex";
 
 // ── Build ────────────────────────────────────────────────────────
 
@@ -37,9 +38,11 @@ export interface BuildResult {
  * same chapter directories.
  *
  * @param paperPath - Path to the paper .ts manifest
+ * @param opts - Render options (print mode, compact inline refs)
  */
 export async function buildPaper(
   paperPath: string,
+  opts: RenderOptions = {},
 ): Promise<BuildResult> {
   const issues: { level: string; message: string }[] = [];
   const paperDir = dirname(paperPath);
@@ -69,7 +72,8 @@ export async function buildPaper(
 
       // Extract slug from dir name: "ch1-quantum-observable-universe" → "quantum-observable-universe"
       const slug = chRef.dir.replace(/^ch\d+-/, "");
-      chapterSlugs.set(chapter.number, slug);
+      const key = chapter.number ?? -(resolvedChapters.length);
+      chapterSlugs.set(key, slug);
 
       // Load blocks from the chapter directory
       for (const sec of chapter.sections) {
@@ -107,15 +111,16 @@ export async function buildPaper(
   let astValid = true;
 
   for (const chapter of resolvedChapters) {
-    const latex = renderChapter(chapter, blocks);
-    chapters.set(chapter.number, latex);
+    const latex = renderChapter(chapter, blocks, opts);
+    const chKey = chapter.number ?? -(resolvedChapters.indexOf(chapter) + 1);
+    chapters.set(chKey, latex);
 
     // AST validation
     const ast = validateLatexAst(latex);
     if (!ast.valid) {
       astValid = false;
       for (const err of ast.errors) {
-        issues.push({ level: "error", message: `Chapter ${chapter.number} AST: ${err}` });
+        issues.push({ level: "error", message: `Chapter ${chapter.number ?? chapter.title} AST: ${err}` });
       }
     }
   }
@@ -128,14 +133,24 @@ export async function buildPaper(
 if (import.meta.main) {
   const args = process.argv.slice(2);
   const defaultPaper = join(import.meta.dir, "../quantum-observable-universe/quantum-observable-universe.ts");
-  const paperPath = args[0] || defaultPaper;
+  // Resolve relative paths against cwd so `bun run pipeline/build.ts rel/path` works
+  const paperPath = resolve(args[0] || defaultPaper);
   const outDirIdx = args.indexOf("--out-dir");
-  const outDir = outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters");
+  const outDir = resolve(outDirIdx >= 0 ? args[outDirIdx + 1] : join(import.meta.dir, "../../chapters"));
+
+  // Parse print mode options
+  const printModeIdx = args.indexOf("--print-mode");
+  const printMode = printModeIdx >= 0 ? args[printModeIdx + 1] as "formal" | "compact" : "compact";
+  const noInlineRefs = args.includes("--no-inline-refs");
 
   console.log(`Building paper: ${paperPath}`);
-  console.log(`Output dir: ${outDir}\n`);
+  console.log(`Output dir: ${outDir}`);
+  console.log(`Print mode: ${printMode}${noInlineRefs ? " (inline refs disabled)" : ""}\n`);
 
-  const result = await buildPaper(paperPath);
+  const result = await buildPaper(paperPath, {
+    printMode,
+    compactInlineRefs: !noInlineRefs,
+  });
 
   // Print issues
   for (const issue of result.issues) {
@@ -143,7 +158,7 @@ if (import.meta.main) {
     console.log(`  ${icon} ${issue.message}`);
   }
 
-  // Write output
+  // Write chapter output
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 
   for (const [num, latex] of result.chapters) {
@@ -152,6 +167,30 @@ if (import.meta.main) {
     const outPath = join(outDir, filename);
     writeFileSync(outPath, latex);
     console.log(`  → ${outPath}`);
+  }
+
+  // Generate main.tex from paper manifest + shared preamble
+  if (args.includes("--generate-main")) {
+    const mainOutIdx = args.indexOf("--main-out");
+    const mainOutPath = resolve(mainOutIdx >= 0 ? args[mainOutIdx + 1] : "main.tex");
+    const preambleIdx = args.indexOf("--preamble");
+    const preamblePath = resolve(
+      preambleIdx >= 0 ? args[preambleIdx + 1] : join(import.meta.dir, "../../latex/preamble.tex"),
+    );
+    // Compute relative chapters dir from the main.tex output location
+    const chaptersDirIdx = args.indexOf("--chapters-dir");
+    const chaptersDir = chaptersDirIdx >= 0 ? args[chaptersDirIdx + 1] : "chapters/";
+
+    const paperMod = await import(paperPath);
+    const paperData: Paper = paperMod.default;
+
+    const mainTex = generateMainTex(paperData, {
+      preamblePath,
+      chaptersDir,
+      chapterSlugs: result.chapterSlugs,
+    });
+    writeFileSync(mainOutPath, mainTex);
+    console.log(`\n  → main.tex: ${mainOutPath}`);
   }
 
   console.log(`\nAST validation: ${result.astValid ? "✓ pass" : "✗ fail"}`);

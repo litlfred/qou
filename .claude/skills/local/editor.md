@@ -1,3 +1,8 @@
+---
+name: editor
+roles: [reader, collaborator, owner]
+---
+
 # Editor Skill
 
 ## Role
@@ -60,32 +65,44 @@ Neither local nor remote is reachable. If the request requires Lean:
 > ./scripts/setup-lean-mcp.sh
 > ```
 >
-> **Remote server:** check if `lean.litlfred.org` is running.
+> **Remote server:** check if `folio.litlfred.org` is running.
 >
 > Proceed with LaTeX-only work?
 
 If the request is LaTeX-only, proceed normally.
 
-**Note**: The lean-lsp-mcp server provides diagnostics, goal states,
+**Note**: The paper-assistant MCP server provides diagnostics, goal states,
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Check open todos
+### 1. Check open feedback
 
-The `scripts/check-todos.sh` hook runs at session start and outputs a
-JSON summary of open feedback todos from `.qou-feedback/`. If there are
-open todos, **present the summary and ask the user** (multiple-choice):
+The `scripts/check-todos.sh` hook runs at session start and scans
+`feedback/<paper-dir>/*.ts` for open feedback items. If there are
+open items, **ask the user if they'd like to work on feedback**:
 
-- **Review open todos** — walk through each using the `todo-review` skill
-- **Start a new task** — proceed to normal triage, todos stay open
-- **Do research** — explore codebase, read content, no edits
+> **You have N open feedback items** (X high, Y medium, Z low).
+>
+> Would you like to work on feedback today?
 
-If there are no open todos, skip straight to step 1b.
+Options (multiple-choice):
+- **Yes, let's review feedback** — enter the `todo-review` skill's
+  structured workflow (overview → pick chapter → review items → iterate)
+- **No, I have something else in mind** — proceed to normal triage
 
-### 1b. Cross-reference todos with branch changes
+If there are no open items, skip straight to step 1b.
 
-When the current branch is not `main`, check whether any open todos
-target content blocks that were **modified in this branch**:
+When the user chooses to review feedback, hand off entirely to the
+`todo-review` skill which runs the full feedback cycle:
+1. Show overview grouped by chapter
+2. Let user pick scope (high priority / chapter / all)
+3. For each item: show feedback, read block, propose fix, ask approval
+4. Iterate until user says "done"
+
+### 1b. Cross-reference feedback with branch changes
+
+When the current branch is not `main`, check whether any open feedback
+targets content blocks that were **modified in this branch**:
 
 ```bash
 # Get content files changed in this branch vs main
@@ -93,12 +110,12 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `.qou-feedback/` has open todos referencing
-that root name.
+extension) and check if `feedback/<paper-dir>/` has open items
+referencing that block.
 
 **If matches are found**, present them to the user:
 
-> These open todos are on content blocks modified in this branch:
+> These open feedback items are on content blocks modified in this branch:
 >
 > - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
 > - **[medium]** `hadron`: "Clarify meson binding vs baryon"
@@ -106,16 +123,14 @@ that root name.
 > Address these now?
 
 Offer (multiple-choice):
-- **Address matching todos** — walk through just the branch-relevant
-  todos using the `todo-review` skill
-- **Skip for now** — proceed to triage, todos stay open
-- **Mark as resolved** — auto-close todos that the branch changes
-  already address (editor reviews the diff to confirm)
+- **Address matching feedback** — walk through just the branch-relevant
+  items using the `todo-review` skill
+- **Skip for now** — proceed to triage, items stay open
 
 **If no matches**, proceed to triage silently.
 
 This ensures that when a branch modifies content, any feedback left on
-those blocks surfaces immediately — preventing stale todos from
+those blocks surfaces immediately — preventing stale items from
 surviving past the work that should have resolved them.
 
 ### 2. Triage
@@ -142,8 +157,11 @@ surviving past the work that should have resolved them.
 | Status / tracking / manifest | `proof-status-tracking` | proof-objects.json |
 | What next / priority / triage | `proof-triage` | Decision support |
 | Validate LaTeX | `latex-validation` | Compilation, labels, refs |
-| Build / CI / publish / gh-pages | General-purpose agent | Workflow YAML, scripts |
+| Build / CI / publish / gh-pages | `docs-generation` | Workflow YAML, scripts |
+| Generate docs / schema docs / TypeDoc | `docs-generation` | TypeDoc, dep graph, axiom report |
+| Build paper / compile PDF / render HTML | `docs-generation` | Content → PDF/HTML pipeline |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
+| Fix lean build / lake build fails | `lean-build-fix` | Iterative error diagnosis + fix |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 | Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
@@ -151,6 +169,11 @@ surviving past the work that should have resolved them.
 | Validate content objects | `content-validation` | Schema + constraints + AST |
 | Build content → LaTeX | `content-validation` | Pipeline: .ts + .md → .tex |
 | Add / edit content block | `content-validation` + relevant skill | Create .ts + .md pair |
+| Glossary / terminology / naming | `ontologist` + `content-validation` | Glossary blocks in Ch 8 |
+| Work on todos / process feedback | `todo-review` | Context-aware selection |
+| Missing proofs (narrative or Lean) | See §Proof workflow below | Narrative-first |
+| Critical path / context audit | `critical-path-analysis` | Archimedean vs categorical |
+| What assumptions does X need | `critical-path-analysis` | Dependency tracing |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
 | **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
 
@@ -164,8 +187,9 @@ surviving past the work that should have resolved them.
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation (R not k, K not ℂ), labeling conventions,
-   cross-references, glossary terms.
+4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
+   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
+   §11.3), labeling conventions, cross-references, glossary terms.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
@@ -240,7 +264,10 @@ The review pass consists of:
    (For non-narrative changes, focus on consistency with the narrative.)
 3. **Content validation** — run `content_validate` on affected chapters to
    confirm schema compliance and LaTeX AST correctness.
-4. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
+4. **TeX snippet validation** — if any `.md` files were created or edited,
+   run `cd content && bun run pipeline/validate-tex.ts --file <path>` on
+   each changed `.md` to validate TeX snippets via remark AST parsing.
+5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
    confirm `lean.decl` fields match actual Lean declarations.
 
@@ -250,9 +277,126 @@ committing. This rule persists across sessions.
 ## Interaction style
 
 - Questions to author: always multiple-choice (2-4 options), concise labels.
+- **Multi-select by default**: when presenting actionable items where the user
+  might want more than one, use `multiSelect: true` (checkboxes). Only use
+  single-select (radio) when the options are mutually exclusive.
+  - Checkboxes: "Which of these should I do next?" (can pick several)
+  - Radio: "Which approach should we take?" (pick one)
 - Status updates: brief, at natural milestones.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.
+- **Internal tracking**: use `TodoWrite` to track progress on multi-item work.
+  Keep the todo list current — mark items complete immediately, add new items
+  as they are discovered. The user sees these as a progress indicator.
+
+### "What next?" prompt (after completing a task)
+
+After finishing any task (todo, proof, edit, review), the editor **must**
+offer context-aware next steps via `AskUserQuestion`. The options should
+be derived from the current context — not generic.
+
+**Context sources** (check in order):
+1. **Same block** — are there more open todos for this block?
+2. **Same section** — are there related blocks with open todos or
+   missing proofs in the same section?
+3. **Same chapter** — other pending work in this chapter?
+4. **Global** — high-priority items elsewhere?
+
+**Template** (adapt labels to actual content):
+
+```
+"What would you like to do next?"
+  - "Next todo on <block>"        (if more todos exist for this block)
+  - "Next in §<section>"          (if related work in same section)
+  - "Other Ch <N> todos"          (if more chapter work exists)
+  - "Something else"              (user picks freely)
+```
+
+**Rules:**
+- Always include at least one contextual option (not just "something else").
+- If the just-completed task was a todo, show the next-highest-priority
+  todo in the same scope as the first option.
+- If all todos in scope are done, congratulate briefly and offer to
+  move to the next chapter or switch to a different kind of work
+  (proofs, glossary, validation).
+- Keep it to 3–4 options. Don't overwhelm.
+
+## Todo workflow
+
+When the user asks to "work on todos" or "process feedback":
+
+1. **Check context** — is the user already focused on a specific block?
+   - **Yes** → filter todos to that block, show them directly.
+   - **No** → use `AskUserQuestion` with structured multiple-choice:
+     high priority / by chapter / by section / show all.
+2. **Present selected todos** as a summary table.
+3. **Let user pick** which todo(s) to work on (multi-select).
+4. **For each selected todo** — read the block, assess actionability,
+   route to the appropriate skill, execute, update todo status to
+   `in_progress`.
+
+See `todo-review` skill for full details. Agents may create and
+`in_progress` todos but **never** resolve or delete them.
+
+## Proof workflow (narrative and Lean)
+
+**CRITICAL**: Every theorem, lemma, proposition, and corollary **must**
+have a standalone proof block (`*-proof.ts` + `*-proof.md`). Without it,
+the proof will not appear in print preview or PDF output. The viewer's
+print mode includes proofs only via the parent's `proofs: ["prf:..."]`
+field.
+
+### Proof block requirements
+
+For every provable block (theorem/lemma/proposition/corollary):
+
+1. **Separate statement from proof**: The theorem `.md` file contains
+   only the statement. All proof content lives in `*-proof.md`.
+2. **Three files per proof**: `*-proof.ts` (manifest with `proof()`
+   builder), `*-proof.md` (narrative), optional `*-proof.lean` (formal).
+3. **Link via `proofs:`**: The parent `.ts` must have
+   `proofs: ["prf:<label>"]`.
+4. **List in chapter manifest**: The proof block name must appear in the
+   chapter's `blocks[]` array, immediately after its parent theorem.
+5. **No TeX in `.lean` files**: Narrative proof content belongs
+   exclusively in `.md` files. `.lean` files contain only code, brief
+   docstrings, and `-- Ref:` citations.
+
+### Creating a narrative proof (`.md` block)
+
+1. Check if a `proof` block already exists for the target theorem/lemma.
+2. If not, ask the user (structured choice):
+   - **"I have a suggestion"** → user provides proof sketch, agent writes it up.
+   - **"Agent should try"** → agent reads the theorem statement and
+     `uses[]` dependencies, drafts a proof, presents for review.
+3. Create the `proof` block (`.ts` + `.md` pair) and link via `proofs[]`
+   on the parent theorem.
+4. Add proof block to chapter manifest `blocks[]` after the parent.
+
+### Lean proofs (`.lean` files)
+
+1. **Check for narrative first** — does a `.md` proof block exist?
+   - **Yes** → use it as the basis for the Lean formalization. Route to
+     `formalizer` + `category-theory` with the narrative proof as context.
+   - **No** → ask the user whether to write the narrative first or go
+     straight to Lean. Writing narrative first is recommended — it
+     provides structure and the author can review the mathematics before
+     formalization.
+2. Route to `proof-triage` for sorry resolution if the `.lean` file
+   already exists with sorry stubs.
+
+## Glossary routing
+
+When a new mathematical term is encountered during editing:
+
+1. **Is it a Mathlib synonym?** → `ontologist` creates a glossary block
+   in Ch 8 (remark with `"glossary"` tag).
+2. **Does it introduce new mathematics?** → Create a `definition` block
+   in the relevant chapter.
+3. **Unsure?** → Ask the user (structured choice: "glossary entry" /
+   "formal definition" / "skip for now").
+
+See `ontologist` skill §Glossary Block Policy for the full decision tree.
 
 ## Delegation patterns
 
@@ -260,9 +404,11 @@ committing. This rule persists across sessions.
 |------|-------|-------|
 | LaTeX definition/theorem edits | formalizer | Give exact file, line range, and desired content |
 | Notation propagation (k→R, ℂ→K) | consistency (general-purpose) | Search-and-replace with mathematical awareness |
-| New terms (P(V), archimedean) | glossary (general-purpose) | Check all files for consistency |
+| New terms (Mathlib synonyms) | ontologist | Glossary block in Ch 8 |
+| New terms (novel definitions) | content-validation + relevant skill | Definition block in chapter |
 | Category theory content | category-theory | For adjunctions, functors, natural transformations |
 | Cross-reference validation | latex-validation | After all edits complete |
+| Todo processing | todo-review | Context-aware selection workflow |
 
 ## Current plan
 

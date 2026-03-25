@@ -1,5 +1,6 @@
 ---
 name: content-block-review
+roles: [collaborator, owner]
 description: >
   Reviews existing content blocks for adherence to all requirements — structural
   integrity, Lean proof rules, cross-reference consistency, status accuracy, and
@@ -36,6 +37,7 @@ block, with severity (error / warning / info).
 | `.lean` sibling exists for `definition` | **error** | Definitions **require** Lean formalization |
 | `.lean` sibling exists for `theorem`/`lemma`/`proposition`/`corollary` | **warning** | Provable blocks should have Lean |
 | Sibling files share the same root name | **error** | `foo.ts`, `foo.md`, `foo.lean` — not mismatched names |
+| **No orphan `.lean` files** | **error** | Every `.lean` file MUST have a `.ts` manifest sibling. A `.lean` file without a `.ts` is never valid — Lean files are always part of a content triple, never standalone. |
 
 ### 2. Label conventions
 
@@ -63,16 +65,7 @@ block, with severity (error / warning / info).
 | No `admit` or `native_decide` (unless justified) | **warning** | These bypass the kernel |
 | No `axiom` declarations (unless `Axiom.lean`) | **warning** | Axioms should be centralized |
 
-### 5. Status accuracy
-
-| Check | Severity | Rule |
-|-------|----------|------|
-| `status: "proved"` but `.lean` contains `sorry` | **error** | Status lies about completion |
-| `status: "not_started"` but `.lean` exists with content | **warning** | Status is stale |
-| `status: "has_sorry"` but `.lean` has no `sorry` | **warning** | Status should be `proved` |
-| `status: "stated"` but proof body is not just `sorry` | **info** | May need promotion to `has_sorry` or `proved` |
-
-### 6. Markdown content quality
+### 5. Markdown content quality
 
 | Check | Severity | Rule |
 |-------|----------|------|
@@ -85,8 +78,8 @@ block, with severity (error / warning / info).
 
 | Check | Severity | Rule |
 |-------|----------|------|
-| `uses[]` entries all resolve | **error** | (Same as §2, but checked from graph perspective) |
-| No circular dependencies in `uses[]` | **error** | DAG must be acyclic |
+| `uses[]` entries all resolve | **error** | Bare labels must exist in same paper; qualified `"paper-dir:label"` refs are cross-paper (resolved at folio level) |
+| No circular dependencies in `uses[]` | **error** | DAG must be acyclic (cross-paper refs are leaf nodes in the local graph) |
 | Lean imports mirror `uses[]` ordering | **info** | Lean import graph should reflect narrative dependencies |
 | Blocks with most dependents are formalized first | **info** | Priority guidance, not a hard rule |
 
@@ -140,9 +133,22 @@ Same as above but scoped to one chapter directory.
 
 Skip severity=info and severity=warning. Only report errors.
 
+### 9. Glossary block compliance (Ch 8)
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Glossary blocks use `remark` kind | **error** | Glossary entries must be `remark` blocks, not `definition` |
+| Glossary blocks have `"glossary"` tag | **warning** | Tag enables filtering and discovery |
+| Label follows `rem:glossary-<term>` pattern | **warning** | Consistent naming for glossary entries |
+| `.md` includes "Mathlib reference" section | **warning** | Glossary entries must cite the canonical Mathlib type |
+| No Lean file exists for glossary blocks | **info** | Glossary blocks are terminological wrappers — Lean formalization is not expected |
+| Glossary block does not duplicate a `definition` block | **error** | If the paper introduces new mathematics, it belongs as a `definition`, not a glossary entry |
+| Terms used in chapter `.md` files that are Mathlib synonyms have Ch 8 entries | **info** | Completeness check — missing glossary entries for standard terms |
+
 ## Integration
 
 - Runs **before** `content-validation` (which does schema + AST validation)
 - Complements `lean-proof-review` (which focuses on proof quality, not
   structural compliance)
 - Feeds into `proof-triage` (violations of §4–§5 indicate formalization gaps)
+- Ch 8 glossary blocks are reviewed under §9 for terminology consistency

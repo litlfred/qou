@@ -11,10 +11,10 @@ import { join } from "path";
 import { execSync } from "child_process";
 import { REPO_ROOT } from "./helpers";
 
-// ── check-lean.sh ───────────────────────────────────────────────
+// ── session-status.sh (replaced check-lean.sh) ─────────────────
 
-describe("check-lean.sh", () => {
-  const script = join(REPO_ROOT, "scripts/check-lean.sh");
+describe("session-status.sh", () => {
+  const script = join(REPO_ROOT, "scripts/session-status.sh");
 
   let output: string;
   let parsed: Record<string, unknown>;
@@ -32,21 +32,21 @@ describe("check-lean.sh", () => {
     expect(() => JSON.parse(output)).not.toThrow();
   });
 
-  test("has mode field", () => {
-    expect(parsed).toHaveProperty("mode");
+  test("has status object", () => {
+    expect(parsed).toHaveProperty("status");
   });
 
-  test("mode is valid enum", () => {
-    const validModes = ["local", "remote", "local-degraded", "none"];
-    expect(validModes).toContain(parsed.mode);
+  test("status has lean_mode field", () => {
+    const status = parsed.status as Record<string, unknown> | undefined;
+    if (status) {
+      expect(status).toHaveProperty("lean_mode");
+      const validModes = ["local", "remote", "local-degraded", "none"];
+      expect(validModes).toContain(status.lean_mode);
+    }
   });
 
-  test("reads remote_url from lean-mcp.config.json", () => {
-    const config = JSON.parse(
-      readFileSync(join(REPO_ROOT, "lean-mcp.config.json"), "utf-8")
-    );
-    const remoteUrl = parsed.remote_url as string;
-    expect(remoteUrl).toContain(config.domain);
+  test("has summary field", () => {
+    expect(parsed).toHaveProperty("summary");
   });
 });
 
@@ -76,7 +76,7 @@ describe("lean-mcp.config.json", () => {
     expect(config).toHaveProperty("domain");
     expect(config).toHaveProperty("image");
     expect(config).toHaveProperty("mcp_internal_port");
-    expect(config).toHaveProperty("authorized_emails");
+    expect(config).toHaveProperty("auth");
   });
 });
 
@@ -102,7 +102,7 @@ describe("Deploy infrastructure", () => {
       join(REPO_ROOT, "deploy/Caddyfile.template"),
       "utf-8"
     );
-    expect(caddyfile).toContain("${LEAN_MCP_DOMAIN}");
+    expect(caddyfile).toContain("${FOLIO_DOMAIN}");
   });
 
   test("self-update.sh preserves .env", () => {
@@ -123,8 +123,8 @@ describe(".gitignore", () => {
     expect(gitignore).toContain("deploy/.env");
   });
 
-  test("blocks lean/.lake/", () => {
-    expect(gitignore).toContain("lean/.lake/");
+  test("blocks lean-archive/.lake/", () => {
+    expect(gitignore).toContain("lean-archive/.lake/");
   });
 });
 

@@ -118,7 +118,7 @@ for (const proj of projects) {
     test("no .lake/ artifacts in git", () => {
       const { execSync } = require("child_process");
       try {
-        const tracked = execSync("git ls-files --cached lean/.lake/", {
+        const tracked = execSync("git ls-files --cached lean-archive/.lake/", {
           cwd: join(LEAN_DIR, ".."),
           encoding: "utf-8",
         }).trim();

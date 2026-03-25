@@ -1,125 +1,190 @@
 ---
 name: todo-review
+roles: [reader, collaborator, owner]
 description: >
-  Monitor and triage open feedback todos across all content blocks.
-  Surface actionable items at session start and on demand.
-allowed-tools: Read Edit Bash Grep Glob WebFetch
+  Monitor and triage open feedback across all content blocks.
+  At session start, ask the author if they'd like to work on feedback.
+  Provide overview, let them pick a chapter/section, then review and
+  iterate until done.
+allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 ---
 
 # Todo Review Skill
 
 ## Role
 
-Monitor open feedback/todos across the manuscript. Surface them at session
-start and provide triage workflows so nothing falls through the cracks.
+Monitor open feedback across the manuscript. At session start, offer a
+structured todo workflow. Provide triage, context-aware selection, and
+a feedback cycle until the author is satisfied.
 
 ## When to Use This Skill
 
-- **Session start** (automatic): check for open todos, present summary
+- **Session start** (automatic): ask if author wants to work on feedback
 - User asks: "show todos", "what feedback is pending", "review todos"
-- User asks: "what needs attention", "any open items"
-- After completing a block of work, to check if related todos can be closed
+- User asks: "what needs attention", "any open items", "work on todos"
+- After completing a block of work, to check if related items can be closed
 
-## Todo Storage
+## Feedback Storage
 
-Todos live in `.qou-feedback/<paperId>/<rootName>.json` (gitignored).
-They reference content blocks by `paperId` + `rootName` but are not
-part of the content tree — they survive branch switches.
+Feedback lives in `feedback/<paper-dir>/` at the repo root (**tracked in
+git**, committed to main via worktree). Each content block with feedback
+has a TypeScript file:
 
-### Todo structure
+```
+feedback/
+  quantum-observable-universe/
+    rigid-monoidal-category.ts
+    bundle-initial-conditions.ts
+    ...
+```
+
+Each file exports an array of `FeedbackItem` (extends `TodoItem` with
+`author`/`authorEmail`):
 
 ```typescript
-{
-  id: string,           // "todo-<base36-timestamp>"
-  summary: string,      // Short description (≤80 chars)
-  comment: string,      // Full description
-  status: "open" | "resolved" | "wontfix",
-  priority: "low" | "medium" | "high",
-  origin: "human" | "agent",
-  assignee: "editor-agent" | "author" | "formalizer",
-  createdAt: string     // ISO 8601
-}
-```
+import type { FeedbackItem } from "../../schemas/types";
 
-## API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/feedback/all?status=open` | GET | All open todos across papers |
-| `/api/feedback?paperId=X&rootName=Y` | GET | Todos for one block |
-| `/api/feedback` | POST | Create a new todo |
-
-## Session Start Workflow
-
-At session start, the `scripts/check-todos.sh` hook runs and outputs
-a JSON summary. The editor should then:
-
-1. **If todos exist**: present a summary to the user and ask:
-   - "Review open todos" — walk through each, decide action
-   - "Start a new task" — proceed normally, todos stay open
-   - "Do research" — explore codebase, read content, no edits
-
-2. **If no todos**: skip straight to normal triage.
-
-### Summary format
-
-```
-Open todos: 3
-  high:   1  (def:quantum-reeb-graph — "Fix functor coherence")
-  medium: 2  (thm:spectral-convergence, rem:notation-note)
-```
-
-## Review Workflow
-
-When reviewing todos:
-
-1. **Read the todo** — show summary, comment, priority, assignee, age
-2. **Read the block** — show the content block the todo references
-3. **Ask the user** (multiple-choice):
-   - **Address now** — fix the issue, then mark resolved
-   - **Reassign** — change assignee (author, formalizer, editor-agent)
-   - **Defer** — keep open, move to next
-   - **Won't fix** — mark as wontfix with reason
-
-4. After addressing, update the todo status in the `.json` file directly.
-
-## Creating Todos (Agent-originated)
-
-The editor can create todos during work when it notices issues:
-
-```bash
-curl -s -X POST http://localhost:3200/api/feedback \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "paperId": "quantum-observable-universe",
-    "rootName": "block-name",
-    "summary": "Short description",
-    "comment": "Full description of the issue",
+export default [
+  {
+    "id": "todo-mn159z53",
+    "summary": "this does not need to be finite in general",
+    "comment": "this does not need to be finite in general",
+    "status": "open",
     "priority": "medium",
-    "assignee": "editor-agent"
-  }'
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T02:35:33.543Z"
+  }
+] satisfies FeedbackItem[];
 ```
 
-Or write directly to `.qou-feedback/<paperId>/<rootName>.json`.
+## Session Start: Todo Workflow
 
-## Resolving Todos
+When the editor skill enters the session start protocol and open
+feedback exists, follow this flow:
 
-To resolve a todo, read the JSON file, find the todo by `id`, set
-`status` to `"resolved"` or `"wontfix"`, and write back:
+### Step 0 — Offer the todo workflow
 
-```typescript
-// In .qou-feedback/quantum-observable-universe/block-name.json
-[
-  { "id": "todo-abc123", "status": "resolved", ... }
-]
+Present a brief overview and ask:
+
+> **You have N open feedback items** (X critical, Y high, Z medium).
+>
+> Would you like to work on feedback today?
+
+Options:
+- **Yes, let's review feedback** → proceed to Step 1
+- **No, I have something else in mind** → exit to normal triage
+
+### Step 1 — Overview and scope selection
+
+Show a quick summary grouped by chapter:
+
 ```
+## Feedback Overview
+
+| Chapter | Open | Critical/High | Sample |
+|---------|------|---------------|--------|
+| Ch 1: Quantum Observable Universe | 12 | 3 | "this does not need to be finite" |
+| Ch 4: Path Integrals | 4 | 1 | "missing cross-ref to braiding" |
+| Ch 11: Experimental Evidence | 6 | 0 | "clarify mass ratio derivation" |
+```
+
+Then ask:
+
+> Where would you like to start?
+
+Options (dynamically generated):
+- **High priority first** — all critical + high items across paper
+- **Ch N: <title>** — one option per chapter that has feedback
+- **Show all** — flat list sorted by priority
+
+### Step 2 — Present the selected feedback
+
+Show the filtered items as a table:
+
+```
+## Open Feedback — Ch 1 (12 items)
+
+| # | Priority | Block | Summary |
+|---|----------|-------|---------|
+| 1 | high | bundle-initial-conditions | this does not need to be finite |
+| 2 | high | categorical-point | need proposition for quantum gauge field |
+| 3 | medium | rigid-monoidal-category | clarify notation convention |
+| ... |
+```
+
+Ask: **Which item(s) would you like to address?** (pick by number or "all")
+
+### Step 3 — Review and address each item
+
+For each selected feedback item:
+
+1. **Show the feedback** — full comment, author, date, priority
+2. **Read the block** — load `content/<paper>/<chapter>/<rootName>.md`
+   and `.ts` manifest for context
+3. **Propose a fix** — suggest specific edits to the `.md` content
+4. **Ask for approval** — show the proposed changes and ask:
+   > Does this address the feedback? (yes / revise / skip)
+5. **Apply if approved** — edit the file, mark todo as `in_progress`
+6. **Iterate if "revise"** — ask what to change, re-propose
+
+### Step 4 — After each item, offer next steps
+
+After completing (or skipping) an item:
+
+> **Done with "this does not need to be finite".**
+> What next?
+
+Options (context-aware):
+- **Next item on this block** (if more exist)
+- **Next item in this section/chapter**
+- **Back to overview** — re-show the chapter summary
+- **Done for now** — exit todo workflow
+
+### Step 5 — Wrap up
+
+When the author says "done" or all items in scope are addressed:
+
+> **Session feedback summary:**
+> - Reviewed: 5 items
+> - Addressed: 3 (edits applied)
+> - Skipped: 2
+> - Remaining open: 9
+>
+> The addressed items are marked `in_progress`. You can resolve them
+> from the viewer feedback panel when you're satisfied with the changes.
+
+## Resolving Feedback
+
+**Only the human author** may resolve or remove a FeedbackItem
+(see CLAUDE.md §4a). Agents must never set status to `resolved` or
+`wontfix`, and must never delete items. Agents *may* set status to
+`in_progress` after making edits.
+
+Resolution happens in the viewer's feedback panel (click the status
+badge on any feedback item).
+
+## Seeding Feedback
+
+When `feedback/` is empty or doesn't exist for a paper, the skill can
+bootstrap an initial set by scanning for issues:
+
+| Source | How to scan | Priority |
+|--------|-------------|----------|
+| Content validation errors | `content_validate` MCP tool | high |
+| Unresolved `uses[]` refs | Validation output | high |
+| Missing `.lean` files for definitions | Check block kind vs siblings | medium |
+| Missing `.md` files | Blocks without narrative | medium |
+| `sorry` in Lean files | `grep sorry lean/` | medium |
 
 ## Integration with Other Skills
 
 | Skill | Integration |
 |-------|-------------|
-| `editor` | Session start triage includes todo check |
-| `formalizer` | Creates todos when sorry bridges need attention |
-| `proof-status-tracking` | Todos track formalization gaps |
-| `content-validation` | Validation errors can become todos |
-| `scientific-accuracy` | Review comments become todos |
+| `editor` | Session start triage includes feedback check |
+| `formalizer` | Creates feedback when sorry bridges need attention |
+| `proof-status-tracking` | Feedback tracks formalization gaps |
+| `content-validation` | Validation errors seed feedback |
+| `scientific-accuracy` | Review comments become feedback |
+| `proof-triage` | Lean sorry stubs generate high-priority feedback |
+| `content-block-review` | Cross-reference issues become feedback |

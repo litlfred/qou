@@ -1,11 +1,11 @@
 [braid action on tensor products](#prop:braid-action-tensor) uses only the braided monoidal
-structure of $\mathcal{C}$.  In particular:
+structure of $\mathbf{C}$.  In particular:
 
 1. For the archimedean realisation
-   ([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)), the braiding
+   ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the braiding
    is computed by the $R$-matrix of
    $\mathcal{U}_q(\mathfrak{su}(2))$, and the $B_n$-action
-   recovers the skein relations of [Chapter 5](#chap:experimental)
+   recovers the skein relations of [Chapter 6](#chap:descartes-universe)
    as traces on braid-group representations.
 2. For the $\mathfrak{p}$-adic realisation
    ([$p$-adic realisation](#ex:p-adic-realisation)), the same braiding exists
@@ -18,6 +18,6 @@ structure of $\mathcal{C}$.  In particular:
    $\mathrm{Rep}_{\mathbb{F}_\mathfrak{p}}(\mathrm{SU}_q(2))$.
 
 The skein relations, knot invariants, and hyperbolic volumes that appear
-in the archimedean setting ([Chapter 5](#chap:experimental)) are
+in the archimedean setting ([Chapter 6](#chap:descartes-universe)) are
 *consequences* of the categorical braiding evaluated via a specific
 fibre functor --- they are not the source of the braid-group structure.

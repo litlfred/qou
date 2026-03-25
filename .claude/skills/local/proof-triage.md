@@ -1,5 +1,6 @@
 ---
 name: proof-triage
+roles: [collaborator, owner]
 description: >
   Systematically triages and resolves `sorry` stubs across the Lean codebase.
   Inventories all sorry sites, orders them by dependency, attempts proofs using
@@ -25,7 +26,7 @@ to a proof writer for guidance.
 - When onboarding a new chapter and filling in proof obligations
 - Periodically as a "proof debt" sweep
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, it **transforms every phase** of triage:
 
@@ -67,7 +68,7 @@ that doesn't require a full `lake build` between attempts.
 ## Prerequisites
 
 - `lake build` should be run once before starting (to populate oleans)
-- lean-lsp-mcp MCP server configured (`.mcp.json`)
+- paper-assistant MCP server configured (`.mcp.json`)
 - Mathlib4 and any project-specific libraries are in `lakefile.lean`
 - The Lean files follow QOU naming conventions
 
@@ -374,10 +375,9 @@ manifests to order the work list: blocks depended on by many others should
 be resolved first. This replaces or supplements the DAG built from Lean
 imports in Phase 2.
 
-**Source of truth.** Content object `.ts` manifests carry a `status` field
-(`not_started` | `stated` | `has_sorry` | `proved`). After resolving a
-sorry, update the `.ts` status — `proof-objects.json` is derived from
-content objects, not the other way around.
+**Source of truth.** Formalization status is derived at build time from
+`.lean` file content and Lean build output, then written to
+`proof-objects.json`. It is not stored in `.ts` manifests.
 
 ## Checklist
 

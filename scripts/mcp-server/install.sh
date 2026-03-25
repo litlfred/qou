@@ -170,7 +170,7 @@ fi
 
 # ── ripgrep ──────────────────────────────────────────────────────
 
-section "ripgrep (fast search, used by lean-lsp-mcp)"
+section "ripgrep (fast search)"
 if installed rg; then
   skip "rg $(rg --version | head -1)"
 else
@@ -190,7 +190,7 @@ fi
 
 # ── uv (Python package manager) ─────────────────────────────────
 
-section "uv (Python package manager, for lean-lsp-mcp)"
+section "uv (Python package manager)"
 if installed uv; then
   skip "uv $(uv --version)"
 else
@@ -216,15 +216,6 @@ else
     elan toolchain install "$TC"
     echo "  ✓ Lean toolchain installed: $TC"
   fi
-fi
-
-# ── lean-lsp-mcp verification ───────────────────────────────────
-
-section "lean-lsp-mcp (Lean MCP server)"
-if uvx lean-lsp-mcp --help &>/dev/null 2>&1; then
-  echo "  ✓ lean-lsp-mcp available via uvx"
-else
-  echo "  ⚠ lean-lsp-mcp not yet cached. Will download on first use."
 fi
 
 # ── Bun dependencies ────────────────────────────────────────────
@@ -258,10 +249,10 @@ fi
 section "Installation complete"
 echo ""
 echo "  To start the MCP server:"
-echo "    ./scripts/start-assistant.sh"
+echo "    ./scripts/start-folio-assistant.sh"
 echo ""
 echo "  To check dependencies:"
-echo "    ./scripts/start-assistant.sh --check"
+echo "    ./scripts/start-folio-assistant.sh --check"
 echo ""
 echo "  To set up Lean (lake build, Mathlib cache):"
 echo "    cd $REPO_ROOT/lean && lake update && lake exe cache get && lake build"

@@ -15,7 +15,8 @@ $$
 $$
 where $\mathrm{Cl}_2$ is the Clausen function (OEIS A091518; SnapPy-verified).
 
-The **topological mass conjecture** (Conjecture 4.25) asserts that the
+The **topological mass formula**
+([topological mass formula](#prop:topological-mass-formula)) asserts that the
 mass $m(K)$ of a particle with knot type $K$ is
 $$
   m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},

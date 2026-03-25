@@ -1,12 +1,7 @@
 {
   "mcpServers": {
-    "lean-lsp": {
-      "command": "uvx",
-      "args": ["lean-lsp-mcp"],
-      "cwd": "lean"
-    },
     "paper-assistant": {
-      "command": "./scripts/start-assistant.sh",
+      "command": "./scripts/start-folio-assistant.sh",
       "args": ["--stdio"]
     }
   }

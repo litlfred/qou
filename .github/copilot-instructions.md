@@ -293,7 +293,33 @@ their own line, indented to match the surrounding content.
 - This distinguishes vector-valued quantities from scalar parameters
   (e.g.\ the substrate parameter $q$ from a vector $\vec{q}$).
 - Do **not** use bold (`\mathbf`) for vectors; reserve bold for operator
-  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator).
+  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator) and
+  **categories** (see §11.3).
+
+### 11.3  Category and Functor Notation (Herrlich–Strecker conventions)
+
+Following Herrlich–Strecker, categories are set in **bold upright**:
+
+| Object | Notation | Example |
+|--------|----------|---------|
+| Generic category | `$\mathbf{C}$` | $\mathbf{C}$ |
+| Named categories | bold name | `$\mathbf{Rep}(\mathrm{SU}_q(2))$`, `$\mathbf{Mod}_R$` |
+| Monoidal unit | `$\mathbf{1}$` | (unchanged) |
+| Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
+| QOU datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
+| Hom-spaces | `$\mathrm{Hom}_{\mathbf{C}}$` | Bold subscript matches the category |
+| Tensor product | `$\otimes$` | (unchanged) |
+| Dual object | `$V^{\vee}$` | Mathlib convention; equivalent to $V^*$ |
+| Associator, unitors | `$\alpha, \lambda, \rho$` | Mac Lane / Mathlib convention |
+| Braiding | `$\sigma_{X,Y}$` | (unchanged) |
+
+**Do not use** `$\mathcal{C}$` (calligraphic) for categories. Calligraphic
+letters are reserved for sheaves, sites, and algebras
+(`$\mathcal{S}$`, `$\mathcal{O}$`, `$\mathcal{A}$`, etc.).
+
+Where physics notation is more natural than category-theoretic notation
+(e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),
+prefer the physics convention.
 
 ---
 

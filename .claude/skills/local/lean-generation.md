@@ -1,5 +1,6 @@
 ---
 name: lean-generation
+roles: [collaborator, owner]
 description: >
   Extract theorem-like objects from LaTeX source and generate corresponding
   Lean 4 stub files with `sorry` placeholders.  Maintains the proof-objects.json
@@ -22,7 +23,7 @@ the manuscript and machine-checkable formal proofs.
 - When generating or updating Lean stub files
 - When adding `\lean{}`, `\leanok`, or `\uses{}` macros to LaTeX
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:
 
@@ -188,6 +189,14 @@ content-object-aware:
 | `theorem`, `lemma`, `proposition`, `corollary` | **Expected** | Should generate `.lean` sibling |
 | `example`, `remark`, `conjecture` | Optional | Only if author requests |
 | `prose`, `equation`, `diagram` | N/A | Skip |
+
+### CRITICAL: `.lean` files are NEVER standalone
+
+A `.lean` file MUST always be part of a content triple (`.ts` + `.md` +
+`.lean`).  There is no valid scenario where a `.lean` file exists without
+a corresponding `.ts` manifest.  The `.ts` manifest is the authoritative
+record of the block's kind, label, lean declaration, status, and
+dependency graph.  An orphan `.lean` file is always a bug.
 
 ### Content-object-aware stub generation
 

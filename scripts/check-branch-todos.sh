@@ -1,8 +1,7 @@
 #!/bin/bash
-# Cross-reference open todos with content blocks modified in the current branch.
+# Cross-reference open feedback with content blocks modified in the current branch.
+# Scans feedback/<paper-dir>/*.ts for items matching changed content blocks.
 # Outputs JSON: { "matches": [...], "count": N }
-#
-# Each match: { "rootName": "...", "todo": {...}, "changedFiles": ["..."] }
 #
 # Usage: ./scripts/check-branch-todos.sh [base-branch]
 #   base-branch defaults to "main"
@@ -10,7 +9,8 @@
 set -euo pipefail
 
 BASE="${1:-main}"
-FEEDBACK_DIR="$(cd "$(dirname "$0")/.." && pwd)/.qou-feedback"
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+FEEDBACK_DIR="$REPO_ROOT/feedback"
 
 # If no feedback dir or not in a git repo, exit clean
 if [ ! -d "$FEEDBACK_DIR" ]; then
@@ -42,58 +42,51 @@ fi
 # Extract unique root names from changed files
 root_names=$(echo "$changed_files" | sed 's|.*/||; s/\.[^.]*$//' | sort -u)
 
-# Find matching todos
-matches=""
-count=0
+# Match feedback items against changed root names
+run_match() {
+  local runner="$1"
+  shift
+  "$runner" "$@" -e "
+const { readdirSync, readFileSync } = require('fs');
+const { join } = require('path');
 
-for rootName in $root_names; do
-  # Search for feedback files matching this root name
-  feedback_files=$(find "$FEEDBACK_DIR" -name "${rootName}.json" -type f 2>/dev/null || true)
+const feedbackDir = '$FEEDBACK_DIR';
+const rootNames = new Set($(echo "$root_names" | jq -R -s 'split("\n") | map(select(length > 0))'));
+const changedFiles = $(echo "$changed_files" | jq -R -s 'split("\n") | map(select(length > 0))');
 
-  for ff in $feedback_files; do
-    [ -z "$ff" ] && continue
-    [ ! -f "$ff" ] && continue
+const matches = [];
+try {
+  for (const paperDir of readdirSync(feedbackDir)) {
+    const paperPath = join(feedbackDir, paperDir);
+    for (const file of readdirSync(paperPath)) {
+      if (!file.endsWith('.ts')) continue;
+      const rootName = file.replace(/\.ts$/, '');
+      if (!rootNames.has(rootName)) continue;
+      const content = readFileSync(join(paperPath, file), 'utf-8');
+      const stripped = content.replace(/^import\s+.*;\s*/m, '').replace(/\s+satisfies\s+\S+;\s*$/, ';');
+      const m = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+      if (!m) continue;
+      try {
+        const items = JSON.parse(m[1]);
+        for (const item of items) {
+          if (item.status === 'open' || item.status === 'in_progress') {
+            const relevant = changedFiles.filter(f => f.includes(rootName));
+            matches.push({ rootName, paperId: paperDir, todo: item, changedFiles: relevant });
+          }
+        }
+      } catch {}
+    }
+  }
+} catch {}
 
-    # Get open todos from this file
-    if command -v jq &>/dev/null; then
-      open_todos=$(jq -c '[.[] | select(.status == "open")]' "$ff" 2>/dev/null)
-      todo_count=$(echo "$open_todos" | jq 'length' 2>/dev/null || echo "0")
-
-      if [ "$todo_count" -gt 0 ]; then
-        # Get the changed files for this root name
-        block_files=$(echo "$changed_files" | grep "/${rootName}\." | jq -R -s 'split("\n") | map(select(length > 0))' 2>/dev/null)
-
-        # Add each open todo as a match
-        echo "$open_todos" | jq -c ".[] | {rootName: \"$rootName\", todo: ., changedFiles: $block_files}" 2>/dev/null | while read -r match; do
-          if [ -n "$matches" ]; then
-            matches="${matches},${match}"
-          else
-            matches="${match}"
-          fi
-          count=$((count + 1))
-          echo "$match"
-        done
-      fi
-    else
-      # No jq: just check if file has "open" in it
-      if grep -q '"open"' "$ff" 2>/dev/null; then
-        echo "{\"rootName\":\"$rootName\",\"todo\":{\"status\":\"open\"},\"changedFiles\":[]}"
-        count=$((count + 1))
-      fi
-    fi
-  done
-done | {
-  # Collect all matches into a JSON array
-  if command -v jq &>/dev/null; then
-    jq -s '{matches: ., count: length}'
-  else
-    items=""
-    n=0
-    while read -r line; do
-      [ -n "$items" ] && items="${items},"
-      items="${items}${line}"
-      n=$((n + 1))
-    done
-    echo "{\"matches\":[${items}],\"count\":${n}}"
-  fi
+console.log(JSON.stringify({ matches, count: matches.length }));
+" 2>/dev/null
 }
+
+if command -v bun &>/dev/null; then
+  run_match bun
+elif command -v node &>/dev/null; then
+  run_match node
+else
+  echo '{"matches":[],"count":0}'
+fi

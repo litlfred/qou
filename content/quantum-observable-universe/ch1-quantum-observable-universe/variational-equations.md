@@ -2,12 +2,12 @@ Let $\mathcal{S}_q$ be the
 ([categorical action](#def:categorical-action)).  The three variational
 equations are:
 
-1. *Gravity (vary $\lambda$)*:
-   $\delta\mathcal{S}_q / \delta\lambda = 0$ yields the
+1. *Gravity (vary $\int_A$)*:
+   $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the
    *categorical Einstein equation*:
 
    $$
-     R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
+     R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A
      \;=\; T_q[\nabla, \psi],
    $$
 
@@ -33,4 +33,18 @@ equations are:
    $$
      D_\nabla\,\psi \;=\; 0.
    $$
+
+```tex
+\begin{equation}\label{eq:variational-equations-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathcal{S}_q \ar[r, "\delta/\delta\!\int_A"]
+    \ar[d, "\delta/\delta\nabla"']
+    \ar[dr, "\delta/\delta\psi"]
+  & R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\,\mathrm{id} = T_q \\
+  \nabla \star_q F + q[F, \star_q F] = J_\psi
+  & D_\nabla \psi = 0 \ar[from=ul, crossing over]
+\end{tikzcd}
+\qquad\text{(variational equations)}
+\end{equation}
+```
 

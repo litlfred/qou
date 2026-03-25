@@ -54,7 +54,11 @@ function declExistsInLean(declName: string): boolean {
 describe("\\lean{} tags → Lean declarations", () => {
   const envsWithLean = allEnvs.filter((e) => e.leanDecl);
 
-  test("at least one \\lean{} tag found", () => {
+  test("at least one \\lean{} tag found (requires chapters/ from content_build)", () => {
+    if (chapterFiles.length === 0) {
+      console.log("    ℹ Skipped: no chapters/*.tex found (run content_build first)");
+      return; // skip — chapters not generated yet
+    }
     expect(envsWithLean.length).toBeGreaterThan(0);
   });
 
@@ -80,7 +84,11 @@ describe("Coverage completeness", () => {
 
   const formalizable = allEnvs.filter((e) => formalizableTypes.has(e.envType));
 
-  test("formalizable environments found", () => {
+  test("formalizable environments found (requires chapters/ from content_build)", () => {
+    if (chapterFiles.length === 0) {
+      console.log("    ℹ Skipped: no chapters/*.tex found (run content_build first)");
+      return; // skip — chapters not generated yet
+    }
     expect(formalizable.length).toBeGreaterThan(0);
   });
 

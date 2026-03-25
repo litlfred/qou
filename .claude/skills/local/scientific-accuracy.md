@@ -1,3 +1,8 @@
+---
+name: scientific-accuracy
+roles: [reader, collaborator, owner]
+---
+
 # Scientific Accuracy Skill
 
 ## Purpose

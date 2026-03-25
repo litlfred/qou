@@ -3,13 +3,13 @@
 # Includes: Bun, TeX Live, Pandoc, Lean 4, lean-lsp-mcp, ripgrep, poppler-utils
 #
 # Build:
-#   docker build -t qou-paper-assistant -f scripts/mcp-server/Dockerfile .
+#   docker build -t folio-assistant -f scripts/mcp-server/Dockerfile .
 #
 # Run (stdio mode — pipe MCP messages):
-#   docker run -i --rm qou-paper-assistant --stdio
+#   docker run -i --rm folio-assistant --stdio
 #
 # Run (HTTP mode — expose port 8080):
-#   docker run -d -p 8080:8080 qou-paper-assistant --http
+#   docker run -d -p 8080:8080 folio-assistant --http
 #
 # The image expects the repo to be mounted at /workspace or baked in at build time.
 
@@ -55,7 +55,7 @@ FROM base AS lean-setup
 WORKDIR /workspace
 
 # Copy toolchain file first to cache the Lean download
-COPY lean/lean-toolchain lean/lean-toolchain
+COPY lean-archive/lean-toolchain lean/lean-toolchain
 
 RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | \
     sh -s -- -y --default-toolchain none && \
@@ -68,7 +68,7 @@ FROM lean-setup AS project
 WORKDIR /workspace
 
 # Copy dependency files first (better caching)
-COPY lean/lakefile.toml lean/lake-manifest.json lean/
+COPY lean-archive/lakefile.toml lean-archive/lake-manifest.json lean/
 COPY scripts/mcp-server/package.json scripts/mcp-server/
 COPY content/package.json content/
 
@@ -82,6 +82,7 @@ COPY . .
 
 # Build Lean (may take a while)
 RUN cd lean && lake build || true
+# Note: lean-archive/ is the repo source dir, copied into /workspace/lean/ for build
 
 # Verify lean-lsp-mcp works
 RUN uvx lean-lsp-mcp --help > /dev/null 2>&1 || echo "lean-lsp-mcp not yet cached"

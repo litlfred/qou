@@ -1,4 +1,10 @@
-# Build the LaTeX paper (PDF + Markdown + HTML) and publish to gh-pages.
+# Build all papers in the folio (PDF + Markdown + HTML) and publish to gh-pages.
+#
+# Multi-paper architecture
+# ────────────────────────
+#   Papers are discovered from content/folio.ts.  Each paper's artifacts
+#   are deployed under  papers/<dir>/  on gh-pages.  The root index.html
+#   is a folio landing page that links to each paper's viewer.
 #
 # Triggers
 # ─────────
@@ -8,16 +14,16 @@
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
-#   index.html                                   Landing page with paper/visualizer toggle + feature builds
-#   paper.html                                   Enhanced HTML paper with dark/light mode, TOC, definition links
-#   visualizer.html                              Interactive Bring's surface 3D visualizer
-#   quantum-observable-universe.pdf              compiled PDF (main branch)
-#   quantum-observable-universe-<slug>.pdf       compiled PDF (feature branches; header links to source branch)
-#   quantum-observable-universe-<slug>-diff.pdf  latexdiff vs merge-base (feature branches only)
-#   quantum-observable-universe.md               Pandoc GitHub-Flavoured Markdown (main)
-#   quantum-observable-universe-<slug>.md        Pandoc GFM (feature branches)
-#   builds.json                                  Manifest of recent feature builds (used by index.html)
-#   qa.html                                      QA report from build warnings (feature branches only)
+#   index.html                                         Folio landing page (links to all papers)
+#   papers/<dir>/index.html                            Per-paper viewer with paper/visualizer toggle
+#   papers/<dir>/paper.html                            Enhanced HTML paper
+#   papers/<dir>/<dir>.pdf                             compiled PDF (main branch)
+#   papers/<dir>/<dir>-<slug>.pdf                      compiled PDF (feature branches)
+#   papers/<dir>/<dir>-<slug>-diff.pdf                 latexdiff vs merge-base (feature branches only)
+#   papers/<dir>/<dir>.md                              Pandoc GitHub-Flavoured Markdown
+#   quantum-observable-universe.pdf                    backward-compat copy of first paper PDF
+#   builds.json                                        Manifest of recent feature builds
+#   qa.html                                            QA report (feature branches only)
 #
 # Preview builds
 # ──────────────
@@ -41,6 +47,15 @@ on:
         required: false
         default: ''
         type: string
+      feature_branch:
+        description: >
+          Feature branch to diff against main (for latexdiff).
+          Use this when building from a claude/* assistant branch to generate
+          the diff against the actual feature branch instead of the assistant branch.
+          Leave blank to diff the source branch itself against main.
+        required: false
+        default: ''
+        type: string
       publish_branch:
         description: >
           Branch to push the built artefacts to.
@@ -56,10 +71,23 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
+  packages:       read    # required to pull the latex-ci container image
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    outputs:
+      head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
+      head_sha: ${{ steps.deploy-vars.outputs.head_sha }}
+      publish_branch: ${{ steps.deploy-vars.outputs.publish_branch }}
+    defaults:
+      run:
+        shell: bash
+    container:
+      image: ghcr.io/${{ github.repository }}/latex-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -67,6 +95,10 @@ jobs:
     env:
       HEAD_REF: ${{ inputs.source_branch || github.event.pull_request.head.ref || github.ref_name }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      # FEATURE_REF: the branch to diff against main (latexdiff).
+      # Priority: explicit input > PR base branch (if not main) > HEAD_REF.
+      # This ensures diff is main↔feature-branch, not main↔assistant-branch.
+      FEATURE_REF: ${{ inputs.feature_branch || '' }}
 
     steps:
       # ── 0. Checkout ────────────────────────────────────────────────────────
@@ -82,56 +114,124 @@ jobs:
         if: inputs.source_branch != ''
         run: echo "HEAD_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
-      # ── 0b. Install CI tools ──────────────────────────────────────────────
-      # Instead of pulling a custom Docker image from GHCR (which requires
-      # package visibility configuration), install tools directly.
-      - name: Install CI tools
+      # Resolve the feature branch for diff generation.
+      # If not explicitly provided, auto-detect from PR metadata or branch name.
+      - name: Resolve FEATURE_REF for diff
+        if: env.HEAD_REF != 'main'
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
-            texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
-          pip3 install --break-system-packages --no-cache-dir requests>=2.32
+          if [ -n "${{ env.FEATURE_REF }}" ]; then
+            echo "FEATURE_REF explicitly set to: ${{ env.FEATURE_REF }}"
+          else
+            # For pull_request_target: if the PR's base branch is not main,
+            # use it as the feature branch (PR from claude/* → feature-branch).
+            pr_base="${{ github.event.pull_request.base.ref }}"
+            if [ -n "$pr_base" ] && [ "$pr_base" != "main" ]; then
+              echo "FEATURE_REF=${pr_base}" >> "$GITHUB_ENV"
+              echo "Inferred FEATURE_REF from PR base: ${pr_base}"
+            else
+              # Default: use HEAD_REF (the branch being built)
+              echo "FEATURE_REF=${{ env.HEAD_REF }}" >> "$GITHUB_ENV"
+              echo "FEATURE_REF defaults to HEAD_REF: ${{ env.HEAD_REF }}"
+            fi
+          fi
 
-      - name: Configure Python path for qou_lib
-        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+      # ── 0b. Configure environment ──────────────────────────────────────
+      # All CI tools (TeX Live, pandoc, latexdiff, graphviz, Bun, Python)
+      # are pre-installed in the ghcr.io/.../latex-ci container image.
+      # See .github/docker/Dockerfile.latex for the full list.
+      #
+      # If the container image is missing or stale, install the required
+      # packages on the fly so the build still succeeds.
+      - name: Configure environment
+        run: |
+          echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
+          # Trust the workspace directory for git operations inside container
+          git config --global --add safe.directory "${{ github.workspace }}"
 
-      # ── 0c. Install Bun + content pipeline ──────────────────────────────
-      - name: Install Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+      - name: Ensure LaTeX toolchain is available
+        run: |
+          if command -v latexmk >/dev/null 2>&1; then
+            echo "latexmk found: $(latexmk --version | head -1)"
+          else
+            echo "latexmk not found — installing TeX Live and related tools..."
+            apt-get update -qq && apt-get install -y --no-install-recommends \
+              texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+              texlive-science texlive-extra-utils latexmk biber \
+              pandoc latexdiff graphviz jq \
+            && rm -rf /var/lib/apt/lists/*
+            echo "latexmk installed: $(latexmk --version | head -1)"
+          fi
+          # Ensure ccicons font is available (may be missing from texlive-fonts-extra)
+          if ! kpsewhich ccicons.sty >/dev/null 2>&1; then
+            echo "ccicons not found — installing from CTAN..."
+            mkdir -p /tmp/ccicons && cd /tmp/ccicons \
+              && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
+              && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
+              && texhash \
+              && updmap-sys --enable Map=ccicons.map \
+              && rm -rf /tmp/ccicons
+          fi
 
+      # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Install content pipeline dependencies
         run: |
           cd content && bun install --frozen-lockfile 2>/dev/null || bun install
 
-      # ── 0d. Run content pipeline (content objects → LaTeX chapters) ─────
-      - name: Validate content objects
+      # ── 0d. Discover papers from folio ────────────────────────────
+      - name: Extract paper list from folio
+        id: folio
+        run: |
+          python3 .github/scripts/extract-folio.py > papers.json
+          echo "Discovered papers:"
+          cat papers.json
+          # Store as output for downstream steps
+          echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
+
+      # ── 0e. Run content pipeline (content objects → LaTeX chapters + main.tex) ─
+      - name: Validate and build content objects for all papers
         continue-on-error: true
         run: |
           cd content
-          # Validate all content objects if any exist
-          if ls quantum-observable-universe/*//*.ts 2>/dev/null | head -1 > /dev/null; then
-            bun run pipeline/validate.ts quantum-observable-universe/ || echo "::warning::Content validation had issues"
-          else
-            echo "No content objects to validate (migration in progress)"
-          fi
+          for paper_dir in $(cat ../papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
+            echo "── Validating: ${paper_dir}"
+            if ls "${paper_dir}"/*/*.ts 2>/dev/null | head -1 > /dev/null; then
+              bun run pipeline/validate.ts "${paper_dir}/" || echo "::warning::Content validation had issues for ${paper_dir}"
+            else
+              echo "  No content objects to validate for ${paper_dir}"
+            fi
 
-      - name: Build content objects to LaTeX
+            echo "── Building: ${paper_dir}"
+            bun run pipeline/build.ts \
+              "${paper_dir}/${paper_dir}.ts" \
+              --out-dir ../chapters/ \
+              --generate-main \
+              --main-out ../main.tex \
+              --preamble ../latex/preamble.tex \
+              || echo "::warning::Content build had issues for ${paper_dir}"
+          done
+          echo "Generated chapters:"
+          ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
+          echo "Generated main.tex:"
+          head -5 ../main.tex 2>/dev/null || echo "  (not generated)"
+
+      # ── 0f. Build schema documentation (TypeDoc) ──────────────────────
+      - name: Build schema docs
+        continue-on-error: true
         run: |
-          cd content
-          bun run pipeline/build.ts \
-            quantum-observable-universe/quantum-observable-universe.ts \
-            --out-dir ../chapters/
+          bun install --no-save 2>/dev/null || bun install || true
+          bun run build:docs || echo "::warning::TypeDoc build failed"
+          if [ -d build/schema-docs ]; then
+            echo "✓ Schema docs generated ($(find build/schema-docs -name '*.html' | wc -l) pages)"
+          fi
 
       # Security: pull_request_target checks out the PR head, which could
       # contain modified CI scripts.  Restore .github/scripts/ from the
       # base branch so only trusted code runs with elevated permissions.
       - name: Restore base-branch CI scripts
         if: github.event_name == 'pull_request_target'
-        run: git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git checkout ${{ github.event.pull_request.base.sha }} -- .github/scripts/
 
       # Compute output filename base.  Feature branches include the
       # sanitised branch name so downloads are distinguishable.
@@ -148,9 +248,15 @@ jobs:
           fi
           echo "base=${base}" >> "$GITHUB_OUTPUT"
 
-      - name: Fetch main branch for diff
+      - name: Fetch main and feature branches for diff
         if: env.HEAD_REF != 'main'
-        run: git fetch origin main
+        run: |
+          git fetch origin main
+          # If FEATURE_REF differs from HEAD_REF, fetch the feature branch too
+          if [ "${{ env.FEATURE_REF }}" != "${{ env.HEAD_REF }}" ]; then
+            echo "Fetching feature branch: ${{ env.FEATURE_REF }}"
+            git fetch origin "${{ env.FEATURE_REF }}"
+          fi
 
       # ── 1. Inject branch header into PDF (feature branches) ───────────────
       - name: Add source-branch header to PDF
@@ -161,9 +267,18 @@ jobs:
 
       # ── 1b. Compile LaTeX → PDF ────────────────────────────────────────────
       - name: Compile LaTeX to PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex 2>&1 \
+            | grep -v '^LaTeX Warning: .*undefined' \
+            | grep -v '^pdfTeX warning (ext4): destination with the same identifier' \
+            | grep -v '^<to be read again>' \
+            | grep -v '^Overfull \\hbox' \
+            | grep -v '^Underfull \\hbox' \
+            | grep -v '^\[Loading MPS' \
+            | grep -v '^\*geometry\*' \
+            || true
+          # Verify PDF was produced
+          test -f main.pdf || { echo "::error::PDF was not produced"; exit 1; }
 
       - name: Capture LaTeX build warnings
         if: always()
@@ -211,19 +326,21 @@ jobs:
           fi
 
       # ── 2b. Generate diff against main (feature branches only) ────────────
+      # FEATURE_REF is passed so the diff compares main↔feature-branch,
+      # not main↔assistant-branch (e.g. claude/* branches).
       - name: Generate latexdiff against main
         if: env.HEAD_REF != 'main'
         continue-on-error: true
         id: generate_diff
+        env:
+          FEATURE_REF: ${{ env.FEATURE_REF }}
         run: bash .github/scripts/generate-diff.sh
 
       - name: Compile diff PDF
         if: env.HEAD_REF != 'main' && steps.generate_diff.outcome == 'success'
         continue-on-error: true
         id: compile_diff
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: diff.tex
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error diff.tex
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'
@@ -251,19 +368,40 @@ jobs:
         run: |
           mkdir -p _site
 
-          cp main.pdf                  "_site/${FNAME_BASE}.pdf"
-          cp "${FNAME_BASE}.md"        "_site/${FNAME_BASE}.md"
+          # ── Per-paper artifacts go under papers/<dir>/ ───────────────────
+          # Each paper discovered from folio.ts gets its own subdirectory.
+          # The LaTeX compilation uses main.tex (shared preamble + chapter
+          # includes).  The content pipeline has already built chapters/*.tex
+          # from the paper's content objects above.
+
+          PAPER_DIR="quantum-observable-universe"
+          PAPER_OUTDIR="_site/papers/${PAPER_DIR}"
+          mkdir -p "${PAPER_OUTDIR}"
+
+          cp main.pdf                  "${PAPER_OUTDIR}/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md"        "${PAPER_OUTDIR}/${FNAME_BASE}.md"
+
+          # Canonical name copies (so links from folio index work consistently)
+          if [ "${FNAME_BASE}" != "${PAPER_DIR}" ]; then
+            cp main.pdf "${PAPER_OUTDIR}/${PAPER_DIR}.pdf"
+            cp "${FNAME_BASE}.md" "${PAPER_OUTDIR}/${PAPER_DIR}.md"
+          fi
 
           # Include diff PDF for feature-branch builds
           if [ -f diff.pdf ]; then
-            cp diff.pdf "_site/${FNAME_BASE}-diff.pdf"
+            cp diff.pdf "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf"
           fi
 
           # Copy the interactive visualizer (prefer quantum_brings_surface.html)
           if [ -f quantum_brings_surface.html ]; then
-            cp quantum_brings_surface.html _site/visualizer.html
+            cp quantum_brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
           elif [ -f brings_surface.html ]; then
-            cp brings_surface.html _site/visualizer.html
+            cp brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
+          fi
+
+          # Copy additional standalone simulators
+          if [ -f q_double_slit.html ]; then
+            cp q_double_slit.html "${PAPER_OUTDIR}/q-double-slit.html"
           fi
 
           # ── Extract proof objects early (needed by HTML generator) ──────────
@@ -276,12 +414,12 @@ jobs:
             --standalone \
             --mathjax \
             --metadata title="Quantum Observable Universe" \
-            --output=_site/paper-raw.html \
+            --output="${PAPER_OUTDIR}/paper-raw.html" \
             || echo "::warning::pandoc HTML conversion failed; falling back to static landing page"
 
           # Fallback landing page if pandoc HTML conversion failed
-          if [ ! -s _site/paper-raw.html ]; then
-            cat > _site/paper-raw.html << HTML
+          if [ ! -s "${PAPER_OUTDIR}/paper-raw.html" ]; then
+            cat > "${PAPER_OUTDIR}/paper-raw.html" << HTML
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -301,10 +439,11 @@ jobs:
 
           # ── Enhance HTML → paper.html (with dark mode, TOC, definition links, proof status)
           ENHANCE_ARGS=(
-            _site/paper-raw.html
+            "${PAPER_OUTDIR}/paper-raw.html"
             main-flat.tex
-            _site/paper.html
+            "${PAPER_OUTDIR}/paper.html"
             --manifest _site/proof-objects.json
+            --pdf "${FNAME_BASE}.pdf"
           )
           if [ "${{ env.HEAD_REF }}" != "main" ]; then
             ENHANCE_ARGS+=(
@@ -314,28 +453,27 @@ jobs:
               --src-dir "."
             )
             # Link to the diff PDF if it was successfully built
-            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+            if [ -f "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf" ]; then
               ENHANCE_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
             fi
           fi
           python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
 
           # Clean up intermediate file
-          rm -f _site/paper-raw.html
+          rm -f "${PAPER_OUTDIR}/paper-raw.html"
 
-          # ── Generate wrapper index.html with paper/visualizer toggle ────────
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          # ── Generate per-paper index.html with paper/visualizer toggle ──────
           INDEX_ARGS=(
-            _site/index.html
+            "${PAPER_OUTDIR}/index.html"
             paper.html
             --pdf "${FNAME_BASE}.pdf"
             --md  "${FNAME_BASE}.md"
           )
-          if [ -f _site/visualizer.html ]; then
+          if [ -f "${PAPER_OUTDIR}/visualizer.html" ]; then
             INDEX_ARGS+=(--visualizer "visualizer.html")
           fi
           if [ "${{ env.HEAD_REF }}" = "main" ]; then
-            INDEX_ARGS+=(--builds-json "builds.json")
+            INDEX_ARGS+=(--builds-json "../../builds.json")
             INDEX_ARGS+=(--repo "${{ github.repository }}")
           else
             INDEX_ARGS+=(
@@ -343,26 +481,63 @@ jobs:
               --repo   "${{ github.repository }}"
               --sha    "${{ env.HEAD_SHA }}"
             )
-            if [ -f "_site/${FNAME_BASE}-diff.pdf" ]; then
+            if [ -f "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf" ]; then
               INDEX_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
             fi
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
 
+          # ── Backward compatibility: copy first paper PDF to root ────────────
+          cp main.pdf "_site/${FNAME_BASE}.pdf"
+          cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"
+
+          # ── Generate folio root index.html ──────────────────────────────────
+          FOLIO_ARGS=(
+            _site/index.html
+            --papers-json papers.json
+          )
+          if [ "${{ env.HEAD_REF }}" = "main" ]; then
+            FOLIO_ARGS+=(--repo "${{ github.repository }}")
+          else
+            FOLIO_ARGS+=(
+              --branch "${{ env.HEAD_REF }}"
+              --repo   "${{ github.repository }}"
+              --sha    "${{ env.HEAD_SHA }}"
+            )
+          fi
+          python3 .github/scripts/generate-folio-index.py "${FOLIO_ARGS[@]}"
+
           # ── Copy Lean source files to gh-pages ───────────────────────────────
-          if [ -d lean ]; then
+          if [ -d lean-archive ]; then
             mkdir -p _site/lean
-            cp -r lean/QOU    _site/lean/QOU    2>/dev/null || true
-            cp    lean/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
-            cp    lean/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
-            cp    lean/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+            cp -r lean-archive/QOU    _site/lean/QOU    2>/dev/null || true
+            cp    lean-archive/QOU.lean _site/lean/QOU.lean 2>/dev/null || true
+            cp    lean-archive/lakefile.toml _site/lean/lakefile.toml 2>/dev/null || true
+            cp    lean-archive/lean-toolchain _site/lean/lean-toolchain 2>/dev/null || true
+          fi
+
+          # ── Copy schema docs (TypeDoc) to gh-pages ────────────────────────────
+          if [ -d build/schema-docs ]; then
+            cp -r build/schema-docs _site/schema-docs
+            echo "✓ Schema docs deployed to schema-docs/"
           fi
 
           # ── Generate dependency graph from proof objects ──────────────────────
           python3 .github/scripts/generate_dependency_graph.py \
             --manifest _site/proof-objects.json \
             --output _site/dependency-graph.svg \
-            --pdf-base-url "${FNAME_BASE}.pdf"
+            --pdf-base-url "papers/${PAPER_DIR}/${FNAME_BASE}.pdf"
+
+          # ── Validate TeX snippets in content .md files (AST-based) ────────
+          if [ -d content ]; then
+            cd content
+            bun run validate-tex -- --warnings-log ../tex-snippet-warnings.log -v || true
+            cd ..
+            # Append snippet warnings to the main warnings log
+            if [ -f tex-snippet-warnings.log ] && [ -s tex-snippet-warnings.log ]; then
+              cat tex-snippet-warnings.log >> build-warnings.log
+            fi
+          fi
 
           # ── QA report (feature branches only) ───────────────────────────────
           if [ "${{ env.HEAD_REF }}" != "main" ] && [ -f build-warnings.log ]; then
@@ -390,76 +565,44 @@ jobs:
         if: env.HEAD_REF != 'main'
         env:
           FNAME_BASE: ${{ steps.names.outputs.base }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          REPO_URL: https://github.com/${{ github.repository }}
         run: |
-          PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          DRAFT_PATH="drafts/${{ env.HEAD_REF }}"
-          REPO_URL="https://github.com/${{ github.repository }}"
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-          python3 -c "
-          import json
-          builds = json.load(open('builds-existing.json'))
-          builds = [b for b in builds if b.get('branch') != '${{ env.HEAD_REF }}']
-          builds.append({
-              'branch': '${{ env.HEAD_REF }}',
-              'sha': '${{ env.HEAD_SHA }}',
-              'timestamp': '${TIMESTAMP}',
-              'pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}.pdf',
-              'diff_pdf_url': '${PAGES_URL}/${DRAFT_PATH}/${FNAME_BASE}-diff.pdf',
-              'html_url': '${PAGES_URL}/${DRAFT_PATH}/',
-              'source_url': '${REPO_URL}/tree/${{ env.HEAD_REF }}',
-          })
-          builds.sort(key=lambda b: b.get('timestamp', ''), reverse=True)
-          builds = builds[:20]
-          json.dump(builds, open('builds-existing.json', 'w'), indent=2)
-          "
-          # Copy updated manifest into _site so it deploys alongside drafts
+          python3 .github/scripts/update-builds-json.py
           cp builds-existing.json _site/builds.json
-          echo "Updated builds.json with entry for ${{ env.HEAD_REF }}"
 
       - name: Preserve builds.json for main deploy
         if: env.HEAD_REF == 'main'
         run: cp builds-existing.json _site/builds.json
 
-      # ── 4. Deploy to target branch ─────────────────────────────────────────
-      # peaceiris/actions-gh-pages automatically creates the publish_branch
-      # (default: gh-pages) if it does not already exist, so no manual
-      # branch-creation step is required.
-      #
-      # Feature-branch builds are placed under  drafts/<branch>/  so that
-      # every open PR gets its own preview URL without overwriting the main
-      # site.  keep_files is enabled so that main deployments preserve the
-      # drafts directory and feature-branch deployments preserve each other.
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
-          keep_files:     true
-          commit_message: >
-            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+      # ── 4. Prepare deploy outputs and artifacts ─────────────────────────────
+      - name: Set deploy variables
+        id: deploy-vars
+        run: |
+          echo "head_ref=${{ env.HEAD_REF }}" >> "$GITHUB_OUTPUT"
+          echo "head_sha=${{ env.HEAD_SHA }}" >> "$GITHUB_OUTPUT"
+          echo "publish_branch=${{ inputs.publish_branch || 'gh-pages' }}" >> "$GITHUB_OUTPUT"
 
-      # For feature builds, also deploy builds.json to the root of gh-pages
-      # (the main deploy puts it under drafts/<branch>/, so we need a second deploy)
-      - name: Deploy builds.json to gh-pages root
+      - name: Upload site artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+          retention-days: 1
+
+      - name: Prepare builds.json root artifact
         if: env.HEAD_REF != 'main'
         run: |
           mkdir -p _site-root
           cp builds-existing.json _site-root/builds.json
 
-      - name: Push builds.json to gh-pages root
+      - name: Upload builds.json root artifact
         if: env.HEAD_REF != 'main'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/upload-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:    ./_site-root
-          publish_branch: ${{ inputs.publish_branch || 'gh-pages' }}
-          destination_dir: ''
-          keep_files:     true
-          commit_message: >
-            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+          name: publish-site-root
+          path: _site-root
+          retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
       - name: Comment preview link on PR
@@ -470,10 +613,13 @@ jobs:
         run: |
           # Derive the GitHub Pages base URL from the repository metadata
           pages_url="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-          pdf_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}.pdf"
-          diff_url="${pages_url}/drafts/${{ env.HEAD_REF }}/${FNAME_BASE}-diff.pdf"
-          html_url="${pages_url}/drafts/${{ env.HEAD_REF }}/"
-          qa_url="${pages_url}/drafts/${{ env.HEAD_REF }}/qa.html"
+          draft_base="${pages_url}/drafts/${{ env.HEAD_REF }}"
+          paper_base="${draft_base}/papers/quantum-observable-universe"
+          pdf_url="${paper_base}/${FNAME_BASE}.pdf"
+          diff_url="${paper_base}/${FNAME_BASE}-diff.pdf"
+          html_url="${draft_base}/"
+          qa_url="${draft_base}/qa.html"
+          viewer_url="${paper_base}/"
 
           # Repository source links (useful when repo is private)
           repo_url="https://github.com/${{ github.repository }}"
@@ -485,7 +631,7 @@ jobs:
           # Raw download links — use the GitHub blob/raw endpoint which
           # reliably serves binary files (raw.githubusercontent.com often
           # returns 404 for PDFs and other large binaries on gh-pages).
-          raw_base="https://github.com/${{ github.repository }}/raw/${publish_branch}/drafts/${{ env.HEAD_REF }}"
+          raw_base="https://github.com/${{ github.repository }}/raw/${publish_branch}/drafts/${{ env.HEAD_REF }}/papers/quantum-observable-universe"
           raw_pdf_url="${raw_base}/${FNAME_BASE}.pdf"
           raw_diff_url="${raw_base}/${FNAME_BASE}-diff.pdf"
 
@@ -529,7 +675,8 @@ jobs:
           |----------|------|
           | PDF      | [${FNAME_BASE}.pdf](${pdf_url}) |
           ${diff_row}
-          | HTML     | [Landing page](${html_url}) |
+          | Folio    | [Landing page](${html_url}) |
+          | Viewer   | [Paper viewer](${viewer_url}) |
           | QA Report| [qa.html](${qa_url}) |
 
           **Direct download**
@@ -548,3 +695,57 @@ jobs:
           )"
             echo "Commented on PR #${pr}."
           done
+
+  # ── Deploy job — serialized across all workflows via shared concurrency group
+  deploy:
+    name: Deploy to gh-pages
+    runs-on: ubuntu-latest
+    needs: [build-and-publish]
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    env:
+      HEAD_REF: ${{ needs.build-and-publish.outputs.head_ref }}
+      HEAD_SHA: ${{ needs.build-and-publish.outputs.head_sha }}
+      PUBLISH_BRANCH: ${{ needs.build-and-publish.outputs.publish_branch }}
+    steps:
+      - name: Download site artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site
+          path: _site
+
+      # Feature-branch builds are placed under  drafts/<branch>/  so that
+      # every open PR gets its own preview URL without overwriting the main
+      # site.  keep_files is enabled so that main deployments preserve the
+      # drafts directory and feature-branch deployments preserve each other.
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ${{ env.HEAD_REF != 'main' && format('drafts/{0}', env.HEAD_REF) || '' }}
+          keep_files:     true
+          commit_message: >
+            docs: publish from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}
+
+      # For feature builds, also deploy builds.json to the root of gh-pages
+      - name: Download builds.json root artifact
+        if: env.HEAD_REF != 'main'
+        uses: actions/download-artifact@v4
+        with:
+          name: publish-site-root
+          path: _site-root
+
+      - name: Push builds.json to gh-pages root
+        if: env.HEAD_REF != 'main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir:    ./_site-root
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
+          destination_dir: ''
+          keep_files:     true
+          commit_message: >
+            docs: update builds.json from ${{ env.HEAD_REF }}@${{ env.HEAD_SHA }}

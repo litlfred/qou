@@ -8,5 +8,8 @@ export default proof({
     decl: "QOU.categorical_dq_squared",
     validation: "leanok",
   },
-  status: "not_started",
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-proof-0.svg", blockIndex: 0, hash: "9269fbe261dd" },
+  ],
+
 });

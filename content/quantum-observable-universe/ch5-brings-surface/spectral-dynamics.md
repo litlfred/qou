@@ -9,7 +9,7 @@ and time-like sectors of the Bring's surface:
 - *$\omega_2,\omega_3$ (time-like):* the factor
   $\exp_q(r)-1$ vanishes at $r=0$ and grows rapidly for small $r$,
   driven by the $q$-deformed Reeb flow
-  ([$q$-Reeb flow](#def:q-reeb-flow)).  These ladder modes expand at the big
+  ([$q$-Reeb flow](#ex:q-reeb-flow)).  These ladder modes expand at the big
   bang before tapering as the geometric viscosity
   ([$q$-harmonic physical interpretation](#rem:q-harmonic-physical)) takes hold.
 

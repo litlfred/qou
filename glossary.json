@@ -1,17 +1,25 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-21T22:42:26.259019+00:00",
-  "commit_sha": "a51a6fe9c5eb85d1e0421feb10e805d04d839c8a",
-  "entry_count": 57,
-  "ambiguity_count": 7,
+  "generated_at": "2026-03-25T20:08:55.378671+00:00",
+  "commit_sha": "unknown",
+  "entry_count": 71,
+  "ambiguity_count": 9,
   "entries": [
     {
-      "narrative_term": "Rigid monoidal category",
+      "narrative_term": "{Snake identity}",
+      "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two commutative diagrams:    [row sep=2em, column sep=2.5em] V ar[r, \" otimes \"] ar[dr, \"_V\"'] & V otimes V^vee otimes V ar[d, \" otimes \"]  & V  [-0.5em]   qquadqquad  [row sep=2em, column sep=2.5em] V^vee ar[r, \" otimes \"] ar[dr, \"_V^vee\"'] & V^vee otimes V otimes V^vee ar[d, \" otimes \"]  & V^vee  [-0.5em]  ",
+      "latex_label": "def:snake-identity",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Rigid monoidal category}",
       "lean_name": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
       "kind": "def",
-      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object~, and natural isomorphisms expressing associativity and unitality: [ [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z),  qquad [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes . ar[l, \"rho_X\"', \"sim\"]  ]  The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V colon  to V^vee otimes V ",
+      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object , and natural isomorphisms expressing associativity and unitality:    [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z)  [-0.5em]   qquad  [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes  ar[l, \"rho_X\"', \"sim\"]  [-0.5em]     The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V colo",
       "latex_label": "def:rigid-monoidal-category",
-      "chapter": 1,
+      "chapter": 2,
       "ambiguity": {
         "is_ambiguous": true,
         "message": "Category without specified universe or structure level",
@@ -25,172 +33,132 @@
       }
     },
     {
-      "narrative_term": "Quantum Universe",
+      "narrative_term": "{Quantum Universe}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumUniverse",
       "kind": "def",
-      "narrative_definition": "leanok Let R be a commutative ring.  A  is a triple (, A, omega) where:  item (, otimes, ) is an R-linear rigid monoidal category (Definition~); item A is a  in~: an object equipped with morphisms [ [row sep=1.5em, column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"lambda\"] &    ar[r, \"eta\"] & A ar[r, \"varepsilon\"] &   A ar[r, \"Delta\"] & A otimes A & A ar[l, \"S\"']  ] --- multiplication~mu, unit~eta, comultiplication~Delta, counit~varepsilon, antipode~S, and Frobenius form~lambda --- satisfying:",
+      "narrative_definition": "Let R be a commutative ring. A  is a triple (, A, tau) where:   item (, otimes, ) is an R-linear rigid symmetric monoidal category (hyperref[def:rigid-monoidal-category]rigid monoidal category) — the symmetric braiding sigma_X,Y colon X otimes Y  Y otimes X is required for exterior powers Lambda^k V and is canonically induced by the fibre functor tau via the Tannakian structure; item A is a  in : an object equipped with morphisms [ [row sep=1.5em, column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[",
       "latex_label": "def:quantum-universe",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Higher differential forms",
+      "narrative_term": "{Frobenius pairing}",
+      "lean_name": "QOU.QuantumObservableUniverse.FrobeniusPairing",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a hyperref[def:quantum-universe]quantum universe with multiplication mu colon A otimes A to A and Frobenius form int_A colon A to . The  is the composite   [column sep=2.5em] A otimes A ar[r, \"mu\"] & A ar[r, \"int_A\"] &     We say the Frobenius pairing is  when this composite induces an isomorphism A  A^vee to the dual object. Equivalently, the snake identities hold: there exists a coevaluation  colon  to A otimes A such that the two composites  [ A  A otimes   otimes  A otimes ",
+      "latex_label": "def:frobenius-pairing",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Higher differential forms}",
       "lean_name": "QOU.QuantumObservableUniverse.HigherForms",
       "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum universe with differential calculus Omega^1(A) (Definition~).  The  are the graded A-bimodule [ Omega^k(A) ;=; bigwedgenolimits_A^k Omega^1(A), qquad k = 0, 1, 2, ldots ] (exterior powers of the A-bimodule~Omega^1(A) in~), with Omega^0(A) = A.  For an object V in~, Lambda^k V denotes the k-th exterior power of~V in the sense of rigid monoidal categories.  The differential d colon Omega^k(A) to Omega^k+1(A) extends the universal derivation by the graded Leibni",
+      "narrative_definition": "Let (, A, tau) be a quantum universe with differential calculus Omega^1(A) (hyperref[def:quantum-universe]quantum universe). The  are the graded A-bimodule  [ Omega^k(A) ;=; bigwedgenolimits_A^k Omega^1(A), qquad k = 0, 1, 2, ldots ]  (exterior powers of the A-bimodule Omega^1(A) in ), with Omega^0(A) = A. For an object V in , Lambda^k V denotes the k-th exterior power of V in the sense of rigid monoidal categories. The differential d colon Omega^k(A) to Omega^k+1(A) extends the universal deriva",
       "latex_label": "def:higher-forms",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Quantum Observable Universe",
+      "narrative_term": "{Quantum Observable Universe}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumObservableUniverse",
       "kind": "def",
-      "narrative_definition": "leanok A quantum universe (, A, omega) over~R (Definition~) is  if the following three conditions hold:  item  the Frobenius pairing  induces an isomorphism A  A^vee; item  _(,, (A)) = 0, where (A) is the adjoint object (A acted on by conjugation); that is, every morphism  to (A) is zero: [ [column sep=2.5em]  ar[r, \"0\"] & (A)  ] item   let V denote the fundamental object of~ (the simple object of categorical dimension~2); there exists a non-degenerate epimorphism epsilon preserved by the rigid ",
+      "narrative_definition": "A quantum universe (, A, tau) over R (hyperref[def:quantum-universe]quantum universe) is  if the forgetful functor tau (hyperref[ex:rigid-monoidal-vect]Example) is faithful and the following conditions hold:   item  the Frobenius form int_A colon A to  induces a non-degenerate pairing (a, b) mapsto int_A ab (hyperref[def:frobenius-pairing]Frobenius pairing), giving an isomorphism A  A^vee; item  there are no hidden global symmetries: _(,, (A)) = 0, where (A) is the adjoint object (A acted on by ",
       "latex_label": "def:quantum-observable-universe",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Involutive structure ($\\ast$-structure)",
-      "lean_name": "QOU.QuantumObservableUniverse.InvolutiveStructure",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, otimes, ) be an R-linear rigid monoidal category.  An  (also called a  or ) on~ is a contravariant endofunctor dagger colon ^ to  satisfying:  item  X^dagger = X for every object~X. item  f^daggerdagger = f for every morphism~f, depicted:  [column sep=3em] X ar[r, \"f\"] ar[rr, bend left=30, \"f^daggerdagger = f\"] & Y ar[r, \"f^dagger\"description] & X   item  (_X otimes f)^dagger = _X otimes f^dagger, i.e. the following square commutes:  [row sep=2.5em, column sep=3em] X otimes Y ar[r,",
-      "latex_label": "def:involutive-structure",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Positive-definite structure",
-      "lean_name": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, dagger) be a rigid monoidal category with involutive structure (Definition~).  The involution is  if for every non-zero morphism f colon  to X the composite  [column sep=2.5em]  ar[r, \"f\"] & X ar[r, \"f^dagger\"] &    is a positive element of () cong R. Equivalently, the sesquilinear form [ langle g, h rangle ;=; g^dagger circ h ;in; () ] is positive-definite on (, X) for every object~X.  This replaces the analytic notion of ``Hilbert-space inner product'' with a purely categorical c",
-      "latex_label": "def:positive-definite-dagger",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Spin labels and the fundamental object",
-      "lean_name": "QOU.QuantumObservableUniverse.SpinLabels",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe (Definition~).  Because G = ^otimes(omega) cong (2) (Theorem~), the simple objects of~ are indexed by a  label j in 0, tfrac12, 1, tfrac32, ldots, with V_j denoting the simple object of categorical dimension 2j + 1. The  is V = V_1/2, the unique simple object of categorical dimension~2.  The  is V_1 cong (A), of dimension~3.  The symplectic form epsilon colon Lambda^2 V to  (Definition~, axiom~(iii)) is the unique (up to scalar) G-invarian",
-      "latex_label": "def:spin-labels",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Maximal torus and weight subcategory",
+      "narrative_term": "{Maximal torus and weight subcategory}",
       "lean_name": "QOU.QuantumObservableUniverse.MaximalTorus",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe (Definition~) with fundamental object~V (Definition~).  The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of~V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is [ T ;=; ^otimes(omega|_langle V rangle), ] the sub-group scheme of G = ^otimes(omega) (Theorem~) consisting of those natural automorphisms that act diagonally on each weight space of~V. Equivalentl",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with fundamental object V (the unique simple object of categorical dimension 2; see hyperref[prop:spin-labels]spin labels for the full labelling). The  langle V rangle subset  is the full subcategory whose objects are direct sums of weight spaces of V (i.e. simultaneous eigenspaces of the Cartan subalgebra action). The  of the gauge group is  [ T = ^otimes(tau|_langle V rangle), ]  the sub-group scheme of ",
       "latex_label": "def:maximal-torus",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Weight decomposition",
+      "narrative_term": "{Weight decomposition}",
       "lean_name": "QOU.QuantumObservableUniverse.WeightDecomposition",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe (Definition~) with maximal torus T (Definition~) and higher differential forms Omega^k(A) (Definition~).  The T-action on Omega^k(A) induces a -grading by weights.  Denoting by pi_H, pi_V the projections onto the weight-0 and non-zero-weight summands, every alpha in Omega^k(A) decomposes uniquely:  [row sep=2em, column sep=3em] & Omega^k(A) ar[dl, \"pi_H\"'] ar[dr, \"pi_V\"] &  Omega^k_H(A) ar[rr, hook, \"oplus\"'] & & Omega^k_V(A)  qquad alpha = alpha",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with maximal torus T (hyperref[def:maximal-torus]maximal torus) and higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The T-action on Omega^k(A) induces a -grading by weights. Denoting by pi_H, pi_V the projections onto the weight-0 and non-zero-weight summands, every alpha in Omega^k(A) decomposes uniquely:   [row sep=2em, column sep=3em] & Omega^k(A) ar[dl, \"pi_H\"'] ar[dr, \"p",
       "latex_label": "def:weight-decomposition",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical Reeb derivation",
+      "narrative_term": "{Involutive structure ($\\ast$-structure)}",
+      "lean_name": "QOU.QuantumObservableUniverse.InvolutiveStructure",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be an R-linear rigid monoidal category. An  (also called a  or ) on  is a contravariant endofunctor dagger colon ^ to  satisfying:   item  X^dagger = X for every object X. item  f^daggerdagger = f for every morphism f, depicted:  [column sep=3em] X ar[r, \"f\"] ar[rr, bend left=30, \"f^daggerdagger = f\"] & Y ar[r, \"f^dagger\"description] & X   item  (_X otimes f)^dagger = _X otimes f^dagger, i.e. the following square commutes:  [row sep=2.5em, column sep=3em] X otimes Y ar[r, \" otim",
+      "latex_label": "def:involutive-structure",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Positive-definite structure}",
+      "lean_name": "QOU.QuantumObservableUniverse.PositiveDefiniteDagger",
+      "kind": "def",
+      "narrative_definition": "Let (, dagger) be a rigid monoidal category with involutive structure (hyperref[def:involutive-structure]involutive structure). The involution is  if for every non-zero morphism f colon  to X the composite   [column sep=2.5em]  ar[r, \"f\"] & X ar[r, \"f^dagger\"] &     is a positive element of () cong R. Equivalently, the sesquilinear form  [ langle g, h rangle = g^dagger circ h in () ]  is positive-definite on (, X) for every object X. This replaces the analytic notion of \"Hilbert-space inner prod",
+      "latex_label": "def:positive-definite-dagger",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical hadron}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalHadron",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be a hyperref[def:rigid-monoidal-category]rigid monoidal category with fundamental object V and Frobenius algebra (A, mu, eta, Delta, epsilon, int_A). A  is a morphism  [ h colon  ;longrightarrow; V^otimes n ]  for some n geq 2, subject to the constraint that h factors through the image of the multiplication mu restricted to simple constituents — that is, h lies in the span of morphisms of the form   [row sep=2em, column sep=2.5em]  ar[r, \"eta\"] & A ar[r, \"Delta^(n-1)\"] & A^otim",
+      "latex_label": "def:categorical-hadron",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical Reeb derivation}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalReeb",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe with maximal torus T (Definition~) and weight decomposition pi_H, pi_V (Definition~).  The  is the endomorphism xi colon A to A that generates the T-action: xi is the infinitesimal generator of the one-parameter subgroup T cong (1) subset G, acting on the Frobenius--Hopf object~A via the adjoint coaction.  It satisfies:  item ; pi_V circ d = xi lrcorner, dtheta_A, where theta_A in Omega^1(A) is the canonical 1-form dual to~xi. item ; theta_A(xi) ",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with maximal torus T (hyperref[def:maximal-torus]maximal torus) and weight decomposition pi_H, pi_V (hyperref[def:weight-decomposition]weight decomposition). The  is the endomorphism xi colon A to A that generates the T-action: xi is the infinitesimal generator of the one-parameter subgroup T cong (1) subset G, acting on the Frobenius--Hopf object A via the adjoint coaction. It satisfies:   item  pi_V circ d = iota_xi, dtheta_A, where iota_xi denot",
       "latex_label": "def:categorical-reeb",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Projective line object",
+      "narrative_term": "{Projective line object}",
       "lean_name": "QOU.QuantumObservableUniverse.ProjectiveLineObject",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe with maximal torus T subset G (Definition~). The  is the quotient [ (V) ;=; G ,/, T, ] regarded as an object of () via its function algebra ((V)) = A^,T (the T-coinvariant subalgebra of~A).",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with maximal torus T subset G (hyperref[def:maximal-torus]maximal torus). The  is the quotient  [ (V) = G / T, ]  regarded as an object of () via its function algebra ((V)) = A^,T (the T-coinvariant subalgebra of A).",
       "latex_label": "def:projective-line-object",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical connection and curvature",
+      "narrative_term": "{Contact affine chart on $\\mathbb{P}(V)$}",
+      "lean_name": "QOU.QuantumObservableUniverse.ContactAffineChart",
+      "kind": "def",
+      "narrative_definition": "Let E be the state bundle over M whose fibres are the spaces of 1-forms, and let (V) be the projective line object (hyperref[def:projective-line-object]projective line object). Using the Reeb decomposition (hyperref[ex:reeb-decomposition]Reeb decomposition), every form splits as alpha = alpha_H + theta wedge iota_xi alpha.  The  U_xi subset (V) is the open dense subset of states with non-vanishing Reeb component:  [ U_xi ;=; bigl, [alpha] in (V) ;big|; iota_xi,alpha neq 0 ,bigr. ]  On U_xi, the ",
+      "latex_label": "def:contact-affine-chart",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical connection and curvature}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalConnection",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum universe over~R with differential forms Omega^k(A) (Definition~).  A  on~A is a morphism nabla colon A to A otimes Omega^1(A) in~ satisfying the Leibniz rule: nabla(mu(a otimes b)) = nabla(a) cdot b + a cdot nabla(b), expressed by the commutativity of the :  [row sep=2.5em, column sep=3.5em] A otimes A ar[r, \"mu\"] ar[dr, \"nabla otimes 1 ,+, 1 otimes nabla\"'] & A ar[d, \"nabla\"]  & A otimes Omega^1(A)   The  of~nabla is the composition  [column sep=3em] A ar[r, \"nabla",
+      "narrative_definition": "Let (, A, tau) be a quantum universe over R with differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms).  A  on A is a morphism nabla colon A to A otimes Omega^1(A) in  satisfying the Leibniz rule: nabla(mu(a otimes b)) = nabla(a) cdot b + a cdot nabla(b), expressed by the commutativity of the :   [row sep=2.5em, column sep=3.5em] A otimes A ar[r, \"mu\"] ar[dr, \"nabla otimes 1 ,+, 1 otimes nabla\"'] & A ar[d, \"nabla\"]  & A otimes Omega^1(A)    The  of nabla is the composition   [co",
       "latex_label": "def:categorical-connection",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical jet object",
+      "narrative_term": "{Categorical jet object}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalJet",
       "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum universe (Definition~) with connection~nabla (Definition~).  The  is [ J^1(A) ;:=; A otimes_ Omega^1(A), ] where Omega^1(A) = ker(mu colon A otimes A to A) is the bimodule of K\"ahler differentials.  The jet object fits into the universal extension  [column sep=2.5em] 0 ar[r] & A otimes Omega^1(A) ar[r] & J^1(A) ar[r, \"j^1\"] & A ar[r] & 0   where j^1 colon J^1(A) to A is the jet evaluation (the counit of the tensor--hom adjunction).",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-universe]quantum universe) with connection nabla (hyperref[def:categorical-connection]categorical connection). The  is  [ J^1(A) := A otimes_ Omega^1(A), ]  where Omega^1(A) = ker(mu colon A otimes A to A) is the bimodule of K\"ahler differentials. The jet object fits into the universal extension   [column sep=2.5em] 0 ar[r] & A otimes Omega^1(A) ar[r] & J^1(A) ar[r, \"j^1\"] & A ar[r] & 0    where j^1 colon J^1(A) to A is the jet evaluation (the counit of ",
       "latex_label": "def:categorical-jet",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical Hodge star",
+      "narrative_term": "{Categorical Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum universe over~R (Definition~) with higher differential forms Omega^k(A) (Definition~).  The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by [ alpha wedge star beta ;=; lambdabigl(alpha^* cdot betabigr);, ] where lambda colon A to  is the Frobenius form, alpha^* = S(alpha) is the antipode-conjugate, and  in Omega^n(A) is the volume form (the unique G-invariant top form normalised by lambda() = 1). That star^2 =  (i.e. star is an involution) follow",
+      "narrative_definition": "Let (, A, tau) be a quantum universe over R (hyperref[def:quantum-universe]quantum universe) with higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge star beta = int_A!bigl(alpha^* cdot betabigr);, ]   [row sep=2.5em, column sep=3em] Omega^k(A) ar[r, \"star\"] ar[d, \"star\"'] & Omega^n-k(A) ar[d, \"star\"]  Omega^n-k(A) ar[r, equal] & Omega^n-k(A)  qquad (star^2 = )   where int_A colon A ",
       "latex_label": "def:categorical-hodge-star",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Substrate parameter",
-      "lean_name": "QOU.QuantumObservableUniverse.SubstrateParameter",
+      "narrative_term": "{Spatial realization functor}",
+      "lean_name": "QOU.QuantumObservableUniverse.SpatialRealizationFunctor",
       "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum universe over a ring~R (Definition~).  Let ^_q((2)) denote the ~: the [q,q^-1]-subalgebra of _q((2)) generated by K^pm 1 and the divided powers E^(n) = E^n/[n]_q!, F^(n) = F^n/[n]_q!. The  is a ring homomorphism [ iota ;colon; [q, q^-1] ;longrightarrow; k, qquad q ;longmapsto; q_0 in k^times, ] and the base-changed algebra ^_q((2)) otimes_[q,q^-1] k is the quantised enveloping algebra at the specialised value~q_0. When the quantum universe is fibred over a sp",
-      "latex_label": "def:substrate-parameter",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Quantum Gauge Group",
-      "lean_name": "QOU.QuantumObservableUniverse.QuantumGaugeGroup",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe (Definition~) with substrate parameter q_0 (Definition~).  The  is G_q_0 = _q_0(2), the quantum group obtained by deforming the Tannakian gauge group G = ^otimes(omega) cong (2) (Theorem~) at the parameter~q_0.  When the substrate parameter varies over a space~M (e.g. the archimedean realisation), this yields a field of quantum groups G_q(p)_p in M.",
-      "latex_label": "def:quantum-gauge-group",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Quantum Planck Constant",
-      "lean_name": "QOU.QuantumObservableUniverse.QuantumPlanckConstant",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe with substrate parameter q_0 (Definition~).  The  is the element hbar_q = 1 - q_0^-1 in R.  When the substrate parameter varies over a space~M, this defines a field hbar_q colon M to R by hbar_q(p) = 1 - q(p)^-1.",
-      "latex_label": "def:quantum-planck-constant",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "$q$-Hodge star",
-      "lean_name": "QOU.QuantumObservableUniverse.QHodgeStar",
-      "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe with categorical Hodge star star (Definition~) and substrate parameter~q (Definition~).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by [ alpha wedge_q star_q beta ;=; q cdot lambdabigl(alpha^* cdot betabigr);. ] At q = 1 this recovers the categorical Hodge star: star_1 = star.  The factor of~q rescales the inner product on forms, coupling the Hodge duality to the local deformation strength.",
-      "latex_label": "def:q-hodge-star",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Categorical action",
-      "lean_name": "QOU.QuantumObservableUniverse.CategoricalAction",
-      "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe (Definition~) equipped with substrate parameter~q (Definition~), q-Hodge star star_q (Definition~), a connection nabla (Definition~), and a section psi colon  to A (a ``state''). The  is the R-valued functional  _q[nabla,, lambda,, psi] ;=; bigl(q cdot R_lambdabigr) _ ;+; _Abigl( F_nabla wedge_q star_q F_nabla bigr) _ ;+; _,  with notation as in Remark~.",
-      "latex_label": "def:categorical-action",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Categorical $q$-deformed exterior derivative",
-      "lean_name": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe with connection nabla (Definition~), substrate parameter~q (Definition~), and weight decomposition pi_H, pi_V (Definition~).  The  d_q colon Omega^k(A) to Omega^k+1(A) is [ d_q ;=; q^-1,d + (1 - q^-1),pi_V circ d, ] where d colon Omega^k(A) to Omega^k+1(A) is the differential of the non-commutative de~Rham complex.  Equivalently, d_q acts as q^-1,d on horizontal forms and as d on vertical forms:  [row sep=2.5em, column sep=2.5em] Omega^k_H",
-      "latex_label": "def:categorical-q-ext-deriv",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Particle",
-      "lean_name": "QOU.QuantumObservableUniverse.QHarmonicForm",
-      "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe with q-deformed exterior derivative d_q (Definition~).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic: [ Delta_q,alpha ;=; 0. ]",
-      "latex_label": "def:q-harmonic-form",
-      "chapter": 1
-    },
-    {
-      "narrative_term": "Fermion--Boson decomposition",
-      "lean_name": "QOU.QuantumObservableUniverse.Fermion",
-      "kind": "def",
-      "narrative_definition": "leanok Let _q^k = kerDelta_q subset Omega^k(A) denote the space of particles (Definition~).  The weight decomposition (Definition~) restricts to a short exact sequence  [column sep=2.5em] 0 ar[r] & _q,H^k ar[r, hook] & _q^k ar[r, \"pi_V\"] & _q,V^k ar[r] & 0   where _q,H^k = _q^k cap Omega^k_H(A) and _q,V^k = pi_V(_q^k).  A  is a particle in the kernel _q,H^k (purely horizontal: alpha_V = 0).  A  is a particle with alpha_V neq 0, i.e. one whose image under pi_V is non-zero.  The sequence splits vi",
-      "latex_label": "def:fermion",
-      "chapter": 1,
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe (hyperref[def:quantum-observable-universe]quantum observable universe). The  of A is the space  [ M = (A) =  p colon  to A mid p   ]  (hyperref[def:categorical-point]categorical point), equipped with the following structures derived purely within :   item  For each point p, the  _p = ker(p^* colon A to ) captures the functions vanishing at p. The quotient _p / _p^2 is functorially dual to the tangent space T_p M, giving the first-order germ decompo",
+      "latex_label": "def:spatial-realization-functor",
+      "chapter": 2,
       "ambiguity": {
         "is_ambiguous": true,
         "message": "Space without specified structure",
@@ -204,184 +172,274 @@
       }
     },
     {
-      "narrative_term": "Categorical point",
-      "lean_name": "QOU.QuantumObservableUniverse.CategoricalPoint",
+      "narrative_term": "{Substrate parameter}",
+      "lean_name": "QOU.QuantumObservableUniverse.SubstrateParameter",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum universe (Definition~).  A  of~A is a morphism [ p ;colon;  ;longrightarrow; A qquad . ] In the archimedean realisation A = (G), a point p colon  to A is a character _g colon f mapsto f(g) for some g in G; equivalently, a point of the group~G.  For a manifold M with A = C^infty(M), a point p corresponds to evaluation at p in M:  [column sep=2.5em] * ar[r, \"p\"] & M  qquadlongleftrightarrowqquad [column sep=2.5em]  ar[r, \"p\"] & A   The  at~p is _p = ker(p^* colon A to",
-      "latex_label": "def:categorical-point",
-      "chapter": 1,
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe (hyperref[def:quantum-observable-universe]quantum observable universe) with weight decomposition pi_H, pi_V (hyperref[def:weight-decomposition]weight decomposition) and Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb).  The non-commutative de Rham complex (Omega^bullet(A), d) carries two canonical endomorphisms:   item the full differential d colon Omega^k(A) to Omega^k+1(A); item the vertical differential pi_V circ d, which reta",
+      "latex_label": "def:substrate-parameter",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Quantum Gauge Group}",
+      "lean_name": "QOU.QuantumObservableUniverse.QuantumGaugeGroup",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with substrate parameter q in () (hyperref[def:substrate-parameter]substrate parameter).  The  is G_q = _q(2), the quantum group obtained by deforming the Tannakian gauge group G = ^otimes(tau) cong (2) (hyperref[thm:su2-emergence]SU(2) emergence) at the categorical parameter q. In the archimedean realisation, where the substrate parameter specialises to a substrate field over M, this yields a field of qua",
+      "latex_label": "def:quantum-gauge-group",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Quantum Planck Constant}",
+      "lean_name": "QOU.QuantumObservableUniverse.QuantumPlanckConstant",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with substrate parameter q in () cong k (hyperref[def:substrate-parameter]substrate parameter).  The  is the element hbar_q = 1 - q^-1 in k.  When the categorical substrate parameter specialises to a substrate field over a space M, this defines a field hbar_q colon M to k by hbar_q(p) = 1 - q(p)^-1.",
+      "latex_label": "def:quantum-planck-constant",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{$q$-Hodge star}",
+      "lean_name": "QOU.QuantumObservableUniverse.QHodgeStar",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot int_A!bigl(alpha^* cdot betabigr);. ]   [row sep=2.5em, column sep=3em] Omega^k(A) ar[r, \"star_q\"] ar[d, \"star\"'] & Omega^n-k(A)  Omega^n-k(A) ar[ur, ",
+      "latex_label": "def:q-hodge-star",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical Dirac operator}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalDiracOperator",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) equipped with connection nabla (hyperref[def:categorical-connection]categorical connection), substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), and Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation). The  is the morphism  [ _nabla ;=; q^-1,nabla ;+; (1 - q^-1),iota_xi,nabla ;colon; A to Omega^1(A). ]  When q = 1 this reduces to _nabla = nabla, the unde",
+      "latex_label": "def:categorical-dirac-operator",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical Lagrangian}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalLagrangian",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with categorical Dirac operator _nabla (hyperref[def:categorical-dirac-operator]categorical Dirac operator) and a state psi colon  to A. The  is the endomorphism  [ _q(nabla, psi) ;=; _nabla^,2 ;+; psi^* otimes _nabla,psi ;;in; _(A), ]  where psi^* = int_A !circ, S(psi) colon A to  is the adjoint section (antipode composed with the Frobenius form).   [row sep=2.5em, column sep=3em] A ar[r, \"_nabla\"] ar[dr,",
+      "latex_label": "def:categorical-lagrangian",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical action}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalAction",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe). A  on (, A, tau) is a morphism  colon  to  of the form    ;=; _A ;circ; bigl(_A^vee otimes Phibigr) ;circ; _A,   where Phi in _(A) is called the .   [row sep=2.5em, column sep=3em]  ar[r, \"_A\"] ar[rr, bend right=25, \"\"'] & A otimes A^vee ar[r, \"Phi otimes \"] & A otimes A^vee ar[r, \"_A\"] &   qquad   The evaluation _A colon A^vee otimes A to  and coevaluation _A colon  to A otimes A^vee are the structure ma",
+      "latex_label": "def:categorical-action",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical $q$-deformed exterior derivative}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with connection nabla (hyperref[def:categorical-connection]categorical connection), substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), and weight decomposition pi_H, pi_V (hyperref[def:weight-decomposition]weight decomposition).  The  d_q colon Omega^k(A) to Omega^k+1(A) is  [ d_q ;=; q^-1,d + (1 - q^-1),pi_V circ d, ]  where d colon Omega^k(A) to Omega^k+1(A) is the differential of the non-commutative de Rham complex.  E",
+      "latex_label": "def:categorical-q-ext-deriv",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Particle ($q$-harmonic form)}",
+      "lean_name": "QOU.QuantumObservableUniverse.QHarmonicForm",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic:   [row sep=2.5em, column sep=3em] Omega^k-1(A) ar[r, \"d_q\"] & Omega^k(A) ar[r, \"d_q\"] ar[d, \"delta_q\"'] ar[dr, phantom, \"Delta_q alpha = 0\"] & Omega^k+1(A)  & Omega^k-1(A)",
+      "latex_label": "def:q-harmonic-form",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Fermion--Boson decomposition}",
+      "lean_name": "QOU.QuantumObservableUniverse.FermionBosonDecomposition",
+      "kind": "def",
+      "narrative_definition": "Let _q^k = kerDelta_q subset Omega^k(A) denote the space of particles (hyperref[def:q-harmonic-form]q-harmonic form).  The weight decomposition (hyperref[def:weight-decomposition]weight decomposition) restricts to a short exact sequence   [column sep=2.5em] 0 ar[r] & _q,H^k ar[r, hook] & _q^k ar[r, \"pi_V\"] & _q,V^k ar[r] & 0    where _q,H^k = _q^k cap Omega^k_H(A) and _q,V^k = pi_V(_q^k).  A  is a particle in the kernel _q,H^k (purely horizontal: alpha_V = 0).  A  is a particle with alpha_V neq ",
+      "latex_label": "def:fermion-boson-decomposition",
+      "chapter": 2,
       "ambiguity": {
         "is_ambiguous": true,
-        "message": "Group without specified algebraic structure",
+        "message": "Space without specified structure",
         "candidates": [
-          "Group",
-          "TopologicalGroup",
-          "LieGroup",
-          "CommGroup"
+          "TopologicalSpace",
+          "MetricSpace",
+          "SmoothManifold",
+          "Scheme"
         ],
         "resolved_to": null
       }
     },
     {
-      "narrative_term": "Observation",
+      "narrative_term": "{Categorical point}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalPoint",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-universe]quantum universe).  A  of A is a morphism   [column sep=3em]  ar[r, \"p\"] & A  qquad",
+      "latex_label": "def:categorical-point",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Observation}",
       "lean_name": "QOU.QuantumObservableUniverse.Observation",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe over a ring~R (Definition~), let q denote the substrate parameter (Definition~), and let p colon  to A be a categorical point (Definition~).  An  is a morphism [ _p ;colon; A / _p^2 ;longrightarrow; A / _p^2 qquad , ] acting on germs at~p, satisfying:  item ; The observation preserves the Frobenius form at~p:  [row sep=2.5em, column sep=3em] A / _p^2 ar[r, \"_p\"] ar[dr, \"lambda_p\"'] & A / _p^2 ar[d, \"lambda_p\"]  &    where lambda_p is the germ of ",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe over a ring R (hyperref[def:quantum-observable-universe]quantum observable universe), let q denote the (hyperref[def:substrate-parameter]substrate parameter), and let p colon  to A be a (hyperref[def:categorical-point]categorical point).  An  is a morphism  [ _p ;colon; A / _p^2 ;longrightarrow; A / _p^2 qquad , ]  acting on germs at p, satisfying:   item  The observation preserves the Frobenius form at p:  [row sep=2.5em, column sep=3em] A / _p^2 ",
       "latex_label": "def:observation",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical instanton",
+      "narrative_term": "{Categorical instanton}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalInstanton",
       "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe (Definition~) with connection nabla (Definition~) and q-Hodge star star_q (Definition~). The connection nabla is an  if its curvature F_nabla in Omega^2(A) is star_q-self-dual: [ star_q, F_nabla ;=; F_nabla. ] Equivalently, the curvature factors through the self-dual projection:  [row sep=2.5em, column sep=3em] A otimes A ar[r, \"nabla circ nabla\"] ar[dr, \"0\"'] & Omega^2(A) ar[d, \"pi^-\"]  & Omega^-(A)   where pi^- = 2( - star_q) is the anti",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with connection nabla (hyperref[def:categorical-connection]categorical connection) and q-Hodge star star_q (hyperref[def:q-hodge-star]q-Hodge star). The connection nabla is an  if its curvature F_nabla in Omega^2(A) is star_q-self-dual:  [ star_q, F_nabla ;=; F_nabla. ]  Equivalently, the curvature factors through the self-dual projection:   [row sep=2.5em, column sep=3em] A otimes A ar[r, \"nabla circ nabl",
       "latex_label": "def:categorical-instanton",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical $q$-Lie bracket",
+      "narrative_term": "{Categorical $q$-Lie bracket}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe with Reeb derivation xi (Definition~) and substrate parameter~q (Definition~). The  on derivations of~A is [ [X, Y]_q ;=; q^-1,[X, Y] + (1 - q^-1),bigl(theta_A(X),[xi, Y] - theta_A(Y),[xi, X]bigr), ] where theta_A is the canonical 1-form dual to~xi and [X, Y] is the commutator of derivations in~.",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter). The  on derivations of A is  [ [X, Y]_q ;=; q^-1,[X, Y] + (1 - q^-1),bigl(theta_A(X),[xi, Y] - theta_A(Y),[xi, X]bigr), ]  where theta_A is the canonical 1-form dual to xi and [X, Y] is the commutator of derivations in .   [row sep=2.5em, column sep=3em] (A) otimes (A) ar[r, \"[,cdot,,c",
       "latex_label": "def:categorical-q-lie-bracket",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical $q$-deformed connection",
+      "narrative_term": "{Categorical $q$-deformed connection}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQConnection",
       "kind": "def",
-      "narrative_definition": "Let nabla be a connection on~A (Definition~) and xi the Reeb derivation (Definition~).  The  is [ nabla_q ;=; q^-1,nabla + (1 - q^-1),(xi lrcorner, nabla),theta_A. ] At q = 1, nabla_q = nabla.",
+      "narrative_definition": "Let nabla be a connection on A (hyperref[def:categorical-connection]categorical connection) and xi the Reeb derivation (hyperref[def:categorical-reeb]categorical Reeb derivation).  The  is  [ nabla_q ;=; q^-1,nabla + (1 - q^-1),(iota_xi, nabla),theta_A. ]   [row sep=2.5em, column sep=3em] A ar[r, \"nabla\"] ar[dr, \"nabla_q\"'] & Omega^1(A) otimes A ar[d, \"q^-1, ,+, (1 - q^-1),theta_A circ iota_xi\"]  & Omega^1(A) otimes A  qquad   At q = 1, nabla_q = nabla.",
       "latex_label": "def:categorical-q-connection",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "$q$-Weighted Yang--Mills--Levi functional",
+      "narrative_term": "{$q$-Weighted Yang--Mills--Levi functional}",
       "lean_name": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "kind": "def",
-      "narrative_definition": "Let (M, theta, G, P, E) be an archimedean quantum observable universe with instanton connection~A and substrate parameter~q (Definition~).  The  is [ S_q[A, theta] ;=; int_M q(p),lVert F_A^+|_H rVert^2, theta wedge (dtheta)^n, ] where q(p) = 1 + lvertlangle L_theta, F_A^+ranglervert(p) (Remark~).",
+      "narrative_definition": "Let (M, theta, G, P, E) be an archimedean quantum observable universe with instanton connection A and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is  [ S_q[A, theta] ;=; int_M q(p),lVert F_A^+|_H rVert^2, theta wedge (dtheta)^n, ]  where q(p) = 1 + lvertlangle L_theta, F_A^+ranglervert(p) (hyperref[rem:c-substrate-via-levi]-substrate via Levi form).",
       "latex_label": "def:q-yang-mills-levi",
-      "chapter": 1
+      "chapter": 2
     },
     {
-      "narrative_term": "Categorical transport equation",
-      "lean_name": "QOU.Elaboration.CategoricalTransport",
+      "narrative_term": "{Quantum flatness}",
+      "lean_name": "QOU.QuantumObservableUniverse.QuantumFlatness",
       "kind": "def",
-      "narrative_definition": "leanok Let (, A, omega) be a quantum observable universe with instanton nabla (Definition~) and q-deformed exterior derivative d_q (Definition~).  The  for a section psi in omega(J^1(A)) (Definition~) is  hbar_q;pi_V(nabla,psi) ;=; H_q(psi),  where H_q colon omega(J^1(A)) to omega(J^1(A)) is the  endomorphism H_q = -2hbar_q,Delta_q + V_q (with V_q the potential arising from the curvature F_nabla). The following diagram encodes the transport as the bottom row of the main commutative diagram:  [ro",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with gauge group G_q = ^otimes(tau) (hyperref[def:quantum-gauge-group]quantum gauge group) and connection nabla on A (hyperref[def:categorical-connection]categorical connection). Let (G_q) denote the inner-automorphism 2-group of G_q, with 2-form datum B in Omega^2(A) otimes (A).  The connection nabla is  if the curvature F_nabla equals the 2-form datum:  [ F_nabla = B. ]  This is not an independent axiom. It is a derived consequence of the instant",
+      "latex_label": "def:quantum-flatness",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical transport equation}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalTransport",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with instanton nabla (hyperref[def:categorical-instanton]categorical instanton) and q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative). The  for a section psi in tau(J^1(A)) (hyperref[def:categorical-jet]categorical jet) is   hbar_q;pi_V(nabla,psi) ;=; H_q(psi),   where H_q colon tau(J^1(A)) to tau(J^1(A)) is the  endomorphism H_q = -2hbar_q,Delta_q + V_q (with V_q the potential arising from ",
       "latex_label": "def:categorical-transport",
       "chapter": 2
     },
     {
-      "narrative_term": "Categorical $q$-Reeb flow",
-      "lean_name": "QOU.Elaboration.CategoricalQReebFlow",
+      "narrative_term": "{Categorical q-Reeb flow}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalQReebFlow",
       "kind": "def",
-      "narrative_definition": "Let xi be the Reeb derivation of~A (Definition~) and [,cdot,,cdot,]_q the q-Lie bracket (Definition~). The  xi_q is the derivation of~A defined by [ xi_q(a) ;=; q^-1,xi(a) + (1 - q^-1),[xi,, X_a]_q, ] where X_a is the horizontal derivation associated to~a (i.e. pi_H(da) = X_a lrcorner, theta_A).  The  is the one-parameter family of automorphisms phi_t^q in (A) generated by xi_q.",
+      "narrative_definition": "Let xi be the Reeb derivation of A (hyperref[def:categorical-reeb]categorical Reeb derivation) and [,cdot,,cdot,]_q the q-Lie bracket (hyperref[def:categorical-q-lie-bracket]categorical q-Lie bracket). The  xi_q is the derivation of A defined by  [ xi_q(a) ;=; q^-1,xi(a) + (1 - q^-1),[xi,, X_a]_q, ]  where X_a is the horizontal derivation associated to a (i.e. pi_H(da) = iota_X_a, theta_A). The  is the one-parameter family of automorphisms phi_t^q in (A) generated by xi_q.   [row sep=2.5em, colu",
       "latex_label": "def:categorical-q-reeb-flow",
       "chapter": 2
     },
     {
-      "narrative_term": "Categorical $q$-torsion leaf",
-      "lean_name": "QOU.Elaboration.CategoricalQTorsionLeaf",
+      "narrative_term": "{Categorical q-torsion leaf}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalQTorsionLeaf",
       "kind": "def",
-      "narrative_definition": "A  is a maximal sub-object L hookrightarrow A such that:  item ; L subset ker(pi_V) (all forms on~L are horizontal). item ; phi_t^q(L) = L for all t (the q-Reeb flow preserves~L).",
+      "narrative_definition": "A  is a maximal sub-object L hookrightarrow A such that:   item  L subset ker(pi_V) (all forms on L are horizontal). item  phi_t^q(L) = L for all t (the q-Reeb flow preserves L).",
       "latex_label": "def:categorical-q-torsion-leaf",
       "chapter": 2
     },
     {
-      "narrative_term": "Braid group on three strands",
-      "lean_name": "QOU.PathIntegrals.BraidGroup",
+      "narrative_term": "{Color tube coordinates}",
+      "lean_name": "QOU.BringsSurface.ColorTubeCoordinates",
       "kind": "def",
-      "narrative_definition": "The  is the group  B_3 =bigllanglesigma_1,sigma_2 ;big|;sigma_1sigma_2sigma_1=sigma_2sigma_1sigma_2bigrrangle.  This is the fundamental group of the configuration space of three unordered points in the plane, and is isomorphic to the fundamental group of the complement of the trefoil knot (Remark~).",
-      "latex_label": "def:braid-group",
+      "narrative_definition": "Let z = x_0/x_1 in ^1() be the spacetime ratio (hyperref[rem:braid-group-action]braid group action(i)) and let w_k, k in 0,dots,4, be the Lagrange resolvents of Bring's surface (hyperref[rem:lagrange-resolvents]Lagrange resolvents).  The  are the shifted spectral coordinates   r = w_2 - z, quad g = w_3 - z, quad b = w_4 - z,   together with the space-like shift sigma = w_1 - z.  The  is  = (r, g, b).",
+      "latex_label": "def:color-tube-coordinates",
       "chapter": 3,
       "ambiguity": {
         "is_ambiguous": true,
-        "message": "Group without specified algebraic structure",
+        "message": "Space without specified structure",
         "candidates": [
-          "Group",
-          "TopologicalGroup",
-          "LieGroup",
-          "CommGroup"
+          "TopologicalSpace",
+          "MetricSpace",
+          "SmoothManifold",
+          "Scheme"
         ],
         "resolved_to": null
       }
     },
     {
-      "narrative_term": "Symmetric group $S_3$",
-      "lean_name": "QOU.PathIntegrals.S3Group",
+      "narrative_term": "{Color tube fibers}",
+      "lean_name": "QOU.BringsSurface.ColorTubeFibers",
       "kind": "def",
-      "narrative_definition": "Imposing the involution relations sigma_i^2= on the braid group B_3 (Definition~) yields the   S_3 =bigllangle s_1,s_2 ;big|;s_1^2=s_2^2=(s_1 s_2)^3=bigrrangle.",
-      "latex_label": "def:s3-group",
+      "narrative_definition": "Let z in ^1().  The  at z is the affine curve defined over [z] by the color tube cubic; we denote it R_z, G_z, or B_z according to which color tube coordinate _z, _z, or _z is used:   R_z ;:=; bigl,_z in ^1 : _z^,3 + (4z+1),_z^,2 + (6z^2+3z+1),_z + (4z^3+3z^2+2z+1) = 0,bigr,   and G_z, B_z are defined by the same equation with coordinates _z and _z, respectively.  The coordinates are related to the Lagrange resolvents by  [ _z = w_2 - z, qquad _z = w_3 - z, qquad _z = w_4 - z. ]  As varieties, R",
+      "latex_label": "def:color-tube-fibers",
       "chapter": 3
     },
     {
-      "narrative_term": "$\\mathfrak{su}(2)$ basis",
-      "lean_name": "QOU.PathIntegrals.Su2Basis",
+      "narrative_term": "{Observed spacetime value}",
+      "lean_name": "QOU.BringsSurface.ObservedValue",
       "kind": "def",
-      "narrative_definition": "Write tau_1,tau_2,tau_3 for the Pauli matrices and set  e_a=-2,tau_a,qquad a=1,2,3,  so that the Lie bracket is  [e_a,,e_b]=epsilon_abc,e_c.",
-      "latex_label": "def:su2-basis",
+      "narrative_definition": "Let _z, _z, _z be the color tube coordinates at a point of Bring's surface (hyperref[def:color-tube-fibers]colour tube fibres).  The  is the element of ^1 recovered from the color tube coordinates by the Vieta identity:   _z + _z + _z + 4z + 1 ;=; 0.   This identity defines the projection pi_z colon R_z times G_z times B_z to ^1, (_z, _z, _z) mapsto z, which is a polynomial map over .  At a branch point z_c where chiral sheets merge (hyperref[rem:brings-smoothness]Bring's surface smoothness), th",
+      "latex_label": "def:observed-value",
+      "chapter": 3,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Smoothness without specified manifold/domain",
+        "candidates": [
+          "SmoothManifoldWithCorners",
+          "ContDiff",
+          "Smooth"
+        ],
+        "resolved_to": null
+      }
+    },
+    {
+      "narrative_term": "{Briggs--Klein affine chart}",
+      "lean_name": "QOU.BringsSurface.BriggsKleinChart",
+      "kind": "def",
+      "narrative_definition": "Let r=lvert w_1rvert^2 denote the squared modulus of the first resolvent coordinate on (hyperref[def:brings-surface]Bring's surface).  The  is the coordinate system (w_1,w_2) restricted to the open set 0<r<infty, equipped with the Hermitian metric inherited from the Fubini--Study metric on ^4.  In this chart the C_5 action is the phase rotation w_kmapstozeta^k,w_k, and the radial coordinate r is C_5-invariant.",
+      "latex_label": "def:briggs-klein-chart",
       "chapter": 3
     },
     {
-      "narrative_term": "$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$",
-      "lean_name": "QOU.PathIntegrals.Su2Generators",
+      "narrative_term": "{Quaternionic spectral resolvents}",
+      "lean_name": "QOU.BringsSurface.QuaternionicSpectralResolvents",
       "kind": "def",
-      "narrative_definition": "Every finite subgroup of (3) lifts, via the double cover (2)twoheadrightarrow(3), to a binary subgroup of (2).  For S_3cong D_3 the lift is the binary dihedral group _3subset(2) of order~12, generated by  alpha &= exp!bigl(3,e_3bigr) = e^ipi/3&0[2pt]0&e^-ipi/3, [4pt] beta &= exp(pi,e_1) = 0&i[2pt]i&0,   with alpha^3=beta^2=-I, dihedral relation betaalphabeta^-1=alpha^-1, and commutator [beta,alpha]=alpha^-2.",
-      "latex_label": "def:su2-generators",
+      "narrative_definition": "Let  denote the (hyperref[def:brings-surface]Bring's surface).  Let qin with 0<lvert qrvertle 1, and set r=-lnlvert qrvert so that lvert qrvert=e^-r. Write ,, for the standard basis of . Using the Lusztig q-exponential and q-logarithm,   exp_q(x);=;sum_n=0^infty[n]_q!, qquad ln_q(1+x);=;sum_n=1^infty(-1)^n+1[n]_q,   we define the  omega_kcolonto J^infty E by   omega_0 &;=; Bigl(!sum_j=0^4x_jBigr), ln_q(1+r) && [4pt] omega_1 &;=; ln_q(1+r), Bigl(!sum_j=0^4zeta^j,x_j+iBigr) && [4pt] omega_2 &;=; ,",
+      "latex_label": "def:quaternionic-spectral-resolvents",
       "chapter": 3
     },
     {
-      "narrative_term": "$\\mathrm{SO}(3)$ generators",
-      "lean_name": "QOU.PathIntegrals.So3Generators",
-      "kind": "def",
-      "narrative_definition": "Under the adjoint map to (3) the generators of _3 (Definition~) have images  R_alpha = -2&-2&0[3pt] 2&-2&0[3pt] 0&0&1 ,qquad R_beta = 1&0&0[2pt] 0&-1&0[2pt] 0&0&-1 :  R_alpha is a rotation by 2pi/3 about the e_3-axis (3-cycle) and R_beta is a pi-rotation about~e_1 (2-cycle).",
-      "latex_label": "def:so3-generators",
-      "chapter": 3
-    },
-    {
-      "narrative_term": "Braid involutions: twist and flip",
-      "lean_name": "QOU.PathIntegrals.BraidTwistFlip",
-      "kind": "def",
-      "narrative_definition": "Let =(w_1,w_2,w_3,w_4) be a spectral resolvent tuple. Define the two involutions  sigma_1() &= (w_2,w_1,w_4,w_3) && [4pt] sigma_2() &= (w_4,w_3,w_2,w_1) &&   As 4times 4 permutation matrices these are  sigma_1= 0&1&0&01&0&0&00&0&0&10&0&1&0 ,quad sigma_2= 0&0&0&10&0&1&00&1&0&01&0&0&0 .  On the 4-tuple these involutions generate the Klein four-group V_4=,sigma_1,sigma_2,sigma_1sigma_2, with sigma_1sigma_2colonmapsto(w_3,w_4,w_1,w_2).",
-      "latex_label": "def:braid-twist-flip",
-      "chapter": 3
-    },
-    {
-      "narrative_term": "Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$",
-      "lean_name": "QOU.PathIntegrals.QuantumSu2",
-      "kind": "def",
-      "narrative_definition": "Let qin^* with 0<lvert qrvertle 1.  The  _q((2)) is the associative -algebra generated by E,F,K,K^-1 subject to  KK^-1&=K^-1K=1, [3pt] KEK^-1&=q^2,E,quad KFK^-1=q^-2,F, [3pt] [E,F]&=q-q^-1.   In the classical limit qto 1, the generator K reduces to exp(h,e_3) and the relations recover~.",
-      "latex_label": "def:quantum-su2",
-      "chapter": 3
-    },
-    {
-      "narrative_term": "Recursive Brane Tower",
+      "narrative_term": "{Recursive Brane Tower}",
       "lean_name": "QOU.Torsion.RecursiveBraneTower",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe over a ring~R (Definition~).  Set A_0 = A.  , define A_n+1 = J^1(A_n) as the jet prolongation (Proposition~) of the Frobenius--Hopf object~A_n.  The  is the following recursive structure:  item Each jet object A_n serves as the base object for the next level; A_n is the  of A_n+1. item At each level, the comultiplication Delta_n on A_n encodes the n-th level connection, inherited from the Frobenius--Hopf structure by Proposition~.  The  is the se",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe over a ring R (hyperref[def:quantum-observable-universe]quantum observable universe).  Set A_0 = A.  , define A_n+1 = J^1(A_n) as the (hyperref[prop:jet-prolongation]jet prolongation) of the Frobenius--Hopf object A_n.  The  is the following recursive structure:   item Each jet object A_n serves as the base object for the next level; A_n is the  of A_n+1. item At each level, the comultiplication Delta_n on A_n encodes the n-th level connection, inh",
       "latex_label": "def:recursive-brane-tower",
       "chapter": 4
     },
     {
-      "narrative_term": "Yekutieli Lifting Condition",
+      "narrative_term": "{Descent involution}",
+      "lean_name": "QOU.Torsion.DescentInvolution",
+      "kind": "def",
+      "narrative_definition": "Let ell_n colon A_n hookrightarrow A_n+1 denote the ascent embedding (hyperref[prop:jet-prolongation]jet prolongation) and _n+1 colon _(A_n+1) to _(A_n) the descent homomorphism (hyperref[lem:descent]descent).  The  at level n is the endomorphism of the level-(n+1) endomorphism algebra:  [ _n ;=; ell_n circ _n+1 ;colon; _(A_n+1) ;longrightarrow; _(A_n+1). ]  Since _n+1 circ ell_n =  on _(A_n) (the descent of the ascent recovers the original endomorphism, because ell_n embeds A_n as a direct summ",
+      "latex_label": "def:descent-involution",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Yekutieli Lifting Condition}",
       "lean_name": "QOU.Torsion.YekutieliLiftingCondition",
       "kind": "def",
-      "narrative_definition": "Let  be a R-linear rigid monoidal category and let [ 1 ;longrightarrow;  ;longrightarrow; ' ;longrightarrow;  ;longrightarrow; 1 ] be a central extension of gerbes on a site~, banded by an abelian sheaf~.  We say that  satisfies the  with respect to (', , ) if, for every object x in (), the obstruction to lifting~x to an object x' in (') is classified by a single cohomology class [ kappa(x) ;in; H^2(,, ), ] and x admits a lift if and only if kappa(x) = 0.",
+      "narrative_definition": "Let  be a R-linear rigid monoidal category and let  [ 1 ;longrightarrow;  ;longrightarrow; ' ;longrightarrow;  ;longrightarrow; 1 ]  be a central extension of gerbes on a site , banded by an abelian sheaf .  We say that  satisfies the  with respect to (', , ) if, for every object x in (), the obstruction to lifting x to an object x' in (') is classified by a single cohomology class  [ kappa(x) ;in; H^2(,, ), ]  and x admits a lift if and only if kappa(x) = 0.",
       "latex_label": "def:yekutieli-lifting-condition",
       "chapter": 4
     },
     {
-      "narrative_term": "Quantum Characteristic Classes (Yekutieli obstruction)",
+      "narrative_term": "{Quantum Characteristic Classes (Yekutieli obstruction)}",
       "lean_name": "QOU.Torsion.QuantumCharacteristicClasses",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe and let A_n_n geq 0 be its recursive brane tower (Definition~).  Each transition A_n hookrightarrow A_n+1 in  defines a central extension of gerbes on the underlying site in the sense of Yekutieli~: the Frobenius--Hopf object~A_n is an object in a gerbe~_n banded by the sheaf of units , and the jet prolongation (Proposition~) produces a central extension [ 1 ;longrightarrow;  ;longrightarrow; _n+1 ;longrightarrow; _n ;longrightarrow; 1. ] The  (Y",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower).  Each transition A_n hookrightarrow A_n+1 in  defines a central extension of gerbes on the underlying site in the sense of Yekutieli [yekutieli2010]: the Frobenius--Hopf object A_n is an object in a gerbe _n banded by the sheaf of units , and the (hyperref[prop:jet-prolongation]jet prolongation) produces a central extension  [ 1 ;longrightarrow;  ;longrightarrow;",
       "latex_label": "def:quantum-characteristic-classes",
       "chapter": 4
     },
     {
-      "narrative_term": "Quantum Observable Universe as Direct Limit",
+      "narrative_term": "{Quantum Observable Universe as Direct Limit}",
       "lean_name": "QOU.Torsion.DirectLimitAlgebra",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe (Definition~); let q denote the substrate parameter.  Let A_n_n geq 0 be its recursive brane tower (Definition~).  The  is the colimit in the category of R-algebras: [ _infty ;=; varinjlim_n, _(A_n), ] taken over the tower of endomorphism algebras with the transition maps induced by the canonical embeddings A_n hookrightarrow A_n+1.  In the archimedean realisation (Example~), applying the fibre functor omega gives _infty cong varinjlim,Gamma(J^1 ",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe); let q denote the substrate parameter.  Let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower).  The  is the colimit in the category of R-algebras:  [ _infty ;=; varinjlim_n, _(A_n), ]  taken over the tower of endomorphism algebras with the transition maps induced by the canonical embeddings A_n hookrightarrow A_n+1.  In the archimedean realisation (hyperref[ex:c-quantum-observab",
       "latex_label": "def:direct-limit-algebra",
       "chapter": 4,
       "ambiguity": {
@@ -397,144 +455,219 @@
       }
     },
     {
-      "narrative_term": "Mass (categorical trace)",
+      "narrative_term": "{Mass (categorical trace)}",
       "lean_name": "QOU.Torsion.MassIdentity",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe (Definition~) and let A_n_n geq 0 be its recursive brane tower (Definition~).  Since  is a R-linear rigid monoidal category, the Frobenius--Hopf object~A admits a categorical trace  colon _(A) to R defined by the composition [ (f) ;=; bigl( ; A otimes A^vee ; A otimes A^vee ; bigr), ] where  and  are the rigidity morphisms. Let Delta colon A to A otimes A be the comultiplication (encoding the connection) and let lambda colon A to  be the Frobeniu",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) and let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower).  Since  is a R-linear rigid monoidal category, the Frobenius--Hopf object A admits a categorical trace  colon _(A) to R defined by the composition  [ (f) ;=; bigl( ; A otimes A^vee ; A otimes A^vee ; bigr), ]  where  and  are the rigidity morphisms. Let Delta colon A to A otimes A be the comultiplication (encoding the co",
       "latex_label": "def:mass-identity",
       "chapter": 4
     },
     {
-      "narrative_term": "Yekutieli triple mapping",
-      "lean_name": "QOU.Torsion.YekutieliTriple",
-      "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe and let A_n_n geq 0 be its recursive brane tower (Definition~); let q denote the substrate parameter.  Let U_i be a covering of the underlying site~ trivialising every level of the tower. The  at level~n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:  item  x_i^(n) in (_n|_U_i) are local trivialisations of the Frobenius--Hopf object~A_n. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the transition automorphism",
-      "latex_label": "def:yekutieli-triple",
-      "chapter": 4
-    },
-    {
-      "narrative_term": "Descent",
+      "narrative_term": "{Descent}",
       "lean_name": "QOU.Torsion.Descent",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe and let A_n_n geq 0 be the recursive brane tower (Definition~).  The  is the reverse traversal of the tower: starting from level~n one passes to level~n-1 by applying the restriction morphism r_n colon A_n = J^1(A_n-1) to A_n-1 (the categorical retraction of the jet embedding).  In the archimedean realisation, this restricts the connection and bundle to the base manifold M_n-1. By Theorem~(1), the descent terminates in finitely many steps, bounde",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be the (hyperref[def:recursive-brane-tower]recursive brane tower).  The  is the reverse traversal of the tower: starting from level n one passes to level n-1 by applying the restriction morphism r_n colon A_n = J^1(A_n-1) to A_n-1 (the categorical retraction of the jet embedding).  In the archimedean realisation, this restricts the connection and bundle to the base manifold M_n-1. By hyperref[thm:qu-to-qou]QU-to-QOU lifting(1), ",
       "latex_label": "def:descent",
       "chapter": 4
     },
     {
-      "narrative_term": "Descent involution",
-      "lean_name": "QOU.Torsion.DescentInvolution",
-      "kind": "def",
-      "narrative_definition": "Let ell_n colon A_n hookrightarrow A_n+1 denote the ascent embedding (Proposition~) and _n+1 colon _(A_n+1) to _(A_n) the descent homomorphism (Lemma~).  The  at level~n is the endomorphism of the level-(n+1) endomorphism algebra: [ tau_n ;=; ell_n circ _n+1 ;colon; _(A_n+1) ;longrightarrow; _(A_n+1). ] Since _n+1 circ ell_n =  on _(A_n) (the descent of the ascent recovers the original endomorphism, because ell_n embeds A_n as a direct summand of A_n+1 and _n+1 is the retraction), we have [ tau_",
-      "latex_label": "def:descent-involution",
-      "chapter": 4
-    },
-    {
-      "narrative_term": "Defining boundary of the brane",
+      "narrative_term": "{Defining boundary of the brane}",
       "lean_name": "QOU.Torsion.BraneBoundary",
       "kind": "def",
-      "narrative_definition": "Let (, A, omega) be a quantum observable universe and let A_n_n geq 0 be the recursive brane tower (Definition~).  Let _n+1 be the descent homomorphism (Lemma~).  The  of the n-th brane is the full subcategory of~ consisting of subobjects of~A_n on which the restriction morphism r_n colon A_n to A_n-1 has non-trivial kernel: [ partial A_n ;=; bigl, S hookrightarrow A_n ;bigm|; ker(r_n|_S) neq 0 ,bigr. ] In the archimedean realisation, partial A_n corresponds to the geometric locus partial E_n = ",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be the (hyperref[def:recursive-brane-tower]recursive brane tower).  Let _n+1 be the descent homomorphism (hyperref[lem:descent]descent).  The  of the n-th brane is the full subcategory of  consisting of subobjects of A_n on which the restriction morphism r_n colon A_n to A_n-1 has non-trivial kernel:  [ partial A_n ;=; bigl, S hookrightarrow A_n ;bigm|; ker(r_n|_S) neq 0 ,bigr. ]  In the archimedean realisation, partial A_n corr",
       "latex_label": "def:brane-boundary",
       "chapter": 4
     },
     {
-      "narrative_term": "Bring's surface",
-      "lean_name": "QOU.BringsSurface.BringsSurface",
+      "narrative_term": "{Yekutieli triple mapping}",
+      "lean_name": "QOU.Torsion.YekutieliTriple",
       "kind": "def",
-      "narrative_definition": "Let R be a commutative ring with 30 in R^times (i.e. (R) nmid 30).  Let x_j, jin0,dots,4, be homogeneous coordinates on ^4_R.   is the algebraic variety [ Sigma_4 ;=; !left( R[x_0,dots,x_4]Big/bigl(textstylesum x_j,; textstylesum x_j^2,; textstylesum x_j^3bigr) right), ] defined by the vanishing of the first three power sums.  Over any algebraically closed field K supseteq R, Sigma_4 is a smooth projective curve of genus~4 with automorphism group (Sigma_4) cong S_5 (lvertrvert = 120, achieving t",
-      "latex_label": "def:brings-surface",
-      "chapter": 5
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower); let q denote the substrate parameter.  Let U_i be a covering of the underlying site  trivialising every level of the tower. The  at level n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:   item  x_i^(n) in (_n|_U_i) are local trivialisations of the Frobenius--Hopf object A_n. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the t",
+      "latex_label": "def:yekutieli-triple",
+      "chapter": 4
     },
     {
-      "narrative_term": "Color tube coordinates",
-      "lean_name": "QOU.BringsSurface.ColorTubeCoordinates",
+      "narrative_term": "{Localized knot (knot at a point)}",
+      "lean_name": "QOU.Torsion.LocalizedKnot",
       "kind": "def",
-      "narrative_definition": "Let z = x_0/x_1 in ^1() be the spacetime ratio (Remark~) and let w_k, k in 0,dots,4, be the Lagrange resolvents of Bring's surface (Remark~).  The  are the shifted spectral coordinates  r = w_2 - z, quad g = w_3 - z, quad b = w_4 - z,  together with the space-like shift sigma = w_1 - z.  The  is  = (r, g, b).",
-      "latex_label": "def:color-tube-coordinates",
-      "chapter": 5,
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with projective line object (V) = G/T (hyperref[def:projective-line-object]Definition).  A  is a pair  [ (p, K) ;in; _(, A^,T) ;times;  ]  where:   item p colon  to A^,T is a categorical point of the projective line (hyperref[def:categorical-point]Definition), and item K is a knot type — an equivalence class of smooth embeddings S^1 hookrightarrow S^3 under ambient isotopy.   We write (p, K) to mean \"the knot K localized at the point p on the base ",
+      "latex_label": "def:localized-knot",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Hadron (abstract composite knot)}",
+      "lean_name": "QOU.Torsion.Hadron",
+      "kind": "def",
+      "narrative_definition": "A  is an abstract composite of fundamental knots linked together by the Hopf link.  Let K_1, ldots, K_n be fundamental (prime) knot types in the representation category . A  is an element  [ H ;in; ^n!bigl(K_1, ldots, K_nbigr) ;otimes; _ ]  where:   item ^n(-) denotes the symmetric (bosonic) or antisymmetric (fermionic) product according to spin-statistics, item _ is the Hopf link encoding the internal entanglement between the constituent knots, and item the Skein relations act on ^n(K) via the ",
+      "latex_label": "def:hadron",
+      "chapter": 4,
       "ambiguity": {
         "is_ambiguous": true,
-        "message": "Space without specified structure",
+        "message": "Category without specified universe or structure level",
         "candidates": [
-          "TopologicalSpace",
-          "MetricSpace",
-          "SmoothManifold",
-          "Scheme"
+          "Category",
+          "SmallCategory",
+          "Abelian",
+          "MonoidalCategory"
         ],
         "resolved_to": null
       }
     },
     {
-      "narrative_term": "Color tube fibers",
-      "lean_name": "QOU.BringsSurface.ColorTubeFibers",
+      "narrative_term": "{Localized hadron}",
+      "lean_name": "QOU.Torsion.LocalizedHadron",
       "kind": "def",
-      "narrative_definition": "Let z in ^1().  The  at~z is the affine curve defined over [z] by the color tube cubic~; we denote it R_z, G_z, or B_z according to which color tube coordinate _z, _z, or _z is used:  R_z ;:=; bigl,_z in ^1 : _z^,3 + (4z+1),_z^,2 + (6z^2+3z+1),_z + (4z^3+3z^2+2z+1) = 0,bigr,  and G_z, B_z are defined by the same equation with coordinates _z and _z, respectively.  The coordinates are related to the Lagrange resolvents by [ _z = w_2 - z, qquad _z = w_3 - z, qquad _z = w_4 - z. ] As varieties, R_z ",
-      "latex_label": "def:color-tube-fibers",
-      "chapter": 5
+      "narrative_definition": "A  is a hadron (hyperref[def:hadron]Definition) that has been placed at a categorical point p of the projective line (V) (hyperref[def:projective-line-object]Definition).  Formally, a  at p is a morphism in :  [ H_p ;colon;  ;longrightarrow; ^n!bigl(_pbigr) ;otimes; _p^ ]  where _p denotes the fibre of knot types at p and _p^ is the binding Hopf link at p. The morphism from  is what distinguishes a localized hadron from an abstract one: it selects a specific point in the base space where the com",
+      "latex_label": "def:localized-hadron",
+      "chapter": 4
     },
     {
-      "narrative_term": "Observed spacetime value",
-      "lean_name": "QOU.BringsSurface.ObservedValue",
+      "narrative_term": "{Fibre-compatible hadron embedding}",
+      "lean_name": "QOU.Torsion.HadronFibreEmbedding",
       "kind": "def",
-      "narrative_definition": "Let _z, _z, _z be the color tube coordinates at a point of Bring's surface (Definition~).  The  is the element of ^1 recovered from the color tube coordinates by the Vieta identity~:  _z + _z + _z + 4z + 1 ;=; 0.  This identity defines the projection pi_z colon R_z times G_z times B_z to ^1, (_z, _z, _z) mapsto z, which is a polynomial map over .  At a branch point z_c where chiral sheets merge (Remark~), the exceptional divisor is coordinatised by the limiting color vector; the observed spaceti",
-      "latex_label": "def:observed-value",
-      "chapter": 5,
+      "narrative_definition": "Let H in ^n(K) otimes _ be a hadron (hyperref[def:hadron]Definition) and let E_p denote the fibre of the knot bundle over a point p in (V) (hyperref[def:projective-line-object]Definition). A  is a morphism  [ iota_p ;colon; ^n(K) otimes _ ;longrightarrow; E_p ]  satisfying the following conditions:   item  The embedding iota_p is  in the sense that the abstract hadron data (linking, braiding, Skein decomposition) can be consistently realized within the geometric structure of the fibre E_p. Concr",
+      "latex_label": "def:hadron-fibre-embedding",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Bundle initial conditions (big bang state)}",
+      "lean_name": "QOU.Torsion.BundleInitialConditions",
+      "kind": "def",
+      "narrative_definition": "A  (or ) over the projective line (V) is a formal sum of localized hadrons at distinct base points:  [ E_0 ;=; sum_i in I (p_i,, H_i) ]  where each (p_i, H_i) is a localized hadron (hyperref[def:localized-hadron]Definition) and the base points are pairwise distinct: p_i neq p_j for i neq j. The index set I may be infinite, provided no two hadrons share the same base point.  Equivalently, E_0 is a section of the free commutative monoid on the hadron sheaf  with the distinct-support condition:  [ ",
+      "latex_label": "def:bundle-initial-conditions",
+      "chapter": 4,
       "ambiguity": {
         "is_ambiguous": true,
-        "message": "Smoothness without specified manifold/domain",
+        "message": "Bundle without specified fiber/base",
         "candidates": [
-          "SmoothManifoldWithCorners",
-          "ContDiff",
-          "Smooth"
+          "FiberBundle",
+          "VectorBundle",
+          "PrincipalBundle"
         ],
         "resolved_to": null
       }
     },
     {
-      "narrative_term": "Briggs--Klein affine chart",
-      "lean_name": "QOU.BringsSurface.BriggsKleinChart",
+      "narrative_term": "{Isotopy equivalence of bundle initial conditions}",
+      "lean_name": "QOU.Torsion.BundleIsotopyEquivalence",
       "kind": "def",
-      "narrative_definition": "Let r=lvert w_1rvert^2 denote the squared modulus of the first resolvent coordinate on Bring's surface (Definition~).  The  is the coordinate system (w_1,w_2) restricted to the open set 0<r<infty, equipped with the Hermitian metric inherited from the Fubini--Study metric on ^4.  In this chart the C_5 action is the phase rotation w_kmapstozeta^k,w_k, and the radial coordinate r is C_5-invariant.",
-      "latex_label": "def:briggs-klein-chart",
+      "narrative_definition": "Two bundle initial conditions (hyperref[def:bundle-initial-conditions]Definition) are  if they are related by a permutation of indices and an ambient isotopy within each fibre:  [ (p_i, H_i)_i in I ;sim; (p_sigma(i), H_sigma(i)')_i in I ]  where sigma is a bijection on I and each H_sigma(i)' is ambient-isotopic to H_sigma(i) in the fibre E_p_sigma(i).  This is the natural equivalence relation: the physical content of a bundle initial condition depends only on  hadron types are placed , not on th",
+      "latex_label": "def:bundle-isotopy-equivalence",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Torsion-driven knot flow}",
+      "lean_name": "QOU.Torsion.TorsionKnotFlow",
+      "kind": "def",
+      "narrative_definition": "Given a bundle initial condition E_0 = (p_i, K_i)_i=1^N (hyperref[def:bundle-initial-conditions]Definition), the  is the one-parameter family of bundle states  [ E_t ;=; biglbigl(Phi_t^q(p_i),; K_ibigr)bigr_i=1^N qquad t geq 0, ]  where Phi_t^q is the flow on (V) generated by the q-deformed Reeb vector field xi_q (hyperref[def:categorical-q-reeb-flow]Definition).  The flow has two components:   item   Each knot type K carries an intrinsic angular momentum proportional to its crossing number c(K)",
+      "latex_label": "def:torsion-knot-flow",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Braid group on three strands}",
+      "lean_name": "QOU.PathIntegrals.BraidGroup",
+      "kind": "def",
+      "narrative_definition": "The  is the group   B_3 =bigllanglesigma_1,sigma_2 ;big|;sigma_1sigma_2sigma_1=sigma_2sigma_1sigma_2bigrrangle.   This is the fundamental group of the configuration space of three unordered points in the plane, and is isomorphic to the fundamental group of the complement of the trefoil knot (hyperref[rem:trefoil-knot-group]trefoil knot group).",
+      "latex_label": "def:braid-group",
+      "chapter": 5,
+      "ambiguity": {
+        "is_ambiguous": true,
+        "message": "Group without specified algebraic structure",
+        "candidates": [
+          "Group",
+          "TopologicalGroup",
+          "LieGroup",
+          "CommGroup"
+        ],
+        "resolved_to": null
+      }
+    },
+    {
+      "narrative_term": "{Symmetric group $S_3$}",
+      "lean_name": "QOU.PathIntegrals.S3Group",
+      "kind": "def",
+      "narrative_definition": "Imposing the involution relations sigma_i^2= on the braid group B_3 (hyperref[def:braid-group]braid group) yields the    S_3 =bigllangle s_1,s_2 ;big|;s_1^2=s_2^2=(s_1 s_2)^3=bigrrangle.",
+      "latex_label": "def:s3-group",
       "chapter": 5
     },
     {
-      "narrative_term": "Quaternionic spectral resolvents",
-      "lean_name": "QOU.BringsSurface.QuaternionicSpectralResolvents",
+      "narrative_term": "{$\\mathfrak{su}(2)$ basis}",
+      "lean_name": "QOU.PathIntegrals.Su2Basis",
       "kind": "def",
-      "narrative_definition": "Let  denote the Bring's surface (Definition~).  Let qin with 0<lvert qrvertle 1, and set r=-lnlvert qrvert so that lvert qrvert=e^-r. Write ,, for the standard basis of . Using the Lusztig q-exponential and q-logarithm,  exp_q(x);=;sum_n=0^infty[n]_q!, qquad ln_q(1+x);=;sum_n=1^infty(-1)^n+1[n]_q,  we define the  omega_kcolonto J^infty E by  omega_0 &;=; Bigl(!sum_j=0^4x_jBigr), ln_q(1+r) && [4pt] omega_1 &;=; ln_q(1+r), Bigl(!sum_j=0^4zeta^j,x_j+iBigr) && [4pt] omega_2 &;=; , Bigl(!sum_j=0^4zet",
-      "latex_label": "def:quaternionic-spectral-resolvents",
+      "narrative_definition": "Write tau_1,tau_2,tau_3 for the Pauli matrices and set   e_a=-2,tau_a,qquad a=1,2,3,   so that the Lie bracket is   [e_a,,e_b]=epsilon_abc,e_c.",
+      "latex_label": "def:su2-basis",
       "chapter": 5
     },
     {
-      "narrative_term": "Descartes condition",
-      "lean_name": "QOU.DescartesUniverse.DescartesCondition",
+      "narrative_term": "{$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$}",
+      "lean_name": "QOU.PathIntegrals.Su2Generators",
       "kind": "def",
-      "narrative_definition": "A quantum observable universe (, A, omega) over~R (Definition~, Theorem~) satisfies the  if the categorical Euler characteristic [ chi(A) ;=; (_A) ;=; -6 ;in; R. ] This requires 6 in R^times (i.e. (R) nmid 6).  The class [A] in K_0() has rank -6, which by Theorem~(3--4) forces kappa_n neq 0 for all n and produces 6 branch points in the geometric descent (with total ramification R_ = 2d + 6).  A quantum observable universe satisfying the Descartes condition is called a .",
-      "latex_label": "def:descartes-condition",
-      "chapter": 6
+      "narrative_definition": "Every finite subgroup of (3) lifts, via the double cover (2)twoheadrightarrow(3), to a binary subgroup of (2).  For S_3cong D_3 the lift is the binary dihedral group _3subset(2) of order 12, generated by   alpha &= exp!bigl(3,e_3bigr) = e^ipi/3&0[2pt]0&e^-ipi/3, [4pt] beta &= exp(pi,e_1) = 0&i[2pt]i&0,    with alpha^3=beta^2=-I, dihedral relation betaalphabeta^-1=alpha^-1, and commutator [beta,alpha]=alpha^-2.",
+      "latex_label": "def:su2-generators",
+      "chapter": 5
     },
     {
-      "narrative_term": "Exceptional divisor at $p$",
-      "lean_name": "QOU.DescartesUniverse.ExceptionalDivisor",
+      "narrative_term": "{$\\mathrm{SO}(3)$ generators}",
+      "lean_name": "QOU.PathIntegrals.So3Generators",
       "kind": "def",
-      "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1() and [ O(p) ;=; p + R,N(p). ] The  at p is the ^1() fibre [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ] where picolon  to M is the blow-up map that replaces p with E_p cong ^1().",
-      "latex_label": "def:exceptional-divisor",
-      "chapter": 6
+      "narrative_definition": "Under the adjoint map to (3) the generators of _3 (hyperref[def:su2-generators]SU(2) generators) have images   R_alpha = -2&-2&0[3pt] 2&-2&0[3pt] 0&0&1 ,qquad R_beta = 1&0&0[2pt] 0&-1&0[2pt] 0&0&-1 :   R_alpha is a rotation by 2pi/3 about the e_3-axis (3-cycle) and R_beta is a pi-rotation about e_1 (2-cycle).",
+      "latex_label": "def:so3-generators",
+      "chapter": 5
     },
     {
-      "narrative_term": "Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
-      "lean_name": "QOU.DescartesUniverse.ChiralSectorCoords",
+      "narrative_term": "{Braid involutions: twist and flip}",
+      "lean_name": "QOU.PathIntegrals.BraidTwistFlip",
       "kind": "def",
-      "narrative_definition": "With notation as in Definition~, fix the substrate parameter q (Definition~) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by  (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).  The  qphi rotates each sector by q full turns as the latitude phi runs from the south pole~(0) to the north pole~(pi), encoding the chirality of the substra",
-      "latex_label": "def:chiral-sector-coords",
-      "chapter": 6
+      "narrative_definition": "Let =(w_1,w_2,w_3,w_4) be a spectral resolvent tuple. Define the two involutions   sigma_1() &= (w_2,w_1,w_4,w_3) && [4pt] sigma_2() &= (w_4,w_3,w_2,w_1) &&    As 4times 4 permutation matrices these are   sigma_1= 0&1&0&01&0&0&00&0&0&10&0&1&0 ,quad sigma_2= 0&0&0&10&0&1&00&1&0&01&0&0&0 .   On the 4-tuple these involutions generate the Klein four-group V_4=,sigma_1,sigma_2,sigma_1sigma_2, with sigma_1sigma_2colonmapsto(w_3,w_4,w_1,w_2).",
+      "latex_label": "def:braid-twist-flip",
+      "chapter": 5
     },
     {
-      "narrative_term": "Witt vector lift of a formal group",
-      "lean_name": "QOU.PAdicQuantumGroups.WittVectorLift",
+      "narrative_term": "{Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$}",
+      "lean_name": "QOU.PathIntegrals.QuantumSu2",
       "kind": "def",
-      "narrative_definition": "Let H be a commutative formal group over _pp equipped with a skewed-Poisson structure pi_< (a biderivation pi_<colon(H)otimes(H)to(H) satisfying a graded anti-symmetry and a pp-truncated Jacobi condition). The  is the formal group  over W(_pp) cong _pp obtained by integrating pi_< in the sense of~: the distribution algebra () is the pp-adic completion of the universal enveloping algebra ((H)) deformed by~pi_<.",
+      "narrative_definition": "Let qin^* with 0<lvert qrvertle 1.  The  _q((2)) is the associative -algebra generated by E,F,K,K^-1 subject to   KK^-1&=K^-1K=1, [3pt] KEK^-1&=q^2,E,quad KFK^-1=q^-2,F, [3pt] [E,F]&=q-q^-1.    In the classical limit qto 1, the generator K reduces to exp(h,e_3) and the relations recover the (2) commutation relations.",
+      "latex_label": "def:quantum-su2",
+      "chapter": 5
+    },
+    {
+      "narrative_term": "{Witt vector lift of a formal group}",
+      "lean_name": "QOU.DescartesUniverse.WittVectorLift",
+      "kind": "def",
+      "narrative_definition": "Let H be a commutative formal group over _pp equipped with a skewed-Poisson structure pi_< (a biderivation pi_<colon(H)otimes(H)to(H) satisfying a graded anti-symmetry and a pp-truncated Jacobi condition). The  is the formal group  over W(_pp) cong _pp obtained by integrating pi_< in the sense of Fresse: the distribution algebra () is the pp-adic completion of the universal enveloping algebra ((H)) deformed by pi_<.",
       "latex_label": "def:witt-vector-lift",
+      "chapter": 6
+    },
+    {
+      "narrative_term": "{Descartes condition}",
+      "lean_name": "QOU.DescartesCondition",
+      "kind": "def",
+      "narrative_definition": "A quantum observable universe (, A, tau) over R (hyperref[def:quantum-observable-universe]quantum observable universe, hyperref[thm:qu-to-qou]QU-to-QOU lifting) satisfies the  if the categorical Euler characteristic  [ chi(A) ;=; (_A) ;=; -6 ;in; R. ]  This requires 6 in R^times (i.e. (R) nmid 6).  The class [A] in K_0() has rank -6, which by hyperref[thm:qu-to-qou]QU-to-QOU lifting(3--4) forces kappa_n neq 0 for all n and produces 6 branch points in the geometric descent (with total ramificatio",
+      "latex_label": "def:descartes-condition",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{Exceptional divisor at $p$}",
+      "lean_name": "QOU.ExceptionalDivisor",
+      "kind": "def",
+      "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1() and  [ O(p) ;=; p + R,N(p). ]  The  at p is the ^1() fibre  [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ]  where picolon  to M is the blow-up map that replaces p with E_p cong ^1().",
+      "latex_label": "def:exceptional-divisor",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
+      "lean_name": "QOU.ChiralSectorCoords",
+      "kind": "def",
+      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).   The  qphi rotates each sector by q full turns as the latitude phi runs f",
+      "latex_label": "def:chiral-sector-coords",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{$q$-deformed path phase}",
+      "lean_name": "QOU.DoubleSlitQPhase",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with substrate parameter q in k^times (hyperref[def:substrate-parameter]substrate parameter), and let gamma_i (i = 1,2) be two paths from a source to a screen position y, each passing through one slit of width a separated by distance d.  The  accumulated along gamma_i is  [ Phi_q^(i)(y) ;=; hbar_q!int_gamma_i! d_q,psi ;=; q^-1,Phi_^(i)(y) ;+; (1 - q^-1),Phi_^(i)(y), ]  where:   item Phi_^(i) = (2pi/lambda),ell_i(y) is the geometric (de Broglie) pha",
+      "latex_label": "def:double-slit-q-phase",
       "chapter": 7
     }
   ]

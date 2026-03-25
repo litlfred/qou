@@ -10,15 +10,15 @@
         "hooks": [
           {
             "type": "command",
-            "command": "./scripts/check-lean.sh"
+            "command": "./scripts/session-status.sh"
           },
           {
             "type": "command",
-            "command": "./scripts/check-todos.sh"
+            "command": "./scripts/open-folio-assistant.sh"
           },
           {
             "type": "command",
-            "command": "./scripts/open-assistant.sh"
+            "command": "./scripts/lean-build-bg.sh &"
           }
         ]
       }
@@ -32,6 +32,27 @@
             "command": "./scripts/render-on-change.sh"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Check if the Bash command in $ARGUMENTS was a 'git push'. If it was, and it succeeded, find the open PR number for the current branch in litlfred/qou using mcp__github__list_pull_requests, then post a comment '/gemini review' on that PR using mcp__github__add_issue_comment. If the command was not a git push, or there is no open PR, do nothing.",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/greeting-task-selection.sh",
+            "timeout": 5
+          }
+        ]
       }
     ],
     "PreCommit": [
@@ -41,6 +62,27 @@
           {
             "type": "command",
             "command": "./scripts/check-no-lean-artifacts.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/render-pre-commit.sh",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "PostCommit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./scripts/check-upstream.sh",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "./scripts/delivery-summary.sh"
           }
         ]
       }

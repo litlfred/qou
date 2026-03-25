@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-.qou-prefs.json
+.folio-assistant-prefs.json
 build/
 
 # Generated LaTeX chapters (from content pipeline)
@@ -18,13 +18,14 @@ chapters/*.md
 *.pdf
 diff.tex
 main-flat.tex
+print-mode.tex
 build-warnings.log
 _site/
 
 # Lean build artifacts
-lean/.lake/
-lean/lake-packages/
-lean/build/
+lean-archive/.lake/
+lean-archive/lake-packages/
+lean-archive/build/
 
 # Generated graph intermediate files
 dependency-graph.dot
@@ -34,6 +35,20 @@ node_modules/
 deploy/.env
 deploy/authorized-emails.txt
 deploy/Caddyfile
+deploy/viewer/
 scripts/mcp-server/bun.lock
+schemas/bun.lock
 viewer/paper.js
-.qou-feedback/
+# Root-level dev dependencies (TypeDoc etc.)
+package-lock.json
+bun.lock
+
+# Work-tracking todos (gitignored — survives branch switches)
+todos/
+
+# Local agent state (per-machine, not shared)
+.claude/local-state/
+.folio-assistant-tmp/
+
+# Feedback worktree (local checkout of main for committing feedback)
+.feedback-wt/

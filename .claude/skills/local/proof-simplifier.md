@@ -1,5 +1,6 @@
 ---
 name: proof-simplifier
+roles: [collaborator, owner]
 description: >
   Analyse small clusters (2–4) of connected proofs to find
   simplifications: shared lemmas, redundant constructions, factored
@@ -14,7 +15,7 @@ allowed-tools: Read Edit Bash Grep Glob Agent
 Review existing proofs in small connected clusters (2–4 declarations that
 depend on each other) and identify simplifications across them.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, use it for analysis and alternatives:
 
@@ -96,8 +97,6 @@ stays consistent.
 (`content_validate`) after changes to verify:
 - The `.ts` manifest's `lean.decl` still matches the (possibly renamed)
   Lean declaration.
-- The `status` field is accurate — if simplification removes all sorry
-  stubs, update status from `has_sorry` to `proved`.
 - The `uses[]` dependencies are still correct — if a shared lemma was
   extracted or a dependency removed, update `uses[]` accordingly.
 
@@ -106,6 +105,26 @@ stays consistent.
 candidates for proof simplification. The `uses[]` graph identifies the
 cluster boundary — simplify within a connected subgraph of content
 objects, not across unrelated blocks.
+
+## Common anti-patterns (mechanically fixable)
+
+These patterns should be flagged and fixed automatically during any
+simplification pass:
+
+| Anti-pattern | Fix |
+|-------------|-----|
+| `by exact X` | `X` (drop tactic wrapper) |
+| `by rfl` | `rfl` (term-mode) |
+| `unfold f; simp [...]` | `simp [f, ...]` |
+| `unfold f; rw [h₁, h₂, ...]` | `simp [f, h₁, h₂, ...]` |
+| `have h := foo; linarith` | `linarith [foo]` |
+| `have h := foo; exact h` | `exact foo` |
+| `apply f; apply g x` | `exact f (g x)` |
+| `rw [h]; simp [sub_self]` | `simp [h, sub_self]` |
+| `@Zero.zero T inst.toZero` | `(0 : T)` |
+| Theorem restating a structure field | Delete it; use `s.field` directly |
+| `rw [retraction]; rfl` | `congr_fun (congr_arg DFunLike.coe retraction) x` |
+| Duplicate docstrings on a field | Keep only the latest version |
 
 ## Constraints
 

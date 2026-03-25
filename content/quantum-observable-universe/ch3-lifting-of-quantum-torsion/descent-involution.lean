@@ -1,0 +1,43 @@
+/-!
+# QOU.DescentInvolution — The descent involution τₙ = ℓₙ ∘ 𝔡_{n+1}
+
+The descent involution is the idempotent endomorphism on End_𝒞(A_{n+1})
+formed by composing jet prolongation with descent.  Its eigenspace
+decomposition gives the descended/transient splitting.
+
+## References
+
+- [manuscript] §3 Lifting and Descent
+-/
+
+import Mathlib.Algebra.Module.Basic
+
+namespace QOU
+
+variable {R : Type*} [CommRing R]
+
+/-- The descent involution τₙ = ℓₙ ∘ 𝔡_{n+1} at level n of the brane tower.
+
+    Given ascent ℓₙ : End(Aₙ) → End(A_{n+1}) and descent 𝔡_{n+1},
+    the composition τₙ is idempotent: τₙ² = τₙ.
+
+    LaTeX: `\label{def:descent-involution}` -/
+-- Ref: [manuscript] §3, Definition: Descent involution
+structure DescentInvolution (M : Type*) [AddCommGroup M] [Module R M] where
+  /-- The ascent embedding ℓₙ. -/
+  ascent : M →ₗ[R] M
+  /-- The descent map 𝔡_{n+1}. -/
+  descent : M →ₗ[R] M
+  /-- Retraction: 𝔡 ∘ ℓ = id. -/
+  retraction : descent ∘ₗ ascent = LinearMap.id
+  /-- The involution τ = ℓ ∘ 𝔡. -/
+  tau : M →ₗ[R] M := ascent ∘ₗ descent
+
+/-- τₙ is idempotent. -/
+-- Ref: [manuscript] §3
+theorem DescentInvolution.tau_idem {M : Type*} [AddCommGroup M] [Module R M]
+    (di : DescentInvolution (R := R) M) :
+    di.tau ∘ₗ di.tau = di.tau := by
+  ext x; simp [DescentInvolution.tau, LinearMap.comp_apply, di.retraction]
+
+end QOU

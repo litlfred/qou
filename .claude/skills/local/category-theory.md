@@ -1,5 +1,6 @@
 ---
 name: category-theory
+roles: [collaborator, owner]
 description: >
   Category Theory formalization skill — handles diagram chasing, universal
   properties, functorial translation, and whiskering in Lean 4.  Integrates
@@ -17,7 +18,7 @@ Category theory is the "connective tissue" of Mathlib.  In Lean 4, a
 can have (via typeclasses).  This skill provides the tactics, patterns,
 and glossary requirements for effective category-theoretic formalization.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, it supercharges category theory work:
 
@@ -340,11 +341,34 @@ section.  In pre-substrate material:
 Definitions in Ch.1 use a single running example that builds
 progressively:
 1. $\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$ (rigid monoidal)
-2. $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
-   \omega)$ (quantum universe)
-3. Same triple with the three observability axioms verified (QOU)
+2. $(\mathbf{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
+   \tau)$ (quantum universe)
+3. Same triple with the four observability axioms verified (QOU)
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
+
+### PawLei Basis and Cross-Paper Dependencies
+
+The **PawLei basis** (Pawlowski–Leitner, abbreviated PawLei) provides
+a canonical basis for intertwiner spaces
+$\mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$.
+
+This depends on the **PBW theorem over commutative rings**
+(`cor:pbw` in the `unital-groebner-bases` paper), which is a
+cross-paper dependency:
+
+```typescript
+uses: ["unital-groebner-bases:cor:pbw"],  // qualified cross-paper ref
+```
+
+Lean declarations use the `PawLei` prefix:
+- `QOU.PawLeiBasis` — basis structure
+- `QOU.PawLeiInnerProduct` — orthogonality
+- `QOU.pawLeiDim` — dimension formula
+
+The chain: PBW (Gröbner bases) → $U(\mathfrak{su}(2))$ monomial basis
+→ contraction with volume form $\epsilon$ → PawLei basis for
+intertwiners → hadron decomposition.
 
 ## Content Object Integration
 
@@ -370,6 +394,28 @@ categorical definitions a theorem depends on. This mirrors the Lean import
 graph and enables scoped validation — when a monoidal structure changes,
 all blocks that `uses` it are flagged for re-check.
 
+## Glossary Chapter (Ch 8)
+
+Chapter 8 contains glossary blocks (`remark` with tag `"glossary"`) that
+map paper terminology to Mathlib declarations. For category-theoretic
+terms, the glossary provides:
+
+- Canonical Mathlib name (e.g. `CategoryTheory.ExactPairing`)
+- Import path (e.g. `Mathlib.CategoryTheory.Monoidal.Rigid.Basic`)
+- Notation (e.g. `X ⊗ Y`, `α_ X Y Z`)
+- Relationship to paper's usage
+
+**When introducing a category-theoretic term** in any chapter `.md`:
+1. Check Ch 8 for an existing glossary entry
+2. If the term is a Mathlib synonym → add a glossary block, not a definition
+3. If the term adds new structure → add a definition block in the chapter
+4. Cross-reference glossary entries using `[term](#rem:glossary-<name>)`
+
+Current glossary entries cover: monoidal category, braided/symmetric
+monoidal, rigid category, exact pairing, left/right dual, pivotal
+category, compact closed category, monoidal functor, $R$-linear category,
+and hom-set.
+
 ## Checklist
 
 - [ ] All diagram chase proofs attempt `aesop_cat` first
@@ -379,5 +425,8 @@ all blocks that `uses` it are flagged for re-check.
 - [ ] Knot types are defined combinatorially when possible
 - [ ] `slice_lhs` / `slice_rhs` used for manual composition navigation
 - [ ] LaTeX definitions include tikzcd diagrams (Herrlich–Strecker style)
+- [ ] Categories use bold notation ($\mathbf{C}$, $\mathbf{Rep}$), not calligraphic $\mathcal{C}$
+- [ ] Fibre functor is $\tau$ (not $\omega$ or $U$); minimise its appearance
 - [ ] No $q$ appears before the substrate parameter section
 - [ ] Running examples chain via "Continuing Example" cross-references
+- [ ] New Mathlib-equivalent terms have glossary entries in Ch 8

@@ -1,5 +1,6 @@
 ---
 name: proof-status-tracking
+roles: [reader, collaborator, owner]
 description: >
   Maintain the proof-objects.json manifest tracking formalization status,
   review records, and LaTeX-to-Lean linkages.  Generate status dashboards
@@ -16,7 +17,7 @@ truth for which mathematical objects have been formalized, reviewed, and
 approved.  Lean declarations are referenced by URL (doc-gen4 pages), not
 duplicated in JSON.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools for live status**:
 
@@ -156,10 +157,10 @@ objects, not the other way around.
   optional.
 - `prose` / `equation` / `diagram`: `.ts` + `.md` only; no Lean.
 
-**Status field.** The `.ts` manifest carries `status: "not_started" |
-"stated" | "has_sorry" | "proved" | "mathlib_ok"`. When updating
-`proof-objects.json`, read status from the `.ts` manifests first. Never
-write a status to `proof-objects.json` that contradicts the `.ts` source.
+**Status field.** Formalization status is **not stored** in `.ts`
+manifests. It is derived at build time by CI scripts from `.lean` file
+content (sorry detection, build output) and written to `proof-objects.json`.
+Do not add `status` fields to content block `.ts` files.
 
 **Dependency tracking.** The `uses[]` array in `.ts` manifests forms the
 dependency DAG. Use it to populate the dependency edges in

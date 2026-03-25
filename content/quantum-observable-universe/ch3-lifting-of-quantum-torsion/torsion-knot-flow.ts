@@ -5,10 +5,9 @@ export default definition({
   title: "Torsion-driven knot flow",
   tags: ["torsion", "flow", "knot", "geodesic", "categorical"],
   lean: {
-    decl: "QOU.TorsionKnotFlow",
+    decl: "QOU.ParticleState",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: [
     "def:bundle-initial-conditions",
     "def:localized-knot",

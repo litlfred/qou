@@ -1,5 +1,5 @@
 In the archimedean setting
-([Examples](#def:c-quantum-universe)--[](#def:c-quantum-observable-universe)),
+([Examples](#ex:c-quantum-universe)--[](#ex:c-quantum-observable-universe)),
 the categorical structures specialise to familiar geometric objects:
 
 - **Volume constraint**

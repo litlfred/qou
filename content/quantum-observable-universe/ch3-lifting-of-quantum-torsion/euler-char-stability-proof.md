@@ -1,33 +1,48 @@
 
-By the construction of the
-([recursive brane tower](#def:recursive-brane-tower)), $E_{n+1}$ is the bundle of
-orthonormal frames of the first jet bundle $J^1 E_n$
-([jet prolongation](#prop:jet-prolongation)).  The Euler characteristic of a
-fibre bundle $F \hookrightarrow E_{n+1} \to E_n$ satisfies the
-multiplicativity formula
+The categorical Euler characteristic $\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n})$
+is the rigidity trace of the identity, computed as the composition
 $$
-  \chi(E_{n+1}) \;=\; \chi(E_n) \cdot \chi(F),
+  \chi(A_n)
+  \;=\;
+  \bigl(\mathbf{1}
+  \xrightarrow{\;\mathrm{coev}_n\;}
+  A_n \otimes A_n^{\vee}
+  \xrightarrow{\;\mathrm{id} \otimes \mathrm{id}\;}
+  A_n \otimes A_n^{\vee}
+  \xrightarrow{\;\mathrm{ev}_n\;}
+  \mathbf{1}\bigr)
+  \;=\;
+  \mathrm{ev}_n \circ \mathrm{coev}_n.
 $$
-provided the fibre $F$ has the homotopy type of a finite CW-complex and the
-base acts trivially on $H^*(F;\, \mathbb{Q})$.  In the brane tower the fibre
-is $\mathrm{SU}(2) \cong S^3$, which has $\chi(S^3) = 0$ for the odd-dimensional
-sphere.  However, the relevant bundle is not $\mathrm{SU}(2)$ itself but the
-*projectivised* frame bundle, whose typical fibre is
-$\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$ with
-$\chi(S^2) = 2$.  Nonetheless, the Euler characteristic is preserved for the
-following reason.
 
-The Leray--Serre spectral sequence of
-$S^2 \hookrightarrow E_{n+1} \to E_n$ has $E_2^{p,q} = H^p(E_n;\,
-H^q(S^2;\, \mathbb{Z}))$.  The quantum characteristic classes $\kappa_n$
-([quantum characteristic classes](#def:quantum-characteristic-classes)) are precisely the
-obstructions to trivial monodromy of the fibre cohomology $H^*(S^2)$.  By
-the vanishing condition of the quantum observable universe axioms---which
-forces $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$---the monodromy
-representation of $\pi_1(E_n)$ on $H^*(S^2;\, \mathbb{Z})$ is trivial (the
-adjoint bundle has no invariant sections to twist the fibre cohomology).
-Consequently the spectral sequence collapses at the $E_2$ page.  The
-preservation of the Euler characteristic follows from the following
-observation.  The base manifold $M_0$ is invariant under jet prolongation:
-each level of the brane tower changes the bundle data but not the base
-geometry.  Hence $\chi(M_0)$ is preserved at every level.
+Jet prolongation is a functor on $\mathbf{C}$ that preserves the
+Frobenius--Hopf structure
+([jet prolongation](#prop:jet-prolongation)): the prolonged object
+$A_{n+1}$ inherits its rigidity data from $A_n$.  Specifically, the
+unit $\eta_{n+1}$ and counit $\varepsilon_{n+1}$ of $A_{n+1}$ are the
+images of $\eta_n$ and $\varepsilon_n$ under the prolongation functor,
+and likewise for the evaluation and coevaluation morphisms:
+$\mathrm{ev}_{n+1} = \mathrm{ev}_n$ and
+$\mathrm{coev}_{n+1} = \mathrm{coev}_n$ as elements of
+$\mathrm{Hom}(\mathbf{1}, \mathbf{1}) \cong R$.
+
+Therefore:
+$$
+  \chi(A_{n+1})
+  \;=\;
+  \mathrm{ev}_{n+1} \circ \mathrm{coev}_{n+1}
+  \;=\;
+  \mathrm{ev}_n \circ \mathrm{coev}_n
+  \;=\;
+  \chi(A_n).
+$$
+
+By induction, $\chi(A_n) = \chi(A_0)$ for all $n \geq 0$.
+
+The vanishing condition
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ ensures that the
+prolongation functor cannot introduce non-trivial twisting of the trace:
+there are no non-scalar $G_q$-invariant endomorphisms that could modify
+the rigidity pairing at each level.  (For the archimedean verification
+via the Leray--Serre spectral sequence, see
+[archimedean proof](#prf:euler-char-stability-C).)

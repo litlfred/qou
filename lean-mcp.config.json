@@ -1,16 +1,30 @@
 {
-  "domain": "lean.litlfred.org",
-  "port": 443,
-  "oauth_provider": "google",
-  "authorized_emails": ["litlfred@gmail.com"],
-  "image": "ghcr.io/litlfred/qou/lean-mcp",
+  "image": "ghcr.io/litlfred/qou/paper-assistant",
   "transport": "streamable-http",
   "mcp_internal_port": 8080,
+  "viewer_port": 8080,
   "self_update_interval_seconds": 60,
   "healthcheck_path": "/mcp",
+  "folio": {
+    "domain": "folio.litlfred.org",
+    "viewer_dir": "viewer",
+    "clear_cache_on_update": true
+  },
+  "auth": {
+    "google": {
+      "whitelist": "deploy/google-viewers.txt",
+      "role": "viewer"
+    },
+    "github": {
+      "whitelist": "deploy/github-collaborators.txt",
+      "role": "collaborator"
+    },
+    "owner": "litlfred",
+    "session_max_age_hours": 24
+  },
   "hetzner": {
-    "server_type": "cx22",
-    "location": "fsn1",
+    "server_type": "cx23",
+    "location": "nbg1",
     "image": "ubuntu-24.04"
   }
 }

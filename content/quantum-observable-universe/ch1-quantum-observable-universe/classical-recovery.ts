@@ -1,0 +1,13 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:classical-recovery",
+  title: "Classical recovery of q-deformed operators",
+  tags: ["q-deformation", "classical-limit"],
+  uses: [
+    "def:categorical-q-ext-deriv",
+    "def:categorical-q-lie-bracket",
+    "def:categorical-q-connection",
+    "ex:q-reeb-vector-field",
+  ],
+});

@@ -1,3 +1,8 @@
+---
+name: content-validation
+roles: [reader, collaborator, owner]
+---
+
 # Content Validation Skill
 
 ## Role
@@ -40,31 +45,67 @@ content/
 ### Level 2: Constraint rules
 - **md-exists**: Every block has a sibling `.md` file
 - **lean-file-exists**: Definitions have a sibling `.lean` or `lean.file` reference
+- **no-orphan-lean**: Every `.lean` file MUST have a `.ts` manifest sibling — `.lean` files are NEVER standalone, always part of a content triple (`.ts` + `.md` + `.lean`)
 - **uses-resolve**: All labels in `uses[]` exist in the document
+  (or are qualified cross-paper refs in `"paper-dir:label"` format,
+  which are skipped — resolved at folio level)
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
-### Level 3: AST validation
+### Level 3: LaTeX AST validation
 - Rendered LaTeX parses through unified-latex without errors
 - Environment balance (\begin matches \end)
 - No malformed macro syntax
 - No unbalanced braces
 
+### Level 4: TeX snippet validation (in .md files)
+
+The `.md` files are parsed using **remark + remark-math** (formal markdown
+grammar with math extension). Each extracted TeX snippet is validated via
+**unified-latex** AST parsing. This catches:
+
+- Non-math environments inside math mode (e.g. `\begin{itemize}` inside `$$`)
+- Unbalanced braces or environments in inline/display math
+- Malformed TeX in fenced ` ```tex ` blocks
+
+The markdown AST node types used:
+
+| Markdown syntax | remark AST node | Validated as |
+|-----------------|-----------------|-------------|
+| `$...$` | `inlineMath` | Math-mode TeX |
+| `$$...$$` | `math` (display) | Display-mode TeX |
+| ` ```tex ``` ` | `code` (lang=tex) | Raw LaTeX |
+
 ## Running validation
 
 ```bash
-# Validate all objects in a paper
-cd content && bun run pipeline/validate.ts quantum-observable-universe/ch1-quantum-observable-universe
+# Validate all objects in a paper (schema + constraints + LaTeX AST)
+cd content && bun run pipeline/validate.ts quantum-observable-universe/
 
 # Full build with validation
 cd content && bun run pipeline/build.ts quantum-observable-universe/quantum-observable-universe.ts
+
+# Validate TeX snippets in .md files (AST-based, no compilation)
+cd content && bun run pipeline/validate-tex.ts
+
+# Validate specific file
+cd content && bun run pipeline/validate-tex.ts --file path/to/block.md
+
+# Validate with pdflatex compilation (slower, catches more)
+cd content && bun run pipeline/validate-tex.ts --compile
+
+# JSON output (for programmatic use by skills)
+cd content && bun run pipeline/validate-tex.ts --json
 ```
 
 ## When to validate
 
 1. **Before commit**: Run validation on changed content objects
-2. **After editing .md files**: Ensure LaTeX rendering still valid
+2. **After editing .md files**: Run `validate-tex.ts` on changed files —
+   this uses the remark AST parser to extract and validate all TeX snippets
 3. **After adding new blocks**: Check constraints (lean file exists, labels resolve)
 4. **After modifying schema**: Run validation across all content
+5. **After creating .md content**: Any skill that creates or edits `.md` files
+   MUST run `validate-tex.ts --file <path>` before considering the task complete
 
 ## Adding custom constraints
 
@@ -88,6 +129,42 @@ This skill is invoked automatically by the editor's **content-change fallback**
 (see `editor.md § Content-change fallback`). Whenever any content is modified
 during a session, the editor runs `content_validate` on affected chapters
 before the task is considered complete.
+
+## Block-kind classification rules
+
+When auditing or creating blocks, use these criteria to assign the correct kind:
+
+| Criterion | Kind | Example |
+|-----------|------|---------|
+| Introduces new structure/axioms | `definition` | quantum-universe, categorical-connection |
+| Asserts a consequence of upstream defs | `proposition` / `theorem` | spin-labels (consequence of SU(2) emergence) |
+| Proves something can be *constructed* from upstream | `theorem` (existence) | weight-decomposition-exists |
+| Lightweight wrapper / synonym for Mathlib type | `remark` (glossary) | rigid-monoidal-category |
+
+**Key test**: "Does this block introduce new mathematics, or does it assert
+something that *follows* from existing definitions?" If the latter, it should
+be a proposition/theorem, not a definition.
+
+**Conditional definitions**: Some definitions are only meaningful given
+upstream results (e.g. `def:maximal-torus` requires `thm:su2-emergence`).
+These remain definitions but MUST list the upstream theorem in `uses[]`.
+
+## Dependency completeness checks
+
+When auditing `uses[]` arrays:
+
+1. **Narrative cross-refs**: Every `[text](#label)` in the `.md` file should
+   have a corresponding entry in `uses[]` (unless it's a forward reference
+   or example/remark reference).
+2. **Gauge group references**: Any block that references `G`, `SU(2)`,
+   or the gauge group should depend on `thm:su2-emergence` (directly or
+   through a block like `def:maximal-torus` that already depends on it).
+3. **Existence links**: Every definition that bundles fields should have a
+   corresponding existence theorem (`thm:<name>-exists`) that proves the
+   fields can be constructed from upstream structures.
+4. **Lazy-loading caveat**: The viewer dep graph force-loads all sections
+   before building edges. If edges appear missing in the UI, verify the
+   data is correct before assuming the `uses[]` is wrong.
 
 ## Integration with test-engineer
 

@@ -8,12 +8,12 @@ export default definition({
     decl: "QOU.CategoricalQExtDeriv",
     validation: "leanok",
   },
-  status: "not_started",
   uses: [
     "def:quantum-observable-universe",
     "def:categorical-connection",
     "def:substrate-parameter",
     "def:weight-decomposition",
+    "def:positive-definite-dagger",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-q-ext-deriv-0.svg", blockIndex: 0, hash: "1098849523c8" },

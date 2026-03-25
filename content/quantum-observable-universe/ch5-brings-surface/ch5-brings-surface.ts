@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Bring's Surface.
+ * Chapter 5 (was 4): Bring's Surface.
  *
  * The classical and quantum geometry of Bring's surface as a
  * quantum observable universe: spectral resolvents, color tube
@@ -16,7 +16,6 @@ export default chapter({
       title: "Bring's surface as a QOU",
       label: "sec:brings-qou",
       blocks: [
-        "descent-to-zero",
         "brings-surface",
         "brings-realisations",
         "brings-is-qou",
@@ -81,6 +80,7 @@ export default chapter({
       title: "Quaternionic spectral resolvents",
       label: "sec:quaternionic-resolvents",
       blocks: [
+        "quaternion-so3-motivation",
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",

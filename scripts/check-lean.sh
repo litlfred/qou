@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Session-start hook: check local Lean, fall back to remote MCP.
 #
-# Priority: local lean-lsp-mcp (stdio) > remote lean-lsp-mcp (HTTP)
+# Priority: local lean installed locally
 #
 # Reads lean-mcp.config.json for the remote server domain.
 # Prints JSON status for Claude Code and the editor skill to consume.
@@ -9,7 +9,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-LEAN_DIR="$REPO_ROOT/lean"
+LEAN_DIR="$REPO_ROOT/lean-archive"
 LAKEFILE="$LEAN_DIR/lakefile.toml"
 MANIFEST="$LEAN_DIR/lake-manifest.json"
 CONFIG="$REPO_ROOT/lean-mcp.config.json"
@@ -66,6 +66,24 @@ if [ "$LOCAL_OK" = true ]; then
     if [ ! -d "$LEAN_DIR/.lake/packages/mathlib/.lake/build/lib" ] 2>/dev/null; then
         CACHE_OK=false
     fi
+
+    # Auto-fetch missing deps/cache in background
+    if [ "$DEPS_READY" = false ] || [ "$CACHE_OK" = false ]; then
+        LOCK="$LEAN_DIR/.lake/.cache-fetch.lock"
+        if ! [ -f "$LOCK" ]; then
+            touch "$LOCK"
+            (
+                cd "$LEAN_DIR"
+                if [ "$DEPS_READY" = false ]; then
+                    lake update >> /tmp/lake-cache-fetch.log 2>&1 || true
+                fi
+                if [ "$CACHE_OK" = false ]; then
+                    lake exe cache get >> /tmp/lake-cache-fetch.log 2>&1 || true
+                fi
+                rm -f "$LOCK"
+            ) &
+        fi
+    fi
 fi
 
 # ── Determine local readiness ────────────────────────────────────
@@ -108,9 +126,9 @@ case "$MODE" in
         if [ "$UV_OK" = false ]; then
             MSG="uv not installed. Run: curl -LsSf https://astral.sh/uv/install.sh | sh"
         elif [ "$DEPS_READY" = false ]; then
-            MSG="Dependencies missing. Run: cd lean && lake update && lake exe cache get"
+            MSG="Dependencies missing — fetching in background (log: /tmp/lake-cache-fetch.log)"
         elif [ "$CACHE_OK" = false ]; then
-            MSG="Mathlib cache missing. Run: cd lean && lake exe cache get"
+            MSG="Mathlib cache missing — fetching in background (log: /tmp/lake-cache-fetch.log)"
         fi
         ;;
     none)

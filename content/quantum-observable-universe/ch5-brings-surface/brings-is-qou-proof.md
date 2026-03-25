@@ -3,14 +3,14 @@
 The quantised coordinate ring $A = \mathcal{O}_q(\mathrm{SU}(2))$ is a
 Hopf algebra over $R[q, q^{-1}]$ with antipode $S$, counit $\varepsilon$,
 and the Haar state $h_q \colon A \to R$ furnishing a non-degenerate
-Frobenius form $\lambda = h_q$ (non-degeneracy follows from the
+Frobenius form $\int_A = h_q$ (non-degeneracy follows from the
 faithfulness of the Haar state for compact quantum groups).  The category
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is $R$-linear, rigid
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is $R$-linear, rigid
 monoidal (duals given by contragredient representations), and the forgetful
-functor $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is exact,
+functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is exact,
 faithful, and monoidal.  The Woronowicz $3D$-calculus
 $\Omega^1(A) = \ker(\varepsilon) / \ker(\varepsilon)^2$ is a
-$3$-dimensional $A$-bimodule in $\mathcal{C}$, providing the differential
+$3$-dimensional $A$-bimodule in $\mathbf{C}$, providing the differential
 calculus axiom.
 
 *Item (2).*
@@ -32,7 +32,7 @@ classification theorem, verifying the Yekutieli lifting condition
 
 *Item (4).*
 The categorical trace of $\mathrm{id}_A$ in
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is the quantum dimension
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is the quantum dimension
 $\mathrm{tr}(\mathrm{id}_A) = [N]_q \cdot [N-1]_q / [1]_q$ evaluated at
 $N = 2$ (the rank of $\mathrm{SU}(2)$).  At generic $q$, this recovers
 the topological Euler characteristic of $\Sigma_4$:

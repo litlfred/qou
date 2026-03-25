@@ -1,17 +1,18 @@
 
-The topological mass conjecture (Conjecture 4.25) gives
+The topological mass formula
+([topological mass formula](#prop:topological-mass-formula)) gives
 $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{\,2}$ with
 $\hbar_q = 1 - q^{-1}$ (see the proof of
-[skein mass relation](#prop:skein-mass-relation)). Rearranging yields
+[skein mass relation](#rem:skein-mass-relation)). Rearranging yields
 the equation above. Substituting the numerical values,
 $$
   (1 - q^{-1})^{2}
-  = \frac{2.02988}{206.768}
+  = \frac{2.02988}{206.7683}
   \approx 0.009\,817,
   \qquad
   1 - q^{-1} \approx 0.09908,
   \qquad
-  q \approx 1.1097.
+  q \approx 1.10997.
 $$
 Since $f(q) = (1 - q^{-1})^{2}$ is strictly increasing for $q > 1$ and maps
 $(1,\infty)$ onto $(0,1)$, the root is unique. The uncertainty

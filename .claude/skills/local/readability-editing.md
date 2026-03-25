@@ -1,3 +1,8 @@
+---
+name: readability-editing
+roles: [reader, collaborator, owner]
+---
+
 # Readability Editing Skill
 
 ## Purpose
@@ -47,6 +52,10 @@ ideas to a graduate-level reader.
 
 ### 5. Consistency
 - Notation introduced in one section is used consistently throughout.
+- Categories use bold ($\mathbf{C}$, $\mathbf{Rep}$), never calligraphic
+  $\mathcal{C}$. Calligraphic is reserved for sheaves, sites, algebras.
+- The fibre functor is $\tau$ throughout; minimise its appearance where the
+  QOU datum $(\mathbf{C}, A)$ suffices.
 - Acronyms are expanded on first use and used bare thereafter.
 - Displayed equations ending a sentence include a period inside the
   environment.
@@ -86,6 +95,25 @@ introduces/removes dependencies, update the sibling `.ts` manifest:
 expected: `prose` blocks have no formal requirements; `definition` blocks
 must have self-contained definitions; `theorem` blocks should state the
 result clearly. Respect these expectations when restructuring content.
+
+## TeX snippet validation (mandatory after edits)
+
+After editing any `.md` file, run the TeX snippet validator on changed files:
+
+```bash
+cd content && bun run pipeline/validate-tex.ts --file <path-to-changed.md>
+```
+
+This uses **remark + remark-math** to parse the markdown AST and extracts all
+TeX snippets (`$...$`, `$$...$$`, ` ```tex ``` ` blocks), then validates each
+via **unified-latex** AST parsing. Fix any errors before considering the edit
+complete.
+
+If TeX validation fails, fix the problematic snippet and re-validate before
+proceeding. Common issues:
+- Unbalanced braces in inline math
+- Non-math environments inside `$$...$$` blocks
+- Malformed macros in ` ```tex ``` ` fenced blocks
 
 ## Mandatory fallback participation
 

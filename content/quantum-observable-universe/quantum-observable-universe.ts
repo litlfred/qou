@@ -10,26 +10,31 @@ import { paper, chapterRef } from "../schema/builders";
 export default paper({
   title: "Quantum Observable Universe",
   authors: ["Frederick Carl Leitner"],
-  affiliations: ["World Health Organization"],
+  affiliations: [],
   date: "2026-03-21",
+  abstract:
+    "This paper presents a mathematical framework for the Quantum Observable " +
+    "Universe (QOU).  We introduce the notion of quantum torsion in this setting, " +
+    "study its lifting to higher categorical structures, and examine the resulting " +
+    "interpretational and experimental consequences.  Speculative extensions are " +
+    "discussed in the final chapter.",
   macros: {
     pp:    { tex: "\\mathfrak{p}",  unicode: "𝔭" },
+    nn:    { tex: "\\mathfrak{n}",  unicode: "𝔫" },
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
   },
   chapters: [
+    chapterRef({ dir: "ch0-introduction" }),
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
-    chapterRef({ dir: "ch2-qou-elaboration" }),
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
-    chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch6-descartes-universe" }),
-    chapterRef({ dir: "ch7-p-adic-quantum-groups" }),
-    chapterRef({ dir: "ch8-gauge-field-fluid-dynamics" }),
-    chapterRef({ dir: "ch9-information-theory" }),
-    chapterRef({ dir: "ch10-interpretations" }),
+    chapterRef({ dir: "ch5-brings-surface" }),
     chapterRef({ dir: "ch11-experimental-evidence" }),
-    chapterRef({ dir: "ch12-speculations" }),
+    chapterRef({ dir: "ch10-interpretations" }),
+    chapterRef({ dir: "ch8-glossary" }),
+    chapterRef({ dir: "appendix-knot-periodic-table" }),
   ],
 });

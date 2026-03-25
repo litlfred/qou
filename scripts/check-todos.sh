@@ -1,62 +1,115 @@
 #!/bin/bash
-# Check for open feedback/todos across all content blocks.
-# Called by SessionStart hook. Outputs JSON summary to stdout
-# and a human-readable summary to stderr.
+# Check for open feedback/todos across all feedback files.
+# Called by SessionStart hook. Outputs JSON summary to stdout.
 #
+# Scans feedback/<paper-dir>/<rootName>.ts files (TypeScript arrays of FeedbackItem).
 # Output JSON: { "count": N, "todos": [...], "summary": "..." }
 
-FEEDBACK_DIR="$(cd "$(dirname "$0")/.." && pwd)/.qou-feedback"
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+FEEDBACK_DIR="$REPO_ROOT/feedback"
 
 if [ ! -d "$FEEDBACK_DIR" ]; then
-  echo '{"count":0,"todos":[],"summary":"No open todos."}'
+  echo '{"count":0,"todos":[],"summary":"No open feedback."}'
   exit 0
 fi
 
-# Collect all open todos from all JSON files
-todos_json=$(find "$FEEDBACK_DIR" -name '*.json' -type f 2>/dev/null | while read -r f; do
-  paperId=$(basename "$(dirname "$f")")
-  rootName=$(basename "$f" .json)
-  # Extract open todos, annotate with paperId and rootName
-  if command -v jq &>/dev/null; then
-    jq -c --arg p "$paperId" --arg r "$rootName" \
-      '[.[] | select(.status == "open") | . + {paperId: $p, rootName: $r}] | .[]' "$f" 2>/dev/null
-  else
-    # Fallback: just report file exists
-    cat "$f" 2>/dev/null | grep -o '"status":"open"' | while read -r _; do
-      echo "{\"paperId\":\"$paperId\",\"rootName\":\"$rootName\",\"status\":\"open\"}"
-    done
-  fi
-done)
-
-if [ -z "$todos_json" ]; then
-  echo '{"count":0,"todos":[],"summary":"No open todos."}'
+# Check for .ts files recursively
+ts_files=$(find "$FEEDBACK_DIR" -name '*.ts' -type f 2>/dev/null)
+if [ -z "$ts_files" ]; then
+  echo '{"count":0,"todos":[],"summary":"No open feedback."}'
   exit 0
 fi
 
-# Build output
-count=$(echo "$todos_json" | wc -l | tr -d ' ')
+# Use bun or npx tsx to evaluate TypeScript feedback files
+if command -v bun &>/dev/null; then
+  todos_json=$(bun -e "
+import { readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
+
+const feedbackDir = '$FEEDBACK_DIR';
+const allTodos = [];
+
+for (const paperDir of readdirSync(feedbackDir)) {
+  const paperPath = join(feedbackDir, paperDir);
+  try {
+    for (const file of readdirSync(paperPath)) {
+      if (!file.endsWith('.ts')) continue;
+      const rootName = file.replace(/\.ts$/, '');
+      try {
+        const content = readFileSync(join(paperPath, file), 'utf-8');
+        const stripped = content.replace(/^import\s+.*;\s*/m, '').replace(/\s+satisfies\s+\S+;\s*$/, ';');
+        const match = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+        if (!match) continue;
+        const items = JSON.parse(match[1]);
+        for (const item of items) {
+          if (item.status === 'open' || item.status === 'in_progress') {
+            allTodos.push({ ...item, paperId: paperDir, rootName });
+          }
+        }
+      } catch {}
+    }
+  } catch {}
+}
+
+console.log(JSON.stringify(allTodos));
+" 2>/dev/null)
+elif command -v npx &>/dev/null; then
+  todos_json=$(npx --yes tsx -e "
+import { readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
+
+const feedbackDir = '$FEEDBACK_DIR';
+const allTodos: any[] = [];
+
+for (const paperDir of readdirSync(feedbackDir)) {
+  const paperPath = join(feedbackDir, paperDir);
+  try {
+    for (const file of readdirSync(paperPath)) {
+      if (!file.endsWith('.ts')) continue;
+      const rootName = file.replace(/\.ts$/, '');
+      try {
+        const content = readFileSync(join(paperPath, file), 'utf-8');
+        const stripped = content.replace(/^import\s+.*;\s*/m, '').replace(/\s+satisfies\s+\S+;\s*$/, ';');
+        const match = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+        if (!match) continue;
+        const items = JSON.parse(match[1]);
+        for (const item of items) {
+          if (item.status === 'open' || item.status === 'in_progress') {
+            allTodos.push({ ...item, paperId: paperDir, rootName });
+          }
+        }
+      } catch {}
+    }
+  } catch {}
+}
+
+console.log(JSON.stringify(allTodos));
+" 2>/dev/null)
+fi
+
+if [ -z "$todos_json" ] || [ "$todos_json" = "[]" ]; then
+  echo '{"count":0,"todos":[],"summary":"No open feedback."}'
+  exit 0
+fi
 
 if command -v jq &>/dev/null; then
-  # Build proper JSON array
-  arr=$(echo "$todos_json" | jq -s '.')
+  count=$(echo "$todos_json" | jq 'length')
+  critical=$(echo "$todos_json" | jq '[.[] | select(.priority == "critical")] | length')
+  high=$(echo "$todos_json" | jq '[.[] | select(.priority == "high")] | length')
+  medium=$(echo "$todos_json" | jq '[.[] | select(.priority == "medium")] | length')
+  low=$(echo "$todos_json" | jq '[.[] | select(.priority == "low")] | length')
 
-  # Count by priority
-  high=$(echo "$arr" | jq '[.[] | select(.priority == "high")] | length')
-  medium=$(echo "$arr" | jq '[.[] | select(.priority == "medium")] | length')
-  low=$(echo "$arr" | jq '[.[] | select(.priority == "low")] | length')
-
-  # Build summary lines
-  summary="Open todos: $count"
+  summary="Open feedback: $count"
+  [ "$critical" -gt 0 ] && summary="$summary | critical: $critical"
   [ "$high" -gt 0 ] && summary="$summary | high: $high"
   [ "$medium" -gt 0 ] && summary="$summary | medium: $medium"
   [ "$low" -gt 0 ] && summary="$summary | low: $low"
 
-  # Top items for display
-  top=$(echo "$arr" | jq -r '
-    sort_by(if .priority == "high" then 0 elif .priority == "medium" then 1 else 2 end) |
+  top=$(echo "$todos_json" | jq -r '
+    sort_by(if .priority == "critical" then 0 elif .priority == "high" then 1 elif .priority == "medium" then 2 else 3 end) |
     .[0:5] |
     .[] |
-    "  [\(.priority)] \(.rootName): \(.summary // .comment // "no description" | .[0:60])"
+    "  [\(.priority)] \(.rootName): \(.summary // "(no summary)" | .[0:60])"
   ')
 
   if [ -n "$top" ]; then
@@ -64,9 +117,9 @@ if command -v jq &>/dev/null; then
 $top"
   fi
 
-  jq -n --argjson todos "$arr" --arg summary "$summary" \
+  jq -n --argjson todos "$todos_json" --arg summary "$summary" \
     '{count: ($todos | length), todos: $todos, summary: $summary}'
 else
-  # No jq fallback
-  echo "{\"count\":$count,\"todos\":[],\"summary\":\"$count open todo(s). Install jq for details.\"}"
+  count=$(echo "$todos_json" | grep -o '"id"' | wc -l | tr -d ' ')
+  echo "{\"count\":$count,\"todos\":$todos_json,\"summary\":\"$count open feedback item(s). Install jq for details.\"}"
 fi

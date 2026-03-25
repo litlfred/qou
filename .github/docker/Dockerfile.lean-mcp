@@ -4,9 +4,9 @@
 # from lakefile.toml so the MCP server starts fast (~5-10s warm).
 #
 # Built automatically by .github/workflows/build-lean-mcp.yml on
-# every push to main that touches lean/ or lakefile.toml.
+# every push to main that touches lean-archive/ or lakefile.toml.
 #
-# Auth: LEAN_LSP_MCP_TOKEN env var for bearer token auth.
+# Auth: FOLIO_API_TOKEN env var for bearer token auth.
 # Transport: Streamable HTTP on port 8080.
 
 # ═══════════════════════════════════════════════════════════════════
@@ -27,9 +27,9 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Copy only toolchain + lakefile first (cache-friendly layer ordering)
 WORKDIR /build
-COPY lean/lean-toolchain lean/lean-toolchain
-COPY lean/lakefile.toml lean/lakefile.toml
-COPY lean/lake-manifest.json lean/lake-manifest.json
+COPY lean-archive/lean-toolchain lean/lean-toolchain
+COPY lean-archive/lakefile.toml lean/lakefile.toml
+COPY lean-archive/lake-manifest.json lean/lake-manifest.json
 
 # Install elan + pinned toolchain
 RUN curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
@@ -45,7 +45,7 @@ RUN lake update || true
 RUN lake exe cache get || true
 
 # Copy the actual Lean source and build
-COPY lean/ /build/lean/
+COPY lean-archive/ /build/lean/
 RUN lake build || true
 
 # Pre-cache lean-lsp-mcp so uvx doesn't download on first run
@@ -80,7 +80,7 @@ WORKDIR /workspace/lean
 # lean-lsp-mcp config
 ENV LEAN_LSP_MCP_HOST=0.0.0.0
 ENV LEAN_LSP_MCP_PORT=8080
-# LEAN_LSP_MCP_TOKEN must be set at runtime for auth
+# FOLIO_API_TOKEN must be set at runtime for auth
 
 EXPOSE 8080
 

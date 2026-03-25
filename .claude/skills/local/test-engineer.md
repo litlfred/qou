@@ -1,3 +1,8 @@
+---
+name: test-engineer
+roles: [collaborator, owner]
+---
+
 # Test Engineer Skill
 
 ## Role

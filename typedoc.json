@@ -1,0 +1,26 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "schemas/types.ts",
+    "schemas/constraints.ts",
+    "schemas/builders.ts",
+    "schemas/qou-types.ts"
+  ],
+  "tsconfig": "schemas/tsconfig.json",
+  "out": "build/schema-docs",
+  "name": "QOU Schema Documentation",
+  "readme": "schemas/README.md",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "navigationLinks": {
+    "Paper": "/",
+    "Viewer": "/viewer",
+    "Blueprint": "/blueprint"
+  },
+  "sort": ["source-order"],
+  "plugin": [],
+  "theme": "default",
+  "hideGenerator": true,
+  "searchInComments": true
+}
