@@ -5,7 +5,6 @@ import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Types
 
 /-!
 # §1  Categorical Foundations
@@ -30,6 +29,18 @@ namespace QOU
 /-! ## §1  Categorical Foundations -/
 
 universe u v
+
+/-- The standard category structure on `Type w`, with morphisms as functions.
+    Defined locally because `Mathlib.CategoryTheory.Types` fails to build
+    at the pinned Mathlib commit (f897ebcf). -/
+universe w in
+instance : CategoryTheory.Category.{w} (Type w) where
+  Hom X Y := X → Y
+  id _ := _root_.id
+  comp f g := g ∘ f
+  id_comp _ := rfl
+  comp_id _ := rfl
+  assoc _ _ _ := rfl
 
 /-- **Frobenius–Hopf data** in a monoidal category.
 
