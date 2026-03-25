@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T18:03:40.383004+00:00",
+    "generated_at": "2026-03-25T18:27:59.623501+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -2642,11 +2642,32 @@
       ]
     },
     {
+      "label": "thm:jones-markov-trace",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 94,
+        "chapter": 5
+      },
+      "title": "{Existence and non-degeneracy of the Markov trace (Jones, 1987)}",
+      "lean": {
+        "decl": "QOU.Braiding.JonesMarkovTrace",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:braid-action-tensor"
+      ]
+    },
+    {
       "label": "prop:knot-eigenbasis-complete",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 94,
+        "line": 134,
         "chapter": 5
       },
       "title": "{Completeness of the knot-type eigenbasis}",
@@ -2667,7 +2688,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 181,
+        "line": 221,
         "chapter": 5
       },
       "title": "{Braid group on three strands}",
@@ -2685,7 +2706,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 198,
+        "line": 238,
         "chapter": 5
       },
       "title": "{Symmetric group $S_3$}",
@@ -2706,7 +2727,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 218,
+        "line": 258,
         "chapter": 5
       },
       "title": "{$\\mathfrak{su}(2)$ basis}",
@@ -2724,7 +2745,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 234,
+        "line": 274,
         "chapter": 5
       },
       "title": "{$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$}",
@@ -2745,7 +2766,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 257,
+        "line": 297,
         "chapter": 5
       },
       "title": "{$\\mathrm{SO}(3)$ generators}",
@@ -2766,7 +2787,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 288,
+        "line": 328,
         "chapter": 5
       },
       "title": "{Braid involutions: twist and flip}",
@@ -2784,7 +2805,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 334,
+        "line": 374,
         "chapter": 5
       },
       "title": "{Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$}",
@@ -2802,7 +2823,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 358,
+        "line": 398,
         "chapter": 5
       },
       "title": "{Categorical recovery of Möbius energy}",
@@ -2828,7 +2849,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 469,
+        "line": 509,
         "chapter": 5
       },
       "title": "{Obstruction to self-intersection}",
@@ -2983,11 +3004,34 @@
       ]
     },
     {
+      "label": "cor:descartes-knot-eigenbasis",
+      "object_type": "corollary",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 193,
+        "chapter": 7
+      },
+      "title": "{Knot eigenbasis completeness for a Descartes universe}",
+      "lean": {
+        "decl": "QOU.Descartes.descartes_knot_eigenbasis"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:descartes-condition",
+        "cor:descartes-braid-structure",
+        "prop:braid-action-tensor",
+        "thm:jones-markov-trace",
+        "prop:knot-eigenbasis-complete",
+        "def:quantum-su2",
+        "rem:r-matrix-braiding"
+      ]
+    },
+    {
       "label": "thm:descartes",
       "object_type": "theorem",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 196,
+        "line": 241,
         "chapter": 7
       },
       "title": "{Descartes theorem}",
@@ -3008,7 +3052,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 235,
+        "line": 280,
         "chapter": 7
       },
       "title": "{Topological mass formula (Archimedean)}",
@@ -3029,7 +3073,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 667,
+        "line": 712,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -4642,6 +4686,11 @@
       "relation": "uses"
     },
     {
+      "from": "thm:jones-markov-trace",
+      "to": "prop:braid-action-tensor",
+      "relation": "uses"
+    },
+    {
       "from": "prop:knot-eigenbasis-complete",
       "to": "prop:braid-action-tensor",
       "relation": "uses"
@@ -4794,6 +4843,41 @@
     {
       "from": "cor:descartes-braid-structure",
       "to": "ex:p-adic-realisation",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "def:descartes-condition",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "cor:descartes-braid-structure",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "prop:braid-action-tensor",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "thm:jones-markov-trace",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "prop:knot-eigenbasis-complete",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "def:quantum-su2",
+      "relation": "uses"
+    },
+    {
+      "from": "cor:descartes-knot-eigenbasis",
+      "to": "rem:r-matrix-braiding",
       "relation": "uses"
     },
     {

@@ -158,6 +158,7 @@ digraph ProofDependencies {
     style=rounded; color="#CCCCCC"; bgcolor="#F8F8F8";
     fontsize=10;
     prop_braid_action_tensor [label="Prop\nbraid-action-tensor" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:braid-action-tensor" tooltip="{Braid-group action on tensor powers}" target="_blank"];
+    thm_jones_markov_trace [label="Thm\njones-markov-trace" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:jones-markov-trace" tooltip="{Existence and non-degeneracy of the Markov trace (Jones, 1987)}" target="_blank"];
     prop_knot_eigenbasis_complete [label="Prop\nknot-eigenbasis-c..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:knot-eigenbasis-complete" tooltip="{Completeness of the knot-type eigenbasis}" target="_blank"];
     def_braid_group [label="Def\nbraid-group" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:braid-group" tooltip="{Braid group on three strands}" target="_blank"];
     def_s3_group [label="Def\ns3-group" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:s3-group" tooltip="{Symmetric group $S_3$}" target="_blank"];
@@ -168,7 +169,7 @@ digraph ProofDependencies {
     def_quantum_su2 [label="Def\nquantum-su2" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-su2" tooltip="{Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$}" target="_blank"];
     prop_mobius_energy [label="Prop\nmobius-energy" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:mobius-energy" tooltip="{Categorical recovery of Möbius energy}" target="_blank"];
     cor_non_self_intersection [label="Cor\nnon-self-intersec..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:non-self-intersection" tooltip="{Obstruction to self-intersection}" target="_blank"];
-    { rank=same; prop_braid_action_tensor; prop_knot_eigenbasis_complete; def_braid_group; def_s3_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; def_quantum_su2; prop_mobius_energy; cor_non_self_intersection; }
+    { rank=same; prop_braid_action_tensor; thm_jones_markov_trace; prop_knot_eigenbasis_complete; def_braid_group; def_s3_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; def_quantum_su2; prop_mobius_energy; cor_non_self_intersection; }
   }
 
   subgraph cluster_ch6 {
@@ -189,10 +190,11 @@ digraph ProofDependencies {
     def_exceptional_divisor [label="Def\nexceptional-divisor" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:exceptional-divisor" tooltip="{Exceptional divisor at $p$}" target="_blank"];
     def_chiral_sector_coords [label="Def\nchiral-sector-coords" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:chiral-sector-coords" tooltip="{Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$}" target="_blank"];
     cor_descartes_braid_structure [label="Cor\ndescartes-braid-s..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-braid-structure" tooltip="{Braid-group structure of a Descartes universe}" target="_blank"];
+    cor_descartes_knot_eigenbasis [label="Cor\ndescartes-knot-ei..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:descartes-knot-eigenbasis" tooltip="{Knot eigenbasis completeness for a Descartes universe}" target="_blank"];
     thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
     conj_topological_mass_formula [label="Conj\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
     prop_local_substrate_q [label="Prop\nlocal-substrate-q" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:local-substrate-q" tooltip="{Local Value of the Substrate Parameter}" target="_blank"];
-    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; thm_descartes; conj_topological_mass_formula; prop_local_substrate_q; }
+    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; thm_descartes; conj_topological_mass_formula; prop_local_substrate_q; }
   }
 
   def_snake_identity -> def_rigid_monoidal_category [color="#555555" style="solid"];
@@ -477,6 +479,7 @@ digraph ProofDependencies {
   thm_topological_mass -> cor_quantum_dilogarithm [color="#555555" style="solid"];
   def_briggs_klein_chart -> cor_quantum_dilogarithm [color="#555555" style="solid"];
   def_quantum_observable_universe -> prop_braid_action_tensor [color="#555555" style="solid"];
+  prop_braid_action_tensor -> thm_jones_markov_trace [color="#555555" style="solid"];
   prop_braid_action_tensor -> prop_knot_eigenbasis_complete [color="#555555" style="solid"];
   def_braid_group -> def_s3_group [color="#555555" style="solid"];
   def_su2_basis -> def_su2_generators [color="#555555" style="solid"];
@@ -501,6 +504,12 @@ digraph ProofDependencies {
   def_su2_generators -> cor_descartes_braid_structure [color="#555555" style="solid"];
   def_chiral_sector_coords -> cor_descartes_braid_structure [color="#555555" style="solid"];
   prop_brings_is_qou -> cor_descartes_braid_structure [color="#555555" style="solid"];
+  def_descartes_condition -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
+  cor_descartes_braid_structure -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
+  prop_braid_action_tensor -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
+  thm_jones_markov_trace -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
+  prop_knot_eigenbasis_complete -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
+  def_quantum_su2 -> cor_descartes_knot_eigenbasis [color="#555555" style="solid"];
   def_descartes_condition -> thm_descartes [color="#555555" style="solid"];
   prop_brings_is_qou -> thm_descartes [color="#555555" style="solid"];
   thm_qu_to_qou -> thm_descartes [color="#555555" style="solid"];
