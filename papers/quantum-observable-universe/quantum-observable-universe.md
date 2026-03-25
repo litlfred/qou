@@ -89,7 +89,7 @@ A consideration of the standard examples shows that the ground field $k$ never e
 
 <div id="def:remainder-module" class="definition">
 
-**Definition 1.3** (Remainder modules \$O(I)\$ and \$\\}tilde{O}(I)\$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.isNormalForm)*
+**Definition 1.3** (Remainder modules $O(I)$ and $\tilde{O}(I)$). *[<sup><span style="color: BurntOrange">$\forall$</span></sup>](https://litlfred.github.io/qou/lean/QOU.GrobnerShirshov.isNormalForm)*
 
 *Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an $R$-module and without quasi-zeros, $(B, <)$ an [admissible system](#def:admissible-system) on $A$, and $I \subseteq A$ a subset.*
 
@@ -227,7 +227,7 @@ Then $\tilde{f} - \tilde{f}' \in I$, so $r - r' \in I$. If $r - r' \neq 0$, then
 
 <div id="prop:s-polynomial-decomposition" class="proposition">
 
-**Proposition 1.8** (\$S\$-polynomial decomposition of cancelling sums).
+**Proposition 1.8** ($S$-polynomial decomposition of cancelling sums).
 
 *Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an $R$-module, $(B, <)$ an [admissible system](#def:admissible-system). Let $\alpha \in B$ and suppose $f_1, \ldots, f_n \in A$ satisfy $\mathrm{LM}(f_i) = \alpha$ and $\mathrm{LC}(f_i) \in R^\times$. If*
 
