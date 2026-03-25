@@ -21,6 +21,6 @@ parameter $q$) precisely counterbalances the spatial diffusion:
 
 A $q$-harmonic form ($\Delta_q \alpha = 0$) is therefore a
 "particle" — a field configuration that is in perfect $q$-equilibrium
-with its twisted geometric environment. The deformation parameter $q$
-tunes the relative weight of spatial diffusion versus internal spin
-in this balancing act.
+with its twisted geometric environment. The substrate parameter $q$
+([substrate parameter](#def:substrate-parameter)) tunes the relative
+weight of spatial diffusion versus internal spin in this balancing act.
