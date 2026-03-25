@@ -3066,8 +3066,8 @@
       ]
     },
     {
-      "label": "conj:topological-mass-formula",
-      "object_type": "conjecture",
+      "label": "prop:topological-mass-formula",
+      "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
         "line": 235,
@@ -3105,7 +3105,7 @@
       "uses": [
         "def:substrate-parameter",
         "rem:skein-mass-relation",
-        "rem:terminal-resolution",
+        "prop:terminal-resolution",
         "rem:photonic-hall"
       ]
     }
@@ -4827,27 +4827,27 @@
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "ex:c-quantum-observable-universe",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:mass-identity",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "thm:topological-mass",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:quantum-planck-constant",
       "relation": "uses"
     },
@@ -4863,7 +4863,7 @@
     },
     {
       "from": "prop:local-substrate-q",
-      "to": "rem:terminal-resolution",
+      "to": "prop:terminal-resolution",
       "relation": "uses"
     },
     {

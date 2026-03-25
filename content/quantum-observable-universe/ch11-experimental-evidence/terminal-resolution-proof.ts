@@ -4,7 +4,7 @@ export default proof({
   label: "prf:terminal-resolution",
   title: "Proof of Terminal Resolution of Hadronic Mass",
   uses: [
-    "rem:terminal-resolution",
+    "prop:terminal-resolution",
     "rem:skein-mass-relation",
     "prop:skein-generation",
     "prop:knot-eigenbasis-complete",

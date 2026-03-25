@@ -1,7 +1,7 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:topological-mass-formula",
+export default proposition({
+  label: "prop:topological-mass-formula",
   title: "Topological mass formula (Archimedean)",
   tags: ["mass", "archimedean", "knot-volume", "quantum-planck"],
   uses: [
@@ -10,6 +10,8 @@ export default conjecture({
     "thm:topological-mass",
     "def:substrate-parameter",
     "def:quantum-planck-constant",
+    "prop:descent-eigenspaces",
+    "def:descent-involution",
   ],
   lean: {
     decl: "QOU.Torsion.ArchimedeanMassFormula",
