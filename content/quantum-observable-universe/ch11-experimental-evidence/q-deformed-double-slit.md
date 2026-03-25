@@ -13,3 +13,8 @@ The accumulated phase difference for a path $\gamma$ grazing the fermionic slit 
 ```
 
 where the second term integrates the vertical Reeb differential along $\gamma$. The magnitude of this correction depends on the torsion intensity of the slit material. A nucleon modeled as a [localized knot](#def:localized-knot) with the topology of the Borromean rings $6_2^3$ determines a specific value of $q$ via the local substrate map, and hence a definite $\hbar_q$. Heavier atoms with more complex knotted configurations produce correspondingly larger deformations, yielding a material-dependent signature in the fringe spacing that is absent in the standard double-slit analysis.
+
+An interactive simulation of this effect is available in the
+[q-deformed double-slit simulator](q-double-slit.html), which
+allows real-time sweeps of $q$, slit geometry, and torsion parameters
+against the classical baseline.

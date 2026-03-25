@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Q-Deformed Double Slit — Macroscopic Scattering Simulation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap');
+
+:root {
+  --bg:      #020710;
+  --panel:   rgba(3,10,30,0.93);
+  --border:  rgba(60,120,255,0.20);
+  --accent:  #3a90ff;
+  --accent2: #ff5533;
+  --accent3: #33ffaa;
+  --accent4: #ffaa33;
+  --accent5: #cc44ff;
+  --text:    #b8ccff;
+  --dim:     #3a4a78;
+}
+body.light {
+  --bg:      #f0f4ff;
+  --panel:   rgba(235,240,255,0.96);
+  --border:  rgba(60,80,180,0.25);
+  --accent:  #1a5fcc;
+  --accent2: #cc3300;
+  --accent3: #006633;
+  --accent4: #885500;
+  --accent5: #770099;
+  --text:    #1a2855;
+  --dim:     #6070a0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background:var(--bg); color:var(--text);
+  font-family:'Share Tech Mono',monospace; font-size:11px;
+  overflow:hidden; user-select:none;
+}
+
+/* ── Title ─────────────────────────────────────────────────────── */
+#title {
+  position:absolute; top:12px; left:50%; transform:translateX(-50%);
+  font-family:'Rajdhani',sans-serif; font-weight:300;
+  font-size:20px; letter-spacing:.30em; color:var(--accent);
+  text-transform:uppercase;
+  text-shadow:0 0 22px rgba(58,144,255,.55), 0 0 6px rgba(58,144,255,.3);
+  pointer-events:none; white-space:nowrap;
+}
+#subtitle {
+  position:absolute; top:38px; left:50%; transform:translateX(-50%);
+  font-size:9px; letter-spacing:.22em; color:var(--dim);
+  text-transform:uppercase; pointer-events:none; white-space:nowrap;
+}
+
+/* ── Panels ─────────────────────────────────────────────────────── */
+.panel {
+  position:absolute; background:var(--panel);
+  border:1px solid var(--border); border-radius:3px;
+  padding:12px; backdrop-filter:blur(18px);
+  z-index:10;
+}
+.panel-title {
+  font-family:'Rajdhani',sans-serif; font-weight:300;
+  font-size:11px; letter-spacing:.22em; color:var(--accent);
+  text-transform:uppercase; margin-bottom:9px;
+  padding-bottom:5px; border-bottom:1px solid var(--border);
+}
+.sec { font-size:9px; letter-spacing:.18em; color:var(--dim); margin:9px 0 3px; }
+.row { display:grid; grid-template-columns:106px 1fr 46px; align-items:center; gap:6px; margin:3px 0; }
+.lbl { color:#6070a0; font-size:10px; }
+.sub-lbl { color:var(--dim); font-size:9px; margin-top:1px; }
+
+input[type=range] {
+  -webkit-appearance:none; width:100%; height:3px;
+  background:rgba(58,144,255,0.15); border-radius:2px; outline:none; cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none; width:9px; height:9px; border-radius:50%;
+  background:var(--accent); cursor:pointer; box-shadow:0 0 7px rgba(58,144,255,.8);
+}
+input[type=range]::-moz-range-thumb {
+  width:9px; height:9px; border-radius:50%; border:none;
+  background:var(--accent); cursor:pointer; box-shadow:0 0 7px rgba(58,144,255,.8);
+}
+.val { color:var(--accent); font-size:10px; text-align:right; }
+
+/* ── Theme toggle ──────────────────────────────────────────────── */
+#theme-btn {
+  position:absolute; top:14px; right:14px; z-index:20;
+  background:var(--panel); border:1px solid var(--border);
+  border-radius:3px; padding:5px 10px; cursor:pointer;
+  color:var(--accent); font-family:'Share Tech Mono',monospace;
+  font-size:10px; letter-spacing:.10em;
+}
+#theme-btn:hover { border-color:var(--accent); }
+
+/* ── Main canvas ───────────────────────────────────────────────── */
+#main-canvas {
+  position:absolute;
+  top:60px;
+  left:260px;
+  right:260px;
+  bottom:220px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:rgba(0,0,0,0.25);
+}
+body.light #main-canvas { background:rgba(255,255,255,0.4); }
+
+/* ── Torsion canvas ────────────────────────────────────────────── */
+#torsion-wrap {
+  position:absolute;
+  bottom:14px;
+  left:260px;
+  right:260px;
+  height:180px;
+}
+#torsion-label {
+  font-size:9px; letter-spacing:.18em; color:var(--dim);
+  text-transform:uppercase; margin-bottom:4px;
+}
+#torsion-canvas {
+  width:100%; height:160px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:rgba(0,0,0,0.25);
+}
+body.light #torsion-canvas { background:rgba(255,255,255,0.4); }
+
+/* ── Info panel ────────────────────────────────────────────────── */
+#info {
+  top:60px; right:14px; width:234px;
+  font-size:10px; line-height:1.85;
+}
+#info .fm  { color:rgba(58,144,255,.80); }
+#info .fd  { color:rgba(255,85,51,.80); }
+#info .ft  { color:rgba(51,255,170,.80); }
+#info .fdm { color:rgba(204,68,255,.70); }
+.eq-box {
+  background:rgba(58,144,255,.04); border:1px solid rgba(58,144,255,.09);
+  border-radius:2px; padding:6px 8px; margin:5px 0; font-size:10px;
+  line-height:1.9;
+}
+.desc { color:var(--dim); font-size:9px; line-height:1.7; margin-top:8px; }
+
+/* ── Controls panel ────────────────────────────────────────────── */
+#ctrl { top:60px; left:14px; width:234px; max-height:calc(100vh - 80px); overflow-y:auto; }
+#ctrl::-webkit-scrollbar { width:3px; }
+#ctrl::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+</style>
+</head>
+<body>
+
+<div id="title">Q-Deformed Double Slit</div>
+<div id="subtitle">Macroscopic Scattering Simulation</div>
+<button id="theme-btn" onclick="toggleTheme()">Light Mode</button>
+
+<!-- CONTROLS -->
+<div class="panel" id="ctrl">
+  <div class="panel-title">Parameters</div>
+
+  <div class="sec">── q-deformation ───────────────────</div>
+  <div class="row">
+    <span class="lbl">q</span>
+    <input type="range" id="sl_q" min="1.0" max="2.0" step="0.001" value="1.1097">
+    <span class="val" id="v_q">1.110</span>
+  </div>
+  <div class="sub-lbl" id="v_hq" style="margin-left:2px;">&#8463;<sub>q</sub> = 0.0988</div>
+
+  <div class="sec">── slit geometry ───────────────────</div>
+  <div class="row">
+    <span class="lbl">D (spacing)</span>
+    <input type="range" id="sl_D" min="0.1" max="2.0" step="0.01" value="0.5">
+    <span class="val" id="v_D">0.50mm</span>
+  </div>
+  <div class="row">
+    <span class="lbl">d (width)</span>
+    <input type="range" id="sl_d" min="10" max="500" step="1" value="100">
+    <span class="val" id="v_d">100&#181;m</span>
+  </div>
+  <div class="row">
+    <span class="lbl">w (thickness)</span>
+    <input type="range" id="sl_w" min="10" max="200" step="1" value="50">
+    <span class="val" id="v_w">50&#181;m</span>
+  </div>
+
+  <div class="sec">── wave ────────────────────────────</div>
+  <div class="row">
+    <span class="lbl">&#955; (wavelength)</span>
+    <input type="range" id="sl_lam" min="200" max="900" step="1" value="500">
+    <span class="val" id="v_lam">500nm</span>
+  </div>
+
+  <div class="sec">── torsion ─────────────────────────</div>
+  <div class="row">
+    <span class="lbl">Vol(K)</span>
+    <input type="range" id="sl_volK" min="0" max="15" step="0.001" value="7.327724">
+    <span class="val" id="v_volK">7.328</span>
+  </div>
+  <div class="sub-lbl" style="margin-left:2px; color:var(--accent4);">Borromean rings 6&#8322;&#179;</div>
+  <div class="row" style="margin-top:6px;">
+    <span class="lbl">Torsion norm</span>
+    <input type="range" id="sl_tNorm" min="0.01" max="5.0" step="0.01" value="1.0">
+    <span class="val" id="v_tNorm">1.00</span>
+  </div>
+</div>
+
+<!-- INFO -->
+<div class="panel" id="info">
+  <div class="panel-title">Physics</div>
+
+  <div class="eq-box">
+    <span class="fm">&#8463;<sub>q</sub></span> = <span id="info_hq" class="ft">0.0988</span>
+    &nbsp;&nbsp; (q = <span id="info_q" class="fm">1.1097</span>)
+  </div>
+
+  <div class="sec">── phase correction ────────────────</div>
+  <div class="eq-box">
+    <span class="fd">&#916;&#966;</span> = <span class="fm">&#916;&#966;<sub>classical</sub></span> + <span class="ft">&#8463;<sub>q</sub></span> &#8747; <span class="fdm">&#960;<sub>V</sub></span> &#8728; d
+  </div>
+
+  <div class="sec">── q-deformed differential ─────────</div>
+  <div class="eq-box">
+    <span class="fd">d<sub>q</sub></span> = <span class="fm">q<sup>-1</sup></span>d + (<span class="ft">1 - q<sup>-1</sup></span>)<span class="fdm">&#960;<sub>V</sub></span> &#8728; d
+  </div>
+
+  <div class="sec">── torsion profile ─────────────────</div>
+  <div class="eq-box">
+    <span class="fd">&#964;</span>(y) = <span class="ft">&#8463;<sub>q</sub></span> &middot; Vol(K) &middot; &#951;(y)&#178; &middot; kw
+    <br><span style="color:var(--dim); font-size:9px;">&#951; = |y| / (d/2), parabolic: max at walls</span>
+  </div>
+
+  <div class="desc">
+    The <span class="fm">blue</span> curve shows the q-deformed interference
+    pattern including torsion corrections from the quantum connection.
+    The <span style="color:var(--dim)">dim</span> curve shows the classical
+    (q=1) baseline. Torsion is strongest at slit walls and vanishes at center,
+    modifying the Huygens-Fresnel integral.
+  </div>
+</div>
+
+<!-- MAIN CANVAS -->
+<canvas id="main-canvas"></canvas>
+
+<!-- TORSION CANVAS -->
+<div id="torsion-wrap">
+  <div id="torsion-label">Torsion Phase Profile (single slit cross-section)</div>
+  <canvas id="torsion-canvas"></canvas>
+</div>
+
+<script>
+// ── Physics ──────────────────────────────────────────────────────
+
+function hbar_q(q) { return q === 1.0 ? 0.0 : 1.0 - 1.0 / q; }
+
+function torsionPhase(y, slitHalf, q, volK, torsionNorm, k, w) {
+  const hq = hbar_q(q);
+  if (hq === 0) return 0;
+  const eta = Math.abs(y) / slitHalf;
+  return hq * volK * torsionNorm * eta * eta * k * w;
+}
+
+const N_SLIT = 100;
+const N_SCREEN = 800;
+
+function computePattern(q, D_mm, d_um, w_um, lam_nm, volK, torsionNorm) {
+  const lam = lam_nm * 1e-6;    // mm
+  const d = d_um * 1e-3;        // mm (slit width)
+  const w = w_um * 1e-3;        // mm (slit thickness)
+  const k = 2 * Math.PI / lam;
+
+  const slitHalf = d / 2;
+  const L = 50;   // source-to-slit distance mm
+  const H = 500;  // slit-to-screen distance mm
+
+  // slit centers
+  const slit1_center = -D_mm / 2;
+  const slit2_center =  D_mm / 2;
+
+  // screen range: ~5mm around center
+  const screenMax = 5.0;
+  const screenMin = -screenMax;
+  const dx = (screenMax - screenMin) / (N_SCREEN - 1);
+
+  const intensity = new Float64Array(N_SCREEN);
+  const screenPos = new Float64Array(N_SCREEN);
+  for (let i = 0; i < N_SCREEN; i++) screenPos[i] = screenMin + i * dx;
+
+  // slit sample points (relative to slit center)
+  const slitY = new Float64Array(N_SLIT);
+  const dy = d / (N_SLIT - 1);
+  for (let j = 0; j < N_SLIT; j++) slitY[j] = -slitHalf + j * dy;
+
+  for (let i = 0; i < N_SCREEN; i++) {
+    let re = 0, im = 0;
+    const xs = screenPos[i];
+
+    for (let s = 0; s < 2; s++) {
+      const sc = s === 0 ? slit1_center : slit2_center;
+      for (let j = 0; j < N_SLIT; j++) {
+        const ys = sc + slitY[j];
+        const r1 = Math.sqrt(L * L + ys * ys);
+        const r2 = Math.sqrt(H * H + (xs - ys) * (xs - ys));
+        let phase = k * (r1 + r2);
+        // torsion correction
+        phase += torsionPhase(slitY[j], slitHalf, q, volK, torsionNorm, k, w);
+        re += Math.cos(phase);
+        im += Math.sin(phase);
+      }
+    }
+    intensity[i] = re * re + im * im;
+  }
+
+  // normalize
+  let maxI = 0;
+  for (let i = 0; i < N_SCREEN; i++) if (intensity[i] > maxI) maxI = intensity[i];
+  if (maxI > 0) for (let i = 0; i < N_SCREEN; i++) intensity[i] /= maxI;
+
+  return { screenPos, intensity };
+}
+
+function computeTorsionProfile(q, d_um, w_um, lam_nm, volK, torsionNorm) {
+  const lam = lam_nm * 1e-6;
+  const d = d_um * 1e-3;
+  const w = w_um * 1e-3;
+  const k = 2 * Math.PI / lam;
+  const slitHalf = d / 2;
+  const N = 200;
+  const positions = new Float64Array(N);
+  const phases = new Float64Array(N);
+  for (let i = 0; i < N; i++) {
+    const y = -slitHalf + (i / (N - 1)) * d;
+    positions[i] = y * 1e3; // back to um
+    phases[i] = torsionPhase(y, slitHalf, q, volK, torsionNorm, k, w);
+  }
+  return { positions, phases };
+}
+
+// ── Rendering ────────────────────────────────────────────────────
+
+const mainCanvas = document.getElementById('main-canvas');
+const torsionCanvas = document.getElementById('torsion-canvas');
+const mainCtx = mainCanvas.getContext('2d');
+const torsionCtx = torsionCanvas.getContext('2d');
+
+// Slider elements
+const sliders = {
+  q: document.getElementById('sl_q'),
+  D: document.getElementById('sl_D'),
+  d: document.getElementById('sl_d'),
+  w: document.getElementById('sl_w'),
+  lam: document.getElementById('sl_lam'),
+  volK: document.getElementById('sl_volK'),
+  tNorm: document.getElementById('sl_tNorm'),
+};
+const vals = {
+  q: document.getElementById('v_q'),
+  D: document.getElementById('v_D'),
+  d: document.getElementById('v_d'),
+  w: document.getElementById('v_w'),
+  lam: document.getElementById('v_lam'),
+  volK: document.getElementById('v_volK'),
+  tNorm: document.getElementById('v_tNorm'),
+};
+
+function getParams() {
+  return {
+    q: parseFloat(sliders.q.value),
+    D: parseFloat(sliders.D.value),
+    d: parseFloat(sliders.d.value),
+    w: parseFloat(sliders.w.value),
+    lam: parseFloat(sliders.lam.value),
+    volK: parseFloat(sliders.volK.value),
+    tNorm: parseFloat(sliders.tNorm.value),
+  };
+}
+
+function updateLabels(p) {
+  vals.q.textContent = p.q.toFixed(3);
+  vals.D.textContent = p.D.toFixed(2) + 'mm';
+  vals.d.textContent = Math.round(p.d) + '\u00B5m';
+  vals.w.textContent = Math.round(p.w) + '\u00B5m';
+  vals.lam.textContent = Math.round(p.lam) + 'nm';
+  vals.volK.textContent = p.volK.toFixed(3);
+  vals.tNorm.textContent = p.tNorm.toFixed(2);
+
+  const hq = hbar_q(p.q);
+  document.getElementById('v_hq').innerHTML = '\u210F<sub>q</sub> = ' + hq.toFixed(4);
+  document.getElementById('info_hq').textContent = hq.toFixed(4);
+  document.getElementById('info_q').textContent = p.q.toFixed(4);
+}
+
+function resizeCanvases() {
+  const mc = mainCanvas;
+  const rect = mc.getBoundingClientRect();
+  mc.width = rect.width * devicePixelRatio;
+  mc.height = rect.height * devicePixelRatio;
+
+  const tc = torsionCanvas;
+  const tr = tc.getBoundingClientRect();
+  tc.width = tr.width * devicePixelRatio;
+  tc.height = tr.height * devicePixelRatio;
+}
+
+function cssColor(varName) {
+  return getComputedStyle(document.body).getPropertyValue(varName).trim();
+}
+
+function drawMainPlot(classical, current, p) {
+  const c = mainCtx;
+  const W = mainCanvas.width;
+  const H = mainCanvas.height;
+  const dpr = devicePixelRatio;
+  c.clearRect(0, 0, W, H);
+
+  const accent = cssColor('--accent');
+  const dim = cssColor('--dim');
+  const text = cssColor('--text');
+  const border = cssColor('--border');
+  const accent3 = cssColor('--accent3');
+
+  // margins
+  const ml = 60 * dpr, mr = 20 * dpr, mt = 40 * dpr, mb = 40 * dpr;
+  const pw = W - ml - mr;
+  const ph = H - mt - mb;
+
+  // grid
+  c.strokeStyle = border;
+  c.lineWidth = 0.5 * dpr;
+  // horizontal grid
+  for (let i = 0; i <= 5; i++) {
+    const y = mt + (i / 5) * ph;
+    c.beginPath(); c.moveTo(ml, y); c.lineTo(ml + pw, y); c.stroke();
+  }
+  // vertical grid
+  const xTicks = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
+  const xMin = classical.screenPos[0];
+  const xMax = classical.screenPos[classical.screenPos.length - 1];
+  for (const xt of xTicks) {
+    const x = ml + ((xt - xMin) / (xMax - xMin)) * pw;
+    c.beginPath(); c.moveTo(x, mt); c.lineTo(x, mt + ph); c.stroke();
+  }
+
+  // axes
+  c.strokeStyle = dim;
+  c.lineWidth = 1 * dpr;
+  c.beginPath(); c.moveTo(ml, mt); c.lineTo(ml, mt + ph); c.lineTo(ml + pw, mt + ph); c.stroke();
+
+  // tick labels
+  c.fillStyle = dim;
+  c.font = (9 * dpr) + 'px "Share Tech Mono"';
+  c.textAlign = 'center';
+  for (const xt of xTicks) {
+    const x = ml + ((xt - xMin) / (xMax - xMin)) * pw;
+    c.fillText(xt.toString(), x, mt + ph + 14 * dpr);
+  }
+  // x-axis label
+  c.fillStyle = text;
+  c.font = (10 * dpr) + 'px "Share Tech Mono"';
+  c.fillText('screen position (mm)', ml + pw / 2, mt + ph + 30 * dpr);
+
+  // y-axis labels
+  c.textAlign = 'right';
+  c.fillStyle = dim;
+  c.font = (9 * dpr) + 'px "Share Tech Mono"';
+  for (let i = 0; i <= 5; i++) {
+    const y = mt + (1 - i / 5) * ph;
+    c.fillText((i / 5).toFixed(1), ml - 6 * dpr, y + 3 * dpr);
+  }
+  // y-axis label
+  c.save();
+  c.translate(14 * dpr, mt + ph / 2);
+  c.rotate(-Math.PI / 2);
+  c.textAlign = 'center';
+  c.fillStyle = text;
+  c.font = (10 * dpr) + 'px "Share Tech Mono"';
+  c.fillText('normalized intensity', 0, 0);
+  c.restore();
+
+  // plot title
+  const hq = hbar_q(p.q);
+  c.fillStyle = accent;
+  c.font = (11 * dpr) + 'px "Rajdhani"';
+  c.textAlign = 'center';
+  c.fillText('q = ' + p.q.toFixed(4) + '    \u210F_q = ' + hq.toFixed(4), ml + pw / 2, mt - 10 * dpr);
+
+  // helper: data to pixel
+  function toX(v) { return ml + ((v - xMin) / (xMax - xMin)) * pw; }
+  function toY(v) { return mt + (1 - v) * ph; }
+
+  // draw classical (dim)
+  c.beginPath();
+  c.strokeStyle = dim;
+  c.lineWidth = 1.2 * dpr;
+  c.globalAlpha = 0.5;
+  for (let i = 0; i < classical.screenPos.length; i++) {
+    const x = toX(classical.screenPos[i]);
+    const y = toY(classical.intensity[i]);
+    if (i === 0) c.moveTo(x, y); else c.lineTo(x, y);
+  }
+  c.stroke();
+  c.globalAlpha = 1.0;
+
+  // draw current q curve
+  c.beginPath();
+  c.strokeStyle = accent;
+  c.lineWidth = 1.8 * dpr;
+  c.shadowColor = accent;
+  c.shadowBlur = 6 * dpr;
+  for (let i = 0; i < current.screenPos.length; i++) {
+    const x = toX(current.screenPos[i]);
+    const y = toY(current.intensity[i]);
+    if (i === 0) c.moveTo(x, y); else c.lineTo(x, y);
+  }
+  c.stroke();
+  c.shadowBlur = 0;
+
+  // legend
+  const lx = ml + pw - 120 * dpr;
+  const ly = mt + 16 * dpr;
+  c.lineWidth = 2 * dpr;
+  // classical
+  c.globalAlpha = 0.5;
+  c.strokeStyle = dim;
+  c.beginPath(); c.moveTo(lx, ly); c.lineTo(lx + 20 * dpr, ly); c.stroke();
+  c.globalAlpha = 1.0;
+  c.fillStyle = dim;
+  c.font = (9 * dpr) + 'px "Share Tech Mono"';
+  c.textAlign = 'left';
+  c.fillText('classical (q=1)', lx + 24 * dpr, ly + 3 * dpr);
+  // q-deformed
+  c.strokeStyle = accent;
+  c.beginPath(); c.moveTo(lx, ly + 14 * dpr); c.lineTo(lx + 20 * dpr, ly + 14 * dpr); c.stroke();
+  c.fillStyle = accent;
+  c.fillText('q-deformed', lx + 24 * dpr, ly + 17 * dpr);
+}
+
+function drawTorsionPlot(profile, p) {
+  const c = torsionCtx;
+  const W = torsionCanvas.width;
+  const H = torsionCanvas.height;
+  const dpr = devicePixelRatio;
+  c.clearRect(0, 0, W, H);
+
+  const accent4 = cssColor('--accent4');
+  const dim = cssColor('--dim');
+  const text = cssColor('--text');
+  const border = cssColor('--border');
+
+  const ml = 60 * dpr, mr = 20 * dpr, mt = 16 * dpr, mb = 32 * dpr;
+  const pw = W - ml - mr;
+  const ph = H - mt - mb;
+
+  // find max phase
+  let maxPh = 0;
+  for (let i = 0; i < profile.phases.length; i++) {
+    if (profile.phases[i] > maxPh) maxPh = profile.phases[i];
+  }
+  if (maxPh === 0) maxPh = 1;
+
+  // grid
+  c.strokeStyle = border;
+  c.lineWidth = 0.5 * dpr;
+  for (let i = 0; i <= 4; i++) {
+    const y = mt + (i / 4) * ph;
+    c.beginPath(); c.moveTo(ml, y); c.lineTo(ml + pw, y); c.stroke();
+  }
+
+  // axes
+  c.strokeStyle = dim;
+  c.lineWidth = 1 * dpr;
+  c.beginPath(); c.moveTo(ml, mt); c.lineTo(ml, mt + ph); c.lineTo(ml + pw, mt + ph); c.stroke();
+
+  const posMin = profile.positions[0];
+  const posMax = profile.positions[profile.positions.length - 1];
+
+  // x labels
+  c.fillStyle = dim;
+  c.font = (8 * dpr) + 'px "Share Tech Mono"';
+  c.textAlign = 'center';
+  const nxt = 5;
+  for (let i = 0; i <= nxt; i++) {
+    const v = posMin + (i / nxt) * (posMax - posMin);
+    const x = ml + (i / nxt) * pw;
+    c.fillText(v.toFixed(0), x, mt + ph + 12 * dpr);
+  }
+  c.fillStyle = text;
+  c.font = (9 * dpr) + 'px "Share Tech Mono"';
+  c.fillText('slit position (\u00B5m)', ml + pw / 2, mt + ph + 25 * dpr);
+
+  // y labels
+  c.textAlign = 'right';
+  c.fillStyle = dim;
+  c.font = (8 * dpr) + 'px "Share Tech Mono"';
+  for (let i = 0; i <= 4; i++) {
+    const v = (1 - i / 4) * maxPh;
+    const y = mt + (i / 4) * ph;
+    c.fillText(v.toFixed(2), ml - 5 * dpr, y + 3 * dpr);
+  }
+  // y-axis label
+  c.save();
+  c.translate(12 * dpr, mt + ph / 2);
+  c.rotate(-Math.PI / 2);
+  c.textAlign = 'center';
+  c.fillStyle = text;
+  c.font = (9 * dpr) + 'px "Share Tech Mono"';
+  c.fillText('\u03C4(y) (rad)', 0, 0);
+  c.restore();
+
+  // plot
+  c.beginPath();
+  c.strokeStyle = accent4;
+  c.lineWidth = 1.8 * dpr;
+  c.shadowColor = accent4;
+  c.shadowBlur = 4 * dpr;
+  for (let i = 0; i < profile.positions.length; i++) {
+    const x = ml + ((profile.positions[i] - posMin) / (posMax - posMin)) * pw;
+    const y = mt + (1 - profile.phases[i] / maxPh) * ph;
+    if (i === 0) c.moveTo(x, y); else c.lineTo(x, y);
+  }
+  c.stroke();
+  c.shadowBlur = 0;
+}
+
+// ── Update loop ──────────────────────────────────────────────────
+
+let pendingUpdate = false;
+let classicalCache = null;
+let lastClassicalKey = '';
+
+function scheduleUpdate() {
+  if (!pendingUpdate) {
+    pendingUpdate = true;
+    requestAnimationFrame(doUpdate);
+  }
+}
+
+function doUpdate() {
+  pendingUpdate = false;
+  const p = getParams();
+  updateLabels(p);
+
+  // classical: q=1, same geometry
+  const classKey = [p.D, p.d, p.w, p.lam].join(',');
+  if (classKey !== lastClassicalKey) {
+    classicalCache = computePattern(1.0, p.D, p.d, p.w, p.lam, 0, 0);
+    lastClassicalKey = classKey;
+  }
+
+  const current = computePattern(p.q, p.D, p.d, p.w, p.lam, p.volK, p.tNorm);
+  drawMainPlot(classicalCache, current, p);
+
+  const torsion = computeTorsionProfile(p.q, p.d, p.w, p.lam, p.volK, p.tNorm);
+  drawTorsionPlot(torsion, p);
+}
+
+// ── Events ───────────────────────────────────────────────────────
+
+Object.values(sliders).forEach(s => s.addEventListener('input', scheduleUpdate));
+
+window.addEventListener('resize', () => { resizeCanvases(); scheduleUpdate(); });
+
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  const btn = document.getElementById('theme-btn');
+  btn.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
+  scheduleUpdate();
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+resizeCanvases();
+doUpdate();
+</script>
+</body>
+</html>
