@@ -309,6 +309,25 @@ combined dependency DAG. Editors and proof-writers use this to:
 - **Prioritize formalization**: find blocks with the most dependents
   that are still `not_started`
 
+### Cross-paper references
+
+The `uses[]` field supports three reference scopes:
+
+| Scope | Syntax | Example |
+|-------|--------|---------|
+| Same paper | bare label | `"def:quantum-universe"` |
+| Same folio | `"paper-dir:label"` | `"unital-groebner-bases:cor:pbw"` |
+| External folio | full URL | `"https://folio.example.org/viewer/#/view/paper-id"` |
+
+Cross-paper refs are validated at folio level, not per-paper. The
+`uses-resolve` constraint skips qualified refs (those matching
+`paper-dir:label` or starting with `https://`).
+
+Each paper in `content/folio.ts` has an optional `url` field for
+viewer routing. BibTeX entries for folio-hosted papers include a
+`folio-url` field matching the viewer hash route
+(e.g. `/viewer/#/view/unital-groebner-bases`).
+
 ### Markdown content convention (in .md files)
 
 - Inline math: `$...$`
