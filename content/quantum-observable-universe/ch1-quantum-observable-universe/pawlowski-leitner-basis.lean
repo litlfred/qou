@@ -8,7 +8,7 @@ Authoritative source: `lean-archive/QOU/RepresentationTheory.lean`
 
 ## References
 
-- [leitner2004vectors] https://arxiv.org/abs/math/0409565
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 - [manuscript] §1, Proposition: Pawlowski–Leitner basis
 -/
 
@@ -21,7 +21,7 @@ namespace QOU
 /-- The dimension of the intertwiner space Hom_{SU(2)}(V_j, V_{1/2}^⊗n).
     Uses twice_j (so spin j = twice_j / 2).
     Returns 0 when n and twice_j have different parity or n < twice_j.
-    Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565 -/
+    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
 noncomputable def pawlowskiLeitnerDim (twice_j : ℕ) (n : ℕ) : ℕ :=
   if n % 2 ≠ twice_j % 2 then 0
   else if n < twice_j then 0

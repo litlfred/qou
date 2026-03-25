@@ -36,5 +36,5 @@ $$
 
 when $n \equiv 2j \pmod{2}$, and zero otherwise.
 
-See \cite{leitner2004vectors} for the original construction and its
-relation to the Temperley--Lieb algebra.
+The PBW basis underlying this construction is established via unital
+Gröbner bases in \cite{leitnerpawloski2004}.

@@ -23,7 +23,7 @@ the QOU framework:
 
 ## References
 
-- [leitner2004vectors] https://arxiv.org/abs/math/0409565
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1, Vectors, hadrons, and the Pawlowski–Leitner basis
 -/
@@ -177,7 +177,7 @@ def killingFormRatio : ℤ := -2
     when `n ≡ 2j (mod 2)` and `n ≥ 2j`, and zero otherwise.
 
     LaTeX: `\label{prop:pawlowski-leitner-basis}`
-    Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565 -/
+    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
 noncomputable def pawlowskiLeitnerDim (twice_j : ℕ) (n : ℕ) : ℕ :=
   if n % 2 ≠ twice_j % 2 then 0
   else if n < twice_j then 0
@@ -187,7 +187,7 @@ noncomputable def pawlowskiLeitnerDim (twice_j : ℕ) (n : ℕ) : ℕ :=
 
 /-- When `n = 2j` (the minimal tensor power), the intertwiner space
     is one-dimensional — there is a unique embedding up to scalar. -/
--- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawlowskiLeitner_minimal_dim (twice_j : ℕ) :
     pawlowskiLeitnerDim twice_j twice_j ≥ 0 := by
   unfold pawlowskiLeitnerDim
@@ -198,7 +198,7 @@ theorem pawlowskiLeitner_minimal_dim (twice_j : ℕ) :
     tableaux of shape `λ ⊢ n` with at most 2 rows and
     `λ₁ - λ₂ = 2j`.
 
-    Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565 -/
+    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
 structure PawlowskiLeitnerBasis where
   /-- The spin label (as twice_j). -/
   twice_j : ℕ
@@ -222,18 +222,18 @@ structure PawlowskiLeitnerBasis where
     this pairing: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`.
 
     LaTeX: `\label{prop:pawlowski-leitner-inner-product}`
-    Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565 -/
+    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
 structure PawlowskiLeitnerInnerProduct where
   /-- The underlying basis data. -/
   basis : PawlowskiLeitnerBasis
   /-- The norm-squared of each basis vector (positive rational). -/
   normSq : Fin basis.num_basis → ℝ
   /-- All norms are positive. -/
-  -- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
   normSq_pos : ∀ i, normSq i > 0
 
 /-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
--- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawlowskiLeitner_orthogonal
     (ip : PawlowskiLeitnerInnerProduct)
     (i j : Fin ip.basis.num_basis) (h : i ≠ j) :
@@ -255,7 +255,7 @@ theorem hadron_tensor_factorization
     h.totalTensorPower ≥ 2 * h.valence := by
   unfold CategoricalHadron.totalTensorPower
   sorry
-  -- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 
 /-- The Clebsch–Gordan decomposition: `V_{1/2} ⊗ V_{1/2} ≅ V_0 ⊕ V_1`.
     In terms of spin labels: `1 ⊗ 1 = 0 ⊕ 2` (using twice_j). -/

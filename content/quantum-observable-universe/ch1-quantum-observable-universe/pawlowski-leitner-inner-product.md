@@ -38,5 +38,6 @@ This orthogonality has two consequences for the QOU framework:
    $\mathrm{End}(V_j) \subset A$, ensuring that integration over the
    fibre and decomposition into basis elements commute.
 
-See \cite{leitner2004vectors} for the explicit norm formulas and
-their relation to $6j$-symbols.
+The algebraic foundations (PBW bases over commutative rings) are
+established in \cite{leitnerpawloski2004}; norm formulas follow from
+the Temperley--Lieb calculus and $6j$-symbols.

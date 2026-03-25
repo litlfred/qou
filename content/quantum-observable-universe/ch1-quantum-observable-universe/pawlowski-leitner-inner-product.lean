@@ -8,7 +8,7 @@ Authoritative source: `lean-archive/QOU/RepresentationTheory.lean`
 
 ## References
 
-- [leitner2004vectors] https://arxiv.org/abs/math/0409565
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 - [manuscript] §1, Proposition: Inner product on intertwiner spaces
 -/
 
@@ -25,12 +25,12 @@ structure PawlowskiLeitnerInnerProduct where
   /-- The norm-squared of each basis vector. -/
   normSq : Fin num_basis → ℝ
   /-- All norms are positive. -/
-  -- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
   normSq_pos : ∀ i, normSq i > 0
 
 /-- Positive-definiteness: the PL inner product ⟨φ, φ⟩ > 0
     for any nonzero intertwiner φ (follows from normSq_pos). -/
--- Ref: [leitner2004vectors] https://arxiv.org/abs/math/0409565
+-- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawlowskiLeitner_pos_def (ip : PawlowskiLeitnerInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
   ip.normSq_pos i
