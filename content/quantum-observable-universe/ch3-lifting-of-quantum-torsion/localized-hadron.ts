@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.LocalizedHadron",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:hadron",
     "def:categorical-point",

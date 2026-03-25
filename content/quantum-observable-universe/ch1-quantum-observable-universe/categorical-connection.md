@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe over $R$ with
+Let $(\mathcal{C}, A, \tau)$ be a quantum universe over $R$ with
 differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
 
 A *connection* on $A$ is a morphism

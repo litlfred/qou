@@ -9,7 +9,7 @@ import { chapter, section } from "../../schema/builders";
  * and information-theoretic perspectives.
  */
 export default chapter({
-  number: 4,
+  number: 3,
   title: "Braids, Knots and Fluid Dynamics",
   label: "chap:path-integrals-braiding",
   sections: [
@@ -32,6 +32,8 @@ export default chapter({
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
+        "jones-markov-trace",
+        "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",
         "feynman-eigenbasis",

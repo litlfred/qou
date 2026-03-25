@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.BundleIsotopyEquiv",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:bundle-initial-conditions",
     "def:localized-hadron",

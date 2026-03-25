@@ -46,9 +46,19 @@ structure CRManifoldData where
   r : ℕ
   s : ℕ
   rs_sum : r + s = n
-  /-- The contact form `θ` represented abstractly as a continuous 1-form. -/
-  contactForm : M → ℝ  -- simplified; full: section of `T*M`
-  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/
-  reebField : M → M  -- simplified; full: section of `TM`
+  /-- The contact form `θ` as a continuous real-valued function.
+      Full type: a section of `T*M` (1-form), here modelled as `C(M, ℝ)`.
+      The contact condition `θ ∧ (dθ)^n ≠ 0` is a non-degeneracy axiom
+      that requires differential forms; we record θ as a continuous function
+      and state the non-degeneracy separately. -/
+  contactForm : C(M, ℝ)
+  /-- The contact form is non-degenerate: there exists a point where θ ≠ 0. -/
+  contact_nondeg : ∃ p : M, contactForm p ≠ 0
+  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`.
+      Modelled as a continuous self-map `M → M` (the Reeb flow at time 1).
+      Full type: a section of `TM`. -/
+  reebField : C(M, M)
+  /-- The Reeb field preserves the contact form: θ(ξ(p)) = θ(p) for all p. -/
+  reeb_preserves_contact : ∀ p : M, contactForm (reebField p) = contactForm p
 
 end QOU

@@ -7,7 +7,6 @@ export default definition({
     decl: "QOU.CategoricalJet",
     validation: "axioms_only",
   },
-  status: "not_started",
   uses: ["def:quantum-universe", "def:categorical-connection"],
   tags: ["jet"],
   rendered: [

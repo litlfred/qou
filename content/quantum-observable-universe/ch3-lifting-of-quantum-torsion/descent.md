@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be the
 ([recursive brane tower](#def:recursive-brane-tower)).  The *descent* is the
 reverse traversal of the tower: starting from level $n$ one passes to

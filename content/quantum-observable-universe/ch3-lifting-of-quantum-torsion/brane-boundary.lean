@@ -6,7 +6,7 @@ the restriction morphism rₙ : Aₙ → A_{n-1} has non-trivial kernel.
 
 ## References
 
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.Algebra.Module.Basic
@@ -21,7 +21,7 @@ variable {R : Type*} [CommRing R]
     Categorically: ∂Aₙ = {S ↪ Aₙ | ker(rₙ|_S) ≠ 0}
 
     LaTeX: `\label{def:brane-boundary}` -/
--- Ref: [leitner2026] §3, Definition: Brane boundary
+-- Ref: [manuscript] §3, Definition: Brane boundary
 def braneBoundary {M N : Type*} [AddCommGroup M] [Module R M]
     [AddCommGroup N] [Module R N]
     (restriction : M →ₗ[R] N) : Submodule R M :=

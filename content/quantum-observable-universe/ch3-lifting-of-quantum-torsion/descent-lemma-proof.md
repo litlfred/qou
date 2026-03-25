@@ -30,7 +30,7 @@ vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is
 unchanged since we recover the original object $A$.
 
 *Step 4: The descent homomorphism.*
-Applying the fibre functor $\omega$ to $r_n$ yields
+Applying the fibre functor $\tau$ to $r_n$ yields
 $\mathfrak{d}_n\colon
 \Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
 \Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.

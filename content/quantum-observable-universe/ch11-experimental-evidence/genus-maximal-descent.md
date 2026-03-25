@@ -1,0 +1,12 @@
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe satisfying the
+Descartes condition $\chi(A) = -6$
+([Descartes condition](#def:descartes-condition)).  If the geometric descent
+produces a compact one-complex-dimensional base $M_0$, then $M_0$ is a
+Riemann surface of genus $g = 4$.
+
+More precisely: the categorical Euler characteristic
+$\mathrm{tr}(\mathrm{id}_A) = -6$ determines the topological type of the
+base curve.  Under the fibre functor $\tau$ of any archimedean realisation,
+Riemann--Roch on $M_0$ forces $2(1 - g) = -6$, hence $g = 4$.  This is the
+maximal genus consistent with the Hurwitz bound
+$|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.

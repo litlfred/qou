@@ -1,3 +1,8 @@
+The archimedean specialisation of the categorical $q$-Lie bracket
+([categorical $q$-Lie bracket](#def:categorical-q-lie-bracket)) to
+the $q$-deformed Lie bracket ([$q$-Lie bracket](#ex:q-lie-bracket))
+violates the Jacobi identity when $q \neq 1$.
+
 Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e.
 $\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator*
 
@@ -22,3 +27,7 @@ non-degenerate by hypothesis, $[\,\cdot\,,\cdot\,]_q$ violates the Jacobi
 identity for all $q \neq 1$. Thus $(\mathfrak{X}(M), [\,\cdot\,,\cdot\,]_q)$
 is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.
 
+The coefficient $q^{-1}(1-q^{-1})$ matches the $d_q^2$ obstruction
+([archimedean $d_q^2$](#thm:dq-squared)), confirming that both
+failures — of nilpotence and of the Jacobi identity — are driven by
+the same geometric source: the non-degeneracy of the contact structure.

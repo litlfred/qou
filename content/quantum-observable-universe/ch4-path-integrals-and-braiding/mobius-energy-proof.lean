@@ -88,8 +88,6 @@ theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :
 theorem MobiusEnergy_nonneg {M : Type*} (cme : CategoricalMobiusEnergy M)
     (h_const_nonneg : 0 ≤ cme.classicalLimitConst) :
     0 ≤ cme.energy := by
-  rw [cme.classicalLimit]
-  have := cme.classicalEnergy.nonneg
-  linarith
+  rw [cme.classicalLimit]; linarith [cme.classicalEnergy.nonneg]
 
 end QOU

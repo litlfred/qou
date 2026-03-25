@@ -1,9 +1,8 @@
 {
-  "domain": "lean.litlfred.org",
-  "port": 443,
-  "image": "ghcr.io/litlfred/qou/lean-mcp",
+  "image": "ghcr.io/litlfred/qou/paper-assistant",
   "transport": "streamable-http",
   "mcp_internal_port": 8080,
+  "viewer_port": 8080,
   "self_update_interval_seconds": 60,
   "healthcheck_path": "/mcp",
   "folio": {
@@ -24,8 +23,8 @@
     "session_max_age_hours": 24
   },
   "hetzner": {
-    "server_type": "cx22",
-    "location": "fsn1",
+    "server_type": "cx23",
+    "location": "nbg1",
     "image": "ubuntu-24.04"
   }
 }

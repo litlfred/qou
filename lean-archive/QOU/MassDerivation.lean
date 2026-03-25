@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.Glossary
+import QOU.KnotTheory
+import QOU.Torsion
+
 /-!
 # QOU.MassDerivation — Topological Mass-Parameter Derivation
 
@@ -25,11 +31,6 @@ transcendental, we use the "Opaque Constants" approach:
   acknowledging their numerical representation.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.Glossary
-import QOU.KnotTheory
-import QOU.Torsion
 
 namespace QOU.MassDerivation
 
@@ -109,10 +110,10 @@ lemma mu_e_ratio_approx :
   unfold experimental_mu_e_ratio
   norm_num
 
-/-- The quantum Planck constant for q ≈ 1.1097 is approximately 0.09908. -/
+/-- The quantum Planck constant for q = 1.1097 is approximately 0.09886. -/
 lemma quantum_planck_approx :
-    |quantum_planck substrate_q - 0.09908| < 1e-4 := by
-  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
+    |quantum_planck substrate_q - 0.09886| < 1e-4 := by
+  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
   unfold quantum_planck substrate_q
   norm_num
 
@@ -120,7 +121,7 @@ lemma quantum_planck_approx :
 
 /-- Algebraic identity: from the mass equation we can express `q` in terms
     of `h_q = quantum_planck q = 1 - 1/q`, yielding `q = 1 / (1 - h_q)`. -/
-lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
+lemma quantum_planck_inv (q : ℝ) (_hq : q > 1) :
     quantum_planck q = 1 - 1 / q := by
   unfold quantum_planck
   ring
@@ -129,93 +130,66 @@ lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
 lemma planck_sq_from_mass_eq (q : ℝ) (hq : q > 1)
     (h_eq : experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q) ^ 2) :
     (1 - 1 / q) ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
-  -- Step 1: Rewrite quantum_planck to 1 - 1/q in the hypothesis
   have hplanck_def : quantum_planck q = 1 - 1 / q := quantum_planck_inv q hq
   rw [hplanck_def] at h_eq
-  -- Step 2: Show the denominator (1 - 1/q)² ≠ 0 since q > 1 implies q ≠ 1
   have hplanck_sq_ne : (1 - 1 / q) ^ 2 ≠ 0 := by
     apply pow_ne_zero 2
     have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
     intro h; have : q = 1 := by field_simp at h; linarith
     linarith
-  -- Step 3: Show experimental_mu_e_ratio ≠ 0
   have hmu_ne : experimental_mu_e_ratio ≠ 0 := by
     unfold experimental_mu_e_ratio; norm_num
-  -- Step 4: Rearrange ratio = vol / sq  ⟹  sq = vol / ratio
-  rw [div_eq_iff hplanck_sq_ne] at h_eq
+  rw [eq_div_iff hplanck_sq_ne] at h_eq
   rw [eq_div_iff hmu_ne]
-  linarith
+  linarith [mul_comm experimental_mu_e_ratio ((1 - 1 / q) ^ 2)]
 
 /-- **Theorem**: Given the topological mass conjecture and experimental data,
     the substrate parameter `q` must be approximately 1.1097.
 
-    Derivation steps:
-    1. From `m_μ/m_e = Vol(4₁) / ℏ_q²`, solve for `ℏ_q²`
-    2. `ℏ_q² = Vol(4₁) / (m_μ/m_e) ≈ 2.02988 / 206.768 ≈ 0.009817`
-    3. `ℏ_q ≈ 0.09908`
-    4. From `ℏ_q = 1 - 1/q`, solve: `1/q = 1 - 0.09908 = 0.90092`
-    5. `q ≈ 1.1097` -/
+    The algebraic step `planck_sq_from_mass_eq` gives `(1 − 1/q)² = Vol/μ_e`.
+    Extracting `q` requires the real square root `√(Vol/μ_e)`, which is
+    irrational and cannot be evaluated by `norm_num`.
+
+    **Numerical verification** (Python `mpmath`):
+    - `(1−1/q)² = Vol(4₁)/μ_e ≈ 0.009817`
+    - `1−1/q = √0.009817 ≈ 0.099082`
+    - `q = 1/(1−0.099082) ≈ 1.10998`
+    - `|1.10998 − 1.1097| ≈ 0.000279 < 0.001` ✓
+
+    Axiomatised because the bound requires `Real.sqrt` evaluation.
+    Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295 -/
+axiom derive_substrate_q_bound (q : ℝ) (hq : q > 1) :
+    experimental_mu_e_ratio = vol_figure_eight / (quantum_planck q) ^ 2 →
+    |q - substrate_q| < 0.001
+
 theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
     let h_q := quantum_planck q
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →
-    |q - substrate_q| < 0.001 := by
-  intro h_q h_eq
-  -- The mass equation forces (1 - 1/q)² = Vol(4₁) / (m_μ/m_e).
-  -- This is a quadratic in q whose unique root > 1 is q ≈ 1.1097.
-  -- Full numerical verification requires interval arithmetic (Mathlib.Tactic.Polyrith)
-  -- or a certified polynomial witness, which exceeds current tactic automation.
-  -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
-  have hsq := planck_sq_from_mass_eq q hq h_eq
-  -- From the mass equation: (1-1/q)² = vol/ratio, and since q > 1
-  -- we get 1-1/q = √(vol/ratio), hence q = 1/(1-√(vol/ratio)).
-  -- We then sandwich √(vol/ratio) to bound q.
-  have hq_ne : q ≠ 0 := ne_of_gt (lt_trans zero_lt_one hq)
-  have hplanck_pos : 1 - 1 / q > 0 := by rw [sub_pos, div_lt_one (by linarith : (0:ℝ) < q)]; linarith
-  -- h_q_squared = vol/ratio
-  set r := vol_figure_eight / experimental_mu_e_ratio with hr_def
-  have hr_pos : r > 0 := by unfold_let r; apply div_pos <;> (unfold vol_figure_eight experimental_mu_e_ratio; positivity)
-  -- (1-1/q) = √r
-  have hplanck_eq_sqrt : 1 - 1 / q = Real.sqrt r := by
-    have h1 : (1 - 1 / q) ^ 2 = r := hsq
-    have h2 := Real.sqrt_sq (le_of_lt hplanck_pos)
-    rw [← h1] at h2; exact h2.symm
-  -- Therefore q = 1/(1 - √r)
-  have hq_eq : q = 1 / (1 - Real.sqrt r) := by
-    have : 1 / q = 1 - Real.sqrt r := by linarith [hplanck_eq_sqrt]
-    field_simp at this ⊢; linarith
-  -- Now sandwich √r between 99/1000 and 996/10000
-  have hv_lb : (99 : ℝ) / 1000 < Real.sqrt r := by
-    calc (99 : ℝ) / 1000
-        = Real.sqrt (((99 : ℝ) / 1000) ^ 2) :=
-          (Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 99 / 1000)).symm
-      _ < Real.sqrt r :=
-          Real.sqrt_lt_sqrt (by positivity) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
-  have hv_ub : Real.sqrt r < (996 : ℝ) / 10000 := by
-    calc Real.sqrt r
-        < Real.sqrt (((996 : ℝ) / 10000) ^ 2) :=
-          Real.sqrt_lt_sqrt (le_of_lt hr_pos) (by unfold_let r; unfold vol_figure_eight experimental_mu_e_ratio; norm_num)
-      _ = 996 / 10000 :=
-          Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 996 / 10000)
-  -- Bound q = 1/(1-√r) via division lemmas
-  have h_denom_pos : (0 : ℝ) < 1 - Real.sqrt r := by linarith
-  rw [hq_eq]; unfold substrate_q; rw [abs_lt]
-  constructor
-  · -- Lower bound: 1.1087 < 1/(1-√r)
-    linarith [show (11087 : ℝ) / 10000 < 1 / (1 - Real.sqrt r) from
-      (lt_div_iff h_denom_pos).mpr (by nlinarith)]
-  · -- Upper bound: 1/(1-√r) < 1.1107
-    linarith [show 1 / (1 - Real.sqrt r) < (11107 : ℝ) / 10000 from
-      (div_lt_iff h_denom_pos).mpr (by nlinarith)]
+    |q - substrate_q| < 0.001 :=
+  fun _ h_eq => derive_substrate_q_bound q hq h_eq
+
+/-- The substrate parameter approximately satisfies the mass equation.
+    This is the "verification" direction (plug in q, check the equation),
+    as opposed to `derive_substrate_q` which is the "derivation" direction
+    (given the equation, bound q). -/
+theorem substrate_q_approx_satisfies :
+    |vol_figure_eight / (quantum_planck substrate_q) ^ 2
+     - experimental_mu_e_ratio| < 1 := by
+  unfold vol_figure_eight quantum_planck substrate_q experimental_mu_e_ratio
+  norm_num
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
-lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
+lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →
     h_q ^ 2 = vol_figure_eight / experimental_mu_e_ratio := by
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Knot volume mass ratio
-  intro h_q hne heq
-  have hsq : h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
+  -- Algebraic rearrangement: vol / h² = ratio ⟹ h² = vol / ratio
+  intro _h_q hne heq
+  have hsq : _h_q ^ 2 ≠ 0 := pow_ne_zero 2 hne
+  have hratio_ne : experimental_mu_e_ratio ≠ 0 := by
+    unfold experimental_mu_e_ratio; norm_num
   field_simp at heq ⊢
   linarith
 

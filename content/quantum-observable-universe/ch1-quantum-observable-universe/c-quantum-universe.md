@@ -1,6 +1,10 @@
 Let $K$ be an archimedean field.  A quantum universe over $K$
 ([quantum universe](#def:quantum-universe)) is realised by a $5$-tuple
-$(M, \theta, G, P, E)$ where:
+$(M, \theta, G, P, E)$: here $M$ is the spacetime (a CR manifold),
+$\theta$ encodes the contact geometry and Reeb structure,
+$G = \mathrm{SU}(2)$ is the gauge group, $P$ is the gauge bundle,
+and $E$ is the state bundle carrying the quantum degrees of freedom.
+The precise requirements are:
 
 1. $M$ is a CR manifold of hypersurface type
    (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form
@@ -21,5 +25,5 @@ The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 parameter $q(p)$, [substrate parameter](#def:substrate-parameter)), the
 Frobenius--Hopf object is
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
-Haar state, and the fibre functor $\omega$ is the forgetful functor
+Haar state, and the fibre functor $\tau$ is the forgetful functor
 to $K\text{-}\mathrm{Mod}$.

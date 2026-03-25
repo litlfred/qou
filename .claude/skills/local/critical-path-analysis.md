@@ -112,6 +112,147 @@ Categorical QOU axioms (C, A, ω)
 Everything below the wall requires the archimedean realisation.
 Everything above is purely categorical.
 
+## Audited critical paths
+
+### Path 1: thm:qu-to-qou (Main theorem — QU → QOU)
+
+14 objects, 7 tiers. All .lean files exist, 0 sorry, all SU(2) examples present.
+
+```
+Tier 0 (terminal):
+  def:rigid-monoidal-category          GENERAL
+  def:yekutieli-lifting-condition      GENERAL
+
+Tier 1:
+  def:quantum-universe                 GENERAL
+  thm:su2-emergence                    GENERAL (statement), ARCHIMEDEAN (proof via Tannaka-Krein)
+
+Tier 2:
+  def:quantum-observable-universe      GENERAL
+  prop:spin-labels                     GENERAL
+
+Tier 3:
+  def:maximal-torus                    GENERAL
+  prop:jet-prolongation                GENERAL
+
+Tier 4:
+  def:projective-line-object           GENERAL
+  def:recursive-brane-tower            GENERAL
+
+Tier 5:
+  prop:fiber-adjoint-involution        GENERAL
+  def:quantum-characteristic-classes   GENERAL
+  prop:yekutieli-lifting               GENERAL
+
+Tier 6 (target):
+  thm:qu-to-qou                       GENERAL (statement), MIXED (proof items 4-5 use P(V) geometry)
+```
+
+### Path 2: cor:mass-identity-C (Archimedean mass corollary)
+
+9 unique objects. Crosses the archimedean wall at the `-C` suffix.
+
+```
+Tier 0 (terminal):
+  def:rigid-monoidal-category          GENERAL
+
+Tier 1:
+  def:quantum-universe                 GENERAL
+
+Tier 2:
+  def:substrate-parameter              GENERAL
+  def:quantum-observable-universe      GENERAL
+
+Tier 3:
+  ex:c-quantum-universe                ARCHIMEDEAN (SU(2) / manifold realisation)
+  prop:jet-prolongation                GENERAL
+
+Tier 4:
+  def:c-quantum-observable-universe    ARCHIMEDEAN (CR manifold + gauge bundle)
+  def:recursive-brane-tower            GENERAL
+
+Tier 5:
+  def:mass-identity                    GENERAL (categorical trace)
+
+Tier 6 (target):
+  cor:mass-identity-C                  ARCHIMEDEAN (applies mass-identity to C-QOU)
+```
+
+### Path 3: thm:topological-mass (Topological decomposition of mass)
+
+22 unique objects, 7 tiers. Largest critical path. Entirely above the
+archimedean wall (categorical).
+
+```
+Tier 0 (terminal):
+  def:rigid-monoidal-category          GENERAL
+  def:yekutieli-lifting-condition      GENERAL
+
+Tier 1:
+  def:quantum-universe                 GENERAL
+  def:substrate-parameter              GENERAL
+  thm:su2-emergence                    GENERAL / ARCHIMEDEAN PROOF
+
+Tier 2:
+  def:quantum-observable-universe      GENERAL
+  def:quantum-gauge-group              GENERAL
+  rem:j1e-local-states                 ARCHIMEDEAN (jet bundle geometry)
+
+Tier 3:
+  prop:jet-prolongation                GENERAL
+  lem:descent                          GENERAL
+
+Tier 4:
+  def:recursive-brane-tower            GENERAL
+  def:descent-involution               GENERAL
+  def:brane-boundary                   GENERAL
+  def:direct-limit-algebra             GENERAL
+  def:quantum-characteristic-classes   GENERAL
+
+Tier 5:
+  def:mass-identity                    GENERAL
+  rem:q-harmonic-basis-brane           GENERAL
+  rem:weight-space-decomposition-brane GENERAL
+  rem:betti-numbers-brane              GENERAL
+  rem:algebraic-filter                 GENERAL
+
+Tier 6:
+  prop:descent-eigenspaces             GENERAL
+
+Tier 7 (target):
+  thm:topological-mass                 GENERAL (statement + categorical proof)
+                                       ARCHIMEDEAN (second proof via manifolds)
+```
+
+### Cross-path overlap
+
+Objects shared across all three paths (the "backbone"):
+- `def:rigid-monoidal-category` → `def:quantum-universe` →
+  `def:quantum-observable-universe` → `prop:jet-prolongation` →
+  `def:recursive-brane-tower` → `def:mass-identity`
+
+Objects unique to `thm:topological-mass`:
+- `def:descent-involution`, `def:brane-boundary`, `lem:descent`,
+  `prop:descent-eigenspaces`, `rem:algebraic-filter`,
+  `rem:weight-space-decomposition-brane`, `rem:q-harmonic-basis-brane`,
+  `rem:betti-numbers-brane`, `def:direct-limit-algebra`
+
+Objects unique to `cor:mass-identity-C`:
+- `def:c-quantum-observable-universe`, `ex:c-quantum-universe`,
+  `def:substrate-parameter`
+
+## Audit checklist
+
+When auditing a critical path, check every object for:
+
+1. **Lean completeness**: .lean file exists? sorry count? status accurate?
+2. **SU(2) example**: *-su2.ts/.md pair exists? Listed in `examples[]`?
+3. **Logical consistency**: `uses[]` matches actual .md cross-references?
+4. **Notational consistency**: $\mathcal{C}$ vs $C$, Frobenius--Hopf
+   hyphenation, $n \geq 0$ vs $n \geq 1$, etc.
+5. **Context classification**: GENERAL vs ARCHIMEDEAN — flag mismatches
+6. **Cross-references**: all `(#label)` links resolve to existing blocks?
+
 ## Output format
 
 Produce a table with columns:

@@ -2,16 +2,16 @@
 The algebra $\mathcal{A}_\infty$ is the direct limit
 $\varinjlim \mathrm{End}_{\mathcal{C}}(A_n)$
 ([direct limit algebra](#def:direct-limit-algebra)), and the quantum gauge
-group $G_q = \mathrm{Aut}^{\otimes}(\omega)$
+group $G_q = \mathrm{Aut}^{\otimes}(\tau)$
 ([quantum gauge group](#def:quantum-gauge-group)) acts on it by conjugation.
 
 *Existence.*
-The fibre functor $\omega \colon \mathcal{C} \to \mathrm{Vect}_R$ is
+The fibre functor $\tau \colon \mathcal{C} \to \mathrm{Vect}_R$ is
 $R$-linear and exact.  It sends the unit $\mathbf{1} \in \mathcal{C}$ to
-$R$ and the Frobenius pairing on $A$ to a non-degenerate $R$-bilinear
-form on $\omega(A)$.  At each finite level, $\omega$ maps
+$R$ and the [Frobenius pairing](#def:frobenius-pairing) on $A$ to a non-degenerate $R$-bilinear
+form on $\tau(A)$.  At each finite level, $\tau$ maps
 $\mathrm{End}_{\mathcal{C}}(A_n)$ to a finite-dimensional $R$-algebra
-$\mathrm{End}_R(\omega(A_n))$.  The Frobenius trace
+$\mathrm{End}_R(\tau(A_n))$.  The Frobenius trace
 $\mathrm{tr}_n \colon \mathrm{End}_{\mathcal{C}}(A_n) \to R$ defined by
 $$
   \mathrm{tr}_n(\alpha)

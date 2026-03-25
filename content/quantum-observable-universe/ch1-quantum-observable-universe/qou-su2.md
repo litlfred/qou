@@ -2,9 +2,9 @@ Continuing [Examples](#ex:rigid-monoidal-vect)
 and [quantum universe on SU(2)](#ex:quantum-universe-su2), write
 $V = V_{1/2} \cong \mathbb{C}^2$:
 
-1. *Non-degeneracy.* The Haar integral $\lambda = \int_G$ on
+1. *Non-degeneracy.* The Haar integral $\int_A = \int_G$ on
    $\mathcal{O}(\mathrm{SU}(2))$ is faithful: if
-   $\lambda(f^* f) = 0$ then $f = 0$.
+   $\int_A(f^* f) = 0$ then $f = 0$.
 
 2. *Observability.* The adjoint representation
    $\mathrm{Ad} \cong V_1$ (spin-$1$, dimension $3$)

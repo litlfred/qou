@@ -1,9 +1,13 @@
 Let $R$ be a commutative ring. A *quantum universe over $R$* is a
-triple $(\mathcal{C}, A, \omega)$ where:
+triple $(\mathcal{C}, A, \tau)$ where:
 
 1. $(\mathcal{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
-   monoidal category
-   ([rigid monoidal category](#def:rigid-monoidal-category));
+   symmetric monoidal category
+   ([rigid monoidal category](#def:rigid-monoidal-category)) — the
+   symmetric braiding $\sigma_{X,Y} \colon X \otimes Y
+   \xrightarrow{\sim} Y \otimes X$ is required for exterior powers
+   $\Lambda^k V$ and is canonically induced by the fibre functor
+   $\tau$ via the Tannakian structure;
 
 2. $A$ is a *Frobenius--Hopf object* in $\mathcal{C}$: an
    object equipped with morphisms
@@ -12,7 +16,7 @@ triple $(\mathcal{C}, A, \omega)$ where:
    \[
    \begin{tikzcd}[row sep=1.5em, column sep=2.5em]
      A \otimes A \ar[r, "\mu"]
-     & A \ar[r, "\lambda"]
+     & A \ar[r, "\int_A"]
      & \mathbf{1}
      & {\scriptstyle\text{(multiplication, Frobenius form)}}
      \\
@@ -31,27 +35,17 @@ triple $(\mathcal{C}, A, \omega)$ where:
 
    — multiplication $\mu$, unit $\eta$, comultiplication $\Delta$,
    counit $\varepsilon$, antipode $S$, and Frobenius
-   form $\lambda$ — satisfying:
+   form $\int_A$ — satisfying:
 
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathcal{C}$;
 
-   **(F)** the *Frobenius pairing* is
-   non-degenerate:
+   **(F)** the [Frobenius pairing](#def:frobenius-pairing)
+   $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
+   non-degenerate, inducing an isomorphism
+   $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-   ```tex
-   \begin{equation}\label{eq:frobenius-pairing}
-   \begin{tikzcd}[column sep=2.5em]
-     A \otimes A \ar[r, "\mu"]
-     & A \ar[r, "\lambda"]
-     & \mathbf{1}
-   \end{tikzcd}
-   \end{equation}
-   ```
-
-   induces an isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
-
-3. $\omega \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
+3. $\tau \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$ is a
    *fibre functor*: an exact, faithful, $R$-linear monoidal
    functor;
 

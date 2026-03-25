@@ -26,5 +26,5 @@ $t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.
 This structure is the categorical counterpart of the Feynman path
 integral: instead of integrating over all field configurations, we
 follow the deterministic flow $\Phi_t^q$ on a finite bundle.  The
-braid-group action on fibres (Chapter 4) then encodes the interactions
+braid-group action on fibres ([Chapter 3](#chap:path-integrals-braiding)) then encodes the interactions
 that occur when two knots approach within Planck-scale separation.

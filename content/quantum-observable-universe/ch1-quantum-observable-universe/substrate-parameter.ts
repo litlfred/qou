@@ -4,11 +4,14 @@ export default definition({
   label: "def:substrate-parameter",
   cites: ["lusztig1993"],
   title: "Substrate parameter",
-  tags: ["substrate", "deformation"],
+  tags: ["substrate", "deformation", "fibre-coordinate"],
   lean: {
     decl: "QOU.SubstrateParameter",
     validation: "leanok",
   },
-  status: "not_started",
-  uses: ["def:quantum-universe"],
+  uses: [
+    "def:quantum-observable-universe",
+    "def:weight-decomposition",
+    "def:categorical-reeb",
+  ],
 });

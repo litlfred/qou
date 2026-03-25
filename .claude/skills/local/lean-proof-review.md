@@ -24,7 +24,7 @@ workflow.
 - When running the agent-review pipeline with Lean content
 - When a Gemini code review touches files linked to proof objects
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **use MCP tools for all review checks**:
 
@@ -173,9 +173,8 @@ lists content object labels this block depends on. Verify that the `.lean`
 file imports or references the Lean declarations corresponding to those
 dependencies. Missing imports suggest incomplete formalization.
 
-**Status accuracy.** After review, confirm the `.ts` `status` field
-reflects reality: `proved` only if the `.lean` file has no `sorry`,
-`has_sorry` if stubs remain.
+**Status accuracy.** Formalization status is derived at build time from
+`.lean` file content — agents do not need to update any status field.
 
 ## Checklist
 

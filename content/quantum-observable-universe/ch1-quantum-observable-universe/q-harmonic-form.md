@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 $q$-deformed exterior derivative $d_q$
 ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).  The *$q$-Laplacian*
 on $\Omega^k(A)$ is $\Delta_q = d_q\,\delta_q + \delta_q\,d_q$.

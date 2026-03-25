@@ -114,7 +114,8 @@ fi
 
 # ── 5. MCP paper-assistant ─────────────────────────────────────
 ASSISTANT_OK=false
-ASSISTANT_PORT="${VIEWER_PORT:-3200}"
+source "$REPO_ROOT/scripts/folio-port.sh"
+ASSISTANT_PORT="$FOLIO_PORT"
 if curl -sf --max-time 2 "http://localhost:${ASSISTANT_PORT}/health" &>/dev/null; then
     ASSISTANT_OK=true
 fi
@@ -175,7 +176,7 @@ FIXES=""
 [ "$PANDOC_OK" = false ] && FIXES="$FIXES\n  → HTML export: sudo apt install pandoc"
 [ "$LEAN_MODE" = "none" ] || [ "$LEAN_MODE" = "local-degraded" ] && [ -n "$LEAN_FIX" ] && FIXES="$FIXES\n  → Lean: $LEAN_FIX"
 [ "$DVISVGM_OK" = false ] && [ "$PDFLATEX_OK" = true ] && FIXES="$FIXES\n  → TeX preview: sudo apt install dvisvgm"
-[ "$ASSISTANT_OK" = false ] && FIXES="$FIXES\n  → Paper assistant: ./scripts/start-assistant.sh --http"
+[ "$ASSISTANT_OK" = false ] && FIXES="$FIXES\n  → Paper assistant: ./scripts/start-folio-assistant.sh --http"
 
 if [ -n "$FIXES" ]; then
     SUMMARY="$SUMMARY

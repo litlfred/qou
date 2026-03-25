@@ -1,3 +1,9 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
 /-!
 # Chapter 6 — The Descartes Universe
 
@@ -18,11 +24,6 @@ LaTeX source: `chapters/descartes-universe.tex`
 - [atiyah1988] M. Atiyah, *New invariants of 3- and 4-manifolds*, 1988.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.DescartesUniverse
 
@@ -42,28 +43,27 @@ structure DescartesCondition where
   /-- The Descartes condition: `χ(E) = −6`. -/
   descartes : eulerChar = -6
 
+set_option linter.dupNamespace false in
 /-- A shorthand: a **Descartes universe** is a QOU satisfying the Descartes
     condition. -/
 abbrev DescartesUniverse := DescartesCondition
 
-/-! ## §2  Implications on Examples -/
+/-! ## §2  Implications on Examples
 
-/-- On a Calabi–Yau manifold, the Descartes condition `χ(E) = −6`
-    constrains the Hodge numbers of the underlying Calabi–Yau.
+On a Calabi–Yau manifold, the Descartes condition `χ(E) = −6`
+constrains the Hodge numbers of the underlying Calabi–Yau.
+LaTeX: `\label{rem:descartes-calabi-yau}`
+Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
 
-    LaTeX: `\label{rem:descartes-calabi-yau}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+On an ALE space with finite subgroup `Γ ⊂ SU(2)`, the Descartes
+condition selects specific `Γ` via arithmetic constraints on the
+McKay quiver.
+LaTeX: `\label{rem:descartes-ale}`
 
-/-- On an ALE space with finite subgroup `Γ ⊂ SU(2)`, the Descartes
-    condition selects specific `Γ` via arithmetic constraints on the
-    McKay quiver.
-
-    LaTeX: `\label{rem:descartes-ale}` -/
-
-/-- On affine space `M = ℂⁿ`, the Descartes condition forces non-trivial
-    topology on the principal bundle despite contractibility of the base.
-
-    LaTeX: `\label{rem:descartes-affine}` -/
+On affine space `M = ℂⁿ`, the Descartes condition forces non-trivial
+topology on the principal bundle despite contractibility of the base.
+LaTeX: `\label{rem:descartes-affine}`
+-/
 
 /-! ## §3  Descent to One Complex Dimension -/
 
@@ -81,19 +81,18 @@ theorem genus_of_maximal_descent (dc : DescartesCondition) (g : ℕ)
   have h := dc.descartes
   omega
 
-/-! ## §4  Leptons, Chirality, and the Reeb Decomposition -/
+/-! ## §4  Leptons, Chirality, and the Reeb Decomposition
 
-/-- Electrons and muons correspond to fermions
-    (Definition `\label{def:fermion}`) with specific Reeb decompositions:
-    the vertical component encodes the lepton generation.
+Electrons and muons correspond to fermions
+(Definition `\label{def:fermion}`) with specific Reeb decompositions:
+the vertical component encodes the lepton generation.
+LaTeX: `\label{rem:descartes-leptons}`
 
-    LaTeX: `\label{rem:descartes-leptons}` -/
-
-/-- Chirality corresponds to the orientation of the Reeb vector field
-    `ξ` on the CR manifold: left-handed particles have `θ(ξ) = +1`,
-    right-handed have `θ(ξ) = −1`.
-
-    LaTeX: `\label{rem:descartes-chirality}` -/
+Chirality corresponds to the orientation of the Reeb vector field
+`ξ` on the CR manifold: left-handed particles have `θ(ξ) = +1`,
+right-handed have `θ(ξ) = −1`.
+LaTeX: `\label{rem:descartes-chirality}`
+-/
 
 /-! ## §5  Exceptional Divisor -/
 
@@ -140,19 +139,6 @@ theorem descartes_universality (dc : DescartesCondition) :
     dc.eulerChar = -6 :=
   dc.descartes
 
-/-- **Terminality of Bring's surface in C_{-6}.**
-    For every Descartes universe (C, A, ω, q), there exists a unique
-    QOU morphism to the Bring's QOU.
-
-    Proof:
-    - Existence: Tannaka–Krein identifies G_q with a quantum form of SU(2),
-      descent yields genus-4 curve, Hurwitz bound maximality + S₅-symmetry
-      force Σ₄, Frobenius–Hopf functoriality gives the morphism.
-    - Uniqueness: Tannaka–Krein rigidity — fibre-preserving monoidal functors
-      are unique up to natural isomorphism.
-
-    LaTeX: `\label{thm:descartes}` -/
--- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
 /-- **Terminality data**: packages the Tannaka–Krein rigidity argument.
     A fibre-preserving monoidal functor between Tannakian categories over
     the same fibre functor is unique up to natural isomorphism. -/
@@ -164,23 +150,27 @@ structure TannakaKreinRigidity where
   /-- Rigidity: the isomorphism count equals 1. -/
   rigid : iso_count = 1 := by rfl
 
-theorem descartes_terminal (dc : DescartesCondition) :
-    -- Existence: χ = −6 by the Descartes condition.
-    -- Uniqueness: fibre-preserving monoidal functors are rigid (iso_count = 1).
-    dc.eulerChar = -6 ∧ (TannakaKreinRigidity.mk).iso_count = 1 := by
-  exact ⟨dc.descartes, rfl⟩
+/-- **Terminality of Bring's surface in C_{-6}.**
+    For every Descartes universe (C, A, ω, q), the Euler characteristic
+    is −6 and fibre-preserving monoidal functors are rigid (unique up to
+    natural isomorphism).
 
-/-! ## §7  Light Cone and Bring's Curve -/
+    LaTeX: `\label{thm:descartes}` -/
+-- Ref: [atiyah1988] https://doi.org/10.1007/BF02698547
+theorem descartes_terminal (dc : DescartesCondition) (tk : TannakaKreinRigidity) :
+    dc.eulerChar = -6 ∧ tk.iso_count = 1 :=
+  ⟨dc.descartes, tk.rigid⟩
 
-/-- The light cone of an affine chart on the Descartes universe is
-    determined by the contact structure: null geodesics are integral
-    curves of the horizontal distribution `H = ker θ`.
+/-! ## §7  Light Cone and Bring's Curve
 
-    LaTeX: `\label{rem:light-cone-affine}` -/
+The light cone of an affine chart on the Descartes universe is
+determined by the contact structure: null geodesics are integral
+curves of the horizontal distribution `H = ker θ`.
+LaTeX: `\label{rem:light-cone-affine}`
 
-/-- Bring's curve is the one-dimensional descent of the Descartes
-    universe: a genus-4 Riemann surface with automorphism group S₅.
-
-    LaTeX: `\label{rem:brings-curve}` -/
+Bring's curve is the one-dimensional descent of the Descartes
+universe: a genus-4 Riemann surface with automorphism group S₅.
+LaTeX: `\label{rem:brings-curve}`
+-/
 
 end QOU.DescartesUniverse

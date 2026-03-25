@@ -3,6 +3,12 @@ import { example } from "../../schema/builders";
 export default example({
   label: "ex:calabi-yau",
   title: "Real hypersurface in a Calabi--Yau $2$-fold",
-  tags: ["calabi-yau", "k3"],
-  uses: ["ex:c-quantum-observable-universe"],
+  tags: ["calabi-yau", "k3", "hyper-kahler"],
+  uses: [
+    "ex:c-quantum-observable-universe",
+    "ex:reeb-decomposition",
+    "def:weight-decomposition",
+    "def:categorical-instanton",
+    "def:substrate-parameter",
+  ],
 });

@@ -25,7 +25,7 @@ assignment before formalization can proceed.
 - When filling `sorry` placeholders with actual proofs
 - When `lake build` succeeds but there are remaining `sorry` warnings
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools over shell commands**:
 
@@ -185,6 +185,70 @@ lean/
 ```
 
 ## Proven Patterns
+
+### Existence Constructors for Structure Definitions
+
+Every `structure` definition must have at least one **existence constructor**
+— a `def` or `noncomputable def` that builds an instance of the structure
+from its prerequisites. Without this, downstream theorems depend on
+structures that may be vacuously satisfiable.
+
+**Pattern**: The constructor takes upstream structures as parameters and
+returns the target structure. The type signature makes the dependency
+chain explicit — the type checker enforces it.
+
+```lean
+-- Definition: declares WHAT the structure looks like
+structure WeightDecomposition (C : Type u) [Category.{v} C]
+    [MonoidalCategory C] [Preadditive C] where
+  forms : C
+  proj_H : forms ⟶ forms
+  proj_V : forms ⟶ forms
+  complementary : proj_H + proj_V = 𝟙 forms
+  ...
+
+-- Existence constructor: proves THAT it can be built
+noncomputable def WeightDecomposition.ofMaximalTorus
+    {C : Type u} [Category.{v} C] [MonoidalCategory C] [Preadditive C]
+    (mt : MaximalTorus C) (forms : C) : WeightDecomposition C :=
+  { forms := forms
+    proj_H := sorry  -- Ref: [lusztig1993] ...
+    proj_V := sorry  -- Ref: [lusztig1993] ...
+    complementary := sorry  -- Ref: [lusztig1993] ...
+    ... }
+```
+
+**Naming convention**: `StructureName.ofPrerequisite` (e.g.,
+`CategoricalReeb.ofWeightDecomposition`,
+`SubstrateParameter.ofReebDecomposition`).
+
+**When to use each variant**:
+
+| Situation | Pattern | Example |
+|-----------|---------|---------|
+| Concrete construction (no sorry) | Direct `def` | `SubstrateParameter.ofConstant q₀ hq_pos hq_ge hq_root` |
+| Construction from upstream structures | `noncomputable def` with sorry | `CategoricalReeb.ofWeightDecomposition mt wd` |
+| Canonical/unique choice | `instance : Inhabited T` | `instance : Inhabited (SubstrateParameter ℝ)` |
+| Auto-resolved by typeclass | `class` + `instance` | `class HasSubstrateParameter M` |
+
+**Content object requirements**: Each existence constructor gets its own
+content block triple (`.ts` + `.md` + `.lean`):
+- Block kind: `theorem` (label: `thm:<name>-exists`)
+- `uses[]`: must list the definition it constructs AND all prerequisite definitions
+- `.lean`: the constructor function, with sorry-annotated fields citing references
+
+**Dependency graph rule**: If definition B's `.lean` `structure` takes a
+parameter of type A (another project structure), there MUST exist a
+`thm:<b>-exists` block whose `uses[]` includes both `def:a` and `def:b`.
+This creates the existence edge in the dependency graph. Without it,
+the graph shows B floating without connection to A.
+
+**Checklist for every `structure` definition**:
+- [ ] At least one `.ofFoo` constructor exists in a sibling `.lean` file
+- [ ] A `thm:*-exists` content block triple references it
+- [ ] The constructor's parameters include all upstream structures
+- [ ] Each `sorry` in the constructor has a `-- Ref:` annotation
+- [ ] The chapter manifest places the existence theorem after the definition
 
 ### Subsingleton as Categorical Vanishing
 
@@ -357,7 +421,7 @@ LaTeX. Every formalizable block is defined by three sibling files:
 
 ```
 content/<paper>/<chapter>/
-  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[], status
+  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[]
   <block-name>.md    ← Narrative (markdown + TeX snippets)
   <block-name>.lean  ← Lean formalization (when required by kind)
 ```
@@ -373,12 +437,11 @@ content/<paper>/<chapter>/
 
 ### Workflow with content objects
 
-1. **Read the `.ts` manifest** to get `lean.decl`, `uses[]`, and `status`
+1. **Read the `.ts` manifest** to get `lean.decl` and `uses[]`
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
-4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed,
-   update `status` to reflect formalization progress
+4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
 
@@ -389,6 +452,56 @@ The `uses` field in `.ts` manifests forms a narrative dependency DAG:
   formalized (or have `sorry`-bridged stubs)
 - The Lean import graph should mirror the `uses[]` graph
 - Use `uses[]` to prioritize: formalize blocks with the most dependents first
+
+## Post-proof simplification pass
+
+After completing a proof (or batch of proofs), run a simplification pass
+before committing. This catches verbose patterns that accumulate during
+iterative proof development.
+
+### Checklist (apply in order)
+
+1. **`by exact X` → `X`** — drop the tactic mode wrapper when a single
+   term suffices. Similarly `by rfl` → `rfl`.
+
+2. **`unfold f; simp [...]` → `simp [f, ...]`** — `simp` can unfold
+   definitions directly; the separate `unfold` is redundant.
+
+3. **`unfold f; rw [...]` → `simp [f, ...]`** — when the rewrite chain
+   is just normalization, `simp` with the definition is cleaner.
+
+4. **Intermediate `have` → inline in `linarith`/`simp`** — if a `have`
+   exists only to feed the next tactic, pass it inline:
+   ```lean
+   -- Before:
+   have h := foo; linarith
+   -- After:
+   linarith [foo]
+   ```
+
+5. **Multi-line `apply; apply` → single `exact`** — chain applications:
+   ```lean
+   -- Before:
+   apply div_pos; apply sq_pos_of_ne_zero _ h
+   -- After:
+   exact div_pos ... (sq_pos_of_ne_zero _ h)
+   ```
+
+6. **Tautological theorems** — never create theorems that just restate a
+   structure field (`theorem foo (s : S) : ... := s.field`). Callers
+   should use `s.field` directly.
+
+7. **`@Zero.zero T inst.toZero` → `(0 : T)`** — let Lean infer instances.
+
+8. **Retraction pattern** — when proving `(f ∘ₗ g) x = x` from
+   `f ∘ₗ g = LinearMap.id`, prefer:
+   ```lean
+   congr_fun (congr_arg DFunLike.coe h_retraction) x
+   ```
+   over `rw [h]; rfl`.
+
+9. **Dead code** — remove duplicate docstrings, stale comments, and
+   unreferenced helper lemmas.
 
 ## Checklist
 

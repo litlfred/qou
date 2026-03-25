@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
 projective line object $\mathbb{P}(V) = G/T$
 ([Definition](#def:projective-line-object)).  A *localized knot* is a pair
 

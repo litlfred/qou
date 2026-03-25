@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum universe with differential
+Let $(\mathcal{C}, A, \tau)$ be a quantum universe with differential
 calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). The
 *higher differential forms* are the graded $A$-bimodule
 

@@ -5,8 +5,8 @@ export default remark({
   title: "Generalisation beyond strict pseudoconvexity",
   tags: ["cr-geometry", "levi-form"],
   uses: [
-    "def:c-quantum-universe",
-    "def:c-quantum-observable-universe",
+    "ex:c-quantum-universe",
+    "ex:c-quantum-observable-universe",
     "def:q-harmonic-form",
     "rem:c-substrate-via-levi",
   ],

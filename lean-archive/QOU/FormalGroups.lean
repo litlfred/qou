@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.GrobnerShirshov
+import Fred2005.FormalGroups
+import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
+
 /-!
 # Formal Groups — QOU Interface
 
@@ -29,12 +36,6 @@ on domain-specific integration arguments beyond the GS framework.
 - [zink2002] T. Zink, *The Display of a Formal p-Divisible Group*, Astérisque 278.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.GrobnerShirshov
-import Fred2005.FormalGroups
-import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 open Fred2005
@@ -80,6 +81,6 @@ structure StrongMultiplicativity (C : Type u) [CategoryTheory.Category.{v} C]
       [fred2005, Theorem 4.12] -/
   frobenius_preserved :
     deformed.mul ≫ deformed.comul =
-    (deformed.comul ▷ deformed.obj) ≫ (deformed.obj ◁ deformed.mul)
+    (deformed.comul ▷ deformed.obj) ≫ (α_ deformed.obj deformed.obj deformed.obj).hom ≫ (deformed.obj ◁ deformed.mul)
 
 end QOU.FormalGroups

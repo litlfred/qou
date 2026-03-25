@@ -2,12 +2,12 @@ Let $\mathcal{S}_q$ be the
 ([categorical action](#def:categorical-action)).  The three variational
 equations are:
 
-1. *Gravity (vary $\lambda$)*:
-   $\delta\mathcal{S}_q / \delta\lambda = 0$ yields the
+1. *Gravity (vary $\int_A$)*:
+   $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the
    *categorical Einstein equation*:
 
    $$
-     R_\lambda - \tfrac{1}{2}\,\mathrm{tr}(R_\lambda)\,\mathrm{id}_A
+     R_{\int} - \tfrac{1}{2}\,\mathrm{tr}(R_{\int})\,\mathrm{id}_A
      \;=\; T_q[\nabla, \psi],
    $$
 

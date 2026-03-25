@@ -8,7 +8,7 @@ number, and nearby knots interact via short-range repulsion.
 
 ## References
 
-- [leitner2026] §3 Lifting of Quantum Torsion
+- [manuscript] §3 Lifting of Quantum Torsion
 -/
 
 import Mathlib.Data.Real.Basic
@@ -36,7 +36,7 @@ structure BundleState where
   /-- Current particle states. -/
   particles : List ParticleState
   /-- Time is non-negative. -/
-  -- Ref: [leitner2026] §3, Definition: Torsion-driven knot flow
+  -- Ref: [manuscript] §3, Definition: Torsion-driven knot flow
   time_nonneg : time ≥ 0
 
 /-- Intrinsic angular momentum of a knot type, proportional to crossing number. -/

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a
+Let $(\mathcal{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) equipped with
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
@@ -11,12 +11,12 @@ The following notation is used in
   *categorical trace* (the composition
   $\mathrm{coev} \to \mathrm{id} \to \mathrm{ev}$ via the rigid
   structure).
-- $R_\lambda \in \mathrm{End}_{\mathcal{C}}(A)$ is the
+- $R_{\int} \in \mathrm{End}_{\mathcal{C}}(A)$ is the
   *Frobenius--Ricci endomorphism*: the curvature of the
-  Frobenius form $\lambda$ itself, defined by
-  $R_\lambda = (\mathrm{id}_A \otimes \lambda) \circ F_{\nabla_\lambda}$,
-  where $\nabla_\lambda$ is the canonical connection on $A$ induced
-  by $\lambda$ via $\nabla_\lambda(a) = \lambda(a_{(1)}) \otimes
+  Frobenius form $\int_A$ itself, defined by
+  $R_{\int} = (\mathrm{id}_A \otimes \int_A) \circ F_{\nabla_{\int}}$,
+  where $\nabla_{\int}$ is the canonical connection on $A$ induced
+  by $\int_A$ via $\nabla_{\int}(a) = \int_A(a_{(1)}) \otimes
   a_{(2)} - a \otimes 1$
   (Sweedler notation: $\Delta(a) = a_{(1)} \otimes a_{(2)}$,
   summation suppressed).
@@ -24,9 +24,9 @@ The following notation is used in
   \mathrm{End}_{\mathcal{C}}(A \otimes \Omega^{\bullet}(A)) \to
   \mathrm{End}_{\mathcal{C}}(\Omega^{\bullet}(A))$ is the
   *partial trace* over the $A$ factor.
-- $\psi^* = \lambda \circ S(\psi) \colon A \to \mathbf{1}$ is the
+- $\psi^* = \int_A \circ S(\psi) \colon A \to \mathbf{1}$ is the
   *adjoint section* (antipode composed with the Frobenius form).
 - $D_\nabla = q^{-1}\,\nabla + (1 - q^{-1})\,\iota_\xi\,\nabla$ is
   the *$q$-deformed covariant derivative*, where $\xi$ is the
   Reeb derivation of $A$
-  ([Reeb decomposition](#def:reeb-decomposition)).
+  ([Reeb decomposition](#ex:reeb-decomposition)).

@@ -63,6 +63,7 @@
     .br-opt:hover,.br-opt.active{background:var(--bg-r);color:var(--fg)}
     .br-opt.current{font-weight:600;color:var(--ac)}
     .br-opt .br-head{font-size:.45rem;color:var(--fg-d);margin-left:.3rem}
+    .br-sep{height:1px;background:var(--fg-d);opacity:.25;margin:2px 4px}
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
@@ -110,7 +111,7 @@
     .sb-ch.active{color:var(--ac)}
     .sb-ch .sb-arrow{font-size:.5rem;transition:transform .15s;flex-shrink:0}
     .sb-ch.open .sb-arrow{transform:rotate(90deg)}
-    .sb-ch-body{display:none;overflow:hidden}
+    .sb-ch-body{display:none}
     .sb-ch.open+.sb-ch-body{display:block}
     .sb-ch .katex,.sb-ch .katex *{color:inherit!important}
     .sb-sec{padding:.25rem .8rem .25rem 1.2rem;color:var(--fg);cursor:pointer;font-size:.68rem;border-left:2px solid transparent;transition:border-color .15s}
@@ -126,6 +127,8 @@
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
+    .sb-badge.lean-ref{background:#d4a017;color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.15rem}
+    .sb-badge.lean-ref:hover{background:#c49000;filter:brightness(1.1)}
     .sb-badge.lean-miss{background:#666;color:#ccc}
     .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
     .sb-badge:hover::after{opacity:1}
@@ -196,6 +199,8 @@
     .bh-ind .ind-badge.err{background:var(--red);color:#fff}
     .bh-ind .ind-badge.miss{background:var(--bg-r);color:var(--fg-d);border:1px solid var(--brd)}
     .bh-ind .ind-badge.stub{background:var(--ora);color:#fff}
+    .bh-ind .ind-badge.ref{background:#d4a017;color:#fff;cursor:pointer}
+    .bh-ind .ind-badge.ref:hover{filter:brightness(1.1)}
     .bh-ind .ind-label{font-size:.5rem;color:var(--fg-d)}
 
     .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
@@ -394,7 +399,7 @@
       .bb sup{font-size:.75em}
     }
     /* Reading mode — hide decorations, clean layout */
-    body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu{display:none!important}
+    body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu,body.reading .ref-by,body.reading .uses{display:none!important}
     /* LaTeX article styling for block headers */
     body.reading .bh{display:inline!important;margin-bottom:0!important;gap:0!important;font-family:var(--f-body)}
     body.reading .bh-anchor{display:inline!important;gap:0!important}
@@ -537,7 +542,17 @@
     .uptb{padding:.25rem .6rem;font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent}
     .uptb:hover{color:var(--fg)}
     .uptb.on{color:var(--ac);border-bottom-color:var(--ac)}
-    .upc{padding:.6rem;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;white-space:pre-wrap;overflow-x:auto;max-height:280px;overflow-y:auto}
+    .upc{padding:.6rem;font-size:.7rem;line-height:1.5;overflow-x:auto;max-height:280px;overflow-y:auto}
+    .upc.upc-src{font-family:var(--f-mono);white-space:pre-wrap}
+    .upc.upc-rendered p{margin:.5em 0}
+    .upc.upc-rendered ul{margin:.4em 0;padding-left:1.5em;list-style:none}
+    .upc.upc-rendered ol{margin:.4em 0;padding-left:1.5em}
+    .upc.upc-rendered li{margin:.4em 0}
+    .upc.upc-rendered strong{color:var(--fg-b)}
+    .upc.upc-rendered a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+    .upc.upc-rendered a:hover{color:var(--fg-b)}
+    .uph-close{margin-left:.4rem;font-size:.8rem;color:var(--fg-d);cursor:pointer;line-height:1;padding:0 .2rem}
+    .uph-close:hover{color:var(--ac)}
 
     /* Content */
     .bb p{margin:.5em 0}
@@ -547,6 +562,11 @@
     .bb strong{color:var(--fg-b)}
     .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
     .bb a:hover{color:var(--fg-b)}
+    .bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9em}
+    .bb th,.bb td{border:1px solid var(--brd);padding:.4rem .6rem;text-align:left}
+    .bb th{background:var(--bg-r);font-weight:600;font-family:var(--f-head);font-size:.85em}
+    .bb td{vertical-align:middle}
+    .bb tr:hover{background:var(--bg-r)}
     .katex-display{overflow-x:auto;overflow-y:hidden;padding:.4rem 0}
     .katex{color:var(--fg)}
 
@@ -667,9 +687,15 @@
     .chat-msg.user{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:3px}
     .chat-msg.assistant{align-self:flex-start;background:var(--bg-r);color:var(--fg);border-bottom-left-radius:3px}
     .chat-msg.system{align-self:center;background:none;color:var(--fg-d);font-size:.65rem;font-style:italic;padding:.2rem}
+    .chat-msg{position:relative}
+    .chat-msg .chat-copy{position:absolute;top:.2rem;right:.2rem;background:none;border:none;color:var(--fg-d);font-size:.55rem;cursor:pointer;opacity:0;transition:opacity .15s;font-family:var(--f-mono);padding:.1rem .3rem}
+    .chat-msg:hover .chat-copy{opacity:.5}
+    .chat-msg .chat-copy:hover{opacity:1;color:var(--ac)}
     .chat-msg .chat-math{margin:.3rem 0}
     .chat-msg code{background:rgba(0,0,0,.1);padding:.1rem .3rem;border-radius:3px;font-family:var(--f-mono);font-size:.7rem}
     .chat-msg a{color:inherit;text-decoration:underline}
+    .chat-msg .chat-nav-link{display:inline-flex;align-items:center;gap:.2rem;font-family:var(--f-mono);font-size:.65rem;background:var(--bg-s);border:1px solid var(--brd);border-radius:3px;padding:.1rem .4rem;margin:.2rem 0;cursor:pointer;color:var(--ac);text-decoration:none}
+    .chat-msg .chat-nav-link:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
     .chat-msg table{border-collapse:collapse;font-size:.72rem;margin:.4rem 0;width:100%}
     .chat-msg th,.chat-msg td{border:1px solid var(--brd);padding:.25rem .4rem;text-align:left}
     .chat-msg th{background:var(--bg-s);font-weight:600;font-size:.65rem;text-transform:uppercase;letter-spacing:.03em}
@@ -808,20 +834,18 @@
     .dep-overlay-bar .dep-link:hover{opacity:1;color:var(--ac)}
     .dep-overlay-bar .dep-copied{font-size:.55rem;color:var(--grn);opacity:0;transition:opacity .3s;margin-left:.2rem}
     .dep-overlay-bar .dep-copied.show{opacity:1}
-    /* Split layout: graph LHS + preview RHS */
-    .dep-body{display:flex;flex:1;overflow:hidden}
+    /* Split layout: graph LHS + overlay RHS */
+    .dep-body{display:flex;flex:1;overflow:hidden;position:relative}
     .dep-lhs{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:200px}
     .dep-graph-wrap{flex:1;overflow:hidden;cursor:grab}
     .dep-graph-wrap.panning{cursor:grabbing}
     .dep-graph-svg{min-height:300px;width:100%;height:100%}
     .dep-graph-svg svg{width:100%;height:100%}
-    /* Draggable divider between LHS and RHS */
-    .dep-divider{width:5px;cursor:col-resize;background:var(--brd);flex-shrink:0;transition:background .15s;display:none}
-    .dep-divider:hover,.dep-divider.active{background:var(--ac-d)}
-    .dep-divider.vis{display:block}
-    /* RHS preview panel */
-    .dep-rhs{width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;flex-shrink:0}
-    .dep-rhs.open{width:500px}
+    /* Draggable divider — hidden, kept for compat */
+    .dep-divider{display:none}
+    /* RHS preview panel — overlay, does not shift LHS */
+    .dep-rhs{position:absolute;top:0;right:0;bottom:0;width:0;overflow:hidden;border-left:1px solid var(--brd);background:var(--bg-s);display:flex;flex-direction:column;z-index:10;transition:width .2s ease;box-shadow:none}
+    .dep-rhs.open{width:420px;box-shadow:-4px 0 16px rgba(0,0,0,.15)}
     .dep-rhs-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.72rem;flex-shrink:0}
     .dep-rhs-head .rhs-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase}
     .dep-rhs-head .rhs-title{color:var(--fg-b);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -847,10 +871,12 @@
     .dep-edge.lean-complete{stroke:var(--grn)}
     .dep-edge.lean-incomplete{stroke:var(--ora);stroke-dasharray:6 3}
     .dep-edge.lean-none{stroke:var(--fg-d);stroke-dasharray:3 3;opacity:.4}
+    .dep-edge.lean-trivial{stroke:var(--fg-d);opacity:.3}
     .dep-arrowhead-narrative{fill:var(--ac)}
     .dep-arrowhead-lean-complete{fill:var(--grn)}
     .dep-arrowhead-lean-incomplete{fill:var(--ora)}
     .dep-arrowhead-lean-none{fill:var(--fg-d);opacity:.4}
+    .dep-arrowhead-lean-trivial{fill:var(--fg-d);opacity:.3}
     /* Legend */
     .dep-legend{display:flex;gap:1.2rem;flex-wrap:wrap;padding:.5rem 1rem;border-bottom:1px solid var(--brd);font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);flex-shrink:0;background:var(--bg-s)}
     .dep-legend-item{display:flex;align-items:center;gap:.3rem}
@@ -890,7 +916,7 @@
 </head>
 <body data-font="web">
   <div class="ctrl">
-    <a href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
+    <a id="toplet" href="#/" style="font-weight:500;color:var(--fg);text-decoration:none;cursor:pointer">Folio</a>
     <div class="br-picker" id="br-picker">
       <input id="br-input" type="text" placeholder="branch..." autocomplete="off">
       <div class="br-drop" id="br-drop"></div>
@@ -904,6 +930,7 @@
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
     <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
     <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
+    <button id="c-cc" title="Clear session cache (localStorage) and reload">clear cache</button>
     <span class="hash" id="c-hash"></span>
   </div>
 
@@ -919,6 +946,10 @@
       <span id="dep-subtitle" style="font-size:.65rem"></span>
       <a class="dep-link" id="dep-link" title="Copy link / ctrl+click to open in new tab">#</a><span class="dep-copied" id="dep-copied">copied</span>
       <span class="dep-sp"></span>
+      <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include examples in print"><input type="checkbox" id="dep-inc-ex" style="margin:0"> examples</label>
+      <label style="font-size:.6rem;display:flex;align-items:center;gap:.2rem" title="Include remarks in print"><input type="checkbox" id="dep-inc-rm" style="margin:0"> remarks</label>
+      <button id="dep-print-btn" title="Print preview: paper with just these dependencies">print</button>
+      <a class="dep-link" id="dep-preview-link" title="Open lightning view (critical path)" style="font-size:.6rem">&#x26A1; lightning</a>
       <button id="dep-fb-btn" title="Feedback on this block">feedback</button>
       <button id="dep-close">&times; close</button>
     </div>
@@ -965,7 +996,13 @@
     <div class="fb-target" id="fb-target"></div>
     <div class="fb-input-area">
       <textarea id="fb-text" placeholder="Describe the issue, question, or suggestion..." rows="4"></textarea>
+      <div id="fb-photo-preview" style="display:none;margin:.4rem 0;position:relative;max-width:200px">
+        <img id="fb-photo-img" style="max-width:100%;border-radius:4px;border:1px solid var(--brd)">
+        <button id="fb-photo-remove" style="position:absolute;top:2px;right:2px;background:var(--bg-s);border:1px solid var(--brd);border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:.7rem;color:var(--fg-d);display:flex;align-items:center;justify-content:center">&times;</button>
+      </div>
       <div class="fb-controls">
+        <input type="file" id="fb-photo" accept="image/*" style="display:none">
+        <button class="fb-voice" id="fb-photo-btn" title="Attach photo" style="font-size:.7rem">📷</button>
         <button class="fb-voice" id="fb-voice" title="Voice input (click to start/stop)">mic</button>
         <select id="fb-priority">
           <option value="medium">Medium</option>
@@ -1001,6 +1038,7 @@
       <span class="chat-title">Folio</span>
       <span class="chat-mode" id="chat-mode">reader</span>
       <button id="chat-expand" title="Expand/collapse">⛶</button>
+      <button id="chat-copy-all" title="Copy entire chat">copy</button>
       <button id="chat-clear" title="Clear chat">clear</button>
       <button id="chat-close" title="Close">&times;</button>
     </div>
@@ -1026,6 +1064,29 @@
     let currentBranchName = null;
     let selectedBranch = null;
 
+    // ── Client-side fetch cache (5-minute TTL) ────────────
+    const _fetchCache = new Map(); // url → { data, ts }
+    const CACHE_TTL = 5 * 60 * 1000;
+    async function cachedFetch(url) {
+      const entry = _fetchCache.get(url);
+      if (entry && Date.now() - entry.ts < CACHE_TTL) return entry.data;
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+      const data = await r.json();
+      _fetchCache.set(url, { data, ts: Date.now() });
+      return data;
+    }
+    function invalidateCache(prefix) {
+      for (const k of [..._fetchCache.keys()]) if (k.includes(prefix)) _fetchCache.delete(k);
+    }
+
+    // ── Lazy-load state (outline → chapter → section) ────
+    let paperOutline = null;        // PaperOutline from /api/paper/outline
+    const chapterDetails = new Map(); // chapterDir → ChapterDetail
+    const loadedSections = new Set(); // "chapterDir:sectionIdx" → loaded
+    const sectionLoadPromises = new Map(); // dedup in-flight section loads
+    const chapterLoadPromises = new Map(); // dedup in-flight chapter loads
+
     // ── Controls ─────────────────────────────────────────
     const html = document.documentElement;
     const btnEx = document.getElementById('c-ex');
@@ -1034,7 +1095,7 @@
     const btnFn = document.getElementById('c-fn');
 
     // Restore saved theme preference (default: light)
-    const savedTheme = localStorage.getItem('qou-theme');
+    const savedTheme = localStorage.getItem('folio-assistant-theme');
     if (savedTheme) {
       html.dataset.theme = savedTheme;
       btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
@@ -1044,7 +1105,7 @@
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('qou-theme', n);
+      localStorage.setItem('folio-assistant-theme', n);
     });
 
     btnFn.addEventListener('click', () => {
@@ -1085,8 +1146,21 @@
     btnRm.classList.add('on'); // remarks on by default
 
     // Preview (browser print with LaTeX-styled CSS)
-    document.getElementById('c-pr').addEventListener('click', () => {
-      // Force-hydrate all lazy content before printing
+    document.getElementById('c-pr').addEventListener('click', async () => {
+      // Force-load all lazy sections before printing
+      if (paperOutline && paper?._loadChapterDetail && paper?._loadSection) {
+        for (const ch of paper.chapters) {
+          if (ch._dir) {
+            await paper._loadChapterDetail(paper.id, ch);
+            for (let si = 0; si < ch.sections.length; si++) {
+              const cd = document.querySelector(`.ch[data-ch-num="${ch.number}"]`);
+              const secDiv = cd?.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
+              if (secDiv) await paper._loadSection(paper.id, ch._dir, si, secDiv);
+            }
+          }
+        }
+      }
+      // Force-hydrate all lazy KaTeX content
       while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
       window.print();
     });
@@ -1167,19 +1241,31 @@
     });
 
     const btnRd = document.getElementById('c-rd');
-    let readingMode = localStorage.getItem('qou-reading') === '1';
+    let readingMode = localStorage.getItem('folio-assistant-reading') === '1';
     if (readingMode) { document.body.classList.add('reading'); btnRd.classList.add('on'); }
     btnRd.addEventListener('click', () => {
       readingMode = !readingMode;
       document.body.classList.toggle('reading', readingMode);
       btnRd.classList.toggle('on', readingMode);
-      localStorage.setItem('qou-reading', readingMode ? '1' : '0');
+      localStorage.setItem('folio-assistant-reading', readingMode ? '1' : '0');
+    });
+
+    // ── Clear cache button ──────────────────────────────
+    document.getElementById('c-cc').addEventListener('click', () => {
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('folio-assistant-')) keys.push(k);
+      }
+      keys.forEach(k => localStorage.removeItem(k));
+      location.reload();
     });
 
     // ── Branch switcher (searchable) ─────────────────────
     const brInput = document.getElementById('br-input');
     const brDrop = document.getElementById('br-drop');
     let allBranches = [];
+    let brRecentCount = 0;
     let brActiveIdx = -1;
 
     async function loadBranches() {
@@ -1190,7 +1276,8 @@
         currentBranchName = data.current;
         if (!selectedBranch) selectedBranch = currentBranchName;
         allBranches = data.branches || [];
-        console.log(`[folio:git] loaded ${allBranches.length} branches, HEAD=${currentBranchName}, viewing=${selectedBranch}`);
+        brRecentCount = data.recentCount || 0;
+        console.log(`[folio:git] loaded ${allBranches.length} branches (${brRecentCount} recent), HEAD=${currentBranchName}, viewing=${selectedBranch}`);
         brInput.value = selectedBranch;
         brInput.title = selectedBranch === currentBranchName ? `${selectedBranch} (HEAD)` : selectedBranch;
       } catch { /* /api/branches not available */ }
@@ -1208,7 +1295,23 @@
         brDrop.appendChild(empty);
         return;
       }
+      // Count pinned items (current + main/master) to know where the
+      // separator between recent and alphabetical branches goes.
+      const pinned = new Set();
+      pinned.add(currentBranchName);
+      if (allBranches.includes('main')) pinned.add('main');
+      if (allBranches.includes('master')) pinned.add('master');
+      // In the unfiltered list: separator after pinned + recent
+      const sepAfter = !q && brRecentCount > 0
+        ? pinned.size + brRecentCount : -1;
+
       matches.forEach((b, i) => {
+        // Insert separator between recent and remaining branches
+        const origIdx = allBranches.indexOf(b);
+        if (sepAfter > 0 && origIdx === sepAfter && !q) {
+          const sep = mk('div','br-sep');
+          brDrop.appendChild(sep);
+        }
         const opt = mk('div','br-opt');
         if (b === currentBranchName) opt.classList.add('current');
         if (b === selectedBranch) opt.classList.add('active');
@@ -1463,7 +1566,14 @@
           continue;
         }
         if (l.trimStart().startsWith('$$')) {
-          const m = [l.trimStart().slice(2)]; i++;
+          const rest = l.trimStart().slice(2);
+          const closeIdx = rest.indexOf('$$');
+          if (closeIdx >= 0) {
+            // Single-line $$...$$
+            o.push(`<div data-md>${esc(rest.slice(0, closeIdx).trim())}</div>`);
+            i++; continue;
+          }
+          const m = [rest]; i++;
           while (i < lines.length && !lines[i].includes('$$')) { m.push(lines[i]); i++; }
           if (i < lines.length) { m.push(lines[i].replace('$$','')); i++; }
           o.push(`<div data-md>${esc(m.join('\n').trim())}</div>`);
@@ -1600,18 +1710,28 @@
       corollary:'Cor.', conjecture:'Conj.', example:'Ex.', remark:'Rem.',
       proof:'Proof', equation:'Eqn.', diagram:'Fig.', prose:''
     };
+    // Section/chapter label → title index (populated when paper loads)
+    const secIndex = new Map(); // label → { title, kind: 'section'|'chapter' }
     function resolveRefs(el) {
       for (const a of el.querySelectorAll('a[data-ref]')) {
         const label = a.dataset.ref;
-        const ref = bix.get(label);
-        if (!ref) continue;
-        // Replace generic or raw-label text with "Abbrev. Title"
         const text = a.textContent.trim();
-        const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
-          'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
-        if (ref.title && (generic.includes(text) || text === label)) {
-          const abbr = kindAbbrev[ref.kind] || ref.kind;
-          a.innerHTML = `${abbr} ${inl(ref.title)}`;
+        // Try block index first
+        const ref = bix.get(label);
+        if (ref) {
+          const generic = ['Definition','Theorem','Lemma','Proposition','Corollary',
+            'Conjecture','Example','Remark','Proof','Equation','Diagram', label];
+          if (ref.title && (generic.includes(text) || text === label)) {
+            const abbr = kindAbbrev[ref.kind] || ref.kind;
+            a.innerHTML = `${abbr} ${inl(ref.title)}`;
+            renderMath(a);
+          }
+          continue;
+        }
+        // Try section/chapter index — just replace with title (§ is already in source text)
+        const sec = secIndex.get(label);
+        if (sec && (text === label || !text)) {
+          a.innerHTML = inl(sec.title);
           renderMath(a);
         }
       }
@@ -1648,8 +1768,13 @@
       const goTo = mk('a','uph-goto');
       goTo.textContent = 'go to \u2197';
       goTo.href = `#${label}`;
-      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth'}); };
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
       hd.appendChild(goTo);
+      const closeBtn = mk('span','uph-close');
+      closeBtn.textContent = '\u2715';
+      closeBtn.title = 'Close';
+      closeBtn.onclick = (e) => { e.stopPropagation(); p.classList.remove('open'); };
+      hd.appendChild(closeBtn);
       renderMath(hd);
       p.appendChild(hd);
 
@@ -1657,10 +1782,10 @@
       const tabs = mk('div','upt');
       const content = mk('div','upc');
       const views = [
-        {label:'rendered', show:() => { content.innerHTML = bh; fillTex(content, tx, ref.rendered); renderMath(content); }},
-        {label:'source', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.md||'')}</pre>`; }},
+        {label:'rendered', show:() => { content.className = 'upc upc-rendered'; content.innerHTML = bh; fillTex(content, tx, ref.rendered); renderMath(content); }},
+        {label:'source', show:() => { content.className = 'upc upc-src'; content.innerHTML = `<pre style="margin:0">${esc(ref.md||'')}</pre>`; }},
       ];
-      if (ref.lean?.source) views.push({label:'lean', show:() => { content.innerHTML = `<pre style="margin:0">${esc(ref.lean.source)}</pre>`; }});
+      if (ref.lean?.source) views.push({label:'lean', show:() => { content.className = 'upc upc-src'; content.innerHTML = `<pre style="margin:0">${esc(ref.lean.source)}</pre>`; }});
 
       views.forEach((v, i) => {
         const b = mk('button','uptb' + (i===0?' on':''));
@@ -1689,12 +1814,212 @@
     const depGraphWrap = document.querySelector('.dep-graph-wrap');
     let depRootLabel = null; // current root for feedback
 
-    function depCloseRhs() { depRhs.classList.remove('open'); depDivider.classList.remove('vis'); }
-    function depOpenRhs() { depRhs.classList.add('open'); depDivider.classList.add('vis'); }
+    function depCloseRhs() { depRhs.classList.remove('open'); }
+    function depOpenRhs() { depRhs.classList.add('open'); }
 
     document.getElementById('dep-close').onclick = () => { depOverlay.classList.remove('open'); depCloseRhs(); };
     document.getElementById('dep-rhs-close').onclick = depCloseRhs;
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && depOverlay.classList.contains('open')) { depOverlay.classList.remove('open'); depCloseRhs(); } });
+
+    // ── Dep graph: print preview (paper with just dependencies) ──
+    document.getElementById('dep-print-btn').onclick = () => {
+      if (!depRootLabel) return;
+      const { nodes, edges } = buildDepGraph(depRootLabel);
+      const incEx = document.getElementById('dep-inc-ex').checked;
+      const incRm = document.getElementById('dep-inc-rm').checked;
+
+      // Topological sort: dependencies first, root last
+      const adj = new Map(), indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
+      }
+      const queue = [], sorted = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift(); sorted.push(l);
+        for (const n of (adj.get(l) || [])) { indeg.set(n, indeg.get(n) - 1); if (indeg.get(n) === 0) queue.push(n); }
+      }
+      // Reverse so leaf dependencies come first
+      sorted.reverse();
+
+      // Filter by kind based on checkboxes
+      const skipKinds = new Set();
+      if (!incEx) skipKinds.add('example');
+      if (!incRm) skipKinds.add('remark');
+
+      // Build block→chapter/section reverse lookup
+      const blockChSec = new Map();
+      if (paper) {
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            for (const b of sec.blocks) {
+              if (b.label) blockChSec.set(b.label, { chTitle: ch.title, chNum: ch.number, secTitle: sec.title });
+            }
+          }
+        }
+      }
+
+      // Build print content
+      const blocks = [];
+      for (const label of sorted) {
+        const b = bix.get(label);
+        if (!b) continue;
+        if (skipKinds.has(b.kind)) continue;
+        blocks.push(b);
+        // Include child examples/proofs if toggled on
+        if (incEx && b.examples) {
+          for (const exLabel of b.examples) {
+            const ex = bix.get(exLabel);
+            if (ex) blocks.push(ex);
+          }
+        }
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) {
+            const prf = bix.get(prfLabel);
+            if (prf) blocks.push(prf);
+          }
+        }
+      }
+
+      // Collect tex block data for each block (rendered SVGs + LaTeX source fallback)
+      const blockData = blocks.map(b => {
+        const {html: bh, texBlocks: tx} = parseMd(b.md || '');
+        return { block: b, html: bh, texBlocks: tx };
+      });
+
+      // Open print window with rendered blocks
+      const win = window.open('', '_blank');
+      if (!win) return;
+      const root = bix.get(depRootLabel);
+      const title = root?.title || depRootLabel;
+      const theme = document.documentElement.dataset.theme || '';
+      win.document.write(`<!DOCTYPE html><html data-theme="${esc(theme)}"><head>
+        <title>${esc(title)} — Dependencies</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+        <style>
+          :root{--fg:#222;--fg-b:#333;--fg-d:#888;--bg:#fff;--bg-r:#fafafa;--bg-s:#f5f5f5;--brd:#e0e0e0;--ac:#4f46e5;--grn:#22c55e;--red:#dc2626;--ora:#f59e0b;--yel:#eab308;
+            --f-body:'Crimson Pro',Georgia,serif;--f-head:'Inter',system-ui,sans-serif;--f-mono:'JetBrains Mono',monospace}
+          [data-theme="dark"]{--fg:#ddd;--fg-b:#ccc;--fg-d:#888;--bg:#1a1a1a;--bg-r:#222;--bg-s:#1e1e1e;--brd:#333;--ac:#818cf8;--grn:#4ade80;--red:#f87171;--ora:#fbbf24;--yel:#facc15}
+          body{font-family:var(--f-body);color:var(--fg);background:var(--bg);max-width:800px;margin:2rem auto;padding:0 2rem;line-height:1.6}
+          h1{font-family:var(--f-head);font-size:1.4rem;margin-bottom:.5rem}
+          .dep-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+          .blk{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--brd)}
+          .blk:last-child{border-bottom:none}
+          .bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+          .bt{font-family:var(--f-head);font-weight:600}
+          .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+          .bb{margin-top:.5rem}
+          .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+          .txb img,.txb svg{max-width:100%;height:auto}
+          .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+          table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+          th,td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+          th{background:var(--bg-s);font-weight:600}
+          .qed{text-align:right;font-size:.8rem}
+          .qed::after{content:'\\25A1'}
+          @media print{body{max-width:100%;margin:0;padding:1cm}.txb.ph{background:#f5f5f5}}
+        </style>
+      </head><body>`);
+      win.document.write(`<h1>${esc(title)}</h1>`);
+      win.document.write(`<div class="dep-count">${blocks.length} blocks in dependency chain</div>`);
+      let lastCh = null, lastSec = null;
+      for (const {block: b, html: bh, texBlocks: tx} of blockData) {
+        // Insert chapter/section headers when they change
+        const loc = blockChSec.get(b.label);
+        if (loc) {
+          const chKey = loc.chNum ?? loc.chTitle;
+          if (chKey !== lastCh) {
+            lastCh = chKey; lastSec = null;
+            win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.1rem;margin-top:1.5rem;border-bottom:2px solid var(--brd);padding-bottom:.3rem">${loc.chNum != null ? loc.chNum + '. ' : ''}${esc(loc.chTitle)}</h2>`);
+          }
+          if (loc.secTitle !== lastSec) {
+            lastSec = loc.secTitle;
+            win.document.write(`<h3 style="font-family:var(--f-head);font-size:.9rem;margin-top:1rem;color:var(--fg-d)">${esc(loc.secTitle)}</h3>`);
+          }
+        }
+        const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+        win.document.write(`<div class="blk">`);
+        win.document.write(`<span class="bk">${esc(kindLabel)}.</span>`);
+        if (b.title) win.document.write(`<span class="bt">${inl(b.title)}</span>`);
+        if (b.label) win.document.write(`<span class="bl">${esc(b.label)}</span>`);
+        // Render HTML, then fill tex block placeholders
+        let bodyHtml = bh;
+        // Replace txb placeholders with rendered SVGs or LaTeX source
+        bodyHtml = bodyHtml.replace(/<div class="txb" data-ti="(\d+)"><\/div>/g, (_, idx) => {
+          const i = +idx;
+          const texSrc = tx[i] || '';
+          const escapedTex = esc(texSrc);
+          const a = b.rendered?.find(r => r.blockIndex === i);
+          if (a && a.mime === 'image/svg+xml') {
+            return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" title="LaTeX source (hover)" loading="lazy"></div>`;
+          }
+          if (a && a.mime?.startsWith('image/')) {
+            return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" title="LaTeX source (hover)" loading="lazy"></div>`;
+          }
+          // Fallback: show LaTeX source
+          return `<div class="txb ph">${escapedTex}</div>`;
+        });
+        win.document.write(`<div class="bb">${bodyHtml}</div>`);
+        if (b.kind === 'proof') win.document.write(`<div class="qed"></div>`);
+        win.document.write(`</div>`);
+      }
+      // ── Lean appendix ──
+      const leanEntries = [];
+      for (const {block: b} of blockData) {
+        if (b.lean?.source) {
+          const loc = blockChSec.get(b.label);
+          leanEntries.push({ label: b.label, title: b.title, kind: b.kind, decl: b.lean.decl, file: b.lean.file, source: b.lean.source, chNum: loc?.chNum, chTitle: loc?.chTitle, secTitle: loc?.secTitle });
+        }
+      }
+      if (leanEntries.length) {
+        win.document.write(`<hr style="margin:2rem 0;border:none;border-top:2px solid var(--brd)">`);
+        win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.2rem">Appendix: Lean Formalization</h2>`);
+        win.document.write(`<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:1rem">${leanEntries.length} Lean source files</div>`);
+        let lnLastCh = null, lnLastSec = null;
+        for (const le of leanEntries) {
+          const chKey = le.chNum ?? le.chTitle;
+          if (chKey !== lnLastCh) {
+            lnLastCh = chKey; lnLastSec = null;
+            if (le.chTitle) win.document.write(`<h3 style="font-family:var(--f-head);font-size:.95rem;margin-top:1.2rem;border-bottom:1px solid var(--brd);padding-bottom:.2rem">${le.chNum != null ? le.chNum + '. ' : ''}${esc(le.chTitle)}</h3>`);
+          }
+          if (le.secTitle && le.secTitle !== lnLastSec) {
+            lnLastSec = le.secTitle;
+            win.document.write(`<h4 style="font-family:var(--f-head);font-size:.8rem;margin-top:.8rem;color:var(--fg-d)">${esc(le.secTitle)}</h4>`);
+          }
+          const kindLabel = (le.kind || '').charAt(0).toUpperCase() + (le.kind || '').slice(1);
+          win.document.write(`<div style="margin-bottom:1rem">`);
+          win.document.write(`<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.2rem"><span style="font-weight:700">${esc(kindLabel)}.</span> ${le.title ? esc(le.title) : ''} <span style="opacity:.6">${esc(le.decl || le.file || le.label)}</span></div>`);
+          win.document.write(`<pre style="margin:0;padding:.6rem .8rem;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;overflow-x:auto;white-space:pre;tab-size:2"><code>${esc(le.source)}</code></pre>`);
+          win.document.write(`</div>`);
+        }
+      }
+
+      win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>`);
+      win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>`);
+      const macrosJson = JSON.stringify(katexMacros);
+      win.document.write(`<script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var macros = ${macrosJson};
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: '\\\\(', right: '\\\\)', display: false},
+              {left: '\\\\[', right: '\\\\]', display: true}
+            ],
+            throwOnError: false,
+            macros: macros
+          });
+          document.querySelectorAll('[data-md]').forEach(el => {
+            try { katex.render(el.textContent, el, {displayMode: true, throwOnError: false, macros: macros}); } catch {}
+          });
+          document.querySelectorAll('[data-mi]').forEach(el => {
+            try { katex.render(el.textContent, el, {throwOnError: false, macros: macros}); } catch {}
+          });
+        });
+      <\/script>`);
+      win.document.write(`</body></html>`);
+      win.document.close();
+    };
 
     // ── Draggable divider between LHS and RHS ──
     let divDrag = false;
@@ -1755,7 +2080,7 @@
       depOverlay.classList.remove('open');
       depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     document.getElementById('dep-rhs-fb').onclick = () => {
       const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
@@ -1768,7 +2093,8 @@
       if (!block) return;
       depRhsCurrentLabel = label;
       depRhsKind.textContent = block.kind;
-      depRhsTitle.textContent = block.title || label;
+      depRhsTitle.innerHTML = inl(block.title || label);
+      renderMath(depRhsTitle);
       renderBlockContent(depRhsBody, block);
       depOpenRhs();
       depGraphSvg.querySelectorAll('.dep-node').forEach(n => n.classList.toggle('dep-hovered', n.dataset.label === label));
@@ -1780,6 +2106,14 @@
     const DEP_PROVABLE = new Set(['theorem','lemma','proposition','corollary']);
     const DEP_NS = 'http://www.w3.org/2000/svg';
     const DEP_NODE_W = 200, DEP_NODE_H = 56, DEP_LAYER_GAP = 80, DEP_NODE_GAP = 28;
+
+    /** Strip $...$ and common LaTeX commands for plain-text SVG labels */
+    function stripTex(s) {
+      return s.replace(/\$([^$]*)\$/g, '$1')
+              .replace(/\\(?:mathbb|mathrm|mathcal|mathfrak|operatorname|text|textbf|emph)\{([^}]*)\}/g, '$1')
+              .replace(/\\[a-zA-Z]+/g, '')
+              .replace(/[{}]/g, '');
+    }
 
     function depNodeClass(b) {
       if (!b) return 'dep-node-none';
@@ -1798,7 +2132,12 @@
       const fromLean = from.lean || from.proofs?.some(pl => bix.get(pl)?.lean);
       let leanStatus = 'lean-none';
       if (fromLean && to.lean) {
-        leanStatus = (DEP_OK.has(from.lean?.validation) || DEP_OK.has(from.status)) ? 'lean-complete' : 'lean-incomplete';
+        // Definition → definition edges are tautological (definitional dependency)
+        if (from.kind === 'definition' && to.kind === 'definition') {
+          leanStatus = 'lean-trivial';
+        } else {
+          leanStatus = (DEP_OK.has(from.lean?.validation) || DEP_OK.has(from.status)) ? 'lean-complete' : 'lean-incomplete';
+        }
       }
       return { hasNarrative, leanStatus };
     }
@@ -1901,7 +2240,7 @@
     }
 
     function buildDepArrowheads(defs) {
-      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none']) {
+      for (const type of ['narrative','lean-complete','lean-incomplete','lean-none','lean-trivial']) {
         const marker = document.createElementNS(DEP_NS, 'marker');
         marker.setAttribute('id', `ah-${type}`);
         marker.setAttribute('markerWidth', '8'); marker.setAttribute('markerHeight', '6');
@@ -1952,7 +2291,8 @@
         t1.textContent = DEP_KIND_ABBR[block.kind] || block.kind; g.appendChild(t1);
         const t2 = document.createElementNS(DEP_NS, 'text');
         t2.setAttribute('x', '8'); t2.setAttribute('y', '30');
-        t2.textContent = block.title ? esc(block.title).substring(0, 22) + (block.title.length > 22 ? '…' : '') : label;
+        const plainTitle = block.title ? stripTex(block.title) : label;
+        t2.textContent = plainTitle.substring(0, 22) + (plainTitle.length > 22 ? '…' : '');
         g.appendChild(t2);
         if (block.lean?.decl) {
           const t3 = document.createElementNS(DEP_NS, 'text');
@@ -1982,7 +2322,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
-            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         });
         nodeGroup.appendChild(g);
       }
@@ -2058,14 +2398,19 @@
       history.replaceState(null, '', vizHash);
     };
 
-    function renderDepGraph(rootLabel) {
+    async function renderDepGraph(rootLabel) {
+      // Force-index all blocks so the dep graph has the complete uses/usedBy data
+      if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
       const { nodes, edges, externals } = buildDepGraph(rootLabel);
       const root = bix.get(rootLabel);
       if (!root) return;
       depRootLabel = rootLabel;
-      depTitle.textContent = `${root.kind}: ${root.title || rootLabel}`;
+      depTitle.innerHTML = `${esc(root.kind)}: ${inl(root.title || rootLabel)}`;
+      renderMath(depTitle);
       depSubtitle.textContent = rootLabel;
       depLink.href = `#/viz/${hashWithBranch(rootLabel)}`;
+      const depPreviewLink = document.getElementById('dep-preview-link');
+      if (depPreviewLink) depPreviewLink.href = `#/view-lightning/${hashWithBranch(rootLabel)}`;
       depCloseRhs();
       renderDepGraphImpl(nodes, edges, externals, rootLabel);
     }
@@ -2463,6 +2808,21 @@
         }
         leanInd.appendChild(leanBadge);
 
+        // Sorry ref badge in content area
+        if (block.lean?.source && /sorry/.test(block.lean.source)) {
+          const refs = extractSorryRefs(block.lean.source);
+          for (const ref of refs) {
+            const rb = ref.url ? document.createElement('a') : mk('span','ind-badge ref');
+            if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'ind-badge ref'; }
+            rb.textContent = '\u{1F4D6} ' + ref.key;
+            rb.title = `Reference: [${ref.key}]${ref.url ? '\n' + ref.url : ''}`;
+            rb.style.marginLeft = '.25rem';
+            rb.style.textDecoration = 'none';
+            rb.onclick = (e) => e.stopPropagation();
+            leanInd.appendChild(rb);
+          }
+        }
+
         // Click to toggle lean source panel (inserted right after header)
         if (block.lean?.source) {
           leanInd.onclick = (e) => {
@@ -2653,6 +3013,24 @@
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
 
+    /** Extract sorry references from Lean source: `-- Ref: [key] url` lines before `sorry`. */
+    function extractSorryRefs(source) {
+      if (!source) return [];
+      const lines = source.split('\n');
+      const refs = [];
+      for (let i = 0; i < lines.length; i++) {
+        if (/^\s*sorry\b/.test(lines[i])) {
+          // Look backwards for -- Ref: lines
+          for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+            const m = lines[j].match(/--\s*Ref:\s*\[([^\]]+)\]\s*(https?:\/\/\S+)?/);
+            if (m) refs.push({ key: m[1], url: m[2] || null });
+            else if (!/^\s*(--|$)/.test(lines[j])) break;
+          }
+        }
+      }
+      return refs;
+    }
+
     function addSrc(el, md, hdr, block) {
       if (!md) return;
       const b = mk('button','st'); b.textContent = 'edit'; b.title = 'Edit source inline';
@@ -2713,6 +3091,7 @@
           });
           if (!res.ok) throw new Error(`${res.status}`);
           block.md = ta.value;
+          invalidateCache(paper.id); // clear lazy-load cache after edit
           console.log(`[folio:edit] saved block: ${block.rootName} (${ta.value.length} chars)`);
           // Re-render the block body
           const bb = el.querySelector('.bb');
@@ -2755,6 +3134,125 @@
         el.appendChild(b);
       }
       el.appendChild(editor);
+
+      // Add schema button alongside edit
+      if (hdr && block) addSchemaBtn(hdr, block);
+    }
+
+    // ── Schema documentation (lazy-loaded) ──────────────────────
+    let schemaManifest = null;
+    async function getSchemaManifest() {
+      if (schemaManifest) return schemaManifest;
+      try {
+        const res = await fetch('/api/schema-manifest');
+        if (!res.ok) {
+          // Fallback: try static file
+          const res2 = await fetch('/schema-manifest.json');
+          if (!res2.ok) return null;
+          schemaManifest = await res2.json();
+        } else {
+          schemaManifest = await res.json();
+        }
+        return schemaManifest;
+      } catch (e) {
+        console.warn('Schema manifest load failed:', e);
+        return null;
+      }
+    }
+
+    function addSchemaBtn(hdr, block) {
+      if (!block?.kind) return;
+      const btn = mk('button','fb-act'); btn.textContent = 'schema'; btn.title = 'View type schema';
+      let panel = null;
+
+      btn.onclick = async (e) => {
+        e.stopPropagation();
+        if (panel) { panel.style.display = panel.style.display === 'none' ? '' : 'none'; return; }
+
+        const manifest = await getSchemaManifest();
+        if (!manifest) { btn.title = 'Schema docs unavailable'; return; }
+
+        const typeName = manifest.blockKindMap[block.kind];
+        const typeInfo = manifest.types.find(t => t.name === typeName);
+        if (!typeInfo) return;
+
+        panel = mk('div','schema-panel');
+        panel.style.cssText = 'margin:.4rem 0;padding:.6rem .8rem;background:var(--bg-d,#f5f5f5);border-radius:6px;font-size:.75rem;line-height:1.6;font-family:var(--f-mono,monospace);overflow-x:auto';
+
+        // Header with type name and full docs link
+        const header = mk('div','');
+        header.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem';
+        const title = mk('strong',''); title.textContent = typeInfo.name;
+        title.style.cssText = 'font-size:.8rem;color:var(--accent,#6366f1)';
+        header.appendChild(title);
+
+        if (typeInfo.docsUrl && manifest.docsBaseUrl) {
+          const link = document.createElement('a');
+          link.href = manifest.docsBaseUrl + typeInfo.docsUrl;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = 'full docs ↗';
+          link.style.cssText = 'font-size:.7rem;color:var(--accent,#6366f1);text-decoration:none';
+          header.appendChild(link);
+        }
+        panel.appendChild(header);
+
+        // Description
+        if (typeInfo.doc) {
+          const desc = mk('div','');
+          desc.textContent = typeInfo.doc.replace(/^\/\*\*\s*|\s*\*\/$/g, '').trim();
+          desc.style.cssText = 'color:var(--fg-d,#666);margin-bottom:.4rem;font-family:var(--f-body,sans-serif);font-style:italic';
+          panel.appendChild(desc);
+        }
+
+        // Fields table
+        if (typeInfo.fields?.length) {
+          const table = document.createElement('table');
+          table.style.cssText = 'width:100%;border-collapse:collapse;font-size:.7rem';
+          for (const f of typeInfo.fields) {
+            const tr = document.createElement('tr');
+            tr.style.borderBottom = '1px solid var(--border,#e5e5e5)';
+
+            const tdName = document.createElement('td');
+            tdName.style.cssText = 'padding:2px 8px 2px 0;white-space:nowrap';
+            tdName.innerHTML = `<code style="color:var(--fg,#333)">${esc(f.name)}</code>${f.optional ? '<span style="color:var(--fg-d,#999)">?</span>' : ''}`;
+
+            const tdType = document.createElement('td');
+            tdType.style.cssText = 'padding:2px 8px;color:var(--accent,#6366f1);white-space:nowrap';
+            tdType.textContent = f.type;
+
+            const tdDoc = document.createElement('td');
+            tdDoc.style.cssText = 'padding:2px 0;color:var(--fg-d,#888);font-family:var(--f-body,sans-serif)';
+            tdDoc.textContent = f.doc || '';
+
+            tr.appendChild(tdName);
+            tr.appendChild(tdType);
+            tr.appendChild(tdDoc);
+            table.appendChild(tr);
+          }
+          panel.appendChild(table);
+        }
+
+        // For enum-like types, show values
+        if (typeInfo.values?.length) {
+          const vals = mk('div','');
+          vals.style.cssText = 'margin-top:.3rem';
+          vals.innerHTML = typeInfo.values.map(v =>
+            `<code style="display:inline-block;padding:1px 6px;margin:2px;background:var(--bg,#fff);border:1px solid var(--border,#ddd);border-radius:3px;font-size:.65rem">${esc(v)}</code>`
+          ).join('');
+          panel.appendChild(vals);
+        }
+
+        // Insert after header
+        const parent = hdr.parentElement;
+        if (parent) {
+          const nextSibling = hdr.nextSibling;
+          parent.insertBefore(panel, nextSibling);
+        }
+        btn.classList.add('on');
+      };
+
+      if (hdr && hdr._acts) hdr._acts.appendChild(btn);
     }
 
     // Shiki highlighter (lazy-loaded)
@@ -2820,14 +3318,15 @@
       for (const t of el.querySelectorAll('.txb[data-ti]')) {
         const i = +t.dataset.ti;
         const a = rendered?.find(r => r.blockIndex === i);
-        if (a) { t.innerHTML = renderAsset(a); t.classList.remove('ph'); }
+        if (a) { t.innerHTML = renderAsset(a, tx[i]); t.classList.remove('ph'); }
         else { t.textContent = tx[i] || ''; t.classList.add('ph'); }
       }
     }
 
-    function renderAsset(a) {
-      if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="diagram" loading="lazy">`;
-      if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="" loading="lazy">`;
+    function renderAsset(a, texSrc) {
+      const alt = esc(texSrc || 'diagram');
+      if (a.mime === 'image/svg+xml') return `<img src="${a.url}" alt="${alt}" title="LaTeX source (hover)" loading="lazy">`;
+      if (a.mime?.startsWith('image/')) return `<img src="${a.url}" alt="${alt}" title="LaTeX source (hover)" loading="lazy">`;
       return `<a href="${a.url}" target="_blank">[${a.mime}]</a>`;
     }
 
@@ -2856,16 +3355,18 @@
       bix.clear();
       const childBlocks = new Set(); // examples/proofs shown via parent's toggle
       usedByIndex.clear();
+      // Index blocks that are already loaded (non-lazy path or already fetched)
       for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
         if (b.label) bix.set(b.label, b);
         if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
         if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
-        // Build reverse-reference index: label → [{label, kind, title}]
         if (b.uses) for (const dep of b.uses) {
           if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
           usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
         }
       }
+
+      const isLazy = !!paperOutline; // true when using lazy-load path
 
       const app = document.getElementById('app');
       app.innerHTML = '';
@@ -2878,18 +3379,17 @@
       // Pin control
       const pinRow = mk('div','sb-pin');
       const pinBtn = document.createElement('button');
-      pinBtn.textContent = localStorage.getItem('qou-sb-pinned') === '1' ? '📌' : '📍';
-      if (localStorage.getItem('qou-sb-pinned') === '1') document.body.classList.add('sb-pinned');
+      pinBtn.textContent = localStorage.getItem('folio-assistant-sb-pinned') === '1' ? '📌' : '📍';
+      if (localStorage.getItem('folio-assistant-sb-pinned') === '1') document.body.classList.add('sb-pinned');
       pinBtn.onclick = () => {
         const pinned = document.body.classList.toggle('sb-pinned');
         pinBtn.textContent = pinned ? '📌' : '📍';
-        localStorage.setItem('qou-sb-pinned', pinned ? '1' : '0');
+        localStorage.setItem('folio-assistant-sb-pinned', pinned ? '1' : '0');
       };
       pinRow.appendChild(pinBtn);
       sb.appendChild(pinRow);
 
       // Collapse all chapters when sidebar collapses (not pinned)
-      // Collapse chapters visually on mouseleave, restore on mouseenter
       let savedOpenChapters = new Set();
       sb.addEventListener('mouseleave', () => {
         if (document.body.classList.contains('sb-pinned')) return;
@@ -2917,16 +3417,161 @@
       function saveSbOpenChapters() {
         const open = [];
         sb.querySelectorAll('.sb-ch.open').forEach(ch => open.push(ch.dataset.num));
-        localStorage.setItem('qou-sb-chapters', JSON.stringify(open));
+        localStorage.setItem('folio-assistant-sb-chapters', JSON.stringify(open));
       }
-      const restoredChapters = new Set(
-        (() => { try { return JSON.parse(localStorage.getItem('qou-sb-chapters') || '[]'); } catch { return []; } })()
-      );
+      const _storedChapters = (() => { try { return JSON.parse(localStorage.getItem('folio-assistant-sb-chapters')); } catch { return null; } })();
+      // Default: all chapters closed unless session cache specifies otherwise
+      const restoredChapters = new Set(_storedChapters || []);
 
       // ── Chapter containers (one per chapter, show/hide) ──
       const chapterDivs = new Map(); // number → DOM element
       const chapterHydrated = new Set(); // track which chapters have been hydrated
+      const sidebarChapterBodies = new Map(); // chapterDir → sidebar body element
       let activeChapter = null;
+
+      // ── Lazy section loading ──────────────────────────────
+      async function loadSection(paperId, chapterDir, sectionIndex, sectionDiv) {
+        const key = `${chapterDir}:${sectionIndex}`;
+        if (loadedSections.has(key)) return;
+        if (sectionLoadPromises.has(key)) return sectionLoadPromises.get(key);
+
+        const promise = (async () => {
+          try {
+            const secUrl = `/api/paper/section?id=${encodeURIComponent(paperId)}&chapter=${encodeURIComponent(chapterDir)}&section=${sectionIndex}${branchParam()}`;
+            const secData = await cachedFetch(secUrl);
+            loadedSections.add(key);
+
+            // Find the matching chapter/section in paper.chapters and populate blocks
+            const ch = p.chapters.find(c => c._dir === chapterDir);
+            if (ch) {
+              const sec = ch.sections[sectionIndex];
+              if (sec) sec.blocks = secData.blocks;
+            }
+
+            // Index blocks into bix/usedByIndex
+            for (const b of secData.blocks) {
+              if (b.label) bix.set(b.label, b);
+              if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+              if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+              if (b.uses) for (const dep of b.uses) {
+                if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+              }
+            }
+
+            // Replace placeholder with rendered blocks
+            const placeholder = sectionDiv.querySelector('.sec-loading');
+            if (placeholder) placeholder.remove();
+            for (const b of secData.blocks) {
+              if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
+              sectionDiv.appendChild(renderBlock(b));
+            }
+          } catch (e) {
+            const placeholder = sectionDiv.querySelector('.sec-loading');
+            if (placeholder) placeholder.textContent = `Failed to load section: ${e.message}`;
+          } finally {
+            sectionLoadPromises.delete(key);
+          }
+        })();
+
+        sectionLoadPromises.set(key, promise);
+        return promise;
+      }
+
+      // ── Load chapter detail (sidebar badges + trigger section loads) ──
+      async function loadChapterDetail(paperId, ch) {
+        const dir = ch._dir;
+        if (!dir || chapterDetails.has(dir)) return chapterDetails.get(dir);
+        if (chapterLoadPromises.has(dir)) return chapterLoadPromises.get(dir);
+
+        const promise = (async () => {
+          try {
+            const chUrl = `/api/paper/chapter?id=${encodeURIComponent(paperId)}&chapter=${encodeURIComponent(dir)}${branchParam()}`;
+            const detail = await cachedFetch(chUrl);
+            chapterDetails.set(dir, detail);
+
+            // Update sidebar badges with block stub data
+            const chBodyEl = sidebarChapterBodies.get(dir);
+            if (chBodyEl && detail.sections) {
+              const secEls = chBodyEl.querySelectorAll('.sb-sec');
+              detail.sections.forEach((secDetail, si) => {
+                const sEl = secEls[si];
+                if (!sEl) return;
+                // Rebuild badges from block stubs
+                let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+                for (const bs of secDetail.blockStubs || []) {
+                  secTodos += bs.todoCount || 0;
+                  const nl = ['definition','theorem','lemma','proposition','corollary'].includes(bs.kind);
+                  if (nl && (!bs.lean || !bs.lean.file)) secLeanMiss++;
+                  if (nl && bs.lean && ((bs.lean.validation === 'error') || bs.status === 'has_sorry')) secLeanErr++;
+                }
+                const badges = [];
+                if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+                if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+                if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
+                const badgeSpan = sEl.querySelector('.sb-sec-badges');
+                if (badgeSpan) badgeSpan.innerHTML = badges.length ? badges.join(' ') : '';
+
+                // Populate block list in sidebar
+                const blkList = sEl.nextElementSibling;
+                if (blkList && blkList.children.length === 0) {
+                  for (const bs of secDetail.blockStubs || []) {
+                    const kind = bs.kind[0].toUpperCase();
+                    const bEl = mk('div','sb-blk');
+                    const nameSpan = mk('span','sb-name');
+                    nameSpan.innerHTML = `${kind} ${bs.title ? inl(bs.title) : (bs.label || bs.rootName)}`;
+                    bEl.appendChild(nameSpan);
+                    bEl.title = bs.label || bs.rootName;
+
+                    if (bs.todoCount > 0) {
+                      const tb = mk('span','sb-badge todo');
+                      tb.textContent = `${bs.todoCount} todo${bs.todoCount > 1 ? 's' : ''}`;
+                      bEl.appendChild(tb);
+                    }
+
+                    const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(bs.kind);
+                    if (needsLean) {
+                      const lb = mk('span','sb-badge');
+                      const s = bs.status || 'not_started';
+                      const v = bs.lean?.validation || 'not_checked';
+                      if (!bs.lean || !bs.lean.file) { lb.className = 'sb-badge lean-miss'; lb.textContent = 'no lean'; }
+                      else if (s === 'stub' || s === 'not_started') { lb.className = 'sb-badge lean-warn'; lb.textContent = 'stub'; }
+                      else if (v === 'error' || s === 'has_sorry') { lb.className = 'sb-badge lean-err'; lb.textContent = v === 'error' ? 'err' : 'sorry'; }
+                      else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; }
+                      else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; }
+                      bEl.appendChild(lb);
+                    }
+
+                    bEl.onclick = () => {
+                      showChapter(ch.number);
+                      setTimeout(() => {
+                        const t = document.getElementById(bs.label);
+                        if (t) {
+                          const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                          if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                          t.scrollIntoView({behavior:'smooth', block:'start'});
+                        }
+                      }, 150);
+                    };
+                    blkList.appendChild(bEl);
+                  }
+                }
+              });
+              renderMath(chBodyEl);
+            }
+
+            return detail;
+          } catch (e) {
+            console.error(`[folio:lazy] chapter load failed: ${dir}`, e);
+            return null;
+          } finally {
+            chapterLoadPromises.delete(dir);
+          }
+        })();
+
+        chapterLoadPromises.set(dir, promise);
+        return promise;
+      }
 
       function showChapter(num) {
         if (activeChapter === num) return;
@@ -2939,8 +3584,22 @@
         const cd = chapterDivs.get(num);
         if (!cd) return;
         cd.style.display = '';
-        // Hydrate lazy blocks on first show
-        if (!chapterHydrated.has(num)) {
+
+        // Lazy load: trigger chapter detail + section loads on first show
+        const ch = p.chapters.find(c => c.number === num);
+        if (isLazy && ch?._dir && !chapterHydrated.has(num)) {
+          chapterHydrated.add(num);
+          loadChapterDetail(p.id, ch).then(() => {
+            // Load all sections for this chapter
+            ch.sections.forEach((sec, si) => {
+              const secDiv = cd.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
+              if (secDiv) loadSection(p.id, ch._dir, si, secDiv);
+            });
+          });
+        }
+
+        // Non-lazy: hydrate lazy KaTeX blocks on first show
+        if (!isLazy && !chapterHydrated.has(num)) {
           chapterHydrated.add(num);
           const lazies = lazyQueue.filter(t => cd.contains(t.el));
           for (const t of lazies) {
@@ -2951,6 +3610,7 @@
           // Populate citation tooltips for this chapter
           populateCiteTooltips();
         }
+
         // Highlight sidebar
         sb.querySelectorAll('.sb-ch').forEach(el => {
           const isActive = el.dataset.num === String(num);
@@ -2973,14 +3633,28 @@
             }
           }
         }
+        // In lazy mode, check chapter detail stubs
+        if (isLazy) {
+          for (const ch of p.chapters) {
+            const detail = chapterDetails.get(ch._dir);
+            if (detail) {
+              for (const sec of detail.sections) {
+                for (const bs of sec.blockStubs || []) {
+                  if (bs.label === label) return ch.number;
+                }
+              }
+            }
+          }
+        }
         return null;
       }
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.dataset.num = ch.number != null ? String(ch.number) : '';
+        chEl.dataset.num = ch.tabLabel || (ch.number != null ? String(ch.number) : '');
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
+        if (ch._dir) sidebarChapterBodies.set(ch._dir, chBody);
 
         // Restore open/closed state from localStorage
         if (restoredChapters.has(String(ch.number))) {
@@ -2990,103 +3664,112 @@
 
         // Click chapter title → show chapter content
         chEl.onclick = (e) => {
-          // Toggle sections in sidebar
           chEl.classList.toggle('open');
           chBody.style.display = chEl.classList.contains('open') ? 'block' : 'none';
           saveSbOpenChapters();
-          // Show chapter content
           showChapter(ch.number);
         };
         sb.appendChild(chEl);
+
         for (const sec of ch.sections) {
           const sEl = mk('div','sb-sec');
-          // Count stats for section
-          let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
-          for (const b of sec.blocks) {
-            secTodos += (b.todos || []).filter(t => t.status === 'open').length;
-            const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
-            if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
-            if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
-          }
-          const badges = [];
-          if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
-          if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
-          if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
-          sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : ''}`;
           sEl.style.display = 'flex'; sEl.style.alignItems = 'center';
           sEl.title = sec.title;
+
+          if (!isLazy) {
+            // Non-lazy: compute badges from loaded blocks
+            let secTodos = 0, secLeanMiss = 0, secLeanErr = 0;
+            for (const b of sec.blocks) {
+              secTodos += (b.todos || []).filter(t => t.status === 'open').length;
+              const nl = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+              if (nl && (!b.lean || !b.lean.file)) secLeanMiss++;
+              if (nl && b.lean && ((b.lean.validation === 'error') || b.status === 'has_sorry')) secLeanErr++;
+            }
+            const badges = [];
+            if (secTodos) badges.push(`${secTodos} todo${secTodos > 1 ? 's' : ''}`);
+            if (secLeanMiss) badges.push(`${secLeanMiss} no lean`);
+            if (secLeanErr) badges.push(`${secLeanErr} err${secLeanErr > 1 ? 's' : ''}`);
+            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span>${badges.length ? `<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${badges.join(' ')}</span>` : '<span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem"></span>'}`;
+          } else {
+            // Lazy: badges placeholder (filled when chapter detail loads)
+            const blockCount = sec._blockCount || 0;
+            sEl.innerHTML = `<span style="flex:1">${inl(sec.title)}</span><span class="sb-sec-badges" style="font-size:.5rem;color:var(--fg-d);margin-left:.3rem">${blockCount} block${blockCount !== 1 ? 's' : ''}</span>`;
+          }
+
+          const blkList = mk('div','');
+          blkList.style.display = 'none';
+
           sEl.onclick = (e) => {
             e.stopPropagation();
             showChapter(ch.number);
             setTimeout(() => {
               const t = document.getElementById(sec.label);
-              if (t) t.scrollIntoView({behavior:'smooth'});
+              if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
             }, 50);
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
           chBody.appendChild(sEl);
-          const blkList = mk('div','');
-          blkList.style.display = 'none';
-          for (const b of sec.blocks) {
-            const kind = b.kind[0].toUpperCase();
-            const bEl = mk('div','sb-blk');
-            const nameSpan = mk('span','sb-name');
-            nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
-            bEl.appendChild(nameSpan);
-            bEl.title = b.label || b.rootName;
 
-            // Todo count badge
-            const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
-            if (openTodos) {
-              const tb = mk('span','sb-badge todo');
-              tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
-              tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
-              bEl.appendChild(tb);
-            }
+          if (!isLazy) {
+            // Non-lazy: populate block list immediately
+            for (const b of sec.blocks) {
+              const kind = b.kind[0].toUpperCase();
+              const bEl = mk('div','sb-blk');
+              const nameSpan = mk('span','sb-name');
+              nameSpan.innerHTML = `${kind} ${b.title ? inl(b.title) : (b.label || b.rootName)}`;
+              bEl.appendChild(nameSpan);
+              bEl.title = b.label || b.rootName;
 
-            // Lean status badge
-            const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
-            if (needsLean) {
-              const lb = mk('span','sb-badge');
-              const s = b.status || 'not_started';
-              const v = b.lean?.validation || 'not_checked';
-              if (!b.lean || !b.lean.file) {
-                lb.className = 'sb-badge lean-miss';
-                lb.textContent = 'no lean';
-                lb.setAttribute('data-tip', 'No Lean formalization file');
-              } else if (s === 'stub' || s === 'not_started') {
-                lb.className = 'sb-badge lean-warn';
-                lb.textContent = 'stub';
-                lb.setAttribute('data-tip', 'Lean file exists but proof not started');
-              } else if (v === 'error' || s === 'has_sorry') {
-                lb.className = 'sb-badge lean-err';
-                lb.textContent = v === 'error' ? 'err' : 'sorry';
-                lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry');
-              } else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') {
-                lb.className = 'sb-badge lean-ok';
-                lb.textContent = '✓';
-                lb.setAttribute('data-tip', 'Lean proof verified');
-              } else {
-                lb.className = 'sb-badge lean-warn';
-                lb.textContent = s === 'stated' ? 'stated' : 'todo';
-                lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`);
+              const openTodos = (b.todos || []).filter(t => t.status === 'open').length;
+              if (openTodos) {
+                const tb = mk('span','sb-badge todo');
+                tb.textContent = `${openTodos} todo${openTodos > 1 ? 's' : ''}`;
+                tb.setAttribute('data-tip', `${openTodos} open todo${openTodos > 1 ? 's' : ''}`);
+                bEl.appendChild(tb);
               }
-              bEl.appendChild(lb);
-            }
 
-            bEl.onclick = () => {
-              showChapter(ch.number);
-              setTimeout(() => {
-                const t = document.getElementById(b.label);
-                if (t) {
-                  const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
-                  if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  t.scrollIntoView({behavior:'smooth', block:'start'});
+              const needsLean = ['definition','theorem','lemma','proposition','corollary'].includes(b.kind);
+              if (needsLean) {
+                const lb = mk('span','sb-badge');
+                const s = b.status || 'not_started';
+                const v = b.lean?.validation || 'not_checked';
+                if (!b.lean || !b.lean.file) { lb.className = 'sb-badge lean-miss'; lb.textContent = 'no lean'; lb.setAttribute('data-tip', 'No Lean formalization file'); }
+                else if (s === 'stub' || s === 'not_started') { lb.className = 'sb-badge lean-warn'; lb.textContent = 'stub'; lb.setAttribute('data-tip', 'Lean file exists but proof not started'); }
+                else if (v === 'error' || s === 'has_sorry') { lb.className = 'sb-badge lean-err'; lb.textContent = v === 'error' ? 'err' : 'sorry'; lb.setAttribute('data-tip', v === 'error' ? 'Lean validation error' : 'Proof contains sorry'); }
+                else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; lb.setAttribute('data-tip', 'Lean proof verified'); }
+                else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`); }
+                bEl.appendChild(lb);
+                // Sorry ref badge: yellow library card linking to citation
+                if (s === 'has_sorry' || (b.lean?.source && /sorry/.test(b.lean.source))) {
+                  const refs = extractSorryRefs(b.lean?.source);
+                  if (refs.length > 0) {
+                    const ref = refs[0];
+                    const rb = ref.url ? document.createElement('a') : mk('span','sb-badge lean-ref');
+                    if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'sb-badge lean-ref'; }
+                    rb.textContent = '\u{1F4D6}';
+                    rb.setAttribute('data-tip', `Ref: [${ref.key}]${ref.url ? ' ' + ref.url : ''}`);
+                    rb.onclick = (e) => e.stopPropagation();
+                    bEl.appendChild(rb);
+                  }
                 }
-              }, 50);
-            };
-            blkList.appendChild(bEl);
+              }
+
+              bEl.onclick = () => {
+                showChapter(ch.number);
+                setTimeout(() => {
+                  const t = document.getElementById(b.label);
+                  if (t) {
+                    const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
+                    if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+                    t.scrollIntoView({behavior:'smooth', block:'start'});
+                  }
+                }, 50);
+              };
+              blkList.appendChild(bEl);
+            }
           }
+          // Lazy: block list populated by loadChapterDetail callback
+
           chBody.appendChild(blkList);
         }
         sb.appendChild(chBody);
@@ -3097,6 +3780,14 @@
       const hdr = mk('div','hdr');
       hdr.innerHTML = `<h1>${esc(p.title)}</h1><div class="au">${p.authors.map(esc).join(', ')}</div>${p.affiliations?.length?`<div class="af">${p.affiliations.map(esc).join('; ')}</div>`:''}${p.date?`<div class="dt">${p.date}</div>`:''}`;
       app.appendChild(hdr);
+
+      // Build section/chapter label index for cross-ref resolution
+      for (const ch of p.chapters) {
+        if (ch.label) secIndex.set(ch.label, { title: ch.title, kind: 'chapter' });
+        for (const sec of ch.sections) {
+          if (sec.label) secIndex.set(sec.label, { title: sec.title, kind: 'section' });
+        }
+      }
 
       // Render each chapter into its own hidden div
       for (const ch of p.chapters) {
@@ -3114,9 +3805,18 @@
           if (sec.label) sd.id = sec.label;
           sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
-          for (const b of sec.blocks) {
-            if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
-            sd.appendChild(renderBlock(b));
+
+          if (isLazy) {
+            // Add loading placeholder — blocks loaded on demand
+            const placeholder = mk('div','sec-loading');
+            placeholder.style.cssText = 'color:var(--fg-d);font-family:var(--f-mono);font-size:.7rem;padding:1rem 0';
+            placeholder.textContent = `loading ${sec._blockCount || 0} blocks...`;
+            sd.appendChild(placeholder);
+          } else {
+            for (const b of sec.blocks) {
+              if ((b.kind === 'example' || b.kind === 'proof') && b.label && childBlocks.has(b.label) && pendingScroll !== b.label) continue;
+              sd.appendChild(renderBlock(b));
+            }
           }
           cd.appendChild(sd);
         }
@@ -3130,26 +3830,72 @@
 
       document.getElementById('c-hash').textContent = p._hash || '';
       document.title = `${p.title} — Folio`;
+      document.getElementById('toplet').textContent = `Folio: ${p.title}`;
+
+      // Expose chapter navigation and lazy-load helpers for cross-function use
+      paper._showChapter = showChapter;
+      paper._chapterForLabel = chapterForLabel;
+      paper._loadChapterDetail = loadChapterDetail;
+      paper._loadSection = loadSection;
+
+      // Ensure all blocks are indexed into bix (for dep graph, full-paper search, etc.)
+      // Fetches section data without rendering into the DOM.
+      let _allIndexed = false;
+      paper._ensureAllBlocksIndexed = async () => {
+        if (_allIndexed) return;
+        for (const ch of p.chapters) {
+          if (ch._dir) await loadChapterDetail(p.id, ch);
+          for (let si = 0; si < ch.sections.length; si++) {
+            const key = `${ch._dir}:${si}`;
+            if (loadedSections.has(key)) continue;
+            try {
+              const secUrl = `/api/paper/section?id=${encodeURIComponent(p.id)}&chapter=${encodeURIComponent(ch._dir)}&section=${si}${branchParam()}`;
+              const secData = await cachedFetch(secUrl);
+              loadedSections.add(key);
+              const chObj = p.chapters.find(c => c._dir === ch._dir);
+              if (chObj) { const sec = chObj.sections[si]; if (sec) sec.blocks = secData.blocks; }
+              for (const b of secData.blocks) {
+                if (b.label) bix.set(b.label, b);
+                if (b.examples) for (const ex of b.examples) childBlocks.add(ex);
+                if (b.proofs) for (const prf of b.proofs) childBlocks.add(prf);
+                if (b.uses) for (const dep of b.uses) {
+                  if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+                  usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+                }
+              }
+            } catch {}
+          }
+        }
+        _allIndexed = true;
+      };
 
       // Show first chapter (or the one containing pendingScroll)
       let startChapter = p.chapters[0]?.number || 1;
-      if (pendingScroll) {
-        const target = chapterForLabel(pendingScroll);
-        if (target) startChapter = target;
-      }
-      // Expose chapter navigation for cross-function use
-      paper._showChapter = showChapter;
-      paper._chapterForLabel = chapterForLabel;
-      showChapter(startChapter);
 
-      // Scroll to pending label anchor
-      if (pendingScroll) {
-        requestAnimationFrame(() => scrollToLabel(pendingScroll));
+      if (pendingScroll && isLazy) {
+        // In lazy mode, load all chapter details to find which chapter contains the label
+        (async () => {
+          await Promise.all(p.chapters.map(ch => ch._dir ? loadChapterDetail(p.id, ch) : Promise.resolve()));
+          const target = chapterForLabel(pendingScroll);
+          if (target) showChapter(target);
+          else showChapter(startChapter);
+          // Wait for sections to load, then scroll
+          setTimeout(() => scrollToLabel(pendingScroll), 500);
+        })();
+      } else {
+        if (pendingScroll) {
+          const target = chapterForLabel(pendingScroll);
+          if (target) startChapter = target;
+        }
+        showChapter(startChapter);
+        if (pendingScroll) {
+          requestAnimationFrame(() => scrollToLabel(pendingScroll));
+        }
       }
     }
 
     // ── Feedback draft persistence ─────────────────────────
-    const FB_DRAFT_KEY = 'qou-fb-drafts';
+    const FB_DRAFT_KEY = 'folio-assistant-fb-drafts';
     function loadDrafts() {
       try { return JSON.parse(localStorage.getItem(FB_DRAFT_KEY) || '{}'); } catch { return {}; }
     }
@@ -3354,20 +4100,42 @@
     }
     document.getElementById('fb-close').onclick = closeFeedback;
     document.getElementById('feedback-overlay').onclick = closeFeedback;
+    // ── Photo upload handling ─────────────────────────────
+    let fbPhotoData = null;
+    document.getElementById('fb-photo-btn').onclick = () => document.getElementById('fb-photo').click();
+    document.getElementById('fb-photo').onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        fbPhotoData = reader.result;
+        document.getElementById('fb-photo-img').src = fbPhotoData;
+        document.getElementById('fb-photo-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    };
+    document.getElementById('fb-photo-remove').onclick = () => {
+      fbPhotoData = null;
+      document.getElementById('fb-photo').value = '';
+      document.getElementById('fb-photo-preview').style.display = 'none';
+    };
+
     document.getElementById('fb-submit').onclick = async () => {
       if (!fbBlock || !document.getElementById('fb-text').value.trim()) return;
       try {
+        const payload = {
+          paperId: paper?.id,
+          rootName: fbBlock.rootName,
+          summary: document.getElementById('fb-text').value.trim().slice(0, 80),
+          comment: document.getElementById('fb-text').value.trim(),
+          priority: document.getElementById('fb-priority').value,
+          assignee: document.getElementById('fb-assignee').value
+        };
+        if (fbPhotoData) payload.photo = fbPhotoData;
         const res = await fetch('/api/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            paperId: paper?.id,
-            rootName: fbBlock.rootName,
-            summary: document.getElementById('fb-text').value.trim().slice(0, 80),
-            comment: document.getElementById('fb-text').value.trim(),
-            priority: document.getElementById('fb-priority').value,
-            assignee: document.getElementById('fb-assignee').value
-          })
+          body: JSON.stringify(payload)
         });
         if (!res.ok) throw new Error(`${res.status}`);
         const { todo } = await res.json();
@@ -3381,9 +4149,13 @@
           structFeedback[fbBlock.label] = fbBlock.todos;
           refreshStructBadges();
         }
+        // Clear form completely
         document.getElementById('fb-text').value = '';
         document.getElementById('fb-priority').value = 'medium';
         document.getElementById('fb-assignee').value = 'editor-agent';
+        fbPhotoData = null;
+        document.getElementById('fb-photo').value = '';
+        document.getElementById('fb-photo-preview').style.display = 'none';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item (stay open)
@@ -3935,6 +4707,288 @@
       loadImportHistory();
 
       document.title = data.title || 'Folio';
+      document.getElementById('toplet').textContent = 'Folio';
+    }
+
+    // ── Preview route helpers ────────────────────────────
+
+    /** Ensure paper data is loaded (bix + usedByIndex) without rendering the full paper. */
+    async function ensurePaperIndex() {
+      if (paper) return;
+      try {
+        const r = await fetch(`/api/folio?_=1${branchParam()}`);
+        const data = r.ok ? await r.json() : null;
+        const id = data?.papers?.[0]?.id || 'quantum-observable-universe';
+        const pr = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+        if (pr.ok) {
+          const p = await pr.json();
+          paper = p;
+          katexMacros = buildKatexMacros(p.macros);
+          bix.clear(); usedByIndex.clear();
+          for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+            if (b.label) bix.set(b.label, b);
+            if (b.uses) for (const dep of b.uses) {
+              if (!usedByIndex.has(dep)) usedByIndex.set(dep, []);
+              usedByIndex.get(dep).push({ label: b.label, kind: b.kind, title: b.title, rootName: b.rootName });
+            }
+          }
+        }
+      } catch {}
+    }
+
+    /** Shared CSS for inline preview pages. */
+    const PREVIEW_CSS = `
+      .pv-wrap{max-width:800px;margin:2rem auto;padding:0 2rem;line-height:1.6;font-family:var(--f-body);color:var(--fg)}
+      .pv-bar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;font-family:var(--f-head);font-size:.8rem}
+      .pv-bar a{color:var(--ac);text-decoration:none}
+      .pv-bar button{font-size:.7rem;padding:.25rem .6rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg-s);color:var(--fg);cursor:pointer}
+      .pv-title{font-family:var(--f-head);font-size:1.4rem;font-weight:600;margin-bottom:.5rem}
+      .pv-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+      .pv-blk{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--brd)}
+      .pv-blk:last-child{border-bottom:none}
+      .pv-bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+      .pv-bt{font-family:var(--f-head);font-weight:600}
+      .pv-bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+      .pv-bb{margin-top:.5rem}
+      .pv-bb .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+      .pv-bb .txb img,.pv-bb .txb svg{max-width:100%;height:auto}
+      .pv-bb .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+      .pv-bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+      .pv-bb th,.pv-bb td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+      .pv-bb th{background:var(--bg-s);font-weight:600}
+      .pv-qed{text-align:right;font-size:.8rem}
+      .pv-qed::after{content:'\\25A1'}
+      @media print{.pv-wrap{max-width:100%;margin:0;padding:1cm}.pv-bar{display:none}}
+    `;
+
+    /** Collect blocks for a dependency chain in topological order. */
+    function collectDepChainBlocks(rootLabel, opts) {
+      const { nodes, edges } = buildDepGraph(rootLabel);
+      const adj = new Map(), indeg = new Map();
+      for (const label of nodes.keys()) { adj.set(label, []); indeg.set(label, 0); }
+      for (const {from, to} of edges) {
+        if (adj.has(from) && adj.has(to)) { adj.get(from).push(to); indeg.set(to, (indeg.get(to) || 0) + 1); }
+      }
+      const queue = [], sorted = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift(); sorted.push(l);
+        for (const n of (adj.get(l) || [])) { indeg.set(n, indeg.get(n) - 1); if (indeg.get(n) === 0) queue.push(n); }
+      }
+      sorted.reverse();
+      const skipKinds = new Set();
+      if (!opts?.includeExamples) skipKinds.add('example');
+      if (!opts?.includeRemarks) skipKinds.add('remark');
+      const blocks = [];
+      for (const label of sorted) {
+        const b = bix.get(label);
+        if (!b) continue;
+        if (skipKinds.has(b.kind)) continue;
+        blocks.push(b);
+        if (opts?.includeExamples && b.examples) {
+          for (const exLabel of b.examples) { const ex = bix.get(exLabel); if (ex) blocks.push(ex); }
+        }
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) { const prf = bix.get(prfLabel); if (prf) blocks.push(prf); }
+        }
+      }
+      return blocks;
+    }
+
+    /** Render a single block into a container element (in-page, not popup). */
+    function renderPreviewBlock(container, b) {
+      const div = mk('div', 'pv-blk');
+      const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+      let hdr = `<span class="pv-bk">${esc(kindLabel)}.</span>`;
+      if (b.title) hdr += `<span class="pv-bt">${inl(b.title)}</span>`;
+      if (b.label) hdr += `<span class="pv-bl">${esc(b.label)}</span>`;
+      div.innerHTML = hdr;
+      const body = mk('div', 'pv-bb');
+      renderBlockContent(body, b);
+      div.appendChild(body);
+      if (b.kind === 'proof') { const qed = mk('div', 'pv-qed'); div.appendChild(qed); }
+      container.appendChild(div);
+    }
+
+    /** Route: #/preview/label — single block print-friendly page */
+    async function routePreview(label) {
+      await ensurePaperIndex();
+      const block = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!block) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const style = mk('style', ''); style.textContent = PREVIEW_CSS; app.appendChild(style);
+      const wrap = mk('div', 'pv-wrap'); app.appendChild(wrap);
+
+      const bar = mk('div', 'pv-bar');
+      bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
+        <a href="#/view-lightning/${esc(label)}">&#x26A1; Lightning view</a>
+        <a href="#/preview-lightning/${esc(label)}">Dependency chain</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      const title = mk('div', 'pv-title');
+      title.innerHTML = inl(block.title || label);
+      renderMath(title);
+      wrap.appendChild(title);
+
+      renderPreviewBlock(wrap, block);
+      // Also render proofs inline
+      if (block.proofs) {
+        for (const prfLabel of block.proofs) {
+          const prf = bix.get(prfLabel);
+          if (prf) renderPreviewBlock(wrap, prf);
+        }
+      }
+    }
+
+    /** Route: #/preview-lightning/label — full dependency chain print-friendly page */
+    async function routePreviewDepGraph(label) {
+      await ensurePaperIndex();
+      const root = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!root) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const style = mk('style', ''); style.textContent = PREVIEW_CSS; app.appendChild(style);
+      const wrap = mk('div', 'pv-wrap'); app.appendChild(wrap);
+
+      const bar = mk('div', 'pv-bar');
+      bar.innerHTML = `<a href="#/view/${esc(label)}">&larr; Back to paper</a>
+        <a href="#/view-lightning/${esc(label)}">&#x26A1; Lightning view</a>
+        <a href="#/preview/${esc(label)}">Single block preview</a>
+        <a href="#/viz/${esc(label)}">Interactive graph</a>
+        <a href="/api/pdf-lightning?label=${encodeURIComponent(label)}" target="_blank">&#x26A1; PDF</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      const title = mk('div', 'pv-title');
+      title.innerHTML = inl(root.title || label);
+      renderMath(title);
+      wrap.appendChild(title);
+
+      const blocks = collectDepChainBlocks(label, { includeExamples: false, includeRemarks: false });
+      const count = mk('div', 'pv-count');
+      count.textContent = `${blocks.length} blocks in dependency chain`;
+      wrap.appendChild(count);
+
+      for (const b of blocks) { renderPreviewBlock(wrap, b); }
+    }
+
+    /** Route: #/view-lightning/label — paper view filtered to critical path only */
+    async function routeViewLightning(label) {
+      await ensurePaperIndex();
+      const root = bix.get(label);
+      const app = document.getElementById('app');
+      document.body.classList.remove('has-sidebar');
+      app.innerHTML = '';
+      if (!root) { app.innerHTML = `<div class="err">Block not found: ${esc(label)}</div>`; return; }
+
+      const blocks = collectDepChainBlocks(label, { includeExamples: false, includeRemarks: false });
+      const chainLabels = new Set(blocks.map(b => b.label).filter(Boolean));
+
+      // Lightning view CSS — paper-like styling with lightning accent
+      const style = mk('style', '');
+      style.textContent = `
+        .lt-wrap{max-width:800px;margin:2rem auto;padding:0 2rem;line-height:var(--f-lh);font-family:var(--f-body);color:var(--fg)}
+        .lt-bar{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;font-family:var(--f-head);font-size:.8rem;flex-wrap:wrap}
+        .lt-bar a,.lt-bar button{color:var(--ac);text-decoration:none;background:none;border:none;cursor:pointer;font-size:.8rem;font-family:var(--f-head)}
+        .lt-bar button{padding:.25rem .6rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg-s);color:var(--fg)}
+        .lt-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.3rem}
+        .lt-head svg{width:20px;height:20px;fill:var(--yel);flex-shrink:0}
+        .lt-title{font-family:var(--f-head);font-size:1.4rem;font-weight:600}
+        .lt-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+        .lt-blk{margin-bottom:1.8rem}
+        .lt-blk .env{border-left:3px solid var(--brd);padding:.8rem 1rem;margin:0}
+        .lt-blk .bh{margin-bottom:.4rem}
+        .lt-blk .bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+        .lt-blk .bt{font-family:var(--f-head);font-weight:600}
+        .lt-blk .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+        .lt-blk .bb{margin-top:.5rem}
+        .lt-blk .bb p{margin:.5em 0}
+        .lt-blk .bb ul{margin:.4em 0;padding-left:1.5em}
+        .lt-blk .bb ol{margin:.4em 0;padding-left:1.5em}
+        .lt-blk .bb li{margin:.4em 0}
+        .lt-blk .bb strong{color:var(--fg-b)}
+        .lt-blk .bb a{color:var(--ac);text-decoration:none;border-bottom:1px solid var(--ac-d)}
+        .lt-blk .bb table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+        .lt-blk .bb th,.lt-blk .bb td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+        .lt-blk .bb th{background:var(--bg-s);font-weight:600}
+        .lt-blk .bb .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+        .lt-blk .bb .txb img,.lt-blk .bb .txb svg{max-width:100%;height:auto}
+        .lt-blk .bb .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+        .lt-uses{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-top:.4rem;text-align:right}
+        .lt-uses a{color:var(--ac-d);text-decoration:none;border-bottom:1px dotted var(--ac-d)}
+        .lt-uses a:hover{color:var(--ac)}
+        .lt-qed{text-align:right;font-size:.8rem}
+        .lt-qed::after{content:'\\25A1'}
+        @media print{.lt-wrap{max-width:100%;margin:0;padding:1cm}.lt-bar{display:none}}
+      `;
+      app.appendChild(style);
+
+      const wrap = mk('div', 'lt-wrap');
+      app.appendChild(wrap);
+
+      // Navigation bar
+      const bar = mk('div', 'lt-bar');
+      bar.innerHTML = `<a href="#/view/${hashWithBranch(label)}">&larr; Back to paper</a>
+        <a href="#/preview-lightning/${hashWithBranch(label)}">Print preview</a>
+        <a href="#/viz/${hashWithBranch(label)}">Interactive graph</a>
+        <a href="/api/pdf" target="_blank">PDF</a>
+        <a href="/api/pdf-lightning?label=${encodeURIComponent(label)}" target="_blank">&#x26A1; PDF</a>
+        <button onclick="window.print()">Print</button>`;
+      wrap.appendChild(bar);
+
+      // Title with lightning bolt
+      const head = mk('div', 'lt-head');
+      head.innerHTML = `<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>`;
+      const titleEl = mk('span', 'lt-title');
+      titleEl.innerHTML = inl(root.title || label);
+      renderMath(titleEl);
+      head.appendChild(titleEl);
+      wrap.appendChild(head);
+
+      const count = mk('div', 'lt-count');
+      count.textContent = `${blocks.length} blocks in critical path`;
+      wrap.appendChild(count);
+
+      // Render each block in paper-like format
+      for (const b of blocks) {
+        const div = mk('div', 'lt-blk');
+        const env = mk('div', 'env');
+        const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+
+        // Header
+        let hdr = `<div class="bh"><span class="bk">${esc(kindLabel)}.</span>`;
+        if (b.title) hdr += `<span class="bt">${inl(b.title)}</span>`;
+        if (b.label) hdr += `<span class="bl">${esc(b.label)}</span>`;
+        hdr += `</div>`;
+        env.innerHTML = hdr;
+
+        // Body
+        const body = mk('div', 'bb');
+        renderBlockContent(body, b);
+        env.appendChild(body);
+
+        // Uses (filtered to chain only)
+        if (b.uses?.length) {
+          const usesInChain = b.uses.filter(u => chainLabels.has(u));
+          if (usesInChain.length) {
+            const usesDiv = mk('div', 'lt-uses');
+            usesDiv.innerHTML = 'uses: ' + usesInChain.map(u =>
+              `<a href="#/view-lightning/${hashWithBranch(u)}">${esc(u)}</a>`
+            ).join(', ');
+            env.appendChild(usesDiv);
+          }
+        }
+
+        if (b.kind === 'proof') { const qed = mk('div', 'lt-qed'); env.appendChild(qed); }
+        div.appendChild(env);
+        wrap.appendChild(div);
+      }
     }
 
     // ── Router ────────────────────────────────────────────
@@ -3948,6 +5002,9 @@
     //   #/edit/label@branch/name                    → inline edit on branch
     //   #/viz/paper-id                              → full dependency graph overlay
     //   #/viz/paper-id@branch/name                  → dependency graph on branch
+    //   #/preview/label                             → single block print preview
+    //   #/preview-lightning/label                   → dependency chain print preview
+    //   #/view-lightning/label                      → paper view filtered to critical path
     //   #/diff/paper-id                             → diff mode (current branch vs main)
     //   #/diff/paper-id@branch/name                 → diff mode on branch
     //   #label                                      → standalone block detail view
@@ -4019,6 +5076,18 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeViz(slug);
+      } else if (action === 'preview' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routePreview(slug);
+      } else if (action === 'preview-lightning' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routePreviewDepGraph(slug);
+      } else if (action === 'view-lightning' && rest) {
+        const { slug, branch } = parseBranchFromSlug(rest);
+        applyUrlBranch(branch);
+        await routeViewLightning(slug);
       } else if (action === 'diff' && rest) {
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
@@ -4147,7 +5216,7 @@
 
       // Uses (what this block depends on)
       if (block.uses?.length) {
-        const usesSection = mk('div','');
+        const usesSection = mk('div','decor');
         usesSection.style.cssText = 'margin-bottom:1.5rem';
         const usesTitle = mk('h3','');
         usesTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
@@ -4174,7 +5243,7 @@
       // Referenced by (what uses this block)
       const refs = usedByIndex.get(label);
       if (refs?.length) {
-        const refSection = mk('div','');
+        const refSection = mk('div','decor');
         refSection.style.cssText = 'margin-bottom:1.5rem';
         const refTitle = mk('h3','');
         refTitle.style.cssText = 'font-family:var(--f-head);font-size:.85rem;color:var(--fg-d);margin-bottom:.5rem';
@@ -4292,7 +5361,8 @@
       }
       if (nodes.size === 0) { alert('No dependency edges found in this paper.'); return; }
       depRootLabel = null;
-      depTitle.textContent = paper?.title || 'Full Paper';
+      depTitle.innerHTML = inl(paper?.title || 'Full Paper');
+      renderMath(depTitle);
       depSubtitle.textContent = 'all blocks with dependencies';
       depLink.href = `#/viz/${hashWithBranch(paper?.id || 'paper')}`;
       depCloseRhs();
@@ -4361,6 +5431,7 @@
       app.appendChild(manifestWrap);
 
       document.title = `Edit: ${block.title || block.label} — Folio`;
+      document.getElementById('toplet').textContent = `Folio: ${block.title || block.label}`;
     }
 
     function scrollToLabel(label) {
@@ -4401,6 +5472,48 @@
       showReferencedBy(label, el);
 
       pendingScroll = null;
+    }
+
+    // ── Scroll-tracking: update URL hash after 5s pause on same block ──
+    let scrollTrackLabel = null, scrollTrackTimer = null;
+    const paperView = document.getElementById('paper-view');
+    const scrollTrackObs = new IntersectionObserver((entries) => {
+      // Find topmost visible .env[id]
+      let topEl = null, topY = Infinity;
+      for (const e of entries) {
+        if (e.isIntersecting && e.boundingClientRect.top < topY) {
+          topY = e.boundingClientRect.top; topEl = e.target;
+        }
+      }
+      if (!topEl) return;
+      const lbl = topEl.id;
+      if (!lbl || lbl === scrollTrackLabel) return;
+      scrollTrackLabel = lbl;
+      clearTimeout(scrollTrackTimer);
+      scrollTrackTimer = setTimeout(() => {
+        if (scrollTrackLabel === lbl) {
+          const brSuffix = selectedBranch && selectedBranch !== currentBranchName ? `@${encodeURIComponent(selectedBranch)}` : '';
+          history.replaceState(null, '', `#${lbl}${brSuffix}`);
+        }
+      }, 5000);
+    }, { threshold: 0, rootMargin: '-40px 0px -60% 0px' });
+
+    // Observe all .env[id] blocks; re-observe when new ones appear (lazy sections)
+    function startScrollTracking() {
+      scrollTrackObs.disconnect();
+      scrollTrackLabel = null; clearTimeout(scrollTrackTimer);
+      const observe = (el) => { if (el.id) scrollTrackObs.observe(el); };
+      for (const el of document.querySelectorAll('.env[id], .ch-t[id], .sec-t[id]')) observe(el);
+      // Watch for dynamically added blocks (lazy-loaded sections)
+      if (window._scrollTrackMut) window._scrollTrackMut.disconnect();
+      window._scrollTrackMut = new MutationObserver((muts) => {
+        for (const m of muts) for (const n of m.addedNodes) {
+          if (n.nodeType !== 1) continue;
+          if ((n.classList?.contains('env') || n.classList?.contains('ch-t') || n.classList?.contains('sec-t')) && n.id) observe(n);
+          for (const c of n.querySelectorAll?.('.env[id], .ch-t[id], .sec-t[id]') || []) observe(c);
+        }
+      });
+      window._scrollTrackMut.observe(document.getElementById('app'), { childList: true, subtree: true });
     }
 
     function showReferencedBy(label, el) {
@@ -4476,9 +5589,45 @@
       const app = document.getElementById('app');
       app.innerHTML = '<div class="loading">loading paper...</div>';
       try {
-        const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        renderPaper(await r.json());
+        // Reset lazy-load state
+        paperOutline = null;
+        chapterDetails.clear();
+        loadedSections.clear();
+        sectionLoadPromises.clear();
+        chapterLoadPromises.clear();
+
+        // Load lightweight outline first (paper metadata + chapter titles)
+        const outlineUrl = `/api/paper/outline?id=${encodeURIComponent(id)}${branchParam()}`;
+        paperOutline = await cachedFetch(outlineUrl);
+
+        // Build a minimal paper object for renderPaper (chapters with empty sections)
+        const p = {
+          id: paperOutline.id,
+          title: paperOutline.title,
+          authors: paperOutline.authors,
+          affiliations: paperOutline.affiliations,
+          date: paperOutline.date,
+          macros: paperOutline.macros,
+          branch: paperOutline.branch,
+          chapters: paperOutline.chapters.map(ch => ({
+            number: ch.number,
+            title: ch.title,
+            label: ch.label,
+            _dir: ch.dir,
+            _loading: false,
+            sections: ch.sections.map((s, si) => ({
+              title: s.title,
+              label: s.label,
+              _sectionIndex: si,
+              _chapterDir: ch.dir,
+              _blockCount: s.blockCount,
+              blocks: [], // lazy — filled when section loads
+            })),
+          })),
+        };
+        renderPaper(p);
+        startScrollTracking();
+
         // Update URL to be shareable (embed branch if non-default)
         const target = hashWithBranch(`view/${id}`);
         history.replaceState(null, '', `#/${target}`);
@@ -4487,7 +5636,21 @@
         diffData = null; diffMode = false; clearInlineDiffs();
         startFeedbackPolling();
       } catch (e) {
-        app.innerHTML = `<div class="err">Could not load paper: ${esc(e.message)}</div>`;
+        // Fallback: try full paper load if outline endpoint not available
+        try {
+          const r = await fetch(`/api/paper?id=${encodeURIComponent(id)}${branchParam()}`);
+          if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
+          paperOutline = null;
+          renderPaper(await r.json());
+          startScrollTracking();
+          const target = hashWithBranch(`view/${id}`);
+          history.replaceState(null, '', `#/${target}`);
+          updateDiffButton();
+          diffData = null; diffMode = false; clearInlineDiffs();
+          startFeedbackPolling();
+        } catch (e2) {
+          app.innerHTML = `<div class="err">Could not load paper: ${esc(e2.message)}</div>`;
+        }
       }
     }
 
@@ -5066,21 +6229,49 @@
 
     function addChatMessage(role, content) {
       const div = mk('div', `chat-msg ${role}`);
+      div.dataset.rawContent = content; // store raw for copy
+      div.dataset.role = role;
       if (role === 'assistant') {
         const {html: renderedHtml, texBlocks: tx} = parseMd(content);
         div.innerHTML = renderedHtml;
         fillTex(div, tx);
         renderMath(div);
         resolveRefs(div);
+        addNavLinks(div);
       } else if (role === 'system') {
         div.innerHTML = inl(content);
         renderMath(div);
       } else {
         div.textContent = content;
       }
+      // Copy button on each message (except system)
+      if (role !== 'system') {
+        const cpBtn = mk('button', 'chat-copy');
+        cpBtn.textContent = 'copy';
+        cpBtn.onclick = (e) => {
+          e.stopPropagation();
+          navigator.clipboard.writeText(div.dataset.rawContent || div.textContent).then(() => {
+            cpBtn.textContent = 'copied'; setTimeout(() => { cpBtn.textContent = 'copy'; }, 1200);
+          });
+        };
+        div.appendChild(cpBtn);
+      }
       chatMessages.appendChild(div);
       chatMessages.scrollTop = chatMessages.scrollHeight;
       return div;
+    }
+
+    /** Add navigation links for block references in assistant responses */
+    function addNavLinks(el) {
+      for (const a of el.querySelectorAll('a[data-ref]')) {
+        const label = a.dataset.ref;
+        const block = bix.get(label);
+        if (!block) continue;
+        a.onclick = (e) => {
+          e.preventDefault();
+          scrollToLabel(label);
+        };
+      }
     }
 
     const chatSuggestions = document.getElementById('chat-suggestions');
@@ -5222,6 +6413,20 @@
           const suggestions = sugMatch[1].split('|').map(s => s.trim()).filter(Boolean);
           showSuggestions(suggestions);
         }
+
+        // Store raw content, add nav links and copy button
+        assistDiv.dataset.rawContent = fullResponse;
+        assistDiv.dataset.role = 'assistant';
+        addNavLinks(assistDiv);
+        const cpBtn = mk('button', 'chat-copy');
+        cpBtn.textContent = 'copy';
+        cpBtn.onclick = (e) => {
+          e.stopPropagation();
+          navigator.clipboard.writeText(fullResponse).then(() => {
+            cpBtn.textContent = 'copied'; setTimeout(() => { cpBtn.textContent = 'copy'; }, 1200);
+          });
+        };
+        assistDiv.appendChild(cpBtn);
 
         chatHistory.push({ role: 'assistant', content: fullResponse });
 
@@ -5395,6 +6600,21 @@
     };
 
     // Clear button
+    document.getElementById('chat-copy-all').onclick = () => {
+      const msgs = chatMessages.querySelectorAll('.chat-msg');
+      const lines = [];
+      for (const m of msgs) {
+        const role = m.dataset.role || 'system';
+        const raw = m.dataset.rawContent || m.textContent;
+        lines.push(`[${role}]: ${raw}`);
+      }
+      const text = lines.join('\n\n');
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('chat-copy-all');
+        btn.textContent = 'copied'; setTimeout(() => { btn.textContent = 'copy'; }, 1200);
+      });
+    };
+
     document.getElementById('chat-clear').onclick = () => {
       chatHistory = [];
       chatMessages.innerHTML = '';

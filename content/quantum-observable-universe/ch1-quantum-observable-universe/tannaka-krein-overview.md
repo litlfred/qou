@@ -1,23 +1,23 @@
-The fibre functor $\omega$ of a quantum universe encodes an extraordinary
+The fibre functor $\tau$ of a quantum universe encodes an extraordinary
 amount of structure. Tannaka--Krein duality \cite{deligne1990} says:
 
 1. **Reconstruction.** The group $G$ can be recovered from
-   $\omega$ alone:
-   $G \cong \mathrm{Aut}^{\otimes}(\omega)$,
-   the group of monoidal natural automorphisms of $\omega$.
+   $\tau$ alone:
+   $G \cong \mathrm{Aut}^{\otimes}(\tau)$,
+   the group of monoidal natural automorphisms of $\tau$.
    No *a priori* group is needed; it *emerges* from the
    category and the functor.
-2. **Equivalence.** The functor $\omega$ establishes a
+2. **Equivalence.** The functor $\tau$ establishes a
    monoidal equivalence
    $\mathcal{C} \simeq \mathrm{Rep}(G)$:
    every object in $\mathcal{C}$ is a representation of the
    reconstructed group.
 3. **Rigidity.** Any two fibre functors
-   $\omega, \omega' \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$
+   $\tau, \tau' \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$
    are isomorphic (as monoidal functors), and the group they
    reconstruct is the same up to inner automorphism.
 4. **Constraint propagation.** Algebraic conditions on
-   $\omega$ (such as the volume constraint
+   $\tau$ (such as the volume constraint
    $\epsilon \colon \Lambda^2 V \twoheadrightarrow \mathbf{1}$)
    propagate to $G$: they cut down the automorphism group from
    $\mathrm{GL}$ to a smaller subgroup (in our case, $\det = 1$

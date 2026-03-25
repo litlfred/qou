@@ -1,14 +1,23 @@
-A quantum universe $(\mathcal{C}, A, \omega)$ over $R$
+A quantum universe $(\mathcal{C}, A, \tau)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
-following three conditions hold:
+forgetful functor $\tau$
+([Example](#ex:rigid-monoidal-vect)) is faithful and the following
+conditions hold:
 
-1. *(non-degeneracy)* the Frobenius pairing
-   $\eqref{eq:frobenius-pairing}$ induces an isomorphism
-   $A \xrightarrow{\;\sim\;} A^{\vee}$;
+1. *(non-degenerate integration)* the Frobenius form
+   $\int_A \colon A \to \mathbf{1}$ induces a
+   non-degenerate pairing
+   $(a, b) \mapsto \int_A ab$
+   ([Frobenius pairing](#def:frobenius-pairing)), giving an
+   isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
-2. *(observability)* $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
+2. *(observability)* there are no hidden global symmetries:
+   $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
    \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
-   ($A$ acted on by conjugation); that is, every morphism
+   ($A$ acted on by conjugation). Physically, this means every
+   internal degree of freedom is accessible to measurement — no
+   gauge transformation acts trivially on all observables. The
+   formal statement is that every morphism
    $\mathbf{1} \to \mathrm{Ad}(A)$ is zero:
 
    ```tex
@@ -20,12 +29,41 @@ following three conditions hold:
    \]
    ```
 
-3. *(categorical volume constraint)*
-   let $V$ denote the fundamental object of $\mathcal{C}$ (the simple
-   object of categorical dimension $2$); there exists a
+3. *(measurability / anomaly-free)* the primary Chern classes of the
+   adjoint object vanish.  Precisely, define the *Chern classes of a
+   categorical object* $X$ by pulling back through the fibre functor:
+
+   $$c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
+     \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),$$
+
+   where the right-hand side is the classical Chern class of the
+   realised $R$-module (or, in the archimedean setting, of the
+   associated vector bundle $\tau(X) \times_G M$). This definition is
+   intrinsic to the pair $(\mathcal{C}, \tau)$ — the fibre functor
+   $\tau$ is part of the QOU datum — and reduces to the standard
+   topological Chern classes in every geometric realisation. The
+   measurability axiom requires:
+
+   $$
+     c_1(\mathrm{Ad}(A)) = 0
+     \qquad\text{and}\qquad
+     c_2(\mathrm{Ad}(A)) = 0.
+   $$
+
+   The first condition ensures the adjoint bundle is
+   orientable, precluding global anomalies; the second ensures
+   the volume form acquires no topological phases (see
+   [Remark](#rem:yekutieli-stokes-remark) for the connection to
+   categorical flatness via Yekutieli's nonabelian Stokes theorem).
+   For many applications, axioms (1), (2), and (4) suffice — axiom
+   (3) is needed only when global topology of $M$ matters.
+
+4. *(categorical volume constraint)*
+   let $V$ denote the fundamental object of $\mathcal{C}$
+   ([Remark](#rem:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every
-   $g \in \mathrm{Aut}^{\otimes}(\omega)$:
+   $g \in \mathrm{Aut}^{\otimes}(\tau)$:
 
    ```tex
    \begin{equation}\label{eq:categorical-volume-constraint}

@@ -8,6 +8,5 @@ export default definition({
     decl: "QOU.Hadron",
     validation: "not_checked",
   },
-  status: "has_sorry",
   uses: [],
 });

@@ -23,21 +23,21 @@ functions on the group. Its Hopf structure encodes the group operations:
 | *Comultiplication* $\Delta(f)(x, y)$ | $f(xy)$ | pullback of group multiplication |
 | *Counit* $\varepsilon(f)$ | $f(e)$ | evaluation at the identity |
 | *Antipode* $S(f)(x)$ | $f(x^{-1})$ | pullback of inversion |
-| *Frobenius form* $\lambda(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
+| *Frobenius form* $\int_A(f)$ | $\int_G f\, d\mu$ | Haar integration on $G$ |
 
-The Frobenius pairing
-$\langle f, g \rangle = \lambda(\mu(f \otimes g)) = \int_G f g\, d\mu$
+The [Frobenius pairing](#def:frobenius-pairing)
+$\langle f, g \rangle = \int_A(\mu(f \otimes g)) = \int_G f(x)\, g(x)\, d\mu_{\mathrm{Haar}}(x)$
 is positive definite (faithfulness of the Haar integral).
 
 **(iii) Fibre functor.**
-$\omega \colon \mathrm{Rep}(\mathrm{SU}(2)) \to
-\mathrm{Vect}_{\mathbb{C}}$ is the forgetful functor: $\omega(V, \rho)
+$\tau \colon \mathrm{Rep}(\mathrm{SU}(2)) \to
+\mathrm{Vect}_{\mathbb{C}}$ is the forgetful functor: $\tau(V, \rho)
 = V$ (forget the $G$-action, keep the vector space). It is exact
 (short exact sequences of representations split), faithful (a non-zero
 equivariant map is non-zero as a linear map), and monoidal
-($\omega(V \otimes W) = \omega(V) \otimes \omega(W)$).
-By Tannaka--Krein duality, $G$ can be recovered from $\omega$:
-$G \cong \mathrm{Aut}^{\otimes}(\omega)$, the group of monoidal natural
+($\tau(V \otimes W) = \tau(V) \otimes \tau(W)$).
+By Tannaka--Krein duality, $G$ can be recovered from $\tau$:
+$G \cong \mathrm{Aut}^{\otimes}(\tau)$, the group of monoidal natural
 automorphisms of the fibre functor.
 
 **(iv) Differential calculus.**

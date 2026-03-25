@@ -1,10 +1,15 @@
 Let $(\mathcal{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
-category, and let $V$ be an object of categorical dimension $2$ that is
+category, and let $V$ be a simple object that is
 *symplectically self-dual*: there exists an isomorphism
 $\phi \colon V \xrightarrow{\;\sim\;} V^{\vee}$ satisfying
-$\phi^{\vee} = -\phi$ (alternating). Then the composite
+$\phi^{\vee} = -\phi$ (alternating). The alternating condition forces
+$\operatorname{rank}(V) = 2$: the composite
 $\mathrm{ev}_V \circ (\mathrm{id} \otimes \phi)$ factors through
-$\Lambda^2 V$ (the *volume form factorisation*):
+$\Lambda^2 V$, and for the resulting morphism
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$ to be a non-degenerate
+epimorphism one needs $\operatorname{rank}(\Lambda^2 V) = 1$, i.e.,
+$\operatorname{rank}(V) = 2$. The factorisation is (the
+*volume form factorisation*):
 
 ```tex
 \begin{equation}\label{eq:volume-form-factorisation}

@@ -2,6 +2,10 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:categorical-irreducible",
+  lean: {
+    decl: "QOU.categorical_irreducible",
+    validation: "not_checked",
+  },
   title: "Irreducibility from observability",
   tags: ["irreducibility", "instanton"],
   uses: [

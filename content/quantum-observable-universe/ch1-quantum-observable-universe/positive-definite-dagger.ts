@@ -7,7 +7,6 @@ export default definition({
     decl: "QOU.PositiveDefiniteStructure",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: ["def:involutive-structure"],
   tags: ["category-theory", "positive-definite"],
   rendered: [

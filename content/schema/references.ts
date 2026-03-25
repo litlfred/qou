@@ -612,6 +612,195 @@ export const references: CSLData[] = [
     page: "35-76",
     DOI: "10.1007/BF01393687",
   }),
+
+  // ── Leitner and Pawlowski 2004 ──────────────────────────────────
+  ref({
+    id: "leitnerpawloski2004",
+    type: "article-journal",
+    title: "On the morphisms of non-commutative formal groups",
+    author: [
+      { family: "Leitner", given: "Fred" },
+      { family: "Paw\u0142owski", given: "Jan" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2004]] },
+    URL: "https://arxiv.org/abs/math/0409565",
+    note: "arXiv:math/0409565",
+  }),
+
+  // ── Bergman 1978 ──────────────────────────────────────────────
+  ref({
+    id: "bergman1978",
+    type: "article-journal",
+    title: "The diamond lemma for ring theory",
+    author: [
+      { family: "Bergman", given: "George M." },
+    ],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[1978]] },
+    volume: "29",
+    issue: "2",
+    page: "178-218",
+    DOI: "10.1016/0001-8708(78)90116-0",
+  }),
+
+  // ── Faddeev 1994 ──────────────────────────────────────────────
+  ref({
+    id: "faddeev1994",
+    type: "article-journal",
+    title: "Current-like variables in massive and massless integrable models",
+    author: [
+      { family: "Faddeev", given: "Ludwig D." },
+      { family: "Kashaev", given: "Rinat M." },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1994]] },
+    volume: "169",
+    page: "1-20",
+    DOI: "10.1007/BF02101594",
+    note: "Introduces the quantum dilogarithm",
+  }),
+
+  // ── Jones 1985 ────────────────────────────────────────────────
+  ref({
+    id: "jones1985",
+    type: "article-journal",
+    title: "A polynomial invariant for knots via von Neumann algebras",
+    author: [
+      { family: "Jones", given: "V. F. R." },
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    issued: { "date-parts": [[1985]] },
+    volume: "12",
+    issue: "1",
+    page: "103-111",
+    DOI: "10.1090/S0273-0979-1985-15304-2",
+  }),
+
+  // ── Edge 1978 ─────────────────────────────────────────────────
+  ref({
+    id: "edge1978",
+    type: "article-journal",
+    title: "Bring's curve",
+    author: [
+      { family: "Edge", given: "W. L." },
+    ],
+    "container-title": "Journal of the London Mathematical Society",
+    issued: { "date-parts": [[1978]] },
+    volume: "2",
+    issue: "3",
+    page: "539-545",
+    DOI: "10.1017/S0305004100055699",
+  }),
+
+  // ── Seiberg and Witten 1994 ───────────────────────────────────
+  ref({
+    id: "seiberg1994",
+    type: "article-journal",
+    title: "Electric-magnetic duality, monopole condensation, and confinement in N=2 supersymmetric Yang-Mills theory",
+    author: [
+      { family: "Seiberg", given: "Nathan" },
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "Nuclear Physics B",
+    issued: { "date-parts": [[1994]] },
+    volume: "426",
+    issue: "1",
+    page: "19-52",
+    DOI: "10.1016/0550-3213(94)90124-4",
+  }),
+
+  // ── Freedman, He, Wang 1994 ───────────────────────────────────
+  ref({
+    id: "freedman1994",
+    type: "article-journal",
+    title: "M\u00f6bius energy of knots and unknots",
+    author: [
+      { family: "Freedman", given: "Michael H." },
+      { family: "He", given: "Zheng-Xu" },
+      { family: "Wang", given: "Zhenghan" },
+    ],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1994]] },
+    volume: "139",
+    issue: "1",
+    page: "1-50",
+    DOI: "10.2307/2946626",
+  }),
+
+  // ── Birman 1974 ───────────────────────────────────────────────
+  ref({
+    id: "birman1974",
+    type: "book",
+    title: "Braids, Links, and Mapping Class Groups",
+    author: [
+      { family: "Birman", given: "Joan S." },
+    ],
+    publisher: "Princeton University Press",
+    issued: { "date-parts": [[1974]] },
+    "collection-title": "Annals of Mathematics Studies",
+    "collection-number": 82,
+    DOI: "10.1515/9781400881420",
+  }),
+
+  // ── Kassel 1995 ───────────────────────────────────────────────
+  ref({
+    id: "kassel1995",
+    type: "book",
+    title: "Quantum Groups",
+    author: [
+      { family: "Kassel", given: "Christian" },
+    ],
+    publisher: "Springer",
+    issued: { "date-parts": [[1995]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 155,
+    DOI: "10.1007/978-1-4612-0783-2",
+  }),
+
+  // ── Donaldson 1990 ────────────────────────────────────────────
+  ref({
+    id: "donaldson1990",
+    type: "article-journal",
+    title: "Polynomial invariants for smooth four-manifolds",
+    author: [
+      { family: "Donaldson", given: "Simon K." },
+    ],
+    "container-title": "Topology",
+    issued: { "date-parts": [[1990]] },
+    volume: "29",
+    issue: "3",
+    page: "257-315",
+    DOI: "10.1016/0040-9383(90)90001-Z",
+  }),
+
+  // ── Baez and Lauda 2004 ───────────────────────────────────────
+  ref({
+    id: "baez2004",
+    type: "article-journal",
+    title: "Higher-dimensional algebra V: 2-groups",
+    author: [
+      { family: "Baez", given: "John C." },
+      { family: "Lauda", given: "Aaron D." },
+    ],
+    "container-title": "Theory and Applications of Categories",
+    issued: { "date-parts": [[2004]] },
+    volume: "12",
+    page: "423-491",
+    note: "arXiv:math/0307200",
+  }),
+
+  // ── Heisenberg 1958 ───────────────────────────────────────────
+  ref({
+    id: "heisenberg1958",
+    type: "book",
+    title: "Physics and Philosophy: The Revolution in Modern Science",
+    author: [
+      { family: "Heisenberg", given: "Werner" },
+    ],
+    publisher: "Harper & Row",
+    issued: { "date-parts": [[1958]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

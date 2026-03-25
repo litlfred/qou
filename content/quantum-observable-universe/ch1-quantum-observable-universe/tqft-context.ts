@@ -8,6 +8,6 @@ export default remark({
   uses: [
     "def:quantum-universe",
     "def:quantum-observable-universe",
-    "def:c-quantum-observable-universe",
+    "ex:c-quantum-observable-universe",
   ],
 });

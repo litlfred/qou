@@ -8,7 +8,6 @@ export default proposition({
     decl: "QOU.Torsion.invariant_functional_unique",
     validation: "not_checked",
   },
-  status: "proved",
   uses: [
     "def:quantum-observable-universe",
     "def:direct-limit-algebra",

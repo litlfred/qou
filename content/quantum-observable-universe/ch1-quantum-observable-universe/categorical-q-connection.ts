@@ -8,7 +8,6 @@ export default definition({
     decl: "QOU.CategoricalQConnection",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:categorical-connection",
     "def:categorical-reeb",

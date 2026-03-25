@@ -1,4 +1,4 @@
-[$\mathbb{C}$-quantum universe](#def:c-quantum-universe) requires only Levi non-degeneracy
+[$\mathbb{C}$-quantum universe](#ex:c-quantum-universe) requires only Levi non-degeneracy
 (not strict pseudoconvexity). This generality is deliberate: the QOU
 framework applies whenever the following three cohomological/obstruction
 conditions hold.
@@ -24,7 +24,7 @@ conditions hold.
    $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
    the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
    one takes the absolute value to ensure $q \geq 1$.
-3. *QOU vanishing ([$\mathbb{C}$-quantum observable universe](#def:c-quantum-observable-universe)).*
+3. *QOU vanishing ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).*
    The conditions $H^0(M, \mathrm{Ad}(P)) = 0$ and
    $\Gamma_c(M,E) = 0$ serve as the gauge-theoretic obstructions.
    These are purely topological/cohomological and independent of the

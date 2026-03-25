@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe and let
+Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site $\mathcal{S}$ trivialising every level of the tower.

@@ -3,7 +3,7 @@ We record how each axiom of a
 surface.
 
 **(i) Non-degeneracy.**
-The Frobenius form $\lambda = h_q$ is the Haar state on
+The Frobenius form $\int_A = h_q$ is the Haar state on
 $A = \mathcal{O}_q(\mathrm{SU}(2))$.  Faithfulness of $h_q$ for compact
 quantum groups gives the isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$.  The antipode $S$ and $h_q$

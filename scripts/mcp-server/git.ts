@@ -32,8 +32,12 @@ export function fetchOrigin(): void {
   } catch { /* ignore fetch failures */ }
 }
 
-/** List all branch names (local + remote tracking, deduplicated). */
-export function listBranches(): string[] {
+/** List all branch names (local + remote tracking, deduplicated).
+ *  Order: current branch first, then main/master, then top 5 most
+ *  recently committed branches, then remaining alphabetical.
+ *  Returns { branches, recentCount } where recentCount is the number
+ *  of recent branches (after current + main). */
+export function listBranches(): { branches: string[]; recentCount: number } {
   // Local branches
   const localRaw = git("branch", "--list", "--format=%(refname:short)");
   const local = new Set((localRaw || "").split("\n").filter(Boolean));
@@ -46,15 +50,47 @@ export function listBranches(): string[] {
 
   for (const b of remote) local.add(b);
 
-  // Sort: current branch first, then main/master, then alphabetical
   const current = currentBranch();
-  return [...local].sort((a, b) => {
+  const allNames = [...local];
+
+  // Get recent branches by committer date (top 5 excluding current/main)
+  let recentSet = new Set<string>();
+  try {
+    const recentRaw = spawnSync("git", [
+      "branch", "-a", "--sort=-committerdate",
+      "--format=%(refname:short)",
+    ], { cwd: REPO_ROOT, stdio: "pipe", timeout: 5000 });
+    if (recentRaw.status === 0) {
+      const recent = (recentRaw.stdout?.toString() || "").split("\n")
+        .filter(Boolean)
+        .map(b => b.replace(/^origin\//, ""))
+        .filter(b => b !== "HEAD" && b !== current && b !== "main" && b !== "master");
+      // Deduplicate and take top 5
+      const seen = new Set<string>();
+      for (const b of recent) {
+        if (!seen.has(b) && allNames.includes(b)) {
+          seen.add(b);
+          if (seen.size >= 5) break;
+        }
+      }
+      recentSet = seen;
+    }
+  } catch { /* fall back to alphabetical */ }
+
+  // Sort: current first, then main/master, then recent (by recency),
+  // then remaining alphabetical
+  const sorted = allNames.sort((a, b) => {
     if (a === current) return -1;
     if (b === current) return 1;
     if (a === "main" || a === "master") return -1;
     if (b === "main" || b === "master") return 1;
+    const aRecent = recentSet.has(a);
+    const bRecent = recentSet.has(b);
+    if (aRecent && !bRecent) return -1;
+    if (!aRecent && bRecent) return 1;
     return a.localeCompare(b);
   });
+  return { branches: sorted, recentCount: recentSet.size };
 }
 
 /** Get the commit hash for a branch (for cache invalidation). */
@@ -109,9 +145,56 @@ export function gitLs(branch: string, relDir: string): string[] {
   return raw.split("\n").filter(Boolean);
 }
 
+// ── Block changelog (derived from git log) ────────────────────────
+
+export interface BlockCommit {
+  sha: string;
+  shortSha: string;
+  date: string;
+  author: string;
+  message: string;
+}
+
+/**
+ * Get git log for a set of files (a block's .ts, .md, .lean siblings).
+ * Returns commits that touched any of the given files, newest first.
+ */
+export function gitLogFiles(relPaths: string[], limit = 20): BlockCommit[] {
+  const result = spawnSync("git", [
+    "log", `--max-count=${limit}`,
+    "--pretty=format:%H|%h|%aI|%an|%s",
+    "--", ...relPaths,
+  ], { cwd: REPO_ROOT, stdio: "pipe", timeout: 5000 });
+  if (result.status !== 0) return [];
+  return result.stdout.toString().trim().split("\n").filter(Boolean).map(line => {
+    const [sha, shortSha, date, author, ...rest] = line.split("|");
+    return { sha, shortSha, date, author, message: rest.join("|") };
+  });
+}
+
+/**
+ * Read a file's content at a specific commit SHA.
+ * Wrapper around gitShow that accepts full commit hashes.
+ */
+export function gitShowAt(sha: string, relPath: string): string | null {
+  return git("show", `${sha}:${relPath}`);
+}
+
+/**
+ * Read a binary file at a specific commit SHA.
+ * Returns a Buffer or null.
+ */
+export function gitShowBinaryAt(sha: string, relPath: string): Buffer | null {
+  const result = spawnSync("git", ["show", `${sha}:${relPath}`], {
+    cwd: REPO_ROOT, stdio: "pipe", timeout: 5000,
+  });
+  if (result.status !== 0) return null;
+  return result.stdout as Buffer;
+}
+
 // ── TypeScript module evaluation from git branches ────────────────
 
-const TMP_DIR = join(REPO_ROOT, ".qou-tmp");
+const TMP_DIR = join(REPO_ROOT, ".folio-assistant-tmp");
 
 /**
  * Import a TypeScript module from a non-current branch.

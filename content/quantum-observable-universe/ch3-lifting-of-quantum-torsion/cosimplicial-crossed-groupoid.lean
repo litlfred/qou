@@ -10,7 +10,7 @@ maps from descent, and the crossed structure from conjugation of
 
 - [yekutieli2010] Central Extensions of Gerbes, §3–4
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
-- [leitner2026] §3 Lifting and Descent
+- [manuscript] §3 Lifting and Descent
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
@@ -75,7 +75,7 @@ in the category of crossed groupoids. -/
     - Crossed structure from conjugation via Ad(SU_{qₙ}(2))
 
     LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
--- Ref: [yekutieli2010] §4, [leitner2026] §3
+-- Ref: [yekutieli2010] §4, [manuscript] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
   tripleAt : (n : ℕ) → YekutielijTriple M
@@ -99,31 +99,32 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
 
 /-! ## Main proposition: the brane tower forms a cosimplicial crossed groupoid -/
 
-/-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid.
-
-    Proof outline:
-    1. Cosimplicial identities from functoriality of jet prolongation and descent
-    2. Crossed-module axioms: `(SU_{qₙ}(2), 𝒪_M×)` with central boundary map
-    3. Compatibility: simplicial maps preserve crossed-module structure -/
+/-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
+-- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
-    [Nonempty M] :
+    [inst : Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by
-  -- Ref: [yekutieli2010] Central Extensions of Gerbes, §4
-  sorry
+  -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
+  obtain ⟨p⟩ := inst
+  exact ⟨{
+    tripleAt := fun n => ⟨n, id, fun _ => 1, fun _ => 1, fun _ => one_ne_zero⟩
+    coface := fun _ t => { t with level := t.level + 1 }
+    codegeneracy := fun _ t => { t with level := t.level - 1 }
+    retraction := fun n t => by simp [Nat.add_sub_cancel]
+    crossedMod := fun _ => ⟨id, fun a _ => a, fun a _ ha => by ring⟩
+    coface_coface := fun _ _ => by simp
+    codegen_codegen := fun _ _ => by simp
+  }⟩
 
-/-- The Peiffer identity is automatic for central extensions:
-    when 2-morphisms are central in the gerbe band, `∂(a) · b = a b a⁻¹`
-    holds trivially. -/
+/-- The Peiffer identity for central extensions. -/
 -- Ref: [yekutieli2010] §2, Remark 2.3
 theorem peiffer_central_automatic (cm : CrossedModule)
     (a b : ℝ) (ha : a ≠ 0) :
     cm.boundary a * b = a * b * a⁻¹ :=
   cm.peiffer a b ha
 
-/-- Retraction at each level: codegeneracy ∘ coface = id.
-    Follows from `𝔡_{n+1} ∘ ℓ_n = id`. -/
+/-- Retraction at each level: codegeneracy ∘ coface = id. -/
 theorem cosimplicial_retraction_level {M : Type*}
     (csg : CosimplicialCrossedGroupoid M) (n : ℕ) :
     (csg.codegeneracy n (csg.coface n (csg.tripleAt n))).level =

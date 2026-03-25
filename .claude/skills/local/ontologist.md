@@ -19,7 +19,7 @@ have a unique type assignment in the Lean type system.  The Ontologist
 detects ambiguities, maintains the formal glossary, and produces the
 machine-readable mapping file.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, **prefer MCP tools for type checking**:
 
@@ -245,6 +245,18 @@ export default remark({
 Import: `<Mathlib.Import.Path>`.
 <Optional: notation, key fields, relationship to paper's usage.>
 ```
+
+### TeX snippet validation (mandatory after creating .md)
+
+After creating any glossary `.md` file, validate its TeX snippets:
+
+```bash
+cd content && bun run pipeline/validate-tex.ts --file <path-to-new.md>
+```
+
+This uses **remark + remark-math** to parse the markdown and validate all
+inline/display math and fenced TeX blocks via **unified-latex** AST parsing.
+Fix any TeX errors before committing.
 
 ### Maintaining consistency
 

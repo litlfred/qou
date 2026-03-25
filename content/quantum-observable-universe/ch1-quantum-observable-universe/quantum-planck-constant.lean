@@ -41,15 +41,12 @@ noncomputable def quantumPlanckConstant {M : Type*} (sp : SubstrateParameter M)
 theorem quantumPlanckConstant_nonneg {M : Type*} (sp : SubstrateParameter M)
     (p : M) : 0 ≤ quantumPlanckConstant sp p := by
   unfold quantumPlanckConstant
-  have hq := sp.field_ge_one p
-  have hpos := sp.field_pos p
-  linarith [inv_le_one_of_one_le₀ hq]
+  linarith [inv_le_one_of_one_le₀ (sp.field_ge_one p)]
 
 theorem quantumPlanckConstant_lt_one {M : Type*} (sp : SubstrateParameter M)
     (p : M) : quantumPlanckConstant sp p < 1 := by
   unfold quantumPlanckConstant
-  have hpos := sp.field_pos p
-  linarith [inv_pos.mpr hpos]
+  linarith [inv_pos.mpr (sp.field_pos p)]
 
 /-- At classicality (`q = 1`), the quantum Planck constant vanishes. -/
 theorem planck_classical_limit {M : Type*} (sp : SubstrateParameter M)

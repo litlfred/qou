@@ -56,7 +56,6 @@ interface ExportedBlock {
   /** Resolved citation keys (explicit + auto-extracted from .md). */
   cites?: string[];
   lean?: LeanRef & { source?: string };
-  status?: string;
   proofs?: string[];
   examples?: string[];
   tex?: string;
@@ -192,7 +191,6 @@ async function main() {
             uses: "uses" in block ? block.uses : undefined,
             cites: cites.length > 0 ? cites : undefined,
             lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
-            status: "status" in block ? block.status : undefined,
             proofs: "proofs" in block ? block.proofs : undefined,
             examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
@@ -229,6 +227,7 @@ async function main() {
 
     chapters.push({
       number: ch.number,
+      tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
       sections,

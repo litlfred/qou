@@ -12,7 +12,7 @@ version used in the definition block.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §3
-- [leitner2026] §3
+- [manuscript] §3
 -/
 
 import Mathlib.Data.Real.Basic
@@ -23,7 +23,7 @@ namespace QOU
     level n and intersection Uᵢ ∩ Uⱼ of the brane tower.
 
     LaTeX: `\label{def:yekutieli-triple}` -/
--- Ref: [yekutieli2010] §3, [leitner2026] §3
+-- Ref: [yekutieli2010] §3, [manuscript] §3
 structure YekutieliTripleMapping (M : Type*) where
   /-- Level in the brane tower. -/
   level : ℕ

@@ -27,11 +27,11 @@ import { registerPreviewTools } from "./tools/preview.js";
 import { registerPreferenceTools } from "./tools/preferences.js";
 import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "./tools/check-deps.js";
-import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, MAIN_TEX } from "./paths.js";
+import { REPO_ROOT, BUILD_DIR, FEEDBACK_DIR, FEEDBACK_WORKTREE, MAIN_TEX, FOLIO_PORT } from "./paths.js";
 import {
   currentBranch, listBranches, fetchOrigin, isCurrentBranch,
   readFileBranch, fileExistsBranch, importTsBranch, listDirBranch,
-  mergeBase,
+  mergeBase, gitLogFiles, gitShowBinaryAt, gitShowAt,
 } from "./git.js";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, resolve, extname } from "path";
@@ -68,22 +68,57 @@ function forbidden(action: string, minRole: UserRole): Response {
   );
 }
 
-// ── Feedback storage (gitignored, global with hash-based IDs) ────
+// ── Feedback storage (TypeScript files, committed to main via worktree) ────
+//
+// Structure: feedback/<paper-dir>/<rootName>.ts
+//   export default [{ id, summary, ... }, ...]
+//
+// On write, the feedback is written to both:
+//   1. The main repo's feedback/ (for immediate reads)
+//   2. The .feedback-wt/ worktree (for committing to main)
 
-function feedbackPath(paperId: string, rootName: string): string {
-  return join(FEEDBACK_DIR, paperId, `${rootName}.json`);
+import { spawnSync } from "child_process";
+
+/** Resolve feedback .ts path relative to a base dir. */
+function feedbackPath(paperId: string, rootName: string, base = FEEDBACK_DIR): string {
+  return join(base, paperId, `${rootName}.ts`);
+}
+
+/** Parse a feedback .ts file → array of FeedbackItems. */
+function parseFeedbackTs(content: string): unknown[] {
+  // Strip import line and satisfies clause, then extract the JSON array
+  const stripped = content
+    .replace(/^import\s+.*;\s*/m, '')
+    .replace(/\s+satisfies\s+\S+;\s*$/, ';');
+  const match = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+  if (!match) return [];
+  try {
+    return JSON.parse(match[1]);
+  } catch { return []; }
+}
+
+/** Serialize feedback items to TypeScript source. */
+function serializeFeedbackTs(items: unknown[]): string {
+  const json = JSON.stringify(items, null, 2);
+  return `import type { FeedbackItem } from "../../schemas/types";\n\nexport default ${json} satisfies FeedbackItem[];\n`;
 }
 
 function readFeedback(paperId: string, rootName: string): unknown[] {
   const p = feedbackPath(paperId, rootName);
   if (!existsSync(p)) return [];
-  try { return JSON.parse(readFileSync(p, "utf-8")); } catch { return []; }
+  try { return parseFeedbackTs(readFileSync(p, "utf-8")); } catch { return []; }
 }
 
 function writeFeedback(paperId: string, rootName: string, todos: unknown[]): void {
+  const ts = serializeFeedbackTs(todos);
+
+  // Write to main repo feedback/ (for immediate reads)
   const dir = join(FEEDBACK_DIR, paperId);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(feedbackPath(paperId, rootName), JSON.stringify(todos, null, 2), "utf-8");
+  writeFileSync(feedbackPath(paperId, rootName), ts, "utf-8");
+
+  // Write to worktree and commit to main
+  commitFeedbackToMain(paperId, rootName, ts);
 }
 
 /** Generate a unique todo ID: timestamp + 4-char hash to avoid collisions. */
@@ -91,6 +126,76 @@ function makeTodoId(): string {
   const ts = Date.now().toString(36);
   const hash = Math.random().toString(36).slice(2, 6);
   return `todo-${ts}-${hash}`;
+}
+
+// ── Worktree: commit feedback to main ────────────────────────────
+
+let worktreeReady = false;
+
+function ensureWorktree(): boolean {
+  if (worktreeReady) return true;
+  try {
+    if (!existsSync(FEEDBACK_WORKTREE)) {
+      // Create worktree checked out to main
+      const r = spawnSync("git", ["worktree", "add", FEEDBACK_WORKTREE, "main"], {
+        cwd: REPO_ROOT, stdio: "pipe", timeout: 15000,
+      });
+      if (r.status !== 0) {
+        log("feedback", "worktree setup failed", r.stderr?.toString().trim());
+        return false;
+      }
+    }
+    worktreeReady = true;
+    return true;
+  } catch (e) {
+    log("feedback", "worktree error", String(e));
+    return false;
+  }
+}
+
+function commitFeedbackToMain(paperId: string, rootName: string, content: string): void {
+  if (!ensureWorktree()) return;
+
+  try {
+    // Pull latest main in worktree
+    spawnSync("git", ["pull", "--ff-only", "origin", "main"], {
+      cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 15000,
+    });
+
+    // Write file in worktree
+    const wtDir = join(FEEDBACK_WORKTREE, "feedback", paperId);
+    mkdirSync(wtDir, { recursive: true });
+    const wtPath = join(wtDir, `${rootName}.ts`);
+    writeFileSync(wtPath, content, "utf-8");
+
+    // Stage + commit + push
+    const relPath = `feedback/${paperId}/${rootName}.ts`;
+    spawnSync("git", ["add", relPath], { cwd: FEEDBACK_WORKTREE, stdio: "pipe" });
+
+    const commitResult = spawnSync("git", ["commit", "-m", `feedback: ${paperId}/${rootName}`], {
+      cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 10000,
+    });
+
+    if (commitResult.status === 0) {
+      // Push with retry (up to 3 attempts with backoff)
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const push = spawnSync("git", ["push", "origin", "main"], {
+          cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 30000,
+        });
+        if (push.status === 0) {
+          log("feedback", `committed to main: ${relPath}`);
+          return;
+        }
+        if (attempt < 2) {
+          // Brief backoff before retry
+          spawnSync("sleep", [String(2 ** (attempt + 1))]);
+        }
+      }
+      log("feedback", `push failed after retries: ${relPath}`);
+    }
+  } catch (e) {
+    log("feedback", "commit error", String(e));
+  }
 }
 
 /** List all feedback items across all papers, optionally filtered by status. */
@@ -102,8 +207,8 @@ function listAllFeedback(status?: string): { paperId: string; rootName: string; 
     const paperFbDir = join(FEEDBACK_DIR, paperId);
     try {
       for (const file of readdirSync(paperFbDir)) {
-        if (!file.endsWith(".json")) continue;
-        const rootName = file.replace(/\.json$/, "");
+        if (!file.endsWith(".ts")) continue;
+        const rootName = file.replace(/\.ts$/, "");
         const todos = readFeedback(paperId, rootName);
         for (const t of todos as any[]) {
           if (!status || t.status === status) {
@@ -250,6 +355,10 @@ async function resolveFolio(branch?: string): Promise<{ title: string; papers: F
 }
 
 async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper & { branch: string }) | null> {
+  const cacheKey = `${id}:${branch || "HEAD"}`;
+  const cached = cacheGet(fullPaperCache, cacheKey);
+  if (cached) return cached;
+
   const br = branch;
   const paperRel = `content/${id}/${id}.ts`;
   if (!fileExistsBranch(br, paperRel)) return null;
@@ -276,7 +385,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blk = (await importTsBranch(br, blkTsRel)) as any;
           const md = readFileBranch(br, blkMdRel) || "";
 
-          // Merge feedback todos from gitignored .qou-feedback/
+          // Merge feedback todos from feedback/<paperId>/<rootName>.ts
           // Build a fresh array each time — never mutate the cached ESM module object
           const feedback = readFeedback(id, rootName);
           const blockTodos = feedback.length ? [...feedback] : undefined;
@@ -345,7 +454,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
 
     const chTodos = readFeedback(id, `__chapter:${chRef.dir}`);
     chapters.push({
-      number: ch.number, title: ch.title, label: ch.label, sections,
+      number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, sections,
       todos: chTodos.length ? chTodos : undefined,
     });
   }
@@ -358,7 +467,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
         blocksByName.set(blk.rootName, blk);
 
   const paperTodos = readFeedback(id, "__paper");
-  return {
+  const result = {
     id,
     title: paperMod.title,
     authors: paperMod.authors,
@@ -370,6 +479,285 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
     branch: currentBranch(),
     blocksByName,
   };
+  cacheSet(fullPaperCache, cacheKey, result);
+  return result;
+}
+
+// ── Cache layer (5-minute TTL) ──────────────────────────────────
+
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
+interface CacheEntry<T> {
+  data: T;
+  ts: number;
+}
+
+const paperOutlineCache = new Map<string, CacheEntry<any>>();
+const chapterCache = new Map<string, CacheEntry<any>>();
+const sectionCache = new Map<string, CacheEntry<ResolvedSection>>();
+const fullPaperCache = new Map<string, CacheEntry<any>>();
+
+function cacheGet<T>(cache: Map<string, CacheEntry<T>>, key: string): T | null {
+  const entry = cache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > CACHE_TTL_MS) { cache.delete(key); return null; }
+  return entry.data;
+}
+
+function cacheSet<T>(cache: Map<string, CacheEntry<T>>, key: string, data: T): void {
+  cache.set(key, { data, ts: Date.now() });
+}
+
+/** Invalidate all caches for a paper (call after edits/saves). */
+function invalidatePaperCache(paperId?: string): void {
+  if (paperId) {
+    for (const cache of [paperOutlineCache, chapterCache, fullPaperCache, sectionCache]) {
+      for (const k of [...cache.keys()]) if (k.startsWith(paperId + ":")) cache.delete(k);
+    }
+  } else {
+    paperOutlineCache.clear();
+    chapterCache.clear();
+    fullPaperCache.clear();
+    sectionCache.clear();
+  }
+}
+
+// ── Paper outline (lightweight — no blocks/md/lean) ─────────────
+
+interface ChapterOutline {
+  number: number;
+  title: string;
+  label?: string;
+  dir: string;
+  sections: { title: string; label?: string; blockCount: number }[];
+}
+
+interface PaperOutline {
+  id: string;
+  title: string;
+  authors: string[];
+  affiliations?: string[];
+  date?: string;
+  macros?: Record<string, string>;
+  chapters: ChapterOutline[];
+  branch: string;
+}
+
+async function resolvePaperOutline(id: string, branch?: string): Promise<PaperOutline | null> {
+  const cacheKey = `${id}:${branch || "HEAD"}`;
+  const cached = cacheGet(paperOutlineCache, cacheKey);
+  if (cached) return cached;
+
+  const br = branch;
+  const paperRel = `content/${id}/${id}.ts`;
+  if (!fileExistsBranch(br, paperRel)) return null;
+
+  const paperMod = (await importTsBranch(br, paperRel)) as any;
+  const chapters: ChapterOutline[] = [];
+
+  for (const chRef of paperMod.chapters || []) {
+    const chRel = `content/${id}/${chRef.dir}`;
+    const chTsRel = `${chRel}/${chRef.dir}.ts`;
+    if (!fileExistsBranch(br, chTsRel)) continue;
+    const ch = (await importTsBranch(br, chTsRel)) as any;
+
+    const sections: ChapterOutline["sections"] = [];
+    for (const sec of ch.sections || []) {
+      if ("name" in sec && !("blocks" in sec)) continue;
+      const section = sec as { title: string; label?: string; blocks: string[] };
+      sections.push({ title: section.title, label: section.label, blockCount: section.blocks.length });
+    }
+
+    chapters.push({ number: ch.number, tabLabel: ch.tabLabel, title: ch.title, label: ch.label, dir: chRef.dir, sections });
+  }
+
+  const result: PaperOutline = {
+    id,
+    title: paperMod.title,
+    authors: paperMod.authors,
+    affiliations: paperMod.affiliations,
+    date: paperMod.date,
+    macros: paperMod.macros,
+    chapters,
+    branch: currentBranch(),
+  };
+
+  cacheSet(paperOutlineCache, cacheKey, result);
+  return result;
+}
+
+// ── Single chapter resolver (section stubs only) ────────────────
+
+interface SectionStub {
+  title: string;
+  label?: string;
+  blockCount: number;
+  /** Lightweight block summaries for sidebar (no md/lean source). */
+  blockStubs: { rootName: string; kind: string; label?: string; title?: string; status?: string; lean?: { decl?: string; file?: string; validation?: string }; todoCount: number }[];
+}
+
+interface ChapterDetail {
+  number: number;
+  title: string;
+  label?: string;
+  dir: string;
+  sections: SectionStub[];
+  todos?: unknown[];
+}
+
+async function resolveChapterDetail(
+  paperId: string, chapterDir: string, branch?: string
+): Promise<ChapterDetail | null> {
+  const cacheKey = `${paperId}:${branch || "HEAD"}:ch:${chapterDir}`;
+  const cached = cacheGet(chapterCache, cacheKey) as unknown as ChapterDetail | null;
+  if (cached) return cached;
+
+  const br = branch;
+  const chRel = `content/${paperId}/${chapterDir}`;
+  const chTsRel = `${chRel}/${chapterDir}.ts`;
+  if (!fileExistsBranch(br, chTsRel)) return null;
+
+  const ch = (await importTsBranch(br, chTsRel)) as any;
+  const sections: SectionStub[] = [];
+
+  for (const sec of ch.sections || []) {
+    if ("name" in sec && !("blocks" in sec)) continue;
+    const section = sec as { title: string; label?: string; blocks: string[] };
+
+    const blockStubs: SectionStub["blockStubs"] = [];
+    for (const rootName of section.blocks) {
+      const blkTsRel = `${chRel}/${rootName}.ts`;
+      try {
+        const blk = (await importTsBranch(br, blkTsRel)) as any;
+        const feedback = readFeedback(paperId, rootName);
+        blockStubs.push({
+          rootName,
+          kind: blk.kind,
+          label: blk.label,
+          title: blk.title,
+          status: blk.status,
+          lean: blk.lean ? { decl: blk.lean.decl, file: blk.lean.file, validation: blk.lean.validation } : undefined,
+          todoCount: feedback.filter((t: any) => t.status === "open").length,
+        });
+      } catch {
+        blockStubs.push({ rootName, kind: "error", todoCount: 0 });
+      }
+    }
+
+    sections.push({
+      title: section.title,
+      label: section.label,
+      blockCount: section.blocks.length,
+      blockStubs,
+    });
+  }
+
+  const chTodos = readFeedback(paperId, `__chapter:${chapterDir}`);
+  const result: ChapterDetail = {
+    number: ch.number, title: ch.title, label: ch.label, dir: chapterDir,
+    sections,
+    todos: chTodos.length ? chTodos : undefined,
+  };
+
+  cacheSet(chapterCache, cacheKey, result as any);
+  return result;
+}
+
+// ── Section resolver (full blocks with md/lean) ─────────────────
+
+async function resolveSection(
+  paperId: string, chapterDir: string, sectionIndex: number, branch?: string
+): Promise<ResolvedSection | null> {
+  const cacheKey = `${paperId}:${branch || "HEAD"}:sec:${chapterDir}:${sectionIndex}`;
+  const cached = cacheGet(sectionCache, cacheKey);
+  if (cached) return cached;
+
+  const br = branch;
+  const chRel = `content/${paperId}/${chapterDir}`;
+  const chTsRel = `${chRel}/${chapterDir}.ts`;
+  if (!fileExistsBranch(br, chTsRel)) return null;
+
+  const ch = (await importTsBranch(br, chTsRel)) as any;
+
+  // Filter to real sections (skip name-only refs)
+  const realSections = (ch.sections || []).filter(
+    (s: any) => !("name" in s && !("blocks" in s))
+  );
+  if (sectionIndex < 0 || sectionIndex >= realSections.length) return null;
+
+  const sec = realSections[sectionIndex] as { title: string; label?: string; blocks: string[] };
+  const blocks: ResolvedBlock[] = [];
+
+  for (const rootName of sec.blocks) {
+    const blkTsRel = `${chRel}/${rootName}.ts`;
+    const blkMdRel = `${chRel}/${rootName}.md`;
+    try {
+      const blk = (await importTsBranch(br, blkTsRel)) as any;
+      const md = readFileBranch(br, blkMdRel) || "";
+
+      const feedback = readFeedback(paperId, rootName);
+      const blockTodos = feedback.length ? [...feedback] : undefined;
+
+      let leanSource: string | undefined;
+      if (blk.lean) {
+        if (blk.lean.file) {
+          leanSource = readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
+        }
+        if (!leanSource) {
+          leanSource = readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
+        }
+        if (!leanSource && blk.lean.decl) {
+          const parts = blk.lean.decl.split(".");
+          for (let i = parts.length; i >= 2; i--) {
+            const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
+            leanSource = readFileBranch(br, candidate) ?? undefined;
+            if (leanSource) break;
+          }
+        }
+        if (!leanSource && blk.lean.decl && isCurrentBranch(br)) {
+          const declName = blk.lean.decl.split(".").pop() || "";
+          try {
+            const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
+            const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+            if (files.length > 0 && existsSync(files[0])) {
+              leanSource = readFileSync(files[0], "utf-8");
+            }
+          } catch {}
+        }
+      }
+
+      const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
+        (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
+          ...r,
+          url: `/api/content-asset/${paperId}/${chapterDir}/${r.url}`,
+        })
+      );
+
+      blocks.push({
+        rootName,
+        kind: blk.kind,
+        label: blk.label,
+        title: blk.title,
+        uses: blk.uses,
+        examples: blk.examples,
+        proofs: blk.proofs,
+        lean: blk.lean ? { ...blk.lean, source: leanSource } : undefined,
+        status: blk.status,
+        tex: blk.tex,
+        caption: blk.caption,
+        tags: blk.tags,
+        rendered,
+        md,
+        todos: blockTodos,
+      });
+    } catch (e) {
+      blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
+    }
+  }
+
+  const result: ResolvedSection = { title: sec.title, label: sec.label, blocks };
+  cacheSet(sectionCache, cacheKey, result);
+  return result;
 }
 
 // ── Claude API: characterize branch changes ──────────────────────
@@ -701,11 +1089,12 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // GET /api/branches → { current, branches[] }
   if (path === "/api/branches") {
     fetchOrigin(); // silently update remote refs
-    const branches = listBranches();
-    log('git', `branches: ${branches.length} total, HEAD=${currentBranch()}`);
+    const { branches, recentCount } = listBranches();
+    log('git', `branches: ${branches.length} total, ${recentCount} recent, HEAD=${currentBranch()}`);
     return Response.json({
       current: currentBranch(),
       branches,
+      recentCount,
     }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
   }
   // GET /api/branch → { branch } (lightweight, for polling)
@@ -800,11 +1189,87 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }
   }
 
+  // ── API: Paper outline (lightweight — chapter/section stubs, no block content) ──
+  // /api/paper/outline?id=quantum-observable-universe&branch=feature-x
+  if (path === "/api/paper/outline") {
+    const id = url.searchParams.get("id");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400 });
+    try {
+      const data = await resolvePaperOutline(id, branch);
+      if (!data) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/outline id=${id} branch=${branch}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // ── API: Chapter detail (section stubs with block metadata, no md/lean) ──
+  // /api/paper/chapter?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&branch=feature-x
+  if (path === "/api/paper/chapter") {
+    const id = url.searchParams.get("id");
+    const chapter = url.searchParams.get("chapter");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !chapter) return Response.json({ error: "Missing ?id= or ?chapter= parameter" }, { status: 400 });
+    try {
+      const data = await resolveChapterDetail(id, chapter, branch);
+      if (!data) return Response.json({ error: `Chapter not found: ${chapter}` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/chapter id=${id} chapter=${chapter}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // ── API: Section (full blocks with md/lean source) ──
+  // /api/paper/section?id=quantum-observable-universe&chapter=ch1-quantum-observable-universe&section=0&branch=feature-x
+  if (path === "/api/paper/section") {
+    const id = url.searchParams.get("id");
+    const chapter = url.searchParams.get("chapter");
+    const sectionIdx = url.searchParams.get("section");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !chapter || sectionIdx == null) return Response.json({ error: "Missing ?id=, ?chapter=, or ?section= parameter" }, { status: 400 });
+    try {
+      const data = await resolveSection(id, chapter, parseInt(sectionIdx, 10), branch);
+      if (!data) return Response.json({ error: `Section not found: ${chapter}[${sectionIdx}]` }, { status: 404 });
+      return Response.json(data, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      const msg = e instanceof Error ? e.stack || e.message : String(e);
+      log('error', `GET /api/paper/section id=${id} chapter=${chapter} section=${sectionIdx}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
   // ── API: Save block markdown ───────────────────────────────
   // POST /api/block/save { paperId, chapterDir, rootName, md }
   if (path === "/api/block/save" && url.searchParams.has("_method") !== true) {
     // Handled in fetch() for POST requests — see below
     return null;
+  }
+
+  // ── API: Schema manifest (for viewer schema doc panel) ───
+  if (path === "/api/schema-manifest") {
+    const manifestPath = join(REPO_ROOT, "build/schema-manifest.json");
+    if (existsSync(manifestPath)) {
+      return serveFile(manifestPath) || Response.json({ error: "read error" }, { status: 500 });
+    }
+    // Generate on-the-fly if build/ doesn't exist yet
+    try {
+      const { spawnSync } = await import("child_process");
+      spawnSync("bun", ["run", "scripts/generate-schema-manifest.ts"], { cwd: REPO_ROOT, timeout: 10000 });
+      return serveFile(manifestPath) || Response.json({ error: "generation failed" }, { status: 500 });
+    } catch {
+      return Response.json({ error: "schema-manifest.json not found; run: bun run scripts/generate-schema-manifest.ts" }, { status: 404 });
+    }
+  }
+
+  // ── API: Schema docs (TypeDoc static files) ─────────────
+  if (path.startsWith("/schema-docs/")) {
+    const docsPath = join(REPO_ROOT, "build", path);
+    return serveFile(docsPath) || new Response("Not found", { status: 404 });
   }
 
   // ── API: Feedback ─────────────────────────────────────────
@@ -869,6 +1334,127 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
       return Response.json({ ...summary, diff: diff.summary }, {
         headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" },
       });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Block changelog (derived from git log) ──────────────
+  // GET /api/block-changelog?id=<paper>&label=<label>&limit=20
+  if (path === "/api/block-changelog") {
+    const id = url.searchParams.get("id") || "quantum-observable-universe";
+    const label = url.searchParams.get("label");
+    const limit = parseInt(url.searchParams.get("limit") || "20");
+    if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400 });
+    try {
+      const paper = await resolvePaper(id);
+      // Find the block's rootName and chapter directory
+      let rootName: string | null = null;
+      let chapterDir: string | null = null;
+      for (const ch of paper.chapters || []) {
+        for (const sec of ch.sections || []) {
+          for (const blk of sec.blocks || []) {
+            if (blk.label === label) {
+              rootName = blk.rootName;
+              // Extract chapter dir from rendered URL or walk paper structure
+              break;
+            }
+          }
+          if (rootName) break;
+        }
+        if (rootName) {
+          // Get chapter dir from the chapter's label or directory listing
+          const { readdirSync } = await import("fs");
+          const paperDir = join(CONTENT_DIR, id);
+          for (const d of readdirSync(paperDir)) {
+            const candidate = join(paperDir, d, `${rootName}.ts`);
+            if (existsSync(candidate)) { chapterDir = d; break; }
+          }
+          break;
+        }
+      }
+      if (!rootName || !chapterDir) {
+        return Response.json({ error: `Block "${label}" not found` }, { status: 404 });
+      }
+      const base = `content/${id}/${chapterDir}/${rootName}`;
+      const files = [`${base}.ts`, `${base}.md`, `${base}.lean`];
+      const commits = gitLogFiles(files, limit);
+      return Response.json({ label, rootName, chapterDir, commits }, {
+        headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" },
+      });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
+  // ── API: Content asset at specific commit ───────────────────
+  // GET /api/content-asset-at/<sha>/<paper>/<chapter>/rendered/<file>
+  if (path.startsWith("/api/content-asset-at/")) {
+    const rel = path.slice("/api/content-asset-at/".length);
+    const slashIdx = rel.indexOf("/");
+    if (slashIdx < 0) return new Response("Bad request", { status: 400 });
+    const sha = rel.slice(0, slashIdx);
+    const filePath = `content/${rel.slice(slashIdx + 1)}`;
+    const buf = gitShowBinaryAt(sha, filePath);
+    if (!buf) return new Response("Not found at that commit", { status: 404 });
+    const ext = extname(filePath);
+    return new Response(buf, {
+      headers: {
+        "Content-Type": MIME[ext] || "application/octet-stream",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
+  }
+
+  // ── API: Undo impact analysis (reverse dependency walk) ─────
+  // GET /api/undo-impact?id=<paper>&label=<label>
+  if (path === "/api/undo-impact") {
+    const id = url.searchParams.get("id") || "quantum-observable-universe";
+    const label = url.searchParams.get("label");
+    if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400 });
+    try {
+      const paper = await resolvePaper(id);
+      // Build block index and reverse dependency map
+      const allBlocks: Array<{ label: string; kind: string; title: string; uses: string[] }> = [];
+      const reverseDeps = new Map<string, string[]>();
+      for (const ch of paper.chapters || []) {
+        for (const sec of ch.sections || []) {
+          for (const blk of sec.blocks || []) {
+            if (!blk.label) continue;
+            allBlocks.push({ label: blk.label, kind: blk.kind, title: blk.title || "", uses: blk.uses || [] });
+            for (const dep of blk.uses || []) {
+              if (!reverseDeps.has(dep)) reverseDeps.set(dep, []);
+              reverseDeps.get(dep)!.push(blk.label);
+            }
+          }
+        }
+      }
+      // Find target
+      const target = allBlocks.find(b => b.label === label);
+      if (!target) return Response.json({ error: `Block "${label}" not found` }, { status: 404 });
+      // BFS for transitive dependents
+      const directDependents = (reverseDeps.get(label) || []).map(l => allBlocks.find(b => b.label === l)!).filter(Boolean);
+      const visited = new Set<string>([label]);
+      const queue = [...(reverseDeps.get(label) || [])];
+      const transitive: typeof allBlocks = [];
+      while (queue.length) {
+        const cur = queue.shift()!;
+        if (visited.has(cur)) continue;
+        visited.add(cur);
+        const blk = allBlocks.find(b => b.label === cur);
+        if (blk) transitive.push(blk);
+        for (const next of reverseDeps.get(cur) || []) {
+          if (!visited.has(next)) queue.push(next);
+        }
+      }
+      return Response.json({
+        target: { label: target.label, kind: target.kind, title: target.title },
+        directDependents: directDependents.map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+        transitiveDependents: transitive.filter(b => !directDependents.some(d => d.label === b.label))
+          .map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+        totalAffected: transitive.length,
+      }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
     } catch (e) {
       return Response.json({ error: String(e) }, { status: 500 });
     }
@@ -983,6 +1569,246 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     }
   }
 
+  // ── API: PDF alias (same as render-pdf) ─────────────────────────
+  if (path === "/api/pdf") {
+    // Redirect internally to render-pdf handler
+    const pdfUrl = new URL(url.toString());
+    pdfUrl.pathname = "/api/render-pdf";
+    return handleViewerRequest(pdfUrl);
+  }
+
+  // ── API: PDF Lightning — PDF of only the critical path for a label ──
+  if (path === "/api/pdf-lightning") {
+    const label = url.searchParams.get("label");
+    const paperId = url.searchParams.get("id") || "quantum-observable-universe";
+    if (!label) {
+      return Response.json({ error: "Missing ?label= parameter" }, { status: 400, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+    try {
+      const { spawnSync } = await import("child_process");
+      const { mkdirSync, readFileSync: rf, writeFileSync: wf } = await import("fs");
+
+      // Pre-check: is latexmk installed?
+      try { spawnSync("which", ["latexmk"], { stdio: "pipe" }); } catch {
+        return Response.json({
+          error: "latexmk not installed. Install TeX Live: apt install texlive-full",
+        }, { status: 503, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Step 1: Resolve paper and find all blocks
+      const paper = await resolvePaper(paperId);
+      if (!paper) {
+        return Response.json({ error: `Paper not found: ${paperId}` }, { status: 404, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Build block index: label → block
+      const blockIndex = new Map<string, ResolvedBlock>();
+      for (const ch of paper.chapters) {
+        for (const sec of ch.sections) {
+          for (const b of sec.blocks) {
+            if (b.label) blockIndex.set(b.label, b);
+          }
+        }
+      }
+
+      if (!blockIndex.has(label)) {
+        return Response.json({ error: `Block not found: ${label}` }, { status: 404, headers: { "Access-Control-Allow-Origin": "*" } });
+      }
+
+      // Step 2: Trace dependency chain (topological sort)
+      const visited = new Set<string>();
+      const edges: Array<{from: string; to: string}> = [];
+      function walkDeps(l: string) {
+        if (visited.has(l)) return;
+        visited.add(l);
+        const b = blockIndex.get(l);
+        if (!b) return;
+        if (b.uses) {
+          for (const dep of b.uses) {
+            if (blockIndex.has(dep)) {
+              edges.push({ from: l, to: dep });
+              walkDeps(dep);
+            }
+          }
+        }
+      }
+      walkDeps(label);
+
+      // Topological sort: dependencies first
+      const adj = new Map<string, string[]>();
+      const indeg = new Map<string, number>();
+      for (const l of visited) { adj.set(l, []); indeg.set(l, 0); }
+      for (const { from, to } of edges) {
+        adj.get(from)!.push(to);
+        indeg.set(to, (indeg.get(to) || 0) + 1);
+      }
+      const queue: string[] = [];
+      const sorted: string[] = [];
+      for (const [l, d] of indeg) { if (d === 0) queue.push(l); }
+      while (queue.length) {
+        const l = queue.shift()!;
+        sorted.push(l);
+        for (const n of (adj.get(l) || [])) {
+          indeg.set(n, indeg.get(n)! - 1);
+          if (indeg.get(n) === 0) queue.push(n);
+        }
+      }
+      sorted.reverse(); // leaf deps first
+
+      // Filter out examples/remarks for the formal view
+      const skipKinds = new Set(["example", "remark"]);
+      const chainBlocks: ResolvedBlock[] = [];
+      for (const l of sorted) {
+        const b = blockIndex.get(l);
+        if (!b || skipKinds.has(b.kind)) continue;
+        chainBlocks.push(b);
+        // Include proofs
+        if (b.proofs) {
+          for (const prfLabel of b.proofs) {
+            const prf = blockIndex.get(prfLabel);
+            if (prf) chainBlocks.push(prf);
+          }
+        }
+      }
+
+      // Step 3: Build the content pipeline and generate lightning LaTeX
+      const lightningDir = join(BUILD_DIR, "lightning");
+      if (!existsSync(lightningDir)) mkdirSync(lightningDir, { recursive: true });
+
+      // Build content objects → .tex first (for preamble/macros)
+      const buildResult = spawnSync("bun", ["run", join(REPO_ROOT, "content/pipeline/build.ts")], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 60_000,
+      });
+
+      // Step 4: Generate a standalone lightning .tex file
+      const rootBlock = blockIndex.get(label)!;
+      const rootTitle = rootBlock.title || label;
+      const preamblePath = join(REPO_ROOT, "latex/preamble.tex");
+      let preamble = "";
+      if (existsSync(preamblePath)) {
+        preamble = rf(preamblePath, "utf-8") as string;
+      } else {
+        // Fallback: read from main.tex up to \begin{document}
+        const mainTex = rf(MAIN_TEX, "utf-8") as string;
+        const docIdx = mainTex.indexOf("\\begin{document}");
+        preamble = docIdx > 0 ? mainTex.slice(0, docIdx) : "";
+      }
+
+      // Read the rendered LaTeX for blocks from chapters/*.tex
+      // We need to extract block LaTeX from the rendered chapters
+      // Alternative: render blocks directly using the pipeline
+      const { renderBlock } = await import(join(REPO_ROOT, "content/pipeline/render-latex.ts"));
+
+      // Render each block to LaTeX
+      const blockTexParts: string[] = [];
+      for (const b of chainBlocks) {
+        try {
+          // Load the actual typed block for rendering
+          const blkTsRel = `content/${paperId}`;
+          // Find the chapter dir for this block
+          let blockObj: any = null;
+          let mdContent = b.md || "";
+          for (const ch of paper.chapters) {
+            for (const sec of ch.sections) {
+              for (const sb of sec.blocks) {
+                if (sb.label === b.label || sb.rootName === b.rootName) {
+                  blockObj = sb;
+                  break;
+                }
+              }
+              if (blockObj) break;
+            }
+            if (blockObj) break;
+          }
+          if (blockObj) {
+            blockTexParts.push(renderBlock(blockObj as any, mdContent));
+          }
+        } catch (e) {
+          blockTexParts.push(`% Error rendering ${b.label}: ${String(e)}`);
+        }
+      }
+
+      const lightningTex = [
+        preamble.includes("\\documentclass") ? preamble : `\\documentclass[11pt]{article}\n${preamble}`,
+        "",
+        "\\begin{document}",
+        "",
+        `\\title{${rootTitle} --- Critical Path}`,
+        "\\maketitle",
+        "",
+        `\\noindent{\\small ${chainBlocks.length} blocks in dependency chain for \\texttt{${label.replace(/_/g, "\\_")}}.}`,
+        "\\bigskip",
+        "",
+        ...blockTexParts,
+        "",
+        "\\end{document}",
+      ].join("\n");
+
+      const lightningTexPath = join(lightningDir, "lightning.tex");
+      wf(lightningTexPath, lightningTex);
+
+      // Step 5: Compile with latexmk
+      const latexResult = spawnSync("latexmk", [
+        "-pdf",
+        "-g",
+        "-jobname=lightning",
+        `-output-directory=${lightningDir}`,
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        lightningTexPath,
+      ], {
+        cwd: REPO_ROOT,
+        stdio: "pipe",
+        timeout: 300_000,
+      });
+
+      const pdfPath = join(lightningDir, "lightning.pdf");
+      if (existsSync(pdfPath)) {
+        const pdfData = rf(pdfPath);
+        return new Response(pdfData, {
+          headers: {
+            "Content-Type": "application/pdf",
+            "Content-Disposition": `inline; filename="lightning-${label}.pdf"`,
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+      }
+
+      // Failed — return error details
+      const logPath = join(lightningDir, "lightning.log");
+      let texLog = "";
+      try {
+        const fullLog = rf(logPath, "utf-8") as string;
+        const lines = fullLog.split("\n");
+        const errorLines: string[] = [];
+        for (let i = 0; i < lines.length; i++) {
+          if (lines[i].startsWith("!") || lines[i].includes("Fatal error") ||
+              lines[i].includes("Emergency stop") || lines[i].includes("File not found")) {
+            const start = Math.max(0, i - 2);
+            const end = Math.min(lines.length, i + 5);
+            errorLines.push(`--- line ${i + 1} ---`);
+            for (let j = start; j < end; j++) errorLines.push(lines[j]);
+          }
+        }
+        texLog = errorLines.length > 0
+          ? errorLines.join("\n").slice(-3000)
+          : fullLog.slice(-3000);
+      } catch {
+        texLog = latexResult.stderr?.toString().slice(-2000) || "";
+      }
+      return Response.json({
+        error: "Lightning PDF compilation failed",
+        latexLog: texLog || undefined,
+        blockCount: chainBlocks.length,
+        exitCode: latexResult.status,
+      }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500, headers: { "Access-Control-Allow-Origin": "*" } });
+    }
+  }
+
   // Legacy paper.json — viewer now uses /api/paper directly
   if (path === "/viewer/paper.json") {
     return serveFile(join(VIEWER_BUILD_DIR, "paper.json"))
@@ -1048,6 +1874,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
         return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
       }
       writeFileSync(mdPath, body.md, "utf-8");
+      invalidatePaperCache(body.paperId);
       log('edit', `block saved: ${body.paperId}/${body.rootName}`, `${body.md.length} chars → ${mdPath}`);
       return Response.json({ ok: true, path: mdPath });
     } catch (e) {
@@ -1055,9 +1882,45 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
     }
   }
 
+  // ── Revert block to a previous commit (collaborator+ only) ──────
+  // POST /api/block/revert { paperId, rootName, sha }
+  if (path === "/api/block/revert") {
+    if (!hasRole(req, "collaborator")) {
+      return forbidden("reverting content", "collaborator");
+    }
+    try {
+      const body = await req.json() as { paperId: string; rootName: string; sha: string };
+      const { readdirSync } = await import("fs");
+      const paperDir = join(CONTENT_DIR, body.paperId);
+      if (!existsSync(paperDir)) {
+        return Response.json({ error: "Paper not found" }, { status: 404 });
+      }
+      // Find block's chapter directory
+      let chapterDir: string | null = null;
+      for (const d of readdirSync(paperDir)) {
+        if (existsSync(join(paperDir, d, `${body.rootName}.ts`))) { chapterDir = d; break; }
+      }
+      if (!chapterDir) {
+        return Response.json({ error: `Block "${body.rootName}" not found` }, { status: 404 });
+      }
+      // Revert .md content from the specified commit
+      const relMd = `content/${body.paperId}/${chapterDir}/${body.rootName}.md`;
+      const oldMd = gitShowAt(body.sha, relMd);
+      if (oldMd === null) {
+        return Response.json({ error: `No .md found at commit ${body.sha}` }, { status: 404 });
+      }
+      const mdPath = join(paperDir, chapterDir, `${body.rootName}.md`);
+      writeFileSync(mdPath, oldMd, "utf-8");
+      invalidatePaperCache(body.paperId);
+      log('revert', `block reverted: ${body.paperId}/${body.rootName}`, `to commit ${body.sha.slice(0, 8)}`);
+      return Response.json({ ok: true, sha: body.sha, path: mdPath });
+    } catch (e) {
+      return Response.json({ error: String(e) }, { status: 500 });
+    }
+  }
+
   // ── Submit feedback as todo (viewer+ — any authenticated user) ──
-  // Stored in .qou-feedback/ (gitignored), not in the content tree.
-  // Survives branch switches and won't be accidentally committed.
+  // Stored in feedback/<paper-dir>/ as TypeScript, committed to main via worktree.
   if (path === "/api/feedback" && req.method === "POST") {
     try {
       const body = await req.json() as {
@@ -1428,9 +2291,23 @@ When coordinating work or suggesting actions, ONLY suggest actions and skills th
 
 You have tools to fetch live data from the paper system. Use them proactively — don't guess at paper status, todos, or block content when you can look it up.
 
-Keep responses concise and well-formatted. Use $...$ for inline math and $$...$$ for display math.
+Keep responses concise and well-formatted.
 
-IMPORTANT: End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
+## Math formatting
+CRITICAL: ALL mathematical expressions MUST be wrapped in dollar signs.
+- Inline math: $S_{uu} = 312.36$ MeV (NOT S_{uu} or Suu)
+- Display math: $$\\sum_{i} m_i = M$$
+- Variables, subscripts, Greek letters — always wrap: $q$, $\\alpha$, $x_n$
+Never write bare math symbols/subscripts outside dollar signs — the renderer requires them.
+
+## Block references
+When mentioning a specific definition, theorem, proposition, etc., ALWAYS use markdown link syntax with the label:
+- [Proposition Title](#prop:terminal-resolution)
+- [Definition Title](#def:quantum-connection)
+These become clickable navigation links in the viewer. When answering "where is X" questions, always include the block reference link so the user can navigate directly.
+
+## Response format
+End every response with 2-4 suggested follow-up options the user might want to ask next. Format them on the last line as:
 [suggestions]: First option | Second option | Third option
 These become clickable buttons so users don't have to type. Make them specific to the conversation context — not generic. Keep each option under 40 characters.`;
 
@@ -1984,7 +2861,7 @@ These become clickable buttons so users don't have to type. Make them specific t
 // ── Server setup ─────────────────────────────────────────────────
 
 const server = new McpServer({
-  name: "qou-paper-assistant",
+  name: "folio-assistant",
   version: "0.1.0",
 }, {
   capabilities: {
@@ -2050,7 +2927,7 @@ const args = process.argv.slice(2);
 const mode = args.includes("--http") ? "http" : "stdio";
 
 if (args.includes("--check-deps")) {
-  // Run real dependency check and exit — used by start-assistant.sh --check
+  // Run real dependency check and exit — used by start-folio-assistant.sh --check
   const { execSync } = await import("child_process");
 
   interface DepInfo { name: string; required: boolean; cmd: string; hint: string }
@@ -2091,7 +2968,7 @@ if (mode === "stdio") {
   await server.connect(transport);
 
   // Start viewer HTTP server on a separate port
-  const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+  const viewerPort = FOLIO_PORT;
 
   Bun.serve({
     port: viewerPort,
@@ -2131,7 +3008,7 @@ if (mode === "stdio") {
   log('init', `Viewer: http://localhost:${viewerPort}/viewer/${branchSuffix}`);
 } else {
   // HTTP mode — MCP + viewer on same port
-  const port = parseInt(process.env.MCP_PORT || "8080", 10);
+  const port = FOLIO_PORT;
   const { StreamableHTTPServerTransport } = await import(
     "@modelcontextprotocol/sdk/server/streamableHttp.js"
   );

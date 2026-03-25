@@ -1,3 +1,10 @@
+import QOU.Basic
+import QOU.QuantumObservableUniverse
+import QOU.FormalGroups
+import QOU.Glossary
+import Mathlib.Data.Real.Basic
+import Mathlib.CategoryTheory.Monoidal.Category
+
 /-!
 # Chapter 7 — p-Adic Quantum Observable Universe
 
@@ -19,12 +26,6 @@ LaTeX source: `chapters/p-adic-quantum-groups.tex`
 - [fred2005] L. Fred, PhD thesis, University of Arizona, 2005.
 -/
 
-import QOU.Basic
-import QOU.QuantumObservableUniverse
-import QOU.FormalGroups
-import QOU.Glossary
-import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Monoidal.Basic
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
@@ -145,7 +146,7 @@ theorem qCommutator_classical (X P : ℝ) :
     Reference: [fred2005, Main Theorem]. -/
 theorem padic_qou_lifts_from_finite_field
     (ff : FiniteFieldQOU)
-    (hq : ff.root_order ≠ 1) :
+    (_hq : ff.root_order ≠ 1) :
     ∃ (pq : PAdicQOU), pq.p = ff.p :=
   ⟨{ p := ff.p
      p_prime := ff.p_prime

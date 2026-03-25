@@ -65,32 +65,44 @@ Neither local nor remote is reachable. If the request requires Lean:
 > ./scripts/setup-lean-mcp.sh
 > ```
 >
-> **Remote server:** check if `lean.litlfred.org` is running.
+> **Remote server:** check if `folio.litlfred.org` is running.
 >
 > Proceed with LaTeX-only work?
 
 If the request is LaTeX-only, proceed normally.
 
-**Note**: The lean-lsp-mcp server provides diagnostics, goal states,
+**Note**: The paper-assistant MCP server provides diagnostics, goal states,
 hover docs, completions, LeanSearch, Loogle, and more — identically
 whether running locally (stdio) or remotely (Streamable HTTP).
 
-### 1. Check open todos
+### 1. Check open feedback
 
-The `scripts/check-todos.sh` hook runs at session start and outputs a
-JSON summary of open todos from `todos/`. If there are
-open todos, **present the summary and ask the user** (multiple-choice):
+The `scripts/check-todos.sh` hook runs at session start and scans
+`feedback/<paper-dir>/*.ts` for open feedback items. If there are
+open items, **ask the user if they'd like to work on feedback**:
 
-- **Review open todos** — walk through each using the `todo-review` skill
-- **Start a new task** — proceed to normal triage, todos stay open
-- **Do research** — explore codebase, read content, no edits
+> **You have N open feedback items** (X high, Y medium, Z low).
+>
+> Would you like to work on feedback today?
 
-If there are no open todos, skip straight to step 1b.
+Options (multiple-choice):
+- **Yes, let's review feedback** — enter the `todo-review` skill's
+  structured workflow (overview → pick chapter → review items → iterate)
+- **No, I have something else in mind** — proceed to normal triage
 
-### 1b. Cross-reference todos with branch changes
+If there are no open items, skip straight to step 1b.
 
-When the current branch is not `main`, check whether any open todos
-target content blocks that were **modified in this branch**:
+When the user chooses to review feedback, hand off entirely to the
+`todo-review` skill which runs the full feedback cycle:
+1. Show overview grouped by chapter
+2. Let user pick scope (high priority / chapter / all)
+3. For each item: show feedback, read block, propose fix, ask approval
+4. Iterate until user says "done"
+
+### 1b. Cross-reference feedback with branch changes
+
+When the current branch is not `main`, check whether any open feedback
+targets content blocks that were **modified in this branch**:
 
 ```bash
 # Get content files changed in this branch vs main
@@ -98,12 +110,12 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `todos/` has open todos referencing
-that block's label.
+extension) and check if `feedback/<paper-dir>/` has open items
+referencing that block.
 
 **If matches are found**, present them to the user:
 
-> These open todos are on content blocks modified in this branch:
+> These open feedback items are on content blocks modified in this branch:
 >
 > - **[high]** `localized-knot`: "Add cross-ref to ch4 braiding"
 > - **[medium]** `hadron`: "Clarify meson binding vs baryon"
@@ -111,16 +123,14 @@ that block's label.
 > Address these now?
 
 Offer (multiple-choice):
-- **Address matching todos** — walk through just the branch-relevant
-  todos using the `todo-review` skill
-- **Skip for now** — proceed to triage, todos stay open
-- **Mark as resolved** — auto-close todos that the branch changes
-  already address (editor reviews the diff to confirm)
+- **Address matching feedback** — walk through just the branch-relevant
+  items using the `todo-review` skill
+- **Skip for now** — proceed to triage, items stay open
 
 **If no matches**, proceed to triage silently.
 
 This ensures that when a branch modifies content, any feedback left on
-those blocks surfaces immediately — preventing stale todos from
+those blocks surfaces immediately — preventing stale items from
 surviving past the work that should have resolved them.
 
 ### 2. Triage
@@ -147,8 +157,11 @@ surviving past the work that should have resolved them.
 | Status / tracking / manifest | `proof-status-tracking` | proof-objects.json |
 | What next / priority / triage | `proof-triage` | Decision support |
 | Validate LaTeX | `latex-validation` | Compilation, labels, refs |
-| Build / CI / publish / gh-pages | General-purpose agent | Workflow YAML, scripts |
+| Build / CI / publish / gh-pages | `docs-generation` | Workflow YAML, scripts |
+| Generate docs / schema docs / TypeDoc | `docs-generation` | TypeDoc, dep graph, axiom report |
+| Build paper / compile PDF / render HTML | `docs-generation` | Content → PDF/HTML pipeline |
 | Visualizer | General-purpose agent | Dedicated visualizer context |
+| Fix lean build / lake build fails | `lean-build-fix` | Iterative error diagnosis + fix |
 | Simplify / streamline proofs | `proof-simplifier` | Clusters of 2–4 connected proofs |
 | Math / physics question | `scientific-accuracy` + `category-theory` | Research, don't edit |
 | Write / run / review tests | `test-engineer` | TypeScript/Bun tests |
@@ -250,7 +263,10 @@ The review pass consists of:
    (For non-narrative changes, focus on consistency with the narrative.)
 3. **Content validation** — run `content_validate` on affected chapters to
    confirm schema compliance and LaTeX AST correctness.
-4. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
+4. **TeX snippet validation** — if any `.md` files were created or edited,
+   run `cd content && bun run pipeline/validate-tex.ts --file <path>` on
+   each changed `.md` to validate TeX snippets via remark AST parsing.
+5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
    confirm `lean.decl` fields match actual Lean declarations.
 
@@ -323,9 +339,29 @@ See `todo-review` skill for full details. Agents may create and
 
 ## Proof workflow (narrative and Lean)
 
-When the user wants to work on **missing proofs**:
+**CRITICAL**: Every theorem, lemma, proposition, and corollary **must**
+have a standalone proof block (`*-proof.ts` + `*-proof.md`). Without it,
+the proof will not appear in print preview or PDF output. The viewer's
+print mode includes proofs only via the parent's `proofs: ["prf:..."]`
+field.
 
-### Narrative proofs (`.md` blocks)
+### Proof block requirements
+
+For every provable block (theorem/lemma/proposition/corollary):
+
+1. **Separate statement from proof**: The theorem `.md` file contains
+   only the statement. All proof content lives in `*-proof.md`.
+2. **Three files per proof**: `*-proof.ts` (manifest with `proof()`
+   builder), `*-proof.md` (narrative), optional `*-proof.lean` (formal).
+3. **Link via `proofs:`**: The parent `.ts` must have
+   `proofs: ["prf:<label>"]`.
+4. **List in chapter manifest**: The proof block name must appear in the
+   chapter's `blocks[]` array, immediately after its parent theorem.
+5. **No TeX in `.lean` files**: Narrative proof content belongs
+   exclusively in `.md` files. `.lean` files contain only code, brief
+   docstrings, and `-- Ref:` citations.
+
+### Creating a narrative proof (`.md` block)
 
 1. Check if a `proof` block already exists for the target theorem/lemma.
 2. If not, ask the user (structured choice):
@@ -334,6 +370,7 @@ When the user wants to work on **missing proofs**:
      `uses[]` dependencies, drafts a proof, presents for review.
 3. Create the `proof` block (`.ts` + `.md` pair) and link via `proofs[]`
    on the parent theorem.
+4. Add proof block to chapter manifest `blocks[]` after the parent.
 
 ### Lean proofs (`.lean` files)
 

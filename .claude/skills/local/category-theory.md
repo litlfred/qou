@@ -18,7 +18,7 @@ Category theory is the "connective tissue" of Mathlib.  In Lean 4, a
 can have (via typeclasses).  This skill provides the tactics, patterns,
 and glossary requirements for effective category-theoretic formalization.
 
-## Lean MCP Tools (lean-lsp-mcp)
+## Lean MCP Tools (paper-assistant)
 
 When the MCP server is available, it supercharges category theory work:
 
@@ -346,6 +346,29 @@ progressively:
 3. Same triple with the three observability axioms verified (QOU)
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
+
+### PawLei Basis and Cross-Paper Dependencies
+
+The **PawLei basis** (Pawlowski–Leitner, abbreviated PawLei) provides
+a canonical basis for intertwiner spaces
+$\mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$.
+
+This depends on the **PBW theorem over commutative rings**
+(`cor:pbw` in the `unital-groebner-bases` paper), which is a
+cross-paper dependency:
+
+```typescript
+uses: ["unital-groebner-bases:cor:pbw"],  // qualified cross-paper ref
+```
+
+Lean declarations use the `PawLei` prefix:
+- `QOU.PawLeiBasis` — basis structure
+- `QOU.PawLeiInnerProduct` — orthogonality
+- `QOU.pawLeiDim` — dimension formula
+
+The chain: PBW (Gröbner bases) → $U(\mathfrak{su}(2))$ monomial basis
+→ contraction with volume form $\epsilon$ → PawLei basis for
+intertwiners → hadron decomposition.
 
 ## Content Object Integration
 
