@@ -9,7 +9,7 @@ Skein relation at every crossing:
 Evaluation of the lepton mass ratio m_μ/m_e against CODATA yields:
   m_μ/m_e = Vol(4₁)/ℏ_q² ≈ 2.02988/(1 - q⁻¹)²
 
-LaTeX label: `prop:skein-mass-relation`
+LaTeX label: `rem:skein-mass-relation`
 
 ## References
 

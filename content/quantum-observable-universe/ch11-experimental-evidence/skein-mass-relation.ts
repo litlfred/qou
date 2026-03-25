@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:skein-mass-relation",
+export default remark({
+  label: "rem:skein-mass-relation",
   lean: {
     decl: "QOU.Experimental.skein_mass_relation",
     validation: "not_checked",
@@ -17,6 +17,5 @@ export default proposition({
     "thm:categorical-reeb-exists",
     "thm:substrate-parameter-exists",
   ],
-  proofs: ["prf:skein-mass-relation"],
   tags: ["mass", "skein"],
 });

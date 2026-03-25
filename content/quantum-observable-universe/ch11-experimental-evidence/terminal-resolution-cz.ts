@@ -5,7 +5,7 @@ export default example({
   title: "Terminal resolution in $\\mathbb{C}[z]$",
   lean: { decl: "QOU.Examples.czTerminalResolution" },
   uses: [
-    "prop:terminal-resolution",
+    "rem:terminal-resolution",
     "ex:c-quantum-observable-universe",
     "conj:topological-mass-formula",
     "def:substrate-parameter",

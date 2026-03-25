@@ -14,7 +14,7 @@ $$
 Specialising the topological mass formula
 ([topological mass formula](#conj:topological-mass-formula)) to
 $q_0 = 1.1097$ (derived from $m_\mu / m_e$,
-[skein mass relation](#prop:skein-mass-relation)):
+[skein mass relation](#rem:skein-mass-relation)):
 
 $$
   \hbar_{q_0} = 1 - \frac{1}{1.1097} \approx 0.09889,
