@@ -2,5 +2,6 @@ import { prose } from "../../schema/builders";
 
 export default prose({
   label: "sec:double-slit-intro",
+  uses: ["bach2013-double-slit:rem:bach-slit-parameters"],
   meta: { position: "opening" },
 });
