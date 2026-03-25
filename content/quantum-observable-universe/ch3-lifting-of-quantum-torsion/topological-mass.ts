@@ -16,9 +16,4 @@ export default theorem({
     "def:brane-boundary",
     "prop:descent-eigenspaces",
   ],
-  proofs: ["prf:topological-mass-categorical", "prf:topological-mass"],
-  rendered: [
-    { mime: "image/svg+xml", url: "rendered/topological-mass-0.svg", blockIndex: 0, hash: "a5fce34918a5" },
-    { mime: "image/svg+xml", url: "rendered/topological-mass-1.svg", blockIndex: 1, hash: "64f5f3945579" },
-  ],
-});
+  proofs: ["prf:topological-mass-categorical", "prf:topological-mass"],});

@@ -17,7 +17,7 @@ export default definition({
     "rem:categorical-action-notation",
   ],
   rendered: [
-    { mime: "image/svg+xml", url: "rendered/categorical-action-0.svg", blockIndex: 0, hash: "cea6a2962fd4" },
+    { mime: "image/svg+xml", url: "rendered/categorical-action-0.svg", blockIndex: 0, hash: "ace2c42d8e04" },
   ],
 
 });
