@@ -36,3 +36,19 @@ export const FEEDBACK_DIR = resolve(REPO_ROOT, "feedback");
 
 /** Worktree directory for committing feedback to main. */
 export const FEEDBACK_WORKTREE = resolve(REPO_ROOT, ".feedback-wt");
+
+/** Global config file. */
+export const CONFIG_FILE = resolve(REPO_ROOT, "lean-mcp.config.json");
+
+/** Read viewer_port from lean-mcp.config.json (single source of truth). */
+function readViewerPort(): number {
+  try {
+    const cfg = JSON.parse(require("fs").readFileSync(CONFIG_FILE, "utf-8"));
+    return cfg.viewer_port ?? 8080;
+  } catch {
+    return 8080;
+  }
+}
+
+/** The port the viewer/assistant serves on (from lean-mcp.config.json). */
+export const FOLIO_PORT = parseInt(process.env.VIEWER_PORT || String(readViewerPort()), 10);

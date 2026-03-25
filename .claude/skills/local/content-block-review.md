@@ -78,8 +78,8 @@ block, with severity (error / warning / info).
 
 | Check | Severity | Rule |
 |-------|----------|------|
-| `uses[]` entries all resolve | **error** | (Same as §2, but checked from graph perspective) |
-| No circular dependencies in `uses[]` | **error** | DAG must be acyclic |
+| `uses[]` entries all resolve | **error** | Bare labels must exist in same paper; qualified `"paper-dir:label"` refs are cross-paper (resolved at folio level) |
+| No circular dependencies in `uses[]` | **error** | DAG must be acyclic (cross-paper refs are leaf nodes in the local graph) |
 | Lean imports mirror `uses[]` ordering | **info** | Lean import graph should reflect narrative dependencies |
 | Blocks with most dependents are formalized first | **info** | Priority guidance, not a hard rule |
 

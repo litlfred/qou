@@ -65,6 +65,7 @@ When a user request arrives, route to the right skill(s):
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
+| "diff / changes / what changed / undo" | `local/diff` | reader |
 
 ### Skill role assignments
 
@@ -74,7 +75,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -309,6 +310,25 @@ combined dependency DAG. Editors and proof-writers use this to:
 - **Prioritize formalization**: find blocks with the most dependents
   that are still `not_started`
 
+### Cross-paper references
+
+The `uses[]` field supports three reference scopes:
+
+| Scope | Syntax | Example |
+|-------|--------|---------|
+| Same paper | bare label | `"def:quantum-universe"` |
+| Same folio | `"paper-dir:label"` | `"unital-groebner-bases:cor:pbw"` |
+| External folio | full URL | `"https://folio.example.org/viewer/#/view/paper-id"` |
+
+Cross-paper refs are validated at folio level, not per-paper. The
+`uses-resolve` constraint skips qualified refs (those matching
+`paper-dir:label` or starting with `https://`).
+
+Each paper in `content/folio.ts` has an optional `url` field for
+viewer routing. BibTeX entries for folio-hosted papers include a
+`folio-url` field matching the viewer hash route
+(e.g. `/viewer/#/view/unital-groebner-bases`).
+
 ### Markdown content convention (in .md files)
 
 - Inline math: `$...$`
@@ -316,6 +336,63 @@ combined dependency DAG. Editors and proof-writers use this to:
 - Complex TeX (tikzcd, align): fenced code block with `` ```tex `` tag
 - Bold → `\textbf{}`, italic → `\emph{}` in LaTeX output
 - Cross-refs: `[text](#label)` → `\hyperref[label]{text}`
+
+### TeX authoring patterns for agents
+
+These rules prevent rendering errors in the content pipeline.
+Violations produce broken LaTeX in titles, captions, and body text.
+
+**1. Math in titles is supported.** Block titles (in `.ts` manifests)
+may contain inline math. The `escapeLatex()` function preserves
+`$...$` segments verbatim. Always use `$...$` delimiters:
+
+```ts
+// CORRECT — math preserved in rendered \begin{example}[{...}]
+title: "Reeb derivation for $\\mathrm{SU}(2)$"
+
+// WRONG — bare LaTeX commands will be escaped to garbage
+title: "Reeb derivation for \\mathrm{SU}(2)"
+```
+
+**2. Multi-line inline math is valid.** The remark-math parser handles
+`$...$` spanning multiple lines. This is the standard pattern for long
+inline expressions in list items:
+
+```md
+1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) =
+   \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
+   Frobenius relation.
+```
+
+**3. Never use raw TeX commands in prose outside `$...$`.** The markdown
+→ LaTeX converter only passes through content inside math delimiters
+or `` ```tex `` fenced blocks. Bare `\mathrm{...}` outside delimiters
+renders as literal text.
+
+**4. Use `$$...$$` on separate lines for display math.** The `$$`
+delimiter must be alone on its line (or at the very start/end):
+
+```md
+The formula is:
+
+$$
+  \nabla^2 \phi = 0
+$$
+```
+
+**5. For complex environments (tikzcd, align), use fenced tex blocks:**
+
+````md
+```tex
+\begin{tikzcd}
+  A \arrow[r] & B
+\end{tikzcd}
+```
+````
+
+**6. Ampersands in math are fine.** The `&` character inside `$...$` or
+`` ```tex `` blocks is not escaped (it's a column separator in matrices
+and alignments). Only `&` in prose text causes LaTeX errors.
 
 ## Lean MCP server (lean-lsp-mcp)
 

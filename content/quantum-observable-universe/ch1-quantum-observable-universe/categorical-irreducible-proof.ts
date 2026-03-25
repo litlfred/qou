@@ -8,4 +8,8 @@ export default proof({
     decl: "QOU.categorical_irreducible",
     validation: "leanok",
   },
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/categorical-irreducible-proof-0.svg", blockIndex: 0, hash: "42efeb538a22" },
+  ],
+
 });

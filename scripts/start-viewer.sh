@@ -11,8 +11,9 @@
 #
 set -euo pipefail
 
-PORT="${1:-3200}"
-[[ "$1" == "--port" ]] && PORT="${2:-3200}"
+source "$(dirname "$0")/folio-port.sh"
+PORT="${1:-$FOLIO_PORT}"
+[[ "${1:-}" == "--port" ]] && PORT="${2:-$FOLIO_PORT}"
 
 URL="http://localhost:${PORT}/viewer/"
 
