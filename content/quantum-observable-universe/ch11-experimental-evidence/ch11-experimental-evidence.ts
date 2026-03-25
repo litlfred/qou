@@ -87,7 +87,6 @@ export default chapter({
         "double-slit-intro",
         "double-slit-q-phase",
         "double-slit-massive-pattern",
-        "double-slit-photon-pattern",
         "double-slit-two-modes",
       ],
     }),
