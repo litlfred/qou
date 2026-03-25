@@ -1,29 +1,35 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def:quantum-observable-universe)) equipped with
-substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
-$q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
-a connection $\nabla$ ([categorical connection](#def:categorical-connection)),
-and a section $\psi \colon \mathbf{1} \to A$ (a "state").
-The *categorical action* is the $R$-valued functional
+([quantum observable universe](#def:quantum-observable-universe)).
+A *categorical action* on $(\mathbf{C}, A, \tau)$ is a morphism
+$\mathcal{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 
 ```tex
 \begin{equation}\label{eq:categorical-action}
-  \mathcal{S}_q[\nabla,\, \textstyle\int_A,\, \psi]
+  \mathcal{S}
   \;=\;
-  \underbrace{%
-    \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)
-  }_{\text{gravity}}
-  \;+\;
-  \underbrace{%
-    \int_A \!\circ\, \mathrm{tr}_A\bigl(
-      F_\nabla \wedge_q \star_q F_\nabla
-    \bigr)
-  }_{\text{gauge}}
-  \;+\;
-  \underbrace{%
-    \int_A\!\bigl(\psi^* \cdot D_\nabla\,\psi\bigr)
-  }_{\text{matter}},
+  \mathrm{ev}_A
+    \;\circ\;
+    \bigl(\mathrm{id}_{A^\vee} \otimes \Phi\bigr)
+    \;\circ\;
+    \mathrm{coev}_A,
 \end{equation}
 ```
 
-with notation as in [categorical action notation](#rem:categorical-action-notation).
+where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is called the
+*physics endomorphism*.
+
+The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$
+and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$
+are the structure maps of the rigid duality on $A$
+([rigid monoidal category](#def:rigid-monoidal-category)).  Composing
+them with an inserted endomorphism produces the categorical trace:
+
+$$
+  \mathcal{S} = \mathrm{tr}(\Phi).
+$$
+
+As a string diagram, the action is a single closed loop with $\Phi$
+inserted --- the morphism $\mathbf{1} \to \mathbf{1}$ obtained by
+"tracing out" the internal degrees of freedom of $A$.  The rigid
+structure provides the integration; the physics endomorphism encodes the
+dynamics.
