@@ -302,6 +302,42 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 /* ── Edit button ─────────────────────────────────────────── */
 .blk-act.blk-act-edit{color:var(--grn);border-color:var(--grn)}
 .blk-act-edit:hover{background:rgba(124,230,164,.1)}
+.blk-act.blk-act-undo{color:var(--ora);border-color:var(--ora)}
+.blk-act-undo:hover{background:rgba(230,164,124,.1)}
+
+/* ── SVG version toggle ─────────────────────────────────── */
+.svg-ver-toggle{position:absolute;top:4px;right:4px;background:var(--bg-s);border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.55rem;padding:1px 6px;border-radius:2px;cursor:pointer;opacity:.5;transition:all .15s;z-index:5}
+.svg-ver-toggle:hover{opacity:1;color:var(--ac);border-color:var(--ac-d)}
+.txb.showing-prev{outline:2px dashed var(--ora);outline-offset:2px}
+.txb.showing-prev .svg-ver-toggle{color:var(--ora);border-color:var(--ora);opacity:1}
+
+/* ── Block changelog panel ──────────────────────────────── */
+.blk-changelog{background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;margin:.4rem 0;padding:.4rem;font-size:.7rem;max-height:200px;overflow-y:auto}
+.changelog-table{width:100%;border-collapse:collapse;font-family:var(--f-mono);font-size:.65rem}
+.changelog-table th{text-align:left;color:var(--fg-d);padding:2px 6px;border-bottom:1px solid var(--brd)}
+.changelog-table td{padding:2px 6px}
+.changelog-table a{color:var(--ac);text-decoration:none}
+.changelog-table a:visited{color:var(--ac-v)}
+.changelog-table a:hover{color:var(--fg-b)}
+
+/* ── Undo impact modal ──────────────────────────────────── */
+.undo-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:500;display:flex;align-items:center;justify-content:center}
+.undo-modal{background:var(--bg-s);border:1px solid var(--brd);border-radius:8px;padding:1.2rem;max-width:500px;width:90%;max-height:80vh;overflow-y:auto;font-size:.82rem}
+.undo-modal h3{font-family:var(--f-head);font-size:.95rem;margin-bottom:.6rem;color:var(--fg-b)}
+.undo-target{color:var(--fg-d);font-size:.75rem;margin-bottom:.4rem}
+.undo-to{color:var(--ac);font-size:.75rem;margin-bottom:.6rem}
+.undo-warning{color:var(--ora);font-weight:600;margin-bottom:.4rem}
+.undo-safe{color:var(--grn);margin-bottom:.4rem}
+.undo-deps{list-style:none;padding:0;margin:0 0 .8rem 0;font-size:.72rem}
+.undo-deps li{padding:2px 0;color:var(--fg)}
+.undo-deps li.transitive{color:var(--fg-d);padding-left:.8rem}
+.undo-deps li.transitive::before{content:"↳ ";color:var(--fg-d)}
+.undo-actions{display:flex;gap:.6rem;justify-content:flex-end}
+.undo-cancel,.undo-confirm{padding:.3rem .8rem;border-radius:4px;border:1px solid var(--brd);font-family:var(--f-mono);font-size:.7rem;cursor:pointer}
+.undo-cancel{background:var(--bg-r);color:var(--fg)}
+.undo-cancel:hover{border-color:var(--fg-d)}
+.undo-confirm{background:var(--ora);color:#fff;border-color:var(--ora)}
+.undo-confirm:hover{opacity:.9}
 
 /* ── Todo delete button ──────────────────────────────────── */
 .ti-delete{background:none;border:none;color:var(--fg-d);font-size:.85rem;cursor:pointer;padding:0 .3rem;margin-left:auto;line-height:1}

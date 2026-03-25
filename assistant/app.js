@@ -467,17 +467,83 @@
       fbBtn.onclick = () => openFeedback(blk);
       actions.appendChild(fbBtn);
     }
+    // History: show git changelog for this block
+    if (blk.label) {
+      const histBtn = h("button", "blk-act", "hist");
+      histBtn.title = "Show changelog";
+      histBtn.onclick = () => toggleChangelog(blk, el);
+      actions.appendChild(histBtn);
+    }
     // Edit: collaborator+ only
     if (userCan("collaborator")) {
       const editBtn = h("button", "blk-act blk-act-edit", "edit");
       editBtn.title = "Edit content (WYSIWYG)";
       editBtn.onclick = () => openEditor(blk);
       actions.appendChild(editBtn);
+      // Undo: revert to previous version with impact analysis
+      if (blk.label) {
+        const undoBtn = h("button", "blk-act blk-act-undo", "undo");
+        undoBtn.title = "Revert to previous version (shows impact analysis)";
+        undoBtn.onclick = () => showUndoImpact(blk);
+        actions.appendChild(undoBtn);
+      }
     }
     el.appendChild(actions);
 
     // body
     const bb = h("div", "bb", mdToHtml(blk.md || ""));
+    // Replace .txb.ph placeholders with rendered SVGs
+    if (blk.rendered && blk.rendered.length) {
+      const placeholders = bb.querySelectorAll('.txb.ph');
+      let phIdx = 0;
+      for (const r of blk.rendered) {
+        const ph = placeholders[phIdx];
+        if (ph && r.mime === 'image/svg+xml') {
+          ph.innerHTML = `<img src="${r.url}" alt="rendered diagram" loading="lazy" style="max-width:100%;height:auto;filter:var(--svg-f)">`;
+          ph.classList.remove('ph');
+          // Add before/after toggle
+          const toggle = h("button", "svg-ver-toggle", "prev");
+          toggle.title = "Toggle previous version";
+          toggle.dataset.url = r.url;
+          toggle.dataset.label = blk.label || "";
+          toggle.dataset.showing = "current";
+          toggle.onclick = async () => {
+            const img = ph.querySelector('img');
+            if (!img) return;
+            if (toggle.dataset.showing === "current") {
+              // Fetch previous version
+              if (!toggle.dataset.prevUrl) {
+                try {
+                  const resp = await fetch(`/api/block-changelog?label=${encodeURIComponent(blk.label)}&limit=2`);
+                  const data = await resp.json();
+                  if (data.commits && data.commits.length > 1) {
+                    const prevSha = data.commits[1].sha;
+                    // Convert /api/content-asset/paper/ch/rendered/file.svg → asset-at URL
+                    const assetPath = r.url.replace('/api/content-asset/', '');
+                    toggle.dataset.prevUrl = `/api/content-asset-at/${prevSha}/${assetPath}`;
+                  } else {
+                    toggle.textContent = "no prev";
+                    return;
+                  }
+                } catch { toggle.textContent = "err"; return; }
+              }
+              img.src = toggle.dataset.prevUrl;
+              toggle.textContent = "curr";
+              toggle.dataset.showing = "prev";
+              ph.classList.add("showing-prev");
+            } else {
+              img.src = r.url;
+              toggle.textContent = "prev";
+              toggle.dataset.showing = "current";
+              ph.classList.remove("showing-prev");
+            }
+          };
+          ph.style.position = "relative";
+          ph.appendChild(toggle);
+        }
+        phIdx++;
+      }
+    }
     el.appendChild(bb);
 
     // source panel
@@ -757,6 +823,98 @@
   const fbText = $("#fb-text");
   const fbPriority = $("#fb-priority");
   const fbAssignee = $("#fb-assignee");
+
+  // ── Changelog panel ───────────────────────────────────────
+  async function toggleChangelog(blk, el) {
+    const existing = el.querySelector('.blk-changelog');
+    if (existing) { existing.remove(); return; }
+    const panel = h("div", "blk-changelog");
+    panel.innerHTML = '<div style="padding:.5rem;color:var(--fg-d);font-size:.7rem">Loading...</div>';
+    el.appendChild(panel);
+    try {
+      const resp = await fetch(`/api/block-changelog?label=${encodeURIComponent(blk.label)}&limit=15`);
+      const data = await resp.json();
+      if (!data.commits || !data.commits.length) {
+        panel.innerHTML = '<div style="padding:.5rem;color:var(--fg-d);font-size:.7rem">No history found</div>';
+        return;
+      }
+      let html = '<table class="changelog-table"><thead><tr><th>SHA</th><th>Date</th><th>Message</th></tr></thead><tbody>';
+      for (const c of data.commits) {
+        const date = new Date(c.date).toLocaleDateString();
+        html += `<tr><td><a href="https://github.com/litlfred/qou/commit/${esc(c.sha)}" target="_blank" rel="noopener">${esc(c.shortSha)}</a></td><td>${esc(date)}</td><td>${esc(c.message)}</td></tr>`;
+      }
+      html += '</tbody></table>';
+      panel.innerHTML = html;
+    } catch (e) {
+      panel.innerHTML = `<div style="padding:.5rem;color:var(--red);font-size:.7rem">Error: ${esc(String(e))}</div>`;
+    }
+  }
+
+  // ── Undo impact analysis modal ──────────────────────────────
+  async function showUndoImpact(blk) {
+    // Fetch impact analysis and changelog in parallel
+    const [impactResp, logResp] = await Promise.all([
+      fetch(`/api/undo-impact?label=${encodeURIComponent(blk.label)}`),
+      fetch(`/api/block-changelog?label=${encodeURIComponent(blk.label)}&limit=5`),
+    ]);
+    const impact = await impactResp.json();
+    const changelog = await logResp.json();
+    if (impact.error) { alert(`Error: ${impact.error}`); return; }
+    if (!changelog.commits || changelog.commits.length < 2) {
+      alert("No previous version to revert to.");
+      return;
+    }
+    // Build modal
+    const overlay = h("div", "undo-overlay");
+    const modal = h("div", "undo-modal");
+    let html = `<h3>Revert: ${esc(blk.label)}</h3>`;
+    html += `<p class="undo-target">${esc(blk.kind)}: ${esc(blk.title || blk.label)}</p>`;
+    // Show what we'd revert to
+    const prev = changelog.commits[1];
+    html += `<p class="undo-to">Revert to: <strong>${esc(prev.shortSha)}</strong> — ${esc(prev.message)} (${new Date(prev.date).toLocaleDateString()})</p>`;
+    // Impact
+    if (impact.totalAffected > 0) {
+      html += `<div class="undo-warning">⚠ ${impact.totalAffected} downstream block${impact.totalAffected > 1 ? 's' : ''} may be affected:</div>`;
+      html += '<ul class="undo-deps">';
+      for (const d of impact.directDependents) {
+        html += `<li><strong>${esc(d.label)}</strong> (${esc(d.kind)}) — ${esc(d.title)}</li>`;
+      }
+      for (const d of impact.transitiveDependents) {
+        html += `<li class="transitive">${esc(d.label)} (${esc(d.kind)}) — ${esc(d.title)}</li>`;
+      }
+      html += '</ul>';
+    } else {
+      html += '<p class="undo-safe">No downstream blocks depend on this — safe to revert.</p>';
+    }
+    html += '<div class="undo-actions">';
+    html += '<button class="undo-cancel">Cancel</button>';
+    html += '<button class="undo-confirm">Revert</button>';
+    html += '</div>';
+    modal.innerHTML = html;
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+    // Wire buttons
+    modal.querySelector('.undo-cancel').onclick = () => overlay.remove();
+    modal.querySelector('.undo-confirm').onclick = async () => {
+      try {
+        const resp = await fetch('/api/block/revert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paperId: paper.id, rootName: blk.rootName, sha: prev.sha }),
+        });
+        const result = await resp.json();
+        if (result.ok) {
+          overlay.remove();
+          // Reload paper to reflect change
+          loadPaper(paper.id);
+        } else {
+          alert(`Revert failed: ${result.error}`);
+        }
+      } catch (e) {
+        alert(`Revert error: ${e}`);
+      }
+    };
+  }
 
   let fbBlock = null;
 

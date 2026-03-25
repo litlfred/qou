@@ -109,6 +109,53 @@ export function gitLs(branch: string, relDir: string): string[] {
   return raw.split("\n").filter(Boolean);
 }
 
+// ── Block changelog (derived from git log) ────────────────────────
+
+export interface BlockCommit {
+  sha: string;
+  shortSha: string;
+  date: string;
+  author: string;
+  message: string;
+}
+
+/**
+ * Get git log for a set of files (a block's .ts, .md, .lean siblings).
+ * Returns commits that touched any of the given files, newest first.
+ */
+export function gitLogFiles(relPaths: string[], limit = 20): BlockCommit[] {
+  const result = spawnSync("git", [
+    "log", `--max-count=${limit}`,
+    "--pretty=format:%H|%h|%aI|%an|%s",
+    "--", ...relPaths,
+  ], { cwd: REPO_ROOT, stdio: "pipe", timeout: 5000 });
+  if (result.status !== 0) return [];
+  return result.stdout.toString().trim().split("\n").filter(Boolean).map(line => {
+    const [sha, shortSha, date, author, ...rest] = line.split("|");
+    return { sha, shortSha, date, author, message: rest.join("|") };
+  });
+}
+
+/**
+ * Read a file's content at a specific commit SHA.
+ * Wrapper around gitShow that accepts full commit hashes.
+ */
+export function gitShowAt(sha: string, relPath: string): string | null {
+  return git("show", `${sha}:${relPath}`);
+}
+
+/**
+ * Read a binary file at a specific commit SHA.
+ * Returns a Buffer or null.
+ */
+export function gitShowBinaryAt(sha: string, relPath: string): Buffer | null {
+  const result = spawnSync("git", ["show", `${sha}:${relPath}`], {
+    cwd: REPO_ROOT, stdio: "pipe", timeout: 5000,
+  });
+  if (result.status !== 0) return null;
+  return result.stdout as Buffer;
+}
+
 // ── TypeScript module evaluation from git branches ────────────────
 
 const TMP_DIR = join(REPO_ROOT, ".folio-assistant-tmp");
