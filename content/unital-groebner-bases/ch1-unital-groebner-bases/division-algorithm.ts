@@ -4,7 +4,7 @@ export default definition({
   label: "def:division-algorithm",
   title: "Division algorithm",
   lean: {
-    decl: "Fred2005.DivisionAlgorithm",
+    decl: "QOU.GrobnerShirshov.reduce",
     validation: "not_checked",
   },
   tags: ["groebner-basis", "division", "algorithm"],

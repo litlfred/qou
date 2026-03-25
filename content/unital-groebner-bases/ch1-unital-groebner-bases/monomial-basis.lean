@@ -1,49 +1,57 @@
 /-!
-# Fred2005.MonomialBasis
+# Monomials, monomial bases, and leading terms
 
-Monomials, monomial bases, and leading terms for a noncommutative
-R-algebra A that is free as an R-module.
+Content block for `def:monomial-basis`.
 
-Reference: Frédéric (2005), "Unital Gröbner bases for noncommutative
-algebras", following Leitner–Pawłoski (2004).
+The authoritative formalization lives in
+`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+- `QOU.GrobnerShirshov.Monomial G` — words in generators (abbrev for `List G`)
+- `QOU.GrobnerShirshov.AlgElement G k` — finitely supported linear
+  combinations of monomials over a ring `k`
+- `QOU.GrobnerShirshov.leadingMonomial` — the greatest monomial in
+  the support w.r.t. an admissible order
 
-LaTeX label: `def:monomial-basis`
+The paper's Definition 3.1–3.3 corresponds to these declarations.
+
+## References
+
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 3
+- lean-archive/QOU/GrobnerShirshov/Basic.lean §§1–2
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Order.WellFounded
+-- Re-export the relevant types for documentation purposes.
+-- In the lean-archive build these are imported via QOU.GrobnerShirshov.
 
-namespace Fred2005
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Basic
 
-universe u v
+namespace QOU.GrobnerShirshov.ContentBlock
 
-/-- A **monomial basis** for an R-algebra A, subordinate to a set of
-    generators indexed by `Λ`. The carrier type `A` is free as an
-    R-module with basis elements given by finite words in `Λ`.
+/-- A **monomial** in a free associative algebra on generators `G`.
+    Represented as a finite word (list) of generators.
+    See `QOU.GrobnerShirshov.Monomial`. -/
+abbrev Monomial (G : Type*) := List G
 
-    LaTeX: `\label{def:monomial-basis}`
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-structure MonomialBasis (R : Type u) (A : Type v) [CommRing R] [Ring A]
-    [Algebra R A] where
-  /-- Index set for algebra generators. -/
-  Λ : Type*
-  /-- The set of basis monomials (finite words in Λ). -/
-  basis : Set A
-  /-- Leading monomial: the largest basis element in the support of f. -/
-  leadingMonomial : A → A
-  /-- Leading coefficient: the coefficient of the leading monomial. -/
-  leadingCoefficient : A → R
-  /-- Leading term: LC(f) · LM(f). -/
-  leadingTerm : A → A
-  /-- The leading term equals the leading coefficient times the
-      leading monomial. -/
-  lt_eq_lc_mul_lm : ∀ f : A, leadingTerm f =
-    leadingCoefficient f • leadingMonomial f := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
-  /-- The leading monomial of a nonzero element lies in the basis. -/
-  lm_mem_basis : ∀ f : A, f ≠ 0 → leadingMonomial f ∈ basis := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
+/-- An element of the free algebra `k⟨G⟩`, represented as a
+    finitely-supported linear combination of monomials.
+    See `QOU.GrobnerShirshov.AlgElement`. -/
+structure AlgElement (G : Type*) (k : Type*) [Ring k] where
+  coeff : Monomial G → k
+  support : Finset (Monomial G)
+  support_spec : ∀ m, m ∉ support → coeff m = 0
 
-end Fred2005
+/-- The zero element has empty support.
+    Proved (not sorry). -/
+def AlgElement.zero {G : Type*} {k : Type*} [Ring k] : AlgElement G k where
+  coeff := fun _ => 0
+  support := ∅
+  support_spec := fun _ _ => rfl
+
+/-- An element is zero iff its support is empty.
+    Proved (not sorry). -/
+def AlgElement.isZero {G : Type*} {k : Type*} [Ring k]
+    (f : AlgElement G k) : Prop :=
+  f.support = ∅
+
+end QOU.GrobnerShirshov.ContentBlock

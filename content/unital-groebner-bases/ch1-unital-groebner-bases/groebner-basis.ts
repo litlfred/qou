@@ -4,7 +4,7 @@ export default definition({
   label: "def:groebner-basis",
   title: "Gröbner basis and unital Gröbner basis",
   lean: {
-    decl: "Fred2005.GroebnerBasis",
+    decl: "QOU.GrobnerShirshov.IsGrobnerShirshovBasis",
     validation: "not_checked",
   },
   tags: ["groebner-basis", "unital", "s-polynomial"],

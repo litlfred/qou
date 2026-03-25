@@ -4,7 +4,7 @@ export default definition({
   label: "def:remainder-module",
   title: "Remainder modules $O(I)$ and $\\tilde{O}(I)$",
   lean: {
-    decl: "Fred2005.RemainderModule",
+    decl: "QOU.GrobnerShirshov.isNormalForm",
     validation: "not_checked",
   },
   tags: ["groebner-basis", "remainder", "free-module"],

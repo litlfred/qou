@@ -1,55 +1,36 @@
 /-!
-# Fred2005.RemainderModule
+# Remainder modules O(I) and Õ(I)
 
-The remainder modules O(I) and Õ(I): R-submodules of A spanned by
-basis elements whose leading terms (resp. leading monomials) are not
-leading terms (resp. leading monomials) of any element of I.
+Content block for `def:remainder-module`.
 
-Reference: Frédéric (2005), "Unital Gröbner bases for noncommutative
-algebras", following Leitner–Pawłoski (2004).
+The authoritative formalization lives in
+`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+- `QOU.GrobnerShirshov.isNormalForm` — an element is in normal form
+  iff no rule's leading monomial divides any monomial in its support
 
-LaTeX label: `def:remainder-module`
+The remainder module Õ(I) is the span of normal-form monomials:
+those basis elements not appearing as leading monomials of any
+element of I. This corresponds to `isNormalForm` applied to
+single monomials.
+
+## References
+
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 4
+- lean-archive/QOU/GrobnerShirshov/Basic.lean §3 (isNormalForm)
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Order.WellFounded
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
 
-namespace Fred2005
+namespace QOU.GrobnerShirshov.ContentBlock
 
-universe u v
+/-- An element is in **normal form** w.r.t. a rewriting system if no
+    rule's leading monomial appears as a subword of any monomial in
+    the element's support. This characterizes elements of Õ(I).
+    See `QOU.GrobnerShirshov.isNormalForm` (proved, no sorry). -/
+def isNormalForm {G : Type*} {k : Type*} [Ring k]
+    (rules : List (List G))  -- leading monomials of rules
+    (support : Finset (List G)) : Prop :=
+  ∀ r ∈ rules, ∀ m ∈ support, ¬ r <:+: m
 
-/-- The **remainder module** O(I) for a subset I of an R-algebra A
-    with admissible system. The module is spanned by scalar multiples
-    λβ of basis elements β whose leading terms do not coincide with
-    the leading term of any element of I.
-
-    LaTeX: `\label{def:remainder-module}`
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-structure RemainderModule (R : Type u) (A : Type v) [CommRing R] [Ring A]
-    [Algebra R A] where
-  /-- The set of basis monomials. -/
-  basis : Set A
-  /-- Leading monomial function. -/
-  leadingMonomial : A → A
-  /-- Leading term function. -/
-  leadingTerm : A → A
-  /-- The subset I ⊆ A. -/
-  I : Set A
-  /-- The generating set o(I): scalar–monomial pairs λβ not matching
-      any leading term from I. -/
-  oI : Set A
-  /-- The tilde remainder module generating set õ(I): basis elements
-      not appearing as leading monomials of elements of I. -/
-  otildeI : Set A
-  /-- o(I) consists of basis elements scaled by nonzero coefficients
-      whose leading terms avoid LT(h) for all h ∈ I. -/
-  oI_spec : ∀ a ∈ oI, ∃ β ∈ basis,
-    ∀ h ∈ I, leadingTerm h ≠ a := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
-  /-- õ(I) = B \ {LM(h) | h ∈ I}. -/
-  otildeI_spec : otildeI = basis \ (leadingMonomial '' I) := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
-
-end Fred2005
+end QOU.GrobnerShirshov.ContentBlock

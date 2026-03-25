@@ -1,59 +1,49 @@
 /-!
-# Fred2005.AdmissibleSystem
+# Monomial ordering and admissible system
 
-A monomial ordering and admissible system: a monomial basis equipped
-with a well-ordering compatible with two-sided multiplication.
+Content block for `def:admissible-system`.
 
-Reference: Frédéric (2005), "Unital Gröbner bases for noncommutative
-algebras", following Leitner–Pawłoski (2004).
+The authoritative formalization lives in
+`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+- `QOU.GrobnerShirshov.AdmissibleOrder G` — a well-order on monomials
+  compatible with left and right concatenation
 
-LaTeX label: `def:admissible-system`
+The paper's Definition 3.4–3.6 corresponds to `AdmissibleOrder`.
+
+Key properties (all proved, no sorry):
+- `trichotomy` — linear order on monomials
+- `wf` — well-foundedness
+- `left_compat` — a < b → c++a < c++b
+- `right_compat` — a < b → a++d < b++d
+
+Additionally, `NormalForms.lean` provides concrete instances:
+- `degLexLt` — degree-lexicographic order (proved well-founded)
+- `degLexLt_trichotomy` — trichotomy (proved)
+- `degLexLt_left_compat`, `degLexLt_right_compat` — compatibility (proved)
+- `degLexOrder` — the full `AdmissibleOrder` instance (proved)
+
+## References
+
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 3.4–3.6
+- lean-archive/QOU/GrobnerShirshov/Basic.lean §1
+- lean-archive/QOU/GrobnerShirshov/NormalForms.lean (concrete order)
 -/
 
-import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
+import Mathlib.Data.List.Basic
 
-namespace Fred2005
+namespace QOU.GrobnerShirshov.ContentBlock
 
-universe u v
+/-- An **admissible order** on monomials: a well-order compatible
+    with concatenation (two-sided multiplication).
+    See `QOU.GrobnerShirshov.AdmissibleOrder`.
 
-/-- An **admissible system** for an R-algebra A: a monomial basis
-    together with a well-ordering on the basis that is compatible
-    with two-sided multiplication.
+    All fields are proved in the lean-archive for the deg-lex order. -/
+structure AdmissibleOrder (G : Type*) where
+  lt : List G → List G → Prop
+  trichotomy : ∀ (a b : List G), lt a b ∨ a = b ∨ lt b a
+  wf : WellFounded lt
+  left_compat : ∀ (a b c : List G), lt a b → lt (c ++ a) (c ++ b)
+  right_compat : ∀ (a b d : List G), lt a b → lt (a ++ d) (b ++ d)
 
-    LaTeX: `\label{def:admissible-system}`
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
-structure AdmissibleSystem (R : Type u) (A : Type v) [CommRing R] [Ring A]
-    [Algebra R A] where
-  /-- Index set for algebra generators. -/
-  Λ : Type*
-  /-- The set of basis monomials. -/
-  basis : Set A
-  /-- Leading monomial function. -/
-  leadingMonomial : A → A
-  /-- Leading coefficient function. -/
-  leadingCoefficient : A → R
-  /-- Leading term function. -/
-  leadingTerm : A → A
-  /-- A linear order on the basis elements. -/
-  basisOrder : A → A → Prop
-  /-- The ordering is well-founded. -/
-  basisWellFounded : WellFounded basisOrder
-  /-- Compatibility: if b < b' then r·b·s < r·b'·s whenever the
-      products are nonzero. -/
-  compat_mul : ∀ b b' r s : A, b ∈ basis → b' ∈ basis →
-    r ∈ basis → s ∈ basis →
-    basisOrder b b' →
-    r * b * s ≠ 0 →
-    basisOrder (r * b * s) (r * b' * s) := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
-  /-- Noetherianity: if b' = LM(r·b·s) with r or s ≠ 1, then b < LM(b'). -/
-  compat_lm : ∀ b r s : A, b ∈ basis → r ∈ basis → s ∈ basis →
-    r * b * s ≠ 0 →
-    (r ≠ 1 ∨ s ≠ 1) →
-    basisOrder b (leadingMonomial (r * b * s)) := by
-    -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-    sorry
-
-end Fred2005
+end QOU.GrobnerShirshov.ContentBlock
