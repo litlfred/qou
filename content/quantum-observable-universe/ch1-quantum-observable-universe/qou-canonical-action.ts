@@ -17,5 +17,7 @@ export default proposition({
     "def:q-hodge-star",
     "def:categorical-connection",
     "rem:categorical-action-notation",
+    "rem:yekutieli-stokes",
+    "def:yekutieli-lifting-condition",
   ],
 });

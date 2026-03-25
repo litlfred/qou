@@ -4,8 +4,9 @@ connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
 and state $\psi \colon \mathbf{1} \to A$.
-Then $(\mathcal{C}, A, \tau)$ determines a unique
-([categorical action](#def:categorical-action))
+Then $(\mathcal{C}, A, \tau)$ determines a
+([categorical action](#def:categorical-action)), unique up to a scalar
+$\lambda \in R^{\times}$,
 
 $$
   \mathcal{S}_q
@@ -57,7 +58,27 @@ Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-})
 spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
 and $F_\nabla = \nabla^2$ is the curvature.
 
-*Uniqueness* follows from the rigidity of the monoidal structure: the
-evaluation and coevaluation maps are determined up to unique isomorphism
-by the duality data, and the Frobenius--Hopf axioms fix the decomposition
-of $\mathcal{D}_\nabla^2$ into curvature terms.
+*Uniqueness up to scalar.*  The evaluation and coevaluation maps are
+determined up to unique isomorphism by the duality data, and the
+Frobenius--Hopf axioms fix the decomposition of $\mathcal{D}_\nabla^2$
+into curvature terms.  The residual ambiguity is a single scalar
+$\lambda \in R^{\times}$: the normalization of the Frobenius form
+$\int_A$.  Replacing $\int_A$ by $\lambda\!\int_A$ sends
+$\mathcal{S}_q \mapsto \lambda\,\mathcal{S}_q$.  This is the
+categorical analog of the choice of physical units --- it corresponds
+to the freedom in choosing $G$, $g^2$, and $\hbar$ in the archimedean
+realization ([Remark](#rem:physicist-translation)).
+
+The scalar ambiguity is controlled by the same obstruction that governs
+the forgetful functor $\tau$: the observability axiom
+$\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+([QOU axiom 2](#def:quantum-observable-universe)) ensures that the
+trace $\mathrm{tr} \colon \mathrm{End}(A) \to R$ is faithful --- no
+endomorphism is "invisible" to integration.  Relaxing this condition
+(allowing hidden symmetries, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))
+\neq 0$) introduces a nontrivial kernel in the trace, and the
+obstruction to recovering a well-defined action is classified by the
+same cohomology class $\kappa \in H^2(\mathcal{S}, \mathcal{B})$
+that obstructs lifting in the Yekutieli sense
+([Yekutieli lifting condition](#def:yekutieli-lifting-condition);
+[Yekutieli--Stokes remark](#rem:yekutieli-stokes)).
