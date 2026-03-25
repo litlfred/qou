@@ -30,7 +30,7 @@ Yekutieli's obstruction classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
 cohomology to produce additional obstructions to lifting Frobenius--Hopf
 objects through the brane tower — obstructions that are invisible under
 the assumptions of the present paper. The twisted deformation quantization
-framework of \cite{yekutieli2008} provides the natural setting for
+framework from \cite{yekutieli2008} provides the natural setting for
 analysing these: the hidden symmetries generate a non-trivial MC element
 in the pronilpotent DG Lie algebra governing deformations of $\tau$
 \cite{yekutieli2009}, and the resulting obstruction tower is the
