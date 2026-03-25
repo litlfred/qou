@@ -69,6 +69,10 @@
             "type": "command",
             "command": "./scripts/check-upstream.sh",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "./scripts/delivery-summary.sh"
           }
         ]
       }
