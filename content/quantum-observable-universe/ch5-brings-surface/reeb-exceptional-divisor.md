@@ -2,8 +2,9 @@ The Reeb vector field $\xi_q$
 ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) is the dynamical
 complement to the static topology of the Bring surface.  While the
 surface itself provides the handles (genus $4$), the Reeb vector
-provides the "wind" blowing through them, and the quantum torsion $q$
-sets the strength of that wind.
+provides the "wind" blowing through them, and the substrate parameter $q$
+([substrate parameter](#def:substrate-parameter)) sets the strength of
+that wind.
 
 **The classical limit ($q\to 1$): cones and frozen geometry.**
 If the substrate parameter $q\to 1$
@@ -47,7 +48,7 @@ $w_k\mapsto\zeta^k\,w_k$.
 **Global picture.**
 The Bring surface provides the genus-$4$ topology---four handles
 through which the chiral tubes thread.  The Reeb vector field gives
-the longitudinal flow along these handles.  The quantum torsion $q$
+the longitudinal flow along these handles.  The substrate parameter $q$
 modulates the pitch of this flow: when $q\to\infty$ (deep-quantum,
 Big Bang) the spinning is maximal and the Heisenberg uncertainty
 $[\hat{X},\hat{P}]_q\to J$; when $q\to 1$ (heat death) the spinning

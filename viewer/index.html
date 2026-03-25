@@ -63,6 +63,7 @@
     .br-opt:hover,.br-opt.active{background:var(--bg-r);color:var(--fg)}
     .br-opt.current{font-weight:600;color:var(--ac)}
     .br-opt .br-head{font-size:.45rem;color:var(--fg-d);margin-left:.3rem}
+    .br-sep{height:1px;background:var(--fg-d);opacity:.25;margin:2px 4px}
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
@@ -126,6 +127,8 @@
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
+    .sb-badge.lean-ref{background:#d4a017;color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.15rem}
+    .sb-badge.lean-ref:hover{background:#c49000;filter:brightness(1.1)}
     .sb-badge.lean-miss{background:#666;color:#ccc}
     .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
     .sb-badge:hover::after{opacity:1}
@@ -196,6 +199,8 @@
     .bh-ind .ind-badge.err{background:var(--red);color:#fff}
     .bh-ind .ind-badge.miss{background:var(--bg-r);color:var(--fg-d);border:1px solid var(--brd)}
     .bh-ind .ind-badge.stub{background:var(--ora);color:#fff}
+    .bh-ind .ind-badge.ref{background:#d4a017;color:#fff;cursor:pointer}
+    .bh-ind .ind-badge.ref:hover{filter:brightness(1.1)}
     .bh-ind .ind-label{font-size:.5rem;color:var(--fg-d)}
 
     .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
@@ -1246,6 +1251,7 @@
     const brInput = document.getElementById('br-input');
     const brDrop = document.getElementById('br-drop');
     let allBranches = [];
+    let brRecentCount = 0;
     let brActiveIdx = -1;
 
     async function loadBranches() {
@@ -1256,7 +1262,8 @@
         currentBranchName = data.current;
         if (!selectedBranch) selectedBranch = currentBranchName;
         allBranches = data.branches || [];
-        console.log(`[folio:git] loaded ${allBranches.length} branches, HEAD=${currentBranchName}, viewing=${selectedBranch}`);
+        brRecentCount = data.recentCount || 0;
+        console.log(`[folio:git] loaded ${allBranches.length} branches (${brRecentCount} recent), HEAD=${currentBranchName}, viewing=${selectedBranch}`);
         brInput.value = selectedBranch;
         brInput.title = selectedBranch === currentBranchName ? `${selectedBranch} (HEAD)` : selectedBranch;
       } catch { /* /api/branches not available */ }
@@ -1274,7 +1281,23 @@
         brDrop.appendChild(empty);
         return;
       }
+      // Count pinned items (current + main/master) to know where the
+      // separator between recent and alphabetical branches goes.
+      const pinned = new Set();
+      pinned.add(currentBranchName);
+      if (allBranches.includes('main')) pinned.add('main');
+      if (allBranches.includes('master')) pinned.add('master');
+      // In the unfiltered list: separator after pinned + recent
+      const sepAfter = !q && brRecentCount > 0
+        ? pinned.size + brRecentCount : -1;
+
       matches.forEach((b, i) => {
+        // Insert separator between recent and remaining branches
+        const origIdx = allBranches.indexOf(b);
+        if (sepAfter > 0 && origIdx === sepAfter && !q) {
+          const sep = mk('div','br-sep');
+          brDrop.appendChild(sep);
+        }
         const opt = mk('div','br-opt');
         if (b === currentBranchName) opt.classList.add('current');
         if (b === selectedBranch) opt.classList.add('active');
@@ -2669,6 +2692,21 @@
         }
         leanInd.appendChild(leanBadge);
 
+        // Sorry ref badge in content area
+        if (block.lean?.source && /sorry/.test(block.lean.source)) {
+          const refs = extractSorryRefs(block.lean.source);
+          for (const ref of refs) {
+            const rb = ref.url ? document.createElement('a') : mk('span','ind-badge ref');
+            if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'ind-badge ref'; }
+            rb.textContent = '\u{1F4D6} ' + ref.key;
+            rb.title = `Reference: [${ref.key}]${ref.url ? '\n' + ref.url : ''}`;
+            rb.style.marginLeft = '.25rem';
+            rb.style.textDecoration = 'none';
+            rb.onclick = (e) => e.stopPropagation();
+            leanInd.appendChild(rb);
+          }
+        }
+
         // Click to toggle lean source panel (inserted right after header)
         if (block.lean?.source) {
           leanInd.onclick = (e) => {
@@ -2858,6 +2896,24 @@
 
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+
+    /** Extract sorry references from Lean source: `-- Ref: [key] url` lines before `sorry`. */
+    function extractSorryRefs(source) {
+      if (!source) return [];
+      const lines = source.split('\n');
+      const refs = [];
+      for (let i = 0; i < lines.length; i++) {
+        if (/^\s*sorry\b/.test(lines[i])) {
+          // Look backwards for -- Ref: lines
+          for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+            const m = lines[j].match(/--\s*Ref:\s*\[([^\]]+)\]\s*(https?:\/\/\S+)?/);
+            if (m) refs.push({ key: m[1], url: m[2] || null });
+            else if (!/^\s*(--|$)/.test(lines[j])) break;
+          }
+        }
+      }
+      return refs;
+    }
 
     function addSrc(el, md, hdr, block) {
       if (!md) return;
@@ -3565,6 +3621,19 @@
                 else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; lb.setAttribute('data-tip', 'Lean proof verified'); }
                 else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`); }
                 bEl.appendChild(lb);
+                // Sorry ref badge: yellow library card linking to citation
+                if (s === 'has_sorry' || (b.lean?.source && /sorry/.test(b.lean.source))) {
+                  const refs = extractSorryRefs(b.lean?.source);
+                  if (refs.length > 0) {
+                    const ref = refs[0];
+                    const rb = ref.url ? document.createElement('a') : mk('span','sb-badge lean-ref');
+                    if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'sb-badge lean-ref'; }
+                    rb.textContent = '\u{1F4D6}';
+                    rb.setAttribute('data-tip', `Ref: [${ref.key}]${ref.url ? ' ' + ref.url : ''}`);
+                    rb.onclick = (e) => e.stopPropagation();
+                    bEl.appendChild(rb);
+                  }
+                }
               }
 
               bEl.onclick = () => {

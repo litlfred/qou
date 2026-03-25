@@ -73,13 +73,25 @@ structure WeakEquivInvariance (R : Type*) [CommRing R] where
     vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a))
 
 /-- Weak equivalence invariance is transitive: if levels n ∼ m and
-    m ∼ k, then τ at level n equals τ at level k. -/
--- Ref: [manuscript] §3
+    m ∼ k share the same direct limit algebra and vacuum state,
+    then τ at level n equals τ at level k.
+
+    We express this within a single WeakEquivInvariance over three
+    levels: srcLevel = n, midLevel = m, tgtLevel = k. -/
+-- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 theorem weak_equiv_transitive {R : Type*} [CommRing R]
-    (wei₁ wei₂ : WeakEquivInvariance R)
-    (h_shared : wei₁.weq.DirectLimit = wei₂.weq.DirectLimit)
-    (h_tgt_src : wei₁.weq.tgtLevel = wei₂.weq.srcLevel) :
-    True := by
-  trivial
+    (weq : WeakEquivalence R)
+    (vac : VacuumState R weq.DirectLimit)
+    (midLevel : ℕ)
+    (h_src_mid : ∀ (a : weq.DirectLimit),
+      vac.tau (weq.embed weq.srcLevel (weq.restrict weq.srcLevel a)) =
+      vac.tau (weq.embed midLevel (weq.restrict midLevel a)))
+    (h_mid_tgt : ∀ (a : weq.DirectLimit),
+      vac.tau (weq.embed midLevel (weq.restrict midLevel a)) =
+      vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a))) :
+    ∀ (a : weq.DirectLimit),
+      vac.tau (weq.embed weq.srcLevel (weq.restrict weq.srcLevel a)) =
+      vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a)) :=
+  fun a => (h_src_mid a).trans (h_mid_tgt a)
 
 end QOU.Torsion

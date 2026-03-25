@@ -15,7 +15,7 @@ export default [
     "id": "todo-mn14ued0",
     "summary": "should be stated as an observation, not a propostion",
     "comment": "should be stated as an observation, not a propostion",
-    "status": "open",
+    "status": "in_progress",
     "priority": "medium",
     "origin": "human",
     "assignee": "editor-agent",

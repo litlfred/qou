@@ -61,14 +61,16 @@ structure JetProlongationC where
   dim_formula : output.baseDim =
     input.baseDim + input.fibreDim + input.baseDim * input.fibreDim
 
-/-- The jet prolongation can be iterated: applying it twice yields
-    the second level of the brane tower. -/
+/-- The jet prolongation can be iterated: if jp₂.input = jp₁.output,
+    the composite yields valid QOU data at the second brane level. -/
 -- Ref: [manuscript] §3
 theorem jet_prolongation_C_iterable
     (jp₁ jp₂ : JetProlongationC)
     (h : jp₂.input = jp₁.output) :
-    True := by
-  trivial
+    jp₂.output.baseDim =
+      jp₁.output.baseDim + jp₁.output.fibreDim +
+      jp₁.output.baseDim * jp₁.output.fibreDim := by
+  rw [jp₂.dim_formula, ← h]
 
 /-- For SU(2) on a 4-manifold with 3-dimensional fibres:
     dim(level 1) = 4 + 3 + 12 = 19. -/

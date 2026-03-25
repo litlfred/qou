@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, \dagger)$ be a rigid monoidal category with involutive
+Let $(\mathbf{C}, \dagger)$ be a rigid monoidal category with involutive
 structure ([involutive structure](#def:involutive-structure)). The involution is
 *positive-definite* if for every non-zero
 morphism $f \colon \mathbf{1} \to X$ the composite

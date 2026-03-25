@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 instanton $\nabla$ ([categorical instanton](#def:categorical-instanton)) and
 $q$-deformed exterior derivative $d_q$
 ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). The *categorical

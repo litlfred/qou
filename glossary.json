@@ -1,15 +1,23 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T03:58:34.960858+00:00",
+  "generated_at": "2026-03-25T12:59:28.463172+00:00",
   "commit_sha": "unknown",
   "entry_count": 68,
   "ambiguity_count": 9,
   "entries": [
     {
+      "narrative_term": "{Snake identity}",
+      "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
+      "kind": "def",
+      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two equations:    [ ( otimes _V) circ (_V otimes ) = _V. ]  More precisely, unfolding the associator and unitor isomorphisms, the composite  [ V  V otimes  _V otimes  V otimes (V^vee otimes V) _V, V^vee, V (V otimes V^vee) otimes V  otimes _V  otimes V  V ]  equals _V.   The composite  [ V^vee ^-1  otimes V^v",
+      "latex_label": "def:snake-identity",
+      "chapter": 2
+    },
+    {
       "narrative_term": "{Rigid monoidal category}",
       "lean_name": "QOU.QuantumObservableUniverse.RigidMonoidalCategory",
       "kind": "def",
-      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object , and natural isomorphisms expressing associativity and unitality:  [  [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z)  [-0.5em]   qquad  [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes  ar[l, \"rho_X\"', \"sim\"]  [-0.5em]   ]  The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V co",
+      "narrative_definition": "A  (, otimes, ) is a category equipped with a bifunctor otimes colon  times  to  (the ), a unit object , and natural isomorphisms expressing associativity and unitality:    [column sep=3em] (X otimes Y) otimes Z ar[r, \"alpha_X,Y,Z\", \"sim\"'] & X otimes (Y otimes Z)  [-0.5em]   qquad  [column sep=2.5em]  otimes X ar[r, \"ell_X\", \"sim\"'] & X & X otimes  ar[l, \"rho_X\"', \"sim\"]  [-0.5em]     The category is  if every object V has a  V^vee together with morphisms _V colon V otimes V^vee to  and _V colo",
       "latex_label": "def:rigid-monoidal-category",
       "chapter": 2,
       "ambiguity": {
@@ -23,14 +31,6 @@
         ],
         "resolved_to": null
       }
-    },
-    {
-      "narrative_term": "{Snake identity}",
-      "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
-      "kind": "def",
-      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two equations:    [ ( otimes _V) circ (_V otimes ) = _V. ]  More precisely, unfolding the associator and unitor isomorphisms, the composite  [ V  V otimes  _V otimes  V otimes (V^vee otimes V) _V, V^vee, V (V otimes V^vee) otimes V  otimes _V  otimes V  V ]  equals _V.   The composite  [ V^vee ^-1  otimes V^v",
-      "latex_label": "def:snake-identity",
-      "chapter": 2
     },
     {
       "narrative_term": "{Quantum Universe}",
@@ -81,7 +81,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Involutive structure (\\$\\textbackslash\\{\\}ast\\$-structure)}",
+      "narrative_term": "{Involutive structure ($\\ast$-structure)}",
       "lean_name": "QOU.QuantumObservableUniverse.InvolutiveStructure",
       "kind": "def",
       "narrative_definition": "Let (, otimes, ) be an R-linear rigid monoidal category. An  (also called a  or ) on  is a contravariant endofunctor dagger colon ^ to  satisfying:   item  X^dagger = X for every object X. item  f^daggerdagger = f for every morphism f, depicted:  [column sep=3em] X ar[r, \"f\"] ar[rr, bend left=30, \"f^daggerdagger = f\"] & Y ar[r, \"f^dagger\"description] & X   item  (_X otimes f)^dagger = _X otimes f^dagger, i.e. the following square commutes:  [row sep=2.5em, column sep=3em] X otimes Y ar[r, \" otim",
@@ -121,7 +121,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Contact affine chart on \\$\\textbackslash\\{\\}mathbb\\{P\\}(V)\\$}",
+      "narrative_term": "{Contact affine chart on $\\mathbb{P}(V)$}",
       "lean_name": "QOU.QuantumObservableUniverse.ContactAffineChart",
       "kind": "def",
       "narrative_definition": "Let E be the state bundle over M whose fibres are the spaces of 1-forms, and let (V) be the projective line object (hyperref[def:projective-line-object]projective line object). Using the Reeb decomposition (hyperref[ex:reeb-decomposition]Reeb decomposition), every form splits as alpha = alpha_H + theta wedge iota_xi alpha.  The  U_xi subset (V) is the open dense subset of states with non-vanishing Reeb component:  [ U_xi ;=; bigl, [alpha] in (V) ;big|; iota_xi,alpha neq 0 ,bigr. ]  On U_xi, the ",
@@ -196,7 +196,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{\\$q\\$-Hodge star}",
+      "narrative_term": "{$q$-Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.QHodgeStar",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot int_A!bigl(alpha^* cdot betabigr);. ]  At q = 1 this recovers the categorical Hodge star: star_1 = star.  The factor of q rescales the inner product o",
@@ -212,7 +212,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Categorical \\$q\\$-deformed exterior derivative}",
+      "narrative_term": "{Categorical $q$-deformed exterior derivative}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQExtDeriv",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe with connection nabla (hyperref[def:categorical-connection]categorical connection), substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), and weight decomposition pi_H, pi_V (hyperref[def:weight-decomposition]weight decomposition).  The  d_q colon Omega^k(A) to Omega^k+1(A) is  [ d_q ;=; q^-1,d + (1 - q^-1),pi_V circ d, ]  where d colon Omega^k(A) to Omega^k+1(A) is the differential of the non-commutative de Rham complex.  E",
@@ -220,7 +220,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{\\$q\\$-harmonic form (particle)}",
+      "narrative_term": "{Particle ($q$-harmonic form)}",
       "lean_name": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe with q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic:  [ Delta_q,alpha ;=; 0. ]",
@@ -271,7 +271,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Categorical \\$q\\$-Lie bracket}",
+      "narrative_term": "{Categorical $q$-Lie bracket}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe with Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter). The  on derivations of A is  [ [X, Y]_q ;=; q^-1,[X, Y] + (1 - q^-1),bigl(theta_A(X),[xi, Y] - theta_A(Y),[xi, X]bigr), ]  where theta_A is the canonical 1-form dual to xi and [X, Y] is the commutator of derivations in .",
@@ -279,7 +279,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{Categorical \\$q\\$-deformed connection}",
+      "narrative_term": "{Categorical $q$-deformed connection}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQConnection",
       "kind": "def",
       "narrative_definition": "Let nabla be a connection on A (hyperref[def:categorical-connection]categorical connection) and xi the Reeb derivation (hyperref[def:categorical-reeb]categorical Reeb derivation).  The  is  [ nabla_q ;=; q^-1,nabla + (1 - q^-1),(iota_xi, nabla),theta_A. ]  At q = 1, nabla_q = nabla.",
@@ -287,7 +287,7 @@
       "chapter": 2
     },
     {
-      "narrative_term": "{\\$q\\$-Weighted Yang--Mills--Levi functional}",
+      "narrative_term": "{$q$-Weighted Yang--Mills--Levi functional}",
       "lean_name": "QOU.QuantumObservableUniverse.QYangMillsLevi",
       "kind": "def",
       "narrative_definition": "Let (M, theta, G, P, E) be an archimedean quantum observable universe with instanton connection A and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is  [ S_q[A, theta] ;=; int_M q(p),lVert F_A^+|_H rVert^2, theta wedge (dtheta)^n, ]  where q(p) = 1 + lvertlangle L_theta, F_A^+ranglervert(p) (hyperref[rem:c-substrate-via-levi]-substrate via Levi form).",
@@ -396,11 +396,11 @@
       "chapter": 4
     },
     {
-      "narrative_term": "{Yekutieli triple mapping}",
-      "lean_name": "QOU.Torsion.YekutieliTriple",
+      "narrative_term": "{Descent involution}",
+      "lean_name": "QOU.Torsion.DescentInvolution",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower); let q denote the substrate parameter.  Let U_i be a covering of the underlying site  trivialising every level of the tower. The  at level n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:   item  x_i^(n) in (_n|_U_i) are local trivialisations of the Frobenius--Hopf object A_n. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the t",
-      "latex_label": "def:yekutieli-triple",
+      "narrative_definition": "Let ell_n colon A_n hookrightarrow A_n+1 denote the ascent embedding (hyperref[prop:jet-prolongation]jet prolongation) and _n+1 colon _(A_n+1) to _(A_n) the descent homomorphism (hyperref[lem:descent]descent).  The  at level n is the endomorphism of the level-(n+1) endomorphism algebra:  [ _n ;=; ell_n circ _n+1 ;colon; _(A_n+1) ;longrightarrow; _(A_n+1). ]  Since _n+1 circ ell_n =  on _(A_n) (the descent of the ascent recovers the original endomorphism, because ell_n embeds A_n as a direct summ",
+      "latex_label": "def:descent-involution",
       "chapter": 4
     },
     {
@@ -455,19 +455,19 @@
       "chapter": 4
     },
     {
-      "narrative_term": "{Descent involution}",
-      "lean_name": "QOU.Torsion.DescentInvolution",
-      "kind": "def",
-      "narrative_definition": "Let ell_n colon A_n hookrightarrow A_n+1 denote the ascent embedding (hyperref[prop:jet-prolongation]jet prolongation) and _n+1 colon _(A_n+1) to _(A_n) the descent homomorphism (hyperref[lem:descent]descent).  The  at level n is the endomorphism of the level-(n+1) endomorphism algebra:  [ _n ;=; ell_n circ _n+1 ;colon; _(A_n+1) ;longrightarrow; _(A_n+1). ]  Since _n+1 circ ell_n =  on _(A_n) (the descent of the ascent recovers the original endomorphism, because ell_n embeds A_n as a direct summ",
-      "latex_label": "def:descent-involution",
-      "chapter": 4
-    },
-    {
       "narrative_term": "{Defining boundary of the brane}",
       "lean_name": "QOU.Torsion.BraneBoundary",
       "kind": "def",
       "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be the (hyperref[def:recursive-brane-tower]recursive brane tower).  Let _n+1 be the descent homomorphism (hyperref[lem:descent]descent).  The  of the n-th brane is the full subcategory of  consisting of subobjects of A_n on which the restriction morphism r_n colon A_n to A_n-1 has non-trivial kernel:  [ partial A_n ;=; bigl, S hookrightarrow A_n ;bigm|; ker(r_n|_S) neq 0 ,bigr. ]  In the archimedean realisation, partial A_n corr",
       "latex_label": "def:brane-boundary",
+      "chapter": 4
+    },
+    {
+      "narrative_term": "{Yekutieli triple mapping}",
+      "lean_name": "QOU.Torsion.YekutieliTriple",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe and let A_n_n geq 0 be its (hyperref[def:recursive-brane-tower]recursive brane tower); let q denote the substrate parameter.  Let U_i be a covering of the underlying site  trivialising every level of the tower. The  at level n over an intersection U_i cap U_j is the datum (x_ij^(n),, g_ij^(n),, a_ij^(n)) where:   item  x_i^(n) in (_n|_U_i) are local trivialisations of the Frobenius--Hopf object A_n. item  g_ij^(n) colon x_i^(n) to x_j^(n) are the t",
+      "latex_label": "def:yekutieli-triple",
       "chapter": 4
     },
     {
@@ -567,7 +567,7 @@
       }
     },
     {
-      "narrative_term": "{Symmetric group \\$S\\_3\\$}",
+      "narrative_term": "{Symmetric group $S_3$}",
       "lean_name": "QOU.PathIntegrals.S3Group",
       "kind": "def",
       "narrative_definition": "Imposing the involution relations sigma_i^2= on the braid group B_3 (hyperref[def:braid-group]braid group) yields the    S_3 =bigllangle s_1,s_2 ;big|;s_1^2=s_2^2=(s_1 s_2)^3=bigrrangle.",
@@ -575,7 +575,7 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{\\$\\textbackslash\\{\\}mathfrak\\{su\\}(2)\\$ basis}",
+      "narrative_term": "{$\\mathfrak{su}(2)$ basis}",
       "lean_name": "QOU.PathIntegrals.Su2Basis",
       "kind": "def",
       "narrative_definition": "Write tau_1,tau_2,tau_3 for the Pauli matrices and set   e_a=-2,tau_a,qquad a=1,2,3,   so that the Lie bracket is   [e_a,,e_b]=epsilon_abc,e_c.",
@@ -583,7 +583,7 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{\\$\\textbackslash\\{\\}mathrm\\{SU\\}(2)\\$ generators of \\$\\textbackslash\\{\\}mathrm\\{Dic\\}\\_3\\$}",
+      "narrative_term": "{$\\mathrm{SU}(2)$ generators of $\\mathrm{Dic}_3$}",
       "lean_name": "QOU.PathIntegrals.Su2Generators",
       "kind": "def",
       "narrative_definition": "Every finite subgroup of (3) lifts, via the double cover (2)twoheadrightarrow(3), to a binary subgroup of (2).  For S_3cong D_3 the lift is the binary dihedral group _3subset(2) of order 12, generated by   alpha &= exp!bigl(3,e_3bigr) = e^ipi/3&0[2pt]0&e^-ipi/3, [4pt] beta &= exp(pi,e_1) = 0&i[2pt]i&0,    with alpha^3=beta^2=-I, dihedral relation betaalphabeta^-1=alpha^-1, and commutator [beta,alpha]=alpha^-2.",
@@ -591,7 +591,7 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{\\$\\textbackslash\\{\\}mathrm\\{SO\\}(3)\\$ generators}",
+      "narrative_term": "{$\\mathrm{SO}(3)$ generators}",
       "lean_name": "QOU.PathIntegrals.So3Generators",
       "kind": "def",
       "narrative_definition": "Under the adjoint map to (3) the generators of _3 (hyperref[def:su2-generators]SU(2) generators) have images   R_alpha = -2&-2&0[3pt] 2&-2&0[3pt] 0&0&1 ,qquad R_beta = 1&0&0[2pt] 0&-1&0[2pt] 0&0&-1 :   R_alpha is a rotation by 2pi/3 about the e_3-axis (3-cycle) and R_beta is a pi-rotation about e_1 (2-cycle).",
@@ -607,7 +607,7 @@
       "chapter": 5
     },
     {
-      "narrative_term": "{Quantum group \\$\\textbackslash\\{\\}mathcal\\{U\\}\\_q(\\textbackslash\\{\\}mathfrak\\{su\\}(2))\\$}",
+      "narrative_term": "{Quantum group $\\mathcal{U}_q(\\mathfrak{su}(2))$}",
       "lean_name": "QOU.PathIntegrals.QuantumSu2",
       "kind": "def",
       "narrative_definition": "Let qin^* with 0<lvert qrvertle 1.  The  _q((2)) is the associative -algebra generated by E,F,K,K^-1 subject to   KK^-1&=K^-1K=1, [3pt] KEK^-1&=q^2,E,quad KFK^-1=q^-2,F, [3pt] [E,F]&=q-q^-1.    In the classical limit qto 1, the generator K reduces to exp(h,e_3) and the relations recover the (2) commutation relations.",
@@ -631,7 +631,7 @@
       "chapter": 7
     },
     {
-      "narrative_term": "{Exceptional divisor at \\$p\\$}",
+      "narrative_term": "{Exceptional divisor at $p$}",
       "lean_name": "QOU.ExceptionalDivisor",
       "kind": "def",
       "narrative_definition": "Let (M, G, E) be a Descartes universe and let p in M be a brane point with outward normal N(p) = p/lvert prvert and positively-oriented tangent frame (T_1, T_2).  Set R = R_^1() and  [ O(p) ;=; p + R,N(p). ]  The  at p is the ^1() fibre  [ E_p ;=; pi^-1(p) ;=; bigl, O(p) + Rbigl(sinphi,(cospsi,T_1 + sinpsi,T_2) - cosphi,Nbigr) ;:; phi in [0,pi],; psi in [0,2pi) ,bigr, ]  where picolon  to M is the blow-up map that replaces p with E_p cong ^1().",
@@ -639,7 +639,7 @@
       "chapter": 7
     },
     {
-      "narrative_term": "{Chiral sector coordinates \\$\\textbackslash\\{\\}mathfrak\\{r\\},\\textbackslash\\{\\}mathfrak\\{g\\},\\textbackslash\\{\\}mathfrak\\{b\\}\\$}",
+      "narrative_term": "{Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean_name": "QOU.ChiralSectorCoords",
       "kind": "def",
       "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).   The  qphi rotates each sector by q full turns as the latitude phi runs f",

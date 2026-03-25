@@ -1,5 +1,5 @@
 The symmetric product $\mathrm{Sym}^n(K)$ carries natural operations
-inherited from the braiding and Hopf link structure of $\mathcal{C}$.
+inherited from the braiding and Hopf link structure of $\mathbf{C}$.
 
 **Braiding.** The braiding $\beta_{K_i, K_j} \colon K_i \otimes K_j
 \xrightarrow{\sim} K_j \otimes K_i$ permutes constituent knots within

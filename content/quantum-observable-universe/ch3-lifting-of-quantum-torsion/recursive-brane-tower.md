@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe over a
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a
 ring $R$ ([quantum observable universe](#def:quantum-observable-universe)).  Set
 $A_0 = A$.  *Inductively*, define
 $A_{n+1} = J^1(A_n)$ as the
@@ -15,5 +15,5 @@ The *brane relation* is the following recursive structure:
 
 The *recursive brane tower* is the sequence
 $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
-in $\mathcal{C}$, where each embedding is the canonical inclusion
+in $\mathbf{C}$, where each embedding is the canonical inclusion
 $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.

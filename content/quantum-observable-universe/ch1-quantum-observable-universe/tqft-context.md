@@ -22,7 +22,7 @@ needed for three-dimensional and extended TQFTs
 
 *The observability condition as a categorical contact condition.*
 In the TQFT setting, the condition
-$\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+$\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 ([quantum observable universe](#def:quantum-observable-universe)) is the categorical
 analogue of the *contact condition* (maximal non-integrability).
 A non-zero morphism $\mathbf{1} \to \mathrm{Ad}(A)$ would give a

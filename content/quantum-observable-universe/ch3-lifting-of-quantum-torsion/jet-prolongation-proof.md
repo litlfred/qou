@@ -49,8 +49,8 @@ invariant in $\mathrm{Ad}(J^1(A))$ would project to a non-zero invariant in
 $\mathrm{Ad}(A)$, contradicting the hypothesis.
 
 *Step 4: Geometric realisation.*
-Applying the fibre functor $\tau\colon \mathcal{C} \to \mathrm{Vect}_k$
-(where $\mathcal{C}$ is the rigid monoidal category of the quantum
+Applying the fibre functor $\tau\colon \mathbf{C} \to \mathrm{Vect}_k$
+(where $\mathbf{C}$ is the rigid monoidal category of the quantum
 observable universe)
 recovers the geometric data: $\tau(J^1(A))$ is the space of sections of the
 first jet bundle $J^1 E$, the frame bundle $P'$ and orthonormal frame bundle

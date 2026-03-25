@@ -1,5 +1,6 @@
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Nat.Prime.Defs
+import Mathlib.Data.List.Lex
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
@@ -238,20 +239,51 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- induction on `a`.  Encoding this mutual recursion in Lean 4 requires
 -- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
 --
--- Note: `lexLt_wf` is not used directly by `degLexOrder`; only
--- `degLexLt_wf` is needed (proved below via `lexEncoding` embedding
--- into `ℕ ×ₗ ℕ`).  This theorem is retained for completeness.
--- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
--- The proof embeds lexLt into List.Lex (· < ·) on ℕ via rank mapping.
--- Not used by degLexOrder; only degLexLt_wf is needed (proved via lexEncoding).
-theorem lexLt_wf : WellFounded lexLt := by
-  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-  sorry
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Well-foundedness of lexLt via the standard Acc-based double induction:
+-- outer induction on head generator rank, inner induction on tail accessibility.
+-- Cf. Coq's Lexicographic_Exponentiation for the classical construction.
+
+private theorem rank_lt_4 (g : SU2Gen) : g.rank < 4 := by
+  cases g <;> simp [SU2Gen.rank]
+
+/-- The rank ordering on SU2Gen is well-founded (ranks are natural numbers). -/
+private def rankRel : SU2Gen → SU2Gen → Prop := fun a b => a.rank < b.rank
+
+private theorem rankRel_wf : WellFounded rankRel :=
+  InvImage.wf SU2Gen.rank Nat.lt_wfRel.wf
+
+/-- `lexLt` implies `List.Lex rankRel`. -/
+private theorem lexLt_implies_listLex :
+    ∀ (a b : Monomial SU2Gen), lexLt a b → List.Lex rankRel a b := by
+  intro a
+  induction a with
+  | nil =>
+    intro b hlex
+    cases b with
+    | nil => exact absurd hlex (by simp [lexLt])
+    | cons y ys => exact List.Lex.nil
+  | cons x xs ih =>
+    intro b hlex
+    cases b with
+    | nil => exact absurd hlex (by simp [lexLt])
+    | cons y ys =>
+      simp [lexLt] at hlex
+      rcases hlex with hrank | ⟨heq, hrest⟩
+      · exact List.Lex.rel hrank
+      · have hxy : x = y := SU2Gen.rank_injective x y heq
+        subst hxy
+        exact List.Lex.cons x (ih ys hrest)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
--- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
--- then by lexLt (well-founded on same-length lists via lexEncoding).
--- Proved by embedding into (ℕ ×ₗ ℕ) via (length, lexEncoding).
+-- Well-foundedness via Mathlib's `List.Lex.wellFounded` applied to the
+-- rank ordering on SU2Gen (which is well-founded since ranks are in ℕ).
+theorem lexLt_wf : WellFounded lexLt :=
+  Subrelation.wf
+    (fun {a b} h => lexLt_implies_listLex a b h)
+    (List.Lex.wellFounded rankRel_wf)
+
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem degLexLt_wf : WellFounded degLexLt :=
   Subrelation.wf
     (fun {a b} (h : degLexLt a b) => by

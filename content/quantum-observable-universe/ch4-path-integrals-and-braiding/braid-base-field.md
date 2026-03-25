@@ -1,5 +1,5 @@
 [braid action on tensor products](#prop:braid-action-tensor) uses only the braided monoidal
-structure of $\mathcal{C}$.  In particular:
+structure of $\mathbf{C}$.  In particular:
 
 1. For the archimedean realisation
    ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the braiding

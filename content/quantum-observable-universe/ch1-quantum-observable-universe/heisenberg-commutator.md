@@ -10,9 +10,9 @@ measurement*.  Let $\hat{X}, \hat{P}$ be position and momentum
 observables on the fibre $\mathbb{P}^1(\mathbb{C})$, and let
 $J \colon H \to H$ be the complex structure on the Levi distribution
 ($J^2 = -\mathrm{Id}$; throughout this paper $i$ is identified with
-the action of $J$ on horizontal planes).  The substrate parameter $q$
-([substrate parameter](#def:substrate-parameter)) is the fibre
-coordinate on the interpolation family between $d$ and $\pi_V \circ d$;
+the action of $J$ on horizontal planes).  The substrate parameter $q \in \mathrm{End}(\mathbf{1})$
+([substrate parameter](#def:substrate-parameter)) parametrises the
+categorical interpolation family between $d$ and $\pi_V \circ d$;
 the quantum Planck constant
 $\hbar_q = 1 - q^{-1}$
 ([quantum Planck constant](#def:quantum-planck-constant)) measures

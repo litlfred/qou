@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$, and let
 $p \colon \mathbf{1} \to A$ be a
 ([categorical point](#def:categorical-point)).  Let
@@ -51,7 +51,7 @@ observations of a fermion at the same point necessarily disagree.
 
 **Why germs, not global morphisms.**
 The categorical algebra $A$ carries no intrinsic topology (it is an
-object in $\mathcal{C}$, not a topological ring).  Working with germs
+object in $\mathbf{C}$, not a topological ring).  Working with germs
 $A / \mathfrak{m}_p^2$ at a point $p$ plays the role of localisation:
 it captures the first-order jet of the observation without requiring a
 topology on $A$.  In the archimedean realisation

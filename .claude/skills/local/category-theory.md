@@ -341,9 +341,9 @@ section.  In pre-substrate material:
 Definitions in Ch.1 use a single running example that builds
 progressively:
 1. $\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$ (rigid monoidal)
-2. $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
-   \omega)$ (quantum universe)
-3. Same triple with the three observability axioms verified (QOU)
+2. $(\mathbf{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
+   \tau)$ (quantum universe)
+3. Same triple with the four observability axioms verified (QOU)
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
 
@@ -425,6 +425,8 @@ and hom-set.
 - [ ] Knot types are defined combinatorially when possible
 - [ ] `slice_lhs` / `slice_rhs` used for manual composition navigation
 - [ ] LaTeX definitions include tikzcd diagrams (Herrlich–Strecker style)
+- [ ] Categories use bold notation ($\mathbf{C}$, $\mathbf{Rep}$), not calligraphic $\mathcal{C}$
+- [ ] Fibre functor is $\tau$ (not $\omega$ or $U$); minimise its appearance
 - [ ] No $q$ appears before the substrate parameter section
 - [ ] Running examples chain via "Continuing Example" cross-references
 - [ ] New Mathlib-equivalent terms have glossary entries in Ch 8

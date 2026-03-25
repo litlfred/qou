@@ -1089,11 +1089,12 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // GET /api/branches → { current, branches[] }
   if (path === "/api/branches") {
     fetchOrigin(); // silently update remote refs
-    const branches = listBranches();
-    log('git', `branches: ${branches.length} total, HEAD=${currentBranch()}`);
+    const { branches, recentCount } = listBranches();
+    log('git', `branches: ${branches.length} total, ${recentCount} recent, HEAD=${currentBranch()}`);
     return Response.json({
       current: currentBranch(),
       branches,
+      recentCount,
     }, { headers: { "Cache-Control": "no-cache", "Access-Control-Allow-Origin": "*" } });
   }
   // GET /api/branch → { branch } (lightweight, for polling)

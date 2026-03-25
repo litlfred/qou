@@ -15,7 +15,7 @@ $$
   \mathrm{ev}_n \circ \mathrm{coev}_n.
 $$
 
-Jet prolongation is a functor on $\mathcal{C}$ that preserves the
+Jet prolongation is a functor on $\mathbf{C}$ that preserves the
 Frobenius--Hopf structure
 ([jet prolongation](#prop:jet-prolongation)): the prolonged object
 $A_{n+1}$ inherits its rigidity data from $A_n$.  Specifically, the

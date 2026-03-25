@@ -32,6 +32,8 @@ export default chapter({
         "symmetric-quotient-colour",
         "braid-base-field",
         "braid-lifting-compatibility",
+        "jones-markov-trace",
+        "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",
         "feynman-eigenbasis",
