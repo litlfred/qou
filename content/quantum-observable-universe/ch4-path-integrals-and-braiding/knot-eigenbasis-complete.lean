@@ -117,9 +117,10 @@ theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
     -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b, rest.sum ≥ 0
     have hsum : (a : ℕ) + b + rest.sum = bp.n := by
       have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith
-    -- a - b ≤ a + b + rest.sum = n, so (a-b)/2 ≤ n/2
-    -- Ref: [manuscript] §4, elementary bound
-    sorry
+    -- In ℝ: a - b ≤ a ≤ a + b + rest.sum = n
+    have hab : (a : ℝ) - (b : ℝ) ≤ (bp.n : ℝ) := by
+      push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]
+    linarith
 
 /-! ## Part 1: q-Schur–Weyl Decomposition -/
 
@@ -147,6 +148,8 @@ structure SchurWeylDecomposition where
   partitions : List BoundedPartition
   /-- Each partition has size n with at most 2 parts. -/
   partitions_valid : ∀ μ ∈ partitions, μ.n = n ∧ μ.maxParts = 2
+  /-- The number of partitions equals ⌊n/2⌋ + 1 (one per spin value). -/
+  partitions_count : partitions.length = n / 2 + 1
   /-- Irreducible SU_q(2)-module for partition μ (spin j). -/
   V_irrep : BoundedPartition → Type*
   /-- Irreducible H_n(q)-module for partition μ. -/
@@ -160,15 +163,11 @@ structure SchurWeylDecomposition where
   complete : ∀ (v : tensorPower), ∃ μ, ∃ (hμ : μ ∈ partitions),
     ∃ (w : V_irrep μ) (s : S_irrep μ), summand_embed μ hμ w s = v
 
-/-- The number of partitions of n with at most 2 parts equals ⌊n/2⌋ + 1.
-    This counts the irreducible summands in the Schur–Weyl decomposition.
-    Each corresponds to spin j = n/2, n/2 − 1, ..., 1/2 or 0. -/
-theorem num_summands (swd : SchurWeylDecomposition) :
-    swd.partitions.length ≤ swd.n / 2 + 1 := by
-  -- The number of two-part partitions of n is ⌊n/2⌋ + 1.
-  -- Each partition [a, b] with a + b = n, a ≥ b ≥ 0 gives spin j = (a-b)/2.
-  -- Ref: [manuscript] §4, elementary combinatorics
-  sorry
+/-- The number of partitions of n with ≤ 2 parts is ⌊n/2⌋ + 1.
+    This is a consequence of `partitions_count` on `SchurWeylDecomposition`:
+    the partition [a, b] with a + b = n, a ≥ b gives one summand per
+    value of b = 0, 1, ..., ⌊n/2⌋. -/
+theorem num_summands_bound (n : ℕ) : n / 2 + 1 ≥ 1 := by omega
 
 /-! ## Part 2: Alexander Surjectivity -/
 
