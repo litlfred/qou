@@ -78,15 +78,14 @@
     out = out.replace(/\*(.+?)\*/g, "<em>$1</em>");
     // Links — href is already escaped, add rel for safety
     out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-    // Unordered lists
-    out = out.replace(/^[-*] (.+)$/gm, '<li>$1</li>');
-    out = out.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
-    // Numbered lists — wrap in <ol> (must run after <ul> wrapping)
-    out = out.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
-    out = out.replace(/(<li>(?:(?!<\/?[uo]l>)[\s\S])*<\/li>\n?)+/g, (m) => {
-      // Only wrap if not already inside a <ul>
-      return m.includes('<ul>') ? m : `<ol>${m}</ol>`;
-    });
+    // Unordered lists — mark with data attribute to avoid ambiguity
+    out = out.replace(/^[-*] (.+)$/gm, '<li data-list-type="ul">$1</li>');
+    out = out.replace(/(?:<li data-list-type="ul">.*?<\/li>\s*)+/g, (m) => `<ul>${m}</ul>`);
+    // Numbered lists — same marker approach
+    out = out.replace(/^\d+\. (.+)$/gm, '<li data-list-type="ol">$1</li>');
+    out = out.replace(/(?:<li data-list-type="ol">.*?<\/li>\s*)+/g, (m) => `<ol>${m}</ol>`);
+    // Clean up temporary markers
+    out = out.replace(/ data-list-type="(?:ul|ol)"/g, '');
     // Headers (in chat, keep them subtle)
     out = out.replace(/^### (.+)$/gm, '<div class="chat-h3">$1</div>');
     out = out.replace(/^## (.+)$/gm, '<div class="chat-h2">$1</div>');
@@ -514,14 +513,23 @@
 
     panel.classList.add("resizing");
 
+    let lastX = e.clientX, lastY = e.clientY, ticking = false;
     function onMove(ev) {
-      if (dir === "left" || dir === "corner") {
-        const w = Math.max(MIN_W, Math.min(maxW, startW - (ev.clientX - startX)));
-        panel.style.width = w + "px";
-      }
-      if (dir === "top" || dir === "corner") {
-        const h = Math.max(MIN_H, Math.min(maxH, startH - (ev.clientY - startY)));
-        panel.style.height = h + "px";
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          if (dir === "left" || dir === "corner") {
+            const w = Math.max(MIN_W, Math.min(maxW, startW - (lastX - startX)));
+            panel.style.width = w + "px";
+          }
+          if (dir === "top" || dir === "corner") {
+            const newH = Math.max(MIN_H, Math.min(maxH, startH - (lastY - startY)));
+            panel.style.height = newH + "px";
+          }
+          ticking = false;
+        });
       }
     }
 
