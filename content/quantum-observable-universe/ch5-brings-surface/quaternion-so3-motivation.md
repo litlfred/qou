@@ -24,9 +24,12 @@ The key identifications are:
 2. **$\operatorname{Im}\mathbb{H} \cong \mathfrak{su}(2)$ as Lie algebras.**
    The purely imaginary quaternions form a $3$-dimensional real Lie algebra under
    the commutator bracket
-   $[p, q] = pq - qp$.  The structure constants are
-   $[\mathbf{i}, \mathbf{j}] = 2\mathbf{k}$ (and cyclic permutations), matching
-   $[e_a, e_b] = \epsilon_{abc}\,e_c$ up to normalisation.
+   $[p, q] = pq - qp$.  In the half-quaternion basis
+   $e_1 = \frac{1}{2}\mathbf{i}$, $e_2 = \frac{1}{2}\mathbf{j}$,
+   $e_3 = \frac{1}{2}\mathbf{k}$, the structure constants are exactly
+   $[e_a, e_b] = \epsilon_{abc}\,e_c$
+   (e.g.\ $[\tfrac{1}{2}\mathbf{i},\, \tfrac{1}{2}\mathbf{j}]
+   = \tfrac{1}{4}(\mathbf{ij} - \mathbf{ji}) = \tfrac{1}{2}\mathbf{k} = e_3$).
 
 3. **Adjoint action $=$ double cover $\mathrm{SU}(2) \to \mathrm{SO}(3)$.**
    Conjugation by a unit quaternion $\mathbf{q}$ acts on
