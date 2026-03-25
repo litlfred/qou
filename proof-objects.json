@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T18:35:54.020068+00:00",
+    "generated_at": "2026-03-25T18:54:38.797453+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -3048,11 +3048,71 @@
       ]
     },
     {
+      "label": "def:double-slit-q-phase",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 308,
+        "chapter": 7
+      },
+      "title": "{$q$-deformed path phase}",
+      "lean": {
+        "decl": "QOU.Experimental.double_slit_q_phase"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-q-ext-deriv",
+        "def:substrate-parameter",
+        "def:quantum-planck-constant",
+        "def:categorical-reeb-derivation"
+      ]
+    },
+    {
+      "label": "prop:double-slit-massive-pattern",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 362,
+        "chapter": 7
+      },
+      "title": "{Massive-particle interference pattern}",
+      "lean": {
+        "decl": "QOU.Experimental.double_slit_massive_pattern"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:double-slit-q-phase",
+        "def:q-harmonic-form",
+        "def:q-laplacian-expansion",
+        "def:q-hodge-star"
+      ]
+    },
+    {
+      "label": "prop:double-slit-photon-pattern",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 445,
+        "chapter": 7
+      },
+      "title": "{Photon interference pattern via Julia-set envelope}",
+      "lean": {
+        "decl": "QOU.Experimental.double_slit_photon_pattern"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:double-slit-q-phase",
+        "def:exceptional-divisor",
+        "def:chiral-sector-coords",
+        "rem:julia-s1-photon-scatter"
+      ]
+    },
+    {
       "label": "conj:topological-mass-formula",
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 280,
+        "line": 522,
         "chapter": 7
       },
       "title": "{Topological mass formula (Archimedean)}",
@@ -3073,7 +3133,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 712,
+        "line": 954,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -4903,6 +4963,66 @@
     {
       "from": "thm:descartes",
       "to": "prop:genus-maximal-descent",
+      "relation": "uses"
+    },
+    {
+      "from": "def:double-slit-q-phase",
+      "to": "def:categorical-q-ext-deriv",
+      "relation": "uses"
+    },
+    {
+      "from": "def:double-slit-q-phase",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "def:double-slit-q-phase",
+      "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "def:double-slit-q-phase",
+      "to": "def:categorical-reeb-derivation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-massive-pattern",
+      "to": "def:double-slit-q-phase",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-massive-pattern",
+      "to": "def:q-harmonic-form",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-massive-pattern",
+      "to": "def:q-laplacian-expansion",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-massive-pattern",
+      "to": "def:q-hodge-star",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-photon-pattern",
+      "to": "def:double-slit-q-phase",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-photon-pattern",
+      "to": "def:exceptional-divisor",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-photon-pattern",
+      "to": "def:chiral-sector-coords",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:double-slit-photon-pattern",
+      "to": "rem:julia-s1-photon-scatter",
       "relation": "uses"
     },
     {
