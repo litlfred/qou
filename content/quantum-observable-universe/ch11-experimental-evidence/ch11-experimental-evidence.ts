@@ -61,6 +61,7 @@ export default chapter({
       blocks: [
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
+        "descartes-knot-eigenbasis",
         "skein-archimedean-shadow",
       ],
     }),
