@@ -194,9 +194,10 @@ digraph ProofDependencies {
     thm_descartes [label="Thm\ndescartes" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:descartes" tooltip="{Descartes theorem}" target="_blank"];
     def_double_slit_q_phase [label="Def\ndouble-slit-q-phase" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:double-slit-q-phase" tooltip="{$q$-deformed path phase}" target="_blank"];
     prop_double_slit_massive_pattern [label="Prop\ndouble-slit-massi..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:double-slit-massive-pattern" tooltip="{Massive-particle interference pattern}" target="_blank"];
-    conj_topological_mass_formula [label="Conj\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#conj:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
+    prop_topological_mass_formula [label="Prop\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
+    prop_terminal_resolution [label="Prop\nterminal-resolution" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:terminal-resolution" tooltip="{Terminal Resolution of Hadronic Mass}" target="_blank"];
     prop_local_substrate_q [label="Prop\nlocal-substrate-q" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:local-substrate-q" tooltip="{Local Value of the Substrate Parameter}" target="_blank"];
-    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; thm_descartes; def_double_slit_q_phase; prop_double_slit_massive_pattern; conj_topological_mass_formula; prop_local_substrate_q; }
+    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; thm_descartes; def_double_slit_q_phase; prop_double_slit_massive_pattern; prop_topological_mass_formula; prop_terminal_resolution; prop_local_substrate_q; }
   }
 
   def_snake_identity -> def_rigid_monoidal_category [color="#555555" style="solid"];
@@ -522,9 +523,16 @@ digraph ProofDependencies {
   def_double_slit_q_phase -> prop_double_slit_massive_pattern [color="#555555" style="solid"];
   def_q_harmonic_form -> prop_double_slit_massive_pattern [color="#555555" style="solid"];
   def_q_hodge_star -> prop_double_slit_massive_pattern [color="#555555" style="solid"];
-  def_mass_identity -> conj_topological_mass_formula [color="#555555" style="solid"];
-  thm_topological_mass -> conj_topological_mass_formula [color="#555555" style="solid"];
-  def_substrate_parameter -> conj_topological_mass_formula [color="#555555" style="solid"];
-  def_quantum_planck_constant -> conj_topological_mass_formula [color="#555555" style="solid"];
+  def_mass_identity -> prop_topological_mass_formula [color="#555555" style="solid"];
+  thm_topological_mass -> prop_topological_mass_formula [color="#555555" style="solid"];
+  def_substrate_parameter -> prop_topological_mass_formula [color="#555555" style="solid"];
+  def_quantum_planck_constant -> prop_topological_mass_formula [color="#555555" style="solid"];
+  prop_descent_eigenspaces -> prop_topological_mass_formula [color="#555555" style="solid"];
+  def_descent_involution -> prop_topological_mass_formula [color="#555555" style="solid"];
+  def_mass_identity -> prop_terminal_resolution [color="#555555" style="solid"];
+  thm_topological_mass -> prop_terminal_resolution [color="#555555" style="solid"];
+  cor_mass_identity_C -> prop_terminal_resolution [color="#555555" style="solid"];
+  prop_topological_mass_formula -> prop_terminal_resolution [color="#555555" style="solid"];
   def_substrate_parameter -> prop_local_substrate_q [color="#555555" style="solid"];
+  prop_terminal_resolution -> prop_local_substrate_q [color="#555555" style="solid"];
 }

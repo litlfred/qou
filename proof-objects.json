@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T20:05:32.710427+00:00",
+    "generated_at": "2026-03-25T20:09:08.767015+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -3088,8 +3088,8 @@
       ]
     },
     {
-      "label": "conj:topological-mass-formula",
-      "object_type": "conjecture",
+      "label": "prop:topological-mass-formula",
+      "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
         "line": 448,
@@ -3105,7 +3105,31 @@
         "def:mass-identity",
         "thm:topological-mass",
         "def:substrate-parameter",
-        "def:quantum-planck-constant"
+        "def:quantum-planck-constant",
+        "prop:descent-eigenspaces",
+        "def:descent-involution"
+      ]
+    },
+    {
+      "label": "prop:terminal-resolution",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 592,
+        "chapter": 7
+      },
+      "title": "{Terminal Resolution of Hadronic Mass}",
+      "lean": {
+        "decl": "QOU.Experimental.terminal_resolution"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "rem:skein-mass-relation",
+        "ex:c-quantum-observable-universe",
+        "def:mass-identity",
+        "thm:topological-mass",
+        "cor:mass-identity-C",
+        "prop:topological-mass-formula"
       ]
     },
     {
@@ -3113,7 +3137,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 880,
+        "line": 899,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -3124,7 +3148,7 @@
       "uses": [
         "def:substrate-parameter",
         "rem:skein-mass-relation",
-        "rem:terminal-resolution",
+        "prop:terminal-resolution",
         "rem:photonic-hall"
       ]
     }
@@ -4986,28 +5010,68 @@
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "ex:c-quantum-observable-universe",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:mass-identity",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "thm:topological-mass",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
-      "from": "conj:topological-mass-formula",
+      "from": "prop:topological-mass-formula",
       "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:topological-mass-formula",
+      "to": "prop:descent-eigenspaces",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:topological-mass-formula",
+      "to": "def:descent-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "rem:skein-mass-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "ex:c-quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "def:mass-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "thm:topological-mass",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "cor:mass-identity-C",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:terminal-resolution",
+      "to": "prop:topological-mass-formula",
       "relation": "uses"
     },
     {
@@ -5022,7 +5086,7 @@
     },
     {
       "from": "prop:local-substrate-q",
-      "to": "rem:terminal-resolution",
+      "to": "prop:terminal-resolution",
       "relation": "uses"
     },
     {
