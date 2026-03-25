@@ -4,34 +4,16 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T12:20:01.103922+00:00",
+    "generated_at": "2026-03-25T12:35:22.290818+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
-    {
-      "label": "def:rigid-monoidal-category",
-      "object_type": "definition",
-      "latex": {
-        "file": "chapters/quantum-observable-universe.tex",
-        "line": 26,
-        "chapter": 2
-      },
-      "title": "{Rigid monoidal category}",
-      "lean": {
-        "decl": "QOU.RigidMonoidalCategory",
-        "file": "QOU/QuantumObservableUniverse.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated"
-    },
     {
       "label": "def:snake-identity",
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 109,
+        "line": 26,
         "chapter": 2
       },
       "title": "{Snake identity}",
@@ -42,9 +24,27 @@
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
         "last_edited_commit": "unknown"
       },
+      "formalization_status": "stated"
+    },
+    {
+      "label": "def:rigid-monoidal-category",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 85,
+        "chapter": 2
+      },
+      "title": "{Rigid monoidal category}",
+      "lean": {
+        "decl": "QOU.RigidMonoidalCategory",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
       "formalization_status": "stated",
       "uses": [
-        "def:rigid-monoidal-category"
+        "def:snake-identity"
       ]
     },
     {
@@ -1158,7 +1158,7 @@
         "line": 2046,
         "chapter": 2
       },
-      "title": "{$q$-harmonic form (particle)}",
+      "title": "{Particle ($q$-harmonic form)}",
       "lean": {
         "decl": "QOU.QHarmonicForm",
         "file": "QOU/QuantumObservableUniverse.lean",
@@ -2953,78 +2953,11 @@
       ]
     },
     {
-      "label": "prop:skein-mass-relation",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/experimental-evidence.tex",
-        "line": 323,
-        "chapter": 7
-      },
-      "title": "{$q$-Deformed Skein Relation (Observation)}",
-      "lean": {
-        "decl": "QOU.Experimental.skein_mass_relation"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "conj:topological-mass-formula",
-        "rem:skein-decomposition",
-        "def:substrate-parameter",
-        "def:quantum-planck-constant",
-        "ex:c-quantum-observable-universe",
-        "thm:weight-decomposition-exists",
-        "thm:categorical-reeb-exists",
-        "thm:substrate-parameter-exists"
-      ]
-    },
-    {
-      "label": "prop:terminal-resolution",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/experimental-evidence.tex",
-        "line": 393,
-        "chapter": 7
-      },
-      "title": "{Terminal Resolution of Hadronic Mass (Observation)}",
-      "lean": {
-        "decl": "QOU.Experimental.terminal_resolution"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "prop:skein-mass-relation",
-        "ex:c-quantum-observable-universe",
-        "def:mass-identity",
-        "thm:topological-mass",
-        "cor:mass-identity-C",
-        "conj:topological-mass-formula"
-      ]
-    },
-    {
-      "label": "ex:terminal-resolution-cz",
-      "object_type": "example",
-      "latex": {
-        "file": "chapters/experimental-evidence.tex",
-        "line": 512,
-        "chapter": 7
-      },
-      "title": "{Terminal resolution in $\\mathbb{C}[z",
-      "lean": {
-        "decl": "QOU.Examples.czTerminalResolution"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "prop:terminal-resolution",
-        "ex:c-quantum-observable-universe",
-        "conj:topological-mass-formula",
-        "def:substrate-parameter",
-        "def:quantum-planck-constant"
-      ]
-    },
-    {
       "label": "prop:local-substrate-q",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 748,
+        "line": 667,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -3034,16 +2967,16 @@
       "formalization_status": "stated",
       "uses": [
         "def:substrate-parameter",
-        "prop:skein-mass-relation",
-        "prop:terminal-resolution",
+        "rem:skein-mass-relation",
+        "rem:terminal-resolution",
         "rem:photonic-hall"
       ]
     }
   ],
   "dependencies": [
     {
-      "from": "def:snake-identity",
-      "to": "def:rigid-monoidal-category",
+      "from": "def:rigid-monoidal-category",
+      "to": "def:snake-identity",
       "relation": "uses"
     },
     {
@@ -4782,113 +4715,18 @@
       "relation": "uses"
     },
     {
-      "from": "prop:skein-mass-relation",
-      "to": "conj:topological-mass-formula",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "rem:skein-decomposition",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "def:substrate-parameter",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "def:quantum-planck-constant",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "ex:c-quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "thm:weight-decomposition-exists",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "thm:categorical-reeb-exists",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:skein-mass-relation",
-      "to": "thm:substrate-parameter-exists",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "prop:skein-mass-relation",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "ex:c-quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "def:mass-identity",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "thm:topological-mass",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "cor:mass-identity-C",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:terminal-resolution",
-      "to": "conj:topological-mass-formula",
-      "relation": "uses"
-    },
-    {
-      "from": "ex:terminal-resolution-cz",
-      "to": "prop:terminal-resolution",
-      "relation": "uses"
-    },
-    {
-      "from": "ex:terminal-resolution-cz",
-      "to": "ex:c-quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "ex:terminal-resolution-cz",
-      "to": "conj:topological-mass-formula",
-      "relation": "uses"
-    },
-    {
-      "from": "ex:terminal-resolution-cz",
-      "to": "def:substrate-parameter",
-      "relation": "uses"
-    },
-    {
-      "from": "ex:terminal-resolution-cz",
-      "to": "def:quantum-planck-constant",
-      "relation": "uses"
-    },
-    {
       "from": "prop:local-substrate-q",
       "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
       "from": "prop:local-substrate-q",
-      "to": "prop:skein-mass-relation",
+      "to": "rem:skein-mass-relation",
       "relation": "uses"
     },
     {
       "from": "prop:local-substrate-q",
-      "to": "prop:terminal-resolution",
+      "to": "rem:terminal-resolution",
       "relation": "uses"
     },
     {
