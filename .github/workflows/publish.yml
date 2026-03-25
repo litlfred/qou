@@ -399,6 +399,11 @@ jobs:
             cp brings_surface.html "${PAPER_OUTDIR}/visualizer.html"
           fi
 
+          # Copy additional standalone simulators
+          if [ -f q_double_slit.html ]; then
+            cp q_double_slit.html "${PAPER_OUTDIR}/q-double-slit.html"
+          fi
+
           # ── Extract proof objects early (needed by HTML generator) ──────────
           python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
 

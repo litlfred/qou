@@ -157,5 +157,13 @@ export default chapter({
         "crystal-resonance-experiments",
       ],
     }),
+
+    section({
+      title: "Macroscopic scattering",
+      label: "sec:macroscopic-scattering",
+      blocks: [
+        "q-deformed-double-slit",
+      ],
+    }),
   ],
 });
