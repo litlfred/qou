@@ -715,6 +715,18 @@
     .chat-send{background:var(--ac);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
     .chat-send:disabled{opacity:.4;cursor:default}
 
+    /* Simulator overlay */
+    .sim-overlay{position:fixed;top:35px;left:0;right:0;bottom:0;z-index:350;background:var(--bg);display:none;flex-direction:column}
+    .sim-overlay.open{display:flex}
+    .sim-head{display:flex;align-items:center;gap:.6rem;padding:.4rem 1rem;background:var(--bg-s);border-bottom:1px solid var(--brd);flex-shrink:0}
+    .sim-title{font-family:var(--f-head);font-size:.85rem;font-weight:600;color:var(--fg-b)}
+    .sim-view-select{font-family:var(--f-mono);font-size:.65rem;background:var(--bg);color:var(--fg);border:1px solid var(--brd);border-radius:3px;padding:.15rem .3rem}
+    .sim-close{background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.7rem;padding:.2rem .6rem;border-radius:4px;cursor:pointer}
+    .sim-close:hover{color:var(--fg-b);border-color:var(--ac)}
+    .sim-frame{flex:1;border:none;width:100%;height:100%}
+    .bh-acts .sim-btn{font-family:var(--f-mono);font-size:.55rem;color:var(--ac2,#7c5cbf);background:none;border:none;border-radius:0;padding:0;cursor:pointer;white-space:nowrap}
+    .bh-acts .sim-btn:hover{color:var(--ac)}
+
     /* Diff button + overlay */
     #c-diff{display:none}
     #c-diff.visible{display:inline-block}
@@ -1015,6 +1027,17 @@
       <button class="diff-close" id="diff-close">&times;</button>
     </div>
     <div class="diff-body" id="diff-body"></div>
+  </div>
+
+  <!-- Simulator overlay -->
+  <div class="sim-overlay" id="sim-overlay">
+    <div class="sim-head">
+      <span class="sim-title" id="sim-title">Simulator</span>
+      <select class="sim-view-select" id="sim-view-select" title="Select parameter view"></select>
+      <span style="flex:1"></span>
+      <button class="sim-close" id="sim-close">&times; close</button>
+    </div>
+    <iframe class="sim-frame" id="sim-frame" sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
   <!-- Claude assistant chat -->
@@ -2471,6 +2494,7 @@
         const exHdr = mkBlockHeader('example', block.title, block.label);
         // Collapse into header actions
         if (block.label) { const exBolt = mkDepBolt(block.label); exHdr._acts.appendChild(exBolt); }
+        if (block.simulator && block.simulator.ref) { exHdr._acts.appendChild(mkSimBtn(block.simulator)); }
         const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
         exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         exHdr._acts.appendChild(exColBtn);
@@ -2514,6 +2538,7 @@
         if (block.label) d.id = block.label;
         const rmHdr = mkBlockHeader('remark', block.title, block.label);
         if (block.label) { const rmBolt = mkDepBolt(block.label); rmHdr._acts.appendChild(rmBolt); }
+        if (block.simulator && block.simulator.ref) { rmHdr._acts.appendChild(mkSimBtn(block.simulator)); }
         const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
         rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         rmHdr._acts.appendChild(rmColBtn);
@@ -2642,6 +2667,39 @@
         if (block.rendered?.length) d.innerHTML = renderAsset(block.rendered[0]);
         else d.innerHTML = `<div class="txb ph">${esc(block.tex||block.md||'')}</div>`;
         return d;
+      }
+
+      // Simulator block — renders as a remark-like card with prominent simulate button
+      if (block.kind === 'simulator') {
+        const frag = document.createDocumentFragment();
+        const wrap = mk('div', 'blk blk-remark');
+        const d = mk('div', 'env remark simulator');
+        if (block.label) d.id = block.label;
+        const simHdr = mkBlockHeader('simulator', block.title, block.label);
+        if (block.label) { simHdr._acts.appendChild(mkDepBolt(block.label)); }
+        // Primary simulate button
+        const simRef = { ref: block.label, view: undefined };
+        simHdr._acts.appendChild(mkSimBtn(simRef));
+        const simFb = mk('button','fb-act'); simFb.textContent = 'feedback';
+        simFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        simHdr._acts.appendChild(simFb);
+        d.appendChild(simHdr);
+
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, simHdr, block);
+
+        lazyInit(d, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
+        });
+
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+        return frag;
       }
 
       // Environment block (definition, theorem, proposition, lemma, corollary, conjecture)
@@ -2779,6 +2837,12 @@
         hdr._acts.insertBefore(bolt, hdr._acts.firstChild);
       }
 
+      // Simulate button — shown on blocks with a simulator ref
+      if (block.simulator && block.simulator.ref) {
+        const simBtn = mkSimBtn(block.simulator);
+        hdr._acts.appendChild(simBtn);
+      }
+
       // Feedback button in header actions
       const fbBtn = mk('button','fb-act');
       fbBtn.textContent = 'feedback';
@@ -2788,6 +2852,11 @@
       if (block.label) {
         const lbl2 = mk('a','bl'); lbl2.href = `#/edit/${block.label}`; lbl2.textContent = block.label;
         hdr._drop.appendChild(lbl2);
+      }
+      // Simulate button in hamburger menu too
+      if (block.simulator && block.simulator.ref) {
+        const simBtn2 = mkSimBtn(block.simulator);
+        hdr._drop.appendChild(simBtn2);
       }
       const fb2 = mk('button','fb-act'); fb2.textContent = 'feedback';
       fb2.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
@@ -3793,6 +3862,114 @@
     }
     function getDraft(target) {
       return loadDrafts()[target] || null;
+    }
+
+    // ── Simulator overlay ─────────────────────────────────
+    const simOverlay = document.getElementById('sim-overlay');
+    const simFrame = document.getElementById('sim-frame');
+    const simTitle = document.getElementById('sim-title');
+    const simViewSelect = document.getElementById('sim-view-select');
+    let simCurrentBlock = null;
+
+    document.getElementById('sim-close').onclick = () => {
+      simOverlay.classList.remove('open');
+      simFrame.src = 'about:blank';
+      simCurrentBlock = null;
+    };
+
+    /**
+     * Build URL with view params as query string.
+     * Simulator HTML files read these via URLSearchParams.
+     */
+    function simUrl(htmlPath, params) {
+      const qs = new URLSearchParams();
+      for (const [k, v] of Object.entries(params || {})) qs.set(k, String(v));
+      const q = qs.toString();
+      return q ? `/${htmlPath}?${q}` : `/${htmlPath}`;
+    }
+
+    /**
+     * Open the simulator overlay for a given simulator block.
+     * @param {object} simBlock - The simulator content object
+     * @param {string} [viewName] - Named view to activate (default: "default")
+     */
+    function openSimulator(simBlock, viewName) {
+      simCurrentBlock = simBlock;
+      simTitle.textContent = simBlock.title || 'Simulator';
+
+      // Populate view selector
+      simViewSelect.innerHTML = '';
+      const defaultOpt = document.createElement('option');
+      defaultOpt.value = simBlock.defaultView.name;
+      defaultOpt.textContent = simBlock.defaultView.title || simBlock.defaultView.name;
+      simViewSelect.appendChild(defaultOpt);
+      for (const v of (simBlock.views || [])) {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = v.title || v.name;
+        simViewSelect.appendChild(opt);
+      }
+
+      // Select the requested view
+      const targetView = viewName || 'default';
+      simViewSelect.value = targetView;
+
+      // Load the simulator
+      const view = targetView === simBlock.defaultView.name
+        ? simBlock.defaultView
+        : (simBlock.views || []).find(v => v.name === targetView) || simBlock.defaultView;
+      simFrame.src = simUrl(simBlock.html, view.params);
+      simOverlay.classList.add('open');
+    }
+
+    // View selector change handler
+    simViewSelect.onchange = () => {
+      if (!simCurrentBlock) return;
+      const viewName = simViewSelect.value;
+      const view = viewName === simCurrentBlock.defaultView.name
+        ? simCurrentBlock.defaultView
+        : (simCurrentBlock.views || []).find(v => v.name === viewName) || simCurrentBlock.defaultView;
+      simFrame.src = simUrl(simCurrentBlock.html, view.params);
+    };
+
+    /**
+     * Create a [simulate] button for a block's header actions.
+     * Resolves the simulator ref from the paper's block data.
+     */
+    function mkSimBtn(simRef) {
+      const btn = mk('button', 'sim-btn');
+      btn.textContent = 'simulate';
+      btn.title = 'Open interactive simulation';
+      btn.onclick = async (e) => {
+        e.stopPropagation();
+        // Look up in the block index first (already loaded blocks)
+        let simBlock = bix.get(simRef.ref);
+        if (simBlock) {
+          openSimulator(simBlock, simRef.view);
+          return;
+        }
+        // Try loading the simulator block from the API
+        try {
+          const r = await fetch(`/api/paper/block?id=${encodeURIComponent(paperId)}&label=${encodeURIComponent(simRef.ref)}${branchParam()}`);
+          if (r.ok) {
+            simBlock = await r.json();
+            if (simBlock) {
+              bix.set(simRef.ref, simBlock);
+              openSimulator(simBlock, simRef.view);
+              return;
+            }
+          }
+        } catch (_) {}
+        // Final fallback: scan paper chapters for blocks loaded in sections
+        for (const ch of (paper?.chapters || [])) {
+          for (const sec of (ch.sections || [])) {
+            for (const b of (sec.blocks || [])) {
+              if (b.label === simRef.ref) { openSimulator(b, simRef.view); return; }
+            }
+          }
+        }
+      };
+      return btn;
     }
 
     // ── Feedback panel ────────────────────────────────────
@@ -4970,6 +5147,20 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeDiff(slug);
+      } else if (action === 'simulate' && rest) {
+        // #/simulate/sim:q-double-slit or #/simulate/sim:q-double-slit/bach-2013
+        const parts = rest.split('/');
+        const label = parts[0];
+        const viewName = parts[1] || undefined;
+        // Load the paper first, then open the simulator
+        if (!paper) await loadFolio();
+        try {
+          const r = await fetch(`/api/paper/block?id=${encodeURIComponent(paperId)}&label=${encodeURIComponent(label)}${branchParam()}`);
+          if (r.ok) {
+            const simBlock = await r.json();
+            if (simBlock) openSimulator(simBlock, viewName);
+          }
+        } catch (_) {}
       } else {
         await loadFolio();
       }

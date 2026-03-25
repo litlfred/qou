@@ -26,6 +26,7 @@ import type {
   ExampleBlock,
   RemarkBlock,
   ProofBlock,
+  SimulatorBlock,
   ProseBlock,
   EquationBlock,
   DiagramBlock,
@@ -50,6 +51,7 @@ import {
   ExampleSchema,
   RemarkSchema,
   ProofSchema,
+  SimulatorSchema,
   ProseSchema,
   EquationSchema,
   DiagramSchema,
@@ -111,6 +113,10 @@ export function remark(data: Omit<RemarkBlock, "kind">): RemarkBlock {
 
 export function proof(data: Omit<ProofBlock, "kind">): ProofBlock {
   return validated(ProofSchema, { kind: "proof" as const, ...data });
+}
+
+export function simulator(data: Omit<SimulatorBlock, "kind">): SimulatorBlock {
+  return validated(SimulatorSchema, { kind: "simulator" as const, ...data });
 }
 
 export function prose(data?: Omit<ProseBlock, "kind">): ProseBlock {
