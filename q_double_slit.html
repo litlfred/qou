@@ -47,7 +47,7 @@ body.light canvas{background:rgba(255,255,255,0.3);}
 </head>
 <body>
 <div id="title">Q-Deformed Double Slit</div>
-<div id="subtitle">Overhead Diffraction Simulation</div>
+<div id="subtitle">Overhead Diffraction &middot; Mode 1: Massive Particle</div>
 <button id="pause-btn" onclick="togglePause()">Pause</button>
 <button id="clear-btn" onclick="clearParticles()">Clear</button>
 <button id="theme-btn" onclick="toggleTheme()">Light</button>
@@ -76,16 +76,19 @@ body.light canvas{background:rgba(255,255,255,0.3);}
   <div class="row"><span class="lbl">Rate</span><input type="range" id="sl_rate" min="1" max="50" step="1" value="10"><span class="val" id="v_rate">10/f</span></div>
   <div class="row"><span class="lbl">Speed</span><input type="range" id="sl_speed" min="1" max="12" step="0.5" value="4"><span class="val" id="v_speed">4</span></div>
 
-  <div class="sec" style="margin-top:12px;">propagation</div>
+  <div class="sec" style="margin-top:12px;">propagation (&#167;1.9)</div>
   <div style="font-size:9px;line-height:1.8;color:var(--dim);margin-top:4px;">
     <span style="color:var(--accent);">&#119967;<sub>&#8711;</sub>&#968; = 0</span> (categorical Dirac)<br>
     &#119967;<sub>&#8711;</sub> = q<sup>-1</sup>&#8711; + (1&#8722;q<sup>-1</sup>)&#953;<sub>&#958;</sub>&#8711;<br>
     <span style="color:var(--dim);font-size:8px;">&#8463;<sub>q</sub> = 1&#8722;q<sup>-1</sup> (wavefront spread)</span>
   </div>
-  <div class="sec">torsion at slit</div>
+  <div class="sec">q-phase (&#167;11)</div>
   <div style="font-size:9px;line-height:1.8;color:var(--dim);margin-top:4px;">
-    &#916;&#966; = &#916;&#966;<sub>cl</sub> + &#8463;<sub>q</sub> &#8747; &#960;<sub>V</sub> d<br>
+    &#934;<sub>q</sub> = q<sup>-1</sup>&#934;<sub>geom</sub> + (1&#8722;q<sup>-1</sup>)&#934;<sub>Reeb</sub><br>
     &#964;(y) = &#8463;<sub>q</sub> Vol(K) &#951;&#178; kw
+  </div>
+  <div class="sec" style="margin-top:6px;">
+    <a href="double_slit_simulator.html" style="color:var(--accent);font-size:8px;text-decoration:none;letter-spacing:.12em;">&#9654; ANALYTICAL VIEW</a>
   </div>
 </div>
 
