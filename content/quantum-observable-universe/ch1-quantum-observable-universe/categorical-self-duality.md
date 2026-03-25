@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with volume form $\mathrm{vol} \in \Omega^n(A)$
 ([$q$-Hodge star](#def:q-hodge-star)).  Every connection $\nabla$
 that is a critical point of the categorical Yang--Mills functional

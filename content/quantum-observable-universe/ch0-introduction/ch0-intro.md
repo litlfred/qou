@@ -24,15 +24,15 @@ and categorical—to extending local data to global structures.
 in the QOU framework, and provides both a fluid-dynamical and an
 information-theoretic perspective on the resulting invariants.
 
-**[Chapter 4](#chap:brings-surface)** develops Bring's surface as a
+**[Chapter 4](#chap:universality)** examines quantum observable universes
+over different ground fields: the Archimedean (complex), non-Archimedean
+($\pp$-adic), and finite-field cases.
+
+**[Chapter 5](#chap:brings-surface)** develops Bring's surface as a
 complete worked example of a quantum observable universe, providing
 explicit coordinate systems for spacetime and colour-time.  We construct
 Lagrange resolvents, colour-tube coordinates, chiral fibrations,
 quaternionic spectral resolvents, and the Seiberg–Witten resolution.
-
-**[Chapter 5](#chap:universality)** examines quantum observable universes
-over different ground fields: the Archimedean (complex), non-Archimedean
-($\pp$-adic), and finite-field cases.
 
 **[Chapter 6](#chap:descartes-universe)** opens with the Descartes
 condition and theorem, then presents the topological mass ansatz and

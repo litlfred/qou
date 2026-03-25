@@ -187,8 +187,9 @@ surviving past the work that should have resolved them.
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation (R not k, K not ℂ), labeling conventions,
-   cross-references, glossary terms.
+4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
+   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
+   §11.3), labeling conventions, cross-references, glossary terms.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
@@ -339,9 +340,29 @@ See `todo-review` skill for full details. Agents may create and
 
 ## Proof workflow (narrative and Lean)
 
-When the user wants to work on **missing proofs**:
+**CRITICAL**: Every theorem, lemma, proposition, and corollary **must**
+have a standalone proof block (`*-proof.ts` + `*-proof.md`). Without it,
+the proof will not appear in print preview or PDF output. The viewer's
+print mode includes proofs only via the parent's `proofs: ["prf:..."]`
+field.
 
-### Narrative proofs (`.md` blocks)
+### Proof block requirements
+
+For every provable block (theorem/lemma/proposition/corollary):
+
+1. **Separate statement from proof**: The theorem `.md` file contains
+   only the statement. All proof content lives in `*-proof.md`.
+2. **Three files per proof**: `*-proof.ts` (manifest with `proof()`
+   builder), `*-proof.md` (narrative), optional `*-proof.lean` (formal).
+3. **Link via `proofs:`**: The parent `.ts` must have
+   `proofs: ["prf:<label>"]`.
+4. **List in chapter manifest**: The proof block name must appear in the
+   chapter's `blocks[]` array, immediately after its parent theorem.
+5. **No TeX in `.lean` files**: Narrative proof content belongs
+   exclusively in `.md` files. `.lean` files contain only code, brief
+   docstrings, and `-- Ref:` citations.
+
+### Creating a narrative proof (`.md` block)
 
 1. Check if a `proof` block already exists for the target theorem/lemma.
 2. If not, ask the user (structured choice):
@@ -350,6 +371,7 @@ When the user wants to work on **missing proofs**:
      `uses[]` dependencies, drafts a proof, presents for review.
 3. Create the `proof` block (`.ts` + `.md` pair) and link via `proofs[]`
    on the parent theorem.
+4. Add proof block to chapter manifest `blocks[]` after the parent.
 
 ### Lean proofs (`.lean` files)
 

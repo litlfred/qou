@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$ denote the substrate parameter.  Let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)).  The
@@ -8,7 +8,7 @@ $$
   \mathcal{A}_\infty
   \;=\;
   \varinjlim_{n}\,
-  \mathrm{End}_{\mathcal{C}}(A_n),
+  \mathrm{End}_{\mathbf{C}}(A_n),
 $$
 taken over the tower of endomorphism algebras with the transition maps
 induced by the canonical embeddings $A_n \hookrightarrow A_{n+1}$.

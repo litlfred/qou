@@ -8,5 +8,6 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["def:quantum-observable-universe", "def:maximal-torus", "def:higher-forms", "def:weight-decomposition"],
+  proofs: ["prf:weight-decomposition-exists"],
   tags: ["existence", "weight", "decomposition"],
 });

@@ -13,7 +13,7 @@ isomorphic to $V_1$).
 
 **(1) Descent terminates.**
 The center of the endomorphism algebra is
-$Z(\mathrm{End}_{\mathcal{C}}(A)) \cong \mathcal{O}(\mathrm{SU}(2))^{\mathrm{SU}(2)}$,
+$Z(\mathrm{End}_{\mathbf{C}}(A)) \cong \mathcal{O}(\mathrm{SU}(2))^{\mathrm{SU}(2)}$,
 the $\mathrm{SU}(2)$-invariant functions, which form a ring of Krull
 dimension $\mathrm{rank}(\mathrm{SU}(2)) = 1$.  The geometric descent
 tower is

@@ -12,3 +12,10 @@ for hook in "$SCRIPT_DIR"/post-checkout "$SCRIPT_DIR"/pre-commit; do
     chmod +x "$HOOK_DIR/$name"
     echo "Installed $name"
 done
+
+# Git aliases that auto-commit feedback/ before branch operations
+FEEDBACK_SCRIPT="scripts/git-hooks/auto-commit-feedback.sh"
+git config alias.co  "!sh -c '$FEEDBACK_SCRIPT && git checkout \"\$@\"' --"
+git config alias.sw  "!sh -c '$FEEDBACK_SCRIPT && git switch \"\$@\"' --"
+git config alias.pl  "!sh -c '$FEEDBACK_SCRIPT && git pull \"\$@\"' --"
+echo "Installed git aliases: co (checkout), sw (switch), pl (pull)"

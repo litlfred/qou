@@ -13,5 +13,6 @@ export default theorem({
     "def:weight-decomposition",
     "def:substrate-parameter",
   ],
+  proofs: ["prf:substrate-parameter-exists"],
   tags: ["existence", "substrate", "deformation"],
 });

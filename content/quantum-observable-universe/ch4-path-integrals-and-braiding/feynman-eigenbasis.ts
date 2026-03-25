@@ -9,7 +9,7 @@ export default remark({
     "prop:knot-eigenbasis-complete",
     "rem:skein-decomposition",
     "def:mass-identity",
-    "prop:skein-mass-relation",
+    "rem:skein-mass-relation",
     "rem:r-matrix-braiding",
   ],
 });

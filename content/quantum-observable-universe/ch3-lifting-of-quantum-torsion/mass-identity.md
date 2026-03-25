@@ -1,10 +1,10 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) and let
 $\{A_n\}_{n \geq 0}$ be its
-([recursive brane tower](#def:recursive-brane-tower)).  Since $\mathcal{C}$ is a
+([recursive brane tower](#def:recursive-brane-tower)).  Since $\mathbf{C}$ is a
 $R$-linear rigid monoidal category, the Frobenius--Hopf object $A$
 admits a categorical trace
-$\mathrm{tr} \colon \mathrm{End}_{\mathcal{C}}(A) \to R$
+$\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$
 defined by the composition
 $$
   \mathrm{tr}(f)

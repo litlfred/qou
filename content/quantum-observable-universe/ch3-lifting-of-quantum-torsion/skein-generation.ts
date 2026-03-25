@@ -12,5 +12,6 @@ export default proposition({
     "rem:hadron-operations",
     "def:hadron-fibre-embedding",
   ],
+  proofs: ["prf:skein-generation"],
   tags: ["skein", "generation", "mass", "hadron", "torus-knot"],
 });

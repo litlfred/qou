@@ -47,6 +47,8 @@ content/
 - **lean-file-exists**: Definitions have a sibling `.lean` or `lean.file` reference
 - **no-orphan-lean**: Every `.lean` file MUST have a `.ts` manifest sibling — `.lean` files are NEVER standalone, always part of a content triple (`.ts` + `.md` + `.lean`)
 - **uses-resolve**: All labels in `uses[]` exist in the document
+  (or are qualified cross-paper refs in `"paper-dir:label"` format,
+  which are skipped — resolved at folio level)
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
 ### Level 3: LaTeX AST validation

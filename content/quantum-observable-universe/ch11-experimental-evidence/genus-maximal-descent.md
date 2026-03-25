@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe satisfying the
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying the
 Descartes condition $\chi(A) = -6$
 ([Descartes condition](#def:descartes-condition)).  If the geometric descent
 produces a compact one-complex-dimensional base $M_0$, then $M_0$ is a

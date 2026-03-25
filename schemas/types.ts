@@ -235,7 +235,15 @@ interface BlockBase {
   label: string;
   /** Optional display title. */
   title?: string;
-  /** Labels of objects this one depends on (\uses{} in LaTeX). */
+  /**
+   * Labels of objects this one depends on (\uses{} in LaTeX).
+   *
+   * Within the same paper: bare label (e.g. "def:quantum-universe").
+   * Cross-paper (same folio): qualified "paper-dir:label"
+   *   (e.g. "unital-groebner-bases:cor:pbw").
+   * Cross-folio (external): full URL
+   *   (e.g. "https://folio.example.org/papers/foo#def:bar").
+   */
   uses?: string[];
   /**
    * Thematic tags for filtering and grouping.
@@ -466,6 +474,11 @@ export interface ChapterRef {
 export interface Chapter {
   /** Chapter number. Omit for unnumbered chapters (e.g. Introduction). */
   number?: number;
+  /**
+   * Short label shown in collapsed sidebar tab (e.g. "I" for Introduction,
+   * "G" for Glossary). Defaults to `String(number)` when omitted.
+   */
+  tabLabel?: string;
   title: string;
   label?: string;
   /** Sections can be inline Section objects or SectionRef references. */
@@ -633,6 +646,19 @@ export interface PaperRef {
   description?: string;
   /** Tags for filtering on the landing page. */
   tags?: string[];
+  /**
+   * Folio viewer URL for this paper.  Used for:
+   * - Cross-paper dependency resolution (qualified `uses` refs)
+   * - BibTeX `folio-url` field for folio-hosted citations
+   * - Read-only import of external papers for commenting/referencing
+   *
+   * Local papers use the viewer hash route: "/viewer/#/view/{paper-id}".
+   * To link to a specific block: append the label fragment
+   *   (e.g. "/viewer/#/view/unital-groebner-bases" then "#cor:pbw").
+   * External folios use full URLs:
+   *   "https://folio.example.org/viewer/#/view/paper-id".
+   */
+  url?: string;
 }
 
 /**

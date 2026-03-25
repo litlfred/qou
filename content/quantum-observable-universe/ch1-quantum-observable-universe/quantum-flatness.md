@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 gauge group $G_q = \mathrm{Aut}^{\otimes}(\tau)$
 ([quantum gauge group](#def:quantum-gauge-group)) and connection
 $\nabla$ on $A$ ([categorical connection](#def:categorical-connection)).
@@ -16,6 +16,18 @@ This is not an independent axiom. It is a derived consequence of the
 instanton condition ([categorical instanton](#def:categorical-instanton))
 combined with the simplicity constraint
 $B \in \Gamma(\Lambda^+ H^* \otimes \mathrm{Ad}(P))$:
+
+```tex
+\begin{equation}\label{eq:quantum-flatness-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  F_\nabla \ar[r, equal, "\text{instanton}"]
+    \ar[dr, equal, "F_\nabla = B"']
+  & F_\nabla^+ \ar[d, equal, "\text{simplicity}"] \\
+  & B
+\end{tikzcd}
+\qquad\text{(quantum flatness)}
+\end{equation}
+```
 
 1. The instanton equation $\star_q F_\nabla = F_\nabla$ forces
    $F_\nabla = F_\nabla^+$ (self-dual curvature).

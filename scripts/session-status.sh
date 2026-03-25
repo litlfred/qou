@@ -114,7 +114,8 @@ fi
 
 # ── 5. MCP paper-assistant ─────────────────────────────────────
 ASSISTANT_OK=false
-ASSISTANT_PORT="${VIEWER_PORT:-3200}"
+source "$REPO_ROOT/scripts/folio-port.sh"
+ASSISTANT_PORT="$FOLIO_PORT"
 if curl -sf --max-time 2 "http://localhost:${ASSISTANT_PORT}/health" &>/dev/null; then
     ASSISTANT_OK=true
 fi

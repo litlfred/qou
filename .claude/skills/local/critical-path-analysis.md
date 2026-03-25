@@ -51,14 +51,14 @@ and `.ts` (manifest) files.  Classify by:
 
 | Signal | Likely classification |
 |--------|----------------------|
-| Mentions only $\mathcal{C}, A, \omega$, categorical trace, Frobenius | GENERAL |
+| Mentions only $\mathbf{C}, A, \omega$, categorical trace, Frobenius | GENERAL |
 | Uses $M$ (manifold), $E_n$ (total space), $J^1 E$ (jet bundle) | ARCHIMEDEAN |
 | Uses $\mathrm{SU}(2)$, $\mathrm{U}(1)$, Killing form, Haar measure | ARCHIMEDEAN |
 | Uses Stokes, Leray-Serre, CW-complex, $\pi_1$ monodromy | ARCHIMEDEAN |
 | Uses $\mathbb{P}^1(\mathbb{C})$, $S^2$, exceptional divisors | ARCHIMEDEAN |
 | Uses multiplicative integral MI∫, holonomy Hol | ARCHIMEDEAN |
 | Uses hyperbolic volume, Chern-Simons, CODATA | ARCHIMEDEAN |
-| Uses only idempotent splitting, Frobenius trace, Schur in $\mathcal{C}$ | GENERAL |
+| Uses only idempotent splitting, Frobenius trace, Schur in $\mathbf{C}$ | GENERAL |
 
 ### 3. Identify mismatches
 
@@ -248,8 +248,8 @@ When auditing a critical path, check every object for:
 1. **Lean completeness**: .lean file exists? sorry count? status accurate?
 2. **SU(2) example**: *-su2.ts/.md pair exists? Listed in `examples[]`?
 3. **Logical consistency**: `uses[]` matches actual .md cross-references?
-4. **Notational consistency**: $\mathcal{C}$ vs $C$, Frobenius--Hopf
-   hyphenation, $n \geq 0$ vs $n \geq 1$, etc.
+4. **Notational consistency**: $\mathbf{C}$ (bold, Herrlich–Strecker style)
+   for categories, Frobenius--Hopf hyphenation, $n \geq 0$ vs $n \geq 1$, etc.
 5. **Context classification**: GENERAL vs ARCHIMEDEAN — flag mismatches
 6. **Cross-references**: all `(#label)` links resolve to existing blocks?
 

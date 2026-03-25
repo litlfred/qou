@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe and let
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
 ([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Let $\{U_i\}$ be a covering
 of the underlying site $\mathcal{S}$ trivialising every level of the tower.
@@ -10,7 +10,7 @@ where:
    are local trivialisations of the Frobenius--Hopf object $A_n$.
 2. *$1$-morphisms* $g_{ij}^{(n)} \colon x_i^{(n)} \to x_j^{(n)}$
    are the transition automorphisms in
-   $\mathrm{Aut}_{\mathcal{C}}(A_n|_{U_i \cap U_j})$, encoding the
+   $\mathrm{Aut}_{\mathbf{C}}(A_n|_{U_i \cap U_j})$, encoding the
    patching data of the comultiplication $\Delta_n$.
 3. *$2$-morphisms*
    $a_{ij}^{(n)} \colon g_{ij}^{(n)} \Rightarrow g_{ij}^{(n+1)}$

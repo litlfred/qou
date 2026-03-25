@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)) with
 weight decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)) and Reeb derivation
@@ -11,31 +11,45 @@ endomorphisms:
    component along the Reeb direction.
 
 These span a one-parameter family of first-order operators
-parametrised by $q \in k^{\times}$:
+parametrised by $q \in \mathrm{End}(\mathbf{1}) \cong k^{\times}$:
 
 $$
   d_q \;=\; q^{-1}\,d \;+\; (1 - q^{-1})\,\pi_V \circ d.
 $$
 
-The *substrate parameter* is the fibre coordinate
-$q \in k^{\times}$ on this family.  Equivalently, $q$ is the
-unique element of $\mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$
+```tex
+\begin{equation}\label{eq:substrate-family-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^k(A) \ar[r, "d"] \ar[d, "\pi_V \circ d"'] \ar[dr, "d_q"]
+  & \Omega^{k+1}(A) \\
+  \Omega^{k+1}(A)
+  & {} \ar[u, phantom, "q{=}1"' near start]
+    \ar[l, phantom, "q{\to}\infty" near start]
+\end{tikzcd}
+\qquad\text{(substrate family)}
+\end{equation}
+```
+
+The *substrate parameter* is the unique element
+$q \in \mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$
 acts as $q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms.
+Geometrically, $q$ is the fibre coordinate on the
+$\mathbb{G}_m$-family of interpolations.
 
 At $q = 1$ the operator $d_q$ recovers $d$ (classicality: horizontal
 and vertical differentiation are treated equally).  As
 $q \to \infty$, $d_q$ projects onto $\pi_V \circ d$ (deep-quantum
 regime: only the Reeb direction contributes).  The substrate
-parameter is *not* intrinsic to the triple $(\mathcal{C}, A, \tau)$;
-it records where one sits in the $\mathbb{G}_m$-family of
-interpolations between $d$ and $\pi_V \circ d$.
+parameter is *not* intrinsic to the triple $(\mathbf{C}, A, \tau)$;
+it records where one sits in the $\mathbb{G}_m$-family
+that $q$ parametrises.
 
 When the quantum universe is fibred over a space $M$ (as in the
 archimedean realisation,
-[$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the substrate
-parameter becomes a *substrate field*
-$q \colon M \to k^{\times}$, encoding the local position in the
-Reeb fibre at each point.
+[$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the categorical
+substrate parameter specialises to a *substrate field*
+$q \colon M \to k^{\times}$, encoding the local value of the
+$\mathrm{End}(\mathbf{1})$-element at each point.
 
 *Algebraic perspective.*  The Lusztig integral form
 $\mathcal{U}^{\mathbb{Z}}_q(\mathfrak{su}(2))$ \cite{lusztig1993}

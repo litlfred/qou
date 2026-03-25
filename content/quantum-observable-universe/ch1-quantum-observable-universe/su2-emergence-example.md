@@ -1,5 +1,5 @@
 Continuing [Examples](#ex:frobenius-su2)--[](#ex:dagger-su2), let
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
 $A = \mathcal{O}(\mathrm{SU}(2))$, $\tau$ the forgetful functor.
 
 1. *Volume constraint* $\Rightarrow$ $\det(g_V) = 1$.

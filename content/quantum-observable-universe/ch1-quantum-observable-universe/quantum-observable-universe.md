@@ -1,4 +1,4 @@
-A quantum universe $(\mathcal{C}, A, \tau)$ over $R$
+A quantum universe $(\mathbf{C}, A, \tau)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
 forgetful functor $\tau$
 ([Example](#ex:rigid-monoidal-vect)) is faithful and the following
@@ -12,7 +12,7 @@ conditions hold:
    isomorphism $A \xrightarrow{\;\sim\;} A^{\vee}$;
 
 2. *(observability)* there are no hidden global symmetries:
-   $\mathrm{Hom}_{\mathcal{C}}(\mathbf{1},\,
+   $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1},\,
    \mathrm{Ad}(A)) = 0$, where $\mathrm{Ad}(A)$ is the adjoint object
    ($A$ acted on by conjugation). Physically, this means every
    internal degree of freedom is accessible to measurement — no
@@ -30,8 +30,19 @@ conditions hold:
    ```
 
 3. *(measurability / anomaly-free)* the primary Chern classes of the
-   adjoint object vanish in the cohomology induced by the forgetful
-   projection $\tau$:
+   adjoint object vanish.  Precisely, define the *Chern classes of a
+   categorical object* $X$ by pulling back through the fibre functor:
+
+   $$c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
+     \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),$$
+
+   where the right-hand side is the classical Chern class of the
+   realised $R$-module (or, in the archimedean setting, of the
+   associated vector bundle $\tau(X) \times_G M$). This definition is
+   intrinsic to the pair $(\mathbf{C}, \tau)$ — the fibre functor
+   $\tau$ is part of the QOU datum — and reduces to the standard
+   topological Chern classes in every geometric realisation. The
+   measurability axiom requires:
 
    $$
      c_1(\mathrm{Ad}(A)) = 0
@@ -39,17 +50,16 @@ conditions hold:
      c_2(\mathrm{Ad}(A)) = 0.
    $$
 
-   Here the Chern classes $c_i$ are defined via the fibre functor:
-   $c_i(\mathrm{Ad}(A)) := c_i(\tau(\mathrm{Ad}(A)))$ in the
-   de Rham cohomology of the realised bundle.
-   The first condition ($c_1 = 0$) ensures the adjoint bundle is
-   orientable, precluding global anomalies; the second ($c_2 = 0$)
-   ensures the volume form acquires no topological phases.
+   The first condition ensures the adjoint bundle is
+   orientable, precluding global anomalies; the second ensures
+   the volume form acquires no topological phases (see
+   [Remark](#rem:yekutieli-stokes-remark) for the connection to
+   categorical flatness via Yekutieli's nonabelian Stokes theorem).
    For many applications, axioms (1), (2), and (4) suffice — axiom
    (3) is needed only when global topology of $M$ matters.
 
 4. *(categorical volume constraint)*
-   let $V$ denote the fundamental object of $\mathcal{C}$
+   let $V$ denote the fundamental object of $\mathbf{C}$
    ([Remark](#rem:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every

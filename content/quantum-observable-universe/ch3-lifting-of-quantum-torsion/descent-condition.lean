@@ -82,20 +82,21 @@ structure DescentCondition where
   [addComm : AddCommGroup ObstructionSpace]
   /-- The obstruction class κ_n extracted from the twisted cocycle. -/
   obstruction : ℕ → ObstructionSpace
+  /-- The distributional connection is globally consistent. -/
+  GloballyConsistent : Prop
   /-- Global consistency ↔ vanishing obstruction:
       A_∞ is globally well-defined iff κ_n = 0 for all n. -/
-  global_iff_vanishing : (∀ n, obstruction n = 0) ↔
-    True  -- The distributional connection is globally consistent
+  global_iff_vanishing : (∀ n, obstruction n = 0) ↔ GloballyConsistent
 
 attribute [instance] DescentCondition.grp DescentCondition.addComm
 
 /-- If all obstructions vanish, the distributional connection is
     globally consistent. -/
--- Ref: [manuscript] §3
+-- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 theorem descent_condition_global
     (dc : DescentCondition)
     (h : ∀ n, dc.obstruction n = 0) :
-    True :=
+    dc.GloballyConsistent :=
   dc.global_iff_vanishing.mp h
 
 end QOU.Torsion

@@ -20,7 +20,7 @@ The precise requirements are:
    *state bundle*, where $\mathrm{SU}(2)$ acts on
    $\mathbb{P}^1(\mathbb{C})$ by Mobius transformations.
 
-The monoidal category is $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
+The monoidal category is $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 (the representation category of the quantum group at the substrate
 parameter $q(p)$, [substrate parameter](#def:substrate-parameter)), the
 Frobenius--Hopf object is

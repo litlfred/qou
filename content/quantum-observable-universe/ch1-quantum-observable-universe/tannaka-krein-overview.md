@@ -9,11 +9,11 @@ amount of structure. Tannaka--Krein duality \cite{deligne1990} says:
    category and the functor.
 2. **Equivalence.** The functor $\tau$ establishes a
    monoidal equivalence
-   $\mathcal{C} \simeq \mathrm{Rep}(G)$:
-   every object in $\mathcal{C}$ is a representation of the
+   $\mathbf{C} \simeq \mathrm{Rep}(G)$:
+   every object in $\mathbf{C}$ is a representation of the
    reconstructed group.
 3. **Rigidity.** Any two fibre functors
-   $\tau, \tau' \colon \mathcal{C} \to R\text{-}\mathrm{Mod}$
+   $\tau, \tau' \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$
    are isomorphic (as monoidal functors), and the group they
    reconstruct is the same up to inner automorphism.
 4. **Constraint propagation.** Algebraic conditions on

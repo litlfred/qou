@@ -1,9 +1,9 @@
-Let $(\mathcal{C}, A, \tau)$ be a Descartes universe
+Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
 ([Descartes condition](#def:descartes-condition)).  Then:
 
-1. The braiding of $\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$
+1. The braiding of $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$
    induces a faithful representation
-   $\rho_3\colon B_3 \to \mathrm{Aut}_{\mathcal{C}}(V^{\otimes 3})$
+   $\rho_3\colon B_3 \to \mathrm{Aut}_{\mathbf{C}}(V^{\otimes 3})$
    on the fundamental representation $V$
    ([braid action on tensor products](#prop:braid-action-tensor)).
 2. The image of $\rho_3$ in $\mathrm{SU}(2)$ (via the fibre

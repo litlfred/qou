@@ -201,6 +201,7 @@ async function main() {
 
     chapters.push({
       number: ch.number,
+      tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
       sections,

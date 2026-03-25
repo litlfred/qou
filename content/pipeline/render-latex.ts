@@ -21,13 +21,12 @@ import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 // ── LaTeX character escaping ─────────────────────────────────────
 
 /**
- * Escape special LaTeX characters in plain text (titles, captions, etc.).
+ * Escape special LaTeX characters in a plain-text segment.
  *
- * This must NOT be applied to content that already contains intentional
- * LaTeX markup (e.g., math mode, macros). Use only for structural
- * metadata like block titles, section titles, and chapter titles.
+ * Applied only to text *outside* math mode — see `escapeLatex` which
+ * splits on `$...$` boundaries first.
  */
-export function escapeLatex(text: string): string {
+function escapeLatexSegment(text: string): string {
   return text
     .replace(/\\/g, "\\textbackslash{}")
     .replace(/&/g, "\\&")
@@ -39,6 +38,28 @@ export function escapeLatex(text: string): string {
     .replace(/\}/g, "\\}")
     .replace(/~/g, "\\textasciitilde{}")
     .replace(/\^/g, "\\textasciicircum{}");
+}
+
+/**
+ * Escape special LaTeX characters in titles, captions, etc.,
+ * while preserving inline math (`$...$`) segments verbatim.
+ *
+ * Titles may contain inline math like `$\mathrm{SU}(2)$` which
+ * must not be escaped. This function splits on `$` boundaries,
+ * escapes only the non-math segments, and reassembles.
+ */
+export function escapeLatex(text: string): string {
+  // Split on $ delimiters, preserving them
+  const parts = text.split(/(\$[^$]*\$)/);
+  return parts
+    .map((part, i) => {
+      // Odd-indexed parts matched the $...$ pattern — pass through
+      if (part.startsWith("$") && part.endsWith("$") && part.length > 1) {
+        return part;
+      }
+      return escapeLatexSegment(part);
+    })
+    .join("");
 }
 
 // ── Markdown → LaTeX conversion (AST-based) ─────────────────────

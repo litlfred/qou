@@ -34,3 +34,17 @@ equations are:
      D_\nabla\,\psi \;=\; 0.
    $$
 
+```tex
+\begin{equation}\label{eq:variational-equations-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \mathcal{S}_q \ar[r, "\delta/\delta\!\int_A"]
+    \ar[d, "\delta/\delta\nabla"']
+    \ar[dr, "\delta/\delta\psi"]
+  & R_{\int} - \tfrac{1}{2}\mathrm{tr}(R_{\int})\,\mathrm{id} = T_q \\
+  \nabla \star_q F + q[F, \star_q F] = J_\psi
+  & D_\nabla \psi = 0 \ar[from=ul, crossing over]
+\end{tikzcd}
+\qquad\text{(variational equations)}
+\end{equation}
+```
+

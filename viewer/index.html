@@ -63,6 +63,7 @@
     .br-opt:hover,.br-opt.active{background:var(--bg-r);color:var(--fg)}
     .br-opt.current{font-weight:600;color:var(--ac)}
     .br-opt .br-head{font-size:.45rem;color:var(--fg-d);margin-left:.3rem}
+    .br-sep{height:1px;background:var(--fg-d);opacity:.25;margin:2px 4px}
     .ctrl .hash{font-size:.55rem;opacity:.4}
 
     /* Layout */
@@ -126,6 +127,8 @@
     .sb-badge.lean-ok{background:#2a5;color:#fff}
     .sb-badge.lean-warn{background:#c90;color:#fff}
     .sb-badge.lean-err{background:#c33;color:#fff}
+    .sb-badge.lean-ref{background:#d4a017;color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.15rem}
+    .sb-badge.lean-ref:hover{background:#c49000;filter:brightness(1.1)}
     .sb-badge.lean-miss{background:#666;color:#ccc}
     .sb-badge::after{content:attr(data-tip);position:absolute;right:0;top:100%;margin-top:4px;background:var(--fg-b);color:var(--bg);padding:.25rem .45rem;border-radius:4px;font-size:.6rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:200;font-family:var(--f-text);letter-spacing:0}
     .sb-badge:hover::after{opacity:1}
@@ -196,6 +199,8 @@
     .bh-ind .ind-badge.err{background:var(--red);color:#fff}
     .bh-ind .ind-badge.miss{background:var(--bg-r);color:var(--fg-d);border:1px solid var(--brd)}
     .bh-ind .ind-badge.stub{background:var(--ora);color:#fff}
+    .bh-ind .ind-badge.ref{background:#d4a017;color:#fff;cursor:pointer}
+    .bh-ind .ind-badge.ref:hover{filter:brightness(1.1)}
     .bh-ind .ind-label{font-size:.5rem;color:var(--fg-d)}
 
     .lean-src{margin-top:.5rem;border:1px solid var(--brd);border-radius:4px;overflow:hidden}
@@ -977,7 +982,13 @@
     <div class="fb-target" id="fb-target"></div>
     <div class="fb-input-area">
       <textarea id="fb-text" placeholder="Describe the issue, question, or suggestion..." rows="4"></textarea>
+      <div id="fb-photo-preview" style="display:none;margin:.4rem 0;position:relative;max-width:200px">
+        <img id="fb-photo-img" style="max-width:100%;border-radius:4px;border:1px solid var(--brd)">
+        <button id="fb-photo-remove" style="position:absolute;top:2px;right:2px;background:var(--bg-s);border:1px solid var(--brd);border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:.7rem;color:var(--fg-d);display:flex;align-items:center;justify-content:center">&times;</button>
+      </div>
       <div class="fb-controls">
+        <input type="file" id="fb-photo" accept="image/*" style="display:none">
+        <button class="fb-voice" id="fb-photo-btn" title="Attach photo" style="font-size:.7rem">📷</button>
         <button class="fb-voice" id="fb-voice" title="Voice input (click to start/stop)">mic</button>
         <select id="fb-priority">
           <option value="medium">Medium</option>
@@ -1240,6 +1251,7 @@
     const brInput = document.getElementById('br-input');
     const brDrop = document.getElementById('br-drop');
     let allBranches = [];
+    let brRecentCount = 0;
     let brActiveIdx = -1;
 
     async function loadBranches() {
@@ -1250,7 +1262,8 @@
         currentBranchName = data.current;
         if (!selectedBranch) selectedBranch = currentBranchName;
         allBranches = data.branches || [];
-        console.log(`[folio:git] loaded ${allBranches.length} branches, HEAD=${currentBranchName}, viewing=${selectedBranch}`);
+        brRecentCount = data.recentCount || 0;
+        console.log(`[folio:git] loaded ${allBranches.length} branches (${brRecentCount} recent), HEAD=${currentBranchName}, viewing=${selectedBranch}`);
         brInput.value = selectedBranch;
         brInput.title = selectedBranch === currentBranchName ? `${selectedBranch} (HEAD)` : selectedBranch;
       } catch { /* /api/branches not available */ }
@@ -1268,7 +1281,23 @@
         brDrop.appendChild(empty);
         return;
       }
+      // Count pinned items (current + main/master) to know where the
+      // separator between recent and alphabetical branches goes.
+      const pinned = new Set();
+      pinned.add(currentBranchName);
+      if (allBranches.includes('main')) pinned.add('main');
+      if (allBranches.includes('master')) pinned.add('master');
+      // In the unfiltered list: separator after pinned + recent
+      const sepAfter = !q && brRecentCount > 0
+        ? pinned.size + brRecentCount : -1;
+
       matches.forEach((b, i) => {
+        // Insert separator between recent and remaining branches
+        const origIdx = allBranches.indexOf(b);
+        if (sepAfter > 0 && origIdx === sepAfter && !q) {
+          const sep = mk('div','br-sep');
+          brDrop.appendChild(sep);
+        }
         const opt = mk('div','br-opt');
         if (b === currentBranchName) opt.classList.add('current');
         if (b === selectedBranch) opt.classList.add('active');
@@ -1764,6 +1793,18 @@
       if (!incEx) skipKinds.add('example');
       if (!incRm) skipKinds.add('remark');
 
+      // Build block→chapter/section reverse lookup
+      const blockChSec = new Map();
+      if (paper) {
+        for (const ch of paper.chapters) {
+          for (const sec of ch.sections) {
+            for (const b of sec.blocks) {
+              if (b.label) blockChSec.set(b.label, { chTitle: ch.title, chNum: ch.number, secTitle: sec.title });
+            }
+          }
+        }
+      }
+
       // Build print content
       const blocks = [];
       for (const label of sorted) {
@@ -1827,7 +1868,21 @@
       </head><body>`);
       win.document.write(`<h1>${esc(title)}</h1>`);
       win.document.write(`<div class="dep-count">${blocks.length} blocks in dependency chain</div>`);
+      let lastCh = null, lastSec = null;
       for (const {block: b, html: bh, texBlocks: tx} of blockData) {
+        // Insert chapter/section headers when they change
+        const loc = blockChSec.get(b.label);
+        if (loc) {
+          const chKey = loc.chNum ?? loc.chTitle;
+          if (chKey !== lastCh) {
+            lastCh = chKey; lastSec = null;
+            win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.1rem;margin-top:1.5rem;border-bottom:2px solid var(--brd);padding-bottom:.3rem">${loc.chNum != null ? loc.chNum + '. ' : ''}${esc(loc.chTitle)}</h2>`);
+          }
+          if (loc.secTitle !== lastSec) {
+            lastSec = loc.secTitle;
+            win.document.write(`<h3 style="font-family:var(--f-head);font-size:.9rem;margin-top:1rem;color:var(--fg-d)">${esc(loc.secTitle)}</h3>`);
+          }
+        }
         const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
         win.document.write(`<div class="blk">`);
         win.document.write(`<span class="bk">${esc(kindLabel)}.</span>`);
@@ -1854,6 +1909,37 @@
         if (b.kind === 'proof') win.document.write(`<div class="qed"></div>`);
         win.document.write(`</div>`);
       }
+      // ── Lean appendix ──
+      const leanEntries = [];
+      for (const {block: b} of blockData) {
+        if (b.lean?.source) {
+          const loc = blockChSec.get(b.label);
+          leanEntries.push({ label: b.label, title: b.title, kind: b.kind, decl: b.lean.decl, file: b.lean.file, source: b.lean.source, chNum: loc?.chNum, chTitle: loc?.chTitle, secTitle: loc?.secTitle });
+        }
+      }
+      if (leanEntries.length) {
+        win.document.write(`<hr style="margin:2rem 0;border:none;border-top:2px solid var(--brd)">`);
+        win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.2rem">Appendix: Lean Formalization</h2>`);
+        win.document.write(`<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:1rem">${leanEntries.length} Lean source files</div>`);
+        let lnLastCh = null, lnLastSec = null;
+        for (const le of leanEntries) {
+          const chKey = le.chNum ?? le.chTitle;
+          if (chKey !== lnLastCh) {
+            lnLastCh = chKey; lnLastSec = null;
+            if (le.chTitle) win.document.write(`<h3 style="font-family:var(--f-head);font-size:.95rem;margin-top:1.2rem;border-bottom:1px solid var(--brd);padding-bottom:.2rem">${le.chNum != null ? le.chNum + '. ' : ''}${esc(le.chTitle)}</h3>`);
+          }
+          if (le.secTitle && le.secTitle !== lnLastSec) {
+            lnLastSec = le.secTitle;
+            win.document.write(`<h4 style="font-family:var(--f-head);font-size:.8rem;margin-top:.8rem;color:var(--fg-d)">${esc(le.secTitle)}</h4>`);
+          }
+          const kindLabel = (le.kind || '').charAt(0).toUpperCase() + (le.kind || '').slice(1);
+          win.document.write(`<div style="margin-bottom:1rem">`);
+          win.document.write(`<div style="font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.2rem"><span style="font-weight:700">${esc(kindLabel)}.</span> ${le.title ? esc(le.title) : ''} <span style="opacity:.6">${esc(le.decl || le.file || le.label)}</span></div>`);
+          win.document.write(`<pre style="margin:0;padding:.6rem .8rem;background:var(--bg-s);border:1px solid var(--brd);border-radius:4px;font-family:var(--f-mono);font-size:.7rem;line-height:1.5;overflow-x:auto;white-space:pre;tab-size:2"><code>${esc(le.source)}</code></pre>`);
+          win.document.write(`</div>`);
+        }
+      }
+
       win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>`);
       win.document.write(`<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>`);
       const macrosJson = JSON.stringify(katexMacros);
@@ -2606,6 +2692,21 @@
         }
         leanInd.appendChild(leanBadge);
 
+        // Sorry ref badge in content area
+        if (block.lean?.source && /sorry/.test(block.lean.source)) {
+          const refs = extractSorryRefs(block.lean.source);
+          for (const ref of refs) {
+            const rb = ref.url ? document.createElement('a') : mk('span','ind-badge ref');
+            if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'ind-badge ref'; }
+            rb.textContent = '\u{1F4D6} ' + ref.key;
+            rb.title = `Reference: [${ref.key}]${ref.url ? '\n' + ref.url : ''}`;
+            rb.style.marginLeft = '.25rem';
+            rb.style.textDecoration = 'none';
+            rb.onclick = (e) => e.stopPropagation();
+            leanInd.appendChild(rb);
+          }
+        }
+
         // Click to toggle lean source panel (inserted right after header)
         if (block.lean?.source) {
           leanInd.onclick = (e) => {
@@ -2795,6 +2896,24 @@
 
     // ── Helpers ───────────────────────────────────────────
     function mk(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
+
+    /** Extract sorry references from Lean source: `-- Ref: [key] url` lines before `sorry`. */
+    function extractSorryRefs(source) {
+      if (!source) return [];
+      const lines = source.split('\n');
+      const refs = [];
+      for (let i = 0; i < lines.length; i++) {
+        if (/^\s*sorry\b/.test(lines[i])) {
+          // Look backwards for -- Ref: lines
+          for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+            const m = lines[j].match(/--\s*Ref:\s*\[([^\]]+)\]\s*(https?:\/\/\S+)?/);
+            if (m) refs.push({ key: m[1], url: m[2] || null });
+            else if (!/^\s*(--|$)/.test(lines[j])) break;
+          }
+        }
+      }
+      return refs;
+    }
 
     function addSrc(el, md, hdr, block) {
       if (!md) return;
@@ -3414,7 +3533,7 @@
 
       for (const ch of p.chapters) {
         const chEl = mk('div','sb-ch');
-        chEl.dataset.num = ch.number != null ? String(ch.number) : '';
+        chEl.dataset.num = ch.tabLabel || (ch.number != null ? String(ch.number) : '');
         chEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>${ch.number != null ? ch.number + '. ' : ''}${inl(ch.title)}</span>`;
         const chBody = mk('div','sb-ch-body');
         if (ch._dir) sidebarChapterBodies.set(ch._dir, chBody);
@@ -3502,6 +3621,19 @@
                 else if (v === 'ok' || v === 'leanok' || v === 'validated' || s === 'proved') { lb.className = 'sb-badge lean-ok'; lb.textContent = '\u2713'; lb.setAttribute('data-tip', 'Lean proof verified'); }
                 else { lb.className = 'sb-badge lean-warn'; lb.textContent = s === 'stated' ? 'stated' : 'todo'; lb.setAttribute('data-tip', `Status: ${s}, validation: ${v}`); }
                 bEl.appendChild(lb);
+                // Sorry ref badge: yellow library card linking to citation
+                if (s === 'has_sorry' || (b.lean?.source && /sorry/.test(b.lean.source))) {
+                  const refs = extractSorryRefs(b.lean?.source);
+                  if (refs.length > 0) {
+                    const ref = refs[0];
+                    const rb = ref.url ? document.createElement('a') : mk('span','sb-badge lean-ref');
+                    if (ref.url) { rb.href = ref.url; rb.target = '_blank'; rb.rel = 'noopener'; rb.className = 'sb-badge lean-ref'; }
+                    rb.textContent = '\u{1F4D6}';
+                    rb.setAttribute('data-tip', `Ref: [${ref.key}]${ref.url ? ' ' + ref.url : ''}`);
+                    rb.onclick = (e) => e.stopPropagation();
+                    bEl.appendChild(rb);
+                  }
+                }
               }
 
               bEl.onclick = () => {
@@ -3846,20 +3978,42 @@
     }
     document.getElementById('fb-close').onclick = closeFeedback;
     document.getElementById('feedback-overlay').onclick = closeFeedback;
+    // ── Photo upload handling ─────────────────────────────
+    let fbPhotoData = null;
+    document.getElementById('fb-photo-btn').onclick = () => document.getElementById('fb-photo').click();
+    document.getElementById('fb-photo').onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        fbPhotoData = reader.result;
+        document.getElementById('fb-photo-img').src = fbPhotoData;
+        document.getElementById('fb-photo-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    };
+    document.getElementById('fb-photo-remove').onclick = () => {
+      fbPhotoData = null;
+      document.getElementById('fb-photo').value = '';
+      document.getElementById('fb-photo-preview').style.display = 'none';
+    };
+
     document.getElementById('fb-submit').onclick = async () => {
       if (!fbBlock || !document.getElementById('fb-text').value.trim()) return;
       try {
+        const payload = {
+          paperId: paper?.id,
+          rootName: fbBlock.rootName,
+          summary: document.getElementById('fb-text').value.trim().slice(0, 80),
+          comment: document.getElementById('fb-text').value.trim(),
+          priority: document.getElementById('fb-priority').value,
+          assignee: document.getElementById('fb-assignee').value
+        };
+        if (fbPhotoData) payload.photo = fbPhotoData;
         const res = await fetch('/api/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            paperId: paper?.id,
-            rootName: fbBlock.rootName,
-            summary: document.getElementById('fb-text').value.trim().slice(0, 80),
-            comment: document.getElementById('fb-text').value.trim(),
-            priority: document.getElementById('fb-priority').value,
-            assignee: document.getElementById('fb-assignee').value
-          })
+          body: JSON.stringify(payload)
         });
         if (!res.ok) throw new Error(`${res.status}`);
         const { todo } = await res.json();
@@ -3873,9 +4027,13 @@
           structFeedback[fbBlock.label] = fbBlock.todos;
           refreshStructBadges();
         }
+        // Clear form completely
         document.getElementById('fb-text').value = '';
         document.getElementById('fb-priority').value = 'medium';
         document.getElementById('fb-assignee').value = 'editor-agent';
+        fbPhotoData = null;
+        document.getElementById('fb-photo').value = '';
+        document.getElementById('fb-photo-preview').style.display = 'none';
         // Clear the saved draft since feedback was submitted
         clearDraft(fbBlock.rootName || fbBlock.label || 'block');
         // Refresh the history panel to show the new item (stay open)
