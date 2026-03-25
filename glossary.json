@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T13:01:50.899163+00:00",
-  "commit_sha": "bce531d97547106611e10f4cdaa040140ba408e1",
-  "entry_count": 68,
+  "generated_at": "2026-03-25T18:27:51.235347+00:00",
+  "commit_sha": "unknown",
+  "entry_count": 70,
   "ambiguity_count": 9,
   "entries": [
     {
@@ -183,7 +183,7 @@
       "narrative_term": "{Quantum Gauge Group}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumGaugeGroup",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with substrate parameter q_0 (hyperref[def:substrate-parameter]substrate parameter).  The  is G_q_0 = _q_0(2), the quantum group obtained by deforming the Tannakian gauge group G = ^otimes(tau) cong (2) (hyperref[thm:su2-emergence]SU(2) emergence) at the parameter q_0.  When the substrate parameter varies over a space M (e.g. the archimedean realisation), this yields a field of quantum groups G_q(p)_p in M",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with substrate parameter q in () (hyperref[def:substrate-parameter]substrate parameter).  The  is G_q = _q(2), the quantum group obtained by deforming the Tannakian gauge group G = ^otimes(tau) cong (2) (hyperref[thm:su2-emergence]SU(2) emergence) at the categorical parameter q. In the archimedean realisation, where the substrate parameter specialises to a substrate field over M, this yields a field of qua",
       "latex_label": "def:quantum-gauge-group",
       "chapter": 2
     },
@@ -191,7 +191,7 @@
       "narrative_term": "{Quantum Planck Constant}",
       "lean_name": "QOU.QuantumObservableUniverse.QuantumPlanckConstant",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe with substrate parameter q_0 (hyperref[def:substrate-parameter]substrate parameter).  The  is the element hbar_q = 1 - q_0^-1 in R.  When the substrate parameter varies over a space M, this defines a field hbar_q colon M to R by hbar_q(p) = 1 - q(p)^-1.",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with substrate parameter q in () cong k (hyperref[def:substrate-parameter]substrate parameter).  The  is the element hbar_q = 1 - q^-1 in k.  When the categorical substrate parameter specialises to a substrate field over a space M, this defines a field hbar_q colon M to k by hbar_q(p) = 1 - q(p)^-1.",
       "latex_label": "def:quantum-planck-constant",
       "chapter": 2
     },
@@ -204,10 +204,26 @@
       "chapter": 2
     },
     {
+      "narrative_term": "{Categorical Dirac operator}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalDiracOperator",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) equipped with connection nabla (hyperref[def:categorical-connection]categorical connection), substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), and Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation). The  is the morphism  [ _nabla ;=; q^-1,nabla ;+; (1 - q^-1),iota_xi,nabla ;colon; A to Omega^1(A). ]  When q = 1 this reduces to _nabla = nabla, the unde",
+      "latex_label": "def:categorical-dirac-operator",
+      "chapter": 2
+    },
+    {
+      "narrative_term": "{Categorical Lagrangian}",
+      "lean_name": "QOU.QuantumObservableUniverse.CategoricalLagrangian",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with categorical Dirac operator _nabla (hyperref[def:categorical-dirac-operator]categorical Dirac operator) and a state psi colon  to A. The  is the endomorphism  [ _q(nabla, psi) ;=; _nabla^,2 ;+; psi^* otimes _nabla,psi ;;in; _(A), ]  where psi^* = int_A !circ, S(psi) colon A to  is the adjoint section (antipode composed with the Frobenius form).  The Lagrangian is an endomorphism of A --- the categorica",
+      "latex_label": "def:categorical-lagrangian",
+      "chapter": 2
+    },
+    {
       "narrative_term": "{Categorical action}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalAction",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) equipped with substrate parameter q (hyperref[def:substrate-parameter]substrate parameter), q-Hodge star star_q (hyperref[def:q-hodge-star]q-Hodge star), a connection nabla (hyperref[def:categorical-connection]categorical connection), and a section psi colon  to A (a \"state\"). The  is the R-valued functional   _q[nabla,, textstyleint_A,, psi] ;=; bigl(q cdot R_intbigr) _ ;+; _Abigl( F_nabla wedge_q star_q ",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe). A  on (, A, tau) is a morphism  colon  to  of the form    ;=; _A ;circ; bigl(_A^vee otimes Phibigr) ;circ; _A,   where Phi in _(A) is called the .  The evaluation _A colon A^vee otimes A to  and coevaluation _A colon  to A otimes A^vee are the structure maps of the rigid duality on A (hyperref[def:rigid-monoidal-category]rigid monoidal category).  Composing them with an inserted endomorphism produces the ",
       "latex_label": "def:categorical-action",
       "chapter": 2
     },
