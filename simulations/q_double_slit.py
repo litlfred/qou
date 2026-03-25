@@ -53,6 +53,9 @@ SCREEN_HALF_WIDTH = 5e-3  # Half-width of the screen sampling region [m]
 # ============================================================
 OUTPUT_PATH = "simulations/q_double_slit_output.png"
 
+# Derived constant
+WAVENUMBER = 2.0 * np.pi / wavelength  # k [1/m]
+
 
 def hbar_q(q: float) -> float:
     """Quantum Planck constant: hbar_q = 1 - q^{-1}."""
@@ -87,8 +90,7 @@ def torsion_phase_profile(y_in_slit: np.ndarray, slit_half_width: float,
     eta = np.abs(y_in_slit) / slit_half_width
     # Parabolic torsion profile (quadratic in distance from center)
     torsion_strength = VOL_K * TORSION_NORM * eta ** 2
-    k = 2.0 * np.pi / wavelength
-    return hq * torsion_strength * k * w
+    return hq * torsion_strength * WAVENUMBER * w
 
 
 def compute_intensity(q: float, screen_y: np.ndarray) -> np.ndarray:
@@ -104,7 +106,6 @@ def compute_intensity(q: float, screen_y: np.ndarray) -> np.ndarray:
 
     We sum complex amplitudes and take |sum|^2.
     """
-    k = 2.0 * np.pi / wavelength
     slit_half = d / 2.0
 
     # Slit 1 center at +D/2, slit 2 center at -D/2
@@ -131,7 +132,7 @@ def compute_intensity(q: float, screen_y: np.ndarray) -> np.ndarray:
             r2 = np.sqrt(H ** 2 + (screen_y - y_s) ** 2)
 
             # Classical phase accumulation
-            phase_classical = k * (r1 + r2)
+            phase_classical = WAVENUMBER * (r1 + r2)
 
             # q-deformation: extra phase from torsion inside slit material
             phase_torsion = torsion_phases[j]

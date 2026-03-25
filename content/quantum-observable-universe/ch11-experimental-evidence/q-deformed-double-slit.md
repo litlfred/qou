@@ -1,4 +1,4 @@
-The [substrate parameter](#def:substrate-parameter) $q$ is not merely a formal algebraic interpolation between classical and quantum regimes. It encodes a physical deformation of wave propagation through matter: the slit material acts as a defining boundary of the brane, where the Reeb vector field exerts a geometric push on the traversing test particle.
+The [substrate parameter](#def:substrate-parameter) $q$ is not merely a formal algebraic interpolation between classical and quantum regimes. Instead, it encodes a physical deformation of wave propagation through matter. The slit material acts as a defining boundary of the brane, where the Reeb vector field exerts a geometric push on the traversing test particle.
 
 At the categorical level, wave propagation is governed by the
 categorical Dirac equation
@@ -33,7 +33,7 @@ The accumulated phase difference for a path $\gamma$ grazing the fermionic slit 
 \Delta\phi \;=\; \Delta\phi_{\mathrm{classical}} \;+\; \hbar_q \int_{\gamma} \pi_V \circ d,
 ```
 
-where the second term integrates the vertical Reeb differential along $\gamma$. The magnitude of this correction depends on the torsion intensity of the slit material. A nucleon modeled as a [localized knot](#def:localized-knot) with the topology of the Borromean rings $6_2^3$ determines a specific value of $q$ via the local substrate map, and hence a definite $\hbar_q$. Heavier atoms with more complex knotted configurations produce correspondingly larger deformations, yielding a material-dependent signature in the fringe spacing that is absent in the standard double-slit analysis.
+where the second term integrates the vertical Reeb differential along $\gamma$. The magnitude of this correction depends on the torsion intensity of the slit material. A nucleon modeled as a [localized knot](#def:localized-knot) with the topology of the Borromean rings $6_2^3$ determines a specific value of $q$ via the local substrate map, and hence a definite $\hbar_q$. Consequently, heavier atoms with more complex knotted configurations produce correspondingly larger deformations, yielding a material-dependent signature in the fringe spacing that is absent in the standard double-slit analysis.
 
 On an instanton background the Lagrangian simplifies
 ([instanton on-shell](#rem:instanton-on-shell)):
