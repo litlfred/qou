@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T05:09:02.027333+00:00",
+    "generated_at": "2026-03-25T05:17:10.074935+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -1820,16 +1820,39 @@
       ]
     },
     {
-      "label": "def:yekutieli-triple",
+      "label": "lem:descent",
+      "object_type": "lemma",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 125,
+        "chapter": 4
+      },
+      "title": "{Descent preserves the quantum observable universe}",
+      "lean": {
+        "decl": "QOU.DescentLemma",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:recursive-brane-tower",
+        "prop:jet-prolongation"
+      ]
+    },
+    {
+      "label": "def:descent-involution",
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 131,
+        "line": 200,
         "chapter": 4
       },
-      "title": "{Yekutieli triple mapping}",
+      "title": "{Descent involution}",
       "lean": {
-        "decl": "QOU.YekutieliTripleMapping",
+        "decl": "QOU.DescentInvolution",
         "file": "QOU/Torsion.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
@@ -1837,88 +1860,7 @@
       },
       "formalization_status": "stated",
       "uses": [
-        "def:quantum-observable-universe",
-        "def:recursive-brane-tower",
         "prop:jet-prolongation",
-        "lem:descent"
-      ]
-    },
-    {
-      "label": "prop:cosimplicial-crossed-groupoid",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 167,
-        "chapter": 4
-      },
-      "title": "{Cosimplicial crossed groupoid}",
-      "lean": {
-        "decl": "QOU.cosimplicial_crossed_groupoid_exists",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:quantum-observable-universe",
-        "def:recursive-brane-tower",
-        "def:yekutieli-triple",
-        "prop:jet-prolongation",
-        "lem:descent"
-      ]
-    },
-    {
-      "label": "prop:descent-condition",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 244,
-        "chapter": 4
-      },
-      "title": "{Descent condition --- twisted $2$-cocycle}",
-      "lean": {
-        "decl": "QOU.Torsion.descent_condition",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:quantum-observable-universe",
-        "def:recursive-brane-tower",
-        "def:yekutieli-triple",
-        "def:quantum-characteristic-classes",
-        "rem:distributional-connection",
-        "prop:yekutieli-lifting"
-      ]
-    },
-    {
-      "label": "prop:weak-equiv-invariance",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 350,
-        "chapter": 4
-      },
-      "title": "{Weak equivalence invariance of physical states}",
-      "lean": {
-        "decl": "QOU.Torsion.weak_equiv_invariance",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:quantum-observable-universe",
-        "def:recursive-brane-tower",
-        "def:direct-limit-algebra",
-        "def:descent-involution",
-        "prop:cosimplicial-crossed-groupoid",
-        "prop:vacuum-state",
-        "prop:descent-eigenspaces",
         "lem:descent"
       ]
     },
@@ -1927,7 +1869,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 433,
+        "line": 246,
         "chapter": 4
       },
       "title": "{Yekutieli Lifting Condition}",
@@ -1945,7 +1887,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 460,
+        "line": 273,
         "chapter": 4
       },
       "title": "{Quantum Characteristic Classes (Yekutieli obstruction)}",
@@ -1969,7 +1911,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 495,
+        "line": 308,
         "chapter": 4
       },
       "title": "{Yekutieli Lifting Condition holds in the brane tower}",
@@ -1994,7 +1936,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 538,
+        "line": 351,
         "chapter": 4
       },
       "title": "{Quantum universe with observability and Yekutieli is a QOU}",
@@ -2023,7 +1965,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 586,
+        "line": 396,
         "chapter": 4
       },
       "title": "{Quantum Observable Universe as Direct Limit}",
@@ -2042,11 +1984,35 @@
       ]
     },
     {
+      "label": "prop:vacuum-state",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 424,
+        "chapter": 4
+      },
+      "title": "{Existence and Uniqueness of the Vacuum State}",
+      "lean": {
+        "decl": "QOU.Torsion.invariant_functional_unique",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:direct-limit-algebra",
+        "def:quantum-gauge-group",
+        "lem:descent"
+      ]
+    },
+    {
       "label": "prop:global-gluing",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 614,
+        "line": 502,
         "chapter": 4
       },
       "title": "{Global gluing via Yekutieli's twisted quantization}",
@@ -2067,35 +2033,11 @@
       ]
     },
     {
-      "label": "prop:vacuum-state",
-      "object_type": "proposition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 663,
-        "chapter": 4
-      },
-      "title": "{Existence and Uniqueness of the Vacuum State}",
-      "lean": {
-        "decl": "QOU.Torsion.invariant_functional_unique",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:quantum-observable-universe",
-        "def:direct-limit-algebra",
-        "def:quantum-gauge-group",
-        "lem:descent"
-      ]
-    },
-    {
       "label": "prop:euler-char-stability",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 744,
+        "line": 554,
         "chapter": 4
       },
       "title": "{Stability of the Euler characteristic}",
@@ -2119,7 +2061,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 820,
+        "line": 630,
         "chapter": 4
       },
       "title": "{Mass (categorical trace)}",
@@ -2142,7 +2084,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 954,
+        "line": 698,
         "chapter": 4
       },
       "title": "{Descent}",
@@ -2161,56 +2103,11 @@
       ]
     },
     {
-      "label": "lem:descent",
-      "object_type": "lemma",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 970,
-        "chapter": 4
-      },
-      "title": "{Descent preserves the quantum observable universe}",
-      "lean": {
-        "decl": "QOU.DescentLemma",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "def:quantum-observable-universe",
-        "def:recursive-brane-tower",
-        "prop:jet-prolongation"
-      ]
-    },
-    {
-      "label": "def:descent-involution",
-      "object_type": "definition",
-      "latex": {
-        "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1045,
-        "chapter": 4
-      },
-      "title": "{Descent involution}",
-      "lean": {
-        "decl": "QOU.DescentInvolution",
-        "file": "QOU/Torsion.lean",
-        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
-        "last_edited_commit": "unknown"
-      },
-      "formalization_status": "stated",
-      "uses": [
-        "prop:jet-prolongation",
-        "lem:descent"
-      ]
-    },
-    {
       "label": "prop:descent-eigenspaces",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1088,
+        "line": 714,
         "chapter": 4
       },
       "title": "{Eigenspaces of the descent involution}",
@@ -2234,7 +2131,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1168,
+        "line": 794,
         "chapter": 4
       },
       "title": "{Defining boundary of the brane}",
@@ -2257,7 +2154,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1194,
+        "line": 820,
         "chapter": 4
       },
       "title": "{Structure of the defining boundary}",
@@ -2277,11 +2174,114 @@
       ]
     },
     {
+      "label": "def:yekutieli-triple",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 859,
+        "chapter": 4
+      },
+      "title": "{Yekutieli triple mapping}",
+      "lean": {
+        "decl": "QOU.YekutieliTripleMapping",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:recursive-brane-tower",
+        "prop:jet-prolongation",
+        "lem:descent"
+      ]
+    },
+    {
+      "label": "prop:cosimplicial-crossed-groupoid",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 895,
+        "chapter": 4
+      },
+      "title": "{Cosimplicial crossed groupoid}",
+      "lean": {
+        "decl": "QOU.cosimplicial_crossed_groupoid_exists",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:recursive-brane-tower",
+        "def:yekutieli-triple",
+        "prop:jet-prolongation",
+        "lem:descent"
+      ]
+    },
+    {
+      "label": "prop:descent-condition",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 972,
+        "chapter": 4
+      },
+      "title": "{Descent condition --- twisted $2$-cocycle}",
+      "lean": {
+        "decl": "QOU.Torsion.descent_condition",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:recursive-brane-tower",
+        "def:yekutieli-triple",
+        "def:quantum-characteristic-classes",
+        "rem:distributional-connection",
+        "prop:yekutieli-lifting"
+      ]
+    },
+    {
+      "label": "prop:weak-equiv-invariance",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1078,
+        "chapter": 4
+      },
+      "title": "{Weak equivalence invariance of physical states}",
+      "lean": {
+        "decl": "QOU.Torsion.weak_equiv_invariance",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:recursive-brane-tower",
+        "def:direct-limit-algebra",
+        "def:descent-involution",
+        "prop:cosimplicial-crossed-groupoid",
+        "prop:vacuum-state",
+        "prop:descent-eigenspaces",
+        "lem:descent"
+      ]
+    },
+    {
       "label": "def:localized-knot",
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1242,
+        "line": 1245,
         "chapter": 4
       },
       "title": "{Localized knot (knot at a point)}",
@@ -2304,7 +2304,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1282,
+        "line": 1285,
         "chapter": 4
       },
       "title": "{Hadron (abstract composite knot)}",
@@ -2322,7 +2322,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1322,
+        "line": 1325,
         "chapter": 4
       },
       "title": "{Localized hadron}",
@@ -2345,7 +2345,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1347,
+        "line": 1350,
         "chapter": 4
       },
       "title": "{Fibre-compatible hadron embedding}",
@@ -2368,7 +2368,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1415,
+        "line": 1418,
         "chapter": 4
       },
       "title": "{Skein generation of hadrons from mass-zero fundamentals}",
@@ -2391,7 +2391,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1491,
+        "line": 1494,
         "chapter": 4
       },
       "title": "{Bundle initial conditions (big bang state)}",
@@ -2415,7 +2415,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1530,
+        "line": 1533,
         "chapter": 4
       },
       "title": "{Isotopy equivalence of bundle initial conditions}",
@@ -2437,7 +2437,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1553,
+        "line": 1556,
         "chapter": 4
       },
       "title": "{Torsion-driven knot flow}",
@@ -2461,7 +2461,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1613,
+        "line": 1616,
         "chapter": 4
       },
       "title": "{Topological Decomposition of Mass}",
@@ -2487,7 +2487,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1789,
+        "line": 1792,
         "chapter": 4
       },
       "title": "{Archimedean realisation of jet prolongation}",
@@ -2509,7 +2509,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1869,
+        "line": 1872,
         "chapter": 4
       },
       "title": "{Archimedean realisation: nonabelian multiplicative integration}",
@@ -2531,7 +2531,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 2171,
+        "line": 2174,
         "chapter": 4
       },
       "title": "{Quantum Dilogarithm as Localized Torsion Volume}",
@@ -4007,6 +4007,286 @@
       "relation": "uses"
     },
     {
+      "from": "lem:descent",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "lem:descent",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "lem:descent",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:descent-involution",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:descent-involution",
+      "to": "lem:descent",
+      "relation": "uses"
+    },
+    {
+      "from": "def:quantum-characteristic-classes",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:quantum-characteristic-classes",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "def:quantum-characteristic-classes",
+      "to": "def:yekutieli-lifting-condition",
+      "relation": "uses"
+    },
+    {
+      "from": "def:quantum-characteristic-classes",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "def:yekutieli-lifting-condition",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:yekutieli-lifting",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:quantum-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:yekutieli-lifting-condition",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "def:projective-line-object",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "prop:yekutieli-lifting",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:qu-to-qou",
+      "to": "prop:fiber-adjoint-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "def:direct-limit-algebra",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:direct-limit-algebra",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "def:direct-limit-algebra",
+      "to": "ex:c-quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vacuum-state",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vacuum-state",
+      "to": "def:direct-limit-algebra",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vacuum-state",
+      "to": "def:quantum-gauge-group",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:vacuum-state",
+      "to": "lem:descent",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:global-gluing",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:global-gluing",
+      "to": "def:direct-limit-algebra",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:global-gluing",
+      "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:global-gluing",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:global-gluing",
+      "to": "prop:vacuum-state",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:euler-char-stability",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:euler-char-stability",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:euler-char-stability",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:euler-char-stability",
+      "to": "prop:jet-prolongation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:mass-identity",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:mass-identity",
+      "to": "def:frobenius-pairing",
+      "relation": "uses"
+    },
+    {
+      "from": "def:mass-identity",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "def:descent",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:descent",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "def:descent",
+      "to": "thm:qu-to-qou",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:descent-eigenspaces",
+      "to": "def:descent-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:descent-eigenspaces",
+      "to": "rem:algebraic-filter",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:descent-eigenspaces",
+      "to": "rem:weight-space-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:descent-eigenspaces",
+      "to": "lem:descent",
+      "relation": "uses"
+    },
+    {
+      "from": "def:brane-boundary",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:brane-boundary",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "def:brane-boundary",
+      "to": "lem:descent",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:brane-boundary",
+      "to": "def:brane-boundary",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:brane-boundary",
+      "to": "def:descent-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:brane-boundary",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:brane-boundary",
+      "to": "lem:descent",
+      "relation": "uses"
+    },
+    {
       "from": "def:yekutieli-triple",
       "to": "def:quantum-observable-universe",
       "relation": "uses"
@@ -4118,286 +4398,6 @@
     },
     {
       "from": "prop:weak-equiv-invariance",
-      "to": "lem:descent",
-      "relation": "uses"
-    },
-    {
-      "from": "def:quantum-characteristic-classes",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "def:quantum-characteristic-classes",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "def:quantum-characteristic-classes",
-      "to": "def:yekutieli-lifting-condition",
-      "relation": "uses"
-    },
-    {
-      "from": "def:quantum-characteristic-classes",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:yekutieli-lifting",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:yekutieli-lifting",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:yekutieli-lifting",
-      "to": "def:yekutieli-lifting-condition",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:yekutieli-lifting",
-      "to": "def:quantum-characteristic-classes",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:yekutieli-lifting",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:quantum-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:yekutieli-lifting-condition",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:quantum-characteristic-classes",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "def:projective-line-object",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "prop:yekutieli-lifting",
-      "relation": "uses"
-    },
-    {
-      "from": "thm:qu-to-qou",
-      "to": "prop:fiber-adjoint-involution",
-      "relation": "uses"
-    },
-    {
-      "from": "def:direct-limit-algebra",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "def:direct-limit-algebra",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "def:direct-limit-algebra",
-      "to": "ex:c-quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:global-gluing",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:global-gluing",
-      "to": "def:direct-limit-algebra",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:global-gluing",
-      "to": "def:quantum-planck-constant",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:global-gluing",
-      "to": "def:quantum-characteristic-classes",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:global-gluing",
-      "to": "prop:vacuum-state",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:vacuum-state",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:vacuum-state",
-      "to": "def:direct-limit-algebra",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:vacuum-state",
-      "to": "def:quantum-gauge-group",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:vacuum-state",
-      "to": "lem:descent",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:euler-char-stability",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:euler-char-stability",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:euler-char-stability",
-      "to": "def:quantum-characteristic-classes",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:euler-char-stability",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "def:mass-identity",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "def:mass-identity",
-      "to": "def:frobenius-pairing",
-      "relation": "uses"
-    },
-    {
-      "from": "def:mass-identity",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "def:descent",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "def:descent",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "def:descent",
-      "to": "thm:qu-to-qou",
-      "relation": "uses"
-    },
-    {
-      "from": "lem:descent",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "lem:descent",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "lem:descent",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "def:descent-involution",
-      "to": "prop:jet-prolongation",
-      "relation": "uses"
-    },
-    {
-      "from": "def:descent-involution",
-      "to": "lem:descent",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:descent-eigenspaces",
-      "to": "def:descent-involution",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:descent-eigenspaces",
-      "to": "rem:algebraic-filter",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:descent-eigenspaces",
-      "to": "rem:weight-space-decomposition",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:descent-eigenspaces",
-      "to": "lem:descent",
-      "relation": "uses"
-    },
-    {
-      "from": "def:brane-boundary",
-      "to": "def:quantum-observable-universe",
-      "relation": "uses"
-    },
-    {
-      "from": "def:brane-boundary",
-      "to": "def:recursive-brane-tower",
-      "relation": "uses"
-    },
-    {
-      "from": "def:brane-boundary",
-      "to": "lem:descent",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:brane-boundary",
-      "to": "def:brane-boundary",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:brane-boundary",
-      "to": "def:descent-involution",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:brane-boundary",
-      "to": "def:quantum-characteristic-classes",
-      "relation": "uses"
-    },
-    {
-      "from": "prop:brane-boundary",
       "to": "lem:descent",
       "relation": "uses"
     },
