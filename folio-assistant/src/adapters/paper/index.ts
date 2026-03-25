@@ -637,6 +637,52 @@ End every response with suggested follow-ups:
       return serveFile(join(this.contentDir, rel)) || new Response("Asset not found", { status: 404 });
     }
 
+    // Uploads listing
+    if (path === "/api/uploads") {
+      try {
+        const uploadsDir = join(this.repoRoot, "uploads");
+        if (!existsSync(uploadsDir)) return Response.json({ uploads: [] }, { headers: CORS });
+        const dirs = readdirSync(uploadsDir, { withFileTypes: true })
+          .filter((d) => d.isDirectory())
+          .map((d) => {
+            const intakePath = join(uploadsDir, d.name, "intake.json");
+            let intake: Record<string, unknown> | null = null;
+            if (existsSync(intakePath)) {
+              try { intake = JSON.parse(readFileSync(intakePath, "utf-8")); } catch { /* skip */ }
+            }
+            return {
+              id: d.name,
+              title: intake?.title ?? d.name,
+              stage: (intake?.pipeline as any)?.stage ?? "unknown",
+              classification: intake?.classification ?? null,
+              blockCount: intake?.blockCount ?? 0,
+              files: readdirSync(join(uploadsDir, d.name)).filter((f) => f !== "intake.json"),
+            };
+          });
+        return Response.json({ uploads: dirs }, { headers: CORS });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
+      }
+    }
+
+    // Single upload detail
+    if (path.startsWith("/api/uploads/")) {
+      const docId = path.slice("/api/uploads/".length).replace(/\/$/, "");
+      const docDir = join(this.repoRoot, "uploads", docId);
+      if (!existsSync(docDir)) return Response.json({ error: "Not found" }, { status: 404, headers: CORS });
+      try {
+        const files = readdirSync(docDir);
+        const intakePath = join(docDir, "intake.json");
+        let intake: Record<string, unknown> | null = null;
+        if (existsSync(intakePath)) {
+          try { intake = JSON.parse(readFileSync(intakePath, "utf-8")); } catch { /* skip */ }
+        }
+        return Response.json({ id: docId, intake, files }, { headers: CORS });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
+      }
+    }
+
     // Render PDF status
     if (path === "/api/render-pdf/status") {
       try {
@@ -663,6 +709,119 @@ End every response with suggested follow-ups:
         return Response.json({ ok: true, path: mdPath });
       } catch (e) {
         return Response.json({ error: String(e) }, { status: 500 });
+      }
+    }
+
+    // Upload document
+    if (path === "/api/upload") {
+      if (!hasRole(req, "collaborator")) return forbidden("uploading documents", "collaborator");
+      try {
+        const contentType = req.headers.get("content-type") || "";
+
+        if (contentType.includes("multipart/form-data")) {
+          // Multipart file upload
+          const formData = await req.formData();
+          const docId = (formData.get("id") as string) || `upload-${Date.now()}`;
+          const title = (formData.get("title") as string) || docId;
+          const docType = (formData.get("type") as string) || "paper";
+          const domain = (formData.get("domain") as string) || "";
+          const normativeLevel = (formData.get("normativeLevel") as string) || "";
+
+          const uploadsDir = join(this.repoRoot, "uploads", docId);
+          if (!existsSync(uploadsDir)) mkdirSync(uploadsDir, { recursive: true });
+
+          // Save uploaded files
+          const savedFiles: string[] = [];
+          for (const [key, value] of formData.entries()) {
+            if (value instanceof File) {
+              const filename = value.name || `${key}.bin`;
+              const buffer = Buffer.from(await value.arrayBuffer());
+              const filePath = join(uploadsDir, filename);
+              writeFileSync(filePath, buffer);
+              savedFiles.push(filename);
+            }
+          }
+
+          // Detect format from file extensions
+          const format = savedFiles.some((f) => f.endsWith(".tex")) ? "latex"
+            : savedFiles.some((f) => f.endsWith(".pdf")) ? "pdf"
+            : savedFiles.some((f) => f.endsWith(".docx")) ? "docx"
+            : savedFiles.some((f) => f.match(/\.(png|jpg|jpeg|tiff?)$/i)) ? "scan"
+            : "unknown";
+
+          // Create intake.json
+          const intake = {
+            id: docId,
+            title,
+            source: { type: "upload", fetchedAt: new Date().toISOString() },
+            format,
+            pipeline: {
+              stage: "uploaded",
+              extractedAt: null,
+              structuredAt: null,
+              generatedAt: null,
+              errors: [],
+            },
+            classification: {
+              type: docType,
+              domain: domain || null,
+              normativeLevel: normativeLevel || null,
+            },
+            chapters: [],
+            blockCount: 0,
+            targetPaper: null,
+          };
+          writeFileSync(join(uploadsDir, "intake.json"), JSON.stringify(intake, null, 2));
+
+          return Response.json({
+            ok: true,
+            id: docId,
+            files: savedFiles,
+            format,
+            stage: "uploaded",
+          }, { headers: CORS });
+        }
+
+        // JSON body — for URL-based intake (arXiv, web URLs)
+        const body = (await req.json()) as {
+          id?: string; title?: string; url?: string;
+          type?: string; domain?: string; normativeLevel?: string;
+        };
+        const docId = body.id || `upload-${Date.now()}`;
+        const uploadsDir = join(this.repoRoot, "uploads", docId);
+        if (!existsSync(uploadsDir)) mkdirSync(uploadsDir, { recursive: true });
+
+        const intake = {
+          id: docId,
+          title: body.title || docId,
+          source: { type: "url", url: body.url, fetchedAt: new Date().toISOString() },
+          format: "pending",
+          pipeline: {
+            stage: "uploaded",
+            extractedAt: null,
+            structuredAt: null,
+            generatedAt: null,
+            errors: [],
+          },
+          classification: {
+            type: body.type || "paper",
+            domain: body.domain || null,
+            normativeLevel: body.normativeLevel || null,
+          },
+          chapters: [],
+          blockCount: 0,
+          targetPaper: null,
+        };
+        writeFileSync(join(uploadsDir, "intake.json"), JSON.stringify(intake, null, 2));
+
+        return Response.json({
+          ok: true,
+          id: docId,
+          stage: "uploaded",
+          message: "Intake created. Upload files to /api/upload with multipart/form-data.",
+        }, { headers: CORS });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
       }
     }
 

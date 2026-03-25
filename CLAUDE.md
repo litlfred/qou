@@ -57,6 +57,9 @@ When a user request arrives, route to the right skill(s):
 | "deploy / auth / OAuth / roles" | `local/deployment-auth` | owner |
 | "import / arxiv / upload paper" | `local/paper-importer` | collaborator |
 | "import + formalize" | `local/paper-importer` + `local/formalizer` | collaborator |
+| "upload / scan / intake / process document" | `local/document-intake` | collaborator |
+| "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
+| "uploads/ status / what's pending" | `local/document-intake` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
@@ -75,7 +78,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -399,6 +402,7 @@ setup instructions rather than silently failing.
 | `.github/scripts/` | Python orchestration (ontologist, extraction, stub generation) |
 | `.claude/skills/local/` | Repo-specific review skills |
 | `.claude/skills/<pkg>/` | Synced external skill packages |
+| `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
 | `todos/` | Work-tracking TodoItems, gitignored (external to paper content) |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |

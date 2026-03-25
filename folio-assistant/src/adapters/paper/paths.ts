@@ -34,6 +34,7 @@ export const get = {
   BUILD_DIR: () => resolve(_repoRoot, "build"),
   PREFS_FILE: () => resolve(_repoRoot, ".folio-prefs.json"),
   FEEDBACK_DIR: () => resolve(_repoRoot, ".folio-feedback"),
+  UPLOADS_DIR: () => resolve(_repoRoot, "uploads"),
 };
 
 // ── Static exports for backward compatibility with tool files ────
