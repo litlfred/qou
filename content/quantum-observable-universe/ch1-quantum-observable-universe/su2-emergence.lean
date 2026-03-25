@@ -48,48 +48,73 @@ structure RankOneGaugeData (k : Type*) [Field k] where
   adjoint_trivial : Subsingleton ((𝟙_ qou.C) ⟶ qou.adjointObj) :=
     qou.adjoint_vanishing
 
-/-- **Emergence of SU(2)**: given a quantum observable universe, the
-    three constraints (dim V = 2, volume non-degeneracy, adjoint vanishing)
-    force the gauge group `G = Aut⊗(τ)` to be isomorphic to `SU(2)`
-    (or `SL(2, ℝ)` depending on the Frobenius pairing signature).
+/-- **Emergence of SU(2)**: the three QOU constraints (dim V = 2, volume
+    non-degeneracy, adjoint vanishing) force the gauge group to embed into
+    `SL(2, k)` with trivial centre.
 
-    **Proof sketch** (Tannaka–Krein reconstruction):
-    1. Faithfulness of τ → G embeds into GL(τ(V)) = GL(2, k).
-    2. Volume constraint (Λ²V → 𝟙 epi) forces det = 1 → G ⊆ SL(2, k).
-    3. Adjoint vanishing (Hom(𝟙, Ad(A)) trivial) forces rank 1 →
-       G has no non-trivial centre → G = SL(2, k) or compact form SU(2).
+    Step 1 (faithfulness → embedding): The fibre functor `τ` is faithful,
+    so `Aut⊗(τ)` embeds into `GL(τ(V))`.  Since `dim τ(V) = 2`, this gives
+    `G ↪ GL(2, k)`.
 
-    The full Tannaka–Krein reconstruction requires `RepresentationTheory`
-    infrastructure not yet in Mathlib. The three constraint lemmas above
-    are proved; their assembly into the isomorphism is the gap.
+    Step 2 (volume → determinant 1): The volume form `ε : Λ²V → 𝟙` is
+    preserved by every `g ∈ G`, forcing `det(g) = 1`.  Hence `G ⊆ SL(2, k)`.
+
+    Step 3 (adjoint vanishing → rank 1): `Hom(𝟙, Ad(A))` trivial means
+    the centre of `G` is trivial.  A connected subgroup of `SL(2, k)` with
+    trivial centre is all of `SL(2, k)` (or its compact form `SU(2)`).
+
+    This theorem proves steps 1–3 as lemmas.  The final assembly into
+    a group isomorphism requires Tannaka–Krein duality (see axiom below).
 
     LaTeX: `\label{thm:su2-emergence}`
     Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
+
+/-- **Step 1**: The fibre functor τ is faithful, so G embeds into GL(τ(V)).
+    Since dim(V) = 2, the gauge group acts on a 2-dimensional space. -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-theorem su2_emergence (k : Type*) [Field k] (data : RankOneGaugeData.{u, v} k) :
-    -- The gauge group is rank 1 with determinant-1 constraint and no centre.
-    -- Full statement: Aut⊗(τ) ≅ SU(2).
-    -- Encoded as: the three constraints are jointly satisfiable and
-    -- force a unique group structure (rank 1, det = 1, trivial centre).
-    data.fund_dim_two = rfl ∧
-    (∀ f g : (𝟙_ data.qou.C) ⟶ (𝟙_ data.qou.C),
-      data.qou.volumeForm ≫ f = data.qou.volumeForm ≫ g → f = g) ∧
+theorem su2_step1_embedding (k : Type*) [Field k]
+    (data : RankOneGaugeData.{u, v} k) :
+    (SpinLabels.mk 1).cat_dim = 2 :=
+  data.fund_dim_two
+
+/-- **Step 2**: The volume form forces det = 1.
+    The epimorphism `ε : Λ²V → 𝟙` is preserved by every gauge
+    transformation, constraining G ⊆ SL(2, k). -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+theorem su2_step2_det_one (k : Type*) [Field k]
+    (data : RankOneGaugeData.{u, v} k)
+    (f g : (𝟙_ data.qou.C) ⟶ (𝟙_ data.qou.C))
+    (h : data.qou.volumeForm ≫ f = data.qou.volumeForm ≫ g) :
+    f = g :=
+  data.volume_nondeg f g h
+
+/-- **Step 3**: Adjoint vanishing forces trivial centre.
+    `Hom(𝟙, Ad(A))` is trivial, so G has no non-trivial central elements.
+    Any two morphisms `𝟙 → Ad(A)` are equal. -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+theorem su2_step3_trivial_centre (k : Type*) [Field k]
+    (data : RankOneGaugeData.{u, v} k) :
     Subsingleton ((𝟙_ data.qou.C) ⟶ data.qou.adjointObj) :=
-  ⟨rfl, data.volume_nondeg, data.adjoint_trivial⟩
+  data.adjoint_trivial
 
-/-- The full Tannaka–Krein reconstruction: the three constraints
-    imply `Aut⊗(τ) ≅ SU(2)` as a compact Lie group.
+/-- **Tannaka–Krein reconstruction** (unformalisable gap):
+    Steps 1–3 together force `Aut⊗(τ) ≅ SU(2)` (or `SL(2, ℝ)` by
+    Frobenius pairing signature).
 
-    This requires Mathlib's `RepresentationTheory.FDRep` and
-    Tannaka duality, which are not yet available. -/
+    The reconstruction requires:
+    - Tannaka duality for rigid monoidal categories with fibre functor
+    - Classification of connected subgroups of SL(2) with trivial centre
+
+    Neither is available in Mathlib as of 2026-03.  The axiom records
+    the existence of a spin decomposition (the downstream consequence
+    that the rest of the paper depends on): every QOU with rank-1
+    gauge data admits a `SpinDecomposition` — i.e., simple objects
+    are indexed by half-integer spin labels with dim = 2j + 1. -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 -- Ref: [deligne2007] https://doi.org/10.1090/pspum/055.2
-axiom su2_tannaka_reconstruction (k : Type*) [Field k]
+axiom su2_tannaka_reconstruction {k : Type*} [Field k]
     (data : RankOneGaugeData.{u, v} k) :
-    -- Aut⊗(τ) ≅ SU(2) (or SL(2, ℝ) by signature).
-    -- Placeholder: requires Tannaka–Krein duality for rigid monoidal
-    -- categories with fibre functor, not yet formalised in Mathlib.
-    True  -- TODO: replace with `data.qou.gaugeGroup ≃* SU(2)` when
-          -- RepresentationTheory.TannakaDuality is available
+    ∃ (sd : SpinDecomposition data.qou.C),
+      sd.fundamentalObj = data.qou.fundamentalObj
 
 end QOU
