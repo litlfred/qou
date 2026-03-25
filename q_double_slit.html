@@ -63,8 +63,10 @@ body.light canvas{background:rgba(255,255,255,0.3);}
   <div class="row"><span class="lbl">d (width)</span><input type="range" id="sl_d" min="10" max="500" step="1" value="100"><span class="val" id="v_d">100&#181;m</span></div>
   <div class="row"><span class="lbl">w (thick)</span><input type="range" id="sl_w" min="10" max="200" step="1" value="50"><span class="val" id="v_w">50&#181;m</span></div>
 
-  <div class="sec">wave</div>
+  <div class="sec">wave / beam</div>
   <div class="row"><span class="lbl">&#955;</span><input type="range" id="sl_lam" min="200" max="900" step="1" value="500"><span class="val" id="v_lam">500nm</span></div>
+  <div class="row"><span class="lbl">w&#8320; (beam)</span><input type="range" id="sl_beam" min="0.05" max="3.0" step="0.01" value="1.0"><span class="val" id="v_beam">1.0mm</span></div>
+  <div class="sub-lbl" style="margin-left:2px;color:var(--accent4);">Gaussian waist at barrier</div>
 
   <div class="sec">torsion</div>
   <div class="row"><span class="lbl">Vol(K)</span><input type="range" id="sl_volK" min="0" max="15" step="0.001" value="7.327724"><span class="val" id="v_volK">7.328</span></div>
@@ -97,6 +99,7 @@ const sl = {
   d: document.getElementById('sl_d'),
   w: document.getElementById('sl_w'),
   lam: document.getElementById('sl_lam'),
+  beam: document.getElementById('sl_beam'),
   volK: document.getElementById('sl_volK'),
   tNorm: document.getElementById('sl_tNorm'),
   rate: document.getElementById('sl_rate'),
@@ -108,6 +111,7 @@ const vl = {
   d: document.getElementById('v_d'),
   w: document.getElementById('v_w'),
   lam: document.getElementById('v_lam'),
+  beam: document.getElementById('v_beam'),
   volK: document.getElementById('v_volK'),
   tNorm: document.getElementById('v_tNorm'),
   rate: document.getElementById('v_rate'),
@@ -117,7 +121,8 @@ const vl = {
 function P() {
   return {
     q: +sl.q.value, D: +sl.D.value, d: +sl.d.value, w: +sl.w.value,
-    lam: +sl.lam.value, volK: +sl.volK.value, tNorm: +sl.tNorm.value,
+    lam: +sl.lam.value, beam: +sl.beam.value,
+    volK: +sl.volK.value, tNorm: +sl.tNorm.value,
     rate: +sl.rate.value, speed: +sl.speed.value,
   };
 }
@@ -128,6 +133,7 @@ function updateLabels(p) {
   vl.d.textContent = Math.round(p.d)+'\u00B5m';
   vl.w.textContent = Math.round(p.w)+'\u00B5m';
   vl.lam.textContent = Math.round(p.lam)+'nm';
+  vl.beam.textContent = p.beam.toFixed(2)+'mm';
   vl.volK.textContent = p.volK.toFixed(3);
   vl.tNorm.textContent = p.tNorm.toFixed(2);
   vl.rate.textContent = Math.round(p.rate)+'/f';
@@ -155,7 +161,7 @@ function torsionPhase(y, slitHalf, q, volK, tNorm, k, w) {
 const N_SLIT = 80;
 const N_SCREEN = 600;
 
-function computePattern(q, D_mm, d_um, w_um, lam_nm, volK, tNorm) {
+function computePattern(q, D_mm, d_um, w_um, lam_nm, volK, tNorm, beam_mm) {
   const lam = lam_nm * 1e-6;
   const d = d_um * 1e-3;
   const w = w_um * 1e-3;
@@ -163,6 +169,8 @@ function computePattern(q, D_mm, d_um, w_um, lam_nm, volK, tNorm) {
   const slitHalf = d / 2;
   const L = 50, H = 500;
   const s1 = -D_mm/2, s2 = D_mm/2;
+  // Gaussian beam waist (mm) — weights each slit point by exp(-y²/w0²)
+  const w0 = beam_mm || 1.0;
   const screenMax = 5.0;
   const intensity = new Float64Array(N_SCREEN);
   const screenPos = new Float64Array(N_SCREEN);
@@ -180,12 +188,14 @@ function computePattern(q, D_mm, d_um, w_um, lam_nm, volK, tNorm) {
       const sc = s===0?s1:s2;
       for (let j=0;j<N_SLIT;j++) {
         const ys = sc + slitY[j];
+        // Gaussian beam envelope: weight by exp(-ys²/w0²)
+        const gw = Math.exp(-(ys*ys)/(w0*w0));
         const r1 = Math.sqrt(L*L+ys*ys);
         const r2 = Math.sqrt(H*H+(xs-ys)*(xs-ys));
         let phase = k*(r1+r2);
         phase += torsionPhase(slitY[j], slitHalf, q, volK, tNorm, k, w);
-        re += Math.cos(phase);
-        im += Math.sin(phase);
+        re += gw * Math.cos(phase);
+        im += gw * Math.sin(phase);
       }
     }
     intensity[i] = re*re + im*im;
@@ -202,10 +212,10 @@ let cachedPattern = null;
 let cdfKey = '';
 
 function recomputeDistribution(p) {
-  const key = [p.q,p.D,p.d,p.w,p.lam,p.volK,p.tNorm].join(',');
+  const key = [p.q,p.D,p.d,p.w,p.lam,p.beam,p.volK,p.tNorm].join(',');
   if (key === cdfKey) return;
   cdfKey = key;
-  cachedPattern = computePattern(p.q, p.D, p.d, p.w, p.lam, p.volK, p.tNorm);
+  cachedPattern = computePattern(p.q, p.D, p.d, p.w, p.lam, p.volK, p.tNorm, p.beam);
   // build CDF
   const cdf = new Float64Array(N_SCREEN);
   cdf[0] = cachedPattern.intensity[0];
@@ -307,23 +317,50 @@ function draw() {
   c.fillStyle = accent2;
   c.font = (9*dpr)+'px "Share Tech Mono"';
   c.textAlign = 'center';
-  c.fillText('LASER', L.laserX, L.centerY + 30*dpr);
+  c.fillText('SOURCE', L.laserX, L.centerY + 30*dpr);
 
-  // ── Draw laser beams (toward slits) ───────────────────────
+  // ── Draw Gaussian beam envelope ─────────────────────────
+  // beam waist w0 in mm → pixel half-height at barrier
+  const beamHalfPx = (p.beam / 2.0) * slitSpan * 0.5;
+  // Draw filled Gaussian cone from laser to barrier
+  c.beginPath();
+  c.moveTo(L.laserX + 6*dpr, L.centerY);
+  c.lineTo(L.barrierX - w_px/2, L.centerY - beamHalfPx);
+  c.lineTo(L.barrierX - w_px/2, L.centerY + beamHalfPx);
+  c.closePath();
+  const beamGrad = c.createLinearGradient(L.laserX, 0, L.barrierX, 0);
+  beamGrad.addColorStop(0, 'rgba(255,85,51,0.12)');
+  beamGrad.addColorStop(1, 'rgba(255,85,51,0.04)');
+  c.fillStyle = beamGrad;
+  c.fill();
+  // beam edges
   c.strokeStyle = accent2;
-  c.globalAlpha = 0.15;
+  c.globalAlpha = 0.2;
   c.lineWidth = 1*dpr;
-  // fan of beams from laser to each slit
-  for (let s = 0; s < 2; s++) {
-    const scy = s===0 ? slit1_cy : slit2_cy;
-    for (let i = -2; i <= 2; i++) {
-      const dy = i * (d_px_clamp * 0.4);
-      c.beginPath();
-      c.moveTo(L.laserX + 6*dpr, L.centerY);
-      c.lineTo(L.barrierX - w_px/2, scy + dy);
-      c.stroke();
-    }
-  }
+  c.setLineDash([4*dpr, 4*dpr]);
+  c.beginPath();
+  c.moveTo(L.laserX + 6*dpr, L.centerY);
+  c.lineTo(L.barrierX - w_px/2, L.centerY - beamHalfPx);
+  c.moveTo(L.laserX + 6*dpr, L.centerY);
+  c.lineTo(L.barrierX - w_px/2, L.centerY + beamHalfPx);
+  c.stroke();
+  c.setLineDash([]);
+  c.globalAlpha = 1;
+  // beam waist indicator at barrier
+  c.strokeStyle = accent2;
+  c.globalAlpha = 0.4;
+  c.lineWidth = 1.5*dpr;
+  c.beginPath();
+  c.moveTo(L.barrierX - w_px/2 - 8*dpr, L.centerY - beamHalfPx);
+  c.lineTo(L.barrierX - w_px/2 - 8*dpr, L.centerY + beamHalfPx);
+  c.stroke();
+  c.globalAlpha = 1;
+  // label w0
+  c.fillStyle = accent2;
+  c.globalAlpha = 0.6;
+  c.font = (7*dpr)+'px "Share Tech Mono"';
+  c.textAlign = 'right';
+  c.fillText('w\u2080', L.barrierX - w_px/2 - 10*dpr, L.centerY + 3*dpr);
   c.globalAlpha = 1;
 
   // ── Draw barrier ──────────────────────────────────────────
@@ -399,7 +436,7 @@ function draw() {
     const spMin = sp[0], spMax = sp[sp.length-1];
 
     // Classical baseline (q=1)
-    const classical = computePattern(1.0, p.D, p.d, p.w, p.lam, 0, 0);
+    const classical = computePattern(1.0, p.D, p.d, p.w, p.lam, 0, 0, p.beam);
     c.beginPath();
     c.strokeStyle = dim;
     c.lineWidth = 1*dpr;
