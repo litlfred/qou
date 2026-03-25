@@ -3,7 +3,7 @@ in the linearised state bundle
 ([linearisation convention](#rem:linearisation-convention)).
 
 For a section $\psi \in \Gamma(E_{\mathrm{lin}})$ and the $q$-deformed Reeb
-vector field $\xi_q$ ([$q$-Reeb vector field](#def:q-reeb-vector-field)), the
+vector field $\xi_q$ ([$q$-Reeb vector field](#ex:q-reeb-vector-field)), the
 Schrödinger dynamics take the form
 
 $$

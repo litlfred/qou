@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)); let $q$
 denote the substrate parameter.  Let
 $\gamma \colon \mathbf{1} \to A$ be a morphism (a "closed cycle" in $A$,
@@ -35,7 +35,7 @@ where:
    to the descended subalgebra
    $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$
    ([descent eigenspaces](#prop:descent-eigenspaces)).  Since
-   $\mathcal{A}^{\mathrm{desc}} \cong \mathrm{End}_{\mathcal{C}}(A_n)$
+   $\mathcal{A}^{\mathrm{desc}} \cong \mathrm{End}_{\mathbf{C}}(A_n)$
    via the ascent embedding $\ell_n$, this equals the mass of the
    base-level cycle $\gamma_0$: it captures the baseline drag of
    the Frobenius--Hopf structure along the trivial core.
@@ -46,10 +46,10 @@ where:
    ([brane boundary](#def:brane-boundary)).  The localisation is
    well-defined because the kernels of $\mathfrak{d}_{n+1}$ at
    distinct blow-up centres are disjoint submodules of
-   $\mathrm{End}_{\mathcal{C}}(A_{n+1})$.
+   $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 
 The decomposition follows from the idempotent splitting
-$\mathrm{End}_{\mathcal{C}}(A_{n+1}) =
+$\mathrm{End}_{\mathbf{C}}(A_{n+1}) =
 \mathcal{A}^{\mathrm{desc}} \oplus \mathcal{A}^{\mathrm{trans}}$
 ([descent eigenspaces](#prop:descent-eigenspaces)) and the linearity of
 the categorical trace.  When the splitting is orthogonal with respect to

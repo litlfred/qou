@@ -1,14 +1,14 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Universality.
+ * Chapter 4 (was 5): Universality.
  *
  * Categorical reformulations, quantum groups, p-adic and finite-field
  * realisations, Witt-vector lifting, and Jones polynomials.
  * (Descartes-specific content moved to ch11-experimental-evidence.)
  */
 export default chapter({
-  number: 5,
+  number: 4,
   title: "Universality",
   label: "chap:universality",
   sections: [

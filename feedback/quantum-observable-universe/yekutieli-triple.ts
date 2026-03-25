@@ -1,0 +1,14 @@
+import type { FeedbackItem } from "../../schemas/types";
+
+export default [
+  {
+    "id": "todo-mn163edj",
+    "summary": "rendering error.  also previous content is not in a block",
+    "comment": "rendering error.  also previous content is not in a block",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T02:58:26.311Z"
+  }
+] satisfies FeedbackItem[];

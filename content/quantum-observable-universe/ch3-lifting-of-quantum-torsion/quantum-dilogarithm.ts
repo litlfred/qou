@@ -7,6 +7,7 @@ export default corollary({
     validation: "not_checked",
   },
   title: "Quantum Dilogarithm as Localized Torsion Volume",
+  proofs: ["prf:quantum-dilogarithm"],
   tags: ["quantum-dilogarithm", "torsion-volume", "reeb-flow", "archimedean"],
   uses: ["thm:topological-mass", "def:briggs-klein-chart"],
   rendered: [

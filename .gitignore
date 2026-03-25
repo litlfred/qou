@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
-.qou-prefs.json
+.folio-assistant-prefs.json
 build/
 
 # Generated LaTeX chapters (from content pipeline)
@@ -53,3 +53,7 @@ todos/
 .qou-tmp/
 .folio-feedback/
 .folio-tmp/
+.folio-assistant-tmp/
+
+# Feedback worktree (local checkout of main for committing feedback)
+.feedback-wt/

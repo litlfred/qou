@@ -1,4 +1,4 @@
-The ([Reeb decomposition](#def:reeb-decomposition)) applied to
+The ([Reeb decomposition](#ex:reeb-decomposition)) applied to
 a Descartes universe yields two classes of fermionic excitations
 ([fermion](#def:fermion)).  The degree of the vertical component
 $\alpha_V$ distinguishes them: forms with $\deg\alpha_V = 1$ correspond to

@@ -1,8 +1,12 @@
-import { prose } from "../../schema/builders";
+import { definition } from "../../schema/builders";
 
-export default prose({
-  label: "sec:ugb-division-algorithm",
-  title: "The division algorithm",
-  tags: ["groebner-basis", "algorithm"],
-  uses: ["def:remainder-modules", "def:admissible-system"],
+export default definition({
+  label: "def:division-algorithm",
+  title: "Division algorithm",
+  lean: {
+    decl: "QOU.GrobnerShirshov.reduce",
+    validation: "not_checked",
+  },
+  tags: ["groebner-basis", "division", "algorithm"],
+  uses: ["def:admissible-system", "def:remainder-module"],
 });

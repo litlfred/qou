@@ -16,15 +16,16 @@ export default folio({
         "A framework for quantum physics via rigid monoidal categories, " +
         "higher-form symmetries, and observable algebras.",
       tags: ["quantum", "category-theory", "formalization"],
+      url: "/viewer/#/view/quantum-observable-universe",
     }),
     paperRef({
       dir: "unital-groebner-bases",
       title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
       description:
-        "A generalization of Gröbner basis theory to non-commutative algebras " +
-        "over arbitrary commutative ground rings, with a Gröbner basis proof " +
-        "of the Poincaré–Birkhoff–Witt theorem.",
-      tags: ["algebra", "groebner-basis", "pbw", "lie-algebra"],
+        "Proves that quotients A/I are free R-modules when I has a unital " +
+        "Gröbner basis; obtains PBW over commutative rings as a corollary.",
+      tags: ["algebra", "groebner-basis", "pbw", "formalization"],
+      url: "/viewer/#/view/unital-groebner-bases",
     }),
   ],
 });

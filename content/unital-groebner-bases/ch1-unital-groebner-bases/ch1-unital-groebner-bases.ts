@@ -1,39 +1,59 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 1: Unital Gröbner Bases.
+ * Chapter 1: Unital Gröbner Bases
  *
- * Core definitions, the division algorithm, and the main theorem proof.
+ * Single-chapter paper covering definitions, division algorithm,
+ * the main decomposition theorem, Buchberger's theorem over R,
+ * and PBW as a corollary.
  */
 export default chapter({
   number: 1,
-  title: "Unital Gröbner Bases",
-  label: "chap:ugb-definitions",
+  title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+  label: "chap:ugb",
   sections: [
     section({
-      title: "Notation and basic definitions",
-      label: "sec:ugb-notation",
+      title: "Introduction",
+      label: "sec:ugb-introduction",
+      blocks: [
+        "introduction",
+        "motivating-examples",
+      ],
+    }),
+
+    section({
+      title: "Monomials, orderings, and admissible systems",
+      label: "sec:ugb-definitions",
       blocks: [
         "monomial-basis",
-        "leading-terms",
         "admissible-system",
+        "remainder-module",
       ],
     }),
+
     section({
-      title: "Gröbner bases and the division algorithm",
+      title: "Division algorithm and Gröbner bases",
       label: "sec:ugb-division",
       blocks: [
-        "remainder-modules",
         "division-algorithm",
-        "unital-groebner-basis",
+        "groebner-basis",
       ],
     }),
+
     section({
-      title: "Proof of the main theorem",
-      label: "sec:ugb-main-proof",
+      title: "Main results",
+      label: "sec:ugb-main-results",
       blocks: [
-        "lemma-generator-choice",
-        "ugb-main-theorem-proof",
+        "generator-choice-lemma",
+        "generator-choice-lemma-proof",
+        "main-theorem",
+        "main-theorem-proof",
+        "s-polynomial-decomposition",
+        "s-polynomial-decomposition-proof",
+        "buchberger",
+        "buchberger-proof",
+        "pbw-corollary",
+        "pbw-corollary-proof",
       ],
     }),
   ],

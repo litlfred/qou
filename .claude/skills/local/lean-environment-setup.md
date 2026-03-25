@@ -14,7 +14,7 @@ allowed-tools: Read Edit Bash Grep Glob
 ## Architecture
 
 All MCP functionality — including Lean tools — is served through a single
-`paper-assistant` MCP server (`./scripts/start-assistant.sh`). There is
+`paper-assistant` MCP server (`./scripts/start-folio-assistant.sh`). There is
 **no separate lean-lsp MCP entry**. The paper-assistant detects lean/lake
 on the PATH and enables Lean tools automatically.
 
@@ -88,7 +88,7 @@ The `.mcp.json` has a single entry — `paper-assistant`:
 {
   "mcpServers": {
     "paper-assistant": {
-      "command": "./scripts/start-assistant.sh",
+      "command": "./scripts/start-folio-assistant.sh",
       "args": ["--stdio"]
     }
   }

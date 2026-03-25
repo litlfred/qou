@@ -47,6 +47,8 @@ content/
 - **lean-file-exists**: Definitions have a sibling `.lean` or `lean.file` reference
 - **no-orphan-lean**: Every `.lean` file MUST have a `.ts` manifest sibling — `.lean` files are NEVER standalone, always part of a content triple (`.ts` + `.md` + `.lean`)
 - **uses-resolve**: All labels in `uses[]` exist in the document
+  (or are qualified cross-paper refs in `"paper-dir:label"` format,
+  which are skipped — resolved at folio level)
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
 ### Level 3: LaTeX AST validation
@@ -127,6 +129,42 @@ This skill is invoked automatically by the editor's **content-change fallback**
 (see `editor.md § Content-change fallback`). Whenever any content is modified
 during a session, the editor runs `content_validate` on affected chapters
 before the task is considered complete.
+
+## Block-kind classification rules
+
+When auditing or creating blocks, use these criteria to assign the correct kind:
+
+| Criterion | Kind | Example |
+|-----------|------|---------|
+| Introduces new structure/axioms | `definition` | quantum-universe, categorical-connection |
+| Asserts a consequence of upstream defs | `proposition` / `theorem` | spin-labels (consequence of SU(2) emergence) |
+| Proves something can be *constructed* from upstream | `theorem` (existence) | weight-decomposition-exists |
+| Lightweight wrapper / synonym for Mathlib type | `remark` (glossary) | rigid-monoidal-category |
+
+**Key test**: "Does this block introduce new mathematics, or does it assert
+something that *follows* from existing definitions?" If the latter, it should
+be a proposition/theorem, not a definition.
+
+**Conditional definitions**: Some definitions are only meaningful given
+upstream results (e.g. `def:maximal-torus` requires `thm:su2-emergence`).
+These remain definitions but MUST list the upstream theorem in `uses[]`.
+
+## Dependency completeness checks
+
+When auditing `uses[]` arrays:
+
+1. **Narrative cross-refs**: Every `[text](#label)` in the `.md` file should
+   have a corresponding entry in `uses[]` (unless it's a forward reference
+   or example/remark reference).
+2. **Gauge group references**: Any block that references `G`, `SU(2)`,
+   or the gauge group should depend on `thm:su2-emergence` (directly or
+   through a block like `def:maximal-torus` that already depends on it).
+3. **Existence links**: Every definition that bundles fields should have a
+   corresponding existence theorem (`thm:<name>-exists`) that proves the
+   fields can be constructed from upstream structures.
+4. **Lazy-loading caveat**: The viewer dep graph force-loads all sections
+   before building edges. If edges appear missing in the UI, verify the
+   data is correct before assuming the `uses[]` is wrong.
 
 ## Integration with test-engineer
 

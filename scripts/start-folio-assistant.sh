@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
-# Start the QOU Paper Writing Assistant MCP server.
+# Start the Folio Assistant MCP server.
 #
 # Usage:
-#   ./scripts/start-assistant.sh              # stdio mode (for .mcp.json)
-#   ./scripts/start-assistant.sh --http       # HTTP mode (for remote/Docker)
-#   ./scripts/start-assistant.sh --install    # install deps first, then start
-#   ./scripts/start-assistant.sh --check      # just check deps, don't start
+#   ./scripts/start-folio-assistant.sh              # stdio mode (for .mcp.json)
+#   ./scripts/start-folio-assistant.sh --http       # HTTP mode (for remote/Docker)
+#   ./scripts/start-folio-assistant.sh --install    # install deps first, then start
+#   ./scripts/start-folio-assistant.sh --check      # just check deps, don't start
 #
 # Works on: ChromeOS/Crostini, macOS, Ubuntu, any POSIX system with bun.
 #
@@ -41,7 +41,7 @@ done
 # ── Ensure bun is available ──────────────────────────────────────
 
 if ! command -v bun &>/dev/null; then
-  echo "[start-assistant] bun not found. Installing..." >&2
+  echo "[start-folio-assistant] bun not found. Installing..." >&2
   curl -fsSL https://bun.sh/install | bash
   export PATH="$HOME/.bun/bin:$PATH"
 fi
@@ -49,7 +49,7 @@ fi
 # ── Full install if requested ────────────────────────────────────
 
 if $DO_INSTALL; then
-  echo "[start-assistant] Running full install..." >&2
+  echo "[start-folio-assistant] Running full install..." >&2
   bash "$MCP_DIR/install.sh"
 fi
 
@@ -60,14 +60,14 @@ fi
 if [ ! -d "$MCP_DIR/node_modules" ] \
   || [ "$MCP_DIR/package.json" -nt "$MCP_DIR/bun.lock" ] 2>/dev/null \
   || [ ! -f "$MCP_DIR/bun.lock" ]; then
-  echo "[start-assistant] Installing MCP server dependencies..." >&2
+  echo "[start-folio-assistant] Installing MCP server dependencies..." >&2
   cd "$MCP_DIR" && bun install 2>&1 >&2
 fi
 
 # ── Ensure content pipeline node_modules exist ───────────────────
 
 if [ -d "$REPO_ROOT/content" ] && [ ! -d "$REPO_ROOT/content/node_modules" ]; then
-  echo "[start-assistant] Installing content pipeline dependencies..." >&2
+  echo "[start-folio-assistant] Installing content pipeline dependencies..." >&2
   cd "$REPO_ROOT/content" && bun install 2>&1 >&2
 fi
 
@@ -77,7 +77,7 @@ fi
 _check() { command -v "$1" &>/dev/null && echo "✓" || echo "✗"; }
 
 echo "" >&2
-echo "[start-assistant] Dependency status:" >&2
+echo "[start-folio-assistant] Dependency status:" >&2
 
 # Required
 for cmd in bun latexmk pdflatex; do
@@ -97,7 +97,7 @@ done
 if [ "$MISSING" -gt 0 ]; then
   echo "" >&2
   echo "  ⚠  $MISSING required dep(s) missing — some features disabled." >&2
-  echo "     Run: ./scripts/start-assistant.sh --check  for install hints" >&2
+  echo "     Run: ./scripts/start-folio-assistant.sh --check  for install hints" >&2
 fi
 echo "" >&2
 

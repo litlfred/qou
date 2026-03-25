@@ -10,6 +10,7 @@ export default definition({
   },
   uses: [
     "def:projective-line-object",
+    "def:categorical-reeb",
     "ex:reeb-decomposition",
     "def:weight-decomposition",
   ],

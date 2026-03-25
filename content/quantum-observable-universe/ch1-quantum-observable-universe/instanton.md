@@ -1,5 +1,5 @@
 In the archimedean quantum universe
-([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)), a
+([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), a
 ([categorical instanton](#def:categorical-instanton)) specialises to an
 *instanton connection* on $P$: a connection $A$ whose
 curvature $F_A$, restricted to $H = \ker\theta$, is self-dual:

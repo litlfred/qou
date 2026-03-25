@@ -1,0 +1,14 @@
+import type { FeedbackItem } from "../../schemas/types";
+
+export default [
+  {
+    "id": "todo-mn1717s3-m7bc",
+    "summary": "move to core defintion",
+    "comment": "move to core defintion",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-22T03:24:44.068Z"
+  }
+] satisfies FeedbackItem[];

@@ -7,10 +7,13 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Substrate parameter as the radial coordinate",
+  proofs: ["prf:substrate-radial-coordinate"],
   tags: ["substrate", "projective", "boson", "fermion"],
   uses: [
     "def:contact-affine-chart",
     "def:substrate-parameter",
     "def:fermion-boson-decomposition",
+    "def:quantum-planck-constant",
+    "ex:q-reeb-flow",
   ],
 });

@@ -20,6 +20,6 @@ export default definition({
       "CategoryTheory.ExactPairing.coevaluation_evaluation'",
     ],
   },
-  uses: ["def:rigid-monoidal-category"],
+  uses: [],
   examples: [],
 });

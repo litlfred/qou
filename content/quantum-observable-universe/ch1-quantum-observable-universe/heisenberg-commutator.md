@@ -10,9 +10,9 @@ measurement*.  Let $\hat{X}, \hat{P}$ be position and momentum
 observables on the fibre $\mathbb{P}^1(\mathbb{C})$, and let
 $J \colon H \to H$ be the complex structure on the Levi distribution
 ($J^2 = -\mathrm{Id}$; throughout this paper $i$ is identified with
-the action of $J$ on horizontal planes).  The substrate parameter $q$
-([substrate parameter](#def:substrate-parameter)) is the fibre
-coordinate on the interpolation family between $d$ and $\pi_V \circ d$;
+the action of $J$ on horizontal planes).  The substrate parameter $q \in \mathrm{End}(\mathbf{1})$
+([substrate parameter](#def:substrate-parameter)) parametrises the
+categorical interpolation family between $d$ and $\pi_V \circ d$;
 the quantum Planck constant
 $\hbar_q = 1 - q^{-1}$
 ([quantum Planck constant](#def:quantum-planck-constant)) measures
@@ -31,7 +31,7 @@ of the fibre, where $d_q \to \pi_V \circ d$).
 
 Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\theta(\xi_q)$, the
 $q$-deformed Reeb field
-([$q$-Reeb vector field](#def:q-reeb-vector-field)) evaluated on the
+([$q$-Reeb vector field](#ex:q-reeb-vector-field)) evaluated on the
 contact form: $\xi_q$ is the unique direction along which $d\theta$
 degenerates, so it encodes the obstruction to commutativity.
 Uncertainty is displacement along the Reeb fibre --- the further from

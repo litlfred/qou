@@ -1,5 +1,5 @@
 In the archimedean realisation
-([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)), the categorical weight
+([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the categorical weight
 decomposition ([weight decomposition](#def:weight-decomposition)) specialises
 to the *Reeb decomposition*.  Let $\xi$ denote the *Reeb
 vector field*, characterised by $\iota_\xi\,d\theta = 0$ and

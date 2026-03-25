@@ -2,11 +2,11 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:monomial-basis",
-  title: "Monomial basis",
-  tags: ["groebner-basis", "algebra"],
+  title: "Monomials, monomial bases, and leading terms",
   lean: {
-    decl: "QOU.UnitalGroebner.MonomialBasis",
+    decl: "QOU.GrobnerShirshov.AlgElement",
     validation: "not_checked",
   },
+  tags: ["groebner-basis", "monomial", "leading-term"],
   uses: [],
 });

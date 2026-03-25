@@ -5,5 +5,5 @@ export default definition({
   lean: { decl: "QOU.CategoricalQTorsionLeaf" },
   title: "Categorical q-torsion leaf",
   tags: ["torsion", "q-deformation", "category-theory"],
-  uses: [],
+  uses: ["def:weight-decomposition", "def:categorical-q-reeb-flow"],
 });

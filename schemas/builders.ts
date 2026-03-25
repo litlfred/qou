@@ -37,6 +37,7 @@ import type {
   PaperRef,
   Folio,
   Document,
+  FeedbackItem,
 } from "./types";
 
 import {
@@ -59,6 +60,7 @@ import {
   PaperRefSchema,
   FolioSchema,
   DocumentSchema,
+  FeedbackItemSchema,
 } from "./constraints";
 
 // ── Generic validated builder ────────────────────────────────────
@@ -156,4 +158,10 @@ export function folio(data: Folio): Folio {
 /** @deprecated Use paper() instead. */
 export function document(data: Document): Document {
   return validated(DocumentSchema, data) as Document;
+}
+
+// ── Feedback builder ──────────────────────────────────────────────
+
+export function feedbackItem(data: FeedbackItem): FeedbackItem {
+  return validated(FeedbackItemSchema, data) as FeedbackItem;
 }

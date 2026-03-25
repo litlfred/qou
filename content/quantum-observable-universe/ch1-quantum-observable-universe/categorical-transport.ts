@@ -16,7 +16,7 @@ export default definition({
   },
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-transport-0.svg", blockIndex: 0, hash: "0d2b87d744cb" },
-    { mime: "image/svg+xml", url: "rendered/categorical-transport-1.svg", blockIndex: 1, hash: "45cc49efb3f7" },
+    { mime: "image/svg+xml", url: "rendered/categorical-transport-1.svg", blockIndex: 1, hash: "7e120dce8f91" },
   ],
 
 });

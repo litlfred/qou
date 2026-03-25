@@ -1,5 +1,5 @@
 The ([jet prolongation](#prop:jet-prolongation)) preserves
-braided monoidal structure: if $\mathcal{C}$ is braided, then the jet
+braided monoidal structure: if $\mathbf{C}$ is braided, then the jet
 object $J^1(A) = A \otimes \Omega^1(A)$ inherits a braiding from the
 tensor product of braidings on $A$ and $\Omega^1(A)$.  Consequently the
 braid-group representations $\rho_n$ at each level of the brane tower are

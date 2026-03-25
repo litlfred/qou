@@ -15,7 +15,7 @@ reduce to purely algebraic invariants at each point $p\in M_k$.
    definite quantum constant $q\in[1,\infty)$, encoding the full
    content of the quantum observable universe at that point.
 4. *Reeb direction.*  There is no tangent space, so the Reeb
-   vector field ([$q$-Reeb vector field](#def:q-reeb-vector-field)) and the
+   vector field ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) and the
    horizontal distribution are absent; only the internal
    $\mathrm{SU}(2)$ fibre data persist.
 

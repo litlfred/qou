@@ -2,10 +2,10 @@
 The gauge group $G$ is defined via Tannaka--Krein duality as
 the group scheme of tensor-preserving natural automorphisms of the fibre
 functor $\tau$. An element $g \in G$ assigns an invertible linear map
-$g_X \colon \tau(X) \to \tau(X)$ to every object $X \in \mathcal{C}$.
+$g_X \colon \tau(X) \to \tau(X)$ to every object $X \in \mathbf{C}$.
 
 Because $g$ is a natural transformation, it commutes with all morphisms
-in $\mathcal{C}$, including the volume constraint
+in $\mathbf{C}$, including the volume constraint
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 \eqref{eq:categorical-volume-constraint}. Applying $\tau$ yields the
 commutative diagram of $R$-modules
@@ -26,7 +26,12 @@ commutative diagram of $R$-modules
 \end{equation}
 ```
 
-The fundamental object $V$ has categorical dimension $2$, so
+The volume constraint requires a non-degenerate epimorphism
+$\epsilon \colon \Lambda^2 V \to \mathbf{1}$, which forces
+$\operatorname{rank}(V) = 2$: the epimorphism is non-degenerate only
+when $\Lambda^2 V$ has rank $1$, and
+$\operatorname{rank}(\Lambda^2 V) = \binom{r}{2}$ equals $1$ precisely
+for $r = 2$ (see [Remark](#rem:fundamental-object-explication)). Thus
 $\tau(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \tau(V)$ has
 rank $1$. The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
 module as scalar multiplication by $\det(g_V)$. Following
