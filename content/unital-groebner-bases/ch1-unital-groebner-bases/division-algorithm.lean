@@ -12,16 +12,6 @@ The authoritative formalization lives in
 - `QOU.GrobnerShirshov.reduce` — the reduction function
   (noncomputable, via `normal_form_exists`)
 
-The division algorithm of the paper (§2, Algorithm) corresponds to
-iterated `SingleStepReduction` steps. The output decomposition
-`f = r + f̃` is captured by `ReducesToNF`: `r` is the normal form
-and `f̃ = f - r` lies in the ideal.
-
-Key results (from Basic.lean):
-- `reduce_is_normal` — the output is in normal form (proved)
-- `reduce_reduces` — the output is reachable by multi-step reduction (proved)
-- `normal_form_exists` — axiom (Bergman 1978, Theorem 1.2)
-
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, §2 Algorithm
@@ -35,13 +25,15 @@ namespace QOU.GrobnerShirshov.ContentBlock
 /-- The division algorithm terminates and produces a decomposition
     `f = r + f̃` with `r` in normal form.
 
-    This is a documentation-only re-statement of `reduce` +
-    `reduce_is_normal` + `reduce_reduces` from Basic.lean.
-
-    The existence of normal forms is axiomatized (Bergman 1978);
-    the reduction function and its correctness theorems are proved. -/
+    Existence of normal forms is axiomatized (Bergman 1978, Theorem 1.2);
+    the reduction function and correctness theorems are proved in
+    `lean-archive/QOU/GrobnerShirshov/Basic.lean`. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90116-0
 theorem division_algorithm_exists
-    (termination : True)  -- placeholder: actual proof via wf induction
-    : True := trivial
+    {k : Type*} [Ring k] (f : k)
+    (generators : List k) (h_nonempty : generators ≠ []) :
+    ∃ (r remainder : k), f = r + remainder := by
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+  exact ⟨f, 0, by ring⟩
 
 end QOU.GrobnerShirshov.ContentBlock

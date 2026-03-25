@@ -38,8 +38,11 @@ theorem observed_from_colors (ov : ObservedValue) :
   have h := ov.vieta
   linarith
 
-/-- The projection π_z is a polynomial map over ℤ. -/
+/-- The projection π_z : (r, g, b) ↦ z = -(r + g + b + 1)/4 is
+    a polynomial (affine-linear) map with ℤ-coefficients. -/
 -- Ref: [manuscript] Chapter 5
-theorem projection_polynomial : True := trivial
+theorem projection_polynomial (ov : ObservedValue) :
+    ov.z = -(ov.r + ov.g + ov.b + 1) / 4 := by
+  linarith [ov.vieta]
 
 end QOU

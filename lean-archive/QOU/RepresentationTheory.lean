@@ -192,10 +192,8 @@ theorem pawLei_minimal_dim (twice_j : ℕ) :
     pawLeiDim twice_j twice_j = 1 := by
   unfold pawLeiDim
   simp only [Nat.mod_self, ne_eq, not_true, ite_false, lt_self_iff_false]
-  -- The factorial expression simplifies to (twice_j+1) · twice_j! / ((twice_j+1)! · 0!)
-  -- = (twice_j+1) · twice_j! / ((twice_j+1) · twice_j! · 1) = 1
-  sorry
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+  sorry
 
 /-- The **Pawlowski–Leitner basis** for the intertwiner space
     `Hom_{SU(2)}(V_j, V_{1/2}^⊗n)` is indexed by standard Young
@@ -236,13 +234,16 @@ structure PawLeiInnerProduct where
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
   normSq_pos : ∀ i, normSq i > 0
 
-/-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
+/-- Orthogonality: the PL inner product of distinct basis vectors vanishes.
+    This requires an inner product field; for now we state existence. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawLei_orthogonal
     (ip : PawLeiInnerProduct)
+    (innerProduct : Fin ip.basis.num_basis → Fin ip.basis.num_basis → ℝ)
     (i j : Fin ip.basis.num_basis) (h : i ≠ j) :
-    True := by  -- placeholder for the orthogonality statement
-  trivial
+    innerProduct i j = 0 := by
+  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+  sorry
 
 /-! ## §6  Knot Factorization through Tensor Powers of V -/
 
@@ -263,9 +264,8 @@ theorem hadron_tensor_factorization
     (spins_pos : ∀ i, h.constituent_spins i ≥ 1) :
     h.totalTensorPower ≥ 2 * h.valence := by
   unfold CategoricalHadron.totalTensorPower
-  -- ∑ spins ≥ ∑ (fun _ => 1) = Fintype.card (Fin valence) = valence
-  sorry
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+  sorry
 
 /-- The Clebsch–Gordan decomposition: `V_{1/2} ⊗ V_{1/2} ≅ V_0 ⊕ V_1`.
     In terms of categorical dimensions: `dim(V_{1/2})² = dim(V_0) + dim(V_1)`,

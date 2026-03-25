@@ -461,8 +461,7 @@ noncomputable def h_q_sq_at_substrate : ℝ := h_q_at_substrate ^ 2
 theorem muon_electron_ratio_from_topology :
     |topological_mass vol_figure_eight substrate_q / electron_mass_MeV
      - experimental_mu_e_ratio| < 0.1 := by
-  -- Ref: [turaev2010] Vol(4₁) / ℏ_q² ≈ 206.77 ≈ m_μ/m_e
-  -- Numerical verification exceeds norm_num capabilities for this expression
+  -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831
   sorry
 
 /-- The Borromean rings volume relates to the nucleon mass scale.
@@ -533,8 +532,7 @@ noncomputable def skein_mass_relation_proton_neutron : SkeinMassRelation where
   m_minus := neutron_mass_MeV
   m_zero := deuteron_mass_MeV
   skein := by
-    -- Ref: [manuscript] Skein relation verified numerically
-    -- q·m₊ − q⁻¹·m₋ = (q^½ − q^-½)·m₀
+    -- Ref: [manuscript] §11-experimental-evidence
     sorry
 
 /-- **Proposition (Terminal Resolution of Hadronic Mass).**

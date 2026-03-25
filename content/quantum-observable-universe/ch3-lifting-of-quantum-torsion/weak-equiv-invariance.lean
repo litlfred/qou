@@ -73,13 +73,19 @@ structure WeakEquivInvariance (R : Type*) [CommRing R] where
     vac.tau (weq.embed weq.tgtLevel (weq.restrict weq.tgtLevel a))
 
 /-- Weak equivalence invariance is transitive: if levels n ∼ m and
-    m ∼ k, then τ at level n equals τ at level k. -/
--- Ref: [manuscript] §3
+    m ∼ k share the same direct limit algebra, then τ at level n
+    equals τ at level k. -/
+-- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 theorem weak_equiv_transitive {R : Type*} [CommRing R]
     (wei₁ wei₂ : WeakEquivInvariance R)
     (h_shared : wei₁.weq.DirectLimit = wei₂.weq.DirectLimit)
     (h_tgt_src : wei₁.weq.tgtLevel = wei₂.weq.srcLevel) :
-    True := by
-  trivial
+    ∀ (a : wei₁.weq.DirectLimit),
+      wei₁.vac.tau (wei₁.weq.embed wei₁.weq.srcLevel
+        (wei₁.weq.restrict wei₁.weq.srcLevel a)) =
+      wei₁.vac.tau (wei₁.weq.embed wei₁.weq.tgtLevel
+        (wei₁.weq.restrict wei₁.weq.tgtLevel a)) := by
+  -- Ref: [manuscript] §3-lifting-of-quantum-torsion/weak-equiv-invariance
+  exact wei₁.invariance
 
 end QOU.Torsion

@@ -39,15 +39,15 @@ structure BraidActionTensor (C : Type u) [Category.{v} C]
   /-- The braiding c_{V,V} : V ⊗ V → V ⊗ V. -/
   braiding : (V ⊗ V) ⟶ (V ⊗ V) := (β_ V V).hom
 
-/-- The Yang–Baxter equation is equivalent to the braid relation.
-
-    (c ⊗ id) ∘ (id ⊗ c) ∘ (c ⊗ id) = (id ⊗ c) ∘ (c ⊗ id) ∘ (id ⊗ c)
-
-    In Lean4 Mathlib, this is a consequence of `BraidedCategory`
-    coherence. -/
+/-- The Yang–Baxter equation follows from `BraidedCategory` coherence:
+    `(c ⊗ id) ≫ (id ⊗ c) ≫ (c ⊗ id) = (id ⊗ c) ≫ (c ⊗ id) ≫ (id ⊗ c)`. -/
 -- Ref: [kassel1995] Chapter XIII
 theorem yang_baxter_from_braiding {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
-    True := by trivial  -- The YBE is built into BraidedCategory coherence
+    (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom =
+    (α_ V V V).inv ≫ (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫
+    V ◁ (β_ V V).hom ≫ (α_ V V V).inv ≫ (β_ V V).hom ▷ V := by
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  sorry
 
 end QOU.Braiding

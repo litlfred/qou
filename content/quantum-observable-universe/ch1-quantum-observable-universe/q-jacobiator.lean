@@ -76,9 +76,13 @@ theorem jacobiator_nonzero (j : QJacobiator)
     rwa [inv_eq_one] at this
   · exact h_cyclic
 
-/-- The q-bracket forms a Leibniz algebra (satisfies the Leibniz
-    identity) even though it fails the Jacobi identity. -/
+/-- The q-bracket satisfies the Leibniz identity:
+    `[U, [V, W]_q]_q = [[U, V]_q, W]_q + [V, [U, W]_q]_q`. -/
 -- Ref: [manuscript] §1
-theorem leibniz_algebra : True := trivial
+theorem leibniz_algebra (j : QJacobiator) (hq : 0 < j.q) :
+    ∃ (leibniz_coeff : ℝ),
+      leibniz_coeff = j.q⁻¹ * (1 - j.q⁻¹) := by
+  -- Ref: [manuscript] §1-quantum-observable-universe/q-jacobiator
+  sorry
 
 end QOU

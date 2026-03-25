@@ -40,8 +40,6 @@ def IdempotentEndomorphism.transient (τ : IdempotentEndomorphism (R := R) M) :
 theorem idempotent_direct_sum_decomposition
     (τ : IdempotentEndomorphism (R := R) M) :
     τ.descended ⊔ τ.transient = ⊤ := by
-  -- For any x, write x = τ(x) + (x - τ(x)).
-  -- τ(x) ∈ im(τ) and (x - τ(x)) ∈ ker(τ) since τ² = τ.
   rw [eq_top_iff]
   intro x _
   rw [Submodule.mem_sup]
@@ -55,8 +53,6 @@ theorem idempotent_direct_sum_decomposition
 theorem idempotent_direct_sum_disjoint
     (τ : IdempotentEndomorphism (R := R) M) :
     Disjoint τ.descended τ.transient := by
-  -- If x ∈ im(τ) ∩ ker(τ), then x = τ(y) and τ(x) = 0.
-  -- But τ(x) = τ(τ(y)) = τ(y) = x by idempotence, so x = 0.
   rw [disjoint_def]
   intro x hx_desc hx_trans
   simp only [IdempotentEndomorphism.transient, LinearMap.mem_ker] at hx_trans
@@ -88,7 +84,6 @@ theorem no_preimage_is_transient
     (hτ : τ.toFun = ℓ ∘ₗ 𝔡)
     (x : M) (hx : 𝔡 x = 0) :
     τ.toFun x = 0 := by
-  -- τ(x) = ℓ(𝔡(x)) = ℓ(0) = 0
   simp only [hτ, LinearMap.comp_apply, hx, map_zero]
 
 end QOU.Torsion

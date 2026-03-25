@@ -47,10 +47,12 @@ theorem uncertainty_vanishes (qr : QuaternionicResolvent) :
     qr.omega 0 = 0 :=
   qr.omega_zero_balanced
 
-/-- The remaining three resolvents ω₁, ω₂, ω₃ embed Bring's surface
-    into J∞E, providing space-like and time-like coordinates. -/
--- Ref: [manuscript] Chapter 5
+/-- When ω₀ = 0, the remaining resolvents ω₁, ω₂, ω₃ are
+    independent (at least one is nonzero for nontrivial input). -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 theorem three_resolvents_embed (qr : QuaternionicResolvent) :
-    True := trivial
+    qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) := by
+  -- Ref: [manuscript] Chapter 5
+  sorry
 
 end QOU

@@ -238,20 +238,11 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- induction on `a`.  Encoding this mutual recursion in Lean 4 requires
 -- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
 --
--- Note: `lexLt_wf` is not used directly by `degLexOrder`; only
--- `degLexLt_wf` is needed (proved below via `lexEncoding` embedding
--- into `ℕ ×ₗ ℕ`).  This theorem is retained for completeness.
--- Ref: [bokut2014] well-foundedness of lex on words over well-ordered alphabet
--- The proof embeds lexLt into List.Lex (· < ·) on ℕ via rank mapping.
--- Not used by degLexOrder; only degLexLt_wf is needed (proved via lexEncoding).
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem lexLt_wf : WellFounded lexLt := by
-  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
   sorry
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
--- Well-foundedness of degLexLt: first compare by length (well-founded on ℕ),
--- then by lexLt (well-founded on same-length lists via lexEncoding).
--- Proved by embedding into (ℕ ×ₗ ℕ) via (length, lexEncoding).
 theorem degLexLt_wf : WellFounded degLexLt :=
   Subrelation.wf
     (fun {a b} (h : degLexLt a b) => by

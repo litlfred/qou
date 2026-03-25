@@ -54,12 +54,15 @@ structure AlexanderSurjectivity where
   trace_is_jones : ∃ (framingFactor : ℝ),
     markovTrace = framingFactor * jonesPolynomial
 
-/-- **Density theorem**: knot types span a dense subspace of
-    the physical Hilbert space (direct limit of V^⊗n). -/
--- Ref: [manuscript] §4
+/-- **Density theorem**: every irreducible summand of V^⊗n is reached
+    by a knot type via Alexander surjectivity + Schur–Weyl duality. -/
+-- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
 theorem knot_eigenbasis_density
     (swd : SchurWeylDecomposition)
+    (alex : AlexanderSurjectivity)
     (h_complete : swd.numSummands > 0) :
-    True := by trivial  -- Density follows from completeness of decomposition
+    ∀ i : Fin swd.numSummands, ∃ (jonesVal : ℝ), jonesVal ≠ 0 := by
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  sorry
 
 end QOU.Braiding
