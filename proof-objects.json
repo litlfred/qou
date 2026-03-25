@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T15:36:28.280515+00:00",
+    "generated_at": "2026-03-25T16:42:21.185629+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -1079,11 +1079,57 @@
       ]
     },
     {
-      "label": "def:categorical-action",
+      "label": "def:categorical-dirac-operator",
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
         "line": 1900,
+        "chapter": 2
+      },
+      "title": "{Categorical Dirac operator}",
+      "lean": {
+        "decl": "QOU.CategoricalDiracOperator",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:categorical-connection",
+        "def:substrate-parameter",
+        "def:categorical-reeb"
+      ]
+    },
+    {
+      "label": "def:categorical-lagrangian",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1925,
+        "chapter": 2
+      },
+      "title": "{Categorical Lagrangian}",
+      "lean": {
+        "decl": "QOU.CategoricalLagrangian",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:quantum-observable-universe",
+        "def:categorical-dirac-operator"
+      ]
+    },
+    {
+      "label": "def:categorical-action",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1955,
         "chapter": 2
       },
       "title": "{Categorical action}",
@@ -1096,12 +1142,38 @@
       },
       "formalization_status": "stated",
       "uses": [
-        "def:quantum-universe",
         "def:quantum-observable-universe",
-        "def:categorical-connection",
+        "def:rigid-monoidal-category"
+      ]
+    },
+    {
+      "label": "prop:qou-canonical-action",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/quantum-observable-universe.tex",
+        "line": 1994,
+        "chapter": 2
+      },
+      "title": "{Canonical action of a quantum observable universe}",
+      "lean": {
+        "decl": "QOU.qou_canonical_action",
+        "file": "QOU/QuantumObservableUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/QuantumObservableUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/QuantumObservableUniverse.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-action",
+        "def:categorical-lagrangian",
+        "def:categorical-dirac-operator",
+        "def:quantum-observable-universe",
         "def:substrate-parameter",
         "def:q-hodge-star",
-        "rem:categorical-action-notation"
+        "def:categorical-connection",
+        "rem:categorical-action-notation",
+        "rem:yekutieli-stokes",
+        "def:yekutieli-lifting-condition"
       ]
     },
     {
@@ -1109,7 +1181,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 1933,
+        "line": 2082,
         "chapter": 2
       },
       "title": "{Variational equations of the categorical action}",
@@ -1130,7 +1202,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2013,
+        "line": 2162,
         "chapter": 2
       },
       "title": "{Categorical $q$-deformed exterior derivative}",
@@ -1155,7 +1227,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2046,
+        "line": 2195,
         "chapter": 2
       },
       "title": "{Particle ($q$-harmonic form)}",
@@ -1176,7 +1248,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2062,
+        "line": 2211,
         "chapter": 2
       },
       "title": "{Fermion--Boson decomposition}",
@@ -1198,7 +1270,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2100,
+        "line": 2249,
         "chapter": 2
       },
       "title": "{Categorical point}",
@@ -1219,7 +1291,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2114,
+        "line": 2263,
         "chapter": 2
       },
       "title": "{Observation}",
@@ -1242,7 +1314,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2168,
+        "line": 2317,
         "chapter": 2
       },
       "title": "{Categorical instanton}",
@@ -1265,7 +1337,7 @@
       "object_type": "lemma",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2198,
+        "line": 2347,
         "chapter": 2
       },
       "title": "{Irreducibility from observability}",
@@ -1287,7 +1359,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2227,
+        "line": 2376,
         "chapter": 2
       },
       "title": "{Categorical self-duality}",
@@ -1309,7 +1381,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2276,
+        "line": 2425,
         "chapter": 2
       },
       "title": "{Non-vanishing of $d_q^2$}",
@@ -1331,7 +1403,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2360,
+        "line": 2509,
         "chapter": 2
       },
       "title": "{Categorical $q$-Lie bracket}",
@@ -1353,7 +1425,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2379,
+        "line": 2528,
         "chapter": 2
       },
       "title": "{Categorical $q$-deformed connection}",
@@ -1375,7 +1447,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2417,
+        "line": 2566,
         "chapter": 2
       },
       "title": "{$q$-Weighted Yang--Mills--Levi functional}",
@@ -1398,7 +1470,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2436,
+        "line": 2585,
         "chapter": 2
       },
       "title": "{Main Commutative Diagram}",
@@ -1422,7 +1494,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2527,
+        "line": 2676,
         "chapter": 2
       },
       "title": "{Quantum flatness}",
@@ -1445,7 +1517,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2563,
+        "line": 2712,
         "chapter": 2
       },
       "title": "{From Tannakian emergence to 2-group quantum flatness}",
@@ -1469,7 +1541,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2621,
+        "line": 2770,
         "chapter": 2
       },
       "title": "{d\\_q\\textasciicircum{}2 does not vanish}",
@@ -1490,7 +1562,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2673,
+        "line": 2822,
         "chapter": 2
       },
       "title": "{Jacobiator of the q-Lie bracket}",
@@ -1511,7 +1583,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2739,
+        "line": 2888,
         "chapter": 2
       },
       "title": "{Jet prolongation}",
@@ -1533,7 +1605,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2775,
+        "line": 2924,
         "chapter": 2
       },
       "title": "{Categorical transport equation}",
@@ -1556,7 +1628,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2807,
+        "line": 2956,
         "chapter": 2
       },
       "title": "{Categorical q-Reeb flow}",
@@ -1578,7 +1650,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/quantum-observable-universe.tex",
-        "line": 2828,
+        "line": 2977,
         "chapter": 2
       },
       "title": "{Categorical q-torsion leaf}",
@@ -3535,8 +3607,33 @@
       "relation": "uses"
     },
     {
-      "from": "def:categorical-action",
-      "to": "def:quantum-universe",
+      "from": "def:categorical-dirac-operator",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-dirac-operator",
+      "to": "def:categorical-connection",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-dirac-operator",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-dirac-operator",
+      "to": "def:categorical-reeb",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-lagrangian",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-lagrangian",
+      "to": "def:categorical-dirac-operator",
       "relation": "uses"
     },
     {
@@ -3546,22 +3643,57 @@
     },
     {
       "from": "def:categorical-action",
-      "to": "def:categorical-connection",
+      "to": "def:rigid-monoidal-category",
       "relation": "uses"
     },
     {
-      "from": "def:categorical-action",
+      "from": "prop:qou-canonical-action",
+      "to": "def:categorical-action",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
+      "to": "def:categorical-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
+      "to": "def:categorical-dirac-operator",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
+      "to": "def:quantum-observable-universe",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
       "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
-      "from": "def:categorical-action",
+      "from": "prop:qou-canonical-action",
       "to": "def:q-hodge-star",
       "relation": "uses"
     },
     {
-      "from": "def:categorical-action",
+      "from": "prop:qou-canonical-action",
+      "to": "def:categorical-connection",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
       "to": "rem:categorical-action-notation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
+      "to": "rem:yekutieli-stokes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:qou-canonical-action",
+      "to": "def:yekutieli-lifting-condition",
       "relation": "uses"
     },
     {
