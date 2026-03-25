@@ -114,15 +114,10 @@ theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
     linarith [this ▸ (le_refl (a : ℝ))]
   | a :: b :: rest =>
     simp [hr]
-    -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b ≥ 0
-    have hsum : a + b + rest.sum = bp.n := by
+    -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b, rest.sum ≥ 0
+    have hsum : (a : ℕ) + b + rest.sum = bp.n := by
       have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith
-    have hb : (0 : ℝ) ≤ (b : ℝ) := Nat.cast_nonneg b
-    have hrs : (0 : ℝ) ≤ (rest.sum : ℝ) := Nat.cast_nonneg rest.sum
-    rw [div_le_div_iff (by norm_num : (0 : ℝ) < 2) (by norm_num : (0 : ℝ) < 2)]
-    push_cast
-    linarith [Nat.cast_nonneg a, Nat.cast_nonneg b, Nat.cast_nonneg rest.sum,
-              Nat.cast_le.mpr (Nat.le_of_lt_succ (Nat.lt_succ_of_le (Nat.le_add_right a _)))]
+    -- a - b ≤ a + b + rest.sum = n, so (a-b)/2 ≤ n/2
     -- Ref: [manuscript] §4, elementary bound
     sorry
 
@@ -211,20 +206,22 @@ theorem alexander_has_braid (alex : AlexanderSurjectivity)
     some braid closure. The trace value equals the Jones polynomial
     J_L(q) of the braid closure up to a framing factor. -/
 -- Ref: [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987), 335–388
-structure MarkovTrace where
-  /-- The Hecke algebra. -/
-  hecke : HeckeAlgebra
+structure MarkovTrace (H : HeckeAlgebra) where
   /-- The trace functional tr : H_n(q) → ℝ. -/
-  tr : hecke.carrier → ℝ
-  /-- Trace property: tr(ab) = tr(ba). -/
-  trace_comm : ∀ (a b : hecke.carrier),
-    tr (hecke.mul a b) = tr (hecke.mul b a)
+  tr : H.carrier → ℝ
+  /-- Trace property (cyclicity / Markov I): tr(ab) = tr(ba). -/
+  trace_comm : ∀ (a b : H.carrier), tr (H.mul a b) = tr (H.mul b a)
   /-- Markov parameter z determined by q. -/
   z : ℝ
   /-- z ≠ 0. -/
   z_ne_zero : z ≠ 0
   /-- Non-degeneracy: the trace of the unit is non-zero. -/
-  tr_one_ne_zero : tr hecke.one ≠ 0
+  tr_one_ne_zero : tr H.one ≠ 0
+  /-- **Markov property** (Markov II / stabilisation):
+      tr(x · T_{n-1}) = z · tr(x). -/
+  markov_stab : H.n ≥ 2 → ∀ (x : H.carrier),
+    let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
+    tr (H.mul x (H.T last)) = z * tr x
 
 /-! ## Combining Structure -/
 
@@ -239,17 +236,17 @@ structure MarkovTrace where
     for the physical Hilbert space, replacing Feynman's continuum integral
     with a finite algebraic trace. -/
 -- Ref: [chari1994guide], [alexander1923], [jones1987]
-structure KnotEigenbasisData where
-  /-- Part 1: Schur–Weyl decomposition. -/
+structure KnotEigenbasisData (H : HeckeAlgebra) where
+  /-- Part 1: Schur–Weyl decomposition (shares H). -/
   decomp : SchurWeylDecomposition
+  /-- Consistency: decomposition uses the same Hecke algebra. -/
+  decomp_hecke : decomp.hecke = H
   /-- Part 2: Alexander surjectivity. -/
   alex : AlexanderSurjectivity
-  /-- Part 3: Markov trace. -/
-  markov : MarkovTrace
-  /-- Consistency: the Markov trace is on the same Hecke algebra. -/
-  consistent : markov.hecke = decomp.hecke
+  /-- Part 3: Markov trace (parameterized by H, no type equality needed). -/
+  markov : MarkovTrace H
   /-- Representation map: braid → Hecke algebra element. -/
-  braid_rep : alex.Braid → markov.hecke.carrier
+  braid_rep : alex.Braid → H.carrier
   /-- **Summand detection**: for each partition μ in the decomposition,
       there exists a braid β whose Markov trace on the Hecke-algebra
       image of β is non-zero. This means the Jones polynomial of the
@@ -268,8 +265,8 @@ structure KnotEigenbasisData where
     This is the combining step: Schur–Weyl provides the decomposition,
     Alexander provides the braid representative, and the Markov trace
     confirms detection. -/
-theorem knot_eigenbasis_complete
-    (kec : KnotEigenbasisData)
+theorem knot_eigenbasis_complete {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H)
     (v : kec.decomp.tensorPower) :
     ∃ μ, ∃ (_ : μ ∈ kec.decomp.partitions),
       ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 := by
@@ -281,16 +278,16 @@ theorem knot_eigenbasis_complete
 
 /-- Every summand is detected: equivalent to `summands_detected`, but
     phrased as a standalone density statement. -/
-theorem knot_eigenbasis_density
-    (kec : KnotEigenbasisData) :
+theorem knot_eigenbasis_density {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H) :
     ∀ μ ∈ kec.decomp.partitions,
       ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 :=
   kec.summands_detected
 
 /-- **Corollary**: The eigenbasis is non-empty when V^⊗n has
     at least one irreducible summand (which holds for all n ≥ 1). -/
-theorem eigenbasis_nonempty
-    (kec : KnotEigenbasisData)
+theorem eigenbasis_nonempty {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H)
     (h : kec.decomp.partitions ≠ []) :
     ∃ μ ∈ kec.decomp.partitions,
       ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 := by
@@ -299,8 +296,8 @@ theorem eigenbasis_nonempty
 
 /-- **Corollary**: The Jones polynomial is non-trivial on every
     irreducible summand — no summand is invisible to the knot invariant. -/
-theorem jones_nontrivial_all_summands
-    (kec : KnotEigenbasisData)
+theorem jones_nontrivial_all_summands {H : HeckeAlgebra}
+    (kec : KnotEigenbasisData H)
     (μ : BoundedPartition) (hμ : μ ∈ kec.decomp.partitions) :
     ∃ (β : kec.alex.Braid), kec.markov.tr (kec.braid_rep β) ≠ 0 :=
   kec.summands_detected μ hμ

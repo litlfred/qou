@@ -117,9 +117,9 @@ structure DescartesSchurWeyl (D : DescartesData) where
   spin_nonneg : ∀ i, 0 ≤ spinLabel i
   /-- Maximum spin is n/2. -/
   max_spin : ∀ i, spinLabel i ≤ (n : ℝ) / 2
-  /-- Completeness: every vector lies in some summand. -/
+  /-- Projection: every vector projects to a unique summand index. -/
   -- Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity)
-  complete : ∀ (v : tensorPower), ∃ i : Fin numSummands, True
+  summandOf : tensorPower → Fin numSummands
   /-- The decomposition is non-trivial. -/
   nonempty_summands : 0 < numSummands
 
@@ -154,12 +154,16 @@ structure DescartesBraidRep (D : DescartesData) where
       of V^⊗n, encoded here as a real number (trace in the
       fundamental representation). -/
   trace_of : BraidType → ℝ
-  /-- Faithfulness: distinct braids give distinct traces.
-      (Simplified: non-degeneracy of the representation.) -/
+  /-- Faithfulness: distinct braids give distinct traces. -/
   faithful : ∀ β₁ β₂ : BraidType,
-    trace_of β₁ = trace_of β₂ → β₁ = β₂ → True
-  /-- σ₁σ₂σ₁ = σ₂σ₁σ₂ (braid relation). -/
-  braid_relation : n ≥ 3 → ∀ (σ₁_trace σ₂_trace : ℝ), True
+    trace_of β₁ = trace_of β₂ → β₁ = β₂
+  /-- Braid group structure. -/
+  [grp : Group BraidType]
+  /-- σ₁σ₂σ₁ = σ₂σ₁σ₂ (braid relation for adjacent generators). -/
+  braid_relation : ∀ (i : Fin (n - 2)),
+    let i' : Fin (n - 1) := ⟨i.val, by omega⟩
+    let j : Fin (n - 1) := ⟨i.val + 1, by omega⟩
+    sigma i' * sigma j * sigma i' = sigma j * sigma i' * sigma j
 
 /-! ## Markov Trace from the Descartes Hecke Algebra -/
 
@@ -261,9 +265,15 @@ theorem descartes_n3_both_detected (D : DescartesData) :
     intro h
     have hq := D.q_pos
     -- -q⁻⁴(1 - q² + q⁴) = 0 implies 1 - q² + q⁴ = 0 (since q⁻⁴ ≠ 0)
-    -- But 1 - q² + q⁴ = (q² - 1/2)² + 3/4 > 0 for all real q.
-    -- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
-    sorry
+    have hqi4 : D.q⁻¹ ^ 4 ≠ 0 := pow_ne_zero 4 (inv_ne_zero.mpr (ne_of_gt hq))
+    have hmul_zero := neg_eq_zero.mp h
+    have := mul_eq_zero.mp hmul_zero
+    cases this with
+    | inl h_qi4 => exact hqi4 h_qi4
+    | inr h_poly =>
+      -- 1 - q² + q⁴ = (q² - 1/2)² + 3/4 > 0 for all real q.
+      have : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1/2)]
+      linarith
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke

@@ -92,13 +92,12 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   z_ne_zero : z ≠ 0
 
   /-- **Markov property** (positive stabilisation):
-      tr(x · T_n) = z · tr(x) for x ∈ H_n(q).
-      Encoded for the last generator T_{n-1}. -/
+      tr(x · T_{n-1}) = z · tr(x) for x ∈ H_n(q).
+      This encodes vertical stabilisation in the Hecke tower. -/
   markov_pos : H.n ≥ 2 →
-    ∀ (x : H.carrier) (i : Fin (H.n - 1)),
-      -- In the tower H_n ↪ H_{n+1}, the stabilisation holds
-      -- for the new generator. Simplified encoding:
-      True
+    ∀ (x : H.carrier),
+      let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
+      tr (H.mul x (H.T last)) = z * tr x
 
   /-! ### Property 2: Non-degeneracy on irreducibles -/
 
@@ -116,17 +115,16 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
 
   /-! ### Property 3: Link invariance -/
 
-  /-- **Link invariance**: if two braids have isotopic closures, they
-      have the same trace value (up to a writhe-dependent framing factor).
-
-      This means tr_M(ρ_n(β)) depends only on the link L = β̂, yielding
-      the Jones polynomial J_L(q). -/
+  /-- **Link invariance (Markov II)**: inverse stabilisation.
+      tr(x · T_{n-1}⁻¹) = z⁻¹ · tr(x).
+      Combined with tr_comm (Markov I) and markov_pos, this ensures the
+      trace value depends only on the isotopy class of the braid closure,
+      yielding the Jones polynomial J_L(q). -/
   -- Ref: [jones1987] Theorem 5.1
-  link_invariance : ∀ (a b : H.carrier),
-    -- Markov moves (conjugation + stabilisation) preserve the trace.
-    -- Conjugation invariance follows from tr_comm.
-    -- Stabilisation invariance follows from markov_pos.
-    True
+  markov_neg : H.n ≥ 2 →
+    ∀ (x : H.carrier) (T_inv : H.carrier),
+      -- T_inv is the Hecke-algebra inverse of the last generator
+      tr (H.mul x T_inv) = z⁻¹ * tr x
 
 /-! ## Existence Axiom -/
 

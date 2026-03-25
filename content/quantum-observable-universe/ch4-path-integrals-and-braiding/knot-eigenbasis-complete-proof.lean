@@ -1,5 +1,5 @@
 /-!
-# QOU.Braiding.KnotEigenbasisDensity — Density in the physical Hilbert space
+# QOU.PathIntegrals.KnotEigenbasisComplete — Density in the physical Hilbert space
 
 Part 3 of the knot eigenbasis completeness theorem: the direct limit
   𝓗_phys = lim→ V^⊗n
