@@ -28,12 +28,11 @@ namespace QOU
 
 /-! ## §1  Categorical Foundations -/
 
-universe u v
+universe u v w
 
 /-- The standard category structure on `Type w`, with morphisms as functions.
-    Defined locally because `Mathlib.CategoryTheory.Types` fails to build
+    Defined locally because `Mathlib.CategoryTheory.Types` does not exist
     at the pinned Mathlib commit (f897ebcf). -/
-universe w in
 instance : CategoryTheory.Category.{w} (Type w) where
   Hom X Y := X → Y
   id _ := _root_.id
