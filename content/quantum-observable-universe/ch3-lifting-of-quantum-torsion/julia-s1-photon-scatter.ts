@@ -5,8 +5,8 @@ export default remark({
   title: "Julia set on $S^1$ as photon scattering at the Big Bang",
   tags: ["julia-set", "photon", "big-bang", "reeb-flow"],
   uses: [
-    "def:q-reeb-flow",
-    "def:boson",
+    "ex:q-reeb-flow",
+    "def:fermion-boson-decomposition",
     "rem:reeb-exceptional-divisor",
   ],
 });

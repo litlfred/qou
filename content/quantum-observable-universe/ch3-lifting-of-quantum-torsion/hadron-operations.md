@@ -1,5 +1,5 @@
 The symmetric product $\mathrm{Sym}^n(K)$ carries natural operations
-inherited from the braiding and Hopf link structure of $\mathcal{C}$.
+inherited from the braiding and Hopf link structure of $\mathbf{C}$.
 
 **Braiding.** The braiding $\beta_{K_i, K_j} \colon K_i \otimes K_j
 \xrightarrow{\sim} K_j \otimes K_i$ permutes constituent knots within
@@ -38,8 +38,7 @@ where $L_+$, $L_-$, $L_0$ are the positive-crossing, negative-crossing,
 and smoothed configurations. Iterating over all crossings resolves
 the linked composite into a polynomial in $q$ times unlinked
 constituents, yielding the mass formula
-$\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})
-+ \sum_i \mathcal{M}(K_i)$.
+$\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
 
 **Fusion.** Two hadrons $H_1 \in \mathrm{Sym}^{n_1}(K)$ and
 $H_2 \in \mathrm{Sym}^{n_2}(K)$ can be *fused* into a composite

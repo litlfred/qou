@@ -8,10 +8,13 @@ export default definition({
     decl: "QOU.HadronFibreEmbedding",
     validation: "not_checked",
   },
-  status: "stated",
   uses: [
     "def:hadron",
     "def:localized-hadron",
     "def:projective-line-object",
   ],
+  rendered: [
+    { mime: "image/svg+xml", url: "rendered/hadron-fibre-embedding-0.svg", blockIndex: 0, hash: "2bdcb2f4751d" },
+  ],
+
 });

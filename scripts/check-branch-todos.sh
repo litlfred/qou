@@ -1,5 +1,6 @@
 #!/bin/bash
-# Cross-reference open todos with content blocks modified in the current branch.
+# Cross-reference open feedback with content blocks modified in the current branch.
+# Scans feedback/<paper-dir>/*.ts for items matching changed content blocks.
 # Outputs JSON: { "matches": [...], "count": N }
 #
 # Usage: ./scripts/check-branch-todos.sh [base-branch]
@@ -9,10 +10,10 @@ set -euo pipefail
 
 BASE="${1:-main}"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-TODOS_DIR="$REPO_ROOT/todos"
+FEEDBACK_DIR="$REPO_ROOT/feedback"
 
-# If no todos dir or not in a git repo, exit clean
-if [ ! -d "$TODOS_DIR" ]; then
+# If no feedback dir or not in a git repo, exit clean
+if [ ! -d "$FEEDBACK_DIR" ]; then
   echo '{"matches":[],"count":0}'
   exit 0
 fi
@@ -41,50 +42,51 @@ fi
 # Extract unique root names from changed files
 root_names=$(echo "$changed_files" | sed 's|.*/||; s/\.[^.]*$//' | sort -u)
 
-# Use the check-todos.sh output to find matching todos by targetLabel
-if ! command -v node &>/dev/null; then
-  echo '{"matches":[],"count":0}'
-  exit 0
-fi
-
-# Get all open todos and match against changed root names
-node -e "
+# Match feedback items against changed root names
+run_match() {
+  local runner="$1"
+  shift
+  "$runner" "$@" -e "
 const { readdirSync, readFileSync } = require('fs');
 const { join } = require('path');
 
-const todosDir = '$TODOS_DIR';
+const feedbackDir = '$FEEDBACK_DIR';
 const rootNames = new Set($(echo "$root_names" | jq -R -s 'split("\n") | map(select(length > 0))'));
 const changedFiles = $(echo "$changed_files" | jq -R -s 'split("\n") | map(select(length > 0))');
 
-// Read all todo files
-const allTodos = [];
+const matches = [];
 try {
-  for (const f of readdirSync(todosDir).filter(f => f.endsWith('.ts'))) {
-    const src = readFileSync(join(todosDir, f), 'utf8');
-    const match = src.match(/\[[\s\S]*\]/);
-    if (!match) continue;
-    try {
-      const cleaned = match[0].replace(/\/\/[^\n]*/g, '').replace(/,(\s*[\]}])/g, '\$1');
-      for (const item of JSON.parse(cleaned)) {
-        if (item.status === 'open' || item.status === 'in_progress') {
-          allTodos.push({ ...item, file: f });
+  for (const paperDir of readdirSync(feedbackDir)) {
+    const paperPath = join(feedbackDir, paperDir);
+    for (const file of readdirSync(paperPath)) {
+      if (!file.endsWith('.ts')) continue;
+      const rootName = file.replace(/\.ts$/, '');
+      if (!rootNames.has(rootName)) continue;
+      const content = readFileSync(join(paperPath, file), 'utf-8');
+      const stripped = content.replace(/^import\s+.*;\s*/m, '').replace(/\s+satisfies\s+\S+;\s*$/, ';');
+      const m = stripped.match(/export\s+default\s+(\[[\s\S]*\])\s*;?\s*$/);
+      if (!m) continue;
+      try {
+        const items = JSON.parse(m[1]);
+        for (const item of items) {
+          if (item.status === 'open' || item.status === 'in_progress') {
+            const relevant = changedFiles.filter(f => f.includes(rootName));
+            matches.push({ rootName, paperId: paperDir, todo: item, changedFiles: relevant });
+          }
         }
-      }
-    } catch {}
+      } catch {}
+    }
   }
 } catch {}
 
-// Match todos whose targetLabel contains a root name
-const matches = [];
-for (const todo of allTodos) {
-  const label = todo.targetLabel || '';
-  // Extract the root-name part from the label (e.g. 'def:localized-knot' -> 'localized-knot')
-  const labelRoot = label.includes(':') ? label.split(':').slice(1).join(':') : label;
-  if (rootNames.has(labelRoot)) {
-    const relevant = changedFiles.filter(f => f.includes(labelRoot));
-    matches.push({ rootName: labelRoot, todo, changedFiles: relevant });
-  }
+console.log(JSON.stringify({ matches, count: matches.length }));
+" 2>/dev/null
 }
 
-console.log(JSON.stringify({ matches, count: matches.length }));
-" 2>/dev/null || echo '{"matches":[],"count":0}'
+if command -v bun &>/dev/null; then
+  run_match bun
+elif command -v node &>/dev/null; then
+  run_match node
+else
+  echo '{"matches":[],"count":0}'
+fi

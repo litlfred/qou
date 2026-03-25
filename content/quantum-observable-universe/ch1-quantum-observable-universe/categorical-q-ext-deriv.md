@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 and weight decomposition $\pi_H, \pi_V$

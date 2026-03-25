@@ -19,7 +19,7 @@ namespace QOU.HadronicMass
     3. Deuteron: `|m_D^{QOU} − 1875.61294500| < 0.001`
     4. Binding: `|ΔE^{QOU} − 2.22456637| < 0.001`
 
-    LaTeX: `\label{prop:terminal-resolution}` -/
+    LaTeX: `\label{rem:terminal-resolution}` -/
 theorem terminal_resolution_hadronic_mass :
     |proton_topological - proton_mass_MeV| < 1e-3 ∧
     |neutron_topological - neutron_mass_MeV| < 1e-3 ∧

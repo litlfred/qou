@@ -3,7 +3,8 @@ we specify the [substrate parameter](#def:substrate-parameter) that
 controls the deformation from classical $\mathrm{SU}(2)$ to quantum
 $\mathrm{SU}_q(2)$.
 
-**The specialisation map.** The substrate parameter is a ring
+**The specialisation map.** The categorical substrate parameter
+$q \in \mathrm{End}(\mathbf{1})$ is realised via a ring
 homomorphism $\iota \colon \mathbb{Z}[q, q^{-1}] \to \mathbb{C}$
 determined by its value on the generator:
 $\iota(q) = q_0 \in \mathbb{C}^\times$. All algebraic structures

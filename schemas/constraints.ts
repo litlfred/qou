@@ -74,6 +74,13 @@ export const TodoItemSchema = z.object({
   related: z.array(z.string()).optional(),
 });
 
+// ── Feedback schema ──────────────────────────────────────────
+
+export const FeedbackItemSchema = TodoItemSchema.extend({
+  author: z.string().optional(),
+  authorEmail: z.string().optional(),
+});
+
 // ── Block schemas ────────────────────────────────────────────────
 
 const RenderedAssetSchema = z.object({
@@ -96,7 +103,6 @@ export const DefinitionSchema = BlockBaseSchema.extend({
   kind: z.literal("definition"),
   label: labelForKind("definition"),
   lean: LeanRefSchema,
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]),
   examples: z.array(z.string()).optional(),
 });
 
@@ -147,7 +153,6 @@ export const ProofSchema = BlockBaseSchema.extend({
   kind: z.literal("proof"),
   label: labelForKind("proof"),
   lean: LeanRefSchema.optional(),
-  status: z.enum(["not_started", "stated", "has_sorry", "proved", "mathlib_ok"]).optional(),
 });
 
 export const ProseSchema = z.object({
@@ -214,6 +219,7 @@ export const SectionRefSchema = z.object({
 
 export const ChapterSchema = z.object({
   number: z.number().int().positive().optional(),
+  tabLabel: z.string().max(3).optional(),
   title: z.string().min(1),
   label: z.string().optional(),
   sections: z.array(z.union([SectionSchema, SectionRefSchema])),
@@ -234,11 +240,14 @@ const PaperMacroSchema = z.object({
 export const PaperSchema = z.object({
   title: z.string().min(1),
   authors: z.array(z.string().min(1)).min(1),
+  affiliations: z.array(z.string()).optional(),
+  emails: z.array(z.string().email()).optional(),
+  urls: z.array(z.string().url()).optional(),
   date: z.string().optional(),
+  abstract: z.string().optional(),
   chapters: z.array(ChapterRefSchema),
   macros: z.record(z.string(), PaperMacroSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
-
 });
 
 /** @deprecated Use PaperSchema. */
@@ -319,14 +328,25 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
   },
   {
     id: "uses-resolve",
-    description: "All labels in uses[] must exist in the document",
+    description: "All labels in uses[] must exist in the document (or be qualified cross-paper refs)",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
       "conjecture", "example", "remark",
     ],
     check: (block, ctx) => {
       if (!("uses" in block) || !block.uses) return null;
-      const missing = block.uses.filter((u: string) => !ctx.allLabels.has(u));
+      const missing = block.uses.filter((u: string) => {
+        // Cross-paper qualified ref: "paper-dir:label" (contains exactly
+        // one colon-delimited paper prefix before the label-kind prefix).
+        // Pattern: non-label chars, colon, then a standard label.
+        // e.g. "unital-groebner-bases:cor:pbw"
+        const crossPaperMatch = u.match(/^([a-z0-9-]+):([a-z]+:.+)$/);
+        if (crossPaperMatch) return false;  // skip — resolved at folio level
+        // Full URL cross-folio ref
+        if (u.startsWith("https://") || u.startsWith("http://")) return false;
+        // Same-paper ref — must exist in allLabels
+        return !ctx.allLabels.has(u);
+      });
       return missing.length === 0 ? null
         : `Unresolved uses: ${missing.join(", ")}`;
     },

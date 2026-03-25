@@ -1,10 +1,10 @@
 Bring's surface $\Sigma_4$ ([Bring's surface](#def:brings-surface)) gives rise
 to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 
-1. *Quantum universe.*  Set $\mathcal{C} =
+1. *Quantum universe.*  Set $\mathbf{C} =
    \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$,
    $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
-   Haar state, and $\omega$ the forgetful functor to $R$-$\mathrm{Mod}$.
+   Haar state, and $\tau$ the forgetful functor to $R$-$\mathrm{Mod}$.
    The differential calculus $\Omega^1(A)$ is the Woronowicz
    $3$-dimensional calculus.
 2. *Observability.*

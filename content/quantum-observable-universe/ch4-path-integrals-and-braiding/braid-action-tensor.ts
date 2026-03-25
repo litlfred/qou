@@ -2,6 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:braid-action-tensor",
+  lean: {
+    decl: "QOU.Braiding.braid_action_tensor",
+    validation: "not_checked",
+  },
   title: "Braid-group action on tensor powers",
   tags: ["braid-group", "braided-monoidal", "yang-baxter"],
   uses: ["def:quantum-observable-universe"],

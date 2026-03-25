@@ -14,7 +14,7 @@
           },
           {
             "type": "command",
-            "command": "./scripts/open-assistant.sh"
+            "command": "./scripts/open-folio-assistant.sh"
           },
           {
             "type": "command",
@@ -52,6 +52,11 @@
           {
             "type": "command",
             "command": "./scripts/check-no-lean-artifacts.sh"
+          },
+          {
+            "type": "command",
+            "command": "./scripts/render-pre-commit.sh",
+            "timeout": 120
           }
         ]
       }
@@ -64,6 +69,10 @@
             "type": "command",
             "command": "./scripts/check-upstream.sh",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "./scripts/delivery-summary.sh"
           }
         ]
       }

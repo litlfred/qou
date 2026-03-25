@@ -40,19 +40,18 @@ parse_json_nested() {
     python3 -c "import json,sys; d=json.load(open('$CONFIG')); print(d.get('$1',{}).get('$2','$3'))"
 }
 
-IMAGE=$(parse_json image "ghcr.io/litlfred/qou/lean-mcp")
+IMAGE=$(parse_json image "ghcr.io/litlfred/qou/paper-assistant")
 MCP_PORT=$(parse_json mcp_internal_port "8080")
 OWNER_USERNAME=$(parse_json_nested auth owner "litlfred")
 SESSION_MAX_AGE_HRS=$(parse_json_nested auth session_max_age_hours "24")
 SESSION_MAX_AGE=$(( SESSION_MAX_AGE_HRS * 3600 ))
 
+DOMAIN=$(parse_json_nested folio domain "folio.example.org")
 if [ "$MODE" = "folio" ]; then
-    DOMAIN=$(parse_json_nested folio domain "folio.example.org")
     VIEWER_DIR=$(parse_json_nested folio viewer_dir "viewer")
     TEMPLATE="$DEPLOY_DIR/Caddyfile.folio.template"
     COMPOSE_FILE="docker-compose.folio.yml"
 else
-    DOMAIN=$(parse_json domain "lean.example.org")
     TEMPLATE="$DEPLOY_DIR/Caddyfile.template"
     COMPOSE_FILE="docker-compose.yml"
 fi
@@ -71,8 +70,8 @@ COOKIE=$(openssl rand -base64 32 | tr -d '\n')
 if [ "$CI" = true ]; then
     GOOGLE_CLIENT_ID="FILL_ME_IN"
     GOOGLE_CLIENT_SECRET="FILL_ME_IN"
-    GITHUB_CLIENT_ID="FILL_ME_IN"
-    GITHUB_CLIENT_SECRET="FILL_ME_IN"
+    GH_CLIENT_ID="FILL_ME_IN"
+    GH_CLIENT_SECRET="FILL_ME_IN"
 else
     echo "── Google OAuth (for viewers) ──"
     echo "  Create at: https://console.cloud.google.com/apis/credentials"
@@ -86,41 +85,36 @@ else
     echo "  Create at: https://github.com/settings/developers"
     echo "  Callback URL: https://$DOMAIN/auth/github/callback"
     echo ""
-    read -rp "  GitHub Client ID: " GITHUB_CLIENT_ID
-    read -rsp "  GitHub Client Secret: " GITHUB_CLIENT_SECRET
+    read -rp "  GitHub Client ID: " GH_CLIENT_ID
+    read -rsp "  GitHub Client Secret: " GH_CLIENT_SECRET
     echo ""
 fi
 
-cat > "$DEPLOY_DIR/.env" <<ENVEOF
-# Auto-generated from lean-mcp.config.json ($MODE mode) — do not commit
-# Regenerate with: ./deploy/generate-config.sh $([ "$MODE" = "folio" ] && echo "--folio")
-
-# ── Deployment mode ──────────────────────────────────────────────
-DEPLOY_MODE=$MODE
-COMPOSE_FILE=$COMPOSE_FILE
-
-# ── Domain & Image ───────────────────────────────────────────────
-LEAN_MCP_DOMAIN=$DOMAIN
-FOLIO_DOMAIN=$DOMAIN
-LEAN_MCP_IMAGE=$IMAGE
-LEAN_MCP_INTERNAL_PORT=$MCP_PORT
-
-# ── Lean MCP Server ──────────────────────────────────────────────
-LEAN_LSP_MCP_TOKEN=$LEAN_TOKEN
-
-# ── Auth Gateway ─────────────────────────────────────────────────
-COOKIE_SECRET=$COOKIE
-OWNER_USERNAME=$OWNER_USERNAME
-SESSION_MAX_AGE=$SESSION_MAX_AGE
-
-# ── Google OAuth (viewers) ───────────────────────────────────────
-GOOGLE_CLIENT_ID=$GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET=$GOOGLE_CLIENT_SECRET
-
-# ── GitHub OAuth (collaborators) ─────────────────────────────────
-GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID
-GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET
-ENVEOF
+# Write .env safely using printf — no heredoc injection risk from secrets
+# containing $, backticks, or backslashes.
+{
+  printf '# Auto-generated from lean-mcp.config.json (%s mode) — do not commit\n' "$MODE"
+  printf '# Regenerate with: ./deploy/generate-config.sh%s\n' "$([ "$MODE" = "folio" ] && echo " --folio")"
+  printf '\n# ── Deployment mode ──────────────────────────────────────────────\n'
+  printf 'DEPLOY_MODE=%s\n' "$MODE"
+  printf 'COMPOSE_FILE=%s\n' "$COMPOSE_FILE"
+  printf '\n# ── Domain & Image ───────────────────────────────────────────────\n'
+  printf 'FOLIO_DOMAIN=%s\n' "$DOMAIN"
+  printf 'PAPER_ASSISTANT_IMAGE=%s\n' "$IMAGE"
+  printf 'MCP_INTERNAL_PORT=%s\n' "$MCP_PORT"
+  printf '\n# ── Lean MCP Server ──────────────────────────────────────────────\n'
+  printf 'FOLIO_API_TOKEN=%s\n' "$LEAN_TOKEN"
+  printf '\n# ── Auth Gateway ─────────────────────────────────────────────────\n'
+  printf 'COOKIE_SECRET=%s\n' "$COOKIE"
+  printf 'OWNER_USERNAME=%s\n' "$OWNER_USERNAME"
+  printf 'SESSION_MAX_AGE=%s\n' "$SESSION_MAX_AGE"
+  printf '\n# ── Google OAuth (viewers) ───────────────────────────────────────\n'
+  printf 'GOOGLE_CLIENT_ID=%s\n' "$GOOGLE_CLIENT_ID"
+  printf 'GOOGLE_CLIENT_SECRET=%s\n' "$GOOGLE_CLIENT_SECRET"
+  printf '\n# ── GitHub OAuth (collaborators) ─────────────────────────────────\n'
+  printf 'GH_CLIENT_ID=%s\n' "$GH_CLIENT_ID"
+  printf 'GH_CLIENT_SECRET=%s\n' "$GH_CLIENT_SECRET"
+} > "$DEPLOY_DIR/.env"
 
 echo "  ✓ .env generated"
 
@@ -137,9 +131,8 @@ done
 
 # ── Generate Caddyfile from template ──────────────────────────────
 if [ -f "$TEMPLATE" ]; then
-    LEAN_MCP_DOMAIN="$DOMAIN" LEAN_MCP_INTERNAL_PORT="$MCP_PORT" \
-    FOLIO_DOMAIN="$DOMAIN" \
-        envsubst '${LEAN_MCP_DOMAIN} ${LEAN_MCP_INTERNAL_PORT} ${FOLIO_DOMAIN}' \
+    FOLIO_DOMAIN="$DOMAIN" MCP_INTERNAL_PORT="$MCP_PORT" \
+        envsubst '${FOLIO_DOMAIN} ${MCP_INTERNAL_PORT}' \
         < "$TEMPLATE" \
         > "$DEPLOY_DIR/Caddyfile"
     echo "  ✓ Caddyfile generated for $DOMAIN"

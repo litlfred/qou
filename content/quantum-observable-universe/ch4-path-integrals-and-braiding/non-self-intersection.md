@@ -6,4 +6,4 @@ substrate parameter ([Definition](#def:substrate-parameter)).
 The non-cocommutativity of the Hopf structure at $q \neq 1$
 provides a categorical obstruction to self-intersection: the
 energy $m(\gamma)$ diverges whenever two non-adjacent strands of
-$\gamma$ approach within the fibre $\omega(A)$.
+$\gamma$ approach within the fibre $\tau(A)$.

@@ -13,7 +13,7 @@ $m_{\mathrm{trans}} = \lVert \operatorname{tr}_{\mathrm{trans}}(\gamma) \rVert$
 is the transient contribution.
 
 **Descended mass.** The descended trace $\operatorname{tr}_{\mathrm{desc}}$
-factors through the projection $\tau$ onto
+factors through the projection $\hat{\tau}$ onto
 $\mathfrak{A}^{\mathrm{desc}} \cong \mathfrak{su}(2)$. For the Hopf
 fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$, the descended mass of
 the fundamental cycle is

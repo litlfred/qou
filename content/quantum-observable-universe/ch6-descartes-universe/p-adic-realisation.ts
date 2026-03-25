@@ -5,7 +5,7 @@ export default example({
   title: "$\\mathbb{Q}_\\pp$ realisation",
   uses: [
     "def:substrate-parameter",
-    "lem:irreducible-connection",
+    "ex:irreducible-connection",
     "def:quantum-universe",
     "def:quantum-observable-universe",
     "rem:q-torsion-existence",

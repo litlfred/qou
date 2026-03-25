@@ -2,6 +2,10 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:volume-from-rigidity",
+  lean: {
+    decl: "QOU.volume_from_rigidity",
+    validation: "not_checked",
+  },
   title: "Volume form from rigidity and symplectic self-duality",
   uses: ["def:quantum-observable-universe"],
   proofs: ["prf:volume-from-rigidity"],

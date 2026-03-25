@@ -45,11 +45,11 @@ $\mathcal{O}_q \to \mathcal{O}_q^*$ is an isomorphism.
 This Frobenius--Hopf structure on $\mathcal{O}_q(\mathrm{SU}(2))$ is
 precisely the datum required by the general
 [quantum universe](#def:quantum-universe): the Haar state $h_q$ realises
-the Frobenius form $\lambda \colon A \to \mathbf{1}$, and the
+the Frobenius form $\int_A \colon A \to \mathbf{1}$, and the
 non-degeneracy is the $\mathbb{C}$
 instance of condition (1) in
 [quantum observable universe](#def:quantum-observable-universe).
-In the archimedean realisation ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)),
+In the archimedean realisation ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)),
 the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
 conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)
 reduce to a triple:
@@ -63,7 +63,7 @@ reduce to a triple:
    ([instanton](#def:instanton)).
 
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
-the non-degeneracy of the Frobenius form $\lambda$ via the diagram
+the non-degeneracy of the Frobenius form $\int_A$ via the diagram
 
 ```tex
 \begin{equation}\label{eq:frobenius-vanishing}
@@ -72,7 +72,7 @@ the non-degeneracy of the Frobenius form $\lambda$ via the diagram
     \ar[r, "\mu_{\mathrm{Ad}}"]
     \ar[d, "\text{global sections}"']
   & \mathrm{Ad}(A)
-    \ar[r, "\lambda_{\mathrm{Ad}}"]
+    \ar[r, "\int_{A,\mathrm{Ad}}"]
   & \mathcal{O}_M
     \ar[d, "\textstyle\int_M"]
   \\
@@ -84,7 +84,7 @@ the non-degeneracy of the Frobenius form $\lambda$ via the diagram
 ```
 
 The adjoint representation $\mathrm{Ad}(A)$ inherits a non-degenerate
-Frobenius pairing from $\lambda$; any global parallel section would
+[Frobenius pairing](#def:frobenius-pairing) from $\int_A$; any global parallel section would
 pair non-trivially with itself, contradicting the irreducibility of
 the instanton connection
 ([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius

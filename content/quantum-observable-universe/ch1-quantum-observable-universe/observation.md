@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe over a
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe over a
 ring $R$ ([quantum observable universe](#def:quantum-observable-universe)), let $q$
 denote the
 ([substrate parameter](#def:substrate-parameter)), and let
@@ -9,7 +9,7 @@ $p \colon \mathbf{1} \to A$ be a
 $$
   \mathcal{O}_p \;\colon\; A / \mathfrak{m}_p^2
   \;\longrightarrow\; A / \mathfrak{m}_p^2
-  \qquad\text{in } \mathcal{C},
+  \qquad\text{in } \mathbf{C},
 $$
 
 acting on germs at $p$, satisfying:
@@ -20,17 +20,17 @@ acting on germs at $p$, satisfying:
    ```tex
    \begin{equation}\label{eq:observation-frobenius}
    \begin{tikzcd}[row sep=2.5em, column sep=3em]
-     A / \mathfrak{m}_p^2 \ar[r, "\mathcal{O}_p"] \ar[dr, "\lambda_p"']
-     & A / \mathfrak{m}_p^2 \ar[d, "\lambda_p"] \\
+     A / \mathfrak{m}_p^2 \ar[r, "\mathcal{O}_p"] \ar[dr, "\int_{A,p}"']
+     & A / \mathfrak{m}_p^2 \ar[d, "\int_{A,p}"] \\
      & \mathbf{1}
    \end{tikzcd}
    \end{equation}
    ```
 
-   where $\lambda_p$ is the germ of the Frobenius form at $p$.
+   where $\int_{A,p}$ is the germ of the Frobenius form at $p$.
 
 2. **Substrate perturbation.** The observation shifts the
-   deformation parameter $q \mapsto q' = q + \delta q$ via the
+   substrate parameter $q \mapsto q' = q + \delta q$ via the
    Hopf coaction:
 
    ```tex
@@ -39,11 +39,11 @@ acting on germs at $p$, satisfying:
      A \ar[r, "\Delta"] \ar[d, "\mathcal{O}_p"']
      & A \otimes A \ar[r, "\mathcal{O}_p \otimes S"]
      & A \otimes A \ar[d, "\mu"] \\
-     A \ar[rr, "\lambda"']
+     A \ar[rr, "\int_A"']
      & & \mathbf{1}
    \end{tikzcd}
    \end{equation}
    ```
 
-   with $\delta q(p) = \lambda(\mathcal{O}_p(a_{(1)})\,S(a_{(2)}))$
+   with $\delta q(p) = \int_A(\mathcal{O}_p(a_{(1)})\,S(a_{(2)}))$
    evaluated at the point $p$.

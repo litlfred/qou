@@ -1,81 +1,17 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 6: Universes.
+ * Chapter 4 (was 5): Universality.
  *
- * The Descartes condition, its implications for genus-4 base curves,
- * chirality, colour sectors, braid-group structure, and the Descartes
- * theorem; followed by p-adic, finite-field, and Witt-vector realisations.
+ * Categorical reformulations, quantum groups, p-adic and finite-field
+ * realisations, Witt-vector lifting, and Jones polynomials.
+ * (Descartes-specific content moved to ch11-experimental-evidence.)
  */
 export default chapter({
-  number: 5,
-  title: "Universes",
-  label: "chap:universes",
+  number: 4,
+  title: "Universality",
+  label: "chap:universality",
   sections: [
-    section({
-      title: "The Descartes condition",
-      label: "sec:descartes-condition",
-      blocks: [
-        "descartes-condition",
-        "descartes-calabi-yau",
-        "descent-one-dim",
-        "genus-maximal-descent",
-        "genus-maximal-descent-proof",
-      ],
-    }),
-
-    section({
-      title: "Leptons and chirality",
-      label: "sec:descartes-leptons-chirality",
-      blocks: [
-        "descartes-leptons",
-        "descartes-chirality",
-        "light-cone-affine",
-      ],
-    }),
-
-    section({
-      title: "Trefoil subgroups and Bring's curve",
-      label: "sec:trefoil-brings",
-      blocks: [
-        "chirality-trefoil",
-        "brings-curve",
-      ],
-    }),
-
-    section({
-      title: "Colour-sector coordinates on the exceptional fibre",
-      label: "sec:colour-sector-coords",
-      blocks: [
-        "exceptional-divisor",
-        "chiral-sector-coords",
-      ],
-    }),
-
-    section({
-      title: "Categorical braid structure",
-      label: "sec:descartes-braid",
-      blocks: [
-        "descartes-braid-structure",
-        "descartes-braid-structure-proof",
-        "skein-archimedean-shadow",
-      ],
-    }),
-
-    section({
-      title: "The Descartes theorem",
-      label: "sec:descartes-theorem",
-      blocks: [
-        "descartes",
-        "descartes-proof",
-        "universality-general",
-        "descartes-yekutieli",
-        "observation-brings",
-      ],
-    }),
-
-    // ── p-Adic and non-Archimedean realisations (formerly Ch. 7) ─
-
     section({
       title: "Key Results in Categorical Language",
       label: "sec:categorical-reformulation",

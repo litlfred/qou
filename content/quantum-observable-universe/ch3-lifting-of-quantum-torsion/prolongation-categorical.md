@@ -1,7 +1,7 @@
 The proof above shows that jet prolongation is an *intrinsic*
 consequence of the Frobenius-Hopf structure in a rigid monoidal category:
 no additional geometric input beyond the categorical data
-$(\mathcal{C}, A, \omega)$ is required.  Concretely:
+$(\mathbf{C}, A, \tau)$ is required.  Concretely:
 
 1. The Frobenius structure provides the Kähler differentials
    $\Omega^1(A)$ as a direct summand, from which the jet object

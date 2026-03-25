@@ -1,14 +1,17 @@
 ---
 layout: default
-title: QOU Formalization
+title: litlfred's Papers
 ---
 
-# Quantum Observable Universe — Formalization
+# litlfred's Papers
 
-This project formalizes the mathematical content of the
-[QOU manuscript](quantum-observable-universe.pdf) in Lean 4.
+## Papers
 
-## Documentation
+| Paper | Viewer | PDF | Markdown |
+|-------|--------|-----|----------|
+| [Quantum Observable Universe](papers/quantum-observable-universe/) | [View](papers/quantum-observable-universe/) | [PDF](papers/quantum-observable-universe/quantum-observable-universe.pdf) | [MD](papers/quantum-observable-universe/quantum-observable-universe.md) |
+
+## Formalization Resources
 
 | Resource | Description |
 |----------|-------------|
@@ -17,6 +20,8 @@ This project formalizes the mathematical content of the
 | [API Documentation](docs/) | doc-gen4 interactive Lean documentation |
 | [Axiom Report](axiom-report.txt) | Verification report with sorry audit |
 | [Dependency Graph](dependency-graph.svg) | Visual proof dependency graph |
+| [Lean Source](lean/) | Raw Lean 4 source files |
+| [Schema Docs](schema-docs/) | Content-object type reference (TypeDoc) |
 
 ## Knot Registry
 

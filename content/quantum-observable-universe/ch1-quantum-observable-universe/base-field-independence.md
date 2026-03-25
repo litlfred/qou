@@ -8,7 +8,7 @@ include:
 - $R = K$ an archimedean field (a field with an archimedean absolute
   value, e.g. $\mathbb{Q}$, $\mathbb{R}$, or $\mathbb{C}$): the
   setting of CR geometry and contact manifolds
-  ([$\mathbb{C}$-quantum universe](#def:c-quantum-universe));
+  ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe));
 - $R = \mathbb{Q}_\pp$ (the $\pp$-adic field): the gauge datum becomes
   an $F$-isocrystal with Frobenius lift
   ([$p$-adic realisation](#ex:p-adic-realisation),
@@ -18,5 +18,5 @@ include:
   ([finite field realisation](#ex:finite-field-realisation));
 - $R = \mathbb{Z}[q, q^{-1}]$: the universal (Lusztig) integral form.
 
-The fibre functor $\omega$ ensures that $G = \mathrm{Aut}^{\otimes}(\omega)$
+The fibre functor $\tau$ ensures that $G = \mathrm{Aut}^{\otimes}(\tau)$
 is well-defined over any $R$.

@@ -1,5 +1,5 @@
 Continuing [QOU on SU(2)](#ex:qou-su2), the simple objects of
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$ are the irreducible
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$ are the irreducible
 representations $V_j \cong \mathbb{C}^{2j+1}$:
 
 ```tex

@@ -28,8 +28,8 @@ component therefore satisfies $A^0 = X\,dz = \lambda_{\mathrm{SW}}$,
 recovering the Seiberg--Witten
 differential.
 
-*Step 2: Fake-flatness and the $2$-form datum.*
-The fake-flatness condition $F_A = B$ identifies
+*Step 2: Quantum flatness and the $2$-form datum.*
+The quantum flatness condition $F_A = B$ identifies
 the curvature $2$-form $L \wedge F^+$ on $E_c$ with the
 $\mathfrak{su}(2)$-valued $2$-form $B|_{E_c}$.  The simplicity constraint
 forces $B|_{E_c} = F_A^+|_{E_c}$, which on the $2$-sphere $E_c$ is

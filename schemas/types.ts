@@ -25,17 +25,95 @@
  *   rigid-monoidal-category.md   — narrative
  *   rigid-monoidal-category.lean — Lean (when required)
  *
- * ## Content convention (in .md files)
+ * ## Markdown content grammar (in .md files)
  *
- * - Inline math: $...$
- * - Display math: $$...$$
- * - Complex TeX (tikzcd, align, custom macros): fenced code block with `tex` tag
+ * Each .md file uses a constrained markdown dialect that embeds TeX.
+ * The content is parsed by **remark + remark-math** (AST-based, not regex),
+ * and the extracted TeX is validated by **unified-latex** (LaTeX AST parser).
  *
- * ```tex
- * \begin{tikzcd}
- *   A \arrow[r] & B
- * \end{tikzcd}
- * ```
+ * ### AST node mapping
+ *
+ * | Markdown syntax              | remark AST node  | LaTeX output              |
+ * |------------------------------|------------------|---------------------------|
+ * | `$...$`                      | `inlineMath`     | passthrough               |
+ * | `$$...$$`                    | `math` (display) | `\[...\]`                 |
+ * | ` ```tex ... ``` `           | `code` (lang=tex)| raw LaTeX passthrough     |
+ * | `**bold**`                   | `strong`         | `\textbf{}`               |
+ * | `*italic*`                   | `emphasis`       | `\emph{}`                 |
+ * | `[text](#label)`             | `link`           | `\hyperref[label]{text}`  |
+ * | `- item`                     | `listItem`       | `\begin{itemize} \item`   |
+ * | `1. item`                    | `listItem`       | `\begin{enumerate} \item` |
+ * | blank line                   | paragraph break  | `\par` / blank line       |
+ *
+ * ### TeX embedding rules
+ *
+ * **Inline math** (`$...$`):
+ *   - Single-line only. Content is raw TeX in math mode.
+ *   - Escape literal `$` with `\$` in surrounding prose.
+ *   - Example: `The connection $\nabla_q$ satisfies $d_q^2 = 0$.`
+ *
+ * **Display math** (`$$...$$`):
+ *   - Multi-line allowed. Content is raw TeX in display math mode.
+ *   - Do NOT nest `\begin{equation}` inside `$$...$$` — the pipeline wraps
+ *     display math in `\[...\]` automatically.
+ *   - Example:
+ *     ```
+ *     $$
+ *     F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
+ *     $$
+ *     ```
+ *
+ * **Fenced TeX** (` ```tex ... ``` `):
+ *   - Raw LaTeX passthrough — inserted verbatim into the output.
+ *   - Use for environments that cannot appear in math mode:
+ *     tikzcd, align, gather, figure, tabular, etc.
+ *   - The pipeline does NOT wrap this in math mode.
+ *   - Example:
+ *     ```tex
+ *     \begin{tikzcd}
+ *       A \arrow[r, "f"] & B \arrow[d, "g"] \\
+ *       C \arrow[u, "h"] & D
+ *     \end{tikzcd}
+ *     ```
+ *
+ * ### Block-kind–specific content rules
+ *
+ * | Block kind          | .md content contains                             |
+ * |---------------------|--------------------------------------------------|
+ * | `prose`             | Full markdown (lists, bold, math, fenced TeX)    |
+ * | `definition`        | Full markdown (body of the definition env)        |
+ * | `theorem` etc.      | Full markdown (statement body)                    |
+ * | `proof`             | Full markdown (proof body)                        |
+ * | `equation`          | TeX math ONLY — no lists, no bold, no prose       |
+ * | `diagram`           | Raw TeX ONLY (tikzcd, figure, etc.)              |
+ *
+ * **Critical**: For `equation` and `diagram` blocks, the pipeline uses
+ * `extractMathContent()` (not `markdownToLatex()`) to prevent list
+ * environments from appearing inside math mode. Authors should put
+ * pure TeX in these .md files, not markdown prose.
+ *
+ * ### Validation pipeline
+ *
+ * Three-level validation runs on every .md file:
+ *
+ * 1. **Markdown AST** (remark + remark-math):
+ *    - Parses markdown into typed AST nodes
+ *    - Extracts `inlineMath`, `math`, and `code[lang=tex]` nodes
+ *    - Provides source positions (line:column) for error reporting
+ *
+ * 2. **LaTeX AST** (unified-latex):
+ *    - Parses each extracted TeX snippet into a LaTeX AST
+ *    - Detects: unbalanced braces, malformed environments, invalid nesting
+ *    - Catches: non-math environments in math context (e.g. itemize in $$)
+ *
+ * 3. **Compilation** (optional, pdflatex):
+ *    - Compiles each snippet with the project's preamble
+ *    - Catches: undefined commands, missing packages, font issues
+ *    - Enabled via `--compile` flag on `validate-tex.ts`
+ *
+ * Tools:
+ *   - `bun run pipeline/validate-tex.ts` — AST validation of all .md files
+ *   - `bun run pipeline/validate.ts` — full content validation (schema + constraints + AST)
  *
  * ## Constraint enforcement
  *
@@ -126,6 +204,11 @@ export interface Companions {
 
 // ── Formalization constraints ────────────────────────────────────
 
+/**
+ * Formalization status — derived at build time from .lean file content.
+ * NOT stored in content block .ts manifests.
+ * Used only by CI scripts and proof-objects.json.
+ */
 export type FormalizationStatus =
   | "not_started"
   | "stated"
@@ -152,7 +235,15 @@ interface BlockBase {
   label: string;
   /** Optional display title. */
   title?: string;
-  /** Labels of objects this one depends on (\uses{} in LaTeX). */
+  /**
+   * Labels of objects this one depends on (\uses{} in LaTeX).
+   *
+   * Within the same paper: bare label (e.g. "def:quantum-universe").
+   * Cross-paper (same folio): qualified "paper-dir:label"
+   *   (e.g. "unital-groebner-bases:cor:pbw").
+   * Cross-folio (external): full URL
+   *   (e.g. "https://folio.example.org/papers/foo#def:bar").
+   */
   uses?: string[];
   /**
    * Thematic tags for filtering and grouping.
@@ -181,7 +272,6 @@ export interface DefinitionBlock extends BlockBase {
   kind: "definition";
   /** Required: every definition must be formalized. */
   lean: LeanRef;
-  status: FormalizationStatus;
   /** Labels of example blocks illustrating this definition. */
   examples?: string[];
 }
@@ -253,8 +343,6 @@ export interface ProofBlock extends BlockBase {
   kind: "proof";
   /** Optional Lean formalization of the proof. */
   lean?: LeanRef;
-  /** Formalization progress for this proof. */
-  status?: FormalizationStatus;
 }
 
 // ── Prose (non-environment content) ──────────────────────────────
@@ -386,6 +474,11 @@ export interface ChapterRef {
 export interface Chapter {
   /** Chapter number. Omit for unnumbered chapters (e.g. Introduction). */
   number?: number;
+  /**
+   * Short label shown in collapsed sidebar tab (e.g. "I" for Introduction,
+   * "G" for Glossary). Defaults to `String(number)` when omitted.
+   */
+  tabLabel?: string;
   title: string;
   label?: string;
   /** Sections can be inline Section objects or SectionRef references. */
@@ -417,7 +510,13 @@ export interface Paper {
   title: string;
   authors: string[];
   affiliations?: string[];
+  /** Author email addresses (parallel to authors array). */
+  emails?: string[];
+  /** Author URLs / homepages (parallel to authors array). */
+  urls?: string[];
   date?: string;
+  /** Paper abstract (plain text or markdown). */
+  abstract?: string;
   /** Chapter references — URIs to chapter .ts manifests. */
   chapters: ChapterRef[];
   /**
@@ -513,6 +612,23 @@ export interface TodoItem {
   related?: string[];
 }
 
+// ── Feedback (committed to main via worktree) ────────────────
+
+/**
+ * A feedback item submitted by a user or agent against a content block.
+ *
+ * Feedback lives in `feedback/<paper-dir>/<rootName>.ts` and is committed
+ * to main immediately via a git worktree, so it persists across branches.
+ *
+ * Extends TodoItem with authorship fields from the feedback UI.
+ */
+export interface FeedbackItem extends TodoItem {
+  /** Display name of the submitter (from OAuth or local config). */
+  author?: string;
+  /** Email of the submitter (from OAuth or local config). */
+  authorEmail?: string;
+}
+
 // ── Folio (collection of papers) ─────────────────────────────
 
 /**
@@ -530,6 +646,19 @@ export interface PaperRef {
   description?: string;
   /** Tags for filtering on the landing page. */
   tags?: string[];
+  /**
+   * Folio viewer URL for this paper.  Used for:
+   * - Cross-paper dependency resolution (qualified `uses` refs)
+   * - BibTeX `folio-url` field for folio-hosted citations
+   * - Read-only import of external papers for commenting/referencing
+   *
+   * Local papers use the viewer hash route: "/viewer/#/view/{paper-id}".
+   * To link to a specific block: append the label fragment
+   *   (e.g. "/viewer/#/view/unital-groebner-bases" then "#cor:pbw").
+   * External folios use full URLs:
+   *   "https://folio.example.org/viewer/#/view/paper-id".
+   */
+  url?: string;
 }
 
 /**

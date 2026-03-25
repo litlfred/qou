@@ -16,7 +16,7 @@ to be fully developed:
    arrays --- the coupling to $q$-torsion may be
    non-monotonic in a control parameter (e.g. interlayer separation or
    applied field). In the QOU picture, this arises because the
-   $q$-deformed Reeb flow ([$q$-Reeb flow](#def:q-reeb-flow)) introduces
+   $q$-deformed Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)) introduces
    a preferred orientation that competes with the lattice's own symmetry,
    producing frustrated configurations whose energy dissipation is
    maximised at an intermediate commensurability.

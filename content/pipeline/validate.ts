@@ -43,14 +43,27 @@ function rootName(file: string): string {
   return basename(file, extname(file));
 }
 
+type ManifestKind = "paper" | "chapter" | null;
+
 /**
- * Detect if a directory contains a paper manifest.
- * Convention: paper manifest has the same name as its directory.
+ * Detect what kind of manifest a directory's eponymous .ts file is.
+ * Returns "paper", "chapter", or null if no manifest exists.
+ *
+ * Detection is authoritative: imports the .ts module, then validates the
+ * exported object against PaperSchema and ChapterSchema. The data itself
+ * determines the type — no source-text heuristics.
  */
-function detectPaperManifest(dir: string): string | null {
+async function detectManifestKind(dir: string): Promise<{ kind: ManifestKind; path: string | null; data?: any }> {
   const dirName = basename(dir);
   const manifestPath = join(dir, `${dirName}.ts`);
-  return existsSync(manifestPath) ? manifestPath : null;
+  if (!existsSync(manifestPath)) return { kind: null, path: null };
+  try {
+    const mod = await import(manifestPath);
+    const obj = mod.default;
+    if (PaperSchema.safeParse(obj).success) return { kind: "paper", path: manifestPath, data: obj };
+    if (ChapterSchema.safeParse(obj).success) return { kind: "chapter", path: manifestPath, data: obj };
+  } catch { /* import error — not a valid manifest */ }
+  return { kind: null, path: null };
 }
 
 // ── Validation ───────────────────────────────────────────────────
@@ -123,96 +136,91 @@ async function loadBlocksFromDir(
 export async function validateObjects(objectsDir: string): Promise<ValidationResult> {
   const issues: ValidationIssue[] = [];
 
-  // Detect paper manifest
-  const paperManifestPath = detectPaperManifest(objectsDir);
+  // Detect manifest type by importing and validating against schemas
+  const { kind: manifestKind, path: manifestPath, data: manifestData } =
+    await detectManifestKind(objectsDir);
 
   // Collect all blocks across all chapter directories (or flat dir)
   const allBlocks = new Map<string, { block: Block; dir: string }>();
   const allLabels = new Set<string>();
 
-  if (paperManifestPath) {
-    // ── Paper mode: validate paper manifest, then recurse into chapters ──
-    try {
-      const paperMod = await import(paperManifestPath);
-      const paper: Paper = paperMod.default;
+  if (manifestKind === "chapter" && manifestPath && manifestData) {
+    // ── Chapter mode: manifest already validated by detectManifestKind ──
+    const chapter: Chapter = manifestData;
 
-      const paperResult = PaperSchema.safeParse(paper);
-      if (!paperResult.success) {
-        for (const err of paperResult.error.issues) {
-          issues.push({
-            level: "error",
-            block: basename(paperManifestPath, ".ts"),
-            message: `Paper schema: ${err.path.join(".")}: ${err.message}`,
-            file: basename(paperManifestPath),
-          });
-        }
-        // Paper manifest is invalid — can't recurse
-        return { valid: false, issues };
+    // Collect block names from sections
+    const blockNames: string[] = [];
+    for (const sec of chapter.sections) {
+      if ("blocks" in sec) {
+        blockNames.push(...(sec as Section).blocks);
+      }
+    }
+
+    const chBlocks = await loadBlocksFromDir(objectsDir, blockNames, issues);
+    for (const [name, block] of chBlocks) {
+      allBlocks.set(name, { block, dir: objectsDir });
+      if ("label" in block && block.label) {
+        allLabels.add(block.label);
+      }
+    }
+  } else if (manifestKind === "paper" && manifestPath && manifestData) {
+    // ── Paper mode: manifest already validated by detectManifestKind ──
+    const paper: Paper = manifestData;
+
+    // Validate each chapter
+    for (const chRef of paper.chapters) {
+      const chDir = join(objectsDir, chRef.dir);
+      const chPath = join(chDir, `${chRef.dir}.ts`);
+
+      if (!existsSync(chPath)) {
+        issues.push({
+          level: "error",
+          block: chRef.dir,
+          message: `Chapter manifest not found: ${chPath}`,
+        });
+        continue;
       }
 
-      // Validate each chapter
-      for (const chRef of paper.chapters) {
-        const chDir = join(objectsDir, chRef.dir);
-        const chPath = join(chDir, `${chRef.dir}.ts`);
+      try {
+        const chMod = await import(chPath);
+        const chapter: Chapter = chMod.default;
 
-        if (!existsSync(chPath)) {
-          issues.push({
-            level: "error",
-            block: chRef.dir,
-            message: `Chapter manifest not found: ${chPath}`,
-          });
+        const chResult = ChapterSchema.safeParse(chapter);
+        if (!chResult.success) {
+          for (const err of chResult.error.issues) {
+            issues.push({
+              level: "error",
+              block: chRef.dir,
+              message: `Chapter schema: ${err.path.join(".")}: ${err.message}`,
+              file: `${chRef.dir}.ts`,
+            });
+          }
           continue;
         }
 
-        try {
-          const chMod = await import(chPath);
-          const chapter: Chapter = chMod.default;
-
-          const chResult = ChapterSchema.safeParse(chapter);
-          if (!chResult.success) {
-            for (const err of chResult.error.issues) {
-              issues.push({
-                level: "error",
-                block: chRef.dir,
-                message: `Chapter schema: ${err.path.join(".")}: ${err.message}`,
-                file: `${chRef.dir}.ts`,
-              });
-            }
-            continue;
+        // Collect block names from sections
+        const blockNames: string[] = [];
+        for (const sec of chapter.sections) {
+          if ("blocks" in sec) {
+            blockNames.push(...(sec as Section).blocks);
           }
-
-          // Collect block names from sections
-          const blockNames: string[] = [];
-          for (const sec of chapter.sections) {
-            if ("blocks" in sec) {
-              blockNames.push(...(sec as Section).blocks);
-            }
-          }
-
-          // Load and validate blocks in this chapter dir
-          const chBlocks = await loadBlocksFromDir(chDir, blockNames, issues);
-          for (const [name, block] of chBlocks) {
-            allBlocks.set(name, { block, dir: chDir });
-            if ("label" in block && block.label) {
-              allLabels.add(block.label);
-            }
-          }
-        } catch (e) {
-          issues.push({
-            level: "error",
-            block: chRef.dir,
-            message: `Chapter import error: ${e instanceof Error ? e.message : String(e)}`,
-          });
         }
+
+        // Load and validate blocks in this chapter dir
+        const chBlocks = await loadBlocksFromDir(chDir, blockNames, issues);
+        for (const [name, block] of chBlocks) {
+          allBlocks.set(name, { block, dir: chDir });
+          if ("label" in block && block.label) {
+            allLabels.add(block.label);
+          }
+        }
+      } catch (e) {
+        issues.push({
+          level: "error",
+          block: chRef.dir,
+          message: `Chapter import error: ${e instanceof Error ? e.message : String(e)}`,
+        });
       }
-    } catch (e) {
-      issues.push({
-        level: "error",
-        block: basename(paperManifestPath, ".ts"),
-        message: `Paper import error: ${e instanceof Error ? e.message : String(e)}`,
-        file: basename(paperManifestPath),
-      });
-      return { valid: issues.every(i => i.level !== "error"), issues };
     }
   } else {
     // ── Flat mode: validate all .ts files as blocks (legacy) ──

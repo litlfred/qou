@@ -2,8 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:brane-boundary",
-  lean: { decl: "QOU.BraneBoundary" },
-  status: "stated",
+  lean: { decl: "QOU.braneBoundary" },
   title: "Defining boundary of the brane",
   tags: ["brane-boundary", "kernel", "degeneracy-locus"],
   uses: [

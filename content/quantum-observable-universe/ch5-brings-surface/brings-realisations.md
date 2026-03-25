@@ -3,6 +3,7 @@ $\mathbb{C}$), Bring's surface is a compact Riemann surface of genus $4$.
 The unit circle bundle $M_S$ in $T^*\Sigma_4$ is a CR manifold of
 hypersurface type (real dimension $3$), which provides the archimedean
 realisation of the quantum observable universe
-([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)).  Physics interpretations --- lepton
+([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)).  Physics interpretations --- lepton
 generations, chirality, colour --- are further realisations of the
-$S_5$-symmetric structure ([Descartes leptons](#rem:descartes-leptons)).
+$S_5$-symmetric structure (see [Descartes leptons](#rem:descartes-leptons)
+in [Chapter 6](#chap:descartes-universe)).

@@ -33,14 +33,14 @@ The counit and antipode extend similarly:
 $\varepsilon'(f \otimes \theta) = f(e)\,\theta_e$ and
 $S'(f \otimes \theta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\theta$.
 The Frobenius form is
-$\lambda'(f \otimes \theta) = \int_G f\,\theta$, integrating the
+$\int_{J^1 A}(f \otimes \theta) = \int_G f\,\theta$, integrating the
 $1$-form component over $G$ using the Haar measure.
 
 **QOU structure.** The induced fibre functor is
-$\omega' = \omega \circ (\text{--} \otimes \Omega^1)$, forgetting
+$\tau' = \tau \circ (\text{--} \otimes \Omega^1)$, forgetting
 the $G$-action on sections while retaining the $1$-form structure.
 Since $\mathrm{SU}(2)$ is $3$-dimensional,
 $J^1(A)$ is a $3$-fold extension of $A$, so
-$\dim_{\omega'} J^1(A) = 3 \cdot \dim_\omega A$.
-The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)),\, J^1(A),\, \omega',\, q)$
+$\dim_{\tau'} J^1(A) = 3 \cdot \dim_\tau A$.
+The quadruple $(\mathrm{Rep}(\mathrm{SU}(2)),\, J^1(A),\, \tau',\, q)$
 is again a quantum observable universe.

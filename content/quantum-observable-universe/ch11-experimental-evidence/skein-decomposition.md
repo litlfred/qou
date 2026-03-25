@@ -3,22 +3,11 @@ This remark formalizes the refinement of the particle-topology mapping by shifti
 **Topological Ansatz and Field Character.**
 The following table summarizes the axiomatic assignments where particle identities are mapped to specific knot types ($K$) and their associated masses $\mathcal{M}(K)$ are governed by the local substrate field $q(p)$.
 
-$$
-\begin{array}{|l|l|l|}
-\hline
-\textbf{Particle / State} & \textbf{Topological Identity} & \textbf{QOU Geometric Role} \\
-\hline
-\text{Photon} & \text{The Point (Empty Knot)} & \text{Background flux on the exceptional divisor} \\
-\hline
-\text{Neutrino} & \text{Unknot } (\mathcal{O}) & \text{Baseline vacuum drag; trivial braiding} \\
-\hline
-\text{Electron} & \text{Trefoil } (3_1) & \deg\alpha_V = 1 \text{ generation} \\
-\hline
-\text{Muon} & \text{Figure-Eight } (4_1) & \deg\alpha_V = 2 \text{ generation} \\
-\hline
-\text{Nucleon} & \text{Borromean Rings } (6_2^3) & \text{Color-exchange entanglement of three tubes} \\
-\hline
-\text{Strong Force} & \text{Hopf Link } (\mathcal{L}_{Hopf}) & \text{Internal binding energy; invisible to } \mathbb{P}^1(\mathbb{C}) \text{ base} \\
-\hline
-\end{array}
-$$
+| Particle / State | Topological Identity | QOU Geometric Role |
+|---|---|---|
+| Photon | The Point (Empty Knot) | Background flux on the exceptional divisor |
+| Neutrino | Unknot ($\mathcal{O}$) | Baseline vacuum drag; trivial braiding |
+| Electron | Trefoil ($3_1$) | Simplest stable vortex; $\deg\alpha_V = 1$ generation |
+| Muon | Figure-Eight ($4_1$) | Hyperbolic volume residue; $\deg\alpha_V = 2$ generation |
+| Nucleon | Borromean Rings ($6_2^3$) | Color-exchange entanglement of three tubes |
+| Strong Force | Hopf Link ($\mathcal{L}_{Hopf}$) | Internal binding energy; invisible to $\mathbb{P}^1(\mathbb{C})$ base |

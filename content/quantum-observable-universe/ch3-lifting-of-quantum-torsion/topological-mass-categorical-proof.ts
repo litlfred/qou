@@ -7,6 +7,7 @@ export default proof({
     "thm:topological-mass",
     "prop:descent-eigenspaces",
     "def:mass-identity",
+    "def:frobenius-pairing",
     "def:descent-involution",
     "def:brane-boundary",
   ],

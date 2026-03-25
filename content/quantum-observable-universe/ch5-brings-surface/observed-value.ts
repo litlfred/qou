@@ -3,7 +3,6 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:observed-value",
   lean: { decl: "QOU.ObservedValue" },
-  status: "not_started",
   title: "Observed spacetime value",
   tags: ["brings-surface", "color-tube"],
   uses: ["def:color-tube-fibers", "rem:brings-smoothness"],

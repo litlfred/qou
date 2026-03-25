@@ -341,11 +341,34 @@ section.  In pre-substrate material:
 Definitions in Ch.1 use a single running example that builds
 progressively:
 1. $\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$ (rigid monoidal)
-2. $(\mathrm{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
-   \omega)$ (quantum universe)
-3. Same triple with the three observability axioms verified (QOU)
+2. $(\mathbf{Rep}(\mathrm{SU}(2)),\, \mathcal{O}(\mathrm{SU}(2)),\,
+   \tau)$ (quantum universe)
+3. Same triple with the four observability axioms verified (QOU)
 
 Each example uses "Continuing Example~\ref{...}" to chain them.
+
+### PawLei Basis and Cross-Paper Dependencies
+
+The **PawLei basis** (Pawlowski–Leitner, abbreviated PawLei) provides
+a canonical basis for intertwiner spaces
+$\mathrm{Hom}_{\mathrm{SU}(2)}(V_j,\, V_{1/2}^{\otimes n})$.
+
+This depends on the **PBW theorem over commutative rings**
+(`cor:pbw` in the `unital-groebner-bases` paper), which is a
+cross-paper dependency:
+
+```typescript
+uses: ["unital-groebner-bases:cor:pbw"],  // qualified cross-paper ref
+```
+
+Lean declarations use the `PawLei` prefix:
+- `QOU.PawLeiBasis` — basis structure
+- `QOU.PawLeiInnerProduct` — orthogonality
+- `QOU.pawLeiDim` — dimension formula
+
+The chain: PBW (Gröbner bases) → $U(\mathfrak{su}(2))$ monomial basis
+→ contraction with volume form $\epsilon$ → PawLei basis for
+intertwiners → hadron decomposition.
 
 ## Content Object Integration
 
@@ -402,6 +425,8 @@ and hom-set.
 - [ ] Knot types are defined combinatorially when possible
 - [ ] `slice_lhs` / `slice_rhs` used for manual composition navigation
 - [ ] LaTeX definitions include tikzcd diagrams (Herrlich–Strecker style)
+- [ ] Categories use bold notation ($\mathbf{C}$, $\mathbf{Rep}$), not calligraphic $\mathcal{C}$
+- [ ] Fibre functor is $\tau$ (not $\omega$ or $U$); minimise its appearance
 - [ ] No $q$ appears before the substrate parameter section
 - [ ] Running examples chain via "Continuing Example" cross-references
 - [ ] New Mathlib-equivalent terms have glossary entries in Ch 8

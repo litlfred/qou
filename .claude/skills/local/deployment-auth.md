@@ -42,7 +42,7 @@ Internet → Caddy (:443, auto TLS)
 
 CLI/API clients can skip OAuth entirely:
 ```
-curl -H 'Authorization: Bearer <LEAN_LSP_MCP_TOKEN>' https://folio.litlfred.org/mcp
+curl -H 'Authorization: Bearer <FOLIO_API_TOKEN>' https://folio.litlfred.org/mcp
 ```
 
 ## CRITICAL: Whitelist Protection

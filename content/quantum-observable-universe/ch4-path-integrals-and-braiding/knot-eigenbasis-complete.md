@@ -1,5 +1,5 @@
-Let $(\mathcal{C}, A, \omega)$ be a quantum observable universe with
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Suppose $q$ is not a root of unity.  Then:
 
 1. **(Semisimplicity.)**  The Hecke algebra

@@ -1,6 +1,6 @@
 Continuing [Examples](#ex:frobenius-su2)--[](#ex:dagger-su2), let
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
-$A = \mathcal{O}(\mathrm{SU}(2))$, $\omega$ the forgetful functor.
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$,
+$A = \mathcal{O}(\mathrm{SU}(2))$, $\tau$ the forgetful functor.
 
 1. *Volume constraint* $\Rightarrow$ $\det(g_V) = 1$.
    The alternating form $\epsilon(v \wedge w) = v_1 w_2 - v_2 w_1$
@@ -14,6 +14,6 @@ $A = \mathcal{O}(\mathrm{SU}(2))$, $\omega$ the forgetful functor.
    $\mathrm{SL}(2, \mathbb{C})$ to its compact real form
    $\mathrm{SU}(2)$.
 3. *Conclusion.*
-   $G = \mathrm{Aut}^{\otimes}(\omega) \cong \mathrm{SU}(2)$,
+   $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$,
    recovering the input gauge group from the categorical axioms
    alone.

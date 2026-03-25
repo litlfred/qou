@@ -52,6 +52,7 @@ export type {
   TodoPriority,
   TodoStatus,
   TodoOrigin,
+  FeedbackItem,
   ValidationIssue,
   ValidationResult,
 } from "./types";
@@ -78,6 +79,7 @@ export {
   paperRef,
   folio,
   document,
+  feedbackItem,
 } from "./builders";
 
 // Zod schemas (for runtime validation, CI, tests)
@@ -105,6 +107,7 @@ export {
   DocumentSchema,
   LeanRefSchema,
   TodoItemSchema,
+  FeedbackItemSchema,
   CONSTRAINT_RULES,
   type ConstraintRule,
   type ConstraintContext,

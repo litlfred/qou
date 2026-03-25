@@ -42,6 +42,7 @@ When a user request arrives, route to the right skill(s):
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
+| "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "simplify / streamline proofs" | `local/proof-simplifier` | collaborator |
 | "validate LaTeX" | `local/latex-validation` | reader |
 | "validate content objects" | `local/content-validation` | reader |
@@ -61,6 +62,11 @@ When a user request arrives, route to the right skill(s):
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
+| "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
+| "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
+| "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
+| "diff / changes / what changed / undo" | `local/diff` | reader |
+| "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 
 ### Skill role assignments
 
@@ -70,8 +76,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -133,18 +139,13 @@ All declarations live under the `QOU` root namespace.
 | `conjecture`, `example`, `remark` | Optional |
 | `prose`, `equation`, `diagram` | N/A |
 
-### 4. Status field must reflect reality
+### 4. Formalization status is derived, not stored
 
-| `status` value | Meaning |
-|---|---|
-| `not_started` | No Lean file yet |
-| `stated` | Lean statement exists, body is `sorry` |
-| `has_sorry` | Partial proof with some `sorry` |
-| `proved` | Complete proof, no `sorry` |
-| `mathlib_ok` | Validated and sorry-free |
-
-Agents must update the `.ts` manifest `status` whenever they change the
-`.lean` file.
+Formalization status (`not_started`, `stated`, `has_sorry`, `proved`,
+`mathlib_ok`) is **not stored in `.ts` manifests**. It is derived at
+build time by CI scripts from `.lean` file content and Lean build output,
+then written to `proof-objects.json`. Agents must **never** add a `status`
+field to content block `.ts` files.
 
 ### 4a. TodoItem lifecycle rules
 
@@ -222,6 +223,15 @@ the paper introduces genuinely new axioms/structure, add a definition.
 
 ### 7. Category theory conventions
 
+- **Category notation**: Use bold `$\mathbf{C}$` for categories
+  (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
+  Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
+  Calligraphic letters are reserved for sheaves, sites, and algebras
+  (`$\mathcal{S}$`, `$\mathcal{O}$`, `$\mathcal{A}$`).
+- **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
+  Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
+  is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
+  explicitly used.
 - Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
 - Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
@@ -310,6 +320,25 @@ combined dependency DAG. Editors and proof-writers use this to:
 - **Prioritize formalization**: find blocks with the most dependents
   that are still `not_started`
 
+### Cross-paper references
+
+The `uses[]` field supports three reference scopes:
+
+| Scope | Syntax | Example |
+|-------|--------|---------|
+| Same paper | bare label | `"def:quantum-universe"` |
+| Same folio | `"paper-dir:label"` | `"unital-groebner-bases:cor:pbw"` |
+| External folio | full URL | `"https://folio.example.org/viewer/#/view/paper-id"` |
+
+Cross-paper refs are validated at folio level, not per-paper. The
+`uses-resolve` constraint skips qualified refs (those matching
+`paper-dir:label` or starting with `https://`).
+
+Each paper in `content/folio.ts` has an optional `url` field for
+viewer routing. BibTeX entries for folio-hosted papers include a
+`folio-url` field matching the viewer hash route
+(e.g. `/viewer/#/view/unital-groebner-bases`).
+
 ### Markdown content convention (in .md files)
 
 - Inline math: `$...$`
@@ -317,6 +346,63 @@ combined dependency DAG. Editors and proof-writers use this to:
 - Complex TeX (tikzcd, align): fenced code block with `` ```tex `` tag
 - Bold → `\textbf{}`, italic → `\emph{}` in LaTeX output
 - Cross-refs: `[text](#label)` → `\hyperref[label]{text}`
+
+### TeX authoring patterns for agents
+
+These rules prevent rendering errors in the content pipeline.
+Violations produce broken LaTeX in titles, captions, and body text.
+
+**1. Math in titles is supported.** Block titles (in `.ts` manifests)
+may contain inline math. The `escapeLatex()` function preserves
+`$...$` segments verbatim. Always use `$...$` delimiters:
+
+```ts
+// CORRECT — math preserved in rendered \begin{example}[{...}]
+title: "Reeb derivation for $\\mathrm{SU}(2)$"
+
+// WRONG — bare LaTeX commands will be escaped to garbage
+title: "Reeb derivation for \\mathrm{SU}(2)"
+```
+
+**2. Multi-line inline math is valid.** The remark-math parser handles
+`$...$` spanning multiple lines. This is the standard pattern for long
+inline expressions in list items:
+
+```md
+1. **Cyclicity**: $\mathrm{tr}_{\mathrm{Ad}}(f \circ g) =
+   \mathrm{tr}_{\mathrm{Ad}}(g \circ f)$, inherited from the
+   Frobenius relation.
+```
+
+**3. Never use raw TeX commands in prose outside `$...$`.** The markdown
+→ LaTeX converter only passes through content inside math delimiters
+or `` ```tex `` fenced blocks. Bare `\mathrm{...}` outside delimiters
+renders as literal text.
+
+**4. Use `$$...$$` on separate lines for display math.** The `$$`
+delimiter must be alone on its line (or at the very start/end):
+
+```md
+The formula is:
+
+$$
+  \nabla^2 \phi = 0
+$$
+```
+
+**5. For complex environments (tikzcd, align), use fenced tex blocks:**
+
+````md
+```tex
+\begin{tikzcd}
+  A \arrow[r] & B
+\end{tikzcd}
+```
+````
+
+**6. Ampersands in math are fine.** The `&` character inside `$...$` or
+`` ```tex `` blocks is not escaped (it's a column separator in matrices
+and alignments). Only `&` in prose text causes LaTeX errors.
 
 ## Lean MCP server (lean-lsp-mcp)
 
@@ -361,13 +447,13 @@ Architecture: `Client → Caddy (TLS) → auth-gateway (dual OAuth) → lean-lsp
 - Roles: viewer (read + feedback), collaborator (edit + branches), owner (commit to main)
 - Whitelists: `deploy/google-viewers.txt` + `deploy/github-collaborators.txt` (manually managed)
 - Auto-update: `self-update-folio.sh` polls git + GHCR every minute via cron
-- Programmatic access: bearer token via `LEAN_LSP_MCP_TOKEN`
+- Programmatic access: bearer token via `FOLIO_API_TOKEN`
 - Hosting: Hetzner CX22 (~€4.50/mo), provisioned via `provision-hetzner.sh`
 
 To switch a client to remote mode, update `.mcp.json`:
 
 ```json
-{"mcpServers":{"lean-lsp":{"url":"https://lean.litlfred.org/mcp"}}}
+{"mcpServers":{"lean-lsp":{"url":"https://folio.litlfred.org/mcp"}}}
 ```
 
 To extract the deploy infrastructure for another repo, copy `deploy/`,
@@ -417,15 +503,18 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
 | `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
-| `publish.yml` | `quantum-observable-universe.pdf`, `.md`, `index.html`, `paper.html`, `style.css`, `drafts/` (feature branches) |
+| `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
 
 | Path | Source | Description |
 |------|--------|-------------|
-| `index.html` | publish.yml | Landing page with paper/visualizer toggle |
-| `quantum-observable-universe.pdf` | publish.yml | Compiled paper |
-| `quantum-observable-universe.md` | publish.yml | Pandoc Markdown |
+| `index.html` | publish.yml | Folio landing page (links to all papers) |
+| `papers/<dir>/index.html` | publish.yml | Per-paper viewer with paper/visualizer toggle |
+| `papers/<dir>/paper.html` | publish.yml | Enhanced HTML paper |
+| `papers/<dir>/<dir>.pdf` | publish.yml | Compiled paper PDF |
+| `papers/<dir>/<dir>.md` | publish.yml | Pandoc Markdown |
+| `quantum-observable-universe.pdf` | publish.yml | Backward-compat copy of first paper PDF |
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
@@ -433,6 +522,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
+| `schema-docs/` | publish.yml | TypeDoc content-object type reference |
 | `proof-objects.json` | all | Formalization status manifest |
 | `glossary.json` | all | Semantic glossary |
 | `mapping.json` | all | Narrative-to-Lean identifier map |

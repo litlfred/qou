@@ -162,14 +162,57 @@ The `formalizer`, `proof-triage`, and `category-theory` skills can:
 
 ### Cross-paper dependency tracking
 
-When a block in the main paper `uses` an imported block:
+When a block in one paper `uses` a block from another paper, use
+**qualified references** with the target paper's directory name:
+
 ```typescript
-// In the main paper
-export default theorem({
-  label: "thm:our-extension",
-  uses: ["thm:imported-main-result"],  // from imported paper
-  // ...
+// In quantum-observable-universe paper, referencing unital-groebner-bases
+export default proposition({
+  label: "prop:pawlowski-leitner-basis",
+  uses: [
+    "rem:spin-half-representation",           // same paper (bare label)
+    "unital-groebner-bases:cor:pbw",          // cross-paper (paper-dir:label)
+  ],
 });
+```
+
+**Syntax:**
+- Same paper: bare label (`"def:foo"`)
+- Same folio: `"paper-dir:label"` (`"unital-groebner-bases:cor:pbw"`)
+- External folio: full URL (`"https://folio.example.org/viewer/#/view/paper-id"`)
+
+The validation pipeline (`uses-resolve` in `constraints.ts`) skips
+qualified refs — they are resolved at folio level, not per-paper.
+
+### Folio registration and viewer URL
+
+Every imported paper must be registered in `content/folio.ts`:
+
+```typescript
+paperRef({
+  dir: "unital-groebner-bases",
+  title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+  url: "/viewer/#/view/unital-groebner-bases",  // viewer route
+  tags: ["algebra", "groebner-basis"],
+}),
+```
+
+The `url` field enables:
+- Cross-paper link resolution in the viewer
+- BibTeX `folio-url` field for folio-hosted citations
+- Read-only import of external folios for referencing
+
+### BibTeX integration for imported papers
+
+When the imported paper has a folio viewer URL, add a `folio-url`
+field to its BibTeX entry in `references.bib`:
+
+```bibtex
+@article{leitnerpawloski2004,
+  author    = {Leitner, Frederick and Pawloski, Robert},
+  title     = {{Unital Gröbner Bases...}},
+  folio-url = {/viewer/#/view/unital-groebner-bases},
+}
 ```
 
 The dependency graph links across papers. Proof-writers can traverse
@@ -262,7 +305,7 @@ Before completing an import:
 - [ ] `meta.source` populated on every imported block
 - [ ] BibTeX entry exists in `references.bib` (or suggested to user)
 - [ ] Any `.lean` files have `sorry` with `-- Ref:` citations
-- [ ] `.ts` status fields reflect reality (`not_started` or `stated`)
+- [ ] `.ts` manifests have `lean.decl` set for definition blocks
 - [ ] Todo suggestions presented to user (NOT auto-created)
 - [ ] Chapter manifest references all blocks in order
 - [ ] Paper manifest added to `content/folio.ts` (or existing paper updated)

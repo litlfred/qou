@@ -213,7 +213,7 @@ a:hover {{ text-decoration: underline; }}
 (function(){{
   var root = document.documentElement;
   var btn = document.getElementById('theme-toggle');
-  var saved = localStorage.getItem('qou-theme');
+  var saved = localStorage.getItem('folio-assistant-theme');
   if (saved) root.setAttribute('data-theme', saved);
   btn.addEventListener('click', function(){{
     var cur = root.getAttribute('data-theme');
@@ -224,7 +224,7 @@ a:hover {{ text-decoration: underline; }}
       next = cur === 'dark' ? 'light' : 'dark';
     }}
     root.setAttribute('data-theme', next);
-    localStorage.setItem('qou-theme', next);
+    localStorage.setItem('folio-assistant-theme', next);
     btn.textContent = next === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
   }});
   var isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);

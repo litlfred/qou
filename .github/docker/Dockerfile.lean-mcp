@@ -6,7 +6,7 @@
 # Built automatically by .github/workflows/build-lean-mcp.yml on
 # every push to main that touches lean-archive/ or lakefile.toml.
 #
-# Auth: LEAN_LSP_MCP_TOKEN env var for bearer token auth.
+# Auth: FOLIO_API_TOKEN env var for bearer token auth.
 # Transport: Streamable HTTP on port 8080.
 
 # ═══════════════════════════════════════════════════════════════════
@@ -80,7 +80,7 @@ WORKDIR /workspace/lean
 # lean-lsp-mcp config
 ENV LEAN_LSP_MCP_HOST=0.0.0.0
 ENV LEAN_LSP_MCP_PORT=8080
-# LEAN_LSP_MCP_TOKEN must be set at runtime for auth
+# FOLIO_API_TOKEN must be set at runtime for auth
 
 EXPOSE 8080
 

@@ -6,7 +6,7 @@ each fibre with its representation category
 $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$, a braided monoidal category.
 Tannaka--Krein duality reconstructs $\mathcal{O}_{q(p)}$ from
 $\mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$ via
-$\mathrm{End}^{\otimes}(\omega)$, where $\omega$ is the forgetful
+$\mathrm{End}^{\otimes}(\tau)$, where $\tau$ is the forgetful
 fibre functor. For any two points $p, p' \in M$ connected by a
 path $\gamma$, the passage between fibres is captured by the
 commutative square

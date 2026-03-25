@@ -17,17 +17,25 @@ ENV PATH="/root/.elan/bin:${PATH}"
 # ── System packages ────────────────────────────────────────────────────
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       # Build essentials
-      ca-certificates curl git \
+      ca-certificates curl git unzip \
       # Python
       python3 python3-pip python3-venv \
       # LaTeX (scheme-small covers most needs; extras for latexpand)
-      texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
+      texlive texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra \
       texlive-science texlive-extra-utils biber dvisvgm \
       # Document tools
       pandoc latexdiff graphviz \
       # Needed by some Lean/Lake native deps
       build-essential cmake libgmp-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# ── Install ccicons from CTAN (was in texlive-fonts-extra) ───────────
+RUN mkdir -p /tmp/ccicons && cd /tmp/ccicons \
+    && curl -sL https://mirrors.ctan.org/install/fonts/ccicons.tds.zip -o ccicons.tds.zip \
+    && unzip -q ccicons.tds.zip -d /usr/local/share/texmf \
+    && texhash \
+    && updmap-sys --enable Map=ccicons.map \
+    && rm -rf /tmp/ccicons
 
 # ── Python packages ────────────────────────────────────────────────────
 RUN pip3 install --break-system-packages --no-cache-dir \

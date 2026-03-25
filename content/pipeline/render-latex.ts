@@ -14,127 +14,218 @@
 import { readFileSync, existsSync } from "fs";
 import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
+import { remark } from "remark";
+import remarkMath from "remark-math";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 
-// ── Markdown → LaTeX conversion ──────────────────────────────────
+// ── LaTeX character escaping ─────────────────────────────────────
 
 /**
- * Convert markdown content to LaTeX body text.
+ * Escape special LaTeX characters in a plain-text segment.
  *
- * Handles:
- *   - **bold** → \textbf{}
- *   - *italic* → \emph{}
- *   - $...$ inline math (passthrough)
- *   - $$...$$ display math → \[ ... \]
- *   - ```tex fenced blocks → raw LaTeX (verbatim insertion)
- *   - Numbered lists → \begin{enumerate}
- *   - Bullet lists → \begin{itemize}
- *   - [text](ref) → \hyperref[ref]{text} for internal refs
- *   - Paragraphs separated by blank lines
+ * Applied only to text *outside* math mode — see `escapeLatex` which
+ * splits on `$...$` boundaries first.
  */
-export function markdownToLatex(md: string): string {
-  const lines = md.split("\n");
-  const output: string[] = [];
-  let i = 0;
-
-  while (i < lines.length) {
-    const line = lines[i];
-
-    // Fenced code block: ```tex ... ```
-    if (line.trimStart().startsWith("```tex")) {
-      i++;
-      const texLines: string[] = [];
-      while (i < lines.length && !lines[i].trimStart().startsWith("```")) {
-        texLines.push(lines[i]);
-        i++;
-      }
-      i++; // skip closing ```
-      output.push(texLines.join("\n"));
-      continue;
-    }
-
-    // Other fenced code blocks: pass through as verbatim
-    if (line.trimStart().startsWith("```")) {
-      const lang = line.trim().slice(3);
-      i++;
-      const codeLines: string[] = [];
-      while (i < lines.length && !lines[i].trimStart().startsWith("```")) {
-        codeLines.push(lines[i]);
-        i++;
-      }
-      i++;
-      output.push(`\\begin{verbatim}`);
-      output.push(codeLines.join("\n"));
-      output.push(`\\end{verbatim}`);
-      continue;
-    }
-
-    // Display math: $$ ... $$
-    if (line.trimStart().startsWith("$$")) {
-      i++;
-      const mathLines: string[] = [line.trimStart().slice(2)];
-      while (i < lines.length && !lines[i].includes("$$")) {
-        mathLines.push(lines[i]);
-        i++;
-      }
-      if (i < lines.length) {
-        mathLines.push(lines[i].replace("$$", ""));
-        i++;
-      }
-      const mathContent = mathLines.join("\n").trim();
-      output.push(`\\[`);
-      output.push(mathContent);
-      output.push(`\\]`);
-      continue;
-    }
-
-    // Numbered list items: 1. ... 2. ...
-    if (/^\s*\d+\.\s/.test(line)) {
-      output.push("\\begin{enumerate}");
-      while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
-        output.push(`  \\item ${convertInline(lines[i].replace(/^\s*\d+\.\s/, ""))}`);
-        i++;
-      }
-      output.push("\\end{enumerate}");
-      continue;
-    }
-
-    // Bullet list items: - ...
-    if (/^\s*[-*]\s/.test(line)) {
-      output.push("\\begin{itemize}");
-      while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
-        output.push(`  \\item ${convertInline(lines[i].replace(/^\s*[-*]\s/, ""))}`);
-        i++;
-      }
-      output.push("\\end{itemize}");
-      continue;
-    }
-
-    // Blank line → paragraph break
-    if (line.trim() === "") {
-      output.push("");
-      i++;
-      continue;
-    }
-
-    // Regular line — convert inline formatting
-    output.push(convertInline(line));
-    i++;
-  }
-
-  return output.join("\n").trim();
+function escapeLatexSegment(text: string): string {
+  return text
+    .replace(/\\/g, "\\textbackslash{}")
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/\$/g, "\\$")
+    .replace(/#/g, "\\#")
+    .replace(/_/g, "\\_")
+    .replace(/\{/g, "\\{")
+    .replace(/\}/g, "\\}")
+    .replace(/~/g, "\\textasciitilde{}")
+    .replace(/\^/g, "\\textasciicircum{}");
 }
 
-/** Convert inline markdown formatting to LaTeX. */
-function convertInline(text: string): string {
-  // Bold: **text** → \textbf{text}
-  text = text.replace(/\*\*(.+?)\*\*/g, "\\textbf{$1}");
-  // Italic: *text* → \emph{text}
-  text = text.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "\\emph{$1}");
-  // Internal cross-refs: [text](#label) → \hyperref[label]{text}
-  text = text.replace(/\[([^\]]+)\]\(#([^)]+)\)/g, "\\hyperref[$2]{$1}");
-  // $...$ inline math passes through unchanged
-  return text;
+/**
+ * Escape special LaTeX characters in titles, captions, etc.,
+ * while preserving inline math (`$...$`) segments verbatim.
+ *
+ * Titles may contain inline math like `$\mathrm{SU}(2)$` which
+ * must not be escaped. This function splits on `$` boundaries,
+ * escapes only the non-math segments, and reassembles.
+ */
+export function escapeLatex(text: string): string {
+  // Split on $ delimiters, preserving them
+  const parts = text.split(/(\$[^$]*\$)/);
+  return parts
+    .map((part, i) => {
+      // Odd-indexed parts matched the $...$ pattern — pass through
+      if (part.startsWith("$") && part.endsWith("$") && part.length > 1) {
+        return part;
+      }
+      return escapeLatexSegment(part);
+    })
+    .join("");
+}
+
+// ── Markdown → LaTeX conversion (AST-based) ─────────────────────
+
+/** Shared remark parser instance with math extension. */
+const mdParser = remark().use(remarkMath);
+
+/**
+ * Convert markdown content to LaTeX body text via remark AST.
+ *
+ * Walks the parsed AST instead of line-by-line regex matching.
+ * Node type mapping:
+ *
+ *   | mdast node    | LaTeX output                         |
+ *   |---------------|--------------------------------------|
+ *   | text          | passthrough                          |
+ *   | strong        | \textbf{children}                    |
+ *   | emphasis      | \emph{children}                      |
+ *   | inlineMath    | $value$                              |
+ *   | math          | \[value\]                            |
+ *   | code(tex)     | raw passthrough                      |
+ *   | code(other)   | \begin{verbatim}...\end{verbatim}    |
+ *   | link(#ref)    | \hyperref[ref]{children}             |
+ *   | link(url)     | \href{url}{children}                 |
+ *   | list(ordered) | \begin{enumerate} \item ...\end{...} |
+ *   | list(unord.)  | \begin{itemize} \item ...\end{...}   |
+ *   | paragraph     | children + blank line                |
+ */
+export function markdownToLatex(md: string): string {
+  const tree = mdParser.parse(md);
+  return renderMdastNode(tree).trim();
+}
+
+/**
+ * Extract raw TeX content from markdown for math-context blocks
+ * (equation and diagram). Walks the AST but only emits math and
+ * fenced-tex nodes — lists, prose, and formatting are skipped.
+ */
+export function extractMathContent(md: string): string {
+  const tree = mdParser.parse(md);
+  const parts: string[] = [];
+
+  for (const child of (tree as any).children ?? []) {
+    if (child.type === "math") {
+      // Display math: extract inner TeX
+      parts.push(child.value);
+    } else if (child.type === "code" && child.lang === "tex") {
+      // Fenced TeX: raw passthrough
+      parts.push(child.value);
+    } else if (child.type === "paragraph") {
+      // Check for inline math in paragraphs (rare in equation blocks)
+      for (const inline of child.children ?? []) {
+        if (inline.type === "inlineMath") {
+          parts.push(inline.value);
+        } else if (inline.type === "text") {
+          // Plain text in an equation .md — treat as raw TeX
+          const trimmed = inline.value.trim();
+          if (trimmed) parts.push(trimmed);
+        }
+      }
+    }
+    // Lists, code blocks, etc. are silently skipped
+  }
+
+  return parts.join("\n").trim();
+}
+
+// ── AST node → LaTeX rendering ──────────────────────────────────
+
+/** Render a single mdast node to LaTeX. */
+function renderMdastNode(node: any): string {
+  switch (node.type) {
+    case "root":
+      return renderChildren(node).join("\n\n");
+
+    case "paragraph":
+      return renderChildren(node).join("");
+
+    case "text":
+      return node.value;
+
+    case "strong":
+      return `\\textbf{${renderChildren(node).join("")}}`;
+
+    case "emphasis":
+      return `\\emph{${renderChildren(node).join("")}}`;
+
+    case "inlineMath":
+      return `$${node.value}$`;
+
+    case "math":
+      return `\\[\n${node.value}\n\\]`;
+
+    case "code":
+      if (node.lang === "tex") {
+        // Raw LaTeX passthrough
+        return node.value;
+      }
+      // Other code blocks → verbatim
+      return `\\begin{verbatim}\n${node.value}\n\\end{verbatim}`;
+
+    case "link": {
+      const text = renderChildren(node).join("");
+      const url: string = node.url ?? "";
+      if (url.startsWith("#")) {
+        // Internal cross-ref: [text](#label) → \hyperref[label]{text}
+        return `\\hyperref[${url.slice(1)}]{${text}}`;
+      }
+      // External URL
+      return `\\href{${url}}{${text}}`;
+    }
+
+    case "list": {
+      const env = node.ordered ? "enumerate" : "itemize";
+      const items = (node.children ?? [])
+        .map((item: any) => `  \\item ${renderListItem(item)}`)
+        .join("\n");
+      return `\\begin{${env}}\n${items}\n\\end{${env}}`;
+    }
+
+    case "listItem":
+      return renderListItem(node);
+
+    case "blockquote": {
+      const inner = renderChildren(node).join("\n");
+      return `\\begin{quote}\n${inner}\n\\end{quote}`;
+    }
+
+    case "heading": {
+      const depth = node.depth ?? 1;
+      const text = renderChildren(node).join("");
+      const cmds = ["\\chapter", "\\section", "\\subsection",
+                     "\\subsubsection", "\\paragraph", "\\subparagraph"];
+      const cmd = cmds[Math.min(depth - 1, cmds.length - 1)];
+      return `${cmd}{${text}}`;
+    }
+
+    case "thematicBreak":
+      return "\\medskip\\noindent\\rule{\\textwidth}{0.4pt}\\medskip";
+
+    case "break":
+      return "\\\\";
+
+    default:
+      // Unknown node — render children if any, otherwise empty
+      if (node.children) {
+        return renderChildren(node).join("");
+      }
+      return node.value ?? "";
+  }
+}
+
+/** Render all children of a node. */
+function renderChildren(node: any): string[] {
+  return (node.children ?? []).map((child: any) => renderMdastNode(child));
+}
+
+/** Render a list item's content (unwrap single-paragraph items). */
+function renderListItem(item: any): string {
+  const children = item.children ?? [];
+  // Single-paragraph list items: render inline (no extra \par)
+  if (children.length === 1 && children[0].type === "paragraph") {
+    return renderChildren(children[0]).join("");
+  }
+  // Multi-block list items: render each block
+  return children.map((c: any) => renderMdastNode(c)).join("\n");
 }
 
 // ── Block → LaTeX rendering ──────────────────────────────────────
@@ -169,7 +260,9 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "equation": {
-      const tex = block.tex || markdownToLatex(mdContent);
+      // Use extractMathContent (not markdownToLatex) to avoid list
+      // environments inside math mode.
+      const tex = block.tex || extractMathContent(mdContent);
       if (block.label) {
         lines.push("\\begin{equation}");
         lines.push(`  \\label{${block.label}}`);
@@ -184,10 +277,12 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "diagram": {
-      const tex = block.tex || markdownToLatex(mdContent);
+      // Use extractMathContent (not markdownToLatex) to avoid list
+      // environments inside tikzcd/diagram environments.
+      const tex = block.tex || extractMathContent(mdContent);
       if (block.label) lines.push(`% diagram: ${block.label}`);
       lines.push(tex);
-      if (block.caption) lines.push(`% caption: ${block.caption}`);
+      if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
       break;
     }
 
@@ -196,7 +291,7 @@ export function renderBlock(block: Block, mdContent: string): string {
       const envName = ENV_NAMES[block.kind];
       if (!envName) throw new Error(`Unknown block kind: ${block.kind}`);
 
-      const titleArg = "title" in block && block.title ? `[${block.title}]` : "";
+      const titleArg = "title" in block && block.title ? `[{${escapeLatex(block.title)}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
       // Label
@@ -327,7 +422,7 @@ export function renderSection(
 ): string {
   const lines: string[] = [];
   const label = section.label ? `\\label{${section.label}}\n` : "";
-  lines.push(`\\section{${section.title}}\n${label}`);
+  lines.push(`\\section{${escapeLatex(section.title)}}\n${label}`);
 
   // Collect referenced example/remark labels for compact-mode filtering
   const referencedLabels = collectReferencedLabels(section.blocks, blocks);
@@ -363,7 +458,7 @@ export function renderChapter(
   const lines: string[] = [];
   const label = chapter.label ? `\\label{${chapter.label}}\n` : "";
   const star = chapter.number == null ? "*" : "";
-  lines.push(`\\chapter${star}{${chapter.title}}\n${label}`);
+  lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
 
   for (const section of chapter.sections) {
     lines.push(renderSection(section, blocks, opts));

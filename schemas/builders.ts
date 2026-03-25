@@ -37,6 +37,7 @@ import type {
   PaperRef,
   Folio,
   Document,
+  FeedbackItem,
 } from "./types";
 
 import {
@@ -59,6 +60,7 @@ import {
   PaperRefSchema,
   FolioSchema,
   DocumentSchema,
+  FeedbackItemSchema,
 } from "./constraints";
 
 // ── Generic validated builder ────────────────────────────────────
@@ -71,12 +73,11 @@ function validated<T>(schema: { parse: (v: unknown) => unknown }, data: T): T {
 // ── Block builders ───────────────────────────────────────────────
 
 export function definition(data: Omit<DefinitionBlock, "kind">): DefinitionBlock {
-  // Provide defaults for lean and status so partially-authored definitions
+  // Provide default lean ref so partially-authored definitions
   // load instead of crashing the viewer/MCP server with Zod errors.
   const label = data.label || "def:unknown";
   const defaultDecl = "QOU." + label.replace(/^def:/, "").replace(/-./g, m => m[1].toUpperCase()).replace(/^./, c => c.toUpperCase());
   if (!data.lean) (data as any).lean = { decl: defaultDecl };
-  if (!data.status) (data as any).status = "not_started";
   return validated(DefinitionSchema, { kind: "definition" as const, ...data });
 }
 
@@ -157,4 +158,10 @@ export function folio(data: Folio): Folio {
 /** @deprecated Use paper() instead. */
 export function document(data: Document): Document {
   return validated(DocumentSchema, data) as Document;
+}
+
+// ── Feedback builder ──────────────────────────────────────────────
+
+export function feedbackItem(data: FeedbackItem): FeedbackItem {
+  return validated(FeedbackItemSchema, data) as FeedbackItem;
 }

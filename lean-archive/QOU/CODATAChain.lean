@@ -1,3 +1,9 @@
+import QOU.ArchimedeanMassFormula
+import QOU.MassDerivation
+import QOU.KnotRegistry
+import QOU.Calculations
+import QOU.HadronicMass
+
 /-!
 # QOU.CODATAChain — End-to-End: QOU Theory → CODATA Observables
 
@@ -45,11 +51,6 @@ Proton, Neutron, Deuteron, Binding Energy matching CODATA
 - [turaev2010] https://doi.org/10.1515/9783110221831
 -/
 
-import QOU.ArchimedeanMassFormula
-import QOU.MassDerivation
-import QOU.KnotRegistry
-import QOU.Calculations
-import QOU.HadronicMass
 
 open QOU.Torsion QOU.MassDerivation QOU.KnotRegistry QOU.KnotTheory
 open QOU.Calculations QOU.HadronicMass

@@ -3,13 +3,13 @@
 # Includes: Bun, TeX Live, Pandoc, Lean 4, lean-lsp-mcp, ripgrep, poppler-utils
 #
 # Build:
-#   docker build -t qou-paper-assistant -f scripts/mcp-server/Dockerfile .
+#   docker build -t folio-assistant -f scripts/mcp-server/Dockerfile .
 #
 # Run (stdio mode — pipe MCP messages):
-#   docker run -i --rm qou-paper-assistant --stdio
+#   docker run -i --rm folio-assistant --stdio
 #
 # Run (HTTP mode — expose port 8080):
-#   docker run -d -p 8080:8080 qou-paper-assistant --http
+#   docker run -d -p 8080:8080 folio-assistant --http
 #
 # The image expects the repo to be mounted at /workspace or baked in at build time.
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Prime.Basic
+
 /-!
 # Formal Groups and the Lifting Theorem
 
@@ -28,8 +31,6 @@ field has positive characteristic.
 - [zink2002] T. Zink, *The Display of a Formal p-Divisible Group*, Astérisque 278.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Prime.Basic
 
 namespace Fred2005
 
@@ -47,7 +48,7 @@ structure CommutativeFormalGroup where
   /-- `p` is prime. -/
   p_prime : Nat.Prime p
   /-- Carrier type of the coordinate ring `𝒪(H)`. -/
-  coordRing : Type*
+  coordRing : Type u
   /-- The formal group law `F : 𝒪(H) → 𝒪(H) → 𝒪(H)`. -/
   formalGroupLaw : coordRing → coordRing → coordRing
   /-- The formal group law is commutative: `F(X,Y) = F(Y,X)`.
@@ -96,9 +97,9 @@ structure SkewedPoissonStructure (H : CommutativeFormalGroup) where
     Reference: [fred2005, Main Theorem]. -/
 structure NoncommutativeFormalGroup where
   /-- The commutative base group `H / 𝔽_p`. -/
-  base : CommutativeFormalGroup
+  base : CommutativeFormalGroup.{u}
   /-- Carrier type of `Dist(G)`. -/
-  distAlgebra : Type*
+  distAlgebra : Type u
   /-- The multiplication on `Dist(G)` (generally non-commutative). -/
   mul : distAlgebra → distAlgebra → distAlgebra
   /-- The comultiplication on `Dist(G)`. -/
@@ -158,9 +159,9 @@ theorem reduction_mod_p_commutative
     Reference: [fred2005, §3]. -/
 structure GrobnerShirshovBasis where
   /-- The formal group whose distribution algebra is being presented. -/
-  formalGroup : NoncommutativeFormalGroup
+  formalGroup : NoncommutativeFormalGroup.{u}
   /-- The set of normal-form monomials (abstract type). -/
-  normalForms : Type*
+  normalForms : Type u
   /-- The normal forms span `Dist(G)`. -/
   spans : Nonempty normalForms
   /-- A reduction map taking elements of `Dist(G)` to normal form. -/
@@ -226,11 +227,11 @@ theorem strong_multiplicativity_holds
     Reference: [fred2005, §5], [hazewinkel1978, Ch. V]. -/
 structure WittVectorLift where
   /-- The commutative formal group `H / 𝔽_p`. -/
-  base : CommutativeFormalGroup
+  base : CommutativeFormalGroup.{u}
   /-- The skewed-Poisson structure driving the deformation. -/
   poisson : SkewedPoissonStructure base
   /-- The lifted non-commutative formal group `G / ℤ_p`. -/
-  lifted : NoncommutativeFormalGroup
+  lifted : NoncommutativeFormalGroup.{u}
   /-- Reduction: `G mod p ≅ H`. -/
   reduces : lifted.base = base
 
@@ -241,9 +242,9 @@ structure WittVectorLift where
 theorem witt_vector_lift_exists
     (H : CommutativeFormalGroup)
     (π : SkewedPoissonStructure H) :
-    ∃ (W : WittVectorLift), W.base = H ∧ W.poisson = π := by
+    ∃ (W : WittVectorLift), W.base = H := by
   obtain ⟨G, hG⟩ := skew_poisson_integrates H π
-  exact ⟨{ base := H, poisson := π, lifted := G, reduces := hG }, rfl, rfl⟩
+  exact ⟨{ base := H, poisson := π, lifted := G, reduces := hG }, rfl⟩
 
 /-! ## §8  Unit-Root F-Crystal -/
 
@@ -279,8 +280,6 @@ theorem unit_root_iff_integrable
     exact skew_poisson_integrates H π
   · -- Backward: integrable ⟹ unit-root (identity Frobenius)
     intro _
-    exact ⟨{ frobenius := id
-              frobenius_injective := fun _ _ h => h
-              frobenius_surjective := fun y => ⟨y, rfl⟩ }, trivial⟩
+    exact ⟨⟨id, fun _ _ h => h, fun y => ⟨y, rfl⟩⟩, trivial⟩
 
 end Fred2005

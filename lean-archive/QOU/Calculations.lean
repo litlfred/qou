@@ -1,3 +1,8 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.KnotRegistry
+import QOU.MassDerivation
+
 /-!
 # QOU.Calculations — Skein-Deformed Residue Proofs and Substrate Derivation
 
@@ -20,12 +25,9 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 - q derivation: Manuscript §4, Conjecture 4.25
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import QOU.KnotRegistry
-import QOU.MassDerivation
 
-open QOU.KnotRegistry QOU.MassDerivation QOU.KnotTheory
+open QOU.KnotRegistry QOU.MassDerivation
+open QOU.KnotTheory hiding vol_figure_eight
 
 namespace QOU.Calculations
 
@@ -46,17 +48,17 @@ theorem registry_volume_eq_mass_derivation :
 /-- The registry entry for the muon is the figure-eight knot. -/
 theorem muon_is_figure_eight :
     (lookupByIdentity .muon) = some figureEightEntry := by
-  native_decide
+  rfl
 
 /-- The registry entry for the electron is the trefoil. -/
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
-  native_decide
+  rfl
 
 /-- The registry entry for the neutrino is the unknot. -/
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
-  native_decide
+  rfl
 
 /-! ## Section 2: Skein-Deformed Mass Residue
 
@@ -71,13 +73,13 @@ where `ℏ_q = 1 - 1/q` is the quantum Planck constant. -/
     This is the central equation of the QOU mass derivation.
     Ref: Manuscript Conjecture 4.25. -/
 -- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
-theorem skein_mass_residue (q : ℝ) (hq : q > 1) :
+theorem skein_mass_residue (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →
     experimental_mu_e_ratio = figureEightEntry.volume.value / h_q ^ 2 := by
-  intro h_q _hne h_eq
-  rw [← registry_volume_eq_mass_derivation]
+  intro _h_q _hne h_eq
+  rw [registry_volume_eq_mass_derivation]
   exact h_eq
 
 /-! ## Section 3: Substrate Parameter Derivation
@@ -104,6 +106,29 @@ noncomputable def h_q_value : ℝ :=
     From `ℏ_q = 1 - 1/q`, we get `q = 1 / (1 - ℏ_q)`. -/
 noncomputable def derived_q : ℝ :=
   1 / (1 - h_q_value)
+
+/-! ## Section 4: CODATA Consistency Checks -/
+
+/-- The h_q² value is positive (since both Vol(4₁) and m_μ/m_e are positive). -/
+-- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
+theorem h_q_squared_pos : h_q_squared > 0 := by
+  unfold h_q_squared
+  apply div_pos
+  · unfold vol_figure_eight; positivity
+  · unfold experimental_mu_e_ratio; positivity
+
+/-- The quantum Planck constant is in (0, 1), ensuring q > 1. -/
+-- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
+theorem h_q_value_in_unit_interval :
+    0 < h_q_value ∧ h_q_value < 1 := by
+  unfold h_q_value
+  constructor
+  · exact Real.sqrt_pos.mpr h_q_squared_pos
+  · have h1 : h_q_squared < 1 := by
+      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
+    calc Real.sqrt h_q_squared
+        < Real.sqrt 1 := Real.sqrt_lt_sqrt (le_of_lt h_q_squared_pos) h1
+      _ = 1 := Real.sqrt_one
 
 /-- **Error bound**: The derived substrate parameter `q` is within the
     "foolproof" tolerance of the expected value 1.1097.
@@ -142,43 +167,24 @@ theorem substrate_error_bound :
   -- Bound derived_q = 1/(1 - h_q_value) between 1.1087 and 1.1107
   have h_denom_pos : (0 : ℝ) < 1 - h_q_value := by linarith
   have h_lb : (11087 : ℝ) / 10000 < 1 / (1 - h_q_value) := by
-    rw [lt_div_iff h_denom_pos]; nlinarith
+    rw [div_lt_div_iff₀ (by norm_num : (0:ℝ) < 10000) h_denom_pos]; nlinarith
   have h_ub : 1 / (1 - h_q_value) < (11107 : ℝ) / 10000 := by
-    rw [div_lt_iff h_denom_pos]; nlinarith
+    rw [div_lt_div_iff₀ h_denom_pos (by norm_num : (0:ℝ) < 10000)]; nlinarith
   unfold derived_q substrate_q
   rw [abs_lt]; constructor <;> linarith
-
-/-! ## Section 4: CODATA Consistency Checks -/
-
-/-- The h_q² value is positive (since both Vol(4₁) and m_μ/m_e are positive). -/
--- Ref: [CODATA2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
-theorem h_q_squared_pos : h_q_squared > 0 := by
-  unfold h_q_squared
-  apply div_pos
-  · unfold vol_figure_eight; positivity
-  · unfold experimental_mu_e_ratio; positivity
-
-/-- The quantum Planck constant is in (0, 1), ensuring q > 1. -/
--- Ref: [witten1988] https://doi.org/10.1007/BF01223371 — Quantum Planck derivation
-theorem h_q_value_in_unit_interval :
-    0 < h_q_value ∧ h_q_value < 1 := by
-  unfold h_q_value
-  constructor
-  · exact Real.sqrt_pos.mpr h_q_squared_pos
-  · have h1 : h_q_squared < 1 := by
-      unfold h_q_squared vol_figure_eight experimental_mu_e_ratio; norm_num
-    calc Real.sqrt h_q_squared
-        < Real.sqrt 1 := Real.sqrt_lt_sqrt (le_of_lt h_q_squared_pos) h1
-      _ = 1 := Real.sqrt_one
 
 /-- The derived substrate parameter satisfies q > 1, as required by the
     QOU framework (q = 1 collapses to the classical limit). -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 — Quantum group q > 1
 theorem derived_q_gt_one :
     derived_q > 1 := by
+  -- Ref: [lusztig1993] q > 1 follows from 0 < h_q_value < 1
+  -- and derived_q = 1/(1 - h_q_value)
   unfold derived_q
   have ⟨hpos, hlt⟩ := h_q_value_in_unit_interval
-  rw [gt_iff_lt, lt_div_iff (by linarith)]
+  have h1 : 0 < 1 - h_q_value := by linarith
+  -- 1 / (1 - h_q_value) > 1  ⟺  1 - h_q_value < 1  (for positive denominator)
+  rw [gt_iff_lt, one_lt_div h1]
   linarith
 
 /-- **Full derivation chain**: from registry volume and CODATA mass ratio,

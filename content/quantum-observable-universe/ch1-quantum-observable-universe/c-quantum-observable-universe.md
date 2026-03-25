@@ -1,6 +1,6 @@
 An *archimedean quantum observable universe* is an archimedean quantum
 universe $(M, \theta, G, P, E)$
-([$\mathbb{C}$-quantum universe](#def:c-quantum-universe)) that satisfies
+([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)) that satisfies
 the vanishing conditions
 
 $$

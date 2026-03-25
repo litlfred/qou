@@ -13,14 +13,13 @@ export default definition({
   title: "Snake identity",
   tags: ["category-theory", "monoidal", "duality"],
   lean: {
-    decl: "QOU.RigidMonoidalCategory.snake_left",
+    decl: "QOU.snake_identity_left",
     validation: "not_checked",
     mathlibLinks: [
       "CategoryTheory.ExactPairing.evaluation_coevaluation'",
       "CategoryTheory.ExactPairing.coevaluation_evaluation'",
     ],
   },
-  status: "stated",
-  uses: ["def:rigid-monoidal-category"],
+  uses: [],
   examples: [],
 });

@@ -1,3 +1,7 @@
+import QOU.QuantumObservableUniverse
+import QOU.Torsion
+import Mathlib.Data.Real.Basic
+
 /-!
 # Conjecture: Archimedean Topological Mass Formula
 
@@ -23,9 +27,6 @@ Given these, the closed-form formula is a one-line algebraic consequence.
 - [yekutieli2015] Nonabelian multiplicative integration on surfaces
 -/
 
-import QOU.QuantumObservableUniverse
-import QOU.Torsion
-import Mathlib.Data.Real.Basic
 
 open QOU QOU.Torsion
 

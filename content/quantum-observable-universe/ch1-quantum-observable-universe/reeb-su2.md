@@ -13,4 +13,4 @@ $\theta_A = \omega_3$ (the left-invariant $1$-form dual to $e_3$), and:
 - In the archimedean realisation on a CR manifold $(M, \theta)$,
   $\xi$ becomes the Reeb vector field with $\iota_\xi\,d\theta = 0$
   and $\theta(\xi) = 1$
-  ([Reeb decomposition](#def:reeb-decomposition)).
+  ([Reeb decomposition](#ex:reeb-decomposition)).

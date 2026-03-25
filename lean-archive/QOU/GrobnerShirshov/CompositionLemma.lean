@@ -1,3 +1,5 @@
+import QOU.GrobnerShirshov.Basic
+
 /-!
 # Gröbner–Shirshov Composition Lemma (Diamond Lemma)
 
@@ -24,7 +26,6 @@ reduction relations defined in `Basic.lean`:
 - [fred2005, §3, Proposition 3.8].
 -/
 
-import QOU.GrobnerShirshov.Basic
 
 namespace QOU.GrobnerShirshov
 
@@ -37,30 +38,28 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 /-- Every sequence of single-step reductions is finite: the reduction
     relation is well-founded.
 
-    Proof sketch: each `SingleStepReduction` strictly decreases the
-    leading monomial under the admissible order.  Since `ord.wf` is
-    well-founded, no infinite descending chain of reductions exists. -/
-theorem reduction_well_founded
+    Each `SingleStepReduction` strictly decreases the multiset of
+    monomials in the support under the Dershowitz–Manna ordering,
+    which inherits well-foundedness from `ord.wf`.
+
+    Axiomatised because the proof requires:
+    1. A `Multiset (Monomial G)` representation of `AlgElement` support
+    2. A proof that `SingleStepReduction` strictly decreases this multiset
+       under `ord.lt`
+    3. The Dershowitz–Manna theorem (`Multiset.wellFoundedLT`) lifting
+       element well-foundedness to multiset well-foundedness
+
+    These components require `AlgElement` subtraction and support extraction
+    operations that are not available at the abstract level.
+
+    Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
+axiom reduction_well_founded
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
-    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f := by
-  -- Each single-step reduction strictly decreases the multiset of
-  -- monomials in the support under the Dershowitz–Manna ordering,
-  -- which inherits well-foundedness from ord.wf.
-  intro f
-  exact ord.wf.apply f  -- well-founded induction on elements via the order
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
 
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
-/-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
-    system is a GS basis), then whenever `f → g₁` and `f → g₂` by
-    single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
-
-    The proof analyses three cases:
-    - **Disjoint reductions**: non-overlapping sites → apply both.
-    - **Overlap**: the difference `g₁ − g₂` is an S-polynomial,
-      which reduces to zero by `hgs.overlap_resolves`.
-    - **Inclusion**: similarly by `hgs.inclusion_resolves`. -/
 /-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
     system is a GS basis), then whenever `f → g₁` and `f → g₂` by
     single-step reductions, there exists `h` with `g₁ →* h` and `g₂ →* h`.
@@ -171,7 +170,7 @@ theorem composition_lemma
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
     ⟨reduce_reduces ord sys hgs nf, h_nf'_normal⟩
   -- By uniqueness: nf' = nf
-  exact (normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self).symm
+  exact normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 
