@@ -17,7 +17,13 @@ export default folio({
         "higher-form symmetries, and observable algebras.",
       tags: ["quantum", "category-theory", "formalization"],
     }),
-    // Add more papers here as they are created:
-    // paperRef({ dir: "fred2005", title: "Fred 2005", ... }),
+    paperRef({
+      dir: "unital-groebner-bases",
+      title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+      description:
+        "Proves that quotients A/I are free R-modules when I has a unital " +
+        "Gröbner basis; obtains PBW over commutative rings as a corollary.",
+      tags: ["algebra", "groebner-basis", "pbw", "formalization"],
+    }),
   ],
 });
