@@ -4,7 +4,7 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-03-25T23:43:57.391755+00:00",
+    "generated_at": "2026-03-25T23:51:52.575155+00:00",
     "commit_sha": "unknown"
   },
   "objects": [
@@ -2390,11 +2390,84 @@
       "formalization_status": "stated"
     },
     {
-      "label": "def:localized-hadron",
+      "label": "def:categorical-proton",
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
         "line": 1325,
+        "chapter": 4
+      },
+      "title": "{Proton (categorical)}",
+      "lean": {
+        "decl": "QOU.Torsion.CategoricalProton",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:hadron",
+        "def:knot-particle-generation",
+        "def:color-tube-coordinates"
+      ]
+    },
+    {
+      "label": "def:categorical-neutron",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1375,
+        "chapter": 4
+      },
+      "title": "{Neutron (categorical)}",
+      "lean": {
+        "decl": "QOU.Torsion.CategoricalNeutron",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:hadron",
+        "def:categorical-proton",
+        "def:knot-particle-generation",
+        "def:color-tube-coordinates"
+      ]
+    },
+    {
+      "label": "def:stable-nucleus",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1422,
+        "chapter": 4
+      },
+      "title": "{Stable nucleus (Skein energy minimum)}",
+      "lean": {
+        "decl": "QOU.Torsion.StableNucleus",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:hadron",
+        "def:categorical-proton",
+        "def:categorical-neutron",
+        "def:skein-binding-lagrangian",
+        "prop:beta-stability",
+        "def:substrate-parameter"
+      ]
+    },
+    {
+      "label": "def:localized-hadron",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1487,
         "chapter": 4
       },
       "title": "{Localized hadron}",
@@ -2417,7 +2490,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1350,
+        "line": 1512,
         "chapter": 4
       },
       "title": "{Fibre-compatible hadron embedding}",
@@ -2440,7 +2513,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1418,
+        "line": 1580,
         "chapter": 4
       },
       "title": "{Skein generation of hadrons from mass-zero fundamentals}",
@@ -2459,11 +2532,93 @@
       ]
     },
     {
+      "label": "def:knot-particle-generation",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1656,
+        "chapter": 4
+      },
+      "title": "{Knot-particle generation from $T_{m,n}$ torus knot generators}",
+      "lean": {
+        "decl": "QOU.Torsion.KnotParticleGeneration",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:hadron",
+        "rem:hadron-operations",
+        "prop:skein-generation",
+        "rem:knot-particle-dictionary",
+        "def:localized-knot",
+        "def:substrate-parameter",
+        "def:quantum-planck-constant",
+        "def:color-tube-coordinates",
+        "rem:color-tube-interpretation"
+      ]
+    },
+    {
+      "label": "prop:torus-knot-generators",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1805,
+        "chapter": 4
+      },
+      "title": "{Finiteness of the $T_{m,n}$ generator set}",
+      "lean": {
+        "decl": "QOU.Torsion.torus_knot_generators_finite",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:knot-particle-generation",
+        "def:hadron",
+        "prop:skein-generation",
+        "thm:euler-char-stability",
+        "rem:knot-particle-dictionary",
+        "def:recursive-brane-tower"
+      ]
+    },
+    {
+      "label": "thm:embeddability-closure",
+      "object_type": "theorem",
+      "latex": {
+        "file": "chapters/lifting-of-quantum-torsion.tex",
+        "line": 1887,
+        "chapter": 4
+      },
+      "title": "{Embeddability closure under knot-particle generation}",
+      "lean": {
+        "decl": "QOU.Torsion.embeddability_closure",
+        "file": "QOU/Torsion.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/Torsion.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/Torsion.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:knot-particle-generation",
+        "prop:torus-knot-generators",
+        "def:localized-knot",
+        "def:hadron",
+        "rem:hadron-operations",
+        "prop:skein-generation",
+        "thm:euler-char-stability"
+      ]
+    },
+    {
       "label": "def:bundle-initial-conditions",
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1494,
+        "line": 2005,
         "chapter": 4
       },
       "title": "{Bundle initial conditions (big bang state)}",
@@ -2487,7 +2642,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1533,
+        "line": 2044,
         "chapter": 4
       },
       "title": "{Isotopy equivalence of bundle initial conditions}",
@@ -2509,7 +2664,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1556,
+        "line": 2067,
         "chapter": 4
       },
       "title": "{Torsion-driven knot flow}",
@@ -2533,7 +2688,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1616,
+        "line": 2127,
         "chapter": 4
       },
       "title": "{Topological Decomposition of Mass}",
@@ -2559,7 +2714,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1792,
+        "line": 2303,
         "chapter": 4
       },
       "title": "{Archimedean realisation of jet prolongation}",
@@ -2581,7 +2736,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 1872,
+        "line": 2383,
         "chapter": 4
       },
       "title": "{Archimedean realisation: nonabelian multiplicative integration}",
@@ -2603,7 +2758,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/lifting-of-quantum-torsion.tex",
-        "line": 2174,
+        "line": 2685,
         "chapter": 4
       },
       "title": "{Quantum Dilogarithm as Localized Torsion Volume}",
@@ -2819,11 +2974,90 @@
       "formalization_status": "stated"
     },
     {
+      "label": "def:skein-binding-lagrangian",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 398,
+        "chapter": 5
+      },
+      "title": "{Skein binding Lagrangian for multi-nucleon links}",
+      "lean": {
+        "decl": "QOU.Braiding.SkeinBindingLagrangian",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "rem:skein-crossing-asymmetry",
+        "def:hadron",
+        "def:substrate-parameter",
+        "def:categorical-lagrangian",
+        "def:qou-canonical-action",
+        "def:mass-identity"
+      ]
+    },
+    {
+      "label": "prop:nuclear-binding-from-canonical-action",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 533,
+        "chapter": 5
+      },
+      "title": "{Nuclear binding as evaluation of the canonical action on multi-nucleon links}",
+      "lean": {
+        "decl": "QOU.Braiding.nuclear_binding_from_canonical_action",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:qou-canonical-action",
+        "def:categorical-lagrangian",
+        "def:skein-binding-lagrangian",
+        "def:mass-identity",
+        "rem:skein-crossing-asymmetry",
+        "def:categorical-proton",
+        "def:categorical-neutron",
+        "def:substrate-parameter",
+        "def:r-matrix-braiding",
+        "def:categorical-dirac-operator"
+      ]
+    },
+    {
+      "label": "prop:beta-stability",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/path-integrals-and-braiding.tex",
+        "line": 718,
+        "chapter": 5
+      },
+      "title": "{Beta-stability line from the Skein binding Lagrangian}",
+      "lean": {
+        "decl": "QOU.Braiding.beta_stability",
+        "file": "QOU/PathIntegrals.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/PathIntegrals.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/unknown/lean/QOU/PathIntegrals.lean",
+        "last_edited_commit": "unknown"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:skein-binding-lagrangian",
+        "rem:skein-crossing-asymmetry",
+        "def:substrate-parameter"
+      ]
+    },
+    {
       "label": "prop:mobius-energy",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 398,
+        "line": 800,
         "chapter": 5
       },
       "title": "{Categorical recovery of Möbius energy}",
@@ -2849,7 +3083,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/path-integrals-and-braiding.tex",
-        "line": 509,
+        "line": 911,
         "chapter": 5
       },
       "title": "{Obstruction to self-intersection}",
@@ -3133,11 +3367,75 @@
       ]
     },
     {
+      "label": "rem:mass-from-generators",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 812,
+        "chapter": 7
+      },
+      "title": "{Mass spectrum from $T_{m,n}$ generators and linking operations}",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:knot-particle-generation",
+        "prop:torus-knot-generators",
+        "prop:topological-mass-formula",
+        "rem:skein-mass-relation",
+        "prop:terminal-resolution",
+        "def:substrate-parameter",
+        "def:quantum-planck-constant",
+        "def:color-tube-coordinates",
+        "rem:knot-particle-dictionary"
+      ]
+    },
+    {
+      "label": "rem:knot-formula-table",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 939,
+        "chapter": 7
+      },
+      "title": "{Topological knot formulas for fundamental and composite particles}",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:knot-particle-generation",
+        "prop:torus-knot-generators",
+        "thm:embeddability-closure",
+        "def:hadron",
+        "rem:hadron-operations",
+        "prop:skein-generation",
+        "rem:knot-particle-dictionary",
+        "prop:terminal-resolution",
+        "def:color-tube-coordinates"
+      ]
+    },
+    {
+      "label": "rem:mass-comparison-table",
+      "object_type": "remark",
+      "latex": {
+        "file": "chapters/experimental-evidence.tex",
+        "line": 1058,
+        "chapter": 7
+      },
+      "title": "{Mass predictions from knot formulas vs.\\textbackslash\\{\\} CODATA/PDG values}",
+      "formalization_status": "not_started",
+      "uses": [
+        "rem:knot-formula-table",
+        "rem:mass-from-generators",
+        "prop:topological-mass-formula",
+        "rem:skein-mass-relation",
+        "prop:terminal-resolution",
+        "def:substrate-parameter",
+        "def:quantum-planck-constant"
+      ]
+    },
+    {
       "label": "prop:local-substrate-q",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/experimental-evidence.tex",
-        "line": 899,
+        "line": 1224,
         "chapter": 7
       },
       "title": "{Local Value of the Substrate Parameter}",
@@ -4590,6 +4888,71 @@
       "relation": "uses"
     },
     {
+      "from": "def:categorical-proton",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-proton",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-proton",
+      "to": "def:color-tube-coordinates",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-neutron",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-neutron",
+      "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-neutron",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:categorical-neutron",
+      "to": "def:color-tube-coordinates",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "def:categorical-neutron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "def:skein-binding-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "prop:beta-stability",
+      "relation": "uses"
+    },
+    {
+      "from": "def:stable-nucleus",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
       "from": "def:localized-hadron",
       "to": "def:hadron",
       "relation": "uses"
@@ -4632,6 +4995,116 @@
     {
       "from": "prop:skein-generation",
       "to": "def:hadron-fibre-embedding",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "rem:hadron-operations",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "prop:skein-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "rem:knot-particle-dictionary",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "def:localized-knot",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "def:color-tube-coordinates",
+      "relation": "uses"
+    },
+    {
+      "from": "def:knot-particle-generation",
+      "to": "rem:color-tube-interpretation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "prop:skein-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "thm:euler-char-stability",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "rem:knot-particle-dictionary",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:torus-knot-generators",
+      "to": "def:recursive-brane-tower",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "prop:torus-knot-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "def:localized-knot",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "rem:hadron-operations",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "prop:skein-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "thm:embeddability-closure",
+      "to": "thm:euler-char-stability",
       "relation": "uses"
     },
     {
@@ -4772,6 +5245,101 @@
     {
       "from": "def:so3-generators",
       "to": "def:su2-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "rem:skein-crossing-asymmetry",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "def:categorical-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "def:qou-canonical-action",
+      "relation": "uses"
+    },
+    {
+      "from": "def:skein-binding-lagrangian",
+      "to": "def:mass-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:qou-canonical-action",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:categorical-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:skein-binding-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:mass-identity",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "rem:skein-crossing-asymmetry",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:categorical-neutron",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:r-matrix-braiding",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:nuclear-binding-from-canonical-action",
+      "to": "def:categorical-dirac-operator",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:beta-stability",
+      "to": "def:skein-binding-lagrangian",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:beta-stability",
+      "to": "rem:skein-crossing-asymmetry",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:beta-stability",
+      "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
@@ -5072,6 +5640,131 @@
     {
       "from": "prop:terminal-resolution",
       "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "prop:torus-knot-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "rem:skein-mass-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "prop:terminal-resolution",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "def:quantum-planck-constant",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "def:color-tube-coordinates",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-from-generators",
+      "to": "rem:knot-particle-dictionary",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "prop:torus-knot-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "thm:embeddability-closure",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "def:hadron",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "rem:hadron-operations",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "prop:skein-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "rem:knot-particle-dictionary",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "prop:terminal-resolution",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:knot-formula-table",
+      "to": "def:color-tube-coordinates",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "rem:knot-formula-table",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "rem:mass-from-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "rem:skein-mass-relation",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "prop:terminal-resolution",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "rem:mass-comparison-table",
+      "to": "def:quantum-planck-constant",
       "relation": "uses"
     },
     {

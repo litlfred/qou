@@ -140,9 +140,15 @@ digraph ProofDependencies {
     prop_weak_equiv_invariance [label="Prop\nweak-equiv-invari..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:weak-equiv-invariance" tooltip="{Weak equivalence invariance of physical states}" target="_blank"];
     def_localized_knot [label="Def\nlocalized-knot" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:localized-knot" tooltip="{Localized knot (knot at a point)}" target="_blank"];
     def_hadron [label="Def\nhadron" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:hadron" tooltip="{Hadron (abstract composite knot)}" target="_blank"];
+    def_categorical_proton [label="Def\ncategorical-proton" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-proton" tooltip="{Proton (categorical)}" target="_blank"];
+    def_categorical_neutron [label="Def\ncategorical-neutron" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:categorical-neutron" tooltip="{Neutron (categorical)}" target="_blank"];
+    def_stable_nucleus [label="Def\nstable-nucleus" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:stable-nucleus" tooltip="{Stable nucleus (Skein energy minimum)}" target="_blank"];
     def_localized_hadron [label="Def\nlocalized-hadron" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:localized-hadron" tooltip="{Localized hadron}" target="_blank"];
     def_hadron_fibre_embedding [label="Def\nhadron-fibre-embe..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:hadron-fibre-embedding" tooltip="{Fibre-compatible hadron embedding}" target="_blank"];
     prop_skein_generation [label="Prop\nskein-generation" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:skein-generation" tooltip="{Skein generation of hadrons from mass-zero fundamentals}" target="_blank"];
+    def_knot_particle_generation [label="Def\nknot-particle-gen..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:knot-particle-generation" tooltip="{Knot-particle generation from $T_{m,n}$ torus knot generators}" target="_blank"];
+    prop_torus_knot_generators [label="Prop\ntorus-knot-genera..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:torus-knot-generators" tooltip="{Finiteness of the $T_{m,n}$ generator set}" target="_blank"];
+    thm_embeddability_closure [label="Thm\nembeddability-clo..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#thm:embeddability-closure" tooltip="{Embeddability closure under knot-particle generation}" target="_blank"];
     def_bundle_initial_conditions [label="Def\nbundle-initial-co..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:bundle-initial-conditions" tooltip="{Bundle initial conditions (big bang state)}" target="_blank"];
     def_bundle_isotopy_equivalence [label="Def\nbundle-isotopy-eq..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:bundle-isotopy-equivalence" tooltip="{Isotopy equivalence of bundle initial conditions}" target="_blank"];
     def_torsion_knot_flow [label="Def\ntorsion-knot-flow" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:torsion-knot-flow" tooltip="{Torsion-driven knot flow}" target="_blank"];
@@ -150,7 +156,7 @@ digraph ProofDependencies {
     cor_jet_prolongation_C [label="Cor\njet-prolongation-C" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:jet-prolongation-C" tooltip="{Archimedean realisation of jet prolongation}" target="_blank"];
     cor_mass_identity_C [label="Cor\nmass-identity-C" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:mass-identity-C" tooltip="{Archimedean realisation: nonabelian multiplicative integration}" target="_blank"];
     cor_quantum_dilogarithm [label="Cor\nquantum-dilogarithm" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:quantum-dilogarithm" tooltip="{Quantum Dilogarithm as Localized Torsion Volume}" target="_blank"];
-    { rank=same; prop_jet_prolongation; def_recursive_brane_tower; lem_descent; def_descent_involution; def_yekutieli_lifting_condition; def_quantum_characteristic_classes; prop_yekutieli_lifting; thm_qu_to_qou; def_direct_limit_algebra; prop_vacuum_state; prop_global_gluing; prop_euler_char_stability; def_mass_identity; def_descent; prop_descent_eigenspaces; def_brane_boundary; prop_brane_boundary; def_yekutieli_triple; prop_cosimplicial_crossed_groupoid; prop_descent_condition; prop_weak_equiv_invariance; def_localized_knot; def_hadron; def_localized_hadron; def_hadron_fibre_embedding; prop_skein_generation; def_bundle_initial_conditions; def_bundle_isotopy_equivalence; def_torsion_knot_flow; thm_topological_mass; cor_jet_prolongation_C; cor_mass_identity_C; cor_quantum_dilogarithm; }
+    { rank=same; prop_jet_prolongation; def_recursive_brane_tower; lem_descent; def_descent_involution; def_yekutieli_lifting_condition; def_quantum_characteristic_classes; prop_yekutieli_lifting; thm_qu_to_qou; def_direct_limit_algebra; prop_vacuum_state; prop_global_gluing; prop_euler_char_stability; def_mass_identity; def_descent; prop_descent_eigenspaces; def_brane_boundary; prop_brane_boundary; def_yekutieli_triple; prop_cosimplicial_crossed_groupoid; prop_descent_condition; prop_weak_equiv_invariance; def_localized_knot; def_hadron; def_categorical_proton; def_categorical_neutron; def_stable_nucleus; def_localized_hadron; def_hadron_fibre_embedding; prop_skein_generation; def_knot_particle_generation; prop_torus_knot_generators; thm_embeddability_closure; def_bundle_initial_conditions; def_bundle_isotopy_equivalence; def_torsion_knot_flow; thm_topological_mass; cor_jet_prolongation_C; cor_mass_identity_C; cor_quantum_dilogarithm; }
   }
 
   subgraph cluster_ch5 {
@@ -167,9 +173,12 @@ digraph ProofDependencies {
     def_so3_generators [label="Def\nso3-generators" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:so3-generators" tooltip="{$\mathrm{SO}(3)$ generators}" target="_blank"];
     def_braid_twist_flip [label="Def\nbraid-twist-flip" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:braid-twist-flip" tooltip="{Braid involutions: twist and flip}" target="_blank"];
     def_quantum_su2 [label="Def\nquantum-su2" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:quantum-su2" tooltip="{Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$}" target="_blank"];
+    def_skein_binding_lagrangian [label="Def\nskein-binding-lag..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#def:skein-binding-lagrangian" tooltip="{Skein binding Lagrangian for multi-nucleon links}" target="_blank"];
+    prop_nuclear_binding_from_canonical_action [label="Prop\nnuclear-binding-f..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:nuclear-binding-from-canonical-action" tooltip="{Nuclear binding as evaluation of the canonical action on multi-nucleon links}" target="_blank"];
+    prop_beta_stability [label="Prop\nbeta-stability" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:beta-stability" tooltip="{Beta-stability line from the Skein binding Lagrangian}" target="_blank"];
     prop_mobius_energy [label="Prop\nmobius-energy" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:mobius-energy" tooltip="{Categorical recovery of Möbius energy}" target="_blank"];
     cor_non_self_intersection [label="Cor\nnon-self-intersec..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#cor:non-self-intersection" tooltip="{Obstruction to self-intersection}" target="_blank"];
-    { rank=same; prop_braid_action_tensor; thm_jones_markov_trace; prop_knot_eigenbasis_complete; def_braid_group; def_s3_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; def_quantum_su2; prop_mobius_energy; cor_non_self_intersection; }
+    { rank=same; prop_braid_action_tensor; thm_jones_markov_trace; prop_knot_eigenbasis_complete; def_braid_group; def_s3_group; def_su2_basis; def_su2_generators; def_so3_generators; def_braid_twist_flip; def_quantum_su2; def_skein_binding_lagrangian; prop_nuclear_binding_from_canonical_action; prop_beta_stability; prop_mobius_energy; cor_non_self_intersection; }
   }
 
   subgraph cluster_ch6 {
@@ -196,8 +205,11 @@ digraph ProofDependencies {
     prop_double_slit_massive_pattern [label="Prop\ndouble-slit-massi..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:double-slit-massive-pattern" tooltip="{Massive-particle interference pattern}" target="_blank"];
     prop_topological_mass_formula [label="Prop\ntopological-mass-..." fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:topological-mass-formula" tooltip="{Topological mass formula (Archimedean)}" target="_blank"];
     prop_terminal_resolution [label="Prop\nterminal-resolution" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:terminal-resolution" tooltip="{Terminal Resolution of Hadronic Mass}" target="_blank"];
+    rem_mass_from_generators [label="Rem\nmass-from-generators" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:mass-from-generators" tooltip="{Mass spectrum from $T_{m,n}$ generators and linking operations}" target="_blank"];
+    rem_knot_formula_table [label="Rem\nknot-formula-table" fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:knot-formula-table" tooltip="{Topological knot formulas for fundamental and composite particles}" target="_blank"];
+    rem_mass_comparison_table [label="Rem\nmass-comparison-t..." fillcolor="#FF6B6B" color="#DC143C" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#rem:mass-comparison-table" tooltip="{Mass predictions from knot formulas vs.\textbackslash\{\} CODATA/PDG values}" target="_blank"];
     prop_local_substrate_q [label="Prop\nlocal-substrate-q" fillcolor="#FF6B6B" color="#DAA520" URL="papers/quantum-observable-universe/quantum-observable-universe.pdf#prop:local-substrate-q" tooltip="{Local Value of the Substrate Parameter}" target="_blank"];
-    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; thm_descartes; def_double_slit_q_phase; prop_double_slit_massive_pattern; prop_topological_mass_formula; prop_terminal_resolution; prop_local_substrate_q; }
+    { rank=same; def_descartes_condition; prop_genus_maximal_descent; def_exceptional_divisor; def_chiral_sector_coords; cor_descartes_braid_structure; cor_descartes_knot_eigenbasis; thm_descartes; def_double_slit_q_phase; prop_double_slit_massive_pattern; prop_topological_mass_formula; prop_terminal_resolution; rem_mass_from_generators; rem_knot_formula_table; rem_mass_comparison_table; prop_local_substrate_q; }
   }
 
   def_snake_identity -> def_rigid_monoidal_category [color="#555555" style="solid"];
@@ -453,6 +465,19 @@ digraph ProofDependencies {
   def_categorical_point -> def_localized_knot [color="#555555" style="solid"];
   def_projective_line_object -> def_localized_knot [color="#555555" style="solid"];
   def_quantum_observable_universe -> def_localized_knot [color="#555555" style="solid"];
+  def_hadron -> def_categorical_proton [color="#555555" style="solid"];
+  def_knot_particle_generation -> def_categorical_proton [color="#555555" style="solid"];
+  def_color_tube_coordinates -> def_categorical_proton [color="#555555" style="solid"];
+  def_hadron -> def_categorical_neutron [color="#555555" style="solid"];
+  def_categorical_proton -> def_categorical_neutron [color="#555555" style="solid"];
+  def_knot_particle_generation -> def_categorical_neutron [color="#555555" style="solid"];
+  def_color_tube_coordinates -> def_categorical_neutron [color="#555555" style="solid"];
+  def_hadron -> def_stable_nucleus [color="#555555" style="solid"];
+  def_categorical_proton -> def_stable_nucleus [color="#555555" style="solid"];
+  def_categorical_neutron -> def_stable_nucleus [color="#555555" style="solid"];
+  def_skein_binding_lagrangian -> def_stable_nucleus [color="#555555" style="solid"];
+  prop_beta_stability -> def_stable_nucleus [color="#555555" style="solid"];
+  def_substrate_parameter -> def_stable_nucleus [color="#555555" style="solid"];
   def_hadron -> def_localized_hadron [color="#555555" style="solid"];
   def_categorical_point -> def_localized_hadron [color="#555555" style="solid"];
   def_projective_line_object -> def_localized_hadron [color="#555555" style="solid"];
@@ -461,6 +486,21 @@ digraph ProofDependencies {
   def_projective_line_object -> def_hadron_fibre_embedding [color="#555555" style="solid"];
   def_hadron -> prop_skein_generation [color="#555555" style="solid"];
   def_hadron_fibre_embedding -> prop_skein_generation [color="#555555" style="solid"];
+  def_hadron -> def_knot_particle_generation [color="#555555" style="solid"];
+  prop_skein_generation -> def_knot_particle_generation [color="#555555" style="solid"];
+  def_localized_knot -> def_knot_particle_generation [color="#555555" style="solid"];
+  def_substrate_parameter -> def_knot_particle_generation [color="#555555" style="solid"];
+  def_quantum_planck_constant -> def_knot_particle_generation [color="#555555" style="solid"];
+  def_color_tube_coordinates -> def_knot_particle_generation [color="#555555" style="solid"];
+  def_knot_particle_generation -> prop_torus_knot_generators [color="#555555" style="solid"];
+  def_hadron -> prop_torus_knot_generators [color="#555555" style="solid"];
+  prop_skein_generation -> prop_torus_knot_generators [color="#555555" style="solid"];
+  def_recursive_brane_tower -> prop_torus_knot_generators [color="#555555" style="solid"];
+  def_knot_particle_generation -> thm_embeddability_closure [color="#555555" style="solid"];
+  prop_torus_knot_generators -> thm_embeddability_closure [color="#555555" style="solid"];
+  def_localized_knot -> thm_embeddability_closure [color="#555555" style="solid"];
+  def_hadron -> thm_embeddability_closure [color="#555555" style="solid"];
+  prop_skein_generation -> thm_embeddability_closure [color="#555555" style="solid"];
   def_localized_knot -> def_bundle_initial_conditions [color="#555555" style="solid"];
   def_hadron -> def_bundle_initial_conditions [color="#555555" style="solid"];
   def_projective_line_object -> def_bundle_initial_conditions [color="#555555" style="solid"];
@@ -487,6 +527,19 @@ digraph ProofDependencies {
   def_braid_group -> def_s3_group [color="#555555" style="solid"];
   def_su2_basis -> def_su2_generators [color="#555555" style="solid"];
   def_su2_generators -> def_so3_generators [color="#555555" style="solid"];
+  def_hadron -> def_skein_binding_lagrangian [color="#555555" style="solid"];
+  def_substrate_parameter -> def_skein_binding_lagrangian [color="#555555" style="solid"];
+  def_categorical_lagrangian -> def_skein_binding_lagrangian [color="#555555" style="solid"];
+  def_mass_identity -> def_skein_binding_lagrangian [color="#555555" style="solid"];
+  def_categorical_lagrangian -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_skein_binding_lagrangian -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_mass_identity -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_categorical_proton -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_categorical_neutron -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_substrate_parameter -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_categorical_dirac_operator -> prop_nuclear_binding_from_canonical_action [color="#555555" style="solid"];
+  def_skein_binding_lagrangian -> prop_beta_stability [color="#555555" style="solid"];
+  def_substrate_parameter -> prop_beta_stability [color="#555555" style="solid"];
   def_quantum_observable_universe -> prop_mobius_energy [color="#555555" style="solid"];
   def_categorical_action -> prop_mobius_energy [color="#555555" style="solid"];
   def_substrate_parameter -> prop_mobius_energy [color="#555555" style="solid"];
@@ -533,6 +586,26 @@ digraph ProofDependencies {
   thm_topological_mass -> prop_terminal_resolution [color="#555555" style="solid"];
   cor_mass_identity_C -> prop_terminal_resolution [color="#555555" style="solid"];
   prop_topological_mass_formula -> prop_terminal_resolution [color="#555555" style="solid"];
+  def_knot_particle_generation -> rem_mass_from_generators [color="#555555" style="solid"];
+  prop_torus_knot_generators -> rem_mass_from_generators [color="#555555" style="solid"];
+  prop_topological_mass_formula -> rem_mass_from_generators [color="#555555" style="solid"];
+  prop_terminal_resolution -> rem_mass_from_generators [color="#555555" style="solid"];
+  def_substrate_parameter -> rem_mass_from_generators [color="#555555" style="solid"];
+  def_quantum_planck_constant -> rem_mass_from_generators [color="#555555" style="solid"];
+  def_color_tube_coordinates -> rem_mass_from_generators [color="#555555" style="solid"];
+  def_knot_particle_generation -> rem_knot_formula_table [color="#555555" style="solid"];
+  prop_torus_knot_generators -> rem_knot_formula_table [color="#555555" style="solid"];
+  thm_embeddability_closure -> rem_knot_formula_table [color="#555555" style="solid"];
+  def_hadron -> rem_knot_formula_table [color="#555555" style="solid"];
+  prop_skein_generation -> rem_knot_formula_table [color="#555555" style="solid"];
+  prop_terminal_resolution -> rem_knot_formula_table [color="#555555" style="solid"];
+  def_color_tube_coordinates -> rem_knot_formula_table [color="#555555" style="solid"];
+  rem_knot_formula_table -> rem_mass_comparison_table [color="#555555" style="solid"];
+  rem_mass_from_generators -> rem_mass_comparison_table [color="#555555" style="solid"];
+  prop_topological_mass_formula -> rem_mass_comparison_table [color="#555555" style="solid"];
+  prop_terminal_resolution -> rem_mass_comparison_table [color="#555555" style="solid"];
+  def_substrate_parameter -> rem_mass_comparison_table [color="#555555" style="solid"];
+  def_quantum_planck_constant -> rem_mass_comparison_table [color="#555555" style="solid"];
   def_substrate_parameter -> prop_local_substrate_q [color="#555555" style="solid"];
   prop_terminal_resolution -> prop_local_substrate_q [color="#555555" style="solid"];
 }
