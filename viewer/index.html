@@ -912,6 +912,37 @@
     .bib-doi{font-family:var(--f-mono);font-size:.72rem;color:var(--ac)}
     .bib-entry em{font-style:italic}
     .bib-entry strong{font-weight:600}
+    .bib-uncited-entry{opacity:.6}
+    .bib-backlinks{margin-top:.3rem;font-size:.72rem;color:var(--fg-d)}
+    .bib-backlinks a{color:var(--ac);font-family:var(--f-mono);font-size:.68rem}
+
+    /* QA report */
+    .bib-qa-report{background:var(--bg-s);border:1px solid var(--brd);border-radius:6px;padding:1rem;margin-bottom:1.5rem}
+    .bib-qa-report h3{margin:0 0 .6rem;font-size:.9rem}
+    .bib-qa-grid{display:flex;flex-wrap:wrap;gap:.5rem}
+    .bib-qa-item{background:var(--bg);border:1px solid var(--brd);border-radius:4px;padding:.3rem .6rem;font-size:.85rem;font-weight:600}
+    .bib-qa-item small{font-weight:400;color:var(--fg-d);font-size:.72rem}
+    .bib-qa-item.ok{border-color:var(--grn);color:var(--grn)}
+    .bib-qa-item.warn{border-color:var(--ora);color:var(--ora)}
+    .bib-qa-item.err{border-color:var(--red);color:var(--red)}
+    .bib-qa-item.info{border-color:var(--fg-d)}
+    .bib-dangling,.bib-uncited{margin-top:.8rem;font-size:.82rem}
+    .bib-dangling summary,.bib-uncited summary{cursor:pointer;font-weight:600;color:var(--fg)}
+    .bib-dangling ul,.bib-uncited ul{margin:.3rem 0;padding-left:1.5rem}
+    .bib-dangling li{margin:.2rem 0}
+    .bib-full-list{counter-reset:bib}
+    .bib-full-list .bib-entry{counter-increment:bib}
+
+    /* Sidebar bibliography */
+    .sb-bib-qa{padding:.3rem .5rem;font-size:.65rem}
+    .sb-bib-stat{padding:.1rem 0;color:var(--fg-d)}
+    .sb-bib-stat.ok{color:var(--grn)}
+    .sb-bib-stat.warn{color:var(--ora)}
+    .sb-bib-stat.info{color:var(--fg-d)}
+    .sb-bib-list{max-height:300px;overflow-y:auto}
+    .sb-bib-key{font-family:var(--f-mono);font-size:.6rem;color:var(--ac)}
+    .sb-bib-key.uncited{color:var(--fg-d);opacity:.5}
+    .sb-bib-au{font-size:.6rem;color:var(--fg-d)}
   </style>
 </head>
 <body data-font="web">
@@ -3774,6 +3805,64 @@
         }
         sb.appendChild(chBody);
       }
+
+      // ── Bibliography sidebar entry (collapsed "B" tab) ──────────
+      if (p.references?.length) {
+        const bibEl = mk('div','sb-ch');
+        bibEl.dataset.num = 'B';
+        bibEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>Bibliography</span>`;
+        const bibBody = mk('div','sb-ch-body');
+
+        // Build QA summary
+        const totalRefs = p.references.length;
+        const withDoi = p.references.filter(r => r.DOI).length;
+        const withUrl = p.references.filter(r => r.URL).length;
+        const noAuthor = p.references.filter(r => !r.author?.length).length;
+        const noYear = p.references.filter(r => !r.issued).length;
+        const citedKeys = new Set();
+        for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+          if (b.cites) for (const k of b.cites) citedKeys.add(k);
+        }
+        const uncited = p.references.filter(r => !citedKeys.has(r.id)).length;
+
+        const qaDiv = mk('div','sb-bib-qa');
+        qaDiv.innerHTML = `<div class="sb-bib-stat">${totalRefs} references</div>`
+          + `<div class="sb-bib-stat ok">${withDoi} with DOI</div>`
+          + (noAuthor ? `<div class="sb-bib-stat warn">${noAuthor} missing authors</div>` : '')
+          + (noYear ? `<div class="sb-bib-stat warn">${noYear} missing year</div>` : '')
+          + (uncited ? `<div class="sb-bib-stat info">${uncited} uncited</div>` : '')
+          + `<div class="sb-bib-stat">${citedKeys.size} cited in paper</div>`;
+        bibBody.appendChild(qaDiv);
+
+        // List all references as clickable entries
+        const refList = mk('div','sb-bib-list');
+        for (const ref of p.references) {
+          const rEl = mk('div','sb-blk');
+          const author = ref.author?.[0]?.family || ref.author?.[0]?.literal || '?';
+          const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+          const isCited = citedKeys.has(ref.id);
+          rEl.innerHTML = `<span class="sb-bib-key${isCited ? '' : ' uncited'}">[${esc(ref.id)}]</span> `
+            + `<span class="sb-bib-au">${esc(author)} ${year}</span>`;
+          rEl.title = ref.title || '';
+          rEl.onclick = () => {
+            showChapter('bib');
+            setTimeout(() => {
+              const t = document.getElementById(`bib-full-${ref.id}`);
+              if (t) { t.scrollIntoView({behavior:'smooth',block:'center'}); t.classList.add('bib-highlight'); setTimeout(() => t.classList.remove('bib-highlight'), 2000); }
+            }, 50);
+          };
+          refList.appendChild(rEl);
+        }
+        bibBody.appendChild(refList);
+
+        bibEl.onclick = () => {
+          bibEl.classList.toggle('open');
+          bibBody.style.display = bibEl.classList.contains('open') ? 'block' : 'none';
+          showChapter('bib');
+        };
+        sb.appendChild(bibEl);
+        sb.appendChild(bibBody);
+      }
       renderMath(sb);
 
       // Header
@@ -3826,6 +3915,103 @@
         }
         chapterDivs.set(ch.number, cd);
         app.appendChild(cd);
+      }
+
+      // ── Full bibliography page ──────────────────────────────────
+      if (p.references?.length) {
+        const bibDiv = mk('div','ch bib-page');
+        bibDiv.dataset.chNum = 'bib';
+        bibDiv.style.display = 'none';
+        bibDiv.id = 'bibliography';
+
+        // Build reverse index: ref id → blocks that cite it
+        const refCitedBy = new Map();
+        for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+          if (b.cites) for (const k of b.cites) {
+            if (!refCitedBy.has(k)) refCitedBy.set(k, []);
+            refCitedBy.get(k).push({ label: b.label, kind: b.kind, title: b.title, chapter: ch.number });
+          }
+        }
+
+        // QA report
+        const totalRefs = p.references.length;
+        const withDoi = p.references.filter(r => r.DOI).length;
+        const withUrl = p.references.filter(r => r.URL).length;
+        const noAuthor = p.references.filter(r => !r.author?.length).length;
+        const noYear = p.references.filter(r => !r.issued).length;
+        const citedKeys = new Set(refCitedBy.keys());
+        const uncitedRefs = p.references.filter(r => !citedKeys.has(r.id));
+        const danglingCites = [...citedKeys].filter(k => !p.references.find(r => r.id === k));
+
+        let qaHtml = `<div class="bib-qa-report">
+          <h3>Bibliography QA</h3>
+          <div class="bib-qa-grid">
+            <div class="bib-qa-item">${totalRefs} <small>total</small></div>
+            <div class="bib-qa-item ok">${withDoi} <small>with DOI</small></div>
+            <div class="bib-qa-item">${citedKeys.size} <small>cited</small></div>
+            <div class="bib-qa-item${uncitedRefs.length ? ' info' : ''}">${uncitedRefs.length} <small>uncited</small></div>
+            ${noAuthor ? `<div class="bib-qa-item warn">${noAuthor} <small>no author</small></div>` : ''}
+            ${noYear ? `<div class="bib-qa-item warn">${noYear} <small>no year</small></div>` : ''}
+            ${danglingCites.length ? `<div class="bib-qa-item err">${danglingCites.length} <small>dangling</small></div>` : ''}
+          </div>`;
+
+        // Dangling references section
+        if (danglingCites.length) {
+          qaHtml += `<details class="bib-dangling" open><summary>${danglingCites.length} dangling citation(s) — key cited but not in references.ts</summary><ul>`;
+          for (const k of danglingCites) {
+            const citers = refCitedBy.get(k) || [];
+            const links = citers.map(c => `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`).join(', ');
+            qaHtml += `<li><code>${esc(k)}</code> — cited by: ${links}</li>`;
+          }
+          qaHtml += `</ul></details>`;
+        }
+
+        // Uncited references
+        if (uncitedRefs.length) {
+          qaHtml += `<details class="bib-uncited"><summary>${uncitedRefs.length} uncited reference(s)</summary><ul>`;
+          for (const r of uncitedRefs) {
+            qaHtml += `<li><code>${esc(r.id)}</code> — ${esc(r.title || '(no title)')}</li>`;
+          }
+          qaHtml += `</ul></details>`;
+        }
+        qaHtml += `</div>`;
+
+        // Full reference list
+        let refsHtml = '<h2 class="ch-t">Bibliography</h2>' + qaHtml + '<ol class="bib-list bib-full-list">';
+        for (const ref of p.references) {
+          const isCited = citedKeys.has(ref.id);
+          const citers = refCitedBy.get(ref.id) || [];
+
+          // Format entry
+          let authors = '';
+          if (ref.author?.length) {
+            const names = ref.author.map(a => a.literal || [a.given, a.family].filter(Boolean).join(' '));
+            authors = names.length <= 3 ? names.join(', ') : `${names[0]} et al.`;
+          }
+          const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+          const title = ref.title ? `<em>${esc(ref.title)}</em>` : '';
+          const venue = ref['container-title'] ? esc(ref['container-title']) : (ref.publisher ? esc(ref.publisher) : '');
+          let vol = ref.volume ? `<strong>${ref.volume}</strong>` : '';
+          if (ref.page) vol += `: ${esc(ref.page)}`;
+          const doi = ref.DOI ? `<a href="https://doi.org/${encodeURIComponent(ref.DOI)}" class="bib-doi" target="_blank" rel="noopener">doi:${esc(ref.DOI)}</a>` : '';
+          const url = !ref.DOI && ref.URL ? `<a href="${esc(ref.URL)}" class="bib-doi" target="_blank" rel="noopener">${esc(ref.URL)}</a>` : '';
+
+          // Cited-by backlinks
+          let backlinks = '';
+          if (citers.length) {
+            backlinks = `<div class="bib-backlinks">Cited by: ${citers.map(c =>
+              `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`
+            ).join(', ')}</div>`;
+          }
+
+          const parts = [authors, year ? `(${year})` : '', title, venue, vol, doi, url].filter(Boolean);
+          refsHtml += `<li id="bib-full-${ref.id}" class="bib-entry${isCited ? '' : ' bib-uncited-entry'}">
+            <span class="bib-key">[${esc(ref.id)}]</span> ${parts.join('. ')}.${backlinks}</li>`;
+        }
+        refsHtml += '</ol>';
+        bibDiv.innerHTML = refsHtml;
+        chapterDivs.set('bib', bibDiv);
+        app.appendChild(bibDiv);
       }
 
       document.getElementById('c-hash').textContent = p._hash || '';
