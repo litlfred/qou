@@ -80,6 +80,7 @@ export default chapter({
       title: "Quaternionic spectral resolvents",
       label: "sec:quaternionic-resolvents",
       blocks: [
+        "quaternion-so3-motivation",
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
