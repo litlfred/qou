@@ -5,7 +5,7 @@ import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
-import Mathlib.CategoryTheory.Types.Basic
+import Mathlib.CategoryTheory.Types
 
 /-!
 # §1  Categorical Foundations

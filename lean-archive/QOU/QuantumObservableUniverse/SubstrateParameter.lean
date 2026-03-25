@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.Linarith
 
 /-!
 # §3  Substrate Parameter, Gauge Group, Planck Constant
@@ -45,9 +46,7 @@ theorem quantumPlanckConstant_nonneg {M : Type*} (sp : SubstrateParameter M)
   unfold quantumPlanckConstant
   have hq := sp.field_ge_one p
   have hpos := sp.field_pos p
-  have hinv : (sp.field p)⁻¹ ≤ 1 := by
-    rw [inv_le_one_iff_of_pos hpos]
-    exact hq
+  have hinv : (sp.field p)⁻¹ ≤ 1 := inv_le_one_of_one_le hq
   linarith
 
 theorem quantumPlanckConstant_lt_one {M : Type*} (sp : SubstrateParameter M)
