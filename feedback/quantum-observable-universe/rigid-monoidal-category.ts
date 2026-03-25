@@ -42,5 +42,17 @@ export default [
     "authorEmail": "anonymous",
     "assignee": "editor-agent",
     "createdAt": "2026-03-25T17:27:22.616Z"
+  },
+  {
+    "id": "todo-mn6bggrv-nf01",
+    "summary": "render error",
+    "comment": "render error",
+    "status": "open",
+    "priority": "medium",
+    "origin": "human",
+    "author": "anonymous",
+    "authorEmail": "anonymous",
+    "assignee": "editor-agent",
+    "createdAt": "2026-03-25T17:27:24.907Z"
   }
 ] satisfies FeedbackItem[];
