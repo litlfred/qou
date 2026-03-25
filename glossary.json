@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T18:27:51.235347+00:00",
+  "generated_at": "2026-03-25T18:54:30.993928+00:00",
   "commit_sha": "unknown",
-  "entry_count": 70,
+  "entry_count": 71,
   "ambiguity_count": 9,
   "entries": [
     {
       "narrative_term": "{Snake identity}",
       "lean_name": "QOU.QuantumObservableUniverse.SnakeIdentity",
       "kind": "def",
-      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two equations:    [ ( otimes _V) circ (_V otimes ) = _V. ]  More precisely, unfolding the associator and unitor isomorphisms, the composite  [ V  V otimes  _V otimes  V otimes (V^vee otimes V) _V, V^vee, V (V otimes V^vee) otimes V  otimes _V  otimes V  V ]  equals _V.   The composite  [ V^vee ^-1  otimes V^v",
+      "narrative_definition": "Let (, otimes, ) be a monoidal category and let V be an object with dual V^vee, evaluation  colon V otimes V^vee to , and coevaluation  colon  to V^vee otimes V. The  (also called ) are the two commutative diagrams:    [row sep=2em, column sep=2.5em] V ar[r, \" otimes \"] ar[dr, \"_V\"'] & V otimes V^vee otimes V ar[d, \" otimes \"]  & V  [-0.5em]   qquadqquad  [row sep=2em, column sep=2.5em] V^vee ar[r, \" otimes \"] ar[dr, \"_V^vee\"'] & V^vee otimes V otimes V^vee ar[d, \" otimes \"]  & V^vee  [-0.5em]  ",
       "latex_label": "def:snake-identity",
       "chapter": 2
     },
@@ -100,7 +100,7 @@
       "narrative_term": "{Categorical hadron}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalHadron",
       "kind": "def",
-      "narrative_definition": "Let (, otimes, ) be a hyperref[def:rigid-monoidal-category]rigid monoidal category with fundamental object V and Frobenius algebra (A, mu, eta, Delta, epsilon, int_A). A  is a morphism  [ h colon  ;longrightarrow; V^otimes n ]  for some n geq 2, subject to the constraint that h factors through the image of the multiplication mu restricted to simple constituents — that is, h lies in the span of morphisms of the form  [   A ; A^otimes n  otimes cdots otimes pi_j_n; V_j_1 otimes cdots otimes V_j_n ",
+      "narrative_definition": "Let (, otimes, ) be a hyperref[def:rigid-monoidal-category]rigid monoidal category with fundamental object V and Frobenius algebra (A, mu, eta, Delta, epsilon, int_A). A  is a morphism  [ h colon  ;longrightarrow; V^otimes n ]  for some n geq 2, subject to the constraint that h factors through the image of the multiplication mu restricted to simple constituents — that is, h lies in the span of morphisms of the form   [row sep=2em, column sep=2.5em]  ar[r, \"eta\"] & A ar[r, \"Delta^(n-1)\"] & A^otim",
       "latex_label": "def:categorical-hadron",
       "chapter": 2
     },
@@ -148,7 +148,7 @@
       "narrative_term": "{Categorical Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalHodgeStar",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum universe over R (hyperref[def:quantum-universe]quantum universe) with higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge star beta = int_A!bigl(alpha^* cdot betabigr);, ]  where int_A colon A to  is the Frobenius form, alpha^* = S(alpha) is the antipode-conjugate, and  in Omega^n(A) is the volume form (the unique G-invariant top form normalised by int_A()",
+      "narrative_definition": "Let (, A, tau) be a quantum universe over R (hyperref[def:quantum-universe]quantum universe) with higher differential forms Omega^k(A) (hyperref[def:higher-forms]higher forms). The  is the involution star colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge star beta = int_A!bigl(alpha^* cdot betabigr);, ]   [row sep=2.5em, column sep=3em] Omega^k(A) ar[r, \"star\"] ar[d, \"star\"'] & Omega^n-k(A) ar[d, \"star\"]  Omega^n-k(A) ar[r, equal] & Omega^n-k(A)  qquad (star^2 = )   where int_A colon A ",
       "latex_label": "def:categorical-hodge-star",
       "chapter": 2
     },
@@ -199,7 +199,7 @@
       "narrative_term": "{$q$-Hodge star}",
       "lean_name": "QOU.QuantumObservableUniverse.QHodgeStar",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot int_A!bigl(alpha^* cdot betabigr);. ]  At q = 1 this recovers the categorical Hodge star: star_1 = star.  The factor of q rescales the inner product o",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with categorical Hodge star star (hyperref[def:categorical-hodge-star]categorical hodge star) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter).  The  is the q-deformed involution star_q colon Omega^k(A) to Omega^n-k(A) defined by  [ alpha wedge_q star_q beta ;=; q cdot int_A!bigl(alpha^* cdot betabigr);. ]   [row sep=2.5em, column sep=3em] Omega^k(A) ar[r, \"star_q\"] ar[d, \"star\"'] & Omega^n-k(A)  Omega^n-k(A) ar[ur, ",
       "latex_label": "def:q-hodge-star",
       "chapter": 2
     },
@@ -215,7 +215,7 @@
       "narrative_term": "{Categorical Lagrangian}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalLagrangian",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with categorical Dirac operator _nabla (hyperref[def:categorical-dirac-operator]categorical Dirac operator) and a state psi colon  to A. The  is the endomorphism  [ _q(nabla, psi) ;=; _nabla^,2 ;+; psi^* otimes _nabla,psi ;;in; _(A), ]  where psi^* = int_A !circ, S(psi) colon A to  is the adjoint section (antipode composed with the Frobenius form).  The Lagrangian is an endomorphism of A --- the categorica",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe) with categorical Dirac operator _nabla (hyperref[def:categorical-dirac-operator]categorical Dirac operator) and a state psi colon  to A. The  is the endomorphism  [ _q(nabla, psi) ;=; _nabla^,2 ;+; psi^* otimes _nabla,psi ;;in; _(A), ]  where psi^* = int_A !circ, S(psi) colon A to  is the adjoint section (antipode composed with the Frobenius form).   [row sep=2.5em, column sep=3em] A ar[r, \"_nabla\"] ar[dr,",
       "latex_label": "def:categorical-lagrangian",
       "chapter": 2
     },
@@ -223,7 +223,7 @@
       "narrative_term": "{Categorical action}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalAction",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe). A  on (, A, tau) is a morphism  colon  to  of the form    ;=; _A ;circ; bigl(_A^vee otimes Phibigr) ;circ; _A,   where Phi in _(A) is called the .  The evaluation _A colon A^vee otimes A to  and coevaluation _A colon  to A otimes A^vee are the structure maps of the rigid duality on A (hyperref[def:rigid-monoidal-category]rigid monoidal category).  Composing them with an inserted endomorphism produces the ",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-observable-universe]quantum observable universe). A  on (, A, tau) is a morphism  colon  to  of the form    ;=; _A ;circ; bigl(_A^vee otimes Phibigr) ;circ; _A,   where Phi in _(A) is called the .   [row sep=2.5em, column sep=3em]  ar[r, \"_A\"] ar[rr, bend right=25, \"\"'] & A otimes A^vee ar[r, \"Phi otimes \"] & A otimes A^vee ar[r, \"_A\"] &   qquad   The evaluation _A colon A^vee otimes A to  and coevaluation _A colon  to A otimes A^vee are the structure ma",
       "latex_label": "def:categorical-action",
       "chapter": 2
     },
@@ -239,7 +239,7 @@
       "narrative_term": "{Particle ($q$-harmonic form)}",
       "lean_name": "QOU.QuantumObservableUniverse.QHarmonicForm",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe with q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic:  [ Delta_q,alpha ;=; 0. ]",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with q-deformed exterior derivative d_q (hyperref[def:categorical-q-ext-deriv]categorical q-exterior derivative).  The  on Omega^k(A) is Delta_q = d_q,delta_q + delta_q,d_q. A  is an element alpha in Omega^k(A) that is q-harmonic:   [row sep=2.5em, column sep=3em] Omega^k-1(A) ar[r, \"d_q\"] & Omega^k(A) ar[r, \"d_q\"] ar[d, \"delta_q\"'] ar[dr, phantom, \"Delta_q alpha = 0\"] & Omega^k+1(A)  & Omega^k-1(A)",
       "latex_label": "def:q-harmonic-form",
       "chapter": 2
     },
@@ -266,7 +266,7 @@
       "narrative_term": "{Categorical point}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalPoint",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-universe]quantum universe).  A  of A is a morphism  [ p ;colon;  ;longrightarrow; A qquad . ]",
+      "narrative_definition": "Let (, A, tau) be a (hyperref[def:quantum-universe]quantum universe).  A  of A is a morphism   [column sep=3em]  ar[r, \"p\"] & A  qquad",
       "latex_label": "def:categorical-point",
       "chapter": 2
     },
@@ -290,7 +290,7 @@
       "narrative_term": "{Categorical $q$-Lie bracket}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQLieBracket",
       "kind": "def",
-      "narrative_definition": "Let (, A, tau) be a quantum observable universe with Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter). The  on derivations of A is  [ [X, Y]_q ;=; q^-1,[X, Y] + (1 - q^-1),bigl(theta_A(X),[xi, Y] - theta_A(Y),[xi, X]bigr), ]  where theta_A is the canonical 1-form dual to xi and [X, Y] is the commutator of derivations in .",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with Reeb derivation xi (hyperref[def:categorical-reeb]categorical Reeb derivation) and substrate parameter q (hyperref[def:substrate-parameter]substrate parameter). The  on derivations of A is  [ [X, Y]_q ;=; q^-1,[X, Y] + (1 - q^-1),bigl(theta_A(X),[xi, Y] - theta_A(Y),[xi, X]bigr), ]  where theta_A is the canonical 1-form dual to xi and [X, Y] is the commutator of derivations in .   [row sep=2.5em, column sep=3em] (A) otimes (A) ar[r, \"[,cdot,,c",
       "latex_label": "def:categorical-q-lie-bracket",
       "chapter": 2
     },
@@ -298,7 +298,7 @@
       "narrative_term": "{Categorical $q$-deformed connection}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQConnection",
       "kind": "def",
-      "narrative_definition": "Let nabla be a connection on A (hyperref[def:categorical-connection]categorical connection) and xi the Reeb derivation (hyperref[def:categorical-reeb]categorical Reeb derivation).  The  is  [ nabla_q ;=; q^-1,nabla + (1 - q^-1),(iota_xi, nabla),theta_A. ]  At q = 1, nabla_q = nabla.",
+      "narrative_definition": "Let nabla be a connection on A (hyperref[def:categorical-connection]categorical connection) and xi the Reeb derivation (hyperref[def:categorical-reeb]categorical Reeb derivation).  The  is  [ nabla_q ;=; q^-1,nabla + (1 - q^-1),(iota_xi, nabla),theta_A. ]   [row sep=2.5em, column sep=3em] A ar[r, \"nabla\"] ar[dr, \"nabla_q\"'] & Omega^1(A) otimes A ar[d, \"q^-1, ,+, (1 - q^-1),theta_A circ iota_xi\"]  & Omega^1(A) otimes A  qquad   At q = 1, nabla_q = nabla.",
       "latex_label": "def:categorical-q-connection",
       "chapter": 2
     },
@@ -330,7 +330,7 @@
       "narrative_term": "{Categorical q-Reeb flow}",
       "lean_name": "QOU.QuantumObservableUniverse.CategoricalQReebFlow",
       "kind": "def",
-      "narrative_definition": "Let xi be the Reeb derivation of A (hyperref[def:categorical-reeb]categorical Reeb derivation) and [,cdot,,cdot,]_q the q-Lie bracket (hyperref[def:categorical-q-lie-bracket]categorical q-Lie bracket). The  xi_q is the derivation of A defined by  [ xi_q(a) ;=; q^-1,xi(a) + (1 - q^-1),[xi,, X_a]_q, ]  where X_a is the horizontal derivation associated to a (i.e. pi_H(da) = iota_X_a, theta_A). The  is the one-parameter family of automorphisms phi_t^q in (A) generated by xi_q.",
+      "narrative_definition": "Let xi be the Reeb derivation of A (hyperref[def:categorical-reeb]categorical Reeb derivation) and [,cdot,,cdot,]_q the q-Lie bracket (hyperref[def:categorical-q-lie-bracket]categorical q-Lie bracket). The  xi_q is the derivation of A defined by  [ xi_q(a) ;=; q^-1,xi(a) + (1 - q^-1),[xi,, X_a]_q, ]  where X_a is the horizontal derivation associated to a (i.e. pi_H(da) = iota_X_a, theta_A). The  is the one-parameter family of automorphisms phi_t^q in (A) generated by xi_q.   [row sep=2.5em, colu",
       "latex_label": "def:categorical-q-reeb-flow",
       "chapter": 2
     },
@@ -660,6 +660,14 @@
       "kind": "def",
       "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &;=; O + Rbigl(sinphi,bigl(cos(psi + qphi),T_1 + sin(psi + qphi),T_2bigr) - cosphi,Nbigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr), (phi,psi) &;=; !bigl(phi,,psi + 3bigr).   The  qphi rotates each sector by q full turns as the latitude phi runs f",
       "latex_label": "def:chiral-sector-coords",
+      "chapter": 7
+    },
+    {
+      "narrative_term": "{$q$-deformed path phase}",
+      "lean_name": "QOU.DoubleSlitQPhase",
+      "kind": "def",
+      "narrative_definition": "Let (, A, tau) be a quantum observable universe with substrate parameter q in k^times (hyperref[def:substrate-parameter]substrate parameter), and let gamma_i (i = 1,2) be two paths from a source to a screen position y, each passing through one slit of width a separated by distance d.  The  accumulated along gamma_i is  [ Phi_q^(i)(y) ;=; hbar_q!int_gamma_i! d_q,psi ;=; q^-1,Phi_^(i)(y) ;+; (1 - q^-1),Phi_^(i)(y), ]  where:   item Phi_^(i) = (2pi/lambda),ell_i(y) is the geometric (de Broglie) pha",
+      "latex_label": "def:double-slit-q-phase",
       "chapter": 7
     }
   ]

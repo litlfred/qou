@@ -1,7 +1,7 @@
 ========================================================================
 QUANTUM OBSERVABLE UNIVERSE — FORMAL VERIFICATION REPORT
 ========================================================================
-Generated: 2026-03-25 18:30:31 UTC
+Generated: 2026-03-25 18:57:20 UTC
 Commit:    unknown
 Lean:      leanprover/lean4:v4.16.0
 Mathlib:   master (pinned in lakefile.lean)
@@ -14,7 +14,7 @@ Status: ✅ BUILD PASSED (no type errors)
 ------------------------------------------------------------------------
 §2  SORRY AUDIT
 ------------------------------------------------------------------------
-Total sorry occurrences: 600
+Total sorry occurrences: 601
 
   File                                          sorry count
   --------------------------------------------------------
@@ -123,7 +123,7 @@ Total sorry occurrences: 600
   QOU/CODATAChain.lean                             1
   QOU/DescartesUniverse.lean                       2
   QOU/FormalGroups.lean                            1
-  QOU/Glossary.lean                                70
+  QOU/Glossary.lean                                71
   QOU/PathIntegrals.lean                           11
   QOU/QuantumObservableUniverse.lean               60
   QOU/Torsion.lean                                 33
@@ -1434,6 +1434,7 @@ link to the foundational reference are shown.
     QOU/Glossary.lean:515  DescartesCondition
     QOU/Glossary.lean:522  ExceptionalDivisor
     QOU/Glossary.lean:529  ChiralSectorCoords
+    QOU/Glossary.lean:536  DoubleSlitQPhase
     QOU/PathIntegrals.lean:481  braid_action_tensor
     QOU/PathIntegrals.lean:487  JonesMarkovTrace
     QOU/PathIntegrals.lean:493  BraidGroup
@@ -1539,7 +1540,7 @@ link to the foundational reference are shown.
     QOU/Torsion.lean:203  MassIdentityC
     QOU/Torsion.lean:209  quantum_dilogarithm
 
-  Summary: 0 referenced / 566 unreferenced / 566 total gaps
+  Summary: 0 referenced / 567 unreferenced / 567 total gaps
 
 ========================================================================
 END OF REPORT

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T18:27:51.239502+00:00",
+  "generated_at": "2026-03-25T18:54:30.996886+00:00",
   "mappings": [
     {
       "narrative": "{Snake identity}",
@@ -351,6 +351,11 @@
       "narrative": "{Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean_id": "QOU.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
+    },
+    {
+      "narrative": "{$q$-deformed path phase}",
+      "lean_id": "QOU.DoubleSlitQPhase",
+      "latex_label": "def:double-slit-q-phase"
     }
   ]
 }
