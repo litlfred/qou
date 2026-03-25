@@ -1,10 +1,18 @@
 /-!
-# QOU.CategoricalReeb.ofWeightDecomposition
+# QOU.CategoricalReeb.mk — Smart constructor for Reeb data
 
-Existence of the categorical Reeb derivation: given a maximal torus
-and weight decomposition, the infinitesimal generator of the torus
-action yields a Reeb derivation `(ξ, θ_A)` satisfying all three
-properties (vertical generator, normalisation, kernel).
+Packages the Reeb derivation components (ξ, θ_A, d, ι_ξ) together
+with the three property proofs (vertical generator, normalisation,
+kernel) into a `CategoricalReeb` structure.
+
+This is a smart constructor, not an existence proof: it takes the
+components and proofs as inputs and validates that they form a
+consistent `CategoricalReeb`.  Constructing ξ from the torus action
+requires the infinitesimal generator of a one-parameter subgroup,
+which needs Lie algebra infrastructure not yet in Mathlib.
+
+The existence theorem (that every QOU with a weight decomposition
+admits such data) is recorded as an axiom below.
 
 LaTeX: `\label{thm:categorical-reeb-exists}`
 -/
@@ -19,31 +27,20 @@ namespace QOU
 
 universe u v
 
-/-- **Existence of the categorical Reeb derivation**.
+/-- **Smart constructor** for `CategoricalReeb`.
 
-    Given a maximal torus `T` with weight decomposition `(π_H, π_V)`,
-    the infinitesimal generator `ξ` of the `T`-action on `A` and its
-    Maurer–Cartan dual `θ_A` satisfy all three Reeb properties:
+    Packages Reeb derivation components from a weight decomposition
+    into the `CategoricalReeb` structure, using `wd.proj_V` for the
+    vertical projection.
 
-    1. Vertical generator: π_V ∘ d factors through contraction with ξ.
-    2. Normalisation: ξ ≫ θ_A = θ_A.
-    3. Kernel: horizontal forms are the kernel of contraction with ξ.
-
-    Construction:
-    1. Let `ξ : A → A` be the infinitesimal generator of the torus
-       action (`d/dt|_{t=0}` of the one-parameter subgroup).
-    2. Let `θ_A : A → 𝟙_C` be the Maurer–Cartan form, dual to `ξ`:
-       it is the unique morphism satisfying `θ_A(ξ) = id`.
-    3. Let `ι_ξ : Ω¹(A) → A` be the interior product (contraction).
-    4. Let `d : A → Ω¹(A)` be the differential.
-
-    The three properties follow from the compatibility of the torus
-    action with the differential calculus.
+    This is a constructor (`.mk`), not a derivation — the caller
+    must supply `ξ`, `θ_A`, `d`, `ι_ξ`, and the three property proofs.
+    See `categorical_reeb_exists` below for the existence axiom.
 
     Ref: [witten1988] https://doi.org/10.1007/BF01223371 -/
-noncomputable def CategoricalReeb.ofWeightDecomposition
+noncomputable def CategoricalReeb.fromWeightDecomposition
     {C : Type u} [Category.{v} C] [MonoidalCategory C]
-    (mt : MaximalTorus C) (wd : WeightDecomposition C)
+    (_mt : MaximalTorus C) (wd : WeightDecomposition C)
     (A : C)
     (xi : A ⟶ A)
     (theta : A ⟶ (𝟙_ C))
@@ -65,5 +62,29 @@ noncomputable def CategoricalReeb.ofWeightDecomposition
     normalisation := norm
     proj_V_idem := proj_idem
     kernel_horizontal := kern }
+
+/-- **Existence of the categorical Reeb derivation**.
+
+    Every quantum observable universe with a maximal torus `T` and
+    weight decomposition `(π_H, π_V)` admits a Reeb derivation
+    `(ξ, θ_A)` satisfying all three properties.
+
+    The construction is:
+    1. `ξ` is the infinitesimal generator of the `T ≅ U(1)` action
+       (`d/dt|_{t=0}` of the one-parameter subgroup).
+    2. `θ_A` is the Maurer–Cartan form dual to `ξ`.
+    3. `ι_ξ` is the interior product (contraction with ξ).
+    4. `d` is the differential from the QOU's Kähler structure.
+
+    Formalising this requires Lie algebra infrastructure (infinitesimal
+    generators of compact group actions on categorical objects) which
+    is not available in Mathlib as of 2026-03. -/
+-- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+axiom categorical_reeb_exists
+    {C : Type u} [Category.{v} C] [MonoidalCategory C]
+    (mt : MaximalTorus C) (wd : WeightDecomposition C)
+    (A : C) :
+    ∃ (reeb : CategoricalReeb C),
+      reeb.forms = wd.forms ∧ reeb.proj_V = wd.proj_V
 
 end QOU
