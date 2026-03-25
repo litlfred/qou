@@ -510,6 +510,20 @@ export const references: CSLData[] = [
 
   // ── Chari and Pressley 1994 ───────────────────────────────────
   ref({
+    id: "chari1994guide",
+    type: "book",
+    title: "A Guide to Quantum Groups",
+    author: [
+      { family: "Chari", given: "Vyjayanthi" },
+      { family: "Pressley", given: "Andrew" },
+    ],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[1994]] },
+    ISBN: "978-0-521-55884-6",
+  }),
+
+  // ── Chari and Pressley 1994 (alias) ────────────────────────────
+  ref({
     id: "chari1994",
     type: "book",
     title: "A Guide to Quantum Groups",
@@ -641,7 +655,7 @@ export const references: CSLData[] = [
     volume: "29",
     issue: "2",
     page: "178-218",
-    DOI: "10.1016/0001-8708(78)90116-0",
+    DOI: "10.1016/0001-8708(78)90010-5",
   }),
 
   // ── Faddeev 1994 ──────────────────────────────────────────────
@@ -687,10 +701,10 @@ export const references: CSLData[] = [
     ],
     "container-title": "Journal of the London Mathematical Society",
     issued: { "date-parts": [[1978]] },
-    volume: "2",
+    volume: "s2-18",
     issue: "3",
     page: "539-545",
-    DOI: "10.1017/S0305004100055699",
+    DOI: "10.1112/jlms/s2-18.3.539",
   }),
 
   // ── Seiberg and Witten 1994 ───────────────────────────────────

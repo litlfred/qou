@@ -60,7 +60,7 @@ ideas to a graduate-level reader.
 - Every `\label{def:foo}` / `\label{thm:foo}` in chapter files should
   have a corresponding entry in `blueprint/src/content.tex` with a
   `\lean{}` macro.  Flag missing blueprint entries as minor issues.
-- Verify that `\cite{key}` keys are consistent with `references.bib`
+- Verify that `\cite{key}` keys are consistent with `content/schema/references.ts`
   naming convention (`<firstauthorlastname><year>`).
 - When narrative text introduces a definition that appears in the
   glossary, the first use should reference it with `\emph{}` and the

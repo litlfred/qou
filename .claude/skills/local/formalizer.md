@@ -124,7 +124,8 @@ lemma torsion_lifts_jet (A : FrobeniusHopfAlgebra) :
 ```
 
 **Rule**: Every `sorry` must have a `-- Ref:` annotation.  The `key`
-must match an entry in `references.bib` exactly (case-sensitive).  If no
+must match a citation key in `content/schema/references.ts` exactly (case-sensitive).
+(`references.bib` is auto-generated from this file — never edit `.bib` directly.)  If no
 published reference exists, use `[manuscript]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
@@ -508,8 +509,8 @@ iterative proof development.
 - [ ] All theorem statements match the `.md` narrative originals
 - [ ] Import blocks are minimal and correct
 - [ ] Every `sorry` is tracked in `proof-objects.json`
-- [ ] Every `sorry` has a `-- Ref: [key] url` comment (bibtex-linked)
-- [ ] All `-- Ref:` keys exist in `references.bib`
+- [ ] Every `sorry` has a `-- Ref: [key] url` comment (citation-linked)
+- [ ] All `-- Ref:` keys exist in `content/schema/references.ts`
 - [ ] `lake build` succeeds (sorry warnings are expected)
 - [ ] Tactic choices match the narrative proof strategy
 - [ ] Proof state can be exported at every sorry site
