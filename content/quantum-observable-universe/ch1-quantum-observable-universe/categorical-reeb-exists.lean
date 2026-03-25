@@ -50,7 +50,8 @@ noncomputable def CategoricalReeb.ofWeightDecomposition
     (d : A ⟶ wd.forms)
     (contract_xi : wd.forms ⟶ A)
     (norm : xi ≫ theta = theta)
-    (vert : d ≫ wd.proj_V = d ≫ wd.proj_V)
+    (vert : d ≫ wd.proj_V ≫ contract_xi = xi)
+    (proj_idem : wd.proj_V ≫ wd.proj_V = wd.proj_V := wd.proj_V_idem)
     (kern : contract_xi ≫ d ≫ wd.proj_V = contract_xi ≫ d) :
     CategoricalReeb C :=
   { A := A
@@ -62,6 +63,7 @@ noncomputable def CategoricalReeb.ofWeightDecomposition
     contract_xi := contract_xi
     vertical_generator := vert
     normalisation := norm
+    proj_V_idem := proj_idem
     kernel_horizontal := kern }
 
 end QOU

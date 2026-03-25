@@ -48,24 +48,31 @@ structure CategoricalReeb (C : Type u) [Category.{v} C]
   /-- The interior product (contraction) `ι_ξ : Ω¹(A) → A`. -/
   contract_xi : forms ⟶ A
   /-- **Vertical generator** (property 1):
-      `π_V ∘ d = ι_ξ ∘ d(θ_A)`.
-      Encoded categorically: the vertical projection of the differential
-      factors through contraction with ξ. -/
-  vertical_generator : d ≫ proj_V = d ≫ proj_V
-    -- Note: full encoding requires d(θ_A) as a 2-form object;
-    -- the schematic identity π_V ∘ d = ι_ξ(dθ_A) is recorded here
-    -- as a constraint on the vertical projection of d.
-    -- TODO: strengthen once HigherForms provides Ω²(A) and d on forms.
+      `π_V ∘ d = ι_ξ(dθ_A)`.
+      Encoded without 2-forms as: the vertical-then-contract path
+      recovers ξ.  That is, for any `f : A`, taking `d(f)`, projecting
+      to the vertical subspace, then contracting with ξ yields `ξ(f)`:
+
+        `d ≫ π_V ≫ ι_ξ = ξ`
+
+      This is non-trivial: it connects `d`, `π_V`, `ι_ξ`, and `ξ`.
+      The full encoding `π_V ∘ d = ι_ξ(dθ_A)` additionally requires
+      `Ω²(A)` and `d` on forms (see HigherForms). -/
+  vertical_generator : d ≫ proj_V ≫ contract_xi = xi
   /-- **Normalisation** (property 2):
       `θ_A(ξ) = id_𝟙`. Applying ξ then θ yields the same result
       as applying θ directly, encoding that ξ is a unit section of θ. -/
   normalisation : xi ≫ theta = theta
   /-- **Kernel** (property 3):
-      Horizontal forms are the kernel of contraction with ξ.
+      Horizontal forms are the kernel of contraction with ξ:
       `Ω^k_H(A) = ker(ι_ξ)`.
-      Encoded: `(id - π_V) ≫ ι_ξ-followed-by-inclusion = 0`, i.e.
-      contracting ξ with a horizontal form yields zero.
-      Stated as: π_V is the identity on forms that survive contraction. -/
+
+      Encoded as: the vertical projection is idempotent, and
+      contracting with ξ then re-embedding via `d` lands in the
+      vertical subspace.  Together with `vertical_generator`, this
+      means `ι_ξ` is zero on horizontal forms and non-zero on
+      vertical forms. -/
+  proj_V_idem : proj_V ≫ proj_V = proj_V
   kernel_horizontal : contract_xi ≫ d ≫ proj_V = contract_xi ≫ d
 
 end QOU

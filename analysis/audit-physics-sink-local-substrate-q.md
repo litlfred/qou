@@ -61,7 +61,7 @@ been audited for:
 | 5 | `def:maximal-torus` | definition | `QOU.MaximalTorus` | not_checked | — |
 | 5 | `def:weight-decomposition` | definition | `QOU.WeightDecomposition` | not_checked | — |
 | 6 | `def:projective-line-object` | definition | `QOU.ProjectiveLineObject` | not_checked | — |
-| 6 | `def:categorical-reeb` | definition | `QOU.CategoricalReeb` | not_checked | ~~Missing 2/3 properties~~ **FIXED**: vertical generator + kernel added |
+| 6 | `def:categorical-reeb` | definition | `QOU.CategoricalReeb` | not_checked | ~~Missing 2/3 properties~~ **FIXED**: vertical generator (`d ≫ proj_V ≫ contract_xi = xi`), kernel, `proj_V_idem` added |
 | 6 | `thm:categorical-reeb-exists` | theorem | `QOU.CategoricalReeb.ofWeightDecomposition` | not_checked | Takes answer as input (MEDIUM) |
 
 ### Layer 3 — Substrate & Differential Geometry (Depth 7)
