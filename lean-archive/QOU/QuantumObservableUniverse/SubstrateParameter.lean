@@ -45,12 +45,16 @@ theorem quantumPlanckConstant_nonneg {M : Type*} (sp : SubstrateParameter M)
   unfold quantumPlanckConstant
   have hq := sp.field_ge_one p
   have hpos := sp.field_pos p
-  linarith [inv_le_one_of_one_le₀ hq]
+  have hinv : (sp.field p)⁻¹ ≤ 1 := by
+    rw [inv_le_one_iff_of_pos hpos]
+    exact hq
+  linarith
 
 theorem quantumPlanckConstant_lt_one {M : Type*} (sp : SubstrateParameter M)
     (p : M) : quantumPlanckConstant sp p < 1 := by
   unfold quantumPlanckConstant
   have hpos := sp.field_pos p
-  linarith [inv_pos.mpr hpos]
+  have hinv : 0 < (sp.field p)⁻¹ := inv_pos.mpr hpos
+  linarith
 
 end QOU
