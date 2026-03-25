@@ -3,6 +3,7 @@ defaultTargets = ["QOU"]
 
 [leanOptions]
 autoImplicit = false
+profiler = true          # report per-declaration elaboration times
 
 [[lean_lib]]
 name = "Fred2005"
