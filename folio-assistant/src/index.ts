@@ -83,6 +83,17 @@ if (existsSync(folioConfigPath)) {
   }
 }
 
+// ── Read viewer_port from lean-mcp.config.json ──────────────────
+
+let viewerPort: number | undefined;
+const mcpConfigPath = resolve(repoRoot, "lean-mcp.config.json");
+if (existsSync(mcpConfigPath)) {
+  try {
+    const mcpConfig = JSON.parse(readFileSync(mcpConfigPath, "utf-8"));
+    if (mcpConfig.viewer_port) viewerPort = mcpConfig.viewer_port;
+  } catch { /* ignore */ }
+}
+
 // ── Create adapter ───────────────────────────────────────────────
 
 const gitHelper = new GitHelper(repoRoot);
@@ -108,6 +119,7 @@ const server = new FolioServer({
   assistantDir,
   adapter,
   serverName: "folio-assistant",
+  viewerPort,
 });
 
 if (mode === "stdio") {

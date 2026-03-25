@@ -58,6 +58,8 @@ export interface FolioServerConfig {
   adapter: ContentAdapter;
   /** Server name for MCP protocol. */
   serverName?: string;
+  /** Viewer HTTP port (stdio mode). Read from lean-mcp.config.json. */
+  viewerPort?: number;
 }
 
 // ── Main server class ────────────────────────────────────────────
@@ -211,7 +213,7 @@ export class FolioServer {
     const transport = new StdioServerTransport();
     await this.mcpServer.connect(transport);
 
-    const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+    const viewerPort = parseInt(process.env.VIEWER_PORT || String(this.config.viewerPort ?? 3200), 10);
     const self = this;
 
     Bun.serve({

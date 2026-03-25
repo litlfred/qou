@@ -2451,7 +2451,14 @@ if (mode === "stdio") {
   await server.connect(transport);
 
   // Start viewer HTTP server on a separate port
-  const viewerPort = parseInt(process.env.VIEWER_PORT || "3200", 10);
+  // Read viewer_port from lean-mcp.config.json (single source of truth)
+  let configViewerPort = "3200";
+  try {
+    const cfgPath = require("path").resolve(__dirname, "../../lean-mcp.config.json");
+    const cfg = JSON.parse(require("fs").readFileSync(cfgPath, "utf-8"));
+    if (cfg.viewer_port) configViewerPort = String(cfg.viewer_port);
+  } catch { /* ignore */ }
+  const viewerPort = parseInt(process.env.VIEWER_PORT || configViewerPort, 10);
 
   Bun.serve({
     port: viewerPort,

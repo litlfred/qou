@@ -114,7 +114,14 @@ fi
 
 # ── 5. MCP paper-assistant ─────────────────────────────────────
 ASSISTANT_OK=false
-ASSISTANT_PORT="${VIEWER_PORT:-3200}"
+# Read viewer_port from config (single source of truth)
+CONFIG_VIEWER_PORT=""
+if command -v jq &>/dev/null && [ -f "$REPO_ROOT/lean-mcp.config.json" ]; then
+  CONFIG_VIEWER_PORT=$(jq -r '.viewer_port // empty' "$REPO_ROOT/lean-mcp.config.json" 2>/dev/null)
+elif command -v python3 &>/dev/null && [ -f "$REPO_ROOT/lean-mcp.config.json" ]; then
+  CONFIG_VIEWER_PORT=$(python3 -c "import json; print(json.load(open('$REPO_ROOT/lean-mcp.config.json')).get('viewer_port',''))" 2>/dev/null)
+fi
+ASSISTANT_PORT="${VIEWER_PORT:-${CONFIG_VIEWER_PORT:-3200}}"
 if curl -sf --max-time 2 "http://localhost:${ASSISTANT_PORT}/health" &>/dev/null; then
     ASSISTANT_OK=true
 fi
