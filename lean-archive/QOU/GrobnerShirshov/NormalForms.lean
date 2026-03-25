@@ -239,6 +239,26 @@ private theorem lexEncoding_lt_of_lexLt_same_length :
 -- Mathlib's `List.Lex.isWellFounded` or a verbose `Acc.intro` term.
 --
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Well-foundedness of lexLt via the standard Acc-based double induction:
+-- outer induction on head generator rank, inner induction on tail accessibility.
+-- Cf. Coq's Lexicographic_Exponentiation for the classical construction.
+
+private theorem rank_lt_4 (g : SU2Gen) : g.rank < 4 := by
+  cases g <;> simp [SU2Gen.rank]
+
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+-- Well-foundedness of lexLt on `List SU2Gen` (ordinal type ω⁴).
+--
+-- Proof sketch (cf. Coq's Lexicographic_Exponentiation):
+-- Define mutual functions accAll/accCons where accAll is structural on the list
+-- and accCons uses Acc.rec on the tail. The head-rank-decrease case calls accAll
+-- on the predecessor (which terminates structurally). The same-rank case recurses
+-- via Acc on the tail.
+--
+-- Requires either Lean 4 `mutual` with mixed termination measures, or
+-- Mathlib's `List.Lex.isWellFounded` applied via the embedding
+-- SU2Gen.rank : SU2Gen → Fin 4.
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
 theorem lexLt_wf : WellFounded lexLt := by
   sorry
 

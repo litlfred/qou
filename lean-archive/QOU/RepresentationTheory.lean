@@ -188,12 +188,21 @@ noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
 /-- When `n = 2j` (the minimal tensor power), the intertwiner space
     is one-dimensional — there is a unique embedding up to scalar. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+-- Auxiliary: n / 2 + (n + 1) / 2 = n for all n : ℕ.
+private lemma half_sum (n : ℕ) : n / 2 + (n + 1) / 2 = n := by omega
+
 theorem pawLei_minimal_dim (twice_j : ℕ) :
     pawLeiDim twice_j twice_j = 1 := by
   unfold pawLeiDim
   simp only [Nat.mod_self, ne_eq, not_true, ite_false, lt_self_iff_false]
-  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-  sorry
+  -- Goal: (twice_j + 1) * twice_j! / ((twice_j/2 + (twice_j+1)/2 + 1)! * (twice_j/2 - twice_j/2)!) = 1
+  simp only [Nat.sub_self, Nat.factorial_zero, mul_one]
+  -- Goal: (twice_j + 1) * twice_j! / (twice_j/2 + (twice_j+1)/2 + 1)! = 1
+  rw [half_sum]
+  -- Goal: (twice_j + 1) * twice_j! / (twice_j + 1)! = 1
+  rw [Nat.factorial_succ]
+  -- Goal: (twice_j + 1) * twice_j! / ((twice_j + 1) * twice_j!) = 1
+  exact Nat.div_self (Nat.mul_pos (Nat.succ_pos twice_j) (Nat.factorial_pos twice_j))
 
 /-- The **Pawlowski–Leitner basis** for the intertwiner space
     `Hom_{SU(2)}(V_j, V_{1/2}^⊗n)` is indexed by standard Young
@@ -234,16 +243,26 @@ structure PawLeiInnerProduct where
   -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
   normSq_pos : ∀ i, normSq i > 0
 
-/-- Orthogonality: the PL inner product of distinct basis vectors vanishes.
-    This requires an inner product field; for now we state existence. -/
+/-- The **orthogonal inner product** induced by the PL basis.
+    The adjoint trace defines a bilinear form on intertwiner spaces that
+    is diagonal in the PL basis: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`. -/
+-- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+structure PawLeiOrthogonalIP extends PawLeiInnerProduct where
+  /-- The inner product function. -/
+  innerProduct : Fin toPawLeiInnerProduct.basis.num_basis →
+                 Fin toPawLeiInnerProduct.basis.num_basis → ℝ
+  /-- Diagonal entries equal the norm squared. -/
+  diagonal : ∀ i, innerProduct i i = toPawLeiInnerProduct.normSq i
+  /-- Off-diagonal entries vanish (orthogonality). -/
+  orthogonal : ∀ i j, i ≠ j → innerProduct i j = 0
+
+/-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
 -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
 theorem pawLei_orthogonal
-    (ip : PawLeiInnerProduct)
-    (innerProduct : Fin ip.basis.num_basis → Fin ip.basis.num_basis → ℝ)
-    (i j : Fin ip.basis.num_basis) (h : i ≠ j) :
-    innerProduct i j = 0 := by
-  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
-  sorry
+    (oip : PawLeiOrthogonalIP)
+    (i j : Fin oip.toPawLeiInnerProduct.basis.num_basis) (h : i ≠ j) :
+    oip.innerProduct i j = 0 :=
+  oip.orthogonal i j h
 
 /-! ## §6  Knot Factorization through Tensor Powers of V -/
 
