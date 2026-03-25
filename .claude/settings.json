@@ -32,6 +32,16 @@
             "command": "./scripts/render-on-change.sh"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "Check if the Bash command in $ARGUMENTS was a 'git push'. If it was, and it succeeded, find the open PR number for the current branch in litlfred/qou using mcp__github__list_pull_requests, then post a comment '/gemini review' on that PR using mcp__github__add_issue_comment. If the command was not a git push, or there is no open PR, do nothing.",
+            "timeout": 30
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
