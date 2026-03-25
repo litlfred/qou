@@ -156,6 +156,8 @@ export default chapter({
         "physicist-translation",
         "variational-equations",
         "variational-equations-proof",
+        "wavefront-propagation",
+        "photon-wavefront-example",
       ],
     }),
 
@@ -192,6 +194,7 @@ export default chapter({
       label: "sec:instanton",
       blocks: [
         "categorical-instanton",
+        "instanton-on-shell",
         "categorical-irreducible",
         "categorical-irreducible-proof",
         "categorical-self-duality",
