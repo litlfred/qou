@@ -39,7 +39,7 @@
       --f-mono:'JetBrains Mono','Consolas',monospace;
       --f-sz:17px; --f-lh:1.65;
     }
-    html{scroll-behavior:smooth;scroll-padding-top:50px}
+    html{scroll-behavior:auto;scroll-padding-top:50px}
     .ch-t,.sec-t,.env[id],.blk[id]{scroll-margin-top:50px}
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -1713,7 +1713,7 @@
       const goTo = mk('a','uph-goto');
       goTo.textContent = 'go to \u2197';
       goTo.href = `#${label}`;
-      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); };
+      goTo.onclick = (e) => { e.preventDefault(); const el = document.getElementById(label); if (el) el.scrollIntoView({behavior:'instant', block:'start'}); };
       hd.appendChild(goTo);
       const closeBtn = mk('span','uph-close');
       closeBtn.textContent = '\u2715';
@@ -2025,7 +2025,7 @@
       depOverlay.classList.remove('open');
       depCloseRhs();
       const el = document.getElementById(depRhsCurrentLabel);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
     };
     document.getElementById('dep-rhs-fb').onclick = () => {
       const block = depRhsCurrentLabel ? bix.get(depRhsCurrentLabel) : null;
@@ -2267,7 +2267,7 @@
           if (!dragNode || dragNode.label !== label) return;
           g.classList.remove('dragging'); dragNode = null;
           if (!dragMoved) { depOverlay.classList.remove('open'); depCloseRhs();
-            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            const el = document.getElementById(label); if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' }); }
         });
         nodeGroup.appendChild(g);
       }
@@ -2755,7 +2755,7 @@
             // Click the proofs toggle to open it
             const toggle = d.querySelector('.prf-toggle');
             if (toggle && !toggle.classList.contains('open')) toggle.click();
-            else if (toggle) toggle.scrollIntoView({behavior:'smooth',block:'nearest'});
+            else if (toggle) toggle.scrollIntoView({behavior:'instant',block:'nearest'});
           };
         } else {
           prfSym.style.color = 'var(--fg-d)';
@@ -3433,7 +3433,7 @@
                         if (t) {
                           const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
                           if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                          t.scrollIntoView({behavior:'smooth', block:'start'});
+                          t.scrollIntoView({behavior:'instant', block:'start'});
                         }
                       }, 150);
                     };
@@ -3503,7 +3503,6 @@
             if (body?.classList.contains('sb-ch-body')) body.style.display = 'block';
           }
         });
-        window.scrollTo(0, 0);
       }
 
       // Find which chapter a label belongs to
@@ -3584,10 +3583,10 @@
           sEl.onclick = (e) => {
             e.stopPropagation();
             showChapter(ch.number);
-            setTimeout(() => {
+            requestAnimationFrame(() => {
               const t = document.getElementById(sec.label);
-              if (t) t.scrollIntoView({behavior:'smooth', block:'start'});
-            }, 50);
+              if (t) window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
+            });
             blkList.style.display = blkList.style.display === 'none' ? '' : 'none';
           };
           chBody.appendChild(sEl);
@@ -3638,14 +3637,19 @@
 
               bEl.onclick = () => {
                 showChapter(ch.number);
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                   const t = document.getElementById(b.label);
                   if (t) {
                     const task = lazyQueue.find(q => q.el === t || q.el.contains?.(t) || t.contains?.(q.el));
                     if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                    t.scrollIntoView({behavior:'smooth', block:'start'});
+                    // Show hidden blocks (remarks/examples)
+                    const wrap = t.closest('.blk-remark, .blk-example');
+                    if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+                    window.scrollTo({ top: t.offsetTop - 48, behavior: 'instant' });
+                    t.style.outline = '2px solid var(--ac)';
+                    setTimeout(() => { t.style.outline = ''; }, 2000);
                   }
-                }, 50);
+                });
               };
               blkList.appendChild(bEl);
             }
@@ -5194,7 +5198,7 @@
           // Force lazy-hydrate
           const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
           if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.scrollIntoView({ behavior: 'instant', block: 'start' });
           // Open inline editor if it exists
           setTimeout(() => {
             if (el._inlineEditor && !el._inlineEditor.editor.classList.contains('open')) {
@@ -5319,37 +5323,41 @@
         if (chNum !== null) paper._showChapter(chNum);
       }
 
-      const el = document.getElementById(label);
-      if (!el) { pendingScroll = null; return; }
+      // Use rAF to ensure layout is settled after chapter switch
+      requestAnimationFrame(() => {
+        const el = document.getElementById(label);
+        if (!el) { pendingScroll = null; return; }
 
-      // Force lazy-hydrate so content is visible
-      const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
-      if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
+        // Force lazy-hydrate so content is visible
+        const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
+        if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
 
-      // If hidden (remark/example), show it and its wrapper
-      const wrap = el.closest('.blk-remark, .blk-example');
-      if (wrap && wrap.style.display === 'none') wrap.style.display = '';
+        // If hidden (remark/example), show it and its wrapper
+        const wrap = el.closest('.blk-remark, .blk-example');
+        if (wrap && wrap.style.display === 'none') wrap.style.display = '';
 
-      // If inside a collapsed example toggle panel, open it
-      const exPanel = el.closest('.ex-panel');
-      if (exPanel && !exPanel.classList.contains('open')) {
-        exPanel.classList.add('open');
-        const toggle = exPanel.previousElementSibling;
-        if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
-      }
+        // If inside a collapsed example toggle panel, open it
+        const exPanel = el.closest('.ex-panel');
+        if (exPanel && !exPanel.classList.contains('open')) {
+          exPanel.classList.add('open');
+          const toggle = exPanel.previousElementSibling;
+          if (toggle?.classList.contains('ex-toggle')) toggle.classList.add('open');
+        }
 
-      // Also hide the stub if there is one
-      const stub = wrap?.previousElementSibling;
-      if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
+        // Also hide the stub if there is one
+        const stub = wrap?.previousElementSibling;
+        if (stub?.classList.contains('blk-stub')) stub.style.display = 'none';
 
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      el.style.outline = '2px solid var(--ac)';
-      setTimeout(() => { el.style.outline = ''; }, 2000);
+        // Instant jump — no smooth scroll (avoids drift from lazy content)
+        window.scrollTo({ top: el.offsetTop - 48, behavior: 'instant' });
+        el.style.outline = '2px solid var(--ac)';
+        setTimeout(() => { el.style.outline = ''; }, 2000);
 
-      // Show "referenced by" panel when block is the direct URL target
-      showReferencedBy(label, el);
+        // Show "referenced by" panel when block is the direct URL target
+        showReferencedBy(label, el);
 
-      pendingScroll = null;
+        pendingScroll = null;
+      });
     }
 
     // ── Scroll-tracking: update URL hash after 5s pause on same block ──
@@ -5367,6 +5375,19 @@
       const lbl = topEl.id;
       if (!lbl || lbl === scrollTrackLabel) return;
       scrollTrackLabel = lbl;
+
+      // Update toplet with current content name
+      const toplet = document.getElementById('toplet');
+      if (toplet && paper) {
+        const titleEl = topEl.querySelector('.env-title, .sec-title-text, .ch-title-text');
+        const titleText = titleEl?.textContent?.trim();
+        if (titleText) {
+          toplet.textContent = titleText;
+        } else {
+          toplet.textContent = `Folio: ${paper.title}`;
+        }
+      }
+
       clearTimeout(scrollTrackTimer);
       scrollTrackTimer = setTimeout(() => {
         if (scrollTrackLabel === lbl) {
@@ -5724,7 +5745,7 @@
                 if (el) {
                   const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
                   if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                  el.scrollIntoView({behavior:'smooth',block:'start'});
+                  el.scrollIntoView({behavior:'instant',block:'start'});
                   el.style.outline = '2px solid var(--yel)';
                   setTimeout(() => { el.style.outline = ''; }, 2500);
                 }
@@ -5779,7 +5800,7 @@
                     // Hydrate lazy block if needed
                     const task = lazyQueue.find(t => t.el === el || t.el.contains?.(el) || el.contains?.(t.el));
                     if (task) { task.init(); lazyQueue.splice(lazyQueue.indexOf(task), 1); lazyObs.unobserve(task.el); }
-                    el.scrollIntoView({behavior:'smooth', block:'start'});
+                    el.scrollIntoView({behavior:'instant', block:'start'});
                     // Open inline editor
                     setTimeout(() => {
                       if (el._inlineEditor) el._inlineEditor.btn.click();
