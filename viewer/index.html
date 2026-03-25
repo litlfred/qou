@@ -567,7 +567,7 @@
     .bb th{background:var(--bg-r);font-weight:600;font-family:var(--f-head);font-size:.85em}
     .bb td{vertical-align:middle}
     .bb tr:hover{background:var(--bg-r)}
-    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.4rem 0}
+    .katex-display{overflow-x:auto;overflow-y:visible;padding:.4rem 0}
     .katex{color:var(--fg)}
 
     /* TeX blocks */
@@ -1644,9 +1644,9 @@
     }
     function renderMath(el) {
       for (const m of el.querySelectorAll('[data-mi]'))
-        try { katex.render(m.textContent, m, {throwOnError:false, macros:katexMacros}); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, macros:katexMacros}); } catch(e) { console.error('[katex-inline]', e, m.textContent?.slice(0,80)); }
       for (const m of el.querySelectorAll('[data-md]'))
-        try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch {}
+        try { katex.render(m.textContent, m, {throwOnError:false, displayMode:true, macros:katexMacros}); m.classList.add('katex-display'); } catch(e) { console.error('[katex-display]', e, m.textContent?.slice(0,80)); }
     }
 
     // ── Resolve cross-ref links: replace generic text with block titles ──
