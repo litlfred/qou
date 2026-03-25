@@ -47,6 +47,7 @@ export default chapter({
         "quantum-observable-universe",
         "frobenius-integration",
         "yekutieli-stokes-remark",
+        "fibre-functor-rigidity",
         "qou-su2",
         "base-field-independence",
         "maximal-torus",
