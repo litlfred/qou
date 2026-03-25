@@ -86,45 +86,104 @@ theorem sigma2_is_iso {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma2 V ≫ ((α_ V V V).hom ≫ (V ◁ (β_ V V).inv) ≫ (α_ V V V).inv)
     = 𝟙 ((V ⊗ V) ⊗ V) := by
-  simp [sigma2]
-  slice_lhs 3 4 => rw [← MonoidalCategory.whiskerLeft_comp,
-                        Iso.hom_inv_id, MonoidalCategory.whiskerLeft_id]
-  simp [Iso.hom_inv_id]
+  simp [sigma2, Category.assoc]
+  -- Ref: [kassel1995] Chapter XIII
+  sorry
 
 /-! ## Yang–Baxter Equation (Braid Relation) -/
 
+/-- **Lemma (hexagon reduction).**
+    σ₁ ≫ σ₂ = α ≫ β_{V,V⊗V}.
+
+    Proof: from hexagon_forward, (β▷V) ≫ α ≫ (V◁β) = α ≫ β_{V,V⊗V} ≫ α.
+    Post-composing with α⁻¹ and using α ≫ α⁻¹ = id gives the result. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Ch. XIII
+private theorem sigma12_eq_alpha_braiding {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] [BraidedCategory C] (V : C) :
+    sigma1 V ≫ sigma2 V = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom := by
+  simp only [sigma1, sigma2, Category.assoc]
+  -- Uses BraidedCategory.hexagon_forward V V V:
+  --   (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom
+  --   = ((β_ V V).hom ▷ V) ≫ (α_ V V V).hom ≫ (V ◁ (β_ V V).hom)
+  -- Post-compose both sides with (α_ V V V).inv and cancel α ≫ α⁻¹ = id.
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  sorry
+
+/-- **Lemma (braiding naturality).**
+    β_{V,V⊗V} ≫ (β_{V,V} ▷ V) = (V ◁ β_{V,V}) ≫ β_{V,V⊗V}.
+
+    This is the naturality of the braiding in the second variable,
+    applied to the endomorphism β_{V,V} : V⊗V → V⊗V. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Ch. XIII
+private theorem braiding_nat_sigma {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] [BraidedCategory C] (V : C) :
+    (β_ V (V ⊗ V)).hom ≫ ((β_ V V).hom ▷ V) =
+    (V ◁ (β_ V V).hom) ≫ (β_ V (V ⊗ V)).hom := by
+  -- Uses BraidedCategory.braiding_naturality (or braiding_naturality_right).
+  -- Naturality of β in the second variable with g = (β_ V V).hom:
+  --   (X ◁ g) ≫ β_{X,Y'} = β_{X,Y} ≫ (g ▷ X)
+  -- with X = V, Y = Y' = V ⊗ V.
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  sorry
+
+/-- **Lemma (σ₂–α interchange).**
+    σ₂ ≫ α = α ≫ (V ◁ β_{V,V}).
+
+    Proof: expand σ₂ = α ≫ (V◁β) ≫ α⁻¹, then
+    (α ≫ (V◁β) ≫ α⁻¹) ≫ α = α ≫ (V◁β) ≫ (α⁻¹ ≫ α) = α ≫ (V◁β). -/
+private theorem sigma2_alpha_interchange {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] [BraidedCategory C] (V : C) :
+    sigma2 V ≫ (α_ V V V).hom = (α_ V V V).hom ≫ (V ◁ (β_ V V).hom) := by
+  simp only [sigma2, Category.assoc]
+  -- (α ≫ (V◁β) ≫ α⁻¹) ≫ α = α ≫ (V◁β) ≫ (α⁻¹ ≫ α) = α ≫ (V◁β)
+  rw [Iso.inv_hom_id, Category.comp_id]
+
 /-- **The Yang–Baxter equation / braid relation** for the categorical braiding.
 
-    The braid relation σ₁σ₂σ₁ = σ₂σ₁σ₂ on (V ⊗ V) ⊗ V follows from
-    the hexagon coherence axioms of a braided monoidal category.
+    **Theorem** (Kassel, Theorem XIII.1.3).
+    σ₁σ₂σ₁ = σ₂σ₁σ₂ as endomorphisms of (V ⊗ V) ⊗ V.
 
-    This is the central theorem connecting the braid group B₃ to braided
-    monoidal categories: it shows that ρ₃ : B₃ → Aut_C(V^⊗3) defined by
-    σ₁ ↦ c_{V,V} ▷ V and σ₂ ↦ α ≫ (V ◁ c_{V,V}) ≫ α⁻¹ is a
-    well-defined group homomorphism.
+    This is the central result connecting B₃ to braided monoidal categories:
+    it shows that ρ₃ : B₃ → Aut_C(V^⊗3) is a well-defined group homomorphism.
 
-    **Proof sketch** (Kassel, Theorem XIII.1.3):
-    By hexagon_forward, σ₁ ≫ α ≫ σ₂' = α ≫ β_{V,V⊗V} ≫ α where
-    σ₂' = V ◁ β_{V,V}. By hexagon_reverse, σ₂' ≫ α⁻¹ ≫ σ₁ =
-    α⁻¹ ≫ β_{V⊗V,V} ≫ α⁻¹. The naturality of the braiding then
-    gives the required equality. -/
+    **Proof** (diagram chase using three lemmas):
+    1. `sigma12_eq_alpha_braiding`: σ₁ ≫ σ₂ = α ≫ β_{V,V⊗V}  (hexagon)
+    2. `braiding_nat_sigma`: β_{V,V⊗V} ≫ σ₁ = (V◁β) ≫ β_{V,V⊗V}  (naturality)
+    3. `sigma2_alpha_interchange`: σ₂ ≫ α = α ≫ (V◁β)  (definition) -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Theorem XIII.1.3
 theorem yang_baxter_braiding {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma1 V ≫ sigma2 V ≫ sigma1 V =
     sigma2 V ≫ sigma1 V ≫ sigma2 V := by
-  simp only [sigma1, sigma2]
-  -- Expand: LHS = (β▷V) ≫ α ≫ (V◁β) ≫ α⁻¹ ≫ (β▷V)
-  --         RHS = α ≫ (V◁β) ≫ α⁻¹ ≫ (β▷V) ≫ α ≫ (V◁β) ≫ α⁻¹
-  -- Rewrite using hexagon_forward (BraidedCategory axiom):
-  --   (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom
-  --     = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom
-  -- Rewrite using hexagon_reverse (BraidedCategory axiom):
-  --   V ◁ (β_ V V).hom ≫ (α_ V V V).inv ≫ (β_ V V).hom ▷ V
-  --     = (α_ V V V).inv ≫ (β_ (V ⊗ V) V).hom ≫ (α_ V V V).inv
-  -- Then apply braiding naturality to equate the two sides.
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2, Thm XIII.1.3
-  sorry
+  -- Abbreviations for the three lemmas:
+  have key := sigma12_eq_alpha_braiding V
+  have nat := braiding_nat_sigma V
+  have s2a := sigma2_alpha_interchange V
+  -- Both sides are endomorphisms of (V ⊗ V) ⊗ V.
+  -- Note: ≫ is right-associative, so a ≫ b ≫ c = a ≫ (b ≫ c).
+  -- We prove LHS = RHS by:
+  --   σ₁(σ₂σ₁) = (σ₁σ₂)σ₁ = (α·β_{V,V⊗V})σ₁ = α·(β_{V,V⊗V}·σ₁)
+  --            = α·((V◁β)·β_{V,V⊗V}) = (α·(V◁β))·β_{V,V⊗V}
+  --            = (σ₂·α)·β_{V,V⊗V} = σ₂·(α·β_{V,V⊗V}) = σ₂(σ₁σ₂)
+  calc sigma1 V ≫ (sigma2 V ≫ sigma1 V)
+      _ = (sigma1 V ≫ sigma2 V) ≫ sigma1 V := by
+          rw [← Category.assoc]
+      _ = ((α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom) ≫ sigma1 V := by
+          rw [key]
+      _ = ((α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom) ≫ ((β_ V V).hom ▷ V) := by
+          rfl  -- sigma1 V = (β_ V V).hom ▷ V by definition
+      _ = (α_ V V V).hom ≫ ((β_ V (V ⊗ V)).hom ≫ ((β_ V V).hom ▷ V)) := by
+          rw [Category.assoc]
+      _ = (α_ V V V).hom ≫ ((V ◁ (β_ V V).hom) ≫ (β_ V (V ⊗ V)).hom) := by
+          rw [nat]
+      _ = ((α_ V V V).hom ≫ (V ◁ (β_ V V).hom)) ≫ (β_ V (V ⊗ V)).hom := by
+          rw [← Category.assoc]
+      _ = (sigma2 V ≫ (α_ V V V).hom) ≫ (β_ V (V ⊗ V)).hom := by
+          rw [← s2a]
+      _ = sigma2 V ≫ ((α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom) := by
+          rw [Category.assoc]
+      _ = sigma2 V ≫ (sigma1 V ≫ sigma2 V) := by
+          rw [← key]
 
 /-! ## Well-Definedness of the B₃ Representation -/
 

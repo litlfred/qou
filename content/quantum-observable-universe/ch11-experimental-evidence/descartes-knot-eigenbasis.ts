@@ -12,6 +12,7 @@ export default corollary({
     "def:descartes-condition",
     "cor:descartes-braid-structure",
     "prop:braid-action-tensor",
+    "thm:jones-markov-trace",
     "prop:knot-eigenbasis-complete",
     "def:quantum-su2",
     "rem:r-matrix-braiding",
