@@ -106,6 +106,15 @@ export default chapter({
     }),
 
     section({
+      title: "Nuclear Binding Lagrangian",
+      label: "sec:nuclear-binding-lagrangian",
+      blocks: [
+        "skein-binding-lagrangian",
+        "beta-stability",
+      ],
+    }),
+
+    section({
       title: "Categorical Möbius energy and self-avoidance",
       label: "sec:mobius-energy",
       blocks: [
