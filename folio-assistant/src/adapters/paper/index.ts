@@ -10,6 +10,13 @@ import { existsSync, readFileSync, writeFileSync, readdirSync, mkdirSync } from 
 import { join, resolve, extname } from "path";
 import Anthropic from "@anthropic-ai/sdk";
 
+import { registerRenderTools } from "./tools/render.js";
+import { registerValidateTools } from "./tools/validate.js";
+import { registerLeanTools } from "./tools/lean.js";
+import { registerDepsTools } from "../../tools/check-deps.js";
+import { registerPreferenceTools } from "../../tools/preferences.js";
+import { registerPreviewTools } from "../../tools/preview.js";
+
 import type {
   ContentAdapter,
   FolioItem,
@@ -694,6 +701,98 @@ End every response with suggested follow-ups:
       }
     }
 
+    // Block changelog (git log for block's sibling files)
+    if (path === "/api/block-changelog") {
+      const id = url.searchParams.get("id");
+      const label = url.searchParams.get("label");
+      const limit = parseInt(url.searchParams.get("limit") || "20");
+      if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400, headers: CORS });
+      if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400, headers: CORS });
+      try {
+        const paper = await this.getDocument(id);
+        if (!paper) return Response.json({ error: "Paper not found" }, { status: 404, headers: CORS });
+        let rootName: string | null = null;
+        let chapterDir: string | null = null;
+        for (const ch of paper.chapters || []) {
+          for (const sec of ch.sections || []) {
+            for (const blk of sec.blocks || []) {
+              if (blk.label === label) { rootName = blk.rootName; break; }
+            }
+            if (rootName) break;
+          }
+          if (rootName) {
+            const paperDir = join(this.contentDir, id || "");
+            for (const d of readdirSync(paperDir, { withFileTypes: true })) {
+              if (d.isDirectory() && existsSync(join(paperDir, d.name, `${rootName}.ts`))) {
+                chapterDir = d.name; break;
+              }
+            }
+            break;
+          }
+        }
+        if (!rootName || !chapterDir) {
+          return Response.json({ error: `Block "${label}" not found` }, { status: 404, headers: CORS });
+        }
+        const base = `content/${id}/${chapterDir}/${rootName}`;
+        const files = [`${base}.ts`, `${base}.md`, `${base}.lean`];
+        const commits = this.gitHelper.gitLogFiles(files, limit);
+        return Response.json({ label, rootName, chapterDir, commits }, { headers: { "Cache-Control": "no-cache", ...CORS } });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
+      }
+    }
+
+    // Undo impact analysis (reverse dependency walk)
+    if (path === "/api/undo-impact") {
+      const id = url.searchParams.get("id");
+      const label = url.searchParams.get("label");
+      if (!id) return Response.json({ error: "Missing ?id= parameter" }, { status: 400, headers: CORS });
+      if (!label) return Response.json({ error: "Missing ?label= parameter" }, { status: 400, headers: CORS });
+      try {
+        const paper = await this.getDocument(id);
+        if (!paper) return Response.json({ error: "Paper not found" }, { status: 404, headers: CORS });
+        const allBlocks: Array<{ label: string; kind: string; title: string; uses: string[] }> = [];
+        const reverseDeps = new Map<string, string[]>();
+        for (const ch of paper.chapters || []) {
+          for (const sec of ch.sections || []) {
+            for (const blk of sec.blocks || []) {
+              if (!blk.label) continue;
+              allBlocks.push({ label: blk.label, kind: blk.kind, title: blk.title || "", uses: blk.uses || [] });
+              for (const dep of blk.uses || []) {
+                if (!reverseDeps.has(dep)) reverseDeps.set(dep, []);
+                reverseDeps.get(dep)!.push(blk.label);
+              }
+            }
+          }
+        }
+        const target = allBlocks.find(b => b.label === label);
+        if (!target) return Response.json({ error: `Block "${label}" not found` }, { status: 404, headers: CORS });
+        const directDependents = (reverseDeps.get(label) || []).map(l => allBlocks.find(b => b.label === l)!).filter(Boolean);
+        const visited = new Set<string>([label]);
+        const queue = [...(reverseDeps.get(label) || [])];
+        const transitive: typeof allBlocks = [];
+        while (queue.length) {
+          const cur = queue.shift()!;
+          if (visited.has(cur)) continue;
+          visited.add(cur);
+          const blk = allBlocks.find(b => b.label === cur);
+          if (blk) transitive.push(blk);
+          for (const next of reverseDeps.get(cur) || []) {
+            if (!visited.has(next)) queue.push(next);
+          }
+        }
+        return Response.json({
+          target: { label: target.label, kind: target.kind, title: target.title },
+          directDependents: directDependents.map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+          transitiveDependents: transitive.filter(b => !directDependents.some(d => d.label === b.label))
+            .map(b => ({ label: b.label, kind: b.kind, title: b.title })),
+          totalAffected: transitive.length,
+        }, { headers: { "Cache-Control": "no-cache", ...CORS } });
+      } catch (e) {
+        return Response.json({ error: String(e) }, { status: 500, headers: CORS });
+      }
+    }
+
     return null;
   }
 
@@ -868,9 +967,14 @@ End every response with suggested follow-ups:
   // ── MCP tool registration ──────────────────────────────────────
 
   registerMcpTools(server: any): void {
-    // Paper-specific MCP tools are registered via separate tool modules.
-    // Import and register them here.
-    // For now, delegate to the original tool registration functions
-    // which will be copied into folio-assistant/src/adapters/paper/tools/
+    // Paper-specific MCP tools
+    registerRenderTools(server);
+    registerValidateTools(server);
+    registerLeanTools(server);
+
+    // Generic tools
+    registerDepsTools(server);
+    registerPreferenceTools(server);
+    registerPreviewTools(server);
   }
 }

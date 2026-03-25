@@ -185,6 +185,29 @@ export class GitHelper {
     return this.gitImportTs(branch!, relPath);
   }
 
+  /** Get commits that touched any of the given files (relative paths). */
+  gitLogFiles(relPaths: string[], limit = 20): Array<{ sha: string; shortSha: string; date: string; author: string; message: string }> {
+    const result = spawnSync("git", [
+      "log", `--max-count=${limit}`,
+      "--pretty=format:%H|%h|%aI|%an|%s",
+      "--", ...relPaths,
+    ], { cwd: this.repoRoot, stdio: "pipe", timeout: 5000 });
+    if (result.status !== 0) return [];
+    return result.stdout.toString().trim().split("\n").filter(Boolean).map(line => {
+      const [sha, shortSha, date, author, ...rest] = line.split("|");
+      return { sha, shortSha, date, author, message: rest.join("|") };
+    });
+  }
+
+  /** Read a binary file at a specific commit SHA. */
+  gitShowBinaryAt(sha: string, relPath: string): Buffer | null {
+    const result = spawnSync("git", ["show", `${sha}:${relPath}`], {
+      cwd: this.repoRoot, stdio: "pipe", timeout: 5000,
+    });
+    if (result.status !== 0) return null;
+    return result.stdout as Buffer;
+  }
+
   /** List directory — from disk if current branch, via git otherwise. */
   listDirBranch(branch: string | undefined, relDir: string): string[] {
     if (this.isCurrentBranch(branch)) {

@@ -41,7 +41,7 @@ The viewer runs on `localhost:<viewer_port>` (from `lean-mcp.config.json`).
 Each block links via its label anchor:
 
 ```
-http://localhost:8080/viewer/#<label>
+http://localhost:8080/assistant/#<label>
 ```
 
 ### Presentation format
@@ -51,8 +51,8 @@ link), **What changed** (1-line description). For example:
 
 | Block | What changed |
 |-------|-------------|
-| [def:quantum-universe](http://localhost:8080/viewer/#def:quantum-universe) | Updated notation from λ to ∫_A |
-| [prf:dq-squared](http://localhost:8080/viewer/#prf:dq-squared) | Added first SVG render |
+| [def:quantum-universe](http://localhost:8080/assistant/#def:quantum-universe) | Updated notation from λ to ∫_A |
+| [prf:dq-squared](http://localhost:8080/assistant/#prf:dq-squared) | Added first SVG render |
 
 ### Categorize changes
 
@@ -90,9 +90,9 @@ After pushing changes to `claude/feature-xyz`:
 >
 > | Block | What changed |
 > |-------|-------------|
-> | [def:quantum-universe](http://localhost:8080/viewer/#def:quantum-universe) | Rewrote axiom 3 for clarity |
-> | [prop:frobenius-relation](http://localhost:8080/viewer/#prop:frobenius-relation) | Re-rendered SVG (notation update) |
-> | [prf:dq-squared](http://localhost:8080/viewer/#prf:dq-squared) | Added first SVG render |
+> | [def:quantum-universe](http://localhost:8080/assistant/#def:quantum-universe) | Rewrote axiom 3 for clarity |
+> | [prop:frobenius-relation](http://localhost:8080/assistant/#prop:frobenius-relation) | Re-rendered SVG (notation update) |
+> | [prf:dq-squared](http://localhost:8080/assistant/#prf:dq-squared) | Added first SVG render |
 >
 > **Commits:**
 > - [Rewrite axiom 3](https://github.com/litlfred/qou/commit/abc123)

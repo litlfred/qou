@@ -14,6 +14,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+ASSISTANT_DIR="$REPO_ROOT/folio-assistant"
+# Legacy path (fallback if folio-assistant/ not yet set up)
 MCP_DIR="$REPO_ROOT/scripts/mcp-server"
 
 MODE="--stdio"
@@ -53,15 +55,26 @@ if $DO_INSTALL; then
   bash "$MCP_DIR/install.sh"
 fi
 
-# ── Ensure MCP server node_modules are up to date ────────────────
+# ── Determine which server to use ─────────────────────────────────
+# Prefer folio-assistant/ (new architecture) over scripts/mcp-server/ (legacy).
+
+USE_NEW=false
+if [ -f "$ASSISTANT_DIR/package.json" ] && [ -f "$ASSISTANT_DIR/src/index.ts" ]; then
+  USE_NEW=true
+  SERVER_DIR="$ASSISTANT_DIR"
+else
+  SERVER_DIR="$MCP_DIR"
+fi
+
+# ── Ensure server node_modules are up to date ────────────────────
 # Re-run bun install if node_modules is missing OR package.json is
 # newer than the lockfile (i.e. a dependency was added/changed).
 
-if [ ! -d "$MCP_DIR/node_modules" ] \
-  || [ "$MCP_DIR/package.json" -nt "$MCP_DIR/bun.lock" ] 2>/dev/null \
-  || [ ! -f "$MCP_DIR/bun.lock" ]; then
-  echo "[start-folio-assistant] Installing MCP server dependencies..." >&2
-  cd "$MCP_DIR" && bun install 2>&1 >&2
+if [ ! -d "$SERVER_DIR/node_modules" ] \
+  || [ "$SERVER_DIR/package.json" -nt "$SERVER_DIR/bun.lock" ] 2>/dev/null \
+  || [ ! -f "$SERVER_DIR/bun.lock" ]; then
+  echo "[start-folio-assistant] Installing server dependencies..." >&2
+  cd "$SERVER_DIR" && bun install 2>&1 >&2
 fi
 
 # ── Ensure content pipeline node_modules exist ───────────────────
@@ -104,11 +117,23 @@ echo "" >&2
 # ── Check-only mode ─────────────────────────────────────────────
 
 if $CHECK_ONLY; then
-  cd "$MCP_DIR"
-  exec bun run server.ts --check-deps
+  if $USE_NEW; then
+    cd "$ASSISTANT_DIR"
+    exec bun run src/index.ts --check-deps
+  else
+    cd "$MCP_DIR"
+    exec bun run server.ts --check-deps
+  fi
 fi
 
 # ── Start server ─────────────────────────────────────────────────
 
-cd "$MCP_DIR"
-exec bun run server.ts "$MODE"
+if $USE_NEW; then
+  echo "[start-folio-assistant] Starting folio-assistant (new architecture)..." >&2
+  cd "$ASSISTANT_DIR"
+  exec bun run src/index.ts "$MODE"
+else
+  echo "[start-folio-assistant] Starting legacy MCP server..." >&2
+  cd "$MCP_DIR"
+  exec bun run server.ts "$MODE"
+fi
