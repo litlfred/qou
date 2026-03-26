@@ -115,6 +115,11 @@ export default chapter({
         "categorical-neutron",
         "stable-nucleus",
         "torus-hopf-stability",
+        // Integer stability and Diophantine valley
+        "integer-stability",
+        "diophantine-valley",
+        "valley-table",
+        "valley-stability",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
