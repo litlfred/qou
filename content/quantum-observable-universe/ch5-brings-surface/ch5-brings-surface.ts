@@ -135,6 +135,9 @@ export default chapter({
         "skein-shell-correction",
         "electron-shells-hopf",
         "helium-hopf-diagram",
+        "noble-gas-characterization",
+        "metallic-character-knot",
+        "francium-extremal-metal",
         "hydrogen-knot-structure",
         "hydrogen-orbitals",
         // The Descartes theorem
