@@ -141,6 +141,7 @@ export default chapter({
         "hydrogen-orbitals",
         "reidemeister-mass-invariance",
         "orbital-space-normal-bundle",
+        "orbital-fourier-decomposition",
         "higgs-t28",
         // The Descartes theorem
         "descartes",
