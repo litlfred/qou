@@ -49,7 +49,7 @@ cat /tmp/qou-lean-build-status.json 2>/dev/null
 Run the setup script if lean/elan are missing:
 
 ```bash
-./scripts/setup-lean-mcp.sh
+./scripts/start-folio-assistant.sh --install
 ```
 
 If the script fails (e.g., 403 errors from network restrictions in

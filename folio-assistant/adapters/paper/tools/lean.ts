@@ -138,7 +138,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Run: ./scripts/start-folio-assistant.sh --install",
           }],
         };
       }
@@ -191,7 +191,7 @@ export function registerLeanTools(server: McpServer): void {
         return {
           content: [{
             type: "text" as const,
-            text: "Error: lake not installed. Run: ./scripts/setup-lean-mcp.sh",
+            text: "Error: lake not installed. Run: ./scripts/start-folio-assistant.sh --install",
           }],
         };
       }

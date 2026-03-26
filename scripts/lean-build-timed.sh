@@ -31,7 +31,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if ! command -v lake &>/dev/null; then
-    echo "Error: lake not found. Run ./scripts/setup-lean-mcp.sh first."
+    echo "Error: lake not found. Run ./scripts/start-folio-assistant.sh --install first."
     exit 1
 fi
 

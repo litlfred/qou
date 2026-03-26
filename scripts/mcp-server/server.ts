@@ -3021,7 +3021,7 @@ if (args.includes("--check-deps")) {
     { name: "pdflatex",  required: true,  cmd: "pdflatex --version", hint: "sudo apt install texlive-latex-base texlive-latex-extra" },
     { name: "pandoc",    required: false, cmd: "pandoc --version",  hint: "sudo apt install pandoc" },
     { name: "pdftoppm",  required: false, cmd: "which pdftoppm",    hint: "sudo apt install poppler-utils" },
-    { name: "lean",      required: false, cmd: "lean --version",    hint: "./scripts/setup-lean-mcp.sh" },
+    { name: "lean",      required: false, cmd: "lean --version",    hint: "./scripts/start-folio-assistant.sh --install" },
     { name: "lake",      required: false, cmd: "which lake",        hint: "Installed with lean via elan" },
     { name: "uv",        required: false, cmd: "uv --version",      hint: "curl -LsSf https://astral.sh/uv/install.sh | sh" },
     { name: "rg",        required: false, cmd: "rg --version",      hint: "sudo apt install ripgrep" },

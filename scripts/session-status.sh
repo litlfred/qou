@@ -109,7 +109,7 @@ if [ -n "$REMOTE_URL" ]; then
 fi
 
 if [ "$LEAN_MODE" = "none" ]; then
-    LEAN_FIX="Run: ./scripts/setup-lean-mcp.sh"
+    LEAN_FIX="Run: ./scripts/start-folio-assistant.sh --install"
 fi
 
 # ── 5. MCP paper-assistant ─────────────────────────────────────

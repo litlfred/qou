@@ -71,7 +71,7 @@ const DEPS: DepCheck[] = [
       const v = execSync("lean --version", { encoding: "utf-8" }).trim();
       return v;
     },
-    install_hint: "./scripts/setup-lean-mcp.sh",
+    install_hint: "./scripts/start-folio-assistant.sh --install",
   },
   {
     name: "lake",

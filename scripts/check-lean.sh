@@ -133,9 +133,9 @@ case "$MODE" in
         ;;
     none)
         if [ -n "$REMOTE_URL" ]; then
-            MSG="No Lean available locally or remotely ($REMOTE_URL unreachable). Run: ./scripts/setup-lean-mcp.sh"
+            MSG="No Lean available locally or remotely ($REMOTE_URL unreachable). Run: ./scripts/start-folio-assistant.sh --install"
         else
-            MSG="Lean not installed. Run: ./scripts/setup-lean-mcp.sh"
+            MSG="Lean not installed. Run: ./scripts/start-folio-assistant.sh --install"
         fi
         ;;
 esac

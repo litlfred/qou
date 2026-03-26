@@ -439,20 +439,20 @@ configured via `.mcp.json`. It provides Claude Code with:
 - Code actions ("Try This"), profiling, axiom verification
 - Local project search (requires ripgrep)
 
-### Setup (ChromeOS / Crostini)
+### Setup
 
-Prerequisites: `git`, `curl`.
+All MCP functionality — including Lean tools — is served through
+the unified `paper-assistant` server. To install Lean dependencies:
 
 ```bash
-./scripts/setup-lean-mcp.sh
+./scripts/start-folio-assistant.sh --install
 ```
 
-This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
-`lean-lsp-mcp` via uvx.
+This installs: elan, the Lean toolchain pinned in
+`lean-archive/lean-toolchain`, and fetches the Mathlib cache.
 
-**Important**: Run `lake build` in `lean/` before first MCP session to avoid
-timeouts.
+**Important**: Run `lake build` in `lean-archive/` before first MCP
+session to avoid timeouts.
 
 ### Remote MCP server
 

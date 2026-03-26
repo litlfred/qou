@@ -108,12 +108,12 @@ print_timing_report() {
 
 # ── Pre-check: is lean even available? ────────────────────────────
 if ! command -v lean &>/dev/null; then
-    write_status "unavailable" "Lean not installed. Run: ./scripts/setup-lean-mcp.sh" "check" 0
+    write_status "unavailable" "Lean not installed. Run: ./scripts/start-folio-assistant.sh --install" "check" 0
     exit 0
 fi
 
 if ! command -v lake &>/dev/null; then
-    write_status "unavailable" "Lake not installed. Run: ./scripts/setup-lean-mcp.sh" "check" 0
+    write_status "unavailable" "Lake not installed. Run: ./scripts/start-folio-assistant.sh --install" "check" 0
     exit 0
 fi
 

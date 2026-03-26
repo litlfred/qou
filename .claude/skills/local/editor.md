@@ -38,7 +38,7 @@ MCP server.** Tell the author:
 
 > Local Lean not available — using remote MCP at `<remote_url>`.
 > All Lean MCP tools work normally. To set up local Lean for
-> faster response: `./scripts/setup-lean-mcp.sh`
+> faster response: `./scripts/start-folio-assistant.sh --install`
 
 To use remote mode, the MCP tools should be called via the remote
 server URL. The `.mcp.json` defines the local stdio server; for
@@ -62,7 +62,7 @@ Neither local nor remote is reachable. If the request requires Lean:
 >
 > **Local setup:**
 > ```bash
-> ./scripts/setup-lean-mcp.sh
+> ./scripts/start-folio-assistant.sh --install
 > ```
 >
 > **Remote server:** check if `folio.litlfred.org` is running.
