@@ -51,6 +51,8 @@ export const LeanRefSchema = z.object({
   sorryFree: z.boolean().optional(),
   mathlibLinks: z.array(z.string()).optional(),
   validation: LeanValidationSchema.optional(),
+  leanHash: z.string().optional(),
+  witnessed: z.boolean().optional(),
 });
 
 // ── Companions ───────────────────────────────────────────────────

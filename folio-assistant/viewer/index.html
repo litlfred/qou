@@ -1211,22 +1211,7 @@
     btnRm.classList.add('on'); // remarks on by default
 
     // Preview (browser print with LaTeX-styled CSS)
-    document.getElementById('c-pr').addEventListener('click', async () => {
-      // Force-load all lazy sections before printing
-      if (paperOutline && paper?._loadChapterDetail && paper?._loadSection) {
-        for (const ch of paper.chapters) {
-          if (ch._dir) {
-            await paper._loadChapterDetail(paper.id, ch);
-            for (let si = 0; si < ch.sections.length; si++) {
-              const cd = document.querySelector(`.ch[data-ch-num="${ch.number}"]`);
-              const secDiv = cd?.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
-              if (secDiv) await paper._loadSection(paper.id, ch._dir, si, secDiv);
-            }
-          }
-        }
-      }
-      // Force-hydrate all lazy KaTeX content
-      while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
+    document.getElementById('c-pr').addEventListener('click', () => {
       window.print();
     });
 
@@ -1803,7 +1788,7 @@
     }
 
     // ── Lean validation icon (∀ symbology from main.tex) ──
-    function leanIcon(validation) {
+    function leanIcon(validation, leanObj) {
       const v = validation || 'not_checked';
       // Don't show icon for stubs — just the declaration name
       if (v === 'stub') return '';
@@ -1817,7 +1802,19 @@
         error:     { sym: '&#x2717;', color: 'var(--red)', tip: 'build error' },
       };
       const i = icons[v] || { sym: '?', color: 'var(--fg-d)', tip: v };
-      return `<span style="color:${i.color};font-size:.75rem" title="${i.tip}">${i.sym}</span>`;
+      let html = `<span style="color:${i.color};font-size:.75rem" title="${i.tip}">${i.sym}</span>`;
+      // Witness badge: shows hash cache status
+      if (leanObj && leanObj.leanHash) {
+        const w = leanObj.witnessed;
+        const hashShort = leanObj.leanHash.slice(0, 8);
+        const wtip = w
+          ? `witnessed (hash ${hashShort} — cached, lean check skipped)`
+          : `not witnessed (hash ${hashShort} — needs lean build)`;
+        const wcolor = w ? 'var(--grn)' : 'var(--fg-d)';
+        const wsym = w ? '&#x25C9;' : '&#x25CB;';  // ◉ vs ○
+        html += ` <span style="color:${wcolor};font-size:.6rem;cursor:help" title="${wtip}">${wsym}${hashShort}</span>`;
+      }
+      return html;
     }
 
     // ── Uses panel ───────────────────────────────────────
@@ -2730,7 +2727,7 @@
         let stubLean = '';
         if (block.lean) {
           const v = block.lean.validation || 'not_checked';
-          stubLean = ` <span style="font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)">${leanIcon(v)}${esc(block.lean.decl)}</span>`;
+          stubLean = ` <span style="font-family:var(--f-mono);font-size:.5rem;color:var(--fg-d)">${leanIcon(v, block.lean)}${esc(block.lean.decl)}</span>`;
         }
         stub.innerHTML = `<span class="stub-kind">proof</span> ${block.title ? inl(block.title) : (block.label || '')}${stubLean}`;
         renderMath(stub);
@@ -2747,7 +2744,7 @@
         let prfLeanPanel = null;
         if (block.lean) {
           const v = block.lean.validation || 'not_checked';
-          const icon = leanIcon(v);
+          const icon = leanIcon(v, block.lean);
           if (icon) {
             const badge = mk('span',`lb ${block.status || 'not_started'}`);
             badge.innerHTML = icon;
@@ -3093,7 +3090,7 @@
                 if (prfBlock.title) prfHd += `<span class="bt">${inl(prfBlock.title)}</span>`;
                 if (prfBlock.lean) {
                   const v = prfBlock.lean.validation || 'not_checked';
-                  prfHd += `<span class="prf-lean">${leanIcon(v)}${esc(prfBlock.lean.decl)}</span>`;
+                  prfHd += `<span class="prf-lean">${leanIcon(v, prfBlock.lean)}${esc(prfBlock.lean.decl)}</span>`;
                 }
                 prfDiv.innerHTML = `<div class="bh">${prfHd}</div><div class="bb">${ph}<div class="qed"></div></div>`;
                 fillTex(prfDiv, ptx, prfBlock.rendered);
@@ -5674,7 +5671,7 @@
       if (block.lean) {
         const leanInfo = mk('div','');
         leanInfo.style.cssText = 'font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem';
-        leanInfo.innerHTML = `${leanIcon(block.lean.validation || 'not_checked')} <span>${esc(block.lean.decl)}</span>`;
+        leanInfo.innerHTML = `${leanIcon(block.lean.validation || 'not_checked', block.lean)} <span>${esc(block.lean.decl)}</span>`;
         if (block.status) {
           const badge = mk('span','');
           badge.style.cssText = 'padding:.1rem .4rem;border-radius:3px;font-size:.6rem;border:1px solid var(--brd)';

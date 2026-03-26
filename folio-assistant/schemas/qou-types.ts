@@ -71,6 +71,13 @@ export interface LeanReference {
   last_edited_commit?: string;
   /** Related mathlib4 declaration names. */
   mathlib_links?: string[];
+  /**
+   * SHA-256 hash (12-char hex prefix) of the .lean file content at
+   * last successful build. Used for witness-based cache invalidation.
+   */
+  lean_hash?: string;
+  /** Whether a valid witness file exists for the current lean_hash. */
+  witnessed?: boolean;
 }
 
 export interface ReviewIssue {

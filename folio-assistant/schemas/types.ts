@@ -138,6 +138,19 @@ export interface LeanRef {
   mathlibLinks?: string[];
   /** Validation status of the Lean code. */
   validation?: LeanValidation;
+  /**
+   * SHA-256 hash (12-char hex prefix) of the .lean file content.
+   * Computed at export time. Used for witness-based cache invalidation:
+   * if a `<block>.lean.<hash>.witness` file exists, Lean validation
+   * can be skipped.
+   */
+  leanHash?: string;
+  /**
+   * Whether a valid witness file exists for the current leanHash.
+   * True = `.lean.<hash>.witness` file found, Lean build was cached.
+   * Populated at export time; displayed in the viewer as a cache badge.
+   */
+  witnessed?: boolean;
 }
 
 /**
