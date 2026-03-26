@@ -127,6 +127,7 @@ export default chapter({
         "elliptic-stability-locus",
         "skein-shell-correction",
         "electron-shells-hopf",
+        "helium-hopf-diagram",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
