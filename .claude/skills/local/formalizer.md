@@ -160,7 +160,7 @@ PYTHONPATH=.github/scripts python .github/scripts/formalizer.py export-proof-sta
   --file lean/QOU/Torsion.lean --line 42
 ```
 
-Output follows the `ProofStateExport` schema in `schemas/qou-types.ts`.
+Output follows the `ProofStateExport` schema in `folio-assistant/schemas/qou-types.ts`.
 
 ## Integration with Ontologist
 

@@ -17,8 +17,8 @@ LEAN_DIR = REPO_ROOT / "lean-archive"
 # Authoritative type definitions (TypeScript + Zod).
 # Runtime validation of JSON manifests is done via Zod in the TS pipeline
 # (schemas/constraints.ts), not via Python JSON Schema.
-TYPES_PATH = REPO_ROOT / "schemas" / "qou-types.ts"
-CONSTRAINTS_PATH = REPO_ROOT / "schemas" / "constraints.ts"
+TYPES_PATH = REPO_ROOT / "folio-assistant" / "schemas" / "qou-types.ts"
+CONSTRAINTS_PATH = REPO_ROOT / "folio-assistant" / "schemas" / "constraints.ts"
 SKILLS_DIR = REPO_ROOT / ".claude" / "skills"
 DEFAULT_MANIFEST = REPO_ROOT / "proof-objects.json"
 

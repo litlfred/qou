@@ -132,12 +132,22 @@ function makeTodoId(): string {
 
 let worktreeReady = false;
 
+const FEEDBACK_BRANCH = "feedback/auto-commit";
+
 function ensureWorktree(): boolean {
   if (worktreeReady) return true;
   try {
     if (!existsSync(FEEDBACK_WORKTREE)) {
-      // Create worktree checked out to main
-      const r = spawnSync("git", ["worktree", "add", FEEDBACK_WORKTREE, "main"], {
+      // Create a dedicated branch from main so we don't lock the main branch.
+      // This lets users freely `git switch main` in the main repo.
+      spawnSync("git", ["fetch", "origin", "main"], {
+        cwd: REPO_ROOT, stdio: "pipe", timeout: 15000,
+      });
+      // Create the feedback branch pointing at origin/main (ignore error if it exists)
+      spawnSync("git", ["branch", FEEDBACK_BRANCH, "origin/main"], {
+        cwd: REPO_ROOT, stdio: "pipe", timeout: 5000,
+      });
+      const r = spawnSync("git", ["worktree", "add", FEEDBACK_WORKTREE, FEEDBACK_BRANCH], {
         cwd: REPO_ROOT, stdio: "pipe", timeout: 15000,
       });
       if (r.status !== 0) {
@@ -157,19 +167,22 @@ function commitFeedbackToMain(paperId: string, rootName: string, content: string
   if (!ensureWorktree()) return;
 
   try {
-    // Pull latest main in worktree
-    spawnSync("git", ["pull", "--ff-only", "origin", "main"], {
+    // Fast-forward the feedback branch to latest origin/main
+    spawnSync("git", ["fetch", "origin", "main"], {
       cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 15000,
+    });
+    spawnSync("git", ["reset", "--hard", "origin/main"], {
+      cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 10000,
     });
 
     // Write file in worktree
-    const wtDir = join(FEEDBACK_WORKTREE, "feedback", paperId);
+    const wtDir = join(FEEDBACK_WORKTREE, "folio-assistant/feedback", paperId);
     mkdirSync(wtDir, { recursive: true });
     const wtPath = join(wtDir, `${rootName}.ts`);
     writeFileSync(wtPath, content, "utf-8");
 
     // Stage + commit + push
-    const relPath = `feedback/${paperId}/${rootName}.ts`;
+    const relPath = `folio-assistant/feedback/${paperId}/${rootName}.ts`;
     spawnSync("git", ["add", relPath], { cwd: FEEDBACK_WORKTREE, stdio: "pipe" });
 
     const commitResult = spawnSync("git", ["commit", "-m", `feedback: ${paperId}/${rootName}`], {
@@ -179,7 +192,7 @@ function commitFeedbackToMain(paperId: string, rootName: string, content: string
     if (commitResult.status === 0) {
       // Push with retry (up to 3 attempts with backoff)
       for (let attempt = 0; attempt < 3; attempt++) {
-        const push = spawnSync("git", ["push", "origin", "main"], {
+        const push = spawnSync("git", ["push", "origin", `${FEEDBACK_BRANCH}:main`], {
           cwd: FEEDBACK_WORKTREE, stdio: "pipe", timeout: 30000,
         });
         if (push.status === 0) {
@@ -1077,8 +1090,8 @@ function computePaperDiff(
 
 // ── Viewer content serving ───────────────────────────────────────
 
-const VIEWER_DIR = resolve(REPO_ROOT, "viewer");
-const ASSISTANT_DIR = resolve(REPO_ROOT, "assistant");
+const VIEWER_DIR = resolve(REPO_ROOT, "folio-assistant/viewer");
+const ASSISTANT_DIR = resolve(REPO_ROOT, "folio-assistant/ui");
 const VIEWER_BUILD_DIR = resolve(BUILD_DIR, "viewer");
 
 const MIME: Record<string, string> = {
