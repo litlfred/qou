@@ -17,6 +17,9 @@ import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
+import { extractCitations } from "./citations";
+import { referenceMap } from "../schema/references";
+import type { Data as CSLData } from "csl-json";
 
 // ── LaTeX character escaping ─────────────────────────────────────
 
@@ -203,6 +206,21 @@ function renderMdastNode(node: any): string {
     case "break":
       return "\\\\";
 
+    case "image": {
+      // Markdown image: ![alt](url) → \includegraphics
+      const url: string = node.url ?? "";
+      const alt: string = node.alt ?? "";
+      const lines: string[] = [];
+      lines.push("\\begin{figure}[htbp]");
+      lines.push("  \\centering");
+      lines.push(`  \\includegraphics[width=\\textwidth]{${url}}`);
+      if (alt) {
+        lines.push(`  \\caption{${escapeLatex(alt)}}`);
+      }
+      lines.push("\\end{figure}");
+      return lines.join("\n");
+    }
+
     default:
       // Unknown node — render children if any, otherwise empty
       if (node.children) {
@@ -241,6 +259,7 @@ const ENV_NAMES: Record<string, string> = {
   example: "example",
   remark: "remark",
   proof: "proof",
+  simulator: "remark",  // simulators render as remarks in LaTeX with snapshot
 };
 
 /**
@@ -248,9 +267,10 @@ const ENV_NAMES: Record<string, string> = {
  *
  * @param block - The typed block manifest
  * @param mdContent - Markdown content from the sibling .md file
+ * @param sourceDir - Directory containing the block source files (relative to repo root)
  * @returns LaTeX string
  */
-export function renderBlock(block: Block, mdContent: string): string {
+export function renderBlock(block: Block, mdContent: string, sourceDir?: string): string {
   const lines: string[] = [];
 
   switch (block.kind) {
@@ -277,12 +297,47 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "diagram": {
-      // Use extractMathContent (not markdownToLatex) to avoid list
-      // environments inside tikzcd/diagram environments.
-      const tex = block.tex || extractMathContent(mdContent);
-      if (block.label) lines.push(`% diagram: ${block.label}`);
-      lines.push(tex);
-      if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
+      const figFile = block.meta?.file as string | undefined;
+      if (figFile) {
+        // Image-based figure: meta.file points to an image asset
+        const figPath = sourceDir ? join(sourceDir, figFile) : figFile;
+        lines.push("\\begin{figure}[htbp]");
+        lines.push("  \\centering");
+        lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
+        if (block.label) lines.push(`  \\label{${block.label}}`);
+        // Caption from block.caption or block title (extra field from builders)
+        const caption = block.caption || (block as any).title || "";
+        if (caption) lines.push(`  \\caption{${escapeLatex(caption)}}`);
+        lines.push("\\end{figure}");
+      } else {
+        // TeX-based diagram (tikzcd, etc.)
+        const tex = block.tex || extractMathContent(mdContent);
+        if (block.label) lines.push(`% diagram: ${block.label}`);
+        lines.push(tex);
+        if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
+      }
+      break;
+    }
+
+    case "simulator": {
+      // Simulators render as remarks in LaTeX with a reference to
+      // the interactive version. The .md content describes the
+      // simulator and its default view.
+      const titleArg = block.title ? `[{${escapeLatex(block.title)}}]` : "[{Interactive Simulation}]";
+      lines.push(`\\begin{remark}${titleArg}`);
+      if (block.label) lines.push(`  \\label{${block.label}}`);
+      if (block.uses?.length) {
+        lines.push(`  \\uses{${block.uses.join(", ")}}`);
+      }
+      // Render snapshot if available
+      if (block.rendered?.length) {
+        const snap = block.rendered[0];
+        lines.push(`  \\begin{center}`);
+        lines.push(`    \\includegraphics[width=0.8\\textwidth]{${snap.url}}`);
+        lines.push(`  \\end{center}`);
+      }
+      lines.push(markdownToLatex(mdContent));
+      lines.push(`\\end{remark}`);
       break;
     }
 
@@ -338,7 +393,7 @@ const COMPACT_OPTIONAL_KINDS = new Set(["example", "remark"]);
  */
 function collectReferencedLabels(
   rootNames: string[],
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
 ): Set<string> {
   const refs = new Set<string>();
   for (const rootName of rootNames) {
@@ -417,7 +472,7 @@ export function loadAndRenderBlock(rootName: string, objectsDir: string): {
  */
 export function renderSection(
   section: Section,
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
@@ -436,7 +491,7 @@ export function renderSection(
     if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
       continue;
     }
-    lines.push(renderBlock(entry.block, entry.mdContent));
+    lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir));
     lines.push(""); // blank line between blocks
   }
 
@@ -444,7 +499,7 @@ export function renderSection(
 }
 
 /**
- * Render a full chapter to LaTeX.
+ * Render a full chapter to LaTeX, including chapter-end bibliography.
  *
  * @param chapter - Chapter manifest
  * @param blocks - All loaded blocks (keyed by root name)
@@ -452,7 +507,7 @@ export function renderSection(
  */
 export function renderChapter(
   chapter: Chapter,
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
@@ -460,11 +515,114 @@ export function renderChapter(
   const star = chapter.number == null ? "*" : "";
   lines.push(`\\chapter${star}{${escapeLatex(chapter.title)}}\n${label}`);
 
+  // Collect all citation keys used in this chapter
+  const chapterCites = new Set<string>();
+
   for (const section of chapter.sections) {
-    lines.push(renderSection(section, blocks, opts));
+    if (!("blocks" in section)) continue;
+    const sec = section as Section;
+    for (const rootName of sec.blocks) {
+      const entry = blocks.get(rootName);
+      if (!entry) continue;
+      for (const key of extractCitations(entry.mdContent)) {
+        chapterCites.add(key);
+      }
+      if ("cites" in entry.block && (entry.block as any).cites) {
+        for (const key of (entry.block as any).cites as string[]) {
+          chapterCites.add(key);
+        }
+      }
+    }
+    lines.push(renderSection(sec, blocks, opts));
+  }
+
+  // Emit chapter-end bibliography if any citations were found
+  if (chapterCites.size > 0) {
+    lines.push("");
+    lines.push(renderChapterBibliography([...chapterCites].sort()));
   }
 
   return lines.join("\n");
+}
+
+/**
+ * Render a chapter-end bibliography listing all cited references.
+ */
+function renderChapterBibliography(citeKeys: string[]): string {
+  const lines: string[] = [];
+  lines.push("\\subsection*{References}");
+  lines.push("\\begin{enumerate}[label={[\\arabic*]},leftmargin=2em]");
+
+  for (const key of citeKeys) {
+    const ref = referenceMap.get(key);
+    if (!ref) {
+      lines.push(`  \\item\\label{bib:${key}} {\\texttt{${key}}} — \\textit{(not found in references.ts)}`);
+      continue;
+    }
+    lines.push(`  \\item\\label{bib:${key}} ${formatBibEntry(ref)}`);
+  }
+
+  lines.push("\\end{enumerate}");
+  return lines.join("\n");
+}
+
+/** Format a CSL-JSON entry as a short bibliographic string for LaTeX. */
+function formatBibEntry(ref: CSLData): string {
+  const parts: string[] = [];
+
+  // Authors
+  if (ref.author?.length) {
+    const names = ref.author.map(a => {
+      if (a.literal) return texSafe(a.literal);
+      const parts: string[] = [];
+      if (a.given) parts.push(texSafe(a.given));
+      if (a.family) parts.push(texSafe(a.family));
+      return parts.join(" ");
+    });
+    if (names.length <= 3) {
+      parts.push(names.join(", "));
+    } else {
+      parts.push(`${names[0]} et al.`);
+    }
+  }
+
+  // Year
+  if (ref.issued && "date-parts" in ref.issued && ref.issued["date-parts"]?.[0]) {
+    parts.push(`(${ref.issued["date-parts"][0][0]})`);
+  }
+
+  // Title
+  if (ref.title) {
+    parts.push(`\\emph{${texSafe(ref.title)}}`);
+  }
+
+  // Journal/container
+  if (ref["container-title"]) {
+    parts.push(texSafe(ref["container-title"]));
+  } else if (ref.publisher) {
+    parts.push(texSafe(ref.publisher));
+  }
+
+  // Volume/pages
+  const vol = ref.volume ? `\\textbf{${ref.volume}}` : "";
+  const pages = ref.page ? `: ${texSafe(ref.page)}` : "";
+  if (vol || pages) parts.push(`${vol}${pages}`);
+
+  // DOI
+  if (ref.DOI) {
+    parts.push(`\\href{https://doi.org/${ref.DOI}}{doi:${texSafe(ref.DOI)}}`);
+  }
+
+  return parts.join(". ") + ".";
+}
+
+/** Minimal TeX escaping for bibliography strings. */
+function texSafe(s: string): string {
+  return s
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/_/g, "\\_")
+    .replace(/#/g, "\\#");
 }
 
 // ── AST validation ───────────────────────────────────────────────

@@ -9,4 +9,5 @@ export default remark({
     "def:substrate-parameter",
   ],
   tags: ["double-slit", "scattering", "band-width", "observation", "anomaly"],
+  simulator: { ref: "sim:double-slit-analytical" },
 });

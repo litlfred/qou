@@ -111,7 +111,8 @@ def BringsSurface : Type* := sorry
 
 Every `sorry` in `Glossary.lean` **must** be preceded by a
 `-- Ref: [key] url` comment linking to the foundational reference.
-The `key` must match an entry in `references.bib` exactly.
+The `key` must match a citation key in `content/schema/references.ts` exactly.
+(`references.bib` is auto-generated from this file — never edit `.bib` directly.)
 This is enforced by the `axiom_report.py` Theoretical Gap Report.
 
 ## Category Theory Universe Requirements
@@ -170,9 +171,10 @@ macro.  The Ontologist is responsible for ensuring:
 2. **Declaration consistency**: `\lean{QOU.Glossary.Foo}` in blueprint = `def Foo` in `Glossary.lean`
 3. **Dependency edges**: `\uses{}` in the blueprint must reference only labels
    that exist and whose glossary entries are resolved (not ambiguous)
-4. **BibTeX references**: Every `-- Ref: [key]` in Glossary.lean must match
-   a `references.bib` entry; when adding new glossary terms, identify the
-   foundational paper and add it to `references.bib` if absent
+4. **Bibliography references**: Every `-- Ref: [key]` in Glossary.lean must match
+   a citation key in `content/schema/references.ts`; when adding new glossary terms,
+   identify the foundational paper and add a `ref()` entry in `content/schema/references.ts`
+   (then run `bun run export-bibtex` to regenerate `references.bib`)
 
 ## Content Object Integration
 
@@ -275,6 +277,6 @@ Fix any TeX errors before committing.
 - [ ] Category-theoretic types have correct universe annotations
 - [ ] Docstrings in `Glossary.lean` match narrative definitions
 - [ ] Every `sorry` in `Glossary.lean` has a `-- Ref: [key] url` comment
-- [ ] All `-- Ref:` keys exist in `references.bib`
+- [ ] All `-- Ref:` keys exist in `content/schema/references.ts`
 - [ ] `blueprint/src/content.tex` has entries for all glossary definitions
 - [ ] `\uses{}` edges in blueprint are bidirectionally valid

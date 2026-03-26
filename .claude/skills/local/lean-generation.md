@@ -163,8 +163,8 @@ in sync — it is the **author's responsibility** to ensure consistency:
 | `\lean{QOU.Ch.foo}` in blueprint | Actual declaration name in `lean/QOU/Ch.lean` |
 | `\uses{def:bar}` in blueprint | Existing `\label{def:bar}` in same file |
 | `\leanok` in blueprint | Zero `sorry` in the linked Lean declaration |
-| `-- Ref: [key]` before sorry | Entry `@article{key,...}` in `references.bib` |
-| `\cite{key}` in blueprint | Entry `@article{key,...}` in `references.bib` |
+| `-- Ref: [key]` before sorry | Citation key `key` in `content/schema/references.ts` |
+| `\cite{key}` in blueprint | Citation key `key` in `content/schema/references.ts` |
 
 ### Blueprint update workflow
 
@@ -233,6 +233,6 @@ The `lean.decl` field in the `.ts` manifest is the canonical mapping.
 - [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
 - [ ] `\uses{}` macros capture all mathematical dependencies
 - [ ] Every `sorry` has a preceding `-- Ref: [key] url` comment
-- [ ] Every `-- Ref: [key]` key exists in `references.bib`
+- [ ] Every `-- Ref: [key]` key exists in `content/schema/references.ts`
 - [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
 - [ ] `\leanok` only appears for sorry-free declarations

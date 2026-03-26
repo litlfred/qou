@@ -168,5 +168,18 @@ export default chapter({
         "q-deformed-double-slit",
       ],
     }),
+
+    // ── Simulators ──
+
+    section({
+      title: "Interactive Simulations",
+      label: "sec:simulations",
+      blocks: [
+        "q-double-slit",
+        "double-slit-analytical",
+        "brings-surface",
+        "quantum-brings-surface",
+      ],
+    }),
   ],
 });

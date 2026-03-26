@@ -323,7 +323,8 @@ export type ObjectKind =
   | "conjecture"
   | "example"
   | "remark"
-  | "proof";
+  | "proof"
+  | "simulator";
 
 // ── Block types (discriminated union on `kind`) ──────────────────
 
@@ -344,6 +345,14 @@ interface BlockBase {
    */
   uses?: string[];
   /**
+   * Bibliography keys cited by this block (e.g. ["kock2004", "atiyah1988"]).
+   *
+   * These are reference ids from content/schema/references.ts.
+   * The build pipeline auto-extracts from \cite{} in .md files,
+   * but explicit values here take precedence.
+   */
+  cites?: string[];
+  /**
    * Thematic tags for filtering and grouping.
    * Examples: "archimedean", "complex", "p-adic", "su2", "representation-theory"
    */
@@ -354,7 +363,8 @@ interface BlockBase {
   rendered?: RenderedAsset[];
   /** Freeform metadata (chapter assignment, tags, etc.). */
   meta?: Record<string, unknown>;
-
+  /** Reference to an interactive simulator (opens overlay with [simulate] button). */
+  simulator?: SimulatorRef;
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
@@ -450,6 +460,60 @@ export interface ProofBlock extends BlockBase {
   computation?: Computation;
 }
 
+// ── Simulators ───────────────────────────────────────────────────
+
+/**
+ * A named parameter set for a simulator.
+ *
+ * Each view defines a specific configuration — e.g. "default" snapshot
+ * for paper figures, or "bach-2013" matching experimental data.
+ * Parameters are passed to the simulator HTML via URL query params
+ * or postMessage.
+ */
+export interface SimulatorView {
+  /** View name (e.g. "default", "bach-2013", "fullerene"). */
+  name: string;
+  /** Display title for this view. */
+  title?: string;
+  /** Parameter values for this view. */
+  params: Record<string, number | string | boolean>;
+}
+
+/**
+ * Reference from a block to a simulator with an optional named view.
+ *
+ * Multiple blocks (remarks, examples, etc.) can reference the same
+ * simulator with different views. The viewer renders a [simulate]
+ * button that opens the simulator overlay with the specified params.
+ */
+export interface SimulatorRef {
+  /** Label of the simulator block (e.g. "sim:q-double-slit"). */
+  ref: string;
+  /** Named view to use (defaults to "default"). */
+  view?: string;
+}
+
+/**
+ * Simulator — an interactive HTML visualization.
+ *
+ * Content triple: `.ts` (manifest + params) + `.md` (documentation) + `.html` (app).
+ * The `.md` explains the simulator and its default view; it is distinct from
+ * the `.md` of any remark that references this simulator.
+ *
+ * Pipeline validates:
+ *   - .html companion exists (or companions.html resolves)
+ *   - defaultView is present with at least one param
+ */
+export interface SimulatorBlock extends BlockBase {
+  kind: "simulator";
+  /** Path to the standalone HTML simulator file (relative to repo root). */
+  html: string;
+  /** Default parameter values — used for snapshot generation. */
+  defaultView: SimulatorView;
+  /** Additional named views with different parameter sets. */
+  views?: SimulatorView[];
+}
+
 // ── Prose (non-environment content) ──────────────────────────────
 
 /**
@@ -460,6 +524,8 @@ export interface ProseBlock {
   kind: "prose";
   /** Optional label for cross-referencing. */
   label?: string;
+  /** Bibliography keys cited by this block. */
+  cites?: string[];
   tags?: string[];
   companions?: Companions;
   /** Pre-rendered assets for ```tex blocks. */
@@ -514,6 +580,7 @@ export type Block =
   | ExampleBlock
   | RemarkBlock
   | ProofBlock
+  | SimulatorBlock
   | ProseBlock
   | EquationBlock
   | DiagramBlock;
@@ -528,7 +595,8 @@ export type EnvironmentBlock =
   | ConjectureBlock
   | ExampleBlock
   | RemarkBlock
-  | ProofBlock;
+  | ProofBlock
+  | SimulatorBlock;
 
 /** Blocks that can (or must) have Lean declarations. */
 export type FormalizableBlock =

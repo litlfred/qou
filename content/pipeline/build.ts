@@ -12,7 +12,7 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join, dirname, resolve } from "path";
+import { join, dirname, resolve, relative } from "path";
 import type { Paper, Chapter, Section, Block, RenderOptions } from "../schema/types";
 import { renderChapter, validateLatexAst } from "./render-latex";
 import { generateMainTex } from "./generate-main-tex";
@@ -54,7 +54,7 @@ export async function buildPaper(
   // 2. Resolve chapters and load all blocks
   const resolvedChapters: Chapter[] = [];
   const chapterSlugs = new Map<number, string>();
-  const blocks = new Map<string, { block: Block; mdContent: string }>();
+  const blocks = new Map<string, { block: Block; mdContent: string; sourceDir?: string }>();
 
   for (const chRef of paper.chapters) {
     const chDir = join(paperDir, chRef.dir);
@@ -89,7 +89,10 @@ export async function buildPaper(
             const mod = await import(tsPath);
             const block: Block = mod.default;
             const mdContent = existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : "";
-            blocks.set(rootName, { block, mdContent });
+            // sourceDir relative to repo root (one level above content/)
+            const repoRoot = resolve(paperDir, "..");
+            const sourceDir = relative(repoRoot, chDir);
+            blocks.set(rootName, { block, mdContent, sourceDir });
           } catch (e) {
             issues.push({
               level: "error",
