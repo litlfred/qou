@@ -116,6 +116,7 @@ export default chapter({
         // Proton, neutron, stable nucleus
         "categorical-proton",
         "categorical-neutron",
+        "chirality-trefoil-electron-positron",
         "stable-nucleus",
         "torus-hopf-stability",
         // Integer stability and Diophantine valley
