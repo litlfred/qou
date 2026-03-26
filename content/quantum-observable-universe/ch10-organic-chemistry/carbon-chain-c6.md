@@ -54,7 +54,7 @@ oscillate (Reidemeister I curls) and the chain can bend and
 stretch at energies far below the bond-breaking threshold.
 
 In real chemistry, linear $\mathrm{C}_6$ is observed as both
-**cumulene** ($=\!=\!=\!=\!=\!=$, alternating double bonds) and
+**cumulene** ($=\!=\!=\!=\!=\!=$, consecutive double bonds) and
 **carbyne** ($-\!\equiv\!-\!\equiv\!-$, alternating single and
 triple bonds) forms.  In the Hopf chain picture, these correspond
 to bond-order patterns $(k_1, \ldots, k_5) = (2,2,2,2,2)$ and

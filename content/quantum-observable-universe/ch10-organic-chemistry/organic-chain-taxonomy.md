@@ -11,8 +11,8 @@ backbone, and whether the chain is **open or closed**.
 | Alkane (saturated) | $(1, 1, \ldots, 1)$ | 2 (interior), 3 (endpoint) | $2N + 2$ (chain), $2N$ (ring) |
 | Alkene | $(\ldots, 2, \ldots)$ | 1 at double bond | $2N$ (one double bond) |
 | Alkyne | $(\ldots, 3, \ldots)$ | 0 at triple bond | $2N - 2$ (one triple bond) |
-| Cumulene | $(2, 2, \ldots, 2)$ | 0 (interior), 1 (endpoint) | rigid rod |
-| Polyyne (carbyne) | $(1, 3, 1, 3, \ldots)$ | alternating 2/0 | alternating H-capacity |
+| Cumulene | $(2, 2, \ldots, 2)$ | 0 (interior), 2 (endpoint) | 4 |
+| Polyyne (carbyne) | $(1, 3, 1, 3, \ldots)$ | 0 (interior) | 2 |
 
 **Saturation as linking-site occupancy.**
 An alkane uses only single bonds ($k = 1$), leaving the maximum
