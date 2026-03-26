@@ -73,3 +73,57 @@ The ring is thermodynamically favourable (lower total energy per
 bond once the rearrangement is complete), but kinetically
 protected by the barrier — exactly like a compressed spring that
 requires activation energy to snap shut.
+
+**Braid shortcuts and ring super-stability.**
+The rearrangement that closes the ring does not merely add a
+bond — it **compacts the braid word**.  The chain's braid word
+$\beta_{\mathrm{chain}}$ is a product of $N - 1$ non-adjacent
+generators with no relations between distant strands.  The ring's
+braid word $\beta_{\mathrm{ring}}$ satisfies the cyclic closure
+relation $\sigma_{N \to 1} \cdot \beta_{\mathrm{chain}} \sim
+\beta_{\mathrm{ring}}$, which introduces **braid shortcuts**:
+new relations between previously distant strands that shorten the
+word length after applying Yang–Baxter identities.
+
+These shortcuts have a critical asymmetric consequence:
+
+1. **Closing** the ring requires climbing over the Yang–Baxter
+   barrier (the transition state), but once the closure relation
+   is satisfied, the braid word collapses to a shorter
+   representative $\beta_{\mathrm{ring}}$ via the new relations.
+
+2. **Opening** the ring (breaking it back to a chain) requires
+   not only breaking one bond but also **undoing all the
+   shortcuts** — expanding the compact braid word back to the
+   longer chain form.  Each shortcut that was gained for free
+   during compaction must be reversed at a cost of
+   $|q + q^{-1}|$ per Yang–Baxter move.
+
+The ring-opening barrier is therefore **strictly greater** than
+the ring-closure barrier:
+
+$$
+  \Delta E_{\mathrm{open}}
+  \;=\;
+  |E_{\mathrm{bond}}(k)|
+  \;+\;
+  \Delta E_{\mathrm{closure}}
+  \;+\;
+  E_{\mathrm{shortcut}},
+$$
+
+where $E_{\mathrm{shortcut}} > 0$ is the energy to reverse the
+braid compaction.  For the hexagonal ring ($N = 6$), the cyclic
+symmetry group $\mathbb{Z}_6$ acts on the braid word, providing
+$N - 1 = 5$ shortcut relations (one for each rotation).  The
+ring sits in a **deep topological trap**: the more symmetric the
+ring, the more shortcuts stabilise it.
+
+This is the spring analogy completed.  The open chain is a spring
+held apart — it has elastic energy but the endpoints are free.
+Snapping it shut (closure) requires activation energy to thread
+the braid.  But once shut, the spring is **locked** by the
+shortcuts: opening it costs more than closing it did.  The ring
+is super-stable not because the bond is strong (that is the same
+$E_{\mathrm{bond}}$), but because the topology has rearranged
+into a more compact form that resists reversal.

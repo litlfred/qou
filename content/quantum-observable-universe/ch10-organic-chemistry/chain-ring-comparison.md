@@ -125,6 +125,13 @@ The Hopf chain framework correctly predicts:
   higher than both chain and ring), explaining why linear carbon
   chains are observed experimentally despite benzene being
   thermodynamically favoured.
+- **Ring super-stability**: the braid shortcut mechanism
+  ([ring-closure barrier](#prop:ring-closure-barrier)) predicts
+  that the ring-opening barrier exceeds the ring-closure barrier.
+  Benzene's exceptional thermodynamic stability ($\Delta H_f$
+  lower than any acyclic $\mathrm{C}_6\mathrm{H}_6$ isomer)
+  is a direct consequence of the $\mathbb{Z}_6$ cyclic shortcuts
+  locking the compact braid word.
 
 A sharper prediction requires computing the exact braid geometry
 of a bent $\mathrm{C}_6$ chain in 3-space — determining the
