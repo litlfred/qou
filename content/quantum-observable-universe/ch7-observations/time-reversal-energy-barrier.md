@@ -1,0 +1,87 @@
+The Feynman--Stueckelberg interpretation identifies the
+[positron](#rem:positron-knot) as an electron travelling backward in
+time.  In the QOU framework this becomes precise: "time reversal" of
+a particle means chirality reversal of its constituent knots —
+replacing every $T_{2,3}$ with $\sigma(T_{2,3})$.  We now show that
+this operation requires **infinite energy** in the observable sector,
+for all stable particles.
+
+**Elementary fermions (electron).**
+The electron is the left trefoil $T_{2,3}$.  The
+[trefoil vortex chirality flip](#rem:trefoil-vortex-chirality-flip)
+established that no continuous deformation connects $T_{2,3}$ to
+$\sigma(T_{2,3})$ — they lie in different connected components of
+knot space, distinguished by the Jones polynomial.  In the observable
+sector ($q \in \mathbb{R}$, $q \geq 1$), crossing a topological
+barrier between connected components requires energy
+
+$$
+  E_{\text{flip}}(e^-) \;=\; +\infty.
+$$
+
+No finite energy process can convert a single electron into a single
+positron.  The only accessible process is
+[pair creation](#rem:pair-creation-energy) at the exceptional divisor,
+which creates a *new* pair at cost $2m_e = 1.022$ MeV while leaving
+the original electron unchanged.
+
+**Composite fermions (proton, neutron).**
+The proton is a [Borromean baryon](#def:borromean-baryon):
+$\mathfrak{p} = [u, u, d]_c \bowtie \mathcal{L}_H$, built from
+trefoils linked by the Hopf link.  Its antiparticle $\bar{\mathfrak{p}}$
+replaces every $T_{2,3}$ with $\sigma(T_{2,3})$
+([chirality remark](#rem:chirality-trefoil-electron-positron)).
+
+The topological protection is **equally strong** for composites:
+
+1. **Link type is a topological invariant.**  The Borromean link
+   $\mathcal{B}_3$ and its mirror $\sigma(\mathcal{B}_3)$ are
+   distinguished by the Milnor triple linking number
+   $\bar{\mu}(123) = \pm 1$.  No Reidemeister sequence connects them.
+
+2. **Each constituent is independently protected.**  Every quark
+   trefoil in the proton would need to flip chirality independently,
+   and each flip costs infinite energy.
+
+3. **The Hopf linking is chirality-sensitive.**  The Hopf link
+   $\mathcal{L}_H$ that binds the quarks has linking number $+1$;
+   its mirror has $-1$.  Reversing this requires destroying and
+   recreating the link.
+
+Therefore:
+
+$$
+  E_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
+  E_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
+$$
+
+The only way to produce $\bar{\mathfrak{p}}$ is pair creation at the
+exceptional divisor, at cost $2m_p = 1876.5$ MeV, and similarly
+$2m_n = 1879.1$ MeV for antineutron creation.
+
+**Beta decay is not chirality reversal.**
+A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p}
++ e^- + \bar{\nu}$, but this is *not* time reversal.  Beta decay
+changes the crossing orientation partition of the Borromean link
+(from $[u, d, d]$ to $[u, u, d]$) — an R-I embedding move that
+alters binding energy while preserving both the Borromean link type
+and the chirality of each constituent trefoil.  No trefoil flips
+from left to right; instead, one quark flavour changes ($d \to u$)
+within the same chirality sector.
+
+**Summary.**
+
+| Particle | Chirality reversal energy | Pair creation threshold |
+|----------|--------------------------|----------------------|
+| Electron $e^-$ | $\infty$ | $2m_e = 1.022$ MeV |
+| Proton $\mathfrak{p}$ | $\infty$ | $2m_p = 1876.5$ MeV |
+| Neutron $\mathfrak{n}$ | $\infty$ | $2m_n = 1879.1$ MeV |
+| Neutrino $\nu$ | $\infty$ | $\approx 0$ (massless to leading order) |
+
+Time travel — sending a particle backward in time — is
+indistinguishable from chirality reversal in the Feynman--Stueckelberg
+sense.  The infinite energy barrier applies universally to all
+particles built from trefoil generators, elementary or composite.
+The only physical process that produces the time-reversed partner is
+pair creation, which does not reverse the original particle but
+creates a new pair from the vacuum at the exceptional divisor.
