@@ -30,6 +30,7 @@ import type {
 import type { Data as CSLData } from "csl-json";
 import { references, referenceMap } from "../schema/references";
 import { mergeCitations } from "./citations";
+import { isWitnessed, leanFileHash } from "../../scripts/lean-witness";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
 const CONTENT_ROOT = join(REPO_ROOT, "content");
@@ -175,6 +176,20 @@ async function main() {
           const leanRef = "lean" in block ? (block.lean as LeanRef | undefined) : undefined;
           const colocatedLean = join(chDir, `${rootName}.lean`);
           const leanSource = readLeanSource(leanRef, colocatedLean);
+
+          // Compute lean hash and check witness cache
+          let leanHash: string | undefined;
+          let witnessed: boolean | undefined;
+          if (leanRef) {
+            const leanFilePath = existsSync(colocatedLean)
+              ? colocatedLean
+              : leanRef.file ? join(LEAN_ROOT, leanRef.file) : undefined;
+            if (leanFilePath && existsSync(leanFilePath)) {
+              const result = isWitnessed(leanFilePath);
+              leanHash = result.hash;
+              witnessed = result.witnessed;
+            }
+          }
           const rendered = "rendered" in block
             ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
             : undefined;
@@ -190,7 +205,7 @@ async function main() {
             title: "title" in block ? block.title : undefined,
             uses: "uses" in block ? block.uses : undefined,
             cites: cites.length > 0 ? cites : undefined,
-            lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
+            lean: leanRef ? { ...leanRef, source: leanSource, leanHash, witnessed } : undefined,
             proofs: "proofs" in block ? block.proofs : undefined,
             examples: "examples" in block ? block.examples : undefined,
             tex: "tex" in block ? block.tex : undefined,
