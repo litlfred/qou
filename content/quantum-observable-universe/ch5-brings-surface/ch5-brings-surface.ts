@@ -194,6 +194,42 @@ export default chapter({
       ],
     }),
 
+    // ── Topological mass formula (Archimedean wall) ──────────────────
+    section({
+      title: "Topological mass formula",
+      label: "sec:topological-mass-ansatz",
+      blocks: [
+        "topological-mass-formula",
+        "hyperbolic-volumes-prose",
+        "knot-volumes-verification",
+      ],
+    }),
+
+    // ── Skein decomposition and hadronic mass ────────────────────────
+    section({
+      title: "Skein decomposition and hadronic mass",
+      label: "sec:skein-hadronic-mass",
+      blocks: [
+        "ch11-intro",
+        "skein-decomposition",
+        "skein-mass-relation",
+        "skein-mass-relation-proof",
+        "terminal-resolution",
+        "terminal-resolution-proof",
+        "terminal-resolution-cz",
+      ],
+    }),
+
+    // ── Knot-to-particle mass spectrum ───────────────────────────────
+    section({
+      title: "Knot-to-particle mass spectrum",
+      label: "sec:knot-mass-spectrum",
+      blocks: [
+        "knot-formula-table",
+        "mass-from-generators",
+      ],
+    }),
+
     // ── Misc (stub remarks) ──────────────────────────────────────────
     section({
       title: "Further directions",
