@@ -12,8 +12,11 @@
 import { z } from "zod";
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { PREFS_FILE } from "../adapters/paper/paths.js";
-// TODO: Make preferences tool adapter-agnostic.
+import { resolve } from "path";
+
+// Resolve prefs file from repo root (folio-assistant/src/tools/ → ../../..)
+const REPO_ROOT = resolve(import.meta.dir, "../../..");
+const PREFS_FILE = resolve(REPO_ROOT, ".folio-prefs.json");
 
 /** Default preferences. */
 const DEFAULTS = {

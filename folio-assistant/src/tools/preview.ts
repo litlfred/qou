@@ -12,8 +12,11 @@ import { execSync, spawnSync } from "child_process";
 import { existsSync, readdirSync } from "fs";
 import { join } from "path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { BUILD_DIR, REPO_ROOT } from "../adapters/paper/paths.js";
-// TODO: Make preview tool adapter-agnostic (accept build dir as parameter).
+import { resolve } from "path";
+
+// Resolve from repo root (folio-assistant/src/tools/ → ../../..)
+const REPO_ROOT = resolve(import.meta.dir, "../../..");
+const BUILD_DIR = resolve(REPO_ROOT, "build");
 
 /** Detect the system's "open" command. */
 function getOpenCommand(): string | null {

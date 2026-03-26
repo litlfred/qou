@@ -13,9 +13,9 @@ import Anthropic from "@anthropic-ai/sdk";
 import { registerRenderTools } from "./tools/render.js";
 import { registerValidateTools } from "./tools/validate.js";
 import { registerLeanTools } from "./tools/lean.js";
-import { registerDepsTools } from "../../tools/check-deps.js";
-import { registerPreferenceTools } from "../../tools/preferences.js";
-import { registerPreviewTools } from "../../tools/preview.js";
+import { registerDepsTools } from "../../src/tools/check-deps.js";
+import { registerPreferenceTools } from "../../src/tools/preferences.js";
+import { registerPreviewTools } from "../../src/tools/preview.js";
 
 import type {
   ContentAdapter,
@@ -31,13 +31,13 @@ import type {
   TriageResult,
   FeedbackItem,
   UserRole,
-} from "../../types.js";
-import type { GitHelper } from "../../core/git.js";
-import type { FeedbackStore } from "../../core/feedback.js";
-import { log } from "../../core/logging.js";
-import { hasRole, forbidden, getUserName, getUserEmail } from "../../core/rbac.js";
+} from "../../src/types.js";
+import type { GitHelper } from "../../src/core/git.js";
+import type { FeedbackStore } from "../../src/core/feedback.js";
+import { log } from "../../src/core/logging.js";
+import { hasRole, forbidden, getUserName, getUserEmail } from "../../src/core/rbac.js";
 import { PaperResolver } from "./resolver.js";
-import { getAnthropic } from "../../routes/chat.js";
+import { getAnthropic } from "../../src/routes/chat.js";
 
 const CORS = { "Access-Control-Allow-Origin": "*" };
 

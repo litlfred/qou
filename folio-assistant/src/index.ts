@@ -13,7 +13,7 @@
 import { resolve } from "path";
 import { existsSync, readFileSync } from "fs";
 import { FolioServer } from "./server.js";
-import { PaperContentAdapter } from "./adapters/paper/index.js";
+import { PaperContentAdapter } from "../adapters/paper/index.js";
 import { GitHelper } from "./core/git.js";
 import { FeedbackStore } from "./core/feedback.js";
 import { log } from "./core/logging.js";
@@ -69,46 +69,69 @@ if (args.includes("--check-deps")) {
 
 // ── Detect adapter type ──────────────────────────────────────────
 
-let adapterType = "paper"; // default
+// ── Load folio config ───────────────────────────────────────────
 
-// Check for folio.config.json
+let adapterType = "paper";
+let adapterModule: string | undefined;
+let feedbackDir = resolve(repoRoot, ".folio-feedback");
+let viewerPort: number | undefined;
+
+// folio.config.json (preferred)
 const folioConfigPath = resolve(repoRoot, "folio.config.json");
 if (existsSync(folioConfigPath)) {
   try {
     const config = JSON.parse(readFileSync(folioConfigPath, "utf-8"));
     adapterType = config.contentType || config.adapter || "paper";
+    adapterModule = config.adapterModule;
+    if (config.feedbackDir) feedbackDir = resolve(repoRoot, config.feedbackDir);
+    if (config.viewer?.port) viewerPort = config.viewer.port;
     log("init", `Loaded folio.config.json: adapter=${adapterType}`);
   } catch (e) {
     log("init", `Failed to read folio.config.json: ${e}`);
   }
 }
 
-// ── Read viewer_port from lean-mcp.config.json ──────────────────
-
-let viewerPort: number | undefined;
-const mcpConfigPath = resolve(repoRoot, "lean-mcp.config.json");
-if (existsSync(mcpConfigPath)) {
-  try {
-    const mcpConfig = JSON.parse(readFileSync(mcpConfigPath, "utf-8"));
-    if (mcpConfig.viewer_port) viewerPort = mcpConfig.viewer_port;
-  } catch { /* ignore */ }
+// Fallback: lean-mcp.config.json for viewer_port
+if (!viewerPort) {
+  const mcpConfigPath = resolve(repoRoot, "lean-mcp.config.json");
+  if (existsSync(mcpConfigPath)) {
+    try {
+      const mcpConfig = JSON.parse(readFileSync(mcpConfigPath, "utf-8"));
+      if (mcpConfig.viewer_port) viewerPort = mcpConfig.viewer_port;
+    } catch { /* ignore */ }
+  }
 }
 
 // ── Create adapter ───────────────────────────────────────────────
 
 const gitHelper = new GitHelper(repoRoot);
-const feedbackDir = resolve(repoRoot, ".folio-feedback");
 const feedbackStore = new FeedbackStore(feedbackDir);
 const assistantDir = resolve(import.meta.dir, "../ui");
 
 let adapter;
-switch (adapterType) {
-  case "paper":
-  default:
+
+if (adapterModule) {
+  // Dynamic adapter loading — content repo provides its own adapter
+  try {
+    const modulePath = resolve(repoRoot, adapterModule);
+    const mod = await import(modulePath);
+    const AdapterClass = mod.default || mod[Object.keys(mod).find(k => k.includes("Adapter")) || ""];
+    adapter = new AdapterClass(repoRoot, gitHelper, feedbackStore);
+    log("init", `Using custom adapter from ${adapterModule} (repo: ${repoRoot})`);
+  } catch (e) {
+    log("init", `Failed to load adapter from ${adapterModule}: ${e}`);
+    log("init", `Falling back to built-in paper adapter`);
     adapter = new PaperContentAdapter(repoRoot, gitHelper, feedbackStore);
-    log("init", `Using paper adapter (repo: ${repoRoot})`);
-    break;
-  // Future: case "guideline": adapter = new GuidelineAdapter(...); break;
+  }
+} else {
+  // Built-in adapter selection
+  switch (adapterType) {
+    case "paper":
+    default:
+      adapter = new PaperContentAdapter(repoRoot, gitHelper, feedbackStore);
+      log("init", `Using paper adapter (repo: ${repoRoot})`);
+      break;
+  }
 }
 
 // ── Start server ─────────────────────────────────────────────────

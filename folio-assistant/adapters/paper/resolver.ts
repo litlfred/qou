@@ -8,9 +8,9 @@
 
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
-import type { GitHelper } from "../../core/git.js";
-import type { FeedbackStore } from "../../core/feedback.js";
-import { TtlCache } from "../../core/cache.js";
+import type { GitHelper } from "../../src/core/git.js";
+import type { FeedbackStore } from "../../src/core/feedback.js";
+import { TtlCache } from "../../src/core/cache.js";
 import type {
   FolioItem,
   ContentOutline,
@@ -21,7 +21,7 @@ import type {
   ResolvedDocument,
   ChapterDetail,
   SectionStub,
-} from "../../types.js";
+} from "../../src/types.js";
 
 export class PaperResolver {
   private outlineCache = new TtlCache<ContentOutline>();
