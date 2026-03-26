@@ -38,5 +38,13 @@ export default folio({
       tags: ["algebra", "groebner-basis", "pbw", "formalization"],
       url: "/viewer/#/view/unital-groebner-bases",
     }),
+    paperRef({
+      dir: "visualizer",
+      title: "QOU Visualizer",
+      description:
+        "Interactive views of QOU content — Bring's surface, " +
+        "knot complements (SnapPea), and dependency graphs.",
+      tags: ["visualizer", "snappea", "interactive"],
+    }),
   ],
 });

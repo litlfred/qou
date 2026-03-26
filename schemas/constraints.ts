@@ -163,10 +163,27 @@ export const RemarkSchema = BlockBaseSchema.extend({
   lean: LeanRefSchema.optional(),
 });
 
+const ComputationEngineSchema = z.enum([
+  "snappea", "sympy", "mpmath", "sage",
+]);
+
+const ComputationStatusSchema = z.enum([
+  "not_run", "verified", "failed", "error", "stale",
+]);
+
+export const ComputationSchema = z.object({
+  engine: ComputationEngineSchema,
+  script: z.string().min(1, "Script path is required"),
+  witness: z.string().optional(),
+  status: ComputationStatusSchema,
+  requires: z.array(z.string()).optional(),
+});
+
 export const ProofSchema = BlockBaseSchema.extend({
   kind: z.literal("proof"),
   label: labelForKind("proof"),
   lean: LeanRefSchema.optional(),
+  computation: ComputationSchema.optional(),
 });
 
 export const SimulatorSchema = BlockBaseSchema.extend({

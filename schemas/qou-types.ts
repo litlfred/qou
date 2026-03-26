@@ -571,3 +571,108 @@ export interface CoverageManifest {
   };
   entries: CoverageEntry[];
 }
+
+// =============================================================================
+// §10  Visualizer State (replaces schema/viz.json)
+// =============================================================================
+
+/** Rendering mode for the Bring's surface visualizer. */
+export type VizMode = "CP1" | "cone";
+
+/** 3D point coordinates. */
+export interface Vec3 {
+  x: number;
+  y: number;
+  z: number;
+}
+
+/** Spherical-coordinate camera orbit. */
+export interface VizCamera {
+  /** Azimuthal angle in radians. */
+  theta: number;
+  /** Polar angle in radians. */
+  phi: number;
+  /** Distance from target point. */
+  r: number;
+  /** Camera look-at target (world coords). Defaults to origin. */
+  target?: Vec3;
+}
+
+/** Tube / tile visibility and opacity. */
+export interface VizTubes {
+  visible?: boolean;
+  opacity?: number;
+}
+
+/** Parameters for cone-tube mode. Ignored when mode='CP1'. */
+export interface VizCone {
+  /** Start of tube segment in Planck lengths. */
+  N_min?: number;
+  /** End of tube segment in Planck lengths. */
+  N_max?: number;
+  /** Cone half-angle (σ in ρ(s)=s·ℓ_P·σ·Ξ_q). */
+  sigma?: number;
+  /** Pitch scale (γ in ψᵢ(s)=2πi/3+q·2πs·Q·γ). */
+  gamma?: number;
+}
+
+/** Scene element visibility flags. */
+export interface VizVisibility {
+  /** Show brane sphere S³. */
+  brane?: boolean;
+  /** Show xyz axes helper. */
+  axes?: boolean;
+  /** Show background star field. */
+  stars?: boolean;
+  /** Show colour tubes at ±axis poles. */
+  axispts?: boolean;
+}
+
+/**
+ * Serialised state of the Bring's surface visualizer.
+ *
+ * Pass as URL hash or embed in Markdown to reproduce a specific view.
+ * Used by the build process to generate static figures.
+ */
+export interface VizState {
+  /** Torsion / chirality parameter (substrate parameter). q=0 is classical. */
+  q: number;
+  /** Rendering mode. */
+  mode: VizMode;
+  /** When true, renders the exceptional divisor E_p as an opaque ℂP¹ surface. */
+  blowup?: boolean;
+  /** Pre-normalisation (x,y,z) of the selected point p on the brane S³. */
+  brane_point: Vec3;
+  /** Spherical-coordinate camera orbit. */
+  camera: VizCamera;
+  /** Tube / tile visibility and opacity. */
+  tubes?: VizTubes;
+  /** Parameters for cone-tube mode. */
+  cone?: VizCone;
+  /** Scene element visibility flags. */
+  visibility?: VizVisibility;
+}
+
+// =============================================================================
+// §11  Skills Config (replaces skills-config-schema.json)
+// =============================================================================
+
+/** A single skill package subscription. */
+export interface SkillPackage {
+  /** Local directory name under .claude/skills/. */
+  name: string;
+  /** GitHub repository in owner/repo format. */
+  repo: string;
+  /** Path within the repository where skill directories live. */
+  path: string;
+  /** Git ref (branch, tag, or SHA) to sync from. Defaults to "main". */
+  ref?: string;
+  /** List of skill directory names to sync from the package. */
+  skills: string[];
+}
+
+/** Skills configuration — defines external skill package subscriptions. */
+export interface SkillsConfig {
+  description?: string;
+  packages: SkillPackage[];
+}
