@@ -35,8 +35,8 @@ to six significant figures with $q = 1.10997$.
 | Proton | $[u,u,d]_c \bowtie \mathcal{L}_H$ | $\mathcal{S}_{uu} + 2\mathcal{S}_{ud}$ | $938.272$ | $938.272$ | CODATA |
 | Neutron | $[u,d,d]_c \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{ud} + \mathcal{S}_{dd}$ | $939.565$ | $939.565$ | CODATA |
 | $n$--$p$ splitting | | $\mathcal{S}_{dd} - \mathcal{S}_{uu}$ | $1.293$ | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \bowtie \overline{d}$ | $\mathcal{S}_{u\bar{d}}(q)$ | $139.6$ | $139.570$ | PDG |
-| $K^{\pm}$ | $u \bowtie \overline{s}$ | $\mathcal{S}_{u\bar{s}}(q)$ | $493.7$ | $493.677$ | PDG |
+| $\pi^{\pm}$ | $u \bowtie \overline{d}$ | $\mathcal{S}_{u\bar{d}}(q)$ | $139.570$ | $139.570$ | PDG |
+| $K^{\pm}$ | $u \bowtie \overline{s}$ | $\mathcal{S}_{u\bar{s}}(q)$ | $493.677$ | $493.677$ | PDG |
 
 *Light nuclei (from multi-body Skein).*
 
