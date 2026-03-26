@@ -449,7 +449,7 @@ the unified `paper-assistant` server. To install Lean dependencies:
 ```
 
 This installs: elan, the Lean toolchain pinned in
-`lean-archive/lean-toolchain`, and fetches the Mathlib cache.
+`lean-archive/lean-toolchain`, Mathlib cache, ripgrep, and uv.
 
 **Important**: Run `lake build` in `lean-archive/` before first MCP
 session to avoid timeouts.
