@@ -154,27 +154,9 @@ If the conjecture holds, then:
   triple to a nucleus
   ([stable nucleus](#def:stable-nucleus)).
 
-- The **stability pairs** are the rational points of $E_Q$ — a
-  finite set by Mordell's theorem (assuming $E_Q$ has rank $0$
-  over $\mathbb{Q}$), which would explain why there are finitely
-  many stability pairs.
-
-**Mordell--Weil rank and stability pair count.**
-
-If $E_Q$ has Mordell--Weil rank $0$ over $\mathbb{Q}$, then
-$E_Q(\mathbb{Q})$ is finite (equal to the torsion subgroup).
-The known stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ give
-$7$ points; the torsion subgroups of elliptic curves over
-$\mathbb{Q}$ have order dividing $12$ (Mazur's theorem).  A
-torsion group of order $8$ (accommodating the $7$ magic neutron
-numbers plus the identity) is consistent with
-$E_Q(\mathbb{Q}) \cong \mathbb{Z}/8\mathbb{Z}$ — one of the
-$15$ possibilities in Mazur's classification.
-
-This would predict that **there are no undiscovered magic
-numbers beyond $126$** — a statement that is consistent with
-all experimental evidence to date but has not been proven from
-nuclear shell theory.
+- The **stability pairs** are the integer points of $E_Q$ —
+  the $(Q, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd
+  degeneracy falls on a lattice point.
 
 **Computational evidence.**
 
@@ -187,26 +169,13 @@ $$
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
-Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ is a single
-connected component homeomorphic to $S^1$.  The base point
-$P_0 = (0, \sqrt{b})$ has **infinite order** in the group law
-of $E_q$ — it is not a torsion point.  The winding angle of
-$P_0$ on $E_q(\mathbb{R}) \cong S^1$ is
-
-$$
-  \theta \;=\; 0.16808\ldots
-  \;\approx\; \frac{1}{5.95},
-$$
-
-an irrational number, so the orbit $\{n \cdot P_0\}_{n \geq 1}$
-is dense in $S^1$ (by Weyl's equidistribution theorem) and
-no multiple $n \cdot P_0$ is exactly a torsion point.
+Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ has a single
+connected component.
 
 **Stable hadrons as lattice points on the stability cubic.**
 
-The stable nuclei are *not* torsion points of $E_q$.  They are
-the **$\mathbb{N}^2$ lattice points** $(Q, N)$ on the
-genus-$0$ **stability cubic**
+The stable nuclei are the **$\mathbb{N}^2$ lattice points**
+$(Q, N)$ on the genus-$0$ **stability cubic**
 ([Diophantine valley](#rem:diophantine-valley)):
 
 $$
@@ -227,11 +196,11 @@ The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
 lifts this curve to the genus-$1$ elliptic curve $E_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
-then acquire a torsion interpretation — remains an open
-question.  The structural parallel between the stability cubic
-and the chiral cubic (identical algebraic origin in the Bring
-surface, coefficient matching at $Q \approx 68$) is suggestive
-but not yet proven.
+then acquire an interpretation as integer points of $E_Q$ —
+remains an open question.  The structural parallel between the
+stability cubic and the chiral cubic (identical algebraic origin
+in the Bring surface, coefficient matching at $Q \approx 68$)
+is suggestive but not yet proven.
 
 **What is proven:**
 
