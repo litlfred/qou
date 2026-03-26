@@ -86,6 +86,8 @@ export default chapter({
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",
         "skein-archimedean-shadow",
+        // The Descartes elliptic curve E_q
+        "descartes-elliptic-curve",
       ],
     }),
 
