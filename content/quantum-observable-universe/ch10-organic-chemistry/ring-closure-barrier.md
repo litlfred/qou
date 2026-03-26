@@ -26,7 +26,8 @@ $$
   \;\propto\;
   \Delta_{T(2,N)}(q)
   \;=\;
-  \frac{q^{N/2} - q^{-N/2}}{q - q^{-1}}.
+  \frac{q^{N/2} - q^{-N/2}}{q - q^{-1}}
+  \quad (\text{for even } N).
 $$
 
 For $N = 6$:

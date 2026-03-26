@@ -71,20 +71,27 @@ Total hydrogen capacity: 6, giving $\mathrm{C}_6\mathrm{H}_6$.
 
 **Aromaticity as threading.**
 The concept of aromaticity in organic chemistry corresponds to
-the existence of a threading link.  A molecule is aromatic when
-its ring admits a $T(2,N)$ threading whose Alexander polynomial
-is less than the pairwise Alexander weight $N$.  This is always
-true for $N \geq 4$, but the stabilisation gain increases with
-$N$:
+the existence of a threading link.  For even $N$, a ring admits
+a 2-component threading link $T(2,N)$ whose Alexander polynomial
+$\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q - q^{-1})$ is
+less than the pairwise Alexander weight $N$:
 
 | $N$ | $\Delta_{T(2,N)}(q)$ at $q = 1$ | Pairwise weight | Ratio |
 |:---:|---:|:---:|:---:|
 | 4 | 2 | 4 | 1/2 |
-| 5 | $\frac{5}{2}$ | 5 | 1/2 |
 | 6 | 3 | 6 | 1/2 |
 | 8 | 4 | 8 | 1/2 |
+| 10 | 5 | 10 | 1/2 |
 
-The ratio is always $1/2$ at $q = 1$ — the threading link is
-universally twice as efficient as pairwise bonding.  The
-aromatic stabilisation energy is the crossing energy difference
-between the two pictures.
+The ratio is always $1/2$ at $q = 1$ for even $N$ — the
+2-component threading link is universally twice as efficient as
+pairwise bonding.  For odd $N$, the threading link $T(2,N)$ is a
+knot (1 component) and the Alexander polynomial takes a different
+form; the analysis of odd-$N$ rings requires separate treatment.
+
+The aromatic stabilisation energy is the crossing energy
+difference between the pairwise and threaded pictures.  Note
+that threading efficiency alone does not determine aromaticity:
+cyclobutadiene ($N = 4$) admits a threading link but is
+anti-aromatic.  The aromatic/anti-aromatic distinction likely
+requires an additional invariant beyond the Alexander weight.

@@ -31,14 +31,15 @@ The crossing energy of the bond is
 $$
   E_{\mathrm{bond}}(k)
   \;=\;
-  k \cdot E_{\mathrm{cross}}(T_{2,3} \bowtie T_{2,3})
+  k \cdot E_{\mathrm{cross}}(T(2,2))
   \;+\;
   \binom{k}{2} \, \Delta E_{\mathrm{inter}},
 $$
 
-where the first term accounts for $k$ individual Hopf links and
-the second for inter-trefoil interactions within the shared
-sub-link.  Higher bond order increases both binding strength and
+where $T(2,2)$ is the Hopf link
+([crossing energy](#def:crossing-energy)), the first term
+accounts for $k$ individual Hopf links, and the second for
+inter-link interactions within the shared sub-link.  Higher bond order increases both binding strength and
 rigidity: a triple bond is both stronger and stiffer than a single
 bond because the three shared trefoils form a closed sub-link that
 resists Reidemeister moves.

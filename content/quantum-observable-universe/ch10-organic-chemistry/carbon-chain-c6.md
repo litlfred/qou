@@ -58,5 +58,5 @@ In real chemistry, linear $\mathrm{C}_6$ is observed as both
 **carbyne** ($-\!\equiv\!-\!\equiv\!-$, alternating single and
 triple bonds) forms.  In the Hopf chain picture, these correspond
 to bond-order patterns $(k_1, \ldots, k_5) = (2,2,2,2,2)$ and
-$(1,3,1,3,1)$ respectively — different ways of distributing the
-same total number of shared trefoils across the 5 bonds.
+$(1,3,1,3,1)$ respectively — different distributions of shared
+trefoils across the 5 bonds (total bond order 10 and 9).
