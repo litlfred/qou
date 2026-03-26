@@ -88,6 +88,7 @@ export default chapter({
         "skein-archimedean-shadow",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
+        "golden-ratio-degeneration",
       ],
     }),
 
