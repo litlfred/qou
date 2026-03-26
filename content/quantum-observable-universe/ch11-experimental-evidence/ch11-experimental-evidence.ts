@@ -99,6 +99,7 @@ export default chapter({
       blocks: [
         "topological-mass-formula",
         "hyperbolic-volumes-prose",
+        "knot-volumes-verification",
       ],
     }),
 
