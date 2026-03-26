@@ -16,7 +16,6 @@ import { paper, chapterRef } from "../schema/builders";
 export default paper({
   title: "QOU Visualizer",
   authors: ["litlfred"],
-  date: "2026-03-21",
   chapters: [
     chapterRef({ dir: "ch1-overview" }),
   ],

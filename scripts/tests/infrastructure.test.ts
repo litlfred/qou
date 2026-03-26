@@ -135,22 +135,65 @@ describe("Schema files", () => {
     expect(existsSync(join(REPO_ROOT, "schemas/qou-types.ts"))).toBe(true);
   });
 
-  test("qou-types.ts contains ProofObjectsManifest", () => {
+  test("qou-types.ts exports all key types", () => {
     const content = readFileSync(
       join(REPO_ROOT, "schemas/qou-types.ts"),
       "utf-8"
     );
-    expect(content).toContain("ProofObjectsManifest");
-    expect(content).toContain("VizState");
-    expect(content).toContain("SkillsConfig");
+    // Proof pipeline types
+    expect(content).toContain("export interface ProofObjectsManifest");
+    expect(content).toContain("export interface ProofObject");
+    expect(content).toContain("export interface ReviewRecord");
+    // Visualizer types (migrated from schema/viz.json)
+    expect(content).toContain("export interface VizState");
+    expect(content).toContain("export type VizMode");
+    // Skills config types (migrated from skills-config-schema.json)
+    expect(content).toContain("export interface SkillsConfig");
+    expect(content).toContain("export interface SkillPackage");
   });
 
-  test("proof-objects.json matches schema version", () => {
+  test("constraints.ts exports Zod schemas for all block kinds", () => {
+    const content = readFileSync(
+      join(REPO_ROOT, "schemas/constraints.ts"),
+      "utf-8"
+    );
+    for (const schema of [
+      "DefinitionSchema", "TheoremSchema", "LemmaSchema",
+      "PropositionSchema", "CorollarySchema", "ProofSchema",
+      "ExampleSchema", "RemarkSchema", "ProseSchema",
+      "ComputationSchema",
+    ]) {
+      expect(content).toContain(`export const ${schema}`);
+    }
+  });
+
+  test("proof-objects.json has valid structure", () => {
     const manifest = JSON.parse(
       readFileSync(join(REPO_ROOT, "proof-objects.json"), "utf-8")
     );
+    // Version and top-level structure
     expect(manifest.version).toBe("1.0");
     expect(manifest).toHaveProperty("objects");
     expect(manifest).toHaveProperty("manuscript");
+    expect(Array.isArray(manifest.objects)).toBe(true);
+    // Manuscript metadata
+    expect(manifest.manuscript).toHaveProperty("repo");
+    expect(manifest.manuscript).toHaveProperty("commit_sha");
+    expect(manifest.manuscript).toHaveProperty("generated_at");
+    // Validate first object has required fields (structural check)
+    if (manifest.objects.length > 0) {
+      const obj = manifest.objects[0];
+      expect(obj).toHaveProperty("label");
+      expect(obj).toHaveProperty("object_type");
+      expect(obj).toHaveProperty("latex");
+      expect(obj.latex).toHaveProperty("file");
+      expect(obj.latex).toHaveProperty("line");
+      // object_type must be a valid kind
+      const validKinds = [
+        "definition", "theorem", "lemma", "proposition",
+        "corollary", "conjecture", "example", "remark",
+      ];
+      expect(validKinds).toContain(obj.object_type);
+    }
   });
 });
