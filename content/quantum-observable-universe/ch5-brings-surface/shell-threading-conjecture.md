@@ -86,26 +86,89 @@ The topology of $L_0$ for this transition is determined by:
 
 3. The braid word of the threading in $B_A$.
 
+**Two-level structure of $L_0$.**
+
+The Skein resolution at the beta-decay vertex has two levels:
+
+*Level 1: Internal (Borromean).*
+The crossing change $d \to u$ inside
+$\mathcal{B}_3(u, d, d)$ is a Skein resolution at the $d$-$d$
+crossing of the Borromean link.  Smoothing one crossing in
+$\mathcal{B}_3$ produces the Hopf link $\mathcal{L}_H$ (a standard
+result: the Borromean link with one crossing smoothed gives a
+2-component link with linking number $\pm 1$).  In the
+Temperley--Lieb algebra $TL_3(\delta)$ with
+$\delta = -(q^{1/2} + q^{-1/2})$, the smoothing is the generator
+$e_i$ and its Markov trace involves the quantum integer ratio:
+
+$$
+  \frac{\mathrm{tr}(L_0^{\mathrm{int}})}{\mathrm{tr}(e_i^{\mathrm{free}})}
+  \;=\;
+  \frac{[1]_q \, [2]_q}{[3]_q}
+  \;\approx\; 0.665
+  \quad\text{at } q = 1.110.
+$$
+
+This is the **intrinsic Borromean suppression**: the Borromean
+link resists the internal crossing change by a factor of
+$[1]_q [2]_q / [3]_q$.
+
+*Level 2: External (nuclear environment).*
+The resulting $L_0 = \mathcal{L}_H$ (Hopf link from the Borromean
+resolution) is embedded in the multi-nucleon link
+$\mathcal{N}(p, n)$.  It threads through $p$ protons and
+$n - 1$ remaining neutrons.  The threading modulates the Markov
+trace by a factor that depends on the **shell structure** of the
+nuclear environment:
+
+- **Open configuration** (no shell closure): the inter-nucleon
+  crossings commute with $L_0$ in the TL algebra.  No additional
+  modulation: the external factor is $1$.
+
+- **Closed shell** ($n$ or $p$ at a magic number): the
+  inter-nucleon crossings form a chain of non-commuting TL
+  generators adjacent to $L_0$.  The Markov trace picks up a
+  factor depending on the chain length $m$ and the position $k$
+  of the converting nucleon within the shell.
+
+The **total** shell correction is the product:
+
+$$
+  \lambda_{\mathrm{shell}}
+  \;=\;
+  E_{\mathrm{Hopf}}
+  \;\times\;
+  \underbrace{\frac{[1]_q \, [2]_q}{[3]_q}}_{\text{Borromean factor}}
+  \;\times\;
+  \underbrace{f(m, k, q)}_{\text{shell modulation}}
+$$
+
+where $E_{\mathrm{Hopf}} = (q + q^{-1})/2 \cdot \lambda_V$ is
+the Hopf junction energy and $f(m, k, q)$ is the external
+modulation from the shell environment.
+
 **What needs to be computed.**
 
-1. **Identify $L_0$**: determine the knot/link type of the
-   smoothing for $\mathcal{N}(6, 8) \to \mathcal{N}(7, 7)$ by
-   writing the braid word of the multi-nucleon link and performing
-   the Skein resolution at the converting neutron's crossing.
+1. **The external modulation $f(m, k, q)$**: write the braid
+   word for $\mathcal{N}(6, 8)$ with the converting neutron at
+   position $k$ in the $n = 8$ shell chain, and compute the
+   Markov trace of the $L_0$ generator $e_k$ embedded in this
+   word.
 
-2. **Evaluate $\Delta_{L_0}(q)$**: compute the Alexander polynomial
-   of the resulting link at $q = 1.110$.
+2. **The crossing matrix**: the $14 \times 14$ crossing matrix
+   of $\mathcal{N}(6, 8)$ has 15 positive ($\mathfrak{p}$-$\mathfrak{p}$),
+   28 negative ($\mathfrak{n}$-$\mathfrak{n}$), and 48 mixed
+   ($\mathfrak{p}$-$\mathfrak{n}$) crossings.  The product
+   $p \times n = 48 \to 49$ across the transition: one mixed
+   crossing is created.  The $L_0$ mediates this extra crossing.
 
-3. **Check**: the corrected half-life
-   $t_{1/2}^{\mathrm{corr}} = t_{1/2}^{q_{\mathrm{eff}}} /
-   (1 + 5 \, \lambda_{\mathrm{shell}} / Q_0)$ should match the
-   observed 5730 yr to within $\sim 5\%$.
+3. **Check**: the corrected half-life should match the observed
+   5730 yr to within $\sim 5\%$.
 
-4. **Universality**: the same construction applied to ${}^{60}\mathrm{Co}$,
-   ${}^{137}\mathrm{Cs}$, and ${}^{210}\mathrm{Bi}$ (where the
-   converting nucleon sits near a magic-number boundary) should
-   give threading links $L_0$ whose Alexander polynomials reproduce
-   the observed residuals.
+4. **Universality**: the same two-level construction applied to
+   ${}^{60}\mathrm{Co}$, ${}^{137}\mathrm{Cs}$, and
+   ${}^{210}\mathrm{Bi}$ should reproduce the observed residuals
+   through the shell modulation factor $f(m, k, q)$.
 
 **Connection to molecular chemistry.**
 The nuclear threading link $L_0$ is the same mathematical object as
