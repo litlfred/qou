@@ -173,6 +173,7 @@ export default chapter({
         "hodge-laplacian-relation",
         "q-harmonic-particle",
         "brings-geometric-connection",
+        "complex-substrate-interpretation",
       ],
     }),
 

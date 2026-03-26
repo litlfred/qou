@@ -90,6 +90,15 @@ export default chapter({
       ],
     }),
 
+    // ── Complexity and interpretation ──────────────────────────────────
+    section({
+      title: "Complexity and Interpretation",
+      label: "sec:complexity-interpretation",
+      blocks: [
+        "complex-chirality-rotation",
+      ],
+    }),
+
     // ── Interactive simulations ───────────────────────────────────────
     section({
       title: "Interactive Simulations",
