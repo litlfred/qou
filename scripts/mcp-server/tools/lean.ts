@@ -16,7 +16,7 @@
  */
 
 import { z } from "zod";
-import { execSync, spawnSync } from "child_process";
+import { execSync, spawnSync, type SpawnSyncReturns } from "child_process";
 import { existsSync, readFileSync } from "fs";
 import { join, resolve } from "path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -40,6 +40,15 @@ function leanProjectDir(dir?: string): string {
     return leanArchive;
   }
   return LEAN_DIR;
+}
+
+/** Extract stdout + stderr from a spawn result, truncated to the last 2000 chars. */
+function processSpawnOutput(result: SpawnSyncReturns<Buffer>): { output: string; last2k: string } {
+  const stdout = result.stdout?.toString() || "";
+  const stderr = result.stderr?.toString() || "";
+  const output = (stdout + "\n" + stderr).trim();
+  const last2k = output.slice(-2000);
+  return { output, last2k };
 }
 
 export function registerLeanTools(server: McpServer): void {
@@ -147,10 +156,7 @@ export function registerLeanTools(server: McpServer): void {
           timeout: 600_000, // 10 min
         });
 
-        const stdout = result.stdout?.toString() || "";
-        const stderr = result.stderr?.toString() || "";
-        const output = (stdout + "\n" + stderr).trim();
-        const last2k = output.slice(-2000);
+        const { last2k } = processSpawnOutput(result);
 
         return {
           content: [{
@@ -196,13 +202,10 @@ export function registerLeanTools(server: McpServer): void {
         const result = spawnSync("lake", args, {
           cwd,
           stdio: "pipe",
-          timeout: 600_000, // 10 min
+          timeout: 180_000, // 3 min
         });
 
-        const stdout = result.stdout?.toString() || "";
-        const stderr = result.stderr?.toString() || "";
-        const output = (stdout + "\n" + stderr).trim();
-        const last2k = output.slice(-2000);
+        const { output, last2k } = processSpawnOutput(result);
 
         // Count errors and warnings
         const errors = (output.match(/^error:/gm) || []).length;

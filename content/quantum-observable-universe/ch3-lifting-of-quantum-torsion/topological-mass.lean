@@ -66,11 +66,11 @@ theorem mass_upper_bound (md : MassDecomposition R) :
   rw [md.decomposition]
   exact norm_add_le md.descendedTrace md.transientTrace
 
-/-- **Frobenius-orthogonality** (non-negativity criterion): when both the
-    descended and transient trace values are non-negative — as guaranteed
-    by the Frobenius pairing in the archimedean realisation, where trace
-    values are norms of holonomies — the mass decomposes exactly (not
-    just as an upper bound).
+/-- **Norm additivity for non-negative traces**: when both the descended
+    and transient trace values are non-negative — as guaranteed by the
+    Frobenius pairing in the archimedean realisation, where trace values
+    are norms of holonomies — the mass decomposes exactly (not just as
+    an upper bound).
 
     For `R = ℝ`, this is provable from non-negativity alone, eliminating
     the need for an axiom.  The original product-zero hypothesis
@@ -85,7 +85,7 @@ theorem mass_upper_bound (md : MassDecomposition R) :
     reals, `‖a + b‖ = |a + b| = a + b = |a| + |b| = ‖a‖ + ‖b‖`. -/
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-theorem frobenius_orthogonality
+theorem norm_additivity_of_nonneg_traces
     (md : MassDecomposition ℝ)
     /-- The descended trace is non-negative (norm of holonomy). -/
     (h_desc_nonneg : 0 ≤ md.descendedTrace)
@@ -95,7 +95,7 @@ theorem frobenius_orthogonality
   rw [md.decomposition, Real.norm_of_nonneg (add_nonneg h_desc_nonneg h_trans_nonneg),
       Real.norm_of_nonneg h_desc_nonneg, Real.norm_of_nonneg h_trans_nonneg]
 
-/-- **Exact mass decomposition** under Frobenius non-negativity:
+/-- **Exact mass decomposition** under non-negativity of traces:
     m(γ) = m_desc(γ) + m_trans(γ). -/
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_exact
@@ -105,7 +105,7 @@ theorem mass_decomposition_exact
     categoricalMass md.totalTrace =
     categoricalMass md.descendedTrace + categoricalMass md.transientTrace := by
   unfold categoricalMass
-  exact frobenius_orthogonality md h_desc_nonneg h_trans_nonneg
+  exact norm_additivity_of_nonneg_traces md h_desc_nonneg h_trans_nonneg
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/

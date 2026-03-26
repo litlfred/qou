@@ -82,7 +82,7 @@ been audited for:
 | 9 | `def:descent-involution` | definition | `QOU.DescentInvolution` | — | — |
 | 9 | `lem:descent` | lemma | `QOU.DescentLemma` | — | — |
 | 9 | `prop:descent-eigenspaces` | proposition | `QOU.Torsion.idempotent_direct_sum_decomposition` | not_checked | — |
-| 10 | `thm:topological-mass` | theorem | `QOU.Torsion.mass_decomposition_exact` | not_checked | ~~Tautological proof~~ **FIXED**: `mass_upper_bound` (proved) + `mass_decomposition_exact` (proved via `frobenius_orthogonality` theorem — axiom eliminated) |
+| 10 | `thm:topological-mass` | theorem | `QOU.Torsion.mass_decomposition_exact` | not_checked | ~~Tautological proof~~ **FIXED**: `mass_upper_bound` (proved) + `mass_decomposition_exact` (proved via `norm_additivity_of_nonneg_traces` theorem — axiom eliminated) |
 | 10 | `cor:mass-identity-C` | corollary | `QOU.mass_is_holonomy` | — | ~~Structure field unpack~~ **FIXED**: explicit `nonabelian_stokes` + `categorical_equals_multiplicative_integral` axioms (MEDIUM) |
 
 ### Layer 5 — Physical Predictions: The Sink (Depth 11–13)
@@ -355,13 +355,13 @@ prop:local-substrate-q [SINK, depth 13]
 
 ## 9. Second-Pass Audit Findings (2026-03-26)
 
-### F9: `frobenius_orthogonality` axiom had mathematically incorrect hypothesis (CRITICAL — **FIXED**)
+### F9: `norm_additivity_of_nonneg_traces` axiom had mathematically incorrect hypothesis (CRITICAL — **FIXED**)
 
 **File**: `ch3-lifting-of-quantum-torsion/topological-mass.lean:80`
 
 The axiom stated:
 ```lean
-axiom frobenius_orthogonality (md : MassDecomposition R)
+axiom norm_additivity_of_nonneg_traces (md : MassDecomposition R)
     (h_orth : md.descendedTrace * md.transientTrace = 0) :
     ‖md.totalTrace‖ = ‖md.descendedTrace‖ + ‖md.transientTrace‖
 ```
@@ -377,7 +377,7 @@ of holonomies and quantum dilogarithm evaluations). For non-negative reals,
 `|a + b| = a + b = |a| + |b|` is immediate.
 
 ```lean
-theorem frobenius_orthogonality (md : MassDecomposition ℝ)
+theorem norm_additivity_of_nonneg_traces (md : MassDecomposition ℝ)
     (h_desc_nonneg : 0 ≤ md.descendedTrace)
     (h_trans_nonneg : 0 ≤ md.transientTrace) :
     ‖md.totalTrace‖ = ‖md.descendedTrace‖ + ‖md.transientTrace‖ := by
@@ -427,9 +427,9 @@ This closes the **trust chain**: SnapPy script → witness JSON → Lean axiom.
 |----------|-------|-------|
 | Structural completeness | **A** | 27/27 spine blocks present with proof blocks |
 | Sorry-freedom | **A+** | 0 sorry markers |
-| Axiom transparency | **A** | 4 numerical axioms (justified) + **2** structural axioms (`nonabelian_stokes`, `su2_tannaka_reconstruction`); `frobenius_orthogonality` **proved** |
+| Axiom transparency | **A** | 4 numerical axioms (justified) + **2** structural axioms (`nonabelian_stokes`, `su2_tannaka_reconstruction`); `norm_additivity_of_nonneg_traces` **proved** |
 | Content triple coverage | **A−** | 27/28 have .lean (1 optional remark missing) |
-| Lean proof substantiveness | **B** | `frobenius_orthogonality` now proved; Tannaka–Krein gap remains |
+| Lean proof substantiveness | **B** | `norm_additivity_of_nonneg_traces` now proved; Tannaka–Krein gap remains |
 | Lean validation maturity | **B** | 2 leanok, 1 axioms_only, 17 not_checked |
 | Narrative alignment | **B** | Most structures match .md; missing Leibniz, anomaly-free condition |
 | Lean dependency integrity | **C+** | .ts `uses` graph still not mirrored in Lean imports (content .lean not in lake) |
