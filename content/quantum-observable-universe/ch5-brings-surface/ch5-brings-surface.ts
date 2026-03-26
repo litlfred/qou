@@ -132,6 +132,7 @@ export default chapter({
         "valley-stability",
         // Hadron half-life calculations relative to q
         "hadron-half-life",
+        "hadron-q-self-correction",
         "hadron-half-life-regimes",
         "hadron-half-life-verification",
         // Elliptic stability conjecture
