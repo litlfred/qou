@@ -250,7 +250,7 @@ testable errors and asks before writing tests.
 
 Whenever **any** content has been added or modified during the current session
 — `.md` narratives, `.ts` manifests, `.lean` formalizations, `.tex` chapters,
-or supporting files like `references.bib` — the editor **must** perform a
+or supporting files like `content/schema/references.ts` — the editor **must** perform a
 review pass before the task is considered complete. This applies regardless of
 how the session started — even if the original request was about Lean,
 infrastructure, or something else entirely.

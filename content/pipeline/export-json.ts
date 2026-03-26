@@ -27,6 +27,9 @@ import type {
   RenderedAsset,
   LeanRef,
 } from "../schema/types";
+import type { Data as CSLData } from "csl-json";
+import { references, referenceMap } from "../schema/references";
+import { mergeCitations } from "./citations";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
 const CONTENT_ROOT = join(REPO_ROOT, "content");
@@ -50,6 +53,8 @@ interface ExportedBlock {
   label?: string;
   title?: string;
   uses?: string[];
+  /** Resolved citation keys (explicit + auto-extracted from .md). */
+  cites?: string[];
   lean?: LeanRef & { source?: string };
   proofs?: string[];
   examples?: string[];
@@ -72,6 +77,8 @@ interface ExportedChapter {
   title: string;
   label?: string;
   sections: ExportedSection[];
+  /** Aggregated bibliography: CSL-JSON entries cited by any block in this chapter. */
+  bibliography?: CSLData[];
 }
 
 interface ExportedPaper {
@@ -79,6 +86,8 @@ interface ExportedPaper {
   authors: string[];
   date?: string;
   chapters: ExportedChapter[];
+  /** Full bibliography database (CSL-JSON) for cross-linking. */
+  references?: CSLData[];
   meta?: Record<string, unknown>;
   _hash: string;
   _built: string;
@@ -170,12 +179,17 @@ async function main() {
             ? readRenderedAssets(block.rendered as RenderedAsset[] | undefined, chDir, OUT_DIR)
             : undefined;
 
+          // Merge explicit cites[] with auto-extracted from .md
+          const explicitCites = "cites" in block ? (block as any).cites as string[] | undefined : undefined;
+          const cites = mergeCitations(explicitCites, md);
+
           blocks.push({
             rootName,
             kind: block.kind,
             label: "label" in block ? block.label : undefined,
             title: "title" in block ? block.title : undefined,
             uses: "uses" in block ? block.uses : undefined,
+            cites: cites.length > 0 ? cites : undefined,
             lean: leanRef ? { ...leanRef, source: leanSource } : undefined,
             proofs: "proofs" in block ? block.proofs : undefined,
             examples: "examples" in block ? block.examples : undefined,
@@ -199,12 +213,25 @@ async function main() {
       sections.push({ title: section.title, label: section.label, blocks });
     }
 
+    // Aggregate chapter-level bibliography from all blocks
+    const chapterCiteKeys = new Set<string>();
+    for (const sec of sections) {
+      for (const b of sec.blocks) {
+        if (b.cites) for (const key of b.cites) chapterCiteKeys.add(key);
+      }
+    }
+    const bibliography = [...chapterCiteKeys]
+      .sort()
+      .map(key => referenceMap.get(key))
+      .filter((r): r is CSLData => r !== undefined);
+
     chapters.push({
       number: ch.number,
       tabLabel: ch.tabLabel,
       title: ch.title,
       label: ch.label,
       sections,
+      bibliography: bibliography.length > 0 ? bibliography : undefined,
     });
   }
 
@@ -213,6 +240,7 @@ async function main() {
     authors: paper.authors,
     date: paper.date,
     chapters,
+    references,
     meta: paper.meta,
     _built: new Date().toISOString(),
   };
