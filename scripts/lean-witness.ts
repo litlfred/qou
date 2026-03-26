@@ -20,7 +20,7 @@
  */
 
 import { createHash } from "crypto";
-import { readFileSync, writeFileSync, unlinkSync, existsSync, readdirSync, statSync } from "fs";
+import { readFileSync, writeFileSync, unlinkSync, existsSync } from "fs";
 import { resolve, join, basename, dirname } from "path";
 import { globSync } from "glob";
 
@@ -63,18 +63,11 @@ export function stampWitness(leanFile: string): { hash: string; witnessFile: str
 
 /** Remove all witness files for a given .lean file (any hash). */
 export function clearWitnesses(leanFile: string): number {
-  const dir = dirname(leanFile);
-  const base = basename(leanFile);
-  let removed = 0;
-  if (existsSync(dir)) {
-    for (const f of readdirSync(dir)) {
-      if (f.startsWith(`${base}.`) && f.endsWith(".witness")) {
-        unlinkSync(join(dir, f));
-        removed++;
-      }
-    }
+  const witnessFiles = globSync(`${leanFile}.*.witness`);
+  for (const f of witnessFiles) {
+    unlinkSync(f);
   }
-  return removed;
+  return witnessFiles.length;
 }
 
 /** Find all .lean files in content directories. */

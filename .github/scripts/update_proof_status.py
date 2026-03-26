@@ -42,11 +42,12 @@ def find_lean_file(lean_info: dict) -> Path | None:
         candidate = LEAN_DIR / lean_info["file"]
         if candidate.exists():
             return candidate
-    # Search content dirs for .lean siblings
-    for p in CONTENT_DIR.rglob("*.lean"):
-        # Match by declaration name in file content
-        if lean_info.get("decl") and lean_info["decl"].split(".")[-1] in p.stem.replace("-", "_"):
-            return p
+    # Search content dirs for .lean siblings — case-insensitive exact match
+    if lean_info.get("decl"):
+        decl_end = lean_info["decl"].split(".")[-1].lower()
+        for p in CONTENT_DIR.rglob("*.lean"):
+            if decl_end == p.stem.replace("-", "_").lower():
+                return p
     return None
 
 
