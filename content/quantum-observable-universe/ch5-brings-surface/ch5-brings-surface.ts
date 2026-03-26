@@ -137,6 +137,7 @@ export default chapter({
         "hadron-half-life-verification",
         "skein-coulomb-enhancement",
         "half-life-shell-worked",
+        "shell-threading-conjecture",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
