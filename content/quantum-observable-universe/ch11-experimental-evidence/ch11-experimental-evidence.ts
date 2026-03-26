@@ -99,6 +99,7 @@ export default chapter({
       blocks: [
         "topological-mass-formula",
         "hyperbolic-volumes-prose",
+        "knot-volumes-verification",
       ],
     }),
 
@@ -165,6 +166,19 @@ export default chapter({
       label: "sec:macroscopic-scattering",
       blocks: [
         "q-deformed-double-slit",
+      ],
+    }),
+
+    // ── Simulators ──
+
+    section({
+      title: "Interactive Simulations",
+      label: "sec:simulations",
+      blocks: [
+        "q-double-slit",
+        "double-slit-analytical",
+        "brings-surface",
+        "quantum-brings-surface",
       ],
     }),
   ],

@@ -16,4 +16,5 @@ export default remark({
     "def:fermion-boson-decomposition",
   ],
   tags: ["double-slit", "q-deformation", "scattering", "reeb", "torsion", "dirac", "wavefront"],
+  simulator: { ref: "sim:q-double-slit" },
 });

@@ -487,6 +487,27 @@ jobs:
           fi
           python3 .github/scripts/generate-index.py "${INDEX_ARGS[@]}"
 
+          # ── Copy figure assets for all papers to gh-pages ────────────────
+          # LaTeX \includegraphics uses paths like:
+          #   content/<paper>/<chapter>/figures/img.png
+          # Pandoc converts these to <img src="content/..."> in the HTML.
+          # Mirror the content/ figure directories into _site/ so both the
+          # per-paper viewer and the root-level HTML can resolve image paths.
+          for paper_dir in $(cat papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
+            for fig_dir in content/${paper_dir}/*/figures; do
+              if [ -d "${fig_dir}" ]; then
+                # Mirror into _site/ preserving content/.../ path (for Pandoc HTML)
+                mkdir -p "_site/${fig_dir}"
+                cp -r "${fig_dir}/." "_site/${fig_dir}/"
+                # Also copy into per-paper output dir (for standalone viewers)
+                paper_outdir="_site/papers/${paper_dir}"
+                mkdir -p "${paper_outdir}/figures"
+                cp -r "${fig_dir}/." "${paper_outdir}/figures/"
+                echo "  ✓ Figures: ${fig_dir}"
+              fi
+            done
+          done
+
           # ── Backward compatibility: copy first paper PDF to root ────────────
           cp main.pdf "_site/${FNAME_BASE}.pdf"
           cp "${FNAME_BASE}.md" "_site/${FNAME_BASE}.md"

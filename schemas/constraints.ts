@@ -24,6 +24,7 @@ const LABEL_PREFIXES: Record<string, string> = {
   example: "ex:",
   remark: "rem:",
   proof: "prf:",
+  simulator: "sim:",
   equation: "eq:",
   diagram: "fig:",
 };
@@ -90,13 +91,26 @@ const RenderedAssetSchema = z.object({
   hash: z.string().optional(),
 });
 
+const SimulatorRefSchema = z.object({
+  ref: z.string().startsWith("sim:", { message: "Simulator ref must start with 'sim:'" }),
+  view: z.string().optional(),
+});
+
+const SimulatorViewSchema = z.object({
+  name: z.string().min(1),
+  title: z.string().optional(),
+  params: z.record(z.string(), z.union([z.number(), z.string(), z.boolean()])),
+});
+
 const BlockBaseSchema = z.object({
   title: z.string().optional(),
   uses: z.array(z.string()).optional(),
+  cites: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
+  simulator: SimulatorRefSchema.optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -149,15 +163,41 @@ export const RemarkSchema = BlockBaseSchema.extend({
   lean: LeanRefSchema.optional(),
 });
 
+const ComputationEngineSchema = z.enum([
+  "snappea", "sympy", "mpmath", "sage",
+]);
+
+const ComputationStatusSchema = z.enum([
+  "not_run", "verified", "failed", "error", "stale",
+]);
+
+export const ComputationSchema = z.object({
+  engine: ComputationEngineSchema,
+  script: z.string().min(1, "Script path is required"),
+  witness: z.string().optional(),
+  status: ComputationStatusSchema,
+  requires: z.array(z.string()).optional(),
+});
+
 export const ProofSchema = BlockBaseSchema.extend({
   kind: z.literal("proof"),
   label: labelForKind("proof"),
   lean: LeanRefSchema.optional(),
+  computation: ComputationSchema.optional(),
+});
+
+export const SimulatorSchema = BlockBaseSchema.extend({
+  kind: z.literal("simulator"),
+  label: labelForKind("simulator"),
+  html: z.string().min(1, "Path to simulator HTML file is required"),
+  defaultView: SimulatorViewSchema,
+  views: z.array(SimulatorViewSchema).optional(),
 });
 
 export const ProseSchema = z.object({
   kind: z.literal("prose"),
   label: z.string().optional(),
+  cites: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   companions: CompanionsSchema.optional(),
   rendered: z.array(RenderedAssetSchema).optional(),
@@ -199,6 +239,7 @@ export const BlockSchema = z.discriminatedUnion("kind", [
   ExampleSchema,
   RemarkSchema,
   ProofSchema,
+  SimulatorSchema,
   ProseSchema,
   EquationSchema,
   DiagramSchema,
@@ -292,6 +333,8 @@ export interface ConstraintContext {
   dir: string;
   /** Set of all labels in the document (for cross-ref validation). */
   allLabels: Set<string>;
+  /** Set of all bibliography keys (for citation validation). */
+  allRefIds?: Set<string>;
   /** File existence checker. */
   fileExists: (path: string) => boolean;
 }
@@ -308,7 +351,7 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     description: "Every block must have a companion .md file",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark", "prose",
+      "conjecture", "example", "remark", "simulator", "prose",
     ],
     check: (block, ctx) => {
       const mdPath = `${ctx.dir}/${ctx.rootName}.md`;
@@ -327,11 +370,36 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
     },
   },
   {
+    id: "simulator-html-exists",
+    description: "Simulators must have a companion .html file",
+    appliesTo: ["simulator"],
+    check: (block, ctx) => {
+      if ("html" in block && block.html) return null;
+      return `Simulator "${block.label}" requires an html field pointing to the simulator HTML file`;
+    },
+  },
+  {
+    id: "simulator-ref-resolve",
+    description: "Blocks with simulator refs must reference an existing simulator label",
+    appliesTo: [
+      "definition", "theorem", "lemma", "proposition", "corollary",
+      "conjecture", "example", "remark",
+    ],
+    check: (block, ctx) => {
+      if (!("simulator" in block) || !block.simulator) return null;
+      const ref = (block.simulator as { ref: string }).ref;
+      if (!ctx.allLabels.has(ref)) {
+        return `Simulator ref "${ref}" not found in document labels`;
+      }
+      return null;
+    },
+  },
+  {
     id: "uses-resolve",
     description: "All labels in uses[] must exist in the document (or be qualified cross-paper refs)",
     appliesTo: [
       "definition", "theorem", "lemma", "proposition", "corollary",
-      "conjecture", "example", "remark",
+      "conjecture", "example", "remark", "simulator",
     ],
     check: (block, ctx) => {
       if (!("uses" in block) || !block.uses) return null;
@@ -359,6 +427,20 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
       if ("lean" in block && block.lean) return null;
       // Return as warning-level message (prefix convention)
       return `[warning] ${block.label}: no Lean declaration yet`;
+    },
+  },
+  {
+    id: "cites-resolve",
+    description: "All citation keys in cites[] must exist in references.ts",
+    appliesTo: [
+      "definition", "theorem", "lemma", "proposition", "corollary",
+      "conjecture", "example", "remark", "prose",
+    ],
+    check: (block, ctx) => {
+      if (!("cites" in block) || !block.cites || !ctx.allRefIds) return null;
+      const missing = (block.cites as string[]).filter((c: string) => !ctx.allRefIds!.has(c));
+      return missing.length === 0 ? null
+        : `Unresolved citations: ${missing.join(", ")}`;
     },
   },
 ];

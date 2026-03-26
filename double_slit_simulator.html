@@ -689,6 +689,20 @@ document.getElementById('cb_fraunhofer').addEventListener('change', draw);
 document.getElementById('cb_envelope').addEventListener('change', draw);
 document.getElementById('cb_bach').addEventListener('change', draw);
 
+// ── Theme sync with viewer ───────────────────────────────────────
+(function(){
+  var p = new URLSearchParams(location.search);
+  if (p.get('theme') === 'light') document.body.classList.add('light');
+  else document.body.classList.remove('light');
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'folio-theme') {
+      if (e.data.theme === 'light') document.body.classList.add('light');
+      else document.body.classList.remove('light');
+      draw();
+    }
+  });
+})();
+
 // ── Init ───────────────────────────────────────────────────────────
 draw();
 </script>

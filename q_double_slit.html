@@ -620,6 +620,22 @@ function togglePause() {
   document.getElementById('pause-btn').textContent = paused ? 'Run' : 'Pause';
 }
 
+// ── Theme sync with viewer ───────────────────────────────────────
+(function(){
+  var p = new URLSearchParams(location.search);
+  if (p.get('theme') === 'light') document.body.classList.add('light');
+  else document.body.classList.remove('light');
+  var btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = document.body.classList.contains('light') ? 'Dark' : 'Light';
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'folio-theme') {
+      if (e.data.theme === 'light') document.body.classList.add('light');
+      else document.body.classList.remove('light');
+      if (btn) btn.textContent = document.body.classList.contains('light') ? 'Dark' : 'Light';
+    }
+  });
+})();
+
 // ── Init ────────────────────────────────────────────────────────
 resize();
 window.addEventListener('resize', resize);

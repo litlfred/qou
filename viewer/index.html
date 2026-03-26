@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Folio</title>
+  <!-- Prevent white flash: apply saved theme before any rendering -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('folio-assistant-theme') || 'dark';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <style>html{background:#0e0e12}html[data-theme="light"]{background:#fafafa}</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -715,6 +723,18 @@
     .chat-send{background:var(--ac);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
     .chat-send:disabled{opacity:.4;cursor:default}
 
+    /* Simulator overlay */
+    .sim-overlay{position:fixed;top:35px;left:0;right:0;bottom:0;z-index:350;background:var(--bg);display:none;flex-direction:column}
+    .sim-overlay.open{display:flex}
+    .sim-head{display:flex;align-items:center;gap:.6rem;padding:.4rem 1rem;background:var(--bg-s);border-bottom:1px solid var(--brd);flex-shrink:0}
+    .sim-title{font-family:var(--f-head);font-size:.85rem;font-weight:600;color:var(--fg-b)}
+    .sim-view-select{font-family:var(--f-mono);font-size:.65rem;background:var(--bg);color:var(--fg);border:1px solid var(--brd);border-radius:3px;padding:.15rem .3rem}
+    .sim-close{background:none;border:1px solid var(--brd);color:var(--fg-d);font-family:var(--f-mono);font-size:.7rem;padding:.2rem .6rem;border-radius:4px;cursor:pointer}
+    .sim-close:hover{color:var(--fg-b);border-color:var(--ac)}
+    .sim-frame{flex:1;border:none;width:100%;height:100%}
+    .bh-acts .sim-btn{font-family:var(--f-mono);font-size:.55rem;color:var(--ac2,#7c5cbf);background:none;border:none;border-radius:0;padding:0;cursor:pointer;white-space:nowrap}
+    .bh-acts .sim-btn:hover{color:var(--ac)}
+
     /* Diff button + overlay */
     #c-diff{display:none}
     #c-diff.visible{display:inline-block}
@@ -898,6 +918,51 @@
     .dep-ext-list{display:flex;flex-direction:column;gap:.2rem;margin-top:.3rem;padding-left:.5rem}
     .dep-ext-list a{color:var(--ac);text-decoration:none;font-size:.6rem}
     .dep-ext-list a:hover{text-decoration:underline}
+
+    /* ── Bibliography ─────────────────────────────────────── */
+    .cite-link{color:var(--ac);text-decoration:none;cursor:pointer;border-bottom:1px dotted var(--ac)}
+    .cite-link:hover{text-decoration:underline;border-bottom-style:solid}
+    .cite-link.cite-highlight{background:rgba(var(--ac-rgb,59,130,246),.15);border-radius:2px;padding:0 2px}
+    .ch-bibliography{margin-top:3rem;padding-top:1.5rem;border-top:2px solid var(--brd)}
+    .bib-title{font-size:1.1rem;font-weight:600;margin-bottom:.8rem;color:var(--fg)}
+    .bib-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+    .bib-entry{font-size:.82rem;line-height:1.5;padding:.4rem .6rem;border-radius:4px;transition:background .15s}
+    .bib-entry:target,.bib-entry.bib-highlight{background:rgba(var(--ac-rgb,59,130,246),.1)}
+    .bib-key{font-family:var(--f-mono);font-size:.72rem;color:var(--fg-d);margin-right:.3rem}
+    .bib-doi{font-family:var(--f-mono);font-size:.72rem;color:var(--ac)}
+    .bib-entry em{font-style:italic}
+    .bib-entry strong{font-weight:600}
+    .bib-uncited-entry{opacity:.6}
+    .bib-backlinks{margin-top:.3rem;font-size:.72rem;color:var(--fg-d)}
+    .bib-backlinks a{color:var(--ac);font-family:var(--f-mono);font-size:.68rem}
+
+    /* QA report */
+    .bib-qa-report{background:var(--bg-s);border:1px solid var(--brd);border-radius:6px;padding:1rem;margin-bottom:1.5rem}
+    .bib-qa-report h3{margin:0 0 .6rem;font-size:.9rem}
+    .bib-qa-grid{display:flex;flex-wrap:wrap;gap:.5rem}
+    .bib-qa-item{background:var(--bg);border:1px solid var(--brd);border-radius:4px;padding:.3rem .6rem;font-size:.85rem;font-weight:600}
+    .bib-qa-item small{font-weight:400;color:var(--fg-d);font-size:.72rem}
+    .bib-qa-item.ok{border-color:var(--grn);color:var(--grn)}
+    .bib-qa-item.warn{border-color:var(--ora);color:var(--ora)}
+    .bib-qa-item.err{border-color:var(--red);color:var(--red)}
+    .bib-qa-item.info{border-color:var(--fg-d)}
+    .bib-dangling,.bib-uncited{margin-top:.8rem;font-size:.82rem}
+    .bib-dangling summary,.bib-uncited summary{cursor:pointer;font-weight:600;color:var(--fg)}
+    .bib-dangling ul,.bib-uncited ul{margin:.3rem 0;padding-left:1.5rem}
+    .bib-dangling li{margin:.2rem 0}
+    .bib-full-list{counter-reset:bib}
+    .bib-full-list .bib-entry{counter-increment:bib}
+
+    /* Sidebar bibliography */
+    .sb-bib-qa{padding:.3rem .5rem;font-size:.65rem}
+    .sb-bib-stat{padding:.1rem 0;color:var(--fg-d)}
+    .sb-bib-stat.ok{color:var(--grn)}
+    .sb-bib-stat.warn{color:var(--ora)}
+    .sb-bib-stat.info{color:var(--fg-d)}
+    .sb-bib-list{max-height:300px;overflow-y:auto}
+    .sb-bib-key{font-family:var(--f-mono);font-size:.6rem;color:var(--ac)}
+    .sb-bib-key.uncited{color:var(--fg-d);opacity:.5}
+    .sb-bib-au{font-size:.6rem;color:var(--fg-d)}
   </style>
 </head>
 <body data-font="web">
@@ -1017,6 +1082,17 @@
     <div class="diff-body" id="diff-body"></div>
   </div>
 
+  <!-- Simulator overlay -->
+  <div class="sim-overlay" id="sim-overlay">
+    <div class="sim-head">
+      <span class="sim-title" id="sim-title">Simulator</span>
+      <select class="sim-view-select" id="sim-view-select" title="Select parameter view"></select>
+      <span style="flex:1"></span>
+      <button class="sim-close" id="sim-close">&times; close</button>
+    </div>
+    <iframe class="sim-frame" id="sim-frame" sandbox="allow-scripts allow-same-origin"></iframe>
+  </div>
+
   <!-- Claude assistant chat -->
   <button class="claude-fab" id="claude-fab" title="Ask Folio assistant">&#x2726;</button>
   <div class="chat-panel" id="chat-panel">
@@ -1080,18 +1156,21 @@
     const btnTh = document.getElementById('c-th');
     const btnFn = document.getElementById('c-fn');
 
-    // Restore saved theme preference (default: light)
-    const savedTheme = localStorage.getItem('folio-assistant-theme');
-    if (savedTheme) {
-      html.dataset.theme = savedTheme;
-      btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
-    }
+    // Theme already applied by inline <script> in <head> to prevent flash.
+    // Just sync the button label.
+    const savedTheme = html.dataset.theme || 'dark';
+    btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
 
     btnTh.addEventListener('click', () => {
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
       localStorage.setItem('folio-assistant-theme', n);
+      // Notify simulator iframe of theme change
+      const sf = document.getElementById('sim-frame');
+      if (sf && sf.contentWindow) {
+        try { sf.contentWindow.postMessage({ type: 'folio-theme', theme: n }, '*'); } catch(_){}
+      }
     });
 
     btnFn.addEventListener('click', () => {
@@ -1344,6 +1423,42 @@
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.br-picker')) { brDrop.classList.remove('open'); brInput.value = selectedBranch; }
     });
+
+    // ── Citation click handling ──────────────────────────────────
+    document.addEventListener('click', (e) => {
+      const citeLink = e.target.closest('.cite-link');
+      if (!citeLink) return;
+      e.preventDefault();
+      const key = citeLink.dataset.cite;
+      if (!key) return;
+      const target = document.getElementById(`bib-${key}`);
+      if (target) {
+        // Scroll to bibliography entry
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Highlight briefly
+        target.classList.add('bib-highlight');
+        setTimeout(() => target.classList.remove('bib-highlight'), 2000);
+      }
+    });
+
+    // Populate cite-link tooltips from loaded references
+    function populateCiteTooltips() {
+      if (!paper?.references) return;
+      const refMap = new Map(paper.references.map(r => [r.id, r]));
+      document.querySelectorAll('.cite-link').forEach(link => {
+        const key = link.dataset.cite;
+        if (!key) return;
+        const ref = refMap.get(key);
+        if (!ref) return;
+        const authors = ref.author?.length
+          ? (ref.author.length <= 3
+            ? ref.author.map(a => a.family || a.literal || '').join(' & ')
+            : `${ref.author[0].family || ref.author[0].literal} et al.`)
+          : '';
+        const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+        link.title = `${authors} (${year}). ${ref.title || ''}`;
+      });
+    }
 
     // ── Branch switch dialog (replaces system prompt/alert) ──────
     function showSwitchDialog({title, body, changes, actions, error}) {
@@ -1604,8 +1719,13 @@
       // Then bare (outside math mode)
       t = t.replace(/\\eqref\{([^}]+)\}/g, '(<a href="#$1" data-ref="$1">$1</a>)');
       t = t.replace(/\\(?:ref|cref|autoref)\{([^}]+)\}/g, '<a href="#$1" data-ref="$1">$1</a>');
-      // \cite{key} → [key], ~ → non-breaking space
-      t = t.replace(/\\cite\{([^}]+)\}/g, '[$1]');
+      // \cite[opt]{key1, key2} → clickable citation links
+      t = t.replace(/\\cite(?:\[([^\]]*)\])?\{([^}]+)\}/g, (_, opt, keys) => {
+        const citeKeys = keys.split(',').map(k => k.trim());
+        const links = citeKeys.map(k => `<a href="#bib-${k}" class="cite-link" data-cite="${k}" title="">${k}</a>`);
+        const inner = links.join(', ');
+        return opt ? `[${inner}, ${esc(opt)}]` : `[${inner}]`;
+      });
       t = t.replace(/~/g, '&nbsp;');
       // Inline math: walk character-by-character to handle nested braces
       let out = '', i = 0;
@@ -2444,6 +2564,67 @@
       return u;
     }
 
+    // ── Chapter bibliography renderer ─────────────────────
+    function renderChapterBibliography(refs) {
+      const div = mk('div', 'ch-bibliography');
+      div.innerHTML = '<h3 class="bib-title">References</h3>';
+      const ol = document.createElement('ol');
+      ol.className = 'bib-list';
+      for (const ref of refs) {
+        const li = document.createElement('li');
+        li.id = `bib-${ref.id}`;
+        li.className = 'bib-entry';
+        li.dataset.citeKey = ref.id;
+
+        // Format authors
+        let authors = '';
+        if (ref.author?.length) {
+          const names = ref.author.map(a => {
+            if (a.literal) return esc(a.literal);
+            const parts = [];
+            if (a.given) parts.push(esc(a.given));
+            if (a.family) parts.push(esc(a.family));
+            return parts.join(' ');
+          });
+          authors = names.length <= 3 ? names.join(', ') : `${names[0]} et al.`;
+        }
+
+        // Format year
+        let year = '';
+        if (ref.issued?.['date-parts']?.[0]) {
+          year = `(${ref.issued['date-parts'][0][0]})`;
+        }
+
+        // Format title
+        const title = ref.title ? `<em>${esc(ref.title)}</em>` : '';
+
+        // Format journal/publisher
+        let venue = '';
+        if (ref['container-title']) {
+          venue = esc(ref['container-title']);
+        } else if (ref.publisher) {
+          venue = esc(ref.publisher);
+        }
+
+        // Volume/pages
+        let volPages = '';
+        if (ref.volume) volPages += `<strong>${ref.volume}</strong>`;
+        if (ref.page) volPages += `: ${esc(ref.page)}`;
+
+        // DOI link
+        let doi = '';
+        if (ref.DOI) {
+          doi = `<a href="https://doi.org/${encodeURIComponent(ref.DOI)}" class="bib-doi" target="_blank" rel="noopener">doi:${esc(ref.DOI)}</a>`;
+        }
+
+        const parts = [authors, year, title, venue, volPages, doi].filter(Boolean);
+        li.innerHTML = `<span class="bib-key">[${esc(ref.id)}]</span> ${parts.join('. ')}.`;
+        ol.appendChild(li);
+      }
+      div.appendChild(ol);
+      return div;
+    }
+
     // ── Block renderer ───────────────────────────────────
     function renderBlock(block) {
       // Defer markdown parsing to lazy init for most blocks
@@ -2471,6 +2652,7 @@
         const exHdr = mkBlockHeader('example', block.title, block.label);
         // Collapse into header actions
         if (block.label) { const exBolt = mkDepBolt(block.label); exHdr._acts.appendChild(exBolt); }
+        if (block.simulator && block.simulator.ref) { exHdr._acts.appendChild(mkSimBtn(block.simulator)); }
         const exColBtn = mk('button','fb-act'); exColBtn.textContent = '−'; exColBtn.title = 'Collapse';
         exColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         exHdr._acts.appendChild(exColBtn);
@@ -2514,6 +2696,7 @@
         if (block.label) d.id = block.label;
         const rmHdr = mkBlockHeader('remark', block.title, block.label);
         if (block.label) { const rmBolt = mkDepBolt(block.label); rmHdr._acts.appendChild(rmBolt); }
+        if (block.simulator && block.simulator.ref) { rmHdr._acts.appendChild(mkSimBtn(block.simulator)); }
         const rmColBtn = mk('button','fb-act'); rmColBtn.textContent = '−'; rmColBtn.title = 'Collapse';
         rmColBtn.onclick = (e) => { e.stopPropagation(); wrap.style.display = 'none'; stub.style.display = ''; };
         rmHdr._acts.appendChild(rmColBtn);
@@ -2642,6 +2825,39 @@
         if (block.rendered?.length) d.innerHTML = renderAsset(block.rendered[0]);
         else d.innerHTML = `<div class="txb ph">${esc(block.tex||block.md||'')}</div>`;
         return d;
+      }
+
+      // Simulator block — renders as a remark-like card with prominent simulate button
+      if (block.kind === 'simulator') {
+        const frag = document.createDocumentFragment();
+        const wrap = mk('div', 'blk blk-remark');
+        const d = mk('div', 'env remark simulator');
+        if (block.label) d.id = block.label;
+        const simHdr = mkBlockHeader('simulator', block.title, block.label);
+        if (block.label) { simHdr._acts.appendChild(mkDepBolt(block.label)); }
+        // Primary simulate button
+        const simRef = { ref: block.label, view: undefined };
+        simHdr._acts.appendChild(mkSimBtn(simRef));
+        const simFb = mk('button','fb-act'); simFb.textContent = 'feedback';
+        simFb.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
+        simHdr._acts.appendChild(simFb);
+        d.appendChild(simHdr);
+
+        const bb = mk('div','bb');
+        bb.innerHTML = '<span style="color:var(--fg-d);font-size:.8rem">...</span>';
+        d.appendChild(bb);
+        addSrc(d, block.md, simHdr, block);
+
+        lazyInit(d, () => {
+          const {bh, tx} = hydrateContent();
+          bb.innerHTML = bh;
+          fillTex(bb, tx, block.rendered);
+          renderMath(bb); resolveRefs(bb);
+        });
+
+        wrap.appendChild(d);
+        frag.appendChild(wrap);
+        return frag;
       }
 
       // Environment block (definition, theorem, proposition, lemma, corollary, conjecture)
@@ -2779,6 +2995,12 @@
         hdr._acts.insertBefore(bolt, hdr._acts.firstChild);
       }
 
+      // Simulate button — shown on blocks with a simulator ref
+      if (block.simulator && block.simulator.ref) {
+        const simBtn = mkSimBtn(block.simulator);
+        hdr._acts.appendChild(simBtn);
+      }
+
       // Feedback button in header actions
       const fbBtn = mk('button','fb-act');
       fbBtn.textContent = 'feedback';
@@ -2788,6 +3010,11 @@
       if (block.label) {
         const lbl2 = mk('a','bl'); lbl2.href = `#/edit/${block.label}`; lbl2.textContent = block.label;
         hdr._drop.appendChild(lbl2);
+      }
+      // Simulate button in hamburger menu too
+      if (block.simulator && block.simulator.ref) {
+        const simBtn2 = mkSimBtn(block.simulator);
+        hdr._drop.appendChild(simBtn2);
       }
       const fb2 = mk('button','fb-act'); fb2.textContent = 'feedback';
       fb2.onclick = (e) => { e.stopPropagation(); openFeedback(block); };
@@ -3491,6 +3718,8 @@
             lazyObs.unobserve(t.el);
             lazyQueue.splice(lazyQueue.indexOf(t), 1);
           }
+          // Populate citation tooltips for this chapter
+          populateCiteTooltips();
         }
 
         // Highlight sidebar
@@ -3660,6 +3889,64 @@
         }
         sb.appendChild(chBody);
       }
+
+      // ── Bibliography sidebar entry (collapsed "B" tab) ──────────
+      if (p.references?.length) {
+        const bibEl = mk('div','sb-ch');
+        bibEl.dataset.num = 'B';
+        bibEl.innerHTML = `<span class="sb-arrow">&#9654;</span><span>Bibliography</span>`;
+        const bibBody = mk('div','sb-ch-body');
+
+        // Build QA summary
+        const totalRefs = p.references.length;
+        const withDoi = p.references.filter(r => r.DOI).length;
+        const withUrl = p.references.filter(r => r.URL).length;
+        const noAuthor = p.references.filter(r => !r.author?.length).length;
+        const noYear = p.references.filter(r => !r.issued).length;
+        const citedKeys = new Set();
+        for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+          if (b.cites) for (const k of b.cites) citedKeys.add(k);
+        }
+        const uncited = p.references.filter(r => !citedKeys.has(r.id)).length;
+
+        const qaDiv = mk('div','sb-bib-qa');
+        qaDiv.innerHTML = `<div class="sb-bib-stat">${totalRefs} references</div>`
+          + `<div class="sb-bib-stat ok">${withDoi} with DOI</div>`
+          + (noAuthor ? `<div class="sb-bib-stat warn">${noAuthor} missing authors</div>` : '')
+          + (noYear ? `<div class="sb-bib-stat warn">${noYear} missing year</div>` : '')
+          + (uncited ? `<div class="sb-bib-stat info">${uncited} uncited</div>` : '')
+          + `<div class="sb-bib-stat">${citedKeys.size} cited in paper</div>`;
+        bibBody.appendChild(qaDiv);
+
+        // List all references as clickable entries
+        const refList = mk('div','sb-bib-list');
+        for (const ref of p.references) {
+          const rEl = mk('div','sb-blk');
+          const author = ref.author?.[0]?.family || ref.author?.[0]?.literal || '?';
+          const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+          const isCited = citedKeys.has(ref.id);
+          rEl.innerHTML = `<span class="sb-bib-key${isCited ? '' : ' uncited'}">[${esc(ref.id)}]</span> `
+            + `<span class="sb-bib-au">${esc(author)} ${year}</span>`;
+          rEl.title = ref.title || '';
+          rEl.onclick = () => {
+            showChapter('bib');
+            setTimeout(() => {
+              const t = document.getElementById(`bib-full-${ref.id}`);
+              if (t) { t.scrollIntoView({behavior:'smooth',block:'center'}); t.classList.add('bib-highlight'); setTimeout(() => t.classList.remove('bib-highlight'), 2000); }
+            }, 50);
+          };
+          refList.appendChild(rEl);
+        }
+        bibBody.appendChild(refList);
+
+        bibEl.onclick = () => {
+          bibEl.classList.toggle('open');
+          bibBody.style.display = bibEl.classList.contains('open') ? 'block' : 'none';
+          showChapter('bib');
+        };
+        sb.appendChild(bibEl);
+        sb.appendChild(bibBody);
+      }
       renderMath(sb);
 
       // Header
@@ -3706,8 +3993,109 @@
           }
           cd.appendChild(sd);
         }
+        // Render chapter-end bibliography
+        if (ch.bibliography?.length) {
+          cd.appendChild(renderChapterBibliography(ch.bibliography));
+        }
         chapterDivs.set(ch.number, cd);
         app.appendChild(cd);
+      }
+
+      // ── Full bibliography page ──────────────────────────────────
+      if (p.references?.length) {
+        const bibDiv = mk('div','ch bib-page');
+        bibDiv.dataset.chNum = 'bib';
+        bibDiv.style.display = 'none';
+        bibDiv.id = 'bibliography';
+
+        // Build reverse index: ref id → blocks that cite it
+        const refCitedBy = new Map();
+        for (const ch of p.chapters) for (const s of ch.sections) for (const b of s.blocks) {
+          if (b.cites) for (const k of b.cites) {
+            if (!refCitedBy.has(k)) refCitedBy.set(k, []);
+            refCitedBy.get(k).push({ label: b.label, kind: b.kind, title: b.title, chapter: ch.number });
+          }
+        }
+
+        // QA report
+        const totalRefs = p.references.length;
+        const withDoi = p.references.filter(r => r.DOI).length;
+        const withUrl = p.references.filter(r => r.URL).length;
+        const noAuthor = p.references.filter(r => !r.author?.length).length;
+        const noYear = p.references.filter(r => !r.issued).length;
+        const citedKeys = new Set(refCitedBy.keys());
+        const uncitedRefs = p.references.filter(r => !citedKeys.has(r.id));
+        const danglingCites = [...citedKeys].filter(k => !p.references.find(r => r.id === k));
+
+        let qaHtml = `<div class="bib-qa-report">
+          <h3>Bibliography QA</h3>
+          <div class="bib-qa-grid">
+            <div class="bib-qa-item">${totalRefs} <small>total</small></div>
+            <div class="bib-qa-item ok">${withDoi} <small>with DOI</small></div>
+            <div class="bib-qa-item">${citedKeys.size} <small>cited</small></div>
+            <div class="bib-qa-item${uncitedRefs.length ? ' info' : ''}">${uncitedRefs.length} <small>uncited</small></div>
+            ${noAuthor ? `<div class="bib-qa-item warn">${noAuthor} <small>no author</small></div>` : ''}
+            ${noYear ? `<div class="bib-qa-item warn">${noYear} <small>no year</small></div>` : ''}
+            ${danglingCites.length ? `<div class="bib-qa-item err">${danglingCites.length} <small>dangling</small></div>` : ''}
+          </div>`;
+
+        // Dangling references section
+        if (danglingCites.length) {
+          qaHtml += `<details class="bib-dangling" open><summary>${danglingCites.length} dangling citation(s) — key cited but not in references.ts</summary><ul>`;
+          for (const k of danglingCites) {
+            const citers = refCitedBy.get(k) || [];
+            const links = citers.map(c => `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`).join(', ');
+            qaHtml += `<li><code>${esc(k)}</code> — cited by: ${links}</li>`;
+          }
+          qaHtml += `</ul></details>`;
+        }
+
+        // Uncited references
+        if (uncitedRefs.length) {
+          qaHtml += `<details class="bib-uncited"><summary>${uncitedRefs.length} uncited reference(s)</summary><ul>`;
+          for (const r of uncitedRefs) {
+            qaHtml += `<li><code>${esc(r.id)}</code> — ${esc(r.title || '(no title)')}</li>`;
+          }
+          qaHtml += `</ul></details>`;
+        }
+        qaHtml += `</div>`;
+
+        // Full reference list
+        let refsHtml = '<h2 class="ch-t">Bibliography</h2>' + qaHtml + '<ol class="bib-list bib-full-list">';
+        for (const ref of p.references) {
+          const isCited = citedKeys.has(ref.id);
+          const citers = refCitedBy.get(ref.id) || [];
+
+          // Format entry
+          let authors = '';
+          if (ref.author?.length) {
+            const names = ref.author.map(a => a.literal || [a.given, a.family].filter(Boolean).join(' '));
+            authors = names.length <= 3 ? names.join(', ') : `${names[0]} et al.`;
+          }
+          const year = ref.issued?.['date-parts']?.[0]?.[0] || '';
+          const title = ref.title ? `<em>${esc(ref.title)}</em>` : '';
+          const venue = ref['container-title'] ? esc(ref['container-title']) : (ref.publisher ? esc(ref.publisher) : '');
+          let vol = ref.volume ? `<strong>${ref.volume}</strong>` : '';
+          if (ref.page) vol += `: ${esc(ref.page)}`;
+          const doi = ref.DOI ? `<a href="https://doi.org/${encodeURIComponent(ref.DOI)}" class="bib-doi" target="_blank" rel="noopener">doi:${esc(ref.DOI)}</a>` : '';
+          const url = !ref.DOI && ref.URL ? `<a href="${esc(ref.URL)}" class="bib-doi" target="_blank" rel="noopener">${esc(ref.URL)}</a>` : '';
+
+          // Cited-by backlinks
+          let backlinks = '';
+          if (citers.length) {
+            backlinks = `<div class="bib-backlinks">Cited by: ${citers.map(c =>
+              `<a href="#${c.label}" class="cite-link" onclick="event.preventDefault();paper._showChapter(${c.chapter});setTimeout(()=>{const t=document.getElementById('${c.label}');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})},50)">${esc(c.label)}</a>`
+            ).join(', ')}</div>`;
+          }
+
+          const parts = [authors, year ? `(${year})` : '', title, venue, vol, doi, url].filter(Boolean);
+          refsHtml += `<li id="bib-full-${ref.id}" class="bib-entry${isCited ? '' : ' bib-uncited-entry'}">
+            <span class="bib-key">[${esc(ref.id)}]</span> ${parts.join('. ')}.${backlinks}</li>`;
+        }
+        refsHtml += '</ol>';
+        bibDiv.innerHTML = refsHtml;
+        chapterDivs.set('bib', bibDiv);
+        app.appendChild(bibDiv);
       }
 
       // ── Content Index: virtual chapter at end ──────────────
@@ -3908,6 +4296,115 @@
     }
     function getDraft(target) {
       return loadDrafts()[target] || null;
+    }
+
+    // ── Simulator overlay ─────────────────────────────────
+    const simOverlay = document.getElementById('sim-overlay');
+    const simFrame = document.getElementById('sim-frame');
+    const simTitle = document.getElementById('sim-title');
+    const simViewSelect = document.getElementById('sim-view-select');
+    let simCurrentBlock = null;
+
+    document.getElementById('sim-close').onclick = () => {
+      simOverlay.classList.remove('open');
+      simFrame.src = 'about:blank';
+      simCurrentBlock = null;
+    };
+
+    /**
+     * Build URL with view params as query string.
+     * Simulator HTML files read these via URLSearchParams.
+     */
+    function simUrl(htmlPath, params) {
+      const qs = new URLSearchParams();
+      // Pass current theme so simulator starts in the right mode
+      qs.set('theme', html.dataset.theme || 'dark');
+      for (const [k, v] of Object.entries(params || {})) qs.set(k, String(v));
+      return `/${htmlPath}?${qs.toString()}`;
+    }
+
+    /**
+     * Open the simulator overlay for a given simulator block.
+     * @param {object} simBlock - The simulator content object
+     * @param {string} [viewName] - Named view to activate (default: "default")
+     */
+    function openSimulator(simBlock, viewName) {
+      simCurrentBlock = simBlock;
+      simTitle.textContent = simBlock.title || 'Simulator';
+
+      // Populate view selector
+      simViewSelect.innerHTML = '';
+      const defaultOpt = document.createElement('option');
+      defaultOpt.value = simBlock.defaultView.name;
+      defaultOpt.textContent = simBlock.defaultView.title || simBlock.defaultView.name;
+      simViewSelect.appendChild(defaultOpt);
+      for (const v of (simBlock.views || [])) {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = v.title || v.name;
+        simViewSelect.appendChild(opt);
+      }
+
+      // Select the requested view
+      const targetView = viewName || 'default';
+      simViewSelect.value = targetView;
+
+      // Load the simulator
+      const view = targetView === simBlock.defaultView.name
+        ? simBlock.defaultView
+        : (simBlock.views || []).find(v => v.name === targetView) || simBlock.defaultView;
+      simFrame.src = simUrl(simBlock.html, view.params);
+      simOverlay.classList.add('open');
+    }
+
+    // View selector change handler
+    simViewSelect.onchange = () => {
+      if (!simCurrentBlock) return;
+      const viewName = simViewSelect.value;
+      const view = viewName === simCurrentBlock.defaultView.name
+        ? simCurrentBlock.defaultView
+        : (simCurrentBlock.views || []).find(v => v.name === viewName) || simCurrentBlock.defaultView;
+      simFrame.src = simUrl(simCurrentBlock.html, view.params);
+    };
+
+    /**
+     * Create a [simulate] button for a block's header actions.
+     * Resolves the simulator ref from the paper's block data.
+     */
+    function mkSimBtn(simRef) {
+      const btn = mk('button', 'sim-btn');
+      btn.textContent = 'simulate';
+      btn.title = 'Open interactive simulation';
+      btn.onclick = async (e) => {
+        e.stopPropagation();
+        // Look up in the block index first (already loaded blocks)
+        let simBlock = bix.get(simRef.ref);
+        if (simBlock) {
+          openSimulator(simBlock, simRef.view);
+          return;
+        }
+        // Try loading the simulator block from the API
+        try {
+          const r = await fetch(`/api/paper/block?id=${encodeURIComponent(paperId)}&label=${encodeURIComponent(simRef.ref)}${branchParam()}`);
+          if (r.ok) {
+            simBlock = await r.json();
+            if (simBlock) {
+              bix.set(simRef.ref, simBlock);
+              openSimulator(simBlock, simRef.view);
+              return;
+            }
+          }
+        } catch (err) { console.error(`Failed to fetch simulator block '${simRef.ref}':`, err); }
+        // Final fallback: scan paper chapters for blocks loaded in sections
+        for (const ch of (paper?.chapters || [])) {
+          for (const sec of (ch.sections || [])) {
+            for (const b of (sec.blocks || [])) {
+              if (b.label === simRef.ref) { openSimulator(b, simRef.view); return; }
+            }
+          }
+        }
+      };
+      return btn;
     }
 
     // ── Feedback panel ────────────────────────────────────
@@ -5085,6 +5582,20 @@
         const { slug, branch } = parseBranchFromSlug(rest);
         applyUrlBranch(branch);
         await routeDiff(slug);
+      } else if (action === 'simulate' && rest) {
+        // #/simulate/sim:q-double-slit or #/simulate/sim:q-double-slit/bach-2013
+        const parts = rest.split('/');
+        const label = parts[0];
+        const viewName = parts[1] || undefined;
+        // Load the paper first, then open the simulator
+        if (!paper) await loadFolio();
+        try {
+          const r = await fetch(`/api/paper/block?id=${encodeURIComponent(paperId)}&label=${encodeURIComponent(label)}${branchParam()}`);
+          if (r.ok) {
+            const simBlock = await r.json();
+            if (simBlock) openSimulator(simBlock, viewName);
+          }
+        } catch (err) { console.error(`Failed to load simulator for route #simulate/${rest}:`, err); }
       } else {
         await loadFolio();
       }
