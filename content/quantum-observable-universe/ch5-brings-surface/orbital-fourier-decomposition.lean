@@ -41,9 +41,14 @@ def OrbitalSpaceN (T : TrefoilEmbedding) (n : ℕ) : Type :=
     framingTwist T σ = 2 * (n - 1) ∧
     ∀ ℓ, ℓ ≥ n → σ.coeff ℓ = fun _ => (0, 0) }
 
-/-- The Laplacian eigenvalue of mode ℓ on S¹ of length L. -/
-def laplacianEigenvalue (L : ℝ) (ℓ : ℕ) : ℝ :=
-  (2 * Real.pi * ℓ / L) ^ 2
+/-- The q-integer [ℓ]_q = (q^ℓ - q^{-ℓ}) / (q - q^{-1}). -/
+def qInteger (q : ℝ) (ℓ : ℕ) : ℝ :=
+  (q ^ (ℓ : ℝ) - q ^ (-(ℓ : ℝ))) / (q - q⁻¹)
+
+/-- The q-Laplacian eigenvalue of mode ℓ: [ℓ]_q · [ℓ+1]_q.
+    At q = 1: recovers ℓ(ℓ+1). -/
+def qLaplacianEigenvalue (q : ℝ) (ℓ : ℕ) : ℝ :=
+  qInteger q ℓ * qInteger q (ℓ + 1)
 
 /-- Mode ℓ sections form an irreducible SO(3) representation V_ℓ.
     dim V_ℓ = 2ℓ + 1. -/

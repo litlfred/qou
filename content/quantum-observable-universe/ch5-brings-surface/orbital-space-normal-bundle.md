@@ -36,20 +36,21 @@ number of the displaced curve $T_{2,3} + \epsilon\,\sigma$
 relative to the Seifert surface.  This is the global R-I count
 ([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
 
-**The Laplacian on the trefoil.**
+**The $q$-Laplacian on the trefoil.**
 
-The Laplacian $\Delta_T$ on $T_{2,3} \cong S^1$ has
+The $q$-Laplacian $\Delta_q$ on $T_{2,3} \cong S^1$ has
 eigenvalues
 
 $$
-  \lambda_\ell \;=\; \left(\frac{2\pi\ell}{L}\right)^2,
+  \lambda_\ell \;=\; [\ell]_q \, [\ell + 1]_q,
   \qquad \ell = 0, 1, 2, \ldots
 $$
 
-with eigenfunctions $e^{i\ell\theta}$ and $e^{-i\ell\theta}$
-(the Fourier modes on the circle).  Each eigenvalue
-$\lambda_\ell$ for $\ell \geq 1$ has **multiplicity $2$** on
-$S^1$ (cosine and sine modes).
+where $[\ell]_q = (q^\ell - q^{-\ell})/(q - q^{-1})$ is the
+$q$-integer.  At $q = 1$ this recovers $\ell(\ell + 1)$.
+The eigenfunctions are $q$-deformed exponentials on the
+circle.  Each eigenvalue $\lambda_\ell$ for $\ell \geq 1$ has
+**multiplicity $2$** (cosine and sine modes).
 
 **From $S^1$ modes to $S^2$ harmonics.**
 
@@ -140,14 +141,14 @@ The energy of mode $\ell$ at shell $n$ is
 $$
   E_\ell
   \;=\;
-  \frac{\ell(\ell + 1)}{n^2} \cdot E_{\mathrm{ion}}
+  \frac{[\ell]_q \, [\ell + 1]_q}{[n]_q^2} \cdot E_{\mathrm{ion}}
 $$
 
-where $E_{\mathrm{ion}} = 13.6$ eV and the $\ell(\ell+1)$
-comes from the centrifugal barrier (the Laplacian eigenvalue
-on $S^2$, which is $\ell(\ell+1)$, not $\ell^2$).
+where $E_{\mathrm{ion}} = 13.6$ eV and $[\ell]_q [\ell+1]_q$
+is the $q$-Laplacian eigenvalue (centrifugal barrier).  At
+$q = 1$ this reduces to $\ell(\ell+1)/n^2$.
 
-For the mode to fit within shell $n$, we need $E_\ell \leq
-E_{\mathrm{ion}} / n^2 \cdot n(n-1) \sim E_{\mathrm{ion}}$,
-which gives $\ell(\ell+1) \leq n(n-1)$, i.e.
-$\ell \leq n - 1$.
+For the mode to fit within shell $n$, we need
+$[\ell]_q [\ell+1]_q \leq [n]_q [n-1]_q$, which gives
+$\ell \leq n - 1$ (since $[\cdot]_q$ is monotone for
+$q > 0$).

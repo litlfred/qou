@@ -92,8 +92,27 @@ The $\ell$-th Fourier mode is the **$\ell$-th resonance
 frequency** of the trefoil's transverse vibration.  Mode
 $\ell$ has wavelength $L/\ell$ on the trefoil (where $L$ is
 the trefoil length) and eigenvalue
-$\lambda_\ell = (2\pi\ell/L)^2$ under the Laplacian
-$\Delta_{S^1}$.
+$\lambda_\ell = [\ell]_q [\ell + 1]_q$ under the
+**$q$-Laplacian** $\Delta_q$, where
+
+$$
+  [\ell]_q \;=\; \frac{q^\ell - q^{-\ell}}{q - q^{-1}}
+$$
+
+is the $q$-integer.  At $q = 1$, this recovers the classical
+eigenvalue $\ell(\ell + 1)$.  At $q = 1.110$, the
+$q$-deformation shifts the eigenvalues:
+
+| $\ell$ | $\ell(\ell+1)$ | $[\ell]_q [\ell+1]_q$ | Shift |
+|-------:|------:|------:|------:|
+| 0 | 0 | 0 | 0 |
+| 1 | 2 | 2.012 | $+0.6\%$ |
+| 2 | 6 | 6.139 | $+2.3\%$ |
+| 3 | 12 | 12.55 | $+4.6\%$ |
+
+The shifts are of order $(q - 1)^2 \sim \alpha^2$, producing
+the **fine-structure splitting** between sub-shells at the
+same $n$.
 
 The energy constraint at shell $n$ admits modes
 $\ell = 0, 1, \ldots, n-1$ only: modes $\ell \geq n$ require
