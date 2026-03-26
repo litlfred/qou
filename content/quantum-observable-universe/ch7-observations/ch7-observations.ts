@@ -97,6 +97,7 @@ export default chapter({
       blocks: [
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
+        "pair-creation-energy",
       ],
     }),
 
