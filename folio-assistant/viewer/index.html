@@ -2810,7 +2810,8 @@
       if (block.kind === 'equation') {
         const d = mk('div','blk');
         if (block.label) d.id = block.label;
-        d.innerHTML = `<div data-md>${esc(block.tex||'')}</div>`;
+        d.innerHTML = `<div data-md></div>`;
+        d.querySelector('[data-md]').textContent = block.tex || '';
         lazyInit(d, () => renderMath(d));
         return d;
       }
@@ -3427,7 +3428,21 @@
         const i = +t.dataset.ti;
         const a = rendered?.find(r => r.blockIndex === i);
         if (a) { t.innerHTML = renderAsset(a, tx[i]); t.classList.remove('ph'); }
-        else { t.textContent = tx[i] || ''; t.classList.add('ph'); }
+        else {
+          // Try KaTeX rendering before falling back to raw source
+          const src = tx[i] || '';
+          // Strip outer \begin{equation}...\end{equation} wrapper if present
+          const stripped = src.replace(/^\s*\\begin\{equation\}(\[.*?\])?\\label\{[^}]*\}\s*/s, '')
+                              .replace(/^\s*\\begin\{equation\}\s*/s, '')
+                              .replace(/\s*\\end\{equation\}\s*$/s, '')
+                              .trim();
+          try {
+            katex.render(stripped, t, {throwOnError: true, displayMode: true, macros: katexMacros});
+            t.classList.remove('ph'); t.classList.add('katex-display');
+          } catch(e) {
+            t.textContent = src; t.classList.add('ph');
+          }
+        }
       }
     }
 
@@ -3700,7 +3715,7 @@
           loadChapterDetail(p.id, ch).then(() => {
             // Load all sections for this chapter
             ch.sections.forEach((sec, si) => {
-              const secDiv = cd.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
+              const secDiv = cd.querySelector(`.section[data-sec-num="${ch.number != null ? ch.number + '.' + (si + 1) : (si + 1)}"]`);
               if (secDiv) loadSection(p.id, ch._dir, si, secDiv);
             });
           });
@@ -3962,7 +3977,7 @@
       // Render each chapter into its own hidden div
       for (const ch of p.chapters) {
         const cd = mk('div','ch');
-        cd.dataset.chNum = String(ch.number);
+        cd.dataset.chNum = ch.number != null ? String(ch.number) : '';
         cd.style.display = 'none';
         if (ch.label) cd.id = ch.label;
         cd.innerHTML = `<h2 class="ch-t"><span class="ch-title-text">${ch.number != null ? `<span class="n">Chapter ${ch.number}.</span> ` : ''}${inl(ch.title)}</span><span class="struct-acts" data-target="${ch.label || 'ch' + ch.number}" data-kind="chapter"><button class="sa-btn sa-fb">feedback</button></span></h2>`;
@@ -3971,9 +3986,9 @@
         for (const sec of ch.sections) {
           secNum++;
           const sd = mk('div','section');
-          sd.dataset.secNum = `${ch.number}.${secNum}`;
+          sd.dataset.secNum = ch.number != null ? `${ch.number}.${secNum}` : String(secNum);
           if (sec.label) sd.id = sec.label;
-          sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text"><span class="sec-n">${ch.number}.${secNum}</span> ${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + ch.number + '.' + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
+          sd.innerHTML = `<h3 class="sec-t"><span class="sec-title-text">${ch.number != null ? `<span class="sec-n">${ch.number}.${secNum}</span> ` : ''}${inl(sec.title)}</span><span class="struct-acts" data-target="${sec.label || 'sec' + (ch.number != null ? ch.number + '.' : '') + secNum}" data-kind="section"><button class="sa-btn sa-fb">feedback</button></span></h3>`;
           renderMath(sd);
 
           if (isLazy) {
