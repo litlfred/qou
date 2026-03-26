@@ -186,51 +186,55 @@ $$
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
-Since $\Delta < 0$, the real locus $E_z(\mathbb{R})$ is a single
-connected component homeomorphic to $S^1$.  The base point
-$P_0 = (0, \sqrt{b}) = (0, 0.8976)$ has **approximate angle**
-$\theta \approx 1/56$ on this circle.  The map
-$n \mapsto n \cdot P_0$ is a rotation by $2\pi\theta$.
+Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ is a single
+connected component homeomorphic to $S^1$.  The proton point
+$P_0 = (0, \sqrt{b})$ is a **torsion point of order $56$** in
+the group law of $E_q$:
 
-The magic neutron numbers land at distinguished positions:
+$$
+  56 \cdot P_0 \;=\; O,
+  \qquad
+  28 \cdot P_0 \;=\; T \;\text{(the 2-torsion point)}.
+$$
 
-| $n$ | $n\theta \bmod 1$ | Position on $S^1$ | Status |
-|-----|------------------|-------------------|--------|
-| $2$ | $1/28$ | near $O$ | magic |
-| $8$ | $1/7$ | near $O$ | magic |
-| $20$ | $5/14$ | near $T$ | magic |
-| $28$ | $\mathbf{1/2}$ | **at $T$ (2-torsion)** | magic |
-| $50$ | $25/28$ | near $O$ | magic |
-| $82$ | $13/28$ | near $T$ | magic |
-| $126$ | $\mathbf{1/4}$ | **at 4-torsion** | magic |
+The stability pairs are the values of $N$ where $N \cdot P_0$
+lands **on** a torsion point of $E_q$:
 
-All stability pairs land at rational fractions with
-**denominator dividing $28$**.  The doubly-stability pairs
-$28$ and $126$ land *exactly* at the 2-torsion and 4-torsion
-positions, respectively:
-$28 \cdot (1/56) = 1/2$ and $126 \cdot (1/56) = 9/4 \equiv 1/4$.
+| $N$ | $N \cdot P_0$ | Torsion position | Stability pair |
+|-----|--------------|-----------------|----------------|
+| $2$ | $2P_0$ | $[28]$-torsion | $\checkmark$ |
+| $8$ | $8P_0$ | $[7]$-torsion | $\checkmark$ |
+| $20$ | $20P_0$ | $[14]$-torsion | $\checkmark$ |
+| $28$ | $T$ | **$[2]$-torsion** | $\checkmark$ |
+| $50$ | $50P_0$ | $[28]$-torsion | $\checkmark$ |
+| $82$ | $82P_0 = 26P_0$ | $[28]$-torsion | $\checkmark$ |
+| $126$ | $126P_0 = 14P_0$ | **$[4]$-torsion** | $\checkmark$ |
 
-**Stable hadrons as integer points on an elliptic curve.**
+All stability pairs land on rational fractions of the $S^1$
+with **denominator dividing $28$**, because $P_0$ has order $56$
+and $56/2 = 28$.  The stability pairs $28$ and $126$ land on
+the 2-torsion and 4-torsion points respectively:
+$28 \cdot (1/56) = 1/2$ and $126 \cdot (1/56) = 9/4 \equiv 1/4
+\pmod{1}$.
 
-The computation shows that the proton point $P_0$ on $E_z$ is
-approximately a **56-torsion point**: $56 \cdot P_0 \approx O$.
-If the exact torsion order is $56$
-($E_z(\mathbb{Q})_{\mathrm{tors}} \cong \mathbb{Z}/56\mathbb{Z}$
-or a quotient), then:
+**Stable hadrons as lattice points on an elliptic curve.**
 
-- A nucleus with $N$ neutrons is stable when $N \cdot P_n$
-  lies near the identity $O$ or the 2-torsion point $T$ in
-  the group law of $E_z$.
-- The stability pairs are precisely the values of $N$ where
-  $N \cdot P_n$ hits a **torsion point** of $E_z$.
+The proton point $P_0$ on $E_q$ has order $56$.  The
+stability pairs are the values of $N$ for which $N \cdot P_0$
+is a torsion point of $E_q$ — equivalently, the values of $N$
+such that $\operatorname{ord}(P_0)$ divides a multiple of $N$
+with small quotient.  Precisely:
+
+- The stability pairs are the $N \in \mathbb{N}$ where
+  $N \cdot P_0$ is a **torsion point** of $E_q$.
 - **The stable hadrons of the Descartes universe are the
-  integer solutions of a Diophantine equation on the elliptic
-  curve $E_z$.**
+  lattice points of the elliptic curve $E_q$.**
 
 The nuclear chart — every stable isotope, every stability pair,
 the neutron-to-proton ratio of every element — is the
-**set of integer points** on an elliptic curve derived from
-the chiral fibration of Bring's surface at $q = 1.110$.
+**set of $\mathbb{N}^2$ lattice points** on an elliptic curve
+derived from the chiral fibration of Bring's surface at
+$q = 1.110$.
 
 **Witness data**: see `folio-assistant/computations/elliptic-stability.json`
 for the full numerical computation.

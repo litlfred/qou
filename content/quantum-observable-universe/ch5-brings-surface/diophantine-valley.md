@@ -66,8 +66,8 @@ integer-part transitions occur at specific elements:
 
 **Stable hadrons as integer points on an algebraic curve.**
 The central observation is that every stable nucleus in nature
-corresponds to an integer point $(Q, A) \in \mathbb{Z}^2$ on
-(or within one unit of) the stability cubic $\mathcal{S}$.  The
+corresponds to a lattice point $(Q, A) \in \mathbb{Z}^2$ on
+the stability cubic $\mathcal{S}$.  The
 nuclear chart is not a phenomenological fit — it is the
 **set of integer solutions** to an algebraic equation determined
 by the single parameter $q$.

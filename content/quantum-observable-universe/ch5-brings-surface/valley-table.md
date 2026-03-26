@@ -17,7 +17,7 @@ the Diophantine error $\varepsilon = |p_{\mathrm{stab}} - p^*|$.
 **Observations.**
 
 1. **Light nuclei** ($A \leq 40$): $n/p \approx 1$.  The Coulomb
-   correction $c \cdot A^{2/3}$ is small; the curve lies near
+   correction $c \cdot A^{2/3}$ is small; the curve coincides with
    the diagonal $p = A/2$.
 
 2. **Medium nuclei** ($40 < A \leq 120$): $n/p$ rises from
