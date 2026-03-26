@@ -1268,7 +1268,7 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
             if (!secData || !secData.blocks) continue;
             const found = secData.blocks.find((b: any) => b.label === label);
             if (found) return Response.json(found, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
-          } catch (_) { continue; }
+          } catch (e) { log('warn', `GET /api/paper/block resolveSection ${chDir}[${si}]: ${e}`); continue; }
         }
       }
       return Response.json({ error: `Block not found: ${label}` }, { status: 404 });

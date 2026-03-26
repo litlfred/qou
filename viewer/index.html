@@ -4086,7 +4086,7 @@
               return;
             }
           }
-        } catch (_) {}
+        } catch (err) { console.error(`Failed to fetch simulator block '${simRef.ref}':`, err); }
         // Final fallback: scan paper chapters for blocks loaded in sections
         for (const ch of (paper?.chapters || [])) {
           for (const sec of (ch.sections || [])) {
@@ -5287,7 +5287,7 @@
             const simBlock = await r.json();
             if (simBlock) openSimulator(simBlock, viewName);
           }
-        } catch (_) {}
+        } catch (err) { console.error(`Failed to load simulator for route #simulate/${rest}:`, err); }
       } else {
         await loadFolio();
       }
