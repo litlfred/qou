@@ -92,9 +92,21 @@ theorem quantum_numbers_count (n : ℕ) (hn : n ≥ 1) :
 def shellEnergy (E_ion : ℝ) (n : ℕ) (hn : n ≥ 1) : ℝ :=
   -E_ion / (n : ℝ) ^ 2
 
-/-- Mode cutoff: ℓ(ℓ+1) ≤ n(n-1) implies ℓ ≤ n-1. -/
+/-- Mode cutoff: ℓ(ℓ+1) ≤ n(n-1) implies ℓ ≤ n-1.
+    Proof: if ℓ ≥ n then ℓ(ℓ+1) ≥ n·n > n(n-1), contradiction. -/
 theorem mode_fits_in_shell {n ℓ : ℕ} (hn : n ≥ 1) (h : ℓ * (ℓ + 1) ≤ n * (n - 1)) :
     ℓ ≤ n - 1 := by
-  sorry
+  by_contra h_contra
+  push_neg at h_contra
+  -- ℓ ≥ n, so ℓ * (ℓ + 1) ≥ n * (n + 1) > n * (n - 1)
+  have h1 : n ≤ ℓ := by omega
+  have h2 : n * (n - 1) < ℓ * (ℓ + 1) := by
+    calc ℓ * (ℓ + 1) ≥ n * (n + 1) := by
+          apply Nat.mul_le_mul h1 (by omega)
+        _ > n * (n - 1) := by
+          cases n with
+          | zero => omega
+          | succ k => nlinarith
+  omega
 
 end

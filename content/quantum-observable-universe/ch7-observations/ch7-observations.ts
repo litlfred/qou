@@ -13,6 +13,16 @@ export default chapter({
   title: "Physical Observations",
   label: "chap:observations",
   sections: [
+    // ── Particle identification conjectures ────────────────────────────
+    section({
+      title: "Particle Identification Conjectures",
+      label: "sec:particle-conjectures",
+      blocks: [
+        "borromean-quark",
+        "higgs-t28",
+      ],
+    }),
+
     // ── Double-slit experiment ────────────────────────────────────────
     section({
       title: "Double-slit experiment",

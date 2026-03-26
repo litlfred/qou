@@ -113,9 +113,7 @@ export default chapter({
         // Torus knot generators from χ = -6
         "torus-knot-generators",
         "embeddability-closure",
-        // Borromean quark conjecture and fundamental fermions
-        "borromean-quark",
-        "fermion-boson-knot-link",
+        // Fundamental fermions (Descartes-specific assignments)
         "up-quark",
         "down-quark",
         "electron-knot",
@@ -139,10 +137,6 @@ export default chapter({
         "helium-hopf-diagram",
         "hydrogen-knot-structure",
         "hydrogen-orbitals",
-        "reidemeister-mass-invariance",
-        "orbital-space-normal-bundle",
-        "orbital-fourier-decomposition",
-        "higgs-t28",
         // The Descartes theorem
         "descartes",
         "descartes-proof",

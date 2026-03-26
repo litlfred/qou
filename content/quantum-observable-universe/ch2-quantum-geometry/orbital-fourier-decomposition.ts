@@ -14,7 +14,7 @@ export default proposition({
     "trefoil",
   ],
   lean: {
-    decl: "QOU.Descartes.orbital_fourier_decomposition",
+    decl: "QOU.orbital_fourier_decomposition",
     validation: "not_checked",
   },
   uses: [

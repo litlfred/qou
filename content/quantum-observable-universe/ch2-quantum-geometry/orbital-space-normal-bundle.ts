@@ -15,7 +15,7 @@ export default proposition({
     "seifert-surface",
   ],
   lean: {
-    decl: "QOU.Descartes.orbital_space_normal_bundle",
+    decl: "QOU.orbital_space_normal_bundle",
     validation: "not_checked",
   },
   uses: [

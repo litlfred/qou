@@ -262,5 +262,15 @@ export default chapter({
         "schrodinger-jet-coaction",
       ],
     }),
+
+    // ── Orbital space from normal bundle ──────────────────────────────
+    section({
+      title: "Orbital space and resonance modes",
+      label: "sec:orbital-space",
+      blocks: [
+        "orbital-space-normal-bundle",
+        "orbital-fourier-decomposition",
+      ],
+    }),
   ],
 });

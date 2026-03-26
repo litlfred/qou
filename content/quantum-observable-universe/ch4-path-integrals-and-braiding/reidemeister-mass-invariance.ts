@@ -14,7 +14,7 @@ export default proposition({
     "writhe",
   ],
   lean: {
-    decl: "QOU.Descartes.reidemeister_mass_invariance",
+    decl: "QOU.Braiding.reidemeister_mass_invariance",
     validation: "not_checked",
   },
   uses: [

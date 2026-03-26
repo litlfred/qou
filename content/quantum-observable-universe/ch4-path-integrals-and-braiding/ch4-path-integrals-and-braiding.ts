@@ -155,6 +155,17 @@ export default chapter({
       ],
     }),
 
+    // ── Borromean baryons and fermion/boson classification ─────────────
+    section({
+      title: "Borromean Baryons and Reidemeister Invariance",
+      label: "sec:borromean-reidemeister",
+      blocks: [
+        "borromean-baryon",
+        "fermion-boson-knot-link",
+        "reidemeister-mass-invariance",
+      ],
+    }),
+
     // ── Topological mass + nuclear binding (from ch3 §12 + ch4 §9) ───
     section({
       title: "Topological Mass and Nuclear Binding",

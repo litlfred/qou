@@ -14,6 +14,7 @@ export default conjecture({
     "hyperbolic-volume",
   ],
   uses: [
+    "def:borromean-baryon",
     "def:neutrino-knot",
     "def:hadron",
     "def:crossing-energy",

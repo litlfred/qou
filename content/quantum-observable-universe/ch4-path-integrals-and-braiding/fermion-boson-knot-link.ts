@@ -15,14 +15,13 @@ export default proposition({
     "vertical",
   ],
   lean: {
-    decl: "QOU.Descartes.fermion_boson_knot_link",
+    decl: "QOU.Braiding.fermion_boson_knot_link",
     validation: "not_checked",
   },
   uses: [
     "def:fermion-boson-decomposition",
     "def:categorical-reeb",
-    "prop:torus-knot-generators",
-    "conj:borromean-quark",
+    "def:borromean-baryon",
     "rem:knot-notation-convention",
   ],
 });
