@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .folio-assistant-prefs.json
+.folio-prefs.json
 build/
 
 # Generated LaTeX chapters (from content pipeline)
@@ -38,8 +39,8 @@ deploy/authorized-emails.txt
 deploy/Caddyfile
 deploy/viewer/
 scripts/mcp-server/bun.lock
-schemas/bun.lock
-viewer/paper.js
+folio-assistant/schemas/bun.lock
+folio-assistant/viewer/paper.js
 # Root-level dev dependencies (TypeDoc etc.)
 package-lock.json
 bun.lock

@@ -78,7 +78,7 @@ whether running locally (stdio) or remotely (Streamable HTTP).
 ### 1. Check open feedback
 
 The `scripts/check-todos.sh` hook runs at session start and scans
-`feedback/<paper-dir>/*.ts` for open feedback items. If there are
+`folio-assistant/feedback/<paper-dir>/*.ts` for open feedback items. If there are
 open items, **ask the user if they'd like to work on feedback**:
 
 > **You have N open feedback items** (X high, Y medium, Z low).
@@ -110,7 +110,7 @@ git diff --name-only main...HEAD -- 'content/**/*.ts' 'content/**/*.md' 'content
 ```
 
 For each changed file, extract the block root name (filename without
-extension) and check if `feedback/<paper-dir>/` has open items
+extension) and check if `folio-assistant/feedback/<paper-dir>/` has open items
 referencing that block.
 
 **If matches are found**, present them to the user:

@@ -26,12 +26,12 @@ a feedback cycle until the author is satisfied.
 
 ## Feedback Storage
 
-Feedback lives in `feedback/<paper-dir>/` at the repo root (**tracked in
+Feedback lives in `folio-assistant/feedback/<paper-dir>/` (**tracked in
 git**, committed to main via worktree). Each content block with feedback
 has a TypeScript file:
 
 ```
-feedback/
+folio-assistant/feedback/
   quantum-observable-universe/
     rigid-monoidal-category.ts
     bundle-initial-conditions.ts
@@ -166,7 +166,7 @@ badge on any feedback item).
 
 ## Seeding Feedback
 
-When `feedback/` is empty or doesn't exist for a paper, the skill can
+When `folio-assistant/feedback/` is empty or doesn't exist for a paper, the skill can
 bootstrap an initial set by scanning for issues:
 
 | Source | How to scan | Priority |

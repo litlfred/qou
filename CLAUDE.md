@@ -497,14 +497,23 @@ setup instructions rather than silently failing.
 | Path | Purpose |
 |------|---------|
 | `content/` | **Authoritative content objects** (`.ts` + `.md` + `.lean` triples) |
-| `content/schema/` | Type system, Zod schemas, builder functions |
+| `content/schema/` | Type system, Zod schemas, builder functions (re-exports from `folio-assistant/schemas/`) |
 | `content/pipeline/` | Validation, rendering, build pipelines |
 | `content/<paper>/` | Paper manifest + chapter directories |
+| `folio-assistant/` | **Platform package** — MCP server, auth, UI, blocks, viewer |
+| `folio-assistant/src/` | Generic core (server, types, routes, tools, blocks registry) |
+| `folio-assistant/adapters/paper/` | Paper content adapter (implements `ContentAdapter`) |
+| `folio-assistant/schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
+| `folio-assistant/viewer/` | Paper viewer SPA + Pyodide cache Service Worker |
+| `folio-assistant/ui/` | Assistant chat SPA |
+| `folio-assistant/simulators/` | Interactive HTML simulators |
+| `folio-assistant/feedback/` | User feedback (TypeScript files, committed to main) |
+| `folio-assistant/computations/` | Computation scripts and witness data |
+| `folio.config.json` | Adapter config (content type, adapter module, feedback dir) |
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
 | `lean/` | Lean 4 formalization (lakefile.lean, QOU/) |
-| `schemas/` | Shared TypeScript types (proof-objects, glossary, etc.) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -513,6 +522,7 @@ setup instructions rather than silently failing.
 | `.claude/skills/<pkg>/` | Synced external skill packages |
 | `uploads/` | Document intake pipeline (raw PDFs, scans, WHO guidelines → content objects) |
 | `todos/` | Work-tracking TodoItems, gitignored (external to paper content) |
+| `docs/` | Planning documents, migration plans, dependency graphs |
 | `scripts/` | Setup and health-check scripts (Lean MCP, etc.) |
 | `lean-mcp.config.json` | MCP server config (domain, image, auth, ports) |
 | `deploy/` | Remote MCP server deployment (Docker Compose, auth, auto-update) |

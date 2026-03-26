@@ -10,8 +10,8 @@
 
 import { resolve } from "path";
 
-// Default: assume folio-assistant/ is inside the repo
-let _repoRoot = resolve(import.meta.dir, "../../../..");
+// Default: assume folio-assistant/adapters/paper/ is inside the repo
+let _repoRoot = resolve(import.meta.dir, "../../..");
 
 /** Set the repo root (called at startup). */
 export function setRepoRoot(root: string): void {

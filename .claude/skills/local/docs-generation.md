@@ -90,11 +90,11 @@ Pretty-printed HTML reference for the content-object type system.
 | File | Purpose |
 |------|---------|
 | `typedoc.json` | TypeDoc config (entry points, output dir, theme) |
-| `schemas/types.ts` | Core types: `Block`, `Chapter`, `Paper`, `Section` |
-| `schemas/constraints.ts` | Zod runtime validation schemas |
-| `schemas/builders.ts` | Constructor functions (`definition()`, `theorem()`, etc.) |
-| `schemas/qou-types.ts` | CI/output types (proof objects, glossary, coverage) |
-| `schemas/README.md` | TypeDoc landing page content |
+| `folio-assistant/schemas/types.ts` | Core types: `Block`, `Chapter`, `Paper`, `Section` |
+| `folio-assistant/schemas/constraints.ts` | Zod runtime validation schemas |
+| `folio-assistant/schemas/builders.ts` | Constructor functions (`definition()`, `theorem()`, etc.) |
+| `folio-assistant/schemas/qou-types.ts` | CI/output types (proof objects, glossary, coverage) |
+| `folio-assistant/schemas/README.md` | TypeDoc landing page content |
 | `package.json` | `build:docs` script |
 
 ### Running locally
