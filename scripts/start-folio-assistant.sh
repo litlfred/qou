@@ -18,6 +18,20 @@ ASSISTANT_DIR="$REPO_ROOT/folio-assistant"
 # Legacy path (fallback if folio-assistant/ not yet set up)
 MCP_DIR="$REPO_ROOT/scripts/mcp-server"
 
+# ── Auto-commit dirty feedback files before anything else ──────
+# Prevents "untracked working tree files would be overwritten" errors
+# when switching branches.
+if [ -d "$REPO_ROOT/feedback" ]; then
+  cd "$REPO_ROOT"
+  if git diff --name-only HEAD -- feedback/ 2>/dev/null | grep -q . ||
+     git diff --cached --name-only -- feedback/ 2>/dev/null | grep -q . ||
+     git ls-files --others --exclude-standard -- feedback/ 2>/dev/null | grep -q .; then
+    git add feedback/
+    git commit -m "auto-save feedback before startup" --no-verify -- feedback/ 2>/dev/null && \
+      echo "[start-folio-assistant] auto-committed dirty feedback files" >&2 || true
+  fi
+fi
+
 MODE="--stdio"
 DO_INSTALL=false
 CHECK_ONLY=false
