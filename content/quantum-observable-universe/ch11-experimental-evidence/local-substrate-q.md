@@ -11,6 +11,6 @@ $$
   \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e},
 $$
 where $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ is the
-hyperbolic volume of the figure-eight knot and $m_\mu / m_e = 206.768\,2827$
-is the CODATA muon--electron mass ratio.
+hyperbolic volume of the figure-eight knot and $m_\mu / m_e = 206.768\,2830$
+is the CODATA 2022 muon--electron mass ratio.
 

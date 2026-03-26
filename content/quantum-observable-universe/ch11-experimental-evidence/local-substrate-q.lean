@@ -10,7 +10,8 @@ More precisely, q|_U is the unique real root q > 1 of:
 
   (1 - q⁻¹)² = Vol(4₁) / (m_μ/m_e)
 
-where Vol(4₁) ≈ 2.02988 and m_μ/m_e = 206.7682827 (CODATA).
+where Vol(4₁) ≈ 2.02988 and m_μ/m_e = 206.7682830 (CODATA 2022).
+Witness: computations/knot-volumes.witness.json (SnapPy 3.3.2, all passed).
 
 LaTeX label: `prop:local-substrate-q`
 
@@ -91,10 +92,10 @@ theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
     a unique q > 1 solution exists. -/
 -- Ref: CODATA 2018
 theorem codata_ratio_in_range :
-    0 < (2.02988 : ℝ) / 206.7682827 ∧ (2.02988 : ℝ) / 206.7682827 < 1 := by
+    0 < (2.02988 : ℝ) / 206.7682830 ∧ (2.02988 : ℝ) / 206.7682830 < 1 := by
   constructor
   · positivity
-  · rw [div_lt_one (by positivity : (0:ℝ) < 206.7682827)]
+  · rw [div_lt_one (by positivity : (0:ℝ) < 206.7682830)]
     norm_num
 
 end QOU.Experimental

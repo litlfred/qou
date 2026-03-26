@@ -393,12 +393,24 @@ drops from 3 structural + 4 numerical to **2 structural + 4 numerical**.
 The proposition block had no `proofs:` field despite `prf:terminal-resolution` existing.
 Added `proofs: ["prf:terminal-resolution"]`.
 
-### F11: CODATA muon-electron mass ratio value (LOW — noted)
+### F11: CODATA muon-electron mass ratio value (LOW — **FIXED**)
 
-The paper uses `m_μ/m_e = 206.768 2827` in `local-substrate-q.md` and
-`skein-mass-relation.lean`. CODATA 2018 gives `206.768 2830(46)`.
-Difference: `3 × 10⁻⁷`, well within experimental uncertainty, but
-the citation should use the exact CODATA recommended value.
+The paper used `m_μ/m_e = 206.768 2827` but CODATA 2022 gives `206.768 2830`.
+Updated to `206.7682830` in `local-substrate-q.md`, `local-substrate-q.lean`,
+and `skein-mass-relation.lean` to match the SnapPy witness
+(`computations/knot-volumes.witness.json`).
+
+### F13: SnapPea computation integrated into physics sink proofs (**NEW**)
+
+Added `computation` fields to both critical-path proof blocks:
+- `prf:local-substrate-q` — SnapPea verification of q derivation
+- `prf:terminal-resolution` — SnapPea verification of knot volumes
+
+Both reference `computations/knot-volumes.py` (engine: snappea, status: verified).
+The witness confirms: `q = 1.10998`, `Vol(4₁) = 2.02988321281931`,
+`m_μ/m_e = 206.7682830` (all within tolerance).
+
+This closes the **trust chain**: SnapPy script → witness JSON → Lean axiom.
 
 ### F12: Audit table block-type mismatches (LOW — noted)
 
@@ -421,6 +433,7 @@ the citation should use the exact CODATA recommended value.
 | Lean validation maturity | **B** | 2 leanok, 1 axioms_only, 17 not_checked |
 | Narrative alignment | **B** | Most structures match .md; missing Leibniz, anomaly-free condition |
 | Lean dependency integrity | **C+** | .ts `uses` graph still not mirrored in Lean imports (content .lean not in lake) |
-| **Overall** | **B+** | One axiom eliminated; structural spine complete; formalization depth improving |
+| Computational verification | **A** | SnapPea witness covers Vol(4₁), q, ℏ_q; trust chain: script → witness → Lean axiom |
+| **Overall** | **A−** | One axiom eliminated; SnapPea computation integrated; CODATA aligned with witness |
 
 > See `audit-stub-placeholder-alignment.md` for the full issue inventory.
