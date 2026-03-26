@@ -130,6 +130,10 @@ export default chapter({
         "diophantine-valley",
         "valley-table",
         "valley-stability",
+        // Hadron half-life calculations relative to q
+        "hadron-half-life",
+        "hadron-half-life-regimes",
+        "hadron-half-life-verification",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",

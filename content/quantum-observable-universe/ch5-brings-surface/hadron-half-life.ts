@@ -1,0 +1,27 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:hadron-half-life",
+  title:
+    "Hadron half-life from the $q$-deformed transition amplitude",
+  tags: [
+    "half-life",
+    "beta-decay",
+    "hadron",
+    "transition-amplitude",
+    "substrate-parameter",
+    "valley-of-stability",
+  ],
+  lean: {
+    decl: "QOU.Descartes.hadron_half_life",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:beta-stability",
+    "prop:integer-stability",
+    "def:stable-nucleus",
+    "def:skein-binding-lagrangian",
+    "def:substrate-parameter",
+    "def:coulomb-charge",
+  ],
+});
