@@ -98,6 +98,7 @@ export default chapter({
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
         "pair-creation-energy",
+        "crossing-energy-decomposition",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
       ],
