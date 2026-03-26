@@ -10,6 +10,8 @@ export default definition({
   },
   uses: [
     "def:hadron",
+    "def:up-quark",
+    "def:down-quark",
     "def:knot-particle-generation",
     "def:color-tube-coordinates",
   ],

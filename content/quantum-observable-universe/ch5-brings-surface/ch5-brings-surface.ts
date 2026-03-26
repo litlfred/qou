@@ -113,6 +113,12 @@ export default chapter({
         // Torus knot generators from χ = -6
         "torus-knot-generators",
         "embeddability-closure",
+        // Fundamental fermions
+        "up-quark",
+        "down-quark",
+        "electron-knot",
+        "positron-knot",
+        "neutrino-knot",
         // Proton, neutron, stable nucleus
         "categorical-proton",
         "categorical-neutron",
