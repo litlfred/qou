@@ -125,6 +125,7 @@ export default chapter({
         "valley-stability",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
+        "skein-shell-correction",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
