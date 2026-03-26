@@ -15,7 +15,9 @@ export default remark({
   uses: [
     "ex:carbon-chain-c6",
     "ex:benzene-ring",
+    "def:threading-link",
     "prop:ring-closure-barrier",
     "def:crossing-energy",
+    "rem:chain-spring-modes",
   ],
 });

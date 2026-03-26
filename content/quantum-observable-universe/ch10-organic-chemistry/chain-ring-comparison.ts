@@ -16,10 +16,12 @@ export default proposition({
   ],
   uses: [
     "prop:ring-closure-barrier",
+    "def:threading-link",
     "ex:carbon-chain-c6",
     "ex:benzene-ring",
     "rem:chain-ring-energy",
     "def:substrate-parameter",
     "def:crossing-energy",
+    "def:topological-mass-formula",
   ],
 });

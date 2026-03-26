@@ -15,7 +15,9 @@ export default proposition({
   uses: [
     "def:molecular-hopf-chain",
     "def:molecular-hopf-ring",
+    "def:threading-link",
     "def:crossing-energy",
     "def:covalent-bond-types",
+    "def:substrate-parameter",
   ],
 });

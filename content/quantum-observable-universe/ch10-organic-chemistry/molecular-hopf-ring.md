@@ -1,61 +1,74 @@
-A **molecular Hopf ring** is the closed counterpart of a
-molecular Hopf chain ([molecular Hopf chain](#def:molecular-hopf-chain)):
-all atoms are bonded in a cycle with no free endpoints.
+A **molecular Hopf ring** is not a chain with its ends joined —
+it is a fundamentally different topological object.  Where the
+chain bonds atoms pairwise via Hopf links
+([molecular Hopf chain](#def:molecular-hopf-chain)), the ring
+binds all atoms simultaneously via a single **threading link**
+([threading link](#def:threading-link)).
 
 **Definition.**
-Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms.  A
-**molecular Hopf ring** of length $N$ and bond order $k$ is the
+Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms arranged in
+a cycle.  A **molecular Hopf ring** of length $N$ is the
 composite
 
 $$
-  \mathcal{R}_N^{(k)}
+  \mathcal{R}_N
   \;=\;
-  \mathcal{A}_1
-  \;\underset{B_k}{\bowtie}\;
-  \mathcal{A}_2
-  \;\underset{B_k}{\bowtie}\;
-  \cdots
-  \;\underset{B_k}{\bowtie}\;
-  \mathcal{A}_N
-  \;\underset{B_k}{\bowtie}\;
-  \mathcal{A}_1
+  [\mathcal{A}_1, \ldots, \mathcal{A}_N]
+  \;\bowtie\;
+  \mathcal{T}_N,
 $$
 
-where the final bond $B_k(R_N, R_1)$ closes the cycle.  The
-linking matrix is the **circulant**
+where $\mathcal{T}_N = T(2, N)$ is the threading link — a single
+torus link that passes through all $N$ atoms.  The threading
+link's braid word in $B_N$ is
 
 $$
-  L^{\mathrm{ring}}_{ij}
+  \hat{\beta}_N
   \;=\;
-  \begin{cases}
-    k & \text{if } |i - j| \equiv 1 \pmod{N}, \\
-    0 & \text{otherwise}.
-  \end{cases}
+  (\sigma_1 \, \sigma_2 \, \cdots \, \sigma_{N-1})^2,
 $$
+
+with $2(N-1)$ crossings, all of the same sign.
 
 **Crossing energy of the ring.**
-The ring has $N$ bonds (one more than the chain):
+The crossing energy is determined by the threading link's
+Alexander polynomial evaluated at the substrate parameter:
 
 $$
-  E_{\mathrm{cross}}(\mathcal{R}_N^{(k)})
+  E_{\mathrm{cross}}(\mathcal{R}_N)
+  \;\propto\;
+  \Delta_{T(2,N)}(q).
+$$
+
+For even $N = 2m$:
+
+$$
+  \Delta_{T(2,2m)}(q)
   \;=\;
-  N \cdot E_{\mathrm{bond}}(k)
-  \;+\;
-  \Delta E_{\mathrm{closure}}(N, k),
+  \frac{q^m - q^{-m}}{q - q^{-1}}.
 $$
 
-where $\Delta E_{\mathrm{closure}}$ is the **topological
-rearrangement energy** — the cost of reorganising the global
-braid word to accommodate the new $(N, 1)$ crossing.  This term
-is absent in the chain and is the source of the ring-closure
-energy barrier.
+**Contrast with the pairwise picture.**
+A naïve ring built from $N$ separate Hopf links would have
+crossing energy proportional to $N \cdot \Delta_{T(2,2)}(q) = N$.
+The threading link replaces this with a single polynomial that
+evaluates to roughly $N/2$ — the threading is **topologically
+more efficient** than pairwise bonding.
+
+| Structure | Binding | Alexander weight | Crossings |
+|-----------|---------|:---:|:---:|
+| Chain ($N-1$ Hopf links) | pairwise | $N - 1$ | $2(N-1)$ |
+| Ring ($N$ Hopf links) | pairwise | $N$ | $2N$ + rearrangement |
+| Ring ($T(2,N)$ threading) | non-local | $\Delta_{T(2,N)}(q) \approx N/2$ | $2(N-1)$ |
+
+The threading ring has **fewer crossings than the pairwise ring**
+and **no rearrangement cost** — the threading link already
+connects all strands.
 
 **Rigidity.**
-In a ring, every atom's chain-backbone sites are fully consumed:
-an interior atom in a ring with $k = 1$ uses 2 of its 4 sites for
-ring bonds, the same as a chain interior atom.  But the
-**endpoints no longer exist** — every atom is interior.  The ring
-has no dangling links along the backbone direction, making it
-topologically rigid: deforming the ring requires simultaneously
-changing crossings at every bond, unlike a chain where the
-endpoints can flex freely.
+The threading link passes through every atom twice (once per
+winding).  Deforming the ring requires moving the threading link
+through all $N$ atoms simultaneously — a global operation.  This
+is the topological origin of ring rigidity: it is not that
+individual bonds are stiff, but that the threading link
+correlates all atoms non-locally.

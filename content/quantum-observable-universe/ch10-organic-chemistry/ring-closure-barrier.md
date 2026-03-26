@@ -1,129 +1,104 @@
-Closing a molecular Hopf chain into a ring is not simply the
-energy of one additional bond.  The closure forces a **global
-topological rearrangement** of the braid word, producing an
-energy barrier above the naïve bond energy.
+Closing a molecular Hopf chain into a ring is a **topological
+phase transition**: the pairwise Hopf link structure is replaced
+by a single threading link $T(2,N)$
+([threading link](#def:threading-link)).  The energy barrier
+arises not from adding one more bond, but from reorganising the
+entire binding topology.
 
 **Statement.**
-Let $\mathcal{C}_N^{(k)}$ be a molecular Hopf chain of length $N$
-and bond order $k$
+Let $\mathcal{C}_N$ be a molecular Hopf chain of length $N$
 ([molecular Hopf chain](#def:molecular-hopf-chain)), and let
-$\mathcal{R}_N^{(k)}$ be the corresponding ring
-([molecular Hopf ring](#def:molecular-hopf-ring)).  Then the
-ring-closure energy satisfies
+$\mathcal{R}_N$ be the corresponding threaded ring
+([molecular Hopf ring](#def:molecular-hopf-ring)).  The crossing
+energies, measured by Alexander polynomial evaluation at the
+substrate parameter $q$, are:
 
 $$
-  \Delta E_{\mathrm{close}}(N, k)
+  E_{\mathrm{cross}}(\mathcal{C}_N)
+  \;\propto\;
+  (N-1) \cdot \Delta_{T(2,2)}(q)
   \;=\;
-  E_{\mathrm{cross}}(\mathcal{R}_N^{(k)})
-  \;-\;
-  E_{\mathrm{cross}}(\mathcal{C}_N^{(k)})
+  N - 1,
+$$
+
+$$
+  E_{\mathrm{cross}}(\mathcal{R}_N)
+  \;\propto\;
+  \Delta_{T(2,N)}(q)
   \;=\;
-  E_{\mathrm{bond}}(k)
-  \;+\;
-  \Delta E_{\mathrm{closure}}(N, k),
+  \frac{q^{N/2} - q^{-N/2}}{q - q^{-1}}.
 $$
 
-where $E_{\mathrm{bond}}(k)$ is the energy of the new bond and
-$\Delta E_{\mathrm{closure}}(N, k) > 0$ is the **braid
-rearrangement cost**.
-
-**Origin of the barrier.**
-The chain's braid word $\beta_{\mathrm{chain}} \in B_N$ is a
-product of $N - 1$ local generators $\sigma_i$ (one per bond).
-The ring's braid word $\beta_{\mathrm{ring}}$ must additionally
-include a generator $\sigma_{N \to 1}$ that connects the last
-strand back to the first.  But this generator does **not commute**
-with the existing generators — inserting it requires a sequence of
-braid relations (Yang–Baxter moves) to bring the first and last
-strands into contact.
-
-Each Yang–Baxter move exchanges a positive and negative crossing,
-costing $|q + q^{-1}|$ in crossing energy.  The minimum number
-of such moves to close an $N$-chain is $\lfloor N/2 \rfloor - 1$
-(the strands must "pass through" the intervening atoms).  Hence:
+For $N = 6$:
 
 $$
-  \Delta E_{\mathrm{closure}}(N, k)
-  \;\geq\;
-  k \cdot \bigl(\lfloor N/2 \rfloor - 1\bigr)
-  \cdot |q + q^{-1}|.
+  E_{\mathrm{cross}}(\mathcal{C}_6)
+  \;\propto\; 5,
+  \qquad
+  E_{\mathrm{cross}}(\mathcal{R}_6)
+  \;\propto\;
+  q^2 + 1 + q^{-2}
+  \;\approx\; 3
+  \quad (|q| \approx 1).
 $$
 
-For $N = 6$, $k = 1$: at least $2 \cdot |q + q^{-1}|$ in
-rearrangement cost on top of the bond energy.
+The ring has **lower crossing energy** than the chain.  It binds
+6 atoms with Alexander weight $\approx 3$, compared to the
+chain's weight of $5$ for only 5 pairwise bonds.
 
-**The transition state.**
-The ring-closure process passes through a **transition state**
-where the braid word contains the maximum number of uncommuted
-generators — the chain is partially folded, with the endpoints
-approaching but not yet linked.  This transition state has
-crossing energy **higher** than both the open chain and the
-closed ring, producing a genuine activation barrier:
+**The barrier: topological reorganisation.**
+Despite the ring being energetically favourable, the transition
+$\mathcal{C}_N \to \mathcal{R}_N$ requires a discontinuous
+change in topology: $N - 1$ separate Hopf links must be
+**replaced** by a single threading link $T(2,N)$.  This is not a
+continuous deformation — the braid word changes from a product of
+non-adjacent generators $\sigma_i^2$ to the correlated product
+$(\sigma_1 \cdots \sigma_{N-1})^2$.
+
+The transition state is the configuration where the chain's
+pairwise links are partially dissolved but the threading link has
+not yet formed.  At this point, some bonds are broken but no
+threading stabilisation has been gained — the crossing energy is
+at a **maximum**:
 
 $$
   E_{\mathrm{cross}}(\text{transition})
   \;>\;
   \max\bigl(
-    E_{\mathrm{cross}}(\mathcal{C}_N^{(k)}),\;
-    E_{\mathrm{cross}}(\mathcal{R}_N^{(k)})
+    E_{\mathrm{cross}}(\mathcal{C}_N),\;
+    E_{\mathrm{cross}}(\mathcal{R}_N)
   \bigr).
 $$
 
-The ring is thermodynamically favourable (lower total energy per
-bond once the rearrangement is complete), but kinetically
-protected by the barrier — exactly like a compressed spring that
-requires activation energy to snap shut.
+The activation barrier is the energy required to reach this
+intermediate state.
 
-**Braid shortcuts and ring super-stability.**
-The rearrangement that closes the ring does not merely add a
-bond — it **compacts the braid word**.  The chain's braid word
-$\beta_{\mathrm{chain}}$ is a product of $N - 1$ non-adjacent
-generators with no relations between distant strands.  The ring's
-braid word $\beta_{\mathrm{ring}}$ satisfies the cyclic closure
-relation $\sigma_{N \to 1} \cdot \beta_{\mathrm{chain}} \sim
-\beta_{\mathrm{ring}}$, which introduces **braid shortcuts**:
-new relations between previously distant strands that shorten the
-word length after applying Yang–Baxter identities.
-
-These shortcuts have a critical asymmetric consequence:
-
-1. **Closing** the ring requires climbing over the Yang–Baxter
-   barrier (the transition state), but once the closure relation
-   is satisfied, the braid word collapses to a shorter
-   representative $\beta_{\mathrm{ring}}$ via the new relations.
-
-2. **Opening** the ring (breaking it back to a chain) requires
-   not only breaking one bond but also **undoing all the
-   shortcuts** — expanding the compact braid word back to the
-   longer chain form.  Each shortcut that was gained for free
-   during compaction must be reversed at a cost of
-   $|q + q^{-1}|$ per Yang–Baxter move.
-
-The ring-opening barrier is therefore **strictly greater** than
-the ring-closure barrier:
+**Ring super-stability from threading.**
+Once the threading link $T(2,N)$ forms, it locks the ring in a
+deep topological trap.  Breaking the ring requires not just
+severing one bond but **dissolving the threading link entirely**
+— converting the correlated $T(2,N)$ back into $N$ separate
+Hopf links.  The energy cost of ring-opening is:
 
 $$
   \Delta E_{\mathrm{open}}
   \;=\;
-  |E_{\mathrm{bond}}(k)|
+  (N - 1) - \Delta_{T(2,N)}(q)
   \;+\;
-  \Delta E_{\mathrm{closure}}
-  \;+\;
-  E_{\mathrm{shortcut}},
+  E_{\mathrm{activation}}.
 $$
 
-where $E_{\mathrm{shortcut}} > 0$ is the energy to reverse the
-braid compaction.  For the hexagonal ring ($N = 6$), the cyclic
-symmetry group $\mathbb{Z}_6$ acts on the braid word, providing
-$N - 1 = 5$ shortcut relations (one for each rotation).  The
-ring sits in a **deep topological trap**: the more symmetric the
-ring, the more shortcuts stabilise it.
+For $N = 6$: the threading provides $5 - 3 = 2$ units of
+additional stabilisation beyond the pairwise picture, plus the
+full activation barrier must be re-climbed.  The ring is
+super-stable because the threading link is a **lower-energy
+encoding** of the same binding — reverting to the pairwise
+encoding costs energy.
 
-This is the spring analogy completed.  The open chain is a spring
-held apart — it has elastic energy but the endpoints are free.
-Snapping it shut (closure) requires activation energy to thread
-the braid.  But once shut, the spring is **locked** by the
-shortcuts: opening it costs more than closing it did.  The ring
-is super-stable not because the bond is strong (that is the same
-$E_{\mathrm{bond}}$), but because the topology has rearranged
-into a more compact form that resists reversal.
+**The spring analogy.**
+The open chain is a spring held apart.  The threading link is
+what happens when the spring snaps shut: the separate coils
+(pairwise Hopf links) merge into a single, tighter winding
+($T(2,N)$).  The merged winding is more efficient (lower
+Alexander weight) and cannot be separated without unwinding
+the entire structure.

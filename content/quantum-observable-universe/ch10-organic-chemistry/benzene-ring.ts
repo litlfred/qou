@@ -15,9 +15,11 @@ export default example({
   ],
   uses: [
     "def:molecular-hopf-ring",
+    "def:threading-link",
     "ex:carbon-chain-c6",
     "rem:carbon-valence",
     "def:covalent-bond-types",
     "prop:ring-closure-barrier",
+    "def:substrate-parameter",
   ],
 });

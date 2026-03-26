@@ -5,9 +5,10 @@ import { chapter, section } from "../../schema/builders";
  *
  * Carbon's half-filled second shell (4 open linking sites) gives it
  * unique chain-forming ability.  This chapter develops the theory of
- * molecular Hopf chains and rings, derives the ring-closure energy
- * barrier from crossing energy, and compares the predicted C₆
- * chain → benzene barrier to experiment.
+ * molecular Hopf chains and threaded rings, introduces the threading
+ * link T(2,N) whose Alexander polynomial halves the crossing energy,
+ * and compares the predicted C₆ chain → benzene barrier to experiment
+ * with no free parameters.
  */
 export default chapter({
   number: 10,
@@ -30,6 +31,7 @@ export default chapter({
       label: "sec:molecular-chains-rings",
       blocks: [
         "molecular-hopf-chain",
+        "threading-link",
         "molecular-hopf-ring",
         "chain-spring-modes",
         "ring-closure-barrier",

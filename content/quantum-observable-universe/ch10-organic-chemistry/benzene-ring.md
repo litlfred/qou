@@ -1,59 +1,90 @@
-Benzene ($\mathrm{C}_6\mathrm{H}_6$) is the prototypical molecular
-Hopf ring: the linear $\mathrm{C}_6$ chain
-([linear C₆](#ex:carbon-chain-c6)) with the final link closed.
+Benzene ($\mathrm{C}_6\mathrm{H}_6$) is the prototypical
+threaded molecular ring: six carbon atoms bound by a single
+threading link $T(2,6)$
+([threading link](#def:threading-link)).
 
 **Construction.**
-The six carbon atoms form the ring $\mathcal{R}_6^{(k)}$
-([molecular Hopf ring](#def:molecular-hopf-ring)) with the
-circulant linking matrix:
+The six carbon atoms
+([carbon valence](#rem:carbon-valence)) form the ring
+$\mathcal{R}_6$
+([molecular Hopf ring](#def:molecular-hopf-ring)):
 
 $$
-  L^{\mathrm{ring}}
+  \mathrm{C}_6^{\mathrm{ring}}
   \;=\;
-  \begin{pmatrix}
-    0 & 1 & 0 & 0 & 0 & 1 \\
-    1 & 0 & 1 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1 & 0 & 1 \\
-    1 & 0 & 0 & 0 & 1 & 0
-  \end{pmatrix}.
+  [\mathcal{A}(6,6)_1, \ldots, \mathcal{A}(6,6)_6]
+  \;\bowtie\;
+  T(2,6).
 $$
 
-The difference from the chain matrix is the $(1,6)$ and $(6,1)$
-entries — the closing bond.
+The threading link $T(2,6)$ has braid word
+$(\sigma_1 \sigma_2 \sigma_3 \sigma_4 \sigma_5)^2$ in $B_6$,
+with 10 crossings all of the same sign.
 
-**Bond order delocalisation.**
-Each carbon uses 2 of its 4 sites for backbone bonds and 1 for a
-C–H bond, leaving 1 site per atom.  These 6 remaining sites form
-a **secondary Hopf ring** of bond order $k = 1$ superimposed on
-the primary backbone — the topological picture of the $\pi$
-electron cloud.  In the Skein module, this secondary ring
-evaluates to a Jones polynomial whose $q$-weighting distributes
-the extra bonding evenly around the hexagon:
+**The two components are the $\pi$ electrons.**
+Since $\gcd(2,6) = 2$, the threading link $T(2,6)$ has
+**two components**, each an unknotted loop winding 3 times
+through the hexagon.  These two components are the two
+delocalised $\pi$ electrons of benzene.
+
+Each component passes through all 6 carbons, threading one
+electron through the entire ring.  The two components are
+linked with linking number 3 — they cannot be separated without
+cutting through 3 crossings.  This is why benzene's $\pi$
+electrons are delocalised: they are not localised to individual
+bonds but are topologically constrained to thread the entire
+ring.
+
+**Alexander polynomial.**
 
 $$
-  \frac{3}{2} \text{ effective bonds per edge}
-  \quad\text{(alternating single/double → uniform } 1.5\text{)}.
+  \Delta_{T(2,6)}(q)
+  \;=\;
+  q^2 + 1 + q^{-2}
+  \;=\;
+  (q + q^{-1})^2 - 1.
 $$
 
-This is the QOU derivation of benzene's bond-order equalisation:
-the six delocalised trefoils form a closed sub-Hopf link that
-cannot be localised to any three edges without increasing crossing
-energy.
+The crossing energy of benzene is proportional to this
+polynomial — strictly less than the Alexander weight of 6
+separate Hopf links ($= 6$).  The threading link encodes the
+same binding information in a more compact topological form.
 
-**Rigidity.**
-With no free endpoints, the ring has no soft spring modes.  Every
-deformation requires a global braid rearrangement — the ring is
-topologically rigid.  This explains benzene's remarkable thermal
-stability and resistance to addition reactions (which would open
-the ring and break the closed secondary Hopf link).
+**Bond order equalisation.**
+In the pairwise picture, benzene would require alternating
+single and double bonds (Kekulé structure).  In the threading
+picture, there are no individual bonds — the threading link
+distributes binding uniformly.  Each carbon is threaded
+identically (the braid word treats all $\sigma_i$ symmetrically),
+producing equal bond lengths and equal bond orders of $3/2$
+without any additional argument.  Bond order equalisation is
+**automatic** in the threading picture.
 
-**Aromaticity as topological closure.**
-The concept of aromaticity in organic chemistry corresponds
-precisely to the **closure of the secondary Hopf ring**: a
-molecule is aromatic when its $\pi$ electrons form a closed
-sub-Hopf link that would cost more crossing energy to open than
-to maintain.  Hückel's rule ($4n + 2$ electrons for aromaticity)
-should emerge from the shell capacity constraint on closed
-sub-Hopf links at the molecular scale.
+**Hydrogen attachment.**
+Each carbon has 4 linking sites
+([carbon valence](#rem:carbon-valence)).  The threading link
+$T(2,6)$ consumes 2 sites per carbon (one per winding).  The
+remaining 2 sites per carbon are available: one bonds to
+hydrogen via a standard Hopf link, and one participates in the
+$\sigma$-backbone (the in-plane C–C single bond framework).
+Total hydrogen capacity: 6, giving $\mathrm{C}_6\mathrm{H}_6$.
+
+**Aromaticity as threading.**
+The concept of aromaticity in organic chemistry corresponds to
+the existence of a threading link.  A molecule is aromatic when
+its ring admits a $T(2,N)$ threading whose Alexander polynomial
+is less than the pairwise Alexander weight $N$.  This is always
+true for $N \geq 4$, but the stabilisation gain increases with
+$N$:
+
+| $N$ | $\Delta_{T(2,N)}(q)$ at $q = 1$ | Pairwise weight | Ratio |
+|:---:|---:|:---:|:---:|
+| 4 | 2 | 4 | 1/2 |
+| 5 | $\frac{5}{2}$ | 5 | 1/2 |
+| 6 | 3 | 6 | 1/2 |
+| 8 | 4 | 8 | 1/2 |
+
+The ratio is always $1/2$ at $q = 1$ — the threading link is
+universally twice as efficient as pairwise bonding.  The
+aromatic stabilisation energy is the crossing energy difference
+between the two pictures.

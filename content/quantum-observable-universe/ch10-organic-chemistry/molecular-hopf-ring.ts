@@ -14,7 +14,9 @@ export default definition({
   ],
   uses: [
     "def:molecular-hopf-chain",
+    "def:threading-link",
     "def:covalent-bond-types",
     "def:crossing-energy",
+    "def:substrate-parameter",
   ],
 });
