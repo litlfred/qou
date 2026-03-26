@@ -63,7 +63,7 @@ export function stampWitness(leanFile: string): { hash: string; witnessFile: str
 
 /** Remove all witness files for a given .lean file (any hash). */
 export function clearWitnesses(leanFile: string): number {
-  const witnessFiles = globSync(leanFile + ".*.witness");
+  const witnessFiles = globSync(`${leanFile}.*.witness`);
   for (const f of witnessFiles) {
     unlinkSync(f);
   }
