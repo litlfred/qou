@@ -113,6 +113,8 @@ export default chapter({
         "geodesic-vortices",
         "braid-fluid",
         "planck-reynolds",
+        "vortex-intensity-modes",
+        "discrete-vortex-spectrum",
       ],
     }),
 
