@@ -12,6 +12,10 @@ export default example({
     "cobalt-60",
     "carbon-14",
   ],
+  lean: {
+    decl: "QOU.Descartes.HalfLifeVerification.all_six_agree",
+    validation: "not_checked",
+  },
   uses: [
     "prop:hadron-half-life",
     "rem:hadron-half-life-regimes",
