@@ -115,6 +115,7 @@ export default chapter({
         "embeddability-closure",
         // Borromean quark conjecture and fundamental fermions
         "borromean-quark",
+        "fermion-boson-knot-link",
         "up-quark",
         "down-quark",
         "electron-knot",
