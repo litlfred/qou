@@ -206,7 +206,7 @@ export interface ContentAdapter {
   // ── Discovery ────────────────────────────────────────────────
 
   /** List all content items (papers, guidelines, etc.) */
-  listItems(branch?: string): Promise<{ title: string; items: FolioItem[]; branch: string }>;
+  listItems(branch?: string): Promise<{ title: string; papers: FolioItem[]; branch: string }>;
 
   /** Get lightweight outline (chapter/section stubs, no block content). */
   getOutline(itemId: string, branch?: string): Promise<ContentOutline | null>;
