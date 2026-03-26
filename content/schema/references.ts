@@ -921,6 +921,43 @@ export const references: CSLData[] = [
     DOI: "10.1126/science.aat5718",
     issued: { "date-parts": [[2019]] },
   }),
+
+  // ── Nature Physics: Kleckner & Irvine 2013 ─────────────────────
+  ref({
+    id: "kleckner2013",
+    type: "article-journal",
+    title: "Creation and dynamics of knotted vortices",
+    author: [
+      { family: "Kleckner", given: "Dustin" },
+      { family: "Irvine", given: "William T. M." },
+    ],
+    "container-title": "Nature Physics",
+    volume: "9",
+    issue: "4",
+    page: "253-258",
+    DOI: "10.1038/nphys2560",
+    issued: { "date-parts": [[2013]] },
+  }),
+
+  // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
+  ref({
+    id: "scheeler2014",
+    type: "article-journal",
+    title: "Helicity conservation by flow across scales in reconnecting vortex links and knots",
+    author: [
+      { family: "Scheeler", given: "Martin W." },
+      { family: "van Rees", given: "Wim M." },
+      { family: "Kedia", given: "Hridesh" },
+      { family: "Kleckner", given: "Dustin" },
+      { family: "Irvine", given: "William T. M." },
+    ],
+    "container-title": "Proceedings of the National Academy of Sciences",
+    volume: "111",
+    issue: "43",
+    page: "15350-15355",
+    DOI: "10.1073/pnas.1407232111",
+    issued: { "date-parts": [[2014]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

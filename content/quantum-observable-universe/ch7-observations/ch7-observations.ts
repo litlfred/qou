@@ -96,6 +96,7 @@ export default chapter({
       label: "sec:complexity-interpretation",
       blocks: [
         "complex-chirality-rotation",
+        "trefoil-vortex-chirality-flip",
       ],
     }),
 
