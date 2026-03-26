@@ -19,6 +19,17 @@ export default folio({
       url: "/viewer/#/view/quantum-observable-universe",
     }),
     paperRef({
+      dir: "bach2013-double-slit",
+      title: "Controlled Double-Slit Electron Diffraction",
+      description:
+        "Full realization of Feynman's double-slit thought experiment: " +
+        "controlled single/double slit electron diffraction with " +
+        "single-electron buildup (6235 events). Benchmark dataset for " +
+        "the QOU two-mode scattering prediction.",
+      tags: ["experimental", "double-slit", "electron-diffraction", "imported"],
+      url: "/viewer/#/view/bach2013-double-slit",
+    }),
+    paperRef({
       dir: "unital-groebner-bases",
       title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
       description:
@@ -26,6 +37,14 @@ export default folio({
         "Gröbner basis; obtains PBW over commutative rings as a corollary.",
       tags: ["algebra", "groebner-basis", "pbw", "formalization"],
       url: "/viewer/#/view/unital-groebner-bases",
+    }),
+    paperRef({
+      dir: "visualizer",
+      title: "QOU Visualizer",
+      description:
+        "Interactive views of QOU content — Bring's surface, " +
+        "knot complements (SnapPea), and dependency graphs.",
+      tags: ["visualizer", "snappea", "interactive"],
     }),
   ],
 });

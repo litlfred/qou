@@ -144,7 +144,7 @@ automatically. Suggestions are presented in the UI for user confirmation:
 - "Verify statement of [def:imported-Y]" — for all imported definitions
 - "Connect [thm:imported-Z] to existing [thm:main-result]" — when
   dependency analysis suggests a relationship
-- "Add BibTeX entry for [source]" — if citation not in references.bib
+- "Add CSL-JSON entry for [source]" — if citation not in references.ts
 
 Only when the user explicitly confirms a suggestion does it become a todo
 in the feedback system.
@@ -199,20 +199,26 @@ paperRef({
 
 The `url` field enables:
 - Cross-paper link resolution in the viewer
-- BibTeX `folio-url` field for folio-hosted citations
+- CSL-JSON `URL` field for folio-hosted citations
 - Read-only import of external folios for referencing
 
-### BibTeX integration for imported papers
+### Bibliography integration for imported papers
 
-When the imported paper has a folio viewer URL, add a `folio-url`
-field to its BibTeX entry in `references.bib`:
+When the imported paper has a folio viewer URL, include the URL
+in its CSL-JSON entry in `content/schema/references.ts`:
 
-```bibtex
-@article{leitnerpawloski2004,
-  author    = {Leitner, Frederick and Pawloski, Robert},
-  title     = {{Unital Gröbner Bases...}},
-  folio-url = {/viewer/#/view/unital-groebner-bases},
-}
+```typescript
+ref({
+  id: "leitnerpawloski2004",
+  type: "article-journal",
+  author: [
+    { family: "Leitner", given: "Fred" },
+    { family: "Pawlowski", given: "Jan" },
+  ],
+  title: "On the morphisms of non-commutative formal groups",
+  issued: { "date-parts": [[2004]] },
+  URL: "https://arxiv.org/abs/math/0409565",
+}),
 ```
 
 The dependency graph links across papers. Proof-writers can traverse
@@ -253,23 +259,27 @@ Parse the Atom response for:
 - Categories (math.AG, hep-th, etc.)
 - Published/updated dates
 
-## BibTeX Integration
+## Bibliography Integration
 
-When importing, check `references.bib` for existing entry:
+When importing, check `content/schema/references.ts` for existing entry:
 - If found, use that citation key
-- If not found, suggest adding an entry (user confirms)
+- If not found, add a `ref()` entry (user confirms)
+- After adding, run `bun run export-bibtex` to regenerate `references.bib`
 
-Generated BibTeX entry:
-```bibtex
-@article{smith2024,
-  author = {Smith, Alice and Jones, Bob},
-  title = {On the Structure of Quantum Widgets},
-  journal = {arXiv preprint},
-  year = {2024},
-  eprint = {2301.12345},
-  archivePrefix = {arXiv},
-  primaryClass = {math-ph}
-}
+Generated CSL-JSON entry in `references.ts`:
+```typescript
+ref({
+  id: "smith2024",
+  type: "article-journal",
+  title: "On the Structure of Quantum Widgets",
+  author: [
+    { family: "Smith", given: "Alice" },
+    { family: "Jones", given: "Bob" },
+  ],
+  "container-title": "arXiv preprint",
+  issued: { "date-parts": [[2024]] },
+  note: "arXiv:2301.12345",
+}),
 ```
 
 ## File Organization
@@ -303,7 +313,7 @@ Before completing an import:
 - [ ] All `.md` files follow project markdown conventions
 - [ ] All blocks tagged with `["imported", "<source-ref>"]`
 - [ ] `meta.source` populated on every imported block
-- [ ] BibTeX entry exists in `references.bib` (or suggested to user)
+- [ ] CSL-JSON entry exists in `content/schema/references.ts` (or suggested to user)
 - [ ] Any `.lean` files have `sorry` with `-- Ref:` citations
 - [ ] `.ts` manifests have `lean.decl` set for definition blocks
 - [ ] Todo suggestions presented to user (NOT auto-created)

@@ -18,6 +18,18 @@
   --text:    #b8ccff;
   --dim:     #3a4a78;
 }
+body.light {
+  --bg:      #f0f4ff;
+  --panel:   rgba(235,240,255,0.96);
+  --border:  rgba(60,80,180,0.25);
+  --accent:  #1a5fcc;
+  --accent2: #cc3300;
+  --accent3: #006633;
+  --accent4: #885500;
+  --accent5: #770099;
+  --text:    #1a2855;
+  --dim:     #6070a0;
+}
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   background:var(--bg); color:var(--text);
@@ -869,6 +881,20 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
 });
+
+// ── Theme sync with viewer ───────────────────────────────────────
+(function(){
+  function syncTheme(isLight) {
+    if (isLight) document.body.classList.add('light');
+    else document.body.classList.remove('light');
+    renderer.setClearColor(isLight ? 0xf0f4ff : 0x020710);
+  }
+  var p = new URLSearchParams(location.search);
+  syncTheme(p.get('theme') === 'light');
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'folio-theme') syncTheme(e.data.theme === 'light');
+  });
+})();
 </script>
 </body>
 </html>

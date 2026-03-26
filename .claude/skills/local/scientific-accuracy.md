@@ -69,7 +69,7 @@ peer-review practices and the methodology of
   - `MassDerivation.experimental_mu_e_ratio` (206.768283)
   - `MassDerivation.substrate_q` (1.1097)
 - Every claim citing experimental data must have a `\cite{key}` whose
-  BibTeX entry includes a DOI or URL to the original source.
+  CSL-JSON entry in `content/schema/references.ts` includes a DOI or URL to the original source.
 - The `-- Ref: [key]` annotations in Lean `sorry` markers must cite the
   correct foundational reference for the gap.  Verify that the cited
   paper is relevant to the unproved obligation.

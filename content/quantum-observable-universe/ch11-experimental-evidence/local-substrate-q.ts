@@ -7,7 +7,12 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Local Value of the Substrate Parameter",
-  uses: ["def:substrate-parameter", "rem:skein-mass-relation", "rem:terminal-resolution", "rem:photonic-hall"],
+  uses: ["def:substrate-parameter", "rem:skein-mass-relation", "prop:terminal-resolution", "rem:photonic-hall"],
+  examples: [
+    "rem:mass-from-generators",
+    "rem:knot-formula-table",
+    "rem:mass-comparison-table",
+  ],
   proofs: ["prf:local-substrate-q"],
   tags: ["substrate", "mass", "observation"],
 });

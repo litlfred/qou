@@ -48,7 +48,7 @@ Instead of the full `extract → build → update` pipeline:
 ## Proof-Objects Manifest
 
 **File:** `proof-objects.json`
-**Schema:** `schemas/proof-objects.schema.json`
+**Types:** `schemas/qou-types.ts` (§1 ProofObjectsManifest)
 
 ### Formalization Status Flow
 
@@ -168,7 +168,7 @@ dependency DAG. Use it to populate the dependency edges in
 
 ## Checklist
 
-- [ ] `proof-objects.json` validates against `schemas/proof-objects.schema.json`
+- [ ] `proof-objects.json` conforms to `schemas/qou-types.ts` ProofObjectsManifest
 - [ ] All theorem/lemma/proposition objects have at least one review
 - [ ] No critical issues in any review
 - [ ] Formalization status matches actual Lean build output

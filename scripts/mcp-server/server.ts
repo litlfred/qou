@@ -427,6 +427,21 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
             })
           );
 
+          // Synthesize rendered entry for diagram blocks with meta.file (image figures)
+          const figFile = blk.kind === "diagram" && blk.meta?.file as string | undefined;
+          const figRendered: ResolvedRenderedAsset[] | undefined = figFile
+            ? [{
+                mime: figFile.endsWith(".svg") ? "image/svg+xml"
+                    : figFile.endsWith(".png") ? "image/png"
+                    : figFile.endsWith(".jpg") || figFile.endsWith(".jpeg") ? "image/jpeg"
+                    : "image/png",
+                url: `/api/content-asset/${id}/${chRef.dir}/${figFile}`,
+                blockIndex: 0,
+              }]
+            : undefined;
+
+          const finalRendered = rendered || figRendered;
+
           blocks.push({
             rootName,
             kind: blk.kind,
@@ -440,7 +455,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
             tex: blk.tex,
             caption: blk.caption,
             tags: blk.tags,
-            rendered,
+            rendered: finalRendered,
             md,
             todos: blockTodos,
           });
@@ -733,6 +748,19 @@ async function resolveSection(
         })
       );
 
+      // Synthesize rendered entry for diagram blocks with meta.file (image figures)
+      const figFile2 = blk.kind === "diagram" && blk.meta?.file as string | undefined;
+      const figRendered2: ResolvedRenderedAsset[] | undefined = figFile2
+        ? [{
+            mime: figFile2.endsWith(".svg") ? "image/svg+xml"
+                : figFile2.endsWith(".png") ? "image/png"
+                : figFile2.endsWith(".jpg") || figFile2.endsWith(".jpeg") ? "image/jpeg"
+                : "image/png",
+            url: `/api/content-asset/${paperId}/${chapterDir}/${figFile2}`,
+            blockIndex: 0,
+          }]
+        : undefined;
+
       blocks.push({
         rootName,
         kind: blk.kind,
@@ -746,9 +774,14 @@ async function resolveSection(
         tex: blk.tex,
         caption: blk.caption,
         tags: blk.tags,
-        rendered,
+        rendered: rendered || figRendered2,
         md,
         todos: blockTodos,
+        // Simulator fields
+        ...(blk.simulator ? { simulator: blk.simulator } : {}),
+        ...(blk.html ? { html: blk.html } : {}),
+        ...(blk.defaultView ? { defaultView: blk.defaultView } : {}),
+        ...(blk.views ? { views: blk.views } : {}),
       });
     } catch (e) {
       blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -1239,6 +1272,36 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     } catch (e) {
       const msg = e instanceof Error ? e.stack || e.message : String(e);
       log('error', `GET /api/paper/section id=${id} chapter=${chapter} section=${sectionIdx}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // /api/paper/block?id=quantum-observable-universe&label=sim:q-double-slit&branch=feature-x
+  // Fetches a single block by label, searching all chapters/sections.
+  if (path === "/api/paper/block") {
+    const id = url.searchParams.get("id");
+    const label = url.searchParams.get("label");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !label) return Response.json({ error: "Missing ?id= or ?label= parameter" }, { status: 400 });
+    try {
+      const paperData = await resolvePaper(id, branch);
+      if (!paperData) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
+      // Search all chapters and sections for the block
+      for (const ch of paperData.chapters || []) {
+        const chDir = ch._dir || ch.dir;
+        if (!chDir) continue;
+        for (let si = 0; si < (ch.sections || []).length; si++) {
+          try {
+            const secData = await resolveSection(id, chDir, si, branch);
+            if (!secData || !secData.blocks) continue;
+            const found = secData.blocks.find((b: any) => b.label === label);
+            if (found) return Response.json(found, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+          } catch (e) { log('warn', `GET /api/paper/block resolveSection ${chDir}[${si}]: ${e}`); continue; }
+        }
+      }
+      return Response.json({ error: `Block not found: ${label}` }, { status: 404 });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
       return Response.json({ error: msg }, { status: 500 });
     }
   }
@@ -1840,6 +1903,14 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
   // Static viewer files
   if (path.startsWith("/viewer/")) {
     return serveFile(join(VIEWER_DIR, path.slice("/viewer/".length)));
+  }
+
+  // Standalone HTML simulators served from repo root
+  if (path.endsWith(".html") && !path.slice(1).includes("/")) {
+    const fileName = path.slice(1); // strip leading /
+    if (/^[\w.-]+\.html$/.test(fileName)) {
+      return serveFile(join(REPO_ROOT, fileName));
+    }
   }
 
   return null;

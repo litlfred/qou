@@ -3720,6 +3720,18 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+// ── Theme sync with viewer ───────────────────────────────────────
+(function(){
+  var p = new URLSearchParams(location.search);
+  if (p.get('theme') === 'light') { lightMode = true; applyTheme(); }
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'folio-theme') {
+      lightMode = (e.data.theme === 'light');
+      applyTheme();
+    }
+  });
+})();
 </script>
 </body>
 </html>
