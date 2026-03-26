@@ -244,6 +244,7 @@ const ENV_NAMES: Record<string, string> = {
   example: "example",
   remark: "remark",
   proof: "proof",
+  simulator: "remark",  // simulators render as remarks in LaTeX with snapshot
 };
 
 /**
@@ -286,6 +287,28 @@ export function renderBlock(block: Block, mdContent: string): string {
       if (block.label) lines.push(`% diagram: ${block.label}`);
       lines.push(tex);
       if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
+      break;
+    }
+
+    case "simulator": {
+      // Simulators render as remarks in LaTeX with a reference to
+      // the interactive version. The .md content describes the
+      // simulator and its default view.
+      const titleArg = block.title ? `[{${escapeLatex(block.title)}}]` : "[{Interactive Simulation}]";
+      lines.push(`\\begin{remark}${titleArg}`);
+      if (block.label) lines.push(`  \\label{${block.label}}`);
+      if (block.uses?.length) {
+        lines.push(`  \\uses{${block.uses.join(", ")}}`);
+      }
+      // Render snapshot if available
+      if (block.rendered?.length) {
+        const snap = block.rendered[0];
+        lines.push(`  \\begin{center}`);
+        lines.push(`    \\includegraphics[width=0.8\\textwidth]{${snap.url}}`);
+        lines.push(`  \\end{center}`);
+      }
+      lines.push(markdownToLatex(mdContent));
+      lines.push(`\\end{remark}`);
       break;
     }
 

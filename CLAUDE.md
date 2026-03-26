@@ -61,6 +61,7 @@ When a user request arrives, route to the right skill(s):
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
 | "separate categorical / split statement" | `local/critical-path-analysis` + `local/content-validation` | collaborator |
+| "simulator / simulation / interactive viz" | `local/simulator` + `local/content-validation` | collaborator |
 | "set up lean / install lean / lean not working" | `local/lean-environment-setup` | collaborator |
 | "generate docs / build docs / schema docs" | `local/docs-generation` | reader |
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
@@ -77,7 +78,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -138,6 +139,7 @@ All declarations live under the `QOU` root namespace.
 | `definition` | **Yes** — enforced; will not build without it |
 | `theorem`, `lemma`, `proposition`, `corollary` | **Expected** — warning if missing |
 | `conjecture`, `example`, `remark` | Optional |
+| `simulator` | N/A |
 | `prose`, `equation`, `diagram` | N/A |
 
 ### 4. Formalization status is derived, not stored
@@ -283,6 +285,7 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `definition` | **Yes** (enforced at type level) | `def:` |
 | `theorem`, `lemma`, `proposition`, `corollary` | Expected (warning if missing) | `thm:`, `lem:`, `prop:`, `cor:` |
 | `conjecture`, `example`, `remark` | Optional | `conj:`, `ex:`, `rem:` |
+| `simulator` | N/A | `sim:` |
 | `prose`, `equation`, `diagram` | N/A | — |
 
 ### Pipeline

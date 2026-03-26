@@ -749,6 +749,11 @@ async function resolveSection(
         rendered,
         md,
         todos: blockTodos,
+        // Simulator fields
+        ...(blk.simulator ? { simulator: blk.simulator } : {}),
+        ...(blk.html ? { html: blk.html } : {}),
+        ...(blk.defaultView ? { defaultView: blk.defaultView } : {}),
+        ...(blk.views ? { views: blk.views } : {}),
       });
     } catch (e) {
       blocks.push({ rootName, kind: "error", md: `Failed to load ${rootName}: ${e}` });
@@ -1239,6 +1244,36 @@ async function handleViewerRequest(url: URL): Promise<Response | null> {
     } catch (e) {
       const msg = e instanceof Error ? e.stack || e.message : String(e);
       log('error', `GET /api/paper/section id=${id} chapter=${chapter} section=${sectionIdx}: ${msg}`);
+      return Response.json({ error: msg }, { status: 500 });
+    }
+  }
+
+  // /api/paper/block?id=quantum-observable-universe&label=sim:q-double-slit&branch=feature-x
+  // Fetches a single block by label, searching all chapters/sections.
+  if (path === "/api/paper/block") {
+    const id = url.searchParams.get("id");
+    const label = url.searchParams.get("label");
+    const branch = url.searchParams.get("branch") || undefined;
+    if (!id || !label) return Response.json({ error: "Missing ?id= or ?label= parameter" }, { status: 400 });
+    try {
+      const paperData = await resolvePaper(id, branch);
+      if (!paperData) return Response.json({ error: `Paper not found: ${id}` }, { status: 404 });
+      // Search all chapters and sections for the block
+      for (const ch of paperData.chapters || []) {
+        const chDir = ch._dir || ch.dir;
+        if (!chDir) continue;
+        for (let si = 0; si < (ch.sections || []).length; si++) {
+          try {
+            const secData = await resolveSection(id, chDir, si, branch);
+            if (!secData || !secData.blocks) continue;
+            const found = secData.blocks.find((b: any) => b.label === label);
+            if (found) return Response.json(found, { headers: { "Cache-Control": "max-age=300", "Access-Control-Allow-Origin": "*" } });
+          } catch (e) { log('warn', `GET /api/paper/block resolveSection ${chDir}[${si}]: ${e}`); continue; }
+        }
+      }
+      return Response.json({ error: `Block not found: ${label}` }, { status: 404 });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
       return Response.json({ error: msg }, { status: 500 });
     }
   }
