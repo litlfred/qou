@@ -126,6 +126,7 @@ export default chapter({
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
+        "electron-shells-hopf",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
