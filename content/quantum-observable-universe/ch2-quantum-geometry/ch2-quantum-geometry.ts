@@ -1,7 +1,7 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 2: Quantum Differential Geometry.
+ * Chapter 2: Quantum Observable Universes.
  *
  * Opens with the Quantum Observable Universe (QOU) axiom — adding a
  * fibre functor (observability) to the QU of Chapter 1.  This unlocks
@@ -14,8 +14,8 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   number: 2,
-  title: "Quantum Differential Geometry",
-  label: "chap:qdg",
+  title: "Quantum Observable Universes",
+  label: "chap:qou",
   sections: [
     // ── The QOU axiom ─────────────────────────────────────────────────
     section({

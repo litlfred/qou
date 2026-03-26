@@ -1,11 +1,11 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 1: Quantum Universe.
+ * Chapter 1: Quantum Universes.
  *
  * Pure QU axioms — rigid monoidal category with a Frobenius--Hopf
  * object.  No observability (fibre functor) assumed here; that is
- * introduced in Chapter 2 (Quantum Differential Geometry).
+ * introduced in Chapter 2 (Quantum Observable Universes).
  *
  * Structures available on a QU alone: Frobenius pairing, higher forms,
  * involutive/dagger structure, Tannaka--Krein, abstract hadrons,
@@ -13,7 +13,7 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   number: 1,
-  title: "Quantum Universe",
+  title: "Quantum Universes",
   label: "chap:qu",
   sections: [
     section({
