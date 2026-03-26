@@ -1,12 +1,12 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 9: Information-Theoretic Perspectives.
+ * Chapter 8: Information-Theoretic Perspectives.
  *
  * Emergent gravity from information geometry, Planck-scale information
  * units, information-theoretic time, Big Bang through an information
- * lens, Planck-scale computation, and alternative Euler-characteristic
- * scenarios.
+ * lens, computation at Planck time lengths, statistical mechanics,
+ * and alternative Euler-characteristic scenarios.
  */
 export default chapter({
   number: 8,
@@ -28,6 +28,20 @@ export default chapter({
         "time-info",
         "big-bang-info",
         "planck-computation",
+      ],
+    }),
+    section({
+      title: "Computation at Planck Time Lengths",
+      label: "sec:planck-scale-computation",
+      blocks: [
+        "planck-scale-computation",
+      ],
+    }),
+    section({
+      title: "Statistical Mechanics",
+      label: "sec:stat-mech",
+      blocks: [
+        "stat-mech-intro",
       ],
     }),
     section({
