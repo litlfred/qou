@@ -49,10 +49,25 @@ theorem qInt_pos {q : ℝ} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
     have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
     linarith
 
-/-- [ℓ]_q is strictly increasing in ℓ for q > 1. -/
+/-- [ℓ]_q is strictly increasing in ℓ for q > 1.
+    Proof: both q^ℓ and −q^{−ℓ} are strictly increasing in ℓ
+    (for q > 1), so their sum q^ℓ − q^{−ℓ} is strictly increasing.
+    Dividing by the positive constant q − q⁻¹ preserves order. -/
 theorem qInt_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qInt q (by linarith) (by linarith) ℓ) := by
-  sorry -- requires detailed rpow monotonicity argument
+  intro a b hab
+  simp only [qInt]
+  have hq0 : q > 0 := by linarith
+  have hqinv : q - q⁻¹ > 0 := by
+    have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
+    linarith
+  rw [div_lt_div_right hqinv]
+  have hab_real : (a : ℝ) < (b : ℝ) := Nat.cast_lt.mpr hab
+  have h1 : q ^ (a : ℝ) < q ^ (b : ℝ) :=
+    rpow_lt_rpow_of_exponent_lt hq hab_real
+  have h2 : q ^ (-(b : ℝ)) < q ^ (-(a : ℝ)) :=
+    rpow_lt_rpow_of_exponent_lt hq (neg_lt_neg hab_real)
+  linarith
 
 /-- The q-Laplacian eigenvalue: [ℓ]_q · [ℓ+1]_q.
     At q = 1: ℓ(ℓ+1). -/
@@ -60,10 +75,34 @@ def qLapEigenval (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : ℝ :=
   qInt q hq hq1 ℓ * qInt q hq hq1 (ℓ + 1)
 
 /-- q-Laplacian eigenvalues are strictly increasing for q > 1.
-    Follows from qInt strict monotonicity and positivity. -/
+    Proof: [ℓ]_q · [ℓ+1]_q < [ℓ']_q · [ℓ'+1]_q because both
+    factors are non-negative/positive and strictly increase. -/
 theorem qLapEigenval_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qLapEigenval q (by linarith) (by linarith) ℓ) := by
-  sorry -- follows from qInt_strictMono and qInt_pos
+  intro a b hab
+  simp only [qLapEigenval]
+  have hm := qInt_strictMono hq
+  have h_fst : qInt q (by linarith) (by linarith) a <
+      qInt q (by linarith) (by linarith) b := hm hab
+  have h_snd : qInt q (by linarith) (by linarith) (a + 1) <
+      qInt q (by linarith) (by linarith) (b + 1) := hm (by omega)
+  -- [a]_q ≥ 0: either a = 0 (then [0]_q = 0) or a ≥ 1 (then positive)
+  have ha_nn : qInt q (by linarith) (by linarith) a ≥ 0 := by
+    rcases Nat.eq_zero_or_pos a with rfl | ha
+    · simp [qInt]
+    · exact le_of_lt (qInt_pos hq ha)
+  -- [b+1]_q > 0 since b+1 ≥ 1
+  have hb1_pos : qInt q (by linarith) (by linarith) (b + 1) > 0 :=
+    qInt_pos hq (by omega)
+  -- [a]·[a+1] ≤ [a]·[b+1] < [b]·[b+1]
+  calc qInt q (by linarith) (by linarith) a *
+        qInt q (by linarith) (by linarith) (a + 1)
+      ≤ qInt q (by linarith) (by linarith) a *
+        qInt q (by linarith) (by linarith) (b + 1) :=
+        mul_le_mul_of_nonneg_left (le_of_lt h_snd) ha_nn
+    _ < qInt q (by linarith) (by linarith) b *
+        qInt q (by linarith) (by linarith) (b + 1) :=
+        mul_lt_mul_of_pos_right h_fst hb1_pos
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §2. Mode space dimensions

@@ -16,6 +16,7 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { extractCitations } from "./citations";
 import { referenceMap } from "../schema/references";
@@ -67,8 +68,8 @@ export function escapeLatex(text: string): string {
 
 // ── Markdown → LaTeX conversion (AST-based) ─────────────────────
 
-/** Shared remark parser instance with math extension. */
-const mdParser = remark().use(remarkMath);
+/** Shared remark parser instance with math and GFM (tables) extensions. */
+const mdParser = remark().use(remarkGfm).use(remarkMath);
 
 /**
  * Convert markdown content to LaTeX body text via remark AST.
@@ -89,6 +90,7 @@ const mdParser = remark().use(remarkMath);
  *   | link(url)     | \href{url}{children}                 |
  *   | list(ordered) | \begin{enumerate} \item ...\end{...} |
  *   | list(unord.)  | \begin{itemize} \item ...\end{...}   |
+ *   | table         | \begin{tabular}...\end{tabular}      |
  *   | paragraph     | children + blank line                |
  */
 export function markdownToLatex(md: string): string {
@@ -220,6 +222,45 @@ function renderMdastNode(node: any): string {
       lines.push("\\end{figure}");
       return lines.join("\n");
     }
+
+    case "table": {
+      // GFM table → \begin{tabular}
+      const rows: any[] = node.children ?? [];
+      // Determine column count from first row
+      const colCount = rows[0]?.children?.length ?? 1;
+      // Alignment: remark-gfm stores in node.align as (null|"left"|"center"|"right")[]
+      const align: (string | null)[] = node.align ?? [];
+      const colSpec = Array.from({ length: colCount }, (_, i) => {
+        const a = align[i];
+        if (a === "center") return "c";
+        if (a === "right") return "r";
+        return "l";
+      }).join(" ");
+
+      const lines: string[] = [];
+      lines.push(`\\begin{tabular}{${colSpec}}`);
+      lines.push("\\hline");
+      for (let r = 0; r < rows.length; r++) {
+        const cells = (rows[r].children ?? [])
+          .map((cell: any) => renderChildren(cell).join(""))
+          .join(" & ");
+        lines.push(`${cells} \\\\`);
+        // Horizontal rule after header row
+        if (r === 0) lines.push("\\hline");
+      }
+      lines.push("\\hline");
+      lines.push("\\end{tabular}");
+      return lines.join("\n");
+    }
+
+    case "tableRow":
+      // Handled by parent "table" case; fallback if encountered standalone
+      return (node.children ?? [])
+        .map((cell: any) => renderChildren(cell).join(""))
+        .join(" & ") + " \\\\";
+
+    case "tableCell":
+      return renderChildren(node).join("");
 
     default:
       // Unknown node — render children if any, otherwise empty
