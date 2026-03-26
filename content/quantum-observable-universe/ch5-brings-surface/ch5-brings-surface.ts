@@ -133,6 +133,8 @@ export default chapter({
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
+        "nuclear-threading-link",
+        "nitrogen-14-threading",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
