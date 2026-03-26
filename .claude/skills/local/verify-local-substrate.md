@@ -39,13 +39,13 @@ The verification covers:
 ### Step 1: Collect observational blocks
 
 Scan all `.ts` manifest files under `content/quantum-observable-universe/`
-for blocks matching:
+for blocks matching either criterion:
 
-```
-kind ∈ {proposition, theorem, lemma, corollary, conjecture}  AND  chapter = ch7
-OR
-tags ∩ {"observation", "prediction", "codata"} ≠ ∅
-```
+- **Provable blocks in Chapter 7**: any block with kind `proposition`,
+  `theorem`, `lemma`, `corollary`, or `conjecture` located in
+  `ch7-observations/`
+- **Tagged observational blocks** (any chapter): any block whose `tags`
+  array includes `"observation"`, `"prediction"`, or `"codata"`
 
 ### Step 2: Trace each block's dependency chain
 
