@@ -1211,22 +1211,7 @@
     btnRm.classList.add('on'); // remarks on by default
 
     // Preview (browser print with LaTeX-styled CSS)
-    document.getElementById('c-pr').addEventListener('click', async () => {
-      // Force-load all lazy sections before printing
-      if (paperOutline && paper?._loadChapterDetail && paper?._loadSection) {
-        for (const ch of paper.chapters) {
-          if (ch._dir) {
-            await paper._loadChapterDetail(paper.id, ch);
-            for (let si = 0; si < ch.sections.length; si++) {
-              const cd = document.querySelector(`.ch[data-ch-num="${ch.number}"]`);
-              const secDiv = cd?.querySelector(`.section[data-sec-num="${ch.number}.${si + 1}"]`);
-              if (secDiv) await paper._loadSection(paper.id, ch._dir, si, secDiv);
-            }
-          }
-        }
-      }
-      // Force-hydrate all lazy KaTeX content
-      while (lazyQueue.length) { const t = lazyQueue.shift(); t.init(); lazyObs.unobserve(t.el); }
+    document.getElementById('c-pr').addEventListener('click', () => {
       window.print();
     });
 
