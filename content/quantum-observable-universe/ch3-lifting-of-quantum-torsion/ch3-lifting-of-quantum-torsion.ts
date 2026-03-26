@@ -12,7 +12,7 @@ import { chapter, section } from "../../schema/builders";
  * chapter restructuring (2026-03).
  */
 export default chapter({
-  number: 2,
+  number: 3,
   title: "Lifting and Descent",
   label: "chap:torsion",
   sections: [

@@ -3,9 +3,13 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 1: Quantum Observable Universe.
  *
- * Sections can be inline or referenced by name.
- * Referenced sections resolve to `<name>/<name>.ts` in this directory.
- * Blocks within sections are atomic knowledge units (root-name .ts + .md pairs).
+ * Pure categorical development of the QOU axioms.  The Archimedean
+ * realisation is asserted briefly as an example (§9) but the detailed
+ * Archimedean content is pushed to the end (§17) so the reader does
+ * not assume an Archimedean setting.
+ *
+ * The elaboration material (formerly Ch. 2) has been extracted into
+ * a separate "Quantum Geometry" chapter.
  */
 export default chapter({
   number: 1,
@@ -143,6 +147,21 @@ export default chapter({
       ],
     }),
 
+    // ── Quick Archimedean assertion (just the existence examples) ─────
+    // Kept here so downstream chapters can reference ex:c-quantum-universe
+    // and ex:c-quantum-observable-universe without an Archimedean chapter.
+    section({
+      title: "Examples of quantum universes",
+      label: "sec:qou-examples",
+      blocks: [
+        "archimedean-intro",
+        "c-quantum-universe",
+        "notation-special-cases",
+        "c-quantum-observable-universe",
+        "archimedean-realisations",
+      ],
+    }),
+
     section({
       title: "Categorical action and variational equations",
       label: "sec:categorical-action",
@@ -215,30 +234,7 @@ export default chapter({
       ],
     }),
 
-    section({
-      title: "Archimedean quantum universe",
-      label: "sec:archimedean-qou",
-      blocks: [
-        "archimedean-intro",
-        "c-quantum-universe",
-        "notation-special-cases",
-        "c-quantum-observable-universe",
-        "archimedean-realisations",
-        "calabi-yau",
-        "ale",
-        "brings-surface",
-        "cosmological-limits",
-        "instanton",
-        "irreducible-connection",
-        "self-dual-curvature",
-        "c-substrate-via-levi",
-        "webster-inner-product",
-        "heisenberg-commutator",
-        "reeb-decomposition",
-        "observation-archimedean",
-      ],
-    }),
-
+    // ── q-Deformed operators (categorical, not Archimedean) ───────────
     section({
       title: "$q$-Deformed operators",
       label: "sec:q-deformed-operators",
@@ -253,6 +249,7 @@ export default chapter({
       ],
     }),
 
+    // ── Physical interpretation (categorical main result) ─────────────
     section({
       title: "Physical interpretation and main result",
       label: "sec:physical-interpretation",
@@ -264,47 +261,25 @@ export default chapter({
       ],
     }),
 
-    // ── Elaboration: categorical and analytic foundations (formerly Ch. 2) ─
-
+    // ── Archimedean detail (pushed to end) ────────────────────────────
+    // The reader should not assume Archimedean until here.  Everything
+    // above is valid over any base field.
     section({
-      title: "Introduction and categorical context",
-      label: "sec:elaboration-intro",
+      title: "Archimedean specialisations",
+      label: "sec:archimedean-qou",
       blocks: [
-        "ch2-intro",
-        "tqft-context",
-        "vanishing-explication",
-        "levi-generalisation",
-        "quantum-gauge-group-category",
-        "hopf-structure-diagrams",
-        "self-dual-2group",
-        "quantum-flatness",
-        "emergence-to-quantum-flat",
-        "emergence-to-quantum-flat-proof",
-        "simplicity-from-category",
-        "frobenius-simplification",
-        "j1e-local-states",
-        "dq-squared",
-        "dq-squared-proof",
-        "q-jacobiator",
-        "q-jacobiator-proof",
-        "classical-recovery",
-        "q-torsion-leaf-minimum",
-        "q-harmonic-physical",
-        "linearisation-convention",
-        "schrodinger-jet-coaction",
-      ],
-    }),
-
-    section({
-      title: "Lifting: jet prolongation, transport, and torsion",
-      label: "sec:lifting",
-      blocks: [
-        "lifting-intro",
-        "categorical-jet-prolongation",
-        "categorical-jet-prolongation-proof",
-        "categorical-transport",
-        "categorical-q-reeb-flow",
-        "categorical-q-torsion-leaf",
+        "calabi-yau",
+        "ale",
+        "brings-surface",
+        "cosmological-limits",
+        "instanton",
+        "irreducible-connection",
+        "self-dual-curvature",
+        "c-substrate-via-levi",
+        "webster-inner-product",
+        "heisenberg-commutator",
+        "reeb-decomposition",
+        "observation-archimedean",
       ],
     }),
   ],

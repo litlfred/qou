@@ -15,7 +15,7 @@ import { chapter, section } from "../../schema/builders";
  * Fluid dynamics and information theory moved to ch6 (Quantum Universes).
  */
 export default chapter({
-  number: 3,
+  number: 4,
   title: "Braids and Knots",
   label: "chap:path-integrals-braiding",
   sections: [

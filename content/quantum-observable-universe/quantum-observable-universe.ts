@@ -28,6 +28,7 @@ export default paper({
   chapters: [
     chapterRef({ dir: "ch0-introduction" }),
     chapterRef({ dir: "ch1-quantum-observable-universe" }),
+    chapterRef({ dir: "ch2-quantum-geometry" }),
     chapterRef({ dir: "ch3-lifting-of-quantum-torsion" }),
     chapterRef({ dir: "ch4-path-integrals-and-braiding" }),
     chapterRef({ dir: "ch5-brings-surface" }),
