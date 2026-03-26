@@ -137,6 +137,7 @@ export default chapter({
         "helium-hopf-diagram",
         "noble-gas-characterization",
         "metallic-character-knot",
+        "francium-extremal-metal",
         "hydrogen-knot-structure",
         "hydrogen-orbitals",
         // The Descartes theorem
