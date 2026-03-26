@@ -124,12 +124,12 @@ export class FolioServer {
   private async handleGet(url: URL): Promise<Response | null> {
     const path = url.pathname;
 
-    // Assistant SPA
-    if (path === "/assistant" || path === "/assistant/" || path === "/assistant/index.html") {
+    // Folio SPA
+    if (path === "/folio" || path === "/folio/" || path === "/folio/index.html") {
       return serveFile(join(this.config.assistantDir, "index.html"));
     }
-    if (path.startsWith("/assistant/")) {
-      return serveFile(join(this.config.assistantDir, path.slice("/assistant/".length)));
+    if (path.startsWith("/folio/")) {
+      return serveFile(join(this.config.assistantDir, path.slice("/folio/".length)));
     }
 
     // Branch routes
@@ -181,10 +181,10 @@ export class FolioServer {
       return Response.json({ status: "ok", version: "0.1.0", adapter: this.adapter.type });
     }
 
-    // Root → redirect to assistant
+    // Root → redirect to folio
     if (url.pathname === "/" || url.pathname === "") {
       const port = url.port ? `:${url.port}` : "";
-      return Response.redirect(`${url.protocol}//${url.hostname}${port}/assistant/`, 302);
+      return Response.redirect(`${url.protocol}//${url.hostname}${port}/folio/`, 302);
     }
 
     // POST/DELETE
@@ -224,7 +224,7 @@ export class FolioServer {
     });
 
     log("init", `MCP server started (stdio, repo: ${this.config.repoRoot})`);
-    log("init", `Assistant: http://localhost:${viewerPort}/assistant/`);
+    log("init", `Folio: http://localhost:${viewerPort}/folio/`);
   }
 
   async startHttp(): Promise<void> {
@@ -251,6 +251,6 @@ export class FolioServer {
 
     log("init", `Folio assistant started (HTTP :${port}, repo: ${this.config.repoRoot})`);
     log("init", `MCP: http://localhost:${port}/mcp`);
-    log("init", `Assistant: http://localhost:${port}/assistant/`);
+    log("init", `Folio: http://localhost:${port}/folio/`);
   }
 }

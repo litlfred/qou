@@ -483,14 +483,14 @@ Bun.serve({
         || new Response("Not found", { status: 404 });
     }
 
-    // Assistant SPA
-    const ASSISTANT_ROOT = VIEWER_ROOT.replace(/viewer\/?$/, "assistant");
-    if (path === "/assistant" || path === "/assistant/" || path === "/assistant/index.html") {
+    // Folio SPA
+    const ASSISTANT_ROOT = VIEWER_ROOT.replace(/viewer\/?$/, "ui");
+    if (path === "/folio" || path === "/folio/" || path === "/folio/index.html") {
       return serveStatic(join(ASSISTANT_ROOT, "index.html"))
         || new Response("Not found", { status: 404 });
     }
-    if (path.startsWith("/assistant/")) {
-      return serveStatic(join(ASSISTANT_ROOT, path.slice("/assistant/".length)))
+    if (path.startsWith("/folio/")) {
+      return serveStatic(join(ASSISTANT_ROOT, path.slice("/folio/".length)))
         || new Response("Not found", { status: 404 });
     }
 

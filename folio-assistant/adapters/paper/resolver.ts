@@ -52,7 +52,7 @@ export class PaperResolver {
 
   // ── Folio listing ──────────────────────────────────────────────
 
-  async resolveFolio(branch?: string): Promise<{ title: string; items: FolioItem[]; branch: string }> {
+  async resolveFolio(branch?: string): Promise<{ title: string; papers: FolioItem[]; branch: string }> {
     const br = branch;
     const folioRel = "content/folio.ts";
     let folioData: { title: string; papers: Array<{ dir: string; title?: string; description?: string; tags?: string[] }> };
@@ -115,7 +115,7 @@ export class PaperResolver {
       }
     }
 
-    return { title: folioData.title, items, branch: this.gitHelper.currentBranch() };
+    return { title: folioData.title, papers: items, branch: this.gitHelper.currentBranch() };
   }
 
   // ── Paper outline ──────────────────────────────────────────────
