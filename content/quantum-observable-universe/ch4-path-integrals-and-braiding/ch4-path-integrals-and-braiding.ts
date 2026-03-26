@@ -163,6 +163,7 @@ export default chapter({
         "borromean-baryon",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
+        "nuclear-shell-intruder",
       ],
     }),
 
