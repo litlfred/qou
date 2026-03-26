@@ -21,7 +21,7 @@ export default simulator({
     "def:substrate-parameter",
   ],
   simulator: {
-    type: "pyodide",
-    source: "valley-stability.html",
+    type: "html",
+    source: "valley_stability.html",
   },
 });
