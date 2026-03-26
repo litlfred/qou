@@ -1,0 +1,48 @@
+{
+  "title": "Elliptic curve E_z from chiral fibration — magic number analysis",
+  "date": "2026-03-26",
+  "parameters": {
+    "q": 1.10997,
+    "z_phys": 0.10438,
+    "a_C": 0.697,
+    "a_A": 23.29,
+    "c": 0.01497
+  },
+  "elliptic_curve": {
+    "weierstrass": "y² = x³ + 0.708724x + 0.805625",
+    "a": 0.708724,
+    "b": 0.805625,
+    "discriminant": -18.948,
+    "j_invariant": 129.86,
+    "real_components": 1,
+    "torsion_2": {
+      "real_root": -0.6844,
+      "complex_roots": [0.3422, 1.0296]
+    }
+  },
+  "base_point": {
+    "label": "P₀ = (0, √b)",
+    "x": 0.0,
+    "y": 0.8976,
+    "estimated_angle_theta": 0.017857,
+    "estimated_order": 56,
+    "note": "28·P₀ ≈ T (2-torsion), 56·P₀ ≈ O"
+  },
+  "magic_numbers_on_circle": [
+    {"n": 2,   "n_theta_mod_1": 0.0357, "position": "near O",   "magic": "N-magic"},
+    {"n": 8,   "n_theta_mod_1": 0.1429, "position": "near O",   "magic": "N-magic"},
+    {"n": 20,  "n_theta_mod_1": 0.3571, "position": "near T",   "magic": "N-magic"},
+    {"n": 28,  "n_theta_mod_1": 0.5000, "position": "AT T (2-torsion)", "magic": "N-magic"},
+    {"n": 50,  "n_theta_mod_1": 0.8929, "position": "near O",   "magic": "N-magic"},
+    {"n": 82,  "n_theta_mod_1": 0.4643, "position": "near T",   "magic": "N-magic"},
+    {"n": 126, "n_theta_mod_1": 0.2500, "position": "AT 1/4 (4-torsion)", "magic": "N-magic"}
+  ],
+  "closest_to_torsion": [
+    {"n": 119, "dist": 0.0352},
+    {"n": 72,  "dist": 0.0566},
+    {"n": 25,  "dist": 0.0780},
+    {"n": 22,  "dist": 0.0993},
+    {"n": 28,  "dist": 0.2525}
+  ],
+  "conclusion": "The proton point P₀ on E_z has approximate angle θ ≈ 1/56 on E_z(R) ≅ S¹. The magic neutron numbers land at rational multiples of 1/28 on the circle, suggesting P₀ is approximately a 56-torsion point. The magic numbers 28 and 126 land at the 2-torsion and 4-torsion positions respectively."
+}
