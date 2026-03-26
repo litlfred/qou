@@ -28,12 +28,29 @@ makes the electron light (mass from vacuum drag only).  The
 Hopf link $\bowtie$ is the electromagnetic binding: the
 trefoil threads through the proton's Seifert surface.
 
-**Hydrogen orbitals from trefoil geometry.**
+**Shell transitions as Reidemeister I moves.**
 
 The trefoil $T_{2,3}$ has **writhe** $w = +3$ in its minimal
-diagram (three positive crossings).  The writhe can increase
-by adding curls (Reidemeister I moves): $w = +3, +5, +7, \ldots$
-Each pair of added curls corresponds to a higher energy state.
+diagram (three positive crossings).  Photon absorption performs
+a **Reidemeister I move** on the trefoil's embedding within
+the Hopf link to the proton: a curl is added at the exceptional
+divisor, increasing the writhe by $+2$ (two R-I moves
+preserving the knot type):
+
+$$
+  n \to n + 1
+  \qquad\Longleftrightarrow\qquad
+  w \to w + 2
+  \qquad\Longleftrightarrow\qquad
+  \text{two R-I moves at exceptional divisor.}
+$$
+
+The bare mass $m_e = 0.511$ MeV is unchanged — R-I preserves
+the knot type
+([Reidemeister invariance](#prop:reidemeister-mass-invariance)).
+The binding energy $E_n = -13.6/n^2$ eV changes — R-I changes
+the embedding.  The electron is still a trefoil (same
+particle); it is in a different state (different writhe).
 
 The **shell number** $n$ is the writhe level:
 
@@ -42,47 +59,60 @@ $$
   \qquad\text{for}\quad w = 3, 5, 7, 9, \ldots
 $$
 
-At each shell $n$, the trefoil has $w = 2n + 1$ crossings.
-The **sub-shells** correspond to the distinct ways of
-distributing the $2(n-1)$ added curls around the three lobes
-of the trefoil:
+The curls added by R-I are **localized at the exceptional
+divisor** of the brane tower.  The ground-state trefoil
+($w = 3$) lives entirely in the base space $E_0$.  An excited
+trefoil ($w = 5$) has its extra curls in the blow-up $E_1$.
 
-| Shell $n$ | Writhe $w$ | Added curls | Sub-shells | Orbitals | States ($2n^2$) |
-|----------:|----------:|-----------:|-----------|--------:|-------:|
-| 1 | 3 | 0 | $s$ only | 1 | 2 |
-| 2 | 5 | 2 | $s, p$ | 4 | 8 |
-| 3 | 7 | 4 | $s, p, d$ | 9 | 18 |
-| 4 | 9 | 6 | $s, p, d, f$ | 16 | 32 |
+**Sub-shells from Fourier modes on the trefoil torus.**
 
-**Sub-shell structure from curl placement.**
+The trefoil $T_{2,3}$ lives on a torus (it is a torus knot).
+The curl distribution on this torus decomposes into **Fourier
+modes**.  At shell $n$, the available angular modes are
+$\ell = 0, 1, \ldots, n - 1$, and each mode $\ell$ has
+$2\ell + 1$ orientations relative to the Reeb axis (the
+magnetic quantum number $m = -\ell, \ldots, +\ell$):
 
-The trefoil has **three lobes** (from its $(2,3)$ winding).
-The $2(n-1)$ added curls can be distributed among these three
-lobes.  The angular momentum quantum number $\ell$ counts how
-many distinct lobes carry curls:
+$$
+  \sum_{\ell=0}^{n-1} (2\ell + 1) \;=\; n^2
+  \quad\text{orbitals per shell.}
+$$
 
-- $\ell = 0$ ($s$ sub-shell): all curls on the **same lobe**.
-  The trefoil stays roughly spherical.  One orbital.
+This matches observation exactly for all $n$.
 
-- $\ell = 1$ ($p$ sub-shell): curls on **two lobes**.  The
-  trefoil becomes elongated along one axis.  Three orbitals
-  ($m = -1, 0, +1$), one for each choice of axis.
+| Shell $n$ | Writhe $w$ | Sub-shells | Orbitals ($n^2$) | States ($2n^2$) |
+|----------:|----------:|-----------|--------:|-------:|
+| 1 | 3 | $s$ | 1 | 2 |
+| 2 | 5 | $s, p$ | 4 | 8 |
+| 3 | 7 | $s, p, d$ | 9 | 18 |
+| 4 | 9 | $s, p, d, f$ | 16 | 32 |
 
-- $\ell = 2$ ($d$ sub-shell): curls on **all three lobes**
-  with one distinguished.  Five orbitals ($m = -2, \ldots, +2$).
+**The quantum numbers.**
 
-- $\ell = 3$ ($f$ sub-shell): curls on all three lobes with
-  two distinguished.  Seven orbitals.
+| Symbol | Name | Values | Knot meaning |
+|--------|------|--------|-------------|
+| $n$ | Principal | $1, 2, 3, \ldots$ | Writhe level $w = 2n + 1$ |
+| $\ell$ | Angular momentum | $0, 1, \ldots, n-1$ | Fourier mode on trefoil torus |
+| $m$ | Magnetic | $-\ell, \ldots, +\ell$ | Projection onto Reeb axis |
+| $s$ | Spin | $\pm \tfrac{1}{2}$ | Crossing orientation in Hopf link |
 
-The magnetic quantum number $m$ is the **orientation** of the
-curl pattern relative to the Reeb flow direction.
+- **$n$**: the writhe level — how many R-I curls have been added
+  at the exceptional divisor.
+- **$\ell$**: which Fourier mode of the curl distribution on
+  the trefoil's torus — how the writhe excitation oscillates
+  around the $(2,3)$ winding.
+- **$m$**: the projection of that oscillation onto the Reeb
+  flow direction — the spatial orientation.
+- **$s$**: the two crossing orientations within the Hopf link
+  (the fiber adjoint involution exchanges them) — spin up
+  and spin down.
 
 **The $2n^2$ capacity.**
 
 Each orbital can hold **two electrons** (spin up and spin
 down), corresponding to the trefoil's two crossing
-orientations within the Hopf link (the fiber adjoint involution
-exchanges the two).  So each shell $n$ holds $2n^2$ electrons:
+orientations within the Hopf link.  So each shell $n$ holds
+$2n^2$ electrons:
 
 $$
   2n^2 \;=\; 2 \sum_{\ell=0}^{n-1} (2\ell + 1)
@@ -90,38 +120,32 @@ $$
 $$
 
 For hydrogen (one electron), only the $n = 1$, $\ell = 0$
-orbital is occupied in the ground state.  Photon absorption
-promotes the electron to a higher writhe state.
+orbital is occupied in the ground state.
 
 **Why $1/n^2$ energy levels.**
 
-At writhe $w = 2n + 1$, the trefoil has $2(n-1)$ extra
-crossings beyond the minimal 3.  Each crossing lives on the
-Seifert surface of the Hopf link between electron and proton.
-At shell $n$, the Seifert surface has area $\propto n^2$
-(it is an $n$-fold covering of the base surface).  The
-crossing energy per crossing therefore scales as $1/n^2$:
+At shell $n$, the Seifert surface of the Hopf link between
+electron and proton is an $n$-fold covering of the base
+surface, with area $\propto n^2$.  The R-I curls are
+distributed over this surface.  The crossing energy per curl
+scales as $1/n^2$ (same energy spread over larger area):
 
 $$
   E_n \;=\; -\frac{E_{\mathrm{ion}}}{n^2}
   \;=\; -\frac{13.6 \text{ eV}}{n^2}
 $$
 
-The total energy is the **crossing energy of the Hopf link**
-at linking level $n$, divided by the area of the Seifert
-surface.  This is the Rydberg formula, derived from the knot
-geometry.
+This is the Rydberg formula, derived from the R-I crossing
+energy on the Hopf link Seifert surface.
 
-**Hydrogen spectral series as writhe transitions.**
+**Hydrogen spectral series as R-I transitions.**
 
-| Transition | $\Delta w$ | $\Delta E$ | Wavelength | Name |
-|------------|-----------|-----------|------------|------|
+| Transition | R-I moves | $\Delta E$ | $\lambda$ | Series |
+|------------|----------|-----------|----------|--------|
 | $n=1 \to 2$ | $+2$ | $10.2$ eV | $121.6$ nm | Lyman-$\alpha$ |
 | $n=1 \to 3$ | $+4$ | $12.1$ eV | $102.6$ nm | Lyman-$\beta$ |
 | $n=2 \to 3$ | $+2$ | $1.89$ eV | $656.3$ nm | Balmer-$\alpha$ |
 | $n=3 \to 4$ | $+2$ | $0.66$ eV | $1875$ nm | Paschen-$\alpha$ |
 
 Each transition absorbs or emits a photon (point $\varnothing$)
-that adds or removes two curls from the trefoil.  The photon's
-wavelength $\lambda = hc / \Delta E$ is determined by the
-writhe change and the crossing energy scale.
+whose energy equals the R-I crossing energy difference.
