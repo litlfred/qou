@@ -59,8 +59,8 @@ $m_{\mathfrak{p}} = 938.269$ MeV,
 $m_{\mathfrak{n}} = 939.565$ MeV,
 $m_e = 0.511$ MeV.
 
-| $\#$ | Element | $p$ | $n$ | $n_{\mathrm{pred}}$ | $\Delta n$ | $k_\alpha$ | $\mathcal{M}_{\mathrm{QOU}}$ | $\mathcal{M}_{\mathrm{obs}}$ | $B/A$ |
-|---:|---------|---:|---:|---:|---:|---:|---:|---:|---:|
+| $\#$ | Elem. | $p$ | $n$ | $n_p$ | $\Delta$ | $k_\alpha$ | $M_q$ | $M_o$ | $B/A$ |
+|---:|------|---:|---:|---:|---:|---:|---:|---:|---:|
 | 1 | Hydrogen | 1 | 0 | 1 | 1 | 0 | $938.8$ | $938.8$ | $0.0000$ |
 | 2 | Helium$^{\diamond\star}$ | 2 | 2 | 2 | 0 | 1 | $3728.4$ | $3728.4$ | $7.0739$ |
 | 3 | Lithium | 3 | 4 | 3 | 1 | 1 | $6535.4$ | $6535.4$ | $5.6063$ |
@@ -154,8 +154,12 @@ $m_e = 0.511$ MeV.
 | 91 | Protactinium | 91 | 140 | 143 | 3 | 45 | $215209.3$ | $215210.2$ | $7.6138$ |
 | 92 | Uranium | 92 | 146 | 145 | 1 | 46 | $221742.6$ | $221743.5$ | $7.5701$ |
 
+**Column key.** $n_p$ = predicted $n$ from stability cubic,
+$\Delta$ = $|n - n_p|$,
+$k_\alpha$ = closed $\alpha$ sub-links ($= \min(\lfloor p/2 \rfloor, \lfloor n/2 \rfloor)$),
+$M_q$ = QOU mass, $M_o$ = observed mass.
 $\diamond$ = proton stability pair, $\star$ = neutron stability pair.
-All masses in MeV/$c^2$.  $\mathcal{M}_{\mathrm{QOU}}$ computed at
-$q = 1.10997$; $\mathcal{M}_{\mathrm{obs}}$ from AME2020 nuclear
+All masses in MeV/$c^2$.  $M_q$ computed at
+$q = 1.10997$; $M_o$ from AME2020 nuclear
 masses plus $p \cdot m_e$.  $B/A$ from AME2020.  The most stable
 (longest-lived) isotope is listed for each element.
