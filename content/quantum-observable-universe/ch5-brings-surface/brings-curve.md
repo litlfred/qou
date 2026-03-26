@@ -3,11 +3,11 @@ automorphism group $S_5$ (order $120$) for its genus.  It is defined by
 the intersection of three symmetric hypersurfaces in $\mathbb{P}^4$:
 
 $$
-  \sum_{i=1}^{5} z_i = 0,
+  \sum_{j=0}^{4} x_j = 0,
   \qquad
-  \sum_{i=1}^{5} z_i^2 = 0,
+  \sum_{j=0}^{4} x_j^2 = 0,
   \qquad
-  \sum_{i=1}^{5} z_i^3 = 0.
+  \sum_{j=0}^{4} x_j^3 = 0.
 $$
 
 The symmetric group $S_5$ acts by permuting the five homogeneous coordinates,

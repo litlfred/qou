@@ -14,6 +14,6 @@ defined by the vanishing of the first three power sums.  Over any
 algebraically closed field $K \supseteq R$, $\Sigma_4$ is a smooth
 projective curve of genus $4$ with automorphism group
 $\mathrm{Aut}(\Sigma_4) \cong S_5$ ($\lvert\mathrm{Aut}\rvert = 120$,
-achieving the Hurwitz bound $84(g-1) = 252$ up to the maximal value for
-genus $4$) and Euler characteristic
+the largest automorphism group for any genus-$4$ curve, though below the
+Hurwitz bound $84(g-1) = 252$) and Euler characteristic
 $\chi(\Sigma_4) = 2 - 2g = -6$.
