@@ -70,8 +70,8 @@ hcloud server ssh "$SERVER_NAME" -- bash -c '
     < Caddyfile.folio.template > Caddyfile
 
   rm -rf viewer assistant
-  cp -r ../viewer viewer 2>/dev/null || true
-  cp -r ../assistant assistant 2>/dev/null || true
+  cp -r ../folio-assistant/viewer viewer 2>/dev/null || true
+  cp -r ../folio-assistant/ui assistant 2>/dev/null || true
 
   docker compose -f docker-compose.folio.yml pull
   docker compose -f docker-compose.folio.yml up -d --remove-orphans

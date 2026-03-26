@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .folio-assistant-prefs.json
+.folio-prefs.json
 build/
 
 # Generated LaTeX chapters (from content pipeline)
@@ -30,6 +31,7 @@ lean-archive/build/
 # Generated graph intermediate files
 dependency-graph.dot
 node_modules/
+node_modules
 
 # Deployment secrets and generated files (never commit)
 deploy/.env
@@ -37,8 +39,8 @@ deploy/authorized-emails.txt
 deploy/Caddyfile
 deploy/viewer/
 scripts/mcp-server/bun.lock
-schemas/bun.lock
-viewer/paper.js
+folio-assistant/schemas/bun.lock
+folio-assistant/viewer/paper.js
 # Root-level dev dependencies (TypeDoc etc.)
 package-lock.json
 bun.lock
@@ -48,6 +50,10 @@ todos/
 
 # Local agent state (per-machine, not shared)
 .claude/local-state/
+.qou-feedback/
+.qou-tmp/
+.folio-feedback/
+.folio-tmp/
 .folio-assistant-tmp/
 
 # Feedback worktree (local checkout of main for committing feedback)

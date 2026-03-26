@@ -148,7 +148,7 @@ When a Lean declaration corresponds to an existing mathlib result:
 ## Output Format
 
 The `proof-objects.json` manifest follows the schema at
-`schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
+`folio-assistant/schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
 referenced by their doc-gen4 URL — the Lean data model is **not** duplicated
 in JSON.
 

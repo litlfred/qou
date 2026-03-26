@@ -15,5 +15,6 @@ export default proposition({
     "cor:mass-identity-C",
     "prop:topological-mass-formula",
   ],
+  proofs: ["prf:terminal-resolution"],
   tags: ["mass", "hadronic"],
 });

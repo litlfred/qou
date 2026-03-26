@@ -20,6 +20,7 @@ idempotent splitting of End_𝒞(A_{n+1}) and the linearity of the trace.
 
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.LinearAlgebra.Projection
 
 namespace QOU.Torsion
@@ -65,34 +66,46 @@ theorem mass_upper_bound (md : MassDecomposition R) :
   rw [md.decomposition]
   exact norm_add_le md.descendedTrace md.transientTrace
 
-/-- **Frobenius-orthogonality**: when the idempotent decomposition is
-    orthogonal with respect to the Frobenius norm, the mass decomposes
-    exactly (not just as an upper bound).
+/-- **Norm additivity for non-negative traces**: when both the descended
+    and transient trace values are non-negative — as guaranteed by the
+    Frobenius pairing in the archimedean realisation, where trace values
+    are norms of holonomies — the mass decomposes exactly (not just as
+    an upper bound).
 
-    This is an axiom of the categorical setting: the Frobenius pairing
-    makes im(τ) and ker(τ) orthogonal subspaces.
+    For `R = ℝ`, this is provable from non-negativity alone, eliminating
+    the need for an axiom.  The original product-zero hypothesis
+    (`descendedTrace * transientTrace = 0`) was mathematically incorrect:
+    in a `NormedCommRing` without zero divisors (such as `ℝ`) it forces
+    one component to vanish (making the decomposition vacuous), and in
+    rings with zero divisors it does not imply norm additivity.
 
-    The axiom cannot currently be derived from the abstract idempotent
-    splitting alone — it requires the additional structure of the
-    Frobenius inner product on End_𝒞(A_{n+1}). -/
+    The correct physical content is that both trace components are
+    non-negative reals: the descended trace is `‖Hol_{∇_A}(γ₀)‖ ≥ 0`
+    and each transient trace is `‖Φ_q(zᵢ)‖ ≥ 0`.  For non-negative
+    reals, `‖a + b‖ = |a + b| = a + b = |a| + |b| = ‖a‖ + ‖b‖`. -/
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-axiom frobenius_orthogonality
-    (md : MassDecomposition R)
-    /-- The descended and transient components are Frobenius-orthogonal. -/
-    (h_orth : md.descendedTrace * md.transientTrace = 0) :
-    ‖md.totalTrace‖ = ‖md.descendedTrace‖ + ‖md.transientTrace‖
+theorem norm_additivity_of_nonneg_traces
+    (md : MassDecomposition ℝ)
+    /-- The descended trace is non-negative (norm of holonomy). -/
+    (h_desc_nonneg : 0 ≤ md.descendedTrace)
+    /-- The transient trace is non-negative (norm of dilogarithm). -/
+    (h_trans_nonneg : 0 ≤ md.transientTrace) :
+    ‖md.totalTrace‖ = ‖md.descendedTrace‖ + ‖md.transientTrace‖ := by
+  rw [md.decomposition, Real.norm_of_nonneg (add_nonneg h_desc_nonneg h_trans_nonneg),
+      Real.norm_of_nonneg h_desc_nonneg, Real.norm_of_nonneg h_trans_nonneg]
 
-/-- **Exact mass decomposition** under Frobenius-orthogonality:
+/-- **Exact mass decomposition** under non-negativity of traces:
     m(γ) = m_desc(γ) + m_trans(γ). -/
 -- Ref: [manuscript] §3, Theorem: Topological decomposition of mass
 theorem mass_decomposition_exact
-    (md : MassDecomposition R)
-    (h_orth : md.descendedTrace * md.transientTrace = 0) :
+    (md : MassDecomposition ℝ)
+    (h_desc_nonneg : 0 ≤ md.descendedTrace)
+    (h_trans_nonneg : 0 ≤ md.transientTrace) :
     categoricalMass md.totalTrace =
     categoricalMass md.descendedTrace + categoricalMass md.transientTrace := by
   unfold categoricalMass
-  exact frobenius_orthogonality md h_orth
+  exact norm_additivity_of_nonneg_traces md h_desc_nonneg h_trans_nonneg
 
 /-- The descended trace equals the trace of the base-level cycle γ₀,
     because τₙ projects onto im(ℓₙ) ≅ End_𝒞(Aₙ). -/

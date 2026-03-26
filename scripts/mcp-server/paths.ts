@@ -32,7 +32,7 @@ export const TODOS_DIR = resolve(REPO_ROOT, "todos");
 
 /** Feedback directory — committed to main via worktree.
  *  Structure: feedback/<paper-dir>/<rootName>.ts */
-export const FEEDBACK_DIR = resolve(REPO_ROOT, "feedback");
+export const FEEDBACK_DIR = resolve(REPO_ROOT, "folio-assistant/feedback");
 
 /** Worktree directory for committing feedback to main. */
 export const FEEDBACK_WORKTREE = resolve(REPO_ROOT, ".feedback-wt");

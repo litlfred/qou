@@ -33,7 +33,7 @@ on:
       - 'chapters/**'
       - 'proof-objects.json'
       - 'glossary.json'
-      - 'schemas/**'
+      - 'folio-assistant/schemas/**'
   pull_request:
     branches: [main]
     paths:

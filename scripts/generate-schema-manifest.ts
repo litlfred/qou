@@ -16,8 +16,8 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 
 const ROOT = join(import.meta.dir, "..");
-const TYPES_FILE = join(ROOT, "schemas/types.ts");
-const QOU_TYPES_FILE = join(ROOT, "schemas/qou-types.ts");
+const TYPES_FILE = join(ROOT, "folio-assistant/schemas/types.ts");
+const QOU_TYPES_FILE = join(ROOT, "folio-assistant/schemas/qou-types.ts");
 const OUT_DIR = join(ROOT, "build");
 const OUT_FILE = join(OUT_DIR, "schema-manifest.json");
 

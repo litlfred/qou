@@ -1,4 +1,4 @@
-import { simulator } from "../../../schemas/builders";
+import { simulator } from "../../../folio-assistant/schemas/builders";
 
 /**
  * Bring's Surface — quaternionic spectral resolvent visualisation.
@@ -9,7 +9,7 @@ import { simulator } from "../../../schemas/builders";
 export default simulator({
   label: "sim:brings-surface",
   title: "Bring's Surface Simulator",
-  html: "brings_surface.html",
+  html: "folio-assistant/simulators/brings_surface.html",
   uses: [
     "def:brings-surface",
     "def:quaternionic-spectral-resolvents",
