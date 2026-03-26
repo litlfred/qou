@@ -177,6 +177,7 @@ export default chapter({
         "categorical-proton",
         "categorical-neutron",
         "stable-nucleus",
+        "torus-hopf-stability",
       ],
     }),
 

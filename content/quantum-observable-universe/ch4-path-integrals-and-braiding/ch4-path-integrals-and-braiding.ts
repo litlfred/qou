@@ -123,7 +123,17 @@ export default chapter({
       ],
     }),
 
-    // ── Hadrons and knot composites (from ch3 §11) ────────────────────
+    // ── Crossing energy and stability ───────────────────────────────────
+    section({
+      title: "Crossing energy and Coulomb charge",
+      label: "sec:crossing-energy",
+      blocks: [
+        "crossing-energy",
+        "coulomb-charge",
+      ],
+    }),
+
+    // ── Hadrons and knot composites ──────────────────────────────────
     section({
       title: "Hadrons and Knot Composites",
       label: "sec:hadrons-knot-composites",

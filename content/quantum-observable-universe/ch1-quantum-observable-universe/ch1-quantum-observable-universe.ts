@@ -67,7 +67,6 @@ export default chapter({
       title: "Structures on a Quantum Universe",
       label: "sec:qu-structures",
       blocks: [
-        "categorical-hadron",
         "categorical-connection",
         "categorical-jet",
         "categorical-hodge-star",

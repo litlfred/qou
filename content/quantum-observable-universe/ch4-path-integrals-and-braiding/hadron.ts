@@ -2,11 +2,15 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:hadron",
-  title: "Hadron (abstract composite knot)",
-  tags: ["hadron", "knot", "composite", "categorical", "mass"],
+  title: "Hadron (stable knot composite)",
+  tags: ["hadron", "knot", "composite", "stable", "crossing-energy"],
   lean: {
     decl: "QOU.Hadron",
     validation: "not_checked",
   },
-  uses: [],
+  uses: [
+    "def:crossing-energy",
+    "def:coulomb-charge",
+    "rem:r-matrix-braiding",
+  ],
 });

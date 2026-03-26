@@ -5,7 +5,6 @@ export default remark({
   title: "Knot factorization through tensor powers of $V$",
   uses: [
     "def:hadron",
-    "def:categorical-hadron",
     "rem:simple-objects-V",
     "prop:pawlowski-leitner-basis",
   ],

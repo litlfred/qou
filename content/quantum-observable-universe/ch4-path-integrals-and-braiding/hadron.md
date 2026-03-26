@@ -1,33 +1,38 @@
-A *hadron* is an abstract composite of fundamental knots linked
-together by the Hopf link.
+A *hadron* is a **stable** composite of fundamental knots: one
+whose crossing energy is negative, so that binding dominates
+repulsion.
 
-Let $K_1, \ldots, K_n$ be fundamental (prime) knot types in the
-representation category $\mathbf{C}$. A **hadron** is an element
-
-$$
-  H \;\in\; \mathrm{Sym}^n\!\bigl(K_1, \ldots, K_n\bigr)
-  \;\otimes\;
-  \mathcal{L}_{\mathrm{Hopf}}
-$$
-
-where:
-
-- $\mathrm{Sym}^n(-)$ denotes the symmetric (bosonic) or
-  antisymmetric (fermionic) product according to spin-statistics,
-- $\mathcal{L}_{\mathrm{Hopf}}$ is the Hopf link encoding the
-  internal entanglement between the constituent knots, and
-- the Skein relations act on $\mathrm{Sym}^n(K)$ via the
-  $q$-deformed polynomial, determining the composite mass:
+Let $K_1, \ldots, K_n$ be prime knot types in the representation
+category $\mathbf{C}$, and let $\mathcal{L}$ be a link encoding
+their internal entanglement.  A **hadron** is a composite
 
 $$
-  \mathcal{M}(H) \;=\; Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})
-  \;+\; \sum_{i=1}^{n} \mathcal{M}(K_i).
+  H \;=\; [K_1, \ldots, K_n]_c \;\bowtie\; \mathcal{L}
 $$
 
-This construction is purely abstract — the hadron lives in the
-category $\mathbf{C}$ without reference to a base point.
-Localization to a point is a separate operation
-([localized hadron](#def:localized-hadron)).
+satisfying the **stability condition**
 
-The **baryon** is the case $n = 3$ with $K_i$ drawn from the trefoil
-class; the **meson** is $n = 2$ with a knot–antiknot pair.
+$$
+  E_{\mathrm{cross}}(H) \;<\; 0
+$$
+
+where $E_{\mathrm{cross}}$ is the crossing energy
+([crossing energy](#def:crossing-energy)).  The subscript $c$
+indicates color-tube coupling and $\bowtie$ denotes the linking
+operation.
+
+The stability condition excludes arbitrary knot composites: only
+those whose $R$-matrix braiding produces net binding (more
+negative crossings than positive) qualify as hadrons.  The
+Coulomb charge $Q(H)$ ([Coulomb charge](#def:coulomb-charge))
+measures the electromagnetic character of the composite.
+
+The integer $n$ is the *valence* of the hadron.  A hadron of
+valence $3$ is a **baryon**; valence $2$ is a **meson**.
+
+This definition is abstract — the hadron lives in the knot
+eigenbasis without reference to a specific Euler characteristic
+or base point.  Localization to a point is a separate operation
+([localized hadron](#def:localized-hadron)).  The specific knot
+content (which torus knots serve as generators) is determined by
+$\chi(A)$ in the Descartes universe.
