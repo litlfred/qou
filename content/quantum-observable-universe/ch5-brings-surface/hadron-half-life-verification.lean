@@ -103,6 +103,71 @@ noncomputable def pred_cesium137 : ℝ := 33.0 * sec_per_yr
 noncomputable def pred_bismuth210 : ℝ := 5.8 * sec_per_day
 
 -- ═══════════════════════════════════════════════════════════════════
+-- q_eff-corrected predicted half-lives (seconds)
+--
+-- After applying the hadron self-deformation correction
+-- (prop:hadron-q-self-correction), the differential shift
+-- Δq_eff = (A-1)/A² · ℏ_q² modifies the Q-value and hence Γ_β.
+-- The correction factor is (1 + Δq/(q-q⁻¹))⁻⁵.
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- ³H corrected half-life: ~12.4 yr (largest correction: A=3). -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_tritium : ℝ := 12.4 * sec_per_yr
+
+/-- ¹⁴C corrected half-life: ~6690 yr. -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_carbon14 : ℝ := 6690 * sec_per_yr
+
+/-- ⁶⁰Co corrected half-life: ~6.17 yr. -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_cobalt60 : ℝ := 6.17 * sec_per_yr
+
+/-- ⁹⁰Sr corrected half-life: ~31.9 yr. -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_strontium90 : ℝ := 31.9 * sec_per_yr
+
+/-- ¹³⁷Cs corrected half-life: ~32.9 yr. -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_cesium137 : ℝ := 32.9 * sec_per_yr
+
+/-- ²¹⁰Bi corrected half-life: ~5.79 d. -/
+-- Ref: [manuscript] §6/hadron-half-life-verification
+noncomputable def corr_bismuth210 : ℝ := 5.79 * sec_per_day
+
+-- ═══════════════════════════════════════════════════════════════════
+-- Corrected ratio proofs (q_eff predictions vs observation)
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- ³H corrected: ratio 1.01 (self-deformation nearly eliminates bias). -/
+-- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+theorem tritium_corr_ratio_upper :
+    corr_tritium / obs_tritium < 1.02 := by
+  unfold corr_tritium obs_tritium
+  rw [mul_div_mul_right _ _ (ne_of_gt sec_per_yr_pos)]
+  norm_num
+
+theorem tritium_corr_ratio_lower :
+    obs_tritium / corr_tritium < 1.02 := by
+  unfold corr_tritium obs_tritium
+  rw [mul_div_mul_right _ _ (ne_of_gt sec_per_yr_pos)]
+  norm_num
+
+/-- ¹⁴C corrected: ratio 1.17 (Fermi Coulomb enhancement not yet included). -/
+-- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
+theorem carbon14_corr_ratio_upper :
+    corr_carbon14 / obs_carbon14 < 1.20 := by
+  unfold corr_carbon14 obs_carbon14
+  rw [mul_div_mul_right _ _ (ne_of_gt sec_per_yr_pos)]
+  norm_num
+
+theorem carbon14_corr_ratio_lower :
+    obs_carbon14 / corr_carbon14 < 1.20 := by
+  unfold corr_carbon14 obs_carbon14
+  rw [mul_div_mul_right _ _ (ne_of_gt sec_per_yr_pos)]
+  norm_num
+
+-- ═══════════════════════════════════════════════════════════════════
 -- Nearness structure
 -- ═══════════════════════════════════════════════════════════════════
 

@@ -4,7 +4,7 @@ constant.  A hadron ([hadron](#def:hadron)) — a multi-component
 knot composite with internal Hopf junctions and crossings —
 contributes to the local value of $q$ through its own topological
 linking structure.  The effective substrate parameter seen by a
-decaying nucleus is therefore
+nucleus is therefore
 
 $$
   q_{\mathrm{eff}}(p, n)
@@ -18,82 +18,134 @@ $\delta q(p, n)$ is the hadron's self-deformation.
 
 **Proposition.**
 Let $\mathcal{N}(p, n) = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$
-be a nucleus ([stable nucleus](#def:stable-nucleus)) with total
-linking number $\ell(p, n)$.  The self-deformation of the substrate
-parameter is
+be a nucleus ([stable nucleus](#def:stable-nucleus)).  The
+self-deformation of the substrate parameter is determined by the
+*signed* crossing excess — the imbalance between positive
+($\mathfrak{p}$--$\mathfrak{p}$) and negative
+($\mathfrak{n}$--$\mathfrak{n}$) Hopf crossings:
 
 $$
   \delta q(p, n)
   \;=\;
-  \frac{\ell(p, n)}{A} \cdot \hbar_q^2
+  \frac{\ell_{\mathrm{net}}(p, n)}{A^2}
+  \cdot \hbar_q^2
 $$
 
 where $\hbar_q = 1 - q_0^{-1}$ is the quantum Planck constant and
-the total linking number is
+the net signed crossing number is
 
 $$
-  \ell(p, n)
+  \ell_{\mathrm{net}}(p, n)
   \;=\;
-  \binom{p}{2} + \binom{n}{2} + p \cdot n
+  \binom{p}{2} - \binom{n}{2}
   \;=\;
-  \frac{A(A - 1)}{2}.
+  \frac{p(p-1) - n(n-1)}{2}.
 $$
 
-**Derivation.**
-The canonical action $\mathcal{S}_q$
-([canonical action](#def:qou-canonical-action)) is evaluated at the
-link $L = \mathcal{N}(p, n)$.  In the gauge sector, each Hopf
-junction between nucleons $i$ and $j$ contributes a crossing with
-Skein weight $\mathcal{S}_{ij}(q)$.  These crossings collectively
-shift the local value of $q$ from the background:
+For nuclei on the neutron-rich side of the valley ($n > p$),
+$\ell_{\mathrm{net}} < 0$ and the local $q$ is slightly *reduced*.
+For proton-rich nuclei, $\ell_{\mathrm{net}} > 0$ and $q$ is
+slightly increased.
 
-1. The $q$-deformed wedge product $\wedge_q$ in the gauge sector
-   assigns weight $q$ to positive crossings and $q^{-1}$ to negative
-   crossings.  The *net* crossing number of the multi-nucleon Hopf
-   link is $\ell(p, n)$.
+**Why the net signed crossing.**
+The $q$-deformed wedge product $\wedge_q$ in the gauge sector of the
+canonical action
+([nuclear binding from canonical action](#prop:nuclear-binding-from-canonical-action))
+assigns:
+- weight $q$ to $\mathfrak{p}$--$\mathfrak{p}$ crossings (positive),
+- weight $q^{-1}$ to $\mathfrak{n}$--$\mathfrak{n}$ crossings
+  (negative),
+- weight $(q + q^{-1})/2$ to $\mathfrak{p}$--$\mathfrak{n}$ crossings
+  (neutral average).
 
-2. Each net crossing shifts the local substrate field by
-   $\hbar_q^2 / A$ (the quantum Planck constant squared, normalised
-   by the mass number to give a per-nucleon contribution).
-
-3. The normalisation $\hbar_q^2 / A$ follows from dimensional
-   analysis: $\delta q$ must be dimensionless and scale as the
-   per-nucleon linking density, and $\hbar_q = 1 - q_0^{-1}$ is
-   the natural quantum scale.
+The neutral crossings contribute symmetrically and do not shift $q$.
+Only the imbalance between positive and negative crossings
+deforms the substrate field.  The normalization by $A^2$ (rather
+than $A$) reflects the linking *density*: the crossings occupy a
+volume $\propto A$, so the crossing density per unit volume is
+$\ell_{\mathrm{net}} / A^2$.
 
 **Magnitude.**
-At $q_0 = 1.110$: $\hbar_q = 1 - 1/1.110 \approx 0.0991$ and
+At $q_0 = 1.110$: $\hbar_q \approx 0.0991$ and
 $\hbar_q^2 \approx 0.00982$.  For representative nuclei:
 
-| Nucleus | $A$ | $\ell$ | $\delta q$ | $\delta q / q_0$ |
-|---------|-----|--------|-----------|-----------------|
-| ${}^{3}\mathrm{H}$ | 3 | 3 | $0.0098$ | $0.9\%$ |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | $0.0064$ | $0.6\%$ |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $0.0290$ | $2.6\%$ |
-| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | $0.0668$ | $6.0\%$ |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $0.1027$ | $9.3\%$ |
+| Nucleus | $(p, n)$ | $A$ | $\ell_{\mathrm{net}}$ | $\delta q$ | $\delta q / q_0$ |
+|---------|----------|-----|----------------------|-----------|-----------------|
+| ${}^{3}\mathrm{H}$ | $(1, 2)$ | 3 | $-1$ | $-0.0011$ | $-0.10\%$ |
+| ${}^{14}\mathrm{C}$ | $(6, 8)$ | 14 | $-13$ | $-0.0007$ | $-0.06\%$ |
+| ${}^{60}\mathrm{Co}$ | $(27, 33)$ | 60 | $-177$ | $-0.0005$ | $-0.04\%$ |
+| ${}^{90}\mathrm{Sr}$ | $(38, 52)$ | 90 | $-623$ | $-0.0008$ | $-0.07\%$ |
+| ${}^{137}\mathrm{Cs}$ | $(55, 82)$ | 137 | $-1836$ | $-0.0010$ | $-0.09\%$ |
+| ${}^{210}\mathrm{Bi}$ | $(83, 127)$ | 210 | $-4598$ | $-0.0010$ | $-0.09\%$ |
 
-The self-deformation is small ($\lesssim 10\%$) but *systematic*:
-$\delta q > 0$ always, and it grows with $A$.
+The self-deformation is genuinely small ($|\delta q / q_0| < 0.1\%$
+for all nuclei).
 
-**Effect on half-lives.**
-The sensitivity
-([half-life regimes](#rem:hadron-half-life-regimes)) is
-$\partial \ln \Gamma_\beta / \partial \ln q \approx 48$ at
-$q_0 = 1.110$.  A self-deformation $\delta q / q_0 \sim 1$--$9\%$
-therefore increases the decay rate by
+**Effect on beta decay: the differential shift.**
+In beta decay, $A$ is fixed but $(p, n)$ changes by $(+1, -1)$.
+The *daughter* nucleus has a different self-deformation from the
+parent.  The change in effective $q$ across the decay is
 
 $$
-  \frac{\Delta \Gamma_\beta}{\Gamma_\beta}
-  \;\approx\;
-  48 \cdot \frac{\delta q}{q_0}
-  \;\sim\; 5\text{--}45\%.
+  \Delta q_{\mathrm{eff}}
+  \;=\;
+  \delta q(p+1, n-1) - \delta q(p, n)
+  \;=\;
+  \frac{A - 1}{A^2} \cdot \hbar_q^2.
 $$
 
-This correction is in the right direction (faster decay, shorter
-half-lives) and the right magnitude to account for the systematic
-overestimate in the uncorrected predictions
-([verification](#ex:hadron-half-life-verification)).
+This is always positive: the daughter (with one more proton) has
+more positive crossings, hence a higher effective $q$.  A higher
+$q$ means a larger Coulomb splitting and therefore a larger
+$Q$-value than the background calculation predicts.  Via the
+Sargent rule $f(Q) \propto Q^5$, the corrected $Q$-value
+increases the decay rate and *shortens* the half-life.
+
+**Corrected predictions.**
+The differential shift $\Delta q_{\mathrm{eff}}$ modifies the
+$Q$-value by
+
+$$
+  Q_{\mathrm{eff}}
+  \;=\;
+  Q_0 + \frac{\partial Q}{\partial q}\bigg|_{q_0}
+  \cdot \Delta q_{\mathrm{eff}}
+  \;=\;
+  Q_0\!\left(1 + \frac{\Delta q_{\mathrm{eff}}}{q_0 - q_0^{-1}}
+  \right)
+$$
+
+where the second equality uses $\partial Q / \partial q \approx
+Q_0 / (q - q^{-1})$ from the Coulomb coefficient $a_C = (q - q^{-1})
+\cdot \lambda_C$.  The corrected half-life is then
+
+$$
+  t_{1/2}^{\mathrm{corr}}
+  \;=\;
+  t_{1/2}^{\,0}
+  \cdot
+  \left(1 + \frac{\Delta q_{\mathrm{eff}}}{q_0 - q_0^{-1}}\right)^{-5}.
+$$
+
+At $q_0 = 1.110$: $q_0 - q_0^{-1} = 0.2091$ and
+$\hbar_q^2 = 0.00982$.  The correction factor for each nucleus is:
+
+| Nucleus | $A$ | $(A-1)/A^2$ | $\Delta q_{\mathrm{eff}}$ | Correction | $t_{1/2}^{\mathrm{corr}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio |
+|---------|-----|-------------|--------------------------|------------|--------------------------|--------------------------|-------|
+| ${}^{3}\mathrm{H}$ | 3 | 0.222 | 0.00218 | 0.951 | $\sim 12.4$ yr | 12.3 yr | 1.01 |
+| ${}^{14}\mathrm{C}$ | 14 | 0.0664 | 0.000652 | 0.984 | $\sim 6690$ yr | 5730 yr | 1.17 |
+| ${}^{60}\mathrm{Co}$ | 60 | 0.0164 | 0.000161 | 0.996 | $\sim 6.17$ yr | 5.27 yr | 1.17 |
+| ${}^{90}\mathrm{Sr}$ | 90 | 0.0110 | 0.000108 | 0.997 | $\sim 31.9$ yr | 28.8 yr | 1.11 |
+| ${}^{137}\mathrm{Cs}$ | 137 | 0.00723 | 0.0000710 | 0.998 | $\sim 32.9$ yr | 30.2 yr | 1.09 |
+| ${}^{210}\mathrm{Bi}$ | 210 | 0.00474 | 0.0000466 | 0.999 | $\sim 5.79$ d | 5.01 d | 1.16 |
+
+The self-deformation correction is largest for the lightest nuclei
+(tritium, where it removes most of the 5.5% overestimate) and
+negligible for heavy nuclei.  The remaining systematic bias of
+$\sim 10$--$17\%$ for medium and heavy nuclei points to a second
+correction: the **Fermi-function Coulomb enhancement**, which
+increases the decay rate by a $Z$-dependent factor that grows
+with nuclear charge.
 
 **Universality.**
 The self-deformation applies to *every* equation where $q$ is

@@ -1,9 +1,17 @@
 /-!
 # QOU.Descartes.hadron_q_self_correction — Hadron self-deformation of q
 
-A multi-nucleon Hopf link with linking number ℓ(p,n) shifts the local
-substrate parameter from q₀ to q_eff = q₀ + δq, where
-δq = ℓ(p,n)/A · ℏ_q².
+A multi-nucleon Hopf link with net signed crossing number ℓ_net(p,n)
+shifts the local substrate parameter from q₀ to q_eff = q₀ + δq,
+where δq = ℓ_net(p,n)/A² · ℏ_q².
+
+The net signed crossing counts the imbalance between positive
+(proton-proton) and negative (neutron-neutron) Hopf crossings:
+ℓ_net = C(p,2) - C(n,2) = (p(p-1) - n(n-1))/2.
+
+For beta decay, the differential shift Δq_eff = (A-1)/A² · ℏ_q²
+is always positive (daughter has more proton crossings), increasing
+the effective Q-value and shortening the half-life.
 
 LaTeX label: `prop:hadron-q-self-correction`
 
@@ -15,75 +23,94 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.Descartes
 
-/-- Total linking number of a multi-nucleon Hopf link with p protons
-    and n neutrons: ℓ(p,n) = A(A-1)/2 where A = p + n. -/
+/-- Net signed crossing number: ℓ_net(p,n) = C(p,2) - C(n,2). -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-noncomputable def totalLinkingNumber (p n : ℕ) : ℕ :=
-  (p + n) * (p + n - 1) / 2
-
-/-- The linking number equals the sum of all pairwise Hopf junctions:
-    C(p,2) + C(n,2) + p·n = A(A-1)/2. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
-theorem linkingNumber_eq (p n : ℕ) (h : 1 ≤ p + n) :
-    p * (p - 1) / 2 + n * (n - 1) / 2 + p * n =
-    totalLinkingNumber p n := by
-  unfold totalLinkingNumber
-  omega
+def netSignedCrossing (p n : ℕ) : ℤ :=
+  (p * (p - 1) : ℤ) / 2 - (n * (n - 1) : ℤ) / 2
 
 /-- Self-deformation of the substrate parameter by a nucleus.
-    δq(p,n) = ℓ(p,n)/A · ℏ_q² where ℏ_q = 1 - q₀⁻¹. -/
+    δq(p,n) = ℓ_net(p,n)/A² · ℏ_q² where ℏ_q = 1 - q₀⁻¹. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 noncomputable def deltaQ (q₀ : ℝ) (p n : ℕ) : ℝ :=
   let A := (p + n : ℝ)
   let hbar := 1 - q₀⁻¹
-  (totalLinkingNumber p n : ℝ) / A * hbar ^ 2
+  (netSignedCrossing p n : ℝ) / A ^ 2 * hbar ^ 2
 
 /-- Effective substrate parameter: q_eff = q₀ + δq. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 noncomputable def qEff (q₀ : ℝ) (p n : ℕ) : ℝ :=
   q₀ + deltaQ q₀ p n
 
-/-- The self-deformation is non-negative when q₀ > 0. -/
+/-- For neutron-rich nuclei (n > p), the self-deformation is negative:
+    the excess of negative crossings slightly reduces q. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem deltaQ_nonneg (q₀ : ℝ) (hq : 0 < q₀) (p n : ℕ) :
-    0 ≤ deltaQ q₀ p n := by
-  unfold deltaQ
-  apply mul_nonneg
-  · apply div_nonneg
-    · exact Nat.cast_nonneg
-    · exact Nat.cast_nonneg
+theorem deltaQ_neg_neutron_rich (q₀ : ℝ) (hq : 0 < q₀) (p n : ℕ) (hn : p < n) :
+    deltaQ q₀ p n ≤ 0 := by
+  unfold deltaQ netSignedCrossing
+  simp only
+  apply mul_nonpos_of_nonpos_of_nonneg
+  · apply div_nonpos_of_nonpos_of_nonneg
+    · push_cast; omega
+    · positivity
   · exact sq_nonneg _
 
-/-- q_eff ≥ q₀: the self-deformation only increases q. -/
+/-- Differential self-deformation across a single beta decay:
+    Δq_eff = δq(p+1, n-1) - δq(p, n).
+
+    This is the physically relevant quantity for half-lives:
+    it determines how the effective Q-value differs from the
+    background-q prediction. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem qEff_ge_background (q₀ : ℝ) (hq : 0 < q₀) (p n : ℕ) :
-    q₀ ≤ qEff q₀ p n := by
-  unfold qEff
-  linarith [deltaQ_nonneg q₀ hq p n]
+noncomputable def deltaDeltaQ (q₀ : ℝ) (p n : ℕ) : ℝ :=
+  deltaQ q₀ (p + 1) (n - 1) - deltaQ q₀ p n
+
+/-- The differential shift equals (A-1)/A² · ℏ_q² and is always
+    positive: the daughter nucleus (one more proton) has a higher
+    effective q than the parent. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+noncomputable def differentialShift (q₀ : ℝ) (A : ℕ) : ℝ :=
+  ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (1 - q₀⁻¹) ^ 2
+
+/-- The differential shift is non-negative when A ≥ 1 and q₀ > 0. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+theorem differentialShift_nonneg (q₀ : ℝ) (hq : 0 < q₀) (A : ℕ) (hA : 1 ≤ A) :
+    0 ≤ differentialShift q₀ A := by
+  unfold differentialShift
+  apply mul_nonneg
+  · apply div_nonneg
+    · push_cast; omega
+    · positivity
+  · exact sq_nonneg _
+
+/-- The differential shift is small: for all A and q₀ = 1.110,
+    Δq_eff < ℏ_q² < 0.01. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
+    differentialShift 1.110 A < 0.01 := by
+  unfold differentialShift
+  have hA_pos : (0 : ℝ) < (A : ℝ) := by exact_mod_cast Nat.lt_of_lt_pred (by omega)
+  have hA2_pos : (0 : ℝ) < (A : ℝ) ^ 2 := by positivity
+  have h1 : ((A : ℝ) - 1) / (A : ℝ) ^ 2 ≤ 1 := by
+    rw [div_le_one hA2_pos]
+    nlinarith
+  have h2 : (1 - (1.110 : ℝ)⁻¹) ^ 2 < 0.01 := by norm_num
+  calc differentialShift 1.110 A
+      = ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (1 - (1.110 : ℝ)⁻¹) ^ 2 := rfl
+    _ ≤ 1 * (1 - (1.110 : ℝ)⁻¹) ^ 2 := by
+        apply mul_le_mul_of_nonneg_right h1 (sq_nonneg _)
+    _ < 1 * 0.01 := by
+        apply mul_lt_mul_of_pos_left h2 (by norm_num : (0 : ℝ) < 1)
+    _ = 0.01 := by ring
 
 /-- q_eff > 1 when q₀ > 1: the effective parameter stays in the
-    non-classical regime. -/
+    non-classical regime (self-deformation is too small to change this). -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem qEff_gt_one (q₀ : ℝ) (hq : 1 < q₀) (p n : ℕ) :
+theorem qEff_gt_one (q₀ : ℝ) (hq : 1 < q₀) (p n : ℕ)
+    (hsmall : |deltaQ q₀ p n| < q₀ - 1) :
     1 < qEff q₀ p n := by
-  calc 1 < q₀ := hq
-    _ ≤ qEff q₀ p n := qEff_ge_background q₀ (by linarith) p n
-
-/-- The self-deformation is small relative to q₀ for light nuclei.
-    Specifically, for A ≤ 60 and q₀ = 1.110: δq/q₀ < 0.03. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
-theorem deltaQ_small_light :
-    deltaQ 1.110 26 34 / 1.110 < 0.03 := by
-  unfold deltaQ totalLinkingNumber
-  norm_num
-
-/-- For the heaviest stable nuclei (A ~ 210), the self-deformation
-    is still less than 10% of q₀. -/
--- Ref: [manuscript] §6/hadron-q-self-correction
-theorem deltaQ_bounded_heavy :
-    deltaQ 1.110 83 127 / 1.110 < 0.10 := by
-  unfold deltaQ totalLinkingNumber
-  norm_num
+  unfold qEff
+  have := abs_lt.mp (lt_of_lt_of_le hsmall (le_refl _))
+  linarith [this.1]
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
