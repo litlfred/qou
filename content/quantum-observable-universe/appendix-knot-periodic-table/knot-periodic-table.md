@@ -59,100 +59,100 @@ $m_{\mathfrak{p}} = 938.269$ MeV,
 $m_{\mathfrak{n}} = 939.565$ MeV,
 $m_e = 0.511$ MeV.
 
-| $\#$ | Element | $p$ | $n$ | Knot formula | $\mathcal{M}_{\mathrm{QOU}}$ | $\mathcal{M}_{\mathrm{obs}}$ | $B/A$ |
-|---:|---------|---:|---:|-------------|---:|---:|---:|
-| 1 | Hydrogen | 1 | 0 | $1\mathfrak{p} \bowtie 0\mathfrak{n} \bowtie 1T_{2,3}$ | $938.8$ | $938.8$ | $0.0000$ |
-| 2 | Helium$^{\diamond\star}$ | 2 | 2 | $2\mathfrak{p} \bowtie 2\mathfrak{n} \bowtie 2T_{2,3}$ | $3728.4$ | $3728.4$ | $7.0739$ |
-| 3 | Lithium | 3 | 4 | $3\mathfrak{p} \bowtie 4\mathfrak{n} \bowtie 3T_{2,3}$ | $6535.4$ | $6535.4$ | $5.6063$ |
-| 4 | Beryllium | 4 | 5 | $4\mathfrak{p} \bowtie 5\mathfrak{n} \bowtie 4T_{2,3}$ | $8394.8$ | $8394.8$ | $6.4628$ |
-| 5 | Boron | 5 | 6 | $5\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 5T_{2,3}$ | $10255.1$ | $10255.1$ | $6.9277$ |
-| 6 | Carbon | 6 | 6 | $6\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 6T_{2,3}$ | $11177.9$ | $11177.9$ | $7.6801$ |
-| 7 | Nitrogen | 7 | 7 | $7\mathfrak{p} \bowtie 7\mathfrak{n} \bowtie 7T_{2,3}$ | $13043.8$ | $13043.8$ | $7.4756$ |
-| 8 | Oxygen$^{\diamond\star}$ | 8 | 8 | $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8T_{2,3}$ | $14899.1$ | $14899.2$ | $7.9762$ |
-| 9 | Fluorine | 9 | 10 | $9\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 9T_{2,3}$ | $17696.9$ | $17696.9$ | $7.7790$ |
-| 10 | Neon | 10 | 10 | $10\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 10T_{2,3}$ | $18622.8$ | $18622.8$ | $8.0325$ |
-| 11 | Sodium | 11 | 12 | $11\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 11T_{2,3}$ | $21414.8$ | $21414.8$ | $8.1115$ |
-| 12 | Magnesium | 12 | 12 | $12\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 12T_{2,3}$ | $22341.9$ | $22341.9$ | $8.2607$ |
-| 13 | Aluminium | 13 | 14 | $13\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 13T_{2,3}$ | $25133.1$ | $25132.9$ | $8.3316$ |
-| 14 | Silicon | 14 | 14 | $14\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 14T_{2,3}$ | $26060.3$ | $26060.3$ | $8.4477$ |
-| 15 | Phosphorus | 15 | 16 | $15\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 15T_{2,3}$ | $28851.8$ | $28851.9$ | $8.4812$ |
-| 16 | Sulfur | 16 | 16 | $16\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 16T_{2,3}$ | $29781.7$ | $29789.2$ | $8.4932$ |
-| 17 | Chlorine | 17 | 18 | $17\mathfrak{p} \bowtie 18\mathfrak{n} \bowtie 17T_{2,3}$ | $32573.2$ | $32573.5$ | $8.5203$ |
-| 18 | Argon | 18 | 22 | $18\mathfrak{p} \bowtie 22\mathfrak{n} \bowtie 18T_{2,3}$ | $37224.7$ | $37224.7$ | $8.5954$ |
-| 19 | Potassium$^{\star}$ | 19 | 20 | $19\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 19T_{2,3}$ | $36294.4$ | $36294.5$ | $8.5570$ |
-| 20 | Calcium$^{\diamond\star}$ | 20 | 20 | $20\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 20T_{2,3}$ | $37224.9$ | $37224.9$ | $8.5513$ |
-| 21 | Scandium | 21 | 24 | $21\mathfrak{p} \bowtie 24\mathfrak{n} \bowtie 21T_{2,3}$ | $41876.1$ | $41876.2$ | $8.6190$ |
-| 22 | Titanium | 22 | 26 | $22\mathfrak{p} \bowtie 26\mathfrak{n} \bowtie 22T_{2,3}$ | $44663.2$ | $44663.3$ | $8.7230$ |
-| 23 | Vanadium$^{\star}$ | 23 | 28 | $23\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 23T_{2,3}$ | $47453.9$ | $47454.0$ | $8.7420$ |
-| 24 | Chromium$^{\star}$ | 24 | 28 | $24\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 24T_{2,3}$ | $48382.2$ | $48382.3$ | $8.7760$ |
-| 25 | Manganese | 25 | 30 | $25\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 25T_{2,3}$ | $51174.4$ | $51174.5$ | $8.7649$ |
-| 26 | Iron | 26 | 30 | $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26T_{2,3}$ | $52103.0$ | $52103.1$ | $8.7903$ |
-| 27 | Cobalt | 27 | 32 | $27\mathfrak{p} \bowtie 32\mathfrak{n} \bowtie 27T_{2,3}$ | $54895.8$ | $54895.9$ | $8.7680$ |
-| 28 | Nickel$^{\diamond}$ | 28 | 30 | $28\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 28T_{2,3}$ | $53966.3$ | $53966.4$ | $8.7322$ |
-| 29 | Copper | 29 | 34 | $29\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 29T_{2,3}$ | $58618.4$ | $58618.5$ | $8.7522$ |
-| 30 | Zinc | 30 | 34 | $30\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 30T_{2,3}$ | $59549.5$ | $59549.6$ | $8.7357$ |
-| 31 | Gallium | 31 | 38 | $31\mathfrak{p} \bowtie 38\mathfrak{n} \bowtie 31T_{2,3}$ | $64203.7$ | $64203.8$ | $8.7246$ |
-| 32 | Germanium | 32 | 42 | $32\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 32T_{2,3}$ | $68856.9$ | $68857.0$ | $8.7264$ |
-| 33 | Arsenic | 33 | 42 | $33\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 33T_{2,3}$ | $69788.9$ | $69789.1$ | $8.7010$ |
-| 34 | Selenium | 34 | 46 | $34\mathfrak{p} \bowtie 46\mathfrak{n} \bowtie 34T_{2,3}$ | $74441.6$ | $74441.8$ | $8.7110$ |
-| 35 | Bromine | 35 | 44 | $35\mathfrak{p} \bowtie 44\mathfrak{n} \bowtie 35T_{2,3}$ | $73511.2$ | $73511.4$ | $8.6961$ |
-| 36 | Krypton | 36 | 48 | $36\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 36T_{2,3}$ | $78163.0$ | $78163.2$ | $8.7172$ |
-| 37 | Rubidium | 37 | 48 | $37\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 37T_{2,3}$ | $79094.7$ | $79094.9$ | $8.6974$ |
-| 38 | Strontium$^{\star}$ | 38 | 50 | $38\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 38T_{2,3}$ | $81883.4$ | $81883.6$ | $8.7326$ |
-| 39 | Yttrium$^{\star}$ | 39 | 50 | $39\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 39T_{2,3}$ | $82815.1$ | $82815.3$ | $8.7138$ |
-| 40 | Zirconium$^{\star}$ | 40 | 50 | $40\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 40T_{2,3}$ | $83745.6$ | $83745.9$ | $8.7098$ |
-| 41 | Niobium | 41 | 52 | $41\mathfrak{p} \bowtie 52\mathfrak{n} \bowtie 41T_{2,3}$ | $86541.6$ | $86541.9$ | $8.6641$ |
-| 42 | Molybdenum | 42 | 56 | $42\mathfrak{p} \bowtie 56\mathfrak{n} \bowtie 42T_{2,3}$ | $91198.1$ | $91198.4$ | $8.6353$ |
-| 43 | Technetium | 43 | 55 | $43\mathfrak{p} \bowtie 55\mathfrak{n} \bowtie 43T_{2,3}$ | $91201.4$ | $91201.7$ | $8.5937$ |
-| 44 | Ruthenium | 44 | 58 | $44\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 44T_{2,3}$ | $94923.2$ | $94923.5$ | $8.6070$ |
-| 45 | Rhodium | 45 | 58 | $45\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 45T_{2,3}$ | $95855.7$ | $95856.0$ | $8.5843$ |
-| 46 | Palladium | 46 | 60 | $46\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 46T_{2,3}$ | $98649.7$ | $98650.1$ | $8.5670$ |
-| 47 | Silver | 47 | 60 | $47\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 47T_{2,3}$ | $99581.3$ | $99581.6$ | $8.5536$ |
-| 48 | Cadmium | 48 | 66 | $48\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 48T_{2,3}$ | $106099.2$ | $106099.6$ | $8.5398$ |
-| 49 | Indium | 49 | 66 | $49\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 49T_{2,3}$ | $107032.2$ | $107032.6$ | $8.5160$ |
-| 50 | Tin$^{\diamond}$ | 50 | 70 | $50\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 50T_{2,3}$ | $111688.0$ | $111688.4$ | $8.5050$ |
-| 51 | Antimony | 51 | 70 | $51\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 51T_{2,3}$ | $112621.0$ | $112621.4$ | $8.4820$ |
-| 52 | Tellurium | 52 | 78 | $52\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 52T_{2,3}$ | $121005.6$ | $121006.0$ | $8.4390$ |
-| 53 | Iodine | 53 | 74 | $53\mathfrak{p} \bowtie 74\mathfrak{n} \bowtie 53T_{2,3}$ | $118210.6$ | $118211.0$ | $8.4455$ |
-| 54 | Xenon | 54 | 78 | $54\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 54T_{2,3}$ | $122867.8$ | $122868.2$ | $8.4275$ |
-| 55 | Caesium | 55 | 78 | $55\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 55T_{2,3}$ | $123800.4$ | $123800.9$ | $8.4100$ |
-| 56 | Barium$^{\star}$ | 56 | 82 | $56\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 56T_{2,3}$ | $128457.7$ | $128458.1$ | $8.3937$ |
-| 57 | Lanthanum$^{\star}$ | 57 | 82 | $57\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 57T_{2,3}$ | $129390.3$ | $129390.8$ | $8.3780$ |
-| 58 | Cerium$^{\star}$ | 58 | 82 | $58\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 58T_{2,3}$ | $130320.9$ | $130321.4$ | $8.3765$ |
-| 59 | Praseodymium$^{\star}$ | 59 | 82 | $59\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 59T_{2,3}$ | $131254.4$ | $131254.9$ | $8.3540$ |
-| 60 | Neodymium$^{\star}$ | 60 | 82 | $60\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 60T_{2,3}$ | $132186.0$ | $132186.6$ | $8.3460$ |
-| 61 | Promethium | 61 | 84 | $61\mathfrak{p} \bowtie 84\mathfrak{n} \bowtie 61T_{2,3}$ | $134985.0$ | $134985.6$ | $8.3040$ |
-| 62 | Samarium | 62 | 90 | $62\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 62T_{2,3}$ | $141512.1$ | $141512.7$ | $8.2440$ |
-| 63 | Europium | 63 | 90 | $63\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 63T_{2,3}$ | $142445.0$ | $142445.6$ | $8.2290$ |
-| 64 | Gadolinium | 64 | 94 | $64\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 64T_{2,3}$ | $147103.2$ | $147103.8$ | $8.2140$ |
-| 65 | Terbium | 65 | 94 | $65\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 65T_{2,3}$ | $148036.2$ | $148036.8$ | $8.1990$ |
-| 66 | Dysprosium | 66 | 98 | $66\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 66T_{2,3}$ | $152694.3$ | $152695.0$ | $8.1865$ |
-| 67 | Holmium | 67 | 98 | $67\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 67T_{2,3}$ | $153627.4$ | $153628.0$ | $8.1710$ |
-| 68 | Erbium | 68 | 98 | $68\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 68T_{2,3}$ | $154558.4$ | $154559.1$ | $8.1690$ |
-| 69 | Thulium | 69 | 100 | $69\mathfrak{p} \bowtie 100\mathfrak{n} \bowtie 69T_{2,3}$ | $157355.7$ | $157356.4$ | $8.1460$ |
-| 70 | Ytterbium | 70 | 104 | $70\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 70T_{2,3}$ | $162015.1$ | $162015.8$ | $8.1280$ |
-| 71 | Lutetium | 71 | 104 | $71\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 71T_{2,3}$ | $162947.8$ | $162948.5$ | $8.1165$ |
-| 72 | Hafnium | 72 | 108 | $72\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 72T_{2,3}$ | $167607.5$ | $167608.2$ | $8.0985$ |
-| 73 | Tantalum | 73 | 108 | $73\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 73T_{2,3}$ | $168540.2$ | $168540.9$ | $8.0870$ |
-| 74 | Tungsten | 74 | 110 | $74\mathfrak{p} \bowtie 110\mathfrak{n} \bowtie 74T_{2,3}$ | $171338.1$ | $171338.8$ | $8.0639$ |
-| 75 | Rhenium | 75 | 112 | $75\mathfrak{p} \bowtie 112\mathfrak{n} \bowtie 75T_{2,3}$ | $174136.5$ | $174137.2$ | $8.0390$ |
-| 76 | Osmium | 76 | 116 | $76\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 76T_{2,3}$ | $178797.1$ | $178797.8$ | $8.0194$ |
-| 77 | Iridium | 77 | 116 | $77\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 77T_{2,3}$ | $179730.5$ | $179731.2$ | $8.0060$ |
-| 78 | Platinum | 78 | 117 | $78\mathfrak{p} \bowtie 117\mathfrak{n} \bowtie 78T_{2,3}$ | $181595.3$ | $181596.0$ | $7.9930$ |
-| 79 | Gold | 79 | 118 | $79\mathfrak{p} \bowtie 118\mathfrak{n} \bowtie 79T_{2,3}$ | $183461.0$ | $183461.7$ | $7.9759$ |
-| 80 | Mercury | 80 | 122 | $80\mathfrak{p} \bowtie 122\mathfrak{n} \bowtie 80T_{2,3}$ | $188122.8$ | $188123.5$ | $7.9530$ |
-| 81 | Thallium | 81 | 124 | $81\mathfrak{p} \bowtie 124\mathfrak{n} \bowtie 81T_{2,3}$ | $190920.2$ | $190921.0$ | $7.9370$ |
-| 82 | Lead$^{\diamond\star}$ | 82 | 126 | $82\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 82T_{2,3}$ | $193728.7$ | $193729.5$ | $7.8675$ |
-| 83 | Bismuth$^{\star}$ | 83 | 126 | $83\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 83T_{2,3}$ | $194663.7$ | $194664.5$ | $7.8480$ |
-| 84 | Polonium | 84 | 125 | $84\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 84T_{2,3}$ | $194665.6$ | $194666.4$ | $7.8352$ |
-| 85 | Astatine | 85 | 125 | $85\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 85T_{2,3}$ | $195600.9$ | $195601.8$ | $7.8147$ |
-| 86 | Radon | 86 | 136 | $86\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 86T_{2,3}$ | $206801.5$ | $206802.4$ | $7.7227$ |
-| 87 | Francium | 87 | 136 | $87\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 87T_{2,3}$ | $207735.5$ | $207736.4$ | $7.7095$ |
-| 88 | Radium | 88 | 138 | $88\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 88T_{2,3}$ | $210541.0$ | $210541.9$ | $7.6620$ |
-| 89 | Actinium | 89 | 138 | $89\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 89T_{2,3}$ | $211474.6$ | $211475.5$ | $7.6510$ |
-| 90 | Thorium | 90 | 142 | $90\mathfrak{p} \bowtie 142\mathfrak{n} \bowtie 90T_{2,3}$ | $216141.8$ | $216142.7$ | $7.6150$ |
-| 91 | Protactinium | 91 | 140 | $91\mathfrak{p} \bowtie 140\mathfrak{n} \bowtie 91T_{2,3}$ | $215209.3$ | $215210.2$ | $7.6138$ |
-| 92 | Uranium | 92 | 146 | $92\mathfrak{p} \bowtie 146\mathfrak{n} \bowtie 92T_{2,3}$ | $221742.6$ | $221743.5$ | $7.5701$ |
+| $\#$ | Element | $p$ | $n$ | $n_{\mathrm{pred}}$ | $\Delta n$ | $k_\alpha$ | Knot formula | $\mathcal{M}_{\mathrm{QOU}}$ | $\mathcal{M}_{\mathrm{obs}}$ | $B/A$ |
+|---:|---------|---:|---:|---:|---:|---:|-------------|---:|---:|---:|
+| 1 | Hydrogen | 1 | 0 | 1 | 1 | 0 | $1\mathfrak{p} \bowtie 0\mathfrak{n} \bowtie 1T_{2,3}$ | $938.8$ | $938.8$ | $0.0000$ |
+| 2 | Helium$^{\diamond\star}$ | 2 | 2 | 2 | 0 | 1 | $2\mathfrak{p} \bowtie 2\mathfrak{n} \bowtie 2T_{2,3}$ | $3728.4$ | $3728.4$ | $7.0739$ |
+| 3 | Lithium | 3 | 4 | 3 | 1 | 1 | $3\mathfrak{p} \bowtie 4\mathfrak{n} \bowtie 3T_{2,3}$ | $6535.4$ | $6535.4$ | $5.6063$ |
+| 4 | Beryllium | 4 | 5 | 4 | 1 | 2 | $4\mathfrak{p} \bowtie 5\mathfrak{n} \bowtie 4T_{2,3}$ | $8394.8$ | $8394.8$ | $6.4628$ |
+| 5 | Boron | 5 | 6 | 5 | 1 | 2 | $5\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 5T_{2,3}$ | $10255.1$ | $10255.1$ | $6.9277$ |
+| 6 | Carbon | 6 | 6 | 6 | 0 | 3 | $6\mathfrak{p} \bowtie 6\mathfrak{n} \bowtie 6T_{2,3}$ | $11177.9$ | $11177.9$ | $7.6801$ |
+| 7 | Nitrogen | 7 | 7 | 8 | 1 | 3 | $7\mathfrak{p} \bowtie 7\mathfrak{n} \bowtie 7T_{2,3}$ | $13043.8$ | $13043.8$ | $7.4756$ |
+| 8 | Oxygen$^{\diamond\star}$ | 8 | 8 | 9 | 1 | 4 | $8\mathfrak{p} \bowtie 8\mathfrak{n} \bowtie 8T_{2,3}$ | $14899.1$ | $14899.2$ | $7.9762$ |
+| 9 | Fluorine | 9 | 10 | 10 | 0 | 4 | $9\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 9T_{2,3}$ | $17696.9$ | $17696.9$ | $7.7790$ |
+| 10 | Neon | 10 | 10 | 11 | 1 | 5 | $10\mathfrak{p} \bowtie 10\mathfrak{n} \bowtie 10T_{2,3}$ | $18622.8$ | $18622.8$ | $8.0325$ |
+| 11 | Sodium | 11 | 12 | 12 | 0 | 5 | $11\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 11T_{2,3}$ | $21414.8$ | $21414.8$ | $8.1115$ |
+| 12 | Magnesium | 12 | 12 | 14 | 2 | 6 | $12\mathfrak{p} \bowtie 12\mathfrak{n} \bowtie 12T_{2,3}$ | $22341.9$ | $22341.9$ | $8.2607$ |
+| 13 | Aluminium | 13 | 14 | 15 | 1 | 6 | $13\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 13T_{2,3}$ | $25133.1$ | $25132.9$ | $8.3316$ |
+| 14 | Silicon | 14 | 14 | 16 | 2 | 7 | $14\mathfrak{p} \bowtie 14\mathfrak{n} \bowtie 14T_{2,3}$ | $26060.3$ | $26060.3$ | $8.4477$ |
+| 15 | Phosphorus | 15 | 16 | 17 | 1 | 7 | $15\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 15T_{2,3}$ | $28851.8$ | $28851.9$ | $8.4812$ |
+| 16 | Sulfur | 16 | 16 | 19 | 3 | 8 | $16\mathfrak{p} \bowtie 16\mathfrak{n} \bowtie 16T_{2,3}$ | $29781.7$ | $29789.2$ | $8.4932$ |
+| 17 | Chlorine | 17 | 18 | 20 | 2 | 8 | $17\mathfrak{p} \bowtie 18\mathfrak{n} \bowtie 17T_{2,3}$ | $32573.2$ | $32573.5$ | $8.5203$ |
+| 18 | Argon | 18 | 22 | 21 | 1 | 9 | $18\mathfrak{p} \bowtie 22\mathfrak{n} \bowtie 18T_{2,3}$ | $37224.7$ | $37224.7$ | $8.5954$ |
+| 19 | Potassium$^{\star}$ | 19 | 20 | 22 | 2 | 9 | $19\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 19T_{2,3}$ | $36294.4$ | $36294.5$ | $8.5570$ |
+| 20 | Calcium$^{\diamond\star}$ | 20 | 20 | 24 | 4 | 10 | $20\mathfrak{p} \bowtie 20\mathfrak{n} \bowtie 20T_{2,3}$ | $37224.9$ | $37224.9$ | $8.5513$ |
+| 21 | Scandium | 21 | 24 | 25 | 1 | 10 | $21\mathfrak{p} \bowtie 24\mathfrak{n} \bowtie 21T_{2,3}$ | $41876.1$ | $41876.2$ | $8.6190$ |
+| 22 | Titanium | 22 | 26 | 26 | 0 | 11 | $22\mathfrak{p} \bowtie 26\mathfrak{n} \bowtie 22T_{2,3}$ | $44663.2$ | $44663.3$ | $8.7230$ |
+| 23 | Vanadium$^{\star}$ | 23 | 28 | 28 | 0 | 11 | $23\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 23T_{2,3}$ | $47453.9$ | $47454.0$ | $8.7420$ |
+| 24 | Chromium$^{\star}$ | 24 | 28 | 29 | 1 | 12 | $24\mathfrak{p} \bowtie 28\mathfrak{n} \bowtie 24T_{2,3}$ | $48382.2$ | $48382.3$ | $8.7760$ |
+| 25 | Manganese | 25 | 30 | 30 | 0 | 12 | $25\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 25T_{2,3}$ | $51174.4$ | $51174.5$ | $8.7649$ |
+| 26 | Iron | 26 | 30 | 32 | 2 | 13 | $26\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 26T_{2,3}$ | $52103.0$ | $52103.1$ | $8.7903$ |
+| 27 | Cobalt | 27 | 32 | 33 | 1 | 13 | $27\mathfrak{p} \bowtie 32\mathfrak{n} \bowtie 27T_{2,3}$ | $54895.8$ | $54895.9$ | $8.7680$ |
+| 28 | Nickel$^{\diamond}$ | 28 | 30 | 35 | 5 | 14 | $28\mathfrak{p} \bowtie 30\mathfrak{n} \bowtie 28T_{2,3}$ | $53966.3$ | $53966.4$ | $8.7322$ |
+| 29 | Copper | 29 | 34 | 36 | 2 | 14 | $29\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 29T_{2,3}$ | $58618.4$ | $58618.5$ | $8.7522$ |
+| 30 | Zinc | 30 | 34 | 37 | 3 | 15 | $30\mathfrak{p} \bowtie 34\mathfrak{n} \bowtie 30T_{2,3}$ | $59549.5$ | $59549.6$ | $8.7357$ |
+| 31 | Gallium | 31 | 38 | 39 | 1 | 15 | $31\mathfrak{p} \bowtie 38\mathfrak{n} \bowtie 31T_{2,3}$ | $64203.7$ | $64203.8$ | $8.7246$ |
+| 32 | Germanium | 32 | 42 | 40 | 2 | 16 | $32\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 32T_{2,3}$ | $68856.9$ | $68857.0$ | $8.7264$ |
+| 33 | Arsenic | 33 | 42 | 42 | 0 | 16 | $33\mathfrak{p} \bowtie 42\mathfrak{n} \bowtie 33T_{2,3}$ | $69788.9$ | $69789.1$ | $8.7010$ |
+| 34 | Selenium | 34 | 46 | 43 | 3 | 17 | $34\mathfrak{p} \bowtie 46\mathfrak{n} \bowtie 34T_{2,3}$ | $74441.6$ | $74441.8$ | $8.7110$ |
+| 35 | Bromine | 35 | 44 | 45 | 1 | 17 | $35\mathfrak{p} \bowtie 44\mathfrak{n} \bowtie 35T_{2,3}$ | $73511.2$ | $73511.4$ | $8.6961$ |
+| 36 | Krypton | 36 | 48 | 46 | 2 | 18 | $36\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 36T_{2,3}$ | $78163.0$ | $78163.2$ | $8.7172$ |
+| 37 | Rubidium | 37 | 48 | 48 | 0 | 18 | $37\mathfrak{p} \bowtie 48\mathfrak{n} \bowtie 37T_{2,3}$ | $79094.7$ | $79094.9$ | $8.6974$ |
+| 38 | Strontium$^{\star}$ | 38 | 50 | 49 | 1 | 19 | $38\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 38T_{2,3}$ | $81883.4$ | $81883.6$ | $8.7326$ |
+| 39 | Yttrium$^{\star}$ | 39 | 50 | 51 | 1 | 19 | $39\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 39T_{2,3}$ | $82815.1$ | $82815.3$ | $8.7138$ |
+| 40 | Zirconium$^{\star}$ | 40 | 50 | 52 | 2 | 20 | $40\mathfrak{p} \bowtie 50\mathfrak{n} \bowtie 40T_{2,3}$ | $83745.6$ | $83745.9$ | $8.7098$ |
+| 41 | Niobium | 41 | 52 | 54 | 2 | 20 | $41\mathfrak{p} \bowtie 52\mathfrak{n} \bowtie 41T_{2,3}$ | $86541.6$ | $86541.9$ | $8.6641$ |
+| 42 | Molybdenum | 42 | 56 | 55 | 1 | 21 | $42\mathfrak{p} \bowtie 56\mathfrak{n} \bowtie 42T_{2,3}$ | $91198.1$ | $91198.4$ | $8.6353$ |
+| 43 | Technetium | 43 | 55 | 57 | 2 | 21 | $43\mathfrak{p} \bowtie 55\mathfrak{n} \bowtie 43T_{2,3}$ | $91201.4$ | $91201.7$ | $8.5937$ |
+| 44 | Ruthenium | 44 | 58 | 58 | 0 | 22 | $44\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 44T_{2,3}$ | $94923.2$ | $94923.5$ | $8.6070$ |
+| 45 | Rhodium | 45 | 58 | 60 | 2 | 22 | $45\mathfrak{p} \bowtie 58\mathfrak{n} \bowtie 45T_{2,3}$ | $95855.7$ | $95856.0$ | $8.5843$ |
+| 46 | Palladium | 46 | 60 | 62 | 2 | 23 | $46\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 46T_{2,3}$ | $98649.7$ | $98650.1$ | $8.5670$ |
+| 47 | Silver | 47 | 60 | 63 | 3 | 23 | $47\mathfrak{p} \bowtie 60\mathfrak{n} \bowtie 47T_{2,3}$ | $99581.3$ | $99581.6$ | $8.5536$ |
+| 48 | Cadmium | 48 | 66 | 65 | 1 | 24 | $48\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 48T_{2,3}$ | $106099.2$ | $106099.6$ | $8.5398$ |
+| 49 | Indium | 49 | 66 | 66 | 0 | 24 | $49\mathfrak{p} \bowtie 66\mathfrak{n} \bowtie 49T_{2,3}$ | $107032.2$ | $107032.6$ | $8.5160$ |
+| 50 | Tin$^{\diamond}$ | 50 | 70 | 68 | 2 | 25 | $50\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 50T_{2,3}$ | $111688.0$ | $111688.4$ | $8.5050$ |
+| 51 | Antimony | 51 | 70 | 70 | 0 | 25 | $51\mathfrak{p} \bowtie 70\mathfrak{n} \bowtie 51T_{2,3}$ | $112621.0$ | $112621.4$ | $8.4820$ |
+| 52 | Tellurium | 52 | 78 | 71 | 7 | 26 | $52\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 52T_{2,3}$ | $121005.6$ | $121006.0$ | $8.4390$ |
+| 53 | Iodine | 53 | 74 | 73 | 1 | 26 | $53\mathfrak{p} \bowtie 74\mathfrak{n} \bowtie 53T_{2,3}$ | $118210.6$ | $118211.0$ | $8.4455$ |
+| 54 | Xenon | 54 | 78 | 75 | 3 | 27 | $54\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 54T_{2,3}$ | $122867.8$ | $122868.2$ | $8.4275$ |
+| 55 | Caesium | 55 | 78 | 76 | 2 | 27 | $55\mathfrak{p} \bowtie 78\mathfrak{n} \bowtie 55T_{2,3}$ | $123800.4$ | $123800.9$ | $8.4100$ |
+| 56 | Barium$^{\star}$ | 56 | 82 | 78 | 4 | 28 | $56\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 56T_{2,3}$ | $128457.7$ | $128458.1$ | $8.3937$ |
+| 57 | Lanthanum$^{\star}$ | 57 | 82 | 80 | 2 | 28 | $57\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 57T_{2,3}$ | $129390.3$ | $129390.8$ | $8.3780$ |
+| 58 | Cerium$^{\star}$ | 58 | 82 | 81 | 1 | 29 | $58\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 58T_{2,3}$ | $130320.9$ | $130321.4$ | $8.3765$ |
+| 59 | Praseodymium$^{\star}$ | 59 | 82 | 83 | 1 | 29 | $59\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 59T_{2,3}$ | $131254.4$ | $131254.9$ | $8.3540$ |
+| 60 | Neodymium$^{\star}$ | 60 | 82 | 85 | 3 | 30 | $60\mathfrak{p} \bowtie 82\mathfrak{n} \bowtie 60T_{2,3}$ | $132186.0$ | $132186.6$ | $8.3460$ |
+| 61 | Promethium | 61 | 84 | 86 | 2 | 30 | $61\mathfrak{p} \bowtie 84\mathfrak{n} \bowtie 61T_{2,3}$ | $134985.0$ | $134985.6$ | $8.3040$ |
+| 62 | Samarium | 62 | 90 | 88 | 2 | 31 | $62\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 62T_{2,3}$ | $141512.1$ | $141512.7$ | $8.2440$ |
+| 63 | Europium | 63 | 90 | 90 | 0 | 31 | $63\mathfrak{p} \bowtie 90\mathfrak{n} \bowtie 63T_{2,3}$ | $142445.0$ | $142445.6$ | $8.2290$ |
+| 64 | Gadolinium | 64 | 94 | 92 | 2 | 32 | $64\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 64T_{2,3}$ | $147103.2$ | $147103.8$ | $8.2140$ |
+| 65 | Terbium | 65 | 94 | 93 | 1 | 32 | $65\mathfrak{p} \bowtie 94\mathfrak{n} \bowtie 65T_{2,3}$ | $148036.2$ | $148036.8$ | $8.1990$ |
+| 66 | Dysprosium | 66 | 98 | 95 | 3 | 33 | $66\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 66T_{2,3}$ | $152694.3$ | $152695.0$ | $8.1865$ |
+| 67 | Holmium | 67 | 98 | 97 | 1 | 33 | $67\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 67T_{2,3}$ | $153627.4$ | $153628.0$ | $8.1710$ |
+| 68 | Erbium | 68 | 98 | 99 | 1 | 34 | $68\mathfrak{p} \bowtie 98\mathfrak{n} \bowtie 68T_{2,3}$ | $154558.4$ | $154559.1$ | $8.1690$ |
+| 69 | Thulium | 69 | 100 | 101 | 1 | 34 | $69\mathfrak{p} \bowtie 100\mathfrak{n} \bowtie 69T_{2,3}$ | $157355.7$ | $157356.4$ | $8.1460$ |
+| 70 | Ytterbium | 70 | 104 | 102 | 2 | 35 | $70\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 70T_{2,3}$ | $162015.1$ | $162015.8$ | $8.1280$ |
+| 71 | Lutetium | 71 | 104 | 104 | 0 | 35 | $71\mathfrak{p} \bowtie 104\mathfrak{n} \bowtie 71T_{2,3}$ | $162947.8$ | $162948.5$ | $8.1165$ |
+| 72 | Hafnium | 72 | 108 | 106 | 2 | 36 | $72\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 72T_{2,3}$ | $167607.5$ | $167608.2$ | $8.0985$ |
+| 73 | Tantalum | 73 | 108 | 108 | 0 | 36 | $73\mathfrak{p} \bowtie 108\mathfrak{n} \bowtie 73T_{2,3}$ | $168540.2$ | $168540.9$ | $8.0870$ |
+| 74 | Tungsten | 74 | 110 | 110 | 0 | 37 | $74\mathfrak{p} \bowtie 110\mathfrak{n} \bowtie 74T_{2,3}$ | $171338.1$ | $171338.8$ | $8.0639$ |
+| 75 | Rhenium | 75 | 112 | 112 | 0 | 37 | $75\mathfrak{p} \bowtie 112\mathfrak{n} \bowtie 75T_{2,3}$ | $174136.5$ | $174137.2$ | $8.0390$ |
+| 76 | Osmium | 76 | 116 | 114 | 2 | 38 | $76\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 76T_{2,3}$ | $178797.1$ | $178797.8$ | $8.0194$ |
+| 77 | Iridium | 77 | 116 | 115 | 1 | 38 | $77\mathfrak{p} \bowtie 116\mathfrak{n} \bowtie 77T_{2,3}$ | $179730.5$ | $179731.2$ | $8.0060$ |
+| 78 | Platinum | 78 | 117 | 117 | 0 | 39 | $78\mathfrak{p} \bowtie 117\mathfrak{n} \bowtie 78T_{2,3}$ | $181595.3$ | $181596.0$ | $7.9930$ |
+| 79 | Gold | 79 | 118 | 119 | 1 | 39 | $79\mathfrak{p} \bowtie 118\mathfrak{n} \bowtie 79T_{2,3}$ | $183461.0$ | $183461.7$ | $7.9759$ |
+| 80 | Mercury | 80 | 122 | 121 | 1 | 40 | $80\mathfrak{p} \bowtie 122\mathfrak{n} \bowtie 80T_{2,3}$ | $188122.8$ | $188123.5$ | $7.9530$ |
+| 81 | Thallium | 81 | 124 | 123 | 1 | 40 | $81\mathfrak{p} \bowtie 124\mathfrak{n} \bowtie 81T_{2,3}$ | $190920.2$ | $190921.0$ | $7.9370$ |
+| 82 | Lead$^{\diamond\star}$ | 82 | 126 | 125 | 1 | 41 | $82\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 82T_{2,3}$ | $193728.7$ | $193729.5$ | $7.8675$ |
+| 83 | Bismuth$^{\star}$ | 83 | 126 | 127 | 1 | 41 | $83\mathfrak{p} \bowtie 126\mathfrak{n} \bowtie 83T_{2,3}$ | $194663.7$ | $194664.5$ | $7.8480$ |
+| 84 | Polonium | 84 | 125 | 129 | 4 | 42 | $84\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 84T_{2,3}$ | $194665.6$ | $194666.4$ | $7.8352$ |
+| 85 | Astatine | 85 | 125 | 131 | 6 | 42 | $85\mathfrak{p} \bowtie 125\mathfrak{n} \bowtie 85T_{2,3}$ | $195600.9$ | $195601.8$ | $7.8147$ |
+| 86 | Radon | 86 | 136 | 133 | 3 | 43 | $86\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 86T_{2,3}$ | $206801.5$ | $206802.4$ | $7.7227$ |
+| 87 | Francium | 87 | 136 | 135 | 1 | 43 | $87\mathfrak{p} \bowtie 136\mathfrak{n} \bowtie 87T_{2,3}$ | $207735.5$ | $207736.4$ | $7.7095$ |
+| 88 | Radium | 88 | 138 | 137 | 1 | 44 | $88\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 88T_{2,3}$ | $210541.0$ | $210541.9$ | $7.6620$ |
+| 89 | Actinium | 89 | 138 | 139 | 1 | 44 | $89\mathfrak{p} \bowtie 138\mathfrak{n} \bowtie 89T_{2,3}$ | $211474.6$ | $211475.5$ | $7.6510$ |
+| 90 | Thorium | 90 | 142 | 141 | 1 | 45 | $90\mathfrak{p} \bowtie 142\mathfrak{n} \bowtie 90T_{2,3}$ | $216141.8$ | $216142.7$ | $7.6150$ |
+| 91 | Protactinium | 91 | 140 | 143 | 3 | 45 | $91\mathfrak{p} \bowtie 140\mathfrak{n} \bowtie 91T_{2,3}$ | $215209.3$ | $215210.2$ | $7.6138$ |
+| 92 | Uranium | 92 | 146 | 145 | 1 | 46 | $92\mathfrak{p} \bowtie 146\mathfrak{n} \bowtie 92T_{2,3}$ | $221742.6$ | $221743.5$ | $7.5701$ |
 
 $\diamond$ = proton stability pair, $\star$ = neutron stability pair.
 All masses in MeV/$c^2$.  $\mathcal{M}_{\mathrm{QOU}}$ computed at
