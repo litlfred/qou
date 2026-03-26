@@ -5,20 +5,20 @@ derived from the Skein binding Lagrangian.
 
 **The stability cubic.**
 Substituting $t = A^{1/3}$ into the continuous stability
-condition $Q^*(A) = a_A A / (2a_A + 2a_C A^{2/3})$
+condition $p^*(A) = a_A A / (2a_A + 2a_C A^{2/3})$
 ([integer stability](#prop:integer-stability)) and clearing
 denominators gives the **stability cubic**
 
 $$
-  t^3 \;=\; 2Q\,(1 + c\,t^2),
+  t^3 \;=\; 2p\,(1 + c\,t^2),
   \qquad
   c = \frac{a_C}{2\,a_A},
 $$
 
 a plane curve $\mathcal{S} \subset \mathbb{A}^2$ parametrising
-the locus of beta-stable nuclei in the $(Q, t)$-plane.  The
+the locus of beta-stable nuclei in the $(p, t)$-plane.  The
 physical nuclei are the **integer points** of $\mathcal{S}$:
-pairs $(Q, A) \in \mathbb{Z}^2$ with $t = A^{1/3}$ and
+pairs $(p, A) \in \mathbb{Z}^2$ with $t = A^{1/3}$ and
 $A = t^3 \in \mathbb{Z}$.
 
 **Comparison with the chiral fibration.**
@@ -38,24 +38,24 @@ same $\chi = -6$ surface.  The
 proposes that when the pairing energy lifts (S) to genus $1$,
 the resulting elliptic curve is isogenous to the chiral fiber.
 
-**The $n/p$ ratio as a function of $Q$.**
-For each Coulomb charge $Q = p$, the stable neutron number
-$n^*(Q)$ satisfies
+**The $n/p$ ratio.**
+For each proton number $p$, the stable neutron number
+$n^*(p)$ satisfies
 
 $$
-  \frac{n^*(Q)}{Q}
+  \frac{n^*(p)}{p}
   \;=\;
-  \frac{A^*(Q)}{Q} - 1
+  \frac{A^*(p)}{p} - 1
   \;=\;
-  1 + 2c \cdot {A^*}^{2/3} + O(1/Q)
+  1 + 2c \cdot {A^*}^{2/3} + O(1/p)
 $$
 
-where $A^*(Q)$ is the mass number solving $Q = A/(2 + cA^{2/3})$.
-The ratio $n/p$ is a slowly growing function of $Q$ whose
+where $A^*(p)$ is the mass number solving $p = A/(2 + cA^{2/3})$.
+The ratio $n/p$ is a slowly growing function of $p$ whose
 integer-part transitions occur at specific elements:
 
-| $n/p$ crosses | Element | $Q = p$ | $n$ |
-|---------------|---------|--------:|----:|
+| $n/p$ crosses | Element | $p$ | $n$ |
+|---------------|---------|----:|----:|
 | $1.00$ | Calcium | 20 | 20 |
 | $1.10$ | Bromine | 35 | 44 |
 | $1.20$ | Zirconium | 40 | 50 |
@@ -66,7 +66,7 @@ integer-part transitions occur at specific elements:
 
 **Stable hadrons as integer points on an algebraic curve.**
 The central observation is that every stable nucleus in nature
-corresponds to a lattice point $(Q, A) \in \mathbb{Z}^2$ on
+corresponds to a lattice point $(p, A) \in \mathbb{Z}^2$ on
 the stability cubic $\mathcal{S}$.  The
 nuclear chart is not a phenomenological fit — it is the
 **set of integer solutions** to an algebraic equation determined
@@ -76,14 +76,14 @@ When the pairing correction lifts $\mathcal{S}$ from genus $0$
 to genus $1$
 ([elliptic stability conjecture](#conj:elliptic-stability-locus)),
 the stability pairs become **rational points** of an elliptic curve
-$E_Q$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
+$E_p$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
 them to a finite set — potentially explaining why only finitely
 many stability pairs exist.
 
 **Connection to the substrate parameter.**
 The curvature parameter $c = (q - q^{-1})\lambda_C / (2a_A)$
 is controlled entirely by $q$.  At $q = 1$ the stability cubic
-degenerates to $t^3 = 2Q$ (a rational parametrisation with all
+degenerates to $t^3 = 2p$ (a rational parametrisation with all
 nuclei symmetric, $n = p$).  As $q$ increases from $1$, the
 $ct^2$ term bends the curve, the integer solutions disperse,
 and the rich structure of the nuclear chart — neutron excess,

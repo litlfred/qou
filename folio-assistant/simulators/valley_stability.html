@@ -71,14 +71,14 @@ body.light canvas{background:rgba(255,255,255,0.3);}
   <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
     <div class="panel-title">View</div>
     <div class="row" style="grid-template-columns:1fr 1fr;">
-      <label><input type="radio" name="view" value="QN" checked> Q vs N</label>
-      <label><input type="radio" name="view" value="QA"> Q vs A</label>
+      <label><input type="radio" name="view" value="pn" checked> p vs n</label>
+      <label><input type="radio" name="view" value="pA"> p vs A</label>
     </div>
     <div class="row" style="grid-template-columns:1fr;">
       <label><input type="checkbox" id="cb-labels" checked> Element labels</label>
     </div>
     <div class="row" style="grid-template-columns:1fr;">
-      <label><input type="checkbox" id="cb-diagonal" checked> N = Q diagonal</label>
+      <label><input type="checkbox" id="cb-diagonal" checked> n = p diagonal</label>
     </div>
     <div class="row" style="grid-template-columns:1fr;">
       <label><input type="checkbox" id="cb-stability"> Stability pairs</label>
@@ -154,7 +154,7 @@ function draw() {
   const W = rect.width, H = rect.height;
 
   const { q, aA, lC, aC, c } = getParams();
-  const viewQN = document.querySelector('input[name=view]:checked').value === 'QN';
+  const viewQN = document.querySelector('input[name=view]:checked').value === 'pn';
   const showLabels = document.getElementById('cb-labels').checked;
   const showDiag = document.getElementById('cb-diagonal').checked;
   const showSP = document.getElementById('cb-stability').checked;
@@ -184,15 +184,15 @@ function draw() {
   ctx.font = '10px "Share Tech Mono"';
   ctx.textAlign = 'center';
   for (let g = 0; g <= maxQ; g += 20) ctx.fillText(g, toX(g), H - mb + 15);
-  ctx.fillText('Q (protons)', mx + pw/2, H - 5);
+  ctx.fillText('p (protons)', mx + pw/2, H - 5);
   ctx.textAlign = 'right';
   for (let g = 0; g <= maxN; g += 20) ctx.fillText(g, mx - 5, toY(g) + 3);
   ctx.save(); ctx.translate(12, my + ph/2); ctx.rotate(-Math.PI/2);
   ctx.textAlign = 'center';
-  ctx.fillText(viewQN ? 'N (neutrons)' : 'A = Q + N', 0, 0);
+  ctx.fillText(viewQN ? 'n (neutrons)' : 'A = p + n', 0, 0);
   ctx.restore();
 
-  // N = Q diagonal
+  // n = p diagonal
   if (showDiag && viewQN) {
     ctx.strokeStyle = gs.getPropertyValue('--dim');
     ctx.setLineDash([4, 4]);
@@ -288,7 +288,7 @@ cv.addEventListener('mousemove', e => {
   const rect = cv.getBoundingClientRect();
   const mx2 = e.clientX - rect.left, my2 = e.clientY - rect.top;
   const { c } = getParams();
-  const viewQN = document.querySelector('input[name=view]:checked').value === 'QN';
+  const viewQN = document.querySelector('input[name=view]:checked').value === 'pn';
   const maxQ = 100, maxN = viewQN ? 160 : 260;
   const mxo = 45, myo = 25, mro = 15, mbo = 35;
   const pw = rect.width - mxo - mro, ph = rect.height - myo - mbo;
@@ -311,8 +311,8 @@ cv.addEventListener('mousemove', e => {
     tip.style.left = (found.x + 15) + 'px';
     tip.style.top = (found.y - 10) + 'px';
     tip.innerHTML = `<b>${found.sym}</b> (Z=${found.Z})<br>` +
-      `N<sub>obs</sub>=${found.N}, N<sub>pred</sub>=${Npred}<br>` +
-      `A=${A}, N/Q=${(found.N/found.Z).toFixed(3)}<br>` +
+      `n<sub>obs</sub>=${found.N}, n<sub>pred</sub>=${Npred}<br>` +
+      `A=${A}, n/p=${(found.N/found.Z).toFixed(3)}<br>` +
       `ΔN=${Math.abs(found.N - Npred)}`;
   } else {
     tip.style.display = 'none';

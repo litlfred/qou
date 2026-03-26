@@ -1,6 +1,6 @@
 The stability curve and the chiral fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
-nuclear degeneracy locus — the curve in the $(Q, A)$-plane where
+nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
 isogenous to the chiral fiber $E_z$.
 
@@ -21,7 +21,7 @@ The nuclear stability condition
 $t = A^{1/3}$, is
 
 $$
-  t^3 - 2c\,Q\,t^2 - 2Q = 0,
+  t^3 - 2c\,p\,t^2 - 2p = 0,
   \qquad c = \frac{a_C}{2\,a_A}
   = \frac{(q - q^{-1})\,\lambda_C}{2\,a_A}.
   \tag{S}
@@ -29,13 +29,13 @@ $$
 
 Both are cubics in one variable parametrized by another.  The
 chiral cubic (C) has parameter $z$ (spacetime) and variable $X$
-(chiral coordinate); the stability cubic (S) has parameter $Q$
+(chiral coordinate); the stability cubic (S) has parameter $p$
 (Coulomb charge) and variable $t$ (cube root of mass number).
 
 **Genus comparison.**
 
-The stability cubic (S) is rational: solving for $Q$ gives
-$Q = t^3 / (2 + 2ct^2)$, so the curve has genus $0$.  The
+The stability cubic (S) is rational: solving for $p$ gives
+$p = t^3 / (2 + 2ct^2)$, so the curve has genus $0$.  The
 chiral cubic (C) has genus $1$ for generic $z$ (it is an
 elliptic curve with $j$-invariant varying as a rational function
 of $z$).
@@ -43,11 +43,11 @@ of $z$).
 However, the *physical* stability problem includes the pairing
 energy $\pm \lambda_P / t^{3/2}$, which distinguishes even-even,
 even-odd, odd-even, and odd-odd nuclei.  The **degeneracy locus**
-— the set of $(Q, t)$ where the even-even and odd-odd binding
+— the set of $(p, t)$ where the even-even and odd-odd binding
 energies coincide — satisfies
 
 $$
-  t^3 - 2c\,Q\,t^2 - 2Q
+  t^3 - 2c\,p\,t^2 - 2p
   \;=\; \frac{2\lambda_P}{a_A} \cdot t^{3/2}.
   \tag{D}
 $$
@@ -56,77 +56,77 @@ Squaring to clear the half-integer exponent and substituting
 $u = t^{1/2}$ (so $t = u^2$, $t^{3/2} = u^3$, $t^3 = u^6$):
 
 $$
-  \bigl(u^6 - 2c\,Q\,u^4 - 2Q\bigr)^2
+  \bigl(u^6 - 2c\,p\,u^4 - 2p\bigr)^2
   \;=\; \frac{4\lambda_P^2}{a_A^2} \cdot u^6.
   \tag{D$'$}
 $$
 
-This is a degree-12 curve in $(Q, u)$.  After factoring out the
+This is a degree-12 curve in $(p, u)$.  After factoring out the
 genus-$0$ component (the pairing-free stability curve), the
-residual factor is a degree-6 curve in $(Q, u)$ — generically
+residual factor is a degree-6 curve in $(p, u)$ — generically
 of genus $1$.
 
 **Conjecture.**
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus
 (D$'$) reduced by the pairing-free stability curve (S).  Then:*
 
-1. *The smooth model of $\mathcal{D}$ is an elliptic curve $E_Q$
+1. *The smooth model of $\mathcal{D}$ is an elliptic curve $E_p$
    over $\mathbb{Q}(q)$.*
 
-2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(Q)}$
-   to the chiral fiber of the Bring surface, where $z(Q)$ is
+2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$
+   to the chiral fiber of the Bring surface, where $z(p)$ is
    the spacetime ratio at which the color-tube cubic
    ([color tube cubic](#rem:color-tube-cubic)) specialises to
    the stability cubic:*
 
 $$
-  z(Q) \;=\; -\frac{1}{2c\,Q}
+  z(p) \;=\; -\frac{1}{2c\,p}
 $$
 
-   *so that the coefficients of (C) at $z = z(Q)$ match
+   *so that the coefficients of (C) at $z = z(p)$ match
    those of (S) up to a Möbius transformation.*
 
-3. *The integer points $(Q, A) \in E_Q(\mathbb{Z})$ correspond
+3. *The integer points $(p, A) \in E_Q(\mathbb{Z})$ correspond
    to the stability pairs: the mass numbers $A$ at which the
    even-even/odd-odd degeneracy falls exactly on an integer
    lattice point.*
 
 **Coefficient matching.**
 
-The chiral cubic at $z = -1/(2cQ)$ is
+The chiral cubic at $z = -1/(2cp)$ is
 
 $$
-  X^3 + \left(1 - \frac{1}{2cQ}\right) X^2
-  + \left(\frac{1}{4c^2Q^2} - \frac{1}{2cQ} + 1\right) X
+  X^3 + \left(1 - \frac{1}{2cp}\right) X^2
+  + \left(\frac{1}{4c^2p^2} - \frac{1}{2cp} + 1\right) X
   + \cdots = 0.
 $$
 
 The stability cubic, rewritten as a monic cubic in $t$
-with parameter $Q$:
+with parameter $p$:
 
 $$
-  t^3 - 2cQ \cdot t^2 + 0 \cdot t - 2Q = 0.
+  t^3 - 2cp \cdot t^2 + 0 \cdot t - 2p = 0.
 $$
 
 Under the substitution $t = \alpha X + \beta$ with
-$\alpha = -2cQ$ and $\beta = 2cQ \cdot z$, the leading
+$\alpha = -2cp$ and $\beta = 2cp \cdot z$, the leading
 coefficients match:
 
 | Coefficient | Chiral (C) | Stability (S) | Match condition |
 |-------------|-----------|---------------|-----------------|
-| $X^2$ | $z + 1$ | $-2cQ$ | $z = -(2cQ + 1)$ |
-| $X^0$ | $z^3 + z^2 + z + 1$ | $-2Q$ | $(z+1)(z^2+1) = -2Q$ |
+| $X^2$ | $z + 1$ | $-2cp$ | $z = -(2cp + 1)$ |
+| $X^0$ | $z^3 + z^2 + z + 1$ | $-2p$ | $(z+1)(z^2+1) = -2p$ |
 
-Eliminating $z$: $(-2cQ)(4c^2Q^2 + 1) = -2Q$, giving
+Eliminating $z$: $(-2cp)(4c^2p^2 + 1) = -2p$, giving
 
 $$
-  4c^3 Q^2 + c = 1,
+  4c^3 p^2 + c = 1,
   \qquad\text{i.e.,}\qquad
-  Q^2 = \frac{1 - c}{4c^3}.
+  p^2 = \frac{1 - c}{4c^3}.
 $$
 
 At $c = a_C/(2a_A) \approx 0.01497$, this gives
-$Q \approx 67.8$, corresponding to $A \approx 170$.
+$p \approx 67.8$, corresponding to $A \approx 170$.
 This is in the neighborhood of **erbium** ($Z = 68$),
 which lies in the rare-earth region where shell
 effects are strongest and the even-odd staggering
@@ -144,8 +144,8 @@ If the conjecture holds, then:
 
 - The **elliptic fiber** $E_z$ at spacetime $z$ encodes the
   allowed baryon configurations at that point; the **stability
-  elliptic curve** $E_Q$ at charge $Q$ encodes the allowed
-  nuclear configurations at that charge.
+  elliptic curve** $E_p$ at proton number $p$ encodes the allowed
+  nuclear configurations at that proton count.
 
 - The **isogeny** $\varphi$ connecting them is the passage from
   single-baryon color structure to multi-baryon nuclear
@@ -154,8 +154,8 @@ If the conjecture holds, then:
   triple to a nucleus
   ([stable nucleus](#def:stable-nucleus)).
 
-- The **stability pairs** are the integer points of $E_Q$ —
-  the $(Q, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd
+- The **stability pairs** are the integer points of $E_p$ —
+  the $(p, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd
   degeneracy falls on a lattice point.
 
 **Computational evidence.**
@@ -179,13 +179,13 @@ $(Q, N)$ on the genus-$0$ **stability cubic**
 ([Diophantine valley](#rem:diophantine-valley)):
 
 $$
-  t^3 \;=\; 2Q\,(1 + c\,t^2),
-  \qquad A = Q + N = t^3.
+  t^3 \;=\; 2p\,(1 + c\,t^2),
+  \qquad A = p + n = t^3.
 $$
 
-This is a rational curve: $Q = t^3/(2 + 2ct^2)$.  For each
-mass number $A \in \mathbb{N}$, the stable proton number $Q$
-is the exact integer minimiser of the convex quadratic $E(Q, A)$
+This is a rational curve: $p = t^3/(2 + 2ct^2)$.  For each
+mass number $A \in \mathbb{N}$, the stable proton number $p$
+is the exact integer minimiser of the convex quadratic $E(p, A)$
 ([integer stability](#prop:integer-stability)).  There is no
 approximation — the integer minimiser of a convex quadratic is
 determined exactly.
@@ -196,10 +196,10 @@ The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
 lifts this curve to the genus-$1$ elliptic curve $E_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
-then acquire an interpretation as integer points of $E_Q$ —
+then acquire an interpretation as integer points of $E_p$ —
 remains an open question.  The structural parallel between the
 stability cubic and the chiral cubic (identical algebraic origin
-in the Bring surface, coefficient matching at $Q \approx 68$)
+in the Bring surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
 **What is proven:**
