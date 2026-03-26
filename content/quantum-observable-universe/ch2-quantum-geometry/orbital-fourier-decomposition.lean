@@ -32,25 +32,38 @@ theorem qInt_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
   field_simp
   ring
 
-/-- [ℓ]_q > 0 for ℓ ≥ 1 and q > 1. -/
+/-- [ℓ]_q > 0 for ℓ ≥ 1 and q > 1.
+    Proof: q > 1 ⟹ q^ℓ > q^{-ℓ} and q - q⁻¹ > 0,
+    so (q^ℓ - q^{-ℓ})/(q - q⁻¹) > 0. -/
 theorem qInt_pos {q : ℝ} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
     qInt q (by linarith) (by linarith) ℓ > 0 := by
-  sorry
+  unfold qInt
+  apply div_pos
+  · -- q^ℓ - q^{-ℓ} > 0
+    have hq0 : q > 0 := by linarith
+    have : q ^ (ℓ : ℝ) > q ^ (-(ℓ : ℝ)) := by
+      apply rpow_lt_rpow_of_exponent_lt hq
+      linarith [show (ℓ : ℝ) ≥ 1 from Nat.one_le_cast.mpr hℓ]
+    linarith
+  · -- q - q⁻¹ > 0
+    have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
+    linarith
 
 /-- [ℓ]_q is strictly increasing in ℓ for q > 1. -/
 theorem qInt_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qInt q (by linarith) (by linarith) ℓ) := by
-  sorry
+  sorry -- requires detailed rpow monotonicity argument
 
 /-- The q-Laplacian eigenvalue: [ℓ]_q · [ℓ+1]_q.
     At q = 1: ℓ(ℓ+1). -/
 def qLapEigenval (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : ℝ :=
   qInt q hq hq1 ℓ * qInt q hq hq1 (ℓ + 1)
 
-/-- q-Laplacian eigenvalues are strictly increasing for q > 1. -/
+/-- q-Laplacian eigenvalues are strictly increasing for q > 1.
+    Follows from qInt strict monotonicity and positivity. -/
 theorem qLapEigenval_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qLapEigenval q (by linarith) (by linarith) ℓ) := by
-  sorry
+  sorry -- follows from qInt_strictMono and qInt_pos
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §2. Mode space dimensions
@@ -149,11 +162,18 @@ theorem mode_cutoff_iff {n ℓ : ℕ} (hn : n ≥ 1) :
 def shellEnergy (E_ion : ℝ) (n : ℕ) (hn : n ≥ 1) : ℝ :=
   -E_ion / (n : ℝ) ^ 2
 
-/-- Shell energies are strictly increasing (less negative) in n. -/
-theorem shellEnergy_strictMono {E_ion : ℝ} (hE : E_ion > 0) :
-    ∀ {n₁ n₂ : ℕ}, n₁ ≥ 1 → n₂ ≥ 1 → n₁ < n₂ →
-    shellEnergy E_ion n₁ ‹_› < shellEnergy E_ion n₂ ‹_› := by
-  sorry
+/-- Shell energies are strictly increasing (less negative) in n.
+    -E/n₁² < -E/n₂² when n₁ < n₂ and E > 0. -/
+theorem shellEnergy_strictMono {E_ion : ℝ} (hE : E_ion > 0)
+    {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :
+    shellEnergy E_ion n₁ h1 < shellEnergy E_ion n₂ h2 := by
+  simp only [shellEnergy]
+  have hn1 : (n₁ : ℝ) > 0 := by positivity
+  have hn2 : (n₂ : ℝ) > 0 := by positivity
+  have hlt : (n₁ : ℝ) < n₂ := Nat.cast_lt.mpr h
+  rw [neg_div, neg_div, neg_lt_neg_iff]
+  apply div_lt_div_of_pos_left hE (by positivity) (by positivity)
+  exact pow_lt_pow_left hlt (by positivity) (by norm_num)
 
 /-- Transition energy between shells. -/
 def transitionEnergy (E_ion : ℝ) (n₁ n₂ : ℕ)
@@ -164,7 +184,8 @@ def transitionEnergy (E_ion : ℝ) (n₁ n₂ : ℕ)
 theorem transitionEnergy_pos {E_ion : ℝ} (hE : E_ion > 0)
     {n₁ n₂ : ℕ} (h1 : n₁ ≥ 1) (h2 : n₂ ≥ 1) (h : n₁ < n₂) :
     transitionEnergy E_ion n₁ n₂ h1 h2 > 0 := by
-  sorry
+  simp only [transitionEnergy]
+  linarith [shellEnergy_strictMono hE h1 h2 h]
 
 /-- Rydberg formula: ΔE = E_ion · (1/n₁² - 1/n₂²). -/
 theorem rydberg_formula (E_ion : ℝ) (n₁ n₂ : ℕ)

@@ -108,7 +108,8 @@ theorem first_excited_shell : shellNumber 5 = 2 := by native_decide
 /-- Shell transition: two R-I moves (writhe +2) advances shell by 1. -/
 theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :
     shellNumber (w + 2) = shellNumber w + 1 := by
-  sorry
+  simp only [shellNumber]
+  omega
 
 /-- The particle identity is unchanged by shell transitions. -/
 theorem identity_preserved_by_shell_transition (K : KnotDiagram) (sign h) :
