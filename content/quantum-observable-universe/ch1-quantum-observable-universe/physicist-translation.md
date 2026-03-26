@@ -1,6 +1,6 @@
 In the archimedean realization
 ([archimedean QOU](#ex:c-quantum-observable-universe))
-where $\mathcal{C} = \mathbf{Vect}_{\mathbb{R}}$,
+where $\mathbf{C} = \mathbf{Vect}_{\mathbb{R}}$,
 $A = C^{\infty}(M)$ for a Riemannian manifold $M$, and
 $\nabla$ is an Ehresmann connection on a principal $G$-bundle
 $P \to M$, the three constituents of the

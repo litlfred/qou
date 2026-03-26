@@ -32,7 +32,7 @@ A hadron ([Definition](#def:hadron)) is then a composite:
   bound by $\mathcal{L}_{\mathrm{Hopf}}$ (one up + two down).
 
 The mass of each hadron is determined by the terminal resolution
-([terminal resolution](#rem:terminal-resolution)) and matches CODATA values to
+([terminal resolution](#prop:terminal-resolution)) and matches CODATA values to
 sub-keV precision.
 
 In a bundle initial condition $E_0$, each entry $(p_i, K_i)$ is one row

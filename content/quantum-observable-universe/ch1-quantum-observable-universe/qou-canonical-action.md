@@ -1,10 +1,10 @@
-Let $(\mathcal{C}, A, \tau)$ be a
+Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) equipped with
 connection $\nabla$ ([categorical connection](#def:categorical-connection)),
 substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
 and state $\psi \colon \mathbf{1} \to A$.
-Then $(\mathcal{C}, A, \tau)$ determines a
+Then $(\mathbf{C}, A, \tau)$ determines a
 ([categorical action](#def:categorical-action)), unique up to a scalar
 $\lambda \in R^{\times}$,
 
@@ -71,7 +71,7 @@ realization ([Remark](#rem:physicist-translation)).
 
 The scalar ambiguity is controlled by the same obstruction that governs
 the forgetful functor $\tau$: the observability axiom
-$\mathrm{Hom}_{\mathcal{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
+$\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 ([QOU axiom 2](#def:quantum-observable-universe)) ensures that the
 trace $\mathrm{tr} \colon \mathrm{End}(A) \to R$ is faithful --- no
 endomorphism is "invisible" to integration.  Relaxing this condition

@@ -187,8 +187,9 @@ surviving past the work that should have resolved them.
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation (R not k, K not ℂ), labeling conventions,
-   cross-references, glossary terms.
+4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
+   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
+   §11.3), labeling conventions, cross-references, glossary terms.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each

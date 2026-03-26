@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q \in \mathrm{End}(\mathbf{1}) \cong k$
 ([substrate parameter](#def:substrate-parameter)).  The
 *quantum Planck constant* is the element

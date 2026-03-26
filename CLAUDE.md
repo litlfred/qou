@@ -224,6 +224,15 @@ the paper introduces genuinely new axioms/structure, add a definition.
 
 ### 7. Category theory conventions
 
+- **Category notation**: Use bold `$\mathbf{C}$` for categories
+  (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
+  Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
+  Calligraphic letters are reserved for sheaves, sites, and algebras
+  (`$\mathcal{S}$`, `$\mathcal{O}$`, `$\mathcal{A}$`).
+- **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
+  Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
+  is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
+  explicitly used.
 - Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
 - Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.

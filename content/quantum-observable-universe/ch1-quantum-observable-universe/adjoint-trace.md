@@ -1,6 +1,6 @@
 The [Frobenius pairing](#def:frobenius-pairing) and the
 [fibre-adjoint involution](#prop:fiber-adjoint-involution) together
-equip every hom-space $\mathrm{Hom}_{\mathcal{C}}(X, Y)$ with a
+equip every hom-space $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ with a
 canonical sesquilinear form. Define the *adjoint trace* on
 endomorphisms of $V$ by
 

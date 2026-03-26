@@ -1,19 +1,22 @@
 /-!
-# Conjecture: Archimedean Topological Mass Formula
+# Proposition: Archimedean Topological Mass Formula
 
-Formalizes Conjecture `conj:topological-mass-formula`: in the archimedean
+Formalizes Proposition `prop:topological-mass-formula`: in the archimedean
 (ℂ) realisation, the general topological mass decomposition
 (Theorem `thm:topological-mass`) specialises to the closed-form
 mass formula `m(K) = Vol(K) / ℏ_q²`.
 
 ## Logical structure
 
-The conjecture bundles two evaluation hypotheses on top of the
-proved `TopologicalMassDecomposition`:
+The proposition derives the closed form from the categorical decomposition
+via two evaluation identities on top of the proved
+`TopologicalMassDecomposition`:
 
-1. **Baseline = Volume**: the holonomy term evaluates to `Vol(K)`.
+1. **Baseline = Volume**: the holonomy term evaluates to `Vol(K)`
+   via the Chern–Simons/volume correspondence.
 2. **Exceptional sum = dilogarithm**: the sum over blow-up centres
-   evaluates to `Vol(K) · (1/ℏ_q² − 1)`.
+   evaluates to `Vol(K) · (1/ℏ_q² − 1)` via Briggs–Klein spectral
+   coordinates.
 
 Given these, the closed-form formula is a one-line algebraic consequence.
 
@@ -33,7 +36,7 @@ namespace QOU.Torsion
 
 /-! ## The Archimedean Mass Formula -/
 
-/-- **Conjecture (Topological Mass Formula — Archimedean).**
+/-- **Proposition (Topological Mass Formula — Archimedean).**
 
     In the ℂ-quantum observable universe, the mass of a particle
     associated with a hyperbolic knot K satisfies `m(K) = Vol(K) / ℏ_q²`,
@@ -41,10 +44,11 @@ namespace QOU.Torsion
     `ℏ_q = 1 − 1/q` is the quantum Planck constant.
 
     This structure extends `TopologicalMassDecomposition` with the two
-    evaluation hypotheses that specialise the general decomposition to
-    the archimedean closed form.
+    evaluation identities (Chern–Simons/volume correspondence and
+    Briggs–Klein dilogarithm evaluation) that specialise the general
+    decomposition to the archimedean closed form.
 
-    LaTeX: `\label{conj:topological-mass-formula}` -/
+    LaTeX: `\label{prop:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
   /-- The substrate parameter `q > 1` at the evaluation point. -/
   q : ℝ

@@ -2,10 +2,10 @@
 The gauge group $G$ is defined via Tannaka--Krein duality as
 the group scheme of tensor-preserving natural automorphisms of the fibre
 functor $\tau$. An element $g \in G$ assigns an invertible linear map
-$g_X \colon \tau(X) \to \tau(X)$ to every object $X \in \mathcal{C}$.
+$g_X \colon \tau(X) \to \tau(X)$ to every object $X \in \mathbf{C}$.
 
 Because $g$ is a natural transformation, it commutes with all morphisms
-in $\mathcal{C}$, including the volume constraint
+in $\mathbf{C}$, including the volume constraint
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 \eqref{eq:categorical-volume-constraint}. Applying $\tau$ yields the
 commutative diagram of $R$-modules

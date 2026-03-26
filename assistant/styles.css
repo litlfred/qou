@@ -528,8 +528,18 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .chat-fab.hidden{transform:scale(0);opacity:0;pointer-events:none}
 
 /* Panel */
-.chat-panel{position:fixed;bottom:0;right:1.5rem;width:420px;max-width:calc(100vw - 2rem);height:min(600px, calc(100vh - 60px));background:var(--bg-s);border:1px solid var(--brd);border-bottom:none;border-radius:12px 12px 0 0;display:flex;flex-direction:column;z-index:401;transform:translateY(100%);opacity:0;transition:transform .3s var(--ease),opacity .2s var(--ease);box-shadow:0 -4px 24px rgba(0,0,0,.2)}
+.chat-panel{position:fixed;bottom:0;right:1.5rem;width:420px;max-width:calc(100vw - 2rem);height:min(600px, calc(100vh - 60px));background:var(--bg-s);border:1px solid var(--brd);border-bottom:none;border-radius:12px 12px 0 0;display:flex;flex-direction:column;z-index:401;transform:translateY(100%);opacity:0;transition:transform .3s var(--ease),opacity .2s var(--ease),width 0s,height 0s;box-shadow:0 -4px 24px rgba(0,0,0,.2)}
 .chat-panel.open{transform:translateY(0);opacity:1}
+.chat-panel.resizing{transition:none;user-select:none}
+
+/* Resize handles */
+.chat-resize-handle{position:absolute;z-index:2}
+.chat-resize-top{top:0;left:12px;right:12px;height:5px;cursor:n-resize}
+.chat-resize-left{top:12px;left:0;bottom:0;width:5px;cursor:w-resize}
+.chat-resize-corner{top:0;left:0;width:14px;height:14px;cursor:nw-resize}
+.chat-resize-corner::after{content:"";position:absolute;top:3px;left:3px;width:6px;height:6px;border-top:2px solid var(--fg-d);border-left:2px solid var(--fg-d);opacity:0;transition:opacity .15s}
+.chat-panel:hover .chat-resize-corner::after{opacity:.4}
+.chat-panel.resizing .chat-resize-corner::after{opacity:.7}
 
 /* Header */
 .chat-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;border-bottom:1px solid var(--brd);flex-shrink:0}
@@ -567,6 +577,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .chat-content strong{color:var(--fg-b)}
 .chat-content em{color:var(--fg-d)}
 .chat-content ul,.chat-content ol{margin:.3em 0;padding-left:1.3em}
+.chat-content ol{list-style:decimal}
 .chat-content li{margin:.1em 0}
 .chat-content a{color:var(--ac);text-decoration:none;border-bottom:1px dotted var(--ac-d)}
 .chat-content a:visited{color:var(--ac-v)}

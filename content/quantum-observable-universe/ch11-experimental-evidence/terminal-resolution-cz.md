@@ -12,7 +12,7 @@ $$
 $$
 
 Specialising the topological mass formula
-([topological mass formula](#conj:topological-mass-formula)) to
+([topological mass formula](#prop:topological-mass-formula)) to
 $q_0 = 1.1097$ (derived from $m_\mu / m_e$,
 [skein mass relation](#rem:skein-mass-relation)):
 

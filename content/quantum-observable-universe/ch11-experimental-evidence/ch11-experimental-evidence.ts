@@ -78,10 +78,23 @@ export default chapter({
       ],
     }),
 
-    // ── Mass conjecture and ansatz ──
+    // ── Double-slit experiment ──
 
     section({
-      title: "Topological mass ansatz",
+      title: "Double-slit experiment",
+      label: "sec:double-slit-experiment",
+      blocks: [
+        "double-slit-intro",
+        "double-slit-q-phase",
+        "double-slit-massive-pattern",
+        "double-slit-two-modes",
+      ],
+    }),
+
+    // ── Mass formula ──
+
+    section({
+      title: "Topological mass formula",
       label: "sec:topological-mass-ansatz",
       blocks: [
         "topological-mass-formula",
@@ -124,6 +137,9 @@ export default chapter({
       blocks: [
         "mass-ratio-predictions",
         "mass-predictions-data",
+        "mass-from-generators",
+        "knot-formula-table",
+        "mass-comparison-table",
         "photonic-hall",
         "photonic-hall-data",
         "lepton-discrepancies",
@@ -141,6 +157,14 @@ export default chapter({
         "lattice-layout",
         "crystal-resonance-planned",
         "crystal-resonance-experiments",
+      ],
+    }),
+
+    section({
+      title: "Macroscopic scattering",
+      label: "sec:macroscopic-scattering",
+      blocks: [
+        "q-deformed-double-slit",
       ],
     }),
   ],

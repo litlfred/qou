@@ -3,7 +3,7 @@ The Frobenius isomorphism $A \cong A^{\vee}$ sends $a \mapsto \int_A \circ
 \mu(a \otimes -)$, which is non-degenerate by the Frobenius--Hopf axiom.
 
 **(1) Embedding via rank-$1$ projectors.**
-Let $\rho \colon V \to V$ be a rank-$1$ projector in $\mathcal{C}$:
+Let $\rho \colon V \to V$ be a rank-$1$ projector in $\mathbf{C}$:
 an endomorphism satisfying $\rho^2 = \rho$ and
 $\mathrm{tr}(\rho) = \mathrm{id}_{\mathbf{1}}$ (categorical trace
 via evaluation and coevaluation). Since $V$ has categorical
@@ -31,7 +31,7 @@ $$
 Thus $2\sigma(\rho)$ is an involution in $\mathrm{End}(V)$: it
 squares to the identity.  Geometrically, $\sigma$ identifies
 $\mathbb{P}(V)$ with a coadjoint orbit in $\mathrm{Ad}(A)$. The
-orbit is closed by rigidity of $\mathcal{C}$ and determines a
+orbit is closed by rigidity of $\mathbf{C}$ and determines a
 sub-object of $\mathrm{Ad}(A)$ isomorphic to $\mathbb{P}(V)$.
 Conversely, given this sub-object, the stabiliser of any point
 is $T$, so $\mathbb{P}(V) \cong G/T$ as $G$-spaces.

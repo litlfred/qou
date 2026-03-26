@@ -1,7 +1,7 @@
 The descent involution $\hat{\tau}_n$ ([descent involution](#def:descent-involution))
 decomposes the level-$(n{+}1)$ endomorphism algebra into a direct sum
 $$
-  \mathrm{End}_{\mathcal{C}}(A_{n+1})
+  \mathrm{End}_{\mathbf{C}}(A_{n+1})
   \;=\;
   \mathcal{A}_{n+1}^{\mathrm{desc}} \;\oplus\; \mathcal{A}_{n+1}^{\mathrm{trans}},
 $$

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-03-25T12:59:28.466051+00:00",
+  "generated_at": "2026-03-25T20:08:55.382755+00:00",
   "mappings": [
     {
       "narrative": "{Snake identity}",
@@ -111,6 +111,16 @@
       "narrative": "{$q$-Hodge star}",
       "lean_id": "QOU.QuantumObservableUniverse.QHodgeStar",
       "latex_label": "def:q-hodge-star"
+    },
+    {
+      "narrative": "{Categorical Dirac operator}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalDiracOperator",
+      "latex_label": "def:categorical-dirac-operator"
+    },
+    {
+      "narrative": "{Categorical Lagrangian}",
+      "lean_id": "QOU.QuantumObservableUniverse.CategoricalLagrangian",
+      "latex_label": "def:categorical-lagrangian"
     },
     {
       "narrative": "{Categorical action}",
@@ -341,6 +351,11 @@
       "narrative": "{Chiral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean_id": "QOU.ChiralSectorCoords",
       "latex_label": "def:chiral-sector-coords"
+    },
+    {
+      "narrative": "{$q$-deformed path phase}",
+      "lean_id": "QOU.DoubleSlitQPhase",
+      "latex_label": "def:double-slit-q-phase"
     }
   ]
 }

@@ -47,6 +47,7 @@ export default chapter({
         "quantum-observable-universe",
         "frobenius-integration",
         "yekutieli-stokes-remark",
+        "fibre-functor-rigidity",
         "qou-su2",
         "base-field-independence",
         "maximal-torus",
@@ -155,6 +156,8 @@ export default chapter({
         "physicist-translation",
         "variational-equations",
         "variational-equations-proof",
+        "wavefront-propagation",
+        "photon-wavefront-example",
       ],
     }),
 
@@ -191,6 +194,7 @@ export default chapter({
       label: "sec:instanton",
       blocks: [
         "categorical-instanton",
+        "instanton-on-shell",
         "categorical-irreducible",
         "categorical-irreducible-proof",
         "categorical-self-duality",

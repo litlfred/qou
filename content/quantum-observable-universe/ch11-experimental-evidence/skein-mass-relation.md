@@ -9,5 +9,5 @@ Evaluation of the lepton mass ratio $m_{\mu}/m_{e}$ against **CODATA** recommend
 $$
 \frac{m_{\mu}}{m_{e}} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
   \approx \frac{2.02988}{(1 - q^{-1})^2},
-\qquad 206.768 \implies q \approx 1.1097.
+\qquad 206.7683 \implies q \approx 1.10997.
 $$

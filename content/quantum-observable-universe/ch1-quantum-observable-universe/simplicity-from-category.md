@@ -1,4 +1,4 @@
-The $*$-involution on $\mathcal{C}$---required by the QOU
+The $*$-involution on $\mathbf{C}$---required by the QOU
 observability axiom---induces via the fibre functor an involution on
 $\Omega^2(M, \mathfrak{g}_q)$ whose $+1$-eigenspace is exactly the
 self-dual forms $\Omega^{2,+}(M, \mathfrak{g}_q)$. Thus the full

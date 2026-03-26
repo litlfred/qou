@@ -52,6 +52,10 @@ ideas to a graduate-level reader.
 
 ### 5. Consistency
 - Notation introduced in one section is used consistently throughout.
+- Categories use bold ($\mathbf{C}$, $\mathbf{Rep}$), never calligraphic
+  $\mathcal{C}$. Calligraphic is reserved for sheaves, sites, algebras.
+- The fibre functor is $\tau$ throughout; minimise its appearance where the
+  QOU datum $(\mathbf{C}, A)$ suffices.
 - Acronyms are expanded on first use and used bare thereafter.
 - Displayed equations ending a sentence include a period inside the
   environment.

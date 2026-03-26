@@ -37,7 +37,7 @@ generate all equivalences between braid representatives of the same
 link --- is the statement that horizontal and vertical moves together
 exhaust the gauge freedom of the cosimplicial crossed groupoid.  The
 direct limit
-$\mathcal{A}_\infty = \varinjlim\,\mathrm{End}_{\mathcal{C}}(A_n)$
+$\mathcal{A}_\infty = \varinjlim\,\mathrm{End}_{\mathbf{C}}(A_n)$
 ([direct limit algebra](#def:direct-limit-algebra)) is the algebraic
 receptacle for this invariance: it is the algebra on which the Markov
 trace stabilises to a well-defined link invariant.

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)) with
 weight decomposition $\pi_H, \pi_V$
 ([weight decomposition](#def:weight-decomposition)) and Reeb derivation
@@ -17,6 +17,19 @@ $$
   d_q \;=\; q^{-1}\,d \;+\; (1 - q^{-1})\,\pi_V \circ d.
 $$
 
+```tex
+\begin{equation}\label{eq:substrate-family-diagram}
+\begin{tikzcd}[row sep=2.5em, column sep=3em]
+  \Omega^k(A) \ar[r, "d"] \ar[d, "\pi_V \circ d"'] \ar[dr, "d_q"]
+  & \Omega^{k+1}(A) \\
+  \Omega^{k+1}(A)
+  & {} \ar[u, phantom, "q{=}1"' near start]
+    \ar[l, phantom, "q{\to}\infty" near start]
+\end{tikzcd}
+\qquad\text{(substrate family)}
+\end{equation}
+```
+
 The *substrate parameter* is the unique element
 $q \in \mathrm{End}(\mathbf{1}) \cong k$ such that $d_q$
 acts as $q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms.
@@ -27,7 +40,7 @@ At $q = 1$ the operator $d_q$ recovers $d$ (classicality: horizontal
 and vertical differentiation are treated equally).  As
 $q \to \infty$, $d_q$ projects onto $\pi_V \circ d$ (deep-quantum
 regime: only the Reeb direction contributes).  The substrate
-parameter is *not* intrinsic to the triple $(\mathcal{C}, A, \tau)$;
+parameter is *not* intrinsic to the triple $(\mathbf{C}, A, \tau)$;
 it records where one sits in the $\mathbb{G}_m$-family
 that $q$ parametrises.
 

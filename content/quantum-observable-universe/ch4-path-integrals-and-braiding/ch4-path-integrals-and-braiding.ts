@@ -101,6 +101,17 @@ export default chapter({
         "enveloping-algebra",
         "quantum-su2",
         "r-matrix-braiding",
+        "skein-crossing-asymmetry",
+      ],
+    }),
+
+    section({
+      title: "Nuclear Binding Lagrangian",
+      label: "sec:nuclear-binding-lagrangian",
+      blocks: [
+        "skein-binding-lagrangian",
+        "nuclear-binding-from-canonical-action",
+        "beta-stability",
       ],
     }),
 

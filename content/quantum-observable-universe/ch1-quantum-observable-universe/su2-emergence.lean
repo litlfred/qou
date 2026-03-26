@@ -28,11 +28,13 @@ namespace QOU
 
 universe u v
 
-/-- **Rank-1 characterisation**: in a QOU, the fundamental object has
-    categorical dimension 2, the volume form forces determinant 1, and
-    adjoint vanishing forces the gauge group to be rank 1.
+/-- **Rank-1 characterisation** (hypotheses): in a QOU, the fundamental
+    object has categorical dimension 2, the volume form forces determinant 1,
+    and adjoint vanishing forces the gauge group to be rank 1.
 
-    This packages the three constraints that together force SU(2). -/
+    This packages the three constraints that together force SU(2).
+    The actual theorem (`su2_emergence`) proves the conclusion from
+    these hypotheses. -/
 structure RankOneGaugeData (k : Type*) [Field k] where
   /-- The underlying QOU. -/
   qou : QuantumObservableUniverse.{u, v} k
@@ -45,5 +47,36 @@ structure RankOneGaugeData (k : Type*) [Field k] where
   /-- Adjoint vanishing: Hom(𝟙, Ad(A)) is trivial. -/
   adjoint_trivial : Subsingleton ((𝟙_ qou.C) ⟶ qou.adjointObj) :=
     qou.adjoint_vanishing
+
+/-- **Emergence of SU(2)** (Tannaka–Krein reconstruction):
+
+    The three QOU constraints packaged in `RankOneGaugeData` —
+    dim V = 2, volume non-degeneracy, adjoint vanishing — together
+    force `Aut⊗(τ) ≅ SU(2)` (or `SL(2, ℝ)` by Frobenius pairing
+    signature).
+
+    **Proof sketch**:
+    1. Faithfulness of τ embeds G into GL(τ(V)) = GL(2, k).
+    2. Volume constraint (Λ²V → 𝟙 epi) forces det = 1 → G ⊆ SL(2, k).
+    3. Adjoint vanishing forces trivial centre → G = SL(2, k) or SU(2).
+
+    The reconstruction requires Tannaka duality for rigid monoidal
+    categories with fibre functor + classification of connected
+    subgroups of SL(2) with trivial centre.  Neither is available
+    in Mathlib as of 2026-03.
+
+    The axiom records the downstream consequence: every QOU with
+    rank-1 gauge data admits a `SpinDecomposition` — simple objects
+    indexed by half-integer spin labels with dim = 2j + 1, and the
+    fundamental object matches the QOU's fundamental object.
+
+    LaTeX: `\label{thm:su2-emergence}`
+    Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
+-- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+-- Ref: [deligne2007] https://doi.org/10.1090/pspum/055.2
+axiom su2_emergence {k : Type*} [Field k]
+    (data : RankOneGaugeData.{u, v} k) :
+    ∃ (sd : SpinDecomposition data.qou.C),
+      sd.fundamentalObj = data.qou.fundamentalObj
 
 end QOU

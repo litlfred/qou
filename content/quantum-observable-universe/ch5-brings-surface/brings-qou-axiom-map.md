@@ -22,7 +22,7 @@ Bring's surface has no global holomorphic vector field
 
 **(iii) Categorical volume constraint.**
 The fundamental object $V$ of
-$\mathcal{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ has categorical
+$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ has categorical
 dimension $2$.  In the archimedean realisation, $V$ is the rank-$2$
 defining representation carried by the state bundle fibre
 $E_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).

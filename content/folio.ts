@@ -19,6 +19,17 @@ export default folio({
       url: "/viewer/#/view/quantum-observable-universe",
     }),
     paperRef({
+      dir: "bach2013-double-slit",
+      title: "Controlled Double-Slit Electron Diffraction",
+      description:
+        "Full realization of Feynman's double-slit thought experiment: " +
+        "controlled single/double slit electron diffraction with " +
+        "single-electron buildup (6235 events). Benchmark dataset for " +
+        "the QOU two-mode scattering prediction.",
+      tags: ["experimental", "double-slit", "electron-diffraction", "imported"],
+      url: "/viewer/#/view/bach2013-double-slit",
+    }),
+    paperRef({
       dir: "unital-groebner-bases",
       title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
       description:
