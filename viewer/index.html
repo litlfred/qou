@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Folio</title>
+  <!-- Prevent white flash: apply saved theme before any rendering -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('folio-assistant-theme') || 'dark';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <style>html{background:#0e0e12}html[data-theme="light"]{background:#fafafa}</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1103,18 +1111,21 @@
     const btnTh = document.getElementById('c-th');
     const btnFn = document.getElementById('c-fn');
 
-    // Restore saved theme preference (default: light)
-    const savedTheme = localStorage.getItem('folio-assistant-theme');
-    if (savedTheme) {
-      html.dataset.theme = savedTheme;
-      btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
-    }
+    // Theme already applied by inline <script> in <head> to prevent flash.
+    // Just sync the button label.
+    const savedTheme = html.dataset.theme || 'dark';
+    btnTh.textContent = savedTheme === 'dark' ? 'light' : 'dark';
 
     btnTh.addEventListener('click', () => {
       const n = html.dataset.theme === 'dark' ? 'light' : 'dark';
       html.dataset.theme = n;
       btnTh.textContent = n === 'dark' ? 'light' : 'dark';
       localStorage.setItem('folio-assistant-theme', n);
+      // Notify simulator iframe of theme change
+      const sf = document.getElementById('sim-frame');
+      if (sf && sf.contentWindow) {
+        try { sf.contentWindow.postMessage({ type: 'folio-theme', theme: n }, '*'); } catch(_){}
+      }
     });
 
     btnFn.addEventListener('click', () => {
@@ -3998,9 +4009,10 @@
      */
     function simUrl(htmlPath, params) {
       const qs = new URLSearchParams();
+      // Pass current theme so simulator starts in the right mode
+      qs.set('theme', html.dataset.theme || 'dark');
       for (const [k, v] of Object.entries(params || {})) qs.set(k, String(v));
-      const q = qs.toString();
-      return q ? `/${htmlPath}?${q}` : `/${htmlPath}`;
+      return `/${htmlPath}?${qs.toString()}`;
     }
 
     /**
