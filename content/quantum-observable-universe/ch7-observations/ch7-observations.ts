@@ -101,6 +101,9 @@ export default chapter({
         "crossing-energy-decomposition",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
+        "cp-violation-evidence",
+        "cosmological-chirality-flip",
+        "electron-immortality",
       ],
     }),
 

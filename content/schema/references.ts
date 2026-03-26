@@ -958,6 +958,41 @@ export const references: CSLData[] = [
     DOI: "10.1073/pnas.1407232111",
     issued: { "date-parts": [[2014]] },
   }),
+
+  // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
+  ref({
+    id: "christenson1964",
+    type: "article-journal",
+    title: "Evidence for the $2\\pi$ Decay of the $K_2^0$ Meson",
+    author: [
+      { family: "Christenson", given: "J. H." },
+      { family: "Cronin", given: "J. W." },
+      { family: "Fitch", given: "V. L." },
+      { family: "Turlay", given: "R." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "13",
+    issue: "4",
+    page: "138-140",
+    DOI: "10.1103/PhysRevLett.13.138",
+    issued: { "date-parts": [[1964]] },
+  }),
+
+  // ── PRL: Aubert et al. 2001 (BaBar CP violation in B mesons) ───
+  ref({
+    id: "aubert2001",
+    type: "article-journal",
+    title: "Observation of CP Violation in the $B^0$ Meson System",
+    author: [
+      { family: "Aubert", given: "B." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "87",
+    issue: "9",
+    page: "091801",
+    DOI: "10.1103/PhysRevLett.87.091801",
+    issued: { "date-parts": [[2001]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
