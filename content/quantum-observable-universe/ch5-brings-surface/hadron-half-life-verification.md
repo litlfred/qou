@@ -70,21 +70,26 @@ ${}^{210}\mathrm{Bi}$ & 210 & 1 & 1.16
    (${}^{14}\mathrm{C}$).
 
 **Residual analysis.**
-The remaining $\sim 10$--$17\%$ overestimate for medium and heavy
-nuclei has two identified sources, neither involving free parameters:
-
-- **Fermi-function Coulomb enhancement** $F(Z, E)$: the factor
-  $2\pi\eta / (1 - e^{-2\pi\eta})$ with Sommerfeld parameter
-  $\eta = \alpha Z / \beta_e$ increases the decay rate by 5--15%
-  for $Z = 6$--$83$.  In the QOU framework, $\alpha$ itself derives
-  from $(q - q^{-1})$, so this is a higher-order $q$-correction to
-  the phase-space integral.
+The Skein-Coulomb enhancement
+([Coulomb enhancement](#prop:skein-coulomb-enhancement)) — arising
+from the electron-proton Skein crossings as the emitted $\beta$
+exits the nucleus — is a *large* effect (factors of 1.4--5.0) already
+included at leading order in the predictions above.  The remaining
+$\sim 10$--$17\%$ scatter arises from **nuclear structure** beyond
+the smooth Skein binding Lagrangian:
 
 - **Shell corrections**: magic numbers (particularly $n = 82$ in
   ${}^{137}\mathrm{Cs}$) and nuclear deformation modify the matrix
-  element $|\mathcal{M}_q|^2$ at the $\sim 5\%$ level.  These are
-  discrete-structure effects not captured by the smooth Skein binding
-  Lagrangian.
+  element $|\mathcal{M}_q|^2$ at the $\sim 5$--$10\%$ level.
+- **Matrix element variation**: the nuclear matrix element varies by
+  six orders of magnitude across the verification set ($\log ft$
+  ranges from 3.05 for superallowed ${}^{3}\mathrm{H}$ to 9.04 for
+  hindered ${}^{14}\mathrm{C}$), reflecting discrete shell structure
+  that the smooth Lagrangian does not resolve.
+- **Pairing and deformation**: even-even, even-odd, and odd-odd
+  nuclei have different pairing energies that shift $Q_\beta$ by
+  $\sim 0.5$--$1$ MeV, propagating to $\sim 10\%$ in the half-life
+  via the $Q^5$ sensitivity.
 
 **Forbidden transitions.**
 The table covers allowed Gamow--Teller and Fermi transitions.
