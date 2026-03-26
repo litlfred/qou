@@ -140,6 +140,7 @@ export default chapter({
         "shell-threading-conjecture",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
+        "generator-volume-decomposition",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
