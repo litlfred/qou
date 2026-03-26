@@ -14,11 +14,11 @@ Diophantine approximation problem.
   — the observed stable isotopes.
 - **Red segments**: Diophantine error $\varepsilon(A)$ —
   vertical distance from each lattice point to the curve.
-- **Gold diamonds**: Magic numbers (shell closures).
+- **Gold diamonds**: Stability pairs (shell closures).
 - **Shaded band**: Valley width — the range of $p$ values within
   one beta-decay half-life of the stable isotope.
 
 As $q \to 1$, the curve straightens to $p = A/2$ (the diagonal),
 all lattice points fall on the curve, and the Diophantine problem
 becomes trivial.  As $q$ increases, the curve bends, the lattice
-points scatter, and the magic-number structure emerges.
+points scatter, and the stability-pair structure emerges.

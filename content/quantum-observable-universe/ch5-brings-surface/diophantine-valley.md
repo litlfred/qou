@@ -75,10 +75,10 @@ by the single parameter $q$.
 When the pairing correction lifts $\mathcal{S}$ from genus $0$
 to genus $1$
 ([elliptic stability conjecture](#conj:elliptic-stability-locus)),
-the magic numbers become **rational points** of an elliptic curve
+the stability pairs become **rational points** of an elliptic curve
 $E_Q$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
 them to a finite set — potentially explaining why only finitely
-many magic numbers exist.
+many stability pairs exist.
 
 **Connection to the substrate parameter.**
 The curvature parameter $c = (q - q^{-1})\lambda_C / (2a_A)$
@@ -87,5 +87,5 @@ degenerates to $t^3 = 2Q$ (a rational parametrisation with all
 nuclei symmetric, $n = p$).  As $q$ increases from $1$, the
 $ct^2$ term bends the curve, the integer solutions disperse,
 and the rich structure of the nuclear chart — neutron excess,
-magic numbers, even-odd staggering — emerges from a single
+stability pairs, even-odd staggering — emerges from a single
 deformation parameter.

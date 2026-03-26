@@ -27,9 +27,9 @@ the Diophantine error $\varepsilon = |p_{\mathrm{stab}} - p^*|$.
 3. **Heavy nuclei** ($A > 120$): $n/p \to 1.6$.  The $p^2$
    growth of the Coulomb penalty dominates; the curve flattens.
 
-4. **Magic numbers** ($\diamond$, $\star$): Helium, calcium,
+4. **Stability pairs** ($\diamond$, $\star$): Helium, calcium,
    tin, and lead have anomalously low Diophantine error *and*
-   closed Skein shell structure.  The doubly-magic nuclei
+   closed Skein shell structure.  The doubly-stability pair nuclei
    ($^4$He, $^{40}$Ca, $^{208}$Pb) have $\varepsilon < 0.8$
    combined with shell closure.
 

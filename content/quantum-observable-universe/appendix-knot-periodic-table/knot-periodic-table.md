@@ -45,12 +45,12 @@ a repulsive Skein phase (electromagnetic charge), while
 proton--neutron and neutron--neutron crossings are purely attractive
 (strong force only).  The repulsive crossing penalty grows as
 $\sim p^2$, requiring additional neutrons to stabilize the
-multi-nucleon link.  Elements marked $\diamond$ have a magic proton
-number; those marked $\star$ have a magic neutron number.  At these
-values the Skein polynomial has closed-shell structure with
-anomalously high $B/A$.
+multi-nucleon link.  Elements marked $\diamond$ have a proton
+stability pair; those marked $\star$ have a neutron stability pair.
+At these values the Skein polynomial has closed-shell structure
+with anomalously high $B/A$.
 
-**Magic numbers**: $2, 8, 20, 28, 50, 82$ (protons);
+**Stability pairs**: $2, 8, 20, 28, 50, 82$ (protons);
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
@@ -154,7 +154,7 @@ $m_e = 0.511$ MeV.
 | 91 | Protactinium | 91 | 140 | $91\mathfrak{p} \bowtie 140\mathfrak{n} \bowtie 91T_{2,3}$ | $215209.3$ | $215210.2$ | $7.6138$ |
 | 92 | Uranium | 92 | 146 | $92\mathfrak{p} \bowtie 146\mathfrak{n} \bowtie 92T_{2,3}$ | $221742.6$ | $221743.5$ | $7.5701$ |
 
-$\diamond$ = magic proton number, $\star$ = magic neutron number.
+$\diamond$ = proton stability pair, $\star$ = neutron stability pair.
 All masses in MeV/$c^2$.  $\mathcal{M}_{\mathrm{QOU}}$ computed at
 $q = 1.10997$; $\mathcal{M}_{\mathrm{obs}}$ from AME2020 nuclear
 masses plus $p \cdot m_e$.  $B/A$ from AME2020.  The most stable

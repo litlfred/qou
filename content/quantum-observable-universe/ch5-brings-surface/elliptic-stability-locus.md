@@ -87,7 +87,7 @@ $$
    those of (S) up to a Möbius transformation.*
 
 3. *The integer points $(Q, A) \in E_Q(\mathbb{Z})$ correspond
-   to the magic numbers: the mass numbers $A$ at which the
+   to the stability pairs: the mass numbers $A$ at which the
    even-even/odd-odd degeneracy falls exactly on an integer
    lattice point.*
 
@@ -154,16 +154,16 @@ If the conjecture holds, then:
   triple to a nucleus
   ([stable nucleus](#def:stable-nucleus)).
 
-- The **magic numbers** are the rational points of $E_Q$ — a
+- The **stability pairs** are the rational points of $E_Q$ — a
   finite set by Mordell's theorem (assuming $E_Q$ has rank $0$
   over $\mathbb{Q}$), which would explain why there are finitely
-  many magic numbers.
+  many stability pairs.
 
-**Mordell--Weil rank and magic number count.**
+**Mordell--Weil rank and stability pair count.**
 
 If $E_Q$ has Mordell--Weil rank $0$ over $\mathbb{Q}$, then
 $E_Q(\mathbb{Q})$ is finite (equal to the torsion subgroup).
-The known magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ give
+The known stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ give
 $7$ points; the torsion subgroups of elliptic curves over
 $\mathbb{Q}$ have order dividing $12$ (Mazur's theorem).  A
 torsion group of order $8$ (accommodating the $7$ magic neutron
@@ -176,7 +176,7 @@ numbers beyond $126$** — a statement that is consistent with
 all experimental evidence to date but has not been proven from
 nuclear shell theory.
 
-**Computational evidence: magic numbers as torsion multiples.**
+**Computational evidence: stability pairs as torsion multiples.**
 
 The chiral elliptic curve at $z = q^{1/2} - q^{-1/2} \approx
 0.1044$ is
@@ -204,8 +204,8 @@ The magic neutron numbers land at distinguished positions:
 | $82$ | $13/28$ | near $T$ | magic |
 | $126$ | $\mathbf{1/4}$ | **at 4-torsion** | magic |
 
-All magic numbers land at rational fractions with
-**denominator dividing $28$**.  The doubly-magic numbers
+All stability pairs land at rational fractions with
+**denominator dividing $28$**.  The doubly-stability pairs
 $28$ and $126$ land *exactly* at the 2-torsion and 4-torsion
 positions, respectively:
 $28 \cdot (1/56) = 1/2$ and $126 \cdot (1/56) = 9/4 \equiv 1/4$.
@@ -221,13 +221,13 @@ or a quotient), then:
 - A nucleus with $N$ neutrons is stable when $N \cdot P_n$
   lies near the identity $O$ or the 2-torsion point $T$ in
   the group law of $E_z$.
-- The magic numbers are precisely the values of $N$ where
+- The stability pairs are precisely the values of $N$ where
   $N \cdot P_n$ hits a **torsion point** of $E_z$.
 - **The stable hadrons of the Descartes universe are the
   integer solutions of a Diophantine equation on the elliptic
   curve $E_z$.**
 
-The nuclear chart — every stable isotope, every magic number,
+The nuclear chart — every stable isotope, every stability pair,
 the neutron-to-proton ratio of every element — is the
 **set of integer points** on an elliptic curve derived from
 the chiral fibration of Bring's surface at $q = 1.110$.
