@@ -135,6 +135,7 @@ export default chapter({
         "hadron-q-self-correction",
         "hadron-half-life-regimes",
         "hadron-half-life-verification",
+        "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
