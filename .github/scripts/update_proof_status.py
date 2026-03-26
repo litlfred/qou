@@ -44,9 +44,11 @@ def find_lean_file(lean_info: dict) -> Path | None:
             return candidate
     # Search content dirs for .lean siblings
     for p in CONTENT_DIR.rglob("*.lean"):
-        # Match by declaration name in file content
-        if lean_info.get("decl") and lean_info["decl"].split(".")[-1] in p.stem.replace("-", "_"):
-            return p
+        # Match by declaration name against file stem (case-insensitive exact match)
+        if lean_info.get("decl"):
+            decl_end = lean_info["decl"].split(".")[-1]
+            if decl_end.lower() == p.stem.replace("-", "_").lower():
+                return p
     return None
 
 
