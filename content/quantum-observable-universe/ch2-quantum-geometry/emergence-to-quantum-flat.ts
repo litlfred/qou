@@ -12,7 +12,7 @@ export default proposition({
     "def:quantum-observable-universe",
     "thm:su2-emergence",
     "rem:self-dual-2group",
-    "ex:instanton",
+    "def:categorical-instanton",
   ],
   proofs: ["prf:emergence-to-quantum-flat"],
 });

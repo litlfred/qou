@@ -13,7 +13,7 @@ import { chapter, section } from "../../schema/builders";
  * all observational content is in the following Observations chapter.
  */
 export default chapter({
-  number: 5,
+  number: 6,
   title: "The Descartes Universe",
   label: "chap:descartes-universe",
   sections: [
