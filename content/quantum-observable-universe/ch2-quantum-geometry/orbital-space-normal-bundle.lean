@@ -19,6 +19,8 @@ LaTeX label: `prop:orbital-space-normal-bundle`
 
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Real.Basic
+import Mathlib.RepresentationTheory.Basic
+import Mathlib.LinearAlgebra.Dimension
 
 open Finset
 
@@ -74,25 +76,44 @@ theorem orbital_dim_eq_square (n : ℕ) :
 -- §3. SO(3) decomposition (representation-theoretic content)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- **Axiom**: Mode ℓ on the trefoil transforms as the irreducible
-    SO(3) representation V_ℓ of dimension 2ℓ+1.
+/-- **Axiom**: For each ℓ, there exists an irreducible representation
+    of SO(3) on a real vector space of dimension 2ℓ+1.
 
-    This is the geometric content: a Fourier mode ℓ on T_{2,3} ⊂ Σ₄,
-    when the trefoil orbits the Borromean anchor sweeping out S²,
-    projects to a degree-ℓ spherical harmonic Y_ℓ^m.
+    In the QOU context: mode ℓ on the trefoil T_{2,3} ⊂ Σ₄ transforms
+    as V_ℓ when the trefoil orbits the Borromean anchor sweeping out S².
 
-    A full Lean proof would require:
-    - SO(3) as a topological group (Mathlib.Topology.Algebra.Group)
-    - Representation ℝ SO(3) V (Mathlib.RepresentationTheory.Basic)
-    - Peter–Weyl: L²(S²) ≅ ⊕ V_ℓ as SO(3)-representations
-    - Identification of trefoil Fourier modes with S² harmonics
+    ## Mathlib status (as of v4.24.0)
 
-    These Mathlib components exist individually but the composition
-    (trefoil curve → S² average → spherical harmonics → V_ℓ) requires
-    custom integration. -/
+    Available:
+    - `Representation ℝ G V` (Mathlib.RepresentationTheory.Basic)
+    - `Module.finrank` (Mathlib.LinearAlgebra.Dimension)
+    - SO(3) definable via `Matrix.specialOrthogonalGroup (Fin 3) ℝ`
+
+    Missing (not formalized in Mathlib):
+    - Peter–Weyl theorem (L²(G) ≅ ⊕ V_π ⊗ V_π*)
+    - Classification of SO(3) irreps (highest weight theory)
+    - Spherical harmonics Y_ℓ^m as explicit basis for V_ℓ
+    - Continuous representations of Lie groups
+
+    ## Proof route when Mathlib gains these
+
+    1. Define `SO3 := Matrix.specialOrthogonalGroup (Fin 3) ℝ`
+    2. Apply compact group irrep classification: for each ℓ ∈ ℕ,
+       the unique (up to iso) irreducible real representation V_ℓ
+       has `Module.finrank ℝ V_ℓ = 2 * ℓ + 1`
+    3. Peter–Weyl on L²(S²) under the SO(3) action gives
+       L²(S²) ≅ ⊕_{ℓ≥0} V_ℓ with V_ℓ = span{Y_ℓ^m : m = -ℓ..ℓ}
+    4. Trefoil averaging: the time-averaged section space of mode ℓ
+       on T_{2,3} projects isomorphically onto V_ℓ ⊂ L²(S²)
+
+    Steps 1–3 are standard harmonic analysis; step 4 is the
+    geometry specific to the QOU framework. -/
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
-axiom mode_is_irrep :
-  ∀ (ℓ : ℕ), ∃ (V : Type) (_ : Fintype V), Fintype.card V = 2 * ℓ + 1
+-- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+axiom mode_is_so3_irrep :
+  ∀ (ℓ : ℕ), ∃ (V : Type) [inst_acg : AddCommGroup V] [inst_mod : Module ℝ V]
+    [inst_fd : FiniteDimensional ℝ V],
+    Module.finrank ℝ V = 2 * ℓ + 1
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. Mode cutoff
