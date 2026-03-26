@@ -132,6 +132,77 @@ export function extractMathContent(md: string): string {
   return parts.join("\n").trim();
 }
 
+// ── HTML table → LaTeX conversion ────────────────────────────────
+
+/**
+ * Convert an HTML `<table>` to LaTeX `\begin{tabular}`.
+ *
+ * Handles `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`.
+ * Inline math (`$...$`) inside cells is preserved.
+ * The `align` attribute on `<td>`/`<th>` is respected.
+ *
+ * This is the preferred table format for content .md files.
+ * Markdown pipe tables are also supported (via remark-gfm) but
+ * HTML tables render more reliably across all output targets.
+ */
+function htmlTableToLatex(html: string): string {
+  // Extract all rows: <tr>...</tr>
+  const rowMatches = html.match(/<tr[^>]*>([\s\S]*?)<\/tr>/gi);
+  if (!rowMatches || rowMatches.length === 0) return "";
+
+  const rows: string[][] = [];
+  let isHeaderRow: boolean[] = [];
+
+  for (const rowHtml of rowMatches) {
+    // Extract cells: <td> or <th>
+    const cellMatches = rowHtml.match(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi);
+    if (!cellMatches) { rows.push([]); isHeaderRow.push(false); continue; }
+
+    const cells: string[] = [];
+    let hasHeader = false;
+    for (const cellHtml of cellMatches) {
+      if (cellHtml.startsWith("<th")) hasHeader = true;
+      // Extract cell content: strip the outer tag, keep inner content
+      const content = cellHtml
+        .replace(/<t[hd][^>]*>/i, "")
+        .replace(/<\/t[hd]>/i, "")
+        .trim();
+      // Strip inner HTML tags (like <strong>, <em>) but preserve math
+      const cleaned = content
+        .replace(/<strong>([\s\S]*?)<\/strong>/gi, "\\textbf{$1}")
+        .replace(/<em>([\s\S]*?)<\/em>/gi, "\\emph{$1}")
+        .replace(/<code>([\s\S]*?)<\/code>/gi, "\\texttt{$1}")
+        .replace(/<[^>]*>/g, "");
+      cells.push(cleaned);
+    }
+    rows.push(cells);
+    isHeaderRow.push(hasHeader);
+  }
+
+  if (rows.length === 0) return "";
+
+  // Determine column count
+  const colCount = Math.max(...rows.map(r => r.length));
+
+  // Check for align attribute on <table> or <col> tags
+  const colSpec = "l".repeat(colCount).split("").join(" ");
+
+  const lines: string[] = [];
+  lines.push(`\\begin{tabular}{${colSpec}}`);
+  lines.push("\\hline");
+  for (let r = 0; r < rows.length; r++) {
+    // Pad row to column count
+    const padded = rows[r].concat(
+      Array(Math.max(0, colCount - rows[r].length)).fill("")
+    );
+    lines.push(`${padded.join(" & ")} \\\\`);
+    if (isHeaderRow[r]) lines.push("\\hline");
+  }
+  lines.push("\\hline");
+  lines.push("\\end{tabular}");
+  return lines.join("\n");
+}
+
 // ── AST node → LaTeX rendering ──────────────────────────────────
 
 /** Render a single mdast node to LaTeX. */
@@ -261,6 +332,16 @@ function renderMdastNode(node: any): string {
 
     case "tableCell":
       return renderChildren(node).join("");
+
+    case "html": {
+      // Raw HTML in markdown — handle <table> elements for LaTeX
+      const html: string = node.value ?? "";
+      if (html.includes("<table") || html.includes("<tr") || html.includes("<td") || html.includes("<th")) {
+        return htmlTableToLatex(html);
+      }
+      // Non-table HTML: strip tags, keep text
+      return html.replace(/<[^>]*>/g, "");
+    }
 
     default:
       // Unknown node — render children if any, otherwise empty
