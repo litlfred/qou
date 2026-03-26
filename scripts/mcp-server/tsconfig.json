@@ -9,7 +9,7 @@
     "rootDir": ".",
     "paths": {
       "@content/*": ["../../content/*"],
-      "@schemas/*": ["../../schemas/*"]
+      "@schemas/*": ["../../folio-assistant/schemas/*"]
     }
   },
   "include": ["**/*.ts"],

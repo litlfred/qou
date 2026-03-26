@@ -176,13 +176,13 @@ function commitFeedbackToMain(paperId: string, rootName: string, content: string
     });
 
     // Write file in worktree
-    const wtDir = join(FEEDBACK_WORKTREE, "feedback", paperId);
+    const wtDir = join(FEEDBACK_WORKTREE, "folio-assistant/feedback", paperId);
     mkdirSync(wtDir, { recursive: true });
     const wtPath = join(wtDir, `${rootName}.ts`);
     writeFileSync(wtPath, content, "utf-8");
 
     // Stage + commit + push
-    const relPath = `feedback/${paperId}/${rootName}.ts`;
+    const relPath = `folio-assistant/feedback/${paperId}/${rootName}.ts`;
     spawnSync("git", ["add", relPath], { cwd: FEEDBACK_WORKTREE, stdio: "pipe" });
 
     const commitResult = spawnSync("git", ["commit", "-m", `feedback: ${paperId}/${rootName}`], {
@@ -1090,8 +1090,8 @@ function computePaperDiff(
 
 // ── Viewer content serving ───────────────────────────────────────
 
-const VIEWER_DIR = resolve(REPO_ROOT, "viewer");
-const ASSISTANT_DIR = resolve(REPO_ROOT, "assistant");
+const VIEWER_DIR = resolve(REPO_ROOT, "folio-assistant/viewer");
+const ASSISTANT_DIR = resolve(REPO_ROOT, "folio-assistant/ui");
 const VIEWER_BUILD_DIR = resolve(BUILD_DIR, "viewer");
 
 const MIME: Record<string, string> = {

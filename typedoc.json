@@ -1,15 +1,15 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "schemas/types.ts",
-    "schemas/constraints.ts",
-    "schemas/builders.ts",
-    "schemas/qou-types.ts"
+    "folio-assistant/schemas/types.ts",
+    "folio-assistant/schemas/constraints.ts",
+    "folio-assistant/schemas/builders.ts",
+    "folio-assistant/schemas/qou-types.ts"
   ],
-  "tsconfig": "schemas/tsconfig.json",
+  "tsconfig": "folio-assistant/schemas/tsconfig.json",
   "out": "build/schema-docs",
   "name": "QOU Schema Documentation",
-  "readme": "schemas/README.md",
+  "readme": "folio-assistant/schemas/README.md",
   "excludePrivate": true,
   "excludeInternal": true,
   "categorizeByGroup": true,

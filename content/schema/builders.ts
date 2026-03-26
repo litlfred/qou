@@ -23,4 +23,4 @@ export {
   paperRef,
   folio,
   document,
-} from "../../schemas/builders";
+} from "../../folio-assistant/schemas/builders";
