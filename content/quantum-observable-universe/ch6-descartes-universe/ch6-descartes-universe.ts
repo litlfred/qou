@@ -6,8 +6,7 @@ import { chapter, section } from "../../schema/builders";
  * Concrete realisations of the QOU axioms: the Archimedean model
  * (main commutative diagram, Calabi--Yau, ALE, Bring's surface,
  * instantons), p-adic and finite-field models, Witt-vector lifting,
- * Jones polynomials, fluid-dynamic and information-theoretic
- * perspectives.
+ * Jones polynomials, and fluid-dynamic perspectives.
  */
 export default chapter({
   number: 5,
@@ -116,19 +115,5 @@ export default chapter({
       ],
     }),
 
-    // ── Information theory ────────────────────────────────────────────
-    section({
-      title: "Information-Theoretic Perspectives",
-      label: "sec:info-theory",
-      blocks: [
-        "emergent-gravity-info",
-        "planck-info-unit",
-        "time-info",
-        "big-bang-info",
-        "planck-computation",
-        "quantum-brings-intro",
-        "other-euler-intro",
-      ],
-    }),
   ],
 });
