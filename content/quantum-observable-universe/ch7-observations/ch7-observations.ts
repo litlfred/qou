@@ -31,6 +31,7 @@ export default chapter({
       title: "Mass Predictions and CODATA Comparison",
       label: "sec:mass-predictions",
       blocks: [
+        "stability-cubic-plot",
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
