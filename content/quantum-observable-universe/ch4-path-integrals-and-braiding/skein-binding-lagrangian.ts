@@ -21,7 +21,7 @@ export default definition({
     "def:hadron",
     "def:substrate-parameter",
     "def:categorical-lagrangian",
-    "def:qou-canonical-action",
+    "prop:qou-canonical-action",
     "def:mass-identity",
   ],
 });

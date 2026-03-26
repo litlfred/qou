@@ -1,56 +1,51 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5 (was 4): Bring's Surface.
+ * Chapter 6: The Descartes Universe.
  *
- * The classical and quantum geometry of Bring's surface as a
- * quantum observable universe: spectral resolvents, color tube
- * coordinates, chiral fibrations, and Seiberg--Witten theory.
+ * The concrete realisation with χ(A) = −6.  Four main sections after a
+ * short preamble: (1) Bring's surface geometry and coordinates,
+ * (2) spectral and gauge structures, (3) the Descartes condition,
+ * particles, and the Descartes theorem, (4) topological mass and the
+ * knot-particle spectrum.
  */
 export default chapter({
-  number: 5,
-  title: "Bring's Surface",
-  label: "chap:brings-surface",
+  number: 6,
+  title: "The Descartes Universe",
+  label: "chap:descartes-universe",
   sections: [
+    // ── Preamble (does not count as a numbered section) ──────────────
     section({
-      title: "Bring's surface as a QOU",
-      label: "sec:brings-qou",
+      title: "Why this universe",
+      label: "sec:descartes-preamble",
       blocks: [
+        "descartes-preamble",
+      ],
+    }),
+
+    // ── §1. Bring's surface: geometry and coordinates ────────────────
+    section({
+      title: "Bring's surface: geometry and coordinates",
+      label: "sec:brings-geometry",
+      blocks: [
+        // Bring's surface as a QOU
         "brings-surface",
         "brings-realisations",
         "brings-is-qou",
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-      ],
-    }),
-
-    section({
-      title: "Lagrange resolvents and braid-group action",
-      label: "sec:resolvents-braid",
-      blocks: [
+        // Lagrange resolvents and braid-group action
         "lagrange-resolvents",
         "braid-group-action",
-      ],
-    }),
-
-    section({
-      title: "Color tube coordinates",
-      label: "sec:color-tube",
-      blocks: [
+        // Color tube coordinates
         "color-tube-coordinates",
         "aggregate-color-quantities",
         "color-tube-constraints",
         "color-tube-interpretation",
         "c5-color-tube",
         "intrinsic-color-cubic-pairing",
-      ],
-    }),
-
-    section({
-      title: "Chiral fibration and elliptic curves",
-      label: "sec:chiral-fibration",
-      blocks: [
+        // Chiral fibration and elliptic curves
         "chiral-elliptic",
         "chiral-elliptic-proof",
         "t-duality-elliptic",
@@ -59,13 +54,7 @@ export default chapter({
         "observed-value",
         "t-duality-color-tube",
         "color-tube-subloci",
-      ],
-    }),
-
-    section({
-      title: "Bundle structures and smoothness",
-      label: "sec:bundle-structures",
-      blocks: [
+        // Bundle structures and smoothness
         "chiral-bundles",
         "brings-smoothness",
         "briggs-klein-chart",
@@ -76,44 +65,107 @@ export default chapter({
       ],
     }),
 
+    // ── §2. Spectral resolvents and gauge structures ─────────────────
     section({
-      title: "Quaternionic spectral resolvents",
-      label: "sec:quaternionic-resolvents",
+      title: "Spectral resolvents and gauge structures",
+      label: "sec:spectral-gauge",
       blocks: [
-        "quaternion-so3-motivation",
+        // Quaternionic spectral resolvents (minus SO(3) motivation → ch4)
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
-        "primordial-vortex",
-        "geometric-drag",
-      ],
-    }),
-
-    section({
-      title: "Geometric resolution and Seiberg--Witten theory",
-      label: "sec:seiberg-witten",
-      blocks: [
-        "seiberg-witten",
+        // Seiberg--Witten on Bring's (generic SW → ch5 Models)
         "reeb-exceptional-divisor",
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
+        // Categorical braid structure and colour sectors
+        "exceptional-divisor",
+        "chiral-sector-coords",
+        "descartes-braid-structure",
+        "descartes-braid-structure-proof",
+        "descartes-knot-eigenbasis",
+        "skein-archimedean-shadow",
+        // The Descartes elliptic curve E_q
+        "descartes-elliptic-curve",
+        "golden-ratio-degeneration",
       ],
     }),
 
+    // ── §3. The Descartes condition, particles, and the theorem ──────
     section({
-      title: "Quantum Brings",
-      label: "sec:quantum-brings",
+      title: "The Descartes condition, particles, and the Descartes theorem",
+      label: "sec:descartes-particles",
       blocks: [
-        "quantum-brings-intro",
+        // The Descartes condition
+        "descent-to-zero",
+        "descartes-condition",
+        "descartes-calabi-yau",
+        "descent-one-dim",
+        "genus-maximal-descent",
+        "genus-maximal-descent-proof",
+        // Leptons, chirality, trefoil subgroups
+        "descartes-leptons",
+        "descartes-chirality",
+        "light-cone-affine",
+        "chirality-trefoil",
+        "brings-curve",
+        // Torus knot generators from χ = -6
+        "torus-knot-generators",
+        "embeddability-closure",
+        // Fundamental fermions (Descartes-specific assignments)
+        "up-quark",
+        "down-quark",
+        "electron-knot",
+        "positron-knot",
+        "neutrino-knot",
+        // Proton, neutron, stable nucleus
+        "categorical-proton",
+        "categorical-neutron",
+        "chirality-trefoil-electron-positron",
+        "stable-nucleus",
+        "torus-hopf-stability",
+        // Integer stability and Diophantine valley
+        "integer-stability",
+        "diophantine-valley",
+        "valley-table",
+        "valley-stability",
+        // Elliptic stability conjecture
+        "elliptic-stability-locus",
+        "skein-shell-correction",
+        "electron-shells-hopf",
+        "helium-hopf-diagram",
+        "hydrogen-knot-structure",
+        "hydrogen-orbitals",
+        // The Descartes theorem
+        "descartes",
+        "descartes-proof",
+        "universality-general",
+        "descartes-yekutieli",
+        "observation-brings",
       ],
     }),
 
+    // ── §4. Topological mass and the knot-particle spectrum ──────────
     section({
-      title: "Other Euler characteristics",
-      label: "sec:other-euler",
+      title: "Topological mass and the knot-particle spectrum",
+      label: "sec:topological-mass-spectrum",
       blocks: [
-        "other-euler-intro",
+        // Topological mass formula (Archimedean wall)
+        "topological-mass-formula",
+        "hyperbolic-volumes-prose",
+        "knot-volumes-verification",
+        // Skein decomposition and hadronic mass
+        "ch11-intro",
+        "skein-decomposition",
+        "skein-mass-relation",
+        "skein-mass-relation-proof",
+        "terminal-resolution",
+        "terminal-resolution-proof",
+        "terminal-resolution-cz",
+        // Knot-to-particle mass spectrum
+        "knot-formula-table",
+        "mass-from-generators",
       ],
     }),
   ],

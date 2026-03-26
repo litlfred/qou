@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "thm:jones-markov-trace",
     "thm:weight-decomposition-exists",
-    "def:cosimplicial-crossed-groupoid",
+    "prop:cosimplicial-crossed-groupoid",
     "def:recursive-brane-tower",
     "def:direct-limit-algebra",
   ],

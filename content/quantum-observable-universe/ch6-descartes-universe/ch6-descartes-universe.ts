@@ -1,22 +1,65 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 4 (was 5): Universality.
+ * Chapter 5: Models of QOU.
  *
- * Categorical reformulations, quantum groups, p-adic and finite-field
- * realisations, Witt-vector lifting, and Jones polynomials.
- * (Descartes-specific content moved to ch11-experimental-evidence.)
+ * Concrete realisations of the QOU axioms: the Archimedean model
+ * (main commutative diagram, Calabi--Yau, ALE, Bring's surface,
+ * instantons), p-adic and finite-field models, Witt-vector lifting,
+ * Jones polynomials, fluid-dynamic and information-theoretic
+ * perspectives.
  */
 export default chapter({
-  number: 4,
-  title: "Universality",
-  label: "chap:universality",
+  number: 5,
+  title: "Models of QOU",
+  label: "chap:models-qou",
   sections: [
+    // ── Physical interpretation and main result (from ch1 §16) ────────
+    section({
+      title: "Physical interpretation and the main result",
+      label: "sec:physical-interpretation",
+      blocks: [
+        "q-yang-mills-levi",
+        "gr-substrate-geometry",
+        "main-commutative-diagram",
+        "main-commutative-diagram-proof",
+      ],
+    }),
+
+    // ── Archimedean realisations (from ch1 §17) ──────────────────────
+    section({
+      title: "Archimedean specialisations",
+      label: "sec:archimedean-models",
+      blocks: [
+        "calabi-yau",
+        "ale",
+        "brings-surface",
+        "cosmological-limits",
+        "instanton",
+        "irreducible-connection",
+        "seiberg-witten",
+        "primordial-vortex",
+        "geometric-drag",
+        "self-dual-curvature",
+        "c-substrate-via-levi",
+        "webster-inner-product",
+        "heisenberg-commutator",
+        "reeb-decomposition",
+        "observation-archimedean",
+        "spatial-realization-functor",
+        "categorical-archimedean-bridge",
+        "categorical-archimedean-bridge-proof",
+      ],
+    }),
+
+    // ── Categorical reformulation ─────────────────────────────────────
     section({
       title: "Key Results in Categorical Language",
       label: "sec:categorical-reformulation",
       blocks: ["categorical-reformulation"],
     }),
+
+    // ── Non-Archimedean models ────────────────────────────────────────
     section({
       title: "Universal Enveloping Algebras and Quantum Groups",
       label: "sec:enveloping-algebras",
@@ -43,6 +86,8 @@ export default chapter({
         "witt-lift-qou",
       ],
     }),
+
+    // ── Finite-field models ───────────────────────────────────────────
     section({
       title: "Quotient to Finite Fields",
       label: "sec:finite-fields",
@@ -51,10 +96,39 @@ export default chapter({
         "finite-fields-outlook",
       ],
     }),
+
+    // ── Jones polynomials ─────────────────────────────────────────────
     section({
       title: "Jones Polynomials",
       label: "sec:jones-polynomials",
       blocks: ["jones-polynomials"],
+    }),
+
+    // ── Fluid dynamics ────────────────────────────────────────────────
+    section({
+      title: "Fluid Dynamics of the Brane",
+      label: "sec:brane-fluid",
+      blocks: [
+        "brane-fluid",
+        "geodesic-vortices",
+        "braid-fluid",
+        "planck-reynolds",
+      ],
+    }),
+
+    // ── Information theory ────────────────────────────────────────────
+    section({
+      title: "Information-Theoretic Perspectives",
+      label: "sec:info-theory",
+      blocks: [
+        "emergent-gravity-info",
+        "planck-info-unit",
+        "time-info",
+        "big-bang-info",
+        "planck-computation",
+        "quantum-brings-intro",
+        "other-euler-intro",
+      ],
     }),
   ],
 });

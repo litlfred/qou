@@ -1,0 +1,58 @@
+The **proton** is the baryon with $2 + 1$ crossing partition:
+two up quarks (positive orientation) and one down quark (negative
+orientation) in the Borromean link $\mathcal{B}_3$
+([Borromean quark](#conj:borromean-quark)).
+
+$$
+  \mathfrak{p}
+  \;=\;
+  \mathcal{B}_3(u,\, u,\, d)
+  \;\bowtie\; \mathcal{L}_H
+$$
+
+where:
+
+- $\mathcal{B}_3(u, u, d)$ is the Borromean link of three
+  unknots threaded through color tubes $(r, g, b)$
+  ([color tube coordinates](#def:color-tube-coordinates)):
+  two with positive crossing orientation ($u$,
+  [up quark](#def:up-quark)) and one with negative orientation
+  ($d$, [down quark](#def:down-quark)),
+
+- $\mathcal{L}_H$ is the Hopf link binding the three
+  constituents,
+
+- the $S_3$ permutation symmetry of the color tubes ensures
+  the definition is independent of the color assignment.
+
+**Mass.**
+The proton mass comes from the hyperbolic volume of the
+Borromean link:
+
+$$
+  m_{\mathfrak{p}}
+  \;=\;
+  \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
+  \cdot \lambda_{\mathrm{scale}}
+  \;+\; \text{Skein corrections}
+$$
+
+The Skein corrections arise from the crossing asymmetry between
+the $u$ and $d$ components.  The pair Skein formula gives:
+
+$$
+  m_{\mathfrak{p}}
+  \;=\;
+  \mathcal{S}_{uu}(q) + 2\,\mathcal{S}_{ud}(q)
+$$
+
+At $q = 1.10997$: $m_{\mathfrak{p}} = 938.272$ MeV.
+
+**Coulomb charge.**
+The proton carries net **positive crossing chirality**: two
+positive-orientation unknots ($u$) outweigh one negative ($d$),
+giving a net Coulomb charge
+
+$$
+  Q(\mathfrak{p}) \;=\; 2 \cdot (+\tfrac{2}{3}) + 1 \cdot (-\tfrac{1}{3}) \;=\; +1.
+$$
