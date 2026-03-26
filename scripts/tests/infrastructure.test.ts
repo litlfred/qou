@@ -132,12 +132,12 @@ describe(".gitignore", () => {
 
 describe("Schema files", () => {
   test("qou-types.ts exists", () => {
-    expect(existsSync(join(REPO_ROOT, "schemas/qou-types.ts"))).toBe(true);
+    expect(existsSync(join(REPO_ROOT, "folio-assistant/schemas/qou-types.ts"))).toBe(true);
   });
 
   test("qou-types.ts exports all key types", () => {
     const content = readFileSync(
-      join(REPO_ROOT, "schemas/qou-types.ts"),
+      join(REPO_ROOT, "folio-assistant/schemas/qou-types.ts"),
       "utf-8"
     );
     // Proof pipeline types
@@ -154,7 +154,7 @@ describe("Schema files", () => {
 
   test("constraints.ts exports Zod schemas for all block kinds", () => {
     const content = readFileSync(
-      join(REPO_ROOT, "schemas/constraints.ts"),
+      join(REPO_ROOT, "folio-assistant/schemas/constraints.ts"),
       "utf-8"
     );
     for (const schema of [

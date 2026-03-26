@@ -7,7 +7,7 @@
   "healthcheck_path": "/mcp",
   "folio": {
     "domain": "folio.litlfred.org",
-    "viewer_dir": "viewer",
+    "viewer_dir": "folio-assistant/viewer",
     "clear_cache_on_update": true
   },
   "auth": {

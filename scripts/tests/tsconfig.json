@@ -6,8 +6,8 @@
     "strict": true,
     "types": ["bun-types"],
     "paths": {
-      "@schemas/*": ["../../schemas/*"]
+      "@schemas/*": ["../../folio-assistant/schemas/*"]
     }
   },
-  "include": ["*.ts", "../../schemas/*.ts"]
+  "include": ["*.ts", "../../folio-assistant/schemas/*.ts"]
 }
