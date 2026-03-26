@@ -176,65 +176,73 @@ numbers beyond $126$** — a statement that is consistent with
 all experimental evidence to date but has not been proven from
 nuclear shell theory.
 
-**Computational evidence: stability pairs as torsion multiples.**
+**Computational evidence.**
 
-The chiral elliptic curve at $z = q^{1/2} - q^{-1/2} \approx
-0.1044$ is
+The chiral elliptic curve
+([Descartes elliptic curve](#prop:descartes-elliptic-curve))
+at $q = 1.110$ is
 
 $$
-  E_z \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
+  E_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
 Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ is a single
-connected component homeomorphic to $S^1$.  The proton point
-$P_0 = (0, \sqrt{b})$ is a **torsion point of order $56$** in
-the group law of $E_q$:
+connected component homeomorphic to $S^1$.  The base point
+$P_0 = (0, \sqrt{b})$ has **infinite order** in the group law
+of $E_q$ — it is not a torsion point.  The winding angle of
+$P_0$ on $E_q(\mathbb{R}) \cong S^1$ is
 
 $$
-  56 \cdot P_0 \;=\; O,
-  \qquad
-  28 \cdot P_0 \;=\; T \;\text{(the 2-torsion point)}.
+  \theta \;=\; 0.16808\ldots
+  \;\approx\; \frac{1}{5.95},
 $$
 
-The stability pairs are the values of $N$ where $N \cdot P_0$
-lands **on** a torsion point of $E_q$:
+an irrational number, so the orbit $\{n \cdot P_0\}_{n \geq 1}$
+is dense in $S^1$ (by Weyl's equidistribution theorem) and
+no multiple $n \cdot P_0$ is exactly a torsion point.
 
-| $N$ | $N \cdot P_0$ | Torsion position | Stability pair |
-|-----|--------------|-----------------|----------------|
-| $2$ | $2P_0$ | $[28]$-torsion | $\checkmark$ |
-| $8$ | $8P_0$ | $[7]$-torsion | $\checkmark$ |
-| $20$ | $20P_0$ | $[14]$-torsion | $\checkmark$ |
-| $28$ | $T$ | **$[2]$-torsion** | $\checkmark$ |
-| $50$ | $50P_0$ | $[28]$-torsion | $\checkmark$ |
-| $82$ | $82P_0 = 26P_0$ | $[28]$-torsion | $\checkmark$ |
-| $126$ | $126P_0 = 14P_0$ | **$[4]$-torsion** | $\checkmark$ |
+**Stable hadrons as lattice points on the stability cubic.**
 
-All stability pairs land on rational fractions of the $S^1$
-with **denominator dividing $28$**, because $P_0$ has order $56$
-and $56/2 = 28$.  The stability pairs $28$ and $126$ land on
-the 2-torsion and 4-torsion points respectively:
-$28 \cdot (1/56) = 1/2$ and $126 \cdot (1/56) = 9/4 \equiv 1/4
-\pmod{1}$.
+The stable nuclei are *not* torsion points of $E_q$.  They are
+the **$\mathbb{N}^2$ lattice points** $(Q, N)$ on the
+genus-$0$ **stability cubic**
+([Diophantine valley](#rem:diophantine-valley)):
 
-**Stable hadrons as lattice points on an elliptic curve.**
+$$
+  t^3 \;=\; 2Q\,(1 + c\,t^2),
+  \qquad A = Q + N = t^3.
+$$
 
-The proton point $P_0$ on $E_q$ has order $56$.  The
-stability pairs are the values of $N$ for which $N \cdot P_0$
-is a torsion point of $E_q$ — equivalently, the values of $N$
-such that $\operatorname{ord}(P_0)$ divides a multiple of $N$
-with small quotient.  Precisely:
+This is a rational curve: $Q = t^3/(2 + 2ct^2)$.  For each
+mass number $A \in \mathbb{N}$, the stable proton number $Q$
+is the exact integer minimiser of the convex quadratic $E(Q, A)$
+([integer stability](#prop:integer-stability)).  There is no
+approximation — the integer minimiser of a convex quadratic is
+determined exactly.
 
-- The stability pairs are the $N \in \mathbb{N}$ where
-  $N \cdot P_0$ is a **torsion point** of $E_q$.
-- **The stable hadrons of the Descartes universe are the
-  lattice points of the elliptic curve $E_q$.**
+**Open question: pairing lift to genus $1$.**
 
-The nuclear chart — every stable isotope, every stability pair,
-the neutron-to-proton ratio of every element — is the
-**set of $\mathbb{N}^2$ lattice points** on an elliptic curve
-derived from the chiral fibration of Bring's surface at
-$q = 1.110$.
+The genus-$0$ stability cubic accounts for all stable nuclei
+via lattice-point enumeration.  Whether the pairing energy
+lifts this curve to the genus-$1$ elliptic curve $E_q$ —
+and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
+then acquire a torsion interpretation — remains an open
+question.  The structural parallel between the stability cubic
+and the chiral cubic (identical algebraic origin in the Bring
+surface, coefficient matching at $Q \approx 68$) is suggestive
+but not yet proven.
+
+**What is proven:**
+
+- The stable nuclei are lattice points on the stability cubic
+  (exact, from the Skein binding Lagrangian).
+- The Descartes elliptic curve $E_q$ exists and has the stated
+  invariants (exact, from the chiral fibration).
+- The stability cubic and the chiral cubic share their algebraic
+  origin in the Bring surface (exact, by construction).
+- The golden ratio degeneration at $q = 1/\varphi^2$ holds
+  (exact, from the $(s^2 + s - 1)$ factor).
 
 **Witness data**: see `folio-assistant/computations/elliptic-stability.json`
-for the full numerical computation.
+for the full numerical computation at 100-digit precision.

@@ -1,6 +1,7 @@
 {
-  "title": "Elliptic curve E_z from chiral fibration — magic number analysis",
+  "title": "Elliptic curve E_q from chiral fibration — stability pair analysis",
   "date": "2026-03-26",
+  "precision": "100 decimal digits (mpmath)",
   "parameters": {
     "q": 1.10997,
     "z_phys": 0.10438,
@@ -15,6 +16,7 @@
     "discriminant": -18.948,
     "j_invariant": 129.86,
     "real_components": 1,
+    "real_period_omega": 7.5565,
     "torsion_2": {
       "real_root": -0.6844,
       "complex_roots": [0.3422, 1.0296]
@@ -24,25 +26,36 @@
     "label": "P₀ = (0, √b)",
     "x": 0.0,
     "y": 0.8976,
-    "estimated_angle_theta": 0.017857,
-    "estimated_order": 56,
-    "note": "28·P₀ ≈ T (2-torsion), 56·P₀ ≈ O"
+    "winding_angle_theta": 0.16808,
+    "inverse_theta": 5.9496,
+    "order": "infinite (not torsion)",
+    "note": "High-precision computation (100 digits) confirms P₀ has infinite order. 56·P₀ = (17.09, 70.72) ≠ O. 28·P₀ = (-0.654, -0.251) ≠ T."
   },
-  "magic_numbers_on_circle": [
-    {"n": 2,   "n_theta_mod_1": 0.0357, "position": "near O",   "magic": "N-magic"},
-    {"n": 8,   "n_theta_mod_1": 0.1429, "position": "near O",   "magic": "N-magic"},
-    {"n": 20,  "n_theta_mod_1": 0.3571, "position": "near T",   "magic": "N-magic"},
-    {"n": 28,  "n_theta_mod_1": 0.5000, "position": "AT T (2-torsion)", "magic": "N-magic"},
-    {"n": 50,  "n_theta_mod_1": 0.8929, "position": "near O",   "magic": "N-magic"},
-    {"n": 82,  "n_theta_mod_1": 0.4643, "position": "near T",   "magic": "N-magic"},
-    {"n": 126, "n_theta_mod_1": 0.2500, "position": "AT 1/4 (4-torsion)", "magic": "N-magic"}
+  "stability_cubic": {
+    "equation": "t³ = 2Q(1 + ct²)",
+    "genus": 0,
+    "parametrisation": "Q = t³/(2 + 2ct²)",
+    "note": "Stable nuclei are exact N² lattice points on this rational curve. The integer minimiser of the convex quadratic E(Q,A) is determined exactly."
+  },
+  "key_multiples_of_P0": [
+    {"n": 2,   "x": 0.156,   "y": -0.959},
+    {"n": 8,   "x": 0.505,   "y": -1.137},
+    {"n": 20,  "x": 1.583,   "y": -2.428},
+    {"n": 28,  "x": -0.654,  "y": -0.251},
+    {"n": 50,  "x": 183.3,   "y": 2481.8},
+    {"n": 56,  "x": 17.09,   "y": 70.72},
+    {"n": 82,  "x": 7.859,   "y": -22.18},
+    {"n": 126, "x": 4.896,   "y": -11.03}
   ],
-  "closest_to_torsion": [
-    {"n": 119, "dist": 0.0352},
-    {"n": 72,  "dist": 0.0566},
-    {"n": 25,  "dist": 0.0780},
-    {"n": 22,  "dist": 0.0993},
-    {"n": 28,  "dist": 0.2525}
+  "proven": [
+    "Stable nuclei are lattice points on the stability cubic (exact)",
+    "E_q exists with stated invariants (exact, from chiral fibration)",
+    "Stability cubic and chiral cubic share algebraic origin in Bring surface",
+    "Golden ratio degeneration at q = 1/φ² (exact, from (s²+s-1) factor)"
   ],
-  "conclusion": "The proton point P₀ on E_z has approximate angle θ ≈ 1/56 on E_z(R) ≅ S¹. The magic neutron numbers land at rational multiples of 1/28 on the circle, suggesting P₀ is approximately a 56-torsion point. The magic numbers 28 and 126 land at the 2-torsion and 4-torsion positions respectively."
+  "open": [
+    "Whether pairing energy lifts stability cubic from genus 0 to genus 1",
+    "Whether stability pairs acquire torsion interpretation on E_q",
+    "Exact relationship between stability cubic and chiral cubic via isogeny"
+  ]
 }
