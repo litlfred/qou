@@ -154,7 +154,8 @@ $m_e = 0.511$ MeV.
 | 91 | Protactinium | 91 | 140 | 143 | 3 | 45 | $215209.3$ | $215210.2$ | $7.6138$ |
 | 92 | Uranium | 92 | 146 | 145 | 1 | 46 | $221742.6$ | $221743.5$ | $7.5701$ |
 
-**Column key.** $n_{\mathrm{pred}}$ = predicted $n$ from stability cubic,
+**Column key.** $n_{\mathrm{pred}}$ = predicted $n$ from beta-stability formula
+([beta-stability](#prop:beta-stability)),
 $\Delta$ = $|n - n_{\mathrm{pred}}|$,
 $k_\alpha$ = closed $\alpha$ sub-links ($= \min(\lfloor p/2 \rfloor, \lfloor n/2 \rfloor)$),
 $M_q$ = QOU predicted mass, $M_o$ = observed mass.
