@@ -21,7 +21,7 @@
 
 import { createHash } from "crypto";
 import { readFileSync, writeFileSync, unlinkSync, existsSync } from "fs";
-import { resolve, join, basename, dirname } from "path";
+import { resolve, basename } from "path";
 import { globSync } from "glob";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");

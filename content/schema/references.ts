@@ -815,6 +815,112 @@ export const references: CSLData[] = [
     publisher: "Harper & Row",
     issued: { "date-parts": [[1958]] },
   }),
+
+  // ── BEC vortex experiments ──────────────────────────────────────
+
+  ref({
+    id: "madison2000",
+    type: "article-journal",
+    title: "Vortex formation in a stirred Bose-Einstein condensate",
+    author: [
+      { family: "Madison", given: "K. W." },
+      { family: "Chevy", given: "F." },
+      { family: "Wohlleben", given: "W." },
+      { family: "Dalibard", given: "J." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "84",
+    page: "806-809",
+    DOI: "10.1103/PhysRevLett.84.806",
+    issued: { "date-parts": [[2000]] },
+  }),
+
+  ref({
+    id: "abo-shaeer2001",
+    type: "article-journal",
+    title: "Observation of vortex lattices in Bose-Einstein condensates",
+    author: [
+      { family: "Abo-Shaeer", given: "J. R." },
+      { family: "Raman", given: "C." },
+      { family: "Vogels", given: "J. M." },
+      { family: "Ketterle", given: "W." },
+    ],
+    "container-title": "Science",
+    volume: "292",
+    page: "476-479",
+    DOI: "10.1126/science.1060182",
+    issued: { "date-parts": [[2001]] },
+  }),
+
+  ref({
+    id: "bretin2003",
+    type: "article-journal",
+    title: "Quadrupole oscillation of a single-vortex Bose-Einstein condensate: evidence for Kelvin modes",
+    author: [
+      { family: "Bretin", given: "V." },
+      { family: "Rosenbusch", given: "P." },
+      { family: "Chevy", given: "F." },
+      { family: "Shlyapnikov", given: "G. V." },
+      { family: "Dalibard", given: "J." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "90",
+    page: "100403",
+    DOI: "10.1103/PhysRevLett.90.100403",
+    issued: { "date-parts": [[2003]] },
+  }),
+
+  ref({
+    id: "fetter2009",
+    type: "article-journal",
+    title: "Rotating trapped Bose-Einstein condensates",
+    author: [
+      { family: "Fetter", given: "Alexander L." },
+    ],
+    "container-title": "Reviews of Modern Physics",
+    volume: "81",
+    page: "647-691",
+    DOI: "10.1103/RevModPhys.81.647",
+    issued: { "date-parts": [[2009]] },
+  }),
+
+  ref({
+    id: "navon2021",
+    type: "article-journal",
+    title: "Quantum gases in optical boxes",
+    author: [
+      { family: "Navon", given: "Nir" },
+      { family: "Smith", given: "Robert P." },
+      { family: "Hadzibabic", given: "Zoran" },
+    ],
+    "container-title": "Nature Physics",
+    volume: "17",
+    page: "1334-1341",
+    DOI: "10.1038/s41567-021-01403-z",
+    issued: { "date-parts": [[2021]] },
+  }),
+
+  ref({
+    id: "gauthier2019",
+    type: "article-journal",
+    title: "Giant vortex clusters in a two-dimensional quantum fluid",
+    author: [
+      { family: "Gauthier", given: "Guillaume" },
+      { family: "Reeves", given: "Matthew T." },
+      { family: "Yu", given: "Xiaoquan" },
+      { family: "Bradley", given: "Ashton S." },
+      { family: "Baker", given: "Mark A." },
+      { family: "Bell", given: "Thomas A." },
+      { family: "Rubinsztein-Dunlop", given: "Halina" },
+      { family: "Davis", given: "Matthew J." },
+      { family: "Neely", given: "Tyler W." },
+    ],
+    "container-title": "Science",
+    volume: "364",
+    page: "1264-1267",
+    DOI: "10.1126/science.aat5718",
+    issued: { "date-parts": [[2019]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
