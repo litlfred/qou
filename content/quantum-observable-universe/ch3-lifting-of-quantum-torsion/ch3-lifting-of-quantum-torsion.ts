@@ -30,6 +30,20 @@ export default chapter({
       ],
     }),
 
+    // ── Categorical lifting (from ch2 elaboration) ─────────────────────
+    section({
+      title: "Categorical Lifting: Transport and Torsion",
+      label: "sec:lifting",
+      blocks: [
+        "lifting-intro",
+        "categorical-jet-prolongation",
+        "categorical-jet-prolongation-proof",
+        "categorical-transport",
+        "categorical-q-reeb-flow",
+        "categorical-q-torsion-leaf",
+      ],
+    }),
+
     // ── Descent primitives (only need jet + brane tower) ───────────────
     section({
       title: "Descent Preliminaries",

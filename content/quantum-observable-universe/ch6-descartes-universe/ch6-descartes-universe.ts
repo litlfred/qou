@@ -46,6 +46,9 @@ export default chapter({
         "heisenberg-commutator",
         "reeb-decomposition",
         "observation-archimedean",
+        "spatial-realization-functor",
+        "categorical-archimedean-bridge",
+        "categorical-archimedean-bridge-proof",
       ],
     }),
 

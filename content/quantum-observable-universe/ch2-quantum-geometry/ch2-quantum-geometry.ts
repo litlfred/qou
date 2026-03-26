@@ -97,17 +97,6 @@ export default chapter({
       ],
     }),
 
-    // ── Spatial realization ───────────────────────────────────────────
-    section({
-      title: "Spatial realization and the categorical--geometric bridge",
-      label: "sec:spatial-realization",
-      blocks: [
-        "spatial-realization-functor",
-        "categorical-archimedean-bridge",
-        "categorical-archimedean-bridge-proof",
-      ],
-    }),
-
     // ── Substrate parameter ───────────────────────────────────────────
     section({
       title: "Substrate parameter and deformation",
@@ -271,19 +260,6 @@ export default chapter({
         "q-harmonic-physical",
         "linearisation-convention",
         "schrodinger-jet-coaction",
-      ],
-    }),
-
-    section({
-      title: "Lifting: jet prolongation, transport, and torsion",
-      label: "sec:lifting",
-      blocks: [
-        "lifting-intro",
-        "categorical-jet-prolongation",
-        "categorical-jet-prolongation-proof",
-        "categorical-transport",
-        "categorical-q-reeb-flow",
-        "categorical-q-torsion-leaf",
       ],
     }),
   ],
