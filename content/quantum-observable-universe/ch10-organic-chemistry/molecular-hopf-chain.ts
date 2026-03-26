@@ -12,6 +12,10 @@ export default definition({
     "tridiagonal",
     "spring",
   ],
+  lean: {
+    decl: "QOU.Organic.MolecularHopfChain",
+    validation: "not_checked",
+  },
   uses: [
     "def:covalent-bond-types",
     "def:crossing-energy",

@@ -14,6 +14,10 @@ export default proposition({
     "ring-closure",
     "substrate-parameter",
   ],
+  lean: {
+    decl: "QOU.Organic.benzene_weights",
+    validation: "not_checked",
+  },
   uses: [
     "prop:ring-closure-barrier",
     "def:threading-link",

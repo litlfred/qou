@@ -12,6 +12,10 @@ export default proposition({
     "topological",
     "crossing-energy",
   ],
+  lean: {
+    decl: "QOU.Organic.alexanderWeightDifference",
+    validation: "not_checked",
+  },
   uses: [
     "def:molecular-hopf-chain",
     "def:molecular-hopf-ring",

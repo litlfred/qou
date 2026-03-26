@@ -13,6 +13,10 @@ export default definition({
     "non-local",
     "correlated",
   ],
+  lean: {
+    decl: "QOU.Organic.ThreadingLink",
+    validation: "not_checked",
+  },
   uses: [
     "def:molecular-hopf-chain",
     "def:crossing-energy",
