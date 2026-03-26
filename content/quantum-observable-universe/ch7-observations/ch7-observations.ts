@@ -32,6 +32,8 @@ export default chapter({
       label: "sec:mass-predictions",
       blocks: [
         "stability-cubic-plot",
+        "neutron-prediction-comparison",
+        "q-stability-ranges",
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
