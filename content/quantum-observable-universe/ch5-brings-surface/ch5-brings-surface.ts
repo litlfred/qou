@@ -138,6 +138,7 @@ export default chapter({
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "hydrogen-knot-structure",
+        "hydrogen-orbitals",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
