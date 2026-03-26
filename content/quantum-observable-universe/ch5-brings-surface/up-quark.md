@@ -1,20 +1,29 @@
-The **up quark** is the first-generation quark: the trefoil
-$T_{2,3}$ localized in a color tube of the Bring surface.
+The **up quark** is an unknot (neutrino) localized in a color
+tube of the Bring surface with **positive crossing orientation**
+within the Borromean link $\mathcal{B}_3$
+([Borromean quark conjecture](#conj:borromean-quark)).
 
 $$
-  u \;=\; T_{2,3} \qquad \text{(trefoil, solid ●)}
+  u \;=\; \nu \,\big|_{\mathcal{B}_3,\, +}
+  \qquad\text{(unknot, positive orientation in } \mathcal{B}_3\text{)}
 $$
 
-The trefoil has Seifert genus $g(T_{2,3}) = 1$ and crossing
-number $3$.  It is the simplest nontrivial torus knot in the
-generator set $\mathcal{G}$
-([torus knot generators](#prop:torus-knot-generators)).
+The up quark is not a distinct knot type — it is the unknot
+$K_{0_1}$ ([neutrino](#def:neutrino-knot)) distinguished by
+its **environment**: threaded through a color tube
+([color tube coordinates](#def:color-tube-coordinates)) and
+Borromean-linked with two other unknots.
 
-**Visual convention.** The up quark is drawn as a **solid**
-trefoil (filled), indicating forward time direction.
+**Crossing orientation.**
+Within $\mathcal{B}_3$, each component passes over and under
+the other two at specific crossings.  The **positive
+orientation** means the up quark's crossings contribute $+q$
+to the Skein polynomial at each crossing point.  This gives
+the up quark a Coulomb charge contribution of $+2/3$ relative
+to the proton.
 
-```tex
-\begin{tikzcd}
-  \bullet \ar@(ul,ur)[]^{T_{2,3}} & \text{up quark } u
-\end{tikzcd}
-```
+**Isolation.**
+An isolated up quark does not exist: removing it from
+$\mathcal{B}_3$ unlinks the remaining two unknots, destroying
+the baryon.  The "up quark" is a label for a component of the
+Borromean structure, not a free particle.

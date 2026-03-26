@@ -1,29 +1,44 @@
-The **proton** is the baryon obtained by color-tube linking two
-up-quark generators and one down-quark Skein descendant, bound by
-the Hopf link.
-
-Let $u = T_{2,3}$ (trefoil) and $d = \sigma(T_{2,3})$ (three-twist
-$5_2$, the Skein descendant of the trefoil).  The **categorical
-proton** is the hadron ([hadron](#def:hadron))
+The **proton** is the baryon with $2 + 1$ crossing partition:
+two up quarks (positive orientation) and one down quark (negative
+orientation) in the Borromean link $\mathcal{B}_3$
+([Borromean quark](#conj:borromean-quark)).
 
 $$
   \mathfrak{p}
   \;=\;
-  [u,\, u,\, d]_c \;\bowtie\; \mathcal{L}_H
+  \mathcal{B}_3(u,\, u,\, d)
+  \;\bowtie\; \mathcal{L}_H
 $$
 
 where:
 
-- $[u, u, d]_c$ denotes color-tube linking
-  ([knot-particle generation](#def:knot-particle-generation)):
-  one $u = T_{2,3}$ threaded through each of the color tubes
-  $r$ and $g$, and one $d = \sigma(T_{2,3})$ through tube $b$
-  ([color tube coordinates](#def:color-tube-coordinates)),
-- $\mathcal{L}_H$ is the Hopf link binding the three constituents,
-- the $S_3$ permutation symmetry of the color tubes ensures the
-  definition is independent of the color assignment.
+- $\mathcal{B}_3(u, u, d)$ is the Borromean link of three
+  unknots threaded through color tubes $(r, g, b)$
+  ([color tube coordinates](#def:color-tube-coordinates)):
+  two with positive crossing orientation ($u$,
+  [up quark](#def:up-quark)) and one with negative orientation
+  ($d$, [down quark](#def:down-quark)),
 
-The mass is determined by the pair Skein formula:
+- $\mathcal{L}_H$ is the Hopf link binding the three
+  constituents,
+
+- the $S_3$ permutation symmetry of the color tubes ensures
+  the definition is independent of the color assignment.
+
+**Mass.**
+The proton mass comes from the hyperbolic volume of the
+Borromean link:
+
+$$
+  m_{\mathfrak{p}}
+  \;=\;
+  \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
+  \cdot \lambda_{\mathrm{scale}}
+  \;+\; \text{Skein corrections}
+$$
+
+The Skein corrections arise from the crossing asymmetry between
+the $u$ and $d$ components.  The pair Skein formula gives:
 
 $$
   m_{\mathfrak{p}}
@@ -31,12 +46,13 @@ $$
   \mathcal{S}_{uu}(q) + 2\,\mathcal{S}_{ud}(q)
 $$
 
-where $\mathcal{S}_{ab}(q) = (q \cdot \mu_a + q^{-1} \cdot \mu_b)
-/ (q^{1/2} + q^{-1/2})$ and $\mu_u$, $\mu_d$ are the dressed
-quark Skein masses.  At $q = 1.10997$:
-$m_{\mathfrak{p}} = 938.272$ MeV.
+At $q = 1.10997$: $m_{\mathfrak{p}} = 938.272$ MeV.
 
-The proton carries a net **positive crossing chirality**: its
-dominant trefoil content ($m = 2$ meridional winding) produces
-positive crossings when Hopf-linked with another proton.  This is
-the categorical origin of electric charge.
+**Coulomb charge.**
+The proton carries net **positive crossing chirality**: two
+positive-orientation unknots ($u$) outweigh one negative ($d$),
+giving a net Coulomb charge
+
+$$
+  Q(\mathfrak{p}) \;=\; 2 \cdot (+\tfrac{2}{3}) + 1 \cdot (-\tfrac{1}{3}) \;=\; +1.
+$$

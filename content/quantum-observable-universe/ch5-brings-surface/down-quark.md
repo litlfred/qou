@@ -1,22 +1,30 @@
-The **down quark** is the mirror image of the up quark: the
-Skein descendant $\sigma(T_{2,3})$ obtained by reversing all
-crossings of the trefoil.
+The **down quark** is an unknot (neutrino) localized in a color
+tube with **negative crossing orientation** within the
+Borromean link $\mathcal{B}_3$
+([Borromean quark conjecture](#conj:borromean-quark)).
 
 $$
-  d \;=\; \sigma(T_{2,3}) \qquad \text{(mirror trefoil, outlined ○)}
+  d \;=\; \nu \,\big|_{\mathcal{B}_3,\, -}
+  \qquad\text{(unknot, negative orientation in } \mathcal{B}_3\text{)}
 $$
 
-The mirror operation $\sigma$ reverses the crossing chirality:
-where the up quark has positive crossings (contributing $q$ to
-the Skein polynomial), the down quark has negative crossings
-(contributing $q^{-1}$).
+The down quark differs from the up quark
+([up quark](#def:up-quark)) only in **crossing orientation**:
+at each crossing point within $\mathcal{B}_3$, the down quark's
+strand passes under where the up quark passes over.  This
+reversal contributes $q^{-1}$ instead of $q$ to the Skein
+polynomial, giving the down quark a Coulomb charge contribution
+of $-1/3$ relative to the proton.
 
-**Visual convention.** The down quark is drawn as an
-**outlined** trefoil (unfilled), indicating reversed time
-direction — the same knot travelling backward in the Reeb flow.
+**Mass splitting.**
+The up and down quarks are the same knot type (unknot) in the
+same environment (Borromean-linked in a color tube).  Their
+mass difference $\mu_d - \mu_u$ arises from the **crossing
+asymmetry** ([crossing asymmetry](#rem:skein-crossing-asymmetry)):
+the Skein relation weights positive crossings by $q$ and
+negative by $q^{-1}$, so the reversed-orientation component
+has a slightly different Skein resolution energy.
 
-**Mass splitting.**  The dressed quark masses satisfy
-$\mu_d > \mu_u$ because the mirror trefoil has a larger
-hyperbolic volume contribution from the Skein resolution.
-The difference $\mu_d - \mu_u$ drives the proton--neutron
-mass splitting.
+**Isolation.**
+Like the up quark, the down quark cannot be isolated.  It is a
+label for a Borromean component, not a free particle.

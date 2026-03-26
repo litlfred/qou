@@ -3,13 +3,15 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:down-quark",
   title: "Down quark",
-  tags: ["quark", "down", "trefoil", "mirror", "fermion", "generation-1"],
+  tags: ["quark", "down", "unknot", "borromean", "fermion", "color-tube"],
   lean: {
     decl: "QOU.Descartes.DownQuark",
     validation: "not_checked",
   },
   uses: [
+    "conj:borromean-quark",
     "def:up-quark",
-    "rem:knot-notation-convention",
+    "def:neutrino-knot",
+    "def:crossing-energy",
   ],
 });

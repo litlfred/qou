@@ -1,23 +1,20 @@
-The **neutron** is the baryon obtained by color-tube linking one
-up-quark generator and two down-quark Skein descendants, bound by
-the Hopf link.
-
-With $u = T_{2,3}$ and $d = \sigma(T_{2,3})$ as in the proton
-([categorical proton](#def:categorical-proton)), the **categorical
-neutron** is
+The **neutron** is the baryon with $1 + 2$ crossing partition:
+one up quark and two down quarks in the Borromean link
+$\mathcal{B}_3$ ([Borromean quark](#conj:borromean-quark)).
 
 $$
   \mathfrak{n}
   \;=\;
-  [u,\, d,\, d]_c \;\bowtie\; \mathcal{L}_H.
+  \mathcal{B}_3(u,\, d,\, d)
+  \;\bowtie\; \mathcal{L}_H
 $$
 
-The mass is
+**Mass.**
 
 $$
   m_{\mathfrak{n}}
   \;=\;
-  2\,\mathcal{S}_{ud}(q) + \mathcal{S}_{dd}(q).
+  2\,\mathcal{S}_{ud}(q) + \mathcal{S}_{dd}(q)
 $$
 
 At $q = 1.10997$: $m_{\mathfrak{n}} = 939.565$ MeV.  The
@@ -27,15 +24,22 @@ $$
   m_{\mathfrak{n}} - m_{\mathfrak{p}}
   \;=\;
   \mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
-  \;=\;
-  \frac{q + q^{-1}}{q^{1/2} + q^{-1/2}} \, (\mu_d - \mu_u)
-  \;\approx\; 1.293 \text{ MeV}.
+  \;\approx\; 1.293 \text{ MeV}
 $$
 
-The neutron carries **zero net crossing chirality**: its dominant
-Skein-descendant content ($\sigma(T_{2,3})$, reversed meridional
-winding) cancels the positive chirality of the single trefoil.
-Inter-neutron Hopf crossings therefore pick up the coefficient
-$q^{-1}$ (negative crossings), producing an *attractive*
-enhancement relative to the baseline — the categorical expression
-of electric neutrality.
+arising from the Skein resolution asymmetry between the
+$u$-$u$ and $d$-$d$ crossing pairs within $\mathcal{B}_3$.
+
+**Coulomb charge.**
+
+$$
+  Q(\mathfrak{n}) \;=\;
+  1 \cdot (+\tfrac{2}{3}) + 2 \cdot (-\tfrac{1}{3}) \;=\; 0.
+$$
+
+The neutron is electrically neutral: its one positive-orientation
+unknot ($u$) is exactly cancelled by two negative-orientation
+unknots ($d$).  Inter-neutron Hopf crossings pick up the
+coefficient $q^{-1}$ (negative crossings), producing an
+attractive enhancement — the categorical expression of
+electric neutrality.

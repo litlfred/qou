@@ -3,13 +3,15 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:up-quark",
   title: "Up quark",
-  tags: ["quark", "up", "trefoil", "fermion", "generation-1"],
+  tags: ["quark", "up", "unknot", "borromean", "fermion", "color-tube"],
   lean: {
     decl: "QOU.Descartes.UpQuark",
     validation: "not_checked",
   },
   uses: [
-    "prop:torus-knot-generators",
-    "rem:knot-notation-convention",
+    "conj:borromean-quark",
+    "def:neutrino-knot",
+    "def:color-tube-coordinates",
+    "def:crossing-energy",
   ],
 });
