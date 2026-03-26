@@ -86,6 +86,7 @@ export default chapter({
         "lattice-layout",
         "crystal-resonance-planned",
         "crystal-resonance-experiments",
+        "bec-vortex-data",
       ],
     }),
 
