@@ -166,14 +166,12 @@ export type LeanValidation =
  * - sympy: Symbolic algebra (identities, polynomial evaluation)
  * - mpmath: Arbitrary-precision floating-point (Clausen functions, dilogarithms)
  * - sage: SageMath for number theory, algebraic geometry
- * - custom: User-provided script with explicit dependency declaration
  */
 export type ComputationEngine =
   | "snappea"
   | "sympy"
   | "mpmath"
-  | "sage"
-  | "custom";
+  | "sage";
 
 /**
  * Status of a computational verification.

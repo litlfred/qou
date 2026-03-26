@@ -150,7 +150,7 @@ export const RemarkSchema = BlockBaseSchema.extend({
 });
 
 const ComputationEngineSchema = z.enum([
-  "snappea", "sympy", "mpmath", "sage", "custom",
+  "snappea", "sympy", "mpmath", "sage",
 ]);
 
 const ComputationStatusSchema = z.enum([
