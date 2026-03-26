@@ -14,12 +14,16 @@ $p \leq 4$, with closed sub-Hopf links indicated.
 - **Blue border**: closed $2s$ sub-link (2 electrons).
 - **Brown border**: nuclear sub-link (protons + neutrons).
 
-| $p$ | Atom | $n$ | Structure | Sub-links | Shells |
-|----:|------|----:|-----------|-----------|--------|
-| 1 | H | 0 | $[\mathfrak{p}] \bowtie T_{2,3}$ | none | $1s^1$ (open) |
-| 2 | He | 2 | $[\alpha] \bowtie \underbrace{(T_{2,3} \bowtie T_{2,3})}_{\text{closed}}$ | $k_\alpha = 1$ | **$1s^2$ (closed)** |
-| 3 | Li | 4 | $[3\mathfrak{p}\,4\mathfrak{n}] \bowtie \underbrace{(T_{2,3} \bowtie T_{2,3})}_{\text{closed}} \bowtie T_{2,3}$ | $k_\alpha = 1$ | $1s^2 + 2s^1$ |
-| 4 | Be | 5 | $[4\mathfrak{p}\,5\mathfrak{n}] \bowtie \underbrace{(T_{2,3} \bowtie T_{2,3})}_{\text{closed}} \bowtie \underbrace{(T_{2,3} \bowtie T_{2,3})}_{\text{closed}}$ | $k_\alpha = 2$ | $1s^2 + 2s^2$ |
+| $p$ | Atom | $n$ | Structure | $k_\alpha$ | Shells |
+|----:|------|----:|-----------|---:|--------|
+| 1 | H | 0 | $[\mathfrak{p}] \bowtie T_{2,3}$ | 0 | $1s^1$ |
+| 2 | He | 2 | $[\alpha] \bowtie [T_{2,3} \bowtie T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
+| 3 | Li | 4 | $[3\mathfrak{p}\,4\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie T$ | 1 | $1s^2 + 2s^1$ |
+| 4 | Be | 5 | $[4\mathfrak{p}\,5\mathfrak{n}] \bowtie [T \bowtie T]^* \bowtie [T \bowtie T]^*$ | 2 | $1s^2 + 2s^2$ |
+
+$T = T_{2,3}$ (trefoil). Brackets $[\cdots]^*$ denote a
+**closed sub-Hopf link** — a sub-link that splits from the
+remaining components.
 
 **Observations.**
 
