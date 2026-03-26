@@ -140,6 +140,7 @@ export default chapter({
         "hydrogen-knot-structure",
         "hydrogen-orbitals",
         "reidemeister-mass-invariance",
+        "orbital-space-normal-bundle",
         "higgs-t28",
         // The Descartes theorem
         "descartes",
