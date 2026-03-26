@@ -206,6 +206,21 @@ function renderMdastNode(node: any): string {
     case "break":
       return "\\\\";
 
+    case "image": {
+      // Markdown image: ![alt](url) → \includegraphics
+      const url: string = node.url ?? "";
+      const alt: string = node.alt ?? "";
+      const lines: string[] = [];
+      lines.push("\\begin{figure}[htbp]");
+      lines.push("  \\centering");
+      lines.push(`  \\includegraphics[width=\\textwidth]{${url}}`);
+      if (alt) {
+        lines.push(`  \\caption{${escapeLatex(alt)}}`);
+      }
+      lines.push("\\end{figure}");
+      return lines.join("\n");
+    }
+
     default:
       // Unknown node — render children if any, otherwise empty
       if (node.children) {
@@ -252,9 +267,10 @@ const ENV_NAMES: Record<string, string> = {
  *
  * @param block - The typed block manifest
  * @param mdContent - Markdown content from the sibling .md file
+ * @param sourceDir - Directory containing the block source files (relative to repo root)
  * @returns LaTeX string
  */
-export function renderBlock(block: Block, mdContent: string): string {
+export function renderBlock(block: Block, mdContent: string, sourceDir?: string): string {
   const lines: string[] = [];
 
   switch (block.kind) {
@@ -281,12 +297,25 @@ export function renderBlock(block: Block, mdContent: string): string {
     }
 
     case "diagram": {
-      // Use extractMathContent (not markdownToLatex) to avoid list
-      // environments inside tikzcd/diagram environments.
-      const tex = block.tex || extractMathContent(mdContent);
-      if (block.label) lines.push(`% diagram: ${block.label}`);
-      lines.push(tex);
-      if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
+      const figFile = block.meta?.file as string | undefined;
+      if (figFile) {
+        // Image-based figure: meta.file points to an image asset
+        const figPath = sourceDir ? join(sourceDir, figFile) : figFile;
+        lines.push("\\begin{figure}[htbp]");
+        lines.push("  \\centering");
+        lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
+        if (block.label) lines.push(`  \\label{${block.label}}`);
+        // Caption from block.caption or block title (extra field from builders)
+        const caption = block.caption || (block as any).title || "";
+        if (caption) lines.push(`  \\caption{${escapeLatex(caption)}}`);
+        lines.push("\\end{figure}");
+      } else {
+        // TeX-based diagram (tikzcd, etc.)
+        const tex = block.tex || extractMathContent(mdContent);
+        if (block.label) lines.push(`% diagram: ${block.label}`);
+        lines.push(tex);
+        if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
+      }
       break;
     }
 
@@ -364,7 +393,7 @@ const COMPACT_OPTIONAL_KINDS = new Set(["example", "remark"]);
  */
 function collectReferencedLabels(
   rootNames: string[],
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
 ): Set<string> {
   const refs = new Set<string>();
   for (const rootName of rootNames) {
@@ -443,7 +472,7 @@ export function loadAndRenderBlock(rootName: string, objectsDir: string): {
  */
 export function renderSection(
   section: Section,
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];
@@ -462,7 +491,7 @@ export function renderSection(
     if (!shouldIncludeBlock(entry.block, referencedLabels, opts)) {
       continue;
     }
-    lines.push(renderBlock(entry.block, entry.mdContent));
+    lines.push(renderBlock(entry.block, entry.mdContent, entry.sourceDir));
     lines.push(""); // blank line between blocks
   }
 
@@ -478,7 +507,7 @@ export function renderSection(
  */
 export function renderChapter(
   chapter: Chapter,
-  blocks: Map<string, { block: Block; mdContent: string }>,
+  blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
 ): string {
   const lines: string[] = [];

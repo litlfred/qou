@@ -427,6 +427,21 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
             })
           );
 
+          // Synthesize rendered entry for diagram blocks with meta.file (image figures)
+          const figFile = blk.kind === "diagram" && blk.meta?.file as string | undefined;
+          const figRendered: ResolvedRenderedAsset[] | undefined = figFile
+            ? [{
+                mime: figFile.endsWith(".svg") ? "image/svg+xml"
+                    : figFile.endsWith(".png") ? "image/png"
+                    : figFile.endsWith(".jpg") || figFile.endsWith(".jpeg") ? "image/jpeg"
+                    : "image/png",
+                url: `/api/content-asset/${id}/${chRef.dir}/${figFile}`,
+                blockIndex: 0,
+              }]
+            : undefined;
+
+          const finalRendered = rendered || figRendered;
+
           blocks.push({
             rootName,
             kind: blk.kind,
@@ -440,7 +455,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
             tex: blk.tex,
             caption: blk.caption,
             tags: blk.tags,
-            rendered,
+            rendered: finalRendered,
             md,
             todos: blockTodos,
           });
@@ -733,6 +748,19 @@ async function resolveSection(
         })
       );
 
+      // Synthesize rendered entry for diagram blocks with meta.file (image figures)
+      const figFile2 = blk.kind === "diagram" && blk.meta?.file as string | undefined;
+      const figRendered2: ResolvedRenderedAsset[] | undefined = figFile2
+        ? [{
+            mime: figFile2.endsWith(".svg") ? "image/svg+xml"
+                : figFile2.endsWith(".png") ? "image/png"
+                : figFile2.endsWith(".jpg") || figFile2.endsWith(".jpeg") ? "image/jpeg"
+                : "image/png",
+            url: `/api/content-asset/${paperId}/${chapterDir}/${figFile2}`,
+            blockIndex: 0,
+          }]
+        : undefined;
+
       blocks.push({
         rootName,
         kind: blk.kind,
@@ -746,7 +774,7 @@ async function resolveSection(
         tex: blk.tex,
         caption: blk.caption,
         tags: blk.tags,
-        rendered,
+        rendered: rendered || figRendered2,
         md,
         todos: blockTodos,
         // Simulator fields
