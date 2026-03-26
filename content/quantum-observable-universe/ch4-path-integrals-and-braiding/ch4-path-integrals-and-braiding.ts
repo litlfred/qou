@@ -66,6 +66,7 @@ export default chapter({
         "first-order-taylor",
         "su2-generators",
         "so3-generators",
+        "quaternion-so3-motivation",
       ],
     }),
 
