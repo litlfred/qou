@@ -120,6 +120,8 @@ export default chapter({
         "diophantine-valley",
         "valley-table",
         "valley-stability",
+        // Elliptic stability conjecture
+        "elliptic-stability-locus",
         // The Descartes theorem
         "descartes",
         "descartes-proof",
