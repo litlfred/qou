@@ -1,8 +1,9 @@
 Bose--Einstein condensates (BECs) provide the cleanest
 experimental realisation of quantised vortex dynamics.  The
-data summarised here tests and constrains the $q$-deformed
-vortex spectrum of
-[Proposition](#prop:discrete-vortex-spectrum).
+results below demonstrate that the $q \to 1$ limit of the
+$\mathrm{SU}_q(2)$ vortex spectrum
+([Proposition](#prop:discrete-vortex-spectrum)) correctly
+reproduces observed BEC phenomenology.
 
 **1. Quantised circulation.**
 In ${}^{87}\mathrm{Rb}$ and ${}^{23}\mathrm{Na}$ BECs,
@@ -20,22 +21,10 @@ ladder-mode transition mechanism.
 Above a critical rotation frequency $\Omega_c$, BECs nucleate
 regular lattices of singly-quantised vortices
 \cite{abo-shaeer2001}.  The number of vortices follows the
-Feynman rule $N_v = m \Omega A / (\pi\hbar)$, where $A$ is
-the condensate area.  In the $q$-deformed brane fluid, the
-Feynman rule generalises to
-
-$$
-  N_v^{(q)} \;=\;
-  \frac{m_q \,\Omega \, A_q}{\pi \hbar_q}
-  \;=\; \frac{\Omega \, A_q}{\pi}\,
-  \frac{[1]_q}{[1]_q} \;=\; N_v \cdot
-  \frac{A_q}{A}\,\frac{\hbar}{\hbar_q},
-$$
-
-so that deviations from the classical Feynman count are
-controlled by the ratio $\hbar/\hbar_q$.  For laboratory BECs
-($q \approx 1 + 10^{-38}$), this correction is immeasurably
-small, consistent with observation.
+Feynman rule $N_v = m \Omega A / (\pi\hbar)$, where $A$ is the
+condensate area.  This is consistent with the $q \to 1$ limit
+of the $q$-Feynman rule, in which the vortex count is
+controlled by $\hbar_q$.
 
 **3. Kelvin-mode excitations.**
 Bretin et al. \cite{bretin2003} observed quadrupole
@@ -44,23 +33,8 @@ condensate, identified as the lowest Kelvin mode ($k = 1$).
 The measured frequency $\omega_1^{\text{exp}} = 2\pi \times
 (6.2 \pm 0.1)$ Hz matches the Kelvin dispersion relation.
 The $q$-deformed prediction replaces $k^2$ with
-$[k]_q^2 = [1]_q^2 = 1 + O((q-1)^2)$, again indistinguishable
+$[k]_q^2 = [1]_q^2 = 1 + O((q-1)^2)$, indistinguishable
 from the classical value at laboratory $q$.
-
-The higher Kelvin modes ($k = 2, 3, \ldots$) have been observed
-in numerical simulations and are consistent with the
-$q$-integer spacing.  A precision measurement of the
-$k$-dependence of the Kelvin spectrum could detect
-$q$-deformation through the deviation
-
-$$
-  \frac{\omega_k^{(q)}}{\omega_1^{(q)}}
-  \;=\; \frac{[k]_q^2}{[1]_q^2}
-  \;=\; k^2 + \frac{k^2(k^2-1)}{3}(q-1)^2 + O((q-1)^4),
-$$
-
-which grows as $k^4$ for large mode number.  Higher Kelvin
-modes are exponentially more sensitive to $q$-deformation.
 
 **4. Vortex clustering and turbulence.**
 Gauthier et al. \cite{gauthier2019} observed giant vortex
@@ -72,24 +46,14 @@ additive structure $j_{\text{cluster}} = j_1 + j_2 + \cdots$.
 In the $q$-deformed framework, cluster formation corresponds to
 the tensor product of $\mathrm{SU}_q(2)$ representations:
 the total spin $j_{\text{total}}$ follows the
-Clebsch--Gordan decomposition of $\mathrm{SU}_q(2)$, with
-fusion rules that differ from $\mathrm{SU}(2)$ at
-$q \neq 1$.
+Clebsch--Gordan decomposition of $\mathrm{SU}_q(2)$.
 
-**5. Box-trapped condensates.**
-Recent advances in uniform-potential BECs \cite{navon2021}
-allow measurements in homogeneous geometry, eliminating
-confining-potential artefacts.  This provides the closest
-laboratory analogue to the flat brane fluid of
-[§Fluid Dynamics of the Brane](#sec:brane-fluid).
+**Summary of observed results.**
 
-**Summary of experimental constraints.**
-
-| Observable | Measured value | $q$-deformed prediction | Sensitivity to $q-1$ |
-|---|---|---|---|
-| Circulation quantum | $h/m$ ($n=1$ only) | $[1]_q \cdot h_q/m_q$ | $O((q-1)^2)$ |
-| Vortex lattice count | Feynman rule $N_v$ | $N_v^{(q)}$ | $O(q-1)$ via $\hbar_q$ |
-| Kelvin $k=1$ frequency | $2\pi \times 6.2$ Hz | $\omega_1^{(q)}$ | $O((q-1)^2)$ |
-| Kelvin ratio $\omega_k/\omega_1$ | $k^2$ (low $k$) | $[k]_q^2/[1]_q^2$ | $O(k^4(q-1)^2)$ |
-| Cluster circulation | integer multiples of $h/m$ | $\mathrm{SU}_q(2)$ Clebsch--Gordan | Fusion rule deviations |
+| Observable | Measured value | $q \to 1$ limit |
+|---|---|---|
+| Circulation quantum | $\Gamma_n = nh/m$, integer $n$ only | $[j]_q[j+1]_q \to j(j+1)$ |
+| Vortex lattice count | Feynman rule $N_v$ | $N_v^{(q)} \to N_v$ |
+| Kelvin $k=1$ frequency | $2\pi \times 6.2$ Hz | $[1]_q^2 \to 1$ |
+| Cluster circulation | integer multiples of $h/m$ | $\mathrm{SU}_q(2) \to \mathrm{SU}(2)$ Clebsch--Gordan |
 

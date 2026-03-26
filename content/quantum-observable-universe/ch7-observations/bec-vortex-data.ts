@@ -13,8 +13,6 @@ export default remark({
     "madison2000",
     "abo-shaeer2001",
     "bretin2003",
-    "fetter2009",
-    "navon2021",
     "gauthier2019",
   ],
   tags: ["vortex", "BEC", "observation", "quantization"],
