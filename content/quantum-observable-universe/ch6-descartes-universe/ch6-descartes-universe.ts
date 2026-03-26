@@ -1,17 +1,17 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 6: $p$-Adic Structures.
+ * Chapter 6: Quantum Universes.
  *
- * Categorical reformulations, quantum groups, p-adic and finite-field
- * realisations, Witt-vector lifting, and Jones polynomials.
- * Placed after Bring's Surface / Descartes so that p-adic realisations
- * can reference the concrete χ = −6 setting.
+ * Collects the various realisations of the QOU axioms beyond the
+ * Descartes universe: p-adic, finite-field, Witt-vector, and
+ * Jones polynomial settings, plus fluid-dynamic and information-
+ * theoretic perspectives on the brane.
  */
 export default chapter({
   number: 6,
-  title: "$\\pp$-Adic Structures",
-  label: "chap:p-adic",
+  title: "Quantum Universes",
+  label: "chap:quantum-universes",
   sections: [
     section({
       title: "Key Results in Categorical Language",
@@ -56,6 +56,31 @@ export default chapter({
       title: "Jones Polynomials",
       label: "sec:jones-polynomials",
       blocks: ["jones-polynomials"],
+    }),
+
+    // ── Fluid dynamics (moved from ch4) ──────────────────────────────
+    section({
+      title: "Fluid Dynamics of the Brane",
+      label: "sec:brane-fluid",
+      blocks: [
+        "brane-fluid",
+        "geodesic-vortices",
+        "braid-fluid",
+        "planck-reynolds",
+      ],
+    }),
+
+    // ── Information theory (moved from ch4) ──────────────────────────
+    section({
+      title: "Information-Theoretic Perspectives",
+      label: "sec:info-theory",
+      blocks: [
+        "emergent-gravity-info",
+        "planck-info-unit",
+        "time-info",
+        "big-bang-info",
+        "planck-computation",
+      ],
     }),
   ],
 });

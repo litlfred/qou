@@ -1,24 +1,31 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Bring's Surface and the Descartes Universe.
+ * Chapter 5: The Descartes Universe.
  *
- * Merges the geometry of Bring's surface (χ = −6) with the Descartes
- * condition, color-tube coordinates, chiral fibrations, Seiberg--Witten
- * theory, and the categorical definitions of proton and neutron.
+ * Opens with a physical preamble (three observable colors, time,
+ * rotation on a sphere), then develops Bring's surface (χ = −6),
+ * color-tube coordinates, chiral fibrations, Seiberg--Witten theory,
+ * the Descartes condition, and the categorical definitions of proton
+ * and neutron.
  *
- * Structure: Bring's surface geometry → color tubes → bundles →
- * Descartes condition → leptons/chirality → braid structure →
- * torus knot generators → proton/neutron → Descartes theorem.
- *
- * The Archimedean wall sits after the Descartes theorem (§15);
+ * The Archimedean wall sits after the Descartes theorem;
  * all observational content is in the following Observations chapter.
  */
 export default chapter({
   number: 5,
-  title: "Bring's Surface and the Descartes Universe",
-  label: "chap:brings-descartes",
+  title: "The Descartes Universe",
+  label: "chap:descartes-universe",
   sections: [
+    // ── Physical preamble ─────────────────────────────────────────────
+    section({
+      title: "Why this universe",
+      label: "sec:descartes-preamble",
+      blocks: [
+        "descartes-preamble",
+      ],
+    }),
+
     // ── Bring's surface geometry ──────────────────────────────────────
     section({
       title: "Bring's surface as a QOU",

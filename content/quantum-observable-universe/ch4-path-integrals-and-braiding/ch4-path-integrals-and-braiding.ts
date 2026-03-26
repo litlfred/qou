@@ -1,22 +1,22 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 3: Braids, Knots and Fluid Dynamics.
+ * Chapter 3: Braids and Knots.
  *
  * Categorical origin of braiding, braid group representations,
  * SU(2)/SO(3) framework, knot groups, quantum groups, abstract hadron
- * composites and topological mass, Möbius energy, varying Euler
- * characteristic, gauge-field fluid dynamics, and information-theoretic
- * perspectives.
+ * composites and topological mass, Möbius energy, and varying Euler
+ * characteristic.
  *
  * Hadron/knot/bundle blocks absorbed from ch3-lifting §11-12 during
  * chapter restructuring (2026-03).  Proton/neutron definitions moved
  * to the Descartes chapter (Option A: nuclear binding references the
  * abstract hadron, not specific particles).
+ * Fluid dynamics and information theory moved to ch6 (Quantum Universes).
  */
 export default chapter({
   number: 3,
-  title: "Braids, Knots and Fluid Dynamics",
+  title: "Braids and Knots",
   label: "chap:path-integrals-braiding",
   sections: [
     section({
@@ -166,31 +166,6 @@ export default chapter({
         "genus-2-intro",
         "descent-mirror-intro",
         "e-minus-one",
-      ],
-    }),
-
-    // ── Gauge-field fluid dynamics (merged — 4 prose blocks) ──────────
-    section({
-      title: "Fluid Dynamics of the Brane",
-      label: "sec:brane-fluid",
-      blocks: [
-        "brane-fluid",
-        "geodesic-vortices",
-        "braid-fluid",
-        "planck-reynolds",
-      ],
-    }),
-
-    // ── Information-theoretic perspective (merged — 5 prose blocks) ───
-    section({
-      title: "Information-Theoretic Perspectives",
-      label: "sec:info-theory",
-      blocks: [
-        "emergent-gravity-info",
-        "planck-info-unit",
-        "time-info",
-        "big-bang-info",
-        "planck-computation",
       ],
     }),
   ],
