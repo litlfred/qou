@@ -203,30 +203,31 @@ theorem halfLife_decreasing_in_displacement
       (by norm_num)
   · exact mul_pos (qPrefactor_pos (hq ▸ d₁.q_gt_one)) (pow_pos (hλ ▸ d₁.lambda_C_pos) 5)
 
-/-- Sensitivity: ∂ ln Γ / ∂ ln q = (12q² - 10)/(q² - 1).
+/-- Sensitivity: ∂ ln Γ / ∂ ln q = (q² - 1)/(q² + 1) + 5(q² + 1)/(q² - 1).
 
-    At q = 1.110 this is ≈ 49, meaning a 1% shift in q changes
-    decay rates by ~50%. We state and prove the algebraic identity;
-    the numerical evaluation is a corollary. -/
+    The first term is d/d(ln q) [ln(q + q⁻¹)] and the second is
+    5 · d/d(ln q) [ln(q - q⁻¹)].  At q = 1.110 this evaluates to ≈ 48,
+    meaning a 1% shift in q changes decay rates by ~50%. -/
 -- Ref: [manuscript] §6/hadron-half-life
 noncomputable def qSensitivity (q : ℝ) : ℝ :=
-  (12 * q ^ 2 - 10) / (q ^ 2 - 1)
+  (q ^ 2 - 1) / (q ^ 2 + 1) + 5 * (q ^ 2 + 1) / (q ^ 2 - 1)
 
 /-- The sensitivity is positive for q > 1. -/
 -- Ref: [manuscript] §6/hadron-half-life
 theorem qSensitivity_pos {q : ℝ} (hq : 1 < q) : 0 < qSensitivity q := by
   unfold qSensitivity
-  apply div_pos
-  · nlinarith
-  · nlinarith
+  have hq2 : 0 < q ^ 2 - 1 := by nlinarith
+  have hq2' : 0 < q ^ 2 + 1 := by nlinarith
+  positivity
 
 /-- The sensitivity diverges as q → 1⁺ (reflecting the critical
-    transition from zero to nonzero decay rate). -/
+    transition from zero to nonzero decay rate).  The dominant term
+    5(q² + 1)/(q² - 1) → ∞ as q → 1⁺. -/
 -- Ref: [manuscript] §6/hadron-half-life
 theorem qSensitivity_large_near_one :
     ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ M < qSensitivity q := by
   intro M
-  -- For q close to 1, (12q² - 10)/(q² - 1) → 2/(q² - 1) → ∞
+  -- The term 5(q² + 1)/(q² - 1) → ∞ as q → 1⁺
   -- Ref: [manuscript] §6/hadron-half-life
   sorry
 

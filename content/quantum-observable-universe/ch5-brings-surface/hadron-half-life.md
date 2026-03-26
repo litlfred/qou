@@ -75,9 +75,11 @@ with the following $q$-dependent factors:
    Sargent rule gives $f(Q_\beta) \propto Q_\beta^5$ for allowed
    transitions.
 
-**Combined $q$-dependence.**
-Substituting $a_C = (q - q^{-1}) \cdot \lambda_C$ and
-combining the $q$-factors:
+**Combined $q$-dependence (heavy-nucleus approximation).**
+For heavy nuclei ($A \gtrsim 40$) the Coulomb curvature
+$a_C / A^{1/3}$ dominates the Pauli term $a_A / A$ in $Q_\beta$,
+so substituting $a_C = (q - q^{-1}) \cdot \lambda_C$ and
+keeping only the leading $q$-dependent piece:
 
 $$
   \Gamma_\beta

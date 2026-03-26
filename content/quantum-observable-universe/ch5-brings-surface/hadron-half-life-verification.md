@@ -50,8 +50,8 @@ formula reproduces this span from the single parameter $q$.
 The table above covers allowed Gamow--Teller and Fermi transitions.
 For first-forbidden transitions (spin change $\Delta J = 0, 1, 2$
 with parity flip), the matrix element acquires an additional
-suppression factor $\sim (R/\lambdabar_C)^2 \approx A^{2/3} \cdot
-(m_e / m_N)^2$, lengthening half-lives by $10^2$--$10^4$.  The
+suppression factor $\sim (R/\lambdabar_C)^2$, where $R$ is the
+nuclear radius, lengthening half-lives by $10^2$--$10^4$.  The
 $q$-dependence of forbidden transitions is identical to the allowed
 case — the suppression is purely geometric (nuclear radius vs
 Compton wavelength) and does not involve the substrate parameter.

@@ -33,21 +33,20 @@ extremely short half-lives, explaining why drip-line nuclei
 produced only in nuclear reactions.
 
 **Sensitivity to $q$.**
-The $q$-derivative of the decay rate,
+Since $\Gamma_\beta \propto (q + q^{-1})(q - q^{-1})^5$, the
+logarithmic derivative with respect to $\ln q$ is
 
 $$
   \frac{\partial \ln \Gamma_\beta}{\partial \ln q}
   \;=\;
-  \frac{2q^2}{q^2 - 1}
+  \frac{q^2 - 1}{q^2 + 1}
   \;+\;
-  \frac{10 q^2}{q^2 - 1}
-  \;-\;
-  \frac{10}{q^2 - 1}
-  \;=\;
-  \frac{12 q^2 - 10}{q^2 - 1},
+  5\,\frac{q^2 + 1}{q^2 - 1},
 $$
 
-evaluates to $\approx 49$ at $q = 1.110$, confirming that nuclear
+where the first term comes from $\partial_{\ln q}\ln(q + q^{-1})$
+and the second from $5\,\partial_{\ln q}\ln(q - q^{-1})$.  This
+evaluates to $\approx 48$ at $q = 1.110$, confirming that nuclear
 half-lives are exquisitely sensitive to $q$: a $1\%$ shift in $q$
 changes decay rates by $\sim 50\%$.  This extreme sensitivity is why
 the valley of stability has the narrow, sharply-defined shape observed
