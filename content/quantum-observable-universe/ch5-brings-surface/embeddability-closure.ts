@@ -23,7 +23,7 @@ export default theorem({
     "def:hadron",
     "rem:hadron-operations",
     "prop:skein-generation",
-    "thm:euler-char-stability",
+    "prop:euler-char-stability",
   ],
   proofs: ["prf:embeddability-closure"],
 });

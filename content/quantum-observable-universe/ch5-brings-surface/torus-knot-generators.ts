@@ -18,7 +18,7 @@ export default proposition({
     "def:knot-particle-generation",
     "def:hadron",
     "prop:skein-generation",
-    "thm:euler-char-stability",
+    "prop:euler-char-stability",
     "rem:knot-particle-dictionary",
     "def:recursive-brane-tower",
   ],

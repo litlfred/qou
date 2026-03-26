@@ -1,17 +1,25 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5 (was 4): Bring's Surface.
+ * Chapter 5: Bring's Surface and the Descartes Universe.
  *
- * The classical and quantum geometry of Bring's surface as a
- * quantum observable universe: spectral resolvents, color tube
- * coordinates, chiral fibrations, and Seiberg--Witten theory.
+ * Merges the geometry of Bring's surface (χ = −6) with the Descartes
+ * condition, color-tube coordinates, chiral fibrations, Seiberg--Witten
+ * theory, and the categorical definitions of proton and neutron.
+ *
+ * Structure: Bring's surface geometry → color tubes → bundles →
+ * Descartes condition → leptons/chirality → braid structure →
+ * torus knot generators → proton/neutron → Descartes theorem.
+ *
+ * The Archimedean wall sits after the Descartes theorem (§15);
+ * all observational content is in the following Observations chapter.
  */
 export default chapter({
   number: 5,
-  title: "Bring's Surface",
-  label: "chap:brings-surface",
+  title: "Bring's Surface and the Descartes Universe",
+  label: "chap:brings-descartes",
   sections: [
+    // ── Bring's surface geometry ──────────────────────────────────────
     section({
       title: "Bring's surface as a QOU",
       label: "sec:brings-qou",
@@ -101,18 +109,89 @@ export default chapter({
       ],
     }),
 
+    // ── Descartes condition and structure (from ch11 §1-6) ────────────
     section({
-      title: "Quantum Brings",
-      label: "sec:quantum-brings",
+      title: "The Descartes condition",
+      label: "sec:descartes-condition",
       blocks: [
-        "quantum-brings-intro",
+        "descent-to-zero",
+        "descartes-condition",
+        "descartes-calabi-yau",
+        "descent-one-dim",
+        "genus-maximal-descent",
+        "genus-maximal-descent-proof",
       ],
     }),
 
+    // (Trefoil subgroups merged with leptons — both ≤3 blocks)
     section({
-      title: "Other Euler characteristics",
-      label: "sec:other-euler",
+      title: "Leptons, chirality, and trefoil subgroups",
+      label: "sec:descartes-leptons-chirality",
       blocks: [
+        "descartes-leptons",
+        "descartes-chirality",
+        "light-cone-affine",
+        "chirality-trefoil",
+        "brings-curve",
+      ],
+    }),
+
+    // (Colour-sector coords merged with braid structure)
+    section({
+      title: "Categorical braid structure and colour sectors",
+      label: "sec:descartes-braid",
+      blocks: [
+        "exceptional-divisor",
+        "chiral-sector-coords",
+        "descartes-braid-structure",
+        "descartes-braid-structure-proof",
+        "descartes-knot-eigenbasis",
+        "skein-archimedean-shadow",
+      ],
+    }),
+
+    // ── Torus knot generators and embeddability (from ch3) ────────────
+    // χ(A) = −6 ⟹ genus 4 ⟹ only finitely many torus knots embed,
+    // selecting the specific generator set that produces all particles.
+    section({
+      title: "Torus knot generators from $\\chi = -6$",
+      label: "sec:torus-knot-generators",
+      blocks: [
+        "torus-knot-generators",
+        "embeddability-closure",
+      ],
+    }),
+
+    // ── Categorical proton, neutron, stable nucleus (from ch3) ────────
+    section({
+      title: "Categorical proton, neutron, and stable nucleus",
+      label: "sec:categorical-particles",
+      blocks: [
+        "categorical-proton",
+        "categorical-neutron",
+        "stable-nucleus",
+      ],
+    }),
+
+    // ── The Descartes theorem ─────────────────────────────────────────
+    section({
+      title: "The Descartes theorem",
+      label: "sec:descartes-theorem",
+      blocks: [
+        "descartes",
+        "descartes-proof",
+        "universality-general",
+        "descartes-yekutieli",
+        "observation-brings",
+      ],
+    }),
+
+    // ── Misc (stub remarks) ──────────────────────────────────────────
+    section({
+      title: "Further directions",
+      label: "sec:brings-misc",
+      blocks: [
+        "quantum-brings-intro",
         "other-euler-intro",
       ],
     }),

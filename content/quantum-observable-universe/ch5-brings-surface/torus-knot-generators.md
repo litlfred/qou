@@ -1,7 +1,12 @@
-The generator set $\mathcal{G}$ of torus knots
-([knot-particle generation](#def:knot-particle-generation)) is
-finite, and its cardinality is determined by the Euler characteristic
-of the Frobenius--Hopf object.
+The Euler characteristic $\chi(A) = -6$ of the Bring surface is
+the reason torus knots serve as the generators of the particle
+spectrum.  Because the Bring surface has genus $g = 4$
+(from $\chi = 2 - 2g = -6$), there is a hard upper bound on
+which torus knots can be localized in the fibre: any $T_{m,n}$
+whose Seifert genus exceeds $4$ simply cannot embed.  This
+constraint selects a finite, enumerable generator set
+$\mathcal{G}$ ([knot-particle generation](#def:knot-particle-generation))
+whose cardinality is entirely determined by $\chi$.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with

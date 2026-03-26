@@ -14,7 +14,7 @@ export default remark({
     "binding",
   ],
   uses: [
-    "def:r-matrix-braiding",
+    "rem:r-matrix-braiding",
     "def:substrate-parameter",
     "rem:hadron-operations",
     "prop:terminal-resolution",

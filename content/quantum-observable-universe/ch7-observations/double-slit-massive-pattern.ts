@@ -10,7 +10,7 @@ export default proposition({
   uses: [
     "def:double-slit-q-phase",
     "def:q-harmonic-form",
-    "def:q-laplacian-expansion",
+    "rem:q-laplacian-expansion",
     "def:q-hodge-star",
   ],
   tags: ["double-slit", "interference", "massive-particle", "q-laplacian"],

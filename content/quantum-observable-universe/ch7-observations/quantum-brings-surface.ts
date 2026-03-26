@@ -14,7 +14,7 @@ export default simulator({
   uses: [
     "def:brings-surface",
     "def:quaternionic-spectral-resolvents",
-    "def:chiral-elliptic",
+    "prop:chiral-elliptic",
     "def:color-tube-coordinates",
   ],
   tags: ["brings-surface", "chiral", "quantum", "julia-set", "3d", "simulation"],

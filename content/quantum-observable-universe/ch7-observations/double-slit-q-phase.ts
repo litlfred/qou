@@ -11,7 +11,7 @@ export default definition({
     "def:categorical-q-ext-deriv",
     "def:substrate-parameter",
     "def:quantum-planck-constant",
-    "def:categorical-reeb-derivation",
+    "def:categorical-reeb",
   ],
   tags: ["double-slit", "phase", "q-deformation", "interference"],
 });

@@ -1,12 +1,18 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 4: Braids, Knots and Fluid Dynamics.
+ * Chapter 3: Braids, Knots and Fluid Dynamics.
  *
  * Categorical origin of braiding, braid group representations,
- * SU(2)/SO(3) framework, knot groups, quantum groups,
- * varying Euler characteristic, gauge-field fluid dynamics,
- * and information-theoretic perspectives.
+ * SU(2)/SO(3) framework, knot groups, quantum groups, abstract hadron
+ * composites and topological mass, Möbius energy, varying Euler
+ * characteristic, gauge-field fluid dynamics, and information-theoretic
+ * perspectives.
+ *
+ * Hadron/knot/bundle blocks absorbed from ch3-lifting §11-12 during
+ * chapter restructuring (2026-03).  Proton/neutron definitions moved
+ * to the Descartes chapter (Option A: nuclear binding references the
+ * abstract hadron, not specific particles).
  */
 export default chapter({
   number: 3,
@@ -47,6 +53,7 @@ export default chapter({
         "braid-symmetric-intro",
         "braid-group",
         "s3-group",
+        "knot-notation-convention",
       ],
     }),
 
@@ -106,16 +113,6 @@ export default chapter({
     }),
 
     section({
-      title: "Nuclear Binding Lagrangian",
-      label: "sec:nuclear-binding-lagrangian",
-      blocks: [
-        "skein-binding-lagrangian",
-        "nuclear-binding-from-canonical-action",
-        "beta-stability",
-      ],
-    }),
-
-    section({
       title: "Categorical Möbius energy and self-avoidance",
       label: "sec:mobius-energy",
       blocks: [
@@ -126,73 +123,75 @@ export default chapter({
       ],
     }),
 
+    // ── Hadrons and knot composites (from ch3 §11) ────────────────────
     section({
-      title: "Varying Euler characteristic",
-      label: "sec:varying-euler",
+      title: "Hadrons and Knot Composites",
+      label: "sec:hadrons-knot-composites",
       blocks: [
-        "varying-euler-intro",
-        "genus-2-intro",
+        "hadron",
+        "hadron-operations",
+        "knot-factorization",
+        "localized-hadron",
+        "hadron-fibre-embedding",
+        "skein-generation",
+        "skein-generation-proof",
+        "knot-particle-generation",
+        "knot-particle-dictionary",
+        "bundle-initial-conditions",
+        "bundle-isotopy-equivalence",
+        "torsion-knot-flow",
+        "bundle-category",
       ],
     }),
 
+    // ── Topological mass + nuclear binding (from ch3 §12 + ch4 §9) ───
     section({
-      title: "Descent from $E_1$ to $E_0$ and the mirror bundle $E_{-1}$",
-      label: "sec:descent-mirror",
+      title: "Topological Mass and Nuclear Binding",
+      label: "sec:topological-mass-binding",
       blocks: [
+        "topological-mass",
+        "topological-mass-categorical-proof",
+        "skein-binding-lagrangian",
+        "nuclear-binding-from-canonical-action",
+        "beta-stability",
+      ],
+    }),
+
+    // ── Varying Euler + mirror bundle (merged — 2+2 blocks) ──────────
+    section({
+      title: "Varying Euler Characteristic and the Mirror Bundle",
+      label: "sec:varying-euler-mirror",
+      blocks: [
+        "varying-euler-intro",
+        "genus-2-intro",
         "descent-mirror-intro",
         "e-minus-one",
       ],
     }),
 
-    // ── Gauge-field fluid dynamics (formerly Ch. 8) ──────────────
-
+    // ── Gauge-field fluid dynamics (merged — 4 prose blocks) ──────────
     section({
       title: "Fluid Dynamics of the Brane",
       label: "sec:brane-fluid",
-      blocks: ["brane-fluid"],
-    }),
-    section({
-      title: "Geodesics as Stable Vortex Points",
-      label: "sec:geodesic-vortices",
-      blocks: ["geodesic-vortices"],
-    }),
-    section({
-      title: "Braid Operators in the Fluid Picture",
-      label: "sec:braid-fluid",
-      blocks: ["braid-fluid"],
-    }),
-    section({
-      title: "$q$-Parameter, Planck Limit, and Reynolds Number",
-      label: "sec:planck-reynolds",
-      blocks: ["planck-reynolds"],
+      blocks: [
+        "brane-fluid",
+        "geodesic-vortices",
+        "braid-fluid",
+        "planck-reynolds",
+      ],
     }),
 
-    // ── Information-theoretic perspective (formerly Ch. 9) ───────
-
+    // ── Information-theoretic perspective (merged — 5 prose blocks) ───
     section({
-      title: "Emergent Gravity from Information Theory",
-      label: "sec:emergent-gravity-info",
-      blocks: ["emergent-gravity-info"],
-    }),
-    section({
-      title: "Local Planck Length as Minimal Information Unit",
-      label: "sec:planck-info-unit",
-      blocks: ["planck-info-unit"],
-    }),
-    section({
-      title: "Time as Information Transfer",
-      label: "sec:time-info",
-      blocks: ["time-info"],
-    }),
-    section({
-      title: "Big Bang as Initial Information State",
-      label: "sec:big-bang-info",
-      blocks: ["big-bang-info"],
-    }),
-    section({
-      title: "Planck Units and Computational Mechanics",
-      label: "sec:planck-computation",
-      blocks: ["planck-computation"],
+      title: "Information-Theoretic Perspectives",
+      label: "sec:info-theory",
+      blocks: [
+        "emergent-gravity-info",
+        "planck-info-unit",
+        "time-info",
+        "big-bang-info",
+        "planck-computation",
+      ],
     }),
   ],
 });

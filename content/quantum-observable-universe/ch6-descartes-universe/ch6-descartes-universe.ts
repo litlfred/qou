@@ -1,16 +1,17 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 4 (was 5): Universality.
+ * Chapter 6: $p$-Adic Structures.
  *
  * Categorical reformulations, quantum groups, p-adic and finite-field
  * realisations, Witt-vector lifting, and Jones polynomials.
- * (Descartes-specific content moved to ch11-experimental-evidence.)
+ * Placed after Bring's Surface / Descartes so that p-adic realisations
+ * can reference the concrete χ = −6 setting.
  */
 export default chapter({
-  number: 4,
-  title: "Universality",
-  label: "chap:universality",
+  number: 6,
+  title: "$\\pp$-Adic Structures",
+  label: "chap:p-adic",
   sections: [
     section({
       title: "Key Results in Categorical Language",
