@@ -71,6 +71,7 @@ When a user request arrives, route to the right skill(s):
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 | "diff / changes / what changed / undo" | `local/diff` | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
+| "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 
 ### Skill role assignments
 
@@ -80,7 +81,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 

@@ -20,5 +20,6 @@ export default remark({
     "def:borromean-baryon",
     "conj:electron-shells-hopf",
     "prop:orbital-fourier-decomposition",
+    "def:substrate-parameter",
   ],
 });
