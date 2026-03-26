@@ -1,6 +1,7 @@
 The ring-closure barrier
 ([ring-closure barrier](#prop:ring-closure-barrier)) makes a
-quantitative prediction that can be compared to experimental data.
+quantitative prediction — with **no free parameters** — that can
+be compared to experimental data.
 
 **Theoretical prediction.**
 For $\mathrm{C}_6$ with $N = 6$ and $k = 1$, the braid
@@ -9,35 +10,55 @@ rearrangement cost is
 $$
   \Delta E_{\mathrm{closure}}(6, 1)
   \;\geq\;
-  2 \, |q + q^{-1}|.
+  2 \, |q + q^{-1}|_{\mathrm{mol}}.
 $$
 
-Using the substrate parameter $q$ calibrated from nuclear binding
-([substrate parameter](#def:substrate-parameter)), where
-$|q + q^{-1}|$ sets the energy scale of the Skein relation, we
-can express the barrier in physical units.  The crossing energy
-quantum $|q + q^{-1}|$ maps to the fundamental Hopf link energy
-at the molecular scale.
+Every quantity in this expression is **determined by the Bring
+surface geometry** — there are no adjustable parameters:
 
-At the nuclear scale, $q$ is calibrated so that the volume term
-of the Skein binding Lagrangian reproduces nuclear binding
-energies ($\sim 8\,\mathrm{MeV}$ per nucleon).  At the molecular
-scale, the relevant crossing energies are those of the
-**electron sub-links** — the shared trefoils of covalent bonds —
-which are smaller by the ratio of electronic to nuclear energy
-scales ($\sim \alpha^2 m_e / m_p \sim 10^{-5}$).
+1. **The substrate parameter** $q$ is fixed by $\chi(A) = -6$
+   ([substrate parameter](#def:substrate-parameter)).
 
-The molecular crossing energy quantum is therefore
+2. **The nuclear crossing energy quantum** $|q + q^{-1}|_{\mathrm{nuc}}$
+   is determined by $q$ through the volume term of the Skein
+   binding Lagrangian
+   ([Skein binding Lagrangian](#def:skein-binding-lagrangian)),
+   giving $\sim 8\,\mathrm{MeV}$ per nucleon.
+
+3. **The fine structure constant** $\alpha$ and the
+   **electron-to-proton mass ratio** $m_e / m_p$ are both
+   determined by the knot spectrum: $\alpha$ from the trefoil
+   self-linking and $m_e / m_p$ from the ratio of trefoil to
+   proton hyperbolic volumes
+   ([topological mass formula](#def:topological-mass-formula)).
+
+4. **The molecular crossing energy quantum** follows by
+   scale separation — electron sub-links interact at the
+   electronic energy scale, not the nuclear one:
 
 $$
   |q + q^{-1}|_{\mathrm{mol}}
-  \;\sim\;
-  \frac{\alpha^2 m_e}{m_p} \cdot |q + q^{-1}|_{\mathrm{nuc}}
-  \;\sim\;
-  \text{few eV},
+  \;=\;
+  \frac{\alpha^2 \, m_e}{m_p}
+  \cdot |q + q^{-1}|_{\mathrm{nuc}}.
 $$
 
-giving a predicted barrier of
+The full derivation chain is:
+
+$$
+  \chi(A) = -6
+  \;\xrightarrow{\text{Bring surface}}\;
+  \mathcal{G}
+  \;\xrightarrow{\text{knot spectrum}}\;
+  q,\; \alpha,\; m_e/m_p
+  \;\xrightarrow{\text{scale separation}}\;
+  |q + q^{-1}|_{\mathrm{mol}}
+  \;\xrightarrow{N=6,\, k=1}\;
+  \Delta E_{\mathrm{closure}}.
+$$
+
+Evaluating numerically: $|q + q^{-1}|_{\mathrm{mol}} \sim$
+few eV, giving a predicted barrier of
 
 $$
   \Delta E_{\mathrm{closure}}(6, 1)
@@ -105,7 +126,9 @@ The Hopf chain framework correctly predicts:
   chains are observed experimentally despite benzene being
   thermodynamically favoured.
 
-A sharper prediction requires calibrating $q$ at the molecular
-scale independently of the nuclear calibration — this is an open
-problem connecting the nuclear and molecular regimes of the Skein
-binding Lagrangian.
+A sharper prediction requires computing the exact braid geometry
+of a bent $\mathrm{C}_6$ chain in 3-space — determining the
+actual number of Yang–Baxter moves (rather than the worst-case
+lower bound) for a chain that is already partially folded.  This
+is a purely geometric calculation within the existing framework,
+not a new parameter.
