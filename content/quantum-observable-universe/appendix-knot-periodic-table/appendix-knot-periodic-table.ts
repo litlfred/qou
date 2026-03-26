@@ -17,6 +17,7 @@ export default chapter({
       title: "Knot formulas for all elements",
       label: "sec:knot-periodic-table",
       blocks: [
+        "knot-atom-diagrams",
         "knot-periodic-table",
       ],
     }),
