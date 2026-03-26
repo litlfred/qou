@@ -139,6 +139,7 @@ export default chapter({
         "helium-hopf-diagram",
         "hydrogen-knot-structure",
         "hydrogen-orbitals",
+        "reidemeister-mass-invariance",
         "higgs-t28",
         // The Descartes theorem
         "descartes",
