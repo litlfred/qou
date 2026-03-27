@@ -23,6 +23,16 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+- **NO APPROXIMATIONS unless explicitly labeled as such.**
+- **NO correction factors, fudge factors, or empirical scaling.**
+- **NO formulas that are not derived from the categorical action.**
+- **Every quantity must trace back to the categorical definitions:**
+  $(\mathbf{C}, A, \tau)$, $q$, $\chi$, and the Skein relation.
+- If a computation cannot be done exactly, say so. Do not introduce
+  smooth approximations (Bethe-Weizsäcker, power laws, fitted
+  coefficients) and present them as derived results.
+- The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
+  is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
 
 ### 3. Statistical and Methodological Soundness
 - Statistical methods are appropriate for the analysis.
