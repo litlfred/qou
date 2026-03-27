@@ -921,6 +921,78 @@ export const references: CSLData[] = [
     DOI: "10.1126/science.aat5718",
     issued: { "date-parts": [[2019]] },
   }),
+
+  // ── Nature Physics: Kleckner & Irvine 2013 ─────────────────────
+  ref({
+    id: "kleckner2013",
+    type: "article-journal",
+    title: "Creation and dynamics of knotted vortices",
+    author: [
+      { family: "Kleckner", given: "Dustin" },
+      { family: "Irvine", given: "William T. M." },
+    ],
+    "container-title": "Nature Physics",
+    volume: "9",
+    issue: "4",
+    page: "253-258",
+    DOI: "10.1038/nphys2560",
+    issued: { "date-parts": [[2013]] },
+  }),
+
+  // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
+  ref({
+    id: "scheeler2014",
+    type: "article-journal",
+    title: "Helicity conservation by flow across scales in reconnecting vortex links and knots",
+    author: [
+      { family: "Scheeler", given: "Martin W." },
+      { family: "van Rees", given: "Wim M." },
+      { family: "Kedia", given: "Hridesh" },
+      { family: "Kleckner", given: "Dustin" },
+      { family: "Irvine", given: "William T. M." },
+    ],
+    "container-title": "Proceedings of the National Academy of Sciences",
+    volume: "111",
+    issue: "43",
+    page: "15350-15355",
+    DOI: "10.1073/pnas.1407232111",
+    issued: { "date-parts": [[2014]] },
+  }),
+
+  // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
+  ref({
+    id: "christenson1964",
+    type: "article-journal",
+    title: "Evidence for the $2\\pi$ Decay of the $K_2^0$ Meson",
+    author: [
+      { family: "Christenson", given: "J. H." },
+      { family: "Cronin", given: "J. W." },
+      { family: "Fitch", given: "V. L." },
+      { family: "Turlay", given: "R." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "13",
+    issue: "4",
+    page: "138-140",
+    DOI: "10.1103/PhysRevLett.13.138",
+    issued: { "date-parts": [[1964]] },
+  }),
+
+  // ── PRL: Aubert et al. 2001 (BaBar CP violation in B mesons) ───
+  ref({
+    id: "aubert2001",
+    type: "article-journal",
+    title: "Observation of CP Violation in the $B^0$ Meson System",
+    author: [
+      { family: "Aubert", given: "B." },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "87",
+    issue: "9",
+    page: "091801",
+    DOI: "10.1103/PhysRevLett.87.091801",
+    issued: { "date-parts": [[2001]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:color-tube-coordinates",
   label: "rem:aggregate-color-quantities",
   title: "Aggregate color quantities",
   uses: ["def:color-tube-coordinates", "rem:lagrange-resolvents"],

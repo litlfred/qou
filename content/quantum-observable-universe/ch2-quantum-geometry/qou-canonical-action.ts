@@ -16,7 +16,7 @@ export default proposition({
     "def:substrate-parameter",
     "def:q-hodge-star",
     "def:categorical-connection",
-    "rem:categorical-action-notation",
+    "sec:categorical-action-notation",
     "rem:yekutieli-stokes",
     "def:yekutieli-lifting-condition",
   ],

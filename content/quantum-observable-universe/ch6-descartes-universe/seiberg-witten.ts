@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:quantum-observable-universe",
   label: "rem:seiberg-witten",
   title: "Geometric resolution and the Seiberg--Witten differential",
   uses: [

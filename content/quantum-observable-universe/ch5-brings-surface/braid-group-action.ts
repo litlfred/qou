@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:braid-group",
   label: "rem:braid-group-action",
   title: "Braid-group action on the resolvents",
   uses: [

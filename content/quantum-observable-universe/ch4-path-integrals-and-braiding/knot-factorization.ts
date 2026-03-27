@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:hadron",
   label: "rem:knot-factorization",
   title: "Knot factorization through tensor powers of $V$",
   uses: [

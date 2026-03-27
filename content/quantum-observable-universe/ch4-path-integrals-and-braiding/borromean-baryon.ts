@@ -11,6 +11,6 @@ export default definition({
   uses: [
     "def:hadron",
     "def:crossing-energy",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

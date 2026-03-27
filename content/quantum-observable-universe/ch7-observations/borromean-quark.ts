@@ -20,6 +20,6 @@ export default conjecture({
     "def:crossing-energy",
     "prop:torus-knot-generators",
     "def:color-tube-coordinates",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

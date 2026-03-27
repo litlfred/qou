@@ -90,6 +90,24 @@ export default chapter({
       ],
     }),
 
+    // ── Complexity and interpretation ──────────────────────────────────
+    section({
+      title: "Complexity and Interpretation",
+      label: "sec:complexity-interpretation",
+      blocks: [
+        "complex-chirality-rotation",
+        "trefoil-vortex-chirality-flip",
+        "pair-creation-energy",
+        "crossing-energy-decomposition",
+        "crossing-energy-interpretation",
+        "time-reversal-energy-barrier",
+        "virtual-particles-exceptional-divisor",
+        "cp-violation-evidence",
+        "cosmological-chirality-flip",
+        "electron-immortality",
+      ],
+    }),
+
     // ── Interactive simulations ───────────────────────────────────────
     section({
       title: "Interactive Simulations",

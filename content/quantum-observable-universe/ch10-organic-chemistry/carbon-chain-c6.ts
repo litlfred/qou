@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:molecular-hopf-chain",
   label: "ex:carbon-chain-c6",
   title: "Linear $\\mathrm{C}_6$ Hopf chain",
   tags: [

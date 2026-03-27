@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:categorical-reeb",
   label: "ex:q-reeb-flow",
   title: "$q$-Deformed Reeb flow",
   lean: { decl: "QOU.QReebFlow", validation: "not_checked" },

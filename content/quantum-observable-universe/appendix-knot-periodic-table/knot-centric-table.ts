@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:nuclear-shell-intruder",
   label: "rem:knot-centric-table",
   title:
     "Knot-centric periodic table: reorganization by nuclear and electronic knot structure",

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:jet-prolongation",
   label: "rem:descent-one-dim",
   title: "Descent to one complex dimension",
   tags: ["descartes-universe", "descent"],

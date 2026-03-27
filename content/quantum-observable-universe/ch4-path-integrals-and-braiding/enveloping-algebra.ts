@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:su2-basis",
   label: "rem:enveloping-algebra",
   title: "Universal enveloping algebra",
   tags: ["enveloping-algebra", "pbw", "quantum-group"],

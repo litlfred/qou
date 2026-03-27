@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:hydrogen-shell-writhe",
   label: "rem:hydrogen-orbitals",
   title:
     "Hydrogen orbitals: the spinning trefoil around the Borromean anchor",
@@ -21,5 +22,6 @@ export default remark({
     "def:electron-knot",
     "def:categorical-proton",
     "def:crossing-energy",
+    "prop:hydrogen-shell-writhe",
   ],
 });

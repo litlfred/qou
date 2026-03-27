@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:integer-stability",
   label: "rem:stability-cubic-plot",
   title:
     "The stability cubic at $q = 1.110$: lattice points and the nuclear chart",

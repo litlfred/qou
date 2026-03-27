@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:double-slit-massive-pattern",
   label: "rem:double-slit-two-modes",
   title: "Two scattering modes and band-width anomalies",
   uses: [

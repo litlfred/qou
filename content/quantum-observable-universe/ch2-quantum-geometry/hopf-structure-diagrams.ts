@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:quantum-observable-universe",
   label: "rem:hopf-structure-diagrams",
   title: "Hopf-algebra structure: coassociativity",
   tags: ["hopf-algebra"],

@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:knot-notation-convention",
+export default prose({
+  label: "sec:knot-notation-convention",
   title: "Knot and link notation",
   tags: ["notation", "convention", "knot", "link"],
 });

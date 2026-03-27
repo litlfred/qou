@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:observation",
   label: "rem:observation-brings",
   title: "Observations on the Bring surface",
   tags: ["descartes-universe", "observation", "brings-surface"],

@@ -446,11 +446,29 @@ export interface ExampleBlock extends BlockBase {
   lean?: LeanRef;
 }
 
-/** Remark — expository commentary. Rarely needs Lean. */
+/**
+ * Remark — interprets a provable block (definition, proposition, theorem, etc.).
+ *
+ * Every remark should either:
+ * 1. Set `interprets` to the label of the block it interprets, or
+ * 2. Be a glossary remark (tagged "glossary", Ch 8 only), or
+ * 3. Be flagged as "dangling" by the remark-audit constraint.
+ *
+ * Remarks without `interprets` that make mathematical claims should be
+ * promoted to propositions/lemmas with their own Lean formalization.
+ */
 export interface RemarkBlock extends BlockBase {
   kind: "remark";
   /** Optional Lean reference (unusual but allowed). */
   lean?: LeanRef;
+  /**
+   * Label of the provable block this remark interprets.
+   *
+   * Links the remark to its formal backing: the definition, proposition,
+   * theorem, or lemma whose physical/mathematical meaning this remark
+   * explains. The referenced block should have Lean formalization.
+   */
+  interprets?: string;
 }
 
 /**

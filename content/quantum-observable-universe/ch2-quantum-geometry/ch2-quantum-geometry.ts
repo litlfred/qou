@@ -168,11 +168,13 @@ export default chapter({
       blocks: [
         "vector-calculus-bridge",
         "q-laplacian-interpretation",
+        "q-codifferential-formula-prop",
         "q-codifferential-formula",
         "q-laplacian-expansion",
         "hodge-laplacian-relation",
         "q-harmonic-particle",
         "brings-geometric-connection",
+        "complex-substrate-interpretation",
       ],
     }),
 

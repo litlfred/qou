@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "prop:categorical-self-duality",
   label: "ex:self-dual-curvature",
   title: "Self-duality of the curvature",
   tags: ["self-duality", "archimedean"],

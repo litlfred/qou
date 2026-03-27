@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:q-hodge-star",
   label: "rem:self-dual-ses",
   title: "Self-duality as a short exact sequence",
   tags: ["self-duality", "short-exact-sequence"],

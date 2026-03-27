@@ -4,6 +4,7 @@ export default remark({
   label: "rem:chirality-trefoil-electron-positron",
   title:
     "Left and right trefoils: electron and positron",
+  interprets: "prop:antiparticle-crossing-reversal",
   tags: [
     "trefoil",
     "chirality",
@@ -14,7 +15,8 @@ export default remark({
     "exceptional-divisor",
   ],
   uses: [
-    "rem:knot-notation-convention",
+    "prop:antiparticle-crossing-reversal",
+    "sec:knot-notation-convention",
     "def:crossing-energy",
     "conj:electron-shells-hopf",
     "prop:fiber-adjoint-involution",
