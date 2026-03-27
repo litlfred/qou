@@ -15,7 +15,7 @@ int i; int j; int k;
 
 // ── 3H: N(1,2) ─────────────────────────────────────────────────
 "========== 3H: N(1,2) ==========";
-intvec ord = 1,0,0;
+intvec ntype = 1,0,0;
 int aa = 3;
 
 number tr = 1;
@@ -25,8 +25,8 @@ for (i = 1; i <= aa-1; i++)
     for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        if (ord[i]==1 && ord[j]==1) { cc=1; dd=0; }
-        else { if (ord[i]==0 && ord[j]==0) { cc=1; dd=-han; }
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
                else { cc=1; dd=-han/2; } }
         number na = ai*cc*han + ai*dd + bi*cc;
         number nb = ai*cc + bi*dd;
@@ -40,7 +40,7 @@ for (i = 1; i <= aa-1; i++)
 "Parent trace: " + string(tr);
 kill tr;
 
-intvec ord_d = 1,1,0;
+intvec dtype = 1,1,0;
 number tr = 1;
 for (i = 1; i <= aa-1; i++)
 {
@@ -48,8 +48,8 @@ for (i = 1; i <= aa-1; i++)
     for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        if (ord_d[i]==1 && ord_d[j]==1) { cc=1; dd=0; }
-        else { if (ord_d[i]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+        if (dtype[i]==1 && dtype[j]==1) { cc=1; dd=0; }
+        else { if (dtype[i]==0 && dtype[j]==0) { cc=1; dd=-han; }
                else { cc=1; dd=-han/2; } }
         number na = ai*cc*han + ai*dd + bi*cc;
         number nb = ai*cc + bi*dd;
@@ -64,17 +64,17 @@ for (i = 1; i <= aa-1; i++)
 kill tr;
 
 // e(I)/e(R) at converting position
-// Find converting pos: first where ord=0, ord_d=1
+// Find converting pos: first where ntype=0, dtype=1
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -88,8 +88,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -104,13 +104,13 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 0.01861";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 
 // ── 14C: N(6,8) ────────────────────────────────────────────────
 "========== 14C: N(6,8) ==========";
-intvec ord = 0,1,0,1,0,1,0,1,0,1,0,1,0,0;
-intvec ord_d = 0,1,0,1,0,1,0,1,0,1,0,1,1,0;
+intvec ntype = 0,1,0,1,0,1,0,1,0,1,0,1,0,0;
+intvec dtype = 0,1,0,1,0,1,0,1,0,1,0,1,1,0;
 int aa = 14;
 
 number tr = 1;
@@ -120,8 +120,8 @@ for (i = 1; i <= aa-1; i++)
     for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        if (ord[i]==1 && ord[j]==1) { cc=1; dd=0; }
-        else { if (ord[i]==0 && ord[j]==0) { cc=1; dd=-han; }
+        if (ntype[i]==1 && ntype[j]==1) { cc=1; dd=0; }
+        else { if (ntype[i]==0 && ntype[j]==0) { cc=1; dd=-han; }
                else { cc=1; dd=-han/2; } }
         number na = ai*cc*han + ai*dd + bi*cc;
         number nb = ai*cc + bi*dd;
@@ -142,8 +142,8 @@ for (i = 1; i <= aa-1; i++)
     for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        if (ord_d[i]==1 && ord_d[j]==1) { cc=1; dd=0; }
-        else { if (ord_d[i]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+        if (dtype[i]==1 && dtype[j]==1) { cc=1; dd=0; }
+        else { if (dtype[i]==0 && dtype[j]==0) { cc=1; dd=-han; }
                else { cc=1; dd=-han/2; } }
         number na = ai*cc*han + ai*dd + bi*cc;
         number nb = ai*cc + bi*dd;
@@ -158,15 +158,15 @@ for (i = 1; i <= aa-1; i++)
 kill tr;
 
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -180,8 +180,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -196,26 +196,26 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 0.156";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 
 // ── 60Co: N(27,33) ─────────────────────────────────────────────
 "========== 60Co: N(27,33) ==========";
-intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0;
-intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0;
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0;
+intvec dtype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0;
 int aa = 60;
 
 // Just compute e(I)/e(R) at converting gen (skip full trace for speed)
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -229,8 +229,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -245,25 +245,25 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 0.318";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 
 // ── 90Sr: N(38,52) ─────────────────────────────────────────────
 "========== 90Sr: N(38,52) ==========";
-intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec dtype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0;
 int aa = 90;
 
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -277,8 +277,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -293,25 +293,25 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 0.546";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 
 // ── 137Cs: N(55,82) ────────────────────────────────────────────
 "========== 137Cs: N(55,82) ==========";
-intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec dtype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
 int aa = 137;
 
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -325,8 +325,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -341,25 +341,25 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 0.514";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 
 // ── 210Bi: N(83,127) ───────────────────────────────────────────
 "========== 210Bi: N(83,127) ==========";
-intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ntype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec dtype = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
 int aa = 210;
 
 int conv = 0;
-for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+for (k = 1; k <= aa; k++) { if (ntype[k]==0 && dtype[k]==1) { conv=k; break; } }
 "Converting at: " + string(conv);
 
 number ap = 0; number bp = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
-    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+    if (ntype[conv]==1 && ntype[j]==1) { cc=1; dd=0; }
+    else { if (ntype[conv]==0 && ntype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ap*cc*han + ap*dd + bp*cc;
     number nb = ap*cc + bp*dd;
@@ -373,8 +373,8 @@ number ad = 0; number bd = 1;
 for (j = conv+1; j <= aa; j++)
 {
     number cc; number dd;
-    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
-    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+    if (dtype[conv]==1 && dtype[j]==1) { cc=1; dd=0; }
+    else { if (dtype[conv]==0 && dtype[j]==0) { cc=1; dd=-han; }
            else { cc=1; dd=-han/2; } }
     number na = ad*cc*han + ad*dd + bd*cc;
     number nb = ad*cc + bd*dd;
@@ -389,6 +389,6 @@ if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
 "e(I)/e(R) = " + string(fiv);
 "Q_exp = 1.163";
 "";
-kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+kill Vp; kill Vd; kill fiv; kill conv; kill ntype; kill dtype; kill aa;
 
 exit;
