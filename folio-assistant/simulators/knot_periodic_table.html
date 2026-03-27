@@ -407,38 +407,41 @@ function computeMass(Z,A,BA,qVal){
 }
 
 // === LAYOUT ENGINE ===
-// Standard periodic table grid positions
-// Returns {row, col} for standard 18-column layout
-function stdPos(period,group,block,Z){
-  // Lanthanides/actinides → extra rows
-  if(period===6&&block===3)return{row:8,col:group-1}; // La-row (cols 3-16)
-  if(period===7&&block===3)return{row:9,col:group-1};
-  return{row:period-1,col:group-1};
+// Explicit grid positions for the standard 18-column periodic table.
+// Lanthanides (Z=57-71) go to row 9, actinides (Z=89-92+) go to row 10.
+// Row and col are 1-based for CSS grid.
+function stdPos(Z,period,group,block){
+  // Lanthanides: Z 57-71 → row 9, cols 4-18
+  if(Z>=57&&Z<=71)return{row:9,col:Z-57+4};
+  // Actinides: Z 89-103 → row 10, cols 4-18 (we only have up to 92)
+  if(Z>=89&&Z<=103)return{row:10,col:Z-89+4};
+  // Hf-Hg (Z 72-80) are period 6 d-block → row 6, cols 4-12
+  if(Z>=72&&Z<=80)return{row:6,col:Z-72+4};
+  // Tl-Rn not covered above: use period/group directly
+  return{row:period,col:group};
 }
 
 // Build tile grid
 let selectedEl=null;
-const tileEls=new Map();
+let tileEls=new Map();
 
 function buildGrid(){
   const wrap=document.getElementById("table-wrap");
   wrap.innerHTML="";
+  tileEls=new Map();
   const grid=document.createElement("div");
   grid.className="tile-grid standard";
   grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
   grid.style.gridTemplateRows="repeat(10,auto)";
 
-  const layout=document.getElementById("layout-sel").value;
   const colorMode=document.getElementById("color-sel").value;
   const filter=document.getElementById("filter-sel").value;
   const qVal=parseFloat(document.getElementById("q-slider").value);
 
-  // Place tiles
-  const placed=new Set();
   for(const el of EL){
     const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
     const N=A-Z;
-    const pos=stdPos(period,group,block,Z);
+    const pos=stdPos(Z,period,group,block);
 
     // Filter
     if(filter==="magic"&&!magZ&&!magN)continue;
@@ -448,7 +451,7 @@ function buildGrid(){
     const tile=document.createElement("div");
     tile.className="tile";
 
-    // Block color
+    // Color mode
     if(colorMode==="block"){
       tile.classList.add("block-"+BLOCK_NAMES[block]);
     }else if(colorMode==="kalpha"){
@@ -468,7 +471,7 @@ function buildGrid(){
     else if(magN)tile.classList.add("magic-n");
     if(intruder)tile.classList.add("intruder");
 
-    // Content
+    // Tile content
     const zSpan=document.createElement("div");
     zSpan.className="z-num";zSpan.textContent=Z;
     const symSpan=document.createElement("div");
@@ -477,9 +480,9 @@ function buildGrid(){
     tile.appendChild(symSpan);
     tile.appendChild(miniKnotSvg(Z,N,kalpha));
 
-    // Position in grid
-    tile.style.gridRow=pos.row+1;
-    tile.style.gridColumn=pos.col+1;
+    // Grid position
+    tile.style.gridRow=pos.row;
+    tile.style.gridColumn=pos.col;
 
     // Events
     tile.addEventListener("click",()=>selectElement(el));
@@ -488,16 +491,17 @@ function buildGrid(){
 
     grid.appendChild(tile);
     tileEls.set(Z,tile);
-    placed.add(`${pos.row},${pos.col}`);
   }
 
-  // Row labels for knot-centric info
-  for(const sr of SHELL_ROWS){
-    const lbl=document.createElement("div");
-    lbl.style.cssText=`grid-row:${sr.row};grid-column:19;font-size:9px;color:#778;padding:2px 4px;white-space:nowrap;display:flex;align-items:center`;
-    lbl.textContent=sr.intruder?`${sr.label} (${sr.intruder})`:sr.label;
-    // Don't add if layout is standard — would need col 19
-  }
+  // Lanthanide/Actinide row labels
+  const laLbl=document.createElement("div");
+  laLbl.style.cssText="grid-row:9;grid-column:1/4;font-size:9px;color:#778;display:flex;align-items:center;justify-content:end;padding-right:4px";
+  laLbl.textContent="Lanthanides";
+  grid.appendChild(laLbl);
+  const acLbl=document.createElement("div");
+  acLbl.style.cssText="grid-row:10;grid-column:1/4;font-size:9px;color:#778;display:flex;align-items:center;justify-content:end;padding-right:4px";
+  acLbl.textContent="Actinides";
+  grid.appendChild(acLbl);
 
   wrap.appendChild(grid);
 }
@@ -566,19 +570,28 @@ function hideTooltip(){document.getElementById("tooltip").style.display="none"}
 function buildLegend(){
   const lg=document.getElementById("legend");
   lg.innerHTML="";
-  const items=[
-    {html:'<svg width="18" height="18" viewBox="-9 -9 18 18"><path d="'+trefoilPath(18)+'" fill="#2255aa" stroke="#112244" stroke-width="1"/></svg>',text:"Proton (T₂,₃)"},
-    {html:'<svg width="18" height="18" viewBox="-9 -9 18 18"><path d="'+trefoilPath(18)+'" fill="none" stroke="#2255aa" stroke-width="1.3"/></svg>',text:"Electron (σT₂,₃)"},
-    {html:'<svg width="16" height="16" viewBox="-8 -8 16 16"><circle r="5" fill="none" stroke="#aa5533" stroke-width="1.3"/></svg>',text:"Neutron (unknot)"},
-    {html:'<span style="border-left:2px solid #c44;padding-left:3px;font-size:10px">◆Z</span>',text:"Proton magic #"},
-    {html:'<span style="border-right:2px solid #44c;padding-right:3px;font-size:10px">◆N</span>',text:"Neutron magic #"},
-    {html:'<span style="background:#fff8f0;border:1px solid #dca;padding:1px 4px;font-size:10px">int</span>',text:"Intruder level"},
-  ];
-  for(const it of items){
+  function addItem(iconEl,text){
     const d=document.createElement("div");d.className="legend-item";
-    d.innerHTML=it.html+`<span>${it.text}</span>`;
+    d.appendChild(iconEl);
+    const sp=document.createElement("span");sp.textContent=text;
+    d.appendChild(sp);
     lg.appendChild(d);
   }
+  addItem(drawTrefoil(18,"proton"),"Proton (T₂,₃)");
+  addItem(drawTrefoil(18,"electron"),"Electron (σT₂,₃)");
+  addItem(drawUnknot(16),"Neutron (unknot)");
+  const mz=document.createElement("span");
+  mz.style.cssText="border-left:2px solid #c44;padding-left:3px;font-size:10px";
+  mz.textContent="◆Z";
+  addItem(mz,"Proton magic #");
+  const mn=document.createElement("span");
+  mn.style.cssText="border-right:2px solid #44c;padding-right:3px;font-size:10px";
+  mn.textContent="◆N";
+  addItem(mn,"Neutron magic #");
+  const intr=document.createElement("span");
+  intr.style.cssText="background:#fff8f0;border:1px solid #dca;padding:1px 4px;font-size:10px";
+  intr.textContent="int";
+  addItem(intr,"Intruder level");
 }
 
 // === CONTROLS ===
