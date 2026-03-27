@@ -24,7 +24,7 @@ export default simulator({
     name: "default",
     title: "Knot-centric layout with electron block coloring",
     params: {
-      layout: "standard",
+      layout: "knot-centric",
       color: "block",
       filter: "all",
       q: 1.11,
