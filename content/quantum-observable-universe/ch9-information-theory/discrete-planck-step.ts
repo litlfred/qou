@@ -12,6 +12,9 @@ export default remark({
     "information-theory",
     "dynamical-flow",
     "primordial-vortex",
+    "finite-field",
+    "p-adic",
+    "algebraic-dynamics",
   ],
   uses: [
     "def:quantum-planck-constant",
@@ -23,5 +26,7 @@ export default remark({
     "rem:julia-set-reeb",
     "def:bundle-initial-conditions",
     "rem:substrate-radial-coordinate",
+    "ex:finite-field-realisation",
+    "rem:witt-lift-qou",
   ],
 });

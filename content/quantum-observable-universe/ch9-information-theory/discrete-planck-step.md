@@ -6,7 +6,7 @@ the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$
 defines a **Planck step** — the minimal dynamical time unit of the
 QOU — and makes time discrete at the origin.
 
-**The Reeb period as time unit.**
+**Algebraic normalization.**
 The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a
 state ([substrate radial coordinate](#rem:substrate-radial-coordinate)):
 
@@ -14,73 +14,118 @@ $$
   \mathcal{L}_\xi\,Z \;=\; J\,\hbar_q\,Z.
 $$
 
-This is a rotation at angular frequency $\omega_q = \hbar_q$ (in
-natural units where $|\xi| = 1$).  One full Reeb circuit — the
-period of the $U(1)$ fiber action on the exceptional divisor
-([Reeb on exceptional divisor](#rem:reeb-exceptional-divisor)) —
-takes time
+The naive period of this rotation is $T = 2\pi/\hbar_q$, but the
+factor $2\pi$ is transcendental — it exists only over
+$\mathbb{R}$ or $\mathbb{C}$ and obstructs the finite-field and
+$p$-adic realisations
+([finite field realisation](#ex:finite-field-realisation),
+[Witt vector lift](#rem:witt-lift-qou)).  We normalize instead by
+defining one full Reeb circuit as **one unit of time**:
 
 $$
-  T_q \;=\; \frac{2\pi}{\omega_q}
-  \;=\; \frac{2\pi}{\hbar_q}
-  \;=\; \frac{2\pi}{1 - q^{-1}}.
+  t_P(q) \;:=\; \frac{1}{\hbar_q}
+  \;=\; \frac{1}{1 - q^{-1}}
+  \;=\; \frac{q}{q - 1}.
 $$
 
-**The Planck step.**
-Define the **Planck step** as one iteration of the discrete
-dynamical system $f_q(z) = z^2 + c(q)$
-([Julia set of Reeb flow](#rem:julia-set-reeb)) — equivalently,
-one full circuit of the Reeb flow around the $U(1)$ fiber.  The
-Planck time is
+This is a **rational function of $q$** — it makes sense over any
+field $k$ in which $q \neq 1$.  In particular:
 
-$$
-  t_P(q) \;:=\; T_q \;=\; \frac{2\pi}{1 - q^{-1}}.
-$$
+- Over $\mathbb{F}_\pp$: $t_P = q/(q-1) \in \mathbb{F}_\pp$
+  whenever $q \in \mathbb{F}_\pp^\times \setminus \{1\}$.
+- Over $\mathbb{Q}_\pp$: $t_P \in \mathbb{Q}_\pp$, and its
+  $\pp$-adic valuation $v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$
+  encodes the arithmetic proximity of $q$ to the classical limit.
+- Over $\mathbb{C}$: reproduces the angular period up to the
+  conventional factor $2\pi$ (which can be restored by
+  $T = 2\pi \cdot t_P$ when working over $\mathbb{R}$).
 
-This has the correct limits:
+The Planck step is the iteration
+$f_q(z) = z^2 + c(q)$
+([Julia set of Reeb flow](#rem:julia-set-reeb)) — one application
+of the discrete dynamical system.  This iteration is polynomial and
+works over any field.
+
+**Limits.**
 
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
-| Big Bang | $q \to \infty$ | $\to 1$ | $\to 2\pi$ | Minimal period; time is fastest |
-| Physical | $q = 1.110$ | $0.099$ | $\approx 63$ | Our Planck time |
+| Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | Minimal step; time is fastest |
+| Physical | $q = 1.110$ | $0.099$ | $\approx 10.1$ | Our Planck time |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | No Reeb period; time freezes |
 
-At the Big Bang, the Planck step reaches its **minimum value**
-$t_P = 2\pi$: time cannot tick faster than one Reeb circuit.  This
-is the sense in which time is discrete at the origin — the
-dynamical flow has a shortest possible period, set by the geometry
-of the $U(1)$ fiber, not by an external quantization.
+At the Big Bang, $t_P \to 1$: **one Planck step equals one unit**.
+Time is discrete in the strongest sense — the dynamical system is
+an iterated map with step size $1$, and there is no sub-step
+resolution.  The continuous Reeb flow is the $\mathbb{R}$-shadow of
+this discrete algebraic iteration.
 
 **One Planck length of flow.**
-The Reeb flow displaces a state by a distance proportional to
-$\hbar_q$ per unit time.  After one Planck step $t_P$, the
-displacement is
+After one Planck step, the Reeb flow displaces a state by
 
 $$
   \ell_P(q)
   \;=\; \hbar_q \cdot t_P
-  \;=\; \hbar_q \cdot \frac{2\pi}{\hbar_q}
-  \;=\; 2\pi.
+  \;=\; (1 - q^{-1}) \cdot \frac{q}{q-1}
+  \;=\; 1.
 $$
 
-The Planck length is **constant**: every Reeb circuit traverses
-$2\pi$ units of arc on the $U(1)$ fiber, regardless of $q$.  What
-changes is not the step size but the **angular velocity** — at the
-Big Bang the fiber is traversed at maximum speed ($\omega = 1$),
-while near heat death the rotation slows to zero.
+The Planck length is **identically $1$** over any field.  What
+changes with $q$ is the angular velocity $\hbar_q$ — at the Big Bang
+the fiber is traversed at maximum speed ($\hbar_q = 1$), while near
+heat death the rotation slows to zero.
+
+**Finite-field dynamics.**
+Over $k = \mathbb{F}_\pp$ with $q \in \mathbb{F}_\pp^\times$, the
+iteration $f_q \colon \mathbb{F}_\pp \to \mathbb{F}_\pp$ is a map
+on a finite set.  Every orbit is eventually periodic, and the orbit
+structure encodes the "Planck dynamics" of the finite-field QOU:
+
+- **Orbit length** $|O_x|$ = number of Planck steps before the
+  state $x$ recurs.  This is the analogue of the Poincaré
+  recurrence time.
+- **Fixed points** of $f_q$: the states $z$ satisfying
+  $z^2 + c(q) = z$, i.e., $z^2 - z + c = 0$.  These exist in
+  $\mathbb{F}_\pp$ iff $1 - 4c$ is a quadratic residue mod $\pp$.
+- **Period-$n$ orbits**: the roots of
+  $f_q^{\circ n}(z) = z$ that are not fixed by any
+  $f_q^{\circ d}$ with $d \mid n$.  The number of such orbits
+  is related to the Weil zeta function of the curve
+  $w^2 = z^2 + c$ over $\mathbb{F}_\pp$.
+
+The Julia set $J(f_q)$ over $\mathbb{C}$ is the "complexification"
+of this finite orbit structure: the boundary between escaping and
+bounded orbits is the continuous analogue of the partition of
+$\mathbb{F}_\pp$ into short-period and long-period orbits.
+
+**$p$-Adic Planck step.**
+Over $\mathbb{Q}_\pp$, the substrate parameter $q$ has a $\pp$-adic
+valuation.  The Planck time $t_P = q/(q-1)$ has
+$v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$.  When $q \equiv 1
+\pmod{\pp^n}$ (near the classical limit in the $\pp$-adic
+topology), $v_\pp(q-1) \geq n$ and $t_P$ has large $\pp$-adic
+valuation — the Planck time is "$\pp$-adically large",
+corresponding to slow dynamics.  When $v_\pp(q-1) = 0$ (the
+Big Bang regime in $\pp$-adic terms), $t_P$ has minimal valuation
+and the dynamics is fastest.
+
+The Witt vector lift
+([Witt vector lift](#rem:witt-lift-qou)) promotes the
+$\mathbb{F}_\pp$ orbit structure to a $\mathbb{Z}_\pp$-lattice:
+the finite orbits of $f_q$ over $\mathbb{F}_\pp$ lift to
+Teichmüller representatives in $\mathbb{Z}_\pp$, and the
+$\pp$-adic Planck step acts on these lifts via the Frobenius
+endomorphism.  The passage $\mathbb{F}_\pp \to \mathbb{Q}_\pp \to
+\mathbb{C}$ is the arithmetic analogue of the cosmological
+progression from discrete (Big Bang) to continuous (classical
+limit).
 
 **Discrete time at the Big Bang.**
-At $q \to \infty$, the Reeb flow becomes a **discrete map**: the
-Julia-set iteration $f_q(z) = z^2 + c(q)$ with one application
-per Planck step.  The continuous flow and the discrete iteration
-coincide because the period $T_q = 2\pi$ is the minimal unit —
-there is no sub-Planck resolution.
-
 The Big Bang initial state
 ([bundle initial conditions](#def:bundle-initial-conditions)) is a
 formal sum $\mathcal{S}_0 = \sum_i (p_i, H_i)$ specifying fiber
 data without horizontal transport.  The **first Planck step**
-$\phi_{t_P}^q$ is the first application of horizontal transport:
+$\phi_1^q$ is the first application of horizontal transport:
 it connects neighboring fibers for the first time, initiating the
 $q$-connection and beginning the propagation of information across
 the brane.
@@ -93,6 +138,10 @@ Heisenberg commutator $[\hat{X}, \hat{P}]_q = J\hbar_q \approx J$
 is near-maximal — the first tick of time is also the moment of
 greatest uncertainty.
 
+Over $\mathbb{F}_\pp$, this first step is literally $f_q$ applied
+once: $z_1 = z_0^2 + c(q)$.  The "first moment after the Big Bang"
+is a single polynomial evaluation.
+
 **The golden threshold as a time marker.**
 The golden ratio degeneration
 ([golden ratio degeneration](#rem:golden-ratio-degeneration)) occurs
@@ -101,17 +150,24 @@ Planck time
 
 $$
   t_P(q_{\mathrm{gold}})
-  \;=\; \frac{2\pi}{1 - \varphi^2}
-  \;=\; \frac{2\pi}{-\varphi}
-  \;=\; -\frac{2\pi}{\varphi}.
+  \;=\; \frac{q_{\mathrm{gold}}}{q_{\mathrm{gold}} - 1}
+  \;=\; \frac{1/\varphi^2}{1/\varphi^2 - 1}
+  \;=\; \frac{1}{1 - \varphi^2}
+  \;=\; -\frac{1}{\varphi}.
 $$
 
 The **negative sign** is physical: at $q < 1$, $\hbar_q < 0$ and
-the Reeb flow **reverses direction**.  The golden threshold is the
-point where the Reeb period passes through infinity ($q = 1$,
-classical freeze), re-emerges with reversed orientation, and reaches
-the degeneration at a period of $2\pi/\varphi$ — one golden-ratio
-fraction of the Big Bang Planck time.
+the Reeb flow **reverses direction**.  The magnitude $1/\varphi$ is
+the golden-ratio fraction of the Big Bang Planck time — the
+degeneration occurs at a time scale that is itself golden-ratio
+related to the fundamental step.
+
+Over $\mathbb{F}_\pp$: the golden ratio
+$\varphi = (1 + \sqrt{5})/2$ exists in $\mathbb{F}_\pp$ iff $5$ is
+a quadratic residue mod $\pp$, i.e., $\pp \equiv \pm 1 \pmod{5}$.
+The golden degeneration is therefore **visible only to those
+primes** — a selection rule on which finite-field realisations can
+detect the chiral instability.
 
 **Counting Planck steps.**
 The number of Planck steps between two values of $q$ measures the
@@ -125,23 +181,21 @@ $$
 $$
 
 where $\dot{q}$ is the rate of change of the substrate parameter
-with respect to coordinate time.  If $q$ decreases monotonically
-from the Big Bang toward the classical limit (cosmological
-cooling), then $N$ counts the total number of Reeb circuits the
-universe has completed — the **age of the universe in Planck
-steps**.
+with respect to coordinate time.  Over $\mathbb{F}_\pp$ this
+integral is replaced by a sum over discrete $q$-values, and $N$ is
+a finite count.
 
 **Information per step.**
 Each Planck step propagates information across one fiber's worth of
 the brane.  The information content per step is bounded by the
 Julia-set Hausdorff dimension $d_H(q)$
-([Julia set of Reeb flow](#rem:julia-set-reeb)): the fractal
-complexity of the Reeb iteration at that $q$ limits the channel
-capacity of one dynamical tick.  At the Big Bang ($q \to \infty$,
-$c(q)$ deep inside the Mandelbrot set), $d_H$ is low and the Julia
-set is nearly circular — each step carries minimal information.  As
-$q$ decreases toward the golden threshold, $d_H$ increases toward
-its maximum, and each Planck step carries more information.  The
-universe's information processing rate **increases** as it cools
-from the Big Bang, reaching peak capacity near the golden ratio
-before the fiber degenerates.
+([Julia set of Reeb flow](#rem:julia-set-reeb)) over $\mathbb{C}$,
+or by the orbit complexity of $f_q$ over $\mathbb{F}_\pp$.  At the
+Big Bang ($q \to \infty$ over $\mathbb{C}$, or $q$ with
+$v_\pp(q-1) = 0$ over $\mathbb{Q}_\pp$), the dynamics is simplest
+— each step carries minimal information.  As $q$ approaches the
+golden threshold, the orbit structure (finite field) or fractal
+complexity (complex) peaks, and each Planck step carries more
+information.  The universe's information processing rate
+**increases** as it cools from the Big Bang, reaching peak capacity
+near the golden ratio before the fiber degenerates.
