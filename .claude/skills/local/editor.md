@@ -294,8 +294,16 @@ All interactions **must** be optimized for minimal typing:
   voice-to-text or abbreviated input. Parse intent, don't ask for
   clarification on typos.
 - **Provide copy-paste commands**: for anything the author needs to run
-  locally, give exact commands runnable from the repo root. Never require
-  the author to construct commands by hand.
+  locally, give a **single multi-line block** using `&&` and `\` that
+  the author can copy-paste in one action from the repo root. Always
+  start with `reset; git fetch && git switch <branch> && git pull`.
+  Never require the author to construct commands by hand.
+  Example:
+  ```
+  reset; git fetch && git switch claude/feature-branch && git pull && \
+  python3 folio-assistant/computations/script.py && \
+  conda activate qou-sage && sage folio-assistant/computations/script.sage
+  ```
 - **Batch confirmations**: instead of asking permission for each small
   step, present a batch plan and get one confirmation.
 
