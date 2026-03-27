@@ -54,6 +54,19 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
 /* Tooltip */
 .tooltip{position:absolute;background:#222;color:#fff;padding:4px 8px;border-radius:4px;
   font-size:11px;pointer-events:none;white-space:nowrap;z-index:100;display:none}
+/* Knot diagram styles */
+.knot-container{display:flex;flex-direction:column;align-items:center;gap:8px}
+.knot-formula{font-size:13px;color:#2a3a6a;font-weight:600}
+.knot-braid{font-size:11px;color:#556;margin:4px 0;font-family:monospace;letter-spacing:1px;line-height:1.4;word-break:break-all}
+.knot-braid-meta{font-size:9px;color:#889;margin-left:6px;font-family:sans-serif}
+.knot-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.nuclear-box{border:2px solid #a53;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(170,85,51,0.06)}
+.electron-box{border:2px solid #37a;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(51,119,170,0.06)}
+.knot-plus{color:#888;font-size:10px}
+.knot-proton-lbl{font-size:10px;color:#225}
+.knot-neutron-lbl{font-size:10px;color:#a53}
+.knot-more{font-size:9px;color:#778}
+.knot-electron-more{font-size:9px;color:#556}
 </style>
 </head>
 <body>
@@ -437,11 +450,11 @@ function fullKnotDiagram(el){
   const[Z,A,sym,name,BA,kalpha]=el;
   const N=A-Z;
   const container=document.createElement("div");
-  container.style.cssText="display:flex;flex-direction:column;align-items:center;gap:8px";
+  container.className="knot-container";
 
   // Formula text
   const formula=document.createElement("div");
-  formula.style.cssText="font-size:13px;color:#2a3a6a;font-weight:600";
+  formula.className="knot-formula";
   formula.textContent=`${Z}𝔭 ⋈ ${N}𝔫 ⋈ ${Z}·T₂,₃`;
   container.appendChild(formula);
 
@@ -449,7 +462,7 @@ function fullKnotDiagram(el){
   const bd=BRAID[Z];
   if(bd&&bd[3]){
     const braidDiv=document.createElement("div");
-    braidDiv.style.cssText="font-size:11px;color:#556;margin:4px 0;font-family:monospace;letter-spacing:1px;line-height:1.4;word-break:break-all";
+    braidDiv.className="knot-braid";
     const vis=bd[3];
     // Color ● (proton) and ○ (neutron) differently
     for(let i=0;i<vis.length;i++){
@@ -460,7 +473,7 @@ function fullKnotDiagram(el){
       braidDiv.appendChild(sp);
     }
     const lbl=document.createElement("span");
-    lbl.style.cssText="font-size:9px;color:#889;margin-left:6px;font-family:sans-serif";
+    lbl.className="knot-braid-meta";
     lbl.textContent=`(${A} nucleons, sign=${bd[0]>0?"+":"−"}1, ln|tr|=${bd[1].toFixed(1)})`;
     braidDiv.appendChild(lbl);
     container.appendChild(braidDiv);
@@ -468,11 +481,11 @@ function fullKnotDiagram(el){
 
   // Visual diagram row
   const row=document.createElement("div");
-  row.style.cssText="display:flex;align-items:center;gap:4px;flex-wrap:wrap";
+  row.className="knot-row";
 
   // Nuclear sub-link
   const nucBox=document.createElement("span");
-  nucBox.style.cssText="border:2px solid #a53;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(170,85,51,0.06)";
+  nucBox.className="nuclear-box";
 
   if(kalpha>0){
     nucBox.appendChild(drawAlphaLabel(kalpha));
@@ -485,55 +498,54 @@ function fullKnotDiagram(el){
       nucBox.appendChild(drawUnknot(16));
       if(i<showAlpha-1){
         const plus=document.createElement("span");
-        plus.textContent="+";plus.style.cssText="color:#888;font-size:10px";
+        plus.textContent="+";plus.className="knot-plus";
         nucBox.appendChild(plus);
       }
     }
     if(kalpha>3){
       const more=document.createElement("span");
-      more.textContent=`… (${kalpha} total)`;more.style.cssText="font-size:9px;color:#778";
+      more.textContent=`… (${kalpha} total)`;more.className="knot-more";
       nucBox.appendChild(more);
     }
   }
   // Remaining nucleons outside alpha clusters
   const remP=Z-2*kalpha, remN=N-2*kalpha;
-  if(remP>0||remN>0){
+  if(Z===1&&N===0){
+    // Just one proton — special case to show trefoil icon
+    nucBox.appendChild(drawTrefoil(20,"proton"));
+    const lbl=document.createElement("span");
+    lbl.textContent="𝔭";lbl.className="knot-neutron-lbl";
+    nucBox.appendChild(lbl);
+  }else if(remP>0||remN>0){
     if(kalpha>0){
       const plus=document.createElement("span");
-      plus.textContent=" + ";plus.style.cssText="color:#888;font-size:10px";
+      plus.textContent=" + ";plus.className="knot-plus";
       nucBox.appendChild(plus);
     }
     if(remP>0){
       const lbl=document.createElement("span");
-      lbl.textContent=`${remP}𝔭`;lbl.style.cssText="font-size:10px;color:#225";
+      lbl.textContent=remP+"𝔭";lbl.className="knot-proton-lbl";
       nucBox.appendChild(lbl);
     }
     if(remN>0){
       const lbl=document.createElement("span");
-      lbl.textContent=`${remN>0&&remP>0?"+":""}${remN}𝔫`;lbl.style.cssText="font-size:10px;color:#a53";
+      lbl.textContent=(remN>0&&remP>0?"+":"")+remN+"𝔫";lbl.className="knot-neutron-lbl";
       nucBox.appendChild(lbl);
     }
-  }
-  if(Z===1&&N===0){
-    // Just one proton
-    nucBox.appendChild(drawTrefoil(20,"proton"));
-    const lbl=document.createElement("span");
-    lbl.textContent="𝔭";lbl.style.cssText="font-size:10px;color:#a53";
-    nucBox.appendChild(lbl);
   }
   row.appendChild(nucBox);
   row.appendChild(drawBowtie());
 
   // Electron sub-link
   const elBox=document.createElement("span");
-  elBox.style.cssText="border:2px solid #37a;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(51,119,170,0.06)";
+  elBox.className="electron-box";
   const showE=Math.min(Z,4);
   for(let i=0;i<showE;i++){
     elBox.appendChild(drawTrefoil(18,"electron"));
   }
   if(Z>4){
     const more=document.createElement("span");
-    more.textContent=`… (${Z} e⁻)`;more.style.cssText="font-size:9px;color:#556";
+    more.textContent=`… (${Z} e⁻)`;more.className="knot-electron-more";
     elBox.appendChild(more);
   }
   const eLbl=document.createElement("span");
@@ -737,13 +749,15 @@ function buildGrid(){
     grid.style.gridTemplateRows="repeat(11,auto)";
   }
 
+  const rowOffset=(layout!=="standard"&&colMode!=="fill")?1:0;
+
   for(const el of EL){
     const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
 
     // Filter
     if(filter==="magic"&&!magZ&&!magN)continue;
     if(filter==="intruder"&&!intruder)continue;
-    if(filter==="stable"&&!magZ&&!magN)continue;
+    if(filter==="stable"&&!(Z%2===0&&(A-Z)%2===0))continue;
 
     const tile=makeTile(el,colorMode);
 
@@ -754,7 +768,7 @@ function buildGrid(){
     }else{
       pos=knotPos(Z,block,shellRow,colMode);
     }
-    tile.style.gridRow=pos.row;
+    tile.style.gridRow=pos.row+rowOffset;
     tile.style.gridColumn=pos.col;
 
     // Events
@@ -772,10 +786,9 @@ function buildGrid(){
     addRowLabel(grid,10,1,"Actinides");
   }else{
     // Knot-centric: compact text shell labels on left (col 1)
-    // Elements shift right: s starts col 2, d col 4, p col 16
     for(let i=0;i<SHELL_ROWS.length;i++){
       const sr=SHELL_ROWS[i];
-      const gr=KNOT_BASE_ROW[i+1];
+      const gr=KNOT_BASE_ROW[i+1]+rowOffset;
       const lbl=document.createElement("div");
       lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
       lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
@@ -803,15 +816,6 @@ function buildGrid(){
       }
       grid.appendChild(h);
     }
-    // Shift all element rows and labels down by 1 to make room for header row
-    grid.querySelectorAll(".tile").forEach(t=>{
-      t.style.gridRow=parseInt(t.style.gridRow)+1;
-    });
-    grid.querySelectorAll("div").forEach(d=>{
-      if(d.classList.contains("tile"))return;
-      const r=parseInt(d.style.gridRow);
-      if(r>1)d.style.gridRow=r+1; // don't shift the headers themselves
-    });
   }
 
   wrap.appendChild(grid);
