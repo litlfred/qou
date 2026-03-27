@@ -70,14 +70,17 @@ yet been evaluated.  Witness computation scripts are in
    The ratio of antisymmetric to symmetric Markov traces on the
    Borromean link $\mathcal{B}_3$ determines the axial-to-vector
    coupling ratio $g_A / g_V$.  Target: $g_A \approx 1.27$.
-   Script: `borromean-axial-coupling.py`.
+   Sage result: the 4-crossing Borromean braid
+   $T_1 T_2^{-1} T_1 T_2^{-1}$ gives $g_A \approx 1.14$
+   (10.8% from target).  Script: `sage-borromean-gA.sage`.
 
 4. **$C_{\mathrm{geom}}$ (electromagnetic geometric factor).**
-   The total Skein weight of the electron--proton crossing
-   evaluation — the Markov trace of
-   $\mathrm{Hopf}(T_{2,3}, \mathcal{B}_3)$.
-   Target: $C_{\mathrm{geom}} \approx 14.25$.
-   Script: `electron-proton-skein-weight.py`.
+   Candidate formula: $C_{\mathrm{geom}} = [2]_q \cdot [7]_q
+   / J_{\mathrm{Borr}}(q) \approx 14.74$, giving
+   $1/\alpha \approx 141.8$ (3.5% from CODATA).
+   Script: `sage-cgeom.sage`.
+   See [hydrogen knot structure](#ex:hydrogen-knot-structure)
+   for the physical interpretation.
 
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$
