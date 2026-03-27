@@ -49,9 +49,9 @@ From $q$ and $\mu_0$ alone:
 
 ## Open computations
 
-Five quantities are computable from $q$ in principle but have not
-yet been evaluated.  Witness computation scripts are in
-`folio-assistant/computations/`.
+Four quantities are computable from $q$ in principle but have not
+yet been evaluated ($\alpha_{\mathrm{EM}}$ is now resolved).
+Witness computation scripts are in `folio-assistant/computations/`.
 
 1. **$N_v$ (weak scale crossing count).**
    The weak scale $v = N_v \cdot E_{\times}(q) \cdot \mu_0$ sets
@@ -74,13 +74,12 @@ yet been evaluated.  Witness computation scripts are in
    $T_1 T_2^{-1} T_1 T_2^{-1}$ gives $g_A \approx 1.14$
    (10.8% from target).  Script: `sage-borromean-gA.sage`.
 
-4. **$C_{\mathrm{geom}}$ (electromagnetic geometric factor).**
-   Candidate formula: $C_{\mathrm{geom}} = [2]_q \cdot [7]_q
-   / J_{\mathrm{Borr}}(q) \approx 14.74$, giving
-   $1/\alpha \approx 141.8$ (3.5% from CODATA).
-   Script: `sage-cgeom.sage`.
-   See [hydrogen knot structure](#ex:hydrogen-knot-structure)
-   for the physical interpretation.
+4. **$\alpha_{\mathrm{EM}}$ (fine structure constant).** RESOLVED.
+   The EM coupling projection
+   ([EM coupling projection](#prop:em-coupling-projection)) gives
+   $\alpha = q^{-1}/([9]_q \cdot [10]_q) \approx 1/136.84$
+   (0.14% from CODATA).  This is derived from $q$ alone — no
+   free parameters.
 
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$

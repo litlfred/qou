@@ -61,50 +61,43 @@ $$
   \alpha \;=\; \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
 $$
 
-where $\tanh(\ln q) = (q - q^{-1})/(q + q^{-1})$ is the
-electromagnetic-to-strong ratio derived from $q$ alone
-([crossing asymmetry](#rem:skein-crossing-asymmetry)).
-The geometric factor $C_{\mathrm{geom}}$ is the total Skein
-weight of the electron--proton crossing evaluation — the
-Markov trace of the Hopf link between the trefoil ($T_{2,3}$)
-and the Borromean proton structure, summed over all crossing
-resolutions.
+The fundamental formula for $\alpha$ is the EM coupling
+projection
+([EM coupling projection](#prop:em-coupling-projection)):
 
-**Candidate formula.**  Sage computation of the Jones polynomials
-at $q = 1.110$ (`sage-cgeom.sage`) gives the best-fit formula
+$$
+  \alpha_{\mathrm{EM}}(q)
+  \;=\;
+  \frac{q^{-1}}{[9]_q \cdot [10]_q}
+$$
+
+where $q^{-1}$ is the antisymmetric eigenvalue of the $R$-matrix
+(the bare coupling at a single crossing), and $[9]_q$, $[10]_q$
+are the $q$-deformed crossing numbers of the strong ($T_{2,9}$)
+and weak ($T_{3,5}$) force-carrier generators.  At $q = 1.110$
+this gives $\alpha^{-1} \approx 136.84$ (0.14% from CODATA).
+
+The two formulations are consistent:
+$\tanh(\ln q) / C_{\mathrm{geom}} = q^{-1}/([9]_q \cdot [10]_q)$,
+which fixes
 
 $$
   C_{\mathrm{geom}}
   \;=\;
-  \frac{[2]_q \;\cdot\; [7]_q}{J_{\mathrm{Borr}}(q)}
-  \;\approx\; 14.74
-  \qquad
-  \Bigl(\tfrac{1}{\alpha} \approx 141.8,\;\text{error } 3.5\%\Bigr)
+  \frac{\tanh(\ln q) \cdot [9]_q \cdot [10]_q}{q^{-1}}
+  \;=\;
+  \frac{(q^2 - 1) \cdot [9]_q \cdot [10]_q}{q^2 + 1}
+  \;\approx\; 14.26.
 $$
 
-where $[2]_q = q + q^{-1}$ is the quantum dimension of the
-electron (fundamental representation), $[7]_q$ is the quantum
-dimension associated with the Brings surface genus ($2g - 1 = 7$
-for genus $g = 4$), and $J_{\mathrm{Borr}}(q) \approx 1.040$ is
-the Jones polynomial of the Borromean link (the proton's
-topological structure).
-
 **Physical reading:** the electromagnetic coupling is the
-electron's quantum dimension times the Brings surface capacity,
-normalised by the proton's topological complexity.  The $[7]_q$
-factor arises because the Brings surface of genus 4 provides
-$2g - 1 = 7$ independent crossing channels between the electron
-and proton strands.  The Borromean Jones polynomial in the
-denominator accounts for the proton's internal correlations that
-screen the electromagnetic interaction.
-
-**Residual (3.5%).**  The remaining discrepancy may arise from:
-(a) writhe corrections between the braid closure and the standard
-link diagram, (b) higher-order Skein resolution terms beyond the
-leading $[2]_q \cdot [7]_q$ product, or (c) the coloured Jones
-polynomial in the adjoint representation (the Sage computation
-gives $J_{T_{2,3}}^{(3)}(q) = 0.900$ for the trefoil adjoint
-colouring, which could enter a refined formula).
+antisymmetric braiding eigenvalue $q^{-1}$ divided by the total
+topological complexity $[9]_q \cdot [10]_q$ of the strong and
+weak force sectors.  In the crossing-asymmetry form
+$\alpha = \tanh(\ln q)/C_{\mathrm{geom}}$, the factor
+$\tanh(\ln q) = (q - q^{-1})/(q + q^{-1})$ is the EM-to-strong
+ratio and $C_{\mathrm{geom}}$ absorbs the force-carrier
+$q$-integers.
 
 The $\alpha^2$ dependence of the ionisation energy reflects
 **two Skein resolutions** — the photon mediating the interaction

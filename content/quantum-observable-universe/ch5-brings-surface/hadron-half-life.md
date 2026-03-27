@@ -190,8 +190,8 @@ Every standard-physics constant decomposes into $q$-dependent
 factors times $\mu_0$: the electron mass
 $m_e = 3\,E_{\times}\,\mu_0$, the weak scale
 $v = N_v\,E_{\times}\,\mu_0$, and the fine structure constant
-$\alpha = \tanh(\ln q) / C_{\mathrm{geom}}$.  The dimensionless
-ratios $N_v$ and $C_{\mathrm{geom}}$ are determined by the Skein
-algebra — they are topological invariants, not free parameters
-— but their explicit computation from $q$ is open
-(see [verification](#ex:hadron-half-life-verification)).
+$\alpha = q^{-1}/([9]_q \cdot [10]_q)$
+([EM coupling projection](#prop:em-coupling-projection)).
+The fine structure constant is now fully derived from $q$ alone
+(0.14% from CODATA).  The weak scale crossing count $N_v$ remains
+open (see [verification](#ex:hadron-half-life-verification)).
