@@ -22,5 +22,6 @@ export default theorem({
     "prop:torus-knot-generators",
     "thm:embeddability-closure",
     "def:knot-particle-generation",
+    "rem:knot-formula-table",
   ],
 });

@@ -45,7 +45,7 @@ which both families grow.
 | Family | Generators from trefoil seed |
 |--------|----------------------------|
 | $m = 2$: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$ | $e^-, \tau, c,$ **strong force?** |
-| $m = 3$: $T_{3,2} \to T_{3,4} \to T_{3,5}$ | $u, t,$ **weak force?** |
+| $m = 3$: $T_{3,2}, T_{3,4}, T_{3,5}$ | $u, t,$ **weak force?** |
 
 The trefoil is the root node of both generation chains.
 

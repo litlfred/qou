@@ -16,5 +16,9 @@ export default remark({
     "prop:em-coupling-projection",
     "rem:force-knot-identification",
     "rem:unmapped-torus-knots",
+    "sec:mass-predictions",
+    "rem:half-life-as-q-probe",
+    "sec:mass-comparison-table",
+    "rem:hadron-half-life-verification",
   ],
 });

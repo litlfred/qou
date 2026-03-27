@@ -9,9 +9,8 @@ export default remark({
     "genus-4",
     "saturating",
     "unmapped",
-    "dark-sector",
-    "graviton",
-    "sterile-neutrino",
+    "strong-force",
+    "weak-force",
   ],
   uses: [
     "prop:torus-knot-generators",
@@ -20,5 +19,7 @@ export default remark({
     "def:categorical-proton",
     "def:categorical-neutron",
     "def:knot-particle-generation",
+    "rem:knot-formula-table",
+    "rem:color-tube-interpretation",
   ],
 });

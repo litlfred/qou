@@ -50,7 +50,7 @@ The coupling is sensitive to $q$:
 $$
   \frac{\partial \ln \alpha_{\mathrm{EM}}}{\partial \ln q}
   \;=\; -1 \;-\;
-  \frac{9 \, q^9 [10]_q + 10 \, q^{10} [9]_q}%
+  \frac{9 \, q^9 [10]_q + 10 \, q^{10} [9]_q}
        {[9]_q [10]_q (q - q^{-1})}.
 $$
 
