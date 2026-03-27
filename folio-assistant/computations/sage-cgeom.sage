@@ -73,25 +73,23 @@ except Exception as e:
 print()
 
 # ── Evaluate all Jones polynomials at q = 1.110 ─────────────────
-t = J_trefoil.parent().gen()  # Jones polynomial variable
+# Sage Jones polynomials use variable 't' — substitute directly
+var('t')
 
 print(f"Jones polynomial evaluations at q = {q_num}:")
 jones_vals = {}
 for name, J in [("trefoil", J_trefoil), ("mirror_trefoil", J_mirror),
                 ("figure_eight", J_fig8)]:
-    val = float(J.subs({t: q_num}))
+    val = float(J.subs(t=q_num))
     jones_vals[name] = {"polynomial": str(J), "value": val}
     print(f"  J_{name}({q_num}) = {val:.6f}")
 
-# Hopf link uses different variable
-t_hopf = J_hopf.parent().gen()
-val_hopf = float(J_hopf.subs({t_hopf: q_num}))
+val_hopf = float(J_hopf.subs(t=q_num))
 jones_vals["hopf"] = {"polynomial": str(J_hopf), "value": val_hopf}
 print(f"  J_hopf({q_num}) = {val_hopf:.6f}")
 
 if borr_computed and J_borr is not None:
-    t_borr = J_borr.parent().gen()
-    val_borr = float(J_borr.subs({t_borr: q_num}))
+    val_borr = float(J_borr.subs(t=q_num))
     jones_vals["borromean"] = {"polynomial": str(J_borr), "value": val_borr}
     print(f"  J_borromean({q_num}) = {val_borr:.6f}")
 print()
@@ -142,7 +140,7 @@ try:
     # Colored Jones of trefoil in spin-1 (adjoint) representation
     # In Sage: K.colored_jones_polynomial(n) where n is the coloring
     J_trefoil_adj = K_trefoil.colored_jones_polynomial(3)  # spin-1 = 3-dim rep
-    val_adj = float(J_trefoil_adj.subs({J_trefoil_adj.parent().gen(): q_num}))
+    val_adj = float(J_trefoil_adj.subs(t=q_num))
     print(f"  J_trefoil(adjoint, q={q_num}) = {val_adj:.6f}")
     jones_vals["trefoil_adjoint"] = {"polynomial": str(J_trefoil_adj),
                                      "value": val_adj}
@@ -154,7 +152,7 @@ print()
 witness = {
     "computation": "sage-cgeom",
     "timestamp": datetime.now(timezone.utc).isoformat(),
-    "sage_version": str(version()),
+    "sage_version": sage.version.version,
     "q": q_num,
     "target": {"C_geom": float(C_geom_target), "alpha": alpha_target},
     "jones_polynomials": jones_vals,

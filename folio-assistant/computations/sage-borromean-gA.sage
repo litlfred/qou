@@ -208,7 +208,7 @@ for name, ops in braid_ops.items():
 witness = {
     "computation": "sage-borromean-gA",
     "timestamp": datetime.now(timezone.utc).isoformat(),
-    "sage_version": str(version()),
+    "sage_version": sage.version.version,
     "q": q_num,
     "target": {"g_A": 1.2754, "source": "PDG 2024"},
     "symbolic_results": results,
