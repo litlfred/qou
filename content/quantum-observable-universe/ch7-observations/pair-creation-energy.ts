@@ -3,6 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:pair-creation-energy",
   title: "Energy cost of electron--positron conversion",
+  interprets: "def:crossing-energy",
   uses: [
     "def:crossing-energy",
     "rem:chirality-trefoil-electron-positron",

@@ -1,11 +1,10 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:cp-violation-evidence",
-  title: "CP violation: experimental evidence and QOU interpretation",
+export default prose({
+  label: "sec:cp-violation-evidence",
   uses: [
     "conj:complex-chirality-rotation",
-    "rem:crossing-energy-decomposition",
+    "prop:crossing-energy-decomposition",
     "rem:chirality-trefoil-electron-positron",
     "def:crossing-energy",
   ],

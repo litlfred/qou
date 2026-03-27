@@ -99,6 +99,7 @@ export default chapter({
         "trefoil-vortex-chirality-flip",
         "pair-creation-energy",
         "crossing-energy-decomposition",
+        "crossing-energy-interpretation",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "cp-violation-evidence",
