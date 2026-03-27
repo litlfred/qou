@@ -142,6 +142,7 @@ export default chapter({
         "groebner-shirshov-energy",
         "generator-volume-decomposition",
         "markov-trace-factorization",
+        "trace-ratio-observable",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
