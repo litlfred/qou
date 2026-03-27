@@ -3,7 +3,7 @@ nuclear normal form.**
 
 Each beta decay
 ([beta decay](#def:beta-decay-skein)) applies the Skein relation
-at one crossing, producing a smoothing $L_0$ that contains
+at one crossing, producing a smoothing $L_0^{\pm}$ that contains
 exactly one lepton--antilepton pair.  Lepton number counts these
 smoothings.
 
@@ -13,13 +13,13 @@ form and let $\bar{\mathcal{N}}'$ be obtained from
 $\bar{\mathcal{N}}$ by a sequence of $k$ Skein crossing changes.
 The **lepton number** of the transition is $L = k$.
 
-Each smoothing $L_0^{(i)}$ contributes:
+Each smoothing $L_0^{\pm}$ contributes:
 - One charged lepton ($T_{2,3}$ or $\sigma(T_{2,3})$) with
   lepton number $+1$
 - One (anti)neutrino ($K_{0_1}$ or $\bar{K}_{0_1}$) with lepton
   number $-1$
 
-The net lepton number of each $L_0$ pair is $+1 + (-1) = 0$.
+The net lepton number of each $L_0^{\pm}$ pair is $+1 + (-1) = 0$.
 
 **Conservation.**
 Lepton number is conserved by construction:
@@ -51,10 +51,10 @@ do not change the smoothing count).
 
 | Particle | Knot type | Lepton number $L$ | Origin |
 |----------|-----------|:---:|--------|
-| $e^-$ | $T_{2,3}$ (trefoil) | $+1$ | $L_0$ charged component ($\beta^-$) |
-| $e^+$ | $\sigma(T_{2,3})$ (mirror trefoil) | $-1$ | $\bar{L}_0$ charged component ($\beta^+$) |
-| $\nu_e$ | $K_{0_1}$ (unknot) | $+1$ | $\bar{L}_0$ neutral component ($\beta^+$) |
-| $\bar{\nu}_e$ | $K_{0_1}$ (unknot) | $-1$ | $L_0$ neutral component ($\beta^-$) |
+| $e^-$ | $T_{2,3}$ (trefoil) | $+1$ | $L_0^{-}$ charged component ($\beta^-$) |
+| $e^+$ | $\sigma(T_{2,3})$ (mirror trefoil) | $-1$ | $L_0^{+}$ charged component ($\beta^+$) |
+| $\nu_e$ | $K_{0_1}$ (unknot) | $+1$ | $L_0^{+}$ neutral component ($\beta^+$) |
+| $\bar{\nu}_e$ | $\overline{K_{0_1}}$ (mirror unknot) | $-1$ | $L_0^{-}$ neutral component ($\beta^-$) |
 
 The charged lepton carries $L = +1$ (or $-1$ for the
 antiparticle) and the neutrino carries $L = -1$ (or $+1$)
@@ -67,7 +67,7 @@ generators $T(2, n)$ with $n$ odd and $n \leq 7$ exhaust the
 fermion spectrum ([torus knot generators](#prop:torus-knot-generators)).
 The electron ($T_{2,3}$) and neutrino ($K_{0_1} = T_{2,1}$) are
 the two lowest torus knots in this sequence.  The smoothing
-$L_0$ must decompose into exactly these knot types because
+$L_0^{-}$ must decompose into exactly these knot types because
 they are the only single-component closures of a 2-arc
 resolution at a Borromean crossing.
 

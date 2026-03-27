@@ -33,12 +33,12 @@ $$
   \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
   \bar{\mathcal{N}}(p + 1, \, n - 1)
   \;\sqcup\;
-  L_0^{(k)}
+  L_0^{-}
 $$
 
 where $\sigma_k$ is the generator at the converting $d$-quark
-crossing, and $L_0^{(k)}$ is the Skein smoothing at that
-generator.
+crossing, and $L_0^{-}$ is the Skein smoothing (the superscript
+matches $\beta^-$).
 
 In the Skein relation:
 
@@ -47,14 +47,14 @@ $$
   \;-\;
   q^{-1} [\bar{\mathcal{N}}(p+1, n-1)]
   \;=\;
-  (q^{1/2} - q^{-1/2}) \, [L_0^{(k)}]
+  (q^{1/2} - q^{-1/2}) \, [L_0^{-}]
 $$
 
 - $L_+$: the parent normal form (the $d$-$d$ crossing at $\sigma_k$
   is a negative crossing in the Hecke algebra)
 - $L_-$: the daughter normal form (the $u$-$d$ or $u$-$u$ crossing
   after the $d \to u$ change)
-- $L_0$: the smoothing — the **emitted lepton pair**
+- $L_0^{-}$: the smoothing — the **emitted lepton pair** ($e^- + \bar{\nu}_e$)
 
 **Definition ($\beta^+$ decay).**
 *A $\beta^+$ transition is the mirror operation:* a single
@@ -65,7 +65,7 @@ $$
   \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
   \bar{\mathcal{N}}(p - 1, \, n + 1)
   \;\sqcup\;
-  \bar{L}_0^{(k)}
+  L_0^{+}
 $$
 
 The mirror Skein relation (with $q \leftrightarrow q^{-1}$):
@@ -75,7 +75,7 @@ $$
   \;-\;
   q \, [\bar{\mathcal{N}}(p-1, n+1)]
   \;=\;
-  (q^{-1/2} - q^{1/2}) \, [\bar{L}_0^{(k)}]
+  (q^{-1/2} - q^{1/2}) \, [L_0^{+}]
 $$
 
 **The $\mathbb{Z}/2$ symmetry.**
@@ -105,18 +105,18 @@ are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba}
 = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
 **weak asymmetry** that drives the $Q$-value.
 
-**The lepton pair $L_0$.**
+**The lepton pair $L_0^{\pm}$.**
 The Skein smoothing at a Borromean crossing produces exactly
-two link components:
+two link components.  The sign on $L_0$ matches the decay type:
 
 $$
-  L_0^{(k)} \;=\; T_{2,3} \;\sqcup\; K_{0_1}
-  \qquad (\beta^-)
+  L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
+  \qquad (\beta^- \text{ decay: } e^- + \bar{\nu}_e)
 $$
 
 $$
-  \bar{L}_0^{(k)} \;=\; \sigma(T_{2,3}) \;\sqcup\; K_{0_1}
-  \qquad (\beta^+)
+  L_0^{+} \;=\; \overline{T_{2,3}} \;\sqcup\; T_{1,0}
+  \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
 This is the **categorical origin of the weak force**: the

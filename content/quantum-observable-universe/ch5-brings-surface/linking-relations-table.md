@@ -71,18 +71,19 @@ a mathematical operation that arises in the Skein resolution tree.
 **Volume additivity**: $\mathrm{Vol}(K_1 \# K_2) = \mathrm{Vol}(K_1) + \mathrm{Vol}(K_2)$
 (JSJ decomposition — each knot contributes its hyperbolic piece).
 
-## Table 5: $L_0$ smoothing — beta decay emission products
+## Table 5: $L_0^{\pm}$ smoothing — beta decay emission products
 
-The $L_0$ smoothing at a crossing in a braid word replaces the
-crossing with parallel strands, splitting one component into two.
+The $L_0^{\pm}$ smoothing at a crossing in a braid word replaces
+the crossing with parallel strands, splitting one component into
+two.  The sign on $L_0$ matches the decay type ($\beta^{\pm}$).
 
-| Parent crossing | $L_0$ product | Physical decay |
-|----------------|---------------|----------------|
-| $d \to u$ in $\mathfrak{n}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ ($\beta^-$) |
-| $u \to d$ in $\mathfrak{p}$ | $\overline{T_{2,3}} \sqcup T_{1,0}$ | $e^+ + \nu_e$ ($\beta^+$) |
-| $s \to u$ in $\Lambda$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ (weak decay) |
+| Parent crossing | Smoothing | Products | Decay |
+|----------------|-----------|----------|-------|
+| $d \to u$ in $\mathfrak{n}$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ ($\beta^-$) |
+| $u \to d$ in $\mathfrak{p}$ | $L_0^{+}$ | $\overline{T_{2,3}} \sqcup T_{1,0}$ | $e^+ + \nu_e$ ($\beta^+$) |
+| $s \to u$ in $\Lambda$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ (weak) |
 
-In each case the $L_0$ smoothing produces exactly one charged
-lepton (trefoil or mirror trefoil) and one (anti)neutrino
+In each case the $L_0^{\pm}$ smoothing produces exactly one
+charged lepton (trefoil or mirror trefoil) and one (anti)neutrino
 (unknot or mirror unknot).  Lepton number is conserved by
 construction.

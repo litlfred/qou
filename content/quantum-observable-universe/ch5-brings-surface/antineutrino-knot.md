@@ -29,11 +29,11 @@ orientation.
 
 **Role in beta decay.**
 
-In $\beta^-$ decay, the $L_0$ smoothing of the $d \to u$
+In $\beta^-$ decay, the $L_0^{-}$ smoothing of the $d \to u$
 crossing change produces:
 
 $$
-  L_0 \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
+  L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
   \quad=\quad e^- \;+\; \bar{\nu}_e
 $$
 
@@ -43,7 +43,7 @@ structure); the antineutrino $\overline{T_{1,0}}$ carries
 zero topological mass and exits as a massless (or
 near-massless) particle.
 
-**Lepton number.**  The $L_0$ smoothing always produces
+**Lepton number.**  The $L_0^{\pm}$ smoothing always produces
 one fermion knot ($T_{2,3}$ or $\overline{T_{2,3}}$) and
 one (anti)neutrino ($T_{1,0}$ or $\overline{T_{1,0}}$).
 Lepton number is conserved because each smoothing creates
