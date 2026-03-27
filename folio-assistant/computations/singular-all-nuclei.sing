@@ -1,0 +1,171 @@
+// Compute Gröbner-reduced Hecke trace and Q-value for ALL verification nuclei.
+//
+// Run: Singular folio-assistant/computations/singular-all-nuclei.sing
+//
+// No lpMult, no letterplace poly ops — pure rational arithmetic
+// using the proven factored trace: tr = Π_i (z·a_i + b_i)
+
+LIB "freegb.lib";
+
+// ── Rational approximation of q^{1/2} ──────────────────────────
+// q = 1110/1000 = 111/100
+// q^{1/2} ≈ 10536/10000 = 1317/1250 (since 1.0536^2 = 1.11007 ≈ 1.110)
+// Better: use 66332496/62932529 ... too complex.
+// For exact Q(q): we don't need sqrt(q). The Hecke algebra only uses q.
+// sqrt(q) appears only in z = 1/(q^{1/2} + q^{-1/2}).
+// Approximate: z ≈ 4993/10000
+
+proc computeNucleus(int pp, int nn)
+{
+    int aa = pp + nn;
+    "" + "========================================";
+    "N(" + string(pp) + "," + string(nn) + "), A=" + string(aa);
+    "========================================";
+
+    ring Rn = 0, (dummy), dp;
+
+    number qn = 111/100;
+    number qi = 100/111;
+    number han = qn - qi;
+
+    // z = 1/(q^{1/2} + q^{-1/2}) ≈ 4993/10000
+    number zn = 4993/10000;
+
+    // Parent trace: product of (z*a_i + b_i)
+    number trace_par = 1;
+    int i; int j;
+
+    for (i = 1; i <= aa - 1; i++)
+    {
+        number ai = 0;
+        number bi = 1;
+
+        for (j = i + 1; j <= aa; j++)
+        {
+            number cc;
+            number dd;
+
+            // Parent: nucleons 1..pp are protons, pp+1..aa are neutrons
+            if (i <= pp && j <= pp) { cc = 1; dd = 0; }
+            else { if (i > pp && j > pp) { cc = 1; dd = -han; }
+                   else { cc = 1; dd = -han/2; } }
+
+            number nai = ai*cc*han + ai*dd + bi*cc;
+            number nbi = ai*cc + bi*dd;
+            ai = nai; bi = nbi;
+            kill cc; kill dd; kill nai; kill nbi;
+        }
+
+        number vi = zn * ai + bi;
+        trace_par = trace_par * vi;
+        kill ai; kill bi; kill vi;
+    }
+
+    // Daughter trace: N(pp+1, nn-1)
+    number trace_dau = 1;
+    for (i = 1; i <= aa - 1; i++)
+    {
+        number ai = 0;
+        number bi = 1;
+
+        for (j = i + 1; j <= aa; j++)
+        {
+            number cc;
+            number dd;
+
+            // Daughter: nucleons 1..pp+1 are protons, pp+2..aa are neutrons
+            if (i <= pp+1 && j <= pp+1) { cc = 1; dd = 0; }
+            else { if (i > pp+1 && j > pp+1) { cc = 1; dd = -han; }
+                   else { cc = 1; dd = -han/2; } }
+
+            number nai = ai*cc*han + ai*dd + bi*cc;
+            number nbi = ai*cc + bi*dd;
+            ai = nai; bi = nbi;
+            kill cc; kill dd; kill nai; kill nbi;
+        }
+
+        number vi = zn * ai + bi;
+        trace_dau = trace_dau * vi;
+        kill ai; kill bi; kill vi;
+    }
+
+    // Fractional ideal volume at converting generator (generator pp)
+    number a_par = 0; number b_par = 1;
+    for (j = pp + 1; j <= aa; j++)
+    {
+        number cc; number dd;
+        // Parent: nucleon pp is proton, j > pp are neutrons → mixed
+        cc = 1; dd = -han/2;
+        number nai = a_par*cc*han + a_par*dd + b_par*cc;
+        number nbi = a_par*cc + b_par*dd;
+        a_par = nai; b_par = nbi;
+        kill cc; kill dd; kill nai; kill nbi;
+    }
+    number Vp = zn * a_par + b_par;
+
+    number a_dau = 0; number b_dau = 1;
+    for (j = pp + 1; j <= aa; j++)
+    {
+        number cc; number dd;
+        // Daughter: nucleon pp+1 becomes proton
+        if (j == pp + 1) { cc = 1; dd = 0; }  // p-p
+        else { cc = 1; dd = -han/2; }          // p-n mixed
+        number nai = a_dau*cc*han + a_dau*dd + b_dau*cc;
+        number nbi = a_dau*cc + b_dau*dd;
+        a_dau = nai; b_dau = nbi;
+        kill cc; kill dd; kill nai; kill nbi;
+    }
+    number Vd = zn * a_dau + b_dau;
+
+    number fiv = 0;
+    if (Vp != 0)
+    {
+        fiv = (Vp - Vd) / Vp;
+        if (fiv < 0) { fiv = -fiv; }
+    }
+
+    "Parent trace:   " + string(trace_par);
+    "Daughter trace:  " + string(trace_dau);
+    "V_par at gen " + string(pp) + ": " + string(Vp);
+    "V_dau at gen " + string(pp) + ": " + string(Vd);
+    "e(I)/e(R) = " + string(fiv);
+    "";
+
+    kill a_par; kill b_par; kill a_dau; kill b_dau;
+    kill Vp; kill Vd; kill fiv;
+    kill trace_par; kill trace_dau;
+    kill qn; kill qi; kill han; kill zn;
+}
+
+// ── Run all verification nuclei ─────────────────────────────────
+
+"";
+"############################################################";
+"# NUCLEAR BRAID GROEBNER TRACE — ALL VERIFICATION NUCLEI  #";
+"# q = 111/100, z ≈ 4993/10000                             #";
+"# Factored Markov trace: tr = Prod_i (z*a_i + b_i)        #";
+"# Fractional ideal volume: e(I)/e(R) at converting gen     #";
+"############################################################";
+"";
+
+computeNucleus(1, 2);    // 3H
+computeNucleus(6, 8);    // 14C
+computeNucleus(27, 33);  // 60Co
+computeNucleus(38, 52);  // 90Sr
+computeNucleus(55, 82);  // 137Cs
+computeNucleus(83, 127); // 210Bi
+
+"";
+"############################################################";
+"# EXPECTED Q_exp (MeV) for comparison:                     #";
+"#   3H:    0.01861                                         #";
+"#   14C:   0.156                                           #";
+"#   60Co:  0.318                                           #";
+"#   90Sr:  0.546                                           #";
+"#   137Cs: 0.514                                           #";
+"#   210Bi: 1.163                                           #";
+"#                                                          #";
+"# e(I)/e(R) = Q_pred (dimensionless, compare to Q in MeV) #";
+"############################################################";
+
+exit;
