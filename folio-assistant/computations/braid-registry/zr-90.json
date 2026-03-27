@@ -4,7 +4,7 @@
   "n": 50,
   "A": 90,
   "q": 1.11,
-  "timestamp": "2026-03-27T11:39:44.641825+00:00",
+  "timestamp": "2026-03-27T14:14:00.679981+00:00",
   "parent": {
     "ordering": [
       1,
@@ -855,7 +855,7 @@
     "t_unit": null
   },
   "computation": {
-    "elapsed_s": 0.24230551719665527,
+    "elapsed_s": 0.3368797302246094,
     "engine": "braid-registry.py",
     "factored_trace_theorem": "thm:markov-trace-factorization",
     "parameters": {
