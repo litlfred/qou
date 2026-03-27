@@ -14,7 +14,7 @@ export default remark({
     "exceptional-divisor",
   ],
   uses: [
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
     "def:crossing-energy",
     "conj:electron-shells-hopf",
     "prop:fiber-adjoint-involution",

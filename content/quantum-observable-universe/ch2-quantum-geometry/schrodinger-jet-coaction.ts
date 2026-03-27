@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:q-harmonic-form",
   label: "rem:schrodinger-jet-coaction",
   title: "q-Deformed Schrodinger equation",
   tags: ["schrodinger", "q-deformation", "jet-bundle"],

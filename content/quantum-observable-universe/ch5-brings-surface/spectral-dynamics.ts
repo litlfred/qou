@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:quaternionic-spectral-resolvents",
   label: "rem:spectral-dynamics",
   title: "Spectral dynamics and the $\\mathrm{Sp}(1)$ action",
   uses: [

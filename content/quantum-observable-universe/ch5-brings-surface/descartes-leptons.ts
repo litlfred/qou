@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:fermion-boson-decomposition",
   label: "rem:descartes-leptons",
   title: "Electrons, muons and the Reeb decomposition",
   tags: ["descartes-universe", "leptons", "reeb-decomposition"],

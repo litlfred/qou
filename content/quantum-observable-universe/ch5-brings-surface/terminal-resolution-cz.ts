@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "prop:terminal-resolution",
   label: "ex:terminal-resolution-cz",
   title: "Terminal resolution in $\\mathbb{C}[z]$",
   lean: { decl: "QOU.Examples.czTerminalResolution" },

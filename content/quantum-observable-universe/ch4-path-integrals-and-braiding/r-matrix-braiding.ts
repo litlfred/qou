@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:quantum-su2",
   label: "rem:r-matrix-braiding",
   title: "$R$-matrix and braiding",
   tags: ["r-matrix", "yang-baxter", "quantum-group"],

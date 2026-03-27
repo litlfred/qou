@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:categorical-action-notation",
+export default prose({
+  label: "sec:categorical-action-notation",
   title: "Notation for the categorical action",
   tags: ["notation", "categorical-action"],
   uses: [

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:electron-knot",
   label: "rem:hydrogen-orbitals",
   title:
     "Hydrogen orbitals: the spinning trefoil around the Borromean anchor",

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:skein-crossing-asymmetry",
   title: "Crossing asymmetry and emergent Coulomb repulsion",
   tags: [

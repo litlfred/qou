@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:stable-nucleus",
   label: "rem:helium-hopf-diagram",
   title:
     "Helium: two trefoils forming a closed Hopf link",
@@ -14,6 +15,6 @@ export default remark({
   uses: [
     "conj:electron-shells-hopf",
     "def:stable-nucleus",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

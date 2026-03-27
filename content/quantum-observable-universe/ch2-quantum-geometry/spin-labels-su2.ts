@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "prop:spin-labels",
   label: "ex:spin-labels-su2",
   title: "Spin decomposition of $\\mathrm{Rep}(\\mathrm{SU}(2))$",
   lean: { decl: "QOU.Examples.su2SpinLabels" },

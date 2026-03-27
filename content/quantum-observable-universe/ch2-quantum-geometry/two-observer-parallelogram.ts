@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:observation",
   label: "rem:two-observer-parallelogram",
   title: "Two-observer parallelogram",
   tags: ["observation", "uncertainty"],

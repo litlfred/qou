@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:categorical-reeb",
   label: "ex:reeb-su2",
   title: "Reeb derivation for $\\mathrm{SU}(2)$",
   lean: { decl: "QOU.Examples.su2Reeb" },

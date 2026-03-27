@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:c-substrate-via-levi",
   title: "Archimedean substrate via the Levi form",
   tags: ["substrate", "levi-form", "archimedean"],

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:metallic-character-knot",
   label: "rem:francium-extremal-metal",
   title:
     "Francium: the most metallic element as a single loose curl",

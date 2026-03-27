@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:higher-forms",
   label: "ex:higher-forms-su2",
   title: "Higher forms on $\\mathcal{O}(\\mathrm{SU}(2))$",
   lean: { decl: "QOU.Examples.su2FormDims" },

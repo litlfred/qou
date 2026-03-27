@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:quantum-universe",
   label: "rem:frobenius-simplification",
   title: "Frobenius structure of the C gauge algebra",
   tags: ["frobenius", "hopf-algebra", "gauge-theory"],

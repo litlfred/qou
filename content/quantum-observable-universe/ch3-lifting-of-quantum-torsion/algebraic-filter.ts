@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:algebraic-filter",
   title: "The algebraic filter",
   tags: ["fermion", "boson", "algebraic-filter", "curvature"],

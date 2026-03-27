@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:categorical-dirac-operator",
   label: "rem:wavefront-propagation",
   title: "Wavefront propagation and the categorical Dirac equation",
   tags: ["wavefront", "dirac", "propagation", "photon", "instanton"],

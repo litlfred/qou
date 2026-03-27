@@ -10,6 +10,6 @@ export default definition({
   },
   uses: [
     "prop:torus-knot-generators",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

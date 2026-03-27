@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:stable-nucleus",
   label: "rem:knot-atom-diagrams",
   title:
     "Knot diagrams of light atoms ($p \\leq 4$)",
@@ -16,6 +17,6 @@ export default remark({
     "conj:electron-shells-hopf",
     "rem:helium-hopf-diagram",
     "def:stable-nucleus",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

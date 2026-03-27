@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:notation-special-cases",
+export default prose({
+  label: "sec:notation-special-cases",
   title: "Notation and special cases",
   tags: ["notation"],
   uses: ["ex:c-quantum-universe"],

@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:projective-line-object",
   label: "ex:projective-line-su2",
   title: "Projective line for $\\mathrm{SU}(2)$",
   lean: { decl: "QOU.Examples.su2ProjectiveLine" },

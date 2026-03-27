@@ -22,6 +22,6 @@ export default proposition({
     "def:fermion-boson-decomposition",
     "def:categorical-reeb",
     "def:borromean-baryon",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

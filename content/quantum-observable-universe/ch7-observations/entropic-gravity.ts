@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:entropic-gravity",
   title: "Entropic forces and the substrate parameter",
   uses: ["def:substrate-parameter", "rem:gr-substrate-geometry"],

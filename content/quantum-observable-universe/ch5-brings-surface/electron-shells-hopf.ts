@@ -21,6 +21,6 @@ export default conjecture({
     "def:coulomb-charge",
     "conj:skein-shell-correction",
     "prop:torus-hopf-stability",
-    "rem:knot-notation-convention",
+    "sec:knot-notation-convention",
   ],
 });

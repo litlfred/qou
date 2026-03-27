@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:braid-action-tensor",
   label: "rem:symmetric-quotient-colour",
   title: "The symmetric quotient and colour sectors",
   tags: ["braid-group", "colour", "symmetric-group"],

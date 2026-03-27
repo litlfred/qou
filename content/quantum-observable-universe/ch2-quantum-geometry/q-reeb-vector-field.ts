@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:categorical-reeb",
   label: "ex:q-reeb-vector-field",
   title: "$q$-Deformed Reeb vector field",
   lean: { decl: "QOU.qReebVectorField", validation: "not_checked" },

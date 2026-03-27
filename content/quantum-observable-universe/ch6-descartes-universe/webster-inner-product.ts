@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:webster-inner-product",
+export default prose({
+  label: "sec:webster-inner-product",
   title: "Webster inner product notation",
   uses: ["ex:c-quantum-universe", "ex:reeb-decomposition"],
   tags: ["notation", "webster", "inner-product"],

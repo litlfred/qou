@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:q-deformed-double-slit",
   title: "Macroscopic scattering and the $q$-deformed double slit",
   uses: [

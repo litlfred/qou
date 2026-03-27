@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "def:substrate-parameter",
   label: "rem:reeb-exceptional-divisor",
   title: "Reeb vector field on the exceptional divisor",
   uses: [

@@ -1,6 +1,7 @@
 import { example } from "../../schema/builders";
 
 export default example({
+  interprets: "def:categorical-hodge-star",
   label: "ex:hodge-su2",
   title: "Hodge star on $\\mathcal{O}(\\mathrm{SU}(2))$",
   lean: { decl: "QOU.Examples.su2Hodge" },

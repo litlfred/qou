@@ -1,7 +1,7 @@
-import { remark } from "../../schema/builders";
+import { prose } from "../../schema/builders";
 
-export default remark({
-  label: "rem:categorical-point-explication",
+export default prose({
+  label: "sec:categorical-point-explication",
   title: "Points in the archimedean realisation",
   tags: ["archimedean", "point"],
   uses: ["def:categorical-point"],
