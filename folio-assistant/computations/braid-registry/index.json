@@ -1,0 +1,32 @@
+{
+  "registry": "nuclear-braid-registry",
+  "description": "Ground-state braid orderings and Markov traces for all nuclei",
+  "timestamp": "2026-03-27T11:33:54.067874+00:00",
+  "q": 1.11,
+  "nuclei": [
+    "H-3",
+    "He-3",
+    "He-4",
+    "Li-6",
+    "C-12",
+    "C-14",
+    "N-14",
+    "Co-60",
+    "Sr-90",
+    "Cs-137",
+    "Bi-210"
+  ],
+  "files": {
+    "h-3": "h-3.json",
+    "he-3": "he-3.json",
+    "he-4": "he-4.json",
+    "li-6": "li-6.json",
+    "c-12": "c-12.json",
+    "c-14": "c-14.json",
+    "n-14": "n-14.json",
+    "co-60": "co-60.json",
+    "sr-90": "sr-90.json",
+    "cs-137": "cs-137.json",
+    "bi-210": "bi-210.json"
+  }
+}
