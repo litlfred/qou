@@ -50,12 +50,17 @@ We begin from what we can actually observe:
    Reeb bundle is where we keep track of what we have not
    yet measured.
 
-8. **Observation feels centred.**  Each observer stands at the
-   apex of an inward-flowing sphere of information — the
-   electromagnetic field, the cosmic microwave background,
-   the light of distant stars.  What we perceive is this
-   inflow.  The state bundle $\mathcal{S}$ over the
-   substrate encodes it.
+8. **Multiple observers share a world.**  Each observer
+   has a local chart — an affine patch centred on their
+   own measurements.  But these charts overlap, and where
+   they overlap the transition functions are consistent.
+   We can compare notes.  This is not a flashlight theory
+   where each observer illuminates a private universe; it
+   is a manifold theory where independent affine charts
+   patch together into a shared structure.  The
+   cosimplicial crossed groupoid encodes precisely this:
+   local sections, transition cocycles, and the descent
+   condition that makes local agreement global.
 
 These observations motivate a rigid monoidal category — a
 quantum observable universe — whose axioms encode precisely
