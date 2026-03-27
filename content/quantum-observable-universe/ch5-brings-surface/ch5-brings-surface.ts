@@ -157,6 +157,7 @@ export default chapter({
         "generator-volume-decomposition",
         "markov-trace-factorization",
         "skein-polynomial-transfer-matrix",
+        "beta-decay-transfer-matrix",
         "trace-ratio-observable",
         "quantum-dilogarithm-volume",
         "nitrogen-14-threading",
