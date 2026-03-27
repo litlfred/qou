@@ -26,58 +26,96 @@ The Standard Model fermion content is exhausted at genus $3$.  Yet
 the Bring surface provides two additional generators at genus $4$
 that the generation scheme
 ([knot-particle generation](#def:knot-particle-generation)) does not
-require for known particles.
+require for known matter particles.
 
-**Natural candidates.**
-Several possibilities merit investigation:
+**The three-fold cover structure of $T_{2,9}$.**
 
-1. **Graviton or gravitino.**  The genus-$4$ generators saturate
-   the topological capacity of the Bring surface.  If gravity
-   emerges as a genus-$4$ phenomenon — requiring the full handle
-   structure of $\Sigma_4$ — then $T_{2,9}$ or $T_{3,5}$ could
-   carry the gravitational degree of freedom.  The high crossing
-   number would be consistent with the weakness of gravitational
-   coupling relative to gauge interactions.
+The longitudinal winding number of $T_{2,9}$ factorises as
+$9 = 3 \times 3$.  This is unique among the $T_{2,n}$ generators:
 
-2. **Sterile neutrino.**  A right-handed neutrino that does not
-   participate in weak interactions could correspond to a
-   genus-$4$ torus knot.  The maximal Seifert genus would explain
-   its decoupling: the spectral filter nearly excludes it, giving
-   it a suppressed (but nonzero) projection onto the physical
-   Hilbert space.
+| Generator | $n$ | $n/3$ | Role |
+|-----------|-----|-------|------|
+| $T_{2,3}$ | $3$ | $1$ | Matter (electron, up quark) |
+| $T_{2,5}$ | $5$ | — | Matter (bottom, tau) |
+| $T_{2,7}$ | $7$ | — | Matter (charm) |
+| $T_{2,9}$ | $9$ | $\mathbf{3}$ | **Three-fold cover of $T_{2,3}$** |
 
-3. **Dark matter candidate.**  Although the embeddability closure
-   theorem ([embeddability closure](#thm:embeddability-closure))
-   guarantees that genus-$4$ knots *are* observable, their
-   maximal genus could suppress their coupling constants via the
-   mass functional.  A particle with large topological mass
-   (from high crossing number) and weak coupling (from
-   near-saturation of the genus bound) matches the phenomenological
-   profile of a weakly interacting massive particle.
+On the torus, $T_{2,9}$ traces the trefoil pattern **three times
+around the longitude** — it is the unique three-fold cover of
+$T_{2,3}$ within $\mathcal{G}$.  The knot group relation
+$x^2 = y^9 = (y^3)^3$ reflects this factorisation: the longitudinal
+generator $y$ completes three full $T_{2,3}$ periods before closing.
 
-4. **Composite role only.**  It is possible that $T_{2,9}$ and
-   $T_{3,5}$ do not correspond to fundamental particles but appear
-   only as intermediate states in Skein resolutions of composite
-   links.  Their Skein descendants would contribute to hadronic
-   mass calculations without the generators themselves being
-   directly observed.
+This three-fold structure resonates with the three color tubes
+([color tube interpretation](#rem:color-tube-interpretation)).  Each
+color fiber carries one copy of the trefoil pattern; $T_{2,9}$
+interpolates all three simultaneously, wrapping once through each
+color tube per longitudinal period.
 
-**Structural observation.**
-The two unmapped generators are distinguished by their winding
-structure: $T_{2,9}$ has $2$-strand meridional winding (like the
-leptons $T_{2,3}$, $T_{2,5}$, $T_{2,7}$), while $T_{3,5}$ has
-$3$-strand meridional winding (like the heavy quarks $T_{3,4}$).
-If the $m = 2$ family encodes leptons and the $m = 3$ family encodes
-quarks, then $T_{2,9}$ is a natural fourth-generation lepton
-candidate and $T_{3,5}$ a fourth-generation quark candidate —
-both too massive to have been observed at current collider energies,
-but in principle producible.
+**Force interpretation.**
+The matter/force distinction in the Standard Model aligns with a
+winding number dichotomy:
+
+- **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$)
+  have winding numbers that are *prime* and do not factor through a
+  lower generator.
+- **$T_{2,9}$** has winding $9 = 3 \times 3$ — it is a *composite*
+  winding that factors through $T_{2,3}$.
+
+A generator whose winding interpolates three matter copies is
+naturally a **binding agent** rather than a standalone particle.
+The candidate identification is:
+
+$$
+  T_{2,9} \;\longleftrightarrow\; \text{strong force (gluonic binding)}.
+$$
+
+The $9$ crossings of $T_{2,9}$ — all of the same sign, as for any
+torus knot — provide exactly three crossing triples, one per color
+tube.  In the Borromean baryon
+([categorical proton](#def:categorical-proton)), the three quark
+components (each $T_{2,3}$) are threaded through the color fibers;
+$T_{2,9}$ as their three-fold cover supplies the topological rigidity
+that holds the configuration together.  The zero hyperbolic volume of
+$T_{2,9}$ (shared by all torus knots) is consistent with gluons
+being massless force carriers.
+
+**The structure of $T_{3,5}$.**
+
+$T_{3,5}$ has $3$-strand meridional winding, placing it in the quark
+family alongside $T_{3,4}$ (top quark).  Its longitudinal winding
+$n = 5$ is the same as that of $T_{2,5}$ (bottom/tau), creating a
+cross-link between the two winding families:
+
+| $m \backslash n$ | $3$ | $4$ | $5$ | $7$ | $9$ |
+|------------------|-----|-----|-----|-----|-----|
+| $2$ | $e^-, u$ | — | $b, \tau$ | $c$ | **force?** |
+| $3$ | — | $t$ | **?** | — | — |
+
+$T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the
+$n = 5$ (second-generation) column.  Its knot group relation
+$x^3 = y^5$ intertwines the three-strand color structure with
+five-fold longitudinal winding.
+
+If $T_{2,9}$ carries the strong force, $T_{3,5}$ is a natural
+candidate for a **flavor-changing interaction** — a topological
+mediator that connects the $m = 2$ and $m = 3$ families.  The
+weak force, which is the only Standard Model interaction that
+changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{\pm}$),
+requires precisely this kind of cross-family mediation.
+Alternatively, $T_{3,5}$ could encode the **electroweak mixing**
+between the leptonic ($m = 2$) and quark ($m = 3$) sectors.
+
+**Summary of candidate assignments.**
+
+| Generator | Structure | Candidate | Rationale |
+|-----------|-----------|-----------|-----------|
+| $T_{2,9}$ | Three-fold cover of $T_{2,3}$ | Strong force / gluonic binding | Interpolates 3 color copies of the trefoil; zero volume = massless |
+| $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | Weak / electroweak mediator | Connects quark and lepton winding families; flavor-changing |
 
 **Open problem.**
-Determine whether $T_{2,9}$ and $T_{3,5}$ carry physical particle
-assignments in the Descartes universe, or whether their role is
-purely algebraic (as Skein resolution intermediaries).  A resolution
-would either predict new particles at specific mass scales (computable
-from the topological mass formula) or establish a structural theorem
-that genus-$4$ generators are necessarily confined to the composite
-sector.
+Make the force interpretation precise: identify $T_{2,9}$ and $T_{3,5}$
+with specific gauge bosons (gluon, $W^{\pm}$, $Z^0$) by computing
+their Skein interaction terms with matter generators and comparing
+coupling constants derived from the mass functional with Standard
+Model values.
