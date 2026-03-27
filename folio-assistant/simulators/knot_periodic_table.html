@@ -504,14 +504,15 @@ function knotPos(Z,block,shellRow){
   const idx=siblings.findIndex(e=>e[0]===Z);
   if(idx<0)return{row:mainRow,col:1};
 
-  if(block===0){      // s-block → cols 1-2 (max 2 per shell typically, but some have 4)
-    return{row:mainRow,col:1+idx};
-  }else if(block===2){ // d-block → start at col 4
-    return{row:mainRow,col:4+idx};
-  }else if(block===1){ // p-block → start at col 15
-    return{row:mainRow,col:15+idx};
-  }else{               // f-block → sub-row below main, start at col 4
-    return{row:mainRow+1,col:4+idx};
+  // Col 1 = row label. Elements start at col 2.
+  if(block===0){      // s-block → cols 2-5
+    return{row:mainRow,col:2+idx};
+  }else if(block===2){ // d-block → start at col 6
+    return{row:mainRow,col:6+idx};
+  }else if(block===1){ // p-block → start at col 17
+    return{row:mainRow,col:17+idx};
+  }else{               // f-block → sub-row, start at col 6
+    return{row:mainRow+1,col:6+idx};
   }
 }
 
@@ -624,21 +625,17 @@ function buildGrid(){
     addRowLabel(grid,9,1,"Lanthanides");
     addRowLabel(grid,10,1,"Actinides");
   }else{
-    // Knot-centric: visual shell labels with Hopf-link fill bars
+    // Knot-centric: compact text shell labels on left (col 1)
+    // Elements shift right: s starts col 2, d col 4, p col 16
     for(let i=0;i<SHELL_ROWS.length;i++){
       const sr=SHELL_ROWS[i];
       const gr=KNOT_BASE_ROW[i+1];
       const lbl=document.createElement("div");
-      lbl.style.cssText=`grid-row:${gr};grid-column:23;font-size:8px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;gap:4px`;
-      lbl.appendChild(shellFillSvg(sr.capacity,sr.capacity,12));
-      const txt=document.createElement("span");
-      txt.textContent=sr.intruder?`◇${sr.pair} ⋈↓`:`◇${sr.pair}`;
-      txt.title=sr.intruder?`Shell closes at ${sr.pair} nucleons (intruder crossing)`:`Shell closes at ${sr.pair} nucleons`;
-      lbl.appendChild(txt);
+      lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
+      lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
+      lbl.title=`Shell capacity: ${sr.capacity} nucleon slots. Stability pair at ${sr.pair}.${sr.intruder?" Intruder crossing.":""}`;
       grid.appendChild(lbl);
     }
-    // Extend grid for label column
-    grid.style.gridTemplateColumns+=" auto";
   }
 
   wrap.appendChild(grid);
