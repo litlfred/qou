@@ -160,6 +160,7 @@ export default chapter({
         "observation",
         "observation-energy",
         "two-observer-parallelogram",
+        "observation-fermion-action",
       ],
     }),
 
