@@ -37,6 +37,7 @@ export default chapter({
         "golden-ratio-transport",
         "julia-set-reeb",
         "discrete-planck-step",
+        "jet-planck-steps",
       ],
     }),
     section({
