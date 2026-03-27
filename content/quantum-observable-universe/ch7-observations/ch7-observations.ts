@@ -82,6 +82,8 @@ export default chapter({
       blocks: [
         "photonic-hall",
         "photonic-hall-data",
+        "fine-structure-observation",
+        "fine-structure-data",
         "lepton-discrepancies",
         "lepton-anomalies-data",
         "proton-radius-puzzle",
