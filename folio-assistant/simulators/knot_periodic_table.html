@@ -407,80 +407,134 @@ function computeMass(Z,A,BA,qVal){
 }
 
 // === LAYOUT ENGINE ===
-// Explicit grid positions for the standard 18-column periodic table.
-// Lanthanides (Z=57-71) go to row 9, actinides (Z=89-92+) go to row 10.
-// Row and col are 1-based for CSS grid.
+
+// --- Standard layout: 18 columns, electron-period rows ---
 function stdPos(Z,period,group,block){
-  // Lanthanides: Z 57-71 → row 9, cols 4-18
   if(Z>=57&&Z<=71)return{row:9,col:Z-57+4};
-  // Actinides: Z 89-103 → row 10, cols 4-18 (we only have up to 92)
   if(Z>=89&&Z<=103)return{row:10,col:Z-89+4};
-  // Hf-Hg (Z 72-80) are period 6 d-block → row 6, cols 4-12
   if(Z>=72&&Z<=80)return{row:6,col:Z-72+4};
-  // Tl-Rn not covered above: use period/group directly
   return{row:period,col:group};
 }
 
-// Build tile grid
+// --- Knot-centric layout: 7 nuclear-shell rows ---
+// Each shellRow has a main grid-row for s/d/p blocks and a sub-row for f-block.
+// Columns: s(1-2), d(3-12), p(13-18).  f-block in sub-row cols 3-16.
+//
+// shellRow → gridRow mapping:
+//   shellRow 1 → gridRow 1       (N=0: H,He)
+//   shellRow 2 → gridRow 2       (N=1: Li–Ne)
+//   shellRow 3 → gridRow 3       (N=2: Na–Ca)
+//   shellRow 4 → gridRow 4       (N=3*: Sc–Ni, intruder)
+//   shellRow 5 → gridRow 5,6     (N=4*: Cu–Sn, 6=f sub-row if needed)
+//   shellRow 6 → gridRow 7,8     (N=5*: Sb–Pb, 8=f sub-row for lanthanides)
+//   shellRow 7 → gridRow 9,10    (N=6*: Bi–U, 10=f sub-row for actinides)
+function knotPos(Z,block,shellRow){
+  // Grid row: main row for s/d/p, sub-row for f-block
+  const baseRow=[0,1,2,3,4,5,7,9]; // shellRow→gridRow (1-indexed, skip rows for sub-rows)
+  const mainRow=baseRow[shellRow];
+  const fSubRow=mainRow+1; // f-block goes one row below
+
+  // Collect elements in same shellRow and same block, sorted by Z, to assign columns
+  const siblings=EL.filter(e=>e[11]===shellRow&&e[8]===block).sort((a,b)=>a[0]-b[0]);
+  const idx=siblings.findIndex(e=>e[0]===Z);
+
+  if(block===0){      // s-block → cols 1-2
+    return{row:mainRow,col:1+idx};
+  }else if(block===2){ // d-block → cols 3-12
+    return{row:mainRow,col:3+idx};
+  }else if(block===1){ // p-block → cols 13-18
+    return{row:mainRow,col:13+idx};
+  }else{               // f-block → sub-row, cols 3-16
+    return{row:fSubRow,col:3+idx};
+  }
+}
+
 let selectedEl=null;
 let tileEls=new Map();
+
+function makeTile(el,colorMode){
+  const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
+  const N=A-Z;
+  const tile=document.createElement("div");
+  tile.className="tile";
+
+  // Color mode
+  if(colorMode==="block"){
+    tile.classList.add("block-"+BLOCK_NAMES[block]);
+  }else if(colorMode==="kalpha"){
+    const intensity=Math.min(kalpha/46,1);
+    tile.style.background=`rgba(200,60,60,${0.05+intensity*0.3})`;
+  }else if(colorMode==="ba"){
+    const norm=(BA-5)/(8.8-5);
+    tile.style.background=`rgba(40,80,200,${0.05+Math.max(0,norm)*0.35})`;
+  }else if(colorMode==="shell"){
+    const hue=(shellRow-1)*50;
+    tile.style.background=`hsla(${hue},60%,92%,0.8)`;
+  }
+
+  // Magic number borders
+  if(magZ&&magN)tile.classList.add("magic-both");
+  else if(magZ)tile.classList.add("magic-z");
+  else if(magN)tile.classList.add("magic-n");
+  if(intruder)tile.classList.add("intruder");
+
+  // Tile content
+  const zSpan=document.createElement("div");
+  zSpan.className="z-num";zSpan.textContent=Z;
+  const symSpan=document.createElement("div");
+  symSpan.className="sym";symSpan.textContent=sym;
+  tile.appendChild(zSpan);
+  tile.appendChild(symSpan);
+  tile.appendChild(miniKnotSvg(Z,N,kalpha));
+
+  return tile;
+}
+
+function addRowLabel(grid,row,col,text){
+  const lbl=document.createElement("div");
+  lbl.style.cssText=`grid-row:${row};grid-column:${col};font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
+  lbl.textContent=text;
+  grid.appendChild(lbl);
+}
 
 function buildGrid(){
   const wrap=document.getElementById("table-wrap");
   wrap.innerHTML="";
   tileEls=new Map();
-  const grid=document.createElement("div");
-  grid.className="tile-grid standard";
-  grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
-  grid.style.gridTemplateRows="repeat(10,auto)";
 
+  const layout=document.getElementById("layout-sel").value;
   const colorMode=document.getElementById("color-sel").value;
   const filter=document.getElementById("filter-sel").value;
   const qVal=parseFloat(document.getElementById("q-slider").value);
 
+  const grid=document.createElement("div");
+  grid.className="tile-grid";
+  grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
+
+  if(layout==="standard"){
+    grid.style.gridTemplateRows="repeat(10,auto)";
+  }else{
+    // Knot-centric: 10 grid rows (7 main + 3 f-block sub-rows)
+    grid.style.gridTemplateRows="repeat(10,auto)";
+  }
+
   for(const el of EL){
     const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
-    const N=A-Z;
-    const pos=stdPos(Z,period,group,block);
 
     // Filter
     if(filter==="magic"&&!magZ&&!magN)continue;
     if(filter==="intruder"&&!intruder)continue;
     if(filter==="stable"&&!magZ&&!magN)continue;
 
-    const tile=document.createElement("div");
-    tile.className="tile";
+    const tile=makeTile(el,colorMode);
 
-    // Color mode
-    if(colorMode==="block"){
-      tile.classList.add("block-"+BLOCK_NAMES[block]);
-    }else if(colorMode==="kalpha"){
-      const intensity=Math.min(kalpha/46,1);
-      tile.style.background=`rgba(200,60,60,${0.05+intensity*0.3})`;
-    }else if(colorMode==="ba"){
-      const norm=(BA-5)/(8.8-5);
-      tile.style.background=`rgba(40,80,200,${0.05+Math.max(0,norm)*0.35})`;
-    }else if(colorMode==="shell"){
-      const hue=(shellRow-1)*50;
-      tile.style.background=`hsla(${hue},60%,92%,0.8)`;
+    // Position depends on layout
+    let pos;
+    if(layout==="standard"){
+      pos=stdPos(Z,period,group,block);
+    }else{
+      pos=knotPos(Z,block,shellRow);
     }
-
-    // Magic number borders
-    if(magZ&&magN)tile.classList.add("magic-both");
-    else if(magZ)tile.classList.add("magic-z");
-    else if(magN)tile.classList.add("magic-n");
-    if(intruder)tile.classList.add("intruder");
-
-    // Tile content
-    const zSpan=document.createElement("div");
-    zSpan.className="z-num";zSpan.textContent=Z;
-    const symSpan=document.createElement("div");
-    symSpan.className="sym";symSpan.textContent=sym;
-    tile.appendChild(zSpan);
-    tile.appendChild(symSpan);
-    tile.appendChild(miniKnotSvg(Z,N,kalpha));
-
-    // Grid position
     tile.style.gridRow=pos.row;
     tile.style.gridColumn=pos.col;
 
@@ -493,15 +547,26 @@ function buildGrid(){
     tileEls.set(Z,tile);
   }
 
-  // Lanthanide/Actinide row labels
-  const laLbl=document.createElement("div");
-  laLbl.style.cssText="grid-row:9;grid-column:1/4;font-size:9px;color:#778;display:flex;align-items:center;justify-content:end;padding-right:4px";
-  laLbl.textContent="Lanthanides";
-  grid.appendChild(laLbl);
-  const acLbl=document.createElement("div");
-  acLbl.style.cssText="grid-row:10;grid-column:1/4;font-size:9px;color:#778;display:flex;align-items:center;justify-content:end;padding-right:4px";
-  acLbl.textContent="Actinides";
-  grid.appendChild(acLbl);
+  // Row labels
+  if(layout==="standard"){
+    addRowLabel(grid,9,1,"Lanthanides");
+    addRowLabel(grid,10,1,"Actinides");
+  }else{
+    // Knot-centric shell row labels on the right (col 19 won't show, use col 18+ or left side)
+    const baseRow=[0,1,2,3,4,5,7,9];
+    for(let i=0;i<SHELL_ROWS.length;i++){
+      const sr=SHELL_ROWS[i];
+      const gr=baseRow[i+1];
+      const txt=sr.intruder?`${sr.label} · ${sr.intruder} · ◇${sr.pair}`:`${sr.label} · ◇${sr.pair}`;
+      // Put label at far right of the row
+      const lbl=document.createElement("div");
+      lbl.style.cssText=`grid-row:${gr};grid-column:19;font-size:8px;color:#778;padding:2px 4px;white-space:nowrap;display:flex;align-items:center`;
+      lbl.textContent=txt;
+      grid.appendChild(lbl);
+    }
+    // Widen grid to 19 cols to accommodate labels
+    grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr)) auto";
+  }
 
   wrap.appendChild(grid);
 }
