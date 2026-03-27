@@ -233,12 +233,20 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - **Category notation**: Use bold `$\mathbf{C}$` for categories
   (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
   Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
-  Calligraphic letters are reserved for sheaves, sites, and algebras
-  (`$\mathcal{S}$`, `$\mathcal{O}$`, `$\mathcal{A}$`).
+  Calligraphic letters are reserved for sheaves, sites, algebras, and
+  bundles (`$\mathcal{S}$` = state bundle, `$\mathcal{O}$`, `$\mathcal{A}$`).
 - **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
   explicitly used.
+- **QOU archimedean tuple**: `$(\mathbf{C}, \theta, G, \mathcal{S})$`.
+  The old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**.
+  - $M$ (base manifold) is subordinate to $\theta$ (its domain).
+  - $P$ (principal bundle) is subordinate to $\mathcal{S}$ (frame bundle
+    of the state bundle under $G$). Mention $P$ only when discussing
+    gauge structure directly.
+  - $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$ is the
+    associated state bundle; replaces $E$.
 - Functors are bundled: `F.obj X`, `F.map f` — never treat `F` as a function.
 - Open `CategoryTheory.MonoidalCategory` for notation: `X ⊗ Y`, `𝟙_ C`,
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.

@@ -20,7 +20,7 @@ import Mathlib.Topology.Basic
 namespace QOU.Torsion
 
 /-- **Archimedean QOU data**: the differential-geometric data of
-    `(M, G, P, E)` in the archimedean realisation. -/
+    `(C, θ, G, S)` in the archimedean realisation. -/
 -- Ref: [manuscript] §3, §12
 structure ArchimedeanQOUData where
   /-- The base manifold M. -/
@@ -29,7 +29,7 @@ structure ArchimedeanQOUData where
   GaugeGroupType : Type*
   /-- The gauge group is a group. -/
   [gaugeGroup : Group GaugeGroupType]
-  /-- The total space E (vector bundle over M). -/
+  /-- The total space S (state bundle over M). -/
   TotalSpaceType : Type*
   /-- Dimension of the base manifold. -/
   baseDim : ℕ
@@ -40,11 +40,11 @@ attribute [instance] ArchimedeanQOUData.gaugeGroup
 
 /-- **Jet prolongation in the archimedean setting**.
 
-    Given archimedean QOU data `(M, G, P, E)` with instanton connection
+    Given archimedean QOU data `(C, θ, G, S)` with instanton connection
     `A` and metric `g`, the jet prolongation produces new archimedean
-    QOU data `(M̃, G, P', E')` where:
-    - `M̃ = E` (the total space becomes the new base)
-    - `P'` is the frame bundle of `J¹E`
+    QOU data `(C, θ̃, G, S')` where:
+    - `M̃ = S` (the total space becomes the new base)
+    - `P'` is the frame bundle of `J¹S`
     - `E'` is the bundle of orthonormal frames
     - `A'` is the unique connection determined by `A` and `g` -/
 -- Ref: [manuscript] §3, §12

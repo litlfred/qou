@@ -5,8 +5,8 @@ reduce to purely algebraic invariants at each point $p\in M_k$.
 1. *Connection.*  The $\mathrm{SU}(2)$ connection $A_k$ has no
    directions along which to parallel-transport; its curvature
    $F_A$ vanishes identically and the holonomy is trivial.
-2. *Bundle.*  The principal $\mathrm{SU}(2)$ bundle $E$
-   restricts to its fibre $E_p$ over the point $p$; the bundle
+2. *Bundle.*  The principal $\mathrm{SU}(2)$ bundle $\mathcal{S}$
+   restricts to its fibre $\mathcal{S}_p$ over the point $p$; the bundle
    is determined entirely by this single fibre together with
    the group action.
 3. *Substrate parameter.*  The substrate parameter
@@ -20,7 +20,7 @@ reduce to purely algebraic invariants at each point $p\in M_k$.
    $\mathrm{SU}(2)$ fibre data persist.
 
 In this terminal stage every observable is determined by the fibre
-$E_p$ and the value $q(p)$.  When $M_k$ consists of several points the
+$\mathcal{S}_p$ and the value $q(p)$.  When $M_k$ consists of several points the
 descent data decompose into independent summands, one per point; when
 $M_k$ is connected---i.e. a single point---the entire quantum
-observable universe is captured by the pair $(E_p, q(p))$.
+observable universe is captured by the pair $(\mathcal{S}_p, q(p))$.

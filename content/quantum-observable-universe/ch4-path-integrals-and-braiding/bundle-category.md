@@ -1,9 +1,9 @@
 The bundle initial conditions and the torsion-driven knot flow together
 define a category $\mathrm{Bun}(\mathbb{P}(V))$:
 
-- **Objects**: bundle initial conditions $E_0 = \{(p_i, K_i)\}$
+- **Objects**: bundle initial conditions $\mathcal{S}_0 = \{(p_i, K_i)\}$
   ([Definition](#def:bundle-initial-conditions)).
-- **Morphisms**: $E_0 \to E_0'$ are pairs $(\sigma, \{\phi_i\})$
+- **Morphisms**: $\mathcal{S}_0 \to \mathcal{S}_0'$ are pairs $(\sigma, \{\phi_i\})$
   consisting of a permutation $\sigma \in S_N$ and a family of
   ambient isotopies $\phi_i \colon K_{\sigma(i)} \simeq K_{\sigma(i)}'$
   in the respective fibres.  In particular, morphisms preserve the total

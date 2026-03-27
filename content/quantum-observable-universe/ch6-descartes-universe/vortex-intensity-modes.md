@@ -20,7 +20,7 @@ $$
 with vortex core radius $a$ and circulation $\Gamma$.  These
 modes are discrete in wave number but the circulation $\Gamma$
 itself is a free continuous parameter.  In the $q$-deformed
-setting the filament lives in the 1-jet bundle $J^1 E_n$,
+setting the filament lives in the 1-jet bundle $J^1 \mathcal{S}_n$,
 and the $q$-Laplacian $\Delta_q$ replaces the classical
 Laplacian.  Its eigenvalues are the $q$-integers
 $[k]_q = (q^k - q^{-k})/(q - q^{-1})$, producing a spectrum

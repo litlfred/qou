@@ -32,8 +32,8 @@ chiral coordinates $(x_2,x_3,x_4)$, the $S_3$ permutation of the three
 sheets gives the $\mathrm{SO}(3)$ holonomy representation
 ([SU(2) generators](#def:su2-generators)--[SO(3) generators](#def:so3-generators)).
 
-**3. State bundle $E$.**
-The associated state bundle is $E = P \times_G \mathbb{P}^1(\mathbb{C})$,
+**3. State bundle $\mathcal{S}$.**
+The associated state bundle is $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$,
 whose fibre at each point of $M_S$ is the chiral
 $\mathbb{P}^1(\mathbb{C})$ parametrised by the three roots of the elliptic
 cubic.
@@ -65,7 +65,7 @@ $q \to \infty$ (deep-quantum regime); away from the defects,
 $q \to 1$ (classicality).
 
 **Summary.**
-The $4$-tuple $(M_S,\, G,\, P,\, E)$, with $G = \mathrm{SU}(2)$,
+The $4$-tuple $(\mathbf{C},\, \theta,\, G,\, \mathcal{S})$, with $G = \mathrm{SU}(2)$,
 constitutes an archimedean quantum observable universe
 ([Bring's surface](#ex:brings-surface)), and every QOU structure---contact
 form, Reeb field, Levi form, substrate parameter, $q$-deformed

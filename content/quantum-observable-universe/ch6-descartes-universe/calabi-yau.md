@@ -4,8 +4,8 @@ hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR
 manifold inheriting its CR structure from the ambient Kähler geometry.
 The frame bundle of $X$ restricted to $M$ yields a natural principal
 $\mathrm{SU}(2)$-bundle $P \to M$.  The associated state bundle
-$E = P \times_G \mathbb{P}^1(\mathbb{C})$ yields an archimedean quantum
-observable universe $(M, \theta, G, P, E)$
+$\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$ yields an archimedean quantum
+observable universe $(\mathbf{C}, \theta, G, \mathcal{S})$
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
 
 The K3 surface carries a hyper-Kähler structure, so $M$ inherits a

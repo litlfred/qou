@@ -1,8 +1,8 @@
-Let $b_k(E_n) = \dim H^k(E_n, \mathbb{R})$ denote the $k$-th Betti number of
-$E_n$.  Since $E_{n+1}$ is the bundle of orthonormal frames of $J^1 E_n$, the
-Betti numbers of $E_{n+1}$ are determined by those of $E_n$ via the Leray--Serre
+Let $b_k(\mathcal{S}_n) = \dim H^k(\mathcal{S}_n, \mathbb{R})$ denote the $k$-th Betti number of
+$\mathcal{S}_n$.  Since $\mathcal{S}_{n+1}$ is the bundle of orthonormal frames of $J^1 \mathcal{S}_n$, the
+Betti numbers of $\mathcal{S}_{n+1}$ are determined by those of $\mathcal{S}_n$ via the Leray--Serre
 spectral sequence applied to the fibration
-$E_{n+1} \to E_n$.  In particular, the
+$\mathcal{S}_{n+1} \to \mathcal{S}_n$.  In particular, the
 ([quantum characteristic classes](#def:quantum-characteristic-classes)) obstruct the collapse of
-this spectral sequence and control the growth of $b_k(E_{n+1})$ in terms of
-$b_k(E_n)$.
+this spectral sequence and control the growth of $b_k(\mathcal{S}_{n+1})$ in terms of
+$b_k(\mathcal{S}_n)$.

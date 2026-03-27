@@ -14,7 +14,7 @@ and the $q$-Hamiltonian $\hat{H}_q = -\tfrac{1}{2}\hbar_q\,\Delta_q + V_q$ appea
 
 **Left-bottom path** (evaluation → transport). The jet evaluation map
 $j^1_p \sigma \mapsto \sigma(p)$ produces a section
-$\psi \in \Gamma(E_{\mathrm{lin}})$ by linearising the fibre
+$\psi \in \Gamma(\mathcal{S}_{\mathrm{lin}})$ by linearising the fibre
 $\mathbb{P}^1(\mathbb{C})$ at the chosen base-point. Parallel transport
 along $A$ then imposes
 $J\hbar_q\,\iota_{\xi_q} D_A\psi = \hat{H}_q\psi$

@@ -50,15 +50,15 @@ non-degeneracy is the $\mathbb{C}$
 instance of condition (1) in
 [quantum observable universe](#def:quantum-observable-universe).
 In the archimedean realisation ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)),
-the $5$-tuple $(M, \theta, G, P, E)$ and the two analytic vanishing
+the $4$-tuple $(\mathbf{C}, \theta, G, \mathcal{S})$ and the two analytic vanishing
 conditions of [$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)
 reduce to a triple:
 
 1. a CR manifold $(M, \theta)$ of hypersurface type with
    non-degenerate Levi form;
 2. a non-degenerate Frobenius--Hopf object $A$ in the monoidal
-   category of vector bundles over $M$, playing the role of the
-   triple $(G, P, E)$; and
+   category of vector bundles over $M$, playing the role of
+   $(G, \mathcal{S})$; and
 3. an instanton connection on the underlying $A$-bundle
    ([instanton](#def:instanton)).
 
@@ -90,7 +90,7 @@ the instanton connection
 ([irreducible connection](#lem:irreducible-connection)). Hence the Frobenius
 non-degeneracy, combined with irreducibility, forces
 $H^0(M, \mathrm{Ad}(A)) = 0$. The section-vanishing condition
-$\Gamma_c(M, E) = 0$ follows similarly from the non-existence of
+$\Gamma_c(M, \mathcal{S}) = 0$ follows similarly from the non-existence of
 $A$-equivariant sections of the associated $\mathbb{P}^1(\mathbb{C})$-bundle.
 
 Note that the horizontal distribution $H = \ker\theta$ itself

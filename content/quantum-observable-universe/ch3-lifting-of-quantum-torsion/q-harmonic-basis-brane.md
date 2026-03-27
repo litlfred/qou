@@ -1,6 +1,6 @@
 For each level $n$, the $q$-harmonic $1$-forms $\alpha_{n,i}$ belong to the
-space $\mathcal{H}^1(E_n,\, \mathrm{ad}\, E_n)$ of harmonic $1$-forms on
-$E_n$ with values in the adjoint bundle $\mathrm{ad}\, E_n$.  These are
+space $\mathcal{H}^1(\mathcal{S}_n,\, \mathrm{ad}\, \mathcal{S}_n)$ of harmonic $1$-forms on
+$\mathcal{S}_n$ with values in the adjoint bundle $\mathrm{ad}\, \mathcal{S}_n$.  These are
 characterised by the self-duality condition relative to the instanton
 connection $A_n$
 ([recursive brane tower](#def:recursive-brane-tower)):
@@ -14,7 +14,7 @@ $$
 where the Hodge-star operator is induced by the Hermitian metric that the
 Levi form $L$ ([substrate parameter](#def:substrate-parameter)) defines on the
 horizontal distribution.
-The index $i$ runs over $1 \leq i \leq b_1(E_n)$
+The index $i$ runs over $1 \leq i \leq b_1(\mathcal{S}_n)$
 ([Betti numbers on branes](#rem:betti-numbers-brane)).
 
 At the base level $n = 0$, with Euler characteristic $\chi(M) = 3$, there are

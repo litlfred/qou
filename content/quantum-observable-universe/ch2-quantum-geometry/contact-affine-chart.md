@@ -1,4 +1,4 @@
-Let $E$ be the state bundle over $M$ whose fibres are the spaces of
+Let $\mathcal{S}$ be the state bundle over $M$ whose fibres are the spaces of
 $1$-forms, and let $\mathbb{P}(V)$ be the projective line object
 ([projective line object](#def:projective-line-object)). Using the
 Reeb decomposition ([Reeb decomposition](#ex:reeb-decomposition)),

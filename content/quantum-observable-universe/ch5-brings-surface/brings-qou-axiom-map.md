@@ -25,7 +25,7 @@ The fundamental object $V$ of
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ has categorical
 dimension $2$.  In the archimedean realisation, $V$ is the rank-$2$
 defining representation carried by the state bundle fibre
-$E_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
+$\mathcal{S}_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
 The non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 is instantiated by the Levi form
 $L_\theta = -i\,d\theta|_{H \times H}$

@@ -24,9 +24,9 @@ namespace QOU
 /-- **Main commutative diagram data**.
 
     The four corners of the diagram are:
-    1. Jet bundle J¹(E) (geometric, nonlinear)
+    1. Jet bundle J¹(S) (geometric, nonlinear)
     2. Einstein field equations (gravity)
-    3. Linearized sections Γ(E) (quantum, linear)
+    3. Linearized sections Γ(S) (quantum, linear)
     4. Schrödinger equation (quantum mechanics)
 
     The substrate parameter q mediates between geometric (gravity)

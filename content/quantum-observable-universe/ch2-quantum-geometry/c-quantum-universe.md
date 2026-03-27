@@ -1,12 +1,15 @@
 Let $K$ be an archimedean field.  A quantum universe over $K$
-([quantum universe](#def:quantum-universe)) is realised by a $5$-tuple
-$(M, \theta, G, P, E)$: here $M$ is the spacetime (a CR manifold),
-$\theta$ encodes the contact geometry and Reeb structure,
-$G = \mathrm{SU}(2)$ is the gauge group, $P$ is the gauge bundle,
-and $E$ is the state bundle carrying the quantum degrees of freedom.
-The precise requirements are:
+([quantum universe](#def:quantum-universe)) is realised by the $4$-tuple
+$(\mathbf{C}, \theta, G, \mathcal{S})$: here
+$\theta$ is a contact form on a CR manifold $M$ (encoding the contact
+geometry and Reeb structure),
+$G = \mathrm{SU}(2)$ is the gauge group, and
+$\mathcal{S}$ is the state bundle carrying the quantum degrees of freedom.
+The base manifold $M$ is implicit as the domain of $\theta$; the
+principal bundle $P$ is implicit as the frame bundle of $\mathcal{S}$
+under $G$.  The precise requirements are:
 
-1. $M$ is a CR manifold of hypersurface type
+1. $M$ (the domain of $\theta$) is a CR manifold of hypersurface type
    (real dimension $2n+1$, $n \geq 1$) with non-degenerate Levi form
    of signature $(r,s)$, $r + s = n$;
 2. $\theta$ is a pseudo-Hermitian structure (contact form) on $M$,
@@ -14,11 +17,12 @@ The precise requirements are:
    field $\xi$, the Webster metric $g_\theta$ (of signature $(2r,2s)$
    on $H$), and the Levi form $L_\theta$;
 3. $G = \mathrm{SU}(2)$;
-4. $P \to M$ is a principal $G$-bundle whose holonomy reduces to
-   $\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm I\}$;
-5. $E = P \times_G \mathbb{P}^1(\mathbb{C}) \to M$ is the associated
-   *state bundle*, where $\mathrm{SU}(2)$ acts on
-   $\mathbb{P}^1(\mathbb{C})$ by Mobius transformations.
+4. $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C}) \to M$ is the
+   associated *state bundle*, where $P \to M$ is the principal
+   $G$-bundle (with holonomy reducing to
+   $\mathrm{SO}(3) \subset \mathrm{SU}(2)/\{\pm I\}$) and
+   $\mathrm{SU}(2)$ acts on $\mathbb{P}^1(\mathbb{C})$ by Möbius
+   transformations.
 
 The monoidal category is $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 (the representation category of the quantum group at the substrate

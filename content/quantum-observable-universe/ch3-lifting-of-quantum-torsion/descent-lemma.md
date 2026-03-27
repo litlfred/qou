@@ -13,6 +13,6 @@ $$
 is a surjective algebra homomorphism that intertwines the $G_q$-actions at
 levels $n$ and $n{-}1$.  In the archimedean realisation, this recovers
 the surjective $*$-homomorphism
-$\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2)) \to
-\Gamma(J^1 E_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
+$\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2)) \to
+\Gamma(J^1 \mathcal{S}_{n-1},\, \mathrm{SU}_{q_{n-1}}(2))$.
 

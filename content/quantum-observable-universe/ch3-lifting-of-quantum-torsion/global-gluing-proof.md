@@ -19,7 +19,7 @@ gerbe $\mathfrak{G}_n$ of local lifts has trivial band at the level of
 isomorphisms, so by [Theorem 4.5, yekutieli2010] the twisted
 deformations at each fibre patch together into a global sheaf of
 algebras on $M$.  The direct limit $\mathcal{A}_\infty =
-\varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$ is then the
+\varinjlim\,\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))$ is then the
 global sections of this sheaf, and the vacuum state $\tau$
 ([vacuum state](#prop:vacuum-state)) extends uniquely by the
 $\mathrm{SU}(2)$-averaging argument of that proposition.

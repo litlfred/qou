@@ -4,4 +4,4 @@ $1$-form restricts to a contact form $\theta$ on $M_S$.  The natural
 projection $\pi \colon S \to \mathbb{P}^1(\mathbb{C})$ (degree-$4$
 branched covering with $6$ branch points) lifts to a principal
 $\mathrm{SU}(2)$-bundle $P \to M_S$, giving an archimedean QOU
-$(M_S, \theta, G, P, E)$.
+$(\mathbf{C}, \theta, G, \mathcal{S})$.

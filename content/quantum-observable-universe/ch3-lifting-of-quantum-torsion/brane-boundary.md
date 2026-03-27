@@ -13,6 +13,6 @@ $$
 $$
 In the archimedean realisation,
 $\partial A_n$ corresponds to the geometric locus
-$\partial E_n = \{p \in E_n \mid
-\ker(\mathfrak{d}_{n+1}|_p) \neq 0\} \subseteq E_n$,
+$\partial \mathcal{S}_n = \{p \in \mathcal{S}_n \mid
+\ker(\mathfrak{d}_{n+1}|_p) \neq 0\} \subseteq \mathcal{S}_n$,
 the degeneracy locus of the fibrewise descent map.

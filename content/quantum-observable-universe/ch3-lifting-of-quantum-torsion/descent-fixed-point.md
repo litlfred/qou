@@ -20,8 +20,8 @@ $\mathrm{SU}(2)$ rotation and its associated fixed-point set.
 3. *Round-trip involution.*  The composition of ascent and descent
    is the descent involution $\hat{\tau}_n$
    ([descent involution](#def:descent-involution)), acting on
-   $\Gamma(J^1 E_{n+1})$, whose image
+   $\Gamma(J^1 \mathcal{S}_{n+1})$, whose image
    $\mathcal{A}_{n+1}^{\mathrm{desc}}$ is the stable core of the brane
-   algebra at level $n{+}1$.  The defining boundary $\partial E_n$
+   algebra at level $n{+}1$.  The defining boundary $\partial \mathcal{S}_n$
    ([brane boundary](#def:brane-boundary)) marks the geometric locus
    where the fibrewise descent map has a non-trivial kernel.

@@ -11,5 +11,5 @@
 
 **Potential new experiments.**
 
-- High-precision comparisons of the electron--muon and muon--tau mass ratios against values computed from the mass identity with specific $q$ and $\chi(E)$.
+- High-precision comparisons of the electron--muon and muon--tau mass ratios against values computed from the mass identity with specific $q$ and $\chi(\mathcal{S})$.
 - Lattice calculations of QOU vortex masses to compare with QCD lattice results.

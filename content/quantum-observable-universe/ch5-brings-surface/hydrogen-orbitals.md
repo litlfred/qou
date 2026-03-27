@@ -61,8 +61,8 @@ $$
 
 The curls added by R-I are **localized at the exceptional
 divisor** of the brane tower.  The ground-state trefoil
-($w = 3$) lives entirely in the base space $E_0$.  An excited
-trefoil ($w = 5$) has its extra curls in the blow-up $E_1$.
+($w = 3$) lives entirely in the base space $\mathcal{S}_0$.  An excited
+trefoil ($w = 5$) has its extra curls in the blow-up $\mathcal{S}_1$.
 
 **Sub-shells from resonance modes of the trefoil.**
 

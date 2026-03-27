@@ -1,5 +1,5 @@
 When the Yekutieli obstruction class $\kappa_n$ does not vanish, the
-lift $E_n \to E_{n+1}$ is obstructed and the transition between brane
+lift $\mathcal{S}_n \to \mathcal{S}_{n+1}$ is obstructed and the transition between brane
 levels acquires a non-trivial twist.  In the
 ([algebraic filter](#rem:algebraic-filter)), fermionic-type matter --- those
 $q$-harmonic forms satisfying $[F_A,\, \alpha] \neq 0$ --- exists
