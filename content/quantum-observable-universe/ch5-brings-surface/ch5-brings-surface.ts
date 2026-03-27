@@ -134,6 +134,8 @@ export default chapter({
         // Beta decay as categorical Skein operation
         "beta-decay-skein",
         "lepton-number-categorical",
+        "parity-violation-skein",
+        "nuclear-spin-parity",
         "tritium-decay-knot-equation",
         // Half-life calculations
         "hadron-half-life",
