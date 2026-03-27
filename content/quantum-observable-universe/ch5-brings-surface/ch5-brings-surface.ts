@@ -159,6 +159,7 @@ export default chapter({
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
+        "shell-structure-eigenvalues",
         "trace-ratio-observable",
         "quantum-dilogarithm-volume",
         "nitrogen-14-threading",
