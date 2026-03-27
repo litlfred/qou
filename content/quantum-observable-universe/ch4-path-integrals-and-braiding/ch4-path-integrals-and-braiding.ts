@@ -154,6 +154,7 @@ export default chapter({
         "knot-particle-dictionary",
         "bundle-initial-conditions",
         "observation-braid",
+        "sorting-color-energy",
         "bundle-isotopy-equivalence",
         "torsion-knot-flow",
         "bundle-category",
