@@ -143,6 +143,7 @@ export default chapter({
         "generator-volume-decomposition",
         "markov-trace-factorization",
         "trace-ratio-observable",
+        "quantum-dilogarithm-volume",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
