@@ -140,6 +140,7 @@ export default chapter({
         "stable-nucleus",
         "torus-hopf-stability",
         "unmapped-torus-knots",
+        "torus-knot-prime-powers",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
