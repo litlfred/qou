@@ -142,6 +142,7 @@ export default chapter({
         "unmapped-torus-knots",
         "torus-knot-prime-powers",
         "force-knot-identification",
+        "em-coupling-projection",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
