@@ -163,6 +163,8 @@ export const RemarkSchema = BlockBaseSchema.extend({
   kind: z.literal("remark"),
   label: labelForKind("remark"),
   lean: LeanRefSchema.optional(),
+  /** Label of the provable block this remark interprets. */
+  interprets: z.string().min(1).optional(),
 });
 
 const ComputationEngineSchema = z.enum([
@@ -443,6 +445,37 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
       const missing = (block.cites as string[]).filter((c: string) => !ctx.allRefIds!.has(c));
       return missing.length === 0 ? null
         : `Unresolved citations: ${missing.join(", ")}`;
+    },
+  },
+  {
+    id: "remark-interprets",
+    description: "Remarks should have an `interprets` field linking to a provable block, or be glossary entries",
+    appliesTo: ["remark"],
+    check: (block, _ctx) => {
+      // Glossary remarks (Ch 8) are exempt — they wrap Mathlib types
+      if ("tags" in block && Array.isArray(block.tags) && block.tags.includes("glossary")) {
+        return null;
+      }
+      if ("interprets" in block && block.interprets) return null;
+      return `[warning] ${block.label}: remark has no \`interprets\` field — dangling remark (no formal backing)`;
+    },
+  },
+  {
+    id: "interprets-resolve",
+    description: "The `interprets` label must exist in the document",
+    appliesTo: ["remark"],
+    check: (block, ctx) => {
+      if (!("interprets" in block) || !block.interprets) return null;
+      const target = block.interprets as string;
+      // Allow cross-paper refs
+      if (target.includes(":") && !target.startsWith("rem:") && !target.startsWith("def:") &&
+          !target.startsWith("thm:") && !target.startsWith("lem:") && !target.startsWith("prop:") &&
+          !target.startsWith("cor:") && !target.startsWith("conj:") && !target.startsWith("ex:")) {
+        return null;
+      }
+      if (target.startsWith("https://") || target.startsWith("http://")) return null;
+      return ctx.allLabels.has(target) ? null
+        : `interprets label "${target}" not found in document`;
     },
   },
 ];

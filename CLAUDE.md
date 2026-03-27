@@ -72,6 +72,8 @@ When a user request arrives, route to the right skill(s):
 | "diff / changes / what changed / undo" | `local/diff` | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
+| "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
+| "promote remark / add interprets / fix dangling" | `local/remark-audit` + `local/content-validation` | collaborator |
 
 ### Skill role assignments
 
@@ -81,7 +83,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -145,6 +147,48 @@ All declarations live under the `QOU` root namespace.
 | `conjecture`, `example`, `remark` | Optional |
 | `simulator` | N/A |
 | `prose`, `equation`, `diagram` | N/A |
+
+### 3a. Remark authoring convention — no dangling remarks
+
+Every `remark` block must have **formal backing**. The correct
+authoring structure is:
+
+```
+definition / proposition / lemma / theorem   (.lean: formal statement)
+  └→ proof block                             (.lean: formal proof)
+       └→ remark block                       (.md: interpretation)
+            └→ example / simulator           (concrete instances)
+```
+
+**Rules:**
+
+1. **Interpretive remarks** must set `interprets: "prop:foo"` (or
+   `"def:foo"`, `"thm:foo"`, etc.) linking to the provable block
+   they interpret. The `.md` content provides physical interpretation,
+   motivation, or examples — not new mathematical claims.
+
+2. **Glossary remarks** (Ch 8 only) are exempt — they wrap Mathlib
+   types and carry the `"glossary"` tag.
+
+3. **Prose blocks** (`prose`) are for pure exposition with no logical
+   content (intros, abstracts, transitions). Use `prose`, not `remark`,
+   when there is no provable statement behind the text.
+
+4. A remark that makes a **mathematical claim** without `interprets`
+   is a **dangling remark**. Resolve by:
+   - **Promoting** the claim to `proposition` / `lemma` (with Lean)
+   - **Linking** via `interprets` to an existing provable block
+   - **Demoting** to `prose` if there is no logical content
+
+5. **Ambiguous physics terms** (energy, force, particle, degeneration,
+   etc.) in remark `.md` files must reference the corresponding
+   categorical definition via `uses[]`. Physics terms without
+   categorical backing are flagged by the `remark-audit` skill.
+
+**Audit tool:** `cd content && bun run pipeline/find-dangling-remarks.ts`
+
+**Constraint rules:** `remark-interprets` (warns on missing
+`interprets`), `interprets-resolve` (errors on broken reference).
 
 ### 4. Formalization status is derived, not stored
 
@@ -317,6 +361,7 @@ Sibling files share the same root name: `rigid-monoidal-category.ts`,
 | `content/pipeline/export-bibtex.ts` | Generates `references.bib` from CSL-JSON |
 | `content/pipeline/validate-references.ts` | Bibliography + citation cross-checks |
 | `content/pipeline/citations.ts` | `\cite{}` extraction from .md content |
+| `content/pipeline/find-dangling-remarks.ts` | Audit: find remarks without `interprets` |
 
 ### Bibliography architecture
 
