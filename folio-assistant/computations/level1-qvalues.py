@@ -103,7 +103,6 @@ for nuc in nuclei:
     # infeasible: binom(3A, total_u) is astronomical).
     if A <= 14:
         nucleon_par = [1] * p + [0] * n
-        nucleon_dau = [1] * (p + 1) + [0] * (n - 1)
         method = "block"
     else:
         # Alternating ordering: interleave protons and neutrons
@@ -116,42 +115,92 @@ for nuc in nuclei:
             else:
                 nucleon_par.append(0)
                 ni += 1
-        # Daughter: flip one neutron to proton at first neutron position
-        nucleon_dau = list(nucleon_par)
-        for k in range(A):
-            if nucleon_dau[k] == 0:
-                nucleon_dau[k] = 1
-                break
         method = "alternating"
 
-    # Expand to quark level
+    # Expand parent to quark level
     quark_par = expand_to_quarks(nucleon_par)
-    quark_dau = expand_to_quarks(nucleon_dau)
 
-    print(f"  Parent quarks:   {''.join('u' if x else 'd' for x in quark_par)}")
-    print(f"  Daughter quarks: {''.join('u' if x else 'd' for x in quark_dau)}")
+    # Try ALL neutron positions as conversion site.
+    # The physical beta decay converts the neutron whose conversion
+    # gives the smallest |Q_q| with Q_q < 0 (daughter less bound).
+    # This avoids the wrong-sign problem from picking an arbitrary site.
+    neutron_positions = [k for k in range(A) if nucleon_par[k] == 0]
 
-    # Find converting positions
-    converting = find_converting_quarks(quark_par, quark_dau)
-    print(f"  Converting positions: {converting}")
+    best_Q = None
+    best_site = None
+    best_converting = None
+    best_quark_dau = None
+    best_affected = 0
 
-    # Compute traced volumes at each generator
-    n_gens = strands_L1 - 1
-    log_ratio_sum = 0.0
-    affected_count = 0
+    for site in neutron_positions:
+        nucleon_dau_trial = list(nucleon_par)
+        nucleon_dau_trial[site] = 1
+        quark_dau_trial = expand_to_quarks(nucleon_dau_trial)
 
-    for i in range(n_gens):
-        vp = float(qr.traced_volume(i, quark_par))
-        vd = float(qr.traced_volume(i, quark_dau))
-        if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
-            log_ratio = math.log(abs(vp)) - math.log(abs(vd))
-            log_ratio_sum += log_ratio
-            affected_count += 1
+        converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
 
-    # Q-value from log-ratio of traced volumes
-    Q_q = log_ratio_sum / hbar_q_sq if hbar_q_sq != 0 else 0
+        n_gens = strands_L1 - 1
+        lr_sum = 0.0
+        aff = 0
+        for i in range(n_gens):
+            vp = float(qr.traced_volume(i, quark_par))
+            vd = float(qr.traced_volume(i, quark_dau_trial))
+            if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
+                lr_sum += math.log(abs(vp)) - math.log(abs(vd))
+                aff += 1
+
+        Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
+
+        # Select the conversion site with negative Q_q closest to zero
+        if Q_trial < 0:
+            if best_Q is None or abs(Q_trial) < abs(best_Q):
+                best_Q = Q_trial
+                best_site = site
+                best_converting = converting_trial
+                best_quark_dau = quark_dau_trial
+                best_affected = aff
+
+    # If no negative Q found, take smallest magnitude overall
+    if best_Q is None:
+        for site in neutron_positions:
+            nucleon_dau_trial = list(nucleon_par)
+            nucleon_dau_trial[site] = 1
+            quark_dau_trial = expand_to_quarks(nucleon_dau_trial)
+            converting_trial = find_converting_quarks(quark_par, quark_dau_trial)
+
+            n_gens = strands_L1 - 1
+            lr_sum = 0.0
+            aff = 0
+            for i in range(n_gens):
+                vp = float(qr.traced_volume(i, quark_par))
+                vd = float(qr.traced_volume(i, quark_dau_trial))
+                if vp != 0 and vd != 0 and abs(vp - vd) > 1e-15:
+                    lr_sum += math.log(abs(vp)) - math.log(abs(vd))
+                    aff += 1
+
+            Q_trial = lr_sum / hbar_q_sq if hbar_q_sq != 0 else 0
+            if best_Q is None or abs(Q_trial) < abs(best_Q):
+                best_Q = Q_trial
+                best_site = site
+                best_converting = converting_trial
+                best_quark_dau = quark_dau_trial
+                best_affected = aff
+
+    log_ratio_sum = best_Q * hbar_q_sq if best_Q else 0
+    Q_q = best_Q if best_Q else 0
+    converting = best_converting if best_converting else []
+    affected_count = best_affected
+    quark_dau = best_quark_dau if best_quark_dau else quark_par
 
     elapsed = time.time() - t0
+
+    print(f"  Conversion site: nucleon {best_site} (of {n} neutrons tested)")
+    print(f"  Converting positions: {converting}")
+    print(f"  Affected generators: {affected_count} / {strands_L1 - 1}")
+    print(f"  Σ log|V_par/V_dau| = {log_ratio_sum:.6f}")
+    print(f"  Q_q (Skein units) = {Q_q:.4f}")
+    print(f"  Q_exp (MeV) = {nuc['Q_exp_MeV']}")
+    print(f"  Time: {elapsed:.2f}s")
 
     result = {
         "name": nuc["name"], "A": A, "p": p, "n": n,
@@ -165,13 +214,9 @@ for nuc in nuclei:
         "elapsed_s": elapsed,
         "status": "computed",
     }
+    result["conversion_site"] = best_site
+    result["n_sites_tested"] = n
     results.append(result)
-
-    print(f"  Affected generators: {affected_count} / {n_gens}")
-    print(f"  Σ log|V_par/V_dau| = {log_ratio_sum:.6f}")
-    print(f"  Q_q (Skein units) = {Q_q:.4f}")
-    print(f"  Q_exp (MeV) = {nuc['Q_exp_MeV']}")
-    print(f"  Time: {elapsed:.2f}s")
     print()
 
 # ── Assemble witness ─────────────────────────────────────────────
@@ -181,7 +226,8 @@ witness = {
     "description": (
         "Level 1 (quark-level) Q-value computation. "
         "Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). "
-        "Uses block ordering — ground-state search not performed."
+        "All n neutron positions tested as conversion sites; "
+        "the site giving negative Q_q with smallest magnitude is selected."
     ),
     "q": float(qr.q),
     "hbar_q_sq": hbar_q_sq,
