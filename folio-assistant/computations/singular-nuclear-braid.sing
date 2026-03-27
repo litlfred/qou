@@ -1,0 +1,211 @@
+// Nuclear braid Gröbner reduction in Singular (letterplace).
+//
+// Computes the Gröbner-reduced normal form of nuclear braid words
+// in the Hecke algebra H_A(q) using Singular's non-commutative
+// letterplace library.
+//
+// Run:
+//   Singular folio-assistant/computations/singular-nuclear-braid.sing
+//
+// The letterplace library represents non-commutative polynomials
+// by embedding them in a commutative ring with extra variables:
+//   σ_i at position j → variable s(i,j)
+//
+// Relations (the Gröbner basis):
+//   σ_i² = (q-q⁻¹)σ_i + 1     (Hecke)
+//   σ_iσ_{i+1}σ_i = σ_{i+1}σ_iσ_{i+1}  (Yang-Baxter)
+//   σ_iσ_j = σ_jσ_i              (|i-j| >= 2, far commutativity)
+
+LIB "freegb.lib";    // free algebra / letterplace
+LIB "nctools.lib";   // non-commutative tools
+
+// ── Parameters ──────────────────────────────────────────────────
+
+// Work over Q(q) — rational functions in q
+ring r = (0,q), (s(1..13)), dp;
+// s(1)..s(13) are generators σ_1,...,σ_{A-1} for A=14
+
+// Hecke relation coefficient
+poly ha = q - 1/q;  // q - q^{-1}
+
+// ── Build the Hecke algebra via letterplace ─────────────────────
+//
+// For A = 14: generators s(1),...,s(13)
+// The letterplace ring needs d copies of each variable
+// where d = max word length we expect in the normal form.
+// For H_14: max reduced word length = 13 (half-twist).
+
+int A = 14;
+int n_gens = A - 1;  // 13 generators
+int degbound = 14;    // max word length in normal form
+
+// Create the free algebra with letterplace
+def R = makeLetterplaceRing(degbound);
+setring R;
+
+// ── Define the Hecke relations ──────────────────────────────────
+
+// In letterplace notation:
+// σ_i at position k = s(i)(k) in the letterplace ring
+// σ_i² = s(i)(1) * s(i)(2) in letterplace
+
+// Build the ideal of relations
+ideal I;
+int idx = 0;
+
+// 1. Hecke relations: s(i)^2 - (q-q^{-1}) s(i) - 1 for each i
+int i;
+for (i = 1; i <= n_gens; i++)
+{
+    // s(i)*s(i) - ha*s(i) - 1
+    // In letterplace: s(i)(1)*s(i)(2) - ha*s(i)(1) - 1
+    idx++;
+    I[idx] = s(i)(1) * s(i)(2) - (q - 1/q) * s(i)(1) - 1;
+}
+
+// 2. Yang-Baxter: s(i)*s(i+1)*s(i) - s(i+1)*s(i)*s(i+1)
+for (i = 1; i <= n_gens - 1; i++)
+{
+    idx++;
+    I[idx] = s(i)(1) * s(i+1)(2) * s(i)(3)
+           - s(i+1)(1) * s(i)(2) * s(i+1)(3);
+}
+
+// 3. Far commutativity: s(i)*s(j) - s(j)*s(i) for |i-j| >= 2
+int j;
+for (i = 1; i <= n_gens; i++)
+{
+    for (j = i + 2; j <= n_gens; j++)
+    {
+        idx++;
+        I[idx] = s(i)(1) * s(j)(2) - s(j)(1) * s(i)(2);
+    }
+}
+
+printf("Hecke algebra H_%d(q): %d relations", A, idx);
+printf("  %d Hecke + %d Yang-Baxter + %d far-comm",
+       n_gens, n_gens - 1, (n_gens*(n_gens-1)/2 - (n_gens-1)));
+
+// ── Compute the Gröbner basis ───────────────────────────────────
+
+printf("Computing Gröbner basis (letterplace)...");
+option(prot);  // show progress
+ideal G = twostd(I);  // two-sided Gröbner basis
+printf("Gröbner basis: %d elements", size(G));
+
+// ── Build the nuclear braid word for N(6,8) ────────────────────
+//
+// Nucleon types: 6 protons (positions 1-6), 8 neutrons (positions 7-14)
+// Crossings:
+//   p-p (i,j both <= 6): σ_i
+//   n-n (i,j both >= 7): σ_i^{-1} = q^2 σ_i - q(q^{1/2}-q^{-1/2})
+//   mixed: (σ_i + σ_i^{-1})/2
+
+// For the block ordering p...p n...n:
+// Generator σ_i for crossing between nucleons i and i+1
+
+printf("Building nuclear braid N(6,8)...");
+
+// Start with 1 (identity)
+poly braid_68 = 1;
+
+// Add crossings in order: for each i, cross with all j > i
+for (i = 1; i <= A; i++)
+{
+    for (j = i + 1; j <= A; j++)
+    {
+        int gen = i;  // generator index
+        int is_pp = (i <= 6) && (j <= 6);
+        int is_nn = (i >= 7) && (j >= 7);
+
+        if (is_pp)
+        {
+            // Positive crossing: multiply by σ_gen
+            braid_68 = braid_68 * s(gen)(1);
+        }
+        else
+        {
+            if (is_nn)
+            {
+                // Negative crossing: σ^{-1} = q^2 σ - q(q^{1/2}-q^{-1/2})
+                // In letterplace: q^2 s(gen)(1) - q*(q^(1/2)-q^(-1/2))
+                braid_68 = braid_68 * (q^2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2)));
+            }
+            else
+            {
+                // Mixed: (σ + σ^{-1})/2
+                braid_68 = braid_68 * ((1+q^2)/2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2))/2);
+            }
+        }
+
+        // Reduce after each crossing to keep terms bounded
+        braid_68 = reduce(braid_68, G);
+    }
+}
+
+printf("N(6,8) reduced: %d terms", size(braid_68));
+
+// ── Same for N(7,7) ─────────────────────────────────────────────
+
+printf("Building nuclear braid N(7,7)...");
+
+poly braid_77 = 1;
+
+for (i = 1; i <= A; i++)
+{
+    for (j = i + 1; j <= A; j++)
+    {
+        int gen = i;
+        int is_pp = (i <= 7) && (j <= 7);
+        int is_nn = (i >= 8) && (j >= 8);
+
+        if (is_pp)
+        {
+            braid_77 = braid_77 * s(gen)(1);
+        }
+        else
+        {
+            if (is_nn)
+            {
+                braid_77 = braid_77 * (q^2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2)));
+            }
+            else
+            {
+                braid_77 = braid_77 * ((1+q^2)/2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2))/2);
+            }
+        }
+
+        braid_77 = reduce(braid_77, G);
+    }
+}
+
+printf("N(7,7) reduced: %d terms", size(braid_77));
+
+// ── Compute the difference ──────────────────────────────────────
+
+poly diff = braid_68 - braid_77;
+printf("Difference N(6,8) - N(7,7): %d terms", size(diff));
+
+// ── Evaluate at q = 1.110 ───────────────────────────────────────
+
+// Substitute q = 1110/1000 (rational approximation)
+map phi = R, 1110/1000;  // substitute q = 1.110
+poly braid_68_num = phi(braid_68);
+poly braid_77_num = phi(braid_77);
+
+printf("N(6,8) at q=1.110: %s", string(braid_68_num));
+printf("N(7,7) at q=1.110: %s", string(braid_77_num));
+
+// ── Output ──────────────────────────────────────────────────────
+
+printf("");
+printf("=== RESULTS ===");
+printf("N(6,8): %d terms in normal form", size(braid_68));
+printf("N(7,7): %d terms in normal form", size(braid_77));
+printf("Difference: %d terms", size(diff));
+printf("");
+printf("The Gröbner-reduced normal forms are EXACT over Q(q).");
+printf("The Markov trace can be read off from the coefficient");
+printf("of the identity (empty word) in the reduced form.");
+
+exit;
