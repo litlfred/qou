@@ -1081,6 +1081,22 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2003]] },
     DOI: "10.1090/S0273-0979-02-00964-3",
   }),
+
+  // ── Wigner 1960: Unreasonable effectiveness ───────────────────
+  ref({
+    id: "wigner1960",
+    type: "article-journal",
+    title: "The Unreasonable Effectiveness of Mathematics in the Natural Sciences",
+    author: [
+      { family: "Wigner", given: "E. P." },
+    ],
+    "container-title": "Communications on Pure and Applied Mathematics",
+    volume: 13,
+    issue: 1,
+    page: "1-14",
+    issued: { "date-parts": [[1960]] },
+    DOI: "10.1002/cpa.3160130102",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
