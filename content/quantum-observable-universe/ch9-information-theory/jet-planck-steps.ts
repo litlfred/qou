@@ -31,8 +31,11 @@ export default remark({
     "ex:finite-field-realisation",
     "rem:knot-particle-dictionary",
     "def:neutrino-knot",
+    "def:antineutrino-knot",
     "ex:photon-wavefront-example",
     "prop:fermion-boson-knot-link",
     "rem:knot-particle-generation",
+    "rem:chirality-trefoil-electron-positron",
+    "rem:building-block-knots",
   ],
 });

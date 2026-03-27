@@ -121,16 +121,19 @@ A particle with crossing number $c$ cannot exist before step $c$:
 the $c$-th jet is the first Taylor order that has enough polynomial
 degree to encode $c$ crossings of the braid closure.
 
-| Step | Jet | Crossing number | Knot | Particle | Why |
-|:----:|-----|:---:|------|----------|-----|
-| 0 | value | — | $\varnothing$ (empty) | **Photon** | Background flux; no knot, no transport — just the fiber value |
-| 1 | linear | 0 | $0_1$ (unknot) | **Neutrino** | Trivial braiding ($J_\nu = 1$); one transport step creates winding with no crossings |
-| 2 | quadratic | 0 | $L2a1$ (Hopf link) | **Gluon** (boson) | Two unknots Hopf-linked on $E_c$; linking number $= 1$ requires curvature (step 2) |
-| 3 | cubic | 3 | $3_1$ (trefoil) | **Electron** / **up quark** | 3 crossings = 3 $R$-matrix applications; chiral cubic, $\varphi$, $B_3$ |
-| 4 | quartic | 4 | $4_1$ (figure-eight) | **Muon** | First hyperbolic knot; $\mathrm{Vol} = 2.0299$; amphichiral |
-| 5 | quintic | 5 | $5_1$ (cinquefoil) | **Tau** / **bottom quark** | Gen.\ 3 lepton; genus 2 |
-| 7 | septic | 7 | $7_1$ (septafoil) | **Charm quark** | Heavy sector torus knot |
-| 8 | octic | 8 | $8_{19} = T_{3,4}$ | **Top quark** | First $(3,n)$ torus knot |
+| Step | Jet | $c$ | Knot | Particles | Mirror | Why |
+|:----:|-----|:---:|------|-----------|--------|-----|
+| 0 | value | — | $\varnothing$ | **Photon** | (self) | No knot, no transport — fiber value only |
+| 1 | linear | 0 | $0_1$ | **Neutrino** $\nu$ | $\bar{\nu}$ (orientation) | Unknot; amphichiral — $\nu/\bar{\nu}$ distinguished by framing, not knot type |
+| 2 | quadratic | 0 | $L2a1$ | **Gluon** | (self) | Hopf link; linking number requires curvature |
+| 3 | cubic | 3 | $3_1$ | **Electron** $e^-$, **up** $u$ | **Positron** $e^+$, **down** $\bar{u}$ | Trefoil is *chiral*: $T_{2,3} \neq \overline{T_{2,3}}$; mirror = antiparticle |
+| 3 | cubic | 3 | $\overline{3_1}$ | **Positron** $e^+$, **down** $d$ | **Electron** $e^-$, $\bar{d}$ | Right trefoil; same crossing number, opposite chirality |
+| 4 | quartic | 4 | $4_1$ | **Muon** $\mu^{\pm}$ | (self) | Figure-eight is *amphichiral*: $\mu^- = \overline{\mu^-}$ as knots |
+| 4 | quartic | 0+0+0 | $\mathcal{B}_3$ | **Proton** $p$, **neutron** $n$ | $\bar{p}$, $\bar{n}$ | Borromean link of 3 quarks; linking structure needs quartic |
+| 5 | quintic | 5 | $5_1$ | **Tau** $\tau^-$, **bottom** $b$ | $\tau^+$, $\bar{b}$ | Cinquefoil; chiral; genus 2 |
+| 5 | quintic | 5 | $\overline{5_1}$ | **Anti-tau** $\tau^+$, **strange** $s$ | $\tau^-$, $\bar{s}$ | Mirror cinquefoil |
+| 7 | septic | 7 | $7_1$ | **Charm** $c$ | $\bar{c}$ | Heavy sector torus knot |
+| 8 | octic | 8 | $8_{19}$ | **Top** $t$ | $\bar{t}$ | $T_{3,4}$; first $(3,n)$ torus knot |
 
 **Step 0: only the photon.**
 Before any transport, only the fiber value exists.  The photon is
@@ -139,9 +142,9 @@ $K = \varnothing$ — the empty knot
 background flux on the state bundle with no topological identity.
 It requires no braiding, no crossings, no connection.  It is
 **pre-geometric**: it exists at the zeroth jet because it *is*
-the zeroth jet.
+the zeroth jet.  The photon is its own antiparticle.
 
-**Step 1: the neutrino appears.**
+**Step 1: neutrino and antineutrino.**
 The first application of $\nabla_q$ creates horizontal transport
 — the ability to wind around the fiber.  The unknot $0_1$ is a
 circle with zero crossings: it winds once around the Reeb direction
@@ -150,6 +153,15 @@ with trivial braiding
 $J_\nu(q) = 1$ is a degree-0 polynomial — consistent with living
 at the linear (degree 1) jet, where the only available structure
 is a single winding with slope but no self-intersection.
+
+The unknot is **amphichiral**: $T_{1,0} \cong \overline{T_{1,0}}$
+as unoriented knots
+([antineutrino](#def:antineutrino-knot)).  The neutrino $\nu$
+and antineutrino $\bar{\nu}$ are the same knot distinguished by
+**orientation** (framing), not by knot type.  Both appear at
+step 1.  This is the first matter-antimatter pair, but it is a
+degenerate one: the two are topologically identical, differing
+only in the sign of the Reeb winding.
 
 The neutrino has zero crossing chirality ($Q(\nu) = 0$), zero
 hyperbolic volume, and mass arising entirely from vacuum drag:
@@ -168,39 +180,93 @@ Bosons are links with an even number of components
 ([fermion--boson decomposition](#prop:fermion-boson-knot-link)):
 $T(2,n)$ with $n$ even.  The simplest is $T(2,2) = L2a1$
 (gluon), which exists at step 2.  The linking energy is the
-first binding — two fibers correlated by curvature.
+first binding — two fibers correlated by curvature.  The gluon
+is its own antiparticle (the Hopf link is amphichiral).
 
-**Step 3: the electron.**
-The trefoil $3_1 = T(2,3)$ has crossing number $3$: its braid
+At step 2 there is still no chirality: the quadratic jet has a
+discriminant but no handedness.  All particles so far (photon,
+$\nu$, $\bar{\nu}$, gluon) are either self-conjugate or
+distinguished only by orientation.
+
+**Step 3: chirality, the electron, and the positron.**
+The trefoil $3_1 = T_{2,3}$ has crossing number $3$: its braid
 word $\sigma_1 \sigma_2 \sigma_1 \in B_3$ requires three
 $R$-matrix evaluations.  It cannot exist before the cubic jet.
-The electron is the **simplest stable matter** — the lightest
-fermion with non-trivial topology.
 
-The trefoil is also the monodromy of the chiral cubic: loops
-around the branch points of $X^3 + (z+1)X^2 + \cdots = 0$
-generate $\pi_1(S^3 \setminus K_{3,2})$, the trefoil group.
-The particle *is* the singularity structure of the energy
-landscape at third order.
+Step 3 is where **chirality appears** for the first time.  The
+trefoil is **not** amphichiral: the left trefoil $T_{2,3}$ and the
+right trefoil $\overline{T_{2,3}}$ are distinct knots
+([chirality: electron and positron](#rem:chirality-trefoil-electron-positron)).
+The mirror operation $\sigma$ (reversing all crossings) produces
+a genuinely different topological object.  This is the origin of
+the particle-antiparticle distinction for chiral matter:
+
+- **Electron** $e^- = T_{2,3}$ (left trefoil, solid ●)
+- **Positron** $e^+ = \overline{T_{2,3}}$ (right trefoil, outlined ○)
+
+Both have crossing number $3$ and appear at the same Planck step.
+The trefoil and its mirror are the two monodromy generators of the
+chiral cubic — they arise together as the two orientations of the
+holonomy around the branch points.  **You cannot have the electron
+without the positron**: the cubic jet produces both chiralities
+simultaneously.
+
+The same step also produces the **up quark** ($u = T_{2,3}$) and
+**down quark** ($d = \overline{T_{2,3}}$) — the same trefoil pair
+in the color-tube sector.  With quarks available, the first
+composite hadrons become constructible (though their linking
+structure requires step 4).
+
+**Step 4: the muon and the first hadrons.**
+The figure-eight knot $4_1$ has crossing number $4$ and is the
+first **hyperbolic** knot: $\mathrm{Vol}(4_1) = 2.0299$.  It is
+amphichiral ($4_1 \cong \overline{4_1}$), so the muon $\mu^-$ and
+antimuon $\mu^+$ are the same knot type, distinguished only by
+orientation — like the neutrino but with non-trivial topology.
+
+Also at step 4: the **Borromean baryon** $\mathcal{B}_3(u, u, d)$.
+Although each constituent quark ($T_{2,3}$ or $\overline{T_{2,3}}$)
+has crossing number $3$, the three-component Borromean linking
+requires the quartic jet to resolve the inter-component holonomy.
+The proton $p$ and neutron $n$ first appear here, along with
+their antiparticles $\bar{p}$ and $\bar{n}$ (obtained by mirroring
+all constituent quarks).
+
+**Step 5: the tau and heavy quarks.**
+The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus
+$2$.  It is chiral: $5_1 \neq \overline{5_1}$.  This produces:
+
+- **Tau** $\tau^- = T_{2,5}$ and **anti-tau** $\tau^+ = \overline{T_{2,5}}$
+- **Bottom quark** $b = T_{2,5}$ and **strange quark** $s = \overline{T_{2,5}}$
+
+(The strange and bottom quarks are the mirror pair at genus 2,
+as the up and down quarks are the mirror pair at genus 1.)
 
 **Summary: the unfolding.**
 
-| Step $n$ | Jet $J^n(E)$ | Polynomial | Particle | Crossing $c$ | Over $\mathbb{F}_\pp$ |
-|:--------:|-------------|------------|----------|:---:|----------------------|
-| 0 | value | $a_0$ | photon ($\varnothing$) | — | 1 element |
-| 1 | linear | $a_0 + a_1 x$ | neutrino ($0_1$) | 0 | 2 elements |
-| 2 | quadratic | $+ a_2 x^2$ | gluon ($L2a1$) | 0 | QR condition |
-| 3 | cubic | $+ a_3 x^3$ | electron ($3_1$) | 3 | Legendre symbol |
-| 4 | quartic | $+ a_4 x^4$ | muon ($4_1$) | 4 | (hyperbolic) |
-| 5 | quintic | $+ a_5 x^5$ | tau ($5_1$) | 5 | (genus 2) |
+| Step | Jet | New particles | Antiparticles | Chirality | New structure |
+|:----:|-----|--------------|---------------|:---------:|---------------|
+| 0 | value $a_0$ | photon $\gamma$ | (self) | — | fiber value |
+| 1 | linear | $\nu$ | $\bar{\nu}$ (orientation only) | no | transport, winding |
+| 2 | quadratic | gluon $g$ | (self) | no | curvature, linking |
+| 3 | **cubic** | $e^-$, $u$, $d$ | $e^+$, $\bar{u}$, $\bar{d}$ | **yes** | chirality, $\varphi$, $B_3$ |
+| 4 | quartic | $\mu^\pm$, $p$, $n$ | (amphi), $\bar{p}$, $\bar{n}$ | mixed | hyperbolic volume, baryons |
+| 5 | quintic | $\tau^-$, $b$, $s$ | $\tau^+$, $\bar{b}$, $\bar{s}$ | yes | genus 2 |
+| 7 | septic | $c$ | $\bar{c}$ | yes | heavy torus knots |
+| 8 | octic | $t$ | $\bar{t}$ | yes | $T_{3,4}$ sector |
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang.  The universe does not spring into existence fully
 formed: it **unfolds** through successive jet approximations.
-The photon is pre-geometric (step 0).  The neutrino is the first
-topological excitation (step 1).  Binding appears at step 2.
-Chiral matter — the electron — requires three ticks, and with it
-come the golden ratio, the trefoil, and the braid group $B_3$.
+The photon is pre-geometric (step 0).  The neutrino and
+antineutrino are the first topological excitations (step 1), but
+they are amphichiral — topologically the same knot.  Binding
+appears at step 2.  **True chirality** — and with it the
+particle-antiparticle distinction for matter — requires three
+ticks.  At step 3, the cubic jet produces the trefoil and its
+mirror simultaneously: the electron and positron, the up quark
+and down quark, the golden ratio, and the braid group $B_3$
+all emerge together in a single Planck step.
 
 **Crossing number as computational complexity.**
 The crossing number $c(K)$ of a knot $K$ is the minimum number
