@@ -39,6 +39,7 @@ satisfying the [snake identities](#def:snake-identity).
 
 We say $\mathbf{C}$ is *$R$-linear* (for a commutative ring $R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
+We require $R$ to be [without quasi-zeros](#def:no-quasi-zeros).
 
 The category is *symmetric monoidal* if it is further equipped with a
 natural isomorphism (the *braiding*)
