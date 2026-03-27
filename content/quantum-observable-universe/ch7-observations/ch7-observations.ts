@@ -50,6 +50,17 @@ export default chapter({
       ],
     }),
 
+    // ── Beta decay: half-lives and nuclear data ─────────────────────────
+    section({
+      title: "Beta Decay",
+      label: "sec:beta-decay-observations",
+      blocks: [
+        "hadron-half-life-verification",
+        "half-life-shell-worked",
+        "half-life-as-q-probe",
+      ],
+    }),
+
     // ── Large-scale observations ──────────────────────────────────────
     section({
       title: "Large-Scale Observations",

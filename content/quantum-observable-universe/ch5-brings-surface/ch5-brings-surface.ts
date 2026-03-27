@@ -150,9 +150,7 @@ export default chapter({
         "hadron-half-life",
         "hadron-q-self-correction",
         "hadron-half-life-regimes",
-        "hadron-half-life-verification",
         "skein-coulomb-enhancement",
-        "half-life-shell-worked",
         "shell-threading-conjecture",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
@@ -162,7 +160,6 @@ export default chapter({
         "quantum-dilogarithm-volume",
         "nitrogen-14-threading",
         "reidemeister-action-table",
-        "half-life-as-q-probe",
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
