@@ -51,9 +51,9 @@ structure Observation {k : Type*} [Field k]
 
     LaTeX: `\label{rem:observation-archimedean}` -/
 structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
-  /-- The type of global sections `Γ(E)` of the state bundle. -/
+  /-- The type of global sections `Γ(S)` of the state bundle. -/
   StateSections : Type*
-  /-- The observation map `obs : Γ(E) → ℝ`. -/
+  /-- The observation map `obs : Γ(S) → ℝ`. -/
   obs : StateSections → ℝ
   /-- Gauge equivalence relation. -/
   gaugeEquiv : StateSections → StateSections → Prop

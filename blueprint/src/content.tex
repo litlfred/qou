@@ -80,7 +80,7 @@
   \label{def:c-quantum-observable-universe}
   \lean{QOU.CQuantumObservableUniverse}
   \uses{def:c-quantum-universe}
-  CR manifold data with $H^0(M,\mathrm{Ad}(P))$ and $\Gamma_c(M,E)$ trivial.
+  CR manifold data with $H^0(M,\mathrm{Ad}(P))$ and $\Gamma_c(M,\mathcal{S})$ trivial.
 \end{definition}
 
 % ── Instanton Connection ────────────────────────────────────────
@@ -350,7 +350,7 @@
 \begin{definition}[Jet Prolongation]
   \label{def:jet-prolongation}
   \lean{QOU.Glossary.JetProlongation}
-  The first jet bundle $J^1 E$ represented categorically by
+  The first jet bundle $J^1 \mathcal{S}$ represented categorically by
   $A \otimes \Omega^1(A)$.
 \end{definition}
 
@@ -952,8 +952,8 @@
   \label{prop:jet-prolongation}
   \lean{QOU.Torsion.jet_prolongation}
   \uses{def:c-quantum-observable-universe, def:instanton}
-  If $(M, G, P, E)$ is a $\mathbb{C}$ QOU with instanton $A$
-  and metric $g$, then the jet prolongation $J^1 E$ with its
+  If $(\mathbf{C}, \theta, G, \mathcal{S})$ is a $\mathbb{C}$ QOU with instanton $A$
+  and metric $g$, then the jet prolongation $J^1 \mathcal{S}$ with its
   frame bundle and induced connection yields a new $\mathbb{C}$ QOU.
 \end{proposition}
 

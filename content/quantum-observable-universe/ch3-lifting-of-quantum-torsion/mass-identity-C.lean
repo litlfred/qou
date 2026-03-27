@@ -1,7 +1,7 @@
 /-!
 # QOU.MassIdentityC — Archimedean realisation of the mass identity
 
-In the archimedean QOU (M, G, P, E) with instanton connection A,
+In the archimedean QOU (C, θ, G, S) with instanton connection A,
 Levi form L, and self-dual curvature F⁺, the categorical mass is
 realised as Yekutieli's nonabelian multiplicative integral.
 

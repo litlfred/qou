@@ -1,4 +1,4 @@
-The jet bundle $J^1 E$ serves as the space of local states of the
+The jet bundle $J^1 \mathcal{S}$ serves as the space of local states of the
 $\mathbb{C}$ quantum observable universe. The classical gauge dynamics,
 encoded by the *instanton connection* $A$
 ([irreducible connection](#lem:irreducible-connection)), are weighted by the substrate

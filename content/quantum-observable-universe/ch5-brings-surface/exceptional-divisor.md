@@ -9,7 +9,7 @@ $$
 The *exceptional divisor* at $p$ is the $\mathbb{P}^1(\mathbb{C})$ fibre
 
 $$
-  E_p \;=\; \pi^{-1}(p)
+  \mathcal{S}_p \;=\; \pi^{-1}(p)
   \;=\;
   \bigl\{\,
     O(p) + R\bigl(\sin\phi\,(\cos\psi\,T_1 + \sin\psi\,T_2) - \cos\phi\,N\bigr)
@@ -19,4 +19,4 @@ $$
 $$
 
 where $\pi\colon \widetilde{M} \to M$ is the blow-up map that replaces $p$
-with $E_p \cong \mathbb{P}^1(\mathbb{C})$.
+with $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.

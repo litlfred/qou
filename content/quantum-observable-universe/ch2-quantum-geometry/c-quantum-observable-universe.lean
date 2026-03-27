@@ -28,7 +28,7 @@ namespace QOU
 universe u v
 
 /-- **ℂ quantum observable universe**: CR manifold data satisfying the
-    vanishing conditions `H⁰(M, Ad(P)) = 0` and `Γ_c(M, E) = 0`.
+    vanishing conditions `H⁰(M, Ad(P)) = 0` and `Γ_c(M, S) = 0`.
 
     LaTeX: `\label{def:c-quantum-observable-universe}` -/
 structure CQuantumObservableUniverse extends CRManifoldData where
@@ -37,9 +37,9 @@ structure CQuantumObservableUniverse extends CRManifoldData where
   /-- `H⁰(M, Ad(P))` is trivial: all global adjoint sections are equal.
       In a vector space this means `H⁰(M, Ad(P)) = 0`. -/
   adjoint_cohomology_vanishes : Subsingleton adjointSections
-  /-- The type of compactly supported sections of the state bundle `E`. -/
+  /-- The type of compactly supported sections of the state bundle `S`. -/
   compactStateSections : Type*
-  /-- `Γ_c(M, E)` is trivial: all compactly supported state sections are equal. -/
+  /-- `Γ_c(M, S)` is trivial: all compactly supported state sections are equal. -/
   state_sections_vanish : Subsingleton compactStateSections
 
 end QOU

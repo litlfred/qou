@@ -20,11 +20,11 @@ fibres over the two poles. In Peter--Weyl terms, $\partial A_0$ is the
 ideal of functions $f \in \mathcal{O}(\mathrm{SU}(2))$ that vanish on
 both stabiliser circles.
 
-**Archimedean picture.** In the archimedean setting, $\partial E_0$ is
+**Archimedean picture.** In the archimedean setting, $\partial \mathcal{S}_0$ is
 the boundary of the $\mathrm{SU}(2)$-frame bundle restricted to the
 vortex locus. The frame bundle $F(\mathrm{SU}(2)) \to \mathrm{SU}(2)$
 restricts over $S$ to two copies of $\mathrm{U}(1) \times \mathbb{R}^3$,
-so $\partial E_0 \cong \mathrm{U}(1) \times S^2 \sqcup \mathrm{U}(1) \times S^2$,
+so $\partial \mathcal{S}_0 \cong \mathrm{U}(1) \times S^2 \sqcup \mathrm{U}(1) \times S^2$,
 a disjoint union of two solid tori boundaries.
 
 **Dimension.** Since $\mathrm{SU}(2)$ is $3$-dimensional and $S$ is

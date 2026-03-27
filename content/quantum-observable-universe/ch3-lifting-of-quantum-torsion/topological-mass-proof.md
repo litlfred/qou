@@ -18,7 +18,7 @@ $$
 where $\Sigma$ is a surface with $\partial\Sigma = \gamma$.  The
 integrand $(\nabla_A q,\; L \wedge F^+)$ is a section of the
 connection--curvature bundle over $\Sigma$, and as such it is an element
-of the section algebra $\Gamma(J^1 E_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
+of the section algebra $\Gamma(J^1 \mathcal{S}_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
 at whatever level $n{+}1$ accommodates the vortex.
 
 The descent involution $\hat{\tau}_n$ ([descent involution](#def:descent-involution))
@@ -96,14 +96,14 @@ $\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\,\hat{\tau}_n$
 ([descent eigenspaces](#prop:descent-eigenspaces)).  By the structure of the
 defining boundary ([brane boundary](#def:brane-boundary)), the support of
 a transient section is contained in a neighbourhood of the boundary
-$\partial E_n$, which has codimension $\geq 2$ in $E_n$ (item (1)) and
+$\partial \mathcal{S}_n$, which has codimension $\geq 2$ in $\mathcal{S}_n$ (item (1)) and
 whose fibre at each blow-up centre $p_i$ is the exceptional divisor
 $E_i \cong \mathbb{P}^1(\mathbb{C})$ (item (2)).
 
 On the surface $\Sigma$, the transient integrand is therefore supported
 on the discs $D_i$ centred at the blow-up points.  Since the $D_i$ are
 disjoint (each blow-up introduces a new connected component of
-$\partial E_n$), the multiplicative integral splits as a product:
+$\partial \mathcal{S}_n$), the multiplicative integral splits as a product:
 $$
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)

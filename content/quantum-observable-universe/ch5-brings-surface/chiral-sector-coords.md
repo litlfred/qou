@@ -22,12 +22,12 @@ encoding the chirality of the substrate parameter.
 The three sectors tile the exceptional divisor exactly:
 
 $$
-  E_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),
+  \mathcal{S}_p \;=\; \mathfrak{r}(p) \;\cup\; \mathfrak{g}(p) \;\cup\; \mathfrak{b}(p),
 $$
 
 where adjacent sectors share only their boundary meridians
 (at $\psi = 0$ and $\psi = 2\pi/3$ in each sector's local coordinate),
-and the union covers $E_p$ without overlap.  The three sectors correspond to
+and the union covers $\mathcal{S}_p$ without overlap.  The three sectors correspond to
 the three copies of $S_3 \subset S_5$ in
 [chirality and trefoil](#rem:chirality-trefoil): $\mathfrak{r}$ is the first, $\mathfrak{g}$ the
 second, and $\mathfrak{b}$ the third.

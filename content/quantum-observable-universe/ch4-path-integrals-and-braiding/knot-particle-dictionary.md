@@ -14,7 +14,7 @@ The resulting dictionary is:
 
 | Knot type | Symbol | Particle | Crossing number | Role in bundle |
 |-----------|--------|----------|-----------------|----------------|
-| Point (empty) | $\varnothing$ | Photon | $0$ | Background flux on $E_p$ |
+| Point (empty) | $\varnothing$ | Photon | $0$ | Background flux on $\mathcal{S}_p$ |
 | Unknot | $\mathcal{O}$ ($0_1$) | Neutrino | $0$ | Trivial braiding; vacuum drag |
 | Trefoil | $3_1$ | Electron | $3$ | Simplest stable vortex (gen. 1) |
 | Figure-eight | $4_1$ | Muon | $4$ | Hyperbolic volume residue (gen. 2) |
@@ -35,5 +35,5 @@ The mass of each hadron is determined by the terminal resolution
 ([terminal resolution](#prop:terminal-resolution)) and matches CODATA values to
 sub-keV precision.
 
-In a bundle initial condition $E_0$, each entry $(p_i, K_i)$ is one row
+In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$ is one row
 of this dictionary placed at a specific point on $\mathbb{P}(V)$.

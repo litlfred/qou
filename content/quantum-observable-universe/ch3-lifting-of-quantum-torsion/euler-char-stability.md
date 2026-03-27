@@ -10,6 +10,6 @@ $$
 $$
 In particular, if the base level satisfies $\chi(A_0) = c \in k$, then
 $\chi(A_n) = c$ for all $n \geq 0$.  In the archimedean realisation,
-$\chi(A_n) = \chi(E_n)$ is the topological Euler characteristic of the
-total space $E_n$.
+$\chi(A_n) = \chi(\mathcal{S}_n)$ is the topological Euler characteristic of the
+total space $\mathcal{S}_n$.
 

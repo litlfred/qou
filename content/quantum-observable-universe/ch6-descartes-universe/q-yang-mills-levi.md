@@ -1,4 +1,4 @@
-Let $(M, \theta, G, P, E)$ be an archimedean quantum observable universe
+Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be an archimedean quantum observable universe
 with instanton connection $A$ and substrate parameter $q$
 ([substrate parameter](#def:substrate-parameter)).  The
 *$q$-weighted Yang--Mills--Levi functional* is

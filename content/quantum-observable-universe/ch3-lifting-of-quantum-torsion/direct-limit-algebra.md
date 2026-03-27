@@ -17,4 +17,4 @@ In the archimedean realisation
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), applying the fibre
 functor $\tau$ gives
 $\mathcal{A}_\infty \cong
-\varinjlim\,\Gamma(J^1 E_n,\, \mathrm{SU}_{q_n}(2))$.
+\varinjlim\,\Gamma(J^1 \mathcal{S}_n,\, \mathrm{SU}_{q_n}(2))$.

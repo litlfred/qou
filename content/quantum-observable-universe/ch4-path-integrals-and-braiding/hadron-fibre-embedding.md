@@ -1,5 +1,5 @@
 Let $H \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ be a
-hadron ([Definition](#def:hadron)) and let $E_p$ denote the fibre of the
+hadron ([Definition](#def:hadron)) and let $\mathcal{S}_p$ denote the fibre of the
 knot bundle over a point $p \in \mathbb{P}(V)$
 ([Definition](#def:projective-line-object)). A **fibre-compatible hadron
 embedding** is a morphism
@@ -8,7 +8,7 @@ $$
   \iota_p \;\colon\;
   \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}
   \;\longrightarrow\;
-  E_p
+  \mathcal{S}_p
 $$
 
 satisfying the following conditions:
@@ -16,13 +16,13 @@ satisfying the following conditions:
 1. **Integrability.** The embedding $\iota_p$ is *integrable* in the
    sense that the abstract hadron data (linking, braiding, Skein
    decomposition) can be consistently realized within the geometric
-   structure of the fibre $E_p$. Concretely, $\iota_p$ must intertwine
+   structure of the fibre $\mathcal{S}_p$. Concretely, $\iota_p$ must intertwine
    the abstract Skein action
    ([operations on hadrons](#rem:hadron-operations)) with the
-   geometric operations on knots in $E_p$.
+   geometric operations on knots in $\mathcal{S}_p$.
 
 2. **Fibre confinement.** The image $\iota_p(H)$ is entirely
-   contained in the fibre $E_p$. No constituent knot extends to a
+   contained in the fibre $\mathcal{S}_p$. No constituent knot extends to a
    neighbouring fibre $E_{p'}$ for $p' \neq p$. This is enforced by a
    finite Mobius energy bound:
 
@@ -42,12 +42,12 @@ satisfying the following conditions:
      \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}
        \ar[r, "\iota_p"]
        \ar[d, "\ell_{ij}"']
-     & E_p
+     & \mathcal{S}_p
        \ar[d, "\ell_{ij}"]
      \\
      \mathrm{Sym}^{n'}(K) \otimes \mathcal{L}_{\mathrm{Hopf}}'
        \ar[r, "\iota_p'"']
-     & E_p
+     & \mathcal{S}_p
    \end{tikzcd}
    \qquad\text{(Hopf compatibility)}
    \]

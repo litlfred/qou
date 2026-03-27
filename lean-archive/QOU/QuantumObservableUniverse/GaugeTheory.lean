@@ -152,9 +152,9 @@ structure Observation (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **Archimedean observation**: concrete realisation on a CR manifold.
     LaTeX: `\label{rem:observation-archimedean}` -/
 structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
-  /-- Global sections `Γ(E)` of the state bundle. -/
+  /-- Global sections `Γ(S)` of the state bundle. -/
   StateSections : Type*
-  /-- The observation map `obs : Γ(E) → ℝ`. -/
+  /-- The observation map `obs : Γ(S) → ℝ`. -/
   obs : StateSections → ℝ
   /-- Gauge equivalence relation. -/
   gaugeEquiv : StateSections → StateSections → Prop

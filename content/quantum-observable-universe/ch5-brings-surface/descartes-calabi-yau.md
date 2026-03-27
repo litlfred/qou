@@ -1,4 +1,4 @@
-The constraint $\chi(E) = -6$ specialises to each archimedean example:
+The constraint $\chi(\mathcal{S}) = -6$ specialises to each archimedean example:
 
 - *Calabi--Yau* ([Calabi--Yau](#ex:calabi-yau)): constrains
   the alternating sum of Betti numbers; only manifolds admitting

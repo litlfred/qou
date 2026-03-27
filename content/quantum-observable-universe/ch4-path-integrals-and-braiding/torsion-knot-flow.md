@@ -1,4 +1,4 @@
-Given a bundle initial condition $E_0 = \{(p_i, K_i)\}_{i=1}^{N}$
+Given a bundle initial condition $\mathcal{S}_0 = \{(p_i, K_i)\}_{i=1}^{N}$
 ([Definition](#def:bundle-initial-conditions)), the **torsion-driven knot
 flow** is the one-parameter family of bundle states
 

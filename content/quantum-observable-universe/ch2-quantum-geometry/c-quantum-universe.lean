@@ -29,10 +29,10 @@ universe u v
 
 /-- **CR manifold data** for the ℂ realisation.
 
-    A 5-tuple `(M, θ, G, P, E)` as in Example 1.3.  `M` is a CR manifold
-    of hypersurface type with non-degenerate Levi form; `θ` is the contact
-    form (pseudo-Hermitian structure); `G = SU(2)`; `P → M` is a principal
-    `G`-bundle; `E = P ×_G CP¹` is the state bundle.
+    Canonical 4-tuple `(C, θ, G, S)`: `C = Rep(SU_q(2))` is the monoidal
+    category; `θ` is the contact form (pseudo-Hermitian structure) on a
+    CR manifold `M` (implicit as domain of `θ`); `G = SU(2)`;
+    `S = P ×_G CP¹` is the state bundle (principal bundle `P` implicit).
 
     LaTeX: `\label{def:c-quantum-universe}` -/
 structure CRManifoldData where

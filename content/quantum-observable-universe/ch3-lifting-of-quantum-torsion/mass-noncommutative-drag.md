@@ -2,6 +2,6 @@ When the substrate parameter satisfies $q(p) \neq 1$ at every point of the recur
 ([quantum universe](#def:quantum-universe)) is non-cocommutative, so the
 algebra $\mathcal{A}_\infty$ ([direct limit algebra](#def:direct-limit-algebra))
 does not reduce to a commutative direct limit.  Moving a vortex through
-$J^1 E_n$ then requires a continuous rearrangement of the
+$J^1 \mathcal{S}_n$ then requires a continuous rearrangement of the
 $\mathrm{SU}_q(2)$ fibre data, which is the source of the inertial
 resistance described in [mass geometric drag](#rem:mass-geometric-drag).
