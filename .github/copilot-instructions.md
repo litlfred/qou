@@ -306,7 +306,9 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Named categories | bold name | `$\mathbf{Rep}(\mathrm{SU}_q(2))$`, `$\mathbf{Mod}_R$` |
 | Monoidal unit | `$\mathbf{1}$` | (unchanged) |
 | Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
-| QOU datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
+| QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
+| QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
+| State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$ |
 | Hom-spaces | `$\mathrm{Hom}_{\mathbf{C}}$` | Bold subscript matches the category |
 | Tensor product | `$\otimes$` | (unchanged) |
 | Dual object | `$V^{\vee}$` | Mathlib convention; equivalent to $V^*$ |
@@ -314,8 +316,16 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Braiding | `$\sigma_{X,Y}$` | (unchanged) |
 
 **Do not use** `$\mathcal{C}$` (calligraphic) for categories. Calligraphic
-letters are reserved for sheaves, sites, and algebras
-(`$\mathcal{S}$`, `$\mathcal{O}$`, `$\mathcal{A}$`, etc.).
+letters are reserved for sheaves, sites, algebras, and **bundles**
+(`$\mathcal{S}$` = state bundle, `$\mathcal{O}$`, `$\mathcal{A}$`, etc.).
+
+**Subordination rules for the archimedean tuple:**
+- $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when
+  referring to points, but do not list $M$ in the tuple.
+- $P$ is implicit — it is the frame bundle of $\mathcal{S}$ under $G$.
+  Mention $P$ only when discussing gauge structure directly.
+- The old 5-tuple $(M, \theta, G, P, E)$ must not appear in new content.
+  Existing occurrences should be migrated to $(\mathbf{C}, \theta, G, \mathcal{S})$.
 
 Where physics notation is more natural than category-theoretic notation
 (e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),
