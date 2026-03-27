@@ -47,6 +47,7 @@ export default chapter({
         "planck-scale-computation",
         "toffoli-transfer-matrix",
         "toffoli-q-and",
+        "substrate-computation",
       ],
     }),
     section({
