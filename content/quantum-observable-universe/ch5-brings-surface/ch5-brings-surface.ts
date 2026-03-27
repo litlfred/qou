@@ -145,6 +145,7 @@ export default chapter({
         "trace-ratio-observable",
         "quantum-dilogarithm-volume",
         "nitrogen-14-threading",
+        "reidemeister-action-table",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
