@@ -56,10 +56,15 @@ $\Delta_\beta = T_{\mathrm{mix}} - T_{nn} = T_{pp} - T_{\mathrm{mix}}$.
 
 **Universality.**
 The Toffoli gate is universal for reversible classical
-computation (Toffoli, 1980): any Boolean circuit can be
+computation \cite{toffoli1980}: any Boolean circuit can be
 simulated by a circuit of Toffoli gates with ancilla bits.
-Combined with the single-qubit Hadamard gate, it becomes
-universal for quantum computation.  The existence of a
-non-zero $P_{7,6}(q)$ in the Hecke algebra means that the
-substrate's braiding dynamics, evaluated at discrete Planck
-steps, is computationally universal in this sense.
+Bennett \cite{bennett1973} showed that any irreversible
+Turing machine can be simulated by a reversible one — hence
+by Toffoli gates alone — with at most polynomial overhead
+in time and space.  Combined with a single-qubit gate
+outside the Clifford group (e.g.\ the Hadamard gate), the
+Toffoli gate becomes universal for quantum computation
+\cite{fredkin1982}.  The existence of a non-zero
+$P_{7,6}(q)$ in the Hecke algebra means that the substrate's
+braiding dynamics, evaluated at discrete Planck steps, is
+computationally universal in this sense.
