@@ -1062,6 +1062,25 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1982]] },
     DOI: "10.1007/BF01857727",
   }),
+
+  // ── Freedman-Kitaev-Larsen-Wang 2003: Topological QC ──────────
+  ref({
+    id: "freedman2003",
+    type: "article-journal",
+    title: "Topological Quantum Computation",
+    author: [
+      { family: "Freedman", given: "M. H." },
+      { family: "Kitaev", given: "A." },
+      { family: "Larsen", given: "M. J." },
+      { family: "Wang", given: "Z." },
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: 40,
+    issue: 1,
+    page: "31-38",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.1090/S0273-0979-02-00964-3",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

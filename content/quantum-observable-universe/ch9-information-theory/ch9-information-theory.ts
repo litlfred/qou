@@ -48,6 +48,8 @@ export default chapter({
         "toffoli-transfer-matrix",
         "toffoli-q-and",
         "substrate-computation",
+        "quantum-computational-universality",
+        "skein-turing-machine",
       ],
     }),
     section({
