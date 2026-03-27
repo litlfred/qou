@@ -42,6 +42,7 @@ export default chapter({
         "self-dual-curvature",
         "c-substrate-via-levi",
         "webster-inner-product",
+        "heisenberg-commutator-prop",
         "heisenberg-commutator",
         "reeb-decomposition",
         "observation-archimedean",

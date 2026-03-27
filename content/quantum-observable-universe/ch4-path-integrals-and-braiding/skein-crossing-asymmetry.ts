@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:crossing-energy",
+  interprets: "prop:skein-crossing-asymmetry",
   label: "rem:skein-crossing-asymmetry",
   title: "Crossing asymmetry and emergent Coulomb repulsion",
   tags: [
@@ -15,6 +15,7 @@ export default remark({
     "binding",
   ],
   uses: [
+    "prop:skein-crossing-asymmetry",
     "rem:r-matrix-braiding",
     "def:substrate-parameter",
     "def:crossing-energy",
