@@ -20,6 +20,7 @@ ENV PATH="/root/.elan/bin:/root/.local/bin:${PATH}"
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       ca-certificates curl git build-essential cmake libgmp-dev \
       python3 python3-pip python3-venv ripgrep \
+      singular singular-doc \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv (for lean-lsp-mcp)

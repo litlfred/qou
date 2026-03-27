@@ -179,7 +179,6 @@ export default chapter({
         "topological-mass",
         "topological-mass-categorical-proof",
         "skein-binding-lagrangian",
-        "nuclear-binding-from-canonical-action",
         "beta-stability",
       ],
     }),

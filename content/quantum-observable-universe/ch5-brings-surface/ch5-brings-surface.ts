@@ -121,6 +121,15 @@ export default chapter({
         "electron-knot",
         "positron-knot",
         "neutrino-knot",
+        "antineutrino-knot",
+        // Building block reference tables
+        "building-block-knots",
+        "linking-relations-table",
+        // q-deformed kinematics
+        "q-momentum",
+        "q-angular-momentum",
+        "q-energy",
+        "q-value-transition",
         // Proton, neutron, stable nucleus
         "categorical-proton",
         "categorical-neutron",
@@ -133,6 +142,32 @@ export default chapter({
         "diophantine-valley",
         "valley-table",
         "valley-stability",
+        // Hadron half-life calculations relative to q
+        // Beta decay as categorical Skein operation
+        "beta-decay-skein",
+        "lepton-number-categorical",
+        "parity-violation-skein",
+        "nuclear-spin-parity",
+        "tritium-decay-knot-equation",
+        // Half-life calculations
+        "hadron-half-life",
+        "hadron-q-self-correction",
+        "hadron-half-life-regimes",
+        "skein-coulomb-enhancement",
+        "shell-threading-conjecture",
+        "nuclear-groebner-reduction",
+        "groebner-shirshov-energy",
+        "generator-volume-decomposition",
+        "markov-trace-factorization",
+        "skein-polynomial-transfer-matrix",
+        "transfer-matrix-operator",
+        "beta-decay-transfer-matrix",
+        "shell-structure-eigenvalues",
+        "trace-ratio-observable",
+        "quantum-dilogarithm-volume",
+        "nitrogen-14-threading",
+        "reidemeister-action-table",
+        "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
