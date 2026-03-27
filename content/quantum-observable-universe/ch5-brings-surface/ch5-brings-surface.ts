@@ -144,6 +144,7 @@ export default chapter({
         "markov-trace-factorization",
         "trace-ratio-observable",
         "quantum-dilogarithm-volume",
+        "nitrogen-14-threading",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
