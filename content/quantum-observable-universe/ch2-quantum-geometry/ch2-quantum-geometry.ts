@@ -158,6 +158,7 @@ export default chapter({
         "categorical-point",
         "categorical-point-explication",
         "observation",
+        "observation-energy",
         "two-observer-parallelogram",
       ],
     }),

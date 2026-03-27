@@ -53,7 +53,14 @@ We begin from what we can actually observe:
    Reeb bundle is where we keep track of what we have not
    yet measured.
 
-8. **Multiple observers share a world.**  This is not a
+8. **We have the perception of free will and intent.**
+   We choose to measure, to act, to organise.  Choosing to
+   sort a sock drawer is an act of intent that increases
+   local order at the cost of effort.  The mathematical
+   consequence: observation is an **open map** — it creates
+   outcomes not determined by the initial conditions.
+
+9. **Multiple observers share a world.**  This is not a
    flashlight theory where each observer illuminates a
    private universe.  Each fibre functor
    $\tau \colon \mathbf{C} \to \mathbf{Vect}$ is an
