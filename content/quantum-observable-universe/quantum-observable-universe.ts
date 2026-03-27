@@ -8,7 +8,7 @@ import { paper, chapterRef } from "../schema/builders";
  * `<dir>/<dir>.ts` by convention (or uses `uri` override).
  */
 export default paper({
-  title: "Quantum Observable Universe",
+  title: "On the Mechanics of Quantum Observable Universes",
   authors: ["Frederick Carl Leitner"],
   affiliations: [],
   date: "2026-03-21",
