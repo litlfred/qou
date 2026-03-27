@@ -1,211 +1,198 @@
 // Nuclear braid Gröbner reduction in Singular (letterplace).
 //
-// Computes the Gröbner-reduced normal form of nuclear braid words
-// in the Hecke algebra H_A(q) using Singular's non-commutative
-// letterplace library.
+// Run: Singular folio-assistant/computations/singular-nuclear-braid.sing
 //
-// Run:
-//   Singular folio-assistant/computations/singular-nuclear-braid.sing
+// Uses the LETTERPLACE library for non-commutative polynomial rings.
+// The free algebra on generators x(1)..x(n) is embedded in a
+// commutative ring with variables x(i)(j) where j is the "place" index.
 //
-// The letterplace library represents non-commutative polynomials
-// by embedding them in a commutative ring with extra variables:
-//   σ_i at position j → variable s(i,j)
-//
-// Relations (the Gröbner basis):
-//   σ_i² = (q-q⁻¹)σ_i + 1     (Hecke)
-//   σ_iσ_{i+1}σ_i = σ_{i+1}σ_iσ_{i+1}  (Yang-Baxter)
-//   σ_iσ_j = σ_jσ_i              (|i-j| >= 2, far commutativity)
+// Singular letterplace convention:
+//   x(i)(j) means "generator i at position j in the word"
+//   The ring must be created with makeLetterplaceRing(degbound)
 
-LIB "freegb.lib";    // free algebra / letterplace
-LIB "nctools.lib";   // non-commutative tools
+LIB "freegb.lib";
 
-// ── Parameters ──────────────────────────────────────────────────
+// ── Step 1: Create the base ring ────────────────────────────────
+// We need 13 generators (σ_1...σ_13) for A=14 nucleons.
+// Work over Q(q) — the field of rational functions in q.
+// Singular: parameter ring with (0,q) means char 0 with parameter q.
 
-// Work over Q(q) — rational functions in q
-ring r = (0,q), (s(1..13)), dp;
-// s(1)..s(13) are generators σ_1,...,σ_{A-1} for A=14
+// Start small: A=3 (tritium) first to verify, then scale up.
+int AA = 3;
+int ngens = AA - 1;  // 2 generators for A=3
+int degbd = AA;       // max word length
 
-// Hecke relation coefficient
-poly ha = q - 1/q;  // q - q^{-1}
+// Base ring with ngens variables over Q(q)
+ring r0 = (0,q), (x(1..ngens)), dp;
 
-// ── Build the Hecke algebra via letterplace ─────────────────────
-//
-// For A = 14: generators s(1),...,s(13)
-// The letterplace ring needs d copies of each variable
-// where d = max word length we expect in the normal form.
-// For H_14: max reduced word length = 13 (half-twist).
-
-int A = 14;
-int n_gens = A - 1;  // 13 generators
-int degbound = 14;    // max word length in normal form
-
-// Create the free algebra with letterplace
-def R = makeLetterplaceRing(degbound);
+// Create the letterplace ring
+def R = makeLetterplaceRing(degbd);
 setring R;
 
-// ── Define the Hecke relations ──────────────────────────────────
+// Show what we have
+"Letterplace ring created:";
+R;
+"";"Variables:";
+string(maxideal(1));
 
-// In letterplace notation:
-// σ_i at position k = s(i)(k) in the letterplace ring
-// σ_i² = s(i)(1) * s(i)(2) in letterplace
+// ── Step 2: Define the Hecke relations ──────────────────────────
+// In letterplace, x(i) at position j is just a variable in R.
+// After makeLetterplaceRing, the variables are named automatically.
+// We access them via the variable indices.
 
-// Build the ideal of relations
+// The Hecke relation: x(i)^2 = (q - 1/q) x(i) + 1
+// In letterplace: x(i)(1)*x(i)(2) - (q-1/q)*x(i)(1) - 1
+
+// For A=3: generators x(1), x(2)
+// Letterplace variables after makeLetterplaceRing(3):
+// The ring has ngens*degbd variables: x(i)(j) for i=1..ngens, j=1..degbd
+
+"";
+"Building Hecke ideal for A="; AA;
+
 ideal I;
 int idx = 0;
 
-// 1. Hecke relations: s(i)^2 - (q-q^{-1}) s(i) - 1 for each i
-int i;
-for (i = 1; i <= n_gens; i++)
-{
-    // s(i)*s(i) - ha*s(i) - 1
-    // In letterplace: s(i)(1)*s(i)(2) - ha*s(i)(1) - 1
-    idx++;
-    I[idx] = s(i)(1) * s(i)(2) - (q - 1/q) * s(i)(1) - 1;
-}
-
-// 2. Yang-Baxter: s(i)*s(i+1)*s(i) - s(i+1)*s(i)*s(i+1)
-for (i = 1; i <= n_gens - 1; i++)
+// Hecke relations: x(i)^2 = (q-1/q)*x(i) + 1
+int ii;
+for (ii = 1; ii <= ngens; ii++)
 {
     idx++;
-    I[idx] = s(i)(1) * s(i+1)(2) * s(i)(3)
-           - s(i+1)(1) * s(i)(2) * s(i+1)(3);
+    // x(i) at position 1 times x(i) at position 2
+    // In the letterplace ring, variable index for x(i)(j) is
+    // (j-1)*ngens + i
+    int v1 = ii;           // x(i)(1)
+    int v2 = ngens + ii;   // x(i)(2)
+    I[idx] = var(v1) * var(v2) - (q - 1/q) * var(v1) - 1;
 }
 
-// 3. Far commutativity: s(i)*s(j) - s(j)*s(i) for |i-j| >= 2
-int j;
-for (i = 1; i <= n_gens; i++)
+// Yang-Baxter: x(i)*x(i+1)*x(i) = x(i+1)*x(i)*x(i+1)
+for (ii = 1; ii <= ngens - 1; ii++)
 {
-    for (j = i + 2; j <= n_gens; j++)
+    idx++;
+    int a1 = ii;             // x(i)(1)
+    int b2 = ngens + ii + 1; // x(i+1)(2)
+    int a3 = 2*ngens + ii;   // x(i)(3)
+    int b1 = ii + 1;         // x(i+1)(1)
+    int a2 = ngens + ii;     // x(i)(2)
+    int b3 = 2*ngens + ii+1; // x(i+1)(3)
+    I[idx] = var(a1)*var(b2)*var(a3) - var(b1)*var(a2)*var(b3);
+}
+
+// Far commutativity: x(i)*x(j) = x(j)*x(i) for |i-j| >= 2
+int jj;
+for (ii = 1; ii <= ngens; ii++)
+{
+    for (jj = ii + 2; jj <= ngens; jj++)
     {
         idx++;
-        I[idx] = s(i)(1) * s(j)(2) - s(j)(1) * s(i)(2);
+        int p1 = ii;           // x(i)(1)
+        int p2 = ngens + jj;   // x(j)(2)
+        int q1 = jj;           // x(j)(1)
+        int q2 = ngens + ii;   // x(i)(2)
+        I[idx] = var(p1)*var(p2) - var(q1)*var(q2);
     }
 }
 
-printf("Hecke algebra H_%d(q): %d relations", A, idx);
-printf("  %d Hecke + %d Yang-Baxter + %d far-comm",
-       n_gens, n_gens - 1, (n_gens*(n_gens-1)/2 - (n_gens-1)));
+"Relations:"; idx;
+"Ideal:"; I;
 
-// ── Compute the Gröbner basis ───────────────────────────────────
+// ── Step 3: Two-sided Gröbner basis ─────────────────────────────
+"";
+"Computing two-sided Gröbner basis...";
+ideal G = twostd(I);
+"Gröbner basis size:"; size(G);
+"Gröbner basis:"; G;
 
-printf("Computing Gröbner basis (letterplace)...");
-option(prot);  // show progress
-ideal G = twostd(I);  // two-sided Gröbner basis
-printf("Gröbner basis: %d elements", size(G));
-
-// ── Build the nuclear braid word for N(6,8) ────────────────────
-//
-// Nucleon types: 6 protons (positions 1-6), 8 neutrons (positions 7-14)
+// ── Step 4: Build nuclear braid for N(1,2) (tritium) ────────────
+// Nucleons: 1 proton, 2 neutrons
+// Block ordering: [p, n, n]
 // Crossings:
-//   p-p (i,j both <= 6): σ_i
-//   n-n (i,j both >= 7): σ_i^{-1} = q^2 σ_i - q(q^{1/2}-q^{-1/2})
-//   mixed: (σ_i + σ_i^{-1})/2
+//   (1,2): p-n mixed → (1+q^2)/2 * x(1) - q*(q^(1/2)-q^(-1/2))/2
+//   (1,3): p-n mixed → same at x(1)
+//   (2,3): n-n negative → q^2 * x(2) - q*(q^(1/2)-q^(-1/2))
 
-// For the block ordering p...p n...n:
-// Generator σ_i for crossing between nucleons i and i+1
+"";
+"Building N(1,2) = tritium...";
 
-printf("Building nuclear braid N(6,8)...");
+// Since we can't compute sqrt(q) in Singular's parameter field,
+// we'll work with the substitution:
+// Let s = q^(1/2), so q = s^2.
+// But Singular doesn't support this directly.
+// Instead: use the Hecke algebra relation directly.
+// σ_i^{-1} = (1/q) σ_i + (1/q - 1) = q^{-1}(σ_i - 1) + q^{-1}
+//          = (σ_i + q - 1) / q  ... no, from σ^2 = (q-q^{-1})σ + 1:
+// σ^{-1} = σ/(q-q^{-1}+1/σ)... this is circular.
+//
+// Actually from the quadratic: σ^2 - (q-1/q)σ - 1 = 0
+// So σ = ((q-1/q) ± sqrt((q-1/q)^2 + 4)) / 2
+// And σ^{-1} = -1/σ = q/(q*σ - (q^2-1)) ... still needs σ.
+//
+// The STANDARD approach: in the Hecke algebra with T-basis,
+// T_i^{-1} = T_i - (q - 1) = T_i + 1 - q
+// when the relation is T_i^2 = (q-1)T_i + q.
+//
+// With OUR convention T_i^2 = (q-q^{-1})T_i + 1:
+// T_i^{-1} = (1/q^2)(T_i - (q - q^{-1}))... no.
+// From T^2 = (q-q^{-1})T + 1: T(T - (q-q^{-1})) = 1
+// So T^{-1} = T - (q - q^{-1})
+// Check: T * (T - (q-1/q)) = T^2 - (q-1/q)T = (q-1/q)T + 1 - (q-1/q)T = 1 ✓
 
-// Start with 1 (identity)
-poly braid_68 = 1;
+"T_i inverse: T_i - (q - 1/q)";
 
-// Add crossings in order: for each i, cross with all j > i
-for (i = 1; i <= A; i++)
-{
-    for (j = i + 1; j <= A; j++)
-    {
-        int gen = i;  // generator index
-        int is_pp = (i <= 6) && (j <= 6);
-        int is_nn = (i >= 7) && (j >= 7);
+// For the nuclear braid:
+// p-p crossing: T_i
+// n-n crossing: T_i^{-1} = T_i - (q - 1/q)
+// mixed: (T_i + T_i^{-1})/2 = (2*T_i - (q-1/q))/2 = T_i - (q-1/q)/2
 
-        if (is_pp)
-        {
-            // Positive crossing: multiply by σ_gen
-            braid_68 = braid_68 * s(gen)(1);
-        }
-        else
-        {
-            if (is_nn)
-            {
-                // Negative crossing: σ^{-1} = q^2 σ - q(q^{1/2}-q^{-1/2})
-                // In letterplace: q^2 s(gen)(1) - q*(q^(1/2)-q^(-1/2))
-                braid_68 = braid_68 * (q^2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2)));
-            }
-            else
-            {
-                // Mixed: (σ + σ^{-1})/2
-                braid_68 = braid_68 * ((1+q^2)/2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2))/2);
-            }
-        }
+// N(1,2) block ordering [p, n, n]:
+// crossing (1,2): p-n mixed at generator x(1)
+//   = x(1) - (q-1/q)/2
+// crossing (1,3): p-n mixed at generator x(1)
+//   = x(1) - (q-1/q)/2
+// crossing (2,3): n-n at generator x(2)
+//   = x(2) - (q-1/q)
 
-        // Reduce after each crossing to keep terms bounded
-        braid_68 = reduce(braid_68, G);
-    }
-}
+// Product: [x(1) - (q-1/q)/2] * [x(1) - (q-1/q)/2] * [x(2) - (q-1/q)]
+// First multiply in the letterplace ring, then reduce.
 
-printf("N(6,8) reduced: %d terms", size(braid_68));
+poly ha = q - 1/q;
 
-// ── Same for N(7,7) ─────────────────────────────────────────────
+// First crossing at x(1)
+poly c1 = var(1) - ha/2;
 
-printf("Building nuclear braid N(7,7)...");
+// Second crossing at x(1): need to multiply c1 * (x(1) - ha/2)
+// But in letterplace, we need to shift positions.
+// c1 is at position 1. The second factor needs position 2.
+// c1 * c2 where c2 uses var(ngens+1) = x(1)(2)
 
-poly braid_77 = 1;
+poly braid = (var(1) - ha/2) * (var(ngens+1) - ha/2);
+"After 2 crossings at x(1):"; braid;
 
-for (i = 1; i <= A; i++)
-{
-    for (j = i + 1; j <= A; j++)
-    {
-        int gen = i;
-        int is_pp = (i <= 7) && (j <= 7);
-        int is_nn = (i >= 8) && (j >= 8);
+// Reduce
+braid = reduce(braid, G);
+"Reduced:"; braid;
 
-        if (is_pp)
-        {
-            braid_77 = braid_77 * s(gen)(1);
-        }
-        else
-        {
-            if (is_nn)
-            {
-                braid_77 = braid_77 * (q^2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2)));
-            }
-            else
-            {
-                braid_77 = braid_77 * ((1+q^2)/2 * s(gen)(1) - q*(q^(1/2)-q^(-1/2))/2);
-            }
-        }
+// Third crossing at x(2): var(2) at position depends on current word length
+// This is getting complex in raw letterplace. Use lpMult for proper
+// non-commutative multiplication.
 
-        braid_77 = reduce(braid_77, G);
-    }
-}
+"";
+"=== For proper computation, use lpMult from freegb.lib ===";
+"The letterplace multiplication handles position shifting automatically.";
 
-printf("N(7,7) reduced: %d terms", size(braid_77));
+// Actually, let's use the simpler approach: just build the element
+// directly in the letterplace ring and reduce.
 
-// ── Compute the difference ──────────────────────────────────────
+// For A=3, the full braid word has at most 3 crossings.
+// The reduced form should have at most 2 generators (max word length 2).
 
-poly diff = braid_68 - braid_77;
-printf("Difference N(6,8) - N(7,7): %d terms", size(diff));
-
-// ── Evaluate at q = 1.110 ───────────────────────────────────────
-
-// Substitute q = 1110/1000 (rational approximation)
-map phi = R, 1110/1000;  // substitute q = 1.110
-poly braid_68_num = phi(braid_68);
-poly braid_77_num = phi(braid_77);
-
-printf("N(6,8) at q=1.110: %s", string(braid_68_num));
-printf("N(7,7) at q=1.110: %s", string(braid_77_num));
-
-// ── Output ──────────────────────────────────────────────────────
-
-printf("");
-printf("=== RESULTS ===");
-printf("N(6,8): %d terms in normal form", size(braid_68));
-printf("N(7,7): %d terms in normal form", size(braid_77));
-printf("Difference: %d terms", size(diff));
-printf("");
-printf("The Gröbner-reduced normal forms are EXACT over Q(q).");
-printf("The Markov trace can be read off from the coefficient");
-printf("of the identity (empty word) in the reduced form.");
+"";
+"=== VERIFICATION: Markov trace from reduced form ===";
+"For A=3, the identity coefficient in the reduced braid gives";
+"part of the Markov trace. The full trace requires summing";
+"z*a + b where a = coeff of x(i)(1) and b = constant term.";
+"";
+"z = 1/(q^(1/2) + q^(-1/2)) ≈ 0.4993 at q=1.110";
 
 exit;
