@@ -119,6 +119,15 @@ export default chapter({
         "electron-knot",
         "positron-knot",
         "neutrino-knot",
+        "antineutrino-knot",
+        // Building block reference tables
+        "building-block-knots",
+        "linking-relations-table",
+        // q-deformed kinematics
+        "q-momentum",
+        "q-angular-momentum",
+        "q-energy",
+        "q-value-transition",
         // Proton, neutron, stable nucleus
         "categorical-proton",
         "categorical-neutron",
@@ -154,6 +163,7 @@ export default chapter({
         "nitrogen-14-threading",
         "reidemeister-action-table",
         "half-life-as-q-probe",
+        "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
