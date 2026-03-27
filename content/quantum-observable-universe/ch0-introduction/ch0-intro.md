@@ -25,9 +25,12 @@ We begin from what we can actually observe:
    that pairs observables with their duals.
 
 3. **Physics is frame-independent.**  What we measure does not
-   depend on the orientation from which we observe it.
-   $\mathrm{SU}(2)$ emerges naturally via Tannaka–Krein
-   reconstruction from the rigid monoidal structure.
+   depend on the orientation from which we observe it.  Three-
+   dimensional rotation — $\mathrm{SU}(2)$, the double cover
+   of the rotation group $\mathrm{SO}(3)$ — emerges via
+   Tannaka–Krein reconstruction from the rigid monoidal
+   structure.  We do not assume $\mathrm{SU}(2)$; it falls
+   out of the axioms.
 
 4. **Three-fold structure recurs.**  Three colours (red, green,
    blue), three-fold chirality, three generations of matter.
@@ -50,17 +53,19 @@ We begin from what we can actually observe:
    Reeb bundle is where we keep track of what we have not
    yet measured.
 
-8. **Multiple observers share a world.**  Each observer
-   has a local chart — an affine patch centred on their
-   own measurements.  But these charts overlap, and where
-   they overlap the transition functions are consistent.
-   We can compare notes.  This is not a flashlight theory
-   where each observer illuminates a private universe; it
-   is a manifold theory where independent affine charts
-   patch together into a shared structure.  The
-   cosimplicial crossed groupoid encodes precisely this:
-   local sections, transition cocycles, and the descent
-   condition that makes local agreement global.
+8. **Multiple observers share a world.**  This is not a
+   flashlight theory where each observer illuminates a
+   private universe.  Each fibre functor
+   $\tau \colon \mathbf{C} \to \mathbf{Vect}$ is an
+   affine chart — one observer's local coordinate system.
+   Different fibre functors are different charts;
+   Tannaka–Krein tells us that the natural isomorphisms
+   between them form a $G$-torsor — the transition
+   functions.  The cocycle condition is automatic:
+   functoriality forces chart overlaps to be consistent.
+   The affine atlas is not an extra assumption; it is a
+   consequence of the rigid monoidal structure
+   ([contact affine chart](#def:contact-affine-chart)).
 
 These observations motivate a rigid monoidal category — a
 quantum observable universe — whose axioms encode precisely
