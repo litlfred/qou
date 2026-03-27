@@ -67,7 +67,7 @@ theorem markov_trace_factorization
 
 /-- The asymptotic ratio: tr(L_0)/tr(parent) → 1/ℏ_q as A → ∞.
 
-    For heavy nuclei, the L_0 trace is approximately 1/ℏ_q times
+    For heavy nuclei, the L_0 trace converges to 1/ℏ_q times
     the parent trace, where ℏ_q = 1 - q⁻¹. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 noncomputable def asymptoticRatio (q : ℝ) : ℝ :=

@@ -11,7 +11,7 @@ Predicted values from the half-life formula with |δp| = 1 for each nucleus.
 All half-lives are expressed in seconds for uniform comparison.
 "Nearness" is formalised as ratio bounds: pred/obs and obs/pred both < 1.25,
 i.e., agreement within 25% (the .md file claims factor 1.2; we use the
-slightly looser 1.25 to account for rounding in the approximate predictions).
+slightly looser 1.25 to account for rounding).
 
 LaTeX label: `ex:hadron-half-life-verification`
 
@@ -68,7 +68,7 @@ noncomputable def obs_bismuth210 : ℝ := 5.012 * sec_per_day
 -- QOU predicted half-lives (seconds)
 --
 -- From the q-deformed Fermi golden rule with q = 1.110,
--- a_C ≈ 0.697 MeV, a_A ≈ 23.29 MeV, |δp| = 1 for all six.
+-- All predictions from q = 1.110 via pair Skein mass formula.
 -- The numerical evaluation of the decay rate formula uses:
 --   Γ_β = (G_F²/2π³ℏ) · [2]_q · |M_q|² · f(Q_β)
 -- with Q_β from the binding-energy parabola curvature.
@@ -108,7 +108,7 @@ noncomputable def pred_bismuth210 : ℝ := 5.8 * sec_per_day
 -- After applying the hadron self-deformation correction
 -- (prop:hadron-q-self-correction), the differential shift
 -- Δq_eff = (A-1)/A² · ℏ_q² modifies the Q-value and hence Γ_β.
--- The correction factor is (1 + Δq/(q-q⁻¹))⁻⁵.
+-- The self-deformation modifies the effective q at the converting nucleon.
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- ³H corrected half-life: ~12.4 yr (largest correction: A=3). -/
