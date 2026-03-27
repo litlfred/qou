@@ -164,42 +164,54 @@ def compute_nucleus_witness(name, p, n, Q_exp=None, t_obs=None, t_unit=None):
     ord_par, phi_par, method_par, n_searched = find_ground_state(p, n)
     sign_par, log_par, gens_par = trace_sign_log_full(ord_par)
 
-    # Ground state — daughter
-    ord_dau, phi_dau, method_dau, _ = find_ground_state(p + 1, n - 1)
-    sign_dau, log_dau, gens_dau = trace_sign_log_full(ord_dau)
+    # Ground state — daughter (skip if n < 1)
+    if n < 1:
+        ord_dau = None
+        phi_dau = None
+        method_dau = 'none'
+    else:
+        ord_dau, phi_dau, method_dau, _ = find_ground_state(p + 1, n - 1)
+    if ord_dau is not None:
+        sign_dau, log_dau, gens_dau = trace_sign_log_full(ord_dau)
+    else:
+        sign_dau, log_dau, gens_dau = 0, 0, []
 
     # Negative generators
     neg_par = [g['i'] for g in gens_par if g['sign'] < 0]
-    neg_dau = [g['i'] for g in gens_dau if g['sign'] < 0]
+    neg_dau = [g['i'] for g in gens_dau if g['sign'] < 0] if gens_dau else []
 
-    # Sign structure
-    same_sign = (sign_par == sign_dau)
-    delta_phi = log_par - log_dau
+    # Sign structure and transition data (only if daughter exists)
+    if ord_dau is not None:
+        same_sign = (sign_par == sign_dau)
+        delta_phi = log_par - log_dau
 
-    # Intensive Δtr
-    phi_max = max(log_par, log_dau)
-    phi_min = min(log_par, log_dau)
-    if same_sign:
-        intensive_delta = abs(1 - math.exp(phi_min - phi_max))
+        phi_max = max(log_par, log_dau)
+        phi_min = min(log_par, log_dau)
+        if same_sign:
+            intensive_delta = abs(1 - math.exp(phi_min - phi_max))
+        else:
+            intensive_delta = 1 + math.exp(phi_min - phi_max)
+
+        conv = -1
+        for k in range(A):
+            if ord_par[k] == 0 and ord_dau[k] == 1:
+                conv = k
+                break
+
+        eIeR = None
+        if conv >= 0 and conv < len(gens_par) and conv < len(gens_dau):
+            Vp = gens_par[conv]['V_hat']
+            _, _, gens_dau_recomp = trace_sign_log_full(ord_dau)
+            if conv < len(gens_dau_recomp):
+                Vd = gens_dau_recomp[conv]['V_hat']
+                if abs(Vp) > 1e-30:
+                    eIeR = abs(Vp - Vd) / abs(Vp)
     else:
-        intensive_delta = 1 + math.exp(phi_min - phi_max)
-
-    # e(I)/e(R) at converting generator
-    conv = -1
-    for k in range(A):
-        if ord_par[k] == 0 and ord_dau[k] == 1:
-            conv = k
-            break
-
-    eIeR = None
-    if conv >= 0 and conv < len(gens_par) and conv < len(gens_dau):
-        Vp = gens_par[conv]['V_hat']
-        # Recompute daughter V at conv position with daughter ordering
-        _, _, gens_dau_recomp = trace_sign_log_full(ord_dau)
-        if conv < len(gens_dau_recomp):
-            Vd = gens_dau_recomp[conv]['V_hat']
-            if abs(Vp) > 1e-30:
-                eIeR = abs(Vp - Vd) / abs(Vp)
+        same_sign = None
+        delta_phi = None
+        intensive_delta = None
+        conv = -1
+        eIeR = None
 
     elapsed = time.time() - t0
     print(f"{elapsed:.1f}s ({method_par})")
@@ -230,14 +242,14 @@ def compute_nucleus_witness(name, p, n, Q_exp=None, t_obs=None, t_unit=None):
         'daughter': {
             'p': p + 1, 'n': n - 1,
             'ordering': ord_dau,
-            'ordering_visual': ''.join('●' if x else '○' for x in ord_dau),
-            'sign': sign_dau,
-            'log_trace': log_dau,
-            'trace_numerical': sign_dau * math.exp(log_dau) if abs(log_dau) < 700 else None,
+            'ordering_visual': ''.join('●' if x else '○' for x in ord_dau) if ord_dau else None,
+            'sign': sign_dau if ord_dau else None,
+            'log_trace': log_dau if ord_dau else None,
+            'trace_numerical': sign_dau * math.exp(log_dau) if ord_dau and abs(log_dau) < 700 else None,
             'n_negative_generators': len(neg_dau),
             'negative_generator_positions': neg_dau,
             'ground_state_method': method_dau,
-        },
+        } if n >= 1 else None,
 
         'transition': {
             'same_sign': same_sign,
@@ -272,19 +284,37 @@ def compute_nucleus_witness(name, p, n, Q_exp=None, t_obs=None, t_unit=None):
 def main():
     REGISTRY_DIR.mkdir(parents=True, exist_ok=True)
 
-    nuclei = [
-        ('H-3',   1,   2, 0.01861, 12.32,   'yr'),
-        ('He-3',  2,   1, None,    None,     None),
-        ('He-4',  2,   2, None,    None,     None),
-        ('Li-6',  3,   3, None,    None,     None),
-        ('C-12',  6,   6, None,    None,     None),
-        ('C-14',  6,   8, 0.156,   5730,     'yr'),
-        ('N-14',  7,   7, None,    None,     None),
-        ('Co-60', 27, 33, 0.318,   5.2714,   'yr'),
-        ('Sr-90', 38, 52, 0.546,   28.79,    'yr'),
-        ('Cs-137',55, 82, 0.514,   30.17,    'yr'),
-        ('Bi-210',83,127, 1.163,   5.012,    'd'),
-    ]
+    # Load nuclide list if available, otherwise use defaults
+    nuclide_list_path = Path(__file__).parent / 'nuclide-list.json'
+    if nuclide_list_path.exists():
+        with open(nuclide_list_path) as f:
+            nuclide_data = json.load(f)
+        nuclei = [(d['name'], d['p'], d['n'], None, None, None) for d in nuclide_data]
+        # Override with known experimental Q values
+        q_exp_data = {
+            'H-3': (0.01861, 12.32, 'yr'),
+            'C-14': (0.156, 5730, 'yr'),
+            'Co-60': (0.318, 5.2714, 'yr'),
+            'Sr-90': (0.546, 28.79, 'yr'),
+            'Cs-137': (0.514, 30.17, 'yr'),
+            'Bi-210': (1.163, 5.012, 'd'),
+        }
+        nuclei = [(name, p, n, *q_exp_data.get(name, (None, None, None)))
+                   for name, p, n, _, _, _ in nuclei]
+    else:
+        nuclei = [
+            ('H-3',   1,   2, 0.01861, 12.32,   'yr'),
+            ('He-3',  2,   1, None,    None,     None),
+            ('He-4',  2,   2, None,    None,     None),
+            ('Li-6',  3,   3, None,    None,     None),
+            ('C-12',  6,   6, None,    None,     None),
+            ('C-14',  6,   8, 0.156,   5730,     'yr'),
+            ('N-14',  7,   7, None,    None,     None),
+            ('Co-60', 27, 33, 0.318,   5.2714,   'yr'),
+            ('Sr-90', 38, 52, 0.546,   28.79,    'yr'),
+            ('Cs-137',55, 82, 0.514,   30.17,    'yr'),
+            ('Bi-210',83,127, 1.163,   5.012,    'd'),
+        ]
 
     print(f"Nuclear braid registry — generating witnesses")
     print(f"Output: {REGISTRY_DIR}/")
