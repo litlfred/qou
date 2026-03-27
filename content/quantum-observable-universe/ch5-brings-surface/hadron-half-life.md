@@ -26,7 +26,7 @@ $$
   \;=\;
   \frac{G_F^2}{2\pi^3\hbar}
   \;\cdot\;
-  [q]_2
+  [2]_q
   \;\cdot\;
   |\mathcal{M}_q|^2
   \;\cdot\;
@@ -41,81 +41,65 @@ with the following $q$-dependent factors:
    weak-interaction vertex.
 
 2. **$q$-deformed matrix element**: The squared matrix element
-   decomposes via the Skein binding Lagrangian
-   ([Skein binding Lagrangian](#def:skein-binding-lagrangian)) as
+   is determined by the Markov trace ratio between parent and
+   daughter Gröbner normal forms
+   ([trace ratio observable](#prop:trace-ratio-observable)):
 
    $$
      |\mathcal{M}_q|^2
-     \;=\;
-     g_V^2 \cdot \frac{q + q^{-1}}{2}
-     \;+\;
-     g_A^2 \cdot \frac{q - q^{-1}}{q + q^{-1}} \cdot \sigma_{\mathrm{GT}}
+     \;\propto\;
+     \prod_{i=0}^{p}
+     \left|
+       \frac{\hat{V}_i^{\,\mathrm{par}}}{\hat{V}_i^{\,\mathrm{dau}}}
+     \right|^2
    $$
 
-   where $g_V = 1$ (vector coupling, protected by CVC), $g_A \approx
-   1.27$ (axial coupling), and $\sigma_{\mathrm{GT}}$ is the
-   Gamow--Teller strength.  The ratio $(q - q^{-1})/(q + q^{-1}) =
-   \tanh(\ln q)$ modulates the spin-flip amplitude.
+   where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced
+   generator volume
+   ([factorization theorem](#thm:markov-trace-factorization)).
 
-3. **Phase-space integral**: The Fermi function
-   $f(Q_\beta)$ depends on the $Q$-value
+3. **Phase-space integral**: The $Q$-value
+   $Q_\beta = M(\text{parent}) - M(\text{daughter}) - m_e$
+   is the mass difference between parent and daughter atoms.
+   The mass of each nucleus is determined by the terminal
+   resolution of its composite link
+   ([terminal resolution](#prop:terminal-resolution)),
+   evaluated at $q$ using the pair Skein mass formula
+   $\mathcal{S}_{ab}(q) = (q\,\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$.
+   The fifth-power Sargent rule gives $f(Q_\beta) \propto Q_\beta^5$
+   for allowed transitions.
 
-   $$
-     Q_\beta(p, A)
-     \;=\;
-     \frac{\partial E}{\partial p}\bigg|_A
-     \;=\;
-     2\alpha(A) \cdot \delta p
-     \;=\;
-     2\left(\frac{a_C}{A^{1/3}} + \frac{a_A}{A}\right) \delta p
-   $$
+**$q$-dependence of the decay rate.**
+The decay rate depends on $q$ through three channels:
 
-   where $\alpha(A)$ is the curvature of the binding-energy parabola
-   ([integer stability](#prop:integer-stability)).  The fifth-power
-   Sargent rule gives $f(Q_\beta) \propto Q_\beta^5$ for allowed
-   transitions.
+- $[2]_q = q + q^{-1}$: the weak-vertex dimension.
+- $|\mathcal{M}_q|^2$: the Markov trace ratio, which depends on
+  the crossing structure of the nuclear braid at $q$.
+- $Q_\beta^5$: the mass difference, determined by the pair Skein
+  weights $\mathcal{S}_{ab}(q)$ which depend on $q$ through the
+  dressed quark masses $\mu_u, \mu_d$.
 
-**Combined $q$-dependence (heavy-nucleus approximation).**
-For heavy nuclei ($A \gtrsim 40$) the Coulomb curvature
-$a_C / A^{1/3}$ dominates the Pauli term $a_A / A$ in $Q_\beta$,
-so substituting $a_C = (q - q^{-1}) \cdot \lambda_C$ and
-keeping only the leading $q$-dependent piece:
+At $q = 1$ (classical limit): $[2]_1 = 2$, the crossing asymmetry
+vanishes, all isobars are degenerate ($Q = 0$), and no beta decay
+occurs.  At $q > 1$: the crossing asymmetry splits the isobars,
+producing nonzero $Q$ and finite half-lives.
 
-$$
-  \Gamma_\beta
-  \;\propto\;
-  (q + q^{-1})
-  \;\cdot\;
-  \left[
-    \frac{q + q^{-1}}{2}
-    + g_A^2 \,\tanh(\ln q) \cdot \sigma_{\mathrm{GT}}
-  \right]
-  \;\cdot\;
-  \left[
-    (q - q^{-1}) \cdot \frac{\lambda_C \, \delta p}{A^{1/3}}
-  \right]^5.
-$$
-
-The half-life therefore scales as
+The sensitivity of the decay rate to $q$ is
 
 $$
-  t_{1/2}
-  \;\propto\;
-  \frac{1}{(q + q^{-1}) \cdot (q - q^{-1})^5}
-  \;\cdot\;
-  \frac{A^{5/3}}{|\delta p|^5}.
+  \frac{\partial \ln \Gamma_\beta}{\partial \ln q}
+  \;=\;
+  \frac{q^2 - 1}{q^2 + 1}
+  \;+\;
+  5\,\frac{q^2 + 1}{q^2 - 1}
+  \;\approx\; 48
+  \quad\text{at } q = 1.110.
 $$
 
-**Interpretation.** The decay rate factorises into a purely
-$q$-dependent prefactor and a geometric factor $A^{-5/3} |\delta p|^5$
-measuring displacement from the valley.  The $q$-dependent prefactor
-$(q + q^{-1})(q - q^{-1})^5$ vanishes as $q \to 1$ (no beta decay in
-the classical limit: Coulomb repulsion vanishes, so all isobars are
-degenerate) and diverges as $q \to \infty$ (instantaneous decay: the
-Coulomb splitting overwhelms the strong binding).
+A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.
 
-The half-life is *not* a new observable — it is derived from the same
-Skein binding Lagrangian that determines the valley of stability.  The
-parameter $q$ controls both *which* nuclei are stable (the static
-valley) and *how fast* unstable nuclei decay toward it (the dynamical
-half-life).
+The half-life is *not* a new observable — it is derived from the
+categorical action $\mathcal{S}_q$ evaluated on the nuclear link,
+using the same parameter $q$ that determines the valley of
+stability.  The parameter $q$ controls both *which* nuclei are
+stable and *how fast* unstable nuclei decay.

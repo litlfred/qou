@@ -16,8 +16,7 @@ $$
   \;+\;
   \underbrace{\sum_{\text{crossings}} \mathcal{S}_{ij}(q)}_{\text{gauge}}
   \;+\;
-  \underbrace{\lambda_A \frac{(n-p)^2}{4A}
-    \pm \frac{\lambda_P}{A^{1/2}}}_{\text{matter}}
+  \underbrace{\mathcal{S}_q^{\mathrm{matter}}}_{\text{matter (Pauli + pairing)}}
 $$
 
 The gauge sector decomposes via the Hecke algebra:
@@ -99,7 +98,7 @@ Skein ($d \to u$) &
   $= (q^{1/2}{-}q^{-1/2})[L_0]$ &
   $0$ &
   \textbf{emits} $L_0$ &
-  $\Delta\lambda_A$ &
+  $\Delta\mathcal{S}_q^{\mathrm{matter}}$ &
   \textbf{changes} &
   \textbf{changes} \\
 \bottomrule

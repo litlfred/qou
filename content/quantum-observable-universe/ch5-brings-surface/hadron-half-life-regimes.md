@@ -9,21 +9,11 @@ varies.
 | Descartes | $q = 1.110$ | $\approx 3.6 \times 10^{-4}$ | $\approx 2.012$ | Observed nuclear lifetimes |
 | Deep quantum | $q \to \infty$ | $\to \infty$ | $\to \infty$ | $t_{1/2} \to 0$: instantaneous decay |
 
-**Near-stability expansion.**
-For nuclei one unit from the valley ($|\delta p| = 1$), the half-life
-at fixed $A$ depends only on $q$ and the mass number:
-
-$$
-  t_{1/2}(|\delta p| = 1)
-  \;\propto\;
-  \frac{A^{5/3}}{(q + q^{-1})(q - q^{-1})^5 \, \lambda_C^5}.
-$$
-
-At $q = 1.110$: for light nuclei ($A \sim 20$), this gives
-$t_{1/2} \sim 1\text{ s}$ (observed: $^{20}\text{F}$ has
-$t_{1/2} = 11\text{ s}$); for heavy nuclei ($A \sim 200$), it gives
-$t_{1/2} \sim 10^{8}\text{ s}$ (observed: $^{210}\text{Bi}$ has
-$t_{1/2} \approx 4 \times 10^{8}\text{ s}$).
+**$q$-dependent scaling.**
+The decay rate depends on $q$ through $(q + q^{-1})(q - q^{-1})^5$.
+This prefactor vanishes as $q \to 1$ (classical limit: no Coulomb
+splitting, no beta decay) and diverges as $q \to \infty$
+(instantaneous decay).
 
 **Drip-line asymptotics.**
 At the proton or neutron drip line, $|\delta p| \gg 1$ and the

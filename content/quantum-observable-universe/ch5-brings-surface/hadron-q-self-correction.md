@@ -101,63 +101,23 @@ $Q$-value than the background calculation predicts.  Via the
 Sargent rule $f(Q) \propto Q^5$, the corrected $Q$-value
 increases the decay rate and *shortens* the half-life.
 
-**Corrected predictions.**
+**Effect on the decay rate.**
 The differential shift $\Delta q_{\mathrm{eff}}$ modifies the
-$Q$-value by
+effective substrate parameter at the converting nucleon.  Since
+the decay rate depends on $q$ with sensitivity $\approx 48$
+([half-life regimes](#rem:hadron-half-life-regimes)), a shift
+of $\Delta q / q_0 \sim 0.1$--$0.4\%$ produces a measurable
+change in the decay rate.
 
-$$
-  Q_{\mathrm{eff}}
-  \;=\;
-  Q_0 + \frac{\partial Q}{\partial q}\bigg|_{q_0}
-  \cdot \Delta q_{\mathrm{eff}}
-  \;=\;
-  Q_0\!\left(1 + \frac{\Delta q_{\mathrm{eff}}}{q_0 - q_0^{-1}}
-  \right)
-$$
-
-where the second equality uses $\partial Q / \partial q \approx
-Q_0 / (q - q^{-1})$ from the Coulomb coefficient $a_C = (q - q^{-1})
-\cdot \lambda_C$.  The corrected half-life is then
-
-$$
-  t_{1/2}^{\mathrm{corr}}
-  \;=\;
-  t_{1/2}^{\,0}
-  \cdot
-  \left(1 + \frac{\Delta q_{\mathrm{eff}}}{q_0 - q_0^{-1}}\right)^{-5}.
-$$
-
-At $q_0 = 1.110$: $q_0 - q_0^{-1} = 0.2091$ and
-$\hbar_q^2 = 0.00982$.  The correction factor for each nucleus is:
-
-| Nucleus | $A$ | $(A-1)/A^2$ | $\Delta q_{\mathrm{eff}}$ | Correction | $t_{1/2}^{\mathrm{corr}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio |
-|---------|-----|-------------|--------------------------|------------|--------------------------|--------------------------|-------|
-| ${}^{3}\mathrm{H}$ | 3 | 0.222 | 0.00218 | 0.951 | $\sim 12.4$ yr | 12.3 yr | 1.01 |
-| ${}^{14}\mathrm{C}$ | 14 | 0.0664 | 0.000652 | 0.984 | $\sim 6690$ yr | 5730 yr | 1.17 |
-| ${}^{60}\mathrm{Co}$ | 60 | 0.0164 | 0.000161 | 0.996 | $\sim 6.17$ yr | 5.27 yr | 1.17 |
-| ${}^{90}\mathrm{Sr}$ | 90 | 0.0110 | 0.000108 | 0.997 | $\sim 31.9$ yr | 28.8 yr | 1.11 |
-| ${}^{137}\mathrm{Cs}$ | 137 | 0.00723 | 0.0000710 | 0.998 | $\sim 32.9$ yr | 30.2 yr | 1.09 |
-| ${}^{210}\mathrm{Bi}$ | 210 | 0.00474 | 0.0000466 | 0.999 | $\sim 5.79$ d | 5.01 d | 1.16 |
-
-The self-deformation correction is largest for the lightest nuclei
-(tritium, where it removes most of the 5.5% overestimate) and
-negligible for heavy nuclei.  The remaining systematic bias of
-$\sim 10$--$17\%$ for medium and heavy nuclei points to a second
-correction: the **Fermi-function Coulomb enhancement**, which
-increases the decay rate by a $Z$-dependent factor that grows
-with nuclear charge.
+For ${}^{3}\mathrm{H}$ ($A = 3$): $\Delta q_{\mathrm{eff}} =
+(2/9) \times \hbar_q^2 = 0.00218$, the largest correction.  This
+is a categorical quantity: it follows from $q$, $A$, and the
+linking structure of the nuclear braid.
 
 **Universality.**
 The self-deformation applies to *every* equation where $q$ is
 evaluated on a specific hadron configuration — not just half-lives.
-The Skein binding Lagrangian
-([Skein binding Lagrangian](#def:skein-binding-lagrangian)),
-the beta-stability line
-([beta-stability](#prop:beta-stability)), and the topological mass
+The beta-stability line
+([beta-stability](#prop:beta-stability)) and the topological mass
 formula all receive analogous corrections when $q_0$ is replaced by
-$q_{\mathrm{eff}}$.  For nuclear masses, the correction is already
-absorbed into the fitted values of $\lambda_V, \lambda_S, \lambda_C$
-(which implicitly include the average $\delta q$ across the periodic
-table).  For *differences* — like the $Q$-value driving beta decay —
-the $A$-dependent part of $\delta q$ produces a residual that the
-background $q_0$ alone does not capture.
+$q_{\mathrm{eff}}$.

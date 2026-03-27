@@ -107,5 +107,5 @@ $$
 
 where $f(Z_d, Q_\beta)$ is the Coulomb-corrected phase space integral
 ([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement)).
-The product of volume ratios replaces the smooth matrix element
-$|\mathcal{M}_q|^2$ with the exact topological computation.
+The product of volume ratios gives the topological part of
+$|\mathcal{M}_q|^2$.

@@ -58,13 +58,12 @@ factorization is broken — the transition simply flips the crossing
 chirality of the entire link.
 
 **Result.**
-The smooth formula with self-deformation predicts $t_{1/2} \approx
+The categorical computation predicts $t_{1/2} \approx
 12.4$ yr vs observed 12.3 yr (ratio 1.01).  The shell correction
 $\delta E_{\mathrm{shell}} = 0$ for both parent and daughter
 (neither has a closed sub-link: $A = 3$ is too small for
 $\alpha$-clustering).  The excellent agreement confirms that for
-superallowed mirror transitions, the smooth Skein binding Lagrangian
-plus the self-deformation correction is sufficient.
+superallowed mirror transitions, the self-deformation correction is sufficient.
 
 ---
 
@@ -135,14 +134,13 @@ $|\mathcal{M}|^2 \sim 10^{-6}$ — six orders of magnitude below the
 tritium mirror value.
 
 **The 17% residual.**
-The smooth formula predicts $t_{1/2} \approx 6690$ yr vs observed
+The leading-order computation predicts $t_{1/2} \approx 6690$ yr vs observed
 5730 yr (ratio 1.17).  This residual is the *shell correction
-contribution to the half-life*: the smooth Lagrangian does not
-resolve the $n = 8$ factorization, so it underestimates the decay
+contribution to the half-life*: the leading-order computation does not resolve the $n = 8$ factorization, so it underestimates the decay
 rate.  The shell correction $\delta E_{\mathrm{shell}}$ for the
 parent increases its binding energy (the $n = 8$ closed sub-link
 provides extra stability), which *increases* $Q_\beta$ relative to
-the smooth formula's prediction.  The larger $Q$ gives a faster
+the leading-order prediction.  The larger $Q$ gives a faster
 decay rate via $Q^5$:
 
 $$

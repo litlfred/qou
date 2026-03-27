@@ -30,19 +30,10 @@ three terms in the Skein relation are:
 *The shell energy scale is the crossing energy of the threading
 link $L_0$:*
 
-$$
-  \lambda_{\mathrm{shell}}
-  \;=\;
-  E_{\mathrm{cross}}(L_0)
-  \;=\;
-  \frac{q + q^{-1}}{2} \cdot \lambda_V
-  \cdot \Delta_{L_0}(q)
-$$
-
-*where $\Delta_{L_0}(q)$ is the Alexander polynomial of $L_0$
-evaluated at $q$, and $\lambda_V$ is the volume binding scale
-from the Skein binding Lagrangian
-([Skein binding Lagrangian](#def:skein-binding-lagrangian)).*
+The shell energy is determined by the pair Skein mass
+$\mathcal{S}_{ab}(q)$ evaluated on the threading link $L_0$,
+using the terminal resolution
+([terminal resolution](#prop:terminal-resolution)).
 
 **The threading link $L_0$.**
 The smoothing $L_0$ resolves the crossing between the converting
@@ -133,19 +124,18 @@ nuclear environment:
 
 The **total** shell correction is the product:
 
+The total shell correction is the product of the Borromean
+suppression and the shell modulation:
+
 $$
-  \lambda_{\mathrm{shell}}
+  \text{shell factor}
   \;=\;
-  E_{\mathrm{Hopf}}
-  \;\times\;
   \underbrace{\frac{[1]_q \, [2]_q}{[3]_q}}_{\text{Borromean factor}}
   \;\times\;
   \underbrace{f(m, k, q)}_{\text{shell modulation}}
 $$
 
-where $E_{\mathrm{Hopf}} = (q + q^{-1})/2 \cdot \lambda_V$ is
-the Hopf junction energy and $f(m, k, q)$ is the external
-modulation from the shell environment.
+Both factors are determined by $q$ and the nuclear braid topology.
 
 **What needs to be computed.**
 

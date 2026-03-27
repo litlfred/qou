@@ -162,7 +162,5 @@ neutron-neutron crossings to 7 mixed crossings.
 The generator volume $V_i = |a_i| + |b_i|$ is the
 **Hecke-reduced Skein weight** of all crossings involving
 nucleon $i$.  Summing over nucleons gives the total binding
-energy.  The five-term Bethe--Weizsäcker decomposition
-([Skein binding Lagrangian](#def:skein-binding-lagrangian)) is
-the smooth approximation to this sum; the generator volume
-decomposition is the exact discrete version.
+energy.  The generator volume decomposition is the exact discrete
+form of the nuclear binding computation.

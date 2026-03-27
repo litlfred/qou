@@ -101,9 +101,7 @@ $$
 $$
 
 The factor $(q - q^{-1})$ is the **crossing asymmetry** — the same
-quantity that determines the Coulomb coefficient $a_C = (q - q^{-1})
-\cdot \lambda_C$ in the Skein binding Lagrangian
-([Skein binding Lagrangian](#def:skein-binding-lagrangian)).  The
+quantity that determines the crossing asymmetry $(q - q^{-1})$ from the Hecke relation.  The
 Hecke reduction is the algebraic expression of the physical process
 of resolving a double crossing into its electromagnetic and strong
 components.

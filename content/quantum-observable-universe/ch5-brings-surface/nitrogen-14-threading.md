@@ -12,7 +12,7 @@ $(q + q^{-1})/2$).
 | Mixed crossings | 26 (all) | 22 |
 | Same-species | 0 | 4 ($\mathfrak{n}$-$\mathfrak{n}$) |
 | Coulomb excess | 0 | $-2(q - q^{-1})$ |
-| Pauli cost | 0 | $\lambda_A / 14$ |
+| Pauli cost | 0 | $(n-p)^2/(4A)$ asymmetry |
 
 **Why $\mathcal{N}(7,7)$ is the ground state.**
 With $p = n = 7$, every crossing in the braid word is a
@@ -43,7 +43,8 @@ crossings carry weight $q^{-1}$ instead of $(q + q^{-1})/2$:
 2. **Pauli asymmetry cost**: the $(n - p)^2 / (4A) = 4/56$
    asymmetry penalty from the Skein binding Lagrangian
    ([Skein binding Lagrangian](#def:skein-binding-lagrangian))
-   adds $\lambda_A / 14 \approx 1.66$ MeV.
+   adds an asymmetry energy from the antisymmetric product cost
+   in the matter sector of the categorical action.
 
 3. **Hecke reduction cost**: the same-species crossings produce
    $\sigma_i^2$ terms in the braid word (when two neutron

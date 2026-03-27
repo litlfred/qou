@@ -1,18 +1,16 @@
 The categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#def:qou-canonical-action)) evaluated on a nuclear
-link $\mathcal{N}(p, n)$ produces observables at two levels.  The
-substrate parameter $q$ determines **all topological observables**
-but the **energy scale in MeV** requires one geometric input: the
-curvature norm $\|F^+\|$ on the Bring surface.
+link $\mathcal{N}(p, n)$ produces observables at two levels.
 
-**What $q$ alone determines (topology).**
+**What $q$ alone determines.**
 
-These are dimensionless invariants computed from the Hecke algebra
-$H_A(q)$ at the single parameter $q = 1.110$:
+These are computed from the Hecke algebra $H_A(q)$ at the single
+parameter $q = 1.110$, the Descartes condition $\chi(A) = -6$,
+and the categorical definitions:
 
 | Observable | Formula | Status |
 |-----------|---------|:---:|
-| Which nuclei are stable | $p^*(A) = A / (2 + a_C A^{2/3}/(2a_A))$ | Exact |
+| Which nuclei are stable | $p^*(A)$ from the beta-stability line at $q$ | From $q$ |
 | Sensitivity to $q$ | $\partial \ln \Gamma / \partial \ln q \approx 48$ | Exact |
 | Ground-state ordering | Minimum $\Phi_q$ over braid representatives | Computed (A ≤ 14 exhaustive) |
 | Markov trace | $\mathrm{tr}(\overline{\mathcal{N}}) = \prod_i \hat{V}_i$ | **Theorem** |
@@ -21,121 +19,36 @@ $H_A(q)$ at the single parameter $q = 1.110$:
 | Writhe change | $\Delta w = A - 1$ | Computed |
 | Emission topology | $L_0 = T_{2,3} \sqcup \overline{T_{1,0}}$ (electron + antineutrino) | Derived |
 | Shell blocking | $e_i p_n = 0$ in TL (Jones-Wenzl kills smoothing) | Algebraic |
-| Transition class | Mirror ($q \leftrightarrow q^{-1}$) vs shell-blocked vs allowed GT | Determined by $(p, n)$ |
-| Relative decay rates | $|\mathcal{M}_q|^2 \propto \prod_{i \leq p} |\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}|^2$ | Computed |
-| Environmental $q$-shift | $\Delta q / q_0 \sim 10^{-8}$ per Tesla | Predicted |
+| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{uu} + 2\mathcal{S}_{ud} = 938.272$ MeV | From $q$ (terminal resolution) |
+| Mass splitting | $m_n - m_p = \mathcal{S}_{dd} - \mathcal{S}_{uu} = 1.290$ MeV | From $q$ |
+| Deuteron binding | $B_d = 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
+| Relative decay rates | $\propto \prod_{i \leq p} |\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}|^2$ | Computed |
+| Environmental $q$-shift | $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|$ | Predicted |
 
-**What needs geometric input (energy scale).**
+**What is not yet computed from $q$ alone.**
 
-The energy scale in MeV comes from the curvature integral on the
-Bring surface $\Sigma_4$:
+The **$Q$-value** for nuclei beyond the deuteron.  The $Q$-value
+is the mass difference $M(\text{parent}) - M(\text{daughter}) - m_e$.
+Each nuclear mass requires the terminal resolution of the full
+composite link $L_{3A}$ — the pair Skein mass formula applied to
+all crossings with Hecke compounding.  This computation is set up
+(braid registry, SnapPy, Singular/Hecke engine) but not yet
+evaluated for $A > 2$.
 
-$$
-  \lambda_V \;=\; \frac{1}{\mathrm{Vol}(\Sigma_4)}
-  \int_{\Sigma_4} \|F^+_\nabla\|^2 \, \theta \wedge (d\theta)^n
-$$
+The mass formula for individual hadrons:
+$m = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
+by $\hbar_q^2 = (1 - q^{-1})^2$) gives sub-keV masses for the
+electron, muon, proton, and neutron.  For multi-nucleon links
+(satellite links with $\mathrm{Vol} = A \times \mathrm{Vol}(\mathcal{B}_3)$
+exactly), the nuclear binding comes from the pair Skein mass
+$\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
+evaluated at the inter-nucleon crossings.
 
-where $F^+_\nabla$ is the self-dual curvature of the instanton
-connection and $\theta$ is the contact form.  This integral
-determines the **volume binding scale** $\lambda_V$, from which
-all MeV-valued quantities follow:
+The $Q$-value is a $\sim 0.001\%$ mass difference ($\sim 0.1$--$1$ MeV
+on $\sim 10{,}000$--$200{,}000$ MeV total mass).  Computing it
+requires the composite pair Skein weights to high precision — the
+terminal resolution applied to the full $3A$-strand link.
 
-| Observable | Depends on | Accuracy achievable |
-|-----------|-----------|:---:|
-| $a_V = (q + q^{-1})/2 \cdot \lambda_V$ | $\lambda_V$ | Exact (given $\lambda_V$) |
-| $a_C = (q - q^{-1}) \cdot \lambda_C$ | $\lambda_C$ | Exact |
-| $Q_\beta = 2\alpha(A) \cdot |\delta p|$ | $a_C, a_A$ | ∼25% (smooth formula) |
-| Proton mass $m_{\mathfrak{p}}$ | $\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2$ | Sub-keV |
-| Half-life $t_{1/2}$ | $G_F, Q_\beta, |\mathcal{M}_q|^2$ | ∼10-17% |
-
-**The boundary.**
-
-The Hecke algebra $H_A(q)$ is the **algebraic** (topological)
-side of the categorical action.  It computes crossing weights,
-Gröbner normal forms, Markov traces, and all invariants that
-depend on **which crossings exist** and **how they interact**.
-
-The curvature norm $\|F^+\|$ is the **geometric** side.  It
-computes the **energy per crossing** — how many MeV each Hopf
-junction carries.  This requires the metric on $\Sigma_4$ (fixed
-by $\chi = -6$ via Gauss--Bonnet, but the curvature distribution
-over the surface is additional data).
-
-The topological mass formula
-([topological mass](#prop:topological-mass-formula))
-bridges the two: $m = \mathrm{Vol}(K) / \hbar_q^2$ uses the
-hyperbolic volume (geometry) normalised by $\hbar_q^2$ (topology).
-For individual knots (electron, muon, proton) this gives sub-keV
-masses.  For the nuclear link (a satellite link with Vol $= 0$),
-the mass comes entirely from the crossing energies — which need
-$\lambda_V$.
-
-**The geometric input IS $q$.**
-
-The Levi-curvature coupling
-([Levi-curvature coupling](#rem:c-substrate-via-levi)) gives:
-
-$$
-  q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p)
-$$
-
-So $\|F^+\| = q - 1 = 0.110$ at our observation point.  The
-curvature norm that determines the MeV scale IS the substrate
-parameter itself.  The volume binding scale:
-
-$$
-  \lambda_V
-  = \frac{(q - 1)^2 \cdot \mathrm{Vol}(\Sigma_4)}{A}
-  = \frac{(q - 1)^2 \cdot 12\pi}{A}
-$$
-
-At $A = 1$: $\lambda_V = 0.110^2 \times 12\pi = 0.456$ MeV.
-At $A = 56$ (iron): $\lambda_V = 0.456 / 56 = 0.00815$ MeV
-per crossing.
-
-This means $a_V = (q + q^{-1})/2 \times \lambda_V$ is fully
-determined by $q$ — no separate geometric input needed.
-The "boundary" between topology and geometry dissolves:
-**$q$ encodes both**.
-
-All MeV-valued observables scale with $\lambda_V$:
-
-$$
-  a_C = \frac{q - q^{-1}}{(q + q^{-1})/2} \cdot a_V
-  \cdot \frac{\lambda_C}{\lambda_V},
-  \qquad
-  a_A, a_S, a_P \text{ similarly.}
-$$
-
-The ratio $\lambda_C / \lambda_V$ is a **dimensionless** quantity
-determined by the Hecke algebra (it's the ratio of Coulomb to
-volume crossing weights).  Only the overall scale $\lambda_V$
-requires geometric input.
-
-In the topological mass formula: $\lambda_V = \mathrm{Vol}(\Sigma_4) / (A \cdot \hbar_q^2)$ where $\mathrm{Vol}(\Sigma_4) = 4\pi(g - 1) = 12\pi$ from Gauss--Bonnet.  This gives:
-
-$$
-  \lambda_V = \frac{12\pi}{A \cdot \hbar_q^2}
-$$
-
-which is $A$-dependent — reflecting that the energy per crossing
-decreases as the link has more components.  At $A = 1$ (single
-nucleon): $\lambda_V = 12\pi / \hbar_q^2 \approx 3839$ MeV
-$\approx 4 m_{\mathfrak{p}}$.  The factor of 4 vs the actual
-proton mass reflects the Borromean structure (the proton uses
-$\sim 1/4$ of the total Bring surface capacity).
-
-**Practical consequence.**
-
-For the beta-decay $Q$-value: $Q$ is a $\sim 0.001\%$ mass
-difference.  Computing it from $q$ alone requires $14+$
-significant digits in the mass — which neither the smooth
-Bethe--Weizsäcker formula nor the Hecke trace provides.
-The Q-value calculation requires **experimental binding energies**
-(AME2020) or a first-principles computation of $\lambda_V$
-to $14+$ digit precision.
-
-The framework gives the correct **structure** of the Q-value
+The framework gives the correct **structure** of the $Q$-value
 (which nuclei decay, in which direction, with which shell
-blocking and sensitivity) from $q$ alone.  The absolute
-MeV scale is one geometric constant.
+blocking and sensitivity) from $q$ alone.

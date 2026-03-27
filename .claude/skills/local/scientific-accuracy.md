@@ -26,6 +26,9 @@ peer-review practices and the methodology of
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
+- **Speculation is OK in conversation** with the author (to explore
+  ideas), but **NEVER commit speculative content** without explicit
+  author consent. If unsure, ask before committing.
 - **Every quantity must trace back to the categorical definitions:**
   $(\mathbf{C}, A, \tau)$, $q$, $\chi$, and the Skein relation.
 - If a computation cannot be done exactly, say so. Do not introduce

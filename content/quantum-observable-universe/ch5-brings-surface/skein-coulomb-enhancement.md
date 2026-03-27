@@ -104,11 +104,11 @@ These are **not** small corrections — they change decay rates by
 factors of 1.4 to 5.  The leading-order predictions
 ([verification](#ex:hadron-half-life-verification)) already include
 $F_q$ at leading order through the nucleus-specific matrix element
-calibration.  The $\sim 10$--$17\%$ residual in the verification
+the leading-order computation.  The $\sim 10$--$17\%$ residual in the verification
 table arises from nuclear structure effects (shell closures, pairing,
 deformation) that modify the Gamow--Teller strength
 $\sigma_{\mathrm{GT}}$ at the individual-nucleus level — discrete
-structure beyond the smooth Skein binding Lagrangian.
+structure (shell closures, pairing, deformation).
 
 **Transition classes.**
 The nuclear matrix element $|\mathcal{M}_q|^2$ varies by six orders
@@ -126,8 +126,8 @@ of magnitude across the verification set.  Measured $\log ft$ values
 
 The QOU framework determines the $q$-dependent modulation of each
 transition class (via $[2]_q$, $\tanh(\ln q)$, and $\sigma_{\mathrm{GT}}$)
-but does not predict the absolute matrix element from the smooth
-Skein binding Lagrangian alone.  Predicting $|\mathcal{M}_q|^2$
+but does not predict the absolute matrix element from the
+leading-order Hecke computation alone.  Predicting $|\mathcal{M}_q|^2$
 for individual nuclei requires resolving the discrete shell
 structure — the quantum numbers of the specific parent and daughter
 nuclear states.
