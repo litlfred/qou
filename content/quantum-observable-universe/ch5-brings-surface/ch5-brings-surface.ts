@@ -141,6 +141,7 @@ export default chapter({
         "torus-hopf-stability",
         "unmapped-torus-knots",
         "torus-knot-prime-powers",
+        "force-knot-identification",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
