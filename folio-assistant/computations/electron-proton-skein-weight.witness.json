@@ -1,0 +1,37 @@
+{
+  "computation": "electron-proton-skein-weight",
+  "timestamp": "2026-03-27T18:48:06.982747+00:00",
+  "description": "Computation of C_geom \u2014 the total Skein weight of the electron-proton crossing evaluation.  Target: C_geom \u2248 14.25.",
+  "status": "OPEN \u2014 requires Reshetikhin-Turaev invariant computation",
+  "target": {
+    "C_geom": 14.245722807244382,
+    "alpha_em": 0.0072973525205055605,
+    "source": "CODATA 2022: \u03b1 = 1/137.036"
+  },
+  "q": 1.10997,
+  "q_dependent_part": {
+    "tanh_ln_q": 0.10395606123386834,
+    "status": "DERIVED \u2014 exact function of q"
+  },
+  "knot_data": {
+    "trefoil_crossings": 3,
+    "borromean_crossings": 6,
+    "hopf_linking_crossings": 2,
+    "total_crossings": 11,
+    "J_trefoil_at_q": 0.9733737274089982,
+    "J_hopf_at_q": -2.3515613291685145,
+    "Vol_borromean": 7.3277
+  },
+  "computation_plan": [
+    "1. Construct the link diagram for Hopf(T_{2,3}, B_3)",
+    "2. Compute the Kauffman bracket of the composite link at q",
+    "3. Apply the Reshetikhin-Turaev functor in the fundamental rep",
+    "4. The total Skein weight gives C_geom",
+    "5. Verify: C_geom = tanh(ln q) / \u03b1 \u2248 14.25"
+  ],
+  "required_tools": [
+    "SnapPy (link diagram)",
+    "SageMath (Reshetikhin-Turaev invariant)",
+    "OR: Direct Kauffman bracket computation"
+  ]
+}

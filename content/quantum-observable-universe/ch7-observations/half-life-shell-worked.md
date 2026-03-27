@@ -52,10 +52,23 @@ $$
 
 The beta-decay matrix element is the overlap between the parent and
 daughter Skein states.  For mirror nuclei, the $q$-conjugation
-symmetry forces this overlap to be maximal:
-$|\mathcal{M}|^2 \approx g_V^2 + 3g_A^2 \approx 5.8$.  No Skein
-factorization is broken — the transition simply flips the crossing
-chirality of the entire link.
+symmetry forces this overlap to be maximal.  The matrix element
+is the Markov trace ratio
+([trace ratio](#prop:trace-ratio-observable))
+$|\mathcal{M}_q|^2 = s^2 \cdot \prod_i |\hat{V}_i^{\mathrm{par}} / \hat{V}_i^{\mathrm{dau}}|^2$,
+which for the mirror pair $(1,2) \leftrightarrow (2,1)$ evaluates
+to the maximum allowed value: $q$-conjugation maps
+$\hat{V}_i(q) \mapsto \hat{V}_i(q^{-1})$, so the ratio is
+$|q/q^{-1}|^2 = q^4$ per affected generator — the largest
+possible Skein overlap.  No Skein factorization is broken — the
+transition simply flips the crossing chirality of the entire link.
+
+(In the standard parametrisation this corresponds to
+$g_V^2 + 3g_A^2$, where $g_V = 1$ from the $\mathrm{SU}_q(2)$
+Ward identity and $g_A$ is the axial projection of the Borromean
+Skein state.  Deriving $g_A$ from the Skein algebra of the
+Borromean link — the ratio of antisymmetric to symmetric Markov
+traces — is an open computation.)
 
 **Result.**
 The categorical computation predicts $t_{1/2} \approx

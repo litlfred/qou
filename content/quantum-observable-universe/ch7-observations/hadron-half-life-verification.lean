@@ -67,11 +67,16 @@ noncomputable def obs_bismuth210 : ℝ := 5.012 * sec_per_day
 -- ═══════════════════════════════════════════════════════════════════
 -- QOU predicted half-lives (seconds)
 --
--- From the q-deformed Fermi golden rule with q = 1.110,
--- All predictions from q = 1.110 via pair Skein mass formula.
--- The numerical evaluation of the decay rate formula uses:
---   Γ_β = (G_F²/2π³ℏ) · [2]_q · |M_q|² · f(Q_β)
--- with Q_β from the binding-energy parabola curvature.
+-- From the q-deformed decay rate formula (prop:hadron-half-life):
+--   Γ_β = (s² · μ₀ / 2π³) · [2]_q · |M_q|² · f(Q_β)
+-- where s = q^½ - q^{-½} (Skein amplitude), μ₀ is the single
+-- dimensional scale (unit choice), and all other factors are
+-- functions of q alone.
+--
+-- The standard-physics combination G_F² m_e⁵ decomposes as
+-- 243 E_× μ₀ / (2 N_v⁴) where N_v is the weak-scale crossing
+-- count (open computation).  Predicted half-lives are computed
+-- using the CODATA value of G_F² m_e⁵ as the dimensional input.
 --
 -- Since the full formula involves rpow (A^{5/3}), we state the
 -- externally computed predictions as concrete values, following
@@ -394,8 +399,10 @@ noncomputable def bismuth210_prediction : HalfLifePrediction where
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- All six beta emitters have QOU-predicted half-lives within 25%
-    of the NNDC observed values, using no free parameters beyond q
-    and the Skein binding scales already fixed by nuclear masses. -/
+    of the NNDC observed values, using q (substrate parameter),
+    μ₀ (dimensional unit choice), and the standard-physics value
+    of G_F² m_e⁵ (which decomposes into q-dependent factors times
+    μ₀, pending derivation of the weak-scale crossing count N_v). -/
 -- Ref: NNDC/ENSDF, [manuscript] §6/hadron-half-life-verification
 theorem all_six_agree :
     tritium_prediction.predicted / tritium_prediction.observed < 1.25 ∧

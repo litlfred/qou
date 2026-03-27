@@ -1,0 +1,40 @@
+{
+  "computation": "borromean-axial-coupling",
+  "timestamp": "2026-03-27T18:48:06.952219+00:00",
+  "description": "Computation of g_A from the Borromean Skein algebra. The axial coupling is the ratio of antisymmetric to symmetric Markov traces on the Borromean link B_3 at q = 1.110.",
+  "status": "OPEN \u2014 requires colored Jones polynomial computation",
+  "target": {
+    "g_A": 1.2754,
+    "g_V": 1.0,
+    "source": "PDG 2024: g_A = 1.2754 \u00b1 0.0013"
+  },
+  "q": 1.10997,
+  "borromean_braid": "\u03c3\u2081\u03c3\u2083\u03c3\u2085\u00b7\u03c3\u2082\u207b\u00b9\u03c3\u2084\u207b\u00b9\u00b7\u03c3\u2081\u03c3\u2083\u03c3\u2085\u00b7\u03c3\u2082\u207b\u00b9\u03c3\u2084\u207b\u00b9",
+  "hecke_parameters": {
+    "z_markov": 0.49729094535612156,
+    "relation": "\u03c3\u00b2 = (q - q\u207b\u00b9)\u03c3 + 1"
+  },
+  "partial_results": {
+    "g_V": {
+      "value": 1.0,
+      "status": "exact (CVC / Ward identity)"
+    },
+    "g_A": {
+      "value": null,
+      "status": "OPEN \u2014 needs Sage/colored Jones"
+    },
+    "J_borromean_fund": 8.131456534986341,
+    "three_q": 3.0436997074055707
+  },
+  "computation_plan": [
+    "1. Represent Borromean link \u03b2 in Hecke algebra H_6(q)",
+    "2. Compute fundamental Markov trace tr_fund(\u03b2) \u2014 vector channel",
+    "3. Compute adjoint Markov trace tr_adj(\u03b2) \u2014 axial channel",
+    "4. g_A = tr_adj(\u03b2) / tr_fund(\u03b2)",
+    "Alternative: Use Sage QuantumKnotInvariants for colored Jones"
+  ],
+  "required_tools": [
+    "SageMath with QuantumKnotInvariants package",
+    "OR: Direct Hecke algebra computation in H_6(q)"
+  ]
+}

@@ -93,11 +93,11 @@ Combining the trace ratio with the phase space integral:
 $$
   t_{1/2}
   \;=\;
-  \frac{\ln 2}{G_F^2 \, m_e^5 / (2\pi^3)}
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,E_{\times} \cdot \mu_0}
   \;\cdot\;
-  \frac{1}{|\mathrm{skein\_amp}|^2}
+  \frac{1}{[2]_q \;\cdot\; s^2}
   \;\cdot\;
-  \frac{1}{f(Z_d,\, Q_\beta)}
+  \frac{1}{f(Z_d,\, \mathcal{Q}_q)}
   \;\cdot\;
   \prod_{i=0}^{p}
   \left|
@@ -105,7 +105,15 @@ $$
   \right|^2
 $$
 
-where $f(Z_d, Q_\beta)$ is the Coulomb-corrected phase space integral
+where $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude,
+$E_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy,
+$\mu_0$ is the single dimensional scale (unit choice),
+$N_v$ is the effective crossing count of the weak scale
+($v = N_v\,E_{\times}\,\mu_0$), and
+$f(Z_d, \mathcal{Q}_q)$ is the Coulomb-corrected phase space integral
 ([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement)).
+The prefactor replaces the standard-physics combination
+$G_F^2\,m_e^5/(2\pi^3)$
+([hadron half-life](#prop:hadron-half-life)).
 The product of volume ratios gives the topological part of
 $|\mathcal{M}_q|^2$.

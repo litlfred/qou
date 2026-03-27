@@ -61,12 +61,28 @@ $$
   \alpha \;=\; \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
 $$
 
-where $C_{\mathrm{geom}} \approx 14.25$ is a geometric factor
-from the knot structure (the number of crossing resolutions
-in the electron--proton Skein evaluation).  The $\alpha^2$
-dependence reflects **two Skein resolutions** — the photon
-mediating the interaction must resolve one crossing at the
-electron and one at the proton.
+where $\tanh(\ln q) = (q - q^{-1})/(q + q^{-1})$ is the
+electromagnetic-to-strong ratio derived from $q$ alone
+([crossing asymmetry](#rem:skein-crossing-asymmetry)).
+The geometric factor $C_{\mathrm{geom}}$ is the total Skein
+weight of the electron--proton crossing evaluation — the
+Markov trace of the Hopf link between the trefoil ($T_{2,3}$)
+and the Borromean proton structure, summed over all crossing
+resolutions.
+
+**Open computation:** Deriving $C_{\mathrm{geom}}$ from the
+Skein algebra of $\mathrm{Hopf}(T_{2,3}, \mathcal{B}_3)$
+requires evaluating the full Markov trace of the
+electron--proton link at $q = 1.110$.  The trefoil has 3
+self-crossings and the Borromean link has 6; the Hopf linking
+adds inter-component crossings whose Skein weights sum to a
+non-integer total.  The target value $C_{\mathrm{geom}} \approx
+14.25 = \tanh(\ln q)/\alpha$ is fixed by CODATA; the open task
+is to reproduce this from the Skein algebra independently.
+
+The $\alpha^2$ dependence reflects **two Skein resolutions** —
+the photon mediating the interaction must resolve one crossing
+at the electron and one at the proton.
 
 **Shell transitions.**
 

@@ -90,10 +90,10 @@ golden rule:
 $$
   t_{1/2}
   \;=\;
-  \frac{\ln 2}{G_F^2 \, m_e^5 / (2\pi^3)}
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,E_{\times} \cdot \mu_0}
   \;\cdot\;
-  \frac{1}{|\mathrm{skein\_amp}|^2
-    \cdot f(Z_d, Q_\beta)}
+  \frac{1}{[2]_q \;\cdot\; s^2
+    \;\cdot\; f(Z_d, \mathcal{Q}_q)}
   \;\cdot\;
   \prod_{i=0}^{p}
   \left|
@@ -101,10 +101,15 @@ $$
   \right|^2
 $$
 
-where $f(Z_d, Q_\beta)$ is the Coulomb-corrected phase space
-([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement)).
-Every quantity in this formula is determined by the Hecke algebra
-computation at the single parameter $q$.
+where $s = q^{1/2} - q^{-1/2}$,
+$E_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
+dimensional scale, and $N_v$ is the effective crossing count
+of the weak scale ($v = N_v\,E_{\times}\,\mu_0$).
+The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
+([hadron half-life](#prop:hadron-half-life)).
+Every quantity is determined by the Hecke algebra computation
+at $q$, plus $\mu_0$ (unit choice) and $N_v$ (topological
+invariant of the weak scale — open computation).
 
 **Two-level structure (cosimplicial).**
 The computation has two levels, corresponding to levels 0 and 1 of
