@@ -31,6 +31,16 @@ export default chapter({
       ],
     }),
     section({
+      title: "Golden Ratio, Julia Sets, and Discrete Dynamics",
+      label: "sec:golden-julia-dynamics",
+      blocks: [
+        "golden-ratio-transport",
+        "julia-set-reeb",
+        "discrete-planck-step",
+        "jet-planck-steps",
+      ],
+    }),
+    section({
       title: "Computation at Planck Time Lengths",
       label: "sec:planck-scale-computation",
       blocks: [
