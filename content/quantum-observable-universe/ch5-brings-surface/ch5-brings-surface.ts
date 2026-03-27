@@ -131,6 +131,11 @@ export default chapter({
         "valley-table",
         "valley-stability",
         // Hadron half-life calculations relative to q
+        // Beta decay as categorical Skein operation
+        "beta-decay-skein",
+        "lepton-number-categorical",
+        "tritium-decay-knot-equation",
+        // Half-life calculations
         "hadron-half-life",
         "hadron-q-self-correction",
         "hadron-half-life-regimes",
