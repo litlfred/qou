@@ -43,7 +43,7 @@ experiments report systematic deviations:
 
 **Observation and coherence loss.**
 When a detector is placed at one slit, the
-[observation](#def:observation) $\mathcal{O}_p$ shifts the substrate
+[observation](#def:observation) $\mathcal{I}_p$ shifts the substrate
 parameter $q \mapsto q + \delta q$ on that path via Hopf coaction.
 The two paths now carry *different* $q$-values.  The Reeb phases
 $\Phi_{\mathrm{Reeb}}^{(1)}$ and $\Phi_{\mathrm{Reeb}}^{(2)}$
