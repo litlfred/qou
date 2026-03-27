@@ -1,0 +1,86 @@
+{
+  "computation": "level1-qvalues",
+  "timestamp": "2026-03-27T21:07:03.478621+00:00",
+  "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). Uses block ordering \u2014 ground-state search not performed.",
+  "q": 1.11,
+  "hbar_q_sq": 0.009820631442253064,
+  "nuclei": [
+    {
+      "name": "\u00b3H",
+      "A": 3,
+      "p": 1,
+      "n": 2,
+      "strands_L1": 9,
+      "crossings_L1": 36,
+      "converting_positions": [
+        4
+      ],
+      "affected_generators": 5,
+      "log_ratio_sum": -0.5773899026128387,
+      "Q_q_skein_units": -58.79356190159327,
+      "Q_exp_MeV": 0.0186,
+      "elapsed_s": 0.0010190010070800781,
+      "status": "computed"
+    },
+    {
+      "name": "\u00b9\u2074C",
+      "A": 14,
+      "p": 6,
+      "n": 8,
+      "strands_L1": 42,
+      "crossings_L1": 861,
+      "converting_positions": [
+        19
+      ],
+      "affected_generators": 20,
+      "log_ratio_sum": -0.760674114169095,
+      "Q_q_skein_units": -77.45674182378033,
+      "Q_exp_MeV": 0.156,
+      "elapsed_s": 0.02737140655517578,
+      "status": "computed"
+    },
+    {
+      "name": "\u2076\u2070Co",
+      "A": 60,
+      "p": 27,
+      "n": 33,
+      "strands_L1": 180,
+      "crossings_L1": 16110,
+      "status": "skipped \u2014 too large"
+    },
+    {
+      "name": "\u2079\u2070Sr",
+      "A": 90,
+      "p": 38,
+      "n": 52,
+      "strands_L1": 270,
+      "crossings_L1": 36315,
+      "status": "skipped \u2014 too large"
+    },
+    {
+      "name": "\u00b9\u00b3\u2077Cs",
+      "A": 137,
+      "p": 55,
+      "n": 82,
+      "strands_L1": 411,
+      "crossings_L1": 84255,
+      "status": "skipped \u2014 too large"
+    },
+    {
+      "name": "\u00b2\u00b9\u2070Bi",
+      "A": 210,
+      "p": 83,
+      "n": 127,
+      "strands_L1": 630,
+      "crossings_L1": 198135,
+      "status": "skipped \u2014 too large"
+    }
+  ],
+  "notes": [
+    "Block ordering [protons first] is NOT the ground state for Level 1.",
+    "Ground-state search at Level 1 has binom(3A, total_u) orderings.",
+    "For A=3: binom(9,5) = 126 orderings \u2014 feasible.",
+    "For A=14: binom(42,20) ~ 10^11 \u2014 needs heuristic.",
+    "The Q_q values here are UPPER BOUNDS (block ordering overestimates)."
+  ]
+}
