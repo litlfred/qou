@@ -156,6 +156,7 @@ export default chapter({
         "groebner-shirshov-energy",
         "generator-volume-decomposition",
         "markov-trace-factorization",
+        "skein-polynomial-transfer-matrix",
         "trace-ratio-observable",
         "quantum-dilogarithm-volume",
         "nitrogen-14-threading",
