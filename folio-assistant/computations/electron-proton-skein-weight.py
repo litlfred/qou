@@ -63,11 +63,7 @@ J_hopf = -(q**0.5 + q**2.5)
 # For the adjoint representation (spin-1, dim = [3]_q):
 #   S_{1, 1/2} / S_{0, 1/2} relates to the coupling strength
 
-# The [n]_q quantum integers
-def q_int(n):
-    return (q**n - qi**n) / ha
-
-# Quantum dimensions
+# Quantum dimensions (q_int imported from q_parameter)
 dim_fund = q_int(2)      # [2]_q = q + q⁻¹
 dim_adj = q_int(3)       # [3]_q
 

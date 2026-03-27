@@ -157,7 +157,7 @@ nuclear configurations at fixed $A$ are degenerate.
 
 At $q = 1.110$ (Descartes): $T^2 = 0.209\,T + 1$.
 The crossing asymmetry $0.209 = q - q^{-1}$ splits the
-degeneracy.  The $0.209\,\sigma$ term is the electromagnetic
+degeneracy.  The $0.209\,T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb
 enhancement of beta decay).  The $1$ term is the strong
 interaction (volume binding, independent of crossing chirality).
