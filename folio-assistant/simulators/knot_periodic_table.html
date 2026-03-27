@@ -83,6 +83,13 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
       <option value="stable">Stability pairs</option>
     </select>
   </label>
+  <label>Columns:
+    <select id="col-sel">
+      <option value="fill">Fill order (by Z)</option>
+      <option value="writhe">Writhe sub-mode (m)</option>
+      <option value="hopf" selected>Hopf occupancy</option>
+    </select>
+  </label>
   <label>q = <span class="q-val" id="q-val">1.110</span>
     <input type="range" id="q-slider" min="1.000" max="1.200" step="0.001" value="1.110" style="width:120px">
   </label>
@@ -498,21 +505,51 @@ const KNOT_BASE_ROW=[0,1,2,3,4,5,7,9]; // shellRow 1-7 → grid rows
 // We use 20 cols for main row: s(1-2) gap(3) d(4-13) gap(14) p(15-20)
 // f-block sub-row: cols 3-16
 
-function knotPos(Z,block,shellRow){
-  const mainRow=KNOT_BASE_ROW[shellRow];
-  const siblings=EL.filter(e=>e[11]===shellRow&&e[8]===block).sort((a,b)=>a[0]-b[0]);
-  const idx=siblings.findIndex(e=>e[0]===Z);
-  if(idx<0)return{row:mainRow,col:1};
+// Block widths: fixed number of Hopf-link slots per block
+const BLOCK_WIDTH={0:2, 1:6, 2:10, 3:14}; // s,p,d,f
 
-  // Col 1 = row label. Elements start at col 2.
-  if(block===0){      // s-block → cols 2-5
-    return{row:mainRow,col:2+idx};
-  }else if(block===2){ // d-block → start at col 6
-    return{row:mainRow,col:6+idx};
-  }else if(block===1){ // p-block → start at col 17
-    return{row:mainRow,col:17+idx};
-  }else{               // f-block → sub-row, start at col 6
-    return{row:mainRow+1,col:6+idx};
+// Column start positions for each block (col 1 = row label):
+//   s: col 2-3         (2 slots)
+//   d: col 5-14        (10 slots, gap at col 4)
+//   p: col 16-21       (6 slots, gap at col 15)
+//   f: sub-row col 5-18 (14 slots)
+const BLOCK_START={0:2, 2:5, 1:16, 3:5};
+
+// Electron count in the valence sub-shell for this element.
+// Within a (shellRow, block) group sorted by Z, the index = how many
+// electrons are in that sub-shell minus 1 (0-indexed).
+function valenceIdx(Z,block,shellRow){
+  const siblings=EL.filter(e=>e[11]===shellRow&&e[8]===block).sort((a,b)=>a[0]-b[0]);
+  return siblings.findIndex(e=>e[0]===Z);
+}
+
+function knotPos(Z,block,shellRow,colMode){
+  const mainRow=KNOT_BASE_ROW[shellRow];
+  const idx=valenceIdx(Z,block,shellRow);
+  if(idx<0)return{row:mainRow,col:2};
+
+  const isF=block===3;
+  const row=isF?mainRow+1:mainRow;
+  const start=BLOCK_START[block];
+
+  if(colMode==="fill"){
+    // Fill order: pack left-to-right, no fixed width
+    return{row:row,col:start+idx};
+  }else if(colMode==="writhe"){
+    // Writhe sub-mode: fixed-width columns per block.
+    // Each pair of columns = one orbital (m value), two spins.
+    // Element placed at its valence electron index within the block.
+    // Columns are fixed-width so same position = same m across rows.
+    const width=BLOCK_WIDTH[block];
+    // Center the element within the fixed-width block
+    const col=start+Math.min(idx,width-1);
+    return{row:row,col:col};
+  }else{
+    // Hopf occupancy: identical to writhe but conceptually each column
+    // = one Hopf-link slot being filled. Fixed-width per block.
+    const width=BLOCK_WIDTH[block];
+    const col=start+Math.min(idx,width-1);
+    return{row:row,col:col};
   }
 }
 
@@ -577,6 +614,7 @@ function buildGrid(){
   const layout=document.getElementById("layout-sel").value;
   const colorMode=document.getElementById("color-sel").value;
   const filter=document.getElementById("filter-sel").value;
+  const colMode=document.getElementById("col-sel").value;
   const qVal=parseFloat(document.getElementById("q-slider").value);
 
   const grid=document.createElement("div");
@@ -586,8 +624,9 @@ function buildGrid(){
     grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
     grid.style.gridTemplateRows="repeat(10,auto)";
   }else{
-    // Knot-centric: up to 22 cols (s+gap+d+gap+p), 10 grid rows
-    grid.style.gridTemplateColumns="repeat(22,minmax(38px,1fr))";
+    // Knot-centric: col 1=label, 2-3=s, 4=gap, 5-14=d, 15=gap, 16-21=p
+    // f sub-rows: cols 5-18. Total ~22 cols.
+    grid.style.gridTemplateColumns="auto "+("minmax(38px,1fr) ".repeat(21));
     grid.style.gridTemplateRows="repeat(10,auto)";
   }
 
@@ -606,7 +645,7 @@ function buildGrid(){
     if(layout==="standard"){
       pos=stdPos(Z,period,group,block);
     }else{
-      pos=knotPos(Z,block,shellRow);
+      pos=knotPos(Z,block,shellRow,colMode);
     }
     tile.style.gridRow=pos.row;
     tile.style.gridColumn=pos.col;
@@ -636,6 +675,47 @@ function buildGrid(){
       lbl.title=`Shell capacity: ${sr.capacity} nucleon slots. Stability pair at ${sr.pair}.${sr.intruder?" Intruder crossing.":""}`;
       grid.appendChild(lbl);
     }
+  }
+
+  // Column headers for writhe/hopf modes (knot-centric only)
+  if(layout!=="standard"&&colMode!=="fill"){
+    const hdrStyle="font-size:7px;color:#999;text-align:center;padding:0";
+    // s-block header
+    for(let i=0;i<2;i++){
+      const h=document.createElement("div");
+      h.style.cssText=`grid-row:0;grid-column:${BLOCK_START[0]+i};${hdrStyle}`;
+      h.textContent=colMode==="writhe"?`m=0 ${i===0?"↑":"↓"}`:`⋈${i+1}`;
+      // skip row 0 — not visible in CSS grid. Use a separate header row.
+    }
+    // Actually: add a thin header row. But CSS grid rows start at 1.
+    // Simpler: add block labels as col-spanning headers above row 1.
+    const blocks=[
+      {label:"s",start:BLOCK_START[0],width:2},
+      {label:"d",start:BLOCK_START[2],width:10},
+      {label:"p",start:BLOCK_START[1],width:6},
+    ];
+    for(const b of blocks){
+      const h=document.createElement("div");
+      h.style.cssText=`grid-row:1;grid-column:${b.start}/span ${b.width};font-size:8px;color:#889;text-align:center;border-bottom:1px solid #dde;padding:1px 0;font-weight:600;pointer-events:none`;
+      if(colMode==="writhe"){
+        h.textContent=`ℓ=${b.label==="s"?0:b.label==="p"?1:b.label==="d"?2:3} (${b.label})`;
+      }else{
+        h.textContent=`${b.width} Hopf slots (${b.label})`;
+      }
+      grid.appendChild(h);
+    }
+    // Shift all element rows down by 1 to make room for headers
+    // Actually elements already start at KNOT_BASE_ROW[1]=1, which conflicts.
+    // Bump KNOT_BASE_ROW by 1 — but that's a const. Easier: offset tiles.
+    grid.querySelectorAll(".tile").forEach(t=>{
+      t.style.gridRow=parseInt(t.style.gridRow)+1;
+    });
+    // Also offset row labels
+    grid.querySelectorAll("div").forEach(d=>{
+      if(d.classList.contains("tile"))return;
+      const r=parseInt(d.style.gridRow);
+      if(r>=1&&d.style.gridColumn==="1")d.style.gridRow=r+1;
+    });
   }
 
   wrap.appendChild(grid);
@@ -733,6 +813,7 @@ function buildLegend(){
 document.getElementById("layout-sel").addEventListener("change",buildGrid);
 document.getElementById("color-sel").addEventListener("change",buildGrid);
 document.getElementById("filter-sel").addEventListener("change",buildGrid);
+document.getElementById("col-sel").addEventListener("change",buildGrid);
 document.getElementById("q-slider").addEventListener("input",function(){
   document.getElementById("q-val").textContent=parseFloat(this.value).toFixed(3);
   if(selectedEl)selectElement(selectedEl); // refresh mass
