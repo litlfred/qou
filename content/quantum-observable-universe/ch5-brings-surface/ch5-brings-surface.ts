@@ -143,6 +143,7 @@ export default chapter({
         "torus-knot-prime-powers",
         "force-knot-identification",
         "em-coupling-projection",
+        "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",

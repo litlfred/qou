@@ -993,6 +993,25 @@ export const references: CSLData[] = [
     DOI: "10.1103/PhysRevLett.87.091801",
     issued: { "date-parts": [[2001]] },
   }),
+
+  // ── Feynman Lectures: Color Vision ──────────────────────────────
+  ref({
+    id: "feynman1963",
+    type: "chapter",
+    title: "Color Vision",
+    author: [
+      { family: "Feynman", given: "R. P." },
+      { family: "Leighton", given: "R. B." },
+      { family: "Sands", given: "M." },
+    ],
+    "container-title": "The Feynman Lectures on Physics",
+    volume: "I",
+    "chapter-number": "35",
+    publisher: "Addison-Wesley",
+    "publisher-place": "Reading, MA",
+    issued: { "date-parts": [[1963]] },
+    URL: "https://www.feynmanlectures.caltech.edu/I_35.html",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
