@@ -110,20 +110,109 @@ $\left(\frac{-4a^3 - 27b^2}{\pp}\right)$.  The golden degeneration
 ($r = 0$, cubic reduces to $X^3 + pX$) is visible iff
 $\varphi \in \mathbb{F}_\pp$, i.e., $\pp \equiv \pm 1 \pmod 5$.
 
+**Particle content at each step.**
+The crossing number of a knot is the number of $R$-matrix
+applications in its braid word.  Each $R$-matrix application is
+one action of $\nabla_q$ — one jet prolongation — one Planck step.
+Therefore: **crossing number = minimum jet order at which the knot
+first becomes resolvable**.
+
+A particle with crossing number $c$ cannot exist before step $c$:
+the $c$-th jet is the first Taylor order that has enough polynomial
+degree to encode $c$ crossings of the braid closure.
+
+| Step | Jet | Crossing number | Knot | Particle | Why |
+|:----:|-----|:---:|------|----------|-----|
+| 0 | value | — | $\varnothing$ (empty) | **Photon** | Background flux; no knot, no transport — just the fiber value |
+| 1 | linear | 0 | $0_1$ (unknot) | **Neutrino** | Trivial braiding ($J_\nu = 1$); one transport step creates winding with no crossings |
+| 2 | quadratic | 0 | $L2a1$ (Hopf link) | **Gluon** (boson) | Two unknots Hopf-linked on $E_c$; linking number $= 1$ requires curvature (step 2) |
+| 3 | cubic | 3 | $3_1$ (trefoil) | **Electron** / **up quark** | 3 crossings = 3 $R$-matrix applications; chiral cubic, $\varphi$, $B_3$ |
+| 4 | quartic | 4 | $4_1$ (figure-eight) | **Muon** | First hyperbolic knot; $\mathrm{Vol} = 2.0299$; amphichiral |
+| 5 | quintic | 5 | $5_1$ (cinquefoil) | **Tau** / **bottom quark** | Gen.\ 3 lepton; genus 2 |
+| 7 | septic | 7 | $7_1$ (septafoil) | **Charm quark** | Heavy sector torus knot |
+| 8 | octic | 8 | $8_{19} = T_{3,4}$ | **Top quark** | First $(3,n)$ torus knot |
+
+**Step 0: only the photon.**
+Before any transport, only the fiber value exists.  The photon is
+$K = \varnothing$ — the empty knot
+([photon wavefront example](#ex:photon-wavefront-example)):
+background flux on the state bundle with no topological identity.
+It requires no braiding, no crossings, no connection.  It is
+**pre-geometric**: it exists at the zeroth jet because it *is*
+the zeroth jet.
+
+**Step 1: the neutrino appears.**
+The first application of $\nabla_q$ creates horizontal transport
+— the ability to wind around the fiber.  The unknot $0_1$ is a
+circle with zero crossings: it winds once around the Reeb direction
+with trivial braiding
+([neutrino](#def:neutrino-knot)).  Its Jones polynomial
+$J_\nu(q) = 1$ is a degree-0 polynomial — consistent with living
+at the linear (degree 1) jet, where the only available structure
+is a single winding with slope but no self-intersection.
+
+The neutrino has zero crossing chirality ($Q(\nu) = 0$), zero
+hyperbolic volume, and mass arising entirely from vacuum drag:
+$m_\nu \sim \mu_0 \cdot (q - 1)$.  This is the lightest possible
+matter — the minimum topological excitation above the photon
+vacuum.
+
+**Step 2: the Hopf link (bosons).**
+The Hopf link $L2a1$ is two unknots linked once.  The linking
+number is $1$, which requires detecting **curvature** — the
+failure of parallel transport around a loop to return to the
+identity.  This is exactly the Hessian $d^2E$: the quadratic jet
+detects the first non-trivial holonomy.
+
+Bosons are links with an even number of components
+([fermion--boson decomposition](#prop:fermion-boson-knot-link)):
+$T(2,n)$ with $n$ even.  The simplest is $T(2,2) = L2a1$
+(gluon), which exists at step 2.  The linking energy is the
+first binding — two fibers correlated by curvature.
+
+**Step 3: the electron.**
+The trefoil $3_1 = T(2,3)$ has crossing number $3$: its braid
+word $\sigma_1 \sigma_2 \sigma_1 \in B_3$ requires three
+$R$-matrix evaluations.  It cannot exist before the cubic jet.
+The electron is the **simplest stable matter** — the lightest
+fermion with non-trivial topology.
+
+The trefoil is also the monodromy of the chiral cubic: loops
+around the branch points of $X^3 + (z+1)X^2 + \cdots = 0$
+generate $\pi_1(S^3 \setminus K_{3,2})$, the trefoil group.
+The particle *is* the singularity structure of the energy
+landscape at third order.
+
 **Summary: the unfolding.**
 
-| Step $n$ | Jet $J^n(E)$ | Polynomial | New structure | Over $\mathbb{F}_\pp$ |
-|----------|-------------|------------|---------------|----------------------|
-| 0 | value | $a_0$ | position | 1 element |
-| 1 | linear | $a_0 + a_1 x$ | slope, $\nabla_q$, $[\hat{X},\hat{P}]_q$ | 2 elements |
-| 2 | quadratic | $+ a_2 x^2$ | curvature, Frobenius pairing | QR condition |
-| 3 | cubic | $+ a_3 x^3$ | elliptic curve, $\varphi$, trefoil, $B_3$ | Legendre symbol |
+| Step $n$ | Jet $J^n(E)$ | Polynomial | Particle | Crossing $c$ | Over $\mathbb{F}_\pp$ |
+|:--------:|-------------|------------|----------|:---:|----------------------|
+| 0 | value | $a_0$ | photon ($\varnothing$) | — | 1 element |
+| 1 | linear | $a_0 + a_1 x$ | neutrino ($0_1$) | 0 | 2 elements |
+| 2 | quadratic | $+ a_2 x^2$ | gluon ($L2a1$) | 0 | QR condition |
+| 3 | cubic | $+ a_3 x^3$ | electron ($3_1$) | 3 | Legendre symbol |
+| 4 | quartic | $+ a_4 x^4$ | muon ($4_1$) | 4 | (hyperbolic) |
+| 5 | quintic | $+ a_5 x^5$ | tau ($5_1$) | 5 | (genus 2) |
 
 Each row is one Planck step, one tick of discrete time at the
 Big Bang.  The universe does not spring into existence fully
-formed: it **unfolds** through successive jet approximations,
-with the chiral structure (and the golden ratio within it)
-appearing at the third tick.
+formed: it **unfolds** through successive jet approximations.
+The photon is pre-geometric (step 0).  The neutrino is the first
+topological excitation (step 1).  Binding appears at step 2.
+Chiral matter — the electron — requires three ticks, and with it
+come the golden ratio, the trefoil, and the braid group $B_3$.
+
+**Crossing number as computational complexity.**
+The crossing number $c(K)$ of a knot $K$ is the minimum number
+of $R$-matrix evaluations needed to compute its Jones polynomial.
+In the jet-Planck correspondence, this is the **computational
+cost in Planck steps**: a universe that has existed for $n$ steps
+can resolve knots with $c \leq n$ but not those with $c > n$.
+The particle spectrum is revealed incrementally, with heavier and
+more complex particles appearing at later Planck steps — not
+because they are "created" in a dynamical sense, but because the
+Taylor approximation of $E$ does not yet have enough polynomial
+degree to encode their topology.
 
 **Convergence: $n \to \infty$ and the jet shell.**
 As $n \to \infty$, the tower

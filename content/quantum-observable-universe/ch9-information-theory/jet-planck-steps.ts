@@ -29,5 +29,10 @@ export default remark({
     "rem:j1e-local-states",
     "def:bundle-initial-conditions",
     "ex:finite-field-realisation",
+    "rem:knot-particle-dictionary",
+    "def:neutrino-knot",
+    "ex:photon-wavefront-example",
+    "prop:fermion-boson-knot-link",
+    "rem:knot-particle-generation",
   ],
 });
