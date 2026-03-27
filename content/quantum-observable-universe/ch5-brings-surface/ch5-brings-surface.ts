@@ -141,6 +141,7 @@ export default chapter({
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
         "generator-volume-decomposition",
+        "markov-trace-factorization",
         "half-life-as-q-probe",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
