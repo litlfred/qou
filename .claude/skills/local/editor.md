@@ -276,12 +276,31 @@ committing. This rule persists across sessions.
 
 ## Interaction style
 
-- Questions to author: always multiple-choice (2-4 options), concise labels.
+### Accessibility
+
+The author is disabled and has very limited ability to type.
+All interactions **must** be optimized for minimal typing:
+
+- **Always use structured prompts** (`AskUserQuestion` with options)
+  instead of open-ended text questions.
+- **Multiple-choice only**: 2–4 options with concise labels.
+  The author selects by number or single word, never by typing sentences.
 - **Multi-select by default**: when presenting actionable items where the user
   might want more than one, use `multiSelect: true` (checkboxes). Only use
   single-select (radio) when the options are mutually exclusive.
   - Checkboxes: "Which of these should I do next?" (can pick several)
   - Radio: "Which approach should we take?" (pick one)
+- **Interpret short/misspelled input generously**: the author may use
+  voice-to-text or abbreviated input. Parse intent, don't ask for
+  clarification on typos.
+- **Provide copy-paste commands**: for anything the author needs to run
+  locally, give exact commands runnable from the repo root. Never require
+  the author to construct commands by hand.
+- **Batch confirmations**: instead of asking permission for each small
+  step, present a batch plan and get one confirmation.
+
+### General style
+
 - Status updates: brief, at natural milestones.
 - Never make mathematical decisions autonomously — always confirm with author.
 - When delegating, provide agents with full context so they work autonomously.

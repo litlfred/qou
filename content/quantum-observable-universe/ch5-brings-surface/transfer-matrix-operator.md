@@ -57,7 +57,7 @@ $$
   T_{K_1, K_2} \;\cdot\; (a\sigma + b)
   \;:=\;
   (c\sigma + d)(a\sigma + b)
-  \;\stackrel{\sigma^2 = (q-q^{-1})\sigma + 1}{\longrightarrow}\;
+  \;\stackrel{T^2 = (q-q^{-1})T + 1}{\longrightarrow}\;
   a'\sigma + b'
 $$
 
@@ -107,7 +107,7 @@ $$
 $$
 
 The ideal $I_i$ at generator $\sigma_i$ absorbs the terms
-eliminated by Hecke reduction ($\sigma^2 = (q - q^{-1})\sigma + 1$).
+eliminated by the Hecke relation ($T^2 = (q - q^{-1})T + 1$).
 The transfer matrix product $M_i(q)$ is the **quotient** — the
 element surviving after modding out $I_i$.
 
