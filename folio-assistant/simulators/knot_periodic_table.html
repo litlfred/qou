@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knot-Centric Periodic Table</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Helvetica Neue',sans-serif;font-size:13px;color:#1a1a2e;background:#fafbff;overflow-x:hidden}
+#app{display:flex;flex-direction:column;height:100vh;padding:8px}
+h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 0;border-bottom:1px solid #dde}
+.controls label{font-size:11px;color:#556}
+.controls select,.controls input[type=range]{font-size:11px}
+.controls .q-val{font-weight:600;min-width:50px;display:inline-block}
+#table-wrap{flex:1;overflow:auto;position:relative;margin-top:6px}
+.tile-grid{display:grid;gap:2px;padding:4px}
+/* Standard layout: 18 cols, 7+2 rows */
+.tile-grid.standard{grid-template-columns:repeat(18,1fr)}
+/* Knot-centric layout: variable */
+.tile-grid.knot-centric{grid-template-columns:repeat(18,1fr)}
+.tile{border:1px solid #ccd;border-radius:4px;padding:3px;cursor:pointer;text-align:center;
+  min-height:48px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  transition:all .15s;position:relative;font-size:11px;background:#fff}
+.tile:hover{border-color:#47a;box-shadow:0 1px 6px rgba(40,80,160,.2);z-index:2}
+.tile.selected{border-color:#25a;box-shadow:0 0 0 2px rgba(40,80,200,.3)}
+.tile .sym{font-size:15px;font-weight:700;line-height:1.1}
+.tile .z-num{font-size:9px;color:#778}
+.tile .mini-knot{height:16px;margin-top:1px}
+.tile.magic-z{border-left:2px solid #c44}
+.tile.magic-n{border-right:2px solid #44c}
+.tile.magic-both{border-left:2px solid #c44;border-right:2px solid #44c}
+.tile.intruder{background:#fff8f0}
+/* Block colors */
+.tile.block-s{background:linear-gradient(135deg,#f0f4ff,#fff)}
+.tile.block-p{background:linear-gradient(135deg,#f0fff4,#fff)}
+.tile.block-d{background:linear-gradient(135deg,#fff8f0,#fff)}
+.tile.block-f{background:linear-gradient(135deg,#fff0f8,#fff)}
+.tile.empty{border:none;background:none;cursor:default;min-height:0}
+.spacer{grid-column:span 1}
+/* Detail panel */
+#detail{border-top:2px solid #dde;padding:10px;display:none;background:#f8f9ff;min-height:180px}
+#detail.show{display:flex;gap:20px;flex-wrap:wrap}
+#detail .info{flex:1;min-width:200px}
+#detail .info h3{font-size:16px;color:#2a3a6a;margin-bottom:6px}
+#detail .info table{font-size:12px;border-collapse:collapse}
+#detail .info td{padding:2px 8px 2px 0}
+#detail .info td:first-child{color:#778;font-weight:500}
+#detail .knot-diagram{flex:2;min-width:300px;min-height:140px;display:flex;align-items:center;justify-content:center}
+#detail .knot-diagram svg{max-width:100%;height:auto}
+/* Legend */
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:#556;padding:4px 0}
+.legend-item{display:flex;align-items:center;gap:4px}
+.legend-item svg{flex-shrink:0}
+/* Tooltip */
+.tooltip{position:absolute;background:#222;color:#fff;padding:4px 8px;border-radius:4px;
+  font-size:11px;pointer-events:none;white-space:nowrap;z-index:100;display:none}
+</style>
+</head>
+<body>
+<div id="app">
+<h2>Knot-Centric Periodic Table of the Elements</h2>
+<div class="legend" id="legend"></div>
+<div class="controls">
+  <label>Layout:
+    <select id="layout-sel">
+      <option value="standard">Standard</option>
+      <option value="knot-centric" selected>Knot-centric</option>
+    </select>
+  </label>
+  <label>Color:
+    <select id="color-sel">
+      <option value="block">Electron block</option>
+      <option value="kalpha">Alpha sub-links</option>
+      <option value="ba">Binding energy</option>
+      <option value="shell">Nuclear shell</option>
+    </select>
+  </label>
+  <label>Filter:
+    <select id="filter-sel">
+      <option value="all">All elements</option>
+      <option value="magic">Magic numbers only</option>
+      <option value="intruder">Intruder levels</option>
+      <option value="stable">Stability pairs</option>
+    </select>
+  </label>
+  <label>q = <span class="q-val" id="q-val">1.110</span>
+    <input type="range" id="q-slider" min="1.000" max="1.200" step="0.001" value="1.110" style="width:120px">
+  </label>
+</div>
+<div id="table-wrap"></div>
+<div id="detail">
+  <div class="info"><h3 id="d-title"></h3><table id="d-table"></table></div>
+  <div class="knot-diagram" id="d-knot"></div>
+</div>
+</div>
+<div class="tooltip" id="tooltip"></div>
+<script>
+// === ELEMENT DATA ===
+// [Z, A, sym, name, B/A, k_alpha, period, group, block, magicZ, magicN, shellRow, intruder]
+// shellRow: 1-7 for knot-centric rows; block: 0=s,1=p,2=d,3=f
+// [Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]
+// block: 0=s 1=p 2=d 3=f; shellRow: knot-centric row 1-7
+// Electron config determines period/group/block; nuclear shell determines shellRow
+const EL=[
+[1,1,"H","Hydrogen",0,0,1,1,0,0,0,1,0],
+[2,4,"He","Helium",7.0739,1,1,18,0,1,1,1,0],
+[3,7,"Li","Lithium",5.6063,1,2,1,0,0,0,2,0],
+[4,9,"Be","Beryllium",6.4628,2,2,2,0,0,0,2,0],
+[5,11,"B","Boron",6.9277,2,2,13,1,0,0,2,0],
+[6,12,"C","Carbon",7.6801,3,2,14,1,0,0,2,0],
+[7,14,"N","Nitrogen",7.4756,3,2,15,1,0,0,2,0],
+[8,16,"O","Oxygen",7.9762,4,2,16,1,1,1,2,0],
+[9,19,"F","Fluorine",7.779,4,2,17,1,0,0,2,0],
+[10,20,"Ne","Neon",8.0325,5,2,18,1,0,0,2,0],
+[11,23,"Na","Sodium",8.1115,5,3,1,0,0,0,3,0],
+[12,24,"Mg","Magnesium",8.2607,6,3,2,0,0,0,3,0],
+[13,27,"Al","Aluminium",8.3316,6,3,13,1,0,0,3,0],
+[14,28,"Si","Silicon",8.4477,7,3,14,1,0,0,3,0],
+[15,31,"P","Phosphorus",8.4812,7,3,15,1,0,0,3,0],
+[16,32,"S","Sulfur",8.4932,8,3,16,1,0,0,3,0],
+[17,35,"Cl","Chlorine",8.5203,8,3,17,1,0,0,3,0],
+[18,40,"Ar","Argon",8.5954,9,3,18,1,0,0,3,0],
+[19,39,"K","Potassium",8.557,9,4,1,0,0,1,3,0],
+[20,40,"Ca","Calcium",8.5513,10,4,2,0,1,1,3,0],
+[21,45,"Sc","Scandium",8.619,10,4,3,2,0,0,4,1],
+[22,48,"Ti","Titanium",8.723,11,4,4,2,0,0,4,1],
+[23,51,"V","Vanadium",8.742,11,4,5,2,0,1,4,1],
+[24,52,"Cr","Chromium",8.776,12,4,6,2,0,1,4,1],
+[25,55,"Mn","Manganese",8.7649,12,4,7,2,0,0,4,1],
+[26,56,"Fe","Iron",8.7903,13,4,8,2,0,0,4,1],
+[27,59,"Co","Cobalt",8.768,13,4,9,2,0,0,4,1],
+[28,58,"Ni","Nickel",8.7322,14,4,10,2,1,0,4,1],
+[29,63,"Cu","Copper",8.7522,14,4,11,2,0,0,5,1],
+[30,64,"Zn","Zinc",8.7357,15,4,12,2,0,0,5,1],
+[31,69,"Ga","Gallium",8.7246,15,4,13,1,0,0,5,0],
+[32,74,"Ge","Germanium",8.7264,16,4,14,1,0,0,5,0],
+[33,75,"As","Arsenic",8.701,16,4,15,1,0,0,5,0],
+[34,80,"Se","Selenium",8.711,17,4,16,1,0,0,5,0],
+[35,79,"Br","Bromine",8.6961,17,4,17,1,0,0,5,0],
+[36,84,"Kr","Krypton",8.7172,18,4,18,1,0,0,5,0],
+[37,85,"Rb","Rubidium",8.6974,18,5,1,0,0,0,5,0],
+[38,88,"Sr","Strontium",8.7326,19,5,2,0,0,1,5,0],
+[39,89,"Y","Yttrium",8.7138,19,5,3,2,0,1,5,0],
+[40,90,"Zr","Zirconium",8.7098,20,5,4,2,0,1,5,0],
+[41,93,"Nb","Niobium",8.6641,20,5,5,2,0,0,5,0],
+[42,98,"Mo","Molybdenum",8.6353,21,5,6,2,0,0,5,0],
+[43,98,"Tc","Technetium",8.5937,21,5,7,2,0,0,5,0],
+[44,102,"Ru","Ruthenium",8.607,22,5,8,2,0,0,5,0],
+[45,103,"Rh","Rhodium",8.5843,22,5,9,2,0,0,5,0],
+[46,106,"Pd","Palladium",8.567,23,5,10,2,0,0,5,0],
+[47,107,"Ag","Silver",8.5536,23,5,11,2,0,0,5,0],
+[48,114,"Cd","Cadmium",8.5398,24,5,12,2,0,0,5,0],
+[49,115,"In","Indium",8.516,24,5,13,1,0,0,5,0],
+[50,120,"Sn","Tin",8.505,25,5,14,1,1,0,5,0],
+[51,121,"Sb","Antimony",8.482,25,5,15,1,0,0,6,1],
+[52,130,"Te","Tellurium",8.439,26,5,16,1,0,0,6,1],
+[53,127,"I","Iodine",8.4455,26,5,17,1,0,0,6,1],
+[54,132,"Xe","Xenon",8.4275,27,5,18,1,0,0,6,1],
+[55,133,"Cs","Caesium",8.41,27,6,1,0,0,0,6,0],
+[56,138,"Ba","Barium",8.3937,28,6,2,0,0,1,6,0],
+[57,139,"La","Lanthanum",8.378,28,6,3,3,0,1,6,0],
+[58,140,"Ce","Cerium",8.3765,29,6,4,3,0,1,6,0],
+[59,141,"Pr","Praseodymium",8.354,29,6,5,3,0,1,6,0],
+[60,142,"Nd","Neodymium",8.346,30,6,6,3,0,1,6,0],
+[61,145,"Pm","Promethium",8.304,30,6,7,3,0,0,6,0],
+[62,152,"Sm","Samarium",8.244,31,6,8,3,0,0,6,0],
+[63,153,"Eu","Europium",8.229,31,6,9,3,0,0,6,0],
+[64,158,"Gd","Gadolinium",8.214,32,6,10,3,0,0,6,0],
+[65,159,"Tb","Terbium",8.199,32,6,11,3,0,0,6,0],
+[66,164,"Dy","Dysprosium",8.1865,33,6,12,3,0,0,6,0],
+[67,165,"Ho","Holmium",8.171,33,6,13,3,0,0,6,0],
+[68,166,"Er","Erbium",8.169,34,6,14,3,0,0,6,0],
+[69,169,"Tm","Thulium",8.146,34,6,15,3,0,0,6,0],
+[70,174,"Yb","Ytterbium",8.128,35,6,16,3,0,0,6,0],
+[71,175,"Lu","Lutetium",8.1165,35,6,17,2,0,0,6,0],
+[72,180,"Hf","Hafnium",8.0985,36,6,4,2,0,0,6,0],
+[73,181,"Ta","Tantalum",8.087,36,6,5,2,0,0,6,0],
+[74,184,"W","Tungsten",8.0639,37,6,6,2,0,0,6,0],
+[75,187,"Re","Rhenium",8.039,37,6,7,2,0,0,6,0],
+[76,192,"Os","Osmium",8.0194,38,6,8,2,0,0,6,0],
+[77,193,"Ir","Iridium",8.006,38,6,9,2,0,0,6,0],
+[78,195,"Pt","Platinum",7.993,39,6,10,2,0,0,6,0],
+[79,197,"Au","Gold",7.9759,39,6,11,2,0,0,6,0],
+[80,202,"Hg","Mercury",7.953,40,6,12,2,0,0,6,0],
+[81,205,"Tl","Thallium",7.937,40,6,13,1,0,0,6,0],
+[82,208,"Pb","Lead",7.8675,41,6,14,1,1,1,6,0],
+[83,209,"Bi","Bismuth",7.848,41,7,15,1,0,1,7,1],
+[84,209,"Po","Polonium",7.8352,42,7,16,1,0,0,7,1],
+[85,210,"At","Astatine",7.8147,42,7,17,1,0,0,7,1],
+[86,222,"Rn","Radon",7.7227,43,7,18,1,0,0,7,1],
+[87,223,"Fr","Francium",7.7095,43,7,1,0,0,0,7,0],
+[88,226,"Ra","Radium",7.662,44,7,2,0,0,0,7,0],
+[89,227,"Ac","Actinium",7.651,44,7,3,3,0,0,7,0],
+[90,232,"Th","Thorium",7.615,45,7,4,3,0,0,7,0],
+[91,231,"Pa","Protactinium",7.6138,45,7,5,3,0,0,7,0],
+[92,238,"U","Uranium",7.5701,46,7,6,3,0,0,7,0]
+];
+
+// === CONSTANTS ===
+const q0=1.10997, mu_u=311.10, mu_d=312.39, m_e=0.51099895;
+const MAGIC_Z=new Set([2,8,20,28,50,82]);
+const MAGIC_N=new Set([2,8,20,28,50,82,126]);
+const BLOCK_NAMES=["s","p","d","f"];
+const BLOCK_COLORS=["#d0d8f8","#d0f0d8","#f8e8d0","#f0d0e8"];
+const SHELL_ROWS=[
+  {row:1,label:"N=0",pair:2,range:"H–He"},
+  {row:2,label:"N=1",pair:8,range:"Li–Ne"},
+  {row:3,label:"N=2",pair:20,range:"Na–Ca"},
+  {row:4,label:"N=3*",pair:28,range:"Sc–Ni",intruder:"1f₇/₂"},
+  {row:5,label:"N=4*",pair:50,range:"Cu–Sn",intruder:"1g₉/₂"},
+  {row:6,label:"N=5*",pair:82,range:"Sb–Pb",intruder:"1h₁₁/₂"},
+  {row:7,label:"N=6*",pair:126,range:"Bi–U+",intruder:"1i₁₃/₂"}
+];
+
+// === SVG DRAWING FUNCTIONS ===
+const SVG_NS="http://www.w3.org/2000/svg";
+function svgEl(tag,attrs){
+  const e=document.createElementNS(SVG_NS,tag);
+  for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);
+  return e;
+}
+
+// Trefoil path (simplified, fits in a size x size box centered at 0,0)
+function trefoilPath(s){
+  const r=s*0.42;
+  return `M${-r*0.5},${-r} C${-r*1.1},${-r*0.5} ${-r*1.1},${r*0.5} ${-r*0.5},${r} `+
+    `C0,${r*0.5} 0,${-r*0.5} ${r*0.5},${-r} `+
+    `C${r*1.1},${-r*0.5} ${r*1.1},${r*0.5} ${r*0.5},${r} `+
+    `C0,${r*0.5} 0,${-r*0.5} ${-r*0.5},${-r}Z`;
+}
+
+// Draw a single trefoil (proton=solid blue, electron=outline blue, antiquark=outline)
+function drawTrefoil(size,type){
+  const svg=svgEl("svg",{width:size,height:size,viewBox:`${-size/2} ${-size/2} ${size} ${size}`,class:"knot"});
+  const p=svgEl("path",{d:trefoilPath(size)});
+  if(type==="proton"){p.setAttribute("fill","#2255aa");p.setAttribute("stroke","#112244");p.setAttribute("stroke-width","1.2")}
+  else if(type==="electron"){p.setAttribute("fill","none");p.setAttribute("stroke","#2255aa");p.setAttribute("stroke-width","1.5")}
+  else{p.setAttribute("fill","none");p.setAttribute("stroke","#aa5533");p.setAttribute("stroke-width","1.5")}
+  svg.appendChild(p);
+  return svg;
+}
+
+// Draw unknot (neutron circle)
+function drawUnknot(size){
+  const svg=svgEl("svg",{width:size,height:size,viewBox:`${-size/2} ${-size/2} ${size} ${size}`,class:"knot"});
+  svg.appendChild(svgEl("circle",{r:size*0.35,fill:"none",stroke:"#aa5533","stroke-width":"1.5"}));
+  return svg;
+}
+
+// Draw Hopf link symbol
+function drawHopf(size){
+  const svg=svgEl("svg",{width:size*1.4,height:size,viewBox:`${-size*0.7} ${-size/2} ${size*1.4} ${size}`,class:"knot"});
+  svg.appendChild(svgEl("circle",{cx:-size*0.15,r:size*0.28,fill:"none",stroke:"#c44","stroke-width":"1.3"}));
+  svg.appendChild(svgEl("circle",{cx:size*0.15,r:size*0.28,fill:"none",stroke:"#44c","stroke-width":"1.3"}));
+  return svg;
+}
+
+// Draw bowtie connector
+function drawBowtie(){
+  const sp=document.createElement("span");
+  sp.textContent="⋈";sp.style.cssText="color:#888;font-size:14px;margin:0 2px";
+  return sp;
+}
+
+// Draw alpha cluster (compact: "kα×α")
+function drawAlphaLabel(k){
+  const sp=document.createElement("span");
+  sp.textContent=k>1?`${k}×α`:"α";
+  sp.style.cssText="font-size:9px;color:#a53;font-weight:600";
+  return sp;
+}
+
+// Mini knot icon for tile (very small, just shows proton count symbolically)
+function miniKnotSvg(Z,N,kalpha){
+  const w=32,h=14;
+  const svg=svgEl("svg",{width:w,height:h,viewBox:`0 0 ${w} ${h}`,class:"mini-knot"});
+  // Show alpha clusters as tiny filled circles + remaining nucleons
+  const rem_p=Z-2*kalpha, rem_n=N-2*kalpha;
+  // Alpha clusters
+  if(kalpha>0){
+    const r=2.5;
+    const maxShow=Math.min(kalpha,6);
+    for(let i=0;i<maxShow;i++){
+      svg.appendChild(svgEl("circle",{cx:3+i*4.5,cy:h/2,r:r,fill:"#c66",stroke:"none",opacity:"0.7"}));
+    }
+    if(kalpha>6){
+      const t=svgEl("text",{x:3+6*4.5,y:h/2+3,"font-size":"7",fill:"#a53"});
+      t.textContent=`+${kalpha-6}`;svg.appendChild(t);
+    }
+  }
+  return svg;
+}
+
+// Full knot diagram for detail panel
+function fullKnotDiagram(el){
+  const[Z,A,sym,name,BA,kalpha]=el;
+  const N=A-Z;
+  const container=document.createElement("div");
+  container.style.cssText="display:flex;flex-direction:column;align-items:center;gap:8px";
+
+  // Formula text
+  const formula=document.createElement("div");
+  formula.style.cssText="font-size:13px;color:#2a3a6a;font-weight:600";
+  formula.textContent=`${Z}𝔭 ⋈ ${N}𝔫 ⋈ ${Z}·T₂,₃`;
+  container.appendChild(formula);
+
+  // Visual diagram row
+  const row=document.createElement("div");
+  row.style.cssText="display:flex;align-items:center;gap:4px;flex-wrap:wrap";
+
+  // Nuclear sub-link
+  const nucBox=document.createElement("span");
+  nucBox.style.cssText="border:2px solid #a53;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(170,85,51,0.06)";
+
+  if(kalpha>0){
+    nucBox.appendChild(drawAlphaLabel(kalpha));
+    // Show a couple of representative alpha sub-links
+    const showAlpha=Math.min(kalpha,3);
+    for(let i=0;i<showAlpha;i++){
+      nucBox.appendChild(drawTrefoil(18,"proton"));
+      nucBox.appendChild(drawTrefoil(18,"proton"));
+      nucBox.appendChild(drawUnknot(16));
+      nucBox.appendChild(drawUnknot(16));
+      if(i<showAlpha-1){
+        const plus=document.createElement("span");
+        plus.textContent="+";plus.style.cssText="color:#888;font-size:10px";
+        nucBox.appendChild(plus);
+      }
+    }
+    if(kalpha>3){
+      const more=document.createElement("span");
+      more.textContent=`… (${kalpha} total)`;more.style.cssText="font-size:9px;color:#778";
+      nucBox.appendChild(more);
+    }
+  }
+  // Remaining nucleons outside alpha clusters
+  const remP=Z-2*kalpha, remN=N-2*kalpha;
+  if(remP>0||remN>0){
+    if(kalpha>0){
+      const plus=document.createElement("span");
+      plus.textContent=" + ";plus.style.cssText="color:#888;font-size:10px";
+      nucBox.appendChild(plus);
+    }
+    if(remP>0){
+      const lbl=document.createElement("span");
+      lbl.textContent=`${remP}𝔭`;lbl.style.cssText="font-size:10px;color:#225";
+      nucBox.appendChild(lbl);
+    }
+    if(remN>0){
+      const lbl=document.createElement("span");
+      lbl.textContent=`${remN>0&&remP>0?"+":""}${remN}𝔫`;lbl.style.cssText="font-size:10px;color:#a53";
+      nucBox.appendChild(lbl);
+    }
+  }
+  if(Z===1&&N===0){
+    // Just one proton
+    nucBox.appendChild(drawTrefoil(20,"proton"));
+    const lbl=document.createElement("span");
+    lbl.textContent="𝔭";lbl.style.cssText="font-size:10px;color:#a53";
+    nucBox.appendChild(lbl);
+  }
+  row.appendChild(nucBox);
+  row.appendChild(drawBowtie());
+
+  // Electron sub-link
+  const elBox=document.createElement("span");
+  elBox.style.cssText="border:2px solid #37a;border-radius:8px;padding:4px 6px;display:inline-flex;align-items:center;gap:3px;background:rgba(51,119,170,0.06)";
+  const showE=Math.min(Z,4);
+  for(let i=0;i<showE;i++){
+    elBox.appendChild(drawTrefoil(18,"electron"));
+  }
+  if(Z>4){
+    const more=document.createElement("span");
+    more.textContent=`… (${Z} e⁻)`;more.style.cssText="font-size:9px;color:#556";
+    elBox.appendChild(more);
+  }
+  const eLbl=document.createElement("span");
+  eLbl.textContent=`${Z}×T₂,₃`;eLbl.style.cssText="font-size:9px;color:#37a";
+  elBox.appendChild(eLbl);
+  row.appendChild(elBox);
+
+  container.appendChild(row);
+
+  // Sub-link info
+  const info=document.createElement("div");
+  info.style.cssText="font-size:11px;color:#556;margin-top:4px";
+  const parts=[];
+  if(kalpha>0)parts.push(`${kalpha} alpha sub-links`);
+  if(remP>0)parts.push(`${remP} free proton${remP>1?"s":""}`);
+  if(remN>0)parts.push(`${remN} free neutron${remN>1?"s":""}`);
+  if(MAGIC_Z.has(Z))parts.push("◆ proton magic number");
+  if(MAGIC_N.has(N))parts.push("◆ neutron magic number");
+  info.textContent=parts.join(" · ");
+  container.appendChild(info);
+
+  return container;
+}
+
+// === MASS COMPUTATION ===
+function computeMass(Z,A,BA,qVal){
+  const qh=Math.sqrt(qVal);
+  function S(a,b){return(qVal*a+(1/qVal)*b)/(qh+1/qh)}
+  const mp=S(mu_u,mu_u)+2*S(mu_u,mu_d);
+  const mn=2*S(mu_u,mu_d)+S(mu_d,mu_d);
+  const N=A-Z;
+  return Z*mp+N*mn-(A*BA)+Z*m_e;
+}
+
+// === LAYOUT ENGINE ===
+// Standard periodic table grid positions
+// Returns {row, col} for standard 18-column layout
+function stdPos(period,group,block,Z){
+  // Lanthanides/actinides → extra rows
+  if(period===6&&block===3)return{row:8,col:group-1}; // La-row (cols 3-16)
+  if(period===7&&block===3)return{row:9,col:group-1};
+  return{row:period-1,col:group-1};
+}
+
+// Build tile grid
+let selectedEl=null;
+const tileEls=new Map();
+
+function buildGrid(){
+  const wrap=document.getElementById("table-wrap");
+  wrap.innerHTML="";
+  const grid=document.createElement("div");
+  grid.className="tile-grid standard";
+  grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
+  grid.style.gridTemplateRows="repeat(10,auto)";
+
+  const layout=document.getElementById("layout-sel").value;
+  const colorMode=document.getElementById("color-sel").value;
+  const filter=document.getElementById("filter-sel").value;
+  const qVal=parseFloat(document.getElementById("q-slider").value);
+
+  // Place tiles
+  const placed=new Set();
+  for(const el of EL){
+    const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
+    const N=A-Z;
+    const pos=stdPos(period,group,block,Z);
+
+    // Filter
+    if(filter==="magic"&&!magZ&&!magN)continue;
+    if(filter==="intruder"&&!intruder)continue;
+    if(filter==="stable"&&!magZ&&!magN)continue;
+
+    const tile=document.createElement("div");
+    tile.className="tile";
+
+    // Block color
+    if(colorMode==="block"){
+      tile.classList.add("block-"+BLOCK_NAMES[block]);
+    }else if(colorMode==="kalpha"){
+      const intensity=Math.min(kalpha/46,1);
+      tile.style.background=`rgba(200,60,60,${0.05+intensity*0.3})`;
+    }else if(colorMode==="ba"){
+      const norm=(BA-5)/(8.8-5);
+      tile.style.background=`rgba(40,80,200,${0.05+Math.max(0,norm)*0.35})`;
+    }else if(colorMode==="shell"){
+      const hue=(shellRow-1)*50;
+      tile.style.background=`hsla(${hue},60%,92%,0.8)`;
+    }
+
+    // Magic number borders
+    if(magZ&&magN)tile.classList.add("magic-both");
+    else if(magZ)tile.classList.add("magic-z");
+    else if(magN)tile.classList.add("magic-n");
+    if(intruder)tile.classList.add("intruder");
+
+    // Content
+    const zSpan=document.createElement("div");
+    zSpan.className="z-num";zSpan.textContent=Z;
+    const symSpan=document.createElement("div");
+    symSpan.className="sym";symSpan.textContent=sym;
+    tile.appendChild(zSpan);
+    tile.appendChild(symSpan);
+    tile.appendChild(miniKnotSvg(Z,N,kalpha));
+
+    // Position in grid
+    tile.style.gridRow=pos.row+1;
+    tile.style.gridColumn=pos.col+1;
+
+    // Events
+    tile.addEventListener("click",()=>selectElement(el));
+    tile.addEventListener("mouseenter",(e)=>showTooltip(e,el,qVal));
+    tile.addEventListener("mouseleave",hideTooltip);
+
+    grid.appendChild(tile);
+    tileEls.set(Z,tile);
+    placed.add(`${pos.row},${pos.col}`);
+  }
+
+  // Row labels for knot-centric info
+  for(const sr of SHELL_ROWS){
+    const lbl=document.createElement("div");
+    lbl.style.cssText=`grid-row:${sr.row};grid-column:19;font-size:9px;color:#778;padding:2px 4px;white-space:nowrap;display:flex;align-items:center`;
+    lbl.textContent=sr.intruder?`${sr.label} (${sr.intruder})`:sr.label;
+    // Don't add if layout is standard — would need col 19
+  }
+
+  wrap.appendChild(grid);
+}
+
+function selectElement(el){
+  const[Z,A,sym,name,BA,kalpha,period,group,block,magZ,magN,shellRow,intruder]=el;
+  const N=A-Z;
+  const qVal=parseFloat(document.getElementById("q-slider").value);
+  const mass=computeMass(Z,A,BA,qVal);
+
+  // Highlight tile
+  tileEls.forEach(t=>t.classList.remove("selected"));
+  if(tileEls.has(Z))tileEls.get(Z).classList.add("selected");
+  selectedEl=el;
+
+  // Detail panel
+  const detail=document.getElementById("detail");
+  detail.classList.add("show");
+  document.getElementById("d-title").textContent=`${Z}. ${name} (${sym})`;
+
+  const tbl=document.getElementById("d-table");
+  tbl.innerHTML="";
+  const rows=[
+    ["Atomic number (Z)",Z],
+    ["Mass number (A)",A],
+    ["Protons / Neutrons",`${Z} / ${N}`],
+    ["Knot formula",`${Z}𝔭 ⋈ ${N}𝔫 ⋈ ${Z}·T₂,₃`],
+    ["Alpha sub-links (k_α)",kalpha],
+    ["Electron block",BLOCK_NAMES[block]],
+    ["Period / Group",`${period} / ${group}`],
+    ["Nuclear shell row",`${shellRow} (${SHELL_ROWS[shellRow-1].label})`],
+    ["B/A (MeV)",BA.toFixed(4)],
+    ["QOU mass (MeV)",mass.toFixed(1)],
+    ["N/Z ratio",(N/Z).toFixed(3)],
+  ];
+  if(magZ)rows.push(["","◆ Proton magic number"]);
+  if(magN)rows.push(["","◆ Neutron magic number"]);
+  if(intruder)rows.push(["Intruder",SHELL_ROWS[shellRow-1].intruder||"yes"]);
+
+  for(const[k,v]of rows){
+    const tr=document.createElement("tr");
+    const td1=document.createElement("td");td1.textContent=k;
+    const td2=document.createElement("td");td2.textContent=v;
+    tr.appendChild(td1);tr.appendChild(td2);
+    tbl.appendChild(tr);
+  }
+
+  // Knot diagram
+  const knotDiv=document.getElementById("d-knot");
+  knotDiv.innerHTML="";
+  knotDiv.appendChild(fullKnotDiagram(el));
+}
+
+function showTooltip(e,el,qVal){
+  const[Z,A,sym,name,BA,kalpha]=el;
+  const N=A-Z;
+  const tip=document.getElementById("tooltip");
+  tip.textContent=`${name} (${sym}) — Z=${Z}, N=${N}, k_α=${kalpha}, B/A=${BA.toFixed(4)}`;
+  tip.style.display="block";
+  tip.style.left=(e.pageX+12)+"px";
+  tip.style.top=(e.pageY-20)+"px";
+}
+function hideTooltip(){document.getElementById("tooltip").style.display="none"}
+
+// === LEGEND ===
+function buildLegend(){
+  const lg=document.getElementById("legend");
+  lg.innerHTML="";
+  const items=[
+    {html:'<svg width="18" height="18" viewBox="-9 -9 18 18"><path d="'+trefoilPath(18)+'" fill="#2255aa" stroke="#112244" stroke-width="1"/></svg>',text:"Proton (T₂,₃)"},
+    {html:'<svg width="18" height="18" viewBox="-9 -9 18 18"><path d="'+trefoilPath(18)+'" fill="none" stroke="#2255aa" stroke-width="1.3"/></svg>',text:"Electron (σT₂,₃)"},
+    {html:'<svg width="16" height="16" viewBox="-8 -8 16 16"><circle r="5" fill="none" stroke="#aa5533" stroke-width="1.3"/></svg>',text:"Neutron (unknot)"},
+    {html:'<span style="border-left:2px solid #c44;padding-left:3px;font-size:10px">◆Z</span>',text:"Proton magic #"},
+    {html:'<span style="border-right:2px solid #44c;padding-right:3px;font-size:10px">◆N</span>',text:"Neutron magic #"},
+    {html:'<span style="background:#fff8f0;border:1px solid #dca;padding:1px 4px;font-size:10px">int</span>',text:"Intruder level"},
+  ];
+  for(const it of items){
+    const d=document.createElement("div");d.className="legend-item";
+    d.innerHTML=it.html+`<span>${it.text}</span>`;
+    lg.appendChild(d);
+  }
+}
+
+// === CONTROLS ===
+document.getElementById("layout-sel").addEventListener("change",buildGrid);
+document.getElementById("color-sel").addEventListener("change",buildGrid);
+document.getElementById("filter-sel").addEventListener("change",buildGrid);
+document.getElementById("q-slider").addEventListener("input",function(){
+  document.getElementById("q-val").textContent=parseFloat(this.value).toFixed(3);
+  if(selectedEl)selectElement(selectedEl); // refresh mass
+});
+
+// === INIT ===
+buildLegend();
+buildGrid();
+// Select iron by default (interesting middle element)
+const fe=EL.find(e=>e[2]==="Fe");
+if(fe)selectElement(fe);
+</script>
+</body>
+</html>
