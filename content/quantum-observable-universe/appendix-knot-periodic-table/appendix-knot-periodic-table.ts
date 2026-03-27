@@ -32,6 +32,7 @@ export default chapter({
       label: "sec:knot-centric-table",
       blocks: [
         "knot-centric-table",
+        "knot-periodic-table-sim",
       ],
     }),
   ],
