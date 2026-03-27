@@ -1,175 +1,394 @@
-// Compute Gröbner-reduced Hecke trace for ALL nuclei using GROUND STATE ordering.
-//
+// Ground-state Gröbner trace for all verification nuclei.
 // Run: Singular folio-assistant/computations/singular-all-nuclei.sing
-//
-// Ground state = ordering that minimizes Φ_q (lowest energy).
-// For each nucleus: alternating p/n with extra neutrons at end.
+// No procs — flat script avoids ring scoping issues.
 
 LIB "freegb.lib";
 
-proc traceWithOrdering(intvec ord, int aa, string label)
+ring R = 0, (dummy), dp;
+
+number qn = 111/100;
+number qi = 100/111;
+number han = qn - qi;
+number zn = 4993/10000;
+
+int i; int j; int k;
+
+// ── 3H: N(1,2) ─────────────────────────────────────────────────
+"========== 3H: N(1,2) ==========";
+intvec ord = 1,0,0;
+int aa = 3;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
 {
-    ring Rn = 0, (dummy), dp;
-
-    number qn = 111/100;
-    number qi = 100/111;
-    number han = qn - qi;
-    number zn = 4993/10000;
-
-    number trace_val = 1;
-    int i; int j;
-
-    for (i = 1; i <= aa - 1; i++)
-    {
-        number ai = 0;
-        number bi = 1;
-
-        for (j = i + 1; j <= aa; j++)
-        {
-            number cc;
-            number dd;
-
-            int ti = ord[i];  // 1=proton, 0=neutron
-            int tj = ord[j];
-
-            if (ti == 1 && tj == 1) { cc = 1; dd = 0; }
-            else { if (ti == 0 && tj == 0) { cc = 1; dd = -han; }
-                   else { cc = 1; dd = -han/2; } }
-
-            number nai = ai*cc*han + ai*dd + bi*cc;
-            number nbi = ai*cc + bi*dd;
-            ai = nai; bi = nbi;
-            kill cc; kill dd; kill nai; kill nbi; kill ti; kill tj;
-        }
-
-        number vi = zn * ai + bi;
-        trace_val = trace_val * vi;
-        kill ai; kill bi; kill vi;
-    }
-
-    label + " trace = " + string(trace_val);
-    return(trace_val);
-}
-
-proc computeWithGS(intvec ord_par, intvec ord_dau, int aa, int pp, int nn, string name)
-{
-    "========================================";
-    name + ": N(" + string(pp) + "," + string(nn) + "), A=" + string(aa);
-    "Ordering: " + string(ord_par);
-    "========================================";
-
-    number tr_par = traceWithOrdering(ord_par, aa, "Parent");
-    number tr_dau = traceWithOrdering(ord_dau, aa, "Daughter");
-
-    // Compute e(I)/e(R) at converting nucleon
-    // Find the converting nucleon: first position where ord_par=0 and ord_dau=1
-    int conv = 0;
-    int k;
-    for (k = 1; k <= aa; k++)
-    {
-        if (ord_par[k] == 0 && ord_dau[k] == 1) { conv = k; break; }
-    }
-    "Converting nucleon at position: " + string(conv);
-
-    // Chain at converting generator
-    ring Rn2 = 0, (dummy), dp;
-    number qn = 111/100;
-    number qi = 100/111;
-    number han = qn - qi;
-    number zn = 4993/10000;
-
-    // Parent chain at generator conv
-    number a_par = 0; number b_par = 1;
-    int j;
-    for (j = conv + 1; j <= aa; j++)
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        int ti = ord_par[conv]; int tj = ord_par[j];
-        if (ti == 1 && tj == 1) { cc = 1; dd = 0; }
-        else { if (ti == 0 && tj == 0) { cc = 1; dd = -han; }
-               else { cc = 1; dd = -han/2; } }
-        number na = a_par*cc*han + a_par*dd + b_par*cc;
-        number nb = a_par*cc + b_par*dd;
-        a_par = na; b_par = nb;
-        kill cc; kill dd; kill na; kill nb; kill ti; kill tj;
+        if (ord[i]==1 && ord[j]==1) { cc=1; dd=0; }
+        else { if (ord[i]==0 && ord[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
     }
-    number Vp = zn * a_par + b_par;
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+kill tr;
 
-    // Daughter chain at generator conv
-    number a_dau = 0; number b_dau = 1;
-    for (j = conv + 1; j <= aa; j++)
+intvec ord_d = 1,1,0;
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
     {
         number cc; number dd;
-        int ti = ord_dau[conv]; int tj = ord_dau[j];
-        if (ti == 1 && tj == 1) { cc = 1; dd = 0; }
-        else { if (ti == 0 && tj == 0) { cc = 1; dd = -han; }
-               else { cc = 1; dd = -han/2; } }
-        number na = a_dau*cc*han + a_dau*dd + b_dau*cc;
-        number nb = a_dau*cc + b_dau*dd;
-        a_dau = na; b_dau = nb;
-        kill cc; kill dd; kill na; kill nb; kill ti; kill tj;
+        if (ord_d[i]==1 && ord_d[j]==1) { cc=1; dd=0; }
+        else { if (ord_d[i]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
     }
-    number Vd = zn * a_dau + b_dau;
-
-    number fiv = 0;
-    if (Vp != 0)
-    {
-        fiv = (Vp - Vd) / Vp;
-        if (fiv < 0) { fiv = -fiv; }
-    }
-
-    "V_par at gen " + string(conv) + ": " + string(Vp);
-    "V_dau at gen " + string(conv) + ": " + string(Vd);
-    "e(I)/e(R) = " + string(fiv);
-    "";
-
-    kill a_par; kill b_par; kill a_dau; kill b_dau; kill Vp; kill Vd; kill fiv;
-    kill qn; kill qi; kill han; kill zn;
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
 }
+"Daughter trace: " + string(tr);
+kill tr;
 
+// e(I)/e(R) at converting position
+// Find converting pos: first where ord=0, ord_d=1
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
 
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
+
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
+
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 0.01861";
 "";
-"############################################################";
-"# GROUND STATE ORDERING — ALL NUCLEI                       #";
-"# Alternating p/n, extra neutrons at end                   #";
-"############################################################";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+
+
+// ── 14C: N(6,8) ────────────────────────────────────────────────
+"========== 14C: N(6,8) ==========";
+intvec ord = 0,1,0,1,0,1,0,1,0,1,0,1,0,0;
+intvec ord_d = 0,1,0,1,0,1,0,1,0,1,0,1,1,0;
+int aa = 14;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ord[i]==1 && ord[j]==1) { cc=1; dd=0; }
+        else { if (ord[i]==0 && ord[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Parent trace: " + string(tr);
+kill tr;
+
+number tr = 1;
+for (i = 1; i <= aa-1; i++)
+{
+    number ai = 0; number bi = 1;
+    for (j = i+1; j <= aa; j++)
+    {
+        number cc; number dd;
+        if (ord_d[i]==1 && ord_d[j]==1) { cc=1; dd=0; }
+        else { if (ord_d[i]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+               else { cc=1; dd=-han/2; } }
+        number na = ai*cc*han + ai*dd + bi*cc;
+        number nb = ai*cc + bi*dd;
+        ai=na; bi=nb;
+        kill cc; kill dd; kill na; kill nb;
+    }
+    number vi = zn*ai + bi;
+    tr = tr * vi;
+    kill ai; kill bi; kill vi;
+}
+"Daughter trace: " + string(tr);
+kill tr;
+
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
+
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
+
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
+
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 0.156";
 "";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
 
-// 3H: N(1,2) — ground state: p,n,n = 1,0,0
-intvec o3h_par = 1,0,0;
-intvec o3h_dau = 1,1,0;
-computeWithGS(o3h_par, o3h_dau, 3, 1, 2, "3H");
 
-// 14C: N(6,8) — ground state: n,p,n,p,n,p,n,p,n,p,n,p,n,n
-intvec o14c_par = 0,1,0,1,0,1,0,1,0,1,0,1,0,0;
-intvec o14c_dau = 0,1,0,1,0,1,0,1,0,1,0,1,1,0;
-computeWithGS(o14c_par, o14c_dau, 14, 6, 8, "14C");
+// ── 60Co: N(27,33) ─────────────────────────────────────────────
+"========== 60Co: N(27,33) ==========";
+intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0;
+intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0;
+int aa = 60;
 
-// 60Co: N(27,33) — heuristic: alternating, 6 extra n at end
-intvec o60_par = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0;
-intvec o60_dau = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0;
-computeWithGS(o60_par, o60_dau, 60, 27, 33, "60Co");
+// Just compute e(I)/e(R) at converting gen (skip full trace for speed)
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
 
-// 90Sr: N(38,52) — alternating, 14 extra n at end
-intvec o90_par = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec o90_dau = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0;
-computeWithGS(o90_par, o90_dau, 90, 38, 52, "90Sr");
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
 
-// 137Cs: N(55,82) — alternating, 27 extra n at end
-intvec o137_par = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec o137_dau = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-computeWithGS(o137_par, o137_dau, 137, 55, 82, "137Cs");
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
 
-// 210Bi: N(83,127) — alternating, 44 extra n at end
-intvec o210_par = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-intvec o210_dau = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
-computeWithGS(o210_par, o210_dau, 210, 83, 127, "210Bi");
-
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 0.318";
 "";
-"############################################################";
-"# Q_exp for comparison:                                    #";
-"#   3H:    0.01861  14C:  0.156   60Co: 0.318             #";
-"#   90Sr:  0.546    137Cs: 0.514  210Bi: 1.163            #";
-"############################################################";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+
+
+// ── 90Sr: N(38,52) ─────────────────────────────────────────────
+"========== 90Sr: N(38,52) ==========";
+intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 90;
+
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
+
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
+
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
+
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 0.546";
+"";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+
+
+// ── 137Cs: N(55,82) ────────────────────────────────────────────
+"========== 137Cs: N(55,82) ==========";
+intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 137;
+
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
+
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
+
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
+
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 0.514";
+"";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
+
+
+// ── 210Bi: N(83,127) ───────────────────────────────────────────
+"========== 210Bi: N(83,127) ==========";
+intvec ord = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+intvec ord_d = 1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+int aa = 210;
+
+int conv = 0;
+for (k = 1; k <= aa; k++) { if (ord[k]==0 && ord_d[k]==1) { conv=k; break; } }
+"Converting at: " + string(conv);
+
+number ap = 0; number bp = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord[conv]==1 && ord[j]==1) { cc=1; dd=0; }
+    else { if (ord[conv]==0 && ord[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ap*cc*han + ap*dd + bp*cc;
+    number nb = ap*cc + bp*dd;
+    ap=na; bp=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vp = zn*ap + bp;
+kill ap; kill bp;
+
+number ad = 0; number bd = 1;
+for (j = conv+1; j <= aa; j++)
+{
+    number cc; number dd;
+    if (ord_d[conv]==1 && ord_d[j]==1) { cc=1; dd=0; }
+    else { if (ord_d[conv]==0 && ord_d[j]==0) { cc=1; dd=-han; }
+           else { cc=1; dd=-han/2; } }
+    number na = ad*cc*han + ad*dd + bd*cc;
+    number nb = ad*cc + bd*dd;
+    ad=na; bd=nb;
+    kill cc; kill dd; kill na; kill nb;
+}
+number Vd = zn*ad + bd;
+kill ad; kill bd;
+
+number fiv = 0;
+if (Vp != 0) { fiv = (Vp-Vd)/Vp; if (fiv<0) { fiv=-fiv; } }
+"e(I)/e(R) = " + string(fiv);
+"Q_exp = 1.163";
+"";
+kill Vp; kill Vd; kill fiv; kill conv; kill ord; kill ord_d; kill aa;
 
 exit;
