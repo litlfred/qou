@@ -274,60 +274,68 @@ function drawAlphaLabel(k){
   return sp;
 }
 
-// --- Shell fill SVG: horizontal Hopf links, filled vs empty ---
-// filled = how many slots used, total = shell capacity
-// Returns an SVG element. Compact: uses tiny interlocked circles for filled,
-// open circles for empty. If total > maxShow, uses count labels.
-function shellFillSvg(filled,total,h){
-  h=h||14;
-  const maxShow=Math.min(total,12); // max icons to draw
-  const step=h*0.9;
-  const w=maxShow*step+(total>maxShow?20:0)+2;
+// --- Shell fill: compact progress bar for tiles, detailed Hopf icons for detail panel ---
+
+// Compact bar for tiles: thin filled bar + fraction text
+function shellBarSvg(filled,total,w,h){
+  w=w||30;h=h||10;
   const svg=svgEl("svg",{width:w,height:h,viewBox:`0 0 ${w} ${h}`,class:"mini-knot"});
-  const cy=h/2, r=h*0.28, gap=r*0.45;
+  const barH=4, barY=(h-barH)/2, barW=w-2, barX=1;
+  // Background
+  svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW,height:barH,rx:2,fill:"#e8e8f0",stroke:"none"}));
+  // Fill
+  const frac=total>0?Math.max(0,Math.min(filled/total,1)):0;
+  if(frac>0){
+    svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW*frac,height:barH,rx:2,fill:frac>=1?"#4a8":"#5577cc",stroke:"none"}));
+  }
+  return svg;
+}
+
+// Detailed Hopf-link icons for detail panel and row labels (max 8 icons, then count)
+function shellFillSvg(filled,total,h){
+  h=h||16;
+  const maxShow=Math.min(total,8);
+  const step=h*1.1;
+  const w=maxShow*step+(total>maxShow?28:0)+4;
+  const svg=svgEl("svg",{width:w,height:h,viewBox:`0 0 ${w} ${h}`,class:"mini-knot"});
+  const cy=h/2, r=h*0.22, gap=r*0.5;
 
   for(let i=0;i<maxShow;i++){
     const cx=step/2+i*step;
-    const isFilled=i<filled||(filled>=total); // fill left-to-right
     const filledI=i<Math.min(filled,maxShow);
-    // Hopf link = two interlocked circles
     svg.appendChild(svgEl("circle",{cx:cx-gap,cy:cy,r:r,
-      fill:filledI?"rgba(200,60,60,0.25)":"none",
-      stroke:filledI?"#c44":"#ccc","stroke-width":"1"}));
+      fill:filledI?"rgba(200,60,60,0.3)":"none",
+      stroke:filledI?"#c44":"#ccc","stroke-width":"0.8"}));
     svg.appendChild(svgEl("circle",{cx:cx+gap,cy:cy,r:r,
-      fill:filledI?"rgba(60,60,200,0.25)":"none",
-      stroke:filledI?"#44c":"#ccc","stroke-width":"1"}));
+      fill:filledI?"rgba(60,60,200,0.3)":"none",
+      stroke:filledI?"#44c":"#ccc","stroke-width":"0.8"}));
   }
-  // Overflow label
   if(total>maxShow){
-    const t=svgEl("text",{x:maxShow*step+2,y:cy+3,"font-size":"8",fill:"#778"});
+    const t=svgEl("text",{x:maxShow*step+4,y:cy+4,"font-size":"9",fill:"#556"});
     t.textContent=`${filled}/${total}`;
     svg.appendChild(t);
   }
   return svg;
 }
 
-// Mini knot icon for tile: shows shell fill (how far along the shell this element is)
+// Mini knot icon for tile: compact progress bar
 function miniKnotSvg(Z,N,kalpha,shellRow){
   const sr=SHELL_ROWS[shellRow-1];
   if(!sr)return document.createElement("span");
-  // How many nucleons into this shell? A = Z+N; shell starts at prevPair
   const A=Z+N;
   const filled=Math.min(A-sr.prevPair, sr.capacity);
-  return shellFillSvg(Math.max(0,filled), sr.capacity, 14);
+  return shellBarSvg(Math.max(0,filled), sr.capacity, 30, 10);
 }
 
 // Alpha sub-link mini icon (alternative mode)
 function miniAlphaSvg(kalpha){
-  const h=14, maxShow=Math.min(kalpha,6), step=h*0.8;
-  const w=maxShow*step+(kalpha>6?20:0)+2;
-  const svg=svgEl("svg",{width:Math.max(w,4),height:h,viewBox:`0 0 ${Math.max(w,4)} ${h}`,class:"mini-knot"});
-  for(let i=0;i<maxShow;i++){
-    svg.appendChild(svgEl("circle",{cx:step/2+i*step,cy:h/2,r:h*0.3,fill:"#c66",stroke:"none",opacity:"0.7"}));
-  }
-  if(kalpha>6){
-    const t=svgEl("text",{x:maxShow*step+2,y:h/2+3,"font-size":"7",fill:"#a53"});
-    t.textContent=`+${kalpha-6}`;svg.appendChild(t);
+  // Use same bar style but with red fill
+  const svg=svgEl("svg",{width:30,height:10,viewBox:"0 0 30 10",class:"mini-knot"});
+  const barH=4,barY=3,barW=28,barX=1;
+  svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW,height:barH,rx:2,fill:"#e8e8f0",stroke:"none"}));
+  const frac=Math.min(kalpha/46,1);
+  if(frac>0){
+    svg.appendChild(svgEl("rect",{x:barX,y:barY,width:barW*frac,height:barH,rx:2,fill:"#c55",stroke:"none"}));
   }
   return svg;
 }
@@ -476,35 +484,34 @@ function stdPos(Z,period,group,block){
 }
 
 // --- Knot-centric layout: 7 nuclear-shell rows ---
-// Each shellRow has a main grid-row for s/d/p blocks and a sub-row for f-block.
-// Columns: s(1-2), d(3-12), p(13-18).  f-block in sub-row cols 3-16.
+// Elements are placed left-to-right within each shell row, grouped by
+// electron block (s, d, f, p) with visual gaps between blocks.
+// Each shell row gets its own grid-row. f-block goes in a sub-row below.
 //
-// shellRow → gridRow mapping:
-//   shellRow 1 → gridRow 1       (N=0: H,He)
-//   shellRow 2 → gridRow 2       (N=1: Li–Ne)
-//   shellRow 3 → gridRow 3       (N=2: Na–Ca)
-//   shellRow 4 → gridRow 4       (N=3*: Sc–Ni, intruder)
-//   shellRow 5 → gridRow 5,6     (N=4*: Cu–Sn, 6=f sub-row if needed)
-//   shellRow 6 → gridRow 7,8     (N=5*: Sb–Pb, 8=f sub-row for lanthanides)
-//   shellRow 7 → gridRow 9,10    (N=6*: Bi–U, 10=f sub-row for actinides)
-function knotPos(Z,block,shellRow){
-  // Grid row: main row for s/d/p, sub-row for f-block
-  const baseRow=[0,1,2,3,4,5,7,9]; // shellRow→gridRow (1-indexed, skip rows for sub-rows)
-  const mainRow=baseRow[shellRow];
-  const fSubRow=mainRow+1; // f-block goes one row below
+// Column assignment: within each (shellRow, block), elements are sorted by Z
+// and placed in sequential columns. Blocks are ordered s(left), d(middle), p(right)
+// with gaps. f-block in a sub-row.
+//
+// baseRow mapping: shellRow → CSS grid row (with gaps for f-block sub-rows)
+const KNOT_BASE_ROW=[0,1,2,3,4,5,7,9]; // shellRow 1-7 → grid rows
+// Max columns needed: shell 6 has s(2)+d(10)+p(2)+f(14)=28 elements on main row+sub
+// We use 20 cols for main row: s(1-2) gap(3) d(4-13) gap(14) p(15-20)
+// f-block sub-row: cols 3-16
 
-  // Collect elements in same shellRow and same block, sorted by Z, to assign columns
+function knotPos(Z,block,shellRow){
+  const mainRow=KNOT_BASE_ROW[shellRow];
   const siblings=EL.filter(e=>e[11]===shellRow&&e[8]===block).sort((a,b)=>a[0]-b[0]);
   const idx=siblings.findIndex(e=>e[0]===Z);
+  if(idx<0)return{row:mainRow,col:1};
 
-  if(block===0){      // s-block → cols 1-2
+  if(block===0){      // s-block → cols 1-2 (max 2 per shell typically, but some have 4)
     return{row:mainRow,col:1+idx};
-  }else if(block===2){ // d-block → cols 3-12
-    return{row:mainRow,col:3+idx};
-  }else if(block===1){ // p-block → cols 13-18
-    return{row:mainRow,col:13+idx};
-  }else{               // f-block → sub-row, cols 3-16
-    return{row:fSubRow,col:3+idx};
+  }else if(block===2){ // d-block → start at col 4
+    return{row:mainRow,col:4+idx};
+  }else if(block===1){ // p-block → start at col 15
+    return{row:mainRow,col:15+idx};
+  }else{               // f-block → sub-row below main, start at col 4
+    return{row:mainRow+1,col:4+idx};
   }
 }
 
@@ -573,12 +580,13 @@ function buildGrid(){
 
   const grid=document.createElement("div");
   grid.className="tile-grid";
-  grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
 
   if(layout==="standard"){
+    grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
     grid.style.gridTemplateRows="repeat(10,auto)";
   }else{
-    // Knot-centric: 10 grid rows (7 main + 3 f-block sub-rows)
+    // Knot-centric: up to 22 cols (s+gap+d+gap+p), 10 grid rows
+    grid.style.gridTemplateColumns="repeat(22,minmax(38px,1fr))";
     grid.style.gridTemplateRows="repeat(10,auto)";
   }
 
@@ -617,22 +625,20 @@ function buildGrid(){
     addRowLabel(grid,10,1,"Actinides");
   }else{
     // Knot-centric: visual shell labels with Hopf-link fill bars
-    const baseRow=[0,1,2,3,4,5,7,9];
     for(let i=0;i<SHELL_ROWS.length;i++){
       const sr=SHELL_ROWS[i];
-      const gr=baseRow[i+1];
+      const gr=KNOT_BASE_ROW[i+1];
       const lbl=document.createElement("div");
-      lbl.style.cssText=`grid-row:${gr};grid-column:19;font-size:8px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;gap:4px`;
-      // Full shell = all filled
+      lbl.style.cssText=`grid-row:${gr};grid-column:23;font-size:8px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;gap:4px`;
       lbl.appendChild(shellFillSvg(sr.capacity,sr.capacity,12));
-      // Text: "closes at ◇N" + intruder marker
       const txt=document.createElement("span");
       txt.textContent=sr.intruder?`◇${sr.pair} ⋈↓`:`◇${sr.pair}`;
       txt.title=sr.intruder?`Shell closes at ${sr.pair} nucleons (intruder crossing)`:`Shell closes at ${sr.pair} nucleons`;
       lbl.appendChild(txt);
       grid.appendChild(lbl);
     }
-    grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr)) auto";
+    // Extend grid for label column
+    grid.style.gridTemplateColumns+=" auto";
   }
 
   wrap.appendChild(grid);
