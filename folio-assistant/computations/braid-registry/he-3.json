@@ -1,0 +1,78 @@
+{
+  "nucleus": "He-3",
+  "p": 2,
+  "n": 1,
+  "A": 3,
+  "q": 1.11,
+  "timestamp": "2026-03-27T14:13:45.800948+00:00",
+  "parent": {
+    "ordering": [
+      1,
+      1,
+      0
+    ],
+    "ordering_visual": "\u25cf\u25cf\u25cb",
+    "sign": 1,
+    "log_trace": -0.8785638936479385,
+    "trace_numerical": 0.4153790119850401,
+    "n_negative_generators": 0,
+    "negative_generator_positions": [],
+    "ground_state_method": "exhaustive",
+    "n_orderings_searched": 3,
+    "generator_volumes": [
+      {
+        "i": 0,
+        "V_hat": 1.0522036897663876,
+        "sign": 1,
+        "log_abs": 0.05088671702424296,
+        "n_crossings": 2
+      },
+      {
+        "i": 1,
+        "V_hat": 0.39477053352403985,
+        "sign": 1,
+        "log_abs": -0.9294506106721815,
+        "n_crossings": 1
+      }
+    ]
+  },
+  "daughter": {
+    "p": 3,
+    "n": 0,
+    "ordering": [
+      1,
+      1,
+      1
+    ],
+    "ordering_visual": "\u25cf\u25cf\u25cf",
+    "sign": 1,
+    "log_trace": -0.5951990568359101,
+    "trace_numerical": 0.5514527844953905,
+    "n_negative_generators": 0,
+    "negative_generator_positions": [],
+    "ground_state_method": "exhaustive"
+  },
+  "transition": {
+    "same_sign": true,
+    "delta_phi": -0.2833648368120284,
+    "intensive_delta_tr": 0.24675507375461947,
+    "converting_position": 2,
+    "eIeR": null
+  },
+  "experimental": {
+    "Q_exp_MeV": null,
+    "t_obs": null,
+    "t_unit": null
+  },
+  "computation": {
+    "elapsed_s": 7.486343383789062e-05,
+    "engine": "braid-registry.py",
+    "factored_trace_theorem": "thm:markov-trace-factorization",
+    "parameters": {
+      "z_markov": 0.4993200830735895,
+      "ha": 0.2090990990990993,
+      "hbar_q2": 0.009820631442253083,
+      "M_total_MeV": 3838.7665869302245
+    }
+  }
+}

@@ -1,0 +1,25 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:linking-relations-table",
+  title:
+    "Linking relations between building block knots",
+  tags: [
+    "linking",
+    "hopf-link",
+    "skein",
+    "crossing",
+    "composite",
+    "building-block",
+    "appendix",
+    "connected-sum",
+    "satellite",
+  ],
+  uses: [
+    "rem:building-block-knots",
+    "rem:knot-formula-table",
+    "def:crossing-energy",
+    "prop:skein-generation",
+    "def:borromean-baryon",
+  ],
+});

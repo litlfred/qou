@@ -23,6 +23,37 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+- **NO APPROXIMATIONS unless explicitly labeled as such.**
+- **NO correction factors, fudge factors, or empirical scaling.**
+- **NO formulas that are not derived from the categorical action.**
+- **NEVER use O(·) to discard polynomial structure.** The transfer
+  matrix product has $\binom{A}{2}$ steps — this is exact, not
+  "O(A²)". Each step is a nucleon pair. The polynomial degree is
+  $\leq A^2 - 1$. Say the exact number; do not asymptotize it away.
+- **NEVER assume classical energy conservation at $q \neq 1$.**
+  The $q$-differential satisfies $d_q^2 \neq 0$, so
+  $E_{\mathrm{before}} = E_{\mathrm{after}}$ fails.  Use the
+  categorical action difference $\mathcal{Q}_q = S_q(\mathrm{par})
+  - S_q(\mathrm{dau}) - S_q(e)$ instead. The daughter is evaluated
+  at the shifted $q + \Delta q_{\mathrm{eff}}$.  If you find yourself
+  writing "$Q = M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$", stop
+  — that is the $q = 1$ limit.
+- **Speculation is OK in conversation** with the author (to explore
+  ideas), but **NEVER commit speculative content** without explicit
+  author consent. If unsure, ask before committing.
+- **Every quantity must trace back to the categorical definitions:**
+  $(\mathbf{C}, A, \tau)$, $q$, $\chi$, and the Skein relation.
+- If a computation cannot be done exactly, say so. Do not introduce
+  smooth approximations (Bethe-Weizsäcker, power laws, fitted
+  coefficients) and present them as derived results.
+- **$q$ is simultaneously the Hecke deformation parameter, the Skein
+  polynomial variable, and the physical substrate parameter.**
+  These are the same $q$. The transfer matrix entries are polynomials
+  in $q$; the product $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
+  IS the Skein polynomial; evaluating at $q = 1.110$ gives the
+  physical energy.  Never treat these as separate objects.
+- The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
+  is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
 
 ### 3. Statistical and Methodological Soundness
 - Statistical methods are appropriate for the analysis.
