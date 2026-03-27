@@ -204,6 +204,53 @@ for name, ops in braid_ops.items():
         print(f"    error = {abs(g_A_pred - 1.2754)/1.2754*100:.1f}%")
     print()
 
+# ── T_{3,5} weak carrier dressing ─────────────────────────────────
+# The upstream force-knot-identification.md identifies the weak force
+# carrier as T_{3,5} with crossing number c_w = 10.  The weak vertex
+# is not bare T_1 but T_1 dressed by the T_{3,5} structure.
+#
+# The EM coupling projection gives:
+#   α = q^{-1} / ([9]_q · [10]_q)
+# where [10]_q is the weak carrier complexity.
+#
+# By analogy, the weak vertex should be normalised by [c_w]_q = [10]_q:
+#   g_A/g_V = (5/3) × (std suppression) × [10]_q correction
+#
+# Several hypotheses for how [10]_q enters:
+
+def qint(n, qv=q_num):
+    return (qv^n - qv^(-n)) / (qv - qv^(-1))
+
+ten_q = qint(10, q_num)
+nine_q = qint(9, q_num)
+
+print("T_{3,5} weak carrier dressing:")
+print(f"  [9]_q = {nine_q:.6f}")
+print(f"  [10]_q = {ten_q:.6f}")
+print(f"  [10]_q / [9]_q = {ten_q/nine_q:.6f}")
+print()
+
+# For the borr_4 braid (best candidate: suppression = 0.683):
+borr4_supp = abs(float(eval_braid_standard(braid_ops["borr_4"]).trace().subs(q=q_num)) / 2.0)
+
+dressing_hypotheses = {}
+for name, factor in [
+    ("bare (no dressing)", 1.0),
+    ("× [10]_q/[9]_q", ten_q/nine_q),
+    ("× [10]_q/([9]_q+1)", ten_q/(nine_q + 1)),
+    ("× sqrt([10]_q/[9]_q)", (ten_q/nine_q)^0.5),
+    ("× (1 + 1/[10]_q)", 1 + 1/ten_q),
+    ("× [2]_q", qint(2, q_num)),
+    ("× [3]_q/[2]_q", qint(3, q_num)/qint(2, q_num)),
+]:
+    g_A_dressed = (5.0/3.0) * borr4_supp * float(factor)
+    err = abs(g_A_dressed - 1.2754)/1.2754*100
+    dressing_hypotheses[name] = {"factor": float(factor),
+                                  "g_A": g_A_dressed, "error_pct": err}
+    print(f"  borr_4 {name:30s}: g_A = {g_A_dressed:.4f} (err {err:.1f}%)")
+
+print()
+
 # ── Assemble witness ─────────────────────────────────────────────
 witness = {
     "computation": "sage-borromean-gA",
@@ -215,6 +262,7 @@ witness = {
     "numerical_results": {k: {kk: (float(vv) if vv is not None else None)
                               for kk, vv in v.items()}
                          for k, v in g_A_candidates.items()},
+    "T35_dressing": dressing_hypotheses,
 }
 
 import os

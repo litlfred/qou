@@ -1,6 +1,6 @@
 {
   "computation": "level1-qvalues",
-  "timestamp": "2026-03-27T21:07:03.478621+00:00",
+  "timestamp": "2026-03-27T21:21:44.139556+00:00",
   "description": "Level 1 (quark-level) Q-value computation. Each nucleon expanded to 3 quark strands (u,u,d or u,d,d). Uses block ordering \u2014 ground-state search not performed.",
   "q": 1.11,
   "hbar_q_sq": 0.009820631442253064,
@@ -12,6 +12,7 @@
       "n": 2,
       "strands_L1": 9,
       "crossings_L1": 36,
+      "ordering_method": "block",
       "converting_positions": [
         4
       ],
@@ -19,7 +20,7 @@
       "log_ratio_sum": -0.5773899026128387,
       "Q_q_skein_units": -58.79356190159327,
       "Q_exp_MeV": 0.0186,
-      "elapsed_s": 0.0010190010070800781,
+      "elapsed_s": 0.0011034011840820312,
       "status": "computed"
     },
     {
@@ -29,6 +30,7 @@
       "n": 8,
       "strands_L1": 42,
       "crossings_L1": 861,
+      "ordering_method": "block",
       "converting_positions": [
         19
       ],
@@ -36,7 +38,7 @@
       "log_ratio_sum": -0.760674114169095,
       "Q_q_skein_units": -77.45674182378033,
       "Q_exp_MeV": 0.156,
-      "elapsed_s": 0.02737140655517578,
+      "elapsed_s": 0.02793288230895996,
       "status": "computed"
     },
     {
@@ -46,7 +48,16 @@
       "n": 33,
       "strands_L1": 180,
       "crossings_L1": 16110,
-      "status": "skipped \u2014 too large"
+      "ordering_method": "alternating",
+      "converting_positions": [
+        4
+      ],
+      "affected_generators": 5,
+      "log_ratio_sum": -0.33514333918414607,
+      "Q_q_skein_units": -34.12645522386664,
+      "Q_exp_MeV": 0.318,
+      "elapsed_s": 0.9485254287719727,
+      "status": "computed"
     },
     {
       "name": "\u2079\u2070Sr",
@@ -55,7 +66,16 @@
       "n": 52,
       "strands_L1": 270,
       "crossings_L1": 36315,
-      "status": "skipped \u2014 too large"
+      "ordering_method": "alternating",
+      "converting_positions": [
+        4
+      ],
+      "affected_generators": 5,
+      "log_ratio_sum": 0.4562515770123845,
+      "Q_q_skein_units": 46.45847669726933,
+      "Q_exp_MeV": 0.546,
+      "elapsed_s": 2.8088488578796387,
+      "status": "computed"
     },
     {
       "name": "\u00b9\u00b3\u2077Cs",
@@ -64,7 +84,16 @@
       "n": 82,
       "strands_L1": 411,
       "crossings_L1": 84255,
-      "status": "skipped \u2014 too large"
+      "ordering_method": "alternating",
+      "converting_positions": [
+        4
+      ],
+      "affected_generators": 5,
+      "log_ratio_sum": 1.7422683197431041,
+      "Q_q_skein_units": 177.40899146739494,
+      "Q_exp_MeV": 0.514,
+      "elapsed_s": 9.469043493270874,
+      "status": "computed"
     },
     {
       "name": "\u00b2\u00b9\u2070Bi",
@@ -73,7 +102,16 @@
       "n": 127,
       "strands_L1": 630,
       "crossings_L1": 198135,
-      "status": "skipped \u2014 too large"
+      "ordering_method": "alternating",
+      "converting_positions": [
+        4
+      ],
+      "affected_generators": 5,
+      "log_ratio_sum": 3.423982521778324,
+      "Q_q_skein_units": 348.65197232091515,
+      "Q_exp_MeV": 1.163,
+      "elapsed_s": 35.579874992370605,
+      "status": "computed"
     }
   ],
   "notes": [

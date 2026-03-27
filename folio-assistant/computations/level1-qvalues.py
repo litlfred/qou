@@ -94,23 +94,34 @@ for nuc in nuclei:
     print(f"  Level 0: {A} strands, {A*(A-1)//2} crossings")
     print(f"  Level 1: {strands_L1} strands, {crossings_L1} crossings")
 
-    # Skip very heavy nuclei (> 60 strands at L1 is too slow for exact)
-    if strands_L1 > 60:
-        print(f"  SKIPPED — {strands_L1} strands too large for exact computation")
-        print(f"  (need heuristic ordering for Level 1 with A > 20)")
-        results.append({
-            "name": nuc["name"], "A": A, "p": p, "n": n,
-            "strands_L1": strands_L1, "crossings_L1": crossings_L1,
-            "status": "skipped — too large",
-        })
-        print()
-        continue
-
     t0 = time.time()
 
-    # Parent ordering (nucleon level): block ordering [1]*p + [0]*n
-    nucleon_par = [1] * p + [0] * n
-    nucleon_dau = [1] * (p + 1) + [0] * (n - 1)
+    # For heavy nuclei (A > 14), use alternating nucleon ordering
+    # which approximates the ground state. For light nuclei, use
+    # block ordering (exact ground-state search at quark level is
+    # infeasible: binom(3A, total_u) is astronomical).
+    if A <= 14:
+        nucleon_par = [1] * p + [0] * n
+        nucleon_dau = [1] * (p + 1) + [0] * (n - 1)
+        method = "block"
+    else:
+        # Alternating ordering: interleave protons and neutrons
+        nucleon_par = []
+        pi, ni = 0, 0
+        for k in range(A):
+            if pi < p and (ni >= n or k % 2 == 0):
+                nucleon_par.append(1)
+                pi += 1
+            else:
+                nucleon_par.append(0)
+                ni += 1
+        # Daughter: flip one neutron to proton at first neutron position
+        nucleon_dau = list(nucleon_par)
+        for k in range(A):
+            if nucleon_dau[k] == 0:
+                nucleon_dau[k] = 1
+                break
+        method = "alternating"
 
     # Expand to quark level
     quark_par = expand_to_quarks(nucleon_par)
@@ -144,6 +155,7 @@ for nuc in nuclei:
     result = {
         "name": nuc["name"], "A": A, "p": p, "n": n,
         "strands_L1": strands_L1, "crossings_L1": crossings_L1,
+        "ordering_method": method,
         "converting_positions": converting,
         "affected_generators": affected_count,
         "log_ratio_sum": log_ratio_sum,

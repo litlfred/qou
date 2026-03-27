@@ -44,20 +44,28 @@ print()
 
 # ── Compute quantum dilogarithm volumes ──────────────────────────
 
-def phi_q(p, n):
-    """Quantum dilogarithm volume Φ_q(N(p,n)) = Σ log|V̂_i|."""
+def phi_q(p, n, force_exact=False):
+    """Quantum dilogarithm volume Φ_q(N(p,n)) = Σ log|V̂_i|.
+
+    force_exact: if True, uses exact ground-state search even for
+    large A (up to 15000 orderings). Essential for magic nuclei
+    where the heuristic ordering misses the alpha-cluster structure.
+    """
     A = p + n
     if A <= 1:
         return 0.0  # single nucleon has no crossings
-    result = engine.compute(p, n)
+
+    # Use exact search for A <= 20 (binom(20,10) = 184,756 — feasible)
+    max_ord = 200000 if (force_exact or A <= 20) else 5000
+    ordering, method = engine.ground_state_ordering(p, n, max_orderings=max_ord)
+
     # Sum log|V̂_i| for all generators
     phi = 0.0
-    ordering = result.ordering_par
     for i in range(A - 1):
         v = float(qr.traced_volume(i, ordering))
         if v != 0:
             phi += math.log(abs(v))
-    return phi
+    return phi, ordering, method
 
 # ── Individual nucleon volumes ───────────────────────────────────
 
@@ -80,10 +88,9 @@ light_nuclei = [
     (2, 4, "⁶He"),
     (3, 3, "⁶Li"),
     (4, 4, "⁸Be"),
-    (4, 4, "⁸Be"),
     (8, 8, "¹⁶O (doubly magic)"),
     (10, 10, "²⁰Ne"),
-    (10, 10, "²⁰Ne"),
+    (10, 20, "⁵⁰Ca (magic n=20)"),
 ]
 
 # Remove duplicates
@@ -96,18 +103,20 @@ for p, n, name in light_nuclei:
         unique_nuclei.append((p, n, name))
 
 phi_values = {}
+orderings = {}
 for p, n, name in unique_nuclei:
     A = p + n
     t0 = time.time()
-    phi = phi_q(p, n)
+    phi, ordering, method = phi_q(p, n)
     elapsed = time.time() - t0
     phi_values[(p, n)] = phi
+    orderings[(p, n)] = (ordering, method)
 
     # Binding energy in ℏ_q² units
     E_bind = phi / hbar_q_sq if hbar_q_sq != 0 else 0
 
     print(f"  {name:20s} ({p},{n}): Φ_q = {phi:+.6f}, "
-          f"E_bind/ℏ_q² = {E_bind:+.2f}, {elapsed:.2f}s")
+          f"E_bind/ℏ_q² = {E_bind:+.2f}, {method}, {elapsed:.1f}s")
 
 print()
 
@@ -166,7 +175,9 @@ witness = {
     "hbar_q": hbar_q,
     "hbar_q_sq": hbar_q_sq,
     "phi_values": {f"N({p},{n})": {"name": name, "phi_q": phi_values[(p,n)],
-                                    "E_bind_skein": phi_values[(p,n)]/hbar_q_sq}
+                                    "E_bind_skein": phi_values[(p,n)]/hbar_q_sq,
+                                    "ordering": orderings[(p,n)][0],
+                                    "method": orderings[(p,n)][1]}
                    for p, n, name in unique_nuclei if (p,n) in phi_values},
     "lambda_shell": {
         "from_alpha": lambda_shell,
