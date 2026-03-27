@@ -58,15 +58,19 @@ with the following $q$-dependent factors:
    generator volume
    ([factorization theorem](#thm:markov-trace-factorization)).
 
-3. **Phase-space integral**: The $Q$-value
-   $Q_\beta = M(\text{parent}) - M(\text{daughter}) - m_e$
-   is the mass difference between parent and daughter atoms.
-   The mass of each nucleus is determined by the terminal
-   resolution of its composite link
+3. **Phase-space integral**: The $\mathcal{Q}_q$-value
+   ([transition energy](#def:q-value-transition)) is the
+   categorical action difference
+   $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$.
+   This is **not** defined by classical energy conservation
+   ($M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$), which assumes
+   $d_q^2 = 0$ and fails at $q \neq 1$.  The action of each
+   nucleus is determined by the terminal resolution of its
+   composite link
    ([terminal resolution](#prop:terminal-resolution)),
    evaluated at $q$ using the pair Skein mass formula
    $\mathcal{S}_{ab}(q) = (q\,\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$.
-   The fifth-power Sargent rule gives $f(Q_\beta) \propto Q_\beta^5$
+   The fifth-power Sargent rule gives $f(\mathcal{Q}_q) \propto \mathcal{Q}_q^5$
    for allowed transitions.
 
 **$q$-dependence of the decay rate.**
@@ -75,14 +79,17 @@ The decay rate depends on $q$ through three channels:
 - $[2]_q = q + q^{-1}$: the weak-vertex dimension.
 - $|\mathcal{M}_q|^2$: the Markov trace ratio, which depends on
   the crossing structure of the nuclear braid at $q$.
-- $Q_\beta^5$: the mass difference, determined by the pair Skein
-  weights $\mathcal{S}_{ab}(q)$ which depend on $q$ through the
-  dressed quark masses $\mu_u, \mu_d$.
+- $\mathcal{Q}_q^5$: the categorical action difference
+  ([transition energy](#def:q-value-transition)), determined by
+  the pair Skein weights $\mathcal{S}_{ab}(q)$ which depend on $q$
+  through the dressed quark masses $\mu_u, \mu_d$.  Note:
+  $\mathcal{Q}_q \neq T_e + T_{\bar{\nu}} + T_{\mathrm{recoil}}$
+  at $q \neq 1$ (the $q$-anomaly $\delta_q \neq 0$).
 
 At $q = 1$ (classical limit): $[2]_1 = 2$, the crossing asymmetry
-vanishes, all isobars are degenerate ($Q = 0$), and no beta decay
-occurs.  At $q > 1$: the crossing asymmetry splits the isobars,
-producing nonzero $Q$ and finite half-lives.
+vanishes, all isobars are degenerate ($\mathcal{Q}_q = 0$), and no
+beta decay occurs.  At $q > 1$: the crossing asymmetry splits the
+isobars, producing nonzero $\mathcal{Q}_q$ and finite half-lives.
 
 The sensitivity of the decay rate to $q$ is
 

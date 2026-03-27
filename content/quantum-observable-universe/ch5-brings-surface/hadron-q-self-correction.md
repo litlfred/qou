@@ -96,10 +96,19 @@ $$
 
 This is always positive: the daughter (with one more proton) has
 more positive crossings, hence a higher effective $q$.  A higher
-$q$ means a larger Coulomb splitting and therefore a larger
-$Q$-value than the background calculation predicts.  Via the
-Sargent rule $f(Q) \propto Q^5$, the corrected $Q$-value
-increases the decay rate and *shortens* the half-life.
+$q$ means a larger crossing asymmetry and therefore a larger
+$\mathcal{Q}_q$-value
+([transition energy](#def:q-value-transition)) than the
+background calculation predicts.  Via the Sargent rule
+$f(\mathcal{Q}_q) \propto \mathcal{Q}_q^5$, the corrected
+$\mathcal{Q}_q$ increases the decay rate and *shortens* the
+half-life.
+
+**Note:** The $\Delta q_{\mathrm{eff}}$ shift is precisely the
+$q$-anomaly $\delta_q$ of the transition energy.  The daughter
+is evaluated at the shifted $q + \Delta q_{\mathrm{eff}}$, not
+the background $q$.  This is the $q$-deformed energy balance
+— not classical conservation.
 
 **Effect on the decay rate.**
 The differential shift $\Delta q_{\mathrm{eff}}$ modifies the

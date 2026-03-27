@@ -4,8 +4,8 @@
 Beta decay is the Skein relation applied to one crossing of the
 Gröbner normal form of a nuclear link.
 
-β⁻: N̄(p,n) → N̄(p+1, n-1) ⊔ L₀  (electron + antineutrino)
-β⁺: N̄(p,n) → N̄(p-1, n+1) ⊔ L̄₀  (positron + neutrino)
+β⁻: N̄(p,n) → N̄(p+1, n-1) ⊔ L₀⁻  (electron + antineutrino)
+β⁺: N̄(p,n) → N̄(p-1, n+1) ⊔ L₀⁺  (positron + neutrino)
 
 The Z/2 symmetry q ↔ q⁻¹ exchanges β⁻ ↔ β⁺.
 
@@ -62,8 +62,10 @@ structure BetaMinusDecay where
   m_e : ℝ
   /-- Electron mass is positive. -/
   m_e_pos : 0 < m_e
-  /-- The Q-value: energy released = parent action - daughter action - m_e. -/
-  Q : ℝ := parent.action - daughter.action - m_e
+  /-- The 𝒬_q-value: categorical action difference (NOT classical energy conservation).
+      𝒬_q = S_q(parent) - S_q(daughter) - S_q(electron).
+      This differs from T_e + T_ν̄ + T_recoil by the q-anomaly δ_q. -/
+  Q_q : ℝ := parent.action - daughter.action - m_e
   /-- The Skein relation: q[parent] - q⁻¹[daughter] = (q^½ - q^⁻½)[L₀]. -/
   skein_coefficient : ℝ  -- = q^½ - q^⁻½
 

@@ -1,9 +1,15 @@
 /-!
-# QOU.Descartes.QValueTransition — Q-value as total transition energy
+# QOU.Descartes.QValueTransition — 𝒬_q as categorical action difference
 
-The Q-value of a nuclear transition is the total kinetic energy of
-ALL products (electron + antineutrino + recoiling nucleus), which
-equals the categorical action difference minus the electron rest mass.
+The 𝒬_q-value is defined as the categorical action difference
+between parent and daughter, NOT by classical energy conservation.
+
+Classical energy conservation (E_before = E_after) is a q=1 limit.
+At q ≠ 1, the q-differential satisfies d_q² ≠ 0, producing a
+q-anomaly δ_q in the energy balance.
+
+⚠ This file does NOT assume classical conservation of energy.
+The equivalence Q_q = T_e + T_ν + T_recoil holds only at q = 1.
 
 LaTeX label: `def:q-value-transition`
 
@@ -15,74 +21,82 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.Descartes
 
-/-- The Q-value of a beta decay transition.
-    Defined as the total kinetic energy released, distributed among
-    all three products: electron, antineutrino, and recoiling nucleus.
-    No approximations — recoil kinetic energy is NOT neglected. -/
+-- ═══════════════════════════════════════════════════════════════════
+-- PRIMARY DEFINITION: 𝒬_q from categorical action (no conservation)
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The 𝒬_q-value of a beta decay transition.
+    Defined as the categorical action difference — NOT as a sum of
+    kinetic energies.  Classical energy conservation is NOT assumed. -/
 -- Ref: [manuscript] §6/q-value-transition
-structure QValueTransition where
+structure QqValue where
   /-- Substrate parameter. -/
   q : ℝ
   q_gt_one : 1 < q
-  /-- Categorical action of parent nucleus. -/
+  /-- Categorical action of parent nucleus S_q(N_par). -/
   S_parent : ℝ
-  /-- Categorical action of daughter nucleus. -/
+  /-- Categorical action of daughter nucleus S_q(N_dau). -/
   S_daughter : ℝ
-  /-- Electron rest mass energy. -/
-  m_e : ℝ
-  m_e_pos : 0 < m_e
-  /-- Antineutrino rest mass energy (≈ 0 for unknot). -/
-  m_nu : ℝ
-  m_nu_nonneg : 0 ≤ m_nu
+  /-- Categorical action of electron S_q(e). -/
+  S_electron : ℝ
+  S_electron_pos : 0 < S_electron
+  /-- Categorical action of antineutrino S_q(ν̄) = 0 (unknot). -/
+  S_antineutrino : ℝ := 0
 
-/-- The Q-value: total transition energy. -/
+/-- The 𝒬_q-value: action difference (primary definition). -/
 -- Ref: [manuscript] §6/q-value-transition
-noncomputable def QValueTransition.value (Q : QValueTransition) : ℝ :=
-  Q.S_parent - Q.S_daughter - Q.m_e - Q.m_nu
+noncomputable def QqValue.value (Q : QqValue) : ℝ :=
+  Q.S_parent - Q.S_daughter - Q.S_electron - Q.S_antineutrino
 
-/-- Decomposition into kinetic energies:
-    Q = T_e + T_ν̄ + T_recoil.
-    This is EXACT (no approximation neglecting recoil). -/
+-- ═══════════════════════════════════════════════════════════════════
+-- THE q-ANOMALY: δ_q = 𝒬_q - (T_e + T_ν + T_recoil)
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The q-anomaly: difference between categorical 𝒬_q and
+    the sum of observed kinetic energies.
+
+    ⚠ This is NONZERO at q ≠ 1.  Classical energy conservation
+    (δ_q = 0) holds ONLY at q = 1. -/
 -- Ref: [manuscript] §6/q-value-transition
-structure KineticDecomposition where
-  /-- The Q-value this decomposition refers to. -/
-  Q_val : ℝ
-  /-- Electron kinetic energy. -/
-  T_e : ℝ
-  T_e_nonneg : 0 ≤ T_e
-  /-- Antineutrino kinetic energy. -/
-  T_nu : ℝ
-  T_nu_nonneg : 0 ≤ T_nu
-  /-- Daughter nucleus recoil kinetic energy. -/
-  T_recoil : ℝ
-  T_recoil_nonneg : 0 ≤ T_recoil
-  /-- Energy conservation: Q = T_e + T_ν̄ + T_recoil (exact). -/
-  energy_conservation : Q_val = T_e + T_nu + T_recoil
+structure QAnomaly where
+  /-- The categorical 𝒬_q. -/
+  Q_q : ℝ
+  /-- Sum of observed kinetic energies T_e + T_ν̄ + T_recoil. -/
+  T_total : ℝ
+  /-- The q-anomaly: δ_q = 𝒬_q - T_total. -/
+  delta_q : ℝ := Q_q - T_total
 
-/-- The physical Q-value equals the categorical action difference.
-    This is the content of the proposition: kinematic = categorical. -/
+/-- ℏ_q = 1 - q⁻¹ (quantum Planck constant). -/
 -- Ref: [manuscript] §6/q-value-transition
-theorem physical_equals_categorical
-    (Q : QValueTransition)
-    (K : KineticDecomposition)
-    (hQ : K.Q_val = Q.value) :
-    K.T_e + K.T_nu + K.T_recoil = Q.S_parent - Q.S_daughter - Q.m_e - Q.m_nu := by
-  rw [← K.energy_conservation, hQ]
-  unfold QValueTransition.value
+noncomputable def hbar_q' (q : ℝ) : ℝ := 1 - 1 / q
 
-/-- At q = 1 (classical limit), crossing energies are symmetric,
-    so the action difference vanishes: Q → 0. -/
+/-- The self-deformation shift Δq_eff = (A-1)/A² · ℏ_q². -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+noncomputable def delta_q_eff (q : ℝ) (A : ℕ) : ℝ :=
+  ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (hbar_q' q) ^ 2
+
+/-- The self-deformation is positive for A ≥ 2 and q > 1. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+theorem delta_q_eff_pos {q : ℝ} {A : ℕ} (hq : 1 < q) (hA : 2 ≤ A) :
+    0 < delta_q_eff q A := by
+  unfold delta_q_eff hbar_q'
+  apply mul_pos
+  · apply div_pos
+    · exact by exact_mod_cast (show (0 : ℝ) < (A : ℝ) - 1 by exact_mod_cast Nat.sub_pos_of_lt (by omega))
+    · positivity
+  · positivity
+
+/-- At q = 1, the anomaly vanishes (classical limit). -/
 -- Ref: [manuscript] §6/q-value-transition
--- This encodes the physical statement that there is no beta decay
--- in the classical (q=1) limit.
--- Ref: [manuscript] §6/q-energy
-theorem q_value_classical_vanishes :
-    -- When S_parent = S_daughter (equal crossing energies at q=1),
-    -- Q = -m_e (negative, i.e., energetically forbidden).
-    -- Beta decay requires Q > 0, which requires q ≠ 1.
-    True := by trivial
+theorem delta_q_eff_classical (A : ℕ) : delta_q_eff 1 A = 0 := by
+  unfold delta_q_eff hbar_q'
+  simp
 
-/-- Crossing energy at a single crossing change d→u. -/
+-- ═══════════════════════════════════════════════════════════════════
+-- CROSSING ENERGY
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- Crossing energy at a single crossing change d→u: q - q⁻¹. -/
 -- Ref: [manuscript] §6/q-value-transition
 noncomputable def singleCrossingDelta (q : ℝ) : ℝ := q - 1 / q
 
@@ -94,9 +108,43 @@ theorem singleCrossingDelta_pos {q : ℝ} (hq : 1 < q) :
   rw [sub_pos, div_lt_iff (by linarith : (0 : ℝ) < q)]
   nlinarith
 
-/-- At q = 1.110: single crossing delta ≈ 0.209. -/
+/-- At q = 1: crossing change releases zero energy (no weak force). -/
 -- Ref: [manuscript] §6/q-value-transition
--- 1.110 - 1/1.110 = 1.110 - 0.9009 = 0.2091
-example : (1110 : ℤ) - 1000000 / 1110 > 0 := by omega
+theorem singleCrossingDelta_classical : singleCrossingDelta 1 = 0 := by
+  unfold singleCrossingDelta; norm_num
+
+-- ═══════════════════════════════════════════════════════════════════
+-- q-DEFORMED CONSERVATION (the CORRECT statement)
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The q-deformed energy balance: the daughter is evaluated at
+    the SHIFTED q, not the original.
+
+    S_q(parent) = S_{q+Δq}(daughter) + S_q(e) + S_q(ν̄) + kinetic + δ_q
+
+    ⚠ This is NOT classical conservation.  The daughter nucleus
+    lives in a shifted q-environment due to the re-reduction
+    R2 moves in the Hecke algebra. -/
+-- Ref: [manuscript] §6/q-value-transition
+structure QDeformedBalance where
+  /-- Original substrate parameter. -/
+  q : ℝ
+  q_gt_one : 1 < q
+  /-- Mass number of parent. -/
+  A : ℕ
+  A_ge_two : 2 ≤ A
+  /-- Parent action at q. -/
+  S_par : ℝ
+  /-- Daughter action at shifted q + Δq_eff. -/
+  S_dau_shifted : ℝ
+  /-- Electron action. -/
+  S_e : ℝ
+  /-- Antineutrino action (= 0). -/
+  S_nu : ℝ := 0
+  /-- Total kinetic energy of products. -/
+  T_total : ℝ
+  /-- The balance: S_par = S_dau(q+Δq) + S_e + S_ν + T_total.
+      Note: daughter is evaluated at SHIFTED q. -/
+  balance : S_par = S_dau_shifted + S_e + S_nu + T_total
 
 end QOU.Descartes
