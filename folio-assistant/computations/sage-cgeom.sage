@@ -117,6 +117,7 @@ print()
 # ── Test q-integer formulas for C_geom ───────────────────────────
 print("Formula candidates for C_geom:")
 candidates = {}
+borr_val = val_borr if (borr_computed and J_borr is not None) else 1.0
 for name, val in [
     ("[2]_q * [7]_q", q_int(2) * q_int(7)),
     ("[3]_q * [5]_q", q_int(3) * q_int(5)),
@@ -124,6 +125,10 @@ for name, val in [
     ("Sum [2j+1] j=0..2", 1 + q_int(3) + q_int(5)),
     ("[2]_q * [3]_q", q_int(2) * q_int(3)),
     ("[2]_q^4 / [3]_q", q_int(2)^4 / q_int(3)),
+    ("J_Borr * [2]_q * [7]_q", borr_val * q_int(2) * q_int(7)),
+    ("[2]_q * [7]_q / J_Borr", q_int(2) * q_int(7) / borr_val),
+    ("J_Borr * [3]_q * [5]_q", borr_val * q_int(3) * q_int(5)),
+    ("[3]_q * [5]_q / J_Borr", q_int(3) * q_int(5) / borr_val),
 ]:
     alpha_pred = tanh_ln_q / val
     inv_alpha = 1.0 / alpha_pred
@@ -135,17 +140,27 @@ print()
 
 # ── Colored Jones (adjoint rep) ──────────────────────────────────
 # Sage can compute colored Jones polynomials for knots
-print("Colored Jones polynomials (if available):")
-try:
-    # Colored Jones of trefoil in spin-1 (adjoint) representation
-    # In Sage: K.colored_jones_polynomial(n) where n is the coloring
-    J_trefoil_adj = K_trefoil.colored_jones_polynomial(3)  # spin-1 = 3-dim rep
-    val_adj = float(J_trefoil_adj.subs(t=q_num))
-    print(f"  J_trefoil(adjoint, q={q_num}) = {val_adj:.6f}")
-    jones_vals["trefoil_adjoint"] = {"polynomial": str(J_trefoil_adj),
-                                     "value": val_adj}
-except Exception as e:
-    print(f"  Colored Jones not available: {e}")
+print("Colored Jones polynomials:")
+for n_color, label in [(2, "fundamental"), (3, "adjoint/spin-1"),
+                        (4, "spin-3/2"), (5, "spin-2")]:
+    try:
+        J_col = K_trefoil.colored_jones_polynomial(n_color)
+        # colored_jones_polynomial returns a Laurent polynomial, not symbolic
+        # Evaluate by substituting into the Laurent polynomial ring
+        R_eval = J_col.parent()
+        val_col = float(J_col.substitute(q_num))
+        print(f"  J_trefoil(n={n_color}, {label}, q={q_num}) = {val_col:.6f}")
+        jones_vals[f"trefoil_colored_{n_color}"] = {
+            "polynomial": str(J_col), "value": val_col}
+    except Exception as e:
+        try:
+            # Alternative: evaluate the polynomial as a function
+            val_col = float(J_col(q_num))
+            print(f"  J_trefoil(n={n_color}, {label}, q={q_num}) = {val_col:.6f}")
+            jones_vals[f"trefoil_colored_{n_color}"] = {
+                "polynomial": str(J_col), "value": val_col}
+        except Exception as e2:
+            print(f"  n={n_color} ({label}): {e2}")
 print()
 
 # ── Assemble witness ─────────────────────────────────────────────

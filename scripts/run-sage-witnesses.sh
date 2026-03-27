@@ -46,26 +46,21 @@ echo
 echo "═══ [1/3] g_A from Borromean Hecke algebra ═══"
 echo "    Target: g_A = 1.2754 (PDG 2024)"
 echo
-sage "$COMP_DIR/sage-borromean-gA.sage"
-echo
-echo "✓ g_A computation complete"
-echo
+sage "$COMP_DIR/sage-borromean-gA.sage" && \
+  echo && echo "✓ g_A computation complete" && echo
 
 # ── 2. C_geom from electron-proton Skein weight ─────────────────
 echo "═══ [2/3] C_geom from electron-proton Skein weight ═══"
 echo "    Target: C_geom ≈ 14.25"
 echo
-sage "$COMP_DIR/sage-cgeom.sage"
-echo
-echo "✓ C_geom computation complete"
-echo
+sage "$COMP_DIR/sage-cgeom.sage" && \
+  echo && echo "✓ C_geom computation complete" && echo
 
 # ── 3. Nuclear braid traces (existing) ──────────────────────────
 echo "═══ [3/3] Nuclear braid Markov traces ═══"
 echo
-sage "$COMP_DIR/sage-nuclear-braid.sage"
-echo
-echo "✓ Nuclear braid computation complete"
+sage "$COMP_DIR/sage-nuclear-braid.sage" && \
+  echo && echo "✓ Nuclear braid computation complete"
 echo
 
 # ── Summary ──────────────────────────────────────────────────────
