@@ -26,11 +26,8 @@ import math
 from datetime import datetime, timezone
 from pathlib import Path
 
-q = 1.10997
-qi = 1.0 / q
-ha = q - qi          # q - q⁻¹
-s = math.sqrt(q) - 1.0 / math.sqrt(q)   # Skein amplitude
-two_q = q + qi       # [2]_q
+from q_parameter import (Q as q, Q_INV as qi, HA as ha,
+                         S_SKEIN as s, TWO_Q as two_q, q_int)
 
 # ══════════════════════════════════════════════════════════════════
 # Jones polynomials at q = 1.110

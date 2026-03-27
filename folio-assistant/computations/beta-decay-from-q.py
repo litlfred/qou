@@ -22,16 +22,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# ── Substrate parameter ──────────────────────────────────────────
-# Fixed by the muon-electron mass ratio: Vol(4_1) / ℏ_q² = 206.768
-q = 1.10997
-
-# ── Fundamental q-dependent quantities ───────────────────────────
-hbar_q = 1.0 - 1.0 / q                            # quantum Planck constant
-E_cross = 0.5 * (q - 1.0 / q)                     # crossing energy
-s = math.sqrt(q) - 1.0 / math.sqrt(q)             # Skein amplitude
-two_q = q + 1.0 / q                               # [2]_q
-tanh_ln_q = (q - 1.0 / q) / (q + 1.0 / q)        # tanh(ln q)
+# ── Substrate parameter (canonical, from q_parameter.py) ─────────
+from q_parameter import (Q as q, Q_INV as qi, HBAR_Q as hbar_q,
+                         E_CROSS as E_cross, S_SKEIN as s,
+                         TWO_Q as two_q, TANH_LN_Q as tanh_ln_q,
+                         HBAR_Q_SQ as hbar_q_sq)
 
 # ── Electron mass from crossing energy ───────────────────────────
 # The electron is trefoil T_{2,3} with 3 crossings.

@@ -27,12 +27,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from computations.hecke_engine import HeckeEngine
 
-engine = HeckeEngine(q_num=11100, q_den=10000)
+from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q, HBAR_Q_SQ
+engine = HeckeEngine(q_num=Q_RAT_NUM, q_den=Q_RAT_DEN)
 qr = engine.qr
 
-q = float(qr.q)
-hbar_q = float((qr.q - 1) / qr.q)
-hbar_q_sq = hbar_q ** 2
+q = Q
+hbar_q = HBAR_Q
+hbar_q_sq = HBAR_Q_SQ
 
 print("=" * 60)
 print("Shell correction λ_shell from alpha-particle sub-link")

@@ -71,8 +71,9 @@ nuclei = [
 
 # ── Engine ───────────────────────────────────────────────────────
 
-qr = QRat(11100, 10000)  # q = 1.1100
-hbar_q_sq = float((qr.q - 1) / qr.q) ** 2  # ℏ_q²
+from q_parameter import Q_RAT_NUM, Q_RAT_DEN, Q, HBAR_Q_SQ
+qr = QRat(Q_RAT_NUM, Q_RAT_DEN)
+hbar_q_sq = HBAR_Q_SQ
 
 print("=" * 60)
 print("Level 1 (quark-level) Q-value computation")

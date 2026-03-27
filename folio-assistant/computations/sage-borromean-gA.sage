@@ -162,8 +162,11 @@ for name, ops in braid_ops.items():
     print(f"    tr_triv = {triv_conv}")
     print()
 
-# ── Numerical evaluation at q = 1.110 ───────────────────────────
-q_num = 1.110
+# ── Numerical evaluation ─────────────────────────────────────────
+# Canonical q from Vol(4_1)/(m_μ/m_e):
+VOL_41 = 2.029883212819307
+MU_E   = 206.7682830
+q_num  = 1.0 / (1.0 - sqrt(VOL_41 / MU_E))  # = 1.10997859...
 print(f"Numerical evaluation at q = {q_num}:")
 print()
 

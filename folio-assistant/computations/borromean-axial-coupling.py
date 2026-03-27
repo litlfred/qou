@@ -39,7 +39,7 @@ import math
 from datetime import datetime, timezone
 from pathlib import Path
 
-q = 1.10997
+from q_parameter import Q as q
 
 # ══════════════════════════════════════════════════════════════════
 # Hecke algebra H_3(q) — irreducible representations
