@@ -88,6 +88,7 @@ export default chapter({
         "projective-line-object",
         "projective-line-su2",
         "contact-affine-chart",
+        "fibre-functor-atlas",
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
