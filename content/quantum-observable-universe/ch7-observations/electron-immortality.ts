@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:electron-immortality",
   title: "Electrons are immortal: no beta decay for elementary trefoils",
-  interprets: "rem:chirality-trefoil-electron-positron",
+  interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:time-reversal-energy-barrier",
     "rem:cosmological-chirality-flip",

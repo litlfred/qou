@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:time-reversal-energy-barrier",
   title: "Time reversal requires infinite energy in the observable sector",
-  interprets: "rem:chirality-trefoil-electron-positron",
+  interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:pair-creation-energy",
     "rem:trefoil-vortex-chirality-flip",

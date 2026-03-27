@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:substrate-parameter",
+  interprets: "def:mass-identity",
   label: "rem:geometric-drag",
   title: "Geometric drag and the mass residue",
   uses: ["def:substrate-parameter", "def:mass-identity"],

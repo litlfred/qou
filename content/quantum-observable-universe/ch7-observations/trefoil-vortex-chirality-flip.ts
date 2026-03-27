@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:trefoil-vortex-chirality-flip",
   title: "Can the chirality of a stable trefoil vortex flip?",
-  interprets: "rem:chirality-trefoil-electron-positron",
+  interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:chirality-trefoil-electron-positron",
     "rem:vortex-intensity-modes",

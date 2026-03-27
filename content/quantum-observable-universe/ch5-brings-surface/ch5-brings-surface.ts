@@ -122,6 +122,7 @@ export default chapter({
         // Proton, neutron, stable nucleus
         "categorical-proton",
         "categorical-neutron",
+        "antiparticle-crossing-reversal",
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
         "torus-hopf-stability",

@@ -3,9 +3,9 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:cosmological-chirality-flip",
   title: "Chirality reversal at cosmological extremes",
-  interprets: "rem:cosmological-limits",
+  interprets: "def:quantum-observable-universe",
   uses: [
-    "rem:cosmological-limits",
+    "ex:cosmological-limits",
     "rem:time-reversal-energy-barrier",
     "rem:complex-substrate-interpretation",
     "def:exceptional-divisor",
