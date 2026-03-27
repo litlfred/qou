@@ -26,7 +26,13 @@ echo
 
 # Check Sage is available
 if ! command -v sage &>/dev/null; then
-    echo "✗ SageMath not found. Run first:"
+    echo "✗ SageMath not found."
+    echo
+    echo "If you installed via conda, activate the environment first:"
+    echo
+    echo "  conda activate qou-sage && ./scripts/run-sage-witnesses.sh"
+    echo
+    echo "If not installed yet:"
     echo
     echo "  ./scripts/setup-sage.sh"
     echo
