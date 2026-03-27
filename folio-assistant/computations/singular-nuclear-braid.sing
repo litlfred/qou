@@ -2,197 +2,160 @@
 //
 // Run: Singular folio-assistant/computations/singular-nuclear-braid.sing
 //
-// Uses the LETTERPLACE library for non-commutative polynomial rings.
-// The free algebra on generators x(1)..x(n) is embedded in a
-// commutative ring with variables x(i)(j) where j is the "place" index.
-//
-// Singular letterplace convention:
-//   x(i)(j) means "generator i at position j in the word"
-//   The ring must be created with makeLetterplaceRing(degbound)
+// Letterplace variable convention for ngens=2, degbound=3:
+//   var(1)=x(1)@pos1, var(2)=x(2)@pos1,
+//   var(3)=x(1)@pos2, var(4)=x(2)@pos2,
+//   var(5)=x(1)@pos3, var(6)=x(2)@pos3
+// General: var((j-1)*ngens + i) = x(i) at position j
 
 LIB "freegb.lib";
 
-// ── Step 1: Create the base ring ────────────────────────────────
-// We need 13 generators (σ_1...σ_13) for A=14 nucleons.
-// Work over Q(q) — the field of rational functions in q.
-// Singular: parameter ring with (0,q) means char 0 with parameter q.
+// ── Configuration ───────────────────────────────────────────────
+int AA = 3;           // mass number (start with tritium)
+int ngens = AA - 1;   // number of Hecke generators
+int degbd = AA;       // max word length in normal form
 
-// Start small: A=3 (tritium) first to verify, then scale up.
-int AA = 3;
-int ngens = AA - 1;  // 2 generators for A=3
-int degbd = AA;       // max word length
-
-// Base ring with ngens variables over Q(q)
+// ── Create rings ────────────────────────────────────────────────
 ring r0 = (0,q), (x(1..ngens)), dp;
-
-// Create the letterplace ring
 def R = makeLetterplaceRing(degbd);
 setring R;
 
-// Show what we have
-"Letterplace ring created:";
-R;
-"";"Variables:";
-string(maxideal(1));
+"Letterplace ring:"; R;
 
-// ── Step 2: Define the Hecke relations ──────────────────────────
-// In letterplace, x(i) at position j is just a variable in R.
-// After makeLetterplaceRing, the variables are named automatically.
-// We access them via the variable indices.
-
-// The Hecke relation: x(i)^2 = (q - 1/q) x(i) + 1
-// In letterplace: x(i)(1)*x(i)(2) - (q-1/q)*x(i)(1) - 1
-
-// For A=3: generators x(1), x(2)
-// Letterplace variables after makeLetterplaceRing(3):
-// The ring has ngens*degbd variables: x(i)(j) for i=1..ngens, j=1..degbd
-
-"";
-"Building Hecke ideal for A="; AA;
+// ── Hecke ideal ─────────────────────────────────────────────────
+poly ha = q - 1/q;  // q - q^{-1}
 
 ideal I;
 int idx = 0;
-
-// Hecke relations: x(i)^2 = (q-1/q)*x(i) + 1
 int ii;
+
+// Hecke: x(i)^2 = (q-q^{-1})x(i) + 1
+// var((0)*ngens+i) * var((1)*ngens+i) = ha * var((0)*ngens+i) + 1
 for (ii = 1; ii <= ngens; ii++)
 {
     idx++;
-    // x(i) at position 1 times x(i) at position 2
-    // In the letterplace ring, variable index for x(i)(j) is
-    // (j-1)*ngens + i
-    int v1 = ii;           // x(i)(1)
-    int v2 = ngens + ii;   // x(i)(2)
-    I[idx] = var(v1) * var(v2) - (q - 1/q) * var(v1) - 1;
+    I[idx] = var(ii) * var(ngens + ii) - ha * var(ii) - 1;
 }
 
 // Yang-Baxter: x(i)*x(i+1)*x(i) = x(i+1)*x(i)*x(i+1)
 for (ii = 1; ii <= ngens - 1; ii++)
 {
     idx++;
-    int a1 = ii;             // x(i)(1)
-    int b2 = ngens + ii + 1; // x(i+1)(2)
-    int a3 = 2*ngens + ii;   // x(i)(3)
-    int b1 = ii + 1;         // x(i+1)(1)
-    int a2 = ngens + ii;     // x(i)(2)
-    int b3 = 2*ngens + ii+1; // x(i+1)(3)
-    I[idx] = var(a1)*var(b2)*var(a3) - var(b1)*var(a2)*var(b3);
+    I[idx] = var(ii) * var(ngens + ii + 1) * var(2*ngens + ii)
+           - var(ii + 1) * var(ngens + ii) * var(2*ngens + ii + 1);
 }
 
-// Far commutativity: x(i)*x(j) = x(j)*x(i) for |i-j| >= 2
+// Far commutativity (none for ngens=2, |i-j| >= 2 impossible)
 int jj;
 for (ii = 1; ii <= ngens; ii++)
 {
     for (jj = ii + 2; jj <= ngens; jj++)
     {
         idx++;
-        int p1 = ii;           // x(i)(1)
-        int p2 = ngens + jj;   // x(j)(2)
-        int q1 = jj;           // x(j)(1)
-        int q2 = ngens + ii;   // x(i)(2)
-        I[idx] = var(p1)*var(p2) - var(q1)*var(q2);
+        I[idx] = var(ii) * var(ngens + jj) - var(jj) * var(ngens + ii);
     }
 }
 
 "Relations:"; idx;
 "Ideal:"; I;
 
-// ── Step 3: Two-sided Gröbner basis ─────────────────────────────
-"";
+// ── Gröbner basis ───────────────────────────────────────────────
 "Computing two-sided Gröbner basis...";
 ideal G = twostd(I);
-"Gröbner basis size:"; size(G);
 "Gröbner basis:"; G;
 
-// ── Step 4: Build nuclear braid for N(1,2) (tritium) ────────────
-// Nucleons: 1 proton, 2 neutrons
+// ── Inverse in Hecke algebra ────────────────────────────────────
+// From T^2 = (q-q^{-1})T + 1:
+//   T * (T - (q-q^{-1})) = 1
+//   T^{-1} = T - (q - q^{-1})
+
+// ── Build N(1,2) = tritium ──────────────────────────────────────
 // Block ordering: [p, n, n]
-// Crossings:
-//   (1,2): p-n mixed → (1+q^2)/2 * x(1) - q*(q^(1/2)-q^(-1/2))/2
-//   (1,3): p-n mixed → same at x(1)
-//   (2,3): n-n negative → q^2 * x(2) - q*(q^(1/2)-q^(-1/2))
+// Crossing (1,2): p-n mixed at generator x(1)
+//   = x(1) - ha/2  [= (T + T^{-1})/2 = T - ha/2]
+// Crossing (1,3): p-n mixed at generator x(1)
+//   = x(1) - ha/2
+// Crossing (2,3): n-n at generator x(2)
+//   = x(2) - ha  [= T^{-1} = T - ha]
 
 "";
-"Building N(1,2) = tritium...";
+"=== N(1,2) = tritium [p, n, n] ===";
 
-// Since we can't compute sqrt(q) in Singular's parameter field,
-// we'll work with the substitution:
-// Let s = q^(1/2), so q = s^2.
-// But Singular doesn't support this directly.
-// Instead: use the Hecke algebra relation directly.
-// σ_i^{-1} = (1/q) σ_i + (1/q - 1) = q^{-1}(σ_i - 1) + q^{-1}
-//          = (σ_i + q - 1) / q  ... no, from σ^2 = (q-q^{-1})σ + 1:
-// σ^{-1} = σ/(q-q^{-1}+1/σ)... this is circular.
-//
-// Actually from the quadratic: σ^2 - (q-1/q)σ - 1 = 0
-// So σ = ((q-1/q) ± sqrt((q-1/q)^2 + 4)) / 2
-// And σ^{-1} = -1/σ = q/(q*σ - (q^2-1)) ... still needs σ.
-//
-// The STANDARD approach: in the Hecke algebra with T-basis,
-// T_i^{-1} = T_i - (q - 1) = T_i + 1 - q
-// when the relation is T_i^2 = (q-1)T_i + q.
-//
-// With OUR convention T_i^2 = (q-q^{-1})T_i + 1:
-// T_i^{-1} = (1/q^2)(T_i - (q - q^{-1}))... no.
-// From T^2 = (q-q^{-1})T + 1: T(T - (q-q^{-1})) = 1
-// So T^{-1} = T - (q - q^{-1})
-// Check: T * (T - (q-1/q)) = T^2 - (q-1/q)T = (q-1/q)T + 1 - (q-1/q)T = 1 ✓
+// Build step by step using lpMult for proper non-comm multiplication.
+// lpMult(f, g) multiplies in the letterplace ring with position shifting.
 
-"T_i inverse: T_i - (q - 1/q)";
-
-// For the nuclear braid:
-// p-p crossing: T_i
-// n-n crossing: T_i^{-1} = T_i - (q - 1/q)
-// mixed: (T_i + T_i^{-1})/2 = (2*T_i - (q-1/q))/2 = T_i - (q-1/q)/2
-
-// N(1,2) block ordering [p, n, n]:
-// crossing (1,2): p-n mixed at generator x(1)
-//   = x(1) - (q-1/q)/2
-// crossing (1,3): p-n mixed at generator x(1)
-//   = x(1) - (q-1/q)/2
-// crossing (2,3): n-n at generator x(2)
-//   = x(2) - (q-1/q)
-
-// Product: [x(1) - (q-1/q)/2] * [x(1) - (q-1/q)/2] * [x(2) - (q-1/q)]
-// First multiply in the letterplace ring, then reduce.
-
-poly ha = q - 1/q;
-
-// First crossing at x(1)
+// Crossing 1: mixed at x(1)
 poly c1 = var(1) - ha/2;
+"Crossing 1 (p-n at x1):"; c1;
 
-// Second crossing at x(1): need to multiply c1 * (x(1) - ha/2)
-// But in letterplace, we need to shift positions.
-// c1 is at position 1. The second factor needs position 2.
-// c1 * c2 where c2 uses var(ngens+1) = x(1)(2)
-
-poly braid = (var(1) - ha/2) * (var(ngens+1) - ha/2);
-"After 2 crossings at x(1):"; braid;
+// Crossing 2: mixed at x(1) — multiply c1 * (x(1) - ha/2)
+// Use lpMult for correct letterplace multiplication
+poly c2_factor = var(1) - ha/2;
+poly braid12 = lpMult(c1, c2_factor);
+"After crossing 2 (raw):"; braid12;
 
 // Reduce
-braid = reduce(braid, G);
-"Reduced:"; braid;
+braid12 = reduce(braid12, G);
+"After crossing 2 (reduced):"; braid12;
 
-// Third crossing at x(2): var(2) at position depends on current word length
-// This is getting complex in raw letterplace. Use lpMult for proper
-// non-commutative multiplication.
+// Crossing 3: n-n at x(2) — multiply by (x(2) - ha)
+poly c3_factor = var(2) - ha;
+poly braid123 = lpMult(braid12, c3_factor);
+"After crossing 3 (raw):"; braid123;
+
+// Reduce
+braid123 = reduce(braid123, G);
+"N(1,2) REDUCED:"; braid123;
+
+// ── Build N(2,1) = 3He (daughter) ───────────────────────────────
+// Block ordering: [p, p, n]
+// Crossing (1,2): p-p positive at x(1) = x(1)
+// Crossing (1,3): p-n mixed at x(1) = x(1) - ha/2
+// Crossing (2,3): p-n mixed at x(2) = x(2) - ha/2
 
 "";
-"=== For proper computation, use lpMult from freegb.lib ===";
-"The letterplace multiplication handles position shifting automatically.";
+"=== N(2,1) = 3He [p, p, n] ===";
 
-// Actually, let's use the simpler approach: just build the element
-// directly in the letterplace ring and reduce.
+poly d1 = var(1);  // p-p
+poly d12 = lpMult(d1, var(1) - ha/2);  // * mixed
+d12 = reduce(d12, G);
+"After 2 crossings (reduced):"; d12;
 
-// For A=3, the full braid word has at most 3 crossings.
-// The reduced form should have at most 2 generators (max word length 2).
+poly d123 = lpMult(d12, var(2) - ha/2);  // * mixed at x(2)
+d123 = reduce(d123, G);
+"N(2,1) REDUCED:"; d123;
+
+// ── Difference ──────────────────────────────────────────────────
+"";
+"=== DIFFERENCE N(1,2) - N(2,1) ===";
+poly delta = braid123 - d123;
+"Delta:"; delta;
+
+// ── Evaluate at q = 11/10 ───────────────────────────────────────
+"";
+"=== NUMERICAL EVALUATION at q = 11/10 ===";
+map ev = R, 11/10;
+"N(1,2) at q=1.1:"; ev(braid123);
+"N(2,1) at q=1.1:"; ev(d123);
+"Delta at q=1.1:"; ev(delta);
+
+// ── Markov trace ────────────────────────────────────────────────
+// For the reduced form f = a1*x(1) + a2*x(2) + a12*x(1)*x(2) + ... + c
+// The Markov trace is computed by:
+//   tr(x(i)) = z (Markov parameter)
+//   tr(x(i)*x(j)) = z^2 if i >= j (after cyclic permutation)
+//   tr(1) = 1
+// where z = 1/(q^{1/2} + q^{-1/2})
+//
+// For A=3: z ≈ 0.4993 at q=1.110
+// The trace of the reduced form gives the Jones polynomial
+// of the nuclear link.
 
 "";
-"=== VERIFICATION: Markov trace from reduced form ===";
-"For A=3, the identity coefficient in the reduced braid gives";
-"part of the Markov trace. The full trace requires summing";
-"z*a + b where a = coeff of x(i)(1) and b = constant term.";
-"";
-"z = 1/(q^(1/2) + q^(-1/2)) ≈ 0.4993 at q=1.110";
+"=== The reduced forms above are the Gröbner normal forms ===";
+"The Markov trace extracts the link invariant from these.";
+"For A=3: the reduced form should be a linear combination of";
+"  1, x(1), x(2), x(1)*x(2), x(2)*x(1)";
+"and the Markov trace maps each to a power of z.";
 
 exit;
