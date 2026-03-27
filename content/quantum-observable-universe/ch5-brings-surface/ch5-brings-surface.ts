@@ -115,6 +115,7 @@ export default chapter({
         // Torus knot generators from χ = -6
         "torus-knot-generators",
         "embeddability-closure",
+        "torus-embeddable-complete",
         // Fundamental fermions (Descartes-specific assignments)
         "up-quark",
         "down-quark",
@@ -137,6 +138,7 @@ export default chapter({
         "chirality-trefoil-electron-positron",
         "stable-nucleus",
         "torus-hopf-stability",
+        "unmapped-torus-knots",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
