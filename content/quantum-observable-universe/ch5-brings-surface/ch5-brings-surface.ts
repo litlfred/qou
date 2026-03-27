@@ -116,6 +116,7 @@ export default chapter({
         "torus-knot-generators",
         "embeddability-closure",
         "torus-embeddable-complete",
+        "generation-completeness",
         // Fundamental fermions (Descartes-specific assignments)
         "up-quark",
         "down-quark",
