@@ -103,6 +103,7 @@ export default chapter({
         "betti-numbers-brane",
         "q-harmonic-basis-brane",
         "weight-space-decomposition-brane",
+        "algebraic-filter-classification",
         "algebraic-filter",
         "distributional-connection",
       ],

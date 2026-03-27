@@ -36,6 +36,7 @@ export default chapter({
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
         // Lagrange resolvents and braid-group action
+        "lagrange-resolvent-transform",
         "lagrange-resolvents",
         "braid-group-action",
         // Color tube coordinates
@@ -56,6 +57,7 @@ export default chapter({
         "color-tube-subloci",
         // Bundle structures and smoothness
         "chiral-bundles",
+        "brings-smoothness-resolution",
         "brings-smoothness",
         "briggs-klein-chart",
         "radial-projection",
@@ -140,6 +142,7 @@ export default chapter({
         "metallic-character-knot",
         "francium-extremal-metal",
         "hydrogen-knot-structure",
+        "hydrogen-shell-writhe",
         "hydrogen-orbitals",
         // The Descartes theorem
         "descartes",

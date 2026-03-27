@@ -142,6 +142,7 @@ export default chapter({
       label: "sec:hadrons-knot-composites",
       blocks: [
         "hadron",
+        "hadron-operations-closure",
         "hadron-operations",
         "knot-factorization",
         "localized-hadron",
@@ -149,6 +150,7 @@ export default chapter({
         "skein-generation",
         "skein-generation-proof",
         "knot-particle-generation",
+        "knot-particle-correspondence",
         "knot-particle-dictionary",
         "bundle-initial-conditions",
         "bundle-isotopy-equivalence",
