@@ -74,7 +74,7 @@ complementary golden angle), but the elliptic fiber is not:
 
 | | $q = 1/\varphi^2$ | $q = \varphi^2$ |
 |---|---|---|
-| **Elliptic fiber $E_q$** | Singular (node) | Smooth ($\Delta = -200$, $j = 160$) |
+| **Elliptic fiber $\mathcal{E}_q$** | Singular (node) | Smooth ($\Delta = -200$, $j = 160$) |
 | **Julia set** | Siegel boundary, maximal $d_H$ | Same $d_H$ (golden complement) |
 | **Reeb flow** | No smooth carrier | Strong torsion, deep quantum |
 | **Physics** | No stable chiral structure | Stable; Big Bang territory |

@@ -4,7 +4,7 @@ $\beta \in B_n$ representing the linking.  The *crossing energy*
 of $H$ is
 
 $$
-  E_{\mathrm{cross}}(H)
+  \mathfrak{E}_{\mathrm{cross}}(H)
   \;=\;
   \sum_{\text{crossings in } \beta}
   \begin{cases}
@@ -23,7 +23,7 @@ $$
 $$
 
 The crossing energy measures the net Skein weight of the composite:
-positive $E_{\mathrm{cross}}$ indicates repulsion dominates,
+positive $\mathfrak{E}_{\mathrm{cross}}$ indicates repulsion dominates,
 negative indicates binding dominates.  This quantity is computed
 entirely from the $R$-matrix braiding
 ([R-matrix](#rem:r-matrix-braiding)) of

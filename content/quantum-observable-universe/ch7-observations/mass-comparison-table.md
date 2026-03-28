@@ -42,7 +42,7 @@ to six significant figures with $q = 1.10997$.
 
 | Nucleus | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |---------|-------------|-------------|-----------|----------------|--------|
-| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta E_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
+| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta \mathfrak{E}_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
 | Binding ($D$) | | $\Delta\text{Skein}$ | $2.224$ | $2.225$ | CODATA |
 | ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_9) - \Delta E$ | $2808.39$ | $2808.39$ | AME2020 |
 | ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$ | $3727.38$ | $3727.38$ | AME2020 |

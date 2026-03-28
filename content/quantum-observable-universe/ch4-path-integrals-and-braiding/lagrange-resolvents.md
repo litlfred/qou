@@ -1,14 +1,13 @@
-Let $\zeta=e^{2\pi i/5}$.  Apply the discrete Fourier transform to the
-coordinates $x_j$ of
-([Bring's surface](#def:brings-surface)):
+Let $\zeta=e^{2\pi i/n}$.  The discrete Fourier transform on $C_n$
+([Lagrange resolvent transform](#prop:lagrange-resolvent-transform))
+diagonalises the cyclic action: $\sigma(w_k) = \zeta^{-k} w_k$.
+Any $C_n$-invariant polynomial constraint on the coordinates $x_j$
+transforms to constraints on $C_n$-equivariant combinations of the
+Fourier modes $w_k$.
 
-$$
-  w_k \;=\; \frac{1}{\sqrt{5}}\sum_{j=0}^{4}\zeta^{kj}\,x_j,
-  \qquad k\in\{0,1,2,3,4\}.
-$$
-
-Under this change of basis the three defining power-sum equations become the
-following *spectral forms*:
+For $n = 5$
+([Bring's surface](#def:brings-surface)), the three power-sum
+equations become:
 
 ```tex
 \begin{align}
@@ -24,6 +23,7 @@ following *spectral forms*:
 \end{align}
 ```
 
-The cyclic permutation $\sigma\colon x_j\mapsto x_{j+1}$ acts by
-$\sigma(w_k)=\zeta^{-k}w_k$, so the $C_5$ symmetry is manifest as a phase
-rotation $w_k\mapsto\zeta^k\,w_k$.
+The quadric pairs conjugate modes ($w_k$ with $w_{5-k}$); the
+cubic pairs squared modes in the skip-one pattern.  These are the
+$C_5$-equivariant invariants $h_2$ and $h_3$
+([aggregate color quantities](#rem:aggregate-color-quantities)).

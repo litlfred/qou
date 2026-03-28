@@ -225,7 +225,7 @@ $$
 The binding energy at shell $n$ (relative to ionization):
 
 $$
-  E_{\mathrm{bind}}(n)
+  \mathfrak{E}_{\mathrm{bind}}(n)
   \;=\;
   E_{\infty} - E_n
   \;\propto\;
@@ -250,7 +250,7 @@ low-$n$ hydrogen spectroscopy.
 | 4 | 1.504 | 1.296 | 1.232 | 0.063 |
 | 5 | 1.665 | 1.418 | 1.348 | 0.040 |
 
-The binding energy $E_{\mathrm{bind}}(n) = E_\infty - E_n
+The binding energy $\mathfrak{E}_{\mathrm{bind}}(n) = E_\infty - E_n
 \propto 1/\lambda_+^n$ gives the characteristic Rydberg
 ratios for low $n$.
 

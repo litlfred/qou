@@ -165,11 +165,11 @@ The chiral elliptic curve
 at the substrate parameter $q$ is
 
 $$
-  E_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
+  \mathcal{E}_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
-Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ has a single
+Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ has a single
 connected component.
 
 **Stable hadrons as lattice points on the stability cubic.**
@@ -194,7 +194,7 @@ determined exactly.
 
 The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
-lifts this curve to the genus-$1$ elliptic curve $E_q$ —
+lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
 then acquire an interpretation as integer points of $\mathcal{E}_p$ —
 remains an open question.  The structural parallel between the
@@ -206,7 +206,7 @@ is suggestive but not yet proven.
 
 - The stable nuclei are lattice points on the stability cubic
   (exact, from the Skein binding Lagrangian).
-- The Descartes elliptic curve $E_q$ exists and has the stated
+- The Descartes elliptic curve $\mathcal{E}_q$ exists and has the stated
   invariants (exact, from the chiral fibration).
 - The stability cubic and the chiral cubic share their algebraic
   origin in the Bring's surface (exact, by construction).

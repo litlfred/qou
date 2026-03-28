@@ -13,10 +13,10 @@ $$
 satisfying the **stability condition**
 
 $$
-  E_{\mathrm{cross}}(H_p) \;<\; 0
+  \mathfrak{E}_{\mathrm{cross}}(H_p) \;<\; 0
 $$
 
-where $E_{\mathrm{cross}}$ is the crossing energy
+where $\mathfrak{E}_{\mathrm{cross}}$ is the crossing energy
 ([crossing energy](#def:crossing-energy)).  The subscript $p$
 is the localization point: it determines the colour sector of the
 exceptional divisor $\mathcal{S}_p$ in which the constituents are coupled.

@@ -21,7 +21,7 @@ The nuclear binding energy is the quantum dilogarithm volume
 of the Markov trace, normalised by $\hbar_q^2$:
 
 $$
-  E_{\mathrm{bind}}(p, n)
+  \mathfrak{E}_{\mathrm{bind}}(p, n)
   \;=\;
   \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
@@ -90,7 +90,7 @@ golden rule:
 $$
   t_{1/2}
   \;=\;
-  \frac{\ln 2 \cdot 2\,N_v^4}{243\,E_{\times} \cdot \mu_0}
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathfrak{E}_{\times} \cdot \mu_0}
   \;\cdot\;
   \frac{1}{[2]_q \;\cdot\; s^2
     \;\cdot\; f(Z_d, \mathcal{Q}_q)}
@@ -102,9 +102,9 @@ $$
 $$
 
 where $s = q^{1/2} - q^{-1/2}$,
-$E_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
+$\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
 dimensional scale, and $N_v$ is the effective crossing count
-of the weak scale ($v = N_v\,E_{\times}\,\mu_0$).
+of the weak scale ($v = N_v\,\mathfrak{E}_{\times}\,\mu_0$).
 The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
 Every quantity is determined by the Hecke algebra computation

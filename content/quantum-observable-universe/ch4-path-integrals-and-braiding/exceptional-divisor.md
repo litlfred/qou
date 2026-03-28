@@ -6,7 +6,8 @@ $$
   O(p) \;=\; p + R\,N(p).
 $$
 
-The *exceptional divisor* at $p$ is the $\mathbb{P}^1(\mathbb{C})$ fibre
+The *exceptional divisor* at $p$ is the fibre of the state bundle
+$\mathcal{S}$ at $p$ --- the $\mathbb{P}^1(\mathbb{C})$ fibre
 
 $$
   \mathcal{S}_p \;=\; \pi^{-1}(p)

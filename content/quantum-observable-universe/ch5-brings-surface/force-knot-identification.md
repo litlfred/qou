@@ -18,7 +18,7 @@ and antisymmetric channels
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  E_{\mathrm{cross}} \;=\;
+  \mathfrak{E}_{\mathrm{cross}} \;=\;
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
   \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
@@ -32,8 +32,8 @@ categorical level.  Electromagnetic charge is therefore the
 energy:
 
 $$
-  Q(K) \;=\; \frac{1}{2}\bigl(E_{\mathrm{cross}}(K)
-  - E_{\mathrm{cross}}(\sigma(K))\bigr).
+  Q(K) \;=\; \frac{1}{2}\bigl(\mathfrak{E}_{\mathrm{cross}}(K)
+  - \mathfrak{E}_{\mathrm{cross}}(\sigma(K))\bigr).
 $$
 
 This involution descends from three interlocking structures on the
