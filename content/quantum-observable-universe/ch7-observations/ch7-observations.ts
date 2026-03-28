@@ -127,6 +127,7 @@ export default chapter({
         "hopf-diquark",
         "borromean-hopf-energy-crossover",
         "color-superconductivity-borromean",
+        "eos-borromean-cfl",
         "cfl-neutron-star-observables",
       ],
     }),
