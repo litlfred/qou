@@ -178,6 +178,7 @@ export default chapter({
         // Elliptic stability conjecture
         "elliptic-stability-locus",
         "skein-shell-correction",
+        "shell-closure-normal-form",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
