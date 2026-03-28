@@ -37,9 +37,13 @@ structure SU2DaggerData where
 /-- The dagger data for Rep(SU(2)). -/
 -- Ref: [manuscript] §1
 def su2Dagger : SU2DaggerData where
-  invariant_ip_unique := True
-  involutive := True
-  contravariant := True
-  positive_definite := True
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  invariant_ip_unique := sorry
+  -- Ref: [manuscript] Ch. 2
+  involutive := sorry
+  -- Ref: [manuscript] Ch. 2
+  contravariant := sorry
+  -- Ref: [manuscript] Ch. 2
+  positive_definite := sorry
 
 end QOU.Examples

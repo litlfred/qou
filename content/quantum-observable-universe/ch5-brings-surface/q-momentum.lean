@@ -28,12 +28,15 @@ noncomputable def qMomentum (q : ℝ) (crossingSigns : List ℤ) : ℝ :=
 -- Ref: [manuscript] §6/q-momentum
 -- The limit q → 1 of (q^{2ε} - 1)/(q² - 1) = ε by L'Hôpital.
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem qMomentum_classical_limit :
-    ∀ (signs : List ℤ),
-    -- In the q → 1 limit, each term → ε
+theorem qMomentum_classical_limit (signs : List ℤ) :
+    -- In the q → 1 limit, each term (q^{2ε} - 1)/(q² - 1) → ε
     -- So q-momentum → writhe = Σε
-    True := by
-  intro _; trivial
+    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
+      |qMomentum q signs - (signs.foldl (fun acc s => acc + ↑s) (0 : ℝ))| < ε := by
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Each term (q^{2ε} - 1)/(q² - 1) → ε by L'Hôpital as q → 1
+  -- Ref: [manuscript] Ch. 6, §q-momentum
+  sorry
 
 /-- The writhe of a braid word (sum of crossing signs). -/
 -- Ref: [manuscript] §6/q-momentum

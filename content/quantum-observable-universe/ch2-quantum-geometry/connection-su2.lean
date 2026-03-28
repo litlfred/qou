@@ -35,9 +35,9 @@ structure SU2ConnectionData where
   curvatureRank : ℕ
   /-- Curvature F_∇ ∈ Ω²(A) of rank 3. -/
   curv_rank : curvatureRank = 3
-  /-- The Leibniz rule holds. -/
+  /-- The Leibniz rule holds: ∇(f·g) = (∇f)·g + f·(∇g). -/
   leibniz : Prop
-  /-- Curvature is A-linear (Bianchi identity). -/
+  /-- Curvature is A-linear (Bianchi identity): F_∇(f·s) = f·F_∇(s). -/
   curvature_linear : Prop
 
 /-- The connection data for SU(2). -/
@@ -47,8 +47,10 @@ def su2Connection : SU2ConnectionData where
   num_comp := rfl
   curvatureRank := 3
   curv_rank := rfl
-  leibniz := True
-  curvature_linear := True
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  leibniz := sorry
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  curvature_linear := sorry
 
 /-- A gauge potential on SU(2) has 3 components. -/
 theorem su2_gauge_components : su2Connection.numComponents = 3 := rfl

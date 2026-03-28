@@ -28,6 +28,7 @@ def beta_stability_continuous (c : ℝ) (A : ℝ) : ℝ :=
     then n = round(A) - p.  This is the integer minimiser of the
     convex quadratic E(p, A) at fixed p. -/
 def stable_neutron_number (q λ_C a_A : ℝ) (p : ℕ) : ℕ :=
+  -- Ref: [manuscript] Ch. 6, §3
   sorry -- requires solving the cubic t³ = 2p(1 + ct²) for t
 
 /-- Witness: at q = 1.10997, λ_C = 3.334, a_A = 23.29,
@@ -81,6 +82,7 @@ def observed_neutron_numbers : List (ℕ × ℕ) :=
 theorem stable_neutron_max_error :
     ∀ entry ∈ stable_neutron_witness.zip observed_neutron_numbers,
       |Int.ofNat entry.1.2 - Int.ofNat entry.2.2| ≤ 8 := by
+  -- Ref: [manuscript] Ch. 6, §3
   sorry
 
 end

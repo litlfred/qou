@@ -50,7 +50,8 @@ def su2Reeb : SU2ReebData where
   gen_is_three := rfl
   contactFormIndex := 3
   contact_is_three := rfl
-  normalisation := True
+  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+  normalisation := sorry
   numHorizontal1Forms := 2
   horiz_count := rfl
 

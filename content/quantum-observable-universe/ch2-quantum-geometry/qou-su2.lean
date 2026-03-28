@@ -39,11 +39,14 @@ structure SU2ObservabilityData where
 /-- SU(2) satisfies all observability conditions. -/
 -- Ref: [manuscript] §1
 def su2Observable : SU2ObservabilityData where
-  haar_faithful := True
+  -- Ref: [manuscript] Ch. 2
+  haar_faithful := sorry
   adjoint_dim := 3
-  adjoint_irreducible := True
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  adjoint_irreducible := sorry
   adj_dim_eq := rfl
-  volume_form_exists := True
+  -- Ref: [manuscript] Ch. 2
+  volume_form_exists := sorry
 
 /-- The adjoint of SU(2) has dimension 3 (spin-1). -/
 theorem su2_adjoint_dim : su2Observable.adjoint_dim = 3 := rfl

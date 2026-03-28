@@ -38,8 +38,11 @@ structure SU2EmergenceChain where
 /-- The SU(2) emergence chain is valid. -/
 -- Ref: [manuscript] §1
 def su2Emergence : SU2EmergenceChain where
-  volume_forces_det_one := True
-  dagger_forces_unitary := True
-  gauge_group_is_su2 := True
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  volume_forces_det_one := sorry
+  -- Ref: [manuscript] Ch. 2
+  dagger_forces_unitary := sorry
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  gauge_group_is_su2 := sorry
 
 end QOU.Examples

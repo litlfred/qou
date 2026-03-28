@@ -75,10 +75,17 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     normal form alone. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- Ref: [manuscript] Ch. 6, §groebner-shirshov-energy
+-- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- Path independence: both reduction paths produce the same total energy change.
+-- Follows from confluence (diamond lemma) of the Gröbner-Shirshov basis.
 axiom energy_path_independent (q : ℝ) (hq : 1 < q)
     (initial : List (List ℕ × ℝ))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
-    : True  -- both paths produce the same total energy change
+    : totalEnergyChange q (path1.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none) =
+      totalEnergyChange q (path2.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none)
 
 /-- The beta-decay energy difference is always negative:
     the daughter has lower energy than the parent.

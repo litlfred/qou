@@ -38,8 +38,11 @@ structure SU2FrobeniusData where
 /-- The Frobenius data for SU(2). -/
 -- Ref: [manuscript] §1
 def su2Frobenius : SU2FrobeniusData where
-  haar_normalised := True
-  haar_invariant := True
-  frobenius_holds := True
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  haar_normalised := sorry
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  haar_invariant := sorry
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  frobenius_holds := sorry
 
 end QOU.Examples

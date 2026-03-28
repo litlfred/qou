@@ -39,7 +39,8 @@ structure SU2SpinLabels where
 def su2SpinLabels : SU2SpinLabels where
   dim := fun twice_j => twice_j + 1
   dim_formula := fun _ => rfl
-  completely_reducible := True
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  completely_reducible := sorry
 
 /-- V₀ (trivial) has dimension 1. -/
 theorem su2_dim_trivial : su2SpinLabels.dim 0 = 1 := rfl

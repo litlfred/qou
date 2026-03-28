@@ -44,8 +44,8 @@ structure SU2HodgeData where
   target_two : hodgeTarget 2 = 1
   /-- ⋆ maps Ω³ → Ω⁰. -/
   target_three : hodgeTarget 3 = 0
-  /-- ⋆² = id (involutivity). -/
-  involutive : Prop
+  /-- ⋆² = id (involutivity): applying hodge twice returns to the same degree. -/
+  involutive : ∀ k, hodgeTarget (hodgeTarget k) = k
 
 /-- The Hodge star data for SU(2). -/
 -- Ref: [manuscript] §1
@@ -57,7 +57,7 @@ def su2Hodge : SU2HodgeData where
   target_one := rfl
   target_two := rfl
   target_three := rfl
-  involutive := True
+  involutive := fun k => by omega
 
 /-- Hodge star on a 3-manifold maps Ω¹ to Ω². -/
 theorem su2_hodge_one_to_two : su2Hodge.hodgeTarget 1 = 2 := rfl

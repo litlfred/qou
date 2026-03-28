@@ -48,6 +48,7 @@ noncomputable def KnotComposite.coulombCharge (H : KnotComposite) : ℝ :=
 theorem pair_crossing_energy (H : KnotComposite) :
     H.crossingEnergy + H.mirror.crossingEnergy =
     (H.pos_crossings - H.neg_crossings : ℤ) * (H.q - H.q⁻¹) := by
+  -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
   sorry
 
 /-- Coulomb charge reverses under mirror. -/

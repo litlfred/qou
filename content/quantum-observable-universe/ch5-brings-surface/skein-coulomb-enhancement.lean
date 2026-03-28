@@ -51,6 +51,7 @@ theorem skeinCoulombFactor_at_zero :
   ring_nf
   -- 0 / (1 - 1) is 0/0, which is 0 by convention in Lean.
   -- The physical limit is 1. We state this as a limit instead.
+  -- Ref: [manuscript] §6/skein-coulomb-enhancement
   sorry
 
 /-- The physical statement: lim_{η→0⁺} F_q(η) = 1. -/

@@ -77,10 +77,15 @@ theorem energy_additive (vols : List ℝ) :
     between parent and daughter). -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
+    (h_len : vols_par.length = vols_dau.length)
     (h_tail : ∀ i, p < i → i < vols_par.length →
       vols_par[i]! = vols_dau[i]!) :
     -- The energy difference comes only from generators 0..p
-    True := trivial
+    nuclearEnergy vols_par - nuclearEnergy vols_dau =
+      nuclearEnergy (vols_par.take (p + 1)) - nuclearEnergy (vols_dau.take (p + 1)) := by
+  -- Ref: [manuscript] Ch. 6, §generator-volume-decomposition
+  -- Generators i > p have identical volumes, so they cancel in the difference
+  sorry
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition

@@ -45,8 +45,10 @@ def su2FiberAdjoint : SU2FiberAdjointData where
   adj_dim := rfl
   orbitDim := 2
   orbit_dim := rfl
-  no_invariant_vectors := True
-  embedding_mono := True
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  no_invariant_vectors := sorry
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  embedding_mono := sorry
 
 /-- The adjoint of SU(2) has dimension 3. -/
 theorem su2_fiber_adj_dim : su2FiberAdjoint.adjointDim = 3 := rfl

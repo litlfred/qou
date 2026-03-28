@@ -22,6 +22,7 @@ def hoCumulative (N : ℕ) : ℕ := (N + 1) * (N + 2) * (N + 3) / 3
 /-- HO cumulative = sum of shell sizes. -/
 theorem hoCumulative_eq_sum (N : ℕ) :
     hoCumulative N = (range (N + 1)).sum hoShellSize := by
+  -- Ref: [manuscript] Ch. 4
   sorry
 
 /-- HO closures without spin-orbit. -/

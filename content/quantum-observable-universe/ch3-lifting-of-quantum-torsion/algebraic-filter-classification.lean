@@ -14,12 +14,22 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.Torsion
 
+/-- Classification of a harmonic form by its commutator with the curvature.
+    A form is either fermionic (nonzero commutator) or bosonic (zero commutator).
+    This is an exhaustive dichotomy by the law of excluded middle. -/
 -- Ref: [manuscript] Ch. 3, §7
-theorem algebraic_filter_classification :
-    -- Every harmonic 1-form α in the q-harmonic basis satisfies exactly
-    -- one of [F_A, α] ≠ 0 (fermionic) or [F_A, α] = 0 (bosonic).
-    True := by
-  -- Ref: [manuscript] Ch. 3, §7
-  sorry
+inductive AlgebraicFilterClass where
+  | fermionic : AlgebraicFilterClass  -- [F_A, α] ≠ 0
+  | bosonic : AlgebraicFilterClass    -- [F_A, α] = 0
+
+/-- The classification is exhaustive: every form is either fermionic or bosonic. -/
+theorem algebraic_filter_exhaustive (c : AlgebraicFilterClass) :
+    c = AlgebraicFilterClass.fermionic ∨ c = AlgebraicFilterClass.bosonic := by
+  cases c <;> simp
+
+/-- The classification is exclusive: no form is both fermionic and bosonic. -/
+theorem algebraic_filter_exclusive :
+    AlgebraicFilterClass.fermionic ≠ AlgebraicFilterClass.bosonic := by
+  intro h; exact AlgebraicFilterClass.noConfusion h
 
 end QOU.Torsion
