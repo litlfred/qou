@@ -79,7 +79,6 @@ def observed_neutron_numbers : List (ℕ × ℕ) :=
 theorem stable_neutron_max_error :
     ∀ entry ∈ stable_neutron_witness.zip observed_neutron_numbers,
       |Int.ofNat entry.1.2 - Int.ofNat entry.2.2| ≤ 8 := by
-  -- Ref: [manuscript] Ch. 6, §3
-  sorry
+  native_decide
 
 end

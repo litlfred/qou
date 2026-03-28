@@ -53,8 +53,14 @@ theorem CoulombCharge.neutral_iff_zero (C : CoulombCharge) :
     rw [h]; ring
   · intro h
     simp only [value, isNeutral] at h ⊢
-    have h' : (C.numPositive : ℝ) - C.numNegative = 0 := by linarith [div_eq_zero_iff.mp h]
-    exact_mod_cast h'
+    have h2 : (2 : ℝ) ≠ 0 := by norm_num
+    have h' : ((C.numPositive : ℝ) - C.numNegative) / 2 = 0 := h
+    rw [div_eq_zero_iff] at h'
+    cases h' with
+    | inl hsub =>
+      have : (C.numPositive : ℝ) = (C.numNegative : ℝ) := sub_eq_zero.mp hsub
+      exact_mod_cast this
+    | inr h2z => exact absurd h2z h2
 
 /-- The crossing energy Coulomb correction term is Q(H) · (q − q⁻¹).
     This is antisymmetric under q ↔ q⁻¹ and vanishes at q = 1. -/
