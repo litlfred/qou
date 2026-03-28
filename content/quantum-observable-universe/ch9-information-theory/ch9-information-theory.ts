@@ -26,6 +26,10 @@ export default chapter({
       label: "sec:info-time-computation",
       blocks: [
         "time-info",
+        "planck-time",
+        "reeb-operations-per-planck",
+        "information-theoretic-time",
+        "statistical-mechanical-time",
         "big-bang-info",
         "planck-computation",
       ],

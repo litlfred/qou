@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "def:quantum-planck-constant",
+  interprets: "def:planck-time",
   label: "rem:discrete-planck-step",
   title: "Discrete time at the Big Bang: one Planck step of Reeb flow",
   tags: [
