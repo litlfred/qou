@@ -60,8 +60,8 @@ async function loadAllBlocks(): Promise<BlockInfo[]> {
           if (label) {
             blocks.push({ label, uses, rootName, tsPath });
           }
-        } catch {
-          // skip blocks that fail to load
+        } catch (e) {
+          console.warn(`  ⚠ Failed to load block: ${tsPath}`, e);
         }
       }
     }

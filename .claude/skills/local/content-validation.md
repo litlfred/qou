@@ -147,18 +147,27 @@ be a proposition/theorem, not a definition.
 
 **Conditional definitions**: Some definitions are only meaningful given
 upstream results (e.g. `def:maximal-torus` requires `thm:su2-emergence`).
-These remain definitions but MUST list the upstream theorem in `uses[]`.
+These remain definitions but MUST list the immediate upstream theorem in
+`uses[]` if it is a direct prerequisite.
 
 ## Dependency completeness checks
+
+**Immediate neighbors only.** The `uses[]` array lists only direct
+dependencies — not the full transitive chain. If A→B and B→C, then A
+lists only B. Run `bun run pipeline/prune-transitive-deps.ts` to
+enforce this after edits.
 
 When auditing `uses[]` arrays:
 
 1. **Narrative cross-refs**: Every `[text](#label)` in the `.md` file should
-   have a corresponding entry in `uses[]` (unless it's a forward reference
-   or example/remark reference).
+   have a corresponding entry in `uses[]` only if the referenced block is
+   a **direct** dependency (not if it's already reachable transitively
+   through another `uses[]` entry). Forward references and example/remark
+   references do not need entries.
 2. **Gauge group references**: Any block that references `G`, `SU(2)`,
-   or the gauge group should depend on `thm:su2-emergence` (directly or
-   through a block like `def:maximal-torus` that already depends on it).
+   or the gauge group should depend on `thm:su2-emergence` — but only
+   through the nearest intermediate block (e.g. `def:maximal-torus`),
+   not by listing `thm:su2-emergence` directly when it's already reachable.
 3. **Existence links**: Every definition that bundles fields should have a
    corresponding existence theorem (`thm:<name>-exists`) that proves the
    fields can be constructed from upstream structures.
