@@ -131,7 +131,7 @@ $\alpha = \alpha_s$.  The vertex $\delta q$ formula predicts
 $$
   \delta q(gg \to H)
   \;=\;
-  0.110 \times \frac{0.118}{2\pi} \times \frac{1}{6}
+  0.10998 \times \frac{0.118}{2\pi} \times \frac{1}{6}
   \;=\; 3.4 \times 10^{-4}
 $$
 
