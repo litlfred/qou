@@ -55,7 +55,7 @@ to the classical $\wp$-function normalisation.
 
 | Regime | $q$ | Lattice shape | Physics |
 |--------|-----|---------------|---------|
-| Classical | $q = 1$ | $\Lambda_1$ rectangular ($\tau_1 \in i\mathbb{R}$) | Degenerate curve $E_1$; no crossing asymmetry |
+| Classical | $q = 1$ | $\Lambda_1$ rectangular ($\tau_1 \in i\mathbb{R}$) | Degenerate curve $\mathcal{E}_1$; no crossing asymmetry |
 | Physical | substrate $q$ | $\Lambda_q$ rhombic ($\operatorname{Im}(\tau_q) \approx 1.07$) | Our universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\Lambda_q \to$ hexagonal ($\tau_q \to e^{2\pi i/3}$) | $j \to 0$; CM lattice; maximal symmetry |
 

@@ -45,6 +45,8 @@ from datetime import datetime, timezone
 
 import numpy as np
 from scipy import linalg as la
+from scipy.sparse import linalg as sla
+from scipy.sparse import csr_matrix
 
 
 # ── Cardioid parameterization ──────────────────────────────────────────
@@ -149,9 +151,17 @@ def build_transfer_operator_matrix(c, grid_points, t):
 
 
 def leading_eigenvalue(L):
-    """Compute the leading (largest magnitude) eigenvalue of L."""
-    eigenvalues = la.eigvals(L)
-    return np.max(np.abs(eigenvalues))
+    """Compute the leading (largest magnitude) eigenvalue of L.
+    Uses sparse eigs for large matrices, dense eigvals for small."""
+    n = L.shape[0]
+    if n <= 50:
+        eigenvalues = la.eigvals(L)
+        return np.max(np.abs(eigenvalues))
+    # Sparse solver: only compute the 1 largest-magnitude eigenvalue
+    L_sparse = csr_matrix(L)
+    eigenvalues = sla.eigs(L_sparse, k=1, which='LM',
+                           return_eigenvectors=False)
+    return np.abs(eigenvalues[0])
 
 
 # ── Bisection to find d_H ────────────────────────────────────────────
