@@ -7,7 +7,7 @@ we ask what its mechanics *do*.  Category theory is the natural
 language for this, because it describes structure and transformation
 without committing to any particular ontology.
 
-The starting point is a collection of plain physical facts.
+The starting point is a collection of observations about how we interact with the world.
 Differentiation works: linear approximation describes our universe
 across scales, from planetary orbits to particle scattering.
 Measurement is consistent: we can measure, record, and compare,
