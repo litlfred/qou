@@ -154,6 +154,10 @@ export default chapter({
         "vertex-is-exceptional-divisor-proof",
         // Product factorization of the Markov trace
         "markov-trace-product",
+        // Categorical transfer matrix and level independence
+        "categorical-transfer-matrix",
+        "transfer-matrix-level-independence",
+        "transfer-matrix-level-independence-proof",
         // Topological mass (archimedean specialization)
         "topological-mass-formula",
         "skein-decomposition",
