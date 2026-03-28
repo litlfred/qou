@@ -40,6 +40,13 @@ peer-review practices and the methodology of
   $\ln$ is used prematurely.
   Classical $\ln$, $\exp$, $\cos$, $\sin$ are the $q \to 1$
   limits and should be labeled as such when they appear.
+  **In Python computation scripts**: use `log_q(x) = math.log(x)/math.log(q)`
+  instead of bare `math.log(x)`. When `math.log` is needed for
+  intermediate computation (e.g., log-sum to avoid overflow),
+  divide by `ln_q = math.log(q)` immediately to convert to
+  base-$q$.  Never use `math.cos`; use $\cos_q$ (the $q$-deformed
+  cosine) or `cosh` with $q$-arguments.  The `math.exp` function
+  should be `q**x` (the $q$-exponential $\exp_q(x) = q^x$).
 - **$q$-integer identities simplify transfer matrix chains.**
   The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
   For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
