@@ -8,6 +8,9 @@ $p \leq 4$, with closed sub-Hopf links indicated.
 - **Outline trefoil** (unfilled): right trefoil
   $\sigma(T_{2,3})$ — the electron.
 - **Circle**: unknot $K_{0_1}$ — the neutron.
+- **Dashed circle**: mirror unknot $\overline{T_{1,0}}$ — the
+  antineutrino ([antineutrino knot](#def:antineutrino-knot)),
+  distinguished from the neutrino by orientation, not knot type.
 - **Interlocked circles**: Hopf link $\mathcal{L}_H$ — the
   $\bowtie$ operation connecting components.
 - **Green border**: closed $1s$ sub-link (2 electrons).
@@ -46,6 +49,28 @@ remaining components.
    and $2s^2$), both Hopf-linked.  The $2s$ shell is closed
    but the $2p$ sub-shell has not yet started — beryllium has
    two valence electrons.
+
+**Transfer matrix data for light atoms.**
+
+Each atom's nuclear link is encoded by transfer matrices
+([transfer matrix operator](#def:transfer-matrix-operator)) with
+crossing coefficients depending on pair type.  For the atoms
+above:
+
+| Atom | $A$ | $\binom{A}{2}$ steps | Pair types | $\deg P \leq$ |
+|------|:---:|:---:|------------|:---:|
+| H | 1 | 0 | — | 0 |
+| He | 4 | 6 | 1 pp, 1 nn, 4 mix | 15 |
+| Li | 7 | 21 | 3 pp, 6 nn, 12 mix | 48 |
+| Be | 9 | 36 | 6 pp, 10 nn, 20 mix | 80 |
+
+The shell structure of these atoms is governed by the
+photon-electron transfer matrix eigenvalue $\lambda_+ = 1.1073$
+([shell structure eigenvalues](#prop:shell-structure-eigenvalues)).
+Hydrogen has one electron-proton junction ($T_{\gamma e}^1$);
+helium has a closed $1s$ shell ($T_{\gamma e}^1 \otimes
+T_{\gamma e}^1$); lithium adds the first $2s$ electron
+($T_{\gamma e}^2$ at the third junction).
 
 An interactive version with SVG knot diagrams is available at
 `folio-assistant/simulators/knot_atom_diagrams.html`.

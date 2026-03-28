@@ -12,6 +12,8 @@ export default remark({
     "electron-shell",
     "sub-link",
     "atom",
+    "transfer-matrix",
+    "antineutrino",
   ],
-  uses: ["rem:helium-hopf-diagram"],
+  uses: ["prop:shell-structure-eigenvalues"],
 });

@@ -3,7 +3,11 @@ import { prose } from "../../schema/builders";
 export default prose({
   label: "knot-periodic-table",
   title: "Knot-periodic table of the elements",
-  uses: ["def:knot-particle-generation"],
+  uses: [
+    "prop:shell-structure-eigenvalues",
+    "thm:generation-completeness",
+    "rem:knot-exhaustiveness",
+  ],
   tags: [
     "knot",
     "periodic-table",
@@ -12,6 +16,8 @@ export default prose({
     "torus-knot",
     "proton",
     "neutron",
+    "transfer-matrix",
+    "skein-polynomial",
     "appendix",
   ],
 });

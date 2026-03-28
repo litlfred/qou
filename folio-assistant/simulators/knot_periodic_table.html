@@ -86,6 +86,8 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
       <option value="kalpha">Alpha sub-links</option>
       <option value="ba">Binding energy</option>
       <option value="shell">Nuclear shell</option>
+      <option value="skein-deg">Skein polynomial degree</option>
+      <option value="lambda">Shell eigenvalue &lambda;&#8330;</option>
     </select>
   </label>
   <label>Filter:
@@ -588,6 +590,26 @@ function fullKnotDiagram(el){
   return container;
 }
 
+// === TRANSFER MATRIX DATA ===
+// Skein polynomial degree bound: A^2 - 1; transfer matrix steps: C(A,2)
+function skeinDeg(A){return A*A-1}
+function tmSteps(A){return A*(A-1)/2}
+// Shell eigenvalue lambda_+ at given q
+function lambdaPlus(qVal){
+  const s=qVal-1/qVal;
+  return(s+Math.sqrt(s*s+4))/2;
+}
+// Outermost electron shell index for Z
+function outerShell(Z){
+  // Approximate: period number from EL data
+  const el=EL.find(e=>e[0]===Z);
+  return el?el[5]:1; // period field (index 5 = kalpha, use period at index 6)
+}
+function electronPeriod(Z){
+  const el=EL.find(e=>e[0]===Z);
+  return el?el[6]:1;
+}
+
 // === MASS COMPUTATION ===
 function computeMass(Z,A,BA,qVal){
   const qh=Math.sqrt(qVal);
@@ -693,6 +715,17 @@ function makeTile(el,colorMode){
   }else if(colorMode==="shell"){
     const hue=(shellRow-1)*50;
     tile.style.background=`hsla(${hue},60%,92%,0.8)`;
+  }else if(colorMode==="skein-deg"){
+    const deg=skeinDeg(A);
+    const norm=Math.min(Math.log(deg+1)/Math.log(56644),1);
+    tile.style.background=`rgba(120,40,160,${0.05+norm*0.4})`;
+  }else if(colorMode==="lambda"){
+    const qVal=parseFloat(document.getElementById("q-slider").value);
+    const lp=lambdaPlus(qVal);
+    const n=electronPeriod(Z);
+    const lpn=Math.pow(lp,n);
+    const norm=Math.min((lpn-1)/1.0,1);
+    tile.style.background=`rgba(180,100,20,${0.05+norm*0.4})`;
   }
 
   // Magic number borders
@@ -851,7 +884,14 @@ function selectElement(el){
     ["B/A (MeV)",BA.toFixed(4)],
     ["QOU mass (MeV)",mass.toFixed(1)],
     ["N/Z ratio",(N/Z).toFixed(3)],
+    ["Transfer matrix steps",tmSteps(A).toLocaleString()],
+    ["Skein poly. deg ≤",skeinDeg(A).toLocaleString()],
+    ["λ₊ at shell "+period,Math.pow(lambdaPlus(qVal),period).toFixed(4)],
+    ["E_bind ∝ λ₊⁻ⁿ",Math.pow(lambdaPlus(qVal),-period).toFixed(4)],
   ];
+  // Pair type counts
+  const nPP=Z*(Z-1)/2, nNN=N*(N-1)/2, nMix=Z*N;
+  rows.push(["Crossing pairs",`${nPP} pp + ${nNN} nn + ${nMix} mix = ${tmSteps(A)}`]);
   // Braid registry data
   const bd=BRAID[Z];
   if(bd){
@@ -881,7 +921,7 @@ function showTooltip(e,el,qVal){
   const[Z,A,sym,name,BA,kalpha]=el;
   const N=A-Z;
   const tip=document.getElementById("tooltip");
-  tip.textContent=`${name} (${sym}) — Z=${Z}, N=${N}, k_α=${kalpha}, B/A=${BA.toFixed(4)}`;
+  tip.textContent=`${name} (${sym}) — Z=${Z}, N=${N}, k_α=${kalpha}, B/A=${BA.toFixed(4)}, C(A,2)=${tmSteps(A)}, deg≤${skeinDeg(A)}`;
   tip.style.display="block";
   tip.style.left=(e.pageX+12)+"px";
   tip.style.top=(e.pageY-20)+"px";
@@ -923,6 +963,8 @@ document.getElementById("filter-sel").addEventListener("change",buildGrid);
 document.getElementById("col-sel").addEventListener("change",buildGrid);
 document.getElementById("q-slider").addEventListener("input",function(){
   document.getElementById("q-val").textContent=parseFloat(this.value).toFixed(3);
+  const colorMode=document.getElementById("color-sel").value;
+  if(colorMode==="lambda")buildGrid(); // lambda depends on q
   if(selectedEl)selectElement(selectedEl); // refresh mass
 });
 

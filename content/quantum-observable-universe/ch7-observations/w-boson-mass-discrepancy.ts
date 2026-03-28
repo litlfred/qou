@@ -27,18 +27,9 @@ export default remark({
   ],
   uses: [
     "conj:higgs-t28",
-    "def:crossing-energy",
-    "def:quantum-planck-constant",
-    "def:recursive-brane-tower",
-    "def:substrate-parameter",
-    "def:threading-link",
     "prop:crossing-energy-decomposition",
-    "prop:local-substrate-q",
-    "prop:topological-mass-formula",
     "rem:building-block-knots",
-    "rem:c-substrate-via-levi",
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",
-    "rem:skein-mass-relation",
   ],
 });

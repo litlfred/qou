@@ -15,6 +15,13 @@ trefoil resonance modes.
    ([orbital Fourier decomposition](#prop:orbital-fourier-decomposition)).
    Sub-blocks for $s$ ($\ell = 0$), $p$ ($\ell = 1$),
    $d$ ($\ell = 2$), $f$ ($\ell = 3$).
+   The shell structure is determined by the eigenvalues
+   of the photon-electron transfer matrix $T_{\gamma e}(q)$
+   ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)):
+   at $q = 1.1097$, $\lambda_+ = 1.1073$ governs shell energy
+   scaling via a Chebyshev recurrence, and sub-shell capacities
+   ($2, 6, 10, 14$) arise from tensor product eigenvalue
+   degeneracies.
 
 3. **Color coding**: $k_\alpha$ (number of $\alpha$ sub-links
    in the nucleus), intruder status (which HO level the last
@@ -50,15 +57,51 @@ Each column shows the electron trefoil's Fourier mode —
 how the writhe excitation oscillates around the $(2,3)$
 torus.
 
+**Transfer matrix backbone.**
+
+The computational backbone of the table is the transfer matrix
+product ([transfer matrix operator](#def:transfer-matrix-operator)).
+Each nucleon pair contributes a $2 \times 2$ matrix $T_{ij}(q)$
+with three crossing types:
+
+| Crossing | $c$ | $d$ | Physical |
+|----------|-----|-----|----------|
+| $\mathfrak{p}$-$\mathfrak{p}$ | $1$ | $0$ | repulsive (EM) |
+| $\mathfrak{n}$-$\mathfrak{n}$ | $q^2$ | $-qs$ | attractive (strong) |
+| mixed | $\frac{1+q^2}{2}$ | $-\frac{qs}{2}$ | intermediate |
+
+The nuclear Skein polynomial
+$P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
+([Skein polynomial](#prop:skein-polynomial-transfer-matrix))
+is computed in factored form by $\binom{A}{2}$ matrix
+multiplications.  Beta decay shifts each crossing by the
+universal matrix $\Delta_\beta(q)$
+([beta decay matrix](#prop:beta-decay-transfer-matrix)),
+independent of partner nucleon type.
+
+**Knot coverage.**
+
+The generation completeness theorem
+([generation completeness](#thm:generation-completeness))
+guarantees that every knot with Seifert genus $\leq 4$ is
+reachable from the seven torus generators via Skein crossing
+changes.  Detection is complete via Alexander surjectivity and
+Markov non-degeneracy
+([knot exhaustiveness](#rem:knot-exhaustiveness)).
+
 **Element card.**
 
-Each element would display:
+Each element displays:
 
 - **Symbol** and atomic number
 - **Nuclear knot**: $p\,\mathcal{B}_3 \bowtie n\,\mathcal{B}_3$
   with $k_\alpha$ sub-links highlighted
 - **Electron knot**: trefoil writhe diagram showing occupied
   shells and the current Fourier mode
+- **Transfer matrix data**: $\binom{A}{2}$ steps,
+  $\deg P_{\mathcal{N}} \leq A^2 - 1$
+- **Shell eigenvalues**: dominant $\lambda_+^n$ and Chebyshev
+  index at the element's outermost shell
 - **$n_{\mathrm{pred}}$ vs $n_{\mathrm{obs}}$**: predicted
   and observed neutron number
 - **Intruder indicator**: if the last nucleon is in an
@@ -109,3 +152,13 @@ The visualization should be an interactive HTML page
    ([knot-periodic table](#rem:knot-periodic-table)) for
    $p$, $n$, $n_{\mathrm{pred}}$, $\Delta n$, $k_\alpha$,
    masses, and $B/A$.
+
+8. **Transfer matrix overlay**: optional display mode showing
+   the number of transfer matrix steps $\binom{A}{2}$ and
+   Skein polynomial degree bound $A^2 - 1$ for each element,
+   color-coded by computational complexity.
+
+9. **Shell eigenvalue display**: optional overlay showing
+   $\lambda_+^n$ at the element's outermost electron shell,
+   with the Chebyshev recurrence index and binding energy
+   $E_{\mathrm{bind}} \propto \lambda_+^{-n}$.
