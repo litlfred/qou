@@ -338,10 +338,18 @@ Agents **must** use the correct font for each concept.
 |----------|------|---------|
 | Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
 | Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing energy), `$\mathfrak{E}_{\mathrm{bind}}$` (binding) |
+| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_H$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). Reclaimed from fraktur — `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
 | Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
 | $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
 | State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
 | Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
+| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
 | Measures | Greek | `$\mu_J$` (Julia-set measure) |
 | Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
 | Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
@@ -353,11 +361,17 @@ Agents **must** use the correct font for each concept.
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
 - `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
 - `$p$` = brane point (never proton number; proton number is `$Z$`)
-- `$E$` = **not used** for exceptional divisor, energy, or elliptic curve.
+- `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
   Use `$\mathcal{S}_p$`, `$\mathfrak{E}$`, or `$\mathcal{E}_q$` respectively.
+  `$E_H$` (with hadron subscript) is allowed for crossing energy.
+- `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
+  **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
+- `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
 - `$q = 1.1097$` (or any specific numerical value of the substrate
   parameter) **must not appear** outside the introduction and
   Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
+  Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
+  falsifiability computations.
 
 ### 7a. Hecke-Skein convention (STRICT)
 

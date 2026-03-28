@@ -85,6 +85,7 @@ export default chapter({
         "descartes-knot-eigenbasis",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
+        "weierstrass-projection",
       ],
     }),
 

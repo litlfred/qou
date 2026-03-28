@@ -31,16 +31,16 @@ The "path integral" is then replaced by a finite algebraic operation:
 the *categorical trace*
 ([mass identity](#def:mass-identity)) evaluated on the braid-group
 representation.  Concretely, for a closed cycle
-$\gamma \colon \mathbf{1} \to A$ representing a particle propagating
+$\varrho \colon \mathbf{1} \to A$ representing a particle propagating
 around a vortex filament, the mass is
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
     (\int_A \otimes \mathrm{id})
     \circ \Delta
-    \circ \gamma
+    \circ \varrho
   \bigr)
   \,\bigr\rVert,
 $$

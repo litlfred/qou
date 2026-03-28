@@ -30,7 +30,7 @@ The derivation proceeds from the categorical decomposition
 each following from the archimedean bridge:
 
 1. The baseline holonomy term
-   $\lVert \mathrm{Hol}_{\nabla_A}(\gamma_0;\, \mathfrak{G}) \rVert$
+   $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0;\, \mathfrak{G}) \rVert$
    evaluates to $\operatorname{Vol}(K)$ via the Chern--Simons/volume
    correspondence for the hyperbolic knot complement.
 2. The exceptional divisor contributions $\Phi_q(z_i)$ sum, after
