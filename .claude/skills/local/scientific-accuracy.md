@@ -23,6 +23,30 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+- **PREFER $q$-DEFORMED FUNCTIONS over classical counterparts.**
+  Use $\exp_q$, $\ln_q$, $\cos_q$, $\sin_q$, $[n]_q$, $[n]_q!$
+  in all formulas unless explicitly working in the classical
+  ($q = 1$) limit.  The natural logarithm in the QOU is the
+  **base-$q$ logarithm** $\log_q(x) = \ln x / \ln q$, which
+  maps Skein polynomial ratios to $q$-integers:
+  $\log_q(q^n) = n$ exactly.  The Jackson $q$-logarithm
+  $\ln_q(x) = (x^{\hbar_q} - 1)/\hbar_q$ (where
+  $\hbar_q = 1 - q^{-1}$) is the appropriate $q$-analogue
+  for infinitesimal quantities.
+  **Keep all formulas parametric in $q$ as long as possible.**
+  Evaluate at $q = 1.110$ only at the final numerical step.
+  The $q$-rational structure (e.g., $\log_q(P_d/P_p) \approx
+  -(N-1)$ for neutron number $N$) is lost when classical
+  $\ln$ is used prematurely.
+  Classical $\ln$, $\exp$, $\cos$, $\sin$ are the $q \to 1$
+  limits and should be labeled as such when they appear.
+- **$q$-integer identities simplify transfer matrix chains.**
+  The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
+  For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
+  The transfer matrix eigenvalue ratio $|\lambda_+/\lambda_-|
+  = q^2$ (for pp crossings) is a consequence.  Use these
+  identities to reduce transfer matrix products to $q$-integer
+  expressions rather than floating-point chains.
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
