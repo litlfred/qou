@@ -262,6 +262,6 @@ on the Bring surface ($\chi = -6$, genus $4$) must satisfy:
 
 The embeddability constraint gives a **finite list** of allowed
 torus knots: $T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$,
-$T_{3,5}$.  These are the quarks, leptons, and force carriers.
-No other torus knot fits on the Bring surface — the particle
-content is **determined by the genus**.
+$T_{3,4}$, $T_{3,5}$.  These are the quarks, leptons, and force
+carriers.  No other torus knot fits on the Bring surface — the
+particle content is **determined by the genus**.

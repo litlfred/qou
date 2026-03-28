@@ -1,50 +1,61 @@
-The five embeddable torus knots on the Bring surface
-([five-fold symmetry](#rem:fivefold-symmetry)) determine the
-**shell binding hierarchy** of the nuclear Skein polynomial.
-Each torus knot $T_{2,n}$ with $n = 3, 5, 7, 9$ provides a
-crossing coefficient $(c_n, d_n)$ for the transfer matrix at
-shell boundaries, and $T_{3,5}$ mediates transitions between
-shells.
+The six embeddable torus knots on the Bring surface determine
+the **shell binding hierarchy** of the nuclear Skein polynomial.
+The four knots $T_{2,n}$ with $n = 3, 5, 7, 9$ on two strands
+provide crossing coefficients for the transfer matrix.  The two
+knots $T_{3,4}$ and $T_{3,5}$ on three strands mediate shell
+reorganisation and weak transitions respectively.
 
-## The five transfer matrix coefficients
+## The six torus knots
 
-Each $T_{2,n} = \sigma^n$ in $H_2(q)$ reduces via the Hecke
+The four $T_{2,n} = \sigma^n$ in $H_2(q)$ reduce via the Hecke
 recurrence $\sigma^{k+1} = (q - q^{-1})\sigma^k + \sigma^{k-1}$
-to a linear element $c_n \sigma + d_n$.  The traced volume
-$\hat{V}_n = z \cdot (c_n \cdot (q - q^{-1}) + d_n) + c_n$
-gives the per-crossing contribution to the Skein polynomial.
+to a linear element $c_n \sigma + d_n$.  The two $T_{3,m} =
+(\sigma_1\sigma_2)^m$ in $H_3(q)$ reduce to 6-term elements.
 
-| Knot | $n$ | $c_n$ | $d_n$ | $\hat{V}_n$ | $\log_q \hat{V}_n$ |
-|:----:|:---:|:---:|:---:|:---:|:---:|
-| $T_{2,3}$ | $3$ | $1.044$ | $0.209$ | $1.257$ | $+2.19$ |
-| $T_{2,5}$ | $5$ | $1.133$ | $0.427$ | $1.465$ | $+3.66$ |
-| $T_{2,7}$ | $7$ | $1.272$ | $0.664$ | $1.736$ | $+5.29$ |
-| $T_{2,9}$ | $9$ | $1.466$ | $0.930$ | $2.084$ | $+7.04$ |
+| Knot | Strands | Crossings | $r \times s$ | Trace | $\log_q$ | Fiber |
+|:----:|:-------:|:---------:|:---:|:---:|:---:|:---:|
+| $T_{2,3}$ | $2$ | $3$ | $6$ | $0.730$ | $-3.01$ | deg $1$ |
+| $T_{2,5}$ | $2$ | $5$ | $10$ | $0.993$ | $-0.07$ | deg $1$ |
+| $T_{2,7}$ | $2$ | $7$ | $14$ | $1.299$ | $+2.51$ | deg $1$ |
+| $T_{2,9} = T_{2,3^2}$ | $2$ | $9$ | $18$ | $1.662$ | $+4.87$ | deg $2$ |
+| $T_{3,4} = T_{3,2^2}$ | $3$ | $8$ | $12$ | $0.585$ | $-5.14$ | deg $2$ |
+| $T_{3,5}$ | $3$ | $10$ | $15$ | $0.704$ | $-3.37$ | deg $1$ |
 
-The weak vertex $T_{3,5} = (\sigma_1\sigma_2)^5$ in $H_3(q)$
-gives $\hat{V}_{3,5} = 0.704$ with $\log_q = -3.37$ (negative:
-transitions cost action, unlike binding which gains action).
+The degree-$2$ knots are **fiber ascents**: $T_{2,9} = (T_{2,3})^3$
+squares the trefoil along the color fiber ($3 \to 3^2 = 9$),
+and $T_{3,4} = T_{3,2^2}$ squares the Hopf structure along the
+degree-$2$ fiber on $3$ strands ($2 \to 2^2 = 4$).
+
+Both degree-$2$ knots have **unit-modulus eigenvalues** in the
+standard representation ($|\mu| = 1$, $\det = 1$), acting as
+pure rotations:
+- $T_{3,4}$: phase $105.7°$ per period, period $3.4$ channels
+- $T_{3,5}$: phase $153.6°$ per period, period $2.3$ channels
 
 ## Shell-size assignment
 
-The dominant binding knot for a shell of size $n_s$ is the
-**largest** $T_{2,n}$ whose crossing number $n$ fits within
-the shell ($n \leq n_s$):
+Each torus knot contributes **two invariants**: its product
+$r \times s$ and its crossing number $\min(r(s\!-\!1),\,
+s(r\!-\!1))$.  The shell sizes of the nuclear chart are
+determined by these invariants.
 
-| Shell size $n_s$ | Dominant $T_{2,n}$ | Physical role |
-|:---:|:---:|:---:|
-| $\leq 2$ | bare (no torus knot) | Too few nucleons for binding |
-| $3$–$4$ | $T_{2,3}$ ($n = 3$) | Trefoil binding (mass scale) |
-| $5$–$6$ | $T_{2,5}$ ($n = 5$) | Second-generation threshold |
-| $7$–$8$ | $T_{2,7}$ ($n = 7$) | Third-generation channel |
-| $\geq 9$ | $T_{2,9}$ ($n = 9$) | Full strong binding ($3^2$ color) |
+| Shell | Size | Knot match | Invariant |
+|:-----:|:----:|:----------:|:---------:|
+| $1$ | $2$ | bare | Below knot threshold |
+| $2$ | $6$ | $T_{2,3}$ | $r \times s = 2 \times 3 = 6$ |
+| $3$ | $12$ | $T_{3,4}$ | $r \times s = 3 \times 4 = 12$ |
+| $4$ | $8$ | $T_{3,4}$ | crossings $= 8$ |
+| $5$–$7$ | $22, 32, 44$ | combinations | Open (sums of products) |
 
-This assignment uses **only** the shell size (determined by the
-palindromic normal form at each closure,
-[shell closure](#prop:shell-closure-normal-form)) and the
-embeddability constraint $(m-1)(n-1) \leq 8$
-([finiteness bound](#prop:skein-finiteness-bound)).  No external
-nuclear physics model is imported.
+The first four shells match exactly to the knot invariants.
+Shells $5$–$7$ require **combinations** of knot products and
+are the subject of ongoing computation.
+
+The degree-$2$ knot $T_{3,4} = T_{3,2^2}$ appears **twice**:
+its product ($12$) determines shell $3$, and its crossing
+number ($8$) determines shell $4$.  This dual role reflects
+the degree-$2$ fiber structure — $T_{3,4}$ has two independent
+invariants because it ascends one level in the fiber.
 
 ## The $\mathcal{Q}_q$-value with torus-knot correction
 

@@ -111,13 +111,14 @@ def torusEmbeddable (m n g : ℕ) : Prop :=
 
 /-- The Bring surface has genus 4.
     Embeddable torus knots: (m-1)(n-1) ≤ 8.
-    Complete list: T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,5}. -/
+    Complete list: T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}. -/
 -- Ref: [manuscript] §6/torus-embeddable-complete
 theorem bring_surface_torus_knots :
     torusEmbeddable 2 3 4 ∧
     torusEmbeddable 2 5 4 ∧
     torusEmbeddable 2 7 4 ∧
     torusEmbeddable 2 9 4 ∧
+    torusEmbeddable 3 4 4 ∧
     torusEmbeddable 3 5 4 ∧
     ¬ torusEmbeddable 2 11 4 ∧
     ¬ torusEmbeddable 3 7 4 ∧
@@ -125,7 +126,7 @@ theorem bring_surface_torus_knots :
   unfold torusEmbeddable
   omega
 
-/-- The number of embeddable torus knots on genus 4 is finite (exactly 5). -/
+/-- The number of embeddable torus knots on genus 4 is finite (exactly 6). -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
 theorem particle_finiteness :
     {(m, n) : ℕ × ℕ | 2 ≤ m ∧ m < n ∧ torusEmbeddable m n 4}.Finite := by
