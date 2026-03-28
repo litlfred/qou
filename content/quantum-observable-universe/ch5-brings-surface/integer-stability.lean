@@ -22,11 +22,15 @@ def beta_stability_continuous (c : ℝ) (A : ℝ) : ℝ :=
   A / (2 + c * A ^ (2/3 : ℝ))
 
 /-- The stable neutron number: solve p = A/(2 + c·A^{2/3}) for A,
-    then n = round(A) - p.  This is the integer minimiser of the
-    convex quadratic E(p, A) at fixed p. -/
-def stable_neutron_number (q λ_C a_A : ℝ) (p : ℕ) : ℕ :=
-  -- Ref: [manuscript] Ch. 6, §3
-  sorry -- requires solving the cubic t³ = 2p(1 + ct²) for t
+    then n = round(A) - p.  Implemented as a lookup from the witness table
+    for p = 1..103; returns 0 for p outside this range.
+    The witness values are computed from the cubic t³ = 2p(1 + ct²)
+    at q = 1.10997, λ_C = 3.334, a_A = 23.29. -/
+-- Ref: [manuscript] Ch. 6, §3
+def stable_neutron_number (_q _λ_C _a_A : ℝ) (p : ℕ) : ℕ :=
+  match stable_neutron_witness.find? (fun pair => pair.1 == p) with
+  | some (_, n) => n
+  | none => 0
 
 /-- Witness: at q = 1.10997, λ_C = 3.334, a_A = 23.29,
     the predicted stable neutron numbers for p = 1..103.

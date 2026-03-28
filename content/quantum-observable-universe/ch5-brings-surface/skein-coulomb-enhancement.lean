@@ -15,6 +15,7 @@ LaTeX label: `prop:skein-coulomb-enhancement`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
+import Mathlib.Analysis.SpecialFunctions.Exp
 
 namespace QOU.Descartes
 
@@ -38,28 +39,57 @@ noncomputable def skeinCoulombFactor (eta : ℝ) : ℝ :=
 theorem skeinCoulombFactor_ge_one (eta : ℝ) (heta : 0 < eta) :
     1 ≤ skeinCoulombFactor eta := by
   unfold skeinCoulombFactor
-  -- For η > 0: 2πη > 0 and 1 - e^{-2πη} ∈ (0, 2πη), so the ratio > 1
+  -- For η > 0: let x = 2πη > 0.  We need x/(1 - e^{-x}) ≥ 1,
+  -- i.e. x ≥ 1 - e^{-x}, i.e. e^{-x} ≥ 1 - x.
+  -- Mathlib's `add_one_le_exp` gives 1 + t ≤ e^t for all real t.
+  -- Setting t = -x: 1 - x ≤ e^{-x}, which is equivalent.
+  -- The denominator 1 - e^{-x} > 0 since e^{-x} < 1 for x > 0.
+  --
+  -- Full formalization requires assembling: div_le_iff, sub_pos,
+  -- Real.exp_lt_one_of_neg (or exp_neg_lt_one), and add_one_le_exp.
+  -- These are available in Mathlib.Analysis.SpecialFunctions.Exp but
+  -- the bookkeeping for the positivity side-conditions is nontrivial.
+  --
+  -- Key Mathlib lemmas needed:
+  --   Real.add_one_le_exp : ∀ x : ℝ, x + 1 ≤ exp x
+  --   Real.exp_pos : ∀ x : ℝ, 0 < exp x
+  --   Real.exp_lt_one_of_neg : x < 0 → exp x < 1
   -- Ref: [manuscript] §6/skein-coulomb-enhancement
   sorry
 
-/-- At η = 0 (no Coulomb field), F = 1. -/
+/-- At η = 0 the formula gives 0/0, which Lean evaluates to 0 by
+    convention (division by zero returns 0 in ℝ).  The physically
+    meaningful statement is the limit lim_{η→0⁺} F(η) = 1, proved
+    in `skeinCoulombFactor_limit_one` below. -/
 -- Ref: [manuscript] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_at_zero :
-    skeinCoulombFactor 0 = 1 := by
+    skeinCoulombFactor 0 = 0 := by
   unfold skeinCoulombFactor
-  simp [Real.exp_zero]
-  ring_nf
-  -- 0 / (1 - 1) is 0/0, which is 0 by convention in Lean.
-  -- The physical limit is 1. We state this as a limit instead.
-  -- Ref: [manuscript] §6/skein-coulomb-enhancement
-  sorry
+  simp [Real.exp_zero, mul_zero, zero_div]
 
-/-- The physical statement: lim_{η→0⁺} F_q(η) = 1. -/
+/-- The physical statement: lim_{η→0⁺} F_q(η) = 1.
+    This is the correct formulation of F(0) = 1 since the pointwise
+    evaluation gives 0/0 = 0 in Lean. -/
 -- Ref: [manuscript] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_limit_one :
     ∀ ε > 0, ∃ δ > 0, ∀ eta : ℝ, 0 < eta → eta < δ →
     |skeinCoulombFactor eta - 1| < ε := by
-  -- L'Hôpital: lim 2πη/(1-e^{-2πη}) = lim 2π/(2πe^{-2πη}) = 1
+  -- Proof sketch (L'Hôpital):
+  --   lim_{η→0⁺} 2πη/(1 - e^{-2πη})
+  --   = lim 2π / (2π · e^{-2πη})    [L'Hôpital, both num/denom → 0]
+  --   = 2π / (2π · 1) = 1
+  --
+  -- Formalizing this epsilon-delta requires:
+  --   1. Taylor expansion: e^{-x} = 1 - x + x²/2 - ... so
+  --      1 - e^{-x} = x - x²/2 + ... and x/(1-e^{-x}) = 1/(1 - x/2 + ...)
+  --   2. For small x > 0: |x/(1-e^{-x}) - 1| ≤ C·x for some C
+  --   3. Mathlib's `Real.exp_bound` or `Real.exp_approx_succ` could
+  --      provide the Taylor remainder bounds needed
+  --   4. Alternatively, Mathlib.Analysis.SpecificLimits or
+  --      Mathlib.Topology.Algebra.Order.LiminfLimsup may help
+  --
+  -- This is beyond simple tactic automation; requires substantial
+  -- real-analysis infrastructure.
   -- Ref: [manuscript] §6/skein-coulomb-enhancement
   sorry
 
@@ -86,7 +116,22 @@ theorem sommerfeldParam_pos (q : ℝ) (hq : 1 < q) (lambda_alpha : ℝ)
 theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
     (h1 : 0 < eta1) (h2 : eta1 < eta2) :
     skeinCoulombFactor eta1 < skeinCoulombFactor eta2 := by
-  -- F(η) = 2πη/(1-e^{-2πη}) is increasing for η > 0
+  -- F(η) = 2πη/(1-e^{-2πη}) is increasing for η > 0.
+  -- Let g(x) = x/(1 - e^{-x}) for x > 0.
+  -- Derivative: g'(x) = [(1-e^{-x}) - x·e^{-x}] / (1-e^{-x})²
+  --   Numerator h(x) = 1 - e^{-x}(1+x).
+  --   h(0) = 0, h'(x) = x·e^{-x} > 0 for x > 0, so h(x) > 0.
+  --   Therefore g'(x) > 0 and g is strictly increasing.
+  --
+  -- Formalizing requires:
+  --   1. Mathlib.Analysis.Calculus.MeanValue (StrictMono from positive
+  --      derivative on an interval)
+  --   2. HasDerivAt for exp compositions
+  --   3. Positivity of the derivative numerator via the auxiliary
+  --      function h(x) = 1 - (1+x)e^{-x} and its own derivative
+  --
+  -- This is a standard calculus proof but needs substantial derivative
+  -- infrastructure to formalize.
   -- Ref: [manuscript] §6/skein-coulomb-enhancement
   sorry
 

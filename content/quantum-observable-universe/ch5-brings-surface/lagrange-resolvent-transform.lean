@@ -22,17 +22,28 @@ noncomputable def lagrangeResolvent (x : Fin 5 → ℂ) (k : Fin 5) : ℂ :=
 def cyclicPerm (x : Fin 5 → ℂ) : Fin 5 → ℂ :=
   fun j => x ⟨(j.val + 1) % 5, Nat.mod_lt _ (by omega)⟩
 
-theorem lagrange_resolvent_transform
+/-- Part (1): w_0 = 0 from the constraint Σx_i = 0.
+    At k=0, ζ^0 = 1, so w_0 = (1/√5) Σ x_j = 0. -/
+-- Ref: [manuscript] Ch. 6, §1
+theorem lagrange_resolvent_w0_vanishes
     (x : Fin 5 → ℂ)
-    (h_sum : ∑ i, x i = 0)
-    (h_sq  : ∑ i, (x i)^2 = 0)
-    (h_cb  : ∑ i, (x i)^3 = 0) :
-    -- (1) w_0 = 0 (from h_sum)
-    lagrangeResolvent x ⟨0, by omega⟩ = 0 ∧
-    -- (2) The cyclic permutation acts diagonally: σ(w_k) = ζ^{-k} w_k
-    (∀ k : Fin 5, lagrangeResolvent (cyclicPerm x) k = ζ⁻¹ ^ k.val * lagrangeResolvent x k) := by
+    (h_sum : ∑ i, x i = 0) :
+    lagrangeResolvent x ⟨0, by omega⟩ = 0 := by
+  unfold lagrangeResolvent
+  simp only [Fin.val_mk, Nat.zero_mul, pow_zero, one_mul]
+  rw [h_sum, mul_zero]
+
+/-- Part (2): The cyclic permutation acts diagonally on Lagrange resolvents.
+    σ(w_k) = ζ^{-k} · w_k for all k.
+    Proof requires the root-of-unity shift property ζ^{(k·(j+1))} = ζ^k · ζ^{(k·j)}. -/
+-- Ref: [manuscript] Ch. 6, §1
+-- Ref: [bring1786] https://doi.org/10.1007/BF02386200
+theorem lagrange_resolvent_diagonal_action
+    (x : Fin 5 → ℂ) :
+    ∀ k : Fin 5, lagrangeResolvent (cyclicPerm x) k = ζ⁻¹ ^ k.val * lagrangeResolvent x k := by
+  -- The key identity: Σ_j ζ^{k(j+1)} f(j) = ζ^k · Σ_j ζ^{kj} f(j)
+  -- which follows from factoring out ζ^k from each summand.
   -- Ref: [manuscript] Ch. 6, §1
-  -- Ref: [bring1786] https://doi.org/10.1007/BF02386200
   sorry
 
 end QOU.BringsSurface
