@@ -60,14 +60,22 @@ bordering on the mysterious" \cite{wigner1960}.
 
 The book is organised as follows.
 
-[Chapters 1 and 2](#chap:qu) build the categorical framework from
-the ground up.  Chapter 1 introduces rigid monoidal categories,
+[Chapter 1](#chap:qu) introduces rigid monoidal categories,
 fibre functors, Frobenius structure, and the dagger involution,
 arriving at the definition of a *quantum universe* — the
-algebraic skeleton.  Chapter 2 adds the observability,
-measurability, and volume axioms that make it a *quantum
-observable universe*, then develops the geometry: Tannaka–Krein
-reconstruction of $\mathrm{SU}_2(R)$, the categorical action,
+algebraic skeleton encoded in the triple
+$(\mathbf{C},\; A,\; \tau)$ — a rigid monoidal category, a
+Frobenius–Hopf object, and a fibre functor.
+
+[Chapter 2](#chap:qou) adds the observability, measurability,
+and volume axioms that promote the quantum universe to a
+*quantum observable universe* — still the triple
+$(\mathbf{C}, A, \tau)$, now constrained so that every internal
+degree of freedom is accessible to measurement.  From these
+axioms the key geometric structures emerge: a quantum connection
+$\theta$, a symmetry group $G = \mathrm{SU}_2(R)$ reconstructed
+via Tannaka–Krein duality, and a state bundle $\mathcal{S}$.
+Chapter 2 then develops the geometry: the categorical action,
 and the three variational equations (Einstein, Yang–Mills,
 and transport).  The categorical action takes the form
 
@@ -100,10 +108,22 @@ $\hat{\tau}$ that decomposes the algebra into descended (observable)
 and transient (pre-observable) modes.
 
 [Chapter 4](#chap:path-integrals-braiding) develops the theory of
-braids and knots within the categorical framework.  The Hecke
-algebra provides crossing coefficients, the Markov trace computes
-Skein polynomials, and a clean dictionary emerges: crossing number
-equals jet order equals information content.
+braids and knots within the categorical framework.  The starting
+point is the identification of particles with knots — topological
+objects classified by their crossing structure.  At each point of
+the base manifold, knots generate operator algebras whose
+multiplication and braiding relations are Gröbner basis
+computations: the nodding and crossing of strands correspond to
+reductions in a confluent rewrite system, and each reduction
+sequence has a well-defined computational cost.  This cost
+represents the most efficient way for a photon to interact with
+all component particles of a hadron — it is a braid, passing
+through a braid relation.  We parameterise that cost by the
+substrate parameter $q$, and the result is a mass density integral
+of the hadron.  The Hecke algebra provides the crossing
+coefficients, the Markov trace computes Skein polynomials, and a
+clean dictionary emerges: crossing number equals jet order equals
+information content.
 
 [Chapters 5 and 6](#chap:models-qou) construct explicit models.
 We call these *Descartes universes* because the observer is not
