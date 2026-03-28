@@ -14,13 +14,8 @@ structure TorusKnotLink (n : ℕ) where
 
 /-- T(2,n) is a fermion iff n is odd (1 component). -/
 theorem fermion_iff_odd (n : ℕ) (hn : n ≥ 2) :
-    (TorusKnotLink.mk n).components = 1 ↔ n % 2 = 1 := by
-  -- (TorusKnotLink.mk n).components = n (first positional field)
-  -- So this reduces to: n = 1 ↔ n % 2 = 1, but that's only true for n=1.
-  -- The original statement has a bug: it passes n as components instead of
-  -- using the default. We prove it as stated, which requires sorry.
-  -- Ref: [manuscript] Ch. 6, §3 — gcd(2,n) parity classification
-  sorry
+    ({ } : TorusKnotLink n).components = 1 ↔ n % 2 = 1 := by
+  show Nat.gcd 2 n = 1 ↔ n % 2 = 1
   constructor
   · intro h
     -- gcd(2, n) = 1 means 2 ∤ n, so n % 2 = 1
@@ -45,7 +40,7 @@ theorem fermion_iff_odd (n : ℕ) (hn : n ≥ 2) :
 
 /-- T(2,n) is a boson iff n is even (2 components). -/
 theorem boson_iff_even (n : ℕ) (hn : n ≥ 2) :
-    (TorusKnotLink.mk n).components = 2 ↔ n % 2 = 0 := by
+    ({ } : TorusKnotLink n).components = 2 ↔ n % 2 = 0 := by
   show Nat.gcd 2 n = 2 ↔ n % 2 = 0
   constructor
   · intro h
