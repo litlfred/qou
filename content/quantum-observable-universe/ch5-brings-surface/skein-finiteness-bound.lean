@@ -39,12 +39,30 @@ axiom skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ
 -- The closed-form bound
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The finiteness bound: A_max(q) ≈ 1 + e · [2]_q.
-    At q = 1.110: A_max ≈ 6.5.
-    Comes from (A-1)! > [2]_q^{A-1} (factorial beats exponential). -/
+/-- The finiteness bound: [A-1]_q! > [2]_q^{A-1}.
+    q-factorial beats q-exponential at A = 5 for all q > 1.
+    No classical e or π — purely q-combinatorial. -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
-noncomputable def A_max_approx (q : ℝ) : ℝ :=
-  1 + Real.exp 1 * (q + 1 / q)
+
+/-- The q-integer [n]_q = (q^n - q^{-n})/(q - q^{-1}). -/
+noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
+  (q ^ n - (1/q) ^ n) / (q - 1/q)
+
+/-- The q-factorial [n]_q! = ∏_{k=1}^n [k]_q. -/
+noncomputable def qFactorial (q : ℝ) (n : ℕ) : ℝ :=
+  (List.range n).foldl (fun acc k => acc * qInt q (k + 1)) 1
+
+/-- The critical condition: [A-1]_q! > [2]_q^{A-1}.
+    At A = 5: [4]_q! > [2]_q⁴ for q = 1.110. -/
+-- Ref: [manuscript] §6/skein-finiteness-bound
+-- Ref: folio-assistant/computations output: [4]! = 25.15 > [2]⁴ = 16.35
+axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
+    qFactorial q 4 > (qInt q 2) ^ 4
+
+/-- Below A = 5: [A-1]_q! ≤ [2]_q^{A-1}. -/
+-- Ref: folio-assistant/computations output
+axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
+    qFactorial q 3 < (qInt q 2) ^ 3
 
 /-- At q = 1, A_max → ∞ (all nuclei degenerate). -/
 -- Ref: [manuscript] §6/skein-finiteness-bound

@@ -157,29 +157,58 @@ $$
   (A-1)! \;>\; [2]_q^{\,A-1}
 $$
 
-By Stirling's approximation $(A-1)! \approx (A-1)^{A-1} e^{-(A-1)}
-\sqrt{2\pi(A-1)}$, the crossover occurs at:
+The $q$-deformed version uses $q$-factorials throughout (no
+classical Stirling, no Euler $e$):
 
 $$
-  \ln(A-1) \;\approx\; 1 + \ln [2]_q
+  [n]_q! \;=\; \prod_{k=1}^{n} [k]_q
+  \qquad\text{where}\quad
+  [k]_q \;=\; \frac{q^k - q^{-k}}{q - q^{-1}}
 $$
 
+The critical condition is:
+
 $$
-  \boxed{A_{\max}(q) \;\approx\; 1 + e \cdot [2]_q}
+  \boxed{[A-1]_q! \;>\; [2]_q^{\,A-1}}
 $$
 
-**At $q = 1.110$:** $[2]_q = q + q^{-1} = 2.011$, so
-$A_{\max} \approx 1 + 2.718 \times 2.011 = 6.5$, consistent
-with the observed sign flip at $A = 6$.
+Equivalently: the **average $q$-integer** exceeds $[2]_q$:
 
-**At $q = 1$:** $[2]_1 = 2$, so $A_{\max} \approx 1 + 2e
-= 6.4$ — even at the classical limit, the Yang–Baxter
-cross-terms eventually dominate (though shell closures create
-stability islands beyond $A_{\max}$).
+$$
+  \frac{1}{A-1}\sum_{k=1}^{A-1} \ln [k]_q
+  \;>\;
+  \ln [2]_q
+$$
 
-**At $q \to \infty$:** $[2]_q \to \infty$, so $A_{\max} \to
-\infty$ — strong deformation pushes the crossover to higher $A$
-because $z = 1/[2]_q \to 0$ suppresses cross-term traces.
+Since $[k]_q$ is strictly increasing in $k$ (for $q > 1$) and
+$[1]_q = 1 < [2]_q$, the average starts below $\ln [2]_q$ and
+grows monotonically.  The crossover:
+
+| $A$ | $[A\!-\!1]_q!$ | $[2]_q^{A-1}$ | Exceeds? |
+|:---:|:---:|:---:|:---:|
+| $2$ | $1.0$ | $2.01$ | No |
+| $3$ | $2.01$ | $4.04$ | No |
+| $4$ | $6.12$ | $8.13$ | No |
+| $5$ | $25.15$ | $16.35$ | **Yes** |
+| $6$ | $131.3$ | $32.88$ | **Yes** |
+
+The crossover occurs at $A = 5$ for all $q > 1$ (the
+$q$-correction is $O(\varepsilon^2)$ where $\varepsilon = \ln q$,
+and at $q = 1.110$: $\varepsilon^2 = 0.011$, negligible).
+
+**At $q = 1.110$:** $[A\!-\!1]_q! > [2]_q^{A-1}$ first at
+$A = 5$.  The Skein polynomial sign flip occurs at $A = 6$
+(one step later, because the (2,2) shell closure stabilises
+$A = 4$).
+
+**At $q = 1$:** $[k]_1 = k$ and $[2]_1 = 2$, so $(A-1)! > 2^{A-1}$
+also crosses at $A = 5$.  The bound is **topological** (from
+the Hecke algebra dimension $A!$), not dependent on $q$.
+
+**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, so $[A\!-\!1]_q!
+\sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$.  The
+crossover shifts to $(A-1)(A-2)/2 > A-1$, i.e., $A > 4$,
+which is the same.
 
 **Note:** This bound applies to the alternating $\mathfrak{p}
 \mathfrak{n}$ filling order.  Shell closures
