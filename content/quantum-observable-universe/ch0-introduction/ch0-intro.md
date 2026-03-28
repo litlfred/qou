@@ -1,32 +1,26 @@
-Quantum mechanics is, at its core, a theory about what can be
-observed.  Not what the universe *is* — we may never settle that
-question — but what its mechanics *do*: how measurements compose,
-how symmetries constrain outcomes, how local observations assemble
-into a coherent global picture.  Wigner once called the usefulness
-of mathematics in the natural sciences "something bordering on the
-mysterious" \cite{wigner1960}, yet Heisenberg reminded us that what
-we observe is not nature itself but nature exposed to our method of
-questioning.  This book takes both insights seriously.  The language
-best suited to the task is category theory, because it describes
-structure and transformation — the *how* — without committing to
-any particular ontology, whether constructive or platonic.
+Wigner once called the usefulness of mathematics in the natural
+sciences "something bordering on the mysterious" \cite{wigner1960}.
+Heisenberg reminded us that what we observe is not nature itself
+but nature exposed to our method of questioning.  This book takes
+both insights seriously.  We do not ask what the universe *is* —
+we ask what its mechanics *do*.  Category theory is the natural
+language for this, because it describes structure and transformation
+without committing to any particular ontology.
 
-The starting point of this book is a collection of plain physical
-facts.  Differentiation works: linear approximation describes our
-universe across an extraordinary range of scales, from planetary
-orbits to particle scattering.  Measurement is consistent: we can
-measure, record, and compare results, and those comparisons respect
-a pairing between observables and their duals.  Physics is
-frame-independent: what we measure does not depend on the
-orientation from which we observe it.  Three-fold structure recurs
-throughout nature — three colours, three generations of matter,
-three-fold chirality — in a way that demands explanation rather
-than stipulation.  Time flows: the universe folds and unfolds, and
-we drift along that flow.  And crucially, multiple observers share
-a world.  This is not a flashlight theory in which each observer
-illuminates a private universe; different observers are different
-local coordinate charts, and the transition functions between them
-are forced by the algebraic structure to be consistent.
+The starting point is a collection of plain physical facts.
+Differentiation works: linear approximation describes our universe
+across scales, from planetary orbits to particle scattering.
+Measurement is consistent: we can measure, record, and compare,
+and those comparisons respect a pairing between observables and
+their duals.  Physics is frame-independent: what we measure does
+not depend on the orientation from which we observe it.  Three-fold
+structure recurs throughout nature — three colours, three
+generations of matter, three-fold chirality — in a way that demands
+explanation rather than stipulation.  Time flows: the universe
+folds and unfolds, and we drift along that flow.  And crucially,
+multiple observers share a world — not each illuminating a private
+universe, but all operating within a common affine chart whose
+consistency is guaranteed by the algebraic structure itself.
 
 A remarkable fact — and the central thesis of this book — is that
 these everyday observations, once stated carefully, determine a
