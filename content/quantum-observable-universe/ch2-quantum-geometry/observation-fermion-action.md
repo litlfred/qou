@@ -63,12 +63,12 @@ The uncertainty is not epistemic (we lack information) but
 geometric: the $\mathrm{Ad}$ action on $\bigwedge^2(V)$ is
 a non-commutative rotation in the colour fibre.  Two
 observations compose as group elements in $G$, and
-$G = \mathrm{SU}(2)$ is non-abelian.  The order of
+$G = \mathrm{SU}_2(R)$ is non-abelian.  The order of
 observation matters because rotations in three dimensions
 do not commute.
 
 This is why uncertainty is kept in the Reeb bundle: the
-Reeb vector field generates the $U(1) \subset G$ that
+Reeb vector field generates the $U_1(R) \subset G$ that
 commutes with everything — it is the **one direction** in
 the colour fibre where observations do commute.  The
 remaining two directions (the off-diagonal generators of

@@ -26,10 +26,10 @@ We begin from what we can actually observe:
 
 3. **Physics is frame-independent.**  What we measure does not
    depend on the orientation from which we observe it.  Three-
-   dimensional rotation — $\mathrm{SU}(2)$, the double cover
-   of the rotation group $\mathrm{SO}(3)$ — emerges via
+   dimensional rotation — $\mathrm{SU}_2(R)$, the double cover
+   of the rotation group $\mathrm{SO}_3(R)$ — emerges via
    Tannaka–Krein reconstruction from the rigid monoidal
-   structure.  We do not assume $\mathrm{SU}(2)$; it falls
+   structure.  We do not assume $\mathrm{SU}_2(R)$; it falls
    out of the axioms.
 
 4. **Three-fold structure recurs.**  Three colours (red, green,
@@ -81,7 +81,7 @@ these features and nothing more.
 **[Chapters 1–2](#chap:qu)** build the categorical framework:
 rigid monoidal categories, fibre functors, Frobenius structure,
 dagger involution, Tannaka–Krein reconstruction of
-$\mathrm{SU}(2)$, the categorical action $S_q$, and the three
+$\mathrm{SU}_2(R)$, the categorical action $S_q$, and the three
 variational equations (Einstein, Yang–Mills, transport).
 
 **[Chapter 3](#chap:torsion)** establishes lifting and descent:
