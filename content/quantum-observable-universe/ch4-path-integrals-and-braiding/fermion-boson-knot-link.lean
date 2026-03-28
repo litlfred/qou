@@ -15,8 +15,7 @@ structure TorusKnotLink (n : ℕ) where
 /-- T(2,n) is a fermion iff n is odd (1 component). -/
 theorem fermion_iff_odd (n : ℕ) (hn : n ≥ 2) :
     (TorusKnotLink.mk n).components = 1 ↔ n % 2 = 1 := by
-  simp only [TorusKnotLink.mk]
-  -- gcd(2, n) = 1 ↔ n is odd
+  show Nat.gcd 2 n = 1 ↔ n % 2 = 1
   constructor
   · intro h
     -- gcd(2, n) = 1 means 2 ∤ n, so n % 2 = 1
@@ -42,8 +41,7 @@ theorem fermion_iff_odd (n : ℕ) (hn : n ≥ 2) :
 /-- T(2,n) is a boson iff n is even (2 components). -/
 theorem boson_iff_even (n : ℕ) (hn : n ≥ 2) :
     (TorusKnotLink.mk n).components = 2 ↔ n % 2 = 0 := by
-  simp only [TorusKnotLink.mk]
-  -- gcd(2, n) = 2 ↔ n is even
+  show Nat.gcd 2 n = 2 ↔ n % 2 = 0
   constructor
   · intro h
     -- gcd(2, n) = 2 means 2 ∣ n
