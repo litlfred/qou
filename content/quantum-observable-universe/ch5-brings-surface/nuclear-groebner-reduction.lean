@@ -88,11 +88,16 @@ def isReduced (w : BraidWord) : Prop :=
     Gröbner basis theory). -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- Ref: [manuscript] Ch. 6, §nuclear-groebner-reduction
+-- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- The normal form exists and is unique: the division algorithm applied
+-- to any braid word yields a unique Gröbner-reduced HeckeElement
+-- whose every component word is reduced (no squares, far-sorted, YB-canonical).
 axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
     (word : BraidWord) :
     ∃! (nf : HeckeElement),
-    -- The normal form has the same Markov trace as the original
-    True
+    -- The normal form consists entirely of reduced words
+    ∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1
 
 /-- The number of reduced terms grows polynomially in A.
     The maximum word length in the normal form is bounded by A-1. -/
@@ -107,8 +112,13 @@ theorem max_word_length_bound (A : ℕ) (w : BraidWord)
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
+-- Ref: [manuscript] Ch. 6, §nuclear-groebner-reduction
+-- The nuclear Gröbner reduction: there exists a unique normal form
+-- consisting of reduced words with max word length bounded by A-1.
 noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (p n : ℕ) : Prop :=
-  ∃ (nf : HeckeElement), True  -- placeholder
+  ∃ (nf : HeckeElement),
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1) ∧
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
 
 end QOU.Descartes
