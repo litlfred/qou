@@ -1,6 +1,7 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
 import QOU.GrobnerShirshov
+import QOU.GrobnerShirshov.HeckeGS
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 
@@ -101,14 +102,23 @@ noncomputable def categoricalMass {M : Type*} (sp : SubstrateParameter M)
     GS `normal_form_unique` (CompositionLemma.lean) to concrete
     braid threading.
 
-    The proof requires embedding `B_{n+1}` into the Hecke algebra
-    `H_n(q)`, representing the threading as a GS reduction in the
-    quotient `k⟨σ₁,…,σₙ⟩/(Hecke + YB + far-comm)`, and applying
-    `normal_form_unique` to conclude the normal form — and hence
-    the total Hecke cost — is independent of reduction path.
+    The full chain is implemented in `GrobnerShirshov.HeckeGS`:
 
-    Ref: [fred2005] §3 Proposition 3.8 (GS basis for Hecke);
-         Bergman 1978, Theorem 1.2 (diamond lemma). -/
+    ```
+    BraidWord  →  braidToAlg  →  AlgElement (HeckeGen n) ℝ
+      →  reduce (via hecke_is_gs_basis)  →  unique normal form
+      →  totalCoeffSum determined by hadron
+    ```
+
+    The axiom bridges the gap between the `ThreadingReduction` type
+    (which records concrete Hecke steps as a `List HeckeStep`) and
+    the GS `AlgElement` framework.  The key fact is that both
+    `totalCoeffSum` and `heckeCost` compute the same quantity — the
+    total Hecke expenditure — from different representations of the
+    same reduction.
+
+    Ref: Bokut & Shiao, Comm. Algebra 29 (2001), Thm 3.5 (GS basis
+    for Hecke); see `GrobnerShirshov.HeckeGS` for the full module. -/
 axiom gs_threading_unique (β : BraidWord)
     (red₁ red₂ : ThreadingReduction)
     (h₁ : red₁.hadron = β)

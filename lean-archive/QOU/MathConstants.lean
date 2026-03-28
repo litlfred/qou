@@ -1,6 +1,11 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
 
 /-!
 # Derived Physical Constants
@@ -69,6 +74,37 @@ theorem hausdorffDimension_classical {M : Type*} (sp : SubstrateParameter M)
   rw [hq]
   norm_num
 
+/-- Helper: the Planck identity as a pure function of q.
+    G_planck(q) = c³·hbar/s_cell · (hbar/c)² where
+    c = 1/(q-1), hbar = (q-1)/q, s_cell = η·hbar²/(1-hbar²), η = (2q-1)/q³.
+
+    After algebraic simplification:
+    G = q²/(q-1)⁴  and  (hbar/c)² = (q-1)⁴/q²  so  G·(hbar/c)² = 1. -/
+private lemma planck_identity (q : ℝ) (hq_gt : q > 1) :
+    let c := 1 / (q - 1)
+    let hbar := (q - 1) / q
+    let eta := (2 * q - 1) / q ^ 3
+    let s_cell := eta * hbar ^ 2 / (1 - hbar ^ 2)
+    (c ^ 3 * hbar / s_cell) *
+      ((1 - q⁻¹) / (1 / (q - 1))) ^ 2 = 1 := by
+  -- Establish non-zero hypotheses
+  have hq0 : q ≠ 0 := by linarith
+  have hq1 : q - 1 ≠ 0 := by linarith
+  have hq1_pos : (0 : ℝ) < q - 1 := by linarith
+  have hq_pos : (0 : ℝ) < q := by linarith
+  have h2q1 : 2 * q - 1 > 0 := by linarith
+  have h2q1_ne : 2 * q - 1 ≠ 0 := by linarith
+  -- ((q-1)/q)² < 1 since 0 < q-1 < q
+  have hbar_bound : ((q - 1) / q) ^ 2 < 1 := by
+    have h1 : (q - 1) / q < 1 := by rw [div_lt_one hq_pos]; linarith
+    have h2 : 0 < (q - 1) / q := div_pos hq1_pos hq_pos
+    nlinarith [sq_nonneg ((q - 1) / q), sq_nonneg (1 : ℝ)]
+  have hsub_ne : 1 - ((q - 1) / q) ^ 2 ≠ 0 := by linarith
+  -- Clear all denominators and verify polynomial identity
+  simp only []
+  field_simp
+  ring
+
 /-- In Planck units, G_Planck = G(q) · (ℏ_q / c_q)^2 = 1 for all q > 1.
     This expresses the fact that the gravitational constant, when measured
     in the natural units set by ℏ_q and c_q, is unity. -/
@@ -76,8 +112,8 @@ theorem gravitationalConstant_planck_units {M : Type*} (sp : SubstrateParameter 
     (p : M) (hq : sp.field p > 1) :
     gravitationalConstant sp p *
       (quantumPlanckConstant sp p / speedOfLight sp p) ^ 2 = 1 := by
-  -- Ref: [manuscript] Chapter 7, Proposition 7.4 (Planck unit identity)
-  sorry
+  unfold gravitationalConstant quantumPlanckConstant speedOfLight
+  exact planck_identity (sp.field p) hq
 
 /-- The speed of light is positive when q > 1. -/
 theorem speedOfLight_positive {M : Type*} (sp : SubstrateParameter M)
