@@ -17,17 +17,10 @@ export default remark({
     "algebraic-dynamics",
   ],
   uses: [
-    "def:quantum-planck-constant",
-    "ex:q-reeb-flow",
-    "def:substrate-parameter",
-    "rem:reeb-exceptional-divisor",
-    "rem:golden-ratio-degeneration",
     "rem:golden-ratio-transport",
     "rem:julia-set-reeb",
     "def:bundle-initial-conditions",
     "rem:substrate-radial-coordinate",
-    "ex:finite-field-realisation",
     "rem:witt-lift-qou",
-    "prop:local-substrate-q",
   ],
 });

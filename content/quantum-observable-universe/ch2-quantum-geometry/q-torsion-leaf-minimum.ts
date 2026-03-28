@@ -7,7 +7,6 @@ export default remark({
   tags: ["q-deformation", "torsion", "curvature"],
   uses: [
     "def:categorical-q-connection",
-    "def:categorical-q-lie-bracket",
     "ex:q-torsion-leaf",
   ],
 });

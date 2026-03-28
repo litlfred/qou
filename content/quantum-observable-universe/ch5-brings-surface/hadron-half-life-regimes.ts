@@ -10,10 +10,5 @@ export default remark({
     "limiting-behaviour",
     "drip-line",
   ],
-  uses: [
-    "prop:hadron-half-life",
-    "prop:beta-stability",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:hadron-half-life"],
 });

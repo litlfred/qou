@@ -11,7 +11,5 @@ export default definition({
   uses: [
     "def:localized-knot",
     "def:hadron",
-    "def:projective-line-object",
-    "def:quantum-observable-universe",
   ],
 });

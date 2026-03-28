@@ -9,11 +9,7 @@ export default proposition({
   title: "Terminal Resolution of Hadronic Mass",
   uses: [
     "rem:skein-mass-relation",
-    "ex:c-quantum-observable-universe",
-    "def:mass-identity",
-    "thm:topological-mass",
     "cor:mass-identity-C",
-    "prop:topological-mass-formula",
   ],
   proofs: ["prf:terminal-resolution"],
   tags: ["mass", "hadronic"],

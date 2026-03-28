@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Frobenius relation",
-  uses: ["def:quantum-universe", "def:frobenius-pairing"],
+  uses: ["def:frobenius-pairing"],
   proofs: ["prf:frobenius-relation"],
   examples: ["ex:frobenius-su2"],
   tags: ["category-theory", "frobenius"],

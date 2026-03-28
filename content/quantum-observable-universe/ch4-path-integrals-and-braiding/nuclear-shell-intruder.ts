@@ -17,9 +17,5 @@ export default proposition({
     decl: "QOU.Braiding.nuclear_shell_intruder",
     validation: "not_checked",
   },
-  uses: [
-    "def:borromean-baryon",
-    "def:crossing-energy",
-    "prop:orbital-fourier-decomposition",
-  ],
+  uses: ["prop:orbital-fourier-decomposition"],
 });

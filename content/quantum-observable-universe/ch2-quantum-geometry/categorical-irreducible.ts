@@ -8,10 +8,7 @@ export default lemma({
   },
   title: "Irreducibility from observability",
   tags: ["irreducibility", "instanton"],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:categorical-instanton",
-  ],
+  uses: ["def:categorical-instanton"],
   proofs: ["prf:categorical-irreducible"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-irreducible-0.svg", blockIndex: 0, hash: "2b1f63269ecd" },

@@ -20,10 +20,6 @@ export default proposition({
   },
   uses: [
     "prop:hadron-half-life",
-    "def:skein-binding-lagrangian",
-    "rem:skein-crossing-asymmetry",
-    "def:hadron",
-    "def:substrate-parameter",
     "def:electron-knot",
   ],
 });

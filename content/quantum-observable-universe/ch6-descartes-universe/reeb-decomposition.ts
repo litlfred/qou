@@ -9,5 +9,5 @@ export default example({
     decl: "QOU.ReebDecomposition",
     validation: "leanok",
   },
-  uses: ["ex:c-quantum-universe", "def:weight-decomposition", "def:maximal-torus"],
+  uses: ["ex:c-quantum-universe"],
 });

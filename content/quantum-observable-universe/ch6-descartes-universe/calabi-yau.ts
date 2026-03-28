@@ -8,8 +8,6 @@ export default example({
   uses: [
     "ex:c-quantum-observable-universe",
     "ex:reeb-decomposition",
-    "def:weight-decomposition",
     "def:categorical-instanton",
-    "def:substrate-parameter",
   ],
 });

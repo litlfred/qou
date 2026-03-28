@@ -9,5 +9,5 @@ export default example({
     decl: "QOU.CQuantumObservableUniverse",
     validation: "leanok",
   },
-  uses: ["ex:c-quantum-universe", "def:quantum-observable-universe"],
+  uses: ["ex:c-quantum-universe"],
 });

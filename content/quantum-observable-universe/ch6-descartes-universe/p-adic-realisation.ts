@@ -5,10 +5,7 @@ export default example({
   label: "ex:p-adic-realisation",
   title: "$\\mathbb{Q}_\\pp$ realisation",
   uses: [
-    "def:substrate-parameter",
     "ex:irreducible-connection",
-    "def:quantum-universe",
-    "def:quantum-observable-universe",
     "rem:q-torsion-existence",
   ],
 });

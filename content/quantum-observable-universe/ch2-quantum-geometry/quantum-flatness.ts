@@ -6,7 +6,6 @@ export default definition({
   title: "Quantum flatness",
   tags: ["flatness", "2-group", "instanton"],
   uses: [
-    "def:categorical-connection",
     "def:categorical-instanton",
     "def:quantum-gauge-group",
   ],

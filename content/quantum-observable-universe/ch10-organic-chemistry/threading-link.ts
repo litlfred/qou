@@ -17,10 +17,5 @@ export default definition({
     decl: "QOU.Organic.ThreadingLink",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-hopf-chain",
-    "def:crossing-energy",
-    "def:substrate-parameter",
-    "def:covalent-bond-types",
-  ],
+  uses: ["def:molecular-hopf-chain"],
 });

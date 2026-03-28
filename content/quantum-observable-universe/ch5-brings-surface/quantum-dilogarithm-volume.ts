@@ -20,10 +20,6 @@ export default proposition({
   },
   uses: [
     "thm:markov-trace-factorization",
-    "prop:generator-volume-decomposition",
-    "prop:topological-mass-formula",
-    "def:quantum-planck-constant",
     "rem:quantum-dilogarithm",
-    "prop:hadron-half-life",
   ],
 });

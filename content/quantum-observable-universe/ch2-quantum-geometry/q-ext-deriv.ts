@@ -9,5 +9,8 @@ export default example({
     decl: "QOU.qExtDeriv",
     validation: "leanok",
   },
-  uses: ["def:categorical-q-ext-deriv", "ex:reeb-decomposition", "prop:categorical-dq-squared"],
+  uses: [
+    "ex:reeb-decomposition",
+    "prop:categorical-dq-squared",
+  ],
 });

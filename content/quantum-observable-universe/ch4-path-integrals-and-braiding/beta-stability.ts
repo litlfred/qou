@@ -15,9 +15,5 @@ export default proposition({
     decl: "QOU.Braiding.beta_stability",
     validation: "not_checked",
   },
-  uses: [
-    "def:skein-binding-lagrangian",
-    "rem:skein-crossing-asymmetry",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:skein-binding-lagrangian"],
 });

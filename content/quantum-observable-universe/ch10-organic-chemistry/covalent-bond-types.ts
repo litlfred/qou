@@ -17,9 +17,5 @@ export default definition({
     decl: "QOU.Organic.CovalentBond",
     validation: "not_checked",
   },
-  uses: [
-    "prop:metallic-character-knot",
-    "conj:electron-shells-hopf",
-    "def:crossing-energy",
-  ],
+  uses: ["prop:metallic-character-knot"],
 });

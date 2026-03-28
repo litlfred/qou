@@ -12,7 +12,6 @@ export default simulator({
   title: "Double-Slit Analytical Simulator",
   html: "folio-assistant/simulators/double_slit_simulator.html",
   uses: [
-    "def:substrate-parameter",
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",
     "prop:variational-equations",

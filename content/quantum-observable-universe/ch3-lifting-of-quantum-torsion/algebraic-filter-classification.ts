@@ -9,8 +9,5 @@ export default proposition({
     decl: "QOU.Torsion.algebraic_filter_classification",
     validation: "not_checked",
   },
-  uses: [
-    "def:substrate-parameter",
-    "rem:q-harmonic-basis-brane",
-  ],
+  uses: ["rem:q-harmonic-basis-brane"],
 });

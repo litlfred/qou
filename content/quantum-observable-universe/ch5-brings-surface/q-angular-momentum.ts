@@ -17,10 +17,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:substrate-parameter",
     "def:q-momentum",
     "prop:nuclear-spin-parity",
-    "rem:building-block-knots",
-    "prop:local-substrate-q",
   ],
 });

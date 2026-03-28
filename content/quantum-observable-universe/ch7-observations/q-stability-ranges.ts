@@ -11,10 +11,5 @@ export default remark({
     "robustness",
     "light-nuclei",
   ],
-  uses: [
-    "prop:integer-stability",
-    "prop:beta-stability",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:integer-stability"],
 });

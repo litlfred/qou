@@ -17,8 +17,5 @@ export default remark({
     "rem:reeb-exceptional-divisor",
     "rem:golden-ratio-degeneration",
     "def:exceptional-divisor",
-    "ex:q-reeb-flow",
-    "def:substrate-parameter",
-    "def:quantum-planck-constant",
   ],
 });

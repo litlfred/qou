@@ -8,10 +8,5 @@ export default definition({
     decl: "QOU.Descartes.DownQuark",
     validation: "not_checked",
   },
-  uses: [
-    "conj:borromean-quark",
-    "def:up-quark",
-    "def:neutrino-knot",
-    "def:crossing-energy",
-  ],
+  uses: ["def:up-quark"],
 });

@@ -15,10 +15,7 @@ export default proposition({
     "observation",
   ],
   uses: [
-    "def:observation",
-    "def:crossing-energy",
     "rem:observation-braid",
     "def:r-matrix-braiding",
-    "prop:local-substrate-q",
   ],
 });

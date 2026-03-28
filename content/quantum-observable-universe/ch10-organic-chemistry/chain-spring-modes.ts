@@ -12,8 +12,5 @@ export default remark({
     "flexibility",
     "phonon",
   ],
-  uses: [
-    "def:molecular-hopf-chain",
-    "def:crossing-energy",
-  ],
+  uses: ["def:molecular-hopf-chain"],
 });

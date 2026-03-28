@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title: "Main Commutative Diagram",
-  uses: ["ex:c-quantum-observable-universe", "ex:instanton", "def:substrate-parameter", "def:q-yang-mills-levi"],
+  uses: ["def:q-yang-mills-levi"],
   proofs: ["prf:main-commutative-diagram"],
   tags: ["commutative-diagram", "main-result"],
   rendered: [

@@ -16,8 +16,5 @@ export default proposition({
     decl: "QOU.Descartes.torus_embeddable_complete",
     validation: "not_checked",
   },
-  uses: [
-    "prop:torus-knot-generators",
-    "thm:embeddability-closure",
-  ],
+  uses: ["thm:embeddability-closure"],
 });

@@ -16,11 +16,5 @@ export default example({
     decl: "QOU.Descartes.HalfLifeVerification.all_six_agree",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hadron-half-life",
-    "rem:hadron-half-life-regimes",
-    "prop:integer-stability",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:hadron-half-life-regimes"],
 });

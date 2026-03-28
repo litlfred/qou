@@ -7,12 +7,7 @@ export default theorem({
     decl: "QOU.SubstrateParameter.ofReebDecomposition",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:categorical-reeb",
-    "def:weight-decomposition",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:substrate-parameter"],
   proofs: ["prf:substrate-parameter-exists"],
   tags: ["existence", "substrate", "deformation"],
 });

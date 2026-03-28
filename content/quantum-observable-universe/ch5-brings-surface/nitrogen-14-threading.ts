@@ -14,13 +14,5 @@ export default example({
     "coulomb",
     "beta-decay",
   ],
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "thm:markov-trace-factorization",
-    "prop:generator-volume-decomposition",
-    "def:stable-nucleus",
-    "prop:hadron-half-life",
-    "prop:beta-stability",
-    "prop:local-substrate-q",
-  ],
+  uses: ["thm:markov-trace-factorization"],
 });

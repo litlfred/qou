@@ -6,9 +6,7 @@ export default remark({
   title: "$q$-Harmonic basis of the brane tower",
   tags: ["q-harmonic", "brane-tower", "self-duality"],
   uses: [
-    "def:recursive-brane-tower",
     "def:substrate-parameter",
-    "prop:jet-prolongation",
     "rem:betti-numbers-brane",
   ],
 });

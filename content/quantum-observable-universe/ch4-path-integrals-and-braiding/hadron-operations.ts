@@ -5,5 +5,5 @@ export default remark({
   label: "rem:hadron-operations",
   title: "Operations on hadrons",
   tags: ["hadron", "knot", "braiding", "hopf-link"],
-  uses: ["def:hadron", "prop:hadron-operations-closure"],
+  uses: ["prop:hadron-operations-closure"],
 });

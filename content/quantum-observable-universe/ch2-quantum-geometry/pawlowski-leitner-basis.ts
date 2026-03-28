@@ -9,8 +9,6 @@ export default proposition({
   },
   uses: [
     "rem:spin-half-representation",
-    "rem:simple-objects-V",
-    "thm:su2-emergence",
     "unital-groebner-bases:cor:pbw",
   ],
   tags: ["basis", "intertwiner", "representation", "pawlei"],

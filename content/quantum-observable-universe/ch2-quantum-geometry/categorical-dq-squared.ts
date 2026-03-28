@@ -8,10 +8,7 @@ export default proposition({
   },
   title: "Non-vanishing of $d_q^2$",
   tags: ["exterior-derivative", "deformation"],
-  uses: [
-    "def:categorical-q-ext-deriv",
-    "def:weight-decomposition",
-  ],
+  uses: ["def:categorical-q-ext-deriv"],
   proofs: ["prf:categorical-dq-squared"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-dq-squared-0.svg", blockIndex: 0, hash: "fdcf22bc0345" },

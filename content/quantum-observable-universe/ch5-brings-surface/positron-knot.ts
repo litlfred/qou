@@ -10,7 +10,6 @@ export default definition({
   },
   uses: [
     "def:electron-knot",
-    "def:down-quark",
     "rem:chirality-trefoil-electron-positron",
   ],
 });

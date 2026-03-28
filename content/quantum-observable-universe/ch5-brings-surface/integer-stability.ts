@@ -16,12 +16,5 @@ export default proposition({
     decl: "QOU.Descartes.integer_stability",
     validation: "not_checked",
   },
-  uses: [
-    "prop:beta-stability",
-    "def:stable-nucleus",
-    "def:coulomb-charge",
-    "def:skein-binding-lagrangian",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["def:stable-nucleus"],
 });

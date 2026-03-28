@@ -20,9 +20,6 @@ export default proposition({
   },
   uses: [
     "prop:skein-polynomial-transfer-matrix",
-    "prop:generator-volume-decomposition",
-    "thm:markov-trace-factorization",
     "def:beta-decay-skein",
-    "prop:local-substrate-q",
   ],
 });

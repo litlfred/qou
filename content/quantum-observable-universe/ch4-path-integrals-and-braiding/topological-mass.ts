@@ -9,10 +9,7 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
     "def:mass-identity",
-    "def:descent-involution",
     "def:brane-boundary",
     "prop:descent-eigenspaces",
   ],

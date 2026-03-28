@@ -9,10 +9,8 @@ export default definition({
     validation: "leanok",
   },
   uses: [
-    "def:quantum-observable-universe",
     "def:categorical-connection",
     "def:substrate-parameter",
-    "def:weight-decomposition",
     "def:positive-definite-dagger",
   ],
   rendered: [

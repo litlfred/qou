@@ -15,15 +15,5 @@ export default remark({
     "killing-form",
     "boundary",
   ],
-  uses: [
-    "def:substrate-parameter",
-    "def:categorical-lagrangian",
-    "def:qou-canonical-action",
-    "thm:markov-trace-factorization",
-    "thm:groebner-shirshov-energy",
-    "prop:reidemeister-action-table",
-    "prop:topological-mass-formula",
-    "def:skein-binding-lagrangian",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:reidemeister-action-table"],
 });

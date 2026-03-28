@@ -12,10 +12,5 @@ export default remark({
     "elliptic-curve",
     "substrate-parameter",
   ],
-  uses: [
-    "prop:descartes-elliptic-curve",
-    "def:substrate-parameter",
-    "prop:chiral-elliptic",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:descartes-elliptic-curve"],
 });

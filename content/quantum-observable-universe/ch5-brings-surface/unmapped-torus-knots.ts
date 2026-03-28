@@ -13,13 +13,8 @@ export default remark({
     "weak-force",
   ],
   uses: [
-    "prop:torus-knot-generators",
     "prop:torus-embeddable-complete",
-    "thm:embeddability-closure",
-    "def:categorical-proton",
     "def:categorical-neutron",
-    "def:knot-particle-generation",
     "rem:knot-formula-table",
-    "rem:color-tube-interpretation",
   ],
 });

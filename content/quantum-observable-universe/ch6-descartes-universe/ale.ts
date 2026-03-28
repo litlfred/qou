@@ -7,8 +7,6 @@ export default example({
   tags: ["ale", "orbifold", "mckay-correspondence"],
   uses: [
     "ex:c-quantum-observable-universe",
-    "def:substrate-parameter",
-    "def:weight-decomposition",
     "ex:reeb-decomposition",
   ],
 });

@@ -10,10 +10,7 @@ export default simulator({
   label: "sim:brings-surface",
   title: "Bring's Surface Simulator",
   html: "folio-assistant/simulators/brings_surface.html",
-  uses: [
-    "def:brings-surface",
-    "def:quaternionic-spectral-resolvents",
-  ],
+  uses: ["def:quaternionic-spectral-resolvents"],
   tags: ["brings-surface", "spectral-resolvent", "3d", "simulation"],
   defaultView: {
     name: "default",

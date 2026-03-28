@@ -11,10 +11,5 @@ export default remark({
     "codata",
     "neutron-proton-ratio",
   ],
-  uses: [
-    "prop:integer-stability",
-    "rem:diophantine-valley",
-    "prop:beta-stability",
-    "def:stable-nucleus",
-  ],
+  uses: ["rem:diophantine-valley"],
 });

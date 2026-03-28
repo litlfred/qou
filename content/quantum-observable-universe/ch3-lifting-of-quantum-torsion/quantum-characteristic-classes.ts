@@ -7,9 +7,7 @@ export default definition({
   tags: ["yekutieli", "obstruction", "cohomology", "brane-tower"],
   examples: ["ex:quantum-characteristic-classes-su2"],
   uses: [
-    "def:quantum-observable-universe",
     "def:recursive-brane-tower",
     "def:yekutieli-lifting-condition",
-    "prop:jet-prolongation",
   ],
 });

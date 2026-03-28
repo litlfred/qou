@@ -14,14 +14,7 @@ export default conjecture({
     "molecular-hopf-ring",
   ],
   uses: [
-    "prop:hadron-half-life",
-    "conj:skein-shell-correction",
     "def:molecular-hopf-ring",
-    "def:threading-link",
-    "def:skein-binding-lagrangian",
-    "def:stable-nucleus",
-    "rem:skein-crossing-asymmetry",
     "ex:half-life-shell-worked",
-    "prop:local-substrate-q",
   ],
 });

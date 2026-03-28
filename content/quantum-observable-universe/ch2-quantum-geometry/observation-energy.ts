@@ -13,7 +13,6 @@ export default proposition({
   ],
   uses: [
     "def:observation",
-    "def:substrate-parameter",
     "def:quantum-planck-constant",
     "def:categorical-action",
   ],

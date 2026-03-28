@@ -16,10 +16,5 @@ export default definition({
     decl: "QOU.Descartes.QMomentum",
     validation: "not_checked",
   },
-  uses: [
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-    "def:crossing-energy",
-    "rem:building-block-knots",
-  ],
+  uses: ["rem:building-block-knots"],
 });

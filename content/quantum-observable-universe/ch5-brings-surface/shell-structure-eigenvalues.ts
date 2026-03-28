@@ -22,12 +22,6 @@ export default proposition({
   },
   uses: [
     "def:transfer-matrix-operator",
-    "prop:beta-decay-transfer-matrix",
-    "prop:skein-polynomial-transfer-matrix",
-    "def:electron-knot",
-    "def:neutrino-knot",
-    "conj:electron-shells-hopf",
     "rem:hydrogen-orbitals",
-    "prop:local-substrate-q",
   ],
 });

@@ -6,9 +6,7 @@ export default example({
   title: "Cosmological limits of $q$",
   tags: ["cosmology", "limits"],
   uses: [
-    "def:quantum-observable-universe",
     "def:frobenius-pairing",
-    "def:substrate-parameter",
     "rem:hopf-non-cocommutativity",
   ],
 });

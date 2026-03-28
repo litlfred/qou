@@ -14,14 +14,9 @@ export default example({
     "mirror-transition",
   ],
   uses: [
-    "prop:hadron-half-life",
     "ex:hadron-half-life-verification",
     "conj:skein-shell-correction",
     "prop:hadron-q-self-correction",
     "prop:skein-coulomb-enhancement",
-    "def:stable-nucleus",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "prop:local-substrate-q",
   ],
 });

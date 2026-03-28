@@ -18,10 +18,5 @@ export default proposition({
     decl: "QOU.Braiding.fermion_boson_knot_link",
     validation: "not_checked",
   },
-  uses: [
-    "def:fermion-boson-decomposition",
-    "def:categorical-reeb",
-    "def:borromean-baryon",
-    "sec:knot-notation-convention",
-  ],
+  uses: ["def:borromean-baryon"],
 });

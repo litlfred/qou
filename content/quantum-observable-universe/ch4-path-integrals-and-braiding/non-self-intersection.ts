@@ -11,8 +11,6 @@ export default corollary({
   uses: [
     "prop:mobius-energy",
     "rem:r-matrix-braiding",
-    "def:q-hodge-star",
-    "def:substrate-parameter",
   ],
   proofs: ["prf:non-self-intersection"],
   rendered: [

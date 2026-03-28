@@ -9,9 +9,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-observable-universe",
     "def:categorical-connection",
     "def:substrate-parameter",
-    "def:categorical-reeb",
   ],
 });

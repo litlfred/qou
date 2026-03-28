@@ -9,9 +9,7 @@ export default definition({
   title: "$q$-deformed path phase",
   uses: [
     "def:categorical-q-ext-deriv",
-    "def:substrate-parameter",
     "def:quantum-planck-constant",
-    "def:categorical-reeb",
   ],
   tags: ["double-slit", "phase", "q-deformation", "interference"],
 });

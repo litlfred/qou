@@ -9,7 +9,5 @@ export default example({
     "rem:wavefront-propagation",
     "rem:instanton-on-shell",
     "def:localized-knot",
-    "def:categorical-dirac-operator",
-    "def:substrate-parameter",
   ],
 });
