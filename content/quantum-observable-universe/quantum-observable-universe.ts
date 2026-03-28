@@ -8,7 +8,7 @@ import { paper, chapterRef } from "../schema/builders";
  * `<dir>/<dir>.ts` by convention (or uses `uri` override).
  */
 export default paper({
-  title: "Quantum Observable Universe",
+  title: "On the Mechanics of Quantum Observable Universes",
   authors: ["Frederick Carl Leitner"],
   affiliations: [],
   date: "2026-03-21",
@@ -24,6 +24,9 @@ export default paper({
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
+    frakI: { tex: "\\mathfrak{I}",  unicode: "ℑ" },
+    frakK: { tex: "\\mathfrak{K}",  unicode: "𝔎" },
+    frakP: { tex: "\\mathfrak{P}",  unicode: "𝔓" },
   },
   chapters: [
     chapterRef({ dir: "ch0-introduction" }),

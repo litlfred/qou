@@ -1012,6 +1012,91 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1963]] },
     URL: "https://www.feynmanlectures.caltech.edu/I_35.html",
   }),
+
+  // ── Bennett 1973: Reversible Turing machines ──────────────────
+  ref({
+    id: "bennett1973",
+    type: "article-journal",
+    title: "Logical Reversibility of Computation",
+    author: [
+      { family: "Bennett", given: "C. H." },
+    ],
+    "container-title": "IBM Journal of Research and Development",
+    volume: 17,
+    issue: 6,
+    page: "525-532",
+    issued: { "date-parts": [[1973]] },
+    DOI: "10.1147/rd.176.0525",
+  }),
+
+  // ── Toffoli 1980: Reversible computing ────────────────────────
+  ref({
+    id: "toffoli1980",
+    type: "chapter",
+    title: "Reversible Computing",
+    author: [
+      { family: "Toffoli", given: "T." },
+    ],
+    "container-title": "Automata, Languages and Programming",
+    "collection-title": "Lecture Notes in Computer Science",
+    volume: 85,
+    page: "632-644",
+    publisher: "Springer",
+    "publisher-place": "Berlin",
+    issued: { "date-parts": [[1980]] },
+    DOI: "10.1007/3-540-10003-2_104",
+  }),
+
+  // ── Fredkin & Toffoli 1982: Conservative logic ────────────────
+  ref({
+    id: "fredkin1982",
+    type: "article-journal",
+    title: "Conservative Logic",
+    author: [
+      { family: "Fredkin", given: "E." },
+      { family: "Toffoli", given: "T." },
+    ],
+    "container-title": "International Journal of Theoretical Physics",
+    volume: 21,
+    page: "219-253",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1007/BF01857727",
+  }),
+
+  // ── Freedman-Kitaev-Larsen-Wang 2003: Topological QC ──────────
+  ref({
+    id: "freedman2003",
+    type: "article-journal",
+    title: "Topological Quantum Computation",
+    author: [
+      { family: "Freedman", given: "M. H." },
+      { family: "Kitaev", given: "A." },
+      { family: "Larsen", given: "M. J." },
+      { family: "Wang", given: "Z." },
+    ],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: 40,
+    issue: 1,
+    page: "31-38",
+    issued: { "date-parts": [[2003]] },
+    DOI: "10.1090/S0273-0979-02-00964-3",
+  }),
+
+  // ── Wigner 1960: Unreasonable effectiveness ───────────────────
+  ref({
+    id: "wigner1960",
+    type: "article-journal",
+    title: "The Unreasonable Effectiveness of Mathematics in the Natural Sciences",
+    author: [
+      { family: "Wigner", given: "E. P." },
+    ],
+    "container-title": "Communications on Pure and Applied Mathematics",
+    volume: 13,
+    issue: 1,
+    page: "1-14",
+    issued: { "date-parts": [[1960]] },
+    DOI: "10.1002/cpa.3160130102",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
