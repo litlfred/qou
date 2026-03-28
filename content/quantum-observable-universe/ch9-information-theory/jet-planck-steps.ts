@@ -37,5 +37,7 @@ export default remark({
     "rem:knot-particle-generation",
     "rem:chirality-trefoil-electron-positron",
     "rem:building-block-knots",
+    "rem:virtual-particles-exceptional-divisor",
+    "rem:force-knot-identification",
   ],
 });
