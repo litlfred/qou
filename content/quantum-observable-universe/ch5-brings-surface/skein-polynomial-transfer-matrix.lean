@@ -97,33 +97,30 @@ theorem skein_polynomial_degree_bound (A : ℕ) (hA : 2 ≤ A) :
 theorem transfer_matrix_steps (A : ℕ) :
     (Finset.range (A - 1)).sum (fun i => A - i - 1) = Nat.choose A 2 := by
   -- ∑_{i=0}^{A-2} (A - 1 - i) = 1 + 2 + ... + (A-1) = A(A-1)/2 = C(A,2)
-  -- Proof by induction on A
+  -- Proof by strong induction with case split on A
   induction A with
   | zero => simp
   | succ n ih =>
     cases n with
     | zero => simp
     | succ m =>
-      -- Goal: ∑_{i ∈ range (m+1)} (m + 2 - i - 1) = C(m+2, 2)
-      -- Split off the last term of the sum
-      rw [show (m + 1 + 1 - 1) = m + 1 from by omega]
+      -- A = m + 2. Goal: ∑_{i ∈ range (m+1)} ((m+2) - i - 1) = C(m+2, 2)
+      -- Split off last term: i = m gives (m+2) - m - 1 = 1
+      rw [show m + 1 + 1 - 1 = m + 1 from by omega]
       rw [Finset.sum_range_succ]
-      -- The last term is m + 2 - (m+1) - 1 = 0... wait, let me reconsider
-      -- Actually: f(m) = (m+2) - m - 1 = 1
-      -- And the rest is ∑_{i ∈ range m} (m+2-i-1) which we need to relate to ih
-      -- ih: ∑_{i ∈ range m} (m+1-i-1) = C(m+1, 2)
-      -- Current sum prefix: ∑_{i ∈ range m} (m+2-i-1) = ∑_{i ∈ range m} ((m+1-i-1) + 1)
-      --   = C(m+1,2) + m
-      -- So total = C(m+1,2) + m + 1 = C(m+2,2) ✓
-      have ihm : (Finset.range m).sum (fun i => m + 1 - i - 1) = Nat.choose (m + 1) 2 := by
-        have : m + 1 - 1 = m := by omega
-        rw [this] at ih
-        exact ih
-      -- Sorry: the rewriting needed to connect the shifted sums and Nat.choose
-      -- recurrence is intricate in Lean's natural number subtraction.
-      -- A CAS verification (Sage): sum(A-i-1, i, 0, A-2) == binomial(A,2) for all A ≥ 0.
-      -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-      sorry
+      -- ih for n = m+1: ∑_{i ∈ range m} ((m+1) - i - 1) = C(m+1, 2)
+      have ih' : (Finset.range m).sum (fun i => m + 1 - i - 1) = Nat.choose (m + 1) 2 := by
+        have := ih; simp only [show m + 1 - 1 = m from by omega] at this; exact this
+      -- Each summand differs by 1: (m+2-i-1) = (m+1-i-1) + 1 for i < m
+      have shift : ∀ i ∈ Finset.range m, m + 1 + 1 - i - 1 = (m + 1 - i - 1) + 1 := by
+        intro i hi; simp [Finset.mem_range] at hi; omega
+      rw [Finset.sum_congr rfl shift, Finset.sum_add_const, ih']
+      -- Goal: C(m+1,2) + m * 1 + ((m+2) - m - 1) = C(m+2, 2)
+      -- i.e., C(m+1,2) + m + 1 = C(m+2, 2)
+      -- By Pascal's rule: C(m+2,2) = C(m+1,2) + C(m+1,1) = C(m+1,2) + (m+1)
+      rw [Nat.choose_succ_succ]
+      simp [Nat.choose_one_right]
+      omega
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Triple identity of q

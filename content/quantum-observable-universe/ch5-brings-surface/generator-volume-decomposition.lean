@@ -84,7 +84,15 @@ theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
     nuclearEnergy vols_par - nuclearEnergy vols_dau =
       nuclearEnergy (vols_par.take (p + 1)) - nuclearEnergy (vols_dau.take (p + 1)) := by
   -- Ref: [manuscript] Ch. 6, §generator-volume-decomposition
-  -- Generators i > p have identical volumes, so they cancel in the difference
+  -- Generators i > p have identical volumes, so they cancel in the difference.
+  -- The proof requires: foldl (+) 0 xs = foldl (+) 0 (take n xs) + foldl (+) 0 (drop n xs),
+  -- then showing the drop-sums are equal (since h_tail says positions > p agree),
+  -- so they cancel in the subtraction.
+  -- This needs List.foldl_append and List.take_append_drop, plus showing
+  -- foldl (+) 0 is a monoid homomorphism. The combinatorics of List.getElem!
+  -- vs List.drop equality make this tedious but not deep.
+  -- Ref: [manuscript] Ch. 6, §generator-volume-decomposition
+  -- TODO: Formalize via List.sum after refactoring nuclearEnergy to use List.sum
   sorry
 
 /-- Top-level alias matching the manifest declaration. -/
