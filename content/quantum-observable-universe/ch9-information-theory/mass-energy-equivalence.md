@@ -9,7 +9,7 @@ the crossing energy
 ([mass identity](#def:mass-identity)) satisfy*
 
 $$
-  \mathfrak{E}_H
+  E_H
   \;=\; \mathfrak{m}_H \cdot c_q^2
   \;=\; \frac{\mathfrak{m}_H}{(q - 1)^2}.
 $$
@@ -50,7 +50,7 @@ $$
   \end{cases}
 $$
 
-The right-hand side is $\mathfrak{E}_H$.  Each crossing
+The right-hand side is $E_H$.  Each crossing
 weight is a *spatial* quantity: it measures the $R$-matrix coupling
 between horizontally adjacent fibres at strength $q^{\pm 1}$.
 
@@ -87,7 +87,7 @@ $q^{\pm 1} \cdot \hbar_q / q^{-1} = q^{\pm 1} \cdot (q-1)$ to
 mass.  The ratio is:
 
 $$
-  \frac{\mathfrak{E}_H}{\mathfrak{m}_H}
+  \frac{E_H}{\mathfrak{m}_H}
   \;=\; \frac{q^{-1}}{\hbar_q}
   \cdot \frac{q^{-1}}{\hbar_q}
   \;=\; c_q^2
@@ -95,19 +95,19 @@ $$
   \qquad\square
 $$
 
-**Regime behaviour of $\mathfrak{E} = \mathfrak{m} \cdot c_q^2$.**
+**Regime behaviour of $E = \mathfrak{m} \cdot c_q^2$.**
 
 | Regime | $q$ | $c_q^2$ | Physics |
 |--------|-----|----------|---------|
 | Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
-| Our universe | $1.1097$ | $\approx 83.2$ | $\mathfrak{E} \approx 83\,\mathfrak{m}$: large amplification |
+| Our universe | $1.1097$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
 | Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |
-| Classical limit | $q \to 1^+$ | $\to \infty$ | $\mathfrak{E}/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
+| Classical limit | $q \to 1^+$ | $\to \infty$ | $E/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
 
 At $q = 1.1097$, a vortex with categorical mass $\mathfrak{m}$
 carries crossing energy
-$\mathfrak{E} = \mathfrak{m}/(q-1)^2 \approx 83\,\mathfrak{m}$.
+$E = \mathfrak{m}/(q-1)^2 \approx 83\,\mathfrak{m}$.
 This large amplification factor is the QOU explanation for why
 nuclear energy ($E = mc^2$) releases vastly more energy than the
 rest mass would suggest in everyday units.
@@ -116,9 +116,9 @@ rest mass would suggest in everyday units.
 The electron (left trefoil $T_{2,3}$) has $n_c = 3$ positive
 crossings:
 
-- Crossing energy: $\mathfrak{E}_{e^-} = 3q \approx 3.330$
+- Crossing energy: $E_{e^-} = 3q \approx 3.330$
   Skein units.
-- Predicted mass: $\mathfrak{m}_{e^-} = \mathfrak{E} \cdot (q-1)^2
+- Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2
   = 3q(q-1)^2$.
 
 At $q = 1.1097$: $\mathfrak{m}_{e^-} = 3 \times 1.1097 \times 0.01203
@@ -129,16 +129,16 @@ The pair production threshold
 ([pair creation energy](#rem:pair-creation-energy)) becomes:
 
 $$
-  \mathfrak{E}_{\gamma} \;\geq\;
+  E_{\gamma} \;\geq\;
   (\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}) \cdot c_q^2
   \;=\; \frac{\mathfrak{m}_{e^-} + \mathfrak{m}_{e^+}}{(q-1)^2}.
 $$
 
 The net crossing energy of the pair is
-$\mathfrak{E}_{e^-} + \mathfrak{E}_{e^+} = 3(q - q^{-1})
+$E_{e^-} + E_{e^+} = 3(q - q^{-1})
 \approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
 energy must supply both **absolute** crossing energies:
-$|\mathfrak{E}_{e^-}| + |\mathfrak{E}_{e^+}|
+$|E_{e^-}| + |E_{e^+}|
 = 3q + 3q^{-1} = 3(q + q^{-1})
 = 6\cosh(\ln q) \approx 6.033$ Skein units.
 
@@ -146,7 +146,7 @@ $|\mathfrak{E}_{e^-}| + |\mathfrak{E}_{e^+}|
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
 nonabelian multiplicative integral [yekutieli2015]
 ([mass over $\mathbb{C}$](#ex:mass-identity-C)), and
-$\mathfrak{E}_H = \mathfrak{m}_H \cdot c_q^2$ becomes
+$E_H = \mathfrak{m}_H \cdot c_q^2$ becomes
 
 $$
   \sum_{\text{crossings}} \epsilon_i

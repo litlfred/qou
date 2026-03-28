@@ -51,6 +51,7 @@ export default chapter({
       blocks: [
         "information-speed-of-light",
         "mass-energy-equivalence",
+        "photon-threading-mass",
         "gravitational-constant",
         "hausdorff-dimension-recurrence",
         "information-causality",

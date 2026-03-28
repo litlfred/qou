@@ -58,8 +58,10 @@ peer-review practices and the methodology of
   - Speed of light: $c_q = 1/(q-1)$ — ratio of spatial to temporal
     coupling in $A_q = q^{-1}A + \hbar_q\,\iota_\xi A\,\theta$.
   - Planck constant: $\hbar_q = (q-1)/q$.
-  - Mass-energy equivalence: $\mathfrak{E}_H = \mathfrak{m}_H \cdot c_q^2$,
-    i.e., $\mathfrak{E}_H = \mathfrak{m}_H/(q-1)^2$.
+  - Mass-energy equivalence: $E_H = \mathfrak{m}_H \cdot c_q^2$,
+    i.e., $E_H = \mathfrak{m}_H/(q-1)^2$.  Plain $E_H$ is safe:
+    the exceptional divisor is now $\mathcal{S}_c$, so $E$ is
+    no longer overloaded.
   - Generic closed vortex: $\varrho \colon \mathbf{1} \to A$ (not
     $\gamma$, which is reserved for the photon).
   - Operational entropy: $\eta_q = (2q-1)/q^3$.
