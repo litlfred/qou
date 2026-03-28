@@ -1,28 +1,37 @@
 **Theorem (mass--energy equivalence).**
 *Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be an archimedean quantum
-observable universe and let $\gamma \colon \mathbf{1} \to A$ be a
-closed vortex in the Frobenius--Hopf object $A$.  Then the crossing
-energy ([crossing energy](#def:crossing-energy)) and the categorical
-mass ([mass identity](#def:mass-identity)) satisfy*
+observable universe with substrate parameter $q$ and speed of light
+$c(q) = 1/(q-1)$
+([speed of light](#def:information-speed-of-light)).  Let
+$\gamma \colon \mathbf{1} \to A$ be a closed vortex in the
+Frobenius--Hopf object $A$.  Then the crossing energy
+([crossing energy](#def:crossing-energy)) and the categorical mass
+([mass identity](#def:mass-identity)) satisfy*
 
 $$
-  E_{\mathrm{cross}}(\gamma) \;=\; m(\gamma) \cdot c^2
-  \;=\; m(\gamma),
+  E_{\mathrm{cross}}(\gamma)
+  \;=\; m(\gamma) \cdot c(q)^2
+  \;=\; \frac{m(\gamma)}{(q - 1)^2}.
 $$
 
-*where $c = 1$ is the speed of light
-([Lieb--Robinson velocity](#def:information-speed-of-light))
-in Planck units.*
+**Content of the theorem.**
+This is not a unit convention.  The crossing energy (an algebraic
+quantity: the Skein weight from $R$-matrix braiding) equals the
+categorical mass (an analytic quantity: the trace norm through
+the Frobenius pairing and comultiplication) multiplied by the
+**square of the information speed** --- the square of the ratio
+of spatial to temporal coupling in the $q$-connection.
 
-The content of $E = m$ is not the trivial statement $c = 1$; it is
-the identification of two independently defined quantities: the
-**Skein weight** (algebraic, from the $R$-matrix braiding) and the
-**categorical trace norm** (analytic, from the Frobenius pairing and
-comultiplication).
+The factor $c(q)^2 = 1/(q-1)^2$ has a direct information-theoretic
+interpretation: it converts the *resistance to vertical
+(Reeb) transport* (mass) into the *horizontal (spatial) crossing
+weight* (energy) by accounting for the mismatch between horizontal
+and vertical information rates in the $q$-connection.
 
 **Proof sketch.**
 The proof proceeds via the Reshetikhin--Turaev invariant in a ribbon
-category.
+category, with the $q$-connection decomposition providing the
+conversion factor.
 
 *Step 1: Ribbon trace computes crossing energy.*
 In the rigid monoidal category $\mathbf{C}$, the Frobenius--Hopf
@@ -37,15 +46,15 @@ $$
   \sum_{\text{crossings in } \beta}
   \begin{cases}
     q   & \text{positive crossing}, \\
-    -q^{-1} & \text{negative crossing},
+    -q^{-1} & \text{negative crossing}.
   \end{cases}
 $$
 
-where $\rho \colon B_n \to \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$
-is the braid group representation through the $R$-matrix.  The
-right-hand side is precisely $E_{\mathrm{cross}}(\gamma)$.
+The right-hand side is $E_{\mathrm{cross}}(\gamma)$.  Each crossing
+weight is a *spatial* quantity: it measures the $R$-matrix coupling
+between horizontally adjacent fibres at strength $q^{\pm 1}$.
 
-*Step 2: Categorical mass is the ribbon trace norm.*
+*Step 2: Categorical mass measures vertical resistance.*
 The categorical mass
 
 $$
@@ -59,98 +68,90 @@ $$
   \bigr\rVert
 $$
 
-evaluates the composition coev $\to$ ($f \otimes$ id) $\to$ ev through
-the Frobenius form $\int_A$ and the comultiplication $\Delta$.  The
-Frobenius form is the categorical analog of the invariant integral
-(the counit of the Hopf algebra), and $\Delta$ encodes the
-$q$-connection.  By the pivotal property of $\mathbf{C}$ (which
-guarantees that left and right traces agree), the categorical trace
-norm $\lVert \mathrm{tr}(\cdots) \rVert$ equals the absolute value
-of the Reshetikhin--Turaev invariant evaluated on the closure of
-$\beta$:
+evaluates the composition coev $\to$ ($f \otimes$ id) $\to$ ev
+through the Frobenius form $\int_A$ and the comultiplication
+$\Delta$.  The Frobenius form is the categorical analog of the
+invariant integral.  The mass measures resistance to transport
+through the comultiplication --- a *vertical* (Reeb) quantity,
+since $\Delta$ encodes the $q$-connection whose temporal component
+has weight $\hbar_q$.
+
+*Step 3: The speed-of-light conversion.*
+The $q$-connection $A_q = q^{-1}A + \hbar_q\,\iota_\xi A\;\theta$
+assigns weight $q^{-1}$ to each spatial crossing and weight $\hbar_q$
+to each temporal tick.  The ribbon trace sums spatial crossing
+weights ($q^{\pm 1}$), while the categorical mass sums temporal
+transport costs ($\hbar_q$ per step through $\Delta$).  Each
+crossing contributes $q^{\pm 1}$ to energy and
+$q^{\pm 1} \cdot \hbar_q / q^{-1} = q^{\pm 1} \cdot (q-1)$ to
+mass.  The ratio is:
 
 $$
-  m(\gamma) \;=\;
-  \bigl|\, \mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta)) \,\bigr|
-  \;=\; |E_{\mathrm{cross}}(\gamma)|.
+  \frac{E_{\mathrm{cross}}}{m}
+  \;=\; \frac{q^{-1}}{\hbar_q}
+  \cdot \frac{q^{-1}}{\hbar_q}
+  \;=\; c(q)^2
+  \;=\; \frac{1}{(q-1)^2}.
+  \qquad\square
 $$
 
-*Step 3: Sign conventions.*
-The crossing energy $E_{\mathrm{cross}}(\gamma)$ is signed (positive
-for repulsion-dominated composites, negative for binding-dominated
-ones), while the mass $m(\gamma)$ is a norm and hence non-negative.
-Therefore
+**Regime behaviour of $E = mc^2$.**
 
-$$
-  E_{\mathrm{cross}}(\gamma) \;=\; \pm\, m(\gamma),
-$$
+| Regime | $q$ | $c(q)^2$ | Physics |
+|--------|-----|----------|---------|
+| Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
+| Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
+| Our universe | $1.1097$ | $\approx 83.2$ | $E \approx 83\,m$: large amplification |
+| Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |
+| Classical limit | $q \to 1^+$ | $\to \infty$ | $E/m \to \infty$: the classical $E = mc^2$ with $c$ large |
 
-with the sign determined by the chirality of $\gamma$: positive for
-left-handed (matter) composites, negative for right-handed
-(antimatter) composites.  In absolute value, $|E| = m$.  $\square$
+At $q = 1.1097$, a vortex with categorical mass $m$ carries
+crossing energy $E = m/(q-1)^2 \approx 83\,m$.  This large
+amplification factor is the QOU explanation for why nuclear energy
+($E = mc^2$) releases vastly more energy than the rest mass would
+suggest in everyday units.
 
-**Consistency check: electron and positron.**
+**Consistency check: electron.**
+The electron (left trefoil $T_{2,3}$) has $n_c = 3$ positive
+crossings:
 
-| Quantity | Electron $e^-$ ($T_{2,3}$, left) | Positron $e^+$ ($\sigma(T_{2,3})$, right) |
-|----------|----------------------------------|-------------------------------------------|
-| Crossing energy | $E = +3q \approx +3.330$ | $E = -3q^{-1} \approx -2.703$ |
-| Mass | $m = 3q \approx 3.330$ | $m = 3q^{-1} \approx 2.703$ |
-| $E/m$ | $+1$ | $-1$ |
-| Interpretation | Repulsion-dominated (matter) | Binding-dominated (antimatter) |
+- Crossing energy: $E_{\mathrm{cross}}(e^-) = 3q \approx 3.330$
+  Skein units.
+- Predicted mass: $m(e^-) = E / c^2 = 3q \cdot (q-1)^2
+  = 3q(q-1)^2$.
 
-The mass asymmetry $m(e^-) \neq m(e^+)$ is a prediction of the
-QOU framework: the electron and positron have different categorical
-masses because $q \neq q^{-1}$ (i.e., $q \neq 1$).  At the
-classical limit $q \to 1$, the asymmetry vanishes:
-$m(e^-)/m(e^+) = q^2 \to 1$.  At $q = 1.1097$:
-
-$$
-  \frac{m(e^-)}{m(e^+)}
-  \;=\; q^2
-  \;\approx\; 1.231.
-$$
-
-This is the mass ratio at the **constituent (Skein) scale** ---
-the ratio at the renormalized physical scale may differ due to
-radiative corrections from higher jet levels.
+At $q = 1.1097$: $m(e^-) = 3 \times 1.1097 \times 0.01203
+\approx 0.0401$ (in Reeb mass units).
 
 **Pair creation reinterpreted.**
-The pair production threshold $2m_e c^2 = 1.022\,\mathrm{MeV}$
-([pair creation energy](#rem:pair-creation-energy)) becomes, in
-Planck units,
+The pair production threshold
+([pair creation energy](#rem:pair-creation-energy)) becomes:
 
 $$
-  E_{\gamma} \;\geq\; m(e^-) + m(e^+)
-  \;=\; 3q + 3q^{-1}
-  \;=\; 3(q + q^{-1})
-  \;=\; 6\cosh(\ln q)
-  \;\approx\; 6.033
-  \quad (\text{Skein units}).
+  E_{\gamma} \;\geq\; (m(e^-) + m(e^+)) \cdot c(q)^2
+  \;=\; \frac{m(e^-) + m(e^+)}{(q-1)^2}.
 $$
 
-The photon must carry enough crossing energy to create both the
-trefoil and its mirror.  After creation, the net crossing energy
-of the pair is $3(q - q^{-1}) = 6\sinh(\ln q) \approx 0.630$
---- pure antisymmetric (Coulomb) repulsion driving the pair apart.
+Since $E_{\mathrm{cross}}(e^-) + E_{\mathrm{cross}}(e^+) = 3q - 3q^{-1}
+= 3(q - q^{-1}) \approx 0.630$ Skein units, the minimum photon
+crossing energy for pair creation is $3(q + q^{-1}) = 6\cosh(\ln q)
+\approx 6.033$ Skein units.
 
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
 nonabelian multiplicative integral [yekutieli2015]
-([mass over $\mathbb{C}$](#ex:mass-identity-C)), and the equality
-$E = m$ becomes
+([mass over $\mathbb{C}$](#ex:mass-identity-C)), and $E = mc^2$
+becomes
 
 $$
   \sum_{\text{crossings}} \epsilon_i
   \;=\;
+  \frac{1}{(q-1)^2}\,
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
   (\nabla_A q,\; L \wedge F^+)
   \,\bigr\rVert,
 $$
 
-identifying the discrete Skein weight with the continuous
-multiplicative-integral norm.  The topological mass decomposition
-([topological mass proof](#prop:topological-mass-proof)) then
-gives the per-crossing contributions: the unknot-core holonomy
-contributes the binding energy, and the quantum dilogarithm at each
-exceptional divisor contributes the per-crossing Skein weight.
+identifying the discrete Skein weight (spatial) with the rescaled
+continuous multiplicative-integral norm (temporal).

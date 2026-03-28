@@ -15,9 +15,11 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
+    "ex:q-connection",
+    "def:contact-affine-chart",
     "def:operational-entropy",
     "def:planck-time",
     "prop:reeb-operations-per-planck",
-    "def:light-cone-affine",
+    "rem:light-cone-affine",
   ],
 });
