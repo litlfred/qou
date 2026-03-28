@@ -116,9 +116,10 @@ theorem skeinCoulombFactor_limit_one :
   have hF_le : skeinCoulombFactor eta ≤ 1 + x := by
     unfold skeinCoulombFactor
     rw [hx_def, div_le_iff hdenom_pos]
-    -- Need: x ≤ (1+x)(1 - e^{-x}), follows from hdenom_ge
-    have h := mul_le_mul_of_nonneg_left hdenom_ge (le_of_lt hx_pos')
-    rwa [mul_div_cancel₀ x hx_ne] at h
+    -- Need: x ≤ (1+x) * (1 - e^{-x})
+    -- From hdenom_ge: x/(1+x) ≤ 1-e^{-x}, multiply by (1+x) > 0
+    rw [div_le_iff hx_pos'] at hdenom_ge
+    linarith
   -- x = 2πη < 2π · ε/(2π+1) < ε
   have hx_lt : x < ε := by
     calc x = 2 * Real.pi * eta := rfl
