@@ -14,10 +14,7 @@ export default remark({
     "self-intersection",
   ],
   uses: [
-    "prop:torus-embeddable-complete",
-    "prop:torus-knot-generators",
     "rem:unmapped-torus-knots",
-    "def:up-quark",
     "def:electron-knot",
   ],
 });

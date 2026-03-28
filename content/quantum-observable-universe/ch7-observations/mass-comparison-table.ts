@@ -16,10 +16,5 @@ export default remark({
   uses: [
     "rem:knot-formula-table",
     "rem:mass-from-generators",
-    "prop:topological-mass-formula",
-    "rem:skein-mass-relation",
-    "prop:terminal-resolution",
-    "def:substrate-parameter",
-    "def:quantum-planck-constant",
   ],
 });

@@ -14,15 +14,5 @@ export default remark({
     "CODATA",
     "atomic-chart",
   ],
-  uses: [
-    "def:knot-particle-generation",
-    "prop:torus-knot-generators",
-    "prop:topological-mass-formula",
-    "rem:skein-mass-relation",
-    "prop:terminal-resolution",
-    "def:substrate-parameter",
-    "def:quantum-planck-constant",
-    "def:color-tube-coordinates",
-    "rem:knot-particle-dictionary",
-  ],
+  uses: ["prop:torus-knot-generators"],
 });

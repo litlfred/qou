@@ -15,12 +15,5 @@ export default proposition({
     "conductivity",
     "incomplete-shell",
   ],
-  uses: [
-    "conj:electron-shells-hopf",
-    "prop:noble-gas-characterization",
-    "def:electron-knot",
-    "def:crossing-energy",
-    "def:stable-nucleus",
-    "prop:torus-hopf-stability",
-  ],
+  uses: ["prop:noble-gas-characterization"],
 });

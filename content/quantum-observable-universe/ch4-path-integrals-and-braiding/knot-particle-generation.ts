@@ -18,14 +18,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:hadron",
-    "rem:hadron-operations",
     "prop:skein-generation",
     "rem:knot-particle-dictionary",
-    "def:localized-knot",
-    "def:substrate-parameter",
-    "def:quantum-planck-constant",
-    "def:color-tube-coordinates",
     "rem:color-tube-interpretation",
   ],
 });

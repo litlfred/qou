@@ -18,16 +18,7 @@ export default remark({
     "symplectic",
   ],
   uses: [
-    "rem:unmapped-torus-knots",
     "rem:torus-knot-prime-powers",
-    "prop:torus-embeddable-complete",
-    "prop:torus-knot-generators",
-    "thm:embeddability-closure",
-    "def:categorical-proton",
-    "prop:antiparticle-crossing-reversal",
-    "def:electron-knot",
     "def:positron-knot",
-    "def:up-quark",
-    "def:down-quark",
   ],
 });

@@ -11,7 +11,6 @@ export default proposition({
   tags: ["substrate", "projective", "boson", "fermion"],
   uses: [
     "def:contact-affine-chart",
-    "def:substrate-parameter",
     "def:fermion-boson-decomposition",
     "def:quantum-planck-constant",
     "ex:q-reeb-flow",

@@ -16,9 +16,7 @@ export default remark({
     "unsaturated",
   ],
   uses: [
-    "def:molecular-hopf-chain",
     "def:molecular-hopf-ring",
-    "def:covalent-bond-types",
     "rem:carbon-valence",
   ],
 });

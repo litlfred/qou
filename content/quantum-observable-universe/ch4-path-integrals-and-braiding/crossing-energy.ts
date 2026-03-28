@@ -10,7 +10,6 @@ export default definition({
   },
   uses: [
     "rem:r-matrix-braiding",
-    "def:quantum-su2",
     "def:substrate-parameter",
   ],
 });

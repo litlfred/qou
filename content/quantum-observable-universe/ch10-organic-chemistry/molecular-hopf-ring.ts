@@ -16,11 +16,5 @@ export default definition({
     decl: "QOU.Organic.MolecularHopfRing",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-hopf-chain",
-    "def:threading-link",
-    "def:covalent-bond-types",
-    "def:crossing-energy",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:threading-link"],
 });

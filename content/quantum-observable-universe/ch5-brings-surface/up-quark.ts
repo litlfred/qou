@@ -8,10 +8,5 @@ export default definition({
     decl: "QOU.Descartes.UpQuark",
     validation: "not_checked",
   },
-  uses: [
-    "conj:borromean-quark",
-    "def:neutrino-knot",
-    "def:color-tube-coordinates",
-    "def:crossing-energy",
-  ],
+  uses: ["conj:borromean-quark"],
 });

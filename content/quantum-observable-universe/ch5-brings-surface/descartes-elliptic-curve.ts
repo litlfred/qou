@@ -17,9 +17,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:chiral-elliptic",
-    "def:substrate-parameter",
-    "def:brings-surface",
     "rem:color-tube-cubic",
     "prop:local-substrate-q",
   ],

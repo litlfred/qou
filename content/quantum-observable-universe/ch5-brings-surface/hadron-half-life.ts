@@ -16,13 +16,5 @@ export default proposition({
     decl: "QOU.Descartes.hadron_half_life",
     validation: "not_checked",
   },
-  uses: [
-    "prop:beta-stability",
-    "prop:integer-stability",
-    "def:stable-nucleus",
-    "def:skein-binding-lagrangian",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-    "def:coulomb-charge",
-  ],
+  uses: ["prop:integer-stability"],
 });

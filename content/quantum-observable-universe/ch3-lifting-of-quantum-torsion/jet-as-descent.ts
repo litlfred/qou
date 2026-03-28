@@ -7,7 +7,6 @@ export default remark({
   tags: ["jet-bundle", "descent", "cosimplicial"],
   uses: [
     "prop:cosimplicial-crossed-groupoid",
-    "prop:jet-prolongation",
     "def:descent-involution",
   ],
 });

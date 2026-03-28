@@ -18,14 +18,5 @@ export default proposition({
     decl: "QOU.Organic.benzene_weights",
     validation: "not_checked",
   },
-  uses: [
-    "prop:ring-closure-barrier",
-    "def:threading-link",
-    "ex:carbon-chain-c6",
-    "ex:benzene-ring",
-    "rem:chain-ring-energy",
-    "def:substrate-parameter",
-    "def:crossing-energy",
-    "def:topological-mass-formula",
-  ],
+  uses: ["rem:chain-ring-energy"],
 });

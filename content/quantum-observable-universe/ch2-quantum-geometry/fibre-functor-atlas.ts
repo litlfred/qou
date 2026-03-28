@@ -13,9 +13,7 @@ export default proposition({
     "cocycle",
   ],
   uses: [
-    "def:quantum-observable-universe",
     "def:contact-affine-chart",
-    "thm:su2-emergence",
     "rem:tannaka-krein-overview",
   ],
 });

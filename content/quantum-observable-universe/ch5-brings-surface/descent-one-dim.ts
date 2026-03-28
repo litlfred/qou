@@ -6,7 +6,6 @@ export default remark({
   title: "Descent to one complex dimension",
   tags: ["descartes-universe", "descent"],
   uses: [
-    "prop:jet-prolongation",
     "prop:euler-char-stability",
     "rem:descent-reduction-zero",
   ],

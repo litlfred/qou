@@ -9,7 +9,6 @@ export default proposition({
   title: "Bring's surface is a quantum observable universe",
   uses: [
     "def:brings-surface",
-    "prop:yekutieli-lifting",
     "thm:qu-to-qou",
   ],
   proofs: ["prf:brings-is-qou"],

@@ -5,5 +5,5 @@ export default remark({
   label: "rem:heisenberg-commutator",
   title: "Heisenberg commutator and the Reeb fibre",
   tags: ["heisenberg", "uncertainty", "reeb", "fibre-coordinate"],
-  uses: ["prop:heisenberg-commutator", "def:quantum-planck-constant", "def:substrate-parameter"],
+  uses: ["prop:heisenberg-commutator"],
 });

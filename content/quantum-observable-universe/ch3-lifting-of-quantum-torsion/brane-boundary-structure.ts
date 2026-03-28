@@ -12,7 +12,6 @@ export default proposition({
     "def:brane-boundary",
     "def:descent-involution",
     "def:quantum-characteristic-classes",
-    "lem:descent",
   ],
   proofs: ["prf:brane-boundary"],
 });

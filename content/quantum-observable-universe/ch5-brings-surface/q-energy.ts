@@ -18,12 +18,5 @@ export default definition({
     decl: "QOU.Descartes.QEnergy",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-momentum",
-    "def:q-angular-momentum",
-    "def:substrate-parameter",
-    "def:crossing-energy",
-    "prop:topological-mass-formula",
-    "prop:local-substrate-q",
-  ],
+  uses: ["def:q-angular-momentum"],
 });

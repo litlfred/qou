@@ -17,11 +17,5 @@ export default proposition({
     decl: "QOU.Braiding.reidemeister_mass_invariance",
     validation: "not_checked",
   },
-  uses: [
-    "def:crossing-energy",
-    "def:hadron",
-    "conj:electron-shells-hopf",
-    "rem:hydrogen-orbitals",
-    "def:electron-knot",
-  ],
+  uses: ["rem:hydrogen-orbitals"],
 });

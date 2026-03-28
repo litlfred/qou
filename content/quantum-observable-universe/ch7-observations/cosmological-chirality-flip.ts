@@ -7,10 +7,6 @@ export default remark({
   uses: [
     "ex:cosmological-limits",
     "rem:time-reversal-energy-barrier",
-    "rem:complex-substrate-interpretation",
-    "def:exceptional-divisor",
-    "def:substrate-parameter",
-    "rem:heisenberg-commutator",
     "sec:cp-violation-evidence",
   ],
   tags: [

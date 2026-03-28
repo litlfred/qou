@@ -7,7 +7,7 @@ export default theorem({
     decl: "QOU.CategoricalReeb.ofWeightDecomposition",
     validation: "not_checked",
   },
-  uses: ["def:quantum-observable-universe", "def:maximal-torus", "def:weight-decomposition", "def:categorical-reeb"],
+  uses: ["def:categorical-reeb"],
   proofs: ["prf:categorical-reeb-exists"],
   tags: ["existence", "reeb", "derivation"],
 });

@@ -17,11 +17,6 @@ export default remark({
   ],
   uses: [
     "ex:hydrogen-knot-structure",
-    "conj:borromean-quark",
-    "conj:electron-shells-hopf",
-    "def:electron-knot",
-    "def:categorical-proton",
-    "def:crossing-energy",
     "prop:hydrogen-shell-writhe",
   ],
 });

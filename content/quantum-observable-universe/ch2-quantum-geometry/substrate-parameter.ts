@@ -9,9 +9,5 @@ export default definition({
     decl: "QOU.SubstrateParameter",
     validation: "leanok",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:weight-decomposition",
-    "def:categorical-reeb",
-  ],
+  uses: ["def:categorical-reeb"],
 });

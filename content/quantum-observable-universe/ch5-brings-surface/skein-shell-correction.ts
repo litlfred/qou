@@ -12,14 +12,5 @@ export default conjecture({
     "closed-sublink",
     "binding-energy",
   ],
-  uses: [
-    "def:skein-binding-lagrangian",
-    "def:stable-nucleus",
-    "def:hadron",
-    "prop:beta-stability",
-    "prop:integer-stability",
-    "rem:skein-crossing-asymmetry",
-    "def:crossing-energy",
-    "conj:elliptic-stability-locus",
-  ],
+  uses: ["conj:elliptic-stability-locus"],
 });

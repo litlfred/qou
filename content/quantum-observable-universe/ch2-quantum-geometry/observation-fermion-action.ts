@@ -15,10 +15,7 @@ export default remark({
     "uncertainty",
   ],
   uses: [
-    "def:observation",
     "prop:observation-energy",
     "rem:two-observer-parallelogram",
-    "def:fermion-boson-decomposition",
-    "prop:fibre-functor-atlas",
   ],
 });

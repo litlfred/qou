@@ -9,7 +9,6 @@ export default definition({
   title: "Spatial realization functor",
   tags: ["spectrum", "functor", "contact-geometry"],
   uses: [
-    "def:quantum-observable-universe",
     "def:categorical-point",
     "def:frobenius-pairing",
     "def:categorical-reeb",

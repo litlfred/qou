@@ -6,7 +6,6 @@ export default remark({
   title: "Reduction at dimension 1",
   tags: ["descent", "dimension-reduction", "u1"],
   uses: [
-    "ex:q-reeb-vector-field",
     "rem:algebraic-filter",
     "rem:descent-reduction-zero",
   ],

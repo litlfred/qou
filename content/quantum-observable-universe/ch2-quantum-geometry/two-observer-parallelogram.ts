@@ -7,7 +7,6 @@ export default remark({
   tags: ["observation", "uncertainty"],
   uses: [
     "def:observation",
-    "def:categorical-point",
     "def:fermion-boson-decomposition",
   ],
   rendered: [

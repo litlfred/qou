@@ -12,11 +12,5 @@ export default remark({
     "codata",
     "plot",
   ],
-  uses: [
-    "prop:integer-stability",
-    "rem:diophantine-valley",
-    "prop:beta-stability",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:diophantine-valley"],
 });

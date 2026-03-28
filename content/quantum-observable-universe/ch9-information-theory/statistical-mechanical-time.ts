@@ -14,13 +14,6 @@ export default remark({
   ],
   uses: [
     "def:information-theoretic-time",
-    "def:planck-time",
-    "prop:reeb-operations-per-planck",
-    "def:quantum-planck-constant",
-    "rem:julia-set-reeb",
-    "rem:discrete-planck-step",
     "rem:jet-planck-steps",
-    "ex:q-reeb-flow",
-    "prop:local-substrate-q",
   ],
 });

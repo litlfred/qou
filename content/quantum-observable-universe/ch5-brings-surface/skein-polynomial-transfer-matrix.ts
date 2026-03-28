@@ -18,11 +18,5 @@ export default proposition({
     decl: "QOU.Descartes.skein_polynomial_transfer_matrix",
     validation: "not_checked",
   },
-  uses: [
-    "thm:markov-trace-factorization",
-    "prop:generator-volume-decomposition",
-    "prop:nuclear-groebner-reduction",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["thm:markov-trace-factorization"],
 });

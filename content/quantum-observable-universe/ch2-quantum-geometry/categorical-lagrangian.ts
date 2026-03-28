@@ -8,8 +8,5 @@ export default definition({
     decl: "QOU.CategoricalLagrangian",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:categorical-dirac-operator",
-  ],
+  uses: ["def:categorical-dirac-operator"],
 });

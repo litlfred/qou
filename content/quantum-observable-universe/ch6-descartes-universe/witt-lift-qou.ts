@@ -9,7 +9,6 @@ export default remark({
     "prop:jet-prolongation",
     "ex:finite-field-realisation",
     "sec:enveloping-algebras",
-    "def:witt-vector-lift",
     "ex:p-adic-realisation",
   ],
 });

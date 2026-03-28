@@ -16,8 +16,5 @@ export default proposition({
   uses: [
     "prop:skein-polynomial-transfer-matrix",
     "rem:discrete-planck-step",
-    "def:quantum-planck-constant",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
   ],
 });

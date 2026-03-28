@@ -8,9 +8,5 @@ export default definition({
     decl: "QOU.Hadron",
     validation: "not_checked",
   },
-  uses: [
-    "def:crossing-energy",
-    "def:coulomb-charge",
-    "rem:r-matrix-braiding",
-  ],
+  uses: ["def:coulomb-charge"],
 });

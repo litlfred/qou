@@ -12,11 +12,5 @@ export default proposition({
     "groebner",
     "time",
   ],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "def:direct-limit-algebra",
-    "prop:jet-prolongation",
-    "unital-groebner-bases:def:admissible-system",
-  ],
+  uses: ["def:direct-limit-algebra"],
 });

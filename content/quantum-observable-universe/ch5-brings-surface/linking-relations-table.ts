@@ -18,8 +18,5 @@ export default remark({
   uses: [
     "rem:building-block-knots",
     "rem:knot-formula-table",
-    "def:crossing-energy",
-    "prop:skein-generation",
-    "def:borromean-baryon",
   ],
 });

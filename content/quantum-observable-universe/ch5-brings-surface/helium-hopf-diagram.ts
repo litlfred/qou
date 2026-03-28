@@ -12,9 +12,5 @@ export default remark({
     "electron-shell",
     "diagram",
   ],
-  uses: [
-    "conj:electron-shells-hopf",
-    "def:stable-nucleus",
-    "sec:knot-notation-convention",
-  ],
+  uses: ["conj:electron-shells-hopf"],
 });

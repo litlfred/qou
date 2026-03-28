@@ -11,11 +11,6 @@ export default proposition({
   uses: [
     "def:categorical-action",
     "def:categorical-lagrangian",
-    "def:categorical-dirac-operator",
-    "def:quantum-observable-universe",
-    "def:substrate-parameter",
-    "def:q-hodge-star",
-    "def:categorical-connection",
     "sec:categorical-action-notation",
     "rem:yekutieli-stokes",
     "def:yekutieli-lifting-condition",

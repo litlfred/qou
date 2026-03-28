@@ -9,8 +9,6 @@ export default proposition({
   title: "Global gluing via Yekutieli's twisted quantization",
   tags: ["yekutieli", "twisted-quantization", "global-gluing"],
   uses: [
-    "def:quantum-observable-universe",
-    "def:direct-limit-algebra",
     "def:quantum-planck-constant",
     "def:quantum-characteristic-classes",
     "prop:vacuum-state",

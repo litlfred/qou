@@ -7,7 +7,6 @@ export default remark({
   tags: ["q-deformation", "classical-limit"],
   uses: [
     "def:categorical-q-ext-deriv",
-    "def:categorical-q-lie-bracket",
     "def:categorical-q-connection",
     "ex:q-reeb-vector-field",
   ],

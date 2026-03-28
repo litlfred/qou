@@ -6,5 +6,8 @@ export default example({
   title: "$\\mathrm{SU}(2)$ as a quantum universe",
   lean: { decl: "QOU.Examples.su2QuantumUniverse" },
   tags: ["su2", "quantum"],
-  uses: ["def:quantum-universe", "def:frobenius-pairing", "ex:rigid-monoidal-vect"],
+  uses: [
+    "def:frobenius-pairing",
+    "ex:rigid-monoidal-vect",
+  ],
 });

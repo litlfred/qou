@@ -16,17 +16,5 @@ export default remark({
     "mirror",
     "appendix",
   ],
-  uses: [
-    "prop:torus-knot-generators",
-    "def:electron-knot",
-    "def:neutrino-knot",
-    "def:positron-knot",
-    "def:antineutrino-knot",
-    "def:up-quark",
-    "def:down-quark",
-    "def:crossing-energy",
-    "prop:topological-mass-formula",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["def:antineutrino-knot"],
 });

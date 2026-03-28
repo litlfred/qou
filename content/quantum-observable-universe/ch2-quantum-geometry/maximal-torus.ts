@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.MaximalTorus",
     validation: "not_checked",
   },
-  uses: ["def:quantum-observable-universe", "prop:spin-labels", "thm:su2-emergence"],
+  uses: ["prop:spin-labels"],
   examples: ["ex:maximal-torus-su2"],
   tags: ["torus", "weight"],
 });

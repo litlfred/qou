@@ -15,9 +15,6 @@ export default remark({
   ],
   uses: [
     "def:observation",
-    "def:bundle-initial-conditions",
-    "prop:toffoli-transfer-matrix",
     "rem:toffoli-q-and",
-    "def:crossing-energy",
   ],
 });

@@ -13,13 +13,7 @@ export default example({
     "rydberg",
   ],
   uses: [
-    "conj:borromean-quark",
-    "def:up-quark",
-    "def:down-quark",
     "def:electron-knot",
-    "def:categorical-proton",
     "conj:electron-shells-hopf",
-    "def:crossing-energy",
-    "prop:local-substrate-q",
   ],
 });

@@ -11,9 +11,5 @@ export default remark({
     "weyl",
     "equidistribution",
   ],
-  uses: [
-    "prop:integer-stability",
-    "prop:beta-stability",
-    "def:coulomb-charge",
-  ],
+  uses: ["prop:integer-stability"],
 });

@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.CategoricalReeb",
     validation: "not_checked",
   },
-  uses: ["def:maximal-torus", "def:weight-decomposition"],
+  uses: ["def:weight-decomposition"],
   examples: ["ex:reeb-su2"],
   tags: ["reeb", "derivation"],
 });
