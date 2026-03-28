@@ -55,16 +55,26 @@ noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
+private theorem foldl_hecke_nonneg (q : ℝ) (hq : 1 < q)
+    (acc : ℝ) (hacc : 0 ≤ acc) (coeffs : List ℝ) :
+    0 ≤ List.foldl (fun a c => a + heckeEnergyChange q c) acc coeffs := by
+  induction coeffs generalizing acc with
+  | nil => simpa [List.foldl]
+  | cons c cs ih =>
+    simp only [List.foldl]
+    apply ih
+    have : 0 ≤ heckeEnergyChange q c := by
+      unfold heckeEnergyChange
+      apply mul_nonneg (abs_nonneg _)
+      rw [sub_nonneg, div_le_one (by linarith : (0 : ℝ) < q)]
+      nlinarith
+    linarith
+
 theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     (coeffs : List ℝ) :
     0 ≤ totalEnergyChange q coeffs := by
   unfold totalEnergyChange
-  induction coeffs with
-  | nil => simp [List.foldl]
-  | cons c cs ih =>
-    simp [List.foldl]
-    -- Ref: [manuscript] §6/groebner-shirshov-energy
-    sorry
+  exact foldl_hecke_nonneg q hq 0 le_rfl coeffs
 
 /-- Path independence: the total energy change is determined by
     the initial and final states, not the reduction path.
@@ -75,10 +85,17 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     normal form alone. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- Ref: [manuscript] Ch. 6, §groebner-shirshov-energy
+-- Ref: [manuscript] unital-groebner-bases/main-theorem
+-- Path independence: both reduction paths produce the same total energy change.
+-- Follows from confluence (diamond lemma) of the Gröbner-Shirshov basis.
 axiom energy_path_independent (q : ℝ) (hq : 1 < q)
     (initial : List (List ℕ × ℝ))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
-    : True  -- both paths produce the same total energy change
+    : totalEnergyChange q (path1.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none) =
+      totalEnergyChange q (path2.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none)
 
 /-- The beta-decay energy difference is always negative:
     the daughter has lower energy than the parent.

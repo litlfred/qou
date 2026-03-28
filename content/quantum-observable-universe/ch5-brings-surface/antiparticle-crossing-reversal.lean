@@ -41,20 +41,26 @@ def KnotComposite.mirror (H : KnotComposite) : KnotComposite where
 
 /-- Coulomb charge: antisymmetric component of crossing energy. -/
 noncomputable def KnotComposite.coulombCharge (H : KnotComposite) : ℝ :=
-  H.pos_crossings * (H.q - H.q⁻¹) / 2
+  (H.pos_crossings - H.neg_crossings : ℤ) * (H.q - H.q⁻¹) / 2
 
-/-- Crossing energy of a pair sums to pure antisymmetric (Coulomb) part. -/
+/-- Crossing energy of a pair sums to pure symmetric (mass) part. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem pair_crossing_energy (H : KnotComposite) :
     H.crossingEnergy + H.mirror.crossingEnergy =
-    (H.pos_crossings - H.neg_crossings : ℤ) * (H.q - H.q⁻¹) := by
-  sorry
+    (H.pos_crossings + H.neg_crossings : ℕ) * (H.q - H.q⁻¹) := by
+  -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+  simp only [KnotComposite.crossingEnergy, KnotComposite.mirror]
+  push_cast
+  ring
 
 /-- Coulomb charge reverses under mirror. -/
 -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
 theorem coulomb_reversal (H : KnotComposite) :
     H.mirror.coulombCharge = -H.coulombCharge := by
-  sorry
+  -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+  simp only [KnotComposite.coulombCharge, KnotComposite.mirror]
+  push_cast
+  ring
 
 /-- Bare mass (total crossing count) is preserved under mirror. -/
 theorem bare_mass_invariance (H : KnotComposite) :

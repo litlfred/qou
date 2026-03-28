@@ -4,9 +4,6 @@
 -- Shell transitions are R-I moves on the embedding.
 -- Generic: any QOU, not specific to χ = -6.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 -- ═══════════════════════════════════════════════════════════════════

@@ -96,7 +96,28 @@ theorem skein_polynomial_degree_bound (A : ℕ) (hA : 2 ≤ A) :
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 theorem transfer_matrix_steps (A : ℕ) :
     (Finset.range (A - 1)).sum (fun i => A - i - 1) = Nat.choose A 2 := by
-  sorry
+  -- ∑_{i=0}^{A-2} (A - 1 - i) = 1 + 2 + ... + (A-1) = A(A-1)/2 = C(A,2)
+  -- Proof by strong induction with case split on A
+  induction A with
+  | zero => simp
+  | succ n ih =>
+    cases n with
+    | zero => simp
+    | succ m =>
+      -- A = m + 2. Goal: ∑_{i ∈ range (m+1)} ((m+2) - i - 1) = C(m+2, 2)
+      -- Split off last term: i = m gives (m+2) - m - 1 = 1
+      rw [show m + 1 + 1 - 1 = m + 1 from by omega]
+      rw [Finset.sum_range_succ]
+      -- ih for n = m+1: ∑_{i ∈ range m} ((m+1) - i - 1) = C(m+1, 2)
+      have ih' : (Finset.range m).sum (fun i => m + 1 - i - 1) = Nat.choose (m + 1) 2 := by
+        have := ih; simp only [show m + 1 - 1 = m from by omega] at this; exact this
+      -- Each summand differs by 1: (m+2-i-1) = (m+1-i-1) + 1 for i < m
+      have shift : ∀ i ∈ Finset.range m, m + 1 + 1 - i - 1 = (m + 1 - i - 1) + 1 := by
+        intro i hi; simp [Finset.mem_range] at hi; omega
+      rw [Finset.sum_congr rfl shift, Finset.sum_add_distrib, ih']
+      -- Goal: C(m+1,2) + ∑_{i<m} 1 + ((m+2) - m - 1) = C(m+2, 2)
+      simp [Finset.sum_const, Finset.card_range, Nat.choose_succ_succ, Nat.choose_one_right]
+      omega
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Triple identity of q

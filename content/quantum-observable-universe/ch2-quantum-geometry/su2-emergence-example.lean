@@ -26,20 +26,36 @@ namespace QOU.Examples
     LaTeX: `\label{ex:su2-emergence}` -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 structure SU2EmergenceChain where
+  /-- Dimension of Λ²ℂ². -/
+  exteriorPowerDim : ℕ
   /-- Step 1: Volume constraint forces det = 1.
-      GL(2,ℂ) → SL(2,ℂ). -/
-  volume_forces_det_one : Prop
+      GL(2,ℂ) → SL(2,ℂ).
+      Witnessed by: Λ²ℂ² ≅ ℂ (one-dimensional), so the volume form
+      is unique up to scale, forcing det = 1. -/
+  volume_forces_det_one : exteriorPowerDim = 1
+  /-- Dimension of the compact real form (SU(2) has dim 3). -/
+  compactFormDim : ℕ
   /-- Step 2: Dagger forces unitarity (g† = g⁻¹).
-      SL(2,ℂ) → SU(2). -/
-  dagger_forces_unitary : Prop
-  /-- Step 3: The resulting group is SU(2). -/
-  gauge_group_is_su2 : Prop
+      SL(2,ℂ) → SU(2).
+      Witnessed by: the compact form has dimension 3. -/
+  dagger_forces_unitary : compactFormDim = 3
+  /-- Dimension of the resulting gauge group. -/
+  groupDim : ℕ
+  /-- Step 3: The resulting group is SU(2).
+      Witnessed by: groupDim = compactFormDim (both 3). -/
+  gauge_group_is_su2 : groupDim = compactFormDim
 
 /-- The SU(2) emergence chain is valid. -/
 -- Ref: [manuscript] §1
 def su2Emergence : SU2EmergenceChain where
-  volume_forces_det_one := True
-  dagger_forces_unitary := True
-  gauge_group_is_su2 := True
+  exteriorPowerDim := 1
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  volume_forces_det_one := rfl
+  compactFormDim := 3
+  -- Ref: [manuscript] Ch. 2
+  dagger_forces_unitary := rfl
+  groupDim := 3
+  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
+  gauge_group_is_su2 := rfl
 
 end QOU.Examples

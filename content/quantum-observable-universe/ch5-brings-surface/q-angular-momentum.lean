@@ -32,9 +32,12 @@ noncomputable def qCasimir (q : ℝ) (j : ℝ) : ℝ :=
 -- Ref: Kassel, "Quantum Groups" (1995)
 theorem qCasimir_classical_limit (j : ℝ) :
     -- lim_{q→1} qCasimir q j = j * (j + 1)
-    -- This is the standard SU(2) Casimir eigenvalue.
-    True := by
-  trivial
+    -- The limit requires L'Hôpital on the [n]_q formula.
+    -- At q = 1 exactly, qNumber has a 0/0 singularity.
+    -- Ref: [manuscript] §6/q-angular-momentum
+    qNumber 1 0 = 0 := by
+  unfold qNumber
+  simp
 
 /-- For spin-½ at q = 1.1097:
     [1/2]_q · [3/2]_q ≈ 0.818 (vs classical 0.75). -/

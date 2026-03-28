@@ -24,6 +24,17 @@ noncomputable def coulombCorrection (q : ℝ) : ℝ :=
 /-- For q > 1, the Coulomb correction is positive. -/
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
 theorem skein_crossing_asymmetry (q : ℝ) (hq : q > 1) :
-    coulombCorrection q > 0 := by sorry
+    coulombCorrection q > 0 := by
+  simp only [coulombCorrection]
+  apply div_pos
+  · -- q > 1 implies q - q⁻¹ > 0
+    have hq_pos : (0 : ℝ) < q := by linarith
+    have : q⁻¹ < q := by
+      have h1 : q⁻¹ * q < q * q := by
+        rw [inv_mul_cancel₀ (ne_of_gt hq_pos)]
+        nlinarith
+      exact (mul_lt_mul_right hq_pos).mp h1
+    linarith
+  · norm_num
 
 end QOU.Braiding

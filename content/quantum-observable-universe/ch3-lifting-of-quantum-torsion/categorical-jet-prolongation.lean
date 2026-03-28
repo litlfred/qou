@@ -39,9 +39,13 @@ structure ProlongedConnection (C : Type u) [Category.{v} C]
   jetEval : jetObj ⟶ fh.obj
   /-- The prolonged connection ∇' : J¹(A) → J¹(A) ⊗ Ω¹. -/
   prolongedNabla : jetObj ⟶ (jetObj ⊗ differentials)
-  /-- Commutativity: ∇ ∘ j¹ = (j¹ ⊗ id) ∘ ∇'. -/
-  /-- The prolonged connection restricts to the original via jet evaluation. -/
-  restriction_compatible : True  -- Full diagram commutativity (abstracted)
+  /-- The original connection ∇ : A → A ⊗ Ω¹. -/
+  originalNabla : fh.obj ⟶ (fh.obj ⊗ differentials)
+  /-- The prolonged connection restricts to the original via jet evaluation:
+      ∇ ∘ j¹ = (j¹ ⊗ id) ∘ ∇'. -/
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  restriction_compatible :
+    prolongedNabla ≫ (jetEval ▷ differentials) = jetEval ≫ originalNabla
 
 /-- **Jet prolongation preserves quantum universe structure**.
 
@@ -54,9 +58,14 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
   original : FrobeniusHopfData C
   /-- The jet Frobenius–Hopf object J¹(A). -/
   jet : FrobeniusHopfData C
-  /-- The jet evaluation is a Frobenius–Hopf morphism
-      (compatible with multiplication and comultiplication). -/
-  eval_preserves_mul : True  -- Abstracted compatibility
+  /-- The jet evaluation map. -/
+  jetEval : jet.obj ⟶ original.obj
+  /-- The jet evaluation is compatible with multiplication:
+      j¹ ∘ μ_jet = μ_A ∘ (j¹ ⊗ j¹).
+      Expressed as: jetEval composed with the jet multiplication
+      equals the original multiplication composed with jetEval on each factor. -/
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
+  eval_preserves_mul : jet.mul ≫ jetEval = (jetEval ▷ original.obj) ≫ original.mul
   /-- The unit section embeds A into J¹(A) as a subalgebra. -/
   unitSection : original.obj ⟶ jet.obj
   /-- The unit section is a monomorphism. -/
