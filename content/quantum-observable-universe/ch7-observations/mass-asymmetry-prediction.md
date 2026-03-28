@@ -1,114 +1,91 @@
 **Statement.**
-*In the QOU framework, the categorical mass of a particle and its
-antiparticle are not equal at the Skein (constituent) scale.  For a
-knot $K$ with $n_c$ positive crossings and its mirror
-$\sigma(K)$ with $n_c$ negative crossings, the mass--energy
-equivalence $E = mc(q)^2$
-([mass--energy equivalence](#thm:mass-energy-equivalence)) gives*
+*In the QOU framework, the crossing energy weights $q$ (positive
+crossing) and $q^{-1}$ (negative crossing) are asymmetric whenever
+$q \neq 1$.  For a particle $K$ with $n_c$ positive crossings and
+its antiparticle $\sigma(K)$ with $n_c$ negative crossings, the
+crossing energies differ by*
 
 $$
-  \frac{m(K)}{m(\sigma(K))}
-  \;=\; \frac{|E_{\mathrm{cross}}(K)|}{|E_{\mathrm{cross}}(\sigma(K))|}
+  \frac{|E_{\mathrm{cross}}(K)|}{|E_{\mathrm{cross}}(\sigma(K))|}
   \;=\; \frac{n_c \, q}{n_c \, q^{-1}}
-  \;=\; q^2.
+  \;=\; q^2
+  \;\approx\; 1.231
+  \quad (q = 1.1097).
 $$
 
-*At $q = 1.1097$:*
+**What this is and is not.**
+This is **not** a prediction that $m_e \neq m_{e^+}$ in the
+laboratory.  CPT invariance is experimentally established to
+extraordinary precision:
 
-$$
-  \frac{m(K)}{m(\sigma(K))} \;=\; q^2 \;\approx\; 1.231.
-$$
+| System | Bound on $|m - \bar{m}|/m$ | Experiment |
+|--------|---------------------------|------------|
+| $e^- / e^+$ | $< 8 \times 10^{-9}$ | TRAP (Gabrielse, 1999) |
+| $p / \bar{p}$ | $< 1.6 \times 10^{-12}$ | BASE (CERN, 2022) |
+| $H / \bar{H}$ | $< 2 \times 10^{-12}$ | ALPHA (CERN, 2020) |
 
-**Electron--positron mass table.**
+The QOU is consistent with these bounds: the physical
+(renormalized) masses are equal.  The $q^2$ ratio lives at the
+**Skein (constituent) scale** --- the pre-renormalized algebraic
+level where individual crossing weights are resolved.  The descent
+to the physical scale averages over $n_R(q) \approx 10$ Reeb
+iterations per Planck time, and the statistical-mechanical
+coarse-graining
+([stat-mech time](#rem:statistical-mechanical-time)) restores the
+$q \leftrightarrow q^{-1}$ symmetry that CPT requires.
 
-| Quantity | $e^-$ (left trefoil) | $e^+$ (right trefoil) | Ratio |
-|----------|---------------------|-----------------------|-------|
-| Crossings | $n_c = 3$ positive | $n_c = 3$ negative | --- |
-| Crossing energy | $3q \approx 3.330$ | $3q^{-1} \approx 2.703$ | $q^2 \approx 1.231$ |
-| Categorical mass | $m_e = 3q(q-1)^2$ | $m_{e^+} = 3q^{-1}(q-1)^2$ | $q^2 \approx 1.231$ |
+**Where the $q^2$ asymmetry IS observed.**
+The Skein-scale asymmetry $q \neq q^{-1}$ does not show up in
+mass measurements (CPT protects those).  It shows up in
+**energy decompositions and coupling ratios** --- quantities that
+resolve the individual crossing weights rather than the
+coarse-grained sum:
 
-The mass ratio $q^2$ is **universal**: it depends only on the
-substrate parameter, not on the crossing number $n_c$.  Every
-particle--antiparticle pair has the same constituent-scale mass
-asymmetry.
+1. **EM/strong ratio.**
+   $\tanh(\ln q) = (q - q^{-1})/(q + q^{-1}) \approx 0.104$
+   ([crossing energy interpretation](#rem:crossing-energy-interpretation)).
+   This is the ratio of the antisymmetric channel (which sees
+   $q \neq q^{-1}$) to the symmetric channel (which doesn't).
+   **Observed**: electromagnetism is $\sim 10\%$ of the strong
+   force at the constituent scale.  **Status: consistent.**
 
-**Relation to CPT.**
-In standard physics, CPT invariance guarantees
-$m_{\mathrm{particle}} = m_{\mathrm{antiparticle}}$ exactly.  The
-QOU does not violate CPT --- the asymmetry arises because the
-categorical mass at the **Skein scale** is not the same as the
-**renormalized physical mass** measured in experiments:
+2. **Pair creation residual.**
+   $E(e^-) + E(e^+) = 3(q - q^{-1}) \approx 0.630$ Skein units
+   ([pair creation energy](#rem:pair-creation-energy)).
+   If $q = q^{-1}$, pair creation would produce zero net crossing
+   energy.  The nonzero residual is the Coulomb repulsion that
+   drives the pair apart.  **Observed**: pairs fly apart.
+   **Status: consistent.**
 
-1. **Skein (constituent) scale.**  The crossing energy weights
-   $q$ and $q^{-1}$ are manifestly asymmetric under $q \neq 1$.
-   At this scale, $m(e^-) / m(e^+) = q^2 \approx 1.231$.
+3. **Fine structure constant.**
+   $\alpha_{\mathrm{EM}}^{-1} = [9]_q [10]_q / q^{-1} = 136.84$
+   vs measured $137.036$
+   ([fine structure](#rem:fine-structure-observation)).
+   The $q^{-1}$ in the numerator (not $q$) reflects the asymmetry:
+   the electromagnetic coupling is set by the *antiparticle*
+   crossing weight.  **Observed**: $0.14\%$ discrepancy.
+   **Status: close but not exact.**
 
-2. **Renormalized (physical) scale.**  The descent from the
-   Skein scale to the physical scale involves:
-   - Coarse-graining over $n_R(q) \approx 10$ Reeb iterations
-     per Planck time
-     ([Reeb operations](#prop:reeb-operations-per-planck))
-   - The statistical-mechanical time averaging
-     ([stat-mech time](#rem:statistical-mechanical-time))
-     that smooths the discrete dynamics into continuous fields
-   - Radiative corrections from higher jet levels
+4. **CP violation.**
+   $\delta_{\mathrm{CP}} \sim 10^{-3}$ for kaons
+   ([CP violation](#rem:cp-violation-evidence)).
+   The complex-$q$ residual phase accumulates crossing-by-crossing,
+   and the asymmetry $q \neq q^{-1}$ feeds the CKM phase.
+   **Observed**: $\sim 2 \times 10^{-3}$ for kaons.
+   **Status: right order of magnitude.**
 
-   These corrections restore the CPT-mandated equality
-   $m_e^{\mathrm{phys}} = m_{e^+}^{\mathrm{phys}}$ at the
-   observable scale: the coarse-graining averages over the
-   $q \leftrightarrow q^{-1}$ asymmetry in the crossing weights.
+**Summary.**
 
-3. **Residual asymmetry.**  The restoration is exact only in the
-   $q \to 1$ (classical) limit.  At finite $q$, a residual
-   asymmetry may survive:
+| Manifestation | QOU prediction | Observed | Status |
+|--------------|---------------|----------|--------|
+| Physical mass asymmetry | $= 0$ (CPT restored) | $< 10^{-9}$ | Consistent |
+| EM/strong ratio | $\tanh(\ln q) = 0.104$ | $\sim 0.1$ | Consistent |
+| Pair creation residual | $3(q - q^{-1}) = 0.630$ | Pairs repel | Consistent |
+| $\alpha_{\mathrm{EM}}^{-1}$ | $136.84$ | $137.036$ | $+0.14\%$ |
+| $\delta_{\mathrm{CP}}$ (kaons) | $\sim 10^{-3}$ | $\sim 2 \times 10^{-3}$ | Right order |
 
-   $$
-     \frac{m_e^{\mathrm{phys}} - m_{e^+}^{\mathrm{phys}}}
-          {m_e^{\mathrm{phys}}}
-     \;\sim\; \mathcal{O}\!\left(\frac{(q-1)^2}{n_R(q)}\right)
-     \;\sim\; \mathcal{O}(\hbar_q^3)
-     \;\approx\; 10^{-3}.
-   $$
-
-   This is below current experimental bounds but within reach of
-   planned measurements.
-
-**Experimental status.**
-
-| Experiment | Bound on $|m_e - m_{e^+}|/m_e$ | Year |
-|-----------|-------------------------------|------|
-| TRAP (Gabrielse) | $< 8 \times 10^{-9}$ | 1999 |
-| BASE (antiproton) | $< 1.6 \times 10^{-12}$ ($p/\bar{p}$) | 2022 |
-| ALPHA (antihydrogen) | $< 2 \times 10^{-12}$ (via $\bar{H}$ spectroscopy) | 2020 |
-
-The current bounds ($< 10^{-9}$ for electrons, $< 10^{-12}$
-for protons) constrain the residual asymmetry but do not
-test the Skein-scale ratio $q^2 \approx 1.231$.  The Skein-scale
-asymmetry is a **pre-renormalization** quantity --- it is not
-directly observable in mass measurements but manifests in:
-
-- **Crossing energy decomposition.**  The symmetric/antisymmetric
-  split is already observed: $\tanh(\ln q) \approx 0.104$ matches
-  the EM/strong ratio
-  ([crossing energy interpretation](#rem:crossing-energy-interpretation)).
-  The mass asymmetry $q^2$ and the coupling ratio $\tanh(\ln q)$
-  are both consequences of $q \neq 1$.
-
-- **Pair creation thresholds.**  The net crossing energy of a pair
-  $E(e^-) + E(e^+) = 3(q - q^{-1})$ is nonzero precisely because
-  $q \neq q^{-1}$.  This residual drives the Coulomb repulsion of
-  the pair ([pair creation energy](#rem:pair-creation-energy)).
-
-- **CP violation.**  The $q^2$ asymmetry feeds into the
-  $\delta_{\mathrm{CP}}$ prediction
-  ([CP violation](#rem:cp-violation-evidence)) through the
-  complex-$q$ residual phase.
-
-**Prediction.**
-The Skein-scale mass asymmetry $q^2 \approx 1.231$ is a structural
-consequence of $c(q) = 1/(q-1)$ and the asymmetric crossing weights
-$q \neq q^{-1}$.  It is **not** a violation of CPT but a feature of
-the pre-renormalized (constituent) description.  The physical
-observable is the residual after coarse-graining, predicted to be
-$\mathcal{O}(\hbar_q^3) \sim 10^{-3}$, which is testable at
-next-generation antimatter facilities (ELENA/GBAR at CERN, AEgIS).
+The $q^2$ Skein-scale asymmetry is the **common origin** of the
+EM/strong ratio, pair creation energetics, fine structure constant,
+and CP violation.  These are four independent observations explained
+by a single structural fact: $q \neq 1$ makes positive and negative
+crossings inequivalent.
