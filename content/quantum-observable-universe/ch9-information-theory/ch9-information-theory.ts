@@ -46,6 +46,15 @@ export default chapter({
       ],
     }),
     section({
+      title: "The $q$-Logarithmic Zeta Function and the Critical Line",
+      label: "sec:q-zeta-critical-line",
+      blocks: [
+        "q-logarithmic-zeta",
+        "q-critical-line",
+        "off-critical-zero-consequences",
+      ],
+    }),
+    section({
       title: "Speed of Light and Mass--Energy Equivalence",
       label: "sec:speed-of-light",
       blocks: [
