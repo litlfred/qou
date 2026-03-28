@@ -24,6 +24,7 @@ export default paper({
     frakr: { tex: "\\mathfrak{r}",  unicode: "𝔯" },
     frakg: { tex: "\\mathfrak{g}",  unicode: "𝔤" },
     frakb: { tex: "\\mathfrak{b}",  unicode: "𝔟" },
+    frakI: { tex: "\\mathfrak{I}",  unicode: "ℑ" },
   },
   chapters: [
     chapterRef({ dir: "ch0-introduction" }),

@@ -1,5 +1,5 @@
 **Proposition.**
-*Let $I \in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
+*Let $\mathfrak{I}\in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
 be an observation ([observation](#def:observation)) with
 substrate perturbation $\delta q$.  Then:*
 

@@ -21,7 +21,7 @@ $\mathcal{S}$, satisfying:
    ```tex
    \begin{equation}\label{eq:observation-frobenius}
    \begin{tikzcd}[row sep=2.5em, column sep=3em]
-     A / \mathfrak{m}_p^2 \ar[r, "I_p"] \ar[dr, "\int_{A,p}"']
+     A / \mathfrak{m}_p^2 \ar[r, "\mathfrak{I}_p"] \ar[dr, "\int_{A,p}"']
      & A / \mathfrak{m}_p^2 \ar[d, "\int_{A,p}"] \\
      & \mathbf{1}
    \end{tikzcd}
@@ -34,7 +34,7 @@ $\mathcal{S}$, satisfying:
 
 2. **Adjoint backreaction.** The observation acts on the
    colour fibre via the adjoint representation of $G$.  At
-   each point $p$, the section $I_p$ conjugates by
+   each point $p$, the section $\mathfrak{I}_p$ conjugates by
    $G$: it rotates the colour degrees of freedom, shifting
    the substrate parameter $q \mapsto q' = q + \delta q$
    via the Hopf coaction:
@@ -42,8 +42,8 @@ $\mathcal{S}$, satisfying:
    ```tex
    \begin{equation}\label{eq:observation-substrate}
    \begin{tikzcd}[row sep=2.5em, column sep=3em]
-     A \ar[r, "\Delta"] \ar[d, "I_p"']
-     & A \otimes A \ar[r, "I_p \otimes S"]
+     A \ar[r, "\Delta"] \ar[d, "\mathfrak{I}_p"']
+     & A \otimes A \ar[r, "\mathfrak{I}_p \otimes S"]
      & A \otimes A \ar[d, "\mu"] \\
      A \ar[rr, "\int_A"']
      & & \mathbf{1}
@@ -51,7 +51,7 @@ $\mathcal{S}$, satisfying:
    \end{equation}
    ```
 
-   with $\delta q(p) = \int_A(I_p(a_{(1)})\,S(a_{(2)}))$.
+   with $\delta q(p) = \int_A(\mathfrak{I}_p(a_{(1)})\,S(a_{(2)}))$.
    Observing the universe changes it: the act of reading the
    field feeds back through the colour fibre into the Reeb
    flow.
@@ -73,6 +73,6 @@ physical roles:
   which changes what the next observation reads.
 
 An observation at a **point** is the restriction
-$I_p = I|_p$, recovering the germ-level
-endomorphism $I_p \colon A / \mathfrak{m}_p^2 \to
+$\mathfrak{I}_p = I|_p$, recovering the germ-level
+endomorphism $\mathfrak{I}_p \colon A / \mathfrak{m}_p^2 \to
 A / \mathfrak{m}_p^2$.
