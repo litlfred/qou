@@ -22,5 +22,7 @@ export default remark({
     "ex:photon-wavefront",
     "prop:fermion-boson-knot-link",
     "rem:building-block-knots",
+    "rem:virtual-particles-exceptional-divisor",
+    "rem:force-knot-identification",
   ],
 });

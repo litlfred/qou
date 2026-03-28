@@ -1,4 +1,4 @@
-The three color tubes of the Bring surface
+The three color tubes of the Bring's surface
 ([color tube interpretation](#rem:color-tube-interpretation)) and
 the three $S_3$ subgroups of its automorphism group
 ([chirality of the trefoil](#rem:chirality-trefoil)) provide a
@@ -48,7 +48,7 @@ mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**
 
-The Bring surface automorphism group $S_5$ contains exactly three
+The automorphism group $S_5$ of Bring's surface contains exactly three
 copies of $S_3$, each the quotient of the trefoil knot group
 $\langle x, y \mid x^2 = y^3 \rangle$ restricted to one color
 sector.  These three $S_3$ subgroups are the "primaries" of the

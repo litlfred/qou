@@ -74,7 +74,7 @@ of genus $1$.
    over $\mathbb{Q}(q)$.*
 
 2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$
-   to the chiral fiber of the Bring surface, where $z(p)$ is
+   to the chiral fiber of the Bring's surface, where $z(p)$ is
    the spacetime ratio at which the color-tube cubic
    ([color tube cubic](#rem:color-tube-cubic)) specialises to
    the stability cubic:*
@@ -199,7 +199,7 @@ and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
 then acquire an interpretation as integer points of $E_p$ —
 remains an open question.  The structural parallel between the
 stability cubic and the chiral cubic (identical algebraic origin
-in the Bring surface, coefficient matching at $p \approx 68$)
+in the Bring's surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
 **What is proven:**
@@ -209,7 +209,7 @@ is suggestive but not yet proven.
 - The Descartes elliptic curve $E_q$ exists and has the stated
   invariants (exact, from the chiral fibration).
 - The stability cubic and the chiral cubic share their algebraic
-  origin in the Bring surface (exact, by construction).
+  origin in the Bring's surface (exact, by construction).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds
   (exact, from the $(s^2 + s - 1)$ factor).
 

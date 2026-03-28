@@ -1,1 +1,1 @@
-<!-- Content pending: genus-2 analogue of the Bring surface. -->
+<!-- Content pending: genus-2 analogue of the Bring's surface. -->

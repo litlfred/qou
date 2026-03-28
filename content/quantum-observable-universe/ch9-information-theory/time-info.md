@@ -4,7 +4,7 @@ the **information-theoretic time** $\mathcal{T}$: the cumulative
 count of Reeb operations (iterations of the Julia set map
 $f_q(z) = z^2 + c(q)$ on the exceptional divisor).  Each
 operation is one braiding evaluation, one jet prolongation, one
-tick of the well-ordering $\prec$ on the Hecke basis.
+tick of the braiding-induced ordering $\prec_c$ on the Hecke basis.
 
 The familiar continuous time coordinate $t$ of the Reeb flow
 $\phi_t^q$ emerges from $\mathcal{T}$ by statistical mechanical

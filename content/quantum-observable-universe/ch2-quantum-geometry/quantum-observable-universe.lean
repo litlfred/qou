@@ -66,7 +66,6 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       they are equal.  This forces the pairing to be non-degenerate. -/
   volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
     volumeForm ≫ f = volumeForm ≫ g → f = g
-
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)`: the group of monoidal
     natural automorphisms of the fibre functor.
 

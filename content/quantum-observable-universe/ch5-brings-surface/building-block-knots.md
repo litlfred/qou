@@ -1,5 +1,5 @@
 Every particle in the Descartes universe is built from knots and
-links embeddable on the genus-$4$ Bring surface.  This remark
+links embeddable on the genus-$4$ Bring's surface.  This remark
 collects the complete set of building blocks: their classical
 knot names, visual conventions, Jones polynomials, hyperbolic
 volumes, and the energy (mass) each contributes.

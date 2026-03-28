@@ -1,5 +1,5 @@
 **Proposition.**
-Let $\zeta = e^{2\pi i/5}$ and let $\mathcal{S}$ be the Bring surface
+Let $\zeta = e^{2\pi i/5}$ and let $\mathcal{S}$ be the Bring's surface
 ([Bring's surface](#def:brings-surface)) with coordinates $x_0, \ldots, x_4$.
 Define the Lagrange resolvents
 

@@ -1,6 +1,6 @@
 **Proposition.**
 Let $\gamma: S^1 \hookrightarrow \Sigma_4$ be the trefoil
-$T_{2,3}$ embedded in the Bring surface, and let
+$T_{2,3}$ embedded in the Bring's surface, and let
 $N = N_{\gamma/\Sigma_4}$ be the normal bundle.  The four
 quantum numbers $(n, \ell, m, s)$ arise from the Fourier
 decomposition of sections $\sigma \in \Gamma(N)$ as follows.
@@ -8,7 +8,7 @@ decomposition of sections $\sigma \in \Gamma(N)$ as follows.
 **The normal bundle.**
 
 The trefoil $\gamma(S^1)$ is a smooth closed curve in the
-$3$-dimensional Bring surface $\Sigma_4$ (viewed locally as a
+$3$-dimensional Bring's surface $\Sigma_4$ (viewed locally as a
 real $3$-manifold via the spatial realization functor).  The
 normal bundle $N$ is a rank-$2$ real vector bundle over
 $S^1$:

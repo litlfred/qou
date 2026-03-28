@@ -40,7 +40,7 @@ configuration where two roots coincide.
 **Why the golden ratio?**
 The polynomial $s^2 + s - 1$ is the **minimal polynomial of
 $1/\varphi$ over $\mathbb{Q}$**.  Its appearance in the
-Weierstrass coefficient is not coincidental: the Bring surface
+Weierstrass coefficient is not coincidental: the Bring's surface
 is defined by $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in
 $\mathbb{CP}^4$, and the $S_5$ symmetry of the quintic acts on
 the Lagrange resolvents through fifth roots of unity

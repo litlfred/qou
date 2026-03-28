@@ -64,7 +64,7 @@ The golden ratio that was a length ratio in $\Pi(1.1097)$ becomes the
 root of the polynomial $(s^2 + s - 1)$ that kills the Weierstrass
 coefficient $r(q)$.  Explicitly: the factor $s^2 + s - 1$ is the
 **minimal polynomial of $1/\varphi$ over $\mathbb{Q}$**, and it
-appears in the numerator of $r(q)$ because the Bring surface is
+appears in the numerator of $r(q)$ because the Bring's surface is
 defined by $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in
 $\mathbb{CP}^4$, whose $S_5$ symmetry acts through fifth roots of
 unity $\zeta = e^{2\pi i/5}$ satisfying
@@ -85,7 +85,7 @@ $-z$.  At $q_{\mathrm{gold}}$: $z = -1$ and the chiral cubic
 factors as $X(X^2+1) = 0$ (degeneration).  At
 $q_{\mathrm{gold}}^{-1} = \varphi^2$: $z = +1$ and the cubic
 $X^3 + 2X^2 + 3X + 4 = 0$ is irreducible — the fiber is smooth
-with $\Delta = -200$, $j = 160$.  The Bring surface breaks the
+with $\Delta = -200$, $j = 160$.  The Bring's surface breaks the
 $q \leftrightarrow 1/q$ symmetry that quantum groups preserve:
 $U_q(\mathfrak{g}) \cong U_{q^{-1}}(\mathfrak{g})$, but
 $E_q \not\cong E_{1/q}$.

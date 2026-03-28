@@ -6,7 +6,7 @@ divisor.
 **Conjecture.**
 *The baryon is the Borromean link $\mathcal{B}_3$ of three
 unknots threaded through the color tubes $(r, g, b)$ of the
-Bring surface ([color tube coordinates](#def:color-tube-coordinates)),
+Bring's surface ([color tube coordinates](#def:color-tube-coordinates)),
 bound by the Hopf link $\mathcal{L}_H$:*
 
 $$
@@ -98,7 +98,7 @@ re-confines.
 
 **The T(2,n) family.**
 
-The torus knot/link family $T(2,n)$ on the Bring surface
+The torus knot/link family $T(2,n)$ on the Bring's surface
 splits into two parallel ladders:
 
 | $n$ | Name | Type | Comp. | Genus | Physical role |

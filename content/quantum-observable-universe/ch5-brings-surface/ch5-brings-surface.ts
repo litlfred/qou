@@ -164,6 +164,7 @@ export default chapter({
         "shell-threading-conjecture",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
+        "box-braid-irreducibility",
         "generator-volume-decomposition",
         "markov-trace-factorization",
         "skein-polynomial-transfer-matrix",
