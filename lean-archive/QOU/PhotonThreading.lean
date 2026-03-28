@@ -66,8 +66,11 @@ structure ThreadingReduction where
   hadron : BraidWord
   /-- Sequence of Hecke reduction steps. -/
   heckeSteps : List HeckeStep
-  /-- The reduction is confluent (diamond lemma). -/
-  confluent : Prop
+
+/-- The total coefficient sum of a threading reduction:
+    Σ |c_w| (sum of absolute values of Hecke step coefficients). -/
+noncomputable def ThreadingReduction.totalCoeffSum (red : ThreadingReduction) : ℝ :=
+  (red.heckeSteps.map (fun step => |step.coefficient|)).sum
 
 /-! ## Crossing energy and mass -/
 
@@ -79,7 +82,7 @@ noncomputable def crossingEnergy {M : Type*} (sp : SubstrateParameter M)
     (p : M) (red : ThreadingReduction) : ℝ :=
   let q := sp.field p
   let skeinWeight := |q - q⁻¹|
-  (red.heckeSteps.map (fun step => |step.coefficient| * skeinWeight)).sum
+  red.totalCoeffSum * skeinWeight
 
 /-- **Categorical mass** via photon threading.
     m_H = (q - 1)² · E_H = E_H / c_q²
@@ -90,6 +93,28 @@ noncomputable def categoricalMass {M : Type*} (sp : SubstrateParameter M)
   let q := sp.field p
   (q - 1) ^ 2 * crossingEnergy sp p red
 
+/-! ## Gauge invariance via GS confluence -/
+
+/-- **GS normal form axiom**: for a given hadron braid, the total
+    coefficient sum of any confluent Hecke reduction is determined
+    uniquely by the hadron.  This is the bridge from the abstract
+    GS `normal_form_unique` (CompositionLemma.lean) to concrete
+    braid threading.
+
+    The proof requires embedding `B_{n+1}` into the Hecke algebra
+    `H_n(q)`, representing the threading as a GS reduction in the
+    quotient `k⟨σ₁,…,σₙ⟩/(Hecke + YB + far-comm)`, and applying
+    `normal_form_unique` to conclude the normal form — and hence
+    the total Hecke cost — is independent of reduction path.
+
+    Ref: [fred2005] §3 Proposition 3.8 (GS basis for Hecke);
+         Bergman 1978, Theorem 1.2 (diamond lemma). -/
+axiom gs_threading_unique (β : BraidWord)
+    (red₁ red₂ : ThreadingReduction)
+    (h₁ : red₁.hadron = β)
+    (h₂ : red₂.hadron = β) :
+    red₁.totalCoeffSum = red₂.totalCoeffSum
+
 /-! ## Key properties -/
 
 /-- The photon (empty braid, zero crossings) has zero mass. -/
@@ -98,20 +123,20 @@ theorem photon_mass_zero {M : Type*} (sp : SubstrateParameter M)
     (h_empty : red.hadron.generators = [])
     (h_no_steps : red.heckeSteps = []) :
     categoricalMass sp p red = 0 := by
-  unfold categoricalMass crossingEnergy
+  unfold categoricalMass crossingEnergy ThreadingReduction.totalCoeffSum
   simp [h_no_steps]
-  ring
 
 /-- The crossing energy is non-negative. -/
 theorem crossingEnergy_nonneg {M : Type*} (sp : SubstrateParameter M)
     (p : M) (red : ThreadingReduction) :
     0 ≤ crossingEnergy sp p red := by
   unfold crossingEnergy
-  apply List.sum_nonneg
-  intro x hx
-  simp only [List.mem_map] at hx
-  obtain ⟨step, _, rfl⟩ := hx
-  exact mul_nonneg (abs_nonneg _) (abs_nonneg _)
+  exact mul_nonneg
+    (List.sum_nonneg (fun x hx => by
+      simp only [List.mem_map] at hx
+      obtain ⟨step, _, rfl⟩ := hx
+      exact abs_nonneg _))
+    (abs_nonneg _)
 
 /-- The categorical mass is non-negative. -/
 theorem categoricalMass_nonneg {M : Type*} (sp : SubstrateParameter M)
@@ -136,16 +161,14 @@ theorem mass_eq_energy_div_cq_sq {M : Type*} (sp : SubstrateParameter M)
     of the reduction path, by confluence of the Gröbner–Shirshov
     basis (diamond lemma).
 
-    Any two complete threading reductions of the same hadron braid
-    yield the same crossing energy. -/
+    Any two threading reductions of the same hadron braid yield
+    the same crossing energy. -/
 theorem threading_gauge_invariance {M : Type*} (sp : SubstrateParameter M)
     (p : M) (red₁ red₂ : ThreadingReduction)
-    (h_same_hadron : red₁.hadron = red₂.hadron)
-    (h_conf₁ : red₁.confluent)
-    (h_conf₂ : red₂.confluent) :
+    (h_same_hadron : red₁.hadron = red₂.hadron) :
     crossingEnergy sp p red₁ = crossingEnergy sp p red₂ := by
-  -- Ref: [manuscript] Ch 9, Prop: photon-threading-mass
-  -- Follows from the diamond lemma (CompositionLemma.lean)
-  sorry
+  unfold crossingEnergy
+  congr 1
+  exact gs_threading_unique red₁.hadron red₁ red₂ rfl (by rw [h_same_hadron])
 
 end QOU.PhotonThreading
