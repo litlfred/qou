@@ -152,8 +152,41 @@ property of the algebraic substrate, not the medium.  The Gröbner
 basis underlying the enveloping algebra ensures that this
 computation is *confluent* — every reduction sequence terminates at
 the same normal form, so the answer does not depend on which steps
-we take first.  This chapter does not answer whether mathematics is
-discovered or invented.  It tells us we do not have to choose.
+we take first.  Two results illustrate the reach of the
+information-theoretic perspective.  First, the Hausdorff dimension
+of the Julia set that governs the Reeb dynamics is determined
+algebraically by gravitational self-consistency:
+
+$$
+  d_H(q) = \frac{(2q-1)^2}{q^3}.
+$$
+
+This is the fractal complexity of the substrate's internal
+dynamics — how richly structured the boundary of its
+computational phase space is.  At $q = 1.1097$ one obtains
+$d_H \approx 1.088$: slightly more complex than a circle, but
+far from space-filling.  As $q$ increases toward the Big Bang
+the fractal collapses ($d_H \to 0$); as $q$ decreases toward
+the classical limit the Julia set approaches a smooth circle
+($d_H \to 1$).  Second, the crossing energy $E_H$ (the Skein
+weight from $R$-matrix braiding) and the categorical mass
+$\mathfrak{m}_H$ (the trace norm through the Frobenius pairing)
+are related by
+
+$$
+  E_H = \mathfrak{m}_H \cdot c_q^{\,2},
+  \qquad
+  c_q = \frac{1}{q - 1},
+$$
+
+where $c_q$ is the information speed of light — the ratio of
+spatial to temporal coupling in the $q$-connection.  This is
+$E = mc^2$ derived from the categorical structure: the speed of
+light is not an empirical constant but the conversion factor
+between two registers (horizontal crossings and vertical Reeb
+ticks) of the same algebra.  This chapter does not answer whether
+mathematics is discovered or invented.  It tells us we do not
+have to choose.
 
 [Chapter 9](#chap:organic-chemistry) applies the Hopf chain
 formalism to organic chemistry, demonstrating that the same
