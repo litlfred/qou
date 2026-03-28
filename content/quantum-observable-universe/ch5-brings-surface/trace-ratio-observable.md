@@ -29,7 +29,7 @@ exactly between parent and daughter.
 From the factorization theorem:
 
 $$
-  \frac{\mathrm{tr}(\overline{\mathcal{N}(p, n)})}
+  \frac{\mathrm{tr}(\overline{\mathcal{N}(Z, N)})}
        {\mathrm{tr}(\overline{\mathcal{N}(p+1, n-1)})}
   \;=\;
   \frac{\prod_{i=0}^{A-2} \hat{V}_i^{\,\mathrm{par}}}
@@ -54,7 +54,7 @@ $$
   |\mathrm{skein\_amp}|^2
   \cdot
   \left|
-    \frac{\mathrm{tr}(\overline{\mathcal{N}(p, n)})}
+    \frac{\mathrm{tr}(\overline{\mathcal{N}(Z, N)})}
          {\mathrm{tr}(\overline{\mathcal{N}(p+1, n-1)})}
   \right|^2
 $$

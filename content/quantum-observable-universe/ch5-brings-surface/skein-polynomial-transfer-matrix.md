@@ -3,7 +3,7 @@ polynomial.  The transfer matrix product computes this polynomial
 in factored form without expansion.
 
 **Proposition.**
-*Let $\mathcal{N}(p, n)$ be a nucleus with $A = p + n$ nucleons.
+*Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.
 The Markov trace
 ([factorization theorem](#thm:markov-trace-factorization))*
 
@@ -11,7 +11,7 @@ $$
   P_{\mathcal{N}}(q)
   \;:=\;
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(p, n)}
+    \overline{\mathcal{N}(Z, N)}
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2} \hat{V}_i(q)

@@ -5,7 +5,7 @@ identity in $H_A(q)$, and the result is a **polynomial in $q$**:
 the Skein polynomial of the nuclear link.
 
 **Theorem.**
-Let $\overline{\mathcal{N}(p, n)}$ be the Gröbner-reduced
+Let $\overline{\mathcal{N}(Z, N)}$ be the Gröbner-reduced
 nuclear braid word in $H_A(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$, let $(a_i, b_i)$ be the
@@ -16,7 +16,7 @@ Then the Markov trace factors exactly:
 
 $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(p, n)}
+    \overline{\mathcal{N}(Z, N)}
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2}
@@ -66,7 +66,7 @@ $$
 $$
 
 **This product IS the Skein polynomial of the nuclear link
-$\mathcal{N}(p, n)$**, written in factored form.  Evaluating at
+$\mathcal{N}(Z, N)$**, written in factored form.  Evaluating at
 $q = 1.1097$ gives the physical categorical action.
 
 ## $q$ as the polynomial variable
@@ -163,7 +163,7 @@ $$
 
 Each step preserves the link invariant.  The polynomial
 $P_{\mathcal{N}}(q)$ is a well-defined invariant of the nuclear
-link $\mathcal{N}(p, n)$ — it does not depend on the braid
+link $\mathcal{N}(Z, N)$ — it does not depend on the braid
 representative or the reduction path.  Evaluating at
 $q = 1.1097$ projects the polynomial invariant to the physical
 energy.

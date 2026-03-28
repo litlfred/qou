@@ -14,7 +14,7 @@ splits the gauge sector by crossing chirality, producing the
 familiar nuclear binding terms.
 
 Let $L = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$ be a multi-nucleon
-Hopf link with $p$ protons and $n$ neutrons, $A = p + n$.  Evaluating
+Hopf link with $Z$ protons and $n$ neutrons, $A = Z + N$.  Evaluating
 $\mathcal{S}_q$ on $L$ gives the **Skein binding Lagrangian**
 
 $$

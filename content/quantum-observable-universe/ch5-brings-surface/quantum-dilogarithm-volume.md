@@ -23,14 +23,14 @@ of the Markov trace, normalised by $\hbar_q^2$:
 $$
   E_{\mathrm{bind}}(p, n)
   \;=\;
-  \frac{\Phi_q(\mathcal{N}(p, n))}{\hbar_q^2}
+  \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
 
 where the quantum dilogarithm volume is the log of the
 Markov trace product:
 
 $$
-  \Phi_q(\mathcal{N}(p, n))
+  \Phi_q(\mathcal{N}(Z, N))
   \;:=\;
   \sum_{i=0}^{A-2} \log |z \cdot a_i + b_i|
   \;=\;
@@ -46,7 +46,7 @@ asymmetry creates nonzero $\Phi_q$, and the nucleus is bound.
 The topological mass formula
 ([topological mass](#prop:topological-mass-formula)) gives the
 mass of a knot $K$ as $m(K) = \text{Vol}(K) / \hbar_q^2$.
-For a multi-component link $\mathcal{N}(p, n)$, the "volume"
+For a multi-component link $\mathcal{N}(Z, N)$, the "volume"
 is no longer the hyperbolic volume of a single knot complement
 (the multi-nucleon link is not hyperbolic).  Instead, the
 topological mass proof
@@ -63,7 +63,7 @@ groupoid) to the Hecke algebra computation of Ch5 (the generator
 volumes).
 
 **The beta-decay $Q$-value.**
-The $Q$-value for the transition $\mathcal{N}(p, n) \to
+The $Q$-value for the transition $\mathcal{N}(Z, N) \to
 \mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
 
 $$

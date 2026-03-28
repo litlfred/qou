@@ -6,7 +6,7 @@ $q = 1.1097$) is not a separate interaction — it is the Skein
 relation acting on the braid word of a nucleus.
 
 **Setup.**
-A nucleus $\mathcal{N}(p, n)$ is a satellite link of $A = p + n$
+A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
 Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
 $\bar{\mathcal{N}}(p, n)$ in the Hecke algebra $H_{3A}(q)$

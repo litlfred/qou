@@ -1,7 +1,7 @@
 Every neutral atom is a composite knot configuration built from
 protons, neutrons, and electrons via the three generation operations
 ([knot-particle generation](#def:knot-particle-generation)).
-The knot formula for an atom with $p$ protons and $n$ neutrons is
+The knot formula for an atom with $Z$ protons and $n$ neutrons is
 
 $$
   p\,\mathfrak{p} \;\bowtie\; n\,\mathfrak{n}

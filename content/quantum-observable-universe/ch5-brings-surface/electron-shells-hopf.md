@@ -6,7 +6,7 @@ trefoil chain.
 
 **The electron link.**
 
-A neutral atom with $p$ protons has $p$ electrons, each a
+A neutral atom with $Z$ protons has $p$ electrons, each a
 trefoil $T_{2,3}$.  The full atom
 ([stable nucleus](#def:stable-nucleus)) is
 

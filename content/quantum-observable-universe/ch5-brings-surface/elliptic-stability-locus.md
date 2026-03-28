@@ -180,7 +180,7 @@ $(Q, N)$ on the genus-$0$ **stability cubic**
 
 $$
   t^3 \;=\; 2p\,(1 + c\,t^2),
-  \qquad A = p + n = t^3.
+  \qquad A = Z + N = t^3.
 $$
 
 This is a rational curve: $p = t^3/(2 + 2ct^2)$.  For each

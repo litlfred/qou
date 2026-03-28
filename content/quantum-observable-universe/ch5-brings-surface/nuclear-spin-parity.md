@@ -7,7 +7,7 @@ knot), and the tensor product of $A$ such representations has
 spin parity determined by $A \bmod 2$.
 
 **Proposition.**
-*Let $\mathcal{N}(p, n)$ be a nucleus with mass number $A = p + n$.
+*Let $\mathcal{N}(Z, N)$ be a nucleus with mass number $A = Z + N$.
 Then the total angular momentum $J$ satisfies:*
 
 $$
@@ -26,7 +26,7 @@ By the fermion-boson correspondence
 ([fermions are knots](#prop:fermion-boson-knot-link)), knots
 carry half-integral spin and links carry integral spin.
 
-The nuclear link $\mathcal{N}(p, n)$ is a satellite of $A$
+The nuclear link $\mathcal{N}(Z, N)$ is a satellite of $A$
 Borromean knots joined by Hopf links.  In the $\mathrm{SU}_q(2)$
 representation theory, the tensor product of $A$ spin-$\tfrac{1}{2}$
 representations decomposes as:

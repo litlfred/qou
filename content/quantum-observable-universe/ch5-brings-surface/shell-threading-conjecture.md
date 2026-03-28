@@ -13,13 +13,13 @@ $$
   (q^{1/2} - q^{-1/2}) \, [L_0].
 $$
 
-In beta decay $\mathcal{N}(p, n) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
+In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
 one neutron $\mathfrak{n} = [u, d, d]_c$ becomes a proton
 $\mathfrak{p} = [u, u, d]_c$.  This is a Skein crossing change
 $\sigma$ on the $d \to u$ quark strand inside one nucleon.  The
 three terms in the Skein relation are:
 
-- $L_+$: the parent configuration $\mathcal{N}(p, n)$ (positive
+- $L_+$: the parent configuration $\mathcal{N}(Z, N)$ (positive
   crossing at the $d$-quark site),
 - $L_-$: the daughter configuration $\mathcal{N}(p\!+\!1, n\!-\!1)$
   (negative crossing after the $d \to u$ flip),
@@ -107,7 +107,7 @@ $[1]_q [2]_q / [3]_q$.
 *Level 2: External (nuclear environment).*
 The resulting $L_0 = \mathcal{L}_H$ (Hopf link from the Borromean
 resolution) is embedded in the multi-nucleon link
-$\mathcal{N}(p, n)$.  It threads through $p$ protons and
+$\mathcal{N}(Z, N)$.  It threads through $Z$ protons and
 $n - 1$ remaining neutrons.  The threading modulates the Markov
 trace by a factor that depends on the **shell structure** of the
 nuclear environment:

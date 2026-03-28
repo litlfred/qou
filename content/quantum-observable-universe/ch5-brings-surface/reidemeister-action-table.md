@@ -6,7 +6,7 @@ gives the complete accounting: what each move preserves, what it
 changes, and what you must track for mass and energy calculations.
 
 **The categorical action on a nuclear link.**
-For a nucleus $\mathcal{N}(p, n)$ evaluated at the braid
+For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid
 representative $\beta \in B_A$:
 
 $$

@@ -73,7 +73,7 @@ coefficients, with $J$ parity determined by $A \bmod 2$
 
 **Nuclear $q$-angular momentum.**
 
-For a nucleus $\mathcal{N}(p,n)$ with $A = p + n$:
+For a nucleus $\mathcal{N}(Z, N)$ with $A = Z + N$:
 
 $$
   J_q^2(\mathcal{N}) \;=\; [J]_q \, [J+1]_q
