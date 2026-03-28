@@ -74,11 +74,6 @@ theorem energy_additive (vols : List ℝ) :
     nuclearEnergy vols = vols.sum := by
   rfl
 
-/-- Helper: l[i]! = l[i] when in bounds. -/
-private theorem getElem!_eq_getElem (l : List ℝ) (i : ℕ) (h : i < l.length) :
-    l[i]! = l[i] := by
-  simp [List.getElem!_pos h]
-
 /-- Helper: drop lists are equal when tails agree pointwise via getElem!. -/
 private theorem drop_eq_of_tail_eq (l₁ l₂ : List ℝ) (n : ℕ)
     (h_len : l₁.length = l₂.length)
@@ -94,8 +89,7 @@ private theorem drop_eq_of_tail_eq (l₁ l₂ : List ℝ) (n : ℕ)
       rw [List.length_drop] at h₂; omega
     have h_ge : n ≤ n + i := Nat.le_add_right n i
     have h₃ := h_tail (n + i) h_ge h_bound₁
-    rw [getElem!_eq_getElem l₁ (n + i) h_bound₁,
-        getElem!_eq_getElem l₂ (n + i) h_bound₂] at h₃
+    simp only [List.getElem!_pos, h_bound₁, h_bound₂, ↓reduceDIte] at h₃
     exact h₃
 
 /-- Only generators i ≤ p are affected by beta decay (the rest cancel
