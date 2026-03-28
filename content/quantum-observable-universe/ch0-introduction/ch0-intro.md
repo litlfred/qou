@@ -36,7 +36,14 @@ reconstruction from the rigid monoidal structure.  The uncertainty
 principle is not postulated; it appears as the geometric signature
 of degrees of freedom not yet resolved.  Observation, mathematically,
 is an open map — it produces genuinely new outcomes, not merely
-revealed pre-existing ones.  Even the capacity for computation —
+revealed pre-existing ones.  Particles, in this framework, are
+knots — topological objects classified by their crossing structure.
+But the Frobenius self-duality $A \cong A^{\vee}$ and the instanton
+condition $\star_q F_\nabla = F_\nabla$ together identify these
+knots equally as vortex lines in the fibre of the state bundle.
+The two pictures — a particle as a knot type and a particle as a
+vortex flow — are not competing descriptions but equivalent
+viewpoints exchanged by the self-duality of the algebra.  Even the capacity for computation —
 the Turing completeness of the substrate — is a consequence, not
 an input.  And that computation is *confluent*: the Gröbner basis
 structure of the algebra guarantees that the order in which
