@@ -8,5 +8,5 @@ state bundle $\mathcal{S}$.  Here $\mathcal{S}$ represents the totality of fermi
 packed into spacetime at the Big Bang.  The trivial bundle $\mathcal{S}=\mathcal{S}_0$
 corresponds to empty space, in which every point's location is exactly
 known; a non-trivial bundle $\mathcal{S}$ begins to fill spacetime with fermions,
-entering the regime of the quantum Bring surface whose underlying geometry
+entering the regime of the quantum Bring's surface whose underlying geometry
 is non-commutative ([Section](#sec:quantum-brings)).

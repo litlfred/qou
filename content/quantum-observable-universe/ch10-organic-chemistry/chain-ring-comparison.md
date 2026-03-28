@@ -3,11 +3,11 @@ with **no free parameters** — that can be compared to
 experimental data.
 
 **Derivation chain.**
-Every quantity is determined by the Bring surface geometry:
+Every quantity is determined by the Bring's surface geometry:
 
 $$
   \chi(A) = -6
-  \;\xrightarrow{\text{Bring surface}}\;
+  \;\xrightarrow{\text{Bring's surface}}\;
   \mathcal{G}
   \;\xrightarrow{\text{knot spectrum}}\;
   q,\; \alpha,\; m_e/m_p

@@ -1,6 +1,6 @@
 The Reeb vector field $\xi_q$
 ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) is the dynamical
-complement to the static topology of the Bring surface.  While the
+complement to the static topology of the Bring's surface.  While the
 surface itself provides the handles (genus $4$), the Reeb vector
 provides the "wind" blowing through them, and the substrate parameter $q$
 ([substrate parameter](#def:substrate-parameter)) sets the strength of
@@ -46,7 +46,7 @@ execute the spinning phase rotation
 $w_k\mapsto\zeta^k\,w_k$.
 
 **Global picture.**
-The Bring surface provides the genus-$4$ topology---four handles
+The Bring's surface provides the genus-$4$ topology---four handles
 through which the chiral tubes thread.  The Reeb vector field gives
 the longitudinal flow along these handles.  The substrate parameter $q$
 modulates the pitch of this flow: when $q\to\infty$ (deep-quantum,

@@ -9,7 +9,7 @@ application — one Planck step.  Therefore:*
 
 1. *The process cannot occur before Planck step $10$.*
 2. *No simpler mediator exists: $T_{3,5}$ is the unique
-   cross-family torus knot on the genus-$4$ Bring surface.*
+   cross-family torus knot on the genus-$4$ Bring's surface.*
 3. *The box is the minimum-crossing topology for any
    $\gamma$–$\nu$ interaction.*
 
@@ -114,7 +114,7 @@ Of these, $T_{3,4}$ connects $m = 3$ to $n = 4$ (muon
 sector), while $T_{3,5}$ connects $m = 3$ to $n = 5$
 (second generation).  Only $T_{3,5}$ mediates flavor-changing
 charged-to-neutral transitions.  No alternative mediator with
-fewer crossings exists on the Bring surface.
+fewer crossings exists on the Bring's surface.
 
 **(iv) No direct $\gamma$–$\nu$ coupling.**
 A direct coupling would require connecting the photon (no
@@ -162,7 +162,7 @@ via any process.
    energy barrier is $\sim 19$ times the neutrino mass.
 
 3. **No simpler process.** $T_{3,5}$ is the unique cross-family
-   mediator on the Bring surface, and its crossing number $10$
+   mediator on the Bring's surface, and its crossing number $10$
    is a topological invariant.  No isotopy or alternative mediator
    reduces the barrier.
 

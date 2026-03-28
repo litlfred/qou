@@ -34,7 +34,7 @@ We begin from what we can actually observe:
 
 4. **Three-fold structure recurs.**  Three colours (red, green,
    blue), three-fold chirality, three generations of matter.
-   The Bring surface and its $S_5$ symmetry encode this
+   The Bring's surface and its $S_5$ symmetry encode this
    preference for three.
 
 5. **Time flows.**  The universe folds and unfolds; we drift

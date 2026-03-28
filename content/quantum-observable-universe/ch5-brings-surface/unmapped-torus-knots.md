@@ -9,7 +9,7 @@ remain without particle assignments:
 | $T_{3,5}$ | $10_{124}$ | $4$ | $10$ | **?** |
 
 Both are **genus-$4$ saturating** generators — they exactly fill the
-maximal Seifert genus allowed by the Bring surface.  Their high
+maximal Seifert genus allowed by the Bring's surface.  Their high
 crossing numbers ($9$ and $10$) place them at the top of the
 complexity hierarchy within $\mathcal{G}$.
 
@@ -23,7 +23,7 @@ The current mapping uses:
 - $T_{3,4}$: top quark $t$ (genus $3$)
 
 The Standard Model fermion content is exhausted at genus $3$.  Yet
-the Bring surface provides two additional generators at genus $4$
+the Bring's surface provides two additional generators at genus $4$
 that the generation scheme
 ([knot-particle generation](#def:knot-particle-generation)) does not
 require for known matter particles.

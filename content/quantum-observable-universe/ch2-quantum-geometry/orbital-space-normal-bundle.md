@@ -1,6 +1,6 @@
 **Proposition.**
 Let $T_{2,3} \hookrightarrow \Sigma_4$ be the trefoil embedded
-in the Bring surface, and let $N = N_{T_{2,3}/\Sigma_4}$ be its
+in the Bring's surface, and let $N = N_{T_{2,3}/\Sigma_4}$ be its
 normal bundle.  At shell $n$ (framing twist $k = 2(n-1)$
 relative to the Seifert framing), the space of orbital states is
 
@@ -25,7 +25,7 @@ is the $\ell$-th eigenvalue.
 **Setup.**
 
 The trefoil $T_{2,3}$ is a smooth closed curve of length $L$
-in the Bring surface $\Sigma_4$.  The normal bundle $N$ is a
+in the Bring's surface $\Sigma_4$.  The normal bundle $N$ is a
 rank-$2$ real vector bundle over $T_{2,3} \cong S^1$.  A
 section $\sigma \in \Gamma(N)$ describes a transverse
 displacement of the trefoil — a vibration.
@@ -57,7 +57,7 @@ circle.  Each eigenvalue $\lambda_\ell$ for $\ell \geq 1$ has
 The normal bundle $N$ is rank $2$: at each point of the
 trefoil, the transverse displacement has **two independent
 directions** (the two normal directions in the $3$-dimensional
-ambient space of the Bring surface).  A section $\sigma$ with
+ambient space of the Bring's surface).  A section $\sigma$ with
 Fourier mode $\ell$ along the trefoil and direction $\hat{n}$
 in the normal plane gives a vibration pattern:
 
@@ -117,7 +117,7 @@ $$
 The non-trivial claim is that **mode $\ell$ on the trefoil
 curve transforms as the irreducible $\mathrm{SO}(3)$
 representation $V_\ell$ of dimension $2\ell + 1$** when
-embedded in the Bring surface.
+embedded in the Bring's surface.
 
 This follows from two facts:
 

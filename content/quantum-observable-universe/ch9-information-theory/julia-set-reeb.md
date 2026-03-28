@@ -92,7 +92,7 @@ $d_H$ because the Fibonacci convergents of $1/\varphi$ are the
 worst rational approximants — the iteration $f_q$ cannot lock into
 any periodic orbit, forcing the dynamics to explore the full
 complexity of the Julia set.  This connects directly to the
-golden-angle phyllotaxis of the Bring surface
+golden-angle phyllotaxis of the Bring's surface
 ([golden ratio degeneration](#rem:golden-ratio-degeneration)):
 the same irrationality that optimizes packing on surfaces
 maximizes the information content of photon scattering.

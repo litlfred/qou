@@ -1,6 +1,6 @@
-The Euler characteristic $\chi(A) = -6$ of the Bring surface is
+The Euler characteristic $\chi(A) = -6$ of the Bring's surface is
 the reason torus knots serve as the generators of the particle
-spectrum.  Because the Bring surface has genus $g = 4$
+spectrum.  Because the Bring's surface has genus $g = 4$
 (from $\chi = 2 - 2g = -6$), there is a hard upper bound on
 which torus knots can be localized in the fibre: any $T_{m,n}$
 whose Seifert genus exceeds $4$ simply cannot embed.  This
@@ -34,7 +34,7 @@ Together with the unknot $T_{1,0} = 0_1$ (genus $0$), the generator
 set has $|\mathcal{G}| = 7$.
 
 **Genus bound from $\chi(A) = -6$.**
-The Bring surface $\Sigma_4$ has genus $g = 4$ and Euler
+The Bring's surface $\Sigma_4$ has genus $g = 4$ and Euler
 characteristic $\chi = 2 - 2g = -6$.  A knot $T_{m,n}$ localized
 in the fibre $E_c$
 ([localized knot](#def:localized-knot)) inherits a Seifert surface
@@ -59,7 +59,7 @@ embeddability requires $(m-1)(n-1) \leq 2g = 8$.
    each meridional strand threads one color fiber.
 
 3. **Saturation.** The seventh generator $T_{2,9}$ at genus $4$
-   exactly saturates the Bring surface.  Beyond this, new particle
+   exactly saturates the Bring's surface.  Beyond this, new particle
    types require either a higher-genus QOU (different $\chi$) or
    composite construction via the linking operations.
 
@@ -73,7 +73,7 @@ embeddability requires $(m-1)(n-1) \leq 2g = 8$.
 **Remark on the cutoff.**
 The bound $N(\chi) = 1 - \chi = 1 - (-6) = 7$ on the number of
 nontrivial generators is not accidental: it equals the number of
-handles ($g = 4$) of the Bring surface plus the three independent
+handles ($g = 4$) of the Bring's surface plus the three independent
 Seifert genus values ($1, 2, 3, 4$) available within those handles.
 The recursive brane tower
 ([recursive brane tower](#def:recursive-brane-tower)) does not

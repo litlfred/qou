@@ -1,4 +1,4 @@
-The Bring surface constraints take the following form in color tube coordinates.
+The Bring's surface constraints take the following form in color tube coordinates.
 
 **Spacetime recovery.**
 Substituting into $z = S/D$

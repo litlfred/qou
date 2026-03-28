@@ -8,7 +8,7 @@ $$
 
 The electron and the up quark are the *same knot* $T_{2,3}$.
 What distinguishes them is their **environment**: the up quark
-is threaded through a color tube of the Bring surface
+is threaded through a color tube of the Bring's surface
 ([color tube coordinates](#def:color-tube-coordinates)),
 while the electron orbits the nucleus via Hopf linking
 without entering the color tubes.
