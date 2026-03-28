@@ -120,7 +120,7 @@ def box_counting_dimension(points, n_sizes=20):
     y_pred = slope * x_fit + intercept
     ss_res = np.sum((y_fit - y_pred)**2)
     ss_tot = np.sum((y_fit - np.mean(y_fit))**2)
-    r_squared = 1 - ss_res / ss_tot
+    r_squared = 1 - ss_res / ss_tot if ss_tot > 0 else 0.0
 
     return slope, r_squared, epsilons, counts
 
@@ -171,10 +171,9 @@ def correlation_dimension(points, n_sample=5000, n_radii=20):
     for i in range(0, N, chunk_size):
         i_end = min(i + chunk_size, N)
         for j in range(i, N, chunk_size):
-            j_start = max(j, i)  # avoid double counting
             j_end = min(j + chunk_size, N)
 
-            if i == j_start // chunk_size * chunk_size:
+            if i == j:
                 # Same chunk - use upper triangle
                 chunk_pts_i = pts[i:i_end]
                 dists = np.abs(chunk_pts_i[:, None] - chunk_pts_i[None, :])
@@ -184,7 +183,7 @@ def correlation_dimension(points, n_sample=5000, n_radii=20):
                     pair_counts[k] += np.sum(mask)
             else:
                 chunk_pts_i = pts[i:i_end]
-                chunk_pts_j = pts[j_start:j_end]
+                chunk_pts_j = pts[j:j_end]
                 dists = np.abs(chunk_pts_i[:, None] - chunk_pts_j[None, :])
                 for k, r in enumerate(radii):
                     pair_counts[k] += np.sum(dists < r)
@@ -214,7 +213,7 @@ def correlation_dimension(points, n_sample=5000, n_radii=20):
     y_pred = slope * x_fit + intercept
     ss_res = np.sum((y_fit - y_pred)**2)
     ss_tot = np.sum((y_fit - np.mean(y_fit))**2)
-    r_squared = 1 - ss_res / ss_tot if ss_tot > 0 else 0.0
+    r_squared = 1 - ss_res / ss_tot if ss_tot > 0 else 0.0 if ss_tot > 0 else 0.0
 
     return slope, r_squared, radii, C_r
 

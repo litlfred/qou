@@ -181,8 +181,8 @@ $$
 | $\varphi^2$ | $1.000$ | — | — | Golden crossover: $d_H$ returns to $1$ |
 
 The formula $d_H = 1$ at $q = 1$ (unit circle) and
-$q = (3+\sqrt{5})/2 = \varphi^2 + 1$ (golden threshold) are exact.
-For $1 < q < \varphi^2 + 1$, the Julia set is strictly more fractal
+$q = (3+\sqrt{5})/2 = \varphi^2$ (golden threshold) are exact.
+For $1 < q < \varphi^2$, the Julia set is strictly more fractal
 than a circle ($d_H > 1$), consistent with McMullen's theorem
 [mcmullen1998].
 
