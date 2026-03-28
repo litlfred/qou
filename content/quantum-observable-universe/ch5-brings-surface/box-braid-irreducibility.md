@@ -1,14 +1,17 @@
 **Proposition.**
-*Let $G = \{T^2 - (q - q^{-1})T - 1,\;
-\sigma_i\sigma_{i+1}\sigma_i - \sigma_{i+1}\sigma_i\sigma_{i+1},\;
-\sigma_i\sigma_j - \sigma_j\sigma_i\}$ be the Gröbner basis of
-the Hecke algebra $H_n(q)$
-([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
-Then the braid word $\beta_{\mathrm{box}}$ encoding the process
-$\gamma\gamma \to \nu\bar{\nu}$ via an electron box is
-**irreducible**: no element of $G$ reduces $\beta_{\mathrm{box}}$
-to a process with fewer than $10$ crossings or to a direct
-$\gamma$–$\nu$ coupling.*
+*The process $\gamma\gamma \to \nu\bar{\nu}$ requires the
+$T_{3,5}$ torus knot topology (weak mediator,
+[force–knot identification](#rem:force-knot-identification)).
+The crossing number $c(T_{3,5}) = 10$ is a topological invariant:
+no braid representation in any $B_n$ whose closure is $T_{3,5}$
+has fewer than $10$ crossings.  Each crossing is one $R$-matrix
+application — one Planck step.  Therefore:*
+
+1. *The process cannot occur before Planck step $10$.*
+2. *No simpler mediator exists: $T_{3,5}$ is the unique
+   cross-family torus knot on the genus-$4$ Bring surface.*
+3. *The box is the minimum-crossing topology for any
+   $\gamma$–$\nu$ interaction.*
 
 **The box braid: crossing-by-crossing.**
 
@@ -33,131 +36,97 @@ tower level $A_1$
 \]
 ```
 
-Reading the box as a braid word in $B_3$ (minimum strand count
-for the trefoil structure), the crossings decompose into four
-groups:
+**Vertex structure.**
 
-**Group 1: Virtual pair creation (EM vertex 1).**
-Photon $\gamma_1$ couples to the $\dagger$-involution of the
-category
-([force–knot identification](#rem:force-knot-identification),
-§I), creating a virtual $e^-e^+$ pair at the exceptional divisor
-$E_p$.  This is an R-II embedding move that introduces a trefoil
-and its mirror:
+At each vertex, a specific braid operation occurs:
 
-$$
-  \underbrace{\sigma_1\sigma_2\sigma_1}_{T_{2,3}\;(e^-_{\mathrm{virt}})}
-  \;\cdot\;
-  \underbrace{\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1}}_{\overline{T_{2,3}}\;(e^+_{\mathrm{virt}})}
-  \qquad\text{(6 crossings at } A_1\text{)}
-$$
+- **EM vertices** ($\gamma \leftrightarrow e^-e^+$): the
+  photon's $\dagger$-involution couples to the trefoil's
+  antisymmetric crossing energy
+  ([force–knot identification](#rem:force-knot-identification),
+  §I), creating virtual $e^-e^+$ pairs at the exceptional
+  divisor $E_p$.  Each pair is a trefoil + mirror trefoil
+  ($T_{2,3} \sqcup \overline{T_{2,3}}$) at brane level $A_1$.
 
-**Group 2: Weak vertex 1 — Skein resolution via $T_{3,5}$.**
-The virtual $e^-$ (trefoil $T_{2,3}$, crossing chirality
-$Q = -1$) undergoes a Skein crossing change mediated by $T_{3,5}$
-([force–knot identification](#rem:force-knot-identification),
-§III).  The $T_{3,5}$ braid word contributes its full crossing
-structure:
+- **Weak vertices** ($e \to \nu$ via $T_{3,5}$): the Skein
+  relation mediated by $T_{3,5}$
+  ([force–knot identification](#rem:force-knot-identification),
+  §III) converts the charged trefoil to the neutral unknot.
+
+**The $T_{3,5}$ braid word.**
+
+The torus knot $T_{3,5}$ has braid representation
+$(\sigma_1\sigma_2)^5 \in B_3$ with $(3-1) \cdot 5 = 10$
+crossings:
 
 $$
   W_{3,5} \;=\;
-  (\sigma_1\sigma_2)^5
-  \qquad\text{(10 crossings from the weak mediator)}
+  \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2
+  \sigma_1\sigma_2\sigma_1\sigma_2
+  \qquad\text{(10 crossings)}
 $$
 
-The Skein relation at this vertex converts the charged trefoil to
-the neutral unknot: $T_{2,3} \xrightarrow{\text{Skein}} T_{1,0}$
-($e^- \to \nu$).
+*Proof that $c(T_{3,5}) = 10$ is irreducible.*
 
-**Group 3: Virtual pair creation (EM vertex 2).**
-Photon $\gamma_2$ creates a second virtual pair at $E_p$,
-identical to Group 1:
+The crossing number of a torus knot $T_{m,n}$ with
+$\gcd(m,n) = 1$ and $2 \leq m < n$ is
 
 $$
-  \sigma_1\sigma_2\sigma_1 \;\cdot\;
-  \sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1}
-  \qquad\text{(6 crossings at } A_1\text{)}
+  c(T_{m,n}) \;=\; \min\bigl((m-1)n,\; (n-1)m\bigr).
 $$
 
-**Group 4: Weak vertex 2 — Skein resolution via $T_{3,5}$.**
-The virtual $e^+$ (mirror trefoil $\overline{T_{2,3}}$) undergoes
-the mirror Skein crossing change ($q \leftrightarrow q^{-1}$),
-converting $\overline{T_{2,3}} \to \overline{T_{1,0}}$
-($e^+ \to \bar{\nu}$):
+For $T_{3,5}$: $\min(2 \cdot 5,\; 4 \cdot 3) = \min(10, 12) = 10$.
+The minimum is achieved by the $B_3$ representation
+$(\sigma_1\sigma_2)^5$, and the braid index of $T_{3,5}$ is
+$\min(3, 5) = 3$ (Morton–Williams inequality), confirming that
+$B_3$ is the minimum strand count.
 
-$$
-  W_{3,5}^{-1} \;=\;
-  (\sigma_2^{-1}\sigma_1^{-1})^5
-  \qquad\text{(10 crossings, mirror orientation)}
-$$
+**Why no reduction below 10 crossings is possible:**
 
-**Group 5: Virtual pair annihilation.**
-The remaining virtual $e^+$ from Group 1 and virtual $e^-$ from
-Group 3 annihilate — an inverse R-II move that cancels their
-crossing pairs.  This contributes $0$ net crossings
-([Reidemeister action table](#prop:reidemeister-action-table)).
+**(i) Topological invariance.**  The crossing number $c(K)$
+is a knot invariant: it is the minimum number of crossings
+over **all** diagrams of $K$ (not just positive braids, but
+all braid groups $B_n$ and all non-braid diagrams).  For
+torus knots, this minimum is known exactly.  No isotopy,
+Reidemeister move, or change of braid representation can
+reduce $c(T_{3,5})$ below $10$.
 
-**Full box braid word.**
+**(ii) Distinction from the Hecke algebra normal form.**
+In the Hecke algebra $H_3(q)$, which has dimension
+$|S_3| = 6$, the word $(\sigma_1\sigma_2)^5$ reduces to a
+polynomial in the standard basis $\{T_w : w \in S_3\}$ —
+with maximum word length $3$ per basis element (since the
+longest element of $S_3$ has length $3$).  This algebraic
+reduction computes the **amplitude** of the process (the
+Markov trace gives the Jones polynomial $J_{T_{3,5}}(q)$),
+not the physical crossing count.  Each $\sigma_i$ in the
+original braid word is one physical $R$-matrix application
+— one Planck step.  The Hecke algebra computes **what
+amplitude** results from $10$ $R$-matrix applications; it
+does not reduce the **number** of applications.
 
-$$
-  \beta_{\mathrm{box}} \;=\;
-  \underbrace{(\sigma_1\sigma_2\sigma_1)(\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1})}_{\text{virtual pair 1 (6)}}
-  \;\cdot\;
-  \underbrace{(\sigma_1\sigma_2)^5}_{\text{weak vertex 1 (10)}}
-  \;\cdot\;
-  \underbrace{(\sigma_1\sigma_2\sigma_1)(\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1})}_{\text{virtual pair 2 (6)}}
-  \;\cdot\;
-  \underbrace{(\sigma_2^{-1}\sigma_1^{-1})^5}_{\text{weak vertex 2 (10)}}
-$$
+**(iii) $T_{3,5}$ is the unique cross-family mediator.**
+The only torus knots embeddable on the genus-$4$ Bring
+surface with winding numbers from both the $m = 2$ (lepton)
+and $m = 3$ (quark) families are $T_{3,4}$ and $T_{3,5}$
+([unmapped torus knots](#rem:unmapped-torus-knots)).
+Of these, $T_{3,4}$ connects $m = 3$ to $n = 4$ (muon
+sector), while $T_{3,5}$ connects $m = 3$ to $n = 5$
+(second generation).  Only $T_{3,5}$ mediates flavor-changing
+charged-to-neutral transitions.  No alternative mediator with
+fewer crossings exists on the Bring surface.
 
-Total: $6 + 10 + 6 + 10 = 32$ crossings before Gröbner
-reduction.
-
-*Proof of irreducibility.*
-
-Apply the Gröbner basis $G$ to $\beta_{\mathrm{box}}$:
-
-**(i) Hecke reductions.**  The Hecke relation
-$\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ eliminates squares
-within the virtual pair groups: $(\sigma_1\sigma_2\sigma_1)
-(\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1})$ reduces via R-II
-cancellation.  After full Hecke reduction, the virtual pair
-groups collapse — but the $T_{3,5}$ words $W_{3,5}$ and
-$W_{3,5}^{-1}$ **cannot** be eliminated.  The word
-$(\sigma_1\sigma_2)^5$ has no adjacent squares (it alternates
-$\sigma_1, \sigma_2$), so the Hecke relation does not apply
-within it.
-
-**(ii) Yang–Baxter reductions.**  The Yang–Baxter relation
-$\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$
-can reorder generators within $W_{3,5}$ but cannot reduce the
-word length: both sides have the same number of crossings.
-Yang–Baxter preserves the crossing count
-([Gröbner–Shirshov energy](#prop:groebner-shirshov-energy)).
-
-**(iii) Far commutativity.**  The relation
-$\sigma_i\sigma_j = \sigma_j\sigma_i$ for $|i-j| \geq 2$
-permutes distant generators.  In $B_3$, the only generators are
-$\sigma_1$ and $\sigma_2$ with $|1-2| = 1$, so far commutativity
-does not apply at all.
-
-**(iv) No direct $\gamma$–$\nu$ coupling exists.**  A direct
-coupling would require a braid word connecting the photon (no
-strands) to the neutrino (unknot) without charged intermediaries.
-But the photon's electromagnetic interaction is the antisymmetric
-component of the crossing energy under the $\dagger$-involution
-— it requires nonzero crossing chirality $Q \neq 0$ to couple.
-The neutrino has $Q(\nu) = 0$.  No element of $G$ can bridge
-this: $G$ preserves the parity of crossing chirality under
-reduction (the Hecke relation preserves the symmetric/antisymmetric
-decomposition, Yang–Baxter preserves all crossing signs, and far
-commutativity is trivial in $B_3$).
-
-**Therefore:** the Gröbner normal form
-$\bar{\beta}_{\mathrm{box}}$ retains the full $T_{3,5}$ crossing
-content.  The minimum crossing count of the normal form is
-$c(\bar{\beta}_{\mathrm{box}}) \geq 10$, with the lower bound
-saturated by the irreducible $T_{3,5}$ mediator.  $\square$
+**(iv) No direct $\gamma$–$\nu$ coupling.**
+A direct coupling would require connecting the photon (no
+braid strands, $Q = 0$) to the neutrino ($Q = 0$) without
+charged intermediaries.  But the photon's electromagnetic
+interaction is the antisymmetric component of the crossing
+energy under the $\dagger$-involution — it couples only to
+objects with $Q \neq 0$.  The neutrino has $Q(\nu) = 0$.
+The charge-neutrality gap between photon and neutrino can
+only be bridged by passing through charged intermediaries
+($e^{\pm}$, trefoils with $Q = \pm 1$) and then converting
+via the weak mediator $T_{3,5}$.  $\square$
 
 **Corollary: neutrino stability.**
 
@@ -173,29 +142,29 @@ via any process.
 
 2. **No scattering decay.** Any decay channel
    $\nu \to \gamma + \cdots$ or $\nu \to \nu' + \cdots$ must
-   pass through the box topology (or something at least as
-   complex), since the reverse process $\gamma\gamma \to
-   \nu\bar{\nu}$ is the simplest $\gamma$–$\nu$ interaction and
-   it is irreducible.  The crossing energy of the box
-   ($\geq 10$ crossings from $T_{3,5}$) vastly exceeds the
-   neutrino's vacuum drag mass $m_\nu \sim \mu_0(q-1)$:
+   pass through the $T_{3,5}$ topology (or something at least as
+   complex).  The $T_{3,5}$ mediator requires $10$ $R$-matrix
+   applications — $10$ Planck steps of braid computation.  Each
+   application costs crossing energy $(q - q^{-1}) \cdot \mu_0$.
+   The total energy barrier:
 
    $$
      E_{\mathrm{box}} \;\geq\;
+     c(T_{3,5}) \cdot (q - q^{-1}) \cdot \mu_0
+     \;=\;
      10 \cdot (q - q^{-1}) \cdot \mu_0
      \;\gg\;
      m_\nu \;=\; \mu_0(q - 1).
    $$
 
-   The neutrino has no energy budget to generate the irreducible
-   box structure.
+   The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot
+   (q + q^{-1}) / q \approx 19$ at $q = 1.1097$: the box
+   energy barrier is $\sim 19$ times the neutrino mass.
 
-3. **No simpler process.** The irreducibility of
-   $\bar{\beta}_{\mathrm{box}}$ means there is no Gröbner
-   reduction path from the box to a lower-crossing process.
-   The box is the **minimum topology** for any $\gamma$–$\nu$
-   interaction, and it is energetically inaccessible to an
-   isolated neutrino.
+3. **No simpler process.** $T_{3,5}$ is the unique cross-family
+   mediator on the Bring surface, and its crossing number $10$
+   is a topological invariant.  No isotopy or alternative mediator
+   reduces the barrier.
 
 The neutrino is therefore the **most stable** particle in the
 Descartes universe: it has no decay channels at any energy below

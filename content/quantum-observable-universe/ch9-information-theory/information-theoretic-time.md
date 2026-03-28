@@ -1,6 +1,6 @@
 **Definition.**
-Let $(\mathbf{C}, A, \tau)_\prec$ be a quantum observable universe
-with admissible ordering $\prec$
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
+with braiding-induced ordering $\prec_c$
 ([ordering–jet compatibility](#prop:ordering-jet-compatibility)),
 and let $f_q(z) = z^2 + c(q)$ be the Julia set iteration on the
 exceptional divisor
@@ -18,7 +18,7 @@ where $N$ is the total number of iterations of $f_q$ applied
 since the initial state
 ([bundle initial conditions](#def:bundle-initial-conditions)).
 Each iteration advances the admissible ordering by one step:
-$\mathcal{T}$ counts the position in the well-ordering $\prec$
+$\mathcal{T}$ counts the position in the braiding-induced ordering $\prec_c$
 propagated through the jet tower.
 
 **Reeb time coordinate.**
@@ -106,12 +106,12 @@ per operation, and the macroscopic time carries more information
 per unit.
 
 **Consistency with the arrow of time.**
-The admissible ordering $\prec$ on the Hecke basis
+The braiding-induced ordering $\prec_c$ on the Hecke basis
 ([ordering–jet compatibility](#prop:ordering-jet-compatibility))
 propagates through the jet tower and defines forward/backward
 time at every brane level.  The information-theoretic time
 $\mathcal{T}$ is the counting measure on this well-ordering:
-$\mathcal{T}(a) < \mathcal{T}(b)$ if and only if $a \prec b$.
+$\mathcal{T}(a) < \mathcal{T}(b)$ if and only if $a \prec_c b$.
 The rescaling $t = \hbar_q \mathcal{T}$ preserves the order, so
 the Reeb time coordinate inherits the same arrow of time.  The
 arrow does not need to be re-derived in the continuous limit —

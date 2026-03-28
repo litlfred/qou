@@ -1,9 +1,7 @@
-A quantum universe $(\mathbf{C}, A, \tau)_\prec$ over $R$
+A quantum universe $(\mathbf{C}, A, \tau)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
 forgetful functor $\tau$
-([Example](#ex:rigid-monoidal-vect)) is faithful, $\prec$ is an
-admissible ordering on the Hecke basis of $A$
-([admissible system](#def:admissible-system)), and the following
+([Example](#ex:rigid-monoidal-vect)) is faithful and the following
 conditions hold:
 
 1. *(non-degenerate integration)* the Frobenius form
@@ -81,15 +79,33 @@ conditions hold:
    \end{equation}
    ```
 
-5. *(temporal ordering)* the admissible ordering $\prec$ is
-   a well-ordering on the monomial basis of the Hecke algebra
-   $H_n(q)$ of $A$, satisfying left and right compatibility
-   with multiplication
-   ([admissible system](#def:admissible-system)).
+5. *(temporal braiding)* the braiding
+   $c_{V,V} \colon V \otimes V \to V \otimes V$ on
+   $\mathbf{C}$ is **non-symmetric**: $c_{V,V}^2 \neq
+   \mathrm{id}_{V \otimes V}$.  The braiding determines
+   a canonical admissible ordering $\prec_c$ on the
+   monomial basis $B$ of the Hecke algebra $H_n(q)$ of $A$
+   ([admissible system](#def:admissible-system)) as follows:
+
+   **(well-ordering on $B$.)** The monomial basis consists of
+   positive braid monomials
+   $\sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}$ in the image
+   of $c_{V,V}$ under the braid representation
+   $\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes
+   c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$.  The
+   braiding $c_{V,V}$ (as opposed to its inverse
+   $c_{V,V}^{-1}$) defines "positive crossing" — forward
+   time.  The ordering $\prec_c$ is degree-lexicographic:
+   shorter words precede longer ones; at equal length,
+   lexicographic order on the generator indices.  This is a
+   well-ordering because: (a) total degree is bounded below
+   by $0$; (b) at fixed degree, lexicographic order on a
+   finite alphabet is well-founded.
+
    Forward time is the direction of Gröbner reduction under
-   $\prec$: braiding (creating crossings $\sigma_i$).
-   Backward time is the anti-involution
-   $\sigma_i \mapsto \sigma_i^{-1}$ composed with $\prec$:
-   unbraiding (resolving crossings).  The ordering determines
-   which computations have completed and which are in progress
-   — it is the arrow of time.
+   $\prec_c$: braiding (applying $c_{V,V}$, creating
+   crossings $\sigma_i$).  Backward time is the opposite
+   braiding $\bar{c}_{V,V} := c_{V,V}^{-1}$: unbraiding
+   (resolving crossings $\sigma_i^{-1}$).  The ordering
+   is not additional data — it is derived from the braiding,
+   which is already part of the categorical structure.
