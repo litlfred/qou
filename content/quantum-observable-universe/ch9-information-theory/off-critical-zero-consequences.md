@@ -1,83 +1,49 @@
-The $R$-matrix is unitary.  This is not negotiable — it is a
-theorem of the braided tensor category, formalised in Lean.
-The question is not "what if unitarity breaks?" but rather:
-**unitarity is the mechanism that pins zeros to $\sigma_q$**.
+The $R$-matrix is unitary — that's proved.  The intuition that
+unitarity should force zeros onto $\sigma_q$ is compelling.  But
+as the gap analysis shows
+([$q$-critical line](#conj:q-critical-line)), there is no direct
+logical path from unitarity to the critical line yet.  This remark
+catalogues what an off-critical zero would contradict and what
+remains to be built.
 
-**The logical chain.**
+**What unitarity gives us (proved).**
 
-$$
-  R\text{-matrix unitary}
-  \;\xRightarrow{\text{spectral id.}}\;
-  \mathcal{L}_s\text{ self-adjoint}
-  \;\Rightarrow\;
-  \text{spectrum real}
-  \;\xRightarrow{q\text{-func. eq.}}\;
-  \operatorname{Re}(\rho) = \sigma_q.
-$$
+- $\beta_{V,V} \circ \beta_{V,V}^{-1} = \mathrm{id}$ — braiding
+  is exactly invertible.
+- Eigenvalues $q$ and $-q^{-1}$ with $|q \cdot (-q^{-1})| = 1$.
+- Yang–Baxter holds: $\sigma_1\sigma_2\sigma_1 =
+  \sigma_2\sigma_1\sigma_2$.
 
-Each arrow:
+**What unitarity does NOT directly give us.**
 
-1. **$R$-matrix unitary $\Rightarrow$ $\mathcal{L}_s$
-   self-adjoint.**  The spectral identification
-   ([unitarity forces zeros](#prop:q-critical-line)) maps the Ruelle
-   transfer operator to the $R$-matrix braiding.  Unitarity of
-   $\beta_{V,V}$ (i.e., $\beta \circ \beta^{-1} = \mathrm{id}$)
-   translates to self-adjointness of $\mathcal{L}_s$ on
-   $L^2(J(f_q), \mu_q)$.
+- A Hilbert space on which a transfer operator acts.
+- A spectral identification connecting $R$-matrix eigenvalues to
+  zeta zeros.
+- Meromorphic continuation of $Z_q$ past its convergence boundary.
+- A $q$-functional equation.
 
-2. **Self-adjoint $\Rightarrow$ real spectrum.**  Standard functional
-   analysis.
+**Contrapositive (hypothetical).**
 
-3. **Real spectrum + $q$-functional equation $\Rightarrow$
-   $\operatorname{Re}(\rho) = \sigma_q$.**  The functional equation
-   $\zeta_q(s) = \chi_q(s)\,\zeta_q(d_H(q) - s)$ pairs $\rho$ with
-   $d_H(q) - \bar{\rho}$.  Real spectrum forces
-   $\rho = d_H(q) - \bar{\rho}$, giving
-   $\operatorname{Re}(\rho) = d_H(q)/2$.
+If we *could* build the spectral identification, an off-critical
+zero $\rho = \beta + i\gamma$ with $\beta \neq \sigma_q$ would
+require the spectral operator to be non-self-adjoint, contradicting
+the unitarity of the $R$-matrix.  The pathologies:
 
-**Contrapositive: what an off-critical zero would require.**
+| Pathology | Mechanism |
+|-----------|-----------|
+| Orbit-counting anomaly | $\Pi_q(N)$ fluctuates as $q^{(\beta - \sigma_q)N}$ |
+| Information loss in braiding | $\beta \circ \beta^{-1} \neq \mathrm{id}$ |
+| Gravity fluctuations | $G_{\mathrm{Planck}} \neq 1$ at scale $|\gamma|$ |
+| Entropy bound violation | $\Delta\eta \neq 0$ oscillations |
 
-Suppose, for contradiction, that $\rho = \beta + i\gamma$ with
-$\beta \neq \sigma_q$.  Then:
+But this argument is conditional on the spectral identification
+existing.  Without it, unitarity and the zeta zeros live in
+different worlds.
 
-- The transfer operator $\mathcal{L}_s$ would **not** be
-  self-adjoint at $s = \rho$.
-- By the spectral identification, the $R$-matrix would **not** be
-  unitary — braiding and unbraiding would fail to compose to the
-  identity.
-- But $\beta_{V,V} \circ \beta_{V,V}^{-1} = \mathrm{id}$ is
-  proved.  Contradiction.  $\square$
+**The $d_H(q)$ closed form.**
 
-**Physical consequences (by contradiction).**
-
-The following pathologies would arise if unitarity *could* be
-violated — which it cannot, but the exercise clarifies what
-unitarity prevents:
-
-| Pathology | Mechanism | Prevented by |
-|-----------|-----------|-------------|
-| Orbit-counting anomaly | $\Pi_q(N)$ fluctuates as $q^{(\beta - \sigma_q)N}$ | Self-adjointness of $\mathcal{L}_s$ |
-| Information loss in braiding | $\beta \circ \beta^{-1} \neq \mathrm{id}$ | $R$-matrix invertibility (Lean) |
-| Gravity fluctuations | $G_{\mathrm{Planck}} \neq 1$ at scale $|\gamma|$ | $d_H(q)$ closed form + $G = 1$ |
-| Entropy bound violation | $\Delta\eta \neq 0$ oscillations | $\eta_q = (2q-1)/q^3$ exact |
-
-**The $d_H(q)$ closed form is the linchpin.**
-
-The entire argument rests on the exact formula
-$d_H(q) = (2q-1)^2/q^3$
-([operational entropy](#def:operational-entropy)).  This enters in
-two places:
-
-1. **The functional equation**: the symmetry
-   $\zeta_q(s) \leftrightarrow \zeta_q(d_H - s)$ determines where
-   the critical line sits.  If $d_H(q)$ has corrections, the
-   critical line moves.
-
-2. **The self-consistency condition**: $G_{\mathrm{Planck}} = 1$
-   *algebraically forces* $\eta_q = (2q-1)/q^3$, which together
-   with $\chi_q = 1/(2q-1)$ gives $d_H$ via Manning–McCluskey.
-
-The derivation chain is:
+Even granting the spectral identification, the critical line
+location depends on $d_H(q) = (2q-1)^2/q^3$.  The derivation:
 
 $$
   G_{\mathrm{Planck}} = 1
@@ -89,39 +55,37 @@ $$
   \sigma_q = \frac{(2q-1)^2}{2q^3}.
 $$
 
-Each step is algebraic — no approximations, no numerics, no
-fitting.  But the inputs must be exact:
+The $3.9\%$ discrepancy with the transfer-operator numerical
+value ($1.047$ vs. $1.088$) is an open problem.  Possible
+resolutions:
 
-- **$G_{\mathrm{Planck}} = 1$**: this is a normalisation choice
-  (Planck units), so it is exact by definition.
-- **$\chi_q = 1/(2q-1)$**: this is the $q$-deformed Lyapunov
-  exponent replacing $\ln 2$.  The replacement $\ln 2 \to 1/(2q-1)$
-  is forced by requiring $\chi_q$ to be a rational function of $q$
-  (valid over any field) with $\chi_1 = 1$.  Any other rational
-  function with these properties would give a different $d_H$ and a
-  different critical line.
+1. The cardioid parameterization $c(q)$ in the numerical
+   computation is not the correct map from the substrate to the
+   quadratic family.
+2. The $q$-deformed Lyapunov exponent $\chi_q = 1/(2q-1)$ is
+   approximate.
+3. The QOU dynamics genuinely differs from classical conformal
+   dynamics in a way the transfer operator does not capture.
 
-The question of whether the $q$-RH holds thus reduces to:
-**is $\chi_q = 1/(2q-1)$ the unique $q$-deformation of the
-Lyapunov exponent?**  If it is, the critical line is determined
-and unitarity forces zeros onto it.
+**What would close the gaps.**
 
-**Classical RH as a corollary.**
+| Gap | What's needed |
+|-----|---------------|
+| 1. $Z_q$ analytic | Meromorphic continuation of the Ruelle product (Ruelle–Pollicott theory for the specific family $f_q$) |
+| 2. Hilbert space | A field-independent spectral framework — possibly via Berkovich spaces ($p$-adic) or étale cohomology (finite fields) instead of $L^2$ |
+| 3. Spectral identification | An explicit isometry from $V^{\otimes n}$ to the function space carrying $\mathcal{L}_s$ — or a categorical substitute that avoids Hilbert spaces entirely |
+| 4. $d_H$ numerics | Either fix the parameterization $c(q)$, or derive the closed form without Manning–McCluskey |
+
+**Classical RH as a special case.**
 At $q = 1$: $d_H(1) = 1$, $\sigma_1 = 1/2$, $\chi_1 = 1$, and
 the $R$-matrix collapses to the symmetric group (trivially
-unitary).  The classical Riemann Hypothesis is the statement:
-*the classical limit of the substrate preserves unitarity*.  The
-$q$-deformed version says: *unitarity is preserved at every value
-of $q$, but the critical line moves with the fractal dimension of
-the Julia set*.
+unitary).  Classical RH is the statement that the classical limit
+of the substrate preserves unitarity.
 
 **Falsifiability.**
-The orbit periods $|\gamma|$ of $f_q(z) = z^2 + c(q)$ are
-computable over $\mathbb{F}_p$
-([discrete Planck step](#rem:discrete-planck-step)).  For
-prime-power $q$, the Weil conjectures (Deligne) guarantee zeros at
-$\operatorname{Re}(s) = 1/2$.  The $q$-critical line prediction
-gives $\sigma_q = 1/2$ only when $d_H(q) = 1$, i.e., at $q = 1$
-or $q = \varphi^2$.  For other prime-power values, the dynamical
-zeta $Z_q$ and the arithmetic Weil zeta $Z_{\mathbb{F}_q}$ must
-disagree — a concrete, computable test.
+For prime-power $q$, the Weil conjectures (Deligne) guarantee
+zeros at $\operatorname{Re}(s) = 1/2$.  The $q$-critical line
+prediction gives $\sigma_q = 1/2$ only when $d_H(q) = 1$
+($q = 1$ or $q = \varphi^2$).  For other prime-power values,
+the dynamical and arithmetic zeta functions must disagree — a
+computable test.

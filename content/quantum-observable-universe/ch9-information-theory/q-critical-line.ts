@@ -1,8 +1,8 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-critical-line",
-  title: "Unitarity forces zeros onto the $q$-critical line",
+export default conjecture({
+  label: "conj:q-critical-line",
+  title: "Unitarity and the $q$-critical line",
   tags: [
     "zeta-function",
     "critical-line",
@@ -11,11 +11,8 @@ export default proposition({
     "hausdorff-dimension",
     "unitarity",
     "r-matrix",
+    "open-problem",
   ],
-  lean: {
-    decl: "QOU.Information.qCriticalLine",
-    validation: "not_checked",
-  },
   uses: [
     "def:q-logarithmic-zeta",
     "def:operational-entropy",

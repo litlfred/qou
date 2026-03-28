@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:q-critical-line",
+  interprets: "conj:q-critical-line",
   label: "rem:off-critical-zero-consequences",
   title: "Why off-critical zeros cannot arise: the unitarity argument",
   tags: [
