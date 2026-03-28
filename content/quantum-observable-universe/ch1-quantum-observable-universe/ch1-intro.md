@@ -1,5 +1,5 @@
 This chapter introduces the **quantum universe** (QU): a rigid
-symmetric monoidal category equipped with a Frobenius--Hopf object,
+braided monoidal category equipped with a Frobenius--Hopf object,
 a fibre functor, and a differential calculus.  We begin with
 categorical preliminaries
 ([§ Rigid monoidal categories](#sec:rigid-monoidal)), state the
