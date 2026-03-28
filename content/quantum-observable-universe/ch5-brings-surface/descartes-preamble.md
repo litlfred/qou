@@ -7,8 +7,8 @@ to any observer:
    ([color tube coordinates](#def:color-tube-coordinates)).
 
 2. **A sense of time passing.** Time pushes us forward just as
-   water flows down a stream — neither can reverse its course
-   without external work.  The Reeb vector field
+   water flows down a stream — always flowing, never still.  The
+   Reeb vector field
    ([categorical Reeb](#def:categorical-reeb)) endows the
    Frobenius--Hopf object with precisely this preferred flow
    direction: the substrate parameter $q$ distinguishes past from
