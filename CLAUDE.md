@@ -277,8 +277,9 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - **Category notation**: Use bold `$\mathbf{C}$` for categories
   (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
   Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
-  Calligraphic letters are reserved for sheaves, sites, algebras, and
-  bundles (`$\mathcal{S}$` = state bundle, `$\mathcal{O}$`, `$\mathcal{A}$`).
+  Calligraphic letters are reserved for sheaves, sites, algebras,
+  bundles, and curves (`$\mathcal{S}$` = state bundle,
+  `$\mathcal{E}_q$` = elliptic curve, `$\mathcal{O}$`, `$\mathcal{A}$`).
 - **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
@@ -296,6 +297,36 @@ the paper introduces genuinely new axioms/structure, add a definition.
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
+
+### 7aa. Notation register (STRICT)
+
+Every mathematical symbol belongs to exactly one register.
+Agents **must** use the correct font for each concept.
+
+| Register | Font | Symbols |
+|----------|------|---------|
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
+| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing energy), `$\mathfrak{E}_{\mathrm{bind}}$` (binding) |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Measures | Greek | `$\mu_J$` (Julia-set measure) |
+| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
+| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
+| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
+
+**Key collision avoidances:**
+- `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
+- `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
+- `$p$` = brane point (never proton number; proton number is `$Z$`)
+- `$E$` = **not used** for exceptional divisor, energy, or elliptic curve.
+  Use `$\mathcal{S}_p$`, `$\mathfrak{E}$`, or `$\mathcal{E}_q$` respectively.
+- `$q = 1.1097$` (or any specific numerical value of the substrate
+  parameter) **must not appear** outside the introduction and
+  Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
 
 ### 7a. Hecke-Skein convention (STRICT)
 
