@@ -8,8 +8,10 @@ and the cyclic permutation σ acts diagonally: σ(w_k) = ζ^{-k} w_k.
 import Mathlib.Data.Complex.Basic
 import Mathlib.Data.Fin.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BringsSurface
 
