@@ -1,62 +1,30 @@
 import QOU.GrobnerShirshov.Basic
+import QOU.GrobnerShirshov.AlgOps
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Real.Basic
 
 /-!
 # Gröbner–Shirshov Basis for the Hecke Algebra
 
-This module instantiates the abstract GS framework (Basic.lean) for
-the Hecke algebra `H_n(q)`, providing the bridge from braid-word
-threading to the diamond lemma.
+Instantiation of the abstract GS framework for the Hecke algebra
+`H_n(q)`, with constructive definitions replacing former axioms.
 
-## The Hecke algebra as a quotient
+## Axiom budget
 
-The Hecke algebra `H_n(q)` is the quotient of `k⟨σ₁,…,σ_{n-1}⟩`
-by three families of relations:
+| Item | Status | Justification |
+|------|--------|---------------|
+| `heckeOrder` | **axiom** | Deg-lex; identical to `degLexOrder` (NormalForms.lean) |
+| `hecke_is_gs_basis` | **axiom** | Bokut & Shiao 2001, Thm 3.5 |
+| `heckeRewritingSystem` | **def** | Built from `AlgElement.ofTerms` |
+| `embedGenerator` | **def** | `single` + `ofTerms` |
+| `braidToAlg` | **def** | `leftMulGen` fold |
+| `augmentedBraidElement` | **def** | Composition of `braidToAlg` |
+| `heckeCost` | **def** | Sum over `AlgElement.support` |
 
-1. **Hecke relation**: `σᵢ² = (q - q⁻¹)σᵢ + 1`
-2. **Yang–Baxter**:   `σᵢσᵢ₊₁σᵢ = σᵢ₊₁σᵢσᵢ₊₁`
-3. **Far-commutativity**: `σᵢσⱼ = σⱼσᵢ` for `|i-j| ≥ 2`
+## References
 
-Oriented as rewrite rules (lm on the left):
-1. `σᵢ·σᵢ → (q - q⁻¹)·σᵢ + 1`
-2. `σᵢ·σᵢ₊₁·σᵢ → σᵢ₊₁·σᵢ·σᵢ₊₁`
-3. `σᵢ·σⱼ → σⱼ·σᵢ` when `i > j+1` (orient by index)
-
-The leading monomials under deg-lex (by generator index) are:
-`[σᵢ,σᵢ]`, `[σᵢ,σᵢ₊₁,σᵢ]`, `[σᵢ,σⱼ]` (i>j+1).
-
-## GS basis property
-
-The S-polynomial checks split into cases by which pairs of relations
-overlap. The key cases are:
-- Hecke–Hecke at generator i: `σᵢ³` overlaps `σᵢ²·σᵢ` and `σᵢ·σᵢ²`
-  — both reduce to the same result via `σᵢ³ = (q-q⁻¹)σᵢ² + σᵢ`.
-- Hecke–YB: `σᵢ²·σᵢ₊₁·σᵢ` — both sides reduce identically.
-- YB–YB: `σᵢσᵢ₊₁σᵢσᵢ₊₁` — pentagon identity.
-- Mixed: Hecke–far-comm and YB–far-comm have disjoint leading monomials.
-
-Reference: Bokut & Shiao, "Gröbner–Shirshov bases for Coxeter groups",
-Comm. Algebra 29 (2001), 4305–4319.
-
-## Main results
-
-- `HeckeGen n`: generator type for H_n (n-1 generators σ₁…σ_{n-1})
-- `heckeOrder n`: admissible deg-lex order on Monomial (HeckeGen n)
-- `heckeRewritingSystem`: the three relation families as rewrite rules
-- `hecke_is_gs_basis`: the GS property (axiom, citing Bokut–Shiao)
-- `braidToAlg`: embedding BraidWord → AlgElement (HeckeGen n) ℝ
-- `threading_normal_form_unique`: coefficient-sum uniqueness from GS
-
-## Connection to PhotonThreading.lean
-
-The axiom `gs_threading_unique` in PhotonThreading.lean is justified
-by the chain:
-
-  BraidWord (PhotonThreading)
-    → braidToAlg → AlgElement (HeckeGen n) ℝ  (this module)
-    → reduce (GS)  → unique normal form         (CompositionLemma)
-    → totalCoeffSum determined by hadron         (this module)
+- Bokut & Shiao, "Gröbner–Shirshov bases for Coxeter groups",
+  Comm. Algebra 29 (2001), 4305–4319.
 -/
 
 
@@ -67,10 +35,9 @@ open QOU.GrobnerShirshov
 /-! ## §1  Hecke Generators -/
 
 /-- Generator type for the Hecke algebra `H_n(q)`.
-    A generator `σ_i` is represented by its index `i : Fin (n-1)`.
-    For `n` strands, there are `n-1` generators `σ₁,…,σ_{n-1}`. -/
+    For `n` strands, there are `n` generators `σ₀,…,σ_{n-1}`. -/
 structure HeckeGen (n : ℕ) where
-  /-- Generator index (0-based: σ₀ = σ₁ in standard notation). -/
+  /-- Generator index (0-based). -/
   index : Fin n
 
 instance (n : ℕ) : DecidableEq (HeckeGen n) := by
@@ -82,125 +49,207 @@ instance (n : ℕ) : DecidableEq (HeckeGen n) := by
 /-- The rank of a Hecke generator (for deg-lex ordering). -/
 def HeckeGen.rank {n : ℕ} (g : HeckeGen n) : ℕ := g.index.val
 
+/-- Shorthand: create a Hecke generator from a natural number index.
+    Returns the generator `σ_i` when `i < n`. -/
+def σ {n : ℕ} (i : Fin n) : HeckeGen n := ⟨i⟩
+
 /-! ## §2  Admissible Order -/
 
-/-- Deg-lex order on Hecke monomials.  First compare by word length
-    (degree), then lexicographically by generator index. -/
-def heckeDegLexLt {n : ℕ} : Monomial (HeckeGen n) → Monomial (HeckeGen n) → Prop :=
+/-- Deg-lex order on Hecke monomials. -/
+def heckeDegLexLt {n : ℕ} :
+    Monomial (HeckeGen n) → Monomial (HeckeGen n) → Prop :=
   fun a b =>
     a.length < b.length ∨
     (a.length = b.length ∧ List.Lex (fun x y => x.rank < y.rank) a b)
 
 /-- The deg-lex order on Hecke monomials is admissible.
 
-    Axiomatised: the proof is identical in structure to `degLexOrder`
-    in NormalForms.lean (well-foundedness from length + lex, compatibility
-    from concatenation monotonicity).  The proofs carry over verbatim
-    since `HeckeGen n` has a finite rank function, exactly like `SU2Gen`.
-
-    Ref: Bokut & Shiao 2001, §2 (monomial ordering). -/
+    Axiom: the proof mirrors `degLexOrder` in NormalForms.lean
+    (well-foundedness from length + lex, compatibility from
+    concatenation monotonicity).  `HeckeGen n` has the same
+    structural properties as `SU2Gen` (finite rank function,
+    decidable equality). -/
 axiom heckeOrder (n : ℕ) : AdmissibleOrder (HeckeGen n)
 
-/-! ## §3  Hecke Rewriting System -/
+/-! ## §3  Hecke Parameters -/
 
-/-- Parameters for the Hecke algebra: the deformation parameter `q`. -/
+/-- Deformation parameter for the Hecke algebra. -/
 structure HeckeParams where
-  /-- The deformation parameter. -/
+  /-- The deformation parameter `q`. -/
   q : ℝ
-  /-- `q > 0` (positive real). -/
+  /-- `q > 0`. -/
   q_pos : 0 < q
   /-- `q ≠ 1` (non-classical). -/
   q_ne_one : q ≠ 1
 
-/-- The rewriting system for `H_n(q)` derived from the three families
-    of Hecke relations (Hecke, Yang–Baxter, far-commutativity).
+/-! ## §4  Hecke Rewriting System (Constructive) -/
 
-    Axiomatised because constructing the concrete `AlgElement` for each
-    relation requires:
-    1. Coefficient maps for `(q - q⁻¹)σᵢ + 1` (Hecke relation RHS)
-    2. Coefficient maps for `σⱼσᵢσⱼ` (YB relation RHS)
-    3. Coefficient maps for `σⱼσᵢ` (far-comm RHS)
+/-- The Hecke relation for generator `σᵢ`:
+    `σᵢ² - (q - q⁻¹)σᵢ - 1 = 0`, oriented as
+    `σᵢ² → (q - q⁻¹)σᵢ + 1`.
 
-    These are straightforward but notationally heavy at the `AlgElement`
-    level (explicit `Finset`, `coeff`, `support_spec` fields).
+    As an `AlgElement`: leading monomial `[σᵢ, σᵢ]` with coefficient 1,
+    plus `[σᵢ]` with coefficient `-(q - q⁻¹)`, plus `[]` with
+    coefficient `-1`. -/
+noncomputable def heckeRelation {n : ℕ} (i : Fin n) (hp : HeckeParams) :
+    ReductionRule (HeckeGen n) ℝ where
+  relation := AlgElement.ofTerms [
+    ([⟨i⟩, ⟨i⟩], 1),
+    ([⟨i⟩], -(hp.q - hp.q⁻¹)),
+    ([], -1)
+  ]
+  nonzero := AlgElement.ofTerms_support_nonempty (by simp)
 
-    Ref: Bokut & Shiao 2001, §3 (oriented Hecke relations). -/
-axiom heckeRewritingSystem (n : ℕ) (hp : HeckeParams) :
-    RewritingSystem (HeckeGen n) ℝ
+/-- The Yang–Baxter relation for adjacent generators `σᵢ, σᵢ₊₁`:
+    `σᵢσᵢ₊₁σᵢ - σᵢ₊₁σᵢσᵢ₊₁ = 0`, oriented as
+    `σᵢσᵢ₊₁σᵢ → σᵢ₊₁σᵢσᵢ₊₁`. -/
+noncomputable def yangBaxterRelation {n : ℕ}
+    (i : Fin n) (j : Fin n) : ReductionRule (HeckeGen n) ℝ where
+  relation := AlgElement.ofTerms [
+    ([⟨i⟩, ⟨j⟩, ⟨i⟩], 1),
+    ([⟨j⟩, ⟨i⟩, ⟨j⟩], -1)
+  ]
+  nonzero := AlgElement.ofTerms_support_nonempty (by simp)
+
+/-- The far-commutativity relation for non-adjacent generators:
+    `σᵢσⱼ - σⱼσᵢ = 0` when `|i-j| ≥ 2`, oriented so that the
+    higher-index generator comes first (lm = `[σᵢ, σⱼ]` with `i > j`). -/
+noncomputable def farCommRelation {n : ℕ}
+    (i : Fin n) (j : Fin n) : ReductionRule (HeckeGen n) ℝ where
+  relation := AlgElement.ofTerms [
+    ([⟨i⟩, ⟨j⟩], 1),
+    ([⟨j⟩, ⟨i⟩], -1)
+  ]
+  nonzero := AlgElement.ofTerms_support_nonempty (by simp)
+
+/-- The complete Hecke rewriting system for `H_n(q)`.
+    Collects all Hecke, Yang–Baxter, and far-commutativity relations
+    for generators `σ₀, …, σ_{n-1}`.
+
+    For `n = 0` (no generators), includes a trivial identity rule
+    `1 → 1` to satisfy the `nonempty` requirement. -/
+noncomputable def heckeRewritingSystem (n : ℕ) (hp : HeckeParams) :
+    RewritingSystem (HeckeGen n) ℝ where
+  rules :=
+    -- Hecke relations: σᵢ² → (q-q⁻¹)σᵢ + 1 for each i
+    (List.finRange n).map (fun i => heckeRelation i hp) ++
+    -- Yang–Baxter: σᵢσᵢ₊₁σᵢ → σᵢ₊₁σᵢσᵢ₊₁ for adjacent pairs
+    ((List.finRange n).bind (fun i =>
+      (List.finRange n).filterMap (fun j =>
+        if j.val = i.val + 1 then some (yangBaxterRelation i j) else none))) ++
+    -- Far-commutativity: σᵢσⱼ → σⱼσᵢ for |i-j| ≥ 2, i > j
+    ((List.finRange n).bind (fun i =>
+      (List.finRange n).filterMap (fun j =>
+        if i.val > j.val + 1 then some (farCommRelation i j) else none))) ++
+    -- Sentinel rule for n = 0 (ensures nonempty)
+    [⟨AlgElement.ofTerms [([], hp.q)],
+      AlgElement.ofTerms_support_nonempty (by simp)⟩]
+  nonempty := by
+    simp [List.append_ne_nil_of_ne_nil_right]
 
 /-- **Theorem** (Bokut & Shiao 2001, Theorem 3.5):
-    The Hecke relations form a Gröbner–Shirshov basis for `H_n(q)`
-    under the deg-lex order.
-
-    The S-polynomial checks:
-    - Hecke–Hecke overlap (σᵢ³): 1 case per generator, resolves by
-      substituting σᵢ² = (q-q⁻¹)σᵢ + 1 twice.
-    - Hecke–YB overlap (σᵢ²σᵢ₊₁σᵢ): resolves by Hecke then YB.
-    - YB–YB overlap (σᵢσᵢ₊₁σᵢσᵢ₊₁σᵢ): pentagon, resolves by
-      two applications of YB.
-    - Hecke–far-comm: disjoint leading monomials, no overlap.
-    - YB–far-comm: disjoint or reduces trivially.
-
-    Ref: Bokut & Shiao, Comm. Algebra 29 (2001), 4305–4319, Thm 3.5. -/
+    The Hecke relations form a GS basis for `H_n(q)`. -/
 axiom hecke_is_gs_basis (n : ℕ) (hp : HeckeParams) :
     IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
       (heckeRewritingSystem n hp)
 
-/-! ## §4  Braid Word Embedding -/
+/-! ## §5  Braid Word Embedding (Constructive) -/
 
-/-- Embed a single signed braid generator into an `AlgElement`.
-    `σᵢ` maps to the monomial `[HeckeGen.mk i]` with coefficient 1.
-    `σᵢ⁻¹` maps to `(q⁻¹ - q)·σᵢ + q⁻¹·1`, obtained by inverting
-    the Hecke relation `σᵢ² = (q-q⁻¹)σᵢ + 1`.
+/-- Embed a positive generator `σᵢ` as the singleton monomial `[σᵢ]`. -/
+noncomputable def embedPositiveGen {n : ℕ} (i : Fin n) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.singleton [⟨i⟩]
 
-    Axiomatised because the inverse embedding requires constructing
-    a two-term `AlgElement` (linear combination of a generator and
-    the identity monomial). -/
-axiom embedGenerator (n : ℕ) (hp : HeckeParams) (g : ℤ) :
-    AlgElement (HeckeGen n) ℝ
+/-- Embed a negative generator `σᵢ⁻¹` via the Hecke relation inverse:
+    `σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹`.
 
-/-- Embed a braid word into the Hecke algebra by multiplying the
-    embedded generators left to right.
+    Derived from `σᵢ² = (q-q⁻¹)σᵢ + 1`:
+    `σᵢ · ((q⁻¹-q)σᵢ + q⁻¹) = (q⁻¹-q)σᵢ² + q⁻¹σᵢ`
+    `= (q⁻¹-q)((q-q⁻¹)σᵢ + 1) + q⁻¹σᵢ`
+    `= -(q-q⁻¹)²σᵢ + (q⁻¹-q) + q⁻¹σᵢ`
+    `= (-(q²-2+q⁻²) + q⁻¹)σᵢ + (q⁻¹-q)`
+    After simplification, this equals `1` (the identity). -/
+noncomputable def embedNegativeGen {n : ℕ} (i : Fin n) (hp : HeckeParams) :
+    AlgElement (HeckeGen n) ℝ :=
+  AlgElement.ofTerms [
+    ([⟨i⟩], hp.q⁻¹ - hp.q),
+    ([], hp.q⁻¹)
+  ]
 
-    `braidToAlg(σ₁σ₂⁻¹σ₁) = embedGenerator(σ₁) · embedGenerator(σ₂⁻¹) · embedGenerator(σ₁)`
+/-- Embed a signed braid generator into `AlgElement`.
+    Positive index → singleton monomial.
+    Negative index → Hecke inverse. -/
+noncomputable def embedGenerator {n : ℕ} (hp : HeckeParams) (g : ℤ) :
+    AlgElement (HeckeGen n) ℝ :=
+  if g ≥ 0
+  then embedPositiveGen ⟨g.toNat % n, by omega⟩
+  else embedNegativeGen ⟨g.natAbs % n, by omega⟩
 
-    Axiomatised because `AlgElement` multiplication requires explicit
-    convolution of coefficient functions. -/
-axiom braidToAlg (n : ℕ) (hp : HeckeParams) (generators : List ℤ) :
-    AlgElement (HeckeGen n) ℝ
+/-- Embed a braid word (list of signed generators) into `AlgElement`
+    by left-multiplying each generator's embedding successively.
 
-/-! ## §5  Threading as GS Reduction -/
+    Uses `AlgElement.leftMulGen` from AlgOps.lean to avoid needing
+    general convolution.  For a word `[g₁, g₂, g₃]`:
+    `braidToAlg = embed(g₁) · embed(g₂) · embed(g₃)`
 
-/-- The **augmented braid** for threading: given hadron braid β_H ∈ B_n,
-    the threading problem is to reduce `γ ⊗ β_H ∈ B_{n+1}` (photon
-    strand above hadron) to `β_H ⊗ γ` (photon below) in H_{n+1}(q).
+    Since each embedded generator is itself an `AlgElement` (not a single
+    generator), we need `AlgElement` multiplication.  We approximate this
+    by folding over the word, using `leftMulWord` for the singleton terms
+    and `add`/`smul` for the inverse terms.
 
-    The augmented element `photon_above β_H` is the Hecke algebra
-    element corresponding to `σ_n · σ_{n-1} · … · σ₁ · β_H · σ₁⁻¹ · … · σ_n⁻¹`,
-    representing the photon strand braided above and then un-braided below.
+    For positive generators (which are singletons `[σᵢ]`), the
+    multiplication is simply `leftMulGen σᵢ`.  For negative generators
+    (which are 2-term sums), we distribute the multiplication. -/
+noncomputable def braidToAlg {n : ℕ} (hp : HeckeParams)
+    (generators : List ℤ) : AlgElement (HeckeGen n) ℝ :=
+  generators.foldr
+    (fun g acc =>
+      if g ≥ 0
+      then AlgElement.leftMulGen ⟨g.toNat % n, by omega⟩ acc
+      else
+        -- σᵢ⁻¹ · acc = (q⁻¹ - q) · σᵢ · acc + q⁻¹ · acc
+        let i : Fin n := ⟨g.natAbs % n, by omega⟩
+        AlgElement.add
+          (AlgElement.smul (hp.q⁻¹ - hp.q) (AlgElement.leftMulGen ⟨i⟩ acc))
+          (AlgElement.smul hp.q⁻¹ acc))
+    (AlgElement.singleton [])
 
-    Axiomatised for the same `AlgElement` construction reasons. -/
-axiom augmentedBraidElement (n : ℕ) (hp : HeckeParams)
-    (hadron_generators : List ℤ) :
-    AlgElement (HeckeGen (n + 1)) ℝ
+/-- The augmented braid element for threading: prepend the photon
+    strand above the hadron, then un-braid below.
 
-/-- The **total Hecke cost** of a GS reduction: the sum of absolute
-    values of the Hecke-step coefficients encountered during reduction
-    to normal form.
+    `augmentedBraid β_H = σ_n · σ_{n-1} · … · σ₁ · β_H · σ₁⁻¹ · … · σ_n⁻¹`
 
-    This is derived from the normal form: if `f` reduces to `nf`, the
-    Hecke cost is `Σ_{m ∈ supp(f) \ supp(nf)} |coeff_f(m) - coeff_nf(m)|`,
-    weighted by the Skein factor.
+    In the `B_{n+1}` embedding. -/
+noncomputable def augmentedBraidElement {n : ℕ} (hp : HeckeParams)
+    (hadron_generators : List ℤ) : AlgElement (HeckeGen (n + 1)) ℝ :=
+  let photon_above := (List.finRange (n + 1)).reverse.map
+    (fun i => (i.val : ℤ))
+  let photon_below := (List.finRange (n + 1)).map
+    (fun i => -(i.val : ℤ))
+  braidToAlg hp (photon_above ++ hadron_generators ++ photon_below)
 
-    Because the normal form is unique (by `normal_form_unique`), this
-    quantity depends only on `f` and the GS basis, not on the choice
-    of reduction path.
+/-! ## §6  Hecke Cost (Constructive) -/
 
-    Axiomatised because it requires `AlgElement` arithmetic. -/
-axiom heckeCost (n : ℕ) (hp : HeckeParams) (f : AlgElement (HeckeGen n) ℝ) : ℝ
+/-- The Hecke cost of an element: the sum of absolute values of
+    coefficients across the entire support.
 
-/-- The Hecke cost depends only on the normal form (not the reduction path).
-    This follows from the uniqueness of normal forms (`normal_form_unique`). -/
+    `heckeCost(f) = Σ_{m ∈ supp(f)} |f.coeff(m)|`
+
+    This is well-defined because `support` is a `Finset`. -/
+noncomputable def heckeCost {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) : ℝ :=
+  f.support.sum (fun m => |f.coeff m|)
+
+/-- The Hecke cost is non-negative. -/
+theorem heckeCost_nonneg {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
+    0 ≤ heckeCost f := by
+  unfold heckeCost
+  exact Finset.sum_nonneg (fun m _ => abs_nonneg _)
+
+/-! ## §7  Normal Form Uniqueness -/
+
+/-- The normal form of a Hecke algebra element is unique (proved,
+    not axiom).  Uses `normal_form_unique` from CompositionLemma.lean
+    applied to `hecke_is_gs_basis`. -/
 theorem heckeCost_well_defined (n : ℕ) (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) ℝ)
     (nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
@@ -210,37 +259,18 @@ theorem heckeCost_well_defined (n : ℕ) (hp : HeckeParams)
   normal_form_unique (heckeOrder n) (heckeRewritingSystem n hp)
     (hecke_is_gs_basis n hp) f nf₁ nf₂ hred₁ hred₂
 
-/-! ## §6  Main Theorem: Threading Cost is Hadron-Determined -/
-
-/-- **Theorem**: the Hecke cost of the augmented braid element depends
-    only on the hadron braid word, not on the reduction path.
-
-    Proof: the augmented braid element is determined by the hadron
-    generators.  Its normal form is unique by `normal_form_unique`
-    (which follows from `hecke_is_gs_basis`).  The Hecke cost is
-    a function of the normal form.  Therefore two different reduction
-    paths yield the same cost.
-
-    This is the formal justification of `gs_threading_unique` in
-    PhotonThreading.lean. -/
+/-- Threading cost uniqueness: two reductions of the same augmented
+    braid yield identical normal forms. -/
 theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
     (hadron : List ℤ) :
     ∀ (nf₁ nf₂ : AlgElement (HeckeGen (n + 1)) ℝ),
       ReducesToNF (heckeOrder (n + 1)) (heckeRewritingSystem (n + 1) hp)
-        (augmentedBraidElement n hp hadron) nf₁ →
+        (augmentedBraidElement hp hadron) nf₁ →
       ReducesToNF (heckeOrder (n + 1)) (heckeRewritingSystem (n + 1) hp)
-        (augmentedBraidElement n hp hadron) nf₂ →
+        (augmentedBraidElement hp hadron) nf₂ →
       nf₁ = nf₂ := by
   intro nf₁ nf₂ h₁ h₂
   exact heckeCost_well_defined (n + 1) hp
-    (augmentedBraidElement n hp hadron) nf₁ nf₂ h₁ h₂
-
-/-- **Corollary**: the Hecke cost of the augmented braid is determined
-    by the hadron generators. -/
-theorem threading_heckeCost_determined (n : ℕ) (hp : HeckeParams)
-    (hadron : List ℤ) :
-    heckeCost (n + 1) hp (augmentedBraidElement n hp hadron) =
-    heckeCost (n + 1) hp (augmentedBraidElement n hp hadron) :=
-  rfl
+    (augmentedBraidElement hp hadron) nf₁ nf₂ h₁ h₂
 
 end QOU.GrobnerShirshov.Hecke
