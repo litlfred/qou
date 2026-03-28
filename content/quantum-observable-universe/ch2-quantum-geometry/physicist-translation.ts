@@ -7,7 +7,6 @@ export default remark({
   tags: ["archimedean", "physicist", "realization", "standard-model"],
   uses: [
     "prop:qou-canonical-action",
-    "def:categorical-action",
     "ex:c-quantum-observable-universe",
   ],
 });

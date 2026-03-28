@@ -16,14 +16,6 @@ export default theorem({
     decl: "QOU.Torsion.embeddability_closure",
     validation: "not_checked",
   },
-  uses: [
-    "def:knot-particle-generation",
-    "prop:torus-knot-generators",
-    "def:localized-knot",
-    "def:hadron",
-    "rem:hadron-operations",
-    "prop:skein-generation",
-    "prop:euler-char-stability",
-  ],
+  uses: ["prop:torus-knot-generators"],
   proofs: ["prf:embeddability-closure"],
 });

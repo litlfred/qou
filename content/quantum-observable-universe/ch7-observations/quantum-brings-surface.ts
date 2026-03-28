@@ -12,7 +12,6 @@ export default simulator({
   title: "Quantum Bring's Surface Simulator",
   html: "folio-assistant/simulators/quantum_brings_surface.html",
   uses: [
-    "def:brings-surface",
     "def:quaternionic-spectral-resolvents",
     "prop:chiral-elliptic",
     "def:color-tube-coordinates",

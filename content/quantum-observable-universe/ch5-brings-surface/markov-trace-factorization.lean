@@ -149,7 +149,9 @@ structure NuclearTraceFactorization where
       This follows from the composition:
       Ocneanu trace ∘ Gröbner reduction ∘ Hecke quotient
       where each step preserves the link invariant. -/
-  invariance : True := trivial
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  invariance : trace = chains.foldl (fun acc ab =>
+    acc * (markovZ q (by linarith : 0 < q) * ab.1 + ab.2)) 1
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/markov-trace-factorization

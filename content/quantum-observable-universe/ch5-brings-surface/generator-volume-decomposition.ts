@@ -18,11 +18,5 @@ export default proposition({
     decl: "QOU.Descartes.generator_volume_decomposition",
     validation: "not_checked",
   },
-  uses: [
-    "thm:groebner-shirshov-energy",
-    "prop:nuclear-groebner-reduction",
-    "def:skein-binding-lagrangian",
-    "def:braid-group",
-    "def:stable-nucleus",
-  ],
+  uses: ["thm:groebner-shirshov-energy"],
 });

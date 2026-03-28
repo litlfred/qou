@@ -9,10 +9,7 @@ export default proposition({
   title: "Jet prolongation",
   proofs: ["prf:categorical-jet-prolongation"],
   tags: ["jet-bundle", "frobenius-hopf", "category-theory"],
-  uses: [
-    "def:categorical-connection",
-    "def:categorical-jet",
-  ],
+  uses: ["def:categorical-jet"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-jet-prolongation-0.svg", blockIndex: 0, hash: "4cae20680c94" },
   ],

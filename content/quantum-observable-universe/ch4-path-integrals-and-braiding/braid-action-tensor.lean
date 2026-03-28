@@ -109,12 +109,23 @@ private theorem sigma12_eq_alpha_braiding {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     sigma1 V ≫ sigma2 V = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom := by
   simp only [sigma1, sigma2, Category.assoc]
-  -- Uses BraidedCategory.hexagon_forward V V V:
+  -- Goal: (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom ≫ (α_ V V V).inv
+  --     = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom
+  -- Uses BraidedCategory.hexagon_forward V V V (with X=Y=Z=V):
   --   (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom
   --   = ((β_ V V).hom ▷ V) ≫ (α_ V V V).hom ≫ (V ◁ (β_ V V).hom)
-  -- Post-compose both sides with (α_ V V V).inv and cancel α ≫ α⁻¹ = id.
+  -- Post-compose both sides with (α_ V V V).inv and cancel α.hom ≫ α.inv = id.
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  -- Mathlib lemma: BraidedCategory.hexagon_forward
+  have hex := BraidedCategory.hexagon_forward (C := C) V V V
+  -- hex : (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom
+  --     = (β_ V V).hom ▷ V ≫ (α_ V V V).hom ≫ V ◁ (β_ V V).hom
+  -- From hex.symm: LHS first 3 terms = RHS with extra α at end
+  -- We need: LHS_3_terms ≫ α⁻¹ = α ≫ β_{V,V⊗V}
+  rw [← hex]
+  -- Goal: (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom ≫ (α_ V V V).hom ≫ (α_ V V V).inv
+  --     = (α_ V V V).hom ≫ (β_ V (V ⊗ V)).hom
+  simp only [Category.assoc, Iso.hom_inv_id, Category.comp_id]
 
 /-- **Lemma (braiding naturality).**
     β_{V,V⊗V} ≫ (β_{V,V} ▷ V) = (V ◁ β_{V,V}) ≫ β_{V,V⊗V}.
@@ -126,12 +137,13 @@ private theorem braiding_nat_sigma {C : Type u} [Category.{v} C]
     [MonoidalCategory C] [BraidedCategory C] (V : C) :
     (β_ V (V ⊗ V)).hom ≫ ((β_ V V).hom ▷ V) =
     (V ◁ (β_ V V).hom) ≫ (β_ V (V ⊗ V)).hom := by
-  -- Uses BraidedCategory.braiding_naturality (or braiding_naturality_right).
-  -- Naturality of β in the second variable with g = (β_ V V).hom:
-  --   (X ◁ g) ≫ β_{X,Y'} = β_{X,Y} ≫ (g ▷ X)
-  -- with X = V, Y = Y' = V ⊗ V.
+  -- Uses BraidedCategory.braiding_naturality_right.
+  -- Naturality of β in the second variable with f = (β_ V V).hom:
+  --   (V ◁ f) ≫ (β_ V (V ⊗ V)).hom = (β_ V (V ⊗ V)).hom ≫ (f ▷ V)
+  -- which is exactly our goal read right-to-left.
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  -- Mathlib lemma: BraidedCategory.braiding_naturality_right
+  exact (BraidedCategory.braiding_naturality_right V ((β_ V V).hom)).symm
 
 /-- **Lemma (σ₂–α interchange).**
     σ₂ ≫ α = α ≫ (V ◁ β_{V,V}).

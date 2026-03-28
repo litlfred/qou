@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.CategoricalConnection",
     validation: "not_checked",
   },
-  uses: ["def:quantum-universe", "def:higher-forms"],
+  uses: ["def:higher-forms"],
   examples: ["ex:connection-su2"],
   tags: ["connection", "curvature"],
   rendered: [

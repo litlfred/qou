@@ -8,11 +8,6 @@ export default proposition({
     decl: "QOU.Torsion.euler_char_constant",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "def:quantum-characteristic-classes",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:quantum-characteristic-classes"],
   proofs: ["prf:euler-char-stability", "prf:euler-char-stability-C"],
 });

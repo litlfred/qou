@@ -16,10 +16,5 @@ export default definition({
     decl: "QOU.Descartes.LeptonNumber",
     validation: "not_checked",
   },
-  uses: [
-    "def:beta-decay-skein",
-    "def:electron-knot",
-    "def:positron-knot",
-    "def:neutrino-knot",
-  ],
+  uses: ["def:beta-decay-skein"],
 });

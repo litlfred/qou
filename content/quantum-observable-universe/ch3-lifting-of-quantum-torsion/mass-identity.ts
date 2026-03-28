@@ -6,7 +6,6 @@ export default definition({
   title: "Mass (categorical trace)",
   tags: ["mass", "categorical-trace", "frobenius-hopf"],
   uses: [
-    "def:quantum-observable-universe",
     "def:frobenius-pairing",
     "def:recursive-brane-tower",
   ],

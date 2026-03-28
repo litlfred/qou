@@ -13,6 +13,7 @@ LaTeX label: `prop:generator-volume-decomposition`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 namespace QOU.Descartes
 
@@ -38,7 +39,7 @@ theorem generatorVolume_nonneg (a b : ℝ) :
 /-- The total nuclear energy is the sum of generator volumes. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def nuclearEnergy (volumes : List ℝ) : ℝ :=
-  volumes.foldl (· + ·) 0
+  volumes.sum
 
 /-- The ideal volume at generator i: the energy absorbed by
     Hecke reduction. V_i^I = k_i - V_i where k_i is the number
@@ -70,17 +71,45 @@ noncomputable def chainReduce (q : ℝ) (crossings : List (ℝ × ℝ)) : ℝ ×
 /-- The energy is additive over generators. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 theorem energy_additive (vols : List ℝ) :
-    nuclearEnergy vols = vols.foldl (· + ·) 0 := by
+    nuclearEnergy vols = vols.sum := by
   rfl
 
 /-- Only generators i ≤ p are affected by beta decay (the rest cancel
     between parent and daughter). -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
+    (h_len : vols_par.length = vols_dau.length)
     (h_tail : ∀ i, p < i → i < vols_par.length →
       vols_par[i]! = vols_dau[i]!) :
     -- The energy difference comes only from generators 0..p
-    True := trivial
+    nuclearEnergy vols_par - nuclearEnergy vols_dau =
+      nuclearEnergy (vols_par.take (p + 1)) - nuclearEnergy (vols_dau.take (p + 1)) := by
+  -- Ref: [manuscript] Ch. 6, §generator-volume-decomposition
+  -- Generators i > p have identical volumes, so they cancel in the difference.
+  -- Strategy: decompose each list as take (p+1) ++ drop (p+1), use sum_append,
+  -- then show the drop-sums are equal so they cancel in the subtraction.
+  unfold nuclearEnergy
+  -- Rewrite each sum via take_append_drop: l = l.take n ++ l.drop n
+  conv_lhs =>
+    rw [show vols_par = vols_par.take (p + 1) ++ vols_par.drop (p + 1)
+        from (List.take_append_drop (p + 1) vols_par).symm,
+        show vols_dau = vols_dau.take (p + 1) ++ vols_dau.drop (p + 1)
+        from (List.take_append_drop (p + 1) vols_dau).symm]
+  rw [List.sum_append, List.sum_append]
+  -- Suffices to show drop_sum_par = drop_sum_dau, then linarith cancels them.
+  suffices h_drop : (vols_par.drop (p + 1)).sum = (vols_dau.drop (p + 1)).sum by linarith
+  -- Show the two drop lists are actually equal (hence equal sums).
+  congr 1
+  apply List.ext_getElem
+  · simp [List.length_drop, h_len]
+  · intro i h₁ h₂
+    simp only [List.getElem_drop]
+    have h_bound₁ : p + 1 + i < vols_par.length := by
+      simp [List.length_drop] at h₁; omega
+    have h_bound₂ : p + 1 + i < vols_dau.length := by
+      simp [List.length_drop] at h₂; omega
+    have h₃ := h_tail (p + 1 + i) (by omega) h_bound₁
+    rwa [getElem!_pos h_bound₁, getElem!_pos h_bound₂] at h₃
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition

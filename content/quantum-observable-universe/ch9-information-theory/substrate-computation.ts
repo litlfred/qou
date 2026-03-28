@@ -12,11 +12,5 @@ export default remark({
     "substrate-parameter",
     "classical-limit",
   ],
-  uses: [
-    "prop:toffoli-transfer-matrix",
-    "rem:toffoli-q-and",
-    "rem:discrete-planck-step",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:toffoli-q-and"],
 });

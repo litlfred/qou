@@ -16,12 +16,5 @@ export default proposition({
     decl: "QOU.Organic.alexanderWeightDifference",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-hopf-chain",
-    "def:molecular-hopf-ring",
-    "def:threading-link",
-    "def:crossing-energy",
-    "def:covalent-bond-types",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:molecular-hopf-ring"],
 });

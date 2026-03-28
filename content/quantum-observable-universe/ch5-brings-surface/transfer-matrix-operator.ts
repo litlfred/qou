@@ -20,11 +20,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "prop:skein-polynomial-transfer-matrix",
     "prop:beta-decay-transfer-matrix",
-    "prop:generator-volume-decomposition",
-    "def:crossing-energy",
     "rem:building-block-knots",
-    "def:hadron",
   ],
 });

@@ -6,11 +6,7 @@ export default remark({
   title: "Geometric resolution and the Seiberg--Witten differential",
   uses: [
     "rem:brings-smoothness",
-    "rem:lagrange-resolvents",
-    "rem:chiral-bundles",
-    "def:quantum-observable-universe",
     "lem:volume-from-rigidity",
-    "rem:holonomy-trefoil",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/seiberg-witten-0.svg", blockIndex: 0, hash: "c74a7197e9db" },

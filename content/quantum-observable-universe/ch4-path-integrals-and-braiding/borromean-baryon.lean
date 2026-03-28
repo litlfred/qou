@@ -2,9 +2,6 @@
 -- Borromean baryon: three unknots Borromean-linked + Hopf-bound.
 -- Generic definition, not specific to any Euler characteristic.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 /-- A Borromean baryon: three unknots with crossing orientations,

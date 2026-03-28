@@ -8,10 +8,7 @@ export default remark({
   uses: [
     "ex:q-reeb-vector-field",
     "def:q-harmonic-form",
-    "def:quantum-planck-constant",
     "rem:heisenberg-commutator",
     "prop:main-commutative-diagram",
-    "def:quantum-universe",
-    "def:quantum-observable-universe",
   ],
 });

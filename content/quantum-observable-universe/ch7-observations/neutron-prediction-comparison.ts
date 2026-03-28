@@ -15,11 +15,5 @@ export default proposition({
     decl: "QOU.Descartes.stable_neutron_max_error",
     validation: "not_checked",
   },
-  uses: [
-    "prop:integer-stability",
-    "prop:beta-stability",
-    "def:substrate-parameter",
-    "def:skein-binding-lagrangian",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:integer-stability"],
 });

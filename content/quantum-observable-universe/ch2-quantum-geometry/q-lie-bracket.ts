@@ -9,5 +9,5 @@ export default example({
     decl: "QOU.qLieBracket",
     validation: "leanok",
   },
-  uses: ["def:categorical-reeb", "def:categorical-q-lie-bracket"],
+  uses: ["def:categorical-q-lie-bracket"],
 });

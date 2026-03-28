@@ -12,7 +12,6 @@ export default simulator({
   title: "q-Deformed Double-Slit Simulator",
   html: "folio-assistant/simulators/q_double_slit.html",
   uses: [
-    "def:substrate-parameter",
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",
     "def:localized-knot",

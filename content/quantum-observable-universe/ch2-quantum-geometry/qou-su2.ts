@@ -6,5 +6,8 @@ export default example({
   title: "$\\mathrm{SU}(2)$ is observable",
   lean: { decl: "QOU.Examples.su2Observable" },
   tags: ["su2", "observable"],
-  uses: ["def:quantum-observable-universe", "ex:rigid-monoidal-vect", "ex:quantum-universe-su2"],
+  uses: [
+    "def:quantum-observable-universe",
+    "ex:quantum-universe-su2",
+  ],
 });

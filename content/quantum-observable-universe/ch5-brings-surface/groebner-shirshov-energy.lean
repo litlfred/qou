@@ -53,17 +53,18 @@ theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :
 noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
   (hecke_coeffs.map (heckeEnergyChange q)).sum
 
-/-- The total energy is non-negative for q > 1. -/
+/-- Each Hecke energy change is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 private theorem heckeEnergyChange_nonneg (q : ℝ) (hq : 1 < q) (c : ℝ) :
     0 ≤ heckeEnergyChange q c := by
   unfold heckeEnergyChange
   apply mul_nonneg (abs_nonneg _)
-  -- Need: 0 ≤ q - 1/q.  Since q > 1 > 0, we have 1/q < 1 < q.
   have hq_pos : (0 : ℝ) < q := by linarith
   rw [sub_nonneg, div_le_iff hq_pos]
   nlinarith
 
+/-- The total energy is non-negative for q > 1. -/
+-- Ref: [manuscript] §6/groebner-shirshov-energy
 theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     (coeffs : List ℝ) :
     0 ≤ totalEnergyChange q coeffs := by
@@ -86,7 +87,10 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
 axiom energy_path_independent (q : ℝ) (hq : 1 < q)
     (initial : List (List ℕ × ℝ))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
-    : True  -- both paths produce the same total energy change
+    : totalEnergyChange q (path1.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none) =
+      totalEnergyChange q (path2.filterMap fun s =>
+        match s with | .hecke => some 1 | _ => none)
 
 /-- The beta-decay energy difference is always negative:
     the daughter has lower energy than the parent.

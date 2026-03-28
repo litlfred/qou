@@ -5,12 +5,7 @@ export default remark({
   title: "Can the chirality of a stable trefoil vortex flip?",
   interprets: "prop:antiparticle-crossing-reversal",
   uses: [
-    "rem:chirality-trefoil-electron-positron",
     "rem:vortex-intensity-modes",
-    "def:crossing-energy",
-    "prop:fiber-adjoint-involution",
-    "def:substrate-parameter",
-    "rem:complex-substrate-interpretation",
     "conj:complex-chirality-rotation",
     "def:exceptional-divisor",
   ],

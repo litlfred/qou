@@ -10,9 +10,7 @@ export default proposition({
   uses: [
     "rem:brings-smoothness",
     "def:mass-identity",
-    "rem:chiral-bundles",
     "rem:weight-space-decomposition",
-    "prop:jet-prolongation",
     "rem:color-tube-cubic",
   ],
   proofs: ["prf:mi-sw-abelianisation"],

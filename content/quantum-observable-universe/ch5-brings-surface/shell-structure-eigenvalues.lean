@@ -58,7 +58,18 @@ theorem eigenvalue_sum (q : ℝ) :
 -- Ref: [manuscript] §6/shell-structure-eigenvalues
 theorem eigenvalue_plus_gt_one {q : ℝ} (hq : 1 < q) :
     1 < eigenvalue_plus q := by
-  sorry
+  unfold eigenvalue_plus hecke
+  rw [lt_div_iff (two_pos)]
+  -- Need: 2 < (q - 1/q) + sqrt((q - 1/q)^2 + 4)
+  -- Equivalently: sqrt((q-1/q)^2 + 4) > 2 - (q - 1/q)
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hh : 0 < q - 1 / q := by rw [sub_pos, div_lt_one hq0]; nlinarith
+  -- Since h > 0, it suffices to show sqrt(h^2+4) > 2 - h.
+  -- Case: if h ≥ 2, then 2 - h ≤ 0 < sqrt(...), and h + sqrt(...) > 2.
+  -- Case: if h < 2, then square both sides.
+  have hdisc : (0 : ℝ) < (q - 1 / q) ^ 2 + 4 := by positivity
+  have hsqrt_pos : 0 < Real.sqrt ((q - 1 / q) ^ 2 + 4) := Real.sqrt_pos.mpr hdisc
+  nlinarith [Real.sq_sqrt (le_of_lt hdisc), sq_nonneg (q - 1/q), sq_nonneg (Real.sqrt ((q - 1/q)^2 + 4) - (2 - (q - 1/q)))]
 
 /-- The Chebyshev recurrence for traced volumes.
     V̂(n+1) = (q - q⁻¹) · V̂(n) + V̂(n-1)

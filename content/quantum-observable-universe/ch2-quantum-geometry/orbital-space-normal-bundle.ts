@@ -18,11 +18,5 @@ export default proposition({
     decl: "QOU.orbital_space_normal_bundle",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-knot",
-    "prop:reidemeister-mass-invariance",
-    "rem:hydrogen-orbitals",
-    "def:categorical-reeb",
-    "prop:fiber-adjoint-involution",
-  ],
+  uses: ["prop:reidemeister-mass-invariance"],
 });

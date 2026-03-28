@@ -14,14 +14,7 @@ export default example({
     "borromean",
   ],
   uses: [
-    "def:beta-decay-skein",
     "def:lepton-number-categorical",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "def:electron-knot",
-    "def:neutrino-knot",
-    "prop:nuclear-groebner-reduction",
     "thm:markov-trace-factorization",
-    "prop:local-substrate-q",
   ],
 });

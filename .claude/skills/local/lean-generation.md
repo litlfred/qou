@@ -210,8 +210,12 @@ Instead of extracting from LaTeX, read the `.ts` manifest:
 
 ### The `uses[]` dependency graph
 
-The `uses` field in content `.ts` manifests forms a dependency DAG:
-- Generate stubs in topological order (dependencies first)
+The `uses` field in content `.ts` manifests forms a dependency DAG.
+**List only immediate neighbors** — transitive deps are derived by
+walking the graph. Run `bun run pipeline/prune-transitive-deps.ts`
+after edits.
+
+- Generate stubs in topological order (walk the graph for full ordering)
 - The Lean import graph should reflect the `uses[]` ordering
 - When a definition changes, re-validate all blocks that `uses` it
 

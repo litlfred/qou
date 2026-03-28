@@ -4,14 +4,7 @@ export default simulator({
   label: "sim:knot-periodic-table",
   title: "Knot-Centric Periodic Table",
   html: "folio-assistant/simulators/knot_periodic_table.html",
-  uses: [
-    "def:knot-particle-generation",
-    "def:substrate-parameter",
-    "def:borromean-baryon",
-    "prop:nuclear-shell-intruder",
-    "prop:orbital-fourier-decomposition",
-    "conj:electron-shells-hopf",
-  ],
+  uses: ["prop:nuclear-shell-intruder"],
   tags: [
     "periodic-table",
     "knot-centric",

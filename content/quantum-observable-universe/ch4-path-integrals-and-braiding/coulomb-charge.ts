@@ -10,7 +10,6 @@ export default definition({
   },
   uses: [
     "def:crossing-energy",
-    "rem:r-matrix-braiding",
     "prop:local-substrate-q",
   ],
 });

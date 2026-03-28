@@ -17,13 +17,5 @@ export default proposition({
     decl: "QOU.orbital_fourier_decomposition",
     validation: "not_checked",
   },
-  uses: [
-    "prop:orbital-space-normal-bundle",
-    "prop:reidemeister-mass-invariance",
-    "def:electron-knot",
-    "def:categorical-reeb",
-    "prop:fiber-adjoint-involution",
-    "conj:borromean-quark",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:orbital-space-normal-bundle"],
 });

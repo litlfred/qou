@@ -13,14 +13,5 @@ export default remark({
     "information-theory",
     "planck-computation",
   ],
-  uses: [
-    "conj:quantum-computational-universality",
-    "prop:toffoli-transfer-matrix",
-    "rem:discrete-planck-step",
-    "rem:jet-planck-steps",
-    "prop:skein-polynomial-transfer-matrix",
-    "thm:markov-trace-factorization",
-    "def:descent-involution",
-    "def:bundle-initial-conditions",
-  ],
+  uses: ["conj:quantum-computational-universality"],
 });

@@ -12,9 +12,5 @@ export default remark({
     "half-filled",
     "tetravalent",
   ],
-  uses: [
-    "conj:electron-shells-hopf",
-    "def:covalent-bond-types",
-    "def:stable-nucleus",
-  ],
+  uses: ["def:covalent-bond-types"],
 });

@@ -39,11 +39,15 @@ theorem q_inv_decomposition (q : ℝ) (hq : 0 < q) :
 noncomputable def emStrongRatio (q : ℝ) : ℝ :=
   antisymmetricWeight q / symmetricWeight q
 
-/-- EM/strong ratio equals tanh(ln q) for q > 0. -/
+/-- EM/strong ratio equals tanh(ln q) for q > 1.
+    Proof: tanh(ln q) = (e^{ln q} - e^{-ln q})/(e^{ln q} + e^{-ln q})
+           = (q - q⁻¹)/(q + q⁻¹) = emStrongRatio q. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem em_strong_ratio_tanh (q : ℝ) (hq : 1 < q) :
     emStrongRatio q = Real.tanh (Real.log q) := by
-  sorry
+  have hq0 : 0 < q := by linarith
+  unfold emStrongRatio antisymmetricWeight symmetricWeight Real.tanh Real.sinh Real.cosh
+  rw [Real.exp_log hq0, Real.exp_neg, Real.exp_log hq0]
 
 /-- Symmetric weight is positive for q > 0. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition

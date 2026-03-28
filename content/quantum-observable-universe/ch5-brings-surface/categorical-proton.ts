@@ -8,11 +8,5 @@ export default definition({
     decl: "QOU.Torsion.CategoricalProton",
     validation: "not_checked",
   },
-  uses: [
-    "def:hadron",
-    "def:up-quark",
-    "def:down-quark",
-    "def:knot-particle-generation",
-    "def:color-tube-coordinates",
-  ],
+  uses: ["def:down-quark"],
 });

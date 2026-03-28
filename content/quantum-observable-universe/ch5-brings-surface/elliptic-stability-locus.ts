@@ -15,13 +15,6 @@ export default conjecture({
   ],
   uses: [
     "prop:integer-stability",
-    "prop:chiral-elliptic",
-    "rem:color-tube-cubic",
-    "def:coulomb-charge",
-    "def:skein-binding-lagrangian",
-    "prop:beta-stability",
-    "rem:color-tube-fibers",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
+    "def:color-tube-fibers",
   ],
 });

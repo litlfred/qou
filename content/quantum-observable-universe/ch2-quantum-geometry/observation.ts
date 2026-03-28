@@ -9,7 +9,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-observable-universe",
     "def:substrate-parameter",
     "def:categorical-point",
     "prop:fibre-functor-atlas",

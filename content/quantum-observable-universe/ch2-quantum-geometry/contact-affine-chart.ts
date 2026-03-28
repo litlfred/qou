@@ -11,6 +11,5 @@ export default definition({
   uses: [
     "def:projective-line-object",
     "def:categorical-reeb",
-    "def:weight-decomposition",
   ],
 });

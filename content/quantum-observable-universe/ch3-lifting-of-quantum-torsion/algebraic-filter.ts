@@ -6,8 +6,6 @@ export default remark({
   title: "The algebraic filter",
   tags: ["fermion", "boson", "algebraic-filter", "curvature"],
   uses: [
-    "rem:q-harmonic-basis-brane",
-    "def:substrate-parameter",
     "rem:weight-space-decomposition",
     "prop:algebraic-filter-classification",
   ],

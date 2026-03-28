@@ -8,8 +8,5 @@ export default definition({
     decl: "QOU.CategoricalAction",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:rigid-monoidal-category",
-  ],
+  uses: ["def:quantum-observable-universe"],
 });

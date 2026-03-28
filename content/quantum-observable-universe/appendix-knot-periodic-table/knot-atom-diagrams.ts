@@ -13,10 +13,5 @@ export default remark({
     "sub-link",
     "atom",
   ],
-  uses: [
-    "conj:electron-shells-hopf",
-    "rem:helium-hopf-diagram",
-    "def:stable-nucleus",
-    "sec:knot-notation-convention",
-  ],
+  uses: ["rem:helium-hopf-diagram"],
 });

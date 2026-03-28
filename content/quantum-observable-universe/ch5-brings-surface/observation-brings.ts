@@ -5,9 +5,5 @@ export default remark({
   label: "rem:observation-brings",
   title: "Observations on the Bring's surface",
   tags: ["descartes-universe", "observation", "brings-surface"],
-  uses: [
-    "def:observation",
-    "def:substrate-parameter",
-    "rem:two-observer-parallelogram",
-  ],
+  uses: ["rem:two-observer-parallelogram"],
 });

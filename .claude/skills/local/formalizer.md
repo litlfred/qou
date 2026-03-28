@@ -235,14 +235,15 @@ noncomputable def WeightDecomposition.ofMaximalTorus
 **Content object requirements**: Each existence constructor gets its own
 content block triple (`.ts` + `.md` + `.lean`):
 - Block kind: `theorem` (label: `thm:<name>-exists`)
-- `uses[]`: must list the definition it constructs AND all prerequisite definitions
+- `uses[]`: must list the definition it constructs AND its immediate prerequisite (the structure it's built from) — not the full transitive chain
 - `.lean`: the constructor function, with sorry-annotated fields citing references
 
 **Dependency graph rule**: If definition B's `.lean` `structure` takes a
 parameter of type A (another project structure), there MUST exist a
-`thm:<b>-exists` block whose `uses[]` includes both `def:a` and `def:b`.
-This creates the existence edge in the dependency graph. Without it,
-the graph shows B floating without connection to A.
+`thm:<b>-exists` block whose `uses[]` includes `def:b` (and `def:a`
+only if A is an **immediate** prerequisite of the existence theorem,
+not already reachable via `def:b`'s own `uses[]`). The `uses[]` field
+lists only direct neighbors — transitive deps are walked by the graph.
 
 **Checklist for every `structure` definition**:
 - [ ] At least one `.ofFoo` constructor exists in a sibling `.lean` file
@@ -448,9 +449,13 @@ content/<paper>/<chapter>/
 
 ### The `uses[]` dependency graph
 
-The `uses` field in `.ts` manifests forms a narrative dependency DAG:
-- When formalizing a theorem, check that all blocks it `uses` are already
-  formalized (or have `sorry`-bridged stubs)
+The `uses` field in `.ts` manifests forms a narrative dependency DAG.
+**List only immediate neighbors** — if A depends on B and B depends on C,
+A lists only B (not C). Transitive deps are derived by walking the graph.
+Run `bun run pipeline/prune-transitive-deps.ts` to enforce this.
+
+- When formalizing a theorem, walk the `uses[]` graph to check that all
+  upstream blocks are already formalized (or have `sorry`-bridged stubs)
 - The Lean import graph should mirror the `uses[]` graph
 - Use `uses[]` to prioritize: formalize blocks with the most dependents first
 

@@ -5,9 +5,7 @@ export default remark({
   title: "Complex substrate parameter and the observability constraint",
   interprets: "def:substrate-parameter",
   uses: [
-    "def:substrate-parameter",
-    "def:quantum-observable-universe",
-    "def:substrate-parameter-su2",
+    "ex:substrate-parameter-su2",
     "rem:q-laplacian-interpretation",
   ],
   tags: ["complex-q", "observability", "chirality", "interpretation"],

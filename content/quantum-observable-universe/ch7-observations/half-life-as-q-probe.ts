@@ -14,11 +14,8 @@ export default remark({
     "sensitivity",
   ],
   uses: [
-    "prop:hadron-half-life",
     "rem:hadron-half-life-regimes",
     "prop:hadron-q-self-correction",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
     "rem:c-substrate-via-levi",
   ],
 });

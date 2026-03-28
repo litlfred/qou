@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "prop:double-slit-massive-pattern",
     "def:observation",
-    "def:substrate-parameter",
   ],
   tags: ["double-slit", "scattering", "band-width", "observation", "anomaly"],
   simulator: { ref: "sim:double-slit-analytical" },

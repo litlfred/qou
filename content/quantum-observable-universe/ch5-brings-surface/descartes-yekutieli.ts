@@ -6,7 +6,6 @@ export default example({
   title: "Bring's surface and Yekutieli obstructions",
   tags: ["descartes-universe", "yekutieli", "brings-surface"],
   uses: [
-    "thm:qu-to-qou",
     "rem:mass-geometric-drag",
     "rem:chirality-trefoil",
   ],

@@ -2,9 +2,6 @@
 -- Stability pairs from Borromean spin-orbit intruder levels.
 -- The 3 crossings of B_3 set the intruder threshold at N ≥ 3.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 open Finset Nat
@@ -22,7 +19,16 @@ def hoCumulative (N : ℕ) : ℕ := (N + 1) * (N + 2) * (N + 3) / 3
 /-- HO cumulative = sum of shell sizes. -/
 theorem hoCumulative_eq_sum (N : ℕ) :
     hoCumulative N = (range (N + 1)).sum hoShellSize := by
-  sorry
+  induction N with
+  | zero => native_decide
+  | succ n ih =>
+    rw [Finset.sum_range_succ, ← ih]
+    simp only [hoCumulative, hoShellSize]
+    -- Need: (n+2)(n+3)(n+4)/3 = (n+1)(n+2)(n+3)/3 + (n+2)(n+3)
+    -- i.e., (n+2)(n+3)(n+4) = (n+1)(n+2)(n+3) + 3(n+2)(n+3)
+    -- i.e., (n+2)(n+3)[(n+4) - (n+1) - 3] = 0, which holds since n+4 = n+1+3
+    -- Ref: [manuscript] Ch. 4
+    omega
 
 /-- HO closures without spin-orbit. -/
 theorem ho_closures :

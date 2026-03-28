@@ -16,10 +16,5 @@ export default conjecture({
   uses: [
     "def:borromean-baryon",
     "def:neutrino-knot",
-    "def:hadron",
-    "def:crossing-energy",
-    "prop:torus-knot-generators",
-    "def:color-tube-coordinates",
-    "sec:knot-notation-convention",
   ],
 });

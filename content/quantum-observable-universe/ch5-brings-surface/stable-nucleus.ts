@@ -18,11 +18,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:hadron",
-    "def:categorical-proton",
     "def:categorical-neutron",
-    "def:skein-binding-lagrangian",
     "prop:beta-stability",
-    "def:substrate-parameter",
   ],
 });

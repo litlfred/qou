@@ -13,11 +13,5 @@ export default remark({
     "braiding",
     "universality",
   ],
-  uses: [
-    "prop:toffoli-transfer-matrix",
-    "rem:discrete-planck-step",
-    "def:quantum-planck-constant",
-    "rem:golden-ratio-degeneration",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:toffoli-transfer-matrix"],
 });

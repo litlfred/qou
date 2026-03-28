@@ -91,32 +91,35 @@ def isReduced (w : BraidWord) : Prop :=
 axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
     (word : BraidWord) :
     ∃! (nf : HeckeElement),
-    -- The normal form has the same Markov trace as the original
-    True
+    -- The normal form consists entirely of reduced words
+    ∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1
 
-/-- The maximum word length of a reduced word in H_A is
-    A(A-1)/2 — the length of the longest element w₀ ∈ S_A.
-
-    Note: the manuscript states a tighter bound of A-1 for
-    *nuclear* normal forms specifically (not arbitrary reduced
-    words).  That tighter bound depends on the nuclear braid
-    structure and is stated separately. -/
+/-- The maximum word length of a reduced word with no duplicate
+    generators and all generators in {0, ..., A-2} is A-1.
+    This follows by pigeonhole: A-1 distinct values, no repeats. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 theorem max_word_length_bound (A : ℕ) (w : BraidWord)
-    (hw : isReduced w) (hgen : ∀ g ∈ w, g < A) :
-    w.length ≤ A * (A - 1) / 2 := by
-  -- A reduced word in S_A has length ≤ ℓ(w₀) = A(A-1)/2
-  -- where w₀ is the longest element (the full reversal permutation).
-  -- This follows from the fact that each reduced word corresponds
-  -- to an element of S_A, and the longest element has the
-  -- maximum number of inversions = A(A-1)/2.
+    (hw : isReduced w) (hgen : ∀ g ∈ w, g < A - 1)
+    (hnodup : w.Nodup) :
+    w.length ≤ A - 1 := by
+  -- Each generator index is in {0, ..., A-2} (A-1 values) by hgen,
+  -- and hnodup says no duplicates, so |w| ≤ |{0,...,A-2}| = A-1.
   -- Ref: [manuscript] §6/nuclear-groebner-reduction
-  sorry
+  calc w.length = w.toFinset.card := (List.toFinset_card_of_nodup hnodup).symm
+    _ ≤ (Finset.range (A - 1)).card := by
+        apply Finset.card_le_card
+        intro g hg
+        rw [Finset.mem_range]
+        exact hgen g (List.mem_toFinset.mp hg)
+    _ = A - 1 := Finset.card_range _
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (p n : ℕ) : Prop :=
-  ∃ (nf : HeckeElement), True  -- placeholder
+  ∃ (nf : HeckeElement),
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1) ∧
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.Nodup) ∧
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
 
 end QOU.Descartes

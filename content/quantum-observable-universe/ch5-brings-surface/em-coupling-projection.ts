@@ -18,11 +18,5 @@ export default proposition({
     decl: "QOU.Descartes.em_coupling_projection",
     validation: "not_checked",
   },
-  uses: [
-    "rem:force-knot-identification",
-    "rem:unmapped-torus-knots",
-    "prop:antiparticle-crossing-reversal",
-    "prop:torus-embeddable-complete",
-    "prop:torus-knot-generators",
-  ],
+  uses: ["rem:force-knot-identification"],
 });

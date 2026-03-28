@@ -14,10 +14,5 @@ export default remark({
     "trefoil",
     "residual-link",
   ],
-  uses: [
-    "prop:metallic-character-knot",
-    "prop:noble-gas-characterization",
-    "conj:electron-shells-hopf",
-    "def:crossing-energy",
-  ],
+  uses: ["prop:metallic-character-knot"],
 });

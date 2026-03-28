@@ -9,5 +9,5 @@ export default example({
     decl: "QOU.CRManifoldData",
     validation: "leanok",
   },
-  uses: ["def:quantum-universe", "def:substrate-parameter"],
+  uses: ["def:substrate-parameter"],
 });

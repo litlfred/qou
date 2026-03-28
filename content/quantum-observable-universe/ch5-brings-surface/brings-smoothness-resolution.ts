@@ -10,7 +10,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:brings-surface",
     "rem:chiral-bundles",
     "def:briggs-klein-chart",
   ],

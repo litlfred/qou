@@ -11,6 +11,5 @@ export default definition({
   uses: [
     "def:categorical-point",
     "def:projective-line-object",
-    "def:quantum-observable-universe",
   ],
 });

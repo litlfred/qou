@@ -17,11 +17,20 @@ namespace QOU.Braiding
 
 -- Ref: [manuscript] Ch. 4, §10
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem knot_particle_correspondence :
+/-- Irreducible summands of V^{⊗n} under q-Schur-Weyl duality,
+    labelled by partitions λ ⊢ n. -/
+axiom IrrepSummand (n : ℕ) : Type
+/-- Knot/link types arising as closures of n-strand braids. -/
+axiom KnotType (n : ℕ) : Type
+/-- The Markov trace map from irreducible summands to knot types. -/
+axiom markovTraceMap (n : ℕ) : IrrepSummand n → KnotType n
+
+theorem knot_particle_correspondence (n : ℕ) :
     -- The Markov trace on H_n(q) induces a bijection between irreducible
     -- summands of V^{⊗n} and knot types arising as closures of n-strand braids.
-    True := by
+    Function.Bijective (markovTraceMap n) := by
   -- Ref: [manuscript] Ch. 4, §10
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   sorry
 
 end QOU.Braiding

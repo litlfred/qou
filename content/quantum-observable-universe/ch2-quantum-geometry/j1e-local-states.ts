@@ -7,7 +7,6 @@ export default remark({
   tags: ["jet-bundle", "gauge-theory"],
   uses: [
     "ex:irreducible-connection",
-    "def:substrate-parameter",
     "def:quantum-gauge-group",
   ],
 });

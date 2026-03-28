@@ -16,9 +16,6 @@ export default remark({
   ],
   uses: [
     "prop:antiparticle-crossing-reversal",
-    "sec:knot-notation-convention",
-    "def:crossing-energy",
     "conj:electron-shells-hopf",
-    "prop:fiber-adjoint-involution",
   ],
 });

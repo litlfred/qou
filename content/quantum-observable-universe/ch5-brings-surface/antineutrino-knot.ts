@@ -16,9 +16,5 @@ export default definition({
     decl: "QOU.Descartes.Antineutrino",
     validation: "not_checked",
   },
-  uses: [
-    "def:neutrino-knot",
-    "def:positron-knot",
-    "prop:parity-violation-skein",
-  ],
+  uses: ["prop:parity-violation-skein"],
 });

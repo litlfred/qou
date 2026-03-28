@@ -19,15 +19,5 @@ export default proposition({
     decl: "QOU.Descartes.reidemeister_action_table",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-lagrangian",
-    "def:qou-canonical-action",
-    "def:skein-binding-lagrangian",
-    "thm:groebner-shirshov-energy",
-    "prop:nuclear-groebner-reduction",
-    "thm:markov-trace-factorization",
-    "def:braid-group",
-    "prop:topological-mass-formula",
-    "prop:local-substrate-q",
-  ],
+  uses: ["thm:markov-trace-factorization"],
 });

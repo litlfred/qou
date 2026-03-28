@@ -16,12 +16,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:hadron",
-    "def:crossing-energy",
-    "def:coulomb-charge",
-    "prop:torus-knot-generators",
     "rem:skein-crossing-asymmetry",
-    "def:categorical-proton",
     "def:categorical-neutron",
   ],
 });

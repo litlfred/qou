@@ -12,11 +12,6 @@ export default proposition({
   ],
   uses: [
     "def:planck-time",
-    "def:quantum-planck-constant",
-    "rem:julia-set-reeb",
-    "def:substrate-parameter",
-    "ex:q-reeb-flow",
     "rem:discrete-planck-step",
-    "prop:local-substrate-q",
   ],
 });
