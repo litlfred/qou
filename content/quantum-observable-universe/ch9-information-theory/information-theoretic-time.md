@@ -47,7 +47,8 @@ into a continuous flow parameter.
    resolved in the exceptional divisor.  There is no sub-step
    structure and no averaging.  Time is a natural number.
 
-2. **Statistical regime** ($q = 1.110$, our universe).
+2. **Statistical regime** ($q = 1.1097$
+   ([local substrate $q$](#prop:local-substrate-q)), our universe).
    $t_P \approx 10$: approximately $10$ Reeb operations compose
    each Planck unit.  Individual operations are no longer
    separately resolvable at the Planck scale; what is observable
@@ -83,7 +84,9 @@ indistinguishable from a continuous flow.  The error is
 $O(1/t_P) = O(\hbar_q)$ — it vanishes precisely as the quantum
 Planck constant goes to zero.
 
-At $q = 1.110$, $\beta \approx 10$: the integral approximation
+At $q = 1.1097$
+([local substrate $q$](#prop:local-substrate-q)),
+$\beta \approx 10$: the integral approximation
 has $\sim 10\%$ relative error.  This is the scale at which
 discreteness is marginally detectable — consistent with
 quantum-gravitational corrections being $O(\hbar_q)$ effects.

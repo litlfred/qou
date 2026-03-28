@@ -23,5 +23,6 @@ export default definition({
     "prop:ordering-jet-compatibility",
     "ex:q-reeb-flow",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

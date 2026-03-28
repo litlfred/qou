@@ -27,7 +27,7 @@ full Reeb circuit completed per unit time.
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
 | Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | One operation per unit; fully discrete |
-| Physical | $q = 1.110$ | $0.099$ | $\approx 10.1$ | $\sim 10$ Reeb circuits per Planck unit |
+| Physical | $q = 1.1097$ | $0.0988$ | $\approx 10.1$ | $\sim 10$ Reeb circuits per Planck unit |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | Infinitely many circuits; time freezes |
 
 **Field realisations.**

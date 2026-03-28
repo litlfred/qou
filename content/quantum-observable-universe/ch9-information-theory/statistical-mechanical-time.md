@@ -24,7 +24,9 @@ from molecular collisions and continuous time from discrete Reeb
 operations.
 
 **Why $\sim 10$ operations is the crossover.**
-At $q = 1.110$, $t_P \approx 10$
+At $q = 1.1097$
+([local substrate $q$](#prop:local-substrate-q)),
+$t_P \approx 10.1$
 ([Reeb operations per Planck unit](#prop:reeb-operations-per-planck)).
 The central limit theorem applies to sums of $\sim 10$
 independent operations: the statistical fluctuations in the
@@ -47,7 +49,7 @@ tick.  The dynamics is fully resolved — the Julia set iteration
 $f_q$ is applied once, and the orbit structure of $f_q$ over
 $\mathbb{F}_\pp$ is visible step by step.
 
-At $q = 1.110$ ($t_P \approx 10$): each Planck unit contains
+At $q = 1.1097$ ($t_P \approx 10$): each Planck unit contains
 $\sim 10$ braiding evaluations.  Within one Planck time, the
 exceptional divisor undergoes $\sim 10$ iterations of $f_q$,
 each advancing the link-length resolution by one crossing.

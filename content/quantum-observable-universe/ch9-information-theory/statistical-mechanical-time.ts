@@ -21,5 +21,6 @@ export default remark({
     "rem:discrete-planck-step",
     "rem:jet-planck-steps",
     "ex:q-reeb-flow",
+    "prop:local-substrate-q",
   ],
 });

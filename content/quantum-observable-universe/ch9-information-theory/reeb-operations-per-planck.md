@@ -25,12 +25,13 @@ $1/\hbar_q = t_P(q)$.  $\square$
 | $q$ | $n_R$ | Interpretation |
 |-----|-------|----------------|
 | $\to \infty$ | $\to 1$ | Big Bang: one braiding per Planck unit, fully resolved |
-| $1.110$ | $\approx 10$ | Our universe: $\sim 10$ braiding operations per Planck time |
+| $1.1097$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ braiding operations per Planck time |
 | $2$ | $2$ | Two operations per unit |
 | $1.01$ | $101$ | Near-classical: $\sim 100$ operations, approaching continuum |
 | $\to 1$ | $\to \infty$ | Classical limit: infinitely many, continuous Reeb flow |
 
-**Physical meaning at $q = 1.110$.**
+**Physical meaning at $q = 1.1097$
+([local substrate $q$](#prop:local-substrate-q)).**
 At our local substrate parameter, approximately $10$ iterations
 of the Julia set dynamics $f_q$ occur within each Planck time.
 Each iteration:
@@ -45,7 +46,7 @@ Each iteration:
 The link-length resolution within the exceptional divisor grows
 with each operation: after $n$ of the $\sim 10$ steps, the
 divisor resolves knots up to crossing number $n$.  Within a
-single Planck time at $q = 1.110$, the exceptional divisor
+single Planck time at $q = 1.1097$, the exceptional divisor
 completes $\sim 10$ braiding evaluations — enough to resolve
 the full electron-positron sector ($c = 3$) with room to spare.
 
@@ -67,5 +68,5 @@ At the Big Bang ($q \to \infty$): $n_R \to 1$ and $h \to 0$
 (simplest dynamics), so $I_P \to 0$.
 At the golden threshold ($q_{\mathrm{gold}} = 1/\varphi^2$):
 $h(q)$ peaks (maximal fractal complexity).
-At $q = 1.110$: $I_P \approx 10 \cdot d_H(1.110)$, the product
+At $q = 1.1097$: $I_P \approx 10.1 \cdot d_H(1.1097)$, the product
 of moderate operation count and moderate per-operation information.

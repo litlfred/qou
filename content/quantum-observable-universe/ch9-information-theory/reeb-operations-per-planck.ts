@@ -17,5 +17,6 @@ export default proposition({
     "def:substrate-parameter",
     "ex:q-reeb-flow",
     "rem:discrete-planck-step",
+    "prop:local-substrate-q",
   ],
 });
