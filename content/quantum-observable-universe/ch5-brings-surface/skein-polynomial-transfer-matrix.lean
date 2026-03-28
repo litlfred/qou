@@ -114,10 +114,11 @@ theorem transfer_matrix_steps (A : ℕ) :
       -- Each summand differs by 1: (m+2-i-1) = (m+1-i-1) + 1 for i < m
       have shift : ∀ i ∈ Finset.range m, m + 1 + 1 - i - 1 = (m + 1 - i - 1) + 1 := by
         intro i hi; simp [Finset.mem_range] at hi; omega
-      rw [Finset.sum_congr rfl shift, Finset.sum_add_const, ih']
-      -- Goal: C(m+1,2) + m * 1 + ((m+2) - m - 1) = C(m+2, 2)
-      -- i.e., C(m+1,2) + m + 1 = C(m+2, 2)
-      -- By Pascal's rule: C(m+2,2) = C(m+1,2) + C(m+1,1) = C(m+1,2) + (m+1)
+      rw [Finset.sum_congr rfl shift, Finset.sum_add_distrib, ih']
+      -- Goal: C(m+1,2) + ∑_{i<m} 1 + ((m+2) - m - 1) = C(m+2, 2)
+      simp only [Finset.sum_const, Finset.card_range, smul_eq_mul, mul_one]
+      -- Goal: C(m+1,2) + m + ((m+2) - m - 1) = C(m+2, 2)
+      -- By Pascal's rule: C(m+2,2) = C(m+1,1) + C(m+1,2) = (m+1) + C(m+1,2)
       rw [Nat.choose_succ_succ]
       simp [Nat.choose_one_right]
       omega
