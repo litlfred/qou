@@ -55,6 +55,7 @@ export default chapter({
       blocks: [
         "maximal-torus",
         "maximal-torus-su2",
+        "reeb-gauge-group",
         "weight-decomposition",
         "weight-decomposition-exists",
         "weight-decomposition-exists-proof",
