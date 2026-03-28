@@ -26,7 +26,10 @@ Skills are organized under `.claude/skills/`:
 - **`local/`** — repo-specific skills (latex-validation, scientific-accuracy,
   readability-editing)
 - **`<package-name>/`** — skills synced nightly from external packages defined
-  in `skills-config.json`
+  in `skills-config.json` (mode `"sync"`)
+- **Reference packages** — registered in `skills-config.json` with mode
+  `"reference"`, fetched on demand via the `skill_fetch` MCP tool (not
+  synced locally)
 
 ### Skill routing (quick reference)
 
@@ -74,6 +77,34 @@ When a user request arrives, route to the right skill(s):
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
 | "promote remark / add interprets / fix dangling" | `local/remark-audit` + `local/content-validation` | collaborator |
+| "review / audit chapter or paper" | Tier 0 → Tier 1 (`peer-review`) → Tier 2 (`academic-paper-reviewer`) | reader (review) / collaborator (act) |
+| "full review / devil's advocate" | `skill_fetch("academic-paper-reviewer")` (Tier 2) | collaborator |
+| "publication readiness / final check" | All tiers: local + `peer-review` + `skill_fetch("academic-pipeline/integrity-verification")` | collaborator |
+| "check claim / evidence quality" | `local/scientific-accuracy` → `sci-critical-thinking` → `skill_fetch("deep-research")` | reader |
+| "fact-check / source verification" | `skill_fetch("deep-research")` (fact-check mode) | reader |
+
+### External skill packages
+
+Skills come from three sources, forming a tiered escalation model:
+
+| Tier | Source | Location | Mechanism |
+|------|--------|----------|-----------|
+| **0 — Local** | `.claude/skills/local/` | On disk (repo) | Always available, run on every content change |
+| **1 — K-Dense** | `K-Dense-AI/claude-scientific-skills` | On disk (synced nightly) | Read `SKILL.md` from `.claude/skills/claude-scientific-skills/<skill>/` |
+| **2 — Academic** | `Imbad0202/academic-research-skills` | Fetched on demand | Call `skill_fetch` MCP tool; cached for 30 min |
+
+**Tier 1 skills** (synced, for general scientific QC): `peer-review`,
+`scientific-writing`, `scientific-critical-thinking`, `citation-management`,
+`literature-review`, `hypothesis-generation`, `scientific-brainstorming`,
+`arxiv-database`.
+
+**Tier 2 skills** (fetched, for deep academic review):
+`academic-paper-reviewer` (7-agent multi-perspective review),
+`deep-research` (13-agent evidence grading / fact-check),
+`academic-pipeline` (integrity verification protocol).
+
+See `editor.md §External Academic Review` for the full escalation protocol,
+delegation flows, and review-mode mapping.
 
 ### Skill role assignments
 

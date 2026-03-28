@@ -9,7 +9,7 @@ quantum groups gives the isomorphism
 $A \xrightarrow{\;\sim\;} A^{\vee}$.  The antipode $S$ and $h_q$
 together define the dagger $f^{\dagger} = h_q \circ \mu(S(f) \otimes -)$,
 which is positive-definite
-([positive definite dagger](#def:positive-definite-dagger)) because the Haar state
+([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state
 satisfies $h_q(a^* a) > 0$ for $a \neq 0$.
 
 **(ii) Observability.**

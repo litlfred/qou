@@ -1,15 +1,17 @@
-This chapter introduces the central construction of the paper: the
-**quantum observable universe**, a rigid symmetric monoidal category
-encoding the algebraic structure of quantum observables.  We begin
-with categorical preliminaries (§\ref{sec:rigid-monoidal}), define
-the core axioms (§\ref{sec:core-definitions}), and derive their
-consequences — including the emergence of $\mathrm{SU}(2)$ as the
-unique gauge group (§\ref{sec:axiom-consequences}).
+This chapter introduces the **quantum universe** (QU): a rigid
+braided monoidal category equipped with a Frobenius--Hopf object,
+a fibre functor, and a differential calculus.  We begin with
+categorical preliminaries
+([§ Rigid monoidal categories](#sec:rigid-monoidal)), state the
+core axioms ([§ The Quantum Universe](#sec:quantum-universe)),
+and derive their first consequences — the Frobenius relation,
+involutive structure, and Tannaka--Krein reconstruction
+([§ Consequences](#sec:qu-consequences)).
 
-The categorical axioms lead to differential structures, a spatial
-realization functor bridging abstract algebra to contact geometry
-(§\ref{sec:spatial-realization}), and a variational action
-(§\ref{sec:categorical-action}) whose Euler--Lagrange equations
-unify the Einstein field equation, Yang--Mills gauge theory, and the
-Schrödinger transport equation in a single commutative diagram
-(§\ref{sec:physical-interpretation}).
+The QU axioms also support differential-geometric structures:
+categorical connections, jet objects, and the Hodge star
+([§ Structures](#sec:qu-structures)).  The passage from a quantum
+universe to a *quantum observable universe* — adding observability,
+measurability, and the volume constraint that forces
+$\mathrm{SU}_2(R)$ as the gauge group — is the subject of
+[Chapter 2](#chap:qou).
