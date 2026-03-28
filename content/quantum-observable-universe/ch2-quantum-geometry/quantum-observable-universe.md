@@ -1,7 +1,7 @@
-A quantum universe $(\mathbf{C}, A, \tau)_\preceq$ over $R$
+A quantum universe $(\mathbf{C}, A, \tau)_\prec$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
 forgetful functor $\tau$
-([Example](#ex:rigid-monoidal-vect)) is faithful, $\preceq$ is an
+([Example](#ex:rigid-monoidal-vect)) is faithful, $\prec$ is an
 admissible ordering on the Hecke basis of $A$
 ([admissible system](#def:admissible-system)), and the following
 conditions hold:
@@ -81,15 +81,15 @@ conditions hold:
    \end{equation}
    ```
 
-5. *(temporal ordering)* the admissible ordering $\preceq$ is
+5. *(temporal ordering)* the admissible ordering $\prec$ is
    a well-ordering on the monomial basis of the Hecke algebra
    $H_n(q)$ of $A$, satisfying left and right compatibility
    with multiplication
    ([admissible system](#def:admissible-system)).
    Forward time is the direction of Gröbner reduction under
-   $\preceq$: braiding (creating crossings $\sigma_i$).
+   $\prec$: braiding (creating crossings $\sigma_i$).
    Backward time is the anti-involution
-   $\sigma_i \mapsto \sigma_i^{-1}$ composed with $\preceq$:
+   $\sigma_i \mapsto \sigma_i^{-1}$ composed with $\prec$:
    unbraiding (resolving crossings).  The ordering determines
    which computations have completed and which are in progress
    — it is the arrow of time.
