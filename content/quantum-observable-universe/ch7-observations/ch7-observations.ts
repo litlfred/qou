@@ -124,7 +124,10 @@ export default chapter({
         "strangelet-crossing-energy",
         "strangelet-witten-stability",
         "deconfinement-golden-threshold",
+        "hopf-diquark",
+        "borromean-hopf-energy-crossover",
         "color-superconductivity-borromean",
+        "cfl-neutron-star-observables",
       ],
     }),
 
