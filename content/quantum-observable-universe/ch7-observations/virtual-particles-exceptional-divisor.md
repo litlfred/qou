@@ -13,8 +13,11 @@ $E_p \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$.  This sphere
 parametrises the *directions* of departure from the base manifold —
 the internal degrees of freedom invisible to the base-level observer.
 
-A virtual particle is an excitation that lives **within** $E_p$:
-it is created at the blow-up locus, propagates along the
+A virtual particle is an excitation that lives **within** the Reeb
+bundle over $E_p$ --- the Hopf fibration
+$U(1) \hookrightarrow S^3 \to E_p$ where all braiding takes place
+([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).
+It is created at the blow-up locus, propagates along the
 exceptional divisor (or up into the
 [brane tower](#def:recursive-brane-tower) rooted at $E_p$), and is
 reabsorbed before it can descend to the base level $A_0$.

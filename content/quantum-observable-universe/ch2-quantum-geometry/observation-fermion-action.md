@@ -67,9 +67,10 @@ $G = \mathrm{SU}_2(R)$ is non-abelian.  The order of
 observation matters because rotations in three dimensions
 do not commute.
 
-This is why uncertainty is kept in the Reeb bundle: the
-Reeb vector field generates the $U_1(R) \subset G$ that
-commutes with everything — it is the **one direction** in
+This is why uncertainty is kept in the Reeb bundle --- the
+$U(1)$ fibration $S^3 \to E_p \cong S^2$ over the exceptional
+divisor.  The Reeb vector field generates the $U_1(R) \subset G$
+that commutes with everything --- it is the **one direction** in
 the colour fibre where observations do commute.  The
 remaining two directions (the off-diagonal generators of
 $\mathfrak{su}(2)$) are where fermionic uncertainty lives.

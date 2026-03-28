@@ -78,6 +78,9 @@ export default chapter({
         "spectral-dynamics",
         // Seiberg--Witten on Bring's (generic SW → ch5 Models)
         "reeb-exceptional-divisor",
+        "reeb-bundle",
+        "vertex-is-exceptional-divisor",
+        "vertex-is-exceptional-divisor-proof",
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",

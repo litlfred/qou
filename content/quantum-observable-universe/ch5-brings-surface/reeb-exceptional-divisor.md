@@ -32,18 +32,23 @@ self-intersections of the chiral fibres are resolved, and the
 $C_5$ phase rotation now circulates *around* the exceptional
 divisor rather than passing through a singularity.
 
-**Reeb vector as torsion field.**
+**Reeb bundle and torsion field.**
 On the blown-up surface, the Reeb vector field $\xi_q$ is the
 infinitesimal generator of the $U(1)$ action that rotates the chiral
-fibre above the exceptional divisor.  Concretely, the
-$q$-deformed Reeb flow $\phi_t^q$
+fibre above the exceptional divisor.  The total space of this
+$U(1)$ fibration is the **Reeb bundle**:
+$U(1) \hookrightarrow S^3 \xrightarrow{\pi_H} E_c \cong S^2$.
+The $q$-deformed Reeb flow $\phi_t^q$
 ([$q$-Reeb flow](#ex:q-reeb-flow)) restricted to $E_c$ generates
-the Hopf fibration $S^3\to S^2\cong E_c$, and the substrate
-parameter $q$ controls the pitch of this rotation.  The vector
+this Hopf fibration, and the substrate
+parameter $q$ controls the pitch of the rotation.  The vector
 field $\xi_q$ thereby provides the "time-like" direction within the
 chiral space: it is the flow that allows the spectral modes $w_k$ to
 execute the spinning phase rotation
-$w_k\mapsto\zeta^k\,w_k$.
+$w_k\mapsto\zeta^k\,w_k$.  All braiding --- Hecke generators,
+Skein resolutions, crossing changes --- takes place within this
+Reeb bundle
+([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).
 
 **Global picture.**
 The Bring's surface provides the genus-$4$ topology---four handles
