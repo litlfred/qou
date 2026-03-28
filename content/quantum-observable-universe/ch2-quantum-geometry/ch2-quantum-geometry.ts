@@ -23,6 +23,7 @@ export default chapter({
       label: "sec:qou-definition",
       blocks: [
         "quantum-observable-universe",
+        "braiding-induced-ordering",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",

@@ -66,21 +66,6 @@ structure QuantumObservableUniverse (k : Type*) [Field k]
       they are equal.  This forces the pairing to be non-degenerate. -/
   volumeForm_epi : ∀ (f g : (𝟙_ C) ⟶ (𝟙_ C)),
     volumeForm ≫ f = volumeForm ≫ g → f = g
-  /-- **Temporal braiding** (axiom v): the braiding on `V ⊗ V`
-      is non-symmetric, i.e. `c_{V,V}² ≠ id`.  This is the
-      categorical arrow of time: `c_{V,V}` = forward (positive
-      crossing), `c_{V,V}⁻¹` = backward (negative crossing).
-      The braiding induces a canonical admissible well-ordering
-      `≺_c` on the Hecke monomial basis via degree-lexicographic
-      extension.
-
-      Ref: [manuscript] §2/quantum-observable-universe (axiom 5) -/
-  braiding_VV : fundamentalObj ⊗ fundamentalObj ⟶ fundamentalObj ⊗ fundamentalObj
-  /-- The braiding is non-trivially squared: `c² ≠ id`, ensuring
-      the category is braided but not symmetric. -/
-  braiding_nonsymmetric :
-    braiding_VV ≫ braiding_VV ≠ 𝟙 (fundamentalObj ⊗ fundamentalObj)
-
 /-- The **quantum gauge group** `G_q = Aut⊗(ω)`: the group of monoidal
     natural automorphisms of the fibre functor.
 
