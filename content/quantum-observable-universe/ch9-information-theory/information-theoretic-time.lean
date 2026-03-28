@@ -3,7 +3,7 @@
   with rescaling t = ℏ_q · T to obtain the continuous Reeb flow parameter.
 -/
 import Mathlib.Algebra.Field.Basic
-import Mathlib.Topology.Basic
+import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU
 
@@ -31,12 +31,5 @@ theorem reeb_time_monotone {k : Type*} [LinearOrderedField k]
     informationTheoreticTime ⟨q, hq0, hq1, n⟩ <
     informationTheoreticTime ⟨q, hq0, hq1, m⟩ := by
   sorry
-
-/-- The Reeb partition function sum converges to 1 as t_P → ∞,
-    justifying the continuous approximation. -/
--- Ref: [manuscript] Ch 8, Definition: Information-Theoretic Time
-theorem partition_function_limit :
-    True := by  -- placeholder for analytic statement
-  trivial
 
 end QOU
