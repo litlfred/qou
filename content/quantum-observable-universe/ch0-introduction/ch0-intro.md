@@ -45,11 +45,13 @@ The book is organised as follows.
 [Chapters 1 and 2](#chap:qu) build the categorical framework from
 the ground up.  Chapter 1 introduces rigid monoidal categories,
 fibre functors, Frobenius structure, and the dagger involution,
-arriving at the definition of a quantum observable universe.
-Chapter 2 develops the geometry that lives on this structure:
-Tannaka–Krein reconstruction of $\mathrm{SU}_2(R)$, the
-categorical action $S_q$, and the three variational equations
-(Einstein, Yang–Mills, and transport).
+arriving at the definition of a *quantum universe* — the
+algebraic skeleton.  Chapter 2 adds the observability,
+measurability, and volume axioms that make it a *quantum
+observable universe*, then develops the geometry: Tannaka–Krein
+reconstruction of $\mathrm{SU}_2(R)$, the categorical action
+$S_q$, and the three variational equations (Einstein, Yang–Mills,
+and transport).
 
 [Chapter 3](#chap:torsion) turns to the obstructions that arise
 when one tries to extend local data to global structures.  The

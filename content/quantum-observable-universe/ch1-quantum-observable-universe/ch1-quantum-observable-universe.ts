@@ -3,13 +3,14 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 1: Quantum Universes.
  *
- * Pure QU axioms — rigid monoidal category with a Frobenius--Hopf
- * object.  No observability (fibre functor) assumed here; that is
- * introduced in Chapter 2 (Quantum Observable Universes).
+ * The QU axioms: a rigid symmetric monoidal category with a
+ * Frobenius--Hopf object, a fibre functor, and a differential
+ * calculus.  Chapter 2 adds observability, measurability, and the
+ * volume constraint to obtain the Quantum Observable Universe (QOU).
  *
  * Structures available on a QU alone: Frobenius pairing, higher forms,
- * involutive/dagger structure, Tannaka--Krein, abstract hadrons,
- * connections, jets, and the Hodge star.
+ * involutive/dagger structure, Tannaka--Krein, connections, jets,
+ * and the Hodge star.
  */
 export default chapter({
   number: 1,

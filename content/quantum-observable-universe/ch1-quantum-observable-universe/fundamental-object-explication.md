@@ -1,14 +1,12 @@
-Before stating the definition of a quantum observable universe, we
-fix two pieces of notation that will appear throughout.
+We fix two pieces of notation that will appear throughout.
 
 **The fundamental object $V$.**
 In a rigid monoidal category $\mathbf{C}$, the *fundamental object*
 $V$ is the unique (up to isomorphism) simple object of categorical
-dimension $2$. Its dimension is not an independent assumption but is
-*forced* by the volume constraint (Axiom 4 below): the existence of a
-non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
-requires $\Lambda^2 V$ to have rank $1$, which holds if and only if
-$\operatorname{rank}(V) = 2$. (If $\operatorname{rank}(V) = 1$ then
+dimension $2$.  Its dimension is not an independent assumption: in
+[Chapter 2](#chap:qou), the volume constraint (a non-degenerate
+epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$) forces
+$\operatorname{rank}(V) = 2$.  (If $\operatorname{rank}(V) = 1$ then
 $\Lambda^2 V = 0$ and no such epimorphism exists; if
 $\operatorname{rank}(V) \geq 3$ then
 $\operatorname{rank}(\Lambda^2 V) \geq 3$ and the non-degenerate
