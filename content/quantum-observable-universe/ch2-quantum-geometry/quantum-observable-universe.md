@@ -87,20 +87,68 @@ conditions hold:
    monomial basis $B$ of the Hecke algebra $H_n(q)$ of $A$
    ([admissible system](#def:admissible-system)) as follows:
 
-   **(well-ordering on $B$.)** The monomial basis consists of
+   **(well-ordering on $B$: definition and proof.)**
+   The monomial basis $B$ of $H_n(q)$ consists of reduced
    positive braid monomials
-   $\sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}$ in the image
-   of $c_{V,V}$ under the braid representation
+   $w = \sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}$ —
+   the images of the braiding $c_{V,V}$ under
    $\rho_n(\sigma_i) = \mathrm{id}^{\otimes(i-1)} \otimes
-   c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$.  The
-   braiding $c_{V,V}$ (as opposed to its inverse
+   c_{V,V} \otimes \mathrm{id}^{\otimes(n-i-1)}$
+   ([braid action on tensor powers](#prop:braid-action-tensor)).
+   The braiding $c_{V,V}$ (as opposed to its inverse
    $c_{V,V}^{-1}$) defines "positive crossing" — forward
-   time.  The ordering $\prec_c$ is degree-lexicographic:
-   shorter words precede longer ones; at equal length,
-   lexicographic order on the generator indices.  This is a
-   well-ordering because: (a) total degree is bounded below
-   by $0$; (b) at fixed degree, lexicographic order on a
-   finite alphabet is well-founded.
+   time.
+
+   *Definition.* A **well-ordering** on a set $S$ is a total
+   order $\prec$ such that every non-empty subset of $S$ has
+   a least element.  Equivalently: there are no infinite
+   strictly descending chains
+   $s_1 \succ s_2 \succ s_3 \succ \cdots$.
+
+   *Definition.* The **degree-lexicographic ordering**
+   $\prec_c$ on $B$ is:
+   $w \prec_c w'$ if and only if
+
+   $$
+     \ell(w) < \ell(w'),
+     \quad\text{or}\quad
+     \ell(w) = \ell(w') \;\text{and}\;
+     (i_1, \ldots, i_k) <_{\mathrm{lex}} (i_1', \ldots, i_k')
+   $$
+
+   where $\ell(w) = k$ is the word length (number of
+   crossings) and $<_{\mathrm{lex}}$ is lexicographic order
+   on the generator indices
+   $i_j \in \{1, \ldots, n-1\}$.
+
+   *Proof that $\prec_c$ is a well-ordering on $B$.*
+   Let $S \subseteq B$ be non-empty.
+
+   (a) **Degree is bounded below.**  Every $w \in B$ has
+   $\ell(w) \geq 0$.  Let $d = \min\{\ell(w) : w \in S\}$.
+   The set $S_d = \{w \in S : \ell(w) = d\}$ is non-empty.
+
+   (b) **Finite alphabet at each degree.**  Each $w \in S_d$
+   is a word of length $d$ over the finite alphabet
+   $\{1, \ldots, n-1\}$.  There are at most $(n-1)^d$ such
+   words — a finite set.  Every finite totally ordered set
+   has a minimum.  Let $w_0$ be the lex-minimum of $S_d$.
+
+   (c) **$w_0$ is the minimum of $S$.**  For any $w \in S$:
+   if $\ell(w) > d$ then $w_0 \prec_c w$ (shorter words
+   first); if $\ell(w) = d$ then $w_0 \leq_{\mathrm{lex}} w$
+   by construction.  $\square$
+
+   *Admissibility.*  The ordering $\prec_c$ is
+   **admissible** in the sense of
+   ([admissible system](#def:admissible-system)):
+   left and right multiplication by basis elements preserves
+   the ordering ($w \prec_c w'$ implies
+   $u \cdot w \cdot v \prec_c u \cdot w' \cdot v$ whenever
+   both products are non-zero), because degree-lex is
+   compatible with any associative multiplication whose
+   defining relations (Hecke, Yang–Baxter) have leading terms
+   of bounded degree — the Hecke relation is quadratic.
 
    **Two faces of the arrow of time.**  The braiding
    $c_{V,V}$ and the Reeb vector field $\xi$
