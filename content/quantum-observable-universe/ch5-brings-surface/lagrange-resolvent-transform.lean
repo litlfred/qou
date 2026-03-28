@@ -27,11 +27,9 @@ noncomputable def ζ : ℂ := Complex.exp (2 * Real.pi * Complex.I / 5)
 lemma ζ_pow_five : ζ ^ 5 = 1 := by
   unfold ζ
   rw [← Complex.exp_nat_mul]
-  have : (5 : ℂ) * (2 * ↑Real.pi * Complex.I / 5) = ↑(2 * Real.pi) * Complex.I := by
-    push_cast
-    ring
-  rw [this]
-  exact Complex.exp_mul_I_two_pi_sub_eq_of_eq rfl |>.symm ▸ Complex.exp_two_pi_mul_I
+  congr 1
+  push_cast
+  ring
 
 /-- ζ is nonzero (since it's a root of unity). -/
 lemma ζ_ne_zero : ζ ≠ 0 := by
@@ -44,9 +42,29 @@ lemma ζ_ne_zero : ζ ≠ 0 := by
 lemma ζ_pow_four_eq_inv : ζ ^ 4 = ζ⁻¹ := by
   have h5 := ζ_pow_five
   have hne := ζ_ne_zero
-  rw [show (5 : ℕ) = 1 + 4 from rfl, pow_add, pow_one] at h5
-  exact (mul_right_eq_one₀.mp h5 |>.resolve_right (pow_ne_zero 4 hne)).symm ▸
-    (mul_inv_cancel_left₀ hne (ζ ^ 4) ▸ eq_comm.mpr (inv_eq_of_mul_eq_one_right h5))
+  rw [inv_eq_iff_eq_inv]
+  rw [show (5 : ℕ) = 4 + 1 from rfl, pow_succ] at h5
+  exact eq_inv_of_mul_eq_one_right h5
+
+-- Power reduction lemmas: ζ^(5+n) = ζ^n
+private lemma ζ_pow_reduce (n : ℕ) : ζ ^ (5 + n) = ζ ^ n := by
+  rw [pow_add, ζ_pow_five, one_mul]
+
+private lemma ζ_pow_6 : ζ ^ 6 = ζ := by
+  have := ζ_pow_reduce 1; rw [pow_one] at this; exact this
+
+private lemma ζ_pow_8 : ζ ^ 8 = ζ ^ 3 := by exact ζ_pow_reduce 3
+
+private lemma ζ_pow_10 : ζ ^ 10 = 1 := by
+  rw [show (10 : ℕ) = 5 + 5 from rfl, pow_add, ζ_pow_five, one_mul, ζ_pow_five]
+
+private lemma ζ_pow_12 : ζ ^ 12 = ζ ^ 2 := by
+  rw [show (12 : ℕ) = 5 + (5 + 2) from rfl]
+  rw [ζ_pow_reduce, ζ_pow_reduce]
+
+private lemma ζ_pow_16 : ζ ^ 16 = ζ := by
+  rw [show (16 : ℕ) = 5 + (5 + (5 + 1)) from rfl]
+  rw [ζ_pow_reduce, ζ_pow_reduce, ζ_pow_reduce, pow_one]
 
 /-- The Lagrange resolvent (DFT) of coordinates on the Bring surface. -/
 noncomputable def lagrangeResolvent (x : Fin 5 → ℂ) (k : Fin 5) : ℂ :=
@@ -69,30 +87,25 @@ theorem lagrange_resolvent_w0_vanishes
 
 /-- Part (2): The cyclic permutation acts diagonally on Lagrange resolvents.
     σ(w_k) = ζ^{-k} · w_k for all k.
-    Proof: unfold both sides, then show the inner sums are related by the
-    reindexing identity Σ_j ζ^{kj} x_{j+1} = ζ^{-k} Σ_j ζ^{kj} x_j,
-    which follows from ζ^4 = ζ⁻¹ (since ζ^5 = 1). -/
+    Proof: case-split on k ∈ Fin 5, expand sums, reduce ζ powers mod 5. -/
 -- Ref: [manuscript] Ch. 6, §1
 -- Ref: [bring1786] https://doi.org/10.1007/BF02386200
 theorem lagrange_resolvent_diagonal_action
     (x : Fin 5 → ℂ) :
     ∀ k : Fin 5, lagrangeResolvent (cyclicPerm x) k = ζ⁻¹ ^ k.val * lagrangeResolvent x k := by
   intro k
+  -- Replace ζ⁻¹ with ζ^4 everywhere
+  have hinv : ζ⁻¹ = ζ ^ 4 := ζ_pow_four_eq_inv.symm
+  rw [hinv]
+  -- Unfold definitions
   unfold lagrangeResolvent cyclicPerm
-  -- Both sides have the form (1/√5) * (sum). Factor out the prefactor.
-  -- It suffices to show the inner sums satisfy the shift identity.
-  simp only
-  -- Pull ζ⁻¹^k into the product with the prefactor
-  ring_nf
-  -- Reduce to showing equality of the expanded sums
-  congr 1
-  -- Expand sums over Fin 5 and simplify modular indices
+  -- Expand sums over Fin 5
   simp only [Fin.sum_univ_five, Fin.val_mk]
+  -- Simplify modular arithmetic
   norm_num
-  -- Each case: use ζ^4 = ζ⁻¹ to equate shifted and unshifted terms
-  have h4 : ζ ^ 4 = ζ⁻¹ := ζ_pow_four_eq_inv
-  have h5 : ζ ^ 5 = 1 := ζ_pow_five
-  -- Reduce all powers of ζ using ζ^5 = 1, then use ζ^4 = ζ⁻¹
-  fin_cases k <;> simp_all only [Fin.val_mk] <;> ring
+  -- Case split on k and use power reduction + ring
+  fin_cases k <;> simp only [Fin.val_mk] <;> ring_nf <;>
+    simp only [ζ_pow_five, ζ_pow_6, ζ_pow_8, ζ_pow_10, ζ_pow_12, ζ_pow_16] <;>
+    ring
 
 end QOU.BringsSurface
