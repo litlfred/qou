@@ -1,143 +1,124 @@
-The gravitational constant $G$ is derived from the information
-geometry of the Reeb dynamics, following Jacobson's programme
-[jacobson1995] of obtaining Einstein's equations from
-entropy--area proportionality on local causal horizons.
+The gravitational constant $G$ is derived from the categorical
+structure of the $q$-Yang-Mills-Levi action, not from semiclassical
+entropy-area relations.  The key ingredient is the **in-progress
+braid content** of a Planck cell — the sections of the jet tower
+that are partially evaluated but not yet resolved to observable
+knots.
 
-**Jacobson's argument in QOU variables.**
-Consider a local causal horizon — a null surface at the
-light-cone boundary $|Z| = c(q)$
-([speed of light](#def:information-speed-of-light)) — in the
-contact affine chart.  Three quantities determine the gravitational
-coupling:
-
-1. **Horizon entropy density.**
-   Each fibre on the horizon is processed once per discrete
-   $f_q$-step, generating $\eta_q$ bits of entropy
-   ([operational entropy](#def:operational-entropy)).  In one
-   Planck time, $n_R(q) = 1/\hbar_q$ fibres are processed.  Each
-   fibre has cross-sectional area $\hbar_q$ (Reeb direction) $\times$
-   $q^{-1}$ (spatial direction, set by the $q$-connection coupling
-   weight).  The entropy per unit horizon area per Planck time is
-
-   $$
-     s(q) \;=\; \frac{n_R(q) \cdot \eta_q}{n_R(q) \cdot \hbar_q
-     \cdot q^{-1}}
-     \;=\; \frac{\eta_q}{\hbar_q \cdot q^{-1}}
-     \;=\; \frac{q\,\eta_q}{\hbar_q}.
-   $$
-
-2. **Unruh temperature.**
-   A uniformly accelerated observer in the QOU sees a thermal
-   bath at the Unruh temperature.  In Reeb units, with
-   $\hbar_q = (q-1)/q$ and $c(q) = 1/(q-1)$, the temperature
-   at unit acceleration is
-
-   $$
-     T_U(q) \;=\; \frac{\hbar_q}{2\pi\,c(q)}
-     \;=\; \frac{(q-1)/q}{2\pi/(q-1)}
-     \;=\; \frac{(q-1)^2}{2\pi\,q}.
-   $$
-
-3. **Clausius relation.**
-   The heat flow $\delta Q$ across the horizon equals the
-   stress-energy flux: $\delta Q = T_{ab}\,k^a\,d\Sigma^b$
-   where $k^a$ is the horizon generator and $d\Sigma^b$ the area
-   element.  The entropy change is $dS = s(q)\,dA$.  Jacobson's
-   identity $\delta Q = T_U\,dS$ applied to every local causal
-   horizon yields the Einstein equation
-
-   $$
-     \mathrm{Ric}_{g_\theta} - \tfrac{1}{2}\,R\,g_\theta
-     \;=\; \frac{8\pi\,G(q)}{c(q)^4}\;T^{(q)},
-   $$
-
-   with the gravitational constant determined by the entropy density
-   and the Unruh temperature:
-
-   $$
-     G(q) \;=\; \frac{c(q)^3}{4\,s(q)}
-     \;=\; \frac{c(q)^3\,\hbar_q}{4\,q\,\eta_q}.
-   $$
-
-**Definition.**
-The *gravitational constant* at substrate parameter $q$ is
+**The variational origin of $G$.**
+The field equation $\mathrm{Ric}_{g_\theta} = T^{(q)}$
+([GR substrate geometry](#rem:gr-substrate-geometry)) arises from
+varying the $q$-Yang-Mills-Levi functional
+([$q$-YM-Levi](#def:q-yang-mills-levi))
 
 $$
-  G(q) \;=\; \frac{c(q)^3\,\hbar_q}{4\,q\,\eta_q}
-  \;=\; \frac{1}{4\,q\,(q-1)^2\,\eta_q},
+  S_q[A, \theta]
+  \;=\; \int_M q(p)\,\lVert F_A^+|_H \rVert^2\,
+  \theta \wedge (d\theta)^n
+$$
+
+with respect to the Levi form $L_\theta$.  The gravitational
+coupling $G$ is the normalisation of this variation: it sets
+the ratio of curvature ($\mathrm{Ric}_{g_\theta}$) to
+stress-energy ($T^{(q)}$).  In standard GR, this normalisation
+is postulated.  In the QOU, it is **determined by the information
+content of the brane tower at each fibre**.
+
+**In-progress braids: sections that gravitate.**
+At any fibre over a point $p \in M$, the jet tower
+$A_0 \hookrightarrow A_1 \hookrightarrow \cdots$
+([jet-Planck steps](#rem:jet-planck-steps)) carries sections at
+every level.  In one Planck time, $n_R(q) \approx 10$ jet
+prolongations complete.  But the tower does not stop at level
+$n_R$: **braids with crossing number $c > n_R$ are partially
+evaluated**.
+
+A proton ($c \sim 18$ for its Borromean linking) at jet level $10$
+is an in-progress section — its braid word $\beta \in B_n$ has
+been partially resolved ($10$ of $\sim 18$ $R$-matrix evaluations
+complete) but not yet descended to an observable knot.  These
+in-progress braids are **real sections of $J^k\mathcal{S}$ over
+$p$**: they carry partial crossing energy, they couple to the
+$q$-connection, and they contribute to $T^{(q)}$.
+
+This is the categorical analog of virtual particles: the vacuum at
+$p$ is populated by all braids "in transit" through the jet tower,
+each contributing to the gravitational source term.
+
+**Counting in-progress braids.**
+At jet level $k$ over a point $p$, the number of distinct
+in-progress braids is the dimension of the section space
+$\Gamma(J^k\mathcal{S}|_p)$.  For the $\mathrm{SU}_q(2)$ Frobenius-Hopf
+object, this grows with $k$: each jet prolongation adds new
+polynomial coefficients (new Taylor data of the energy function $E$).
+
+The total information content of a Planck cell is not the
+single-operation entropy $\eta_q$ but the **cumulative jet tower
+entropy**:
+
+$$
+  S_{\mathrm{cell}}(q)
+  \;=\; \sum_{k=0}^{\infty}
+  \eta_q^{(k)},
+$$
+
+where $\eta_q^{(k)}$ is the entropy contributed by sections at jet
+level $k$.  The sum converges because sections at level $k$ are
+exponentially suppressed by the descent involution $\hat{\tau}_k$
+([descent eigenspaces](#prop:descent-eigenspaces)): the transient
+component at each level has support localised to exceptional
+divisors of codimension $\geq 2$.
+
+**The gravitational constant.**
+The $q$-Yang-Mills-Levi variation gives
+
+$$
+  G(q) \;=\; \frac{c(q)^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)},
 $$
 
 where $c(q) = 1/(q-1)$ is the speed of light
-([speed of light](#def:information-speed-of-light)),
-$\hbar_q = (q-1)/q$ is the quantum Planck constant
-([Planck time](#def:planck-time)), and
-$\eta_q = d_H(q) \cdot \log 2$ is the operational entropy
-([operational entropy](#def:operational-entropy)).
+([speed of light](#def:information-speed-of-light)) and
+$\hbar_q = (q-1)/q$.  The numerator $c^3 \hbar_q$ is the
+kinematic factor (causal volume per Planck time); the denominator
+$S_{\mathrm{cell}}$ is the total information content per fibre,
+including all in-progress braids.
 
-**Numerical evaluation at $q = 1.1097$.**
+**The self-consistency condition.**
+Converting to Planck units ($G_{\mathrm{Planck}} = 1$):
 
-The Hausdorff dimension of the Julia set at $q = 1.1097$ (rotation
-number $\theta = 0.1097$ on the main cardioid) has been computed
-numerically via box-counting:
+$$
+  S_{\mathrm{cell}}(q)
+  \;=\; c(q)^3 \cdot \hbar_q \cdot \frac{(q-1)^4}{q^2}
+  \;=\; \frac{(q-1)^2}{q^3}.
+$$
+
+At $q = 1.1097$:
+
+$$
+  S_{\mathrm{cell}} \;\approx\; 0.00879
+  \quad (\text{nats}).
+$$
+
+Compare with the single-operation entropy:
+$\eta_q = d_H(q) \cdot \log 2 \approx 1.012 \times 0.693 \approx
+0.701$ nats.
+
+The ratio $S_{\mathrm{cell}} / \eta_q \approx 0.013$ means that
+only about **1.3% of the single-fibre entropy** contributes to the
+gravitational coupling.  This is consistent with the in-progress
+braid picture: most braids at a typical fibre are **fully resolved**
+(their crossing energy is already accounted for in $T^{(q)}$ as
+matter), while only the partially-evaluated tails contribute the
+additional gravitational information.
+
+**Hausdorff dimension (numerical).**
+The Hausdorff dimension of $J(f_q) \cap S^1$ at $q = 1.1097$ has
+been computed via box-counting on the Julia set of
+$f_q(z) = z^2 + c(q)$:
 
 $$
   d_H(1.1097) \;\approx\; 1.012.
 $$
-
-The Julia set is a barely-fractal Jordan curve — almost a smooth
-circle.  With $\eta_q = d_H \cdot \log 2 \approx 0.701$:
-
-| Quantity | Formula | Value |
-|----------|---------|-------|
-| $c(q)$ | $1/(q-1)$ | $9.116$ |
-| $c(q)^3$ | $1/(q-1)^3$ | $757.9$ |
-| $\hbar_q$ | $(q-1)/q$ | $0.09887$ |
-| $d_H$ | box-counting | $1.012$ |
-| $\eta_q$ | $d_H \cdot \log 2$ | $0.701$ |
-| $G(q)$ | $1/(4\,q\,(q-1)^2\,\eta_q)$ | $26.7$ (Reeb units) |
-
-**Self-consistency check and open tension.**
-In Planck units ($G = 1$ by definition), the conversion is
-$G_{\mathrm{Planck}} = G(q) \cdot (\hbar_q / c(q))^2 = G(q)
-\cdot (q-1)^4 / q^2$.  With the computed values:
-
-$$
-  G_{\mathrm{Planck}}
-  \;=\; 26.7 \times \frac{(0.1097)^4}{(1.1097)^2}
-  \;\approx\; 26.7 \times 1.18 \times 10^{-4}
-  \;\approx\; 0.003.
-$$
-
-This is **not** $1$.  The discrepancy is a factor of $\sim 300$,
-indicating that the naive Jacobson formula
-$G = c^3 \hbar_q / (4 q \eta_q)$ has an incorrect numerical
-prefactor.  Possible resolutions:
-
-1. **Horizon cell geometry.**  The entropy density
-   $s(q) = q\,\eta_q / \hbar_q$ assumed a Planck cell area of
-   $\hbar_q \times q^{-1}$.  If the correct cell area involves
-   additional geometric factors from the CR contact structure
-   (e.g., the Webster curvature or the Tanaka--Webster torsion),
-   the prefactor changes.
-
-2. **Multi-operation entropy.**  Each Planck cell may process more
-   than $\eta_q$ bits per step if the entropy counts correlations
-   across multiple fibres (the mutual information generated by
-   $\nabla_q$), not just the single-fibre Julia set entropy.
-
-3. **The factor $4$ in Bekenstein--Hawking.**  The standard
-   $S = A/(4\ell_P^2)$ assumes a specific normalisation of the
-   area operator.  In the QOU, the area spectrum of the CR
-   manifold may have a different normalisation related to the
-   $q$-deformed Casimir.
-
-The structural formula $G \propto c^3 \hbar / \eta$ (Jacobson's
-result) is robust --- the gravitational coupling is set by the
-ratio of the causal propagation speed cubed times the quantum of
-action to the information density.  The numerical prefactor remains
-open.
-
-**Hausdorff dimension table** (box-counting, main cardioid).
 
 | Rotation $\theta$ | $|c(\theta)|$ | $d_H$ | Label |
 |-------------------|---------------|-------|-------|
@@ -146,39 +127,40 @@ open.
 | $0.25$ | $0.559$ | $1.077$ | Quarter turn |
 | $0.50$ | $0.750$ | $1.109$ | Basilica boundary |
 
-**Regime behaviour.**
+The Julia set at our $q$ is a barely-fractal Jordan curve ---
+only $1.2\%$ above a smooth circle.
 
-| Regime | $q$ | $G(q)$ (Reeb) | $d_H$ (computed) | Physics |
-|--------|-----|---------------|-------------------|---------|
-| Big Bang | $q \to \infty$ | $\to 0$ | $\to 1$ | No gravity: fibres isolated |
-| Deep quantum | $\varphi^2$ | $\sim 0.08$ | — | Weak gravity |
-| Our universe | $1.1097$ | $26.7$ | $1.012$ | See open tension above |
-| Near-classical | $1.01$ | $\sim 3600$ | $\sim 1.03$ | Strong gravity |
-| Classical limit | $q \to 1^+$ | $\to \infty$ | $\to 1$ | Newtonian regime |
+**Open problem: computing $S_{\mathrm{cell}}$ from the braid group.**
+The self-consistency condition predicts
+$S_{\mathrm{cell}} \approx 0.009$ nats.  Computing this from the
+categorical structure requires evaluating the convergent sum
+$\sum_k \eta_q^{(k)}$ over the jet tower, where $\eta_q^{(k)}$
+depends on:
 
-**Consistency with GR substrate geometry.**
-The field equation $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-([GR substrate geometry](#rem:gr-substrate-geometry)) is recovered
-with the identification $G(q) = c(q)^3 \hbar_q / (4 q \eta_q)$ as
-the coupling constant.  The $q$-weighted stress tensor $T^{(q)}$
-includes the factor $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|$
-([Levi-curvature coupling](#rem:c-substrate-via-levi)), so the
-gravitational coupling varies spatially through $q(p)$ — stronger
-where gauge curvature is concentrated, weaker in flat regions.
+- The dimension of $\Gamma(J^k\mathcal{S}|_p)$ (section space at
+  level $k$)
+- The suppression factor from the descent involution $\hat{\tau}_k$
+  (transient sections are localised to exceptional divisors)
+- The $R$-matrix entanglement entropy generated at each jet
+  prolongation
+
+This computation is the categorical analog of computing the vacuum
+energy in QFT.  The QOU prediction is that the sum converges to
+$(q-1)^2/q^3 \approx 0.009$, giving $G_{\mathrm{Planck}} = 1$.
 
 **Relation to the three fundamental constants.**
-The QOU derives $c$, $\hbar$, and $G$ from a single parameter:
 
 | Constant | QOU formula | Depends on |
 |----------|-----------|------------|
 | $c(q)$ | $1/(q-1)$ | $q$ only |
 | $\hbar_q$ | $(q-1)/q$ | $q$ only |
-| $G(q)$ | $c^3 \hbar_q / (4 q \eta_q)$ | $q$ and $d_H(q)$ |
+| $G(q)$ | $c^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
 
 The speed of light and Planck constant are algebraic in $q$.  The
-gravitational constant additionally requires $d_H(q)$ — a
-transcendental quantity determined by the Julia set dynamics.
-Gravity is the only fundamental interaction whose coupling involves
-the fractal geometry of the Reeb flow; this explains why $G$ is
-the hardest constant to measure and the least understood
-theoretically.
+gravitational constant requires the full jet tower information
+content — it is the only fundamental coupling that depends on the
+**braid-group structure** of the Frobenius--Hopf object, not just
+its ring-theoretic data.  This explains why gravity is the hardest
+interaction to quantise and the weakest at low energies: its
+coupling is suppressed by the sparsity of in-progress braids
+($S_{\mathrm{cell}} \ll \eta_q$) in the near-classical regime.

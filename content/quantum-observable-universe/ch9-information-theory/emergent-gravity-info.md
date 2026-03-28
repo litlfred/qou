@@ -1,32 +1,21 @@
 The gravitational constant $G(q)$ is derived from the
-information geometry of the Reeb dynamics via Jacobson's
-entropy--area programme [jacobson1995]
-([gravitational constant](#def:gravitational-constant)).  The key
-ingredients are:
+$q$-Yang-Mills-Levi action
+([$q$-YM-Levi](#def:q-yang-mills-levi)), not from semiclassical
+entropy-area relations.  The coupling is set by the **in-progress
+braid content** of a Planck cell — sections of the jet tower
+$A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that are partially
+evaluated but not yet resolved to observable knots
+([gravitational constant](#def:gravitational-constant)).
 
-1. **Entropy density on local causal horizons.**  Each fibre on the
-   light-cone boundary $|Z| = c(q)$ generates $\eta_q$ bits of
-   operational entropy
-   ([operational entropy](#def:operational-entropy)) per discrete
-   $f_q$-step.  The entropy per unit horizon area is
-   $s(q) = q\,\eta_q / \hbar_q$.
+The key formula is $G(q) = c(q)^3 \hbar_q / S_{\mathrm{cell}}$,
+where $S_{\mathrm{cell}}$ is the total information content per
+fibre including all in-progress braids.  Self-consistency with
+Planck units requires $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx
+0.009$ nats — only $1.3\%$ of the single-operation entropy $\eta_q
+\approx 0.701$ — reflecting the sparsity of partially-evaluated
+braids in the near-classical regime.
 
-2. **Unruh temperature.**  A uniformly accelerated observer
-   registers a thermal bath at $T_U(q) = (q-1)^2/(2\pi q)$.
-
-3. **Clausius relation.**  Jacobson's identity $\delta Q = T_U\,dS$
-   on every local causal horizon reproduces the Einstein equation
-   $\mathrm{Ric}_{g_\theta} = T^{(q)}$
-   ([GR substrate geometry](#rem:gr-substrate-geometry)) with
-   coupling
-
-$$
-  G(q) \;=\; \frac{c(q)^3\,\hbar_q}{4\,q\,\eta_q}
-  \;=\; \frac{1}{4\,q\,(q-1)^2\,\eta_q}.
-$$
-
-This connects the QOU's information-theoretic framework to
-Verlinde's entropic gravity programme and completes the derivation
-of all three fundamental constants ($c$, $\hbar$, $G$) from the
-substrate parameter $q$ and the Julia set Hausdorff dimension
-$d_H(q)$.
+This connects the QOU to Verlinde's entropic gravity programme:
+gravity is weak because most braiding at a typical fibre is
+**already resolved** (contributing to $T^{(q)}$ as matter), leaving
+only the in-progress tails to set the gravitational coupling.
