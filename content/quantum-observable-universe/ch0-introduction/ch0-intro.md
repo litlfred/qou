@@ -60,14 +60,49 @@ bordering on the mysterious" \cite{wigner1960}.
 
 The book is organised as follows.
 
-[Chapters 1 and 2](#chap:qu) build the categorical framework from
-the ground up.  Chapter 1 introduces rigid monoidal categories,
+[Chapter 1](#chap:qu) introduces rigid monoidal categories,
 fibre functors, Frobenius structure, and the dagger involution,
 arriving at the definition of a *quantum universe* — the
-algebraic skeleton.  Chapter 2 adds the observability,
-measurability, and volume axioms that make it a *quantum
-observable universe*, then develops the geometry: Tannaka–Krein
-reconstruction of $\mathrm{SU}_2(R)$, the categorical action,
+algebraic skeleton encoded in the triple
+
+$$
+  (\mathbf{C},\; A,\; \tau)
+$$
+
+where:
+
+- $\mathbf{C}$ is a rigid monoidal category — the arena of
+  morphisms and compositions that encodes all structural
+  relationships,
+- $A$ is the Frobenius algebra object in $\mathbf{C}$ — the
+  algebraic substrate carrying multiplication, comultiplication,
+  and the self-duality $A \cong A^{\vee}$,
+- $\tau$ is the fibre functor $\tau : \mathbf{C} \to \mathbf{Vect}_R$
+  — the faithful exact monoidal functor that grounds abstract
+  morphisms in concrete linear algebra.
+
+[Chapter 2](#chap:qou) adds the observability, measurability,
+and volume axioms that promote the quantum universe to a
+*quantum observable universe*, encoded in the archimedean tuple
+
+$$
+  (\mathbf{C},\; \theta,\; G,\; \mathcal{S})
+$$
+
+where:
+
+- $\mathbf{C}$ is the rigid monoidal category from Chapter 1,
+- $\theta$ is the quantum connection — the $q$-deformed
+  covariant derivative that encodes parallel transport and
+  curvature on the state bundle,
+- $G = \mathrm{SU}_2(R)$ is the symmetry group, not assumed but
+  *reconstructed* via Tannaka–Krein duality from the rigid
+  monoidal structure of $\mathbf{C}$,
+- $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$ is
+  the state bundle — the associated bundle whose fibres carry
+  the quantum states.
+
+Chapter 2 then develops the geometry: the categorical action,
 and the three variational equations (Einstein, Yang–Mills,
 and transport).  The categorical action takes the form
 
