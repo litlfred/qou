@@ -39,23 +39,21 @@ noncomputable def skeinCoulombFactor (eta : ℝ) : ℝ :=
 theorem skeinCoulombFactor_ge_one (eta : ℝ) (heta : 0 < eta) :
     1 ≤ skeinCoulombFactor eta := by
   unfold skeinCoulombFactor
-  -- For η > 0: let x = 2πη > 0.  We need x/(1 - e^{-x}) ≥ 1,
-  -- i.e. x ≥ 1 - e^{-x}, i.e. e^{-x} ≥ 1 - x.
-  -- Mathlib's `add_one_le_exp` gives 1 + t ≤ e^t for all real t.
-  -- Setting t = -x: 1 - x ≤ e^{-x}, which is equivalent.
-  -- The denominator 1 - e^{-x} > 0 since e^{-x} < 1 for x > 0.
-  --
-  -- Full formalization requires assembling: div_le_iff, sub_pos,
-  -- Real.exp_lt_one_of_neg (or exp_neg_lt_one), and add_one_le_exp.
-  -- These are available in Mathlib.Analysis.SpecialFunctions.Exp but
-  -- the bookkeeping for the positivity side-conditions is nontrivial.
-  --
-  -- Key Mathlib lemmas needed:
-  --   Real.add_one_le_exp : ∀ x : ℝ, x + 1 ≤ exp x
-  --   Real.exp_pos : ∀ x : ℝ, 0 < exp x
-  --   Real.exp_lt_one_of_neg : x < 0 → exp x < 1
-  -- Ref: [manuscript] §6/skein-coulomb-enhancement
-  sorry
+  -- Let x = 2πη > 0.  We need x/(1 - e^{-x}) ≥ 1, i.e. x ≥ 1 - e^{-x}.
+  set x := 2 * Real.pi * eta with hx_def
+  have hpi : 0 < Real.pi := Real.pi_pos
+  have hx_pos : 0 < x := by positivity
+  -- Denominator: 1 - e^{-x} > 0 since e^{-x} < 1 for x > 0
+  have hexp_neg : Real.exp (-x) < 1 := by
+    rw [Real.exp_lt_one_iff_neg]; linarith
+  have hdenom_pos : 0 < 1 - Real.exp (-x) := by linarith
+  -- Rewrite: 1 ≤ x/(1-e^{-x}) ↔ 1-e^{-x} ≤ x (since denom > 0)
+  rw [le_div_iff hdenom_pos]
+  -- Need: 1 - e^{-x} ≤ x, equivalently 1 - x ≤ e^{-x}.
+  -- Mathlib: add_one_le_exp gives t + 1 ≤ e^t. Set t = -x:
+  -- -x + 1 ≤ e^{-x}, i.e. 1 - x ≤ e^{-x}, i.e. 1 - e^{-x} ≤ x.
+  have h := Real.add_one_le_exp (-x)
+  linarith
 
 /-- At η = 0 the formula gives 0/0, which Lean evaluates to 0 by
     convention (division by zero returns 0 in ℝ).  The physically
@@ -74,22 +72,16 @@ theorem skeinCoulombFactor_at_zero :
 theorem skeinCoulombFactor_limit_one :
     ∀ ε > 0, ∃ δ > 0, ∀ eta : ℝ, 0 < eta → eta < δ →
     |skeinCoulombFactor eta - 1| < ε := by
-  -- Proof sketch (L'Hôpital):
-  --   lim_{η→0⁺} 2πη/(1 - e^{-2πη})
-  --   = lim 2π / (2π · e^{-2πη})    [L'Hôpital, both num/denom → 0]
-  --   = 2π / (2π · 1) = 1
+  -- For small x = 2πη > 0:
+  --   F(η) = x/(1 - e^{-x})
+  --   1 - e^{-x} = x - x²/2 + ... so F ≈ x/x = 1 for small x.
+  -- More precisely: x ≤ 1-e^{-x} + x²/2 (from Taylor) gives
+  --   |F - 1| = |x - (1-e^{-x})| / (1-e^{-x}) ≤ x²/2 / (x - x²/2) ≤ x for x < 1.
+  -- So δ = ε/(2π) works.
   --
-  -- Formalizing this epsilon-delta requires:
-  --   1. Taylor expansion: e^{-x} = 1 - x + x²/2 - ... so
-  --      1 - e^{-x} = x - x²/2 + ... and x/(1-e^{-x}) = 1/(1 - x/2 + ...)
-  --   2. For small x > 0: |x/(1-e^{-x}) - 1| ≤ C·x for some C
-  --   3. Mathlib's `Real.exp_bound` or `Real.exp_approx_succ` could
-  --      provide the Taylor remainder bounds needed
-  --   4. Alternatively, Mathlib.Analysis.SpecificLimits or
-  --      Mathlib.Topology.Algebra.Order.LiminfLimsup may help
-  --
-  -- This is beyond simple tactic automation; requires substantial
-  -- real-analysis infrastructure.
+  -- Requires: Real.exp_bound (Taylor remainder), Real.add_one_le_exp,
+  -- and arithmetic on the remainder. The bookkeeping for assembling
+  -- these bounds is substantial but the mathematics is elementary.
   -- Ref: [manuscript] §6/skein-coulomb-enhancement
   sorry
 
