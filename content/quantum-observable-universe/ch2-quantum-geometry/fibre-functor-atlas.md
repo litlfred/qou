@@ -4,9 +4,9 @@ with $G = \mathrm{Aut}^{\otimes}(\tau)$
 ([Tannaka–Krein](#rem:tannaka-krein-overview)).  Then:*
 
 1. **(Charts.)** *Each fibre functor
-   $\omega \colon \mathbf{C} \to \mathbf{Vect}_k$ is an
+   $\omega \colon \mathbf{C} \to \mathbf{Vect}_R$ is an
    affine chart: a concrete realisation of the abstract
-   categorical data as linear algebra over $k$.  The contact
+   categorical data as linear algebra over $R$.  The contact
    affine chart on $\mathbb{P}(V)$
    ([contact affine chart](#def:contact-affine-chart)) is the
    chart associated to the canonical fibre functor $\tau$.*
