@@ -6,14 +6,14 @@ trefoil chain.
 
 **The electron link.**
 
-A neutral atom with $Z$ protons has $p$ electrons, each a
+A neutral atom with $Z$ protons has $Z$ electrons, each a
 trefoil $T_{2,3}$.  The full atom
 ([stable nucleus](#def:stable-nucleus)) is
 
 $$
   \mathcal{A}(p, n)
   \;=\;
-  \underbrace{p\,\mathfrak{p} \bowtie n\,\mathfrak{n}}_{\text{nucleus}}
+  \underbrace{Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}}_{\text{nucleus}}
   \;\bowtie\;
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
 $$

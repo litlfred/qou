@@ -1,7 +1,7 @@
 The **Skein binding Lagrangian** is not a new Lagrangian: it is
 the categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
 ([canonical action](#def:qou-canonical-action)) evaluated on the
-field configuration $\psi = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$.
+field configuration $\psi = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$.
 
 The categorical Lagrangian
 ([categorical Lagrangian](#def:categorical-lagrangian))
@@ -13,7 +13,7 @@ multi-nucleon Hopf link, the Skein crossing asymmetry
 splits the gauge sector by crossing chirality, producing the
 familiar nuclear binding terms.
 
-Let $L = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$ be a multi-nucleon
+Let $L = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$ be a multi-nucleon
 Hopf link with $Z$ protons and $n$ neutrons, $A = Z + N$.  Evaluating
 $\mathcal{S}_q$ on $L$ gives the **Skein binding Lagrangian**
 

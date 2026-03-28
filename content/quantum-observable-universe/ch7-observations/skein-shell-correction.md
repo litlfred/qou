@@ -30,7 +30,7 @@ structure.
 **Conjecture: shell correction from closed sub-links.**
 
 *For the multi-nucleon link
-$\mathcal{N}(Z, N) = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$,
+$\mathcal{N}(Z, N) = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$,
 the Skein polynomial $J_{\mathcal{N}}(q)$ factors into a
 product of Skein polynomials of closed sub-links at specific
 values of $(p, n)$.  The shell correction is:*

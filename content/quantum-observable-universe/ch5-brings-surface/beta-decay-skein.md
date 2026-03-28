@@ -9,7 +9,7 @@ relation acting on the braid word of a nucleus.
 A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
 Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
-$\bar{\mathcal{N}}(p, n)$ in the Hecke algebra $H_{3A}(q)$
+$\bar{\mathcal{N}}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
@@ -25,11 +25,11 @@ quark flavours of the two strands: $u$-$u$ (positive), $d$-$d$
 
 **Definition ($\beta^-$ decay).**
 *A $\beta^-$ transition is a single Skein crossing change*
-$\mathfrak{d} \to \mathfrak{u}$ *in the normal form* $\bar{\mathcal{N}}(p, n)$*,*
+$\mathfrak{d} \to \mathfrak{u}$ *in the normal form* $\bar{\mathcal{N}}(Z, N)$*,*
 *followed by re-reduction to the daughter normal form:*
 
 $$
-  \bar{\mathcal{N}}(p, n)
+  \bar{\mathcal{N}}(Z, N)
   \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
   \bar{\mathcal{N}}(p + 1, \, n - 1)
   \;\sqcup\;
@@ -43,7 +43,7 @@ matches $\beta^-$).
 In the Skein relation:
 
 $$
-  q \, [\bar{\mathcal{N}}(p, n)]
+  q \, [\bar{\mathcal{N}}(Z, N)]
   \;-\;
   q^{-1} [\bar{\mathcal{N}}(p+1, n-1)]
   \;=\;
@@ -61,7 +61,7 @@ $$
 Skein crossing change $\mathfrak{u} \to \mathfrak{d}$:
 
 $$
-  \bar{\mathcal{N}}(p, n)
+  \bar{\mathcal{N}}(Z, N)
   \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
   \bar{\mathcal{N}}(p - 1, \, n + 1)
   \;\sqcup\;
@@ -71,7 +71,7 @@ $$
 The mirror Skein relation (with $q \leftrightarrow q^{-1}$):
 
 $$
-  q^{-1} [\bar{\mathcal{N}}(p, n)]
+  q^{-1} [\bar{\mathcal{N}}(Z, N)]
   \;-\;
   q \, [\bar{\mathcal{N}}(p-1, n+1)]
   \;=\;
@@ -132,7 +132,7 @@ between parent and daughter:
 $$
   Q_\beta
   \;=\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(p, n)]
+  \mathcal{S}_q[\bar{\mathcal{N}}(Z, N)]
   \;-\;
   \mathcal{S}_q[\bar{\mathcal{N}}(p \pm 1, n \mp 1)]
   \;-\;
@@ -140,7 +140,7 @@ $$
 $$
 
 The parent and daughter masses are **not assumed equal**.
-They differ because the normal forms $\bar{\mathcal{N}}(p, n)$
+They differ because the normal forms $\bar{\mathcal{N}}(Z, N)$
 and $\bar{\mathcal{N}}(p \pm 1, n \mp 1)$ have different
 crossing structures, different R2 step counts, and different
 Markov traces.  The difference is small (order $Q/M \sim 10^{-5}$
