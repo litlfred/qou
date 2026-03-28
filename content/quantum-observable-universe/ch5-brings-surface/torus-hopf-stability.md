@@ -6,7 +6,7 @@ linked by the Hopf link $\mathcal{L}_H$ satisfies the stability
 condition
 
 $$
-  E_{\mathrm{cross}}(H) \;<\; 0
+  \mathfrak{E}_{\mathrm{cross}}(H) \;<\; 0
 $$
 
 and is therefore a hadron in the sense of
@@ -15,7 +15,7 @@ and is therefore a hadron in the sense of
 *Proof sketch.*
 The torus knot generators $T_{m,n} \in \mathcal{G}$ have
 meridional winding $m \in \{2, 3\}$ (forced by the genus-$4$
-bound).  For any triple $[K_1, K_2, K_3]_c \bowtie \mathcal{L}_H$
+bound).  For any triple $[K_1, K_2, K_3]_p \bowtie \mathcal{L}_H$
 drawn from $\mathcal{G}$:
 
 1. The Hopf link $\mathcal{L}_H$ contributes a negative baseline
@@ -34,14 +34,14 @@ drawn from $\mathcal{G}$:
 
 In particular:
 
-- **Proton** $\mathfrak{p} = [T_{2,3}, T_{2,3}, \sigma(T_{2,3})]_c
+- **Proton** $\mathfrak{p} = [T_{2,3}, T_{2,3}, \sigma(T_{2,3})]_p
   \bowtie \mathcal{L}_H$: Coulomb charge $Q(\mathfrak{p}) = +1$
   ([proton](#def:categorical-proton)).  The positive Coulomb
   correction reduces binding but does not overcome it:
-  $E_{\mathrm{cross}}(\mathfrak{p}) < 0$.
+  $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.
 
 - **Neutron** $\mathfrak{n} = [T_{2,3}, \sigma(T_{2,3}),
-  \sigma(T_{2,3})]_c \bowtie \mathcal{L}_H$: Coulomb charge
+  \sigma(T_{2,3})]_p \bowtie \mathcal{L}_H$: Coulomb charge
   $Q(\mathfrak{n}) = 0$
   ([neutron](#def:categorical-neutron)).  No Coulomb correction;
   the strong baseline binding is undiminished.

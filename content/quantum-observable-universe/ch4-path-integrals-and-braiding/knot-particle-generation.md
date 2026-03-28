@@ -44,10 +44,10 @@ $$
 Mass arises *entirely* through the linking operations below.
 
 **Operation 1: Hopf linking on the exceptional divisor.**
-Let $E_c \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$ be the
+Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$ be the
 exceptional divisor at a blow-up point $c$.  The Hopf fibration
-$S^3 \to S^2 \cong E_c$ makes the Hopf link
-$\mathcal{L}_{\mathrm{Hopf}}$ the *canonical linking* on $E_c$.
+$S^3 \to S^2 \cong \mathcal{S}_c$ makes the Hopf link
+$\mathcal{L}_{\mathrm{Hopf}}$ the *canonical linking* on $\mathcal{S}_c$.
 Given two generators $T_{m_1,n_1}$ and $T_{m_2,n_2}$, their
 **Hopf linking** is
 
@@ -58,14 +58,14 @@ $$
   T_{m_1,n_1} \mathbin{\cup_{\mathrm{Hopf}}} T_{m_2,n_2}
 $$
 
-producing a two-component link in $S^3$ fibered over $E_c$.
+producing a two-component link in $S^3$ fibered over $\mathcal{S}_c$.
 This is the colorless ($U(1)$) binding operation:
 
-- **Degree 0**: A single unknot $T_{1,0}$ sits on $E_c$ with
+- **Degree 0**: A single unknot $T_{1,0}$ sits on $\mathcal{S}_c$ with
   trivial braiding — the neutrino at rest.
 - **Degree 1**: An excited unknot $T_{1,0}$ at Reeb degree
   $\deg\alpha_V = 1$ acquires a unit of vertical charge.
-- **Linking**: Two such unknots Hopf-link on $E_c$, producing the
+- **Linking**: Two such unknots Hopf-link on $\mathcal{S}_c$, producing the
   simplest non-trivial bound state.  The Hopf link contributes a
   binding energy $\mathcal{M}(\mathcal{L}_{\mathrm{Hopf}})$ that
   is invisible to the $\mathbb{P}^1(\mathbb{C})$ base but

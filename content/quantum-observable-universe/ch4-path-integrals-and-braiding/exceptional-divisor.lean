@@ -19,7 +19,7 @@ namespace QOU
     ψ ∈ [0, 2π) is the azimuthal angle.
 
     The fibre point in ℝ³ is given by:
-      E_p(φ, ψ) = O(p) + R(sin φ (cos ψ T₁ + sin ψ T₂) - cos φ N)
+      𝒮_p(φ, ψ) = O(p) + R(sin φ (cos ψ T₁ + sin ψ T₂) - cos φ N)
 
     where O(p) = p + R·N(p) is the centre, N(p) the outward normal,
     and (T₁, T₂) a positively-oriented tangent frame.

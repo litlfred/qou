@@ -8,5 +8,6 @@ export default remark({
     "ex:q-reeb-flow",
     "rem:brings-smoothness",
     "rem:heisenberg-commutator",
+    "prop:vertex-is-exceptional-divisor",
   ],
 });

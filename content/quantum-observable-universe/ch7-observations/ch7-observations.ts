@@ -36,6 +36,18 @@ export default chapter({
       ],
     }),
 
+    // ── Substrate parameter from lepton masses ────────────────────────
+    section({
+      title: "Substrate Parameter from Lepton Masses",
+      label: "sec:substrate-from-leptons",
+      blocks: [
+        "skein-mass-relation",
+        "skein-mass-relation-proof",
+        "knot-volumes-verification",
+        "building-block-knots",
+      ],
+    }),
+
     // ── Mass predictions vs CODATA ───────────────────────────────────
     section({
       title: "Mass Predictions and CODATA Comparison",
@@ -47,6 +59,8 @@ export default chapter({
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
+        "terminal-resolution-proof",
+        "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
       ],
     }),
@@ -57,8 +71,14 @@ export default chapter({
       label: "sec:beta-decay-observations",
       blocks: [
         "hadron-half-life-verification",
+        "hadron-half-life-regimes",
         "half-life-shell-worked",
         "half-life-as-q-probe",
+        "tritium-decay-knot-equation",
+        "nitrogen-14-threading",
+        "trace-ratio-observable",
+        "shell-threading-conjecture",
+        "skein-shell-correction",
       ],
     }),
 
@@ -73,6 +93,17 @@ export default chapter({
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
+      ],
+    }),
+
+    // ── Nuclear stability and the valley ────────────────────────────────
+    section({
+      title: "Nuclear Stability",
+      label: "sec:nuclear-stability-observations",
+      blocks: [
+        "valley-table",
+        "golden-ratio-degeneration",
+        "hydrogen-knot-structure",
       ],
     }),
 

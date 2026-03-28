@@ -6,14 +6,14 @@ trefoil chain.
 
 **The electron link.**
 
-A neutral atom with $p$ protons has $p$ electrons, each a
+A neutral atom with $Z$ protons has $Z$ electrons, each a
 trefoil $T_{2,3}$.  The full atom
 ([stable nucleus](#def:stable-nucleus)) is
 
 $$
   \mathcal{A}(p, n)
   \;=\;
-  \underbrace{p\,\mathfrak{p} \bowtie n\,\mathfrak{n}}_{\text{nucleus}}
+  \underbrace{Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}}_{\text{nucleus}}
   \;\bowtie\;
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
 $$
@@ -90,7 +90,7 @@ The ionization energy of the outermost electron is
 
 $$
   E_{\mathrm{ion}} \;\propto\;
-  \frac{E_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
+  \frac{\mathfrak{E}_{\mathrm{cross}}(\text{electron--nucleus link})}{n^2}
 $$
 
 where $n$ is the shell number.  The atom becomes unstable

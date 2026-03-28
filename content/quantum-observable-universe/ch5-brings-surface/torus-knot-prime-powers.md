@@ -15,8 +15,8 @@ Embeddability requires $p^k - 1 \leq 4$, i.e., $p^k \leq 5$.
 
 | $k$ | Knot | Genus $= 2^k - 1$ | Crossings | Embeddable? | Assignment |
 |-----|------|--------------------|-----------|-------------|------------|
-| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $u$ |
-| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Top quark $t$ |
+| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $\mathfrak{u}$ |
+| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Top quark $\mathfrak{t}$ |
 | $3$ | $T_{3,8}$ | $7$ | $21$ | **No** | Excluded |
 | $4$ | $T_{3,16}$ | $15$ | $45$ | **No** | Excluded |
 

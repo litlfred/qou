@@ -224,7 +224,7 @@ amphichiral ($4_1 \cong \overline{4_1}$), so the muon $\mu^-$ and
 antimuon $\mu^+$ are the same knot type, distinguished only by
 orientation — like the neutrino but with non-trivial topology.
 
-Also at step 4: the **Borromean baryon** $\mathcal{B}_3(u, u, d)$.
+Also at step 4: the **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$.
 Although each constituent quark ($T_{2,3}$ or $\overline{T_{2,3}}$)
 has crossing number $3$, the three-component Borromean linking
 requires the quartic jet to resolve the inter-component holonomy.

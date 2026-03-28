@@ -16,7 +16,7 @@ $$
 At $q = 1$: $p_q(\beta) \to w(\beta)$, the classical writhe
 (sum of crossing signs).
 
-At $q = 1.1097$: each positive crossing contributes
+At the substrate parameter $q$: each positive crossing contributes
 $[1]_q = 1$ and each negative crossing contributes
 $[-1]_q = -1$, but with $q$-weighting that distinguishes
 the two.
@@ -51,7 +51,7 @@ where $\rho: B_n \to H_n(q)$ is the Hecke representation.
 
 **Building block values.**
 
-| Knot | Braid word | Writhe $w$ | $p_q(1.1097)$ |
+| Knot | Braid word | Writhe $w$ | $p_q(q_0)$ |
 |------|-----------|:----------:|:-------------:|
 | $0_1$ (unknot) | $e$ | $0$ | $0$ |
 | $3_1$ (trefoil) | $\sigma_1^3$ | $+3$ | $+3$ |

@@ -20,7 +20,7 @@ $$
 | Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |----------|-------------|-------------|-----------|----------------|--------|
 | $\nu$ | $T_{1,0}$ | $\operatorname{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
-| $e^-$ | $T_{2,3}$ | $\mathcal{S}_{uu}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
+| $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
 | $\mu^-$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $\operatorname{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
 
 The electron mass is an input (it fixes $\mu_u$ through the pair
@@ -32,9 +32,9 @@ to six significant figures with $q = 1.10997$.
 
 | Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |----------|-------------|-------------|-----------|----------------|--------|
-| Proton | $[u,u,d]_c \bowtie \mathcal{L}_H$ | $\mathcal{S}_{uu} + 2\mathcal{S}_{ud}$ | $938.272$ | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_c \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{ud} + \mathcal{S}_{dd}$ | $939.565$ | $939.565$ | CODATA |
-| $n$--$p$ splitting | | $\mathcal{S}_{dd} - \mathcal{S}_{uu}$ | $1.293$ | $1.293$ | CODATA |
+| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ | $939.565$ | CODATA |
+| $n$--$p$ splitting | | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$ | $1.293$ | $1.293$ | CODATA |
 | $\pi^{\pm}$ | $u \bowtie \overline{d}$ | $\mathcal{S}_{u\bar{d}}(q)$ | $139.570$ | $139.570$ | PDG |
 | $K^{\pm}$ | $u \bowtie \overline{s}$ | $\mathcal{S}_{u\bar{s}}(q)$ | $493.677$ | $493.677$ | PDG |
 
@@ -42,7 +42,7 @@ to six significant figures with $q = 1.10997$.
 
 | Nucleus | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |---------|-------------|-------------|-----------|----------------|--------|
-| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta E_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
+| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta \mathfrak{E}_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
 | Binding ($D$) | | $\Delta\text{Skein}$ | $2.224$ | $2.225$ | CODATA |
 | ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_9) - \Delta E$ | $2808.39$ | $2808.39$ | AME2020 |
 | ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$ | $3727.38$ | $3727.38$ | AME2020 |

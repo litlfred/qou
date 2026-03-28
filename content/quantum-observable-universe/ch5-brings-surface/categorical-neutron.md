@@ -14,7 +14,7 @@ $$
 $$
   m_{\mathfrak{n}}
   \;=\;
-  2\,\mathcal{S}_{ud}(q) + \mathcal{S}_{dd}(q)
+  2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
 At $q = 1.10997$: $m_{\mathfrak{n}} = 939.565$ MeV.  The
@@ -23,7 +23,7 @@ proton--neutron mass splitting is
 $$
   m_{\mathfrak{n}} - m_{\mathfrak{p}}
   \;=\;
-  \mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
+  \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \;\approx\; 1.293 \text{ MeV}
 $$
 

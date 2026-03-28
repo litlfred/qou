@@ -17,7 +17,7 @@ complexity hierarchy within $\mathcal{G}$.
 The current mapping uses:
 
 - $T_{1,0}$: neutrino $\nu$ (genus $0$)
-- $T_{2,3}$: electron $e^-$, up quark $u$ (genus $1$)
+- $T_{2,3}$: electron $e^-$, up quark $\mathfrak{u}$ (genus $1$)
 - $T_{2,5}$: bottom quark $b$, tau lepton (via $T_{2,5} \bowtie T_{1,0}$) (genus $2$)
 - $T_{2,7}$: charm quark $c$ (genus $3$)
 - $T_{3,4}$: top quark $t$ (genus $3$)

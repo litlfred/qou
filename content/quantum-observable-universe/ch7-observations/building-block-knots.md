@@ -76,16 +76,16 @@ The mass of a knot $K$ is:
 
 $$
   m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
-  \;+\; \sum_{\text{crossings}} E_{\times}(q)
+  \;+\; \sum_{\text{crossings}} \mathfrak{E}_{\times}(q)
 $$
 
 where $\hbar_q = 1 - q^{-1}$ and
-$E_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ is the crossing
+$\mathfrak{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ is the crossing
 energy at each self-crossing.
 
 - **Torus knots** ($\mathrm{Vol} = 0$): mass comes entirely
   from crossing energy.  The trefoil has 3 crossings, so
-  $m_{e} = 3 \cdot E_{\times}(q) \cdot \mu_0$ where $\mu_0$ is
+  $m_{e} = 3 \cdot \mathfrak{E}_{\times}(q) \cdot \mu_0$ where $\mu_0$ is
   the mass scale.
 - **Hyperbolic knots** ($\mathrm{Vol} > 0$): mass has both
   a volume term and a crossing term.  The figure-eight has
@@ -124,31 +124,31 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 | Symbol | Formula | Value at $q = 1.1097$ |
 |--------|---------|:--------------------:|
 | $\hbar_q$ | $1 - q^{-1}$ | $0.09910$ |
-| $E_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
+| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
 | $s$ (Skein amplitude) | $q^{1/2} - q^{-1/2}$ | $0.05049$ |
 | $[2]_q$ | $q + q^{-1}$ | $2.01099$ |
 
 **Categorical action per building block:**
 
-| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $E_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
+| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathfrak{E}_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
 |----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
-| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,E_{\times}$ | $3\,E_{\times}\,\mu_0$ |
-| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,E_{\times}$ | $3\,E_{\times}\,\mu_0$ |
-| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,E_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,E_{\times}$ | $207.1\,\mu_0$ |
-| $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,E_{\times}$ | (bound; see below) |
-| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,E_{\times}$ | $5\,E_{\times}\,\mu_0$ |
-| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,E_{\times}$ | $8\,E_{\times}\,\mu_0$ |
+| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathfrak{E}_{\times}$ | $3\,\mathfrak{E}_{\times}\,\mu_0$ |
+| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathfrak{E}_{\times}$ | $3\,\mathfrak{E}_{\times}\,\mu_0$ |
+| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,\mathfrak{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathfrak{E}_{\times}$ | $207.1\,\mu_0$ |
+| $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathfrak{E}_{\times}$ | (bound; see below) |
+| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathfrak{E}_{\times}$ | $5\,\mathfrak{E}_{\times}\,\mu_0$ |
+| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,\mathfrak{E}_{\times}$ | $8\,\mathfrak{E}_{\times}\,\mu_0$ |
 | Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
 | Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
 
 The neutron--proton mass difference $\delta_{\mathrm{Skein}} =
-\mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q) \approx 1.293$ MeV
-arises from the pair Skein asymmetry between $dd$ and $uu$
+\mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) \approx 1.293$ MeV
+arises from the pair Skein asymmetry between $\mathfrak{d}\mathfrak{d}$ and $\mathfrak{u}\mathfrak{u}$
 crossings — a pure function of $q$.
 
 **Key consequence for beta decay.**  The electron's categorical
-action $S_q(e) = 3\,E_{\times}(q) \cdot \mu_0$, the neutrino's
+action $S_q(e) = 3\,\mathfrak{E}_{\times}(q) \cdot \mu_0$, the neutrino's
 $S_q(\nu) = 0$, and the nuclear actions $S_q(\mathcal{N})$
 from the Markov trace product are all computable from $q$.
 The $\mathcal{Q}_q$-value

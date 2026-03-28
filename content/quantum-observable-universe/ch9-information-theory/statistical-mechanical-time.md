@@ -43,8 +43,10 @@ fluctuations are $\sim 3\%$ and time is effectively smooth.
 **Exceptional divisor dynamics at each scale.**
 
 At the Big Bang ($t_P = 1$): each Planck unit contains exactly
-one braiding evaluation on the exceptional divisor.  The
-link-length resolution increases by exactly one crossing per
+one braiding evaluation on the exceptional divisor --- one Hecke
+generator applied within the Reeb bundle $S^3 \to \mathcal{S}_p$
+([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).
+The link-length resolution increases by exactly one crossing per
 tick.  The dynamics is fully resolved — the Julia set iteration
 $f_q$ is applied once, and the orbit structure of $f_q$ over
 $\mathbb{F}_\pp$ is visible step by step.
@@ -62,7 +64,7 @@ $I_P = n_R \cdot h(q)$, not the per-step information $h(q)$.
 At the classical limit ($t_P \to \infty$): infinitely many
 iterations compose each unit.  The Julia set dynamics becomes
 the continuous Reeb flow, the orbit structure becomes the
-smooth invariant measure $\mathcal{E}_J$, and the
+smooth invariant measure $\mu_J$, and the
 per-operation information $h(q) \to 0$ while the aggregate
 $I_P = t_P \cdot h(q)$ remains finite — the information rate
 of the smooth flow.

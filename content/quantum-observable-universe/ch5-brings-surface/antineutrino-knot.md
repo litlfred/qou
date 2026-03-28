@@ -29,7 +29,7 @@ orientation.
 
 **Role in beta decay.**
 
-In $\beta^-$ decay, the $L_0^{-}$ smoothing of the $d \to u$
+In $\beta^-$ decay, the $L_0^{-}$ smoothing of the $\mathfrak{d} \to \mathfrak{u}$
 crossing change produces:
 
 $$

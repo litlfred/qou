@@ -7,7 +7,7 @@ $$
 $$
 
 parametrises the valley of stability as a rational curve in the
-$(p, n)$-plane, where $p$ is the proton number and $n = A - p$
+$(p, n)$-plane, where $Z$ is the proton number (atomic number) and $N = A - Z$
 (neutron number).  The lattice points
 $(p, n) \in \mathbb{N}^2$ on this curve are the stable nuclei.
 
