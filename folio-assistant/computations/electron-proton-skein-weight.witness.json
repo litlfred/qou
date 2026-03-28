@@ -1,0 +1,95 @@
+{
+  "computation": "electron-proton-skein-weight",
+  "timestamp": "2026-03-27T19:00:29.032416+00:00",
+  "description": "Computation of C_geom from the Skein evaluation of the electron-proton Hopf link. C_geom = tanh(ln q) / \u03b1 where \u03b1 = 1/137.036 is the fine structure constant.",
+  "q": 1.10997,
+  "target": {
+    "C_geom": 14.245722807244382,
+    "alpha": 0.0072973525205055605
+  },
+  "q_dependent_exact": {
+    "tanh_ln_q": 0.10395606123386834,
+    "note": "This is the EM/strong ratio, exact from q alone."
+  },
+  "jones_polynomials": {
+    "J_unknot": 1.0,
+    "J_trefoil": 0.9733737274089982,
+    "J_mirror_trefoil": 0.9595838130637528,
+    "J_figure_eight": 1.0328044571735824,
+    "J_hopf": -2.3515613291685145
+  },
+  "quantum_integers": {
+    "[2]_q": 2.010895250231988,
+    "[3]_q": 3.0436997074055707,
+    "[5]_q": 5.220408201455185,
+    "[7]_q": 7.625247006446033
+  },
+  "formula_candidates": {
+    "[2]_q \u00d7 [3]_q": {
+      "value": 6.120561284754354,
+      "alpha": 0.016984726791775043,
+      "1/alpha": 58.87642540616291,
+      "error_pct": 57.035796866397945
+    },
+    "[2]_q\u00b2": {
+      "value": 4.04369970740557,
+      "alpha": 0.025708155589171174,
+      "1/alpha": 38.89816196776176,
+      "error_pct": 71.61463997215203
+    },
+    "[2]_q \u00d7 [7]_q / [1]_q": {
+      "value": 15.333572987108013,
+      "alpha": 0.006779637160971636,
+      "1/alpha": 147.50051901843713,
+      "error_pct": 7.636328423507057
+    },
+    "[3]_q \u00d7 [5]_q / [1]_q": {
+      "value": 15.889354915306788,
+      "alpha": 0.006542497274934915,
+      "1/alpha": 152.84683477532639,
+      "error_pct": 11.537723499902496
+    },
+    "[2]_q\u00b2 \u00d7 [3]_q / [1]_q": {
+      "value": 12.307807616266325,
+      "alpha": 0.008446350842897256,
+      "1/alpha": 118.39432419989096,
+      "error_pct": 13.603487988637323
+    },
+    "[5]_q \u00d7 [3]_q / [1]_q": {
+      "value": 15.889354915306788,
+      "alpha": 0.006542497274934915,
+      "1/alpha": 152.84683477532639,
+      "error_pct": 11.537723499902496
+    },
+    "\u03a3 [2j+1]_q for j=0..2": {
+      "value": 9.264107908860755,
+      "alpha": 0.011221378491763731,
+      "1/alpha": 89.11561095047102,
+      "error_pct": 34.969197181418735
+    },
+    "(1/2) \u03a3 [2j+1]_q for j=0..3": {
+      "value": 8.444677457653395,
+      "alpha": 0.012310246513874034,
+      "1/alpha": 81.23314174683412,
+      "error_pct": 40.72131283251545
+    },
+    "[2]_q\u2074 / [3]_q": {
+      "value": 5.372247230529127,
+      "alpha": 0.019350572818598564,
+      "1/alpha": 51.67805673632888,
+      "error_pct": 62.288700242032114
+    },
+    "Vol(B\u2083) / (\u210f_q \u00d7 [2]_q)": {
+      "value": 36.78029839912442,
+      "alpha": 0.002826406140205298,
+      "1/alpha": 353.8061942956876,
+      "error_pct": 158.1848523714116
+    }
+  },
+  "status": "OPEN \u2014 the correct formula for C_geom requires the Reshetikhin-Turaev invariant of the satellite link Hopf(T_{2,3}, B_3). Multiple q-integer formulas are tested above; the correct one must come from the TQFT evaluation, not numerology.",
+  "required_tools": [
+    "SageMath with QuantumKnotInvariants (colored Jones)",
+    "SnapPy for link diagram of Hopf(trefoil, Borromean)",
+    "Direct Reshetikhin-Turaev evaluation"
+  ]
+}

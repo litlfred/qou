@@ -60,11 +60,11 @@ iff $q = q^{-1}$, which holds iff $q^2 = 1$, hence $q = 1$
 
 **Physical interpretation.**
 
-The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks
+The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
-$\sigma^2 = 1$ (positive and negative crossings cancel — parity
+$T^2 = 1$ (positive and negative crossings cancel — parity
 conserved).  At $q = 1.110$:
-$\sigma^2 = 0.209\,\sigma + 1$ (the $0.209\,\sigma$ term
+$T^2 = 0.209\,T + 1$ (the $0.209\,T$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:

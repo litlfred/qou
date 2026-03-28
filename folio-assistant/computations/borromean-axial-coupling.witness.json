@@ -1,0 +1,88 @@
+{
+  "computation": "borromean-axial-coupling",
+  "timestamp": "2026-03-27T18:55:51.393999+00:00",
+  "description": "Computation of g_A from the Hecke algebra H_3(q). The Borromean braid topology of the nucleon modifies the naive quark model prediction g_A = 5/3 by a suppression factor from the standard representation trace.",
+  "q": 1.10997,
+  "target": {
+    "g_A": 1.2754,
+    "source": "PDG 2024"
+  },
+  "hecke_algebra": {
+    "q_integers": {
+      "[2]_q": 2.010895250231988,
+      "[3]_q": 3.0436997074055707,
+      "[4]_q": 4.109666034522366,
+      "[5]_q": 5.220408201455185
+    },
+    "naive_g_A": 1.6666666666666667
+  },
+  "braid_candidates": {
+    "borr_simple": {
+      "braid_word": "[('s1', 1), ('s2', -1), ('s1', 1), ('s2', -1)]",
+      "tr_trivial": 1.0,
+      "tr_sign": 1.0,
+      "tr_standard": 1.3659588135840732,
+      "M_std_matrix": [
+        [
+          1.2603561869362467,
+          -0.4257012292986878
+        ],
+        [
+          2.0364119633289612,
+          0.10560262664782655
+        ]
+      ],
+      "ratio_std_over_triv": 1.3659588135840732
+    },
+    "borr_full": {
+      "braid_word": "[('s1', 1), ('s2', -1), ('s1', 1), ('s2', -1), ('s1', 1), ('s2', -1)]",
+      "tr_trivial": -1.0,
+      "tr_sign": -1.0,
+      "tr_standard": -0.6714081516331795,
+      "M_std_matrix": [
+        [
+          -1.0802853258517555,
+          0.5489814699052411
+        ],
+        [
+          -2.626143304313914,
+          0.40887717421857606
+        ]
+      ],
+      "ratio_std_over_triv": 0.6714081516331795
+    },
+    "borr_sym": {
+      "braid_word": "[('s1', 1), ('s2', -1), ('s1', -1), ('s2', 1)]",
+      "tr_trivial": 1.0,
+      "tr_sign": 1.0,
+      "tr_standard": 1.1983855139339914,
+      "M_std_matrix": [
+        [
+          0.7909552502319884,
+          -0.4694009367042584
+        ],
+        [
+          1.4438422270309643,
+          0.40743026370200297
+        ]
+      ],
+      "ratio_std_over_triv": 1.1983855139339914
+    }
+  },
+  "borromean_conversion": {
+    "full_operator": "\u03b2\u00b7\u03c3\u2081\u00b7\u03b2\u207b\u00b9 where \u03b2 = \u03c3\u2081\u03c3\u2082\u207b\u00b9\u03c3\u2081\u03c3\u2082\u207b\u00b9",
+    "tr_standard_full": 0.20904474976801168,
+    "tr_trivial_full": 1.10997,
+    "tr_standard_bare": 0.20904474976801157,
+    "tr_trivial_bare": 1.10997,
+    "suppression_factor": 1.0000000000000004,
+    "g_A_with_borromean": 1.6666666666666674
+  },
+  "interpretation": "The Borromean braid \u03b2 = \u03c3\u2081\u03c3\u2082\u207b\u00b9\u03c3\u2081\u03c3\u2082\u207b\u00b9 in H_3(q) conjugates the conversion operator \u03c3\u2081. The suppression factor is the ratio of the standard-rep trace (with Borromean) to the standard-rep trace (without). This modifies g_A from the naive 5/3 to a q-dependent value.",
+  "caveats": [
+    "The exact Borromean braid word for the nucleon is model-dependent.",
+    "Multiple candidate braids are evaluated above.",
+    "The spin-isospin Clebsch-Gordan factor is taken from the naive quark model (5/3 = 4/3 + 1/3).",
+    "A full computation requires the colored Markov trace, not just the standard representation."
+  ]
+}

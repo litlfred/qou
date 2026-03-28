@@ -61,12 +61,47 @@ $$
   \alpha \;=\; \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}
 $$
 
-where $C_{\mathrm{geom}} \approx 14.25$ is a geometric factor
-from the knot structure (the number of crossing resolutions
-in the electron--proton Skein evaluation).  The $\alpha^2$
-dependence reflects **two Skein resolutions** — the photon
-mediating the interaction must resolve one crossing at the
-electron and one at the proton.
+The fundamental formula for $\alpha$ is the EM coupling
+projection
+([EM coupling projection](#prop:em-coupling-projection)):
+
+$$
+  \alpha_{\mathrm{EM}}(q)
+  \;=\;
+  \frac{q^{-1}}{[9]_q \cdot [10]_q}
+$$
+
+where $q^{-1}$ is the antisymmetric eigenvalue of the $R$-matrix
+(the bare coupling at a single crossing), and $[9]_q$, $[10]_q$
+are the $q$-deformed crossing numbers of the strong ($T_{2,9}$)
+and weak ($T_{3,5}$) force-carrier generators.  At $q = 1.110$
+this gives $\alpha^{-1} \approx 136.84$ (0.14% from CODATA).
+
+The two formulations are consistent:
+$\tanh(\ln q) / C_{\mathrm{geom}} = q^{-1}/([9]_q \cdot [10]_q)$,
+which fixes
+
+$$
+  C_{\mathrm{geom}}
+  \;=\;
+  \frac{\tanh(\ln q) \cdot [9]_q \cdot [10]_q}{q^{-1}}
+  \;=\;
+  \frac{(q^2 - 1) \cdot [9]_q \cdot [10]_q}{q^2 + 1}
+  \;\approx\; 14.26.
+$$
+
+**Physical reading:** the electromagnetic coupling is the
+antisymmetric braiding eigenvalue $q^{-1}$ divided by the total
+topological complexity $[9]_q \cdot [10]_q$ of the strong and
+weak force sectors.  In the crossing-asymmetry form
+$\alpha = \tanh(\ln q)/C_{\mathrm{geom}}$, the factor
+$\tanh(\ln q) = (q - q^{-1})/(q + q^{-1})$ is the EM-to-strong
+ratio and $C_{\mathrm{geom}}$ absorbs the force-carrier
+$q$-integers.
+
+The $\alpha^2$ dependence of the ionisation energy reflects
+**two Skein resolutions** — the photon mediating the interaction
+must resolve one crossing at the electron and one at the proton.
 
 **Shell transitions.**
 

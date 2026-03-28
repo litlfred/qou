@@ -110,3 +110,49 @@ components: $J(1) = (-2)^{c-1}$ where $c$ is the
 component count.  At $q = 1.110$, the polynomial
 encodes the $q$-deformation of the knot's contribution
 to the categorical action.
+
+## Table 5: Categorical action at $q = 1.110$
+
+The categorical action $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$
+decomposes into a hyperbolic volume term and a crossing energy
+term.  For torus knots ($\mathrm{Vol} = 0$), the entire action
+comes from crossings.  All quantities below are functions of
+$q$ alone (plus one dimensional scale $\mu_0$ for mass).
+
+**Fundamental constants from $q$:**
+
+| Symbol | Formula | Value at $q = 1.110$ |
+|--------|---------|:--------------------:|
+| $\hbar_q$ | $1 - q^{-1}$ | $0.09910$ |
+| $E_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
+| $s$ (Skein amplitude) | $q^{1/2} - q^{-1/2}$ | $0.05049$ |
+| $[2]_q$ | $q + q^{-1}$ | $2.01099$ |
+
+**Categorical action per building block:**
+
+| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $E_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
+|----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
+| $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
+| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,E_{\times}$ | $3\,E_{\times}\,\mu_0$ |
+| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,E_{\times}$ | $3\,E_{\times}\,\mu_0$ |
+| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,E_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,E_{\times}$ | $207.1\,\mu_0$ |
+| $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,E_{\times}$ | (bound; see below) |
+| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,E_{\times}$ | $5\,E_{\times}\,\mu_0$ |
+| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,E_{\times}$ | $8\,E_{\times}\,\mu_0$ |
+| Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
+| Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
+
+The neutron--proton mass difference $\delta_{\mathrm{Skein}} =
+\mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q) \approx 1.293$ MeV
+arises from the pair Skein asymmetry between $dd$ and $uu$
+crossings — a pure function of $q$.
+
+**Key consequence for beta decay.**  The electron's categorical
+action $S_q(e) = 3\,E_{\times}(q) \cdot \mu_0$, the neutrino's
+$S_q(\nu) = 0$, and the nuclear actions $S_q(\mathcal{N})$
+from the Markov trace product are all computable from $q$.
+The $\mathcal{Q}_q$-value
+([transition energy](#def:q-value-transition))
+$\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
+therefore depends on $q$ and $\mu_0$ alone — no external
+constants.

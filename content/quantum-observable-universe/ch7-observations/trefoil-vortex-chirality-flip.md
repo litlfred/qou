@@ -68,7 +68,7 @@ $\mathrm{SU}_q(2)$.  The key distinctions are:
 
 The categorical trefoil's chirality is a **knot invariant**, not an
 embedding property.  The Jones polynomial distinguishes
-$T_{2,3}$ from $\sigma(T_{2,3})$: $V_{T_{2,3}}(t) \neq V_{\sigma(T_{2,3})}(t)$.
+$T_{2,3}$ from $\sigma(T_{2,3})$: $J_{T_{2,3}}(q) \neq J_{\sigma(T_{2,3})}(q)$.
 No continuous deformation (Reidemeister moves) can convert one to the
 other.
 

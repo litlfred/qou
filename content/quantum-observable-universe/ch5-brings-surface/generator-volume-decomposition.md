@@ -34,7 +34,7 @@ $$
 The coefficients $(a_i, b_i)$ satisfy the recurrence: starting
 from $(a_0, b_0) = (0, 1)$ (identity), multiplying
 $(a_k \sigma + b_k)(c_j \sigma + d_j)$ and applying
-$\sigma^2 = (q - q^{-1})\sigma + 1$:
+$T^2 = (q - q^{-1})T + 1$:
 
 $$
   a_{k+1} = a_k c_j (q - q^{-1}) + a_k d_j + b_k c_j,

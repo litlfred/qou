@@ -117,7 +117,7 @@ Skein ($d \to u$) &
    on the Gröbner normal form.
    - R2 ($q$-deformed) is the ONLY Gröbner relation that changes
      the gauge sector.  Each application splits
-     $\sigma^2 \to (q - q^{-1})\sigma + 1$, releasing
+     $T^2 \to (q - q^{-1})T + 1$, releasing
      $(q - q^{-1})$ of Coulomb energy and $1$ of volume binding.
    - R3 and far-comm rearrange crossings without energy cost.
 
@@ -151,13 +151,13 @@ Skein ($d \to u$) &
 
 **The $q$-deformed R2 is the engine of nuclear physics.**
 
-At $q = 1$ (classical): $\sigma^2 = 1$, all crossings cancel,
+At $q = 1$ (classical): $T^2 = 1$, all crossings cancel,
 no binding energy, no Coulomb repulsion, no beta decay.  All
 nuclear configurations at fixed $A$ are degenerate.
 
-At $q = 1.110$ (Descartes): $\sigma^2 = 0.209\,\sigma + 1$.
+At $q = 1.110$ (Descartes): $T^2 = 0.209\,T + 1$.
 The crossing asymmetry $0.209 = q - q^{-1}$ splits the
-degeneracy.  The $0.209\,\sigma$ term is the electromagnetic
+degeneracy.  The $0.209\,T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb
 enhancement of beta decay).  The $1$ term is the strong
 interaction (volume binding, independent of crossing chirality).

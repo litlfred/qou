@@ -297,6 +297,29 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
 
+### 7a. Hecke-Skein convention (STRICT)
+
+The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke
+relation, never $t$ or $A$ for the Jones polynomial variable).
+
+- **Hecke relation**: $(T - q)(T + q^{-1}) = 0$, equivalently
+  $T^2 = (q - q^{-1})T + 1$.
+- **Skein relation**: Multiply the Hecke relation by $T^{-1}$ to get
+  $T - T^{-1} = q - q^{-1}$, which is the Skein relation
+  $L_+ - L_- = (q - q^{-1})\,L_0$.
+- **Translation dictionary**:
+  - $T$ = positive crossing $L_+$
+  - $T^{-1}$ = negative crossing $L_-$
+  - $1$ = smoothed crossing $L_0$
+  - $q$ and $-q^{-1}$ are the eigenvalues of $T$ (symmetric and
+    antisymmetric channels respectively)
+- **Jones polynomial**: Always $J_K(q)$, never $V_K(t)$ or bracket
+  with variable $A$.  The Jones polynomial is the Markov trace
+  $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ in $H_n(q)$.
+- **Braid generators**: $\sigma_i$ denotes the braid group generator
+  in $B_n$. The Hecke algebra image is $T_i = \rho(\sigma_i)$.
+  When writing the Hecke relation, always use $T$, not $\sigma$.
+
 ### 8. File hygiene
 
 - Never commit `.lake/`, `lake-packages/`, or `build/`.

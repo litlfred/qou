@@ -114,7 +114,7 @@ The $q$-anomaly arises from the non-commutativity of the
 Hecke algebra.  When the Skein crossing change converts one
 quark, the re-reduction to Gröbner normal form
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction))
-introduces R2 moves $\sigma^2 = (q - q^{-1})\sigma + 1$.
+introduces R2 moves $T^2 = (q - q^{-1})T + 1$.
 Each R2 move shifts the local $q$-environment by:
 
 $$

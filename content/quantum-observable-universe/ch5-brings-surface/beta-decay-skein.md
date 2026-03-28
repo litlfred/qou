@@ -150,7 +150,7 @@ for typical nuclei) but it is the entire signal.
 After the crossing change $d \to u$ at $\sigma_k$, the braid word
 is no longer in Gröbner normal form.  Re-reduction to
 $\bar{\mathcal{N}}(p+1, n-1)$ requires a specific sequence of
-$q$-deformed R2 moves ($\sigma^2 = (q - q^{-1})\sigma + 1$)
+$q$-deformed R2 moves ($T^2 = (q - q^{-1})T + 1$)
 and R3/far-commutativity moves.  The R2 moves change the
 gauge-sector action; the R3 and far-commutativity moves
 do not ([Reidemeister action table](#prop:reidemeister-action-table)).

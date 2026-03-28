@@ -31,12 +31,12 @@ where the $q$-deformed Sommerfeld parameter is
 $$
   \eta_q
   \;=\;
-  (q - q^{-1}) \cdot \lambda_\alpha
+  \alpha_{\mathrm{EM}}(q)
   \cdot \frac{Z}{\beta_e}
 $$
 
-with $\lambda_\alpha$ the electromagnetic scale satisfying
-$\alpha = (q - q^{-1}) \cdot \lambda_\alpha \approx 1/137$, and
+with $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
+([EM coupling projection](#prop:em-coupling-projection)) and
 $\beta_e = v_e / c$ the velocity of the emitted electron.
 
 **Derivation.**

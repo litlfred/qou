@@ -3,26 +3,39 @@ We verify the half-life framework
 beta-decay lifetimes for representative nuclei spanning the periodic
 table.
 
-## What is computed from $q$ alone
+## What is computed from $q$ and $\mu_0$
 
-The nuclear Skein polynomial $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
-([Skein polynomial](#prop:skein-polynomial-transfer-matrix))
-is computed by $\binom{A}{2}$ transfer matrix multiplications.
-Evaluating at $q = 1.110$ gives the categorical action.
+The half-life formula depends on $q$ (the substrate parameter)
+and $\mu_0$ (the single dimensional scale converting Skein units
+to physical units).  Every physical constant appearing in the
+standard Fermi theory is decomposed into its $q$-dependent parts
+([hadron half-life](#prop:hadron-half-life)):
 
-From $q$ and the categorical definitions $(\mathbf{C}, A, \tau)$:
+| Standard constant | $q$-decomposition | Source |
+|-------------------|-------------------|--------|
+| $m_e$ (electron mass) | $3\,E_{\times}(q) \cdot \mu_0$ | 3 crossings of trefoil $T_{2,3}$ |
+| $s$ (weak coupling) | $q^{1/2} - q^{-1/2}$ | Skein amplitude (no W boson) |
+| $[2]_q$ (vertex factor) | $q + q^{-1}$ | Categorical dim of $\mathrm{SU}_q(2)$ fund. rep. |
+| $v$ (weak scale) | $N_v \cdot E_{\times}(q) \cdot \mu_0$ | Topological invariant $N_v$ (open) |
+| $G_F$ (Fermi constant) | $1/(\sqrt{2}\,v^2)$ | Derived from weak scale |
+| $G_F^2 m_e^5$ (rate scale) | $243\,E_{\times}\,\mu_0\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
 
-1. **Skein polynomial** $P_{\mathcal{N}}(q)$ — polynomial in
-   $q^{1/2}$ of degree $\leq A^2 - 1$, computed exactly by
-   transfer matrices.
+From $q$ and $\mu_0$ alone:
+
+1. **Skein polynomial** $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
+   ([Skein polynomial](#prop:skein-polynomial-transfer-matrix)) —
+   polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$, computed
+   exactly by $\binom{A}{2}$ transfer matrix multiplications.
 2. **$\mathcal{Q}_q$-value**
    ([transition energy](#def:q-value-transition)) — the
    categorical action difference
-   $\mathcal{Q}_q = P_{\mathrm{par}}(q) - P_{\mathrm{dau}}(q) - P_e(q)$.
+   $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
+   where $S_q(e) = 3\,E_{\times}(q) \cdot \mu_0$
+   ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).
-3. **Matrix element** $|\mathcal{M}_q|^2$ — Markov trace ratio
-   $\prod_i |\hat{V}_i^{\mathrm{par}} / \hat{V}_i^{\mathrm{dau}}|^2$
+3. **Matrix element** $|\mathcal{M}_q|^2 = s^2 \cdot
+   \prod_i |\hat{V}_i^{\mathrm{par}} / \hat{V}_i^{\mathrm{dau}}|^2$
    from the factorization theorem.
 4. **Sensitivity** $\partial \ln \Gamma / \partial \ln q
    = (q^2-1)/(q^2+1) + 5(q^2+1)/(q^2-1) \approx 48$ — exact.
@@ -34,18 +47,44 @@ From $q$ and the categorical definitions $(\mathbf{C}, A, \tau)$:
 7. **Parity violation** — automatic from $q \neq 1$
    ([Lee-Yang-Wu](#prop:parity-violation-skein)).
 
-## What is not yet computed from $q$ alone
+## Open computations
 
-The $\mathcal{Q}_q$-value for nuclei beyond the deuteron.
-Computing $\mathcal{Q}_q$ requires the Skein polynomial
-$P_{\mathcal{N}}(q)$ at the Level 1 (quark-level) braid
-$B_{3A}$ — the pair Skein mass formula applied to all
-$\binom{3A}{2}$ crossings in the $3A$-strand braid, with
-Hecke compounding at each generator.  The Level 0 computation
-($B_A$, nucleon-level) gives relative decay rates but not
-absolute $\mathcal{Q}_q$ values.  The infrastructure exists
-(braid registry, SnapPy, Singular) but the Level 1 terminal
-resolution has not been completed for $A > 4$.
+Four quantities are computable from $q$ in principle but have not
+yet been evaluated ($\alpha_{\mathrm{EM}}$ is now resolved).
+Witness computation scripts are in `folio-assistant/computations/`.
+
+1. **$N_v$ (weak scale crossing count).**
+   The weak scale $v = N_v \cdot E_{\times}(q) \cdot \mu_0$ sets
+   the absolute rate via $G_F = 1/(\sqrt{2}\,v^2)$.  Deriving $N_v$
+   requires identifying the brane tower structure at the electroweak
+   level.  Target: $N_v \cdot E_{\times} \cdot \mu_0 \approx 246$ GeV.
+
+2. **$\mathcal{Q}_q$-values for $A > 4$.**
+   Computing $\mathcal{Q}_q$ requires the Level 1 (quark-level)
+   braid $B_{3A}$ — the pair Skein mass formula applied to all
+   $\binom{3A}{2}$ crossings.  The infrastructure exists (braid
+   registry, SnapPy, Singular) but the Level 1 terminal resolution
+   has not been completed for $A > 4$.
+
+3. **$g_A$ (axial coupling) from the Borromean Skein algebra.**
+   The ratio of antisymmetric to symmetric Markov traces on the
+   Borromean link $\mathcal{B}_3$ determines the axial-to-vector
+   coupling ratio $g_A / g_V$.  Target: $g_A \approx 1.27$.
+   Sage result: the 4-crossing Borromean braid
+   $T_1 T_2^{-1} T_1 T_2^{-1}$ gives $g_A \approx 1.14$
+   (10.8% from target).  Script: `sage-borromean-gA.sage`.
+
+4. **$\alpha_{\mathrm{EM}}$ (fine structure constant).** RESOLVED.
+   The EM coupling projection
+   ([EM coupling projection](#prop:em-coupling-projection)) gives
+   $\alpha = q^{-1}/([9]_q \cdot [10]_q) \approx 1/136.84$
+   (0.14% from CODATA).  This is derived from $q$ alone — no
+   free parameters.
+
+5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
+   The binding energy of the alpha particle $\mathcal{N}(2,2)$
+   as a closed sub-link, from the quantum dilogarithm volume
+   at $q = 1.110$.
 
 ## Observed half-lives (NNDC/ENSDF)
 

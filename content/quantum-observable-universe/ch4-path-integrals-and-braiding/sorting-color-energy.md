@@ -1,5 +1,5 @@
 **Proposition.**
-*Let $\sigma_i$ be a Hecke crossing
+*Let $T_i$ be the Hecke generator
 ([R-matrix braiding](#def:r-matrix-braiding)) acting on
 $V \otimes V$, where $V$ is the fundamental representation.
 Then:*
@@ -16,12 +16,12 @@ Then:*
    *with eigenvalues $q$ (symmetric, ordered) and $-q^{-1}$
    (antisymmetric, disordered) respectively.  These are the
    two roots of the Hecke relation
-   $\sigma^2 = (q - q^{-1})\sigma + 1$.*
+   $T^2 = (q - q^{-1})T + 1$.*
 
 2. **(Sorting is projection.)** *A sorting operation —
    swapping two adjacent items into the correct order —
    is the projection from $\bigwedge^2(V)$ to
-   $\mathrm{Sym}^2(V)$ at the crossing $\sigma_i$.  This
+   $\mathrm{Sym}^2(V)$ at the generator $T_i$.  This
    projection is the $\mathrm{Ad}$ component of the
    observation: it acts on the colour fibre by rotating
    the gauge degrees of freedom from the antisymmetric
@@ -57,13 +57,13 @@ Then:*
    $\binom{n}{2}$ crossings; the identity requires zero.*
 
 *Proof.*
-(1) The Hecke relation $\sigma^2 - (q - q^{-1})\sigma - 1 = 0$
+(1) The Hecke relation $T^2 - (q - q^{-1})T - 1 = 0$
 has roots $q$ and $-q^{-1}$ by the quadratic formula.  The
 corresponding idempotents are:
 
 $$
-  e_+ = \frac{\sigma + q^{-1}}{q + q^{-1}}, \qquad
-  e_- = \frac{q - \sigma}{q + q^{-1}}
+  e_+ = \frac{T + q^{-1}}{q + q^{-1}}, \qquad
+  e_- = \frac{q - T}{q + q^{-1}}
 $$
 
 with $e_+ + e_- = 1$ and $e_+ e_- = 0$.  The image of $e_+$
