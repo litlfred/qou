@@ -52,6 +52,23 @@ peer-review practices and the methodology of
   in $q$; the product $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
   IS the Skein polynomial; evaluating at $q = 1.110$ gives the
   physical energy.  Never treat these as separate objects.
+- **USE TRANSFER MATRICES, NOT |M|².**
+  The decay rate comes from the **2×2 transfer matrix chain**
+  $T(c,d) = \bigl(\begin{smallmatrix} c(q-q^{-1})+d & c \\ c & d \end{smallmatrix}\bigr)$,
+  not from a scalar matrix element $|M|^2$.  The Skein polynomial
+  is $P = \prod_i \hat{V}_i$ where $\hat{V}_i = z \cdot M_{11} + M_{21}$
+  is the Markov-traced volume of the transfer matrix product at
+  generator $i$.  **Do not extract $|M|^2 = \prod |V_{\mathrm{par}}/V_{\mathrm{dau}}|^2$
+  and plug it into a Fermi golden rule** — this discards the
+  off-diagonal structure of the transfer matrices and gives
+  wrong results for $A > 3$.  The correct observable is the
+  **Skein polynomial ratio** $P_{\mathrm{dau}}(q)/P_{\mathrm{par}}(q)$,
+  computed as a product of 2×2 matrix chains.  For the T_{3,5}
+  weak vertex, the braid $(\sigma_1\sigma_2)^5$ is **appended**
+  (concatenated at the end) to the parent braid word and then
+  **reduced via Gröbner basis** — never inserted in the middle.
+  The Gröbner-Shirshov energy (Hecke steps only, YB and far-comm
+  preserve energy) gives the transition energy.
 - The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
   is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
 
