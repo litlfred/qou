@@ -105,10 +105,22 @@ $\hat{\tau}$ that decomposes the algebra into descended (observable)
 and transient (pre-observable) modes.
 
 [Chapter 4](#chap:path-integrals-braiding) develops the theory of
-braids and knots within the categorical framework.  The Hecke
-algebra provides crossing coefficients, the Markov trace computes
-Skein polynomials, and a clean dictionary emerges: crossing number
-equals jet order equals information content.
+braids and knots within the categorical framework.  The starting
+point is the identification of particles with knots — topological
+objects classified by their crossing structure.  At each point of
+the base manifold, knots generate operator algebras whose
+multiplication and braiding relations are Gröbner basis
+computations: the nodding and crossing of strands correspond to
+reductions in a confluent rewrite system, and each reduction
+sequence has a well-defined computational cost.  This cost
+represents the most efficient way for a photon to interact with
+all component particles of a hadron — it is a braid, passing
+through a braid relation.  We parameterise that cost by the
+substrate parameter $q$, and the result is a mass density integral
+of the hadron.  The Hecke algebra provides the crossing
+coefficients, the Markov trace computes Skein polynomials, and a
+clean dictionary emerges: crossing number equals jet order equals
+information content.
 
 [Chapters 5 and 6](#chap:models-qou) construct explicit models.
 We call these *Descartes universes* because the observer is not
