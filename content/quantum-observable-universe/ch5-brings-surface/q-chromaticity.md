@@ -140,5 +140,5 @@ $\tau$-evaluation — is a $q$-deformed convex region inscribed in
 the triangle.  Its boundary is the **$q$-spectral locus**, the
 image of the pure knot types under the $q$-chromaticity projection.
 At $q = 1$, this region fills the entire triangle (no confinement
-needed); at $q = 1.1097$, it shrinks, excluding individual colors
+needed); at the substrate parameter $q$, it shrinks, excluding individual colors
 and admitting only near-centroid (confined) combinations.

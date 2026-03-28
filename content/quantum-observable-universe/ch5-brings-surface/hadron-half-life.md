@@ -7,7 +7,7 @@ through the $q$-deformed transition amplitude.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate
-parameter $q = 1.1097$.  A nucleus $\mathcal{N}(Z, N)$
+parameter the substrate $q$.  A nucleus $\mathcal{N}(Z, N)$
 ([stable nucleus](#def:stable-nucleus)) with proton displacement
 $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability
 has beta-decay half-life
@@ -167,7 +167,7 @@ $$
   \;+\;
   5\,\frac{q^2 + 1}{q^2 - 1}
   \;\approx\; 48
-  \quad\text{at } q = 1.1097.
+  \quad\text{at } q = q_0.
 $$
 
 A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.
@@ -181,7 +181,7 @@ stable and *how fast* unstable nuclei decay.
 ## Parameter count
 
 The half-life formula uses:
-- $q = 1.1097$ — the substrate parameter (fixed by the muon-electron
+- the substrate $q$ — the substrate parameter (fixed by the muon-electron
   mass ratio),
 - $\mu_0$ — the dimensional scale (unit choice: MeV, seconds, etc.),
 - $(p, n)$ — the nuclear quantum numbers.

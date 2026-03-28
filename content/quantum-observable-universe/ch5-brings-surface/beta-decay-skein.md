@@ -2,7 +2,7 @@
 the Gröbner normal form.**
 
 The weak force in the Descartes universe ($\chi(A) = -6$,
-$q = 1.1097$) is not a separate interaction — it is the Skein
+the substrate $q$) is not a separate interaction — it is the Skein
 relation acting on the braid word of a nucleus.
 
 **Setup.**

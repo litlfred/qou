@@ -35,7 +35,7 @@ $$
   \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
 $$
 
-**At $q = 1.1097$:**
+**At the substrate parameter $q$:**
 
 $$
   q - q^{-1} = 0.2091, \quad
@@ -190,7 +190,7 @@ $$
 $$
 
 where $E_0$ is the ground-state energy scale (from the
-electron-proton crossing energy at $q = 1.1097$).
+electron-proton crossing energy at the substrate parameter $q$).
 
 The transition energy (photon energy for $n \to n+1$):
 
@@ -214,7 +214,7 @@ $$
 
 The **Rydberg scaling** $E_n \propto 1/n^2$ emerges in the
 regime $\lambda_+ \approx 1 + \epsilon$ with
-$\epsilon = \lambda_+ - 1 \ll 1$.  At $q = 1.1097$:
+$\epsilon = \lambda_+ - 1 \ll 1$.  At the substrate parameter $q$:
 $\epsilon = 0.1073$.  For low shells ($n = 1, 2, 3, \ldots$):
 
 $$

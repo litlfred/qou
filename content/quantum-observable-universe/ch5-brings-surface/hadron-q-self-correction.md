@@ -12,7 +12,7 @@ $$
   q_0 \;+\; \delta q(p, n)
 $$
 
-where $q_0 = 1.1097$ is the background value
+where the substrate $q_0$ is the background value
 ([local substrate $q$](#prop:local-substrate-q)) and
 $\delta q(p, n)$ is the hadron's self-deformation.
 
@@ -66,7 +66,7 @@ volume $\propto A$, so the crossing density per unit volume is
 $\ell_{\mathrm{net}} / A^2$.
 
 **Magnitude.**
-At $q_0 = 1.1097$: $\hbar_q \approx 0.0991$ and
+At the substrate $q_0$: $\hbar_q \approx 0.0991$ and
 $\hbar_q^2 \approx 0.00982$.  For representative nuclei:
 
 | Nucleus | $(p, n)$ | $A$ | $\ell_{\mathrm{net}}$ | $\delta q$ | $\delta q / q_0$ |

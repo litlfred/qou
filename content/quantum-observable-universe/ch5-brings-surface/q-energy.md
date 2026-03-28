@@ -30,7 +30,7 @@ where:
 
 1. **Rotational term** $J_q^2 \cdot \hbar_q$:
    The $q$-deformed rotational energy.  For a spin-$\frac{1}{2}$
-   particle at $q = 1.1097$:
+   particle at the substrate parameter $q$:
    $[1/2]_q [3/2]_q \cdot \hbar_q \approx 0.818 \times 0.0991 = 0.0811$.
    This vanishes at $q = 1$ (where $\hbar_q \to 0$).
 
@@ -81,6 +81,6 @@ $$
 where $\epsilon_j = \pm 1$ is the crossing sign.  For a
 positive crossing: $E_\times^{(+)} = q$.  For a negative
 crossing: $E_\times^{(-)} = q^{-1}$.  The asymmetry
-$q \neq q^{-1}$ at $q = 1.1097$ means positive crossings
+$q \neq q^{-1}$ at the substrate parameter $q$ means positive crossings
 carry more energy than negative ones — this is the energy
 signature of parity violation.

@@ -4,7 +4,7 @@ Diophantine approximation problem.
 **Controls:**
 - **$q$ slider**: Varies the substrate parameter from $1.0$
   (classical, no Coulomb) to $2.0$ (deep quantum).
-  Default: $q = 1.1097$.
+  Default: the substrate $q$.
 - **View**: Toggle between $(p, n)$-plane and $(A, n/p)$-plane.
 
 **Display:**

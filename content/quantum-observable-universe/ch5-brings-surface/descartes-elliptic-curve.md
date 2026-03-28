@@ -30,7 +30,7 @@ $$
 
 **Invariants.**
 
-| Quantity | Formula | Value at $q = 1.1097$ |
+| Quantity | Formula | Value at the substrate parameter $q$ |
 |----------|---------|---------------------|
 | Discriminant | $\Delta(q)$ | $-18.95$ |
 | $j$-invariant | $j(q) = 256(2z^2 + z + 2)^3 / \Delta$ | $129.9$ |
@@ -75,7 +75,7 @@ As $q$ varies from $1$ to $\infty$:
 | Classical | $q = 1$ | $128$ | No crossing asymmetry; $E_1$ is smooth |
 | Sub-golden | $q < 1/\varphi^2$ | undefined | $E_q$ singular; no stable chiral fibers |
 | Golden threshold | $q = 1/\varphi^2$ | $\to \infty$ | Cusp; chiral degeneration |
-| Physical | $q = 1.1097$ | $129.9$ | Our universe; $E_q$ smooth with $\Delta < 0$ |
+| Physical | the substrate $q$ | $129.9$ | Our universe; $E_q$ smooth with $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\to 0$ | $j \to 0$; curve approaches CM curve |
 
 *Proof.*
