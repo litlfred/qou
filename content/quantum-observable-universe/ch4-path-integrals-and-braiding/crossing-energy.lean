@@ -85,7 +85,7 @@ noncomputable def CrossingEnergy.coulombContribution (E : CrossingEnergy) : ℝ 
 theorem CrossingEnergy.decomposition (E : CrossingEnergy) :
     E.value = E.baseline + E.coulombContribution := by
   simp only [value, baseline, coulombContribution]
-  -- Ref: [manuscript] Ch. 4, §10 — algebraic identity
-  sorry
+  field_simp
+  ring
 
 end QOU.Braiding

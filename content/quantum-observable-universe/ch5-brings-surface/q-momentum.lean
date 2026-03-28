@@ -55,6 +55,22 @@ example : writhe [1, -1, 1, -1] = 0 := by decide
 -- Ref: [manuscript] §6/q-momentum
 theorem writhe_mirror (signs : List ℤ) :
     writhe (signs.map (· * (-1))) = -writhe signs := by
-  sorry
+  unfold writhe
+  induction signs with
+  | nil => simp [List.foldl]
+  | cons s ss ih =>
+    simp only [List.map_cons, List.foldl]
+    -- Need a helper: foldl (· + ·) a (map (· * -1) l) = -foldl (· + ·) (-a) l... not quite
+    -- Actually let's try a different approach with a general accumulator
+    suffices h : ∀ (acc : ℤ) (l : List ℤ),
+      List.foldl (· + ·) acc (l.map (· * (-1))) = -(List.foldl (· + ·) (-acc) l) by
+      simpa using h 0 (s :: ss)
+    intro acc l
+    induction l generalizing acc with
+    | nil => simp [List.foldl]
+    | cons x xs ih =>
+      simp only [List.map_cons, List.foldl]
+      rw [ih]
+      ring_nf
 
 end QOU.Descartes

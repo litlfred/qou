@@ -52,9 +52,9 @@ theorem CoulombCharge.neutral_iff_zero (C : CoulombCharge) :
     simp [value, isNeutral] at h ⊢
     rw [h]; ring
   · intro h
-    simp [value, isNeutral] at h ⊢
-    -- Ref: [manuscript] Ch. 4, §10 — n₊ = n₋ iff (n₊ - n₋)/2 = 0
-    sorry
+    simp only [value, isNeutral] at h ⊢
+    have h' : (C.numPositive : ℝ) - C.numNegative = 0 := by linarith [div_eq_zero_iff.mp h]
+    exact_mod_cast h'
 
 /-- The crossing energy Coulomb correction term is Q(H) · (q − q⁻¹).
     This is antisymmetric under q ↔ q⁻¹ and vanishes at q = 1. -/

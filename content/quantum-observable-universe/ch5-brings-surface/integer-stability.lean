@@ -8,9 +8,6 @@
 -- at stability pairs {2, 8, 20, 28, 50, 82, 126} are not included
 -- in this formula.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 /-- The Coulomb coefficient a_C = (q - q⁻¹) · λ_C -/

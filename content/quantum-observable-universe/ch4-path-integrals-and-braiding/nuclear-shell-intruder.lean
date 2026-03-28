@@ -2,9 +2,6 @@
 -- Stability pairs from Borromean spin-orbit intruder levels.
 -- The 3 crossings of B_3 set the intruder threshold at N ≥ 3.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 open Finset Nat
