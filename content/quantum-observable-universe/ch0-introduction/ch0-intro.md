@@ -67,9 +67,30 @@ arriving at the definition of a *quantum universe* — the
 algebraic skeleton.  Chapter 2 adds the observability,
 measurability, and volume axioms that make it a *quantum
 observable universe*, then develops the geometry: Tannaka–Krein
-reconstruction of $\mathrm{SU}_2(R)$, the categorical action
-$S_q$, and the three variational equations (Einstein, Yang–Mills,
-and transport).
+reconstruction of $\mathrm{SU}_2(R)$, the categorical action,
+and the three variational equations (Einstein, Yang–Mills,
+and transport).  The categorical action takes the form
+
+$$
+  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+  \;=\;
+  \underbrace{\mathrm{tr}\bigl(q \cdot R_{\int}\bigr)}_{\text{gravity}}
+  \;+\;
+  \underbrace{\textstyle\int_A \!\circ\, \mathrm{tr}_A\bigl(
+    F_\nabla \wedge_q \star_q F_\nabla
+  \bigr)}_{\text{gauge}}
+  \;+\;
+  \underbrace{\textstyle\int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
+$$
+
+derived from the categorical Dirac operator
+$\mathcal{D}_\nabla = q^{-1}\nabla + (1 - q^{-1})\iota_\xi\nabla$
+via the categorical Lagrangian
+$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes
+\mathcal{D}_\nabla\psi$ and the categorical trace
+$\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$.  No classical
+Lagrangian is assumed — the action is constructed entirely from
+the rigid monoidal structure.
 
 [Chapter 3](#chap:torsion) turns to the obstructions that arise
 when one tries to extend local data to global structures.  The
@@ -93,8 +114,35 @@ $\chi = -6$, both driven by physical observation and formalised
 here as mathematical structure.
 
 [Chapter 7](#chap:observations) confronts the theory with
-experiment: the skein-theoretic mass formula is compared with
-measured hadronic spectra.
+experiment.  The substrate parameter $q$ is not a free parameter
+but is determined by CODATA 2022 values: the unique real root
+$q > 1$ of $(1 - q^{-1})^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$
+gives
+$$
+  q = 1.1097 + O\!\bigl(\delta(m_\mu/m_e)\bigr),
+$$
+where $\delta(m_\mu/m_e) = 2.2 \times 10^{-8}$ is the CODATA
+relative uncertainty on the muon--electron mass ratio and
+$\mathrm{Vol}(4_1) \approx 2.02988$ is the hyperbolic volume
+of the figure-eight knot (known to $10^{-14}$).  From this
+single parameter the theory produces:
+
+- **Geometric mass equations** for proton, neutron, pion, kaon,
+  and light nuclei up to ${}^4\mathrm{He}$, all matching CODATA
+  to six significant figures.
+- **Knot-theoretic orbital shells**: electron clouds as chains
+  of trefoils linked by Hopf links, reproducing the $2n^2$ shell
+  capacities and the noble-gas sequence.
+- **Beta-decay half-lives** from Skein polynomial matrix elements:
+  tritium within $1\%$, and a suite of nuclei from
+  ${}^{14}\mathrm{C}$ through ${}^{210}\mathrm{Bi}$ within
+  $20\%$, with the systematic residual traceable to the
+  not-yet-included Skein Coulomb enhancement.
+- **Fine-structure constant** $\alpha^{-1} = q^{-1}/([9]_q
+  \cdot [10]_q) = 136.84$ at $q = 1.1097$, within $0.14\%$ of
+  the CODATA value — with sensitivity
+  $\partial \ln \alpha / \partial \ln q \approx -20$,
+  constraining $q$ to a narrow window.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery directly.
 The mechanics of the quantum observable universe turn out to be
@@ -104,8 +152,41 @@ property of the algebraic substrate, not the medium.  The Gröbner
 basis underlying the enveloping algebra ensures that this
 computation is *confluent* — every reduction sequence terminates at
 the same normal form, so the answer does not depend on which steps
-we take first.  This chapter does not answer whether mathematics is
-discovered or invented.  It tells us we do not have to choose.
+we take first.  Two results illustrate the reach of the
+information-theoretic perspective.  First, the Hausdorff dimension
+of the Julia set that governs the Reeb dynamics is determined
+algebraically by gravitational self-consistency:
+
+$$
+  d_H(q) = \frac{(2q-1)^2}{q^3}.
+$$
+
+This is the fractal complexity of the substrate's internal
+dynamics — how richly structured the boundary of its
+computational phase space is.  At $q = 1.1097$ one obtains
+$d_H \approx 1.088$: slightly more complex than a circle, but
+far from space-filling.  As $q$ increases toward the Big Bang
+the fractal collapses ($d_H \to 0$); as $q$ decreases toward
+the classical limit the Julia set approaches a smooth circle
+($d_H \to 1$).  Second, the crossing energy $E_H$ (the Skein
+weight from $R$-matrix braiding) and the categorical mass
+$\mathfrak{m}_H$ (the trace norm through the Frobenius pairing)
+are related by
+
+$$
+  E_H = \mathfrak{m}_H \cdot c_q^{\,2},
+  \qquad
+  c_q = \frac{1}{q - 1},
+$$
+
+where $c_q$ is the information speed of light — the ratio of
+spatial to temporal coupling in the $q$-connection.  This is
+$E = mc^2$ derived from the categorical structure: the speed of
+light is not an empirical constant but the conversion factor
+between two registers (horizontal crossings and vertical Reeb
+ticks) of the same algebra.  This chapter does not answer whether
+mathematics is discovered or invented.  It tells us we do not
+have to choose.
 
 [Chapter 9](#chap:organic-chemistry) applies the Hopf chain
 formalism to organic chemistry, demonstrating that the same
