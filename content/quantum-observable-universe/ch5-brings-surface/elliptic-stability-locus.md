@@ -70,7 +70,7 @@ of genus $1$.
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus
 (D$'$) reduced by the pairing-free stability curve (S).  Then:*
 
-1. *The smooth model of $\mathcal{D}$ is an elliptic curve $E_p$
+1. *The smooth model of $\mathcal{D}$ is an elliptic curve $\mathcal{E}_p$
    over $\mathbb{Q}(q)$.*
 
 2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$
@@ -144,7 +144,7 @@ If the conjecture holds, then:
 
 - The **elliptic fiber** $E_z$ at spacetime $z$ encodes the
   allowed baryon configurations at that point; the **stability
-  elliptic curve** $E_p$ at proton number $p$ encodes the allowed
+  elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed
   nuclear configurations at that proton count.
 
 - The **isogeny** $\varphi$ connecting them is the passage from
@@ -154,7 +154,7 @@ If the conjecture holds, then:
   triple to a nucleus
   ([stable nucleus](#def:stable-nucleus)).
 
-- The **stability pairs** are the integer points of $E_p$ —
+- The **stability pairs** are the integer points of $\mathcal{E}_p$ —
   the $(p, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd
   degeneracy falls on a lattice point.
 
@@ -196,7 +196,7 @@ The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
 lifts this curve to the genus-$1$ elliptic curve $E_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
-then acquire an interpretation as integer points of $E_p$ —
+then acquire an interpretation as integer points of $\mathcal{E}_p$ —
 remains an open question.  The structural parallel between the
 stability cubic and the chiral cubic (identical algebraic origin
 in the Bring's surface, coefficient matching at $p \approx 68$)

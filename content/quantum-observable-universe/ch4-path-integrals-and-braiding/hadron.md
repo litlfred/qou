@@ -19,7 +19,7 @@ $$
 where $E_{\mathrm{cross}}$ is the crossing energy
 ([crossing energy](#def:crossing-energy)).  The subscript $p$
 is the localization point: it determines the colour sector of the
-exceptional divisor $E_p$ in which the constituents are coupled.
+exceptional divisor $\mathcal{S}_p$ in which the constituents are coupled.
 The colour-tube coupling is not an independent datum --- it is
 inherited from $p$.  The symbol $\bowtie$ denotes the linking
 operation.

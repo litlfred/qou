@@ -44,7 +44,7 @@ fluctuations are $\sim 3\%$ and time is effectively smooth.
 
 At the Big Bang ($t_P = 1$): each Planck unit contains exactly
 one braiding evaluation on the exceptional divisor --- one Hecke
-generator applied within the Reeb bundle $S^3 \to E_p$
+generator applied within the Reeb bundle $S^3 \to \mathcal{S}_p$
 ([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).
 The link-length resolution increases by exactly one crossing per
 tick.  The dynamics is fully resolved — the Julia set iteration

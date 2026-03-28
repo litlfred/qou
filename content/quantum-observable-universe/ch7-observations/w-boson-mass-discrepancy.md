@@ -10,7 +10,7 @@ The CODATA substrate $q_0 = 1.10998$
 ([local substrate $q$](#prop:local-substrate-q)) is measured in
 low-field laboratories where the self-dual curvature $F_A^+$
 is effectively zero.  At a collider interaction vertex --- that is,
-at the exceptional divisor $E_p$ where all braiding takes place
+at the exceptional divisor $\mathcal{S}_p$ where all braiding takes place
 ([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor))
 --- the gauge-field curvature is non-negligible, and the archimedean
 specialization of the substrate parameter

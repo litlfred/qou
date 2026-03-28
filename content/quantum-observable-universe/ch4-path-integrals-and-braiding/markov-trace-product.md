@@ -74,7 +74,7 @@ $$
 This factorization is **not** an approximation --- it is an exact
 consequence of the Markov property, which is the state-operator
 correspondence of the VOA.  Each generator acts at a distinct
-insertion point on $E_p$, and the Markov property ensures that the
+insertion point on $\mathcal{S}_p$, and the Markov property ensures that the
 insertions are independent (they are at distinct points on
 $\mathbb{P}^1(\mathbb{C})$, so their OPE is non-singular).
 

@@ -8,20 +8,20 @@ phase.  The Hecke generator is $T_i = \tau_i \circ R_{i,i+1}$,
 where $\tau_i$ is the transposition.  Under the fibre functor
 $\tau$, the representation $V$ is a module over the coordinate ring
 $\mathcal{O}(G_q)$, which is the structure sheaf of
-the exceptional divisor $E_p \cong \mathbb{P}^1(\mathbb{C})$
+the exceptional divisor $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 (the quantum flag variety of $G_q$ at $q$).  The
-$R$-matrix acts fibrewise: it permutes sections of $V$ over $E_p$
+$R$-matrix acts fibrewise: it permutes sections of $V$ over $\mathcal{S}_p$
 without involving sections of the base algebra $A_0$.  Hence $T_i$
-is supported on $E_p$.
+is supported on $\mathcal{S}_p$.
 
 **(2) Confinement.**
 The Skein relation $L_+ - L_- = (q - q^{-1})\,L_0$ is the image
 of the Hecke relation $(T_i - q)(T_i + q^{-1}) = 0$ under the
-Markov trace.  Since $T_i$ acts within $E_p$ (part 1), and the
+Markov trace.  Since $T_i$ acts within $\mathcal{S}_p$ (part 1), and the
 Markov trace is computed over the Reeb bundle $\mathcal{R}_p$
 (the $U(1)$-bundle whose connection is $\xi_q$), every Skein
 resolution is evaluated within $\mathcal{R}_p$.  The blow-down
-map $\pi\colon \widetilde{M} \to M$ collapses $E_p$ to $p$,
+map $\pi\colon \widetilde{M} \to M$ collapses $\mathcal{S}_p$ to $p$,
 projecting the resolved link invariant to the base level.
 
 **(3) Completeness.**

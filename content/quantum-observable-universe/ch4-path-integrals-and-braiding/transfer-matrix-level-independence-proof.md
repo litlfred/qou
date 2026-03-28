@@ -21,9 +21,9 @@ evaluate the same element of $H_N(q)$.  The factorization is not
 an approximation --- it is a rewriting of the trace using the
 Markov property.
 
-**(2) Path independence on $E_p$.**
+**(2) Path independence on $\mathcal{S}_p$.**
 All braiding takes place within the exceptional divisor
-([vertex operators factor through $E_p$](#prop:vertex-is-exceptional-divisor)).
+([vertex operators factor through $\mathcal{S}_p$](#prop:vertex-is-exceptional-divisor)).
 Two braiding operations $T_1, T_2$ that produce isotopy-equivalent
 configurations have braid words $\beta_1, \beta_2$ whose closures
 $\hat{\beta}_1, \hat{\beta}_2$ are ambient-isotopic.  By the
@@ -33,11 +33,11 @@ $\mathrm{tr}_M(\rho(\beta_1)) = \mathrm{tr}_M(\rho(\beta_2))$.
 Hence $\hat{V}(T_1) = \hat{V}(T_2)$ and $\mathcal{T}(T_1)
 = \mathcal{T}(T_2)$.
 
-The specific sequence of crossings within $E_p$ does not matter:
+The specific sequence of crossings within $\mathcal{S}_p$ does not matter:
 all that matters is the isotopy class of the resulting link.  This
 is the content of "what happens in the exceptional divisor stays in
 the exceptional divisor" --- the blow-down map $\pi$ collapses
-$E_p$ to $p$, erasing the internal history.
+$\mathcal{S}_p$ to $p$, erasing the internal history.
 
 **(3) Well-definedness.**
 Independence from the braid representative is the link invariance

@@ -1,6 +1,6 @@
 The $q$-deformed Reeb flow $\phi_t^q$
 ([$q$-Reeb flow](#ex:q-reeb-flow)) restricted to the exceptional
-divisor $E_c \cong \mathbb{P}^1(\mathbb{C})$
+divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
 ([Reeb on exceptional divisor](#rem:reeb-exceptional-divisor))
 generates a discrete dynamical system whose Julia set encodes
 the photon diffraction envelope.
@@ -17,7 +17,7 @@ $$
 The associated quadratic map $f_q(z) = z^2 + c(q)$ is the
 discrete-time skeleton of the continuous Reeb flow: each iteration
 of $f_q$ corresponds to one full circuit of the $U(1)$ fiber above
-$E_c$.  The **Julia set** $J(f_q) \subset \mathbb{C}$ is the
+$\mathcal{S}_c$.  The **Julia set** $J(f_q) \subset \mathbb{C}$ is the
 boundary between orbits that escape and orbits that remain bounded
 — the fractal frontier of the Reeb dynamics.
 

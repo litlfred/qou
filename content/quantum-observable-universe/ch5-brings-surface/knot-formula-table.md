@@ -6,7 +6,7 @@ introduce the following shorthand.
 | Symbol | Meaning |
 |--------|---------|
 | $T_{m,n}$ | Torus knot generator (winding numbers $m, n$) |
-| $\bowtie$ | Hopf linking on exceptional divisor $E_c$ |
+| $\bowtie$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
 | $[\cdot,\cdot,\cdot]_c$ | Color-tube linking through $(r,g,b)$ fibers |
 | $\sigma$ | Skein crossing change (transmutation) |
 | $\overline{K}$ | Mirror (antiparticle) of knot $K$ |

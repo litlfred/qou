@@ -50,8 +50,8 @@ We begin from what we can actually observe:
 7. **Measurement is never exact.**  There is always
    uncertainty — not randomness, but the signature of a
    geometric degree of freedom we have not resolved.  The
-   Reeb bundle --- the $U(1)$ fibration over the exceptional
-   divisor --- is where we keep track of what we have not
+   Reeb bundle --- the $U(1)$ fibration over $\mathcal{S}_p$
+   --- is where we keep track of what we have not
    yet measured.
 
 8. **We have the perception of free will and intent.**

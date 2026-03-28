@@ -45,7 +45,7 @@ At each vertex, a specific braid operation occurs:
   antisymmetric crossing energy
   ([force–knot identification](#rem:force-knot-identification),
   §I), creating virtual $e^-e^+$ pairs at the exceptional
-  divisor $E_p$.  Each pair is a trefoil + mirror trefoil
+  divisor $\mathcal{S}_p$.  Each pair is a trefoil + mirror trefoil
   ($T_{2,3} \sqcup \overline{T_{2,3}}$) at brane level $A_1$.
 
 - **Weak vertices** ($e \to \nu$ via $T_{3,5}$): the Skein

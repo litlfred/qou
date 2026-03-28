@@ -1,6 +1,6 @@
 Let $H_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a
 [hadron](#def:hadron) at a brane point $p$
-([localized hadron](#def:localized-hadron)), and let $E_p$ be the
+([localized hadron](#def:localized-hadron)), and let $\mathcal{S}_p$ be the
 exceptional divisor at $p$
 ([exceptional divisor](#def:exceptional-divisor)).
 
@@ -10,7 +10,7 @@ each factoring through a tensor power of $V$
 ([knot factorization](#rem:knot-factorization)):
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
 $\iota_{j_i}$.  The **pointed knot variables** of $H$ are the
-formal variables $z_1, \ldots, z_n$ on $E_p$, one for each
+formal variables $z_1, \ldots, z_n$ on $\mathcal{S}_p$, one for each
 constituent, recording the insertion point of the
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$.
 
@@ -69,4 +69,4 @@ This is well-defined because the vertex volume $\hat{V}_i(q)$
 depends only on the Markov trace of the Hecke-reduced element
 --- not on the specific braid representative, the
 decomposition of $H$ into constituents, or the path of
-braiding operations within $E_p$.
+braiding operations within $\mathcal{S}_p$.

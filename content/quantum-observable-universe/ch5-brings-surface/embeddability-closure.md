@@ -32,10 +32,10 @@ is closed under observability.
 
 *Hopf linking $\ell_H$.*
 The Hopf link $\mathcal{L}_{\mathrm{Hopf}}$ on the exceptional
-divisor $E_c \cong S^2$ joins two knots localized at (possibly
+divisor $\mathcal{S}_c \cong S^2$ joins two knots localized at (possibly
 distinct) points of the base.  Each component retains its own knot
 type and hence its own Seifert genus.  The linking structure lives
-in the total space $S^3 \to E_c$ and does not increase the genus of
+in the total space $S^3 \to \mathcal{S}_c$ and does not increase the genus of
 any individual component.  Consequently, if $g(K_1) \leq 4$ and
 $g(K_2) \leq 4$, then both components of
 $K_1 \cup_{\mathrm{Hopf}} K_2$ remain embeddable.

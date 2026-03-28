@@ -1,7 +1,7 @@
 /-
   Reeb bundle over the exceptional divisor.
 
-  The Reeb bundle ℛ_p is the Hopf fibration S³ → E_p ≅ S²
+  The Reeb bundle ℛ_p is the Hopf fibration S³ → 𝒮_p ≅ S²
   with connection determined by the q-Reeb vector field ξ_q.
   It is the principal U(1)-bundle whose total space is the
   arena for all braiding (Hecke generator evaluation).
@@ -14,8 +14,8 @@ import Mathlib.Topology.FiberBundle.Basic
 
 namespace QOU
 
-/-- The Reeb bundle over an exceptional divisor E_p.
-    This is the Hopf fibration S³ → S² ≅ E_p equipped with
+/-- The Reeb bundle over an exceptional divisor 𝒮_p.
+    This is the Hopf fibration S³ → S² ≅ 𝒮_p equipped with
     the q-Reeb vector field as connection. -/
 structure ReebBundle (q : ℝ) where
   /-- The exceptional divisor (base space) -/

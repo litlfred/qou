@@ -98,7 +98,7 @@ axiom energy_path_independent (q : ℝ) (hq : 1 < q)
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 axiom beta_decay_energy_negative (q : ℝ) (hq : 1 < q)
     (p n : ℕ) (hn : 0 < n) :
-    ∃ (E_par E_dau : ℝ), E_dau < E_par
+    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy

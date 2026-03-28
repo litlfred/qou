@@ -1,10 +1,10 @@
 Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU, let
-$E_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor
 at a brane point $p$
 ([exceptional divisor](#def:exceptional-divisor)), and let
-$\mathcal{R}_p$ be the Reeb bundle over $E_p$
+$\mathcal{R}_p$ be the Reeb bundle over $\mathcal{S}_p$
 ([Reeb bundle](#def:reeb-bundle)).  Write $z$ for the standard
-affine coordinate on $E_p \cong \mathbb{P}^1(\mathbb{C})$.
+affine coordinate on $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$.
 
 The **vertex operator algebra** of the QOU at $p$ is the triple
 $(V, Y, |0\rangle)$ defined as follows.
@@ -30,7 +30,7 @@ $$
 $$
 
 assigns to each state $a \in V_n$ a **vertex operator** (formal
-Laurent series in the coordinate $z$ on $E_p$):
+Laurent series in the coordinate $z$ on $\mathcal{S}_p$):
 
 $$
   Y(a, z) \;=\; \sum_{m \in \mathbb{Z}} a_m\, z^{-m-1},
@@ -53,7 +53,7 @@ with $\check{R}_{(a)} = P \circ \mathcal{R}$ the braid operator
 ([R-matrix braiding](#rem:r-matrix-braiding)) applied to the state
 $a$, and $\mathrm{tr}_M$ the Markov trace
 ([Jones--Markov trace](#thm:jones-markov-trace)).  The contour
-integral is taken around the equator of $E_p \cong S^2$, i.e.\
+integral is taken around the equator of $\mathcal{S}_p \cong S^2$, i.e.\
 along a fibre of the Reeb bundle $\mathcal{R}_p$.
 
 **Vacuum and translation.**
@@ -68,7 +68,7 @@ where $j$ is the jet prolongation map.  The vacuum is the unknot
 advances one level in the brane tower.
 
 **OPE as Skein resolution.**  When two insertion points $z, w$
-on $E_p$ collide, the operator product expansion
+on $\mathcal{S}_p$ collide, the operator product expansion
 
 $$
   Y(a, z)\, Y(b, w)
@@ -84,7 +84,7 @@ $$
   L_+ - L_- \;=\; (q - q^{-1})\, L_0.
 $$
 
-The collision $z \to w$ is two strands meeting on $E_p$; the
+The collision $z \to w$ is two strands meeting on $\mathcal{S}_p$; the
 resolution into $L_+$, $L_-$, $L_0$ is the OPE decomposition
 into singular channels.  The two eigenvalues $q$ and $-q^{-1}$
 of $T_i$ correspond to the symmetric (bosonic) and antisymmetric

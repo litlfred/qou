@@ -2,7 +2,7 @@
   Vertex operator on the exceptional divisor.
 
   The vertex operator Y(a, z) is the R-matrix insertion of a state
-  a ∈ Aₙ at coordinate z ∈ E_p ≅ ℙ¹(ℂ).  Its modes aₘ are the
+  a ∈ Aₙ at coordinate z ∈ 𝒮_p ≅ ℙ¹(ℂ).  Its modes aₘ are the
   Laurent coefficients, computed via the Markov trace of the braid
   operator.
 
@@ -20,10 +20,10 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 namespace QOU
 
-/-- A vertex operator on the exceptional divisor E_p.
+/-- A vertex operator on the exceptional divisor 𝒮_p.
     Given a state a ∈ V_n (level n of the brane tower), the vertex
     operator Y(a, z) is a formal Laurent series in the coordinate z
-    on E_p whose modes are R-matrix insertions. -/
+    on 𝒮_p whose modes are R-matrix insertions. -/
 structure VertexOperator (q : ℝ) where
   /-- The Reeb bundle (base space for the insertion) -/
   bundle : ReebBundle q

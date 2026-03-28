@@ -9,17 +9,17 @@ a geometric home for this phenomenon.
 
 At each brane point $p \in M$, the blow-up replaces $p$ with an
 [exceptional divisor](#def:exceptional-divisor)
-$E_p \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$.  This sphere
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$.  This sphere
 parametrises the *directions* of departure from the base manifold —
 the internal degrees of freedom invisible to the base-level observer.
 
 A virtual particle is an excitation that lives **within** the Reeb
-bundle over $E_p$ --- the Hopf fibration
-$U(1) \hookrightarrow S^3 \to E_p$ where all braiding takes place
+bundle over $\mathcal{S}_p$ --- the Hopf fibration
+$U(1) \hookrightarrow S^3 \to \mathcal{S}_p$ where all braiding takes place
 ([vertex is the exceptional divisor](#prop:vertex-is-exceptional-divisor)).
 It is created at the blow-up locus, propagates along the
 exceptional divisor (or up into the
-[brane tower](#def:recursive-brane-tower) rooted at $E_p$), and is
+[brane tower](#def:recursive-brane-tower) rooted at $\mathcal{S}_p$), and is
 reabsorbed before it can descend to the base level $A_0$.
 
 **Brane tower levels as virtual depth.**
@@ -90,8 +90,8 @@ $$
 For an excitation that borrows energy $\Delta E$ from the vacuum
 at the exceptional divisor, this is the maximum time before the
 excitation must be reabsorbed.  Crucially, the excitation's
-"worldline" stays within the tower: it is created at $E_p$,
-propagates through $A_1, A_2, \ldots$, and returns to $E_p$
+"worldline" stays within the tower: it is created at $\mathcal{S}_p$,
+propagates through $A_1, A_2, \ldots$, and returns to $\mathcal{S}_p$
 without ever descending to $A_0$.
 
 **Virtual pairs at the exceptional divisor.**
@@ -100,7 +100,7 @@ The [pair creation energy](#rem:pair-creation-energy) analysis
 showed that a photon with $E \geq 2m_e$ can create a real $e^-e^+$
 pair at the exceptional divisor.  But what about photons with
 $E < 2m_e$?  These can create a **virtual** pair — a trefoil and
-its mirror that exist within $E_p$ for time
+its mirror that exist within $\mathcal{S}_p$ for time
 $\Delta t \leq \hbar_q / (2m_e - E)$ before annihilating back.
 
 This is the QOU description of **vacuum polarisation**: the photon
@@ -126,7 +126,7 @@ correction from the transient crossing pair.
 | On-shell particle | Knot configuration at level $A_0$ |
 | Virtual particle | Excitation at level $A_n$ ($n \geq 1$) in brane tower |
 | Propagator | Projection $A_n \to A_0$ (collapses virtual structure) |
-| Vacuum polarisation | Virtual pair within exceptional divisor $E_p$ |
+| Vacuum polarisation | Virtual pair within exceptional divisor $\mathcal{S}_p$ |
 | Loop correction | Skein resolution of transient R-II crossing pair |
 | Off-shell lifetime | Bounded by $\hbar_{q_n} / (2\Delta E)$ at tower level $n$ |
 

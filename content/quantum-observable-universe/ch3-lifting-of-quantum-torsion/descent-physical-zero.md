@@ -15,5 +15,5 @@ content is purely algebraic.
    rather than a distributed one.
 3. *Lepton generations.*  All vertical harmonic forms
    ([Betti numbers on branes](#rem:betti-numbers-brane)) are concentrated at the
-   point; the Euler characteristic $\chi(E_p)$ retains the count of
+   point; the Euler characteristic $\chi(\mathcal{S}_p)$ retains the count of
    fermionic degrees of freedom without any spatial multiplicity.

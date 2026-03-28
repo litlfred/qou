@@ -17,14 +17,14 @@ Then:
      P_{K_H}(q).
    $$
 
-2. **Path independence on $E_p$.**  Two braiding operations
+2. **Path independence on $\mathcal{S}_p$.**  Two braiding operations
    $T_1, T_2$ on $H$ that produce isotopy-equivalent
    configurations
    ([isotopy equivalence](#def:bundle-isotopy-equivalence))
    have the same categorical transfer matrix:
    $\mathcal{T}(T_1) = \mathcal{T}(T_2)$.  In particular, the
    specific sequence of crossing changes within the exceptional
-   divisor $E_p$ does not affect the result --- only the
+   divisor $\mathcal{S}_p$ does not affect the result --- only the
    equivalence class of the final configuration matters.
 
 3. **Well-definedness.**  The categorical transfer matrix
@@ -33,4 +33,4 @@ Then:
    It is independent of:
    - the braid representative $\beta_H$,
    - the PawLei embedding $\iota_{j_i}$ for each constituent,
-   - the order of crossings evaluated within $E_p$.
+   - the order of crossings evaluated within $\mathcal{S}_p$.
