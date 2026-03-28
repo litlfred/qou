@@ -92,7 +92,7 @@ The observed ratio is $m_W / m_Z = 80\,369 / 91\,188 = 0.8815$.
 The Alexander polynomial captures the $q$-deformed combinatorics
 of the link but **not** the full Skein structure.  The discrepancy
 between $0.661$ and $0.882$ must be resolved by the complete
-Skein polynomial — the Jones polynomial $V_{T(2,4)}(q)$ and the
+Skein polynomial — the Jones polynomial $J_{T(2,4)}(q)$ and the
 HOMFLY polynomial $P_{T(2,4)}(a, z)$ — which includes
 inter-component linking, writhe corrections, and the Seifert genus
 weighting from the exceptional divisor coupling.

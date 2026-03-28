@@ -76,10 +76,10 @@ noncomputable def delta_q : ℝ :=
 
 /-! ## Key theorems -/
 
--- Ref: [CDF2022] https://doi.org/10.1126/science.abk1781
 -- CDF II W boson mass: m_W = 80433.5 ± 9.4 MeV/c²
--- Ref: [ATLAS2024] https://doi.org/10.1140/epjc/s10052-024-12632-6
+--   https://doi.org/10.1126/science.abk1781
 -- ATLAS W mass: m_W = 80360.2 ± 9.9 MeV/c², consistent with SM
+--   https://doi.org/10.1140/epjc/s10052-024-12632-6
 
 /-- The Markov trace ratio m_W/m_Z is positive and less than 1
     (W is lighter than Z), consistent with observation. -/
@@ -91,7 +91,7 @@ theorem w_z_ratio_bounds :
 /-- The local substrate perturbation δq required for the CDF shift
     is less than 0.001 — well within the CODATA consistency window
     q ∈ [1.109, 1.112]. -/
--- Ref: [CDF2022] https://doi.org/10.1126/science.abk1781
+-- Ref: [manuscript] Ch. 7, §Mass predictions and CODATA Comparison
 theorem delta_q_within_window :
     delta_q < 0.001 := by
   sorry
