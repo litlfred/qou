@@ -52,7 +52,7 @@ $A_{n+1}$ is inherited from $A_n$ by jet prolongation
 ([jet prolongation](#prop:jet-prolongation)).  The
 comultiplication $\Delta_{n+1}$ and multiplication
 $\mu_{n+1}$ satisfy the same Hecke relation
-$\sigma^2 = (q - q^{-1})\sigma + 1$ at level $n+1$.
+$T^2 = (q - q^{-1})T + 1$ at level $n+1$.
 Degree-lexicographic orderings are compatible with any
 associative multiplication whose defining relations have
 leading terms of bounded degree — the Hecke relation is
