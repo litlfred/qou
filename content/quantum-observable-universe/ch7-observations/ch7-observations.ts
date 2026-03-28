@@ -59,6 +59,7 @@ export default chapter({
         "hadron-half-life-verification",
         "half-life-shell-worked",
         "half-life-as-q-probe",
+        "finiteness-bound-interpretation",
       ],
     }),
 
