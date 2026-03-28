@@ -1,20 +1,15 @@
-> *The enormous usefulness of mathematics in the natural sciences
-> is something bordering on the mysterious and there is no rational
-> explanation for it.*
-> — Eugene Wigner, 1960 \cite{wigner1960}
-
-> *What we observe is not nature itself but nature exposed to our
-> method of questioning.*
-> — Werner Heisenberg, 1958
-
 Quantum mechanics is, at its core, a theory about what can be
 observed.  Not what the universe *is* — we may never settle that
 question — but what its mechanics *do*: how measurements compose,
 how symmetries constrain outcomes, how local observations assemble
-into a coherent global picture.  The language best suited to this
-task is category theory, because it describes structure and
-transformation — the *how* — without committing to any particular
-ontology, whether constructive or platonic.
+into a coherent global picture.  Wigner once called the usefulness
+of mathematics in the natural sciences "something bordering on the
+mysterious" \cite{wigner1960}, yet Heisenberg reminded us that what
+we observe is not nature itself but nature exposed to our method of
+questioning.  This book takes both insights seriously.  The language
+best suited to the task is category theory, because it describes
+structure and transformation — the *how* — without committing to
+any particular ontology, whether constructive or platonic.
 
 The starting point of this book is a collection of plain physical
 facts.  Differentiation works: linear approximation describes our
