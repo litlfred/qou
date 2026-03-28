@@ -29,6 +29,13 @@ axiom L_reeb : DiffForm → DiffForm
 axiom L_reeb_star : DiffForm → DiffForm
 /-- The interior product ι_ξ. -/
 axiom ι_reeb : DiffForm → DiffForm
+/-- Scalar multiplication of ℝ on differential forms. -/
+axiom DiffForm.smul : ℝ → DiffForm → DiffForm
+/-- Addition of differential forms. -/
+axiom DiffForm.add : DiffForm → DiffForm → DiffForm
+
+noncomputable instance : SMul ℝ DiffForm := ⟨DiffForm.smul⟩
+noncomputable instance : Add DiffForm := ⟨DiffForm.add⟩
 
 /-- The q-exterior derivative: d_q = q⁻¹ d + (1 - q⁻¹) θ ∧ L_ξ. -/
 noncomputable axiom d_q (q : ℝ) : DiffForm → DiffForm
