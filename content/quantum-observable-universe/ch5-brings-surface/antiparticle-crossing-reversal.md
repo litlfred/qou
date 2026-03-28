@@ -5,7 +5,7 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
 
 1. **Crossing reversal defines antiparticles.**  The antihadron
    $\sigma(H)$ of a composite hadron
-   $H = [K_1, \ldots, K_n]_c \bowtie \mathcal{L}$ is obtained by
+   $H = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ is obtained by
    replacing every constituent $K_i$ with its mirror
    $\sigma(K_i)$.  The braid word $\beta$ representing the linking
    has all crossing signs reversed.

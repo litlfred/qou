@@ -49,11 +49,11 @@ T_{m,-n}$.
 **Composites.**
 The connected sum of knots is $\mathfrak{K}_1 \mathbin{\#}
 \mathfrak{K}_2$.  A hadron ([hadron](#def:hadron)) is written
-$[\mathfrak{K}_1, \mathfrak{K}_2, \mathfrak{K}_3]_c \bowtie
+$[\mathfrak{K}_1, \mathfrak{K}_2, \mathfrak{K}_3]_p \bowtie
 \mathcal{L}_H$, where the subscript $c$ indicates colour-tube
 coupling and $\bowtie$ denotes the linking operation.  The proton:
 
 $$
-  \mathfrak{p} = [\mathfrak{K}_u, \mathfrak{K}_u, \mathfrak{K}_d]_c
+  \mathfrak{p} = [\mathfrak{K}_u, \mathfrak{K}_u, \mathfrak{K}_d]_p
   \bowtie \mathcal{L}_H
 $$

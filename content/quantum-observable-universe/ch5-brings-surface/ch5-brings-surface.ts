@@ -35,9 +35,7 @@ export default chapter({
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-        // Lagrange resolvents and braid-group action
-        "lagrange-resolvent-transform",
-        "lagrange-resolvents",
+        // Braid-group action (resolvents now in ch4 as categorical DFT)
         "braid-group-action",
         // Color tube coordinates
         "color-tube-coordinates",
@@ -122,10 +120,7 @@ export default chapter({
         "antineutrino-knot",
         // Building block reference tables
         "linking-relations-table",
-        // q-deformed kinematics
-        "q-momentum",
-        "q-angular-momentum",
-        "q-energy",
+        // q-deformed kinematics (definitions now in ch4)
         "q-value-transition",
         // Proton, neutron, stable nucleus
         "categorical-proton",

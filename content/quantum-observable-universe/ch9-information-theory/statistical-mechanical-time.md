@@ -64,7 +64,7 @@ $I_P = n_R \cdot h(q)$, not the per-step information $h(q)$.
 At the classical limit ($t_P \to \infty$): infinitely many
 iterations compose each unit.  The Julia set dynamics becomes
 the continuous Reeb flow, the orbit structure becomes the
-smooth invariant measure $\mathcal{E}_J$, and the
+smooth invariant measure $\mu_J$, and the
 per-operation information $h(q) \to 0$ while the aggregate
 $I_P = t_P \cdot h(q)$ remains finite — the information rate
 of the smooth flow.

@@ -14,8 +14,8 @@ $$
 $$
 
 In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
-one neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c$ becomes a proton
-$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c$.  This is a Skein crossing change
+one neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ becomes a proton
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p$.  This is a Skein crossing change
 $\sigma$ on the $\mathfrak{d} \to \mathfrak{u}$ quark strand inside one nucleon.  The
 three terms in the Skein relation are:
 

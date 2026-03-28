@@ -27,7 +27,7 @@ the original electron unchanged.
 
 **Composite fermions (proton, neutron).**
 The proton is a [Borromean baryon](#def:borromean-baryon):
-$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$, built from
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$, built from
 trefoils linked by the Hopf link.  Its antiparticle $\bar{\mathfrak{p}}$
 replaces every $T_{2,3}$ with $\sigma(T_{2,3})$
 ([chirality remark](#rem:chirality-trefoil-electron-positron)).

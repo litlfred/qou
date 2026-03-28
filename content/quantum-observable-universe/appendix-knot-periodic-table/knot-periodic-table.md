@@ -8,8 +8,8 @@ $$
   \;\bowtie\; p \cdot T_{2,3}
 $$
 
-where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c
+where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ is the
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p
 \bowtie \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
 (electron), and $\bowtie$ denotes Hopf linking.
 Here $p$ is the number of protons (atomic number) and $n$ is the

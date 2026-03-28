@@ -7,7 +7,7 @@ introduce the following shorthand.
 |--------|---------|
 | $T_{m,n}$ | Torus knot generator (winding numbers $m, n$) |
 | $\bowtie$ | Hopf linking on exceptional divisor $\mathcal{S}_c$ |
-| $[\cdot,\cdot,\cdot]_c$ | Color-tube linking through $(r,g,b)$ fibers |
+| $[\cdot,\cdot,\cdot]_p$ | Color-tube linking through $(r,g,b)$ fibers |
 | $\sigma$ | Skein crossing change (transmutation) |
 | $\overline{K}$ | Mirror (antiparticle) of knot $K$ |
 | $N \cdot K$ | $N$ copies of knot $K$ in a multi-component link |
@@ -29,9 +29,9 @@ $\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
 triples bound by Hopf links:
 
 $$
-  \mathfrak{p} \;=\; [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H,
+  \mathfrak{p} \;=\; [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H,
   \qquad
-  \mathfrak{n} \;=\; [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c \bowtie \mathcal{L}_H.
+  \mathfrak{n} \;=\; [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H.
 $$
 
 **Nuclear composites** are iterated Hopf linkings of nucleons.
@@ -84,13 +84,13 @@ to the base manifold.
 
 | Particle | Symbol | Knot formula |
 |----------|--------|-------------|
-| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ |
-| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ |
+| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
+| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$ |
 | $\pi^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{d}}$ |
 | $\pi^0$ | | $(\mathfrak{u} \bowtie \overline{\mathfrak{u}} + \mathfrak{d} \bowtie \overline{\mathfrak{d}})/\!\sqrt{2}$ |
 | $K^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{s}}$ |
-| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_c \bowtie \mathcal{L}_H$ |
-| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_c \bowtie \mathcal{L}_H$ |
+| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
+| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_p \bowtie \mathcal{L}_H$ |
 
 *Light nuclei and atoms.*
 

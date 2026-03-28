@@ -25,7 +25,7 @@ boundary between orbits that escape and orbits that remain bounded
 Photons propagate as exceptional-divisor flux, not as
 $q$-harmonic forms.  Their diffraction envelope is not the
 sinc${}^2$ of massive particles but the **Julia-set measure**
-$\mathcal{E}_J$: the natural invariant measure on $J(f_q)$.
+$\mu_J$: the natural invariant measure on $J(f_q)$.
 The Hausdorff dimension $d_H = d_H(q)$ of $J(f_q) \cap S^1$
 governs the power-law tails of the photon envelope, replacing the
 $|\theta|^{-2}$ falloff of classical Airy diffraction with

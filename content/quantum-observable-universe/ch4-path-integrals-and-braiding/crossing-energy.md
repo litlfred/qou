@@ -1,4 +1,4 @@
-Let $H = [K_1, \ldots, K_n]_c \bowtie \mathcal{L}$ be a composite
+Let $H = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a composite
 of knots linked by a link $\mathcal{L}$, with braid word
 $\beta \in B_n$ representing the linking.  The *crossing energy*
 of $H$ is

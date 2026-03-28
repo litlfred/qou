@@ -137,6 +137,21 @@ export default chapter({
       ],
     }),
 
+    // ── Lagrange resolvents (categorical DFT) ─────────────────────────
+    section({
+      title: "Lagrange Resolvents and $q$-Deformed Kinematics",
+      label: "sec:lagrange-q-kinematics",
+      blocks: [
+        // DFT decomposition of cyclic representations
+        "lagrange-resolvent-transform",
+        "lagrange-resolvents",
+        // q-deformed physical quantities (general QOU)
+        "q-momentum",
+        "q-angular-momentum",
+        "q-energy",
+      ],
+    }),
+
     // ── Vertex operators and the Markov trace ────────────────────────
     section({
       title: "Vertex Operators and the Markov Trace",

@@ -6,7 +6,7 @@ modes, summarised in the following table:
 | **Geometric identity** | $q$-harmonic form ($\Delta_q\alpha = 0$) | Exceptional-divisor flux |
 | **Phase mechanism** | $q$-Laplacian cross-coupling | Chiral twist $q\phi$ |
 | **Interference formula** | $\cos^2(\Delta\Phi_q / 2)$ | $\cos^2(q\,d\sin\theta / 2R)$ |
-| **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mathcal{E}_J$ |
+| **Envelope** | $q$-corrected sinc${}^2$ | Julia-set measure $\mu_J$ |
 | **Band-width shift** | Wider by $(1 - q^{-1})^2$ | Power-law tails ($\sim\lvert\theta\rvert^{-d_H}$) |
 | **Classical limit** ($q \to 1$) | Fraunhofer | Airy |
 
@@ -35,7 +35,7 @@ experiments report systematic deviations:
 
 3. *Photon diffraction*: subsidiary Airy maxima are more suppressed
    than $1/(m\pi)^2$, and the intensity tails are heavier than
-   $|\theta|^{-2}$.  The Julia-set envelope $\mathcal{E}_J$ naturally
+   $|\theta|^{-2}$.  The Julia-set envelope $\mu_J$ naturally
    produces both effects: the fractal boundary concentrates measure
    near the central peak (suppressing subsidiaries) while the
    power-law decay $|\theta|^{-d_H}$ with $d_H > 1$ gives broader

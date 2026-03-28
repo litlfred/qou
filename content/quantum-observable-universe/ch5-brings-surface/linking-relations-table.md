@@ -1,6 +1,6 @@
 Three operations build every particle from the seven torus knot
 generators: **Hopf linking** ($\bowtie$), **Skein crossing change**
-($\sigma$), and **color-tube linking** ($[\cdot]_c$).  This
+($\sigma$), and **color-tube linking** ($[\cdot]_p$).  This
 appendix table records the result of each operation applied to
 pairs of building block knots.
 
@@ -35,10 +35,10 @@ locally (at one crossing), it transmutes quark flavour.
 | $T_{2,7}$ ($c$) | Global mirror $\sigma$ | $\overline{T_{2,7}}$ ($\bar{c}$) | Charm → anticharm |
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $\overline{T_{1,0}}$ ($\bar{\nu}$) | Neutrino → antineutrino |
 | $4_1$ ($\mu$) | Global mirror $\sigma$ | $4_1$ ($\mu$) | Self-mirror (amphichiral) |
-| $\mathfrak{n}$ = $[u,d,d]_c$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_c$ | Beta decay ($n \to p$) |
+| $\mathfrak{n}$ = $[u,d,d]_p$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_p$ | Beta decay ($n \to p$) |
 | $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (muon) |
 
-## Table 3: Color-tube linking $[K_1, K_2, K_3]_c$ — Borromean construction
+## Table 3: Color-tube linking $[K_1, K_2, K_3]_p$ — Borromean construction
 
 Three knots threaded through the three color tubes of the Bring
 surface form a Borromean-linked baryon.
