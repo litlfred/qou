@@ -73,7 +73,7 @@ embeddability requires $(m-1)(n-1) \leq 2g = 8$.
 **Remark on the cutoff.**
 The bound $N(\chi) = 1 - \chi = 1 - (-6) = 7$ on the number of
 nontrivial generators is not accidental: it equals the number of
-handles ($g = 4$) of the Bring's surface plus the three independent
+handles ($g = 4$) of Bring's surface plus the three independent
 Seifert genus values ($1, 2, 3, 4$) available within those handles.
 The recursive brane tower
 ([recursive brane tower](#def:recursive-brane-tower)) does not

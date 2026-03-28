@@ -93,7 +93,7 @@ of the trefoil
 The strong force binds by **interpolation**: $T_{2,9}$ wraps
 through all three color fibers in a single closed curve, providing
 the topological rigidity that confines quarks into baryons.
-The three $S_3$ subgroups of the Bring's surface automorphism group
+The three $S_3$ subgroups of the automorphism group of Bring's surface
 $S_5$ — corresponding to the three color charges — are precisely
 the subgroups that leave one of the three $T_{2,3}$ periods of
 $T_{2,9}$ invariant.

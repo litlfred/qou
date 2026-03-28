@@ -12,7 +12,7 @@ Descartes universe exhaust the space of states?**
 
 The generation completeness theorem shows that every knot
 with Seifert genus $g(\mathfrak{K}) \leq 4$ appears in the
-spectrum — the Bring's surface's genus bound captures all
+spectrum — the genus bound of Bring's surface captures all
 embeddable knots in that range.  Knots with $g > 4$ are
 excluded by the spectral filter.
 

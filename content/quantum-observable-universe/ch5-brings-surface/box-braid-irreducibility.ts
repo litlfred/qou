@@ -24,6 +24,7 @@ export default proposition({
     "def:antineutrino-knot",
     "def:beta-decay-skein",
     "rem:force-knot-identification",
+    "rem:unmapped-torus-knots",
     "rem:virtual-particles-exceptional-divisor",
     "prop:nuclear-groebner-reduction",
     "prop:groebner-shirshov-energy",

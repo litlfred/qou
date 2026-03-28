@@ -22,7 +22,7 @@ transplanted to the Skein algebra — explains color confinement.
 
 **Observation: why exactly three colors.**
 
-The Bring's surface automorphism group $S_5$ contains exactly three
+The automorphism group $S_5$ of Bring's surface contains exactly three
 conjugate $S_3$ subgroups, each the quotient of the trefoil knot
 group restricted to one color fiber.  The number three is not
 imposed externally — it follows from:
