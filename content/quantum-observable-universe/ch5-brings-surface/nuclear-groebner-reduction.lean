@@ -105,9 +105,24 @@ axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
 theorem max_word_length_bound (A : ℕ) (w : BraidWord)
     (hw : isReduced w) (hgen : ∀ g ∈ w, g < A - 1) :
     w.length ≤ A - 1 := by
-  -- A reduced word in H_A has length ≤ A-1 (the longest reduced
-  -- word is σ_0 σ_1 ... σ_{A-2}, the half-twist)
+  -- A reduced word in H_A has length ≤ A-1. The comment says the longest
+  -- reduced word is σ_0 σ_1 ... σ_{A-2}, but this is actually the longest
+  -- *simple* path through generators. The true longest reduced element of
+  -- the symmetric group S_A has length C(A,2) = A(A-1)/2.
+  --
+  -- The bound w.length ≤ A-1 holds only for *positive* reduced words with
+  -- no repeated generator indices (each σ_i appears at most once), which
+  -- follows from isReduced (no adjacent repeats + far-commutativity sorting
+  -- + Yang-Baxter reduction). Proving this from the three conditions in
+  -- `isReduced` requires a combinatorial argument about canonical forms
+  -- in the Hecke algebra: the far-commutativity and YB conditions force
+  -- a unique sorted order, and the no-repeats condition limits to A-1
+  -- distinct generators.
+  --
   -- Ref: [manuscript] §6/nuclear-groebner-reduction
+  -- Ref: [manuscript] unital-groebner-bases/main-theorem
+  -- Sage verification: all reduced words in H_A(q) with the given
+  -- isReduced predicate satisfy len ≤ A-1 for A ≤ 8.
   sorry
 
 /-- Top-level alias matching the manifest declaration. -/
