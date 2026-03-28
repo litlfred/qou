@@ -55,6 +55,9 @@ theorem pair_crossing_energy (H : KnotComposite) :
 -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
 theorem coulomb_reversal (H : KnotComposite) :
     H.mirror.coulombCharge = -H.coulombCharge := by
+  -- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+  -- Note: requires coulombCharge to use (pos - neg) antisymmetric form;
+  -- current definition uses pos_crossings only — theorem needs revised definition.
   sorry
 
 /-- Bare mass (total crossing count) is preserved under mirror. -/

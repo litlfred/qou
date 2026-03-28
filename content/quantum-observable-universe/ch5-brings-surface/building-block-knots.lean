@@ -136,7 +136,10 @@ theorem jones_unknot_eq_one (q : ℝ) : jones_unknot q = 1 := rfl
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem figure_eight_amphichiral (q : ℝ) (hq : q ≠ 0) :
     jones_figure_eight q = jones_figure_eight (q⁻¹) := by
-  sorry
+  unfold jones_figure_eight
+  have hq' : q⁻¹ ≠ 0 := inv_ne_zero.mpr hq
+  field_simp
+  ring
 
 /-- The unknot is amphichiral: J(q) = J(q⁻¹) = 1. -/
 -- Ref: [jones1987]
