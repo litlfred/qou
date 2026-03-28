@@ -285,6 +285,7 @@ export default chapter({
       label: "sec:fivefold-symmetry",
       blocks: [
         "fivefold-symmetry",
+        "cohomological-embedding",
       ],
     }),
   ],
