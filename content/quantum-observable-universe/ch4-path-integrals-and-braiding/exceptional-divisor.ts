@@ -4,8 +4,6 @@ export default definition({
   label: "def:exceptional-divisor",
   lean: { decl: "QOU.ExceptionalDivisor" },
   title: "Exceptional divisor at $p$",
-  tags: ["descartes-universe", "exceptional-divisor", "blow-up"],
-  uses: [
-    "def:descartes-condition",
-  ],
+  tags: ["exceptional-divisor", "blow-up"],
+  uses: [],
 });

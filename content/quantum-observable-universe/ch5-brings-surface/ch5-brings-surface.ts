@@ -76,23 +76,15 @@ export default chapter({
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
-        // Seiberg--Witten on Bring's (generic SW → ch5 Models)
-        "reeb-exceptional-divisor",
-        "reeb-bundle",
-        "vertex-is-exceptional-divisor",
-        "vertex-is-exceptional-divisor-proof",
-        "vertex-operator",
-        "vertex-operator-dictionary",
+        // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
-        "exceptional-divisor",
         "chiral-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",
-        "skein-archimedean-shadow",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
         "golden-ratio-degeneration",
@@ -206,13 +198,11 @@ export default chapter({
       title: "Topological mass and the knot-particle spectrum",
       label: "sec:topological-mass-spectrum",
       blocks: [
-        // Topological mass formula (Archimedean wall)
-        "topological-mass-formula",
+        // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
         "knot-volumes-verification",
         // Skein decomposition and hadronic mass
         "ch11-intro",
-        "skein-decomposition",
         "skein-mass-relation",
         "skein-mass-relation-proof",
         "terminal-resolution",

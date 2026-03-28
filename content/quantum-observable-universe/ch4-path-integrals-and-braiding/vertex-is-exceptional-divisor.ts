@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:vertex-is-exceptional-divisor",
   lean: {
-    decl: "QOU.Descartes.vertex_is_exceptional_divisor",
+    decl: "QOU.vertex_is_exceptional_divisor",
     validation: "not_checked",
   },
   title: "Vertex operators factor through the exceptional divisor",
@@ -14,7 +14,7 @@ export default proposition({
   uses: [
     "def:exceptional-divisor",
     "def:reeb-bundle",
-    "cor:descartes-braid-structure",
+    "prop:braid-action-tensor",
   ],
   proofs: ["prf:vertex-is-exceptional-divisor"],
 });

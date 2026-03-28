@@ -18,5 +18,5 @@ export default theorem({
     decl: "QOU.Descartes.markov_trace_factorization",
     validation: "not_checked",
   },
-  uses: ["prop:generator-volume-decomposition"],
+  uses: ["prop:generator-volume-decomposition", "thm:markov-trace-product"],
 });

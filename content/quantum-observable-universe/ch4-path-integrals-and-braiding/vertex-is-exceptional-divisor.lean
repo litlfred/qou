@@ -12,7 +12,7 @@
 
 import Mathlib.Topology.FiberBundle.Basic
 
-namespace QOU.Descartes
+namespace QOU
 
 /-- Every vertex operator (Hecke generator) factors through the
     exceptional divisor: it is supported on E_p and trivial on A₀. -/
@@ -44,7 +44,7 @@ theorem vertex_completeness
     (E : QOU.ExceptionalDivisor)
     (R : QOU.ReebBundle q) :
     True := by
-  -- Ref: [manuscript] Ch 6 §2
+  -- Ref: [manuscript] Ch 4
   sorry
 
-end QOU.Descartes
+end QOU
