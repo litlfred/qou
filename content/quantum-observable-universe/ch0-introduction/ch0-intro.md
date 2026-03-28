@@ -1,29 +1,32 @@
-Wigner once called the usefulness of mathematics in the natural
-sciences "something bordering on the mysterious" \cite{wigner1960}.
-Heisenberg reminded us that what we observe is not nature itself
-but nature exposed to our method of questioning.  This book takes
-both insights seriously.  We do not ask what the universe *is* —
-we ask what its mechanics *do*.  Category theory is the natural
-language for this, because it describes structure and transformation
-without committing to any particular ontology.
+The starting point is a collection of observations about how we
+interact with the world.  We see colours — and always three of
+them mix to produce white.  We can move around, rotate, and look
+from different angles, yet the things we measure do not depend on
+where we stand or which way we face.  Time flows: the world
+unfolds, and we drift along that flow.  Three-fold structure recurs
+throughout nature — three colours, three generations of matter,
+three-fold chirality — in a way that demands explanation rather
+than stipulation.  And crucially, multiple observers share the same
+world — not each illuminating a private universe, but all
+navigating a common landscape.
 
-The starting point is a collection of plain physical facts.
-Differentiation works: linear approximation describes our universe
-across scales, from planetary orbits to particle scattering.
-Measurement is consistent: we can measure, record, and compare,
-and those comparisons respect a pairing between observables and
-their duals.  Physics is frame-independent: what we measure does
-not depend on the orientation from which we observe it.  Three-fold
-structure recurs throughout nature — three colours, three
-generations of matter, three-fold chirality — in a way that demands
-explanation rather than stipulation.  Time flows: the universe
-folds and unfolds, and we drift along that flow.  We have the
+Some observations run deeper.  We can measure, record, and compare,
+and those comparisons are consistent — there is a pairing between
+what we observe and the instruments we use.  Smooth change is the
+rule: linear approximation describes our universe across scales,
+from planetary orbits to particle scattering.  We have the
 perception of free will and intent — we choose to measure, to act,
 to organise — and that choice has consequences: observation creates
-outcomes not determined by the initial conditions.  And crucially,
-multiple observers share a world — not each illuminating a private
-universe, but all operating within a common affine chart whose
-consistency is guaranteed by the algebraic structure itself.
+outcomes not determined by the initial conditions.  Even the
+capacity for computation — the ability to reason, count, and
+calculate — seems woven into the fabric rather than bolted on.
+
+Heisenberg reminded us that what we observe is not nature itself
+but nature exposed to our method of questioning.  This book takes
+that insight seriously.  We do not ask what the universe *is* — we
+ask what its mechanics *do*.  Category theory is the natural
+language for this, because it describes structure and transformation
+without committing to any particular ontology.
 
 A remarkable fact — and the central thesis of this book — is that
 these everyday observations, once stated carefully, determine a
@@ -43,15 +46,17 @@ condition $\star_q F_\nabla = F_\nabla$ together identify these
 knots equally as vortex lines in the fibre of the state bundle.
 The two pictures — a particle as a knot type and a particle as a
 vortex flow — are not competing descriptions but equivalent
-viewpoints exchanged by the self-duality of the algebra.  Even the capacity for computation —
-the Turing completeness of the substrate — is a consequence, not
-an input.  And that computation is *confluent*: the Gröbner basis
-structure of the algebra guarantees that the order in which
-reductions are carried out does not affect the result.  Just as
-category theory frees us from asking what things *are* and lets us
-study how they work together, the Gröbner property frees us from
-worrying about the *path* of a calculation — only the endpoint
-matters.
+viewpoints exchanged by the self-duality of the algebra.  Even the
+capacity for computation — the Turing completeness of the
+substrate — is a consequence, not an input.  And that computation
+is *confluent*: the Gröbner basis structure of the algebra
+guarantees that the order in which reductions are carried out does
+not affect the result.  Just as category theory frees us from
+asking what things *are* and lets us study how they work together,
+the Gröbner property frees us from worrying about the *path* of a
+calculation — only the endpoint matters.  That so much structure
+follows from so little input is, as Wigner put it, "something
+bordering on the mysterious" \cite{wigner1960}.
 
 The book is organised as follows.
 
