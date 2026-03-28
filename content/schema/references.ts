@@ -772,6 +772,23 @@ export const references: CSLData[] = [
     DOI: "10.1007/978-1-4612-0783-2",
   }),
 
+  // ── Frenkel & Ben-Zvi 2004 ──────────────────────────────────
+  ref({
+    id: "frenkel2004",
+    type: "book",
+    title: "Vertex Algebras and Algebraic Curves",
+    author: [
+      { family: "Frenkel", given: "Edward" },
+      { family: "Ben-Zvi", given: "David" },
+    ],
+    publisher: "American Mathematical Society",
+    issued: { "date-parts": [[2004]] },
+    edition: "2nd",
+    "collection-title": "Mathematical Surveys and Monographs",
+    "collection-number": 88,
+    DOI: "10.1090/surv/088",
+  }),
+
   // ── Donaldson 1990 ────────────────────────────────────────────
   ref({
     id: "donaldson1990",

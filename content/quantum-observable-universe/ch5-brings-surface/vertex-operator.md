@@ -1,0 +1,91 @@
+Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU, let
+$E_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor
+at a brane point $p$
+([exceptional divisor](#def:exceptional-divisor)), and let
+$\mathcal{R}_p$ be the Reeb bundle over $E_p$
+([Reeb bundle](#def:reeb-bundle)).  Write $z$ for the standard
+affine coordinate on $E_p \cong \mathbb{P}^1(\mathbb{C})$.
+
+The **vertex operator algebra** of the QOU at $p$ is the triple
+$(V, Y, |0\rangle)$ defined as follows.
+
+**Graded state space.**  The $\mathbb{Z}_{\geq 0}$-graded vector
+space is the brane tower:
+
+$$
+  V \;=\; \bigoplus_{n \geq 0} V_n,
+  \qquad V_n \;=\; A_n \;=\; J^n(A_0),
+$$
+
+where $A_0 = \mathcal{O}(\mathrm{SU}_q(2))$ is the coordinate ring
+and $J^n$ denotes the $n$-th jet prolongation
+([jet prolongation](#def:jet-prolongation)).  The grading $n$ is the
+**conformal weight**: the eigenvalue of the Reeb charge operator
+$L_0 = \xi_q^{(0)}$ (the zero-mode of the $q$-Reeb vector field).
+
+**State-operator correspondence.**  The map
+
+$$
+  Y \colon V \;\longrightarrow\; (\mathrm{End}\,V)[\![z, z^{-1}]\!]
+$$
+
+assigns to each state $a \in V_n$ a **vertex operator** (formal
+Laurent series in the coordinate $z$ on $E_p$):
+
+$$
+  Y(a, z) \;=\; \sum_{m \in \mathbb{Z}} a_m\, z^{-m-1},
+$$
+
+where the **modes** $a_m \in \mathrm{End}\,V$ are defined by the
+$R$-matrix insertion:
+
+$$
+  a_m
+  \;=\;
+  \oint_{|z| = 1} Y(a, z)\, z^m\, \frac{dz}{2\pi i}
+  \;=\;
+  \mathrm{tr}_M\!\bigl(
+    \check{R}_{(a)}\, z^m
+  \bigr),
+$$
+
+with $\check{R}_{(a)} = P \circ \mathcal{R}$ the braid operator
+([R-matrix braiding](#rem:r-matrix-braiding)) applied to the state
+$a$, and $\mathrm{tr}_M$ the Markov trace
+([Jones--Markov trace](#thm:jones-markov-trace)).  The contour
+integral is taken around the equator of $E_p \cong S^2$, i.e.\
+along a fibre of the Reeb bundle $\mathcal{R}_p$.
+
+**Vacuum and translation.**
+
+$$
+  |0\rangle = 1 \in A_0, \qquad
+  T = L_{-1} = j \colon A_n \to A_{n+1},
+$$
+
+where $j$ is the jet prolongation map.  The vacuum is the unknot
+(identity element of $A_0$), and the translation operator
+advances one level in the brane tower.
+
+**OPE as Skein resolution.**  When two insertion points $z, w$
+on $E_p$ collide, the operator product expansion
+
+$$
+  Y(a, z)\, Y(b, w)
+  \;\sim\;
+  \sum_{n \geq 0}
+  \frac{Y(c_n, w)}{(z - w)^{n+1}}
+$$
+
+has its **leading singularity** governed by the Hecke relation
+$(T_i - q)(T_i + q^{-1}) = 0$, which is the Skein relation
+
+$$
+  L_+ - L_- \;=\; (q - q^{-1})\, L_0.
+$$
+
+The collision $z \to w$ is two strands meeting on $E_p$; the
+resolution into $L_+$, $L_-$, $L_0$ is the OPE decomposition
+into singular channels.  The two eigenvalues $q$ and $-q^{-1}$
+of $T_i$ correspond to the symmetric (bosonic) and antisymmetric
+(fermionic) OPE channels respectively.

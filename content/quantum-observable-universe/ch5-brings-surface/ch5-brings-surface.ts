@@ -81,6 +81,8 @@ export default chapter({
         "reeb-bundle",
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
+        "vertex-operator",
+        "vertex-operator-dictionary",
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
