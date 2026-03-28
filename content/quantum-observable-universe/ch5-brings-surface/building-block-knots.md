@@ -90,13 +90,13 @@ energy at each self-crossing.
 - **Hyperbolic knots** ($\mathrm{Vol} > 0$): mass has both
   a volume term and a crossing term.  The figure-eight has
   $\mathrm{Vol} = 2.0299$ and 4 crossings; its mass ratio
-  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ fixes $q = 1.110$.
+  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ fixes $q = 1.1097$.
 - **Links** ($> 1$ component): the linking number contributes
   additional inter-component crossing energy (binding).
 
-## Jones polynomial at $q = 1.110$
+## Jones polynomial at $q = 1.1097$
 
-| Knot | $J(1.110)$ |
+| Knot | $J(1.1097)$ |
 |------|:----------:|
 | $0_1$ (unknot) | $1.0000$ |
 | $3_1$ (trefoil) | $0.8168$ |
@@ -107,11 +107,11 @@ energy at each self-crossing.
 
 The Jones polynomial at $q = 1$ gives the number of
 components: $J(1) = (-2)^{c-1}$ where $c$ is the
-component count.  At $q = 1.110$, the polynomial
+component count.  At $q = 1.1097$, the polynomial
 encodes the $q$-deformation of the knot's contribution
 to the categorical action.
 
-## Table 5: Categorical action at $q = 1.110$
+## Table 5: Categorical action at $q = 1.1097$
 
 The categorical action $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$
 decomposes into a hyperbolic volume term and a crossing energy
@@ -121,7 +121,7 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 
 **Fundamental constants from $q$:**
 
-| Symbol | Formula | Value at $q = 1.110$ |
+| Symbol | Formula | Value at $q = 1.1097$ |
 |--------|---------|:--------------------:|
 | $\hbar_q$ | $1 - q^{-1}$ | $0.09910$ |
 | $E_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |

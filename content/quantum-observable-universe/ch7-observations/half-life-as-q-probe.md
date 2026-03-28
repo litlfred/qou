@@ -5,7 +5,7 @@ parameter $q$.  Since $q$ is a field coupled to gauge-field curvature
 via $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p)$
 ([Levi-curvature coupling](#rem:c-substrate-via-levi)), any
 environment with significant curvature or field strength shifts $q$
-from its background value $q_0 = 1.110$
+from its background value $q_0 = 1.1097$
 ([local substrate $q$](#prop:local-substrate-q)) and produces a
 measurable change in half-lives.
 

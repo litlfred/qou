@@ -28,5 +28,6 @@ export default proposition({
     "thm:markov-trace-factorization",
     "def:braid-group",
     "prop:topological-mass-formula",
+    "prop:local-substrate-q",
   ],
 });

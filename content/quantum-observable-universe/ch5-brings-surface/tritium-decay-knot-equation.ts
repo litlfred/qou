@@ -22,5 +22,6 @@ export default example({
     "def:neutrino-knot",
     "prop:nuclear-groebner-reduction",
     "thm:markov-trace-factorization",
+    "prop:local-substrate-q",
   ],
 });

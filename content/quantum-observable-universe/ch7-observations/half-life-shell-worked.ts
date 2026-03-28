@@ -22,5 +22,6 @@ export default example({
     "def:stable-nucleus",
     "def:categorical-proton",
     "def:categorical-neutron",
+    "prop:local-substrate-q",
   ],
 });

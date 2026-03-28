@@ -79,7 +79,7 @@ $T(2,8)$ is itself a link with genus $3$ and Seifert surface
 area proportional to the product of the three exceptional
 divisor volumes.  The self-crossing energy of $T(2,8)$ gives
 it a mass of $\sim 125$ GeV — determined by the Skein
-polynomial of $T(2,8)$ evaluated at $q = 1.110$:
+polynomial of $T(2,8)$ evaluated at $q = 1.1097$:
 
 $$
   m_H \;=\; \frac{\mathrm{Vol}(\text{Seifert}(T(2,8)))}{\hbar_q^2}

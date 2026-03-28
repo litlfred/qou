@@ -22,5 +22,6 @@ export default proposition({
     "def:coulomb-charge",
     "def:skein-binding-lagrangian",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

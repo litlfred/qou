@@ -18,6 +18,7 @@ export default remark({
     "rem:q-chromaticity",
     "rem:force-knot-identification",
     "prop:em-coupling-projection",
+    "prop:local-substrate-q",
   ],
   cites: ["feynman1963"],
 });

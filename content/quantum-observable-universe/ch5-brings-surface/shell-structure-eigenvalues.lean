@@ -9,7 +9,7 @@ Chebyshev recurrence:
 
 The eigenvalues λ± = ½[(q-q⁻¹) ± √((q-q⁻¹)²+4)] determine
 all shell energies. The Rydberg formula E_n ∝ 1/n² emerges from
-λ₊ ≈ 1 + ε at q = 1.110.
+λ₊ ≈ 1 + ε at q = 1.1097.
 
 LaTeX label: `prop:shell-structure-eigenvalues`
 

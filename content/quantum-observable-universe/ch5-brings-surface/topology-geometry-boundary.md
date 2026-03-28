@@ -5,7 +5,7 @@ link $\mathcal{N}(p, n)$ produces observables at two levels.
 **What $q$ alone determines.**
 
 These are computed from the Hecke algebra $H_A(q)$ at the single
-parameter $q = 1.110$, the Descartes condition $\chi(A) = -6$,
+parameter $q = 1.1097$, the Descartes condition $\chi(A) = -6$,
 and the categorical definitions:
 
 | Observable | Formula | Status |

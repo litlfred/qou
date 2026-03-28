@@ -20,5 +20,6 @@ export default remark({
     "def:substrate-parameter",
     "def:quantum-planck-constant",
     "ex:q-reeb-flow",
+    "prop:local-substrate-q",
   ],
 });

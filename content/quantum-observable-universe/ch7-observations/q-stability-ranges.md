@@ -47,6 +47,6 @@ Coulomb term is negligible, are insensitive to $q$.
 
 This means the **periodic table is mostly determined by
 $q > 1$** (that is, by the existence of crossing asymmetry),
-not by the specific value $q = 1.110$.  The fine structure —
+not by the specific value $q = 1.1097$.  The fine structure —
 which particular isotope is stable for each heavy element —
 is the part that depends on the precise value of $q$.

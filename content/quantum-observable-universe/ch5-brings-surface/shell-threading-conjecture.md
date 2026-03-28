@@ -97,7 +97,7 @@ $$
   \;=\;
   \frac{[1]_q \, [2]_q}{[3]_q}
   \;\approx\; 0.665
-  \quad\text{at } q = 1.110.
+  \quad\text{at } q = 1.1097.
 $$
 
 This is the **intrinsic Borromean suppression**: the Borromean

@@ -36,11 +36,11 @@ theorem qCasimir_classical_limit (j : ℝ) :
     True := by
   trivial
 
-/-- For spin-½ at q = 1.110:
+/-- For spin-½ at q = 1.1097:
     [1/2]_q · [3/2]_q ≈ 0.818 (vs classical 0.75). -/
 -- Ref: [manuscript] §6/q-angular-momentum
 noncomputable def spin_half_casimir_q1110 : ℝ :=
-  qCasimir 1.110 (1/2 : ℝ)
+  qCasimir 1.1097 (1/2 : ℝ)
 
 /-- The q-deformed commutation relation:
     [J₊, J₋] = [2J_z]_q (not 2J_z). -/

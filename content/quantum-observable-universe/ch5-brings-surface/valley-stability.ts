@@ -19,6 +19,7 @@ export default simulator({
     "rem:valley-table",
     "def:coulomb-charge",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
   simulator: {
     type: "html",

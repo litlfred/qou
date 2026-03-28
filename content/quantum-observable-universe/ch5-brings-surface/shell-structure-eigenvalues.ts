@@ -28,5 +28,6 @@ export default proposition({
     "def:neutrino-knot",
     "conj:electron-shells-hopf",
     "rem:hydrogen-orbitals",
+    "prop:local-substrate-q",
   ],
 });

@@ -21,5 +21,6 @@ export default proposition({
     "def:substrate-parameter",
     "def:brings-surface",
     "rem:color-tube-cubic",
+    "prop:local-substrate-q",
   ],
 });

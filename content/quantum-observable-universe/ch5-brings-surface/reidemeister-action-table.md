@@ -155,7 +155,7 @@ At $q = 1$ (classical): $T^2 = 1$, all crossings cancel,
 no binding energy, no Coulomb repulsion, no beta decay.  All
 nuclear configurations at fixed $A$ are degenerate.
 
-At $q = 1.110$ (Descartes): $T^2 = 0.209\,T + 1$.
+At $q = 1.1097$ (Descartes): $T^2 = 0.209\,T + 1$.
 The crossing asymmetry $0.209 = q - q^{-1}$ splits the
 degeneracy.  The $0.209\,T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb

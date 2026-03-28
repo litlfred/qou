@@ -20,5 +20,6 @@ export default remark({
     "rem:half-life-as-q-probe",
     "sec:mass-comparison-table",
     "rem:hadron-half-life-verification",
+    "prop:local-substrate-q",
   ],
 });

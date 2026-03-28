@@ -100,7 +100,7 @@ $$
 $$
 
 is the $q$-integer.  At $q = 1$, this recovers the classical
-eigenvalue $\ell(\ell + 1)$.  At $q = 1.110$, the
+eigenvalue $\ell(\ell + 1)$.  At $q = 1.1097$, the
 $q$-deformation shifts the eigenvalues:
 
 | $\ell$ | $\ell(\ell+1)$ | $[\ell]_q [\ell+1]_q$ | Shift |

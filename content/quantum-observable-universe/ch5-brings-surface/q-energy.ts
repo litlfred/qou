@@ -24,5 +24,6 @@ export default definition({
     "def:substrate-parameter",
     "def:crossing-energy",
     "prop:topological-mass-formula",
+    "prop:local-substrate-q",
   ],
 });

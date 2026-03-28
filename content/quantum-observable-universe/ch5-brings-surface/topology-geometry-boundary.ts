@@ -24,5 +24,6 @@ export default remark({
     "prop:reidemeister-action-table",
     "prop:topological-mass-formula",
     "def:skein-binding-lagrangian",
+    "prop:local-substrate-q",
   ],
 });

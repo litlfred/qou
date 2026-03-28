@@ -85,7 +85,7 @@ noncomputable def crossings_T34 : ℕ := 8
 noncomputable def crossings_T35 : ℕ := 10
 
 -- ═══════════════════════════════════════════════════════════════════
--- Jones polynomial at q = 1.110
+-- Jones polynomial at q = 1.1097
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- Jones polynomial of the unknot is identically 1. -/

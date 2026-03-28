@@ -17,5 +17,6 @@ export default remark({
     "rem:toffoli-q-and",
     "rem:discrete-planck-step",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

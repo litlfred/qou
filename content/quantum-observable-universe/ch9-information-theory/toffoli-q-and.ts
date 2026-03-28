@@ -18,5 +18,6 @@ export default remark({
     "rem:discrete-planck-step",
     "def:quantum-planck-constant",
     "rem:golden-ratio-degeneration",
+    "prop:local-substrate-q",
   ],
 });

@@ -23,6 +23,7 @@ export default remark({
     "def:color-tube-coordinates",
     "prop:torus-knot-generators",
     "thm:embeddability-closure",
+    "prop:local-substrate-q",
   ],
   cites: ["feynman1963"],
 });
