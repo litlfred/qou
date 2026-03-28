@@ -1,11 +1,12 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "cor:descartes-braid-structure",
+  interprets: "rem:r-matrix-braiding",
   label: "rem:skein-archimedean-shadow",
   title: "Skein relations as an archimedean shadow",
-  tags: ["descartes-universe", "skein-relations", "jones-polynomial"],
+  tags: ["skein-relations", "jones-polynomial", "r-matrix"],
   uses: [
-    "cor:descartes-braid-structure",
+    "rem:r-matrix-braiding",
+    "prop:braid-action-tensor",
   ],
 });

@@ -12,7 +12,7 @@ transplanted to the Skein algebra — explains color confinement.
 
 | Classical color theory | QOU color space |
 |----------------------|----------------|
-| Three primaries $(r, g, b)$ | Three color tubes $(w_2 - z, w_3 - z, w_4 - z)$ |
+| Three primaries $(r, g, b)$ | Three color tubes $(c_r, c_g, c_b) = (w_2 - z, w_3 - z, w_4 - z)$ |
 | Spectral colors (pure wavelengths) | Pure knot types in $\mathcal{S}_q$ |
 | Chromaticity diagram (2-simplex) | $q$-chromaticity triangle |
 | Negative coefficients needed | $-q^{-1}[L_-]$ in Skein relation |

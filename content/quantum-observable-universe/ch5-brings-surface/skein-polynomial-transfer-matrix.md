@@ -3,7 +3,7 @@ polynomial.  The transfer matrix product computes this polynomial
 in factored form without expansion.
 
 **Proposition.**
-*Let $\mathcal{N}(p, n)$ be a nucleus with $A = p + n$ nucleons.
+*Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.
 The Markov trace
 ([factorization theorem](#thm:markov-trace-factorization))*
 
@@ -11,7 +11,7 @@ $$
   P_{\mathcal{N}}(q)
   \;:=\;
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(p, n)}
+    \overline{\mathcal{N}(Z, N)}
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2} \hat{V}_i(q)
@@ -101,11 +101,11 @@ The parameter $q$ plays three roles simultaneously:
 |------|-------------|
 | Algebraic | Deformation parameter of $H_A(q)$: $T^2 = (q - q^{-1})T + 1$ |
 | Topological | Variable of the Skein polynomial $P_{\mathcal{N}}(q)$ |
-| Physical | Substrate parameter $q = 1.1097$ from $\chi(A) = -6$ |
+| Physical | Substrate parameter the substrate $q$ from $\chi(A) = -6$ |
 
 These are not three different objects — they are the **same $q$**.
 The Hecke relation generates the polynomial; the Markov trace
-makes it a link invariant; evaluating at $q = 1.1097$ projects
+makes it a link invariant; evaluating at the substrate parameter $q$ projects
 the topological invariant to the physical energy.
 
 **Degree bounds for specific nuclei.**
@@ -125,7 +125,7 @@ All evaluated in milliseconds.
 
 The $\mathcal{Q}_q$-value
 ([transition energy](#def:q-value-transition)) is the ratio
-of two Skein polynomials evaluated at $q = 1.1097$:
+of two Skein polynomials evaluated at the substrate parameter $q$:
 
 $$
   \mathcal{Q}_q

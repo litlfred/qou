@@ -7,7 +7,7 @@ knot), and the tensor product of $A$ such representations has
 spin parity determined by $A \bmod 2$.
 
 **Proposition.**
-*Let $\mathcal{N}(p, n)$ be a nucleus with mass number $A = p + n$.
+*Let $\mathcal{N}(Z, N)$ be a nucleus with mass number $A = Z + N$.
 Then the total angular momentum $J$ satisfies:*
 
 $$
@@ -19,14 +19,14 @@ $$
 $$
 
 *Proof.*
-Each nucleon — proton $\mathfrak{p} = \mathcal{B}_3(u, u, d)$ or
-neutron $\mathfrak{n} = \mathcal{B}_3(u, d, d)$ — is a knot
+Each nucleon — proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ or
+neutron $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ — is a knot
 (single-component link closure of the Borromean braid).
 By the fermion-boson correspondence
 ([fermions are knots](#prop:fermion-boson-knot-link)), knots
 carry half-integral spin and links carry integral spin.
 
-The nuclear link $\mathcal{N}(p, n)$ is a satellite of $A$
+The nuclear link $\mathcal{N}(Z, N)$ is a satellite of $A$
 Borromean knots joined by Hopf links.  In the $\mathrm{SU}_q(2)$
 representation theory, the tensor product of $A$ spin-$\tfrac{1}{2}$
 representations decomposes as:
@@ -106,7 +106,7 @@ spin).  The resolution — neutrons as spin-$\tfrac{1}{2}$
 neutral particles — gives $A = 14$ nucleons, hence integer spin.
 
 In the Descartes framework, this is automatic: both the proton
-$\mathcal{B}_3(u, u, d)$ and the neutron $\mathcal{B}_3(u, d, d)$
+$\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ and the neutron $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
 are spin-$\tfrac{1}{2}$ knots (same Borromean topology, different
 quark colouring), and $14$ half-integer spins couple to integer
 total spin.

@@ -18,7 +18,7 @@ metallic character if and only if:
 2. **Low crossing energy**: the crossing energy
    ([crossing energy](#def:crossing-energy)) to attach or
    detach a trefoil from $R$ satisfies
-   $E_{\mathrm{cross}}(R) \ll E_{\mathrm{cross}}(S_k)$ —
+   $\mathfrak{E}_{\mathrm{cross}}(R) \ll \mathfrak{E}_{\mathrm{cross}}(S_k)$ —
    the outermost curls are loosely wound compared to the
    inner closed shells.
 

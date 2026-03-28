@@ -15,7 +15,7 @@ The chain from R-matrix to nuclear binding is:
 $$
   \mathcal{R} \;\xrightarrow{\text{Yang--Baxter}}\;
   \check{R} \;\xrightarrow{\text{crossing asymmetry}}\;
-  E_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
+  \mathfrak{E}_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
   \mathcal{L}_{\mathrm{bind}} \;\xrightarrow{\partial/\partial p}\;
   p^*(A)
 $$
@@ -23,14 +23,14 @@ $$
 The last step (beta-stability) gives the smooth curve.  The
 missing step is a **discrete correction**
 $\delta E_{\mathrm{shell}}(p, n)$ that is nonzero only when
-the multi-nucleon link $\mathcal{N}(p, n)$
+the multi-nucleon link $\mathcal{N}(Z, N)$
 ([stable nucleus](#def:stable-nucleus)) has special topological
 structure.
 
 **Conjecture: shell correction from closed sub-links.**
 
 *For the multi-nucleon link
-$\mathcal{N}(p, n) = p\,\mathfrak{p} \bowtie n\,\mathfrak{n}$,
+$\mathcal{N}(Z, N) = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$,
 the Skein polynomial $J_{\mathcal{N}}(q)$ factors into a
 product of Skein polynomials of closed sub-links at specific
 values of $(p, n)$.  The shell correction is:*
@@ -47,9 +47,9 @@ $$
 $L_i$ of $\mathcal{N}$, and $\lambda_{\mathrm{shell}}$ is the
 shell energy scale.*
 
-**Closed sub-links of $\mathcal{N}(p, n)$.**
+**Closed sub-links of $\mathcal{N}(Z, N)$.**
 
-A **closed sub-link** of $\mathcal{N}(p, n)$ is a subset
+A **closed sub-link** of $\mathcal{N}(Z, N)$ is a subset
 $S \subset \{1, \ldots, p+n\}$ of nucleons such that:
 
 1. The restriction $\mathcal{N}|_S$ of the Hopf link to $S$
@@ -93,7 +93,7 @@ The closed sub-link structure predicts that the shell correction
 is largest when $(p, n)$ admits the factorization
 
 $$
-  \mathcal{N}(p, n) \;=\;
+  \mathcal{N}(Z, N) \;=\;
   k \times \mathcal{N}(2, 2) \;\bowtie\;
   (p - 2k)\,\mathfrak{p} \;\bowtie\;
   (n - 2k)\,\mathfrak{n}
@@ -121,7 +121,7 @@ sense to be made precise.
 **What needs to be shown.**
 
 1. **Skein factorization**: prove that the Skein polynomial
-   $J_{\mathcal{N}(p,n)}(q)$ factors when $(p, n)$ admits
+   $J_{\mathcal{N}(Z, N)}(q)$ factors when $(p, n)$ admits
    $\alpha$-cluster decomposition.  This is a computation in
    the Skein algebra of the Hopf link.
 

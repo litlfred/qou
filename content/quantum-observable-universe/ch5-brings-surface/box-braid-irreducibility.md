@@ -45,7 +45,7 @@ At each vertex, a specific braid operation occurs:
   antisymmetric crossing energy
   ([force–knot identification](#rem:force-knot-identification),
   §I), creating virtual $e^-e^+$ pairs at the exceptional
-  divisor $E_p$.  Each pair is a trefoil + mirror trefoil
+  divisor $\mathcal{S}_p$.  Each pair is a trefoil + mirror trefoil
   ($T_{2,3} \sqcup \overline{T_{2,3}}$) at brane level $A_1$.
 
 - **Weak vertices** ($e \to \nu$ via $T_{3,5}$): the Skein
@@ -158,7 +158,7 @@ via any process.
    $$
 
    The ratio $E_{\mathrm{box}} / m_\nu \geq 10 \cdot
-   (q + 1) / q \approx 19$ at $q = 1.1097$: the box
+   (q + 1) / q \approx 19$ at the substrate parameter $q$: the box
    energy barrier is $\sim 19$ times the neutrino mass.
 
 3. **No simpler process.** $T_{3,5}$ is the unique cross-family

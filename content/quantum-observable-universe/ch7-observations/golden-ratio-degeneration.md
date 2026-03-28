@@ -1,4 +1,4 @@
-The Descartes elliptic curve $E_q$
+The Descartes elliptic curve $\mathcal{E}_q$
 ([Descartes elliptic curve](#prop:descartes-elliptic-curve))
 degenerates at a value of $q$ determined by the golden ratio.
 
@@ -55,7 +55,7 @@ resonates with the $S_5$ symmetry of Bring's surface.
 The golden ratio threshold divides the $(q, \chi)$ parameter
 space into three regimes:
 
-| Regime | $q$ | $E_q$ | Chiral structure | Nuclear stability |
+| Regime | $q$ | $\mathcal{E}_q$ | Chiral structure | Nuclear stability |
 |--------|-----|-------|------------------|-------------------|
 | Sub-golden | $q < 1/\varphi^2$ | singular | degenerate | no stable hadrons |
 | Classical band | $1/\varphi^2 < q < 1$ | smooth | intact but sub-classical | symmetric nuclei ($n = p$) |

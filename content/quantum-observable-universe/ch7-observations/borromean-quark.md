@@ -72,9 +72,9 @@ reversed orientation (**down quark**):
   (reversed) crossing orientation within $\mathcal{B}_3$.
   Coulomb charge contribution: $-1/3$ of the proton charge.
 
-The proton $\mathfrak{p} = [u, u, d]_c$ has the $2 + 1$
+The proton $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p$ has the $2 + 1$
 partition: two positive-orientation unknots and one negative.
-The neutron $\mathfrak{n} = [u, d, d]_c$ has the $1 + 2$
+The neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ has the $1 + 2$
 partition.
 
 **The exceptional divisor as quark habitat.**

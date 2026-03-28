@@ -2,24 +2,24 @@ The Bring's surface constraints take the following form in color tube coordinate
 
 **Spacetime recovery.**
 Substituting into $z = S/D$
-(equation [](#eq:z-from-SD)) yields $z(\widetilde{D} - z) = \widetilde{S} + 4z$,
+(equation [](#eq:z-from-SD)) yields $z(\chi_\zeta(c) - z) = p_1(c) + 4z$,
 which rearranges to
 
 ```tex
 \begin{equation}\label{eq:spacetime-recovery}
-  z^2 - (\widetilde{D} - 4)\,z + \widetilde{S} \;=\; 0.
+  z^2 - (\chi_\zeta(c) - 4)\,z + p_1(c) \;=\; 0.
 \end{equation}
 ```
 
 Thus the spacetime coordinate $z$ is determined implicitly by the
-shifted data $(\widetilde{S}, \widetilde{D})$.
+shifted data $(p_1(c), \chi_\zeta(c))$.
 
 **Shifted quadric.**
 Substituting $w_k = c_k + z$ into the quadric gives
 
 ```tex
 \begin{equation}\label{eq:shifted-quadric}
-  \widetilde{Q} + z\,\widetilde{S} + 2z^2 \;=\; 0,
+  h_2(c) + z\,p_1(c) + 2z^2 \;=\; 0,
 \end{equation}
 ```
 
@@ -30,17 +30,17 @@ Substituting $w_k = c_k + z$ into the cubic gives
 
 ```tex
 \begin{equation}\label{eq:shifted-cubic}
-  \widetilde{C} + z(\widetilde{S}^2 - 2\widetilde{Q})
-  + 3z^2\,\widetilde{S} + 4z^3 \;=\; 0.
+  h_3(c) + z(p_1(c)^2 - 2h_2(c))
+  + 3z^2\,p_1(c) + 4z^3 \;=\; 0.
 \end{equation}
 ```
 
-Eliminating $\widetilde{Q}$ via the shifted quadric yields the
+Eliminating $h_2(c)$ via the shifted quadric yields the
 *reduced cubic*:
 
 ```tex
 \begin{equation}\label{eq:reduced-cubic}
-  \widetilde{C} + z\,\widetilde{S}^2 + 5z^2\,\widetilde{S} + 8z^3 \;=\; 0.
+  h_3(c) + z\,p_1(c)^2 + 5z^2\,p_1(c) + 8z^3 \;=\; 0.
 \end{equation}
 ```
 

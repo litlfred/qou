@@ -1,9 +1,9 @@
-Every nucleus $\mathcal{N}(p, n)$ is a braid word in the braid group
-$B_A$ ([braid group](#def:braid-group)), where $A = p + n$.  This
+Every nucleus $\mathcal{N}(Z, N)$ is a braid word in the braid group
+$B_A$ ([braid group](#def:braid-group)), where $A = Z + N$.  This
 braid word is not unique — different orderings of the Hopf crossings
 give different representatives of the same link.  The **Gröbner
 reduction** in the Hecke algebra $H_A(q)$ produces a unique
-**normal form** $\overline{\mathcal{N}(p, n)}$ — the lowest-energy
+**normal form** $\overline{\mathcal{N}(Z, N)}$ — the lowest-energy
 representative.
 
 **Proposition.**
@@ -39,15 +39,15 @@ The Gröbner basis $G$ for $I$ with respect to $(B, <)$ consists of:
 3. **Far commutativity**: $\sigma_i\,\sigma_j - \sigma_j\,\sigma_i$
    for $|i - j| \geq 2$ (sorts distant generators).
 
-The remainder $r(\mathcal{N}(p,n),\, G)$ under the division
+The remainder $r(\mathcal{N}(Z, N),\, G)$ under the division
 algorithm
 ([division algorithm](#unital-groebner-bases:def:division-algorithm))
 is the **unique normal form**:
 
 $$
-  \overline{\mathcal{N}(p, n)}
+  \overline{\mathcal{N}(Z, N)}
   \;:=\;
-  r\bigl(\mathcal{N}(p, n),\, G\bigr)
+  r\bigl(\mathcal{N}(Z, N),\, G\bigr)
   \;\in\; H_A(q).
 $$
 
@@ -57,10 +57,10 @@ remainder is independent of the reduction path when $G$ is a
 Gröbner basis.
 
 **The nuclear braid word.**
-The unreduced braid word for $\mathcal{N}(p, n)$ in $B_A$ is:
+The unreduced braid word for $\mathcal{N}(Z, N)$ in $B_A$ is:
 
 $$
-  \mathcal{N}(p, n)
+  \mathcal{N}(Z, N)
   \;=\;
   \prod_{1 \leq i < j \leq A}
   \sigma_{i}^{\epsilon(i, j)}
@@ -104,7 +104,7 @@ For small nuclei (exact computation via `nuclear-braid-reduction.py`):
 
 The $\Delta\mathrm{Weight}$ column shows the change in total Hecke
 weight from parent to daughter under beta decay
-$\mathcal{N}(p, n) \to \mathcal{N}(p\!+\!1, n\!-\!1)$.  It is
+$\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$.  It is
 always **negative**: the daughter has lower Hecke weight, consistent
 with beta decay releasing energy.
 
@@ -129,7 +129,7 @@ The beta-decay half-life depends on the **difference** between the
 parent and daughter normal forms:
 
 $$
-  \overline{\mathcal{N}(p, n)}
+  \overline{\mathcal{N}(Z, N)}
   - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
   \;=\;
   \sum_{w \in B} \Delta c_w \cdot w
@@ -143,7 +143,7 @@ $$
   \;\propto\;
   \left|
     \mathrm{tr}_{\mathrm{Markov}}\!\left(
-      \overline{\mathcal{N}(p, n)}
+      \overline{\mathcal{N}(Z, N)}
       - \overline{\mathcal{N}(p\!+\!1, n\!-\!1)}
     \right)
   \right|^2.

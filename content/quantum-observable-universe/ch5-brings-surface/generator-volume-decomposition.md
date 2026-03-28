@@ -5,7 +5,7 @@ whose terms organize as a **jet expansion in the nucleon count**,
 with each jet order corresponding to a chiral degree.
 
 **Proposition.**
-Let $\mathcal{N}(p, n)$ be the nuclear braid word in $H_A(q)$
+Let $\mathcal{N}(Z, N)$ be the nuclear braid word in $H_A(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$ ($i = 0, \ldots, A-2$), nucleon
 $i$ has crossings with nucleons $j = i+1, \ldots, A-1$.  These

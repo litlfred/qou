@@ -1,4 +1,4 @@
-Let $(M, G, E)$ be a Descartes universe and let $p \in M$ be a brane point
+Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU and let $p \in M$ be a brane point
 with outward normal $N(p) = p/\lvert p\rvert$ and positively-oriented
 tangent frame $(T_1, T_2)$.  Set $R = R_{\mathbb{P}^1(\mathbb{C})}$ and
 
@@ -6,7 +6,8 @@ $$
   O(p) \;=\; p + R\,N(p).
 $$
 
-The *exceptional divisor* at $p$ is the $\mathbb{P}^1(\mathbb{C})$ fibre
+The *exceptional divisor* at $p$ is the fibre of the state bundle
+$\mathcal{S}$ at $p$ --- the $\mathbb{P}^1(\mathbb{C})$ fibre
 
 $$
   \mathcal{S}_p \;=\; \pi^{-1}(p)

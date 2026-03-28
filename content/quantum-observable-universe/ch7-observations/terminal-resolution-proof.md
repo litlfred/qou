@@ -41,10 +41,10 @@ Skein masses are:
 
 | **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
 |---|---|---|---|
-| I | $(u_1,\, u_2)$ | $\mathcal{S}_{uu} = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}$ | 312.36 |
-| II | $(u_1,\, d)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| III | $(u_2,\, d)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| | | **Total:** $m_p = \mathcal{S}_{uu} + 2\,\mathcal{S}_{ud}$ | **938.272** |
+| I | $(u_1,\, u_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} = \frac{(q + q^{-1})\,\mu_u}{q^{1/2}+q^{-1/2}}$ | 312.36 |
+| II | $(u_1,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(u_2,\, d)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| | | **Total:** $m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | **938.272** |
 
 *Step 2b: Neutron ($udd$).*
 The neutron has quarks $(u, d_1, d_2)$. Swapping one up quark for a down
@@ -52,17 +52,17 @@ quark replaces the same-flavor pair:
 
 | **Pair** | **Quarks** | **Skein mass** | **Value (MeV)** |
 |---|---|---|---|
-| I | $(u,\, d_1)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| II | $(u,\, d_2)$ | $\mathcal{S}_{ud} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
-| III | $(d_1,\, d_2)$ | $\mathcal{S}_{dd} = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 313.65 |
-| | | **Total:** $m_n = 2\,\mathcal{S}_{ud} + \mathcal{S}_{dd}$ | **939.565** |
+| I | $(u,\, d_1)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| II | $(u,\, d_2)$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = \frac{q\,\mu_u + q^{-1}\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 312.97 |
+| III | $(d_1,\, d_2)$ | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} = \frac{(q + q^{-1})\,\mu_d}{q^{1/2}+q^{-1/2}}$ | 313.65 |
+| | | **Total:** $m_n = 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | **939.565** |
 
 *Step 2c: The $u$-$d$ mass splitting.*
 The proton--neutron mass difference isolates the same-flavor crossing pair:
 $$
   m_n - m_p
   \;=\;
-  \mathcal{S}_{dd}(q) - \mathcal{S}_{uu}(q)
+  \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q)
   \;=\;
   \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).
 $$
@@ -86,7 +86,7 @@ The deuteron is a six-component link $L_6$ formed by joining the proton
 and neutron braids. Its mass is the Skein mass of $L_6$ minus the binding
 energy, which equals the change in the Skein polynomial when the
 proton--neutron crossing is smoothed:
-$\Delta E_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived
+$\Delta \mathfrak{E}_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived
 value is $2.2246\;\mathrm{MeV}$, agreeing to sub-keV precision.
 
 The formal Lean verification of each row is recorded in

@@ -36,7 +36,7 @@ set has $|\mathcal{G}| = 7$.
 **Genus bound from $\chi(A) = -6$.**
 The Bring's surface $\Sigma_4$ has genus $g = 4$ and Euler
 characteristic $\chi = 2 - 2g = -6$.  A knot $T_{m,n}$ localized
-in the fibre $E_c$
+in the fibre $\mathcal{S}_c$
 ([localized knot](#def:localized-knot)) inherits a Seifert surface
 that must embed in the genus-$4$ handlebody provided by $\Sigma_4$.
 The Seifert genus of $T_{m,n}$ is $(m-1)(n-1)/2$, so

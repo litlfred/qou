@@ -8,5 +8,5 @@ export default definition({
     decl: "QOU.Hadron",
     validation: "not_checked",
   },
-  uses: ["def:coulomb-charge"],
+  uses: ["def:coulomb-charge", "def:exceptional-divisor"],
 });

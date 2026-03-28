@@ -12,7 +12,7 @@ $$
 
 where:
 
-- $\mathcal{B}_3(u, u, d)$ is the Borromean link of three
+- $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ is the Borromean link of three
   unknots threaded through color tubes $(r, g, b)$
   ([color tube coordinates](#def:color-tube-coordinates)):
   two with positive crossing orientation ($u$,
@@ -43,7 +43,7 @@ the $u$ and $d$ components.  The pair Skein formula gives:
 $$
   m_{\mathfrak{p}}
   \;=\;
-  \mathcal{S}_{uu}(q) + 2\,\mathcal{S}_{ud}(q)
+  \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
 At $q = 1.10997$: $m_{\mathfrak{p}} = 938.272$ MeV.

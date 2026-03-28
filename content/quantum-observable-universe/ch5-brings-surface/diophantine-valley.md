@@ -76,7 +76,7 @@ When the pairing correction lifts $\mathcal{S}$ from genus $0$
 to genus $1$
 ([elliptic stability conjecture](#conj:elliptic-stability-locus)),
 the stability pairs become **rational points** of an elliptic curve
-$E_p$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
+$\mathcal{E}_p$ over $\mathbb{Q}(q)$, and Mordell's theorem constrains
 them to a finite set — potentially explaining why only finitely
 many stability pairs exist.
 

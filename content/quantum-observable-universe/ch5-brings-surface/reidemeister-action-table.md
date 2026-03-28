@@ -6,7 +6,7 @@ gives the complete accounting: what each move preserves, what it
 changes, and what you must track for mass and energy calculations.
 
 **The categorical action on a nuclear link.**
-For a nucleus $\mathcal{N}(p, n)$ evaluated at the braid
+For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid
 representative $\beta \in B_A$:
 
 $$
@@ -93,7 +93,7 @@ Markov II &
   preserved &
   $\times z$ \\
 \midrule
-Skein ($d \to u$) &
+Skein ($\mathfrak{d} \to \mathfrak{u}$) &
   $q[L_+] - q^{-1}[L_-]$
   $= (q^{1/2}{-}q^{-1/2})[L_0]$ &
   $0$ &
@@ -123,7 +123,7 @@ Skein ($d \to u$) &
 
 3. **$Q$-value** $= \mathcal{S}_q[\text{parent}]
    - \mathcal{S}_q[\text{daughter}]$.
-   - The Skein crossing change ($d \to u$) produces the transition.
+   - The Skein crossing change ($\mathfrak{d} \to \mathfrak{u}$) produces the transition.
    - The $L_0$ emission carries the electron + antineutrino.
    - The energy released = difference in gauge sector between
      parent and daughter normal forms.
@@ -155,7 +155,7 @@ At $q = 1$ (classical): $T^2 = 1$, all crossings cancel,
 no binding energy, no Coulomb repulsion, no beta decay.  All
 nuclear configurations at fixed $A$ are degenerate.
 
-At $q = 1.1097$ (Descartes): $T^2 = 0.209\,T + 1$.
+At the substrate parameter $q$ (Descartes): $T^2 = 0.209\,T + 1$.
 The crossing asymmetry $0.209 = q - q^{-1}$ splits the
 degeneracy.  The $0.209\,T$ term is the electromagnetic
 interaction (Coulomb repulsion between protons, Coulomb

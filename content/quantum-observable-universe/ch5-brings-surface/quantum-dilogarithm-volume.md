@@ -21,16 +21,16 @@ The nuclear binding energy is the quantum dilogarithm volume
 of the Markov trace, normalised by $\hbar_q^2$:
 
 $$
-  E_{\mathrm{bind}}(p, n)
+  \mathfrak{E}_{\mathrm{bind}}(p, n)
   \;=\;
-  \frac{\Phi_q(\mathcal{N}(p, n))}{\hbar_q^2}
+  \frac{\Phi_q(\mathcal{N}(Z, N))}{\hbar_q^2}
 $$
 
 where the quantum dilogarithm volume is the log of the
 Markov trace product:
 
 $$
-  \Phi_q(\mathcal{N}(p, n))
+  \Phi_q(\mathcal{N}(Z, N))
   \;:=\;
   \sum_{i=0}^{A-2} \log |z \cdot a_i + b_i|
   \;=\;
@@ -46,7 +46,7 @@ asymmetry creates nonzero $\Phi_q$, and the nucleus is bound.
 The topological mass formula
 ([topological mass](#prop:topological-mass-formula)) gives the
 mass of a knot $K$ as $m(K) = \text{Vol}(K) / \hbar_q^2$.
-For a multi-component link $\mathcal{N}(p, n)$, the "volume"
+For a multi-component link $\mathcal{N}(Z, N)$, the "volume"
 is no longer the hyperbolic volume of a single knot complement
 (the multi-nucleon link is not hyperbolic).  Instead, the
 topological mass proof
@@ -63,7 +63,7 @@ groupoid) to the Hecke algebra computation of Ch5 (the generator
 volumes).
 
 **The beta-decay $Q$-value.**
-The $Q$-value for the transition $\mathcal{N}(p, n) \to
+The $Q$-value for the transition $\mathcal{N}(Z, N) \to
 \mathcal{N}(p\!+\!1, n\!-\!1)$ is the mass difference:
 
 $$
@@ -90,7 +90,7 @@ golden rule:
 $$
   t_{1/2}
   \;=\;
-  \frac{\ln 2 \cdot 2\,N_v^4}{243\,E_{\times} \cdot \mu_0}
+  \frac{\ln 2 \cdot 2\,N_v^4}{243\,\mathfrak{E}_{\times} \cdot \mu_0}
   \;\cdot\;
   \frac{1}{[2]_q \;\cdot\; s^2
     \;\cdot\; f(Z_d, \mathcal{Q}_q)}
@@ -102,9 +102,9 @@ $$
 $$
 
 where $s = q^{1/2} - q^{-1/2}$,
-$E_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
+$\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$, $\mu_0$ is the single
 dimensional scale, and $N_v$ is the effective crossing count
-of the weak scale ($v = N_v\,E_{\times}\,\mu_0$).
+of the weak scale ($v = N_v\,\mathfrak{E}_{\times}\,\mu_0$).
 The prefactor replaces $G_F^2\,m_e^5/(2\pi^3)$
 ([hadron half-life](#prop:hadron-half-life)).
 Every quantity is determined by the Hecke algebra computation
@@ -122,10 +122,10 @@ the cosimplicial crossed groupoid
   decays (daughter less bound).
 
 - **Level 1** ($B_{3A}$, 3 strands per nucleon): the intra-nucleon
-  Borromean crossings.  The crossing change $d \to u$ inside one
+  Borromean crossings.  The crossing change $\mathfrak{d} \to \mathfrak{u}$ inside one
   nucleon produces the **$Q$-value** — the mass difference between
   parent and daughter.  This is where the neutron-proton mass
-  splitting $m_n - m_p = \mathcal{S}_{dd} - \mathcal{S}_{uu}
+  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}
   \approx 1.293$ MeV originates.
 
 The coface map $\delta^0 \colon \mathfrak{G}_0 \to \mathfrak{G}_1$
