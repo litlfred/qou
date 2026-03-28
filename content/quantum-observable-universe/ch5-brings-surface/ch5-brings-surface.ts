@@ -179,6 +179,7 @@ export default chapter({
         "elliptic-stability-locus",
         "skein-shell-correction",
         "shell-closure-normal-form",
+        "skein-finiteness-bound",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
