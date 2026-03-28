@@ -12,6 +12,7 @@ export default proposition({
     "rem:mass-from-generators",
     "rem:knot-formula-table",
     "rem:mass-comparison-table",
+    "rem:w-boson-mass-discrepancy",
   ],
   proofs: ["prf:local-substrate-q"],
   tags: ["substrate", "mass", "observation"],
