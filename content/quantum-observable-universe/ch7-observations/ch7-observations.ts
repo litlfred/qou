@@ -155,7 +155,6 @@ export default chapter({
         "pair-creation-energy",
         "crossing-energy-decomposition",
         "crossing-energy-interpretation",
-        "mass-asymmetry-prediction",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "cp-violation-evidence",
