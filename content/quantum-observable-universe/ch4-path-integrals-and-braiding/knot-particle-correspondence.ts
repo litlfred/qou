@@ -11,8 +11,7 @@ export default proposition({
   },
   uses: [
     "def:localized-knot",
-    "prop:braid-action-tensor",
-    "thm:knot-eigenbasis-complete",
+    "prop:knot-eigenbasis-complete",
     "def:hadron",
   ],
 });

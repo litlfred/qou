@@ -6,7 +6,7 @@ export default remark({
   interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:pair-creation-energy",
-    "rem:positron-knot",
+    "def:positron-knot",
   ],
   tags: [
     "time-reversal", "energy-barrier", "topological-protection",

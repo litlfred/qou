@@ -19,8 +19,5 @@ export default proposition({
     decl: "QOU.Descartes.reidemeister_action_table",
     validation: "not_checked",
   },
-  uses: [
-    "def:qou-canonical-action",
-    "thm:markov-trace-factorization",
-  ],
+  uses: ["thm:markov-trace-factorization"],
 });

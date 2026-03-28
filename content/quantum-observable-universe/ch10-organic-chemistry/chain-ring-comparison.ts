@@ -18,8 +18,5 @@ export default proposition({
     decl: "QOU.Organic.benzene_weights",
     validation: "not_checked",
   },
-  uses: [
-    "rem:chain-ring-energy",
-    "def:topological-mass-formula",
-  ],
+  uses: ["rem:chain-ring-energy"],
 });

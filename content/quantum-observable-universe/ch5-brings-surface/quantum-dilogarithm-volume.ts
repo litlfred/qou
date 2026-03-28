@@ -20,6 +20,6 @@ export default proposition({
   },
   uses: [
     "thm:markov-trace-factorization",
-    "rem:quantum-dilogarithm",
+    "cor:quantum-dilogarithm",
   ],
 });

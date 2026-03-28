@@ -15,7 +15,6 @@ export default conjecture({
   ],
   uses: [
     "prop:integer-stability",
-    "rem:color-tube-cubic",
-    "rem:color-tube-fibers",
+    "def:color-tube-fibers",
   ],
 });

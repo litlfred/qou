@@ -14,9 +14,9 @@ export default remark({
   ],
   uses: [
     "prop:em-coupling-projection",
-    "sec:mass-predictions",
+    "sec:mass-predictions-data",
     "rem:half-life-as-q-probe",
-    "sec:mass-comparison-table",
-    "rem:hadron-half-life-verification",
+    "rem:mass-comparison-table",
+    "ex:hadron-half-life-verification",
   ],
 });

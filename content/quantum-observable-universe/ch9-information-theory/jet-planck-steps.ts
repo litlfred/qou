@@ -19,9 +19,8 @@ export default remark({
   ],
   uses: [
     "rem:discrete-planck-step",
-    "ex:photon-wavefront-example",
+    "ex:photon-wavefront",
     "prop:fermion-boson-knot-link",
-    "rem:knot-particle-generation",
     "rem:building-block-knots",
   ],
 });

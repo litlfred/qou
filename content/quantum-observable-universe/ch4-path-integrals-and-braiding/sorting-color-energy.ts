@@ -14,8 +14,5 @@ export default proposition({
     "antisymmetric",
     "observation",
   ],
-  uses: [
-    "rem:observation-braid",
-    "def:r-matrix-braiding",
-  ],
+  uses: ["rem:observation-braid"],
 });

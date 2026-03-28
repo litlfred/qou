@@ -20,7 +20,7 @@ export default remark({
     "rem:golden-ratio-transport",
     "rem:julia-set-reeb",
     "def:bundle-initial-conditions",
-    "rem:substrate-radial-coordinate",
+    "prop:substrate-radial-coordinate",
     "rem:witt-lift-qou",
   ],
 });
