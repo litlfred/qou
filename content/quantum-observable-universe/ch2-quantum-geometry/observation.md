@@ -1,19 +1,27 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-with state bundle $\mathcal{S} \to M$, let $q$ denote the
+Let $(\mathbf{C}, A, \tau)_\preceq$ be a quantum observable
+universe with state bundle $\mathcal{S} \to M$, let $q$
+denote the
 ([substrate parameter](#def:substrate-parameter)), let
 $p \colon \mathbf{1} \to A$ be a
 ([categorical point](#def:categorical-point)), and let
 $U \subset M$ be an open causal neighbourhood of $p$.
 
-An *observation on $U$* is a section
+An *intent on $U$* is a pair $(\mathfrak{I}, \epsilon)$
+where $\epsilon \in \{+1, -1\}$ is the **direction** and
 
 $$
-  I \;\in\;
+  \mathfrak{I} \;\in\;
   \Gamma\bigl(U,\; \mathrm{Ad}(J^1 \mathcal{S})\bigr)
 $$
 
-of the adjoint bundle of the $1$-jet prolongation of
-$\mathcal{S}$, satisfying:
+is a section of the adjoint bundle of the $1$-jet
+prolongation of $\mathcal{S}$.  The sign $\epsilon$
+determines the arrow of time:
+$\epsilon = +1$ (braiding, $\sigma_i$, forward under
+$\preceq$) or $\epsilon = -1$ (unbraiding,
+$\sigma_i^{-1}$, backward).
+
+The section $\mathfrak{I}$ satisfies:
 
 1. **Frobenius compatibility.** The observation preserves
    the Frobenius form on $U$:
@@ -72,7 +80,10 @@ physical roles:
   observation perturbs $q$, which shifts the Reeb flow,
   which changes what the next observation reads.
 
-An observation at a **point** is the restriction
-$\mathfrak{I}_p = I|_p$, recovering the germ-level
+An intent at a **point** is the restriction
+$\mathfrak{I}_p = \mathfrak{I}|_p$, recovering the germ-level
 endomorphism $\mathfrak{I}_p \colon A / \mathfrak{m}_p^2 \to
-A / \mathfrak{m}_p^2$.
+A / \mathfrak{m}_p^2$.  The sign $\epsilon$ determines
+whether the crossing injected at $p$ is $\sigma_i$ (forward,
+$\epsilon = +1$) or $\sigma_i^{-1}$ (backward,
+$\epsilon = -1$) in the admissible ordering $\preceq$.

@@ -8,7 +8,7 @@ export default definition({
     decl: "QOU.QuantumObservableUniverse",
     validation: "not_checked",
   },
-  uses: ["def:quantum-universe"],
+  uses: ["def:quantum-universe", "unital-groebner-bases:def:admissible-system"],
   examples: ["ex:qou-su2"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/quantum-observable-universe-0.svg", blockIndex: 0, hash: "6d717475f32e" },
