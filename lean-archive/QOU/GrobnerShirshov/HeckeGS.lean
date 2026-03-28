@@ -2,6 +2,7 @@ import QOU.GrobnerShirshov.Basic
 import QOU.GrobnerShirshov.AlgOps
 import QOU.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Real.Basic
+import Mathlib.Logic.Function.Basic
 
 /-!
 # Gröbner–Shirshov Basis for the Hecke Algebra
@@ -13,7 +14,7 @@ Instantiation of the abstract GS framework for the Hecke algebra
 
 | Item | Status | Justification |
 |------|--------|---------------|
-| `heckeOrder` | **axiom** | Deg-lex; identical to `degLexOrder` (NormalForms.lean) |
+| `heckeOrder` | **def** | `mkDegLexOrder` from AlgOps.lean (generic deg-lex) |
 | `hecke_is_gs_basis` | **axiom** | Bokut & Shiao 2001, Thm 3.5 |
 | `heckeRewritingSystem` | **def** | Built from `AlgElement.ofTerms` |
 | `embedGenerator` | **def** | `single` + `ofTerms` |
@@ -55,21 +56,19 @@ def σ {n : ℕ} (i : Fin n) : HeckeGen n := ⟨i⟩
 
 /-! ## §2  Admissible Order -/
 
-/-- Deg-lex order on Hecke monomials. -/
-def heckeDegLexLt {n : ℕ} :
-    Monomial (HeckeGen n) → Monomial (HeckeGen n) → Prop :=
-  fun a b =>
-    a.length < b.length ∨
-    (a.length = b.length ∧ List.Lex (fun x y => x.rank < y.rank) a b)
+/-- The rank function for `HeckeGen n` is injective. -/
+theorem HeckeGen.rank_injective {n : ℕ} :
+    Function.Injective (HeckeGen.rank (n := n)) := by
+  intro ⟨a⟩ ⟨b⟩ h
+  simp [HeckeGen.rank] at h
+  exact congrArg HeckeGen.mk (Fin.ext h)
 
-/-- The deg-lex order on Hecke monomials is admissible.
-
-    Axiom: the proof mirrors `degLexOrder` in NormalForms.lean
-    (well-foundedness from length + lex, compatibility from
-    concatenation monotonicity).  `HeckeGen n` has the same
-    structural properties as `SU2Gen` (finite rank function,
-    decidable equality). -/
-axiom heckeOrder (n : ℕ) : AdmissibleOrder (HeckeGen n)
+/-- The deg-lex admissible order on Hecke monomials.
+    Constructed via the generic `mkDegLexOrder` from AlgOps.lean,
+    reusing the same proof infrastructure as `degLexOrder` for
+    `SU2Gen` in NormalForms.lean. -/
+noncomputable def heckeOrder (n : ℕ) : AdmissibleOrder (HeckeGen n) :=
+  mkDegLexOrder HeckeGen.rank HeckeGen.rank_injective
 
 /-! ## §3  Hecke Parameters -/
 

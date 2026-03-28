@@ -1,4 +1,5 @@
 import QOU.GrobnerShirshov.Basic
+import QOU.GrobnerShirshov.NormalForms
 
 /-!
 # AlgElement Algebraic Operations
@@ -182,5 +183,107 @@ theorem AlgElement.ofTerms_support_nonempty
   unfold AlgElement.ofTerms
   simp only [List.toFinset]
   exact List.toFinset_nonempty_iff.mpr (List.map_ne_nil_of_ne_nil Prod.fst h)
+
+/-! ## §8  Generic Deg-Lex Order Construction -/
+
+/-- Construct a deg-lex `AdmissibleOrder` for any generator type `G`
+    equipped with an injective rank function `rank : G → ℕ`.
+
+    This generalises `degLexOrder` from NormalForms.lean (which is
+    specific to `SU2Gen`).  The proofs are identical in structure:
+    - Well-foundedness: from `List.Lex.wellFounded` via rank
+    - Trichotomy: case split on length, then on lex
+    - Compatibility: length preserved by concatenation
+
+    We delegate to the existing NormalForms infrastructure by mapping
+    generators to `SU2Gen` (or more precisely, to `ℕ` via rank) and
+    using `List.Lex.wellFounded` directly. -/
+noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
+    (rank : G → ℕ) (rank_inj : Function.Injective rank) :
+    AdmissibleOrder G where
+  lt := fun a b =>
+    a.length < b.length ∨
+    (a.length = b.length ∧ List.Lex (fun x y => rank x < rank y) a b)
+  trichotomy := by
+    intro a b
+    by_cases h1 : a.length < b.length
+    · left; left; exact h1
+    · by_cases h2 : b.length < a.length
+      · right; right; left; exact h2
+      · have heq : a.length = b.length := by omega
+        -- Same length: compare lexicographically
+        -- Use decidability of List.Lex for Nat.lt via rank
+        have : ∀ (x y : List G), x.length = y.length →
+            List.Lex (fun a b => rank a < rank b) x y ∨
+            x = y ∨
+            List.Lex (fun a b => rank a < rank b) y x := by
+          intro x
+          induction x with
+          | nil => intro y hy; cases y with
+            | nil => right; left; rfl
+            | cons _ _ => simp at hy
+          | cons g gs ih => intro y hy; cases y with
+            | nil => simp at hy
+            | cons h hs =>
+              simp [List.length_cons] at hy
+              by_cases hr1 : rank g < rank h
+              · left; exact List.Lex.rel hr1
+              · by_cases hr2 : rank h < rank g
+                · right; right; exact List.Lex.rel hr2
+                · have hge : rank g = rank h := by omega
+                  have hgh : g = h := rank_inj hge
+                  subst hgh
+                  rcases ih hs hy with hlx | heq | hrx
+                  · left; exact List.Lex.cons g hlx
+                  · right; left; rw [heq]
+                  · right; right; exact List.Lex.cons g hrx
+        rcases this a b heq with hlx | heq' | hrx
+        · left; right; exact ⟨heq, hlx⟩
+        · right; left; exact heq'
+        · right; right; right; exact ⟨heq.symm, hrx⟩
+  wf := by
+    -- Map to (length, rank-encoding) and use product well-foundedness
+    apply Subrelation.wf
+    · intro a b h
+      rcases h with hlen | ⟨heq, hlex⟩
+      · exact Prod.Lex.left _ _ hlen
+      · exact Prod.Lex.right _ (by
+          -- List.Lex rank on same-length lists embeds into
+          -- lexicographic order on ℕ lists via rank
+          clear h
+          induction hlex with
+          | nil => exact List.Lex.nil
+          | @rel a b as bs hr =>
+            exact List.Lex.rel (show rank a < rank b from hr)
+          | @cons a as bs _ ih =>
+            exact List.Lex.cons (rank a) ih)
+    · exact InvImage.wf
+        (fun a => (a.length, a.map rank))
+        (Nat.lt_wfRel.wf.prod_lex (List.Lex.wellFounded Nat.lt_wfRel.wf))
+  left_compat := by
+    intro a b c h
+    rcases h with hlen | ⟨heq, hlex⟩
+    · left; simp; omega
+    · right; constructor
+      · simp; omega
+      · -- c ++ a lex< c ++ b when a lex< b (same length)
+        induction c with
+        | nil => simpa
+        | cons x xs ih =>
+          simp only [List.cons_append]
+          exact List.Lex.cons (rank x) ih
+  right_compat := by
+    intro a b d h
+    rcases h with hlen | ⟨heq, hlex⟩
+    · left; simp; omega
+    · right; constructor
+      · simp; omega
+      · -- a ++ d lex< b ++ d when a lex< b (same length)
+        induction hlex with
+        | nil => exact absurd rfl (by simp [List.length_cons] at heq; omega)
+        | @rel x y xs ys hr =>
+          exact List.Lex.rel hr
+        | @cons x xs ys _ ih =>
+          exact List.Lex.cons (rank x) ih
 
 end QOU.GrobnerShirshov
