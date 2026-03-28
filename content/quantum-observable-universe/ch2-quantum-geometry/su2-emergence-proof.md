@@ -63,7 +63,7 @@ morphisms by $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$, where
 $S$ is the antipode. Non-degeneracy of $\int_A$ and faithfulness
 of $\tau$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this
 is a positive-definite dagger structure
-([positive definite dagger](#def:positive-definite-dagger)). Every tensor
+([positive definite dagger](#prop:positive-definite-dagger)). Every tensor
 automorphism $g \in G$ preserves the dagger (it commutes with $S$ and
 $\int_A$), forcing $g_V^{-1} = g_V^{\dagger}$ and restricting $G$ to
 the unitary subgroup $\mathrm{U}(2)$.
