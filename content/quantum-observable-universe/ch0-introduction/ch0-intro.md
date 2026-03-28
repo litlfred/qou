@@ -17,7 +17,10 @@ not depend on the orientation from which we observe it.  Three-fold
 structure recurs throughout nature — three colours, three
 generations of matter, three-fold chirality — in a way that demands
 explanation rather than stipulation.  Time flows: the universe
-folds and unfolds, and we drift along that flow.  And crucially,
+folds and unfolds, and we drift along that flow.  We have the
+perception of free will and intent — we choose to measure, to act,
+to organise — and that choice has consequences: observation creates
+outcomes not determined by the initial conditions.  And crucially,
 multiple observers share a world — not each illuminating a private
 universe, but all operating within a common affine chart whose
 consistency is guaranteed by the algebraic structure itself.
@@ -31,9 +34,11 @@ features listed above and nothing more.  The symmetry group
 $\mathrm{SU}_2(R)$ is not assumed; it emerges via Tannaka–Krein
 reconstruction from the rigid monoidal structure.  The uncertainty
 principle is not postulated; it appears as the geometric signature
-of degrees of freedom not yet resolved.  Even the capacity for
-computation — the Turing completeness of the substrate — is a
-consequence, not an input.
+of degrees of freedom not yet resolved.  Observation, mathematically,
+is an open map — it produces genuinely new outcomes, not merely
+revealed pre-existing ones.  Even the capacity for computation —
+the Turing completeness of the substrate — is a consequence, not
+an input.
 
 The book is organised as follows.
 
