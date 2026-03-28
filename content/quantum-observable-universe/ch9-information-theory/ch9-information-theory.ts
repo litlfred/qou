@@ -51,6 +51,7 @@ export default chapter({
       blocks: [
         "information-speed-of-light",
         "mass-energy-equivalence",
+        "gravitational-constant",
         "information-causality",
       ],
     }),
