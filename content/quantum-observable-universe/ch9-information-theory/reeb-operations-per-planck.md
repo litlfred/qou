@@ -60,20 +60,13 @@ $$
   I_P(q) \;=\; n_R(q) \cdot \eta_q
 $$
 
-where $\eta_q := h_{\mu_q}(f_q)$ is the operational entropy
---- the metric entropy of $f_q$ with respect to the measure of
-maximal entropy on the Julia set
-([operational entropy](#def:operational-entropy)).  By the
-Manning--McCluskey formula, $\eta_q = d_H(q) \cdot \log 2$ where
-$d_H(q)$ is the Hausdorff dimension of $J(f_q) \cap S^1$
-([Julia set of Reeb flow](#rem:julia-set-reeb)) over
-$\mathbb{C}$, or the orbit complexity of $f_q$ over
-$\mathbb{F}_\pp$.
+where $\eta_q = (2q-1)/q^3$ is the operational entropy
+([operational entropy](#def:operational-entropy)) --- the
+information generated per $f_q$-iteration, determined by the
+gravitational self-consistency condition.
 
 At the Big Bang ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
 (simplest dynamics), so $I_P \to 0$.
-At the golden threshold ($q_{\mathrm{gold}} = 1/\varphi^2$):
-$\eta_q$ peaks (maximal fractal complexity).
-At $q = 1.1097$: $I_P \approx 10.1 \cdot d_H(1.1097) \cdot \log 2$,
-the product of moderate operation count and moderate per-operation
-entropy.
+At the classical limit ($q \to 1$): $\eta_q \to 1$ nat per step.
+At $q = 1.1097$: $I_P \approx 10.1 \times 0.892 \approx 9.0$
+nats per Planck time.

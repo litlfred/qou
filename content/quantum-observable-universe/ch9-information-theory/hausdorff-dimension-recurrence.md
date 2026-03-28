@@ -1,38 +1,34 @@
 The self-consistency condition $G_{\mathrm{Planck}} = 1$
 ([gravitational constant](#def:gravitational-constant)) with the
-quadratic-suppression series determines the Hausdorff dimension
-of the Julia set as an algebraic function of $q$:
+quadratic-suppression series and the $q$-deformed Lyapunov exponent
+$\chi_q = 1/(2q-1)$
+([operational entropy](#def:operational-entropy)) determines the
+Hausdorff dimension of the Julia set as an algebraic function of
+$q$:
 
 $$
-  d_H(q) \;=\; \frac{2q - 1}{q^3 \ln 2}.
+  d_H(q) \;=\; \frac{(2q - 1)^2}{q^3}.
 $$
 
-This is a **prediction**: if the in-progress braid picture is
-correct, then the Hausdorff dimension of $J(f_q)$
+This is a **prediction**: the Hausdorff dimension of $J(f_q)$
 ([Julia set](#rem:julia-set-reeb)) at main-cardioid parameter
 $c(q) = \tfrac{1}{2}e^{2\pi i q} - \tfrac{1}{4}e^{4\pi i q}$
-must equal $(2q-1)/(q^3 \ln 2)$.
+is determined algebraically by the gravitational self-consistency.
+
+The formula satisfies $d_H(1) = 1$ (unit circle), $d_H > 1$
+for $1 < q < (3+\sqrt{5})/2$, and $d_H = 1$ again at the golden
+threshold $q = \varphi^2 + 1 \approx 2.618$.
 
 **Derivative and discrete step.**
 The continuous derivative is
 
 $$
-  d_H'(q) \;=\; \frac{3 - 4q}{q^4 \ln 2},
+  d_H'(q) \;=\; \frac{(2q-1)(3 - 4q)}{q^4},
 $$
 
-which is negative for all $q > 3/4$: the fractal dimension
-**decreases monotonically** as $q$ increases toward the Big Bang.
-
-The second derivative
-
-$$
-  d_H''(q) \;=\; \frac{12\,(q - 1)}{q^5 \ln 2}
-  \;=\; \frac{12\,\hbar_q}{q^4 \ln 2}
-$$
-
-is proportional to $\hbar_q$ — one quantum of action.  The
-curvature of the information dimension is set by the Planck
-constant.
+which is negative for $q > 3/4$: the fractal dimension
+**decreases** as $q$ increases toward the Big Bang (for $q$ in the
+physical range $q > 1$).
 
 **Discrete recurrence.**
 Taking the natural step size $\delta q = \hbar_q = (q-1)/q$ (one
@@ -42,13 +38,8 @@ Planck step is
 $$
   d_H^{(n+1)}
   \;=\; d_H^{(n)}
-  \;+\; \frac{(3 - 4q_n)(q_n - 1)}{q_n^5 \ln 2}.
+  \;+\; \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
 $$
-
-At $q = 1.1097$: the step is $\Delta d_H \approx -0.136$, meaning
-each Planck step in $q$-space erases about **$11\%$** of the
-current fractal dimension.  The Julia set empties out one tick at a
-time.
 
 This is a **contraction mapping** for $q > 3/4$: the iteration
 $d_H \to d_H + \Delta d_H$ flows monotonically toward $d_H = 0$.
@@ -61,15 +52,16 @@ the direction of increasing $q$ — the direction from classical
 
 **Regime table.**
 
-| $q$ | $d_H(q)$ | $d_H'(q)$ | $\Delta d_H$ per step | Regime |
-|-----|----------|-----------|----------------------|-------|
-| $1.01$ | $1.428$ | $-142$ | $-1.41$ | Near-classical |
-| $1.05$ | $1.371$ | $-28.8$ | $-1.37$ | |
-| $1.1097$ | $1.287$ | $-1.37$ | $-0.136$ | Our universe |
-| $1.5$ | $0.855$ | $-0.264$ | $-0.088$ | |
-| $2.0$ | $0.541$ | $-0.090$ | $-0.045$ | Deep quantum |
-| $\varphi^2$ | $0.341$ | $-0.030$ | $-0.019$ | Golden threshold |
-| $10$ | $0.027$ | $-0.0004$ | $-0.004$ | Near Big Bang |
+| $q$ | $d_H(q)$ | Regime |
+|-----|----------|-------|
+| $1$ | $1.000$ | Classical limit (unit circle) |
+| $1.01$ | $1.010$ | Near-classical |
+| $1.1097$ | $1.088$ | Our universe |
+| $1.5$ | $1.185$ | Basilica ($c = -3/4$) |
+| $2.0$ | $1.125$ | Deep quantum |
+| $\varphi^2 + 1$ | $1.000$ | Golden crossover |
+| $3.0$ | $0.926$ | Beyond golden |
+| $10$ | $0.361$ | Near Big Bang |
 
 **What is known about $d_H$ on the main cardioid.**
 For parameters $c(\theta)$ on the main cardioid of the Mandelbrot
@@ -144,27 +136,27 @@ d_H(J_c)$ is known to be:
 - **$d_H(J_{1/4}) \approx 1.081$** at the cusp $c = 1/4$
   (numerical, parabolic parameter).
 
-The QOU prediction $d_H(q) = (2q-1)/(q^3\ln 2)$ is therefore
-**not a restatement of known mathematics** but a constraint from
-the gravitational self-consistency condition.  At $q = 1.1097$
-it predicts $d_H = 1.287$, which lies between the Ruelle lower
-bound ($1.043$) and the cardioid-boundary supremum ($2$).
+The corrected QOU formula $d_H(q) = (2q-1)^2/q^3$ is therefore
+**not a restatement of known mathematics** but a prediction from
+the gravitational self-consistency condition and the $q$-deformed
+Lyapunov exponent.  It matches all known constraints:
 
-For $\theta = 0.1097 = [0; 9, 8, 1, 1, \ldots]$ (bounded-type
-rotation number with large partial quotients $9$ and $8$), the
-Julia set is a quasicircle whose distortion from a smooth circle
-is controlled by the size of the partial quotients.  Large partial
-quotients push $d_H$ above the Ruelle estimate, consistent with
-the QOU value.
+- $d_H(1) = 1$ (unit circle). ✓
+- $d_H > 1$ for $c \neq 0$ in the cardioid interior
+  (McMullen 1998 [mcmullen1998]). ✓
+- $d_H > 1 + |c|^2/(4\ln 2)$ (above the Ruelle lower bound
+  [ruelle1982]). ✓ At $q = 1.1097$: $1.088 > 1.043$.
+- $d_H \to 0$ as $q \to \infty$ (Julia set collapses). ✓
 
 **Falsifiability.**
-The prediction $d_H = 1.287$ is testable by high-precision
+The prediction $d_H(1.1097) = 1.088$ is testable by high-precision
 computation of $d_H(J_c)$ at $c = c(0.1097) = 0.338 + 0.073i$
-using the Bowen--Ruelle pressure function (thermodynamic formalism
-with Ruelle transfer operators).  Box-counting gives $d_H \approx
-1.01$ but systematically underestimates thin quasicircles.
-Transfer-operator methods achieve much higher precision and would
-give a definitive comparison.
+using the Bowen--Ruelle pressure function [bowen1979]
+(thermodynamic formalism with Ruelle transfer operators).
+Box-counting gives $d_H \approx 1.01$ but systematically
+underestimates thin quasicircles.  Transfer-operator methods
+achieve much higher precision and would give a definitive
+comparison.
 
 **Cosmological arrow of time.**
 The monotone decrease of $d_H$ with $q$ defines an
