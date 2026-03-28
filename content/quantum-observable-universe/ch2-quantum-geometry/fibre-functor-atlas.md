@@ -21,7 +21,7 @@ with $G = \mathrm{Aut}^{\otimes}(\tau)$
 3. **(Cocycle condition.)** *Given three fibre functors
    $\omega, \omega', \omega''$ with transition isomorphisms
    $g_{01}, g_{12}, g_{02}$, functoriality of composition
-   forces $g_{02} = g_{01} \circ g_{12}$.  The cocycle
+   forces $g_{02} = g_{12} \circ g_{01}$.  The cocycle
    condition is not imposed — it is automatic.*
 
 4. **(Atlas.)** *The category of all fibre functors on
@@ -49,7 +49,7 @@ $\eta_{12} \colon \omega' \to \omega''$ are monoidal natural
 isomorphisms, their composition $\eta_{12} \circ \eta_{01}$
 is the unique monoidal natural isomorphism $\omega \to \omega''$
 corresponding to the group product $g_{12} \cdot g_{01}$.
-The cocycle identity $g_{02} = g_{01} \cdot g_{12}$ is
+The cocycle identity $g_{02} = g_{12} \cdot g_{01}$ is
 the associativity of composition in the functor category.
 
 (4) Connectedness: any two fibre functors are isomorphic

@@ -32,7 +32,6 @@ Output:
 """
 
 import json
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -153,14 +152,14 @@ def build_matrix():
                 P_mk += ctx * delta
             M[m][k] = cancel(P_mk)
 
-            # Reverse transition
+            # Reverse transition (use parent context for antisymmetry)
             P_km = sp.Integer(0)
             for conv in range(2):
                 delta = V_dau[conv] - V_par[conv]
                 ctx = sp.Integer(1)
                 for j in range(2):
                     if j != conv:
-                        ctx *= V_dau[j]
+                        ctx *= V_par[j]
                 P_km += ctx * delta
             M[k][m] = cancel(P_km)
 
@@ -186,7 +185,6 @@ def main():
 
     M = build_matrix()
 
-    labels = ['000', '001', '010', '011', '100', '101', '110', '111']
     types_map = {0: 'nnn', 1: 'nnp', 2: 'npn', 3: 'npp',
                  4: 'pnn', 5: 'pnp', 6: 'ppn', 7: 'ppp'}
 
@@ -213,7 +211,7 @@ def main():
             else:
                 kind = "off-diag"
 
-            val_f = cancel(val)
+            val_f = factor(cancel(val))
             val_num = float(val_f.subs(q, q_phys))
 
             print(f"P_{{{i},{j}}}(q)  [{types_map[j]}→{types_map[i]}]  ({kind})")
