@@ -6,11 +6,14 @@ to any observer:
    the three color tubes of Bring's surface
    ([color tube coordinates](#def:color-tube-coordinates)).
 
-2. **A sense of time passing.** The Reeb vector field
+2. **A sense of time passing.** Time pushes us forward just as
+   water flows down a stream — always flowing, never still.  The
+   Reeb vector field
    ([categorical Reeb](#def:categorical-reeb)) endows the
-   Frobenius--Hopf object with a preferred flow direction: the
-   substrate parameter $q$ distinguishes past from future, and
-   the contact structure underlying $A$ generates an arrow of time.
+   Frobenius--Hopf object with precisely this preferred flow
+   direction: the substrate parameter $q$ distinguishes past from
+   future, and the contact structure underlying $A$ generates an
+   arrow of time.
 
 3. **Rotation on a sphere.** Spatial rotations are governed by
    $\mathrm{SO}(3)$, the symmetry group of the $2$-sphere.  In the
