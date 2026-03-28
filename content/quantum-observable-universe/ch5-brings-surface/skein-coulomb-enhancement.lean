@@ -199,8 +199,8 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
       _ < Real.exp x1 - 1 := hexp_x1_gt
   -- Multiply by d > 0: x1*(1-e^{-d}) < d*(e^{x1}-1)
   have hstep6 : x1 * (1 - Real.exp (-d)) < d * (Real.exp x1 - 1) := by
-    have h := mul_lt_mul_of_pos_right hkey hdiff_pos
-    rwa [div_mul_cancel₀ _ (ne_of_gt hdiff_pos)] at h
+    -- From hkey: x1*(1-e^{-d})/d < e^{x1}-1, multiply by d > 0
+    rw [div_lt_iff hdiff_pos] at hkey; linarith
   -- Multiply by e^{-x1} > 0: x1*e^{-x1}*(1-e^{-d}) < d*(1-e^{-x1})
   have hexp_x1_pos : 0 < Real.exp (-x1) := Real.exp_pos _
   have hstep7 : x1 * Real.exp (-x1) * (1 - Real.exp (-d)) <
@@ -219,9 +219,13 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
   have hexp_split : Real.exp (-x2) = Real.exp (-x1) * Real.exp (-d) := by
     rw [← Real.exp_add]; congr 1; rw [hd_def]; ring
   -- Final: x1*(1-e^{-x2}) < x2*(1-e^{-x1})
-  -- Expand using e^{-x2} = e^{-x1}*e^{-d} and x2 = x1 + d, then use hstep7
+  -- After rewriting e^{-x2} = e^{-x1}*e^{-d}, need:
+  -- x1*(1 - e^{-x1}*e^{-d}) < x2*(1 - e^{-x1})
+  -- Since x2 = x1 + d, this expands to x1*e^{-x1}*(1-e^{-d}) < d*(1-e^{-x1})
+  -- which is hstep7.
   rw [hexp_split]
-  nlinarith
+  have hx2_eq : x2 = x1 + d := by linarith [hd_def]
+  nlinarith [hstep7, hd1, hd2, hexp_x1_pos, mul_pos hx1_pos hd1]
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/skein-coulomb-enhancement

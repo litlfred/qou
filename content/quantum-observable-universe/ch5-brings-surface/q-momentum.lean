@@ -53,14 +53,57 @@ private lemma foldl_intSum_acc (acc : ℝ) (signs : List ℤ) :
     ring
 
 /-- Key single-term limit: (q^{2s} - 1)/(q² - 1) → s as q → 1.
-    This is L'Hôpital's rule: d/dq(q^{2s}-1) / d/dq(q²-1) = 2s·q^{2s-1}/(2q) → s. -/
+
+    For s ≥ 0: the geometric sum identity gives
+      (q^{2s} - 1)/(q² - 1) = Σ_{k=0}^{s-1} q^{2k}
+    which is a polynomial in q, continuous at q=1, evaluating to s.
+    For s < 0: multiply numerator and denominator by q^{-2s} and reduce
+    to the positive case.
+
+    Since crossing signs are always ±1 in practice:
+      s = +1: (q²-1)/(q²-1) = 1 for q ≠ ±1
+      s = -1: (q⁻²-1)/(q²-1) = -q⁻² → -1 as q → 1 -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [manuscript] Ch. 6, §q-momentum
+private lemma single_term_limit_pos_one :
+    ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
+      |(q ^ (2 * (1 : ℤ)) - 1) / (q ^ 2 - 1) - ↑(1 : ℤ)| < ε := by
+  intro ε hε
+  refine ⟨1, one_pos, fun q hq _ => ?_⟩
+  -- (q²-1)/(q²-1) = 1 for q ≠ ±1, and |q-1| > 0 ensures q ≠ 1
+  have hq_ne : q ≠ 1 := by
+    intro heq; rw [heq, sub_self, abs_zero] at hq; linarith
+  have : q ^ (2 : ℤ) - 1 ≠ 0 := by
+    simp only [zpow_natCast]; intro h
+    have : q ^ 2 = 1 := by linarith
+    have : q = 1 ∨ q = -1 := by
+      have : (q - 1) * (q + 1) = 0 := by nlinarith
+      rcases mul_eq_zero.mp this with h | h
+      · left; linarith
+      · right; linarith
+    rcases this with rfl | rfl
+    · exact hq_ne rfl
+    · simp at hq; linarith
+  simp only [Int.cast_one, zpow_natCast]
+  rw [div_self this, sub_self, abs_zero]
+  exact hε
+
+/-- Key single-term limit: (q^{2s} - 1)/(q² - 1) → s as q → 1.
+
+    For s = +1: (q²-1)/(q²-1) = 1 identically (for q ≠ ±1).
+    For s = -1: (q⁻²-1)/(q²-1) = -1/q² → -1.
+    General s: geometric sum (q^{2s}-1)/(q²-1) = Σ_{k=0}^{s-1} q^{2k}
+    is a polynomial, continuous at q=1, evaluating to s.
+
+    The general proof requires Mathlib's polynomial continuity or
+    Filter.Tendsto infrastructure. With `lake build`, use:
+      Polynomial.eval_geom_sum + Polynomial.continuous_eval -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [manuscript] Ch. 6, §q-momentum
 private lemma single_term_limit (s : ℤ) :
     ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
       |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - ↑s| < ε := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- L'Hôpital: lim_{q→1} (q^{2s}-1)/(q²-1) = s
-  -- Ref: [manuscript] Ch. 6, §q-momentum
   sorry
 
 /-- At q = 1, q-momentum equals the writhe (sum of signs). -/
