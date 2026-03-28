@@ -13,6 +13,15 @@ export default chapter({
   title: "Physical Observations",
   label: "chap:observations",
   sections: [
+    // ── Central result: overdetermination of q ──────────────────────────
+    section({
+      title: "The Substrate Consistency Window",
+      label: "sec:substrate-consistency",
+      blocks: [
+        "substrate-consistency-window",
+      ],
+    }),
+
     // ── Particle identification conjectures ────────────────────────────
     section({
       title: "Particle Identification Conjectures",

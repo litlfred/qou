@@ -1130,6 +1130,169 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1960]] },
     DOI: "10.1002/cpa.3160130102",
   }),
+
+  // ── Margolus & Levitin 1998: Quantum speed limit ─────────────
+  ref({
+    id: "margolus1998",
+    type: "article-journal",
+    title: "The Maximum Speed of Dynamical Evolution",
+    author: [
+      { family: "Margolus", given: "Norman" },
+      { family: "Levitin", given: "Lev B." },
+    ],
+    "container-title": "Physica D: Nonlinear Phenomena",
+    volume: "120",
+    issue: "1-2",
+    page: "188-195",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1016/S0167-2789(98)00054-2",
+  }),
+
+  // ── Lloyd 2000: Ultimate physical limits to computation ───────
+  ref({
+    id: "lloyd2000",
+    type: "article-journal",
+    title: "Ultimate Physical Limits to Computation",
+    author: [
+      { family: "Lloyd", given: "Seth" },
+    ],
+    "container-title": "Nature",
+    volume: "406",
+    page: "1047-1054",
+    issued: { "date-parts": [[2000]] },
+    DOI: "10.1038/35023282",
+  }),
+
+  // ── Jacobson 1995: Thermodynamics of spacetime ────────────────
+  ref({
+    id: "jacobson1995",
+    type: "article-journal",
+    title: "Thermodynamics of Spacetime: The Einstein Equation of State",
+    author: [
+      { family: "Jacobson", given: "Ted" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "75",
+    issue: "7",
+    page: "1260-1263",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1103/PhysRevLett.75.1260",
+  }),
+
+  // ── Bekenstein 1981: Entropy-to-energy bound ──────────────────
+  ref({
+    id: "bekenstein1981",
+    type: "article-journal",
+    title: "Universal Upper Bound on the Entropy-to-Energy Ratio for Bounded Systems",
+    author: [
+      { family: "Bekenstein", given: "Jacob D." },
+    ],
+    "container-title": "Physical Review D",
+    volume: "23",
+    issue: "2",
+    page: "287-298",
+    issued: { "date-parts": [[1981]] },
+    DOI: "10.1103/PhysRevD.23.287",
+  }),
+
+  // ── Pawlowski et al. 2009: Information causality ──────────────
+  ref({
+    id: "pawlowski2009",
+    type: "article-journal",
+    title: "Information Causality as a Physical Principle",
+    author: [
+      { family: "Paw\u0142owski", given: "Marcin" },
+      { family: "Paterek", given: "Tomasz" },
+      { family: "Kaszlikowski", given: "Dagomir" },
+      { family: "Scarani", given: "Valerio" },
+      { family: "Winter", given: "Andreas" },
+      { family: "\u017Bukowski", given: "Marek" },
+    ],
+    "container-title": "Nature",
+    volume: "461",
+    page: "1101-1104",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1038/nature08400",
+  }),
+
+  // ── Reshetikhin & Turaev 1991: Ribbon graph invariants ────────
+  ref({
+    id: "reshetikhin1991",
+    type: "article-journal",
+    title: "Invariants of 3-Manifolds via Link Polynomials and Quantum Groups",
+    author: [
+      { family: "Reshetikhin", given: "N." },
+      { family: "Turaev", given: "V. G." },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "103",
+    issue: "1",
+    page: "547-597",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/BF01239527",
+  }),
+
+  // ── Bowen 1979: Hausdorff dimension of quasi-circles ──────────
+  ref({
+    id: "bowen1979",
+    type: "article-journal",
+    title: "Hausdorff Dimension of Quasi-Circles",
+    author: [
+      { family: "Bowen", given: "Rufus" },
+    ],
+    "container-title": "Publications Math\u00e9matiques de l'IH\u00c9S",
+    volume: "50",
+    page: "11-25",
+    issued: { "date-parts": [[1979]] },
+    DOI: "10.1007/BF02684767",
+  }),
+
+  // ── Ruelle 1982: Repellers and topological pressure ───────────
+  ref({
+    id: "ruelle1982",
+    type: "article-journal",
+    title: "Repellers for Real Analytic Maps and Topological Pressure",
+    author: [
+      { family: "Ruelle", given: "David" },
+    ],
+    "container-title": "Ergodic Theory and Dynamical Systems",
+    volume: "2",
+    page: "99-107",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1017/S0143385700009603",
+  }),
+
+  // ── McMullen 1998: Hausdorff dimension and conformal dynamics ──
+  ref({
+    id: "mcmullen1998",
+    type: "article-journal",
+    title: "Hausdorff Dimension and Conformal Dynamics III: Computation of Dimension",
+    author: [
+      { family: "McMullen", given: "Curtis T." },
+    ],
+    "container-title": "American Journal of Mathematics",
+    volume: "120",
+    issue: "4",
+    page: "691-721",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1353/ajm.1998.0031",
+  }),
+
+  // ── Shishikura 1998: Dimension of Mandelbrot boundary ─────────
+  ref({
+    id: "shishikura1998",
+    type: "article-journal",
+    title: "The Hausdorff Dimension of the Boundary of the Mandelbrot Set and Julia Sets",
+    author: [
+      { family: "Shishikura", given: "Mitsuhiro" },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "147",
+    issue: "2",
+    page: "225-267",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.2307/121009",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

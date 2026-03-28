@@ -40,8 +40,21 @@ export default chapter({
       blocks: [
         "golden-ratio-transport",
         "julia-set-reeb",
+        "operational-entropy",
         "discrete-planck-step",
         "jet-planck-steps",
+      ],
+    }),
+    section({
+      title: "Speed of Light and Mass--Energy Equivalence",
+      label: "sec:speed-of-light",
+      blocks: [
+        "information-speed-of-light",
+        "mass-energy-equivalence",
+        "photon-threading-mass",
+        "gravitational-constant",
+        "hausdorff-dimension-recurrence",
+        "information-causality",
       ],
     }),
     section({
