@@ -676,6 +676,13 @@ export interface SkillPackage {
   ref?: string;
   /** List of skill directory names to sync from the package. */
   skills: string[];
+  /**
+   * Package mode. Defaults to "sync".
+   * - "sync": Files are copied into .claude/skills/<name>/ by the nightly workflow.
+   * - "reference": Package is registered but NOT synced. Skills are fetched
+   *   on demand at runtime via the skill_fetch MCP tool.
+   */
+  mode?: "sync" | "reference";
 }
 
 /** Skills configuration — defines external skill package subscriptions. */

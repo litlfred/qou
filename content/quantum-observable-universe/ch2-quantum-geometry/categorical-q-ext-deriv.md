@@ -26,4 +26,4 @@ $q^{-1}\,d$ on horizontal forms and as $d$ on vertical forms:
 
 The *$q$-adjoint* $\delta_q \colon \Omega^{k+1}(A) \to \Omega^k(A)$
 is the adjoint of $d_q$ with respect to the dagger structure
-([positive definite dagger](#def:positive-definite-dagger)).
+([positive definite dagger](#prop:positive-definite-dagger)).

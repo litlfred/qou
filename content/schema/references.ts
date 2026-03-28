@@ -627,6 +627,22 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01393687",
   }),
 
+  // ── Woronowicz 1989 ───────────────────────────────────────────
+  ref({
+    id: "woronowicz1989",
+    type: "article-journal",
+    title: "Differential calculus on compact matrix pseudogroups (quantum groups)",
+    author: [
+      { family: "Woronowicz", given: "Stanis\u0142aw Lech" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1989]] },
+    volume: "122",
+    issue: "1",
+    page: "125-170",
+    DOI: "10.1007/BF01221411",
+  }),
+
   // ── Leitner and Pawlowski 2004 ──────────────────────────────────
   ref({
     id: "leitnerpawloski2004",
