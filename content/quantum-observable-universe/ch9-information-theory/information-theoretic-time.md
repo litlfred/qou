@@ -33,8 +33,8 @@ $$
 
 where $t_P(q) = q/(q-1)$ is the Planck time
 ([Planck time](#def:planck-time)).  The denominator $t_P(q)$
-is the number of discrete operations per Planck unit
-([Reeb operations per Planck unit](#prop:reeb-operations-per-planck)):
+is the number of discrete $f_q$ iterations per Reeb circuit
+([iterations per Reeb circuit](#prop:reeb-operations-per-planck)):
 dividing by it converts the integer step count $\mathcal{T}$
 into a continuous flow parameter.
 
@@ -66,29 +66,26 @@ into a continuous flow parameter.
 
 **The thermodynamic bridge.**
 The passage from regime 1 to regime 3 is the statistical
-mechanical coarse-graining of time.  Define the **Reeb partition
-function** at inverse temperature $\beta = t_P(q)$:
+mechanical coarse-graining of time.  For any smooth observable
+$g$ on the Reeb flow, the discrete time-average over one
+circuit ($t_P$ steps) is a Riemann sum:
 
 $$
-  Z_R(\beta)
-  \;=\; \sum_{n=0}^{\beta - 1}
-  e^{-n/\beta}
-  \;\xrightarrow{\beta \to \infty}\;
-  \int_0^\infty e^{-s}\,ds
-  \;=\; 1.
+  \frac{1}{t_P} \sum_{n=0}^{t_P - 1} g\!\left(\frac{n}{t_P}\right)
+  \;\xrightarrow{t_P \to \infty}\;
+  \int_0^1 g(s)\,ds.
 $$
 
-When $\beta = t_P \gg 1$ (many operations per unit), the sum is
-well-approximated by the integral: the discrete Reeb dynamics is
-indistinguishable from a continuous flow.  The error is
-$O(1/t_P) = O(\hbar_q)$ — it vanishes precisely as the quantum
-Planck constant goes to zero.
+The left side is the average of $g$ over $t_P$ discrete Reeb
+operations; the right side is the continuous-flow time-average.
+They agree to $O(1/t_P) = O(\hbar_q)$ — the error vanishes
+precisely as the quantum Planck constant goes to zero.
 
 At $q = 1.1097$
 ([local substrate $q$](#prop:local-substrate-q)),
-$\beta \approx 10$: the integral approximation
-has $\sim 10\%$ relative error.  This is the scale at which
-discreteness is marginally detectable — consistent with
+$t_P \approx 10$: the Riemann approximation has
+$O(1/10) \approx 10\%$ relative error.  This is the scale at
+which discreteness is marginally detectable — consistent with
 quantum-gravitational corrections being $O(\hbar_q)$ effects.
 
 **Julia set dynamics as the microscopic theory.**

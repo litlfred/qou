@@ -1,33 +1,36 @@
 **Proposition.**
 *Let $q \in k^\times \setminus \{1\}$ and let $t_P(q) = q/(q-1)$
 be the Planck time ([Planck time](#def:planck-time)).  The number
-of Reeb operations — iterations of $f_q(z) = z^2 + c(q)$ on the
-exceptional divisor — that fit within one Planck unit is*
+of discrete $f_q$-iterations — evaluations of
+$f_q(z) = z^2 + c(q)$ on the exceptional divisor — that compose
+one Reeb circuit is*
 
 $$
   n_R(q) \;=\; t_P(q) \;=\; \frac{q}{q - 1} \;=\; \frac{1}{\hbar_q}.
 $$
 
-*Each operation is one braiding evaluation (one $R$-matrix
-application), one jet prolongation step, and one circuit of the
-$U(1)$ fiber above the exceptional divisor.*
+*Each iteration is one braiding evaluation (one $R$-matrix
+application) and one jet prolongation step, advancing the phase
+by the fraction $\hbar_q$ of a full circuit.*
 
 *Proof.*
-One Planck unit of Reeb flow displaces by $\ell_P = 1$
-([Planck time](#def:planck-time)).  Each iteration of $f_q$
-advances the phase by $\hbar_q$ (one angular unit of the
-$q$-Reeb flow, since $\mathcal{L}_\xi Z = J\hbar_q Z$).
-Therefore the number of full iterations in one Planck unit is
-$1/\hbar_q = t_P(q)$.  $\square$
+From the definition of the Reeb time coordinate
+($t = \hbar_q \cdot \mathcal{T}$,
+[information-theoretic time](#def:information-theoretic-time)),
+each discrete $f_q$-iteration (an increment of $\mathcal{T}$
+by $1$) corresponds to a continuous time duration of $\hbar_q$.
+Therefore the number of iterations that compose one full Reeb
+circuit (continuous duration $1$) is $1/\hbar_q = t_P(q)$.
+$\square$
 
 **Regime values.**
 
 | $q$ | $n_R$ | Interpretation |
 |-----|-------|----------------|
-| $\to \infty$ | $\to 1$ | Big Bang: one braiding per Planck unit, fully resolved |
-| $1.1097$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ braiding operations per Planck time |
-| $2$ | $2$ | Two operations per unit |
-| $1.01$ | $101$ | Near-classical: $\sim 100$ operations, approaching continuum |
+| $\to \infty$ | $\to 1$ | Big Bang: one iteration per circuit, fully discrete |
+| $1.1097$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ iterations per circuit |
+| $2$ | $2$ | Two iterations per circuit |
+| $1.01$ | $101$ | Near-classical: $\sim 100$ iterations per circuit |
 | $\to 1$ | $\to \infty$ | Classical limit: infinitely many, continuous Reeb flow |
 
 **Physical meaning at $q = 1.1097$

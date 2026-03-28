@@ -14,20 +14,20 @@ thermodynamic quantities from microscopic dynamics.
 | Boltzmann constant $k_B$ | Quantum Planck constant $\hbar_q$ |
 | Inverse temperature $\beta$ | Planck time $t_P = 1/\hbar_q$ |
 | Thermodynamic limit ($N \to \infty$) | Classical limit ($q \to 1$, $t_P \to \infty$) |
-| Partition function $Z$ | Reeb partition function $Z_R$ |
-| Free energy $F = -k_BT \ln Z$ | Reeb flow rate $\hbar_q \ln Z_R$ |
+| Time-average (Riemann sum) | Discrete average over $t_P$ iterations |
+| Time-average (integral) | Continuous Reeb flow average |
 
 The mapping is not metaphorical — it is structural.  The same
-mathematical mechanism (replacing a sum by an integral when the
-number of terms diverges) produces both thermodynamic equilibrium
-from molecular collisions and continuous time from discrete Reeb
+mathematical mechanism (Riemann sum → integral as the number of
+terms diverges) produces both thermodynamic equilibrium from
+molecular collisions and continuous time from discrete Reeb
 operations.
 
 **Why $\sim 10$ operations is the crossover.**
 At $q = 1.1097$
 ([local substrate $q$](#prop:local-substrate-q)),
 $t_P \approx 10.1$
-([Reeb operations per Planck unit](#prop:reeb-operations-per-planck)).
+([iterations per Reeb circuit](#prop:reeb-operations-per-planck)).
 The central limit theorem applies to sums of $\sim 10$
 independent operations: the statistical fluctuations in the
 aggregate are $O(1/\sqrt{10}) \approx 30\%$.  This is large

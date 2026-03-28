@@ -15,20 +15,23 @@ which $q \neq 1$.
 
 **Interpretation.**  One Planck time is the period of a single
 full circuit of the $q$-Reeb flow
-([$q$-Reeb flow](#ex:q-reeb-flow)) — one complete iteration of
-the discrete dynamical system $f_q(z) = z^2 + c(q)$ on the
-exceptional divisor
-([Julia set of Reeb flow](#rem:julia-set-reeb)).  The reciprocal
+([$q$-Reeb flow](#ex:q-reeb-flow)) — measured in discrete
+$f_q$-iterations on the exceptional divisor
+([Julia set of Reeb flow](#rem:julia-set-reeb)).  One circuit
+comprises $t_P(q)$ iterations of $f_q(z) = z^2 + c(q)$: at the
+Big Bang ($t_P = 1$) one iteration completes one circuit; at
+$q = 1.1097$ ([local substrate $q$](#prop:local-substrate-q)),
+$\sim 10$ iterations compose one circuit.  The reciprocal
 $\hbar_q = 1/t_P$ is the angular velocity: the fraction of a
-full Reeb circuit completed per unit time.
+full circuit completed per $f_q$-iteration.
 
 **Regime table.**
 
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
-| Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | One operation per unit; fully discrete |
-| Physical | $q = 1.1097$ | $0.0988$ | $\approx 10.1$ | $\sim 10$ Reeb circuits per Planck unit |
-| Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | Infinitely many circuits; time freezes |
+| Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | One $f_q$-step per circuit; fully discrete |
+| Physical | $q = 1.1097$ | $0.0988$ | $\approx 10.1$ | $\sim 10$ $f_q$-steps per Reeb circuit |
+| Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | Infinitely many steps; continuous flow |
 
 **Field realisations.**
 

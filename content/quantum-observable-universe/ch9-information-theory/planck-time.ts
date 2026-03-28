@@ -12,6 +12,7 @@ export default definition({
     "def:quantum-planck-constant",
     "def:substrate-parameter",
     "ex:q-reeb-flow",
+    "rem:julia-set-reeb",
     "prop:local-substrate-q",
   ],
 });

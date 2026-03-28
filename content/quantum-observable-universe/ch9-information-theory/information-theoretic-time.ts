@@ -23,6 +23,7 @@ export default definition({
     "prop:ordering-jet-compatibility",
     "ex:q-reeb-flow",
     "def:substrate-parameter",
+    "def:bundle-initial-conditions",
     "prop:local-substrate-q",
   ],
 });
