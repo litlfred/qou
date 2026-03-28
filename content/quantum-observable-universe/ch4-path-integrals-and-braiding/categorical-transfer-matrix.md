@@ -1,5 +1,5 @@
-Let $H = [K_1, \ldots, K_n]_c \bowtie \mathcal{L}$ be a
-[hadron](#def:hadron) localized at a brane point $p$
+Let $H_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a
+[hadron](#def:hadron) at a brane point $p$
 ([localized hadron](#def:localized-hadron)), and let $E_p$ be the
 exceptional divisor at $p$
 ([exceptional divisor](#def:exceptional-divisor)).
@@ -43,7 +43,7 @@ A braiding operation on $H$ can be described at two levels:
    $\mathrm{tr}_M(\rho(\beta_H)) = \prod_i \hat{V}_i(q)$.
 
 **The categorical transfer matrix.**
-A **categorical transfer matrix** for $H$ is the equivalence
+A **categorical transfer matrix** for $H_p$ is the equivalence
 class
 
 $$

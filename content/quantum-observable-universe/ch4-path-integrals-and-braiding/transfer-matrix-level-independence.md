@@ -1,5 +1,5 @@
-Let $H = [K_1, \ldots, K_n]_c \bowtie \mathcal{L}$ be a hadron
-with composite knot $K_H = \hat{\beta}_H$.  Let $\mathcal{T}(H)$
+Let $H_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a hadron
+with composite knot $K_H = \hat{\beta}_H$.  Let $\mathcal{T}(H_p)$
 be the categorical transfer matrix
 ([categorical transfer matrix](#def:categorical-transfer-matrix)).
 Then:

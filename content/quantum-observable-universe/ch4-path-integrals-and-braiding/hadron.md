@@ -7,18 +7,21 @@ category $\mathbf{C}$, and let $\mathcal{L}$ be a link encoding
 their internal entanglement.  A **hadron** is a composite
 
 $$
-  H \;=\; [K_1, \ldots, K_n]_c \;\bowtie\; \mathcal{L}
+  H_p \;=\; [K_1, \ldots, K_n]_p \;\bowtie\; \mathcal{L}
 $$
 
 satisfying the **stability condition**
 
 $$
-  E_{\mathrm{cross}}(H) \;<\; 0
+  E_{\mathrm{cross}}(H_p) \;<\; 0
 $$
 
 where $E_{\mathrm{cross}}$ is the crossing energy
-([crossing energy](#def:crossing-energy)).  The subscript $c$
-indicates color-tube coupling and $\bowtie$ denotes the linking
+([crossing energy](#def:crossing-energy)).  The subscript $p$
+is the localization point: it determines the colour sector of the
+exceptional divisor $E_p$ in which the constituents are coupled.
+The colour-tube coupling is not an independent datum --- it is
+inherited from $p$.  The symbol $\bowtie$ denotes the linking
 operation.
 
 The stability condition excludes arbitrary knot composites: only
