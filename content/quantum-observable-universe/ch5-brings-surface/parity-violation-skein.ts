@@ -21,6 +21,7 @@ export default proposition({
   uses: [
     "def:beta-decay-skein",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
     "prop:reidemeister-action-table",
   ],
 });

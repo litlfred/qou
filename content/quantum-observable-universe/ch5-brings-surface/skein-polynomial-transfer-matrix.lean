@@ -5,7 +5,7 @@ The nuclear Skein polynomial P_N(q) = Π_i V̂_i(q) is computed by
 C(A,2) transfer matrix multiplications.  Each V̂_i(q) is a polynomial
 in q^{1/2}, and q simultaneously serves as the Hecke deformation
 parameter, the Skein polynomial variable, and the physical substrate
-parameter q = 1.110.
+parameter q = 1.1097.
 
 LaTeX label: `prop:skein-polynomial-transfer-matrix`
 
@@ -106,7 +106,7 @@ theorem transfer_matrix_steps (A : ℕ) :
 
     1. Algebraic: σ² = (q - q⁻¹)σ + 1 (Hecke deformation)
     2. Topological: variable of P_N(q) (Skein polynomial)
-    3. Physical: q = 1.110 (Descartes condition χ = -6)
+    3. Physical: q = 1.1097 (Descartes condition χ = -6)
 
     This structure bundles all three roles. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix

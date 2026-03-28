@@ -22,5 +22,6 @@ export default conjecture({
     "def:stable-nucleus",
     "rem:skein-crossing-asymmetry",
     "ex:half-life-shell-worked",
+    "prop:local-substrate-q",
   ],
 });

@@ -108,7 +108,7 @@ theorem BetaDecayData.halfLife_pos (d : BetaDecayData) : 0 < d.halfLife := by
 
 /-- Sensitivity: ∂ ln Γ / ∂ ln q = (q² - 1)/(q² + 1) + 5(q² + 1)/(q² - 1).
 
-    At q = 1.110 this evaluates to ≈ 48. -/
+    At q = 1.1097 this evaluates to ≈ 48. -/
 -- Ref: [manuscript] §6/hadron-half-life
 noncomputable def qSensitivity (q : ℝ) : ℝ :=
   (q ^ 2 - 1) / (q ^ 2 + 1) + 5 * (q ^ 2 + 1) / (q ^ 2 - 1)

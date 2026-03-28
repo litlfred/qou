@@ -25,5 +25,6 @@ export default theorem({
     "def:braid-group",
     "def:stable-nucleus",
     "def:skein-binding-lagrangian",
+    "prop:local-substrate-q",
   ],
 });

@@ -27,5 +27,6 @@ export default definition({
     "def:neutrino-knot",
     "prop:nuclear-groebner-reduction",
     "def:braid-group",
+    "prop:local-substrate-q",
   ],
 });

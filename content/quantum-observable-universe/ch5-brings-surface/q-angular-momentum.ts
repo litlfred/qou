@@ -21,5 +21,6 @@ export default definition({
     "def:q-momentum",
     "prop:nuclear-spin-parity",
     "rem:building-block-knots",
+    "prop:local-substrate-q",
   ],
 });

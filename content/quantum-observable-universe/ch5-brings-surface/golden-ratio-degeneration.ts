@@ -16,5 +16,6 @@ export default remark({
     "prop:descartes-elliptic-curve",
     "def:substrate-parameter",
     "prop:chiral-elliptic",
+    "prop:local-substrate-q",
   ],
 });

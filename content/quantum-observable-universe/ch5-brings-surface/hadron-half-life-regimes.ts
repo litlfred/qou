@@ -14,5 +14,6 @@ export default remark({
     "prop:hadron-half-life",
     "prop:beta-stability",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

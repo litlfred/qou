@@ -6,7 +6,7 @@ quadratic energy minimisation.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
-$q = 1.110$.  At fixed mass number $A = p + n$, the nuclear
+$q = 1.1097$.  At fixed mass number $A = p + n$, the nuclear
 binding energy is a **convex quadratic** in the proton number
 $p$:
 

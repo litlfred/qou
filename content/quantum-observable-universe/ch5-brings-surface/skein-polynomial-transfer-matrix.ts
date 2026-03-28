@@ -23,5 +23,6 @@ export default proposition({
     "prop:generator-volume-decomposition",
     "prop:nuclear-groebner-reduction",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

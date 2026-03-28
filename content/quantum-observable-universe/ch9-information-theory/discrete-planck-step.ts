@@ -28,5 +28,6 @@ export default remark({
     "rem:substrate-radial-coordinate",
     "ex:finite-field-realisation",
     "rem:witt-lift-qou",
+    "prop:local-substrate-q",
   ],
 });

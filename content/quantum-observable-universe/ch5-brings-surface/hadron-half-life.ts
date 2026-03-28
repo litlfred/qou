@@ -22,6 +22,7 @@ export default proposition({
     "def:stable-nucleus",
     "def:skein-binding-lagrangian",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
     "def:coulomb-charge",
   ],
 });

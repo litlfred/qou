@@ -16,7 +16,7 @@ $q$-integers are fixed by the Descartes substrate parameter.
 
 **Numerical comparison with CODATA.**
 
-| Quantity | QOU prediction ($q = 1.110$) | CODATA 2018 |
+| Quantity | QOU prediction ($q = 1.1097$) | CODATA 2018 |
 |----------|------------------------------|-------------|
 | $q^{-1}$ | $0.900\,901$ | — |
 | $[9]_q$ | $10.364\,04$ | — |
@@ -25,7 +25,7 @@ $q$-integers are fixed by the Descartes substrate parameter.
 | $\alpha_{\mathrm{EM}}^{-1}$ | $\mathbf{136.84}$ | $137.035\,999\,084(21)$ |
 | Discrepancy | | $+0.14\%$ |
 
-The predicted value $\alpha^{-1} = 136.84$ at $q = 1.110$ agrees
+The predicted value $\alpha^{-1} = 136.84$ at $q = 1.1097$ agrees
 with the experimental value to $0.14\%$ — within the uncertainty
 of the substrate parameter itself.
 
@@ -54,10 +54,10 @@ $$
        {[9]_q [10]_q (q - q^{-1})}.
 $$
 
-At $q = 1.110$ this evaluates to approximately $-20$: a $1\%$ shift
+At $q = 1.1097$ this evaluates to approximately $-20$: a $1\%$ shift
 in $q$ produces a $\sim 20\%$ shift in $\alpha_{\mathrm{EM}}$.  The
 tight agreement with experiment therefore constrains $q$ to a narrow
-window around $1.110$.
+window around $1.1097$.
 
 **Comparison with other $q$-predictions.**
 
@@ -67,6 +67,6 @@ window around $1.110$.
 | $m_n / m_p$ | from Skein mass formula | $1.001\,378\,4$ | [mass comparison](#sec:mass-comparison-table) |
 | $\tau_{1/2}$ ratios | from transfer matrix | PDG values | [half-life verification](#rem:hadron-half-life-verification) |
 
-The substrate parameter $q \approx 1.110$ is overdetermined: three
+The substrate parameter $q \approx 1.1097$ is overdetermined: three
 independent classes of observables (electromagnetic coupling, mass
 ratios, decay rates) all point to the same value.

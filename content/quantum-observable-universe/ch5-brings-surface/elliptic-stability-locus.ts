@@ -22,5 +22,6 @@ export default conjecture({
     "prop:beta-stability",
     "rem:color-tube-fibers",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

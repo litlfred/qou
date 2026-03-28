@@ -20,5 +20,6 @@ export default example({
     "def:categorical-proton",
     "conj:electron-shells-hopf",
     "def:crossing-energy",
+    "prop:local-substrate-q",
   ],
 });

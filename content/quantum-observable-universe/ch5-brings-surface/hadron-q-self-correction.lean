@@ -82,21 +82,21 @@ theorem differentialShift_nonneg (q₀ : ℝ) (hq : 0 < q₀) (A : ℕ) (hA : 1 
     · positivity
   · exact sq_nonneg _
 
-/-- The differential shift is small: for all A and q₀ = 1.110,
+/-- The differential shift is small: for all A and q₀ = 1.1097,
     Δq_eff < ℏ_q² < 0.01. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
-    differentialShift 1.110 A < 0.01 := by
+    differentialShift 1.1097 A < 0.01 := by
   unfold differentialShift
   have hA_pos : (0 : ℝ) < (A : ℝ) := by exact_mod_cast Nat.lt_of_lt_pred (by omega)
   have hA2_pos : (0 : ℝ) < (A : ℝ) ^ 2 := by positivity
   have h1 : ((A : ℝ) - 1) / (A : ℝ) ^ 2 ≤ 1 := by
     rw [div_le_one hA2_pos]
     nlinarith
-  have h2 : (1 - (1.110 : ℝ)⁻¹) ^ 2 < 0.01 := by norm_num
-  calc differentialShift 1.110 A
-      = ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (1 - (1.110 : ℝ)⁻¹) ^ 2 := rfl
-    _ ≤ 1 * (1 - (1.110 : ℝ)⁻¹) ^ 2 := by
+  have h2 : (1 - (1.1097 : ℝ)⁻¹) ^ 2 < 0.01 := by norm_num
+  calc differentialShift 1.1097 A
+      = ((A : ℝ) - 1) / (A : ℝ) ^ 2 * (1 - (1.1097 : ℝ)⁻¹) ^ 2 := rfl
+    _ ≤ 1 * (1 - (1.1097 : ℝ)⁻¹) ^ 2 := by
         apply mul_le_mul_of_nonneg_right h1 (sq_nonneg _)
     _ < 1 * 0.01 := by
         apply mul_lt_mul_of_pos_left h2 (by norm_num : (0 : ℝ) < 1)

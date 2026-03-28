@@ -11,6 +11,7 @@ export default example({
     "prop:topological-mass-formula",
     "def:substrate-parameter",
     "def:quantum-planck-constant",
+    "prop:local-substrate-q",
   ],
   tags: ["archimedean", "mass", "polynomial"],
 });

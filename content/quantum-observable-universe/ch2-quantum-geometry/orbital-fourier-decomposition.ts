@@ -24,5 +24,6 @@ export default proposition({
     "def:categorical-reeb",
     "prop:fiber-adjoint-involution",
     "conj:borromean-quark",
+    "prop:local-substrate-q",
   ],
 });

@@ -21,7 +21,7 @@ one per crossing.
 | Epoch | $q$ | $t_P(q)$ | Toffoli ($3$ steps) | $P_{7,6}$ |
 |-------|:---:|:---------:|:-------------------:|:---------:|
 | Big Bang | $\to \infty$ | $\to 1$ | $3$ units | $\to \infty$ |
-| Physical | $1.110$ | $10.09$ | $30.3$ units | $+0.050$ |
+| Physical | $1.1097$ | $10.11$ | $30.3$ units | $+0.050$ |
 | Classical | $\to 1$ | $\to \infty$ | $\infty$ | $0$ |
 
 At the Big Bang, each Planck step is one unit of time and

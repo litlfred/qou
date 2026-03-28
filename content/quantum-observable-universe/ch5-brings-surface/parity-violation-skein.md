@@ -63,14 +63,14 @@ iff $q = q^{-1}$, which holds iff $q^2 = 1$, hence $q = 1$
 The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
 $T^2 = 1$ (positive and negative crossings cancel — parity
-conserved).  At $q = 1.110$:
+conserved).  At $q = 1.1097$:
 $T^2 = 0.209\,T + 1$ (the $0.209\,T$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:
 
 $$
-  q - q^{-1} = 0.209 \quad (\text{at } q = 1.110)
+  q - q^{-1} = 0.209 \quad (\text{at } q = 1.1097)
 $$
 
 This is the same quantity that appears in the Skein amplitude
@@ -97,7 +97,7 @@ of electrons from ${}^{60}\mathrm{Co}$ beta decay and found a
 strong forward-backward asymmetry.  In the Descartes framework,
 this asymmetry is the **crossing chirality** of the nuclear link:
 the ${}^{60}\mathrm{Co}$ braid word has a specific writhe
-$w \neq 0$, and the Skein crossing change at $q = 1.110$
+$w \neq 0$, and the Skein crossing change at $q = 1.1097$
 produces an asymmetric emission pattern determined by $q^w$.
 
 **Connection to the $\mathbb{Z}/2$ of beta decay.**

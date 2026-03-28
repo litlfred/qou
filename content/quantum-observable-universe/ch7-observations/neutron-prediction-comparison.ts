@@ -20,5 +20,6 @@ export default proposition({
     "prop:beta-stability",
     "def:substrate-parameter",
     "def:skein-binding-lagrangian",
+    "prop:local-substrate-q",
   ],
 });

@@ -50,7 +50,7 @@ theorem parity_violation_skein (q : ℝ) (hq : 0 < q) :
     subst h
     norm_num
 
-/-- At q = 1.110, the parity violation parameter q - q⁻¹ ≈ 0.209. -/
+/-- At q = 1.1097, the parity violation parameter q - q⁻¹ ≈ 0.209. -/
 -- Ref: [manuscript] §6/parity-violation-skein
 noncomputable def parityViolationStrength (q : ℝ) : ℝ := q - 1 / q
 

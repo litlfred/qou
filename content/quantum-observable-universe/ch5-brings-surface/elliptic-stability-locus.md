@@ -162,7 +162,7 @@ If the conjecture holds, then:
 
 The chiral elliptic curve
 ([Descartes elliptic curve](#prop:descartes-elliptic-curve))
-at $q = 1.110$ is
+at $q = 1.1097$ is
 
 $$
   E_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,

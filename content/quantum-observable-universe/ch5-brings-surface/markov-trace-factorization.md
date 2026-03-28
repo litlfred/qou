@@ -67,7 +67,7 @@ $$
 
 **This product IS the Skein polynomial of the nuclear link
 $\mathcal{N}(p, n)$**, written in factored form.  Evaluating at
-$q = 1.110$ gives the physical categorical action.
+$q = 1.1097$ gives the physical categorical action.
 
 ## $q$ as the polynomial variable
 
@@ -77,13 +77,13 @@ The substrate parameter $q$ is simultaneously:
    controlling the deviation from the symmetric group.
 2. **The variable** of the Skein polynomial, in which each
    transfer matrix entry is polynomial.
-3. **The physical parameter** $q = 1.110$, determined by the
+3. **The physical parameter** $q = 1.1097$, determined by the
    Descartes condition $\chi(A) = -6$.
 
 The entire nuclear physics is encoded in the polynomial
 $P_{\mathcal{N}}(q)$.  Computing the polynomial requires
 exactly $\binom{A}{2}$ transfer matrix multiplications.
-Evaluating the polynomial at $q = 1.110$ gives the energy.
+Evaluating the polynomial at $q = 1.1097$ gives the energy.
 Taking the ratio $P_{\mathrm{par}}(q) / P_{\mathrm{dau}}(q)$
 gives the matrix element for beta decay.
 
@@ -165,7 +165,7 @@ Each step preserves the link invariant.  The polynomial
 $P_{\mathcal{N}}(q)$ is a well-defined invariant of the nuclear
 link $\mathcal{N}(p, n)$ — it does not depend on the braid
 representative or the reduction path.  Evaluating at
-$q = 1.110$ projects the polynomial invariant to the physical
+$q = 1.1097$ projects the polynomial invariant to the physical
 energy.
 
 ## The polynomial degree
@@ -186,7 +186,7 @@ $$
 
 For ${}^{14}\mathrm{C}$: $\deg \leq 195$.  For
 ${}^{210}\mathrm{Bi}$: $\deg \leq 44{,}099$.  The transfer
-matrix product evaluates this polynomial at $q = 1.110$
+matrix product evaluates this polynomial at $q = 1.1097$
 without ever expanding it.
 
 ## Asymptotic behaviour

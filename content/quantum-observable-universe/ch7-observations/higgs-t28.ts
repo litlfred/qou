@@ -19,5 +19,6 @@ export default conjecture({
     "conj:borromean-quark",
     "def:color-tube-coordinates",
     "def:crossing-energy",
+    "prop:local-substrate-q",
   ],
 });

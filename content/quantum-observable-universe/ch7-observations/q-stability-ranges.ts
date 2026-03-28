@@ -15,5 +15,6 @@ export default remark({
     "prop:integer-stability",
     "prop:beta-stability",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

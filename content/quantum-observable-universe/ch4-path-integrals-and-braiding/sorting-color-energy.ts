@@ -19,5 +19,6 @@ export default proposition({
     "def:crossing-energy",
     "rem:observation-braid",
     "def:r-matrix-braiding",
+    "prop:local-substrate-q",
   ],
 });

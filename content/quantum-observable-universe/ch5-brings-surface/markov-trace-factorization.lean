@@ -89,10 +89,10 @@ theorem asymptoticRatio_eq_inv_hbar (q : ℝ) (hq : 0 < q) :
   congr 1
   rw [inv_eq_one_div]
 
-/-- Numerical verification: at q = 1.110, the asymptotic ratio ≈ 10.09. -/
+/-- Numerical verification: at q = 1.1097, the asymptotic ratio ≈ 10.116. -/
 -- Ref: [manuscript] §6/markov-trace-factorization
 theorem asymptoticRatio_at_q :
-    |asymptoticRatio 1.110 - 10.09| < 0.01 := by
+    |asymptoticRatio 1.1097 - 10.116| < 0.01 := by
   unfold asymptoticRatio
   norm_num
 

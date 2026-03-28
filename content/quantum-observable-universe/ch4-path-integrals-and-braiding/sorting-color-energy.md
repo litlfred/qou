@@ -37,7 +37,7 @@ Then:*
      \;=\; q + q^{-1}
    $$
 
-   *At $q = 1.110$: $\Delta E = 2.011$ action units per
+   *At $q = 1.1097$: $\Delta E = 2.011$ action units per
    crossing.*
 
 4. **(Total sorting energy.)** *Let $\pi \in S_n$ be a
@@ -103,7 +103,7 @@ $q + q^{-1}$ in the colour fibre.  $\square$
 | $(3,1,2)$ two swaps | $2$ | $\sigma_2 \sigma_1$ | $2(q + q^{-1})$ |
 | $(3,2,1)$ reverse | $3$ | $\sigma_1 \sigma_2 \sigma_1$ | $3(q + q^{-1})$ |
 
-At $q = 1.110$: sorting three fully reversed socks costs
+At $q = 1.1097$: sorting three fully reversed socks costs
 $3 \times 2.011 = 6.033$ action units in the colour fibre.
 This energy is not lost — it is stored in the gauge degrees
 of freedom as the record of the observer's intent.

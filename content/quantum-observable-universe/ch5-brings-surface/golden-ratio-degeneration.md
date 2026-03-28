@@ -61,13 +61,13 @@ space into three regimes:
 | Classical band | $1/\varphi^2 < q < 1$ | smooth | intact but sub-classical | symmetric nuclei ($n = p$) |
 | Physical | $q > 1$ | smooth, $\Delta < 0$ | one real component | full nuclear chart |
 
-Our universe sits at $q = 1.110$, well above the golden
+Our universe sits at $q = 1.1097$, well above the golden
 threshold.  The distance from the degeneration,
 
 $$
   q - q_{\mathrm{gold}}
-  \;=\; 1.110 - 0.382
-  \;=\; 0.728,
+  \;=\; 1.1097 - 0.382
+  \;=\; 0.7277,
 $$
 
 measures the **stability margin** of the Descartes universe:

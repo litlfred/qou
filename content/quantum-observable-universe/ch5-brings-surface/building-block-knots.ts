@@ -27,5 +27,6 @@ export default remark({
     "def:crossing-energy",
     "prop:topological-mass-formula",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

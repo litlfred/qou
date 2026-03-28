@@ -21,5 +21,6 @@ export default example({
     "rem:hadron-half-life-regimes",
     "prop:integer-stability",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });

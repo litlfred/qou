@@ -18,6 +18,7 @@ export default definition({
   },
   uses: [
     "def:substrate-parameter",
+    "prop:local-substrate-q",
     "def:crossing-energy",
     "rem:building-block-knots",
   ],

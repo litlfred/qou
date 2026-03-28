@@ -9,6 +9,7 @@ export default proof({
     "prop:skein-generation",
     "prop:knot-eigenbasis-complete",
     "prf:knot-volumes-verification",
+    "prop:local-substrate-q",
   ],
   lean: {
     decl: "QOU.HadronicMass.terminal_resolution_hadronic_mass",

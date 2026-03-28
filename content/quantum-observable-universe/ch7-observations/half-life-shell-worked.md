@@ -140,7 +140,7 @@ $$
 
 The denominator $|J_{\mathcal{N}(0,2)}(q)|$ is the Skein weight of
 the broken pair — it penalises the transition for disrupting the
-closed sub-link.  At $q = 1.110$, $|J_{\mathcal{N}(0,2)}(q)|
+closed sub-link.  At $q = 1.1097$, $|J_{\mathcal{N}(0,2)}(q)|
 \approx q + q^{-1} = 2.01$, and the full suppression
 (including the spin-parity mismatch $0^+ \to 1^+$) gives
 $|\mathcal{M}|^2 \sim 10^{-6}$ — six orders of magnitude below the

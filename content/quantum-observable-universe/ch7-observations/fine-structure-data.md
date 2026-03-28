@@ -16,7 +16,7 @@ steep function of $q$.  Matching the CODATA central value requires
 $q = 1.11023 \pm 0.00002$ (propagating experimental uncertainty).
 This can be compared to $q$ values extracted from:
 
-- **Neutron-to-proton mass ratio**: $q \approx 1.110$ (from Skein
+- **Neutron-to-proton mass ratio**: $q \approx 1.1097$ (from Skein
   mass formula)
 - **Tritium half-life**: $q \approx 1.109$–$1.112$ (from transfer
   matrix calculation)

@@ -21,5 +21,6 @@ export default example({
     "def:stable-nucleus",
     "prop:hadron-half-life",
     "prop:beta-stability",
+    "prop:local-substrate-q",
   ],
 });

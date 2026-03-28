@@ -23,5 +23,6 @@ export default definition({
     "def:q-angular-momentum",
     "def:beta-decay-skein",
     "prop:hadron-half-life",
+    "prop:local-substrate-q",
   ],
 });

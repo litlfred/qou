@@ -18,5 +18,6 @@ export default proposition({
     "rem:discrete-planck-step",
     "def:quantum-planck-constant",
     "def:substrate-parameter",
+    "prop:local-substrate-q",
   ],
 });
