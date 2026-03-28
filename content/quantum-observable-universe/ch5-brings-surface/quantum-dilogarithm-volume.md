@@ -122,10 +122,10 @@ the cosimplicial crossed groupoid
   decays (daughter less bound).
 
 - **Level 1** ($B_{3A}$, 3 strands per nucleon): the intra-nucleon
-  Borromean crossings.  The crossing change $d \to u$ inside one
+  Borromean crossings.  The crossing change $\mathfrak{d} \to \mathfrak{u}$ inside one
   nucleon produces the **$Q$-value** — the mass difference between
   parent and daughter.  This is where the neutron-proton mass
-  splitting $m_n - m_p = \mathcal{S}_{dd} - \mathcal{S}_{uu}
+  splitting $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}
   \approx 1.293$ MeV originates.
 
 The coface map $\delta^0 \colon \mathfrak{G}_0 \to \mathfrak{G}_1$

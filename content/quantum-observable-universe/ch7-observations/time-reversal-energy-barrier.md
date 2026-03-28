@@ -27,7 +27,7 @@ the original electron unchanged.
 
 **Composite fermions (proton, neutron).**
 The proton is a [Borromean baryon](#def:borromean-baryon):
-$\mathfrak{p} = [u, u, d]_c \bowtie \mathcal{L}_H$, built from
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$, built from
 trefoils linked by the Hopf link.  Its antiparticle $\bar{\mathfrak{p}}$
 replaces every $T_{2,3}$ with $\sigma(T_{2,3})$
 ([chirality remark](#rem:chirality-trefoil-electron-positron)).
@@ -63,10 +63,10 @@ $2m_n = 1879.1$ MeV for antineutron creation.
 A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p}
 + e^- + \bar{\nu}$, but this is *not* time reversal.  Beta decay
 changes the crossing orientation partition of the Borromean link
-(from $[u, d, d]$ to $[u, u, d]$) — an R-I embedding move that
+(from $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ to $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]$) — an R-I embedding move that
 alters binding energy while preserving both the Borromean link type
 and the chirality of each constituent trefoil.  No trefoil flips
-from left to right; instead, one quark flavour changes ($d \to u$)
+from left to right; instead, one quark flavour changes ($\mathfrak{d} \to \mathfrak{u}$)
 within the same chirality sector.
 
 **Summary.**

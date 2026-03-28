@@ -121,9 +121,9 @@ the two strands at the crossing:
 
 | Interaction | $K_1$ | $K_2$ | $T(q)$ | Physical |
 |-------------|-------|-------|--------|----------|
-| $uu$ | $T_{2,3}$ | $T_{2,3}$ | $T_{pp}$ | proton-proton repulsion |
-| $dd$ | $\overline{T_{2,3}}$ | $\overline{T_{2,3}}$ | $T_{nn}$ | neutron-neutron |
-| $ud$ | $T_{2,3}$ | $\overline{T_{2,3}}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
+| $\mathfrak{u}\mathfrak{u}$ | $T_{2,3}$ | $T_{2,3}$ | $T_{pp}$ | proton-proton repulsion |
+| $\mathfrak{d}\mathfrak{d}$ | $\overline{T_{2,3}}$ | $\overline{T_{2,3}}$ | $T_{nn}$ | neutron-neutron |
+| $\mathfrak{u}\mathfrak{d}$ | $T_{2,3}$ | $\overline{T_{2,3}}$ | $T_{\mathrm{mix}}$ | proton-neutron binding |
 
 ### Electromagnetic interactions (electron-level)
 
@@ -239,8 +239,8 @@ This is a 2×2 matrix with polynomial entries in $q$.
 
 | Interaction | $\Delta$ operator | Physical process |
 |-------------|-------------------|------------------|
-| $\beta^-$ decay | $\Delta_\beta = T_{\mathrm{mix}} - T_{nn}$ | $d \to u$ crossing change |
-| $\beta^+$ decay | $-\Delta_\beta = T_{\mathrm{mix}} - T_{pp}$ | $u \to d$ crossing change |
+| $\beta^-$ decay | $\Delta_\beta = T_{\mathrm{mix}} - T_{nn}$ | $\mathfrak{d} \to \mathfrak{u}$ crossing change |
+| $\beta^+$ decay | $-\Delta_\beta = T_{\mathrm{mix}} - T_{pp}$ | $\mathfrak{u} \to \mathfrak{d}$ crossing change |
 | Photon absorption | $\Delta_\gamma = T_{\gamma e}$ (appended) | R-I move adds crossing |
 | Pair creation | $\Delta_{\mathrm{pair}} = T_{ee} - T_{\gamma\gamma}$ | $\gamma \to e^+ e^-$ |
 

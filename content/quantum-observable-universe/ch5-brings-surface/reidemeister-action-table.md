@@ -93,7 +93,7 @@ Markov II &
   preserved &
   $\times z$ \\
 \midrule
-Skein ($d \to u$) &
+Skein ($\mathfrak{d} \to \mathfrak{u}$) &
   $q[L_+] - q^{-1}[L_-]$
   $= (q^{1/2}{-}q^{-1/2})[L_0]$ &
   $0$ &
@@ -123,7 +123,7 @@ Skein ($d \to u$) &
 
 3. **$Q$-value** $= \mathcal{S}_q[\text{parent}]
    - \mathcal{S}_q[\text{daughter}]$.
-   - The Skein crossing change ($d \to u$) produces the transition.
+   - The Skein crossing change ($\mathfrak{d} \to \mathfrak{u}$) produces the transition.
    - The $L_0$ emission carries the electron + antineutrino.
    - The energy released = difference in gauge sector between
      parent and daughter normal forms.

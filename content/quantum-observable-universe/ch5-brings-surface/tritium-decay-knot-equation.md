@@ -12,11 +12,11 @@ Tritium $\mathcal{N}(1, 2)$ has $A = 3$ nucleons:
 $$
   {}^3\mathrm{H}
   \;=\;
-  \underbrace{\mathcal{B}_3(u, u, d)}_{\mathfrak{p}}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}}
   \;\bowtie_{\mathrm{Hopf}}\;
-  \underbrace{\mathcal{B}_3(u, d, d)}_{\mathfrak{n}_1}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_1}
   \;\bowtie_{\mathrm{Hopf}}\;
-  \underbrace{\mathcal{B}_3(u, d, d)}_{\mathfrak{n}_2}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}_2}
 $$
 
 Helium-3 $\mathcal{N}(2, 1)$ has the same $A = 3$:
@@ -24,11 +24,11 @@ Helium-3 $\mathcal{N}(2, 1)$ has the same $A = 3$:
 $$
   {}^3\mathrm{He}
   \;=\;
-  \underbrace{\mathcal{B}_3(u, u, d)}_{\mathfrak{p}_1}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}_1}
   \;\bowtie_{\mathrm{Hopf}}\;
-  \underbrace{\mathcal{B}_3(u, u, d)}_{\mathfrak{p}_2}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})}_{\mathfrak{p}_2}
   \;\bowtie_{\mathrm{Hopf}}\;
-  \underbrace{\mathcal{B}_3(u, d, d)}_{\mathfrak{n}}
+  \underbrace{\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})}_{\mathfrak{n}}
 $$
 
 Each $\mathcal{B}_3$ is a Borromean link (3 quark strands),
@@ -60,7 +60,7 @@ $\sigma_4$: $u$-$d$ (mixed), $\sigma_5$: $d$-$d$ (negative).
 
 In $\beta^-$ decay, one neutron (say $\mathfrak{n}_1$ on
 strands 3-5) converts to a proton.  This changes the quark
-content $\mathcal{B}_3(u, d, d) \to \mathcal{B}_3(u, u, d)$:
+content $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d}) \to \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$:
 one $d$-quark strand becomes a $u$-quark strand.
 
 The crossing change occurs at the internal $d$-$d$ crossing
@@ -131,7 +131,7 @@ At the converting crossing:
 $$
   \Delta \mathcal{S}
   \;=\;
-  \mathcal{S}_{dd}(q) - \mathcal{S}_{ud}(q)
+  \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q) - \mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
   \;=\;
   \frac{q \mu_d + q^{-1} \mu_d}{q^{1/2} + q^{-1/2}}
   \;-\;

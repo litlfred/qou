@@ -11,13 +11,13 @@ two-component link.  The linking number is always $\pm 1$.
 
 | $K_1$ | $K_2$ | $K_1 \bowtie K_2$ | Components | Physical role |
 |-------|-------|--------------------|:----------:|---------------|
-| $T_{2,3}$ | $T_{2,3}$ | $T_{2,3} \bowtie T_{2,3}$ | $2$ | $uu$ pair (Hopf-linked quarks) |
-| $T_{2,3}$ | $\overline{T_{2,3}}$ | $T_{2,3} \bowtie \overline{T_{2,3}}$ | $2$ | $u\bar{d}$ = $\pi^+$ (pion) |
-| $\overline{T_{2,3}}$ | $\overline{T_{2,3}}$ | $\overline{T_{2,3}} \bowtie \overline{T_{2,3}}$ | $2$ | $dd$ pair |
+| $T_{2,3}$ | $T_{2,3}$ | $T_{2,3} \bowtie T_{2,3}$ | $2$ | $\mathfrak{u}\mathfrak{u}$ pair (Hopf-linked quarks) |
+| $T_{2,3}$ | $\overline{T_{2,3}}$ | $T_{2,3} \bowtie \overline{T_{2,3}}$ | $2$ | $\mathfrak{u}\bar{\mathfrak{d}}$ = $\pi^+$ (pion) |
+| $\overline{T_{2,3}}$ | $\overline{T_{2,3}}$ | $\overline{T_{2,3}} \bowtie \overline{T_{2,3}}$ | $2$ | $\mathfrak{d}\mathfrak{d}$ pair |
 | $T_{2,3}$ | $T_{1,0}$ | $T_{2,3} \bowtie T_{1,0}$ | $2$ | $e\nu$ pair |
 | $T_{1,0}$ | $T_{1,0}$ | $\mathcal{L}_H$ | $2$ | Hopf link (pure) |
-| $T_{2,3}$ | $T_{2,5}$ | $T_{2,3} \bowtie T_{2,5}$ | $2$ | $ub$ pair |
-| $T_{2,3}$ | $\overline{T_{2,5}}$ | $T_{2,3} \bowtie \overline{T_{2,5}}$ | $2$ | $u\bar{s}$ = $K^+$ (kaon) |
+| $T_{2,3}$ | $T_{2,5}$ | $T_{2,3} \bowtie T_{2,5}$ | $2$ | $\mathfrak{u}\mathfrak{b}$ pair |
+| $T_{2,3}$ | $\overline{T_{2,5}}$ | $T_{2,3} \bowtie \overline{T_{2,5}}$ | $2$ | $\mathfrak{u}\bar{\mathfrak{s}}$ = $K^+$ (kaon) |
 | $\mathfrak{p}$ | $\mathfrak{n}$ | $\mathfrak{p} \bowtie \mathfrak{n}$ | $6$ | Deuteron |
 | $\mathfrak{p}$ | $\mathfrak{p}$ | $\mathfrak{p} \bowtie \mathfrak{p}$ | $6$ | Diproton (unstable) |
 | $\mathfrak{n}$ | $\mathfrak{n}$ | $\mathfrak{n} \bowtie \mathfrak{n}$ | $6$ | Dineutron (unstable) |
@@ -36,7 +36,7 @@ locally (at one crossing), it transmutes quark flavour.
 | $T_{1,0}$ ($\nu$) | Global mirror $\sigma$ | $\overline{T_{1,0}}$ ($\bar{\nu}$) | Neutrino → antineutrino |
 | $4_1$ ($\mu$) | Global mirror $\sigma$ | $4_1$ ($\mu$) | Self-mirror (amphichiral) |
 | $\mathfrak{n}$ = $[u,d,d]_c$ | Local $\sigma$ at one $d$ | $\mathfrak{p}$ = $[u,u,d]_c$ | Beta decay ($n \to p$) |
-| $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $uu$ Hopf → figure-eight (muon) |
+| $T_{2,3} \bowtie T_{2,3}$ | Skein at crossing | $4_1$ | $\mathfrak{u}\mathfrak{u}$ Hopf → figure-eight (muon) |
 
 ## Table 3: Color-tube linking $[K_1, K_2, K_3]_c$ — Borromean construction
 
@@ -79,9 +79,9 @@ two.  The sign on $L_0$ matches the decay type ($\beta^{\pm}$).
 
 | Parent crossing | Smoothing | Products | Decay |
 |----------------|-----------|----------|-------|
-| $d \to u$ in $\mathfrak{n}$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ ($\beta^-$) |
-| $u \to d$ in $\mathfrak{p}$ | $L_0^{+}$ | $\overline{T_{2,3}} \sqcup T_{1,0}$ | $e^+ + \nu_e$ ($\beta^+$) |
-| $s \to u$ in $\Lambda$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ (weak) |
+| $\mathfrak{d} \to \mathfrak{u}$ in $\mathfrak{n}$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ ($\beta^-$) |
+| $\mathfrak{u} \to \mathfrak{d}$ in $\mathfrak{p}$ | $L_0^{+}$ | $\overline{T_{2,3}} \sqcup T_{1,0}$ | $e^+ + \nu_e$ ($\beta^+$) |
+| $\mathfrak{s} \to \mathfrak{u}$ in $\Lambda$ | $L_0^{-}$ | $T_{2,3} \sqcup \overline{T_{1,0}}$ | $e^- + \bar{\nu}_e$ (weak) |
 
 In each case the $L_0^{\pm}$ smoothing produces exactly one
 charged lepton (trefoil or mirror trefoil) and one (anti)neutrino

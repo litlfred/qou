@@ -56,9 +56,9 @@ categorical color space:
 
 | Color | $S_3$ subgroup | Trefoil copy | Color coordinate |
 |-------|---------------|-------------|-----------------|
-| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $r = w_2 - z$ |
-| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $g = w_3 - z$ |
-| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $b = w_4 - z$ |
+| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $c_r = w_2 - z$ | |
+| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ | |
+| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ | |
 
 Each $S_3$ acts on one color fiber.  The elements of $S_5$ that
 lie *outside* all three $S_3$ subgroups act by **conjugation**,
@@ -120,16 +120,16 @@ $q$-chromaticity coordinates of a Skein element
 $\psi \in \mathcal{S}_q$:
 
 $$
-  (\hat{r}, \hat{g}, \hat{b})
+  (\hat{c}_r, \hat{c}_g, \hat{c}_b)
   \;=\;
   \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
 $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three color tubes.  These satisfy $\hat{r} + \hat{g} + \hat{b} = 1$,
+three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
 so the $q$-chromaticity diagram is a triangle (the $q$-simplex).
 
-For color-neutral states (hadrons): $\hat{r} = \hat{g} = \hat{b} = 1/3$
+For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$
 — the white point at the centroid.  For individual quarks, some
 coordinates exceed $1$ and others are negative — these points lie
 outside the physical triangle, just as spectral colors lie outside

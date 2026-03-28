@@ -42,7 +42,7 @@ $$
   - E_\times^{(\epsilon_{\mathrm{dau}})}(q)
 $$
 
-For a $d \to u$ change ($\sigma_k^{-1} \to \sigma_k$):
+For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$):
 $\Delta E_\times = q - q^{-1}$.
 
 $$

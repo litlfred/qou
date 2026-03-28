@@ -14,9 +14,9 @@ $\bar{\mathcal{N}}(p, n)$ in the Hecke algebra $H_{3A}(q)$
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
 with quark strands:
-- Proton: $\mathfrak{p} = \mathcal{B}_3(u, u, d)$
+- Proton: $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
   ([categorical proton](#def:categorical-proton))
-- Neutron: $\mathfrak{n} = \mathcal{B}_3(u, d, d)$
+- Neutron: $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
   ([categorical neutron](#def:categorical-neutron))
 
 The crossing type at each generator $\sigma_i$ depends on the
@@ -25,7 +25,7 @@ quark flavours of the two strands: $u$-$u$ (positive), $d$-$d$
 
 **Definition ($\beta^-$ decay).**
 *A $\beta^-$ transition is a single Skein crossing change*
-$d \to u$ *in the normal form* $\bar{\mathcal{N}}(p, n)$*,*
+$\mathfrak{d} \to \mathfrak{u}$ *in the normal form* $\bar{\mathcal{N}}(p, n)$*,*
 *followed by re-reduction to the daughter normal form:*
 
 $$
@@ -53,12 +53,12 @@ $$
 - $L_+$: the parent normal form (the $d$-$d$ crossing at $\sigma_k$
   is a negative crossing in the Hecke algebra)
 - $L_-$: the daughter normal form (the $u$-$d$ or $u$-$u$ crossing
-  after the $d \to u$ change)
+  after the $\mathfrak{d} \to \mathfrak{u}$ change)
 - $L_0^{-}$: the smoothing — the **emitted lepton pair** ($e^- + \bar{\nu}_e$)
 
 **Definition ($\beta^+$ decay).**
 *A $\beta^+$ transition is the mirror operation:* a single
-Skein crossing change $u \to d$:
+Skein crossing change $\mathfrak{u} \to \mathfrak{d}$:
 
 $$
   \bar{\mathcal{N}}(p, n)
@@ -84,7 +84,7 @@ $q \mapsto q^{-1}$ on the Hecke algebra, which acts as:
 
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
-| $d \to u$ | $u \to d$ |
+| $\mathfrak{d} \to \mathfrak{u}$ | $\mathfrak{u} \to \mathfrak{d}$ |
 | $q \, [L_+]$ | $q^{-1} [L_+]$ |
 | electron $T_{2,3}$ | positron $\sigma(T_{2,3})$ |
 | antineutrino $\bar{K}_{0_1}$ | neutrino $K_{0_1}$ |
@@ -147,7 +147,7 @@ Markov traces.  The difference is small (order $Q/M \sim 10^{-5}$
 for typical nuclei) but it is the entire signal.
 
 **Re-reduction cost.**
-After the crossing change $d \to u$ at $\sigma_k$, the braid word
+After the crossing change $\mathfrak{d} \to \mathfrak{u}$ at $\sigma_k$, the braid word
 is no longer in Gröbner normal form.  Re-reduction to
 $\bar{\mathcal{N}}(p+1, n-1)$ requires a specific sequence of
 $q$-deformed R2 moves ($T^2 = (q - q^{-1})T + 1$)

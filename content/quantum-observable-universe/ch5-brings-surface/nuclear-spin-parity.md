@@ -19,8 +19,8 @@ $$
 $$
 
 *Proof.*
-Each nucleon — proton $\mathfrak{p} = \mathcal{B}_3(u, u, d)$ or
-neutron $\mathfrak{n} = \mathcal{B}_3(u, d, d)$ — is a knot
+Each nucleon — proton $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ or
+neutron $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ — is a knot
 (single-component link closure of the Borromean braid).
 By the fermion-boson correspondence
 ([fermions are knots](#prop:fermion-boson-knot-link)), knots
@@ -106,7 +106,7 @@ spin).  The resolution — neutrons as spin-$\tfrac{1}{2}$
 neutral particles — gives $A = 14$ nucleons, hence integer spin.
 
 In the Descartes framework, this is automatic: both the proton
-$\mathcal{B}_3(u, u, d)$ and the neutron $\mathcal{B}_3(u, d, d)$
+$\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ and the neutron $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
 are spin-$\tfrac{1}{2}$ knots (same Borromean topology, different
 quark colouring), and $14$ half-integer spins couple to integer
 total spin.

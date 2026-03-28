@@ -14,15 +14,15 @@ $$
 $$
 
 In beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1)$,
-one neutron $\mathfrak{n} = [u, d, d]_c$ becomes a proton
-$\mathfrak{p} = [u, u, d]_c$.  This is a Skein crossing change
-$\sigma$ on the $d \to u$ quark strand inside one nucleon.  The
+one neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c$ becomes a proton
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c$.  This is a Skein crossing change
+$\sigma$ on the $\mathfrak{d} \to \mathfrak{u}$ quark strand inside one nucleon.  The
 three terms in the Skein relation are:
 
 - $L_+$: the parent configuration $\mathcal{N}(Z, N)$ (positive
   crossing at the $d$-quark site),
 - $L_-$: the daughter configuration $\mathcal{N}(p\!+\!1, n\!-\!1)$
-  (negative crossing after the $d \to u$ flip),
+  (negative crossing after the $\mathfrak{d} \to \mathfrak{u}$ flip),
 - $L_0$: the **smoothing** — the threading link that interpolates
   between parent and daughter.
 
@@ -82,8 +82,8 @@ The topology of $L_0$ for this transition is determined by:
 The Skein resolution at the beta-decay vertex has two levels:
 
 *Level 1: Internal (Borromean).*
-The crossing change $d \to u$ inside
-$\mathcal{B}_3(u, d, d)$ is a Skein resolution at the $d$-$d$
+The crossing change $\mathfrak{d} \to \mathfrak{u}$ inside
+$\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ is a Skein resolution at the $d$-$d$
 crossing of the Borromean link.  Smoothing one crossing in
 $\mathcal{B}_3$ produces the Hopf link $\mathcal{L}_H$ (a standard
 result: the Borromean link with one crossing smoothed gives a

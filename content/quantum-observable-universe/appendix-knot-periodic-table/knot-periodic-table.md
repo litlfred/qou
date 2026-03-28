@@ -8,8 +8,8 @@ $$
   \;\bowtie\; p \cdot T_{2,3}
 $$
 
-where $\mathfrak{p} = [u, u, d]_c \bowtie \mathcal{L}_H$ is the
-proton (color-linked quark triple), $\mathfrak{n} = [u, d, d]_c
+where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ is the
+proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c
 \bowtie \mathcal{L}_H$ is the neutron, $T_{2,3}$ is the trefoil
 (electron), and $\bowtie$ denotes Hopf linking.
 Here $p$ is the number of protons (atomic number) and $n$ is the
@@ -25,8 +25,8 @@ $$
   \;+\; p \cdot m_e
 $$
 
-where $m_{\mathfrak{p}} = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$
-and $m_{\mathfrak{n}} = 2\mathcal{S}_{ud} + \mathcal{S}_{dd}$ are
+where $m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
+and $m_{\mathfrak{n}} = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ are
 the nucleon masses from the pair Skein formula
 ([terminal resolution](#prop:terminal-resolution)), $B/A$ is the
 binding energy per nucleon from the Skein polynomial of the

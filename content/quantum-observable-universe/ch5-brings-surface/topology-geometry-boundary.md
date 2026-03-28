@@ -19,8 +19,8 @@ and the categorical definitions:
 | Writhe change | $\Delta w = A - 1$ | Computed |
 | Emission topology | $L_0^{-} = T_{2,3} \sqcup \overline{T_{1,0}}$ ($\beta^-$: $e^- + \bar{\nu}_e$) | Derived |
 | Shell blocking | $e_i p_n = 0$ in TL (Jones-Wenzl kills smoothing) | Algebraic |
-| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{uu} + 2\mathcal{S}_{ud} = 938.272$ MeV | From $q$ (terminal resolution) |
-| Mass splitting | $m_n - m_p = \mathcal{S}_{dd} - \mathcal{S}_{uu} = 1.290$ MeV | From $q$ |
+| Nucleon masses | $m_\mathfrak{p} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} = 938.272$ MeV | From $q$ (terminal resolution) |
+| Mass splitting | $m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}} = 1.290$ MeV | From $q$ |
 | Deuteron binding | $B_d = 1.29$ MeV from Vol($\mathcal{B}_3 \bowtie_\text{Hopf} \mathcal{B}_3$) / $\hbar_q^2$ | From $q$ (SnapPy) |
 | Relative decay rates | $\propto \prod_{i \leq p} |\hat{V}_i^{\mathrm{par}}/\hat{V}_i^{\mathrm{dau}}|^2$ | Computed |
 | Environmental $q$-shift | $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|$ | Predicted |

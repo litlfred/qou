@@ -16,22 +16,22 @@ introduce the following shorthand.
 independent generators but are expressed in terms of $T_{2,3}$:
 
 $$
-  u \;=\; T_{2,3}, \qquad
-  d \;=\; \sigma(T_{2,3}).
+  \mathfrak{u} \;=\; T_{2,3}, \qquad
+  \mathfrak{d} \;=\; \sigma(T_{2,3}).
 $$
 
-Here $d$ denotes the three-twist knot $5_2$, a Skein descendant of
-the trefoil.  Similarly for the heavier quarks:
-$s = \sigma(T_{2,5})$, $c = T_{2,7}$,
-$b = T_{2,5}$, $t = T_{3,4}$.
+Here $\mathfrak{d}$ denotes the three-twist knot $5_2$, a Skein
+descendant of the trefoil.  Similarly for the heavier quarks:
+$\mathfrak{s} = \sigma(T_{2,5})$, $\mathfrak{c} = T_{2,7}$,
+$\mathfrak{b} = T_{2,5}$, $\mathfrak{t} = T_{3,4}$.
 
 **Nucleon shorthand.** The proton and neutron are color-tube-linked
 triples bound by Hopf links:
 
 $$
-  \mathfrak{p} \;=\; [u, u, d]_c \bowtie \mathcal{L}_H,
+  \mathfrak{p} \;=\; [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H,
   \qquad
-  \mathfrak{n} \;=\; [u, d, d]_c \bowtie \mathcal{L}_H.
+  \mathfrak{n} \;=\; [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c \bowtie \mathcal{L}_H.
 $$
 
 **Nuclear composites** are iterated Hopf linkings of nucleons.
@@ -73,24 +73,24 @@ to the base manifold.
 | Electron | $e^-$ | $T_{2,3}$ | $1$ |
 | Muon | $\mu^-$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $1$ |
 | Tau | $\tau^-$ | $T_{2,5} \bowtie T_{1,0}$ | $2$ |
-| Up quark | $u$ | $T_{2,3}$ | $1$ |
-| Down quark | $d$ | $\sigma(T_{2,3})$ | $1$ |
-| Strange quark | $s$ | $\sigma(T_{2,5})$ | $1$ |
-| Charm quark | $c$ | $T_{2,7}$ | $3$ |
-| Bottom quark | $b$ | $T_{2,5}$ | $2$ |
-| Top quark | $t$ | $T_{3,4}$ | $3$ |
+| Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ |
+| Down quark | $\mathfrak{d}$ | $\sigma(T_{2,3})$ | $1$ |
+| Strange quark | $\mathfrak{s}$ | $\sigma(T_{2,5})$ | $1$ |
+| Charm quark | $\mathfrak{c}$ | $T_{2,7}$ | $3$ |
+| Bottom quark | $\mathfrak{b}$ | $T_{2,5}$ | $2$ |
+| Top quark | $\mathfrak{t}$ | $T_{3,4}$ | $3$ |
 
 *Hadrons.*
 
 | Particle | Symbol | Knot formula |
 |----------|--------|-------------|
-| Proton | $\mathfrak{p}$ | $[u, u, d]_c \bowtie \mathcal{L}_H$ |
-| Neutron | $\mathfrak{n}$ | $[u, d, d]_c \bowtie \mathcal{L}_H$ |
-| $\pi^+$ | | $u \bowtie \overline{d}$ |
-| $\pi^0$ | | $(u \bowtie \overline{u} + d \bowtie \overline{d})/\!\sqrt{2}$ |
-| $K^+$ | | $u \bowtie \overline{s}$ |
-| $\Lambda$ | | $[u, d, s]_c \bowtie \mathcal{L}_H$ |
-| $\Sigma^+$ | | $[u, u, s]_c \bowtie \mathcal{L}_H$ |
+| Proton | $\mathfrak{p}$ | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ |
+| Neutron | $\mathfrak{n}$ | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_c \bowtie \mathcal{L}_H$ |
+| $\pi^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{d}}$ |
+| $\pi^0$ | | $(\mathfrak{u} \bowtie \overline{\mathfrak{u}} + \mathfrak{d} \bowtie \overline{\mathfrak{d}})/\!\sqrt{2}$ |
+| $K^+$ | | $\mathfrak{u} \bowtie \overline{\mathfrak{s}}$ |
+| $\Lambda$ | | $[\mathfrak{u}, \mathfrak{d}, \mathfrak{s}]_c \bowtie \mathcal{L}_H$ |
+| $\Sigma^+$ | | $[\mathfrak{u}, \mathfrak{u}, \mathfrak{s}]_c \bowtie \mathcal{L}_H$ |
 
 *Light nuclei and atoms.*
 
