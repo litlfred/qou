@@ -1,4 +1,4 @@
-Let $f_q(z) = z^2 + c(q)$ be the quadratic iteration on the
+Let $f_q(z) = z^2 + c_q$ be the quadratic iteration on the
 exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
 ([Julia set of Reeb flow](#rem:julia-set-reeb)), and let
 $\mu_q$ be the measure of maximal entropy on the Julia set
@@ -77,10 +77,10 @@ circuit ([Planck time](#def:planck-time)).
 
 **The golden crossover.**
 The formula $d_H(q) = (2q-1)^2/q^3$ equals $1$ at exactly two
-points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2 + 1
+points: $q = 1$ and $q = (3 + \sqrt{5})/2 = \varphi^2
 \approx 2.618$, where $\varphi = (1+\sqrt{5})/2$ is the golden
-ratio.  For $1 < q < \varphi^2 + 1$, the Julia set is strictly
-more fractal than a circle ($d_H > 1$).  Beyond $\varphi^2 + 1$,
+ratio.  For $1 < q < \varphi^2$, the Julia set is strictly
+more fractal than a circle ($d_H > 1$).  Beyond $\varphi^2$,
 the Julia set is less complex than a circle ($d_H < 1$, tending
 toward a finite point set).
 

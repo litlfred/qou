@@ -1,7 +1,7 @@
 **Theorem (mass--energy equivalence).**
 *Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be an archimedean quantum
 observable universe with substrate parameter $q$ and speed of light
-$c(q) = 1/(q-1)$
+$c_q = 1/(q-1)$
 ([speed of light](#def:information-speed-of-light)).  Let
 $\gamma \colon \mathbf{1} \to A$ be a closed vortex in the
 Frobenius--Hopf object $A$.  Then the crossing energy
@@ -10,7 +10,7 @@ Frobenius--Hopf object $A$.  Then the crossing energy
 
 $$
   E_{\mathrm{cross}}(\gamma)
-  \;=\; m(\gamma) \cdot c(q)^2
+  \;=\; m(\gamma) \cdot c_q^2
   \;=\; \frac{m(\gamma)}{(q - 1)^2}.
 $$
 
@@ -22,7 +22,7 @@ the Frobenius pairing and comultiplication) multiplied by the
 **square of the information speed** --- the square of the ratio
 of spatial to temporal coupling in the $q$-connection.
 
-The factor $c(q)^2 = 1/(q-1)^2$ has a direct information-theoretic
+The factor $c_q^2 = 1/(q-1)^2$ has a direct information-theoretic
 interpretation: it converts the *resistance to vertical
 (Reeb) transport* (mass) into the *horizontal (spatial) crossing
 weight* (energy) by accounting for the mismatch between horizontal
@@ -90,14 +90,14 @@ $$
   \frac{E_{\mathrm{cross}}}{m}
   \;=\; \frac{q^{-1}}{\hbar_q}
   \cdot \frac{q^{-1}}{\hbar_q}
-  \;=\; c(q)^2
+  \;=\; c_q^2
   \;=\; \frac{1}{(q-1)^2}.
   \qquad\square
 $$
 
 **Regime behaviour of $E = mc^2$.**
 
-| Regime | $q$ | $c(q)^2$ | Physics |
+| Regime | $q$ | $c_q^2$ | Physics |
 |--------|-----|----------|---------|
 | Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
@@ -128,14 +128,16 @@ The pair production threshold
 ([pair creation energy](#rem:pair-creation-energy)) becomes:
 
 $$
-  E_{\gamma} \;\geq\; (m(e^-) + m(e^+)) \cdot c(q)^2
+  E_{\gamma} \;\geq\; (m(e^-) + m(e^+)) \cdot c_q^2
   \;=\; \frac{m(e^-) + m(e^+)}{(q-1)^2}.
 $$
 
-Since $E_{\mathrm{cross}}(e^-) + E_{\mathrm{cross}}(e^+) = 3q - 3q^{-1}
-= 3(q - q^{-1}) \approx 0.630$ Skein units, the minimum photon
-crossing energy for pair creation is $3(q + q^{-1}) = 6\cosh(\ln q)
-\approx 6.033$ Skein units.
+The net crossing energy of the pair is
+$E_{\mathrm{cross}}(e^-) + E_{\mathrm{cross}}(e^+) = 3(q - q^{-1})
+\approx 0.630$ (pure Coulomb repulsion).  But the minimum photon
+energy must supply both **absolute** crossing energies:
+$|E(e^-)| + |E(e^+)| = 3q + 3q^{-1} = 3(q + q^{-1})
+= 6\cosh(\ln q) \approx 6.033$ Skein units.
 
 **Archimedean realisation.**
 Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's

@@ -12,12 +12,12 @@ $$
 
 This is a **prediction**: the Hausdorff dimension of $J(f_q)$
 ([Julia set](#rem:julia-set-reeb)) at main-cardioid parameter
-$c(q) = \tfrac{1}{2}e^{2\pi i q} - \tfrac{1}{4}e^{4\pi i q}$
+$c_q = \tfrac{1}{2}e^{2\pi i q} - \tfrac{1}{4}e^{4\pi i q}$
 is determined algebraically by the gravitational self-consistency.
 
 The formula satisfies $d_H(1) = 1$ (unit circle), $d_H > 1$
 for $1 < q < (3+\sqrt{5})/2$, and $d_H = 1$ again at the golden
-threshold $q = \varphi^2 + 1 \approx 2.618$.
+threshold $q = (3+\sqrt{5})/2 = \varphi^2 \approx 2.618$.
 
 **Derivative and discrete step.**
 The continuous derivative is
@@ -59,7 +59,7 @@ the direction of increasing $q$ — the direction from classical
 | $1.1097$ | $1.088$ | Our universe |
 | $1.5$ | $1.185$ | Basilica ($c = -3/4$) |
 | $2.0$ | $1.125$ | Deep quantum |
-| $\varphi^2 + 1$ | $1.000$ | Golden crossover |
+| $\varphi^2$ | $1.000$ | Golden crossover |
 | $3.0$ | $0.926$ | Beyond golden |
 | $10$ | $0.361$ | Near Big Bang |
 
@@ -92,7 +92,7 @@ $d_H$ are established:
    $1/2$-bulb).  The Julia set dimension approaches $d_H \to 2$
    (space-filling) as the parameter approaches a parabolic point.
 
-The QOU prediction $d_H(1.1097) = 1.287$ falls between the Ruelle
+The QOU prediction $d_H(1.1097) = 1.088$ falls between the Ruelle
 lower bound ($1.043$) and the cardioid-boundary limit ($2$).  It is
 testable by high-resolution computation of the Julia set at
 $c(0.1097) = 0.338 + 0.073i$.
@@ -106,10 +106,10 @@ $q_0 = 1.1097$:
 
 | Step | $q_n$ | $\hbar_{q_n}$ | $d_H(q_n)$ | $\eta_q$ |
 |:----:|--------|---------------|-----------|----------|
-| 0 | $1.1097$ | $0.0989$ | $1.287$ | $0.892$ |
-| 1 | $1.0108$ | $0.0107$ | $1.427$ | $0.989$ |
-| 2 | $1.0001$ | $0.0001$ | $1.443$ | $1.000$ |
-| 3 | $1.0000$ | $0$ | $1/\ln 2$ | $1.000$ |
+| 0 | $1.1097$ | $0.0989$ | $1.088$ | $0.892$ |
+| 1 | $1.0108$ | $0.0107$ | $1.010$ | $0.991$ |
+| 2 | $1.0001$ | $0.0001$ | $1.000$ | $1.000$ |
+| 3 | $1.0000$ | $0$ | $1.000$ | $1.000$ |
 
 Three Planck steps from our universe to the classical limit.
 The convergence is superlinear: each step squares the distance to

@@ -29,7 +29,7 @@ spatial coupling weight to the temporal coupling weight of the
 $q$-connection:
 
 $$
-  c(q) \;:=\; \frac{q^{-1}}{\hbar_q}
+  c_q \;:=\; \frac{q^{-1}}{\hbar_q}
   \;=\; \frac{q^{-1}}{1 - q^{-1}}
   \;=\; \frac{1}{q - 1}.
 $$
@@ -54,7 +54,7 @@ The speed of light is how many fibres of spatial information are
 correlated per unit of Reeb phase advance:
 
 $$
-  c(q) \;=\; \frac{\text{spatial coupling per step}}
+  c_q \;=\; \frac{\text{spatial coupling per step}}
                    {\text{temporal advance per step}}
   \;=\; \frac{q^{-1}}{\hbar_q}
   \;=\; \frac{1}{q - 1}.
@@ -62,7 +62,7 @@ $$
 
 **Regime behaviour.**
 
-| Regime | $q$ | $c(q) = 1/(q-1)$ | Interpretation |
+| Regime | $q$ | $c_q = 1/(q-1)$ | Interpretation |
 |--------|-----|-------------------|----------------|
 | Big Bang | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
 | Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
@@ -73,7 +73,7 @@ $$
 At $q = 1.1097$, the speed of light is $c \approx 9.12$ in units
 where one Reeb phase advance $= 1$.  This is **not** $1$.  The
 value $c = 1$ arises only if one redefines length units so that
-one "Planck length" equals $c(q)$ Reeb phases --- but that obscures
+one "Planck length" equals $c_q$ Reeb phases --- but that obscures
 the physics.  In the natural units of the $q$-connection (where
 temporal ticks and spatial couplings are measured on the same
 footing), $c$ is $q$-dependent and equals $1/(q-1)$.
@@ -91,10 +91,10 @@ Reeb ticks.
 
 **Connection to the contact affine chart.**
 The light cone of an affine chart
-([light cone](#rem:light-cone-affine)) is the locus $|Z| = c(q)$:
+([light cone](#rem:light-cone-affine)) is the locus $|Z| = c_q$:
 the boundary where horizontal diffusion exactly matches vertical
-advance.  Inside the cone ($|Z| < c(q)$), spatial signals arrive
-within one Reeb circuit.  Outside ($|Z| > c(q)$), the signal
+advance.  Inside the cone ($|Z| < c_q$), spatial signals arrive
+within one Reeb circuit.  Outside ($|Z| > c_q$), the signal
 requires multiple Reeb circuits and is causally delayed.
 
 **Lieb--Robinson bound.**
@@ -108,11 +108,11 @@ $$
     [\,\mathcal{O}_x(n),\, \mathcal{O}_y(0)\,]
   \bigr\rVert
   \;\leq\;
-  C \, e^{-\mu\,(d(x,y)\, - \, n \cdot c(q) \cdot \hbar_q)}
+  C \, e^{-\mu\,(d(x,y)\, - \, n \cdot c_q \cdot \hbar_q)}
 $$
 
 for constants $C, \mu > 0$ depending on $q$.  The causal cone
-boundary is $d(x,y) = n \cdot c(q) \cdot \hbar_q = n \cdot q^{-1}$:
+boundary is $d(x,y) = n \cdot c_q \cdot \hbar_q = n \cdot q^{-1}$:
 after $n$ discrete steps, a signal has propagated $n \cdot q^{-1}$
 units of base-manifold distance.
 
@@ -124,15 +124,14 @@ per tick) and the operational entropy per fibre
 
 $$
   \mathcal{B}(q)
-  \;=\; c(q) \cdot n_R(q) \cdot \eta_q
+  \;=\; c_q \cdot n_R(q) \cdot \eta_q
   \;=\; \frac{\eta_q}{\hbar_q \cdot (q-1)}
   \;=\; \frac{\eta_q}{q^{-1}(q-1)^2}
   \;=\; \frac{q \cdot \eta_q}{(q-1)^2}.
 $$
 
 At $q = 1.1097$:
-$\mathcal{B} \approx 9.12 \times 10.1 \times d_H(1.1097) \cdot
-\log 2 \approx 92 \cdot d_H \cdot \log 2$ bits per Planck time.
+$\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
 
 **Comparison with information-theoretic speed limits.**
 
@@ -141,4 +140,4 @@ $\mathcal{B} \approx 9.12 \times 10.1 \times d_H(1.1097) \cdot
 | Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec | $n_R(q) = 1/\hbar_q$ ops per Planck time |
 | Bremermann (1962) | $\leq mc^2/h$ bits/sec/kg | $\mathcal{B}(q) = q\,\eta_q / (q-1)^2$ bits per Planck time |
 | Bekenstein (1981) | $S \leq 2\pi RE / \hbar c$ | Fibre entropy $\leq \eta_q$ per operation |
-| Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $|Z| = c(q)$ cone |
+| Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $|Z| = c_q$ cone |

@@ -58,7 +58,7 @@ entropy**:
 
 $$
   S_{\mathrm{cell}}(q)
-  \;=\; \sum_{k=0}^{\infty}
+  \;=\; \sum_{k=1}^{\infty}
   \eta_q^{(k)},
 $$
 
@@ -118,19 +118,19 @@ algebraically from $q$ alone.
 The $q$-Yang-Mills-Levi variation gives
 
 $$
-  G(q) \;=\; \frac{c(q)^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
-  \;=\; \frac{c(q)^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
+  G(q) \;=\; \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
+  \;=\; \frac{c_q^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
              {\eta_q \cdot \hbar_q^2}
-  \;=\; \frac{c(q)^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
+  \;=\; \frac{c_q^3 \cdot (2q - 1)}{q^2 \cdot \eta_q \cdot \hbar_q},
 $$
 
-where $c(q) = 1/(q-1)$ is the speed of light
+where $c_q = 1/(q-1)$ is the speed of light
 ([speed of light](#def:information-speed-of-light)) and
 $\hbar_q = (q-1)/q$.  Converting to Planck units:
 
 $$
   G_{\mathrm{Planck}}
-  \;=\; G(q) \cdot \left(\frac{\hbar_q}{c(q)}\right)^2
+  \;=\; G(q) \cdot \left(\frac{\hbar_q}{c_q}\right)^2
   \;=\; 1
 $$
 
@@ -178,7 +178,7 @@ $$
 | $1$ | $1.000$ | — | $1.000$ (unit circle) | Exact match |
 | $1.1097$ | $1.088$ | $1.012$ | — | Box-counting underestimates thin quasicircles |
 | $1.5$ | $1.185$ | — | — | Basilica root $c = -3/4$ (period-$2$ parabolic; known $d_H \sim 1.2$) |
-| $\varphi^2 + 1$ | $1.000$ | — | — | Golden crossover: $d_H$ returns to $1$ |
+| $\varphi^2$ | $1.000$ | — | — | Golden crossover: $d_H$ returns to $1$ |
 
 The formula $d_H = 1$ at $q = 1$ (unit circle) and
 $q = (3+\sqrt{5})/2 = \varphi^2 + 1$ (golden threshold) are exact.
@@ -198,7 +198,7 @@ curves.  The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2)
 
 | Constant | QOU formula | Depends on |
 |----------|-----------|------------|
-| $c(q)$ | $1/(q-1)$ | $q$ only |
+| $c_q$ | $1/(q-1)$ | $q$ only |
 | $\hbar_q$ | $(q-1)/q$ | $q$ only |
 | $G(q)$ | $c^3 \hbar_q / S_{\mathrm{cell}}$ | $q$ and jet tower entropy |
 

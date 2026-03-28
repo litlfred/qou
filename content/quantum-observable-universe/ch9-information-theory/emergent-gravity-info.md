@@ -7,7 +7,7 @@ $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that are partially
 evaluated but not yet resolved to observable knots
 ([gravitational constant](#def:gravitational-constant)).
 
-The key formula is $G(q) = c(q)^3 \hbar_q / S_{\mathrm{cell}}$,
+The key formula is $G(q) = c_q^3 \hbar_q / S_{\mathrm{cell}}$,
 where $S_{\mathrm{cell}}$ is the total information content per
 fibre including all in-progress braids.  Self-consistency with
 Planck units requires $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx
