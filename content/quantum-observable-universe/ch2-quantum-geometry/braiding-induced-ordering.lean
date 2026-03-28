@@ -43,14 +43,14 @@ theorem degLex_wellOrdered (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : List (Fin n)) =>
       w.length < w'.length ∨
       (w.length = w'.length ∧ List.Lex (· < ·) w w')) := by
-  apply WellFounded.intro
-  intro a
-  -- Induction on length, then lex at each length
-  -- The key facts: ℕ is well-ordered (length), and
-  -- Fin n is finite so List.Lex on (Fin n) lists of
-  -- fixed length is well-ordered.
+  -- The degree-lex order is the lexicographic product of
+  -- (length, lex-on-list). Both components are well-founded:
+  -- • ℕ with < is well-founded (Nat.lt_wfRel)
+  -- • List (Fin n) with List.Lex (· < ·) is well-founded
+  --   because Fin n is finite and (· < ·) on Fin n is well-founded.
   -- Ref: [manuscript] §2/braiding-induced-ordering
-  sorry
+  apply InvImage.wf (fun w => (w.length, w))
+    (Prod.Lex.wf Nat.lt_wfRel.wf (List.isWellFounded_lt (α := Fin n)).wf)
 
 /-- The degree-lex ordering is admissible: compatible with
     left and right multiplication (concatenation of braid words).
@@ -70,11 +70,11 @@ theorem degLex_admissible (u v w w' : List (Fin n))
   rcases h with h_len | ⟨h_eq, h_lex⟩
   · left; omega
   · right
-    constructor
-    · omega
-    -- Lex order on concatenations with common prefix/suffix
+    refine ⟨by omega, ?_⟩
+    -- Lex order: common prefix u is skipped, then w < w', then
+    -- common suffix v is irrelevant.
     -- Ref: [manuscript] §2/braiding-induced-ordering
-    · sorry
+    exact List.Lex.append_left _ (List.Lex.append_right u h_lex)
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering

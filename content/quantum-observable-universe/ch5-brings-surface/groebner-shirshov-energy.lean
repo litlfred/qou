@@ -51,7 +51,7 @@ theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :
     Yang-Baxter and far commutativity contribute zero. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
-  hecke_coeffs.foldl (fun acc c => acc + heckeEnergyChange q c) 0
+  (hecke_coeffs.map (heckeEnergyChange q)).sum
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
@@ -59,12 +59,13 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     (coeffs : List ℝ) :
     0 ≤ totalEnergyChange q coeffs := by
   unfold totalEnergyChange
-  induction coeffs with
-  | nil => simp [List.foldl]
-  | cons c cs ih =>
-    simp [List.foldl]
-    -- Ref: [manuscript] §6/groebner-shirshov-energy
-    sorry
+  apply List.sum_nonneg
+  intro x hx
+  rw [List.mem_map] at hx
+  obtain ⟨c, _, rfl⟩ := hx
+  unfold heckeEnergyChange
+  apply mul_nonneg (abs_nonneg _)
+  linarith [div_lt_one_of_lt hq (by linarith : (0 : ℝ) < q)]
 
 /-- Path independence: the total energy change is determined by
     the initial and final states, not the reduction path.

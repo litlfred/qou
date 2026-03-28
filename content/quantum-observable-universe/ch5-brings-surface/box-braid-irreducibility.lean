@@ -103,10 +103,16 @@ theorem box_braid_min_crossings :
 theorem neutrino_energy_barrier (q : ℝ) (hq : 1 < q)
     (μ₀ : ℝ) (hμ : 0 < μ₀) :
     10 * (q - 1/q) * μ₀ > μ₀ * (q - 1) := by
-  -- 10(q - q⁻¹) > (q - 1) for q > 1
-  -- since q - q⁻¹ = (q-1)(q+1)/q and 10(q+1)/q > 1
-  -- Ref: [manuscript] §6/box-braid-irreducibility
-  sorry
+  -- Suffices: 10(q - 1/q) > (q - 1) for q > 1.
+  -- Multiply through by q > 0: 10(q² - 1) > q(q - 1) = q² - q
+  -- i.e. 10q² - 10 > q² - q, i.e. 9q² + q - 10 > 0.
+  -- Factor: 9q² + q - 10 = (q - 1)(9q + 10) > 0 for q > 1.
+  have hq_pos : (0 : ℝ) < q := by linarith
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  rw [gt_iff_lt, div_eq_mul_inv, ← sub_mul, ← sub_mul]
+  apply mul_lt_mul_of_pos_right _ hμ
+  rw [sub_mul, mul_inv_cancel₀ hq_ne]
+  nlinarith [sq_nonneg (q - 1), sq_nonneg q]
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility

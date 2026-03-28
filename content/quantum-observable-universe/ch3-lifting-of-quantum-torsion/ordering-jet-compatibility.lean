@@ -41,7 +41,18 @@ def degLex : MonomialBasis → MonomialBasis → Prop :=
 theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
       degLex w w' ∧ ∀ g ∈ w, g < n) := by
+  -- The restriction to words over {0,...,n-1} with degLex
+  -- is well-founded because it is a sub-relation of the
+  -- unrestricted degLex, which is well-founded (length is
+  -- bounded below by 0 and lex on ℕ-lists is well-founded).
   -- Ref: [manuscript] §3/ordering-jet-compatibility
+  apply WellFounded.intro
+  intro a
+  apply Acc.intro
+  intro b ⟨_, _⟩
+  -- The conjunct degLex b a means b has shorter length or
+  -- same length with smaller lex. Both components are well-founded
+  -- on finite-alphabet words bounded by n.
   sorry
 
 /-- At brane level k, the jet prolongation introduces new generators
