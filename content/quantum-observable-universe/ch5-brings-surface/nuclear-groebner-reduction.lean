@@ -94,14 +94,22 @@ axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
     -- The normal form has the same Markov trace as the original
     True
 
-/-- The number of reduced terms grows polynomially in A.
-    The maximum word length in the normal form is bounded by A-1. -/
+/-- The maximum word length of a reduced word in H_A is
+    A(A-1)/2 — the length of the longest element w₀ ∈ S_A.
+
+    Note: the manuscript states a tighter bound of A-1 for
+    *nuclear* normal forms specifically (not arbitrary reduced
+    words).  That tighter bound depends on the nuclear braid
+    structure and is stated separately. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 theorem max_word_length_bound (A : ℕ) (w : BraidWord)
-    (hw : isReduced w) (hgen : ∀ g ∈ w, g < A - 1) :
-    w.length ≤ A - 1 := by
-  -- A reduced word in H_A has length ≤ A-1 (the longest reduced
-  -- word is σ_0 σ_1 ... σ_{A-2}, the half-twist)
+    (hw : isReduced w) (hgen : ∀ g ∈ w, g < A) :
+    w.length ≤ A * (A - 1) / 2 := by
+  -- A reduced word in S_A has length ≤ ℓ(w₀) = A(A-1)/2
+  -- where w₀ is the longest element (the full reversal permutation).
+  -- This follows from the fact that each reduced word corresponds
+  -- to an element of S_A, and the longest element has the
+  -- maximum number of inversions = A(A-1)/2.
   -- Ref: [manuscript] §6/nuclear-groebner-reduction
   sorry
 

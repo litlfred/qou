@@ -14,7 +14,9 @@ LaTeX label: `prop:ordering-jet-compatibility`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
+import Mathlib.Order.WellFoundedSet
 import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Lex
 
 namespace QOU.Torsion
 
@@ -38,22 +40,29 @@ def degLex : MonomialBasis → MonomialBasis → Prop :=
     alphabet, so every non-empty subset has a minimum. -/
 -- Ref: [manuscript] §2/quantum-observable-universe (axiom 5)
 -- Ref: [manuscript] §3/ordering-jet-compatibility
+/-- degLex on List ℕ is well-founded: it embeds into the
+    lexicographic product (ℕ, List ℕ) via w ↦ (w.length, w),
+    and both ℕ with < and List ℕ with < are well-founded. -/
+-- Ref: [manuscript] §3/ordering-jet-compatibility
+private theorem degLex_wf_unrestricted :
+    WellFounded (fun (w w' : MonomialBasis) => degLex w w') := by
+  unfold degLex
+  -- Map into the lex product (length, word).
+  -- InvImage.wf f hwf shows: if hwf is well-founded on the
+  -- codomain, then the pullback along f is well-founded.
+  -- Prod.Lex (· < ·) (· < ·) on (ℕ × List ℕ) is well-founded.
+  exact InvImage.wf (fun w => (w.length, w))
+    (Prod.lex_wf Nat.lt_wfRel.wf wellFoundedRelation.wf)
+
 theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
       degLex w w' ∧ ∀ g ∈ w, g < n) := by
-  -- The restriction to words over {0,...,n-1} with degLex
-  -- is well-founded because it is a sub-relation of the
-  -- unrestricted degLex, which is well-founded (length is
-  -- bounded below by 0 and lex on ℕ-lists is well-founded).
-  -- Ref: [manuscript] §3/ordering-jet-compatibility
-  apply WellFounded.intro
-  intro a
-  apply Acc.intro
-  intro b ⟨_, _⟩
-  -- The conjunct degLex b a means b has shorter length or
-  -- same length with smaller lex. Both components are well-founded
-  -- on finite-alphabet words bounded by n.
-  sorry
+  -- Our relation R w w' := degLex w w' ∧ (∀ g ∈ w, g < n)
+  -- is a sub-relation of degLex (drop the second conjunct).
+  -- A sub-relation of a well-founded relation is well-founded.
+  apply Subrelation.wf (r₂ := fun w w' => degLex w w')
+  · intro _ _ ⟨h, _⟩; exact h
+  · exact degLex_wf_unrestricted
 
 /-- At brane level k, the jet prolongation introduces new generators
     (Ω¹ directions) ordered after all level-k generators. The
@@ -82,11 +91,12 @@ axiom ordering_compatible (a b c d : MonomialBasis)
     degLex (c ++ a ++ d) (c ++ b ++ d)
 
 /-- Well-foundedness at each level n: no infinite descending chains
-    in B_n. Follows from finiteness of the alphabet at each level. -/
+    in B_n.  Immediate from `degLex_wellFounded`. -/
 -- Ref: [manuscript] §3/ordering-jet-compatibility
-axiom wellfounded_at_level (n : ℕ) :
+theorem wellfounded_at_level (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
-      degLex w w' ∧ ∀ g ∈ w, g < n)
+      degLex w w' ∧ ∀ g ∈ w, g < n) :=
+  degLex_wellFounded n hn
 
 /-- The direct limit algebra A_∞ = colim End(A_n) carries a filtered
     admissible ordering ≺_∞ = ⋃_n ≺_n. The Gröbner reduction
