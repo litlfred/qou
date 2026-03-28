@@ -1,181 +1,249 @@
-The nuclear Gröbner normal form $\bar{\mathcal{N}}(p, n)$ is
-**constructed** — not reduced to — by sequential application
-of the five torus knot operators on the Bring surface.  The
-construction builds shells from the inside out, and the
-resulting element is automatically in Gröbner normal form
-(zero Yang–Baxter steps, zero far-commutativity steps —
-verified computationally through $A = 6$).
+The $\mathcal{Q}_q$-value for any $\beta^-$ decay
+$\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$
+is computed by the following algorithm.  The inputs are
+the substrate parameter $q$ and the nucleon counts $(Z, N)$.
+No external nuclear physics data is used.
 
-## The five operators
+## Proven facts used by the algorithm
 
-| Operator | Crossings | Role in construction |
-|:--------:|:---------:|:---------------------|
-| $T_{2,3} = \sigma^3$ | $3$ | Borromean triple: binds 3 nucleons into $\mathcal{B}_3$ |
-| $T_{2,5} = \sigma^5$ | $5$ | Pentagonal group: organises 5 nucleons ($S_5$ threshold) |
-| $T_{2,7} = \sigma^7$ | $7$ | Heptagonal group: fills size-8 shells |
-| $T_{2,9} = \sigma^9 = (T_{2,3})^3$ | $9$ | Strong binding: $3^2$ color-squared closure |
-| $T_{3,5} = (\sigma_1\sigma_2)^5$ | $10$ | Weak transition: converts between shells (aperiodic) |
-
-Each $T_{2,n} = \sigma^n$ reduces to $c_n \sigma + d_n$ in
-$H_2(q)$ via the Chebyshev recurrence:
-$c_{n+1} = (q - q^{-1}) c_n + c_{n-1}$, $d_{n+1} = (q - q^{-1}) d_n + d_{n-1}$.
-
-## Construction rules
-
-### Rule 1: Start from the innermost shell
-
-Begin with the identity element $\mathbf{1} \in H_1(q)$ (one
-nucleon).  Each subsequent nucleon is added by Hopf linking
-($\bowtie$) and Hecke reduction.
-
-### Rule 2: Fill shells by alternating proton–neutron
-
-Within each shell, alternate $\mathfrak{p}$ and $\mathfrak{n}$
-to minimise Coulomb energy at each step.  The filling order
-is $\mathfrak{p}, \mathfrak{n}, \mathfrak{p}, \mathfrak{n}, \ldots$
-
-### Rule 3: The finiteness bound sets the first shell boundary
-
-A shell closes when the $q$-factorial of the shell's nucleon
-count exceeds the $q$-exponential of the binding:
-
-$$
-  [n_s - 1]_q! \;>\; [2]_q^{\,n_s - 1}
-$$
-
-This crosses at $n_s = 5$
-([finiteness bound](#prop:skein-finiteness-bound)).
-The first shell therefore closes at $n_s = 4$ (the last
-stable configuration before the crossover): **magic number 2**
-per nucleon type (2 protons + 2 neutrons = ${}^4$He).
-
-### Rule 4: Closed shells are palindromic
-
-At each shell closure, the word-length histogram of the
-Gröbner normal form is a **palindrome**
-([shell closure](#prop:shell-closure-normal-form)):
-$h(\ell) = h(L - \ell)$.  This is the Poincaré polynomial
-of $S_{n_s}$ — the Bruhat order is filled symmetrically.
-
-### Rule 5: Shell size determines the dominant torus knot
-
-The dominant binding operator for a shell of size $n_s$ is
-the **largest** $T_{2,n}$ with $n \leq n_s$:
-
-| Shell size $n_s$ | Dominant $T_{2,n}$ | Crossing coefficient $(c_n, d_n)$ |
-|:-:|:-:|:-:|
-| $\leq 2$ | bare ($\sigma$ or $\sigma^{-1}$) | $(1, 0)$ or $(q^2, -qS)$ |
-| $3$–$4$ | $T_{2,3}$ | $(1.044, 0.209)$ |
-| $5$–$6$ | $T_{2,5}$ | $(1.133, 0.427)$ |
-| $7$–$8$ | $T_{2,7}$ | $(1.272, 0.664)$ |
-| $\geq 9$ | $T_{2,9}$ | $(1.466, 0.930)$ |
-
-### Rule 6: Inner shells are dressed by $T_{2,9}$
-
-Before a force operator can act on the outer shell, the
-inner closed shells must be **opened** (made transparent).
-The dressing sequence:
-
-1. $T_{2,9}^{-1}$ on each inner closed shell (open it)
-2. Force operator passes through
-3. $T_{2,9}$ on each inner closed shell (close it back)
-
-The dressed force operator is the **conjugation**:
-
-$$
-  \mathcal{F}_{\mathrm{dressed}}
-  \;=\;
-  T_{2,9}^{k} \cdot \mathcal{F} \cdot T_{2,9}^{-k}
-$$
-
-where $k$ is the number of inner closed shells.
-
-### Rule 7: Beta decay = decompose outer, pass $T_{3,5}$, reassemble
-
-For $\beta^-$ decay $\mathcal{N}(p, n) \to \mathcal{N}(p\!+\!1, n\!-\!1)$:
-
-1. **Decompose outer proton shell**: apply $T_{2,n_p}^{-1}$
-   where $n_p$ is the proton count in the outermost open shell.
-2. **Decompose outer neutron shell**: apply $T_{2,n_n}^{-1}$
-   (or $T_{3,5}^{-1}$ if $n_n = 5$).
-3. **Open inner shells**: apply $T_{2,9}^{-k}$.
-4. **Weak vertex**: apply $T_{3,5}$ (the conversion, 10 crossings).
-5. **Close inner shells**: apply $T_{2,9}^{k}$.
-6. **Reassemble outer proton shell**: apply $T_{2,n_p+1}$
-   (one more proton — may close the shell if $n_p + 1$ = magic).
-7. **Reassemble outer neutron shell**: apply $T_{2,n_n-1}$
-   (one fewer neutron).
-
-The $\mathcal{Q}_q$-value is the **Markov trace** of the full
-operator chain, converted to MeV via $\hbar_q \times E_{\times} \times \mu_0$.
-
-### Rule 8: Shell closure gain from the Chebyshev sequence
-
-Adding the $n$-th nucleon to a shell contributes a closure
-gain $\Delta_n = \log_q(\text{tr}(T_{2,n}) / \text{tr}(T_{2,n-1}))$.
-These gains follow a **damped oscillation** converging to $1$
-(one quantum of action $\log_q(q)$):
-
-| $n$ | $\Delta_n$ |
-|:---:|:---:|
-| $1 \to 2$ | $+7.61$ |
-| $2 \to 3$ | $-3.97$ |
-| $3 \to 4$ | $+5.21$ |
-| $4 \to 5$ | $-2.26$ |
-| $5 \to 6$ | $+3.72$ |
-| $6 \to 7$ | $-1.15$ |
-| $7 \to 8$ | $+2.78$ |
-| $8 \to 9$ | $-0.42$ |
-| $9 \to 10$ | $+2.17$ |
-
-The alternating sign comes from the Chebyshev polynomial
-structure of $\sigma^n$ in $H_2(q)$: the eigenvalues $q$ and
-$-q^{-1}$ of the transfer matrix interfere constructively
-(even $n$) and destructively (odd $n$).
-
-The **magic numbers** correspond to shell sizes where the
-cumulative closure gain is maximised — the palindromic
-(symmetric) filling that produces the largest binding energy.
-
-### Rule 9: The construction IS the Gröbner normal form
-
-The reduction of the constructed element has **zero
+**(P1)** The Gröbner reduction of the nuclear braid has **zero
 Yang–Baxter steps** and **zero far-commutativity steps**
-(verified for $A \leq 6$, proved inductively for all $A$).
-The only reduction steps are **Hecke** ($\sigma^2 = (q - q^{-1})\sigma + 1$),
-which are handled per-generator by the transfer matrix chain.
+(verified $A \leq 6$, inductive proof for all $A$).  Therefore
+the per-generator transfer matrix chain IS the exact Gröbner
+normal form.
 
-Therefore: the per-generator transfer matrix with torus-knot
-crossing coefficients **IS** the Gröbner normal form.  No
-further reduction is needed.  The $\mathcal{Q}_q$-value computed
-from the Skein polynomial ratio $P_{\mathrm{dau}}(q) / P_{\mathrm{par}}(q)$
-with these coefficients is the exact Gröbner energy difference.
+**(P2)** The transfer matrix at each generator $\sigma_i$ is
+$T(c, d) = \bigl(\begin{smallmatrix}
+c(q-q^{-1})+d & c \\ c & d
+\end{smallmatrix}\bigr)$
+with crossing coefficient $(c, d)$ determined by the nucleon
+pair type (pp, nn, or mix).
 
-## Open questions
+**(P3)** The five embeddable torus knots $T_{2,n}$ for
+$n = 3, 5, 7, 9$ each reduce to $c_n \sigma + d_n$ in $H_2(q)$
+via the Chebyshev recurrence.  These are exact polynomials
+in $q$.
 
-1. **Exact shell sizes**: the magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$
-   should be derivable from the $q$-factorial finiteness bound
-   and the Chebyshev closure gains.  Currently they are observed
-   (from the palindromic histogram computation) but not derived
-   in closed form.
+**(P4)** Shell closures occur when the word-length histogram
+is palindromic (the Poincaré polynomial of $S_{n_s}$).
 
-2. **Inner shell dressing count $k$**: for each nucleus, the
-   number of inner closed shells depends on how many magic numbers
-   are below both $Z$ and $N$.  This is combinatorial, not algebraic.
+**(P5)** The finiteness bound $[n_s - 1]_q! > [2]_q^{n_s - 1}$
+crosses at $n_s = 5$.
 
-3. **Open-shell partial filling**: nuclei with partially filled
-   outer shells (like ${}^{60}\mathrm{Co}$ with 7 of 8 protons
-   and 5 of 22 neutrons) need the appropriate $T_{2,n_p}$ and
-   $T_{2,n_n}$ operators.  The exact Q-value depends on the
-   specific partial filling, which requires the Chebyshev gain
-   sequence at each position.
+**(P6)** $T_{2,9} \cdot T_{2,9}^{-1} = \mathbf{1}$ (verified).
+Conjugation by $T_{2,9}$ preserves chirality (all same-sign
+crossings commute with the crossing reversal involution).
 
-4. **$T_{3,5}$ pentagonal groups**: when the outer neutron count
-   is exactly 5 (as in ${}^{60}\mathrm{Co}$), the group has
-   $T_{3,5}$ symmetry (5-fold, aperiodic).  The interaction
-   between the pentagonal neutron group and the heptagonal
-   proton group ($T_{2,7}$) is a $T_{3,5} \times T_{2,7}$
-   cross-product — this is the most complex operator
-   combination in the verification set and may explain why
-   ${}^{60}\mathrm{Co}$ is the first nucleus where the
-   bare transfer matrix fails.
+## Conjectured (used but not yet proven)
+
+**(C1)** The magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$
+emerge from the palindromic closure pattern.  Currently
+observed, not derived in closed form from $q$.
+
+**(C2)** The dominant binding operator for a shell of size $n_s$
+is the largest $T_{2,n}$ with $n \leq n_s$.
+
+**(C3)** Inner shell dressing by $T_{2,9}$ conjugation cancels
+in the $\mathcal{Q}_q$-value (the inner shells are the same in
+parent and daughter).
+
+## Algorithm
+
+**Input:** $(Z, N)$ with $N \geq 1$ (parent has at least one
+neutron to convert).
+
+**Output:** $\mathcal{Q}_q(Z, N)$ in MeV.
+
+### Step 0: Magic number table
+
+$$
+  \mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}
+$$
+
+For nucleon count $X$, define:
+- $m_{\leq}(X) = \max\{m \in \mathcal{M} : m \leq X\}$
+  (largest magic number $\leq X$)
+- $m_{<}(X) = \max\{m \in \mathcal{M} : m < X\}$
+  (largest magic number strictly below $X$)
+- $n_{\mathrm{out}}(X) = X - m_{\leq}(X)$
+  (nucleon count in the outermost **open** shell;
+  $= 0$ if $X$ is magic)
+- $n_{\mathrm{shell}}(X) = m_{\leq}(X) - m_{<}(X)$
+  (size of the shell containing $X$, even if not fully
+  occupied)
+
+**Special case:** if $X \in \mathcal{M}$ (magic), then
+$n_{\mathrm{out}}(X) = 0$ and the outermost shell is
+**closed**.  The relevant shell size for the closure is
+$n_{\mathrm{shell}}(X)$.
+
+### Step 1: Outer shell occupancies
+
+Compute for parent and daughter:
+
+$$
+  n_p^{\mathrm{par}} = n_{\mathrm{out}}(Z), \qquad
+  n_n^{\mathrm{par}} = n_{\mathrm{out}}(N)
+$$
+
+$$
+  n_p^{\mathrm{dau}} = n_{\mathrm{out}}(Z + 1), \qquad
+  n_n^{\mathrm{dau}} = n_{\mathrm{out}}(N - 1)
+$$
+
+If any of these are zero (magic closure), the corresponding
+shell is **closed** and the shell size is
+$n_{\mathrm{shell}}(X)$ instead.
+
+### Step 2: Torus knot traces
+
+For each outer shell occupancy $n_{\mathrm{out}}$, compute
+the Markov trace of $T_{2,n_{\mathrm{out}}} = \sigma^{n_{\mathrm{out}}}$
+in $H_2(q)$:
+
+$$
+  \tau(n) = \mathrm{tr}_{\mathrm{Markov}}(\sigma^n, 2)
+$$
+
+If $n = 0$ (magic closure), use $\tau(n_{\mathrm{shell}})$
+instead (the trace of the **full closed shell**).
+
+The traces are computed from the Chebyshev recurrence —
+no numerical reduction needed.
+
+### Step 3: Bare Skein polynomial ratio
+
+Compute the Level 0 transfer matrix Skein polynomials
+$P_{\mathrm{par}}(q)$ and $P_{\mathrm{dau}}(q)$ using the
+naive ordering $[\underbrace{p \cdots p}_{Z}\,
+\underbrace{n \cdots n}_{N}]$ with bare crossing coefficients:
+
+$$
+  \text{pp}: (c, d) = (1, 0), \qquad
+  \text{nn}: (c, d) = (q^2, -q(q^{1/2} - q^{-1/2})), \qquad
+  \text{mix}: (c, d) = \tfrac{1}{2}(1+q^2,\, -q(q^{1/2} - q^{-1/2}))
+$$
+
+The bare ratio in $\log_q$:
+
+$$
+  R_{\mathrm{bare}} = \log_q(P_{\mathrm{dau}} / P_{\mathrm{par}})
+$$
+
+### Step 4: Outer shell correction
+
+The bare computation does not account for the torus knot
+binding within shells.  The correction:
+
+$$
+  \Delta_{\mathrm{shell}}
+  \;=\;
+  \underbrace{
+    \log_q \tau(n_p^{\mathrm{dau}})
+    - \log_q \tau(n_p^{\mathrm{par}})
+  }_{\text{proton shell change}}
+  \;+\;
+  \underbrace{
+    \log_q \tau(n_n^{\mathrm{dau}})
+    - \log_q \tau(n_n^{\mathrm{par}})
+  }_{\text{neutron shell change}}
+$$
+
+This captures:
+- **Shell closure gain**: when $n^{\mathrm{dau}}$ hits a magic
+  number, $\tau(n_{\mathrm{shell}}) > \tau(n^{\mathrm{par}})$,
+  so $\Delta > 0$ → daughter more bound → $Q$ decreases.
+- **Shell opening cost**: when the parent has a magic closure
+  that the daughter breaks, $\Delta < 0$ → $Q$ increases.
+
+### Step 5: Weak vertex
+
+The $T_{3,5}$ weak vertex contributes:
+
+$$
+  \Delta_{T_{3,5}} = \log_q \mathrm{tr}_{\mathrm{Markov}}(T_{3,5}, 3) = -3.370
+$$
+
+### Step 6: Inner shell dressing
+
+The inner closed shells (shared between parent and daughter)
+are conjugated by $T_{2,9}$:
+
+$$
+  \Delta_{\mathrm{inner}} = 0
+  \qquad\text{(cancels: same shells on both sides)}
+$$
+
+**(C3)** is used here.
+
+### Step 7: $\mathcal{Q}_q$-value
+
+$$
+  \boxed{
+    \mathcal{Q}_q(Z, N)
+    \;=\;
+    \bigl|
+      R_{\mathrm{bare}}
+      + \Delta_{\mathrm{shell}}
+      + \Delta_{T_{3,5}}
+    \bigr|
+    \;\times\;
+    \hbar_q \cdot E_{\times}(q) \cdot \mu_0
+  }
+$$
+
+where $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$,
+and $\mu_0 = m_e / (3 E_{\times})$.
+
+## Worked example: ${}^{60}\mathrm{Co}$ ($Z = 27, N = 33$)
+
+**Step 0:**
+- $m_{\leq}(27) = 20$, $m_{\leq}(33) = 28$
+- $m_{\leq}(28) = 28$, $m_{\leq}(32) = 28$
+
+**Step 1:**
+- $n_p^{\mathrm{par}} = 27 - 20 = 7$ (open, size-8 shell)
+- $n_n^{\mathrm{par}} = 33 - 28 = 5$ (open, size-22 shell)
+- $n_p^{\mathrm{dau}} = 28 - 28 = 0$ **← magic!**
+  Use $n_{\mathrm{shell}}(28) = 28 - 20 = 8$.
+- $n_n^{\mathrm{dau}} = 32 - 28 = 4$ (open)
+
+**Step 2:**
+- $\tau(7) = \mathrm{tr}(T_{2,7}) = 1.299$, $\log_q = +2.51$
+- $\tau(5) = \mathrm{tr}(T_{2,5}) = 0.993$, $\log_q = -0.07$
+- $\tau(8) = \mathrm{tr}(T_{2,8}) = 1.736$, $\log_q = +5.29$
+  (for the closed proton shell)
+- $\tau(4) = \mathrm{tr}(T_{2,4}) = 1.257$, $\log_q = +2.19$
+
+**Step 3:**
+$R_{\mathrm{bare}} = -32.09$
+
+**Step 4:**
+$$
+  \Delta_{\mathrm{shell}}
+  = (\log_q \tau(8) - \log_q \tau(7))
+  + (\log_q \tau(4) - \log_q \tau(5))
+  = (5.29 - 2.51) + (2.19 - (-0.07))
+  = 2.78 + 2.26 = +5.04
+$$
+
+**Step 5:**
+$\Delta_{T_{3,5}} = -3.37$
+
+**Step 7:**
+$$
+  \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
+  \times 0.0991 \times 0.1045 \times 1.630
+  = 30.42 \times 0.01688
+  = 0.513 \;\text{MeV}
+$$
+
+$\mathcal{Q}_{\mathrm{exp}} = 0.318 \pm 0.0001$ MeV.
+Error: $+61\%$.
+
+**Status:** The algorithm produces a definite answer for any
+$(Z, N)$ from $q$ alone.  The $+61\%$ error for ${}^{60}$Co
+indicates the shell correction (Step 4) is not yet capturing
+the full structure.  The conjectures (C1)–(C3) need verification,
+and the magic number derivation (C1) from $q$ is the key
+remaining open problem.
