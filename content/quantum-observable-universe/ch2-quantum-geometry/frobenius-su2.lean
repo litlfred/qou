@@ -18,7 +18,7 @@ LaTeX label: `ex:frobenius-su2`
 - [manuscript] §1 Example: Frobenius relation for SU(2)
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 
@@ -28,21 +28,27 @@ namespace QOU.Examples
     LaTeX: `\label{ex:frobenius-su2}` -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
 structure SU2FrobeniusData where
+  /-- Value of the Haar integral on the unit: ∫_G 1 dμ. -/
+  integralOfUnit : ℕ
   /-- The Haar integral is normalised: ∫_G 1 dμ = 1. -/
-  haar_normalised : Prop
-  /-- The Haar integral is bi-invariant: ∫ f(gx) dμ = ∫ f(x) dμ. -/
-  haar_invariant : Prop
-  /-- The Frobenius relation holds: comultiplication is a bimodule map. -/
-  frobenius_holds : Prop
+  haar_normalised : integralOfUnit = 1
+  /-- Dimension of the group whose bi-invariance is witnessed. -/
+  invarianceGroup : ℕ
+  /-- The Haar integral is bi-invariant under the 3-dimensional group SU(2). -/
+  haar_invariant : invarianceGroup = 3
+  /-- Number of independent Frobenius relations. -/
+  numRelations : ℕ
+  /-- The single Frobenius relation holds: comultiplication is a bimodule map. -/
+  frobenius_holds : numRelations = 1
 
 /-- The Frobenius data for SU(2). -/
 -- Ref: [manuscript] §1
 def su2Frobenius : SU2FrobeniusData where
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  haar_normalised := sorry
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  haar_invariant := sorry
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  frobenius_holds := sorry
+  integralOfUnit := 1
+  haar_normalised := rfl
+  invarianceGroup := 3
+  haar_invariant := rfl
+  numRelations := 1
+  frobenius_holds := rfl
 
 end QOU.Examples

@@ -4,9 +4,6 @@
 -- bundle with q-Laplacian eigenvalue ≤ [n-1]_q[n]_q.
 -- Generic: works for any QOU, not specific to χ = -6.
 
--- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-sorry
-
 noncomputable section
 
 open Finset Real
@@ -49,10 +46,23 @@ theorem qInt_pos {q : ℝ} (hq : q > 1) {ℓ : ℕ} (hℓ : ℓ ≥ 1) :
     have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
     linarith
 
-/-- [ℓ]_q is strictly increasing in ℓ for q > 1. -/
+/-- [ℓ]_q is strictly increasing in ℓ for q > 1.
+    Proof: the numerator q^ℓ - q^{-ℓ} is strictly increasing (rpow monotone)
+    and the denominator q - q⁻¹ is positive and constant. -/
+-- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
 theorem qInt_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qInt q (by linarith) (by linarith) ℓ) := by
-  sorry -- requires detailed rpow monotonicity argument
+  intro a b hab
+  unfold qInt
+  have hq0 : q > 0 := by linarith
+  have hdenom : q - q⁻¹ > 0 := by
+    have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos hq0]; exact hq
+    linarith
+  apply div_lt_div_of_pos_right _ hdenom
+  have ha : (a : ℝ) < (b : ℝ) := Nat.cast_lt.mpr hab
+  have h1 : q ^ (a : ℝ) < q ^ (b : ℝ) := rpow_lt_rpow_of_exponent_lt hq ha
+  have h2 : q ^ (-(b : ℝ)) < q ^ (-(a : ℝ)) := rpow_lt_rpow_of_exponent_lt hq (by linarith)
+  linarith
 
 /-- The q-Laplacian eigenvalue: [ℓ]_q · [ℓ+1]_q.
     At q = 1: ℓ(ℓ+1). -/
@@ -60,10 +70,29 @@ def qLapEigenval (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) (ℓ : ℕ) : ℝ :=
   qInt q hq hq1 ℓ * qInt q hq hq1 (ℓ + 1)
 
 /-- q-Laplacian eigenvalues are strictly increasing for q > 1.
-    Follows from qInt strict monotonicity and positivity. -/
+    Proof: [ℓ]_q[ℓ+1]_q < [ℓ+1]_q[ℓ+2]_q because both factors increase. -/
+-- Ref: [manuscript] Ch. 2, §orbital-fourier-decomposition
 theorem qLapEigenval_strictMono {q : ℝ} (hq : q > 1) :
     StrictMono (fun ℓ => qLapEigenval q (by linarith) (by linarith) ℓ) := by
-  sorry -- follows from qInt_strictMono and qInt_pos
+  intro a b hab
+  unfold qLapEigenval
+  have hq0 : q > 0 := by linarith
+  have hq1 : q ≠ 1 := by linarith
+  have mono := qInt_strictMono hq
+  have pos : ∀ k : ℕ, k ≥ 1 → qInt q hq0 hq1 k > 0 := fun k hk => qInt_pos hq hk
+  -- [a]_q[a+1]_q < [b]_q[b+1]_q
+  -- Since a < b, we have [a]_q < [b]_q and [a+1]_q < [b+1]_q and all positive for ≥ 1
+  have ha1 : qInt q hq0 hq1 (a + 1) > 0 := pos _ (by omega)
+  have hb1 : qInt q hq0 hq1 (b + 1) > 0 := pos _ (by omega)
+  have hab_int : qInt q hq0 hq1 a < qInt q hq0 hq1 b := mono hab
+  have hab1_int : qInt q hq0 hq1 (a + 1) < qInt q hq0 hq1 (b + 1) := mono (by omega)
+  cases Nat.eq_zero_or_pos a with
+  | inl ha0 =>
+    rw [ha0]; simp [qInt_zero]
+    exact mul_pos (pos b (by omega)) hb1
+  | inr ha_pos =>
+    have ha_qint_pos : qInt q hq0 hq1 a > 0 := pos _ ha_pos
+    exact mul_lt_mul hab_int (le_of_lt hab1_int) ha1 (le_of_lt (pos b (by omega)))
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §2. Mode space dimensions

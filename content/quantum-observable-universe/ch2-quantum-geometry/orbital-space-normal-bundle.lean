@@ -49,9 +49,23 @@ theorem sum_odd_eq_square (n : ℕ) :
 
 /-- The cutoff: mode ℓ fits in shell n iff ℓ ≤ n-1.
     This follows from ℓ(ℓ+1) ≤ n(n-1). -/
+-- Ref: [manuscript] Ch. 6, §3
 theorem mode_cutoff (n ℓ : ℕ) (hn : n ≥ 1) :
     ℓ * (ℓ + 1) ≤ n * (n - 1) ↔ ℓ ≤ n - 1 := by
-  -- Ref: [manuscript] Ch. 6, §3
-  sorry
+  constructor
+  · -- Forward: contrapositive — if ℓ ≥ n then ℓ(ℓ+1) > n(n-1)
+    intro h
+    by_contra hc
+    push_neg at hc
+    have h1 : n ≤ ℓ := by omega
+    have h2 : n * (n - 1) < ℓ * (ℓ + 1) := by
+      calc ℓ * (ℓ + 1) ≥ n * (n + 1) := Nat.mul_le_mul h1 (by omega)
+        _ > n * (n - 1) := by cases n with | zero => omega | succ k => nlinarith
+    omega
+  · -- Backward: ℓ ≤ n-1 implies ℓ+1 ≤ n, so ℓ(ℓ+1) ≤ (n-1)n
+    intro h
+    have : ℓ + 1 ≤ n := by omega
+    calc ℓ * (ℓ + 1) ≤ (n - 1) * n := Nat.mul_le_mul h this
+      _ = n * (n - 1) := by ring
 
 end

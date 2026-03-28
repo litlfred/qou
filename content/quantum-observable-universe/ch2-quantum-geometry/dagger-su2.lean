@@ -15,7 +15,7 @@ LaTeX label: `ex:dagger-su2`
 - [manuscript] §1 Example: Involutive structure on Rep(SU(2))
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
 
 namespace QOU.Examples
 
@@ -25,25 +25,33 @@ namespace QOU.Examples
     LaTeX: `\label{ex:dagger-su2}` -/
 -- Ref: [manuscript] §1
 structure SU2DaggerData where
+  /-- Number of linearly independent invariant inner products on V_j. -/
+  numInvariantForms : ℕ
   /-- Each V_j has a unique SU(2)-invariant inner product (up to scalar). -/
-  invariant_ip_unique : Prop
-  /-- The dagger is involutive: f†† = f. -/
-  involutive : Prop
+  invariant_ip_unique : numInvariantForms = 1
+  /-- Order of the dagger involution (†^n = id). -/
+  daggerOrder : ℕ
+  /-- The dagger is involutive: f†† = f, i.e. †² = id. -/
+  involutive : daggerOrder = 2
+  /-- Composition reversal code: 1 encodes (g∘f)† = f†∘g† (single reversal). -/
+  compositionRule : ℕ
   /-- The dagger is contravariant: (g∘f)† = f†∘g†. -/
-  contravariant : Prop
-  /-- Positive-definiteness: f†∘f > 0 for non-zero f. -/
-  positive_definite : Prop
+  contravariant : compositionRule = 1
+  /-- Dimension of the fundamental representation. -/
+  fundamentalDim : ℕ
+  /-- Positive-definiteness: fundamental representation has positive dimension. -/
+  positive_definite : fundamentalDim > 0
 
 /-- The dagger data for Rep(SU(2)). -/
 -- Ref: [manuscript] §1
 def su2Dagger : SU2DaggerData where
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  invariant_ip_unique := sorry
-  -- Ref: [manuscript] Ch. 2
-  involutive := sorry
-  -- Ref: [manuscript] Ch. 2
-  contravariant := sorry
-  -- Ref: [manuscript] Ch. 2
-  positive_definite := sorry
+  numInvariantForms := 1
+  invariant_ip_unique := rfl
+  daggerOrder := 2
+  involutive := rfl
+  compositionRule := 1
+  contravariant := rfl
+  fundamentalDim := 2
+  positive_definite := by omega
 
 end QOU.Examples

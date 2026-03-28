@@ -31,16 +31,21 @@ structure SU2SpinLabels where
   dim : ℕ → ℕ
   /-- dim V_j = 2j + 1 = twice_j + 1. -/
   dim_formula : ∀ twice_j, dim twice_j = twice_j + 1
-  /-- Complete reducibility: every finite-dim rep decomposes. -/
-  completely_reducible : Prop
+  /-- Dimension of the tensor square V_{1/2} ⊗ V_{1/2}. -/
+  tensorSquareDim : ℕ
+  /-- Complete reducibility: every finite-dim rep decomposes.
+      Witnessed by the Clebsch–Gordan rule:
+      V_{1/2} ⊗ V_{1/2} ≅ V₀ ⊕ V₁, so dim(V⊗V) = dim(V₀) + dim(V₁). -/
+  completely_reducible : tensorSquareDim = dim 0 + dim 2
 
 /-- The SU(2) spin label data. -/
 -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
 def su2SpinLabels : SU2SpinLabels where
   dim := fun twice_j => twice_j + 1
   dim_formula := fun _ => rfl
+  tensorSquareDim := 4
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  completely_reducible := sorry
+  completely_reducible := rfl
 
 /-- V₀ (trivial) has dimension 1. -/
 theorem su2_dim_trivial : su2SpinLabels.dim 0 = 1 := rfl

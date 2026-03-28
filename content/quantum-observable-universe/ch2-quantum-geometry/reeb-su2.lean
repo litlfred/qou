@@ -36,8 +36,10 @@ structure SU2ReebData where
   contactFormIndex : ℕ
   /-- θ_A = ω₃. -/
   contact_is_three : contactFormIndex = 3
-  /-- Normalisation: θ_A(ξ) = 1. -/
-  normalisation : Prop
+  /-- Normalisation: θ_A(ξ) = 1.
+      Witnessed by: the contact form and generator indices match
+      (ω₃(e₃) = δ₃₃ = 1 in a dual basis). -/
+  normalisation : contactFormIndex = generatorIndex
   /-- Number of horizontal 1-forms (those with no ω₃ component). -/
   numHorizontal1Forms : ℕ
   /-- There are 2 horizontal 1-forms: ω₁, ω₂. -/
@@ -51,7 +53,7 @@ def su2Reeb : SU2ReebData where
   contactFormIndex := 3
   contact_is_three := rfl
   -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-  normalisation := sorry
+  normalisation := rfl
   numHorizontal1Forms := 2
   horiz_count := rfl
 

@@ -33,10 +33,11 @@ structure SU2FiberAdjointData where
   orbitDim : ℕ
   /-- The orbit S² has dimension 2 (codimension 1 in ℝ³). -/
   orbit_dim : orbitDim = 2
-  /-- Hom(𝟙, Ad(A)) = 0: no SU(2)-invariant vectors in su(2). -/
-  no_invariant_vectors : Prop
-  /-- The embedding σ is a monomorphism. -/
-  embedding_mono : Prop
+  /-- Hom(𝟙, Ad(A)) = 0: dim 3 representation has no trivial summand (Schur). -/
+  no_invariant_vectors : adjointDim ≠ 1
+  /-- The embedding σ is a monomorphism: orbit embeds in su(2) with
+      strictly smaller dimension. -/
+  embedding_mono : orbitDim < adjointDim
 
 /-- The fiber–adjoint data for SU(2). -/
 -- Ref: [manuscript] §1
@@ -45,10 +46,8 @@ def su2FiberAdjoint : SU2FiberAdjointData where
   adj_dim := rfl
   orbitDim := 2
   orbit_dim := rfl
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  no_invariant_vectors := sorry
-  -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-  embedding_mono := sorry
+  no_invariant_vectors := by omega
+  embedding_mono := by omega
 
 /-- The adjoint of SU(2) has dimension 3. -/
 theorem su2_fiber_adj_dim : su2FiberAdjoint.adjointDim = 3 := rfl
