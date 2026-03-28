@@ -55,6 +55,7 @@ export default chapter({
       blocks: [
         "maximal-torus",
         "maximal-torus-su2",
+        "reeb-gauge-group",
         "weight-decomposition",
         "weight-decomposition-exists",
         "weight-decomposition-exists-proof",
@@ -88,6 +89,7 @@ export default chapter({
         "projective-line-object",
         "projective-line-su2",
         "contact-affine-chart",
+        "fibre-functor-atlas",
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
@@ -157,7 +159,9 @@ export default chapter({
         "categorical-point",
         "categorical-point-explication",
         "observation",
+        "observation-energy",
         "two-observer-parallelogram",
+        "observation-fermion-action",
       ],
     }),
 

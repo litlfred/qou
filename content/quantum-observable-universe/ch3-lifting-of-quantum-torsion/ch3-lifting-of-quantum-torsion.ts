@@ -82,6 +82,7 @@ export default chapter({
         "vacuum-state-proof",
         "global-gluing",
         "global-gluing-proof",
+        "ordering-jet-compatibility",
       ],
     }),
 

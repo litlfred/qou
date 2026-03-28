@@ -1,6 +1,6 @@
 The general notion of an
 ([observation](#def:observation)) specialises on the Bring surface as
-follows: the observation morphism $\mathcal{O} \colon A \to A$ acts
+follows: the observation morphism $\mathfrak{I} \colon A \to A$ acts
 fibrewise on the state bundle $\mathcal{S} \to M$ and perturbs the substrate
 parameter $q(p)$ ([substrate parameter](#def:substrate-parameter)), shifting
 the non-commutative geometry of the quantum Bring surface

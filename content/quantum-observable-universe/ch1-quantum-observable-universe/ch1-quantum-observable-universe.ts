@@ -21,6 +21,7 @@ export default chapter({
       label: "sec:qou-intro",
       blocks: [
         "ch1-intro",
+        "scheme-notation",
       ],
     }),
 
