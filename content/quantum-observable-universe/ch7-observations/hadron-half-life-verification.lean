@@ -3,7 +3,10 @@
 
 Six representative beta emitters compared against QOU predictions derived
 from the q-deformed Fermi golden rule (prop:hadron-half-life) with
-q = 1.110 and Skein binding coefficients fixed by nuclear masses.
+q = 1.110.  The weak vertex is the T_{3,5} torus knot (10 crossings);
+current predictions use the single-crossing approximation s².
+Systematic overshoot (10-17%) for heavy nuclei is attributed to the
+missing 9 crossings of the T_{3,5} vertex form factor W(q).
 
 Observed values from NNDC/ENSDF (National Nuclear Data Center).
 Predicted values from the half-life formula with |δp| = 1 for each nucleus.

@@ -1,6 +1,9 @@
-Beta decay is a **universal** 2×2 matrix-valued polynomial in $q$.
-The same matrix $\Delta_\beta(q)$ governs every beta transition in
-every nucleus.
+Beta decay is mediated by the $T_{3,5}$ torus knot with $10$
+crossings ([beta decay](#def:beta-decay-skein)).  The $T_{3,5}$
+insertion at the converting quark produces a **universal** 2×2
+matrix-valued polynomial $\Delta_\beta(q)$ that governs every
+beta transition in every nucleus.  The transfer matrix captures
+the effect of the $10$-crossing weak vertex on each nucleon pair.
 
 ## The three crossing transfer matrices
 

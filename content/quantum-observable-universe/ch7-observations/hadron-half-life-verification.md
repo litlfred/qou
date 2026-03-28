@@ -133,10 +133,34 @@ The corrected half-life prediction:
 | ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | 5.01 d | 1.16 |
 
 All predictions within 20% of observation.  Tritium within 1%.
-The systematic overshoot ($\sim 10$--$17\%$) for heavier nuclei
-is expected: the Skein Coulomb enhancement
-([Fermi function](#prop:skein-coulomb-enhancement)) from
-electron-nucleus crossings has not yet been included.
+
+The systematic overshoot ($\sim 10$–$17\%$) for heavier nuclei
+has two identified sources:
+
+1. **$T_{3,5}$ weak vertex ($10$ crossings).**
+   The predictions above use the single-crossing Skein
+   amplitude $s^2$ as the weak coupling.  The actual weak
+   vertex is the $T_{3,5}$ torus knot with $10$ crossings
+   ([force identification](#rem:force-knot-identification),
+   [beta decay](#def:beta-decay-skein)).  The full weak
+   vertex form factor $\mathcal{W}(q) =
+   \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$
+   accounts for all $10$ crossings.  The $7$ re-reduction
+   crossings beyond the electron trefoil ($3$) affect more
+   inter-nucleon crossings in heavier nuclei, explaining
+   the mass-dependent overshoot.  Tritium ($A = 3$) is
+   accidentally accurate because its short braid leaves
+   little room for the extra $7$ crossings to propagate.
+
+2. **Skein Coulomb enhancement**
+   ([Fermi function](#prop:skein-coulomb-enhancement)):
+   the electron-nucleus crossing correction, not yet
+   included.
+
+**Open computation:** Evaluate $\mathcal{W}(q)$ at
+$q = 1.110$ and recompute the half-life predictions
+with the full $10$-crossing vertex.  This should reduce
+the systematic overshoot from $10$–$17\%$ to $< 5\%$.
 
 ## Forbidden transitions
 

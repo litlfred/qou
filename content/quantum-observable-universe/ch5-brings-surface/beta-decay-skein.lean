@@ -1,11 +1,15 @@
 /-!
-# QOU.Descartes.BetaDecaySkein — Beta decay as Skein crossing change
+# QOU.Descartes.BetaDecaySkein — Beta decay as T_{3,5}-mediated crossing operation
 
-Beta decay is the Skein relation applied to one crossing of the
-Gröbner normal form of a nuclear link.
+Beta decay is mediated by the torus knot T_{3,5} with 10 crossings.
+The T_{3,5} braid (σ₁σ₂)⁵ is inserted at the converting quark, and
+its 10 crossings partition into:
+  - 3 crossings → electron trefoil T_{2,3}
+  - 0 crossings → antineutrino unknot K_{0_1}
+  - 7 crossings → nuclear re-reduction (R2 moves)
 
-β⁻: N̄(p,n) → N̄(p+1, n-1) ⊔ L₀⁻  (electron + antineutrino)
-β⁺: N̄(p,n) → N̄(p-1, n+1) ⊔ L₀⁺  (positron + neutrino)
+β⁻: N̄(p,n) · β_{T_{3,5}} → N̄(p+1, n-1) ⊔ T_{2,3} ⊔ K_{0_1}
+β⁺: N̄(p,n) · β̄_{T_{3,5}} → N̄(p-1, n+1) ⊔ σ(T_{2,3}) ⊔ K_{0_1}
 
 The Z/2 symmetry q ↔ q⁻¹ exchanges β⁻ ↔ β⁺.
 
@@ -13,11 +17,47 @@ LaTeX label: `def:beta-decay-skein`
 
 ## References
 - [manuscript] §6/beta-decay-skein
+- [manuscript] §6/force-knot-identification
 -/
 
 import Mathlib.Data.Real.Basic
 
 namespace QOU.Descartes
+
+-- ═══════════════════════════════════════════════════════════════════
+-- T_{3,5} weak vertex
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The T_{3,5} torus knot — the weak force mediator.
+    Braid word: (σ₁σ₂)⁵ in B₃, with 10 crossings. -/
+-- Ref: [manuscript] §6/force-knot-identification
+structure WeakVertex where
+  /-- Number of crossings in the T_{3,5} braid. -/
+  crossings : ℕ := 10
+  /-- Crossings allocated to the electron trefoil T_{2,3}. -/
+  electron_crossings : ℕ := 3
+  /-- Crossings allocated to the neutrino unknot. -/
+  neutrino_crossings : ℕ := 0
+  /-- Crossings absorbed into nuclear re-reduction (R2 moves). -/
+  reduction_crossings : ℕ := 7
+  /-- The crossing budget is exact: 3 + 0 + 7 = 10. -/
+  budget : electron_crossings + neutrino_crossings + reduction_crossings = crossings
+
+/-- The canonical weak vertex with its 10-crossing budget. -/
+-- Ref: [manuscript] §6/force-knot-identification
+def weakVertex : WeakVertex where
+  budget := by norm_num
+
+/-- The weak vertex has 10 crossings. -/
+-- Ref: [manuscript] §6/force-knot-identification
+theorem weak_vertex_crossings : weakVertex.crossings = 10 := rfl
+
+/-- The crossing budget sums correctly. -/
+-- Ref: [manuscript] §6/force-knot-identification
+theorem crossing_budget_correct :
+    weakVertex.electron_crossings + weakVertex.neutrino_crossings +
+    weakVertex.reduction_crossings = weakVertex.crossings :=
+  weakVertex.budget
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Nuclear link type (abstract)
@@ -42,11 +82,14 @@ structure NuclearLink where
 -- Beta decay as a Skein operation
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- A beta-minus decay: the Skein crossing change d → u at one
-    generator of the Gröbner normal form.
+/-- A beta-minus decay: T_{3,5} insertion at the converting d-quark.
+    The 10-crossing T_{3,5} braid (σ₁σ₂)⁵ partitions into:
+    - 3 crossings → electron trefoil T_{2,3}
+    - 0 crossings → antineutrino unknot K_{0_1}
+    - 7 crossings → nuclear re-reduction (R2 moves)
 
     Produces: daughter nucleus + electron T_{2,3} + antineutrino K_{0_1}. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [manuscript] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaMinusDecay where
   /-- The parent nucleus. -/
   parent : NuclearLink
@@ -69,10 +112,11 @@ structure BetaMinusDecay where
   /-- The Skein relation: q[parent] - q⁻¹[daughter] = (q^½ - q^⁻½)[L₀]. -/
   skein_coefficient : ℝ  -- = q^½ - q^⁻½
 
-/-- A beta-plus decay: the mirror Skein crossing change u → d.
+/-- A beta-plus decay: conjugate T̄_{3,5} insertion at the converting u-quark.
+    Mirror of β⁻ under q ↔ q⁻¹.
 
     Produces: daughter nucleus + positron σ(T_{2,3}) + neutrino K_{0_1}. -/
--- Ref: [manuscript] §6/beta-decay-skein
+-- Ref: [manuscript] §6/beta-decay-skein, §6/force-knot-identification
 structure BetaPlusDecay where
   /-- The parent nucleus. -/
   parent : NuclearLink

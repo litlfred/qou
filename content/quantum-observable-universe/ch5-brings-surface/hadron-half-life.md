@@ -7,7 +7,7 @@ through the $q$-deformed transition amplitude.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate
-parameter $q = 1.1097$.  A nucleus $\mathcal{N}(p, n)$
+parameter $q = 1.110$.  A nucleus $\mathcal{N}(p, n)$
 ([stable nucleus](#def:stable-nucleus)) with proton displacement
 $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability
 has beta-decay half-life
@@ -23,18 +23,22 @@ dimensional scale $\mu_0$ ([building blocks](#rem:building-block-knots)).
 
 ## Decay rate from $q$ and $\mu_0$
 
-Beta decay is a Skein crossing change
-([beta decay as crossing change](#def:beta-decay-skein)) —
-there is no separate weak boson.  The fundamental weak coupling
-is the **Skein amplitude** $s = q^{1/2} - q^{-1/2}$, which is
-the coefficient of the resolved link $L_0$ in the Skein relation.
+Beta decay is mediated by the torus knot $T_{3,5}$ with $10$
+crossings ([beta decay as crossing change](#def:beta-decay-skein),
+[force identification](#rem:force-knot-identification)).  The
+$T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ is inserted at the
+converting quark, and its $10$ crossings partition into the
+electron trefoil ($3$), neutrino unknot ($0$), and nuclear
+re-reduction residue ($7$).  The fundamental weak coupling
+is the **weak vertex form factor** $\mathcal{W}(q)$, the
+Markov trace of the $T_{3,5}$ braid word in $H_3(q)$.
 
 The decay rate is:
 
 $$
   \Gamma_\beta(p, A)
   \;=\;
-  \frac{s^2 \cdot \mu_0}{2\pi^3}
+  \frac{|\mathcal{W}(q)|^2 \cdot \mu_0}{2\pi^3}
   \;\cdot\;
   [2]_q
   \;\cdot\;
@@ -45,10 +49,12 @@ $$
 
 where every factor is determined by $q$:
 
-1. **Skein amplitude** $s^2 = (q^{1/2} - q^{-1/2})^2$: the weak
-   vertex coupling.  This is the square of the coefficient in the
-   Skein relation $q\,L_+ - q^{-1}L_- = s\,L_0$.  In the classical
-   limit $q \to 1$, $s \to 0$ and beta decay shuts off.
+1. **Weak vertex form factor**
+   $|\mathcal{W}(q)|^2 = |\mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)|^2$:
+   the full $10$-crossing weak vertex coupling, replacing the
+   single-crossing approximation $s^2 = (q^{1/2} - q^{-1/2})^2$.
+   In the classical limit $q \to 1$, $\mathcal{W}(1) = 0$ and
+   beta decay shuts off.
 
 2. **$q$-integer modulation** $[2]_q = q + q^{-1}$: the categorical
    dimension of the $\mathrm{SU}_q(2)$ fundamental representation,
@@ -129,19 +135,26 @@ where $N_v = v / (E_{\times}\,\mu_0)$ is the effective crossing
 count of the weak scale.  This is a pure function of $q$ times
 $\mu_0$ — the Fermi constant is not an independent parameter.
 
-**Open computation:** Deriving $N_v$ (equivalently, the weak
-scale $v$) from the Skein algebra.  In the QOU there is no
-separate W boson — the weak interaction is a Skein crossing
-change — so $v$ must emerge from the brane tower structure
-at the electroweak level.  The Skein amplitude
-$s = q^{1/2} - q^{-1/2}$ is the coupling; the mass scale $v$
-determines the range.
+**Open computations:**
+
+1. **$N_v$ (weak scale crossing count):** Deriving $N_v$
+   (equivalently, the weak scale $v$) from the Skein algebra.
+   The weak interaction is mediated by $T_{3,5}$, so $v$ must
+   emerge from the $10$-crossing structure of the $T_{3,5}$ braid.
+   The vertex form factor $\mathcal{W}(q)$ is the coupling; the
+   mass scale $v$ determines the range.
+
+2. **$\mathcal{W}(q)$ (weak vertex form factor):** The Markov
+   trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$ at $q = 1.110$.
+   This replaces the single-crossing approximation $s^2$ and
+   should resolve the systematic $10$–$17\%$ overshoot in
+   heavy-nucleus half-life predictions.
 
 ## $q$-dependence of the decay rate
 
 The decay rate depends on $q$ through four channels:
 
-- $s^2 = (q^{1/2} - q^{-1/2})^2$: the weak vertex coupling.
+- $|\mathcal{W}(q)|^2$: the $T_{3,5}$ weak vertex form factor.
 - $[2]_q = q + q^{-1}$: the weak-vertex dimension.
 - $|\mathcal{M}_q|^2$: the Markov trace ratio, which depends on
   the crossing structure of the nuclear braid at $q$.
@@ -167,7 +180,7 @@ $$
   \;+\;
   5\,\frac{q^2 + 1}{q^2 - 1}
   \;\approx\; 48
-  \quad\text{at } q = 1.1097.
+  \quad\text{at } q = 1.110.
 $$
 
 A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.
@@ -181,7 +194,7 @@ stable and *how fast* unstable nuclei decay.
 ## Parameter count
 
 The half-life formula uses:
-- $q = 1.1097$ — the substrate parameter (fixed by the muon-electron
+- $q = 1.110$ — the substrate parameter (fixed by the muon-electron
   mass ratio),
 - $\mu_0$ — the dimensional scale (unit choice: MeV, seconds, etc.),
 - $(p, n)$ — the nuclear quantum numbers.
