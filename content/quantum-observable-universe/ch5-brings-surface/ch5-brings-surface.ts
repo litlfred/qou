@@ -87,7 +87,6 @@ export default chapter({
         "descartes-knot-eigenbasis",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
-        "golden-ratio-degeneration",
       ],
     }),
 
@@ -122,7 +121,6 @@ export default chapter({
         "neutrino-knot",
         "antineutrino-knot",
         // Building block reference tables
-        "building-block-knots",
         "linking-relations-table",
         // q-deformed kinematics
         "q-momentum",
@@ -144,7 +142,6 @@ export default chapter({
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
-        "valley-table",
         "valley-stability",
         // Hadron half-life calculations relative to q
         // Beta decay as categorical Skein operation
@@ -152,13 +149,10 @@ export default chapter({
         "lepton-number-categorical",
         "parity-violation-skein",
         "nuclear-spin-parity",
-        "tritium-decay-knot-equation",
         // Half-life calculations
         "hadron-half-life",
         "hadron-q-self-correction",
-        "hadron-half-life-regimes",
         "skein-coulomb-enhancement",
-        "shell-threading-conjecture",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
         "box-braid-irreducibility",
@@ -168,20 +162,16 @@ export default chapter({
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "shell-structure-eigenvalues",
-        "trace-ratio-observable",
         "quantum-dilogarithm-volume",
-        "nitrogen-14-threading",
         "reidemeister-action-table",
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
-        "skein-shell-correction",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
         "metallic-character-knot",
         "francium-extremal-metal",
-        "hydrogen-knot-structure",
         "hydrogen-shell-writhe",
         "hydrogen-orbitals",
         // The Descartes theorem
@@ -200,14 +190,9 @@ export default chapter({
       blocks: [
         // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
-        "knot-volumes-verification",
         // Skein decomposition and hadronic mass
         "ch11-intro",
-        "skein-mass-relation",
-        "skein-mass-relation-proof",
         "terminal-resolution",
-        "terminal-resolution-proof",
-        "terminal-resolution-cz",
         // Knot-to-particle mass spectrum
         "knot-formula-table",
         "mass-from-generators",
