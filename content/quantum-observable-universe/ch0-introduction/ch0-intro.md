@@ -38,7 +38,13 @@ of degrees of freedom not yet resolved.  Observation, mathematically,
 is an open map — it produces genuinely new outcomes, not merely
 revealed pre-existing ones.  Even the capacity for computation —
 the Turing completeness of the substrate — is a consequence, not
-an input.
+an input.  And that computation is *confluent*: the Gröbner basis
+structure of the algebra guarantees that the order in which
+reductions are carried out does not affect the result.  Just as
+category theory frees us from asking what things *are* and lets us
+study how they work together, the Gröbner property frees us from
+worrying about the *path* of a calculation — only the endpoint
+matters.
 
 The book is organised as follows.
 
@@ -82,9 +88,12 @@ measured hadronic spectra.
 The mechanics of the quantum observable universe turn out to be
 Turing complete: the combinatorics that supports logic and
 computation in all its forms — from pebbles to microchips — is a
-property of the algebraic substrate, not the medium.  This chapter
-does not answer whether mathematics is discovered or invented.  It
-tells us we do not have to choose.
+property of the algebraic substrate, not the medium.  The Gröbner
+basis underlying the enveloping algebra ensures that this
+computation is *confluent* — every reduction sequence terminates at
+the same normal form, so the answer does not depend on which steps
+we take first.  This chapter does not answer whether mathematics is
+discovered or invented.  It tells us we do not have to choose.
 
 [Chapter 9](#chap:organic-chemistry) applies the Hopf chain
 formalism to organic chemistry, demonstrating that the same
