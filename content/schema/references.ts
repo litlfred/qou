@@ -1231,6 +1231,68 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1991]] },
     DOI: "10.1007/BF01239527",
   }),
+
+  // ── Bowen 1979: Hausdorff dimension of quasi-circles ──────────
+  ref({
+    id: "bowen1979",
+    type: "article-journal",
+    title: "Hausdorff Dimension of Quasi-Circles",
+    author: [
+      { family: "Bowen", given: "Rufus" },
+    ],
+    "container-title": "Publications Math\u00e9matiques de l'IH\u00c9S",
+    volume: "50",
+    page: "11-25",
+    issued: { "date-parts": [[1979]] },
+    DOI: "10.1007/BF02684767",
+  }),
+
+  // ── Ruelle 1982: Repellers and topological pressure ───────────
+  ref({
+    id: "ruelle1982",
+    type: "article-journal",
+    title: "Repellers for Real Analytic Maps and Topological Pressure",
+    author: [
+      { family: "Ruelle", given: "David" },
+    ],
+    "container-title": "Ergodic Theory and Dynamical Systems",
+    volume: "2",
+    page: "99-107",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1017/S0143385700009603",
+  }),
+
+  // ── McMullen 1998: Hausdorff dimension and conformal dynamics ──
+  ref({
+    id: "mcmullen1998",
+    type: "article-journal",
+    title: "Hausdorff Dimension and Conformal Dynamics III: Computation of Dimension",
+    author: [
+      { family: "McMullen", given: "Curtis T." },
+    ],
+    "container-title": "American Journal of Mathematics",
+    volume: "120",
+    issue: "4",
+    page: "691-721",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1353/ajm.1998.0031",
+  }),
+
+  // ── Shishikura 1998: Dimension of Mandelbrot boundary ─────────
+  ref({
+    id: "shishikura1998",
+    type: "article-journal",
+    title: "The Hausdorff Dimension of the Boundary of the Mandelbrot Set and Julia Sets",
+    author: [
+      { family: "Shishikura", given: "Mitsuhiro" },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "147",
+    issue: "2",
+    page: "225-267",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.2307/121009",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

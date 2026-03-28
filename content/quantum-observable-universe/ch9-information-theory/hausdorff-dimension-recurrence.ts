@@ -18,4 +18,10 @@ export default remark({
     "def:gravitational-constant",
     "def:planck-time",
   ],
+  cites: [
+    "bowen1979",
+    "ruelle1982",
+    "mcmullen1998",
+    "shishikura1998",
+  ],
 });
