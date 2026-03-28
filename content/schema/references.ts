@@ -1113,6 +1113,107 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1960]] },
     DOI: "10.1002/cpa.3160130102",
   }),
+
+  // ── Margolus & Levitin 1998: Quantum speed limit ─────────────
+  ref({
+    id: "margolus1998",
+    type: "article-journal",
+    title: "The Maximum Speed of Dynamical Evolution",
+    author: [
+      { family: "Margolus", given: "Norman" },
+      { family: "Levitin", given: "Lev B." },
+    ],
+    "container-title": "Physica D: Nonlinear Phenomena",
+    volume: "120",
+    issue: "1-2",
+    page: "188-195",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1016/S0167-2789(98)00054-2",
+  }),
+
+  // ── Lloyd 2000: Ultimate physical limits to computation ───────
+  ref({
+    id: "lloyd2000",
+    type: "article-journal",
+    title: "Ultimate Physical Limits to Computation",
+    author: [
+      { family: "Lloyd", given: "Seth" },
+    ],
+    "container-title": "Nature",
+    volume: "406",
+    page: "1047-1054",
+    issued: { "date-parts": [[2000]] },
+    DOI: "10.1038/35023282",
+  }),
+
+  // ── Jacobson 1995: Thermodynamics of spacetime ────────────────
+  ref({
+    id: "jacobson1995",
+    type: "article-journal",
+    title: "Thermodynamics of Spacetime: The Einstein Equation of State",
+    author: [
+      { family: "Jacobson", given: "Ted" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "75",
+    issue: "7",
+    page: "1260-1263",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1103/PhysRevLett.75.1260",
+  }),
+
+  // ── Bekenstein 1981: Entropy-to-energy bound ──────────────────
+  ref({
+    id: "bekenstein1981",
+    type: "article-journal",
+    title: "Universal Upper Bound on the Entropy-to-Energy Ratio for Bounded Systems",
+    author: [
+      { family: "Bekenstein", given: "Jacob D." },
+    ],
+    "container-title": "Physical Review D",
+    volume: "23",
+    issue: "2",
+    page: "287-298",
+    issued: { "date-parts": [[1981]] },
+    DOI: "10.1103/PhysRevD.23.287",
+  }),
+
+  // ── Pawlowski et al. 2009: Information causality ──────────────
+  ref({
+    id: "pawlowski2009",
+    type: "article-journal",
+    title: "Information Causality as a Physical Principle",
+    author: [
+      { family: "Paw\u0142owski", given: "Marcin" },
+      { family: "Paterek", given: "Tomasz" },
+      { family: "Kaszlikowski", given: "Dagomir" },
+      { family: "Scarani", given: "Valerio" },
+      { family: "Winter", given: "Andreas" },
+      { family: "\u017Bukowski", given: "Marek" },
+    ],
+    "container-title": "Nature",
+    volume: "461",
+    page: "1101-1104",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1038/nature08400",
+  }),
+
+  // ── Reshetikhin & Turaev 1991: Ribbon graph invariants ────────
+  ref({
+    id: "reshetikhin1991",
+    type: "article-journal",
+    title: "Invariants of 3-Manifolds via Link Polynomials and Quantum Groups",
+    author: [
+      { family: "Reshetikhin", given: "N." },
+      { family: "Turaev", given: "V. G." },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "103",
+    issue: "1",
+    page: "547-597",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/BF01239527",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

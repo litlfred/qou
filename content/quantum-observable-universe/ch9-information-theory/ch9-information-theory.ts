@@ -42,6 +42,16 @@ export default chapter({
         "julia-set-reeb",
         "discrete-planck-step",
         "jet-planck-steps",
+        "operational-entropy",
+      ],
+    }),
+    section({
+      title: "Speed of Light and Mass--Energy Equivalence",
+      label: "sec:speed-of-light",
+      blocks: [
+        "information-speed-of-light",
+        "mass-energy-equivalence",
+        "information-causality",
       ],
     }),
     section({
