@@ -124,43 +124,71 @@ direct-term contribution, the sign flips.
 
 ## The closed-form bound
 
-**Corollary.**
-*For a given $q > 1$ and filling order, there exists*
+The sign flip comes from **factorial vs exponential** competition.
+
+The Hecke normal form $\bar{\mathcal{N}}$ has at most $A!$ terms
+(the dimension of $H_A(q)$).  The dominant term has coefficient
+$\sim q^{\binom{A}{2}}$.  The Yang–Baxter cross-terms redistribute
+coefficient among up to $(A-1)!$ reduced words.  The Markov trace
+weights each word by $z^{f(w)}$ where $z = 1/[2]_q$ and $f(w)$ is
+the Markov height.  The trace magnitude is:
 
 $$
-  A_{\max}(q)
-  \;=\;
-  \min\!\left\{
-    A \;:\;
-    P_{\bar{\mathcal{N}}(p,n)}(q) \leq 0
-    \text{ for all } (p, n) \text{ with } p + n = A
-  \right\}
+  |P(q)| \;\leq\; \sum_w |c_w| \cdot z^{f(w)}
+  \;\sim\; (A-1)! \cdot q^{\binom{A}{2}} \cdot z^{A-1}
 $$
 
-*such that no nucleus with $A > A_{\max}(q)$ is stable.*
+while the dominant contribution (without cross-term cancellation)
+scales as $q^{\binom{A}{2}} \cdot z^{A-1}$.  The cancellation
+ratio $1 - |P|/\Sigma|c_w|$ measures destructive interference:
 
-*The dominant eigenvalue ratio $|\lambda_+/\lambda_-| = q^2$
-determines the growth rate of the cross-terms.  Since the
-cross-term phase accumulates as $\binom{A}{2} \cdot \ln q^2$,
-the bound scales as:*
+| $A$ | $|P|$ | $\Sigma|c_w|$ | Cancellation |
+|:---:|:-----:|:-------------:|:------------:|
+| $1$ | $1.000$ | $1.00$ | $0\%$ |
+| $3$ | $0.601$ | $1.52$ | $60\%$ |
+| $4$ | $0.060$ | $2.42$ | $97.5\%$ |
+| $5$ | $0.141$ | $4.00$ | $96.5\%$ |
+| $6$ | $0.005$ | $11.4$ | $99.95\%$ ← **sign flip** |
+
+The sign flips when $(A-1)!$ cross-terms overwhelm the dominant
+term.  The critical condition is:
 
 $$
-  A_{\max}(q)
-  \;\sim\;
-  \frac{\pi}{\sqrt{2 \ln q^2}}
-  \;=\;
-  \frac{\pi}{\sqrt{4 \ln q}}
+  (A-1)! \;>\; [2]_q^{\,A-1}
 $$
 
-*At $q = 1.110$: $A_{\max} \sim \pi / \sqrt{4 \times 0.1044}
-= \pi / 0.646 \approx 4.9$, consistent with the observed sign
-flip at $A = 6$ (the first nucleus beyond the (2,2) shell).*
+By Stirling's approximation $(A-1)! \approx (A-1)^{A-1} e^{-(A-1)}
+\sqrt{2\pi(A-1)}$, the crossover occurs at:
 
-**At $q = 1$:** $\ln q = 0$, so $A_{\max} \to \infty$ —
-all nuclei are "stable" (degenerate, no binding distinction).
+$$
+  \ln(A-1) \;\approx\; 1 + \ln [2]_q
+$$
 
-**At $q \to \infty$:** $A_{\max} \to 0$ — even single nucleons
-are unstable (the deformation is too strong).
+$$
+  \boxed{A_{\max}(q) \;\approx\; 1 + e \cdot [2]_q}
+$$
+
+**At $q = 1.110$:** $[2]_q = q + q^{-1} = 2.011$, so
+$A_{\max} \approx 1 + 2.718 \times 2.011 = 6.5$, consistent
+with the observed sign flip at $A = 6$.
+
+**At $q = 1$:** $[2]_1 = 2$, so $A_{\max} \approx 1 + 2e
+= 6.4$ — even at the classical limit, the Yang–Baxter
+cross-terms eventually dominate (though shell closures create
+stability islands beyond $A_{\max}$).
+
+**At $q \to \infty$:** $[2]_q \to \infty$, so $A_{\max} \to
+\infty$ — strong deformation pushes the crossover to higher $A$
+because $z = 1/[2]_q \to 0$ suppresses cross-term traces.
+
+**Note:** This bound applies to the alternating $\mathfrak{p}
+\mathfrak{n}$ filling order.  Shell closures
+([shell closure](#prop:shell-closure-normal-form)) create
+**stability islands** beyond $A_{\max}$ where the palindromic
+Poincaré distribution restores $P > 0$.  The physical nuclear
+chart extends to $A \sim 300$ because successive shell closures
+at magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ re-stabilize
+the Skein polynomial.
 
 ## The nuclear chart lattice
 

@@ -39,11 +39,12 @@ axiom skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ
 -- The closed-form bound
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The finiteness bound: A_max(q) ~ π / √(4 ln q).
-    At q = 1.110: A_max ≈ 4.9. -/
+/-- The finiteness bound: A_max(q) ≈ 1 + e · [2]_q.
+    At q = 1.110: A_max ≈ 6.5.
+    Comes from (A-1)! > [2]_q^{A-1} (factorial beats exponential). -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
 noncomputable def A_max_approx (q : ℝ) : ℝ :=
-  Real.pi / Real.sqrt (4 * Real.log q)
+  1 + Real.exp 1 * (q + 1 / q)
 
 /-- At q = 1, A_max → ∞ (all nuclei degenerate). -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
