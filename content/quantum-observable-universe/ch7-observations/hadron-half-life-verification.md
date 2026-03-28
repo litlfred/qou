@@ -90,12 +90,12 @@ Witness computation scripts are in `folio-assistant/computations/`.
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
 |---------|-----|:-:|------|------|
-| ${}^{3}\mathrm{H}$ | 3 | 3 | 0.0186 | 12.32 yr |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | 0.156 | 5730 yr |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | 0.318 | 5.27 yr |
-| ${}^{90}\mathrm{Sr}$ | 90 | 4005 | 0.546 | 28.8 yr |
-| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | 0.514 | 30.2 yr |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 1.163 | 5.01 d |
+| ${}^{3}\mathrm{H}$ | 3 | 3 | $0.01861 \pm 0.00001$ | $12.32 \pm 0.02$ yr |
+| ${}^{14}\mathrm{C}$ | 14 | 91 | $0.15648 \pm 0.00004$ | $5730 \pm 40$ yr |
+| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $0.31817 \pm 0.00013$ | $5.2714 \pm 0.0006$ yr |
+| ${}^{90}\mathrm{Sr}$ | 90 | 4005 | $0.54590 \pm 0.00007$ | $28.79 \pm 0.06$ yr |
+| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | $0.51400 \pm 0.00021$ | $30.17 \pm 0.16$ yr |
+| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $1.16270 \pm 0.00006$ | $5.012 \pm 0.005$ d |
 
 The $\binom{A}{2}$ column shows the exact number of transfer
 matrix steps needed to compute each nucleus's Skein polynomial.
@@ -125,12 +125,12 @@ The corrected half-life prediction:
 
 | Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{corr}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio (corr/obs) |
 |---------|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | 13.0 yr | 12.4 yr | 12.32 yr | 1.01 |
-| ${}^{14}\mathrm{C}$ | 6800 yr | 6690 yr | 5730 yr | 1.17 |
-| ${}^{60}\mathrm{Co}$ | 6.2 yr | 6.17 yr | 5.27 yr | 1.17 |
-| ${}^{90}\mathrm{Sr}$ | 32 yr | 31.9 yr | 28.8 yr | 1.11 |
-| ${}^{137}\mathrm{Cs}$ | 33 yr | 32.9 yr | 30.2 yr | 1.09 |
-| ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | 5.01 d | 1.16 |
+| ${}^{3}\mathrm{H}$ | 13.0 yr | 12.4 yr | $12.32 \pm 0.02$ yr | 1.01 |
+| ${}^{14}\mathrm{C}$ | 6800 yr | 6690 yr | $5730 \pm 40$ yr | 1.17 |
+| ${}^{60}\mathrm{Co}$ | 6.2 yr | 6.17 yr | $5.2714 \pm 0.0006$ yr | 1.17 |
+| ${}^{90}\mathrm{Sr}$ | 32 yr | 31.9 yr | $28.79 \pm 0.06$ yr | 1.11 |
+| ${}^{137}\mathrm{Cs}$ | 33 yr | 32.9 yr | $30.17 \pm 0.16$ yr | 1.09 |
+| ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | $5.012 \pm 0.005$ d | 1.16 |
 
 All predictions within 20% of observation.  Tritium within 1%.
 
@@ -161,6 +161,44 @@ has two identified sources:
 $q = 1.110$ and recompute the half-life predictions
 with the full $10$-crossing vertex.  This should reduce
 the systematic overshoot from $10$–$17\%$ to $< 5\%$.
+
+## Error propagation through the Sargent rule
+
+The phase-space integral scales as $f \propto Q^5$ (Sargent rule)
+for allowed transitions.  This **amplifies** fractional errors in
+$Q$ by a factor of $5$:
+
+$$
+  \frac{\delta \Gamma}{\Gamma}
+  \;=\;
+  5 \,\frac{\delta Q}{Q}
+  \;\oplus\;
+  2 \,\frac{\delta g_A}{g_A}
+  \;\oplus\;
+  2 \,\frac{\delta G_F}{G_F}
+$$
+
+where $\oplus$ denotes addition in quadrature.  For the QOU
+transfer-matrix $Q$-value prediction:
+
+| Source | $\delta x / x$ | Contribution to $\delta\Gamma/\Gamma$ |
+|--------|:-:|:-:|
+| $Q({}^3\mathrm{H})$: $0.01739$ vs $0.01861 \pm 0.00001$ | $6.5\%$ | $5 \times 6.5\% = 33\%$ |
+| $g_A$: $5/3$ (Hecke, naive) vs $1.2754 \pm 0.0013$ | $30.7\%$ | $2 \times 30.7\% = 61\%$ |
+| $G_F$: $(1.1664 \pm 0.0001) \times 10^{-11}$ | $0.005\%$ | negligible |
+| $q$: $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | negligible |
+
+**The $Q$-value and $g_A$ dominate the error budget.**
+The transfer-matrix $Q$-prediction is $6.5\%$ low for tritium,
+which propagates to $33\%$ in the rate and $33\%$ in the
+half-life.  The Borromean $g_A$ prediction ($5/3$) overshoots
+by $31\%$, contributing $61\%$ rate error.  Combined in
+quadrature: $\sqrt{33^2 + 61^2} \approx 69\%$ total rate error,
+or a factor $\sim 1.7$ in the half-life.
+
+This is consistent with the observed $15.2$ yr prediction
+(ratio $1.23$ to observation), where the two errors partially
+cancel (one makes the rate too fast, the other too slow).
 
 ## Forbidden transitions
 

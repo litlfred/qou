@@ -11,8 +11,8 @@ Derivation:
     q = 1 / (1 - ℏ_q)
 
 Sources:
-    Vol(4_1) = 2.029883212819307  (SnapPy 3.3.2, verified)
-    m_μ/m_e  = 206.7682830        (CODATA 2022)
+    Vol(4_1) = 2.029883212819307 ± 1e-12  (SnapPy 3.3.2, numerical precision)
+    m_μ/m_e  = 206.7682830 ± 0.0000046    (CODATA 2022)
 """
 
 import math

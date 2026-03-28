@@ -33,7 +33,8 @@ from q_parameter import (Q as q, Q_INV as qi, S_SKEIN as s_amp,
 HA = q - qi
 S = q**0.5 - q**(-0.5)
 Z_markov = 1.0 / (q**0.5 + q**(-0.5))
-m_e = 0.51100
+m_e = 0.51099895000       # ± 0.00000000015 MeV (CODATA 2022)
+m_e_err = 0.00000000015
 mu_0 = m_e / (3 * E_CROSS)
 
 def q_int(n):
@@ -43,8 +44,9 @@ alpha_em = qi / (q_int(9) * q_int(10))
 three_q = q_int(3)
 
 # G_F from CODATA (open: derive from T_{3,5})
-G_F = 1.1664e-11
-hbar = 6.582119569e-22
+G_F = 1.1663788e-11       # ± 0.0000006e-11 MeV⁻² (CODATA 2022)
+G_F_ERR = 0.0000006e-11
+hbar = 6.582119569e-22    # MeV·s (exact since 2019 SI)
 K_fermi = math.pi**3 * math.log(2) / (G_F**2 * m_e**5) * hbar  # comparative half-life constant (s)
 
 print(f"FULL PIPELINE: q → t_{{1/2}}")

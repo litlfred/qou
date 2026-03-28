@@ -58,8 +58,8 @@ A12 = 2 * Q_INV / DENOM
 A21 = 2 * Q_VAL / DENOM
 A22 = (Q_VAL + 3 * Q_INV) / DENOM
 
-M_P = 938.272  # MeV (proton mass, experimental)
-M_N = 939.565  # MeV (neutron mass, experimental)
+M_P = 938.27208816  # ± 0.00000029 MeV (CODATA 2022)
+M_N = 939.56542052  # ± 0.00000054 MeV (CODATA 2022)
 
 det = A11 * A22 - A12 * A21
 MU_U = (A22 * M_P - A12 * M_N) / det
@@ -133,7 +133,7 @@ print()
 # Converting neutron: strand at offset 2 changes d → u
 # (or offset 1: d → u — by symmetry of the two d-quarks, same result)
 
-M_E = 0.511  # MeV (electron mass)
+M_E = 0.51099895000  # ± 0.00000000015 MeV (CODATA 2022)
 
 def compute_nuclear_mass_crossings(p, n, label=""):
     """Compute the sum of pair Skein masses at ALL crossings in N(p,n).
