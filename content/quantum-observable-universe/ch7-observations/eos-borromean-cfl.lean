@@ -87,10 +87,19 @@ def cs_squared_borromean (q : ℝ) (E_F : ℝ) : ℝ :=
 theorem cs_borromean_nonrelativistic (q : ℝ) (E_F : ℝ)
     (hq : q = 1.1097) (hEF : E_F > 0) (hsmall : E_F < M_B q / 100) :
     cs_squared_borromean q E_F < 1 / 100 := by
-  unfold cs_squared_borromean
-  -- c_s² = (2/3) · E_F/(M_B + E_F) < (2/3) · (M_B/100)/M_B = 2/300 < 1/100
-  -- Ref: [manuscript] Ch. 7
-  sorry
+  subst hq
+  unfold cs_squared_borromean M_B V_B' hbar_q at *
+  set C := 7.32772 / ((1.1097 - 1) / 1.1097) ^ 2 with hC_def
+  -- C > 0
+  have hC_pos : C > 0 := by rw [hC_def]; norm_num
+  -- C + E_F > 0
+  have hCE_pos : C + E_F > 0 := by linarith
+  -- Goal: 2/3 * E_F / (C + E_F) < 1/100
+  -- Equiv to: 200 * E_F < 3 * (C + E_F)  [multiply by 3(C+E_F)/100 > 0]
+  -- i.e.: 197 * E_F < 3 * C
+  -- From hsmall: E_F < C/100, so 197 * E_F < 197 * C / 100 < 3 * C  ✓
+  rw [div_lt_div_iff hCE_pos (by norm_num : (100 : ℝ) > 0)]
+  nlinarith
 
 /-- In the CFL phase, the conformal limit c_s² → 1/3 is approached
     when E_F ≫ M_D.  Formally: for any ε > 0, there exists E_F₀
