@@ -7,120 +7,92 @@
 > method of questioning.*
 > — Werner Heisenberg, 1958
 
-This paper develops the **mechanics** of quantum observable
-universes.  We do not say what the universe *is* — we say what
-its mechanics *do*.  Category theory is the natural language
-because it describes morphisms and structure — the *how* —
-without committing to ontology, whether constructive or platonic.
+Quantum mechanics is, at its core, a theory about what can be
+observed.  Not what the universe *is* — we may never settle that
+question — but what its mechanics *do*: how measurements compose,
+how symmetries constrain outcomes, how local observations assemble
+into a coherent global picture.  The language best suited to this
+task is category theory, because it describes structure and
+transformation — the *how* — without committing to any particular
+ontology, whether constructive or platonic.
 
-We begin from what we can actually observe:
+The starting point of this book is a collection of plain physical
+facts.  Differentiation works: linear approximation describes our
+universe across an extraordinary range of scales, from planetary
+orbits to particle scattering.  Measurement is consistent: we can
+measure, record, and compare results, and those comparisons respect
+a pairing between observables and their duals.  Physics is
+frame-independent: what we measure does not depend on the
+orientation from which we observe it.  Three-fold structure recurs
+throughout nature — three colours, three generations of matter,
+three-fold chirality — in a way that demands explanation rather
+than stipulation.  Time flows: the universe folds and unfolds, and
+we drift along that flow.  And crucially, multiple observers share
+a world.  This is not a flashlight theory in which each observer
+illuminates a private universe; different observers are different
+local coordinate charts, and the transition functions between them
+are forced by the algebraic structure to be consistent.
 
-1. **Differentiation works.**  Linear approximation describes
-   our universe across scales — from planetary orbits to
-   particle scattering.  This motivates Kähler differentials
-   as the algebraic substrate.
+A remarkable fact — and the central thesis of this book — is that
+these everyday observations, once stated carefully, determine a
+specific algebraic structure: a *rigid monoidal category* equipped
+with a fibre functor and a Frobenius trace.  We call this structure
+a **quantum observable universe**.  Its axioms encode precisely the
+features listed above and nothing more.  The symmetry group
+$\mathrm{SU}_2(R)$ is not assumed; it emerges via Tannaka–Krein
+reconstruction from the rigid monoidal structure.  The uncertainty
+principle is not postulated; it appears as the geometric signature
+of degrees of freedom not yet resolved.  Even the capacity for
+computation — the Turing completeness of the substrate — is a
+consequence, not an input.
 
-2. **Measurement is consistent.**  We can measure, record, and
-   compare.  The Frobenius relation encodes this: a trace
-   that pairs observables with their duals.
+The book is organised as follows.
 
-3. **Physics is frame-independent.**  What we measure does not
-   depend on the orientation from which we observe it.  Three-
-   dimensional rotation — $\mathrm{SU}_2(R)$, the double cover
-   of the rotation group $\mathrm{SO}_3(R)$ — emerges via
-   Tannaka–Krein reconstruction from the rigid monoidal
-   structure.  We do not assume $\mathrm{SU}_2(R)$; it falls
-   out of the axioms.
+[Chapters 1 and 2](#chap:qu) build the categorical framework from
+the ground up.  Chapter 1 introduces rigid monoidal categories,
+fibre functors, Frobenius structure, and the dagger involution,
+arriving at the definition of a quantum observable universe.
+Chapter 2 develops the geometry that lives on this structure:
+Tannaka–Krein reconstruction of $\mathrm{SU}_2(R)$, the
+categorical action $S_q$, and the three variational equations
+(Einstein, Yang–Mills, and transport).
 
-4. **Three-fold structure recurs.**  Three colours (red, green,
-   blue), three-fold chirality, three generations of matter.
-   The Bring's surface and its $S_5$ symmetry encode this
-   preference for three.
+[Chapter 3](#chap:torsion) turns to the obstructions that arise
+when one tries to extend local data to global structures.  The
+theory of lifting and descent identifies precisely where and why
+such extensions can fail, and introduces the descent involution
+$\hat{\tau}$ that decomposes the algebra into descended (observable)
+and transient (pre-observable) modes.
 
-5. **Time flows.**  The universe folds and unfolds; we drift
-   along the flow.  The Reeb vector field provides the clock.
-   Lifting and descent through the jet tower give the
-   direction.
-
-6. **We share a local patch.**  We can discuss events with
-   each other, compare measurements, and agree on outcomes —
-   at least locally.  This is the descent condition: local
-   data extend to a shared global structure.
-
-7. **Measurement is never exact.**  There is always
-   uncertainty — not randomness, but the signature of a
-   geometric degree of freedom we have not resolved.  The
-   Reeb bundle is where we keep track of what we have not
-   yet measured.
-
-8. **We have the perception of free will and intent.**
-   We choose to measure, to act, to organise.  Choosing to
-   sort a sock drawer is an act of intent that increases
-   local order at the cost of effort.  The mathematical
-   consequence: observation is an **open map** — it creates
-   outcomes not determined by the initial conditions.
-
-9. **Multiple observers share a world.**  This is not a
-   flashlight theory where each observer illuminates a
-   private universe.  Each fibre functor
-   $\tau \colon \mathbf{C} \to \mathbf{Vect}$ is an
-   affine chart — one observer's local coordinate system.
-   Different fibre functors are different charts;
-   Tannaka–Krein tells us that the natural isomorphisms
-   between them form a $G$-torsor — the transition
-   functions.  The cocycle condition is automatic:
-   functoriality forces chart overlaps to be consistent.
-   The affine atlas is not an extra assumption; it is a
-   consequence of the rigid monoidal structure
-   ([contact affine chart](#def:contact-affine-chart)).
-
-These observations motivate a rigid monoidal category — a
-quantum observable universe — whose axioms encode precisely
-these features and nothing more.
-
-**[Chapters 1–2](#chap:qu)** build the categorical framework:
-rigid monoidal categories, fibre functors, Frobenius structure,
-dagger involution, Tannaka–Krein reconstruction of
-$\mathrm{SU}_2(R)$, the categorical action $S_q$, and the three
-variational equations (Einstein, Yang–Mills, transport).
-
-**[Chapter 3](#chap:torsion)** establishes lifting and descent:
-the obstructions to extending local data to global structures,
-and the descent involution $\hat{\tau}$ that decomposes the
-algebra into descended (observable) and transient (pre-observable)
-modes.
-
-**[Chapter 4](#chap:path-integrals-braiding)** develops braids
-and knots.  The Hecke algebra provides crossing coefficients,
-the Markov trace computes Skein polynomials, and crossing number
+[Chapter 4](#chap:path-integrals-braiding) develops the theory of
+braids and knots within the categorical framework.  The Hecke
+algebra provides crossing coefficients, the Markov trace computes
+Skein polynomials, and a clean dictionary emerges: crossing number
 equals jet order equals information content.
 
-**[Chapters 5–6](#chap:models-qou)** construct explicit models.
-We call it a *Descartes universe* because the observer is not
-separate from the mechanics — we think about the world, but we
-are part of it.  The Archimedean condition and the Euler
-characteristic $\chi = -6$ are driven by physical observation,
-formalised mathematically here and compared to measurement in
-[Chapter 7](#chap:observations).  Bring's surface, the nuclear
-Skein polynomial $P_{\mathcal{N}}(q)$, and the universal beta
-decay matrix $\Delta_\beta(q)$ are constructed explicitly.
+[Chapters 5 and 6](#chap:models-qou) construct explicit models.
+We call these *Descartes universes* because the observer is not
+separate from the mechanics — we think about the world, but we are
+part of it.  Bring's surface and its $S_5$ symmetry play a central
+role, as do the Archimedean condition and the Euler characteristic
+$\chi = -6$, both driven by physical observation and formalised
+here as mathematical structure.
 
-**[Chapter 7](#chap:observations)** presents experimental
-evidence: the skein-theoretic mass formula and comparison with
+[Chapter 7](#chap:observations) confronts the theory with
+experiment: the skein-theoretic mass formula is compared with
 measured hadronic spectra.
 
-**[Chapter 8](#chap:info-theory)** addresses Wigner's mystery.
-The mechanics of the QOU are **Turing complete**: the Toffoli
-braid amplitude $P_{7,6}(q) \neq 0$ for all $q \neq 1$, so
-any computable function can be executed as braid crossings at
-discrete Planck steps.  The universe supports logic and
-computation in all forms — from pebbles to microchips — because
-the combinatorics is a property of the substrate parameter, not
-the medium.  This chapter does not answer whether mathematics
-is discovered or invented.  It tells us we do not have to.
+[Chapter 8](#chap:info-theory) addresses Wigner's mystery directly.
+The mechanics of the quantum observable universe turn out to be
+Turing complete: the combinatorics that supports logic and
+computation in all its forms — from pebbles to microchips — is a
+property of the algebraic substrate, not the medium.  This chapter
+does not answer whether mathematics is discovered or invented.  It
+tells us we do not have to choose.
 
-**[Chapter 9](#chap:organic-chemistry)** applies the Hopf chain
-formalism to organic chemistry.
+[Chapter 9](#chap:organic-chemistry) applies the Hopf chain
+formalism to organic chemistry, demonstrating that the same
+categorical machinery reaches beyond fundamental physics.
 
-The **Glossary** maps paper terminology to Mathlib declarations.
-The **Appendix** collects the knot periodic table.
+The **Glossary** maps paper terminology to Mathlib declarations,
+and the **Appendix** collects the knot periodic table.
