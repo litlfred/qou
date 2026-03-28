@@ -13,6 +13,15 @@ export default chapter({
   title: "Physical Observations",
   label: "chap:observations",
   sections: [
+    // ── Central result: overdetermination of q ──────────────────────────
+    section({
+      title: "The Substrate Consistency Window",
+      label: "sec:substrate-consistency",
+      blocks: [
+        "substrate-consistency-window",
+      ],
+    }),
+
     // ── Particle identification conjectures ────────────────────────────
     section({
       title: "Particle Identification Conjectures",
@@ -146,6 +155,7 @@ export default chapter({
         "pair-creation-energy",
         "crossing-energy-decomposition",
         "crossing-energy-interpretation",
+        "mass-asymmetry-prediction",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",
         "cp-violation-evidence",
