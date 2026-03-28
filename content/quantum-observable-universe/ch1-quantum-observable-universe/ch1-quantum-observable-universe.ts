@@ -62,7 +62,10 @@ export default chapter({
         "frobenius-relation-proof",
         "involutive-structure",
         "positive-definite-dagger",
+        "positive-definite-dagger-proof",
+        "dagger-notation",
         "tannaka-krein-overview",
+        "axiom-independence",
       ],
     }),
 
