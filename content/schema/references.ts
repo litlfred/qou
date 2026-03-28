@@ -1293,6 +1293,40 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1998]] },
     DOI: "10.2307/121009",
   }),
+
+  // ── Witten 1984 ───────────────────────────────────────────────
+  ref({
+    id: "witten1984",
+    type: "article-journal",
+    title: "Cosmic separation of phases",
+    author: [
+      { family: "Witten", given: "Edward" },
+    ],
+    "container-title": "Physical Review D",
+    issued: { "date-parts": [[1984]] },
+    volume: "30",
+    issue: "2",
+    page: "272-285",
+    DOI: "10.1103/PhysRevD.30.272",
+  }),
+
+  // ── Alford, Rajagopal, Wilczek 1999 ──────────────────────────
+  ref({
+    id: "alford1999",
+    type: "article-journal",
+    title: "Color-flavor locking and chiral symmetry breaking in high density QCD",
+    author: [
+      { family: "Alford", given: "Mark" },
+      { family: "Rajagopal", given: "Krishna" },
+      { family: "Wilczek", given: "Frank" },
+    ],
+    "container-title": "Nuclear Physics B",
+    issued: { "date-parts": [[1999]] },
+    volume: "537",
+    issue: "1-3",
+    page: "443-458",
+    DOI: "10.1016/S0550-3213(98)00668-3",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

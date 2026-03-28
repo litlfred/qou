@@ -116,6 +116,18 @@ export default chapter({
       ],
     }),
 
+    // ── Strangelet stability and QGP deconfinement ──────────────────────
+    section({
+      title: "Strangelet Stability and Deconfinement",
+      label: "sec:strangelet-stability",
+      blocks: [
+        "strangelet-crossing-energy",
+        "strangelet-witten-stability",
+        "deconfinement-golden-threshold",
+        "color-superconductivity-borromean",
+      ],
+    }),
+
     // ── Small-scale observations ──────────────────────────────────────
     section({
       title: "Small-Scale Observations",
