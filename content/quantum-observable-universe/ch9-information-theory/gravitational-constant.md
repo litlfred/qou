@@ -69,21 +69,104 @@ exponentially suppressed by the descent involution $\hat{\tau}_k$
 component at each level has support localised to exceptional
 divisors of codimension $\geq 2$.
 
+**Quadratic suppression from surface area.**
+The exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
+is a $2$-sphere.  Each jet level $k$ adds a shell of in-progress
+braids whose **information surface area** scales as $\hbar_q^2$
+(the square of the linear Reeb dimension), not $\hbar_q$.  This is
+the holographic content of the descent involution: information on
+the exceptional divisor lives on $2$-surfaces, and area is quadratic
+in the linear scale.
+
+Concretely, the entropy at jet level $k$ is suppressed by the
+**area** of the transient shell, not its radius:
+
+$$
+  \eta_q^{(k)}
+  \;=\; \eta_q \cdot \hbar_q^{2k},
+$$
+
+where the exponent $2k$ reflects that the codimension-$2$
+localisation of transient sections
+([descent eigenspaces](#prop:descent-eigenspaces)) projects onto a
+surface, and the surface area at level $k$ scales as the
+**square** of the displacement $\hbar_q^k$.  Summing the geometric
+series:
+
+$$
+  S_{\mathrm{cell}}(q)
+  \;=\; \eta_q \sum_{k=1}^{\infty} \hbar_q^{2k}
+  \;=\; \frac{\eta_q \cdot \hbar_q^2}{1 - \hbar_q^2}.
+$$
+
 **The gravitational constant.**
 The $q$-Yang-Mills-Levi variation gives
 
 $$
-  G(q) \;=\; \frac{c(q)^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)},
+  G(q) \;=\; \frac{c(q)^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}
+  \;=\; \frac{c(q)^3 \cdot \hbar_q \cdot (1 - \hbar_q^2)}
+             {\eta_q \cdot \hbar_q^2}
+  \;=\; \frac{c(q)^3 \cdot (1 - \hbar_q^2)}
+             {\eta_q \cdot \hbar_q},
 $$
 
 where $c(q) = 1/(q-1)$ is the speed of light
 ([speed of light](#def:information-speed-of-light)) and
 $\hbar_q = (q-1)/q$.  The numerator $c^3 \hbar_q$ is the
 kinematic factor (causal volume per Planck time); the denominator
-$S_{\mathrm{cell}}$ is the total information content per fibre,
-including all in-progress braids.
+$S_{\mathrm{cell}}$ is the total in-progress braid entropy, given
+by the quadratic-suppression series.
 
-**The self-consistency condition.**
+**Numerical check at $q = 1.1097$.**
+
+| Quantity | Formula | Value |
+|----------|---------|-------|
+| $\hbar_q^2$ | $((q-1)/q)^2$ | $0.009\,77$ |
+| $\eta_q$ | $d_H \cdot \log 2$ | $0.701$ nats |
+| $S_{\mathrm{cell}}$ (series) | $\eta_q \cdot \hbar_q^2 / (1 - \hbar_q^2)$ | $0.006\,92$ nats |
+| $S_{\mathrm{cell}}$ (target for $G_{\mathrm{Planck}} = 1$) | $(q-1)^2/q^3$ | $0.008\,80$ nats |
+| **Ratio** | series / target | **$0.79$** |
+
+The quadratic-suppression series gives **79%** of the self-consistency
+target --- within $21\%$, compared to the factor-of-$300$ discrepancy
+of the naive Jacobson estimate.  The remaining gap has two natural
+sources:
+
+1. **Box-counting underestimate of $d_H$.**  Thin Jordan curves
+   (barely above $d_H = 1$) are systematically underestimated by
+   box-counting at finite resolution.  Exact match requires
+   $d_H = 1.287$ (vs.\ measured $1.012$).  Higher-resolution
+   computations or analytic estimates from the continued fraction of
+   the rotation number $\theta = 0.1097 = [0; 9, 8, 1, 1, \ldots]$
+   could resolve this.
+
+2. **Cross-level correlations.**  The series assumes independent
+   contributions $\eta_q^{(k)}$ at each level.  In practice, the
+   $R$-matrix entanglement between levels $k$ and $k+1$ generates
+   mutual information that is not captured by the single-fibre
+   Julia set entropy $\eta_q$.
+
+**Why quadratic and not linear?**
+The $\hbar_q^{2k}$ (not $\hbar_q^k$) exponent has a direct
+geometric origin: the exceptional divisor
+$\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C}) \cong S^2$ is a
+**surface**.  Information on $S^2$ is proportional to area, and
+area is the **square** of the linear dimension.  Each descent from
+level $k+1$ to level $k$ projects out a codimension-$2$ shell
+whose area is $\hbar_q^2$ times the previous level.  The linear
+suppression $\hbar_q^k$ would correspond to information on a line
+(codimension $1$) --- but the transient sections are localised to
+exceptional divisors of codimension $\geq 2$, giving the quadratic
+exponent.
+
+This is the same reason that the Bekenstein--Hawking entropy scales
+as area (not volume): the information content of a region is
+determined by its boundary surface, and surfaces have area $\sim
+r^2$.  In the QOU, this is not postulated but **derived** from the
+codimension-$2$ structure of the exceptional divisors in the
+brane tower.
+
+**Self-consistency condition.**
 Converting to Planck units ($G_{\mathrm{Planck}} = 1$):
 
 $$
@@ -92,28 +175,11 @@ $$
   \;=\; \frac{(q-1)^2}{q^3}.
 $$
 
-At $q = 1.1097$:
-
-$$
-  S_{\mathrm{cell}} \;\approx\; 0.00879
-  \quad (\text{nats}).
-$$
-
-Compare with the single-operation entropy:
-$\eta_q = d_H(q) \cdot \log 2 \approx 1.012 \times 0.693 \approx
-0.701$ nats.
-
-The ratio $S_{\mathrm{cell}} / \eta_q \approx 0.013$ means that
-only about **1.3% of the single-fibre entropy** contributes to the
-gravitational coupling.  This is consistent with the in-progress
-braid picture: most braids at a typical fibre are **fully resolved**
-(their crossing energy is already accounted for in $T^{(q)}$ as
-matter), while only the partially-evaluated tails contribute the
-additional gravitational information.
+At $q = 1.1097$: $S_{\mathrm{cell}} \approx 0.00880$ nats.
 
 **Hausdorff dimension (numerical).**
-The Hausdorff dimension of $J(f_q) \cap S^1$ at $q = 1.1097$ has
-been computed via box-counting on the Julia set of
+The Hausdorff dimension of $J(f_q)$ at $q = 1.1097$ has been
+estimated via box-counting on the Julia set of
 $f_q(z) = z^2 + c(q)$:
 
 $$
