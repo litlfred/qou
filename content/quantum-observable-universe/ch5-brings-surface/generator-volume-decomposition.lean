@@ -74,24 +74,6 @@ theorem energy_additive (vols : List ℝ) :
     nuclearEnergy vols = vols.sum := by
   rfl
 
-/-- Helper: drop lists are equal when tails agree pointwise via getElem!. -/
-private theorem drop_eq_of_tail_eq (l₁ l₂ : List ℝ) (n : ℕ)
-    (h_len : l₁.length = l₂.length)
-    (h_tail : ∀ i, n ≤ i → i < l₁.length → l₁[i]! = l₂[i]!) :
-    l₁.drop n = l₂.drop n := by
-  apply List.ext_getElem
-  · simp [List.length_drop, h_len]
-  · intro i h₁ h₂
-    rw [List.getElem_drop, List.getElem_drop]
-    have h_bound₁ : n + i < l₁.length := by
-      rw [List.length_drop] at h₁; omega
-    have h_bound₂ : n + i < l₂.length := by
-      rw [List.length_drop] at h₂; omega
-    have h_ge : n ≤ n + i := Nat.le_add_right n i
-    have h₃ := h_tail (n + i) h_ge h_bound₁
-    simp only [List.getElem!_pos, h_bound₁, h_bound₂, ↓reduceDIte] at h₃
-    exact h₃
-
 /-- Only generators i ≤ p are affected by beta decay (the rest cancel
     between parent and daughter). -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
@@ -114,15 +96,20 @@ theorem beta_decay_locality (p : ℕ) (vols_par vols_dau : List ℝ)
         show vols_dau = vols_dau.take (p + 1) ++ vols_dau.drop (p + 1)
         from (List.take_append_drop (p + 1) vols_dau).symm]
   rw [List.sum_append, List.sum_append]
-  -- Now the goal is (take_sum_par + drop_sum_par) - (take_sum_dau + drop_sum_dau)
-  --             = take_sum_par - take_sum_dau
-  -- Suffices to show drop_sum_par = drop_sum_dau.
+  -- Suffices to show drop_sum_par = drop_sum_dau, then linarith cancels them.
   suffices h_drop : (vols_par.drop (p + 1)).sum = (vols_dau.drop (p + 1)).sum by linarith
-  -- The drop lists are equal because elements at positions > p agree.
-  have h_drop_eq : vols_par.drop (p + 1) = vols_dau.drop (p + 1) :=
-    drop_eq_of_tail_eq vols_par vols_dau (p + 1) h_len
-      (fun i hi h_bound => h_tail i (by omega) h_bound)
-  rw [h_drop_eq]
+  -- Show the two drop lists are actually equal (hence equal sums).
+  congr 1
+  apply List.ext_getElem
+  · simp [List.length_drop, h_len]
+  · intro i h₁ h₂
+    simp only [List.getElem_drop]
+    have h_bound₁ : p + 1 + i < vols_par.length := by
+      simp [List.length_drop] at h₁; omega
+    have h_bound₂ : p + 1 + i < vols_dau.length := by
+      simp [List.length_drop] at h₂; omega
+    have h₃ := h_tail (p + 1 + i) (by omega) h_bound₁
+    rwa [getElem!_pos h_bound₁, getElem!_pos h_bound₂] at h₃
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
