@@ -47,6 +47,7 @@ export default chapter({
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
+        "w-boson-mass-discrepancy",
       ],
     }),
 
