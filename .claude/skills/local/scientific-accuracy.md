@@ -26,6 +26,16 @@ peer-review practices and the methodology of
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
+- **EVERY observed value MUST carry ± uncertainty.** No CODATA,
+  NNDC, PDG, or any experimental constant without an error bound.
+  Use `experimental_constants.py` as the single source of truth.
+- **EVERY derived quantity MUST propagate error.** If $f(x)$
+  depends on $x \pm \delta x$, then $\delta f = |f'(x)| \delta x$.
+  For products: relative errors add in quadrature. For $Q^5$:
+  $\delta\Gamma/\Gamma = 5 \,\delta Q/Q$. The $q$-sensitivity
+  $\partial\ln\Gamma/\partial\ln q \approx 48$ means even
+  $10^{-6}\%$ error in $q$ propagates to $\sim 5 \times 10^{-5}\%$
+  in the rate. Track this explicitly.
 - **NEVER use O(·) to discard polynomial structure.** The transfer
   matrix product has $\binom{A}{2}$ steps — this is exact, not
   "O(A²)". Each step is a nucleon pair. The polynomial degree is
