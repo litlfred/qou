@@ -22,20 +22,20 @@ Let $\Delta \colon A \to A \otimes A$ be the comultiplication (encoding
 the connection) and let $\int_A \colon A \to \mathbf{1}$ be the
 Frobenius form.
 
-The *inertial mass* of a morphism $\gamma \colon \mathbf{1} \to A$
+The *inertial mass* of a morphism $\varrho \colon \mathbf{1} \to A$
 (a "closed cycle" in the Frobenius--Hopf object) is
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
     (\int_A \otimes \mathrm{id})
     \circ \Delta
-    \circ \gamma
+    \circ \varrho
   \bigr)
   \,\bigr\rVert,
 $$
 where $\lVert \cdot \rVert$ is the norm on $R$ induced by the
 [Frobenius pairing](#def:frobenius-pairing).  The mass measures the resistance of the
-Frobenius--Hopf structure to transporting the cycle $\gamma$ through
+Frobenius--Hopf structure to transporting the cycle $\varrho$ through
 the comultiplication.
