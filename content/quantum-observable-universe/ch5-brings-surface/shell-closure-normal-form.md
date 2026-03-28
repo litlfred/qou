@@ -29,12 +29,54 @@ normal form of the nuclear braid in $H_A(q)$ constructed by
 sequential Hopf linking with alternating $\mathfrak{p}$-$\mathfrak{n}$
 filling.**
 
-**(i) Normal form.**
-$\bar{\mathcal{N}}(p, n)$ is in Gröbner normal form for all
-$A \leq 9$ (verified computationally): every word in the support
-is a reduced word in $H_A(q)$ — no $\sigma_i^2$ patterns,
-no Yang–Baxter–reducible triples, no unsorted far-commutativity
-pairs.
+**(i) Normal form (inductive, for all $A$).**
+$\bar{\mathcal{N}}(p, n)$ is in Gröbner normal form for **every**
+$A \geq 1$, by induction on $A$:
+
+- **Base case.** $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$ is trivially
+  in normal form (the empty word has no squares, no YB triples, no
+  far-comm pairs).
+
+- **Inductive step.** Given $\bar{\mathcal{N}}$ at step $A$ in normal
+  form in $H_A(q)$, the Hopf-link step produces:
+
+  $$
+    \xi_{A+1}
+    \;=\;
+    \bar{\mathcal{N}}(A)
+    \;\cdot\;
+    \prod_{j=0}^{A-1}(c_j \sigma_j + d_j)
+  $$
+
+  where each factor $(c_j \sigma_j + d_j)$ is the crossing element
+  for the new nucleon with nucleon $j$ (already in normal form:
+  linear in $\sigma_j$, no squares).  The product $\xi_{A+1}$ may
+  contain $\sigma_j^2$ terms from multiplying $\sigma_j$ factors.
+  Apply the Gröbner division algorithm
+  ([division algorithm](#unital-groebner-bases:def:division-algorithm))
+  with the Hecke basis $G$:
+
+  $$
+    \bar{\mathcal{N}}(A+1)
+    \;:=\;
+    r(\xi_{A+1},\, G)
+  $$
+
+  By the **main theorem** of Gröbner basis theory
+  ([main theorem](#unital-groebner-bases:thm:ugb-main-theorem)):
+
+  1. The algorithm **terminates** (the length-lex ordering on positive
+     braid monomials is well-founded).
+  2. The remainder $r(\xi_{A+1}, G)$ is **unique** (independent of
+     reduction path).
+  3. The remainder is in **normal form** (no word in its support
+     contains a leading monomial of any $g \in G$).
+
+  Therefore $\bar{\mathcal{N}}(A+1)$ is in normal form.  $\square$
+
+The normal form has at most $A!$ terms (the dimension of $H_A(q)$
+over $\mathbb{Z}[q^{\pm 1}]$, equal to $|S_A|$).  This is a
+**finite** representation for any nucleus.
 
 **(ii) Symmetric histogram at shell closures.**
 When $p = n$ (doubly-even nuclei), the word-length histogram
