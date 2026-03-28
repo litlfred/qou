@@ -181,6 +181,7 @@ export default chapter({
         "shell-closure-normal-form",
         "skein-finiteness-bound",
         "torus-knot-shell-binding",
+        "shell-construction-rules",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",
