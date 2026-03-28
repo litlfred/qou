@@ -13,6 +13,7 @@ LaTeX label: `prop:generator-volume-decomposition`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 namespace QOU.Descartes
 
@@ -38,7 +39,7 @@ theorem generatorVolume_nonneg (a b : ℝ) :
 /-- The total nuclear energy is the sum of generator volumes. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 noncomputable def nuclearEnergy (volumes : List ℝ) : ℝ :=
-  volumes.foldl (· + ·) 0
+  volumes.sum
 
 /-- The ideal volume at generator i: the energy absorbed by
     Hecke reduction. V_i^I = k_i - V_i where k_i is the number
@@ -70,7 +71,7 @@ noncomputable def chainReduce (q : ℝ) (crossings : List (ℝ × ℝ)) : ℝ ×
 /-- The energy is additive over generators. -/
 -- Ref: [manuscript] §6/generator-volume-decomposition
 theorem energy_additive (vols : List ℝ) :
-    nuclearEnergy vols = vols.foldl (· + ·) 0 := by
+    nuclearEnergy vols = vols.sum := by
   rfl
 
 /-- Only generators i ≤ p are affected by beta decay (the rest cancel
