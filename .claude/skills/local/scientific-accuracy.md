@@ -76,8 +76,21 @@ peer-review practices and the methodology of
   - Fine structure: $\alpha_{\mathrm{EM}} = q^{-1}/([9]_q \cdot
     [10]_q)$ where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$
     (symmetric $q$-integer).
+  - Mass as photon threading cost: $\mathfrak{m}_H = E_H \cdot (q-1)^2$
+    = total Gröbner--Shirshov Hecke reduction cost of threading
+    $\gamma$ through $\beta_H$.  Three equivalent computations:
+    Yekutieli MI (analytic), ribbon trace (algebraic), Gröbner
+    reduction (computational).
   These formulas are **derived**, not postulated. Agents must not
   introduce alternative expressions for these quantities.
+- **Notation conventions (this session):**
+  - $E_H$ = crossing energy of composite $H$ (plain italic, safe
+    since exceptional divisor is now $\mathcal{S}_c$).
+  - $\mathfrak{m}_H$ = categorical mass of composite $H$ (fraktur).
+  - $c_q$ = speed of light (subscript, not function notation).
+  - $\varrho \colon \mathbf{1} \to A$ = generic closed vortex.
+  - $\gamma$ = photon (exclusively).  Never use for generic path.
+  - $\wp$ = reserved for Weierstrass projection (future use).
 
 ### 3. Statistical and Methodological Soundness
 - Statistical methods are appropriate for the analysis.
