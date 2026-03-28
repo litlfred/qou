@@ -1,18 +1,19 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "conj:q-critical-line",
+  interprets: "prop:q-critical-line",
   label: "rem:off-critical-zero-consequences",
-  title: "Consequences of a zero off the $q$-critical line",
+  title: "Why off-critical zeros cannot arise: the unitarity argument",
   tags: [
     "zeta-function",
     "critical-line",
-    "orbit-counting",
-    "information-theory",
     "unitarity",
+    "r-matrix",
+    "information-theory",
+    "hausdorff-dimension",
   ],
   uses: [
-    "conj:q-critical-line",
+    "prop:q-critical-line",
     "def:q-logarithmic-zeta",
     "def:operational-entropy",
     "rem:hausdorff-dimension-recurrence",
