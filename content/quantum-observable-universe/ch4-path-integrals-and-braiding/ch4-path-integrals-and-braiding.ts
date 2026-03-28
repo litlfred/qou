@@ -42,6 +42,7 @@ export default chapter({
         "markov-moves-brane-tower",
         "knot-eigenbasis-complete",
         "knot-eigenbasis-complete-proof",
+        "knot-exhaustiveness",
         "feynman-eigenbasis",
       ],
     }),
