@@ -51,12 +51,12 @@ capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  And that computation
 is *confluent*: the Gröbner basis structure of the algebra
 guarantees that the order in which reductions are carried out does
-not affect the result.  Wigner once called the usefulness of
-mathematics in the natural sciences "something bordering on the
-mysterious" \cite{wigner1960}.  Just as category theory frees us
-from asking what things *are* and lets us study how they work
-together, the Gröbner property frees us from worrying about the
-*path* of a calculation — only the endpoint matters.
+not affect the result.  Just as category theory frees us from
+asking what things *are* and lets us study how they work together,
+the Gröbner property frees us from worrying about the *path* of a
+calculation — only the endpoint matters.  That so much structure
+follows from so little input is, as Wigner put it, "something
+bordering on the mysterious" \cite{wigner1960}.
 
 The book is organised as follows.
 
