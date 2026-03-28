@@ -130,10 +130,8 @@ theorem jones_unknot_eq_one (q : ℝ) : jones_unknot q = 1 := rfl
 
 /-- The figure-eight knot is amphichiral: J(q) = J(q⁻¹). -/
 -- Ref: [jones1987]
--- sorry: Proof requires expanding the polynomial and simplifying.
 -- The equality J_{4_1}(q) = J_{4_1}(q⁻¹) holds because the
 -- figure-eight is the simplest amphichiral knot.
--- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem figure_eight_amphichiral (q : ℝ) (hq : q ≠ 0) :
     jones_figure_eight q = jones_figure_eight (q⁻¹) := by
   unfold jones_figure_eight
