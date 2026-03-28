@@ -40,6 +40,7 @@ export default chapter({
       blocks: [
         "golden-ratio-transport",
         "julia-set-reeb",
+        "hausdorff-dimension-recurrence",
         "discrete-planck-step",
         "jet-planck-steps",
         "operational-entropy",
