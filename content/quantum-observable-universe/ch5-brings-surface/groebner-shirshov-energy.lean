@@ -55,6 +55,15 @@ noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
+private theorem heckeEnergyChange_nonneg (q : ℝ) (hq : 1 < q) (c : ℝ) :
+    0 ≤ heckeEnergyChange q c := by
+  unfold heckeEnergyChange
+  apply mul_nonneg (abs_nonneg _)
+  -- Need: 0 ≤ q - 1/q.  Since q > 1 > 0, we have 1/q < 1 < q.
+  have hq_pos : (0 : ℝ) < q := by linarith
+  rw [sub_nonneg, div_le_iff hq_pos]
+  nlinarith
+
 theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     (coeffs : List ℝ) :
     0 ≤ totalEnergyChange q coeffs := by
@@ -63,9 +72,7 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
   intro x hx
   rw [List.mem_map] at hx
   obtain ⟨c, _, rfl⟩ := hx
-  unfold heckeEnergyChange
-  apply mul_nonneg (abs_nonneg _)
-  linarith [div_lt_one_of_lt hq (by linarith : (0 : ℝ) < q)]
+  exact heckeEnergyChange_nonneg q hq c
 
 /-- Path independence: the total energy change is determined by
     the initial and final states, not the reduction path.

@@ -15,73 +15,70 @@ LaTeX label: `prop:braiding-induced-ordering`
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
+import Mathlib.Data.Fin.Basic
 
 namespace QOU
 
-/-- A monomial basis element: a reduced positive braid word
-    (list of generator indices in {1, ..., n-1}). -/
+/-- The degree-lex relation on `List α`: first compare lengths,
+    then compare lexicographically at equal length. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
-abbrev MonomialBasis := List ℕ
+def DegLex [LT α] (w w' : List α) : Prop :=
+  w.length < w'.length ∨
+  (w.length = w'.length ∧ List.Lex (· < ·) w w')
 
-/-- Degree-lexicographic ordering: compare by length first,
-    then lexicographically on generator indices. -/
+/-- DegLex on `List (Fin n)` is well-founded.
+
+    Strategy: embed into `ℕ ×ₗ List (Fin n)` via `w ↦ (w.length, w)`.
+    The lexicographic product of two well-founded relations is
+    well-founded. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
-instance : LT MonomialBasis where
-  lt := fun w w' =>
-    w.length < w'.length ∨
-    (w.length = w'.length ∧ w < w')
+theorem degLex_wellOrdered (n : ℕ) :
+    WellFounded (DegLex (α := Fin n)) := by
+  -- DegLex w w' ↔ Prod.Lex (· < ·) (List.Lex (· < ·)) (w.length, w) (w'.length, w')
+  -- so DegLex = InvImage (Prod.Lex ...) (fun w => (w.length, w))
+  apply InvImage.wf (f := fun w => (w.length, w))
+  exact Prod.lex_wf Nat.lt_wfRel.wf (List.wellFoundedLT.wf)
 
-/-- The degree-lexicographic ordering on words over a finite
-    alphabet {1, ..., n-1} is a well-ordering.
-
-    Proof: (a) degree ≥ 0, so every non-empty subset has a
-    minimum-degree layer; (b) at fixed degree d, the set of
-    words of length d over {1,...,n-1} is finite; (c) every
-    finite totally ordered set has a minimum. -/
+/-- Admissibility (length component): concatenation preserves
+    the length ordering. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
-theorem degLex_wellOrdered (n : ℕ) (hn : 0 < n) :
-    WellFounded (fun (w w' : List (Fin n)) =>
-      w.length < w'.length ∨
-      (w.length = w'.length ∧ List.Lex (· < ·) w w')) := by
-  -- The degree-lex order is the lexicographic product of
-  -- (length, lex-on-list). Both components are well-founded:
-  -- • ℕ with < is well-founded (Nat.lt_wfRel)
-  -- • List (Fin n) with List.Lex (· < ·) is well-founded
-  --   because Fin n is finite and (· < ·) on Fin n is well-founded.
-  -- Ref: [manuscript] §2/braiding-induced-ordering
-  apply InvImage.wf (fun w => (w.length, w))
-    (Prod.Lex.wf Nat.lt_wfRel.wf (List.isWellFounded_lt (α := Fin n)).wf)
+theorem degLex_admissible_length {α : Type*} [LT α]
+    (u v w w' : List α) (h : w.length < w'.length) :
+    (u ++ w ++ v).length < (u ++ w' ++ v).length := by
+  simp [List.length_append]; omega
 
-/-- The degree-lex ordering is admissible: compatible with
-    left and right multiplication (concatenation of braid words).
-    This follows because degree-lex is compatible with any
-    associative multiplication whose defining relations have
-    leading terms of bounded degree (the Hecke relation is
-    quadratic). -/
+/-- Admissibility (lex component): concatenation with a common
+    prefix preserves the lex ordering. -/
+-- Ref: [manuscript] §2/braiding-induced-ordering
+theorem degLex_admissible_lex {α : Type*} [LT α]
+    (u v w w' : List α) (h : List.Lex (· < ·) w w')
+    (hlen : w.length = w'.length) :
+    List.Lex (· < ·) (u ++ w ++ v) (u ++ w' ++ v) := by
+  induction u with
+  | nil =>
+    simp
+    exact List.Lex.append_left _ h
+  | cons a us ih =>
+    simp [List.cons_append]
+    exact List.Lex.cons a (ih)
+
+/-- Full admissibility: DegLex is preserved under concatenation
+    with common prefix and suffix. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
 -- Ref: [manuscript] unital-groebner-bases/admissible-system
-theorem degLex_admissible (u v w w' : List (Fin n))
-    (h : w.length < w'.length ∨
-      (w.length = w'.length ∧ List.Lex (· < ·) w w')) :
-    (u ++ w ++ v).length < (u ++ w' ++ v).length ∨
-    ((u ++ w ++ v).length = (u ++ w' ++ v).length ∧
-     List.Lex (· < ·) (u ++ w ++ v) (u ++ w' ++ v)) := by
-  simp [List.length_append]
+theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
+    (h : DegLex w w') :
+    DegLex (u ++ w ++ v) (u ++ w' ++ v) := by
+  unfold DegLex at *
   rcases h with h_len | ⟨h_eq, h_lex⟩
-  · left; omega
+  · left; exact degLex_admissible_length u v w w' h_len
   · right
-    refine ⟨by omega, ?_⟩
-    -- Lex order: common prefix u is skipped, then w < w', then
-    -- common suffix v is irrelevant.
-    -- Ref: [manuscript] §2/braiding-induced-ordering
-    exact List.Lex.append_left _ (List.Lex.append_right u h_lex)
+    exact ⟨by simp [List.length_append]; omega,
+           degLex_admissible_lex u v w w' h_lex h_eq⟩
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=
-  ∀ n : ℕ, 0 < n →
-    WellFounded (fun (w w' : List (Fin n)) =>
-      w.length < w'.length ∨
-      (w.length = w'.length ∧ List.Lex (· < ·) w w'))
+  ∀ n : ℕ, WellFounded (DegLex (α := Fin n))
 
 end QOU
