@@ -65,14 +65,17 @@ fibre functors, Frobenius structure, and the dagger involution,
 arriving at the definition of a *quantum universe* — the
 algebraic skeleton encoded in the triple
 $(\mathbf{C},\; A,\; \tau)$ — a rigid monoidal category, a
-Frobenius algebra object, and a fibre functor.
+Frobenius–Hopf object, and a fibre functor.
 
 [Chapter 2](#chap:qou) adds the observability, measurability,
 and volume axioms that promote the quantum universe to a
-*quantum observable universe*, encoded in the archimedean tuple
-$(\mathbf{C},\; \theta,\; G,\; \mathcal{S})$ — the category,
-the quantum connection, the reconstructed symmetry group, and the
-state bundle.  Chapter 2 then develops the geometry: the categorical action,
+*quantum observable universe* — still the triple
+$(\mathbf{C}, A, \tau)$, now constrained so that every internal
+degree of freedom is accessible to measurement.  From these
+axioms the key geometric structures emerge: a quantum connection
+$\theta$, a symmetry group $G = \mathrm{SU}_2(R)$ reconstructed
+via Tannaka–Krein duality, and a state bundle $\mathcal{S}$.
+Chapter 2 then develops the geometry: the categorical action,
 and the three variational equations (Einstein, Yang–Mills,
 and transport).  The categorical action takes the form
 
