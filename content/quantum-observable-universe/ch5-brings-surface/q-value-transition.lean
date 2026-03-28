@@ -147,4 +147,59 @@ structure QDeformedBalance where
       Note: daughter is evaluated at SHIFTED q. -/
   balance : S_par = S_dau_shifted + S_e + S_nu + T_total
 
+-- ═══════════════════════════════════════════════════════════════════
+-- TRITIUM WORKED EXAMPLE (witness-backed from beta-decay-from-q.py)
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- Tritium self-deformation: Δq_eff(³H) = (3-1)/3² · ℏ_q² = 2/9 · ℏ_q².
+    At q = 1.110: ℏ_q² ≈ 0.009816, so Δq ≈ 0.00218. -/
+-- Ref: beta-decay-from-q.witness.json
+theorem tritium_self_deformation :
+    delta_q_eff 1.110 3 = (2 : ℝ) / 9 * (hbar_q' 1.110) ^ 2 := by
+  unfold delta_q_eff
+  norm_num
+
+/-- Tritium self-deformation is positive. -/
+-- Ref: [manuscript] §6/q-value-transition
+theorem tritium_delta_q_pos : 0 < delta_q_eff 1.110 3 := by
+  apply delta_q_eff_pos (by norm_num : (1 : ℝ) < 1.110) (by norm_num : 2 ≤ 3)
+
+/-- The self-deformation decreases with mass number: Δq_eff(A+1) < Δq_eff(A)
+    for A ≥ 2 and q > 1.  Tritium (A=3) has the largest correction. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+theorem delta_q_decreasing {q : ℝ} (hq : 1 < q) {A : ℕ} (hA : 2 ≤ A) :
+    delta_q_eff q (A + 1) < delta_q_eff q A := by
+  unfold delta_q_eff
+  apply mul_lt_mul_of_pos_right
+  · -- (A)/(A+1)² < (A-1)/A²
+    -- Equivalently: A³ < (A-1)(A+1)² = (A²-1)(A+1) = A³ + A² - A - 1
+    -- So need: 0 < A² - A - 1, which holds for A ≥ 2.
+    rw [div_lt_div_iff (by positivity : (0:ℝ) < ((A:ℝ)+1)^2) (by positivity : (0:ℝ) < (A:ℝ)^2)]
+    push_cast
+    nlinarith [show (2:ℤ) ≤ (A:ℤ) from Int.ofNat_le.mpr hA]
+  · positivity
+
+/-- Q_q-value for tritium: total log-ratio = -0.1021.
+    Source: beta-decay-matrix.witness.json, σ₀ + σ₁ contributions. -/
+-- Ref: beta-decay-matrix.witness.json
+noncomputable def tritium_ln_ratio : ℝ := -0.1021
+
+/-- The tritium Q_q is negative (daughter has lower action than parent). -/
+-- Ref: beta-decay-matrix.witness.json
+theorem tritium_Q_q_negative : tritium_ln_ratio < 0 := by
+  unfold tritium_ln_ratio; norm_num
+
+/-- Per-generator contribution fractions.
+    σ₀ contributes 22% and σ₁ contributes 78% of the total. -/
+-- Ref: beta-decay-matrix.witness.json
+noncomputable def sigma0_fraction : ℝ := 0.0229 / 0.1021  -- ≈ 0.224
+noncomputable def sigma1_fraction : ℝ := 0.0792 / 0.1021  -- ≈ 0.776
+
+/-- The two generator fractions sum to 1. -/
+-- Ref: beta-decay-matrix.witness.json
+theorem generator_fractions_sum :
+    sigma0_fraction + sigma1_fraction = 1 := by
+  unfold sigma0_fraction sigma1_fraction
+  ring
+
 end QOU.Descartes

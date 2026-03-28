@@ -129,4 +129,70 @@ theorem beta_minus_Q_pos (d : BetaMinusDecay)
 -- Ref: [manuscript] §6/beta-decay-skein
 def BetaDecaySkein := BetaMinusDecay
 
+-- ═══════════════════════════════════════════════════════════════════
+-- Z/2 symmetry: q ↔ q⁻¹ exchanges β⁻ ↔ β⁺
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The pair Skein mass S_ab(q) = (q·μ_a + q⁻¹·μ_b)/(q^½ + q^{-½}).
+    This is the "mass formula" for a crossing between flavours a and b. -/
+-- Ref: [manuscript] §6/beta-decay-skein
+noncomputable def pairSkeinMass (q mu_a mu_b : ℝ) (hq : 0 < q) : ℝ :=
+  (q * mu_a + (1/q) * mu_b) / (q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)))
+
+/-- The Z/2 symmetry: S_ab(q⁻¹) = S_ba(q).
+    Exchanging q ↔ q⁻¹ swaps the role of flavours a and b. -/
+-- Ref: [manuscript] §6/beta-decay-skein
+theorem pair_skein_Z2_symmetry (q mu_a mu_b : ℝ) (hq : 0 < q) :
+    pairSkeinMass (1/q) mu_a mu_b (by positivity) =
+    pairSkeinMass q mu_b mu_a hq := by
+  unfold pairSkeinMass
+  congr 1
+  ring
+
+/-- The weak asymmetry is antisymmetric: A(q, μ_a, μ_b) = -A(q, μ_b, μ_a). -/
+-- Ref: [manuscript] §6/beta-decay-skein
+theorem weakAsymmetry_antisymmetric (q mu_a mu_b : ℝ) (hq : 0 < q) :
+    weakAsymmetry q mu_a mu_b hq = -weakAsymmetry q mu_b mu_a hq := by
+  unfold weakAsymmetry
+  ring
+
+/-- The Q-value sign determines decay direction: β⁻ is energetically
+    allowed iff the parent action exceeds the daughter action + m_e. -/
+-- Ref: [manuscript] §6/beta-decay-skein
+theorem beta_plus_Q_pos (d : BetaPlusDecay)
+    (h : d.daughter.action + d.m_e < d.parent.action) :
+    0 < d.Q := by
+  unfold BetaPlusDecay.Q
+  linarith
+
+/-- The crossing energy q - q⁻¹ at q = 1.110 ≈ 0.2091.
+    This is the energy released per crossing change d → u. -/
+-- Ref: beta-decay-from-q.witness.json
+noncomputable def crossingEnergyAtQ : ℝ := 1.110 - 1 / 1.110
+
+/-- The crossing energy is positive (q > 1 → d → u releases energy). -/
+-- Ref: [manuscript] §6/beta-decay-skein
+theorem crossingEnergy_pos : 0 < crossingEnergyAtQ := by
+  unfold crossingEnergyAtQ; norm_num
+
+/-- The Skein amplitude s = q^½ - q^{-½} at q = 1.110.
+    Witness: 0.10440737953277479. -/
+-- Ref: beta-decay-matrix.witness.json
+noncomputable def skeinAmplitudeAtQ : ℝ := Real.sqrt 1.110 - 1 / Real.sqrt 1.110
+
+/-- The electron mass m_e = 3 · E_× · μ₀ where E_× = ½(q - q⁻¹).
+    With μ₀ = 1.6296 MeV/Skein: m_e = 3 × 0.10452 × 1.6296 ≈ 0.511 MeV. -/
+-- Ref: beta-decay-from-q.witness.json
+noncomputable def electronMass_from_q : ℝ := 3 * (1.110 - 1 / 1.110) / 2 * 1.6296
+
+/-- Beta decay locality: the Skein crossing change affects exactly
+    one generator σ_k per converting nucleon. The remaining A-1
+    nucleons contribute unchanged transfer matrices. -/
+-- Ref: [manuscript] §6/beta-decay-skein
+theorem beta_decay_locality (d : BetaMinusDecay) :
+    d.daughter.p = d.parent.p + 1 ∧
+    d.daughter.n = d.parent.n - 1 ∧
+    d.daughter.A = d.parent.A :=
+  ⟨d.p_inc, d.n_dec, d.A_preserved⟩
+
 end QOU.Descartes

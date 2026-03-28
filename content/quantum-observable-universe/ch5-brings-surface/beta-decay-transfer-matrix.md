@@ -93,10 +93,10 @@ $\frac{qs}{2}$ is $\frac{1-q^2}{2} \cdot 0 + \frac{qs}{2}
 \cdot 1$.  The $(1,1)$ entry is $\frac{1-q^2}{2}(q - q^{-1})
 + \frac{qs}{2} \cdot 1$.  $\square$
 
-**Explicit entries at $q = 1.1097$:**
+**Explicit entries at $q = 1.110$:**
 
 $$
-  \Delta_\beta(1.1097) \;=\;
+  \Delta_\beta(1.110) \;=\;
   \begin{pmatrix}
     +0.0337 & -0.1161 \\
     -0.1161 & +0.0579
