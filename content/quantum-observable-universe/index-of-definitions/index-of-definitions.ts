@@ -8,7 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * their locations.
  */
 export default chapter({
-  tabLabel: "X",
+  tabLabel: "D",
   title: "Index of Definitions",
   label: "app:index-definitions",
   sections: [

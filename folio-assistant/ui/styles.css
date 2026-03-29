@@ -598,6 +598,41 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .cp-block-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}
 .cp-empty{color:var(--fg-d);font-style:italic;padding:2rem;text-align:center}
 
+/* ── Block preview popup ────────────────────────────────── */
+.blk-popup{position:fixed;z-index:400;max-width:520px;max-height:60vh;background:var(--bg-s);border:1px solid var(--brd);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.25);overflow:hidden;display:none;flex-direction:column}
+.blk-popup.vis{display:flex}
+.blk-popup-head{display:flex;align-items:center;gap:.4rem;padding:.4rem .6rem;background:var(--bg-r);border-bottom:1px solid var(--brd);font-family:var(--f-head);font-size:.75rem}
+.blk-popup-head .bk{font-size:.6rem}
+.blk-popup-title{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.blk-popup-expand,.blk-popup-close{background:none;border:none;color:var(--fg-d);cursor:pointer;font-size:.85rem;padding:0 .2rem;line-height:1}
+.blk-popup-expand:hover,.blk-popup-close:hover{color:var(--ac)}
+.blk-popup-body{padding:.6rem .8rem;overflow-y:auto;font-size:.85rem;line-height:1.6;flex:1}
+.blk-popup-body p{margin:.3em 0}
+
+/* ── Fullscreen block modal ────────────────────────────── */
+.blk-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500}
+.blk-modal{position:fixed;top:44px;left:0;right:0;bottom:0;background:var(--bg);z-index:501;overflow-y:auto;padding:2rem 2rem 4rem}
+.blk-modal-head{display:flex;justify-content:flex-end;margin-bottom:1rem}
+.blk-modal-close{background:none;border:1px solid var(--brd);color:var(--fg-d);font-size:1.3rem;cursor:pointer;padding:.2rem .6rem;border-radius:4px;transition:all .15s}
+.blk-modal-close:hover{color:var(--red);border-color:var(--red)}
+
+/* ── Markdown tables ────────────────────────────────────── */
+.md-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.8rem 0}
+.md-table th{font-family:var(--f-head);font-size:.65rem;text-transform:uppercase;letter-spacing:.04em;color:var(--fg-d);text-align:left;padding:.4rem .6rem;border-bottom:2px solid var(--brd)}
+.md-table td{padding:.35rem .6rem;border-bottom:1px solid var(--brd);vertical-align:top;font-size:.8rem}
+.md-table tr:hover{background:var(--bg-r)}
+.md-h3{font-family:var(--f-head);font-size:1.1rem;font-weight:500;color:var(--fg-b);margin:1.2rem 0 .6rem}
+.md-h4{font-family:var(--f-head);font-size:.95rem;font-weight:500;color:var(--fg-b);margin:1rem 0 .5rem}
+
+/* ── Index inline expansion ─────────────────────────────── */
+.idx-expand{padding:.4rem 0}
+.idx-expand .env{border-radius:4px}
+
+/* ── Copy button for stubs ─────────────────────────────── */
+.blk-copy{position:absolute;top:.4rem;right:2.5rem;background:var(--bg-r);border:1px solid var(--brd);color:var(--fg-d);cursor:pointer;font-size:.75rem;padding:.15rem .3rem;border-radius:3px;opacity:0;transition:opacity .2s}
+.env:hover .blk-copy{opacity:1}
+.blk-copy:hover{border-color:var(--ac);color:var(--ac)}
+
 /* Mobile */
 @media(max-width:480px){
   .chat-panel{right:0;width:100%;max-width:100%;height:100vh;border-radius:0}
