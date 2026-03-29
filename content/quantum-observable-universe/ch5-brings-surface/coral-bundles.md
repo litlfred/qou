@@ -2,11 +2,11 @@ The spacetime--chiral decomposition of Bring's surface maps naturally onto
 three classical bundle structures over the $\mathbb{P}^1(\mathbb{C})$ base $z=x_0/x_1$.
 
 **Cotangent bundle.**
-The three-sheeted cubic ([chiral elliptic curve](#prop:chiral-elliptic)) realises the chiral
+The three-sheeted cubic ([coral elliptic curve](#prop:coral-elliptic)) realises the coral
 variables $X=(x_2,x_3,x_4)$ as a *spectral curve*
 $\Sigma\subset T^{*}\mathbb{P}^1(\mathbb{C})$: the base coordinate $z$ parametrises
 spacetime position, and the three roots $X_1,X_2,X_3$ of
-[chiral elliptic curve](#prop:chiral-elliptic) are eigenvalues of a Higgs-like
+[coral elliptic curve](#prop:coral-elliptic) are eigenvalues of a Higgs-like
 field $\Phi$ on the base.  The six singular fibres (where the discriminant
 $\Delta(z)$ vanishes) are the loci at which eigenvalues coincide and the
 differential $dX$ degenerates in the cotangent fibre.

@@ -22,8 +22,8 @@ pairs $(p, A) \in \mathbb{Z}^2$ with $t = A^{1/3}$ and
 $A = t^3 \in \mathbb{Z}$.
 
 **Comparison with the chiral fibration.**
-The chiral elliptic curve of Bring's surface
-([chiral elliptic](#prop:chiral-elliptic)) is the cubic
+The color elliptic curve of Bring's surface
+([color elliptic](#prop:color-elliptic)) is the cubic
 
 $$
   X^3 + (z + 1)\,X^2 + (z^2 + z + 1)\,X

@@ -45,16 +45,16 @@ export default chapter({
         "color-tube-interpretation",
         "c5-color-tube",
         "intrinsic-color-cubic-pairing",
-        // Chiral fibration and elliptic curves
-        "chiral-elliptic",
-        "chiral-elliptic-proof",
+        // Coral fibration and elliptic curves
+        "coral-elliptic",
+        "coral-elliptic-proof",
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
         "t-duality-color-tube",
         "color-tube-subloci",
         // Bundle structures and smoothness
-        "chiral-bundles",
+        "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
         "briggs-klein-chart",
@@ -79,7 +79,7 @@ export default chapter({
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
-        "chiral-sector-coords",
+        "coral-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",

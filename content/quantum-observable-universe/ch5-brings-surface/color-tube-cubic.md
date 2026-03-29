@@ -1,8 +1,8 @@
-At fixed $z \in \mathbb{P}^1(\mathbb{C})$, the three chiral roots of the
-elliptic cubic ([chiral elliptic curve](#prop:chiral-elliptic)) each satisfy the cubic in
+At fixed $z \in \mathbb{P}^1(\mathbb{C})$, the three color roots of the
+elliptic cubic ([color elliptic curve](#prop:color-elliptic)) each satisfy the cubic in
 the color tube coordinate $\mathbf{c} \in \{\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z\}$
 obtained by substituting $X = \mathbf{c} + z$
-into the chiral elliptic equation.  Expanding gives the
+into the color elliptic equation.  Expanding gives the
 *color tube cubic*:
 
 ```tex

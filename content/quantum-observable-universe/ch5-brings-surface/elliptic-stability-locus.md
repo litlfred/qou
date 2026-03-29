@@ -1,13 +1,13 @@
-The stability curve and the chiral fibration of Bring's surface
+The stability curve and the color fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
 nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
-isogenous to the chiral fiber $\mathcal{E}_z$.
+isogenous to the color fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
-The chiral elliptic curve
-([chiral elliptic](#prop:chiral-elliptic)) at spacetime ratio
+The color elliptic curve
+([color elliptic](#prop:color-elliptic)) at spacetime ratio
 $z$ is
 
 $$

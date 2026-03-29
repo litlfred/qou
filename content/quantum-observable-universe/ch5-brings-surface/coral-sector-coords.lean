@@ -6,7 +6,7 @@ parametrically on the exceptional divisor with chiral twist qφ
 rotating each sector.  They tile the exceptional divisor
 exactly at each brane point.
 
-LaTeX label: `def:chiral-sector-coords`
+LaTeX label: `def:coral-sector-coords`
 -/
 
 import Mathlib.Data.Real.Basic
@@ -26,7 +26,7 @@ namespace QOU
       𝔤(φ, ψ) = 𝔯(φ, ψ + 2π/3)
       𝔟(φ, ψ) = 𝔯(φ, ψ + 4π/3)
 
-    LaTeX: `\label{def:chiral-sector-coords}`
+    LaTeX: `\label{def:coral-sector-coords}`
     Ref: [manuscript] Chapter 6, §Colour-sector coordinates -/
 structure ChiralSectorCoords where
   /-- The radius of the ℙ¹(ℂ) fibre. -/

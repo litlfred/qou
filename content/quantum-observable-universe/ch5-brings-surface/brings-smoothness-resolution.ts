@@ -10,7 +10,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:chiral-bundles",
+    "rem:coral-bundles",
     "def:briggs-klein-chart",
   ],
 });

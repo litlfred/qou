@@ -7,7 +7,7 @@ The chiral elliptic fibre E_z at spacetime ratio z is defined by the cubic
 For generic z this is an elliptic curve whose j-invariant varies as a
 rational function of z.
 
-LaTeX label: `prop:chiral-elliptic`
+LaTeX label: `prop:coral-elliptic`
 -/
 
 import Mathlib.Data.Real.Basic

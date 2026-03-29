@@ -89,7 +89,7 @@ differential*:
 
 where $X\in\{x_2,x_3,x_4\}$ is the internal momentum (Higgs-field
 eigenvalue) defining the spectral curve
-([chiral bundles](#rem:chiral-bundles)), and $z$ is the spacetime position.
+([color bundles](#rem:color-bundles)), and $z$ is the spacetime position.
 The exact physical properties of the topological defects---specifically
 the mass/energy spectrum generating the torsion---are rigorously
 determined by integrating this differential along the fundamental

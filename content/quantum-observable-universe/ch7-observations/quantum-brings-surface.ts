@@ -13,7 +13,7 @@ export default simulator({
   html: "folio-assistant/simulators/quantum_brings_surface.html",
   uses: [
     "def:quaternionic-spectral-resolvents",
-    "prop:chiral-elliptic",
+    "prop:coral-elliptic",
     "def:color-tube-coordinates",
   ],
   tags: ["brings-surface", "chiral", "quantum", "julia-set", "3d", "simulation"],

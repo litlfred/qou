@@ -35,7 +35,7 @@ def colorTubeCubic (R : Type*) [CommRing R] (z c : R) : R :=
   c ^ 3 + (4 * z + 1) * c ^ 2 + (6 * z ^ 2 + 3 * z + 1) * c +
     (4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1)
 
-/-- The chiral cubic polynomial (from chiral-elliptic). -/
+/-- The color cubic polynomial (from color-elliptic). -/
 -- Ref: [manuscript] §5, Chiral fibration
 def chiralCubicPoly (R : Type*) [CommRing R] (z X : R) : R :=
   X ^ 3 + (z + 1) * X ^ 2 + (z ^ 2 + z + 1) * X + (z ^ 3 + z ^ 2 + z + 1)
