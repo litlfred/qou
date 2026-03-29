@@ -113,7 +113,7 @@ The Hecke algebra provides the crossing coefficients, the Markov
 trace computes Skein polynomials, and the topological mass formula
 
 $$
-  \mathfrak{m}(K) \;=\; \frac{\operatorname{Vol}(K)}{\hbar_q^{\,2}}
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}}
 $$
 
 expresses the mass of a particle knot $K$ in terms of the
