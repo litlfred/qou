@@ -35,7 +35,7 @@ The crossing energy is determined by the threading link's
 Alexander polynomial evaluated at the substrate parameter:
 
 $$
-  E_{\mathrm{cross}}(\mathcal{R}_N)
+  \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)
   \;\propto\;
   \Delta_{T(2,N)}(q).
 $$

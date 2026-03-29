@@ -1,9 +1,9 @@
-Let $\gamma$ be a stable vortex filament of length $L$ in the
+Let $\varrho$ be a stable vortex filament of length $L$ in the
 brane fluid with [substrate parameter](#def:substrate-parameter)
 $q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
-sections of the normal bundle $N_\gamma$.  Then:
+sections of the normal bundle $N_\varrho$.  Then:
 
-1. The eigenvalues of $\Delta_q$ restricted to $\gamma$ form a
+1. The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a
    discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ with
 
    $$
@@ -17,7 +17,7 @@ sections of the normal bundle $N_\gamma$.  Then:
 2. The **intensity levels** of the vortex are indexed by the
    spin label $j \in \frac{1}{2}\mathbb{Z}_{\geq 0}$ of the
    $\mathrm{SU}_q(2)$ representation carried by the holonomy
-   around $\gamma$.  The vortex energy at level $j$ is
+   around $\varrho$.  The vortex energy at level $j$ is
 
    $$
      E_j^{(q)} \;=\;

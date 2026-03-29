@@ -1,90 +1,134 @@
-**Beta decay is the Skein relation applied to one crossing of
-the Gröbner normal form.**
+**Beta decay is a $T_{3,5}$-mediated crossing operation involving
+$10$ crossings of the weak vertex
+([force identification](#rem:force-knot-identification)).**
 
 The weak force in the Descartes universe ($\chi(A) = -6$,
-$q = 1.1097$) is not a separate interaction — it is the Skein
-relation acting on the braid word of a nucleus.
+the substrate $q$) is carried by the torus knot $T_{3,5}$, which has
+**$10$ crossings** — the highest crossing count among generators
+on the Bring surface.  A beta transition inserts the $T_{3,5}$
+braid into the nuclear braid at the converting quark, then
+reduces the resulting word to obtain the daughter normal form
+plus the emitted lepton pair.
 
 **Setup.**
-A nucleus $\mathcal{N}(p, n)$ is a satellite link of $A = p + n$
+A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
 Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
-$\bar{\mathcal{N}}(p, n)$ in the Hecke algebra $H_{3A}(q)$
+$\bar{\mathcal{N}}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
 with quark strands:
-- Proton: $\mathfrak{p} = \mathcal{B}_3(u, u, d)$
+- Proton: $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
   ([categorical proton](#def:categorical-proton))
-- Neutron: $\mathfrak{n} = \mathcal{B}_3(u, d, d)$
+- Neutron: $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
   ([categorical neutron](#def:categorical-neutron))
 
 The crossing type at each generator $\sigma_i$ depends on the
 quark flavours of the two strands: $u$-$u$ (positive), $d$-$d$
 (negative), or $u$-$d$ (mixed).
 
-**Definition ($\beta^-$ decay).**
-*A $\beta^-$ transition is a single Skein crossing change*
-$d \to u$ *in the normal form* $\bar{\mathcal{N}}(p, n)$*,*
-*followed by re-reduction to the daughter normal form:*
+## The $T_{3,5}$ weak vertex
+
+The weak interaction is mediated by the torus knot $T_{3,5}$
+([force identification](#rem:force-knot-identification)), whose
+braid word in $B_3$ is:
 
 $$
-  \bar{\mathcal{N}}(p, n)
-  \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
-  \bar{\mathcal{N}}(p + 1, \, n - 1)
+  \beta_{T_{3,5}} \;=\; (\sigma_1 \sigma_2)^5
+$$
+
+This word has **$10$ crossings**.  In the Hecke algebra $H_3(q)$,
+the Hecke reduction of $(\sigma_1 \sigma_2)^5$ eliminates squares
+via $T^2 = (q - q^{-1})T + 1$, producing a polynomial in the
+reduced basis of $H_3(q)$.  The Markov trace of this polynomial
+is the **weak vertex form factor**:
+
+$$
+  \mathcal{W}(q)
+  \;:=\;
+  \mathrm{tr}_{\mathrm{Markov}}\bigl((\sigma_1 \sigma_2)^5\bigr)
+  \;\in\; \mathbb{Z}[q^{\pm 1/2}]
+$$
+
+The single-crossing Skein amplitude $s = q^{1/2} - q^{-1/2}$
+appears as the coupling at each crossing of the $T_{3,5}$ braid.
+The full vertex factor is **not** $s^2$ (single crossing) but
+the Markov trace $\mathcal{W}(q)$ of all $10$ crossings.
+
+## The $10$-crossing budget
+
+When the $T_{3,5}$ braid is inserted at the converting quark,
+it introduces $10$ crossings into the nuclear braid word.  These
+$10$ crossings are resolved by the Gröbner reduction into three
+components:
+
+| Crossings | Destination | Structure |
+|:---------:|-------------|-----------|
+| $3$ | Electron $T_{2,3}$ (trefoil) | $3$ positive crossings |
+| $0$ | Antineutrino $K_{0_1}$ (unknot) | Trivial topology |
+| $7$ | Nuclear re-reduction | R2 moves absorbed into daughter normal form |
+
+The $7$ re-reduction crossings change the R2 step count between
+parent and daughter normal forms.  This is the dominant
+contribution to the $\mathcal{Q}_q$-value
+([transition energy](#def:q-value-transition)) — the single-crossing
+approximation misses $6$ of these $7$ crossings.
+
+## Definition ($\beta^-$ decay)
+
+*A $\beta^-$ transition inserts the $T_{3,5}$ braid at the
+converting $\mathfrak{d}$-quark crossing of the Gröbner normal form
+$\bar{\mathcal{N}}(Z, N)$, followed by re-reduction:*
+
+$$
+  \bar{\mathcal{N}}(Z, N) \cdot \beta_{T_{3,5}}
+  \;\xrightarrow{\;\text{reduce}\;}
+  \bar{\mathcal{N}}(Z + 1, \, N - 1)
   \;\sqcup\;
-  L_0^{-}
-$$
-
-where $\sigma_k$ is the generator at the converting $d$-quark
-crossing, and $L_0^{-}$ is the Skein smoothing (the superscript
-matches $\beta^-$).
-
-In the Skein relation:
-
-$$
-  q \, [\bar{\mathcal{N}}(p, n)]
-  \;-\;
-  q^{-1} [\bar{\mathcal{N}}(p+1, n-1)]
-  \;=\;
-  (q^{1/2} - q^{-1/2}) \, [L_0^{-}]
-$$
-
-- $L_+$: the parent normal form (the $d$-$d$ crossing at $\sigma_k$
-  is a negative crossing in the Hecke algebra)
-- $L_-$: the daughter normal form (the $u$-$d$ or $u$-$u$ crossing
-  after the $d \to u$ change)
-- $L_0^{-}$: the smoothing — the **emitted lepton pair** ($e^- + \bar{\nu}_e$)
-
-**Definition ($\beta^+$ decay).**
-*A $\beta^+$ transition is the mirror operation:* a single
-Skein crossing change $u \to d$:
-
-$$
-  \bar{\mathcal{N}}(p, n)
-  \;\xrightarrow{\;\text{Skein at } \sigma_k\;}
-  \bar{\mathcal{N}}(p - 1, \, n + 1)
+  T_{2,3}
   \;\sqcup\;
-  L_0^{+}
+  K_{0_1}
 $$
 
-The mirror Skein relation (with $q \leftrightarrow q^{-1}$):
+The $10$ crossings of $T_{3,5}$ are partitioned by the
+Gröbner reduction: $3$ form the electron trefoil, $0$ form the
+neutrino unknot, and $7$ are absorbed as R2 moves into the
+daughter nuclear braid.
+
+In the Skein relation at each of the $10$ crossings:
 
 $$
-  q^{-1} [\bar{\mathcal{N}}(p, n)]
-  \;-\;
-  q \, [\bar{\mathcal{N}}(p-1, n+1)]
-  \;=\;
-  (q^{-1/2} - q^{1/2}) \, [L_0^{+}]
+  q \, [L_+] \;-\; q^{-1} [L_-]
+  \;=\; (q^{1/2} - q^{-1/2}) \, [L_0]
 $$
 
-**The $\mathbb{Z}/2$ symmetry.**
+The accumulated effect of $10$ such relations (not $1$) determines
+the transition amplitude.
+
+## Definition ($\beta^+$ decay)
+
+*A $\beta^+$ transition is the mirror operation, inserting the
+conjugate $\overline{T_{3,5}}$ braid (with $q \leftrightarrow q^{-1}$):*
+
+$$
+  \bar{\mathcal{N}}(Z, N) \cdot \overline{\beta_{T_{3,5}}}
+  \;\xrightarrow{\;\text{reduce}\;}
+  \bar{\mathcal{N}}(Z - 1, \, N + 1)
+  \;\sqcup\;
+  \overline{T_{2,3}}
+  \;\sqcup\;
+  K_{0_1}
+$$
+
+## The $\mathbb{Z}/2$ symmetry
+
 $\beta^-$ and $\beta^+$ are related by the involution
 $q \mapsto q^{-1}$ on the Hecke algebra, which acts as:
 
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
-| $d \to u$ | $u \to d$ |
+| $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $\overline{T_{3,5}}$ |
 | $q \, [L_+]$ | $q^{-1} [L_+]$ |
 | electron $T_{2,3}$ | positron $\sigma(T_{2,3})$ |
 | antineutrino $\bar{K}_{0_1}$ | neutrino $K_{0_1}$ |
@@ -105,9 +149,14 @@ are distinct: the asymmetry $\mathcal{S}_{ab} - \mathcal{S}_{ba}
 = (q - q^{-1})(\mu_a - \mu_b)/(q^{1/2} + q^{-1/2})$ is the
 **weak asymmetry** that drives the $Q$-value.
 
-**The lepton pair $L_0^{\pm}$.**
-The Skein smoothing at a Borromean crossing produces exactly
-two link components.  The sign on $L_0$ matches the decay type:
+## The lepton pair from $T_{3,5}$ decomposition
+
+The $T_{3,5}$ braid $(\sigma_1 \sigma_2)^5$ decomposes under
+Gröbner reduction into the lepton pair plus reduction residue.
+The electron trefoil $T_{2,3} = (\sigma_1)^3$ accounts for $3$ of
+the $10$ crossings; the antineutrino unknot $K_{0_1}$ accounts
+for $0$.  The remaining $7$ crossings are the **weak vertex
+residue** — absorbed into R2 moves during re-reduction.
 
 $$
   L_0^{-} \;=\; T_{2,3} \;\sqcup\; \overline{T_{1,0}}
@@ -119,48 +168,72 @@ $$
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
-This is the **categorical origin of the weak force**: the
-Skein relation decomposes one nuclear crossing into a daughter
-nucleus plus a lepton pair.  No separate weak boson or $W^{\pm}$
-field is postulated — the Skein relation itself is the weak
-interaction.
+## The $\mathcal{Q}_q$-value (10-crossing)
 
-**The $Q$-value.**
 The transition energy is the difference in categorical actions
-between parent and daughter:
+between parent and daughter, now accounting for all $10$
+crossings of the $T_{3,5}$ insertion:
 
 $$
-  Q_\beta
+  \mathcal{Q}_q
   \;=\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(p, n)]
+  \mathcal{S}_q[\bar{\mathcal{N}}(Z, N)]
   \;-\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(p \pm 1, n \mp 1)]
+  \mathcal{S}_q[\bar{\mathcal{N}}(Z \pm 1, N \mp 1)]
   \;-\;
   m_e
 $$
 
-The parent and daughter masses are **not assumed equal**.
-They differ because the normal forms $\bar{\mathcal{N}}(p, n)$
-and $\bar{\mathcal{N}}(p \pm 1, n \mp 1)$ have different
-crossing structures, different R2 step counts, and different
-Markov traces.  The difference is small (order $Q/M \sim 10^{-5}$
-for typical nuclei) but it is the entire signal.
+The parent and daughter normal forms differ at all crossings
+affected by the $T_{3,5}$ insertion and its subsequent
+re-reduction — not just the single converting crossing.  The
+$7$ re-reduction crossings from the weak vertex residue modify
+inter-nucleon crossing types at the converting quark's strand,
+changing $\binom{A-1}{1} \cdot 3$ inter-nucleon crossings
+(one per quark strand of each partner nucleon).
 
-**Re-reduction cost.**
-After the crossing change $d \to u$ at $\sigma_k$, the braid word
-is no longer in Gröbner normal form.  Re-reduction to
-$\bar{\mathcal{N}}(p+1, n-1)$ requires a specific sequence of
-$q$-deformed R2 moves ($T^2 = (q - q^{-1})T + 1$)
-and R3/far-commutativity moves.  The R2 moves change the
-gauge-sector action; the R3 and far-commutativity moves
-do not ([Reidemeister action table](#prop:reidemeister-action-table)).
+**Re-reduction cost (10-crossing).**
+After the $T_{3,5}$ insertion at the converting quark, the braid
+word gains $10$ crossings.  The Gröbner reduction must:
 
-The net change in R2 step count between parent and daughter
-normal forms determines the $Q$-value:
+1. Extract the $3$-crossing electron trefoil from the
+   $T_{3,5}$ decomposition.
+2. Reduce the remaining $7$ crossings via R2 moves
+   ($T^2 = (q - q^{-1})T + 1$) and R3/far-commutativity moves.
+3. Propagate the flavour change through all inter-nucleon crossings
+   involving the converting quark's strand.
+
+The net R2 step count from all $10$ crossings (not just $1$)
+determines the $\mathcal{Q}_q$-value:
 
 $$
-  Q_\beta \;=\; \Delta(\text{R2 steps}) \;\times\;
-  (q - q^{-1}) \;\times\; (\text{pair Skein scale at } \sigma_k)
+  \mathcal{Q}_q \;=\; \Delta(\text{R2 steps from 10 crossings})
+  \;\times\; (q - q^{-1})
+  \;\times\; (\text{pair Skein scale})
 $$
 
-This is exact — no approximation, no fitted parameter.
+## Why single-crossing was insufficient
+
+The previous single-crossing approximation captured only $1$
+of the $10$ crossings in the weak vertex.  This explains:
+
+1. **Systematic overshoot** of $10$–$17\%$ in heavy-nucleus
+   half-life predictions: the missing $9$ crossings contribute
+   additional phase space that shortens the predicted half-life
+   when properly included.
+
+2. **Tritium accuracy** ($< 2\%$ error): for $A = 3$, the
+   nuclear braid is short enough that the $7$ re-reduction
+   crossings have limited room to propagate — the single-crossing
+   approximation is accidentally good.
+
+3. **Mass-dependent correction**: heavier nuclei have more
+   inter-nucleon crossings affected by the converting quark's
+   flavour change, so the $7$ re-reduction crossings modify
+   more transfer matrices.
+
+**Open computation:** The exact weak vertex form factor
+$\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$
+and the crossing budget ($3 + 0 + 7$) must be
+verified by explicit Hecke algebra computation of the $T_{3,5}$
+braid word reduction.

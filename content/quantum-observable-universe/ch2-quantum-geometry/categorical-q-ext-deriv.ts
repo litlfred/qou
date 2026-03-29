@@ -11,7 +11,7 @@ export default definition({
   uses: [
     "def:categorical-connection",
     "def:substrate-parameter",
-    "def:positive-definite-dagger",
+    "prop:positive-definite-dagger",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-q-ext-deriv-0.svg", blockIndex: 0, hash: "1098849523c8" },

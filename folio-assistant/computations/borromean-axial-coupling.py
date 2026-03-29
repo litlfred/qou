@@ -217,7 +217,7 @@ for name, braid in braid_candidates.items():
 # ── Combined computation ────────────────────────────────────────
 # The full g_A computation requires:
 # 1. The nucleon braid (from Borromean topology)
-# 2. The weak vertex operator (crossing change at converting strand)
+# 2. The weak vertex operator (Hecke generator = crossing change at converting strand on 𝒮_p)
 # 3. The matrix element in both vector and axial channels
 # 4. The spin-isospin Clebsch-Gordan coefficient
 

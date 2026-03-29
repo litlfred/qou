@@ -6,7 +6,7 @@ $s = \sqrt{q}$.  The chiral elliptic fiber
 at spacetime ratio $z = s - s^{-1}$ is the elliptic curve
 
 $$
-  E_q \;:\;
+  \mathcal{E}_q \;:\;
   y^2 \;=\; x^3
   \;+\; \frac{2s^4 + s^3 - 2s^2 - s + 2}{3s^2}\,x
   \;+\; \frac{5(s^2 + s - 1)(4s^4 - s^3 - 4s^2 + s + 4)}{27s^3}
@@ -30,7 +30,7 @@ $$
 
 **Invariants.**
 
-| Quantity | Formula | Value at $q = 1.1097$ |
+| Quantity | Formula | Value at the substrate parameter $q$ |
 |----------|---------|---------------------|
 | Discriminant | $\Delta(q)$ | $-18.95$ |
 | $j$-invariant | $j(q) = 256(2z^2 + z + 2)^3 / \Delta$ | $129.9$ |
@@ -58,7 +58,7 @@ $(s^2 + s - 1)$ in its numerator.  This vanishes at
 $s = (\sqrt{5} - 1)/2 = 1/\varphi$, the reciprocal of the
 golden ratio $\varphi = (1 + \sqrt{5})/2$.  At this value
 $q = 1/\varphi^2 = (3 - \sqrt{5})/2 \approx 0.382$, the
-curve $E_q$ acquires a cusp: the elliptic fiber degenerates
+curve $\mathcal{E}_q$ acquires a cusp: the elliptic fiber degenerates
 and the chiral fibration becomes singular.
 
 This is the **sub-classical regime** $q < 1$ where the
@@ -70,12 +70,12 @@ universe cannot support stable chiral structure.
 **$q$-Dependence of the stability structure.**
 As $q$ varies from $1$ to $\infty$:
 
-| Regime | $q$ | $j(E_q)$ | Physics |
+| Regime | $q$ | $j(\mathcal{E}_q)$ | Physics |
 |--------|-----|----------|---------|
 | Classical | $q = 1$ | $128$ | No crossing asymmetry; $E_1$ is smooth |
-| Sub-golden | $q < 1/\varphi^2$ | undefined | $E_q$ singular; no stable chiral fibers |
+| Sub-golden | $q < 1/\varphi^2$ | undefined | $\mathcal{E}_q$ singular; no stable chiral fibers |
 | Golden threshold | $q = 1/\varphi^2$ | $\to \infty$ | Cusp; chiral degeneration |
-| Physical | $q = 1.1097$ | $129.9$ | Our universe; $E_q$ smooth with $\Delta < 0$ |
+| Physical | the substrate $q$ | $129.9$ | Our universe; $\mathcal{E}_q$ smooth with $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\to 0$ | $j \to 0$; curve approaches CM curve |
 
 *Proof.*

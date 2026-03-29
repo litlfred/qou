@@ -62,7 +62,7 @@ so that each pair sums to zero.
 
 **The $\chi = -6$ constraint.**
 In the Descartes universe, the Euler characteristic
-$\chi(A) = -6$ constrains the Bring surface.  The torus knot
+$\chi(A) = -6$ constrains the Bring's surface.  The torus knot
 generators $T(2, n)$ with $n$ odd and $n \leq 7$ exhaust the
 fermion spectrum ([torus knot generators](#prop:torus-knot-generators)).
 The electron ($T_{2,3}$) and neutrino ($K_{0_1} = T_{2,1}$) are

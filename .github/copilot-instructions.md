@@ -308,7 +308,13 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
 | QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
 | QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
-| State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$ |
+| State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$. Fibre at $p$: `$\mathcal{S}_p$` (never `$E_p$`). |
+| Elliptic curve | `$\mathcal{E}_q$` | Descartes elliptic curve (never `$E_q$`). |
+| Particles | fraktur | Quarks: `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$`. Nucleons: `$\mathfrak{p}, \mathfrak{n}$`. |
+| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing), `$\mathfrak{E}_{\mathrm{bind}}$` (binding). |
+| Color | plain italic | `$c$` (vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}_r$` (chromaticity). |
+| Proton number | `$Z$` | Atomic number (standard nuclear convention). Never use `$p$` for proton count. |
+| Julia-set measure | `$\mu_J$` | Standard measure notation. |
 | Hom-spaces | `$\mathrm{Hom}_{\mathbf{C}}$` | Bold subscript matches the category |
 | Tensor product | `$\otimes$` | (unchanged) |
 | Dual object | `$V^{\vee}$` | Mathlib convention; equivalent to $V^*$ |
@@ -316,8 +322,13 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Braiding | `$\sigma_{X,Y}$` | (unchanged) |
 
 **Do not use** `$\mathcal{C}$` (calligraphic) for categories. Calligraphic
-letters are reserved for sheaves, sites, algebras, and **bundles**
-(`$\mathcal{S}$` = state bundle, `$\mathcal{O}$`, `$\mathcal{A}$`, etc.).
+letters are reserved for sheaves, sites, algebras, bundles, and curves
+(`$\mathcal{S}$` = state bundle, `$\mathcal{E}_q$` = elliptic curve,
+`$\mathcal{O}$`, `$\mathcal{A}$`).
+
+**Numerical substrate values** (`$q = 1.1097$` etc.) **must not appear**
+outside the introduction and Chapter 7 (Physical Observations).
+Geometry chapters use symbolic `$q$`.
 
 **Subordination rules for the archimedean tuple:**
 - $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when

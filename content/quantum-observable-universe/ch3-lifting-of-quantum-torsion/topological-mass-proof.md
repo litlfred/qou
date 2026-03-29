@@ -6,16 +6,16 @@ and evaluation via the quantum dilogarithm.
 
 *Step 1: Eigenspace decomposition of the mass integrand.*
 By the ([mass identity](#def:mass-identity)), the mass of
-the vortex $\gamma$ is
+the vortex $\varrho$ is
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
   \,\bigr\rVert,
 $$
-where $\Sigma$ is a surface with $\partial\Sigma = \gamma$.  The
+where $\Sigma$ is a surface with $\partial\Sigma = \varrho$.  The
 integrand $(\nabla_A q,\; L \wedge F^+)$ is a section of the
 connection--curvature bundle over $\Sigma$, and as such it is an element
 of the section algebra $\Gamma(J^1 \mathcal{S}_{n+1},\, \mathrm{SU}_{q_{n+1}}(2))$
@@ -54,7 +54,7 @@ where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms
 and using the submultiplicativity of $\lVert\cdot\rVert$ (which is an
 equality for the orthogonal decomposition of an idempotent):
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
@@ -71,12 +71,12 @@ The projection $\hat{\tau}_n(\alpha)$ lies in
 $\mathcal{A}_{n+1}^{\mathrm{desc}} = \mathrm{im}\,\hat{\tau}_n$, which is
 isomorphic to the level-$n$ section algebra via the ascent embedding
 $\ell_n$ ([descent involution](#def:descent-involution)).  The surface
-$\Sigma$ with $\partial\Sigma = \gamma$ decomposes under the topological
+$\Sigma$ with $\partial\Sigma = \varrho$ decomposes under the topological
 blow-up as $\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where
-$\Sigma_0$ is a disc spanning the unknot core $\gamma_0$ and each
+$\Sigma_0$ is a disc spanning the unknot core $\varrho_0$ and each
 $D_i$ is the disc (exceptional divisor) inserted at the $i$-th blow-up.
 On $\Sigma_0$ the transient component vanishes
-($\alpha - \hat{\tau}_n(\alpha) = 0$ on the unknot complement, since $\gamma_0$
+($\alpha - \hat{\tau}_n(\alpha) = 0$ on the unknot complement, since $\varrho_0$
 has trivial topology and all sections there factor through level $n$).
 Hence:
 $$
@@ -84,7 +84,7 @@ $$
   \;=\;
   \mathrm{MI}\!\!\int_{\Sigma_0} \alpha
   \;=\;
-  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr),
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho_0;\, \mathfrak{G}\bigr),
 $$
 where the second equality is the nonabelian Stokes
 theorem [yekutieli2015] applied to the disc $\Sigma_0$.
@@ -136,10 +136,10 @@ exceptional fibre $E_i \subset D_i$.
 *Step 4: Quantum dilogarithm evaluation.*
 Combining Steps 1--3:
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
-  \mathrm{Hol}_{\nabla_A}\!\bigl(\gamma_0;\, \mathfrak{G}\bigr)
+  \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho_0;\, \mathfrak{G}\bigr)
   \,\bigr\rVert
   \;+\;
   \sum_{i=1}^{N}

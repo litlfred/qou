@@ -175,7 +175,126 @@ surviving past the work that should have resolved them.
 | Critical path / context audit | `critical-path-analysis` | Archimedean vs categorical |
 | What assumptions does X need | `critical-path-analysis` | Dependency tracing |
 | Preview LaTeX formula/diagram | Local MCP (planned) | Quick render → PNG/SVG |
+| Review / audit chapter or paper | See §External Academic Review below | Tiered escalation |
+| Publication readiness check | See §External Academic Review below | Full integrity pass |
+| Evaluate new claim / evidence | `scientific-accuracy` → Tier 1 → Tier 2 | Escalation if unresolved |
 | **End-of-task review** (automatic) | `scientific-accuracy` + `readability-editing` + `content-validation` | **Mandatory** when any content changed in session |
+
+## External academic review (three-tier model)
+
+The editor has access to three tiers of review capability. **Always start
+at Tier 0 and escalate only when a lower tier raises unresolved issues or
+the user explicitly requests deeper review.**
+
+### Tier 0 — Local skills (always available)
+
+These are the repo-specific skills in `.claude/skills/local/`. They
+understand the content object architecture, Lean formalization, notation
+conventions, and the QOU-specific mathematical constraints. They run
+on every content change as the mandatory fallback.
+
+| Skill | Role in review |
+|-------|----------------|
+| `scientific-accuracy` | Mathematical correctness, q-deformation tracing, no approximations |
+| `readability-editing` | Prose quality, definition hygiene, forward-reference hygiene |
+| `content-validation` | Schema compliance, constraint rules, LaTeX AST, TeX snippets |
+| `content-block-review` | File triple completeness, label conventions, sorry discipline |
+| `remark-audit` | Dangling remarks, `interprets` links, physics↔category ambiguity |
+| `verify-local-substrate` | All observations trace to `def:substrate-parameter` via `uses[]` |
+| `chapter-complexity-review` | Backward edges, graph energy, optimal section ordering |
+| `critical-path-analysis` | Categorical vs archimedean classification, dependency tracing |
+
+### Tier 1 — K-Dense scientific skills (synced, read from disk)
+
+These are synced nightly from `K-Dense-AI/claude-scientific-skills` into
+`.claude/skills/claude-scientific-skills/`. They provide general-purpose
+scientific review capabilities. **Use as augmentation** when Tier 0
+raises issues that benefit from broader scientific methodology checks.
+
+| Skill | When to use |
+|-------|-------------|
+| `peer-review` | Section-by-section manuscript review with reporting-standards checklist |
+| `scientific-critical-thinking` | Claim evaluation, bias detection, logical fallacy identification |
+| `scientific-writing` | Prose quality patterns, IMRAD structure, two-stage writing process |
+| `citation-management` | Citation validation, metadata extraction, DOI checking |
+| `literature-review` | Literature coverage assessment, annotated bibliography |
+| `hypothesis-generation` | When exploring new conjectures or research directions |
+| `scientific-brainstorming` | Cross-disciplinary connections |
+| `arxiv-database` | Literature search, arXiv API queries |
+
+**How to invoke**: Read the `SKILL.md` from `.claude/skills/claude-scientific-skills/<skill>/SKILL.md`
+and follow its instructions. These skills are already on disk.
+
+**Exclude from use** (rendering, not review): `latex-posters`, `matplotlib`,
+`scientific-visualization`, `sympy`.
+
+### Tier 2 — Academic research skills (reference-only, fetched on demand)
+
+These are multi-agent pipeline skills from `Imbad0202/academic-research-skills`.
+They are **not synced locally** — fetch them via the `skill_fetch` MCP tool
+when escalation is needed. They provide the deepest level of academic QC.
+
+| Skill | Agents | When to escalate |
+|-------|--------|------------------|
+| `academic-paper-reviewer` | 7 (EIC + methodology + domain + perspective + devil's advocate + field analyst + editorial synthesizer) | User requests "full review" or "audit"; Tier 0/1 raises CRITICAL issues |
+| `deep-research` | 13 (source verification, evidence grading, GRADE framework) | New claims with uncertain evidence; fact-checking against literature |
+| `academic-pipeline` | 3 (integrity verification, claim verification, state tracking) | Publication readiness check; pre-submission integrity gates |
+
+**How to invoke**: Call `skill_fetch` with the skill identifier:
+
+```
+skill_fetch({ skill: "academic-paper-reviewer" })           # Main SKILL.md
+skill_fetch({ skill: "academic-paper-reviewer/quality-rubrics" })  # 0-100 scoring rubric
+skill_fetch({ skill: "academic-pipeline/integrity-verification" }) # Integrity protocol
+skill_fetch({ skill: "deep-research" })                     # Fact-check / evidence grading
+```
+
+Call `skill_list` to see all available fetchable skills.
+
+**Exclude from use** (rendering/formatting, not review):
+- `formatter_agent`, `visualization_agent`, `abstract_bilingual_agent` from academic-paper
+- All template files and LaTeX compilation
+- Style calibration (we have our own notation conventions)
+
+### Escalation protocol
+
+```
+Content change detected
+  │
+  ├─→ Tier 0: mandatory fallback (scientific-accuracy + readability-editing + content-validation)
+  │     │
+  │     ├─ All clear → DONE
+  │     │
+  │     ├─ Minor issues → fix locally, re-validate → DONE
+  │     │
+  │     └─ CRITICAL issue or user requests review
+  │           │
+  │           ├─→ Tier 1: read relevant K-Dense skill from disk
+  │           │     │
+  │           │     ├─ Resolved → DONE
+  │           │     │
+  │           │     └─ Unresolved or user requests "full review"
+  │           │           │
+  │           │           └─→ Tier 2: skill_fetch → follow fetched instructions
+  │           │                 │
+  │           │                 └─ Produce structured review report with 0-100 rubric
+  │           │
+  │           └─→ Tier 2 directly (if user says "full review" / "audit" / "publication check")
+  │
+  └─→ Formalization work → Tier 0 only (local Lean skills handle this)
+```
+
+### Review modes by request type
+
+| User request | Tier 0 | Tier 1 | Tier 2 |
+|-------------|--------|--------|--------|
+| "edit this section" | mandatory fallback | — | — |
+| "review chapter N" | full local pass | `peer-review` + `sci-critical-thinking` | escalate if CRITICAL |
+| "audit the paper" | full local pass | `peer-review` + `citation-management` | `academic-paper-reviewer` (full mode) |
+| "prepare for publication" | full local pass | all relevant Tier 1 | `academic-pipeline/integrity-verification` + `academic-paper-reviewer` |
+| "check this claim" | `scientific-accuracy` | `sci-critical-thinking` | `deep-research` (fact-check mode) |
+| "is the evidence solid?" | `verify-local-substrate` | `sci-critical-thinking` | `deep-research` (evidence grading) |
+| "full review with devil's advocate" | — | — | `academic-paper-reviewer` (full mode, includes devil's advocate) |
 
 ## Responsibilities
 
@@ -270,6 +389,10 @@ The review pass consists of:
 5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
    confirm `lean.decl` fields match actual Lean declarations.
+6. **Tier escalation** — if steps 1–5 surface CRITICAL issues (unsupported
+   claims, logical gaps, broken evidence chains), escalate per
+   §External Academic Review: Tier 1 (`sci-critical-thinking`,
+   `citation-management`) first, then Tier 2 (`skill_fetch`) if unresolved.
 
 If the review surfaces issues, fix them (or escalate to the author) before
 committing. This rule persists across sessions.

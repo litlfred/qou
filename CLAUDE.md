@@ -26,7 +26,10 @@ Skills are organized under `.claude/skills/`:
 - **`local/`** — repo-specific skills (latex-validation, scientific-accuracy,
   readability-editing)
 - **`<package-name>/`** — skills synced nightly from external packages defined
-  in `skills-config.json`
+  in `skills-config.json` (mode `"sync"`)
+- **Reference packages** — registered in `skills-config.json` with mode
+  `"reference"`, fetched on demand via the `skill_fetch` MCP tool (not
+  synced locally)
 
 ### Skill routing (quick reference)
 
@@ -74,6 +77,34 @@ When a user request arrives, route to the right skill(s):
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
 | "promote remark / add interprets / fix dangling" | `local/remark-audit` + `local/content-validation` | collaborator |
+| "review / audit chapter or paper" | Tier 0 → Tier 1 (`peer-review`) → Tier 2 (`academic-paper-reviewer`) | reader (review) / collaborator (act) |
+| "full review / devil's advocate" | `skill_fetch("academic-paper-reviewer")` (Tier 2) | collaborator |
+| "publication readiness / final check" | All tiers: local + `peer-review` + `skill_fetch("academic-pipeline/integrity-verification")` | collaborator |
+| "check claim / evidence quality" | `local/scientific-accuracy` → `sci-critical-thinking` → `skill_fetch("deep-research")` | reader |
+| "fact-check / source verification" | `skill_fetch("deep-research")` (fact-check mode) | reader |
+
+### External skill packages
+
+Skills come from three sources, forming a tiered escalation model:
+
+| Tier | Source | Location | Mechanism |
+|------|--------|----------|-----------|
+| **0 — Local** | `.claude/skills/local/` | On disk (repo) | Always available, run on every content change |
+| **1 — K-Dense** | `K-Dense-AI/claude-scientific-skills` | On disk (synced nightly) | Read `SKILL.md` from `.claude/skills/claude-scientific-skills/<skill>/` |
+| **2 — Academic** | `Imbad0202/academic-research-skills` | Fetched on demand | Call `skill_fetch` MCP tool; cached for 30 min |
+
+**Tier 1 skills** (synced, for general scientific QC): `peer-review`,
+`scientific-writing`, `scientific-critical-thinking`, `citation-management`,
+`literature-review`, `hypothesis-generation`, `scientific-brainstorming`,
+`arxiv-database`.
+
+**Tier 2 skills** (fetched, for deep academic review):
+`academic-paper-reviewer` (7-agent multi-perspective review),
+`deep-research` (13-agent evidence grading / fact-check),
+`academic-pipeline` (integrity verification protocol).
+
+See `editor.md §External Academic Review` for the full escalation protocol,
+delegation flows, and review-mode mapping.
 
 ### Skill role assignments
 
@@ -277,8 +308,9 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - **Category notation**: Use bold `$\mathbf{C}$` for categories
   (Herrlich–Strecker style), never calligraphic `$\mathcal{C}$`.
   Named categories are also bold: `$\mathbf{Rep}(\mathrm{SU}_q(2))$`.
-  Calligraphic letters are reserved for sheaves, sites, algebras, and
-  bundles (`$\mathcal{S}$` = state bundle, `$\mathcal{O}$`, `$\mathcal{A}$`).
+  Calligraphic letters are reserved for sheaves, sites, algebras,
+  bundles, and curves (`$\mathcal{S}$` = state bundle,
+  `$\mathcal{E}_q$` = elliptic curve, `$\mathcal{O}$`, `$\mathcal{A}$`).
 - **Fibre functor**: Always `$\tau$` (not `$\omega$` or `$U$`).
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
@@ -296,6 +328,50 @@ the paper introduces genuinely new axioms/structure, add a definition.
   `α_`, `λ_`, `ρ_`, `X ◁ f`, `f ▷ X`.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
+
+### 7aa. Notation register (STRICT)
+
+Every mathematical symbol belongs to exactly one register.
+Agents **must** use the correct font for each concept.
+
+| Register | Font | Symbols |
+|----------|------|---------|
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
+| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing energy), `$\mathfrak{E}_{\mathrm{bind}}$` (binding) |
+| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_H$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). Reclaimed from fraktur — `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
+| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
+| Measures | Greek | `$\mu_J$` (Julia-set measure) |
+| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
+| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
+| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
+
+**Key collision avoidances:**
+- `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
+- `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
+- `$p$` = brane point (never proton number; proton number is `$Z$`)
+- `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
+  Use `$\mathcal{S}_p$`, `$\mathfrak{E}$`, or `$\mathcal{E}_q$` respectively.
+  `$E_H$` (with hadron subscript) is allowed for crossing energy.
+- `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
+  **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
+- `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
+- `$q = 1.1097$` (or any specific numerical value of the substrate
+  parameter) **must not appear** outside the introduction and
+  Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
+  Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
+  falsifiability computations.
 
 ### 7a. Hecke-Skein convention (STRICT)
 

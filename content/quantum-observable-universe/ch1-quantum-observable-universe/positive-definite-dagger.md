@@ -1,25 +1,15 @@
-Let $(\mathbf{C}, \dagger)$ be a rigid monoidal category with involutive
-structure ([involutive structure](#def:involutive-structure)). The involution is
-*positive-definite* if for every non-zero
-morphism $f \colon \mathbf{1} \to X$ the composite
+Let $(\mathbf{C}, A, \tau)$ be a
+[quantum universe](#def:quantum-universe) with
+[Frobenius pairing](#def:frobenius-pairing)
+$\langle a, b \rangle = \int_A(\mu(a \otimes b))$ and antipode $S$.
+Define the *Frobenius dagger* on morphisms by
 
-```tex
-\begin{equation}\label{eq:positive-definite-cd}
-\begin{tikzcd}[column sep=2.5em]
-  \mathbf{1} \ar[r, "f"]
-  & X \ar[r, "f^{\dagger}"]
-  & \mathbf{1}
-\end{tikzcd}
-\end{equation}
-```
+$$
+  f^{\dagger} \;=\; \int_A \circ \mu(S(f) \otimes -).
+$$
 
-is a positive element of $\mathrm{End}(\mathbf{1}) \cong R$.
-Equivalently, the sesquilinear form
-$$
-  \langle g, h \rangle
-  = g^{\dagger} \circ h
-  \in \mathrm{End}(\mathbf{1})
-$$
-is positive-definite on $\mathrm{Hom}(\mathbf{1}, X)$ for every
-object $X$. This replaces the analytic notion of "Hilbert-space inner
-product" with a purely categorical condition.
+Then $\dagger$ is a positive-definite involutive structure on
+$\mathbf{C}$: for every non-zero morphism
+$f \colon \mathbf{1} \to X$, the composite
+$f^{\dagger} \circ f$ is a positive element of
+$\mathrm{End}(\mathbf{1}) \cong R$.

@@ -1,12 +1,12 @@
 The generator set $\mathcal{G}$
 ([finiteness of generators](#prop:torus-knot-generators)) is not merely
 a convenient choice — it is the *complete* list of torus knots
-embeddable in the genus-$4$ fiber of the Bring surface.
+embeddable in the genus-$4$ fiber of the Bring's surface.
 
 **Proposition.**
 Let $T_{m,n}$ be a torus knot with $\gcd(m,n) = 1$ and $1 < m < n$.
 Then $T_{m,n}$ embeds in the Seifert genus-$4$ surface $\Sigma_4$ of
-the Bring surface if and only if $(m,n)$ belongs to the set
+the Bring's surface if and only if $(m,n)$ belongs to the set
 
 $$
   \{(2,3),\;(2,5),\;(2,7),\;(2,9),\;(3,4),\;(3,5)\}.

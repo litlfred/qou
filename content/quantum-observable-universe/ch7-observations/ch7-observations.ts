@@ -13,6 +13,15 @@ export default chapter({
   title: "Physical Observations",
   label: "chap:observations",
   sections: [
+    // ── Central result: overdetermination of q ──────────────────────────
+    section({
+      title: "The Substrate Consistency Window",
+      label: "sec:substrate-consistency",
+      blocks: [
+        "substrate-consistency-window",
+      ],
+    }),
+
     // ── Particle identification conjectures ────────────────────────────
     section({
       title: "Particle Identification Conjectures",
@@ -36,6 +45,18 @@ export default chapter({
       ],
     }),
 
+    // ── Substrate parameter from lepton masses ────────────────────────
+    section({
+      title: "Substrate Parameter from Lepton Masses",
+      label: "sec:substrate-from-leptons",
+      blocks: [
+        "skein-mass-relation",
+        "skein-mass-relation-proof",
+        "knot-volumes-verification",
+        "building-block-knots",
+      ],
+    }),
+
     // ── Mass predictions vs CODATA ───────────────────────────────────
     section({
       title: "Mass Predictions and CODATA Comparison",
@@ -47,6 +68,8 @@ export default chapter({
         "mass-ratio-predictions",
         "mass-predictions-data",
         "mass-comparison-table",
+        "terminal-resolution-proof",
+        "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
       ],
     }),
@@ -57,8 +80,14 @@ export default chapter({
       label: "sec:beta-decay-observations",
       blocks: [
         "hadron-half-life-verification",
+        "hadron-half-life-regimes",
         "half-life-shell-worked",
         "half-life-as-q-probe",
+        "finiteness-bound-interpretation",
+        "tritium-decay-knot-equation",
+        "nitrogen-14-threading",
+        "trace-ratio-observable",
+        "shell-threading-conjecture",
       ],
     }),
 
@@ -73,6 +102,44 @@ export default chapter({
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
+      ],
+    }),
+
+    // ── Nuclear stability and the valley ────────────────────────────────
+    section({
+      title: "Nuclear Stability",
+      label: "sec:nuclear-stability-observations",
+      blocks: [
+        "valley-table",
+        "golden-ratio-degeneration",
+        "hydrogen-knot-structure",
+      ],
+    }),
+
+    // ── Strangelet stability ─────────────────────────────────────────────
+    // Three subsections: (1) why strange matter binds harder,
+    // (2) what happens at extreme density, (3) how to observe it.
+    section({
+      title: "Strangelet Stability and Deconfinement",
+      label: "sec:strangelet-stability",
+      blocks: [
+        "strangelet-intro",
+
+        // — Why strange matter binds harder (and why it's not the ground state)
+        "strangelet-crossing-energy",
+        "strangelet-witten-stability",
+
+        // — Phase diagram: deconfinement, CFL, equation of state
+        "deconfinement-golden-threshold",
+        "hopf-diquark",
+        "borromean-hopf-energy-crossover",
+        "color-superconductivity-borromean",
+        "eos-borromean-cfl",
+
+        // — Observable signatures
+        "cfl-neutron-star-observables",
+        "strangelet-merger-signature",
+        "strangelet-double-beta",
       ],
     }),
 

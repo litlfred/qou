@@ -2,12 +2,12 @@ Let $R$ be a commutative ring. A *quantum universe over $R$* is a
 triple $(\mathbf{C}, A, \tau)$ where:
 
 1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
-   symmetric monoidal category
-   ([rigid monoidal category](#def:rigid-monoidal-category)) — the
-   symmetric braiding $\sigma_{X,Y} \colon X \otimes Y
-   \xrightarrow{\sim} Y \otimes X$ is required for exterior powers
-   $\Lambda^k V$ and is canonically induced by the fibre functor
-   $\tau$ via the Tannakian structure;
+   braided monoidal category
+   ([rigid monoidal category](#def:rigid-monoidal-category)) with
+   braiding $c_{X,Y} \colon X \otimes Y
+   \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
+   exterior powers $\Lambda^k V$ and need not be symmetric
+   ($c^2 \neq \mathrm{id}$ in general);
 
 2. $A$ is a *Frobenius--Hopf object* in $\mathbf{C}$: an
    object equipped with morphisms

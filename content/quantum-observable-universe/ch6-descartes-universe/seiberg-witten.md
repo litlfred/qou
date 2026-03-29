@@ -104,7 +104,7 @@ torus:
 \end{equation}
 ```
 
-By lifting the Bring surface into the full spatial and spectral
+By lifting the Bring's surface into the full spatial and spectral
 coordinate spaces, the degenerate branch points resolve completely into
 smooth exceptional divisors.  The infinite local torsion is geometrically
 captured as trapped flux, revealing that the discrete braid-group

@@ -41,7 +41,7 @@ $$
 The chain has 5 bonds, giving
 
 $$
-  E_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
+  \mathfrak{E}_{\mathrm{cross}}(\mathrm{C}_6^{\mathrm{chain}})
   \;=\;
   5 \cdot E_{\mathrm{bond}}(1).
 $$

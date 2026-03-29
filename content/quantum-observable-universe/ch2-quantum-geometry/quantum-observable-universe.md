@@ -1,9 +1,7 @@
-A quantum universe $(\mathbf{C}, A, \tau)_\prec$ over $R$
+A quantum universe $(\mathbf{C}, A, \tau)$ over $R$
 ([quantum universe](#def:quantum-universe)) is *observable* if the
 forgetful functor $\tau$
-([Example](#ex:rigid-monoidal-vect)) is faithful, $\prec$ is an
-admissible ordering on the Hecke basis of $A$
-([admissible system](#def:admissible-system)), and the following
+([Example](#ex:rigid-monoidal-vect)) is faithful and the following
 conditions hold:
 
 1. *(non-degenerate integration)* the Frobenius form
@@ -57,7 +55,7 @@ conditions hold:
    the volume form acquires no topological phases (see
    [Remark](#rem:yekutieli-stokes-remark) for the connection to
    categorical flatness via Yekutieli's nonabelian Stokes theorem).
-   For many applications, axioms (1), (2), and (4) suffice — axiom
+   For many applications, axioms (1), (2), and (3) suffice — axiom
    (3) is needed only when global topology of $M$ matters.
 
 4. *(categorical volume constraint)*
@@ -81,15 +79,8 @@ conditions hold:
    \end{equation}
    ```
 
-5. *(temporal ordering)* the admissible ordering $\prec$ is
-   a well-ordering on the monomial basis of the Hecke algebra
-   $H_n(q)$ of $A$, satisfying left and right compatibility
-   with multiplication
-   ([admissible system](#def:admissible-system)).
-   Forward time is the direction of Gröbner reduction under
-   $\prec$: braiding (creating crossings $\sigma_i$).
-   Backward time is the anti-involution
-   $\sigma_i \mapsto \sigma_i^{-1}$ composed with $\prec$:
-   unbraiding (resolving crossings).  The ordering determines
-   which computations have completed and which are in progress
-   — it is the arrow of time.
+The braiding $c_{V,V}$ on $\mathbf{C}$ (which is non-symmetric:
+$c_{V,V}^2 \neq \mathrm{id}$, since $\mathbf{C}$ is braided
+monoidal but not symmetric monoidal) induces a canonical
+admissible well-ordering on the Hecke basis.  See
+[braiding-induced ordering](#prop:braiding-induced-ordering).

@@ -34,7 +34,7 @@ three determinations.
 
 The running from $137$ to $128$ corresponds to a $\sim 1\%$ decrease
 in $q$.  In the QOU framework, this running is driven by the Reeb
-flow on the Bring surface: at higher energies (shorter distances),
+flow on the Bring's surface: at higher energies (shorter distances),
 the effective $q$ decreases toward the classical limit $q = 1$.
 
 **Planned observations.**

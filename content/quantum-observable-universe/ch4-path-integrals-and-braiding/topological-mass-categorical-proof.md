@@ -1,19 +1,19 @@
 
 *Step 1: Eigenspace decomposition of the mass integrand.*
-By the ([mass identity](#def:mass-identity)), the mass of $\gamma$ is
+By the ([mass identity](#def:mass-identity)), the mass of $\varrho$ is
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
     (\int_A \otimes \mathrm{id})
     \circ \Delta
-    \circ \gamma
+    \circ \varrho
   \bigr)
   \,\bigr\rVert.
 $$
 The integrand $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta
-\circ \gamma$ is an element of $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
+\circ \varrho$ is an element of $\mathrm{End}_{\mathbf{C}}(A_{n+1})$.
 The descent involution $\hat{\tau}_n$
 ([descent involution](#def:descent-involution)) decomposes this algebra
 into the direct sum
@@ -37,7 +37,7 @@ $$
 $$
 and by the linearity of the categorical trace:
 $$
-  m(\gamma)
+  m(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}(\hat{\tau}_n(\alpha))
@@ -66,8 +66,8 @@ $$
   \mathrm{tr}_n(\alpha_0),
 $$
 where $\alpha_0 = (\int_A \otimes \mathrm{id}) \circ \Delta
-\circ \gamma_0$ is the mass integrand of the base-level cycle.  Hence
-$\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = m(\gamma_0)$.
+\circ \varrho_0$ is the mass integrand of the base-level cycle.  Hence
+$\lVert \mathrm{tr}(\hat{\tau}_n(\alpha)) \rVert = m(\varrho_0)$.
 
 *Step 3: Transient terms localise to blow-up centres.*
 The transient component $\alpha - \hat{\tau}_n(\alpha) \in
@@ -81,7 +81,7 @@ decomposes as a sum:
 $$
   \mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))
   \;=\;
-  \sum_{i=1}^{N} \mathrm{tr}_{\mathrm{trans}}(\gamma, p_i),
+  \sum_{i=1}^{N} \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i),
 $$
 and the norm of the sum equals the sum of the norms (by disjointness
 of the supports).

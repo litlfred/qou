@@ -70,11 +70,11 @@ of genus $1$.
 *Let $\mathcal{D} \subset \mathbb{A}^2$ be the degeneracy locus
 (D$'$) reduced by the pairing-free stability curve (S).  Then:*
 
-1. *The smooth model of $\mathcal{D}$ is an elliptic curve $E_p$
+1. *The smooth model of $\mathcal{D}$ is an elliptic curve $\mathcal{E}_p$
    over $\mathbb{Q}(q)$.*
 
 2. *There exists an isogeny $\varphi \colon E_Q \to E_{z(p)}$
-   to the chiral fiber of the Bring surface, where $z(p)$ is
+   to the chiral fiber of the Bring's surface, where $z(p)$ is
    the spacetime ratio at which the color-tube cubic
    ([color tube cubic](#rem:color-tube-cubic)) specialises to
    the stability cubic:*
@@ -144,7 +144,7 @@ If the conjecture holds, then:
 
 - The **elliptic fiber** $E_z$ at spacetime $z$ encodes the
   allowed baryon configurations at that point; the **stability
-  elliptic curve** $E_p$ at proton number $p$ encodes the allowed
+  elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed
   nuclear configurations at that proton count.
 
 - The **isogeny** $\varphi$ connecting them is the passage from
@@ -154,7 +154,7 @@ If the conjecture holds, then:
   triple to a nucleus
   ([stable nucleus](#def:stable-nucleus)).
 
-- The **stability pairs** are the integer points of $E_p$ —
+- The **stability pairs** are the integer points of $\mathcal{E}_p$ —
   the $(p, A) \in E_Q(\mathbb{Z})$ where the even-even/odd-odd
   degeneracy falls on a lattice point.
 
@@ -162,14 +162,14 @@ If the conjecture holds, then:
 
 The chiral elliptic curve
 ([Descartes elliptic curve](#prop:descartes-elliptic-curve))
-at $q = 1.1097$ is
+at the substrate parameter $q$ is
 
 $$
-  E_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
+  \mathcal{E}_q \;:\; y^2 = x^3 + 0.7087\,x + 0.8056,
   \qquad \Delta = -18.95, \quad j = 129.9.
 $$
 
-Since $\Delta < 0$, the real locus $E_q(\mathbb{R})$ has a single
+Since $\Delta < 0$, the real locus $\mathcal{E}_q(\mathbb{R})$ has a single
 connected component.
 
 **Stable hadrons as lattice points on the stability cubic.**
@@ -180,7 +180,7 @@ $(Q, N)$ on the genus-$0$ **stability cubic**
 
 $$
   t^3 \;=\; 2p\,(1 + c\,t^2),
-  \qquad A = p + n = t^3.
+  \qquad A = Z + N = t^3.
 $$
 
 This is a rational curve: $p = t^3/(2 + 2ct^2)$.  For each
@@ -194,22 +194,22 @@ determined exactly.
 
 The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
-lifts this curve to the genus-$1$ elliptic curve $E_q$ —
+lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ —
 and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$
-then acquire an interpretation as integer points of $E_p$ —
+then acquire an interpretation as integer points of $\mathcal{E}_p$ —
 remains an open question.  The structural parallel between the
 stability cubic and the chiral cubic (identical algebraic origin
-in the Bring surface, coefficient matching at $p \approx 68$)
+in the Bring's surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
 **What is proven:**
 
 - The stable nuclei are lattice points on the stability cubic
   (exact, from the Skein binding Lagrangian).
-- The Descartes elliptic curve $E_q$ exists and has the stated
+- The Descartes elliptic curve $\mathcal{E}_q$ exists and has the stated
   invariants (exact, from the chiral fibration).
 - The stability cubic and the chiral cubic share their algebraic
-  origin in the Bring surface (exact, by construction).
+  origin in the Bring's surface (exact, by construction).
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds
   (exact, from the $(s^2 + s - 1)$ factor).
 

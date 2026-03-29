@@ -5,7 +5,7 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
 
 1. **Crossing reversal defines antiparticles.**  The antihadron
    $\sigma(H)$ of a composite hadron
-   $H = [K_1, \ldots, K_n]_c \bowtie \mathcal{L}$ is obtained by
+   $H = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ is obtained by
    replacing every constituent $K_i$ with its mirror
    $\sigma(K_i)$.  The braid word $\beta$ representing the linking
    has all crossing signs reversed.
@@ -13,12 +13,12 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
 2. **Crossing energy sign reversal.**  If the
    [crossing energy](#def:crossing-energy) of $H$ is
    $$
-     E_{\mathrm{cross}}(H) = \sum_{\text{crossings}} \epsilon_i,
+     \mathfrak{E}_{\mathrm{cross}}(H) = \sum_{\text{crossings}} \epsilon_i,
      \qquad \epsilon_i \in \{q, -q^{-1}\},
    $$
    then the crossing energy of the antihadron satisfies
    $$
-     E_{\mathrm{cross}}(\sigma(H)) = -E_{\mathrm{cross}}(H)
+     \mathfrak{E}_{\mathrm{cross}}(\sigma(H)) = -\mathfrak{E}_{\mathrm{cross}}(H)
      \bigg|_{q \leftrightarrow q^{-1}},
    $$
    i.e. positive crossings ($+q$) become negative ($-q^{-1}$) and

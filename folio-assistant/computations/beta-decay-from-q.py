@@ -32,14 +32,15 @@ from q_parameter import (Q as q, Q_INV as qi, HBAR_Q as hbar_q,
 # m_e = 3 * E_cross * μ₀
 # Setting μ₀ so that m_e = 0.51100 MeV (this IS the unit choice):
 n_c_electron = 3
-m_e_MeV = 0.51100
+m_e_MeV = 0.51099895000       # ± 0.00000000015 MeV (CODATA 2022)
+m_e_MeV_err = 0.00000000015
 mu_0 = m_e_MeV / (n_c_electron * E_cross)         # MeV per Skein unit
 
 # ── G_F decomposition ───────────────────────────────────────────
 # G_F = 1/(√2 v²) where v ≈ 246 GeV is the weak scale.
 # In the QOU: v = N_v · E_cross · μ₀ where N_v is the effective
 # crossing count of the weak scale (OPEN COMPUTATION).
-G_F_standard = 1.1664e-11  # MeV^{-2} (in natural units with ℏ=c=1)
+G_F_standard = 1.1663788e-11  # ± 0.0000006e-11 MeV⁻² (CODATA 2022)
 v_weak = 1.0 / math.sqrt(math.sqrt(2) * G_F_standard)  # MeV
 N_v = v_weak / (E_cross * mu_0)  # effective crossing count
 
@@ -53,12 +54,12 @@ sensitivity = (q**2 - 1) / (q**2 + 1) + 5 * (q**2 + 1) / (q**2 - 1)
 
 # ── Self-deformation for each nucleus ────────────────────────────
 nuclei = [
-    {"name": "³H",   "A": 3,   "p": 1,  "n": 2,   "obs_yr": 12.32},
-    {"name": "¹⁴C",  "A": 14,  "p": 6,  "n": 8,   "obs_yr": 5730.0},
-    {"name": "⁶⁰Co", "A": 60,  "p": 27, "n": 33,  "obs_yr": 5.2714},
-    {"name": "⁹⁰Sr", "A": 90,  "p": 38, "n": 52,  "obs_yr": 28.79},
-    {"name": "¹³⁷Cs","A": 137, "p": 55, "n": 82,  "obs_yr": 30.17},
-    {"name": "²¹⁰Bi","A": 210, "p": 83, "n": 127, "obs_days": 5.012},
+    {"name": "³H",   "A": 3,   "p": 1,  "n": 2,   "obs_yr": 12.32,   "obs_err": 0.02},
+    {"name": "¹⁴C",  "A": 14,  "p": 6,  "n": 8,   "obs_yr": 5730.0,  "obs_err": 40.0},
+    {"name": "⁶⁰Co", "A": 60,  "p": 27, "n": 33,  "obs_yr": 5.2714,  "obs_err": 0.0006},
+    {"name": "⁹⁰Sr", "A": 90,  "p": 38, "n": 52,  "obs_yr": 28.79,   "obs_err": 0.06},
+    {"name": "¹³⁷Cs","A": 137, "p": 55, "n": 82,  "obs_yr": 30.17,   "obs_err": 0.16},
+    {"name": "²¹⁰Bi","A": 210, "p": 83, "n": 127, "obs_days": 5.012, "obs_err": 0.005},
 ]
 
 for nuc in nuclei:

@@ -137,6 +137,50 @@ export default chapter({
       ],
     }),
 
+    // ── Lagrange resolvents (categorical DFT) ─────────────────────────
+    section({
+      title: "Lagrange Resolvents and $q$-Deformed Kinematics",
+      label: "sec:lagrange-q-kinematics",
+      blocks: [
+        // DFT decomposition of cyclic representations
+        "lagrange-resolvent-transform",
+        "lagrange-resolvents",
+        // q-deformed physical quantities (general QOU)
+        "q-momentum",
+        "q-angular-momentum",
+        "q-energy",
+      ],
+    }),
+
+    // ── Vertex operators and the Markov trace ────────────────────────
+    section({
+      title: "Vertex Operators and the Markov Trace",
+      label: "sec:vertex-operators-markov",
+      blocks: [
+        // Exceptional divisor and Reeb bundle (general QOU)
+        "exceptional-divisor",
+        "reeb-bundle",
+        "reeb-exceptional-divisor",
+        // Vertex operator algebra
+        "vertex-operator",
+        "vertex-operator-dictionary",
+        // Vertex operators factor through E_p
+        "vertex-is-exceptional-divisor",
+        "vertex-is-exceptional-divisor-proof",
+        // Product factorization of the Markov trace
+        "markov-trace-product",
+        // Categorical transfer matrix and level independence
+        "categorical-transfer-matrix",
+        "transfer-matrix-level-independence",
+        "transfer-matrix-level-independence-proof",
+        // Topological mass (archimedean specialization)
+        "topological-mass-formula",
+        "skein-decomposition",
+        // Categorical vs archimedean braiding
+        "skein-archimedean-shadow",
+      ],
+    }),
+
     // ── Hadrons and knot composites ──────────────────────────────────
     section({
       title: "Hadrons and Knot Composites",
