@@ -25,6 +25,11 @@ conditions.  Even the capacity for computation — the ability to
 reason, count, and calculate — seems woven into the fabric rather
 than bolted on.
 
+An important assumption this paper does *not* make is that the
+constants of our universe are indeed constant.  If we allow them
+to vary — in a controlled, algebraic way — how does that change
+the mechanics?  This is the question this paper asks.
+
 Heisenberg reminded us that what we observe is not nature itself
 but nature exposed to our method of questioning.  This book takes
 that insight seriously.  We do not ask what the universe *is* — we
@@ -32,12 +37,11 @@ ask what its mechanics *do*.  Category theory is the natural
 language for this, because it describes structure and transformation
 without committing to any particular ontology.
 
-A remarkable fact — and the central thesis of this book — is that
-these everyday observations, once stated carefully, determine a
+These everyday observations, once stated carefully, determine a
 specific algebraic structure: a *rigid monoidal category* equipped
 with a fibre functor and a Frobenius trace $\int_A$.  We call
-this structure a **quantum observable universe**.  Its axioms encode precisely the
-features listed above and nothing more.
+this structure a **quantum observable universe**.  Its axioms
+encode precisely the features listed above and nothing more.
 
 What follows from these axioms is surprising in both scope and
 specificity.  The symmetry group $\mathrm{SU}_2(R)$ is not
@@ -54,9 +58,7 @@ descriptions but equivalent viewpoints, exchanged by the Frobenius
 self-duality $A \cong A^{\vee}$.
 
 Even the capacity for computation — the Turing completeness of the
-substrate — is a consequence, not an input.  That so much structure
-follows from so little input is, as Wigner put it, "something
-bordering on the mysterious."
+substrate — is a consequence, not an input.
 
 The book is organised as follows.
 
@@ -133,13 +135,12 @@ algebra at each level into descended (observable) and transient
 $\chi(A) = -6$, forced by the lifting obstructions and the
 Archimedean constraint.
 
-[Chapter 4](#chap:path-integrals-braiding) develops braids and
-knots within the categorical framework.  Particles, identified with
-knots, generate operator algebras whose multiplication and braiding
-are Gröbner basis computations — a confluent rewrite system where
-each reduction sequence has a well-defined computational cost.
-The Hecke algebra provides the crossing coefficients, the Markov
-trace computes Skein polynomials, and the topological mass formula
+[Chapter 4](#chap:path-integrals-braiding) develops a purely
+mathematical model, built entirely from the categorical data, for
+objects we call photons, electrons, atoms, and the like.  These are
+associated to knots which, by self-duality, encode not only what
+the objects *are* but how they interact with one another.  The
+topological mass formula
 
 $$
   \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}}
@@ -147,26 +148,30 @@ $$
 
 expresses the mass of a particle knot $K$ in terms of the
 hyperbolic volume of its complement and the quantum Planck constant
-$\hbar_q = 1 - 1/q$ — so that mass is literally volume, measured
-by the Frobenius trace.  A clean dictionary emerges: crossing number
-equals jet order equals information content.
-The embeddability bound on $\Sigma_4$
-produces a finite, exhaustive list of exactly $7$ transfer matrices
+$\hbar_q = 1 - 1/q$.  The chapter describes explicitly the
+transfer matrices that govern all particle interactions through a
+computational cost associated to Skein relations.  The
+embeddability bound on $\Sigma_4$ produces a finite, exhaustive
+list of exactly $7$ such transfer matrices
 $T_{\tau(r,s)}(q)$ — six non-trivial force operators and the
-identity (free propagation of the unknot $\nu = \tau(1,0)$) — that
-govern all knot-particle interactions.  These are the only
-harmonic $1$-forms on the fiber; an $8$th cannot exist without
-violating the brane tower cohomology (**interaction completeness**).
+identity (**interaction completeness**).  Physical constants —
+mass, crossing energy, binding energy — are parametrised solely by
+$q$.  Electronic shells arise as torus knots and their associated
+representations in Gröbner bases.
 
-[Chapter 5](#chap:models-qou) explores the consequences of
-$\chi(A) = -6$.  The constraint singles out Bring's surface — a
-genus-4 curve with $S_5$ symmetry — as the fibre of the state
-bundle, and the resulting *Descartes universes* are so called
-because the observer is not separate from the mechanics.
+[Chapter 5](#chap:models-qou) examines concrete realisations of
+the QOU axioms: archimedean, $p$-adic, and finite-field models.
+For the Descartes universe ($\chi(A) = -6$), we study Bring's
+surface $\Sigma_4$ — the universal genus-$4$ curve with
+automorphism group $S_5$ — as a model for QOU.  This concrete
+realisation provides coordinate systems for red, green, and blue
+colour tubes, the exceptional divisor where all particle
+interactions occur, and serves as a model for understanding our
+own world.
 
-[Chapter 6](#chap:observations) confronts the theory with
-experiment.  The substrate parameter $q$ is not free but is
-determined by CODATA 2022 values: the unique real root $q > 1$ of
+[Chapter 6](#chap:observations) reaps the rewards of the
+mathematical machinery.  The substrate parameter $q$ is estimated
+from the muon-to-electron mass ratio:
 
 $$
   (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
@@ -174,19 +179,11 @@ $$
   q \;=\; q_0 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
 $$
 
-From this single parameter the theory produces
-geometric mass equations for proton, neutron, pion, kaon, and
-light nuclei (matching CODATA to six significant figures);
-knot-theoretic orbital shells reproducing the noble-gas sequence;
-beta-decay half-lives from Skein polynomial matrix elements; and
-a fine-structure constant $\alpha^{-1}$ within $0.14\%$ of the
-measured value.  Beta decay, nuclear binding,
-orbital shell structure, and the axial coupling $g_A$ are all
-computed from compositions of the $7$ transfer matrices over
-$\mathbb{Z}[q, q^{-1}]$.
-
-The same Hopf chain formalism extends to organic
-chemistry.
+From this single parameter we compute estimated masses for all
+hadrons, which agree to good precision with observed values.  The
+transfer matrices then describe hadron half-lives that align with
+observation.  The same mathematical infrastructure computes the
+energetics of hydrocarbons.
 
 [Chapter 7](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
@@ -194,17 +191,15 @@ out to be Turing complete: the combinatorics supporting logic and
 computation is a property of the algebraic substrate, not the
 medium.  The Gröbner basis ensures this computation is
 *confluent* — every reduction terminates at the same normal form.
-Two results illustrate the reach.  The Reeb flow — the internal
-clock of the algebra — generates a dynamical system whose
-boundary is a fractal (a Julia set).  The fractal complexity of
-that boundary is measured by its Hausdorff dimension, and the
-algebra fixes it exactly:
+The Reeb flow — the internal clock of the algebra — generates a
+dynamical system whose boundary is a fractal (a Julia set) with
+Hausdorff dimension
 
 $$
   d_H(q) = \frac{(2q-1)^2}{q^3}.
 $$
 
-And crossing energy relates to categorical mass by
+Crossing energy relates to categorical mass by
 
 $$
   E_H = \mathfrak{m}_H \cdot c_q^{\,2},
