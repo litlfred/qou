@@ -21,7 +21,7 @@ crossings.  Its [crossing energy](#def:crossing-energy) is
 $$
   \mathbf{E}_{\mathrm{cross}}(e^-)
   \;=\; 3q
-  \;\approx\; 3 \times 1.10997
+  \;\approx\; 3 \, q_0
   \;=\; 3.330
   \quad (\text{in Skein units}).
 $$

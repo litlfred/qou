@@ -114,7 +114,7 @@ invariant of the weak scale — open computation).
 **Two-level structure (cosimplicial).**
 The computation has two levels, corresponding to levels 0 and 1 of
 the cosimplicial crossed groupoid
-([cosimplicial crossed groupoid](#def:cosimplicial-crossed-groupoid)):
+([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)):
 
 - **Level 0** ($B_A$, 1 strand per nucleon): the inter-nucleon
   crossings.  The quantum dilogarithm $\Phi_q$ gives the total

@@ -18,7 +18,7 @@ $(q + q^{-1})/2$).
 With $p = n = 7$, every crossing in the braid word is a
 $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing.  The mixed
 crossing weight $(q + q^{-1})/2 \approx 1.005$ is the **average**
-of the positive weight $q = 1.1097$ and negative weight
+of the positive weight $q = q_0$ and negative weight
 $q^{-1} = 0.901$.  No crossing carries the Coulomb penalty
 $(q - q^{-1})/2 \approx 0.105$ and no crossing carries the
 attractive excess $-(q - q^{-1})/2$.

@@ -9,7 +9,7 @@ of the knot assignments.  But all torus knots have zero
 hyperbolic volume; the mass difference between strange and
 non-strange baryons comes from the **Jones polynomial**, not
 from genus.  The cinquefoil's Jones polynomial evaluates
-$22\%$ higher than the trefoil's at $q = 1.1097$ ($1.176$ vs
+$22\%$ higher than the trefoil's at $q = q_0$ ($1.176$ vs
 $0.960$), and this Skein polynomial cost — roughly $168$ Skein
 units per strange quark — overwhelms the crossing-energy gain
 of $1.8$ Skein units by a factor of $93$.  At zero pressure,
