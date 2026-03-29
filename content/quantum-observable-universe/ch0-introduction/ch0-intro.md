@@ -192,5 +192,9 @@ $$
 where $c_q$ is the information speed of light — $E = mc^2$
 derived from the categorical structure.
 
-The **Glossary** maps paper terminology to Mathlib declarations,
-and the **Appendix** collects the knot periodic table.
+The [Glossary](#chap:glossary) maps paper terminology to Mathlib
+declarations, the [Knot-Periodic Table](#app:knot-periodic-table)
+collects the elements with their knot assignments, and the
+[Index of Definitions](#app:index-definitions) provides a
+searchable reference to all definitions, theorems, and
+propositions in the paper.
