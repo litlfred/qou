@@ -27,10 +27,10 @@ export default proposition({
     "rem:unmapped-torus-knots",
     "rem:virtual-particles-exceptional-divisor",
     "prop:nuclear-groebner-reduction",
-    "prop:groebner-shirshov-energy",
+    "thm:groebner-shirshov-energy",
     "rem:electron-immortality",
     "def:mass-identity",
-    "ex:photon-wavefront-example",
+    "ex:photon-wavefront",
     "prop:reidemeister-action-table",
   ],
 });

@@ -56,6 +56,7 @@ noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
   -- h_{ij} = σ_i⁻¹ σ_j σ_i σ_j⁻¹
   -- In the 2×2 transfer matrix representation,
   -- this is a product of crossing matrices.
+  -- Ref: [manuscript] §7/axial-coupling
   sorry -- requires full Hecke element → 2×2 matrix correspondence
 
 /-! ## §2  The 3-fold color average -/
@@ -67,6 +68,7 @@ noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
     colors `(r,g,b)` within the nucleon's Borromean triple.
     Each ordering sees a different fiber anisotropy. -/
 noncomputable def borromeanColorAvg : TMatrix :=
+  -- Ref: [manuscript] §7/axial-coupling
   sorry -- sum of 3 half-Borromean matrices
 
 /-! ## §3  The axial coupling -/
@@ -87,6 +89,7 @@ noncomputable def borromeanColorAvg : TMatrix :=
     color-averaged Borromean topology on `Σ₄`. -/
 noncomputable def axialCouplingRatio : FractionRing R_t :=
   -- 5/3 × |tr_std(borromeanColorAvg)| / |tr_sym(borromeanColorAvg)|
+  -- Ref: [manuscript] §7/axial-coupling
   sorry -- requires Markov trace + irrep projection
 
 /-! ## §4  Key properties -/

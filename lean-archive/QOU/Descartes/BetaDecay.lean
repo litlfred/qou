@@ -246,6 +246,7 @@ theorem interaction_completeness :
   · simp [sigma4_knots]
   · intro τ hτ
     -- Exhaustive case analysis on (r, s) with (r-1)(s-1)/2 ≤ 4
+    -- Ref: [manuscript] §6/interaction-completeness
     sorry -- requires enumeration over all coprime (r,s)
 
 /-! ## §6  Tower termination -/

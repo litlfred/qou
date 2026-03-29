@@ -52,7 +52,7 @@ per divisor step).  The factor $m_e/3$ is the mass per
 crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$
 (the electron is $3$ crossings).  The product
 $\hbar_q \cdot m_e / 3$ replaces the intermediate notation
-$\mathfrak{E} \cdot \mu_0$ — these cancel algebraically.*
+$\mathbf{E} \cdot \mu_0$ — these cancel algebraically.*
 
 **(iii)** *$F(\tau(r,s), N)$ is the **knot operator** of
 $\tau(r,s)$ acting on the converting neutron's

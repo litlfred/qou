@@ -16,7 +16,7 @@ export default remark({
     "thm:mass-energy-equivalence",
     "def:information-speed-of-light",
     "def:operational-entropy",
-    "def:light-cone-affine",
+    "rem:light-cone-affine",
     "def:crossing-energy",
     "def:mass-identity",
   ],
