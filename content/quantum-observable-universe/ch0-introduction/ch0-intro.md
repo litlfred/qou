@@ -202,7 +202,7 @@ $$
 Crossing energy relates to categorical mass by
 
 $$
-  E_H = \mathfrak{m}_H \cdot c_q^{\,2},
+  E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^{\,2},
   \qquad
   c_q = \frac{1}{q - 1},
 $$

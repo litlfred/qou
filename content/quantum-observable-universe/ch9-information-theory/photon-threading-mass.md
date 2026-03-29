@@ -1,30 +1,30 @@
 **Proposition (mass as photon threading cost).**
-*Let $H$ be a knot composite with braid word $\beta_H \in B_n$.
-The categorical mass $\mathfrak{m}_H$
+*Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$.
+The categorical mass $\mathfrak{m}_{\mathfrak{H}}$
 ([mass identity](#def:mass-identity)) equals the total
 Gröbner--Shirshov reduction cost of threading the photon strand
 $\gamma$ through the hadron braid:*
 
 $$
-  \mathfrak{m}_H
+  \mathfrak{m}_{\mathfrak{H}}
   \;=\; (q - 1)^2 \sum_{\text{Hecke steps}}
   |c_w| \cdot |q - q^{-1}|,
 $$
 
 *where the sum is over all Hecke reductions
 $\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ needed to move the
-photon strand from above $\beta_H$ to below $\beta_H$ in the
-augmented braid $\gamma \otimes \beta_H \in B_{n+1}$, and
+photon strand from above $\beta_{\mathfrak{H}}$ to below $\beta_{\mathfrak{H}}$ in the
+augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
 $c_w$ are the coefficients at each step.*
 
 **Three computations of the same quantity.**
-The mass $\mathfrak{m}_H$ is computed by three independent methods
+The mass $\mathfrak{m}_{\mathfrak{H}}$ is computed by three independent methods
 that yield the same result:
 
-| Method | Domain | Computes $\mathfrak{m}_H$ as |
+| Method | Domain | Computes $\mathfrak{m}_{\mathfrak{H}}$ as |
 |--------|--------|------------------------------|
 | Yekutieli MI | Analytic | $\lVert\mathrm{MI}\int_\Sigma(\nabla_A q, L \wedge F^+)\rVert$ |
-| Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_H))\rVert \cdot (q-1)^2$ |
+| Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
 | Gröbner reduction | Computational | $(q-1)^2 \sum |c_w| \cdot |q - q^{-1}|$ |
 
 The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-C)).
@@ -34,15 +34,15 @@ The third is the content of this proposition.
 
 **Physical picture.**
 The photon $\gamma$ (empty knot, zero crossings) approaches the
-hadron $H$.  To "measure" the hadron — to determine its mass — the
+hadron $\mathfrak{H}$.  To "measure" the hadron — to determine its mass — the
 photon must braid completely through $H$, moving from one side of
 the braid word to the other.
 
 1. **Start.**  The photon strand sits above the hadron braid:
-   $\gamma \otimes \beta_H \in B_{n+1}$.
+   $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$.
 
 2. **Thread.**  Apply braid relations to move $\gamma$ downward
-   through $\beta_H$.  The Yang--Baxter moves
+   through $\beta_{\mathfrak{H}}$.  The Yang--Baxter moves
    ($\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$)
    and far-commutativity ($\sigma_i\sigma_j = \sigma_j\sigma_i$)
    are **free** — they rearrange crossings without changing the
@@ -55,23 +55,23 @@ the braid word to the other.
 
 3. **End.**  The photon strand is below $\beta_H$.  The total
    Hecke cost is the crossing energy
-   $E_H = \sum |c_w| \cdot |q - q^{-1}|$ (in Skein
+   $E_{\mathfrak{H}} = \sum |c_w| \cdot |q - q^{-1}|$ (in Skein
    units).  Via mass--energy equivalence, the mass is
-   $\mathfrak{m}_H = E_H \cdot (q-1)^2$.
+   $\mathfrak{m}_{\mathfrak{H}} = E_{\mathfrak{H}} \cdot (q-1)^2$.
 
 **Why the photon measures mass.**
 The photon has no crossings of its own — it is topologically
 trivial ($K = \varnothing$).  But it couples to the gauge field
 ($F_A^+$) because it propagates as exceptional-divisor flux
 ([photon wavefront](#ex:photon-wavefront-example)).  Threading
-it through $H$ forces it to traverse every crossing of $\beta_H$,
+it through $H$ forces it to traverse every crossing of $\beta_{\mathfrak{H}}$,
 and each crossing it encounters contributes a Hecke reduction.
 
 The **surface** $\Sigma$ in the Yekutieli integral
 $\mathrm{MI}\int_\Sigma$ is precisely the disc swept by the photon
 as it passes through the hadron: $\partial\Sigma = \varrho$ (the
 vortex boundary), and the interior of $\Sigma$ is the trajectory
-of $\gamma$ through $\beta_H$.  The multiplicative integral
+of $\gamma$ through $\beta_{\mathfrak{H}}$.  The multiplicative integral
 accumulates the connection along this trajectory — the analytic
 expression of the algebraic Gröbner reduction.
 
@@ -89,8 +89,8 @@ The factor $(q-1)^2$ converting crossing energy to mass is
 $1/c_q^2$:
 
 $$
-  \mathfrak{m}_H \;=\; \frac{E_H}{c_q^2}
-  \;=\; (q-1)^2 \cdot E_H.
+  \mathfrak{m}_{\mathfrak{H}} \;=\; \frac{E_{\mathfrak{H}}}{c_q^2}
+  \;=\; (q-1)^2 \cdot E_{\mathfrak{H}}.
 $$
 
 Each Hecke step costs $|q - q^{-1}|$ in Skein units (spatial
