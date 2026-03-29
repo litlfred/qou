@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:transfer-matrix-operator",
   title:
-    "Transfer matrix operator on hadrons and Gröbner ideals",
+    "Transfer Matrix Operator for Nuclear Braid Interactions",
   tags: [
     "transfer-matrix",
     "operator",
