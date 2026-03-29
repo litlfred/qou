@@ -63,18 +63,18 @@ $$
     1
     & \text{shell unchanged by decay (cancels in ratio)} \\[4pt]
     \mathrm{tr}_M\!\bigl(
-      \tau(r,s) \cdot T_\beta(q)
+      \tau(r,s) \cdot T_{\beta\text{-decay}}(q)
     \bigr)
     & \text{active shell, partially filled} \\[4pt]
     \dfrac{\bigl|\mathrm{tr}_M\!\bigl(
       e_{(1^3)} \cdot \tau(r,s) \cdot
-      T_\beta(q) \cdot e_{(1^3)}
-    \bigr)\bigr|}{\bigl|\mathrm{tr}_M\!\bigl(T_\beta(q)\bigr)\bigr|}
+      T_{\beta\text{-decay}}(q) \cdot e_{(1^3)}
+    \bigr)\bigr|}{\bigl|\mathrm{tr}_M\!\bigl(T_{\beta\text{-decay}}(q)\bigr)\bigr|}
     & \text{active shell, fully filled (Pauli)}
   \end{cases}
 $$
 
-*with $T_\beta(q) = \sigma_0 \sigma_1^{-1} \in H_3(q)$ the
+*with $T_{\beta\text{-decay}}(q) = \sigma_0 \sigma_1^{-1} \in H_3(q)$ the
 beta decay operator
 ([beta decay](#def:beta-decay-skein)), and $e_{(1^3)}$ the
 alternating Young symmetrizer of $H_3(q)$
@@ -130,8 +130,8 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
 4. **Pauli projection.**  A fully occupied shell of $n$
    fermions is totally antisymmetric.  Under the Schur–Weyl
    decomposition of $H_3(q)$, the decay operator
-   $T_\beta(q)$ is projected onto the alternating irrep
-   $(1^3)$ via $e_{(1^3)} \cdot T_\beta(q) \cdot e_{(1^3)}$.
+   $T_{\beta\text{-decay}}(q)$ is projected onto the alternating irrep
+   $(1^3)$ via $e_{(1^3)} \cdot T_{\beta\text{-decay}}(q) \cdot e_{(1^3)}$.
    The symmetric and standard irreps cancel in the fully
    occupied state.
 
