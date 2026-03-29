@@ -130,11 +130,11 @@ condition and the Euler characteristic $\chi = -6$.
 [Chapter 7](#chap:observations) confronts the theory with
 experiment.  The substrate parameter $q$ is not free but is
 determined by CODATA 2022 values: the unique real root $q > 1$ of
-$(1 - q^{-1})^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$ gives
 
 $$
-  q \;=\; 1.1097 \;+\; O\!\bigl(\delta(m_\mu/m_e)\bigr),
-  \qquad \delta(m_\mu/m_e) = 2.2 \times 10^{-8}.
+  (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
+  \qquad\Longrightarrow\qquad
+  q \;=\; 1.1097 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
 $$
 
 From this single parameter the theory produces
