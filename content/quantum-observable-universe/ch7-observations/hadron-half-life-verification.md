@@ -71,13 +71,14 @@ Witness computation scripts are in `folio-assistant/computations/`.
    embeddable torus knots on $\Sigma_4$.
    Script: `folio-assistant/computations/qvalue-representation-theory.py`.
 
-3. **$g_A$ (axial coupling) from the Borromean Skein algebra.**
-   The ratio of antisymmetric to symmetric Markov traces on the
-   Borromean link $\mathcal{B}_3$ determines the axial-to-vector
-   coupling ratio $g_A / g_V$.  Target: $g_A \approx 1.27$.
-   Sage result: the 4-crossing Borromean braid
-   $T_1 T_2^{-1} T_1 T_2^{-1}$ gives $g_A \approx 1.14$
-   (10.8% from target).  Script: `sage-borromean-gA.sage`.
+3. **$g_A$ (axial coupling) from the Borromean color average.** RESOLVED.
+   The $3$-fold color average of the half-Borromean braid
+   $h_{ij} = \sigma_i^{-1}\sigma_j\sigma_i\sigma_j^{-1}$ gives:
+   $g_A(q) = (5/3) \times |\mathrm{tr}_{\mathrm{std}}(\tfrac{1}{3}
+   \sum h_{ij})| \,/\, |\mathrm{tr}_{\mathrm{sym}}(\tfrac{1}{3}
+   \sum h_{ij})| \approx 1.277$ ($+0.1\%$ from PDG $1.2754$).
+   The sum is over $3$ cyclic orderings of quark colors $(r,g,b)$.
+   Script: `folio-assistant/computations/borromean-axial-coupling.py`.
 
 4. **$\alpha_{\mathrm{EM}}$ (fine structure constant).** RESOLVED.
    The EM coupling projection
@@ -180,14 +181,14 @@ $$
   \;=\;
   \mathcal{Q}_{\mathrm{bare}}
   \;\times\;
-  \prod_{T_{r,s}} F(T_{r,s},\, N)
+  \prod_{\tau(r,s)} F(\tau(r,s),\, N)
 $$
 
 where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/
-P_{\mathrm{par}})| \times \hbar_q \cdot \mathfrak{E}_\times \cdot
-\mu_0$ uses the $q$-natural logarithm ($\log_q = \ln/\ln q$) with
-the quantum Planck constant $\hbar_q = 1 - q^{-1}$, and
-$F(T_{r,s}, N)$ is the knot operator for each torus knot.
+P_{\mathrm{par}})| \times \hbar_q \cdot m_e/3$
+uses the $q$-natural logarithm ($\log_q = \ln/\ln q$) with
+the quantum Planck constant $\hbar_q = (q-1)/q$, and
+$F(\tau(r,s), N)$ is the knot operator for each torus knot.
 Non-embeddable knots ($\frac{(r-1)(s-1)}{2} > 4$) contribute
 $F = 1$ (null operator — zero topological action on $\Sigma_4$).
 Shells unchanged by the decay contribute $F = 1$ (cancel in the
