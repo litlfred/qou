@@ -56,7 +56,6 @@ export default chapter({
       blocks: [
         "maximal-torus",
         "maximal-torus-su2",
-        "reeb-gauge-group",
         "weight-decomposition",
         "weight-decomposition-exists",
         "weight-decomposition-exists-proof",
@@ -238,7 +237,6 @@ export default chapter({
         "quantum-gauge-group-category",
         "hopf-structure-diagrams",
         "self-dual-2group",
-        "quantum-flatness",
         "emergence-to-quantum-flat",
         "emergence-to-quantum-flat-proof",
         "simplicity-from-category",

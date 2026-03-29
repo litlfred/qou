@@ -53,7 +53,6 @@ export default chapter({
       blocks: [
         "braid-symmetric-intro",
         "braid-group",
-        "s3-group",
         "knot-notation-convention",
       ],
     }),
