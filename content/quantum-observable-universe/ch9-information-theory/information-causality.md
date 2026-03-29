@@ -34,7 +34,7 @@ $c \to 0$: fibres are informationally isolated, no spatial
 signalling is possible.  As the universe evolves toward the
 classical limit ($q \to 1$), $c \to \infty$: spatial coupling
 dominates and the Newtonian regime of instantaneous propagation
-emerges.  At our local $q = 1.1097$, $c \approx 9.12$ in
+emerges.  At our local $q = q_0$, $c \approx 9.12$ in
 Reeb units --- a large but finite ratio of spatial to temporal
 information flow.
 
@@ -66,7 +66,7 @@ $$
   \quad \text{(bits per Planck time)}.
 $$
 
-At $q = 1.1097$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2
+At $q = q_0$: $\mathcal{B} \approx q\,\eta_q/(q-1)^2
 \approx 82$ nats per Planck time.
 
 **5. Pawlowski's information causality.**

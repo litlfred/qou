@@ -12,7 +12,7 @@ a factor $(q - 1)$ in its numerator.  This means:
 - The combinatorial structure that makes reversible
   computation possible is present at every value of $q$.
 - As the universe cools from the Big Bang ($q \to \infty$)
-  to our epoch ($q = 1.1097$, [local substrate $q$](#prop:local-substrate-q)), the amplitude decreases but
+  to our epoch ($q = q_0$, [local substrate $q$](#prop:local-substrate-q)), the amplitude decreases but
   **never vanishes**.
 
 This is why computers can be built from stones, from beads
@@ -20,7 +20,7 @@ on an abacus, from vacuum tubes, from silicon — from
 anything.  The medium does not matter because the
 combinatorics is not a property of the medium.  It is a
 property of the substrate parameter.  The Hecke crossing
-coefficients at $q = 1.1097$ still satisfy the same algebraic
+coefficients at $q = q_0$ still satisfy the same algebraic
 relations as at $q = 10^{60}$; the transfer matrices still
 multiply; the destructive interference that isolates the
 q-AND from all other pathways still holds.  A computation
@@ -41,12 +41,12 @@ from discrete (Big Bang) to approximately continuous
 reduces the amplitude $P_{7,6}$ and stretches the Planck
 step $t_P(q) = q/(q-1)$.
 
-At $q = 1.1097$
+At $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)):
 
 $$
-  P_{7,6}(1.1097) = +0.0495, \qquad
-  t_P(1.1097) \approx 10.11
+  P_{7,6}(q_0) = +0.0495, \qquad
+  t_P(q_0) \approx 10.11
 $$
 
 The gate is slow and quiet, but it works.  That it works
