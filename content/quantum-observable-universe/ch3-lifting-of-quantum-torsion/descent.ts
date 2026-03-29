@@ -5,9 +5,5 @@ export default definition({
   lean: { decl: "QOU.DescentData" },
   title: "Descent",
   tags: ["descent", "brane-tower", "restriction"],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "thm:qu-to-qou",
-  ],
+  uses: ["thm:qu-to-qou"],
 });

@@ -21,7 +21,7 @@ Mass is not an intrinsic property of the generator — it is
 
 **Step 2: Hopf linking generates leptonic mass.**
 A single Hopf linking of two generators on the exceptional divisor
-$E_c$ produces a two-component link with nonzero Jones polynomial.
+$\mathcal{S}_c$ produces a two-component link with nonzero Jones polynomial.
 The Skein resolution of crossings introduces hyperbolic volume into
 the resolved configuration.  Concretely, for the electron:
 

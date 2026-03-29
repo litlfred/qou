@@ -17,12 +17,5 @@ export default definition({
     decl: "QOU.Descartes.QValueTransition",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-energy",
-    "def:q-momentum",
-    "def:q-angular-momentum",
-    "def:beta-decay-skein",
-    "prop:hadron-half-life",
-    "prop:local-substrate-q",
-  ],
+  uses: ["def:q-energy"],
 });

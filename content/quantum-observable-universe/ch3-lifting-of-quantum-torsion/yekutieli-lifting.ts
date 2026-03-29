@@ -6,12 +6,6 @@ export default proposition({
   title: "Yekutieli Lifting Condition holds in the brane tower",
   tags: ["yekutieli", "lifting", "brane-tower"],
   examples: ["ex:yekutieli-lifting-su2"],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "def:yekutieli-lifting-condition",
-    "def:quantum-characteristic-classes",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:quantum-characteristic-classes"],
   proofs: ["prf:yekutieli-lifting"],
 });

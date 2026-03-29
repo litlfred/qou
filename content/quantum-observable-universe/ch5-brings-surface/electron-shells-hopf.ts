@@ -15,12 +15,7 @@ export default conjecture({
     "absorption",
   ],
   uses: [
-    "def:hadron",
-    "def:stable-nucleus",
-    "def:crossing-energy",
-    "def:coulomb-charge",
     "conj:skein-shell-correction",
     "prop:torus-hopf-stability",
-    "sec:knot-notation-convention",
   ],
 });

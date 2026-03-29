@@ -1,4 +1,4 @@
-The Bring surface $\mathcal{S}$ ([Bring's surface](#def:brings-surface)) is a
+The Bring's surface $\mathcal{S}$ ([Bring's surface](#def:brings-surface)) is a
 *smooth* algebraic variety: the three power-sum constraints are
 transverse in $\mathbb{P}^4$, so their intersection carries no singular
 points.  The six topological defects identified in

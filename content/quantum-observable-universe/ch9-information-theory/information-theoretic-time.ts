@@ -16,14 +16,7 @@ export default definition({
     validation: "leanok",
   },
   uses: [
-    "def:planck-time",
-    "def:quantum-planck-constant",
     "prop:reeb-operations-per-planck",
-    "rem:julia-set-reeb",
     "prop:ordering-jet-compatibility",
-    "ex:q-reeb-flow",
-    "def:substrate-parameter",
-    "def:bundle-initial-conditions",
-    "prop:local-substrate-q",
   ],
 });

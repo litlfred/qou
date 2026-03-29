@@ -16,12 +16,5 @@ export default proposition({
     decl: "QOU.Descartes.hadron_q_self_correction",
     validation: "not_checked",
   },
-  uses: [
-    "def:substrate-parameter",
-    "def:hadron",
-    "def:skein-binding-lagrangian",
-    "def:stable-nucleus",
-    "prop:local-substrate-q",
-    "prop:hadron-half-life",
-  ],
+  uses: ["prop:hadron-half-life"],
 });

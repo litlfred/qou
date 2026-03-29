@@ -2,7 +2,7 @@ The embeddability closure
 ([embeddability closure](#thm:embeddability-closure)) shows that the
 generation scheme does not produce knots *outside* genus $4$.  The
 converse question is whether it produces *all* knots inside genus $4$.
-The answer is yes: every knot embeddable in the Bring surface is
+The answer is yes: every knot embeddable in the Bring's surface is
 reachable from $\mathcal{G}$ by Skein operations alone.
 
 **Theorem (Generation completeness).**
@@ -30,7 +30,7 @@ operations.
 *Step 2: The spectral filter selects genus $\leq 4$.*
 Not every knot reachable from $T_{1,0}$ by crossing changes has
 genus $\leq 4$ — intermediate steps may pass through arbitrarily
-high genus.  However, the Bring surface imposes a spectral filter:
+high genus.  However, the Bring's surface imposes a spectral filter:
 in the Skein module $\mathcal{S}_q(\mathbf{C})$, the mass functional
 $\mathcal{M} \colon \mathcal{S}_q \to \mathbb{R}_{\geq 0}$ annihilates
 any term whose knot type has $g > 4$

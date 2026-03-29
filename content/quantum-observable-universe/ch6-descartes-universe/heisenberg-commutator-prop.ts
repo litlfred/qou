@@ -8,8 +8,5 @@ export default proposition({
     decl: "QOU.DescartesUniverse.heisenberg_commutator",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-planck-constant",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:quantum-planck-constant"],
 });

@@ -8,10 +8,7 @@ export default proposition({
   },
   title: "Categorical self-duality",
   tags: ["self-duality", "yang-mills"],
-  uses: [
-    "def:categorical-instanton",
-    "def:q-hodge-star",
-  ],
+  uses: ["def:categorical-instanton"],
   proofs: ["prf:categorical-self-duality"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-self-duality-0.svg", blockIndex: 0, hash: "c997dc218a1d" },

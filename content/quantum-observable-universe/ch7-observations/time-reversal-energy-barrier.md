@@ -16,7 +16,7 @@ sector ($q \in \mathbb{R}$, $q \geq 1$), crossing a topological
 barrier between connected components requires energy
 
 $$
-  E_{\text{flip}}(e^-) \;=\; +\infty.
+  \mathfrak{E}_{\text{flip}}(e^-) \;=\; +\infty.
 $$
 
 No finite energy process can convert a single electron into a single
@@ -27,7 +27,7 @@ the original electron unchanged.
 
 **Composite fermions (proton, neutron).**
 The proton is a [Borromean baryon](#def:borromean-baryon):
-$\mathfrak{p} = [u, u, d]_c \bowtie \mathcal{L}_H$, built from
+$\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \bowtie \mathcal{L}_H$, built from
 trefoils linked by the Hopf link.  Its antiparticle $\bar{\mathfrak{p}}$
 replaces every $T_{2,3}$ with $\sigma(T_{2,3})$
 ([chirality remark](#rem:chirality-trefoil-electron-positron)).
@@ -51,8 +51,8 @@ The topological protection is **equally strong** for composites:
 Therefore:
 
 $$
-  E_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
-  E_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
+  \mathfrak{E}_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
+  \mathfrak{E}_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
 $$
 
 The only way to produce $\bar{\mathfrak{p}}$ is pair creation at the
@@ -63,10 +63,10 @@ $2m_n = 1879.1$ MeV for antineutron creation.
 A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p}
 + e^- + \bar{\nu}$, but this is *not* time reversal.  Beta decay
 changes the crossing orientation partition of the Borromean link
-(from $[u, d, d]$ to $[u, u, d]$) — an R-I embedding move that
+(from $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ to $[\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]$) — an R-I embedding move that
 alters binding energy while preserving both the Borromean link type
 and the chirality of each constituent trefoil.  No trefoil flips
-from left to right; instead, one quark flavour changes ($d \to u$)
+from left to right; instead, one quark flavour changes ($\mathfrak{d} \to \mathfrak{u}$)
 within the same chirality sector.
 
 **Summary.**

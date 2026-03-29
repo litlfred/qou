@@ -5,8 +5,6 @@ export default prose({
   uses: [
     "conj:complex-chirality-rotation",
     "prop:crossing-energy-decomposition",
-    "rem:chirality-trefoil-electron-positron",
-    "def:crossing-energy",
   ],
   tags: [
     "cp-violation", "kaon", "b-meson", "CKM",

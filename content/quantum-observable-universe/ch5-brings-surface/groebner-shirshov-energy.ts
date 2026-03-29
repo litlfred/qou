@@ -19,11 +19,6 @@ export default theorem({
   },
   uses: [
     "prop:nuclear-groebner-reduction",
-    "def:skein-binding-lagrangian",
-    "def:braid-group",
-    "unital-groebner-bases:def:admissible-system",
-    "unital-groebner-bases:def:groebner-basis",
-    "unital-groebner-bases:def:division-algorithm",
     "unital-groebner-bases:thm:main-theorem",
   ],
 });

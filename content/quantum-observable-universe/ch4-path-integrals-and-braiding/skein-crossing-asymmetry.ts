@@ -14,11 +14,5 @@ export default remark({
     "nucleus",
     "binding",
   ],
-  uses: [
-    "prop:skein-crossing-asymmetry",
-    "rem:r-matrix-braiding",
-    "def:substrate-parameter",
-    "def:crossing-energy",
-    "def:coulomb-charge",
-  ],
+  uses: ["prop:skein-crossing-asymmetry"],
 });

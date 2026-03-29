@@ -6,11 +6,7 @@ export default remark({
   title: "Frobenius structure of the C gauge algebra",
   tags: ["frobenius", "hopf-algebra", "gauge-theory"],
   uses: [
-    "def:quantum-universe",
     "def:frobenius-pairing",
-    "def:quantum-observable-universe",
-    "ex:c-quantum-universe",
-    "ex:c-quantum-observable-universe",
     "ex:instanton",
     "ex:irreducible-connection",
     "rem:q-torsion-existence",

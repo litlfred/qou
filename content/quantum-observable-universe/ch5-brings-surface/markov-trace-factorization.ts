@@ -18,13 +18,5 @@ export default theorem({
     decl: "QOU.Descartes.markov_trace_factorization",
     validation: "not_checked",
   },
-  uses: [
-    "prop:generator-volume-decomposition",
-    "thm:groebner-shirshov-energy",
-    "prop:nuclear-groebner-reduction",
-    "def:braid-group",
-    "def:stable-nucleus",
-    "def:skein-binding-lagrangian",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:generator-volume-decomposition", "thm:markov-trace-product"],
 });

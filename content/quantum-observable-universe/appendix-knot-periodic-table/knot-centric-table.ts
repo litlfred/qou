@@ -15,13 +15,5 @@ export default remark({
     "intruder",
     "todo",
   ],
-  uses: [
-    "prop:nuclear-shell-intruder",
-    "rem:hydrogen-orbitals",
-    "def:borromean-baryon",
-    "conj:electron-shells-hopf",
-    "prop:orbital-fourier-decomposition",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:nuclear-shell-intruder"],
 });

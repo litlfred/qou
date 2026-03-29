@@ -7,7 +7,7 @@ export default definition({
     decl: "QOU.CatHodgeInvolution",
     validation: "not_checked",
   },
-  uses: ["def:quantum-universe", "def:higher-forms"],
+  uses: ["def:higher-forms"],
   examples: ["ex:hodge-su2"],
   tags: ["hodge-star"],
 });

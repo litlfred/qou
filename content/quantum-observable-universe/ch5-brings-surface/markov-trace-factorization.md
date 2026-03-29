@@ -5,7 +5,7 @@ identity in $H_A(q)$, and the result is a **polynomial in $q$**:
 the Skein polynomial of the nuclear link.
 
 **Theorem.**
-Let $\overline{\mathcal{N}(p, n)}$ be the Gröbner-reduced
+Let $\overline{\mathcal{N}(Z, N)}$ be the Gröbner-reduced
 nuclear braid word in $H_A(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 At each generator $\sigma_i$, let $(a_i, b_i)$ be the
@@ -16,7 +16,7 @@ Then the Markov trace factors exactly:
 
 $$
   \mathrm{tr}_{\mathrm{Markov}}\!\bigl(
-    \overline{\mathcal{N}(p, n)}
+    \overline{\mathcal{N}(Z, N)}
   \bigr)
   \;=\;
   \prod_{i=0}^{A-2}
@@ -66,8 +66,8 @@ $$
 $$
 
 **This product IS the Skein polynomial of the nuclear link
-$\mathcal{N}(p, n)$**, written in factored form.  Evaluating at
-$q = 1.1097$ gives the physical categorical action.
+$\mathcal{N}(Z, N)$**, written in factored form.  Evaluating at
+the substrate $q$ gives the physical categorical action.
 
 ## $q$ as the polynomial variable
 
@@ -77,13 +77,13 @@ The substrate parameter $q$ is simultaneously:
    controlling the deviation from the symmetric group.
 2. **The variable** of the Skein polynomial, in which each
    transfer matrix entry is polynomial.
-3. **The physical parameter** $q = 1.1097$, determined by the
+3. **The physical parameter** the substrate $q$, determined by the
    Descartes condition $\chi(A) = -6$.
 
 The entire nuclear physics is encoded in the polynomial
 $P_{\mathcal{N}}(q)$.  Computing the polynomial requires
 exactly $\binom{A}{2}$ transfer matrix multiplications.
-Evaluating the polynomial at $q = 1.1097$ gives the energy.
+Evaluating the polynomial at the substrate parameter $q$ gives the energy.
 Taking the ratio $P_{\mathrm{par}}(q) / P_{\mathrm{dau}}(q)$
 gives the matrix element for beta decay.
 
@@ -163,9 +163,9 @@ $$
 
 Each step preserves the link invariant.  The polynomial
 $P_{\mathcal{N}}(q)$ is a well-defined invariant of the nuclear
-link $\mathcal{N}(p, n)$ — it does not depend on the braid
+link $\mathcal{N}(Z, N)$ — it does not depend on the braid
 representative or the reduction path.  Evaluating at
-$q = 1.1097$ projects the polynomial invariant to the physical
+the substrate $q$ projects the polynomial invariant to the physical
 energy.
 
 ## The polynomial degree
@@ -186,7 +186,7 @@ $$
 
 For ${}^{14}\mathrm{C}$: $\deg \leq 195$.  For
 ${}^{210}\mathrm{Bi}$: $\deg \leq 44{,}099$.  The transfer
-matrix product evaluates this polynomial at $q = 1.1097$
+matrix product evaluates this polynomial at the substrate parameter $q$
 without ever expanding it.
 
 ## Asymptotic behaviour

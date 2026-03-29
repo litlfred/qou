@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:elliptic-stability-locus",
   title:
-    "The nuclear degeneracy locus is an elliptic curve over the Bring surface",
+    "The nuclear degeneracy locus is an elliptic curve over the Bring's surface",
   tags: [
     "elliptic-curve",
     "stability",
@@ -15,13 +15,6 @@ export default conjecture({
   ],
   uses: [
     "prop:integer-stability",
-    "prop:chiral-elliptic",
-    "rem:color-tube-cubic",
-    "def:coulomb-charge",
-    "def:skein-binding-lagrangian",
-    "prop:beta-stability",
-    "rem:color-tube-fibers",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
+    "def:color-tube-fibers",
   ],
 });

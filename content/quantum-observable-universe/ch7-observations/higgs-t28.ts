@@ -15,10 +15,6 @@ export default conjecture({
   ],
   uses: [
     "prop:fermion-boson-knot-link",
-    "prop:torus-knot-generators",
     "conj:borromean-quark",
-    "def:color-tube-coordinates",
-    "def:crossing-energy",
-    "prop:local-substrate-q",
   ],
 });

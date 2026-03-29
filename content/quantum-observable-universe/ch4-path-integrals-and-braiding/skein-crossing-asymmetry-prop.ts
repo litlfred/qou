@@ -8,9 +8,5 @@ export default proposition({
     decl: "QOU.Braiding.skein_crossing_asymmetry",
     validation: "not_checked",
   },
-  uses: [
-    "def:crossing-energy",
-    "def:coulomb-charge",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:coulomb-charge"],
 });

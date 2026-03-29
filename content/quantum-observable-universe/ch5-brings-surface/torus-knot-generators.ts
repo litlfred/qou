@@ -16,11 +16,7 @@ export default proposition({
   },
   uses: [
     "def:knot-particle-generation",
-    "def:hadron",
-    "prop:skein-generation",
     "prop:euler-char-stability",
-    "rem:knot-particle-dictionary",
-    "def:recursive-brane-tower",
   ],
   proofs: ["prf:torus-knot-generators"],
 });

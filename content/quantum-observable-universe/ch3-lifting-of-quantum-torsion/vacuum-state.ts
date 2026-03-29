@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-observable-universe",
     "def:direct-limit-algebra",
     "def:quantum-gauge-group",
     "lem:descent",

@@ -16,10 +16,5 @@ export default definition({
     decl: "QOU.Organic.MolecularHopfChain",
     validation: "not_checked",
   },
-  uses: [
-    "def:covalent-bond-types",
-    "def:crossing-energy",
-    "def:hadron",
-    "def:stable-nucleus",
-  ],
+  uses: ["def:covalent-bond-types"],
 });

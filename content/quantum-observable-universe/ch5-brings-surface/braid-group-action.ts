@@ -8,10 +8,8 @@ export default remark({
     "rem:brings-curve",
     "rem:lagrange-resolvents",
     "def:braid-group",
-    "def:su2-generators",
     "def:so3-generators",
     "def:braid-twist-flip",
-    "rem:chirality-trefoil",
   ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/braid-group-action-0.svg", blockIndex: 0, hash: "f44799e1a010" },

@@ -112,6 +112,43 @@ peer-review practices and the methodology of
   preserve energy) gives the transition energy.
 - The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
   is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
+- **Derived constants from $q$ (canonical formulas):**
+  - Speed of light: $c_q = 1/(q-1)$ — ratio of spatial to temporal
+    coupling in $A_q = q^{-1}A + \hbar_q\,\iota_\xi A\,\theta$.
+  - Planck constant: $\hbar_q = (q-1)/q$.
+  - Mass-energy equivalence: $E_H = \mathfrak{m}_H \cdot c_q^2$,
+    i.e., $E_H = \mathfrak{m}_H/(q-1)^2$.  Plain $E_H$ is safe:
+    the exceptional divisor is now $\mathcal{S}_c$, so $E$ is
+    no longer overloaded.
+  - Generic closed vortex: $\varrho \colon \mathbf{1} \to A$ (not
+    $\gamma$, which is reserved for the photon).
+  - Operational entropy: $\eta_q = (2q-1)/q^3$.
+  - Hausdorff dimension: $d_H(q) = (2q-1)^2/q^3$.
+  - $q$-deformed Lyapunov exponent: $\chi_q = 1/(2q-1)$.
+  - Gravitational constant: $G_{\mathrm{Planck}} = 1$ (exact),
+    from in-progress braid entropy $S_{\mathrm{cell}} = (q-1)^2/q^3$
+    with quadratic suppression $\hbar_q^{2k}$ per jet level.
+  - Golden crossover: $d_H = 1$ at $q = 1$ and $q = (3+\sqrt{5})/2
+    = \varphi^2$.
+  - EM/strong ratio: $\tanh(\ln q)$.
+  - Fine structure: $\alpha_{\mathrm{EM}} = q^{-1}/([9]_q \cdot
+    [10]_q)$ where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$
+    (symmetric $q$-integer).
+  - Mass as photon threading cost: $\mathfrak{m}_H = E_H \cdot (q-1)^2$
+    = total Gröbner--Shirshov Hecke reduction cost of threading
+    $\gamma$ through $\beta_H$.  Three equivalent computations:
+    Yekutieli MI (analytic), ribbon trace (algebraic), Gröbner
+    reduction (computational).
+  These formulas are **derived**, not postulated. Agents must not
+  introduce alternative expressions for these quantities.
+- **Notation conventions (this session):**
+  - $E_H$ = crossing energy of composite $H$ (plain italic, safe
+    since exceptional divisor is now $\mathcal{S}_c$).
+  - $\mathfrak{m}_H$ = categorical mass of composite $H$ (fraktur).
+  - $c_q$ = speed of light (subscript, not function notation).
+  - $\varrho \colon \mathbf{1} \to A$ = generic closed vortex.
+  - $\gamma$ = photon (exclusively).  Never use for generic path.
+  - $\wp$ = reserved for Weierstrass projection (future use).
 
 ### 3. Statistical and Methodological Soundness
 - Statistical methods are appropriate for the analysis.

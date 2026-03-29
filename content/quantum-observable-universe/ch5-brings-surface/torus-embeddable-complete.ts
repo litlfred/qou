@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:torus-embeddable-complete",
   title:
-    "Completeness of torus knots embeddable in the Bring surface",
+    "Completeness of torus knots embeddable in the Bring's surface",
   tags: [
     "torus-knot",
     "embeddability",
@@ -16,8 +16,5 @@ export default proposition({
     decl: "QOU.Descartes.torus_embeddable_complete",
     validation: "not_checked",
   },
-  uses: [
-    "prop:torus-knot-generators",
-    "thm:embeddability-closure",
-  ],
+  uses: ["thm:embeddability-closure"],
 });

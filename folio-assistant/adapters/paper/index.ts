@@ -16,6 +16,7 @@ import { registerLeanTools } from "./tools/lean.js";
 import { registerDepsTools } from "../../src/tools/check-deps.js";
 import { registerPreferenceTools } from "../../src/tools/preferences.js";
 import { registerPreviewTools } from "../../src/tools/preview.js";
+import { registerSkillFetchTools } from "../../src/tools/skill-fetch.js";
 
 import type {
   ContentAdapter,
@@ -976,5 +977,6 @@ End every response with suggested follow-ups:
     registerDepsTools(server);
     registerPreferenceTools(server);
     registerPreviewTools(server);
+    registerSkillFetchTools(server);
   }
 }

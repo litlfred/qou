@@ -9,7 +9,6 @@ export default proposition({
   title: "Massive-particle interference pattern",
   uses: [
     "def:double-slit-q-phase",
-    "def:q-harmonic-form",
     "rem:q-laplacian-expansion",
     "def:q-hodge-star",
   ],

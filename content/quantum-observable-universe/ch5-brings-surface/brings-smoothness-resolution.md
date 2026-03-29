@@ -1,5 +1,5 @@
 **Proposition.**
-Let $\mathcal{S}$ denote the Bring surface
+Let $\mathcal{S}$ denote the Bring's surface
 ([Bring's surface](#def:brings-surface)) and
 $\pi \colon \mathcal{S} \to \mathbb{P}^1(\mathbb{C})$ the chiral projection.
 

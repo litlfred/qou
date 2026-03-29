@@ -6,7 +6,6 @@ export default definition({
   title: "Quantum Observable Universe as Direct Limit",
   tags: ["direct-limit", "algebra", "brane-tower"],
   uses: [
-    "def:quantum-observable-universe",
     "def:recursive-brane-tower",
     "ex:c-quantum-observable-universe",
   ],

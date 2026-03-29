@@ -5,8 +5,5 @@ export default definition({
   lean: { decl: "QOU.CategoricalQReebFlow" },
   title: "Categorical q-Reeb flow",
   tags: ["reeb-flow", "q-deformation", "category-theory"],
-  uses: [
-    "def:categorical-reeb",
-    "def:categorical-q-lie-bracket",
-  ],
+  uses: ["def:categorical-q-lie-bracket"],
 });

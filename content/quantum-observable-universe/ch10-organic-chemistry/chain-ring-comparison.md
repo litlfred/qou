@@ -3,18 +3,18 @@ with **no free parameters** — that can be compared to
 experimental data.
 
 **Derivation chain.**
-Every quantity is determined by the Bring surface geometry:
+Every quantity is determined by the Bring's surface geometry:
 
 $$
   \chi(A) = -6
-  \;\xrightarrow{\text{Bring surface}}\;
+  \;\xrightarrow{\text{Bring's surface}}\;
   \mathcal{G}
   \;\xrightarrow{\text{knot spectrum}}\;
   q,\; \alpha,\; m_e/m_p
   \;\xrightarrow{\text{scale separation}}\;
   |q + q^{-1}|_{\mathrm{mol}}
   \;\xrightarrow{\Delta_{T(2,6)}(q)}\;
-  E_{\mathrm{cross}}.
+  \mathfrak{E}_{\mathrm{cross}}.
 $$
 
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$

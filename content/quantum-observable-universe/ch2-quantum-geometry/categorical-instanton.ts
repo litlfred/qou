@@ -9,7 +9,6 @@ export default definition({
     validation: "leanok",
   },
   uses: [
-    "def:quantum-observable-universe",
     "def:categorical-connection",
     "def:q-hodge-star",
   ],

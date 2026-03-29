@@ -11,8 +11,6 @@ export default proposition({
   uses: [
     "def:descent-involution",
     "rem:algebraic-filter",
-    "rem:weight-space-decomposition",
-    "lem:descent",
   ],
   proofs: ["prf:descent-eigenspaces"],
 });

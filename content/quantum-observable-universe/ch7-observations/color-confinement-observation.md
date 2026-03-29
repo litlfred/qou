@@ -12,7 +12,7 @@ transplanted to the Skein algebra — explains color confinement.
 
 | Classical color theory | QOU color space |
 |----------------------|----------------|
-| Three primaries $(r, g, b)$ | Three color tubes $(w_2 - z, w_3 - z, w_4 - z)$ |
+| Three primaries $(r, g, b)$ | Three color tubes $(c_r, c_g, c_b) = (w_2 - z, w_3 - z, w_4 - z)$ |
 | Spectral colors (pure wavelengths) | Pure knot types in $\mathcal{S}_q$ |
 | Chromaticity diagram (2-simplex) | $q$-chromaticity triangle |
 | Negative coefficients needed | $-q^{-1}[L_-]$ in Skein relation |
@@ -22,7 +22,7 @@ transplanted to the Skein algebra — explains color confinement.
 
 **Observation: why exactly three colors.**
 
-The Bring surface automorphism group $S_5$ contains exactly three
+The automorphism group $S_5$ of Bring's surface contains exactly three
 conjugate $S_3$ subgroups, each the quotient of the trefoil knot
 group restricted to one color fiber.  The number three is not
 imposed externally — it follows from:
@@ -35,7 +35,7 @@ imposed externally — it follows from:
 
 In the CIE diagram, three primaries are chosen because human color
 vision has three cone types.  In QOU, three is forced by the
-algebraic geometry of the Bring surface.  The coincidence that both
+algebraic geometry of the Bring's surface.  The coincidence that both
 give three is not accidental — if the QOU describes the actual
 universe, then the three cone types of human color vision evolved
 to exploit the three-fold color structure of the underlying

@@ -9,7 +9,6 @@ export default remark({
     "sec:geodesic-vortices",
     "sec:planck-reynolds",
     "rem:primordial-vortex",
-    "def:substrate-parameter",
   ],
   tags: ["vortex", "fluid-dynamics", "modes", "classical-bridge"],
 });

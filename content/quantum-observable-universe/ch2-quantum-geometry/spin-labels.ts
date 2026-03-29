@@ -7,7 +7,7 @@ export default proposition({
     decl: "QOU.SpinDecomposition",
     validation: "axioms_only",
   },
-  uses: ["def:quantum-observable-universe", "thm:su2-emergence"],
+  uses: ["thm:su2-emergence"],
   proofs: ["prf:spin-labels"],
   examples: ["ex:spin-labels-su2"],
   tags: ["spin", "gauge-group"],

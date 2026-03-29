@@ -3,7 +3,7 @@ $10$ crossings of the weak vertex
 ([force identification](#rem:force-knot-identification)).**
 
 The weak force in the Descartes universe ($\chi(A) = -6$,
-$q = 1.110$) is carried by the torus knot $T_{3,5}$, which has
+the substrate $q$) is carried by the torus knot $T_{3,5}$, which has
 **$10$ crossings** — the highest crossing count among generators
 on the Bring surface.  A beta transition inserts the $T_{3,5}$
 braid into the nuclear braid at the converting quark, then
@@ -11,17 +11,17 @@ reduces the resulting word to obtain the daughter normal form
 plus the emitted lepton pair.
 
 **Setup.**
-A nucleus $\mathcal{N}(p, n)$ is a satellite link of $A = p + n$
+A nucleus $\mathcal{N}(Z, N)$ is a satellite link of $A = Z + N$
 Borromean components ([stable nucleus](#def:stable-nucleus)).
 Its braid word in $B_{3A}$ reduces to a unique Gröbner normal form
-$\bar{\mathcal{N}}(p, n)$ in the Hecke algebra $H_{3A}(q)$
+$\bar{\mathcal{N}}(Z, N)$ in the Hecke algebra $H_{3A}(q)$
 ([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 
 Each nucleon is a Borromean link $\mathcal{B}_3(q_1, q_2, q_3)$
 with quark strands:
-- Proton: $\mathfrak{p} = \mathcal{B}_3(u, u, d)$
+- Proton: $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
   ([categorical proton](#def:categorical-proton))
-- Neutron: $\mathfrak{n} = \mathcal{B}_3(u, d, d)$
+- Neutron: $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$
   ([categorical neutron](#def:categorical-neutron))
 
 The crossing type at each generator $\sigma_i$ depends on the
@@ -78,13 +78,13 @@ approximation misses $6$ of these $7$ crossings.
 ## Definition ($\beta^-$ decay)
 
 *A $\beta^-$ transition inserts the $T_{3,5}$ braid at the
-converting $d$-quark crossing of the Gröbner normal form
-$\bar{\mathcal{N}}(p, n)$, followed by re-reduction:*
+converting $\mathfrak{d}$-quark crossing of the Gröbner normal form
+$\bar{\mathcal{N}}(Z, N)$, followed by re-reduction:*
 
 $$
-  \bar{\mathcal{N}}(p, n) \cdot \beta_{T_{3,5}}
+  \bar{\mathcal{N}}(Z, N) \cdot \beta_{T_{3,5}}
   \;\xrightarrow{\;\text{reduce}\;}
-  \bar{\mathcal{N}}(p + 1, \, n - 1)
+  \bar{\mathcal{N}}(Z + 1, \, N - 1)
   \;\sqcup\;
   T_{2,3}
   \;\sqcup\;
@@ -112,9 +112,9 @@ the transition amplitude.
 conjugate $\overline{T_{3,5}}$ braid (with $q \leftrightarrow q^{-1}$):*
 
 $$
-  \bar{\mathcal{N}}(p, n) \cdot \overline{\beta_{T_{3,5}}}
+  \bar{\mathcal{N}}(Z, N) \cdot \overline{\beta_{T_{3,5}}}
   \;\xrightarrow{\;\text{reduce}\;}
-  \bar{\mathcal{N}}(p - 1, \, n + 1)
+  \bar{\mathcal{N}}(Z - 1, \, N + 1)
   \;\sqcup\;
   \overline{T_{2,3}}
   \;\sqcup\;
@@ -128,7 +128,7 @@ $q \mapsto q^{-1}$ on the Hecke algebra, which acts as:
 
 | $\beta^-$ | $\beta^+$ |
 |:---:|:---:|
-| $d \to u$ via $T_{3,5}$ | $u \to d$ via $\overline{T_{3,5}}$ |
+| $\mathfrak{d} \to \mathfrak{u}$ via $T_{3,5}$ | $\mathfrak{u} \to \mathfrak{d}$ via $\overline{T_{3,5}}$ |
 | $q \, [L_+]$ | $q^{-1} [L_+]$ |
 | electron $T_{2,3}$ | positron $\sigma(T_{2,3})$ |
 | antineutrino $\bar{K}_{0_1}$ | neutrino $K_{0_1}$ |
@@ -177,9 +177,9 @@ crossings of the $T_{3,5}$ insertion:
 $$
   \mathcal{Q}_q
   \;=\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(p, n)]
+  \mathcal{S}_q[\bar{\mathcal{N}}(Z, N)]
   \;-\;
-  \mathcal{S}_q[\bar{\mathcal{N}}(p \pm 1, n \mp 1)]
+  \mathcal{S}_q[\bar{\mathcal{N}}(Z \pm 1, N \mp 1)]
   \;-\;
   m_e
 $$
@@ -234,6 +234,6 @@ of the $10$ crossings in the weak vertex.  This explains:
 
 **Open computation:** The exact weak vertex form factor
 $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$
-at $q = 1.110$ and the crossing budget ($3 + 0 + 7$) must be
+and the crossing budget ($3 + 0 + 7$) must be
 verified by explicit Hecke algebra computation of the $T_{3,5}$
 braid word reduction.

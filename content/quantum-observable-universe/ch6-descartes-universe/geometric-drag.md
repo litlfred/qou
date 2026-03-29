@@ -14,7 +14,7 @@ recovered as the residue of the interaction between the growth profiles:
 ```tex
 \begin{equation}\label{eq:mass-residue}
   m \;\propto\;
-  \oint_{\gamma}
+  \oint_{\varrho}
   \lVert\nabla_A q\rVert\cdot
   \lVert\Omega_1\wedge\Omega_{2,3}\rVert,
 \end{equation}

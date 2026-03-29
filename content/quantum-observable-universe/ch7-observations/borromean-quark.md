@@ -6,7 +6,7 @@ divisor.
 **Conjecture.**
 *The baryon is the Borromean link $\mathcal{B}_3$ of three
 unknots threaded through the color tubes $(r, g, b)$ of the
-Bring surface ([color tube coordinates](#def:color-tube-coordinates)),
+Bring's surface ([color tube coordinates](#def:color-tube-coordinates)),
 bound by the Hopf link $\mathcal{L}_H$:*
 
 $$
@@ -72,9 +72,9 @@ reversed orientation (**down quark**):
   (reversed) crossing orientation within $\mathcal{B}_3$.
   Coulomb charge contribution: $-1/3$ of the proton charge.
 
-The proton $\mathfrak{p} = [u, u, d]_c$ has the $2 + 1$
+The proton $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p$ has the $2 + 1$
 partition: two positive-orientation unknots and one negative.
-The neutron $\mathfrak{n} = [u, d, d]_c$ has the $1 + 2$
+The neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ has the $1 + 2$
 partition.
 
 **The exceptional divisor as quark habitat.**
@@ -98,7 +98,7 @@ re-confines.
 
 **The T(2,n) family.**
 
-The torus knot/link family $T(2,n)$ on the Bring surface
+The torus knot/link family $T(2,n)$ on the Bring's surface
 splits into two parallel ladders:
 
 | $n$ | Name | Type | Comp. | Genus | Physical role |

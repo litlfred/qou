@@ -8,11 +8,5 @@ export default definition({
     decl: "QOU.planckTime",
     validation: "leanok",
   },
-  uses: [
-    "def:quantum-planck-constant",
-    "def:substrate-parameter",
-    "ex:q-reeb-flow",
-    "rem:julia-set-reeb",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:julia-set-reeb"],
 });

@@ -31,7 +31,7 @@ interpretation](#rem:complex-substrate-interpretation)
 then permits continuous chirality rotation in the fibers.
 Concretely: at each blow-up point, the
 [exceptional divisor](#def:exceptional-divisor)
-$E_p \cong \mathbb{P}^1(\mathbb{C})$ becomes the stage
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ becomes the stage
 where trefoils and their mirrors can interconvert via the
 phase rotation $\mathcal{X}_\varphi$.  The chirality flip
 happens **in the fibers**, not at the base level.

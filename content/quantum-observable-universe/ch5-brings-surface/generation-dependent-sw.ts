@@ -7,6 +7,5 @@ export default remark({
   uses: [
     "rem:seiberg-witten",
     "rem:color-tube-cubic",
-    "rem:brings-smoothness",
   ],
 });

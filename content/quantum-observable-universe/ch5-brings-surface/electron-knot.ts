@@ -8,8 +8,5 @@ export default definition({
     decl: "QOU.Descartes.Electron",
     validation: "not_checked",
   },
-  uses: [
-    "def:up-quark",
-    "prop:torus-knot-generators",
-  ],
+  uses: ["def:up-quark"],
 });

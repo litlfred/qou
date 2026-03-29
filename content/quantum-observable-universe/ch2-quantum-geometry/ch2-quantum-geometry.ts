@@ -3,11 +3,11 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 2: Quantum Observable Universes.
  *
- * Opens with the Quantum Observable Universe (QOU) axiom — adding a
- * fibre functor (observability) to the QU of Chapter 1.  This unlocks
- * SU(2) emergence, the Reeb vector field, weight decompositions,
- * substrate deformation, the categorical action, particles, instantons,
- * and q-deformed operators.
+ * Opens with the Quantum Observable Universe (QOU) axioms — adding
+ * observability, measurability, and the volume constraint to the QU
+ * of Chapter 1.  This unlocks SU(2) emergence, the Reeb vector field,
+ * weight decompositions, substrate deformation, the categorical action,
+ * particles, instantons, and q-deformed operators.
  *
  * The elaboration material (TQFT context, q-jacobiator, physical
  * elaborations, categorical lifting) follows the core development.
@@ -23,6 +23,7 @@ export default chapter({
       label: "sec:qou-definition",
       blocks: [
         "quantum-observable-universe",
+        "braiding-induced-ordering",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",

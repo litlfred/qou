@@ -8,7 +8,6 @@ export default proposition({
   },
   title: "Skein generation of hadrons from mass-zero fundamentals",
   uses: [
-    "def:hadron",
     "rem:hadron-operations",
     "def:hadron-fibre-embedding",
   ],

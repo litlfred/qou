@@ -16,12 +16,5 @@ export default definition({
     decl: "QOU.ReebGaugeGroup",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:maximal-torus",
-    "def:categorical-reeb",
-    "def:weight-decomposition",
-    "def:projective-line-object",
-    "def:contact-affine-chart",
-  ],
+  uses: ["def:contact-affine-chart"],
 });

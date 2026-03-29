@@ -13,15 +13,5 @@ export default remark({
     "nucleus",
     "generation",
   ],
-  uses: [
-    "def:knot-particle-generation",
-    "prop:torus-knot-generators",
-    "thm:embeddability-closure",
-    "def:hadron",
-    "rem:hadron-operations",
-    "prop:skein-generation",
-    "rem:knot-particle-dictionary",
-    "prop:terminal-resolution",
-    "def:color-tube-coordinates",
-  ],
+  uses: ["thm:embeddability-closure"],
 });

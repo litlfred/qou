@@ -33,7 +33,7 @@ universe u v
     `f : 𝟙 → X`, the composite `f ≫ f† : 𝟙 → 𝟙` is positive
     in `End(𝟙) ≅ R`.
 
-    LaTeX: `\label{def:positive-definite-dagger}` -/
+    LaTeX: `\label{prop:positive-definite-dagger}` -/
 structure PositiveDefiniteStructure (C : Type u)
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

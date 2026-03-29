@@ -36,19 +36,19 @@ crossings (the converting nucleon's quarks).  At each changed
 crossing:
 
 $$
-  \Delta E_\times
+  \Delta \mathfrak{E}_\times
   \;=\;
-  E_\times^{(\epsilon_{\mathrm{par}})}(q)
-  - E_\times^{(\epsilon_{\mathrm{dau}})}(q)
+  \mathfrak{E}_\times^{(\epsilon_{\mathrm{par}})}(q)
+  - \mathfrak{E}_\times^{(\epsilon_{\mathrm{dau}})}(q)
 $$
 
-For a $d \to u$ change ($\sigma_k^{-1} \to \sigma_k$):
-$\Delta E_\times = q - q^{-1}$.
+For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$):
+$\Delta \mathfrak{E}_\times = q - q^{-1}$.
 
 $$
   \mathcal{Q}_q
   \;=\;
-  \sum_{\text{changed crossings}} \Delta E_\times
+  \sum_{\text{changed crossings}} \Delta \mathfrak{E}_\times
   \;-\; S_q(e)
 $$
 
@@ -147,7 +147,7 @@ $$
 $\mathcal{Q}_q \to Q_{\mathrm{classical}}$ (classical
 conservation restored).
 
-**At $q = 1.110$:** $\delta_q \neq 0$.  For tritium ($A = 3$):
+**At the substrate parameter $q$:** $\delta_q \neq 0$.  For tritium ($A = 3$):
 $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$,
 giving a correction $\delta_q / \mathcal{Q}_q \sim 5\%$.
 This is the **same correction** that brings the tritium
@@ -186,7 +186,7 @@ original.  This is the $q$-analogue of energy conservation.
 | $q$ | Regime | $\mathcal{Q}_q$ | $\delta_q$ |
 |-----|--------|:---:|:---:|
 | $q = 1$ | Classical | $0$ | $0$ |
-| $q = 1.110$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
+| the substrate $q$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
 | $q \to \infty$ | Big bang | $\to \infty$ | $\to \infty$ |
 
 ## $q$-Momentum

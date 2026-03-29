@@ -35,9 +35,7 @@ export default chapter({
         "brings-is-qou-proof",
         "brings-qou-4tuple",
         "brings-qou-axiom-map",
-        // Lagrange resolvents and braid-group action
-        "lagrange-resolvent-transform",
-        "lagrange-resolvents",
+        // Braid-group action (resolvents now in ch4 as categorical DFT)
         "braid-group-action",
         // Color tube coordinates
         "color-tube-coordinates",
@@ -76,21 +74,18 @@ export default chapter({
         "quaternionic-spectral-resolvents",
         "omega-constraints",
         "spectral-dynamics",
-        // Seiberg--Witten on Bring's (generic SW → ch5 Models)
-        "reeb-exceptional-divisor",
+        // Seiberg--Witten on Bring's
         "generation-dependent-sw",
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
-        "exceptional-divisor",
         "chiral-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",
-        "skein-archimedean-shadow",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
-        "golden-ratio-degeneration",
+        "weierstrass-projection",
       ],
     }),
 
@@ -125,12 +120,8 @@ export default chapter({
         "neutrino-knot",
         "antineutrino-knot",
         // Building block reference tables
-        "building-block-knots",
         "linking-relations-table",
-        // q-deformed kinematics
-        "q-momentum",
-        "q-angular-momentum",
-        "q-energy",
+        // q-deformed kinematics (definitions now in ch4)
         "q-value-transition",
         // Proton, neutron, stable nucleus
         "categorical-proton",
@@ -147,7 +138,6 @@ export default chapter({
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
-        "valley-table",
         "valley-stability",
         // Hadron half-life calculations relative to q
         // Beta decay as categorical Skein operation
@@ -155,24 +145,20 @@ export default chapter({
         "lepton-number-categorical",
         "parity-violation-skein",
         "nuclear-spin-parity",
-        "tritium-decay-knot-equation",
         // Half-life calculations
         "hadron-half-life",
         "hadron-q-self-correction",
-        "hadron-half-life-regimes",
         "skein-coulomb-enhancement",
-        "shell-threading-conjecture",
         "nuclear-groebner-reduction",
         "groebner-shirshov-energy",
+        "box-braid-irreducibility",
         "generator-volume-decomposition",
         "markov-trace-factorization",
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
         "shell-structure-eigenvalues",
-        "trace-ratio-observable",
         "quantum-dilogarithm-volume",
-        "nitrogen-14-threading",
         "reidemeister-action-table",
         "topology-geometry-boundary",
         // Elliptic stability conjecture
@@ -187,7 +173,6 @@ export default chapter({
         "noble-gas-characterization",
         "metallic-character-knot",
         "francium-extremal-metal",
-        "hydrogen-knot-structure",
         "hydrogen-shell-writhe",
         "hydrogen-orbitals",
         // The Descartes theorem
@@ -204,18 +189,11 @@ export default chapter({
       title: "Topological mass and the knot-particle spectrum",
       label: "sec:topological-mass-spectrum",
       blocks: [
-        // Topological mass formula (Archimedean wall)
-        "topological-mass-formula",
+        // Topological mass (Descartes-specific applications)
         "hyperbolic-volumes-prose",
-        "knot-volumes-verification",
         // Skein decomposition and hadronic mass
         "ch11-intro",
-        "skein-decomposition",
-        "skein-mass-relation",
-        "skein-mass-relation-proof",
         "terminal-resolution",
-        "terminal-resolution-proof",
-        "terminal-resolution-cz",
         // Knot-to-particle mass spectrum
         "knot-formula-table",
         "mass-from-generators",

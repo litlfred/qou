@@ -1,4 +1,4 @@
-The three color tubes of the Bring surface
+The three color tubes of the Bring's surface
 ([color tube interpretation](#rem:color-tube-interpretation)) and
 the three $S_3$ subgroups of its automorphism group
 ([chirality of the trefoil](#rem:chirality-trefoil)) provide a
@@ -48,7 +48,7 @@ mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**
 
-The Bring surface automorphism group $S_5$ contains exactly three
+The automorphism group $S_5$ of Bring's surface contains exactly three
 copies of $S_3$, each the quotient of the trefoil knot group
 $\langle x, y \mid x^2 = y^3 \rangle$ restricted to one color
 sector.  These three $S_3$ subgroups are the "primaries" of the
@@ -56,9 +56,9 @@ categorical color space:
 
 | Color | $S_3$ subgroup | Trefoil copy | Color coordinate |
 |-------|---------------|-------------|-----------------|
-| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $r = w_2 - z$ |
-| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $g = w_3 - z$ |
-| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $b = w_4 - z$ |
+| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $c_r = w_2 - z$ | |
+| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ | |
+| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ | |
 
 Each $S_3$ acts on one color fiber.  The elements of $S_5$ that
 lie *outside* all three $S_3$ subgroups act by **conjugation**,
@@ -120,16 +120,16 @@ $q$-chromaticity coordinates of a Skein element
 $\psi \in \mathcal{S}_q$:
 
 $$
-  (\hat{r}, \hat{g}, \hat{b})
+  (\hat{c}_r, \hat{c}_g, \hat{c}_b)
   \;=\;
   \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
 $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three color tubes.  These satisfy $\hat{r} + \hat{g} + \hat{b} = 1$,
+three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
 so the $q$-chromaticity diagram is a triangle (the $q$-simplex).
 
-For color-neutral states (hadrons): $\hat{r} = \hat{g} = \hat{b} = 1/3$
+For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$
 — the white point at the centroid.  For individual quarks, some
 coordinates exceed $1$ and others are negative — these points lie
 outside the physical triangle, just as spectral colors lie outside
@@ -140,5 +140,5 @@ $\tau$-evaluation — is a $q$-deformed convex region inscribed in
 the triangle.  Its boundary is the **$q$-spectral locus**, the
 image of the pure knot types under the $q$-chromaticity projection.
 At $q = 1$, this region fills the entire triangle (no confinement
-needed); at $q = 1.1097$, it shrinks, excluding individual colors
+needed); at the substrate parameter $q$, it shrinks, excluding individual colors
 and admitting only near-centroid (confined) combinations.

@@ -57,19 +57,16 @@ the full electron-positron sector ($c = 3$) with room to spare.
 The information processed per Planck unit is
 
 $$
-  I_P(q) \;=\; n_R(q) \cdot h(q)
+  I_P(q) \;=\; n_R(q) \cdot \eta_q
 $$
 
-where $h(q)$ is the information content per Reeb operation,
-bounded by the Hausdorff dimension $d_H(q)$ of the Julia set
-$J(f_q) \cap S^1$
-([Julia set of Reeb flow](#rem:julia-set-reeb)) over
-$\mathbb{C}$, or by the orbit complexity of $f_q$ over
-$\mathbb{F}_\pp$.
+where $\eta_q = (2q-1)/q^3$ is the operational entropy
+([operational entropy](#def:operational-entropy)) --- the
+information generated per $f_q$-iteration, determined by the
+gravitational self-consistency condition.
 
-At the Big Bang ($q \to \infty$): $n_R \to 1$ and $h \to 0$
+At the Big Bang ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
 (simplest dynamics), so $I_P \to 0$.
-At the golden threshold ($q_{\mathrm{gold}} = 1/\varphi^2$):
-$h(q)$ peaks (maximal fractal complexity).
-At $q = 1.1097$: $I_P \approx 10.1 \cdot d_H(1.1097)$, the product
-of moderate operation count and moderate per-operation information.
+At the classical limit ($q \to 1$): $\eta_q \to 1$ nat per step.
+At $q = 1.1097$: $I_P \approx 10.1 \times 0.892 \approx 9.0$
+nats per Planck time.

@@ -8,6 +8,5 @@ export default remark({
   uses: [
     "def:recursive-brane-tower",
     "def:substrate-parameter",
-    "prop:jet-prolongation",
   ],
 });

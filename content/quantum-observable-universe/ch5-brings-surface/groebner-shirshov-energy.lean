@@ -51,30 +51,29 @@ theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :
     Yang-Baxter and far commutativity contribute zero. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 noncomputable def totalEnergyChange (q : ℝ) (hecke_coeffs : List ℝ) : ℝ :=
-  hecke_coeffs.foldl (fun acc c => acc + heckeEnergyChange q c) 0
+  (hecke_coeffs.map (heckeEnergyChange q)).sum
+
+/-- Each Hecke energy change is non-negative for q > 1. -/
+-- Ref: [manuscript] §6/groebner-shirshov-energy
+private theorem heckeEnergyChange_nonneg (q : ℝ) (hq : 1 < q) (c : ℝ) :
+    0 ≤ heckeEnergyChange q c := by
+  unfold heckeEnergyChange
+  apply mul_nonneg (abs_nonneg _)
+  have hq_pos : (0 : ℝ) < q := by linarith
+  rw [sub_nonneg, div_le_iff hq_pos]
+  nlinarith
 
 /-- The total energy is non-negative for q > 1. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-private theorem foldl_hecke_nonneg (q : ℝ) (hq : 1 < q)
-    (acc : ℝ) (hacc : 0 ≤ acc) (coeffs : List ℝ) :
-    0 ≤ List.foldl (fun a c => a + heckeEnergyChange q c) acc coeffs := by
-  induction coeffs generalizing acc with
-  | nil => simpa [List.foldl]
-  | cons c cs ih =>
-    simp only [List.foldl]
-    apply ih
-    have : 0 ≤ heckeEnergyChange q c := by
-      unfold heckeEnergyChange
-      apply mul_nonneg (abs_nonneg _)
-      rw [sub_nonneg, div_le_one (by linarith : (0 : ℝ) < q)]
-      nlinarith
-    linarith
-
 theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     (coeffs : List ℝ) :
     0 ≤ totalEnergyChange q coeffs := by
   unfold totalEnergyChange
-  exact foldl_hecke_nonneg q hq 0 le_rfl coeffs
+  apply List.sum_nonneg
+  intro x hx
+  rw [List.mem_map] at hx
+  obtain ⟨c, _, rfl⟩ := hx
+  exact heckeEnergyChange_nonneg q hq c
 
 /-- Path independence: the total energy change is determined by
     the initial and final states, not the reduction path.
@@ -85,10 +84,6 @@ theorem totalEnergyChange_nonneg (q : ℝ) (hq : 1 < q)
     normal form alone. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
--- Ref: [manuscript] Ch. 6, §groebner-shirshov-energy
--- Ref: [manuscript] unital-groebner-bases/main-theorem
--- Path independence: both reduction paths produce the same total energy change.
--- Follows from confluence (diamond lemma) of the Gröbner-Shirshov basis.
 axiom energy_path_independent (q : ℝ) (hq : 1 < q)
     (initial : List (List ℕ × ℝ))  -- initial Hecke element
     (path1 path2 : List DivisionStepType)  -- two reduction paths
@@ -103,7 +98,7 @@ axiom energy_path_independent (q : ℝ) (hq : 1 < q)
 -- Ref: [manuscript] §6/groebner-shirshov-energy
 axiom beta_decay_energy_negative (q : ℝ) (hq : 1 < q)
     (p n : ℕ) (hn : 0 < n) :
-    ∃ (E_par E_dau : ℝ), E_dau < E_par
+    ∃ (𝒮_par E_dau : ℝ), E_dau < 𝒮_par
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy

@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)_\prec$ be a quantum observable
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable
 universe with state bundle $\mathcal{S} \to M$, let $q$
 denote the
 ([substrate parameter](#def:substrate-parameter)), let
@@ -18,7 +18,7 @@ is a section of the adjoint bundle of the $1$-jet
 prolongation of $\mathcal{S}$.  The sign $\epsilon$
 determines the arrow of time:
 $\epsilon = +1$ (braiding, $\sigma_i$, forward under
-$\prec$) or $\epsilon = -1$ (unbraiding,
+$\prec_c$) or $\epsilon = -1$ (unbraiding,
 $\sigma_i^{-1}$, backward).
 
 The section $\mathfrak{I}$ satisfies:
@@ -86,4 +86,4 @@ endomorphism $\mathfrak{I}_p \colon A / \mathfrak{m}_p^2 \to
 A / \mathfrak{m}_p^2$.  The sign $\epsilon$ determines
 whether the crossing injected at $p$ is $\sigma_i$ (forward,
 $\epsilon = +1$) or $\sigma_i^{-1}$ (backward,
-$\epsilon = -1$) in the admissible ordering $\prec$.
+$\epsilon = -1$) in the braiding-induced ordering $\prec_c$.

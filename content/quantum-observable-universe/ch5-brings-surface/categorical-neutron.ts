@@ -8,12 +8,5 @@ export default definition({
     decl: "QOU.Torsion.CategoricalNeutron",
     validation: "not_checked",
   },
-  uses: [
-    "def:hadron",
-    "def:up-quark",
-    "def:down-quark",
-    "def:categorical-proton",
-    "def:knot-particle-generation",
-    "def:color-tube-coordinates",
-  ],
+  uses: ["def:categorical-proton"],
 });

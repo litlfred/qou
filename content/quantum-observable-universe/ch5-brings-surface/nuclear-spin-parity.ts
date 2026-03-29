@@ -20,8 +20,6 @@ export default proposition({
   },
   uses: [
     "def:stable-nucleus",
-    "def:categorical-proton",
-    "def:categorical-neutron",
     "prop:fermion-boson-knot-link",
   ],
 });

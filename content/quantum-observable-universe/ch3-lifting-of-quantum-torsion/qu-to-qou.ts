@@ -7,13 +7,6 @@ export default theorem({
   tags: ["main-theorem", "qou", "yekutieli", "descent"],
   examples: ["ex:qu-to-qou-su2"],
   uses: [
-    "def:quantum-universe",
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "def:yekutieli-lifting-condition",
-    "def:quantum-characteristic-classes",
-    "def:projective-line-object",
-    "prop:jet-prolongation",
     "prop:yekutieli-lifting",
     "prop:fiber-adjoint-involution",
   ],

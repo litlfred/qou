@@ -2,7 +2,7 @@ Every knot type produced by the three generation operations
 ([knot-particle generation](#def:knot-particle-generation)) applied
 to the generator set $\mathcal{G}$
 ([finiteness of generators](#prop:torus-knot-generators)) remains
-embeddable in the genus-$4$ fiber of the Bring surface, and hence
+embeddable in the genus-$4$ fiber of the Bring's surface, and hence
 admits a localized knot structure
 ([localized knot](#def:localized-knot)) that descends to the base
 manifold via the fibre functor $\tau$.
@@ -32,10 +32,10 @@ is closed under observability.
 
 *Hopf linking $\ell_H$.*
 The Hopf link $\mathcal{L}_{\mathrm{Hopf}}$ on the exceptional
-divisor $E_c \cong S^2$ joins two knots localized at (possibly
+divisor $\mathcal{S}_c \cong S^2$ joins two knots localized at (possibly
 distinct) points of the base.  Each component retains its own knot
 type and hence its own Seifert genus.  The linking structure lives
-in the total space $S^3 \to E_c$ and does not increase the genus of
+in the total space $S^3 \to \mathcal{S}_c$ and does not increase the genus of
 any individual component.  Consequently, if $g(K_1) \leq 4$ and
 $g(K_2) \leq 4$, then both components of
 $K_1 \cup_{\mathrm{Hopf}} K_2$ remain embeddable.
@@ -103,7 +103,7 @@ reason that *all* fundamental particles interact: they all descend
 to the same base manifold $\mathbb{P}(V)$ and hence participate in
 the categorical braiding.  A hypothetical particle corresponding to
 a genus-$5$ knot would be unobservable — it could not be localized
-in the Bring surface fiber, could not descend to the base, and would
+in the Bring's surface fiber, could not descend to the base, and would
 have zero coupling to all other particles.  The $\chi = -6$
 constraint of the Descartes universe therefore guarantees a
 self-consistent, fully interacting particle spectrum with no dark

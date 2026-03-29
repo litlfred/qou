@@ -5,12 +5,9 @@ export default remark({
   title: "Electrons are immortal: no beta decay for elementary trefoils",
   interprets: "prop:antiparticle-crossing-reversal",
   uses: [
-    "rem:time-reversal-energy-barrier",
     "rem:cosmological-chirality-flip",
-    "rem:reidemeister-mass-invariance",
-    "rem:chirality-trefoil-electron-positron",
+    "prop:reidemeister-mass-invariance",
     "rem:cmb-q-torsion",
-    "def:borromean-baryon",
   ],
   tags: [
     "electron", "stability", "immortality", "beta-decay",

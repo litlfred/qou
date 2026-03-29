@@ -5,10 +5,6 @@ export default lemma({
   lean: { decl: "QOU.DescentLemma" },
   title: "Descent preserves the quantum observable universe",
   tags: ["descent", "frobenius-hopf", "star-homomorphism"],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:recursive-brane-tower",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:recursive-brane-tower"],
   proofs: ["prf:descent"],
 });

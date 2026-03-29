@@ -10,7 +10,6 @@ export default proposition({
   uses: [
     "prop:pawlowski-leitner-basis",
     "rem:adjoint-trace",
-    "def:frobenius-pairing",
   ],
   tags: ["inner-product", "intertwiner", "orthogonality", "pawlowski-leitner"],
 });

@@ -103,7 +103,7 @@ writhe level (R-I framing number).  The step that remains to
 be **proven** is:
 
 *The space of sections of the normal bundle
-$N_{T_{2,3}}$ of the trefoil in the Bring surface, at total
+$N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total
 framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
 This is

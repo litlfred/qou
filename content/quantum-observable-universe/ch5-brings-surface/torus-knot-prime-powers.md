@@ -15,13 +15,13 @@ Embeddability requires $p^k - 1 \leq 4$, i.e., $p^k \leq 5$.
 
 | $k$ | Knot | Genus $= 2^k - 1$ | Crossings | Embeddable? | Assignment |
 |-----|------|--------------------|-----------|-------------|------------|
-| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $u$ |
-| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Top quark $t$ |
+| $1$ | $T_{3,2} = T_{2,3}$ (trefoil $3_1$) | $1$ | $3$ | Yes | Electron $e^-$, up quark $\mathfrak{u}$ |
+| $2$ | $T_{3,4}$ ($8_{19}$) | $3$ | $8$ | Yes | Top quark $\mathfrak{t}$ |
 | $3$ | $T_{3,8}$ | $7$ | $21$ | **No** | Excluded |
 | $4$ | $T_{3,16}$ | $15$ | $45$ | **No** | Excluded |
 
 The genus sequence $1, 3, 7, 15, \ldots$ follows $g = 2^k - 1$
-(Mersenne numbers).  The Bring surface admits exactly two levels
+(Mersenne numbers).  The Bring's surface admits exactly two levels
 of this tower: the trefoil ($k = 1$) and the top quark ($k = 2$).
 No third generation of $p = 2$ knots is possible.
 
@@ -58,7 +58,7 @@ The trefoil is the root node of both generation chains.
 
 Only $k = 1$ fits.  Unlike $T_{3,4} = T_{3,2^2}$, which is the
 *square* of the trefoil's winding number, $T_{3,5}$ is an isolated
-prime — it does not extend to a tower within the Bring surface.
+prime — it does not extend to a tower within the Bring's surface.
 
 **The $p = 7$ tower and beyond.**
 
@@ -83,7 +83,7 @@ The power tower $T_{3,2^k}$ has a clear physical pattern:
 
 - $k = 1$: $T_{3,2}$ = trefoil — lightest matter (electron, up quark)
 - $k = 2$: $T_{3,4}$ — heaviest matter (top quark, mass $\approx 173$ GeV)
-- $k = 3$: excluded — the Bring surface forbids a third matter generation in this tower
+- $k = 3$: excluded — the Bring's surface forbids a third matter generation in this tower
 
 The mass ratio $m_t / m_u \approx 7.5 \times 10^4$ spans four orders
 of magnitude across a single step $k = 1 \to k = 2$ in the tower.

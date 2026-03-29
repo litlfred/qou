@@ -1,11 +1,11 @@
 **Conjecture.**
 *The Higgs boson is the torus link $T(2,8)$ — the unique
-genus-$3$ link on the Bring surface whose Seifert surface
+genus-$3$ link on the Bring's surface whose Seifert surface
 spans all three exceptional divisors simultaneously.*
 
 **The three exceptional divisors.**
 
-The Bring surface ($\chi = -6$, genus $4$) has three color
+The Bring's surface ($\chi = -6$, genus $4$) has three color
 tubes $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The
 brane tower blow-up produces three exceptional divisors
@@ -14,7 +14,7 @@ link $\mathcal{B}_3$
 ([Borromean quark](#conj:borromean-quark)) lives at the
 intersection of these three divisors.
 
-The torus links $T(2, 2k)$ on the Bring surface have genus
+The torus links $T(2, 2k)$ on the Bring's surface have genus
 $k - 1$ and interact with the exceptional divisors according
 to their genus:
 
@@ -28,7 +28,7 @@ to their genus:
 $T(2,8)$ is the **first and only** link whose Seifert surface
 has genus large enough to span all three exceptional divisors.
 Its genus $3$ exactly matches the number of color tubes on the
-Bring surface.
+Bring's surface.
 
 **Why $T(2,8)$ is scalar (spin $0$).**
 
@@ -88,11 +88,11 @@ $$
 
 The Higgs mass is set by the genus-$3$ Seifert surface volume,
 which in turn is set by the three color tube volumes of the
-Bring surface.
+Bring's surface.
 
 **Why the Higgs is unique.**
 
-On the Bring surface (genus $4$), the Seifert surface of
+On the Bring's surface (genus $4$), the Seifert surface of
 $T(2,8)$ has genus $3$ — it fills $3$ of the $4$ available
 handles.  There is exactly **one** way to embed a genus-$3$
 surface into a genus-$4$ surface (up to isotopy), leaving one

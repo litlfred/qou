@@ -19,12 +19,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:stable-nucleus",
-    "def:skein-binding-lagrangian",
-    "def:braid-group",
-    "rem:skein-crossing-asymmetry",
     "conj:shell-threading-energy",
-    "unital-groebner-bases:def:admissible-system",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
   ],

@@ -6,13 +6,7 @@ export default remark({
   interprets: "prop:antiparticle-crossing-reversal",
   uses: [
     "rem:pair-creation-energy",
-    "rem:trefoil-vortex-chirality-flip",
-    "rem:chirality-trefoil-electron-positron",
-    "def:crossing-energy",
-    "def:substrate-parameter",
-    "rem:positron-knot",
-    "def:borromean-baryon",
-    "prop:torus-hopf-stability",
+    "def:positron-knot",
   ],
   tags: [
     "time-reversal", "energy-barrier", "topological-protection",

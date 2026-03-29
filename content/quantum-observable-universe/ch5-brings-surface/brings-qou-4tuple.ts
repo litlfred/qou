@@ -7,8 +7,6 @@ export default remark({
   uses: [
     "ex:c-quantum-observable-universe",
     "def:brings-surface",
-    "def:substrate-parameter",
-    "def:su2-generators",
     "def:so3-generators",
   ],
 });

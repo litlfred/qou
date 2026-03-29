@@ -15,13 +15,8 @@ export default conjecture({
     "path-integral",
   ],
   uses: [
-    "prop:toffoli-transfer-matrix",
     "rem:toffoli-q-and",
-    "prop:skein-polynomial-transfer-matrix",
-    "def:descent-involution",
-    "prop:descent-eigenspaces",
     "rem:jet-planck-steps",
-    "def:substrate-parameter",
     "rem:complex-substrate-interpretation",
   ],
 });

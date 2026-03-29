@@ -7,7 +7,7 @@ through the $q$-deformed transition amplitude.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate
-parameter $q = 1.110$.  A nucleus $\mathcal{N}(p, n)$
+parameter the substrate $q$.  A nucleus $\mathcal{N}(Z, N)$
 ([stable nucleus](#def:stable-nucleus)) with proton displacement
 $\delta p = p - p_{\mathrm{stab}}(A)$ from the valley of stability
 has beta-decay half-life
@@ -106,9 +106,9 @@ The standard Fermi theory writes the decay rate as
 $\Gamma = G_F^2\,m_e^5/(2\pi^3) \cdot |M|^2 \cdot f(Z, Q)$.
 This effective-theory formula packages together two mass scales:
 
-- the **electron mass** $m_e = 3\,E_{\times}(q) \cdot \mu_0$
+- the **electron mass** $m_e = 3\,\mathfrak{E}_{\times}(q) \cdot \mu_0$
   ([building blocks](#rem:building-block-knots)), where
-  $E_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy;
+  $\mathfrak{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy;
 - the **weak scale** $v \approx 246$ GeV, via $G_F = 1/(\sqrt{2}\,v^2)$.
 
 Both mass scales are determined by $q$ and the single dimensional
@@ -124,14 +124,14 @@ $$
   \;=\;
   \frac{m_e^5}{2\,v^4}
   \;=\;
-  \frac{(3\,E_{\times})^5}{2\,(N_v\,E_{\times})^4}
+  \frac{(3\,\mathfrak{E}_{\times})^5}{2\,(N_v\,\mathfrak{E}_{\times})^4}
   \;\cdot\; \mu_0
   \;=\;
-  \frac{243\,E_{\times}}{2\,N_v^4}
+  \frac{243\,\mathfrak{E}_{\times}}{2\,N_v^4}
   \;\cdot\; \mu_0
 $$
 
-where $N_v = v / (E_{\times}\,\mu_0)$ is the effective crossing
+where $N_v = v / (\mathfrak{E}_{\times}\,\mu_0)$ is the effective crossing
 count of the weak scale.  This is a pure function of $q$ times
 $\mu_0$ — the Fermi constant is not an independent parameter.
 
@@ -145,7 +145,7 @@ $\mu_0$ — the Fermi constant is not an independent parameter.
    mass scale $v$ determines the range.
 
 2. **$\mathcal{W}(q)$ (weak vertex form factor):** The Markov
-   trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$ at $q = 1.110$.
+   trace of $(\sigma_1\sigma_2)^5$ in $H_3(q)$ at the substrate $q$.
    This replaces the single-crossing approximation $s^2$ and
    should resolve the systematic $10$–$17\%$ overshoot in
    heavy-nucleus half-life predictions.
@@ -180,7 +180,7 @@ $$
   \;+\;
   5\,\frac{q^2 + 1}{q^2 - 1}
   \;\approx\; 48
-  \quad\text{at } q = 1.110.
+  \quad\text{at } q = q_0.
 $$
 
 A $1\%$ shift in $q$ changes decay rates by $\sim 50\%$.
@@ -194,15 +194,15 @@ stable and *how fast* unstable nuclei decay.
 ## Parameter count
 
 The half-life formula uses:
-- $q = 1.110$ — the substrate parameter (fixed by the muon-electron
+- the substrate $q$ — the substrate parameter (fixed by the muon-electron
   mass ratio),
 - $\mu_0$ — the dimensional scale (unit choice: MeV, seconds, etc.),
 - $(p, n)$ — the nuclear quantum numbers.
 
 Every standard-physics constant decomposes into $q$-dependent
 factors times $\mu_0$: the electron mass
-$m_e = 3\,E_{\times}\,\mu_0$, the weak scale
-$v = N_v\,E_{\times}\,\mu_0$, and the fine structure constant
+$m_e = 3\,\mathfrak{E}_{\times}\,\mu_0$, the weak scale
+$v = N_v\,\mathfrak{E}_{\times}\,\mu_0$, and the fine structure constant
 $\alpha = q^{-1}/([9]_q \cdot [10]_q)$
 ([EM coupling projection](#prop:em-coupling-projection)).
 The fine structure constant is now fully derived from $q$ alone

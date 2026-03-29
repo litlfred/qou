@@ -348,7 +348,12 @@ interface BlockBase {
   /** Optional display title. */
   title?: string;
   /**
-   * Labels of objects this one depends on (\uses{} in LaTeX).
+   * Labels of **immediate** dependencies (\uses{} in LaTeX).
+   *
+   * List only direct neighbors — not the full transitive chain.
+   * If A→B and B→C, then A lists only B; C is derived by walking
+   * the graph. Run `bun run pipeline/prune-transitive-deps.ts` to
+   * enforce this.
    *
    * Within the same paper: bare label (e.g. "def:quantum-universe").
    * Cross-paper (same folio): qualified "paper-dir:label"

@@ -9,8 +9,5 @@ export default proposition({
     decl: "QOU.BringsSurface.hydrogen_shell_writhe",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-knot",
-    "def:crossing-energy",
-  ],
+  uses: ["def:electron-knot"],
 });

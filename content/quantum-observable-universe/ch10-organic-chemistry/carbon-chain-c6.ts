@@ -14,10 +14,7 @@ export default example({
     "open-chain",
   ],
   uses: [
-    "def:molecular-hopf-chain",
     "rem:carbon-valence",
-    "def:covalent-bond-types",
     "rem:chain-spring-modes",
-    "def:crossing-energy",
   ],
 });

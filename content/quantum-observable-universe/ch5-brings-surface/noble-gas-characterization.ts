@@ -17,11 +17,7 @@ export default proposition({
     "argon",
   ],
   uses: [
-    "conj:electron-shells-hopf",
     "rem:helium-hopf-diagram",
     "def:electron-knot",
-    "def:stable-nucleus",
-    "def:crossing-energy",
-    "prop:torus-hopf-stability",
   ],
 });

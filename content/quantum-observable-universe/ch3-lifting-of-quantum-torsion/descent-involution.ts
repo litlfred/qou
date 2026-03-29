@@ -5,8 +5,5 @@ export default definition({
   lean: { decl: "QOU.DescentInvolution" },
   title: "Descent involution",
   tags: ["descent", "involution", "idempotent"],
-  uses: [
-    "prop:jet-prolongation",
-    "lem:descent",
-  ],
+  uses: ["lem:descent"],
 });

@@ -1,5 +1,5 @@
 The three fundamental forces of the Standard Model arise from three
-distinct layers of the torus knot architecture on the Bring surface.
+distinct layers of the torus knot architecture on the Bring's surface.
 Two are carried by the saturating genus-$4$ generators $T_{2,9}$ and
 $T_{3,5}$
 ([unmapped torus knots](#rem:unmapped-torus-knots)); the third —
@@ -18,7 +18,7 @@ and antisymmetric channels
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  E_{\mathrm{cross}} \;=\;
+  \mathfrak{E}_{\mathrm{cross}} \;=\;
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
   \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
@@ -32,12 +32,12 @@ categorical level.  Electromagnetic charge is therefore the
 energy:
 
 $$
-  Q(K) \;=\; \frac{1}{2}\bigl(E_{\mathrm{cross}}(K)
-  - E_{\mathrm{cross}}(\sigma(K))\bigr).
+  Q(K) \;=\; \frac{1}{2}\bigl(\mathfrak{E}_{\mathrm{cross}}(K)
+  - \mathfrak{E}_{\mathrm{cross}}(\sigma(K))\bigr).
 $$
 
 This involution descends from three interlocking structures on the
-Bring surface:
+Bring's surface:
 
 1. **The $\dagger$-involution** on $\mathbf{C}$: the positive-definite
    contravariant endofunctor $f \mapsto f^{\dagger}$ that defines
@@ -46,7 +46,7 @@ Bring surface:
    pairing that is *odd* under this involution.
 
 2. **The complex structure** on the chiral elliptic curve $E_z$:
-   the Bring surface admits a Kähler structure inherited from the
+   the Bring's surface admits a Kähler structure inherited from the
    embedding $\Sigma_4 \hookrightarrow \mathbb{P}^4$.  The complex
    structure $J$ satisfies $J^2 = -1$ and determines the phase of
    the crossing energy.  Electromagnetic charge is the winding
@@ -93,7 +93,7 @@ of the trefoil
 The strong force binds by **interpolation**: $T_{2,9}$ wraps
 through all three color fibers in a single closed curve, providing
 the topological rigidity that confines quarks into baryons.
-The three $S_3$ subgroups of the Bring surface automorphism group
+The three $S_3$ subgroups of the automorphism group of Bring's surface
 $S_5$ — corresponding to the three color charges — are precisely
 the subgroups that leave one of the three $T_{2,3}$ periods of
 $T_{2,9}$ invariant.
@@ -158,7 +158,7 @@ whose energy does not cancel — yielding the massive $W$ and $Z$.
 | **Strong** | $T_{2,9}$: three-fold cover of trefoil | Genus $4$, vol $= 0$ | Massless (color-averaged crossings cancel) | Conserved |
 | **Weak** | $T_{3,5}$: cross-family mediator | Genus $4$, vol $= 0$ | Massive (net crossing energy $\neq 0$) | Violated ($q \neq 1$) |
 
-The three forces emerge from three layers of the Bring surface
+The three forces emerge from three layers of the Bring's surface
 architecture: the algebraic fabric (EM), the intra-family binding
 (strong), and the inter-family mediation (weak).  All three are
 determined by the genus-$4$ constraint $\chi(A) = -6$ — a different
