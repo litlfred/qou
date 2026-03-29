@@ -12,9 +12,9 @@ export default remark({
     "borromean",
     "construction-rules",
   ],
-  interprets: "thm:torus-knot-shell-binding",
+  interprets: "cor:spectral-decomposition-qvalue",
   uses: [
-    "thm:torus-knot-shell-binding",
+    "cor:spectral-decomposition-qvalue",
     "prop:shell-closure-normal-form",
     "prop:skein-finiteness-bound",
     "prop:nuclear-groebner-reduction",

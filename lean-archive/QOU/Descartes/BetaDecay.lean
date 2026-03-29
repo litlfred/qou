@@ -107,7 +107,7 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
     5. Tower termination: degree ≥ 3 needs genus > 4 -/
 -- Ref: [rosso-jones1993] https://doi.org/10.1016/0393-0440(93)90033-B
 -- Ref: [cohomological-embedding]
-theorem spectral_decomposition
+theorem spectral_decomposition_qvalue
     (g : ℕ) (hg : g = 4)
     (op : BetaDecayOp) :
     -- The Q-value equals Q_bare times the knot operator product

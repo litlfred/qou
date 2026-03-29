@@ -1,7 +1,7 @@
-import { theorem } from "../../schema/builders";
+import { corollary } from "../../schema/builders";
 
-export default theorem({
-  label: "thm:torus-knot-shell-binding",
+export default corollary({
+  label: "cor:spectral-decomposition-qvalue",
   title:
     "Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$",
   tags: [
@@ -20,16 +20,16 @@ export default theorem({
     "hilbert-space-completeness",
   ],
   lean: {
-    decl: "QOU.Descartes.torus_knot_shell_binding",
+    decl: "QOU.Descartes.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
   uses: [
+    "prop:cohomological-embedding",
+    "prop:beta-decay-transfer-matrix",
     "prop:shell-closure-normal-form",
     "prop:skein-finiteness-bound",
-    "rem:force-knot-identification",
-    "prop:beta-decay-transfer-matrix",
     "prop:nuclear-groebner-reduction",
+    "rem:force-knot-identification",
     "rem:fivefold-symmetry",
-    "prop:cohomological-embedding",
   ],
 });

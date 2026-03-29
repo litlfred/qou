@@ -6,7 +6,12 @@ The decomposition is **exact and finite** — it terminates at
 degree $2$ because the embeddability bound on $\Sigma_4$ kills
 all higher jets.
 
-## Theorem (spectral decomposition of the $\mathcal{Q}_q$-value)
+## Corollary (spectral decomposition of the $\mathcal{Q}_q$-value)
+
+*This is a direct consequence of the
+[cohomological embedding](#prop:cohomological-embedding) (completeness
+of the torus knot basis on $\Sigma_g$) applied to the beta decay
+[transfer matrix](#prop:beta-decay-transfer-matrix).*
 
 *Let $\Sigma_g$ be a genus-$g$ surface and
 $\mathcal{E}_g = \{\tau(r,s) : \tfrac{(r-1)(s-1)}{2} \leq g\}$

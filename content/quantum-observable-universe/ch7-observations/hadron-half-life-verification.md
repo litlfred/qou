@@ -63,7 +63,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
    The representation-theoretic formula
    $\mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times
    F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
-   ([torus knot shell binding](#thm:torus-knot-shell-binding))
+   ([torus knot shell binding](#cor:spectral-decomposition-qvalue))
    gives all six test nuclei within $\pm 9\%$ using Level 0
    (nucleon) transfer matrices — no Level 1 (quark) braid needed.
    The degree-$2$ operator average and Pauli projection are
@@ -173,7 +173,7 @@ phase-space integral with $F_q(Z, E)$.
 
 The $\mathcal{Q}_q$-value is predicted from $q$ alone via the
 knot operator product
-([torus knot shell binding](#thm:torus-knot-shell-binding)):
+([torus knot shell binding](#cor:spectral-decomposition-qvalue)):
 
 $$
   \mathcal{Q}_q
