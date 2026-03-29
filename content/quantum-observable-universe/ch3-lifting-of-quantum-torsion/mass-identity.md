@@ -25,7 +25,7 @@ Frobenius form.
 The *inertial mass* of a morphism $\varrho \colon \mathbf{1} \to A$
 (a "closed cycle" in the Frobenius--Hopf object) is
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(

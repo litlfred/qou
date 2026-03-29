@@ -19,6 +19,10 @@ export default definition({
     validation: "not_checked",
   },
   tags: ["algebra", "ground-ring"],
+  lean: {
+    decl: "QOU.NoQuasiZeros",
+    validation: "not_checked",
+  },
   uses: [],
   cites: ["leitnerpawloski2004"],
 });

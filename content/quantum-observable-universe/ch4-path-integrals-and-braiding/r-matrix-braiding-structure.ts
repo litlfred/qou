@@ -12,4 +12,5 @@ export default proposition({
     "def:quantum-su2",
     "def:braid-twist-flip",
   ],
+  examples: ["rem:r-matrix-braiding", "rem:skein-crossing-asymmetry"],
 });

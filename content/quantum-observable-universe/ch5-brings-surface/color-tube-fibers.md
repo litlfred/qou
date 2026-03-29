@@ -24,5 +24,5 @@ $$
 $$
 
 As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the chiral
-elliptic fiber $E_z$ of [chiral elliptic curve](#prop:chiral-elliptic) via
+elliptic fiber $\mathcal{E}_z$ of [chiral elliptic curve](#prop:chiral-elliptic) via
 the shift $X = \mathbf{c} + z$.

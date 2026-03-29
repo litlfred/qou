@@ -95,7 +95,7 @@ The visualization should be an interactive HTML page
    - Filter by stability pair, intruder status, $k_\alpha$
    - $q$ slider to show how the table changes with substrate
      parameter (at $q = 1$: all rows equal width, no
-     intruders; at $q = 1.1097$: observed table)
+     intruders; at $q = q_0$: observed table)
 
 6. **Knot notation**: use the visual conventions from
    [knot atom diagrams](#rem:knot-atom-diagrams):

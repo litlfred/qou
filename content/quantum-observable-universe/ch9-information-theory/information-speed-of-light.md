@@ -66,11 +66,11 @@ $$
 |--------|-----|-------------------|----------------|
 | Big Bang | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
 | Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
-| Our universe | $1.1097$ | $\approx 9.12$ | ${\sim}\,9$ fibres correlated per Reeb phase advance |
+| Our universe | $q_0$ | $\approx 9.12$ | ${\sim}\,9$ fibres correlated per Reeb phase advance |
 | Near-classical | $1.01$ | $100$ | Fast spatial propagation; nearly continuous |
 | Classical limit | $q \to 1^+$ | $\to \infty$ | Instantaneous spatial coupling; the $q$-connection reduces to $A$ |
 
-At $q = 1.1097$, the speed of light is $c \approx 9.12$ in units
+At $q = q_0$, the speed of light is $c \approx 9.12$ in units
 where one Reeb phase advance $= 1$.  This is **not** $1$.  The
 value $c = 1$ arises only if one redefines length units so that
 one "Planck length" equals $c_q$ Reeb phases --- but that obscures
@@ -130,7 +130,7 @@ $$
   \;=\; \frac{q \cdot \eta_q}{(q-1)^2}.
 $$
 
-At $q = 1.1097$:
+At $q = q_0$:
 $\mathcal{B} = q\,\eta_q/(q-1)^2 \approx 82$ nats per Planck time.
 
 **Comparison with information-theoretic speed limits.**

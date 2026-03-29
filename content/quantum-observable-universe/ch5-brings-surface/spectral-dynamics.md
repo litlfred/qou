@@ -35,7 +35,7 @@ $$
   \sin_q(x)=\frac{\exp_q(ix)-\exp_q(-ix)}{2i},
 $$
 
-and $\mathbf{u}\in\operatorname{Im}\mathbb{H}$ is a fixed unit imaginary
+and $\mathbf{u}\in\mathrm{Im}\mathbb{H}$ is a fixed unit imaginary
 quaternion.  The conjugation
 $\boldsymbol{\omega}'=\mathbf{q}(r)\,\boldsymbol{\omega}\,\mathbf{q}(r)^{*}$
 gives maximum twist ($\theta=\pi/2$) in the deep-quantum regime $r\to 0$

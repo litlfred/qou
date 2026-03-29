@@ -17,9 +17,9 @@ energy functional).
 For $q \neq 1$, the braiding $\check{R} = \sigma \circ \mathcal{R}$
 is non-trivial, and the categorical mass acquires a singular
 contribution from non-adjacent strand proximity.  Concretely,
-because $m(\gamma)$ depends on the $q$-Hodge star $\star_q$
+because $\mathfrak{m}(\varrho)$ depends on the $q$-Hodge star $\star_q$
 ([Definition](#def:q-hodge-star)), the cost of two non-adjacent
-points $\gamma(s)$, $\gamma(t)$ approaching is governed by the
+points $\varrho(s)$, $\varrho(t)$ approaching is governed by the
 $q$-deformed commutator
 
 $$
@@ -34,19 +34,19 @@ which replaces the classical $1/r^2$ repulsion kernel with the
 strictly stronger
 
 $$
-  \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}
+  \frac{1}{\lvert \varrho(s) - \varrho(t) \rvert^2}
   \;\longmapsto\;
-  \frac{[2]_q}{\lvert \gamma(s) - \gamma(t) \rvert^2
+  \frac{[2]_q}{\lvert \varrho(s) - \varrho(t) \rvert^2
   - \hbar_q^{\,2}},
 $$
 
 where $[2]_q = q + q^{-1}$ is the quantum integer and
 $\hbar_q = 1 - q^{-1}$ is the quantum Planck constant.  This
 kernel has a hard singularity at
-$\lvert \gamma(s) - \gamma(t) \rvert = \hbar_q$, creating an
+$\lvert \varrho(s) - \varrho(t) \rvert = \hbar_q$, creating an
 energy barrier of infinite height at the quantum scale.
 
-Physically, the $R$-matrix endows the vortex filament $\gamma$ with
+Physically, the $R$-matrix endows the vortex filament $\varrho$ with
 a "quantum exclusion zone" of radius $\hbar_q$: the filament cannot
 pass through itself because doing so would require infinite
 categorical energy.  This is the knot-theoretic analogue of the

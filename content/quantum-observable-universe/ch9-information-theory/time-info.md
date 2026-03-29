@@ -13,7 +13,7 @@ Planck constant $\hbar_q = 1 - q^{-1}$ plays the role of
 Boltzmann's constant.  At the Big Bang ($q \to \infty$,
 $\hbar_q \to 1$), $t = \mathcal{T}$ and time is a natural
 number — each tick is individually meaningful.  At our local
-substrate parameter ($q = 1.1097$, $\hbar_q \approx 0.1$),
+substrate parameter ($q = q_0$, $\hbar_q \approx 0.1$),
 approximately $10$ discrete operations compose each Planck unit,
 and the continuous approximation has $O(\hbar_q) \approx 10\%$
 error.  At the classical limit ($q \to 1$, $\hbar_q \to 0$),

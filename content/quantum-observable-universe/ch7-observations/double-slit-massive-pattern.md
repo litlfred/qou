@@ -29,7 +29,7 @@ $$
 $$
 
 with $\beta_\xi(\theta)$ the contribution from the spin-core term of
-the [$q$-Laplacian expansion](#def:q-laplacian-expansion).
+the [$q$-Laplacian expansion](#rem:q-laplacian-expansion).
 
 The $q$-Laplacian separates into three scales:
 

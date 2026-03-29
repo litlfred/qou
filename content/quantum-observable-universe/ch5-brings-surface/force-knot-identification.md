@@ -18,7 +18,7 @@ and antisymmetric channels
 ([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
 
 $$
-  \mathfrak{E}_{\mathrm{cross}} \;=\;
+  \mathbf{E}_{\mathrm{cross}} \;=\;
   \underbrace{E_{\mathrm{sym}}}_{\text{mass (strong)}}
   \;+\;
   \underbrace{E_{\mathrm{anti}}}_{\text{Coulomb (EM)}}.
@@ -32,8 +32,8 @@ categorical level.  Electromagnetic charge is therefore the
 energy:
 
 $$
-  Q(K) \;=\; \frac{1}{2}\bigl(\mathfrak{E}_{\mathrm{cross}}(K)
-  - \mathfrak{E}_{\mathrm{cross}}(\sigma(K))\bigr).
+  Q(K) \;=\; \frac{1}{2}\bigl(\mathbf{E}_{\mathrm{cross}}(K)
+  - \mathbf{E}_{\mathrm{cross}}(\sigma(K))\bigr).
 $$
 
 This involution descends from three interlocking structures on the
@@ -45,7 +45,7 @@ Bring's surface:
    the electromagnetic coupling is the component of the Skein
    pairing that is *odd* under this involution.
 
-2. **The complex structure** on the chiral elliptic curve $E_z$:
+2. **The complex structure** on the chiral elliptic curve $\mathcal{E}_z$:
    the Bring's surface admits a Kähler structure inherited from the
    embedding $\Sigma_4 \hookrightarrow \mathbb{P}^4$.  The complex
    structure $J$ satisfies $J^2 = -1$ and determines the phase of

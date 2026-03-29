@@ -41,6 +41,6 @@ is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.
 ```
 
 The coefficient $q^{-1}(1-q^{-1})$ matches the $d_q^2$ obstruction
-([archimedean $d_q^2$](#thm:dq-squared)), confirming that both
+([archimedean $d_q^2$](#prop:dq-squared)), confirming that both
 failures — of nilpotence and of the Jacobi identity — are driven by
 the same geometric source: the non-degeneracy of the contact structure.

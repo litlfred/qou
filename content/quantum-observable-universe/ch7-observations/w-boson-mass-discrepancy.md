@@ -6,7 +6,7 @@ perturbation $\delta q$ at each collider experiment.
 
 ## The vertex $\delta q$ formula
 
-The CODATA substrate $q_0 = 1.10998$
+The CODATA substrate $q_0$
 ([local substrate $q$](#prop:local-substrate-q)) is measured in
 low-field laboratories where the self-dual curvature $F_A^+$
 is effectively zero.  At a collider interaction vertex --- that is,
@@ -67,7 +67,7 @@ Every quantity on the right is determined:
 |--------|:-----:|--------|
 | $q_0$ | $1.10998$ | CODATA $m_\mu/m_e$ ([local substrate](#prop:local-substrate-q)) |
 | $q_0 - 1$ | $0.10998$ | Derived |
-| $\alpha$ | $\alpha_s = 0.118$ or $\alpha_W = 0.034$ | Coupling at vertex |
+| $\alpha$ | $\alpha_s \approx 0.118$ or $\alpha_W \approx 0.034$ | Coupling at vertex |
 | $|\chi(\Sigma_4)|$ | $6$ | Bring surface, genus $4$, $\chi = 2 - 2g$ |
 
 ## Predictions for each production channel
@@ -76,8 +76,8 @@ Every quantity on the right is determined:
 
 | Production | $\alpha$ | $\delta q$ | $\delta m$ | Observed shift | Agreement |
 |------------|:--------:|:----------:|:----------:|:--------------:|:---------:|
-| $gg \to H$ (top loop) | $\alpha_s = 0.118$ | $3.4 \times 10^{-4}$ | $370$ MeV | $\sim 300$ MeV spread | $\sim 1.2\times$ |
-| $q\bar{q} \to W$ (CDF, $p\bar{p}$) | $\alpha_W = 0.034$ | $9.9 \times 10^{-5}$ | $69$ MeV | $77 \pm 9$ MeV | $\mathbf{0.9\sigma}$ |
+| $gg \to H$ (top loop) | $\alpha_s \approx 0.118$ | $3.4 \times 10^{-4}$ | $370$ MeV | $\sim 300$ MeV spread | $\sim 1.2\times$ |
+| $q\bar{q} \to W$ (CDF, $p\bar{p}$) | $\alpha_W \approx 0.034$ | $9.9 \times 10^{-5}$ | $69$ MeV | $77 \pm 9$ MeV | $\mathbf{0.9\sigma}$ |
 | $qq' \to W$ (LHC, $pp$ sea) | $\alpha_W x^2$ | $\lesssim 10^{-6}$ | $\lesssim 1$ MeV | $\sim 3$ MeV | Consistent |
 
 The mass shift is computed from the sensitivity
@@ -93,7 +93,7 @@ $$
 ## Why CDF differs from ATLAS and CMS
 
 The CDF~II experiment collided **protons with antiprotons**
-($p\bar{p}$) at $\sqrt{s} = 1.96$ TeV.  $W$ bosons were
+($p\bar{p}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were
 produced predominantly through **valence quark--antiquark
 annihilation**: a $u$ quark from the proton meets a $\bar{d}$
 from the antiproton and annihilates directly into a $W^+$.
@@ -120,7 +120,7 @@ $m_W \approx m_W^{\mathrm{SM}}$ while CDF sees a $77$ MeV
 excess.
 
 Crucially, CDF has the **weakest** detector magnetic field
-($B = 1.4$ T, vs.\ $3.8$ T at CMS), ruling out the detector
+($B \approx 1.4$ T, vs.\ $3.8$ T at CMS), ruling out the detector
 $B$-field as the cause.  The signal is in the **production
 vertex**, not the detection environment.
 
@@ -173,7 +173,7 @@ not independent measurements.  The hypothesis is tested by
 comparing the *pattern* against the forward prediction.
 
 **Table 4: Higgs $\delta q$ by experiment and channel**
-**(ref: PDG 2024 avg $= 125.20$ GeV).**
+**(ref: PDG 2024 avg $\approx 125.20$ GeV).**
 
 | Experiment | Channel | $\delta m$ (GeV) | $\delta q$ (inferred) |
 |---|---|:-:|:-:|
@@ -216,8 +216,8 @@ the vertex.  With only $\sim 3$ measurements per channel, the
 signal is not statistically significant.
 
 **3. Detector $B$-field: no signal.**
-ATLAS ($B = 2.0$ T) averages $\delta q = -3 \times 10^{-5}$;
-CMS ($B = 3.8$ T) averages $+8 \times 10^{-5}$.  No
+ATLAS ($B \approx 2.0$ T) averages $\delta q = -3 \times 10^{-5}$;
+CMS ($B \approx 3.8$ T) averages $+8 \times 10^{-5}$.  No
 systematic trend, consistent with the prediction that static
 fields at $\lesssim 4$ T produce $\delta q / q_0 \sim 10^{-8}$.
 
@@ -232,7 +232,7 @@ being independent of beam energy.
 
 | Quantity | QOU value | Experiment | Status |
 |---|:-:|:-:|:-:|
-| $q_0$ (CODATA) | $1.10998$ | $m_\mu/m_e = 206.768$ | Input |
+| $q_0$ (CODATA) | $1.10998$ | $m_\mu/m_e \approx 206.768$ | Input |
 | $|\chi(\Sigma_4)|$ | $6$ | Bring surface | Derived |
 | $\kappa_{\mathrm{geom}}$ | $1/6$ | Gauss--Bonnet | **Derived** |
 | $\delta q$ CDF $W$ (forward) | $9.9 \times 10^{-5}$ | — | **Predicted** |

@@ -469,18 +469,27 @@ export function loadAndRenderBlock(rootName: string, objectsDir: string): {
  * @param section - Section manifest
  * @param blocks - All loaded blocks (keyed by root name)
  * @param opts - Print mode options (controls block filtering)
+ * @param chapterReferencedLabels - Optional chapter-wide set of labels
+ *   referenced via `examples[]` on any block in the chapter. When provided,
+ *   supplements the section-local set so that cross-section example
+ *   references are honoured in compact mode.
  */
 export function renderSection(
   section: Section,
   blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
+  chapterReferencedLabels?: Set<string>,
 ): string {
   const lines: string[] = [];
   const label = section.label ? `\\label{${section.label}}\n` : "";
   lines.push(`\\section{${escapeLatex(section.title)}}\n${label}`);
 
   // Collect referenced example/remark labels for compact-mode filtering
-  const referencedLabels = collectReferencedLabels(section.blocks, blocks);
+  // Merge section-local refs with chapter-wide refs when available
+  const sectionRefs = collectReferencedLabels(section.blocks, blocks);
+  const referencedLabels = chapterReferencedLabels
+    ? new Set([...sectionRefs, ...chapterReferencedLabels])
+    : sectionRefs;
 
   for (const rootName of section.blocks) {
     const entry = blocks.get(rootName);
@@ -518,6 +527,17 @@ export function renderChapter(
   // Collect all citation keys used in this chapter
   const chapterCites = new Set<string>();
 
+  // Collect chapter-wide referenced labels (from examples[] on ALL blocks
+  // in this chapter) so compact-mode filtering works across sections.
+  const allChapterBlockNames: string[] = [];
+  for (const section of chapter.sections) {
+    if (!("blocks" in section)) continue;
+    for (const rootName of (section as Section).blocks) {
+      allChapterBlockNames.push(rootName);
+    }
+  }
+  const chapterReferencedLabels = collectReferencedLabels(allChapterBlockNames, blocks);
+
   for (const section of chapter.sections) {
     if (!("blocks" in section)) continue;
     const sec = section as Section;
@@ -533,7 +553,7 @@ export function renderChapter(
         }
       }
     }
-    lines.push(renderSection(sec, blocks, opts));
+    lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels));
   }
 
   // Emit chapter-end bibliography if any citations were found

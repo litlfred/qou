@@ -17,9 +17,9 @@ where $\mathrm{Cl}_2$ is the Clausen function (OEIS A091518; SnapPy-verified).
 
 The **topological mass formula**
 ([topological mass formula](#prop:topological-mass-formula)) asserts that the
-mass $m(K)$ of a particle with knot type $K$ is
+mass $\mathfrak{m}(K)$ of a particle with knot type $K$ is
 $$
-  m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}},
   \qquad
   \hbar_q \;:=\; 1 - q^{-1},
 $$

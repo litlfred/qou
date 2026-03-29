@@ -17,4 +17,12 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],
+  examples: [
+    "ex:hadron-half-life-verification",
+    "rem:hadron-half-life-regimes",
+    "ex:half-life-shell-worked",
+    "ex:tritium-decay-knot-equation",
+    "ex:nitrogen-14-threading",
+    "ex:terminal-resolution-cz",
+  ],
 });

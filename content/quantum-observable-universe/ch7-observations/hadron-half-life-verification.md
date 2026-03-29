@@ -13,12 +13,12 @@ standard Fermi theory is decomposed into its $q$-dependent parts
 
 | Standard constant | $q$-decomposition | Source |
 |-------------------|-------------------|--------|
-| $m_e$ (electron mass) | $3\,\mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ | 3 crossings of trefoil $T_{2,3}$ |
+| $m_e$ (electron mass) | $3\,m_e/3$ | 3 crossings of trefoil $T_{2,3}$ |
 | $s$ (weak coupling) | $q^{1/2} - q^{-1/2}$ | Skein amplitude (no W boson) |
 | $[2]_q$ (vertex factor) | $q + q^{-1}$ | Categorical dim of $\mathrm{SU}_q(2)$ fund. rep. |
-| $v$ (weak scale) | $N_v \cdot \mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ | Topological invariant $N_v$ (open) |
+| $v$ (weak scale) | $N_v \cdot m_e/3$ | Topological invariant $N_v$ (open) |
 | $G_F$ (Fermi constant) | $1/(\sqrt{2}\,v^2)$ | Derived from weak scale |
-| $G_F^2 m_e^5$ (rate scale) | $243\,\mathfrak{E}_{\mathrm{cross}}\,\mu_0\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
+| $G_F^2 m_e^5$ (rate scale) | $243\,m_e/3\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
 
 From $q$ and $\mu_0$ alone:
 
@@ -30,7 +30,7 @@ From $q$ and $\mu_0$ alone:
    ([transition energy](#def:q-value-transition)) — the
    categorical action difference
    $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
-   where $S_q(e) = 3\,\mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$
+   where $S_q(e) = 3\,m_e/3$
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).
@@ -42,7 +42,7 @@ From $q$ and $\mu_0$ alone:
 5. **Self-deformation** $\Delta q_{\mathrm{eff}} =
    (A-1)/A^2 \cdot \hbar_q^2$ — the $q$-anomaly $\delta_q$;
    the daughter is evaluated at the shifted $q + \Delta q_{\mathrm{eff}}$.
-6. **Deuteron binding** $B_d = 1.29$ MeV from
+6. **Deuteron binding** $B_d \approx 1.29$ MeV from
    Vol$(\mathcal{B}_3 \bowtie_{\mathrm{Hopf}} \mathcal{B}_3) / \hbar_q^2$.
 7. **Parity violation** — automatic from $q \neq 1$
    ([Lee-Yang-Wu](#prop:parity-violation-skein)).
@@ -54,10 +54,10 @@ yet been evaluated ($\alpha_{\mathrm{EM}}$ is now resolved).
 Witness computation scripts are in `folio-assistant/computations/`.
 
 1. **$N_v$ (weak scale crossing count).**
-   The weak scale $v = N_v \cdot \mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ sets
+   The weak scale $v = N_v \cdot m_e/3$ sets
    the absolute rate via $G_F = 1/(\sqrt{2}\,v^2)$.  Deriving $N_v$
    requires identifying the brane tower structure at the electroweak
-   level.  Target: $N_v \cdot \mathfrak{E}_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
+   level.  Target: $N_v \cdot \kappa_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
 
 2. **$\mathcal{Q}_q$-values for $A > 4$.** RESOLVED.
    The representation-theoretic formula
@@ -89,7 +89,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$
    as a closed sub-link, from the quantum dilogarithm volume
-   at $q = 1.110$.
+   at $q = q_0$.
 
 ## Observed half-lives (NNDC/ENSDF)
 
@@ -113,17 +113,17 @@ case.  At Level 0 ($B_3$, 3 transfer matrix steps):
 $$
   \mathcal{Q}_q({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.110) - P_e(1.110)
+  P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0) - P_e(q_0)
 $$
 
 With the self-deformation correction (daughter at
 $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2
-= 0.00218$):
+\approx 0.00218$):
 
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.11218) - P_e(1.110)
+  P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0 + \Delta q) - P_e(q_0)
 $$
 
 The corrected half-life prediction:
@@ -157,12 +157,12 @@ half-lives agree with observation to better than $3\%$:
 
 These predictions use:
 - **From $q$**: $\alpha_{\mathrm{EM}}(q)$ in the Fermi function
-  ($1/\alpha = 136.82$, CODATA: $137.036$, $0.16\%$ error).
+  ($1/\alpha \approx 136.82$, CODATA: $137.036$, $0.16\%$ error).
 - **From CODATA**: $G_F = (1.16638 \pm 0.00001) \times 10^{-11}$
   MeV${}^{-2}$.
 - **From NNDC**: $\mathcal{Q}_{\mathrm{exp}}$ and $\log ft$ values
   (for the nuclear matrix element $|\mathcal{M}|^2$).
-- **From PDG**: $g_A = 1.2754 \pm 0.0013$ (for the mirror
+- **From PDG**: $g_A \approx 1.2754 \pm 0.0013$ (for the mirror
   transition ${}^3\mathrm{H}$).
 
 The previous $10$–$17\%$ overshoot arose from using the
@@ -249,14 +249,14 @@ The vertex form factor has been computed exactly:
 
 $$
   \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
-  = 0.7036
-  \qquad\text{at } q = 1.110
+  \approx 0.7036
+  \qquad\text{at } q = q_0
 $$
 
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
 in $H_3(q)$ via $38$ Hecke steps and $18$ Yang–Baxter steps.
 The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2
-= 0.890$ ($11\%$ reduction in transition amplitude).
+\approx 0.890$ ($11\%$ reduction in transition amplitude).
 Witness: `folio-assistant/computations/t35-weak-vertex.witness.json`.
 
 ## Error budget
@@ -283,8 +283,8 @@ $$
 
 | Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |
 |--------|:-:|:-:|:-:|
-| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% = 0.27\%$ |
-| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% = 0.20\%$ |
+| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% \approx 0.27\%$ |
+| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% \approx 0.20\%$ |
 | $G_F$ (CODATA) | $(1.16638 \pm 0.00001) \times 10^{-11}$ | $0.0009\%$ | $0.002\%$ |
 | $\alpha_{\mathrm{EM}}(q)$ | $1/136.82$ ($q$-derived) | $0.16\%$ | $\sim 0.1\%$ (via $F_q$) |
 | $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |

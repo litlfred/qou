@@ -2,7 +2,7 @@ The two Markov moves that guarantee link invariance of the Jones
 polynomial ([Jones--Markov trace](#thm:jones-markov-trace)) correspond
 to the horizontal and vertical components of the brane tower's
 cosimplicial structure
-([cosimplicial crossed groupoid](#def:cosimplicial-crossed-groupoid)).
+([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)).
 
 1. **Conjugation** $\beta \mapsto \gamma\beta\gamma^{-1}$ (same $B_n$,
    same level).  This is the *horizontal* direction: the crossed

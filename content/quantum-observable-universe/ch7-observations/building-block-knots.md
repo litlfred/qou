@@ -75,28 +75,28 @@ operation $\sigma$.  For completeness:
 The mass of a knot $K$ is:
 
 $$
-  m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
-  \;+\; \sum_{\text{crossings}} \mathfrak{E}_{\times}(q)
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
+  \;+\; \sum_{\text{crossings}} \mathbf{E}_{\times}(q)
 $$
 
 where $\hbar_q = 1 - q^{-1}$ and
-$\mathfrak{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ is the crossing
+$\mathbf{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ is the crossing
 energy at each self-crossing.
 
 - **Torus knots** ($\mathrm{Vol} = 0$): mass comes entirely
   from crossing energy.  The trefoil has 3 crossings, so
-  $m_{e} = 3 \cdot \mathfrak{E}_{\times}(q) \cdot \mu_0$ where $\mu_0$ is
+  $m_{e} = 3 \cdot \mathbf{E}_{\times}(q) \cdot \mu_0$ where $\mu_0$ is
   the mass scale.
 - **Hyperbolic knots** ($\mathrm{Vol} > 0$): mass has both
   a volume term and a crossing term.  The figure-eight has
   $\mathrm{Vol} = 2.0299$ and 4 crossings; its mass ratio
-  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ fixes $q = 1.1097$.
+  $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$ fixes $q = q_0$.
 - **Links** ($> 1$ component): the linking number contributes
   additional inter-component crossing energy (binding).
 
-## Jones polynomial at $q = 1.1097$
+## Jones polynomial at $q = q_0$
 
-| Knot | $J(1.1097)$ |
+| Knot | $J(q_0)$ |
 |------|:----------:|
 | $0_1$ (unknot) | $1.0000$ |
 | $3_1$ (trefoil) | $0.8168$ |
@@ -107,11 +107,11 @@ energy at each self-crossing.
 
 The Jones polynomial at $q = 1$ gives the number of
 components: $J(1) = (-2)^{c-1}$ where $c$ is the
-component count.  At $q = 1.1097$, the polynomial
+component count.  At $q = q_0$, the polynomial
 encodes the $q$-deformation of the knot's contribution
 to the categorical action.
 
-## Table 5: Categorical action at $q = 1.1097$
+## Table 5: Categorical action at $q = q_0$
 
 The categorical action $S_q(K) = \mathrm{tr}_\tau(\rho(\beta_K))$
 decomposes into a hyperbolic volume term and a crossing energy
@@ -121,24 +121,24 @@ $q$ alone (plus one dimensional scale $\mu_0$ for mass).
 
 **Fundamental constants from $q$:**
 
-| Symbol | Formula | Value at $q = 1.1097$ |
+| Symbol | Formula | Value at $q = q_0$ |
 |--------|---------|:--------------------:|
 | $\hbar_q$ | $1 - q^{-1}$ | $0.09910$ |
-| $\mathfrak{E}_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
+| $\mathbf{E}_{\times}$ | $\tfrac{1}{2}(q - q^{-1})$ | $0.10450$ |
 | $s$ (Skein amplitude) | $q^{1/2} - q^{-1/2}$ | $0.05049$ |
 | $[2]_q$ | $q + q^{-1}$ | $2.01099$ |
 
 **Categorical action per building block:**
 
-| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathfrak{E}_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
+| Particle | Knot | $n_c$ | $\mathrm{Vol}$ | $\mathbf{E}_{\mathrm{cross}}(q)$ | $S_q(K)$ | Mass ($\mu_0$ units) |
 |----------|------|:-----:|:---------------:|:-----------------------:|:---------:|:--------------------:|
 | $\nu$ | $0_1$ | $0$ | $0$ | $0$ | $0$ | $0$ |
-| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathfrak{E}_{\times}$ | $3\,\mathfrak{E}_{\times}\,\mu_0$ |
-| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathfrak{E}_{\times}$ | $3\,\mathfrak{E}_{\times}\,\mu_0$ |
-| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,\mathfrak{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathfrak{E}_{\times}$ | $207.1\,\mu_0$ |
-| $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathfrak{E}_{\times}$ | (bound; see below) |
-| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathfrak{E}_{\times}$ | $5\,\mathfrak{E}_{\times}\,\mu_0$ |
-| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,\mathfrak{E}_{\times}$ | $8\,\mathfrak{E}_{\times}\,\mu_0$ |
+| $e^-$ | $T_{2,3}$ | $3$ | $0$ | $3q = 3.330$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
+| $e^+$ | $\overline{T_{2,3}}$ | $3$ | $0$ | $3q^{-1} = 2.703$ | $3\,\mathbf{E}_{\times}$ | $3\,\mathbf{E}_{\times}\,\mu_0$ |
+| $\mu^-$ | $4_1$ | $4$ | $2.0299$ | $4\,\mathbf{E}_{\times}$ | $\mathrm{Vol}/\hbar_q^2 + 4\,\mathbf{E}_{\times}$ | $207.1\,\mu_0$ |
+| $u,\,d$ (quarks) | $T_{2,3}$ | $3$ | $0$ | $3q$ | $3\,\mathbf{E}_{\times}$ | (bound; see below) |
+| $b$ | $T_{2,5}$ | $5$ | $0$ | $5q = 5.550$ | $5\,\mathbf{E}_{\times}$ | $5\,\mathbf{E}_{\times}\,\mu_0$ |
+| $t$ | $T_{3,4}$ | $8$ | $0$ | $8q = 8.880$ | $8\,\mathbf{E}_{\times}$ | $8\,\mathbf{E}_{\times}\,\mu_0$ |
 | Proton $\mathfrak{p}$ | $\mathcal{B}_3(u,u,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ | $746\,\mu_0$ |
 | Neutron $\mathfrak{n}$ | $\mathcal{B}_3(u,d,d) \bowtie \mathcal{L}_H$ | — | $7.328$ | (internal) | $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 + \delta_{\mathrm{Skein}}$ | $747\,\mu_0$ |
 
@@ -148,7 +148,7 @@ arises from the pair Skein asymmetry between $\mathfrak{d}\mathfrak{d}$ and $\ma
 crossings — a pure function of $q$.
 
 **Key consequence for beta decay.**  The electron's categorical
-action $S_q(e) = 3\,\mathfrak{E}_{\times}(q) \cdot \mu_0$, the neutrino's
+action $S_q(e) = 3\,\mathbf{E}_{\times}(q) \cdot \mu_0$, the neutrino's
 $S_q(\nu) = 0$, and the nuclear actions $S_q(\mathcal{N})$
 from the Markov trace product are all computable from $q$.
 The $\mathcal{Q}_q$-value

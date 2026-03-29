@@ -50,7 +50,7 @@ is controlled by the Skein asymmetry $q - q^{-1}$:
   $[L_+] = [L_-]$, and all coefficients can be made positive.
   No confinement is needed — individual "colors" are separately
   observable.
-- At $q = 1.1097$ (Descartes value): $q - q^{-1} = 0.209$,
+- At $q = q_0$ (Descartes value): $q - q^{-1} = 0.209$,
   producing $\sim 20\%$ negativity in Skein coefficients.
   Individual quarks have negative $\tau$-evaluations — they are
   confined.
@@ -94,5 +94,5 @@ single-color states.
 
 The full confinement proof would require showing that
 $\tau(\psi_{\mathrm{color}}) < 0$ for all single-color states
-$\psi_{\mathrm{color}}$ at $q = 1.1097$, which amounts to a
+$\psi_{\mathrm{color}}$ at $q = q_0$, which amounts to a
 positivity theorem for the $S_5$-invariant Skein submodule.

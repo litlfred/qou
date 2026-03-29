@@ -16,7 +16,7 @@ $$
 $$
 The numerical values are independently verified by the SnapPy witness
 ([knot volumes verification](#prf:knot-volumes-verification)), which computes
-$q = 1.10998$ from `Vol(4_1) = 2.02988321281931$ and
+$q = 1.10998$ from $\mathrm{Vol}(4_1) = 2.02988321281931$ and
 $m_\mu/m_e = 206.7682830$ (CODATA 2022).
 Since $f(q) = (1 - q^{-1})^{2}$ is strictly increasing for $q > 1$ and maps
 $(1,\infty)$ onto $(0,1)$, the root is unique. The uncertainty

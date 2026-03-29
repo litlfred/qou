@@ -85,7 +85,7 @@ The bound predicts instability at $A = 5$.  Experimentally:
 **Both $A = 5$ nuclei are unbound.** This is the famous
 "$A = 5$ gap" in nuclear physics — no stable nucleus exists
 with $A = 5$.  The QOU predicts this exactly: $[4]_q! = 25.15
-> [2]_q^4 = 16.35$ at $q = 1.110$.
+> [2]_q^4 = 16.35$ at $q = q_0$.
 
 ### The $\mathbf{A = 8}$ gap
 
@@ -117,7 +117,7 @@ bound until the next closure.
 
 The bound $[A\!-\!1]_q! > [2]_q^{A-1}$ crosses over at
 $A = 5$ for **all** $q > 1$ (the $q$-correction is
-$O((\ln q)^2)$, which is $0.011$ at $q = 1.110$).  This means
+$O((\ln q)^2)$, which is $0.011$ at $q = q_0$).  This means
 the $A = 5$ gap is a **topological invariant** — it does not
 depend on the specific value of $q$.
 
