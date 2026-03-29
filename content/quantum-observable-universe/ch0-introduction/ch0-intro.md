@@ -14,12 +14,16 @@ Some observations run deeper.  We can measure, record, and compare,
 and those comparisons are consistent — there is a pairing between
 what we observe and the instruments we use.  Smooth change is the
 rule: linear approximation describes our universe across scales,
-from planetary orbits to particle scattering.  We have the
-perception of free will and intent — we choose to measure, to act,
-to organise — and that choice has consequences: observation creates
-outcomes not determined by the initial conditions.  Even the
-capacity for computation — the ability to reason, count, and
-calculate — seems woven into the fabric rather than bolted on.
+from planetary orbits to particle scattering.  We can accumulate
+quantities — add them up, integrate — and we can probe rates of
+change — take derivatives, differentiate.  The universe has
+*volume*: things occupy space, and that space can be measured.
+We have the perception of free will and intent — we choose to
+measure, to act, to organise — and that choice has consequences:
+observation creates outcomes not determined by the initial
+conditions.  Even the capacity for computation — the ability to
+reason, count, and calculate — seems woven into the fabric rather
+than bolted on.
 
 Heisenberg reminded us that what we observe is not nature itself
 but nature exposed to our method of questioning.  This book takes
@@ -61,22 +65,30 @@ $$
 $$
 
 — a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf
-object $A$, and a fibre functor $\tau$.  The Frobenius condition
-$A \cong A^{\vee}$ — the self-duality of the algebra — is the
-algebraic expression of a simple physical fact: integrating a
-quantity and then differentiating it yields the same result as
-differentiating and then integrating.  Neither operation destroys
-information; both paths lead to the same answer.  From these
-ingredients the chapter derives the Frobenius relation, the dagger
-involution, and the Tannaka–Krein reconstruction of the symmetry
-group.
+object $A$, and a fibre functor $\tau$.  The Frobenius trace
+$\int_A \colon A \to \mathbf{1}$ is the categorical analogue of
+integration: it assigns a scalar to each element of the algebra.
+Combined with the differential calculus (Kähler differentials on
+$A$), it gives the algebra both the ability to differentiate and
+to integrate.  The Frobenius condition $A \cong A^{\vee}$ — the
+self-duality of the algebra — says that these two operations are
+compatible: integrating and then differentiating yields the same
+result as differentiating and then integrating.  Neither path
+destroys information.  From these ingredients the chapter derives
+the Frobenius relation, the dagger involution, and the Tannaka–Krein
+reconstruction of the symmetry group.
 
 [Chapter 2](#chap:qou) adds the observability, measurability, and
 volume axioms that promote the quantum universe to a **quantum
-observable universe** (QOU).  The key geometric players emerge: a
-quantum connection $\theta$, the reconstructed gauge group
-$G = \mathrm{SU}_2(R)$, and the state bundle $\mathcal{S}$ — so
-that the QOU is characterised by the archimedean tuple
+observable universe** (QOU).  The volume axiom makes the
+observation from paragraph two precise: the Frobenius trace
+$\int_A$ is non-degenerate, so the algebra has a well-defined
+notion of size — volume is not assumed but follows from the
+interaction of integration and self-duality.  The key geometric
+players emerge: a quantum connection $\theta$, the reconstructed
+gauge group $G = \mathrm{SU}_2(R)$, and the state bundle
+$\mathcal{S}$ — so that the QOU is characterised by the
+archimedean tuple
 
 $$
   (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
@@ -126,7 +138,8 @@ $$
 
 expresses the mass of a particle knot $K$ in terms of the
 hyperbolic volume of its complement and the quantum Planck constant
-$\hbar_q = 1 - 1/q$.  A clean dictionary emerges: crossing number
+$\hbar_q = 1 - 1/q$ — so that mass is literally volume, measured
+by the Frobenius trace.  A clean dictionary emerges: crossing number
 equals jet order equals information content.
 
 [Chapters 5 and 6](#chap:models-qou) explore the consequences of
