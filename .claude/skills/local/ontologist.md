@@ -143,6 +143,7 @@ apply these rulings when scanning narrative text:
 | **dimension** | Always qualify | Quantum dimension d_λ(q), Hausdorff dimension d_H, categorical dim, topological dim — always say which |
 | **volume** | Always qualify | Hyperbolic Vol(K), traced volume V̂, categorical volume, physical volume — always say which |
 | **force** | Transfer matrix IS the force operator | Interactions are described by transfer matrices. No separate "force" concept. Newton's equations = transfer matrix composition |
+| **numerical values** | Never `=` for observed values; always `≈` | Write `g_A ≈ 1.275` not `g_A = 1.275`. Exception: `=` is OK when accompanied by `O(ε)` or `± δ` error bounds. Algebraic identities (over ℤ[q,q⁻¹]) use `=`. Numerical evaluations at q₀ use `≈`. |
 | **state** | OK unqualified | Not ambiguous in context |
 | **particle** | Always "knot-particle" or use 𝒦 | A particle IS a knot equivalence class 𝒦_x; always make this explicit |
 | **𝔈_{anything}** | BANNED | Use κ (Hecke cost) or specific qualified term. Fraktur E is banned in v2 notation |
