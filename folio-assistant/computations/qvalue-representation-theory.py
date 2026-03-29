@@ -186,20 +186,22 @@ Z_m = 1.0 / (q**0.5 + qi**0.5)
 def vol(M):
     return Z_m * M[0][0] + M[1][0]
 
+def _log_skein(p, n):
+    """Log of Skein polynomial for nucleus (p protons, n neutrons)."""
+    types = ['p']*p + ['n']*n; A = p+n; logP = 0.0
+    for i in range(A-1):
+        M = [[1,0],[0,1]]
+        for j in range(i+1, A):
+            c, d = crossing_coeffs(types[i], types[j])
+            M = mat_mul(M, T_mat(c, d))
+        V = vol(M)
+        if abs(V) > 0: logP += math.log(abs(V))
+    return logP
+
 def bare_Q(Z, N):
-    def log_skein(p, n):
-        types = ['p']*p + ['n']*n; A = p+n; logP = 0.0
-        for i in range(A-1):
-            M = [[1,0],[0,1]]
-            for j in range(i+1, A):
-                c, d = crossing_coeffs(types[i], types[j])
-                M = mat_mul(M, T_mat(c, d))
-            V = vol(M)
-            if abs(V) > 0: logP += math.log(abs(V))
-        return logP
     # Q = |log_q(P_dau/P_par)| × ℏ_q × m_e/3
     #   = |ln(ratio)| × (ℏ_q/ln(q)) × m_e/3
-    return abs(log_skein(Z+1, N-1) - log_skein(Z, N)) * Q_ANOMALY * E_CROSS * mu_0
+    return abs(_log_skein(Z+1, N-1) - _log_skein(Z, N)) * Q_ANOMALY * E_CROSS * mu_0
 
 
 # ══════════════════════════════════════════════════════════════
