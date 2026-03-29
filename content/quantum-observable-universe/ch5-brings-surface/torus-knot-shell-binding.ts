@@ -12,6 +12,10 @@ export default proposition({
     "q-value",
     "beta-decay",
     "groebner-normal-form",
+    "representation-theory",
+    "young-symmetrizer",
+    "pauli-exclusion",
+    "operator-average",
   ],
   lean: {
     decl: "QOU.Descartes.torus_knot_shell_binding",

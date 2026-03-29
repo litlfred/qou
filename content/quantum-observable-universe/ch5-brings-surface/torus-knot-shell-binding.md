@@ -57,42 +57,81 @@ number ($8$) determines shell $4$.  This dual role reflects
 the degree-$2$ fiber structure — $T_{3,4}$ has two independent
 invariants because it ascends one level in the fiber.
 
-## The $\mathcal{Q}_q$-value with torus-knot correction
+## The $\mathcal{Q}_q$-value with representation-theoretic correction
 
 **Proposition.**
 *The $\mathcal{Q}_q$-value for $\beta^-$ decay
-$\mathcal{N}(p, n) \to \mathcal{N}(p\!+\!1, n\!-\!1)$ is:*
+$\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$ is:*
 
 $$
   \mathcal{Q}_q
   \;=\;
-  \Bigl|
-    \log_q\!\frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}
-    \;-\;
-    n_B \cdot \Delta_{\mathrm{shell}}
-  \Bigr|
+  \mathcal{Q}_{\mathrm{bare}}
   \;\times\;
-  \hbar_q \cdot E_{\times} \cdot \mu_0
+  F_{\mathrm{deg}}
+  \;\times\;
+  F_{\mathrm{Pauli}}
 $$
 
 *where:*
 
-*1. $P_{\mathrm{par}}(q)$ and $P_{\mathrm{dau}}(q)$ are the
-   Level 0 Skein polynomials from the transfer matrix chain.*
+*1. $\mathcal{Q}_{\mathrm{bare}} = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
+   \mathfrak{E}_{\times} \times \mu_0$ is the Level 0 transfer matrix
+   ratio, with $P(q) = \prod_i \hat{V}_i(q)$ the Skein polynomial.*
 
-*2. $n_B = 2$ is the number of **Borromean partners** of the
-   converting nucleon within its shell — the two other nucleons
-   in the converting nucleon's Borromean triple $\mathcal{B}_3$.*
+*2. The **degree-$2$ operator average**:*
 
-*3. $\Delta_{\mathrm{shell}} = \log_q(\hat{V}_{T_{2,n}} /
-   \hat{V}_{\mathrm{bare}})$ is the per-crossing correction
-   from the dominant torus knot $T_{2,n}$ of the converting
-   shell, where $\hat{V}_{\mathrm{bare}}$ is the average of
-   $\hat{V}_{nn}$ and $\hat{V}_{\mathrm{mix}}$ (the bare
-   crossing types at the converting generator).*
+$$
+  F_{\mathrm{deg}}
+  \;=\;
+  \begin{cases}
+    1 & \text{if converting neutron in degree-$1$ shell (}N \leq 28\text{)} \\[4pt]
+    \tfrac{1}{2}\bigl(
+      \mathrm{tr}_M(T_{2,9} \cdot \Delta_{\mathrm{mix}})
+      + \mathrm{tr}_M(T_{3,4} \cdot \Delta_{\mathrm{mix}})
+    \bigr)
+    & \text{if converting neutron in degree-$2$ shell (}N > 28\text{)}
+  \end{cases}
+$$
 
-*4. $\hbar_q = 1 - q^{-1}$ is the quantum Planck constant,
-   NOT $\ln q$ (which is the classical limit $q \to 1$).*
+*where $\Delta_{\mathrm{mix}} = \sigma_0 \sigma_1^{-1}$ is the
+universal $\pm 1$ transition operator and $\mathrm{tr}_M$ is the
+Markov trace on $H_3(q)$.  Numerically $F_{\mathrm{deg}} = 0.5949$
+at the substrate $q$.*
+
+*3. The **Pauli projection** (Schur–Weyl factor):*
+
+$$
+  F_{\mathrm{Pauli}}
+  \;=\;
+  \begin{cases}
+    1 & \text{if converting neutron's shell is not full} \\[4pt]
+    \dfrac{|\mathrm{tr}_M(e_{(1^3)} \cdot \Delta_{\mathrm{mix}} \cdot e_{(1^3)})|}{|\mathrm{tr}_M(\Delta_{\mathrm{mix}})|}
+    & \text{if converting neutron's shell is full (magic $N$, deg $\geq 2$)}
+  \end{cases}
+$$
+
+*where $e_{(1^3)}$ is the alternating Young symmetrizer idempotent
+of $H_3(q)$.  A completely filled shell is fully antisymmetric
+by the Pauli principle; under the Schur–Weyl decomposition,
+$\Delta_{\mathrm{mix}}$ is projected onto the alternating irrep
+$(1,1,1)$.  Numerically $F_{\mathrm{Pauli}} = 0.6382$.  At degree $1$,
+Pauli exclusion is already encoded in the crossing coefficients
+($\mathfrak{p}\mathfrak{p}$, $\mathfrak{n}\mathfrak{n}$,
+$\mathfrak{p}\mathfrak{n}$ have distinct transfer matrices), so
+$F_{\mathrm{Pauli}} = 1$ regardless of shell filling.*
+
+**Remark (error structure).**
+Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$
+(CODATA).  All three factors are smooth functions of $q$, so
+$\delta \mathcal{Q}_q / \mathcal{Q}_q = O(\varepsilon)$.
+The dominant sensitivity is
+$\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q
+\approx 10$, giving $\delta \mathcal{Q}_q \approx 10\varepsilon
+\approx 10^{-7}$ — negligible.  The observed $5$–$9\%$ deviations
+from experiment are structural: nucleon ordering, degree-$2$
+averaging, and truncation of the degree tower.  These are $O(1)$
+relative to $\varepsilon$.
 
 ## Gröbner normal form of the corrected element
 
