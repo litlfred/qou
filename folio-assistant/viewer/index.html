@@ -5621,6 +5621,17 @@
         if (!paper) await loadDefaultPaper();
         else scrollToLabel(slug);
       } else {
+        // Check for paper-id/label format: #/view/quantum-observable-universe/prose:foo
+        const slashIdx = slug.indexOf('/');
+        if (slashIdx > 0) {
+          const paperId = slug.slice(0, slashIdx);
+          const label = slug.slice(slashIdx + 1);
+          if (LABEL_RE.test(label)) {
+            pendingScroll = label;
+            await loadPaper(paperId);
+            return;
+          }
+        }
         // It's a paper id
         await loadPaper(slug);
       }
