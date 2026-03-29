@@ -20,7 +20,7 @@ $$
   \;=\;
   \underbrace{
     \Bigl|\log_q\frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}\Bigr|
-    \cdot \hbar_q \cdot \mathfrak{E}_{\times} \cdot \mu_0
+    \cdot \hbar_q \cdot \mathfrak{E}_{\mathrm{cross}} \cdot \mu_0
   }_{\displaystyle\mathcal{Q}_{\mathrm{bare}}}
   \;\times\;
   \underbrace{
@@ -34,14 +34,22 @@ $$
 **(i)** *$P(q) = \prod_{j=0}^{A-2} \hat{V}_j(q)$ is the Skein
 polynomial from the inductive chain construction
 ([transfer matrix](#prop:beta-decay-transfer-matrix)).  Each
-chain $\hat{V}_j = z \cdot M_j[0][0] + M_j[1][0]$ is
+chain $\hat{V}_j = z \cdot M_j[0][0] + M_j[1][0]$ (with
+$z = (q^{1/2} + q^{-1/2})^{-1}$ the Markov parameter) is
 pre-reduced via the $2\!\times\!2$ matrix recurrence (zero
 Hecke steps), ensuring the nuclear element is in Gröbner
 normal form at every inductive stage.*
 
-**(ii)** *$\log_q(x) = \ln x / \ln q$ counts exceptional
-divisor levels along the color tube fiber of $\Sigma_g$;
-$\hbar_q = 1 - q^{-1}$ is the action quantum per divisor step.*
+**(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural
+logarithm — it counts exceptional divisor levels along the
+color tube fiber of $\Sigma_g$.
+$\hbar_q = (q - 1)/q$ is the quantum Planck constant (action
+per divisor step).
+$\mathfrak{E}_{\mathrm{cross}} = \tfrac{1}{2}(q - q^{-1})$ is
+the crossing energy from the Hecke relation.
+$\mu_0 = m_e / (3\,\mathfrak{E}_{\mathrm{cross}})$ is the
+dimensional anchor (the electron mass $= 3$ crossings of the
+trefoil $T_{2,3}$).*
 
 **(iii)** *$F(T_{r,s}, N)$ is the **knot operator** of $T_{r,s}$
 acting on the converting neutron's shell:*
@@ -171,8 +179,8 @@ Each factor in $\mathcal{Q}_q$ reads geometrically:
 |--------|----------|
 | $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Exceptional divisor levels traversed (color tube degrees) |
 | $\hbar_q = 1 - q^{-1}$ | Action quantum per divisor step (discrete fiber spacing) |
-| $\mathfrak{E}_{\times} = \tfrac{1}{2}(q - q^{-1})$ | Crossing energy from the Hecke relation |
-| $\mu_0 = m_e / (3\mathfrak{E}_{\times})$ | Dimensional anchor ($T_{2,3}$ trefoil $=$ electron) |
+| $\mathfrak{E}_{\mathrm{cross}} = \tfrac{1}{2}(q - q^{-1})$ | Crossing energy from the Hecke relation |
+| $\mu_0 = m_e / (3\mathfrak{E}_{\mathrm{cross}})$ | Dimensional anchor ($T_{2,3}$ trefoil $=$ electron) |
 | $F(T_{k^*}, N)$ | Spectral projection onto the active divisor |
 
 The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation

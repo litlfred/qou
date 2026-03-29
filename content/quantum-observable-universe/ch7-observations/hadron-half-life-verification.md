@@ -13,12 +13,12 @@ standard Fermi theory is decomposed into its $q$-dependent parts
 
 | Standard constant | $q$-decomposition | Source |
 |-------------------|-------------------|--------|
-| $m_e$ (electron mass) | $3\,\mathfrak{E}_{\times}(q) \cdot \mu_0$ | 3 crossings of trefoil $T_{2,3}$ |
+| $m_e$ (electron mass) | $3\,\mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ | 3 crossings of trefoil $T_{2,3}$ |
 | $s$ (weak coupling) | $q^{1/2} - q^{-1/2}$ | Skein amplitude (no W boson) |
 | $[2]_q$ (vertex factor) | $q + q^{-1}$ | Categorical dim of $\mathrm{SU}_q(2)$ fund. rep. |
-| $v$ (weak scale) | $N_v \cdot \mathfrak{E}_{\times}(q) \cdot \mu_0$ | Topological invariant $N_v$ (open) |
+| $v$ (weak scale) | $N_v \cdot \mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ | Topological invariant $N_v$ (open) |
 | $G_F$ (Fermi constant) | $1/(\sqrt{2}\,v^2)$ | Derived from weak scale |
-| $G_F^2 m_e^5$ (rate scale) | $243\,\mathfrak{E}_{\times}\,\mu_0\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
+| $G_F^2 m_e^5$ (rate scale) | $243\,\mathfrak{E}_{\mathrm{cross}}\,\mu_0\,/\,(2\,N_v^4)$ | $q$ + $\mu_0$ + $N_v$ |
 
 From $q$ and $\mu_0$ alone:
 
@@ -30,7 +30,7 @@ From $q$ and $\mu_0$ alone:
    ([transition energy](#def:q-value-transition)) — the
    categorical action difference
    $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
-   where $S_q(e) = 3\,\mathfrak{E}_{\times}(q) \cdot \mu_0$
+   where $S_q(e) = 3\,\mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
    ($E_{\mathrm{before}} = E_{\mathrm{after}}$ fails at $q \neq 1$).
@@ -54,10 +54,10 @@ yet been evaluated ($\alpha_{\mathrm{EM}}$ is now resolved).
 Witness computation scripts are in `folio-assistant/computations/`.
 
 1. **$N_v$ (weak scale crossing count).**
-   The weak scale $v = N_v \cdot \mathfrak{E}_{\times}(q) \cdot \mu_0$ sets
+   The weak scale $v = N_v \cdot \mathfrak{E}_{\mathrm{cross}}(q) \cdot \mu_0$ sets
    the absolute rate via $G_F = 1/(\sqrt{2}\,v^2)$.  Deriving $N_v$
    requires identifying the brane tower structure at the electroweak
-   level.  Target: $N_v \cdot \mathfrak{E}_{\times} \cdot \mu_0 \approx 246$ GeV.
+   level.  Target: $N_v \cdot \mathfrak{E}_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
 
 2. **$\mathcal{Q}_q$-values for $A > 4$.** RESOLVED.
    The representation-theoretic formula
