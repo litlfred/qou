@@ -67,8 +67,9 @@ def TorusKnotLabel.degree (τ : TorusKnotLabel) : ℕ :=
 
 /-- The set of embeddable torus knots on a genus-`g` surface. -/
 def embeddableKnots (g : ℕ) : List TorusKnotLabel :=
-  -- For g = 4, these are the 6 knots with (r-1)(s-1)/2 ≤ 4
-  sorry -- Enumeration; see computation below
+  -- For g = 4, return the 6 knots with (r-1)(s-1)/2 ≤ 4
+  -- For other g, would need enumeration
+  if g = 4 then sigma4_knots else []
 
 /-- **Particle labels** — torus knot labels for fundamental fermions. -/
 

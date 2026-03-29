@@ -44,26 +44,31 @@ def vertexType : NucleonType → NucleonType → VertexType
   | _, _ => .pn
 
 /-- The crossing amplitude `𝔴⁺(q)` at a vertex (coefficient on σ).
-    Values in ℤ[q, q⁻¹]:
+    Defined over `ℤ[t, t⁻¹]` where `t = q^{1/2}`, `q = t²`:
     - pp: 1
-    - nn: q²
-    - pn: (1 + q²)/2  ← NOTE: requires ½, see remark below -/
-noncomputable def w_plus (v : VertexType) : R_q :=
+    - nn: t⁴ (= q²)
+    - pn: (1 + t⁴)/2  — requires ℤ[½], so we use doubled form below -/
+noncomputable def w_plus_t (v : VertexType) : R_t :=
   match v with
   | .pp => 1
-  | .nn => q * q          -- q² in ℤ[q, q⁻¹]
-  | .pn => sorry           -- (1 + q²)/2 needs ℤ[½][q, q⁻¹]
+  | .nn => q_from_t * q_from_t    -- t⁴ = q²
+  | .pn => 1 + q_from_t * q_from_t  -- 1 + q² (DOUBLED: actual is ½ of this)
 
 /-- The smoothing amplitude `𝔴⁰(q)` at a vertex (coefficient on 𝟏).
-    Values in ℤ[q, q⁻¹]:
+    Over `ℤ[t, t⁻¹]`:
     - pp: 0
-    - nn: −q · s  where s = q^{1/2} − q^{-1/2}
-    - pn: −q · s / 2  ← NOTE: requires q^{1/2} and ½ -/
-noncomputable def w_zero (v : VertexType) : R_q :=
+    - nn: −t² · (t − t⁻¹)  (= −q · s)
+    - pn: −t² · (t − t⁻¹)  (DOUBLED: actual is ½ of this) -/
+noncomputable def w_zero_t (v : VertexType) : R_t :=
   match v with
   | .pp => 0
-  | .nn => sorry    -- needs q^{1/2} (outside ℤ[q, q⁻¹])
-  | .pn => sorry    -- needs q^{1/2} and ½
+  | .nn => -(q_from_t * s_skein)           -- −q · s in ℤ[t, t⁻¹]
+  | .pn => -(q_from_t * s_skein)           -- −q · s (DOUBLED)
+
+/-- **Convention**: for `pn` vertices, `w_plus_t` and `w_zero_t`
+    return the DOUBLED values `2𝔴⁺` and `2𝔴⁰`.  The factor of 2
+    is tracked through the computation and cancels in the Q ratio
+    (same number of pn crossings in parent and daughter). -/
 
 /-! ### Remark: working over ℤ[q^{1/2}, q^{-1/2}]
 
