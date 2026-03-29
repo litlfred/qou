@@ -6,7 +6,7 @@ linked by the Hopf link $\mathcal{L}_H$ satisfies the stability
 condition
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(H) \;<\; 0
+  \mathbf{E}_{\mathrm{cross}}(H) \;<\; 0
 $$
 
 and is therefore a hadron in the sense of
@@ -38,7 +38,7 @@ In particular:
   \bowtie \mathcal{L}_H$: Coulomb charge $Q(\mathfrak{p}) = +1$
   ([proton](#def:categorical-proton)).  The positive Coulomb
   correction reduces binding but does not overcome it:
-  $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.
+  $\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.
 
 - **Neutron** $\mathfrak{n} = [T_{2,3}, \sigma(T_{2,3}),
   \sigma(T_{2,3})]_p \bowtie \mathcal{L}_H$: Coulomb charge

@@ -125,14 +125,14 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 ```
 # Wrong register
 $m$ for categorical mass      → should be $\mathfrak{m}$
-$E$ standalone                → forbidden; use $\mathcal{S}_p$, $\mathfrak{E}$, or $\mathcal{E}_q$
+$E$ standalone                → forbidden; use $\mathcal{S}_p$, $\mathbf{E}$, or $\mathcal{E}_q$
 $\gamma$ for vortex           → should be $\varrho$
 $\mathcal{C}$ for a category  → should be $\mathbf{C}$
 $\sigma$ in Hecke relation    → should be $T$
 $V_K(t)$ for Jones polynomial → should be $J_K(q)$
 
 # Ambiguous physics terms without categorical backing
-"energy" without referencing $\mathfrak{E}_q$
+"energy" without referencing $\mathbf{E}_q$
 "mass" without referencing $\mathfrak{m}$
 "force" without categorical definition in uses[]
 ```

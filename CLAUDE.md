@@ -341,9 +341,9 @@ Agents **must** use the correct font for each concept.
 | Register | Font | Symbols |
 |----------|------|---------|
 | Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
-| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing energy), `$\mathfrak{E}_{\mathrm{bind}}$` (binding) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
 | Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_H$` (hadron mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). Reclaimed from fraktur — `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
+| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
 | Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
 | Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
 | Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
@@ -366,7 +366,7 @@ Agents **must** use the correct font for each concept.
 - `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
 - `$p$` = brane point (never proton number; proton number is `$Z$`)
 - `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
-  Use `$\mathcal{S}_p$`, `$\mathfrak{E}$`, or `$\mathcal{E}_q$` respectively.
+  Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
   `$E_H$` (with hadron subscript) is allowed for crossing energy.
 - `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.

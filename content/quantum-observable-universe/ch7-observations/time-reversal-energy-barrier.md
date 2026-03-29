@@ -16,7 +16,7 @@ sector ($q \in \mathbb{R}$, $q \geq 1$), crossing a topological
 barrier between connected components requires energy
 
 $$
-  \mathfrak{E}_{\text{flip}}(e^-) \;=\; +\infty.
+  \mathbf{E}_{\text{flip}}(e^-) \;=\; +\infty.
 $$
 
 No finite energy process can convert a single electron into a single
@@ -51,8 +51,8 @@ The topological protection is **equally strong** for composites:
 Therefore:
 
 $$
-  \mathfrak{E}_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
-  \mathfrak{E}_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
+  \mathbf{E}_{\text{flip}}(\mathfrak{p}) \;=\; +\infty, \qquad
+  \mathbf{E}_{\text{flip}}(\mathfrak{n}) \;=\; +\infty.
 $$
 
 The only way to produce $\bar{\mathfrak{p}}$ is pair creation at the

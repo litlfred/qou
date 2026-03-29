@@ -10,7 +10,7 @@ The crossing energy ([crossing energy](#def:crossing-energy))
 decomposes as
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(H)
+  \mathbf{E}_{\mathrm{cross}}(H)
   \;=\;
   \underbrace{\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})}_{\text{baseline (strong)}}
   \;+\;

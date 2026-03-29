@@ -19,7 +19,7 @@ The electron is the left trefoil $T_{2,3}$ with $n_c = 3$ positive
 crossings.  Its [crossing energy](#def:crossing-energy) is
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(e^-)
+  \mathbf{E}_{\mathrm{cross}}(e^-)
   \;=\; 3q
   \;\approx\; 3 \times 1.10997
   \;=\; 3.330
@@ -29,7 +29,7 @@ $$
 The positron is the mirror $\sigma(T_{2,3})$ with $3$ negative crossings:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(e^+)
+  \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; -3q^{-1}
   \;\approx\; -3 \times 0.9010
   \;=\; -2.703
@@ -39,8 +39,8 @@ $$
 The **crossing energy gap** between the two chiralities is
 
 $$
-  \Delta \mathfrak{E}_{\mathrm{cross}}
-  \;=\; \mathfrak{E}_{\mathrm{cross}}(e^-) - \mathfrak{E}_{\mathrm{cross}}(e^+)
+  \Delta \mathbf{E}_{\mathrm{cross}}
+  \;=\; \mathbf{E}_{\mathrm{cross}}(e^-) - \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; 3(q + q^{-1})
   \;\approx\; 6.033
   \quad (\text{in Skein units}).
@@ -75,7 +75,7 @@ $$
    sign and partially cancel in the pair:
 
    $$
-     \mathfrak{E}_{\mathrm{cross}}(e^-) + \mathfrak{E}_{\mathrm{cross}}(e^+)
+     \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
      \;=\; 3q - 3q^{-1}
      \;=\; 3(q - q^{-1})
      \;\approx\; 0.630

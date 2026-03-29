@@ -280,7 +280,7 @@ the mass $\mathfrak{m}(\varrho) = \mathrm{Vol}(K)$
 the energy function $E$
 
 <!-- RIGHT -->
-the energy function $\mathfrak{E}$
+the energy function $\mathbf{E}$
 ```
 
 ### Vortex: `$\gamma$` for vortex/closed cycle

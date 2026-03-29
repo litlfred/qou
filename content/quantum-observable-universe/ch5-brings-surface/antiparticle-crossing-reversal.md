@@ -13,12 +13,12 @@ $\sigma(T_{2,3})$ its mirror image (all crossings reversed).
 2. **Crossing energy sign reversal.**  If the
    [crossing energy](#def:crossing-energy) of $H$ is
    $$
-     \mathfrak{E}_{\mathrm{cross}}(H) = \sum_{\text{crossings}} \epsilon_i,
+     \mathbf{E}_{\mathrm{cross}}(H) = \sum_{\text{crossings}} \epsilon_i,
      \qquad \epsilon_i \in \{q, -q^{-1}\},
    $$
    then the crossing energy of the antihadron satisfies
    $$
-     \mathfrak{E}_{\mathrm{cross}}(\sigma(H)) = -\mathfrak{E}_{\mathrm{cross}}(H)
+     \mathbf{E}_{\mathrm{cross}}(\sigma(H)) = -\mathbf{E}_{\mathrm{cross}}(H)
      \bigg|_{q \leftrightarrow q^{-1}},
    $$
    i.e. positive crossings ($+q$) become negative ($-q^{-1}$) and
