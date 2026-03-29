@@ -447,7 +447,7 @@
   function renderBlock(blk) {
     if (blk.kind === "prose") {
       const el = h("div", "blk");
-      el.innerHTML = `<div class="bb">${mdToHtml(blk.md || "")}</div>`;
+      el.innerHTML = `<div class="bb">${mdToHtml(blk.md || "", blk.rendered)}</div>`;
       return el;
     }
 
@@ -493,7 +493,7 @@
     el.appendChild(actions);
 
     // body
-    const bb = h("div", "bb", mdToHtml(blk.md || ""));
+    const bb = h("div", "bb", mdToHtml(blk.md || "", blk.rendered));
     el.appendChild(bb);
 
     // source panel
@@ -1267,7 +1267,7 @@
   }
 
   // ── Markdown → HTML (minimal) ───────────────────────────
-  function mdToHtml(md) {
+  function mdToHtml(md, rendered) {
     let out = md;
     // display math $$...$$
     out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) =>
@@ -1275,9 +1275,15 @@
     // inline math $...$
     out = out.replace(/\$([^\n$]+?)\$/g, (_, tex) =>
       `<span class="katex-inline-raw" data-tex="${escAttr(tex.trim())}"></span>`);
-    // fenced code blocks
+    // fenced code blocks — replace ```tex with rendered SVG if available
+    let texBlockIdx = 0;
     out = out.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
       if (lang === "tex" || lang === "latex") {
+        const idx = texBlockIdx++;
+        const asset = rendered && rendered.find(r => r.blockIndex === idx);
+        if (asset) {
+          return `<div class="txb"><img src="${escAttr(asset.url)}" alt="diagram" class="txb-svg"></div>`;
+        }
         return `<div class="txb ph">${esc(code.trim())}</div>`;
       }
       return `<pre style="background:var(--bg-r);padding:.6rem;border-radius:4px;overflow-x:auto;font-size:.8rem"><code>${esc(code)}</code></pre>`;
@@ -1377,7 +1383,7 @@
     popup.querySelector(".blk-popup-title").innerHTML =
       `<span class="bk">${esc(blk.kind)}</span> ${esc(blk.title || blk.label)}`;
     const body = popup.querySelector(".blk-popup-body");
-    body.innerHTML = mdToHtml(blk.md || "");
+    body.innerHTML = mdToHtml(blk.md || "", blk.rendered);
     popup.classList.add("vis");
     renderMath(body);
     // Position near anchor

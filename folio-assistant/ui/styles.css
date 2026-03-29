@@ -215,6 +215,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .katex{color:var(--fg)}
 .txb{background:var(--bg-r);border:1px solid var(--brd);border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
 .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f)}
+.txb-svg{max-width:100%;height:auto;filter:var(--svg-f)}
 .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left}
 
 /* ── Todos badge per block ──────────────────────────────── */

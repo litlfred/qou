@@ -33,6 +33,7 @@ Located in `folio-assistant/ui/app.js`. Processing order:
 
 | Pattern | Issue | Fix |
 |---------|-------|-----|
+| `` ```tex `` without rendered SVG | Shows raw LaTeX code | Run `bun run render-tex` then `bun run export-json` |
 | `\operatorname{X}` | KaTeX error | Use `\mathrm{X}` |
 | `$$` without preceding blank line | May parse as inline | Add blank line before `$$` |
 | `*italic*` spanning lines | Won't match (single-line regex) | Keep italic on one line |
