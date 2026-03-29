@@ -32,7 +32,7 @@ export default chapter({
       blocks: [
         "calabi-yau",
         "ale",
-        "brings-surface",
+        "brings-surface-unit-circle",
         "cosmological-limits",
         "instanton",
         "irreducible-connection",
