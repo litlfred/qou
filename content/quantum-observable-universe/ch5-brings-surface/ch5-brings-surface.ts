@@ -50,7 +50,6 @@ export default chapter({
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
-        "observed-value",
         "t-duality-color-tube",
         "color-tube-subloci",
         // Bundle structures and smoothness
@@ -85,7 +84,6 @@ export default chapter({
         "descartes-knot-eigenbasis",
         // The Descartes elliptic curve E_q
         "descartes-elliptic-curve",
-        "weierstrass-projection",
       ],
     }),
 
@@ -166,7 +164,7 @@ export default chapter({
         "skein-shell-correction",
         "shell-closure-normal-form",
         "skein-finiteness-bound",
-        "torus-knot-shell-binding",
+        "spectral-decomposition-qvalue",
         "shell-construction-rules",
         "electron-shells-hopf",
         "helium-hopf-diagram",

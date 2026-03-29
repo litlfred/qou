@@ -58,5 +58,34 @@ export default chapter({
         "glossary-r-linear-category",
       ],
     }),
+
+    section({
+      title: "Geometry and transport",
+      label: "sec:glossary-geometry",
+      blocks: [
+        "glossary-quantum-flatness",
+        "glossary-reeb-gauge-group",
+        "glossary-categorical-transport",
+        "glossary-categorical-q-torsion-leaf",
+        "glossary-descent",
+      ],
+    }),
+
+    section({
+      title: "Groups and symmetry",
+      label: "sec:glossary-groups",
+      blocks: [
+        "glossary-s3-group",
+      ],
+    }),
+
+    section({
+      title: "Elliptic and surface geometry",
+      label: "sec:glossary-elliptic",
+      blocks: [
+        "glossary-observed-value",
+        "glossary-weierstrass-projection",
+      ],
+    }),
   ],
 });

@@ -1,9 +1,10 @@
-import { definition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default definition({
-  label: "def:weierstrass-projection",
+export default remark({
+  label: "rem:glossary-weierstrass-projection",
   title: "Weierstrass projection $\\wp_q(z)$",
   tags: [
+    "glossary",
     "weierstrass",
     "elliptic-function",
     "descartes",

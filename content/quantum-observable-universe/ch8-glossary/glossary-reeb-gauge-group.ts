@@ -1,9 +1,10 @@
-import { definition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default definition({
-  label: "def:reeb-gauge-group",
+export default remark({
+  label: "rem:glossary-reeb-gauge-group",
   title: "The Reeb gauge group $U_1(R)$",
   tags: [
+    "glossary",
     "gauge-group",
     "reeb",
     "U1",

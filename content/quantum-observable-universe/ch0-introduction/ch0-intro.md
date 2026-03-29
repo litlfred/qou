@@ -173,7 +173,22 @@ light nuclei (matching CODATA to six significant figures);
 knot-theoretic orbital shells reproducing the noble-gas sequence;
 beta-decay half-lives from Skein polynomial matrix elements; and
 a fine-structure constant $\alpha^{-1}$ within $0.14\%$ of the
-measured value.  The same Hopf chain formalism extends to organic
+measured value.
+
+A central result — and perhaps the most surprising — is
+**interaction completeness**: the embeddability bound on $\Sigma_4$
+produces a finite, exhaustive list of exactly $7$ transfer matrices
+$T_{\tau(r,s)}(q)$ — six non-trivial force operators and the
+identity (free propagation of the unknot $\nu = \tau(1,0)$) — that
+govern *all* knot-particle interactions.  These are the only
+harmonic $1$-forms on the fiber; an $8$th cannot exist without
+violating the brane tower cohomology.  Beta decay, nuclear binding,
+orbital shell structure, and the axial coupling $g_A$ are all
+computed from compositions of these $7$ operators over
+$\mathbb{Z}[q, q^{-1}]$.  The list is not a model — it is a
+theorem.
+
+The same Hopf chain formalism extends to organic
 chemistry, demonstrating that the categorical machinery reaches
 beyond fundamental physics to molecular structure and bonding.
 
