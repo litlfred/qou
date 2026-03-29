@@ -139,7 +139,7 @@ apply these rulings when scanning narrative text:
 | **energy** (bare) | Replace with `κ` (Hecke cost) | Ban bare "energy"; always use κ(ξ), or qualify as binding/kinetic/crossing |
 | **crossing** | OK unqualified | Both "braid crossing" and "nuclear crossing" are just "crossing" — the context is unambiguous in this paper |
 | **shell** | Always "orbital shell" | Qualify by occupancy λ and degree [n], NOT by who occupies it. Use `𝔖_ℓ` for the formal object |
-| **trace** | Two distinct traces; qualify when ambiguous | (1) **Categorical trace** = Frobenius trace = descended + transient (same trace, different restrictions to parts of the bundle). (2) **Markov trace** (braid/knot invariant on H_n(q)). Bare "trace" OK when context is clear; qualify when both could apply |
+| **trace** | Two traces only: **categorical** and **Markov** | (1) **Categorical trace** (the Frobenius pairing ∫_A). The terms "descended trace," "transient trace," and "Frobenius trace" are just the categorical trace restricted to parts of the bundle — NOT separate traces. Use "categorical trace of the descended part" etc. (2) **Markov trace** tr_M (braid/knot invariant on H_n(q)). Bare "trace" OK when context is clear. |
 | **dimension** | Always qualify | Quantum dimension d_λ(q), Hausdorff dimension d_H, categorical dim, topological dim — always say which |
 | **volume** | Always qualify | Hyperbolic Vol(K), traced volume V̂, categorical volume, physical volume — always say which |
 | **force** | Transfer matrix IS the force operator | Interactions are described by transfer matrices. No separate "force" concept. Newton's equations = transfer matrix composition |
