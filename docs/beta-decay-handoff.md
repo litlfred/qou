@@ -277,6 +277,22 @@ Cumulative: 2, 8, 20, 28, 50, 82, 126
 
 ---
 
+## Merge Conflicts (6 files)
+
+Main has 607 files changed since branch divergence. 6 conflicts:
+
+| File | Our change | Upstream change | Resolution |
+|------|-----------|----------------|------------|
+| `ch5/beta-decay-skein.md` | Rewrote: T_{3,5} 10-crossing weak vertex | Changed q=1.1097→"substrate q", p,n→Z,N | Take our T_{3,5} rewrite + upstream Z,N notation |
+| `ch5/beta-decay-transfer-matrix.md` | Added T_{3,5} context in intro | Changed q=1.1097→"substrate q" | Merge both (different paragraphs) |
+| `ch5/ch5-brings-surface.ts` | Added 4 blocks (shell-closure, finiteness, etc.) | Restructured sections, moved resolvents | Add our blocks to upstream's restructured version |
+| `ch5/hadron-half-life.md` | Updated q=1.110, added W(q) vertex | Changed to "substrate q", E_×→𝓔_× | Take upstream notation + our W(q) content |
+| `ch5/q-value-transition.md` | Changed q=1.1097→1.110 | Changed to "substrate q", E_×→𝓔_× | Take upstream (parametric is better) |
+| `ch7/ch7-observations.ts` | Added finiteness-bound-interpretation | Added substrate-consistency-window section | Both are additions, merge both |
+
+All conflicts are notation-level or block-insertion, no substantive disagreements.
+Upstream changed `E_×` → `𝓔_×` and made q parametric (good — matches our skill rule).
+
 ## Files to Review Before Merge
 
 ### Content (check for consistency):
