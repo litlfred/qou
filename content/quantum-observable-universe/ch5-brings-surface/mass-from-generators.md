@@ -12,7 +12,7 @@ are non-hyperbolic), so the topological mass formula
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n})
-  \;=\; \frac{\operatorname{Vol}(T_{m,n})}{\hbar_q^{\,2}}
+  \;=\; \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}}
   \;=\; 0.
 $$
 
@@ -38,7 +38,7 @@ at $q \approx 1.10997$:
 
 $$
   m_e \;=\; \sum_i c_i(q) \cdot
-  \frac{\operatorname{Vol}(K_i)}{\hbar_q^{\,2}}.
+  \frac{\mathrm{Vol}(K_i)}{\hbar_q^{\,2}}.
 $$
 
 **Step 3: Skein transmutation generates generations.**
@@ -52,12 +52,12 @@ $$
 $$
 
 The figure-eight has hyperbolic volume
-$\operatorname{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
+$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
 so the muon-to-electron mass ratio is governed by:
 
 $$
   \frac{m_\mu}{m_e}
-  \;=\; \frac{\operatorname{Vol}(4_1)}{\hbar_q^{\,2}}
+  \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^{\,2}}
   \;\approx\; \frac{2.02988}{(1 - q^{-1})^2}
   \;=\; 206.768\ldots
 $$

@@ -38,7 +38,7 @@ Since $E$ is strictly convex in $p$, the integer minimiser is
 $$
   p_{\mathrm{stab}}(A)
   \;=\;
-  \operatorname*{arg\,min}_{p \in \{0, 1, \ldots, A\}} E(p, A)
+  \mathrm*{arg\,min}_{p \in \{0, 1, \ldots, A\}} E(p, A)
   \;\in\;
   \bigl\{\lfloor p^*(A) \rfloor,\;
   \lceil p^*(A) \rceil\bigr\}.

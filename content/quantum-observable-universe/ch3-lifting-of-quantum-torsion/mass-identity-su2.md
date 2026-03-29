@@ -6,13 +6,13 @@ $G = \mathrm{SU}(2)$.
 $\int_A = \int_{\mathrm{SU}(2)} (-)\, d\mu$, where $\mu$ is the
 normalised Haar measure. The comultiplication is
 $\Delta(f)(x, y) = f(xy)$, and the categorical trace is
-$\operatorname{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
+$\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 
 **The mass formula.** For a cycle $\varrho \in A$, the
 [mass identity](#def:mass-identity) gives
 $$
   m(\varrho)
-  \;=\; \bigl\lVert \operatorname{tr}\bigl((\int_A \otimes \mathrm{id})
+  \;=\; \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
   \circ \Delta \circ \varrho\bigr) \bigr\rVert.
 $$
 Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to
@@ -25,7 +25,7 @@ $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ has mass
 $$
   m(\varrho)
   \;=\; \biggl\lVert \int_{\mathrm{SU}(2)}
-  \operatorname{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
+  \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
   \biggr\rVert.
 $$
 The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out

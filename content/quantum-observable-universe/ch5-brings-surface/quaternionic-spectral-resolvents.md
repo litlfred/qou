@@ -3,7 +3,7 @@ Let $\mathcal{S}$ denote the
 $0<\lvert q\rvert\le 1$, and set $r=-\ln\lvert q\rvert$ so that
 $\lvert q\rvert=e^{-r}$.
 Write $\mathbf{i},\mathbf{j},\mathbf{k}$ for the standard basis of
-$\operatorname{Im}\mathbb{H}$.
+$\mathrm{Im}\mathbb{H}$.
 Using the Lusztig $q$-exponential and $q$-logarithm,
 
 ```tex

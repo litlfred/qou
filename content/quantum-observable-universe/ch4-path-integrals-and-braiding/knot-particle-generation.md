@@ -38,7 +38,7 @@ under the topological mass formula
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n}) \;=\;
-  \frac{\operatorname{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
+  \frac{\mathrm{Vol}(T_{m,n})}{\hbar_q^{\,2}} \;=\; 0.
 $$
 
 Mass arises *entirely* through the linking operations below.

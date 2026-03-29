@@ -7,12 +7,12 @@ cycle $\varrho$ decomposes according to the eigenspace splitting:
 $$
   m(\varrho) \;=\; m_{\mathrm{desc}}(\varrho) + m_{\mathrm{trans}}(\varrho),
 $$
-where $m_{\mathrm{desc}} = \lVert \operatorname{tr}_{\mathrm{desc}}(\varrho) \rVert$
+where $m_{\mathrm{desc}} = \lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \rVert$
 is the descended (persistent) contribution and
-$m_{\mathrm{trans}} = \lVert \operatorname{tr}_{\mathrm{trans}}(\varrho) \rVert$
+$m_{\mathrm{trans}} = \lVert \mathrm{tr}_{\mathrm{trans}}(\varrho) \rVert$
 is the transient contribution.
 
-**Descended mass.** The descended trace $\operatorname{tr}_{\mathrm{desc}}$
+**Descended mass.** The descended trace $\mathrm{tr}_{\mathrm{desc}}$
 factors through the projection $\hat{\tau}$ onto
 $\mathfrak{A}^{\mathrm{desc}} \cong \mathfrak{su}(2)$. For the Hopf
 fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$, the descended mass of
@@ -25,7 +25,7 @@ topologically protected part: it is invariant under continuous
 deformations of the cycle and the metric.
 
 **Transient mass.** The transient trace
-$\operatorname{tr}_{\mathrm{trans}}$ captures fluctuations in the
+$\mathrm{tr}_{\mathrm{trans}}$ captures fluctuations in the
 cotangent directions $\mathfrak{A}^{\mathrm{trans}} \cong \Omega^1(\mathbb{CP}^1) \oplus \mathbb{C}$.
 For a cycle $\varrho$ that is $\mathrm{U}(1)$-equivariant,
 $m_{\mathrm{trans}}(\varrho) = 0$ since the transient eigenspace has

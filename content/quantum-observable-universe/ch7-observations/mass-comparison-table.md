@@ -10,7 +10,7 @@ PDG 2024 averages.  All masses are in MeV/$c^2$.
 $$
   q = 1.10997, \quad
   \hbar_q = 1 - q^{-1} = 0.09905, \quad
-  \operatorname{Vol}(4_1) = 2.02988.
+  \mathrm{Vol}(4_1) = 2.02988.
 $$
 
 **Table 2: Predicted vs.\ observed masses.**
@@ -19,13 +19,13 @@ $$
 
 | Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |----------|-------------|-------------|-----------|----------------|--------|
-| $\nu$ | $T_{1,0}$ | $\operatorname{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
+| $\nu$ | $T_{1,0}$ | $\mathrm{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
 | $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
-| $\mu^-$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $\operatorname{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
+| $\mu^-$ | $\sigma(T_{2,3} \bowtie T_{2,3})$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
 
 The electron mass is an input (it fixes $\mu_u$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
-$\operatorname{Vol}(4_1)/\hbar_q^2$ and reproduces the CODATA value
+$\mathrm{Vol}(4_1)/\hbar_q^2$ and reproduces the CODATA value
 to six significant figures with $q = 1.10997$.
 
 *Hadrons (from pair Skein masses).*

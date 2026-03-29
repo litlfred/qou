@@ -43,7 +43,7 @@ overshoots the classical value and the Reeb term actively
 
 **Degeneration of the parallelogram.**
 As $q \to q_{\mathrm{gold}}$, the $j$-invariant diverges:
-$j(q) \to \infty$, which forces $\operatorname{Im}(\tau) \to \infty$.
+$j(q) \to \infty$, which forces $\mathrm{Im}(\tau) \to \infty$.
 The period lattice stretches: one generator stays finite while the
 other diverges.  The parallelogram $\Pi(q)$ is stretched without
 bound in one direction:
