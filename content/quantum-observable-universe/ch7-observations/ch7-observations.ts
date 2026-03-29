@@ -121,6 +121,7 @@ export default chapter({
       title: "Strangelet Stability and Deconfinement",
       label: "sec:strangelet-stability",
       blocks: [
+        "strangelet-intro",
         "strangelet-crossing-energy",
         "strangelet-witten-stability",
         "deconfinement-golden-threshold",
