@@ -114,7 +114,7 @@ $$
     F_\nabla \wedge_q \star_q F_\nabla
   \bigr)}_{\text{gauge}}
   \;+\;
-  \underbrace{\textstyle\int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
+  \underbrace{\textstyle\int_A\!\bigl(\psi^{\ast} \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
 $$
 
 constructed entirely from the rigid monoidal structure.  Varying
@@ -150,14 +150,21 @@ hyperbolic volume of its complement and the quantum Planck constant
 $\hbar_q = 1 - 1/q$ — so that mass is literally volume, measured
 by the Frobenius trace.  A clean dictionary emerges: crossing number
 equals jet order equals information content.
+The embeddability bound on $\Sigma_4$
+produces a finite, exhaustive list of exactly $7$ transfer matrices
+$T_{\tau(r,s)}(q)$ — six non-trivial force operators and the
+identity (free propagation of the unknot $\nu = \tau(1,0)$) — that
+govern all knot-particle interactions.  These are the only
+harmonic $1$-forms on the fiber; an $8$th cannot exist without
+violating the brane tower cohomology (**interaction completeness**).
 
-[Chapters 5 and 6](#chap:models-qou) explore the consequences of
+[Chapter 5](#chap:models-qou) explores the consequences of
 $\chi(A) = -6$.  The constraint singles out Bring's surface — a
 genus-4 curve with $S_5$ symmetry — as the fibre of the state
 bundle, and the resulting *Descartes universes* are so called
 because the observer is not separate from the mechanics.
 
-[Chapter 7](#chap:observations) confronts the theory with
+[Chapter 6](#chap:observations) confronts the theory with
 experiment.  The substrate parameter $q$ is not free but is
 determined by CODATA 2022 values: the unique real root $q > 1$ of
 
@@ -173,26 +180,15 @@ light nuclei (matching CODATA to six significant figures);
 knot-theoretic orbital shells reproducing the noble-gas sequence;
 beta-decay half-lives from Skein polynomial matrix elements; and
 a fine-structure constant $\alpha^{-1}$ within $0.14\%$ of the
-measured value.
-
-A central result — and perhaps the most surprising — is
-**interaction completeness**: the embeddability bound on $\Sigma_4$
-produces a finite, exhaustive list of exactly $7$ transfer matrices
-$T_{\tau(r,s)}(q)$ — six non-trivial force operators and the
-identity (free propagation of the unknot $\nu = \tau(1,0)$) — that
-govern *all* knot-particle interactions.  These are the only
-harmonic $1$-forms on the fiber; an $8$th cannot exist without
-violating the brane tower cohomology.  Beta decay, nuclear binding,
+measured value.  Beta decay, nuclear binding,
 orbital shell structure, and the axial coupling $g_A$ are all
-computed from compositions of these $7$ operators over
-$\mathbb{Z}[q, q^{-1}]$.  The list is not a model — it is a
-theorem.
+computed from compositions of the $7$ transfer matrices over
+$\mathbb{Z}[q, q^{-1}]$.
 
 The same Hopf chain formalism extends to organic
-chemistry, demonstrating that the categorical machinery reaches
-beyond fundamental physics to molecular structure and bonding.
+chemistry.
 
-[Chapter 8](#chap:info-theory) addresses Wigner's mystery
+[Chapter 7](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
 out to be Turing complete: the combinatorics supporting logic and
 computation is a property of the algebraic substrate, not the
