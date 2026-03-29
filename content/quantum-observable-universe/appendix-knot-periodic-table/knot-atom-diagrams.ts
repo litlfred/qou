@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:stable-nucleus",
   label: "rem:knot-atom-diagrams",
   title:
-    "Knot diagrams of light atoms ($p \\leq 4$)",
+    "Knot diagrams of light atoms ($Z \\leq 4$)",
   tags: [
     "knot-diagram",
     "trefoil",

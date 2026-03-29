@@ -18,8 +18,9 @@ trefoil resonance modes.
    The shell structure is determined by the eigenvalues
    of the photon-electron transfer matrix $T_{\gamma e}(q)$
    ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)):
-   at $q = 1.1097$, $\lambda_+ = 1.1073$ governs shell energy
-   scaling via a Chebyshev recurrence, and sub-shell capacities
+   at the substrate parameter $q$, $\lambda_+ = 1.1073$
+   governs shell energy scaling via a Chebyshev recurrence,
+   and sub-shell capacities
    ($2, 6, 10, 14$) arise from tensor product eigenvalue
    degeneracies.
 
@@ -94,7 +95,7 @@ Markov non-degeneracy
 Each element displays:
 
 - **Symbol** and atomic number
-- **Nuclear knot**: $p\,\mathcal{B}_3 \bowtie n\,\mathcal{B}_3$
+- **Nuclear knot**: $Z\,\mathcal{B}_3 \bowtie N\,\mathcal{B}_3$
   with $k_\alpha$ sub-links highlighted
 - **Electron knot**: trefoil writhe diagram showing occupied
   shells and the current Fourier mode
@@ -102,7 +103,7 @@ Each element displays:
   $\deg P_{\mathcal{N}} \leq A^2 - 1$
 - **Shell eigenvalues**: dominant $\lambda_+^n$ and Chebyshev
   index at the element's outermost shell
-- **$n_{\mathrm{pred}}$ vs $n_{\mathrm{obs}}$**: predicted
+- **$N_{\mathrm{pred}}$ vs $N_{\mathrm{obs}}$**: predicted
   and observed neutron number
 - **Intruder indicator**: if the last nucleon is in an
   intruder sub-level, mark it
@@ -117,7 +118,7 @@ The visualization should be an interactive HTML page
    interval.  Columns grouped by $s$, $p$, $d$, $f$ blocks.
 
 2. **Element tiles**: clickable tiles showing the element
-   symbol, $p$, $n$, $k_\alpha$, and a small SVG of the
+   symbol, $Z$, $N$, $k_\alpha$, and a small SVG of the
    nuclear Borromean structure.
 
 3. **Nuclear side panel**: when an element is selected, show
@@ -138,7 +139,8 @@ The visualization should be an interactive HTML page
    - Filter by stability pair, intruder status, $k_\alpha$
    - $q$ slider to show how the table changes with substrate
      parameter (at $q = 1$: all rows equal width, no
-     intruders; at $q = 1.1097$: observed table)
+     intruders; at the substrate parameter $q$:
+     observed table)
 
 6. **Knot notation**: use the visual conventions from
    [knot atom diagrams](#rem:knot-atom-diagrams):
@@ -150,7 +152,7 @@ The visualization should be an interactive HTML page
 
 7. **Data source**: read from the knot-periodic table
    ([knot-periodic table](#rem:knot-periodic-table)) for
-   $p$, $n$, $n_{\mathrm{pred}}$, $\Delta n$, $k_\alpha$,
+   $Z$, $N$, $N_{\mathrm{pred}}$, $\Delta N$, $k_\alpha$,
    masses, and $B/A$.
 
 8. **Transfer matrix overlay**: optional display mode showing
@@ -161,4 +163,4 @@ The visualization should be an interactive HTML page
 9. **Shell eigenvalue display**: optional overlay showing
    $\lambda_+^n$ at the element's outermost electron shell,
    with the Chebyshev recurrence index and binding energy
-   $E_{\mathrm{bind}} \propto \lambda_+^{-n}$.
+   $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n}$.
