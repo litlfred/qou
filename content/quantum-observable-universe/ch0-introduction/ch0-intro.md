@@ -43,12 +43,17 @@ What follows from these axioms is surprising in both scope and
 specificity.  The symmetry group $\mathrm{SU}_2(R)$ is not
 assumed; it emerges via Tannaka–Krein reconstruction.  The
 uncertainty principle is not postulated; it appears as the geometric
-signature of degrees of freedom not yet resolved.  Observation is an act of intention, and intention can produce
-genuinely new outcomes — not merely reveal pre-existing ones.  Particles are knots — topological
-objects classified by their crossing structure — and simultaneously
-vortex lines in the fibre of the state bundle, the two pictures
-exchanged by the Frobenius self-duality $A \cong A^{\vee}$.  Even
-the capacity for computation — the Turing completeness of the
+signature of degrees of freedom not yet resolved.  Observation is
+an act of intention, and intention can produce genuinely new
+outcomes — not merely reveal pre-existing ones.
+
+Particles are knots — topological objects classified by their
+crossing structure — and simultaneously vortex lines in the fibre
+of the state bundle.  These two pictures are not competing
+descriptions but equivalent viewpoints, exchanged by the Frobenius
+self-duality $A \cong A^{\vee}$.
+
+Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.  That so much structure
 follows from so little input is, as Wigner put it, "something
 bordering on the mysterious."
