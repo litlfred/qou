@@ -96,9 +96,15 @@ $$
 
 *Here:*
 
-*1. $\mathcal{Q}_{\mathrm{bare}} = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
-   \mathfrak{E}_{\times} \times \mu_0$ is the Level 0 transfer matrix
-   ratio, with $P(q) = \prod_i \hat{V}_i(q)$ the Skein polynomial.*
+*1. $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
+   \hbar_q \cdot \mathfrak{E}_{\times} \cdot \mu_0$ is the Level 0
+   transfer matrix ratio, with $P(q) = \prod_i \hat{V}_i(q)$ the
+   Skein polynomial.  Here $\log_q(x) = \ln x / \ln q$ is the
+   $q$-natural logarithm and $\hbar_q = 1 - q^{-1}$ is the quantum
+   Planck constant.  The product $\hbar_q / \ln q$ is the
+   **$q$-anomaly factor**: it equals $1$ at $q = 1$ and $0.9496$
+   at the substrate $q$, encoding the $5\%$ deviation of the
+   quantum Planck constant from its classical limit.*
 
 *2. $\Delta_{\mathrm{mix}} = \sigma_0 \sigma_1^{-1}$ is the
    universal $\pm 1$ transition operator.*

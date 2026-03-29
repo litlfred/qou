@@ -183,8 +183,11 @@ $$
   \prod_{T_{r,s}} F(T_{r,s},\, N)
 $$
 
-where $\mathcal{Q}_{\mathrm{bare}}$ is the transfer matrix ratio
-and $F(T_{r,s}, N)$ is the knot operator for each torus knot.
+where $\mathcal{Q}_{\mathrm{bare}} = |\log_q(P_{\mathrm{dau}}/
+P_{\mathrm{par}})| \times \hbar_q \cdot \mathfrak{E}_\times \cdot
+\mu_0$ uses the $q$-natural logarithm ($\log_q = \ln/\ln q$) with
+the quantum Planck constant $\hbar_q = 1 - q^{-1}$, and
+$F(T_{r,s}, N)$ is the knot operator for each torus knot.
 Non-embeddable knots ($\frac{(r-1)(s-1)}{2} > 4$) contribute
 $F = 1$ (null operator — zero topological action on $\Sigma_4$).
 Shells unchanged by the decay contribute $F = 1$ (cancel in the
