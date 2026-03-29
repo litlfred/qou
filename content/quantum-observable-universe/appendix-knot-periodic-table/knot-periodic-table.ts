@@ -1,7 +1,7 @@
 import { prose } from "../../schema/builders";
 
 export default prose({
-  label: "knot-periodic-table",
+  label: "prose:knot-periodic-table",
   title: "Knot-periodic table of the elements",
   uses: [
     "prop:shell-structure-eigenvalues",

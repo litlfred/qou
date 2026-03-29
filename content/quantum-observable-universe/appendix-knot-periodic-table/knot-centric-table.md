@@ -168,7 +168,7 @@ The visualization should be an interactive HTML page
    - Borromean symbol = 3 interlocked rings (quark composite)
 
 7. **Data source**: read from the knot-periodic table
-   ([knot-periodic table](#rem:knot-periodic-table)) for
+   ([knot-periodic table](#prose:knot-periodic-table)) for
    $Z$, $N$, $N_{\mathrm{pred}}$, $\Delta N$, $k_\alpha$,
    masses, and $B/A$.
 
