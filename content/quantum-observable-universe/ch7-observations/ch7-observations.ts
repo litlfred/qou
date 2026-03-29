@@ -131,6 +131,7 @@ export default chapter({
         "eos-borromean-cfl",
         "cfl-neutron-star-observables",
         "strangelet-merger-signature",
+        "strangelet-double-beta",
       ],
     }),
 
