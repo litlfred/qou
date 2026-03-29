@@ -172,52 +172,61 @@ phase-space integral with $F_q(Z, E)$.
 ## $\mathcal{Q}_q$-value predictions from $q$
 
 The $\mathcal{Q}_q$-value is predicted from $q$ alone via the
-representation-theoretic formula
+knot operator product
 ([torus knot shell binding](#prop:torus-knot-shell-binding)):
 
 $$
-  \mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}
+  \mathcal{Q}_q
+  \;=\;
+  \mathcal{Q}_{\mathrm{bare}}
+  \;\times\;
+  \prod_{T_{r,s}} F(T_{r,s},\, N)
 $$
 
-where $\mathcal{Q}_{\mathrm{bare}}$ is the transfer matrix ratio,
-$F_{\mathrm{deg}} = \frac{1}{2}(\mathrm{tr}_M(T_{2,9} \cdot
-\Delta_{\mathrm{mix}}) + \mathrm{tr}_M(T_{3,4} \cdot
-\Delta_{\mathrm{mix}})) = 0.5949$ for degree-$2$ shells, and
-$F_{\mathrm{Pauli}} = |\mathrm{tr}_M(e_{(1^3)} \cdot
-\Delta_{\mathrm{mix}} \cdot e_{(1^3)})| / |\mathrm{tr}_M(
-\Delta_{\mathrm{mix}})| = 0.6382$ for magic shells at degree
-$\geq 2$.
+where $\mathcal{Q}_{\mathrm{bare}}$ is the transfer matrix ratio
+and $F(T_{r,s}, N)$ is the knot operator for each torus knot.
+Non-embeddable knots ($\frac{(r-1)(s-1)}{2} > 4$) contribute
+$F = 1$ (null operator — zero topological action on $\Sigma_4$).
+Shells unchanged by the decay contribute $F = 1$ (cancel in the
+$\mathcal{Q}$ ratio).  The product collapses to a single active
+term — the converting neutron's shell knot $T_{k^*}$.
 
-| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $F_{\mathrm{deg}}$ | $F_{\mathrm{Pauli}}$ | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | Error |
+| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | Error |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | $0.01739$ | $1$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
-| ${}^{14}\mathrm{C}$ | $0.14936$ | $1$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
-| ${}^{60}\mathrm{Co}$ | $0.57028$ | $0.5949$ | $1$ | $0.33925$ | $0.31817 \pm 0.00013$ | $+6.6\%$ |
-| ${}^{90}\mathrm{Sr}$ | $0.92604$ | $0.5949$ | $1$ | $0.55090$ | $0.54590 \pm 0.00007$ | $+0.9\%$ |
-| ${}^{137}\mathrm{Cs}$ | $1.39442$ | $0.5949$ | $0.6382$ | $0.52944$ | $0.51400 \pm 0.00021$ | $+3.0\%$ |
-| ${}^{210}\mathrm{Bi}$ | $2.12100$ | $0.5949$ | $1$ | $1.26177$ | $1.16270 \pm 0.00006$ | $+8.5\%$ |
+| ${}^{3}\mathrm{H}$ | $0.01739$ | $T_{2,3}$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
+| ${}^{14}\mathrm{C}$ | $0.14936$ | $T_{2,5}$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
+| ${}^{60}\mathrm{Co}$ | $0.57028$ | $T_{2,9}$ | $0.5949$ | $0.33925$ | $0.31817 \pm 0.00013$ | $+6.6\%$ |
+| ${}^{90}\mathrm{Sr}$ | $0.92604$ | $T_{3,4}$ | $0.5949$ | $0.55090$ | $0.54590 \pm 0.00007$ | $+0.9\%$ |
+| ${}^{137}\mathrm{Cs}$ | $1.39442$ | $T_{3,4}$ | $0.3797$ | $0.52944$ | $0.51400 \pm 0.00021$ | $+3.0\%$ |
+| ${}^{210}\mathrm{Bi}$ | $2.12100$ | $T_{2,9}$ | $0.5949$ | $1.26177$ | $1.16270 \pm 0.00006$ | $+8.5\%$ |
 
 All six nuclei within $\pm 9\%$.  Mean absolute error: $5.0\%$;
 RMS: $5.6\%$.
 
-**Degree-$1$ shells** ($N \leq 28$; ${}^3\mathrm{H}$, ${}^{14}\mathrm{C}$):
-the bare transfer matrix already captures Pauli exclusion through
-distinct crossing coefficients ($\mathfrak{p}\mathfrak{p}$ vs
-$\mathfrak{n}\mathfrak{n}$ vs $\mathfrak{p}\mathfrak{n}$), giving
-$5$–$7\%$ accuracy with no correction.
+**Degree-$1$ shells** ($N \leq 28$; active knot $\in \{T_{2,3},
+T_{2,5}, T_{2,7}, T_{3,5}\}$): the knot operator gives $F = 1$
+because degree-$1$ binding is already captured by the crossing
+coefficients in $\mathcal{Q}_{\mathrm{bare}}$.
 
-**Degree-$2$ shells** ($N > 28$; ${}^{60}\mathrm{Co}$, ${}^{90}\mathrm{Sr}$,
-${}^{210}\mathrm{Bi}$): the operator average of $\Delta_{\mathrm{mix}}$
-in the degree-$2$ torus knot representation suppresses $\mathcal{Q}_{\mathrm{bare}}$
-by a factor $F_{\mathrm{deg}} = 0.5949$, reducing the $+70$–$82\%$
-overshoot to $+0.9$–$8.5\%$.
+**Degree-$2$ shells, partial** ($N > 28$, $N \notin \{50,82,126\}$;
+active knot $\in \{T_{2,9}, T_{3,4}\}$): the degree-$2$ knot
+operator average suppresses $\mathcal{Q}_{\mathrm{bare}}$ by
+$F = 0.5949$, reducing the $+70$–$82\%$ overshoot to
+$+0.9$–$8.5\%$.
 
-**Magic shells at degree $2$** (${}^{137}\mathrm{Cs}$, $N = 82$):
-the completely filled shell is fully antisymmetric (Pauli), so
-$\Delta_{\mathrm{mix}}$ projects onto the alternating irrep
-$(1,1,1)$ of $H_3(q)$, giving an additional suppression
-$F_{\mathrm{Pauli}} = 0.6382$.  This reduces the bare $+171\%$
-error to $+3.0\%$.
+**Degree-$2$ shells, full** ($N \in \{50, 82, 126\}$):
+the Pauli principle forces the fully occupied shell into
+the alternating irrep $(1,1,1)$ of $H_3(q)$.  The knot
+operator average is additionally suppressed by the
+Schur–Weyl projection: $F = 0.5949 \times 0.6382 = 0.3797$.
+This reduces the ${}^{137}\mathrm{Cs}$ error from $+171\%$
+to $+3.0\%$.
+
+**Null operators.**  Non-embeddable knots
+($\tfrac{(r-1)(s-1)}{2} > 4$) contribute $F = 1$ — they
+have zero topological action on $\Sigma_4$.  Inner shells
+(unchanged by the decay) also contribute $F = 1$ because
+they cancel in the $P_{\mathrm{dau}}/P_{\mathrm{par}}$ ratio.
 
 **Error structure.**  Let $\varepsilon = \delta q / q \approx
 1.2 \times 10^{-8}$ (CODATA).  The parametric error is

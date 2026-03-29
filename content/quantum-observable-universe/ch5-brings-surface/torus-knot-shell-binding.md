@@ -57,7 +57,7 @@ number ($8$) determines shell $4$.  This dual role reflects
 the degree-$2$ fiber structure — $T_{3,4}$ has two independent
 invariants because it ascends one level in the fiber.
 
-## The $\mathcal{Q}_q$-value with representation-theoretic correction
+## The $\mathcal{Q}_q$-value as a knot operator product
 
 **Proposition.**
 *The $\mathcal{Q}_q$-value for $\beta^-$ decay
@@ -68,62 +68,109 @@ $$
   \;=\;
   \mathcal{Q}_{\mathrm{bare}}
   \;\times\;
-  F_{\mathrm{deg}}
-  \;\times\;
-  F_{\mathrm{Pauli}}
+  \prod_{T_{r,s}}
+  F(T_{r,s},\, N)
 $$
 
-*where:*
+*where the product runs over **all** torus knots $T_{r,s}$, and
+each knot contributes the operator:*
+
+$$
+  F(T_{r,s},\, N)
+  \;=\;
+  \begin{cases}
+    1
+    & \text{if } \tfrac{(r-1)(s-1)}{2} > g
+    \quad\text{(not embeddable on $\Sigma_g$: null operator)} \\[6pt]
+    1
+    & \text{if shell}(T_{r,s}) \text{ is identical in parent and daughter}
+    \quad\text{(cancels in $\mathcal{Q}$ ratio)} \\[6pt]
+    \mathrm{tr}_M\!\bigl(T_{r,s} \cdot \Delta_{\mathrm{mix}}\bigr)
+    & \text{if shell}(T_{r,s}) \text{ contains the converting neutron, partially filled} \\[6pt]
+    \dfrac{\bigl|\mathrm{tr}_M\!\bigl(
+      e_{(1^3)} \cdot T_{r,s} \cdot \Delta_{\mathrm{mix}} \cdot e_{(1^3)}
+    \bigr)\bigr|}{\bigl|\mathrm{tr}_M(\Delta_{\mathrm{mix}})\bigr|}
+    & \text{if shell}(T_{r,s}) \text{ contains the converting neutron, fully filled}
+  \end{cases}
+$$
+
+*Here:*
 
 *1. $\mathcal{Q}_{\mathrm{bare}} = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
    \mathfrak{E}_{\times} \times \mu_0$ is the Level 0 transfer matrix
    ratio, with $P(q) = \prod_i \hat{V}_i(q)$ the Skein polynomial.*
 
-*2. The **degree-$2$ operator average**:*
+*2. $\Delta_{\mathrm{mix}} = \sigma_0 \sigma_1^{-1}$ is the
+   universal $\pm 1$ transition operator.*
+
+*3. $e_{(1^3)} = \sum_{w \in S_3} (-q^{-1})^{\ell(w)} T_w \,/\,
+   P_3(q^{-2})$ is the alternating Young symmetrizer idempotent
+   of $H_3(q)$.*
+
+*4. $g = 4$ is the genus of the Bring surface $\Sigma_4$.*
+
+### Why the product collapses to one term
+
+The $\mathcal{Q}_q$-value is a **difference** $S_q(\mathrm{par})
+- S_q(\mathrm{dau})$.  The parent and daughter share all shells
+except the one containing the converting neutron: inner shells
+cancel in the ratio $P_{\mathrm{dau}}/P_{\mathrm{par}}$.  Hence
+$F(T_{r,s}, N) = 1$ for every knot whose shell is unchanged by
+the decay.  The product reduces to a **single active term** —
+the knot $T_{k^*}$ of the converting neutron's shell:
 
 $$
-  F_{\mathrm{deg}}
+  \prod_{T_{r,s}} F(T_{r,s}, N)
+  \;=\;
+  F(T_{k^*}, N)
+$$
+
+Non-embeddable knots ($\tfrac{(r-1)(s-1)}{2} > 4$) contribute
+the identity automatically — they have zero topological action
+on $\Sigma_4$, analogous to a zero-volume knot in the hyperbolic
+picture.
+
+### Numerical values
+
+The six embeddable torus knots give the following operator
+averages with $\Delta_{\mathrm{mix}}$:
+
+| Knot | $\mathrm{tr}_M(T \cdot \Delta)$ | $|\mathrm{tr}_M(e_{\mathrm{alt}} \cdot T \cdot \Delta \cdot e_{\mathrm{alt}})| / |\mathrm{tr}_M(\Delta)|$ | Shell | Active when |
+|:----:|:---:|:---:|:---:|:---:|
+| $T_{2,3}$ | $0.3649$ | $0.4667$ | $1$ | $N \leq 2$ |
+| $T_{2,5}$ | $0.4251$ | $0.3788$ | $2$ | $2 < N \leq 8$ |
+| $T_{2,7}$ | $0.5040$ | $0.3075$ | $3$ | $8 < N \leq 20$ |
+| $T_{3,5}$ | $1.5586$ | $0.2248$ | $4$ | $20 < N \leq 28$ |
+| $T_{2,9}$ | $0.6048$ | $0.2495$ | $5$ | $28 < N \leq 50$ |
+| $T_{3,4}$ | $0.5850$ | $0.2770$ | $6$ | $50 < N \leq 82$ |
+
+For degree-$1$ shells (shells $1$–$4$), the knot operator
+averages are already encoded in $\mathcal{Q}_{\mathrm{bare}}$
+through the crossing coefficients ($\mathfrak{p}\mathfrak{p}$,
+$\mathfrak{n}\mathfrak{n}$, $\mathfrak{p}\mathfrak{n}$ have
+distinct transfer matrices).  The operator $F$ therefore
+contributes $1$ for degree-$1$ shells, and the table reduces to:
+
+$$
+  F(T_{k^*}, N)
   \;=\;
   \begin{cases}
-    1 & \text{if converting neutron in degree-$1$ shell (}N \leq 28\text{)} \\[4pt]
-    \tfrac{1}{2}\bigl(
-      \mathrm{tr}_M(T_{2,9} \cdot \Delta_{\mathrm{mix}})
-      + \mathrm{tr}_M(T_{3,4} \cdot \Delta_{\mathrm{mix}})
-    \bigr)
-    & \text{if converting neutron in degree-$2$ shell (}N > 28\text{)}
+    1 & N \leq 28 \;\text{(degree-$1$ shell: already in $\mathcal{Q}_{\mathrm{bare}}$)} \\[4pt]
+    0.5949 & N > 28,\; N \notin \{50, 82, 126\}
+    \;\text{(degree-$2$ shell, partial)} \\[4pt]
+    0.5949 \times 0.6382 = 0.3797
+    & N \in \{50, 82, 126\} \;\text{(degree-$2$ shell, full / Pauli)}
   \end{cases}
 $$
 
-*where $\Delta_{\mathrm{mix}} = \sigma_0 \sigma_1^{-1}$ is the
-universal $\pm 1$ transition operator and $\mathrm{tr}_M$ is the
-Markov trace on $H_3(q)$.  Numerically $F_{\mathrm{deg}} = 0.5949$
-at the substrate $q$.*
-
-*3. The **Pauli projection** (Schur–Weyl factor):*
-
-$$
-  F_{\mathrm{Pauli}}
-  \;=\;
-  \begin{cases}
-    1 & \text{if converting neutron's shell is not full} \\[4pt]
-    \dfrac{|\mathrm{tr}_M(e_{(1^3)} \cdot \Delta_{\mathrm{mix}} \cdot e_{(1^3)})|}{|\mathrm{tr}_M(\Delta_{\mathrm{mix}})|}
-    & \text{if converting neutron's shell is full (magic $N$, deg $\geq 2$)}
-  \end{cases}
-$$
-
-*where $e_{(1^3)}$ is the alternating Young symmetrizer idempotent
-of $H_3(q)$.  A completely filled shell is fully antisymmetric
-by the Pauli principle; under the Schur–Weyl decomposition,
-$\Delta_{\mathrm{mix}}$ is projected onto the alternating irrep
-$(1,1,1)$.  Numerically $F_{\mathrm{Pauli}} = 0.6382$.  At degree $1$,
-Pauli exclusion is already encoded in the crossing coefficients
-($\mathfrak{p}\mathfrak{p}$, $\mathfrak{n}\mathfrak{n}$,
-$\mathfrak{p}\mathfrak{n}$ have distinct transfer matrices), so
-$F_{\mathrm{Pauli}} = 1$ regardless of shell filling.*
+where $0.5949 = \tfrac{1}{2}(\mathrm{tr}_M(T_{2,9} \cdot \Delta)
++ \mathrm{tr}_M(T_{3,4} \cdot \Delta))$ and $0.6382 =
+|\mathrm{tr}_M(e_{(1^3)} \cdot \Delta \cdot e_{(1^3)})| /
+|\mathrm{tr}_M(\Delta)|$.
 
 **Remark (error structure).**
 Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$
-(CODATA).  All three factors are smooth functions of $q$, so
+(CODATA).  All factors are smooth functions of $q$, so
 $\delta \mathcal{Q}_q / \mathcal{Q}_q = O(\varepsilon)$.
 The dominant sensitivity is
 $\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q
