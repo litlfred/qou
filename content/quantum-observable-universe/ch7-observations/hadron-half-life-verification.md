@@ -84,7 +84,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$
    as a closed sub-link, from the quantum dilogarithm volume
-   at $q = 1.110$.
+   at $q = q_0$.
 
 ## Observed half-lives (NNDC/ENSDF)
 
@@ -108,7 +108,7 @@ case.  At Level 0 ($B_3$, 3 transfer matrix steps):
 $$
   \mathcal{Q}_q({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.110) - P_e(1.110)
+  P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0) - P_e(q_0)
 $$
 
 With the self-deformation correction (daughter at
@@ -118,7 +118,7 @@ $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.11218) - P_e(1.110)
+  P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0 + \Delta q) - P_e(q_0)
 $$
 
 The corrected half-life prediction:
@@ -198,7 +198,7 @@ The vertex form factor has been computed exactly:
 $$
   \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
   = 0.7036
-  \qquad\text{at } q = 1.110
+  \qquad\text{at } q = q_0
 $$
 
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms

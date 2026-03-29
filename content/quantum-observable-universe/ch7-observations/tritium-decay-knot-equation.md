@@ -177,4 +177,4 @@ $$
 
 This is the exact knot equation for the tritium $Q$-value:
 no approximation, no fitted parameter.  Every term is determined
-by $q = 1.110$ and the quark content of the nucleons.
+by $q_0$ and the quark content of the nucleons.

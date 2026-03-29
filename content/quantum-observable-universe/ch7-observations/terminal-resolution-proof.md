@@ -1,5 +1,5 @@
 
-With $q = 1.1097$ fixed by the lepton mass ratio
+With $q = q_0$ fixed by the lepton mass ratio
 ([skein mass relation](#rem:skein-mass-relation)), the hadronic masses are
 determined without free parameters.
 
@@ -66,7 +66,7 @@ $$
   \;=\;
   \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).
 $$
-Substituting $q = 1.1097$ and the CODATA splitting
+Substituting $q = q_0$ and the CODATA splitting
 $m_n - m_p = 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
 mass difference:
 $$

@@ -131,7 +131,7 @@ phase, the binding is from the $R$-matrix braiding of the Hopf
 link ($2$ crossings per diquark pair, $3$ pairs per
 $6$-quark unit).
 
-Part (3): direct evaluation at $q = 1.1097$.
+Part (3): direct evaluation at $q = q_0$.
 
 Part (4): the compression energy is the standard Fermi gas
 kinetic energy with the $q$-deformed Planck constant
@@ -143,7 +143,7 @@ $\square$
 
 **The factor of $250$.**
 The enormous ratio $749.2 / 3.016 \approx 249$ between Borromean
-and Hopf binding at $q = 1.1097$ explains why
+and Hopf binding at $q = q_0$ explains why
 color superconductivity is inaccessible at nuclear densities.
 The compression energy must supply $\sim 750$ Skein units per
 baryon to close the gap — corresponding to densities many times
