@@ -34,7 +34,7 @@ $$
 where the $K_i$ include the trefoil itself (with a brane-tower
 correction) and hyperbolic knots arising from crossing changes.
 The mass of the electron is the evaluation of this Skein polynomial
-at $q \approx 1.10997$:
+at $q = q_0$:
 
 $$
   m_e \;=\; \sum_i c_i(q) \cdot
@@ -114,7 +114,7 @@ participates.
 
 The entire chart is determined by three inputs:
 
-1. The substrate parameter $q \approx 1.10997$ (from CODATA),
+1. The substrate parameter $q_0$ (from CODATA),
 2. The seven $T_{m,n}$ generators (from $\chi = -6$), and
 3. The two linking operations $\ell_H$, $\ell_c$ (from the
    exceptional divisor and Bring's surface geometry).

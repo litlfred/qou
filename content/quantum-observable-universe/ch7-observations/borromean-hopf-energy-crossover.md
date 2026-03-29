@@ -67,7 +67,7 @@ $$
   \frac{7.32772\, q^2}{(q-1)^2}.
 $$
 
-3. **At $q = 1.1097$.**
+3. **At $q = q_0$.**
 
 $$
   \frac{3}{2}(q + q^{-1})
@@ -87,7 +87,7 @@ $$
   \;=\; 749.2.
 $$
 
-   At $q = 1.1097$: $3.016 \ll 749.2$.  The Borromean
+   At $q = q_0$: $3.016 \ll 749.2$.  The Borromean
    binding **vastly exceeds** the Hopf-diquark binding.
    The Borromean phase is energetically dominant by a
    factor of $\sim 250$.

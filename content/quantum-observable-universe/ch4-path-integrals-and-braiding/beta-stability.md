@@ -55,7 +55,7 @@ $$
 $$
 
 **Verification.**
-At $q = 1.10997$ with $a_C = (q - q^{-1}) \times 3.334 \approx
+At $q = q_0$ with $a_C = (q - q^{-1}) \times 3.334 \approx
 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces
 observed stable neutron numbers across the periodic table with
 mean error $|\Delta n| \approx 1.4$ neutrons (see
@@ -66,7 +66,7 @@ mean error $|\Delta n| \approx 1.4$ neutrons (see
 | Regime | $q$ | $a_C$ | $n^*/p$ | Physics |
 |--------|-----|-------|---------|---------|
 | Classical | $q \to 1$ | $0$ | $1.00$ | No Coulomb; all nuclei symmetric |
-| Our universe | $q = 1.11$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
+| Our universe | $q = q_0$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
 | Deep quantum | $q \to \infty$ | $\to \infty$ | $\to \infty$ | Coulomb overwhelms; no heavy nuclei |
 
 The entire nuclear chart — which isotope is stable for each

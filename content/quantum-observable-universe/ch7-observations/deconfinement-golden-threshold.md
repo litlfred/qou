@@ -67,7 +67,7 @@ $$
 
 **Effective $q$ at finite temperature.**
 
-The physical substrate has $q = 1.1097$.  Temperature does not
+The physical substrate has $q = q_0$.  Temperature does not
 change $q$ itself, but it changes the **effective crossing
 energy** available to disrupt the Borromean structure.
 At temperature $T$, the thermal fluctuations supply energy
@@ -95,7 +95,7 @@ $$
   \;\sim\;
   \frac{q - q_{\mathrm{gold}}}{q}
   \;=\;
-  \frac{1.1097 - 0.382}{1.1097}
+  \frac{q_0 - 0.382}{q_0}
   \;\approx\; 0.656.
 $$
 

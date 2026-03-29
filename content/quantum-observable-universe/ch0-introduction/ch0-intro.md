@@ -164,7 +164,7 @@ determined by CODATA 2022 values: the unique real root $q > 1$ of
 $$
   (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
   \qquad\Longrightarrow\qquad
-  q \;=\; 1.1097 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
+  q \;=\; q_0 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
 $$
 
 From this single parameter the theory produces

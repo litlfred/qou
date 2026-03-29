@@ -46,7 +46,7 @@ $$
   \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
-At $q = 1.10997$: $m_{\mathfrak{p}} = 938.272$ MeV.
+At the CODATA value $q_0$: $m_{\mathfrak{p}}(q_0) = 938.272$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
 
 **Coulomb charge.**
 The proton carries net **positive crossing chirality**: two

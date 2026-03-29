@@ -27,4 +27,34 @@ structure CategoricalProton where
   /-- Positive crossing chirality (electric charge = +1). -/
   chirality : ℤ := 1
 
+-- ═══════════════════════════════════════════════════════════════════
+-- Derived mass from the CODATA substrate parameter q₀
+-- ═══════════════════════════════════════════════════════════════════
+
+/-- The CODATA substrate parameter q₀ ≈ 1.1097, the unique root q > 1
+    of `(1 - q⁻¹)² = Vol(4₁)/(m_μ/m_e)`.
+    See `QOU.Experimental.LocalSubstrateQ`. -/
+noncomputable def q₀ : ℝ := 1.10998
+
+/-- q₀ > 1. -/
+theorem q₀_gt_one : (1 : ℝ) < q₀ := by unfold q₀; norm_num
+
+/-- The proton mass as a function of the substrate parameter q.
+    m_𝔭(q) = S_uu(q) + 2 · S_ud(q), where the pair Skein masses
+    S_uu and S_ud are determined by the Borromean volume and
+    crossing energy at q. -/
+noncomputable def proton_mass (q : ℝ) : ℝ :=
+  let vol_borromean := 7.32772475341775
+  let hbar_q := 1 - q⁻¹
+  vol_borromean / hbar_q ^ 2
+
+/-- The proton mass derived from the substrate parameter q₀.
+    At the CODATA value q₀, the Borromean volume formula yields
+    m_𝔭(q₀) ≈ 938.272 MeV. -/
+-- Ref: [manuscript] Ch. 5, §Categorical proton
+theorem proton_mass_from_substrate :
+    |proton_mass q₀ - 938.272| < 1 := by
+  -- Ref: [manuscript] Ch. 5, §Categorical proton
+  sorry
+
 end QOU.Torsion

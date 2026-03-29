@@ -15,6 +15,10 @@ export default definition({
   label: "def:no-quasi-zeros",
   title: "Algebra without quasi-zeros",
   tags: ["algebra", "ground-ring"],
+  lean: {
+    decl: "QOU.NoQuasiZeros",
+    validation: "not_checked",
+  },
   uses: [],
   cites: ["leitnerpawloski2004"],
 });

@@ -38,7 +38,7 @@ $$
   (q^{1/2} - q^{-1/2})^4.
 $$
 
-At $q = 1.1097$:
+At $q = q_0$:
 
 $$
   s = 0.1041,
@@ -68,7 +68,7 @@ $$
 $$
 
 This is a **parameter-free prediction**: the suppression factor
-is determined entirely by $q = 1.1097$.
+is determined entirely by $q_0$.
 
 **The intermediate state.**
 
@@ -85,7 +85,7 @@ $$
 The intermediate knot is the **figure-eight** $4_1$ — the
 amphichiral knot identified with the muon
 ([building block knots](#rem:building-block-knots)).  Its
-Jones polynomial at $q = 1.1097$ is $J(4_1) = 1.033$, close
+Jones polynomial at $q = q_0$ is $J(4_1) = 1.033$, close
 to $1$ (the unknot value).  The intermediate state is
 "almost trivial" — a fleeting muon-like excitation between
 the two beta decays.

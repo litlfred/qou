@@ -92,7 +92,7 @@ $$
   a_S = \tfrac{1}{2}(q + q^{-1}) \cdot \lambda_S.
 $$
 
-At $q = 1.10997$: $a_V \approx 15.56$ MeV,
+At $q = q_0$: $a_V \approx 15.56$ MeV,
 $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV,
 $a_S \approx 17.23$ MeV, $a_A \approx 23.29$ MeV.
 
