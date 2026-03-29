@@ -180,12 +180,14 @@ out to be Turing complete: the combinatorics supporting logic and
 computation is a property of the algebraic substrate, not the
 medium.  The Gröbner basis ensures this computation is
 *confluent* — every reduction terminates at the same normal form.
-Two results illustrate the reach: the Hausdorff dimension of the
-Julia set governing the Reeb dynamics is determined algebraically,
+Two results illustrate the reach.  The Reeb flow — the internal
+clock of the algebra — generates a dynamical system whose
+boundary is a fractal (a Julia set).  The fractal complexity of
+that boundary is measured by its Hausdorff dimension, and the
+algebra fixes it exactly:
 
 $$
-  d_H(q) = \frac{(2q-1)^2}{q^3};
-$$
+  d_H(q) = \frac{(2q-1)^2}{q^3}.
 
 and crossing energy relates to categorical mass by
 
