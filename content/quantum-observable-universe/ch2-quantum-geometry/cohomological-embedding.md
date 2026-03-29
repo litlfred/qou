@@ -126,16 +126,17 @@ T_{3,5}\}$.
    torus knot $\tau(r,s)$ defines a transfer matrix
    $T_{\tau(r,s)}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
    — a **force operator** governing the interaction it mediates.
-   The $6$ transfer matrices exhaust the harmonic $1$-forms on
-   $\Sigma_4$: every interaction between knot-particles is a
-   composition of these $6$ operators.  A hypothetical $7$th
-   force would require a $7$th embeddable torus knot, which
-   would need genus $> 4$ — contradicting the brane tower
-   cohomology.  **There are exactly $6$ force operators, and
-   we prove there can be no others.**
+   The $7$ transfer matrices ($6$ non-trivial + the identity)
+   exhaust the harmonic $1$-forms on $\Sigma_4$: every interaction
+   between knot-particles is a composition of these $7$ operators.
+   An $8$th would require an embeddable torus knot at genus $> 4$
+   — contradicting the brane tower cohomology.  **There are exactly
+   $7$ force operators (including free propagation), and we prove
+   there can be no others.**
 
    | Transfer matrix | Knot-particle | Interaction |
    |:---:|:---:|:---|
+   | $T_{\tau(1,0)}(q) = \mathbf{I}$ | $\mathcal{K}_\nu$ (unknot) | Free propagation (identity) |
    | $T_{\tau(2,3)}(q)$ | $\mathcal{K}_e$ (trefoil) | Mass / electromagnetic |
    | $T_{\tau(2,5)}(q)$ | $\mathcal{K}_{\tau(2,5)}$ | 2nd generation |
    | $T_{\tau(2,7)}(q)$ | $\mathcal{K}_c$ (charm) | 3rd generation |
