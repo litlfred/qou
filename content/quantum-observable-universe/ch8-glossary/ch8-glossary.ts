@@ -15,7 +15,6 @@ import { chapter, section } from "../../schema/builders";
  * block in the relevant chapter, not here.
  */
 export default chapter({
-  number: 9,
   tabLabel: "G",
   title: "Glossary",
   label: "chap:glossary",
