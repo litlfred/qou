@@ -246,8 +246,57 @@ theorem interaction_completeness :
   · simp [sigma4_knots]
   · intro τ hτ
     -- Exhaustive case analysis on (r, s) with (r-1)(s-1)/2 ≤ 4
-    -- Ref: [manuscript] §6/interaction-completeness
-    sorry -- requires enumeration over all coprime (r,s)
+    -- From embeddableOn: seifertRank ≤ 4, i.e. (r-1)*(s-1)/2 ≤ 4
+    simp [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank] at hτ
+    -- Bound r: since (r-1)*(s-1)/2 ≤ 4, we have (r-1)*(s-1) ≤ 8.
+    -- With r ≥ 2 and s > r, if r ≥ 5 then (r-1)*(s-1) ≥ 4*5 = 20 > 8.
+    have hr := τ.r_ge_two
+    have hrs := τ.r_lt_s
+    have hcop := τ.coprime
+    -- Key bound: (r-1)*(s-1) ≤ 8 (from Nat.div 2 ≤ 4)
+    have hprod : (τ.r - 1) * (τ.s - 1) ≤ 8 := by omega
+    -- r ≤ 4 (if r ≥ 5, then r-1 ≥ 4, s-1 ≥ r ≥ 5, product ≥ 20 > 8)
+    have hr_le : τ.r ≤ 4 := by
+      by_contra h
+      push_neg at h
+      have : τ.r - 1 ≥ 4 := by omega
+      have : τ.s - 1 ≥ τ.r := by omega
+      have : (τ.r - 1) * (τ.s - 1) ≥ 4 * τ.r := by
+        calc (τ.r - 1) * (τ.s - 1) ≥ 4 * (τ.s - 1) := by
+              apply Nat.mul_le_mul_right; omega
+            _ ≥ 4 * τ.r := by
+              apply Nat.mul_le_mul_left; omega
+      omega
+    -- r ≠ 4 (if r = 4, need s ≥ 5, so (s-1) ≥ 4, product ≥ 3*4 = 12 > 8)
+    have hr_ne4 : τ.r ≠ 4 := by
+      intro heq
+      subst heq
+      have : τ.s ≥ 5 := by omega
+      have : (4 - 1) * (τ.s - 1) ≥ 3 * 4 := by
+        apply Nat.mul_le_mul_left; omega
+      omega
+    -- So r ∈ {2, 3}
+    have hr23 : τ.r = 2 ∨ τ.r = 3 := by omega
+    -- Bound s based on r
+    simp [sigma4_knots, e_label, gen2_label, c_label, t_label, weak_label,
+          strong_label, List.mem_cons, List.mem_singleton]
+    rcases hr23 with rfl | rfl
+    · -- r = 2: (s-1) ≤ 8, so s ≤ 9; s > 2; s odd (coprime to 2)
+      have hs_le : τ.s ≤ 9 := by omega
+      have hs_gt : τ.s > 2 := by omega
+      -- s must be odd (coprime to 2 means s is odd)
+      have hs_odd : τ.s % 2 = 1 := by
+        have := hcop
+        rw [Nat.Coprime] at this
+        have : Nat.gcd 2 τ.s = 1 := this
+        omega
+      -- s ∈ {3, 5, 7, 9}
+      interval_cases τ.s <;> simp_all [Nat.Coprime] <;> omega
+    · -- r = 3: 2*(s-1) ≤ 8, so s ≤ 5; s > 3; coprime to 3
+      have hs_le : τ.s ≤ 5 := by omega
+      have hs_gt : τ.s > 3 := by omega
+      -- s ∈ {4, 5}; both coprime to 3
+      interval_cases τ.s <;> simp_all [Nat.Coprime] <;> omega
 
 /-! ## §6  Tower termination -/
 

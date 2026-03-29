@@ -30,6 +30,7 @@ export default chapter({
       blocks: [
         // Bring's surface as a QOU
         "brings-surface",
+        "brings-surface-example",
         "brings-realisations",
         "brings-is-qou",
         "brings-is-qou-proof",
@@ -95,6 +96,7 @@ export default chapter({
         // The Descartes condition
         "descent-to-zero",
         "descartes-condition",
+        "chi-minus-six-chain",
         "descartes-calabi-yau",
         "descent-one-dim",
         "genus-maximal-descent",
@@ -114,6 +116,7 @@ export default chapter({
         "up-quark",
         "down-quark",
         "electron-knot",
+        "electron-knot-example",
         "positron-knot",
         "neutrino-knot",
         "antineutrino-knot",
