@@ -71,6 +71,7 @@ observable universe** (QOU).  The key geometric players emerge: a
 quantum connection $\theta$, the reconstructed gauge group
 $G = \mathrm{SU}_2(R)$, and the state bundle $\mathcal{S}$ — so
 that the QOU is characterised by the archimedean tuple
+
 $$
   (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
 $$
@@ -94,10 +95,13 @@ categorical Lagrangian and Dirac operator, and derives from it
 quantum versions of the Einstein, Yang–Mills, and Dirac equations.
 
 [Chapter 3](#chap:torsion) turns to the obstructions that arise
-when local data is extended to global structures.  The theory of
-lifting and descent identifies where and why such extensions fail,
-introducing the descent involution $\hat{\tau}$ that decomposes
-the algebra into descended (observable) and transient
+when local data is extended to global structures.  Measurement
+constrains observation, and observation constrains what can be
+lifted from one level of the brane tower to the next.  The
+Yekutieli lifting condition makes this precise: an object admits
+a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
+vanishes.  The descent involution $\hat{\tau}$ then decomposes the
+algebra at each level into descended (observable) and transient
 (pre-observable) modes.
 
 [Chapter 4](#chap:path-integrals-braiding) develops braids and
@@ -105,10 +109,17 @@ knots within the categorical framework.  Particles, identified with
 knots, generate operator algebras whose multiplication and braiding
 are Gröbner basis computations — a confluent rewrite system where
 each reduction sequence has a well-defined computational cost.
-That cost, parameterised by the substrate parameter $q$ and
-computed via the Hecke algebra and the Markov trace, yields the
-mass density integral of a hadron.  A clean dictionary emerges:
-crossing number equals jet order equals information content.
+The Hecke algebra provides the crossing coefficients, the Markov
+trace computes Skein polynomials, and the topological mass formula
+
+$$
+  \mathfrak{m}(K) \;=\; \frac{\operatorname{Vol}(K)}{\hbar_q^{\,2}}
+$$
+
+expresses the mass of a particle knot $K$ in terms of the
+hyperbolic volume of its complement and the quantum Planck constant
+$\hbar_q = 1 - 1/q$.  A clean dictionary emerges: crossing number
+equals jet order equals information content.
 
 [Chapters 5 and 6](#chap:models-qou) construct explicit models —
 *Descartes universes*, so called because the observer is not
@@ -120,7 +131,13 @@ condition and the Euler characteristic $\chi = -6$.
 experiment.  The substrate parameter $q$ is not free but is
 determined by CODATA 2022 values: the unique real root $q > 1$ of
 $(1 - q^{-1})^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$ gives
-$q = 1.1097$.  From this single parameter the theory produces
+
+$$
+  q \;=\; 1.1097 \;+\; O\!\bigl(\delta(m_\mu/m_e)\bigr),
+  \qquad \delta(m_\mu/m_e) = 2.2 \times 10^{-8}.
+$$
+
+From this single parameter the theory produces
 geometric mass equations for proton, neutron, pion, kaon, and
 light nuclei (matching CODATA to six significant figures);
 knot-theoretic orbital shells reproducing the noble-gas sequence;
@@ -136,6 +153,7 @@ medium.  The Gröbner basis ensures this computation is
 *confluent* — every reduction terminates at the same normal form.
 Two results illustrate the reach: the Hausdorff dimension of the
 Julia set governing the Reeb dynamics is determined algebraically,
+
 $$
   d_H(q) = \frac{(2q-1)^2}{q^3};
 $$
