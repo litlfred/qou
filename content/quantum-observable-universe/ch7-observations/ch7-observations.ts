@@ -130,6 +130,7 @@ export default chapter({
         "color-superconductivity-borromean",
         "eos-borromean-cfl",
         "cfl-neutron-star-observables",
+        "strangelet-merger-signature",
       ],
     }),
 
