@@ -9,7 +9,8 @@
     "export-json": "bun run pipeline/export-json.ts",
     "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts",
     "export-bibtex": "bun run pipeline/export-bibtex.ts",
-    "validate-refs": "bun run pipeline/validate-references.ts"
+    "validate-refs": "bun run pipeline/validate-references.ts",
+    "generate-index": "bun run pipeline/generate-index.ts"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",

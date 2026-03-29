@@ -14,12 +14,16 @@ Some observations run deeper.  We can measure, record, and compare,
 and those comparisons are consistent — there is a pairing between
 what we observe and the instruments we use.  Smooth change is the
 rule: linear approximation describes our universe across scales,
-from planetary orbits to particle scattering.  We have the
-perception of free will and intent — we choose to measure, to act,
-to organise — and that choice has consequences: observation creates
-outcomes not determined by the initial conditions.  Even the
-capacity for computation — the ability to reason, count, and
-calculate — seems woven into the fabric rather than bolted on.
+from planetary orbits to particle scattering.  We can accumulate
+quantities — add them up, integrate — and we can probe rates of
+change — take derivatives, differentiate.  The universe has
+*volume*: things occupy space, and that space can be measured.
+We have the perception of free will and intent — we choose to
+measure, to act, to organise — and that choice has consequences:
+observation creates outcomes not determined by the initial
+conditions.  Even the capacity for computation — the ability to
+reason, count, and calculate — seems woven into the fabric rather
+than bolted on.
 
 Heisenberg reminded us that what we observe is not nature itself
 but nature exposed to our method of questioning.  This book takes
@@ -31,53 +35,75 @@ without committing to any particular ontology.
 A remarkable fact — and the central thesis of this book — is that
 these everyday observations, once stated carefully, determine a
 specific algebraic structure: a *rigid monoidal category* equipped
-with a fibre functor and a Frobenius trace.  We call this structure
-a **quantum observable universe**.  Its axioms encode precisely the
-features listed above and nothing more.  The symmetry group
-$\mathrm{SU}_2(R)$ is not assumed; it emerges via Tannaka–Krein
-reconstruction from the rigid monoidal structure.  The uncertainty
-principle is not postulated; it appears as the geometric signature
-of degrees of freedom not yet resolved.  Observation, mathematically,
-is an open map — it produces genuinely new outcomes, not merely
-revealed pre-existing ones.  Particles, in this framework, are
-knots — topological objects classified by their crossing structure.
-But the Frobenius self-duality $A \cong A^{\vee}$ and the instanton
-condition $\star_q F_\nabla = F_\nabla$ together identify these
-knots equally as vortex lines in the fibre of the state bundle.
-The two pictures — a particle as a knot type and a particle as a
-vortex flow — are not competing descriptions but equivalent
-viewpoints exchanged by the self-duality of the algebra.  Even the
-capacity for computation — the Turing completeness of the
-substrate — is a consequence, not an input.  And that computation
-is *confluent*: the Gröbner basis structure of the algebra
-guarantees that the order in which reductions are carried out does
-not affect the result.  Just as category theory frees us from
-asking what things *are* and lets us study how they work together,
-the Gröbner property frees us from worrying about the *path* of a
-calculation — only the endpoint matters.  That so much structure
+with a fibre functor and a Frobenius trace $\int_A$.  We call
+this structure a **quantum observable universe**.  Its axioms encode precisely the
+features listed above and nothing more.
+
+What follows from these axioms is surprising in both scope and
+specificity.  The symmetry group $\mathrm{SU}_2(R)$ is not
+assumed; it emerges via Tannaka–Krein reconstruction.  The
+uncertainty principle is not postulated; it appears as the geometric
+signature of degrees of freedom not yet resolved.  Observation is
+an act of intention, and intention can produce genuinely new
+outcomes — not merely reveal pre-existing ones.
+
+Particles are knots — topological objects classified by their
+crossing structure — and simultaneously vortex lines in the fibre
+of the state bundle.  These two pictures are not competing
+descriptions but equivalent viewpoints, exchanged by the Frobenius
+self-duality $A \cong A^{\vee}$.
+
+Even the capacity for computation — the Turing completeness of the
+substrate — is a consequence, not an input.  That so much structure
 follows from so little input is, as Wigner put it, "something
-bordering on the mysterious" \cite{wigner1960}.
+bordering on the mysterious."
 
 The book is organised as follows.
 
-[Chapter 1](#chap:qu) introduces rigid monoidal categories,
-fibre functors, Frobenius structure, and the dagger involution,
-arriving at the definition of a *quantum universe* — the
-algebraic skeleton encoded in the triple
-$(\mathbf{C},\; A,\; \tau)$ — a rigid monoidal category, a
-Frobenius–Hopf object, and a fibre functor.
+[Chapter 1](#chap:qu) introduces the **quantum universe** (QU):
+the algebraic skeleton encoded in the triple
 
-[Chapter 2](#chap:qou) adds the observability, measurability,
-and volume axioms that promote the quantum universe to a
-*quantum observable universe* — still the triple
-$(\mathbf{C}, A, \tau)$, now constrained so that every internal
-degree of freedom is accessible to measurement.  From these
-axioms the key geometric structures emerge: a quantum connection
-$\theta$, a symmetry group $G = \mathrm{SU}_2(R)$ reconstructed
-via Tannaka–Krein duality, and a state bundle $\mathcal{S}$.
-Chapter 2 then develops the geometry: the categorical action,
-and the three variational equations (Einstein, Yang–Mills,
-and transport).  The categorical action takes the form
+$$
+  (\mathbf{C},\; A,\; \tau)
+$$
+
+— a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf
+object $A$, and a fibre functor $\tau$.  The Frobenius trace
+$\int_A \colon A \to \mathbf{1}$ is the categorical analogue of
+integration: it assigns a scalar to each element of the algebra.
+Combined with the differential calculus (Kähler differentials on
+$A$), it gives the algebra both the ability to differentiate and
+to integrate.  The Frobenius condition $A \cong A^{\vee}$ — the
+self-duality of the algebra — says that these two operations are
+compatible: integrating and then differentiating yields the same
+result as differentiating and then integrating.  Neither path
+destroys information.  From these ingredients the chapter derives
+the Frobenius relation, the dagger involution, and the Tannaka–Krein
+reconstruction of the symmetry group.
+
+[Chapter 2](#chap:qou) adds the observability, measurability, and
+volume axioms that promote the quantum universe to a **quantum
+observable universe** (QOU).  The volume axiom makes the
+observation from paragraph two precise: the Frobenius trace
+$\int_A$ is non-degenerate, so the algebra has a well-defined
+notion of size — volume is not assumed but follows from the
+interaction of integration and self-duality.  The key geometric
+players emerge: a quantum connection $\theta$, the reconstructed
+gauge group $G = \mathrm{SU}_2(R)$, and the state bundle
+$\mathcal{S}$ — so that the QOU is characterised by the
+archimedean tuple
+
+$$
+  (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
+$$
+
+The chapter then constructs a categorical Dirac operator
+$\mathcal{D}_\nabla$ from the connection and Reeb derivation.
+Its square decomposes — forced by the Frobenius–Hopf structure,
+not by assumption — into exactly two curvature terms: one
+measuring how space itself curves (Ricci), one measuring how the
+internal gauge field curves (Yang–Mills).  Coupling a matter
+state $\psi$ adds a third.  The result is the categorical action
 
 $$
   \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
@@ -91,107 +117,83 @@ $$
   \underbrace{\textstyle\int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
 $$
 
-derived from the categorical Dirac operator
-$\mathcal{D}_\nabla = q^{-1}\nabla + (1 - q^{-1})\iota_\xi\nabla$
-via the categorical Lagrangian
-$\mathcal{L}_q = \mathcal{D}_\nabla^2 + \psi^* \otimes
-\mathcal{D}_\nabla\psi$ and the categorical trace
-$\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$.  No classical
-Lagrangian is assumed — the action is constructed entirely from
-the rigid monoidal structure.
+constructed entirely from the rigid monoidal structure.  Varying
+this action yields quantum versions of the Einstein, Yang–Mills,
+and Dirac equations.
 
 [Chapter 3](#chap:torsion) turns to the obstructions that arise
-when one tries to extend local data to global structures.  The
-theory of lifting and descent identifies precisely where and why
-such extensions can fail, and introduces the descent involution
-$\hat{\tau}$ that decomposes the algebra into descended (observable)
-and transient (pre-observable) modes.
+when local data is extended to global structures.  Measurement
+constrains observation, and observation constrains what can be
+lifted from one level of the brane tower to the next.  The
+Yekutieli lifting condition makes this precise: an object admits
+a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
+vanishes.  The descent involution $\hat{\tau}$ then decomposes the
+algebra at each level into descended (observable) and transient
+(pre-observable) modes.  A key result is the Descartes condition
+$\chi(A) = -6$, forced by the lifting obstructions and the
+Archimedean constraint.
 
-[Chapter 4](#chap:path-integrals-braiding) develops the theory of
-braids and knots within the categorical framework.  The starting
-point is the identification of particles with knots — topological
-objects classified by their crossing structure.  At each point of
-the base manifold, knots generate operator algebras whose
-multiplication and braiding relations are Gröbner basis
-computations: the nodding and crossing of strands correspond to
-reductions in a confluent rewrite system, and each reduction
-sequence has a well-defined computational cost.  This cost
-represents the most efficient way for a photon to interact with
-all component particles of a hadron — it is a braid, passing
-through a braid relation.  We parameterise that cost by the
-substrate parameter $q$, and the result is a mass density integral
-of the hadron.  The Hecke algebra provides the crossing
-coefficients, the Markov trace computes Skein polynomials, and a
-clean dictionary emerges: crossing number equals jet order equals
-information content.
+[Chapter 4](#chap:path-integrals-braiding) develops braids and
+knots within the categorical framework.  Particles, identified with
+knots, generate operator algebras whose multiplication and braiding
+are Gröbner basis computations — a confluent rewrite system where
+each reduction sequence has a well-defined computational cost.
+The Hecke algebra provides the crossing coefficients, the Markov
+trace computes Skein polynomials, and the topological mass formula
 
-[Chapters 5 and 6](#chap:models-qou) construct explicit models.
-We call these *Descartes universes* because the observer is not
-separate from the mechanics — we think about the world, but we are
-part of it.  Bring's surface and its $S_5$ symmetry play a central
-role, as do the Archimedean condition and the Euler characteristic
-$\chi = -6$, both driven by physical observation and formalised
-here as mathematical structure.
+$$
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{\,2}}
+$$
+
+expresses the mass of a particle knot $K$ in terms of the
+hyperbolic volume of its complement and the quantum Planck constant
+$\hbar_q = 1 - 1/q$ — so that mass is literally volume, measured
+by the Frobenius trace.  A clean dictionary emerges: crossing number
+equals jet order equals information content.
+
+[Chapters 5 and 6](#chap:models-qou) explore the consequences of
+$\chi(A) = -6$.  The constraint singles out Bring's surface — a
+genus-4 curve with $S_5$ symmetry — as the fibre of the state
+bundle, and the resulting *Descartes universes* are so called
+because the observer is not separate from the mechanics.
 
 [Chapter 7](#chap:observations) confronts the theory with
-experiment.  The substrate parameter $q$ is not a free parameter
-but is determined by CODATA 2022 values: the unique real root
-$q > 1$ of $(1 - q^{-1})^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$
-gives
-$$
-  q = 1.1097 + O\!\bigl(\delta(m_\mu/m_e)\bigr),
-$$
-where $\delta(m_\mu/m_e) = 2.2 \times 10^{-8}$ is the CODATA
-relative uncertainty on the muon--electron mass ratio and
-$\mathrm{Vol}(4_1) \approx 2.02988$ is the hyperbolic volume
-of the figure-eight knot (known to $10^{-14}$).  From this
-single parameter the theory produces:
+experiment.  The substrate parameter $q$ is not free but is
+determined by CODATA 2022 values: the unique real root $q > 1$ of
 
-- **Geometric mass equations** for proton, neutron, pion, kaon,
-  and light nuclei up to ${}^4\mathrm{He}$, all matching CODATA
-  to six significant figures.
-- **Knot-theoretic orbital shells**: electron clouds as chains
-  of trefoils linked by Hopf links, reproducing the $2n^2$ shell
-  capacities and the noble-gas sequence.
-- **Beta-decay half-lives** from Skein polynomial matrix elements:
-  tritium within $1\%$, and a suite of nuclei from
-  ${}^{14}\mathrm{C}$ through ${}^{210}\mathrm{Bi}$ within
-  $20\%$, with the systematic residual traceable to the
-  not-yet-included Skein Coulomb enhancement.
-- **Fine-structure constant** $\alpha^{-1} = q^{-1}/([9]_q
-  \cdot [10]_q) = 136.84$ at $q = 1.1097$, within $0.14\%$ of
-  the CODATA value — with sensitivity
-  $\partial \ln \alpha / \partial \ln q \approx -20$,
-  constraining $q$ to a narrow window.
+$$
+  (1 - q^{-1})^2 \;=\; \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
+  \qquad\Longrightarrow\qquad
+  q \;=\; 1.1097 \;+\; O\!\bigl(2.2 \times 10^{-8}\bigr).
+$$
 
-[Chapter 8](#chap:info-theory) addresses Wigner's mystery directly.
-The mechanics of the quantum observable universe turn out to be
-Turing complete: the combinatorics that supports logic and
-computation in all its forms — from pebbles to microchips — is a
-property of the algebraic substrate, not the medium.  The Gröbner
-basis underlying the enveloping algebra ensures that this
-computation is *confluent* — every reduction sequence terminates at
-the same normal form, so the answer does not depend on which steps
-we take first.  Two results illustrate the reach of the
-information-theoretic perspective.  First, the Hausdorff dimension
-of the Julia set that governs the Reeb dynamics is determined
-algebraically by gravitational self-consistency:
+From this single parameter the theory produces
+geometric mass equations for proton, neutron, pion, kaon, and
+light nuclei (matching CODATA to six significant figures);
+knot-theoretic orbital shells reproducing the noble-gas sequence;
+beta-decay half-lives from Skein polynomial matrix elements; and
+a fine-structure constant $\alpha^{-1}$ within $0.14\%$ of the
+measured value.  The same Hopf chain formalism extends to organic
+chemistry, demonstrating that the categorical machinery reaches
+beyond fundamental physics to molecular structure and bonding.
+
+[Chapter 8](#chap:info-theory) addresses Wigner's mystery
+directly.  The mechanics of the quantum observable universe turn
+out to be Turing complete: the combinatorics supporting logic and
+computation is a property of the algebraic substrate, not the
+medium.  The Gröbner basis ensures this computation is
+*confluent* — every reduction terminates at the same normal form.
+Two results illustrate the reach.  The Reeb flow — the internal
+clock of the algebra — generates a dynamical system whose
+boundary is a fractal (a Julia set).  The fractal complexity of
+that boundary is measured by its Hausdorff dimension, and the
+algebra fixes it exactly:
 
 $$
   d_H(q) = \frac{(2q-1)^2}{q^3}.
 $$
 
-This is the fractal complexity of the substrate's internal
-dynamics — how richly structured the boundary of its
-computational phase space is.  At $q = 1.1097$ one obtains
-$d_H \approx 1.088$: slightly more complex than a circle, but
-far from space-filling.  As $q$ increases toward the Big Bang
-the fractal collapses ($d_H \to 0$); as $q$ decreases toward
-the classical limit the Julia set approaches a smooth circle
-($d_H \to 1$).  Second, the crossing energy $E_H$ (the Skein
-weight from $R$-matrix braiding) and the categorical mass
-$\mathfrak{m}_H$ (the trace norm through the Frobenius pairing)
-are related by
+And crossing energy relates to categorical mass by
 
 $$
   E_H = \mathfrak{m}_H \cdot c_q^{\,2},
@@ -199,18 +201,12 @@ $$
   c_q = \frac{1}{q - 1},
 $$
 
-where $c_q$ is the information speed of light — the ratio of
-spatial to temporal coupling in the $q$-connection.  This is
-$E = mc^2$ derived from the categorical structure: the speed of
-light is not an empirical constant but the conversion factor
-between two registers (horizontal crossings and vertical Reeb
-ticks) of the same algebra.  This chapter does not answer whether
-mathematics is discovered or invented.  It tells us we do not
-have to choose.
+where $c_q$ is the information speed of light — $E = mc^2$
+derived from the categorical structure.
 
-[Chapter 9](#chap:organic-chemistry) applies the Hopf chain
-formalism to organic chemistry, demonstrating that the same
-categorical machinery reaches beyond fundamental physics.
-
-The **Glossary** maps paper terminology to Mathlib declarations,
-and the **Appendix** collects the knot periodic table.
+The [Glossary](#chap:glossary) maps paper terminology to Mathlib
+declarations, the [Knot-Periodic Table](#app:knot-periodic-table)
+collects the elements with their knot assignments, and the
+[Index of Definitions](#app:index-definitions) provides a
+searchable reference to all definitions, theorems, and
+propositions in the paper.

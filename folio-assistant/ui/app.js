@@ -22,6 +22,7 @@
   let currentBranch = null;   // HEAD branch on server
   let selectedBranch = null;  // branch the user is viewing (null = current)
   let diffData = null;        // PaperDiff from /api/diff
+  let diffAbort = null;       // AbortController for diff fetch
 
   const app = $("#app");
   const navLinks = $("#nav-links");
@@ -49,7 +50,7 @@
     return (levels[currentUser.role] || 0) >= (levels[minRole] || 99);
   }
 
-  // ── Theme / font toggles ────────────────────────────────
+  // ── Theme / font / sidebar / wide toggles ────────────────
   $("#c-th").onclick = () => {
     const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = t;
@@ -62,6 +63,14 @@
     $("#c-fn").textContent = f === "paper" ? "web" : "paper";
     localStorage.setItem("folio-font", f);
   };
+  $("#c-sb").onclick = () => {
+    document.body.classList.toggle("sb-hidden");
+    localStorage.setItem("folio-sb", document.body.classList.contains("sb-hidden") ? "hidden" : "visible");
+  };
+  $("#c-wd").onclick = () => {
+    document.body.classList.toggle("wide-mode");
+    localStorage.setItem("folio-wide", document.body.classList.contains("wide-mode") ? "wide" : "normal");
+  };
   // restore saved prefs
   const savedTheme = localStorage.getItem("folio-theme");
   if (savedTheme) {
@@ -73,6 +82,8 @@
     document.body.dataset.font = savedFont;
     $("#c-fn").textContent = savedFont === "paper" ? "web" : "paper";
   }
+  if (localStorage.getItem("folio-sb") === "hidden") document.body.classList.add("sb-hidden");
+  if (localStorage.getItem("folio-wide") === "wide") document.body.classList.add("wide-mode");
 
   // ── Branch switcher ─────────────────────────────────────
   async function loadBranches() {
@@ -188,8 +199,8 @@
   window.addEventListener("hashchange", route);
 
   // ── API helpers ─────────────────────────────────────────
-  async function api(path) {
-    const r = await fetch(path);
+  async function api(path, signal) {
+    const r = await fetch(path, signal ? { signal } : undefined);
     if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
     return r.json();
   }
@@ -284,7 +295,7 @@
     if (paper) {
       const readLink = h("a", mode === "read" ? "active" : "", "read");
       readLink.href = "#";
-      readLink.onclick = (e) => { e.preventDefault(); mode = "read"; renderPaper(); };
+      readLink.onclick = (e) => { e.preventDefault(); if (diffAbort) diffAbort.abort(); mode = "read"; renderPaper(); };
       navLinks.appendChild(readLink);
 
       const qcLink = h("a", mode === "qc" ? "active" : "", "qc");
@@ -337,7 +348,8 @@
     const sbHead = h("div", "sidebar-header", esc(paper.title));
     sb.appendChild(sbHead);
     for (const ch of paper.chapters || []) {
-      const chEl = h("div", "sb-ch", `<span class="arrow">&#9654;</span> ${esc(ch.title)}`);
+      const tabLbl = ch.tabLabel || (ch.number != null ? String(ch.number) : "");
+      const chEl = h("div", "sb-ch", `<span class="sb-tab">${esc(tabLbl)}</span><span class="arrow">&#9654;</span> <span class="sb-ch-title">${esc(ch.title)}</span>`);
       const secList = h("div", "sb-secs");
       for (const sec of ch.sections || []) {
         const secEl = h("div", "sb-sec", esc(sec.title));
@@ -388,12 +400,16 @@
     app.innerHTML = "";
     app.appendChild(wrap);
     renderMath(app);
+    attachPopupListeners(app);
+    addCopyButtons(app);
+    enhanceIndexLinks(app);
     observeVisibleBlocks(sb);
   }
 
   function renderChapter(ch) {
     const el = h("div", "ch");
-    el.innerHTML = `<h2 class="ch-t"><span class="n">${ch.number}.</span> ${esc(ch.title)}</h2>`;
+    const numSpan = ch.number != null ? `<span class="n">${ch.number}.</span> ` : "";
+    el.innerHTML = `<h2 class="ch-t">${numSpan}${esc(ch.title)}</h2>`;
     for (const sec of ch.sections || []) {
       el.appendChild(renderSection(sec));
     }
@@ -431,7 +447,7 @@
   function renderBlock(blk) {
     if (blk.kind === "prose") {
       const el = h("div", "blk");
-      el.innerHTML = `<div class="bb">${mdToHtml(blk.md || "")}</div>`;
+      el.innerHTML = `<div class="bb">${mdToHtml(blk.md || "", blk.rendered)}</div>`;
       return el;
     }
 
@@ -477,7 +493,7 @@
     el.appendChild(actions);
 
     // body
-    const bb = h("div", "bb", mdToHtml(blk.md || ""));
+    const bb = h("div", "bb", mdToHtml(blk.md || "", blk.rendered));
     el.appendChild(bb);
 
     // source panel
@@ -831,17 +847,25 @@
 
   // ── Diff view ──────────────────────────────────────────
   async function loadDiff() {
+    // Cancel any in-progress diff fetch
+    if (diffAbort) diffAbort.abort();
+    diffAbort = new AbortController();
     document.body.dataset.folioMode = "diff";
     updateNav();
-    app.innerHTML = '<div class="loading">computing diff...</div>';
+    app.innerHTML = '<div class="loading">computing diff...<br><button class="diff-cancel" style="margin-top:1rem">cancel</button></div>';
+    const cancelBtn = app.querySelector(".diff-cancel");
+    if (cancelBtn) cancelBtn.onclick = () => { diffAbort.abort(); mode = "read"; renderPaper(); };
     try {
       const base = "main";
       const head = selectedBranch || currentBranch;
-      const data = await api(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`);
+      const data = await api(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`, diffAbort.signal);
       diffData = data;
       renderDiff();
     } catch (e) {
+      if (e.name === "AbortError") return; // user cancelled
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
+    } finally {
+      diffAbort = null;
     }
   }
 
@@ -1243,7 +1267,7 @@
   }
 
   // ── Markdown → HTML (minimal) ───────────────────────────
-  function mdToHtml(md) {
+  function mdToHtml(md, rendered) {
     let out = md;
     // display math $$...$$
     out = out.replace(/\$\$([\s\S]*?)\$\$/g, (_, tex) =>
@@ -1251,22 +1275,67 @@
     // inline math $...$
     out = out.replace(/\$([^\n$]+?)\$/g, (_, tex) =>
       `<span class="katex-inline-raw" data-tex="${escAttr(tex.trim())}"></span>`);
-    // fenced code blocks
+    // fenced code blocks — replace ```tex with rendered SVG if available
+    let texBlockIdx = 0;
     out = out.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
       if (lang === "tex" || lang === "latex") {
-        return `<div class="txb ph">${esc(code.trim())}</div>`;
+        const idx = texBlockIdx++;
+        const asset = rendered && rendered.find(r => r.blockIndex === idx);
+        if (asset) {
+          return `<div class="txb"><img src="${escAttr(asset.url)}" alt="diagram" class="txb-svg"></div>`;
+        }
+        // Try KaTeX for simple environments, show raw for complex (tikzcd)
+        const trimmed = code.trim();
+        if (/\\begin\{(align|equation|gather|cases)/.test(trimmed)) {
+          // Strip \begin{env}...\end{env} wrapper for KaTeX
+          const inner = trimmed.replace(/^\\begin\{[^}]+\}/, "").replace(/\\end\{[^}]+\}$/, "").trim();
+          return `<span class="katex-display-raw" data-tex="${escAttr(inner)}"></span>`;
+        }
+        return `<div class="txb ph">${esc(trimmed)}</div>`;
       }
       return `<pre style="background:var(--bg-r);padding:.6rem;border-radius:4px;overflow-x:auto;font-size:.8rem"><code>${esc(code)}</code></pre>`;
     });
-    // bold, italic
-    out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-    out = out.replace(/\*(.+?)\*/g, "<em>$1</em>");
+    // markdown tables
+    out = out.replace(/((?:^\|.+\|$\n?)+)/gm, (tableBlock) => {
+      const rows = tableBlock.trim().split("\n").filter(r => r.trim());
+      if (rows.length < 2) return tableBlock;
+      // Check if row 2 is a separator (|---|---|)
+      const isSep = /^\|[\s:]*-+[\s:]*(\|[\s:]*-+[\s:]*)*\|?$/.test(rows[1]);
+      let html = '<table class="md-table">';
+      const dataRows = isSep ? [rows[0], ...rows.slice(2)] : rows;
+      for (let i = 0; i < dataRows.length; i++) {
+        const cells = dataRows[i].split("|").slice(1, -1);
+        const tag = (i === 0 && isSep) ? "th" : "td";
+        html += "<tr>" + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join("") + "</tr>";
+      }
+      html += "</table>";
+      return html;
+    });
+    // headings (## and ###)
+    out = out.replace(/^### (.+)$/gm, '<h4 class="md-h4">$1</h4>');
+    out = out.replace(/^## (.+)$/gm, '<h3 class="md-h3">$1</h3>');
+    // bold, italic (allow multiline spans)
+    out = out.replace(/\*\*([\s\S]+?)\*\*/g, "<strong>$1</strong>");
+    out = out.replace(/\*([^\n*][^*]*?)\*/g, "<em>$1</em>");
+    // inline code
+    out = out.replace(/`([^`]+)`/g, '<code style="background:var(--bg-r);padding:.1rem .3rem;border-radius:3px;font-size:.85em">$1</code>');
+    // citations \cite{key} → [key]
+    out = out.replace(/\\cite\{([^}]+)\}/g, '<span class="cite" title="$1">[$1]</span>');
+    // en-dash and em-dash
+    out = out.replace(/---/g, "\u2014");
+    out = out.replace(/--/g, "\u2013");
     // cross-refs [text](#label)
     out = out.replace(/\[([^\]]+)\]\(#([^)]+)\)/g,
       '<a class="uref" href="#$2" onclick="event.preventDefault();document.getElementById(\'$2\')?.scrollIntoView({behavior:\'smooth\',block:\'start\'})">$1</a>');
-    // paragraphs
+    // markdown list items
+    out = out.replace(/^(\d+)\.\s+(.+)$/gm, '<li class="md-li" value="$1">$2</li>');
+    out = out.replace(/^[-*]\s+(.+)$/gm, '<li class="md-li">$1</li>');
+    // paragraphs (but not after block elements)
     out = out.replace(/\n{2,}/g, "</p><p>");
     out = "<p>" + out + "</p>";
+    // Clean up empty paragraphs around block elements
+    out = out.replace(/<p>(<table|<h[34])/g, "$1");
+    out = out.replace(/(<\/table>|<\/h[34]>)<\/p>/g, "$1");
     return out;
   }
 
@@ -1293,6 +1362,161 @@
         katex.render(el.dataset.tex, el, { displayMode: false, throwOnError: false, macros: katexMacros });
       } catch (_) { el.textContent = el.dataset.tex; }
     });
+  }
+
+  // ── Block preview popup (hover over cross-ref links) ────
+  let popupEl = null;
+  let popupTimer = null;
+  let popupLabel = null;
+
+  function createPopup() {
+    if (popupEl) return popupEl;
+    popupEl = h("div", "blk-popup");
+    popupEl.innerHTML = `<div class="blk-popup-head"><span class="blk-popup-title"></span><button class="blk-popup-expand" title="Fullscreen">⛶</button><button class="blk-popup-close" title="Close">&times;</button></div><div class="blk-popup-body"></div>`;
+    popupEl.onmouseenter = () => clearTimeout(popupTimer);
+    popupEl.onmouseleave = () => hidePopup();
+    popupEl.querySelector(".blk-popup-close").onclick = () => hidePopup(true);
+    popupEl.querySelector(".blk-popup-expand").onclick = () => openBlockModal(popupLabel);
+    document.body.appendChild(popupEl);
+    return popupEl;
+  }
+
+  function showPopup(label, anchorEl) {
+    const blk = blockIndex[label];
+    if (!blk) return;
+    clearTimeout(popupTimer);
+    popupLabel = label;
+    const popup = createPopup();
+    popup.querySelector(".blk-popup-title").innerHTML =
+      `<span class="bk">${esc(blk.kind)}</span> ${esc(blk.title || blk.label)}`;
+    const body = popup.querySelector(".blk-popup-body");
+    body.innerHTML = mdToHtml(blk.md || "", blk.rendered);
+    popup.classList.add("vis");
+    renderMath(body);
+    // Position near anchor
+    const rect = anchorEl.getBoundingClientRect();
+    popup.style.top = Math.min(rect.bottom + 4, window.innerHeight - popup.offsetHeight - 8) + "px";
+    popup.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - popup.offsetWidth - 8)) + "px";
+  }
+
+  function hidePopup(immediate) {
+    if (!popupEl) return;
+    if (immediate) { popupEl.classList.remove("vis"); return; }
+    popupTimer = setTimeout(() => popupEl.classList.remove("vis"), 200);
+  }
+
+  // ── Fullscreen block modal ─────────────────────────────
+  function openBlockModal(label) {
+    const blk = blockIndex[label];
+    if (!blk) return;
+    hidePopup(true);
+    const overlay = h("div", "blk-modal-overlay");
+    const modal = h("div", "blk-modal");
+    // Render the block using the same renderBlock function
+    const rendered = renderBlock(blk);
+    rendered.style.margin = "0";
+    rendered.style.border = "none";
+    const head = h("div", "blk-modal-head");
+    head.innerHTML = `<button class="blk-modal-close">&times;</button>`;
+    modal.appendChild(head);
+    modal.appendChild(rendered);
+    renderMath(rendered);
+    function close() { overlay.remove(); modal.remove(); }
+    overlay.onclick = close;
+    head.querySelector(".blk-modal-close").onclick = close;
+    document.addEventListener("keydown", function esc(e) {
+      if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); }
+    });
+    document.body.appendChild(overlay);
+    document.body.appendChild(modal);
+  }
+
+  // Attach hover listeners after render
+  function attachPopupListeners(root) {
+    for (const a of root.querySelectorAll("a.uref")) {
+      const label = (a.getAttribute("href") || "").replace("#", "");
+      if (!label || !blockIndex[label]) continue;
+      a.addEventListener("mouseenter", () => showPopup(label, a));
+      a.addEventListener("mouseleave", () => hidePopup());
+    }
+  }
+
+  // ── Copy button for stubs ──────────────────────────────
+  function addCopyButtons(root) {
+    for (const envEl of root.querySelectorAll(".env")) {
+      const label = envEl.id;
+      if (!label) continue;
+      const blk = blockIndex[label];
+      if (!blk) continue;
+      // Show copy button if: has sorry, not started, or stated (no proof)
+      const status = blk.status || blk.lean?.validation || "";
+      const isStub = status === "has_sorry" || status === "stated" || status === "not_started" ||
+        (["definition","theorem","proposition","lemma","corollary"].includes(blk.kind) && (!blk.lean || !blk.lean.source));
+      if (!isStub) continue;
+      const copyBtn = h("button", "blk-copy", "📋");
+      copyBtn.title = "Copy block content";
+      copyBtn.onclick = (e) => {
+        e.stopPropagation();
+        const text = [
+          `-- ${blk.kind}: ${blk.title || blk.label}`,
+          `-- Label: ${blk.label}`,
+          blk.lean?.decl ? `-- Lean: ${blk.lean.decl}` : "",
+          "",
+          blk.md || "",
+          "",
+          blk.lean?.source || (blk.lean?.decl ? `-- TODO: prove ${blk.lean.decl}\nsorry` : ""),
+        ].filter(Boolean).join("\n");
+        navigator.clipboard.writeText(text).then(() => {
+          copyBtn.textContent = "✓";
+          setTimeout(() => { copyBtn.textContent = "📋"; }, 1500);
+        });
+      };
+      envEl.appendChild(copyBtn);
+    }
+  }
+
+  // ── Index page: expand definitions inline ───────────────
+  function enhanceIndexLinks(root) {
+    // Find the index chapter (label = app:index-definitions)
+    const indexEl = root.querySelector("#sec\\:definition-index");
+    if (!indexEl) return;
+    // Find all uref links in the index section's parent
+    const indexSection = indexEl.closest(".sec") || indexEl.closest(".ch") || indexEl.parentElement;
+    if (!indexSection) return;
+    for (const a of indexSection.querySelectorAll("a.uref")) {
+      const label = (a.getAttribute("href") || "").replace("#", "");
+      if (!label || !blockIndex[label]) continue;
+      // Replace scroll behavior with inline expand
+      a.onclick = (e) => {
+        e.preventDefault();
+        const blk = blockIndex[label];
+        if (!blk) return;
+        // Toggle: if already expanded, collapse
+        const existing = a.parentElement.querySelector(`.idx-expand[data-label="${CSS.escape(label)}"]`);
+        if (existing) { existing.remove(); return; }
+        // Create inline expansion
+        const expand = h("div", "idx-expand");
+        expand.dataset.label = label;
+        const rendered = renderBlock(blk);
+        rendered.style.margin = ".5rem 0";
+        expand.appendChild(rendered);
+        // Insert after the table row or after the link
+        const td = a.closest("td");
+        const tr = a.closest("tr");
+        if (tr) {
+          const expandRow = document.createElement("tr");
+          const expandCell = document.createElement("td");
+          expandCell.colSpan = 4;
+          expandCell.appendChild(expand);
+          expandRow.appendChild(expandCell);
+          tr.after(expandRow);
+        } else {
+          a.after(expand);
+        }
+        renderMath(expand);
+        attachPopupListeners(expand);
+      };
+    }
   }
 
   // ── Scroll-based sidebar highlighting ───────────────────
