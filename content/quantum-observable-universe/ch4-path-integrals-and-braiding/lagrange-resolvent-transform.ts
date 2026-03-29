@@ -12,4 +12,5 @@ export default proposition({
   uses: [
     "def:brings-surface",
   ],
+  examples: ["rem:lagrange-resolvents"],
 });
