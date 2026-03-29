@@ -52,17 +52,18 @@ passes (garbage-in-garbage-out).
 | Check | Severity | How |
 |-------|----------|-----|
 | Math delimiters balanced (`$...$`, `$$...$$`) | **error** | remark-math parse — unmatched delimiters produce parse errors |
-| Display math `$$` on own line with preceding blank line | **warning** | Regex: `$$` not preceded by blank line may parse as inline |
+| Display math `$$` on own line with preceding blank line | **error** | Regex: `$$` not preceded by blank line causes mixed `\[`/`$$` in rendered output |
 | Braces balanced inside math | **error** | unified-latex parse of each math snippet |
 | `\begin{env}` matches `\end{env}` in `` ```tex `` blocks | **error** | unified-latex environment balance check |
-| No raw LaTeX commands outside `$...$` or `` ```tex `` | **warning** | Grep for `\mathrm`, `\textbf`, `\emph`, `\begin` etc. outside math context |
-| No `$$...$$` with content on same line as delimiters | **warning** | Display math delimiters should be alone on their line |
+| No raw LaTeX commands outside `$...$` or `` ```tex `` | **error** | Grep for `\mathrm`, `\textbf`, `\emph`, `\begin` etc. outside math context — renders as literal text |
+| No `$$...$$` with content on same line as delimiters | **error** | Pipeline splits opening `\[` from closing `$$`, producing mixed-delimiter LaTeX error |
+| No bare `\eqref{}` outside math mode | **error** | Renders as literal text in HTML; use `[text](#label)` cross-ref instead |
 | Markdown list syntax correct (`1.` / `-` with proper indentation) | **warning** | remark AST — malformed lists produce paragraph nodes instead |
 | Markdown table syntax valid (pipe-delimited, header separator) | **warning** | remark AST parse — invalid tables render as plain text |
 | Block `.ts` manifest validates against Zod schema | **error** | `BlockSchema.safeParse()` |
 | Title math preserved in `$...$` delimiters (not bare TeX) | **error** | Check `.ts` title field for bare `\mathrm{}` etc. without `$` wrapping |
 | Fenced code blocks have language tag | **info** | `` ``` `` without `tex` tag won't pass through correctly |
-| `&` outside math mode | **warning** | Ampersands in prose break LaTeX rendering |
+| `&` outside math mode | **error** | Ampersands in prose become column separators in LaTeX, breaking compilation |
 
 ### Running Pass 1
 
@@ -100,7 +101,7 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 | Notation register compliance (CLAUDE.md §7aa) | **error** | Verify font register: fraktur for particles/energy/mass, bold for categories, calligraphic for bundles, etc. |
 | No notation collisions | **error** | Check for `$c$` used as charm (should be `$\mathfrak{c}$`), `$E$` standalone (forbidden), `$\gamma$` for vortex (should be `$\varrho$`), `$m$` for categorical mass (should be `$\mathfrak{m}$`) |
 | Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$T$` not `$\sigma$` for the relation; Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
-| Category notation uses bold `$\mathbf{C}$` | **warning** | Flag calligraphic `$\mathcal{C}$` for categories (reserved for sheaves/bundles) |
+| Category notation uses bold `$\mathbf{C}$` | **error** | Flag calligraphic `$\mathcal{C}$` for categories (reserved for sheaves/bundles) |
 | Fibre functor is `$\tau$` | **warning** | Flag `$\omega$` or `$U$` used as fibre functor |
 | QOU tuple is `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **warning** | Flag deprecated 5-tuple `$(M, \theta, G, P, E)$` |
 | Numerical `$q = 1.1097...$` only in intro/Ch7/Ch9 | **warning** | Flag specific numerical values of `$q$` outside allowed chapters |
@@ -159,6 +160,8 @@ running the full pdflatex pipeline. This catches TeX errors early.
 | tikzcd diagrams compile | **error** | Standalone compilation with tikz-cd package |
 | Custom macros from `main.tex` preamble are available | **warning** | Include preamble definitions in test compilation |
 | No KaTeX unsupported commands used without fallback | **warning** | Some valid LaTeX doesn't work in KaTeX (e.g. `\operatorname` → use `\mathrm`) |
+| `\operatorname{}` → `\mathrm{}` | **error** | Some markdown/KaTeX renderers reject `\operatorname`; project convention is `\mathrm` |
+| `\mathscr{}` KaTeX compatibility | **warning** | Needs KaTeX >=0.16; consider `\mathcal{}` fallback |
 
 ### KaTeX-specific issues to check
 

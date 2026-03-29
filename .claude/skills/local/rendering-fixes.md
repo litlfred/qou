@@ -24,14 +24,14 @@ Agents editing content blocks should check this list before committing.
 | F3 | Bare TeX in `.ts` title | Error | Yes |
 | F4 | Single-line `$$...$$` inside list | Error | Yes |
 | F5 | Extra trailing pipe in table | Warning | Yes |
-| F6 | `\operatorname` vs `\mathrm` | Style | Yes |
+| F6 | `\operatorname` vs `\mathrm` | Error | Yes |
 | F7 | `\mathscr` KaTeX compat | Warning | Yes |
-| F8 | `$$` without preceding blank line | Warning | Yes |
+| F8 | `$$` without preceding blank line | Error | Yes |
 | F9 | `&` in prose outside math | Error | Yes |
 | F10 | Raw TeX outside math delimiters | Error | Yes |
 | F11 | Wrong notation register | Error | Yes (pattern) |
 | F12 | Missing SVG pre-render for fenced tex | Warning | Script |
-| F13 | Orphan cross-reference | Warning | Manual |
+| F13 | Orphan cross-reference | Error | Manual |
 | F14 | Missing bibliography entry | Error | Manual |
 
 ---
@@ -145,8 +145,8 @@ creating an extra empty column.
 
 ## F6: `\operatorname` vs `\mathrm`
 
-**Pattern**: `\operatorname{Vol}` works in both LaTeX and KaTeX but
-is inconsistent with the project convention of `\mathrm{Vol}`.
+**Pattern**: `\operatorname{Vol}` may break in some markdown/KaTeX
+renderers. Project convention is `\mathrm{Vol}`.
 
 ```md
 <!-- INCONSISTENT (works but non-standard for project) -->
@@ -181,7 +181,8 @@ semantically necessary.
 ## F8: `$$` without preceding blank line
 
 **Pattern**: Display math `$$` immediately follows text without a blank
-line. Some markdown parsers may treat it as inline math.
+line. The pipeline may produce mixed `\[`/`$$` delimiters, breaking
+LaTeX compilation.
 
 ```md
 <!-- RISKY: may parse as inline -->
