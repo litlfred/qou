@@ -1,6 +1,6 @@
 The following table evaluates the topological knot formulas
 ([knot formula table](#rem:knot-formula-table)) at the substrate
-parameter $q \approx 1.10997$ derived from the muon--electron mass
+parameter $q_0$ derived from the muon--electron mass
 ratio ([Skein mass relation](#rem:skein-mass-relation)), and
 compares the results against CODATA 2022 recommended values and
 PDG 2024 averages.  All masses are in MeV/$c^2$.
@@ -8,7 +8,7 @@ PDG 2024 averages.  All masses are in MeV/$c^2$.
 **Input parameters** (one free parameter):
 
 $$
-  q = 1.10997, \quad
+  q = q_0, \quad
   \hbar_q = 1 - q^{-1} = 0.09905, \quad
   \mathrm{Vol}(4_1) = 2.02988.
 $$
@@ -26,7 +26,7 @@ $$
 The electron mass is an input (it fixes $\mu_u$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
 $\mathrm{Vol}(4_1)/\hbar_q^2$ and reproduces the CODATA value
-to six significant figures with $q = 1.10997$.
+to six significant figures with $q = q_0$.
 
 *Hadrons (from pair Skein masses).*
 

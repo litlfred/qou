@@ -29,10 +29,10 @@ apart.
 
 **EM/strong ratio.**
 
-At $q = 1.10997$:
+At $q = q_0$:
 
 $$
-  \tanh(\ln 1.10997) \;\approx\; 0.104.
+  \tanh(\ln q_0) \;\approx\; 0.104.
 $$
 
 Electromagnetism is approximately **10\%** of the strong force at the
