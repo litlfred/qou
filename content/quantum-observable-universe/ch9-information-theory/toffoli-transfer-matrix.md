@@ -164,7 +164,7 @@ $q + q^{1/2} - 1$ vanishes when $q^{1/2} = (\sqrt{5} - 1)/2
 = 1/\varphi$, i.e., $q = 1/\varphi^2 = (3 - \sqrt{5})/2$.
 $\square$
 
-**Explicit values at $q = 1.1097$
+**Explicit values at $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)):**
 
 | Controls | $c_{k_1 k_2}$ | $P_{\mathrm{flip}}$ | $P_{7,6}$ ratio |

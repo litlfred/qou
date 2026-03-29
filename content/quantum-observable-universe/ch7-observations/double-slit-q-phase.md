@@ -21,7 +21,7 @@ where:
 - $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\,\theta$
   is the *Reeb phase* --- the rotation accumulated by the internal
   chiral fibre along $\gamma_i$
-  ([Reeb derivation](#def:categorical-reeb-derivation));
+  ([Reeb derivation](#def:categorical-reeb));
 - $\hbar_q = 1 - q^{-1}$
   ([quantum Planck constant](#def:quantum-planck-constant)).
 

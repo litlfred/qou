@@ -33,7 +33,7 @@ $\square$
 | $1.01$ | $101$ | Near-classical: $\sim 100$ iterations per circuit |
 | $\to 1$ | $\to \infty$ | Classical limit: infinitely many, continuous Reeb flow |
 
-**Physical meaning at $q = 1.1097$
+**Physical meaning at $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)).**
 At our local substrate parameter, approximately $10$ iterations
 of the Julia set dynamics $f_q$ occur within each Planck time.
@@ -49,7 +49,7 @@ Each iteration:
 The link-length resolution within the exceptional divisor grows
 with each operation: after $n$ of the $\sim 10$ steps, the
 divisor resolves knots up to crossing number $n$.  Within a
-single Planck time at $q = 1.1097$, the exceptional divisor
+single Planck time at $q = q_0$, the exceptional divisor
 completes $\sim 10$ braiding evaluations — enough to resolve
 the full electron-positron sector ($c = 3$) with room to spare.
 
@@ -68,5 +68,5 @@ gravitational self-consistency condition.
 At the Big Bang ($q \to \infty$): $n_R \to 1$ and $\eta_q \to 0$
 (simplest dynamics), so $I_P \to 0$.
 At the classical limit ($q \to 1$): $\eta_q \to 1$ nat per step.
-At $q = 1.1097$: $I_P \approx 10.1 \times 0.892 \approx 9.0$
+At $q = q_0$: $I_P \approx 10.1 \times 0.892 \approx 9.0$
 nats per Planck time.
