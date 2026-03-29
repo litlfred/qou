@@ -49,7 +49,7 @@ substrate parameter**.
 | $\zeta(s) = \sum n^{-s}$ | $\zeta_q(s) = \sum [n]_q^{-s}$ |
 | $\prod_p(1 - p^{-s})^{-1}$ | $\prod_\gamma(1 - q^{-s|\gamma|})^{-1}$ |
 | Primes $p$ | Primitive Reeb orbits $\gamma$ |
-| Critical line $\operatorname{Re}(s) = \tfrac{1}{2}$ | Critical line $\operatorname{Re}(s) = \sigma_q$ |
+| Critical line $\operatorname{Re}(s) = \tfrac{1}{2}$ | Critical line $\operatorname{Re}(s) = \sigma_q = d_{H,q}/2$ |
 
 **Asymptotics of the $q$-logarithm.**
 For large $n$:

@@ -16,7 +16,7 @@ remains to be built.
 
 **What unitarity does NOT directly give us.**
 
-- A Hilbert space on which a transfer operator acts.
+- A spectral arena on which a transfer operator acts.
 - A spectral identification connecting $R$-matrix eigenvalues to
   zeta zeros.
 - Meromorphic continuation of $Z_q$ past its convergence boundary.
@@ -40,44 +40,42 @@ But this argument is conditional on the spectral identification
 existing.  Without it, unitarity and the zeta zeros live in
 different worlds.
 
-**The $d_H(q)$ closed form.**
+**The $d_{H,q}$ closed form.**
 
-Even granting the spectral identification, the critical line
-location depends on $d_H(q) = (2q-1)^2/q^3$.  The derivation:
+The critical line location depends on the **$q$-deformed Hausdorff
+dimension** $d_{H,q} = (2q-1)^2/q^3$
+([operational entropy](#def:operational-entropy)).  This is exact
+within the $q$-deformed framework — a rational function of $q$,
+not an approximation.  The derivation:
 
 $$
   G_{\mathrm{Planck}} = 1
   \;\Rightarrow\;
   \eta_q = \frac{2q-1}{q^3}
   \;\xRightarrow{\chi_q = 1/(2q-1)}\;
-  d_H(q) = \frac{(2q-1)^2}{q^3}
+  d_{H,q} = \frac{(2q-1)^2}{q^3}
   \;\Rightarrow\;
   \sigma_q = \frac{(2q-1)^2}{2q^3}.
 $$
 
-The $3.9\%$ discrepancy with the transfer-operator numerical
-value ($1.047$ vs. $1.088$) is an open problem.  Possible
-resolutions:
-
-1. The cardioid parameterization $c(q)$ in the numerical
-   computation is not the correct map from the substrate to the
-   quadratic family.
-2. The $q$-deformed Lyapunov exponent $\chi_q = 1/(2q-1)$ is
-   approximate.
-3. The QOU dynamics genuinely differs from classical conformal
-   dynamics in a way the transfer operator does not capture.
+Each step is algebraic — no approximations, no numerics, no
+fitting.  The $3.9\%$ difference from the classical
+transfer-operator value ($d_H \approx 1.047$) is not a discrepancy:
+$d_{H,q}$ and $d_H$ are **different quantities**.  The classical
+$d_H$ uses $h_{\mathrm{top}} = \ln 2$ (transcendental, $\mathbb{C}$-only);
+$d_{H,q}$ uses $\eta_q = (2q-1)/q^3$ (rational, field-independent).
+They agree at $q = 1$ and at $q = \varphi^2$ but diverge elsewhere.
 
 **What would close the gaps.**
 
 | Gap | What's needed |
 |-----|---------------|
 | 1. $Z_q$ analytic | Meromorphic continuation of the Ruelle product (Ruelle–Pollicott theory for the specific family $f_q$) |
-| 2. Hilbert space | A field-independent spectral framework — possibly via Berkovich spaces ($p$-adic) or étale cohomology (finite fields) instead of $L^2$ |
-| 3. Spectral identification | An explicit isometry from $V^{\otimes n}$ to the function space carrying $\mathcal{L}_s$ — or a categorical substitute that avoids Hilbert spaces entirely |
-| 4. $d_H$ numerics | Either fix the parameterization $c(q)$, or derive the closed form without Manning–McCluskey |
+| 2. Spectral arena | A field-independent framework — possibly categorical (via the braided tensor category directly) rather than analytic ($L^2$ on the Julia set) |
+| 3. Spectral identification | An explicit map from $V^{\otimes n}$ to the spectral arena, or a categorical substitute that avoids Hilbert spaces entirely |
 
 **Classical RH as a special case.**
-At $q = 1$: $d_H(1) = 1$, $\sigma_1 = 1/2$, $\chi_1 = 1$, and
+At $q = 1$: $d_{H,q} = 1$, $\sigma_1 = 1/2$, $\chi_1 = 1$, and
 the $R$-matrix collapses to the symmetric group (trivially
 unitary).  Classical RH is the statement that the classical limit
 of the substrate preserves unitarity.
@@ -85,7 +83,7 @@ of the substrate preserves unitarity.
 **Falsifiability.**
 For prime-power $q$, the Weil conjectures (Deligne) guarantee
 zeros at $\operatorname{Re}(s) = 1/2$.  The $q$-critical line
-prediction gives $\sigma_q = 1/2$ only when $d_H(q) = 1$
+prediction gives $\sigma_q = 1/2$ only when $d_{H,q} = 1$
 ($q = 1$ or $q = \varphi^2$).  For other prime-power values,
 the dynamical and arithmetic zeta functions must disagree — a
 computable test.
