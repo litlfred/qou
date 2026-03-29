@@ -50,6 +50,14 @@ from experimental_constants import *
 
 div = HeckeDivision(q_val=q)
 HA = q - qi
+LN_Q = math.log(q)
+
+# The Q-value uses log_q (not ln) per the spectral decomposition corollary:
+#   Q = |log_q(P_dau/P_par)| × ℏ_q × E_cross × μ₀
+#     = |ln(ratio)/ln(q)| × (1 - q⁻¹) × ½(q - q⁻¹) × m_e/(3·½(q-q⁻¹))
+#     = |ln(ratio)| × (ℏ_q / ln(q)) × m_e/3
+# The factor ℏ_q/ln(q) = 0.9496 is the q-anomaly (discretisation correction).
+Q_ANOMALY = HBAR_Q / LN_Q  # = 0.9496
 mu_0 = M_E_MEV / (3 * E_CROSS)
 
 def sigma(i):
@@ -189,7 +197,9 @@ def bare_Q(Z, N):
             V = vol(M)
             if abs(V) > 0: logP += math.log(abs(V))
         return logP
-    return abs(log_skein(Z+1, N-1) - log_skein(Z, N)) * E_CROSS * mu_0
+    # Q = |log_q(P_dau/P_par)| × ℏ_q × m_e/3
+    #   = |ln(ratio)| × (ℏ_q/ln(q)) × m_e/3
+    return abs(log_skein(Z+1, N-1) - log_skein(Z, N)) * Q_ANOMALY * E_CROSS * mu_0
 
 
 # ══════════════════════════════════════════════════════════════
