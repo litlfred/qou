@@ -70,7 +70,8 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 
 /* ── Paper viewer layout (sidebar + content) ────────────── */
 .paper-layout{display:flex;min-height:calc(100vh - 40px)}
-.sidebar{width:260px;min-width:260px;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;position:sticky;top:40px;height:calc(100vh - 40px);padding:.8rem 0}
+.sidebar{width:260px;min-width:260px;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;position:sticky;top:40px;height:calc(100vh - 40px);padding:.8rem 0;transition:margin-left .25s var(--ease),opacity .25s var(--ease)}
+.sb-hidden .sidebar{margin-left:-260px;opacity:0;pointer-events:none}
 .sidebar-header{padding:.5rem 1rem;font-family:var(--f-head);font-size:.8rem;color:var(--fg-b);border-bottom:1px solid var(--brd);margin-bottom:.5rem}
 .sb-ch{padding:.3rem 1rem;cursor:pointer;font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);transition:all .15s;display:flex;align-items:center;gap:.4rem}
 .sb-ch:hover{color:var(--fg-b);background:var(--bg-r)}
@@ -87,7 +88,8 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .sb-blk.active{color:var(--ac);background:var(--bg-r)}
 .sb-bk{font-weight:600;font-size:.55rem;text-transform:uppercase;letter-spacing:.03em;margin-right:.2rem}
 
-.paper-content{flex:1;max-width:800px;margin:0 auto;padding:2rem 2rem 4rem}
+.paper-content{flex:1;max-width:800px;margin:0 auto;padding:2rem 2rem 4rem;transition:max-width .25s var(--ease)}
+.wide-mode .paper-content{max-width:1200px}
 .paper-content.editor-active{max-width:none;padding:0}
 
 /* ── Paper header ───────────────────────────────────────── */

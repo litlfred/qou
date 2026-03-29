@@ -49,7 +49,7 @@
     return (levels[currentUser.role] || 0) >= (levels[minRole] || 99);
   }
 
-  // ── Theme / font toggles ────────────────────────────────
+  // ── Theme / font / sidebar / wide toggles ────────────────
   $("#c-th").onclick = () => {
     const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = t;
@@ -62,6 +62,14 @@
     $("#c-fn").textContent = f === "paper" ? "web" : "paper";
     localStorage.setItem("folio-font", f);
   };
+  $("#c-sb").onclick = () => {
+    document.body.classList.toggle("sb-hidden");
+    localStorage.setItem("folio-sb", document.body.classList.contains("sb-hidden") ? "hidden" : "visible");
+  };
+  $("#c-wd").onclick = () => {
+    document.body.classList.toggle("wide-mode");
+    localStorage.setItem("folio-wide", document.body.classList.contains("wide-mode") ? "wide" : "normal");
+  };
   // restore saved prefs
   const savedTheme = localStorage.getItem("folio-theme");
   if (savedTheme) {
@@ -73,6 +81,8 @@
     document.body.dataset.font = savedFont;
     $("#c-fn").textContent = savedFont === "paper" ? "web" : "paper";
   }
+  if (localStorage.getItem("folio-sb") === "hidden") document.body.classList.add("sb-hidden");
+  if (localStorage.getItem("folio-wide") === "wide") document.body.classList.add("wide-mode");
 
   // ── Branch switcher ─────────────────────────────────────
   async function loadBranches() {
