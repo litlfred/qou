@@ -116,6 +116,33 @@ export default chapter({
       ],
     }),
 
+    // ── Strangelet stability ─────────────────────────────────────────────
+    // Three subsections: (1) why strange matter binds harder,
+    // (2) what happens at extreme density, (3) how to observe it.
+    section({
+      title: "Strangelet Stability and Deconfinement",
+      label: "sec:strangelet-stability",
+      blocks: [
+        "strangelet-intro",
+
+        // — Why strange matter binds harder (and why it's not the ground state)
+        "strangelet-crossing-energy",
+        "strangelet-witten-stability",
+
+        // — Phase diagram: deconfinement, CFL, equation of state
+        "deconfinement-golden-threshold",
+        "hopf-diquark",
+        "borromean-hopf-energy-crossover",
+        "color-superconductivity-borromean",
+        "eos-borromean-cfl",
+
+        // — Observable signatures
+        "cfl-neutron-star-observables",
+        "strangelet-merger-signature",
+        "strangelet-double-beta",
+      ],
+    }),
+
     // ── Small-scale observations ──────────────────────────────────────
     section({
       title: "Small-Scale Observations",
