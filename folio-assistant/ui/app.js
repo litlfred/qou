@@ -186,14 +186,54 @@
   }
 
   // ── Router ──────────────────────────────────────────────
+  const LABEL_RE = /^(def|thm|lem|prop|cor|conj|ex|rem|prf|eq|fig|sec|chap|prose|sim|app):/;
+
   function route() {
     const hash = location.hash || "#/";
-    const parts = hash.slice(2).split("/").filter(Boolean);
+    const raw = hash.slice(1); // remove #
+
+    // Shorthand: #rem:foo → load default paper and scroll to block
+    if (LABEL_RE.test(raw)) {
+      pendingScrollLabel = raw;
+      if (!currentPaperId) {
+        // Load default paper then scroll
+        api(branchQuery("/api/folio")).then(data => {
+          const id = data.papers?.[0]?.id;
+          if (id) { location.hash = `#/paper/${id}`; }
+        }).catch(() => loadFolio());
+      } else {
+        scrollToBlock(raw);
+      }
+      return;
+    }
+
+    const parts = raw.replace(/^\//, "").split("/").filter(Boolean);
 
     if (parts[0] === "paper" && parts[1]) {
+      // #/paper/id/label → load paper and scroll to label
+      const label = parts[2] && LABEL_RE.test(parts[2]) ? parts[2] : null;
+      if (label) pendingScrollLabel = label;
+      loadPaper(parts[1]);
+    } else if (parts[0] === "view" && parts[1]) {
+      // #/view/id or #/view/id/label (compat with viewer URLs)
+      const label = parts[2] && LABEL_RE.test(parts[2]) ? parts[2] : null;
+      if (label) pendingScrollLabel = label;
       loadPaper(parts[1]);
     } else {
       loadFolio();
+    }
+  }
+
+  let pendingScrollLabel = null;
+  let currentPaperId = null;
+
+  function scrollToBlock(label) {
+    const el = document.getElementById(label);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.style.outline = "2px solid var(--ac, #47a)";
+      setTimeout(() => { el.style.outline = ""; }, 2000);
+      pendingScrollLabel = null;
     }
   }
   window.addEventListener("hashchange", route);
@@ -262,12 +302,17 @@
     try {
       const data = await api(branchQuery(`/api/paper?id=${encodeURIComponent(id)}`));
       paper = data;
+      currentPaperId = id;
       katexMacros = buildKatexMacros(data.macros);
       buildBlockIndex();
       updateReadOnlyBanner();
       if (mode === "diff") await loadDiff();
       else if (mode === "qc") renderQC();
       else renderPaper();
+      // Scroll to pending label after render
+      if (pendingScrollLabel) {
+        requestAnimationFrame(() => setTimeout(() => scrollToBlock(pendingScrollLabel), 100));
+      }
     } catch (e) {
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
     }
