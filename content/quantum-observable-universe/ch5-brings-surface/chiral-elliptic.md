@@ -12,9 +12,9 @@ cubic
 \end{equation}
 ```
 
-For generic $z$ this defines an elliptic curve $E_z$ in the chiral
+For generic $z$ this defines an elliptic curve $\mathcal{E}_z$ in the chiral
 fibre; its $j$-invariant varies as a rational function of $z$.  The
-monodromy of $E_z$ around the singular fibres (where the discriminant
+monodromy of $\mathcal{E}_z$ around the singular fibres (where the discriminant
 of the cubic vanishes) recovers the holonomy
 generators $H_1,H_2$ of
 [holonomy of trefoil](#rem:holonomy-trefoil).

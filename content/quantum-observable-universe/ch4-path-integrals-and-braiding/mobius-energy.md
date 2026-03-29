@@ -5,22 +5,22 @@ categorical action $\mathcal{S}_q$
 ([Definition](#def:categorical-action)), and $q$-Hodge star
 $\star_q$ ([Definition](#def:q-hodge-star)).
 
-Let $\gamma \colon S^1 \to \tau(A)$ be a smooth closed curve
-(a knot embedding) and let $m(\gamma)$ denote the categorical mass
+Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve
+(a knot embedding) and let $m(\varrho)$ denote the categorical mass
 ([Theorem](#thm:topological-mass)).
 
 Define the *categorical Möbius energy* by
 
 $$
-  E_{\mathrm{cat}}(\gamma)
+  E_{\mathrm{cat}}(\varrho)
   \;=\;
   \int_A \!\circ\, \mathrm{tr}_A \!\iint_{S^1 \times S^1 \setminus \mathrm{diag}}
   \!\!\Bigl(
-    \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
+    \Delta(\varrho(s)) \otimes \Delta(\varrho(t))
   \Bigr)
   \;\star_q\;
   \Bigl\lVert
-    \frac{d\gamma}{ds} \wedge_q \frac{d\gamma}{dt}
+    \frac{d\varrho}{ds} \wedge_q \frac{d\varrho}{dt}
   \Bigr\rVert\,
   ds\, dt\,,
 $$
@@ -33,26 +33,26 @@ Then in the classical limit $q \to 1$, the categorical Möbius energy
 recovers the classical Möbius energy up to a topological normalization:
 
 $$
-  \lim_{q \to 1}\; E_{\mathrm{cat}}(\gamma)
+  \lim_{q \to 1}\; E_{\mathrm{cat}}(\varrho)
   \;=\;
-  \frac{1}{4}\, E(\gamma)
+  \frac{1}{4}\, E(\varrho)
   \;+\; \text{const}\,.
 $$
 
-Here $E(\gamma)$ is the classical Möbius energy
+Here $E(\varrho)$ is the classical Möbius energy
 
 $$
-  E(\gamma)
+  E(\varrho)
   \;=\;
   \iint_{S^1 \times S^1}
   \Bigl(
-    \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}
+    \frac{1}{\lvert \varrho(s) - \varrho(t) \rvert^2}
     \;-\;
-    \frac{1}{D(\gamma(s), \gamma(t))^2}
+    \frac{1}{D(\varrho(s), \varrho(t))^2}
   \Bigr)
-  \lvert \gamma'(s) \rvert \, \lvert \gamma'(t) \rvert\,
+  \lvert \varrho'(s) \rvert \, \lvert \varrho'(t) \rvert\,
   ds\, dt\,.
 $$
 
-Here $D(\gamma(s), \gamma(t))$ denotes the intrinsic arc-length distance
-along $\gamma$.
+Here $D(\varrho(s), \varrho(t))$ denotes the intrinsic arc-length distance
+along $\varrho$.

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q \in k^{\times}$
 ([substrate parameter](#def:substrate-parameter)), and let $\gamma_i$
 ($i = 1,2$) be two paths from a source to a screen position $y$,

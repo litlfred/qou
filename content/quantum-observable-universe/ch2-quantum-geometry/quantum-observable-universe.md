@@ -33,8 +33,10 @@ conditions hold:
    adjoint object vanish.  Precisely, define the *Chern classes of a
    categorical object* $X$ by pulling back through the fibre functor:
 
-   $$c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
-     \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),$$
+   $$
+   c_i(X) \;:=\; c_i\!\bigl(\tau(X)\bigr)
+     \;\in\; H^{2i}_{\mathrm{dR}}\!\bigl(\mathrm{Spec}\,R\bigr),
+   $$
 
    where the right-hand side is the classical Chern class of the
    realised $R$-module (or, in the archimedean setting, of the

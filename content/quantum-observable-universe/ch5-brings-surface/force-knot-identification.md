@@ -45,7 +45,7 @@ Bring's surface:
    the electromagnetic coupling is the component of the Skein
    pairing that is *odd* under this involution.
 
-2. **The complex structure** on the chiral elliptic curve $E_z$:
+2. **The complex structure** on the chiral elliptic curve $\mathcal{E}_z$:
    the Bring's surface admits a Kähler structure inherited from the
    embedding $\Sigma_4 \hookrightarrow \mathbb{P}^4$.  The complex
    structure $J$ satisfies $J^2 = -1$ and determines the phase of
