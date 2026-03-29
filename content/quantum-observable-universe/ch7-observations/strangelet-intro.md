@@ -60,7 +60,7 @@ two phases.
 
 The quantitative picture reduces to two numbers and a topology
 change.  The Borromean complement has $\mathrm{Vol}(\mathcal{B}_3)
-= 7.33$: massive, soft, confined.  The Hopf link complement has
+\approx 7.33$: massive, soft, confined.  The Hopf link complement has
 $\mathrm{Vol}(\mathcal{L}_H) = 0$: zero volume contribution,
 ultra-stiff, superconducting.  The Borromean phase binds at
 $749$ Skein units per baryon; the Hopf diquark phase at $3$.
@@ -68,6 +68,6 @@ That factor of $250$ is why color superconductivity requires
 densities five to ten times nuclear saturation — deep inside
 neutron star cores.  Once there, the vanishing Hopf volume drops
 the effective quark mass by a factor of $1000$, the equation of
-state stiffens by a factor of $2300$, and the speed of sound
+state stiffens by a factor of ${\sim}7000$, and the speed of sound
 approaches the conformal limit $c_s^2 = 1/3$ at physically
 achievable densities.

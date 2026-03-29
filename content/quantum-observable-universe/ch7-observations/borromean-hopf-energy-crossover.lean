@@ -29,9 +29,9 @@ def V_B : ℝ := 7.32772
 def binding_ratio (q : ℝ) (hq : q > 1) : ℝ :=
   (V_B * q ^ 2 / (q - 1) ^ 2) / ((3 / 2) * (q + q⁻¹))
 
-/-- The binding ratio at q = 1.1097 exceeds 200. -/
+/-- The Borromean binding energy at q = 1.1097 exceeds 700. -/
 -- Ref: [manuscript] Ch. 7
-theorem binding_ratio_large :
+theorem borromean_binding_large :
     ∀ q : ℝ, q = 1.1097 →
     V_B * q ^ 2 / (q - 1) ^ 2 > 700 := by
   intro q hq

@@ -50,7 +50,7 @@ def pressure_coeff_cfl (q : ℝ) : ℝ :=
     Dominated by M_B/M_D × 3^{2/3}. -/
 -- Ref: [manuscript] Ch. 7
 def stiffness_ratio (q : ℝ) : ℝ :=
-  M_B q / M_D q * 3 ^ (2/3 : ℝ)
+  M_B q / M_D q * 3 ^ (5/3 : ℝ)
 
 /-- At q = 1.1097, M_B is large. -/
 -- Ref: [manuscript] Ch. 7

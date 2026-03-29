@@ -35,13 +35,15 @@ $$
 $$
   M_D
   \;=\;
-  3 \cdot |\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)|
-  \;\cdot\; \lambda_{\mathrm{scale}}.
+  3 \cdot \tfrac{1}{3}(q + q^{-1})
+  \;=\;
+  q + q^{-1}
+  \;\approx\; 2.011 \;\text{Skein units}.
 $$
 
    Since $\mathrm{Vol}(\mathcal{L}_H) = 0$, the diquark
    mass is **purely from crossing energy**, not from
-   hyperbolic volume.  At any $q > 1$: $M_D < M_B$.
+   hyperbolic volume.  At any $q > 1$: $M_D \ll M_B$.
 
 2. **Binding energy comparison.**  The binding energy
    per baryon number is:

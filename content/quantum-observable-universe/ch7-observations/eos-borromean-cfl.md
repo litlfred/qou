@@ -81,7 +81,7 @@ density is
 $$
   \frac{P_D}{P_B}
   \;=\;
-  \frac{M_B}{M_D} \cdot 3^{2/3}
+  \frac{M_B}{M_D} \cdot 3^{5/3}
   \;+\;
   \frac{3\,\Delta_{\mathrm{CFL}}^2\, \mu_q^2}{\pi^2\, P_B}.
 $$
@@ -98,16 +98,16 @@ $$
   \;\approx\; 1118.
 $$
 
-Including the $3^{2/3} \approx 2.08$ factor:
+Including the $3^{5/3} \approx 6.24$ factor:
 
 $$
   \frac{P_D}{P_B}
   \;\approx\;
-  1118 \times 2.08
-  \;\approx\; 2326.
+  1118 \times 6.24
+  \;\approx\; 6977.
 $$
 
-The CFL equation of state is **over $2000\times$ stiffer** than
+The CFL equation of state is **nearly $7000\times$ stiffer** than
 the Borromean EOS at equal baryon density.
 
 **4. Speed of sound and the conformal limit.**
@@ -139,7 +139,7 @@ density $\rho_0$: $c_{s,B}^2 \sim 0.01$, deeply non-relativistic.
 |----------|---------------------------|----------------------|
 | Mass source | Volume: $V_B/\hbar_q^2 = 749$ | Crossing: $(q+q^{-1})/3 = 0.67$ |
 | $P \propto$ | $n_B^{5/3} / M_B$ | $n_B^{5/3} / M_D$ |
-| Stiffness | Soft ($M_B$ large) | **Ultra-stiff** ($M_D$ small) |
+| Stiffness | Soft ($M_B$ large) | **${\sim}7000\times$ stiffer** ($M_D$ small) |
 | $c_s^2$ at $\rho_0$ | $\sim 0.01$ | N/A (above $\rho_c$) |
 | $c_s^2$ asymptotic | $\to 1/3$ (unreachable) | $\to 1/3$ (conformal) |
 | Gap contribution | None | $+3\Delta^2\mu^2/\pi^2$ |
@@ -154,8 +154,8 @@ contribution per quark (three quarks per baryon), with
 $\mathrm{Vol}(\mathcal{L}_H) = 0$ eliminating the volume term.
 
 The stiffness ratio is immediate from $P \propto n^{5/3}/M$:
-at equal density, $P_D / P_B = (M_B / M_D) \cdot 3^{2/3}$
-(the $3^{2/3}$ from $n_q = 3 n_B$ in the CFL quark gas).
+at equal density, $P_D / P_B = (M_B / M_D) \cdot 3^{5/3}$
+(the $3^{5/3}$ from $n_q = 3 n_B$ in the CFL quark gas).
 
 The conformal limit $c_s^2 \to 1/3$ follows from the
 ultra-relativistic limit of the Fermi gas: when $E_F \gg M$,

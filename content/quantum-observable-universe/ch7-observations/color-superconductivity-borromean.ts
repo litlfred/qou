@@ -21,5 +21,6 @@ export default conjecture({
     "prop:strangelet-crossing-energy",
     "rem:deconfinement-golden-threshold",
     "def:crossing-energy",
+    "def:color-tube-coordinates",
   ],
 });
