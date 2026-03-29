@@ -186,6 +186,56 @@ from experiment are structural: nucleon ordering, degree-$2$
 averaging, and truncation of the degree tower.  These are $O(1)$
 relative to $\varepsilon$.
 
+### Geometric interpretation: exceptional divisors and the jet bundle
+
+The $\log_q$ in $\mathcal{Q}_{\mathrm{bare}}$ counts **steps along
+the exceptional divisor chain** of $\Sigma_4$.  Each blow-up of the
+Bring surface produces an exceptional divisor $E_k$; the color tube
+coordinate along the fiber ascends by one $q$-power per divisor.
+The quantity $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ measures
+how many divisor levels the decay traverses.
+
+The four factors in $\mathcal{Q}_q$ each have a geometric reading:
+
+| Factor | Geometry |
+|--------|----------|
+| $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Divisor levels traversed (color tube degrees) |
+| $\hbar_q = 1 - q^{-1}$ | Action quantum per divisor step (discrete fiber spacing) |
+| $\mathfrak{E}_{\times}$ | Crossing energy from the Hecke relation |
+| $\mu_0$ | Dimensional anchor ($T_{2,3}$ trefoil $=$ electron) |
+
+The degree tower maps to the divisor hierarchy:
+
+- **Degree $0$**: base level — bare crossings in the transfer matrix.
+  At $q = 1$ all crossing types coincide; $\mathcal{Q}_q = 0$.
+- **Degree $1$**: first exceptional divisor — knots
+  $T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}$ (shells $1$–$4$).
+  Already captured by $\mathcal{Q}_{\mathrm{bare}}$ through the
+  crossing coefficients.
+- **Degree $2$**: second exceptional divisor — tower knots
+  $T_{2,9} = T_{2,3^2}, T_{3,4} = T_{3,2^2}$ (shells $5$–$6$).
+  The knot operator $F(T_{k^*}, N)$.
+- **Degree $\geq 3$**: the tower terminates
+  ($T_{2,27}$ needs genus $13 > 4$), so higher divisors are
+  absent on $\Sigma_4$.  The knot operator is $F = 1$ (null).
+
+The knot operators are naturally organised as **jets on the
+exceptional divisor bundle**, indexed by the Gröbner class
+of the torus knot.  The jet at degree $k$ records the
+$k$-th order correction to the Skein polynomial along the
+fiber.  Composed operators collapse (contribute $F = 1$)
+precisely when their jet index exceeds the embedding genus:
+a non-embeddable knot has zero action on $\Sigma_4$, hence
+its jet vanishes — analogous to a zero-volume knot in the
+hyperbolic picture.
+
+The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation
+correction**: the exceptional divisors are spaced by $q$
+(discrete), not by $e$ (continuous).  The $5\%$ deviation
+encodes the finiteness of the fiber lattice.  In the $q \to 1$
+limit, $\hbar_q / \ln q \to 1$ and the divisor spacing becomes
+continuous.
+
 ## Gröbner normal form of the corrected element
 
 The torus-knot correction modifies the **crossing coefficients**
