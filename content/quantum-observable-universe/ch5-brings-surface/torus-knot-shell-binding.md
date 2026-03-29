@@ -44,13 +44,13 @@ logarithm — it counts exceptional divisor levels along the
 color tube fiber of $\Sigma_g$.
 $\hbar_q = (q - 1)/q$ is the quantum Planck constant (action
 per divisor step).  The factor $m_e/3$ is the mass per
-crossing of the trefoil $\mathfrak{K}_e = \mathfrak{K}_{\tau(2,3)}$
+crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$
 (the electron is $3$ crossings).  The product
 $\hbar_q \cdot m_e / 3$ replaces the intermediate notation
 $\mathfrak{E} \cdot \mu_0$ — these cancel algebraically.*
 
 **(iii)** *$F(\tau(r,s), N)$ is the **knot operator** of
-$\mathfrak{K}_{\tau(r,s)}$ acting on the converting neutron's
+$\tau(r,s)$ acting on the converting neutron's
 shell:*
 
 $$
@@ -63,11 +63,11 @@ $$
     1
     & \text{shell unchanged by decay (cancels in ratio)} \\[4pt]
     \mathrm{tr}_M\!\bigl(
-      \mathfrak{K}_{\tau(r,s)} \cdot T_\beta(q)
+      \tau(r,s) \cdot T_\beta(q)
     \bigr)
     & \text{active shell, partially filled} \\[4pt]
     \dfrac{\bigl|\mathrm{tr}_M\!\bigl(
-      e_{(1^3)} \cdot \mathfrak{K}_{\tau(r,s)} \cdot
+      e_{(1^3)} \cdot \tau(r,s) \cdot
       T_\beta(q) \cdot e_{(1^3)}
     \bigr)\bigr|}{\bigl|\mathrm{tr}_M\!\bigl(T_\beta(q)\bigr)\bigr|}
     & \text{active shell, fully filled (Pauli)}
@@ -108,10 +108,9 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
 
 2. **Inductive chain construction.**  Each nucleon $k$ is
    added by extending the $2\!\times\!2$ chain matrices:
-   $M_j \leftarrow M_j \cdot T_{\mathfrak{K}_j
-   {}^j\!\bowtie_{k} \mathfrak{K}_k}(q)$ for existing
-   positions $j < k$, and $M_{k-1} = T_{\mathfrak{K}_{k-1}
-   {}^{k-1}\!\bowtie_k \mathfrak{K}_k}(q)$ for the new
+   $M_j \leftarrow M_j \cdot T_{j {}^j\!\bowtie_k k}(q)$
+   for existing positions $j < k$, and
+   $M_{k-1} = T_{(k\!-\!1) {}^{k-1}\!\bowtie_k k}(q)$ for the new
    position.  The Hecke reduction $\sigma^2 =
    (q - q^{-1})\sigma + 1$ is handled within each
    $2\!\times\!2$ chain — zero Yang–Baxter steps, zero Hecke
@@ -146,7 +145,7 @@ degree $\lfloor 2g/(g-1) \rfloor$.*
 
 ### The six embeddable torus knots on $\Sigma_4$
 
-| Knot $\tau(r,s)$ | $r$ | $s$ | Degree | Shell | $\mathrm{tr}_M(\mathfrak{K} \!\cdot\! T_\beta)$ | Pauli |
+| Knot $\tau(r,s)$ | $r$ | $s$ | Degree | Shell | $\mathrm{tr}_M(\tau \!\cdot\! T_\beta)$ | Pauli |
 |:----:|:---:|:---:|:------:|:-----:|:---:|:---:|
 | $\tau(2,3) = e$ | $2$ | $3$ | $1$ | $1$ | $0.3649$ | $0.4667$ |
 | $\tau(2,5)$ | $2$ | $5$ | $1$ | $2$ | $0.4251$ | $0.3788$ |
@@ -190,7 +189,7 @@ Each factor in $\mathcal{Q}_q$ reads geometrically:
 |--------|----------|
 | $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Exceptional divisor levels traversed (color tube degrees) |
 | $\hbar_q = (q-1)/q$ | Action quantum per divisor step (discrete fiber spacing) |
-| $m_e / 3$ | Mass per trefoil crossing ($\mathfrak{K}_e$ has $3$ crossings) |
+| $m_e / 3$ | Mass per trefoil crossing ($\mathcal{K}_e = \tau(2,3)$ has $3$ crossings) |
 | $F(\tau(k^*), N)$ | Spectral projection onto the active divisor |
 
 The ratio $\hbar_q / \ln q = 0.9496$ is the **discretisation
