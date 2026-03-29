@@ -1,21 +1,23 @@
-import { proposition } from "../../schema/builders";
+import { theorem } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:torus-knot-shell-binding",
+export default theorem({
+  label: "thm:torus-knot-shell-binding",
   title:
-    "Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$",
+    "Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$",
   tags: [
     "shell-binding",
     "torus-knot",
     "transfer-matrix",
-    "strong-force",
     "q-value",
     "beta-decay",
-    "groebner-normal-form",
+    "spectral-decomposition",
+    "jet-bundle",
+    "exceptional-divisor",
     "representation-theory",
     "young-symmetrizer",
     "pauli-exclusion",
-    "operator-average",
+    "self-duality",
+    "hilbert-space-completeness",
   ],
   lean: {
     decl: "QOU.Descartes.torus_knot_shell_binding",
@@ -28,5 +30,6 @@ export default proposition({
     "prop:beta-decay-transfer-matrix",
     "prop:nuclear-groebner-reduction",
     "rem:fivefold-symmetry",
+    "prop:cohomological-embedding",
   ],
 });

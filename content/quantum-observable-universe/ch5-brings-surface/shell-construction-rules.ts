@@ -12,9 +12,9 @@ export default remark({
     "borromean",
     "construction-rules",
   ],
-  interprets: "prop:torus-knot-shell-binding",
+  interprets: "thm:torus-knot-shell-binding",
   uses: [
-    "prop:torus-knot-shell-binding",
+    "thm:torus-knot-shell-binding",
     "prop:shell-closure-normal-form",
     "prop:skein-finiteness-bound",
     "prop:nuclear-groebner-reduction",

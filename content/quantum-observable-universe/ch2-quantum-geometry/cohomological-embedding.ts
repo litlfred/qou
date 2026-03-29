@@ -21,7 +21,7 @@ export default proposition({
   uses: [
     "def:quantum-universe",
     "prop:skein-finiteness-bound",
-    "prop:torus-knot-shell-binding",
+    "thm:torus-knot-shell-binding",
     "prop:shell-closure-normal-form",
     "rem:fivefold-symmetry",
   ],
