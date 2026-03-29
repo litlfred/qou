@@ -35,9 +35,8 @@ without committing to any particular ontology.
 A remarkable fact — and the central thesis of this book — is that
 these everyday observations, once stated carefully, determine a
 specific algebraic structure: a *rigid monoidal category* equipped
-with a fibre functor and a Frobenius trace $\int_A$.  We call this
-structure
-a **quantum observable universe**.  Its axioms encode precisely the
+with a fibre functor and a Frobenius trace $\int_A$.  We call
+this structure a **quantum observable universe**.  Its axioms encode precisely the
 features listed above and nothing more.
 
 What follows from these axioms is surprising in both scope and
@@ -188,8 +187,9 @@ algebra fixes it exactly:
 
 $$
   d_H(q) = \frac{(2q-1)^2}{q^3}.
+$$
 
-and crossing energy relates to categorical mass by
+And crossing energy relates to categorical mass by
 
 $$
   E_H = \mathfrak{m}_H \cdot c_q^{\,2},
