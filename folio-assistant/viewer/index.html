@@ -5543,11 +5543,13 @@
       const hash = location.hash || '#/';
       const raw = hash.slice(1); // remove #
 
-      // Shorthand: #rem:foo or #rem:foo@branch → standalone block detail view
+      // Shorthand: #rem:foo or #rem:foo@branch → load paper and scroll to block
       if (LABEL_RE.test(raw) || (raw.includes('@') && LABEL_RE.test(raw.split('@')[0]))) {
         const { slug, branch } = parseBranchFromSlug(raw);
         applyUrlBranch(branch);
-        await routeBlock(slug);
+        pendingScroll = slug;
+        if (!paper) await loadDefaultPaper();
+        else scrollToLabel(slug);
         return;
       }
 
