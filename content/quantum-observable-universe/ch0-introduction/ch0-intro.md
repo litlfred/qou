@@ -94,7 +94,13 @@ $$
   (\mathbf{C},\; \theta,\; G,\; \mathcal{S}).
 $$
 
-The chapter then develops the categorical action
+The chapter then constructs a categorical Dirac operator
+$\mathcal{D}_\nabla$ from the connection and Reeb derivation.
+Its square decomposes — forced by the Frobenius–Hopf structure,
+not by assumption — into exactly two curvature terms: one
+measuring how space itself curves (Ricci), one measuring how the
+internal gauge field curves (Yang–Mills).  Coupling a matter
+state $\psi$ adds a third.  The result is the categorical action
 
 $$
   \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
@@ -108,9 +114,9 @@ $$
   \underbrace{\textstyle\int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\,\psi\bigr)}_{\text{matter}},
 $$
 
-constructed entirely from the rigid monoidal structure via a
-categorical Lagrangian and Dirac operator, and derives from it
-quantum versions of the Einstein, Yang–Mills, and Dirac equations.
+constructed entirely from the rigid monoidal structure.  Varying
+this action yields quantum versions of the Einstein, Yang–Mills,
+and Dirac equations.
 
 [Chapter 3](#chap:torsion) turns to the obstructions that arise
 when local data is extended to global structures.  Measurement
