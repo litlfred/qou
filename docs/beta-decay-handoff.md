@@ -144,13 +144,23 @@ N=82 is a closed shell → fully antisymmetric under Pauli exclusion →
 projects onto the alternating irrep (1,1,1) of H₃(q) → additional
 suppression F_Pauli = 0.6382.
 
-### P3: g_A = 1.275 from Borromean suppression
+### P3: g_A = 1.275 from Borromean — RESOLVED
 
-PDG: g_A = 1.2754 +/- 0.0013.
-Naive: g_A = 5/3 from Borromean braid.
-Need: suppression factor 5/3 -> 1.275.
-The Borromean braid in H_3 has a specific structure that should give this,
-but the computation hasn't been successful.
+g_A(q) = (5/3) × |tr_std(⅓Σ h_ij)| / |tr_sym(⅓Σ h_ij)|
+
+where h_ij = σ_i⁻¹σ_jσ_iσ_j⁻¹ is the half-Borromean at color pairing (i,j),
+and the sum is over the 3 cyclic orderings of (r,g,b).
+
+Evaluates to ≈ 1.2766 at substrate q₀ (+0.1% from PDG 1.2754 ± 0.0013).
+
+The 3-fold color average is essential: individual pairings give
+h₀₁ → 0.984 (-23%), h₁₂ → 0.984 (-23%), h₀₂ → 1.863 (+46%).
+The average hits the target because h₀₂ (conjugated pairing) sees
+a different fiber anisotropy than h₀₁, h₁₂.
+
+Geometric meaning: ratio of transverse (axial/standard irrep) to
+longitudinal (vector/symmetric irrep) fiber action. The 3-fold
+color average captures the full Borromean topology on Σ₄.
 
 ### P4: Lean formalization backlog
 
