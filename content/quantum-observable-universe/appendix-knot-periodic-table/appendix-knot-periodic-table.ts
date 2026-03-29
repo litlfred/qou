@@ -8,8 +8,7 @@ import { chapter, section } from "../../schema/builders";
  * elements with QOU predicted masses and AME2020 binding energies.
  */
 export default chapter({
-  number: 9,
-  tabLabel: "A",
+  tabLabel: "T",
   title: "Knot-Periodic Table of the Elements",
   label: "app:knot-periodic-table",
   sections: [
