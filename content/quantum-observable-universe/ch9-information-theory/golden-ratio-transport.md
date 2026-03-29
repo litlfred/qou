@@ -60,7 +60,7 @@ conformal relationship between the two periods, is destroyed as the
 torus degenerates into a nodal rational curve.
 
 **The identity: metric $\varphi$ becomes algebraic $\varphi$.**
-The golden ratio that was a length ratio in $\Pi(1.1097)$ becomes the
+The golden ratio that was a length ratio in $\Pi(q_0)$ becomes the
 root of the polynomial $(s^2 + s - 1)$ that kills the Weierstrass
 coefficient $r(q)$.  Explicitly: the factor $s^2 + s - 1$ is the
 **minimal polynomial of $1/\varphi$ over $\mathbb{Q}$**, and it
@@ -74,7 +74,7 @@ The shape information of the parallelogram (the ratio $\varphi$ in
 the lattice) and the degeneration condition (the root $1/\varphi$ of
 $s^2 + s - 1$) are **the same algebraic number** seen at different
 points of the $q$-parameter space.  Parallel transport makes this
-identity manifest: carrying $\Pi$ from $q = 1.1097$ to
+identity manifest: carrying $\Pi$ from $q = q_0$ to
 $q = q_{\mathrm{gold}}$ transforms the geometric content ($\varphi$
 as a length ratio) into the algebraic content ($\varphi$ as the
 instability threshold).
