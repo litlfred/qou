@@ -5,11 +5,28 @@ quark matter therefore binds harder — by a factor of $4/3$ per
 baryon — and is automatically electromagnetically neutral
 ($Q = 0$, a topological identity independent of $q$).  This is
 Witten's 1984 hypothesis \cite{witten1984} falling straight out
-of the knot assignments.  But strange quarks live at genus $2$,
-not genus $1$, so they are heavier.  At our substrate parameter
-$q = 1.1097$ the mass penalty wins: ordinary nuclear matter
-remains the ground state.  Witten asked the right question; the
-answer is no, but the margin is not large.
+of the knot assignments.  But all torus knots have zero
+hyperbolic volume; the mass difference between strange and
+non-strange baryons comes from the **Jones polynomial**, not
+from genus.  The cinquefoil's Jones polynomial evaluates
+$22\%$ higher than the trefoil's at $q = 1.1097$ ($1.176$ vs
+$0.960$), and this Skein polynomial cost — roughly $168$ Skein
+units per strange quark — overwhelms the crossing-energy gain
+of $1.8$ Skein units by a factor of $93$.  At zero pressure,
+ordinary matter wins decisively.
+
+But not everywhere.  Inside neutron stars, the Fermi energy
+pays the Skein polynomial cost.  Above $\rho \gtrsim 2\rho_0$,
+strange quarks become accessible; above $5\rho_0$, the
+composition approaches equal
+$(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$.  **The inner
+cores of massive neutron stars are strangelets** — macroscopic,
+electromagnetically neutral, gravitationally bound lumps of
+strange quark matter.  Below the golden ratio
+($q < q_{\mathrm{gold}} \approx 0.382$), there are no hadrons
+at all — the fiber degenerates and quarks are free — so there
+are no strangelets either.  Strangelets are a high-density
+phenomenon at the physical $q$, not a low-$q$ phenomenon.
 
 Push the density up — neutron star cores — and the story
 changes.  Three topological thresholds appear, each a genuine
