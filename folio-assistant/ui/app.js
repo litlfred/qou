@@ -1284,7 +1284,14 @@
         if (asset) {
           return `<div class="txb"><img src="${escAttr(asset.url)}" alt="diagram" class="txb-svg"></div>`;
         }
-        return `<div class="txb ph">${esc(code.trim())}</div>`;
+        // Try KaTeX for simple environments, show raw for complex (tikzcd)
+        const trimmed = code.trim();
+        if (/\\begin\{(align|equation|gather|cases)/.test(trimmed)) {
+          // Strip \begin{env}...\end{env} wrapper for KaTeX
+          const inner = trimmed.replace(/^\\begin\{[^}]+\}/, "").replace(/\\end\{[^}]+\}$/, "").trim();
+          return `<span class="katex-display-raw" data-tex="${escAttr(inner)}"></span>`;
+        }
+        return `<div class="txb ph">${esc(trimmed)}</div>`;
       }
       return `<pre style="background:var(--bg-r);padding:.6rem;border-radius:4px;overflow-x:auto;font-size:.8rem"><code>${esc(code)}</code></pre>`;
     });
