@@ -50,7 +50,7 @@ slightly increased.
 **Why the net signed crossing.**
 The $q$-deformed wedge product $\wedge_q$ in the gauge sector of the
 canonical action
-([canonical action](#def:qou-canonical-action))
+([canonical action](#prop:qou-canonical-action))
 assigns:
 - weight $q$ to $\mathfrak{p}$--$\mathfrak{p}$ crossings (positive),
 - weight $q^{-1}$ to $\mathfrak{n}$--$\mathfrak{n}$ crossings

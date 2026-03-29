@@ -51,7 +51,7 @@ works over any field.
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
 | Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | Minimal step; time is fastest |
-| Physical | $q = 1.1097$ ([local substrate $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | Our Planck time |
+| Physical | $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | Our Planck time |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | No Reeb period; time freezes |
 
 At the Big Bang, $t_P \to 1$: **one Planck step equals one unit**.
@@ -172,7 +172,7 @@ detect the chiral instability.
 **Counting Planck steps.**
 The number of Planck steps between two values of $q$ measures the
 dynamical "distance" in Reeb time.  From the Big Bang ($q_0 \gg 1$)
-to our universe ($q = 1.1097$, [local substrate $q$](#prop:local-substrate-q)):
+to our universe ($q = q_0$, [local substrate $q$](#prop:local-substrate-q)):
 
 $$
   N(q_0, q)

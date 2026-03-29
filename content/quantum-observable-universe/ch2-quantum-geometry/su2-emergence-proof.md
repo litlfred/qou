@@ -7,7 +7,7 @@ $g_X \colon \tau(X) \to \tau(X)$ to every object $X \in \mathbf{C}$.
 Because $g$ is a natural transformation, it commutes with all morphisms
 in $\mathbf{C}$, including the volume constraint
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
-\eqref{eq:categorical-volume-constraint}. Applying $\tau$ yields the
+[volume constraint](#eq:categorical-volume-constraint). Applying $\tau$ yields the
 commutative diagram of $R$-modules
 
 ```tex
@@ -28,14 +28,14 @@ commutative diagram of $R$-modules
 
 The volume constraint requires a non-degenerate epimorphism
 $\epsilon \colon \Lambda^2 V \to \mathbf{1}$, which forces
-$\operatorname{rank}(V) = 2$: the epimorphism is non-degenerate only
+$\mathrm{rank}(V) = 2$: the epimorphism is non-degenerate only
 when $\Lambda^2 V$ has rank $1$, and
-$\operatorname{rank}(\Lambda^2 V) = \binom{r}{2}$ equals $1$ precisely
+$\mathrm{rank}(\Lambda^2 V) = \binom{r}{2}$ equals $1$ precisely
 for $r = 2$ (see [Remark](#rem:fundamental-object-explication)). Thus
 $\tau(V)$ is a rank-$2$ free $R$-module and $\Lambda^2 \tau(V)$ has
 rank $1$. The induced operator $\Lambda^2 g_V$ acts on this rank-$1$
 module as scalar multiplication by $\det(g_V)$. Following
-diagram \eqref{eq:su2-emergence-diagram} from the top-left to the
+diagram [above](#eq:su2-emergence-diagram) from the top-left to the
 bottom-right:
 $$
   \tau(\epsilon) \circ \Lambda^2 g_V

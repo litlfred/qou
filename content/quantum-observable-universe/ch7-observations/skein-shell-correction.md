@@ -15,7 +15,7 @@ The chain from R-matrix to nuclear binding is:
 $$
   \mathcal{R} \;\xrightarrow{\text{Yang--Baxter}}\;
   \check{R} \;\xrightarrow{\text{crossing asymmetry}}\;
-  \mathfrak{E}_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
+  \mathbf{E}_{\mathrm{cross}} \;\xrightarrow{\text{Skein binding}}\;
   \mathcal{L}_{\mathrm{bind}} \;\xrightarrow{\partial/\partial p}\;
   p^*(A)
 $$

@@ -9,4 +9,5 @@ export default definition({
     "def:categorical-instanton",
     "def:quantum-gauge-group",
   ],
+  examples: ["rem:levi-generalisation", "rem:self-dual-2group", "rem:frobenius-simplification"],
 });

@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "thm:embeddability-closure",
   label: "rem:linking-relations-table",
   title:
     "Linking relations between building block knots",

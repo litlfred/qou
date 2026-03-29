@@ -19,9 +19,9 @@ The electron is the left trefoil $T_{2,3}$ with $n_c = 3$ positive
 crossings.  Its [crossing energy](#def:crossing-energy) is
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(e^-)
+  \mathbf{E}_{\mathrm{cross}}(e^-)
   \;=\; 3q
-  \;\approx\; 3 \times 1.10997
+  \;\approx\; 3 \, q_0
   \;=\; 3.330
   \quad (\text{in Skein units}).
 $$
@@ -29,7 +29,7 @@ $$
 The positron is the mirror $\sigma(T_{2,3})$ with $3$ negative crossings:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(e^+)
+  \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; -3q^{-1}
   \;\approx\; -3 \times 0.9010
   \;=\; -2.703
@@ -39,8 +39,8 @@ $$
 The **crossing energy gap** between the two chiralities is
 
 $$
-  \Delta \mathfrak{E}_{\mathrm{cross}}
-  \;=\; \mathfrak{E}_{\mathrm{cross}}(e^-) - \mathfrak{E}_{\mathrm{cross}}(e^+)
+  \Delta \mathbf{E}_{\mathrm{cross}}
+  \;=\; \mathbf{E}_{\mathrm{cross}}(e^-) - \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; 3(q + q^{-1})
   \;\approx\; 6.033
   \quad (\text{in Skein units}).
@@ -61,7 +61,7 @@ $$
 
 | Process | Energy | QOU description |
 |---------|--------|-----------------|
-| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 = 1.022$ MeV | New pair from photon; trefoil + mirror created at exceptional divisor |
+| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 \approx 1.022$ MeV | New pair from photon; trefoil + mirror created at exceptional divisor |
 | Crossing energy gap (one trefoil) | $3(q + q^{-1}) \approx 6.03$ Skein units | Full reversal of all 3 crossings; maps to $\Delta E = 6\cosh(\ln q)$ |
 | Complex-$q$ barrier ($\theta = 0 \to \pi$) | Topological, not energetic | Continuous rotation in pre-observable sector; no energy cost in observable sector |
 
@@ -75,7 +75,7 @@ $$
    sign and partially cancel in the pair:
 
    $$
-     \mathfrak{E}_{\mathrm{cross}}(e^-) + \mathfrak{E}_{\mathrm{cross}}(e^+)
+     \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
      \;=\; 3q - 3q^{-1}
      \;=\; 3(q - q^{-1})
      \;\approx\; 0.630
@@ -121,7 +121,7 @@ $$
 The energy to "convert" an electron to a positron is either:
 - **$\infty$** (impossible within the observable sector — topologically
   forbidden),
-- **$2m_e = 1.022$ MeV** (create a new pair at the exceptional divisor),
+- **$2m_e \approx 1.022$ MeV** (create a new pair at the exceptional divisor),
   or
 - **$0$** (in the pre-observable complex-$q$ sector, chirality
   rotation is free — but inaccessible to measurement).

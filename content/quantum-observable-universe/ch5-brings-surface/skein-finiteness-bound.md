@@ -194,9 +194,9 @@ grows monotonically.  The crossover:
 
 The crossover occurs at $A = 5$ for all $q > 1$ (the
 $q$-correction is $O(\varepsilon^2)$ where $\varepsilon = \ln q$,
-and at $q = 1.110$: $\varepsilon^2 = 0.011$, negligible).
+and at $q = q_0$: $\varepsilon^2 = 0.011$, negligible).
 
-**At $q = 1.110$:** $[A\!-\!1]_q! > [2]_q^{A-1}$ first at
+**At $q = q_0$:** $[A\!-\!1]_q! > [2]_q^{A-1}$ first at
 $A = 5$.  The Skein polynomial sign flip occurs at $A = 6$
 (one step later, because the (2,2) shell closure stabilises
 $A = 4$).
@@ -243,7 +243,7 @@ This lattice is bounded by:
   — islands of enhanced stability where the palindromic Poincaré
   distribution gives maximum binding.
 
-The lattice $\mathcal{L}(q)$ at $q = 1.110$ reproduces the
+The lattice $\mathcal{L}(q)$ at $q = q_0$ reproduces the
 experimental nuclear chart: stable isotopes cluster along the
 valley of stability with magic-number shell closures at
 $N, Z \in \{2, 8, 20, 28, 50, 82, 126\}$.

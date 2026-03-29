@@ -1,6 +1,6 @@
 **Conjecture.**
 *Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be the Descartes
-universe at substrate parameter $q = 1.1097$.  At baryon densities
+universe at substrate parameter $q = q_0$.  At baryon densities
 $\rho > \rho_c$, where $\rho_c$ is determined by the
 [energy crossover](#prop:borromean-hopf-energy-crossover), the
 ground state of strange quark matter undergoes a topological
@@ -116,7 +116,7 @@ of the Hopf link binding the diquark:
 $$
   \Delta_{\mathrm{CFL}}
   \;=\;
-  |\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)|
+  |\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)|
   \;=\;
   q + q^{-1}
   \;\approx\; 2.011 \quad\text{Skein units}.

@@ -1,21 +1,21 @@
 **Proposition.**
-Let $\gamma: S^1 \hookrightarrow \Sigma_4$ be the trefoil
+Let $\varrho: S^1 \hookrightarrow \Sigma_4$ be the trefoil
 $T_{2,3}$ embedded in the Bring's surface, and let
-$N = N_{\gamma/\Sigma_4}$ be the normal bundle.  The four
+$N = N_{\varrho/\Sigma_4}$ be the normal bundle.  The four
 quantum numbers $(n, \ell, m, s)$ arise from the Fourier
 decomposition of sections $\sigma \in \Gamma(N)$ as follows.
 
 **The normal bundle.**
 
-The trefoil $\gamma(S^1)$ is a smooth closed curve in the
+The trefoil $\varrho(S^1)$ is a smooth closed curve in the
 $3$-dimensional Bring's surface $\Sigma_4$ (viewed locally as a
 real $3$-manifold via the spatial realization functor).  The
 normal bundle $N$ is a rank-$2$ real vector bundle over
 $S^1$:
 
 $$
-  N_p \;=\; T_p \Sigma_4 \,/\, T_p \gamma
-  \qquad\text{for } p \in \gamma(S^1).
+  N_p \;=\; T_p \Sigma_4 \,/\, T_p \varrho
+  \qquad\text{for } p \in \varrho(S^1).
 $$
 
 At each point of the trefoil, $N_p \cong \mathbb{R}^2$ — two
@@ -26,7 +26,7 @@ displacement at each point of the trefoil.
 **Parametrisation.**
 
 Let $\theta \in [0, 2\pi)$ parametrise the trefoil
-$\gamma(\theta)$.  A section decomposes as
+$\varrho(\theta)$.  A section decomposes as
 
 $$
   \sigma(\theta)
@@ -45,7 +45,7 @@ $$
 $$
 
 where $\hat{n}_1(\theta), \hat{n}_2(\theta)$ are an
-orthonormal frame for $N_{\gamma(\theta)}$ that rotates
+orthonormal frame for $N_{\varrho(\theta)}$ that rotates
 smoothly as $\theta$ varies.
 
 The **total framing twist** is
@@ -100,7 +100,7 @@ $$
 $$
 
 is the $q$-integer.  At $q = 1$, this recovers the classical
-eigenvalue $\ell(\ell + 1)$.  At $q = 1.1097$, the
+eigenvalue $\ell(\ell + 1)$.  At $q = q_0$, the
 $q$-deformation shifts the eigenvalues:
 
 | $\ell$ | $\ell(\ell+1)$ | $[\ell]_q [\ell+1]_q$ | Shift |
@@ -147,7 +147,7 @@ around the proton.
 
 **Why $V_\ell$ and not some other representation.**  The
 Fourier mode $\ell$ on $S^1$, transported to $\mathbb{R}^3$
-by the embedding $\gamma$, generates a function on the
+by the embedding $\varrho$, generates a function on the
 sphere $S^2$ surrounding the proton (the time-averaged orbit
 of the trefoil).  This function is a **homogeneous harmonic
 polynomial of degree $\ell$** restricted to $S^2$, which is

@@ -101,11 +101,11 @@ $$
 |--------|-----|----------|---------|
 | Big Bang | $q \to \infty$ | $\to 0$ | Energy $\to 0$ for any mass: no spatial crossing weight |
 | Deep quantum | $\varphi^2$ | $\approx 0.382$ | Sub-relativistic: mass dominates energy |
-| Our universe | $1.1097$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
+| Our universe | $q_0$ | $\approx 83.2$ | $E \approx 83\,\mathfrak{m}$: large amplification |
 | Near-classical | $1.01$ | $10{,}000$ | Extreme amplification: tiny mass $\to$ large energy |
 | Classical limit | $q \to 1^+$ | $\to \infty$ | $E/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
 
-At $q = 1.1097$, a vortex with categorical mass $\mathfrak{m}$
+At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$
 carries crossing energy
 $E = \mathfrak{m}/(q-1)^2 \approx 83\,\mathfrak{m}$.
 This large amplification factor is the QOU explanation for why
@@ -121,7 +121,7 @@ crossings:
 - Predicted mass: $\mathfrak{m}_{e^-} = E \cdot (q-1)^2
   = 3q(q-1)^2$.
 
-At $q = 1.1097$: $\mathfrak{m}_{e^-} = 3 \times 1.1097 \times 0.01203
+At $q = q_0$: $\mathfrak{m}_{e^-} = 3 q_0 \times 0.01203
 \approx 0.0401$ (in Reeb mass units).
 
 **Pair creation reinterpreted.**

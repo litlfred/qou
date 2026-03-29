@@ -42,7 +42,7 @@ number computable from the hook lengths of the tableau $\lambda$.
 This orthogonality has two consequences for the QOU framework:
 
 1. **Decomposition of hadron states.** A
-   [categorical hadron](#def:categorical-hadron) of valence $n$ can be
+   [categorical hadron](#def:hadron) of valence $n$ can be
    uniquely expanded in the PawLei basis, with
    coefficients that are physically interpretable as partial-wave
    amplitudes.

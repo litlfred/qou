@@ -59,7 +59,7 @@ Bang ($q \to \infty$, no fractal, $d_{H,q} = 0$).
 |-----|----------|-------|
 | $1$ | $1.000$ | Classical limit (unit circle) |
 | $1.01$ | $1.010$ | Near-classical |
-| $1.1097$ | $1.088$ | Our universe |
+| $q_0$ | $1.088$ | Our universe |
 | $1.5$ | $1.185$ | Basilica ($c = -3/4$) |
 | $2.0$ | $1.125$ | Deep quantum |
 | $\varphi^2$ | $1.000$ | Golden crossover |
@@ -121,11 +121,11 @@ The downward iteration $q_{n+1} = q_n - \hbar_{q_n}
 = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit
 $q = 1$, which is a **superattracting fixed point** (the derivative
 $|1 - 1/q^2|$ vanishes at $q = 1$).  Starting from our local
-$q_0 = 1.1097$:
+$q_0$:
 
 | Step | $q_n$ | $\hbar_{q_n}$ | $d_{H,q}$ | $\eta_q$ |
 |:----:|--------|---------------|-----------|----------|
-| 0 | $1.1097$ | $0.0989$ | $1.088$ | $0.892$ |
+| 0 | $q_0$ | $0.0989$ | $1.088$ | $0.892$ |
 | 1 | $1.0108$ | $0.0107$ | $1.010$ | $0.991$ |
 | 2 | $1.0001$ | $0.0001$ | $1.000$ | $1.000$ |
 | 3 | $1.0000$ | $0$ | $1.000$ | $1.000$ |

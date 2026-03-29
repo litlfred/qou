@@ -47,7 +47,7 @@ into a continuous flow parameter.
    resolved in the exceptional divisor.  There is no sub-step
    structure and no averaging.  Time is a natural number.
 
-2. **Statistical regime** ($q = 1.1097$
+2. **Statistical regime** ($q = q_0$
    ([local substrate $q$](#prop:local-substrate-q)), our universe).
    $t_P \approx 10$: approximately $10$ Reeb operations compose
    each Planck unit.  Individual operations are no longer
@@ -81,7 +81,7 @@ operations; the right side is the continuous-flow time-average.
 They agree to $O(1/t_P) = O(\hbar_q)$ — the error vanishes
 precisely as the quantum Planck constant goes to zero.
 
-At $q = 1.1097$
+At $q = q_0$
 ([local substrate $q$](#prop:local-substrate-q)),
 $t_P \approx 10$: the Riemann approximation has
 $O(1/10) \approx 10\%$ relative error.  This is the scale at

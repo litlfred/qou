@@ -1,5 +1,5 @@
 
-With $q = 1.1097$ fixed by the lepton mass ratio
+With $q = q_0$ fixed by the lepton mass ratio
 ([skein mass relation](#rem:skein-mass-relation)), the hadronic masses are
 determined without free parameters.
 
@@ -66,8 +66,8 @@ $$
   \;=\;
   \frac{q + q^{-1}}{q^{1/2}+q^{-1/2}}\;(\mu_d - \mu_u).
 $$
-Substituting $q = 1.1097$ and the CODATA splitting
-$m_n - m_p = 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
+Substituting $q = q_0$ and the CODATA splitting
+$m_n - m_p \approx 1.293\,332\,51\;\mathrm{MeV}$ determines the dressed quark
 mass difference:
 $$
   \mu_d - \mu_u
@@ -86,7 +86,7 @@ The deuteron is a six-component link $L_6$ formed by joining the proton
 and neutron braids. Its mass is the Skein mass of $L_6$ minus the binding
 energy, which equals the change in the Skein polynomial when the
 proton--neutron crossing is smoothed:
-$\Delta \mathfrak{E}_{\mathrm{bind}} = 2.224\;\mathrm{MeV}$. The CODATA derived
+$\Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\;\mathrm{MeV}$. The CODATA derived
 value is $2.2246\;\mathrm{MeV}$, agreeing to sub-keV precision.
 
 The formal Lean verification of each row is recorded in

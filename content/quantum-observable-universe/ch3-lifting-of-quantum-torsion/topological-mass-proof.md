@@ -8,7 +8,7 @@ and evaluation via the quantum dilogarithm.
 By the ([mass identity](#def:mass-identity)), the mass of
 the vortex $\varrho$ is
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
@@ -54,7 +54,7 @@ where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms
 and using the submultiplicativity of $\lVert\cdot\rVert$ (which is an
 equality for the orthogonal decomposition of an idempotent):
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
@@ -136,7 +136,7 @@ exceptional fibre $E_i \subset D_i$.
 *Step 4: Quantum dilogarithm evaluation.*
 Combining Steps 1--3:
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho_0;\, \mathfrak{G}\bigr)

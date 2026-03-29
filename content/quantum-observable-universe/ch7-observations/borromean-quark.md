@@ -48,7 +48,7 @@ $$
 $$
 
 By the topological mass formula
-$m = \mathrm{Vol}(K) / \hbar_q^2$, the baryon mass comes
+$\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$, the baryon mass comes
 **entirely from the Borromean linking** — not from the
 constituent unknots.  This matches the QCD result: approximately
 $99\%$ of the proton's $938$ MeV comes from gluon binding

@@ -1,4 +1,4 @@
-Let $(\mathcal{C}, A, \tau)$ be a quantum observable universe with
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q \in k^{\times}$
 ([substrate parameter](#def:substrate-parameter)), and let $\gamma_i$
 ($i = 1,2$) be two paths from a source to a screen position $y$,
@@ -21,7 +21,7 @@ where:
 - $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\,\theta$
   is the *Reeb phase* --- the rotation accumulated by the internal
   chiral fibre along $\gamma_i$
-  ([Reeb derivation](#def:categorical-reeb-derivation));
+  ([Reeb derivation](#def:categorical-reeb));
 - $\hbar_q = 1 - q^{-1}$
   ([quantum Planck constant](#def:quantum-planck-constant)).
 

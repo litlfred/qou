@@ -11,5 +11,6 @@ export default proposition({
     "rem:spin-half-representation",
     "unital-groebner-bases:cor:pbw",
   ],
+  examples: ["rem:adjoint-trace"],
   tags: ["basis", "intertwiner", "representation", "pawlei"],
 });

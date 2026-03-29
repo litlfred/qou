@@ -6,7 +6,7 @@ export default proposition({
     decl: "QOU.dq_squared",
     validation: "not_checked",
   },
-  title: "d_q^2 does not vanish",
+  title: "$d_q^2$ does not vanish",
   tags: ["q-deformation", "exterior-derivative"],
   uses: ["def:categorical-q-ext-deriv"],
   proofs: ["prf:dq-squared"],

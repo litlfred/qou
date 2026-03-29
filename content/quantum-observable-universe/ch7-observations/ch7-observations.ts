@@ -217,7 +217,7 @@ export default chapter({
       blocks: [
         "q-double-slit",
         "double-slit-analytical",
-        "brings-surface",
+        "brings-surface-simulator",
         "quantum-brings-surface",
       ],
     }),

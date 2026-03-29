@@ -14,5 +14,6 @@ export default definition({
     "rem:r-matrix-braiding",
     "thm:jones-markov-trace",
   ],
+  examples: ["rem:skein-decomposition"],
   cites: ["frenkel2004", "kassel1995"],
 });

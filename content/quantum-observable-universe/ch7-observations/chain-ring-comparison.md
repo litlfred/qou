@@ -14,7 +14,7 @@ $$
   \;\xrightarrow{\text{scale separation}}\;
   |q + q^{-1}|_{\mathrm{mol}}
   \;\xrightarrow{\Delta_{T(2,6)}(q)}\;
-  \mathfrak{E}_{\mathrm{cross}}.
+  \mathbf{E}_{\mathrm{cross}}.
 $$
 
 1. The substrate parameter $q$ is fixed by $\chi(A) = -6$
@@ -25,7 +25,7 @@ $$
    Lagrangian volume term.
 
 3. $\alpha$ and $m_e/m_p$ are determined by the knot spectrum
-   ([topological mass formula](#def:topological-mass-formula)).
+   ([topological mass formula](#prop:topological-mass-formula)).
 
 4. The molecular crossing energy quantum follows by scale
    separation: $|q + q^{-1}|_{\mathrm{mol}} = (\alpha^2 m_e / m_p)

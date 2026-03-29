@@ -2,7 +2,7 @@ The stability curve and the chiral fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
 nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
-isogenous to the chiral fiber $E_z$.
+isogenous to the chiral fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
@@ -142,7 +142,7 @@ If the conjecture holds, then:
   binding: volume (strong), Coulomb (electromagnetic), and
   Pauli (exclusion).
 
-- The **elliptic fiber** $E_z$ at spacetime $z$ encodes the
+- The **elliptic fiber** $\mathcal{E}_z$ at spacetime $z$ encodes the
   allowed baryon configurations at that point; the **stability
   elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed
   nuclear configurations at that proton count.

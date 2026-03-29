@@ -52,7 +52,7 @@ Manning--McCluskey inputs:
 | **Lyapunov exponent** | $\chi(c)$ (computed numerically for specific $c$) | $\chi_q = 1/(2q-1)$ (rational in $q$) |
 | **Formula** | $d_H = \ln 2 / \chi(c)$ | $d_{H,q} = \eta_q / \chi_q$ |
 | **At $q = 1$** | $d_H = \ln 2 / \ln 2 = 1$ | $d_{H,q} = 1/1 = 1$ |
-| **At $q = 1.1097$** | $d_H \approx 1.047$ (transfer operator) | $d_{H,q} \approx 1.088$ (exact) |
+| **At $q = q_0$** | $d_H \approx 1.047$ (transfer operator) | $d_{H,q} \approx 1.088$ (exact) |
 | **Field dependence** | $\mathbb{C}$ only | Any field $k$ with $q \in k^\times$ |
 
 The classical $d_H$ depends on the transcendental quantity $\ln 2$
@@ -63,7 +63,7 @@ $\mathbb{F}_p$, $\mathbb{Q}_p$, or any field.  The two agree at
 $q = 1$ and at $q = \varphi^2$ (where both equal $1$), but they
 diverge away from these fixed points.
 
-The $3.9\%$ gap at $q = 1.1097$ is not an error — it measures the
+The $3.9\%$ gap at $q = q_0$ is not an error — it measures the
 difference between classical conformal dynamics (which uses $\ln 2$
 as the topological entropy of a degree-$2$ map) and the
 $q$-deformed dynamics (which replaces $\ln 2$ with $\eta_q$).  The
@@ -101,7 +101,7 @@ circuit ([Planck time](#def:planck-time)).
 | Regime | $q$ | $\eta_q$ | $d_{H,q}$ | Interpretation |
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
-| Our universe | $1.1097$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
+| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Big Bang | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 

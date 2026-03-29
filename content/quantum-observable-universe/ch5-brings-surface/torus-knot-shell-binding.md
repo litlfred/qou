@@ -109,7 +109,7 @@ in $q^{1/2}$**, and the Hecke element corresponding to
 the renormalized transfer matrix chain is in **Gröbner normal
 form** — it satisfies all three conditions:
 
-1. **No $\sigma_i^2$**: the Hecke recurrence eliminates all
+1. **No $T_i^2$**: the Hecke recurrence eliminates all
    squares (the renormalized coefficients are the OUTPUT of
    the recurrence, not the input).
 

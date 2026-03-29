@@ -38,7 +38,7 @@ $$
   \;\text{is invariant under R-I, R-II, R-III.}
 $$
 
-The electron mass $m_e = 0.511$ MeV (from vacuum drag, since
+The electron mass $m_e \approx 0.511$ MeV (from vacuum drag, since
 $\mathrm{Vol}(T_{2,3}) = 0$) does not change when the electron
 is excited.  The proton mass $m_{\mathfrak{p}} = 938$ MeV
 (from $\mathrm{Vol}(\mathcal{B}_3)$) does not change when the
@@ -52,7 +52,7 @@ nucleon--nucleon) is the crossing energy of the Hopf link
 connecting them:
 
 $$
-  \mathfrak{E}_{\mathrm{bind}}
+  \mathbf{E}_{\mathrm{bind}}
   \;=\;
   \sum_{\text{crossings of link}}
   \epsilon_i \cdot q^{\pm 1}
@@ -80,7 +80,7 @@ one particle's knot inside the other's Seifert surface.
   The binding energy **changes**. $\times$
 
 $$
-  \mathfrak{E}_{\mathrm{bind}}
+  \mathbf{E}_{\mathrm{bind}}
   \;\text{is invariant under R-II, R-III but \textbf{not} R-I.}
 $$
 

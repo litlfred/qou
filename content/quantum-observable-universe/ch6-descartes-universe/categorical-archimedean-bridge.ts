@@ -13,4 +13,16 @@ export default proposition({
     "def:categorical-q-ext-deriv",
   ],
   proofs: ["prf:categorical-archimedean-bridge"],
+  examples: [
+    "ex:calabi-yau",
+    "ex:ale",
+    "ex:brings-surface",
+    "ex:cosmological-limits",
+    "ex:instanton",
+    "ex:irreducible-connection",
+    "ex:self-dual-curvature",
+    "rem:c-substrate-via-levi",
+    "ex:reeb-decomposition",
+    "rem:gr-substrate-geometry",
+  ],
 });

@@ -17,7 +17,7 @@ $$
   2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At $q = 1.10997$: $m_{\mathfrak{n}} = 939.565$ MeV.  The
+At the CODATA value $q_0$: $m_{\mathfrak{n}}(q_0) \approx 939.565$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).  The
 proton--neutron mass splitting is
 
 $$

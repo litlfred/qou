@@ -22,7 +22,7 @@ Fact (3) is the QOU version of Witten's observation: by replacing
 down quarks ($\overline{T_{2,3}}$, 3 negative crossings) with
 strange quarks ($\overline{T_{2,5}}$, 5 negative crossings), each
 baryon gains $2q^{-1}$ additional binding in the strong channel.
-At $q = 1.1097$: this is $2 \times 0.9011 = 1.802$ Skein units
+At $q = q_0$: this is $2 \times 0.9011 = 1.802$ Skein units
 per baryon.
 
 **The Jones polynomial obstruction.**
@@ -39,9 +39,9 @@ The terminal resolution
 ([terminal resolution](#prop:terminal-resolution)) decomposes
 each hadronic link into a sum of unknots and Hopf links weighted
 by Skein polynomial coefficients.  These coefficients depend on
-the Jones polynomial of each constituent.  At $q = 1.1097$:
+the Jones polynomial of each constituent.  At $q = q_0$:
 
-| Quark | Knot | Jones polynomial | $|J(1.1097)|$ |
+| Quark | Knot | Jones polynomial | $|J(q_0)|$ |
 |-------|------|-----------------|:-------------:|
 | Up $\mathfrak{u}$ | $T_{2,3}$ | $-q^{-4} + q^{-3} + q^{-1}$ | $0.973$ |
 | Down $\mathfrak{d}$ | $\overline{T_{2,3}}$ | $-q^{4} + q^{3} + q$ | $0.960$ |
@@ -125,7 +125,7 @@ cost).  This constrains the $q$ range:
 | Deconfined | $q < q_{\mathrm{gold}} \approx 0.382$ | **No** | No hadrons at all — elliptic fiber degenerate, $S_5$ broken, quarks free |
 | Sub-classical | $q_{\mathrm{gold}} < q < 1$ | **No** | Hadrons exist but $|J_{\mathfrak{s}}|/|J_{\mathfrak{d}}|$ diverges as $q \to q_{\mathrm{gold}}$ — strange quarks become infinitely expensive near the degeneration |
 | Classical limit | $q = 1$ | **Trivial** | All Jones polynomials evaluate to $1$; no mass differences, no flavor physics |
-| Physical | $q > 1$ (ours: $1.1097$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy can overcome it at $\rho \gtrsim 2\rho_0$ |
+| Physical | $q > 1$ (ours: $q_0$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy can overcome it at $\rho \gtrsim 2\rho_0$ |
 
 Below $q_{\mathrm{gold}}$: there are no hadrons, so there are no
 strangelets.  The concept does not apply.  Between

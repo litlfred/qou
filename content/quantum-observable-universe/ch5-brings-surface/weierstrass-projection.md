@@ -15,7 +15,7 @@ The lattice $\Lambda_q$ is spanned by the two fundamental periods
 $\omega_1(q)$, $\omega_2(q)$ obtained by integrating the holomorphic
 differential $\mathrm{d}x / y$ over a basis of $H_1(\mathcal{E}_q, \mathbb{Z})$.
 The lattice modulus $\tau_q = \omega_2(q)/\omega_1(q)$ satisfies
-$\operatorname{Im}(\tau_q) > 0$ and encodes the conformal class of
+$\mathrm{Im}(\tau_q) > 0$ and encodes the conformal class of
 $\mathcal{E}_q$.
 
 **Uniformisation.**
@@ -56,7 +56,7 @@ to the classical $\wp$-function normalisation.
 | Regime | $q$ | Lattice shape | Physics |
 |--------|-----|---------------|---------|
 | Classical | $q = 1$ | $\Lambda_1$ rectangular ($\tau_1 \in i\mathbb{R}$) | Degenerate curve $\mathcal{E}_1$; no crossing asymmetry |
-| Physical | substrate $q$ | $\Lambda_q$ rhombic ($\operatorname{Im}(\tau_q) \approx 1.07$) | Our universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
+| Physical | substrate $q$ | $\Lambda_q$ rhombic ($\mathrm{Im}(\tau_q) \approx 1.07$) | Our universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\Lambda_q \to$ hexagonal ($\tau_q \to e^{2\pi i/3}$) | $j \to 0$; CM lattice; maximal symmetry |
 
 **Notation convention.**

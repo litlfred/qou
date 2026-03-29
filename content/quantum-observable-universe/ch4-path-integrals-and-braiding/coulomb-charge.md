@@ -10,7 +10,7 @@ The crossing energy ([crossing energy](#def:crossing-energy))
 decomposes as
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(H)
+  \mathbf{E}_{\mathrm{cross}}(H)
   \;=\;
   \underbrace{\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})}_{\text{baseline (strong)}}
   \;+\;
@@ -27,4 +27,4 @@ magnitude and sign of the electromagnetic correction:
 - $Q(H) < 0$: net negative crossings, attractive Coulomb contribution.
 
 The ratio of Coulomb to strong contributions is
-$\tanh(\ln q) \approx 0.104$ at $q = 1.1097$.
+$\tanh(\ln q) \approx 0.104$ at $q = q_0$.

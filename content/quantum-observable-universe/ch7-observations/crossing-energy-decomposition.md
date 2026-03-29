@@ -11,7 +11,7 @@ $$
 
 **Statement.**
 For any knot composite $H$ with crossing energy
-$\mathfrak{E}_{\mathrm{cross}}(H) = \sum_i \epsilon_i$ where
+$\mathbf{E}_{\mathrm{cross}}(H) = \sum_i \epsilon_i$ where
 $\epsilon_i \in \{q, -q^{-1}\}$:
 
 1. **Symmetric channel.**  The component
@@ -29,7 +29,7 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
    $(H, \sigma(H))$, the combined crossing energy is purely
    antisymmetric:
    $$
-     \mathfrak{E}_{\mathrm{cross}}(H) + \mathfrak{E}_{\mathrm{cross}}(\sigma(H))
+     \mathbf{E}_{\mathrm{cross}}(H) + \mathbf{E}_{\mathrm{cross}}(\sigma(H))
      \;=\; 2\,E_{\mathrm{asym}}(H).
    $$
 
