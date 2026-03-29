@@ -34,7 +34,7 @@ representation.  Concretely, for a closed cycle
 $\varrho \colon \mathbf{1} \to A$ representing a particle propagating
 around a vortex filament, the mass is
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(

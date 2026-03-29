@@ -121,7 +121,7 @@ $$
 
 *Proof sketch.*
 Part (1): the Borromean mass follows from the topological mass
-formula $m = V/\hbar_q^2$ with $V_B = 7.32772$.  The diquark
+formula $\mathfrak{m} = V/\hbar_q^2$ with $V_B = 7.32772$.  The diquark
 mass uses $\mathrm{Vol}(\mathcal{L}_H) = 0$.
 
 Part (2): the binding energies follow from the crossing energy

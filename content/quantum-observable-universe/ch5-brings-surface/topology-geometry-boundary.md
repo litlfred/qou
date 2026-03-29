@@ -36,7 +36,7 @@ all crossings with Hecke compounding.  This computation is set up
 evaluated for $A > 2$.
 
 The mass formula for individual hadrons:
-$m = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
+$\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
 by $\hbar_q^2 = (1 - q^{-1})^2$) gives sub-keV masses for the
 electron, muon, proton, and neutron.  For multi-nucleon links
 (satellite links with $\mathrm{Vol} = A \times \mathrm{Vol}(\mathcal{B}_3)$

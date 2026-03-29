@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:torus-knot-generators",
   label: "rem:building-block-knots",
   title:
     "Building block knots: classification, polynomials, and volumes",

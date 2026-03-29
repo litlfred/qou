@@ -11,7 +11,7 @@ $\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 **The mass formula.** For a cycle $\varrho \in A$, the
 [mass identity](#def:mass-identity) gives
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\; \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
   \circ \Delta \circ \varrho\bigr) \bigr\rVert.
 $$
@@ -23,7 +23,7 @@ which is the convolution of $\varrho$ with the Haar measure.
 representation $V_{1/2}$, a cycle $\varrho$ encircling a vortex in
 $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ has mass
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\; \biggl\lVert \int_{\mathrm{SU}(2)}
   \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr)\, d\mu
   \biggr\rVert.
@@ -31,4 +31,4 @@ $$
 The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out
 the character $\chi_{1/2}(g) = 2\cos(\theta/2)$ of the fundamental
 representation. Integrating the character against a winding-number-$1$
-cycle yields $m(\varrho) = 1$.
+cycle yields $\mathfrak{m}(\varrho) = 1$.

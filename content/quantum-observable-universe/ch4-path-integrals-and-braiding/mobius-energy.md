@@ -6,7 +6,7 @@ categorical action $\mathcal{S}_q$
 $\star_q$ ([Definition](#def:q-hodge-star)).
 
 Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve
-(a knot embedding) and let $m(\varrho)$ denote the categorical mass
+(a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass
 ([Theorem](#thm:topological-mass)).
 
 Define the *categorical Möbius energy* by

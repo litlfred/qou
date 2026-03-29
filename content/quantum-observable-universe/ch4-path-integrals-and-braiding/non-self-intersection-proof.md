@@ -17,7 +17,7 @@ energy functional).
 For $q \neq 1$, the braiding $\check{R} = \sigma \circ \mathcal{R}$
 is non-trivial, and the categorical mass acquires a singular
 contribution from non-adjacent strand proximity.  Concretely,
-because $m(\varrho)$ depends on the $q$-Hodge star $\star_q$
+because $\mathfrak{m}(\varrho)$ depends on the $q$-Hodge star $\star_q$
 ([Definition](#def:q-hodge-star)), the cost of two non-adjacent
 points $\varrho(s)$, $\varrho(t)$ approaching is governed by the
 $q$-deformed commutator

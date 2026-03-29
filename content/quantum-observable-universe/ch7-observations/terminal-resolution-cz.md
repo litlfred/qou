@@ -25,7 +25,7 @@ $$
 The mass predictions then evaluate as follows over $\mathbb{C}[z]$
 at $z = q_0$:
 
-| **Particle** | $\mathrm{Vol}(K)$ | $m(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
+| **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|
 | Electron ($3_1$) | 0 (non-hyp.) | $m_e$ (baseline) | 0.511 MeV |
 | Muon ($4_1$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6\, m_e$ | $206.768\, m_e$ |

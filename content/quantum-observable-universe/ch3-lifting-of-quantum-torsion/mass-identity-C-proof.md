@@ -5,7 +5,7 @@ categorical mass ([mass identity](#def:mass-identity)) is realised as
 Yekutieli's nonabelian multiplicative integral [yekutieli2015]:
 
 $$
-  m(\varrho) \;=\;
+  \mathfrak{m}(\varrho) \;=\;
   \left\lVert\,
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\nabla_A q,\; L \wedge F^+\bigr)
@@ -21,7 +21,7 @@ By the nonabelian Stokes theorem [yekutieli2015], this reduces to
 the holonomy:
 
 $$
-  m(\varrho) \;=\;
+  \mathfrak{m}(\varrho) \;=\;
   \bigl\lVert\,
   \mathrm{Hol}_{\nabla_A}\!\bigl(\varrho;\, \mathfrak{G}\bigr)
   \,\bigr\rVert.

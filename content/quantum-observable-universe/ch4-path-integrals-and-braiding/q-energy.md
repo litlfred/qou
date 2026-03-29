@@ -55,7 +55,7 @@ while the rotational and translational terms are $O(\hbar_q) \sim 0.1$.
 **At rest** ($p_q = 0$, $J_q = 0$):
 
 $$
-  \mathbf{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; m(K) c^2
+  \mathbf{E}_q(K)\big|_{\text{rest}} \;=\; S_q(K) \;=\; \mathfrak{m}(K) c^2
 $$
 
 recovering the topological mass formula.

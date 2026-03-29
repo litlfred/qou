@@ -75,7 +75,7 @@ operation $\sigma$.  For completeness:
 The mass of a knot $K$ is:
 
 $$
-  m(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
+  \mathfrak{m}(K) \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^2}
   \;+\; \sum_{\text{crossings}} \mathbf{E}_{\times}(q)
 $$
 

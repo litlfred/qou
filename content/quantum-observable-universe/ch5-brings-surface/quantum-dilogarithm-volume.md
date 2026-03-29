@@ -45,7 +45,7 @@ asymmetry creates nonzero $\Phi_q$, and the nucleus is bound.
 **Derivation from the topological mass formula.**
 The topological mass formula
 ([topological mass](#prop:topological-mass-formula)) gives the
-mass of a knot $K$ as $m(K) = \text{Vol}(K) / \hbar_q^2$.
+mass of a knot $K$ as $\mathfrak{m}(K) = \text{Vol}(K) / \hbar_q^2$.
 For a multi-component link $\mathcal{N}(Z, N)$, the "volume"
 is no longer the hyperbolic volume of a single knot complement
 (the multi-nucleon link is not hyperbolic).  Instead, the

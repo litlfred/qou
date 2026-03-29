@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:genus-maximal-descent",
   label: "rem:chirality-trefoil",
   title: "Chirality and trefoil subgroups",
   tags: ["descartes-universe", "chirality", "trefoil", "color-charge"],
