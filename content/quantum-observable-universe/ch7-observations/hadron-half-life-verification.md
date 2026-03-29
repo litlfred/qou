@@ -42,7 +42,7 @@ From $q$ and $\mu_0$ alone:
 5. **Self-deformation** $\Delta q_{\mathrm{eff}} =
    (A-1)/A^2 \cdot \hbar_q^2$ — the $q$-anomaly $\delta_q$;
    the daughter is evaluated at the shifted $q + \Delta q_{\mathrm{eff}}$.
-6. **Deuteron binding** $B_d = 1.29$ MeV from
+6. **Deuteron binding** $B_d \approx 1.29$ MeV from
    Vol$(\mathcal{B}_3 \bowtie_{\mathrm{Hopf}} \mathcal{B}_3) / \hbar_q^2$.
 7. **Parity violation** — automatic from $q \neq 1$
    ([Lee-Yang-Wu](#prop:parity-violation-skein)).
@@ -113,7 +113,7 @@ $$
 
 With the self-deformation correction (daughter at
 $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2
-= 0.00218$):
+\approx 0.00218$):
 
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
@@ -152,12 +152,12 @@ half-lives agree with observation to better than $3\%$:
 
 These predictions use:
 - **From $q$**: $\alpha_{\mathrm{EM}}(q)$ in the Fermi function
-  ($1/\alpha = 136.82$, CODATA: $137.036$, $0.16\%$ error).
+  ($1/\alpha \approx 136.82$, CODATA: $137.036$, $0.16\%$ error).
 - **From CODATA**: $G_F = (1.16638 \pm 0.00001) \times 10^{-11}$
   MeV${}^{-2}$.
 - **From NNDC**: $\mathcal{Q}_{\mathrm{exp}}$ and $\log ft$ values
   (for the nuclear matrix element $|\mathcal{M}|^2$).
-- **From PDG**: $g_A = 1.2754 \pm 0.0013$ (for the mirror
+- **From PDG**: $g_A \approx 1.2754 \pm 0.0013$ (for the mirror
   transition ${}^3\mathrm{H}$).
 
 The previous $10$–$17\%$ overshoot arose from using the
@@ -197,14 +197,14 @@ The vertex form factor has been computed exactly:
 
 $$
   \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
-  = 0.7036
+  \approx 0.7036
   \qquad\text{at } q = q_0
 $$
 
 The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
 in $H_3(q)$ via $38$ Hecke steps and $18$ Yang–Baxter steps.
 The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2
-= 0.890$ ($11\%$ reduction in transition amplitude).
+\approx 0.890$ ($11\%$ reduction in transition amplitude).
 Witness: `folio-assistant/computations/t35-weak-vertex.witness.json`.
 
 ## Error budget
@@ -231,8 +231,8 @@ $$
 
 | Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |
 |--------|:-:|:-:|:-:|
-| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% = 0.27\%$ |
-| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% = 0.20\%$ |
+| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% \approx 0.27\%$ |
+| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% \approx 0.20\%$ |
 | $G_F$ (CODATA) | $(1.16638 \pm 0.00001) \times 10^{-11}$ | $0.0009\%$ | $0.002\%$ |
 | $\alpha_{\mathrm{EM}}(q)$ | $1/136.82$ ($q$-derived) | $0.16\%$ | $\sim 0.1\%$ (via $F_q$) |
 | $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |

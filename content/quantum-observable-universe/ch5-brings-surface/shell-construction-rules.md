@@ -209,11 +209,11 @@ and $\mu_0 = m_e / (3 E_{\times})$.
 - $n_n^{\mathrm{dau}} = 32 - 28 = 4$ (open)
 
 **Step 2:**
-- $\tau(7) = \mathrm{tr}(T_{2,7}) = 1.299$, $\log_q = +2.51$
-- $\tau(5) = \mathrm{tr}(T_{2,5}) = 0.993$, $\log_q = -0.07$
-- $\tau(8) = \mathrm{tr}(T_{2,8}) = 1.736$, $\log_q = +5.29$
+- $\tau(7) = \mathrm{tr}(T_{2,7}) \approx 1.299$, $\log_q = +2.51$
+- $\tau(5) = \mathrm{tr}(T_{2,5}) \approx 0.993$, $\log_q = -0.07$
+- $\tau(8) = \mathrm{tr}(T_{2,8}) \approx 1.736$, $\log_q = +5.29$
   (for the closed proton shell)
-- $\tau(4) = \mathrm{tr}(T_{2,4}) = 1.257$, $\log_q = +2.19$
+- $\tau(4) = \mathrm{tr}(T_{2,4}) \approx 1.257$, $\log_q = +2.19$
 
 **Step 3:**
 $R_{\mathrm{bare}} = -32.09$
@@ -224,7 +224,7 @@ $$
   = (\log_q \tau(8) - \log_q \tau(7))
   + (\log_q \tau(4) - \log_q \tau(5))
   = (5.29 - 2.51) + (2.19 - (-0.07))
-  = 2.78 + 2.26 = +5.04
+  \approx 2.78 + 2.26 = +5.04
 $$
 
 **Step 5:**
@@ -234,11 +234,11 @@ $\Delta_{T_{3,5}} = -3.37$
 $$
   \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630
-  = 30.42 \times 0.01688
-  = 0.513 \;\text{MeV}
+  \approx 30.42 \times 0.01688
+  \approx 0.513 \;\text{MeV}
 $$
 
-$\mathcal{Q}_{\mathrm{exp}} = 0.318 \pm 0.0001$ MeV.
+$\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV.
 Error: $+61\%$.
 
 **Status:** The algorithm produces a definite answer for any

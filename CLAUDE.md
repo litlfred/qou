@@ -377,6 +377,32 @@ Agents **must** use the correct font for each concept.
   Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
   falsifiability computations.
 
+### 7ab. Observed / derived values — approximation convention (STRICT)
+
+When stating a numerical value derived from the substrate parameter
+`$q_0$` or compared to experimental data, **always** use `$\approx$`
+(or `$\simeq$`), **never** `$=$`.
+
+```latex
+% WRONG — implies exact equality
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272\;\text{MeV}$
+
+% RIGHT — derived approximation
+$\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.272\;\text{MeV}$
+```
+
+**Exception:** You may write `$=$` when an explicit error term is
+present:
+
+```latex
+% OK — error term makes precision explicit
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272 + O(10^{-3})\;\text{MeV}$
+```
+
+This applies to all physical predictions, CODATA comparisons, and
+numerical evaluations at `$q_0$`. Exact algebraic identities
+(e.g. `$c_q = 1/(q-1)$`) use `$=$` since they hold for all `$q$`.
+
 ### 7a. Hecke-Skein convention (STRICT)
 
 The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke

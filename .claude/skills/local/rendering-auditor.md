@@ -105,6 +105,7 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 | Fibre functor is `$\tau$` | **warning** | Flag `$\omega$` or `$U$` used as fibre functor |
 | QOU tuple is `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **warning** | Flag deprecated 5-tuple `$(M, \theta, G, P, E)$` |
 | Numerical `$q = 1.1097...$` only in intro/Ch7/Ch9 | **warning** | Flag specific numerical values of `$q$` outside allowed chapters |
+| Observed/derived values use `$\approx$` not `$=$` | **error** | Numerical predictions must use `$\approx$` unless an `$O(\cdot)$` error term is present |
 | `\cite{key}` keys resolve to references.ts | **error** | Every citation key must exist in the bibliography |
 | Cross-ref labels `[text](#label)` resolve | **error** | Labels in `uses[]` and markdown cross-refs must point to existing blocks |
 | Undefined macros (custom commands not in preamble) | **warning** | Extract `\commandname` tokens, check against main.tex preamble and standard LaTeX/amsmath |

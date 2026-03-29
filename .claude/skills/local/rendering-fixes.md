@@ -33,6 +33,7 @@ Agents editing content blocks should check this list before committing.
 | F12 | Missing SVG pre-render for fenced tex | Warning | Script |
 | F13 | Orphan cross-reference | Error | Manual |
 | F14 | Missing bibliography entry | Error | Manual |
+| F15 | `$=$` for observed/derived values | Error | Yes |
 
 ---
 
@@ -391,6 +392,34 @@ Then run `bun run export-bibtex` and `bun run validate-refs`.
 
 ---
 
+## F15: `$=$` for observed/derived values
+
+**Pattern**: Numerical predictions or CODATA comparisons written with
+`$=$` instead of `$\approx$`. Implies exact equality, which is false
+for derived quantities.
+
+```md
+<!-- WRONG — implies exact -->
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272$ MeV
+
+<!-- RIGHT — approximation -->
+$\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.272$ MeV
+```
+
+**Exception**: `$=$` is allowed when an explicit error term is present:
+```md
+<!-- OK — error term present -->
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272 + O(10^{-3})$ MeV
+```
+
+**Not affected**: Exact algebraic identities like `$c_q = 1/(q-1)$`
+or `$\hbar_q = (q-1)/q$` — these hold for all `$q$` and use `$=$`.
+
+**Detection**: Grep `.md` files for `= \d+\.\d+.*MeV` or `= \d+\.\d+.*GeV`
+patterns without `\approx` or `O(`.
+
+---
+
 ## Pre-commit checklist (for agents editing content)
 
 Before committing changes to a content block, verify:
@@ -405,3 +434,4 @@ Before committing changes to a content block, verify:
 - [ ] `\cite{key}` keys exist in `references.ts`
 - [ ] `uses[]` labels resolve to existing blocks
 - [ ] Fenced `` ```tex `` blocks have `rendered:` SVGs in manifest
+- [ ] Observed/derived values use `$\approx$` not `$=$` (unless `$O(\cdot)$` error term present)

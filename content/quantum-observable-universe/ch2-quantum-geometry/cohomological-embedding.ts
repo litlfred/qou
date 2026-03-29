@@ -25,4 +25,5 @@ export default proposition({
     "prop:shell-closure-normal-form",
     "rem:fivefold-symmetry",
   ],
+  examples: ["rem:fivefold-symmetry"],
 });

@@ -38,7 +38,7 @@ $$
   \;\text{is invariant under R-I, R-II, R-III.}
 $$
 
-The electron mass $m_e = 0.511$ MeV (from vacuum drag, since
+The electron mass $m_e \approx 0.511$ MeV (from vacuum drag, since
 $\mathrm{Vol}(T_{2,3}) = 0$) does not change when the electron
 is excited.  The proton mass $m_{\mathfrak{p}} = 938$ MeV
 (from $\mathrm{Vol}(\mathcal{B}_3)$) does not change when the

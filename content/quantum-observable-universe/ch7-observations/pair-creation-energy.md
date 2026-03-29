@@ -61,7 +61,7 @@ $$
 
 | Process | Energy | QOU description |
 |---------|--------|-----------------|
-| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 = 1.022$ MeV | New pair from photon; trefoil + mirror created at exceptional divisor |
+| Pair production ($\gamma \to e^- e^+$) | $2m_e c^2 \approx 1.022$ MeV | New pair from photon; trefoil + mirror created at exceptional divisor |
 | Crossing energy gap (one trefoil) | $3(q + q^{-1}) \approx 6.03$ Skein units | Full reversal of all 3 crossings; maps to $\Delta E = 6\cosh(\ln q)$ |
 | Complex-$q$ barrier ($\theta = 0 \to \pi$) | Topological, not energetic | Continuous rotation in pre-observable sector; no energy cost in observable sector |
 
@@ -121,7 +121,7 @@ $$
 The energy to "convert" an electron to a positron is either:
 - **$\infty$** (impossible within the observable sector — topologically
   forbidden),
-- **$2m_e = 1.022$ MeV** (create a new pair at the exceptional divisor),
+- **$2m_e \approx 1.022$ MeV** (create a new pair at the exceptional divisor),
   or
 - **$0$** (in the pre-observable complex-$q$ sector, chirality
   rotation is free — but inaccessible to measurement).

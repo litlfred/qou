@@ -22,7 +22,7 @@ $$
 No finite energy process can convert a single electron into a single
 positron.  The only accessible process is
 [pair creation](#rem:pair-creation-energy) at the exceptional divisor,
-which creates a *new* pair at cost $2m_e = 1.022$ MeV while leaving
+which creates a *new* pair at cost $2m_e \approx 1.022$ MeV while leaving
 the original electron unchanged.
 
 **Composite fermions (proton, neutron).**
@@ -56,8 +56,8 @@ $$
 $$
 
 The only way to produce $\bar{\mathfrak{p}}$ is pair creation at the
-exceptional divisor, at cost $2m_p = 1876.5$ MeV, and similarly
-$2m_n = 1879.1$ MeV for antineutron creation.
+exceptional divisor, at cost $2m_p \approx 1876.5$ MeV, and similarly
+$2m_n \approx 1879.1$ MeV for antineutron creation.
 
 **Beta decay is not chirality reversal.**
 A neutron can convert to a proton via $\mathfrak{n} \to \mathfrak{p}
@@ -73,9 +73,9 @@ within the same chirality sector.
 
 | Particle | Chirality reversal energy | Pair creation threshold |
 |----------|--------------------------|----------------------|
-| Electron $e^-$ | $\infty$ | $2m_e = 1.022$ MeV |
-| Proton $\mathfrak{p}$ | $\infty$ | $2m_p = 1876.5$ MeV |
-| Neutron $\mathfrak{n}$ | $\infty$ | $2m_n = 1879.1$ MeV |
+| Electron $e^-$ | $\infty$ | $2m_e \approx 1.022$ MeV |
+| Proton $\mathfrak{p}$ | $\infty$ | $2m_p \approx 1876.5$ MeV |
+| Neutron $\mathfrak{n}$ | $\infty$ | $2m_n \approx 1879.1$ MeV |
 | Neutrino $\nu$ | $\infty$ | $\approx 0$ (massless to leading order) |
 
 Time travel — sending a particle backward in time — is
