@@ -61,7 +61,12 @@ $$
 $$
 
 — a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf
-object $A$, and a fibre functor $\tau$.  From these three
+object $A$, and a fibre functor $\tau$.  The Frobenius condition
+$A \cong A^{\vee}$ — the self-duality of the algebra — is the
+algebraic expression of a simple physical fact: integrating a
+quantity and then differentiating it yields the same result as
+differentiating and then integrating.  Neither operation destroys
+information; both paths lead to the same answer.  From these
 ingredients the chapter derives the Frobenius relation, the dagger
 involution, and the Tannaka–Krein reconstruction of the symmetry
 group.
