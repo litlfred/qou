@@ -101,7 +101,7 @@ circuit ([Planck time](#def:planck-time)).
 | Regime | $q$ | $\eta_q$ | $d_{H,q}$ | Interpretation |
 |--------|-----|----------|-----------|----------------|
 | Classical limit | $q \to 1$ | $\to 1$ | $\to 1$ | One nat per step; Julia set = unit circle |
-| Our universe | $1.1097$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
+| Our universe | $q_0$ | $0.892$ | $1.088$ | Moderate: each of ${\sim}\,10$ steps generates $0.89$ nats |
 | Deep quantum | $\varphi^2$ | $0.327$ | $1.000$ | $d_{H,q}$ returns to $1$ at the golden threshold |
 | Big Bang | $q \to \infty$ | $\to 0$ | $\to 0$ | Zero information per step; Julia set collapses |
 

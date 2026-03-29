@@ -176,7 +176,7 @@ $$
 | $q$ | $d_H$ predicted | $d_H$ box-counting | Known exact | Note |
 |-----|----------------|--------------------|----|------|
 | $1$ | $1.000$ | — | $1.000$ (unit circle) | Exact match |
-| $1.1097$ | $1.088$ | $1.012$ | — | Box-counting underestimates thin quasicircles |
+| $q_0$ | $1.088$ | $1.012$ | — | Box-counting underestimates thin quasicircles |
 | $1.5$ | $1.185$ | — | — | Basilica root $c = -3/4$ (period-$2$ parabolic; known $d_H \sim 1.2$) |
 | $\varphi^2$ | $1.000$ | — | — | Golden crossover: $d_H$ returns to $1$ |
 

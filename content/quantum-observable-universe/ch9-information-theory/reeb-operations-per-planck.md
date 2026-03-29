@@ -28,7 +28,7 @@ $\square$
 | $q$ | $n_R$ | Interpretation |
 |-----|-------|----------------|
 | $\to \infty$ | $\to 1$ | Big Bang: one iteration per circuit, fully discrete |
-| $1.1097$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ iterations per circuit |
+| $q_0$ | $\approx 10.1$ | Our universe ([local substrate $q$](#prop:local-substrate-q)): $\sim 10$ iterations per circuit |
 | $2$ | $2$ | Two iterations per circuit |
 | $1.01$ | $101$ | Near-classical: $\sim 100$ iterations per circuit |
 | $\to 1$ | $\to \infty$ | Classical limit: infinitely many, continuous Reeb flow |
