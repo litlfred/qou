@@ -2,7 +2,7 @@ The golden ratio $\varphi = (1+\sqrt{5})/2$ appears twice in the
 Descartes elliptic curve $\mathcal{E}_q$
 ([golden ratio degeneration](#rem:golden-ratio-degeneration)): once as
 a **metric property** (the conformal modulus of the elliptic fiber at
-our $q = 1.1097$) and once as an **algebraic property** (the root of
+our $q = q_0$) and once as an **algebraic property** (the root of
 the degeneration polynomial $s^2 + s - 1 = 0$ at $q_{\mathrm{gold}}
 = 1/\varphi^2$).  Parallel transport along the $q$-connection
 ([categorical $q$-connection](#def:categorical-q-connection))

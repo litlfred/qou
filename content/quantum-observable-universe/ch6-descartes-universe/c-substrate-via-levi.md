@@ -1,6 +1,6 @@
 Let $A$ be an instanton connection on $P$
 ([instanton](#def:instanton)), $F_A^+$ its self-dual curvature
-([self-dual curvature](#prop:self-dual-curvature)), and
+([self-dual curvature](#ex:self-dual-curvature)), and
 $L_\theta(V, W) = -i\,d\theta(V, \bar{W})$ the Levi form.  Since
 $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the $4$-dimensional
 distribution $H$, the Webster metric and Killing form yield a natural

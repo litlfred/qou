@@ -136,7 +136,7 @@ $$
 
 identically for all $q > 1$.
 
-**Numerical values at $q = 1.1097$.**
+**Numerical values at $q = q_0$.**
 
 | Quantity | Formula | Value |
 |----------|---------|-------|
@@ -187,7 +187,7 @@ than a circle ($d_H > 1$), consistent with McMullen's theorem
 [mcmullen1998].
 
 **Testable prediction.**
-The value $d_H(1.1097) = 1.088$ is testable against high-precision
+The value $d_H(q_0) = 1.088$ is testable against high-precision
 computation of $d_H(J_c)$ at $c(0.1097) = 0.338 + 0.073i$ using
 transfer-operator methods (Ruelle 1982).  Box-counting gives
 $d_H \approx 1.01$ but systematically underestimates thin Jordan

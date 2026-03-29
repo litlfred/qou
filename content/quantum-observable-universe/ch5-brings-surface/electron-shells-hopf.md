@@ -60,7 +60,7 @@ changes state — moving from one sub-Hopf link to another.
 In the knot picture:
 
 1. **Incoming photon**: a wavefront
-   ([wavefront propagation](#prop:wavefront-propagation))
+   ([wavefront propagation](#rem:wavefront-propagation))
    with energy $E = h\nu$ determined by the categorical
    Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
 

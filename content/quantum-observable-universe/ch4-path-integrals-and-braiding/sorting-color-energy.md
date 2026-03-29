@@ -1,6 +1,6 @@
 **Proposition.**
 *Let $T_i$ be the Hecke generator
-([R-matrix braiding](#def:r-matrix-braiding)) acting on
+([R-matrix braiding](#rem:r-matrix-braiding)) acting on
 $V \otimes V$, where $V$ is the fundamental representation.
 Then:*
 
