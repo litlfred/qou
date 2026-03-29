@@ -31,7 +31,7 @@ to vary — in a controlled, algebraic way — how does that change
 the mechanics?  This is the question this paper asks.
 
 Heisenberg reminded us that what we observe is not nature itself
-but nature exposed to our method of questioning.  This book takes
+but nature exposed to our method of questioning.  This paper takes
 that insight seriously.  We do not ask what the universe *is* — we
 ask what its mechanics *do*.  Category theory is the natural
 language for this, because it describes structure and transformation
@@ -40,11 +40,11 @@ without committing to any particular ontology.
 These everyday observations, once stated carefully, determine a
 specific algebraic structure: a *rigid monoidal category* equipped
 with a fibre functor and a Frobenius trace $\int_A$.  We call
-this structure a **quantum observable universe**.  Its axioms
+this structure a **quantum observable universe** (QOU).  Its axioms
 encode precisely the features listed above and nothing more.
 
-What follows from these axioms is surprising in both scope and
-specificity.  The symmetry group $\mathrm{SU}_2(R)$ is not
+What follows from these axioms is broad in scope and specific in
+detail.  The symmetry group $\mathrm{SU}_2(R)$ is not
 assumed; it emerges via Tannaka–Krein reconstruction.  The
 uncertainty principle is not postulated; it appears as the geometric
 signature of degrees of freedom not yet resolved.  Observation is
@@ -60,7 +60,7 @@ self-duality $A \cong A^{\vee}$.
 Even the capacity for computation — the Turing completeness of the
 substrate — is a consequence, not an input.
 
-The book is organised as follows.
+The paper is organised as follows.
 
 [Chapter 1](#chap:qu) introduces the **quantum universe** (QU):
 the algebraic skeleton encoded in the triple
@@ -164,9 +164,9 @@ the QOU axioms: archimedean, $p$-adic, and finite-field models.
 For the Descartes universe ($\chi(A) = -6$), we study Bring's
 surface $\Sigma_4$ — the universal genus-$4$ curve with
 automorphism group $S_5$ — as a model for QOU.  This concrete
-realisation provides coordinate systems for red, green, and blue
-colour tubes, the exceptional divisor where all particle
-interactions occur, and serves as a model for understanding our
+realisation provides coordinate systems for the red, green, and
+blue coral tubes — the exceptional divisors where all particle
+interactions occur — and serves as a model for understanding our
 own world.
 
 [Chapter 6](#chap:observations) reaps the rewards of the

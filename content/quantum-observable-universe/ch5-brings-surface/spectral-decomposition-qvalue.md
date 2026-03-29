@@ -46,7 +46,7 @@ normal form at every inductive stage.*
 
 **(ii)** *$\log_q(x) = \ln x / \ln q$ is the $q$-natural
 logarithm — it counts exceptional divisor levels along the
-color tube fiber of $\Sigma_g$.
+coral tube fiber of $\Sigma_g$.
 $\hbar_q = (q - 1)/q$ is the quantum Planck constant (action
 per divisor step).  The factor $m_e/3$ is the mass per
 crossing of the trefoil $\mathcal{K}_e = \mathcal{K}_{\tau(2,3)}$
@@ -192,7 +192,7 @@ Each factor in $\mathcal{Q}_q$ reads geometrically:
 
 | Factor | Geometry |
 |--------|----------|
-| $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Exceptional divisor levels traversed (color tube degrees) |
+| $\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})$ | Exceptional divisor levels traversed (coral tube degrees) |
 | $\hbar_q = (q-1)/q$ | Action quantum per divisor step (discrete fiber spacing) |
 | $m_e / 3$ | Mass per trefoil crossing ($\mathcal{K}_e = \tau(2,3)$ has $3$ crossings) |
 | $F(\tau(k^*), N)$ | Spectral projection onto the active divisor |

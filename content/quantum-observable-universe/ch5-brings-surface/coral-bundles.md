@@ -1,4 +1,4 @@
-The spacetime--chiral decomposition of Bring's surface maps naturally onto
+The spacetime--coral decomposition of Bring's surface maps naturally onto
 three classical bundle structures over the $\mathbb{P}^1(\mathbb{C})$ base $z=x_0/x_1$.
 
 **Cotangent bundle.**
@@ -14,7 +14,7 @@ differential $dX$ degenerates in the cotangent fibre.
 **Spinor bundle.**
 The spectral modes $w_1,\dots,w_4$
 ([Lagrange resolvents](#rem:lagrange-resolvents)) live in a rank-$2$ complex vector
-bundle over $\mathbb{P}^1(\mathbb{C})$.  The chiral doublet
+bundle over $\mathbb{P}^1(\mathbb{C})$.  The coral doublet
 $\Psi_L=(w_1,w_2)^T$ and its conjugate $\Psi_R=(w_4,w_3)^T$ transform
 under the $\mathrm{SU}(2)$ holonomy generators
 $H_1,H_2$ of

@@ -39,7 +39,7 @@ knot (not a composite) — there is no linking to provide negative
 binding energy.
 
 **Binding in composites.**
-A hadron $H = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ is a
+A hadron $\mathfrak{H} = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ is a
 composite whose linking $\mathcal{L}$ introduces additional crossings
 between constituent knots.  Mutual crossings between distinct
 components can contribute *negative* energy (from negative crossings
@@ -47,7 +47,7 @@ in the linking braid word), so the total crossing energy of a
 composite is
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(H)
+  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H})
   \;=\;
   \underbrace{\sum_{i} \mathbf{E}_{\mathrm{cross}}(K_i)}_{\text{self-crossings (positive)}}
   \;+\;
@@ -55,7 +55,7 @@ $$
 $$
 
 The composite is *bound* when the total is negative:
-$\mathbf{E}_{\mathrm{cross}}(H) < 0$.  This means the mutual linking
+$\mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) < 0$.  This means the mutual linking
 energy overcomes the individual knot crossing costs — the composite
 is energetically favorable relative to the separated constituents.
 

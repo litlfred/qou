@@ -1,6 +1,6 @@
 **Proposition.**
 Let $\mathbf{C}$ be a rigid braided monoidal category and let
-$H \in \mathrm{Sym}^n(K)$ be a hadron ([hadron](#def:hadron)) with
+$\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron ([hadron](#def:hadron)) with
 constituent knots $K_1, \ldots, K_n$.
 
 1. **Braiding closure.** The braiding $\beta_{K_i, K_j}$ descends to an
@@ -16,8 +16,8 @@ constituent knots $K_1, \ldots, K_n$.
    $q \cdot L_+ - q^{-1} \cdot L_- = (q - q^{-1}) \cdot L_0$ resolves any
    linked composite into a polynomial in $q$ times unlinked constituents,
    yielding the mass formula
-   $\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
+   $\mathcal{M}(\mathfrak{H}) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
 
-4. **Fusion closure.** For hadrons $H_1 \in \mathrm{Sym}^{n_1}(K)$ and
-   $H_2 \in \mathrm{Sym}^{n_2}(K)$, the fusion
-   $H_1 \star H_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ is again a hadron.
+4. **Fusion closure.** For hadrons $\mathfrak{H}_1 \in \mathrm{Sym}^{n_1}(K)$ and
+   $\mathfrak{H}_2 \in \mathrm{Sym}^{n_2}(K)$, the fusion
+   $\mathfrak{H}_1 \star \mathfrak{H}_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ is again a hadron.

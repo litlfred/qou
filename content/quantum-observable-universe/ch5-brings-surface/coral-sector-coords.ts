@@ -4,7 +4,7 @@ export default definition({
   label: "def:coral-sector-coords",
   lean: { decl: "QOU.CoralSectorCoords" },
   title: "Coral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",
-  tags: ["descartes-universe", "coral-sectors", "color-charge"],
+  tags: ["descartes-universe", "coral-sectors", "colour-charge"],
   uses: [
     "def:exceptional-divisor",
     "def:substrate-parameter",

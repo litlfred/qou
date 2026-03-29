@@ -38,10 +38,10 @@ where $L_+$, $L_-$, $L_0$ are the positive-crossing, negative-crossing,
 and smoothed configurations. Iterating over all crossings resolves
 the linked composite into a polynomial in $q$ times unlinked
 constituents, yielding the mass formula
-$\mathcal{M}(H) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
+$\mathcal{M}(\mathfrak{H}) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
 
-**Fusion.** Two hadrons $H_1 \in \mathrm{Sym}^{n_1}(K)$ and
-$H_2 \in \mathrm{Sym}^{n_2}(K)$ can be *fused* into a composite
-$H_1 \star H_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ by forming the
+**Fusion.** Two hadrons $\mathfrak{H}_1 \in \mathrm{Sym}^{n_1}(K)$ and
+$\mathfrak{H}_2 \in \mathrm{Sym}^{n_2}(K)$ can be *fused* into a composite
+$\mathfrak{H}_1 \star \mathfrak{H}_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ by forming the
 Hopf link between their binding structures. This models hadron
 scattering at the categorical level.

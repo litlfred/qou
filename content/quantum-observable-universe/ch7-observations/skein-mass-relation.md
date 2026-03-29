@@ -1,4 +1,4 @@
-The mass functional $\mathcal{M}(H)$ for a composite hadron $H$ is not additive but obeys the quantum Skein relation at every crossing in the color-exchange space:
+The mass functional $\mathcal{M}(\mathfrak{H})$ for a composite hadron $\mathfrak{H}$ is not additive but obeys the quantum Skein relation at every crossing in the color-exchange space:
 
 $$
 q \,\mathcal{M}(L_+) - q^{-1}\,\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\,\mathcal{M}(L_0).

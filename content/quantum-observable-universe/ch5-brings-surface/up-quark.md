@@ -10,7 +10,7 @@ $$
 
 The up quark is not a distinct knot type — it is the unknot
 $K_{0_1}$ ([neutrino](#def:neutrino-knot)) distinguished by
-its **environment**: threaded through a color tube
+its **environment**: threaded through a coral tube
 ([color tube coordinates](#def:color-tube-coordinates)) and
 Borromean-linked with two other unknots.
 
