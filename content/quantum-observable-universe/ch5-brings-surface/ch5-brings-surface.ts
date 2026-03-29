@@ -165,6 +165,7 @@ export default chapter({
         "elliptic-stability-locus",
         "skein-shell-correction",
         "shell-closure-normal-form",
+        "atom-inductive-construction",
         "skein-finiteness-bound",
         "torus-knot-shell-binding",
         "shell-construction-rules",
