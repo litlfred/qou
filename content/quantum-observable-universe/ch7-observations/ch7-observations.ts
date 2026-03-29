@@ -83,11 +83,11 @@ export default chapter({
         "hadron-half-life-regimes",
         "half-life-shell-worked",
         "half-life-as-q-probe",
+        "finiteness-bound-interpretation",
         "tritium-decay-knot-equation",
         "nitrogen-14-threading",
         "trace-ratio-observable",
         "shell-threading-conjecture",
-        "skein-shell-correction",
       ],
     }),
 

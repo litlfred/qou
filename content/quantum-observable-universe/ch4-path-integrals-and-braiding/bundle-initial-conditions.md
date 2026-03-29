@@ -1,5 +1,5 @@
 A **bundle initial condition** (or *big bang state*) over the projective
-line $\mathbb{P}(V)$ is a formal sum of localized hadrons at distinct
+line $\mathbb{P}(V)$ is a formal sum of localized hadrons at
 base points:
 
 $$
@@ -7,19 +7,18 @@ $$
 $$
 
 where each $(p_i, H_i)$ is a localized hadron
-([Definition](#def:localized-hadron)) and the base points are pairwise
-distinct: $p_i \neq p_j$ for $i \neq j$. The index set $I$ may be
-infinite, provided no two hadrons share the same base point.
+([Definition](#def:localized-hadron)).  The index set $I$ may be
+infinite, and multiple hadrons may share the same base point
+(bosonic and fermionic statistics are determined by the Skein
+algebra, not by a support constraint).
 
 Equivalently, $\mathcal{S}_0$ is a section of the free commutative monoid on the
-hadron sheaf $\mathcal{H}$ with the distinct-support condition:
+hadron sheaf $\mathcal{H}$:
 
 $$
   \mathcal{S}_0 \;\in\;
   \Gamma\!\bigl(\mathbb{P}(V),\;
-  \mathrm{Free}_{\mathrm{CMon}}(\mathcal{H})\bigr),
-  \qquad
-  \mathrm{supp}(\mathcal{S}_0) \text{ has multiplicity } \leq 1.
+  \mathrm{Free}_{\mathrm{CMon}}(\mathcal{H})\bigr).
 $$
 
 This is the **position-only** specification: at the initial moment the

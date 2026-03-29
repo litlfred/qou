@@ -163,6 +163,11 @@ export default chapter({
         "topology-geometry-boundary",
         // Elliptic stability conjecture
         "elliptic-stability-locus",
+        "skein-shell-correction",
+        "shell-closure-normal-form",
+        "skein-finiteness-bound",
+        "torus-knot-shell-binding",
+        "shell-construction-rules",
         "electron-shells-hopf",
         "helium-hopf-diagram",
         "noble-gas-characterization",

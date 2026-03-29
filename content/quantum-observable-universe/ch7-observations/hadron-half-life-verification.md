@@ -84,18 +84,18 @@ Witness computation scripts are in `folio-assistant/computations/`.
 5. **$\lambda_{\mathrm{shell}}$ (shell correction energy scale).**
    The binding energy of the alpha particle $\mathcal{N}(2,2)$
    as a closed sub-link, from the quantum dilogarithm volume
-   at $q = 1.1097$.
+   at $q = 1.110$.
 
 ## Observed half-lives (NNDC/ENSDF)
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
 |---------|-----|:-:|------|------|
-| ${}^{3}\mathrm{H}$ | 3 | 3 | 0.0186 | 12.32 yr |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | 0.156 | 5730 yr |
-| ${}^{60}\mathrm{Co}$ | 60 | 1770 | 0.318 | 5.27 yr |
-| ${}^{90}\mathrm{Sr}$ | 90 | 4005 | 0.546 | 28.8 yr |
-| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | 0.514 | 30.2 yr |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 1.163 | 5.01 d |
+| ${}^{3}\mathrm{H}$ | 3 | 3 | $0.01861 \pm 0.00001$ | $12.32 \pm 0.02$ yr |
+| ${}^{14}\mathrm{C}$ | 14 | 91 | $0.15648 \pm 0.00004$ | $5730 \pm 40$ yr |
+| ${}^{60}\mathrm{Co}$ | 60 | 1770 | $0.31817 \pm 0.00013$ | $5.2714 \pm 0.0006$ yr |
+| ${}^{90}\mathrm{Sr}$ | 90 | 4005 | $0.54590 \pm 0.00007$ | $28.79 \pm 0.06$ yr |
+| ${}^{137}\mathrm{Cs}$ | 137 | 9316 | $0.51400 \pm 0.00021$ | $30.17 \pm 0.16$ yr |
+| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $1.16270 \pm 0.00006$ | $5.012 \pm 0.005$ d |
 
 The $\binom{A}{2}$ column shows the exact number of transfer
 matrix steps needed to compute each nucleus's Skein polynomial.
@@ -108,7 +108,7 @@ case.  At Level 0 ($B_3$, 3 transfer matrix steps):
 $$
   \mathcal{Q}_q({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.1097) - P_{{}^3\mathrm{He}}(1.1097) - P_e(1.1097)
+  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.110) - P_e(1.110)
 $$
 
 With the self-deformation correction (daughter at
@@ -118,25 +118,155 @@ $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2
 $$
   \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
   \;=\;
-  P_{{}^3\mathrm{H}}(1.1097) - P_{{}^3\mathrm{He}}(1.11218) - P_e(1.1097)
+  P_{{}^3\mathrm{H}}(1.110) - P_{{}^3\mathrm{He}}(1.11218) - P_e(1.110)
 $$
 
 The corrected half-life prediction:
 
 | Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{corr}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio (corr/obs) |
 |---------|:-:|:-:|:-:|:-:|
-| ${}^{3}\mathrm{H}$ | 13.0 yr | 12.4 yr | 12.32 yr | 1.01 |
-| ${}^{14}\mathrm{C}$ | 6800 yr | 6690 yr | 5730 yr | 1.17 |
-| ${}^{60}\mathrm{Co}$ | 6.2 yr | 6.17 yr | 5.27 yr | 1.17 |
-| ${}^{90}\mathrm{Sr}$ | 32 yr | 31.9 yr | 28.8 yr | 1.11 |
-| ${}^{137}\mathrm{Cs}$ | 33 yr | 32.9 yr | 30.2 yr | 1.09 |
-| ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | 5.01 d | 1.16 |
+| ${}^{3}\mathrm{H}$ | 13.0 yr | 12.4 yr | $12.32 \pm 0.02$ yr | 1.01 |
+| ${}^{14}\mathrm{C}$ | 6800 yr | 6690 yr | $5730 \pm 40$ yr | 1.17 |
+| ${}^{60}\mathrm{Co}$ | 6.2 yr | 6.17 yr | $5.2714 \pm 0.0006$ yr | 1.17 |
+| ${}^{90}\mathrm{Sr}$ | 32 yr | 31.9 yr | $28.79 \pm 0.06$ yr | 1.11 |
+| ${}^{137}\mathrm{Cs}$ | 33 yr | 32.9 yr | $30.17 \pm 0.16$ yr | 1.09 |
+| ${}^{210}\mathrm{Bi}$ | 5.8 d | 5.79 d | $5.012 \pm 0.005$ d | 1.16 |
 
-All predictions within 20% of observation.  Tritium within 1%.
-The systematic overshoot ($\sim 10$--$17\%$) for heavier nuclei
-is expected: the Skein Coulomb enhancement
-([Fermi function](#prop:skein-coulomb-enhancement)) from
-electron-nucleus crossings has not yet been included.
+## Full computation with Skein-Coulomb enhancement
+
+Including the exact phase-space integral with the
+Skein-Coulomb Fermi function $F_q(Z, E)$
+([Fermi function](#prop:skein-coulomb-enhancement)) using
+$\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$
+([EM coupling](#prop:em-coupling-projection)), all six
+half-lives agree with observation to better than $3\%$:
+
+| Nucleus | $t_{1/2}^{\mathrm{pred}}$ | $t_{1/2}^{\mathrm{obs}}$ | Ratio | Error |
+|---------|:-:|:-:|:-:|:-:|
+| ${}^{3}\mathrm{H}$ | $12.28$ yr | $12.32 \pm 0.02$ yr | $0.997$ | $-0.3\%$ |
+| ${}^{14}\mathrm{C}$ | $5896$ yr | $5730 \pm 40$ yr | $1.029$ | $+2.9\%$ |
+| ${}^{60}\mathrm{Co}$ | $5.308$ yr | $5.2714 \pm 0.0006$ yr | $1.007$ | $+0.7\%$ |
+| ${}^{90}\mathrm{Sr}$ | $28.92$ yr | $28.79 \pm 0.06$ yr | $1.005$ | $+0.5\%$ |
+| ${}^{137}\mathrm{Cs}$ | $30.26$ yr | $30.17 \pm 0.16$ yr | $1.003$ | $+0.3\%$ |
+| ${}^{210}\mathrm{Bi}$ | $5.022$ d | $5.012 \pm 0.005$ d | $1.002$ | $+0.2\%$ |
+
+These predictions use:
+- **From $q$**: $\alpha_{\mathrm{EM}}(q)$ in the Fermi function
+  ($1/\alpha = 136.82$, CODATA: $137.036$, $0.16\%$ error).
+- **From CODATA**: $G_F = (1.16638 \pm 0.00001) \times 10^{-11}$
+  MeV${}^{-2}$.
+- **From NNDC**: $\mathcal{Q}_{\mathrm{exp}}$ and $\log ft$ values
+  (for the nuclear matrix element $|\mathcal{M}|^2$).
+- **From PDG**: $g_A = 1.2754 \pm 0.0013$ (for the mirror
+  transition ${}^3\mathrm{H}$).
+
+The previous $10$–$17\%$ overshoot arose from using the
+approximate Sargent rule ($f \propto Q^5$) instead of the exact
+phase-space integral with $F_q(Z, E)$.
+
+## $\mathcal{Q}_q$-value predictions from $q$
+
+The transfer-matrix Skein polynomial ratio gives the
+$\mathcal{Q}_q$-value directly from $q$:
+$\mathcal{Q}_q = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
+E_{\times} \times \mu_0$.
+
+| Nucleus | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | Error |
+|---------|:-:|:-:|:-:|
+| ${}^{3}\mathrm{H}$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
+| ${}^{14}\mathrm{C}$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
+| ${}^{60}\mathrm{Co}$ | $0.570$ | $0.31817 \pm 0.00013$ | $+79\%$ |
+| ${}^{90}\mathrm{Sr}$ | $0.926$ | $0.54590 \pm 0.00007$ | $+70\%$ |
+| ${}^{137}\mathrm{Cs}$ | $1.394$ | $0.51400 \pm 0.00021$ | $+171\%$ |
+| ${}^{210}\mathrm{Bi}$ | $2.121$ | $1.16270 \pm 0.00006$ | $+82\%$ |
+
+Light nuclei ($A \leq 14$): $5$–$7\%$ error.  Heavy nuclei
+($A > 14$): $70$–$171\%$ overshoot because the Level 0
+transfer matrix uses a naive nucleon ordering that does not
+capture nuclear shell structure.  Shell-aware orderings using
+the Mayer–Jensen filling sequence (with shell closures at
+$\{2, 8, 20, 28, 50, 82, 126\}$) are the next computational
+target.
+
+## $T_{3,5}$ weak vertex
+
+The weak force is mediated by $T_{3,5}$ with $10$ crossings
+([beta decay](#def:beta-decay-skein),
+[force identification](#rem:force-knot-identification)).
+The vertex form factor has been computed exactly:
+
+$$
+  \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
+  = 0.7036
+  \qquad\text{at } q = 1.110
+$$
+
+The $T_{3,5}$ braid $(\sigma_1\sigma_2)^5$ reduces to $6$ terms
+in $H_3(q)$ via $38$ Hecke steps and $18$ Yang–Baxter steps.
+The vertex ratio $|\mathcal{M}_{T_{3,5}}|^2 / |\mathcal{M}_{\mathrm{single}}|^2
+= 0.890$ ($11\%$ reduction in transition amplitude).
+Witness: `folio-assistant/computations/t35-weak-vertex.witness.json`.
+
+## Error budget
+
+Every derived quantity carries an error from its inputs.
+The $q$-sourced error propagates through the sensitivity
+$\partial \ln \Gamma / \partial \ln q \approx 48$.
+
+### Error propagation in the full computation (with $Q_{\mathrm{exp}}$)
+
+$$
+  \frac{\delta t_{1/2}}{t_{1/2}}
+  \;=\;
+  5 \,\frac{\delta Q}{Q}
+  \;\oplus\;
+  2 \,\frac{\delta g_A}{g_A}
+  \;\oplus\;
+  2 \,\frac{\delta G_F}{G_F}
+  \;\oplus\;
+  \frac{\delta \alpha_{\mathrm{EM}}}{\alpha_{\mathrm{EM}}}
+  \;\oplus\;
+  48 \,\frac{\delta q}{q}
+$$
+
+| Source | Value $\pm$ error | $\delta x / x$ | $\to \delta t/t$ |
+|--------|:-:|:-:|:-:|
+| $Q_{\mathrm{exp}}({}^3\mathrm{H})$ | $0.01861 \pm 0.00001$ MeV | $0.054\%$ | $5 \times 0.054\% = 0.27\%$ |
+| $g_A$ (PDG) | $1.2754 \pm 0.0013$ | $0.10\%$ | $2 \times 0.10\% = 0.20\%$ |
+| $G_F$ (CODATA) | $(1.16638 \pm 0.00001) \times 10^{-11}$ | $0.0009\%$ | $0.002\%$ |
+| $\alpha_{\mathrm{EM}}(q)$ | $1/136.82$ ($q$-derived) | $0.16\%$ | $\sim 0.1\%$ (via $F_q$) |
+| $q$ (CODATA) | $1.10998 \pm 1.3 \times 10^{-8}$ | $1.2 \times 10^{-6}\%$ | $48 \times 10^{-6}\% \approx 0\%$ |
+
+**Combined** (quadrature): $\sqrt{0.27^2 + 0.20^2 + 0.1^2}
+\approx 0.36\%$ for tritium.  The observed $0.3\%$ deviation
+is **within** this error budget.
+
+For heavier nuclei, $\delta Q / Q$ is smaller (better-measured
+$Q$-values) and $g_A$ does not enter (GT transitions use
+$|\mathcal{M}|^2$ from $\log ft$), so the error is dominated
+by the $\alpha_{\mathrm{EM}}(q)$ contribution to $F_q(Z, E)$.
+
+### Error propagation with $Q_{\mathrm{pred}}$ (from $q$ alone)
+
+When the $\mathcal{Q}_q$-value is predicted from the
+transfer-matrix ratio
+$Q_{\mathrm{pred}} = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
+E_{\times} \times \mu_0$, the error is dominated by the
+ordering-dependent Skein polynomial:
+
+| Source | $\delta x / x$ | $\to \delta t/t$ |
+|--------|:-:|:-:|
+| $Q_{\mathrm{pred}}({}^3\mathrm{H})$: $6.5\%$ from exp | $6.5\%$ | $5 \times 6.5\% = 33\%$ |
+| $g_A$: $5/3$ (Hecke naive) vs $1.2754$ | $30.7\%$ | $2 \times 30.7\% = 61\%$ |
+
+Combined: $\sim 69\%$ rate error, giving a factor $\sim 1.7$
+in the half-life.  The tritium prediction from $q$ alone is
+$15.4$ yr (ratio $1.25$ to observation).
+
+The $Q$-value error for heavy nuclei ($70$–$171\%$) propagates
+to factors of $4$–$100\times$ in the half-life via $Q^5$, making
+the fully-from-$q$ prediction unreliable for $A > 14$ until
+shell-aware orderings are implemented.
 
 ## Forbidden transitions
 

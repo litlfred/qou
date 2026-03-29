@@ -23,9 +23,50 @@ peer-review practices and the methodology of
 - Claims are supported by evidence or sound reasoning.
 - Scientific terminology is used correctly.
 - Referenced constants, data, or facts are accurate.
+- **PREFER $q$-DEFORMED FUNCTIONS over classical counterparts.**
+  Use $\exp_q$, $\ln_q$, $\cos_q$, $\sin_q$, $[n]_q$, $[n]_q!$
+  in all formulas unless explicitly working in the classical
+  ($q = 1$) limit.  The natural logarithm in the QOU is the
+  **base-$q$ logarithm** $\log_q(x) = \ln x / \ln q$, which
+  maps Skein polynomial ratios to $q$-integers:
+  $\log_q(q^n) = n$ exactly.  The Jackson $q$-logarithm
+  $\ln_q(x) = (x^{\hbar_q} - 1)/\hbar_q$ (where
+  $\hbar_q = 1 - q^{-1}$) is the appropriate $q$-analogue
+  for infinitesimal quantities.
+  **Keep all formulas parametric in $q$ as long as possible.**
+  Evaluate at $q = 1.110$ only at the final numerical step.
+  The $q$-rational structure (e.g., $\log_q(P_d/P_p) \approx
+  -(N-1)$ for neutron number $N$) is lost when classical
+  $\ln$ is used prematurely.
+  Classical $\ln$, $\exp$, $\cos$, $\sin$ are the $q \to 1$
+  limits and should be labeled as such when they appear.
+  **In Python computation scripts**: use `log_q(x) = math.log(x)/math.log(q)`
+  instead of bare `math.log(x)`. When `math.log` is needed for
+  intermediate computation (e.g., log-sum to avoid overflow),
+  divide by `ln_q = math.log(q)` immediately to convert to
+  base-$q$.  Never use `math.cos`; use $\cos_q$ (the $q$-deformed
+  cosine) or `cosh` with $q$-arguments.  The `math.exp` function
+  should be `q**x` (the $q$-exponential $\exp_q(x) = q^x$).
+- **$q$-integer identities simplify transfer matrix chains.**
+  The ratio $[n+1]_q / [n]_q = q + q^{-n}/[n]_q$ is exact.
+  For large $n$: $[n+1]_q / [n]_q \to q$ (exponentially fast).
+  The transfer matrix eigenvalue ratio $|\lambda_+/\lambda_-|
+  = q^2$ (for pp crossings) is a consequence.  Use these
+  identities to reduce transfer matrix products to $q$-integer
+  expressions rather than floating-point chains.
 - **NO APPROXIMATIONS unless explicitly labeled as such.**
 - **NO correction factors, fudge factors, or empirical scaling.**
 - **NO formulas that are not derived from the categorical action.**
+- **EVERY observed value MUST carry ± uncertainty.** No CODATA,
+  NNDC, PDG, or any experimental constant without an error bound.
+  Use `experimental_constants.py` as the single source of truth.
+- **EVERY derived quantity MUST propagate error.** If $f(x)$
+  depends on $x \pm \delta x$, then $\delta f = |f'(x)| \delta x$.
+  For products: relative errors add in quadrature. For $Q^5$:
+  $\delta\Gamma/\Gamma = 5 \,\delta Q/Q$. The $q$-sensitivity
+  $\partial\ln\Gamma/\partial\ln q \approx 48$ means even
+  $10^{-6}\%$ error in $q$ propagates to $\sim 5 \times 10^{-5}\%$
+  in the rate. Track this explicitly.
 - **NEVER use O(·) to discard polynomial structure.** The transfer
   matrix product has $\binom{A}{2}$ steps — this is exact, not
   "O(A²)". Each step is a nucleon pair. The polynomial degree is
@@ -52,6 +93,23 @@ peer-review practices and the methodology of
   in $q$; the product $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$
   IS the Skein polynomial; evaluating at $q = 1.110$ gives the
   physical energy.  Never treat these as separate objects.
+- **USE TRANSFER MATRICES, NOT |M|².**
+  The decay rate comes from the **2×2 transfer matrix chain**
+  $T(c,d) = \bigl(\begin{smallmatrix} c(q-q^{-1})+d & c \\ c & d \end{smallmatrix}\bigr)$,
+  not from a scalar matrix element $|M|^2$.  The Skein polynomial
+  is $P = \prod_i \hat{V}_i$ where $\hat{V}_i = z \cdot M_{11} + M_{21}$
+  is the Markov-traced volume of the transfer matrix product at
+  generator $i$.  **Do not extract $|M|^2 = \prod |V_{\mathrm{par}}/V_{\mathrm{dau}}|^2$
+  and plug it into a Fermi golden rule** — this discards the
+  off-diagonal structure of the transfer matrices and gives
+  wrong results for $A > 3$.  The correct observable is the
+  **Skein polynomial ratio** $P_{\mathrm{dau}}(q)/P_{\mathrm{par}}(q)$,
+  computed as a product of 2×2 matrix chains.  For the T_{3,5}
+  weak vertex, the braid $(\sigma_1\sigma_2)^5$ is **appended**
+  (concatenated at the end) to the parent braid word and then
+  **reduced via Gröbner basis** — never inserted in the middle.
+  The Gröbner-Shirshov energy (Hecke steps only, YB and far-comm
+  preserve energy) gives the transition energy.
 - The pair Skein mass formula $\mathcal{S}_{ab} = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
   is categorical. The BW coefficients $a_V, a_S, a_C, a_A, a_P$ are NOT.
 - **Derived constants from $q$ (canonical formulas):**

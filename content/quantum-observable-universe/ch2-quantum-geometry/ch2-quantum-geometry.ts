@@ -279,5 +279,15 @@ export default chapter({
         "orbital-fourier-decomposition",
       ],
     }),
+
+    // ── Five-fold symmetry and the Bring surface ────────────────────
+    section({
+      title: "Five-fold symmetry",
+      label: "sec:fivefold-symmetry",
+      blocks: [
+        "fivefold-symmetry",
+        "cohomological-embedding",
+      ],
+    }),
   ],
 });
