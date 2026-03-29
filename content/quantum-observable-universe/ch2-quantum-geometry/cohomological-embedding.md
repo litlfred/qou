@@ -74,6 +74,59 @@ The knots **overlap** in $H^1$ (they share Seifert cycles), so
 $17 > 8$ does not contradict embeddability — each knot individually
 fits within rank $\leq 4 = g$.
 
+## Knot basis for $H^*(\Sigma_4)$
+
+The cohomology of $\Sigma_4$ admits a **knot basis** — each
+generator is identified with a specific knot-particle or force
+operator.  The Hodge decomposition $H^1 = H^{1,0} \oplus H^{0,1}$
+separates holomorphic (degree-$1$) from antiholomorphic
+(degree-$2$) sectors:
+
+$$
+  H^*(\Sigma_4)
+  \;=\;
+  \underbrace{H^0 \oplus H^2}_{\dim 2}
+  \;\oplus\;
+  \underbrace{H^{1,0}}_{\dim 4}
+  \;\oplus\;
+  \underbrace{H^{0,1}}_{\dim 4}
+$$
+
+| Cohomology | dim | Degree | Knot basis element | Knot-particle / force |
+|:---:|:---:|:---:|:---|:---|
+| $H^0$ | $1$ | $0$ | Point (trivial knot) | $\gamma$ (photon) |
+| $H^2$ | $1$ | $0$ | $\tau(1,0)$ (unknot) | $\nu / \bar{\nu}$ (neutrino) |
+| $H^{1,0}$ | $1$ | $1$ | $\tau(2,3)$ (trefoil) | $e^- / e^+$; on divisor: $\mathfrak{u}/\mathfrak{d}$ |
+| $H^{1,0}$ | $1$ | $1$ | $\tau(2,5)$ (cinquefoil) | $\mu$; on divisor: gen-$2$ quarks |
+| $H^{1,0}$ | $1$ | $1$ | $\tau(2,7)$ (septafoil) | $\tau$-lepton; on divisor: gen-$3$ quarks |
+| $H^{1,0}$ | $1$ | $1$ | $\tau(3,5)$ | Weak force ($\beta$-decay vertex) |
+| $H^{0,1}$ | $1$ | $2$ | $\tau(2,9) = \tau(2,3^2)$ | Strong binding (gluon) |
+| $H^{0,1}$ | $1$ | $2$ | $\tau(3,4) = \tau(3,2^2)$ | Hopf${}^2$ binding (color) |
+| $H^{0,1}$ | $1$ | $2$ | $4_1$ (figure-eight) | Higgs boson (mass mechanism) |
+| $H^{0,1}$ | $1$ | $2$ | $4_1^{-1} = 4_1$ (amphichiral) | Higgs $=$ own antiparticle |
+
+**Dimension count**: $\dim H^0 + \dim H^1 + \dim H^2 = 1 + 8 + 1
+= 10$.  Euler characteristic: $\chi = 1 - 8 + 1 = -6$.  The $8$
+generators of $H^1$ comprise $4$ holomorphic ($H^{1,0}$, degree-$1$
+torus knots) and $4$ antiholomorphic ($H^{0,1}$, degree-$2$ knots
+$+$ the amphichiral Higgs).
+
+**Gravity** is not a knot — it is the categorical trace
+$\int_A$ (the Frobenius pairing), operating at degree $0$.
+It acts universally on all knot-particles.
+
+**The Higgs boson** $4_1$ is the figure-eight knot:
+the closure of the Borromean braid
+$(\Delta_{\mathrm{mix}})^2 = (\sigma_0\sigma_1^{-1})^2$.
+It is amphichiral ($4_1 = 4_1^{-1}$, its own antiparticle),
+hyperbolic ($\mathrm{Vol}(4_1) = 2.0299$, giving mass), and
+couples to every knot-particle with crossings $> 0$
+(proportional to crossing count $=$ proportional to mass).
+Massless knot-particles (photon: $0$ crossings, neutrino:
+$0$ crossings) do not couple.  The open braid
+$(\Delta_{\mathrm{mix}})^2$ gives the axial coupling
+$g_A \approx 1.277$; the closed knot gives the mass boson.
+
 ## Completeness via Jones polynomials
 
 The Hecke algebras on the embeddable strand counts are:
