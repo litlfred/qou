@@ -1,6 +1,6 @@
 The **Skein binding Lagrangian** is not a new Lagrangian: it is
 the categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
-([canonical action](#def:qou-canonical-action)) evaluated on the
+([canonical action](#prop:qou-canonical-action)) evaluated on the
 field configuration $\psi = Z\,\mathfrak{p} \bowtie N\,\mathfrak{n}$.
 
 The categorical Lagrangian
@@ -114,7 +114,7 @@ interactions.
 
 **Derivation from the canonical action.**
 The five terms arise from the three sectors of $\mathcal{S}_q$
-([canonical action](#def:qou-canonical-action)) as follows:
+([canonical action](#prop:qou-canonical-action)) as follows:
 
 | Canonical sector | Evaluation on $L$ | Nuclear term |
 |-----------------|-------------------|--------------|

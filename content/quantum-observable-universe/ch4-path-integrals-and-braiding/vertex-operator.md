@@ -19,7 +19,7 @@ $$
 
 where $A_0 = \mathcal{O}(\mathrm{SU}_q(2))$ is the coordinate ring
 and $J^n$ denotes the $n$-th jet prolongation
-([jet prolongation](#def:jet-prolongation)).  The grading $n$ is the
+([jet prolongation](#prop:jet-prolongation)).  The grading $n$ is the
 **conformal weight**: the eigenvalue of the Reeb charge operator
 $L_0 = \xi_q^{(0)}$ (the zero-mode of the $q$-Reeb vector field).
 

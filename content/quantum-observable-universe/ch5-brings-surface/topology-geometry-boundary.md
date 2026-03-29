@@ -1,5 +1,5 @@
 The categorical action $\mathcal{S}_q = \mathrm{tr}(\mathcal{L}_q)$
-([canonical action](#def:qou-canonical-action)) evaluated on a nuclear
+([canonical action](#prop:qou-canonical-action)) evaluated on a nuclear
 link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
 **What $q$ alone determines.**
