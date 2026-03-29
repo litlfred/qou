@@ -70,10 +70,14 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 
 /* ── Paper viewer layout (sidebar + content) ────────────── */
 .paper-layout{display:flex;min-height:calc(100vh - 40px)}
-.sidebar{width:260px;min-width:260px;background:var(--bg-s);border-right:1px solid var(--brd);overflow-y:auto;position:sticky;top:40px;height:calc(100vh - 40px);padding:.8rem 0;transition:margin-left .25s var(--ease),opacity .25s var(--ease)}
-.sb-hidden .sidebar{margin-left:-260px;opacity:0;pointer-events:none}
+.sidebar{width:40px;min-width:40px;background:var(--bg-s);border-right:1px solid var(--brd);overflow:hidden;position:sticky;top:40px;height:calc(100vh - 40px);padding:.8rem 0;transition:width .25s var(--ease);z-index:50}
+.sidebar:hover,.sidebar.pinned{width:260px;overflow-y:auto;box-shadow:4px 0 12px rgba(0,0,0,.1)}
+.sidebar .sidebar-header{white-space:nowrap;overflow:hidden}
+.sb-hidden .sidebar{width:0;min-width:0;padding:0;border-right:none}
 .sidebar-header{padding:.5rem 1rem;font-family:var(--f-head);font-size:.8rem;color:var(--fg-b);border-bottom:1px solid var(--brd);margin-bottom:.5rem}
-.sb-ch{padding:.3rem 1rem;cursor:pointer;font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);transition:all .15s;display:flex;align-items:center;gap:.4rem}
+.sb-ch{padding:.3rem .5rem .3rem .5rem;cursor:pointer;font-family:var(--f-head);font-size:.75rem;color:var(--fg-d);transition:all .15s;display:flex;align-items:center;gap:.3rem;white-space:nowrap;overflow:hidden}
+.sb-tab{width:20px;min-width:20px;text-align:center;font-weight:600;font-size:.7rem;color:var(--ac);flex-shrink:0}
+.sb-ch-title{overflow:hidden;text-overflow:ellipsis}
 .sb-ch:hover{color:var(--fg-b);background:var(--bg-r)}
 .sb-ch.active{color:var(--ac);background:var(--bg-r)}
 .sb-ch .arrow{font-size:.6rem;transition:transform .2s}
@@ -617,6 +621,9 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:va
 .blk-modal-head{display:flex;justify-content:flex-end;margin-bottom:1rem}
 .blk-modal-close{background:none;border:1px solid var(--brd);color:var(--fg-d);font-size:1.3rem;cursor:pointer;padding:.2rem .6rem;border-radius:4px;transition:all .15s}
 .blk-modal-close:hover{color:var(--red);border-color:var(--red)}
+
+/* ── Citations ─────────────────────────────────────────── */
+.cite{font-family:var(--f-mono);font-size:.75em;color:var(--ac-d);cursor:default}
 
 /* ── Markdown tables ────────────────────────────────────── */
 .md-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.8rem 0}

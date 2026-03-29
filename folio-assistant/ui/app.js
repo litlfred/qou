@@ -22,6 +22,7 @@
   let currentBranch = null;   // HEAD branch on server
   let selectedBranch = null;  // branch the user is viewing (null = current)
   let diffData = null;        // PaperDiff from /api/diff
+  let diffAbort = null;       // AbortController for diff fetch
 
   const app = $("#app");
   const navLinks = $("#nav-links");
@@ -198,8 +199,8 @@
   window.addEventListener("hashchange", route);
 
   // ── API helpers ─────────────────────────────────────────
-  async function api(path) {
-    const r = await fetch(path);
+  async function api(path, signal) {
+    const r = await fetch(path, signal ? { signal } : undefined);
     if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
     return r.json();
   }
@@ -294,7 +295,7 @@
     if (paper) {
       const readLink = h("a", mode === "read" ? "active" : "", "read");
       readLink.href = "#";
-      readLink.onclick = (e) => { e.preventDefault(); mode = "read"; renderPaper(); };
+      readLink.onclick = (e) => { e.preventDefault(); if (diffAbort) diffAbort.abort(); mode = "read"; renderPaper(); };
       navLinks.appendChild(readLink);
 
       const qcLink = h("a", mode === "qc" ? "active" : "", "qc");
@@ -347,7 +348,8 @@
     const sbHead = h("div", "sidebar-header", esc(paper.title));
     sb.appendChild(sbHead);
     for (const ch of paper.chapters || []) {
-      const chEl = h("div", "sb-ch", `<span class="arrow">&#9654;</span> ${esc(ch.title)}`);
+      const tabLbl = ch.tabLabel || (ch.number != null ? String(ch.number) : "");
+      const chEl = h("div", "sb-ch", `<span class="sb-tab">${esc(tabLbl)}</span><span class="arrow">&#9654;</span> <span class="sb-ch-title">${esc(ch.title)}</span>`);
       const secList = h("div", "sb-secs");
       for (const sec of ch.sections || []) {
         const secEl = h("div", "sb-sec", esc(sec.title));
@@ -845,17 +847,25 @@
 
   // ── Diff view ──────────────────────────────────────────
   async function loadDiff() {
+    // Cancel any in-progress diff fetch
+    if (diffAbort) diffAbort.abort();
+    diffAbort = new AbortController();
     document.body.dataset.folioMode = "diff";
     updateNav();
-    app.innerHTML = '<div class="loading">computing diff...</div>';
+    app.innerHTML = '<div class="loading">computing diff...<br><button class="diff-cancel" style="margin-top:1rem">cancel</button></div>';
+    const cancelBtn = app.querySelector(".diff-cancel");
+    if (cancelBtn) cancelBtn.onclick = () => { diffAbort.abort(); mode = "read"; renderPaper(); };
     try {
       const base = "main";
       const head = selectedBranch || currentBranch;
-      const data = await api(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`);
+      const data = await api(`/api/diff?id=${encodeURIComponent(paper.id)}&base=${encodeURIComponent(base)}&head=${encodeURIComponent(head)}`, diffAbort.signal);
       diffData = data;
       renderDiff();
     } catch (e) {
+      if (e.name === "AbortError") return; // user cancelled
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
+    } finally {
+      diffAbort = null;
     }
   }
 
@@ -1291,14 +1301,22 @@
     // headings (## and ###)
     out = out.replace(/^### (.+)$/gm, '<h4 class="md-h4">$1</h4>');
     out = out.replace(/^## (.+)$/gm, '<h3 class="md-h3">$1</h3>');
-    // bold, italic
-    out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-    out = out.replace(/\*(.+?)\*/g, "<em>$1</em>");
+    // bold, italic (allow multiline spans)
+    out = out.replace(/\*\*([\s\S]+?)\*\*/g, "<strong>$1</strong>");
+    out = out.replace(/\*([^\n*][^*]*?)\*/g, "<em>$1</em>");
     // inline code
     out = out.replace(/`([^`]+)`/g, '<code style="background:var(--bg-r);padding:.1rem .3rem;border-radius:3px;font-size:.85em">$1</code>');
+    // citations \cite{key} → [key]
+    out = out.replace(/\\cite\{([^}]+)\}/g, '<span class="cite" title="$1">[$1]</span>');
+    // en-dash and em-dash
+    out = out.replace(/---/g, "\u2014");
+    out = out.replace(/--/g, "\u2013");
     // cross-refs [text](#label)
     out = out.replace(/\[([^\]]+)\]\(#([^)]+)\)/g,
       '<a class="uref" href="#$2" onclick="event.preventDefault();document.getElementById(\'$2\')?.scrollIntoView({behavior:\'smooth\',block:\'start\'})">$1</a>');
+    // markdown list items
+    out = out.replace(/^(\d+)\.\s+(.+)$/gm, '<li class="md-li" value="$1">$2</li>');
+    out = out.replace(/^[-*]\s+(.+)$/gm, '<li class="md-li">$1</li>');
     // paragraphs (but not after block elements)
     out = out.replace(/\n{2,}/g, "</p><p>");
     out = "<p>" + out + "</p>";
