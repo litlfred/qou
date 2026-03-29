@@ -393,7 +393,8 @@
 
   function renderChapter(ch) {
     const el = h("div", "ch");
-    el.innerHTML = `<h2 class="ch-t"><span class="n">${ch.number}.</span> ${esc(ch.title)}</h2>`;
+    const numSpan = ch.number != null ? `<span class="n">${ch.number}.</span> ` : "";
+    el.innerHTML = `<h2 class="ch-t">${numSpan}${esc(ch.title)}</h2>`;
     for (const sec of ch.sections || []) {
       el.appendChild(renderSection(sec));
     }
