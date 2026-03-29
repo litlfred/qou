@@ -113,25 +113,39 @@ T_{3,5}\}$.
 ## Consequences
 
 1. **Particle finiteness**: the $6$ torus knots are the complete
-   particle content.  Every observable hadron is a composite of
-   these $6$ building blocks.  No additional "hidden" particles
-   exist on $\Sigma_4$.
+   knot-particle content.  Every observable hadron is a composite
+   of these $6$ building blocks $\mathcal{K}_{\tau(r,s)}$.  No
+   additional knot-particles exist on $\Sigma_4$.
 
-2. **Shell model completeness**: the nuclear shell structure
+2. **Shell model completeness**: the nuclear orbital shell structure
    (magic numbers, subshells) is entirely determined by the
    knot invariants (products and crossing numbers) of these $6$
    representations.  No additional shell structure can arise.
 
-3. **Force completeness**: the $4$ degree-$1$ knots give the
-   shell-level forces ($T_{2,3}$: trefoil/mass, $T_{2,5}$:
-   second generation, $T_{2,7}$: third generation, $T_{3,5}$:
-   weak/aperiodic).  The $2$ degree-$2$ knots give the
-   subshell splitting ($T_{2,9}$: strong binding, $T_{3,4}$:
-   Hopf-squared).  No additional forces exist.
+3. **Interaction completeness (no other forces).**  Each embeddable
+   torus knot $\tau(r,s)$ defines a transfer matrix
+   $T_{\tau(r,s)}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
+   — a **force operator** governing the interaction it mediates.
+   The $6$ transfer matrices exhaust the harmonic $1$-forms on
+   $\Sigma_4$: every interaction between knot-particles is a
+   composition of these $6$ operators.  A hypothetical $7$th
+   force would require a $7$th embeddable torus knot, which
+   would need genus $> 4$ — contradicting the brane tower
+   cohomology.  **There are exactly $6$ force operators, and
+   we prove there can be no others.**
+
+   | Transfer matrix | Knot-particle | Interaction |
+   |:---:|:---:|:---|
+   | $T_{\tau(2,3)}(q)$ | $\mathcal{K}_e$ (trefoil) | Mass / electromagnetic |
+   | $T_{\tau(2,5)}(q)$ | $\mathcal{K}_{\tau(2,5)}$ | 2nd generation |
+   | $T_{\tau(2,7)}(q)$ | $\mathcal{K}_c$ (charm) | 3rd generation |
+   | $T_{\tau(3,5)}(q)$ | $\mathcal{K}_{\tau(3,5)}$ | Weak ($\beta$-decay vertex) |
+   | $T_{\tau(2,9)}(q)$ | $\mathcal{K}_{\tau(2,9)}$ | Strong binding (degree-$2$ tower of trefoil) |
+   | $T_{\tau(3,4)}(q)$ | $\mathcal{K}_t$ (top) | Hopf-squared binding (degree-$2$ tower of Hopf) |
 
 4. **$\chi = -6$ is the unique solution**: genus $4$ is the
    unique genus that accommodates exactly $\mathrm{SU}_2$
    reconstruction + color-squared strong force + no extra
-   particles.  Any other genus gives either too few forces
-   ($g < 4$: no strong binding) or too many particles
-   ($g > 4$: $T_{2,11}$ embeds, predicting unobserved matter).
+   knot-particles.  Any other genus gives either too few forces
+   ($g < 4$: no strong binding) or too many knot-particles
+   ($g > 4$: $\tau(2,11)$ embeds, predicting unobserved matter).
