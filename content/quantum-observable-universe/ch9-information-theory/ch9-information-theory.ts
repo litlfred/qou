@@ -45,7 +45,7 @@ export default chapter({
         "jet-planck-steps",
       ],
     }),
-    section({
+section({
       title: "Speed of Light and Mass--Energy Equivalence",
       label: "sec:speed-of-light",
       blocks: [

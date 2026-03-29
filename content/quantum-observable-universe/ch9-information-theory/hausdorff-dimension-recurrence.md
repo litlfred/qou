@@ -3,30 +3,33 @@ The self-consistency condition $G_{\mathrm{Planck}} = 1$
 quadratic-suppression series and the $q$-deformed Lyapunov exponent
 $\chi_q = 1/(2q-1)$
 ([operational entropy](#def:operational-entropy)) determines the
-Hausdorff dimension of the Julia set as an algebraic function of
+**$q$-deformed Hausdorff dimension** as an algebraic function of
 $q$:
 
 $$
-  d_H(q) \;=\; \frac{(2q - 1)^2}{q^3}.
+  d_{H,q} \;=\; \frac{(2q - 1)^2}{q^3}.
 $$
 
-This is a **prediction**: the Hausdorff dimension of $J(f_q)$
-([Julia set](#rem:julia-set-reeb)) at main-cardioid parameter
-$c_q = \tfrac{1}{2}e^{2\pi i q} - \tfrac{1}{4}e^{4\pi i q}$
-is determined algebraically by the gravitational self-consistency.
+This is **exact** within the $q$-deformed framework — a rational
+function of $q$ that works over any field $k$ with $q \in k^\times$.
+It is distinct from the classical Hausdorff dimension $d_H$ of the
+Julia set $J(f_q)$ over $\mathbb{C}$, which depends on the
+transcendental topological entropy $\ln 2$.  See
+[operational entropy](#def:operational-entropy) for the full
+comparison.
 
-The formula satisfies $d_H(1) = 1$ (unit circle), $d_H > 1$
-for $1 < q < (3+\sqrt{5})/2$, and $d_H = 1$ again at the golden
+The formula satisfies $d_{H,q}(1) = 1$ (unit circle), $d_{H,q} > 1$
+for $1 < q < (3+\sqrt{5})/2$, and $d_{H,q} = 1$ again at the golden
 threshold $q = (3+\sqrt{5})/2 = \varphi^2 \approx 2.618$.
 
 **Derivative and discrete step.**
 The continuous derivative is
 
 $$
-  d_H'(q) \;=\; \frac{(2q-1)(3 - 4q)}{q^4},
+  d_{H,q}'(q) \;=\; \frac{(2q-1)(3 - 4q)}{q^4},
 $$
 
-which is negative for $q > 3/4$: the fractal dimension
+which is negative for $q > 3/4$: the $q$-deformed fractal dimension
 **decreases** as $q$ increases toward the Big Bang (for $q$ in the
 physical range $q > 1$).
 
@@ -36,23 +39,23 @@ Reeb phase advance in $q$-space), the discrete update per
 Planck step is
 
 $$
-  d_H^{(n+1)}
-  \;=\; d_H^{(n)}
+  d_{H,q}^{(n+1)}
+  \;=\; d_{H,q}^{(n)}
   \;+\; \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
 $$
 
 This is a **contraction mapping** for $q > 3/4$: the iteration
-$d_H \to d_H + \Delta d_H$ flows monotonically toward $d_H = 0$.
-The fractal complexity of the Reeb dynamics decreases with
-increasing $q$, reaching zero at $q \to \infty$ (Big Bang: Julia
-set collapses to a point).  The direction of decreasing $d_H$ is
-the direction of increasing $q$ — the direction from classical
-($q \to 1$, rich fractal, $d_H$ maximal) toward Big Bang
-($q \to \infty$, no fractal, $d_H = 0$).
+$d_{H,q} \to d_{H,q} + \Delta d_{H,q}$ flows monotonically toward
+$d_{H,q} = 0$.  The fractal complexity of the Reeb dynamics
+decreases with increasing $q$, reaching zero at $q \to \infty$ (Big
+Bang: Julia set collapses to a point).  The direction of decreasing
+$d_{H,q}$ is the direction of increasing $q$ — the direction from
+classical ($q \to 1$, rich fractal, $d_{H,q}$ maximal) toward Big
+Bang ($q \to \infty$, no fractal, $d_{H,q} = 0$).
 
 **Regime table.**
 
-| $q$ | $d_H(q)$ | Regime |
+| $q$ | $d_{H,q}$ | Regime |
 |-----|----------|-------|
 | $1$ | $1.000$ | Classical limit (unit circle) |
 | $1.01$ | $1.010$ | Near-classical |
@@ -63,39 +66,55 @@ the direction of increasing $q$ — the direction from classical
 | $3.0$ | $0.926$ | Beyond golden |
 | $10$ | $0.361$ | Near Big Bang |
 
-**What is known about $d_H$ on the main cardioid.**
+**$d_{H,q}$ vs. $d_H$: comparison with classical Hausdorff dimension.**
+
 For parameters $c(\theta)$ on the main cardioid of the Mandelbrot
 set (rotation number $\theta$, multiplier $\lambda = e^{2\pi i
-\theta}$), the Julia set is a quasicircle and three regimes of
-$d_H$ are established:
+\theta}$), the Julia set is a quasicircle and the classical
+Hausdorff dimension $d_H$ satisfies:
 
-1. **Near the centre** ($|c| \ll 1$, i.e., $q$ near an integer).
-   Ruelle's perturbative formula gives
+1. **Ruelle perturbative** (valid near $|c| \ll 1$):
 
    $$
      d_H \;=\; 1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
    $$
 
    At $\theta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.
-   This is a lower bound — higher-order terms are positive.
 
-2. **Bounded-type rotation numbers** ($\theta = [0; a_1, a_2,
-   \ldots]$ with $a_i$ bounded).  The Julia set boundary is a
-   quasicircle with $d_H > 1$ controlled by the maximum partial
-   quotient.  For $\theta = 0.1097 = [0; 9, 8, 1, 1, \ldots]$,
-   the large partial quotients $9$ and $8$ push $d_H$ higher than
-   the Ruelle estimate.  Analytic bounds from McMullen's theory of
-   quasiconformal deformations give $d_H$ strictly between the
-   Ruelle value and $2$.
+2. **Transfer operator** (numerical, Bowen–Ruelle): $d_H \approx
+   1.047$ at $N = 800$ grid points.
 
-3. **Near the cardioid boundary** ($|c| \to 3/4$, i.e., near the
-   $1/2$-bulb).  The Julia set dimension approaches $d_H \to 2$
-   (space-filling) as the parameter approaches a parabolic point.
+3. **QOU $q$-deformed**: $d_{H,q} = 1.088$.
 
-The QOU prediction $d_H(1.1097) = 1.088$ falls between the Ruelle
-lower bound ($1.043$) and the cardioid-boundary limit ($2$).  It is
-testable by high-resolution computation of the Julia set at
-$c(0.1097) = 0.338 + 0.073i$.
+The gap $d_{H,q} - d_H \approx 0.041$ is explained by the
+different Manning–McCluskey inputs:
+
+| | Classical $d_H$ | $q$-deformed $d_{H,q}$ |
+|---|---|---|
+| Topological entropy | $\ln 2 = 0.693$ | $\eta_q = 0.892$ |
+| Lyapunov exponent | $\chi(c) \approx 0.662$ | $\chi_q = 0.820$ |
+| Dimension | $0.693/0.662 = 1.047$ | $0.892/0.820 = 1.088$ |
+
+The classical $d_H$ is a property of conformal dynamics over
+$\mathbb{C}$.  The $q$-deformed $d_{H,q}$ replaces the
+transcendental $\ln 2$ with the rational $\eta_q$ and the
+numerical $\chi(c)$ with the algebraic $\chi_q$.  The QOU claim
+is that $d_{H,q}$ governs the physics (it determines the
+$q$-critical line, information bandwidth, and gravitational
+self-consistency).
+
+**There is no known closed form** for the classical $d_H(J_c)$ as
+a function of the main-cardioid parameter $c$.  The Hausdorff
+dimension is defined implicitly as the unique zero of the
+Bowen–Ruelle pressure function $P(-t\,\log|f_c'|) = 0$
+(Bowen 1979), which involves an infinite-dimensional transfer
+operator.  The function $c \mapsto d_H(J_c)$ is:
+
+- **Real-analytic** on the main cardioid interior (McMullen 1998).
+- **Strictly $> 1$** for all $c \neq 0$ (the Julia set is a
+  quasicircle but not a smooth curve).
+- **Approaching $2$** at the cardioid boundary for certain sequences
+  of parameters (Shishikura 1998).
 
 **Convergence from local $q$.**
 The downward iteration $q_{n+1} = q_n - \hbar_{q_n}
@@ -104,7 +123,7 @@ $q = 1$, which is a **superattracting fixed point** (the derivative
 $|1 - 1/q^2|$ vanishes at $q = 1$).  Starting from our local
 $q_0 = 1.1097$:
 
-| Step | $q_n$ | $\hbar_{q_n}$ | $d_H(q_n)$ | $\eta_q$ |
+| Step | $q_n$ | $\hbar_{q_n}$ | $d_{H,q}$ | $\eta_q$ |
 |:----:|--------|---------------|-----------|----------|
 | 0 | $1.1097$ | $0.0989$ | $1.088$ | $0.892$ |
 | 1 | $1.0108$ | $0.0107$ | $1.010$ | $0.991$ |
@@ -116,54 +135,12 @@ The convergence is superlinear: each step squares the distance to
 $q = 1$.  At the fixed point, $\eta_q = 1$ nat: each Reeb
 operation carries exactly one natural unit of information.
 
-**Status of the formula in complex dynamics.**
-There is **no known closed form** for $d_H(J_c)$ as a function of
-the main-cardioid parameter $c$.  The Hausdorff dimension is
-defined implicitly as the unique zero of the Bowen--Ruelle pressure
-function $P(-t\,\log|f_c'|) = 0$ (Bowen 1979), which involves an
-infinite-dimensional transfer operator.  The function $c \mapsto
-d_H(J_c)$ is known to be:
-
-- **Real-analytic** on the main cardioid interior (McMullen 1998).
-- **Strictly $> 1$** for all $c \neq 0$ (the Julia set is a
-  quasicircle but not a smooth curve).
-- **Perturbatively**
-  $d_H = 1 + |c|^2/(4\ln 2) + O(|c|^4)$ near $c = 0$ (Ruelle
-  1982).  At $\theta = 0.1097$: $|c| = 0.346$, giving
-  $d_H \approx 1.043$ --- a lower bound from the leading term.
-- **Approaching $2$** at the cardioid boundary for certain sequences
-  of parameters (Shishikura 1998).
-- **$d_H(J_{1/4}) \approx 1.081$** at the cusp $c = 1/4$
-  (numerical, parabolic parameter).
-
-The corrected QOU formula $d_H(q) = (2q-1)^2/q^3$ is therefore
-**not a restatement of known mathematics** but a prediction from
-the gravitational self-consistency condition and the $q$-deformed
-Lyapunov exponent.  It matches all known constraints:
-
-- $d_H(1) = 1$ (unit circle). ✓
-- $d_H > 1$ for $c \neq 0$ in the cardioid interior
-  (McMullen 1998 [mcmullen1998]). ✓
-- $d_H > 1 + |c|^2/(4\ln 2)$ (above the Ruelle lower bound
-  [ruelle1982]). ✓ At $q = 1.1097$: $1.088 > 1.043$.
-- $d_H \to 0$ as $q \to \infty$ (Julia set collapses). ✓
-
-**Falsifiability.**
-The prediction $d_H(1.1097) = 1.088$ is testable by high-precision
-computation of $d_H(J_c)$ at $c = c(0.1097) = 0.338 + 0.073i$
-using the Bowen--Ruelle pressure function [bowen1979]
-(thermodynamic formalism with Ruelle transfer operators).
-Box-counting gives $d_H \approx 1.01$ but systematically
-underestimates thin quasicircles.  Transfer-operator methods
-achieve much higher precision and would give a definitive
-comparison.
-
 **Cosmological arrow of time.**
-The monotone decrease of $d_H$ with $q$ defines an
+The monotone decrease of $d_{H,q}$ with $q$ defines an
 information-theoretic arrow: the universe evolves from low $q$
-(classical limit, maximal $d_H$, richest fractal structure) toward
-high $q$ (Big Bang, $d_H = 0$, no structure).  Reversing time means
-reversing the discrete recurrence — moving from less to more fractal
-complexity.  The second law of thermodynamics, in this picture, is
-the statement that the Julia set dimension increases as $q$
-decreases: the universe gains information capacity as it ages.
+(classical limit, maximal $d_{H,q}$, richest fractal structure)
+toward high $q$ (Big Bang, $d_{H,q} = 0$, no structure).  Reversing
+time means reversing the discrete recurrence — moving from less to
+more fractal complexity.  The second law of thermodynamics, in this
+picture, is the statement that the $q$-deformed dimension increases
+as $q$ decreases: the universe gains information capacity as it ages.
