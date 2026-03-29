@@ -1,4 +1,4 @@
-At $q = 1.1097$, the stability cubic
+At $q = q_0$, the stability cubic
 ([Diophantine valley](#rem:diophantine-valley))
 
 $$
@@ -44,7 +44,7 @@ $n = p$ as $A$ increases: the Coulomb term $a_C \cdot p^2/A^{1/3}$
 penalises proton-rich nuclei, requiring additional neutrons for
 stability.  At $p = 1$ (hydrogen), $n = 0$; at $p = 92$ (uranium),
 $n = 146$ — the neutron excess grows from $0\%$ to $59\%$, driven
-entirely by the single parameter $q = 1.1097$.
+entirely by the single parameter $q_0$.
 
 A plot of this curve in the $(p, n)$-plane, with the lattice
 points marked and labeled by element, is shown in the

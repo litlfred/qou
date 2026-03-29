@@ -1,5 +1,5 @@
 **Proposition.**
-At $q = 1.1097$, the beta-stability formula
+At $q = q_0$, the beta-stability formula
 ([beta-stability](#prop:beta-stability))
 
 $$
