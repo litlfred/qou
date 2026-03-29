@@ -29,7 +29,7 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
 .tile.magic-z{border-left:2px solid #c44}
 .tile.magic-n{border-right:2px solid #44c}
 .tile.magic-both{border-left:2px solid #c44;border-right:2px solid #44c}
-.tile.intruder{background:#fff8f0}
+.tile.magic-receptive{background:#fff8f0}
 /* Block colors */
 .tile.block-s{background:linear-gradient(135deg,#f0f4ff,#fff)}
 .tile.block-p{background:linear-gradient(135deg,#f0fff4,#fff)}
@@ -94,7 +94,7 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
     <select id="filter-sel">
       <option value="all">All elements</option>
       <option value="magic">Magic numbers only</option>
-      <option value="intruder">Intruder levels</option>
+      <option value="intruder">Magic-receptive</option>
       <option value="stable">Stability pairs</option>
     </select>
   </label>
@@ -311,7 +311,7 @@ const BLOCK_NAMES=["s","p","d","f"];
 const BLOCK_COLORS=["#d0d8f8","#d0f0d8","#f8e8d0","#f0d0e8"];
 // Shell data: pair = stability pair (magic number where shell closes)
 // prevPair = previous closure; capacity = nucleon slots in this shell
-// intruder = braid crossing that drops into previous shell
+// intruder = spin-orbit magic shell (highest-j sub-level drops into previous HO shell)
 const MAGIC=[0,2,8,20,28,50,82,126];
 const SHELL_ROWS=[
   {row:1,pair:2,  prevPair:0,  capacity:2,  range:"H–He"},
@@ -629,7 +629,7 @@ function fullKnotDiagram(el){
   if(remN>0)parts.push(`${remN} free neutron${remN>1?"s":""}`);
   if(MAGIC_Z.has(Z))parts.push("◇ proton stability pair");
   if(MAGIC_N.has(N))parts.push("◇ neutron stability pair");
-  if(el[12])parts.push("⋈↓ intruder crossing");
+  if(el[12])parts.push("magic shell (spin-orbit closure)");
   info.textContent=parts.join(" · ");
   container.appendChild(info);
 
@@ -780,7 +780,7 @@ function makeTile(el,colorMode){
   if(magZ&&magN)tile.classList.add("magic-both");
   else if(magZ)tile.classList.add("magic-z");
   else if(magN)tile.classList.add("magic-n");
-  if(intruder)tile.classList.add("intruder");
+  if(intruder)tile.classList.add("magic-receptive");
 
   // Tile content
   const zSpan=document.createElement("div");
@@ -880,8 +880,8 @@ function buildGrid(){
       const gr=KNOT_BASE_ROW[i+1]+rowOffset;
       const lbl=document.createElement("div");
       lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
-      lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
-      lbl.title=`Shell ${i+1}: ${sr.capacity} nucleon slots. Closes at ◇${sr.pair}.${sr.intruder?" Intruder level.":""}`;
+      lbl.textContent=sr.intruder?`★${sr.pair}`:`◇${sr.pair}`;
+      lbl.title=`Shell ${i+1}: ${sr.capacity} nucleon slots. Closes at ◇${sr.pair}.${sr.intruder?" Magic shell (spin-orbit closure).":""}`;
       grid.appendChild(lbl);
       // Sub-shell boundary labels within this row
       const subs=NUC_SUBS[i+1];
@@ -906,8 +906,8 @@ function buildGrid(){
       const gr=KNOT_BASE_ROW_EBLOCK[i+1]+rowOffset;
       const lbl=document.createElement("div");
       lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
-      lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
-      lbl.title=`Shell capacity: ${sr.capacity} nucleon slots. Stability pair at ${sr.pair}.${sr.intruder?" Intruder crossing.":""}`;
+      lbl.textContent=sr.intruder?`★${sr.pair}`:`◇${sr.pair}`;
+      lbl.title=`Shell capacity: ${sr.capacity} nucleon slots. Stability pair at ${sr.pair}.${sr.intruder?" Magic shell (spin-orbit closure).":""}`;
       grid.appendChild(lbl);
     }
   }
@@ -980,7 +980,7 @@ function selectElement(el){
   }
   if(magZ)rows.push(["","◇ Proton stability pair"]);
   if(magN)rows.push(["","◇ Neutron stability pair"]);
-  if(intruder)rows.push(["Intruder crossing","⋈↓ braid drops into previous shell"]);
+  if(intruder)rows.push(["Magic shell","★ spin-orbit closure (highest-j sub-level)"]);
 
   for(const[k,v]of rows){
     const tr=document.createElement("tr");
@@ -1031,8 +1031,8 @@ function buildLegend(){
   addItem(mn,"Neutron magic #");
   const intr=document.createElement("span");
   intr.style.cssText="background:#fff8f0;border:1px solid #dca;padding:1px 4px;font-size:10px";
-  intr.textContent="int";
-  addItem(intr,"Intruder level");
+  intr.textContent="★";
+  addItem(intr,"Magic-receptive");
 }
 
 // === CONTROLS ===

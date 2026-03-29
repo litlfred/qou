@@ -12,7 +12,7 @@ export default remark({
     "nuclear-shell",
     "electron-shell",
     "borromean",
-    "intruder",
+    "magic-receptive",
     "transfer-matrix",
     "skein-polynomial",
   ],

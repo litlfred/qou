@@ -6,9 +6,9 @@ trefoil resonance modes.
 
 **Organizing principles.**
 
-1. **Rows**: nuclear HO level $N$ with intruder splits
-   ([nuclear shell intruder](#prop:nuclear-shell-intruder)).
-   Each row boundary is a stability pair.
+1. **Rows**: nuclear HO level $N$ with magic splits
+   ([nuclear shell magic numbers](#prop:nuclear-shell-intruder)).
+   Each row boundary is a magic number (stability pair).
 
 2. **Columns**: proton sub-shell filling order
    (Mayer--Jensen), left to right.  The leftmost element
@@ -20,7 +20,7 @@ trefoil resonance modes.
 
    The sub-shell capacities follow the spin-orbit
    splitting of the harmonic oscillator levels
-   ([nuclear shell intruder](#prop:nuclear-shell-intruder)):
+   ([nuclear shell magic numbers](#prop:nuclear-shell-intruder)):
    each sub-level $nl_j$ accommodates $2j + 1$ protons.
    The electron shell structure is determined by the
    eigenvalues of the photon-electron transfer matrix
@@ -30,25 +30,28 @@ trefoil resonance modes.
    governs shell energy scaling via a Chebyshev recurrence.
 
 3. **Color coding**: $k_\alpha$ (number of $\alpha$ sub-links
-   in the nucleus), intruder status (which HO level the last
-   nucleon occupies).
+   in the nucleus), magic-receptive status (whether the element
+   is in a spin-orbit magic shell).
 
 **Row structure (nuclear side).**
 
-| Row | Stability pair | $N$ | Intruder? | Elements |
-|----:|---------------:|----:|:---------:|----------|
-| 1 | 2 | 0 | — | H, He |
-| 2 | 8 | 1 | — | Li $\to$ Ne |
-| 3 | 20 | 2 | — | Na $\to$ Ca |
-| 4 | 28 | 3 intruder | $1f_{7/2}$ drops | Sc $\to$ Ni |
-| 5 | 50 | 4 intruder | $1g_{9/2}$ drops | Cu $\to$ Sn |
-| 6 | 82 | 5 intruder | $1h_{11/2}$ drops | Sb $\to$ Pb |
-| 7 | 126 | 6 intruder | $1i_{13/2}$ drops | Bi $\to$ U+ |
+| Row | Magic $Z$ | $N$ | Magic type | Elements |
+|----:|----------:|----:|:----------:|----------|
+| 1 | 2 | 0 | HO closure | H, He |
+| 2 | 8 | 1 | HO closure | Li $\to$ Ne |
+| 3 | 20 | 2 | HO closure | Na $\to$ Ca |
+| 4 | 28 | 3 | ★ spin-orbit | Sc $\to$ Ni |
+| 5 | 50 | 4 | ★ spin-orbit | Cu $\to$ Sn |
+| 6 | 82 | 5 | ★ spin-orbit | Sb $\to$ Pb |
+| 7 | 126 | 6 | ★ spin-orbit | Bi $\to$ U+ |
 
-Rows 1--3 are pure HO closures.  Rows 4--7 are
-intruder-created closures where the Borromean spin-orbit
-coupling ($\mathcal{B}_3$ crossing number $= 3$) pushes the
-highest-$j$ sub-level into the previous shell.
+Rows 1--3 close at pure HO shell boundaries.  Rows 4--7
+are magic shells created by spin-orbit coupling
+($\mathcal{B}_3$ crossing number $= 3$): the highest-$j$
+sub-level drops into the previous HO shell, creating a
+new stability pair.  Elements in these rows are
+**magic-receptive** — they fill the spin-orbit-split
+sub-shell that leads to the next magic number.
 
 **Column structure (proton sub-shell filling).**
 
@@ -119,8 +122,8 @@ Each element displays:
   index at the element's outermost shell
 - **$N_{\mathrm{pred}}$ vs $N_{\mathrm{obs}}$**: predicted
   and observed neutron number
-- **Intruder indicator**: if the last nucleon is in an
-  intruder sub-level, mark it
+- **Magic-receptive indicator**: ★ if the element is in a
+  spin-orbit magic shell
 
 **Visualization specification (for implementation).**
 
@@ -140,7 +143,7 @@ The visualization should be an interactive HTML page
    the full Borromean baryon composition:
    - Number of $\alpha$ clusters ($k_\alpha$)
    - Which HO level the last nucleon occupies
-   - Whether it's an intruder sub-level
+   - Whether it's in a magic-receptive shell
    - Stability pair membership ($\diamond$, $\star$)
 
 4. **Electron side panel**: show the trefoil writhe diagram:
@@ -151,10 +154,10 @@ The visualization should be an interactive HTML page
 
 5. **Controls**:
    - Toggle between standard and knot-centric layouts
-   - Filter by stability pair, intruder status, $k_\alpha$
+   - Filter by stability pair, magic-receptive status, $k_\alpha$
    - $q$ slider to show how the table changes with substrate
      parameter (at $q = 1$: all rows equal width, no
-     intruders; at $q = q_0$: observed table)
+     no magic shells; at $q = q_0$: observed table)
 
 6. **Knot notation**: use the visual conventions from
    [knot atom diagrams](#rem:knot-atom-diagrams):
