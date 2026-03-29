@@ -14,6 +14,10 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:no-quasi-zeros",
   title: "Algebra without quasi-zeros",
+  lean: {
+    decl: "QOU.NoQuasiZeros",
+    validation: "not_checked",
+  },
   tags: ["algebra", "ground-ring"],
   uses: [],
   cites: ["leitnerpawloski2004"],
