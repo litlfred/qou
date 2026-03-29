@@ -102,7 +102,9 @@ Yekutieli lifting condition makes this precise: an object admits
 a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
 vanishes.  The descent involution $\hat{\tau}$ then decomposes the
 algebra at each level into descended (observable) and transient
-(pre-observable) modes.
+(pre-observable) modes.  A key result is the Descartes condition
+$\chi(A) = -6$, forced by the lifting obstructions and the
+Archimedean constraint.
 
 [Chapter 4](#chap:path-integrals-braiding) develops braids and
 knots within the categorical framework.  Particles, identified with
@@ -121,11 +123,11 @@ hyperbolic volume of its complement and the quantum Planck constant
 $\hbar_q = 1 - 1/q$.  A clean dictionary emerges: crossing number
 equals jet order equals information content.
 
-[Chapters 5 and 6](#chap:models-qou) construct explicit models —
-*Descartes universes*, so called because the observer is not
-separate from the mechanics.  Bring's surface and its $S_5$
-symmetry play a central role, together with the Archimedean
-condition and the Euler characteristic $\chi = -6$.
+[Chapters 5 and 6](#chap:models-qou) explore the consequences of
+$\chi(A) = -6$.  The constraint singles out Bring's surface — a
+genus-4 curve with $S_5$ symmetry — as the fibre of the state
+bundle, and the resulting *Descartes universes* are so called
+because the observer is not separate from the mechanics.
 
 [Chapter 7](#chap:observations) confronts the theory with
 experiment.  The substrate parameter $q$ is not free but is
@@ -143,7 +145,9 @@ light nuclei (matching CODATA to six significant figures);
 knot-theoretic orbital shells reproducing the noble-gas sequence;
 beta-decay half-lives from Skein polynomial matrix elements; and
 a fine-structure constant $\alpha^{-1}$ within $0.14\%$ of the
-measured value.
+measured value.  The same Hopf chain formalism extends to organic
+chemistry, demonstrating that the categorical machinery reaches
+beyond fundamental physics to molecular structure and bonding.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery
 directly.  The mechanics of the quantum observable universe turn
@@ -168,11 +172,6 @@ $$
 
 where $c_q$ is the information speed of light — $E = mc^2$
 derived from the categorical structure.
-
-[Chapter 9](#chap:organic-chemistry) applies the Hopf chain
-formalism to organic chemistry, demonstrating that the same
-categorical machinery extends beyond fundamental physics to
-molecular structure and bonding.
 
 The **Glossary** maps paper terminology to Mathlib declarations,
 and the **Appendix** collects the knot periodic table.
