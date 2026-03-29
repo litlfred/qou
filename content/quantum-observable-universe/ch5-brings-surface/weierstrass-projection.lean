@@ -26,6 +26,7 @@ namespace QOU.Descartes
 -- Ref: [manuscript] §5/weierstrass-projection
 noncomputable def weierstrassProjection
     (g2 g3 : ℝ) (z : ℂ) : ℂ :=
+  -- Ref: [manuscript] §5/weierstrass-projection
   sorry
 
 /-- The Weierstrass function satisfies the differential equation
@@ -33,6 +34,7 @@ noncomputable def weierstrassProjection
 -- Ref: [manuscript] §5/weierstrass-projection
 theorem weierstrass_diff_eq (g2 g3 : ℝ) (z : ℂ) :
     True := by  -- placeholder for the differential equation statement
+  -- Ref: [manuscript] §5/weierstrass-projection
   sorry
 
 end QOU.Descartes

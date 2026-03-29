@@ -18,12 +18,14 @@ noncomputable def planckTime {k : Type*} [Field k] (q : k) (hq : q ≠ 1) : k :=
 -- Ref: [manuscript] Ch 8, Definition: Planck Time
 theorem planckTime_eq_inv_hbar {k : Type*} [Field k] (q : k) (hq : q ≠ 0) (hq1 : q ≠ 1) :
     planckTime q hq1 = 1 / (1 - q⁻¹) := by
+  -- Ref: [manuscript] Ch 8, Definition: Planck Time
   sorry
 
 /-- Planck length is identically 1: ℏ_q · t_P = 1. -/
 -- Ref: [manuscript] Ch 8, Definition: Planck Time
 theorem planck_length_eq_one {k : Type*} [Field k] (q : k) (hq : q ≠ 0) (hq1 : q ≠ 1) :
     (1 - q⁻¹) * planckTime q hq1 = 1 := by
+  -- Ref: [manuscript] Ch 8, Definition: Planck Time
   sorry
 
 end QOU
