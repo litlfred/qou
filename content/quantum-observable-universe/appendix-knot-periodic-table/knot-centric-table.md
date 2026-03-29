@@ -10,19 +10,24 @@ trefoil resonance modes.
    ([nuclear shell intruder](#prop:nuclear-shell-intruder)).
    Each row boundary is a stability pair.
 
-2. **Columns**: electron Fourier mode $\ell$ and writhe
-   level $n$
-   ([orbital Fourier decomposition](#prop:orbital-fourier-decomposition)).
-   Sub-blocks for $s$ ($\ell = 0$), $p$ ($\ell = 1$),
-   $d$ ($\ell = 2$), $f$ ($\ell = 3$).
-   The shell structure is determined by the eigenvalues
-   of the photon-electron transfer matrix $T_{\gamma e}(q)$
+2. **Columns**: proton sub-shell filling order
+   (Mayer--Jensen), left to right.  The leftmost element
+   in each row has just started filling the new shell
+   (magic-receptive); the rightmost element closes the
+   shell (magic number).  Sub-shells are separated by
+   gaps; within each sub-shell, elements fill
+   sequentially by $Z$.
+
+   The sub-shell capacities follow the spin-orbit
+   splitting of the harmonic oscillator levels
+   ([nuclear shell intruder](#prop:nuclear-shell-intruder)):
+   each sub-level $nl_j$ accommodates $2j + 1$ protons.
+   The electron shell structure is determined by the
+   eigenvalues of the photon-electron transfer matrix
+   $T_{\gamma e}(q)$
    ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)):
    at the substrate parameter $q$, $\lambda_+ = 1.1073$
-   governs shell energy scaling via a Chebyshev recurrence,
-   and sub-shell capacities
-   ($2, 6, 10, 14$) arise from tensor product eigenvalue
-   degeneracies.
+   governs shell energy scaling via a Chebyshev recurrence.
 
 3. **Color coding**: $k_\alpha$ (number of $\alpha$ sub-links
    in the nucleus), intruder status (which HO level the last
@@ -45,18 +50,27 @@ intruder-created closures where the Borromean spin-orbit
 coupling ($\mathcal{B}_3$ crossing number $= 3$) pushes the
 highest-$j$ sub-level into the previous shell.
 
-**Column structure (electron side).**
+**Column structure (proton sub-shell filling).**
 
-| Block | $\ell$ | Orbitals | Writhe modes | Visual |
-|------:|-------:|---------:|-------------|--------|
-| $s$ | 0 | 1 | Uniform (no oscillation) | Sphere |
-| $p$ | 1 | 3 | 1-wavelength standing wave | Dumbbells |
-| $d$ | 2 | 5 | 2-wavelength | Cloverleaf |
-| $f$ | 3 | 7 | 3-wavelength | Complex |
+Within each row, elements fill left to right through the
+Mayer--Jensen sub-shells.  The sub-shell sequence for
+each row is:
 
-Each column shows the electron trefoil's Fourier mode —
-how the writhe excitation oscillates around the $(2,3)$
-torus.
+| Row | Sub-shells (capacity) | Total |
+|----:|----------------------|------:|
+| 1 | $1s_{1/2}$(2) | 2 |
+| 2 | $1p_{3/2}$(4) $\mid$ $1p_{1/2}$(2) $\mid$ $1d_{5/2}$(2) | 8 |
+| 3 | $1d_{5/2}$(4) $\mid$ $2s_{1/2}$(2) $\mid$ $1d_{3/2}$(4) | 10 |
+| 4 | $1f_{7/2}$(8) | 8 |
+| 5 | $2p_{3/2}$(4) $\mid$ $1f_{5/2}$(6) $\mid$ $2p_{1/2}$(2) $\mid$ $1g_{9/2}$(10) | 22 |
+| 6 | $1g_{7/2}$(8) $\mid$ $2d_{5/2}$(6) $\mid$ $2d_{3/2}$(4) $\mid$ $3s_{1/2}$(2) $\mid$ $1h_{11/2}$(12) | 32 |
+| 7 | $2f_{7/2}$(8) $\mid$ $1h_{9/2}$(2) | 10 |
+
+Each sub-shell group is separated by a gap in the grid.
+The first element in a row (far left) is the
+magic-receptive element — the first proton past the
+previous stability pair.  The last element (far right) is
+the magic number that closes the shell.
 
 **Transfer matrix backbone.**
 
@@ -113,9 +127,10 @@ Each element displays:
 The visualization should be an interactive HTML page
 (`folio-assistant/simulators/knot_periodic_table.html`) with:
 
-1. **Layout**: 7 rows (one per stability-pair interval), with
-   row height proportional to the number of elements in that
-   interval.  Columns grouped by $s$, $p$, $d$, $f$ blocks.
+1. **Layout**: 7 rows (one per stability-pair interval),
+   vertically aligned on a shared grid.  Columns follow
+   Mayer--Jensen proton sub-shell filling order, with gaps
+   between sub-shells.
 
 2. **Element tiles**: clickable tiles showing the element
    symbol, $Z$, $N$, $k_\alpha$, and a small SVG of the

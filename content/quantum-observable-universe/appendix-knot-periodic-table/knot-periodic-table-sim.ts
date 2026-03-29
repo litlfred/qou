@@ -20,10 +20,11 @@ export default simulator({
   ],
   defaultView: {
     name: "default",
-    title: "Knot-centric layout with electron block coloring",
+    title: "Knot-centric layout with nuclear sub-shell filling",
     params: {
       layout: "knot-centric",
       color: "block",
+      columns: "nuclear",
       filter: "all",
       q: 1.11,
     },

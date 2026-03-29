@@ -76,8 +76,8 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
 <div class="controls">
   <label>Layout:
     <select id="layout-sel">
-      <option value="standard">Standard</option>
-      <option value="knot-centric" selected>Knot-centric</option>
+      <option value="standard">Standard (electron periods)</option>
+      <option value="knot-centric" selected>Knot-centric (nuclear shells)</option>
     </select>
   </label>
   <label>Color:
@@ -100,9 +100,9 @@ h2{font-size:15px;letter-spacing:.08em;color:#2a3a6a;margin:4px 0}
   </label>
   <label>Columns:
     <select id="col-sel">
+      <option value="nuclear" selected>Nuclear sub-shell</option>
+      <option value="hopf">Electron block</option>
       <option value="fill">Fill order (by Z)</option>
-      <option value="writhe">Writhe sub-mode (m)</option>
-      <option value="hopf" selected>Hopf occupancy</option>
     </select>
   </label>
   <label>q = <span class="q-val" id="q-val">1.110</span>
@@ -322,6 +322,52 @@ const SHELL_ROWS=[
   {row:6,pair:82, prevPair:50, capacity:32, range:"Sb–Pb",  intruder:true},
   {row:7,pair:126,prevPair:82, capacity:44, range:"Bi–U+",  intruder:true}
 ];
+
+// === NUCLEAR SUB-SHELLS (Mayer-Jensen proton filling order) ===
+// Each row: array of [label, capacity] pairs
+// Capacities sum to element count in that shell row
+const NUC_SUBS=[null,
+  [["1s₁/₂",2]],                                                                  // Row1: 2
+  [["1p₃/₂",4],["1p₁/₂",2],["1d₅/₂",2]],                                        // Row2: 8
+  [["1d₅/₂",4],["2s₁/₂",2],["1d₃/₂",4]],                                        // Row3: 10
+  [["1f₇/₂",8]],                                                                  // Row4: 8
+  [["2p₃/₂",4],["1f₅/₂",6],["2p₁/₂",2],["1g₉/₂",10]],                          // Row5: 22
+  [["1g₇/₂",8],["2d₅/₂",6],["2d₃/₂",4],["3s₁/₂",2],["1h₁₁/₂",12]],            // Row6: 32
+  [["2f₇/₂",8],["1h₉/₂",2]]                                                      // Row7: 10
+];
+// Max columns needed across all rows (row 6: 32 elements + 4 gaps = 36)
+function nucTotalCols(){
+  let mx=0;
+  for(let r=1;r<=7;r++){const subs=NUC_SUBS[r];let w=0;for(const s of subs)w+=s[1];w+=subs.length-1;mx=Math.max(mx,w)}
+  return mx;
+}
+// Column position for element Z in nuclear sub-shell mode
+function nucCol(Z,shellRow){
+  const subs=NUC_SUBS[shellRow];
+  const rowEls=EL.filter(e=>e[11]===shellRow).sort((a,b)=>a[0]-b[0]);
+  const idx=rowEls.findIndex(e=>e[0]===Z);
+  if(idx<0)return 2;
+  let cum=0,col=2;
+  for(let s=0;s<subs.length;s++){
+    if(idx<cum+subs[s][1])return col+(idx-cum);
+    cum+=subs[s][1];col+=subs[s][1]+1;
+  }
+  return col+(idx-cum);
+}
+
+// Which nuclear sub-shell is element Z in?
+function nucSubshellLabel(Z,shellRow){
+  const subs=NUC_SUBS[shellRow];
+  const rowEls=EL.filter(e=>e[11]===shellRow).sort((a,b)=>a[0]-b[0]);
+  const idx=rowEls.findIndex(e=>e[0]===Z);
+  if(idx<0)return"?";
+  let cum=0;
+  for(let s=0;s<subs.length;s++){
+    if(idx<cum+subs[s][1])return subs[s][0]+` (${idx-cum+1}/${subs[s][1]})`;
+    cum+=subs[s][1];
+  }
+  return subs[subs.length-1][0];
+}
 
 // === SVG DRAWING FUNCTIONS ===
 const SVG_NS="http://www.w3.org/2000/svg";
@@ -640,7 +686,9 @@ function stdPos(Z,period,group,block){
 // with gaps. f-block in a sub-row.
 //
 // baseRow mapping: shellRow → CSS grid row (with gaps for f-block sub-rows)
-const KNOT_BASE_ROW=[0,1,2,3,4,5,7,9]; // shellRow 1-7 → grid rows
+// shellRow 1-7 → grid rows (nuclear mode: no f-block sub-rows, all compact)
+const KNOT_BASE_ROW=[0,1,2,3,4,5,6,7]; // shellRow 1-7 → grid rows
+const KNOT_BASE_ROW_EBLOCK=[0,1,2,3,4,5,7,9]; // old layout with f-block sub-rows
 // Max columns needed: shell 6 has s(2)+d(10)+p(2)+f(14)=28 elements on main row+sub
 // We use 20 cols for main row: s(1-2) gap(3) d(4-13) gap(14) p(15-20)
 // f-block sub-row: cols 3-16
@@ -684,7 +732,7 @@ function valenceIdx(Z,block,shellRow){
 }
 
 function knotPos(Z,block,shellRow,colMode){
-  const mainRow=KNOT_BASE_ROW[shellRow];
+  const mainRow=KNOT_BASE_ROW_EBLOCK[shellRow];
   const idx=valenceIdx(Z,block,shellRow);
   if(idx<0)return{row:mainRow,col:2};
 
@@ -775,13 +823,19 @@ function buildGrid(){
   if(layout==="standard"){
     grid.style.gridTemplateColumns="repeat(18,minmax(42px,1fr))";
     grid.style.gridTemplateRows="repeat(10,auto)";
+  }else if(colMode==="nuclear"){
+    // Nuclear sub-shell: all rows on same grid, left-aligned
+    const nc=nucTotalCols();
+    grid.style.gridTemplateColumns=`auto ${"minmax(30px,1fr) ".repeat(nc)}`;
+    grid.style.gridTemplateRows="repeat(9,auto)";
   }else{
-    // Knot-centric: dynamic column count based on actual block widths
+    // Electron block (hopf/fill): old layout
     const lay=blockLayout(colMode);
     grid.style.gridTemplateColumns=`auto ${"minmax(36px,1fr) ".repeat(lay.totalCols)}`;
     grid.style.gridTemplateRows="repeat(11,auto)";
   }
 
+  // Row 1 offset: leave room for sub-shell headers in nuclear mode
   const rowOffset=(layout!=="standard"&&colMode!=="fill")?1:0;
 
   for(const el of EL){
@@ -798,6 +852,8 @@ function buildGrid(){
     let pos;
     if(layout==="standard"){
       pos=stdPos(Z,period,group,block);
+    }else if(colMode==="nuclear"){
+      pos={row:KNOT_BASE_ROW[shellRow],col:nucCol(Z,shellRow)};
     }else{
       pos=knotPos(Z,block,shellRow,colMode);
     }
@@ -817,11 +873,37 @@ function buildGrid(){
   if(layout==="standard"){
     addRowLabel(grid,9,1,"Lanthanides");
     addRowLabel(grid,10,1,"Actinides");
-  }else{
-    // Knot-centric: compact text shell labels on left (col 1)
+  }else if(colMode==="nuclear"){
+    // Nuclear mode: row labels with shell info, sub-shell header labels
     for(let i=0;i<SHELL_ROWS.length;i++){
       const sr=SHELL_ROWS[i];
       const gr=KNOT_BASE_ROW[i+1]+rowOffset;
+      const lbl=document.createElement("div");
+      lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
+      lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
+      lbl.title=`Shell ${i+1}: ${sr.capacity} nucleon slots. Closes at ◇${sr.pair}.${sr.intruder?" Intruder level.":""}`;
+      grid.appendChild(lbl);
+      // Sub-shell boundary labels within this row
+      const subs=NUC_SUBS[i+1];
+      let col=2;
+      for(let s=0;s<subs.length;s++){
+        const h=document.createElement("div");
+        h.style.cssText=`grid-row:1;grid-column:${col}/span ${subs[s][1]};font-size:7px;color:#99a;text-align:center;padding:0;pointer-events:none;white-space:nowrap;overflow:hidden`;
+        // Only show label for widest row (row 6) to avoid clutter, or for all rows in header
+        if(i===5){
+          h.textContent=subs[s][0];
+          h.style.borderBottom="1px solid #dde";
+          h.style.fontWeight="600";
+        }
+        grid.appendChild(h);
+        col+=subs[s][1]+1;
+      }
+    }
+  }else{
+    // Electron block: old labels
+    for(let i=0;i<SHELL_ROWS.length;i++){
+      const sr=SHELL_ROWS[i];
+      const gr=KNOT_BASE_ROW_EBLOCK[i+1]+rowOffset;
       const lbl=document.createElement("div");
       lbl.style.cssText=`grid-row:${gr};grid-column:1;font-size:9px;color:#556;padding:2px 4px;white-space:nowrap;display:flex;align-items:center;font-weight:600`;
       lbl.textContent=sr.intruder?`◇${sr.pair}⋈↓`:`◇${sr.pair}`;
@@ -830,8 +912,8 @@ function buildGrid(){
     }
   }
 
-  // Column headers for writhe/hopf modes (knot-centric only)
-  if(layout!=="standard"&&colMode!=="fill"){
+  // Column headers for electron-block modes (knot-centric only)
+  if(layout!=="standard"&&(colMode==="hopf"||colMode==="writhe")){
     const lay=blockLayout(colMode);
     const blocks=[
       {label:"s",blk:0,ell:0},
@@ -842,11 +924,7 @@ function buildGrid(){
       const h=document.createElement("div");
       const start=lay.start[b.blk], width=lay.widths[b.blk];
       h.style.cssText=`grid-row:1;grid-column:${start}/span ${width};font-size:8px;color:#889;text-align:center;border-bottom:1px solid #dde;padding:1px 0;font-weight:600;pointer-events:none`;
-      if(colMode==="writhe"){
-        h.textContent=`ℓ=${b.ell} (${b.label})`;
-      }else{
-        h.textContent=`${BLOCK_SLOTS[b.blk]} Hopf slots (${b.label}) [max ${width}]`;
-      }
+      h.textContent=`${BLOCK_SLOTS[b.blk]} Hopf slots (${b.label}) [max ${width}]`;
       grid.appendChild(h);
     }
   }
@@ -880,7 +958,8 @@ function selectElement(el){
     ["Alpha sub-links (k_α)",kalpha],
     ["Electron block",BLOCK_NAMES[block]],
     ["Period / Group",`${period} / ${group}`],
-    ["Braid shell",`${shellRow} of 7 (closes at ◇${SHELL_ROWS[shellRow-1].pair})`],
+    ["Nuclear shell",`${shellRow} of 7 (closes at ◇${SHELL_ROWS[shellRow-1].pair})`],
+    ["Proton sub-shell",nucSubshellLabel(Z,shellRow)],
     ["B/A (MeV)",BA.toFixed(4)],
     ["QOU mass (MeV)",mass.toFixed(1)],
     ["N/Z ratio",(N/Z).toFixed(3)],
