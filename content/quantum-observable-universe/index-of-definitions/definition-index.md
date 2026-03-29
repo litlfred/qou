@@ -35,10 +35,10 @@
 | [def:categorical-lagrangian](#def:categorical-lagrangian) | Categorical Lagrangian | Ch 2 | `QOU.CategoricalLagrangian` |
 | [def:categorical-point](#def:categorical-point) | Categorical point | Ch 2 | `QOU.CategoricalPoint` |
 | [def:categorical-q-reeb-flow](#def:categorical-q-reeb-flow) | Categorical q-Reeb flow | Ch 3 | `QOU.CategoricalQReebFlow` |
-| [def:categorical-q-torsion-leaf](#def:categorical-q-torsion-leaf) | Categorical q-torsion leaf | Ch 3 | `QOU.CategoricalQTorsionLeaf` |
+| [rem:glossary-categorical-q-torsion-leaf](#rem:glossary-categorical-q-torsion-leaf) | Categorical q-torsion leaf | Glossary | `QOU.CategoricalQTorsionLeaf` |
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 | `QOU.CategoricalReeb` |
 | [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 4 | `QOU.CategoricalTransferMatrix` |
-| [def:categorical-transport](#def:categorical-transport) | Categorical transport equation | Ch 3 | `QOU.CategoricalTransport` |
+| [rem:glossary-categorical-transport](#rem:glossary-categorical-transport) | Categorical transport equation | Glossary | `QOU.CategoricalTransport` |
 | [def:chiral-sector-coords](#def:chiral-sector-coords) | Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `QOU.ChiralSectorCoords` |
 | [def:color-tube-coordinates](#def:color-tube-coordinates) | Color tube coordinates | Ch 6 | `QOU.ColorTubeCoordinates` |
 | [def:color-tube-fibers](#def:color-tube-fibers) | Color tube fibers | Ch 6 | `QOU.ColorTubeFibers` |
@@ -48,7 +48,7 @@
 | [def:crossing-energy](#def:crossing-energy) | Crossing energy of a knot composite | Ch 4 | `QOU.Braiding.CrossingEnergy` |
 | [def:brane-boundary](#def:brane-boundary) | Defining boundary of the brane | Ch 3 | `QOU.braneBoundary` |
 | [def:descartes-condition](#def:descartes-condition) | Descartes condition | Ch 6 | `QOU.DescartesCondition` |
-| [def:descent](#def:descent) | Descent | Ch 3 | `QOU.DescentData` |
+| [rem:glossary-descent](#rem:glossary-descent) | Descent | Glossary | `QOU.DescentData` |
 | [def:descent-involution](#def:descent-involution) | Descent involution | Ch 3 | `QOU.DescentInvolution` |
 | [def:down-quark](#def:down-quark) | Down quark | Ch 6 | `QOU.Descartes.DownQuark` |
 | [def:electron-knot](#def:electron-knot) | Electron | Ch 6 | `QOU.Descartes.Electron` |
@@ -74,7 +74,7 @@
 | [def:neutrino-knot](#def:neutrino-knot) | Neutrino | Ch 6 | `QOU.Descartes.Neutrino` |
 | [def:categorical-neutron](#def:categorical-neutron) | Neutron (categorical) | Ch 6 | `QOU.Torsion.CategoricalNeutron` |
 | [def:observation](#def:observation) | Observation | Ch 2 | `QOU.Intent` |
-| [def:observed-value](#def:observed-value) | Observed spacetime value | Ch 6 | `QOU.ObservedValue` |
+| [rem:glossary-observed-value](#rem:glossary-observed-value) | Observed spacetime value | Glossary | `QOU.ObservedValue` |
 | [def:operational-entropy](#def:operational-entropy) | Operational entropy of the Reeb dynamics | Ch 8 | `QOU.Information.operationalEntropy` |
 | [def:q-harmonic-form](#def:q-harmonic-form) | Particle ($q$-harmonic form) | Ch 2 | `QOU.QHarmonicForm` |
 | [def:planck-time](#def:planck-time) | Planck Time | Ch 8 | `QOU.planckTime` |
@@ -82,7 +82,7 @@
 | [def:projective-line-object](#def:projective-line-object) | Projective line object | Ch 2 | `QOU.ProjectiveLineObject` |
 | [def:categorical-proton](#def:categorical-proton) | Proton (categorical) | Ch 6 | `QOU.Torsion.CategoricalProton` |
 | [def:quantum-characteristic-classes](#def:quantum-characteristic-classes) | Quantum Characteristic Classes (Yekutieli obstruction) | Ch 3 | `QOU.QuantumCharacteristicClass` |
-| [def:quantum-flatness](#def:quantum-flatness) | Quantum flatness | Ch 2 | `QOU.QuantumFlatness` |
+| [rem:glossary-quantum-flatness](#rem:glossary-quantum-flatness) | Quantum flatness | Glossary | `QOU.QuantumFlatness` |
 | [def:quantum-gauge-group](#def:quantum-gauge-group) | Quantum Gauge Group | Ch 2 | `QOU.QuantumGaugeGroup` |
 | [def:quantum-su2](#def:quantum-su2) | Quantum group $\mathcal{U}_q(\mathfrak{su}(2))$ | Ch 4 | `QOU.QuantumSu2` |
 | [def:quantum-observable-universe](#def:quantum-observable-universe) | Quantum Observable Universe | Ch 2 | `QOU.QuantumObservableUniverse` |
@@ -99,14 +99,14 @@
 | [def:information-speed-of-light](#def:information-speed-of-light) | Speed of light as Lieb--Robinson velocity | Ch 8 | `QOU.Information.speedOfLight` |
 | [def:stable-nucleus](#def:stable-nucleus) | Stable nucleus (Skein energy minimum) | Ch 6 | `QOU.Torsion.StableNucleus` |
 | [def:substrate-parameter](#def:substrate-parameter) | Substrate parameter | Ch 2 | `QOU.SubstrateParameter` |
-| [def:s3-group](#def:s3-group) | Symmetric group $S_3$ | Ch 4 | `QOU.S3Group` |
-| [def:reeb-gauge-group](#def:reeb-gauge-group) | The Reeb gauge group $U_1(R)$ | Ch 2 | `QOU.ReebGaugeGroup` |
+| [rem:glossary-s3-group](#rem:glossary-s3-group) | Symmetric group $S_3$ | Glossary | `QOU.S3Group` |
+| [rem:glossary-reeb-gauge-group](#rem:glossary-reeb-gauge-group) | The Reeb gauge group $U_1(R)$ | Glossary | `QOU.ReebGaugeGroup` |
 | [def:threading-link](#def:threading-link) | Threading link $T(2,N)$ | Ch 7 | `QOU.Organic.ThreadingLink` |
 | [def:torsion-knot-flow](#def:torsion-knot-flow) | Torsion-driven knot flow | Ch 4 | `QOU.ParticleState` |
 | [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer matrix operator on hadrons and Gröbner ideals | Ch 6 | `QOU.Descartes.TransferMatrixOperator` |
 | [def:up-quark](#def:up-quark) | Up quark | Ch 6 | `QOU.Descartes.UpQuark` |
 | [def:vertex-operator](#def:vertex-operator) | Vertex operator on the exceptional divisor | Ch 4 | `QOU.VertexOperator` |
-| [def:weierstrass-projection](#def:weierstrass-projection) | Weierstrass projection $\wp_q(z)$ | Ch 6 | `QOU.Descartes.weierstrassProjection` |
+| [rem:glossary-weierstrass-projection](#rem:glossary-weierstrass-projection) | Weierstrass projection $\wp_q(z)$ | Glossary | `QOU.Descartes.weierstrassProjection` |
 | [def:weight-decomposition](#def:weight-decomposition) | Weight decomposition | Ch 2 | `QOU.WeightDecomposition` |
 | [def:witt-vector-lift](#def:witt-vector-lift) | Witt vector lift of a formal group | Ch 5 | `QOU.WittVectorLift` |
 | [def:yekutieli-lifting-condition](#def:yekutieli-lifting-condition) | Yekutieli Lifting Condition | Ch 3 | `QOU.YekutieliLiftingCondition` |
