@@ -199,7 +199,7 @@
         // Load default paper then scroll
         api(branchQuery("/api/folio")).then(data => {
           const id = data.papers?.[0]?.id;
-          if (id) { location.hash = `#/paper/${id}`; }
+          if (id) loadPaper(id);
         }).catch(() => loadFolio());
       } else {
         scrollToBlock(raw);
