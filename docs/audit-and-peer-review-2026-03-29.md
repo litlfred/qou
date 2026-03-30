@@ -25,7 +25,7 @@ produced 154 initial scanner warnings — all confirmed as false positives.
 | # | Severity | File | Issue | Fix |
 |---|----------|------|-------|-----|
 | 1 | ERROR | `ch5-brings-surface/spectral-decomposition-qvalue.md:55` | `\mathfrak{E}` used for energy | Replace with `\mathbf{E}` per §7aa |
-| 2 | WARNING | `ch2-quantum-geometry/fibre-functor-atlas.md:7,15,22,27,34-35` | `$\omega$` used for fibre functors | Review: if generic fibre functors in atlas context, may be acceptable; if canonical, use `$\tau$` |
+| 2 | WARNING | `ch2-quantum-geometry/fibre-functor-atlas.md:7,15,22,34-35` | `$\omega$` used for fibre functors | Review: if generic fibre functors in atlas context, may be acceptable; if canonical, use `$\tau$` |
 
 **Clean checks:** No `V_K(t)` for Jones polynomial, no `\gamma` for vortex,
 no `E_p` for state bundle, no `E_q` for elliptic curve, numerical `q` only
@@ -120,7 +120,7 @@ opportunities for `ring`, `positivity`, or `norm_num`. Minimal commented-out cod
 
 | File | Axioms | Assessment |
 |------|--------|------------|
-| `ch2/.../q-codifferential-formula-prop.lean` | 22 | **CONCERN**: Builds parallel type system for `DiffForm` instead of using Mathlib |
+| `ch2/.../q-codifferential-formula-prop.lean` | 23 | **CONCERN**: Builds parallel type system for `DiffForm` instead of using Mathlib |
 | Other files | 1-8 each | Acceptable (physics axioms, cited results) |
 
 `noncomputable`: ~80+ instances, all justified by `Real`/`LaurentPolynomial` dependence.
@@ -332,13 +332,13 @@ confuse readers.
 
 1. **17 sorry instances without `-- Ref:` citations** — especially Ch 9 cluster
 2. **6 broken cross-references** in content manifests (4 prefix mismatches, 1 missing target, 1 missing block)
-3. **Missing `skein-shell-correction.ts` block** — breaks dependency chain for 2 other blocks
+3. **Missing manifest for `skein-shell-correction.ts`** — breaks dependency chain for 2 other blocks
 4. **11 citation keys in Lean `-- Ref:` not found in references.ts**
 
 ### HIGH (should fix)
 
 5. **3 definition blocks in `unital-groebner-bases` missing required `.lean` files**
-6. **`q-codifferential-formula-prop.lean`** — 22 axioms building parallel type system
+6. **`q-codifferential-formula-prop.lean`** — 23 axioms building parallel type system
 7. **`valley-stability.ts`** — `simulator` builder not exported
 8. **`\mathfrak{E}` notation violation** in spectral-decomposition-qvalue.md
 
