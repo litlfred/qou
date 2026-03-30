@@ -67,11 +67,28 @@ Hecke completeness condition holds.*
 
 ## Part I: Chebyshev degree = Seifert genus
 
-*Let $s = q - q^{-1}$, $u = s^2$, and let $a_p(u)$ be
-the Hecke coefficient of $T^p$ in $H_2(q)$, i.e.,
-$T^p = a_p \cdot T + a_{p-1} \cdot \mathbf{1}$.
-For odd $p$, $a_p$ is a polynomial of degree $(p-1)/2$ in
-$u = s^2$:*
+**Why Chebyshev.**
+The Hecke algebra $H_2(q)$ is $2$-dimensional with basis
+$\{1, T\}$ and the single relation $T^2 = sT + 1$ where
+$s = q - q^{-1}$.  The generator $T$ has two eigenvalues:
+$q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel).
+Computing $T^p$ --- the $p$-th power of the braid generator
+--- reduces it via the relation:
+
+$$
+  T^p \;=\; a_p \cdot T \;+\; a_{p-1} \cdot \mathbf{1}
+$$
+
+The coefficients $a_n$ satisfy the recurrence
+$a_{n+1} = s \cdot a_n + a_{n-1}$ with $a_0 = 0$, $a_1 = 1$.
+This is the **Chebyshev recurrence**: powers of a matrix with
+two eigenvalues are always Chebyshev polynomials.  Precisely,
+$a_p = U_{p-1}(s/2)$, the Chebyshev polynomial of the second
+kind evaluated at $s/2$, where
+$U_n(\cos\theta) = \sin((n+1)\theta)/\sin\theta$.
+
+For odd $p$, only even powers of $s$ appear, so writing
+$u = s^2 = (q - q^{-1})^2$:
 
 $$
   a_p(u)
@@ -81,17 +98,25 @@ $$
   \sum_{j=0}^{(p-1)/2} c_j\, u^j
 $$
 
-*where $U_{n}$ is the Chebyshev polynomial of the second kind
-and $c_{(p-1)/2} = 1$.  The degree
-$\deg_u a_p = (p-1)/2 = g(T_{2,p})$
-is the Seifert genus of $T_{2,p}$.*
+with leading coefficient $c_{(p-1)/2} = 1$.
 
-Each monomial $u^k$ represents the $k$-th independent
-homology cycle of the Seifert surface $F_p$.  To realise
-$T_{2,p}$ as a localized knot on $\Sigma_g$, each cycle
-needs a target class in $H^1(\Sigma_g)$.  When $\deg_u a_p > g$,
-the surplus monomials have no geometric home --- they
-**overflow** the available cohomology.
+**The degree--genus identity.**
+The algebraic complexity of the Hecke coefficient (the
+polynomial degree $\deg_u a_p$) equals the topological
+complexity of the knot (the Seifert genus $g(T_{2,p})$):
+
+$$
+  \deg_u a_p \;=\; \frac{p-1}{2} \;=\; g(T_{2,p}).
+$$
+
+Each monomial $u^k$ in $a_p$ represents the $k$-th independent
+$1$-cycle of the Seifert surface $F_p$.  To realise $T_{2,p}$
+as a localized knot on $\Sigma_g$, each cycle needs a target
+class in $H^1(\Sigma_g)$.  When $\deg_u a_p > g$, the
+polynomial encodes more topology than the surface can hold ---
+the surplus monomials have no geometric home.  This is the
+**Chebyshev overflow**: the Hecke algebra knows the knot
+doesn't fit, before any surface is chosen.
 
 ## The Chebyshev table
 
