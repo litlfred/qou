@@ -16,6 +16,45 @@ Run this skill before committing any narrative content (.md files).
 It ensures the paper speaks with a single, consistent voice across
 all chapters, sections, and the running SU(2) example.
 
+## Author Voice Profile
+
+Frederick Carl Leitner writes with **crystalline precision in the
+service of clarity**. The voice is:
+
+- **Authoritative and precise**: No hedging, no editorializing, no
+  personal asides. Every sentence carries mathematical weight.
+- **Collaborative**: "We" for joint reasoning with the reader, never
+  "I". The reader discovers alongside the author.
+- **Object-focused**: Prioritizes what structures *do* over what they
+  *are*. The paper's thesis — "we ask what its mechanics do" — is
+  embedded in the prose itself.
+- **Economical**: No filler, no rhetoric. If a result is striking,
+  the mathematics shows it; the prose does not comment on it.
+
+### Sentence patterns
+
+- **"Not assumed; derived"**: "The symmetry group is not assumed; it
+  emerges via Tannaka–Krein reconstruction." Distinguishes derivation
+  from stipulation.
+- **"Forced by"**: Structures are "forced by the Frobenius–Hopf
+  structure, not by assumption."
+- **"Equivalent viewpoints"**: "not competing descriptions but
+  equivalent viewpoints, exchanged by..."
+- **"Precisely" language**: "makes the observation from paragraph two
+  precise" — exactness is paramount.
+- **Never begins a sentence with a math symbol**: always "The operator
+  $X$", not "$X$ is..."
+
+### Pacing
+
+Layered introduction, repeated at every scale (paragraph, section,
+chapter):
+
+1. Accessible observation or motivation
+2. Precise mathematical statement
+3. Formal definition or theorem
+4. Consequence or example (SU(2) running example)
+
 ## Paper-Level Voice Rules
 
 | Rule | Standard | Violation example |
@@ -27,18 +66,241 @@ all chapters, sections, and the running SU(2) example.
 | **Math voice** | Active ("we construct $X$") for new definitions; passive ("$X$ is called") for established terms | Mixing active/passive for the same concept |
 | **Reader address** | Never address the reader directly | "you can verify", "the reader will note" |
 
-## Chapter-Specific Style
+## Chapter Context Snippets
 
-| Chapter | Style | Notes |
-|---------|-------|-------|
-| **Ch 0 (Intro)** | Expository, accessible, first-person plural | Sets up observations → axioms → consequences. No jargon without explanation. |
-| **Ch 1 (QU)** | Definition-theorem-example | Formal mathematical prose. Each definition followed by the SU(2) example. |
-| **Ch 2 (QOU)** | Same as Ch 1, but builds on Ch 1 vocabulary | Can assume reader knows Ch 1 terms. |
-| **Ch 3 (Lifting)** | Technical, proof-heavy | Obstruction theory language. Still first-person for narrative glue. |
-| **Ch 4 (Braids)** | Computational, concrete | Explicit matrices, crossing diagrams. "We compute" voice. |
-| **Ch 5 (Models)** | Two parts: (A) general models use expository voice; (B) Descartes uses concrete, coordinate-heavy voice | Part B is the most "hands-on" chapter. |
-| **Ch 6 (Observations)** | Data-driven, comparison tables | "We estimate", "the predicted value is", "which agrees with". No claims of precision beyond what the numbers show. |
-| **Ch 7 (Information)** | Speculative but grounded | "The framework suggests", not "we prove". Mark conjectures clearly. |
+Use these when writing or reviewing content for a specific chapter.
+Each snippet captures the chapter's intent, its place in the paper's
+arc, and the voice it requires.
+
+### Ch 0 — Introduction
+
+**Paper context**: The introduction frames the entire paper. It begins
+with everyday observations (color, rotation, time, volume, free will,
+computation) and shows that these determine a specific algebraic
+structure. It previews each chapter without proving anything.
+
+**Intent**: Convince the reader — who may know complex numbers and
+calculus but not category theory — that the axioms are natural and
+their consequences are concrete. Plant the seed: constants need not
+be constant.
+
+**Voice**: Accessible, first-person plural, no jargon without
+immediate explanation. Short, vivid sentences for observations;
+longer, precise sentences for mathematical content. No editorializing
+— let the scope of the consequences speak for itself.
+
+**Map to content**: Observations (¶1-2) → "lack of assumption" about
+constants (¶3) → categorical language (¶4) → QOU definition (¶5) →
+consequences preview (¶6-8) → chapter-by-chapter guide (¶9+).
+
+---
+
+### Ch 1 — Quantum Universes
+
+**Paper context**: Lays the algebraic foundation. Everything in the
+paper rests on the triple $(\mathbf{C}, A, \tau)$ defined here.
+
+**Intent**: Introduce the quantum universe axioms (rigid monoidal
+category, Frobenius–Hopf object, fibre functor) and derive their
+first consequences (Frobenius relation, dagger involution,
+Tannaka–Krein). Each definition is immediately grounded by the
+SU(2) running example ($A = \mathcal{O}(\mathrm{SU}(2))$,
+$V = \mathbb{C}^2$).
+
+**Voice**: Definition–theorem–example rhythm. Formal mathematical
+prose. Definitions are boxed; examples follow immediately. The SU(2)
+example uses explicit matrix entries ($\alpha, \beta, \bar\alpha,
+\bar\beta$) so a reader with linear algebra can follow.
+
+**What a writer should know**: Every new definition needs a
+corresponding `ex:*-su2` example block. The reader should be able
+to verify each claim by working in $\mathbb{C}^{2 \times 2}$.
+
+---
+
+### Ch 2 — Quantum Observable Universes
+
+**Paper context**: Promotes QU to QOU by adding three axioms
+(observability, measurability, volume). This is where SU(2) emerges,
+the Dirac operator decomposes, and the substrate parameter $q$
+appears.
+
+**Intent**: Show that the three additional axioms — which encode
+that the universe is shared, measurable, and has volume — force
+the gauge group to be SU(2), produce the categorical action
+(gravity + gauge + matter), and introduce the deformation parameter
+$q$ that parametrises the departure from the classical limit.
+
+**Voice**: Same definition–theorem–example rhythm as Ch 1, but
+building on Ch 1 vocabulary. Can assume the reader knows "rigid
+monoidal category" and "Frobenius pairing" without re-explanation.
+The SU(2) example continues: emergence of SU(2) as
+$\mathrm{Aut}^{\otimes}(\tau)$, the maximal torus, weight
+decomposition, spin labels.
+
+**What a writer should know**: This chapter is the most technically
+dense. Proofs may be deferred to the Elaboration section (§14) but
+the main line must remain accessible. The categorical action formula
+is the culmination — it must be motivated before it is displayed.
+
+---
+
+### Ch 3 — Lifting and Descent
+
+**Paper context**: Addresses the global extension problem. Local
+categorical data (on $A$) must be lifted to the jet object $J^1(A)$
+and iterated into the brane tower. The Yekutieli lifting condition
+makes this precise; the Descartes condition $\chi(A) = -6$ emerges
+as the unique obstruction-consistent value.
+
+**Intent**: Build the brane tower $\{A_n\}$, show that lifting
+fails precisely when the obstruction class $\kappa(x)$ is nonzero,
+derive the mass identity, and arrive at $\chi(A) = -6$ as a
+forced conclusion.
+
+**Voice**: Technical, proof-heavy, but still first-person for
+narrative glue ("We now iterate the prolongation..."). Obstruction
+theory language (gerbes, cocycles, descent data). The SU(2) example
+continues at each brane-tower level.
+
+**What a writer should know**: The key results are
+`thm:qu-to-qou` (main theorem), `def:mass-identity`, and
+`def:descartes-condition`. Every block should trace its logical
+dependence back to these. The Yekutieli lifting condition is the
+engine; cite [yekutieli2010] for the gerbe-theoretic foundation.
+
+---
+
+### Ch 4 — Braids and Knots
+
+**Paper context**: Replaces continuum path integrals with discrete
+braid-group computations. Particles are knots; interactions are
+Skein relations; mass is hyperbolic volume divided by $\hbar_q^2$.
+
+**Intent**: Develop a purely mathematical model, built entirely from
+the categorical data, for objects we call photons, electrons, atoms.
+These are associated to knots which, by self-duality, encode not only
+what the objects *are* but how they interact. Describe explicitly the
+transfer matrices that govern all particle interactions through
+computational cost. Derive interaction completeness: exactly 7
+transfer matrices on $\Sigma_4$. Show that physical constants (mass,
+crossing energy, binding energy) are parametrised solely by $q$.
+Electronic shells arise as torus knots in Gröbner bases.
+
+**Voice**: Computational and concrete. Explicit matrices, crossing
+diagrams, worked calculations. "We compute the R-matrix...",
+"The transfer matrix acts as...". The SU(2) example gives way to
+explicit knot calculations (trefoil, figure-eight, Borromean links).
+
+**What a writer should know**: The reader should be able to follow
+every knot calculation with pencil and paper. Use the Hecke algebra
+generator $T$ (never $\sigma$ for the Hecke relation). Jones
+polynomial is $J_K(q)$ (never $V_K(t)$). Hadrons are
+$\mathfrak{H}$ (fraktur). The topological mass formula
+$\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ is the chapter's
+central equation.
+
+---
+
+### Ch 5 — Models of QOUs
+
+**Paper context**: Concrete realisations. Part A covers general
+models (archimedean, $p$-adic, finite-field, Witt-vector, Jones
+polynomials, fluid dynamics). Part B is the Descartes universe:
+Bring's surface $\Sigma_4$ as the specific QOU with $\chi(A) = -6$.
+
+**Intent (Part A)**: Show that the QOU axioms admit realisations over
+different ground fields. The archimedean model (over $\mathbb{C}$)
+connects to Calabi–Yau, ALE spaces, instantons. Non-archimedean
+models ($p$-adic, finite-field) demonstrate universality.
+
+**Intent (Part B — Descartes)**: Study Bring's surface — the
+universal genus-4 curve with automorphism group $S_5$ — as a
+concrete model for QOU. Develop coordinate systems for the red,
+green, and blue coral tubes (the exceptional divisors where all
+particle interactions occur). Identify specific torus knots with
+specific particles. Derive the Descartes theorem: Bring's surface is
+the terminal object in the category of QOUs with $\chi(A) = -6$.
+
+**Voice (Part A)**: Expository, showing how the abstract framework
+specialises to familiar geometric objects.
+
+**Voice (Part B)**: The most "hands-on" chapter. Coordinate-heavy,
+with explicit equations for Bring's surface ($\sum x_j = \sum x_j^2
+= \sum x_j^3 = 0$), color tube coordinates, coral elliptic curves,
+and particle assignments. The reader should feel they are working
+inside the surface.
+
+**What a writer should know**: "Coral tubes" are the geometric
+objects (twisted, fractal, reef-like); "color tube coordinates" are
+the coordinate system. Particles are fraktur ($\mathfrak{u}$,
+$\mathfrak{d}$, $\mathfrak{e}$). The Descartes theorem is a
+categorical statement about terminal objects — prove it categorically,
+then interpret geometrically.
+
+---
+
+### Ch 6 — Physical Observations
+
+**Paper context**: Reaps the rewards of the mathematical machinery.
+Confronts theory with experiment using CODATA/PDG data.
+
+**Intent**: Estimate $q$ from the muon-to-electron mass ratio. From
+this single parameter, compute estimated masses for all hadrons
+(agreeing with observed values to good precision), hadron half-lives
+via transfer matrices (aligning with observation), and hydrocarbon
+energetics. Also: double-slit predictions, nuclear stability, CMB
+signatures, and proposed experiments.
+
+**Voice**: Data-driven. Comparison tables, error bounds, plots. "We
+estimate", "the predicted value is $X \approx Y$", "which agrees
+with the CODATA value to $n$ significant figures". No claims of
+precision beyond what the numbers show. Use $\approx$ for all
+derived/observed values (never $=$ without an error term).
+
+**What a writer should know**: This is where the paper is most
+vulnerable to overclaiming. Every numerical statement must use
+$\approx$. The consistency window $q \in [1.109, 1.112]$ is
+overdetermined by three independent measurements — state this fact
+without commentary on how "remarkable" it is. Numerical $q$ values
+are permitted only in this chapter and Ch 0.
+
+---
+
+### Ch 7 — Information-Theoretic Perspectives
+
+**Paper context**: Addresses Wigner's "unreasonable effectiveness"
+question. The QOU mechanics are Turing complete; computation is
+intrinsic to the algebraic substrate.
+
+**Intent**: Show that the same categorical structure that produces
+particles and forces also supports computation (Gröbner basis
+confluence), generates an arrow of time (Reeb flow), produces
+fractal dynamics (Julia sets at the boundary), and derives
+$E = mc^2$ from the information speed of light $c_q = 1/(q-1)$.
+
+**Voice**: Speculative but grounded. "The framework suggests",
+not "we prove", for claims that extend beyond the established
+formalism. Mark conjectures clearly. The Hausdorff dimension
+formula $d_H(q) = (2q-1)^2/q^3$ and the mass-energy equivalence
+$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ are
+derived results; state them as theorems. The Big Bang as an
+information-theoretic event and Planck-scale computation are more
+speculative — frame accordingly.
+
+**What a writer should know**: This chapter connects to computer
+science and information theory. Assume the reader knows basic
+computability (Turing machines) but not the categorical encoding.
+The Skein Turing machine construction is the key technical result.
+
+---
+
+### Glossary (Ch 8) and Appendices
+
+**Voice**: Reference material. Terse, definitional. Each glossary
+entry maps a paper term to a Mathlib declaration. The knot-periodic
+table is a data table, not prose. The index of definitions is
+machine-generated.
 
 ## Running Example Consistency
 
@@ -72,7 +334,7 @@ field pointing to the earlier example block.
 | Fibre functor | $\tau$ | $\omega$, $U$ |
 | Energy | $\mathbf{E}$ (bold) | $\mathfrak{E}$ (fraktur) |
 | Mass | $\mathfrak{m}$ (fraktur) | $m$ (plain) |
-| Substrate parameter | $q$ (symbolic) | $q = 1.1097$ (numerical, except Ch 6-7) |
+| Substrate parameter | $q$ (symbolic) | $q = 1.1097$ (numerical, except Ch 6) |
 
 ## Editorializing Blacklist
 
@@ -103,11 +365,12 @@ Before committing any .md content, verify:
 8. [ ] **Example thread**: SU(2) examples use consistent notation
 9. [ ] **Cross-chapter**: Terms introduced in earlier chapters are
        referenced, not re-defined
+10. [ ] **Chapter voice**: Content matches the chapter context snippet
 
 ## Procedure
 
 1. **Read** the target .md file(s)
-2. **Identify** the chapter and section context
+2. **Identify** the chapter and section context (see snippets above)
 3. **Check** each rule in the pre-commit checklist
 4. **Flag** violations with file path, line number, and fix
 5. **If ambiguous** — if you're unsure whether a passage should be
