@@ -232,12 +232,12 @@
       /* ── Page geometry (LaTeX article defaults) ─────────── */
       @page{
         size:letter;
-        margin:1in 1.25in;
+        margin:1.35in 1.25in 1.3in;
       }
-      @page:first{margin-top:1.5in}
+      @page:first{margin-top:1.6in}
 
       /* ── Base typography — Latin Modern / Computer Modern ── */
-      html{font-size:11pt}
+      html{font-size:11pt;scroll-padding-top:0}
       body{
         font-family:'Latin Modern Roman','CMU Serif','Computer Modern','Crimson Pro','Times New Roman',serif!important;
         line-height:1.45;
@@ -392,8 +392,11 @@
 
       /* ── Page break control ─────────────────────────────── */
       .env{break-inside:avoid}
-      .section{break-inside:avoid-page}
+      .section{break-inside:avoid}
       h2,h3{break-after:avoid}
+
+      /* ── Prevent overflow clipping in print ─────────────── */
+      .bt,.bb,.env,.blk,#app{overflow:visible!important}
 
       /* ── Prose blocks — clean inline flow ───────────────── */
       .blk{margin:.6em 0!important}
