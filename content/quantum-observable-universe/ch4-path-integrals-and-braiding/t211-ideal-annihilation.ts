@@ -9,16 +9,12 @@ export default remark({
     "hecke-algebra", "knot-coordinates", "ideal",
   ],
   uses: [
+    "prop:genus-filtration-ideal",
     "prop:vertex-algebra-jet-relations",
-    "prop:vertex-algebra-relations",
-    "prop:cohomological-embedding",
-    "thm:embeddability-closure",
-    "prop:torus-knot-generators",
-    "thm:jones-markov-trace",
     "prop:shell-structure-eigenvalues",
     "prop:nuclear-shell-intruder",
     "rem:fivefold-symmetry",
-    "rem:symmetric-quotient-colour",
+    "thm:embeddability-closure",
   ],
   cites: ["kassel1995", "jones1987"],
 });
