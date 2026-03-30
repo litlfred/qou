@@ -1,16 +1,19 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 6: The Descartes Universe.
+ * Chapter 5 (Part B): The Descartes Universe.
  *
- * The concrete realisation with χ(A) = −6.  Four main sections after a
- * short preamble: (1) Bring's surface geometry and coordinates,
+ * Continuation of "Models of QOUs" — the concrete realisation with
+ * χ(A) = −6.  Sections: (1) Bring's surface geometry and coordinates,
  * (2) spectral and gauge structures, (3) the Descartes condition,
  * particles, and the Descartes theorem, (4) topological mass and the
  * knot-particle spectrum.
+ *
+ * Pipeline note: this directory stays separate from ch6-descartes-universe
+ * for block resolution but renders as part of the same chapter (number 5).
  */
 export default chapter({
-  number: 6,
+  number: 5,
   title: "The Descartes Universe",
   label: "chap:descartes-universe",
   sections: [
