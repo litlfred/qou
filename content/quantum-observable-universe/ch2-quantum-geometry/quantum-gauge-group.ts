@@ -8,5 +8,9 @@ export default definition({
     decl: "QOU.QuantumGaugeGroup",
     validation: "leanok",
   },
-  uses: ["def:substrate-parameter"],
+  uses: [
+    "def:substrate-parameter",
+    "prop:tannaka-krein-reconstruction",
+    "prop:braiding-eigenvalue-extraction",
+  ],
 });
