@@ -181,6 +181,8 @@ export default chapter({
         "vertex-algebra-relations",
         // Relations lifted to the jet bundle
         "vertex-algebra-jet-relations",
+        // T_{2,11} annihilation by the spectral filter ideal
+        "t211-ideal-annihilation",
       ],
     }),
 
