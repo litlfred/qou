@@ -311,7 +311,7 @@
       else renderPaper();
       // Scroll to pending label after render
       if (pendingScrollLabel) {
-        requestAnimationFrame(() => setTimeout(() => scrollToBlock(pendingScrollLabel), 100));
+        requestAnimationFrame(() => setTimeout(() => scrollToBlock(pendingScrollLabel), 500));
       }
     } catch (e) {
       app.innerHTML = `<div class="err">${esc(e.message)}</div>`;
@@ -492,6 +492,7 @@
   function renderBlock(blk) {
     if (blk.kind === "prose") {
       const el = h("div", "blk");
+      if (blk.label) el.id = blk.label;
       el.innerHTML = `<div class="bb">${mdToHtml(blk.md || "", blk.rendered)}</div>`;
       return el;
     }
