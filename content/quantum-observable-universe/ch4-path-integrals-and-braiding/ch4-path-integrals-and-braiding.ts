@@ -179,6 +179,8 @@ export default chapter({
         "skein-archimedean-shadow",
         // QU/QUO axioms as relations on Hecke generators
         "vertex-algebra-relations",
+        // Relations lifted to the jet bundle
+        "vertex-algebra-jet-relations",
       ],
     }),
 
