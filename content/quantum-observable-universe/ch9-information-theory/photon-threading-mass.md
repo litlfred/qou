@@ -35,7 +35,7 @@ The third is the content of this proposition.
 **Physical picture.**
 The photon $\gamma$ (empty knot, zero crossings) approaches the
 hadron $\mathfrak{H}$.  To "measure" the hadron — to determine its mass — the
-photon must braid completely through $H$, moving from one side of
+photon must braid completely through $\mathfrak{H}$, moving from one side of
 the braid word to the other.
 
 1. **Start.**  The photon strand sits above the hadron braid:
@@ -53,7 +53,7 @@ the braid word to the other.
    each resolves a double crossing into a weighted single crossing
    plus a resolved identity.
 
-3. **End.**  The photon strand is below $\beta_H$.  The total
+3. **End.**  The photon strand is below $\beta_{\mathfrak{H}}$.  The total
    Hecke cost is the crossing energy
    $E_{\mathfrak{H}} = \sum |c_w| \cdot |q - q^{-1}|$ (in Skein
    units).  Via mass--energy equivalence, the mass is
@@ -64,7 +64,7 @@ The photon has no crossings of its own — it is topologically
 trivial ($K = \varnothing$).  But it couples to the gauge field
 ($F_A^+$) because it propagates as exceptional-divisor flux
 ([photon wavefront](#ex:photon-wavefront-example)).  Threading
-it through $H$ forces it to traverse every crossing of $\beta_{\mathfrak{H}}$,
+it through $\mathfrak{H}$ forces it to traverse every crossing of $\beta_{\mathfrak{H}}$,
 and each crossing it encounters contributes a Hecke reduction.
 
 The **surface** $\Sigma$ in the Yekutieli integral

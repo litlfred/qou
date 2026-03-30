@@ -126,7 +126,7 @@
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:generation-completeness](#thm:generation-completeness) | Generation completeness: all embeddable knots are reachable | Ch 6 | `QOU.Descartes.generation_completeness` |
-| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_H = \mathfrak{m}_H \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
+| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
 | [thm:markov-trace-product](#thm:markov-trace-product) | Product factorization of the Markov trace | Ch 4 | `QOU.markov_trace_product` |
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and Yekutieli is a QOU | Ch 3 | `QOU.QuToQou` |
 | [thm:topological-mass](#thm:topological-mass) | Topological Decomposition of Mass | Ch 4 | `QOU.Torsion.mass_decomposition_categorical` |
