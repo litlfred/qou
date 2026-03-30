@@ -12,7 +12,7 @@ export default proposition({
     "obstruction",
     "genus",
     "hecke-algebra",
-    "continued-fraction",
+    "completeness",
   ],
   lean: {
     decl: "QOU.Descartes.genus_filtration_ideal",
@@ -20,7 +20,6 @@ export default proposition({
   },
   uses: [
     "thm:embeddability-closure",
-    "def:yekutieli-lifting-condition",
     "prop:cohomological-embedding",
   ],
   cites: ["yekutieli2010"],
