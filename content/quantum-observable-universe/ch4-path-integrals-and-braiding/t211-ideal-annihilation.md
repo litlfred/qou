@@ -361,3 +361,176 @@ as the identity operator on all physical states.
 $T_{2,11}$ is the **ghost of the fourth generation**: an
 algebraically consistent but physically null knot, killed
 not by the algebra but by the topology of Bring's surface.
+
+---
+
+## 6. No descent to shells
+
+The nuclear shell structure is governed by the photon-electron
+transfer matrix
+([shell structure eigenvalues](#rem:shell-structure-eigenvalues)):
+
+$$
+  T_{\gamma e}(q)
+  \;=\;
+  \begin{pmatrix}
+    q - q^{-1} & 1 \\
+    1 & 0
+  \end{pmatrix},
+  \qquad
+  \lambda_\pm
+  \;=\;
+  \frac{(q - q^{-1}) \pm \sqrt{(q-q^{-1})^2 + 4}}{2}.
+$$
+
+Shell $n$ is the $n$-th power $T_{\gamma e}^n$, giving the
+Chebyshev recurrence
+$\hat{V}(n+1) = (q - q^{-1})\hat{V}(n) + \hat{V}(n-1)$.
+The sub-shell structure ($s, p, d, f, \ldots$) comes from
+tensor product degeneracies of $\lambda_\pm$.
+
+**$T_{2,11}$ cannot couple to any shell.**  The mechanism:
+
+1. **The knot operator is trivial.**  Since
+   $F(T_{2,11}, N) = 1$ for all neutron numbers $N$, the
+   $(2,11)$ channel contributes the identity factor to the
+   spectral decomposition of $\mathcal{Q}_q$.  It does not
+   shift, split, or couple to any shell level.
+
+2. **No intruder level.**  The intruder mechanism
+   ([nuclear shell intruder](#prop:nuclear-shell-intruder))
+   requires the spin-orbit coupling
+   $3 \cdot [\ell]_q[\ell+1]_q > 2(N+1)$ to exceed the HO
+   gap, where $3$ is the Borromean crossing count.  Only
+   embeddable torus knots contribute to the crossing count
+   at a shell.  $T_{2,11}$ has no crossing on $\Sigma_4$
+   (it is in $\mathcal{I}_4$), so it cannot push an intruder
+   level across a gap.
+
+3. **No transfer matrix eigenvalue.**  The transfer matrix
+   of $T_{2,11}$ is $\mathcal{T}_{T_{2,11}} = \mathbf{I}$,
+   with eigenvalues $\lambda = 1, 1$.  The Chebyshev
+   recurrence at $\lambda = 1$ is degenerate:
+   $\hat{V}(n) = 1$ for all $n$ — a flat, constant
+   contribution (no shell structure, no energy separation).
+   It cannot produce $s, p, d, f$ sub-shells because there
+   is no splitting between $\lambda_+$ and $\lambda_-$.
+
+4. **Invisible to the Markov-traced volume.**  The
+   knot-operator product for any nucleus
+   $\mathcal{N}_{Z,N}$ factors as
+   $\prod_{\tau \in \mathcal{E}_4} F(\tau, N)$.  The factor
+   $F(T_{2,11}, N) = 1$ is present but contributes nothing —
+   it is a multiplicative ghost.
+
+**In short**: $T_{2,11}$ does not descend to shells because
+it has no crossing on the physical surface, no eigenvalue
+splitting, and no coupling channel.  A fourth-generation
+lepton would require a shell that $T_{2,11}$ cannot create.
+
+---
+
+## 7. No $S_{11}$ symmetry — crystallographic obstruction
+
+$T_{2,11}$ is a $(2,11)$ torus knot.  Its symmetry group is
+**not** $S_{11}$ but the much smaller dihedral group $D_{11}$:
+
+$$
+  \mathrm{Sym}(T_{2,11})
+  \;=\;
+  \underbrace{\mathbb{Z}_{11}}_{\text{rotation on torus}}
+  \;\rtimes\;
+  \underbrace{\mathbb{Z}_2}_{\text{strand swap } S_2}
+  \;=\;
+  D_{11}
+  \qquad (\text{order } 22).
+$$
+
+- The $\mathbb{Z}_{11}$ comes from the **rotational symmetry**
+  of the torus knot: rotating by $2\pi/11$ around the meridian
+  maps the knot to itself.
+- The $\mathbb{Z}_2$ is the strand-permutation $S_2$ (the
+  symmetric quotient $B_2 \twoheadrightarrow S_2$, imposing
+  $\sigma_1^2 = \mathrm{id}$).
+
+**There is no $S_{11}$ action** because:
+
+1. **$T_{2,11}$ lives on 2 strands, not 11.**  The braid word
+   is $\sigma_1^{11} \in B_2$.  The Hecke image is
+   $T_1^{11} \in H_2(q)$.  The symmetric quotient is
+   $B_2 / \langle \sigma_1^2 = 1\rangle = S_2$, not $S_{11}$.
+   The exponent $11$ is the **winding number**, not the
+   strand count.
+
+2. **$\mathbb{Z}_{11}$ cannot embed in $S_5$.**  The
+   automorphism group of Bring's surface is $S_5$ (order $120$).
+   For $\mathbb{Z}_{11}$ to act on $\Sigma_4$, we would need an
+   element of order $11$ in $S_5$.  But the orders of elements
+   in $S_5$ are $\{1, 2, 3, 4, 5, 6\}$ (from cycle types).
+   **$11 > 5$**, so $\mathbb{Z}_{11}$ has no embedding in $S_5$:
+
+$$
+  \mathbb{Z}_{11} \;\not\hookrightarrow\; S_5.
+$$
+
+   This is the **crystallographic obstruction at the group
+   level**: the $11$-fold rotational symmetry of $T_{2,11}$
+   is incompatible with the $5$-fold symmetry of the Bring
+   surface.
+
+3. **Contrast with embeddable knots.**  The embeddable torus
+   knots all have cyclic symmetries that fit inside $S_5$:
+
+   | Knot | Cyclic symmetry | Embeds in $S_5$? |
+   |------|:-:|:-:|
+   | $T_{2,3}$ | $\mathbb{Z}_3$ | Yes ($3$-cycle) |
+   | $T_{2,5}$ | $\mathbb{Z}_5$ | Yes ($5$-cycle) |
+   | $T_{2,7}$ | $\mathbb{Z}_7$ | **No** — but $g = 3 \leq 4$ |
+   | $T_{2,9}$ | $\mathbb{Z}_9$ | **No** — but $g = 4 \leq 4$ |
+   | $T_{3,4}$ | $\mathbb{Z}_4$ | Yes ($4$-cycle) |
+   | $T_{3,5}$ | $\mathbb{Z}_5$ | Yes ($5$-cycle) |
+   | $T_{2,11}$ | $\mathbb{Z}_{11}$ | **No** — and $g = 5 > 4$ |
+
+   For $T_{2,7}$ and $T_{2,9}$, the cyclic symmetry exceeds
+   $S_5$ but the genus fits.  These knots embed by the
+   **genus criterion** (Seifert rank $\leq g$), not by
+   the symmetry criterion.  Their $\mathbb{Z}_7$ and
+   $\mathbb{Z}_9$ symmetries are broken on $\Sigma_4$ —
+   they act as knots, not as symmetries of the surface.
+
+   For $T_{2,11}$: **both** criteria fail.  The genus exceeds
+   $4$ *and* $\mathbb{Z}_{11}$ cannot act on $\Sigma_4$.  It
+   is doubly excluded.
+
+4. **The $S_5 / S_3$ structure suffices.**  All physical
+   shell structure is governed by $S_5$
+   ([fivefold symmetry](#rem:fivefold-symmetry)) and its
+   subgroups:
+   - $S_3$ (colour): three copies inside $S_5$
+     ([symmetric quotient colour](#rem:symmetric-quotient-colour))
+   - $S_2$ (crossing sign): $q \leftrightarrow q^{-1}$
+   - $\mathbb{Z}_5$ ($5$-cycle): weak force mediator $T_{3,5}$
+
+   The orbital shell structure uses at most $5$ channels
+   ($\ell = 0, 1, 2, 3, 4$), matching the $5$ sheets of
+   the Bring surface.  An $S_{11}$ action would require $11$
+   orbital channels — but $\ell_{\max} = 4$ on $\Sigma_4$.
+
+5. **No residual $S_{11}$ via Skein intermediates.**  When
+   $T_{2,11}$ appears as an $L_0$ smoothing in a Skein
+   resolution, its $\mathbb{Z}_{11}$ symmetry acts on the
+   intermediate term.  But the spectral filter projects this
+   term to zero before it reaches the shell structure.  The
+   $\mathbb{Z}_{11}$ action is confined to $\mathcal{I}_4$
+   and never reaches the physical quotient
+   $H^{(n)}(q) / \mathcal{I}_4^{(n)}$.
+
+**Summary**: $T_{2,11}$ carries $D_{11}$ symmetry (dihedral,
+order $22$), not $S_{11}$ (order $39{,}916{,}800$).  Its
+$\mathbb{Z}_{11}$ rotational factor cannot embed in the $S_5$
+automorphism group of Bring's surface.  This is a
+crystallographic obstruction: $11$-fold symmetry is
+incompatible with the genus-$4$ topology, just as $5$-fold
+symmetry is incompatible with a lattice.  No $S_{11}$ shell
+structure exists because $\Sigma_4$ has only $5$ sheets and
+$5$ orbital channels.

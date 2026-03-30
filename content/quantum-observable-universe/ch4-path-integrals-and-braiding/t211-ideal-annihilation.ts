@@ -15,6 +15,10 @@ export default remark({
     "thm:embeddability-closure",
     "prop:torus-knot-generators",
     "thm:jones-markov-trace",
+    "prop:shell-structure-eigenvalues",
+    "prop:nuclear-shell-intruder",
+    "rem:fivefold-symmetry",
+    "rem:symmetric-quotient-colour",
   ],
   cites: ["kassel1995", "jones1987"],
 });
