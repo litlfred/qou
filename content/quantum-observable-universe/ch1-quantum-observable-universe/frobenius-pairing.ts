@@ -9,7 +9,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:quantum-universe"],
-  examples: ["ex:frobenius-su2"],
+  examples: ["ex:frobenius-pairing-su2"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/frobenius-pairing-0.svg", blockIndex: 0, hash: "9097b644f678" },
   ],

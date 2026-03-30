@@ -44,6 +44,7 @@ export default chapter({
         "quantum-universe",
         "tau-notation",
         "frobenius-pairing",
+        "frobenius-pairing-su2",
         "frobenius-geometric-role",
         "quantum-universe-su2",
         "higher-forms",
