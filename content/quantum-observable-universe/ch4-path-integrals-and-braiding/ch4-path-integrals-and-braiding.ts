@@ -177,6 +177,8 @@ export default chapter({
         "skein-decomposition",
         // Categorical vs archimedean braiding
         "skein-archimedean-shadow",
+        // QU/QUO axioms as relations on Hecke generators
+        "vertex-algebra-relations",
       ],
     }),
 
