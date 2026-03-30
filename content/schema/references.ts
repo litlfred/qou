@@ -1327,6 +1327,19 @@ export const references: CSLData[] = [
     page: "443-458",
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
+
+  // ── Weil 1948 (Courbes algébriques) ─────────────────────────
+  ref({
+    id: "weil1948",
+    type: "book",
+    title: "Sur les courbes algébriques et les variétés qui s'en déduisent",
+    author: [
+      { family: "Weil", given: "André" },
+    ],
+    publisher: "Hermann",
+    "publisher-place": "Paris",
+    issued: { "date-parts": [[1948]] },
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
