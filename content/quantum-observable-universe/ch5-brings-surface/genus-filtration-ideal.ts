@@ -21,6 +21,7 @@ export default proposition({
   uses: [
     "thm:embeddability-closure",
     "prop:cohomological-embedding",
+    "prop:categorical-dq-squared",
   ],
   cites: ["yekutieli2010"],
   proofs: ["prf:genus-filtration-ideal"],

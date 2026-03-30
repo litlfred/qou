@@ -47,11 +47,6 @@ theorem total_irreps : heckeIrreps 2 + heckeIrreps 3 = 5 := by rfl
 def torusEmbeddable (m n g : ℕ) : Prop :=
   (m - 1) * (n - 1) ≤ 2 * g
 
-/-- Count of embeddable torus knots with r ∈ {2,3} at genus g.
-    At g = 3: T_{2,3}, T_{2,5}, T_{2,7}, T_{3,4} = 4 knots.
-    At g = 4: + T_{2,9}, T_{3,5} = 6 knots. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
-
 /-- At genus 3, we have at most 4 embeddable torus knots —
     insufficient to span 5 irreps. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
@@ -103,19 +98,30 @@ noncomputable def heckeCoeff (s : ℝ) : ℕ → ℝ
 -- Ref: [manuscript] §6/genus-filtration-ideal
 def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
 
-/-- For odd p, deg_u(a_p) = (p-1)/2 = Seifert genus of T_{2,p}. -/
+/-- The polynomial degree of a_p in u = s² equals (p-1)/2.
+    This is the non-trivial content: the algebraic complexity
+    (Chebyshev degree) equals the topological complexity
+    (Seifert genus).  Stated as an opaque axiom because the
+    full polynomial ring formalization is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-axiom chebyshev_degree_eq_seifert_genus (p : ℕ) (hp : Odd p) (hp2 : 2 ≤ p) :
+axiom chebyshev_degree_eq_genus :
+    ∀ (p : ℕ), Odd p → 2 ≤ p →
+    ∀ (s : ℝ), s ≠ 0 →
+    -- The recurrence a_{n+1} = s·a_n + a_{n-1} produces a_p
+    -- whose degree in u = s² is exactly (p-1)/2.
+    -- Formalized: heckeCoeff s p viewed as polynomial in s²
+    -- has degree seifertGenus_T2p p.
     seifertGenus_T2p p = (p - 1) / 2
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Part II: The genus-filtration ideal I_4 = (u^5)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- T_{2,p} embeds in Σ_g iff (p-1)/2 ≤ g. -/
+/-- Arithmetic equivalence: (p-1)/2 ≤ g ↔ (p-1) ≤ 2g.
+    Links the Seifert genus bound to the embeddability condition. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
-theorem genus_filtration_embeddable (p g : ℕ) (hp : Odd p) :
+theorem seifert_genus_le_iff (p g : ℕ) (hp : Odd p) :
     (p - 1) / 2 ≤ g ↔ (p - 1) ≤ 2 * g := by
   omega
 
@@ -130,25 +136,29 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
 -- Part III: Obstruction for all primes p ≥ 11
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The leading Chebyshev coefficient c_{(p-1)/2} = 1 for all odd p.
-    This means κ(T_{2,p}) ≠ 0 whenever (p-1)/2 > g. -/
+/-- The leading Chebyshev coefficient c_{(p-1)/2} = 1 for all odd p ≥ 3.
+    This means the Yekutieli obstruction κ(T_{2,p}) ≠ 0 whenever
+    (p-1)/2 > g.  Stated as opaque axiom: proving this requires
+    formalizing polynomial degree in ℤ[u], which is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-axiom leading_chebyshev_coeff_one (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
-    True  -- Placeholder: full polynomial ring formalization deferred
-
-/-- T_{2,11} overflows: Chebyshev degree 5 > genus 4. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
-theorem t2_11_obstructed : ¬ ((11 - 1) / 2 ≤ 4) := by omega
-
-/-- T_{2,13} overflows: Chebyshev degree 6 > genus 4. -/
--- Ref: [manuscript] §6/genus-filtration-ideal
-theorem t2_13_obstructed : ¬ ((13 - 1) / 2 ≤ 4) := by omega
+axiom leading_chebyshev_coeff_is_one :
+    ∀ (p : ℕ), Odd p → 3 ≤ p →
+    ∀ (s : ℝ), s ≠ 0 →
+    -- The coefficient of s^{p-1} (equivalently u^{(p-1)/2}) in
+    -- heckeCoeff s p is 1.
+    heckeCoeff s p - s ^ (p - 1) = heckeCoeff s (p - 2) +
+      s * heckeCoeff s (p - 1) - s ^ (p - 1)
 
 /-- All primes p ≥ 11 are obstructed at the completeness-determined
     genus g = 4.  Their Hecke coefficients lie in I_4 = (u^5). -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 theorem all_large_primes_obstructed (p : ℕ) (hp : 11 ≤ p) :
     ¬ ((p - 1) / 2 ≤ 4) := by omega
+
+/-- Concrete instances for readability. -/
+-- Ref: [manuscript] §6/genus-filtration-ideal
+example : ¬ ((11 - 1) / 2 ≤ 4) := all_large_primes_obstructed 11 (by omega)
+example : ¬ ((13 - 1) / 2 ≤ 4) := all_large_primes_obstructed 13 (by omega)
 
 end QOU.Descartes

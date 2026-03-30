@@ -8,5 +8,6 @@ export default proof({
   uses: [
     "prop:categorical-dq-squared",
     "def:yekutieli-lifting-condition",
+    "def:quantum-characteristic-classes",
   ],
 });
