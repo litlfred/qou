@@ -69,4 +69,4 @@ information-theoretic consequences.
 The dashed line on the right marks the $\mathrm{SU}(2)$ running
 example (`ex:*-su2` blocks): a single concrete instance that
 accompanies each abstract definition from Chapter 1 through Chapter 5,
-so the reader always has a worked example alongside the general theory.
+providing a worked example alongside the general theory at every step.

@@ -137,7 +137,7 @@ $$
   \;\approx\; 2.5 \;\mathrm{MeV}.
 $$
 
-This is remarkably close to perturbative QCD estimates of
+This is close to perturbative QCD estimates of
 $\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at
 asymptotically high density, given that the QOU estimate
 uses no fitting parameters.  The discrepancy suggests that

@@ -2,7 +2,7 @@ How much energy does it cost to convert an electron into a positron?
 The answer depends on what "convert" means — and the QOU framework
 reveals three distinct energy scales.
 
-**Standard physics: you cannot convert, only create pairs.**
+**Standard physics: conversion is forbidden; only pair creation is possible.**
 An isolated electron cannot become a positron — lepton number
 conservation forbids it.  The minimum process is **pair production**:
 a photon near a nucleus creates an $e^- e^+$ pair, requiring
