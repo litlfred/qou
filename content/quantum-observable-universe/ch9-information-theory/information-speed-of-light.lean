@@ -30,6 +30,7 @@ noncomputable def speedOfLight {k : Type*} [Field k] (q : k) (hq : q ≠ 1) : k 
 theorem speedOfLight_eq_ratio {k : Type*} [Field k] (q : k)
     (hq0 : q ≠ 0) (hq1 : q ≠ 1) :
     speedOfLight q hq1 = q⁻¹ / (1 - q⁻¹) := by
+  -- Ref: [manuscript] §9/information-speed-of-light
   sorry
 
 end QOU.Information

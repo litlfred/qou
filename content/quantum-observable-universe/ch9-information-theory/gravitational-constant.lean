@@ -42,6 +42,7 @@ noncomputable def gravitationalConstant {k : Type*} [Field k] (q : k)
 theorem gravitational_planck_eq_one {k : Type*} [Field k] (q : k)
     (hq0 : q ≠ 0) (hq1 : q ≠ 1) :
     gravitationalConstant q hq0 hq1 * ((q - 1) / q / (1 / (q - 1))) ^ 2 = 1 := by
+  -- Ref: [manuscript] §9/gravitational-constant
   sorry
 
 end QOU.Information

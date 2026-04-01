@@ -1,5 +1,5 @@
 A *Hopf diquark* is a pair of quarks
-$(\mathfrak{q}_i^a,\, \mathfrak{q}_j^b)$ in distinct color tubes
+$(\mathfrak{q}_i^a,\, \mathfrak{q}_j^b)$ in distinct coral tubes
 $a \neq b$ of the Bring's surface, joined by the Hopf link
 $\mathcal{L}_H$:
 

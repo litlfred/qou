@@ -1,4 +1,4 @@
-Let $H \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ be a
+Let $\mathfrak{H} \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ be a
 hadron ([Definition](#def:hadron)) and let $\mathcal{S}_p$ denote the fibre of the
 knot bundle over a point $p \in \mathbb{P}(V)$
 ([Definition](#def:projective-line-object)). A **fibre-compatible hadron
@@ -21,7 +21,7 @@ satisfying the following conditions:
    ([operations on hadrons](#rem:hadron-operations)) with the
    geometric operations on knots in $\mathcal{S}_p$.
 
-2. **Fibre confinement.** The image $\iota_p(H)$ is entirely
+2. **Fibre confinement.** The image $\iota_p(\mathfrak{H})$ is entirely
    contained in the fibre $\mathcal{S}_p$. No constituent knot extends to a
    neighbouring fibre $E_{p'}$ for $p' \neq p$. This is enforced by a
    finite Mobius energy bound:
@@ -60,6 +60,7 @@ satisfying the following conditions:
    constituent knot $K_i$. This ensures that the mass contribution of
    each knot, computed via the hyperbolic volume, is faithfully
    represented in the fibre.
+
 
 A localized hadron ([Definition](#def:localized-hadron)) equipped with a
 fibre-compatible embedding is a **physically realized hadron**: it is

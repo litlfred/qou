@@ -53,6 +53,7 @@ export default chapter({
       blocks: [
         "braid-symmetric-intro",
         "braid-group",
+        "braid-group-su2",
         "knot-notation-convention",
       ],
     }),
@@ -132,6 +133,7 @@ export default chapter({
       label: "sec:crossing-energy",
       blocks: [
         "crossing-energy",
+        "crossing-energy-trefoil",
         "coulomb-charge",
       ],
     }),
@@ -217,6 +219,7 @@ export default chapter({
       label: "sec:borromean-reidemeister",
       blocks: [
         "borromean-baryon",
+        "hadron-proton-example",
         "fermion-boson-knot-link",
         "reidemeister-mass-invariance",
         "nuclear-shell-intruder",
@@ -230,6 +233,7 @@ export default chapter({
       blocks: [
         "topological-mass",
         "topological-mass-categorical-proof",
+        "topological-mass-trefoil",
         "skein-binding-lagrangian",
         "beta-stability",
       ],

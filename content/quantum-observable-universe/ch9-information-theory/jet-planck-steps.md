@@ -77,8 +77,8 @@ roots is a quadratic residue condition.
 $J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}\,d^2 E \cdot (\delta p)^2
 + \tfrac{1}{6}\,d^3 E \cdot (\delta p)^3$.
 
-The third jet is where the **chiral structure appears**.  The chiral
-elliptic curve ([chiral elliptic](#prop:chiral-elliptic))
+The third jet is where the **coral structure appears**.  The coral
+elliptic curve ([coral elliptic](#prop:coral-elliptic))
 
 $$
   X^3 + (z+1)\,X^2 + (z^2+z+1)\,X + (z^3+z^2+z+1) = 0

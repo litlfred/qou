@@ -7,7 +7,7 @@ export default proposition({
   tags: [
     "elliptic-curve",
     "descartes",
-    "chiral-fibration",
+    "coral-fibration",
     "substrate-parameter",
     "golden-ratio",
     "weierstrass",

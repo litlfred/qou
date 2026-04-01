@@ -8,7 +8,7 @@ export default conjecture({
     "elliptic-curve",
     "stability",
     "diophantine",
-    "chiral-fibration",
+    "coral-fibration",
     "coulomb",
     "pairing",
     "bring-surface",

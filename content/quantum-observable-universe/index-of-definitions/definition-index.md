@@ -39,7 +39,7 @@
 | [def:categorical-reeb](#def:categorical-reeb) | Categorical Reeb derivation | Ch 2 | `QOU.CategoricalReeb` |
 | [def:categorical-transfer-matrix](#def:categorical-transfer-matrix) | Categorical transfer matrix | Ch 4 | `QOU.CategoricalTransferMatrix` |
 | [rem:glossary-categorical-transport](#rem:glossary-categorical-transport) | Categorical transport equation | Glossary | `QOU.CategoricalTransport` |
-| [def:chiral-sector-coords](#def:chiral-sector-coords) | Chiral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `QOU.ChiralSectorCoords` |
+| [def:coral-sector-coords](#def:coral-sector-coords) | Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `QOU.CoralSectorCoords` |
 | [def:color-tube-coordinates](#def:color-tube-coordinates) | Color tube coordinates | Ch 6 | `QOU.ColorTubeCoordinates` |
 | [def:color-tube-fibers](#def:color-tube-fibers) | Color tube fibers | Ch 6 | `QOU.ColorTubeFibers` |
 | [def:contact-affine-chart](#def:contact-affine-chart) | Contact affine chart on $\mathbb{P}(V)$ | Ch 2 | `QOU.ContactAffineChart` |
@@ -126,7 +126,7 @@
 | [thm:substrate-parameter-exists](#thm:substrate-parameter-exists) | Existence of the substrate parameter | Ch 2 | `QOU.SubstrateParameter.ofReebDecomposition` |
 | [thm:weight-decomposition-exists](#thm:weight-decomposition-exists) | Existence of the weight decomposition | Ch 2 | `QOU.WeightDecomposition.ofMaximalTorus` |
 | [thm:generation-completeness](#thm:generation-completeness) | Generation completeness: all embeddable knots are reachable | Ch 6 | `QOU.Descartes.generation_completeness` |
-| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_H = \mathfrak{m}_H \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
+| [thm:mass-energy-equivalence](#thm:mass-energy-equivalence) | Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$) | Ch 8 | `QOU.Information.massEnergyEquivalence` |
 | [thm:markov-trace-product](#thm:markov-trace-product) | Product factorization of the Markov trace | Ch 4 | `QOU.markov_trace_product` |
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and Yekutieli is a QOU | Ch 3 | `QOU.QuToQou` |
 | [thm:topological-mass](#thm:topological-mass) | Topological Decomposition of Mass | Ch 4 | `QOU.Torsion.mass_decomposition_categorical` |
@@ -146,7 +146,7 @@
 | [prop:mobius-energy](#prop:mobius-energy) | Categorical recovery of Möbius energy | Ch 4 | `QOU.Braiding.mobius_energy` |
 | [prop:categorical-self-duality](#prop:categorical-self-duality) | Categorical self-duality | Ch 2 | `QOU.categorical_self_duality` |
 | [prop:categorical-archimedean-bridge](#prop:categorical-archimedean-bridge) | Categorical--geometric correspondence | Ch 5 | `QOU.categorical_archimedean_bridge` |
-| [prop:chiral-elliptic](#prop:chiral-elliptic) | Chiral fibre as an elliptic curve | Ch 6 | `QOU.Brings.chiral_elliptic` |
+| [prop:coral-elliptic](#prop:coral-elliptic) | Coral fibre as an elliptic curve | Ch 6 | `QOU.Brings.coral_elliptic` |
 | [prop:q-codifferential-formula](#prop:q-codifferential-formula) | Closed formula for the $q$-codifferential $\delta_q$ | Ch 2 | `QOU.QuantumGeometry.q_codifferential_formula` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 4 | `QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 2 | `QOU.Descartes.cohomological_embedding` |

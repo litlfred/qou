@@ -340,10 +340,10 @@ Agents **must** use the correct font for each concept.
 
 | Register | Font | Symbols |
 |----------|------|---------|
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
 | Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
-| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_H$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
+| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
 | Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
 | Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
 | Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
@@ -367,7 +367,7 @@ Agents **must** use the correct font for each concept.
 - `$p$` = brane point (never proton number; proton number is `$Z$`)
 - `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
   Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
-  `$E_H$` (with hadron subscript) is allowed for crossing energy.
+  `$E_{\mathfrak{H}}$` (with hadron subscript) is allowed for crossing energy.
 - `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
@@ -636,10 +636,10 @@ Prerequisites: `git`, `curl`.
 ```
 
 This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
+pinned in `lean-archive/lean-toolchain`, Mathlib cache, ripgrep, and verifies
 `lean-lsp-mcp` via uvx.
 
-**Important**: Run `lake build` in `lean/` before first MCP session to avoid
+**Important**: Run `lake build` in `lean-archive/` before first MCP session to avoid
 timeouts.
 
 ### Remote MCP server
@@ -701,7 +701,7 @@ setup instructions rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `lean/` | Lean 4 formalization (lakefile.lean, QOU/) |
+| `lean-archive/` | Lean 4 formalization (lakefile.toml, QOU/) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -726,7 +726,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `lean-archive/` (source browser), `lean-archive/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
@@ -742,8 +742,8 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `lean/` | lean_ci.yml | Raw Lean source files |
-| `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
+| `lean-archive/` | lean_ci.yml | Raw Lean source files |
+| `lean-archive/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
 | `schema-docs/` | publish.yml | TypeDoc content-object type reference |

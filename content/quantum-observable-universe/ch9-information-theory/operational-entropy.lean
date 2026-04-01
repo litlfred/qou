@@ -34,6 +34,7 @@ noncomputable def qHausdorffDimension {k : Type*} [Field k] (q : k) : k :=
 theorem hausdorff_eq_entropy_mul_lyapunov {k : Type*} [Field k] (q : k)
     (hq : q ≠ 0) :
     qHausdorffDimension q = operationalEntropy q * (2 * q - 1) := by
+  -- Ref: [manuscript] §9/operational-entropy
   sorry
 
 end QOU.Information

@@ -3,8 +3,8 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Chapter 6: The Descartes Universe.
  *
- * The concrete realisation with χ(A) = −6.  Four main sections after a
- * short preamble: (1) Bring's surface geometry and coordinates,
+ * The concrete realisation with χ(A) = −6.  Sections:
+ * (1) Bring's surface geometry and coordinates,
  * (2) spectral and gauge structures, (3) the Descartes condition,
  * particles, and the Descartes theorem, (4) topological mass and the
  * knot-particle spectrum.
@@ -30,6 +30,7 @@ export default chapter({
       blocks: [
         // Bring's surface as a QOU
         "brings-surface",
+        "brings-surface-example",
         "brings-realisations",
         "brings-is-qou",
         "brings-is-qou-proof",
@@ -44,16 +45,16 @@ export default chapter({
         "color-tube-interpretation",
         "c5-color-tube",
         "intrinsic-color-cubic-pairing",
-        // Chiral fibration and elliptic curves
-        "chiral-elliptic",
-        "chiral-elliptic-proof",
+        // Coral fibration and elliptic curves
+        "coral-elliptic",
+        "coral-elliptic-proof",
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
         "t-duality-color-tube",
         "color-tube-subloci",
         // Bundle structures and smoothness
-        "chiral-bundles",
+        "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
         "briggs-klein-chart",
@@ -78,7 +79,7 @@ export default chapter({
         "mi-sw-abelianisation",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
-        "chiral-sector-coords",
+        "coral-sector-coords",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-knot-eigenbasis",
@@ -95,6 +96,7 @@ export default chapter({
         // The Descartes condition
         "descent-to-zero",
         "descartes-condition",
+        "chi-minus-six-chain",
         "descartes-calabi-yau",
         "descent-one-dim",
         "genus-maximal-descent",
@@ -115,6 +117,7 @@ export default chapter({
         "up-quark",
         "down-quark",
         "electron-knot",
+        "electron-knot-example",
         "positron-knot",
         "neutrino-knot",
         "antineutrino-knot",

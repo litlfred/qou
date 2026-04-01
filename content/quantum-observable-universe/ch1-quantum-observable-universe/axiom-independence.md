@@ -34,5 +34,5 @@ $q \neq 1$.
 In summary: over a field of characteristic zero with symmetric
 braiding, Axioms 1 and 3 are nearly equivalent (Deligne), and
 Axiom 4 is automatic for smooth groups.  In the full generality of
-this book --- braided categories over rings, including the $q \neq 1$
+this paper --- braided categories over rings, including the $q \neq 1$
 regime --- all four axioms are independent.

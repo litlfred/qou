@@ -1,19 +1,25 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 5: Models of QOU.
+ * Chapter 5: Models of QOUs.
  *
- * Concrete realisations of the QOU axioms: the Archimedean model
- * (main commutative diagram, Calabi--Yau, ALE, Bring's surface,
- * instantons), p-adic and finite-field models, Witt-vector lifting,
- * Jones polynomials, and fluid-dynamic perspectives.
+ * Concrete realisations of the QOU axioms.  First half: general models
+ * (Archimedean, p-adic, finite-field, Witt-vector, Jones, fluid).
+ * Second half: the Descartes universe — the specific realisation with
+ * χ(A) = −6 and Bring's surface as fibre geometry.
+ *
+ * Merged from former Ch 5 (Models of QOU) + Ch 6 (The Descartes Universe).
  */
 export default chapter({
   number: 5,
-  title: "Models of QOU",
+  title: "Models of QOUs",
   label: "chap:models-qou",
   sections: [
-    // ── Physical interpretation and main result (from ch1 §16) ────────
+    // ═══════════════════════════════════════════════════════════════════
+    // PART A: GENERAL MODELS
+    // ═══════════════════════════════════════════════════════════════════
+
+    // ── Physical interpretation and main result ─────────────────────
     section({
       title: "Physical interpretation and the main result",
       label: "sec:physical-interpretation",
@@ -25,7 +31,7 @@ export default chapter({
       ],
     }),
 
-    // ── Archimedean realisations (from ch1 §17) ──────────────────────
+    // ── Archimedean realisations ────────────────────────────────────
     section({
       title: "Archimedean specialisations",
       label: "sec:archimedean-models",
@@ -52,14 +58,14 @@ export default chapter({
       ],
     }),
 
-    // ── Categorical reformulation ─────────────────────────────────────
+    // ── Categorical reformulation ───────────────────────────────────
     section({
       title: "Key Results in Categorical Language",
       label: "sec:categorical-reformulation",
       blocks: ["categorical-reformulation"],
     }),
 
-    // ── Non-Archimedean models ────────────────────────────────────────
+    // ── Non-Archimedean models ──────────────────────────────────────
     section({
       title: "Universal Enveloping Algebras and Quantum Groups",
       label: "sec:enveloping-algebras",
@@ -87,7 +93,7 @@ export default chapter({
       ],
     }),
 
-    // ── Finite-field models ───────────────────────────────────────────
+    // ── Finite-field models ─────────────────────────────────────────
     section({
       title: "Quotient to Finite Fields",
       label: "sec:finite-fields",
@@ -97,14 +103,14 @@ export default chapter({
       ],
     }),
 
-    // ── Jones polynomials ─────────────────────────────────────────────
+    // ── Jones polynomials ───────────────────────────────────────────
     section({
       title: "Jones Polynomials",
       label: "sec:jones-polynomials",
       blocks: ["jones-polynomials"],
     }),
 
-    // ── Fluid dynamics ────────────────────────────────────────────────
+    // ── Fluid dynamics ──────────────────────────────────────────────
     section({
       title: "Fluid Dynamics of the Brane",
       label: "sec:brane-fluid",
@@ -118,5 +124,9 @@ export default chapter({
       ],
     }),
 
+    // ═══════════════════════════════════════════════════════════════════
+    // PART B lives in ch5-brings-surface/ (same chapter number 5).
+    // The pipeline resolves blocks from that directory's own manifest.
+    // ═══════════════════════════════════════════════════════════════════
   ],
 });

@@ -2,7 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:mass-energy-equivalence",
-  title: "Mass--energy equivalence ($E_H = \\mathfrak{m}_H \\cdot c_q^2$)",
+  title: "Mass--energy equivalence ($E_{\\mathfrak{H}} = \\mathfrak{m}_{\\mathfrak{H}} \\cdot c_q^2$)",
   tags: [
     "mass-energy",
     "speed-of-light",

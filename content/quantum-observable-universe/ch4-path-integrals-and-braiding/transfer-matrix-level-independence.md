@@ -1,5 +1,5 @@
-Let $H_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a hadron
-with composite knot $K_H = \hat{\beta}_H$.  Let $\mathcal{T}(H_p)$
+Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \bowtie \mathcal{L}$ be a hadron
+with composite knot $K_{\mathfrak{H}} = \hat{\beta}_{\mathfrak{H}}$.  Let $\mathcal{T}(\mathfrak{H}_p)$
 be the categorical transfer matrix
 ([categorical transfer matrix](#def:categorical-transfer-matrix)).
 Then:
@@ -14,11 +14,11 @@ Then:
      \;=\;
      \hat{V}^{\mathrm{comp}}(q)
      \;=\;
-     P_{K_H}(q).
+     P_{K_{\mathfrak{H}}}(q).
    $$
 
 2. **Path independence on $\mathcal{S}_p$.**  Two braiding operations
-   $T_1, T_2$ on $H$ that produce isotopy-equivalent
+   $T_1, T_2$ on $\mathfrak{H}$ that produce isotopy-equivalent
    configurations
    ([isotopy equivalence](#def:bundle-isotopy-equivalence))
    have the same categorical transfer matrix:
@@ -28,9 +28,9 @@ Then:
    equivalence class of the final configuration matters.
 
 3. **Well-definedness.**  The categorical transfer matrix
-   $\mathcal{T}(H)$ depends only on the isotopy class of the
-   hadron $H$ and the knot types $K_i$ of its constituents.
+   $\mathcal{T}(\mathfrak{H})$ depends only on the isotopy class of the
+   hadron $\mathfrak{H}$ and the knot types $K_i$ of its constituents.
    It is independent of:
-   - the braid representative $\beta_H$,
+   - the braid representative $\beta_{\mathfrak{H}}$,
    - the PawLei embedding $\iota_{j_i}$ for each constituent,
    - the order of crossings evaluated within $\mathcal{S}_p$.

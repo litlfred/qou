@@ -68,7 +68,7 @@ the tau arises from linking $T_{2,5}$ configurations at Reeb
 degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
-Baryons require three generators threaded through the color tubes
+Baryons require three generators threaded through the coral tubes
 $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The proton
 is:
@@ -80,7 +80,7 @@ $$
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
-descendant $\sigma(T_{2,3})$ (down quark) through the color tubes and
+descendant $\sigma(T_{2,3})$ (down quark) through the coral tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$

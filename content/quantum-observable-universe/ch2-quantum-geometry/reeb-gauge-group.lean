@@ -33,6 +33,5 @@ structure ReebGaugeGroup (R : Type u) [CommRing R] where
   embedding : carrier →* R
   /-- The embedding is injective (norm-one condition). -/
   embedding_injective : Function.Injective embedding
-  sorry
 
 end QOU

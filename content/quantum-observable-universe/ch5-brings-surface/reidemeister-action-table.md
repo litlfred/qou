@@ -3,7 +3,7 @@ action $\mathcal{S}_q = \mathcal{S}_q^{\mathrm{grav}} +
 \mathcal{S}_q^{\mathrm{gauge}} + \mathcal{S}_q^{\mathrm{matter}}$
 ([canonical action](#prop:qou-canonical-action)).  This table
 gives the complete accounting: what each move preserves, what it
-changes, and what you must track for mass and energy calculations.
+changes, and what must be tracked for mass and energy calculations.
 
 **The categorical action on a nuclear link.**
 For a nucleus $\mathcal{N}(Z, N)$ evaluated at the braid

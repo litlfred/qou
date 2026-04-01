@@ -6,7 +6,7 @@ linked by the Hopf link $\mathcal{L}_H$ satisfies the stability
 condition
 
 $$
-  \mathbf{E}_{\mathrm{cross}}(H) \;<\; 0
+  \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) \;<\; 0
 $$
 
 and is therefore a hadron in the sense of
@@ -22,9 +22,9 @@ drawn from $\mathcal{G}$:
    crossing energy from the strong binding term
    $\tfrac{1}{2}(n_+ + n_-)(q + q^{-1})$.
 
-2. The Coulomb correction $Q(H) \cdot (q - q^{-1})$
+2. The Coulomb correction $Q(\mathfrak{H}) \cdot (q - q^{-1})$
    ([Coulomb charge](#def:coulomb-charge)) satisfies
-   $|Q(H)| \leq 1$ for all generators in $\mathcal{G}$, since
+   $|Q(\mathfrak{H})| \leq 1$ for all generators in $\mathcal{G}$, since
    the maximum crossing asymmetry between $m = 2$ and $m = 3$
    strands is bounded by the genus constraint.
 
