@@ -5,8 +5,8 @@ The non-cocommutativity of the Hopf structure at `q ≠ 1` provides a
 categorical obstruction to knot self-intersection via an energy barrier
 at the quantum Planck scale `ℏ_q = 1 − q⁻¹`.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/MobiusEnergy.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean (monolithic)
 -/
 
 import Mathlib.Data.Real.Basic

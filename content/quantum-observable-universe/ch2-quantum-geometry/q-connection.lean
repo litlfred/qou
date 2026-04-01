@@ -1,8 +1,8 @@
 /-!
 # QOU.qConnection
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/qConnection.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/qConnection.lean (monolithic)
 -/
 
 import QOU.Basic

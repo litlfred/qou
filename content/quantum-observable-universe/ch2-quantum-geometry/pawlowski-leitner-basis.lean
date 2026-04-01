@@ -4,7 +4,7 @@
 The Pawlowski–Leitner basis provides a canonical basis for
 Hom_{SU(2)}(V_j, V_{1/2}^⊗n), indexed by standard Young tableaux.
 
-Authoritative source: `lean-archive/QOU/RepresentationTheory.lean`
+Authoritative source: `content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean`
 
 ## References
 

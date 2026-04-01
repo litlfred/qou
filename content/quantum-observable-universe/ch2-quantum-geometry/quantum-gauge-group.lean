@@ -1,8 +1,8 @@
 /-!
 # QOU.QuantumGaugeGroup
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/QuantumGaugeGroup.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/QuantumGaugeGroup.lean (monolithic)
 -/
 
 import QOU.Basic

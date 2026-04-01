@@ -1,8 +1,8 @@
 /-!
 # QOU.HadronicMass.terminal_resolution_hadronic_mass
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/HadronicMass.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/HadronicMass.lean (monolithic)
 -/
 
 import QOU.Basic

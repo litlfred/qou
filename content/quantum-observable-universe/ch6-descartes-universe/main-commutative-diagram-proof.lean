@@ -1,8 +1,8 @@
 /-!
 # QOU.main_commutative_diagram
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/main_commutative_diagram.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/main_commutative_diagram.lean (monolithic)
 -/
 
 import QOU.Basic

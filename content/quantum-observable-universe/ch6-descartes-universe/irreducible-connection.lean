@@ -1,8 +1,8 @@
 /-!
 # QOU.irreducible_connection
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/irreducible_connection.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/irreducible_connection.lean (monolithic)
 -/
 
 import QOU.Basic

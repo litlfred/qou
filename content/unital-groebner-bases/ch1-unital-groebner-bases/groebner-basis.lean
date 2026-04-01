@@ -4,7 +4,7 @@
 Content block for `def:groebner-basis`.
 
 The authoritative formalization lives in
-`lean-archive/QOU/GrobnerShirshov/Basic.lean`, which defines:
+`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.ReductionRule` — an oriented rewrite rule
 - `QOU.GrobnerShirshov.RewritingSystem` — a collection of rules
 - `QOU.GrobnerShirshov.OverlapComposition` — overlap S-polynomial
@@ -15,8 +15,8 @@ The authoritative formalization lives in
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 5
-- lean-archive/QOU/GrobnerShirshov/Basic.lean §§4–5
-- lean-archive/QOU/GrobnerShirshov/CompositionLemma.lean
+- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§4–5
+- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/CompositionLemma.lean
 -/
 
 import Mathlib.Data.List.Basic

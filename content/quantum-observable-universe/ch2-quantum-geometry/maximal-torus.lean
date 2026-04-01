@@ -5,8 +5,8 @@ The maximal torus `T` of the gauge group, defined as the subgroup of
 `Aut⊗(ω)` acting diagonally on each weight space of the fundamental
 object `V`.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/QuantumObservableUniverse.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean (monolithic)
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic

@@ -5,8 +5,8 @@ The categorical Möbius energy `E_cat(γ)` built from the Frobenius–Hopf
 comultiplication and q-Hodge star recovers the classical Möbius energy
 in the limit `q → 1`.
 
-Extracted from lean-archive/ for content-block co-location.
-Source: lean-archive/QOU/MobiusEnergy.lean (monolithic)
+Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
+Source: content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean (monolithic)
 -/
 
 import Mathlib.Data.Real.Basic
