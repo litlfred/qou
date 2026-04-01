@@ -1,0 +1,12 @@
+import { definition } from "../../schema/builders";
+
+export default definition({
+  label: "def:substrate-parameter-planck",
+  title: "Substrate parameter and quantum Planck constant",
+  lean: {
+    decl: "QOU.AlgebraicSubstrate.SubstrateParameterPlanck",
+    validation: "not_checked",
+  },
+  uses: ["def:frobenius-hopf-substrate"],
+  tags: ["substrate-parameter", "planck-constant", "q-deformation"],
+});

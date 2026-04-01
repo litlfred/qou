@@ -33,7 +33,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests==2.32.3
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Configure Python path
+        run: echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
 
       - name: Get commit diff
         id: diff
@@ -52,25 +55,8 @@ jobs:
           echo "sha=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
           echo "author=$(git log -1 --pretty=%an)" >> "$GITHUB_OUTPUT"
 
-      - name: Collect skill files
-        id: skills
-        run: |
-          # Cap skills payload to stay well within the GitHub Actions output limit.
-          MAX_SKILLS_CHARS=20000
-
-          SKILLS=""
-          for f in .claude/skills/*.md; do
-            [ -f "$f" ] || continue
-            SKILLS="${SKILLS}--- $(basename "$f") ---
-          $(cat "$f")
-
-          "
-          done
-          {
-            echo "content<<SKILLS_EOF"
-            echo "$SKILLS" | head -c "$MAX_SKILLS_CHARS"
-            echo "SKILLS_EOF"
-          } >> "$GITHUB_OUTPUT"
+      # Skills are now loaded programmatically by agent_review.py via qou_lib.skills.
+      # The shell-based skill collection step is no longer needed.
 
       - name: Derive PDF URL
         id: pdf
@@ -89,7 +75,6 @@ jobs:
           COMMIT_SHA: ${{ steps.commit.outputs.sha }}
           COMMIT_AUTHOR: ${{ steps.commit.outputs.author }}
           REPO_NAME: ${{ github.repository }}
-          SKILLS_CONTENT: ${{ steps.skills.outputs.content }}
           PDF_URL: ${{ steps.pdf.outputs.url }}
         run: python .github/scripts/agent_review.py
 

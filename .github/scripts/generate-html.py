@@ -37,7 +37,7 @@ from pathlib import Path
 # 1.  LaTeX parsing helpers
 # ---------------------------------------------------------------------------
 
-# Matches \begin{env}[optional title]\n\label{lbl}
+# Matches \begin{env}[optional title]\n\label{lbl} with optional \lean{} and \leanok
 _ENV_RE = re.compile(
     r"\\begin\{("
     r"definition|theorem|lemma|proposition|corollary|example|remark|conjecture"
@@ -46,6 +46,11 @@ _ENV_RE = re.compile(
     r"\s*\\label\{([^}]+)\}",  # \label{...}
     re.DOTALL,
 )
+
+# Matches \lean{Decl.Name} within environment body
+_LEAN_DECL_RE = re.compile(r"\\lean\{([^}]+)\}")
+# Matches \leanok within environment body
+_LEANOK_RE = re.compile(r"\\leanok\b")
 
 # Matches \chapter / \section / \subsection with optional \label
 _HEADING_RE = re.compile(
@@ -62,15 +67,24 @@ def _strip_tex(s: str) -> str:
 
 
 def parse_definitions(tex: str) -> list[dict]:
-    """Return a list of dicts ``{env, title, label, plain_title}``."""
+    """Return a list of dicts ``{env, title, label, plain_title, lean_decl, leanok}``."""
     defs: list[dict] = []
     for m in _ENV_RE.finditer(tex):
         env, title, label = m.group(1), m.group(2) or "", m.group(3)
+        # Scan ahead from the match to find \lean{} and \leanok within the environment
+        rest_start = m.end()
+        end_env = tex.find(f"\\end{{{env}}}", rest_start)
+        body = tex[rest_start:end_env] if end_env != -1 else tex[rest_start:rest_start + 500]
+        lean_m = _LEAN_DECL_RE.search(body)
+        lean_decl = lean_m.group(1).strip() if lean_m else ""
+        leanok = bool(_LEANOK_RE.search(body))
         defs.append({
             "env": env,
             "title": title,
             "label": label,
             "plain_title": _strip_tex(title) if title else "",
+            "lean_decl": lean_decl,
+            "leanok": leanok,
         })
     return defs
 
@@ -252,6 +266,41 @@ code { font-size: 90%; }
 .gh-badge:hover { filter: brightness(0.9); }
 #gh-bar { padding: 2px 0; }
 .defn-link { border-bottom: 1px dotted var(--link); text-decoration: none; }
+
+/* ── Proof-status badges ───────────────────────────────────────── */
+.proof-status {
+  display: inline-block; font-size: 0.75em; padding: 1px 7px;
+  border-radius: 10px; margin-left: 0.5em; text-decoration: none;
+  font-weight: 600; vertical-align: middle; line-height: 1.6;
+  transition: filter 0.15s;
+}
+.proof-status:hover { filter: brightness(0.85); }
+.proof-status.proved {
+  background: #228B22; color: #fff;
+}
+.proof-status.stated {
+  background: #DAA520; color: #fff;
+}
+.proof-status.has-sorry {
+  background: #FF8C00; color: #fff;
+}
+.proof-status.not-started {
+  background: #DC143C; color: #fff;
+}
+.proof-status.mathlib-ok {
+  background: #006400; color: #fff;
+}
+.proof-status.sorry-ref {
+  background: #d4a017; color: #fff; cursor: pointer;
+}
+.proof-status.sorry-ref:hover { filter: brightness(1.1); }
+/* Legend bar */
+.proof-legend {
+  text-align: center; padding: 6px 0; font-size: 0.8rem;
+  border-bottom: 1px solid var(--border); margin-bottom: 1rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.proof-legend .proof-status { cursor: default; pointer-events: none; }
 """
 
 _TOGGLE_JS = r"""
@@ -308,12 +357,22 @@ def _make_header_html(
     headings: list[dict],
     branch: str | None = None,
     repo: str | None = None,
+    pdf: str | None = None,
+    diff_pdf: str | None = None,
 ) -> str:
     """Build the sticky header bar."""
     parts: list[str] = []
     parts.append('<header id="site-header">')
     parts.append('  <span class="title">Quantum Observable Universe</span>')
     parts.append('  <span class="controls">')
+
+    # PDF download buttons
+    if pdf:
+        parts.append(f'    <a class="gh-badge" href="{html_mod.escape(pdf)}" '
+                     f'title="Download publication PDF">&#x1F4C4; PDF</a>')
+    if diff_pdf:
+        parts.append(f'    <a class="gh-badge" href="{html_mod.escape(diff_pdf)}" '
+                     f'title="Download diff PDF (changes vs main)">&#x1F504; Diff</a>')
 
     # GitHub badges (feature branch)
     if branch and repo:
@@ -334,6 +393,152 @@ def _make_header_html(
     parts.append("  </span>")
     parts.append("</header>")
     return "\n".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# 2b. Proof-status badge injection
+# ---------------------------------------------------------------------------
+
+_LEAN_DOCS_BASE = "https://litlfred.github.io/qou/lean/"
+_LEAN_SRC_BASE = "https://github.com/litlfred/qou/blob/main/lean/"
+
+_STATUS_LABELS = {
+    "proved":      ("&#x2713; proved",   "proved"),
+    "mathlib_ok":  ("&#x2713;&#x2713; mathlib", "mathlib-ok"),
+    "stated":      ("&#x2200; stated",   "stated"),
+    "has_sorry":   ("&#x26A0; sorry",    "has-sorry"),
+    "not_started": ("&#x2717; no Lean",  "not-started"),
+}
+
+
+def _proof_status_for_def(d: dict, manifest_lookup: dict) -> str:
+    """Return the formalization status string for a definition dict."""
+    label = d["label"]
+    # Check manifest first (authoritative)
+    if label in manifest_lookup:
+        return manifest_lookup[label].get("formalization_status", "not_started")
+    # Fall back to LaTeX parsing
+    if d.get("lean_decl"):
+        return "proved" if d.get("leanok") else "stated"
+    return "not_started"
+
+
+def _extract_sorry_refs(lean_source: str) -> list[dict]:
+    """Extract -- Ref: [key] url lines preceding sorry from Lean source."""
+    refs = []
+    lines = lean_source.split("\n")
+    for i, line in enumerate(lines):
+        if re.match(r"\s*sorry\b", line):
+            for j in range(i - 1, max(-1, i - 6), -1):
+                m = re.match(r"\s*--\s*Ref:\s*\[([^\]]+)\]\s*(https?://\S+)?", lines[j])
+                if m:
+                    refs.append({"key": m.group(1), "url": m.group(2)})
+                elif not re.match(r"\s*(--|$)", lines[j]):
+                    break
+    return refs
+
+
+def _make_status_badge(status: str, lean_decl: str = "", lean_file: str = "",
+                       lean_source: str = "") -> str:
+    """Build an HTML badge element for the given proof status."""
+    label_text, css_class = _STATUS_LABELS.get(status, _STATUS_LABELS["not_started"])
+    parts = []
+    if lean_decl:
+        href = f"{_LEAN_DOCS_BASE}{lean_decl}"
+        parts.append(f'<a class="proof-status {css_class}" href="{href}" '
+                     f'target="_blank" title="Lean: {html_mod.escape(lean_decl)}">'
+                     f'{label_text}</a>')
+    else:
+        parts.append(f'<span class="proof-status {css_class}">{label_text}</span>')
+    # Add sorry-ref badges for has_sorry status
+    if status == "has_sorry" and lean_source:
+        for ref in _extract_sorry_refs(lean_source):
+            key = html_mod.escape(ref["key"])
+            if ref.get("url"):
+                parts.append(f'<a class="proof-status sorry-ref" href="{ref["url"]}" '
+                             f'target="_blank" title="Ref: [{key}]">'
+                             f'\U0001F4D6 {key}</a>')
+            else:
+                parts.append(f'<span class="proof-status sorry-ref" '
+                             f'title="Ref: [{key}]">\U0001F4D6 {key}</span>')
+    return " ".join(parts)
+
+
+def _make_proof_legend() -> str:
+    """Build the proof-status legend bar."""
+    parts = ['<div class="proof-legend"><strong>Proof status:</strong> ']
+    for status, (label_text, css_class) in _STATUS_LABELS.items():
+        parts.append(f'<span class="proof-status {css_class}">{label_text}</span> ')
+    parts.append("</div>")
+    return "".join(parts)
+
+
+def _inject_proof_badges(
+    body_html: str,
+    defs: list[dict],
+    manifest_path: str | None = None,
+) -> str:
+    """Insert proof-status badges next to each definition/theorem heading in the HTML."""
+    # Build lookup from manifest if available
+    manifest_lookup: dict[str, dict] = {}
+    if manifest_path and os.path.isfile(manifest_path):
+        try:
+            with open(manifest_path, encoding="utf-8") as f:
+                data = json.load(f)
+            for obj in data.get("objects", []):
+                manifest_lookup[obj["label"]] = obj
+        except Exception as exc:
+            print(f"::warning::Could not read manifest: {exc}", file=sys.stderr)
+
+    # Split to protect header/TOC from modification
+    header_end = 0
+    for marker in ("</header>", 'id="gh-bar"'):
+        idx = body_html.find(marker)
+        if idx != -1:
+            close = body_html.find("</div>", idx) if marker == 'id="gh-bar"' else idx
+            if close != -1:
+                header_end = max(header_end, close + 6)
+    prefix = body_html[:header_end]
+    content = body_html[header_end:]
+
+    for d in defs:
+        label = d["label"]
+        status = _proof_status_for_def(d, manifest_lookup)
+        lean_decl = d.get("lean_decl", "")
+        # Also check manifest for lean info
+        if not lean_decl and label in manifest_lookup:
+            lean_info = manifest_lookup[label].get("lean", {})
+            lean_decl = lean_info.get("decl", "")
+        lean_file = ""
+        lean_source = ""
+        if label in manifest_lookup:
+            lean_file = manifest_lookup[label].get("lean", {}).get("file", "")
+            lean_source = manifest_lookup[label].get("lean", {}).get("source", "")
+
+        badge = _make_status_badge(status, lean_decl, lean_file, lean_source)
+
+        # Find the anchor for this label and insert badge after the heading text
+        anchor_id = label.replace(":", "-")
+        for aid in (anchor_id, label):
+            # Look for end of the heading tag that contains this anchor
+            pattern = re.compile(
+                r'(<[^>]+\bid="' + re.escape(aid) + r'"[^>]*>)'
+                r'(.*?)(</(?:h[1-6]|strong|span|div)>)',
+                re.DOTALL,
+            )
+            m = pattern.search(content)
+            if m:
+                insert_pos = m.end(2)
+                content = content[:insert_pos] + " " + badge + content[insert_pos:]
+                break
+        else:
+            # Fallback: try to insert after any element with this id
+            pattern2 = re.compile(r'(<[^>]+\bid="' + re.escape(anchor_id) + r'"[^>]*>)')
+            m2 = pattern2.search(content)
+            if m2:
+                content = content[:m2.end()] + badge + content[m2.end():]
+
+    return prefix + content
 
 
 # ---------------------------------------------------------------------------
@@ -417,7 +622,7 @@ def _fetch_open_prs(repo: str, branch: str) -> list[dict]:
     return prs
 
 
-def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict]) -> str:
+def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict], diff_pdf: str | None = None) -> str:
     """Build a small info bar with GitHub links (feature branches only)."""
     repo_url = f"https://github.com/{repo}"
     lines = ['<div id="gh-bar" style="text-align:center; padding:4px 0; font-size:0.82rem;">']
@@ -426,6 +631,8 @@ def _make_branch_bar(branch: str, repo: str, sha: str, prs: list[dict]) -> str:
         lines.append(f'  <a class="gh-badge" href="{repo_url}/commit/{sha}">&#x1F4DD; {sha[:7]}</a>')
     for pr in prs:
         lines.append(f'  <a class="gh-badge" href="{pr["url"]}">PR #{pr["number"]}</a>')
+    if diff_pdf:
+        lines.append(f'  <a class="gh-badge" href="{html_mod.escape(diff_pdf)}" title="Changes vs main branch">&#x1F4C4; Diff PDF</a>')
     lines.append("</div>")
     return "\n".join(lines)
 
@@ -553,13 +760,16 @@ def enhance_html(
     repo: str | None = None,
     sha: str | None = None,
     src_dir: str = ".",
+    pdf: str | None = None,
+    diff_pdf: str | None = None,
+    manifest_path: str | None = None,
 ) -> str:
     """Return the enhanced HTML string."""
     defs = parse_definitions(tex)
     headings = parse_headings(tex)
 
     # Build pieces
-    header_html = _make_header_html(headings, branch=branch, repo=repo)
+    header_html = _make_header_html(headings, branch=branch, repo=repo, pdf=pdf, diff_pdf=diff_pdf)
     term_map = _build_term_map(defs)
 
     # ── Inject CSS ──────────────────────────────────────────────────────────
@@ -579,11 +789,16 @@ def enhance_html(
         # Feature-branch bar
         if branch and repo:
             prs = _fetch_open_prs(repo, branch) if repo else []
-            extra += _make_branch_bar(branch, repo, sha or "", prs) + "\n"
+            extra += _make_branch_bar(branch, repo, sha or "", prs, diff_pdf=diff_pdf) + "\n"
+        # Proof-status legend
+        extra += _make_proof_legend() + "\n"
         raw_html = raw_html[:insert_pos] + extra + raw_html[insert_pos:]
 
     # ── Ensure anchors exist for all labelled items ─────────────────────────
     raw_html = _ensure_anchors(raw_html, defs, headings)
+
+    # ── Inject proof-status badges ──────────────────────────────────────────
+    raw_html = _inject_proof_badges(raw_html, defs, manifest_path=manifest_path)
 
     # ── Link defined terms ──────────────────────────────────────────────────
     raw_html = _link_terms_in_html(raw_html, term_map)
@@ -614,6 +829,9 @@ def main() -> None:
     ap.add_argument("--repo", default=None, help="GitHub owner/repo")
     ap.add_argument("--sha", default=None, help="Git commit SHA")
     ap.add_argument("--src-dir", default=".", help="Root directory of the LaTeX source tree")
+    ap.add_argument("--pdf", default=None, help="Filename of the publication PDF")
+    ap.add_argument("--diff-pdf", default=None, help="Filename of the diff PDF (feature branches only)")
+    ap.add_argument("--manifest", default=None, help="Path to proof-objects.json for status badges")
     args = ap.parse_args()
 
     raw_html = Path(args.input_html).read_text(encoding="utf-8")
@@ -621,7 +839,8 @@ def main() -> None:
     result = enhance_html(
         raw_html, tex,
         branch=args.branch, repo=args.repo, sha=args.sha,
-        src_dir=args.src_dir,
+        src_dir=args.src_dir, pdf=args.pdf, diff_pdf=args.diff_pdf,
+        manifest_path=args.manifest,
     )
     Path(args.output_html).write_text(result, encoding="utf-8")
     print(f"✓ Enhanced HTML written to {args.output_html}")

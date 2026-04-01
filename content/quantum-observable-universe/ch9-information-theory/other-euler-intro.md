@@ -1,0 +1,1 @@
+This section will investigate Bring's surface and its analogues for Euler characteristics other than $\chi = -6$, classifying surfaces for $\chi = -2, -4, -8, \ldots$, determining which automorphism groups arise, and connecting to the varying Euler characteristic discussion.

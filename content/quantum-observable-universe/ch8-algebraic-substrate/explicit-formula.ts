@@ -1,0 +1,22 @@
+import { theorem } from "../../schema/builders";
+
+export default theorem({
+  label: "thm:explicit-formula",
+  title: "Explicit formula as a spectral--geometric trace identity",
+  lean: {
+    decl: "QOU.AlgebraicSubstrate.explicit_formula",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:q-chebyshev-function",
+    "thm:tannaka-krein-isomorphism",
+    "def:categorical-reeb-derivation",
+  ],
+  tags: [
+    "explicit-formula",
+    "trace-formula",
+    "fourier-transform",
+    "spectral-geometric",
+  ],
+  cites: ["rosen2002", "weil1948", "reshetikhin1991"],
+});

@@ -293,4 +293,136 @@ their own line, indented to match the surrounding content.
 - This distinguishes vector-valued quantities from scalar parameters
   (e.g.\ the substrate parameter $q$ from a vector $\vec{q}$).
 - Do **not** use bold (`\mathbf`) for vectors; reserve bold for operator
-  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator).
+  names (e.g.\ `$\mathbf{E}$` for the Euler–Lagrange operator) and
+  **categories** (see §11.3).
+
+### 11.3  Category and Functor Notation (Herrlich–Strecker conventions)
+
+Following Herrlich–Strecker, categories are set in **bold upright**:
+
+| Object | Notation | Example |
+|--------|----------|---------|
+| Generic category | `$\mathbf{C}$` | $\mathbf{C}$ |
+| Named categories | bold name | `$\mathbf{Rep}(\mathrm{SU}_q(2))$`, `$\mathbf{Mod}_R$` |
+| Monoidal unit | `$\mathbf{1}$` | (unchanged) |
+| Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
+| QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
+| QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
+| State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$. Fibre at $p$: `$\mathcal{S}_p$` (never `$E_p$`). |
+| Elliptic curve | `$\mathcal{E}_q$` | Descartes elliptic curve (never `$E_q$`). |
+| Particles | fraktur | Quarks: `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$`. Nucleons: `$\mathfrak{p}, \mathfrak{n}$`. |
+| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing), `$\mathfrak{E}_{\mathrm{bind}}$` (binding). |
+| Color | plain italic | `$c$` (vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}_r$` (chromaticity). |
+| Proton number | `$Z$` | Atomic number (standard nuclear convention). Never use `$p$` for proton count. |
+| Julia-set measure | `$\mu_J$` | Standard measure notation. |
+| Hom-spaces | `$\mathrm{Hom}_{\mathbf{C}}$` | Bold subscript matches the category |
+| Tensor product | `$\otimes$` | (unchanged) |
+| Dual object | `$V^{\vee}$` | Mathlib convention; equivalent to $V^*$ |
+| Associator, unitors | `$\alpha, \lambda, \rho$` | Mac Lane / Mathlib convention |
+| Braiding | `$\sigma_{X,Y}$` | (unchanged) |
+
+**Do not use** `$\mathcal{C}$` (calligraphic) for categories. Calligraphic
+letters are reserved for sheaves, sites, algebras, bundles, and curves
+(`$\mathcal{S}$` = state bundle, `$\mathcal{E}_q$` = elliptic curve,
+`$\mathcal{O}$`, `$\mathcal{A}$`).
+
+**Numerical substrate values** (`$q = 1.1097$` etc.) **must not appear**
+outside the introduction and Chapter 7 (Physical Observations).
+Geometry chapters use symbolic `$q$`.
+
+**Subordination rules for the archimedean tuple:**
+- $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when
+  referring to points, but do not list $M$ in the tuple.
+- $P$ is implicit — it is the frame bundle of $\mathcal{S}$ under $G$.
+  Mention $P$ only when discussing gauge structure directly.
+- The old 5-tuple $(M, \theta, G, P, E)$ must not appear in new content.
+  Existing occurrences should be migrated to $(\mathbf{C}, \theta, G, \mathcal{S})$.
+
+Where physics notation is more natural than category-theoretic notation
+(e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),
+prefer the physics convention.
+
+---
+
+## 12  Using Skills for Content Changes
+
+This repository subscribes to external skill packages (see `skills-config.json`).
+Synced skills live under `.claude/skills/<package>/` while repo-specific skills
+live under `.claude/skills/local/`.
+
+When **writing or editing manuscript content**, apply the following skills:
+
+| Task | Skill(s) to consult |
+|------|---------------------|
+| Writing new sections or chapters | `local/scientific-accuracy`, `local/readability-editing`, `claude-scientific-skills/scientific-writing` |
+| Reviewing or revising text | `local/readability-editing`, `claude-scientific-skills/peer-review`, `claude-scientific-skills/scientific-critical-thinking` |
+| Adding or verifying references | `local/scientific-accuracy`, `claude-scientific-skills/citation-management`, `claude-scientific-skills/arxiv-database` |
+| Generating figures or plots | `claude-scientific-skills/scientific-visualization`, `claude-scientific-skills/matplotlib` |
+| Verifying equations or proofs | `local/scientific-accuracy`, `claude-scientific-skills/sympy` |
+| Validating LaTeX syntax | `local/latex-validation` |
+| Brainstorming new research directions | `claude-scientific-skills/hypothesis-generation`, `claude-scientific-skills/scientific-brainstorming` |
+| Literature search | `claude-scientific-skills/literature-review`, `claude-scientific-skills/arxiv-database` |
+
+| Generating or updating Lean stubs | `local/lean-generation` |
+| Reviewing Lean proofs | `local/lean-proof-review` |
+| Tracking proof formalization status | `local/proof-status-tracking` |
+
+When **writing or editing Lean formalization code**, apply the following:
+
+| Task | Skill(s) to consult | Key signals in user request |
+|------|---------------------|-----------------------------|
+| Filling `sorry` with proofs | `local/formalizer`, `local/category-theory` | "fill in", "prove", "remove sorry" |
+| Adding new structures/defs | `local/formalizer`, `local/lean-generation` | "define", "formalize", "add structure" |
+| Diagram chasing / naturality | `local/category-theory` | "commutes", "diagram", "naturality", "functor" |
+| Monoidal / braided constructions | `local/category-theory` | "monoidal", "tensor", "braiding", "Hopf", "Frobenius" |
+| Extracting theorems from LaTeX | `local/lean-generation` | "extract", "stub", "from LaTeX", "from chapter" |
+| Reviewing Lean changes (PR) | `local/lean-proof-review` | "review", "check", "audit" |
+| Updating proof-objects.json | `local/proof-status-tracking` | "status", "tracking", "manifest" |
+| Ontology / type resolution | `local/ontologist` | "glossary", "type", "resolve", "naming" |
+| Knot-theoretic formalization | `local/category-theory` (§Knot Theory) | "knot", "crossing", "Jones", "volume" |
+| Triage: what to prove next | `local/proof-triage` | "what next", "priority", "triage", "roadmap" |
+
+### Skill routing decision tree (for agents)
+
+When a user request arrives, apply this decision tree to select skills:
+
+1. **Does it touch `chapters/*.tex`?** → consult LaTeX skills (§12 table above)
+2. **Does it touch `lean/QOU/*.lean`?**
+   a. **Writing new Lean code** → `local/formalizer` + `local/category-theory`
+   b. **Reviewing existing Lean code** → `local/lean-proof-review`
+   c. **Generating stubs from LaTeX** → `local/lean-generation`
+   d. **Updating manifests** → `local/proof-status-tracking`
+3. **Does it touch both LaTeX and Lean?** → also consult `local/lean-generation`
+   for cross-referencing (`\lean{}`, `\leanok`, `\uses{}`)
+4. **Is it a research/brainstorming question?** → synced scientific skills
+5. **Ambiguous?** → read the relevant skill `.md` files, then ask the user
+
+**Rules:**
+- Always apply `local/latex-validation` before finalizing any LaTeX change.
+- Always apply `local/scientific-accuracy` when modifying mathematical content.
+- Consult the synced skills proactively — do not wait to be told.
+- If a synced skill directory contains a `SKILL.md`, read it for detailed
+  instructions specific to that tool or database.
+
+## 13  Lean Formalization & Proof Linkages
+
+This manuscript has a parallel Lean 4 formalization in the `lean/` directory.
+Every theorem-like environment in `chapters/*.tex` is tracked in
+`proof-objects.json`, which maps LaTeX labels to Lean declarations (referenced
+by doc-gen4 URL).
+
+### When reviewing LaTeX changes:
+- Check `proof-objects.json` for linked Lean declarations.
+- If a theorem statement changes, flag that the linked Lean declaration may
+  need updating.
+- If `\lean{}` macros are present, verify the declaration name is correct.
+
+### LeanBlueprint macros:
+- `\lean{QOU.Namespace.decl_name}` — links to a Lean declaration.
+- `\leanok` — claims the Lean proof is `sorry`-free.
+- `\uses{label1, label2}` — declares mathematical dependencies.
+- `\proves{thm:label}` — links a proof block to its statement.
+
+### Lean file structure:
+One `.lean` file per chapter under `lean/QOU/`.  The `lakefile.lean`
+depends on `mathlib4`.  Stubs use `sorry` for incomplete proofs.

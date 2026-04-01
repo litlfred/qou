@@ -1,0 +1,26 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "folio-assistant/schemas/types.ts",
+    "folio-assistant/schemas/constraints.ts",
+    "folio-assistant/schemas/builders.ts",
+    "folio-assistant/schemas/qou-types.ts"
+  ],
+  "tsconfig": "folio-assistant/schemas/tsconfig.json",
+  "out": "build/schema-docs",
+  "name": "QOU Schema Documentation",
+  "readme": "folio-assistant/schemas/README.md",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "navigationLinks": {
+    "Paper": "/",
+    "Viewer": "/viewer",
+    "Blueprint": "/blueprint"
+  },
+  "sort": ["source-order"],
+  "plugin": [],
+  "theme": "default",
+  "hideGenerator": true,
+  "searchInComments": true
+}

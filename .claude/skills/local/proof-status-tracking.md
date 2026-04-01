@@ -1,0 +1,176 @@
+---
+name: proof-status-tracking
+roles: [reader, collaborator, owner]
+description: >
+  Maintain the proof-objects.json manifest tracking formalization status,
+  review records, and LaTeX-to-Lean linkages.  Generate status dashboards
+  and enforce review policies.
+allowed-tools: Read Write Edit Bash Grep Glob
+---
+
+# Proof Status Tracking
+
+## Overview
+
+This skill manages the `proof-objects.json` manifest — the single source of
+truth for which mathematical objects have been formalized, reviewed, and
+approved.  Lean declarations are referenced by URL (doc-gen4 pages), not
+duplicated in JSON.
+
+## Lean MCP Tools (paper-assistant)
+
+When the MCP server is available, **prefer MCP tools for live status**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + `update_proof_status.py` | `lean_diagnostic_messages` | Per-file sorry/error counts without full build |
+| Manual declaration inventory | `lean_file_outline` | All declarations with type sigs in one call |
+| Checking if a decl is sorry-free | `lean_verify` | Axiom audit per theorem |
+| Cross-checking `\lean{}` refs | `lean_hover_info` | Verify declaration exists and get its type |
+
+### MCP-enhanced status update
+
+Instead of the full `extract → build → update` pipeline:
+
+1. **`lean_file_outline`** on each `lean/QOU/*.lean` → inventory all declarations
+2. **`lean_diagnostic_messages`** on each file → sorry warnings = `has_sorry`, no warnings = `proved`
+3. **`lean_verify`** on key theorems → axiom audit for publication readiness
+4. Update `proof-objects.json` with the results
+
+## When to Use This Skill
+
+- After extracting proof objects from LaTeX
+- After updating Lean proofs
+- When generating status reports
+- When checking review coverage before publication
+- When linking proof objects to mathlib4 declarations
+
+## Proof-Objects Manifest
+
+**File:** `proof-objects.json`
+**Types:** `folio-assistant/schemas/qou-types.ts` (§1 ProofObjectsManifest)
+
+### Formalization Status Flow
+
+```
+not_started ──► stated ──► has_sorry ──► proved ──► mathlib_ok
+    │              │           │            │
+    │              │           │            └── Merged into mathlib4
+    │              │           └── Lean decl exists, some sorry remaining
+    │              └── Lean decl exists, fully sorry
+    └── No Lean declaration yet
+```
+
+### Review Consensus
+
+Multiple reviewers (human + agentic) contribute reviews.  Consensus rules:
+
+1. **Any critical issue** → `REQUEST_CHANGES` regardless of other reviews
+2. **All APPROVE with confidence ≥ 0.7** → consensus APPROVE
+3. **Mixed verdicts** → `NEEDS_DISCUSSION`
+4. **Human APPROVE overrides** agentic NEEDS_DISCUSSION
+
+### Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `extract_proof_objects.py` | Parse LaTeX → proof-objects.json |
+| `generate_lean_stubs.py` | proof-objects.json → lean stub files |
+| `update_proof_status.py` | Lean build log → update statuses |
+
+### GitHub Actions Integration (CI-only)
+
+The `lean-build.yml` workflow runs the full pipeline automatically:
+1. Runs `extract_proof_objects.py`
+2. Runs `generate_lean_stubs.py`
+3. Runs `lake build`
+4. Runs `update_proof_status.py`
+5. Commits updated `proof-objects.json` (automated commit by `github-actions[bot]`)
+
+**This pipeline is CI-only.** Locally, agents must not replicate it.
+Local `lake build` is compile-only — no generation scripts before it.
+Generation scripts are proof-writing tools invoked only by the
+`formalizer`, `lean-generation`, and `proof-triage` skills when the
+author requests new formalization work.
+
+## Status Dashboard
+
+The proof status is published to GitHub Pages alongside the paper.
+Key metrics:
+
+- Total objects / formalized / proved / reviewed
+- Objects with critical review issues
+- Dependency graph (which proofs are blocked)
+- Coverage by review type
+
+## Review Policy
+
+| Criterion | Requirement |
+|-----------|-------------|
+| Minimum reviewers per object | 2 (at least 1 human for theorems) |
+| Required review types | scientific-accuracy, lean-proof-check |
+| Maximum sorry for publication | 0 in core theorems |
+| Confidence threshold | ≥ 0.7 average across agentic reviewers |
+
+## Current Snapshot (as of 2026-03-20)
+
+| Metric | Value |
+|--------|-------|
+| Total .lean files | 18 |
+| Total declarations | ~133 |
+| Substantive proofs | ~99 |
+| Active sorry stubs | 27 |
+| Trivial proofs (rfl/simp) | 6 |
+| Axiom declarations | 0 |
+| Admit statements | 0 |
+
+### Sorry distribution
+
+- `FormalGroups.lean`: 11 (external [fred2005])
+- `PAdicQuantumGroups.lean`: 4 (external [fred2005])
+- `QuantumObservableUniverse.lean`: 2 (core theory)
+- `HadronicMass.lean`: 2 (tactic limitation — `Real.rpow`)
+- `BringsSurface.lean`: 2 (deep math)
+- `DescartesUniverse.lean`: 1 (Tannaka–Krein rigidity)
+- `Torsion.lean`: 1 (commented out — inactive)
+
+### Consistency notes
+
+- All sorry stubs carry bibliographic citations — no orphaned stubs
+- No `axiom` or `admit` hacks masquerading as proofs
+- `FormalGroups.lean` documents its sorry-by-design policy in a file header
+
+## Content Object Integration
+
+Formalization status is tracked through **content object triples**: each
+block has a `.ts` manifest, `.md` narrative, and (when required) `.lean`
+formalization. The `.ts` manifest is the **single source of truth** for
+status — `proof-objects.json` is a derived artifact generated from content
+objects, not the other way around.
+
+**Completeness by kind:**
+- `definition`: `.ts` + `.md` + `.lean` required; `lean.decl` must be set;
+  label prefix `def:`.
+- `theorem` / `lemma` / `proposition` / `corollary`: `.ts` + `.md` + `.lean`
+  expected; label prefixes `thm:` / `lem:` / `prop:` / `cor:`.
+- `example` / `remark` / `conjecture`: `.ts` + `.md` required; `.lean`
+  optional.
+- `prose` / `equation` / `diagram`: `.ts` + `.md` only; no Lean.
+
+**Status field.** Formalization status is **not stored** in `.ts`
+manifests. It is derived at build time by CI scripts from `.lean` file
+content (sorry detection, build output) and written to `proof-objects.json`.
+Do not add `status` fields to content block `.ts` files.
+
+**Dependency tracking.** The `uses[]` array in `.ts` manifests forms the
+dependency DAG. Use it to populate the dependency edges in
+`proof-objects.json` and to scope impact analysis when a block changes.
+
+## Checklist
+
+- [ ] `proof-objects.json` conforms to `folio-assistant/schemas/qou-types.ts` ProofObjectsManifest
+- [ ] All theorem/lemma/proposition objects have at least one review
+- [ ] No critical issues in any review
+- [ ] Formalization status matches actual Lean build output
+- [ ] Sorry count matches current inventory (27 active)
+- [ ] Dependency edges are complete (all `\uses{}` captured)

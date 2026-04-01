@@ -1,0 +1,10 @@
+import { example } from "../../schema/builders";
+
+export default example({
+  interprets: "prop:frobenius-relation",
+  label: "ex:frobenius-su2",
+  title: "Frobenius relation for $\\mathrm{SU}(2)$",
+  lean: { decl: "QOU.Examples.su2Frobenius" },
+  uses: ["prop:frobenius-relation", "ex:qou-su2"],
+  tags: ["su2", "frobenius"],
+});

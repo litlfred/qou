@@ -1,0 +1,26 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:braiding-induced-ordering",
+  title:
+    "The braiding induces a canonical admissible well-ordering on the Hecke basis",
+  tags: [
+    "braiding",
+    "well-ordering",
+    "admissible-system",
+    "hecke-algebra",
+    "arrow-of-time",
+    "temporal",
+    "groebner",
+  ],
+  lean: {
+    decl: "QOU.braiding_induced_ordering",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:quantum-observable-universe",
+    "prop:braid-action-tensor",
+    "unital-groebner-bases:def:admissible-system",
+    "def:categorical-reeb",
+  ],
+});

@@ -1,0 +1,37 @@
+{
+  "description": "Skill package subscriptions synced nightly into .claude/skills/<package>/. Types: schemas/qou-types.ts §11 SkillsConfig",
+  "packages": [
+    {
+      "name": "claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "scientific-skills",
+      "ref": "main",
+      "skills": [
+        "arxiv-database",
+        "citation-management",
+        "hypothesis-generation",
+        "latex-posters",
+        "literature-review",
+        "matplotlib",
+        "peer-review",
+        "scientific-brainstorming",
+        "scientific-critical-thinking",
+        "scientific-visualization",
+        "scientific-writing",
+        "sympy"
+      ]
+    },
+    {
+      "name": "academic-research-skills",
+      "repo": "Imbad0202/academic-research-skills",
+      "path": ".",
+      "ref": "main",
+      "mode": "reference",
+      "skills": [
+        "academic-paper-reviewer",
+        "deep-research",
+        "academic-pipeline"
+      ]
+    }
+  ]
+}

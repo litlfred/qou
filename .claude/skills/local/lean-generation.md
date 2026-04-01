@@ -1,0 +1,242 @@
+---
+name: lean-generation
+roles: [collaborator, owner]
+description: >
+  Extract theorem-like objects from LaTeX source and generate corresponding
+  Lean 4 stub files with `sorry` placeholders.  Maintains the proof-objects.json
+  manifest linking LaTeX labels to Lean declarations by doc-gen4 URL.
+allowed-tools: Read Write Edit Bash Grep Glob
+---
+
+# Lean File Generation
+
+## Overview
+
+This skill covers the pipeline from LaTeX mathematical content to Lean 4
+formalization stubs.  It bridges the gap between human-readable proofs in
+the manuscript and machine-checkable formal proofs.
+
+## When to Use This Skill
+
+- When new theorem/definition/lemma environments are added to chapter files
+- When running the proof object extraction pipeline
+- When generating or updating Lean stub files
+- When adding `\lean{}`, `\leanok`, or `\uses{}` macros to LaTeX
+
+## Lean MCP Tools (paper-assistant)
+
+When the MCP server is available, **prefer MCP tools over shell commands**:
+
+| Old workflow | MCP tool | Why better |
+|-------------|----------|-----------|
+| `lake build` + parse output | `lean_diagnostic_messages` | Structured errors/warnings per file |
+| Manual file reading for structure | `lean_file_outline` | Concise view of imports + declarations with type sigs |
+| `lake build` for sorry count | `lean_diagnostic_messages` | Filter for sorry warnings directly |
+| Manual cross-checking declarations | `lean_hover_info` | Verify a `\lean{QOU.X}` reference resolves |
+| Manual import guessing | `lean_completions` | Auto-complete import paths |
+| Checking axiom dependencies | `lean_verify` | Returns axioms used by a theorem + source scan |
+
+### MCP-first stub generation
+
+After generating a stub file:
+
+1. **`lean_diagnostic_messages`** on the new file → catch type errors immediately
+2. **`lean_file_outline`** → verify the declaration structure matches expectations
+3. **`lean_hover_info`** on each imported symbol → confirm types resolve
+4. **`lean_verify`** on completed proofs → check axiom soundness
+
+## Important: Generation is agent-only
+
+The generation scripts below are **proof-writing tools**, not build steps.
+
+- **Do not** run them as part of setup, session start, or routine builds.
+- **Do not** run them before `lake build` — build compiles what exists.
+- **Only** invoke them when the author requests new formalization work
+  (new stubs, new extractions, new theorem statements).
+- CI workflows run them automatically — that is CI-only behavior.
+
+## Workflow
+
+### 1. Extract proof objects from LaTeX (agent-only)
+
+```bash
+python .github/scripts/extract_proof_objects.py
+```
+
+This parses all `chapters/*.tex` files for `\begin{theorem}`, `\begin{definition}`,
+etc. and outputs `proof-objects.json`.
+
+### 2. Generate Lean stubs (agent-only)
+
+```bash
+python .github/scripts/generate_lean_stubs.py
+```
+
+Reads `proof-objects.json` and inserts `sorry`-based stubs before the last
+`end` statement in each `lean/QOU/*.lean` file to maintain namespace structure.
+
+### 3. Add LeanBlueprint macros to LaTeX
+
+After generating stubs, annotate the LaTeX source with:
+
+```latex
+\begin{theorem}\label{thm:my-result}
+  \lean{QOU.Chapter.my_result}
+  \uses{def:prerequisite}
+  Statement here.
+\end{theorem}
+```
+
+Add `\leanok` once the Lean proof is complete (no `sorry`).
+
+### 4. Update proof status after Lean build
+
+```bash
+cd lean && lake build 2>&1 | python ../.github/scripts/update_proof_status.py
+```
+
+## Naming Conventions
+
+| LaTeX label | Lean declaration |
+|-------------|-----------------|
+| `thm:lifting-exists` | `QOU.Torsion.lifting_exists` |
+| `def:quantum-connection` | `QOU.QuantumObservableUniverse.quantum_connection` |
+| `lem:torsion-skew` | `QOU.Torsion.torsion_skew` |
+| `def:categorical-instanton` | `QOU.CategoricalInstanton` |
+| `prop:categorical-dq-squared` | `QOU.categorical_dq_squared` |
+| `def:categorical-jet` | `QOU.CategoricalJet` |
+
+Rules:
+- Hyphens become underscores
+- The Lean namespace matches the chapter module
+- Fully qualified name = `QOU.<Chapter>.<snake_case_name>`
+- Categorical structures (type-level) use `CamelCase` (e.g., `CategoricalJet`)
+- Categorical theorems/lemmas use `snake_case` (e.g., `categorical_self_duality`)
+- Top-level categorical stubs live directly in the `QOU` namespace (not a chapter submodule)
+
+## Lean Project Structure
+
+```
+lean/
+├── lakefile.lean        ← Lake build configuration (depends on mathlib4)
+├── lean-toolchain       ← Lean version pin
+├── QOU.lean             ← Root import file
+└── QOU/
+    ├── Basic.lean       ← Shared foundations
+    ├── QuantumObservableUniverse.lean  ← Chapter 1
+    ├── Elaboration.lean               ← Chapter 2
+    └── ...              ← One per chapter
+```
+
+## Linking to mathlib4
+
+When a Lean declaration corresponds to an existing mathlib result:
+1. Add it to the `mathlib_links` array in `proof-objects.json`
+2. In the Lean file, import the relevant mathlib module
+3. Use `mathlib_links` in the `lean` field of the proof object:
+
+```json
+{
+  "lean": {
+    "decl": "QOU.Torsion.lifting_exists",
+    "url": "https://litlfred.github.io/qou/lean/QOU/Torsion.html#QOU.Torsion.lifting_exists",
+    "mathlib_links": ["Mathlib.Topology.FiberBundle.Basic"]
+  }
+}
+```
+
+## Output Format
+
+The `proof-objects.json` manifest follows the schema at
+`folio-assistant/schemas/qou-types.ts` (§1 ProofObjectsManifest).  Lean declarations are
+referenced by their doc-gen4 URL — the Lean data model is **not** duplicated
+in JSON.
+
+## Blueprint Synchronization
+
+When generating or updating Lean stubs, the following artifacts must stay
+in sync — it is the **author's responsibility** to ensure consistency:
+
+| Artifact | Must match |
+|----------|-----------|
+| `\label{thm:foo}` in `chapters/*.tex` | `\label{thm:foo}` in `blueprint/src/content.tex` |
+| `\lean{QOU.Ch.foo}` in blueprint | Actual declaration name in `lean/QOU/Ch.lean` |
+| `\uses{def:bar}` in blueprint | Existing `\label{def:bar}` in same file |
+| `\leanok` in blueprint | Zero `sorry` in the linked Lean declaration |
+| `-- Ref: [key]` before sorry | Citation key `key` in `content/schema/references.ts` |
+| `\cite{key}` in blueprint | Citation key `key` in `content/schema/references.ts` |
+
+### Blueprint update workflow
+
+1. Add/modify a theorem in `chapters/*.tex` with `\label{}`
+2. Run `extract_proof_objects.py` → `generate_lean_stubs.py`
+3. Add the matching entry to `blueprint/src/content.tex` with `\lean{}`
+   and `\uses{}` edges
+4. If the Lean proof is complete, add `\leanok`; otherwise leave it out
+5. CI validates via `lake exe checkdecls blueprint/lean_decls`
+
+## Content Object Integration
+
+Content objects (`.ts` + `.md` + `.lean` triples) are the **authoritative
+source**, not raw LaTeX. The Lean generation pipeline should be
+content-object-aware:
+
+### Block kind determines Lean requirements
+
+| Block kind | Lean required? | Action |
+|-----------|---------------|--------|
+| `definition` | **Yes** (enforced by constraint rule) | Must generate `.lean` sibling |
+| `theorem`, `lemma`, `proposition`, `corollary` | **Expected** | Should generate `.lean` sibling |
+| `example`, `remark`, `conjecture` | Optional | Only if author requests |
+| `prose`, `equation`, `diagram` | N/A | Skip |
+
+### CRITICAL: `.lean` files are NEVER standalone
+
+A `.lean` file MUST always be part of a content triple (`.ts` + `.md` +
+`.lean`).  There is no valid scenario where a `.lean` file exists without
+a corresponding `.ts` manifest.  The `.ts` manifest is the authoritative
+record of the block's kind, label, lean declaration, status, and
+dependency graph.  An orphan `.lean` file is always a bug.
+
+### Content-object-aware stub generation
+
+Instead of extracting from LaTeX, read the `.ts` manifest:
+
+1. **Scan content objects**: find all blocks where `kind` requires Lean
+2. **Check for existing `.lean` sibling**: skip if already exists
+3. **Read the `.md` file**: extract the mathematical statement
+4. **Generate the `.lean` sibling** alongside the `.ts` and `.md` files
+5. **Update the `.ts` manifest**: set `lean.decl` and `lean.file`
+
+### The `uses[]` dependency graph
+
+The `uses` field in content `.ts` manifests forms a dependency DAG.
+**List only immediate neighbors** — transitive deps are derived by
+walking the graph. Run `bun run pipeline/prune-transitive-deps.ts`
+after edits.
+
+- Generate stubs in topological order (walk the graph for full ordering)
+- The Lean import graph should reflect the `uses[]` ordering
+- When a definition changes, re-validate all blocks that `uses` it
+
+### Naming: `.ts` label → Lean declaration
+
+| `.ts` label | Lean declaration |
+|-------------|-----------------|
+| `def:quantum-universe` | `QOU.QuantumUniverse` |
+| `thm:su2-emergence` | `QOU.su2_emergence` |
+| `prop:frobenius-relation` | `QOU.frobenius_relation` |
+
+The `lean.decl` field in the `.ts` manifest is the canonical mapping.
+
+## Checklist
+
+- [ ] All content blocks requiring Lean have sibling `.lean` files
+- [ ] Every object with `formalization_status != "not_started"` has a `lean.decl`
+- [ ] Lean files compile without errors (sorry warnings are expected)
+- [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
+- [ ] `\uses{}` macros capture all mathematical dependencies
+- [ ] Every `sorry` has a preceding `-- Ref: [key] url` comment
+- [ ] Every `-- Ref: [key]` key exists in `content/schema/references.ts`
+- [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
+- [ ] `\leanok` only appears for sorry-free declarations
