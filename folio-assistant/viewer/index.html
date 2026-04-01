@@ -408,7 +408,80 @@
 
       /* ── Footnotes / references ─────────────────────────── */
       .bb sup{font-size:.75em}
+
+      /* ── Print-mode filtering (set dynamically before print) ── */
+      body.print-hide-remarks .env.remark,
+      body.print-hide-remarks .blk-remark,
+      body.print-hide-remarks .blk-stub.remark{display:none!important}
+      body.print-hide-examples .env.example,
+      body.print-hide-examples .blk-example,
+      body.print-hide-examples .blk-stub.example{display:none!important}
+      .ch.print-hidden{display:none!important}
+
+      /* ── Journal view — formal, clean, no UI artifacts ─── */
+      body.print-journal .bl,
+      body.print-journal .tags,
+      body.print-journal .uses,
+      body.print-journal .uref,
+      body.print-journal .upnl,
+      body.print-journal .lean-src,
+      body.print-journal .bsrc,
+      body.print-journal .blk-foot,
+      body.print-journal .ref-by,
+      body.print-journal .anchor-icon,
+      body.print-journal .bh-copied,
+      body.print-journal .bh-acts,
+      body.print-journal .bh-menu,
+      body.print-journal .bh-drop,
+      body.print-journal .struct-acts,
+      body.print-journal .st,
+      body.print-journal .decor,
+      body.print-journal .todo-inline,
+      body.print-journal .sb-badge{display:none!important}
+      body.print-journal .env{
+        border-left:none!important;
+        padding-left:0!important;
+        background:none!important;
+      }
     }
+
+    /* ── Print dialog ─────────────────────────────────────── */
+    .print-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:none;align-items:center;justify-content:center}
+    .print-overlay.open{display:flex}
+    .print-dialog{background:var(--bg);border:1px solid var(--brd);border-radius:8px;padding:1.5rem;width:420px;max-width:92vw;max-height:85vh;overflow-y:auto;font-family:var(--f-head);color:var(--fg);box-shadow:0 8px 32px rgba(0,0,0,.25)}
+    .print-dialog h3{margin:0 0 1rem;font-size:1rem;font-weight:600}
+    .print-dialog .pd-tabs{display:flex;gap:0;margin-bottom:1rem;border-bottom:2px solid var(--brd)}
+    .print-dialog .pd-tab{padding:.4rem .8rem;font-size:.75rem;font-family:var(--f-head);background:none;border:none;color:var(--fg-d);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px}
+    .print-dialog .pd-tab.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:600}
+    .print-dialog .pd-panel{display:none}
+    .print-dialog .pd-panel.active{display:block}
+    .print-dialog .pd-section{margin-bottom:1rem}
+    .print-dialog .pd-section-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--fg-d);margin-bottom:.4rem}
+    .print-dialog .pd-chapters{max-height:200px;overflow-y:auto;border:1px solid var(--brd);border-radius:4px;padding:.4rem}
+    .print-dialog .pd-ch-row{display:flex;align-items:center;gap:.4rem;padding:.2rem .3rem;font-size:.75rem;border-radius:3px}
+    .print-dialog .pd-ch-row:hover{background:var(--bg-s)}
+    .print-dialog .pd-ch-row input{margin:0}
+    .print-dialog .pd-ch-actions{display:flex;gap:.5rem;font-size:.65rem;margin-top:.3rem}
+    .print-dialog .pd-ch-actions a{color:var(--ac);cursor:pointer;text-decoration:none}
+    .print-dialog .pd-ch-actions a:hover{text-decoration:underline}
+    .print-dialog .pd-opts{display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem}
+    .print-dialog .pd-opt{display:flex;align-items:center;gap:.4rem;font-size:.75rem}
+    .print-dialog .pd-opt input{margin:0}
+    .print-dialog .pd-lightning-input{width:100%;padding:.4rem .6rem;font-family:var(--f-mono);font-size:.75rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg);color:var(--fg);outline:none}
+    .print-dialog .pd-lightning-input:focus{border-color:var(--ac)}
+    .print-dialog .pd-lightning-list{max-height:180px;overflow-y:auto;border:1px solid var(--brd);border-radius:4px;margin-top:.4rem}
+    .print-dialog .pd-lightning-item{padding:.3rem .6rem;font-size:.7rem;cursor:pointer;display:flex;align-items:baseline;gap:.4rem}
+    .print-dialog .pd-lightning-item:hover{background:var(--bg-s)}
+    .print-dialog .pd-lightning-item.selected{background:var(--ac);color:#fff}
+    .print-dialog .pd-lightning-item .li-kind{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);text-transform:uppercase;min-width:5em}
+    .print-dialog .pd-lightning-item.selected .li-kind{color:rgba(255,255,255,.7)}
+    .print-dialog .pd-btns{display:flex;gap:.5rem;justify-content:flex-end;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--brd)}
+    .print-dialog .pd-btn{padding:.4rem 1rem;font-size:.75rem;font-family:var(--f-head);border-radius:4px;cursor:pointer;border:1px solid var(--brd);background:var(--bg-s);color:var(--fg)}
+    .print-dialog .pd-btn:hover{border-color:var(--ac-d)}
+    .print-dialog .pd-btn.primary{background:var(--ac);color:#fff;border-color:var(--ac)}
+    .print-dialog .pd-btn.primary:hover{opacity:.9}
+    @media print{.print-overlay{display:none!important}}
+
     /* Reading mode — hide decorations, clean layout */
     body.reading .decor,body.reading .lb,body.reading .blk-foot,body.reading .fb-act,body.reading .st,body.reading .bsrc,body.reading .bl,body.reading .collapse-btn,body.reading .todo-inline,body.reading .sb-badge,body.reading .ex-toggle,body.reading .ex-panel,body.reading .bh-acts,body.reading .bh-menu,body.reading .ref-by,body.reading .uses{display:none!important}
     /* LaTeX article styling for block headers */
@@ -983,7 +1056,7 @@
     <button id="c-th" title="Toggle dark/light">dark</button>
     <button id="c-fn" title="Toggle paper/web font">paper font</button>
     <button id="c-pdf" title="Render LaTeX PDF via build pipeline">pdf</button>
-    <button id="c-pr" title="Browser print preview (LaTeX-styled)">preview</button>
+    <button id="c-pr" title="Print options: chapters, lightning, TeX export">print</button>
     <button id="c-cc" title="Clear session cache (localStorage) and reload">clear cache</button>
     <span class="hash" id="c-hash"></span>
   </div>
@@ -1036,6 +1109,70 @@
           <button id="dep-rhs-goto">go to &#x2197;</button>
           <button id="dep-rhs-fb">feedback</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Print dialog -->
+  <div class="print-overlay" id="print-overlay">
+    <div class="print-dialog">
+      <h3>Print options</h3>
+      <div class="pd-tabs">
+        <button class="pd-tab active" data-pd-tab="chapters">Chapters</button>
+        <button class="pd-tab" data-pd-tab="lightning">&#x26A1; Lightning</button>
+        <button class="pd-tab" data-pd-tab="tex">TeX export</button>
+      </div>
+      <!-- Tab: Chapter selection -->
+      <div class="pd-panel active" data-pd-panel="chapters">
+        <div class="pd-section">
+          <div class="pd-section-title">Select chapters</div>
+          <div class="pd-chapters" id="pd-ch-list"></div>
+          <div class="pd-ch-actions">
+            <a id="pd-ch-all">Select all</a>
+            <a id="pd-ch-none">Select none</a>
+          </div>
+        </div>
+        <div class="pd-section">
+          <div class="pd-section-title">Include</div>
+          <div class="pd-opts">
+            <label class="pd-opt"><input type="checkbox" id="pd-inc-remarks" checked> Remarks</label>
+            <label class="pd-opt"><input type="checkbox" id="pd-inc-examples"> Examples</label>
+          </div>
+        </div>
+        <div class="pd-section">
+          <div class="pd-section-title">Format</div>
+          <div class="pd-opts">
+            <label class="pd-opt"><input type="checkbox" id="pd-journal-view" checked> Journal view (formal, no labels/tags)</label>
+          </div>
+        </div>
+      </div>
+      <!-- Tab: Lightning print -->
+      <div class="pd-panel" data-pd-panel="lightning">
+        <div class="pd-section">
+          <div class="pd-section-title">Search for a theorem, definition, or proposition</div>
+          <input class="pd-lightning-input" id="pd-lightning-q" type="text" placeholder="Search by label or title..." autocomplete="off">
+          <div class="pd-lightning-list" id="pd-lightning-list"></div>
+        </div>
+        <div class="pd-section">
+          <div class="pd-section-title">Include</div>
+          <div class="pd-opts">
+            <label class="pd-opt"><input type="checkbox" id="pd-lt-inc-remarks"> Remarks</label>
+            <label class="pd-opt"><input type="checkbox" id="pd-lt-inc-examples"> Examples</label>
+          </div>
+        </div>
+      </div>
+      <!-- Tab: TeX export -->
+      <div class="pd-panel" data-pd-panel="tex">
+        <div class="pd-section">
+          <p style="font-size:.75rem;color:var(--fg-d);margin:0 0 .8rem">Download the complete LaTeX source (main.tex, chapter files, preamble, bibliography) to compile on your own machine.</p>
+          <div class="pd-opts">
+            <label class="pd-opt"><input type="checkbox" id="pd-tex-journal" checked> Journal format (clean, no UI tags)</label>
+          </div>
+        </div>
+      </div>
+      <div class="pd-btns">
+        <button class="pd-btn" id="pd-cancel">Cancel</button>
+        <button class="pd-btn primary" id="pd-print">Print</button>
       </div>
     </div>
   </div>
@@ -1213,10 +1350,303 @@
     });
     btnRm.classList.add('on'); // remarks on by default
 
-    // Preview (browser print with LaTeX-styled CSS)
-    document.getElementById('c-pr').addEventListener('click', () => {
-      window.print();
-    });
+    // Preview (browser print with LaTeX-styled CSS) — opens print dialog
+    {
+      const printOverlay = document.getElementById('print-overlay');
+      const pdChList = document.getElementById('pd-ch-list');
+      const pdLightningQ = document.getElementById('pd-lightning-q');
+      const pdLightningList = document.getElementById('pd-lightning-list');
+      let pdLightningSelected = null; // label of selected block for lightning print
+
+      function openPrintDialog() {
+        // Populate chapter checkboxes from current paper
+        pdChList.innerHTML = '';
+        pdLightningSelected = null;
+        pdLightningList.innerHTML = '';
+        pdLightningQ.value = '';
+        if (paper) {
+          for (const ch of paper.chapters) {
+            const row = document.createElement('label');
+            row.className = 'pd-ch-row';
+            const cb = document.createElement('input');
+            cb.type = 'checkbox'; cb.checked = true;
+            cb.dataset.chNum = ch.number != null ? String(ch.number) : '';
+            row.appendChild(cb);
+            const span = document.createElement('span');
+            span.textContent = (ch.number != null ? ch.number + '. ' : '') + ch.title;
+            row.appendChild(span);
+            pdChList.appendChild(row);
+          }
+        }
+        printOverlay.classList.add('open');
+      }
+
+      document.getElementById('c-pr').addEventListener('click', openPrintDialog);
+
+      function downloadFile(name, content, mime) {
+        const blob = new Blob([content], { type: mime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = name; a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      // Update print button label based on active tab
+      function updatePrintBtnLabel() {
+        const tab = printOverlay.querySelector('.pd-tab.active')?.dataset.pdTab;
+        const btn = document.getElementById('pd-print');
+        if (tab === 'tex') btn.textContent = 'Download TeX';
+        else if (tab === 'lightning') btn.textContent = 'Print';
+        else btn.textContent = 'Print';
+      }
+
+      // Tab switching
+      printOverlay.querySelectorAll('.pd-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          printOverlay.querySelectorAll('.pd-tab').forEach(t => t.classList.remove('active'));
+          printOverlay.querySelectorAll('.pd-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          printOverlay.querySelector(`.pd-panel[data-pd-panel="${tab.dataset.pdTab}"]`).classList.add('active');
+          updatePrintBtnLabel();
+        });
+      });
+
+      // Select all / none
+      document.getElementById('pd-ch-all').addEventListener('click', () => {
+        pdChList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+      });
+      document.getElementById('pd-ch-none').addEventListener('click', () => {
+        pdChList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+      });
+
+      // Lightning search — filter provable blocks
+      const LIGHTNING_KINDS = new Set(['theorem','definition','lemma','proposition','corollary','conjecture']);
+      pdLightningQ.addEventListener('input', () => {
+        const q = pdLightningQ.value.trim().toLowerCase();
+        pdLightningList.innerHTML = '';
+        pdLightningSelected = null;
+        if (!q || q.length < 2) return;
+        const matches = [];
+        for (const [label, b] of bix) {
+          if (!LIGHTNING_KINDS.has(b.kind)) continue;
+          const haystack = ((b.title || '') + ' ' + (b.label || '')).toLowerCase();
+          if (haystack.includes(q)) matches.push(b);
+          if (matches.length >= 30) break;
+        }
+        for (const b of matches) {
+          const item = document.createElement('div');
+          item.className = 'pd-lightning-item';
+          item.innerHTML = `<span class="li-kind">${b.kind}</span><span>${b.title ? inl(b.title) : (b.label || '')}</span>`;
+          renderMath(item);
+          item.addEventListener('click', () => {
+            pdLightningList.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+            item.classList.add('selected');
+            pdLightningSelected = b.label;
+          });
+          pdLightningList.appendChild(item);
+        }
+      });
+
+      // Cancel
+      document.getElementById('pd-cancel').addEventListener('click', () => {
+        printOverlay.classList.remove('open');
+      });
+      printOverlay.addEventListener('click', (e) => {
+        if (e.target === printOverlay) printOverlay.classList.remove('open');
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && printOverlay.classList.contains('open')) printOverlay.classList.remove('open');
+      });
+
+      // Print action
+      document.getElementById('pd-print').addEventListener('click', async () => {
+        const activeTab = printOverlay.querySelector('.pd-tab.active')?.dataset.pdTab;
+
+        if (activeTab === 'lightning') {
+          // Lightning print — open dependency chain in preview route
+          if (!pdLightningSelected) { alert('Select a block to print its dependency chain.'); return; }
+          printOverlay.classList.remove('open');
+          const incRm = document.getElementById('pd-lt-inc-remarks').checked;
+          const incEx = document.getElementById('pd-lt-inc-examples').checked;
+          // Ensure all blocks are indexed for dep graph
+          if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
+          const blocks = collectDepChainBlocks(pdLightningSelected, { includeExamples: incEx, includeRemarks: incRm });
+          // Open print window (reuse dep-print logic)
+          const win = window.open('', '_blank');
+          if (!win) return;
+          const root = bix.get(pdLightningSelected);
+          const title = root?.title || pdLightningSelected;
+          const theme = document.documentElement.dataset.theme || '';
+          // Build block→chapter/section reverse lookup
+          const blockChSec = new Map();
+          if (paper) {
+            for (const ch of paper.chapters) for (const sec of ch.sections) for (const b of sec.blocks) {
+              if (b.label) blockChSec.set(b.label, { chTitle: ch.title, chNum: ch.number, secTitle: sec.title });
+            }
+          }
+          const blockData = blocks.map(b => {
+            const {html: bh, texBlocks: tx} = parseMd(b.md || '');
+            return { block: b, html: bh, texBlocks: tx };
+          });
+          win.document.write(`<!DOCTYPE html><html data-theme="${esc(theme)}"><head>
+            <title>${esc(title)} — Lightning Print</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+            <style>
+              :root{--fg:#222;--fg-b:#333;--fg-d:#888;--bg:#fff;--bg-r:#fafafa;--bg-s:#f5f5f5;--brd:#e0e0e0;--ac:#4f46e5;
+                --f-body:'Crimson Pro',Georgia,serif;--f-head:'Inter',system-ui,sans-serif;--f-mono:'JetBrains Mono',monospace}
+              [data-theme="dark"]{--fg:#ddd;--fg-b:#ccc;--fg-d:#888;--bg:#1a1a1a;--bg-r:#222;--bg-s:#1e1e1e;--brd:#333;--ac:#818cf8}
+              body{font-family:var(--f-body);color:var(--fg);background:var(--bg);max-width:800px;margin:2rem auto;padding:0 2rem;line-height:1.6}
+              h1{font-family:var(--f-head);font-size:1.4rem;margin-bottom:.3rem}
+              .subtitle{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:.3rem}
+              .dep-count{font-family:var(--f-mono);font-size:.7rem;color:var(--fg-d);margin-bottom:2rem}
+              .bar{font-family:var(--f-head);font-size:.75rem;margin-bottom:1rem}
+              .bar button{font-size:.7rem;padding:.3rem .8rem;border:1px solid var(--brd);border-radius:4px;background:var(--bg-s);color:var(--fg);cursor:pointer;font-family:var(--f-head)}
+              .blk{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--brd)}
+              .blk:last-child{border-bottom:none}
+              .bk{font-family:var(--f-mono);font-size:.65rem;font-weight:700;text-transform:uppercase;color:var(--fg-d);margin-right:.3rem}
+              .bt{font-family:var(--f-head);font-weight:600}
+              .bl{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-d);margin-left:.5rem}
+              .bb{margin-top:.5rem}
+              .txb{text-align:center;padding:.8rem;margin:.8rem 0}
+              .txb img,.txb svg{max-width:100%;height:auto}
+              .txb.ph{font-family:var(--f-mono);font-size:.65rem;color:var(--fg-d);white-space:pre-wrap;text-align:left;background:var(--bg-s);padding:.6rem .8rem;border-radius:4px}
+              table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.85rem}
+              th,td{border:1px solid var(--brd);padding:.3rem .5rem;text-align:left}
+              th{background:var(--bg-s);font-weight:600}
+              .qed{text-align:right;font-size:.8rem}
+              .qed::after{content:'\\25A1'}
+              @media print{body{max-width:100%;margin:0;padding:1cm}.bar{display:none}}
+            </style>
+          </head><body>`);
+          win.document.write(`<div class="bar"><button onclick="window.print()">Print</button></div>`);
+          win.document.write(`<h1>&#x26A1; ${esc(title)}</h1>`);
+          win.document.write(`<div class="subtitle">Lightning print — critical dependency path</div>`);
+          win.document.write(`<div class="dep-count">${blocks.length} blocks in dependency chain</div>`);
+          let lastCh = null, lastSec = null;
+          for (const {block: b, html: bh, texBlocks: tx} of blockData) {
+            const loc = blockChSec.get(b.label);
+            if (loc) {
+              const chKey = loc.chNum ?? loc.chTitle;
+              if (chKey !== lastCh) {
+                lastCh = chKey; lastSec = null;
+                win.document.write(`<h2 style="font-family:var(--f-head);font-size:1.1rem;margin-top:1.5rem;border-bottom:2px solid var(--brd);padding-bottom:.3rem">${loc.chNum != null ? loc.chNum + '. ' : ''}${esc(loc.chTitle)}</h2>`);
+              }
+              if (loc.secTitle !== lastSec) {
+                lastSec = loc.secTitle;
+                win.document.write(`<h3 style="font-family:var(--f-head);font-size:.9rem;margin-top:1rem;color:var(--fg-d)">${esc(loc.secTitle)}</h3>`);
+              }
+            }
+            const kindLabel = (b.kind || '').charAt(0).toUpperCase() + (b.kind || '').slice(1);
+            win.document.write(`<div class="blk">`);
+            win.document.write(`<span class="bk">${esc(kindLabel)}.</span>`);
+            if (b.title) win.document.write(`<span class="bt">${inl(b.title)}</span>`);
+            if (b.label) win.document.write(`<span class="bl">${esc(b.label)}</span>`);
+            let bodyHtml = bh;
+            bodyHtml = bodyHtml.replace(/<div class="txb" data-ti="(\d+)"><\/div>/g, (_, idx) => {
+              const i = +idx;
+              const texSrc = tx[i] || '';
+              const escapedTex = esc(texSrc);
+              const a = b.rendered?.find(r => r.blockIndex === i);
+              if (a && (a.mime === 'image/svg+xml' || a.mime?.startsWith('image/'))) {
+                return `<div class="txb"><img src="${a.url}" alt="${escapedTex}" loading="lazy"></div>`;
+              }
+              return `<div class="txb ph">${escapedTex}</div>`;
+            });
+            win.document.write(`<div class="bb">${bodyHtml}</div>`);
+            if (b.kind === 'proof') win.document.write(`<div class="qed"></div>`);
+            win.document.write(`</div>`);
+          }
+          win.document.write(`</body></html>`);
+          win.document.close();
+          // Render KaTeX in the popup
+          win.addEventListener('load', () => {
+            if (win.renderMathInElement) win.renderMathInElement(win.document.body, { throwOnError: false });
+          });
+        } else if (activeTab === 'tex') {
+          // TeX export — download LaTeX source files
+          printOverlay.classList.remove('open');
+          const printBtn = document.getElementById('pd-print');
+          const origText = printBtn.textContent;
+          printBtn.textContent = 'Exporting...';
+          printBtn.disabled = true;
+          try {
+            const r = await fetch('/api/tex-export');
+            if (!r.ok) { alert('TeX export failed: ' + (await r.json()).error); return; }
+            const data = await r.json();
+            // Download each file, or create a single zip-like download
+            // For simplicity, create a combined .tar-like blob using JSZip-free approach
+            // Pack all files into a single downloadable .tex if only one, or offer each
+            if (data.files.length === 1) {
+              downloadFile(data.files[0].name, data.files[0].content, 'application/x-tex');
+            } else {
+              // Create a simple shell script that recreates the directory structure
+              let script = '#!/bin/bash\n# QOU LaTeX source — extract and compile with: bash this_file.sh\n# Or just copy the files below.\n\n';
+              for (const f of data.files) {
+                const dir = f.name.includes('/') ? f.name.substring(0, f.name.lastIndexOf('/')) : '';
+                if (dir) script += `mkdir -p "${dir}"\n`;
+                script += `cat > "${f.name}" << 'ENDOFFILE'\n${f.content}\nENDOFFILE\n\n`;
+              }
+              script += '\necho "Files extracted. Compile with: latexmk -pdf main.tex"\n';
+              downloadFile('qou-latex-source.sh', script, 'application/x-sh');
+            }
+          } catch (e) {
+            alert('TeX export failed: ' + e.message);
+          } finally {
+            printBtn.textContent = origText;
+            printBtn.disabled = false;
+          }
+        } else {
+          // Chapter print — use print CSS with chapter/remark/example filtering
+          printOverlay.classList.remove('open');
+          const selectedChNums = new Set();
+          pdChList.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if (cb.checked) selectedChNums.add(cb.dataset.chNum);
+          });
+          const incRemarks = document.getElementById('pd-inc-remarks').checked;
+          const incExamples = document.getElementById('pd-inc-examples').checked;
+          const journalView = document.getElementById('pd-journal-view').checked;
+
+          // Ensure all lazy sections are loaded before print
+          if (paper?._ensureAllBlocksIndexed) await paper._ensureAllBlocksIndexed();
+
+          // Show all chapters temporarily, mark unselected as print-hidden
+          const chDivs = document.querySelectorAll('#app .ch');
+          const prevDisplay = new Map();
+          chDivs.forEach(cd => {
+            prevDisplay.set(cd, cd.style.display);
+            const num = cd.dataset.chNum || '';
+            if (selectedChNums.has(num)) {
+              cd.style.display = '';
+              cd.classList.remove('print-hidden');
+            } else {
+              cd.classList.add('print-hidden');
+            }
+          });
+
+          // Add body classes to filter remarks/examples in print
+          if (!incRemarks) document.body.classList.add('print-hide-remarks');
+          if (!incExamples) document.body.classList.add('print-hide-examples');
+          if (journalView) document.body.classList.add('print-journal');
+
+          // Ensure example/remark blocks are visible for print (if included)
+          const remarkWraps = document.querySelectorAll('.blk-remark');
+          const exampleWraps = document.querySelectorAll('.blk-example');
+          if (incRemarks) remarkWraps.forEach(el => { el.dataset.prevDisplay = el.style.display; el.style.display = ''; });
+          if (incExamples) exampleWraps.forEach(el => { el.dataset.prevDisplay = el.style.display; el.style.display = ''; });
+
+          window.print();
+
+          // Restore state after print
+          document.body.classList.remove('print-hide-remarks', 'print-hide-examples', 'print-journal');
+          chDivs.forEach(cd => {
+            cd.classList.remove('print-hidden');
+            cd.style.display = prevDisplay.get(cd) ?? '';
+          });
+          if (incRemarks) remarkWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
+          if (incExamples) exampleWraps.forEach(el => { el.style.display = el.dataset.prevDisplay ?? ''; delete el.dataset.prevDisplay; });
+        }
+      });
+    }
 
     // PDF (trigger server-side LaTeX pipeline)
     // Check PDF availability at startup — disable with hint if latexmk not installed
