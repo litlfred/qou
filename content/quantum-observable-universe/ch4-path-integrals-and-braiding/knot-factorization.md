@@ -15,11 +15,11 @@ $$
   V_{1/2}^{\otimes 2j_i},
 $$
 
-so a hadron $H \in V_{j_1} \otimes \cdots \otimes V_{j_n}$ can be
+so a hadron $\mathfrak{H} \in V_{j_1} \otimes \cdots \otimes V_{j_n}$ can be
 written in a universal tensor form:
 
 $$
-  H \;\hookrightarrow\;
+  \mathfrak{H} \;\hookrightarrow\;
   V_{1/2}^{\otimes 2(j_1 + \cdots + j_n)}.
 $$
 

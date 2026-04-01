@@ -30,6 +30,7 @@ theorem reeb_time_monotone {k : Type*} [LinearOrderedField k]
     (n m : ℕ) (hnm : n < m) :
     informationTheoreticTime ⟨q, hq0, hq1, n⟩ <
     informationTheoreticTime ⟨q, hq0, hq1, m⟩ := by
+  -- Ref: [manuscript] Ch 8, Definition: Information-Theoretic Time
   sorry
 
 end QOU

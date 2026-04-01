@@ -7,7 +7,7 @@ on any CR manifold of hypersurface type
 ([archimedean quantum universe](#ex:c-quantum-universe)).
 
 The fibre $\mathbb{P}^1(\mathbb{C})$ of the state bundle $\mathcal{S}$ is a
-non-linear space, so one cannot write a linear PDE for sections of
+non-linear space, so we cannot write a linear PDE for sections of
 $\mathcal{S}$ directly. We work instead with the *linearised* model: identify
 a neighbourhood of a base-point in $\mathbb{P}^1(\mathbb{C})$ with
 $\mathbb{C}$ via stereographic projection, and interpret $\psi$ as a

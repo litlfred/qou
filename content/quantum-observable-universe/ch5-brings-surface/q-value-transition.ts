@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:q-value-transition",
   title:
-    "$\\mathcal{Q}_q$-value: categorical action difference with $q$-anomaly",
+    "$\\mathcal{Q}_q$-Value as Categorical Action Difference",
   tags: [
     "q-value",
     "transition-energy",

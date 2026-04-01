@@ -17,4 +17,15 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:embeddability-closure"],
+  examples: [
+    "rem:descartes-chirality",
+    "rem:light-cone-affine",
+    "rem:chirality-trefoil",
+    "rem:linking-relations-table",
+    "rem:chirality-trefoil-electron-positron",
+    "rem:unmapped-torus-knots",
+    "rem:force-knot-identification",
+    "rem:diophantine-valley",
+    "ex:descartes-yekutieli",
+  ],
 });

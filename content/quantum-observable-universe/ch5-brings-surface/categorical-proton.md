@@ -13,7 +13,7 @@ $$
 where:
 
 - $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ is the Borromean link of three
-  unknots threaded through color tubes $(r, g, b)$
+  unknots threaded through coral tubes $(r, g, b)$
   ([color tube coordinates](#def:color-tube-coordinates)):
   two with positive crossing orientation ($u$,
   [up quark](#def:up-quark)) and one with negative orientation
@@ -22,7 +22,7 @@ where:
 - $\mathcal{L}_H$ is the Hopf link binding the three
   constituents,
 
-- the $S_3$ permutation symmetry of the color tubes ensures
+- the $S_3$ permutation symmetry of the coral tubes ensures
   the definition is independent of the color assignment.
 
 **Mass.**
@@ -46,7 +46,7 @@ $$
   \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)
 $$
 
-At $q = 1.10997$: $m_{\mathfrak{p}} = 938.272$ MeV.
+At the CODATA value $q_0$: $m_{\mathfrak{p}}(q_0) \approx 938.272$ MeV, derived from the substrate parameter ([local substrate](#prop:local-substrate-q)).
 
 **Coulomb charge.**
 The proton carries net **positive crossing chirality**: two

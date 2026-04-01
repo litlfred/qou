@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:chain-ring-comparison",
   title:
-    "Predicted vs.\\ observed $\\mathrm{C}_6$ ring-closure barrier",
+    "Predicted vs. observed $\\mathrm{C}_6$ ring-closure barrier",
   tags: [
     "comparison",
     "experimental",

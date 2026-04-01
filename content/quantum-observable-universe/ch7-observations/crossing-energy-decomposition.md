@@ -10,27 +10,27 @@ $$
 $$
 
 **Statement.**
-For any knot composite $H$ with crossing energy
-$\mathfrak{E}_{\mathrm{cross}}(H) = \sum_i \epsilon_i$ where
+For any knot composite $\mathfrak{H}$ with crossing energy
+$\mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_i \epsilon_i$ where
 $\epsilon_i \in \{q, -q^{-1}\}$:
 
 1. **Symmetric channel.**  The component
-   $E_{\mathrm{sym}}(H) = \sum_i |\epsilon_i| \cdot \cosh(\ln q)
+   $E_{\mathrm{sym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \cosh(\ln q)
    \cdot \mathrm{sgn}(\epsilon_i)$
    is invariant under the mirror operation $\sigma$ (which reverses
    all crossing signs).
 
 2. **Antisymmetric channel.**  The component
-   $E_{\mathrm{asym}}(H) = \sum_i |\epsilon_i| \cdot \sinh(\ln q)
+   $E_{\mathrm{asym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \sinh(\ln q)
    \cdot \mathrm{sgn}(\epsilon_i)$
    reverses sign under $\sigma$.
 
 3. **Pair cancellation.**  For a particle--antiparticle pair
-   $(H, \sigma(H))$, the combined crossing energy is purely
+   $(\mathfrak{H}, \sigma(\mathfrak{H}))$, the combined crossing energy is purely
    antisymmetric:
    $$
-     \mathfrak{E}_{\mathrm{cross}}(H) + \mathfrak{E}_{\mathrm{cross}}(\sigma(H))
-     \;=\; 2\,E_{\mathrm{asym}}(H).
+     \mathbf{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathbf{E}_{\mathrm{cross}}(\sigma(\mathfrak{H}))
+     \;=\; 2\,E_{\mathrm{asym}}(\mathfrak{H}).
    $$
 
 4. **Ratio identity.**  The antisymmetric-to-symmetric ratio is
@@ -38,4 +38,4 @@ $\epsilon_i \in \{q, -q^{-1}\}$:
      \frac{E_{\mathrm{asym}}}{E_{\mathrm{sym}}}
      \;=\; \tanh(\ln q),
    $$
-   independent of the knot composite $H$.
+   independent of the knot composite $\mathfrak{H}$.

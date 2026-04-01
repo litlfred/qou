@@ -41,7 +41,7 @@ $\beta_e = v_e / c$ the velocity of the emitted electron.
 
 **Derivation.**
 The canonical action $\mathcal{S}_q$
-([canonical action](#def:qou-canonical-action)) evaluated on the
+([canonical action](#prop:qou-canonical-action)) evaluated on the
 full outgoing state $\psi = T_{2,3} \cup \mathcal{N}(p\!+\!1, n\!-\!1)$
 decomposes as
 

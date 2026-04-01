@@ -10,4 +10,5 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["rem:q-harmonic-basis-brane"],
+  examples: ["rem:q-harmonic-basis-brane", "rem:weight-space-decomposition", "rem:algebraic-filter", "rem:distributional-connection"],
 });

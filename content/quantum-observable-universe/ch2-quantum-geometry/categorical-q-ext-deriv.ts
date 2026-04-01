@@ -13,6 +13,7 @@ export default definition({
     "def:substrate-parameter",
     "prop:positive-definite-dagger",
   ],
+  examples: ["ex:q-ext-deriv", "ex:q-lie-bracket", "ex:q-connection", "ex:q-reeb-vector-field", "ex:q-reeb-flow", "ex:q-torsion-leaf"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/categorical-q-ext-deriv-0.svg", blockIndex: 0, hash: "1098849523c8" },
   ],

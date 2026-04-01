@@ -31,7 +31,7 @@ the nucleon masses from the pair Skein formula
 ([terminal resolution](#prop:terminal-resolution)), $B/A$ is the
 binding energy per nucleon from the Skein polynomial of the
 multi-nucleon Hopf link (AME2020 values used here), and
-$m_e = 0.511$ MeV is the electron mass.
+$m_e \approx 0.511$ MeV is the electron mass.
 
 All individual knot types satisfy the embeddability closure
 ([embeddability closure](#thm:embeddability-closure)): every
@@ -75,7 +75,7 @@ At the substrate parameter $q$, the dominant eigenvalue
 $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
-reproducing the Rydberg formula $\mathfrak{E}_{\mathrm{bind}}
+reproducing the Rydberg formula $\mathbf{E}_{\mathrm{bind}}
 \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
 structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) emerges
 from tensor product eigenvalue degeneracies of multi-electron
@@ -107,10 +107,10 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
-$q = 1.10997$, $\hbar_q = 0.09907$,
-$m_{\mathfrak{p}} = 938.269$ MeV,
-$m_{\mathfrak{n}} = 939.565$ MeV,
-$m_e = 0.511$ MeV.
+$q = q_0$, $\hbar_q \approx 0.09907$,
+$m_{\mathfrak{p}} \approx 938.269$ MeV,
+$m_{\mathfrak{n}} \approx 939.565$ MeV,
+$m_e \approx 0.511$ MeV.
 
 | $\#$ | Element | $Z$ | $N$ | $N_{\mathrm{pred}}$ | $\Delta$ | $k_\alpha$ | $M_q$ (MeV) | $M_o$ (MeV) | $B/A$ |
 |---:|------|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -213,8 +213,8 @@ $\Delta$ = $|N - N_{\mathrm{pred}}|$,
 $k_\alpha$ = closed $\alpha$ sub-links ($= \min(\lfloor Z/2 \rfloor, \lfloor N/2 \rfloor)$),
 $M_q$ = QOU predicted mass, $M_o$ = observed mass.
 $\diamond$ = proton stability pair, $\star$ = neutron stability pair.
-All masses in MeV/$c^2$.  $M_q$ computed at the substrate
-parameter $q$; $M_o$ from AME2020 nuclear
+All masses in MeV/$c^2$.  $M_q$ computed at
+$q = q_0$; $M_o$ from AME2020 nuclear
 masses plus $Z \cdot m_e$.  $B/A$ (MeV) from AME2020.
 The most stable (longest-lived) isotope is listed for each element.
 

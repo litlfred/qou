@@ -1,6 +1,6 @@
 The torus knots $T_{3,n}$ with $n = p^k$ (a prime power, $p \neq 3$)
 form natural subfamilies whose genus grows exponentially.  The Bring
-surface genus bound selects a remarkably small number of these.
+surface genus bound selects a small number of these.
 
 **Genus formula.**
 For $T_{3,p^k}$ with $\gcd(3, p^k) = 1$:

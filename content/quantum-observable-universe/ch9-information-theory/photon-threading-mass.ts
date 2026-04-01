@@ -14,7 +14,7 @@ export default proposition({
   ],
   uses: [
     "thm:mass-energy-equivalence",
-    "rem:groebner-shirshov-energy",
+    "thm:groebner-shirshov-energy",
     "def:mass-identity",
     "def:crossing-energy",
   ],

@@ -31,7 +31,7 @@ The crossing energy of the bond is
 $$
   E_{\mathrm{bond}}(k)
   \;=\;
-  k \cdot \mathfrak{E}_{\mathrm{cross}}(T(2,2))
+  k \cdot \mathbf{E}_{\mathrm{cross}}(T(2,2))
   \;+\;
   \binom{k}{2} \, \Delta E_{\mathrm{inter}},
 $$

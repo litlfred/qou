@@ -91,7 +91,7 @@ delimiters renders as literal text.
 Block titles (in `.ts` manifests) may contain inline math in
 `$...$` delimiters. The `escapeLatex()` function preserves these.
 
-### 8. Tables use pipe syntax
+### 8. Tables use GFM pipe syntax
 
 ```md
 | Header 1 | Header 2 |
@@ -99,7 +99,50 @@ Block titles (in `.ts` manifests) may contain inline math in
 | cell     | cell     |
 ```
 
-Tables are rendered as `<table class="md-table">` in the viewer.
+Tables are rendered by **two pipelines**:
+
+- **HTML viewer**: `<table class="md-table">` via regex.
+- **LaTeX pipeline**: `\begin{tabular}` with `booktabs` rules
+  (`\toprule`, `\midrule`, `\bottomrule`) via `remark-gfm` AST.
+
+**Alignment**: Use `:` in the separator row to control column
+alignment. The LaTeX pipeline reads these and sets `l`, `c`, or `r`
+in the `tabular` column spec:
+
+```md
+| Left   | Center | Right |
+|:-------|:------:|------:|
+| text   | text   | text  |
+```
+
+**Math in table cells** is fully supported — `$...$` segments pass
+through to LaTeX verbatim:
+
+```md
+| Entry   | Formula                |
+|:-------:|------------------------|
+| $(1,1)$ | $q - q^{-1}$          |
+| $\det$  | $cd(q-q^{-1}) + d^2$  |
+```
+
+**Inline code in table cells** renders as `\texttt{...}` in LaTeX
+with special characters escaped. Use backticks for identifiers:
+
+```md
+| Label | Lean declaration           |
+|-------|----------------------------|
+| def:x | `QOU.Namespace.some_decl`  |
+```
+
+**Rules for table content:**
+
+- **Do not** use raw `&` in table prose — it is the LaTeX column
+  separator. Use `\&` in math or restructure the cell.
+- **Do not** use bare `_` outside `$...$` — it triggers LaTeX
+  subscript mode. Wrap identifiers in backticks or math.
+- **Do not** nest tables.
+- **Always** include the separator row (`|---|---|`).
+- Keep cell content concise — wide tables overflow in PDF.
 
 ### 9. Headings use `##` and `###`
 

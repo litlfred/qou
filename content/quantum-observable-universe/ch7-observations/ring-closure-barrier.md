@@ -14,7 +14,7 @@ energies, measured by Alexander polynomial evaluation at the
 substrate parameter $q$, are:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{C}_N)
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N)
   \;\propto\;
   (N-1) \cdot \Delta_{T(2,2)}(q)
   \;=\;
@@ -22,7 +22,7 @@ $$
 $$
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
   \;\propto\;
   \Delta_{T(2,N)}(q)
   \;=\;
@@ -33,10 +33,10 @@ $$
 For $N = 6$:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{C}_6)
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_6)
   \;\propto\; 5,
   \qquad
-  \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_6)
+  \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_6)
   \;\propto\;
   q^2 + 1 + q^{-2}
   \;\approx\; 3
@@ -63,11 +63,11 @@ threading stabilisation has been gained — the crossing energy is
 at a **maximum**:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(\text{transition})
+  \mathbf{E}_{\mathrm{cross}}(\text{transition})
   \;>\;
   \max\bigl(
-    \mathfrak{E}_{\mathrm{cross}}(\mathcal{C}_N),\;
-    \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)
+    \mathbf{E}_{\mathrm{cross}}(\mathcal{C}_N),\;
+    \mathbf{E}_{\mathrm{cross}}(\mathcal{R}_N)
   \bigr).
 $$
 

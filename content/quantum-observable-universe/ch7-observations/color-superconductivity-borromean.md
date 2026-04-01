@@ -1,6 +1,6 @@
 **Conjecture.**
 *Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be the Descartes
-universe at substrate parameter $q = 1.1097$.  At baryon densities
+universe at substrate parameter $q = q_0$.  At baryon densities
 $\rho > \rho_c$, where $\rho_c$ is determined by the
 [energy crossover](#prop:borromean-hopf-energy-crossover), the
 ground state of strange quark matter undergoes a topological
@@ -55,19 +55,19 @@ $\bar{\mu} = 0$ — the Milnor invariant is a concordance
 invariant and jumps discontinuously.  This is a **first-order
 topological phase transition**.
 
-**Mechanism: color-tube overlap.**
+**Mechanism: coral-tube overlap.**
 
-The three color tubes of Bring's surface
+The three coral tubes of Bring's surface
 ([color tube coordinates](#def:color-tube-coordinates)) have a
 characteristic transverse scale set by the resolvent separation
-$|w_k - w_l| \sim |c_r|$.  At low density, the color tubes of
+$|w_k - w_l| \sim |c_r|$.  At low density, the coral tubes of
 adjacent baryons are well-separated.  At density $\rho$, the
 inter-baryon spacing scales as $\rho^{-1/3}$.
 
-When $\rho^{-1/3} \lesssim |c_r|$, the color tubes of
+When $\rho^{-1/3} \lesssim |c_r|$, the coral tubes of
 adjacent baryons **overlap**.  Within the overlap region, a
-quark in color tube $a$ of baryon $1$ can form a Hopf link
-with a quark in color tube $b$ of baryon $2$ — a
+quark in coral tube $a$ of baryon $1$ can form a Hopf link
+with a quark in coral tube $b$ of baryon $2$ — a
 [Hopf diquark](#def:hopf-diquark).  This inter-baryon
 Hopf linking disrupts the intra-baryon Borromean structure:
 once a quark is Hopf-linked to an external partner, its
@@ -75,7 +75,7 @@ Borromean triple is broken (removing one component frees the
 other two).
 
 The cascade is:
-1. Color tubes overlap at $\rho \sim \rho_c$.
+1. Coral tubes overlap at $\rho \sim \rho_c$.
 2. Inter-baryon Hopf diquarks form spontaneously (energetically
    favorable in the overlap region).
 3. Each diquark breaks a Borromean triple, freeing two quarks.
@@ -94,7 +94,7 @@ the antisymmetric tensor arises from the **Hopf linking number**:
   components.
 - Exchanging the two components reverses the linking number:
   $\mathrm{lk}(a, b) = -\mathrm{lk}(b, a)$.
-- For three color tubes $(r, g, b)$, the three independent
+- For three coral tubes $(r, g, b)$, the three independent
   diquark orientations form the antisymmetric tensor:
 
 $$
@@ -116,7 +116,7 @@ of the Hopf link binding the diquark:
 $$
   \Delta_{\mathrm{CFL}}
   \;=\;
-  |\mathfrak{E}_{\mathrm{cross}}(\mathcal{L}_H)|
+  |\mathbf{E}_{\mathrm{cross}}(\mathcal{L}_H)|
   \;=\;
   q + q^{-1}
   \;\approx\; 2.011 \quad\text{Skein units}.
@@ -137,7 +137,7 @@ $$
   \;\approx\; 2.5 \;\mathrm{MeV}.
 $$
 
-This is remarkably close to perturbative QCD estimates of
+This is close to perturbative QCD estimates of
 $\Delta_{\mathrm{CFL}} \sim 10\text{--}100$ MeV at
 asymptotically high density, given that the QOU estimate
 uses no fitting parameters.  The discrepancy suggests that

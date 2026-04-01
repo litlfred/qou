@@ -9,4 +9,5 @@ export default definition({
     "def:recursive-brane-tower",
     "ex:c-quantum-observable-universe",
   ],
+  examples: ["rem:jet-shell"],
 });

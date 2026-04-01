@@ -1,6 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  interprets: "prop:hadron-q-self-correction",
   label: "rem:half-life-as-q-probe",
   title:
     "Beta-decay half-lives as precision probes of local $q$-variation",

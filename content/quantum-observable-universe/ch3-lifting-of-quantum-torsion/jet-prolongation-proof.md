@@ -36,7 +36,7 @@ main theorem of [fred2005], which constructs $\mathrm{Dist}(G)$
 as a Gröbner--Shirshov deformation of the commutative
 $\mathrm{Dist}(H)$ and verifies the Frobenius relation at each stage
 (see also [skew poisson integration](#prop:skew-poisson-integration) in
-[Chapter](#chap:p-adic)).
+[Chapter](#chap:descartes-universe)).
 
 *Step 3: Non-degeneracy and vanishing.*
 The non-degeneracy of the Frobenius form on $A$ (the pairing

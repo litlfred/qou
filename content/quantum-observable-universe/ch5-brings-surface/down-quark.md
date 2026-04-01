@@ -1,4 +1,4 @@
-The **down quark** is an unknot (neutrino) localized in a color
+The **down quark** is an unknot (neutrino) localized in a coral
 tube with **negative crossing orientation** within the
 Borromean link $\mathcal{B}_3$
 ([Borromean quark conjecture](#conj:borromean-quark)).
@@ -18,7 +18,7 @@ of $-1/3$ relative to the proton.
 
 **Mass splitting.**
 The up and down quarks are the same knot type (unknot) in the
-same environment (Borromean-linked in a color tube).  Their
+same environment (Borromean-linked in a coral tube).  Their
 mass difference $\mu_d - \mu_u$ arises from the **crossing
 asymmetry** ([crossing asymmetry](#rem:skein-crossing-asymmetry)):
 the Skein relation weights positive crossings by $q$ and

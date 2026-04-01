@@ -18,7 +18,7 @@ $(q + q^{-1})/2$).
 With $p = n = 7$, every crossing in the braid word is a
 $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing.  The mixed
 crossing weight $(q + q^{-1})/2 \approx 1.005$ is the **average**
-of the positive weight $q = 1.1097$ and negative weight
+of the positive weight $q = q_0$ and negative weight
 $q^{-1} = 0.901$.  No crossing carries the Coulomb penalty
 $(q - q^{-1})/2 \approx 0.105$ and no crossing carries the
 attractive excess $-(q - q^{-1})/2$.
@@ -66,7 +66,7 @@ alternations to $(\sigma_1 \cdots \sigma_{13})^2$ with perfect
 alternation — the maximal shortcut.
 
 In the Hecke algebra, this transition:
-- Eliminates 4 Hecke reduction steps ($\sigma_i^2$ resolutions)
+- Eliminates 4 Hecke reduction steps ($T_i^2$ resolutions)
 - Reduces the total energy by $\Delta E = -3.361$ Skein weight
   units
 - Releases the Pauli asymmetry cost and Coulomb deficit as the

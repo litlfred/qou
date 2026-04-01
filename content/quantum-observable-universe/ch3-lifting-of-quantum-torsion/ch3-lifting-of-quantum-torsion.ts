@@ -38,9 +38,7 @@ export default chapter({
         "lifting-intro",
         "categorical-jet-prolongation",
         "categorical-jet-prolongation-proof",
-        "categorical-transport",
         "categorical-q-reeb-flow",
-        "categorical-q-torsion-leaf",
       ],
     }),
 
@@ -116,7 +114,6 @@ export default chapter({
       label: "ssec:descent",
       blocks: [
         "descent-intro",
-        "descent",
         "descent-eigenspaces",
         "descent-eigenspaces-proof",
         "brane-boundary",

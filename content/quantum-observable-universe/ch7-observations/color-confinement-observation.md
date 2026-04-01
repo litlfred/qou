@@ -12,11 +12,11 @@ transplanted to the Skein algebra — explains color confinement.
 
 | Classical color theory | QOU color space |
 |----------------------|----------------|
-| Three primaries $(r, g, b)$ | Three color tubes $(c_r, c_g, c_b) = (w_2 - z, w_3 - z, w_4 - z)$ |
+| Three primaries $(r, g, b)$ | Three coral tubes $(c_r, c_g, c_b) = (w_2 - z, w_3 - z, w_4 - z)$ |
 | Spectral colors (pure wavelengths) | Pure knot types in $\mathcal{S}_q$ |
 | Chromaticity diagram (2-simplex) | $q$-chromaticity triangle |
 | Negative coefficients needed | $-q^{-1}[L_-]$ in Skein relation |
-| No three primaries span all colors | No single color tube spans all Skein elements positively |
+| No three primaries span all colors | No single coral tube spans all Skein elements positively |
 | White = equal mix of all three | Color-neutral = $S_5$-invariant = hadron |
 | Visible gamut (convex hull) | Physical gamut (positive $\tau$-evaluation) |
 
@@ -50,7 +50,7 @@ is controlled by the Skein asymmetry $q - q^{-1}$:
   $[L_+] = [L_-]$, and all coefficients can be made positive.
   No confinement is needed — individual "colors" are separately
   observable.
-- At $q = 1.1097$ (Descartes value): $q - q^{-1} = 0.209$,
+- At $q = q_0$ (Descartes value): $q - q^{-1} = 0.209$,
   producing $\sim 20\%$ negativity in Skein coefficients.
   Individual quarks have negative $\tau$-evaluations — they are
   confined.
@@ -94,5 +94,5 @@ single-color states.
 
 The full confinement proof would require showing that
 $\tau(\psi_{\mathrm{color}}) < 0$ for all single-color states
-$\psi_{\mathrm{color}}$ at $q = 1.1097$, which amounts to a
+$\psi_{\mathrm{color}}$ at $q = q_0$, which amounts to a
 positivity theorem for the $S_5$-invariant Skein submodule.

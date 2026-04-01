@@ -20,4 +20,4 @@ $2$-forms $\Omega^+(A)$ are the $+1$-eigenspace of $\star$; in
 $3$ dimensions, $\star$ on $\Omega^2(A)$ maps to $\Omega^1(A)$, so
 the self-dual/anti-self-dual decomposition is trivial. The
 non-trivial decomposition arises when $\dim H = 4$ (the archimedean
-case, [self-dual curvature](#prop:self-dual-curvature)).
+case, [self-dual curvature](#ex:self-dual-curvature)).

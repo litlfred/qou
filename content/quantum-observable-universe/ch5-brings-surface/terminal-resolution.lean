@@ -64,7 +64,7 @@ externally (mpmath, SageMath, Mathematica). -/
     Derivation: Skein polynomial of the trefoil pair at substrate_q
     yields 938.272 MeV (externally verified). -/
 -- Ref: [manuscript] §11, CODATA 2018
--- Ref: [KronheimerMrowka2004] https://doi.org/10.2140/gt.2004.8.295
+-- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
 axiom predicted_proton_MeV_val :
     ∃ (predicted : ℝ), |predicted - codata_proton_MeV| ≤ 0.001
 

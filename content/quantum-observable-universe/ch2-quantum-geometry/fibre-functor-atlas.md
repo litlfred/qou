@@ -1,7 +1,9 @@
 **Proposition.**
 *Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with $G = \mathrm{Aut}^{\otimes}(\tau)$
-([Tannaka–Krein](#rem:tannaka-krein-overview)).  Then:*
+([Tannaka–Krein](#rem:tannaka-krein-overview)).  In the following,
+$\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
+(not the canonical $\tau$).  Then:*
 
 1. **(Charts.)** *Each fibre functor
    $\omega \colon \mathbf{C} \to \mathbf{Vect}_R$ is an

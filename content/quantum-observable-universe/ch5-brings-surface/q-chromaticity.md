@@ -1,4 +1,4 @@
-The three color tubes of the Bring's surface
+The three coral tubes of the Bring's surface
 ([color tube interpretation](#rem:color-tube-interpretation)) and
 the three $S_3$ subgroups of its automorphism group
 ([chirality of the trefoil](#rem:chirality-trefoil)) provide a
@@ -26,7 +26,7 @@ locus is not contained in any triangular cone.
 **The $q$-deformed color space.**
 
 In the Descartes universe, the "color space" is the Skein module
-$\mathcal{S}_q(\mathbf{C})$.  The three color tubes
+$\mathcal{S}_q(\mathbf{C})$.  The three coral tubes
 $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
 distinguished directions — the "primaries" of the categorical
 color space.  An arbitrary element of $\mathcal{S}_q$ is a formal
@@ -56,9 +56,9 @@ categorical color space:
 
 | Color | $S_3$ subgroup | Trefoil copy | Color coordinate |
 |-------|---------------|-------------|-----------------|
-| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $c_r = w_2 - z$ | |
-| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ | |
-| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ | |
+| Red | $S_3^{(r)} \leq S_5$ | $T_{2,3}^{(r)}$ | $c_r = w_2 - z$ |
+| Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ |
+| Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ |
 
 Each $S_3$ acts on one color fiber.  The elements of $S_5$ that
 lie *outside* all three $S_3$ subgroups act by **conjugation**,
@@ -69,10 +69,10 @@ $S_5$-theoretic origin of the color permutation symmetry of QCD.
 
 In Feynman's language: some spectral colors lie outside the triangle
 of primaries, requiring negative coefficients.  In QOU language:
-some Skein elements have negative coefficients in the color-tube
+some Skein elements have negative coefficients in the coral-tube
 basis.
 
-An individual quark — a trefoil $T_{2,3}$ in a single color tube —
+An individual quark — a trefoil $T_{2,3}$ in a single coral tube —
 is a "primary color."  It does not span the full Skein module with
 positive coefficients.  The Skein resolution of a physical process
 generically produces terms with $-q^{-1}$ factors, which are
@@ -100,7 +100,7 @@ spectral color outside the primary triangle.
 The three-fold cover $T_{2,9}$
 ([force identification](#rem:force-knot-identification)) is the
 topological agent that enforces positivity.  By interpolating all
-three color tubes in a single closed curve, $T_{2,9}$ provides
+three coral tubes in a single closed curve, $T_{2,9}$ provides
 the binding that makes the full Skein sum $S_5$-invariant.  Without
 $T_{2,9}$, the three trefoil copies could be evaluated separately
 (in which case negative coefficients are possible); with $T_{2,9}$,
@@ -126,7 +126,7 @@ $$
 $$
 
 where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
+three coral tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
 so the $q$-chromaticity diagram is a triangle (the $q$-simplex).
 
 For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$

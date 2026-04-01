@@ -180,4 +180,4 @@ The visualization should be an interactive HTML page
 9. **Shell eigenvalue display**: optional overlay showing
    $\lambda_+^n$ at the element's outermost electron shell,
    with the Chebyshev recurrence index and binding energy
-   $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n}$.
+   $\mathbf{E}_{\mathrm{bind}} \propto \lambda_+^{-n}$.

@@ -16,6 +16,7 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
+import remarkGfm from "remark-gfm";
 import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { extractCitations } from "./citations";
 import { referenceMap } from "../schema/references";
@@ -68,7 +69,7 @@ export function escapeLatex(text: string): string {
 // ── Markdown → LaTeX conversion (AST-based) ─────────────────────
 
 /** Shared remark parser instance with math extension. */
-const mdParser = remark().use(remarkMath);
+const mdParser = remark().use(remarkGfm).use(remarkMath);
 
 /**
  * Convert markdown content to LaTeX body text via remark AST.
@@ -142,7 +143,7 @@ function renderMdastNode(node: any): string {
       return renderChildren(node).join("");
 
     case "text":
-      return node.value;
+      return escapeLatex(node.value);
 
     case "strong":
       return `\\textbf{${renderChildren(node).join("")}}`;
@@ -155,6 +156,10 @@ function renderMdastNode(node: any): string {
 
     case "math":
       return `\\[\n${node.value}\n\\]`;
+
+    case "inlineCode":
+      // Inline code: `text` → \texttt{escaped text}
+      return `\\texttt{${escapeLatexSegment(node.value)}}`;
 
     case "code":
       if (node.lang === "tex") {
@@ -221,6 +226,15 @@ function renderMdastNode(node: any): string {
       return lines.join("\n");
     }
 
+    case "table": {
+      return renderTable(node);
+    }
+
+    case "tableRow":
+    case "tableCell":
+      // Handled by renderTable; should not be reached directly
+      return renderChildren(node).join("");
+
     default:
       // Unknown node — render children if any, otherwise empty
       if (node.children) {
@@ -228,6 +242,46 @@ function renderMdastNode(node: any): string {
       }
       return node.value ?? "";
   }
+}
+
+/**
+ * Render a GFM table node to a LaTeX tabular environment.
+ *
+ * Reads alignment from `node.align` (array of "left"|"right"|"center"|null)
+ * and renders rows with `&` separators and `\\` terminators.
+ */
+function renderTable(node: any): string {
+  const rows: any[] = node.children ?? [];
+  if (rows.length === 0) return "";
+
+  // Determine column count and alignment from the first row
+  const firstRow = rows[0];
+  const ncols = (firstRow.children ?? []).length;
+  const aligns: string[] = (node.align ?? []).map((a: string | null) => {
+    if (a === "right") return "r";
+    if (a === "center") return "c";
+    return "l";
+  });
+  // Pad if align array is shorter than column count
+  while (aligns.length < ncols) aligns.push("l");
+
+  const colspec = aligns.join(" ");
+  const lines: string[] = [];
+  lines.push(`\\begin{tabular}{${colspec}}`);
+  lines.push("\\toprule");
+
+  for (let i = 0; i < rows.length; i++) {
+    const cells = (rows[i].children ?? []).map((cell: any) =>
+      renderChildren(cell).join("")
+    );
+    lines.push(cells.join(" & ") + " \\\\");
+    // Add midrule after header row
+    if (i === 0) lines.push("\\midrule");
+  }
+
+  lines.push("\\bottomrule");
+  lines.push("\\end{tabular}");
+  return lines.join("\n");
 }
 
 /** Render all children of a node. */
@@ -469,18 +523,27 @@ export function loadAndRenderBlock(rootName: string, objectsDir: string): {
  * @param section - Section manifest
  * @param blocks - All loaded blocks (keyed by root name)
  * @param opts - Print mode options (controls block filtering)
+ * @param chapterReferencedLabels - Optional chapter-wide set of labels
+ *   referenced via `examples[]` on any block in the chapter. When provided,
+ *   supplements the section-local set so that cross-section example
+ *   references are honoured in compact mode.
  */
 export function renderSection(
   section: Section,
   blocks: Map<string, { block: Block; mdContent: string; sourceDir?: string }>,
   opts: RenderOptions = {},
+  chapterReferencedLabels?: Set<string>,
 ): string {
   const lines: string[] = [];
   const label = section.label ? `\\label{${section.label}}\n` : "";
   lines.push(`\\section{${escapeLatex(section.title)}}\n${label}`);
 
   // Collect referenced example/remark labels for compact-mode filtering
-  const referencedLabels = collectReferencedLabels(section.blocks, blocks);
+  // Merge section-local refs with chapter-wide refs when available
+  const sectionRefs = collectReferencedLabels(section.blocks, blocks);
+  const referencedLabels = chapterReferencedLabels
+    ? new Set([...sectionRefs, ...chapterReferencedLabels])
+    : sectionRefs;
 
   for (const rootName of section.blocks) {
     const entry = blocks.get(rootName);
@@ -518,6 +581,17 @@ export function renderChapter(
   // Collect all citation keys used in this chapter
   const chapterCites = new Set<string>();
 
+  // Collect chapter-wide referenced labels (from examples[] on ALL blocks
+  // in this chapter) so compact-mode filtering works across sections.
+  const allChapterBlockNames: string[] = [];
+  for (const section of chapter.sections) {
+    if (!("blocks" in section)) continue;
+    for (const rootName of (section as Section).blocks) {
+      allChapterBlockNames.push(rootName);
+    }
+  }
+  const chapterReferencedLabels = collectReferencedLabels(allChapterBlockNames, blocks);
+
   for (const section of chapter.sections) {
     if (!("blocks" in section)) continue;
     const sec = section as Section;
@@ -533,7 +607,7 @@ export function renderChapter(
         }
       }
     }
-    lines.push(renderSection(sec, blocks, opts));
+    lines.push(renderSection(sec, blocks, opts, chapterReferencedLabels));
   }
 
   // Emit chapter-end bibliography if any citations were found

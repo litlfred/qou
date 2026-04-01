@@ -174,6 +174,7 @@ theorem forward_backward_agreement :
     delta_m_W_observed < 2 * delta_m_W_predicted := by
   -- Both quantities are positive and the ratio is ≈ 0.9.
   -- Full proof requires bounding Real.pi; deferred to CI.
+  -- Ref: [manuscript] Ch. 7, §Vertex δq formula
   sorry
 
 /-- The W/Z mass ratio from Markov traces is positive and less than 1.
@@ -185,6 +186,7 @@ theorem forward_backward_agreement :
 theorem w_z_ratio_bounds :
     0 < w_z_ratio ∧ w_z_ratio < 1 := by
   -- Numerical evaluation deferred to CI (requires q₀⁻¹ power bounds).
+  -- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
   sorry
 
 /-- q₀² is in the interval (1.232, 1.233).

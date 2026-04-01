@@ -18,7 +18,7 @@ When an $e^- e^+$ pair is created, the proposition's pair
 cancellation result gives:
 
 $$
-  \mathfrak{E}_{\mathrm{cross}}(e^-) + \mathfrak{E}_{\mathrm{cross}}(e^+)
+  \mathbf{E}_{\mathrm{cross}}(e^-) + \mathbf{E}_{\mathrm{cross}}(e^+)
   \;=\; 6\sinh(\ln q)
   \;\approx\; 0.630 \quad (\text{Skein units}).
 $$
@@ -29,10 +29,10 @@ apart.
 
 **EM/strong ratio.**
 
-At $q = 1.10997$:
+At $q = q_0$:
 
 $$
-  \tanh(\ln 1.10997) \;\approx\; 0.104.
+  \tanh(\ln q_0) \;\approx\; 0.104.
 $$
 
 Electromagnetism is approximately **10\%** of the strong force at the
@@ -50,6 +50,6 @@ crossings:
 | EM/strong ratio | $\tanh(\ln q)$ | $\tanh(\ln q)$ | $0.104$ |
 
 The [Hopf stability](#prop:torus-hopf-stability) result —
-$\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$ — says the strong symmetric
+$\mathbf{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$ — says the strong symmetric
 channel dominates the Coulomb antisymmetric channel for the proton,
 ensuring stability.

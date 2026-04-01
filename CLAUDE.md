@@ -82,6 +82,10 @@ When a user request arrives, route to the right skill(s):
 | "publication readiness / final check" | All tiers: local + `peer-review` + `skill_fetch("academic-pipeline/integrity-verification")` | collaborator |
 | "check claim / evidence quality" | `local/scientific-accuracy` → `sci-critical-thinking` → `skill_fetch("deep-research")` | reader |
 | "fact-check / source verification" | `skill_fetch("deep-research")` (fact-check mode) | reader |
+| "audit rendering / check rendering / rendering issues" | `local/rendering-auditor` | reader |
+| "rendering QC / visual check / overfull hbox" | `local/rendering-auditor` | reader |
+| "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
+| "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
 
 ### External skill packages
 
@@ -114,7 +118,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -336,10 +340,10 @@ Agents **must** use the correct font for each concept.
 
 | Register | Font | Symbols |
 |----------|------|---------|
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron) |
-| Energy | fraktur | `$\mathfrak{E}_q$` ($q$-energy), `$\mathfrak{E}_\times$` (crossing energy), `$\mathfrak{E}_{\mathrm{bind}}$` (binding) |
-| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_H$` (hadron mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_H$` (total crossing energy of hadron $H$). Reclaimed from fraktur — `$E_H = \mathfrak{m}_H \cdot c_q^2$`. |
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
+| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
 | Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
 | Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
 | Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
@@ -362,8 +366,8 @@ Agents **must** use the correct font for each concept.
 - `$b$` = generic variable (never bottom quark; bottom is `$\mathfrak{b}$`)
 - `$p$` = brane point (never proton number; proton number is `$Z$`)
 - `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
-  Use `$\mathcal{S}_p$`, `$\mathfrak{E}$`, or `$\mathcal{E}_q$` respectively.
-  `$E_H$` (with hadron subscript) is allowed for crossing energy.
+  Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
+  `$E_{\mathfrak{H}}$` (with hadron subscript) is allowed for crossing energy.
 - `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
@@ -372,6 +376,32 @@ Agents **must** use the correct font for each concept.
   Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
   Exception: Chapter 9 (Information Theory) may use numerical `$q$` for
   falsifiability computations.
+
+### 7ab. Observed / derived values — approximation convention (STRICT)
+
+When stating a numerical value derived from the substrate parameter
+`$q_0$` or compared to experimental data, **always** use `$\approx$`
+(or `$\simeq$`), **never** `$=$`.
+
+```latex
+% WRONG — implies exact equality
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272\;\text{MeV}$
+
+% RIGHT — derived approximation
+$\mathfrak{m}_{\mathfrak{p}}(q_0) \approx 938.272\;\text{MeV}$
+```
+
+**Exception:** You may write `$=$` when an explicit error term is
+present:
+
+```latex
+% OK — error term makes precision explicit
+$\mathfrak{m}_{\mathfrak{p}}(q_0) = 938.272 + O(10^{-3})\;\text{MeV}$
+```
+
+This applies to all physical predictions, CODATA comparisons, and
+numerical evaluations at `$q_0$`. Exact algebraic identities
+(e.g. `$c_q = 1/(q-1)$`) use `$=$` since they hold for all `$q$`.
 
 ### 7a. Hecke-Skein convention (STRICT)
 
@@ -606,10 +636,10 @@ Prerequisites: `git`, `curl`.
 ```
 
 This installs: uv (Python package manager), elan, the Lean toolchain
-pinned in `lean/lean-toolchain`, Mathlib cache, ripgrep, and verifies
+pinned in `lean-archive/lean-toolchain`, Mathlib cache, ripgrep, and verifies
 `lean-lsp-mcp` via uvx.
 
-**Important**: Run `lake build` in `lean/` before first MCP session to avoid
+**Important**: Run `lake build` in `lean-archive/` before first MCP session to avoid
 timeouts.
 
 ### Remote MCP server
@@ -671,7 +701,7 @@ setup instructions rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `lean/` | Lean 4 formalization (lakefile.lean, QOU/) |
+| `lean-archive/` | Lean 4 formalization (lakefile.toml, QOU/) |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -696,7 +726,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `lean/` (source browser), `lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `lean-archive/` (source browser), `lean-archive/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents
@@ -712,8 +742,8 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | `blueprint/` | blueprint.yml | Interactive dependency graph (plasTeX HTML) |
 | `blueprint.pdf` | blueprint.yml | Print blueprint |
 | `docs/` | blueprint.yml | doc-gen4 API documentation with hover definitions |
-| `lean/` | lean_ci.yml | Raw Lean source files |
-| `lean/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
+| `lean-archive/` | lean_ci.yml | Raw Lean source files |
+| `lean-archive/docs/` | lean_ci.yml | doc-gen4 or fallback source browser |
 | `axiom-report.txt` | blueprint.yml / lean_ci.yml | sorry audit, axiom dependencies |
 | `dependency-graph.svg` | lean_ci.yml / publish.yml | Visual proof dependency graph |
 | `schema-docs/` | publish.yml | TypeDoc content-object type reference |

@@ -2,7 +2,7 @@
 *Step 1: Eigenspace decomposition of the mass integrand.*
 By the ([mass identity](#def:mass-identity)), the mass of $\varrho$ is
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}\bigl(
@@ -37,7 +37,7 @@ $$
 $$
 and by the linearity of the categorical trace:
 $$
-  m(\varrho)
+  \mathfrak{m}(\varrho)
   \;=\;
   \bigl\lVert\,
   \mathrm{tr}(\hat{\tau}_n(\alpha))
