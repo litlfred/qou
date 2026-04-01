@@ -177,6 +177,12 @@ export default chapter({
         "skein-decomposition",
         // Categorical vs archimedean braiding
         "skein-archimedean-shadow",
+        // QU/QUO axioms as relations on Hecke generators
+        "vertex-algebra-relations",
+        // Relations lifted to the jet bundle
+        "vertex-algebra-jet-relations",
+        // T_{2,11} annihilation by the spectral filter ideal
+        "t211-ideal-annihilation",
       ],
     }),
 
