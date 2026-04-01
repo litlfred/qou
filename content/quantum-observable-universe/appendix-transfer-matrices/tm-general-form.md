@@ -12,21 +12,16 @@ $$
   \end{pmatrix}
 $$
 
-The coefficients $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]$ are
-determined by the Jones polynomials of the two knots at the
-crossing:
-
-$$
-  c_{K_1, K_2}
-  \;=\;
-  \frac{J_{K_1}(q) \cdot J_{K_2}(q)}{J_{K_1 \# K_2}(q)},
-  \qquad
-  d_{K_1, K_2}
-  \;=\;
-  -\,c \cdot \frac{q \, s}{1 + J_{K_1}(q) \cdot J_{K_2}(q)}
-$$
-
-where $K_1 \# K_2$ is the connected sum of $K_1$ and $K_2$.
+The coefficients $(c, d) \in \mathbb{Z}[q^{\pm 1/2}]$ depend
+on how the two knots interact.  For knots meeting via
+**connected sum**, the Jones polynomial satisfies
+$J_{K_1 \# K_2} = J_{K_1} \cdot J_{K_2}$, giving $c = 1$
+and $d = 0$.  For knots meeting via the **Hecke product**
+(the physically relevant case for nucleon crossings), the
+coefficients are determined by the representation-theoretic
+structure of the crossing and do not reduce to connected-sum
+formulas.  The three nuclear crossing types have specific
+$(c, d)$ values listed in Section 3.2.
 
 ## Action on Hecke elements
 
@@ -56,7 +51,7 @@ $$
 
 $$
   \det T(c, d) \;=\; d\bigl[c(q - q^{-1}) + d\bigr] - c^2
-  \;=\; c^2(q - q^{-1})\!\cdot\!\frac{d}{c} + d^2 - c^2
+  \;=\; cd(q - q^{-1}) + d^2 - c^2
 $$
 
 **Eigenvalues** (when $c \neq 0$):

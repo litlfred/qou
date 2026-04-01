@@ -57,11 +57,14 @@ meeting at a crossing.  The knots relevant to this paper are:
 Given a nucleus with $A = Z + N$ nucleons, the braid word has
 $A - 1$ generators $\sigma_0, \ldots, \sigma_{A-2}$.  At each
 generator $\sigma_i$, the transfer matrices of all crossings
-are multiplied left to right:
+are composed as operators acting by left-multiplication,
+with crossings applied from right to left in the braid word:
 
 $$
-  M_i(q) \;=\; \prod_{j=i+1}^{A-1} T_{K_j, K_i}(q)
+  M_i(q) \;=\; \prod_{j=A-1}^{i+1} T_{K_j, K_i}(q)
 $$
+
+where the product is taken in decreasing order of $j$.
 
 The **Markov-traced volume** at generator $\sigma_i$ is:
 

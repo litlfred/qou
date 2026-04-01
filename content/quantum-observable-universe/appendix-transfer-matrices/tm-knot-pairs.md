@@ -116,7 +116,7 @@ $$
 | $(1,2)$ | $q^2$ | $q^2$ |
 | $(2,1)$ | $q^2$ | $q^2$ |
 | $(2,2)$ | $-q(q^{1/2} - q^{-1/2})$ | $-q^{3/2} + q^{1/2}$ |
-| $\det$ | $-q^4$ | $-q^4$ |
+| $\det$ | $-q^3 s(q-q^{-1}) + q^2 s^2 - q^4$ | |
 | $\mathrm{tr}$ | $q^3 - q - 2q^{3/2} + 2q^{1/2}$ | |
 
 **Relation to $T_{pp}$:**
@@ -150,7 +150,7 @@ $$
 | $(1,2)$ | $\dfrac{1 + q^2}{2}$ |
 | $(2,1)$ | $\dfrac{1 + q^2}{2}$ |
 | $(2,2)$ | $-\dfrac{q(q^{1/2} - q^{-1/2})}{2}$ |
-| $\det$ | $-\dfrac{(1+q^2)^2}{4} + \dfrac{q^2 s^2}{4}$ |
+| $\det$ | $\dfrac{(1+q^2)}{2}\!\cdot\!\bigl(-\dfrac{qs}{2}\bigr)(q-q^{-1}) + \dfrac{q^2 s^2}{4} - \dfrac{(1+q^2)^2}{4}$ |
 
 **Midpoint property:**
 
@@ -259,14 +259,14 @@ $$
 
 ### 4a. Unknot--trefoil (general: any partner with unknot)
 
-For any knot $K$ paired with the unknot $T_{1,0}$:
+For any knot $K$ paired with the unknot $T_{1,0}$, the
+connected sum $T_{1,0} \# K = K$ gives $c = 1$ via
+$J_{T_{1,0} \# K} = J_{T_{1,0}} \cdot J_K = J_K$.
 
-$$
-  c = \frac{1 \cdot J_K(q)}{J_{T_{1,0} \# K}(q)} = \frac{J_K(q)}{J_K(q)} = 1,
-  \qquad d = 0
-$$
-
-Therefore:
+In the nuclear context (Hecke product), the unknot
+likewise contributes $c = 1$, $d = 0$ because
+$J_{T_{1,0}}(q) = 1$ makes the unknot strand
+act as the identity on the Hecke chain.  Therefore:
 
 $$
   \boxed{
@@ -299,31 +299,18 @@ $$
 
 Knots: $K_1 = T_{2,3}$, $K_2 = T_{2,5}$.
 
-Crossing coefficients:
-
-$$
-  c = \frac{J_{T_{2,3}}(q) \cdot J_{T_{2,5}}(q)}{J_{T_{2,3} \# T_{2,5}}(q)},
-  \qquad
-  d = -c \cdot \frac{qs}{1 + J_{T_{2,3}}(q) \cdot J_{T_{2,5}}(q)}
-$$
+Same-chirality pair interacting via connected sum:
+$J_{T_{2,3} \# T_{2,5}} = J_{T_{2,3}} \cdot J_{T_{2,5}}$,
+so $c = 1$, $d = 0$.
 
 $$
   \boxed{
-    T_{\mathfrak{u}\mathfrak{b}}(q) \;=\;
+    T_{\mathfrak{u}\mathfrak{b}}(q) \;=\; T_{pp}(q) \;=\;
     \begin{pmatrix}
-      c_{\mathfrak{u}\mathfrak{b}}(q - q^{-1}) + d_{\mathfrak{u}\mathfrak{b}}
-        & c_{\mathfrak{u}\mathfrak{b}} \\
-      c_{\mathfrak{u}\mathfrak{b}} & d_{\mathfrak{u}\mathfrak{b}}
+      q - q^{-1} & 1 \\
+      1 & 0
     \end{pmatrix}
   }
-$$
-
-with $c_{\mathfrak{u}\mathfrak{b}}$ and $d_{\mathfrak{u}\mathfrak{b}}$
-as above.  Since $J_{T_{2,3} \# T_{2,5}} = J_{T_{2,3}} \cdot J_{T_{2,5}}$
-for connected sums, this simplifies to $c = 1$, $d = 0$:
-
-$$
-  T_{\mathfrak{u}\mathfrak{b}}(q) \;=\; T_{pp}(q)
 $$
 
 ### 4d. $T_{3,4}$--$T_{3,4}$ (top--top, $\mathfrak{t}$-$\mathfrak{t}$)

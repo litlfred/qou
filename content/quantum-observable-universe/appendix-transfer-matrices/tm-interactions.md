@@ -54,7 +54,6 @@ $$
 **Properties:**
 
 - $\Delta_\beta$ is **symmetric** (off-diagonals equal).
-- $\det(\Delta_\beta) = \frac{(1-q^2)^2}{4}\cdot(-1) + \frac{q^2 s^2}{4} \cdot \text{(mixed)}$.
 - At $q = 1$: $s = 0$ and $\Delta_\beta = 0$ (no parity violation classically).
 - **Universality**: the same $\Delta_\beta$ applies to every nucleus, for
   every converting nucleon, regardless of the partner.
