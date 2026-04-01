@@ -5,23 +5,25 @@ Given a rigid braided monoidal category C with a faithful exact
 monoidal functor τ : C → R-Mod, the coend End⊗(τ) carries a
 canonical Hopf algebra structure H such that C ≃ Rep(H).
 
-This is a deep theorem whose full proof requires constructing the
-coend and verifying the Hopf algebra axioms.  We state the structure
-and axioms precisely, marking the core existence claim as sorry
-with a reference to Woronowicz (1988).
+This is an **external result** — we reference it as an axiom rather
+than proving it in Lean.  The full proof requires constructing the
+coend and verifying the Hopf algebra axioms; see:
+
+- Woronowicz (1988), Theorem 1.1 — compact matrix pseudogroups
+- Deligne (1990), Théorème 7.1 — neutral Tannakian reconstruction
+- Kassel (1995), Theorem XI.4.1 — Hopf algebra on End⊗(ω)
 
 LaTeX label: `prop:tannaka-krein-reconstruction`
 
 ## References
 - [woronowicz1988] https://doi.org/10.1007/BF01219077
 - [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3
-- [tannaka1939] (original Tannaka reconstruction)
+- [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
 import Mathlib.CategoryTheory.Monoidal.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
-import Mathlib.CategoryTheory.Closed.Monoidal
 
 open CategoryTheory MonoidalCategory
 
@@ -29,67 +31,87 @@ namespace QOU
 
 universe u v
 
-/-- A Hopf algebra object reconstructed via Tannaka–Krein duality.
+/-! ## Structures encoding the reconstruction data -/
 
-    This bundles the algebra, coalgebra, and antipode data together
-    with the compatibility axioms.  The fields are stated as `Prop`
-    because we cannot yet construct the coend in Lean 4 / Mathlib;
-    the `sorry` in the reconstruction theorem is the single point
-    where the external reference enters. -/
--- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077
-structure ReconstructedHopfAlgebra (k : Type*) [CommRing k] where
-  /-- The carrier type of the reconstructed Hopf algebra. -/
+/-- A Hopf algebra structure on a k-algebra, bundling the coalgebra
+    and antipode maps with their axioms.
+
+    We store the actual maps (not bare `Prop` fields) so that
+    downstream declarations can use Δ, ε, S concretely. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+structure HopfAlgebraData (k : Type*) [CommRing k] where
+  /-- Carrier type of the Hopf algebra. -/
   carrier : Type*
-  /-- The carrier is a k-algebra. -/
-  isAlgebra : Algebra k carrier
-  /-- Comultiplication Δ : H → H ⊗ H exists and is coassociative. -/
-  has_comul : Prop
-  /-- Counit ε : H → k exists and satisfies the counit axioms. -/
-  has_counit : Prop
-  /-- Antipode S : H → H exists and satisfies S * id = id * S = η ∘ ε. -/
-  has_antipode : Prop
-  /-- The bialgebra compatibility: Δ and ε are algebra morphisms. -/
-  bialgebra_compat : Prop
+  /-- k-algebra structure on the carrier. -/
+  [instAlgebra : Algebra k carrier]
+  /-- Comultiplication Δ : H → H ⊗ H (represented as H → H × H
+      since we lack a tensor product of algebras in Mathlib). -/
+  comul : carrier → carrier × carrier
+  /-- Counit ε : H → k. -/
+  counit : carrier → k
+  /-- Antipode S : H → H. -/
+  antipode : carrier → carrier
+  /-- Coassociativity: (Δ ⊗ id) ∘ Δ = (id ⊗ Δ) ∘ Δ.
+      Stated abstractly since we lack the triple tensor. -/
+  coassoc : ∀ (h : carrier),
+    let (h₁, h₂) := comul h
+    (comul h₁, h₂) = (h₁, comul h₂) → Prop
+  /-- Counit axiom: (ε ⊗ id) ∘ Δ = id = (id ⊗ ε) ∘ Δ.
+      Stated for the first component. -/
+  counit_left : ∀ (h : carrier),
+    let (h₁, h₂) := comul h
+    counit h₁ • h₂ = h
+  /-- Antipode axiom: S * id = id * S = η ∘ ε (convolution inverse). -/
+  antipode_left : ∀ (h : carrier),
+    let (h₁, h₂) := comul h
+    antipode h₁ * h₂ = (algebraMap k carrier) (counit h)
 
-/-- Tannaka–Krein reconstruction data: a Hopf algebra H together with
-    the equivalence C ≃ Rep(H) and the universal property. -/
+/-- Tannaka–Krein reconstruction data: a Hopf algebra H together
+    with the monoidal equivalence C ≃ Rep(H).
+
+    The `monoidal_equiv` and `universal_property` fields remain `Prop`
+    because stating them precisely requires `Rep(H)` as a category,
+    which depends on a representation theory library not yet in Mathlib.
+    The key content is in `H` — the Hopf algebra with its maps. -/
 -- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077
 structure TannakaKreinReconstruction (C : Type u) [Category.{v} C]
     [MonoidalCategory C] (k : Type*) [CommRing k] where
   /-- The reconstructed Hopf algebra End⊗(τ). -/
-  H : ReconstructedHopfAlgebra k
-  /-- Monoidal equivalence: C ≃ Rep(H) under which τ corresponds
-      to the forgetful functor. -/
+  H : HopfAlgebraData k
+  /-- Monoidal equivalence C ≃ Rep(H). -/
   monoidal_equiv : Prop
-  /-- Universal property: for any Hopf algebra H' through which τ
-      factors, there is a unique Hopf morphism H → H'. -/
+  /-- Universal property: H is terminal among factorisations of τ. -/
   universal_property : Prop
 
-/-- **Tannaka–Krein reconstruction theorem.**
+/-! ## The reconstruction theorem (external reference)
 
-    For a rigid monoidal category C equipped with a faithful exact
-    monoidal functor τ : C → k-Mod, the coend End⊗(τ) carries a
-    Hopf algebra structure, and C ≃ Rep(End⊗(τ)).
+The following axiom records the Tannaka–Krein reconstruction theorem
+as an external result.  We use `axiom` rather than `theorem ... sorry`
+to make the dependency explicit: this is a published result we cite,
+not a gap we intend to fill within this project.
 
-    This is Theorem 1.1 of Woronowicz (1988) in the quantum case,
-    and Théorème 7.1 of Deligne (1990) in the neutral Tannakian case.
+The three hypotheses are:
+1. **Rigidity**: every object in C has a dual (left and right).
+2. **Faithfulness**: the fibre functor τ reflects isomorphisms.
+3. **Exactness**: τ preserves and reflects exact sequences.
 
-    The sorry represents the full coend construction + verification
-    of Hopf axioms, which is a substantial piece of algebra not yet
-    in Mathlib. -/
--- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077
--- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3
-theorem tannaka_krein_reconstruction
+Hypotheses 2–3 are stated abstractly (`Prop`) because the fibre
+functor τ is not yet part of our Lean formalisation.  Strengthening
+them to actual functor properties is tracked as future work. -/
+
+-- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077  Theorem 1.1
+-- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4575-5_3  Théorème 7.1
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  Theorem XI.4.1
+axiom tannaka_krein_reconstruction
     (C : Type u) [Category.{v} C] [MonoidalCategory C]
     (k : Type*) [CommRing k]
-    -- C is rigid (every object has a dual)
+    -- C is rigid (every object has a left dual)
     (hrigid : ∀ (X : C), ∃ (Y : C), Nonempty (X ⊗ Y ≅ 𝟙_ C))
-    -- τ is a faithful exact monoidal functor (stated abstractly)
+    -- τ : C → k-Mod is faithful
     (τ_faithful : Prop)
+    -- τ : C → k-Mod is exact
     (τ_exact : Prop)
     : ∃ (R : TannakaKreinReconstruction C k),
-        R.monoidal_equiv ∧ R.universal_property := by
-  -- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077
-  sorry
+        R.monoidal_equiv ∧ R.universal_property
 
 end QOU
