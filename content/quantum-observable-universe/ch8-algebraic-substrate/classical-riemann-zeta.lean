@@ -35,19 +35,16 @@ structure ClassicalRiemannZeta where
   -- Ref: [manuscript] Chapter 8, Section 5
   dirichlet_series :
     ∀ (s : ℂ), 1 < s.re →
-      HasSum (fun n : ℕ+ => (↑(n : ℕ) : ℂ) ^ (-s)) (zeta s) := by
-    sorry
+      HasSum (fun n : ℕ+ => (↑(n : ℕ) : ℂ) ^ (-s)) (zeta s)
   /-- Euler product: ζ(s) = ∏_p (1 - p^{-s})^{-1} for Re(s) > 1. -/
-  -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
   euler_product :
     ∀ (s : ℂ), 1 < s.re →
-      zeta s = ∏' (p : Nat.Primes), (1 - (↑(p : ℕ) : ℂ) ^ (-s))⁻¹ := by
-    sorry
+      zeta s = ∏' (p : Nat.Primes), (1 - (↑(p : ℕ) : ℂ) ^ (-s))⁻¹
   /-- The local q-zeta functions assemble into ζ(s) under the
       classical limit. Each prime p contributes a local factor
-      from the q-zeta function at q = p. -/
-  -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
-  adelic_assembly :
-    True := by sorry
+      from the q-zeta function at q = p.
+      (Stated as a Prop field; the full adelic assembly requires
+      the local-global compatibility of §3–§4.) -/
+  adelic_assembly : Prop
 
 end QOU.AlgebraicSubstrate

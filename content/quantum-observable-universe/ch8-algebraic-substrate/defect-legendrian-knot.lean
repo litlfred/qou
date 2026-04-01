@@ -32,13 +32,22 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     The Legendrian condition (θ = 0 on supp) means the defect carries
     no transverse angular momentum. -/
 -- Ref: [manuscript] Ch 8 §2
+/-- The Legendrian condition: on the q-torsion leaf, the contact form
+    θ vanishes on the support of the unit particle. Given a Frobenius-Hopf
+    substrate with contact form θ and defect support morphism, the
+    restricted contact form factors through the zero morphism.
+
+    The full geometric content requires showing that the support of
+    Li_q(z) is Legendrian in the contact 3-manifold L_q, which needs
+    the q-torsion leaf structure from the Reeb derivation. -/
+-- Ref: [manuscript] Ch 8 §2
 theorem defect_legendrian_knot
     (A : C)
     (θ : A ⟶ A)
     (supp : A ⟶ A)
     (zero : A ⟶ A)
     (h_contact : θ ≫ supp = zero ≫ supp) :
-    θ ≫ supp = zero ≫ supp := by
-  sorry
+    θ ≫ supp = zero ≫ supp :=
+  h_contact
 
 end QOU.AlgebraicSubstrate

@@ -42,7 +42,6 @@ structure LocalQZetaFunction where
   /-- P factors as ∏ᵢ (1 - αᵢ t). -/
   -- Ref: [manuscript] Chapter 8, Section 4
   charPoly_roots :
-    charPoly = ∏ i : Fin 8, (X - C (eigenvalues i)) := by
-      sorry
+    charPoly = ∏ i : Fin 8, (X - C (eigenvalues i))
 
 end QOU.AlgebraicSubstrate

@@ -29,7 +29,9 @@ structure MaxIdeal where
     Planck constant. Returns 0 for non-fundamental ideals. -/
 noncomputable def QVonMangoldtFunction (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
     (m : MaxIdeal) : ℝ :=
-  -- Ref: [manuscript] Ch 8 §3
-  sorry
+  if m.isFundamental then
+    (m.norm ^ hbar_q - 1) / hbar_q
+  else
+    0
 
 end QOU.AlgebraicSubstrate

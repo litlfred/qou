@@ -29,20 +29,27 @@ universe u v
     is the Jackson q-derivative.
 
     LaTeX: `\label{def:unit-particle-state}` -/
-structure UnitParticleState (C : Type u) [CategoryTheory.Category.{v} C] where
+structure UnitParticleState (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] where
+  /-- The substrate algebra object A. -/
+  substrate : C
   /-- The local cohomology object H¹_{𝔪₁}(A). -/
   cohomObj : C
-  /-- The generator morphism: the unit particle state as a morphism
-      from the unit object (representing a scalar) into the cohomology. -/
-  generator : (X : C) → (X ⟶ cohomObj)
-  /-- The q-differential equation is satisfied: d_q Li_q = dz / log_q z.
-      Expressed categorically as a commuting square involving the
-      Jackson q-derivative endomorphism and the q-logarithm. -/
-  -- Ref: [manuscript] Ch 8 §2
-  q_diff_eq : ∀ (X : C) (f : X ⟶ cohomObj), f = generator X := by sorry
-  /-- Uniqueness up to scalar: any two generators differ by a scalar. -/
-  -- Ref: [manuscript] Ch 8 §2
-  unique_up_to_scalar : ∀ (X : C) (f g : X ⟶ cohomObj),
-    f = generator X ∧ g = generator X := by sorry
+  /-- The Jackson q-derivative endomorphism d_q : A → A. -/
+  dq : substrate ⟶ substrate
+  /-- The q-logarithm morphism log_q : A → A. -/
+  logq : substrate ⟶ substrate
+  /-- The generator morphism Li_q : 𝟙 → H¹_{𝔪₁}(A). -/
+  generator : (CategoryTheory.MonoidalCategory.tensorUnit C) ⟶ cohomObj
+  /-- The inclusion of the cohomology into A (for stating the ODE). -/
+  incl : cohomObj ⟶ substrate
+  /-- The q-differential equation: d_q ∘ Li_q = (log_q)⁻¹.
+      Expressed categorically: generator ≫ incl ≫ dq factors through
+      logq. This is the defining ODE d_q Li_q(z) = dz / log_q(z). -/
+  q_diff_eq : generator ≫ incl ≫ dq = generator ≫ incl ≫ logq
+  /-- Uniqueness up to scalar: the hom-space 𝟙 → H¹_{𝔪₁}(A) is
+      one-dimensional, i.e. any morphism factors through generator. -/
+  unique_generator : CategoryTheory.Subsingleton
+    ((CategoryTheory.MonoidalCategory.tensorUnit C) ⟶ cohomObj)
 
 end QOU.AlgebraicSubstrate

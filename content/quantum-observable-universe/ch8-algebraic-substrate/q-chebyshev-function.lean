@@ -20,7 +20,7 @@ namespace QOU.AlgebraicSubstrate
 noncomputable def QChebyshevFunction
     (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
     (ideals : List MaxIdeal) (X : ℝ) : ℝ :=
-  -- Ref: [manuscript] Ch 8 §3
-  sorry
+  (ideals.filter (fun m => decide (m.norm ≤ X))).foldl
+    (fun acc m => acc + QVonMangoldtFunction hbar_q hbar_pos m) 0
 
 end QOU.AlgebraicSubstrate

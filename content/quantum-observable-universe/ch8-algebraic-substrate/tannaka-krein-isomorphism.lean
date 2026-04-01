@@ -17,15 +17,15 @@ namespace QOU.AlgebraicSubstrate
 
 universe u v
 
-/-- The category of localized A-module representations (opaque). -/
-def RepLoc : Type (u + 1) :=
-  -- Ref: [manuscript] Ch 8 §3
-  sorry
+/-- The category of localized A-module representations (monopoles).
+    Axiomatized as an opaque type; the full construction requires the
+    localization theory from §2. -/
+axiom RepLoc : Type (u + 1)
 
-/-- The category of comodules over the reconstructed Hopf algebra H_ξ (opaque). -/
-def ComodH : Type (u + 1) :=
-  -- Ref: [manuscript] Ch 8 §3
-  sorry
+/-- The category of comodules over the reconstructed Hopf algebra H_ξ.
+    Axiomatized as an opaque type; the reconstruction is via the
+    fibre functor τ from Tannaka–Krein theory. -/
+axiom ComodH : Type (u + 1)
 
 /-- **Tannaka–Krein duality for the substrate.**
 

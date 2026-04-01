@@ -32,10 +32,8 @@ structure CategoricalReebDerivation (C : Type u) [Category.{v} C]
   /-- The period of the Reeb flow. -/
   period : ℕ
   /-- Normalization: `ξ_q ∘ θ = θ`. -/
-  -- Ref: [manuscript] Chapter 8, §1
-  reeb_normalizes : contact ≫ reeb = contact := by sorry
+  reeb_normalizes : contact ≫ reeb = contact
   /-- Periodicity: `ξ_q^Ω_q = id_A`. -/
-  -- Ref: [manuscript] Chapter 8, §1
-  reeb_periodic : reeb ^ period = 𝟙 obj := by sorry
+  reeb_periodic : reeb ^ period = 𝟙 obj
 
 end QOU.AlgebraicSubstrate

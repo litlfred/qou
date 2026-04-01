@@ -41,7 +41,6 @@ structure LocalCohomologyGroup (C : Type u) [CategoryTheory.Category.{v} C] wher
       long exact sequence in cohomology. -/
   connecting : torsionObj ⟶ localCohom
   /-- The local cohomology is nonzero (the defect is nontrivial). -/
-  -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
-  nontrivial : localCohom ≠ obj := by sorry
+  nontrivial : localCohom ≠ obj
 
 end QOU.AlgebraicSubstrate

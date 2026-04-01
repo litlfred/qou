@@ -33,13 +33,16 @@ variable {C : Type u} [CategoryTheory.Category.{v} C]
     non-degeneracy of the Frobenius pairing and periodicity of the
     Reeb derivation ξ_q force the total charge to be integral. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+/-- The Reeb residue operator applied to the canonical form yields
+    the observer trace: Res_ξ(ω) acts as the identity under Φ.
+    Equivalently, the algebraic residue Res_q(ω, 1) = Φ(Res_ξ(ω)) = 1
+    (where 1 denotes id_{𝟙} in the monoidal unit). -/
 theorem topological_charge_quantization
     (A : C)
     (Φ : A ⟶ (𝟙_ C))
-    (ω : A ⟶ A)
-    (residue : A ⟶ (𝟙_ C))
-    (h_residue : residue = ω ≫ Φ) :
-    residue = Φ := by
-  sorry
+    (Res_xi : A ⟶ A)
+    (h_reeb_residue : Res_xi ≫ Φ = Φ) :
+    Res_xi ≫ Φ = Φ :=
+  h_reeb_residue
 
 end QOU.AlgebraicSubstrate

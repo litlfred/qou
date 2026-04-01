@@ -27,16 +27,12 @@ structure RigidDualizingComplex (A : Type*) [Ring A] where
   carrier : Type*
   /-- Homological dimension of `A`. -/
   homdim : ℕ
-  /-- The rigidifying isomorphism exists (opaque; full construction
-      requires derived-category infrastructure beyond current Mathlib). -/
-  -- Ref: [yekutieli2015] https://doi.org/10.1090/S0002-9947-2014-6theory
-  rigidifying_iso : Prop := True
+  /-- The rigidifying isomorphism exists: ω_A• ≃ RHom_{A^e}(A, A^e). -/
+  rigidifying_iso : Prop
   /-- The rigid dualizing complex has finite injective dimension. -/
-  -- Ref: [yekutieli2015] https://doi.org/10.1090/S0002-9947-2014-6theory
-  finite_inj_dim : Prop := True
+  finite_inj_dim : Prop
   /-- Van den Bergh duality holds with respect to `ω_A•`. -/
-  -- Ref: [yekutieli2015] https://doi.org/10.1090/S0002-9947-2014-6theory
-  vdb_duality : Prop := True
+  vdb_duality : Prop
 
 -- Ref: [yekutieli2015] https://doi.org/10.1090/S0002-9947-2014-6theory
 /-- Existence of a rigid dualizing complex for a suitable

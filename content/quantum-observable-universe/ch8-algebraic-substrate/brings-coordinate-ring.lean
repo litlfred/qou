@@ -38,8 +38,7 @@ structure BringsCoordinateRing where
   -- Ref: [manuscript] Chapter 5
   s5_mul_compat :
     ∀ (σ : Equiv.Perm (Fin 5)) (a b : carrier),
-      s5_action σ (a * b) = s5_action σ a * s5_action σ b := by
-    sorry
+      s5_action σ (a * b) = s5_action σ a * s5_action σ b
 
 attribute [instance] BringsCoordinateRing.ringInst
 

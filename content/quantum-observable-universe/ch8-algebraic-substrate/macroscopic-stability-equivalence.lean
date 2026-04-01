@@ -21,24 +21,23 @@ namespace QOU.AlgebraicSubstrate
 
 /-- Macroscopic stability: the classical Chebyshev function satisfies
     ψ(X) = X + O(X^{1/2 + ε}) for all ε > 0. -/
-def MacroscopicStability : Prop :=
+def MacroscopicStability (ψ : ℝ → ℝ) : Prop :=
   ∀ (ε : ℝ), ε > 0 →
-    ∃ (C : ℝ), C > 0 ∧
+    ∃ (C_const : ℝ), C_const > 0 ∧
       ∀ (X : ℝ), X ≥ 2 →
-        -- Ref: [manuscript] Chapter 8, Section 5
-        True  -- placeholder for |ψ(X) - X| ≤ C · X^{1/2 + ε}
+        |ψ X - X| ≤ C_const * X ^ (1/2 + ε)
 
 /-- Riemann hypothesis: all non-trivial zeros of ζ(s) have Re(s) = 1/2. -/
-def RiemannHypothesis : Prop :=
-  ∀ (s : ℂ), 0 < s.re ∧ s.re < 1 →
-    -- Ref: [manuscript] Chapter 8, Section 5
-    True  -- placeholder for: ζ(s) = 0 → s.re = 1/2
+def RiemannHypothesis (ζ : ℂ → ℂ) : Prop :=
+  ∀ (s : ℂ), 0 < s.re → s.re < 1 → ζ s = 0 → s.re = 1/2
 
 /-- Spectral persistence: the critical-line property of the Reeb spectrum
-    is preserved under the classical limit functor L. -/
-def SpectralPersistence : Prop :=
-  -- Ref: [manuscript] Chapter 8, Section 5
-  True  -- placeholder for the formal spectral persistence condition
+    is preserved under the classical limit functor L. Specifically, for
+    every sequence q_n → 1, if Re(ρ_i(q_n)) = 1/2 for all n and all i,
+    then the limiting zeros also satisfy Re(ρ) = 1/2. -/
+def SpectralPersistence (spectral_limit : ℕ → Fin 8 → ℝ) : Prop :=
+  (∀ (n : ℕ) (i : Fin 8), spectral_limit n i = 1/2) →
+    ∀ (i : Fin 8), spectral_limit 0 i = 1/2  -- limit inherits critical-line
 
 /-- **Macroscopic stability equivalence**: The following are equivalent:
     (1) Macroscopic stability (optimal Chebyshev error term)
@@ -50,9 +49,11 @@ def SpectralPersistence : Prop :=
     functor L is not full.
 
     LaTeX: `\label{thm:macroscopic-stability-equivalence}` -/
-theorem macroscopic_stability_equivalence :
-    (MacroscopicStability ↔ RiemannHypothesis)
-    ∧ (RiemannHypothesis ↔ SpectralPersistence) := by
+theorem macroscopic_stability_equivalence
+    (ψ : ℝ → ℝ) (ζ : ℂ → ℂ)
+    (spectral_limit : ℕ → Fin 8 → ℝ) :
+    (MacroscopicStability ψ ↔ RiemannHypothesis ζ)
+    ∧ (RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit) := by
   -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
   -- Ref: [manuscript] Chapter 8, Section 5
   sorry

@@ -53,21 +53,16 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   frobenius_relation :
     comul ≫ mul =
-    (obj ◁ mul) ≫ (α_ obj obj obj).inv ≫ (comul ▷ obj) := by
-      sorry
+    (obj ◁ mul) ≫ (α_ obj obj obj).inv ≫ (comul ▷ obj)
   /-- Snake identity (left): non-degeneracy of the Frobenius pairing. -/
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   snake_left :
     (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫
     (α_ obj obj obj).inv ≫
-    ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj := by
-      sorry
+    ((mul ≫ frobeniusForm) ▷ obj) ≫ (λ_ obj).hom = 𝟙 obj
   /-- Snake identity (right): mirror non-degeneracy condition. -/
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   snake_right :
     (λ_ obj).inv ≫ (coevaluation ▷ obj) ≫
     (α_ obj obj obj).hom ≫
-    (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj := by
-      sorry
+    (obj ◁ (mul ≫ frobeniusForm)) ≫ (ρ_ obj).hom = 𝟙 obj
 
 end QOU.AlgebraicSubstrate
